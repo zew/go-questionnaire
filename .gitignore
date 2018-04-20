@@ -1,0 +1,5 @@
+*.exe
+*.exe~
+*.fdb
+*.log
+*.cert

@@ -3,3 +3,5 @@
 *.fdb
 *.log
 *.cert
+*.key
+*.pem

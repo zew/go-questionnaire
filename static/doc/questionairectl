@@ -1,0 +1,82 @@
+#!/bin/sh
+# questionairectl Startup script for questionaire programm
+# www.der-taegliche-admin.de/2010/06/25/eigenes-start-stop-shell-script-erstellen/
+INSTANZ="Questionaire"
+BPDIR=/opt/questionaire
+Pidfile=/var/run/questionaire/prog.pid
+LOGFILE=/var/log/questionaire.log
+
+if [ -f $Pidfile ]
+then
+	Pid=`cat $Pidfile`
+fi
+
+case "$1" in
+'start')
+		if [ -f $Pidfile ] ; then
+				if test `ps -e | grep -c $Pid` = 1; then
+						echo "Not starting $INSTANZ - instance already running with PID: $Pid"
+				else
+						echo "Starting $INSTANZ"
+						cd $BPDIR
+						#     ./questionaire > $LOGFILE 2>&1 &
+						nohup ./questionaire > $LOGFILE 2>&1 &
+
+						# Alternative: stdout and stderr into /dev/null
+						# nohup ./questionaire &> /dev/null &
+
+						echo $! > $Pidfile
+
+						# $! PID of the most recent background command.
+						# stackoverflow.com/questions/5163144/
+
+						# Better: unix.stackexchange.com/questions/74520
+						#  > x.log     =>  stdout to logfile
+						#  2>&1        =>  stderr to logfile too
+						#  
+						# nohup ./questionaire > $LOGFILE 2>&1 &
+
+				fi
+		else
+				echo "Starting $INSTANZ"
+				cd $BPDIR
+				#./questionaire > $LOGFILE 2>&1 &
+				nohup ./questionaire > $LOGFILE 2>&1 &
+				echo $! > $Pidfile
+		fi
+		;;
+
+'stop')
+		if [ -f $Pidfile ] ; then
+				echo "stopping $INSTANZ"
+				kill -15 $Pid
+		else
+				echo "Cannot stop $INSTANZ - no Pidfile found!"
+		fi
+		;;
+
+'restart')
+		$0 stop
+		sleep 5
+		$0 start
+		;;
+
+'status')
+		if [ -f $Pidfile ] ; then
+				if test `ps -e | grep -c $Pid` = 0; then
+						echo "$INSTANZ not running"
+				else
+						echo "$INSTANZ running with PID: [$Pid]"
+				fi
+		else
+				echo "$Pidfile does not exist! Cannot process $INSTANZ status!"
+				exit 1
+		fi
+		;;
+
+*)
+		echo "usage: $0 { start | stop | restart | status }"
+		;;
+
+esac
+exit 0

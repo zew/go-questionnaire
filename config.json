@@ -1,0 +1,19 @@
+{
+ 	"app_name": "Financial Market Survey Questionaire",
+ 	"urlpath_prefix": "survey",
+ 	"vals": {
+ 		"BindHost": "0.0.0.0",
+ 		"BindSocket": "8081",
+ 		"BindSocketFallbackHttp": ":8082",
+ 		"Tls": "ActivateTls",
+ 		"appMnemonic": "survey",
+ 		"appName": "Financial Market Survey Questionaire",
+ 		"urlPrefix": "/survey"
+ 	},
+	"http_read_time_out": 5,
+	"http_write_time_out": 30,
+	"css": {
+		"body_background_color": "#e2e2e2",
+		"last_line": "#no-comma"
+	}
+ }

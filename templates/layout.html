@@ -1,0 +1,51 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="shortcut icon" href="data:;base64,=">
+	<link rel="icon"          href="data:;base64,=">
+		<title>{{.HtmlTitle}}</title>
+	<link  href="{{cfgVal "urlPrefix"}}/css/design.css" rel="stylesheet" type="text/css" />
+	<!-- jQuery - as it is required almost always -->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" ></script>
+	<script type="text/javascript">
+		const PREFIX = "{{cfgVal "urlPrefix"}}";
+		if (!window.jQuery) { 
+			document.write('<script src="{{cfgVal "urlPrefix"}}/js/jquery.min.js" ><\/script>'); 
+			console.log('CDN version not available: fallback to local resource.'); 
+		}
+	</script>
+</head>
+<body>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			console.log('body: jQuery doc.ready()');
+			// $( "body" ).children().last().append( "<p>jQuery doc.ready()</p>" );
+		});
+	</script>
+
+	<!-- following span is to make the body extractable by splitting it -->
+	<span class='body'></span>
+	<!-- the content template -->
+
+	{{executeTemplate .TemplateName .}}
+
+
+	<!-- 
+		session-test-key is -{{sessionValue "session-test-key"}}-<br><br>
+		request-test-key is -{{sessionValue "request-test-key"}}-<br><br>
+	-->
+
+	<span class='body'></span>
+
+	<!-- footer -->
+	<div class="footer" >
+		<div class='ib main-navi-block'>
+		</div>
+		<div class='ib main-navi-block'>
+			<a href="{{cfgVal "urlPrefix"}}/" accesskey="h">Home</a>
+			&nbsp; &nbsp; &nbsp; &nbsp; 
+			<a href="{{cfgVal "urlPrefix"}}/doc/README.md">Documentation</a><br />
+		</div>
+	</div>
+</body>
+</html>

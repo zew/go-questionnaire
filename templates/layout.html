@@ -30,11 +30,13 @@
 	{{executeTemplate .TemplateName .}}
 
 
-	<!-- 
-		session-test-key is -{{sessionValue "session-test-key"}}-<br><br>
-		request-test-key is -{{sessionValue "request-test-key"}}-<br><br>
-	-->
+	<br>
+	<br>
+	session-test-key is -{{sess.EffectiveParam "session-test-key"}}- <br><br>
+	request-test-key is -{{sess.EffectiveParam "request-test-key"}}- <br><br>
 
+	
+	
 	<span class='body'></span>
 
 	<!-- footer -->

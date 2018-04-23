@@ -11,7 +11,16 @@ import (
 
 	"github.com/zew/questionaire/cfg"
 	"github.com/zew/questionaire/sessx"
+	"github.com/zew/questionaire/tpl"
 )
+
+// Template Data
+type TplDataT struct {
+	TemplateName string
+	HtmlTitle    string
+	Cnt          interface{}
+	P            tPage
+}
 
 func staticDownloadH(w http.ResponseWriter, r *http.Request) {
 	internalSubDir := r.URL.Path
@@ -23,7 +32,7 @@ func staticDownloadH(w http.ResponseWriter, r *http.Request) {
 func serveCss(w http.ResponseWriter, r *http.Request) {
 	base := filepath.Base(r.URL.Path) //  "/css/design.css"  => design.css
 	t := template.New(base)
-	t = t.Funcs(staticTplFuncs)
+	t = t.Funcs(tpl.StaticFuncMap())
 	var err error
 	t, err = t.ParseFiles(filepath.Join(".", "templates", base))
 	if err != nil {
@@ -67,9 +76,9 @@ func mainH(w http.ResponseWriter, r *http.Request) {
 
 	quest := generateExample()
 
-	err := tpl(r).Execute(
+	err := tpl.Get(w, r, sessionManager).Execute(
 		w,
-		t{
+		TplDataT{
 			HtmlTitle:    cfg.Get().AppName,
 			Cnt:          content,
 			P:            quest.Pages[0],

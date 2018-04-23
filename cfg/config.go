@@ -20,6 +20,8 @@ import (
 type configT struct {
 	sync.Mutex
 
+	IsProduction bool `json:"is_production"` // true => templates are not recompiled
+
 	AppName       string `json:"app_name"`
 	UrlPathPrefix string `json:"urlpath_prefix"`
 

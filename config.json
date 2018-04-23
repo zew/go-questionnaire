@@ -1,6 +1,7 @@
 {
  	"app_name": "Financial Market Survey Questionaire",
  	"urlpath_prefix": "survey",
+ 	"is_production":  true,
  	"vals": {
  		"BindHost": "0.0.0.0",
  		"BindSocket": "8081",

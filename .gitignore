@@ -5,3 +5,5 @@
 *.cert
 *.key
 *.pem
+# temporary
+example-questionaire.json

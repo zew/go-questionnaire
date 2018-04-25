@@ -8,18 +8,22 @@ import (
 	"net/http"
 	"path/filepath"
 	"strings"
+	"time"
 
 	"github.com/zew/questionaire/cfg"
 	"github.com/zew/questionaire/sessx"
 	"github.com/zew/questionaire/tpl"
+
+	"github.com/pkg/errors"
 )
 
 // Template Data
 type TplDataT struct {
 	TemplateName string
 	HtmlTitle    string
-	Cnt          interface{}
-	P            tPage
+	CntBefore    interface{}
+	CntAfter     interface{}
+	Q            *tQuestionaire
 }
 
 func staticDownloadH(w http.ResponseWriter, r *http.Request) {
@@ -63,30 +67,100 @@ func sessionGet(w http.ResponseWriter, r *http.Request) {
 
 func mainH(w http.ResponseWriter, r *http.Request) {
 
-	w.Header().Set("Content-Type", "text/html; charset=utf-8")
+	helper := func(err error, msg string) {
+		err = errors.Wrap(err, msg)
+		log.Print(err)
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+	}
 
 	sess := sessx.New(w, r, sessionManager)
-	login := sess.EffectiveParam("login")
 
-	content := ``
-	if login != "" {
-		content += fmt.Sprintf("Username is %v<br>\n", login)
+	var q = &tQuestionaire{}
+	ok, err := sess.EffectiveParamObj("questionaire", q)
+	if err != nil {
+		helper(err, "Reading questionaire from session caused error")
+		return
 	}
-	content = strings.Replace(content, "[urlprefix]", cfg.Val("urlPrefix"), -1)
+	if ok {
+		log.Printf("Questionaire loaded from session; %v pages", len(q.Pages))
+	} else {
+		q, err = LoadQuestionaire("questionaire.json")
+		if err != nil {
+			helper(err, "Loading questionaire from file caused error")
+			return
+		}
+		err = q.Validate()
+		if err != nil {
+			helper(err, "Questionaire validation caused error")
+			return
+		}
+		log.Printf("Questionaire loaded from file; %v pages", len(q.Pages))
+	}
 
-	quest := generateExample()
+	//
+	prevPage, ok, err := sess.EffectiveParamInt("curr_page")
+	if err != nil {
+		helper(err, "Reading request parameter caused error")
+		return
+	}
+	submit := sess.EffectiveParam("submit")
+	log.Printf("submit is '%v'", submit)
 
-	err := tpl.Get(w, r, sessionManager).Execute(
+	currPage := q.CurrPage
+	if submit == "prev" {
+		currPage = q.Prev()
+	}
+	if submit == "next" {
+		currPage = q.Next()
+	}
+
+	if err == nil && ok {
+		q.CurrPage = currPage
+	}
+
+	// Todo: Parse POST request and put values into q
+	if q.Pages[prevPage].Finished.IsZero() {
+		q.Pages[prevPage].Finished = time.Now()
+	}
+	// q.Pages[1].Elements[0].Response += " aa"
+	for i := 0; i < len(q.Pages[prevPage].Elements); i++ {
+		key := q.Pages[prevPage].Elements[i].Name
+		val := sess.EffectiveParam(key)
+		log.Printf("(Page#%2v) Setting '%v' to '%v'", prevPage, key, val)
+		ok, _ := sess.Exists(key)
+		if ok {
+			q.Pages[prevPage].Elements[i].Response = val
+		}
+	}
+
+	//
+	if ok := sess.EffectiveParamIsSet("lang_code"); !ok {
+		sess.PutString("lang_code", q.LangCode)
+	}
+
+	//
+	err = sess.PutObject("questionaire", q)
+	if err != nil {
+		helper(err, "Putting questionaire into session caused error")
+		return
+	}
+
+	content := strings.Replace("<a href='[urlprefix]/'>Home</a>", "[urlprefix]", cfg.Val("urlPrefix"), -1)
+	content = "<br>" + content + "<br>"
+
+	w.Header().Set("Content-Type", "text/html; charset=utf-8")
+	err = tpl.Get(w, r, sessionManager).Execute(
 		w,
 		TplDataT{
 			HtmlTitle:    cfg.Get().AppName,
-			Cnt:          content,
-			P:            quest.Pages[0],
+			CntBefore:    content,
+			CntAfter:     content,
 			TemplateName: "ct01.html",
+			Q:            q,
 		},
 	)
 	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
+		helper(err, "Executing template caused error")
 		return
 	}
 

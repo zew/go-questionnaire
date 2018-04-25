@@ -3,14 +3,11 @@ package cfg
 import (
 	"encoding/hex"
 	"encoding/json"
-	"fmt"
-	"io/ioutil"
 	"log"
 	"net/http"
 	"os"
 	"path"
 	"sync"
-	"time"
 
 	"golang.org/x/crypto/md4"
 
@@ -35,12 +32,14 @@ type configT struct {
 	MaxDownloadRequestsPerMin int `json:"max_download_requests_per_min"`
 }
 
-var c configT
+var c = &configT{}
 
 func Get() *configT {
-	c.Lock()
-	defer c.Unlock()
-	return &c
+	// I am not sure, whether we need locks here.
+	// Since in Load(), we simply exchange one pointer by another at the end of loading
+	// c.Lock()
+	// defer c.Unlock()
+	return c
 }
 func Val(s string) string {
 	c.Lock()
@@ -52,35 +51,6 @@ func init() {
 	Load()
 }
 
-func Save() {
-	c.Lock()
-	defer c.Unlock()
-	workDir, err := os.Getwd()
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	firstColLeftMostPrefix := " "
-	byts, err := json.MarshalIndent(c, firstColLeftMostPrefix, "\t")
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	pthOld := path.Join(workDir, "config.json")
-	pthNew := path.Join(workDir, fmt.Sprintf("config_%v.json", time.Now().Unix()))
-
-	err = os.Rename(pthOld, pthNew)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	err = ioutil.WriteFile(pthOld, byts, 0644)
-	if err != nil {
-		log.Fatal(err)
-	}
-	log.Printf("Saved config file: %v", pthOld)
-
-}
 func Load() {
 	c.Lock()
 	defer c.Unlock()
@@ -104,22 +74,20 @@ func Load() {
 	log.Printf("found config file: %v", pth)
 
 	decoder := json.NewDecoder(file)
-	err = decoder.Decode(&c)
+	tempCfg := &configT{}
+	err = decoder.Decode(tempCfg)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	log.Printf("\n%#s", util.IndentedDump(c))
+	log.Printf("\n%#s", util.IndentedDump(tempCfg))
+	c = tempCfg
 }
 
 //
 
 func LoadH(w http.ResponseWriter, r *http.Request) {
 	Load()
-}
-
-func SaveH(w http.ResponseWriter, r *http.Request) {
-	Save()
 }
 
 func Md4Str(buf []byte) string {

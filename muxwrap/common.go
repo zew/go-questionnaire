@@ -25,6 +25,8 @@ func paramPersister(r *http.Request, sess *sessx.TSess) {
 	}
 
 	keysToPersist := []string{"session-test-key", "request-test-key"}
+	keysToPersist = append(keysToPersist, "curr_page")
+	keysToPersist = append(keysToPersist, "lang_code")
 	for _, key := range keysToPersist {
 		if reqVal, ok := sess.RequestParamIsSet(key); ok {
 			lg.Printf("\tsess key SET  %17v is %-16v", key, reqVal)

@@ -83,6 +83,11 @@ textarea{
 	white-space:pre !important;  /*prevent inheritance of nowrap from surrounding */
 }
 
+button{
+	padding: 4px 12px;
+	margin: 4px 6px;
+}
+
 
 input:valid {
 	background-color:#fff;

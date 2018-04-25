@@ -32,7 +32,7 @@ func New(w http.ResponseWriter, r *http.Request, mgr *scs.Manager) TSess {
 // with subsequent parsing into an int
 func (sess *TSess) EffectiveParamInt(key string, defaultVal ...int) (int, bool, error) {
 
-	s, ok := sess.EffectiveParamIsSet(key)
+	ok := sess.EffectiveParamIsSet(key)
 	if !ok {
 		if len(defaultVal) > 0 {
 			return defaultVal[0], false, nil
@@ -41,6 +41,7 @@ func (sess *TSess) EffectiveParamInt(key string, defaultVal ...int) (int, bool, 
 		}
 	}
 
+	s := sess.EffectiveParam(key)
 	if s == "" {
 		if len(defaultVal) > 0 {
 			return defaultVal[0], true, nil
@@ -62,7 +63,7 @@ func (sess *TSess) EffectiveParamInt(key string, defaultVal ...int) (int, bool, 
 // with subsequent parsing into float
 func (sess *TSess) EffectiveParamFloat(key string, defaultVal ...float64) (float64, bool, error) {
 
-	s, ok := sess.EffectiveParamIsSet(key)
+	ok := sess.EffectiveParamIsSet(key)
 	if !ok {
 		if len(defaultVal) > 0 {
 			return defaultVal[0], false, nil
@@ -71,6 +72,7 @@ func (sess *TSess) EffectiveParamFloat(key string, defaultVal ...float64) (float
 		}
 	}
 
+	s := sess.EffectiveParam(key)
 	if s == "" {
 		if len(defaultVal) > 0 {
 			return defaultVal[0], true, nil
@@ -86,6 +88,20 @@ func (sess *TSess) EffectiveParamFloat(key string, defaultVal ...float64) (float
 
 	return fl, true, nil
 
+}
+
+// EffectiveParamInt is a wrapper around EffectiveParam
+// with subsequent parsing into an int
+func (sess *TSess) EffectiveParamObj(key string, obj interface{}) (bool, error) {
+	ok := sess.EffectiveParamIsSet(key)
+	if !ok {
+		return false, nil
+	}
+	err := sess.GetObject(key, obj)
+	if err != nil {
+		return false, err
+	}
+	return true, nil
 }
 
 // EffectiveParamIsSet searches for the effective value
@@ -127,33 +143,47 @@ func (sess *TSess) RequestParamIsSet(key string, defaultVal ...string) (string, 
 // First among inside the current request via RequestParamIsSet()
 // Then inside the session.
 //
-// It checks, whether session had the param
-// key set to *empty* string.
+// RequestParamIsSet returns the param value as string.
+// But from session level, there could be integers, floats or even objects.
+//
 //
 // If ParamPersisterMiddleWare is in action,
-// then all params are condensed to session level.
-// But we usually dont want to persist *all* params,
-// and we dont want to register ParamPersisterMiddleWare
-// for all routes.
-func (sess *TSess) EffectiveParamIsSet(key string, defaultVal ...string) (string, bool) {
+// then a few designated params are saved to session level.
+func (sess *TSess) EffectiveParamIsSet(key string) bool {
 
-	p, ok := sess.RequestParamIsSet(key, defaultVal...)
+	_, ok := sess.RequestParamIsSet(key)
 	if ok {
-		return p, true
-	}
-
-	// Session
-	p, err := sess.GetString(key)
-	util.CheckErr(err)
-	if p != "" {
-		return p, true
+		return true
 	}
 
 	// Session was set, but with empty string?
 	exists, err := sess.Exists(key)
 	util.CheckErr(err)
 	if exists {
-		return p, true
+		return true
+	}
+
+	return false
+
+}
+
+// Returns zero value, regardless whether the param was set or not.
+func (sess *TSess) EffectiveParam(key string, defaultVal ...string) string {
+
+	// Request
+	p, ok := sess.RequestParamIsSet(key, defaultVal...)
+	if ok {
+		return p
+	}
+
+	// Session
+	// Session was set, but with empty string?
+	exists, err := sess.Exists(key)
+	util.CheckErr(err)
+	if exists {
+		p, err := sess.GetString(key)
+		util.CheckErr(err)
+		return p
 	}
 
 	// default
@@ -161,22 +191,22 @@ func (sess *TSess) EffectiveParamIsSet(key string, defaultVal ...string) (string
 	if len(defaultVal) > 0 {
 		def = defaultVal[0]
 	}
-	// logx.Debugf(r,"!Found & returns the def: %s", def)
-	return def, false
-
+	return def
 }
 
 // Returns zero value, regardless whether the param was set or not.
-func (sess *TSess) EffectiveParam(key string, defaultVal ...string) string {
-	ret, _ := sess.EffectiveParamIsSet(key, defaultVal...)
-	return ret
-}
-
-// Returns zero value, regardless whether the param was set or not.
-func (sess *TSess) PutString(key, val string) {
+func (sess *TSess) PutString(key, val string) error {
 	err := sess.Session.PutString(sess.w, key, val)
 	if err != nil {
-		log.Fatalf("Put session key session-key => session-value failed: %v", err)
+		log.Fatalf("Put session session-key %v failed: %v", key, err)
 	}
-	// log.Printf("PutString: %v => %v", key, val)
+	return err
+}
+
+func (sess *TSess) PutObject(key string, val interface{}) error {
+	err := sess.Session.PutObject(sess.w, key, val)
+	if err != nil {
+		log.Fatalf("Put session session-key %v (object) failed: %v", key, err)
+	}
+	return err
 }

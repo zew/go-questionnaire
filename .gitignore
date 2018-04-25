@@ -7,3 +7,4 @@
 *.pem
 # temporary
 example-questionaire.json
+*questionaire*.json

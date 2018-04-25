@@ -69,7 +69,6 @@ func main() {
 	//
 	// Standard handlers
 	mux1.HandleFunc(prefix("/"), mainH)
-	mux1.HandleFunc(prefix("/config-save"), cfg.SaveH)
 	mux1.HandleFunc(prefix("/config-reload"), cfg.LoadH)
 	mux1.HandleFunc(prefix("/session-put"), sessionPut)
 	mux1.HandleFunc(prefix("/session-get"), sessionGet)

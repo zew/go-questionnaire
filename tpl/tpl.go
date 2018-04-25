@@ -16,6 +16,7 @@ import (
 var staticTplFuncs = template.FuncMap{
 	"toHtml": func(arg string) template.HTML { return template.HTML(arg) },
 	"cfgVal": func(arg string) string { return cfg.Val(arg) },
+	"addint": func(i1, i2 int) int { return i1 + i2 },
 	// dummies, to make parsing work
 	"executeTemplate": func(name string, data interface{}) (ret template.HTML, err error) { return },
 	"sess":            func() (sess sessx.TSess, err error) { return },

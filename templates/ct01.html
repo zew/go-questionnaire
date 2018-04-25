@@ -1,3 +1,6 @@
-content 1
-     {{toHtml .P.HTML }}
+<!--
+    {{$lc := sess.EffectiveParam "lang_code"}}
+    Langcode is -{{$lc}}-
+-->
+    {{toHtml  (.Q.CurrentPageHTML) }}
 

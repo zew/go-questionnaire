@@ -96,8 +96,8 @@ func newPage() tPage {
 
 type tQuestionaire struct {
 	Pages     []tPage           `json:"pages,omitempty"`
-	LangCodes map[string]string `json:"lang_codes"`        // all possible lang codes - i.e. en, de
-	LangCode  string            `json:"lang_code_default"` // default lang code - i.e. de
+	LangCodes map[string]string `json:"lang_codes"` // all possible lang codes - i.e. en, de
+	LangCode  string            `json:"lang_code"`  // default lang code - and current lang code - i.e. de
 
 	CurrPage int `json:"curr_page,omitempty"`
 }
@@ -105,7 +105,7 @@ type tQuestionaire struct {
 func (q *tQuestionaire) Validate() error {
 
 	if q.LangCode == "" {
-		s := fmt.Sprintf("Language code must be one of %v", q.LangCodes)
+		s := fmt.Sprintf("Language code is empty. Must be one of %v", q.LangCodes)
 		log.Printf(s)
 		return fmt.Errorf(s)
 	}
@@ -113,6 +113,21 @@ func (q *tQuestionaire) Validate() error {
 		s := fmt.Sprintf("Language code '%v' is not supported in %v", q.LangCode, q.LangCodes)
 		log.Printf(s)
 		return fmt.Errorf(s)
+	}
+
+	names := map[string]int{}
+	for i1 := 0; i1 < len(q.Pages); i1++ {
+		for i2 := 0; i2 < len(q.Pages[i1].Elements); i2++ {
+			name := q.Pages[i1].Elements[i2].Name
+			names[name]++
+		}
+	}
+	for k, v := range names {
+		if v > 1 {
+			s := fmt.Sprintf("Page element %v is not unique  (%v)", k, v)
+			log.Printf(s)
+			return fmt.Errorf(s)
+		}
 	}
 
 	return nil

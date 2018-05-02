@@ -1,3 +1,5 @@
+// +build !appengine
+
 package main
 
 import (
@@ -7,41 +9,43 @@ import (
 	"log"
 	"math/rand"
 	"net/http"
-	"path"
-	"strings"
 	"time"
 
 	"github.com/zew/questionaire/cfg"
+	"github.com/zew/questionaire/lgn"
 	"github.com/zew/questionaire/muxwrap"
-
-	"github.com/alexedwards/scs"
-	"github.com/alexedwards/scs/stores/cookiestore" // encrypted cookie
-	"github.com/alexedwards/scs/stores/memstore"    // fast, but sessions do not survive server restart
+	"github.com/zew/questionaire/sessx"
+	"github.com/zew/questionaire/tpl"
+	"github.com/zew/util"
 )
-
-var sessionManager1 = scs.NewManager(cookiestore.New([]byte("u46IpCV9y5Vl332168vODJEhgOY8m9JVE4")))
-var sessionManager2 = scs.NewManager(memstore.New(2 * time.Hour))
-var sessionManager = sessionManager2
-
-func prefix(a ...string) string {
-	pref := cfg.Val("urlPrefix")
-	if pref == "" {
-		ret := path.Join(a...)
-		if !strings.HasSuffix(ret, "/") {
-			return ret + "/"
-		}
-		return ret
-	}
-
-	ret := path.Join(a...)
-	ret = path.Join(pref, ret)
-	return ret + "/"
-}
 
 func main() {
 
 	rand.Seed(time.Now().UTC().UnixNano())
 	log.SetFlags(log.Lshortfile | log.Ldate | log.Ltime)
+
+	fl := util.NewFlags()
+	fl.Add(
+		util.FlagT{
+			Long:       "config_file",
+			Short:      "cfg",
+			DefaultVal: "config.json",
+			Desc:       "JSON file containing config data",
+		},
+	)
+	fl.Add(
+		util.FlagT{
+			Long:       "logins_file",
+			Short:      "lgn",
+			DefaultVal: "logins.json",
+			Desc:       "JSON file containing logins data",
+		},
+	)
+	fl.Gen()
+	cfg.CfgPath = (*fl)[0].Val
+	cfg.Load()
+	lgn.LgnsPath = (*fl)[1].Val
+	lgn.Load()
 
 	//
 	generateExample()
@@ -50,28 +54,41 @@ func main() {
 	//
 	// Http server
 	mux1 := http.NewServeMux() // base router
+
+	// Add static file serving to the base router.
+	// Static requests will also trigger the middleware funcs below.
 	staticDirs := []string{"/img", "/js"}
 	for _, v := range staticDirs {
-		mux1.HandleFunc(prefix(v), staticDownloadH)
-		log.Printf("static service %-20v => /static/[stripped:%v]%v", prefix(v), cfg.Val("appMnemonic"), v)
+		mux1.HandleFunc(cfg.Pref(v), tpl.StaticDownloadH)
+		mux1.HandleFunc(cfg.PrefWTS(v), tpl.StaticDownloadH)
+		log.Printf("static service %-20v => /static/[stripped:%v]%v", cfg.Pref(v), cfg.Get().AppMnemonic, v)
 	}
 	serveIcon := func(w http.ResponseWriter, r *http.Request) {
 		bts, _ := ioutil.ReadFile("./static/img/ui/favicon.ico")
 		w.Write(bts)
 	}
 	mux1.HandleFunc("/favicon.ico", serveIcon)
-	mux1.HandleFunc(prefix("favicon.ico"), serveIcon)
+	mux1.HandleFunc(cfg.Pref("favicon.ico"), serveIcon)
+	mux1.HandleFunc(cfg.PrefWTS("favicon.ico"), serveIcon)
 
 	//
 	// Extra handler for dynamic css
-	mux1.HandleFunc(prefix("/css/design.css"), serveCss)
+	mux1.HandleFunc(cfg.Pref("/css/design.css"), ServeDynCss)
+	mux1.HandleFunc(cfg.PrefWTS("/css/design.css"), ServeDynCss)
 
 	//
 	// Standard handlers
-	mux1.HandleFunc(prefix("/"), mainH)
-	mux1.HandleFunc(prefix("/config-reload"), cfg.LoadH)
-	mux1.HandleFunc(prefix("/session-put"), sessionPut)
-	mux1.HandleFunc(prefix("/session-get"), sessionGet)
+	tpl.CreateAndRegisterHandlerForDocs(mux1)
+	mux1.HandleFunc("/", mainH)
+	mux1.HandleFunc(cfg.Pref("/"), mainH)
+	mux1.HandleFunc(cfg.PrefWTS("/"), mainH)
+
+	mux1.HandleFunc(cfg.Pref("/session-put"), sessx.SessionPut)
+	mux1.HandleFunc(cfg.Pref("/session-get"), sessx.SessionGet)
+	mux1.HandleFunc(cfg.Pref("/config-reload"), cfg.LoadH)
+	mux1.HandleFunc(cfg.Pref("/login-save"), lgn.SaveH)
+	mux1.HandleFunc(cfg.Pref("/login-reload"), lgn.LoadH)
+	mux1.HandleFunc(cfg.Pref("/generate-password"), lgn.GeneratePasswordH)
 
 	//
 	// Session manager and session management.
@@ -86,26 +103,26 @@ func main() {
 	// mux1 first in mux2, then in mux3
 	//
 	// => Wrap the base router into an unconditional middleware
-	mux2 := muxwrap.NewHandlerMiddleware(mux1, sessionManager)
+	mux2 := muxwrap.NewHandlerMiddleware(mux1)
 	// => Wrap in mux2 in session manager
-	sessionManager.Secure(true)            // true breaks session persistence in exceldb - but not in fmtdownload
-	sessionManager.Lifetime(2 * time.Hour) // default is 24 hours
-	sessionManager.Persist(false)
-	mux3 := sessionManager.Use(mux2)
+	sessx.Mgr().Secure(true)            // true breaks session persistence in excel-db - but not in fmtdownload
+	sessx.Mgr().Lifetime(2 * time.Hour) // default is 24 hours
+	sessx.Mgr().Persist(false)
+	mux3 := sessx.Mgr().Use(mux2)
 
 	//
 	// Prepare web server launch
-	IpPort := fmt.Sprintf("%v:%v", cfg.Val("BindHost"), cfg.Val("BindSocket"))
-	log.Printf("starting http server at %v ... (Forward from %v)", IpPort, cfg.Val("BindSocketFallbackHttp"))
+	IpPort := fmt.Sprintf("%v:%v", cfg.Get().BindHost, cfg.Get().BindSocket)
+	log.Printf("starting http server at %v ... (Forward from %v)", IpPort, cfg.Get().BindSocketFallbackHttp)
 
 	//
-	if cfg.Val("Tls") != "" {
+	if cfg.Get().Tls {
 		fallbackSrv := &http.Server{
 			ReadTimeout: time.Duration(cfg.Get().HttpReadTimeOut) * time.Second,
 			// ReadHeaderTimeout:  120 * time.Second,  // individual request can control body timeout
 			WriteTimeout: time.Duration(cfg.Get().HttpWriteTimeOut) * time.Second,
 			IdleTimeout:  120 * time.Second,
-			Addr:         cfg.Val("BindSocketFallbackHttp"),
+			Addr:         cfg.Get().BindSocketFallbackHttp,
 			Handler: http.HandlerFunc(func(w http.ResponseWriter, req *http.Request) {
 				w.Header().Set("Connection", "close")
 				url := "https://" + req.Host + req.URL.String()
@@ -132,10 +149,13 @@ func main() {
 				tls.TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305,
 				tls.TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,
 				tls.TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,
-				// Best disabled, as they don't provide Forward Secrecy, but might be necessary for some clients
-				// tls.TLS_RSA_WITH_AES_256_GCM_SHA384,
-				// tls.TLS_RSA_WITH_AES_128_GCM_SHA256,
 			},
+		}
+		if cfg.Get().Tls13 {
+			// Best disabled, as they don't provide Forward Secrecy,
+			// but might be necessary for some clients, i.e. Internet Explorer 11
+			tlsCfg.CipherSuites = append(tlsCfg.CipherSuites, tls.TLS_RSA_WITH_AES_256_GCM_SHA384)
+			tlsCfg.CipherSuites = append(tlsCfg.CipherSuites, tls.TLS_RSA_WITH_AES_128_GCM_SHA256)
 		}
 
 		// err = http.ListenAndServeTLS(IpPort, "server.pem", "server.key", mux3)
@@ -149,10 +169,10 @@ func main() {
 			Handler:      mux3,
 		}
 
-		// Checking the modulus
-		// openssl x509 -noout -modulus -in fmtdownload.pem
-		// openssl rsa -check -noout -modulus -in fmtdownload.key
-		log.Fatal(srv.ListenAndServeTLS("fmtdownload.pem", "fmtdownload.key"))
+		// Checking the modulus; pem is a Privacy Enhanced Mail Certificate file
+		// openssl x509 -noout -modulus -in cert.pem
+		// openssl rsa -check -noout -modulus -in cert.key
+		log.Fatal(srv.ListenAndServeTLS("cert.pem", "cert.key"))
 	} else {
 		log.Fatal(http.ListenAndServe(IpPort, mux3))
 	}

@@ -1,0 +1,14 @@
+{
+ 	"salt": "your salt here!!!",
+ 	"logins": [
+ 		{
+ 			"user": "myUser",
+ 			"email": "mail@example.com",
+ 			"roles": {
+ 				"readonly": "key decides; value reserved"
+ 			},
+ 			"pass_initial": "use generate password to set initial passw",
+ 			"is_init_password": true
+ 		}
+ 	]
+ }

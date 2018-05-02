@@ -1,3 +1,8 @@
+// Package tpl parses all templates into a base template;
+// then each request receives a clone of the base
+// complemented with request specific template funcs;
+// executeTemplate(dynamicName, data) replaces the static
+// template(constantName) func.
 package tpl
 
 import (
@@ -7,19 +12,18 @@ import (
 	"net/http"
 	"sync"
 
-	"github.com/alexedwards/scs"
-
 	"github.com/zew/questionaire/cfg"
 	"github.com/zew/questionaire/sessx"
 )
 
 var staticTplFuncs = template.FuncMap{
 	"toHtml": func(arg string) template.HTML { return template.HTML(arg) },
-	"cfgVal": func(arg string) string { return cfg.Val(arg) },
+	"prefix": cfg.Pref,
+	"cfg":    func() *cfg.ConfigT { return cfg.Get() },
 	"addint": func(i1, i2 int) int { return i1 + i2 },
 	// dummies, to make parsing work
 	"executeTemplate": func(name string, data interface{}) (ret template.HTML, err error) { return },
-	"sess":            func() (sess sessx.TSess, err error) { return },
+	"sess":            func() (sess sessx.SessT, err error) { return },
 }
 
 func StaticFuncMap() template.FuncMap {
@@ -67,7 +71,7 @@ func (bt *baseTplT) Parse() *template.Template {
 	return bt.Template
 }
 
-func Get(w http.ResponseWriter, r *http.Request, sessionManager *scs.Manager) *template.Template {
+func Get(w http.ResponseWriter, r *http.Request) *template.Template {
 
 	if !cfg.Get().IsProduction {
 		bt.IsParsed = false
@@ -98,8 +102,8 @@ func Get(w http.ResponseWriter, r *http.Request, sessionManager *scs.Manager) *t
 	}
 	// response writer + request specific closure
 	// Use sess.EffectiveParam("name") => sess.EffectiveParam "session-test-key"
-	mp["sess"] = func() (sess *sessx.TSess, err error) {
-		sessVal := sessx.New(w, r, sessionManager)
+	mp["sess"] = func() (sess *sessx.SessT, err error) {
+		sessVal := sessx.New(w, r)
 		sess = &sessVal
 		return
 	}

@@ -4,154 +4,57 @@
 package sessx
 
 import (
+	"fmt"
 	"log"
 	"net/http"
 	"strconv"
+	"time"
 
 	"github.com/zew/util"
 
 	"github.com/alexedwards/scs"
+	"github.com/alexedwards/scs/stores/cookiestore" // encrypted cookie
+	"github.com/alexedwards/scs/stores/memstore"    // fast, but sessions do not survive server restart
 )
 
-type TSess struct {
+var key = "rSRYHsYd2di3PWTDp3fhMTdZCwE5Ne8TxX!" // lgn.GeneratePassword(35)
+var sessionManager1 = scs.NewManager(cookiestore.New([]byte(key)))
+var sessionManager2 = scs.NewManager(memstore.New(2 * time.Hour))
+var sessionManager = sessionManager2
+
+func Mgr() *scs.Manager {
+	return sessionManager
+}
+
+type SessT struct {
 	scs.Session
 	w http.ResponseWriter
 	r *http.Request
 }
 
-func New(w http.ResponseWriter, r *http.Request, mgr *scs.Manager) TSess {
-	sess := mgr.Load(r)
-	return TSess{
+func New(w http.ResponseWriter, r *http.Request) SessT {
+	sess := sessionManager.Load(r)
+	return SessT{
 		w:       w,
 		r:       r,
 		Session: *sess,
 	}
 }
 
-// EffectiveParamInt is a wrapper around EffectiveParam
-// with subsequent parsing into an int
-func (sess *TSess) EffectiveParamInt(key string, defaultVal ...int) (int, bool, error) {
-
-	ok := sess.EffectiveParamIsSet(key)
-	if !ok {
-		if len(defaultVal) > 0 {
-			return defaultVal[0], false, nil
-		} else {
-			return 0, false, nil
-		}
-	}
-
-	s := sess.EffectiveParam(key)
-	if s == "" {
-		if len(defaultVal) > 0 {
-			return defaultVal[0], true, nil
-		} else {
-			return 0, true, nil
-		}
-	}
-
-	i, err := strconv.Atoi(s)
-	if err != nil {
-		return 0, true, err
-	}
-
-	return i, true, err
-
-}
-
-// EffectiveParamFloat is a wrapper around EffectiveParam
-// with subsequent parsing into float
-func (sess *TSess) EffectiveParamFloat(key string, defaultVal ...float64) (float64, bool, error) {
-
-	ok := sess.EffectiveParamIsSet(key)
-	if !ok {
-		if len(defaultVal) > 0 {
-			return defaultVal[0], false, nil
-		} else {
-			return 0.0, false, nil
-		}
-	}
-
-	s := sess.EffectiveParam(key)
-	if s == "" {
-		if len(defaultVal) > 0 {
-			return defaultVal[0], true, nil
-		} else {
-			return 0.0, true, nil
-		}
-	}
-
-	fl, err := strconv.ParseFloat(s, 64)
-	if err != nil {
-		return 0.0, true, err
-	}
-
-	return fl, true, nil
-
-}
-
-// EffectiveParamInt is a wrapper around EffectiveParam
-// with subsequent parsing into an int
-func (sess *TSess) EffectiveParamObj(key string, obj interface{}) (bool, error) {
-	ok := sess.EffectiveParamIsSet(key)
-	if !ok {
-		return false, nil
-	}
-	err := sess.GetObject(key, obj)
-	if err != nil {
-		return false, err
-	}
-	return true, nil
-}
-
-// EffectiveParamIsSet searches for the effective value
-// of the request.
-// First among the POST fields.
-// Then among the URL "path" parameters.
-// Then among the URL GET parameters.
-//
-// It checks, whether whether any of the above had the param
-// key set to *empty* string.
-func (sess *TSess) RequestParamIsSet(key string, defaultVal ...string) (string, bool) {
-
-	p := ""
-
-	// Which to call: r.ParseForm() or r.ParseMultipartForm(1024*1024)
-	// https://blog.saush.com/2015/03/18/html-forms-and-go/
-	_ = sess.r.PostFormValue("impossibleKey") // hopefully causing the right parsing
-
-	// POST Param overrides GET param
-	posts := sess.r.PostForm
-	if _, ok := posts[key]; ok {
-		return posts.Get(key), true
-	}
-
-	// Path Param
-	// [deleted]
-
-	// URL Get Param
-	gets := sess.r.URL.Query()
-	if _, ok := gets[key]; ok {
-		return gets.Get(key), true
-	}
-
-	return p, false
-
-}
-
-// EffectiveParamIsSet searches for the effective value.
-// First among inside the current request via RequestParamIsSet()
+// EffectiveIsSet checks, whether a key is set.
+// First inside the current request via RequestParamIsSet()
 // Then inside the session.
 //
 // RequestParamIsSet returns the param value as string.
-// But from session level, there could be integers, floats or even objects.
+// But EffectiveIsSet refers to different types in session:
+// integers, floats or objects.
 //
 //
 // If ParamPersisterMiddleWare is in action,
-// then a few designated params are saved to session level.
-func (sess *TSess) EffectiveParamIsSet(key string) bool {
+// then a few designated session params are always set.
+func (sess *SessT) EffectiveIsSet(key string) bool {
 
-	_, ok := sess.RequestParamIsSet(key)
+	_, ok := sess.ReqParam(key)
 	if ok {
 		return true
 	}
@@ -168,10 +71,10 @@ func (sess *TSess) EffectiveParamIsSet(key string) bool {
 }
 
 // Returns zero value, regardless whether the param was set or not.
-func (sess *TSess) EffectiveParam(key string, defaultVal ...string) string {
+func (sess *SessT) EffectiveStr(key string, defaultVal ...string) string {
 
 	// Request
-	p, ok := sess.RequestParamIsSet(key, defaultVal...)
+	p, ok := sess.ReqParam(key, defaultVal...)
 	if ok {
 		return p
 	}
@@ -194,8 +97,82 @@ func (sess *TSess) EffectiveParam(key string, defaultVal ...string) string {
 	return def
 }
 
+// EffectiveInt is a wrapper around EffectiveStr
+// with subsequent parsing into an int
+func (sess *SessT) EffectiveInt(key string, defaultVal ...int) (int, bool, error) {
+
+	ok := sess.EffectiveIsSet(key)
+	if !ok {
+		if len(defaultVal) > 0 {
+			return defaultVal[0], false, nil
+		} else {
+			return 0, false, nil
+		}
+	}
+
+	s := sess.EffectiveStr(key)
+	if s == "" {
+		if len(defaultVal) > 0 {
+			return defaultVal[0], true, nil
+		} else {
+			return 0, true, nil
+		}
+	}
+
+	i, err := strconv.Atoi(s)
+	if err != nil {
+		return 0, true, err
+	}
+
+	return i, true, err
+
+}
+
+// EffectiveFloat is a wrapper around EffectiveStr
+// with subsequent parsing into float
+func (sess *SessT) EffectiveFloat(key string, defaultVal ...float64) (float64, bool, error) {
+
+	ok := sess.EffectiveIsSet(key)
+	if !ok {
+		if len(defaultVal) > 0 {
+			return defaultVal[0], false, nil
+		} else {
+			return 0.0, false, nil
+		}
+	}
+
+	s := sess.EffectiveStr(key)
+	if s == "" {
+		if len(defaultVal) > 0 {
+			return defaultVal[0], true, nil
+		} else {
+			return 0.0, true, nil
+		}
+	}
+
+	fl, err := strconv.ParseFloat(s, 64)
+	if err != nil {
+		return 0.0, true, err
+	}
+
+	return fl, true, nil
+
+}
+
+func (sess *SessT) EffectiveObj(key string, obj interface{}) (bool, error) {
+	ok := sess.EffectiveIsSet(key)
+	if !ok {
+		return false, nil
+	}
+	err := sess.GetObject(key, obj)
+	if err != nil {
+		return false, err
+	}
+	return true, nil
+}
+
 // Returns zero value, regardless whether the param was set or not.
-func (sess *TSess) PutString(key, val string) error {
+func (sess *SessT) PutString(key, val string) error {
 	err := sess.Session.PutString(sess.w, key, val)
 	if err != nil {
 		log.Fatalf("Put session session-key %v failed: %v", key, err)
@@ -203,10 +180,26 @@ func (sess *TSess) PutString(key, val string) error {
 	return err
 }
 
-func (sess *TSess) PutObject(key string, val interface{}) error {
+func (sess *SessT) PutObject(key string, val interface{}) error {
 	err := sess.Session.PutObject(sess.w, key, val)
 	if err != nil {
 		log.Fatalf("Put session session-key %v (object) failed: %v", key, err)
 	}
 	return err
+}
+
+func SessionPut(w http.ResponseWriter, r *http.Request) {
+	sess := New(w, r)
+	sess.PutString("session-test-key", "session-test-value")
+	w.Write([]byte("session[session-test-key] set to session-test-value"))
+}
+
+func SessionGet(w http.ResponseWriter, r *http.Request) {
+	sess := New(w, r)
+	val1 := sess.EffectiveStr("session-test-key")
+	cnt1 := fmt.Sprintf("session-test-key is %v<br>\n", val1)
+	w.Write([]byte(cnt1))
+	val2 := sess.EffectiveStr("request-test-key")
+	cnt2 := fmt.Sprintf("request-test-key is %v<br>\n", val2)
+	w.Write([]byte(cnt2))
 }

@@ -19,8 +19,9 @@ case "$1" in
 				else
 						echo "Starting $INSTANZ"
 						cd $BPDIR
-						#     ./questionaire > $LOGFILE 2>&1 &
-						nohup ./questionaire > $LOGFILE 2>&1 &
+						#  stackoverflow.com/questions/4699790/
+						#  nohup ./questionaire 1>/var/log/out.log 2>/var/log/err.log &
+						nohup    ./questionaire > $LOGFILE 2>&1 &
 
 						# Alternative: stdout and stderr into /dev/null
 						# nohup ./questionaire &> /dev/null &

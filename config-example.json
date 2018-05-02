@@ -1,0 +1,14 @@
+{
+ 	"is_production": false,
+ 	"app_name": "My Example App Label",
+ 	"urlpath_prefix": "exmpl",
+ 	"app_mnemonic": "exmpl",
+ 	"bind_host": "0.0.0.0",
+ 	"bind_socket": "8081",
+ 	"bind_socket_fallback_http": "8082",
+ 	"tls": false,
+ 	"tls13": false,
+ 	"http_read_time_out": 5,
+ 	"http_write_time_out": 30,
+ 	"css": null
+ }

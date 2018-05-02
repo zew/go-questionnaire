@@ -10,8 +10,6 @@ import (
 	"github.com/zew/logx"
 	"github.com/zew/questionaire/sessx"
 	"github.com/zew/util"
-
-	"github.com/alexedwards/scs"
 )
 
 // The wrapper has two characteristics
@@ -20,15 +18,13 @@ import (
 // http ListenAndServe and ListenAndServeTLS each dont
 // need a mux; they only need http handler.
 type handlerWrapper struct {
-	h       http.Handler
-	sessMgr *scs.Manager
+	h http.Handler
 }
 
 // MuxWrap returns a new http handlerfunc.
-func NewHandlerMiddleware(innerHandler http.Handler, sm *scs.Manager) http.Handler {
+func NewHandlerMiddleware(innerHandler http.Handler) http.Handler {
 	m := &handlerWrapper{
-		h:       innerHandler,
-		sessMgr: sm,
+		h: innerHandler,
 	}
 	return m
 }
@@ -50,7 +46,7 @@ func (m *handlerWrapper) ServeHTTP(w http.ResponseWriter, rNew *http.Request) {
 	}
 
 	// Global session stuff
-	sess := sessx.New(w, rNew, m.sessMgr)
+	sess := sessx.New(w, rNew)
 	sess.PutString("session-test-key", "session-test-value")
 	paramPersister(rNew, &sess) // before creating first state
 

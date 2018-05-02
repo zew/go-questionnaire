@@ -1,10 +1,19 @@
-*.exe
-*.exe~
-*.fdb
 *.log
-*.cert
+*.lnk
 *.key
 *.pem
-# temporary
-example-questionaire.json
-*questionaire*.json
+*.cert
+*.exe
+*.exe~
+questionaire
+*.fdb
+setenv*.sh
+setenv*.bat
+!setenv_example.bat
+!setenv_example.sh
+*.json
+!config-example.json
+!logins-example.json
+tmp/*
+tmp*
+profiles/*

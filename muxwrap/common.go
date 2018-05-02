@@ -16,7 +16,7 @@ var lg = log.New(os.Stdout, "middleware ", log.Lshortfile|log.Ltime) // Logger w
 //
 // We call this once at request start
 // to persist params into the session
-func paramPersister(r *http.Request, sess *sessx.TSess) {
+func paramPersister(r *http.Request, sess *sessx.SessT) {
 
 	// Excluding static files
 	// from being middlewared.
@@ -25,10 +25,10 @@ func paramPersister(r *http.Request, sess *sessx.TSess) {
 	}
 
 	keysToPersist := []string{"session-test-key", "request-test-key"}
-	keysToPersist = append(keysToPersist, "curr_page")
-	keysToPersist = append(keysToPersist, "lang_code")
+	keysToPersist2 := []string{"username", "b"}
+	keysToPersist = append(keysToPersist, keysToPersist2...)
 	for _, key := range keysToPersist {
-		if reqVal, ok := sess.RequestParamIsSet(key); ok {
+		if reqVal, ok := sess.ReqParam(key); ok {
 			lg.Printf("\tsess key SET  %17v is %-16v", key, reqVal)
 			sess.PutString(key, reqVal)
 		}

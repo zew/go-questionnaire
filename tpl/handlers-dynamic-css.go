@@ -1,4 +1,4 @@
-package main
+package tpl
 
 import (
 	"html/template"
@@ -6,8 +6,7 @@ import (
 	"net/http"
 	"path/filepath"
 
-	"github.com/zew/questionaire/cfg"
-	"github.com/zew/questionaire/tpl"
+	"github.com/zew/go-questionaire/cfg"
 )
 
 var baseCSS *template.Template // The parsed css templates (base), to clone from
@@ -30,7 +29,7 @@ func ServeDynCss(w http.ResponseWriter, r *http.Request) {
 		log.Fatal(err)
 	}
 
-	t = t.Funcs(tpl.StaticFuncMap())
+	t = t.Funcs(StaticFuncMap())
 
 	cssFileName := filepath.Base(r.URL.Path) //  "/css/design.css"  => design.css
 

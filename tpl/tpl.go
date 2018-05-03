@@ -12,8 +12,8 @@ import (
 	"net/http"
 	"sync"
 
-	"github.com/zew/questionaire/cfg"
-	"github.com/zew/questionaire/sessx"
+	"github.com/zew/go-questionaire/cfg"
+	"github.com/zew/go-questionaire/sessx"
 )
 
 var staticTplFuncs = template.FuncMap{

@@ -5,7 +5,7 @@
 *.cert
 *.exe
 *.exe~
-questionaire
+go-questionaire
 *.fdb
 setenv*.sh
 setenv*.bat

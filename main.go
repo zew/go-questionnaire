@@ -11,11 +11,11 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/zew/questionaire/cfg"
-	"github.com/zew/questionaire/lgn"
-	"github.com/zew/questionaire/muxwrap"
-	"github.com/zew/questionaire/sessx"
-	"github.com/zew/questionaire/tpl"
+	"github.com/zew/go-questionaire/cfg"
+	"github.com/zew/go-questionaire/lgn"
+	"github.com/zew/go-questionaire/muxwrap"
+	"github.com/zew/go-questionaire/sessx"
+	"github.com/zew/go-questionaire/tpl"
 	"github.com/zew/util"
 )
 
@@ -73,8 +73,8 @@ func main() {
 
 	//
 	// Extra handler for dynamic css
-	mux1.HandleFunc(cfg.Pref("/css/design.css"), ServeDynCss)
-	mux1.HandleFunc(cfg.PrefWTS("/css/design.css"), ServeDynCss)
+	mux1.HandleFunc(cfg.Pref("/css/design.css"), tpl.ServeDynCss)
+	mux1.HandleFunc(cfg.PrefWTS("/css/design.css"), tpl.ServeDynCss)
 
 	//
 	// Standard handlers

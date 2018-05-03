@@ -5,9 +5,9 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/zew/questionaire/cfg"
-	"github.com/zew/questionaire/sessx"
-	"github.com/zew/questionaire/tpl"
+	"github.com/zew/go-questionaire/cfg"
+	"github.com/zew/go-questionaire/sessx"
+	"github.com/zew/go-questionaire/tpl"
 
 	"github.com/pkg/errors"
 )

@@ -44,13 +44,15 @@ It features
 
   * Middleware blocking request panics from taking down the server
 
-  * Static file handlers, markdown file handler
+  * Static file handlers
+  
+  * Markdown file handler rewriting image links and serving global README
 
   * Layout template with jQuery from CDN cache; fallback to localhost 
 
   * Configurable compilation of templates
 
-  * Dynamic calling of subtemplates
+  * Dynamic subtemplate calls 
 
   * Session and request access for templates
 

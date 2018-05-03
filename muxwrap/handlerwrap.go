@@ -6,9 +6,10 @@ import (
 	"context"
 	"fmt"
 	"net/http"
+	"strings"
 
 	"github.com/zew/logx"
-	"github.com/zew/questionaire/sessx"
+	"github.com/zew/go-questionaire/sessx"
 	"github.com/zew/util"
 )
 
@@ -35,7 +36,9 @@ func (m *handlerWrapper) ServeHTTP(w http.ResponseWriter, rNew *http.Request) {
 	// Global logging stuff
 	shortened := fmt.Sprintf("%v?%v", rNew.URL.Path, rNew.URL.RawQuery)
 	// lg.Printf("------------------------------------------")
-	lg.Printf("%-60v | referr %v", shortened, util.UrlBeautify(rNew.Referer()))
+	if !strings.HasSuffix(rNew.URL.Path, "favicon.ico") {
+		lg.Printf("%-60v | referr %v", shortened, util.UrlBeautify(rNew.Referer()))
+	}
 
 	// Skip remaining stuff for static files.
 	// Maybe better dynamically read all dirs under ./static

@@ -24,14 +24,24 @@ import (
 
 	"golang.org/x/crypto/md4"
 
-	"github.com/zew/questionaire/cfg"
+	"github.com/zew/go-questionaire/cfg"
 	"github.com/zew/util"
 )
 
 var foundButWrongPassword = fmt.Errorf("User found but wrong password")
 var loginNotFound = fmt.Errorf("Login not found")
 
-type loginT struct {
+// Type LoginT must be exported, *not* because we need to pass a type to sessx.GetObject
+// 		l := lgn.LoginT{}
+// 		ok, err := sess.EffectiveObj("login", &l)
+// but because we need to declare variables of this type
+// 		type TplDataT struct {
+// 			...
+// 			L      lgn.LoginT
+// 			...
+// 		}
+
+type LoginT struct {
 	User  string            `json:"user"`
 	Email string            `json:"email"`
 	Roles map[string]string `json:"roles"` // i.e. admin: true , gender: female, height: 188
@@ -39,22 +49,31 @@ type loginT struct {
 	PassInitial    string `json:"pass_initial"`       // For first login - unencrypted - grants restricted access to change password only
 	IsInitPassword bool   `json:"is_init_password"`   // Indicates authentication against PassInitial
 	PassMd5        string `json:"pass_md5,omitempty"` // Encrypted password, created from login, permanent password, salt
-
 }
 
-func (l *loginT) HasRole(role string) bool {
+func (l *LoginT) HasRole(role string) bool {
 	_, ok := l.Roles[role]
 	return ok
 }
 
+// Deliberately not a method
+func ComputeMD5Password(u, p, salt string) string {
+	hashBase := u + p + salt
+	pfx := cfg.Get().UrlPathPrefix
+	if pfx == "taxkit" || pfx == "eta" {
+		hashBase = p + salt
+	}
+	return Md5Str([]byte(hashBase))
+}
+
 // Set an init password
-func (l *loginT) SetPW(salt string) {
+func (l *LoginT) SetInitPW(salt string) {
 	if l.IsInitPassword && l.PassInitial == "" {
 		l.PassInitial = GeneratePassword(8)
 		log.Printf("\tNew pw is %v", l.PassInitial)
 		hashBase := l.User + l.PassInitial + salt
 		pfx := cfg.Get().UrlPathPrefix
-		if pfx == "taxkit" || pfx == "eta" || pfx == "fdl" {
+		if pfx == "taxkit" || pfx == "eta" {
 			hashBase = l.PassInitial + salt
 		}
 		l.PassMd5 = Md5Str([]byte(hashBase))
@@ -64,7 +83,7 @@ func (l *loginT) SetPW(salt string) {
 type loginsT struct {
 	sync.Mutex
 	Salt   string   `json:"salt"`
-	Logins []loginT `json:"logins"`
+	Logins []LoginT `json:"logins"`
 }
 
 // Obtained by ENV variable or command line flag in main package.
@@ -121,24 +140,28 @@ func Load() {
 	// Initiallize MD5 hashes from passwords
 	// explicitly set.
 	for i := 0; i < len(tmpLogins.Logins); i++ {
-		tmpLogins.Logins[i].SetPW(tmpLogins.Salt)
+		tmpLogins.Logins[i].SetInitPW(tmpLogins.Salt)
 	}
 
 	log.Printf("\n%#s", util.IndentedDump(tmpLogins))
 	lgns = &tmpLogins // replace pointer in one go - should be threadsafe
 }
 
-func (l *loginsT) Save(fn ...string) {
+func (l *loginsT) Save(fn ...string) error {
 	l.Lock()
 	defer l.Unlock()
 
 	firstColLeftMostPrefix := " "
 	byts, err := json.MarshalIndent(l, firstColLeftMostPrefix, "\t")
-	util.BubbleUp(err)
+	if err != nil {
+		return err
+	}
 
 	saveDir := path.Dir(LgnsPath)
 	err = os.Chmod(saveDir, 0755)
-	util.BubbleUp(err)
+	if err != nil {
+		return err
+	}
 
 	loginsFile := path.Base(LgnsPath)
 	if len(fn) > 0 {
@@ -151,34 +174,58 @@ func (l *loginsT) Save(fn ...string) {
 
 	if loginsFile != "logins-example.json" {
 		err = os.Rename(pthOld, pthNew)
-		util.BubbleUp(err)
+		if err != nil {
+			return err
+		}
 	}
 
 	err = ioutil.WriteFile(pthOld, byts, 0644)
-	util.BubbleUp(err)
+	if err != nil {
+		return err
+	}
 
 	log.Printf("Saved logins file to %v", pthNew)
+	return nil
 }
 
 // Method FindAndCheck takes a username and password
 // and scans for matching users.
-func (l loginsT) FindAndCheck(u string, pass ...string) (loginT, error) {
+// If optPw is given, a check for matching password is also made
+func (l loginsT) FindAndCheck(u string, optPw ...string) (LoginT, error) {
+
 	u = strings.ToLower(u)
 	u = strings.TrimSpace(u)
+
+	checkPassword := false
+	passUnencr := ""
+	passEncr := ""
+	if len(optPw) > 0 {
+		checkPassword = true
+		passUnencr = optPw[0]
+		passEncr = ComputeMD5Password(u, passUnencr, l.Salt)
+	}
+
 	for idx := 0; idx < len(l.Logins); idx++ {
 		if u == strings.ToLower(l.Logins[idx].User) {
-			if len(pass) > 0 && pass[0] != "" {
-				if pass[0] == l.Logins[idx].PassMd5 {
+			// log.Printf("found user %v", util.IndentedDump(l.Logins[idx]))
+			if checkPassword {
+				pw := l.Logins[idx].PassMd5
+				if passEncr == pw {
 					return l.Logins[idx], nil
-				} else {
-					return loginT{}, foundButWrongPassword
 				}
+				if l.Logins[idx].IsInitPassword {
+					if l.Logins[idx].PassInitial == passUnencr {
+						return l.Logins[idx], nil
+					}
+				}
+				return LoginT{}, foundButWrongPassword
+
 			} else {
 				return l.Logins[idx], nil
 			}
 		}
 	}
-	return loginT{}, loginNotFound
+	return LoginT{}, loginNotFound
 }
 
 func IsFound(err error) bool {
@@ -216,7 +263,11 @@ func LoadH(w http.ResponseWriter, r *http.Request) {
 }
 
 func SaveH(w http.ResponseWriter, r *http.Request) {
-	lgns.Save()
+	err := lgns.Save()
+	if err != nil {
+		w.Write([]byte(err.Error()))
+		return
+	}
 	w.Write([]byte("logins saved"))
 }
 
@@ -281,9 +332,9 @@ func GeneratePassword(length int) string {
 // Function Md5Str computes the md5 hash of a byte slice.
 func Md5Str(buf []byte) string {
 	pfx := cfg.Get().UrlPathPrefix
-	if pfx == "taxkit" || pfx == "eta" || pfx == "fdl" {
+	if pfx == "taxkit" || pfx == "eta" {
 		// It is md4 (FOUR) by mistake -
-		// but since the login files are already generated, we cannot correct
+		// but since the application was already deplyoed, we cannot correct
 		hasher := md4.New()
 		hasher.Write(buf)
 		hash := hasher.Sum(nil)
@@ -299,12 +350,12 @@ func Md5Str(buf []byte) string {
 func init() {
 	ex := &loginsT{
 		Salt: "your salt here!!!",
-		Logins: []loginT{
-			loginT{
+		Logins: []LoginT{
+			LoginT{
 				User:           "myUser",
-				Email:          "mail@example.com",
-				Roles:          map[string]string{"readonly": "key decides; value reserved"},
-				PassInitial:    "use generate password to set initial passw",
+				Email:          "myUser@example.com",
+				Roles:          map[string]string{"readonly": "yes"},
+				PassInitial:    "Keep emtpy - have it set during startup - then call /logins-save",
 				IsInitPassword: true,
 			},
 		},

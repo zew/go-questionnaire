@@ -3,11 +3,11 @@
  	"logins": [
  		{
  			"user": "myUser",
- 			"email": "mail@example.com",
+ 			"email": "myUser@example.com",
  			"roles": {
- 				"readonly": "key decides; value reserved"
+ 				"readonly": "yes"
  			},
- 			"pass_initial": "use generate password to set initial passw",
+ 			"pass_initial": "Keep emtpy - have it set during startup - then call /logins-save",
  			"is_init_password": true
  		}
  	]

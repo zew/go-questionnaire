@@ -12,7 +12,7 @@ import (
 
 	"github.com/russross/blackfriday"
 
-	"github.com/zew/questionaire/cfg"
+	"github.com/zew/go-questionaire/cfg"
 )
 
 // We want the markdown files editable locally with locally working links and images.

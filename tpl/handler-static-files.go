@@ -10,7 +10,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/zew/questionaire/cfg"
+	"github.com/zew/go-questionaire/cfg"
 )
 
 func StaticDownloadH(w http.ResponseWriter, r *http.Request) {

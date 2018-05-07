@@ -36,7 +36,7 @@ It features
 
   * Http router with safe settings and optional https encryption
 
-  * Session functionality by Alex Edwards
+  * Session package by Alex Edwards
 
   * Configurable url prefix allows running multiple instances on same server:port
 
@@ -54,11 +54,13 @@ It features
 
   * Dynamic subtemplate calls 
 
-  * Session and request access for templates
+  * Templates having access to session and request
 
   * JSON config file with reloadable app settings 
 
   * JSON file with reloadable logins
+
+  * Shell script to control your go server under Linux
 
 
 * Subpackaging is done by concern, neither too amorphous nor too atomic. 

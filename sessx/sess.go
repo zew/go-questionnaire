@@ -159,6 +159,7 @@ func (sess *SessT) EffectiveFloat(key string, defaultVal ...float64) (float64, b
 
 }
 
+// Param obj should be pointer
 func (sess *SessT) EffectiveObj(key string, obj interface{}) (bool, error) {
 	ok := sess.EffectiveIsSet(key)
 	if !ok {
@@ -188,6 +189,8 @@ func (sess *SessT) PutObject(key string, val interface{}) error {
 	return err
 }
 
+//
+// Some request handlers for diagnosis
 func SessionPut(w http.ResponseWriter, r *http.Request) {
 	sess := New(w, r)
 	sess.PutString("session-test-key", "session-test-value")

@@ -86,8 +86,8 @@ func main() {
 	mux1.HandleFunc(cfg.Pref("/session-put"), sessx.SessionPut)
 	mux1.HandleFunc(cfg.Pref("/session-get"), sessx.SessionGet)
 	mux1.HandleFunc(cfg.Pref("/config-reload"), cfg.LoadH)
-	mux1.HandleFunc(cfg.Pref("/login-save"), lgn.SaveH)
-	mux1.HandleFunc(cfg.Pref("/login-reload"), lgn.LoadH)
+	mux1.HandleFunc(cfg.Pref("/logins-save"), lgn.SaveH)
+	mux1.HandleFunc(cfg.Pref("/logins-reload"), lgn.LoadH)
 	mux1.HandleFunc(cfg.Pref("/generate-password"), lgn.GeneratePasswordH)
 
 	//
@@ -122,7 +122,7 @@ func main() {
 			// ReadHeaderTimeout:  120 * time.Second,  // individual request can control body timeout
 			WriteTimeout: time.Duration(cfg.Get().HttpWriteTimeOut) * time.Second,
 			IdleTimeout:  120 * time.Second,
-			Addr:         cfg.Get().BindSocketFallbackHttp,
+			Addr:         fmt.Sprintf(":%v", cfg.Get().BindSocketFallbackHttp),
 			Handler: http.HandlerFunc(func(w http.ResponseWriter, req *http.Request) {
 				w.Header().Set("Connection", "close")
 				url := "https://" + req.Host + req.URL.String()
@@ -168,11 +168,7 @@ func main() {
 			TLSNextProto: make(map[string]func(*http.Server, *tls.Conn, http.Handler), 0),
 			Handler:      mux3,
 		}
-
-		// Checking the modulus; pem is a Privacy Enhanced Mail Certificate file
-		// openssl x509 -noout -modulus -in cert.pem
-		// openssl rsa -check -noout -modulus -in cert.key
-		log.Fatal(srv.ListenAndServeTLS("cert.pem", "cert.key"))
+		log.Fatal(srv.ListenAndServeTLS("server.pem", "server.key"))
 	} else {
 		log.Fatal(http.ListenAndServe(IpPort, mux3))
 	}

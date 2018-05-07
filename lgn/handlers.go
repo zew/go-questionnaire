@@ -14,10 +14,36 @@ func LogoutH(w http.ResponseWriter, r *http.Request) error {
 	return err
 }
 
+// Convenience - check, whether as user is logged in,
+// and check whether he has the required roles
+func LoggedInCheck(w http.ResponseWriter, r *http.Request, roles ...string) (l *LoginT, loggedIn bool, err error) {
+
+	sess := sessx.New(w, r)
+
+	l = &LoginT{}
+	loggedIn, err = sess.EffectiveObj("login", l)
+	if err != nil {
+		return
+	}
+
+	if !loggedIn || l.User == "" {
+		return
+	}
+
+	for _, role := range roles {
+		if !l.HasRole(role) {
+			err = fmt.Errorf("Logged in, but role %v is missing", role)
+			return
+		}
+	}
+	return
+
+}
+
 // Takes request value "username" and "password".
 // Searches for matching user and stores that user
 // into the session under key "login".
-func LoginCheckH(w http.ResponseWriter, r *http.Request) error {
+func ValidateAndLogin(w http.ResponseWriter, r *http.Request) error {
 
 	sess := sessx.New(w, r)
 

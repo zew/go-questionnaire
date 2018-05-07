@@ -15,6 +15,8 @@ import (
 	"sync"
 
 	"github.com/zew/util"
+
+	"github.com/zew/go-questionaire/sessx"
 )
 
 type ConfigT struct {
@@ -27,8 +29,8 @@ type ConfigT struct {
 	AppMnemonic   string `json:"app_mnemonic"`   // For differentiation of static dirs - when UrlPathPrefix is empty; imagine multiple instances
 
 	BindHost               string `json:"bind_host"`
-	BindSocket             string `json:"bind_socket"`
-	BindSocketFallbackHttp string `json:"bind_socket_fallback_http"`
+	BindSocket             int    `json:"bind_socket"`
+	BindSocketFallbackHttp int    `json:"bind_socket_fallback_http"`
 	Tls                    bool   `json:"tls"`
 	Tls13                  bool   `json:"tls13"`               // ultra safe - but excludes internet explorer 11
 	HttpReadTimeOut        int    `json:"http_read_time_out"`  // for large requests
@@ -92,6 +94,30 @@ func Load() {
 
 //
 func LoadH(w http.ResponseWriter, r *http.Request) {
+
+	// We cannot use lgn.LoggedInCheck()
+	// causing circular dependency
+	// Therefore we need implementing it here
+	sess := sessx.New(w, r)
+	type loginTypeTemp struct {
+		User  string            `json:"user"`
+		Roles map[string]string `json:"roles"` // i.e. admin: true , gender: female, height: 188
+	}
+	l := &loginTypeTemp{}
+	loggedIn, err := sess.EffectiveObj("login", l)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+	if !loggedIn {
+		http.Error(w, "admin login required for this function", http.StatusInternalServerError)
+		return
+	}
+	if _, ok := l.Roles["admin"]; !ok {
+		http.Error(w, "admin login required for this function", http.StatusInternalServerError)
+		return
+	}
+
 	Load()
 	w.Write([]byte("cfg reloaded"))
 }
@@ -159,8 +185,8 @@ func init() {
 		UrlPathPrefix:          "exmpl",
 		AppMnemonic:            "exmpl",
 		BindHost:               "0.0.0.0",
-		BindSocket:             "8081",
-		BindSocketFallbackHttp: "8082",
+		BindSocket:             8081,
+		BindSocketFallbackHttp: 8082,
 		Tls:              false,
 		Tls13:            false,
 		HttpReadTimeOut:  5,

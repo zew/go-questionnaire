@@ -239,6 +239,16 @@ func IsFound(err error) bool {
 // and check for a specific login
 func LoadH(w http.ResponseWriter, r *http.Request) {
 
+	_, loggedIn, err := LoggedInCheck(w, r, "admin")
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+	if !loggedIn {
+		http.Error(w, "admin login required for this function", http.StatusInternalServerError)
+		return
+	}
+
 	w.Header().Set("Content-Type", "text/plain; charset=utf-8")
 
 	Load()
@@ -263,7 +273,18 @@ func LoadH(w http.ResponseWriter, r *http.Request) {
 }
 
 func SaveH(w http.ResponseWriter, r *http.Request) {
-	err := lgns.Save()
+
+	_, loggedIn, err := LoggedInCheck(w, r, "admin")
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+	if !loggedIn {
+		http.Error(w, "login required for this function", http.StatusInternalServerError)
+		return
+	}
+
+	err = lgns.Save()
 	if err != nil {
 		w.Write([]byte(err.Error()))
 		return
@@ -272,6 +293,17 @@ func SaveH(w http.ResponseWriter, r *http.Request) {
 }
 
 func GeneratePasswordH(w http.ResponseWriter, r *http.Request) {
+
+	_, loggedIn, err := LoggedInCheck(w, r, "admin")
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+	if !loggedIn {
+		http.Error(w, "admin login required for this function", http.StatusInternalServerError)
+		return
+	}
+
 	w.Header().Set("Content-Type", "text/plain; charset=utf-8")
 	w.Write([]byte("Specify number of chars with ?len=xx \n\n"))
 
@@ -349,12 +381,12 @@ func Md5Str(buf []byte) string {
 
 func init() {
 	ex := &loginsT{
-		Salt: "your salt here!!!",
+		Salt: "your salt here",
 		Logins: []LoginT{
 			LoginT{
 				User:           "myUser",
 				Email:          "myUser@example.com",
-				Roles:          map[string]string{"readonly": "yes"},
+				Roles:          map[string]string{"admin": "yes"},
 				PassInitial:    "Keep emtpy - have it set during startup - then call /logins-save",
 				IsInitPassword: true,
 			},

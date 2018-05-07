@@ -1,3 +1,5 @@
 [Introduction](./README.md)
 
-![logo](./img/zew-building.jpg)
+[App administration and linux setup](./linux-instructions.md)
+
+![logo](./img/zew-footer.png)

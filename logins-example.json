@@ -1,11 +1,11 @@
 {
- 	"salt": "your salt here!!!",
+ 	"salt": "your salt here",
  	"logins": [
  		{
  			"user": "myUser",
  			"email": "myUser@example.com",
  			"roles": {
- 				"readonly": "yes"
+ 				"admin": "yes"
  			},
  			"pass_initial": "Keep emtpy - have it set during startup - then call /logins-save",
  			"is_init_password": true

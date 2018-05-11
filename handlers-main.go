@@ -6,6 +6,7 @@ import (
 	"time"
 
 	"github.com/zew/go-questionaire/cfg"
+	"github.com/zew/go-questionaire/qst"
 	"github.com/zew/go-questionaire/sessx"
 	"github.com/zew/go-questionaire/tpl"
 
@@ -24,7 +25,7 @@ func mainH(w http.ResponseWriter, r *http.Request) {
 
 	//
 	// Load questionaire from file or from session
-	var q = &tQuestionaire{}
+	var q = &qst.QuestionaireT{}
 	ok, err := sess.EffectiveObj("questionaire", q)
 	if err != nil {
 		helper(err, "Reading questionaire from session caused error")
@@ -33,7 +34,7 @@ func mainH(w http.ResponseWriter, r *http.Request) {
 	if ok {
 		log.Printf("Questionaire loaded from session; %v pages", len(q.Pages))
 	} else {
-		q, err = LoadQuestionaire("questionaire.json")
+		q, err = qst.Load("questionaire.json")
 		if err != nil {
 			helper(err, "Loading questionaire from file caused error")
 			return
@@ -69,13 +70,17 @@ func mainH(w http.ResponseWriter, r *http.Request) {
 	if q.Pages[prevPage].Finished.IsZero() {
 		q.Pages[prevPage].Finished = time.Now()
 	}
-	for i := 0; i < len(q.Pages[prevPage].Elements); i++ {
-		key := q.Pages[prevPage].Elements[i].Name
-		ok := sess.EffectiveIsSet(key)
-		if ok {
-			val := sess.EffectiveStr(key)
-			log.Printf("(Page#%2v) Setting '%v' to '%v'", prevPage, key, val)
-			q.Pages[prevPage].Elements[i].Response = val
+	for i1 := 0; i1 < len(q.Pages[prevPage].Elements); i1++ {
+		for i2 := range q.Pages[prevPage].Elements[i1].Members {
+
+			nm := q.Pages[prevPage].Elements[i1].Members[i2].Name
+			ok := sess.EffectiveIsSet(nm)
+			if ok {
+				val := sess.EffectiveStr(nm)
+				log.Printf("(Page#%2v) Setting '%v' to '%v'", prevPage, nm, val)
+				q.Pages[prevPage].Elements[i1].Members[i2].Response = val
+			}
+
 		}
 	}
 

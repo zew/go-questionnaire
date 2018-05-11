@@ -14,6 +14,7 @@ import (
 	"github.com/zew/go-questionaire/cfg"
 	"github.com/zew/go-questionaire/lgn"
 	"github.com/zew/go-questionaire/muxwrap"
+	"github.com/zew/go-questionaire/qst"
 	"github.com/zew/go-questionaire/sessx"
 	"github.com/zew/go-questionaire/tpl"
 	"github.com/zew/util"
@@ -48,7 +49,7 @@ func main() {
 	lgn.Load()
 
 	//
-	generateExample()
+	qst.GenerateExample()
 
 	//
 	//

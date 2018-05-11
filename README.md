@@ -42,7 +42,7 @@ It features
 
   * Middleware for logging, access restrictions etc.
 
-  * Middleware blocking request panics from taking down the server
+  * Middleware blocking request handler panics from taking down the server
 
   * Static file handlers
   
@@ -63,8 +63,11 @@ It features
   * Shell script to control your go server under Linux
 
 
+## Design guidelines
+
 * Subpackaging is done by concern, neither too amorphous nor too atomic. 
 
 * Go-App-Tpl has no "hooks" or interfaces for perfect isolation of "framework" code
-and "custom handlers". Just copy it write your handlers. Future updates can be merged.
+and "custom handlers".  
+Just copy it and add your handlers. Future updates can be merged.
 

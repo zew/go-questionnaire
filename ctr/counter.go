@@ -1,4 +1,4 @@
-package main
+package ctr
 
 import "sync/atomic"
 
@@ -14,4 +14,14 @@ func (c *count32) increment() int32 {
 
 func (c *count32) getLast() int32 {
 	return atomic.LoadInt32((*int32)(c))
+}
+
+// Get next counter
+func Increment() int32 {
+	return cntr.increment()
+}
+
+// Get the most recent (current) counter
+func GetLast() int32 {
+	return cntr.increment()
 }

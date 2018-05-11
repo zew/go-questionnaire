@@ -44,13 +44,6 @@ a file `logins-example.json` is created.
 
     apt-get install vim
     apt-get install tofrodos   # turn the newlines of shell scripts into proper format
-    apt-get install ntp        # hosting machine's system clock should be synchronized with NTP servers.
-
-### Activate ntpd
-
-    systemctl enable ntpd
-    systemctl start  ntpd
-
 
 ## Create the Linux application user
 
@@ -163,10 +156,7 @@ Under debian, we do not need ```chkconfig``` - just put the script to init.d
 
 ## Denial of service consideration
 
-* A request memory blocks too frequent requests on application level.  
-Each IP address has up to ten requests per rolling window of one minute.
-
-* Nevertheless, the hosting machine should be behind a firewall  
+* The hosting machine should be behind a firewall  
 preventing denial-of-service attacks on network level.
 
 
@@ -236,7 +226,7 @@ a file `config-example.json` is created.
 into the app dir.
 
 
-* Each new exectuable needs to be configured *again*  
+* Each new executable needs to be configured *again*  
 to allow to use ports 80 and 443.  
 See section **Enable ports 80 and 443** .
 
@@ -280,7 +270,17 @@ pem is a Privacy Enhanced Mail Certificate file
 
 ### Use apache to run multiple instances under port 80
 
-Put the app behind an apache virtual host like this:
+#### We must allow apache to use the network in order to proxy requests:
+
+```
+    sestatus -b | grep httpd_can
+    setsebool -P httpd_can_network_connect=1
+```
+
+Put the app behind an apache virtual host.
+
+Edit httpd.conf: 
+
 
 ```
 
@@ -300,14 +300,14 @@ Put the app behind an apache virtual host like this:
 <VirtualHost *:80>
     ServerName go-questionaire.myorg.net
     ProxyPreserveHost On
-    ProxyPass        "/app1"   "http://127.0.0.1:8080/app1"
-    ProxyPassReverse "/app1"   "http://127.0.0.1:8080/app1"    
+    ProxyPass        "/"   "http://127.0.0.1:8080/"
+    ProxyPassReverse "/"   "http://127.0.0.1:8080/"    
 </VirtualHost>
 
 ```
 
 another example with multiple virtual hosts  
-_and_ multiple instances go go-questionaire
+_and_ multiple instances of go-questionaire
 
 ```
 # cache nothing ever
@@ -351,10 +351,4 @@ _and_ multiple instances go go-questionaire
 
 
 
-* We must allow apache to use the network in order to proxy requests:
-
-```
-    sestatus -b | grep httpd_can
-    setsebool -P httpd_can_network_connect=1
-```
 

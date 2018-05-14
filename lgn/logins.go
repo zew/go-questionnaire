@@ -44,6 +44,7 @@ var loginNotFound = fmt.Errorf("Login not found")
 type LoginT struct {
 	User  string            `json:"user"`
 	Email string            `json:"email"`
+	Group string            `json:"empty"` // Derived from emai domain - or LDAP org
 	Roles map[string]string `json:"roles"` // i.e. admin: true , gender: female, height: 188
 
 	PassInitial    string `json:"pass_initial"`       // For first login - unencrypted - grants restricted access to change password only
@@ -141,6 +142,16 @@ func Load() {
 	// explicitly set.
 	for i := 0; i < len(tmpLogins.Logins); i++ {
 		tmpLogins.Logins[i].SetInitPW(tmpLogins.Salt)
+	}
+
+	// Compute group - i.e. domain
+	for i := 0; i < len(tmpLogins.Logins); i++ {
+		els := strings.Split(tmpLogins.Logins[i].Email, "@")
+		group := els[0]
+		if len(els) > 0 {
+			group = els[1]
+		}
+		tmpLogins.Logins[i].Group = group
 	}
 
 	log.Printf("\n%#s", util.IndentedDump(tmpLogins))
@@ -274,6 +285,8 @@ func LoadH(w http.ResponseWriter, r *http.Request) {
 
 func SaveH(w http.ResponseWriter, r *http.Request) {
 
+	w.Header().Set("Content-Type", "text/plain; charset=utf-8")
+
 	_, loggedIn, err := LoggedInCheck(w, r, "admin")
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
@@ -379,7 +392,7 @@ func Md5Str(buf []byte) string {
 	}
 }
 
-func init() {
+func Example() {
 	ex := &loginsT{
 		Salt: "your salt here",
 		Logins: []LoginT{

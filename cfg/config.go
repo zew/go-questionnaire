@@ -95,6 +95,8 @@ func Load() {
 //
 func LoadH(w http.ResponseWriter, r *http.Request) {
 
+	w.Header().Set("Content-Type", "text/plain; charset=utf-8")
+
 	// We cannot use lgn.LoggedInCheck()
 	// causing circular dependency
 	// Therefore we need implementing it here
@@ -178,7 +180,7 @@ func PrefWTS(pth ...string) string {
 	return p + "/"
 }
 
-func init() {
+func Example() {
 	ex := &ConfigT{
 		IsProduction:           false,
 		AppName:                "My Example App Label",

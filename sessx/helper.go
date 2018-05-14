@@ -3,10 +3,10 @@ package sessx
 // ReqParam searches for the effective value
 // of the *request*, not in session.
 // First among the POST fields.
-// Then among the URL "path" parameters.
+// Not  among the URL "path" parameters.
 // Then among the URL GET parameters.
 //
-// It checks, whether whether any of the above had the param
+// It checks, whether any of the above had the param
 // key set to *empty* string.
 func (sess *SessT) ReqParam(key string, defaultVal ...string) (string, bool) {
 

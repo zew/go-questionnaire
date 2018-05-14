@@ -176,7 +176,7 @@ func (sess *SessT) EffectiveObj(key string, obj interface{}) (bool, error) {
 func (sess *SessT) PutString(key, val string) error {
 	err := sess.Session.PutString(sess.w, key, val)
 	if err != nil {
-		log.Fatalf("Put session session-key %v failed: %v", key, err)
+		log.Printf("Put string for session session-key %v failed: %v", key, err)
 	}
 	return err
 }
@@ -184,7 +184,7 @@ func (sess *SessT) PutString(key, val string) error {
 func (sess *SessT) PutObject(key string, val interface{}) error {
 	err := sess.Session.PutObject(sess.w, key, val)
 	if err != nil {
-		log.Fatalf("Put session session-key %v (object) failed: %v", key, err)
+		log.Printf("Put object for session session-key %v failed: %v", key, err)
 	}
 	return err
 }
@@ -192,17 +192,27 @@ func (sess *SessT) PutObject(key string, val interface{}) error {
 //
 // Some request handlers for diagnosis
 func SessionPut(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "text/plain; charset=utf-8")
 	sess := New(w, r)
 	sess.PutString("session-test-key", "session-test-value")
 	w.Write([]byte("session[session-test-key] set to session-test-value"))
 }
 
 func SessionGet(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "text/plain; charset=utf-8")
 	sess := New(w, r)
 	val1 := sess.EffectiveStr("session-test-key")
-	cnt1 := fmt.Sprintf("session-test-key is %v<br>\n", val1)
+	cnt1 := fmt.Sprintf("session-test-key is %v\n", val1)
 	w.Write([]byte(cnt1))
 	val2 := sess.EffectiveStr("request-test-key")
-	cnt2 := fmt.Sprintf("request-test-key is %v<br>\n", val2)
+	cnt2 := fmt.Sprintf("request-test-key is %v\n", val2)
 	w.Write([]byte(cnt2))
+
+	w.Write([]byte("\n\n"))
+	keys, _ := sess.Keys()
+	for _, key := range keys {
+		dis := fmt.Sprintf("%20v is set\n", key)
+		// No chance to show the values - since they are typed differently
+		w.Write([]byte(dis))
+	}
 }

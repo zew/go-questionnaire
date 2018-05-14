@@ -1,3 +1,5 @@
+ [![GoDoc](http://godoc.org/github.com/zew/go-questionaire?status.svg)](http://godoc.org/github.com/zew/go-questionaire) 
+
 # Go-Questionaire 
 
 A http(s) webserver serving a questionaire.

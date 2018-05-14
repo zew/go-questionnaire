@@ -1,3 +1,5 @@
+// Package ctr implements an application wide
+// source for unique IDs.
 package ctr
 
 import "sync/atomic"

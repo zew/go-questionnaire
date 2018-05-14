@@ -26,29 +26,39 @@ func GenerateExample() *QuestionaireT {
 			}
 
 			gr := groupT{}
-			gr.Title = map[string]string{"de": fmt.Sprintf("Gruppe-%v-Titel", i2), "en": fmt.Sprintf("Group-%v-Title", i2)}
+			gr.Label = map[string]string{"de": fmt.Sprintf("Gruppe-%v-Titel", i2), "en": fmt.Sprintf("Group-%v-Title", i2)}
 			gr.Desc = map[string]string{"de": fmt.Sprintf("Gruppe-%v-Beschreibung", i2), "en": fmt.Sprintf("Group-%v-Description", i2)}
 			gr.Members = append(gr.Members, inp)
 			page.Elements = append(page.Elements, gr)
 
 			if i1 == 0 {
 				inp1 := inputT{}
-				inp1.Type = "checkboxgroup"
+				inp1.Type = "radiogroup"
 				inp1.Name = "foo"
-				inp1.Vals = []string{"Fanta", "Miranda", "Cholera"}
-				inp1.Title = map[string]string{"de": "Brause", "en": "Softdrink"}
+				inp1.Label = map[string]string{"de": "Brause", "en": "Softdrink"}
 				inp1.Desc = map[string]string{"de": "", "en": ""}
+				inp1.Right = false
+				inp1.Radios = []radioT{
+					radioT{"fanta", transMapT{"de": "Fanta", "en": "Fanta"}, false},
+					radioT{"miranda", transMapT{"de": "Miranda", "en": "Baccara"}, false},
+					radioT{"cholera", transMapT{"de": "Cholera", "en": "Scabies"}, true},
+				}
 
 				inp2 := inputT{}
 				inp2.Type = "radiogroup"
 				inp2.Name = "bar"
-				inp2.Vals = []string{"Logic", "Basic", "Plastic"}
-				inp2.Title = map[string]string{"de": "Programmiersprache", "en": "Programming language"}
+				inp2.Label = map[string]string{"de": "Programmiersprache", "en": "Programming language"}
 				inp2.Desc = map[string]string{"de": "", "en": ""}
+				inp2.Right = true
+				inp2.Radios = []radioT{
+					radioT{Label: transMapT{"de": "Logik", "en": "Reasoning"}, Right: false},
+					radioT{Label: transMapT{"de": "Basic", "en": "Basics"}, Right: true},
+					radioT{Label: transMapT{"de": "Plastik", "en": "Plastics"}, Right: true},
+				}
 
 				gr := groupT{}
 				gr.Cols = 2
-				gr.Title = map[string]string{"de": "Gruppe-Pasta", "en": "Group-Pasta"}
+				gr.Label = map[string]string{"de": "Gruppe-Pasta", "en": "Group-Pasta"}
 				gr.Desc = map[string]string{"de": "", "en": ""}
 				gr.Members = append(gr.Members, inp1, inp2)
 
@@ -61,30 +71,32 @@ func GenerateExample() *QuestionaireT {
 				inp1 := inputT{}
 				inp1.Type = "checkbox"
 				inp1.Name = "pizz"
-				inp1.Title = map[string]string{"de": "Fladenbrot", "en": "Pizza"}
+				inp1.Label = map[string]string{"de": "Fladenbrot", "en": "Pizza"}
 				inp1.Desc = map[string]string{"de": "würzig belegtes Fladenbrot", "en": "a traditional Italian dish"}
+				inp1.Right = true
 
 				inp2 := inputT{}
 				inp2.Type = "checkbox"
 				inp2.Name = "o-oil"
-				inp2.Title = map[string]string{"de": "Olivenöl", "en": "olive oil"}
+				inp2.Label = map[string]string{"de": "Olivenöl", "en": "olive oil"}
 				inp2.Desc = map[string]string{"de": "ungesättigte Fettsäuren", "en": "digestable fatty acids"}
+				inp2.Right = true
 
 				inp3 := inputT{}
 				inp3.Type = "checkbox"
 				inp3.Name = "pastatype1"
-				inp3.Title = map[string]string{"de": "Röhrennudeln", "en": "Cannelloni"}
+				inp3.Label = map[string]string{"de": "Röhrennudeln", "en": "Cannelloni"}
 				inp3.Desc = map[string]string{"de": "große, dicke Röhrennudeln", "en": "a cylindrical type of pasta"}
 
 				inp4 := inputT{}
 				inp4.Type = "checkbox"
 				inp4.Name = "pastatype2"
-				inp4.Title = map[string]string{"de": "Bindfäden", "en": "Spahetti"}
+				inp4.Label = map[string]string{"de": "Bindfäden", "en": "Spahetti"}
 				inp4.Desc = map[string]string{"de": "Form von Teigwaren und Nudeln", "en": "long, thin, solid, cylindrical"}
 
 				gr := groupT{}
 				gr.Cols = 2
-				gr.Title = map[string]string{"de": "Gruppe-Pasta", "en": "Group-Pasta"}
+				gr.Label = map[string]string{"de": "Gruppe-Pasta", "en": "Group-Pasta"}
 				gr.Desc = map[string]string{"de": "", "en": ""}
 				gr.Members = append(gr.Members, inp1, inp2, inp3, inp4)
 

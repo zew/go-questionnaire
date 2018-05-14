@@ -52,12 +52,6 @@ a {
 	font-weight: bold;
 }
 
-a.image-link {
-	text-decoration: none;
-	display: inline-block;
-	vertical-align: middle;
-}
-
 pre {
 	line-height:14px;
 }
@@ -102,33 +96,9 @@ input:focus:invalid {
     border: 2px dotted red;
 }
 
-/* make the placeholder lighter */
-::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-    color:    #ccc;
-}
-
-:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-   color:    #ccc;
-   opacity:  1;
-}
-
-::-moz-placeholder { /* Mozilla Firefox 19+ */
-   color:    #ccc;
-   opacity:  1;
-}
-
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
-   color:    #ccc;
-}
 
 
 
-.input-label {
-	font-size: 12px;
-	text-align: right; 
-	padding-right: 2px; 
-	/*vertical-align: top !important;*/
-}
 
 div:focus {
   background: #ddd;
@@ -200,5 +170,41 @@ img.icon-halve {
 	color:#622;
 }
 
+
+.go-quest-main-form {
+	border: 1px solid #aff; 
+	width: 90%;
+}
+
+.go-quest-group {
+	border: 1px solid #4C4
+}
+
+.go-quest-group-header {
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	font-size: 90%;
+}
+
+.go-quest-vspacer {
+	height:08px;
+}
+
+.go-quest-label, .go-quest-label-right  {
+	display: inline-block;
+	vertical-align: middle;
+	white-space: nowrap;
+
+
+	font-size: 12px;
+	padding-right: 2px; 
+}
+
+.go-quest-label {
+	text-align: right; 
+}
+
+.go-quest-label-right {
+	text-align: left; 
+}
 
 

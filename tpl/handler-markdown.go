@@ -52,11 +52,9 @@ func CreateAndRegisterHandlerForDocs(mux1 *http.ServeMux) {
 		// log.Printf("doc fpth %v", fpth)
 		bts, err := ioutil.ReadFile(fpth)
 		if err != nil {
-			str := fmt.Sprintf("File %v was not found.", pth)
-			_, err = w.Write([]byte(str))
-			if err != nil {
-				log.Printf("%v", err)
-			}
+			s := fmt.Sprintf("MarkdownH: File %v was not found.", fpth)
+			log.Printf(s)
+			w.Write([]byte(s))
 			return
 		}
 
@@ -75,7 +73,8 @@ func CreateAndRegisterHandlerForDocs(mux1 *http.ServeMux) {
 		output := blackfriday.MarkdownCommon(bts)
 		_, err = w.Write(output)
 		if err != nil {
-			log.Printf("%v", err)
+			s := fmt.Sprintf("MarkdownH: Could not write to w:", err)
+			log.Printf(s)
 		}
 	}
 

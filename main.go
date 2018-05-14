@@ -56,7 +56,7 @@ func main() {
 	// Http server
 	mux1 := http.NewServeMux() // base router
 
-	// Add static file serving to the base router.
+	// Static file serving to the base router.
 	// Static requests will also trigger the middleware funcs below.
 	staticDirs := []string{"/img", "/js"}
 	for _, v := range staticDirs {
@@ -78,18 +78,20 @@ func main() {
 	mux1.HandleFunc(cfg.PrefWTS("/css/design.css"), tpl.ServeDynCss)
 
 	//
-	// Standard handlers
-	tpl.CreateAndRegisterHandlerForDocs(mux1)
-	mux1.HandleFunc("/", mainH)
-	mux1.HandleFunc(cfg.Pref("/"), mainH)
-	mux1.HandleFunc(cfg.PrefWTS("/"), mainH)
-
+	// Administrative handlers
 	mux1.HandleFunc(cfg.Pref("/session-put"), sessx.SessionPut)
 	mux1.HandleFunc(cfg.Pref("/session-get"), sessx.SessionGet)
 	mux1.HandleFunc(cfg.Pref("/config-reload"), cfg.LoadH)
 	mux1.HandleFunc(cfg.Pref("/logins-save"), lgn.SaveH)
 	mux1.HandleFunc(cfg.Pref("/logins-reload"), lgn.LoadH)
 	mux1.HandleFunc(cfg.Pref("/generate-password"), lgn.GeneratePasswordH)
+
+	//
+	// Standard handlers
+	tpl.CreateAndRegisterHandlerForDocs(mux1)
+	mux1.HandleFunc("/", mainH)
+	mux1.HandleFunc(cfg.Pref("/"), mainH)
+	mux1.HandleFunc(cfg.PrefWTS("/"), mainH)
 
 	//
 	// Session manager and session management.
@@ -106,7 +108,7 @@ func main() {
 	// => Wrap the base router into an unconditional middleware
 	mux2 := muxwrap.NewHandlerMiddleware(mux1)
 	// => Wrap in mux2 in session manager
-	sessx.Mgr().Secure(true)            // true breaks session persistence in excel-db - but not in fmtdownload
+	sessx.Mgr().Secure(true)            // true breaks session persistence in excel-db - but not in go-countdown
 	sessx.Mgr().Lifetime(2 * time.Hour) // default is 24 hours
 	sessx.Mgr().Persist(false)
 	mux3 := sessx.Mgr().Use(mux2)

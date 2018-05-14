@@ -1,3 +1,5 @@
+// Package qst implements a four levels deep nested structure
+// with input controls, groups, pages and questionaire.
 package qst
 
 import (
@@ -7,15 +9,16 @@ import (
 	"io/ioutil"
 	"log"
 	"regexp"
-	"strings"
 	"time"
 
 	"github.com/zew/go-questionaire/ctr"
 )
 
+// For all multi lingual strings.
+// Contains one value for each language code.
 type transMapT map[string]string // type translation map
 
-// Translate
+// Tr translates
 func (t transMapT) Tr(langCode string) string {
 	if val, ok := t[langCode]; ok {
 		return val
@@ -26,23 +29,42 @@ func (t transMapT) Tr(langCode string) string {
 	for _, val := range t {
 		return val
 	}
-	return "missing_translation"
+	if t == nil {
+		return "Missing translation. Map not initialized."
+	}
+	return "Missing translation."
 }
 
-// a standalone radio makes no sense; only radiogroup
-var implementedTypes = map[string]interface{}{"checkbox": nil, "text": nil, "radiogroup": nil, "checkboxgroup": nil}
+var implementedTypes = map[string]interface{}{
+	"text":     nil,
+	"checkbox": nil, // A standalone checkbox - as a group, see below
 
+	// radiogroup and checkboxgroup have the same input name
+	"radiogroup":    nil, // A standalone radio makes no sense; only a radiogroup
+	"checkboxgroup": nil, // checkboxgroup has no use case. For example OR flags such as 4 - bath, 8 - balcony. They should better be designed as independent checkboxes bath and balcony
+}
+
+// For radio and for checkbox inputs
 const valEmpty = "0"
 const valSet = "1"
+const vspacer = "<div class='go-quest-vspacer'></div>\n"
+
+// Special for radiogroup
+type radioT struct {
+	Val   string    `json:"val,omitempty"`
+	Label transMapT `json:"label,omitempty"`
+	Right bool      `json:"right,omitempty"` // label and description right of input, default left
+}
 
 type inputT struct {
 	Name string `json:"name,omitempty"`
 	Type string `json:"type,omitempty"`
 
-	Vals []string `json:"vals,omitempty"` // only for radiogroup or checkboxgroup
+	Radios []radioT `json:"radios,omitempty"`
 
-	Title transMapT `json:"title,omitempty"`
+	Label transMapT `json:"label,omitempty"`
 	Desc  transMapT `json:"description,omitempty"`
+	Right bool      `json:"right,omitempty"` // label and description right of input, default left
 	// Validator func() bool `json:"empty"`
 	ErrMsg transMapT `json:"err_msg,omitempty"`
 
@@ -51,13 +73,13 @@ type inputT struct {
 	ResponseFloat float64 `json:"response_float,omitempty"` // also for integers
 }
 
-// Returns an input filled in with globally enumerated title, label etc.
+// Returns an input filled in with globally enumerated label, decription etc.
 func newInput() inputT {
 	id := ctr.Increment()
 	t := inputT{
 		Name:  fmt.Sprintf("input_%v", id),
 		Type:  "text",
-		Title: transMapT{"en": fmt.Sprintf("Title %v", id), "de": fmt.Sprintf("Titel %v", id)},
+		Label: transMapT{"en": fmt.Sprintf("Label %v", id), "de": fmt.Sprintf("Titel %v", id)},
 		Desc:  transMapT{"en": "Description", "de": "Beschreibung"},
 	}
 	return t
@@ -69,7 +91,6 @@ func (i inputT) HTML(langCode string, cols int) string {
 
 	nm := i.Name
 
-	lbl := fmt.Sprintf("<label for='%v'>  <b>%v</b> %v </label>\n", nm, i.Title.Tr(langCode), i.Desc.Tr(langCode))
 	ctrl := ""
 	switch i.Type {
 	case "radiogroup", "checkboxgroup":
@@ -78,20 +99,27 @@ func (i inputT) HTML(langCode string, cols int) string {
 		if i.Type == "checkboxgroup" {
 			innerType = "checkbox"
 		}
-		for i2, val := range i.Vals {
-			_ = i2
+		for i2, rad := range i.Radios {
 			checked := ""
-			if i.Response == val {
+			if i.Response == rad.Val {
 				checked = "checked=\"checked\""
 			}
-			ctrl += fmt.Sprintf("Val %v", val)
-			ctrl += fmt.Sprintf("<input type='%v' name='%v' id='%v' title='%v %v' value='%v' %v />\n",
-				innerType, nm, nm, i.Title.Tr(langCode), i.Desc.Tr(langCode), val, checked)
+			// ctrl += fmt.Sprintf("Val %v", val)
 
-			if cols > 0 && (i2+1)%cols == 0 && i2 > 0 || i2 == len(i.Vals)-1 {
-				ctrl += "<br>\n"
+			if !rad.Right {
+				ctrl += fmt.Sprintf("<span class='go-quest-label-right'>%v</span>\n", rad.Label.Tr(langCode))
 			}
 
+			ctrl += fmt.Sprintf("<input type='%v' name='%v' id='%v' title='%v %v' value='%v' %v />\n",
+				innerType, nm, nm, i.Label.Tr(langCode), i.Desc.Tr(langCode), rad.Val, checked)
+
+			if rad.Right {
+				ctrl += fmt.Sprintf("<span class='go-quest-label'>%v</span>\n", rad.Label.Tr(langCode))
+			}
+
+			if cols > 0 && (i2+1)%cols == 0 && i2 > 0 || i2 == len(i.Radios)-1 {
+				ctrl += vspacer
+			}
 		}
 		// The checkbox "empty catcher" must follow *after* the actual checkbox input,
 		// since http.Form.Get() fetches the first value.
@@ -113,7 +141,7 @@ func (i inputT) HTML(langCode string, cols int) string {
 		}
 
 		ctrl += fmt.Sprintf("<input type='%v' name='%v' id='%v' title='%v %v' value='%v' %v />\n",
-			i.Type, nm, nm, i.Title.Tr(langCode), i.Desc.Tr(langCode), val, checked)
+			i.Type, nm, nm, i.Label.Tr(langCode), i.Desc.Tr(langCode), val, checked)
 
 		// The checkbox "empty catcher" must follow *after* the actual checkbox input,
 		// since http.Form.Get() fetches the first value.
@@ -125,21 +153,22 @@ func (i inputT) HTML(langCode string, cols int) string {
 		ctrl += fmt.Sprintf("input %v: unknown type '%v'  - allowed are %v\n", nm, i.Type, implementedTypes)
 	}
 
-	switch i.Type {
-	case "text":
-		return lbl + ctrl
-	case "checkbox", "radio":
+	if i.Right {
+		lbl := fmt.Sprintf("<span class='go-quest-label-right'><label for='%v'>  <b>%v</b> %v </label></span>\n", nm, i.Label.Tr(langCode), i.Desc.Tr(langCode))
 		return ctrl + lbl
-	default:
-		return lbl + ctrl
 	}
-
+	lbl := fmt.Sprintf("<span class='go-quest-label'><label for='%v'>  <b>%v</b> %v </label></span>\n", nm, i.Label.Tr(langCode), i.Desc.Tr(langCode))
 	return lbl + ctrl
+
 }
 
+// A group consists of several input controls
+// It can bundle checkbox or text inputs with *distinct* names.
+// Whereas: radiogroup and checkboxgroup have the *same* name.
+// A group is a layout unit with a configurable number of columns.
 type groupT struct {
-	// Name  string    `json:"name,omitempty"`
-	Title transMapT `json:"title,omitempty"`
+	// Name  string
+	Label transMapT `json:"label,omitempty"`
 	Desc  transMapT `json:"description,omitempty"`
 
 	Vertical bool `json:"vertical,omitempty"` // groups vertically, not horizontally
@@ -153,15 +182,16 @@ func (gr groupT) HTML(langCode string) string {
 
 	b := bytes.Buffer{}
 
-	b.WriteString("<div style='border: 1px solid #2c2;'>\n")
+	b.WriteString("<div class='go-quest-group' >\n")
 
-	lbl := fmt.Sprintf("group:  <b>%v</b> %v <br>\n", gr.Title.Tr(langCode), gr.Desc.Tr(langCode))
+	lbl := fmt.Sprintf("<span class='go-quest-group-header'><b>%v</b> %v</span> \n", gr.Label.Tr(langCode), gr.Desc.Tr(langCode))
 	b.WriteString(lbl)
+	b.WriteString(vspacer)
 
 	for i, mem := range gr.Members {
 		b.WriteString(mem.HTML(langCode, gr.Cols))
 		if gr.Cols > 0 && (i+1)%gr.Cols == 0 && i > 0 {
-			b.WriteString("<br>\n")
+			b.WriteString(vspacer)
 		}
 	}
 	b.WriteString("</div>\n")
@@ -172,7 +202,7 @@ func (gr groupT) HTML(langCode string) string {
 
 // Type page is collection of tInputs and some meta data
 type pageT struct {
-	Title transMapT `json:"title,omitempty"`
+	Label transMapT `json:"label,omitempty"`
 	Desc  transMapT `json:"description,omitempty"`
 
 	Elements []groupT  `json:"elements,omitempty"`
@@ -181,7 +211,7 @@ type pageT struct {
 
 func newPage() pageT {
 	t := pageT{
-		Title: transMapT{"en": "Page Title", "de": "Seitentitel"},
+		Label: transMapT{"en": "Page Label", "de": fmt.Sprintf("Seitentitel_%v", ctr.Increment())},
 		Desc:  transMapT{"en": "Page Description", "de": "Seitenbeschreibung"},
 	}
 	return t
@@ -196,74 +226,35 @@ type QuestionaireT struct {
 	CurrPage int `json:"curr_page,omitempty"`
 }
 
-// Validate checks whether essential elements of the questionaire exist.
-func (q *QuestionaireT) Validate() error {
+// CurrentPageHTML is a comfort shortcut to PageHTML
+func (q *QuestionaireT) CurrentPageHTML() (string, error) {
+	return q.PageHTML(q.CurrPage)
+}
 
-	if q.LangCode == "" {
-		s := fmt.Sprintf("Language code is empty. Must be one of %v", q.LangCodes)
+// PageHTML generates HTML for a specific page of the questionaire
+func (q *QuestionaireT) PageHTML(idx int) (string, error) {
+
+	if q.CurrPage > len(q.Pages) || q.CurrPage < 0 {
+		s := fmt.Sprintf("You requested page %v out of %v. Page does not exist", idx, len(q.Pages)-1)
 		log.Printf(s)
-		return fmt.Errorf(s)
+		return s, fmt.Errorf(s)
 	}
-	if _, ok := q.LangCodes[q.LangCode]; !ok {
+
+	p := q.Pages[idx]
+
+	if _, ok := q.LangCodes[q.LangCode]; !ok || q.LangCode == "" {
 		s := fmt.Sprintf("Language code '%v' is not supported in %v", q.LangCode, q.LangCodes)
 		log.Printf(s)
-		return fmt.Errorf(s)
+		return s, fmt.Errorf(s)
 	}
 
-	for i1 := 0; i1 < len(q.Pages); i1++ {
-		for i2 := 0; i2 < len(q.Pages[i1].Elements); i2++ {
-			for i3 := 0; i3 < len(q.Pages[i1].Elements[i2].Members); i3++ {
-
-				s := fmt.Sprintf("Page %v - Group %v - Input %v: ", i1, i2, i3)
-
-				inp := q.Pages[i1].Elements[i2].Members[i3]
-				if _, ok := implementedTypes[inp.Type]; !ok {
-					return fmt.Errorf(s + fmt.Sprintf("Type %v is not in %v ", inp.Type, implementedTypes))
-				}
-
-			}
-		}
+	str := fmt.Sprintf("<h3>%v</h3>", p.Label.Tr(q.LangCode))
+	str += fmt.Sprintf("<p>%v</p>", p.Desc.Tr(q.LangCode))
+	for i := 0; i < len(p.Elements); i++ {
+		str += p.Elements[i].HTML(q.LangCode) + "\n"
+		str += vspacer
 	}
-
-	names := map[string]int{}
-	for i1 := 0; i1 < len(q.Pages); i1++ {
-		for i2 := 0; i2 < len(q.Pages[i1].Elements); i2++ {
-			for i3 := 0; i3 < len(q.Pages[i1].Elements[i2].Members); i3++ {
-
-				s := fmt.Sprintf("Page %v - Group %v - Input %v: ", i1, i2, i3)
-
-				// grp := q.Pages[i1].Elements[i2].Name
-				nm := q.Pages[i1].Elements[i2].Members[i3].Name
-				// tp := q.Pages[i1].Elements[i2].Members[i3].Type
-
-				if nm == "" {
-					return fmt.Errorf(s+"Name %v is empty", nm)
-				}
-
-				if not09azHyphenUnderscore.MatchString(nm) {
-					return fmt.Errorf(s+"Name %v must consist of [a-z0-9_-]", nm)
-				}
-
-				names[nm]++
-
-			}
-		}
-	}
-
-	for k, v := range names {
-		if v > 1 {
-			s := fmt.Sprintf("Page element '%v' is not unique  (%v)", k, v)
-			log.Printf(s)
-			return fmt.Errorf(s)
-		}
-		if k != strings.ToLower(k) {
-			s := fmt.Sprintf("Page element '%v' is not lower case  (%v)", k, v)
-			log.Printf(s)
-			return fmt.Errorf(s)
-		}
-	}
-
-	return nil
+	return str, nil
 }
 
 // Load loads a questionaire from a JSON file.
@@ -310,37 +301,6 @@ func (q *QuestionaireT) Next() int {
 		return q.CurrPage + 1
 	}
 	return len(q.Pages)
-}
-
-// CurrentPageHTML is a comfort shortcut to PageHTML
-func (q *QuestionaireT) CurrentPageHTML() (string, error) {
-	return q.PageHTML(q.CurrPage)
-}
-
-// PageHTML generates HTML for a specific page of the questionaire
-func (q *QuestionaireT) PageHTML(idx int) (string, error) {
-
-	if q.CurrPage > len(q.Pages) || q.CurrPage < 0 {
-		s := fmt.Sprintf("You requested page %v out of %v. Page does not exist", idx, len(q.Pages)-1)
-		log.Printf(s)
-		return s, fmt.Errorf(s)
-	}
-
-	p := q.Pages[idx]
-
-	if _, ok := q.LangCodes[q.LangCode]; !ok || q.LangCode == "" {
-		s := fmt.Sprintf("Language code '%v' is not supported in %v", q.LangCode, q.LangCodes)
-		log.Printf(s)
-		return s, fmt.Errorf(s)
-	}
-
-	str := fmt.Sprintf("<h3>%v</h3>", p.Title.Tr(q.LangCode))
-	str += fmt.Sprintf("<p>%v</p>", p.Desc.Tr(q.LangCode))
-	for i := 0; i < len(p.Elements); i++ {
-		str += p.Elements[i].HTML(q.LangCode) + "\n"
-		str += "<br>\n"
-	}
-	return str, nil
 }
 
 var not09azHyphenUnderscore = regexp.MustCompile(`[^a-z0-9\_\-]+`)

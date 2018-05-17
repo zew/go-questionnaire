@@ -14,32 +14,6 @@ import (
 	"github.com/zew/go-questionaire/ctr"
 )
 
-// For all multi lingual strings.
-// Contains one value for each language code.
-type transMapT map[string]string // type translation map
-
-// Tr translates
-func (t transMapT) Tr(langCode string) string {
-	if val, ok := t[langCode]; ok {
-		return val
-	}
-	if val, ok := t["en"]; ok {
-		return val
-	}
-	for _, val := range t {
-		return val
-	}
-	if t == nil {
-		return "Translation map not initialized."
-	}
-	return "Translation map not initialized."
-}
-
-// Default "stringer" implementation
-func (t transMapT) String() string {
-	return t.Tr("en")
-}
-
 var implementedTypes = map[string]interface{}{
 	"text":     nil,
 	"checkbox": nil, // A standalone checkbox - as a group, see below
@@ -47,6 +21,9 @@ var implementedTypes = map[string]interface{}{
 	// radiogroup and checkboxgroup have the same input name
 	"radiogroup":    nil, // A standalone radio makes no sense; only a radiogroup.
 	"checkboxgroup": nil, // checkboxgroup has no *sensible* use case. There was an 'amenities' array in another app, with encodings: 4 for bath, 8 for balcony... They should better be designed as independent checkboxes bath and balcony. I cannot think of any useful 'additive flags', and those would have to be added and decoded server side. We keep the type, but untested.
+
+	// Helpers
+	"textblock": nil, // Only name and description are rendered
 }
 
 // checkbox inputs need standardized values for unchecked and checked
@@ -59,7 +36,9 @@ type radioT struct {
 	Right bool      `json:"right,omitempty"` // label and description right of input, default left, similar setting for radioT but not for group
 	Label transMapT `json:"label,omitempty"`
 	Val   string    `json:"val,omitempty"` // Val is allowed to be nil; it then gets initialized to 1...n by Validate(). 0 indicates 'no entry'.
+
 	// Notice the absence of Response;
+
 }
 
 // Input represents a single form input element.
@@ -71,9 +50,11 @@ type inputT struct {
 
 	Radios []radioT `json:"radios,omitempty"` // This slice implements the radiogroup - and the senseless checkboxgroup
 
-	Right bool      `json:"right,omitempty"` // label and description right of input, default left, similar setting for radioT but not for group
-	Label transMapT `json:"label,omitempty"`
-	Desc  transMapT `json:"description,omitempty"`
+	Right   bool      `json:"right,omitempty"` // label and description right of input, default left, similar setting for radioT but not for group
+	Label   transMapT `json:"label,omitempty"`
+	Desc    transMapT `json:"description,omitempty"`
+	ColSpan int       `json:"col_span,omitempty"` // How many table cells in overall layout should the control occupy, counts against group.Cols
+
 	// Validator func() bool `json:"empty"`
 	ErrMsg transMapT `json:"err_msg,omitempty"`
 
@@ -94,41 +75,68 @@ func newInput() inputT {
 	return t
 }
 
+func renderLabelDescription(langCode string, right bool, lbl, desc transMapT) string {
+	ret := ""
+	if lbl == nil && desc == nil {
+		return ret
+	}
+	e1 := lbl.Tr(langCode)
+	if lbl == nil {
+		e1 = "" // Suppress "Translation map not initialized." here
+	}
+	e2 := desc.Tr(langCode)
+	if desc == nil {
+		e2 = "" // Suppress "Translation map not initialized." here
+	}
+	if right {
+		ret = fmt.Sprintf(
+			"<span class='go-quest-label-right'><b>%v</b> %v </span>\n",
+			e1, e2,
+		)
+	} else {
+		ret = fmt.Sprintf(
+			"<span class='go-quest-label'     ><b>%v</b> %v  </span>\n",
+			e1, e2,
+		)
+	}
+	return ret
+}
+
 // Rendering one input to HTML
 // func (i inputT) HTML(langCode string, namePrefix string) string {
-func (i inputT) HTML(langCode string, cols int) string {
+func (i inputT) HTML(langCode string) string {
 
 	nm := i.Name
 
 	ctrl := ""
 	switch i.Type {
+	case "textblock":
+		lbl := renderLabelDescription(langCode, i.Right, i.Label, i.Desc)
+		return ctrl + lbl
 	case "radiogroup", "checkboxgroup":
 
 		innerType := "radio"
 		if i.Type == "checkboxgroup" {
 			innerType = "checkbox"
 		}
-		for i2, rad := range i.Radios {
+		for _, rad := range i.Radios {
 			checked := ""
 			if i.Response == rad.Val {
 				checked = "checked=\"checked\""
 			}
 			// ctrl += fmt.Sprintf("Val %v", val)
 
-			if !rad.Right {
+			if !rad.Right && rad.Label != nil {
 				ctrl += fmt.Sprintf("<span class='go-quest-label-right'>%v</span>\n", rad.Label.Tr(langCode))
 			}
 
 			ctrl += fmt.Sprintf("<input type='%v' name='%v' id='%v' title='%v %v' value='%v' %v />\n",
 				innerType, nm, nm, i.Label.Tr(langCode), i.Desc.Tr(langCode), rad.Val, checked)
 
-			if rad.Right {
+			if rad.Right && rad.Label != nil {
 				ctrl += fmt.Sprintf("<span class='go-quest-label'>%v</span>\n", rad.Label.Tr(langCode))
 			}
 
-			if cols > 0 && (i2+1)%cols == 0 && i2 > 0 || i2 == len(i.Radios)-1 {
-				ctrl += vspacer
-			}
 		}
 		// The checkbox "empty catcher" must follow *after* the actual checkbox input,
 		// since http.Form.Get() fetches the first value.
@@ -162,11 +170,8 @@ func (i inputT) HTML(langCode string, cols int) string {
 		ctrl += fmt.Sprintf("input %v: unknown type '%v'  - allowed are %v\n", nm, i.Type, implementedTypes)
 	}
 
-	if i.Right {
-		lbl := fmt.Sprintf("<span class='go-quest-label-right'><label for='%v'>  <b>%v</b> %v </label></span>\n", nm, i.Label.Tr(langCode), i.Desc.Tr(langCode))
-		return ctrl + lbl
-	}
-	lbl := fmt.Sprintf("<span class='go-quest-label'><label for='%v'>  <b>%v</b> %v </label></span>\n", nm, i.Label.Tr(langCode), i.Desc.Tr(langCode))
+	lbl := renderLabelDescription(langCode, i.Right, i.Label, i.Desc)
+	lbl = fmt.Sprintf("<label for='%v'>%v</label>\n", nm, lbl)
 	return lbl + ctrl
 
 }
@@ -194,14 +199,27 @@ func (gr groupT) HTML(langCode string) string {
 
 	b.WriteString("<div class='go-quest-group' >\n")
 
-	lbl := fmt.Sprintf("<span class='go-quest-group-header'><b>%v</b> %v</span> \n", gr.Label.Tr(langCode), gr.Desc.Tr(langCode))
+	lbl := renderLabelDescription(langCode, false, gr.Label, gr.Desc)
+
 	b.WriteString(lbl)
 	b.WriteString(vspacer)
 
-	for i, mem := range gr.Members {
-		b.WriteString(mem.HTML(langCode, gr.Cols))
-		if gr.Cols > 0 && (i+1)%gr.Cols == 0 && i > 0 {
-			b.WriteString(vspacer)
+	cols := 0 // cols counter
+	for _, mem := range gr.Members {
+		b.WriteString(mem.HTML(langCode))
+
+		log.Printf("%12v %2v %2v", mem.Type, cols, len(mem.Radios))
+		if gr.Cols > 0 {
+			if cols > 0 && (cols+1)%gr.Cols == 0 || cols == len(gr.Members)-1 {
+				b.WriteString(vspacer) // new row  - or end of group
+			}
+			if mem.ColSpan > 0 {
+				cols += mem.ColSpan // larger input controls
+			} else if len(mem.Radios) > 0 {
+				cols += len(mem.Radios) // radiogroups, if no ColSpan is set
+			} else {
+				cols++ // default: every input occupies one column width
+			}
 		}
 	}
 	b.WriteString("</div>\n")

@@ -31,6 +31,7 @@ func main() {
 
 	//
 	qst.GenerateExample()
+	qst.GenerateExample2()
 
 	//
 	//
@@ -73,6 +74,7 @@ func main() {
 	mux1.HandleFunc("/", mainH)
 	mux1.HandleFunc(cfg.Pref("/"), mainH)
 	mux1.HandleFunc(cfg.PrefWTS("/"), mainH)
+	mux1.HandleFunc(cfg.Pref("/reload-from-file"), reloadH)
 
 	//
 	// Session manager and session management.

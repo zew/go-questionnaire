@@ -51,7 +51,11 @@ func (q *QuestionaireT) Validate() error {
 
 				// grp := q.Pages[i1].Elements[i2].Name
 				nm := q.Pages[i1].Elements[i2].Members[i3].Name
-				// tp := q.Pages[i1].Elements[i2].Members[i3].Type
+				tp := q.Pages[i1].Elements[i2].Members[i3].Type
+
+				if tp == "textblock" {
+					continue
+				}
 
 				if nm == "" {
 					return fmt.Errorf(s+"Name %v is empty", nm)

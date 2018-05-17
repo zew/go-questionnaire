@@ -13,13 +13,15 @@ import (
 	"github.com/pkg/errors"
 )
 
-func mainH(w http.ResponseWriter, r *http.Request) {
-
-	helper := func(err error, msg string) {
-		err = errors.Wrap(err, msg)
-		log.Print(err)
-		http.Error(w, err.Error(), http.StatusInternalServerError)
+func helper(w http.ResponseWriter, err error, msgs ...string) {
+	if len(msgs) > 0 {
+		err = errors.Wrap(err, msgs[0])
 	}
+	log.Print(err)
+	http.Error(w, err.Error(), http.StatusInternalServerError)
+}
+
+func loadQuestionaire(w http.ResponseWriter, r *http.Request) (*qst.QuestionaireT, error) {
 
 	sess := sessx.New(w, r)
 
@@ -28,32 +30,54 @@ func mainH(w http.ResponseWriter, r *http.Request) {
 	var q = &qst.QuestionaireT{}
 	ok, err := sess.EffectiveObj("questionaire", q)
 	if err != nil {
-		helper(err, "Reading questionaire from session caused error")
-		return
+		err = errors.Wrap(err, "Reading questionaire from session caused error")
+		return q, err
 	}
 	if ok {
 		log.Printf("Questionaire loaded from session; %v pages", len(q.Pages))
 	} else {
 		q, err = qst.Load("questionaire.json")
 		if err != nil {
-			helper(err, "Loading questionaire from file caused error")
-			return
+			err = errors.Wrap(err, "Loading questionaire from file caused error")
+			return q, err
 		}
 		err = q.Validate()
 		if err != nil {
-			helper(err, "Questionaire validation caused error")
-			return
+			err = errors.Wrap(err, "Questionaire validation caused error")
+			return q, err
 		}
 		log.Printf("Questionaire loaded from file; %v pages", len(q.Pages))
+	}
+	return q, nil
+
+}
+
+func reloadH(w http.ResponseWriter, r *http.Request) {
+	sess := sessx.New(w, r)
+	sess.Remove(w, "questionaire")
+}
+
+func mainH(w http.ResponseWriter, r *http.Request) {
+
+	sess := sessx.New(w, r)
+
+	q, err := loadQuestionaire(w, r)
+	if err != nil {
+		helper(w, err)
+		return
 	}
 
 	//
 	// Change page logic
 	prevPage, ok, err := sess.EffectiveInt("curr_page")
 	if err != nil {
-		helper(err, "Reading request parameter caused error")
+		helper(w, err, "Reading request parameter caused error")
 		return
 	}
+	if !ok {
+		prevPage = 0
+	}
+
 	submit := sess.EffectiveStr("submit")
 	log.Printf("submit is '%v'", submit)
 	currPage := q.CurrPage
@@ -99,7 +123,7 @@ func mainH(w http.ResponseWriter, r *http.Request) {
 	// Save questionaire into session
 	err = sess.PutObject("questionaire", q)
 	if err != nil {
-		helper(err, "Putting questionaire into session caused error")
+		helper(w, err, "Putting questionaire into session caused error")
 		return
 	}
 
@@ -116,7 +140,7 @@ func mainH(w http.ResponseWriter, r *http.Request) {
 		},
 	)
 	if err != nil {
-		helper(err, "Executing template caused error")
+		helper(w, err, "Executing template caused error")
 		return
 	}
 

@@ -34,7 +34,7 @@ func (q *QuestionaireT) Validate() error {
 				for i4 := 0; i4 < len(inp.Radios); i4++ {
 					if inp.Radios[i4].Val == "" {
 						inp.Radios[i4].Val = fmt.Sprintf("%v", i4+1)
-						log.Printf(s + fmt.Sprintf("Value for %v set to %v", inp.Radios[i4].Label, i4+1))
+						log.Printf(s + fmt.Sprintf("Value for %10v set to '%v'", inp.Radios[i4].Label, i4+1))
 					}
 				}
 

@@ -39,9 +39,9 @@ func GenerateExample() *QuestionaireT {
 				inp1.Desc = map[string]string{"de": "", "en": ""}
 				inp1.Right = false
 				inp1.Radios = []radioT{
-					radioT{"fanta", transMapT{"de": "Fanta", "en": "Fanta"}, false},
-					radioT{"miranda", transMapT{"de": "Miranda", "en": "Baccara"}, false},
-					radioT{"cholera", transMapT{"de": "Cholera", "en": "Scabies"}, true},
+					radioT{Val: "fanta", Label: transMapT{"de": "Fanta", "en": "Fanta"}, Right: false},
+					radioT{Val: "miranda", Label: transMapT{"de": "Miranda", "en": "Baccara"}, Right: false},
+					radioT{Val: "cholera", Label: transMapT{"de": "Cholera", "en": "Scabies"}, Right: true},
 				}
 
 				inp2 := inputT{}

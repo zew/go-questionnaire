@@ -11,13 +11,13 @@ import (
 	"net/http"
 	"time"
 
+	"github.com/zew/go-questionaire/bootstrap"
 	"github.com/zew/go-questionaire/cfg"
 	"github.com/zew/go-questionaire/lgn"
 	"github.com/zew/go-questionaire/muxwrap"
 	"github.com/zew/go-questionaire/qst"
 	"github.com/zew/go-questionaire/sessx"
 	"github.com/zew/go-questionaire/tpl"
-	"github.com/zew/util"
 )
 
 func main() {
@@ -25,28 +25,9 @@ func main() {
 	rand.Seed(time.Now().UTC().UnixNano())
 	log.SetFlags(log.Lshortfile | log.Ldate | log.Ltime)
 
-	fl := util.NewFlags()
-	fl.Add(
-		util.FlagT{
-			Long:       "config_file",
-			Short:      "cfg",
-			DefaultVal: "config.json",
-			Desc:       "JSON file containing config data",
-		},
-	)
-	fl.Add(
-		util.FlagT{
-			Long:       "logins_file",
-			Short:      "lgn",
-			DefaultVal: "logins.json",
-			Desc:       "JSON file containing logins data",
-		},
-	)
-	fl.Gen()
-	cfg.CfgPath = (*fl)[0].Val
-	cfg.Load()
-	lgn.LgnsPath = (*fl)[1].Val
-	lgn.Load()
+	bootstrap.Config()
+	cfg.Example()
+	lgn.Example()
 
 	//
 	qst.GenerateExample()

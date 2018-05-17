@@ -4,6 +4,7 @@
  		{
  			"user": "myUser",
  			"email": "myUser@example.com",
+ 			"empty": "",
  			"roles": {
  				"admin": "yes"
  			},

@@ -30,9 +30,14 @@ func (t transMapT) Tr(langCode string) string {
 		return val
 	}
 	if t == nil {
-		return "Missing translation. Map not initialized."
+		return "Translation map not initialized."
 	}
-	return "Missing translation."
+	return "Translation map not initialized."
+}
+
+// Default "stringer" implementation
+func (t transMapT) String() string {
+	return t.Tr("en")
 }
 
 var implementedTypes = map[string]interface{}{
@@ -40,31 +45,35 @@ var implementedTypes = map[string]interface{}{
 	"checkbox": nil, // A standalone checkbox - as a group, see below
 
 	// radiogroup and checkboxgroup have the same input name
-	"radiogroup":    nil, // A standalone radio makes no sense; only a radiogroup
-	"checkboxgroup": nil, // checkboxgroup has no use case. For example OR flags such as 4 - bath, 8 - balcony. They should better be designed as independent checkboxes bath and balcony
+	"radiogroup":    nil, // A standalone radio makes no sense; only a radiogroup.
+	"checkboxgroup": nil, // checkboxgroup has no *sensible* use case. There was an 'amenities' array in another app, with encodings: 4 for bath, 8 for balcony... They should better be designed as independent checkboxes bath and balcony. I cannot think of any useful 'additive flags', and those would have to be added and decoded server side. We keep the type, but untested.
 }
 
-// For radio and for checkbox inputs
+// checkbox inputs need standardized values for unchecked and checked
 const valEmpty = "0"
 const valSet = "1"
 const vspacer = "<div class='go-quest-vspacer'></div>\n"
 
-// Special for radiogroup
+// Special subtype of inputT; used for radiogroup
 type radioT struct {
-	Val   string    `json:"val,omitempty"`
+	Right bool      `json:"right,omitempty"` // label and description right of input, default left, similar setting for radioT but not for group
 	Label transMapT `json:"label,omitempty"`
-	Right bool      `json:"right,omitempty"` // label and description right of input, default left
+	Val   string    `json:"val,omitempty"` // Val is allowed to be nil; it then gets initialized to 1...n by Validate(). 0 indicates 'no entry'.
+	// Notice the absence of Response;
 }
 
+// Input represents a single form input element.
+// There is one exception for multiple radios (radiogroup) with the same name but distinct values.
+// Multiple checkboxes (checkboxgroup) with same name but distinct values are a dubious instrument. See comment to implementedType checkboxgroup.
 type inputT struct {
 	Name string `json:"name,omitempty"`
 	Type string `json:"type,omitempty"`
 
-	Radios []radioT `json:"radios,omitempty"`
+	Radios []radioT `json:"radios,omitempty"` // This slice implements the radiogroup - and the senseless checkboxgroup
 
+	Right bool      `json:"right,omitempty"` // label and description right of input, default left, similar setting for radioT but not for group
 	Label transMapT `json:"label,omitempty"`
 	Desc  transMapT `json:"description,omitempty"`
-	Right bool      `json:"right,omitempty"` // label and description right of input, default left
 	// Validator func() bool `json:"empty"`
 	ErrMsg transMapT `json:"err_msg,omitempty"`
 
@@ -162,9 +171,10 @@ func (i inputT) HTML(langCode string, cols int) string {
 
 }
 
-// A group consists of several input controls
+// A group consists of several input controls.
+// It contains no response information.
 // It can bundle checkbox or text inputs with *distinct* names.
-// Whereas: radiogroup and checkboxgroup have the *same* name.
+// Whereas: radiogroup and checkboxgroup have the *same* name and a single response.
 // A group is a layout unit with a configurable number of columns.
 type groupT struct {
 	// Name  string

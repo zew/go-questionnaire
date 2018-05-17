@@ -15,6 +15,13 @@ func GenerateExample2() *QuestionaireT {
 
 	page1 := newPage()
 
+	i1 := inputT{}
+	i1.Type = "textblock"
+	i1.Label = transMapT{
+		"de": "",
+		"en": "",
+	}
+
 	i1a := inputT{}
 	i1a.Type = "textblock"
 	i1a.Label = transMapT{
@@ -59,9 +66,12 @@ func GenerateExample2() *QuestionaireT {
 		"de": "Deutschland",
 		"en": "Germany",
 	}
+	i4 := i2
+	i4.Name = "y0_us"
+	i4.Label = nil
 
 	gr1 := groupT{}
-	gr1.Cols = 4
+	gr1.Cols = 5
 	gr1.Label = transMapT{
 		"de": "1.",
 		"en": "1.",
@@ -70,7 +80,7 @@ func GenerateExample2() *QuestionaireT {
 		"de": "Die gesamtwirtschaftliche Situation beurteilen wir als",
 		"en": "We assess the overall market situation as",
 	}
-	gr1.Members = append(gr1.Members, i1a, i1b, i1c, i1d, i2, i3)
+	gr1.Members = append(gr1.Members, i1, i1a, i1b, i1c, i1d, i2, i3, i4)
 	page1.Elements = append(page1.Elements, gr1)
 
 	quest.Pages = append(quest.Pages, page1)

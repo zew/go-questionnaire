@@ -189,22 +189,28 @@ img.icon-halve {
 	height:08px;
 }
 
-.go-quest-label, .go-quest-label-right  {
+.go-quest-cell, 
+.dummy {
+	display: inline-block;
+	vertical-align: middle;
+	min-width: 18%;
+	/* min-width: 200px; */
+}
+
+
+.go-quest-label, .go-quest-label-right ,
+.dummy {
 	display: inline-block;
 	vertical-align: middle;
 	white-space: nowrap;
 
-
+	text-align: left; 
 	font-size: 12px;
 	padding-right: 2px; 
 }
 
-.go-quest-label {
-	text-align: right; 
-}
-
 .go-quest-label-right {
-	text-align: left; 
+	text-align: right; 
 }
 
 

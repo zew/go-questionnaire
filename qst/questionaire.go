@@ -36,24 +36,21 @@ type radioT struct {
 	Right bool      `json:"right,omitempty"` // label and description right of input, default left, similar setting for radioT but not for group
 	Label transMapT `json:"label,omitempty"`
 	Val   string    `json:"val,omitempty"` // Val is allowed to be nil; it then gets initialized to 1...n by Validate(). 0 indicates 'no entry'.
-
 	// Notice the absence of Response;
-
 }
 
 // Input represents a single form input element.
 // There is one exception for multiple radios (radiogroup) with the same name but distinct values.
 // Multiple checkboxes (checkboxgroup) with same name but distinct values are a dubious instrument. See comment to implementedType checkboxgroup.
 type inputT struct {
-	Name string `json:"name,omitempty"`
-	Type string `json:"type,omitempty"`
-
-	Radios []radioT `json:"radios,omitempty"` // This slice implements the radiogroup - and the senseless checkboxgroup
-
+	Name    string    `json:"name,omitempty"`
+	Type    string    `json:"type,omitempty"`
 	Right   bool      `json:"right,omitempty"` // label and description right of input, default left, similar setting for radioT but not for group
 	Label   transMapT `json:"label,omitempty"`
 	Desc    transMapT `json:"description,omitempty"`
 	ColSpan int       `json:"col_span,omitempty"` // How many table cells in overall layout should the control occupy, counts against group.Cols
+
+	Radios []radioT `json:"radios,omitempty"` // This slice implements the radiogroup - and the senseless checkboxgroup
 
 	// Validator func() bool `json:"empty"`
 	ErrMsg transMapT `json:"err_msg,omitempty"`
@@ -99,6 +96,7 @@ func renderLabelDescription(langCode string, right bool, lbl, desc transMapT) st
 			e1, e2,
 		)
 	}
+	ret = fmt.Sprintf("<span class='go-quest-cell'>%v</span>\n", ret)
 	return ret
 }
 
@@ -108,35 +106,37 @@ func (i inputT) HTML(langCode string) string {
 
 	nm := i.Name
 
-	ctrl := ""
 	switch i.Type {
 	case "textblock":
 		lbl := renderLabelDescription(langCode, i.Right, i.Label, i.Desc)
-		return ctrl + lbl
-	case "radiogroup", "checkboxgroup":
+		return lbl
 
+	case "radiogroup", "checkboxgroup":
+		ctrl := ""
 		innerType := "radio"
 		if i.Type == "checkboxgroup" {
 			innerType = "checkbox"
 		}
 		for _, rad := range i.Radios {
+			one := ""
 			checked := ""
 			if i.Response == rad.Val {
 				checked = "checked=\"checked\""
 			}
-			// ctrl += fmt.Sprintf("Val %v", val)
+			// one += fmt.Sprintf("Val %v", val)
 
 			if !rad.Right && rad.Label != nil {
-				ctrl += fmt.Sprintf("<span class='go-quest-label-right'>%v</span>\n", rad.Label.Tr(langCode))
+				one += fmt.Sprintf("<span class='go-quest-label'>%v</span>\n", rad.Label.Tr(langCode))
 			}
 
-			ctrl += fmt.Sprintf("<input type='%v' name='%v' id='%v' title='%v %v' value='%v' %v />\n",
+			one += fmt.Sprintf("<input type='%v' name='%v' id='%v' title='%v %v' value='%v' %v />\n",
 				innerType, nm, nm, i.Label.Tr(langCode), i.Desc.Tr(langCode), rad.Val, checked)
 
 			if rad.Right && rad.Label != nil {
-				ctrl += fmt.Sprintf("<span class='go-quest-label'>%v</span>\n", rad.Label.Tr(langCode))
+				one += fmt.Sprintf("<span class='go-quest-label-right'>%v</span>\n", rad.Label.Tr(langCode))
 			}
-
+			one = fmt.Sprintf("<span class='go-quest-cell'>%v</span>\n", one)
+			ctrl += one
 		}
 		// The checkbox "empty catcher" must follow *after* the actual checkbox input,
 		// since http.Form.Get() fetches the first value.
@@ -144,9 +144,12 @@ func (i inputT) HTML(langCode string) string {
 			ctrl += fmt.Sprintf("<input type='hidden' name='%v' id='%v_hidd' value='%v' />\n",
 				nm, nm, valEmpty)
 		}
+		lbl := renderLabelDescription(langCode, i.Right, i.Label, i.Desc)
+		// lbl = fmt.Sprintf("<label for='%v'>%v</label>\n", nm, lbl)
+		return lbl + ctrl
 
 	case "text", "checkbox":
-
+		ctrl := ""
 		val := i.Response
 
 		checked := ""
@@ -156,7 +159,6 @@ func (i inputT) HTML(langCode string) string {
 			}
 			val = valSet
 		}
-
 		ctrl += fmt.Sprintf("<input type='%v' name='%v' id='%v' title='%v %v' value='%v' %v />\n",
 			i.Type, nm, nm, i.Label.Tr(langCode), i.Desc.Tr(langCode), val, checked)
 
@@ -165,14 +167,15 @@ func (i inputT) HTML(langCode string) string {
 		if i.Type == "checkbox" {
 			ctrl += fmt.Sprintf("<input type='hidden' name='%v' id='%v_hidd' value='0' />\n", nm, nm)
 		}
+		ctrl = fmt.Sprintf("<span class='go-quest-cell'>%v</span>\n", ctrl)
+
+		lbl := renderLabelDescription(langCode, i.Right, i.Label, i.Desc)
+		lbl = fmt.Sprintf("<label for='%v'>%v</label>\n", nm, lbl)
+		return lbl + ctrl
 
 	default:
-		ctrl += fmt.Sprintf("input %v: unknown type '%v'  - allowed are %v\n", nm, i.Type, implementedTypes)
+		return fmt.Sprintf("input %v: unknown type '%v'  - allowed are %v\n", nm, i.Type, implementedTypes)
 	}
-
-	lbl := renderLabelDescription(langCode, i.Right, i.Label, i.Desc)
-	lbl = fmt.Sprintf("<label for='%v'>%v</label>\n", nm, lbl)
-	return lbl + ctrl
 
 }
 
@@ -205,21 +208,27 @@ func (gr groupT) HTML(langCode string) string {
 	b.WriteString(vspacer)
 
 	cols := 0 // cols counter
-	for _, mem := range gr.Members {
+	for i, mem := range gr.Members {
 		b.WriteString(mem.HTML(langCode))
 
-		log.Printf("%12v %2v %2v", mem.Type, cols, len(mem.Radios))
 		if gr.Cols > 0 {
-			if cols > 0 && (cols+1)%gr.Cols == 0 || cols == len(gr.Members)-1 {
-				b.WriteString(vspacer) // new row  - or end of group
-			}
 			if mem.ColSpan > 0 {
 				cols += mem.ColSpan // larger input controls
 			} else if len(mem.Radios) > 0 {
 				cols += len(mem.Radios) // radiogroups, if no ColSpan is set
+				if mem.Label != nil || mem.Desc != nil {
+					cols++ // plus one for the leading label of the input
+				}
 			} else {
 				cols++ // default: every input occupies one column width
 			}
+
+			// log.Printf("%12v %2v %2v", mem.Type, cols, cols%gr.Cols)
+
+			if (cols+0)%gr.Cols == 0 || i == len(gr.Members)-1 {
+				b.WriteString(vspacer) // end of row  - or end of group
+			}
+
 		}
 	}
 	b.WriteString("</div>\n")

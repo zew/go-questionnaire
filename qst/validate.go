@@ -3,8 +3,19 @@ package qst
 import (
 	"fmt"
 	"log"
+	"regexp"
 	"strings"
 )
+
+var not09azHyphenUnderscore = regexp.MustCompile(`[^a-z0-9\_\-]+`)
+
+// Example
+func Mustaz09_(s string) bool {
+	if not09azHyphenUnderscore.MatchString(s) {
+		return false
+	}
+	return true
+}
 
 // Validate checks whether essential elements of the questionaire exist.
 func (q *QuestionaireT) Validate() error {

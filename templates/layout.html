@@ -14,14 +14,34 @@
 			console.log('CDN version not available: fallback to local resource.'); 
 		}
 	</script>
+	<style>
+		/* https://css-tricks.com/centering-css-complete-guide/ */
+		.hori-vert-center-parent {
+			position: relative;
+		}
+		.hori-vert-center-child {
+			position: absolute;
+			top:  50%;
+			left: 50%;
+			transform: translate(-50%, -60%);		
+		}
+		.hori-center-me {
+			margin: 0 auto;  /*  unused */
+		}	
+	</style>
+
 </head>
-<body>
+<body class="hori-vert-center-parent">
 	<script type="text/javascript">
 		$(document).ready(function() {
 			console.log('body: jQuery doc.ready()');
 			// $( "body" ).children().last().append( "<p>jQuery doc.ready()</p>" );
 		});
 	</script>
+
+
+
+	<div class="hori-vert-center-child" style="width:80%; min-width: 800px;">
 
 	<!-- following span is to make the body extractable by splitting it -->
 	<span class='body'></span>
@@ -37,9 +57,9 @@
 	{{toHtml .CntAfter}}
 
 
-	<table style='width:100%;'>
+	<table style='width:100%; padding: 0; margin: 0;'>
 		<tr>
-			<td style='width: 33%'>
+			<td style='width: 33%;text-align: left;'>
 				 {{if .Q.HasPrev}}
 					<!--
 					<a accesskey="p" href="{{prefix ""}}?curr_page={{.Q.Prev}}"> << Page {{addint .Q.Prev 1}} </a>
@@ -49,10 +69,10 @@
 					</button>
 				 {{end}}
 			</td>
-			<td style='width: 33%'>
+			<td style='width: 33%;text-align: center;'>
 				-{{addint .Q.CurrPage 1}}-
 			</td>
-			<td style='width: 33%'>
+			<td style='width: 33%;text-align: right;'>
 				{{if .Q.HasNext}}
 				<!--
 				<a accesskey="n" href="{{prefix ""}}?curr_page={{.Q.Next}}"> Page {{addint .Q.Next 1}} >></a>
@@ -71,14 +91,13 @@
 	
 	<span class='body'></span>
 
+	</div>	<!-- end of center me-->
+
 	<!-- footer -->
 	<div class="footer" >
 		<div class='ib main-navi-block'>
 		</div>
-		<div class='ib main-navi-block'>
-			<a href="{{prefix ""}}" accesskey="h" >Home</a>
-			&nbsp; &nbsp; &nbsp; &nbsp; 
-			<a href="{{prefix "/doc/" }}" >Documentation</a><br />
+			<a href="{{prefix "/doc/" }}" >Impressum</a><br />
 		</div>
 	</div>
 </body>

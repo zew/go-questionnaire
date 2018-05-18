@@ -37,11 +37,11 @@ func GenerateExample() *QuestionaireT {
 				inp1.Name = "foo"
 				inp1.Label = map[string]string{"de": "Brause", "en": "Softdrink"}
 				inp1.Desc = map[string]string{"de": "", "en": ""}
-				inp1.Right = false
+				inp1.HAlign = horizontalAlignment(0)
 				inp1.Radios = []radioT{
-					radioT{Val: "fanta", Label: transMapT{"de": "Fanta", "en": "Fanta"}, Right: false},
-					radioT{Val: "miranda", Label: transMapT{"de": "Miranda", "en": "Baccara"}, Right: false},
-					radioT{Val: "cholera", Label: transMapT{"de": "Cholera", "en": "Scabies"}, Right: true},
+					radioT{Val: "fanta", Label: transMapT{"de": "Fanta", "en": "Fanta"}, HAlign: horizontalAlignment(0)},
+					radioT{Val: "miranda", Label: transMapT{"de": "Miranda", "en": "Baccara"}, HAlign: horizontalAlignment(0)},
+					radioT{Val: "cholera", Label: transMapT{"de": "Cholera", "en": "Scabies"}, HAlign: horizontalAlignment(2)},
 				}
 
 				inp2 := inputT{}
@@ -49,11 +49,11 @@ func GenerateExample() *QuestionaireT {
 				inp2.Name = "bar"
 				inp2.Label = map[string]string{"de": "Programmiersprache", "en": "Programming language"}
 				inp2.Desc = map[string]string{"de": "", "en": ""}
-				inp2.Right = true
+				inp2.HAlign = horizontalAlignment(2)
 				inp2.Radios = []radioT{
-					radioT{Label: transMapT{"de": "Logik", "en": "Reasoning"}, Right: false},
-					radioT{Label: transMapT{"de": "Basic", "en": "Basics"}, Right: true},
-					radioT{Label: transMapT{"de": "Plastik", "en": "Plastics"}, Right: true},
+					radioT{Label: transMapT{"de": "Logik", "en": "Reasoning"}, HAlign: horizontalAlignment(0)},
+					radioT{Label: transMapT{"de": "Basic", "en": "Basics"}, HAlign: horizontalAlignment(2)},
+					radioT{Label: transMapT{"de": "Plastik", "en": "Plastics"}, HAlign: horizontalAlignment(2)},
 				}
 
 				gr := groupT{}
@@ -73,14 +73,14 @@ func GenerateExample() *QuestionaireT {
 				inp1.Name = "pizz"
 				inp1.Label = map[string]string{"de": "Fladenbrot", "en": "Pizza"}
 				inp1.Desc = map[string]string{"de": "würzig belegtes Fladenbrot", "en": "a traditional Italian dish"}
-				inp1.Right = true
+				inp1.HAlign = horizontalAlignment(2)
 
 				inp2 := inputT{}
 				inp2.Type = "checkbox"
 				inp2.Name = "o-oil"
 				inp2.Label = map[string]string{"de": "Olivenöl", "en": "olive oil"}
 				inp2.Desc = map[string]string{"de": "ungesättigte Fettsäuren", "en": "digestable fatty acids"}
-				inp2.Right = true
+				inp2.HAlign = horizontalAlignment(2)
 
 				inp3 := inputT{}
 				inp3.Type = "checkbox"

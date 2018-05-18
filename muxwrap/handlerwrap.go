@@ -1,5 +1,5 @@
 // Package muxwrap inserts some common logic,
-// before calling the orginal handler func.
+// before calling the actual handler func.
 package muxwrap
 
 import (
@@ -8,8 +8,8 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/zew/logx"
 	"github.com/zew/go-questionaire/sessx"
+	"github.com/zew/logx"
 	"github.com/zew/util"
 )
 

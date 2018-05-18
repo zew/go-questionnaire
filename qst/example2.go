@@ -6,6 +6,106 @@ import (
 	"log"
 )
 
+func labelsGoodBad() []transMapT {
+
+	tm := []transMapT{
+		transMapT{
+			"de": "gut",
+			"en": "good",
+		},
+		transMapT{
+			"de": "normal",
+			"en": "normal",
+		},
+		transMapT{
+			"de": "schlecht",
+			"en": "bad",
+		},
+		transMapT{
+			"de": "keine Ang.",
+			"en": "no answer",
+		},
+	}
+
+	return tm
+
+}
+
+func labelsImproveDeteriorate() []transMapT {
+
+	tm := []transMapT{
+		transMapT{
+			"de": "verbessern",
+			"en": "improve",
+		},
+		transMapT{
+			"de": "nicht verändern",
+			"en": "not change",
+		},
+		transMapT{
+			"de": "verschlechtern",
+			"en": "deteriorate",
+		},
+		transMapT{
+			"de": "keine Ang.",
+			"en": "no answer",
+		},
+	}
+
+	return tm
+
+}
+
+func radioMatrix(headerLabels []transMapT, inpNames []string, rowLabels []transMapT) *groupT {
+
+	grp := groupT{}
+
+	// Header row - first column - empty cell
+	if len(rowLabels) > 0 {
+		if len(rowLabels) != len(inpNames) { // consistence check
+			panic("radioMatrix(): if row labels exist, they should exist for *all* rows")
+		}
+		inp := inputT{}
+		inp.Type = "textblock"
+		inp.Label = transMapT{
+			"de": "",
+			"en": "",
+		}
+		grp.Members = append(grp.Members, inp)
+	}
+
+	// Header row - next columns
+	for _, lbl := range headerLabels {
+		inp := inputT{}
+		inp.Type = "textblock"
+		inp.HAlign = horizontalAlignment(1)
+		inp.Label = lbl // for instance transMapT{"de": "gut", "en": "good"}
+		grp.Members = append(grp.Members, inp)
+	}
+
+	//
+	for i, name := range inpNames {
+		inp := inputT{}
+		inp.Type = "radiogroup"
+		inp.Name = name // "y0_euro"
+		if len(rowLabels) > 0 {
+			inp.Label = rowLabels[i] // for instance transMapT{"de": "Euroraum", "en": "euro area"}
+		}
+		for i2 := 0; i2 < len(headerLabels); i2++ {
+			rad := radioT{}
+			if i2 == 0 {
+				rad.HAlign = horizontalAlignment(0)
+			} else {
+				rad.HAlign = horizontalAlignment(1)
+			}
+			inp.Radios = append(inp.Radios, rad)
+		}
+		grp.Members = append(grp.Members, inp)
+	}
+
+	return &grp
+}
+
 func GenerateExample2() *QuestionaireT {
 
 	quest := QuestionaireT{}
@@ -15,73 +115,83 @@ func GenerateExample2() *QuestionaireT {
 
 	page1 := newPage()
 
-	i1 := inputT{}
-	i1.Type = "textblock"
-	i1.Label = transMapT{
-		"de": "",
-		"en": "",
+	names1stMatrix := []string{
+		"y0_ez",
+		"y0_deu",
+		"y0_usa",
+		"y0_glob",
+	}
+	labels123Matrix := []transMapT{
+		transMapT{
+			"de": "Euroraum",
+			"en": "Euro area",
+		},
+		transMapT{
+			"de": "Deutschland",
+			"en": "Germany",
+		},
+		transMapT{
+			"de": "USA",
+			"en": "US",
+		},
+		transMapT{
+			"de": "Weltwirtschaft",
+			"en": "Global economy",
+		},
 	}
 
-	i1a := inputT{}
-	i1a.Type = "textblock"
-	i1a.Label = transMapT{
-		"de": "gut",
-		"en": "good",
-	}
-	i1b := inputT{}
-	i1b.Type = "textblock"
-	i1b.Label = transMapT{
-		"de": "normal",
-		"en": "normal",
-	}
-	i1c := inputT{}
-	i1c.Type = "textblock"
-	i1c.Label = transMapT{
-		"de": "schlecht",
-		"en": "bad",
-	}
-	i1d := inputT{}
-	i1d.Type = "textblock"
-	i1d.Label = transMapT{
-		"de": "keine Ang.",
-		"en": "no answer",
-	}
-
-	i2 := inputT{}
-	i2.Type = "radiogroup"
-	i2.Name = "y0_euro"
-	i2.Label = transMapT{
-		"de": "Eurozone",
-		"en": "eurozone",
-	}
-	i2.Radios = []radioT{
-		radioT{},
-		radioT{},
-		radioT{},
-		radioT{},
-	}
-	i3 := i2
-	i3.Name = "y0_germany"
-	i3.Label = transMapT{
-		"de": "Deutschland",
-		"en": "Germany",
-	}
-	i4 := i2
-	i4.Name = "y0_us"
-	i4.Label = nil
-
-	gr1 := groupT{}
-	gr1.Cols = 5
+	gr1 := radioMatrix(labelsGoodBad(), names1stMatrix, labels123Matrix)
+	gr1.Cols = 5 // not necessary, otherwise no vspacers
 	gr1.Label = transMapT{
 		"de": "1.",
 		"en": "1.",
 	}
 	gr1.Desc = transMapT{
 		"de": "Die gesamtwirtschaftliche Situation beurteilen wir als",
-		"en": "We assess the overall market situation as",
+		"en": "We assess the overall economic situation as",
 	}
-	gr1.Members = append(gr1.Members, i1, i1a, i1b, i1c, i1d, i2, i3, i4)
-	page1.Elements = append(page1.Elements, gr1)
+
+	page1.Elements = append(page1.Elements, *gr1)
+
+	names2stMatrix := []string{
+		"y_ez",
+		"y_deu",
+		"y_usa",
+		"y_glob",
+	}
+
+	gr2 := radioMatrix(labelsImproveDeteriorate(), names2stMatrix, labels123Matrix)
+	gr2.Cols = 5 // not necessary, otherwise no vspacers
+	gr2.Label = transMapT{
+		"de": "2a.",
+		"en": "2a.",
+	}
+	gr2.Desc = transMapT{
+		"de": "Die gesamtwirtschaftliche Situation wird sich mittelfristig (6 Mo.)",
+		"en": "The overall economic situation medium term (6 months) will",
+	}
+
+	page1.Elements = append(page1.Elements, *gr2)
+
+	names3rdMatrix := []string{
+		"y24_ez",
+		"y24_deu",
+		"y24_usa",
+		"y24_glob",
+	}
+
+	gr3 := radioMatrix(labelsImproveDeteriorate(), names3rdMatrix, labels123Matrix)
+	gr3.Cols = 5 // not necessary, otherwise no vspacers
+	gr3.Label = transMapT{
+		"de": "2b.",
+		"en": "2b.",
+	}
+	gr3.Desc = transMapT{
+		"de": "Die gesamtwirtschaftliche Situation wird sich langfristig (24 Mo.)",
+		"en": "The overall economic situation long term (24 months) will",
+	}
+
+	page1.Elements = append(page1.Elements, *gr3)
 
 	quest.Pages = append(quest.Pages, page1)
 

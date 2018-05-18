@@ -1,23 +1,31 @@
 * {
 	margin: 0;
 	box-sizing: border-box; /* css3 rec */
-}
-
-.* {
 	font-family: tahoma;
 }
 
 
 /*
-	A footer sticking to the bottom
+	Body with footer sticking to the bottom
 	until the body gets larger than
 	the viewport;
   	https://codepen.io/cbracco/pen/zekgx
 */
 body {
 	position: relative;
+	margin: 24px;
 	padding-bottom: 96px; /*for footer*/
 	background-color:{{ .body_background_color }};
+
+	font-size: 18px;
+	line-height: 180%;
+}
+
+
+
+div {
+	font-size: 14px;
+	line-height: 100%;   /* correct body line-height  */
 }
 
 
@@ -55,16 +63,6 @@ a {
 pre {
 	line-height:14px;
 }
-
-body {
-	font-family:tahoma; 
-	font-size: 15px;
-	font-size: 18px;
-	line-height: 180%;
-	margin: 24px;
-}
-
-
 
 
 input, select{
@@ -128,13 +126,13 @@ div:focus {
 	display:inline-block;
 	vertical-align: middle;
 	/* 	width:150px;  no width; leave it dynamic*/ 
-	white-space:nowrap; /* forced to div to stretch as wide as it's contents */
+	white-space:nowrap; /* forcing the div to stretch as wide as it's contents */
 }
 
 .ib-030, .ib-060, .ib-090, .ib-120, .ib-150, .ib-200, .ib-250, .ib-300 {
 	display:inline-block;
 	vertical-align: middle;
-	white-space:nowrap;
+	white-space:nowrap; /* forcing the element to stretch as wide as it's contents */
 }
 
 .ib-030 { 	min-width:030px;  }
@@ -172,12 +170,13 @@ img.icon-halve {
 
 
 .go-quest-main-form {
-	border: 1px solid #aff; 
-	width: 90%;
+	border: 1px solid #aaa; 
+	width: 100%;
+	padding: 20px;
 }
 
 .go-quest-group {
-	border: 1px solid #4C4
+	aaborder: 1px solid #ccc;
 }
 
 .go-quest-group-header {
@@ -185,32 +184,53 @@ img.icon-halve {
 	font-size: 90%;
 }
 
+
+
 .go-quest-vspacer {
-	height:08px;
+	margin: 0;
+	height: 2px;
+}
+
+.go-quest-vspacer-16 {
+	margin: 0;
+	height: 16px;
 }
 
 .go-quest-cell, 
 .dummy {
 	display: inline-block;
+	margin: 0;
+	padding: 0;
 	vertical-align: middle;
+	line-height: 12px;
+	line-height: 100%;
 	min-width: 18%;
 	/* min-width: 200px; */
+	text-align: center; 
+	
 }
 
 
-.go-quest-label, .go-quest-label-right ,
+.go-quest-label-left, .go-quest-label-right ,.go-quest-label-center,
 .dummy {
+	margin: 0;
+	padding: 0;
 	display: inline-block;
 	vertical-align: middle;
 	white-space: nowrap;
 
 	text-align: left; 
 	font-size: 12px;
+	line-height: 100%;
 	padding-right: 2px; 
 }
 
 .go-quest-label-right {
 	text-align: right; 
+}
+
+.go-quest-label-center {
+	text-align: center; 
 }
 
 

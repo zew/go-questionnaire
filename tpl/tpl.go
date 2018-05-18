@@ -1,5 +1,5 @@
 // Package tpl parses all templates into a base template;
-// then each request receives a clone of the base
+// then each request receives a clone of the base -
 // complemented with request specific template funcs;
 // executeTemplate(dynamicName, data) replaces the static
 // template(constantName) func.

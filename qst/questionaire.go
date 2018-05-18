@@ -1,5 +1,8 @@
 // Package qst implements a four levels deep nested structure
-// with input controls, groups, pages and questionaire.
+// with input controls, groups, pages and questionaire;
+// contains HTML rendering, page navigation,
+// loading/saving from/to JSON file, consistence validation,
+// multi-language support.
 package qst
 
 import (
@@ -8,7 +11,6 @@ import (
 	"fmt"
 	"io/ioutil"
 	"log"
-	"regexp"
 	"time"
 
 	"github.com/zew/go-questionaire/ctr"
@@ -30,12 +32,33 @@ var implementedTypes = map[string]interface{}{
 const valEmpty = "0"
 const valSet = "1"
 const vspacer = "<div class='go-quest-vspacer'></div>\n"
+const vspacer16 = "<div class='go-quest-vspacer-16'></div>\n"
+
+type horizontalAlignment int
+
+const (
+	HLeft   = horizontalAlignment(0)
+	HCenter = horizontalAlignment(1)
+	HRight  = horizontalAlignment(2)
+)
+
+func (h horizontalAlignment) String() string {
+	switch h {
+	case horizontalAlignment(0):
+		return "left"
+	case horizontalAlignment(1):
+		return "center"
+	case horizontalAlignment(2):
+		return "right"
+	}
+	return "left"
+}
 
 // Special subtype of inputT; used for radiogroup
 type radioT struct {
-	Right bool      `json:"right,omitempty"` // label and description right of input, default left, similar setting for radioT but not for group
-	Label transMapT `json:"label,omitempty"`
-	Val   string    `json:"val,omitempty"` // Val is allowed to be nil; it then gets initialized to 1...n by Validate(). 0 indicates 'no entry'.
+	HAlign horizontalAlignment `json:"horizontal_align,omitempty"` // label and description left/center/right of input, default left, similar setting for radioT but not for group
+	Label  transMapT           `json:"label,omitempty"`
+	Val    string              `json:"val,omitempty"` // Val is allowed to be nil; it then gets initialized to 1...n by Validate(). 0 indicates 'no entry'.
 	// Notice the absence of Response;
 }
 
@@ -43,12 +66,12 @@ type radioT struct {
 // There is one exception for multiple radios (radiogroup) with the same name but distinct values.
 // Multiple checkboxes (checkboxgroup) with same name but distinct values are a dubious instrument. See comment to implementedType checkboxgroup.
 type inputT struct {
-	Name    string    `json:"name,omitempty"`
-	Type    string    `json:"type,omitempty"`
-	Right   bool      `json:"right,omitempty"` // label and description right of input, default left, similar setting for radioT but not for group
-	Label   transMapT `json:"label,omitempty"`
-	Desc    transMapT `json:"description,omitempty"`
-	ColSpan int       `json:"col_span,omitempty"` // How many table cells in overall layout should the control occupy, counts against group.Cols
+	Name    string              `json:"name,omitempty"`
+	Type    string              `json:"type,omitempty"`
+	HAlign  horizontalAlignment `json:"horizontal_align,omitempty"` // label and description left/center/right of input, default left, similar setting for radioT but not for group
+	Label   transMapT           `json:"label,omitempty"`
+	Desc    transMapT           `json:"description,omitempty"`
+	ColSpan int                 `json:"col_span,omitempty"` // How many table cells in overall layout should the control occupy, counts against group.Cols
 
 	Radios []radioT `json:"radios,omitempty"` // This slice implements the radiogroup - and the senseless checkboxgroup
 
@@ -72,7 +95,7 @@ func newInput() inputT {
 	return t
 }
 
-func renderLabelDescription(langCode string, right bool, lbl, desc transMapT) string {
+func renderLabelDescription(langCode string, hAlign horizontalAlignment, lbl, desc transMapT) string {
 	ret := ""
 	if lbl == nil && desc == nil {
 		return ret
@@ -85,17 +108,9 @@ func renderLabelDescription(langCode string, right bool, lbl, desc transMapT) st
 	if desc == nil {
 		e2 = "" // Suppress "Translation map not initialized." here
 	}
-	if right {
-		ret = fmt.Sprintf(
-			"<span class='go-quest-label-right'><b>%v</b> %v </span>\n",
-			e1, e2,
-		)
-	} else {
-		ret = fmt.Sprintf(
-			"<span class='go-quest-label'     ><b>%v</b> %v  </span>\n",
-			e1, e2,
-		)
-	}
+	ret = fmt.Sprintf(
+		"<span class='go-quest-label-%v'><b>%v</b> %v </span>\n", hAlign, e1, e2,
+	)
 	ret = fmt.Sprintf("<span class='go-quest-cell'>%v</span>\n", ret)
 	return ret
 }
@@ -108,7 +123,7 @@ func (i inputT) HTML(langCode string) string {
 
 	switch i.Type {
 	case "textblock":
-		lbl := renderLabelDescription(langCode, i.Right, i.Label, i.Desc)
+		lbl := renderLabelDescription(langCode, i.HAlign, i.Label, i.Desc)
 		return lbl
 
 	case "radiogroup", "checkboxgroup":
@@ -125,14 +140,18 @@ func (i inputT) HTML(langCode string) string {
 			}
 			// one += fmt.Sprintf("Val %v", val)
 
-			if !rad.Right && rad.Label != nil {
-				one += fmt.Sprintf("<span class='go-quest-label'>%v</span>\n", rad.Label.Tr(langCode))
+			if rad.Label != nil && rad.HAlign == horizontalAlignment(0) {
+				one += fmt.Sprintf("<span class='go-quest-label-left'>%v</span>\n", rad.Label.Tr(langCode))
+			}
+			if rad.Label != nil && rad.HAlign == horizontalAlignment(1) {
+				one += fmt.Sprintf("<span class='go-quest-label-center'>%v</span>\n", rad.Label.Tr(langCode))
+				one += vspacer
 			}
 
 			one += fmt.Sprintf("<input type='%v' name='%v' id='%v' title='%v %v' value='%v' %v />\n",
 				innerType, nm, nm, i.Label.Tr(langCode), i.Desc.Tr(langCode), rad.Val, checked)
 
-			if rad.Right && rad.Label != nil {
+			if rad.Label != nil && rad.HAlign == horizontalAlignment(2) {
 				one += fmt.Sprintf("<span class='go-quest-label-right'>%v</span>\n", rad.Label.Tr(langCode))
 			}
 			one = fmt.Sprintf("<span class='go-quest-cell'>%v</span>\n", one)
@@ -144,7 +163,7 @@ func (i inputT) HTML(langCode string) string {
 			ctrl += fmt.Sprintf("<input type='hidden' name='%v' id='%v_hidd' value='%v' />\n",
 				nm, nm, valEmpty)
 		}
-		lbl := renderLabelDescription(langCode, i.Right, i.Label, i.Desc)
+		lbl := renderLabelDescription(langCode, i.HAlign, i.Label, i.Desc)
 		// lbl = fmt.Sprintf("<label for='%v'>%v</label>\n", nm, lbl)
 		return lbl + ctrl
 
@@ -169,7 +188,7 @@ func (i inputT) HTML(langCode string) string {
 		}
 		ctrl = fmt.Sprintf("<span class='go-quest-cell'>%v</span>\n", ctrl)
 
-		lbl := renderLabelDescription(langCode, i.Right, i.Label, i.Desc)
+		lbl := renderLabelDescription(langCode, i.HAlign, i.Label, i.Desc)
 		lbl = fmt.Sprintf("<label for='%v'>%v</label>\n", nm, lbl)
 		return lbl + ctrl
 
@@ -202,7 +221,7 @@ func (gr groupT) HTML(langCode string) string {
 
 	b.WriteString("<div class='go-quest-group' >\n")
 
-	lbl := renderLabelDescription(langCode, false, gr.Label, gr.Desc)
+	lbl := renderLabelDescription(langCode, horizontalAlignment(0), gr.Label, gr.Desc)
 
 	b.WriteString(lbl)
 	b.WriteString(vspacer)
@@ -232,6 +251,7 @@ func (gr groupT) HTML(langCode string) string {
 		}
 	}
 	b.WriteString("</div>\n")
+	b.WriteString(vspacer16)
 
 	return b.String()
 
@@ -286,7 +306,10 @@ func (q *QuestionaireT) PageHTML(idx int) (string, error) {
 	}
 
 	str := fmt.Sprintf("<h3>%v</h3>", p.Label.Tr(q.LangCode))
+	str += vspacer
 	str += fmt.Sprintf("<p>%v</p>", p.Desc.Tr(q.LangCode))
+	str += vspacer16
+
 	for i := 0; i < len(p.Elements); i++ {
 		str += p.Elements[i].HTML(q.LangCode) + "\n"
 		str += vspacer
@@ -338,14 +361,4 @@ func (q *QuestionaireT) Next() int {
 		return q.CurrPage + 1
 	}
 	return len(q.Pages)
-}
-
-var not09azHyphenUnderscore = regexp.MustCompile(`[^a-z0-9\_\-]+`)
-
-// Example
-func Mustaz09_(s string) bool {
-	if not09azHyphenUnderscore.MatchString(s) {
-		return false
-	}
-	return true
 }

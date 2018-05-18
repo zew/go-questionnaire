@@ -1,5 +1,6 @@
-// Package lgn implements an internal login database,
-// users are put into a json file.
+// Package lgn implements an internal login database;
+// users are stored in a JSON file;
+// contains convenience handlers for user retrieval and password change.
 // Filename must be given as command line argument
 // or environment variable.
 // Access to the logins data is made in threadsafe manner.

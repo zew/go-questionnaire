@@ -14,24 +14,8 @@
 			console.log('CDN version not available: fallback to local resource.'); 
 		}
 	</script>
-	<style>
-		/* https://css-tricks.com/centering-css-complete-guide/ */
-		.hori-vert-center-parent {
-			position: relative;
-		}
-		.hori-vert-center-child {
-			position: absolute;
-			top:  50%;
-			left: 50%;
-			transform: translate(-50%, -60%);		
-		}
-		.hori-center-me {
-			margin: 0 auto;  /*  unused */
-		}	
-	</style>
-
 </head>
-<body class="hori-vert-center-parent">
+<body>
 	<script type="text/javascript">
 		$(document).ready(function() {
 			console.log('body: jQuery doc.ready()');
@@ -40,13 +24,7 @@
 	</script>
 
 
-
-	<div class="hori-vert-center-child" style="width:80%; min-width: 800px;">
-
-	<!-- following span is to make the body extractable by splitting it -->
-	<span class='body'></span>
-	<!-- the content template -->
-
+	<div class="hori-center-me" >
 
 	<form method="POST" action="{{prefix ""}}" class='go-quest-main-form' >
 		<input type="hidden" name="curr_page" value="{{.Q.CurrPage}}">
@@ -55,7 +33,6 @@
 	{{toHtml .CntBefore}}
 	{{executeTemplate .TemplateName .}}
 	{{toHtml .CntAfter}}
-
 
 	<table style='width:100%; padding: 0; margin: 0;'>
 		<tr>
@@ -88,8 +65,6 @@
 	</table>
 
 	</form>
-	
-	<span class='body'></span>
 
 	</div>	<!-- end of center me-->
 

@@ -54,6 +54,16 @@ func (h horizontalAlignment) String() string {
 	return "left"
 }
 
+func colWidth(numCols int) string {
+	css := ""
+	if numCols > 0 {
+		fract := float32(98) / float32(numCols)
+		fractStr := fmt.Sprintf("%4.1f", fract)
+		css = fmt.Sprintf("width: %v%%;", fractStr)
+	}
+	return css
+}
+
 // Special subtype of inputT; used for radiogroup
 type radioT struct {
 	HAlign horizontalAlignment `json:"horizontal_align,omitempty"` // label and description left/center/right of input, default left, similar setting for radioT but not for group
@@ -66,12 +76,13 @@ type radioT struct {
 // There is one exception for multiple radios (radiogroup) with the same name but distinct values.
 // Multiple checkboxes (checkboxgroup) with same name but distinct values are a dubious instrument. See comment to implementedType checkboxgroup.
 type inputT struct {
-	Name    string              `json:"name,omitempty"`
-	Type    string              `json:"type,omitempty"`
-	HAlign  horizontalAlignment `json:"horizontal_align,omitempty"` // label and description left/center/right of input, default left, similar setting for radioT but not for group
-	Label   transMapT           `json:"label,omitempty"`
-	Desc    transMapT           `json:"description,omitempty"`
-	ColSpan int                 `json:"col_span,omitempty"` // How many table cells in overall layout should the control occupy, counts against group.Cols
+	Name          string              `json:"name,omitempty"`
+	Type          string              `json:"type,omitempty"`
+	HAlignControl horizontalAlignment `json:"horizontal_align_control,omitempty"` // label and description left/center/right of input, default left, similar setting for radioT but not for group
+	HAlignLabel   horizontalAlignment `json:"horizontal_align_label,omitempty"`   // label and description left/center/right of input, default left, similar setting for radioT but not for group
+	Label         transMapT           `json:"label,omitempty"`
+	Desc          transMapT           `json:"description,omitempty"`
+	ColSpan       int                 `json:"col_span,omitempty"` // How many table cells in overall layout should the control occupy, counts against group.Cols
 
 	Radios []radioT `json:"radios,omitempty"` // This slice implements the radiogroup - and the senseless checkboxgroup
 
@@ -95,7 +106,7 @@ func newInput() inputT {
 	return t
 }
 
-func renderLabelDescription(langCode string, hAlign horizontalAlignment, lbl, desc transMapT) string {
+func renderLabelDescription(langCode string, hAlign horizontalAlignment, lbl, desc transMapT, css string, numCols int) string {
 	ret := ""
 	if lbl == nil && desc == nil {
 		return ret
@@ -109,21 +120,21 @@ func renderLabelDescription(langCode string, hAlign horizontalAlignment, lbl, de
 		e2 = "" // Suppress "Translation map not initialized." here
 	}
 	ret = fmt.Sprintf(
-		"<span class='go-quest-label-%v'><b>%v</b> %v </span>\n", hAlign, e1, e2,
+		"<span class='go-quest-label %v' ><b>%v</b> %v </span>\n", css, e1, e2,
 	)
-	ret = fmt.Sprintf("<span class='go-quest-cell'>%v</span>\n", ret)
+	ret = fmt.Sprintf("<span class='go-quest-cell-%v'  style='%v'>%v</span>\n", hAlign, colWidth(numCols), ret)
 	return ret
 }
 
 // Rendering one input to HTML
 // func (i inputT) HTML(langCode string, namePrefix string) string {
-func (i inputT) HTML(langCode string) string {
+func (i inputT) HTML(langCode string, numCols int) string {
 
 	nm := i.Name
 
 	switch i.Type {
 	case "textblock":
-		lbl := renderLabelDescription(langCode, i.HAlign, i.Label, i.Desc)
+		lbl := renderLabelDescription(langCode, i.HAlignLabel, i.Label, i.Desc, "", numCols)
 		return lbl
 
 	case "radiogroup", "checkboxgroup":
@@ -140,21 +151,21 @@ func (i inputT) HTML(langCode string) string {
 			}
 			// one += fmt.Sprintf("Val %v", val)
 
-			if rad.Label != nil && rad.HAlign == horizontalAlignment(0) {
-				one += fmt.Sprintf("<span class='go-quest-label-left'>%v</span>\n", rad.Label.Tr(langCode))
+			if rad.Label != nil && rad.HAlign == HLeft {
+				one += fmt.Sprintf("<span class='go-quest-label'>%v</span>\n", rad.Label.Tr(langCode))
 			}
-			if rad.Label != nil && rad.HAlign == horizontalAlignment(1) {
-				one += fmt.Sprintf("<span class='go-quest-label-center'>%v</span>\n", rad.Label.Tr(langCode))
+			if rad.Label != nil && rad.HAlign == HCenter {
+				one += fmt.Sprintf("<span class='go-quest-label'>%v</span>\n", rad.Label.Tr(langCode))
 				one += vspacer
 			}
 
 			one += fmt.Sprintf("<input type='%v' name='%v' id='%v' title='%v %v' value='%v' %v />\n",
 				innerType, nm, nm, i.Label.Tr(langCode), i.Desc.Tr(langCode), rad.Val, checked)
 
-			if rad.Label != nil && rad.HAlign == horizontalAlignment(2) {
-				one += fmt.Sprintf("<span class='go-quest-label-right'>%v</span>\n", rad.Label.Tr(langCode))
+			if rad.Label != nil && rad.HAlign == HRight {
+				one += fmt.Sprintf("<span class='go-quest-label'>%v</span>\n", rad.Label.Tr(langCode))
 			}
-			one = fmt.Sprintf("<span class='go-quest-cell'>%v</span>\n", one)
+			one = fmt.Sprintf("<span class='go-quest-cell-%v' style='%v'>%v</span>\n", rad.HAlign, colWidth(numCols), one)
 			ctrl += one
 		}
 		// The checkbox "empty catcher" must follow *after* the actual checkbox input,
@@ -163,7 +174,7 @@ func (i inputT) HTML(langCode string) string {
 			ctrl += fmt.Sprintf("<input type='hidden' name='%v' id='%v_hidd' value='%v' />\n",
 				nm, nm, valEmpty)
 		}
-		lbl := renderLabelDescription(langCode, i.HAlign, i.Label, i.Desc)
+		lbl := renderLabelDescription(langCode, i.HAlignLabel, i.Label, i.Desc, "", numCols)
 		// lbl = fmt.Sprintf("<label for='%v'>%v</label>\n", nm, lbl)
 		return lbl + ctrl
 
@@ -186,9 +197,9 @@ func (i inputT) HTML(langCode string) string {
 		if i.Type == "checkbox" {
 			ctrl += fmt.Sprintf("<input type='hidden' name='%v' id='%v_hidd' value='0' />\n", nm, nm)
 		}
-		ctrl = fmt.Sprintf("<span class='go-quest-cell'>%v</span>\n", ctrl)
+		ctrl = fmt.Sprintf("<span class='go-quest-cell-%v' style='%v'>%v</span>\n", i.HAlignControl, colWidth(numCols), ctrl)
 
-		lbl := renderLabelDescription(langCode, i.HAlign, i.Label, i.Desc)
+		lbl := renderLabelDescription(langCode, i.HAlignLabel, i.Label, i.Desc, "", numCols)
 		lbl = fmt.Sprintf("<label for='%v'>%v</label>\n", nm, lbl)
 		return lbl + ctrl
 
@@ -209,7 +220,7 @@ type groupT struct {
 	Desc  transMapT `json:"description,omitempty"`
 
 	Vertical bool `json:"vertical,omitempty"` // groups vertically, not horizontally
-	Cols     int  `json:"columns,omitempty"`  // number of vertical columns; for horizontal *and* vertical layouts
+	Cols     int  `json:"columns,omitempty"`  // number of vertical columns; for horizontal *and* vertical layouts; you must count the labels too
 
 	Members []inputT
 }
@@ -221,14 +232,14 @@ func (gr groupT) HTML(langCode string) string {
 
 	b.WriteString("<div class='go-quest-group' >\n")
 
-	lbl := renderLabelDescription(langCode, horizontalAlignment(0), gr.Label, gr.Desc)
+	lbl := renderLabelDescription(langCode, HLeft, gr.Label, gr.Desc, "go-quest-group-header", gr.Cols)
 
 	b.WriteString(lbl)
 	b.WriteString(vspacer)
 
 	cols := 0 // cols counter
 	for i, mem := range gr.Members {
-		b.WriteString(mem.HTML(langCode))
+		b.WriteString(mem.HTML(langCode, gr.Cols))
 
 		if gr.Cols > 0 {
 			if mem.ColSpan > 0 {
@@ -251,6 +262,7 @@ func (gr groupT) HTML(langCode string) string {
 		}
 	}
 	b.WriteString("</div>\n")
+	b.WriteString(vspacer16)
 	b.WriteString(vspacer16)
 
 	return b.String()
@@ -305,9 +317,9 @@ func (q *QuestionaireT) PageHTML(idx int) (string, error) {
 		return s, fmt.Errorf(s)
 	}
 
-	str := fmt.Sprintf("<h3>%v</h3>", p.Label.Tr(q.LangCode))
+	str := fmt.Sprintf("<h3 class='go-quest-page-header' >%v</h3>", p.Label.Tr(q.LangCode))
 	str += vspacer
-	str += fmt.Sprintf("<p>%v</p>", p.Desc.Tr(q.LangCode))
+	str += fmt.Sprintf("<p  class='go-quest-page-desc'>%v</p>", p.Desc.Tr(q.LangCode))
 	str += vspacer16
 
 	for i := 0; i < len(p.Elements); i++ {

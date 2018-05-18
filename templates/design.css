@@ -17,16 +17,12 @@ body {
 	padding-bottom: 96px; /*for footer*/
 	background-color:{{ .body_background_color }};
 
-	font-size: 18px;
-	line-height: 180%;
+	font-size:    8px;  /*keep spaces between inline blocks small*/
+	line-height: 100%;
 }
 
 
 
-div {
-	font-size: 14px;
-	line-height: 100%;   /* correct body line-height  */
-}
 
 
 
@@ -104,23 +100,7 @@ div:focus {
 }
 
 
-.vspacer-0,.vspacer-00 {
-	height:0px;
-}
 
-.vspacer-2,.vspacer-02 {
-	height:02px;
-}
-
-.vspacer-8,.vspacer-08 {
-	height:08px;
-}
-.vspacer-16 {
-	height:16px;
-}
-.vspacer-24 {
-	height:24px;
-}
 
 .ib {
 	display:inline-block;
@@ -139,18 +119,11 @@ div:focus {
 .ib-060 { 	min-width:060px;  }
 .ib-090 { 	min-width:090px;  }
 .ib-120 { 	min-width:120px;  }
-.ib-150 { 	min-width:150px;  }
-.ib-200 { 	min-width:200px;  }
-.ib-250 { 	min-width:250px;  }
-.ib-300 { 	min-width:300px;  }
+
 
 input.ib-060 { 	width:060px;  }
 input.ib-090 { 	width:090px;  }
 input.ib-120 { 	width:120px;  }
-input.ib-150 { 	width:150px;  }
-input.ib-200 { 	width:200px;  }
-input.ib-250 { 	width:250px;  }
-input.ib-300 { 	width:300px;  }
 
 
 
@@ -163,25 +136,45 @@ img.icon-halve {
 }
 
 
-
 .error{
 	color:#622;
 }
 
 
-.go-quest-main-form {
+.hori-center-me {
+	margin: 0 auto;  
+
+	width:80%; 
+	min-width: 800px; 
+
+	padding:20px;	
+	padding-left:50px;	
+	padding-right:0px;	
+
 	border: 1px solid #aaa; 
-	width: 100%;
-	padding: 20px;
+	background-color:  #eee; 
 }
+
+.go-quest-main-form {
+}
+
+.go-quest-page-header {
+	font-size: 16px;
+	line-height: 18px;
+}
+.go-quest-page-desc {
+	font-size: 14px;
+	line-height: 18px;
+}
+
 
 .go-quest-group {
-	aaborder: 1px solid #ccc;
 }
 
+
 .go-quest-group-header {
-	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-	font-size: 90%;
+	/* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+	font-size: 14px !important;
 }
 
 
@@ -196,22 +189,40 @@ img.icon-halve {
 	height: 16px;
 }
 
-.go-quest-cell, 
+.go-quest-cell-left, 
+.go-quest-cell-center, 
+.go-quest-cell-right, 
 .dummy {
 	display: inline-block;
+	white-space: nowrap; /* forcing the div to stretch as wide as it's contents */
 	margin: 0;
 	padding: 0;
 	vertical-align: middle;
 	line-height: 12px;
 	line-height: 100%;
-	min-width: 18%;
 	/* min-width: 200px; */
-	text-align: center; 
+	text-align: left; 	
+	
+	
+	/* for debugging */
+	/* border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc; */
+	
 	
 }
 
+.go-quest-cell-center, 
+.dummy {
+	text-align: center; 	
+}
 
-.go-quest-label-left, .go-quest-label-right ,.go-quest-label-center,
+.go-quest-cell-right, 
+.dummy {
+	text-align: right; 	
+}
+
+
+.go-quest-label,
 .dummy {
 	margin: 0;
 	padding: 0;
@@ -219,18 +230,10 @@ img.icon-halve {
 	vertical-align: middle;
 	white-space: nowrap;
 
-	text-align: left; 
 	font-size: 12px;
 	line-height: 100%;
 	padding-right: 2px; 
 }
 
-.go-quest-label-right {
-	text-align: right; 
-}
-
-.go-quest-label-center {
-	text-align: center; 
-}
 
 

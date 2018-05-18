@@ -30,7 +30,6 @@ func main() {
 	lgn.Example()
 
 	//
-	qst.GenerateExample()
 	qst.GenerateExample2()
 
 	//

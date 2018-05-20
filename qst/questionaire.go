@@ -264,6 +264,7 @@ func (gr groupT) HTML(langCode string) string {
 	b.WriteString("</div>\n")
 	b.WriteString(vspacer16)
 	b.WriteString(vspacer16)
+	b.WriteString(vspacer16)
 
 	return b.String()
 

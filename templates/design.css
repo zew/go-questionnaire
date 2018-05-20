@@ -2,6 +2,8 @@
 	margin: 0;
 	box-sizing: border-box; /* css3 rec */
 	font-family: tahoma;
+	font-size:   14px;  
+	line-height: 120%;
 }
 
 
@@ -16,18 +18,11 @@ body {
 	margin: 24px;
 	padding-bottom: 96px; /*for footer*/
 	background-color:{{ .body_background_color }};
-
-	font-size:    8px;  /*keep spaces between inline blocks small*/
-	line-height: 100%;
 }
 
 
 
-
-
-
 .footer {
-
  	min-height:40px;
     position: fixed;
     left: 0;
@@ -38,9 +33,9 @@ body {
 	margin-top:  15px;
 	padding:10px 20px;
 	background-color:#ededed;
-	font-size: 80%;
 
 }
+
 
 
 a {
@@ -89,8 +84,6 @@ input:focus:invalid {
 	background-color:#fcc;
     border: 2px dotted red;
 }
-
-
 
 
 
@@ -144,8 +137,8 @@ img.icon-halve {
 .hori-center-me {
 	margin: 0 auto;  
 
-	width:80%; 
-	min-width: 800px; 
+	width:      70%; 
+	min-width:  960px; 
 
 	padding:20px;	
 	padding-left:50px;	
@@ -156,6 +149,7 @@ img.icon-halve {
 }
 
 .go-quest-main-form {
+	font-size:   2px;  /*keep spaces between inline blocks small*/
 }
 
 .go-quest-page-header {
@@ -198,7 +192,6 @@ img.icon-halve {
 	margin: 0;
 	padding: 0;
 	vertical-align: middle;
-	line-height: 12px;
 	line-height: 100%;
 	/* min-width: 200px; */
 	text-align: left; 	
@@ -227,7 +220,8 @@ img.icon-halve {
 	margin: 0;
 	padding: 0;
 	display: inline-block;
-	vertical-align: middle;
+	
+	vertical-align: top;  /* lead to good alignment with radio inputs */
 	white-space: nowrap;
 
 	font-size: 12px;

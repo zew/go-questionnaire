@@ -55,8 +55,7 @@ func main() {
 
 	//
 	// Extra handler for dynamic css
-	mux1.HandleFunc(cfg.Pref("/css/design.css"), tpl.ServeDynCss)
-	mux1.HandleFunc(cfg.PrefWTS("/css/design.css"), tpl.ServeDynCss)
+	mux1.HandleFunc(cfg.PrefWTS("/css/"), tpl.ServeDynCss)
 
 	//
 	// Administrative handlers
@@ -66,6 +65,7 @@ func main() {
 	mux1.HandleFunc(cfg.Pref("/logins-save"), lgn.SaveH)
 	mux1.HandleFunc(cfg.Pref("/logins-reload"), lgn.LoadH)
 	mux1.HandleFunc(cfg.Pref("/generate-password"), lgn.GeneratePasswordH)
+	mux1.HandleFunc(cfg.Pref("/templates-reload"), tpl.ParseH)
 
 	//
 	// Standard handlers

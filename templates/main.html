@@ -1,0 +1,41 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="shortcut icon" href="data:;base64,=">
+	<link rel="icon"          href="data:;base64,=">
+		<title>{{.HtmlTitle}}</title>
+	<link  href="{{prefix "/css/design.css"}}" rel="stylesheet" type="text/css" />
+	<link  href="{{prefix "/css/site.css"}}" rel="stylesheet" type="text/css" />
+	<!-- jQuery - as it is required almost always -->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" ></script>
+	<script type="text/javascript">
+		const PREFIX = "{{prefix ""}}";
+		if (!window.jQuery) { 
+			document.write('<script src="{{prefix "/js/jquery.min.js"}}" ><\/script>'); 
+			console.log('CDN version not available: fallback to local resource.'); 
+		}
+	</script>
+</head>
+<body>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			console.log('body: jQuery doc.ready()');
+			// $( "body" ).children().last().append( "<p>jQuery doc.ready()</p>" );
+		});
+	</script>
+
+	<!-- header -->
+	<div class="header">
+		
+	</div>
+	
+	{{executeTemplate .TemplateName .}}
+
+	<!-- footer -->
+	<div class="footer">
+		<a href="{{prefix "/doc/" }}">Impressum</a>
+	</div>
+
+
+</body>
+</html>

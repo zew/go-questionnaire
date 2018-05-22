@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"net/http"
 	"time"
@@ -94,17 +95,15 @@ func mainH(w http.ResponseWriter, r *http.Request) {
 	if q.Pages[prevPage].Finished.IsZero() {
 		q.Pages[prevPage].Finished = time.Now()
 	}
-	for i1 := 0; i1 < len(q.Pages[prevPage].Elements); i1++ {
-		for i2 := range q.Pages[prevPage].Elements[i1].Members {
-
-			nm := q.Pages[prevPage].Elements[i1].Members[i2].Name
+	for i1 := 0; i1 < len(q.Pages[prevPage].Groups); i1++ {
+		for i2 := range q.Pages[prevPage].Groups[i1].Inputs {
+			nm := q.Pages[prevPage].Groups[i1].Inputs[i2].Name
 			ok := sess.EffectiveIsSet(nm)
 			if ok {
 				val := sess.EffectiveStr(nm)
 				log.Printf("(Page#%2v) Setting '%v' to '%v'", prevPage, nm, val)
-				q.Pages[prevPage].Elements[i1].Members[i2].Response = val
+				q.Pages[prevPage].Groups[i1].Inputs[i2].Response = val
 			}
-
 		}
 	}
 
@@ -127,15 +126,20 @@ func mainH(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	content := ""
+	//
+	// Save questionaire to file
+	err = q.Save(fmt.Sprintf("tmp_sess_%02d", time.Now().Minute()))
+	if err != nil {
+		helper(w, err, "Putting questionaire into session caused error")
+		return
+	}
+
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
-	err = tpl.Get(w, r).Execute(
+	err = tpl.Get(w, r, "main.html").Execute(
 		w,
 		TplDataT{
 			HtmlTitle:    cfg.Get().AppName,
-			CntBefore:    content,
-			CntAfter:     content,
-			TemplateName: "ct01.html",
+			TemplateName: "main_t1.html",
 			Q:            q,
 		},
 	)

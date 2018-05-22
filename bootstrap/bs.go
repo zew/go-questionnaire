@@ -5,6 +5,7 @@ package bootstrap
 import (
 	"github.com/zew/go-questionaire/cfg"
 	"github.com/zew/go-questionaire/lgn"
+	"github.com/zew/go-questionaire/tpl"
 	"github.com/zew/util"
 )
 
@@ -33,5 +34,7 @@ func Config() {
 	cfg.Load()
 	lgn.LgnsPath = (*fl)[1].Val
 	lgn.Load()
+	tpls := []string{"main.html", "design.css", "site.css"}
+	tpl.Parse(tpls...)
 
 }

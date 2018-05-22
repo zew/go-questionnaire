@@ -73,7 +73,7 @@ func exampleNineLabelledRadios() groupT {
 	gr.Cols = 4
 	gr.Label = map[string]string{"de": "Diverses", "en": "Miscellaneous"}
 	gr.Desc = map[string]string{"de": "", "en": ""}
-	gr.Members = append(gr.Members, inp1, inp2, inp3)
+	gr.Inputs = append(gr.Inputs, inp1, inp2, inp3)
 	return gr
 }
 
@@ -97,7 +97,7 @@ func exampleSixColumnsLabelRight() groupT {
 	gr.Cols = 6
 	gr.Label = map[string]string{"de": "Fünf mit Label", "en": "Five with label"}
 	gr.Desc = map[string]string{"de": "", "en": ""}
-	gr.Members = append(gr.Members, inp3)
+	gr.Inputs = append(gr.Inputs, inp3)
 	return gr
 }
 
@@ -114,7 +114,7 @@ func exampleFourCheckboxesPasta() groupT {
 	inp2 := inputT{}
 	inp2.Type = "checkbox"
 	inp2.Name = "o-oil"
-	inp2.Label = map[string]string{"de": "Olivenöl", "en": "olive oil"}
+	inp2.Label = map[string]string{"de": "Olivenöl", "en": "Olive oil"}
 	inp2.Desc = map[string]string{"de": "ungesättigte Fettsäuren", "en": "digestable fatty acids"}
 	inp2.HAlignLabel = HLeft
 	inp2.HAlignControl = HLeft
@@ -140,7 +140,7 @@ func exampleFourCheckboxesPasta() groupT {
 	gr.Label = map[string]string{"de": "Pasta", "en": "Pasta"}
 	gr.Desc = map[string]string{"de": "links links - zentriert zentriert", "en": "left left - centered centered"}
 	checkboxes := []inputT{inp1, inp2, inp3, inp4}
-	gr.Members = append(gr.Members, checkboxes...)
+	gr.Inputs = append(gr.Inputs, checkboxes...)
 	return gr
 }
 

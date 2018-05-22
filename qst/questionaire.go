@@ -7,62 +7,12 @@ package qst
 
 import (
 	"bytes"
-	"encoding/json"
 	"fmt"
-	"io/ioutil"
 	"log"
 	"time"
 
 	"github.com/zew/go-questionaire/ctr"
 )
-
-var implementedTypes = map[string]interface{}{
-	"text":     nil,
-	"checkbox": nil, // A standalone checkbox - as a group, see below
-
-	// radiogroup and checkboxgroup have the same input name
-	"radiogroup":    nil, // A standalone radio makes no sense; only a radiogroup.
-	"checkboxgroup": nil, // checkboxgroup has no *sensible* use case. There was an 'amenities' array in another app, with encodings: 4 for bath, 8 for balcony... They should better be designed as independent checkboxes bath and balcony. I cannot think of any useful 'additive flags', and those would have to be added and decoded server side. We keep the type, but untested.
-
-	// Helpers
-	"textblock": nil, // Only name and description are rendered
-}
-
-// checkbox inputs need standardized values for unchecked and checked
-const valEmpty = "0"
-const valSet = "1"
-const vspacer = "<div class='go-quest-vspacer'></div>\n"
-const vspacer16 = "<div class='go-quest-vspacer-16'></div>\n"
-
-type horizontalAlignment int
-
-const (
-	HLeft   = horizontalAlignment(0)
-	HCenter = horizontalAlignment(1)
-	HRight  = horizontalAlignment(2)
-)
-
-func (h horizontalAlignment) String() string {
-	switch h {
-	case horizontalAlignment(0):
-		return "left"
-	case horizontalAlignment(1):
-		return "center"
-	case horizontalAlignment(2):
-		return "right"
-	}
-	return "left"
-}
-
-func colWidth(numCols int) string {
-	css := ""
-	if numCols > 0 {
-		fract := float32(98) / float32(numCols)
-		fractStr := fmt.Sprintf("%4.1f", fract)
-		css = fmt.Sprintf("width: %v%%;", fractStr)
-	}
-	return css
-}
 
 // Special subtype of inputT; used for radiogroup
 type radioT struct {
@@ -222,7 +172,7 @@ type groupT struct {
 	Vertical bool `json:"vertical,omitempty"` // groups vertically, not horizontally
 	Cols     int  `json:"columns,omitempty"`  // number of vertical columns; for horizontal *and* vertical layouts; you must count the labels too
 
-	Members []inputT
+	Inputs []inputT `json:"inputs,omitempty"`
 }
 
 // Rendering a group of inputs to HTML
@@ -238,7 +188,7 @@ func (gr groupT) HTML(langCode string) string {
 	b.WriteString(vspacer)
 
 	cols := 0 // cols counter
-	for i, mem := range gr.Members {
+	for i, mem := range gr.Inputs {
 		b.WriteString(mem.HTML(langCode, gr.Cols))
 
 		if gr.Cols > 0 {
@@ -255,17 +205,13 @@ func (gr groupT) HTML(langCode string) string {
 
 			// log.Printf("%12v %2v %2v", mem.Type, cols, cols%gr.Cols)
 
-			if (cols+0)%gr.Cols == 0 || i == len(gr.Members)-1 {
+			if (cols+0)%gr.Cols == 0 || i == len(gr.Inputs)-1 {
 				b.WriteString(vspacer) // end of row  - or end of group
 			}
 
 		}
 	}
 	b.WriteString("</div>\n")
-	b.WriteString(vspacer16)
-	b.WriteString(vspacer16)
-	b.WriteString(vspacer16)
-
 	return b.String()
 
 }
@@ -275,7 +221,7 @@ type pageT struct {
 	Label transMapT `json:"label,omitempty"`
 	Desc  transMapT `json:"description,omitempty"`
 
-	Elements []groupT  `json:"elements,omitempty"`
+	Groups   []groupT  `json:"groups,omitempty"`
 	Finished time.Time `json:"finished,omitempty"`
 }
 
@@ -318,35 +264,22 @@ func (q *QuestionaireT) PageHTML(idx int) (string, error) {
 		return s, fmt.Errorf(s)
 	}
 
-	str := fmt.Sprintf("<h3 class='go-quest-page-header' >%v</h3>", p.Label.Tr(q.LangCode))
-	str += vspacer
-	str += fmt.Sprintf("<p  class='go-quest-page-desc'>%v</p>", p.Desc.Tr(q.LangCode))
-	str += vspacer16
+	b := bytes.Buffer{}
 
-	for i := 0; i < len(p.Elements); i++ {
-		str += p.Elements[i].HTML(q.LangCode) + "\n"
-		str += vspacer
+	b.WriteString(fmt.Sprintf("<h3 class='go-quest-page-header' >%v</h3>", p.Label.Tr(q.LangCode)))
+	b.WriteString(vspacer)
+	b.WriteString(fmt.Sprintf("<p  class='go-quest-page-desc'>%v</p>", p.Desc.Tr(q.LangCode)))
+	b.WriteString(vspacer16)
+
+	for i := 0; i < len(p.Groups); i++ {
+		b.WriteString(p.Groups[i].HTML(q.LangCode) + "\n")
+		b.WriteString(vspacer16)
+		if i < len(p.Groups)-1 { // no vertical distance at the end of groups
+			b.WriteString(vspacer16)
+			b.WriteString(vspacer16)
+		}
 	}
-	return str, nil
-}
-
-// Load loads a questionaire from a JSON file.
-func Load(fn string) (*QuestionaireT, error) {
-	q := QuestionaireT{}
-
-	bts, err := ioutil.ReadFile(fn)
-	if err != nil {
-		log.Fatalf("Could not read file %v : %v", fn, err)
-		return &q, err
-	}
-
-	err = json.Unmarshal(bts, &q)
-	if err != nil {
-		log.Fatalf("Unmarshal %v: %v", fn, err)
-		return &q, err
-	}
-
-	return &q, nil
+	return b.String(), nil
 }
 
 func (q *QuestionaireT) HasPrev() bool {

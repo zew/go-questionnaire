@@ -6,7 +6,6 @@ import "github.com/zew/go-questionaire/qst"
 type TplDataT struct {
 	TemplateName string
 	HtmlTitle    string
-	CntBefore    interface{}
-	CntAfter     interface{}
-	Q            *qst.QuestionaireT
+	// CntBefore    interface{}
+	Q *qst.QuestionaireT
 }

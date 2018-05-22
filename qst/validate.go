@@ -32,12 +32,12 @@ func (q *QuestionaireT) Validate() error {
 	}
 
 	for i1 := 0; i1 < len(q.Pages); i1++ {
-		for i2 := 0; i2 < len(q.Pages[i1].Elements); i2++ {
-			for i3 := 0; i3 < len(q.Pages[i1].Elements[i2].Members); i3++ {
+		for i2 := 0; i2 < len(q.Pages[i1].Groups); i2++ {
+			for i3 := 0; i3 < len(q.Pages[i1].Groups[i2].Inputs); i3++ {
 
 				s := fmt.Sprintf("Page %v - Group %v - Input %v: ", i1, i2, i3)
 
-				inp := q.Pages[i1].Elements[i2].Members[i3]
+				inp := q.Pages[i1].Groups[i2].Inputs[i3]
 				if _, ok := implementedTypes[inp.Type]; !ok {
 					return fmt.Errorf(s + fmt.Sprintf("Type %v is not in %v ", inp.Type, implementedTypes))
 				}
@@ -55,14 +55,14 @@ func (q *QuestionaireT) Validate() error {
 
 	names := map[string]int{}
 	for i1 := 0; i1 < len(q.Pages); i1++ {
-		for i2 := 0; i2 < len(q.Pages[i1].Elements); i2++ {
-			for i3 := 0; i3 < len(q.Pages[i1].Elements[i2].Members); i3++ {
+		for i2 := 0; i2 < len(q.Pages[i1].Groups); i2++ {
+			for i3 := 0; i3 < len(q.Pages[i1].Groups[i2].Inputs); i3++ {
 
 				s := fmt.Sprintf("Page %v - Group %v - Input %v: ", i1, i2, i3)
 
 				// grp := q.Pages[i1].Elements[i2].Name
-				nm := q.Pages[i1].Elements[i2].Members[i3].Name
-				tp := q.Pages[i1].Elements[i2].Members[i3].Type
+				nm := q.Pages[i1].Groups[i2].Inputs[i3].Name
+				tp := q.Pages[i1].Groups[i2].Inputs[i3].Type
 
 				if tp == "textblock" {
 					continue

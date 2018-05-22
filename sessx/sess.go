@@ -211,8 +211,18 @@ func SessionGet(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte("\n\n"))
 	keys, _ := sess.Keys()
 	for _, key := range keys {
-		dis := fmt.Sprintf("%20v is set\n", key)
-		// No chance to show the values - since they are typed differently
+		dis := fmt.Sprintf("key %20v is set", key)
+		// Beware - since the vals are typed differently
+		func() {
+			if rec := recover(); rec != nil {
+				w.Write([]byte(fmt.Sprintf("Error: %v", rec)))
+			}
+			val := sess.EffectiveStr(key)
+			if len(val) > 80 {
+				val = val[:80]
+			}
+			dis += fmt.Sprintf("; val is %v\n\n", val)
+		}()
 		w.Write([]byte(dis))
 	}
 }

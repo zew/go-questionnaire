@@ -1,0 +1,53 @@
+
+    <!-- padding - without disturbing width=100% inscribe -->
+    <div class="hori-center-me">
+    
+        <!-- width=100% inscribe -->
+        <form method="POST" action="{{prefix ""}}" class='go-quest-main-form'>
+            <input type="hidden" name="curr_page" value="{{.Q.CurrPage}}">
+    
+
+            <!--
+                {{$lc := sess.EffectiveStr "lang_code"}}
+                Langcode is -{{$lc}}-
+            -->
+
+            {{toHtml (.Q.CurrentPageHTML) }}
+            
+    
+            <table style='width:100%; padding: 0; margin: 0;'>
+                <tr>
+                    <td style='width: 33%;text-align: left;'>
+                        {{if .Q.HasPrev}}
+                        <!--
+    					<a accesskey="p" href="{{prefix ""}}?curr_page={{.Q.Prev}}"> << Page {{addint .Q.Prev 1}} </a>
+    					-->
+                        <button type="submit" name="submit" value="prev" accesskey="p">
+                            << Page {{addint .Q.Prev 1}} </button>
+                                {{end}}
+                    </td>
+                    <td style='width: 33%;text-align: center;'>
+                        -{{addint .Q.CurrPage 1}}-
+                    </td>
+                    <td style='width: 33%;text-align: right;'>
+                        {{if .Q.HasNext}}
+                        <!--
+    				<a accesskey="n" href="{{prefix ""}}?curr_page={{.Q.Next}}"> Page {{addint .Q.Next 1}} >></a>
+    				-->
+                        <button type="submit" name="submit" value="next" accesskey="n">
+                            Page {{addint .Q.Next 1}} >>
+                        </button>
+    
+    
+                        {{end}}
+                    </td>
+                </tr>
+            </table>
+    
+        </form>
+    </div>
+    <!-- end of center me-->
+
+
+
+

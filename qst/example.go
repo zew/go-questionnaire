@@ -1,8 +1,6 @@
 package qst
 
 import (
-	"encoding/json"
-	"io/ioutil"
 	"log"
 )
 
@@ -71,7 +69,7 @@ func radioMatrix(headerLabels []transMapT, inpNames []string, rowLabels []transM
 			"de": "",
 			"en": "",
 		}
-		grp.Members = append(grp.Members, inp)
+		grp.Inputs = append(grp.Inputs, inp)
 	}
 
 	// Header row - next columns
@@ -80,7 +78,7 @@ func radioMatrix(headerLabels []transMapT, inpNames []string, rowLabels []transM
 		inp.Type = "textblock"
 		inp.HAlignLabel = HCenter
 		inp.Desc = lbl // for instance transMapT{"de": "gut", "en": "good"}
-		grp.Members = append(grp.Members, inp)
+		grp.Inputs = append(grp.Inputs, inp)
 	}
 
 	//
@@ -98,7 +96,7 @@ func radioMatrix(headerLabels []transMapT, inpNames []string, rowLabels []transM
 			rad.HAlign = HCenter
 			inp.Radios = append(inp.Radios, rad)
 		}
-		grp.Members = append(grp.Members, inp)
+		grp.Inputs = append(grp.Inputs, inp)
 	}
 
 	return &grp
@@ -149,7 +147,7 @@ func GenerateExample2() *QuestionaireT {
 		"de": "Die gesamtwirtschaftliche Situation beurteilen wir als",
 		"en": "We assess the overall economic situation as",
 	}
-	page1.Elements = append(page1.Elements, *gr1)
+	page1.Groups = append(page1.Groups, *gr1)
 
 	//
 	//
@@ -169,7 +167,7 @@ func GenerateExample2() *QuestionaireT {
 		"de": "Die gesamtwirtschaftliche Situation wird sich mittelfristig (<b>6</b> Mo.)",
 		"en": "The overall economic situation medium term (<b>6</b> months) will",
 	}
-	page1.Elements = append(page1.Elements, *gr2)
+	page1.Groups = append(page1.Groups, *gr2)
 
 	//
 	//
@@ -191,28 +189,29 @@ func GenerateExample2() *QuestionaireT {
 		"en": "The overall economic situation long term (<b>24</b> months) will",
 	}
 
-	page1.Elements = append(page1.Elements, *gr3)
-	page1.Elements = append(page1.Elements, exampleFourCheckboxesPasta())
-	page1.Elements = append(page1.Elements, exampleNineLabelledRadios())
-	page1.Elements = append(page1.Elements, exampleSixColumnsLabelRight())
-	page1.Elements = append(page1.Elements, exampleFinlandMatrixNoLabels())
-
+	page1.Groups = append(page1.Groups, *gr3)
 	quest.Pages = append(quest.Pages, page1)
 
 	page2 := newPage()
+	page1.Groups = append(page1.Groups, exampleFourCheckboxesPasta())
+	page1.Groups = append(page1.Groups, exampleNineLabelledRadios())
+	page1.Groups = append(page1.Groups, exampleSixColumnsLabelRight())
+	page1.Groups = append(page1.Groups, exampleFinlandMatrixNoLabels())
+
 	quest.Pages = append(quest.Pages, page2)
 
-	bts, err := json.MarshalIndent(quest, "", "  ")
+	err := quest.Validate()
 	if err != nil {
-		log.Fatalf("Marshal questionaire-example.json: %v", err)
+		log.Fatalf("Error validating questionaire: %v", err)
 	}
-	err = ioutil.WriteFile("questionaire-example.json", bts, 0644)
+	err = quest.Save("questionaire-example.json")
 	if err != nil {
-		log.Fatalf("Could not write questionaire-example.json: %v", err)
+		log.Fatalf("Error saving questionaire-example.json: %v", err)
 	}
-	err = ioutil.WriteFile("questionaire.json", bts, 0644)
+	err = quest.Save("questionaire.json")
 	if err != nil {
-		log.Fatalf("Could not write questionaire.json: %v", err)
+		log.Fatalf("Error saving questionaire.json: %v", err)
 	}
+
 	return &quest
 }

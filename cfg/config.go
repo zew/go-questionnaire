@@ -19,6 +19,7 @@ import (
 	"github.com/zew/go-questionaire/sessx"
 )
 
+// ConfigT holds the application config
 type ConfigT struct {
 	sync.Mutex
 
@@ -40,7 +41,7 @@ type ConfigT struct {
 
 }
 
-// Obtained by ENV variable or command line flag in main package.
+// CfgPath is obtained by ENV variable or command line flag in main package.
 // Being set from the main package.
 // Holds the relative path and filename to look for; could be ".cfg/config.json".
 // Relative to the app main dir.
@@ -48,6 +49,7 @@ var CfgPath = path.Join(".", "config.json")
 
 var cfgS *ConfigT // package variable 'singleton' - needs to be an allocated struct - to hold pointer receiver-re-assignment
 
+// Get provides access to the app configuration
 func Get() *ConfigT {
 	// Same as lgn.Get().
 	// No lock needed here.
@@ -57,6 +59,7 @@ func Get() *ConfigT {
 	return cfgS
 }
 
+// Load reads from a JSON file.
 // No method to ConfigT, no pointer receiver;
 // We could only *copy*:  *c = *newCfg
 func Load() {
@@ -89,10 +92,10 @@ func Load() {
 		log.Fatal("Config underspecified; at least app_mnemonic should be set")
 	}
 	cfgS = &tempCfg // replace pointer in one go - should be threadsafe
-	log.Printf("config loaded 1\n%#s", util.IndentedDump(cfgS))
+	log.Printf("config loaded 1\n%s", util.IndentedDump(cfgS))
 }
 
-//
+// LoadH is a convenience handler - to reload the config via http request
 func LoadH(w http.ResponseWriter, r *http.Request) {
 
 	w.Header().Set("Content-Type", "text/plain; charset=utf-8")
@@ -124,6 +127,7 @@ func LoadH(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte("cfg reloaded"))
 }
 
+// Save stores the config to a JSON file
 func (c *ConfigT) Save(fn ...string) {
 
 	firstColLeftMostPrefix := " "
@@ -145,6 +149,7 @@ func (c *ConfigT) Save(fn ...string) {
 	log.Printf("Saved config file to %v", savePath)
 }
 
+// Pref prefixes a URL path with an application dir prefix.
 // Any URL Path is prefixed with the UrlPathPrefix, if UrlPathPrefix is set.
 // Prevents unnecessary slashes.
 // No trailing slash
@@ -174,12 +179,13 @@ func Pref(pth ...string) string {
 
 }
 
-// Prefix with trailing slash
+// PrefWTS is like Prefix(); WTS stands for with trailing slash
 func PrefWTS(pth ...string) string {
 	p := Pref(pth...)
 	return p + "/"
 }
 
+// Example writes a confiuration to file, that can be adapted
 func Example() {
 	ex := &ConfigT{
 		IsProduction:           false,

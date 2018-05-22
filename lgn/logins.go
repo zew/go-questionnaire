@@ -149,13 +149,13 @@ func Load() {
 	for i := 0; i < len(tmpLogins.Logins); i++ {
 		els := strings.Split(tmpLogins.Logins[i].Email, "@")
 		group := els[0]
-		if len(els) > 0 {
+		if len(els) > 1 {
 			group = els[1]
 		}
 		tmpLogins.Logins[i].Group = group
 	}
 
-	log.Printf("\n%#s", util.IndentedDump(tmpLogins))
+	log.Printf("\n%s", util.IndentedDump(tmpLogins))
 	lgns = &tmpLogins // replace pointer in one go - should be threadsafe
 }
 
@@ -250,6 +250,7 @@ func IsFound(err error) bool {
 // Reload logins json file
 // and check for a specific login
 func LoadH(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "text/plain; charset=utf-8")
 
 	_, loggedIn, err := LoggedInCheck(w, r, "admin")
 	if err != nil {

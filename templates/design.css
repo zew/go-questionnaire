@@ -1,9 +1,15 @@
+@media screen and (min-width: 1280px) and (min-height: 720px) {
+   html {
+      zoom: 120%
+   }
+}
+
 * {
 	margin: 0;
 	box-sizing: border-box; /* css3 rec */
 	font-family: tahoma;
 	font-size:   14px;  
-	line-height: 120%;
+	line-height: 100%;
 }
 
 
@@ -16,25 +22,36 @@
 body {
 	position: relative;
 	margin: 24px;
-	padding-bottom: 96px; /*for footer*/
+	padding-top:    48px; /*for header*/
+	padding-bottom: 32px; /*for footer*/
 	background-color:{{ .body_background_color }};
 }
 
 
 
-.footer {
+.header {
  	min-height:40px;
+    position: fixed;
+    left: 0;
+    top: 0%;
+    width: 100%;
+
+	padding:10px 20px;
+	background-color:#e4dfce;
+}
+
+
+.footer {
+ 	min-height:32px;
     position: fixed;
     left: 0;
     bottom: 0%;
     width: 100%;
 
-	border-top: 2px solid #aaa;
-	margin-top:  15px;
 	padding:10px 20px;
 	background-color:#ededed;
-
 }
+
 
 
 
@@ -140,9 +157,10 @@ img.icon-halve {
 	width:      70%; 
 	min-width:  960px; 
 
-	padding:20px;	
+	padding-top:20px;	
 	padding-left:50px;	
 	padding-right:0px;	
+	padding-bottom:0px;	
 
 	border: 1px solid #aaa; 
 	background-color:  #eee; 

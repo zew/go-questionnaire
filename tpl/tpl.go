@@ -16,6 +16,7 @@ import (
 	"strings"
 
 	"github.com/zew/go-questionaire/cfg"
+	"github.com/zew/go-questionaire/lgn"
 	"github.com/zew/go-questionaire/sessx"
 	"github.com/zew/util"
 )
@@ -35,8 +36,8 @@ func StaticFuncMap() template.FuncMap {
 	return staticTplFuncs
 }
 
-// A parsed bundle of coherent templates
-// A base to clone from
+// A parsed bundle of coherent templates.
+// A base to clone from.
 type baseTplT struct {
 	IsParsed bool
 	*template.Template
@@ -93,9 +94,10 @@ func (bt *baseTplT) Parse(bundle string) *template.Template {
 	return bt.Template
 }
 
-// Get serves a clone of the base templates,
-// It adds clone specific dynamic template execution.
+// Get returns a clone of the template bundle.
+// It adds bundle-specific dynamic template execution: {{executeTemplate "t"}}.
 // It adds request specific session access.
+// Thus, each request gets its own clone. Thus more expensive than GetStatic().
 func Get(w http.ResponseWriter, r *http.Request, bundle string) *template.Template {
 
 	if _, ok := cloneBase[bundle]; !ok {
@@ -144,9 +146,12 @@ func Get(w http.ResponseWriter, r *http.Request, bundle string) *template.Templa
 
 }
 
-// GetNoFuncs is the same as get - but without the dynamic funcs
-func GetNoFuncs(w http.ResponseWriter, r *http.Request, bundle string) *template.Template {
-
+// GetStatic is the same as Get()
+// Without dynamic funcs.
+// Without the need for extra cloning.
+// The same template can be executed for all requests.
+// Useful for serving dynamic CSS files with few app specific variations.
+func GetStatic(w http.ResponseWriter, r *http.Request, bundle string) *template.Template {
 	if _, ok := cloneBase[bundle]; !ok {
 		panic(fmt.Sprintf("Template bundle %v must be prepared on initialization.", bundle))
 	}
@@ -162,7 +167,6 @@ func GetNoFuncs(w http.ResponseWriter, r *http.Request, bundle string) *template
 	}
 	tpl = tpl.Funcs(staticTplFuncs)
 	return tpl
-
 }
 
 // Parse is meant for bootstrapping the application.
@@ -176,8 +180,17 @@ func Parse(bundles ...string) {
 	}
 }
 
-// ParseH is a convenience handler to parse all base templates anew
+// ParseH is a convenience handler to parse all base templates anew.
 func ParseH(w http.ResponseWriter, r *http.Request) {
+	_, loggedIn, err := lgn.LoggedInCheck(w, r, "admin")
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+	if !loggedIn {
+		http.Error(w, "admin login required for this function", http.StatusInternalServerError)
+		return
+	}
 	for bundle := range cloneBase {
 		bt := &baseTplT{}
 		bt.Parse(bundle)
@@ -186,5 +199,4 @@ func ParseH(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "text/plain; charset=utf-8")
 	w.Write([]byte("templates reloaded"))
 	w.Write([]byte(util.IndentedDump(cloneBase)))
-
 }

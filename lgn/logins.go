@@ -32,7 +32,7 @@ import (
 var foundButWrongPassword = fmt.Errorf("User found but wrong password")
 var loginNotFound = fmt.Errorf("Login not found")
 
-// Type LoginT must be exported, *not* because we need to pass a type to sessx.GetObject
+// LoginT must be exported, *not* because we need to pass a type to sessx.GetObject
 // 		l := lgn.LoginT{}
 // 		ok, err := sess.EffectiveObj("login", &l)
 // but because we need to declare variables of this type
@@ -41,7 +41,6 @@ var loginNotFound = fmt.Errorf("Login not found")
 // 			L      lgn.LoginT
 // 			...
 // 		}
-
 type LoginT struct {
 	User  string            `json:"user"`
 	Email string            `json:"email"`
@@ -53,12 +52,13 @@ type LoginT struct {
 	PassMd5        string `json:"pass_md5,omitempty"` // Encrypted password, created from login, permanent password, salt
 }
 
+// HasRole checks the login for a particular role, for instance "admin"
 func (l *LoginT) HasRole(role string) bool {
 	_, ok := l.Roles[role]
 	return ok
 }
 
-// Deliberately not a method
+// ComputeMD5Password is deliberately not a method
 func ComputeMD5Password(u, p, salt string) string {
 	hashBase := u + p + salt
 	pfx := cfg.Get().UrlPathPrefix
@@ -68,7 +68,7 @@ func ComputeMD5Password(u, p, salt string) string {
 	return Md5Str([]byte(hashBase))
 }
 
-// Set an init password
+// SetInitPW sets an init password
 func (l *LoginT) SetInitPW(salt string) {
 	if l.IsInitPassword && l.PassInitial == "" {
 		l.PassInitial = GeneratePassword(8)
@@ -88,7 +88,7 @@ type loginsT struct {
 	Logins []LoginT `json:"logins"`
 }
 
-// Obtained by ENV variable or command line flag in main package.
+// LgnsPath is obtained by ENV variable or command line flag in main package.
 // Being set from the main package.
 // Holds the relative path and filename to look for; could be ".lgn/logins.json".
 // Relative to the app main dir.
@@ -96,7 +96,8 @@ var LgnsPath = path.Join(".", "logins.json")
 
 var lgns *loginsT // package variable 'singleton' - needs to be an allocated struct - to hold pointer receiver-re-assignment
 
-// It is essential to return a poiner,
+// Get provides access to the logins data
+// It is essential to return a pointer,
 // otherwise the unlocking of the returned struct does not work.
 func Get() *loginsT {
 	// Same as cfg.Get().
@@ -107,6 +108,7 @@ func Get() *loginsT {
 	return lgns
 }
 
+// Load reads from a JSON file.
 // No method to loginsT, no pointer receiver;
 // We could only *copy*:  *c = *newCfg
 func Load() {
@@ -159,6 +161,7 @@ func Load() {
 	lgns = &tmpLogins // replace pointer in one go - should be threadsafe
 }
 
+// Save stores logins to a JSON file
 func (l *loginsT) Save(fn ...string) error {
 	l.Lock()
 	defer l.Unlock()
@@ -200,7 +203,7 @@ func (l *loginsT) Save(fn ...string) error {
 	return nil
 }
 
-// Method FindAndCheck takes a username and password
+// FindAndCheck takes a username and password
 // and scans for matching users.
 // If optPw is given, a check for matching password is also made
 func (l loginsT) FindAndCheck(u string, optPw ...string) (LoginT, error) {
@@ -240,6 +243,8 @@ func (l loginsT) FindAndCheck(u string, optPw ...string) (LoginT, error) {
 	return LoginT{}, loginNotFound
 }
 
+// IsFound checks the error argument, if it says
+// user found - but wrong password.
 func IsFound(err error) bool {
 	if err == foundButWrongPassword {
 		return true
@@ -247,8 +252,9 @@ func IsFound(err error) bool {
 	return false
 }
 
-// Reload logins json file
-// and check for a specific login
+// LoadH is a convenience func to reload logins via http request.
+// It reloads logins from json file
+// and checks for a specific login
 func LoadH(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "text/plain; charset=utf-8")
 
@@ -285,6 +291,7 @@ func LoadH(w http.ResponseWriter, r *http.Request) {
 
 }
 
+// SaveH is a convenience func to save logins via http request.
 func SaveH(w http.ResponseWriter, r *http.Request) {
 
 	w.Header().Set("Content-Type", "text/plain; charset=utf-8")
@@ -307,6 +314,8 @@ func SaveH(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte("logins saved"))
 }
 
+// GeneratePasswordH is a convenience func to generate passwords via http request.
+// URL parameter len specifies the password length.
 func GeneratePasswordH(w http.ResponseWriter, r *http.Request) {
 
 	_, loggedIn, err := LoggedInCheck(w, r, "admin")
@@ -339,6 +348,7 @@ func GeneratePasswordH(w http.ResponseWriter, r *http.Request) {
 var stdCharsXX = []byte("!#%+23456789:=?@ABCDEFGHJKLMNPRSTUVWXYZabcdefghijkmnopqrstuvwxyz")
 var stdChars = []byte("!+23456789ABCDEFGHJKLMNPRSTUVWXYZabcdefghijkmnopqrstuvwxyz") // remove some ugly special chars
 
+// GeneratePassword creates a password of requested length
 func GeneratePassword(length int) string {
 
 	numChars := byte(len(stdChars))   // number of possible chars, i.e. 60, 64
@@ -376,7 +386,7 @@ func GeneratePassword(length int) string {
 	panic("something wrong with password generation 2")
 }
 
-// Function Md5Str computes the md5 hash of a byte slice.
+// Md5Str computes the md5 hash of a byte slice.
 func Md5Str(buf []byte) string {
 	pfx := cfg.Get().UrlPathPrefix
 	if pfx == "taxkit" || pfx == "eta" {
@@ -394,6 +404,7 @@ func Md5Str(buf []byte) string {
 	}
 }
 
+// Example writes a single login to file, to be extended or adapted
 func Example() {
 	ex := &loginsT{
 		Salt: "your salt here",

@@ -185,7 +185,7 @@ func PrefWTS(pth ...string) string {
 	return p + "/"
 }
 
-// Example writes a confiuration to file, that can be adapted
+// Example writes a minimal configuration to file, to be extended or adapted
 func Example() {
 	ex := &ConfigT{
 		IsProduction:           false,

@@ -4,6 +4,8 @@ package qst
 // Contains one value for each language code.
 type transMapT map[string]string // type translation map
 
+const noTrans = "Translation map not initialized."
+
 // Tr translates
 func (t transMapT) Tr(langCode string) string {
 	if val, ok := t[langCode]; ok {
@@ -16,9 +18,19 @@ func (t transMapT) Tr(langCode string) string {
 		return val
 	}
 	if t == nil {
-		return "Translation map not initialized."
+		return noTrans
 	}
-	return "Translation map not initialized."
+	return noTrans
+}
+
+// TrSilent gives no warning - if the translation is not set.
+// Good for HTML title attribute - where errors are easy to overlook.
+func (t transMapT) TrSilent(langCode string) string {
+	ret := t.Tr(langCode)
+	if ret == noTrans {
+		return ret
+	}
+	return ret
 }
 
 // Default "stringer" implementation

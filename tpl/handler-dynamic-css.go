@@ -17,7 +17,7 @@ var baseCSS *template.Template // The parsed css templates (base), to clone from
 func ServeDynCss(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "text/css")
 	cssFileName := filepath.Base(r.URL.Path) //  "/css/design.css"  => design.css
-	t := GetNoFuncs(w, r, cssFileName)
+	t := GetStatic(w, r, cssFileName)
 	err := t.ExecuteTemplate(w, cssFileName, cfg.Get().Css)
 	if err != nil {
 		log.Printf("Error executing template %v: %v", cssFileName, err)

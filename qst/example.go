@@ -193,10 +193,10 @@ func GenerateExample2() *QuestionaireT {
 	quest.Pages = append(quest.Pages, page1)
 
 	page2 := newPage()
-	page1.Groups = append(page1.Groups, exampleFourCheckboxesPasta())
-	page1.Groups = append(page1.Groups, exampleNineLabelledRadios())
-	page1.Groups = append(page1.Groups, exampleSixColumnsLabelRight())
-	page1.Groups = append(page1.Groups, exampleFinlandMatrixNoLabels())
+	page2.Groups = append(page2.Groups, exampleFourCheckboxesPasta())
+	page2.Groups = append(page2.Groups, exampleNineLabelledRadios())
+	page2.Groups = append(page2.Groups, exampleSixColumnsLabelRight())
+	page2.Groups = append(page2.Groups, exampleFinlandMatrixNoLabels())
 
 	quest.Pages = append(quest.Pages, page2)
 

@@ -9,8 +9,10 @@ import (
 	"bytes"
 	"fmt"
 	"log"
+	"strings"
 	"time"
 
+	"github.com/zew/go-questionaire/cfg"
 	"github.com/zew/go-questionaire/ctr"
 )
 
@@ -56,6 +58,7 @@ func newInput() inputT {
 	return t
 }
 
+// Argument numCols computes precise width in percent
 func renderLabelDescription(langCode string, hAlign horizontalAlignment, lbl, desc transMapT, css string, numCols int) string {
 	ret := ""
 	if lbl == nil && desc == nil {
@@ -110,7 +113,7 @@ func (i inputT) HTML(langCode string, numCols int) string {
 			}
 
 			one += fmt.Sprintf("<input type='%v' name='%v' id='%v' title='%v %v' value='%v' %v />\n",
-				innerType, nm, nm, i.Label.Tr(langCode), i.Desc.Tr(langCode), rad.Val, checked)
+				innerType, nm, nm, i.Label.TrSilent(langCode), i.Desc.TrSilent(langCode), rad.Val, checked)
 
 			if rad.Label != nil && rad.HAlign == HRight {
 				one += fmt.Sprintf("<span class='go-quest-label'>%v</span>\n", rad.Label.Tr(langCode))
@@ -140,7 +143,7 @@ func (i inputT) HTML(langCode string, numCols int) string {
 			val = valSet
 		}
 		ctrl += fmt.Sprintf("<input type='%v' name='%v' id='%v' title='%v %v' value='%v' %v />\n",
-			i.Type, nm, nm, i.Label.Tr(langCode), i.Desc.Tr(langCode), val, checked)
+			i.Type, nm, nm, i.Label.TrSilent(langCode), i.Desc.TrSilent(langCode), val, checked)
 
 		// The checkbox "empty catcher" must follow *after* the actual checkbox input,
 		// since http.Form.Get() fetches the first value.
@@ -233,13 +236,27 @@ func newPage() pageT {
 	return t
 }
 
-// Type QuestionaireT contains pages with inputs
+// QuestionaireT contains pages with inputs
 type QuestionaireT struct {
 	Pages     []pageT           `json:"pages,omitempty"`
 	LangCodes map[string]string `json:"lang_codes"` // all possible lang codes - i.e. en, de
 	LangCode  string            `json:"lang_code"`  // default lang code - and current lang code - i.e. de
 
 	CurrPage int `json:"curr_page,omitempty"`
+}
+
+// LanguageChooser renders a HTML language chooser
+func (q *QuestionaireT) LanguageChooser() string {
+	s := []string{}
+	for key, lang := range q.LangCodes {
+		if key == q.LangCode {
+			s = append(s, fmt.Sprintf("<b           title='%v'>%v</b>\n", lang, key))
+		} else {
+			uri := cfg.Pref("/") + "?lang_code=" + key
+			s = append(s, fmt.Sprintf("<a href='%v' title='%v'>%v</a>\n", uri, lang, key))
+		}
+	}
+	return strings.Join(s, "  |  ")
 }
 
 // CurrentPageHTML is a comfort shortcut to PageHTML

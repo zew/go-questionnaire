@@ -43,7 +43,7 @@ func (h horizontalAlignment) String() string {
 func colWidth(numCols int) string {
 	css := ""
 	if numCols > 0 {
-		fract := float32(98) / float32(numCols)
+		fract := float32(97.5) / float32(numCols)
 		fractStr := fmt.Sprintf("%4.1f", fract)
 		css = fmt.Sprintf("width: %v%%;", fractStr)
 	}

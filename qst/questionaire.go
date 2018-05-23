@@ -30,8 +30,8 @@ type radioT struct {
 type inputT struct {
 	Name          string              `json:"name,omitempty"`
 	Type          string              `json:"type,omitempty"`
-	HAlignControl horizontalAlignment `json:"horizontal_align_control,omitempty"` // label and description left/center/right of input, default left, similar setting for radioT but not for group
-	HAlignLabel   horizontalAlignment `json:"horizontal_align_label,omitempty"`   // label and description left/center/right of input, default left, similar setting for radioT but not for group
+	HAlignControl horizontalAlignment `json:"horizontal_align_control,omitempty"` // label       left/center/right of input, default left, similar setting for radioT but not for group
+	HAlignLabel   horizontalAlignment `json:"horizontal_align_label,omitempty"`   // description left/center/right of input, default left, similar setting for radioT but not for group
 	Label         transMapT           `json:"label,omitempty"`
 	Desc          transMapT           `json:"description,omitempty"`
 	ColSpan       int                 `json:"col_span,omitempty"` // How many table cells in overall layout should the control occupy, counts against group.Cols
@@ -219,12 +219,13 @@ func (gr groupT) HTML(langCode string) string {
 
 }
 
-// Type page is collection of tInputs and some meta data
+// Type page contains groups with inputs
 type pageT struct {
 	Label transMapT `json:"label,omitempty"`
 	Desc  transMapT `json:"description,omitempty"`
 
-	Groups   []groupT  `json:"groups,omitempty"`
+	Groups []groupT `json:"groups,omitempty"`
+
 	Finished time.Time `json:"finished,omitempty"`
 }
 
@@ -236,7 +237,7 @@ func newPage() pageT {
 	return t
 }
 
-// QuestionaireT contains pages with inputs
+// QuestionaireT contains pages with groups with inputs
 type QuestionaireT struct {
 	Pages     []pageT           `json:"pages,omitempty"`
 	LangCodes map[string]string `json:"lang_codes"` // all possible lang codes - i.e. en, de
@@ -303,12 +304,15 @@ func (q *QuestionaireT) PageHTML(idx int) (string, error) {
 	return b.String(), nil
 }
 
+// HasPrev if a previous page exists
 func (q *QuestionaireT) HasPrev() bool {
 	if q.CurrPage > 0 {
 		return true
 	}
 	return false
 }
+
+// Prev returns number of the previous page
 func (q *QuestionaireT) Prev() int {
 	if q.CurrPage > 0 {
 		return q.CurrPage - 1
@@ -316,6 +320,7 @@ func (q *QuestionaireT) Prev() int {
 	return 0
 }
 
+// HasNext if a next page exists
 func (q *QuestionaireT) HasNext() bool {
 	if q.CurrPage < len(q.Pages)-1 {
 		return true
@@ -323,6 +328,7 @@ func (q *QuestionaireT) HasNext() bool {
 	return false
 }
 
+// Next returns number of the next page
 func (q *QuestionaireT) Next() int {
 	if q.CurrPage < len(q.Pages)-1 {
 		return q.CurrPage + 1

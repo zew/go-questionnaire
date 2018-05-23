@@ -32,7 +32,7 @@ import (
 var foundButWrongPassword = fmt.Errorf("User found but wrong password")
 var loginNotFound = fmt.Errorf("Login not found")
 
-// LoginT must be exported, *not* because we need to pass a type to sessx.GetObject
+// Type LoginT must be exported, *not* because we need to pass a type to sessx.GetObject
 // 		l := lgn.LoginT{}
 // 		ok, err := sess.EffectiveObj("login", &l)
 // but because we need to declare variables of this type

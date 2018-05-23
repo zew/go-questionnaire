@@ -3,6 +3,8 @@ package qst
 import (
 	"bytes"
 	"fmt"
+
+	"github.com/zew/go-questionaire/cfg"
 )
 
 const (
@@ -39,8 +41,15 @@ func (q *QuestionaireT) ProgressBar() string {
 			liClass = "is-active"
 		}
 		b.WriteString(
-			fmt.Sprintf("<li class='%v' data-step='%v'>%v</li> \n",
-				liClass, idx+1, p.Label.Tr(q.LangCode),
+			// onclick and style added - to make hyperlinks to the pages
+			fmt.Sprintf(`
+					<li 
+						onclick="location.href='%v?page=%v';" style="cursor:pointer"  
+						class="%v" data-step="%v">
+						%v
+					</li> 
+				`,
+				cfg.Pref(""), idx, liClass, idx+1, p.Label.Tr(q.LangCode),
 			),
 		)
 

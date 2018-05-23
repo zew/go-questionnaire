@@ -4,13 +4,9 @@
    }
 }
 
-*, *:after, *:before {
+* {
 	margin: 0;
 	box-sizing: border-box; /* css3 rec */
-
-	font-family: tahoma;
-	font-size:   14px;  
-	line-height: 100%;
 }
 
 
@@ -26,34 +22,34 @@ body {
 	padding-top:    48px; /*for header*/
 	padding-bottom: 35px; /*for footer*/
 	background-color:{{ .body_background_color }};
-}
 
+	font-family: tahoma;
+	font-size:   14px;  
+	line-height: 100%;
+
+}
 
 
 .header {
  	min-height:40px;
-    position: fixed;
-    left: 0;
-    top: 0%;
-    width: 100%;
+	position: fixed;
+	left: 0;
+	top: 0%;
+	width: 100%;
 
 	padding:10px 20px;
 	background-color:#e4dfce;
 }
 
-
 .footer {
- 	min-height:35px;
-    position: fixed;
-    left: 0;
-    bottom: 0%;
-    width: 100%;
-
+	min-height:35px;
+ 	position: fixed;
+	left: 0;
+	bottom: 0%;
+	width: 100%;
 	padding:10px 20px;
 	background-color:#ededed;
 }
-
-
 
 
 a {
@@ -103,7 +99,18 @@ input:focus:invalid {
     border: 2px dotted red;
 }
 
+.error{
+	color:#622;
+}
 
+
+img.icon {
+	width: 20px;
+}
+
+img.icon-halve {
+	width: 12px;
+}
 
 div:focus {
   background: #ddd;
@@ -138,18 +145,8 @@ input.ib-120 { 	width:120px;  }
 
 
 
-img.icon {
-	width: 20px;
-}
-
-img.icon-halve {
-	width: 12px;
-}
 
 
-.error{
-	color:#622;
-}
 
 
 .hori-center-me {

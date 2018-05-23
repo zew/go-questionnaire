@@ -5,7 +5,7 @@
 // {{template  constantName}}.
 // Parsing bundles into parsedBundles should be done at application init time,
 // to avoid mutexing the parsedBundles map.
-// The func Parse() is exposed to boostrap for this purpose.
+// The func Parse() is exposed for this purpose - for bootstrapping.
 package tpl
 
 import (

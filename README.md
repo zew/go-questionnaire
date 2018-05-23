@@ -20,6 +20,15 @@ by a __single JSON file__ .
 The Transferrer. 
 
 
+
+* Validation happens on server side
+
+* Client side JS validation is deliberately omitted
+
+* [A simple client lib](http://www.javascript-coder.com/html-form/form-validation.phtml)
+
+
+
 ## Todo
 
 * Tests

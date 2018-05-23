@@ -70,29 +70,31 @@ func mainH(w http.ResponseWriter, r *http.Request) {
 	}
 
 	//
-	// Change page logic
-	prevPage, ok, err := sess.EffectiveInt("curr_page")
-	if err != nil {
-		helper(w, err, "Reading request parameter caused error")
-		return
-	}
-	if !ok {
+	// Page logic
+	//
+	// contains currPage from last request
+	// remember, because we want to store request values *there*
+	prevPage := q.CurrPage
+	if prevPage > len(q.Pages)-1 || prevPage < 0 {
+		q.CurrPage = 0
 		prevPage = 0
 	}
-
+	currPage := prevPage // Default assumption: we are still on prev page - unless there is some modification:
 	submit := sess.EffectiveStr("submit")
 	log.Printf("submit is '%v'", submit)
-	currPage := q.CurrPage
-	if currPage > len(q.Pages)-1 || currPage < 0 {
-		q.CurrPage = 0
-		currPage = 0
-	}
-
 	if submit == "prev" {
 		currPage = q.Prev()
 	}
 	if submit == "next" {
 		currPage = q.Next()
+	}
+	explicit, ok, err := sess.EffectiveInt("page")
+	if err != nil {
+		helper(w, err, "Reading request parameter caused error")
+		return
+	}
+	if ok {
+		currPage = explicit
 	}
 	q.CurrPage = currPage // Put current page into questionaire
 

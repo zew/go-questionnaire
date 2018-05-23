@@ -13,6 +13,11 @@ import (
 	"github.com/zew/go-questionaire/cfg"
 )
 
+// StaticDownloadH serves static files.
+// It guesses the Content-Type header.
+// It writes a Content-Length header.
+// It serves the file chunk-wise without
+// consuming only a buffer of memory.
 func StaticDownloadH(w http.ResponseWriter, r *http.Request) {
 	pth := r.URL.Path
 	pth = strings.TrimPrefix(pth, cfg.Pref())

@@ -3,7 +3,7 @@
 	<meta charset="utf-8">
 	<link rel="shortcut icon" href="data:;base64,=">
 	<link rel="icon"          href="data:;base64,=">
-		<title>{{.HtmlTitle}}</title>
+		<title>{{.App.Get "HtmlTitle"}}</title>
 	<link  href="{{prefix "/css/design.css"}}" rel="stylesheet" type="text/css" />
 	<link  href="{{prefix "/css/site.css"}}"   rel="stylesheet" type="text/css" />
 	<!-- jQuery - as it is required almost always -->
@@ -35,7 +35,9 @@
 		</div>
 	</div>
 	
-	{{executeTemplate .TemplateName .}}
+
+	 {{executeTemplate .TplBundle .TS.Pop .}}
+	 
 
 	<!-- footer -->
 	<div class="footer">

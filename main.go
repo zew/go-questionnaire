@@ -136,7 +136,7 @@ func main() {
 				tls.TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,
 			},
 		}
-		if cfg.Get().Tls13 {
+		if !cfg.Get().Tls13 {
 			// Best disabled, as they don't provide Forward Secrecy,
 			// but might be necessary for some clients, i.e. Internet Explorer 11
 			tlsCfg.CipherSuites = append(tlsCfg.CipherSuites, tls.TLS_RSA_WITH_AES_256_GCM_SHA384)

@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"net/url"
 	"time"
 
 	"github.com/zew/go-questionaire/cfg"
@@ -140,12 +141,24 @@ func mainH(w http.ResponseWriter, r *http.Request) {
 	}
 
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
-	err = tpl.Get(w, r, "main.html").Execute(
+
+	tplBundle := tpl.Get(w, r, "main.html")
+	ts := &tpl.StackT{"main.html", "content1.html"}
+	ts = &tpl.StackT{"content1.html"}
+
+	appData := url.Values{}
+	appData.Set("HtmlTitle", cfg.Get().AppName)
+
+	err = tplBundle.Execute(
 		w,
 		TplDataT{
-			HtmlTitle:    cfg.Get().AppName,
-			TemplateName: "main_t1.html",
-			Q:            q,
+			TplBundle: tplBundle,
+			TS:        ts,
+
+			App:  appData,
+			Sess: &sess,
+
+			Q: q,
 		},
 	)
 	if err != nil {

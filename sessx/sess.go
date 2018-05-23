@@ -22,16 +22,19 @@ var sessionManager1 = scs.NewManager(cookiestore.New([]byte(key)))
 var sessionManager2 = scs.NewManager(memstore.New(2 * time.Hour))
 var sessionManager = sessionManager2
 
+// Mgr exposes the session manager
 func Mgr() *scs.Manager {
 	return sessionManager
 }
 
+// SessT enhances the alexedwards/scs session.
 type SessT struct {
 	scs.Session
 	w http.ResponseWriter
 	r *http.Request
 }
 
+// New returns a new enhanced session variable.
 func New(w http.ResponseWriter, r *http.Request) SessT {
 	sess := sessionManager.Load(r)
 	return SessT{
@@ -70,7 +73,9 @@ func (sess *SessT) EffectiveIsSet(key string) bool {
 
 }
 
-// Returns zero value, regardless whether the param was set or not.
+// EffectiveStr returns the corresponding value from request or session .
+// It returns the zero value "", regardless whether the key was not set at all,
+// or whether key was set to value "".
 func (sess *SessT) EffectiveStr(key string, defaultVal ...string) string {
 
 	// Request
@@ -159,7 +164,8 @@ func (sess *SessT) EffectiveFloat(key string, defaultVal ...float64) (float64, b
 
 }
 
-// Param obj should be pointer
+// EffectiveObj helps to retrieve an compound variable from the session.
+// The parameter obj must be pointer.
 func (sess *SessT) EffectiveObj(key string, obj interface{}) (bool, error) {
 	ok := sess.EffectiveIsSet(key)
 	if !ok {
@@ -172,7 +178,7 @@ func (sess *SessT) EffectiveObj(key string, obj interface{}) (bool, error) {
 	return true, nil
 }
 
-// Returns zero value, regardless whether the param was set or not.
+// PutString stores a string into the session.
 func (sess *SessT) PutString(key, val string) error {
 	err := sess.Session.PutString(sess.w, key, val)
 	if err != nil {
@@ -181,6 +187,7 @@ func (sess *SessT) PutString(key, val string) error {
 	return err
 }
 
+// PutObject stores an object into the session.
 func (sess *SessT) PutObject(key string, val interface{}) error {
 	err := sess.Session.PutObject(sess.w, key, val)
 	if err != nil {
@@ -189,8 +196,7 @@ func (sess *SessT) PutObject(key string, val interface{}) error {
 	return err
 }
 
-//
-// Some request handlers for diagnosis
+// SessionPut is a convenience request handler for diagnosis via http
 func SessionPut(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "text/plain; charset=utf-8")
 	sess := New(w, r)
@@ -198,6 +204,7 @@ func SessionPut(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte("session[session-test-key] set to session-test-value"))
 }
 
+// SessionGet is a convenience request handler for diagnosis via http
 func SessionGet(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "text/plain; charset=utf-8")
 	sess := New(w, r)

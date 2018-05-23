@@ -8,14 +8,15 @@ import (
 	"github.com/zew/go-questionaire/sessx"
 )
 
+// LogoutH is a convenience handler to logout via http request
 func LogoutH(w http.ResponseWriter, r *http.Request) error {
 	sess := sessx.New(w, r)
 	err := sess.Remove(w, "login")
 	return err
 }
 
-// Convenience - check, whether as user is logged in,
-// and check whether he has the required roles
+// LoggedInCheck checks, whether as user is logged in,
+// and checks whether he has the required roles
 func LoggedInCheck(w http.ResponseWriter, r *http.Request, roles ...string) (l *LoginT, loggedIn bool, err error) {
 
 	sess := sessx.New(w, r)
@@ -40,7 +41,7 @@ func LoggedInCheck(w http.ResponseWriter, r *http.Request, roles ...string) (l *
 
 }
 
-// Takes request value "username" and "password".
+// ValidateAndLogin takes request value "username" and "password".
 // Searches for matching user and stores that user
 // into the session under key "login".
 func ValidateAndLogin(w http.ResponseWriter, r *http.Request) error {
@@ -75,6 +76,9 @@ func ValidateAndLogin(w http.ResponseWriter, r *http.Request) error {
 	return nil
 }
 
+// ChangePassword takes values from request.Form
+// and tries change the user's password.
+// The result is updated in the session "login" type.
 func ChangePassword(w http.ResponseWriter, r *http.Request) (string, error) {
 
 	sess := sessx.New(w, r)

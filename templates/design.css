@@ -4,9 +4,10 @@
    }
 }
 
-* {
+*, *:after, *:before {
 	margin: 0;
 	box-sizing: border-box; /* css3 rec */
+
 	font-family: tahoma;
 	font-size:   14px;  
 	line-height: 100%;

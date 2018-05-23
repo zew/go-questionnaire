@@ -82,6 +82,11 @@ func mainH(w http.ResponseWriter, r *http.Request) {
 	submit := sess.EffectiveStr("submit")
 	log.Printf("submit is '%v'", submit)
 	currPage := q.CurrPage
+	if currPage > len(q.Pages)-1 || currPage < 0 {
+		q.CurrPage = 0
+		currPage = 0
+	}
+
 	if submit == "prev" {
 		currPage = q.Prev()
 	}
@@ -128,7 +133,7 @@ func mainH(w http.ResponseWriter, r *http.Request) {
 
 	//
 	// Save questionaire to file
-	err = q.Save(fmt.Sprintf("tmp_sess_%02d", time.Now().Minute()))
+	err = q.Save(fmt.Sprintf("tmp_sess_%02d", time.Now().Minute()/10))
 	if err != nil {
 		helper(w, err, "Putting questionaire into session caused error")
 		return

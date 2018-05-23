@@ -110,6 +110,7 @@ func GenerateExample2() *QuestionaireT {
 	quest.LangCode = "de"
 
 	page1 := newPage()
+	page1.Label = transMapT{"de": "Status und Ausblick", "en": "Status and outlook"}
 
 	//
 	//
@@ -197,8 +198,10 @@ func GenerateExample2() *QuestionaireT {
 	page2.Groups = append(page2.Groups, exampleNineLabelledRadios())
 	page2.Groups = append(page2.Groups, exampleSixColumnsLabelRight())
 	page2.Groups = append(page2.Groups, exampleFinlandMatrixNoLabels())
-
 	quest.Pages = append(quest.Pages, page2)
+
+	page3 := newPage()
+	quest.Pages = append(quest.Pages, page3)
 
 	err := quest.Validate()
 	if err != nil {

@@ -231,7 +231,7 @@ type pageT struct {
 func newPage() pageT {
 	t := pageT{
 		Label: transMapT{"en": "Page Label", "de": fmt.Sprintf("Seitentitel_%v", ctr.Increment())},
-		Desc:  transMapT{"en": "Page Description", "de": "Seitenbeschreibung"},
+		Desc:  transMapT{"de": "", "en": ""},
 	}
 	return t
 }
@@ -249,11 +249,15 @@ type QuestionaireT struct {
 func (q *QuestionaireT) LanguageChooser() string {
 	s := []string{}
 	for key, lang := range q.LangCodes {
+		keyCap := strings.Title(key)
+		if q.LangCode == "en" {
+			keyCap = key
+		}
 		if key == q.LangCode {
-			s = append(s, fmt.Sprintf("<b           title='%v'>%v</b>\n", lang, key))
+			s = append(s, fmt.Sprintf("<b           title='%v'>%v</b>\n", lang, keyCap))
 		} else {
 			uri := cfg.Pref("/") + "?lang_code=" + key
-			s = append(s, fmt.Sprintf("<a href='%v' title='%v'>%v</a>\n", uri, lang, key))
+			s = append(s, fmt.Sprintf("<a href='%v' title='%v'>%v</a>\n", uri, lang, keyCap))
 		}
 	}
 	return strings.Join(s, "  |  ")
@@ -267,7 +271,7 @@ func (q *QuestionaireT) CurrentPageHTML() (string, error) {
 // PageHTML generates HTML for a specific page of the questionaire
 func (q *QuestionaireT) PageHTML(idx int) (string, error) {
 
-	if q.CurrPage > len(q.Pages) || q.CurrPage < 0 {
+	if q.CurrPage > len(q.Pages)-1 || q.CurrPage < 0 {
 		s := fmt.Sprintf("You requested page %v out of %v. Page does not exist", idx, len(q.Pages)-1)
 		log.Printf(s)
 		return s, fmt.Errorf(s)

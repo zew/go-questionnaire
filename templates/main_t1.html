@@ -1,7 +1,7 @@
 
     <!-- padding - without disturbing width=100% inscribe -->
     <div class="hori-center-me">
-    
+
         <!-- width=100% inscribe -->
         <form method="POST" action="{{prefix ""}}" class='go-quest-main-form'>
             <input type="hidden" name="curr_page" value="{{.Q.CurrPage}}">
@@ -13,27 +13,39 @@
             -->
 
             {{toHtml (.Q.CurrentPageHTML) }}
-            
+
+
+            <br>
+            <br>
+            <br>
     
-            <table style='width:100%; padding: 0; margin: 0;'>
+            <table style='width:100%; padding: 0; margin: 0; 
+                padding-right: 50px;
+                aaborder: 1px solid #ddd;
+            '>
                 <tr>
-                    <td style='width: 33%;text-align: left;'>
+                    <td style='width: 14%;vertical-align: top; text-align: left;'>
                         {{if .Q.HasPrev}}
                         <!--
-    					<a accesskey="p" href="{{prefix ""}}?curr_page={{.Q.Prev}}"> << Page {{addint .Q.Prev 1}} </a>
+    					    <a accesskey="p" href="{{prefix ""}}?curr_page={{.Q.Prev}}"> << Page {{addint .Q.Prev 1}} </a>
     					-->
-                        <button type="submit" name="submit" value="prev" accesskey="p">
+                        <button type="submit" name="submit" value="prev" accesskey="p"
+                            style='font-size:75%; position:relative; top: 3px;'
+                        >
                             << Page {{addint .Q.Prev 1}} </button>
-                                {{end}}
+
+                        {{end}}
                     </td>
-                    <td style='width: 33%;text-align: center;'>
-                        -{{addint .Q.CurrPage 1}}-
+                    <td style='width: 70%;vertical-align: top; text-align: center; position: relative; left: -20px;'>
+                        <!-- -{{addint .Q.CurrPage 1}}- -->
+
+                         {{toHtml (.Q.ProgressBar) }}
                     </td>
-                    <td style='width: 33%;text-align: right;'>
+                    <td style='width: 14%;vertical-align: top; text-align: right;'>
                         {{if .Q.HasNext}}
                         <!--
-    				<a accesskey="n" href="{{prefix ""}}?curr_page={{.Q.Next}}"> Page {{addint .Q.Next 1}} >></a>
-    				-->
+    				        <a accesskey="n" href="{{prefix ""}}?curr_page={{.Q.Next}}"> Page {{addint .Q.Next 1}} >></a>
+    				    -->
                         <button type="submit" name="submit" value="next" accesskey="n">
                             Page {{addint .Q.Next 1}} >>
                         </button>

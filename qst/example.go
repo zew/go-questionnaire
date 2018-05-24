@@ -231,6 +231,8 @@ func GenerateExample2() *QuestionaireT {
 				"de": fmt.Sprintf("Unsere Prognose für das <b>deutsche</b> BIP Wachstum in %v (real, saisonbereinigt, nicht annualisiert):", nextQ()),
 				"en": fmt.Sprintf("Our estimate for the <b>German</b> GDP growth in %v (real, seasonally adjusted, non annualized):", nextQ()),
 			}
+			inp.Width = 4
+			inp.Suffix = transMapT{"de": "%", "en": "pct"}
 			inp.HAlignLabel = HLeft
 			inp.HAlignControl = HCenter
 			inp.Validator = "inRange20"
@@ -246,6 +248,8 @@ func GenerateExample2() *QuestionaireT {
 				"de": fmt.Sprintf("Unsere Prognose für das BIP Wachstum für das Jahr %v (real, saisonbereinigt):", nextY()),
 				"en": fmt.Sprintf("Our estimate for the GDP growth in %v (real, seasonally adjusted):", nextY()),
 			}
+			inp.Width = 4
+			inp.Suffix = transMapT{"de": "%", "en": "pct"}
 			inp.HAlignLabel = HLeft
 			inp.HAlignControl = HCenter
 			inp.Validator = "inRange20"
@@ -265,6 +269,8 @@ func GenerateExample2() *QuestionaireT {
 				"de": fmt.Sprintf("Die Wahrscheinlichkeit eines negativen Wachstums des <b>deutschen</b> BIP in %v liegt bei:", nextQ()),
 				"en": fmt.Sprintf("The probability of negative growth for the <b>German</b> GDP in %v is:", nextQ()),
 			}
+			inp.Width = 4
+			inp.Suffix = transMapT{"de": "%", "en": "pct"}
 			inp.HAlignLabel = HLeft
 			inp.HAlignControl = HCenter
 			inp.Validator = "inRange100"
@@ -280,6 +286,8 @@ func GenerateExample2() *QuestionaireT {
 				"de": fmt.Sprintf("Die Wahrscheinlichkeit einer Rezession in Deutschland (mind. 2&nbsp;Quartale neg. Wachstum) bis Q4 %v liegt bei:", nextY()),
 				"en": fmt.Sprintf("The probability of a recession in Germany (at least 2&nbsp;quarters neg. growth) until Q4 %v is:", nextY()),
 			}
+			inp.Width = 4
+			inp.Suffix = transMapT{"de": "%", "en": "pct"}
 			inp.HAlignLabel = HLeft
 			inp.HAlignControl = HCenter
 			inp.Validator = "inRange100"

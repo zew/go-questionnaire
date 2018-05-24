@@ -30,10 +30,12 @@ type radioT struct {
 type inputT struct {
 	Name          string              `json:"name,omitempty"`
 	Type          string              `json:"type,omitempty"`
+	Width         int                 `json:"width,omitempty"`                    // Number of chars
 	HAlignControl horizontalAlignment `json:"horizontal_align_control,omitempty"` // label       left/center/right of input, default left, similar setting for radioT but not for group
 	HAlignLabel   horizontalAlignment `json:"horizontal_align_label,omitempty"`   // description left/center/right of input, default left, similar setting for radioT but not for group
 	Label         transMapT           `json:"label,omitempty"`
 	Desc          transMapT           `json:"description,omitempty"`
+	Suffix        transMapT           `json:"suffix,omitempty"`
 	ColSpan       int                 `json:"col_span,omitempty"` // How many table cells in overall layout should the control occupy, counts against group.Cols
 
 	Radios []radioT `json:"radios,omitempty"` // This slice implements the radiogroup - and the senseless checkboxgroup
@@ -128,7 +130,8 @@ func (i inputT) HTML(langCode string, numCols int) string {
 				nm, nm, valEmpty)
 		}
 
-		ctrl += i.ErrMsg.TrSilent(langCode) // ugly layout  - but radiogroup and checkboxgroup won't have validation errors anyway
+		ctrl += fmt.Sprintf("<span class='go-quest-label' >%v</span>\n", i.Suffix.TrSilent(langCode))
+		ctrl += fmt.Sprintf("<span class='go-quest-label' >%v</span>\n", i.ErrMsg.TrSilent(langCode)) // ugly layout  - but radiogroup and checkboxgroup won't have validation errors anyway
 
 		lbl := renderLabelDescription(langCode, i.HAlignLabel, i.Label, i.Desc, "", numCols)
 		// lbl = fmt.Sprintf("<label for='%v'>%v</label>\n", nm, lbl)
@@ -145,8 +148,11 @@ func (i inputT) HTML(langCode string, numCols int) string {
 			}
 			val = valSet
 		}
-		ctrl += fmt.Sprintf("<input type='%v' name='%v' id='%v' title='%v %v' value='%v' %v />\n",
-			i.Type, nm, nm, i.Label.TrSilent(langCode), i.Desc.TrSilent(langCode), val, checked)
+
+		width := fmt.Sprintf("width: %vem;", int(float64(i.Width)*1.05))
+
+		ctrl += fmt.Sprintf("<input type='%v' name='%v' id='%v' title='%v %v' style='%v' value='%v' %v />\n",
+			i.Type, nm, nm, i.Label.TrSilent(langCode), i.Desc.TrSilent(langCode), width, val, checked)
 
 		// The checkbox "empty catcher" must follow *after* the actual checkbox input,
 		// since http.Form.Get() fetches the first value.
@@ -154,7 +160,8 @@ func (i inputT) HTML(langCode string, numCols int) string {
 			ctrl += fmt.Sprintf("<input type='hidden' name='%v' id='%v_hidd' value='0' />\n", nm, nm)
 		}
 
-		ctrl += i.ErrMsg.TrSilent(langCode)
+		ctrl += fmt.Sprintf("<span class='go-quest-label' >%v</span>\n", i.Suffix.TrSilent(langCode))
+		ctrl += fmt.Sprintf("<span class='go-quest-label' >%v</span>\n", i.ErrMsg.TrSilent(langCode))
 
 		ctrl = fmt.Sprintf("<span class='go-quest-cell-%v' style='%v'>%v</span>\n", i.HAlignControl, colWidth(numCols), ctrl)
 

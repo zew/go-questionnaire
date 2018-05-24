@@ -101,7 +101,6 @@ input:focus:invalid {
 
 .error{
 	color:#622;
-	font-size: 12px;
 }
 
 
@@ -238,7 +237,6 @@ input.ib-120 { 	width:120px;  }
 	padding: 0;
 	display: inline-block;
 	
-	vertical-align: top;  /* lead to good alignment with radio inputs */
 	white-space: nowrap;
 
 	font-size: 12px;

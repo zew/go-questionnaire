@@ -53,11 +53,11 @@ func init() {
 				return fmt.Errorf("max %.0f", limit)
 			}
 			if fl < -limit {
-				log.Printf("%.2f < min %.0f", fl, limit)
+				log.Printf("%.2f < min %.0f", fl, -limit)
 				if langCode == "de" {
-					return fmt.Errorf("Min %.0f", limit)
+					return fmt.Errorf("Min %.0f", -limit)
 				}
-				return fmt.Errorf("min %.0f", limit)
+				return fmt.Errorf("min %.0f", -limit)
 			}
 			return nil
 		}
@@ -101,6 +101,8 @@ func (q *QuestionaireT) ValidateReponseData(pageNum int, langCode string) (last 
 								// Reset previous errors
 								q.Pages[i1].Groups[i2].Inputs[i3].ErrMsg = nil
 							}
+						} else {
+							q.Pages[i1].Groups[i2].Inputs[i3].ErrMsg = nil
 						}
 					}
 				}

@@ -31,7 +31,7 @@ func (t transMapT) TrSilent(langCode string) string {
 	}
 	ret := t.Tr(langCode)
 	if ret == noTrans {
-		return ret
+		return ""
 	}
 	return ret
 }

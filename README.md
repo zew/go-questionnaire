@@ -32,12 +32,18 @@ The Transferrer.
 
 * Auto-login
 
-* Server side validation
-
 * Tests
 
 * JSON schema validator
 
+
+### Design consideration
+
+* Questionaire contains translations for its contents - but the application environment needs translations too. Central store?
+
+* Validator error messages; Page has errors; Application name; main.html header; Imprint
+
+* These should be checked against the questionaire language set.
 
 
 ## About Go-App-Tpl

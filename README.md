@@ -23,13 +23,16 @@ The Transferrer.
 
 * Validation happens on server side
 
-* Client side JS validation is deliberately omitted
-
-* [A simple client lib](http://www.javascript-coder.com/html-form/form-validation.phtml)
+* Client side JS validation is deliberately omitted;  
+   [a would-be JS client lib](http://www.javascript-coder.com/html-form/form-validation.phtml)
 
 
 
 ## Todo
+
+* Auto-login
+
+* Server side validation
 
 * Tests
 

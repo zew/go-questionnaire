@@ -26,6 +26,9 @@ func (t transMapT) Tr(langCode string) string {
 // TrSilent gives no warning - if the translation is not set.
 // Good for HTML title attribute - where errors are easy to overlook.
 func (t transMapT) TrSilent(langCode string) string {
+	if t == nil {
+		return ""
+	}
 	ret := t.Tr(langCode)
 	if ret == noTrans {
 		return ret

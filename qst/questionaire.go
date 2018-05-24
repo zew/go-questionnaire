@@ -38,8 +38,8 @@ type inputT struct {
 
 	Radios []radioT `json:"radios,omitempty"` // This slice implements the radiogroup - and the senseless checkboxgroup
 
-	// Validator func() bool `json:"empty"`
-	ErrMsg transMapT `json:"err_msg,omitempty"`
+	Validator string    `json:"validator,omitempty"` // i.e. inRange20 - any string from validators
+	ErrMsg    transMapT `json:"err_msg,omitempty"`
 
 	// These are only useful a part of wave-data
 	Response      string  `json:"response,omitempty"`
@@ -127,6 +127,9 @@ func (i inputT) HTML(langCode string, numCols int) string {
 			ctrl += fmt.Sprintf("<input type='hidden' name='%v' id='%v_hidd' value='%v' />\n",
 				nm, nm, valEmpty)
 		}
+
+		ctrl += i.ErrMsg.TrSilent(langCode) // ugly layout  - but radiogroup and checkboxgroup won't have validation errors anyway
+
 		lbl := renderLabelDescription(langCode, i.HAlignLabel, i.Label, i.Desc, "", numCols)
 		// lbl = fmt.Sprintf("<label for='%v'>%v</label>\n", nm, lbl)
 		return lbl + ctrl
@@ -150,6 +153,9 @@ func (i inputT) HTML(langCode string, numCols int) string {
 		if i.Type == "checkbox" {
 			ctrl += fmt.Sprintf("<input type='hidden' name='%v' id='%v_hidd' value='0' />\n", nm, nm)
 		}
+
+		ctrl += i.ErrMsg.TrSilent(langCode)
+
 		ctrl = fmt.Sprintf("<span class='go-quest-cell-%v' style='%v'>%v</span>\n", i.HAlignControl, colWidth(numCols), ctrl)
 
 		lbl := renderLabelDescription(langCode, i.HAlignLabel, i.Label, i.Desc, "", numCols)

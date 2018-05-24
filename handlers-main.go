@@ -70,6 +70,17 @@ func mainH(w http.ResponseWriter, r *http.Request) {
 	}
 
 	//
+	// Meta parameters
+	if newCode, ok := sess.ReqParam("lang_code"); ok {
+		oldCode := q.LangCode
+		q.LangCode = newCode
+		err := q.Validate()
+		if err != nil {
+			q.LangCode = oldCode
+		}
+	}
+
+	//
 	// Page logic
 	//
 	// contains currPage from last request
@@ -114,18 +125,12 @@ func mainH(w http.ResponseWriter, r *http.Request) {
 			}
 		}
 	}
-
-	//
-	// Meta parameters
-	if newCode, ok := sess.ReqParam("lang_code"); ok {
-		oldCode := q.LangCode
-		q.LangCode = newCode
-		err := q.Validate()
-		if err != nil {
-			q.LangCode = oldCode
-		}
+	err = q.ValidateReponseData(prevPage, q.LangCode)
+	if err != nil {
+		q.CurrPage = prevPage // Prevent changing page, keep user on page with errors
 	}
 
+	//
 	//
 	// Save questionaire into session
 	err = sess.PutObject("questionaire", q)

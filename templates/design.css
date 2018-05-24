@@ -101,6 +101,7 @@ input:focus:invalid {
 
 .error{
 	color:#622;
+	font-size: 12px;
 }
 
 

@@ -218,7 +218,7 @@ func GenerateExample2() *QuestionaireT {
 	// page 2
 	{
 		page := newPage()
-		page.Label = transMapT{"de": "Wachstum", "en": "Growth expectations"}
+		page.Label = transMapT{"de": "Wachstum", "en": "Growth"}
 
 		grp1 := groupT{}
 		grp1.Cols = 2 // necessary, otherwise no vspacers
@@ -233,6 +233,7 @@ func GenerateExample2() *QuestionaireT {
 			}
 			inp.HAlignLabel = HLeft
 			inp.HAlignControl = HCenter
+			inp.Validator = "inRange20"
 
 			grp1.Inputs = append(grp1.Inputs, inp)
 		}
@@ -247,6 +248,7 @@ func GenerateExample2() *QuestionaireT {
 			}
 			inp.HAlignLabel = HLeft
 			inp.HAlignControl = HCenter
+			inp.Validator = "inRange20"
 
 			grp1.Inputs = append(grp1.Inputs, inp)
 		}
@@ -265,6 +267,7 @@ func GenerateExample2() *QuestionaireT {
 			}
 			inp.HAlignLabel = HLeft
 			inp.HAlignControl = HCenter
+			inp.Validator = "inRange100"
 
 			grp2.Inputs = append(grp2.Inputs, inp)
 		}
@@ -279,6 +282,7 @@ func GenerateExample2() *QuestionaireT {
 			}
 			inp.HAlignLabel = HLeft
 			inp.HAlignControl = HCenter
+			inp.Validator = "inRange100"
 
 			grp2.Inputs = append(grp2.Inputs, inp)
 		}

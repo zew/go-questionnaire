@@ -18,5 +18,6 @@ setenv*.bat
 tmp/*
 tmp*
 profiles/*
+# everything site specific
 site*
 site/*

@@ -28,15 +28,22 @@ type radioT struct {
 // There is one exception for multiple radios (radiogroup) with the same name but distinct values.
 // Multiple checkboxes (checkboxgroup) with same name but distinct values are a dubious instrument. See comment to implementedType checkboxgroup.
 type inputT struct {
-	Name          string              `json:"name,omitempty"`
-	Type          string              `json:"type,omitempty"`
-	Width         int                 `json:"width,omitempty"`                    // Number of chars
-	HAlignControl horizontalAlignment `json:"horizontal_align_control,omitempty"` // label       left/center/right of input, default left, similar setting for radioT but not for group
+	Name     string `json:"name,omitempty"`
+	Type     string `json:"type,omitempty"`
+	MaxChars int    `json:"max_chars,omitempty"` // Number of input chars, also used to computer width
+
 	HAlignLabel   horizontalAlignment `json:"horizontal_align_label,omitempty"`   // description left/center/right of input, default left, similar setting for radioT but not for group
+	HAlignControl horizontalAlignment `json:"horizontal_align_control,omitempty"` // label       left/center/right of input, default left, similar setting for radioT but not for group
 	Label         transMapT           `json:"label,omitempty"`
 	Desc          transMapT           `json:"description,omitempty"`
 	Suffix        transMapT           `json:"suffix,omitempty"`
-	ColSpan       int                 `json:"col_span,omitempty"` // How many table cells in overall layout should the control occupy, counts against group.Cols
+
+	// How many column slots of the overall layout should the control occupy?
+	// The number adds up against group.Cols - determining newlines.
+	// The number is used to compute the relative width (percentage).
+	// If zero, a column width of one is assumend.
+	ColSpanLabel   int `json:"col_span_label,omitempty"`
+	ColSpanControl int `json:"col_span_control,omitempty"`
 
 	Radios []radioT `json:"radios,omitempty"` // This slice implements the radiogroup - and the senseless checkboxgroup
 
@@ -60,8 +67,9 @@ func newInput() inputT {
 	return t
 }
 
-// Argument numCols computes precise width in percent
-func renderLabelDescription(langCode string, hAlign horizontalAlignment, lbl, desc transMapT, css string, numCols int) string {
+// Argument numCols is the total number of cols per row.
+// It is used to compute the precise width in percent
+func renderLabelDescription(langCode string, hAlign horizontalAlignment, lbl, desc transMapT, css string, colsLabel, numCols int) string {
 	ret := ""
 	if lbl == nil && desc == nil {
 		return ret
@@ -77,7 +85,7 @@ func renderLabelDescription(langCode string, hAlign horizontalAlignment, lbl, de
 	ret = fmt.Sprintf(
 		"<span class='go-quest-label %v' ><b>%v</b> %v </span>\n", css, e1, e2,
 	)
-	ret = fmt.Sprintf("<span class='go-quest-cell-%v'  style='%v'>%v</span>\n", hAlign, colWidth(numCols), ret)
+	ret = fmt.Sprintf("<span class='go-quest-cell-%v'  style='%v'>%v</span>\n", hAlign, colWidth(colsLabel, numCols), ret)
 	return ret
 }
 
@@ -89,7 +97,7 @@ func (i inputT) HTML(langCode string, numCols int) string {
 
 	switch i.Type {
 	case "textblock":
-		lbl := renderLabelDescription(langCode, i.HAlignLabel, i.Label, i.Desc, "", numCols)
+		lbl := renderLabelDescription(langCode, i.HAlignLabel, i.Label, i.Desc, "", (i.ColSpanLabel + i.ColSpanControl), numCols)
 		return lbl
 
 	case "radiogroup", "checkboxgroup":
@@ -120,11 +128,11 @@ func (i inputT) HTML(langCode string, numCols int) string {
 			if rad.Label != nil && rad.HAlign == HRight {
 				one += fmt.Sprintf("<span class='go-quest-label'>%v</span>\n", rad.Label.Tr(langCode))
 			}
-			one = fmt.Sprintf("<span class='go-quest-cell-%v' style='%v'>%v</span>\n", rad.HAlign, colWidth(numCols), one)
+			one = fmt.Sprintf("<span class='go-quest-cell-%v' style='%v'>%v</span>\n", rad.HAlign, colWidth(1, numCols), one)
 			ctrl += one
 		}
 		// The checkbox "empty catcher" must follow *after* the actual checkbox input,
-		// since http.Form.Get() fetches the first value.
+		// since golang http.Form.Get() fetches the *first* value.
 		if innerType == "checkbox" {
 			ctrl += fmt.Sprintf("<input type='hidden' name='%v' id='%v_hidd' value='%v' />\n",
 				nm, nm, valEmpty)
@@ -133,7 +141,7 @@ func (i inputT) HTML(langCode string, numCols int) string {
 		ctrl += fmt.Sprintf("<span class='go-quest-label' >%v</span>\n", i.Suffix.TrSilent(langCode))
 		ctrl += fmt.Sprintf("<span class='go-quest-label' >%v</span>\n", i.ErrMsg.TrSilent(langCode)) // ugly layout  - but radiogroup and checkboxgroup won't have validation errors anyway
 
-		lbl := renderLabelDescription(langCode, i.HAlignLabel, i.Label, i.Desc, "", numCols)
+		lbl := renderLabelDescription(langCode, i.HAlignLabel, i.Label, i.Desc, "", i.ColSpanLabel, numCols)
 		// lbl = fmt.Sprintf("<label for='%v'>%v</label>\n", nm, lbl)
 		return lbl + ctrl
 
@@ -149,10 +157,14 @@ func (i inputT) HTML(langCode string, numCols int) string {
 			val = valSet
 		}
 
-		width := fmt.Sprintf("width: %vem;", int(float64(i.Width)*1.05))
+		width := fmt.Sprintf("width: %vem;", int(float64(i.MaxChars)*1.05))
+		maxChars := ""
+		if i.MaxChars > 0 {
+			maxChars = fmt.Sprintf(" MAXLENGTH='%v' ", i.MaxChars) // this is the right name of the attribute
+		}
 
-		ctrl += fmt.Sprintf("<input type='%v' name='%v' id='%v' title='%v %v' style='%v' value='%v' %v />\n",
-			i.Type, nm, nm, i.Label.TrSilent(langCode), i.Desc.TrSilent(langCode), width, val, checked)
+		ctrl += fmt.Sprintf("<input type='%v' name='%v' id='%v' title='%v %v' style='%v' %v value='%v' %v />\n",
+			i.Type, nm, nm, i.Label.TrSilent(langCode), i.Desc.TrSilent(langCode), width, maxChars, val, checked)
 
 		// The checkbox "empty catcher" must follow *after* the actual checkbox input,
 		// since http.Form.Get() fetches the first value.
@@ -163,9 +175,9 @@ func (i inputT) HTML(langCode string, numCols int) string {
 		ctrl += fmt.Sprintf("<span class='go-quest-label' >%v</span>\n", i.Suffix.TrSilent(langCode))
 		ctrl += fmt.Sprintf("<span class='go-quest-label' >%v</span>\n", i.ErrMsg.TrSilent(langCode))
 
-		ctrl = fmt.Sprintf("<span class='go-quest-cell-%v' style='%v'>%v</span>\n", i.HAlignControl, colWidth(numCols), ctrl)
+		ctrl = fmt.Sprintf("<span class='go-quest-cell-%v' style='%v'>%v</span>\n", i.HAlignControl, colWidth(i.ColSpanControl, numCols), ctrl)
 
-		lbl := renderLabelDescription(langCode, i.HAlignLabel, i.Label, i.Desc, "", numCols)
+		lbl := renderLabelDescription(langCode, i.HAlignLabel, i.Label, i.Desc, "", i.ColSpanLabel, numCols)
 		lbl = fmt.Sprintf("<label for='%v'>%v</label>\n", nm, lbl)
 		return lbl + ctrl
 
@@ -186,7 +198,15 @@ type groupT struct {
 	Desc  transMapT `json:"description,omitempty"`
 
 	Vertical bool `json:"vertical,omitempty"` // groups vertically, not horizontally
-	Cols     int  `json:"columns,omitempty"`  // number of vertical columns; for horizontal *and* vertical layouts; you must count the labels too
+
+	// Number of vertical columns;
+	// for horizontal *and* (not yet implemented) vertical layouts;
+	//
+	// Each label (if set) and each input occupy one columns.
+	// inputT.ColSpanLabel and inputT.ColSpanControl may set this to more than 1.
+	//
+	// Cols determines the 'slot' width for these above settings using colWidth(colsElement, colsTotal)
+	Cols int `json:"columns,omitempty"`
 
 	Inputs []inputT `json:"inputs,omitempty"`
 }
@@ -198,31 +218,41 @@ func (gr groupT) HTML(langCode string) string {
 
 	b.WriteString("<div class='go-quest-group' >\n")
 
-	lbl := renderLabelDescription(langCode, HLeft, gr.Label, gr.Desc, "go-quest-group-header", gr.Cols)
+	lbl := renderLabelDescription(langCode, HLeft, gr.Label, gr.Desc, "go-quest-group-header", gr.Cols, gr.Cols)
 
 	b.WriteString(lbl)
 	b.WriteString(vspacer)
 
 	cols := 0 // cols counter
-	for i, mem := range gr.Inputs {
-		b.WriteString(mem.HTML(langCode, gr.Cols))
+	for i, inp := range gr.Inputs {
+		b.WriteString(inp.HTML(langCode, gr.Cols))
 
 		if gr.Cols > 0 {
-			if mem.ColSpan > 0 {
-				cols += mem.ColSpan // larger input controls
-			} else if len(mem.Radios) > 0 {
-				cols += len(mem.Radios) // radiogroups, if no ColSpan is set
-				if mem.Label != nil || mem.Desc != nil {
-					cols++ // plus one for the leading label of the input
-				}
+
+			if inp.ColSpanLabel > 0 {
+				cols += inp.ColSpanLabel // wider labels
 			} else {
-				cols++ // default: every input occupies one column width
+				// nothing specified
+				if inp.Label != nil || inp.Desc != nil {
+					// if a label is set, it occupies one column
+					cols++
+				}
 			}
 
-			// log.Printf("%12v %2v %2v", mem.Type, cols, cols%gr.Cols)
+			if inp.ColSpanControl > 0 {
+				cols += inp.ColSpanControl // larger input controls
+			} else if len(inp.Radios) > 0 {
+				cols += len(inp.Radios) // radiogroups, if no ColSpan is set
+			} else {
+				// nothing specified => input control occupies one column
+				cols++
+			}
 
+			// log.Printf("%12v %2v %2v", mem.Type, cols, cols%gr.Cols)  // so far
+
+			// end of row  - or end of group
 			if (cols+0)%gr.Cols == 0 || i == len(gr.Inputs)-1 {
-				b.WriteString(vspacer) // end of row  - or end of group
+				b.WriteString(vspacer)
 			}
 
 		}
@@ -253,10 +283,11 @@ func newPage() pageT {
 // QuestionaireT contains pages with groups with inputs
 type QuestionaireT struct {
 	Pages     []pageT           `json:"pages,omitempty"`
-	LangCodes map[string]string `json:"lang_codes"` // all possible lang codes - i.e. en, de
-	LangCode  string            `json:"lang_code"`  // default lang code - and current lang code - i.e. de
+	LangCodes map[string]string `json:"lang_codes,omitempty"` // all possible lang codes - i.e. en, de
+	LangCode  string            `json:"lang_code,omitempty"`  // default lang code - and current lang code - i.e. de
 
-	CurrPage int `json:"curr_page,omitempty"`
+	CurrPage  int  `json:"curr_page,omitempty"`
+	HasErrors bool `json:"has_errors,omitempty"` // If any response is faulty; set by ValidateReponseData
 }
 
 // LanguageChooser renders a HTML language chooser

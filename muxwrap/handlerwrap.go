@@ -8,6 +8,7 @@ import (
 	"net/http"
 	"strings"
 
+	"github.com/zew/go-questionaire/cfg"
 	"github.com/zew/go-questionaire/sessx"
 	"github.com/zew/logx"
 	"github.com/zew/util"
@@ -38,6 +39,14 @@ func (m *handlerWrapper) ServeHTTP(w http.ResponseWriter, rNew *http.Request) {
 	// lg.Printf("------------------------------------------")
 	if !strings.HasSuffix(rNew.URL.Path, "favicon.ico") {
 		lg.Printf("%-60v | referr %v", shortened, util.UrlBeautify(rNew.Referer()))
+	}
+
+	// Limit POST request body size.
+	// Beware: Restricts file upload size.
+	// There is no default restriction - only 10 MB *memory* limit - rest goes to hard disk - stackoverflow.com/questions/28282370/
+	maxPostSize := cfg.Get().MaxPostSize
+	if maxPostSize > 0 {
+		rNew.Body = http.MaxBytesReader(w, rNew.Body, maxPostSize)
 	}
 
 	// Skip remaining stuff for static files.

@@ -221,21 +221,23 @@ func GenerateExample2() *QuestionaireT {
 		page.Label = transMapT{"de": "Wachstum", "en": "Growth"}
 
 		grp1 := groupT{}
-		grp1.Cols = 2 // necessary, otherwise no vspacers
+		grp1.Cols = 4 // necessary, otherwise no vspacers
 		grp1.Label = transMapT{"de": "3a.", "en": "3a."}
 		{
 			inp := inputT{}
 			inp.Type = "text"
 			inp.Name = "y_q_deu"
+			inp.MaxChars = 4
+			inp.Validator = "inRange20"
+
+			inp.ColSpanLabel = 3
 			inp.Desc = transMapT{
 				"de": fmt.Sprintf("Unsere Prognose für das <b>deutsche</b> BIP Wachstum in %v (real, saisonbereinigt, nicht annualisiert):", nextQ()),
 				"en": fmt.Sprintf("Our estimate for the <b>German</b> GDP growth in %v (real, seasonally adjusted, non annualized):", nextQ()),
 			}
-			inp.Width = 4
 			inp.Suffix = transMapT{"de": "%", "en": "pct"}
 			inp.HAlignLabel = HLeft
-			inp.HAlignControl = HCenter
-			inp.Validator = "inRange20"
+			inp.HAlignControl = HLeft
 
 			grp1.Inputs = append(grp1.Inputs, inp)
 		}
@@ -244,36 +246,40 @@ func GenerateExample2() *QuestionaireT {
 			inp := inputT{}
 			inp.Type = "text"
 			inp.Name = "y_y_deu"
+			inp.MaxChars = 4
+			inp.Validator = "inRange20"
+
+			inp.ColSpanLabel = 3
 			inp.Desc = transMapT{
 				"de": fmt.Sprintf("Unsere Prognose für das BIP Wachstum für das Jahr %v (real, saisonbereinigt):", nextY()),
 				"en": fmt.Sprintf("Our estimate for the GDP growth in %v (real, seasonally adjusted):", nextY()),
 			}
-			inp.Width = 4
 			inp.Suffix = transMapT{"de": "%", "en": "pct"}
 			inp.HAlignLabel = HLeft
-			inp.HAlignControl = HCenter
-			inp.Validator = "inRange20"
+			inp.HAlignControl = HLeft
 
 			grp1.Inputs = append(grp1.Inputs, inp)
 		}
 
 		grp2 := groupT{}
-		grp2.Cols = 2 // necessary, otherwise no vspacers
+		grp2.Cols = 4 // necessary, otherwise no vspacers
 		grp2.Label = transMapT{"de": "3b.", "en": "3b."}
 
 		{
 			inp := inputT{}
 			inp.Type = "text"
 			inp.Name = "yshr_q_deu"
+			inp.MaxChars = 4
+			inp.Validator = "inRange100"
+
+			inp.ColSpanLabel = 3
 			inp.Desc = transMapT{
 				"de": fmt.Sprintf("Die Wahrscheinlichkeit eines negativen Wachstums des <b>deutschen</b> BIP in %v liegt bei:", nextQ()),
 				"en": fmt.Sprintf("The probability of negative growth for the <b>German</b> GDP in %v is:", nextQ()),
 			}
-			inp.Width = 4
 			inp.Suffix = transMapT{"de": "%", "en": "pct"}
 			inp.HAlignLabel = HLeft
-			inp.HAlignControl = HCenter
-			inp.Validator = "inRange100"
+			inp.HAlignControl = HLeft
 
 			grp2.Inputs = append(grp2.Inputs, inp)
 		}
@@ -282,15 +288,17 @@ func GenerateExample2() *QuestionaireT {
 			inp := inputT{}
 			inp.Type = "text"
 			inp.Name = "yshr_y_deu"
+			inp.MaxChars = 4
+			inp.Validator = "inRange100"
+
+			inp.ColSpanLabel = 3
 			inp.Desc = transMapT{
 				"de": fmt.Sprintf("Die Wahrscheinlichkeit einer Rezession in Deutschland (mind. 2&nbsp;Quartale neg. Wachstum) bis Q4 %v liegt bei:", nextY()),
 				"en": fmt.Sprintf("The probability of a recession in Germany (at least 2&nbsp;quarters neg. growth) until Q4 %v is:", nextY()),
 			}
-			inp.Width = 4
 			inp.Suffix = transMapT{"de": "%", "en": "pct"}
 			inp.HAlignLabel = HLeft
-			inp.HAlignControl = HCenter
-			inp.Validator = "inRange100"
+			inp.HAlignControl = HLeft
 
 			grp2.Inputs = append(grp2.Inputs, inp)
 		}

@@ -1,4 +1,7 @@
-package qst
+// Package lng is a central store for application environment translations;
+// While specific objects such as QuestionaireT contain translations for its contents,
+// we need some global store too.
+package lng
 
 // For all multi lingual strings.
 // Contains one value for each language code.
@@ -42,3 +45,10 @@ func (t transMapT) TrSilent(langCode string) string {
 func (t transMapT) String() string {
 	return t.Tr("en")
 }
+
+// TrlsT - Translations Type
+// Usage in templates
+// 		{{.Trls.imprint.en                  }}  // chaining the map keys
+// 		{{.Trls.imprint.Tr       .Q.LangCode}}  // using
+// 		{{.Trls.imprint.TrSilent .Q.LangCode}}  //
+type TrlsT map[string]transMapT

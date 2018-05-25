@@ -110,6 +110,11 @@ func (q *QuestionaireT) ValidateReponseData(pageNum int, langCode string) (last 
 			}
 		}
 	}
+	if last != nil {
+		q.HasErrors = true
+	} else {
+		q.HasErrors = false
+	}
 	return
 }
 

@@ -3,7 +3,7 @@
 	<meta charset="utf-8">
 	<link rel="shortcut icon" href="data:;base64,=">
 	<link rel="icon"          href="data:;base64,=">
-		<title>{{.App.Get "HtmlTitle"}}</title>
+		<title>{{.Trls.app_label.Tr .Q.LangCode}}</title>
 	<link  href="{{prefix "/css/design.css"}}" rel="stylesheet" type="text/css" />
 	<link  href="{{prefix "/css/site.css"}}"   rel="stylesheet" type="text/css" />
 	<!-- jQuery - as it is required almost always -->
@@ -26,12 +26,8 @@
 	
 	<!-- header -->
 	<div class="header">
-		<div style='float: left; position: relative; left: 3%; bottom: -18px; color: #0069B4; font-size: 300%;'>
-			{{if eq .Q.LangCode "de"}}
-				<span style='font-size: 125%'>ZEW </span> Finanzmarkttest
-			{{else}}
-				<span style='font-size: 125%'>ZEW </span> Financial Markets Survey
-			{{end}} 
+		<div style='float: left; position: relative; left: 3%; bottom: -18px; color: #0069B4; font-size: 300%;'>		 
+				<span style='font-size: 125%'>{{.Trls.app_label_h1.Tr .Q.LangCode}} </span> {{.Trls.app_label.Tr .Q.LangCode}}
 		</div>
 	</div>
 	
@@ -42,12 +38,8 @@
 	<!-- footer -->
 	<div class="footer">
 		<div style='float: right; padding-right: 40px;'>
-			{{if eq .Q.LangCode "de"}}
-				<a href="{{prefix "/doc/" }}">Impressum</a>  
-			{{else}}
-				<a href="{{prefix " /doc/ " }}">imprint</a>
-			{{end}}
-			 &nbsp; &nbsp; &nbsp; &nbsp;
+			<a href="{{prefix "/doc/" }}">{{.Trls.imprint.Tr .Q.LangCode}}</a>  
+			&nbsp; &nbsp; &nbsp; &nbsp;
 			{{toHtml (.Q.LanguageChooser)}}
 		</div>	
 	</div>

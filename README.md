@@ -19,16 +19,18 @@ by a __single JSON file__ .
 * Transfer of the results is accomplished by _another_ component.  
 The Transferrer. 
 
-
-
-* Validation happens on server side
+* Server side validation
 
 * Client side JS validation is deliberately omitted;  
    [a would-be JS client lib](http://www.javascript-coder.com/html-form/form-validation.phtml)
 
+* Multi language
+
+* Individual column width for any label or form element (`ColSpanLabel` and `ColSpanControl`)
 
 
-## Todo
+
+## Todo Ahead
 
 * Auto-login
 
@@ -37,13 +39,11 @@ The Transferrer.
 * JSON schema validator
 
 
-### Design consideration
+### Consider
 
-* Questionaire contains translations for its contents - but the application environment needs translations too. Central store?
-
-* Validator error messages; Page has errors; Application name; main.html header; Imprint
-
-* These should be checked against the questionaire language set.
+The column width is implemented with inline block elements (`.go-quest-cell`). 
+The white space between inline block elements distorts the column width computation.
+Alternatively, each row could be rendered as a new table.
 
 
 ## About Go-App-Tpl

@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-	"net/url"
 	"time"
 
 	"github.com/zew/go-questionaire/cfg"
@@ -91,8 +90,8 @@ func mainH(w http.ResponseWriter, r *http.Request) {
 		prevPage = 0
 	}
 	currPage := prevPage // Default assumption: we are still on prev page - unless there is some modification:
-	submit := sess.EffectiveStr("submit")
-	log.Printf("submit is '%v'", submit)
+	submit := sess.EffectiveStr("submitBtn")
+	log.Printf("submitBtn is '%v'", submit)
 	if submit == "prev" {
 		currPage = q.Prev()
 	}
@@ -101,10 +100,10 @@ func mainH(w http.ResponseWriter, r *http.Request) {
 	}
 	explicit, ok, err := sess.EffectiveInt("page")
 	if err != nil {
-		helper(w, err, "Reading request parameter caused error")
-		return
+		// invalid page value, just dont use it
 	}
-	if ok {
+	if ok && err == nil && explicit > -1 {
+		log.Printf("curPage set explicitly to %v", explicit)
 		currPage = explicit
 	}
 	q.CurrPage = currPage // Put current page into questionaire
@@ -153,16 +152,13 @@ func mainH(w http.ResponseWriter, r *http.Request) {
 	ts := &tpl.StackT{"main.html", "content1.html"}
 	ts = &tpl.StackT{"content1.html"}
 
-	appData := url.Values{}
-	appData.Set("HtmlTitle", cfg.Get().AppName)
-
 	err = tplBundle.Execute(
 		w,
 		TplDataT{
 			TplBundle: tplBundle,
 			TS:        ts,
 
-			App:  appData,
+			Trls: cfg.Get().Trls,
 			Sess: &sess,
 
 			Q: q,

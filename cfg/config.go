@@ -16,6 +16,7 @@ import (
 
 	"github.com/zew/util"
 
+	"github.com/zew/go-questionaire/lng"
 	"github.com/zew/go-questionaire/sessx"
 )
 
@@ -23,22 +24,24 @@ import (
 type ConfigT struct {
 	sync.Mutex
 
-	IsProduction bool `json:"is_production"` // true => templates are not recompiled
+	IsProduction bool `json:"is_production,omitempty"` // true => templates are not recompiled
 
-	AppName       string `json:"app_name"`       // with case, i.e. Taxkit
-	UrlPathPrefix string `json:"urlpath_prefix"` // lower case - no slashes, i.e. taxkit
-	AppMnemonic   string `json:"app_mnemonic"`   // For differentiation of static dirs - when UrlPathPrefix is empty; imagine multiple instances
+	AppName       string `json:"app_name,omitempty"`       // with case, i.e. Taxkit
+	UrlPathPrefix string `json:"urlpath_prefix,omitempty"` // lower case - no slashes, i.e. taxkit
+	AppMnemonic   string `json:"app_mnemonic,omitempty"`   // For differentiation of static dirs - when UrlPathPrefix is empty; imagine multiple instances
 
-	BindHost               string `json:"bind_host"`
-	BindSocket             int    `json:"bind_socket"`
-	BindSocketFallbackHttp int    `json:"bind_socket_fallback_http"`
-	Tls                    bool   `json:"tls"`
-	Tls13                  bool   `json:"tls13"`               // ultra safe - but excludes internet explorer 11
-	HttpReadTimeOut        int    `json:"http_read_time_out"`  // for large requests
-	HttpWriteTimeOut       int    `json:"http_write_time_out"` // for *sending* large files over slow networks, i.e. ula's videos, set to 30 or 60 secs
+	BindHost               string `json:"bind_host,omitempty"`
+	BindSocket             int    `json:"bind_socket,omitempty"`
+	BindSocketFallbackHttp int    `json:"bind_socket_fallback_http,omitempty"`
+	Tls                    bool   `json:"tls,omitempty"`
+	Tls13                  bool   `json:"tls13,omitempty"`               // ultra safe - but excludes internet explorer 11
+	HttpReadTimeOut        int    `json:"http_read_time_out,omitempty"`  // for large requests
+	HttpWriteTimeOut       int    `json:"http_write_time_out,omitempty"` // for *sending* large files over slow networks, i.e. ula's videos, set to 30 or 60 secs
+	MaxPostSize            int64  `json:"max_post_size,omitempty"`       // request body size limit, against DOS attacks, limits file uploads
 
-	Css map[string]string `json:"css"` // differentiate multiple instances by color and stuff - without duplicating entire css files
+	Css map[string]string `json:"css,omitempty"` // differentiate multiple instances by color and stuff - without duplicating entire css files
 
+	Trls lng.TrlsT `json:"translations,omitempty"` // multi language strings for the application
 }
 
 // CfgPath is obtained by ENV variable or command line flag in main package.
@@ -189,7 +192,7 @@ func PrefWTS(pth ...string) string {
 func Example() {
 	ex := &ConfigT{
 		IsProduction:           false,
-		AppName:                "My Example App Label",
+		AppName:                "My Example App",
 		UrlPathPrefix:          "exmpl",
 		AppMnemonic:            "exmpl",
 		BindHost:               "0.0.0.0",
@@ -199,6 +202,18 @@ func Example() {
 		Tls13:            false,
 		HttpReadTimeOut:  5,
 		HttpWriteTimeOut: 30,
+		MaxPostSize:      int64(2 << 20), // 2 MB
+
+		Trls: lng.TrlsT{
+			"page": {
+				"en": "Page",
+				"de": "Seite",
+			},
+			"app_label": {
+				"en": "My Example App", // yes, repeat of AppName
+				"de": "Meine Beispiel Anwendung",
+			},
+		},
 	}
 	ex.Save("config-example.json")
 }

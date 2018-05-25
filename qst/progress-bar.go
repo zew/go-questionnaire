@@ -3,8 +3,6 @@ package qst
 import (
 	"bytes"
 	"fmt"
-
-	"github.com/zew/go-questionaire/cfg"
 )
 
 const (
@@ -28,8 +26,25 @@ const (
 
 // ProgressBar generates a discrete position indicator
 // https://fribly.com/2015/01/01/scalable-responsive-progress-bar/
+//
+// It should be clickable and jump to the indicated page.
+// This means, we have to submit the form and submit the destination page.
 func (q *QuestionaireT) ProgressBar() string {
+
 	b := bytes.Buffer{}
+	// b.WriteString(fmt.Sprintf(htmlExample))
+
+	// This does not post the form :(
+	//		location.href='%v?page=%v
+	// We need
+	//
+	//		this.form.page.value='%v';
+	// this.form.submit();  - not working for <li> element
+	//		document.forms.frmMain.submit()
+	//
+	// Debug with
+	// 		console.log('document.forms.frmMain.page.value: ',document.forms.frmMain.page.value);
+	b.WriteString(fmt.Sprintf("<input type='hidden' name='page' value='-1' >"))
 
 	b.WriteString(fmt.Sprintf("<ol class='progress'>"))
 
@@ -44,19 +59,18 @@ func (q *QuestionaireT) ProgressBar() string {
 			// onclick and style added - to make hyperlinks to the pages
 			fmt.Sprintf(`
 					<li 
-						onclick="location.href='%v?page=%v';" style="cursor:pointer"  
+						onclick="document.forms.frmMain.page.value='%v';document.forms.frmMain.submit();" style="cursor:pointer"  
 						class="%v" data-step="%v">
 						%v
 					</li> 
 				`,
-				cfg.Pref(""), idx, liClass, idx+1, p.Label.Tr(q.LangCode),
+				idx,
+				liClass, idx+1, p.Label.Tr(q.LangCode),
 			),
 		)
 
 	}
 	b.WriteString(fmt.Sprintf("</ol>"))
-
-	// b.WriteString(fmt.Sprintf(htmlExample))
 
 	return b.String()
 }

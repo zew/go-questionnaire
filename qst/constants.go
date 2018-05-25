@@ -40,10 +40,18 @@ func (h horizontalAlignment) String() string {
 	return "left"
 }
 
-func colWidth(numCols int) string {
+// On colsTotal == 0  division by zero case:
+// We return no CSS.
+// => No width restriction - elements grow horizontally as much as needed
+func colWidth(colsElement, colsTotal int) string {
 	css := ""
-	if numCols > 0 {
-		fract := float32(97.5) / float32(numCols)
+	if colsTotal > 0 {
+
+		if colsElement == 0 {
+			colsElement = 1
+		}
+
+		fract := float32(colsElement) * float32(97.5) / float32(colsTotal)
 		fractStr := fmt.Sprintf("%4.1f", fract)
 		css = fmt.Sprintf("width: %v%%;", fractStr)
 	}

@@ -3,7 +3,7 @@
     <div class="hori-center-me">
 
         <!-- width=100% inscribe -->
-        <form method="POST" action="{{prefix ""}}" class='go-quest-main-form'>
+        <form method="POST" action="{{prefix ""}}" class='go-quest-main-form' name='frmMain'>
             <input type="hidden" name="curr_page" value="{{.Q.CurrPage}}">
     
 
@@ -11,6 +11,16 @@
                 {{$lc := .Sess.EffectiveStr "lang_code"}}
                 Langcode is -{{$lc}}-
             -->
+
+            {{if .Q.HasErrors}}
+                <p class="error" id="error" style="font-size:16px;margin: 20px 0px; ">{{.Trls.correct_errors.Tr .Q.LangCode}}  </p>
+                <script>
+                    $("#error").css("display","none");           
+                    $("#error").fadeIn("slow", function () {
+                        console.log("fade in complete");
+                    });                    
+                </script>
+            {{end}}
 
             {{toHtml (.Q.CurrentPageHTML) }}
 
@@ -25,39 +35,45 @@
             '>
                 <tr>
                     <td style='width: 14%;vertical-align: top; text-align: left;'>
-                        {{if .Q.HasPrev}}
-                        <!--
-    					    <a accesskey="p" href="{{prefix ""}}?curr_page={{.Q.Prev}}"> << Page {{addint .Q.Prev 1}} </a>
-    					-->
-                        <button type="submit" name="submit" value="prev" accesskey="p"
-                            style='font-size:75%; position:relative; top: 3px;'
-                        >
-
-                            <<{{if eq .Q.LangCode "de"}}Seite{{else}}Page{{end}} {{addint .Q.Prev 1}} 
-                        </button>
-
-                        {{end}}
+                        <!-- the previous button is moved behind the next button -->
                     </td>
                     <td style='width: 70%;vertical-align: top; text-align: center; position: relative; left: -20px;'>
                         <!-- -{{addint .Q.CurrPage 1}}- -->
-
                          {{toHtml (.Q.ProgressBar) }}
                     </td>
                     <td style='width: 14%;vertical-align: top; text-align: right;'>
                         {{if .Q.HasNext}}
-                        <!--
-    				        <a accesskey="n" href="{{prefix ""}}?curr_page={{.Q.Next}}"> Page {{addint .Q.Next 1}} >></a>
-    				    -->
-                        <button type="submit" name="submit" value="next" accesskey="n">
-                             {{if eq .Q.LangCode "de"}}Seite{{else}}Page{{end}} {{addint .Q.Next 1}} >>
-                        </button>
-    
-    
+                            <!-- name="submitBtn" conflicts with JS form.submit() -->
+                            <button type="submit" name="submitBtn" value="next" accesskey="n">
+                                {{.Trls.page.Tr .Q.LangCode}} {{addint .Q.Next 1}} >>
+                            </button>
                         {{end}}
                     </td>
                 </tr>
             </table>
-    
+
+            <!-- the previous button is moved behind the next button -->
+            <div style="position: relative; height: 1px;">
+                {{if .Q.HasPrev}}
+                <!-- name="submitBtn" conflicts with JS form.submit() -->
+                <button type="submit" name="submitBtn" value="prev" accesskey="p" 
+                    style='
+                    font-size:11px; 
+                    position:absolute; 
+                    height: 25px;
+                    width: 86px;
+                    padding: 2px;
+                    left: 12px; 
+                    bottom: 18px; 
+                    '
+                >
+                    << {{.Trls.page.Tr .Q.LangCode}} {{addint .Q.Prev 1}} </button>
+                {{end}}                       
+            </div>
+
+            
+
+
         </form>
     </div>
     <!-- end of center me-->

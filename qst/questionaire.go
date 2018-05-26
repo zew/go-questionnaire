@@ -264,8 +264,9 @@ func (gr groupT) HTML(langCode string) string {
 
 // Type page contains groups with inputs
 type pageT struct {
-	Label transMapT `json:"label,omitempty"`
-	Desc  transMapT `json:"description,omitempty"`
+	Section transMapT `json:"section,omitempty"` // several pages have a section headline
+	Label   transMapT `json:"label,omitempty"`
+	Desc    transMapT `json:"description,omitempty"`
 
 	Groups []groupT `json:"groups,omitempty"`
 
@@ -332,7 +333,12 @@ func (q *QuestionaireT) PageHTML(idx int) (string, error) {
 
 	b := bytes.Buffer{}
 
-	b.WriteString(fmt.Sprintf("<h3 class='go-quest-page-header' >%v</h3>", p.Label.Tr(q.LangCode)))
+	if p.Section != nil {
+		b.WriteString(fmt.Sprintf("<span class='go-quest-page-section' >%v</span>", p.Section.Tr(q.LangCode)))
+		b.WriteString("<span class='go-quest-page-desc'> &nbsp; - &nbsp; </span>")
+	}
+
+	b.WriteString(fmt.Sprintf("<span class='go-quest-page-header' >%v</span>", p.Label.Tr(q.LangCode)))
 	b.WriteString(vspacer)
 	b.WriteString(fmt.Sprintf("<p  class='go-quest-page-desc'>%v</p>", p.Desc.Tr(q.LangCode)))
 	b.WriteString(vspacer16)

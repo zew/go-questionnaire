@@ -55,17 +55,34 @@ func (q *QuestionaireT) ProgressBar() string {
 		} else if idx == q.CurrPage {
 			liClass = "is-active"
 		}
+
+		sect := p.Section.TrSilent(q.LangCode)
+		textAlign := "text-align: left; width: 98%; transform: translate(25%, 0px);"
+		if sect != "" {
+			sect = fmt.Sprintf("<b>%v</b>", sect)
+			// sect += "&#8230;" // Ellipsis
+			sect += vspacer
+		} else if sect == "" {
+			sect = " &#8230;  &nbsp; " // Ellipsis
+			sect += vspacer
+			textAlign = "text-align: center;"
+			textAlign = "text-align: left;"
+		}
 		b.WriteString(
 			// onclick and style added - to make hyperlinks to the pages
 			fmt.Sprintf(`
 					<li 
 						onclick="document.forms.frmMain.page.value='%v';document.forms.frmMain.submit();" style="cursor:pointer"  
 						class="%v" data-step="%v">
-						%v
+						<span style='display: inline-block; line-height: 95%%;  %v'>
+							%v%v
+						<span>
 					</li> 
 				`,
 				idx,
-				liClass, idx+1, p.Label.Tr(q.LangCode),
+				liClass, idx+1,
+				textAlign,
+				sect, p.Label.Tr(q.LangCode),
 			),
 		)
 

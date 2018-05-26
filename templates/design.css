@@ -1,4 +1,4 @@
-@media screen and (min-width: 1280px) and (min-height: 720px) {
+@media screen and (min-width: 1280px) and (min-height: 840px) {
    html {
       zoom: 120%
    }
@@ -117,8 +117,17 @@ div:focus {
   outline: none;
 }
 
+::selection {
+	color:white;
+	background:black;
+}
 
-
+/* Make the placeholder lighter */
+/* Most modern browsers support this now. */
+::placeholder { 
+    color:    #ccc;
+	opacity:  1;
+}
 
 .ib {
 	display:inline-block;
@@ -168,6 +177,11 @@ input.ib-120 { 	width:120px;  }
 	font-size:   2px;  /*keep spaces between inline blocks small*/
 }
 
+.go-quest-page-section {
+	font-size: 18px;
+	line-height: 20px;
+	font-weight: 900;
+}
 .go-quest-page-header {
 	font-size: 16px;
 	line-height: 18px;

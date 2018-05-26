@@ -133,16 +133,11 @@ func GenerateExample2() *QuestionaireT {
 	// Page 1
 	{
 		page := newPage()
+		page.Section = transMapT{"de": "Konjunktur", "en": "Business cycle"}
 		page.Label = transMapT{"de": "Status und Ausblick", "en": "Status and outlook"}
 
 		//
 		//
-		names1stMatrix := []string{
-			"y0_ez",
-			"y0_deu",
-			"y0_usa",
-			"y0_glob",
-		}
 		labels123Matrix := []transMapT{
 			transMapT{
 				"de": "Euroraum",
@@ -161,57 +156,73 @@ func GenerateExample2() *QuestionaireT {
 				"en": "Global economy",
 			},
 		}
-		gr1 := radioMatrix(labelsGoodBad(), names1stMatrix, labels123Matrix)
-		gr1.Cols = 5 // necessary, otherwise no vspacers
-		gr1.Label = transMapT{
-			"de": "1.",
-			"en": "1.",
-		}
-		gr1.Desc = transMapT{
-			"de": "Die gesamtwirtschaftliche Situation beurteilen wir als",
-			"en": "We assess the overall economic situation as",
+
+		// gr1
+		{
+			names1stMatrix := []string{
+				"y0_ez",
+				"y0_deu",
+				"y0_usa",
+				"y0_glob",
+			}
+			gr := radioMatrix(labelsGoodBad(), names1stMatrix, labels123Matrix)
+			gr.Cols = 5 // necessary, otherwise no vspacers
+			gr.Label = transMapT{
+				"de": "1.",
+				"en": "1.",
+			}
+			gr.Desc = transMapT{
+				"de": "Die gesamtwirtschaftliche Situation beurteilen wir als",
+				"en": "We assess the overall economic situation as",
+			}
+			page.Groups = append(page.Groups, *gr)
 		}
 
 		//
-		//
-		names2stMatrix := []string{
-			"y_ez",
-			"y_deu",
-			"y_usa",
-			"y_glob",
-		}
-		gr2 := radioMatrix(labelsImproveDeteriorate(), names2stMatrix, labels123Matrix)
-		gr2.Cols = 5 // necessary, otherwise no vspacers
-		gr2.Label = transMapT{
-			"de": "2a.",
-			"en": "2a.",
-		}
-		gr2.Desc = transMapT{
-			"de": "Die gesamtwirtschaftliche Situation wird sich mittelfristig (<b>6</b> Mo.)",
-			"en": "The overall economic situation medium term (<b>6</b> months) will",
-		}
-
-		//
-		//
-		names3rdMatrix := []string{
-			"y24_ez",
-			"y24_deu",
-			"y24_usa",
-			"y24_glob",
+		// gr2
+		{
+			names2stMatrix := []string{
+				"y_ez",
+				"y_deu",
+				"y_usa",
+				"y_glob",
+			}
+			gr := radioMatrix(labelsImproveDeteriorate(), names2stMatrix, labels123Matrix)
+			gr.Cols = 5 // necessary, otherwise no vspacers
+			gr.Label = transMapT{
+				"de": "2a.",
+				"en": "2a.",
+			}
+			gr.Desc = transMapT{
+				"de": "Die gesamtwirtschaftliche Situation wird sich mittelfristig (<b>6</b> Mo.)",
+				"en": "The overall economic situation medium term (<b>6</b> months) will",
+			}
+			page.Groups = append(page.Groups, *gr)
 		}
 
-		gr3 := radioMatrix(labelsImproveDeteriorate(), names3rdMatrix, labels123Matrix)
-		gr3.Cols = 5 // necessary, otherwise no vspacers
-		gr3.Label = transMapT{
-			"de": "2b.",
-			"en": "2b.",
-		}
-		gr3.Desc = transMapT{
-			"de": "Die gesamtwirtschaftliche Situation wird sich langfristig (<b>24</b> Mo.)",
-			"en": "The overall economic situation long term (<b>24</b> months) will",
+		//
+		// gr3
+		{
+			names3rdMatrix := []string{
+				"y24_ez",
+				"y24_deu",
+				"y24_usa",
+				"y24_glob",
+			}
+
+			gr := radioMatrix(labelsImproveDeteriorate(), names3rdMatrix, labels123Matrix)
+			gr.Cols = 5 // necessary, otherwise no vspacers
+			gr.Label = transMapT{
+				"de": "2b.",
+				"en": "2b.",
+			}
+			gr.Desc = transMapT{
+				"de": "Die gesamtwirtschaftliche Situation wird sich langfristig (<b>24</b> Mo.)",
+				"en": "The overall economic situation long term (<b>24</b> months) will",
+			}
+			page.Groups = append(page.Groups, *gr)
 		}
 
-		page.Groups = append(page.Groups, *gr1, *gr2, *gr3)
 		quest.Pages = append(quest.Pages, page)
 	}
 
@@ -307,16 +318,32 @@ func GenerateExample2() *QuestionaireT {
 		quest.Pages = append(quest.Pages, page)
 	}
 
+	//
 	// page 3 - inflation
 	{
 		page := newPage()
 		page.Label = transMapT{"de": "Inflation", "en": "Inflation"}
 
-		grp1 := groupT{}
-		grp1.Cols = 2 // necessary, otherwise no vspacers
-		grp1.Label = transMapT{"de": "4.", "en": "4."}
+		gr := groupT{}
+		gr.Cols = 2 // necessary, otherwise no vspacers
+		gr.Label = transMapT{"de": "4.", "en": "4."}
 
-		page.Groups = append(page.Groups, grp1)
+		page.Groups = append(page.Groups, gr)
+		quest.Pages = append(quest.Pages, page)
+	}
+
+	//
+	// page 4 - Credit situation
+	{
+		page := newPage()
+		page.Section = transMapT{"de": "Kreditsituation", "en": "Credit situation"}
+		page.Label = transMapT{"de": "Markt", "en": "market"}
+
+		gr := groupT{}
+		gr.Cols = 2 // necessary, otherwise no vspacers
+		gr.Label = transMapT{"de": "4.", "en": "4."}
+
+		page.Groups = append(page.Groups, gr)
 		quest.Pages = append(quest.Pages, page)
 	}
 

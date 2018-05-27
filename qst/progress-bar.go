@@ -57,16 +57,12 @@ func (q *QuestionaireT) ProgressBar() string {
 		}
 
 		sect := p.Section.TrSilent(q.LangCode)
-		textAlign := "text-align: left; width: 98%; transform: translate(25%, 0px);"
+		leftOrCenter := "text-align: left; width: 98%; transform: translate(25%, 0px);"
 		if sect != "" {
 			sect = fmt.Sprintf("<b>%v</b>", sect)
-			// sect += "&#8230;" // Ellipsis
 			sect += vspacer
 		} else if sect == "" {
-			sect = " &#8230;  &nbsp; " // Ellipsis
-			sect += vspacer
-			textAlign = "text-align: center;"
-			textAlign = "text-align: left;"
+			leftOrCenter = "transform: translate(0, 75%);"
 		}
 		b.WriteString(
 			// onclick and style added - to make hyperlinks to the pages
@@ -81,7 +77,7 @@ func (q *QuestionaireT) ProgressBar() string {
 				`,
 				idx,
 				liClass, idx+1,
-				textAlign,
+				leftOrCenter,
 				sect, p.Label.Tr(q.LangCode),
 			),
 		)

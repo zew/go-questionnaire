@@ -2,6 +2,7 @@ package lgn
 
 import (
 	"fmt"
+	"html/template"
 	"log"
 	"net/http"
 
@@ -53,8 +54,9 @@ func ValidateAndLogin(w http.ResponseWriter, r *http.Request) error {
 		return err
 	}
 
+	// isSet ?  only POST
 	if _, ok := r.PostForm["username"]; !ok {
-		return nil
+		return nil // nothing to do
 	}
 
 	u := r.PostForm.Get("username")
@@ -97,15 +99,16 @@ func ChangePassword(w http.ResponseWriter, r *http.Request) (string, error) {
 		return "", fmt.Errorf("Could not parse form: %v", err)
 	}
 
+	// isSet ?  only POST
+	if _, ok := r.PostForm["username"]; !ok {
+		return "", nil // Nothing to do
+	}
+
 	u := r.PostForm.Get("username")
 	o := r.PostForm.Get("oldpassword")
 	n := r.PostForm.Get("newpassword")
 	n2 := r.PostForm.Get("newpassword2")
 	// termsAndConditions := r.PostForm.Get("termsAndConditions")
-
-	if _, ok := r.PostForm["username"]; !ok {
-		return "", nil // Nothing to do
-	}
 
 	if l.User != u {
 		return "", fmt.Errorf("Changing passwd for user %v requires login as user %v.", u, u)
@@ -185,4 +188,122 @@ func ChangePassword(w http.ResponseWriter, r *http.Request) (string, error) {
 		}
 	}
 	return "", fmt.Errorf("Old password incorrect (or username not found).")
+}
+
+// LoginByHash takes request value "u", "wave_id" and hash "h".
+// It checks the hash against "u", "wave_id" and loginsT.Salt
+// On wrong hashes, it returns the difference as error.
+// Be careful not to show the error to the end user.
+// On success, it creates a logged in user out of nothing.
+// The user gets assigned the wave_id as role.
+func LoginByHash(w http.ResponseWriter, r *http.Request) error {
+
+	sess := sessx.New(w, r)
+
+	err := r.ParseForm()
+	if err != nil {
+		return err
+	}
+
+	isSet := false // login values from GET *or* POST
+
+	u, waveID, h := "", "", ""
+	if _, isSet = r.PostForm["u"]; isSet {
+		u = r.PostForm.Get("u")
+		waveID = r.PostForm.Get("wave_id")
+		h = r.PostForm.Get("h") // hash
+	} else if _, isSet = r.URL.Query()["u"]; isSet {
+		u = r.URL.Query().Get("u")
+		waveID = r.URL.Query().Get("wave_id")
+		h = r.URL.Query().Get("h") // hash
+	}
+
+	if !isSet {
+		return nil
+	}
+
+	log.Printf("trying hash login: '%v' '%v' - %v", u, waveID, h)
+
+	checkStr := fmt.Sprintf("%v-%v-%v", u, waveID, lgns.Salt)
+	hExpected := Md5Str([]byte(checkStr))
+
+	if hExpected != h {
+		return fmt.Errorf("hash over check string unequal hash argument\n%v\n%v", hExpected, h)
+	}
+
+	log.Printf("logging in as %v", u)
+	l := &LoginT{}
+	l.User = u
+	l.Roles = map[string]string{waveID: waveID}
+
+	err = sess.PutObject("login", l)
+	if err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// LoginH is a primitive handler for http form based login
+func LoginH(w http.ResponseWriter, r *http.Request) {
+
+	msg := ""
+	err := ValidateAndLogin(w, r)
+	if err != nil {
+		msg += fmt.Sprintf("%v\n", err)
+	}
+
+	l, isLoggedIn, err := LoggedInCheck(w, r)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+	if isLoggedIn {
+		s := fmt.Sprintf("Logged in as %v\n", l.User)
+		log.Printf(s)
+		msg += s
+		// http.Redirect(w, r, cfg.Pref("/"), http.StatusFound)
+	}
+
+	w.Header().Set("Content-Type", "text/html; charset=utf-8")
+
+	src := `
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Login</title>
+</head>
+<body>
+	{{if  (len .Cnt) gt 0 }} <p style='white-space: pre; color:#E22'>{{.Cnt}}</p>{{end}}
+	<form method="post" action="{{.SelfURL}}"   >
+		Username: <input name="username" value="{{.L.User}}"><br>
+		Password: <input name="password" type="password" /><br>
+		<input type="submit" name="submitclassic" accesskey="l">
+	</form>
+</body>
+</html>
+`
+	type dataT struct {
+		Cnt     string
+		SelfURL string
+		L       *LoginT
+	}
+	data := dataT{
+		Cnt:     msg,
+		SelfURL: r.URL.Path,
+		L:       l,
+	}
+
+	tpl := template.New("anyname.html")
+	tpl, err = tpl.Parse(src)
+	if err != nil {
+		w.Write([]byte(err.Error()))
+	}
+
+	err = tpl.Execute(w, data)
+	if err != nil {
+		w.Write([]byte(err.Error()))
+	}
+
 }

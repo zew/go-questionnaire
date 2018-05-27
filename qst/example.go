@@ -4,7 +4,15 @@ import (
 	"fmt"
 	"log"
 	"time"
+
+	"github.com/zew/go-questionaire/lgn"
 )
+
+func nextWaveID() string {
+	t := time.Now()
+	t = t.AddDate(0, 1, 0)
+	return t.Format("2006-01")
+}
 
 func nextQ() string {
 	t := time.Now()
@@ -18,6 +26,7 @@ func nextQ() string {
 	}
 	return fmt.Sprintf("Q%v %v", qNext, y)
 }
+
 func nextY() string {
 	t := time.Now()
 	y := t.Year()
@@ -126,6 +135,14 @@ func radioMatrix(headerLabels []transMapT, inpNames []string, rowLabels []transM
 func GenerateExample2() *QuestionaireT {
 
 	quest := QuestionaireT{}
+	quest.WaveID = nextWaveID()
+
+	// This should be put into a separate, admin protected http handler
+	for i := 99 * 1000; i > 99*1000-10; i-- {
+		checkStr := fmt.Sprintf("u=%v&wave_id=%v&h=%v", i, quest.WaveID, lgn.Get().Salt)
+		hsh := lgn.Md5Str([]byte(checkStr))
+		log.Printf("%8v - %8v - %v", i, quest.WaveID, hsh)
+	}
 
 	quest.LangCodes = map[string]string{"de": "Deutsch", "en": "English"}
 	quest.LangCode = "de"
@@ -232,7 +249,7 @@ func GenerateExample2() *QuestionaireT {
 		page.Label = transMapT{"de": "Wachstum", "en": "Growth"}
 
 		grp1 := groupT{}
-		grp1.Cols = 4 // necessary, otherwise no vspacers
+		grp1.Cols = 5 // necessary, otherwise no vspacers
 		grp1.Label = transMapT{"de": "3a.", "en": "3a."}
 		{
 			inp := inputT{}
@@ -241,7 +258,7 @@ func GenerateExample2() *QuestionaireT {
 			inp.MaxChars = 4
 			inp.Validator = "inRange20"
 
-			inp.ColSpanLabel = 3
+			inp.ColSpanLabel = 4
 			inp.Desc = transMapT{
 				"de": fmt.Sprintf("Unsere Prognose für das <b>deutsche</b> BIP Wachstum in %v (real, saisonbereinigt, nicht annualisiert):", nextQ()),
 				"en": fmt.Sprintf("Our estimate for the <b>German</b> GDP growth in %v (real, seasonally adjusted, non annualized):", nextQ()),
@@ -260,7 +277,7 @@ func GenerateExample2() *QuestionaireT {
 			inp.MaxChars = 4
 			inp.Validator = "inRange20"
 
-			inp.ColSpanLabel = 3
+			inp.ColSpanLabel = 4
 			inp.Desc = transMapT{
 				"de": fmt.Sprintf("Unsere Prognose für das BIP Wachstum für das Jahr %v (real, saisonbereinigt):", nextY()),
 				"en": fmt.Sprintf("Our estimate for the GDP growth in %v (real, seasonally adjusted):", nextY()),
@@ -273,7 +290,7 @@ func GenerateExample2() *QuestionaireT {
 		}
 
 		grp2 := groupT{}
-		grp2.Cols = 4 // necessary, otherwise no vspacers
+		grp2.Cols = 5 // necessary, otherwise no vspacers
 		grp2.Label = transMapT{"de": "3b.", "en": "3b."}
 
 		{
@@ -283,7 +300,7 @@ func GenerateExample2() *QuestionaireT {
 			inp.MaxChars = 4
 			inp.Validator = "inRange100"
 
-			inp.ColSpanLabel = 3
+			inp.ColSpanLabel = 4
 			inp.Desc = transMapT{
 				"de": fmt.Sprintf("Die Wahrscheinlichkeit eines negativen Wachstums des <b>deutschen</b> BIP in %v liegt bei:", nextQ()),
 				"en": fmt.Sprintf("The probability of negative growth for the <b>German</b> GDP in %v is:", nextQ()),
@@ -302,7 +319,7 @@ func GenerateExample2() *QuestionaireT {
 			inp.MaxChars = 4
 			inp.Validator = "inRange100"
 
-			inp.ColSpanLabel = 3
+			inp.ColSpanLabel = 4
 			inp.Desc = transMapT{
 				"de": fmt.Sprintf("Die Wahrscheinlichkeit einer Rezession in Deutschland (mind. 2&nbsp;Quartale neg. Wachstum) bis Q4 %v liegt bei:", nextY()),
 				"en": fmt.Sprintf("The probability of a recession in Germany (at least 2&nbsp;quarters neg. growth) until Q4 %v is:", nextY()),

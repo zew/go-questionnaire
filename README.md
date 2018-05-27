@@ -32,8 +32,6 @@ The Transferrer.
 
 ## Todo Ahead
 
-* Auto-login
-
 * Tests
 
 * JSON schema validator

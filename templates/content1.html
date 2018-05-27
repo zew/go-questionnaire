@@ -1,82 +1,119 @@
 
-    <!-- padding - without disturbing width=100% inscribe -->
-    <div class="hori-center-me">
+<style>
+    /*
+        www.codingforums.com/html-and-css/142757-how-expand-divs-height-automatically-fill-up-available-space.html
+    */
+    .go-quest-main-form {
+        display: table;
+        width:  100%;
+        height: 100%;
+        border-collapse: collapse;        
+        aaborder: 4px solid #abb;
+    }
 
-        <!-- width=100% inscribe -->
-        <form method="POST" action="{{prefix ""}}" class='go-quest-main-form' name='frmMain'>
-            <input type="hidden" name="curr_page" value="{{.Q.CurrPage}}">
-    
+    #t-row-1 {
+        display: table-row;
+        height: 40px;  /* some small value, which is heighened by content  */
+        border: 1px solid #caa;
+    }
+    #t-row-2 {
+        display: table-row;
+        border: 1px solid #8c8;
+    }
+    .table-cell-1, .table-cell-2  {
+        display: table-cell;
+    }
+    .table-cell-2 {
+        vertical-align: bottom;
+        font-size: 15px;
+        width: 100%;
+        border: 1px solid  #2c8;
+        padding-bottom: 20px;
+        text-align: center;
+    }
 
-            <!--
-                {{$lc := .Sess.EffectiveStr "lang_code"}}
-                Langcode is -{{$lc}}-
-            -->
-
-            {{if .Q.HasErrors}}
-                <p class="error" id="error" style="font-size:16px;margin: 20px 0px; ">{{.Trls.correct_errors.Tr .Q.LangCode}}  </p>
-                <script>
-                    $("#error").css("display","none");           
-                    $("#error").fadeIn("slow", function () {
-                        console.log("fade in complete");
-                    });                    
-                </script>
-            {{end}}
-
-            {{toHtml (.Q.CurrentPageHTML) }}
+</style>
 
 
-            <br>
-            <br>
-            <br>
-    
-            <table style='width:100%; padding: 0; margin: 0; 
-                padding-right: 50px;
-                aaborder: 1px solid #ddd;
-            '>
-                <tr>
-                    <td style='width: 14%;vertical-align: top; text-align: left;'>
-                        <!-- the previous button is moved behind the next button -->
-                    </td>
-                    <td style='width: 70%;vertical-align: top; text-align: center; position: relative; left: -20px;'>
-                        <!-- -{{addint .Q.CurrPage 1}}- -->
-                         {{toHtml (.Q.ProgressBar) }}
-                    </td>
-                    <td style='width: 14%;vertical-align: top; text-align: right;'>
-                        {{if .Q.HasNext}}
-                            <!-- name="submitBtn" conflicts with JS form.submit() -->
-                            <button type="submit" name="submitBtn" value="next" accesskey="n">
-                                {{.Trls.page.Tr .Q.LangCode}} {{addint .Q.Next 1}} >>
-                            </button>
-                        {{end}}
-                    </td>
-                </tr>
-            </table>
 
-            <!-- the previous button is moved behind the next button -->
-            <div style="position: relative; height: 1px;">
-                {{if .Q.HasPrev}}
-                <!-- name="submitBtn" conflicts with JS form.submit() -->
-                <button type="submit" name="submitBtn" value="prev" accesskey="p" 
-                    style='
-                    font-size:11px; 
-                    position:absolute; 
-                    height: 25px;
-                    width: 86px;
-                    padding: 2px;
-                    left: 12px; 
-                    bottom: 18px; 
-                    '
-                >
-                    << {{.Trls.page.Tr .Q.LangCode}} {{addint .Q.Prev 1}} </button>
-                {{end}}                       
-            </div>
+<!-- padding - without disturbing width=100% inscribe -->
+<div class="hori-center-me">
 
+    <!-- width=100% inscribe -->
+    <form method="POST" action="{{prefix ""}}" class='go-quest-main-form' name='frmMain' >
+        
+        <div id="t-row-1">
+            <div class='table-cell-1'>
+
+                <!--
+                    {{$lc := .Sess.EffectiveStr "lang_code"}}
+                    Langcode is -{{$lc}}-
+                -->
+
+                {{if .Q.HasErrors}}
+                    <p class="error" id="error" style="font-size:16px;margin: 20px 0px; ">{{.Trls.correct_errors.Tr .Q.LangCode}}  </p>
+                    <script>
+                        $("#error").css("display","none");           
+                        $("#error").fadeIn("slow", function () {
+                            console.log("fade in complete");
+                        });                    
+                    </script>
+                {{end}}
+
+                {{toHtml (.Q.CurrentPageHTML) }}
+
+            </div><!-- /table-cell-1 --> 
+        </div><!-- /t-row-1 --> 
+
+        
+        <div id="t-row-2">
+            <div class='table-cell-2' >
+
+                <div style="
+                    display: inline-block; 
+                    width: 75%;
+                ">
+                    {{toHtml (.Q.ProgressBar) }}
+                </div>
+
+
+                <div style="float: right; min-width:90px;">
+                    {{if .Q.HasNext}}
+                    <!-- name="submitBtn" conflicts with JS form.submit() -->
+                    <button type="submit" name="submitBtn" value="next" accesskey="n">
+                        {{.Trls.page.Tr .Q.LangCode}} {{addint .Q.Next 1}} >>
+                    </button>
+                    {{end}}
+                    &nbsp;
+                </div>
             
+                <!-- the previous button is moved behind the next button -->
+                <div style="float: left; min-width:90px;">
+                     &nbsp;
+                    {{if .Q.HasPrev}}
+                        <!-- name="submitBtn" conflicts with JS form.submit() -->
+                        <button type="submit" name="submitBtn" value="prev" accesskey="p" style='
+                                            font-size:11px; 
+                                            height: 25px;
+                                            width: 86px;
+                                            padding: 2px;
+                                            '>
+                            << {{.Trls.page.Tr .Q.LangCode}} {{addint .Q.Prev 1}} 
+                        </button>
+                    {{end}}
+                </div>
+                
 
 
-        </form>
-    </div>
-    <!-- end of center me-->
+            </div><!-- /table-cell-2 -->
+        </div><!-- /t-row-2 -->
+
+
+
+    </form>
+
+    
+</div><!-- end of hori-center me-->
 
 
 

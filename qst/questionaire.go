@@ -283,6 +283,9 @@ func newPage() pageT {
 
 // QuestionaireT contains pages with groups with inputs
 type QuestionaireT struct {
+	UserID string `json:"user_id,omitempty"`
+	WaveID string `json:"wave_id,omitempty"`
+
 	Pages     []pageT           `json:"pages,omitempty"`
 	LangCodes map[string]string `json:"lang_codes,omitempty"` // all possible lang codes - i.e. en, de
 	LangCode  string            `json:"lang_code,omitempty"`  // default lang code - and current lang code - i.e. de

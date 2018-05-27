@@ -4,9 +4,11 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"os"
+	"path/filepath"
 	"time"
 
-	"github.com/zew/go-questionaire/cfg"
+	"github.com/zew/go-questionaire/lgn"
 	"github.com/zew/go-questionaire/qst"
 	"github.com/zew/go-questionaire/sessx"
 	"github.com/zew/go-questionaire/tpl"
@@ -62,11 +64,35 @@ func mainH(w http.ResponseWriter, r *http.Request) {
 
 	sess := sessx.New(w, r)
 
+	err := lgn.LoginByHash(w, r)
+	if err != nil {
+		helper(w, fmt.Errorf("Login by hash failed")) // don's show the revealing original error
+		return
+	}
+
+	l, isLoggedIn, err := lgn.LoggedInCheck(w, r)
+	if err != nil {
+		helper(w, err)
+		return
+	}
+
+	if !isLoggedIn {
+		helper(w, fmt.Errorf("You are not logged in"))
+		return
+	}
+
 	q, err := loadQuestionaire(w, r)
 	if err != nil {
 		helper(w, err)
 		return
 	}
+
+	if !l.HasRole(q.WaveID) {
+		helper(w, fmt.Errorf("Login succeeded, but is not valid for current wave id %v", q.WaveID))
+		return
+	}
+
+	q.UserID = l.User
 
 	//
 	// Meta parameters
@@ -140,7 +166,15 @@ func mainH(w http.ResponseWriter, r *http.Request) {
 
 	//
 	// Save questionaire to file
-	err = q.Save(fmt.Sprintf("tmp_sess_%02d", time.Now().Minute()/10))
+	pth := filepath.Join(".", "responses", q.WaveID, q.UserID+".json")
+	err = os.MkdirAll(filepath.Dir(pth), 0755)
+	if err != nil {
+		s := fmt.Sprintf("Could not create path %v", filepath.Dir(pth))
+		helper(w, err, s)
+		return
+	}
+
+	err = q.Save(pth)
 	if err != nil {
 		helper(w, err, "Putting questionaire into session caused error")
 		return
@@ -158,7 +192,7 @@ func mainH(w http.ResponseWriter, r *http.Request) {
 			TplBundle: tplBundle,
 			TS:        ts,
 
-			Trls: cfg.Get().Trls,
+			// Trls: cfg.Get().Trls,
 			Sess: &sess,
 
 			Q: q,

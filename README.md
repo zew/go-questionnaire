@@ -37,11 +37,18 @@ The Transferrer.
 * JSON schema validator
 
 
-### Consider
+### Layout concept
 
-The column width is implemented with inline block elements (`.go-quest-cell`). 
-The white space between inline block elements distorts the column width computation.
-Alternatively, each row could be rendered as a new table.
+The column width is implemented with inline block elements (CSS class `.go-quest-cell`). 
+The white space between inline block elements subtracts from the total width.
+The column width computation in colWidth() therefore computes based on 97.5 percent.
+
+There are two alternatives.
+
+First alternative is stacking cells wit `float: left`. But this breaks the nice vertical middle alignment of the cells.
+
+The last alternative is a fixed table layout. `<span class='go-quest-cell' >` would have to become `<td>`. And every `vspacer` would have to be replaced with  `</tr></table>  <table><tr>`.
+Using `<div style='display: table/table-row/table-cell'` do not support colspan or rowspan functionality. 
 
 
 ## About Go-App-Tpl

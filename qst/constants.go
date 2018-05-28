@@ -17,8 +17,8 @@ var implementedTypes = map[string]interface{}{
 // checkbox inputs need standardized values for unchecked and checked
 const valEmpty = "0"
 const valSet = "1"
-const vspacer = "<div class='go-quest-vspacer'></div>\n"
-const vspacer16 = "<div class='go-quest-vspacer-16'></div>\n"
+const vspacer = "<div class='go-quest-vspacer'> &nbsp; </div>\n"
+const vspacer16 = "<div class='go-quest-vspacer-16'> &nbsp; </div>\n"
 
 type horizontalAlignment int
 

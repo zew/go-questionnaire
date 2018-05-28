@@ -5,7 +5,9 @@ import (
 	"html/template"
 	"log"
 	"net/http"
+	"time"
 
+	"github.com/zew/go-questionaire/cfg"
 	"github.com/zew/go-questionaire/sessx"
 )
 
@@ -191,7 +193,7 @@ func ChangePassword(w http.ResponseWriter, r *http.Request) (string, error) {
 }
 
 // LoginByHash takes request value "u", "wave_id" and hash "h".
-// It checks the hash against "u", "wave_id" and loginsT.Salt
+// It checks the hash against "u", "wave_id" and loginsT.Salt.
 // On wrong hashes, it returns the difference as error.
 // Be careful not to show the error to the end user.
 // On success, it creates a logged in user out of nothing.
@@ -244,8 +246,43 @@ func LoginByHash(w http.ResponseWriter, r *http.Request) error {
 	return nil
 }
 
-// LoginH is a primitive handler for http form based login
-func LoginH(w http.ResponseWriter, r *http.Request) {
+// GenerateHashesH is a convenience func to lookup some hashes.
+func GenerateHashesH(w http.ResponseWriter, r *http.Request) {
+
+	w.Header().Set("Content-Type", "text/html; charset=utf-8")
+
+	_, loggedIn, err := LoggedInCheck(w, r, "admin")
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+	if !loggedIn {
+		http.Error(w, "login required for this function", http.StatusInternalServerError)
+		return
+	}
+
+	waveID := r.URL.Query().Get("wave_id")
+	if waveID == "" {
+		t := time.Now()
+		if t.Day() > 20 {
+			t = t.AddDate(0, 1, 0)
+		}
+		waveID = t.Format("2006-01")
+	}
+
+	for i := 99 * 1000; i > 99*1000-10; i-- {
+		checkStr := fmt.Sprintf("%v-%v-%v", i, waveID, lgns.Salt)
+		hsh := Md5Str([]byte(checkStr))
+		url := fmt.Sprintf("%v?u=%v&wave_id=%v&h=%v", cfg.Pref(), i, waveID, hsh)
+		a := fmt.Sprintf("<a href='%v'>%v<a><br>", url, url)
+		w.Write([]byte(a))
+	}
+	w.Write([]byte("Finish"))
+
+}
+
+// LoginPrimitiveH is a primitive handler for http form based login
+func LoginPrimitiveH(w http.ResponseWriter, r *http.Request) {
 
 	msg := ""
 	err := ValidateAndLogin(w, r)

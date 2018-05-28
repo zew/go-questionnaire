@@ -62,10 +62,11 @@ func main() {
 	mux1.HandleFunc(cfg.Pref("/session-put"), sessx.SessionPut)
 	mux1.HandleFunc(cfg.Pref("/session-get"), sessx.SessionGet)
 	mux1.HandleFunc(cfg.Pref("/config-reload"), cfg.LoadH)
-	mux1.HandleFunc(cfg.Pref("/login"), lgn.LoginH)
+	mux1.HandleFunc(cfg.Pref("/login-primitive"), lgn.LoginPrimitiveH)
 	mux1.HandleFunc(cfg.Pref("/logins-save"), lgn.SaveH)
 	mux1.HandleFunc(cfg.Pref("/logins-reload"), lgn.LoadH)
 	mux1.HandleFunc(cfg.Pref("/generate-password"), lgn.GeneratePasswordH)
+	mux1.HandleFunc(cfg.Pref("/generate-hashes"), lgn.GenerateHashesH)
 	mux1.HandleFunc(cfg.Pref("/templates-reload"), tpl.ParseH)
 
 	//

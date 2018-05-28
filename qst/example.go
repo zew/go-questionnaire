@@ -10,7 +10,9 @@ import (
 
 func nextWaveID() string {
 	t := time.Now()
-	t = t.AddDate(0, 1, 0)
+	if t.Day() > 20 {
+		t = t.AddDate(0, 1, 0)
+	}
 	return t.Format("2006-01")
 }
 
@@ -96,8 +98,8 @@ func radioMatrix(headerLabels []transMapT, inpNames []string, rowLabels []transM
 		inp := inputT{}
 		inp.Type = "textblock"
 		inp.Label = transMapT{
-			"de": "",
-			"en": "",
+			"de": " &nbsp; ",
+			"en": " &nbsp; ",
 		}
 		grp.Inputs = append(grp.Inputs, inp)
 	}

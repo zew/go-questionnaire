@@ -22,6 +22,10 @@ func StaticDownloadH(w http.ResponseWriter, r *http.Request) {
 	pth := r.URL.Path
 	pth = strings.TrimPrefix(pth, cfg.Pref())
 	pth = strings.Trim(pth, "/")
+	if strings.Contains(pth, "../") {
+		w.Write([]byte("no breaking out from static dir"))
+		return
+	}
 	m := mime.TypeByExtension(filepath.Ext(pth))
 	if m != "" {
 		w.Header().Set("Content-Type", m)

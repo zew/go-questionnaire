@@ -154,8 +154,17 @@ input.ib-090 { 	width:090px;  }
 input.ib-120 { 	width:120px;  }
 
 
+.go-quest-vspacer {
+	margin: 0;
+	height: 2px;
+	clear: both;
+}
 
-
+.go-quest-vspacer-16 {
+	margin: 0;
+	height: 16px;
+	clear: both;
+}
 
 
 
@@ -165,8 +174,8 @@ input.ib-120 { 	width:120px;  }
 	width:      70%; 
 	min-width:  960px; 
 
-	padding-top:20px;	
-	padding-left:50px;	
+	/*  padding-top:20px; => causes vert scroll bar; use body.padding to adjust  */
+	padding-left:50px;  /* aethetic compensation since control do not reach the right margin */	
 	padding-right:0px;	
 	padding-bottom:0px;	
 
@@ -176,45 +185,15 @@ input.ib-120 { 	width:120px;  }
 }
 
 .go-quest-main-form {
-	font-size:   2px;  /*keep spaces between inline blocks small*/
+	/*  keep spaces between inline blocks small  
+		not necessary with go-quest-cell{ float: left; }
+		but then the vertical align is disrupted.
+		
+		Full-fledged table layout widens columns;	
+	*/
+	font-size:   3px;  
 }
 
-.go-quest-page-section {
-	font-size: 18px;
-	line-height: 20px;
-	font-weight: 900;
-}
-.go-quest-page-header {
-	font-size: 16px;
-	line-height: 18px;
-}
-.go-quest-page-desc {
-	font-size: 14px;
-	line-height: 18px;
-}
-
-
-.go-quest-group {
-	
-}
-
-
-.go-quest-group-header {
-	/* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
-	font-size: 14px !important;
-}
-
-
-
-.go-quest-vspacer {
-	margin: 0;
-	height: 2px;
-}
-
-.go-quest-vspacer-16 {
-	margin: 0;
-	height: 16px;
-}
 
 .go-quest-cell-left, 
 .go-quest-cell-center, 
@@ -228,6 +207,9 @@ input.ib-120 { 	width:120px;  }
 	line-height: 100%;
 	/* min-width: 200px; */
 	text-align: left; 	
+
+	/* float left disrupts the vertical alignment of the blocks  */
+	/* float: left; */
 	
 	
 	/* for debugging */
@@ -259,6 +241,30 @@ input.ib-120 { 	width:120px;  }
 	font-size: 12px;
 	line-height: 100%;
 	padding-right: 2px; 
+}
+
+
+.go-quest-page-section {
+	font-size: 18px;
+	line-height: 20px;
+	font-weight: 900;
+}
+.go-quest-page-header {
+	font-size: 16px;
+	line-height: 18px;
+}
+.go-quest-page-desc {
+	font-size: 14px;
+	line-height: 18px;
+}
+
+.go-quest-group {
+	
+}
+
+.go-quest-group-header {
+	/* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+	font-size: 14px !important;
 }
 
 

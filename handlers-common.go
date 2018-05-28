@@ -19,7 +19,8 @@ type TplDataT struct {
 	Sess *sessx.SessT // Access to session and request values
 	L    *lgn.LoginT  // Yes, we could retrieve it from the session but it is cumbersome in template lingo
 
-	Q *qst.QuestionaireT // The major app specific object
+	Q   *qst.QuestionaireT // The major app specific object
+	Cnt string             // Alternative - just a string
 }
 
 // Trls returns translated strings, for instance HtmlTitle

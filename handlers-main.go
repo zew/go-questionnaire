@@ -16,14 +16,6 @@ import (
 	"github.com/pkg/errors"
 )
 
-func helper(w http.ResponseWriter, err error, msgs ...string) {
-	if len(msgs) > 0 {
-		err = errors.Wrap(err, msgs[0])
-	}
-	log.Print(err)
-	http.Error(w, err.Error(), http.StatusInternalServerError)
-}
-
 func loadQuestionaire(w http.ResponseWriter, r *http.Request) (*qst.QuestionaireT, error) {
 
 	sess := sessx.New(w, r)
@@ -60,35 +52,44 @@ func reloadH(w http.ResponseWriter, r *http.Request) {
 	sess.Remove(w, "questionaire")
 }
 
+func helper(w http.ResponseWriter, r *http.Request, err error, msgs ...string) {
+	if len(msgs) > 0 {
+		err = errors.Wrap(err, msgs[0])
+	}
+	log.Print(err)
+	errorH(w, r, err.Error())
+	// http.Error(w, err.Error(), http.StatusInternalServerError)
+}
+
 func mainH(w http.ResponseWriter, r *http.Request) {
 
 	sess := sessx.New(w, r)
 
 	err := lgn.LoginByHash(w, r)
 	if err != nil {
-		helper(w, fmt.Errorf("Login by hash failed")) // don's show the revealing original error
+		helper(w, r, fmt.Errorf("Login by hash failed")) // don's show the revealing original error
 		return
 	}
 
 	l, isLoggedIn, err := lgn.LoggedInCheck(w, r)
 	if err != nil {
-		helper(w, err)
+		helper(w, r, err)
 		return
 	}
 
 	if !isLoggedIn {
-		helper(w, fmt.Errorf("You are not logged in"))
+		helper(w, r, fmt.Errorf("You are not logged in"))
 		return
 	}
 
 	q, err := loadQuestionaire(w, r)
 	if err != nil {
-		helper(w, err)
+		helper(w, r, err)
 		return
 	}
 
 	if !l.HasRole(q.WaveID) {
-		helper(w, fmt.Errorf("Login succeeded, but is not valid for current wave id %v", q.WaveID))
+		helper(w, r, fmt.Errorf("Login succeeded, but is not valid for current wave id %v", q.WaveID))
 		return
 	}
 
@@ -160,7 +161,7 @@ func mainH(w http.ResponseWriter, r *http.Request) {
 	// Save questionaire into session
 	err = sess.PutObject("questionaire", q)
 	if err != nil {
-		helper(w, err, "Putting questionaire into session caused error")
+		helper(w, r, err, "Putting questionaire into session caused error")
 		return
 	}
 
@@ -170,13 +171,13 @@ func mainH(w http.ResponseWriter, r *http.Request) {
 	err = os.MkdirAll(filepath.Dir(pth), 0755)
 	if err != nil {
 		s := fmt.Sprintf("Could not create path %v", filepath.Dir(pth))
-		helper(w, err, s)
+		helper(w, r, err, s)
 		return
 	}
 
 	err = q.Save(pth)
 	if err != nil {
-		helper(w, err, "Putting questionaire into session caused error")
+		helper(w, r, err, "Putting questionaire into session caused error")
 		return
 	}
 
@@ -192,14 +193,13 @@ func mainH(w http.ResponseWriter, r *http.Request) {
 			TplBundle: tplBundle,
 			TS:        ts,
 
-			// Trls: cfg.Get().Trls,
 			Sess: &sess,
 
 			Q: q,
 		},
 	)
 	if err != nil {
-		helper(w, err, "Executing template caused error")
+		helper(w, r, err, "Executing template caused error")
 		return
 	}
 

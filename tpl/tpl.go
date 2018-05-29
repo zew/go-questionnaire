@@ -39,13 +39,17 @@ var staticTplFuncs = template.FuncMap{
 	},
 }
 
-// StaticFuncMap returns the static funcs, every template should have.
+// StaticFuncMap returns the static funcs every template should have.
 func StaticFuncMap() template.FuncMap {
 	return staticTplFuncs
 }
 
 // A parsed bundle of coherent templates.
-// A base to clone from.
+// Notice the Template.Tree .
+// Remember: A parsed template has DefinedTemplates().
+// With executeTemplate(..., name,...) any of these defined templates can be executed.
+// It is therefore helpful to imagine *template.Template as a bunch or bundle of templates.
+// bundleT is also a base to clone from, though cloning should never be necessary.
 type bundleT struct {
 	IsParsed bool
 	*template.Template
@@ -66,7 +70,7 @@ var parsedBundles = map[string]*bundleT{}
 // Finally: main.html bundles all html templates.
 //     bundle would be main.html =>  for main.html, *.html
 // The parsed bundle will be *big* and will be used for *many* request.
-// But this does *not* matter, since it is a pointer and since we dont clone it.
+// But this does not matter, since it is a pointer and since we dont clone it.
 //
 // Our bundles are completely threadsafe - but are still able
 // to *dynamically*  xecute sub templates by calling executeTemplate.
@@ -102,7 +106,9 @@ func (bt *bundleT) Parse(bundle string) *template.Template {
 		}
 		additional1, err := bt.Template.ParseGlob(filepath.Join(".", "templates", mask)) // i.e. main_*.html
 		if err != nil {
-			log.Print(err)
+			if !strings.Contains(err.Error(), "html/template: pattern matches no files") { // Yes - I would love to check with IsNotExist(err), but I cannot change the standard library
+				log.Print(err)
+			}
 		} else {
 			bt.Template = additional1
 		}
@@ -110,7 +116,9 @@ func (bt *bundleT) Parse(bundle string) *template.Template {
 		helpers := "_*" + ext
 		additional2, err := bt.Template.ParseGlob(filepath.Join(".", "templates", helpers)) // i.e. _dropdown.html
 		if err != nil {
-			log.Print(err)
+			if !strings.Contains(err.Error(), "html/template: pattern matches no files") { // Yes - I would love to check with IsNotExist(err), but I cannot change the standard library
+				log.Print(err)
+			}
 		} else {
 			bt.Template = additional2
 		}

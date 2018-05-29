@@ -52,6 +52,22 @@ body {
 }
 
 
+h1, h2, h3, h4, h5, h6, h7 {
+	line-height:   1.6em;
+	margin-top:    1.5em;
+	margin-bottom: 0.1em;
+}
+
+/* stackoverflow.com/questions/1132366/ */
+h1+h1, h1+h2, h1+h3, h1+h4, h1+h5, h1+h6,
+       h2+h2, h2+h3, h2+h4, h2+h5, h2+h6,
+              h3+h3, h3+h4, h3+h5, h3+h6,
+                     h4+h4, h4+h5, h4+h6,
+dummy {
+	margin-top: 0.1em;
+}
+
+
 a {
 	text-decoration: none;  /* remove the underline from image links*/
 }

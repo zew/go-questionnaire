@@ -32,6 +32,11 @@ The Transferrer.
 
 ## Todo Ahead
 
+* Markdown Handler: Forward .md to .html ?   
+  Create change-password-primitive
+
+* Primitive change pw
+
 * Tests
 
 * JSON schema validator

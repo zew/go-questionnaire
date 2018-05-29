@@ -281,7 +281,9 @@ func GenerateHashesH(w http.ResponseWriter, r *http.Request) {
 
 }
 
-// LoginPrimitiveH is a primitive handler for http form based login
+// LoginPrimitiveH is a primitive handler for http form based login.
+// It serves as pattern for an application specific login.
+// It also serves as real handler for applications having only a few admin users.
 func LoginPrimitiveH(w http.ResponseWriter, r *http.Request) {
 
 	msg := ""
@@ -312,8 +314,8 @@ func LoginPrimitiveH(w http.ResponseWriter, r *http.Request) {
     <title>Login</title>
 </head>
 <body>
-	{{if  (len .Cnt) gt 0 }} <p style='white-space: pre; color:#E22'>{{.Cnt}}</p>{{end}}
-	<form method="post" action="{{.SelfURL}}"   >
+	<form method="post" action="{{.SelfURL}}"  style="margin: 50px;"  >
+		{{if  (len .Cnt) gt 0 }} <p style='white-space: pre; color:#E22'>{{.Cnt}}</p>{{end}}
 		Username: <input name="username" value="{{.L.User}}"><br>
 		Password: <input name="password" type="password" /><br>
 		<input type="submit" name="submitclassic" accesskey="l">

@@ -26,18 +26,17 @@ func errorH(w http.ResponseWriter, r *http.Request, msg string) {
 
 	ts := &tpl.StackT{"main.html", "error.html"}
 
-	err := tplBundle.Execute(
-		w,
-		TplDataT{
-			TplBundle: tplBundle,
-			TS:        ts,
+	d := tplDataExtT{
+		Q: &qst.QuestionaireT{LangCode: "en"}, // just setting the lang code for the outer layout template
+	}
+	d.TplDataT = tpl.TplDataT{
+		TplBundle: tplBundle,
+		TS:        ts,
+		Sess:      &sess,
+		Cnt:       msg,
+	}
 
-			Sess: &sess,
-
-			Q:   &qst.QuestionaireT{LangCode: "en"}, // just setting the lang code for the outer layout template
-			Cnt: msg,
-		},
-	)
+	err := tplBundle.Execute(w, d)
 	if err != nil {
 		s := fmt.Sprintf("Executing template caused: %v", err)
 		log.Print(s)

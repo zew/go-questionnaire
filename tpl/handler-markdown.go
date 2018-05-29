@@ -13,6 +13,7 @@ import (
 	"github.com/russross/blackfriday"
 
 	"github.com/zew/go-questionaire/cfg"
+	"github.com/zew/go-questionaire/sessx"
 )
 
 // We want the markdown files editable locally with locally working links and images.
@@ -23,6 +24,8 @@ func CreateAndRegisterHandlerForDocs(mux1 *http.ServeMux) {
 	fragm := "/doc" // significant url path fragment
 
 	argFunc := func(w http.ResponseWriter, r *http.Request) {
+
+		sess := sessx.New(w, r)
 
 		// Relay any non html and md request to static file handler
 		ext := strings.ToLower(path.Ext(r.URL.Path))
@@ -36,19 +39,24 @@ func CreateAndRegisterHandlerForDocs(mux1 *http.ServeMux) {
 		pth := r.URL.Path
 		pth = strings.TrimPrefix(pth, cfg.Pref(fragm))
 		pth = strings.Trim(pth, "/")
-
+		if strings.Contains(pth, "../") {
+			w.Write([]byte("no breaking out from doc dir"))
+			return
+		}
 		log.Printf("doc pth %v => %v (prefix %v)", r.URL.Path, pth, cfg.Pref(fragm))
 
 		if pth == "" {
 			pth = "index.html" // quasi "index.html"
 		}
-		if strings.HasSuffix(pth, ".html") {
-			pth = strings.Replace(pth, ".html", ".md", -1)
-		}
+
 		fpth := filepath.Join("static", fragm, pth)
-		if strings.HasSuffix(fpth, "README") || strings.HasSuffix(fpth, "README.md") {
+		if strings.HasSuffix(fpth, ".html") {
+			fpth = strings.Replace(fpth, ".html", ".md", -1)
+		}
+		if strings.HasSuffix(strings.ToLower(fpth), "readme.md") || strings.HasSuffix(strings.ToLower(fpth), "readme") {
 			fpth = filepath.Join(".", pth) // Readme is read directly from the app root
 		}
+
 		// log.Printf("doc fpth %v", fpth)
 		bts, err := ioutil.ReadFile(fpth)
 		if err != nil {
@@ -58,7 +66,7 @@ func CreateAndRegisterHandlerForDocs(mux1 *http.ServeMux) {
 			return
 		}
 
-		// Rewrite URLs to be served by application
+		// Rewrite source file URLs to be served by application
 		// i.e. ./my-image.jpg to  ./[AppPrefix]/doc/
 		dest := "(" + cfg.Pref() + "/doc/"
 		bts = bytes.Replace(bts, []byte("(./"), []byte(dest), -1)
@@ -67,15 +75,28 @@ func CreateAndRegisterHandlerForDocs(mux1 *http.ServeMux) {
 		// Rewrite Links with {{AppPrefix}} to application url prefix
 		bts = bytes.Replace(bts, []byte("/{{AppPrefix}}"), []byte(cfg.Pref()), -1)
 
-		bts = append(bts, []byte("\n\nRendered by russross/blackfriday")...) // Inconspicuous rendering marker
-
 		// Render markdown
-		output := blackfriday.MarkdownCommon(bts)
-		_, err = w.Write(output)
+		output := string(blackfriday.MarkdownCommon(bts))
+		output += "<br>\n<br>\n<br>\n<p style='font-size: 75%;'>\nRendered by russross/blackfriday</p>\n" // Inconspicuous rendering marker
+
+		tplBundle := Get(w, r, "main.html")
+		ts := &StackT{"markdown.html"}
+		err = tplBundle.Execute(
+			w,
+			TplDataT{
+				TplBundle: tplBundle,
+				TS:        ts,
+				Sess:      &sess,
+				Cnt:       output,
+			},
+		)
 		if err != nil {
-			s := fmt.Sprintf("MarkdownH: Could not write to w:", err)
-			log.Printf(s)
+			s := fmt.Sprintf("Executing template caused: %v", err)
+			log.Print(s)
+			w.Write([]byte(s))
+			return
 		}
+
 	}
 
 	log.Printf("registering docs handler %-30v -%v- %T \n", cfg.Pref(fragm), argFunc, argFunc)

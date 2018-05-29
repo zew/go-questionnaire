@@ -16,6 +16,12 @@ import (
 	"github.com/pkg/errors"
 )
 
+// An extension with questionaire
+type tplDataExtT struct {
+	tpl.TplDataT
+	Q *qst.QuestionaireT // The major app specific object
+}
+
 func loadQuestionaire(w http.ResponseWriter, r *http.Request) (*qst.QuestionaireT, error) {
 
 	sess := sessx.New(w, r)
@@ -184,20 +190,20 @@ func mainH(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
 
 	tplBundle := tpl.Get(w, r, "main.html")
-	ts := &tpl.StackT{"main.html", "content1.html"}
-	ts = &tpl.StackT{"content1.html"}
+	ts := &tpl.StackT{"main.html", "quest.html"}
+	ts = &tpl.StackT{"quest.html"}
 
-	err = tplBundle.Execute(
-		w,
-		TplDataT{
-			TplBundle: tplBundle,
-			TS:        ts,
+	d := tplDataExtT{
+		Q: q,
+	}
+	sess.PutString("lang_code", q.LangCode)
+	d.TplDataT = tpl.TplDataT{
+		TplBundle: tplBundle,
+		TS:        ts,
+		Sess:      &sess,
+	}
 
-			Sess: &sess,
-
-			Q: q,
-		},
-	)
+	err = tplBundle.Execute(w, d)
 	if err != nil {
 		helper(w, r, err, "Executing template caused error")
 		return

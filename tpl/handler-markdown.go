@@ -6,6 +6,8 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
+	"net/url"
+	"os"
 	"path"
 	"path/filepath"
 	"strings"
@@ -19,18 +21,29 @@ import (
 // We want the markdown files editable locally with locally working links and images.
 // We also want the markdown files served by the application.
 // And we want - github style - a README.md served from the app root.
+// URL should have *.html extension, not *.md.
 func CreateAndRegisterHandlerForDocs(mux1 *http.ServeMux) {
 
 	fragm := "/doc" // significant url path fragment
 
 	argFunc := func(w http.ResponseWriter, r *http.Request) {
 
-		sess := sessx.New(w, r)
-
 		// Relay any non html and md request to static file handler
 		ext := strings.ToLower(path.Ext(r.URL.Path))
 		if ext != ".html" && ext != ".md" && ext != "" {
 			StaticDownloadH(w, r)
+			return
+		}
+
+		// Requests ending on .md or readme are suffixed with .html and redirected
+		if ext == ".md" || strings.HasSuffix(strings.ToLower(r.URL.Path), "readme") {
+			newPth := r.URL.Path
+			newPth = strings.TrimSuffix(newPth, path.Ext(r.URL.Path))
+			newPth += ".html"
+			red := newPth + url.QueryEscape(r.URL.RawQuery)
+			red = newPth + "?" + r.URL.RawQuery
+			log.Printf("Redirecting %20v to %20v", r.URL.Path, red)
+			http.Redirect(w, r, red, http.StatusTemporaryRedirect)
 			return
 		}
 
@@ -43,22 +56,33 @@ func CreateAndRegisterHandlerForDocs(mux1 *http.ServeMux) {
 			w.Write([]byte("no breaking out from doc dir"))
 			return
 		}
-		log.Printf("doc pth %v => %v (prefix %v)", r.URL.Path, pth, cfg.Pref(fragm))
+		// log.Printf("doc pth %v => %v (prefix %v)", r.URL.Path, pth, cfg.Pref(fragm))
 
 		if pth == "" {
-			pth = "index.html" // quasi "index.html"
+			pth = "index.html" // default file index.md assumed to exist in ./static/fragm
 		}
 
+		// Whereas the URL path end with .html,
+		// the file path ends with *.md
 		fpth := filepath.Join("static", fragm, pth)
-		if strings.HasSuffix(fpth, ".html") {
-			fpth = strings.Replace(fpth, ".html", ".md", -1)
+		if strings.HasSuffix(strings.ToLower(fpth), "readme.html") || strings.HasSuffix(strings.ToLower(fpth), "readme") {
+			fpth = filepath.Join(".", pth) // Special file path: Readme is read directly from the app root
 		}
-		if strings.HasSuffix(strings.ToLower(fpth), "readme.md") || strings.HasSuffix(strings.ToLower(fpth), "readme") {
-			fpth = filepath.Join(".", pth) // Readme is read directly from the app root
+		if strings.HasSuffix(fpth, ".html") {
+			fpth = strings.Replace(fpth, ".html", ".md", -1) // should always be the case
 		}
 
-		// log.Printf("doc fpth %v", fpth)
+		{
+			s := fmt.Sprintf("doc path/fpath: %20v; %-20v", pth, fpth)
+			log.Printf(s)
+			// w.Write([]byte(s))
+		}
 		bts, err := ioutil.ReadFile(fpth)
+		if err != nil {
+			if os.IsNotExist(err) {
+				bts, err = ioutil.ReadFile(strings.TrimSuffix(fpth, ".md") + ".MD")
+			}
+		}
 		if err != nil {
 			s := fmt.Sprintf("MarkdownH: File %v was not found.", fpth)
 			log.Printf(s)
@@ -78,6 +102,8 @@ func CreateAndRegisterHandlerForDocs(mux1 *http.ServeMux) {
 		// Render markdown
 		output := string(blackfriday.MarkdownCommon(bts))
 		output += "<br>\n<br>\n<br>\n<p style='font-size: 75%;'>\nRendered by russross/blackfriday</p>\n" // Inconspicuous rendering marker
+
+		sess := sessx.New(w, r)
 
 		tplBundle := Get(w, r, "main.html")
 		ts := &StackT{"markdown.html"}

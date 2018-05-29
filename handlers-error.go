@@ -21,10 +21,7 @@ func errorH(w http.ResponseWriter, r *http.Request, msg string) {
 
 	tplBundle := tpl.Get(w, r, "main.html")
 
-	log.Print(tplBundle.Name())
-	log.Print(tplBundle.DefinedTemplates())
-
-	ts := &tpl.StackT{"main.html", "error.html"}
+	ts := &tpl.StackT{"error.html", "non-existent.html"}
 
 	d := tplDataExtT{
 		Q: &qst.QuestionaireT{LangCode: "en"}, // just setting the lang code for the outer layout template

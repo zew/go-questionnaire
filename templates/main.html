@@ -27,13 +27,15 @@
 	
 	<!-- header -->
 	<div class="header">
-		<div style='float: left; position: relative; left: 3%; bottom: -18px; color: #0069B4; font-size: 300%;'>		 
+		<a href="{{prefix "" }}">
+			<div style='float: left; position: relative; left: 3%; bottom: -18px; color: #0069B4; font-size: 300%;'>		 
 				<span style='font-size: 125%'>{{.Trls.app_label_h1.Tr $lc}} </span> {{.Trls.app_label.Tr $lc}}
-		</div>
+			</div>
+		</a>
 	</div>
 	
 
-	 {{executeTemplate .TplBundle .TS.Pop .}}
+	 {{executeTemplate .TplBundle .TS.Unshift .}}
 	 
 
 	<!-- footer -->
@@ -41,7 +43,9 @@
 		<div style='float: right; padding-right: 40px;'>
 			<a href="{{prefix "/doc/" }}">{{.Trls.imprint.Tr $lc}}</a>  
 			&nbsp; &nbsp; &nbsp; &nbsp;
-			{{toHtml (.Q.LanguageChooser)}}
+			{{if isset . "Q"}}
+				{{toHtml (.Q.LanguageChooser)}}
+			{{end}}
 		</div>	
 	</div>
 

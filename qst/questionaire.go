@@ -300,7 +300,7 @@ func (q *QuestionaireT) LanguageChooser() string {
 	for key, lang := range q.LangCodes {
 		keyCap := strings.Title(key)
 		if q.LangCode == "en" {
-			keyCap = key
+			// keyCap = key
 		}
 		if key == q.LangCode {
 			s = append(s, fmt.Sprintf("<b           title='%v'>%v</b>\n", lang, keyCap))

@@ -110,7 +110,6 @@ func ChangePassword(w http.ResponseWriter, r *http.Request) (string, error) {
 	o := r.PostForm.Get("oldpassword")
 	n := r.PostForm.Get("newpassword")
 	n2 := r.PostForm.Get("newpassword2")
-	// termsAndConditions := r.PostForm.Get("termsAndConditions")
 
 	if l.User != u {
 		return "", fmt.Errorf("Changing passwd for user %v requires login as user %v.", u, u)
@@ -125,6 +124,7 @@ func ChangePassword(w http.ResponseWriter, r *http.Request) (string, error) {
 		}
 	}
 
+	// Optional confirmation of termsAndConditions; if request key not present - then we do not check
 	if _, ok := r.PostForm["termsAndConditions"]; ok {
 		log.Printf("tuc: %+v", r.PostForm["termsAndConditions"])
 		vals := r.PostForm["termsAndConditions"]
@@ -306,8 +306,7 @@ func LoginPrimitiveH(w http.ResponseWriter, r *http.Request) {
 
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
 
-	src := `
-<!DOCTYPE html>
+	src := `<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -316,6 +315,7 @@ func LoginPrimitiveH(w http.ResponseWriter, r *http.Request) {
 <body>
 	<form method="post" action="{{.SelfURL}}"  style="margin: 50px;"  >
 		{{if  (len .Cnt) gt 0 }} <p style='white-space: pre; color:#E22'>{{.Cnt}}</p>{{end}}
+		Login<br>
 		Username: <input name="username" value="{{.L.User}}"><br>
 		Password: <input name="password" type="password" /><br>
 		<input type="submit" name="submitclassic" accesskey="l">
@@ -337,12 +337,75 @@ func LoginPrimitiveH(w http.ResponseWriter, r *http.Request) {
 	tpl := template.New("anyname.html")
 	tpl, err = tpl.Parse(src)
 	if err != nil {
-		w.Write([]byte(err.Error()))
+		w.Write([]byte(fmt.Sprintf("Error parsing login inline template: %v", err)))
 	}
 
 	err = tpl.Execute(w, data)
 	if err != nil {
-		w.Write([]byte(err.Error()))
+		w.Write([]byte(fmt.Sprintf("Error executing login inline template: %v", err)))
+	}
+
+}
+
+// ChangePasswordPrimitiveH is a primitive handler for http form based password change.
+// It serves as pattern for an application specific password change.
+// It also serves as real handler for applications having only a few admin users.
+func ChangePasswordPrimitiveH(w http.ResponseWriter, r *http.Request) {
+
+	msg, err := ChangePassword(w, r)
+	if err != nil {
+		msg += fmt.Sprintf("%v\n", err)
+	}
+
+	l, loggedIn, err := LoggedInCheck(w, r)
+	if err != nil {
+		msg += fmt.Sprintf("Logged in check error: %v\n", err)
+	}
+	if !loggedIn {
+		msg += fmt.Sprintf("You are not logged in.\n")
+	}
+
+	w.Header().Set("Content-Type", "text/html; charset=utf-8")
+
+	src := `<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Login</title>
+</head>
+<body>
+	<form method="post" action="{{.SelfURL}}"  style="margin: 50px;"  >
+		{{if  (len .Cnt) gt 0 }} <p style='white-space: pre; color:#E22'>{{.Cnt}}</p>{{end}}
+		Change password<br>
+		Username: 		<input name="username" value="{{.L.User}}"><br>
+		Old password: 	<input name="oldpassword"  type="password" value="" /><br>
+		New password: 	<input name="newpassword"  type="password" value="" /><br>
+		Repeat:			<input name="newpassword2" type="password" value="" /><br>
+		<input type="submit" name="submitclassic" accesskey="l">
+	</form>
+</body>
+</html>
+`
+	type dataT struct {
+		Cnt     string
+		SelfURL string
+		L       *LoginT
+	}
+	data := dataT{
+		Cnt:     msg,
+		SelfURL: r.URL.Path,
+		L:       l,
+	}
+
+	tpl := template.New("anyname.html")
+	tpl, err = tpl.Parse(src)
+	if err != nil {
+		w.Write([]byte(fmt.Sprintf("Error parsing changepassword inline template: %v", err)))
+	}
+
+	err = tpl.Execute(w, data)
+	if err != nil {
+		w.Write([]byte(fmt.Sprintf("Error executing changepassword inline template: %v", err)))
 	}
 
 }

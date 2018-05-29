@@ -190,8 +190,7 @@ func mainH(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
 
 	tplBundle := tpl.Get(w, r, "main.html")
-	ts := &tpl.StackT{"main.html", "quest.html"}
-	ts = &tpl.StackT{"quest.html"}
+	ts := &tpl.StackT{"quest.html"}
 
 	d := tplDataExtT{
 		Q: q,

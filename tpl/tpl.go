@@ -15,6 +15,7 @@ import (
 	"log"
 	"net/http"
 	"path/filepath"
+	"reflect"
 	"strings"
 
 	"github.com/zew/go-questionaire/cfg"
@@ -36,6 +37,19 @@ var staticTplFuncs = template.FuncMap{
 		}
 		ret = template.HTML(buf.String())
 		return
+	},
+	// checks field or method exists in a struct
+	// stackoverflow.com/questions/44675087/
+	// We need this, to call the Q.LanuageChooser in the main.html
+	"isset": func(data interface{}, name string) bool {
+		v := reflect.ValueOf(data)
+		if v.Kind() == reflect.Ptr {
+			v = v.Elem()
+		}
+		if v.Kind() != reflect.Struct {
+			return false
+		}
+		return v.FieldByName(name).IsValid()
 	},
 }
 

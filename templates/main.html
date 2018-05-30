@@ -1,5 +1,5 @@
 <html>
-{{ $lc := (.Sess.EffectiveStr "lang_code" "en")}}
+{{ $lc := (.Sess.EffectiveStr "lang_code" .DefaultLangCode)}}
 <head>
 	<meta charset="utf-8">
 	<link rel="shortcut icon" href="data:;base64,=">
@@ -27,7 +27,7 @@
 	
 	<!-- header -->
 	<div class="header">
-		<a href="{{prefix "" }}">
+		<a href="{{prefix "" }}" tabindex="-1">
 			<div style='float: left; position: relative; left: 3%; bottom: -18px; color: #0069B4; font-size: 300%;'>		 
 				<span style='font-size: 125%'>{{.Trls.app_label_h1.Tr $lc}} </span> {{.Trls.app_label.Tr $lc}}
 			</div>
@@ -41,11 +41,9 @@
 	<!-- footer -->
 	<div class="footer">
 		<div style='float: right; padding-right: 40px;'>
-			<a href="{{prefix "/doc/" }}">{{.Trls.imprint.Tr $lc}}</a>  
+			<a href="{{prefix "/doc/site-imprint.md" }}">{{.Trls.imprint.Tr $lc}}</a>  
 			&nbsp; &nbsp; &nbsp; &nbsp;
-			{{if isset . "Q"}}
-				{{toHtml (.Q.LanguageChooser)}}
-			{{end}}
+			{{toHtml (.LanguageChooser .Sess.ReqURI  $lc)}}
 		</div>	
 	</div>
 

@@ -9,8 +9,8 @@ import (
 
 var not09azHyphenUnderscore = regexp.MustCompile(`[^a-z0-9\_\-]+`)
 
-// Example
-func Mustaz09_(s string) bool {
+// Mustaz09Underscore tests strings for a-z, 0-9, _
+func Mustaz09Underscore(s string) bool {
 	if not09azHyphenUnderscore.MatchString(s) {
 		return false
 	}

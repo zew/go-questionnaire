@@ -4,11 +4,13 @@ package tpl
 type StackT []string
 
 // Push stores a template name at the end
-func (s StackT) Push(pushee string) {
+func (sp *StackT) Push(pushee string) {
+	s := *sp
 	if s == nil {
 		s = []string{}
 	}
 	s = append(s, pushee)
+	*sp = s // without this , no assigment to sp
 }
 
 // Pop removes a template name from the end

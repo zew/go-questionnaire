@@ -3,13 +3,17 @@
 package bootstrap
 
 import (
+	"io/ioutil"
+	"log"
+	"path/filepath"
+
 	"github.com/zew/go-questionaire/cfg"
 	"github.com/zew/go-questionaire/lgn"
 	"github.com/zew/go-questionaire/tpl"
 	"github.com/zew/util"
 )
 
-// Loading configuration and logins according to flags or env vars.
+// Config loads configuration and logins according to flags or env vars.
 func Config() {
 
 	fl := util.NewFlags()
@@ -34,6 +38,19 @@ func Config() {
 	cfg.Load()
 	lgn.LgnsPath = (*fl)[1].Val
 	lgn.Load()
+
+	//
+	//
+	// Create an empty site.css if it does not exist
+	pth := filepath.Join(".", "templates", "site.css")
+	if ok, _ := util.FileExists(pth); !ok {
+		err := ioutil.WriteFile(pth, []byte{}, 0755)
+		if err != nil {
+			log.Fatalf("Could not create %v: %v", pth, err)
+		}
+		log.Printf("done creating file %v", pth)
+	}
+
 	tpls := []string{"main.html", "design.css", "site.css"}
 	tpl.Parse(tpls...)
 

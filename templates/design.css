@@ -97,8 +97,10 @@ textarea{
 }
 
 button{
-	padding: 4px 12px;
+	padding: 7px 24px;
+	padding-bottom: 7px;
 	margin: 4px 6px;
+	cursor: pointer;
 }
 
 
@@ -118,6 +120,9 @@ input:focus:invalid {
 
 .error{
 	color:#622;
+	line-height:1.6em;
+	max-width: 400px;
+	white-space: pre-line;
 }
 
 
@@ -252,11 +257,14 @@ input.ib-120 { 	width:120px;  }
 	padding: 0;
 	display: inline-block;
 	
-	white-space: nowrap;
+	white-space: nowrap;     /* nowrap stretches - overflowing the span  - newlines are ignored */
+	white-space: pre-line;   /* newlines can control the stretching */
+	/*  dont set any width - has all kinds of strange effects */
 
 	font-size: 12px;
 	line-height: 100%;
 	padding-right: 2px; 
+
 }
 
 

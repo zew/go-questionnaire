@@ -5,10 +5,16 @@
  	"bind_host": "0.0.0.0",
  	"bind_socket": 8081,
  	"bind_socket_fallback_http": 8082,
+ 	"bind_socket_tests": 8181,
  	"http_read_time_out": 5,
  	"http_write_time_out": 30,
  	"max_post_size": 2097152,
- 	"translations": {
+ 	"location": "Europe/Berlin",
+ 	"lang_codes": [
+ 		"de",
+ 		"en"
+ 	],
+ 	"translation_map": {
  		"app_label": {
  			"de": "Meine Beispiel Anwendung",
  			"en": "My Example App"

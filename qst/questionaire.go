@@ -9,19 +9,27 @@ import (
 	"bytes"
 	"fmt"
 	"log"
-	"strings"
+	"path/filepath"
 	"time"
 
-	"github.com/zew/go-questionaire/cfg"
+	"github.com/zew/go-questionaire/trl"
+
 	"github.com/zew/go-questionaire/ctr"
 )
 
 // Special subtype of inputT; used for radiogroup
 type radioT struct {
-	HAlign horizontalAlignment `json:"horizontal_align,omitempty"` // label and description left/center/right of input, default left, similar setting for radioT but not for group
-	Label  transMapT           `json:"label,omitempty"`
+	HAlign horizontalAlignment `json:"hori_align,omitempty"` // label and description left/center/right of input, default left, similar setting for radioT but not for group
+	Label  trl.S               `json:"label,omitempty"`
 	Val    string              `json:"val,omitempty"` // Val is allowed to be nil; it then gets initialized to 1...n by Validate(). 0 indicates 'no entry'.
 	// Notice the absence of Response;
+}
+
+func (i *inputT) AddRadio() *radioT {
+	rad := &radioT{}
+	i.Radios = append(i.Radios, rad)
+	ret := i.Radios[len(i.Radios)-1]
+	return ret
 }
 
 // Input represents a single form input element.
@@ -34,9 +42,9 @@ type inputT struct {
 
 	HAlignLabel   horizontalAlignment `json:"horizontal_align_label,omitempty"`   // description left/center/right of input, default left, similar setting for radioT but not for group
 	HAlignControl horizontalAlignment `json:"horizontal_align_control,omitempty"` // label       left/center/right of input, default left, similar setting for radioT but not for group
-	Label         transMapT           `json:"label,omitempty"`
-	Desc          transMapT           `json:"description,omitempty"`
-	Suffix        transMapT           `json:"suffix,omitempty"`
+	Label         trl.S               `json:"label,omitempty"`
+	Desc          trl.S               `json:"description,omitempty"`
+	Suffix        trl.S               `json:"suffix,omitempty"`
 
 	// How many column slots of the overall layout should the control occupy?
 	// The number adds up against group.Cols - determining newlines.
@@ -45,31 +53,32 @@ type inputT struct {
 	ColSpanLabel   int `json:"col_span_label,omitempty"`
 	ColSpanControl int `json:"col_span_control,omitempty"`
 
-	Radios []radioT `json:"radios,omitempty"` // This slice implements the radiogroup - and the senseless checkboxgroup
+	Radios []*radioT `json:"radios,omitempty"` // This slice implements the radiogroup - and the senseless checkboxgroup
 
-	Validator string    `json:"validator,omitempty"` // i.e. inRange20 - any string from validators
-	ErrMsg    transMapT `json:"err_msg,omitempty"`
+	Validator string `json:"validator,omitempty"` // i.e. inRange20 - any string from validators
+	ErrMsg    trl.S  `json:"err_msg,omitempty"`
 
-	// These are only useful a part of wave-data
-	Response      string  `json:"response,omitempty"`
+	Response      string  `json:"response,omitempty"`       // but also Value
 	ResponseFloat float64 `json:"response_float,omitempty"` // also for integers
 }
 
 // Returns an input filled in with globally enumerated label, decription etc.
-func newInput() inputT {
-	id := ctr.Increment()
+func newInputUnused() inputT {
+	cntr := ctr.Increment()
 	t := inputT{
-		Name:  fmt.Sprintf("input_%v", id),
+		Name:  fmt.Sprintf("input_%v", cntr),
 		Type:  "text",
-		Label: transMapT{"en": fmt.Sprintf("Label %v", id), "de": fmt.Sprintf("Titel %v", id)},
-		Desc:  transMapT{"en": "Description", "de": "Beschreibung"},
+		Label: trl.S{"en": fmt.Sprintf("Label %v", cntr), "de": fmt.Sprintf("Titel %v", cntr)},
+		Desc:  trl.S{"en": "Description", "de": "Beschreibung"},
 	}
 	return t
 }
 
+// renderLabelDescription wraps lbl+desc into a <span> of class 'go-quest-cell'.
+// A percent width is dynamically computed from colsLabel / numCols.
 // Argument numCols is the total number of cols per row.
 // It is used to compute the precise width in percent
-func renderLabelDescription(langCode string, hAlign horizontalAlignment, lbl, desc transMapT, css string, colsLabel, numCols int) string {
+func renderLabelDescription(langCode string, hAlign horizontalAlignment, lbl, desc trl.S, css string, colsLabel, numCols int) string {
 	ret := ""
 	if lbl == nil && desc == nil {
 		return ret
@@ -96,8 +105,17 @@ func (i inputT) HTML(langCode string, numCols int) string {
 	nm := i.Name
 
 	switch i.Type {
+	case "button":
+		lbl := fmt.Sprintf("<button type='submit' name='%v' value='%v' ><b>%v</b> %v</button>\n",
+			i.Name, i.Response, i.Label.TrSilent(langCode), i.Desc.TrSilent(langCode),
+		)
+		lbl = fmt.Sprintf("<span class='go-quest-cell-%v' style='%v'>%v</span>\n",
+			i.HAlignControl, colWidth(i.ColSpanControl, numCols), lbl,
+		)
+		return lbl
+
 	case "textblock":
-		lbl := renderLabelDescription(langCode, i.HAlignLabel, i.Label, i.Desc, "", (i.ColSpanLabel + i.ColSpanControl), numCols)
+		lbl := renderLabelDescription(langCode, i.HAlignLabel, i.Label, i.Desc, "", i.ColSpanLabel, numCols)
 		return lbl
 
 	case "radiogroup", "checkboxgroup":
@@ -145,26 +163,40 @@ func (i inputT) HTML(langCode string, numCols int) string {
 		// lbl = fmt.Sprintf("<label for='%v'>%v</label>\n", nm, lbl)
 		return lbl + ctrl
 
-	case "text", "checkbox":
+	case "text", "textarea", "checkbox":
 		ctrl := ""
 		val := i.Response
 
 		checked := ""
 		if i.Type == "checkbox" {
-			if val == valSet {
+			if val == ValSet {
 				checked = "checked=\"checked\""
 			}
-			val = valSet
+			val = ValSet
 		}
 
 		width := fmt.Sprintf("width: %vem;", int(float64(i.MaxChars)*1.05))
+		if i.Type == "checkbox" || i.Type == "radio" {
+			width = ""
+		}
 		maxChars := ""
 		if i.MaxChars > 0 {
 			maxChars = fmt.Sprintf(" MAXLENGTH='%v' ", i.MaxChars) // this is the right name of the attribute
 		}
 
-		ctrl += fmt.Sprintf("<input type='%v' name='%v' id='%v' title='%v %v' style='%v' %v value='%v' %v />\n",
-			i.Type, nm, nm, i.Label.TrSilent(langCode), i.Desc.TrSilent(langCode), width, maxChars, val, checked)
+		if i.Type == "textarea" {
+			colsRows := fmt.Sprintf(" cols='%v' rows='1' ", i.MaxChars+1)
+			if i.MaxChars > 80 {
+				colsRows = fmt.Sprintf(" cols='80' rows='%v' ", i.MaxChars/80+1)
+				width = fmt.Sprintf("width: %vem;", int(float64(80)*1.05))
+				width = "width: 98%;"
+			}
+			ctrl += fmt.Sprintf("<textarea name='%v' id='%v' title='%v %v' style='%v' %v %v>%v</textarea>\n",
+				nm, nm, i.Label.TrSilent(langCode), i.Desc.TrSilent(langCode), width, maxChars, colsRows, val)
+		} else {
+			ctrl += fmt.Sprintf("<input type='%v' name='%v' id='%v' title='%v %v' style='%v' %v value='%v' %v />\n",
+				i.Type, nm, nm, i.Label.TrSilent(langCode), i.Desc.TrSilent(langCode), width, maxChars, val, checked)
+		}
 
 		// The checkbox "empty catcher" must follow *after* the actual checkbox input,
 		// since http.Form.Get() fetches the first value.
@@ -172,6 +204,7 @@ func (i inputT) HTML(langCode string, numCols int) string {
 			ctrl += fmt.Sprintf("<input type='hidden' name='%v' id='%v_hidd' value='0' />\n", nm, nm)
 		}
 
+		// Append suffix and error message
 		ctrl += fmt.Sprintf("<span class='go-quest-label' >%v</span>\n", i.Suffix.TrSilent(langCode))
 		ctrl += fmt.Sprintf("<span class='go-quest-label' >%v</span>\n", i.ErrMsg.TrSilent(langCode))
 
@@ -194,8 +227,8 @@ func (i inputT) HTML(langCode string, numCols int) string {
 // A group is a layout unit with a configurable number of columns.
 type groupT struct {
 	// Name  string
-	Label transMapT `json:"label,omitempty"`
-	Desc  transMapT `json:"description,omitempty"`
+	Label trl.S `json:"label,omitempty"`
+	Desc  trl.S `json:"description,omitempty"`
 
 	Vertical bool `json:"vertical,omitempty"` // groups vertically, not horizontally
 
@@ -208,15 +241,24 @@ type groupT struct {
 	// Cols determines the 'slot' width for these above settings using colWidth(colsElement, colsTotal)
 	Cols int `json:"columns,omitempty"`
 
-	Inputs []inputT `json:"inputs,omitempty"`
+	Inputs []*inputT `json:"inputs,omitempty"`
 }
 
-// Rendering a group of inputs to HTML
+// AddInput creates a new input
+// and adds this input to the group's inputs
+func (gr *groupT) AddInput() *inputT {
+	i := &inputT{}
+	gr.Inputs = append(gr.Inputs, i)
+	ret := gr.Inputs[len(gr.Inputs)-1]
+	return ret
+}
+
+// HTML renders a group of inputs to HTML
 func (gr groupT) HTML(langCode string) string {
 
 	b := bytes.Buffer{}
 
-	b.WriteString("<div class='go-quest-group' >\n")
+	b.WriteString(fmt.Sprintf("<div class='go-quest-group' cols='%v'>\n", gr.Cols))
 
 	lbl := renderLabelDescription(langCode, HLeft, gr.Label, gr.Desc, "go-quest-group-header", gr.Cols, gr.Cols)
 
@@ -229,26 +271,31 @@ func (gr groupT) HTML(langCode string) string {
 
 		if gr.Cols > 0 {
 
-			if inp.ColSpanLabel > 0 {
-				cols += inp.ColSpanLabel // wider labels
-			} else {
-				// nothing specified
-				if inp.Label != nil || inp.Desc != nil {
-					// if a label is set, it occupies one column
+			if inp.Type != "button" { // button has label *inside of it*
+
+				if inp.ColSpanLabel > 1 {
+					cols += inp.ColSpanLabel // wider labels
+				} else {
+					// nothing specified
+					if inp.Label != nil || inp.Desc != nil {
+						// if a label is set, it occupies one column
+						cols++
+					}
+				}
+			}
+
+			if inp.Type != "textblock" { // textblock has no control part
+				if inp.ColSpanControl > 1 {
+					cols += inp.ColSpanControl // larger input controls
+				} else if len(inp.Radios) > 0 {
+					cols += len(inp.Radios) // radiogroups, if no ColSpan is set
+				} else {
+					// nothing specified => input control occupies one column
 					cols++
 				}
 			}
 
-			if inp.ColSpanControl > 0 {
-				cols += inp.ColSpanControl // larger input controls
-			} else if len(inp.Radios) > 0 {
-				cols += len(inp.Radios) // radiogroups, if no ColSpan is set
-			} else {
-				// nothing specified => input control occupies one column
-				cols++
-			}
-
-			// log.Printf("%12v %2v %2v", mem.Type, cols, cols%gr.Cols)  // so far
+			// log.Printf("%12v %2v %2v", inp.Type, cols, cols%gr.Cols) // so far
 
 			// end of row  - or end of group
 			if (cols+0)%gr.Cols == 0 || i == len(gr.Inputs)-1 {
@@ -264,29 +311,35 @@ func (gr groupT) HTML(langCode string) string {
 
 // Type page contains groups with inputs
 type pageT struct {
-	Section transMapT `json:"section,omitempty"` // several pages have a section headline
-	Label   transMapT `json:"label,omitempty"`
-	Desc    transMapT `json:"description,omitempty"`
+	Section trl.S `json:"section,omitempty"` // several pages have a section headline
+	Label   trl.S `json:"label,omitempty"`
+	Desc    trl.S `json:"description,omitempty"`
 
-	Groups []groupT `json:"groups,omitempty"`
+	Groups []*groupT `json:"groups,omitempty"`
 
 	Finished time.Time `json:"finished,omitempty"`
 }
 
-func newPage() pageT {
-	t := pageT{
-		Label: transMapT{"en": "Page Label", "de": fmt.Sprintf("Seitentitel_%v", ctr.Increment())},
-		Desc:  transMapT{"de": "", "en": ""},
-	}
-	return t
+// AddGroup creates a new group
+// and adds this group to the pages's groups
+func (p *pageT) AddGroup() *groupT {
+	g := &groupT{}
+	p.Groups = append(p.Groups, g)
+	ret := p.Groups[len(p.Groups)-1]
+	return ret
 }
 
 // QuestionaireT contains pages with groups with inputs
 type QuestionaireT struct {
-	UserID string `json:"user_id,omitempty"`
-	WaveID string `json:"wave_id,omitempty"`
+	UserID      string    `json:"user_id,omitempty"`
+	WaveID      WaveID_T  `json:"wave_id,omitempty"`
+	ClosingTime time.Time `json:"closing_time,omitempty"`
+	RemoteIP    string    `json:"remote_ip,omitempty"`
+	MD5         string    `json:"md_5,omitempty"`
 
-	Pages     []pageT           `json:"pages,omitempty"`
+	Pages []*pageT `json:"pages,omitempty"`
+
+	// LangCode and LangCodes are imposed from cfg.LangCodes via session."lang_code"
 	LangCodes map[string]string `json:"lang_codes,omitempty"` // all possible lang codes - i.e. en, de
 	LangCode  string            `json:"lang_code,omitempty"`  // default lang code - and current lang code - i.e. de
 
@@ -294,22 +347,41 @@ type QuestionaireT struct {
 	HasErrors bool `json:"has_errors,omitempty"` // If any response is faulty; set by ValidateReponseData
 }
 
-// LanguageChooser renders a HTML language chooser
-func (q *QuestionaireT) LanguageChooser() string {
-	s := []string{}
-	for key, lang := range q.LangCodes {
-		keyCap := strings.Title(key)
-		if q.LangCode == "en" {
-			// keyCap = key
-		}
-		if key == q.LangCode {
-			s = append(s, fmt.Sprintf("<b           title='%v'>%v</b>\n", lang, keyCap))
-		} else {
-			uri := cfg.Pref("/") + "?lang_code=" + key
-			s = append(s, fmt.Sprintf("<a href='%v' title='%v'>%v</a>\n", uri, lang, keyCap))
-		}
+// FilePath returns the file system saving location of the questionaire.
+// The waveID/userID fragment can optionally be submitted by an argument.
+func (q *QuestionaireT) FilePath(opt ...string) string {
+	if len(opt) > 0 {
+		return filepath.Join(".", "responses", opt[0]+".json")
 	}
-	return strings.Join(s, "  |  ")
+	return filepath.Join(".", "responses", q.WaveID.String(), q.UserID+".json")
+}
+
+// AddPage creates a new page
+// and adds this page to the questionaire's pages
+func (q *QuestionaireT) AddPage() *pageT {
+	cntr := ctr.Increment()
+	p := &pageT{
+		Label: trl.S{"en": fmt.Sprintf("PageLabel_%v", cntr), "de": fmt.Sprintf("Seitentitel_%v", cntr)},
+		Desc:  trl.S{"en": "", "de": ""},
+	}
+	q.Pages = append(q.Pages, p)
+	ret := q.Pages[len(q.Pages)-1]
+	return ret
+}
+
+// SetLangCode tries to change the questionaire langCode if supported by langCodes.
+func (q *QuestionaireT) SetLangCode(newCode string) error {
+	if newCode != q.LangCode {
+		oldCode := q.LangCode
+		q.LangCode = newCode
+		err := q.Validate()
+		if err != nil {
+			q.LangCode = oldCode
+			return err
+		}
+		// sess.PutString("lang_code", q.LangCode)
+	}
+	return nil
 }
 
 // CurrentPageHTML is a comfort shortcut to PageHTML
@@ -338,7 +410,9 @@ func (q *QuestionaireT) PageHTML(idx int) (string, error) {
 
 	if p.Section != nil {
 		b.WriteString(fmt.Sprintf("<span class='go-quest-page-section' >%v</span>", p.Section.Tr(q.LangCode)))
-		b.WriteString("<span class='go-quest-page-desc'> &nbsp; - &nbsp; </span>")
+		if p.Label.Tr(q.LangCode) != "" {
+			b.WriteString("<span class='go-quest-page-desc'> &nbsp; - &nbsp; </span>")
+		}
 	}
 
 	b.WriteString(fmt.Sprintf("<span class='go-quest-page-header' >%v</span>", p.Label.Tr(q.LangCode)))

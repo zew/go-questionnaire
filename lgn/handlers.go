@@ -2,6 +2,7 @@ package lgn
 
 import (
 	"fmt"
+	"html"
 	"html/template"
 	"log"
 	"net/http"
@@ -61,7 +62,18 @@ func ValidateAndLogin(w http.ResponseWriter, r *http.Request) error {
 		return nil // nothing to do
 	}
 
+	_, ok := r.PostForm["token"]
+	if ok {
+		err = ValidateFormToken(r.PostForm.Get("token"))
+		if err != nil {
+			return fmt.Errorf("Invalid request token: %v", err)
+		}
+	} else if !ok && r.Method == "POST" {
+		return fmt.Errorf("Missing request token")
+	}
+
 	u := r.PostForm.Get("username")
+	u = html.EscapeString(u)        // XSS prevention
 	p := r.PostForm.Get("password") // unencrypted
 	log.Printf("trying login1 '%v' '%v'  -  %v", u, p, r.URL)
 
@@ -106,10 +118,24 @@ func ChangePassword(w http.ResponseWriter, r *http.Request) (string, error) {
 		return "", nil // Nothing to do
 	}
 
+	{
+		_, ok := r.PostForm["token"]
+		if ok {
+			err = ValidateFormToken(r.PostForm.Get("token"))
+			if err != nil {
+				return "", fmt.Errorf("Invalid request token: %v", err)
+			}
+		} else if !ok && r.Method == "POST" {
+			return "", fmt.Errorf("Missing request token")
+		}
+	}
+
 	u := r.PostForm.Get("username")
 	o := r.PostForm.Get("oldpassword")
 	n := r.PostForm.Get("newpassword")
 	n2 := r.PostForm.Get("newpassword2")
+
+	u = html.EscapeString(u) // XSS prevention
 
 	if l.User != u {
 		return "", fmt.Errorf("Changing passwd for user %v requires login as user %v.", u, u)
@@ -183,10 +209,8 @@ func ChangePassword(w http.ResponseWriter, r *http.Request) (string, error) {
 				// SUCCESS
 				return "Password changed successfully.", nil
 
-			} else {
-				return "", fmt.Errorf("Neither init nor encrypted password did match for user %v", u)
 			}
-			return "", loginNotFound
+			return "", fmt.Errorf("Neither init nor encrypted password did match for user %v", u)
 		}
 	}
 	return "", fmt.Errorf("Old password incorrect (or username not found).")
@@ -198,13 +222,13 @@ func ChangePassword(w http.ResponseWriter, r *http.Request) (string, error) {
 // Be careful not to show the error to the end user.
 // On success, it creates a logged in user out of nothing.
 // The user gets assigned the wave_id as role.
-func LoginByHash(w http.ResponseWriter, r *http.Request) error {
+func LoginByHash(w http.ResponseWriter, r *http.Request) (bool, error) {
 
 	sess := sessx.New(w, r)
 
 	err := r.ParseForm()
 	if err != nil {
-		return err
+		return false, err
 	}
 
 	isSet := false // login values from GET *or* POST
@@ -220,8 +244,12 @@ func LoginByHash(w http.ResponseWriter, r *http.Request) error {
 		h = r.URL.Query().Get("h") // hash
 	}
 
+	u = html.EscapeString(u) // XSS prevention
+	waveID = html.EscapeString(waveID)
+	h = html.EscapeString(h)
+
 	if !isSet {
-		return nil
+		return false, nil
 	}
 
 	log.Printf("trying hash login: '%v' '%v' - %v", u, waveID, h)
@@ -230,7 +258,7 @@ func LoginByHash(w http.ResponseWriter, r *http.Request) error {
 	hExpected := Md5Str([]byte(checkStr))
 
 	if hExpected != h {
-		return fmt.Errorf("hash over check string unequal hash argument\n%v\n%v", hExpected, h)
+		return false, fmt.Errorf("hash over check string unequal hash argument\n%v\n%v", hExpected, h)
 	}
 
 	log.Printf("logging in as %v", u)
@@ -240,10 +268,10 @@ func LoginByHash(w http.ResponseWriter, r *http.Request) error {
 
 	err = sess.PutObject("login", l)
 	if err != nil {
-		return err
+		return false, err
 	}
 
-	return nil
+	return true, nil
 }
 
 // GenerateHashesH is a convenience func to lookup some hashes.
@@ -316,21 +344,24 @@ func LoginPrimitiveH(w http.ResponseWriter, r *http.Request) {
 	<form method="post" action="{{.SelfURL}}"  style="margin: 50px;"  >
 		{{if  (len .Cnt) gt 0 }} <p style='white-space: pre; color:#E22'>{{.Cnt}}</p>{{end}}
 		Login<br>
-		Username: <input name="username" value="{{.L.User}}"><br>
-		Password: <input name="password" type="password" /><br>
+					<input name="token"    type="hidden"   value="{{.Token}}" />
+		Username:	<input name="username" type="text"     value="{{.L.User}}"><br>
+		Password:	<input name="password" type="password" /><br>
 		<input type="submit" name="submitclassic" accesskey="l">
 	</form>
 </body>
 </html>
 `
 	type dataT struct {
-		Cnt     string
 		SelfURL string
+		Cnt     string
+		Token   string
 		L       *LoginT
 	}
 	data := dataT{
-		Cnt:     msg,
 		SelfURL: r.URL.Path,
+		Cnt:     msg,
+		Token:   FormToken(),
 		L:       l,
 	}
 
@@ -377,7 +408,8 @@ func ChangePasswordPrimitiveH(w http.ResponseWriter, r *http.Request) {
 	<form method="post" action="{{.SelfURL}}"  style="margin: 50px;"  >
 		{{if  (len .Cnt) gt 0 }} <p style='white-space: pre; color:#E22'>{{.Cnt}}</p>{{end}}
 		Change password<br>
-		Username: 		<input name="username" value="{{.L.User}}"><br>
+		                <input name="token"        type="hidden"   value="{{.Token}}" />
+		Username: 		<input name="username"     type="text"     value="{{.L.User}}"><br>
 		Old password: 	<input name="oldpassword"  type="password" value="" /><br>
 		New password: 	<input name="newpassword"  type="password" value="" /><br>
 		Repeat:			<input name="newpassword2" type="password" value="" /><br>
@@ -387,13 +419,15 @@ func ChangePasswordPrimitiveH(w http.ResponseWriter, r *http.Request) {
 </html>
 `
 	type dataT struct {
-		Cnt     string
 		SelfURL string
+		Cnt     string
+		Token   string
 		L       *LoginT
 	}
 	data := dataT{
-		Cnt:     msg,
 		SelfURL: r.URL.Path,
+		Cnt:     msg,
+		Token:   FormToken(),
 		L:       l,
 	}
 

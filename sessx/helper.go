@@ -4,7 +4,7 @@ package sessx
 // of the *request*, not in session.
 // First among the POST fields.
 // Not  among the URL "path" parameters.
-// Then among the URL GET parameters.
+// Then among the URL GET    parameters.
 //
 // It checks, whether any of the above had the param
 // key set to *empty* string.
@@ -33,4 +33,11 @@ func (sess *SessT) ReqParam(key string, defaultVal ...string) (string, bool) {
 
 	return p, false
 
+}
+
+// ReqURI is a template helper.
+// The return value contains app url prefix.
+func (sess *SessT) ReqURI() string {
+	uri := sess.r.URL.Path
+	return uri
 }

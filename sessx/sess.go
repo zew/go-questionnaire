@@ -40,7 +40,7 @@ func New(w http.ResponseWriter, r *http.Request) SessT {
 	return SessT{
 		w:       w,
 		r:       r,
-		Session: *sess,
+		Session: *sess, // I cannot see the problem with this linter msg here :(
 	}
 }
 
@@ -110,18 +110,16 @@ func (sess *SessT) EffectiveInt(key string, defaultVal ...int) (int, bool, error
 	if !ok {
 		if len(defaultVal) > 0 {
 			return defaultVal[0], false, nil
-		} else {
-			return 0, false, nil
 		}
+		return 0, false, nil
 	}
 
 	s := sess.EffectiveStr(key)
 	if s == "" {
 		if len(defaultVal) > 0 {
 			return defaultVal[0], true, nil
-		} else {
-			return 0, true, nil
 		}
+		return 0, true, nil
 	}
 
 	i, err := strconv.Atoi(s)
@@ -141,18 +139,16 @@ func (sess *SessT) EffectiveFloat(key string, defaultVal ...float64) (float64, b
 	if !ok {
 		if len(defaultVal) > 0 {
 			return defaultVal[0], false, nil
-		} else {
-			return 0.0, false, nil
 		}
+		return 0.0, false, nil
 	}
 
 	s := sess.EffectiveStr(key)
 	if s == "" {
 		if len(defaultVal) > 0 {
 			return defaultVal[0], true, nil
-		} else {
-			return 0.0, true, nil
 		}
+		return 0.0, true, nil
 	}
 
 	fl, err := strconv.ParseFloat(s, 64)

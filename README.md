@@ -1,4 +1,7 @@
-#  [![GoDoc](http://godoc.org/github.com/zew/go-questionaire?status.svg)](http://godoc.org/github.com/zew/go-questionaire) 
+ 
+ 
+[ ![GoDoc](http://godoc.org/github.com/zew/go-questionaire?status.svg)          ](https://godoc.org/github.com/zew/go-questionaire) [ ![Travis Build](https://travis-ci.org/zew/go-questionaire.svg?branch=master)  ](https://travis-ci.org/zew/go-questionaire) [ ![Report Card](https://goreportcard.com/badge/github.com/zew/go-questionaire) ](https://goreportcard.com/report/github.com/zew/go-questionaire) [ ![code-coverage](http://gocover.io/_badge/github.com/zew/go-questionaire) ](http://gocover.io/github.com/zew/go-questionaire) 
+
 
 # Go-Questionaire 
 
@@ -6,13 +9,30 @@ A http(s) webserver serving a questionaire.
 
 ## Status 
 
-Under development. Tests are missing.
+Under development.
+
+## Usage
+
+Install and setup [golang](https://golang.org/doc/install)
+
+    cd $HOME/go/src/github.com/zew
+    go get -u github.com/zew/go-questionaire
+    cd go-questionaire
+    mv config-example.json  config.json  # adapt to your purposes
+    mv logins-example.json  logins.json  # dito
+    touch ./templates/site.css           # put your site's styles here
+    go build
+    ./go-questionaire                    # under windows: go-questionaire.exe
+
+More info in [deploy on linux/unix](./static/doc/linux-instructions.md)
+
+
 
 ## Design principles
 
 
 * All content and all results are driven  
-by a __single JSON file__ .
+by a __single JSON file__.
 
 * No database, but JSON result files.
 
@@ -24,11 +44,10 @@ The Transferrer.
 * Client side JS validation is deliberately omitted;  
    [a would-be JS client lib](http://www.javascript-coder.com/html-form/form-validation.phtml)
 
+
 * Individual column width for any label or form element (`ColSpanLabel` and `ColSpanControl`)
 
-
-
-### Layout concept
+### Layout concept details
 
 The column width is implemented with inline block elements (CSS class `.go-quest-cell`). 
 The white space between inline block elements subtracts from the total width.
@@ -44,26 +63,17 @@ Using `<div style='display: table/table-row/table-cell'` does not support colspa
 
 ## Todo Ahead
 
-* Tests
+* Make the generators executable separately.  
+Prompt user for WaveID
 
-* JSON schema validator
+* Transferrer is incomplete
+
+* More tests - and with transferrer
 
 
-### Translations
 
-The translations are implemented twice.  
-The the strings are part of config.
-Merge package lng into package cfg?
+* Maybe JSON schema validator
 
-* Markdown files could be separated by language code?
-
-### Small template quirks
-
-Current language and language choosing is in the application object Q.
-
-The markdown pages have no such object => Language chooser is suppressed.
-
-We could move the language chooser into the session object - and only initialize it from the questionaire.
 
 
 
@@ -83,30 +93,37 @@ It features
 
   * Middleware for logging, access restrictions etc.
 
-  * Middleware blocking request handler panics from taking down the server
+  * Middleware catches request handler panics
 
   * Static file handlers
   
-  * Markdown file handler, rewriting image links, wrapping into site layout, and serving the global README
+  * JSON config file with reloadable app settings 
 
-  * Markdown files changeable without application restart
+  * JSON file with reloadable logins 
   
+  * Handlers for login, changing password
+
   * Layout template with jQuery from CDN cache; fallback to localhost 
-
-  * Configurable compilation of templates
-
-  * Dynamic subtemplate calls 
 
   * Templates having access to session and request
 
-  * JSON config file with reloadable app settings 
-
-  * JSON file with reloadable logins
-
-  * Shell script to control your go server under Linux
-
   * Multi language strings
 
+  * Stack of dynamic subtemplate calls 
+  
+  * Template pre-parsing configurable for development or production
+
+  * Markdown file handler, rewriting image links 
+  
+  * Wrapping into site layout, serving the global README
+
+  * Multi langue markdown files
+  
+  * Shell script to control application under Linux
+
+  * CSRF and XSS defence
+
+  
 
 
 

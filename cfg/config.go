@@ -13,11 +13,12 @@ import (
 	"os"
 	"path"
 	"sync"
+	"time"
 
 	"github.com/zew/util"
 
-	"github.com/zew/go-questionaire/lng"
 	"github.com/zew/go-questionaire/sessx"
+	"github.com/zew/go-questionaire/trl"
 )
 
 // ConfigT holds the application config
@@ -26,22 +27,29 @@ type ConfigT struct {
 
 	IsProduction bool `json:"is_production,omitempty"` // true => templates are not recompiled
 
-	AppName       string `json:"app_name,omitempty"`       // with case, i.e. Taxkit
-	UrlPathPrefix string `json:"urlpath_prefix,omitempty"` // lower case - no slashes, i.e. taxkit
-	AppMnemonic   string `json:"app_mnemonic,omitempty"`   // For differentiation of static dirs - when UrlPathPrefix is empty; imagine multiple instances
+	AppName       string `json:"app_name,omitempty"`       // with case, i.e. 'My App'
+	URLPathPrefix string `json:"urlpath_prefix,omitempty"` // lower case - no slashes, i.e. 'myapp'
+	AppMnemonic   string `json:"app_mnemonic,omitempty"`   // For differentiation of static dirs - when URLPathPrefix is empty; imagine multiple instances
 
 	BindHost               string `json:"bind_host,omitempty"`
 	BindSocket             int    `json:"bind_socket,omitempty"`
-	BindSocketFallbackHttp int    `json:"bind_socket_fallback_http,omitempty"`
-	Tls                    bool   `json:"tls,omitempty"`
-	Tls13                  bool   `json:"tls13,omitempty"`               // ultra safe - but excludes internet explorer 11
-	HttpReadTimeOut        int    `json:"http_read_time_out,omitempty"`  // for large requests
-	HttpWriteTimeOut       int    `json:"http_write_time_out,omitempty"` // for *sending* large files over slow networks, i.e. ula's videos, set to 30 or 60 secs
+	BindSocketFallbackHTTP int    `json:"bind_socket_fallback_http,omitempty"`
+	BindSocketTests        int    `json:"bind_socket_tests,omitempty"` // another port for running test server
+	TLS                    bool   `json:"tls,omitempty"`
+	TLS13                  bool   `json:"tls13,omitempty"`               // ultra safe - but excludes internet explorer 11
+	ReadTimeOut            int    `json:"http_read_time_out,omitempty"`  // for large requests
+	WriteTimeOut           int    `json:"http_write_time_out,omitempty"` // for *responding* large files over slow networks, i.e. videos, set to 30 or 60 secs
 	MaxPostSize            int64  `json:"max_post_size,omitempty"`       // request body size limit, against DOS attacks, limits file uploads
+
+	LocationName string         `json:"location,omitempty"` // i.e. "Europe/Berlin", see Go\lib\time\zoneinfo.zip
+	Loc          *time.Location `json:"-"`                  // Initialized during load
 
 	Css map[string]string `json:"css,omitempty"` // differentiate multiple instances by color and stuff - without duplicating entire css files
 
-	Trls lng.TrlsT `json:"translations,omitempty"` // multi language strings for the application
+	// available language codes for the application, first element is default
+	LangCodes []string `json:"lang_codes,omitempty"`
+	// multi language strings for the application
+	Mp trl.Map `json:"translation_map,omitempty"`
 }
 
 // CfgPath is obtained by ENV variable or command line flag in main package.
@@ -62,9 +70,22 @@ func Get() *ConfigT {
 	return cfgS
 }
 
+// SwitchToTestConfig is used to run systemtests on a different port without TLS.
+func SwitchToTestConfig() {
+	cfgS.BindSocket = cfgS.BindSocketTests
+	cfgS.TLS = false // certificate not valid for localhost
+	log.Printf("Testing config: Port %v, TLS %v", cfgS.BindSocket, cfgS.TLS)
+}
+
 // Load reads from a JSON file.
-// No method to ConfigT, no pointer receiver;
-// We could only *copy*:  *c = *newCfg
+// To avoid concurrent access problems:
+// No method to ConfigT, no pointer receiver.
+// We could *copy* at the end of method  *c = *newCfg,
+// but onerous.
+// Instead:
+// cfgS = &tempCfg
+//
+// Contains some validations.
 func Load() {
 	// c.Lock()
 	// defer c.Unlock()
@@ -94,6 +115,17 @@ func Load() {
 	if tempCfg.AppMnemonic == "" {
 		log.Fatal("Config underspecified; at least app_mnemonic should be set")
 	}
+	if len(tempCfg.LangCodes) < 1 {
+		log.Fatal("You must specify at least one language code such as 'en' or 'de'  in your configuration.")
+	}
+	trl.LangCodes = tempCfg.LangCodes // trl.LangCodes is a redundant copy of cfg.LangCodes - but keeps the packages separate
+
+	tempCfg.Loc, err = time.LoadLocation(tempCfg.LocationName)
+	if err != nil {
+		log.Fatalf("Your location name must be valid, i.e. 'Europe/Berlin', compare Go\\lib\\time\\zoneinfo.zip: %v", err)
+	}
+
+	//
 	cfgS = &tempCfg // replace pointer in one go - should be threadsafe
 	log.Printf("config loaded 1\n%s", util.IndentedDump(cfgS))
 }
@@ -153,7 +185,7 @@ func (c *ConfigT) Save(fn ...string) {
 }
 
 // Pref prefixes a URL path with an application dir prefix.
-// Any URL Path is prefixed with the UrlPathPrefix, if UrlPathPrefix is set.
+// Any URL Path is prefixed with the URLPathPrefix, if URLPathPrefix is set.
 // Prevents unnecessary slashes.
 // No trailing slash
 // Routes with trailing "/" such as "/path/"
@@ -167,14 +199,14 @@ func (c *ConfigT) Save(fn ...string) {
 // Notice the order - other way around would block "/path" with a redirect handler
 func Pref(pth ...string) string {
 
-	if cfgS.UrlPathPrefix != "" {
+	if cfgS.URLPathPrefix != "" {
 		if len(pth) > 0 {
-			return path.Join("/", cfgS.UrlPathPrefix, pth[0])
+			return path.Join("/", cfgS.URLPathPrefix, pth[0])
 		}
-		return path.Join("/", cfgS.UrlPathPrefix)
+		return path.Join("/", cfgS.URLPathPrefix)
 	}
 
-	// No UrlPathPrefix
+	// No URLPathPrefix
 	if len(pth) > 0 {
 		return path.Join("/", pth[0])
 	}
@@ -193,18 +225,21 @@ func Example() {
 	ex := &ConfigT{
 		IsProduction:           false,
 		AppName:                "My Example App",
-		UrlPathPrefix:          "exmpl",
+		URLPathPrefix:          "exmpl",
 		AppMnemonic:            "exmpl",
 		BindHost:               "0.0.0.0",
 		BindSocket:             8081,
-		BindSocketFallbackHttp: 8082,
-		Tls:              false,
-		Tls13:            false,
-		HttpReadTimeOut:  5,
-		HttpWriteTimeOut: 30,
-		MaxPostSize:      int64(2 << 20), // 2 MB
+		BindSocketFallbackHTTP: 8082,
+		BindSocketTests:        8181,
+		TLS:                    false,
+		TLS13:                  false,
+		ReadTimeOut:            5,
+		WriteTimeOut:           30,
+		MaxPostSize:            int64(2 << 20), // 2 MB
+		LocationName:           "Europe/Berlin",
 
-		Trls: lng.TrlsT{
+		LangCodes: []string{"de", "en"},
+		Mp: trl.Map{
 			"page": {
 				"en": "Page",
 				"de": "Seite",

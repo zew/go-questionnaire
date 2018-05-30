@@ -61,8 +61,15 @@
                         });                    
                     </script>
                 {{end}}
+                
+                <p style="font-size:16px;margin: 20px 0px; " >
+                    {{toHtml (.Q.WaveID.Label) }}
+                </p>
+
+                <input type="hidden" name="token" value="{{formToken}}" />
 
                 {{toHtml (.Q.CurrentPageHTML) }}
+
 
             </div><!-- /table-cell-1 --> 
         </div><!-- /t-row-1 --> 

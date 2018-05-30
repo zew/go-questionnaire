@@ -5,6 +5,8 @@ import (
 	"log"
 	"strconv"
 	"strings"
+
+	"github.com/zew/go-questionaire/trl"
 )
 
 type validatorT func(string, string) error
@@ -96,7 +98,7 @@ func (q *QuestionaireT) ValidateReponseData(pageNum int, langCode string) (last 
 								str := err.Error()
 								str = fmt.Sprintf("<span class='error'>&nbsp; %v</span>", str)
 								// log.Printf("inp error msg is now %v", str)
-								q.Pages[i1].Groups[i2].Inputs[i3].ErrMsg = transMapT{"de": str, "en": str} // TODO: multi-lingo here :(
+								q.Pages[i1].Groups[i2].Inputs[i3].ErrMsg = trl.S{"de": str, "en": str} // TODO: multi-lingo here :(
 							} else {
 								// Reset previous errors
 								q.Pages[i1].Groups[i2].Inputs[i3].ErrMsg = nil
@@ -118,6 +120,7 @@ func (q *QuestionaireT) ValidateReponseData(pageNum int, langCode string) (last 
 	return
 }
 
+// DumpErrors logs all ErrMsgs from the questionaire
 func (q *QuestionaireT) DumpErrors() {
 	for i1 := 0; i1 < len(q.Pages); i1++ {
 		for i2 := 0; i2 < len(q.Pages[i1].Groups); i2++ {

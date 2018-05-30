@@ -61,6 +61,10 @@ func (q *QuestionaireT) ProgressBar() string {
 		if sect != "" {
 			sect = fmt.Sprintf("<b>%v</b>", sect)
 			sect += vspacer
+			if idx == len(q.Pages)-1 {
+				// last element more to the right
+				leftOrCenter = "text-align: left; width: 98%; transform: translate(40%, 0px);"
+			}
 		} else if sect == "" {
 			leftOrCenter = "transform: translate(0, 75%);"
 		}

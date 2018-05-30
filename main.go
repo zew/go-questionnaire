@@ -9,13 +9,15 @@ import (
 	"log"
 	"math/rand"
 	"net/http"
+	"os"
 	"time"
 
 	"github.com/zew/go-questionaire/bootstrap"
 	"github.com/zew/go-questionaire/cfg"
+	"github.com/zew/go-questionaire/generators"
+	"github.com/zew/go-questionaire/handlers"
 	"github.com/zew/go-questionaire/lgn"
 	"github.com/zew/go-questionaire/muxwrap"
-	"github.com/zew/go-questionaire/qst"
 	"github.com/zew/go-questionaire/sessx"
 	"github.com/zew/go-questionaire/tpl"
 )
@@ -26,11 +28,17 @@ func main() {
 	log.SetFlags(log.Lshortfile | log.Ldate | log.Ltime)
 
 	bootstrap.Config()
+
+	if os.Getenv("GO_TEST_MODE") == "true" {
+		cfg.SwitchToTestConfig()
+		lgn.AddTestLogin()
+	}
+
 	cfg.Example()
 	lgn.Example()
 
 	//
-	qst.GenerateExample2()
+	generators.FMT()
 
 	//
 	//
@@ -73,10 +81,11 @@ func main() {
 	//
 	// Standard handlers
 	tpl.CreateAndRegisterHandlerForDocs(mux1)
-	mux1.HandleFunc("/", mainH)
-	mux1.HandleFunc(cfg.Pref("/"), mainH)
-	mux1.HandleFunc(cfg.PrefWTS("/"), mainH)
-	mux1.HandleFunc(cfg.Pref("/reload-from-file"), reloadH)
+	mux1.HandleFunc("/", handlers.MainH)
+	mux1.HandleFunc(cfg.Pref("/"), handlers.MainH)
+	mux1.HandleFunc(cfg.PrefWTS("/"), handlers.MainH)
+	mux1.HandleFunc(cfg.Pref("/reload-from-file"), handlers.ReloadH)
+	mux1.HandleFunc(cfg.Pref("/transferrer-endpoint"), handlers.TransferrerEndpointH)
 
 	//
 	// Session manager and session management.
@@ -101,16 +110,16 @@ func main() {
 	//
 	// Prepare web server launch
 	IpPort := fmt.Sprintf("%v:%v", cfg.Get().BindHost, cfg.Get().BindSocket)
-	log.Printf("starting http server at %v ... (Forward from %v)", IpPort, cfg.Get().BindSocketFallbackHttp)
+	log.Printf("starting http server at %v ... (Forward from %v)", IpPort, cfg.Get().BindSocketFallbackHTTP)
 
 	//
-	if cfg.Get().Tls {
+	if cfg.Get().TLS {
 		fallbackSrv := &http.Server{
-			ReadTimeout: time.Duration(cfg.Get().HttpReadTimeOut) * time.Second,
+			ReadTimeout: time.Duration(cfg.Get().ReadTimeOut) * time.Second,
 			// ReadHeaderTimeout:  120 * time.Second,  // individual request can control body timeout
-			WriteTimeout: time.Duration(cfg.Get().HttpWriteTimeOut) * time.Second,
+			WriteTimeout: time.Duration(cfg.Get().WriteTimeOut) * time.Second,
 			IdleTimeout:  120 * time.Second,
-			Addr:         fmt.Sprintf(":%v", cfg.Get().BindSocketFallbackHttp),
+			Addr:         fmt.Sprintf(":%v", cfg.Get().BindSocketFallbackHTTP),
 			Handler: http.HandlerFunc(func(w http.ResponseWriter, req *http.Request) {
 				w.Header().Set("Connection", "close")
 				url := "https://" + req.Host + req.URL.String()
@@ -139,7 +148,7 @@ func main() {
 				tls.TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,
 			},
 		}
-		if !cfg.Get().Tls13 {
+		if !cfg.Get().TLS13 {
 			// Best disabled, as they don't provide Forward Secrecy,
 			// but might be necessary for some clients, i.e. Internet Explorer 11
 			tlsCfg.CipherSuites = append(tlsCfg.CipherSuites, tls.TLS_RSA_WITH_AES_256_GCM_SHA384)
@@ -148,8 +157,8 @@ func main() {
 
 		// err = http.ListenAndServeTLS(IpPort, "server.pem", "server.key", mux3)
 		srv := &http.Server{
-			ReadTimeout:  time.Duration(cfg.Get().HttpReadTimeOut) * time.Second,
-			WriteTimeout: time.Duration(cfg.Get().HttpWriteTimeOut) * time.Second,
+			ReadTimeout:  time.Duration(cfg.Get().ReadTimeOut) * time.Second,
+			WriteTimeout: time.Duration(cfg.Get().WriteTimeOut) * time.Second,
 			IdleTimeout:  120 * time.Second,
 			Addr:         IpPort,
 			TLSConfig:    tlsCfg,

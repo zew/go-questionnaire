@@ -18,6 +18,7 @@ import (
 	"github.com/zew/go-questionaire/sessx"
 )
 
+// CreateAndRegisterHandlerForDocs handles markdown rendering.
 // We want the markdown files editable locally with locally working links and images.
 // We also want the markdown files served by the application.
 // And we want - github style - a README.md served from the app root.
@@ -30,7 +31,12 @@ func CreateAndRegisterHandlerForDocs(mux1 *http.ServeMux) {
 
 		// Relay any non html and md request to static file handler
 		ext := strings.ToLower(path.Ext(r.URL.Path))
-		if ext != ".html" && ext != ".md" && ext != "" {
+		if ext != ".html" &&
+			ext != ".md" &&
+			!strings.HasSuffix(strings.ToLower(r.URL.Path), "readme") &&
+			!strings.HasSuffix(strings.ToLower(r.URL.Path), "/doc/") &&
+			!strings.HasSuffix(strings.ToLower(r.URL.Path), "doc") &&
+			true {
 			StaticDownloadH(w, r)
 			return
 		}
@@ -65,11 +71,15 @@ func CreateAndRegisterHandlerForDocs(mux1 *http.ServeMux) {
 		// Whereas the URL path end with .html,
 		// the file path ends with *.md
 		fpth := filepath.Join("static", fragm, pth)
-		if strings.HasSuffix(strings.ToLower(fpth), "readme.html") || strings.HasSuffix(strings.ToLower(fpth), "readme") {
-			fpth = filepath.Join(".", pth) // Special file path: Readme is read directly from the app root
+
+		// Special file path: Readme is read directly from the app root
+		if strings.HasSuffix(strings.ToLower(fpth), "readme.html") {
+			fpth = filepath.Join(".", pth)
 		}
+
+		// Should always be the case ...
 		if strings.HasSuffix(fpth, ".html") {
-			fpth = strings.Replace(fpth, ".html", ".md", -1) // should always be the case
+			fpth = strings.Replace(fpth, ".html", ".md", -1)
 		}
 
 		{
@@ -77,10 +87,20 @@ func CreateAndRegisterHandlerForDocs(mux1 *http.ServeMux) {
 			log.Printf(s)
 			// w.Write([]byte(s))
 		}
-		bts, err := ioutil.ReadFile(fpth)
+
+		langCode := cfg.Get().LangCodes[0]
+		sess := sessx.New(w, r)
+		if ok := sess.EffectiveIsSet("lang_code"); ok {
+			langCode = sess.EffectiveStr("lang_code")
+		}
+
+		fpthLangage := filepath.Join(filepath.Dir(fpth), langCode, filepath.Base(fpth))
+
+		bts, err := ioutil.ReadFile(fpthLangage)
 		if err != nil {
 			if os.IsNotExist(err) {
-				bts, err = ioutil.ReadFile(strings.TrimSuffix(fpth, ".md") + ".MD")
+				// bts, err = ioutil.ReadFile(strings.TrimSuffix(fpth, ".md") + ".MD")
+				bts, err = ioutil.ReadFile(fpth)
 			}
 		}
 		if err != nil {
@@ -103,8 +123,6 @@ func CreateAndRegisterHandlerForDocs(mux1 *http.ServeMux) {
 		output := string(blackfriday.MarkdownCommon(bts))
 		output += "<br>\n<br>\n<br>\n<p style='font-size: 75%;'>\nRendered by russross/blackfriday</p>\n" // Inconspicuous rendering marker
 
-		sess := sessx.New(w, r)
-
 		tplBundle := Get(w, r, "main.html")
 		ts := &StackT{"markdown.html"}
 		err = tplBundle.Execute(
@@ -125,7 +143,7 @@ func CreateAndRegisterHandlerForDocs(mux1 *http.ServeMux) {
 
 	}
 
-	log.Printf("registering docs handler %-30v -%v- %T \n", cfg.Pref(fragm), argFunc, argFunc)
+	log.Printf("registering docs handler %-30v 'funcVar' %T \n", cfg.Pref(fragm), argFunc)
 	mux1.HandleFunc(cfg.Pref(fragm), argFunc)
 	mux1.HandleFunc(cfg.PrefWTS(fragm), argFunc) // make sure /taxkit/doc/...  also serves argFunc, see config.Pref()
 

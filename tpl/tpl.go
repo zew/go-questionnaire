@@ -15,7 +15,6 @@ import (
 	"log"
 	"net/http"
 	"path/filepath"
-	"reflect"
 	"strings"
 
 	"github.com/zew/go-questionaire/cfg"
@@ -24,10 +23,11 @@ import (
 )
 
 var staticTplFuncs = template.FuncMap{
-	"toHtml": func(arg string) template.HTML { return template.HTML(arg) },
-	"prefix": cfg.Pref,
-	"cfg":    func() *cfg.ConfigT { return cfg.Get() },
-	"addint": func(i1, i2 int) int { return i1 + i2 },
+	"formToken": func() template.HTMLAttr { return template.HTMLAttr(lgn.FormToken()) },
+	"toHtml":    func(arg string) template.HTML { return template.HTML(arg) },
+	"prefix":    cfg.Pref,
+	"cfg":       func() *cfg.ConfigT { return cfg.Get() },
+	"addint":    func(i1, i2 int) int { return i1 + i2 },
 	"executeTemplate": func(tplBundle *template.Template, name string, data interface{}) (ret template.HTML, err error) {
 		buf := bytes.NewBuffer([]byte{})
 		err = tplBundle.ExecuteTemplate(buf, name, data)
@@ -38,19 +38,20 @@ var staticTplFuncs = template.FuncMap{
 		ret = template.HTML(buf.String())
 		return
 	},
-	// checks field or method exists in a struct
-	// stackoverflow.com/questions/44675087/
-	// We need this, to call the Q.LanuageChooser in the main.html
-	"isset": func(data interface{}, name string) bool {
-		v := reflect.ValueOf(data)
-		if v.Kind() == reflect.Ptr {
-			v = v.Elem()
-		}
-		if v.Kind() != reflect.Struct {
-			return false
-		}
-		return v.FieldByName(name).IsValid()
-	},
+	/*
+		// checks whether field or method exists in a struct
+		// stackoverflow.com/questions/44675087/
+		"isset": func(data interface{}, name string) bool {
+			v := reflect.ValueOf(data)
+			if v.Kind() == reflect.Ptr {
+				v = v.Elem()
+			}
+			if v.Kind() != reflect.Struct {
+				return false
+			}
+			return v.FieldByName(name).IsValid()
+		},
+	*/
 }
 
 // StaticFuncMap returns the static funcs every template should have.
@@ -152,7 +153,7 @@ func Get(w http.ResponseWriter, r *http.Request, bundle string) *template.Templa
 	if !cfg.Get().IsProduction {
 		bt := &bundleT{}
 		bt.Parse(bundle)
-		parsedBundles[bundle] = bt
+		parsedBundles[bundle] = bt // this causes: "fatal error: concurrent map writes" in development mode
 	}
 
 	tpl := parsedBundles[bundle].Template

@@ -1,0 +1,50 @@
+language: go
+
+go:
+  - 1.9.3
+  - 1.10.2
+  # - tip
+
+os:
+  - linux
+  # - osx
+  
+services:
+  # - mysql
+
+sudo: false
+
+addons:
+  apt:
+    packages:
+    - wget
+
+  
+env:
+  matrix:
+    - DATASOURCE1=travis SQL_PW="" 
+
+before_install:
+  # - go get -v github.com/golang/lint/golint
+
+
+install:
+  # Add Godeps dependencies to GOPATH and PATH
+  # - export GOPATH="${TRAVIS_BUILD_DIR}/Godeps/_workspace:$GOPATH"
+  # - export PATH="${TRAVIS_BUILD_DIR}/Godeps/_workspace/bin:$PATH"
+  # - go get -t ./...  
+  # - go get -u github.com/zew/go-questionaire
+  - go get -t ./...  
+  - mv logins-example.json  logins.json
+  - mv config-example.json  config.json
+  - touch ./templates/site.css
+
+before_script:
+  # - mysql -e 'create database exceldb_test;'
+  # - go vet ./...
+
+script:
+  - go test -v ./...
+
+notifications:
+  email: false

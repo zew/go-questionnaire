@@ -23,7 +23,7 @@ type handlerWrapper struct {
 	h http.Handler
 }
 
-// MuxWrap returns a new http handlerfunc.
+// NewHandlerMiddleware returns a new http handlerfunc.
 func NewHandlerMiddleware(innerHandler http.Handler) http.Handler {
 	m := &handlerWrapper{
 		h: innerHandler,
@@ -84,12 +84,14 @@ func (m *handlerWrapper) ServeHTTP(w http.ResponseWriter, rNew *http.Request) {
 
 }
 
+type ctxKey string
+
 //
 // Alternative way to create the same middle ware would be:
 func (m *handlerWrapper) Use(next http.Handler, anotherParam int) http.Handler {
 	// Possible stuff outside the closure
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		ctx := context.WithValue(context.Background(), "anotherParam", anotherParam)
+		ctx := context.WithValue(context.Background(), ctxKey("anotherParam"), anotherParam)
 		next.ServeHTTP(w, r.WithContext(ctx))
 	})
 }

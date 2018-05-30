@@ -26,13 +26,14 @@ import (
 	"golang.org/x/crypto/md4"
 
 	"github.com/zew/go-questionaire/cfg"
+	"github.com/zew/go-questionaire/qst"
 	"github.com/zew/util"
 )
 
-var foundButWrongPassword = fmt.Errorf("User found but wrong password")
-var loginNotFound = fmt.Errorf("Login not found")
+var errFoundButWrongPassword = fmt.Errorf("User found but wrong password")
+var errLoginNotFound = fmt.Errorf("Login not found")
 
-// Type LoginT must be exported, *not* because we need to pass a type to sessx.GetObject
+// LoginT must be exported, *not* because we need to pass a type to sessx.GetObject
 // 		l := lgn.LoginT{}
 // 		ok, err := sess.EffectiveObj("login", &l)
 // but because we need to declare variables of this type
@@ -44,7 +45,7 @@ var loginNotFound = fmt.Errorf("Login not found")
 type LoginT struct {
 	User  string            `json:"user"`
 	Email string            `json:"email"`
-	Group string            `json:"empty"` // Derived from emai domain - or LDAP org
+	Group string            `json:"-"`     // Derived from email domain - or LDAP org
 	Roles map[string]string `json:"roles"` // i.e. admin: true , gender: female, height: 188
 
 	PassInitial    string `json:"pass_initial"`       // For first login - unencrypted - grants restricted access to change password only
@@ -61,7 +62,7 @@ func (l *LoginT) HasRole(role string) bool {
 // ComputeMD5Password is deliberately not a method
 func ComputeMD5Password(u, p, salt string) string {
 	hashBase := u + p + salt
-	pfx := cfg.Get().UrlPathPrefix
+	pfx := cfg.Get().URLPathPrefix
 	if pfx == "taxkit" || pfx == "eta" {
 		hashBase = p + salt
 	}
@@ -74,7 +75,7 @@ func (l *LoginT) SetInitPW(salt string) {
 		l.PassInitial = GeneratePassword(8)
 		log.Printf("\tNew pw is %v", l.PassInitial)
 		hashBase := l.User + l.PassInitial + salt
-		pfx := cfg.Get().UrlPathPrefix
+		pfx := cfg.Get().URLPathPrefix
 		if pfx == "taxkit" || pfx == "eta" {
 			hashBase = l.PassInitial + salt
 		}
@@ -83,7 +84,7 @@ func (l *LoginT) SetInitPW(salt string) {
 }
 
 type loginsT struct {
-	sync.Mutex
+	// sync.Mutex
 	Salt   string   `json:"salt"`
 	Logins []LoginT `json:"logins"`
 }
@@ -106,6 +107,20 @@ func Get() *loginsT {
 	// logins.Lock()
 	// defer logins.Unlock()
 	return lgns
+}
+
+// AddTestLogin adds a systemtest login.
+// This func is only called by test funcs.
+func AddTestLogin() {
+	waveID := qst.NewWaveID().String()
+	systest := LoginT{
+		User:           "systemtest",
+		Email:          "delete this user in production environment",
+		Roles:          map[string]string{waveID: waveID},
+		PassInitial:    "systemtest",
+		IsInitPassword: true,
+	}
+	lgns.Logins = append(lgns.Logins, systest)
 }
 
 // Load reads from a JSON file.
@@ -161,10 +176,14 @@ func Load() {
 	lgns = &tmpLogins // replace pointer in one go - should be threadsafe
 }
 
+var saveMutex sync.Mutex
+
 // Save stores logins to a JSON file
 func (l *loginsT) Save(fn ...string) error {
-	l.Lock()
-	defer l.Unlock()
+	// l.Lock()
+	// defer l.Unlock()
+	saveMutex.Lock()
+	defer saveMutex.Unlock()
 
 	firstColLeftMostPrefix := " "
 	byts, err := json.MarshalIndent(l, firstColLeftMostPrefix, "\t")
@@ -192,6 +211,7 @@ func (l *loginsT) Save(fn ...string) error {
 		if err != nil {
 			return err
 		}
+		log.Printf("Keep logins backup at %v", pthNew)
 	}
 
 	err = ioutil.WriteFile(pthOld, byts, 0644)
@@ -199,14 +219,14 @@ func (l *loginsT) Save(fn ...string) error {
 		return err
 	}
 
-	log.Printf("Saved logins file to %v", pthNew)
+	log.Printf("Saved logins file to %v", pthOld)
 	return nil
 }
 
 // FindAndCheck takes a username and password
 // and scans for matching users.
 // If optPw is given, a check for matching password is also made
-func (l loginsT) FindAndCheck(u string, optPw ...string) (LoginT, error) {
+func (l *loginsT) FindAndCheck(u string, optPw ...string) (LoginT, error) {
 
 	u = strings.ToLower(u)
 	u = strings.TrimSpace(u)
@@ -233,20 +253,19 @@ func (l loginsT) FindAndCheck(u string, optPw ...string) (LoginT, error) {
 						return l.Logins[idx], nil
 					}
 				}
-				return LoginT{}, foundButWrongPassword
+				return LoginT{}, errFoundButWrongPassword
 
-			} else {
-				return l.Logins[idx], nil
 			}
+			return l.Logins[idx], nil
 		}
 	}
-	return LoginT{}, loginNotFound
+	return LoginT{}, errLoginNotFound
 }
 
 // IsFound checks the error argument, if it says
 // user found - but wrong password.
 func IsFound(err error) bool {
-	if err == foundButWrongPassword {
+	if err == errFoundButWrongPassword {
 		return true
 	}
 	return false
@@ -383,12 +402,12 @@ func GeneratePassword(length int) string {
 			}
 		}
 	}
-	panic("something wrong with password generation 2")
+	// panic("something wrong with password generation 2")  // golint says "unreachable"
 }
 
 // Md5Str computes the md5 hash of a byte slice.
 func Md5Str(buf []byte) string {
-	pfx := cfg.Get().UrlPathPrefix
+	pfx := cfg.Get().URLPathPrefix
 	if pfx == "taxkit" || pfx == "eta" {
 		// It is md4 (FOUR) by mistake -
 		// but since the application was already deplyoed, we cannot correct
@@ -396,12 +415,11 @@ func Md5Str(buf []byte) string {
 		hasher.Write(buf)
 		hash := hasher.Sum(nil)
 		return hex.EncodeToString(hash)
-	} else {
-		hasher := md5.New()
-		hasher.Write(buf)
-		hash := hasher.Sum(nil)
-		return hex.EncodeToString(hash)
 	}
+	hasher := md5.New()
+	hasher.Write(buf)
+	hash := hasher.Sum(nil)
+	return hex.EncodeToString(hash)
 }
 
 // Example writes a single login to file, to be extended or adapted
@@ -409,11 +427,11 @@ func Example() {
 	ex := &loginsT{
 		Salt: "your salt here",
 		Logins: []LoginT{
-			LoginT{
+			{
 				User:           "myUser",
 				Email:          "myUser@example.com",
 				Roles:          map[string]string{"admin": "yes"},
-				PassInitial:    "Keep emtpy - have it set during startup - then call /logins-save",
+				PassInitial:    "Keep empty - have it set during startup - then call /logins-save",
 				IsInitPassword: true,
 			},
 		},

@@ -328,7 +328,7 @@ type pageT struct {
 
 	Groups []*groupT `json:"groups,omitempty"`
 
-	Finished time.Time `json:"finished,omitempty"`
+	Finished time.Time `json:"finished,omitempty"` // truncated to second
 }
 
 // AddGroup creates a new group
@@ -344,7 +344,7 @@ func (p *pageT) AddGroup() *groupT {
 type QuestionaireT struct {
 	UserID      string    `json:"user_id,omitempty"`
 	WaveID      WaveID_T  `json:"wave_id,omitempty"`
-	ClosingTime time.Time `json:"closing_time,omitempty"`
+	ClosingTime time.Time `json:"closing_time,omitempty"` // truncated to second
 	RemoteIP    string    `json:"remote_ip,omitempty"`
 	MD5         string    `json:"md_5,omitempty"`
 

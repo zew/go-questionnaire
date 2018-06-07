@@ -26,7 +26,7 @@ func TransferrerEndpointH(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	if !isLoggedIn {
-		helper(w, r, nil, "Your are not logged in.")
+		helper(w, r, nil, "You are are not logged in.")
 		return
 	}
 	if !l.HasRole("admin") {

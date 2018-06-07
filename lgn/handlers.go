@@ -79,6 +79,7 @@ func ValidateAndLogin(w http.ResponseWriter, r *http.Request) error {
 
 	l, err := Get().FindAndCheck(u, p)
 	if err != nil {
+		time.Sleep(200 * time.Millisecond) // Brute force prevention
 		return err
 	}
 

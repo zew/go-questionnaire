@@ -18,6 +18,7 @@ import (
 
 	"github.com/zew/go-questionaire/bootstrap"
 	"github.com/zew/go-questionaire/cfg"
+	"github.com/zew/go-questionaire/lgn"
 	"github.com/zew/go-questionaire/qst"
 	"github.com/zew/util"
 )
@@ -67,6 +68,7 @@ func main() {
 		vals := url.Values{}
 		vals.Set("username", user)
 		vals.Set("password", pass)
+		vals.Set("token", lgn.FormToken())
 		req, err := http.NewRequest("POST", urlReq, bytes.NewBufferString(vals.Encode())) // <-- URL-encoded payload
 		if err != nil {
 			log.Printf("error creating request for %v: %v", urlReq, err)
@@ -93,10 +95,13 @@ func main() {
 		}
 
 		respBytes, _ := ioutil.ReadAll(resp.Body)
-		if strings.Contains(string(respBytes), "logged in as "+user) {
-			log.Printf("Response must contain 'logged in as %v' \n\n%v", user, string(respBytes))
+		if !strings.Contains(string(respBytes), "Logged in as "+user) {
+			log.Printf("Response must contain 'Logged in as %v' \n\n%v", user, string(respBytes))
 			return
 		}
+
+		// log.Printf("\n\n%v", string(respBytes))
+		// return
 
 	}
 

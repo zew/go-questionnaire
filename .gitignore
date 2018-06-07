@@ -15,6 +15,7 @@ setenv*.bat
 *.json
 !config-example.json
 !logins-example.json
+!generators/*.json
 coverage.html
 tmp/*
 tmp*

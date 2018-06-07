@@ -1,108 +1,21 @@
-package generators
+package fmt
 
 import (
 	"fmt"
 	"log"
-	"time"
 
-	"github.com/zew/go-questionaire/lgn"
 	"github.com/zew/go-questionaire/qst"
 	"github.com/zew/go-questionaire/trl"
 )
 
-func nextWaveID() string {
-	t := time.Now()
-	if t.Day() > 20 {
-		t = t.AddDate(0, 1, 0)
-	}
-	return t.Format("2006-01")
-}
-
-func nextQ() string {
-	t := time.Now()
-	m := t.Month() // 1 - january
-	y := t.Year()
-	qNow := int(m/3) + 1
-	qNext := qNow + 1
-	if qNext > 4 {
-		qNext = 1
-		y++
-	}
-	return fmt.Sprintf("Q%v %v", qNext, y)
-}
-
-func nextY() string {
-	t := time.Now()
-	y := t.Year()
-	y++
-	return fmt.Sprintf("%v", y)
-}
-
-func labelsGoodBad() []trl.S {
-
-	tm := []trl.S{
-		{
-			"de": "gut",
-			"en": "good",
-		},
-		{
-			"de": "normal",
-			"en": "normal",
-		},
-		{
-			"de": "schlecht",
-			"en": "bad",
-		},
-		{
-			"de": "keine<br>Angabe",
-			"en": "no answer",
-		},
-	}
-
-	return tm
-
-}
-
-func labelsImproveDeteriorate() []trl.S {
-
-	tm := []trl.S{
-		{
-			"de": "verbessern",
-			"en": "improve",
-		},
-		{
-			"de": "nicht verändern",
-			"en": "not change",
-		},
-		{
-			"de": "verschlechtern",
-			"en": "deteriorate",
-		},
-		{
-			"de": "keine<br>Angabe",
-			"en": "no answer",
-		},
-	}
-
-	return tm
-
-}
-
-// FMT creates a JSON file for a financial markets survey
-func FMT() *qst.QuestionaireT {
+// Create creates a JSON file for a financial markets survey
+func Create() *qst.QuestionaireT {
 
 	quest := qst.QuestionaireT{}
 	quest.WaveID = qst.NewWaveID()
 
-	// This should be put into a separate, admin protected http handler
-	for i := 99 * 1000; i > 99*1000-10; i-- {
-		checkStr := fmt.Sprintf("u=%v&wave_id=%v&h=%v", i, quest.WaveID, lgn.Get().Salt)
-		hsh := lgn.Md5Str([]byte(checkStr))
-		log.Printf("%8v - %8v - %v", i, quest.WaveID, hsh)
-	}
-
 	quest.LangCodes = map[string]string{"de": "Deutsch", "en": "English"}
-	quest.LangCode = "de"
+	quest.LangCode = "de" // default language
 
 	// Page 1
 	{
@@ -412,14 +325,6 @@ func FMT() *qst.QuestionaireT {
 	err := quest.Validate()
 	if err != nil {
 		log.Fatalf("Error validating questionaire: %v", err)
-	}
-	err = quest.Save("questionaire-example.json")
-	if err != nil {
-		log.Fatalf("Error saving questionaire-example.json: %v", err)
-	}
-	err = quest.Save("questionaire.json")
-	if err != nil {
-		log.Fatalf("Error saving questionaire.json: %v", err)
 	}
 
 	return &quest

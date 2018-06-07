@@ -83,8 +83,7 @@ Using `<div style='display: table/table-row/table-cell'` does not support colspa
 
 ## Todo Ahead
 
-* Make the generators executable separately.  
-Prompt user for SurveyID, WaveID
+* Prompt user for SurveyID, WaveID
 
 
 

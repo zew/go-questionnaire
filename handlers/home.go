@@ -145,7 +145,7 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 	if !isLoggedIn {
 		log.Printf("Login by hash error 3: %v", "not logged in")
 		s := cfg.Get().Mp["login_by_hash_failed"].All()
-		s += "Your are not logged in."
+		s += "You are not logged in."
 		helper(w, r, nil, s)
 		return
 	}
@@ -249,7 +249,7 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 	//
 	// Put request values into questionaire
 	if q.Pages[prevPage].Finished.IsZero() {
-		q.Pages[prevPage].Finished = time.Now()
+		q.Pages[prevPage].Finished = time.Now().Truncate(time.Second)
 	}
 	for i1 := 0; i1 < len(q.Pages[prevPage].Groups); i1++ {
 		for i2 := range q.Pages[prevPage].Groups[i1].Inputs {
@@ -272,7 +272,7 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 	}
 	if ok := sess.EffectiveIsSet("finished"); ok {
 		if sess.EffectiveStr("finished") == qst.ValSet {
-			q.ClosingTime = time.Now()
+			q.ClosingTime = time.Now().Truncate(time.Second)
 		}
 	}
 

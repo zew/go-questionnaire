@@ -1,0 +1,49 @@
+{
+ 	"wave_id": {
+ 		"Year": 0,
+ 		"Month": 0,
+ 		"Deadline": "0001-01-01T00:00:00Z"
+ 	},
+ 	"closing_time": "0001-01-01T00:00:00Z",
+ 	"md_5": "d45028ec7230213287dbaf9120f347c4",
+ 	"pages": [
+ 		{
+ 			"label": {
+ 				"de": "Seitentitel_6",
+ 				"en": "PageLabel_6"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z"
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "Seitentitel_7",
+ 				"en": "PageLabel_7"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z"
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "Seitentitel_8",
+ 				"en": "PageLabel_8"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z"
+ 		}
+ 	],
+ 	"lang_codes": {
+ 		"de": "Deutsch",
+ 		"en": "English"
+ 	},
+ 	"lang_code": "de"
+ }

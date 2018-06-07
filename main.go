@@ -38,9 +38,6 @@ func main() {
 	lgn.Example()
 
 	//
-	generators.FMT()
-
-	//
 	//
 	// Http server
 	mux1 := http.NewServeMux() // base router
@@ -77,6 +74,7 @@ func main() {
 	mux1.HandleFunc(cfg.Pref("/generate-password"), lgn.GeneratePasswordH)
 	mux1.HandleFunc(cfg.Pref("/generate-hashes"), lgn.GenerateHashesH)
 	mux1.HandleFunc(cfg.Pref("/templates-reload"), tpl.ParseH)
+	mux1.HandleFunc(cfg.Pref("/generate-questionaire-templates"), func(w http.ResponseWriter, r *http.Request) { generators.Run() })
 
 	//
 	// Standard handlers

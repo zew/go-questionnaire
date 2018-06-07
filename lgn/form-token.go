@@ -12,11 +12,11 @@ import (
 	"time"
 )
 
-var tokenSalt = GeneratePassword(22) // we could renew this every x hours
+var tokenSaltNotWorking = GeneratePassword(22) // not interoperational between multiple instances of go-questionaire, transferrer, generator
 
 func tok(hourOffset int) string {
 	hasher := md5.New()
-	io.WriteString(hasher, tokenSalt)
+	io.WriteString(hasher, lgns.Salt)
 	t := time.Now()
 	if hourOffset != 0 {
 		t.Add(time.Duration(hourOffset) * time.Hour)

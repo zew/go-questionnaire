@@ -21,7 +21,6 @@ import (
 	"github.com/zew/go-questionaire/bootstrap"
 	"github.com/zew/go-questionaire/cfg"
 	"github.com/zew/go-questionaire/ctr"
-	"github.com/zew/go-questionaire/generators"
 	"github.com/zew/go-questionaire/handlers"
 	"github.com/zew/go-questionaire/lgn"
 	"github.com/zew/go-questionaire/muxwrap"
@@ -58,9 +57,6 @@ func StartServer(t *testing.T, doChDirUp bool) {
 	os.Setenv("GO_TEST_MODE", "true")
 	defer os.Setenv("GO_TEST_MODE", "false")
 	bootstrap.Config()
-
-	//
-	generators.FMT()
 
 	//
 	// Start the server
@@ -149,8 +145,8 @@ func SimulateLoad(t *testing.T) {
 		}
 
 		respBytes, _ := ioutil.ReadAll(resp.Body)
-		if strings.Contains(string(respBytes), "logged in as systemtest") {
-			t.Fatalf("Response must contain 'logged in as systemtest' \n\n%v", string(respBytes))
+		if !strings.Contains(string(respBytes), "Logged in as systemtest") {
+			t.Fatalf("Response must contain 'Logged in as systemtest' \n\n%v", string(respBytes))
 		}
 
 	}
@@ -225,6 +221,8 @@ func loadQuest(t *testing.T, urlMain string, sessCook *http.Cookie) {
 	}
 	q.WaveID = qst.NewWaveID()
 	q.UserID = "systemtest"
+	q.RemoteIP = "127.0.0.1:12345"
+	q.CurrPage = len(q.Pages) - 1
 	err = q.Validate()
 	if err != nil {
 		t.Fatalf("Questionaire validation caused error: %v", err)
@@ -260,7 +258,7 @@ func fillInPage(t *testing.T, q *qst.QuestionaireT, idxPage int, urlMain string,
 				q.Pages[i1].Groups[i2].Inputs[i3].Response = ctr.GetLastStr()
 			}
 		}
-		q.Pages[i1].Finished = time.Now()
+		q.Pages[i1].Finished = time.Now().Truncate(time.Second)
 	}
 	t.Logf("POST requesting %v?%v", urlMain, vals.Encode())
 	resp, err := util.Request("POST", urlMain, vals, []*http.Cookie{sessCook})

@@ -13,6 +13,7 @@ import (
 	"net/http"
 	"net/url"
 	"os"
+	"path/filepath"
 	"strings"
 	"testing"
 	"time"
@@ -210,5 +211,63 @@ func SimulateLoad(t *testing.T) {
 		}
 
 	}
+	loadQuest(t, urlMain, sessCook)
+
+}
+
+func loadQuest(t *testing.T, urlMain string, sessCook *http.Cookie) {
+
+	var q = &qst.QuestionaireT{}
+	var err error
+	q, err = qst.Load("questionaire.json") // new from template
+	if err != nil {
+		t.Fatalf("Loading questionaire from file caused error: %v", err)
+	}
+	q.WaveID = qst.NewWaveID()
+	q.UserID = "systemtest"
+	err = q.Validate()
+	if err != nil {
+		t.Fatalf("Questionaire validation caused error: %v", err)
+	}
+
+	t.Logf("Questionaire loaded from file; %v pages", len(q.Pages))
+
+	for idx := range q.Pages {
+		fillInPage(t, q, idx, urlMain, sessCook)
+	}
+	q.Save(q.FilePath(filepath.Join(q.WaveID.String(), "systemtest_src")))
+}
+
+func fillInPage(t *testing.T, q *qst.QuestionaireT, idxPage int, urlMain string, sessCook *http.Cookie) {
+
+	ctr.Reset()
+	waveID := qst.NewWaveID().String()
+
+	vals := url.Values{}
+	for i1, p := range q.Pages {
+		if i1 != idxPage {
+			continue
+		}
+		vals.Set("wave_id", waveID)
+		vals.Set("token", lgn.FormToken())
+		vals.Set("submitBtn", "next")
+		for i2, grp := range p.Groups {
+			for i3, inp := range grp.Inputs {
+				if inp.IsLayout() {
+					continue
+				}
+				vals.Set(inp.Name, ctr.IncrementStr())
+				q.Pages[i1].Groups[i2].Inputs[i3].Response = ctr.GetLastStr()
+			}
+		}
+		q.Pages[i1].Finished = time.Now()
+	}
+	t.Logf("POST requesting %v?%v", urlMain, vals.Encode())
+	resp, err := util.Request("POST", urlMain, vals, []*http.Cookie{sessCook})
+	if err != nil {
+		t.Errorf("error requesting %v: %v", urlMain, err)
+	}
+	_ = resp
+	// respStr := string(resp)
 
 }

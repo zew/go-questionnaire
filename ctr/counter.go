@@ -33,7 +33,12 @@ func Increment() int32 {
 
 // GetLast returns the most recent (current) counter
 func GetLast() int32 {
-	return cntr.increment()
+	return cntr.getLast()
+}
+
+// GetLastStr returns the most recent (current) counter
+func GetLastStr() string {
+	return fmt.Sprintf("%v", cntr.getLast())
 }
 
 // IncrementStr returns the next counter as string

@@ -98,6 +98,17 @@ func renderLabelDescription(langCode string, hAlign horizontalAlignment, lbl, de
 	return ret
 }
 
+// IsLayout returns whether the input type is merely ornamental
+func (i inputT) IsLayout() bool {
+	if i.Type == "textblock" {
+		return true
+	}
+	if i.Type == "button" {
+		return true
+	}
+	return false
+}
+
 // Rendering one input to HTML
 // func (i inputT) HTML(langCode string, namePrefix string) string {
 func (i inputT) HTML(langCode string, numCols int) string {

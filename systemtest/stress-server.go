@@ -124,6 +124,7 @@ func SimulateLoad(t *testing.T) {
 		vals := url.Values{}
 		vals.Set("username", "systemtest")
 		vals.Set("password", "systemtest")
+		vals.Set("token", lgn.FormToken())
 		req, err := http.NewRequest("POST", urlReq, bytes.NewBufferString(vals.Encode())) // <-- URL-encoded payload
 		if err != nil {
 			t.Errorf("error creating request for %v: %v", urlReq, err)

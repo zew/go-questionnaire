@@ -114,9 +114,12 @@ func Get() *loginsT {
 func AddTestLogin() {
 	waveID := qst.NewWaveID().String()
 	systest := LoginT{
-		User:           "systemtest",
-		Email:          "delete this user in production environment",
-		Roles:          map[string]string{waveID: waveID},
+		User:  "systemtest",
+		Email: "delete this user in production environment",
+		Roles: map[string]string{
+			"survey_id": "fmt",
+			"wave_id":   waveID,
+		},
 		PassInitial:    "systemtest",
 		IsInitPassword: true,
 	}

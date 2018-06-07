@@ -14,16 +14,18 @@ import (
 	"time"
 )
 
-var questPath = "."
-
-// Load loads a questionaire from a JSON file.
-func Load(fn string) (*QuestionaireT, error) {
+// Load1 loads a questionaire from a JSON file.
+func Load1(fn string) (*QuestionaireT, error) {
 
 	q := QuestionaireT{}
 
+	if !strings.HasSuffix(fn, ".json") {
+		fn += ".json"
+	}
+
 	bts, err := ioutil.ReadFile(fn)
 	if err != nil {
-		log.Printf("Could not read file %v : %v", fn, err)
+		log.Printf("Could not read file: %v", err)
 		return &q, err
 	}
 
@@ -43,8 +45,8 @@ func Load(fn string) (*QuestionaireT, error) {
 	return &q, nil
 }
 
-// Save a questionaire to JSON
-func (q *QuestionaireT) Save(fn ...string) error {
+// Save1 a questionaire to JSON
+func (q *QuestionaireT) Save1(fn string) error {
 
 	q.MD5 = "md5dummy"
 
@@ -59,15 +61,15 @@ func (q *QuestionaireT) Save(fn ...string) error {
 	bts = bytes.Replace(bts, []byte(q.MD5), []byte(hsh), 1) // replace once to save memory
 	q.MD5 = hsh
 
-	saveDir := path.Dir(questPath)
+	saveDir := path.Dir(fn)
 	err = os.Chmod(saveDir, 0755)
 	if err != nil {
 		return err
 	}
 
-	questFile := path.Base(questPath)
-	if len(fn) > 0 {
-		questFile = fn[0]
+	questFile := path.Base(fn)
+	if !strings.HasSuffix(questFile, ".json") {
+		questFile += ".json"
 	}
 
 	pthOld := path.Join(saveDir, questFile)

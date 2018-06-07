@@ -10,6 +10,7 @@ import (
 	"fmt"
 	"log"
 	"path/filepath"
+	"strings"
 	"time"
 
 	"github.com/zew/go-questionaire/trl"
@@ -342,8 +343,8 @@ func (p *pageT) AddGroup() *groupT {
 
 // QuestionaireT contains pages with groups with inputs
 type QuestionaireT struct {
-	UserID      string    `json:"user_id,omitempty"`
 	WaveID      WaveID_T  `json:"wave_id,omitempty"`
+	UserID      string    `json:"user_id,omitempty"`
 	ClosingTime time.Time `json:"closing_time,omitempty"` // truncated to second
 	RemoteIP    string    `json:"remote_ip,omitempty"`
 	MD5         string    `json:"md_5,omitempty"`
@@ -358,13 +359,29 @@ type QuestionaireT struct {
 	HasErrors bool `json:"has_errors,omitempty"` // If any response is faulty; set by ValidateReponseData
 }
 
-// FilePath returns the file system saving location of the questionaire.
+// BasePath gives the 'root' for loading and saving questionaire JSON files.
+func BasePath() string {
+	return filepath.Join(".", "responses")
+}
+
+// FilePath1 returns the file system saving location of the questionaire.
 // The waveID/userID fragment can optionally be submitted by an argument.
-func (q *QuestionaireT) FilePath(opt ...string) string {
-	if len(opt) > 0 {
-		return filepath.Join(".", "responses", opt[0]+".json")
+func (q *QuestionaireT) FilePath1(survey_Wave_UserID ...string) string {
+	pth := ""
+	if len(survey_Wave_UserID) > 0 {
+		pth = filepath.Join(BasePath(), survey_Wave_UserID[0])
+	} else {
+		pth = filepath.Join(BasePath(), q.WaveID.SurveyID, q.WaveID.String(), q.UserID)
 	}
-	return filepath.Join(".", "responses", q.WaveID.String(), q.UserID+".json")
+
+	if strings.HasSuffix(pth, ".json.json") {
+		pth = strings.TrimSuffix(pth, ".json")
+	}
+	if !strings.HasSuffix(pth, ".json") {
+		pth += ".json"
+	}
+
+	return pth
 }
 
 // AddPage creates a new page

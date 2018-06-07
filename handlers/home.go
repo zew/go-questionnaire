@@ -9,7 +9,6 @@ import (
 	"net/http"
 	"os"
 	"path/filepath"
-	"strings"
 	"time"
 
 	"github.com/zew/go-questionaire/cfg"
@@ -31,9 +30,11 @@ type tplDataExtT struct {
 // First from session.
 // Then from file of previous session.
 // Finally from template.
-func loadQuestionaire(w http.ResponseWriter, r *http.Request, userWaveID, userID string) (*qst.QuestionaireT, error) {
+func loadQuestionaire(w http.ResponseWriter, r *http.Request, userSurveyID, userWaveID, userID string) (*qst.QuestionaireT, error) {
 
 	sess := sessx.New(w, r)
+
+	log.Printf("Deriving from the login: survey_id %v, wave_id %v, user_id: %v", userSurveyID, userWaveID, userID)
 
 	// from session
 	var q = &qst.QuestionaireT{}
@@ -48,14 +49,12 @@ func loadQuestionaire(w http.ResponseWriter, r *http.Request, userWaveID, userID
 	}
 
 	// from file
-	pth := q.FilePath(filepath.Join(userWaveID, userID))
-	if strings.HasSuffix(pth, ".json.json") {
-		pth = strings.TrimSuffix(pth, ".json")
-	}
-	q, err = qst.Load(pth) // previous session
+	pth := q.FilePath1(filepath.Join(userSurveyID, userWaveID, userID))
+	log.Printf("Deriving path: %v", pth)
+	q, err = qst.Load1(pth) // previous session
 	if err != nil {
 		log.Printf("No previous file %v found. Loading new questionaire from file.", pth)
-		q, err = qst.Load("questionaire.json") // new from template
+		q, err = qst.Load1(q.FilePath1(userSurveyID)) // new from template
 	}
 	if err != nil {
 		err = errors.Wrap(err, "Loading questionaire from file caused error")
@@ -67,6 +66,10 @@ func loadQuestionaire(w http.ResponseWriter, r *http.Request, userWaveID, userID
 		return q, err
 	}
 
+	if q.WaveID.SurveyID != userSurveyID {
+		err = fmt.Errorf("Logged in for survey %v - but template is for %v", userSurveyID, q.WaveID.SurveyID)
+		return q, err
+	}
 	if q.WaveID.String() != userWaveID {
 		err = fmt.Errorf("Logged in for wave %v - but template is for %v", userWaveID, q.WaveID.String())
 		return q, err
@@ -80,6 +83,7 @@ func loadQuestionaire(w http.ResponseWriter, r *http.Request, userWaveID, userID
 // ReloadH removes the existing questioniare from the session,
 // allowing to start anew
 func ReloadH(w http.ResponseWriter, r *http.Request) {
+
 	sess := sessx.New(w, r)
 
 	var q = &qst.QuestionaireT{}
@@ -90,7 +94,7 @@ func ReloadH(w http.ResponseWriter, r *http.Request) {
 	}
 
 	if ok {
-		err := os.Remove(q.FilePath())
+		err := os.Remove(q.FilePath1())
 		if err != nil {
 			helper(w, r, err, "Error deleting questionaire file")
 			return
@@ -150,10 +154,14 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	userSurveyID := ""
 	userWaveID := ""
-	for _, role := range l.Roles {
-		if role != "admin" {
-			userWaveID = role
+	for role, val := range l.Roles {
+		if role == "survey_id" {
+			userSurveyID = val
+		}
+		if role == "wave_id" {
+			userWaveID = val
 		}
 	}
 
@@ -169,7 +177,7 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	q, err := loadQuestionaire(w, r, userWaveID, l.User)
+	q, err := loadQuestionaire(w, r, userSurveyID, userWaveID, l.User)
 	if err != nil {
 		helper(w, r, err)
 		return
@@ -287,7 +295,7 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 
 	//
 	// Save questionaire to file
-	pth := q.FilePath()
+	pth := q.FilePath1()
 	err = os.MkdirAll(filepath.Dir(pth), 0755)
 	if err != nil {
 		s := fmt.Sprintf("Could not create path %v", filepath.Dir(pth))
@@ -295,7 +303,7 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	err = q.Save(pth)
+	err = q.Save1(pth)
 	if err != nil {
 		helper(w, r, err, "Putting questionaire into session caused error")
 		return

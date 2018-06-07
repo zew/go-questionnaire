@@ -23,9 +23,8 @@ func Run() {
 
 		q := fnc()
 
-		fn := filepath.Join(".", "generators", key+".json")
-
-		err := q.Save(fn)
+		fn := filepath.Join(qst.BasePath(), key+".json")
+		err := q.Save1(fn)
 		if err != nil {
 			log.Fatalf("Error saving %v: %v", fn, err)
 		}

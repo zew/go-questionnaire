@@ -15,7 +15,9 @@ setenv*.bat
 *.json
 !config-example.json
 !logins-example.json
-!generators/*.json
+# exclude everything under responses - but include direct children *.json
+responses/**
+!responses/*.json
 coverage.html
 tmp/*
 tmp*

@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"html"
 	"html/template"
+	"io"
 	"log"
 	"net/http"
 	"time"
@@ -234,28 +235,31 @@ func LoginByHash(w http.ResponseWriter, r *http.Request) (bool, error) {
 
 	isSet := false // login values from GET *or* POST
 
-	u, waveID, h := "", "", ""
+	u, surveyID, waveID, h := "", "", "", ""
 	if _, isSet = r.PostForm["u"]; isSet {
 		u = r.PostForm.Get("u")
+		surveyID = r.PostForm.Get("survey_id")
 		waveID = r.PostForm.Get("wave_id")
 		h = r.PostForm.Get("h") // hash
 	} else if _, isSet = r.URL.Query()["u"]; isSet {
 		u = r.URL.Query().Get("u")
+		surveyID = r.URL.Query().Get("survey_id")
 		waveID = r.URL.Query().Get("wave_id")
 		h = r.URL.Query().Get("h") // hash
 	}
-
-	u = html.EscapeString(u) // XSS prevention
-	waveID = html.EscapeString(waveID)
-	h = html.EscapeString(h)
 
 	if !isSet {
 		return false, nil
 	}
 
-	log.Printf("trying hash login: '%v' '%v' - %v", u, waveID, h)
+	u = html.EscapeString(u) // XSS prevention
+	surveyID = html.EscapeString(surveyID)
+	waveID = html.EscapeString(waveID)
+	h = html.EscapeString(h)
 
-	checkStr := fmt.Sprintf("%v-%v-%v", u, waveID, lgns.Salt)
+	log.Printf("trying hash login: '%v' '%v' '%v' - %v", u, surveyID, waveID, h)
+
+	checkStr := fmt.Sprintf("%v-%v-%v-%v", u, surveyID, waveID, lgns.Salt)
 	hExpected := Md5Str([]byte(checkStr))
 
 	if hExpected != h {
@@ -265,7 +269,10 @@ func LoginByHash(w http.ResponseWriter, r *http.Request) (bool, error) {
 	log.Printf("logging in as %v", u)
 	l := &LoginT{}
 	l.User = u
-	l.Roles = map[string]string{waveID: waveID}
+	l.Roles = map[string]string{
+		"survey_id": surveyID,
+		"wave_id":   waveID,
+	}
 
 	err = sess.PutObject("login", l)
 	if err != nil {
@@ -282,11 +289,17 @@ func GenerateHashesH(w http.ResponseWriter, r *http.Request) {
 
 	_, loggedIn, err := LoggedInCheck(w, r, "admin")
 	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
+		io.WriteString(w, err.Error())
 		return
 	}
 	if !loggedIn {
-		http.Error(w, "login required for this function", http.StatusInternalServerError)
+		io.WriteString(w, "login required for this function")
+		return
+	}
+
+	surveyID := r.URL.Query().Get("survey_id")
+	if surveyID == "" {
+		io.WriteString(w, "survey_id must be set as URL param")
 		return
 	}
 
@@ -300,9 +313,9 @@ func GenerateHashesH(w http.ResponseWriter, r *http.Request) {
 	}
 
 	for i := 99 * 1000; i > 99*1000-10; i-- {
-		checkStr := fmt.Sprintf("%v-%v-%v", i, waveID, lgns.Salt)
+		checkStr := fmt.Sprintf("%v-%v-%v-%v", i, surveyID, waveID, lgns.Salt)
 		hsh := Md5Str([]byte(checkStr))
-		url := fmt.Sprintf("%v?u=%v&wave_id=%v&h=%v", cfg.Pref(), i, waveID, hsh)
+		url := fmt.Sprintf("%v?u=%v&survey_id=%v&wave_id=%v&h=%v", cfg.Pref(), i, surveyID, waveID, hsh)
 		a := fmt.Sprintf("<a href='%v'>%v<a><br>", url, url)
 		w.Write([]byte(a))
 	}

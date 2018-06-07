@@ -34,12 +34,17 @@ func TransferrerEndpointH(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	surveyID, ok := sess.ReqParam("survey_id")
+	if !ok {
+		helper(w, r, nil, "You need to specify a survey_id parameter.")
+		return
+	}
 	waveID, ok := sess.ReqParam("wave_id")
 	if !ok {
 		helper(w, r, nil, "You need to specify a wave_id parameter.")
 		return
 	}
-	pth := filepath.Join(".", "responses", waveID)
+	pth := filepath.Join(qst.BasePath(), surveyID, waveID)
 	dir, err := util.Directory(pth)
 	if err != nil {
 		helper(w, r, err, "Your wave_id value pointed to a non existing directory.")
@@ -58,9 +63,9 @@ func TransferrerEndpointH(w http.ResponseWriter, r *http.Request) {
 		if info.Mode().IsRegular() {
 			log.Printf("Name: %v, Size: %v", info.Name(), info.Size())
 		}
-		pth := filepath.Join(".", "responses", waveID, info.Name())
+		pth := filepath.Join(qst.BasePath(), surveyID, waveID, info.Name())
 		// var q = &qst.QuestionaireT{}
-		q, err := qst.Load(pth)
+		q, err := qst.Load1(pth)
 		if err != nil {
 			helper(w, r, err, fmt.Sprintf("iter %3v: No file %v found.", i, pth))
 		}

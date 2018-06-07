@@ -29,7 +29,7 @@ const (
 	pass       = "pb165205"
 )
 
-var downloadDir = filepath.Join(".", "responses", "downloaded")
+var downloadDir = filepath.Join(qst.BasePath(), "downloaded")
 
 func main() {
 
@@ -87,6 +87,11 @@ func main() {
 				sessCook = v
 			}
 		}
+		respBytes, _ := ioutil.ReadAll(resp.Body)
+		mustHave := fmt.Sprintf("Logged in as %v", user)
+		if !strings.Contains(string(respBytes), mustHave) {
+			log.Fatalf("Login response must contain '%v'\n\n%v", mustHave, string(respBytes))
+		}
 
 		log.Printf("Cookie is %+v \ngleaned from %v", sessCook, req.URL)
 		if sessCook == nil {
@@ -94,7 +99,6 @@ func main() {
 			return
 		}
 
-		respBytes, _ := ioutil.ReadAll(resp.Body)
 		if !strings.Contains(string(respBytes), "Logged in as "+user) {
 			log.Printf("Response must contain 'Logged in as %v' \n\n%v", user, string(respBytes))
 			return
@@ -114,9 +118,11 @@ func main() {
 		log.Printf("==================")
 		urlReq := urlMain
 
+		surveyID := "fmt"
 		waveID := qst.NewWaveID().String()
 
 		vals := url.Values{}
+		vals.Set("survey_id", surveyID)
 		vals.Set("wave_id", waveID)
 		log.Printf("POST requesting %v?%v", urlReq, vals.Encode())
 		resp, err := util.Request("POST", urlReq, vals, []*http.Cookie{sessCook})
@@ -125,9 +131,10 @@ func main() {
 			return
 		}
 
-		err = os.MkdirAll(filepath.Join(downloadDir, waveID), 0755)
+		dir := filepath.Join(downloadDir, surveyID, waveID)
+		err = os.MkdirAll(dir, 0755)
 		if err != nil {
-			log.Printf("Could not create path 2 %v", filepath.Join(downloadDir, waveID))
+			log.Printf("Could not create path 2 %v", dir)
 			return
 		}
 
@@ -142,21 +149,17 @@ func main() {
 
 		for i, q := range qs {
 
-			pth := filepath.Join(downloadDir, waveID, q.UserID)
-			if !strings.HasSuffix(pth, ".json") {
-				pth += ".json"
-			}
-
 			md5Want := q.MD5
 
-			err := q.Save(pth)
+			pth2 := filepath.Join(dir, q.UserID)
+			err := q.Save1(pth2)
 			if err != nil {
-				log.Printf("%3v: Error saving %v: %v", i, pth, err)
+				log.Printf("%3v: Error saving %v: %v", i, pth2, err)
 				return
 			}
 
 			if q.MD5 != md5Want {
-				log.Printf("%3v: MD5 does not match: %v\nwnt %v\ngot %v", i, pth, md5Want, q.MD5)
+				log.Printf("%3v: MD5 does not match: %v\nwnt %v\ngot %v", i, pth2, md5Want, q.MD5)
 				return
 			}
 		}

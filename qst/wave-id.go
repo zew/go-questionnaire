@@ -9,10 +9,12 @@ import (
 // WaveID_T stores the interval components of a questionaire wave.
 // For quarterly intervals, it needs to be extended
 type WaveID_T struct {
-	Year  int
-	Month time.Month // 1-based, int
+	SurveyID string `json:"survey_id,omitempty"` // The type identifier, i.e. "fmt" or "cep"
+	// The wave year and month
+	Year  int        `json:"year,omitempty"`
+	Month time.Month `json:"month,omitempty"` // 1-based, int
 
-	Deadline time.Time
+	Deadline time.Time `json:"deadline,omitempty"` // No more responses accepted
 }
 
 // NewWaveID returns wave ID based on current time
@@ -25,7 +27,7 @@ func NewWaveID() WaveID_T {
 	w.Year = t.Year()
 	w.Month = t.Month()
 
-	w.Deadline = time.Date(w.Year, w.Month, 28, 23, 59, 59, 0, cfg.Get().Loc)
+	w.Deadline = time.Date(w.Year, w.Month, 28, 23, 59, 59, 0, cfg.Get().Loc) // This is arbitrary
 	return w
 }
 

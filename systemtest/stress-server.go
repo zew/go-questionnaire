@@ -145,8 +145,9 @@ func SimulateLoad(t *testing.T) {
 		}
 
 		respBytes, _ := ioutil.ReadAll(resp.Body)
-		if !strings.Contains(string(respBytes), "Logged in as systemtest") {
-			t.Fatalf("Response must contain 'Logged in as systemtest' \n\n%v", string(respBytes))
+		mustHave := fmt.Sprintf("Logged in as %v", "systemtest")
+		if !strings.Contains(string(respBytes), mustHave) {
+			t.Fatalf("Response must contain '%v' \n\n%v", mustHave, string(respBytes))
 		}
 
 	}
@@ -214,8 +215,11 @@ func SimulateLoad(t *testing.T) {
 func loadQuest(t *testing.T, urlMain string, sessCook *http.Cookie) {
 
 	var q = &qst.QuestionaireT{}
+	q.WaveID = qst.NewWaveID()
+	q.WaveID.SurveyID = "fmt"
+
 	var err error
-	q, err = qst.Load("questionaire.json") // new from template
+	q, err = qst.Load1(q.FilePath1("fmt.json")) // new from template
 	if err != nil {
 		t.Fatalf("Loading questionaire from file caused error: %v", err)
 	}
@@ -233,7 +237,7 @@ func loadQuest(t *testing.T, urlMain string, sessCook *http.Cookie) {
 	for idx := range q.Pages {
 		fillInPage(t, q, idx, urlMain, sessCook)
 	}
-	q.Save(q.FilePath(filepath.Join(q.WaveID.String(), "systemtest_src")))
+	q.Save1(q.FilePath1(filepath.Join(q.WaveID.SurveyID, q.WaveID.String(), "systemtest_src")))
 }
 
 func fillInPage(t *testing.T, q *qst.QuestionaireT, idxPage int, urlMain string, sessCook *http.Cookie) {

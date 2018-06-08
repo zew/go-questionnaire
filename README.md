@@ -5,7 +5,7 @@
 
 # Go-Questionaire 
 
-A http(s) webserver serving a questionaire.
+A http(s) webserver serving questionaires.
 
 ## Status 
 
@@ -31,20 +31,20 @@ More info in [deploy on linux/unix](./static/doc/linux-instructions.md)
 
 ## Semantics
 
-* Package `generators` contains programs for creating a questionaire.  
-The  questionaire is encoded as JSON file and serves as template for the survey.
+* Package `generators` contains programs for creating various questionaires.  
+Questionaires are encoded as JSON file serving as template data entry.
 
-* Multiple independent surveys are separated by URL path.
+* Different questionaires are separated by URL path.
 
-* Pulling in of the results is accomplished by the independent package `transferrer`. 
+* Survey results are pulled in by the independent package `transferrer`. 
 
 ## Data thrift
 
-* Surveys contain no personal data - only one user id, the questions and the answers.
+* Surveys contain no personal data - only a user ID, the questions and the answers.
 
-* The transferrer pulls the responses in.
+* The transferrer pulls the responses in-house.
 
-* From then on, the results can be fed into any JSON reading application.
+* In-house, the results are fed into any JSON reading application.
 
 
 ## Technical design principles
@@ -54,16 +54,16 @@ by __JSON files__.
 
 * No database required.
 
-* Server side validation
+* Server side validation.
 
 * Client side JS validation is deliberately omitted;  
    [a would-be JS client lib](http://www.javascript-coder.com/html-form/form-validation.phtml)
 
 
-* Package `systemtest` performs full circle filling in of a questionaire and compares the 
+* Package `systemtest` performs full circle filling out a questionaire and compares the 
 resulting JSON file.
 
-* Individual column width for any label or form element (`ColSpanLabel` and `ColSpanControl`)
+* Column width for any label or form element can be set individually (`ColSpanLabel` and `ColSpanControl`)
 
 
 
@@ -85,10 +85,7 @@ Using `<div style='display: table/table-row/table-cell'` does not support colspa
 
 * Prompt user for SurveyID, WaveID
 
-
-
 * Maybe JSON schema validator
-
 
 
 

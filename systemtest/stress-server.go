@@ -215,15 +215,14 @@ func SimulateLoad(t *testing.T) {
 func loadQuest(t *testing.T, urlMain string, sessCook *http.Cookie) {
 
 	var q = &qst.QuestionaireT{}
-	q.WaveID = qst.NewWaveID()
-	q.WaveID.SurveyID = "fmt"
-
 	var err error
 	q, err = qst.Load1(q.FilePath1("fmt.json")) // new from template
 	if err != nil {
 		t.Fatalf("Loading questionaire from file caused error: %v", err)
 	}
+
 	q.WaveID = qst.NewWaveID()
+	q.WaveID.SurveyID = "fmt"
 	q.UserID = "systemtest"
 	q.RemoteIP = "127.0.0.1:12345"
 	q.CurrPage = len(q.Pages) - 1

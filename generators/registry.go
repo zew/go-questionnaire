@@ -11,13 +11,13 @@ import (
 
 type genT func() *qst.QuestionaireT
 
-var gens = map[string]genT{}
+var gens = map[string]genT{
+	"fmt": fmt.Create,
+	"min": min.Create,
+}
 
 // Run creates all registered questionaire templates
 func Run() {
-
-	gens["fmt"] = fmt.Create
-	gens["min"] = min.Create
 
 	for key, fnc := range gens {
 

@@ -7,6 +7,7 @@ import (
 	"io"
 	"log"
 	"net/http"
+	"sort"
 	"time"
 
 	"github.com/zew/go-questionaire/cfg"
@@ -218,12 +219,20 @@ func ChangePassword(w http.ResponseWriter, r *http.Request) (string, error) {
 	return "", fmt.Errorf("Old password incorrect (or username not found).")
 }
 
-// LoginByHash takes request value "u", "wave_id" and hash "h".
-// It checks the hash against "u", "wave_id" and loginsT.Salt.
+// LoginByHash takes request value "u" and hash "h";
+// and *any number* of additional request parameters.
+// It checks the hash against the values except "h";
+// ordered by parameter name; plus loginsT.Salt.
+// This way we are completely flexible; except for
+// inadvertently added parameters.
+//
+// On success, function creates a logged in user
+// out of nothing by the name of u.
+// This user gets assigned the params/values as
+// role-names/values.
+//
 // On wrong hashes, it returns the difference as error.
 // Be careful not to show the error to the end user.
-// On success, it creates a logged in user out of nothing.
-// The user gets assigned the wave_id as role.
 func LoginByHash(w http.ResponseWriter, r *http.Request) (bool, error) {
 
 	sess := sessx.New(w, r)
@@ -233,47 +242,51 @@ func LoginByHash(w http.ResponseWriter, r *http.Request) (bool, error) {
 		return false, err
 	}
 
-	isSet := false // login values from GET *or* POST
-
-	u, surveyID, waveID, h := "", "", "", ""
-	if _, isSet = r.PostForm["u"]; isSet {
-		u = r.PostForm.Get("u")
-		surveyID = r.PostForm.Get("survey_id")
-		waveID = r.PostForm.Get("wave_id")
-		h = r.PostForm.Get("h") // hash
-	} else if _, isSet = r.URL.Query()["u"]; isSet {
-		u = r.URL.Query().Get("u")
-		surveyID = r.URL.Query().Get("survey_id")
-		waveID = r.URL.Query().Get("wave_id")
-		h = r.URL.Query().Get("h") // hash
-	}
-
-	if !isSet {
+	if _, isSet := r.Form["u"]; !isSet { // Form has GET *and* POST values
 		return false, nil
 	}
 
+	u := r.Form.Get("u")
 	u = html.EscapeString(u) // XSS prevention
-	surveyID = html.EscapeString(surveyID)
-	waveID = html.EscapeString(waveID)
-	h = html.EscapeString(h)
+	h := r.Form.Get("h")     // hash
 
-	log.Printf("trying hash login: '%v' '%v' '%v' - %v", u, surveyID, waveID, h)
+	l := &LoginT{}
+	l.User = u
+	l.Roles = map[string]string{}
 
-	checkStr := fmt.Sprintf("%v-%v-%v-%v", u, surveyID, waveID, lgns.Salt)
+	keys := []string{}
+	for key := range r.Form {
+		if key != "h" {
+			keys = append(keys, key)
+		}
+	}
+	sort.Strings(keys)
+
+	checkStr := ""
+	for _, key := range keys {
+		val := r.Form.Get(key)
+		checkStr += val + "-"
+		l.Roles[key] = val
+	}
+	checkStr += lgns.Salt
+	log.Printf("trying hash login over keys %v: '%v' ", keys, checkStr)
 	hExpected := Md5Str([]byte(checkStr))
-
 	if hExpected != h {
 		return false, fmt.Errorf("hash over check string unequal hash argument\n%v\n%v", hExpected, h)
 	}
 
-	log.Printf("logging in as %v", u)
-	l := &LoginT{}
-	l.User = u
-	l.Roles = map[string]string{
-		"survey_id": surveyID,
-		"wave_id":   waveID,
-	}
+	// if false {
+	// 	_ = sess.EffectiveStr("impossibleKey") // trigger ParsePostForm...
+	// 	frm := struct {
+	// 		SurveyID string `json:"survey_id,omitempty"`
+	// 		WaveID   string `json:"wave_id,omitempty"`
+	// 	}{}
+	// 	dec := formam.NewDecoder(&formam.DecoderOptions{TagName: "json"})
+	// 	err := dec.Decode(r.Form, &frm)
+	// 	util.BubbleUp(err)
+	// }
 
+	log.Printf("logging in as %v", u)
 	err = sess.PutObject("login", l)
 	if err != nil {
 		return false, err
@@ -283,6 +296,7 @@ func LoginByHash(w http.ResponseWriter, r *http.Request) (bool, error) {
 }
 
 // GenerateHashesH is a convenience func to lookup some hashes.
+// See LoginByHash() for the construction of the check string.
 func GenerateHashesH(w http.ResponseWriter, r *http.Request) {
 
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
@@ -313,7 +327,7 @@ func GenerateHashesH(w http.ResponseWriter, r *http.Request) {
 	}
 
 	for i := 99 * 1000; i > 99*1000-10; i-- {
-		checkStr := fmt.Sprintf("%v-%v-%v-%v", i, surveyID, waveID, lgns.Salt)
+		checkStr := fmt.Sprintf("%v-%v-%v-%v", surveyID, i, waveID, lgns.Salt)
 		hsh := Md5Str([]byte(checkStr))
 		url := fmt.Sprintf("%v?u=%v&survey_id=%v&wave_id=%v&h=%v", cfg.Pref(), i, surveyID, waveID, hsh)
 		a := fmt.Sprintf("<a href='%v'>%v<a><br>", url, url)

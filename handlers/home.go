@@ -30,11 +30,11 @@ type tplDataExtT struct {
 // First from session.
 // Then from file of previous session.
 // Finally from template.
-func loadQuestionaire(w http.ResponseWriter, r *http.Request, userSurveyID, userWaveID, userID string) (*qst.QuestionaireT, error) {
+func loadQuestionaire(w http.ResponseWriter, r *http.Request, userSurveyType, userWaveID, userID string) (*qst.QuestionaireT, error) {
 
 	sess := sessx.New(w, r)
 
-	log.Printf("Deriving from the login: survey_id %v, wave_id %v, user_id: %v", userSurveyID, userWaveID, userID)
+	log.Printf("Deriving from the login: survey_id %v, wave_id %v, user_id: %v", userSurveyType, userWaveID, userID)
 
 	// from session
 	var q = &qst.QuestionaireT{}
@@ -49,12 +49,12 @@ func loadQuestionaire(w http.ResponseWriter, r *http.Request, userSurveyID, user
 	}
 
 	// from file
-	pth := q.FilePath1(filepath.Join(userSurveyID, userWaveID, userID))
+	pth := q.FilePath1(filepath.Join(userSurveyType, userWaveID, userID))
 	log.Printf("Deriving path: %v", pth)
 	q, err = qst.Load1(pth) // previous session
 	if err != nil {
 		log.Printf("No previous file %v found. Loading new questionaire from file.", pth)
-		q, err = qst.Load1(q.FilePath1(userSurveyID)) // new from template
+		q, err = qst.Load1(q.FilePath1(userSurveyType)) // new from template
 	}
 	if err != nil {
 		err = errors.Wrap(err, "Loading questionaire from file caused error")
@@ -66,12 +66,12 @@ func loadQuestionaire(w http.ResponseWriter, r *http.Request, userSurveyID, user
 		return q, err
 	}
 
-	if q.WaveID.SurveyID != userSurveyID {
-		err = fmt.Errorf("Logged in for survey %v - but template is for %v", userSurveyID, q.WaveID.SurveyID)
+	if q.Survey.Type != userSurveyType {
+		err = fmt.Errorf("Logged in for survey %v - but template is for %v", userSurveyType, q.Survey.Type)
 		return q, err
 	}
-	if q.WaveID.String() != userWaveID {
-		err = fmt.Errorf("Logged in for wave %v - but template is for %v", userWaveID, q.WaveID.String())
+	if q.Survey.WaveID() != userWaveID {
+		err = fmt.Errorf("Logged in for wave %v - but template is for %v", userWaveID, q.Survey.WaveID())
 		return q, err
 	}
 
@@ -154,11 +154,11 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	userSurveyID := ""
+	userSurveyType := ""
 	userWaveID := ""
 	for role, val := range l.Roles {
 		if role == "survey_id" {
-			userSurveyID = val
+			userSurveyType = val
 		}
 		if role == "wave_id" {
 			userWaveID = val
@@ -177,7 +177,7 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	q, err := loadQuestionaire(w, r, userSurveyID, userWaveID, l.User)
+	q, err := loadQuestionaire(w, r, userSurveyType, userWaveID, l.User)
 	if err != nil {
 		helper(w, r, err)
 		return
@@ -193,9 +193,9 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// Deadline exceeded?
-	if time.Now().After(q.WaveID.Deadline) {
+	if time.Now().After(q.Survey.Deadline) {
 		s := cfg.Get().Mp["deadline_exceeded"].All()
-		s = fmt.Sprintf(s, q.WaveID.Deadline.Format("02.01.2006 15:04"), q.WaveID.Deadline.Format("02.01.2006 15:04"))
+		s = fmt.Sprintf(s, q.Survey.Deadline.Format("02.01.2006 15:04"), q.Survey.Deadline.Format("02.01.2006 15:04"))
 		helper(w, r, nil, s)
 		return
 	}

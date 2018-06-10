@@ -162,7 +162,7 @@ func SimulateLoad(t *testing.T) {
 		t.Logf("==================")
 		urlReq := urlMain
 
-		waveID := qst.NewWaveID().String()
+		waveID := qst.NewSurvey("fmt").WaveID()
 
 		vals := url.Values{}
 		vals.Set("wave_id", waveID)
@@ -221,8 +221,7 @@ func loadQuest(t *testing.T, urlMain string, sessCook *http.Cookie) {
 		t.Fatalf("Loading questionaire from file caused error: %v", err)
 	}
 
-	q.WaveID = qst.NewWaveID()
-	q.WaveID.SurveyID = "fmt"
+	q.Survey = qst.NewSurvey("fmt")
 	q.UserID = "systemtest"
 	q.RemoteIP = "127.0.0.1:12345"
 	q.CurrPage = len(q.Pages) - 1
@@ -236,13 +235,13 @@ func loadQuest(t *testing.T, urlMain string, sessCook *http.Cookie) {
 	for idx := range q.Pages {
 		fillInPage(t, q, idx, urlMain, sessCook)
 	}
-	q.Save1(q.FilePath1(filepath.Join(q.WaveID.SurveyID, q.WaveID.String(), "systemtest_src")))
+	q.Save1(q.FilePath1(filepath.Join(q.Survey.Type, q.Survey.WaveID(), "systemtest_src")))
 }
 
 func fillInPage(t *testing.T, q *qst.QuestionaireT, idxPage int, urlMain string, sessCook *http.Cookie) {
 
 	ctr.Reset()
-	waveID := qst.NewWaveID().String()
+	waveID := qst.NewSurvey("fmt").WaveID()
 
 	vals := url.Values{}
 	for i1, p := range q.Pages {

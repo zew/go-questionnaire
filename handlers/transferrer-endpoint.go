@@ -76,7 +76,7 @@ func TransferrerEndpointH(w http.ResponseWriter, r *http.Request) {
 
 		if q.ClosingTime.IsZero() {
 			log.Printf("%v unfinished yet; %v", info.Name(), q.ClosingTime)
-			if time.Now().Before(q.WaveID.Deadline) {
+			if time.Now().Before(q.Survey.Deadline) {
 				log.Printf("%v not yet past global deadline => skipping", info.Name())
 				continue
 			}

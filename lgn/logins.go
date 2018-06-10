@@ -112,7 +112,7 @@ func Get() *loginsT {
 // AddTestLogin adds a systemtest login.
 // This func is only called by test funcs.
 func AddTestLogin() {
-	waveID := qst.NewWaveID().String()
+	waveID := qst.NewSurvey("fmt").WaveID()
 	systest := LoginT{
 		User:  "systemtest",
 		Email: "delete this user in production environment",

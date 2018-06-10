@@ -8,8 +8,7 @@ import (
 // It is saved to disk as an example.
 func Create() *qst.QuestionaireT {
 	quest := qst.QuestionaireT{}
-	quest.WaveID = qst.NewWaveID()
-	quest.WaveID.SurveyID = "min"
+	quest.Survey = qst.NewSurvey("min")
 	quest.LangCodes = map[string]string{"de": "Deutsch", "en": "English"}
 	quest.LangCode = "de"
 

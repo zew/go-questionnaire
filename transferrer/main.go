@@ -118,11 +118,11 @@ func main() {
 		log.Printf("==================")
 		urlReq := urlMain
 
-		surveyID := "fmt"
-		waveID := qst.NewWaveID().String()
+		surveyType := "fmt"
+		waveID := qst.NewSurvey(surveyType).WaveID()
 
 		vals := url.Values{}
-		vals.Set("survey_id", surveyID)
+		vals.Set("survey_id", surveyType)
 		vals.Set("wave_id", waveID)
 		log.Printf("POST requesting %v?%v", urlReq, vals.Encode())
 		resp, err := util.Request("POST", urlReq, vals, []*http.Cookie{sessCook})
@@ -131,7 +131,7 @@ func main() {
 			return
 		}
 
-		dir := filepath.Join(downloadDir, surveyID, waveID)
+		dir := filepath.Join(downloadDir, surveyType, waveID)
 		err = os.MkdirAll(dir, 0755)
 		if err != nil {
 			log.Printf("Could not create path 2 %v", dir)

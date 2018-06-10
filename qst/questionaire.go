@@ -343,7 +343,7 @@ func (p *pageT) AddGroup() *groupT {
 
 // QuestionaireT contains pages with groups with inputs
 type QuestionaireT struct {
-	WaveID      WaveID_T  `json:"wave_id,omitempty"`
+	Survey      surveyT   `json:"survey,omitempty"`
 	UserID      string    `json:"user_id,omitempty"`
 	ClosingTime time.Time `json:"closing_time,omitempty"` // truncated to second
 	RemoteIP    string    `json:"remote_ip,omitempty"`
@@ -366,12 +366,12 @@ func BasePath() string {
 
 // FilePath1 returns the file system saving location of the questionaire.
 // The waveID/userID fragment can optionally be submitted by an argument.
-func (q *QuestionaireT) FilePath1(survey_Wave_UserID ...string) string {
+func (q *QuestionaireT) FilePath1(surveyAndWaveIDAndUserID ...string) string {
 	pth := ""
-	if len(survey_Wave_UserID) > 0 {
-		pth = filepath.Join(BasePath(), survey_Wave_UserID[0])
+	if len(surveyAndWaveIDAndUserID) > 0 {
+		pth = filepath.Join(BasePath(), surveyAndWaveIDAndUserID[0])
 	} else {
-		pth = filepath.Join(BasePath(), q.WaveID.SurveyID, q.WaveID.String(), q.UserID)
+		pth = filepath.Join(BasePath(), q.Survey.Type, q.Survey.WaveID(), q.UserID)
 	}
 
 	if strings.HasSuffix(pth, ".json.json") {

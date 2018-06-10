@@ -12,8 +12,7 @@ import (
 func Create() *qst.QuestionaireT {
 
 	quest := qst.QuestionaireT{}
-	quest.WaveID = qst.NewWaveID()
-	quest.WaveID.SurveyID = "fmt"
+	quest.Survey = qst.NewSurvey("fmt")
 
 	quest.LangCodes = map[string]string{"de": "Deutsch", "en": "English"}
 	quest.LangCode = "de" // default language

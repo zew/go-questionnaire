@@ -20,8 +20,8 @@ func Mustaz09Underscore(s string) bool {
 // Validate checks whether essential elements of the questionaire exist.
 func (q *QuestionaireT) Validate() error {
 
-	if q.WaveID.SurveyID == "" || !Mustaz09Underscore(q.WaveID.SurveyID) {
-		s := fmt.Sprintf("WaveID must contain a SurveyID string consisting of lower case letters: %v", q.WaveID.SurveyID)
+	if q.Survey.Type == "" || !Mustaz09Underscore(q.Survey.Type) {
+		s := fmt.Sprintf("WaveID must contain a SurveyID string consisting of lower case letters: %v", q.Survey.Type)
 		log.Printf(s)
 		return fmt.Errorf(s)
 	}

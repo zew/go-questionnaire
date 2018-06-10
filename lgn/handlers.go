@@ -275,17 +275,6 @@ func LoginByHash(w http.ResponseWriter, r *http.Request) (bool, error) {
 		return false, fmt.Errorf("hash over check string unequal hash argument\n%v\n%v", hExpected, h)
 	}
 
-	// if false {
-	// 	_ = sess.EffectiveStr("impossibleKey") // trigger ParsePostForm...
-	// 	frm := struct {
-	// 		SurveyID string `json:"survey_id,omitempty"`
-	// 		WaveID   string `json:"wave_id,omitempty"`
-	// 	}{}
-	// 	dec := formam.NewDecoder(&formam.DecoderOptions{TagName: "json"})
-	// 	err := dec.Decode(r.Form, &frm)
-	// 	util.BubbleUp(err)
-	// }
-
 	log.Printf("logging in as %v", u)
 	err = sess.PutObject("login", l)
 	if err != nil {

@@ -1,6 +1,7 @@
 package qst
 
 import (
+	"fmt"
 	"time"
 
 	"github.com/zew/go-questionaire/cfg"
@@ -56,4 +57,60 @@ func (s surveyT) Label() string {
 	// It is necessary, even though the spec says 'January = 1'
 	t := time.Date(s.Year, s.Month+1, 0, 0, 0, 0, 0, cfg.Get().Loc)
 	return t.Format("January 2006")
+}
+
+// Duplicate of generators.Get()
+var Generators = map[string]interface{}{"fmt": nil, "min": nil}
+
+func dropDown(selected string) string {
+
+	opts := ""
+	for key := range Generators {
+		isSelected := ""
+		if key == selected {
+			isSelected = "selected"
+		}
+		opts += fmt.Sprintf("\t\t<option value='%v' %v >%v</option>\n", key, isSelected, key)
+	}
+
+	str := `
+	<select name="type">
+		%v
+	</select>`
+	str = fmt.Sprintf(str, opts)
+	return str
+}
+
+// HTMLForm renders an HTML edit form
+// for survey data
+func (s *surveyT) HTMLForm() string {
+
+	ret := `
+		<style>
+			.survey-edit-form span {
+				display: inline-block;
+				min-width: 140px;
+			}
+		</style>
+
+		<form method="POST" class="survey-edit-form" >
+		
+			<span>Type     </span> %v <br>
+
+			<span>Year     </span><input type="text" name="year"      value="%v"  /> <br>
+	 		<span>Month    </span><input type="text" name="month"     value="%v"  /> <br>
+			<span>Deadline </span><input type="text" name="deadline"  value="%v" placeholder="dd.mm.yyyy hh:mm" /> <br>
+
+			<input type="submit" name="submit"   value="Submit" accesskey="s"  /> <br>
+		</form>
+	`
+
+	if s == nil {
+		*s = NewSurvey("fmt")
+	}
+	dd := dropDown(s.Type)
+
+	ret = fmt.Sprintf(ret, dd, s.Year, fmt.Sprintf("%02d", int(s.Month)+0), s.Deadline.Format("02.01.2006 15:04"))
+	return ret
+
 }

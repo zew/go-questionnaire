@@ -14,8 +14,8 @@ import (
 
 	"github.com/zew/go-questionaire/bootstrap"
 	"github.com/zew/go-questionaire/cfg"
+	"github.com/zew/go-questionaire/generators"
 	"github.com/zew/go-questionaire/handlers"
-	"github.com/zew/go-questionaire/joined"
 	"github.com/zew/go-questionaire/lgn"
 	"github.com/zew/go-questionaire/muxwrap"
 	"github.com/zew/go-questionaire/sessx"
@@ -74,7 +74,7 @@ func main() {
 	mux1.HandleFunc(cfg.Pref("/generate-password"), lgn.GeneratePasswordH)
 	mux1.HandleFunc(cfg.Pref("/generate-hashes"), lgn.GenerateHashesH)
 	mux1.HandleFunc(cfg.Pref("/templates-reload"), tpl.ParseH)
-	mux1.HandleFunc(cfg.Pref("/generate-questionaire-templates"), joined.SurveyGenerate)
+	mux1.HandleFunc(cfg.Pref("/generate-questionaire-templates"), generators.SurveyGenerate)
 
 	//
 	// Standard handlers

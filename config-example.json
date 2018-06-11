@@ -1,4 +1,5 @@
 {
+ 	"is_production": false,
  	"app_name": "My Example App",
  	"urlpath_prefix": "exmpl",
  	"app_mnemonic": "exmpl",

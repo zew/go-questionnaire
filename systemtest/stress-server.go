@@ -225,6 +225,7 @@ func loadQuest(t *testing.T, urlMain string, sessCook *http.Cookie) {
 	q.UserID = "systemtest"
 	q.RemoteIP = "127.0.0.1:12345"
 	q.CurrPage = len(q.Pages) - 1
+	q.CurrPage++ // server generated questionaire is driven one too far
 	err = q.Validate()
 	if err != nil {
 		t.Fatalf("Questionaire validation caused error: %v", err)
@@ -260,13 +261,19 @@ func fillInPage(t *testing.T, q *qst.QuestionaireT, idxPage int, urlMain string,
 				q.Pages[i1].Groups[i2].Inputs[i3].Response = ctr.GetLastStr()
 			}
 		}
-		q.Pages[i1].Finished = time.Now().Truncate(time.Second)
 	}
-	t.Logf("POST requesting %v?%v", urlMain, vals.Encode())
+	t.Logf("POST requesting %v?\n%v", urlMain, strings.Replace(vals.Encode(), "submitBtn=next&token="+lgn.FormToken(), "...", -1))
+	t1 := time.Now()
 	resp, err := util.Request("POST", urlMain, vals, []*http.Cookie{sessCook})
 	if err != nil {
 		t.Errorf("error requesting %v: %v", urlMain, err)
 	}
+	t2 := time.Now()
+	t.Logf("Request roundtrip took %v", t2.Sub(t1))
+	t3 := time.Now().Add(-15 * time.Millisecond).Truncate(time.Second)
+
+	q.Pages[idxPage].Finished = t3
+
 	_ = resp
 	// respStr := string(resp)
 

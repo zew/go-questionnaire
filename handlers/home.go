@@ -256,7 +256,7 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 
 	//
 	// Put request values into questionaire
-	if q.Pages[prevPage].Finished.IsZero() {
+	if true || q.Pages[prevPage].Finished.IsZero() {
 		q.Pages[prevPage].Finished = time.Now().Truncate(time.Second)
 	}
 	for i1 := 0; i1 < len(q.Pages[prevPage].Groups); i1++ {

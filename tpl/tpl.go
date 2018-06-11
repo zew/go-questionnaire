@@ -15,6 +15,7 @@ import (
 	"log"
 	"net/http"
 	"path/filepath"
+	"reflect"
 	"strings"
 
 	"github.com/zew/go-questionaire/cfg"
@@ -38,20 +39,21 @@ var staticTplFuncs = template.FuncMap{
 		ret = template.HTML(buf.String())
 		return
 	},
-	/*
-		// checks whether field or method exists in a struct
-		// stackoverflow.com/questions/44675087/
-		"isset": func(data interface{}, name string) bool {
-			v := reflect.ValueOf(data)
-			if v.Kind() == reflect.Ptr {
-				v = v.Elem()
-			}
-			if v.Kind() != reflect.Struct {
-				return false
-			}
-			return v.FieldByName(name).IsValid()
-		},
-	*/
+	// exists checks whether the struct 'data'
+	// has a field or method name.
+	// Usage {{if exists . "Q"}} ... {{end}}
+	// 'bad' but inevitable in *general purpose* layout templates.
+	// stackoverflow.com/questions/44675087/
+	"exists": func(data interface{}, name string) bool {
+		v := reflect.ValueOf(data)
+		if v.Kind() == reflect.Ptr {
+			v = v.Elem()
+		}
+		if v.Kind() != reflect.Struct {
+			return false
+		}
+		return v.FieldByName(name).IsValid()
+	},
 }
 
 // StaticFuncMap returns the static funcs every template should have.

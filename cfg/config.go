@@ -25,7 +25,7 @@ import (
 type ConfigT struct {
 	sync.Mutex
 
-	IsProduction bool `json:"is_production,omitempty"` // true => templates are not recompiled
+	IsProduction bool `json:"is_production"` // true => templates are not recompiled
 
 	AppName       string `json:"app_name,omitempty"`       // with case, i.e. 'My App'
 	URLPathPrefix string `json:"urlpath_prefix,omitempty"` // lower case - no slashes, i.e. 'myapp'

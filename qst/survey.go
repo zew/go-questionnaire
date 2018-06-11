@@ -56,21 +56,19 @@ func (s surveyT) Label() string {
 	// Notice the month +1
 	// It is necessary, even though the spec says 'January = 1'
 	t := time.Date(s.Year, s.Month+1, 0, 0, 0, 0, 0, cfg.Get().Loc)
-	return t.Format("January 2006")
+	// return t.Format("January 2006") // yields English month names.
+	return t.Format("2006-01")
 }
 
-// Duplicate of generators.Get()
-var Generators = map[string]interface{}{"fmt": nil, "min": nil}
-
-func dropDown(selected string) string {
+func dropDown(vals []string, selected string) string {
 
 	opts := ""
-	for key := range Generators {
+	for _, val := range vals {
 		isSelected := ""
-		if key == selected {
+		if val == selected {
 			isSelected = "selected"
 		}
-		opts += fmt.Sprintf("\t\t<option value='%v' %v >%v</option>\n", key, isSelected, key)
+		opts += fmt.Sprintf("\t\t<option value='%v' %v >%v</option>\n", val, isSelected, val)
 	}
 
 	str := `
@@ -83,7 +81,7 @@ func dropDown(selected string) string {
 
 // HTMLForm renders an HTML edit form
 // for survey data
-func (s *surveyT) HTMLForm() string {
+func (s *surveyT) HTMLForm(vals []string) string {
 
 	ret := `
 		<style>
@@ -108,7 +106,7 @@ func (s *surveyT) HTMLForm() string {
 	if s == nil {
 		*s = NewSurvey("fmt")
 	}
-	dd := dropDown(s.Type)
+	dd := dropDown(vals, s.Type)
 
 	ret = fmt.Sprintf(ret, dd, s.Year, fmt.Sprintf("%02d", int(s.Month)+0), s.Deadline.Format("02.01.2006 15:04"))
 	return ret

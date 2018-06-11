@@ -1,5 +1,6 @@
-// Package handlers is not in main,
-// because the systemtests must access the handler funcs.
+// Package handlers contains handler funcs; which are
+// not stored in the main package,
+// because the systemtests must access these handler funcs.
 package handlers
 
 import (
@@ -237,7 +238,6 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 	}
 	currPage := prevPage // Default assumption: we are still on prev page - unless there is some modification:
 	submit := sess.EffectiveStr("submitBtn")
-	log.Printf("submitBtn is '%v'", submit)
 	if submit == "prev" {
 		currPage = q.Prev()
 	}
@@ -253,6 +253,7 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 		currPage = explicit
 	}
 	q.CurrPage = currPage // Put current page into questionaire
+	log.Printf("submitBtn was '%v' - new currPage is %v", submit, currPage)
 
 	//
 	// Put request values into questionaire
@@ -302,15 +303,15 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 		helper(w, r, err, s)
 		return
 	}
-
 	err = q.Save1(pth)
 	if err != nil {
 		helper(w, r, err, "Putting questionaire into session caused error")
 		return
 	}
 
+	//
+	//
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
-
 	tplBundle := tpl.Get(w, r, "main.html")
 	ts := &tpl.StackT{"quest.html"}
 

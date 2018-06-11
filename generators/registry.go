@@ -82,7 +82,9 @@ func SurveyGenerate(w http.ResponseWriter, r *http.Request) {
 		}
 
 		q := fnc()
+		tr1, tr2 := q.Survey.Org, q.Survey.Name // save orig values
 		q.Survey = s
+		q.Survey.Org, q.Survey.Name = tr1, tr2
 
 		fn := filepath.Join(qst.BasePath(), key+".json")
 		err := q.Save1(fn)

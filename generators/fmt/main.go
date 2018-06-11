@@ -13,9 +13,10 @@ func Create() *qst.QuestionaireT {
 
 	quest := qst.QuestionaireT{}
 	quest.Survey = qst.NewSurvey("fmt")
-
 	quest.LangCodes = map[string]string{"de": "Deutsch", "en": "English"}
 	quest.LangCode = "de" // default language
+	quest.Survey.Org = trl.S{"de": "ZEW", "en": "ZEW"}
+	quest.Survey.Name = trl.S{"de": "Finanzmarkttest", "en": "Financial Markets Survey"}
 
 	// Page 1
 	{

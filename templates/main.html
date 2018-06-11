@@ -30,12 +30,14 @@
 		<a href="{{prefix "" }}" tabindex="-1">
 			<div style='float: left; position: relative; left: 3%; bottom: -18px; 
 			color: #0069B4; font-size: 250%;'>
-				<span style='font-size: 130%'>{{.Trls.app_label_h1.Tr $lc}} </span> {{.Trls.app_label.Tr $lc}}
 
 				{{if exists . "Q"}}
 					<span style="font-size: 70%; position: relative; bottom: -1px; left: 4px; ">
+						<span style='font-size: 130%'>{{.Q.Survey.Org.Tr $lc}} </span> {{.Q.Survey.Name.Tr $lc}}
 						 {{toHtml (.Q.Survey.Label) }}
 					</span>
+				{{else}}
+					<span style='font-size: 130%'>{{.Trls.app_label_h1.Tr $lc}} </span> {{.Trls.app_label.Tr $lc}}
 				{{end}}
 
 			</div>
@@ -51,9 +53,9 @@
 	<!-- footer -->
 	<div class="footer">
 		{{if exists . "Q"}}
-		<div style='float: left; padding-left: 20px;'>
-			{{toHtml (.Q.Survey.String) }}
-		</div>
+			<div style='float: left; padding-left: 20px; font-size: 70%;'>
+					{{.Q.Survey.Name.Tr $lc}} - {{toHtml (.Q.Survey.Label) }}
+			</div>
 		{{end}}
 
 

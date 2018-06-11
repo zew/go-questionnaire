@@ -488,5 +488,5 @@ func (q *QuestionaireT) Next() int {
 	if q.CurrPage < len(q.Pages)-1 {
 		return q.CurrPage + 1
 	}
-	return len(q.Pages)
+	return len(q.Pages) - 1
 }

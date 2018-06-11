@@ -5,12 +5,15 @@ import (
 	"time"
 
 	"github.com/zew/go-questionaire/cfg"
+	"github.com/zew/go-questionaire/trl"
 )
 
 // surveyT stores the interval components of a questionaire wave.
 // For quarterly intervals, it needs to be extended
 type surveyT struct {
 	Type string `json:"type,omitempty"` // The type identifier, i.e. "fmt" or "cep"
+	Org  trl.S  `json:"org,omitempty"`  // organization, i.e. Unicef
+	Name trl.S  `json:"name,omitempty"` // full name, i.e. programming languages survey
 
 	Year  int        `json:"year,omitempty"`  // The wave year
 	Month time.Month `json:"month,omitempty"` // The wave month, 1-based, int

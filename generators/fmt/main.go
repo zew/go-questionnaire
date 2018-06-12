@@ -204,10 +204,118 @@ func Create() *qst.QuestionaireT {
 	// page 3 - inflation
 	{
 		page := quest.AddPage()
-		page.Label = trl.S{"de": "Inflation", "en": "Inflation"}
-		gr := page.AddGroup()
-		gr.Cols = 2 // necessary, otherwise no vspacers
-		gr.Label = trl.S{"de": "4.", "en": "4."}
+		page.Label = trl.S{"de": "Inflation und Zinsen", "en": "Inflation and Rates"}
+
+		//
+		// gr1
+		{
+			labels123Matrix := []trl.S{
+				{
+					"de": "Euroraum",
+					"en": "Euro area",
+				},
+				{
+					"de": "Deutschland",
+					"en": "Germany",
+				},
+			}
+			names1stMatrix := []string{
+				"pi_ez",
+				"pi_deu",
+			}
+			gr := page.AddRadioMatrixGroup(labelsIncreaseDecrease(), names1stMatrix, labels123Matrix)
+			gr.Cols = 5 // necessary, otherwise no vspacers
+			gr.Label = trl.S{
+				"de": "4.",
+				"en": "4.",
+			}
+			gr.Desc = trl.S{
+				"de": "Die jährl. gesamtwirtschaftl. Inflationsrate wird mittelfristig (<b>6</b> Mo.)",
+				"en": "Medium term (<b>6</b> months) yearly overall inflation rate will",
+			}
+
+		}
+
+		{
+			gr := page.AddGroup()
+			gr.Cols = 18 // necessary, otherwise no vspacers
+			gr.Label = trl.S{"de": "5a.", "en": "5a."}
+			{
+				inp := gr.AddInput()
+				inp.Type = "text"
+				inp.Name = "i_ez_low"
+				inp.MaxChars = 4
+				inp.Validator = "inRange20"
+
+				inp.ColSpanLabel = 10
+				inp.Desc = trl.S{
+					"de": "Die <b>kurzfristigen</b> Zinsen (3-Mo.-Interbanksätze) im <b>Euroraum</b> erwarten wir auf Sicht von 6 Monaten [zentrales 90%-Konfidenzintervall] zwischen",
+					"en": "We expect <b>short term</b> interest rates (3 months interbank) in the <b>euro area</b> between",
+				}
+				inp.Suffix = trl.S{"de": "%", "en": "pct"}
+				inp.HAlignLabel = qst.HLeft
+				inp.HAlignControl = qst.HLeft
+			}
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "text"
+				inp.Name = "i_ez_high"
+				inp.MaxChars = 4
+				inp.Validator = "inRange20"
+
+				inp.ColSpanLabel = 1
+				inp.Desc = trl.S{
+					"de": " &nbsp; und ",
+					"en": " &nbsp; &nbsp; and ",
+				}
+				inp.Suffix = trl.S{"de": "%", "en": "pct"}
+				inp.HAlignLabel = qst.HCenter
+				inp.HAlignControl = qst.HLeft
+			}
+		}
+
+		{
+			gr := page.AddGroup()
+			gr.Cols = 18 // necessary, otherwise no vspacers
+			gr.Label = trl.S{"de": "5b.", "en": "5b."}
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "text"
+				inp.Name = "r_deu_low"
+				inp.MaxChars = 4
+				inp.Validator = "inRange100"
+
+				inp.ColSpanLabel = 10
+				inp.Desc = trl.S{
+					"de": "Die <b>langfristigen</b> Zinsen (Renditen 10jg. Staatsanleihen) in <b>Deutschland</b> erwarten wir auf Sicht von 6&nbsp;Monaten [zentrales 90%-Konfidenzintervall] zwischen",
+					"en": "We expect <b>long term</b> interest rates in <b>Germany</b> in 6 months between",
+				}
+				inp.Suffix = trl.S{"de": "%", "en": "pct"}
+				inp.HAlignLabel = qst.HLeft
+				inp.HAlignControl = qst.HLeft
+			}
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "text"
+				inp.Name = "r_deu_high"
+				inp.MaxChars = 4
+				inp.Validator = "inRange100"
+
+				inp.ColSpanLabel = 1
+				inp.Desc = trl.S{
+					"de": " &nbsp; und ",
+					"en": " &nbsp; &nbsp; and ",
+				}
+				inp.Suffix = trl.S{"de": "%", "en": "pct"}
+				inp.HAlignLabel = qst.HCenter
+				inp.HAlignControl = qst.HLeft
+			}
+
+		}
+
 	}
 
 	//
@@ -222,6 +330,9 @@ func Create() *qst.QuestionaireT {
 		gr.Label = trl.S{"de": "5.", "en": "5."}
 	}
 
+	//
+	//
+	//
 	{
 		page := quest.AddPage()
 		page.Section = trl.S{"de": "Abschluss", "en": "Finish"}

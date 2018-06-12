@@ -56,6 +56,9 @@ func (s surveyT) WaveID() string {
 
 // Label is a pretty identifier
 func (s surveyT) Label() string {
+	if s.Year == 0 {
+		return ""
+	}
 	// Notice the month +1
 	// It is necessary, even though the spec says 'January = 1'
 	t := time.Date(s.Year, s.Month+1, 0, 0, 0, 0, 0, cfg.Get().Loc)
@@ -102,9 +105,11 @@ func (s *surveyT) HTMLForm(vals []string) string {
 	 		<span>Month    </span><input type="text" name="month"     value="%v"  /> <br>
 			<span>Deadline </span><input type="text" name="deadline"  value="%v" placeholder="dd.mm.yyyy hh:mm" /> <br>
 
-			<input type="submit" name="submit"   value="Submit" accesskey="s"  /> <br>
+			<input type="submit" name="submit" id="submit"  value="Submit" accesskey="s"  /> <br>
 		</form>
-	`
+
+		<script> document.getElementById('submit').focus(); </script>
+		`
 
 	if s == nil {
 		*s = NewSurvey("fmt")

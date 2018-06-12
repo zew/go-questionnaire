@@ -84,8 +84,6 @@ func (m *handlerWrapper) ServeHTTP(w http.ResponseWriter, rNew *http.Request) {
 
 }
 
-type ctxKey string
-
 //
 // Alternative way to create the same middle ware would be:
 func (m *handlerWrapper) Use(next http.Handler, anotherParam int) http.Handler {
@@ -95,3 +93,5 @@ func (m *handlerWrapper) Use(next http.Handler, anotherParam int) http.Handler {
 		next.ServeHTTP(w, r.WithContext(ctx))
 	})
 }
+
+type ctxKey string

@@ -88,6 +88,14 @@ Using `<div style='display: table/table-row/table-cell'` does not support colspa
 * Maybe JSON schema validator
 
 
+### Layout todo
+
+Decrease horizontal distance of radio groups 
+
+Allow jumping back, but prohibit jumping ahead
+
+Interest range: lower horizontal distance
+
 
 ## About Go-App-Tpl
 

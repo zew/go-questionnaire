@@ -26,6 +26,7 @@ func errorH(w http.ResponseWriter, r *http.Request, msg string) {
 	d := tplDataExtT{
 		Q: &qst.QuestionaireT{LangCode: "en"}, // just setting the lang code for the outer layout template
 	}
+
 	d.TplDataT = tpl.TplDataT{
 		TplBundle: tplBundle,
 		TS:        ts,

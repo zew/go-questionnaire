@@ -33,7 +33,7 @@
 
 				{{if exists . "Q"}}
 					<span style="font-size: 70%; position: relative; bottom: -1px; left: 4px; ">
-						<span style='font-size: 130%'>{{.Q.Survey.Org.Tr $lc}} </span> {{.Q.Survey.Name.Tr $lc}}
+						<span style='font-size: 130%'>{{.Q.Survey.Org.TrSilent $lc}} </span> {{.Q.Survey.Name.TrSilent $lc}}
 						 {{toHtml (.Q.Survey.Label) }}
 					</span>
 				{{else}}
@@ -53,8 +53,8 @@
 	<!-- footer -->
 	<div class="footer">
 		{{if exists . "Q"}}
-			<div style='float: left; padding-left: 20px; font-size: 70%;'>
-					{{.Q.Survey.Name.Tr $lc}} - {{toHtml (.Q.Survey.Label) }}
+			<div style='float: left; padding-left: 40px; aafont-size: 70%;'>
+					{{.Q.Survey.Name.TrSilent $lc}} - {{toHtml (.Q.Survey.Label) }}
 			</div>
 		{{end}}
 

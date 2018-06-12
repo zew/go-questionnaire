@@ -27,24 +27,24 @@ type ConfigT struct {
 
 	IsProduction bool `json:"is_production"` // true => templates are not recompiled
 
-	AppName       string `json:"app_name,omitempty"`       // with case, i.e. 'My App'
-	URLPathPrefix string `json:"urlpath_prefix,omitempty"` // lower case - no slashes, i.e. 'myapp'
-	AppMnemonic   string `json:"app_mnemonic,omitempty"`   // For differentiation of static dirs - when URLPathPrefix is empty; imagine multiple instances
+	AppName       string `json:"app_name"`       // with case, i.e. 'My App'
+	URLPathPrefix string `json:"urlpath_prefix"` // lower case - no slashes, i.e. 'myapp'
+	AppMnemonic   string `json:"app_mnemonic"`   // For differentiation of static dirs - when URLPathPrefix is empty; imagine multiple instances
 
-	BindHost               string `json:"bind_host,omitempty"`
-	BindSocket             int    `json:"bind_socket,omitempty"`
-	BindSocketFallbackHTTP int    `json:"bind_socket_fallback_http,omitempty"`
+	BindHost               string `json:"bind_host"`
+	BindSocket             int    `json:"bind_socket"`
+	BindSocketFallbackHTTP int    `json:"bind_socket_fallback_http"`
 	BindSocketTests        int    `json:"bind_socket_tests,omitempty"` // another port for running test server
-	TLS                    bool   `json:"tls,omitempty"`
-	TLS13                  bool   `json:"tls13,omitempty"`               // ultra safe - but excludes internet explorer 11
-	ReadTimeOut            int    `json:"http_read_time_out,omitempty"`  // for large requests
-	WriteTimeOut           int    `json:"http_write_time_out,omitempty"` // for *responding* large files over slow networks, i.e. videos, set to 30 or 60 secs
-	MaxPostSize            int64  `json:"max_post_size,omitempty"`       // request body size limit, against DOS attacks, limits file uploads
+	TLS                    bool   `json:"tls"`
+	TLS13                  bool   `json:"tls13"`                   // ultra safe - but excludes internet explorer 11
+	ReadTimeOut            int    `json:"http_read_time_out"`      // for large requests
+	WriteTimeOut           int    `json:"http_write_time_out"`     // for *responding* large files over slow networks, i.e. videos, set to 30 or 60 secs
+	MaxPostSize            int64  `json:"max_post_size,omitempty"` // request body size limit, against DOS attacks, limits file uploads
 
 	LocationName string         `json:"location,omitempty"` // i.e. "Europe/Berlin", see Go\lib\time\zoneinfo.zip
 	Loc          *time.Location `json:"-"`                  // Initialized during load
 
-	Css map[string]string `json:"css,omitempty"` // differentiate multiple instances by color and stuff - without duplicating entire css files
+	Css map[string]string `json:"css"` // differentiate multiple instances by color and stuff - without duplicating entire css files
 
 	// available language codes for the application, first element is default
 	LangCodes []string `json:"lang_codes,omitempty"`

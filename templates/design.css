@@ -1,7 +1,8 @@
 @media screen and (min-width: 1280px) and (min-height: 840px) {
-   html {
-      zoom: 120%
-   }
+	html {
+		/* if chrome is not at 100 percent zoom, then this has no effect  */
+		zoom: 120%;
+	}
 }
 
 * {
@@ -262,7 +263,7 @@ input.ib-120 { 	width:120px;  }
 	/*  dont set any width - has all kinds of strange effects */
 
 	font-size: 12px;
-	line-height: 100%;
+	line-height:   100%;
 	padding-right: 2px; 
 
 }

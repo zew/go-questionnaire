@@ -256,7 +256,7 @@ func LoginByHash(w http.ResponseWriter, r *http.Request) (bool, error) {
 
 	keys := []string{}
 	for key := range r.Form {
-		if key != "h" {
+		if key != "h" && key != "page" {
 			keys = append(keys, key)
 		}
 	}

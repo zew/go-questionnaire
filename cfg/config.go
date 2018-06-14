@@ -44,12 +44,14 @@ type ConfigT struct {
 	LocationName string         `json:"location,omitempty"` // i.e. "Europe/Berlin", see Go\lib\time\zoneinfo.zip
 	Loc          *time.Location `json:"-"`                  // Initialized during load
 
-	Css map[string]string `json:"css"` // differentiate multiple instances by color and stuff - without duplicating entire css files
+	CSS map[string]string `json:"css"` // differentiate multiple instances by color and stuff - without duplicating entire css files
 
 	// available language codes for the application, first element is default
-	LangCodes []string `json:"lang_codes,omitempty"`
+	LangCodes []string `json:"lang_codes"`
 	// multi language strings for the application
-	Mp trl.Map `json:"translation_map,omitempty"`
+	Mp trl.Map `json:"translation_map"`
+
+	AllowSkipForward bool `json:"allow_skip_forward"` // skipping back always allowed, skipping forward is configurable
 }
 
 // CfgPath is obtained by ENV variable or command line flag in main package.

@@ -3,6 +3,8 @@ package qst
 import (
 	"bytes"
 	"fmt"
+
+	"github.com/zew/go-questionaire/cfg"
 )
 
 const (
@@ -49,6 +51,7 @@ func (q *QuestionaireT) ProgressBar() string {
 	b.WriteString(fmt.Sprintf("<ol class='progress'>"))
 
 	for idx, p := range q.Pages {
+
 		liClass := ""
 		if idx < q.CurrPage {
 			liClass = "is-complete"
@@ -56,6 +59,7 @@ func (q *QuestionaireT) ProgressBar() string {
 			liClass = "is-active"
 		}
 
+		// Some positional finetuning
 		sect := p.Section.TrSilent(q.LangCode)
 		leftOrCenter := "text-align: left; width: 98%; transform: translate(25%, 0px);"
 		if sect != "" {
@@ -68,18 +72,24 @@ func (q *QuestionaireT) ProgressBar() string {
 		} else if sect == "" {
 			leftOrCenter = "transform: translate(0, 75%);"
 		}
+
+		// make hyperlinks to the pages
+		onclick := fmt.Sprintf(` onclick="document.forms.frmMain.page.value='%v';document.forms.frmMain.submit();" style="cursor:pointer"  `, idx)
+		if cfg.Get().AllowSkipForward == false && idx > q.CurrPage {
+			onclick = ""
+		}
+
 		b.WriteString(
-			// onclick and style added - to make hyperlinks to the pages
 			fmt.Sprintf(`
 					<li 
-						onclick="document.forms.frmMain.page.value='%v';document.forms.frmMain.submit();" style="cursor:pointer"  
+						%v
 						class="%v" data-step="%v">
 						<span style='display: inline-block; line-height: 95%%;  %v'>
 							%v%v
 						<span>
 					</li> 
 				`,
-				idx,
+				onclick,
 				liClass, idx+1,
 				leftOrCenter,
 				sect, p.Label.Tr(q.LangCode),

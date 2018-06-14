@@ -81,20 +81,17 @@ The last alternative is a fixed table layout. `<span class='go-quest-cell' >` ha
 Using `<div style='display: table/table-row/table-cell'` does not support colspan or rowspan functionality. 
 
 
-## Todo Ahead
-
-* Prompt user for SurveyID, WaveID
-
-* Maybe JSON schema validator
-
-
 ### Layout todo
 
 Decrease horizontal distance of radio groups 
 
-Allow jumping back, but prohibit jumping ahead
-
 Interest range: lower horizontal distance
+
+## Technical todo
+
+At inception I envisioned a JSON schema validator  
+and questionaire creation by direct editing the JSON files  
+but that remains as elusive as it did with XML.
 
 
 ## About Go-App-Tpl
@@ -145,9 +142,7 @@ It features
 
   
 
-
-
-## Design guidelines
+## Technical design guidelines
 
 * Subpackaging is done by concern, neither too amorphous nor too atomic. 
 

@@ -213,17 +213,30 @@ input.ib-120 { 	width:120px;  }
 table.main-table{
 	table-layout: fixed;
 	border-collapse: collapse; 
-	/* border: 1px solid #ccf;  */
 	width: 100%;
 	/* width: 70%;
 	margin: 0 auto; */
+	
+	/* border: 1px solid #eaeaea;  */
 }
 
+table.alternate-row-color{
+	background-color:  #eaeaea; 
+}
+
+table.bordered {
+	/* border: 1px solid #eaeaea;  */
+}
+table.bordered td{
+	/* border: 1px solid #eaeaea;  */
+}
+
+
 table.main-table td{
-	/* border: 1px solid #fcc;  */
 	margin: 0;
 	padding: 1px;
 	padding-bottom: 2px;
+	/* border: 1px solid #eaeaea;  */
 }
 
 /* this does not work, since every row is rendered as separate table  */
@@ -240,6 +253,10 @@ table.main-table tr:nth-child(odd){
 
 .vert-wider {
 	line-height: 160%;
+}
+
+.alternate-background {
+	background-color: #ccc;
 }
 
 

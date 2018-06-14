@@ -6,6 +6,7 @@ package handlers
 import (
 	"fmt"
 	"html"
+	"io"
 	"log"
 	"net/http"
 	"os"
@@ -86,6 +87,14 @@ func loadQuestionaire(w http.ResponseWriter, r *http.Request, userSurveyType, us
 func ReloadH(w http.ResponseWriter, r *http.Request) {
 
 	sess := sessx.New(w, r)
+
+	w.Header().Set("Content-Type", "text/html; charset=utf-8")
+	io.WriteString(w, `
+		<form method="POST" class="survey-edit-form" >
+			<input type="submit" name="submit" id="submit"  value="Submit" accesskey="s"  /> <br>
+		</form>
+		<script> document.getElementById('submit').focus(); </script>	
+	`)
 
 	var q = &qst.QuestionaireT{}
 	ok, err := sess.EffectiveObj("questionaire", q)

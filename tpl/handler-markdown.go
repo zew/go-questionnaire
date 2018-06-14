@@ -6,7 +6,6 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
-	"net/url"
 	"os"
 	"path"
 	"path/filepath"
@@ -46,8 +45,8 @@ func CreateAndRegisterHandlerForDocs(mux1 *http.ServeMux) {
 			newPth := r.URL.Path
 			newPth = strings.TrimSuffix(newPth, path.Ext(r.URL.Path))
 			newPth += ".html"
-			red := newPth + url.QueryEscape(r.URL.RawQuery)
-			red = newPth + "?" + r.URL.RawQuery
+			// red := newPth + url.QueryEscape(r.URL.RawQuery)
+			red := newPth + "?" + r.URL.RawQuery
 			log.Printf("Redirecting %20v to %20v", r.URL.Path, red)
 			http.Redirect(w, r, red, http.StatusTemporaryRedirect)
 			return

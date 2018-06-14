@@ -248,7 +248,8 @@ type groupT struct {
 	Label trl.S `json:"label,omitempty"`
 	Desc  trl.S `json:"description,omitempty"`
 
-	Vertical bool `json:"vertical,omitempty"` // groups vertically, not horizontally
+	Vertical        bool `json:"vertical,omitempty"` // groups vertically, not horizontally
+	OddRowsColoring bool `json:"odd_rows_coloring"`  // color odd rows
 
 	// Number of vertical columns;
 	// for horizontal *and* (not yet implemented) vertical layouts;
@@ -285,14 +286,17 @@ func (gr groupT) HTML(langCode string) string {
 
 	b.WriteString(tableOpen)
 
+	// Adding up columns
+	// Find out when a new row starts
 	cols := 0 // cols counter
+	rows := 0
 	for i, inp := range gr.Inputs {
+
 		b.WriteString(inp.HTML(langCode, gr.Cols))
 
 		if gr.Cols > 0 {
 
 			if inp.Type != "button" { // button has label *inside of it*
-
 				if inp.ColSpanLabel > 1 {
 					cols += inp.ColSpanLabel // wider labels
 				} else {
@@ -322,7 +326,17 @@ func (gr groupT) HTML(langCode string) string {
 				b.WriteString(tableClose)
 			}
 			if (cols+0)%gr.Cols == 0 && i < len(gr.Inputs)-1 {
-				b.WriteString(tableOpen)
+				rows++
+				to := tableOpen
+				if gr.OddRowsColoring {
+					to = strings.Replace(to, "class='main-table' ", "class='main-table bordered'  ", -1) // enable bordering as a whole
+				}
+				if rows%2 == 1 && gr.OddRowsColoring {
+					to = strings.Replace(to, "bordered", "bordered alternate-row-color", -1) // grew background for odd row
+				}
+				// We would have keep track of tableOpen statements
+				// then we could inject alternating row colors here
+				b.WriteString(to)
 			}
 
 		}

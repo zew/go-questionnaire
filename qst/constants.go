@@ -27,9 +27,9 @@ const (
 	vspacer   = "<div class='go-quest-vspacer'> &nbsp; </div>\n"
 	vspacer16 = "<div class='go-quest-vspacer-16'> &nbsp; </div>\n"
 
-	tableOpen    = "<table class='main-table' ><tr>\n"
-	tableClose   = "</tr></table>\n"
-	tableBetween = tableClose + tableOpen
+	tableOpen  = "<table class='main-table' ><tr>\n"
+	tableClose = "</tr></table>\n"
+	// tableBetween = tableClose + tableOpen
 )
 
 func td(hAlign horizontalAlignment, widthPercent string, payload string, args ...string) string {

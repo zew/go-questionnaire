@@ -214,8 +214,8 @@ table.main-table{
 	table-layout: fixed;
 	border-collapse: collapse; 
 	width: 100%;
-	/* width: 70%;
-	margin: 0 auto; */
+	/* width: 70%; */
+	margin: 0 auto;
 	
 	/* border: 1px solid #eaeaea;  */
 }
@@ -229,6 +229,7 @@ table.bordered {
 }
 table.bordered td{
 	/* border: 1px solid #eaeaea;  */
+	border: 2px solid #fff; 
 }
 
 
@@ -278,7 +279,7 @@ table.main-table tr:nth-child(odd){
 }
 
 .go-quest-group {
-	
+	/* text-align: center; */
 }
 
 .go-quest-group-header {

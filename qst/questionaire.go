@@ -248,8 +248,10 @@ type groupT struct {
 	Label trl.S `json:"label,omitempty"`
 	Desc  trl.S `json:"description,omitempty"`
 
-	Vertical        bool `json:"vertical,omitempty"` // groups vertically, not horizontally
-	OddRowsColoring bool `json:"odd_rows_coloring"`  // color odd rows
+	Vertical bool `json:"vertical,omitempty"` // groups vertically, not horizontally
+
+	OddRowsColoring bool `json:"odd_rows_coloring"` // color odd rows
+	Width           int  `json:"width"`             // default is 100 percent
 
 	// Number of vertical columns;
 	// for horizontal *and* (not yet implemented) vertical layouts;
@@ -272,27 +274,51 @@ func (gr *groupT) AddInput() *inputT {
 	return ret
 }
 
+// TableOpen creates a table markup with various CSS parameters
+func (gr *groupT) TableOpen(rows int) string {
+	to := tableOpen
+
+	if gr.OddRowsColoring {
+		to = strings.Replace(to, "class='main-table' ", "class='main-table bordered'  ", -1) // enable bordering as a whole
+	}
+	if rows%2 == 1 && gr.OddRowsColoring {
+		to = strings.Replace(to, "bordered", "bordered alternate-row-color", -1) // grew background for odd row
+	}
+
+	width := ""
+	if gr.Width > 0 && gr.Width < 100 {
+		width = fmt.Sprintf("style='width: %v%%;' >", gr.Width)
+		to = strings.Replace(to, ">", width, -1) // less than 100 percent, for i.e. radios more closely together
+	}
+
+	return to
+}
+
 // HTML renders a group of inputs to HTML
 func (gr groupT) HTML(langCode string) string {
 
 	b := bytes.Buffer{}
 
-	b.WriteString(fmt.Sprintf("<div class='go-quest-group' cols='%v'>\n", gr.Cols)) // cols is just for debugging
-
+	if gr.Width == 0 {
+		gr.Width = 100
+	}
+	b.WriteString(fmt.Sprintf("<div class='go-quest-group' style='width:%v%%; margin: 0 auto;'  cols='%v'>\n", gr.Width, gr.Cols)) // cols is just for debugging
 	lbl := renderLabelDescription(langCode, HLeft, gr.Label, gr.Desc, "go-quest-group-header", gr.Cols, gr.Cols)
 
 	b.WriteString(lbl)
 	b.WriteString(vspacer)
 
-	b.WriteString(tableOpen)
+	b.WriteString("</div>\n")
 
+	// Rendering inputs
 	// Adding up columns
 	// Find out when a new row starts
 	cols := 0 // cols counter
 	rows := 0
+	b.WriteString(gr.TableOpen(rows))
 	for i, inp := range gr.Inputs {
 
-		b.WriteString(inp.HTML(langCode, gr.Cols))
+		b.WriteString(inp.HTML(langCode, gr.Cols)) // rendering markup
 
 		if gr.Cols > 0 {
 
@@ -327,21 +353,12 @@ func (gr groupT) HTML(langCode string) string {
 			}
 			if (cols+0)%gr.Cols == 0 && i < len(gr.Inputs)-1 {
 				rows++
-				to := tableOpen
-				if gr.OddRowsColoring {
-					to = strings.Replace(to, "class='main-table' ", "class='main-table bordered'  ", -1) // enable bordering as a whole
-				}
-				if rows%2 == 1 && gr.OddRowsColoring {
-					to = strings.Replace(to, "bordered", "bordered alternate-row-color", -1) // grew background for odd row
-				}
-				// We would have keep track of tableOpen statements
-				// then we could inject alternating row colors here
-				b.WriteString(to)
+				b.WriteString(gr.TableOpen(rows))
 			}
 
 		}
 	}
-	b.WriteString("</div>\n")
+	// b.WriteString("</div>\n")
 
 	b.WriteString(tableClose)
 

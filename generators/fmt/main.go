@@ -56,6 +56,7 @@ func Create() *qst.QuestionaireT {
 			gr := page.AddRadioMatrixGroup(labelsGoodBad(), names1stMatrix, labels123Matrix)
 			gr.Cols = 5 // necessary, otherwise no vspacers
 			gr.OddRowsColoring = true
+			gr.Width = 85
 			gr.Label = trl.S{
 				"de": "1.",
 				"en": "1.",
@@ -79,6 +80,7 @@ func Create() *qst.QuestionaireT {
 			gr := page.AddRadioMatrixGroup(labelsImproveDeteriorate(), names2stMatrix, labels123Matrix)
 			gr.Cols = 5 // necessary, otherwise no vspacers
 			gr.OddRowsColoring = true
+			gr.Width = 85
 			gr.Label = trl.S{
 				"de": "2a.",
 				"en": "2a.",
@@ -103,6 +105,7 @@ func Create() *qst.QuestionaireT {
 			gr := page.AddRadioMatrixGroup(labelsImproveDeteriorate(), names3rdMatrix, labels123Matrix)
 			gr.Cols = 5 // necessary, otherwise no vspacers
 			gr.OddRowsColoring = true
+			gr.Width = 85
 			gr.Label = trl.S{
 				"de": "2b.",
 				"en": "2b.",

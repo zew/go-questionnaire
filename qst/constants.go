@@ -1,6 +1,8 @@
 package qst
 
-import "fmt"
+import (
+	"fmt"
+)
 
 var implementedTypes = map[string]interface{}{
 	"text":     nil,
@@ -24,7 +26,18 @@ const (
 	ValSet    = "1"
 	vspacer   = "<div class='go-quest-vspacer'> &nbsp; </div>\n"
 	vspacer16 = "<div class='go-quest-vspacer-16'> &nbsp; </div>\n"
+
+	tableOpen    = "<table class='main-table' ><tr>\n"
+	tableClose   = "</tr></table>\n"
+	tableBetween = tableClose + tableOpen
 )
+
+func td(hAlign horizontalAlignment, widthPercent string, payload string, args ...string) string {
+	return fmt.Sprintf("<td style='text-align:%v; %v; '>%v</td>\n",
+		hAlign, widthPercent, payload)
+	// return fmt.Sprintf("<span class='go-quest-cell-%v' style='%v;'>%v</span>\n",
+	// 	hAlign, widthPercent, payload)
+}
 
 type horizontalAlignment int
 
@@ -63,7 +76,9 @@ func colWidth(colsElement, colsTotal int) string {
 		colsElement = 1
 	}
 
-	fract := float32(colsElement) * float32(97.5) / float32(colsTotal)
+	full := 97.5 // inline-block
+	full = 99.9  // table
+	fract := float32(colsElement) * float32(full) / float32(colsTotal)
 	if fract > 100.0 {
 		fract = 100
 	}

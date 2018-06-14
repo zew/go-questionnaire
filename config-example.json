@@ -13,6 +13,7 @@
  	"http_write_time_out": 30,
  	"max_post_size": 2097152,
  	"location": "Europe/Berlin",
+ 	"allow_skip_forward": false,
  	"css": null,
  	"lang_codes": [
  		"de",
@@ -27,6 +28,5 @@
  			"de": "Seite",
  			"en": "Page"
  		}
- 	},
- 	"allow_skip_forward": false
+ 	}
  }

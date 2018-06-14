@@ -207,66 +207,43 @@ input.ib-120 { 	width:120px;  }
 }
 
 .go-quest-main-form {
-	/*  keep spaces between inline blocks small  
-		not necessary with go-quest-cell{ float: left; }
-		but then the vertical align is disrupted.
-		
-		Full-fledged table layout widens columns;	
-	*/
-	font-size:   3px;  
 }
 
 
-.go-quest-cell-left, 
-.go-quest-cell-center, 
-.go-quest-cell-right, 
-.dummy {
-	display: inline-block;
-	white-space: nowrap; /* forcing the div to stretch as wide as it's contents */
+table.main-table{
+	table-layout: fixed;
+	border-collapse: collapse; 
+	/* border: 1px solid #ccf;  */
+	width: 100%;
+	/* width: 70%;
+	margin: 0 auto; */
+}
+
+table.main-table td{
+	/* border: 1px solid #fcc;  */
 	margin: 0;
-	padding: 0;
-	vertical-align: middle;
-	line-height: 100%;
-	/* min-width: 200px; */
-	text-align: left; 	
-
-	/* float left disrupts the vertical alignment of the blocks  */
-	/* float: left; */
-	
-	
-	/* for debugging */
-	/* border-top: 1px solid #ccc;
-	border-bottom: 1px solid #ccc; */
-	
-	
+	padding: 1px;
+	padding-bottom: 2px;
 }
 
-.go-quest-cell-center, 
-.dummy {
-	text-align: center; 	
+/* this does not work, since every row is rendered as separate table  */
+table.main-table tr:nth-child(odd){
 }
 
-.go-quest-cell-right, 
-.dummy {
-	text-align: right; 	
-}
 
 
 .go-quest-label,
 .dummy {
-	margin: 0;
-	padding: 0;
-	display: inline-block;
-	
-	white-space: nowrap;     /* nowrap stretches - overflowing the span  - newlines are ignored */
-	white-space: pre-line;   /* newlines can control the stretching */
-	/*  dont set any width - has all kinds of strange effects */
-
-	font-size: 12px;
-	line-height:   100%;
-	padding-right: 2px; 
-
+	font-size:     12px;
+	line-height:   1.1em;
 }
+
+.vert-wider {
+	line-height: 160%;
+}
+
+
+
 
 
 .go-quest-page-section {

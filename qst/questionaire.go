@@ -43,6 +43,8 @@ type inputT struct {
 
 	HAlignLabel   horizontalAlignment `json:"horizontal_align_label,omitempty"`   // description left/center/right of input, default left, similar setting for radioT but not for group
 	HAlignControl horizontalAlignment `json:"horizontal_align_control,omitempty"` // label       left/center/right of input, default left, similar setting for radioT but not for group
+	CSSLabel      string              `json:"css_label,omitempty"`
+	CSSControl    string              `json:"css_control,omitempty"`
 	Label         trl.S               `json:"label,omitempty"`
 	Desc          trl.S               `json:"description,omitempty"`
 	Suffix        trl.S               `json:"suffix,omitempty"`
@@ -75,11 +77,12 @@ func newInputUnused() inputT {
 	return t
 }
 
-// renderLabelDescription wraps lbl+desc into a <span> of class 'go-quest-cell'.
+// renderLabelDescription wraps lbl+desc into a <span> of class 'go-quest-cell' or td-cell.
 // A percent width is dynamically computed from colsLabel / numCols.
 // Argument numCols is the total number of cols per row.
 // It is used to compute the precise width in percent
-func renderLabelDescription(langCode string, hAlign horizontalAlignment, lbl, desc trl.S, css string, colsLabel, numCols int) string {
+func renderLabelDescription(langCode string, hAlign horizontalAlignment,
+	lbl, desc trl.S, css string, colsLabel, numCols int) string {
 	ret := ""
 	if lbl == nil && desc == nil {
 		return ret
@@ -92,10 +95,11 @@ func renderLabelDescription(langCode string, hAlign horizontalAlignment, lbl, de
 	if desc == nil {
 		e2 = "" // Suppress "Translation map not initialized." here
 	}
+
 	ret = fmt.Sprintf(
-		"<span class='go-quest-label %v' ><b>%v</b> %v </span>\n", css, e1, e2,
+		"<span class='go-quest-label %v'><b>%v</b> %v </span>\n", css, e1, e2,
 	)
-	ret = fmt.Sprintf("<span class='go-quest-cell-%v'  style='%v'>%v</span>\n", hAlign, colWidth(colsLabel, numCols), ret)
+	ret = td(hAlign, colWidth(colsLabel, numCols), ret)
 	return ret
 }
 
@@ -118,16 +122,15 @@ func (i inputT) HTML(langCode string, numCols int) string {
 
 	switch i.Type {
 	case "button":
-		lbl := fmt.Sprintf("<button type='submit' name='%v' value='%v' ><b>%v</b> %v</button>\n",
-			i.Name, i.Response, i.Label.TrSilent(langCode), i.Desc.TrSilent(langCode),
+		lbl := fmt.Sprintf("<button type='submit' name='%v' value='%v' class='%v'><b>%v</b> %v</button>\n",
+			i.Name, i.Response, i.CSSControl,
+			i.Label.TrSilent(langCode), i.Desc.TrSilent(langCode),
 		)
-		lbl = fmt.Sprintf("<span class='go-quest-cell-%v' style='%v'>%v</span>\n",
-			i.HAlignControl, colWidth(i.ColSpanControl, numCols), lbl,
-		)
+		lbl = td(i.HAlignControl, colWidth(i.ColSpanControl, numCols), lbl)
 		return lbl
 
 	case "textblock":
-		lbl := renderLabelDescription(langCode, i.HAlignLabel, i.Label, i.Desc, "", i.ColSpanLabel, numCols)
+		lbl := renderLabelDescription(langCode, i.HAlignLabel, i.Label, i.Desc, i.CSSLabel, i.ColSpanLabel, numCols)
 		return lbl
 
 	case "radiogroup", "checkboxgroup":
@@ -145,20 +148,22 @@ func (i inputT) HTML(langCode string, numCols int) string {
 			// one += fmt.Sprintf("Val %v", val)
 
 			if rad.Label != nil && rad.HAlign == HLeft {
-				one += fmt.Sprintf("<span class='go-quest-label'>%v</span>\n", rad.Label.Tr(langCode))
+				one += fmt.Sprintf("<span class='go-quest-label %v'>%v</span>\n", i.CSSLabel, rad.Label.Tr(langCode))
 			}
 			if rad.Label != nil && rad.HAlign == HCenter {
-				one += fmt.Sprintf("<span class='go-quest-label'>%v</span>\n", rad.Label.Tr(langCode))
+				one += fmt.Sprintf("<span class='go-quest-label %v'>%v</span>\n", i.CSSLabel, rad.Label.Tr(langCode))
 				one += vspacer
 			}
 
-			one += fmt.Sprintf("<input type='%v' name='%v' id='%v' title='%v %v' value='%v' %v />\n",
-				innerType, nm, nm, i.Label.TrSilent(langCode), i.Desc.TrSilent(langCode), rad.Val, checked)
+			one += fmt.Sprintf("<input type='%v' name='%v' id='%v' title='%v %v' class='%v' value='%v' %v />\n",
+				innerType, nm, nm, i.Label.TrSilent(langCode), i.Desc.TrSilent(langCode), i.CSSControl,
+				rad.Val, checked,
+			)
 
 			if rad.Label != nil && rad.HAlign == HRight {
-				one += fmt.Sprintf("<span class='go-quest-label'>%v</span>\n", rad.Label.Tr(langCode))
+				one += fmt.Sprintf("<span class='go-quest-label %v'>%v</span>\n", i.CSSLabel, rad.Label.Tr(langCode))
 			}
-			one = fmt.Sprintf("<span class='go-quest-cell-%v' style='%v'>%v</span>\n", rad.HAlign, colWidth(1, numCols), one)
+			one = td(rad.HAlign, colWidth(1, numCols), one)
 			ctrl += one
 		}
 		// The checkbox "empty catcher" must follow *after* the actual checkbox input,
@@ -168,10 +173,10 @@ func (i inputT) HTML(langCode string, numCols int) string {
 				nm, nm, valEmpty)
 		}
 
-		ctrl += fmt.Sprintf("<span class='go-quest-label' >%v</span>\n", i.Suffix.TrSilent(langCode))
-		ctrl += fmt.Sprintf("<span class='go-quest-label' >%v</span>\n", i.ErrMsg.TrSilent(langCode)) // ugly layout  - but radiogroup and checkboxgroup won't have validation errors anyway
+		ctrl += fmt.Sprintf("<span class='go-quest-label %v' >%v</span>\n", i.CSSLabel, i.Suffix.TrSilent(langCode))
+		ctrl += fmt.Sprintf("<span class='go-quest-label %v' >%v</span>\n", i.CSSLabel, i.ErrMsg.TrSilent(langCode)) // ugly layout  - but radiogroup and checkboxgroup won't have validation errors anyway
 
-		lbl := renderLabelDescription(langCode, i.HAlignLabel, i.Label, i.Desc, "", i.ColSpanLabel, numCols)
+		lbl := renderLabelDescription(langCode, i.HAlignLabel, i.Label, i.Desc, i.CSSLabel, i.ColSpanLabel, numCols)
 		// lbl = fmt.Sprintf("<label for='%v'>%v</label>\n", nm, lbl)
 		return lbl + ctrl
 
@@ -193,7 +198,7 @@ func (i inputT) HTML(langCode string, numCols int) string {
 		}
 		maxChars := ""
 		if i.MaxChars > 0 {
-			maxChars = fmt.Sprintf(" MAXLENGTH='%v' ", i.MaxChars) // this is the right name of the attribute
+			maxChars = fmt.Sprintf(" MAXLENGTH='%v' ", i.MaxChars) // the right attribute for input and textarea
 		}
 
 		if i.Type == "textarea" {
@@ -203,11 +208,12 @@ func (i inputT) HTML(langCode string, numCols int) string {
 				width = fmt.Sprintf("width: %vem;", int(float64(80)*1.05))
 				width = "width: 98%;"
 			}
-			ctrl += fmt.Sprintf("<textarea name='%v' id='%v' title='%v %v' style='%v' %v %v>%v</textarea>\n",
-				nm, nm, i.Label.TrSilent(langCode), i.Desc.TrSilent(langCode), width, maxChars, colsRows, val)
+			ctrl += fmt.Sprintf("<textarea        name='%v' id='%v' title='%v %v' class='%v' style='%v' %v %v>%v</textarea>\n",
+				nm, nm, i.Label.TrSilent(langCode), i.Desc.TrSilent(langCode), i.CSSControl, width, maxChars, colsRows, val)
 		} else {
-			ctrl += fmt.Sprintf("<input type='%v' name='%v' id='%v' title='%v %v' style='%v' %v value='%v' %v />\n",
-				i.Type, nm, nm, i.Label.TrSilent(langCode), i.Desc.TrSilent(langCode), width, maxChars, val, checked)
+			ctrl += fmt.Sprintf("<input type='%v' name='%v' id='%v' title='%v %v' class='%v' style='%v' %v %v  value='%v' />\n",
+				i.Type,
+				nm, nm, i.Label.TrSilent(langCode), i.Desc.TrSilent(langCode), i.CSSControl, width, maxChars, checked, val)
 		}
 
 		// The checkbox "empty catcher" must follow *after* the actual checkbox input,
@@ -217,12 +223,12 @@ func (i inputT) HTML(langCode string, numCols int) string {
 		}
 
 		// Append suffix and error message
-		ctrl += fmt.Sprintf("<span class='go-quest-label' >%v</span>\n", i.Suffix.TrSilent(langCode))
-		ctrl += fmt.Sprintf("<span class='go-quest-label' >%v</span>\n", i.ErrMsg.TrSilent(langCode))
+		ctrl += fmt.Sprintf("<span class='go-quest-label %v' >%v</span>\n", i.CSSLabel, i.Suffix.TrSilent(langCode))
+		ctrl += fmt.Sprintf("<span class='go-quest-label %v' >%v</span>\n", i.CSSLabel, i.ErrMsg.TrSilent(langCode))
 
-		ctrl = fmt.Sprintf("<span class='go-quest-cell-%v' style='%v'>%v</span>\n", i.HAlignControl, colWidth(i.ColSpanControl, numCols), ctrl)
+		ctrl = td(i.HAlignControl, colWidth(i.ColSpanControl, numCols), ctrl)
 
-		lbl := renderLabelDescription(langCode, i.HAlignLabel, i.Label, i.Desc, "", i.ColSpanLabel, numCols)
+		lbl := renderLabelDescription(langCode, i.HAlignLabel, i.Label, i.Desc, i.CSSLabel, i.ColSpanLabel, numCols)
 		lbl = fmt.Sprintf("<label for='%v'>%v</label>\n", nm, lbl)
 		return lbl + ctrl
 
@@ -270,12 +276,14 @@ func (gr groupT) HTML(langCode string) string {
 
 	b := bytes.Buffer{}
 
-	b.WriteString(fmt.Sprintf("<div class='go-quest-group' cols='%v'>\n", gr.Cols))
+	b.WriteString(fmt.Sprintf("<div class='go-quest-group' cols='%v'>\n", gr.Cols)) // cols is just for debugging
 
 	lbl := renderLabelDescription(langCode, HLeft, gr.Label, gr.Desc, "go-quest-group-header", gr.Cols, gr.Cols)
 
 	b.WriteString(lbl)
 	b.WriteString(vspacer)
+
+	b.WriteString(tableOpen)
 
 	cols := 0 // cols counter
 	for i, inp := range gr.Inputs {
@@ -311,12 +319,18 @@ func (gr groupT) HTML(langCode string) string {
 
 			// end of row  - or end of group
 			if (cols+0)%gr.Cols == 0 || i == len(gr.Inputs)-1 {
-				b.WriteString(vspacer)
+				b.WriteString(tableClose)
+			}
+			if (cols+0)%gr.Cols == 0 && i < len(gr.Inputs)-1 {
+				b.WriteString(tableOpen)
 			}
 
 		}
 	}
 	b.WriteString("</div>\n")
+
+	b.WriteString(tableClose)
+
 	return b.String()
 
 }

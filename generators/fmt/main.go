@@ -238,7 +238,7 @@ func Create() *qst.QuestionaireT {
 
 		{
 			gr := page.AddGroup()
-			gr.Cols = 18 // necessary, otherwise no vspacers
+			gr.Cols = 100 // necessary, otherwise no vspacers
 			gr.Label = trl.S{"de": "5a.", "en": "5a."}
 			{
 				inp := gr.AddInput()
@@ -247,9 +247,12 @@ func Create() *qst.QuestionaireT {
 				inp.MaxChars = 4
 				inp.Validator = "inRange20"
 
-				inp.ColSpanLabel = 10
+				inp.ColSpanLabel = 40
+				inp.CSSLabel = "vert-wider"
+				inp.ColSpanControl = 5
 				inp.Desc = trl.S{
-					"de": "Die <b>kurzfristigen</b> Zinsen (3-Mo.-Interbanksätze) im <b>Euroraum</b> erwarten wir auf Sicht von 6 Monaten [zentrales 90%-Konfidenzintervall] zwischen",
+					"de": `Die <b>kurzfristigen</b> Zinsen (3-Mo.-Interbanksätze) im <b>Euroraum</b> erwarten wir auf Sicht von 6&nbsp;Monaten<br>
+					 [zentrales 90%-Konfidenzintervall] zwischen`,
 					"en": "We expect <b>short term</b> interest rates (3 months interbank) in the <b>euro area</b> between",
 				}
 				inp.Suffix = trl.S{"de": "%", "en": "pct"}
@@ -264,20 +267,21 @@ func Create() *qst.QuestionaireT {
 				inp.MaxChars = 4
 				inp.Validator = "inRange20"
 
-				inp.ColSpanLabel = 1
+				inp.ColSpanLabel = 2
+				inp.ColSpanControl = 10
 				inp.Desc = trl.S{
-					"de": " &nbsp; und ",
-					"en": " &nbsp; &nbsp; and ",
+					"de": "und",
+					"en": "and",
 				}
 				inp.Suffix = trl.S{"de": "%", "en": "pct"}
-				inp.HAlignLabel = qst.HCenter
+				inp.HAlignLabel = qst.HLeft
 				inp.HAlignControl = qst.HLeft
 			}
 		}
 
 		{
 			gr := page.AddGroup()
-			gr.Cols = 18 // necessary, otherwise no vspacers
+			gr.Cols = 100 // necessary, otherwise no vspacers
 			gr.Label = trl.S{"de": "5b.", "en": "5b."}
 
 			{
@@ -287,9 +291,12 @@ func Create() *qst.QuestionaireT {
 				inp.MaxChars = 4
 				inp.Validator = "inRange100"
 
-				inp.ColSpanLabel = 10
+				inp.ColSpanLabel = 40
+				inp.CSSLabel = "vert-wider"
+				inp.ColSpanControl = 5
 				inp.Desc = trl.S{
-					"de": "Die <b>langfristigen</b> Zinsen (Renditen 10jg. Staatsanleihen) in <b>Deutschland</b> erwarten wir auf Sicht von 6&nbsp;Monaten [zentrales 90%-Konfidenzintervall] zwischen",
+					"de": `Die <b>langfristigen</b> Zinsen (Renditen 10jg. Staatsanleihen) in <b>Deutschland</b> erwarten wir auf Sicht von 6&nbsp;Monaten<br> 
+					[zentrales 90%-Konfidenzintervall] zwischen`,
 					"en": "We expect <b>long term</b> interest rates in <b>Germany</b> in 6 months between",
 				}
 				inp.Suffix = trl.S{"de": "%", "en": "pct"}
@@ -304,13 +311,14 @@ func Create() *qst.QuestionaireT {
 				inp.MaxChars = 4
 				inp.Validator = "inRange100"
 
-				inp.ColSpanLabel = 1
+				inp.ColSpanLabel = 2
+				inp.ColSpanControl = 10
 				inp.Desc = trl.S{
-					"de": " &nbsp; und ",
-					"en": " &nbsp; &nbsp; and ",
+					"de": "und",
+					"en": "and",
 				}
 				inp.Suffix = trl.S{"de": "%", "en": "pct"}
-				inp.HAlignLabel = qst.HCenter
+				inp.HAlignLabel = qst.HLeft
 				inp.HAlignControl = qst.HLeft
 			}
 
@@ -371,6 +379,7 @@ func Create() *qst.QuestionaireT {
 				inp := gr.AddInput()
 				inp.Type = "radiogroup"
 				inp.Name = "finished"
+				inp.CSSLabel = "vert-wider"
 
 				inp.Label = trl.S{"de": "Abschluss", "en": "Finish"}
 				inp.Desc = trl.S{"de": "", "en": ""}

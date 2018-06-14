@@ -36,7 +36,7 @@ Questionaires are encoded as JSON file serving as template data entry.
 
 * Different questionaires are separated by URL path.
 
-* Survey results are pulled in by the independent package `transferrer`. 
+* Survey results are pulled in by the independent command `transferrer`. 
 
 ## Data thrift
 
@@ -65,33 +65,29 @@ resulting JSON file.
 
 * Column width for any label or form element can be set individually (`ColSpanLabel` and `ColSpanControl`)
 
+* Each label or form element can be styled additionally (`CSSLabel` and `CSSControl`)
+
+
+At inception we envisioned a JSON schema validator  
+and questionaire creation by directly editing of JSON files  
+but that remains as elusive as it did with XML.
 
 
 ### Layout concept details
 
-The column width is implemented with inline block elements (CSS class `.go-quest-cell`). 
-The white space between inline block elements subtracts from the total width.
-The column width computation in colWidth() therefore computes based on 97.5 percent.
+Inline block suffers from the disadvantage, that 
+the white space between inline block elements subtracts from the total width.
+The column width computation must be based on a compromise slack of 97.5 percent.
 
-There are two alternatives.
+Stacking cells wit `float: left` takes away the nice vertical middle alignment of the cells.
 
-First alternative is stacking cells wit `float: left`. But this takes away the nice vertical middle alignment of the cells.
+Thus, the we chose fixed table layout.
 
-The last alternative is a fixed table layout. `<span class='go-quest-cell' >` has to become `<td>`. And every `vspacer` has to be replaced with  `</tr></table>  <table><tr>`.
-Using `<div style='display: table/table-row/table-cell'` does not support colspan or rowspan functionality. 
+We need full fledged markup, since mere CSS classes such as `<div style='display: table/table-row/table-cell'` do not support colspan or rowspan functionality. 
 
+Table width can be reduced per CSS file.
+Maybe it should be adjustable for each control group?
 
-### Layout todo
-
-Decrease horizontal distance of radio groups 
-
-Interest range: lower horizontal distance
-
-## Technical todo
-
-At inception I envisioned a JSON schema validator  
-and questionaire creation by direct editing the JSON files  
-but that remains as elusive as it did with XML.
 
 
 ## About Go-App-Tpl

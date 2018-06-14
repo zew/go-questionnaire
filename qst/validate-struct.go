@@ -37,8 +37,16 @@ func (q *QuestionaireT) Validate() error {
 	}
 
 	// Check inputs
+	// Set page and group width to 100
+	// Set values for radiogroups
 	for i1 := 0; i1 < len(q.Pages); i1++ {
+		if q.Pages[i1].Width == 0 {
+			q.Pages[i1].Width = 100
+		}
 		for i2 := 0; i2 < len(q.Pages[i1].Groups); i2++ {
+			if q.Pages[i1].Groups[i2].Width == 0 {
+				q.Pages[i1].Groups[i2].Width = 100
+			}
 			for i3 := 0; i3 < len(q.Pages[i1].Groups[i2].Inputs); i3++ {
 
 				s := fmt.Sprintf("Page %v - Group %v - Input %v: ", i1, i2, i3)

@@ -196,8 +196,9 @@ input.ib-120 { 	width:120px;  }
 	width:      70%; 
 	min-width:  960px; 
 
-	/*  padding-top:20px; => causes vert scroll bar; use body.padding to adjust  */
-	padding-left:50px;  /* aethetic compensation since control do not reach the right margin */	
+	padding: 0;
+	/* padding-top:20px; => causes vert scroll bar; use body.padding to adjust  */
+	/* padding-left:6%;  => aesthetic compensation moved to page rendering */
 	padding-right:0px;	
 	padding-bottom:0px;	
 
@@ -215,7 +216,7 @@ table.main-table{
 	border-collapse: collapse; 
 	width: 100%;
 	/* width: 70%; */
-	margin: 0 auto;
+	/* margin: 0 auto; */
 	
 	/* border: 1px solid #eaeaea;  */
 }

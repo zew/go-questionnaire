@@ -285,11 +285,9 @@ func (gr *groupT) TableOpen(rows int) string {
 		to = strings.Replace(to, "bordered", "bordered alternate-row-color", -1) // grew background for odd row
 	}
 
-	width := ""
-	if gr.Width > 0 && gr.Width < 100 {
-		width = fmt.Sprintf("style='width: %v%%;' >", gr.Width)
-		to = strings.Replace(to, ">", width, -1) // less than 100 percent, for i.e. radios more closely together
-	}
+	// set width less than 100 percent, for i.e. radios more closely together
+	width := fmt.Sprintf("style='width: %v%%;' >", gr.Width)
+	to = strings.Replace(to, ">", width, -1)
 
 	return to
 }
@@ -302,7 +300,7 @@ func (gr groupT) HTML(langCode string) string {
 	if gr.Width == 0 {
 		gr.Width = 100
 	}
-	b.WriteString(fmt.Sprintf("<div class='go-quest-group' style='width:%v%%; margin: 0 auto;'  cols='%v'>\n", gr.Width, gr.Cols)) // cols is just for debugging
+	b.WriteString(fmt.Sprintf("<div class='go-quest-group' style='width:%v%%;'  cols='%v'>\n", gr.Width, gr.Cols)) // cols is just for debugging
 	lbl := renderLabelDescription(langCode, HLeft, gr.Label, gr.Desc, "go-quest-group-header", gr.Cols, gr.Cols)
 
 	b.WriteString(lbl)
@@ -358,7 +356,6 @@ func (gr groupT) HTML(langCode string) string {
 
 		}
 	}
-	// b.WriteString("</div>\n")
 
 	b.WriteString(tableClose)
 
@@ -372,6 +369,7 @@ type pageT struct {
 	Label   trl.S `json:"label,omitempty"`
 	Desc    trl.S `json:"description,omitempty"`
 
+	Width  int       `json:"width,omitempty"` // default is 100 percent
 	Groups []*groupT `json:"groups,omitempty"`
 
 	Finished time.Time `json:"finished,omitempty"` // truncated to second
@@ -481,6 +479,15 @@ func (q *QuestionaireT) PageHTML(idx int) (string, error) {
 
 	b := bytes.Buffer{}
 
+	// set width less than 100 percent, for i.e. radios more closely together
+
+	padding := 6 // aesthetic compensation since control do not reach the right margin
+	if p.Width < 100 {
+		padding = 0
+	}
+	width := fmt.Sprintf("<div style='width: %v%%; margin: 0 auto; padding-left: %v%%' >", p.Width, padding)
+	b.WriteString(width)
+
 	if p.Section != nil {
 		b.WriteString(fmt.Sprintf("<span class='go-quest-page-section' >%v</span>", p.Section.Tr(q.LangCode)))
 		if p.Label.Tr(q.LangCode) != "" {
@@ -501,6 +508,9 @@ func (q *QuestionaireT) PageHTML(idx int) (string, error) {
 			b.WriteString(vspacer16)
 		}
 	}
+
+	b.WriteString("</div> <!-- width -->")
+
 	return b.String(), nil
 }
 

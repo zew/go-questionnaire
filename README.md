@@ -75,17 +75,26 @@ but that remains as elusive as it did with XML.
 
 ### Layout concept details
 
+#### Rejected Solutions
+
 Inline block suffers from the disadvantage, that 
 the white space between inline block elements subtracts from the total width.
 The column width computation must be based on a compromise slack of i.e. 97.5 percent.
 
 Stacking cells wit `float: left` takes away the nice vertical middle alignment of the cells.
 
+#### Accepted Solution
+
 Thus, the we chose fixed table layout.
 
 We need full fledged markup, since mere CSS classes such as `<div style='display: table/table-row/table-cell'` do not support colspan or rowspan functionality. 
 
-Table width can be adjusted for each control group.
+Page width can be adjusted for each page. 
+Squeezing or stretching all rows equally.
+Page remains horizontally _centered_.
+
+Each control group width can be adjusted for each control group.
+The control group remains left-justified.
 
 
 

@@ -205,7 +205,7 @@ func (i inputT) HTML(langCode string, numCols int) string {
 			colsRows := fmt.Sprintf(" cols='%v' rows='1' ", i.MaxChars+1)
 			if i.MaxChars > 80 {
 				colsRows = fmt.Sprintf(" cols='80' rows='%v' ", i.MaxChars/80+1)
-				width = fmt.Sprintf("width: %vem;", int(float64(80)*1.05))
+				// width = fmt.Sprintf("width: %vem;", int(float64(80)*1.05))
 				width = "width: 98%;"
 			}
 			ctrl += fmt.Sprintf("<textarea        name='%v' id='%v' title='%v %v' class='%v' style='%v' %v %v>%v</textarea>\n",

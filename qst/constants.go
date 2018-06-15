@@ -76,8 +76,8 @@ func colWidth(colsElement, colsTotal int) string {
 		colsElement = 1
 	}
 
-	full := 97.5 // inline-block
-	full = 99.9  // table
+	// full := 97.5 // inline-block
+	full := 99.9 // table
 	fract := float32(colsElement) * float32(full) / float32(colsTotal)
 	if fract > 100.0 {
 		fract = 100

@@ -46,11 +46,15 @@ func (q *QuestionaireT) ProgressBar() string {
 	//
 	// Debug with
 	// 		console.log('document.forms.frmMain.page.value: ',document.forms.frmMain.page.value);
-	b.WriteString(fmt.Sprintf("<input type='hidden' name='page' value='-1' >"))
+	b.WriteString(fmt.Sprintf(`<input type="hidden" name="page" value="-1" >`))
 
 	b.WriteString(fmt.Sprintf("<ol class='progress'>"))
 
 	for idx, p := range q.Pages {
+
+		if p.NoNavigation {
+			continue
+		}
 
 		liClass := ""
 		if idx < q.CurrPage {
@@ -90,7 +94,7 @@ func (q *QuestionaireT) ProgressBar() string {
 					</li> 
 				`,
 				onclick,
-				liClass, idx+1,
+				liClass, p.NavigationalNum, //idx+1,
 				leftOrCenter,
 				sect, p.Label.Tr(q.LangCode),
 			),

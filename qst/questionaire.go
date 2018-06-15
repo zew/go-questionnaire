@@ -365,9 +365,11 @@ func (gr groupT) HTML(langCode string) string {
 
 // Type page contains groups with inputs
 type pageT struct {
-	Section trl.S `json:"section,omitempty"` // several pages have a section headline
-	Label   trl.S `json:"label,omitempty"`
-	Desc    trl.S `json:"description,omitempty"`
+	Section         trl.S `json:"section,omitempty"` // several pages have a section headline
+	Label           trl.S `json:"label,omitempty"`
+	Desc            trl.S `json:"description,omitempty"`
+	NoNavigation    bool  `json:"no_navigation,omitempty"` // page will not show up in progress bar
+	NavigationalNum int   `json:"navi_num"`                // the number in Navigation order; computed by q.Validate
 
 	Width  int       `json:"width,omitempty"` // default is 100 percent
 	Groups []*groupT `json:"groups,omitempty"`
@@ -514,34 +516,78 @@ func (q *QuestionaireT) PageHTML(idx int) (string, error) {
 	return b.String(), nil
 }
 
-// HasPrev if a previous page exists
-func (q *QuestionaireT) HasPrev() bool {
-	if q.CurrPage > 0 {
-		return true
+// next page to be shown in navigation
+func (q *QuestionaireT) nextInNavi() (int, bool) {
+	// Find next page in navigation
+	for i := q.CurrPage + 1; i < len(q.Pages); i++ {
+		if !q.Pages[i].NoNavigation {
+			return i, true
+		}
 	}
-	return false
+	// Fallback: Last page in navigation
+	for i := len(q.Pages) - 1; i >= 0; i-- {
+		if !q.Pages[i].NoNavigation {
+			return i, false
+		}
+	}
+	return len(q.Pages) - 1, false
 }
 
-// Prev returns number of the previous page
-func (q *QuestionaireT) Prev() int {
-	if q.CurrPage > 0 {
-		return q.CurrPage - 1
+// prev page to be shown in navigation
+func (q *QuestionaireT) prevInNavi() (int, bool) {
+	// Find prev page in navigation
+	for i := q.CurrPage - 1; i >= 0; i-- {
+		if !q.Pages[i].NoNavigation {
+			return i, true
+		}
 	}
-	return 0
+	// Fallback: First page in navigation
+	for i := 0; i < len(q.Pages); i++ {
+		if !q.Pages[i].NoNavigation {
+			return i, false
+		}
+	}
+	return 0, false
+}
+
+// HasPrev if a previous page exists
+func (q *QuestionaireT) HasPrev() bool {
+	_, ok := q.prevInNavi()
+	return ok
+}
+
+// Prev returns index of the previous page
+func (q *QuestionaireT) Prev() int {
+	pg, _ := q.prevInNavi()
+	return pg
+}
+
+// PrevNaviNum returns navigational number of the prev page
+func (q *QuestionaireT) PrevNaviNum() string {
+	pg, _ := q.prevInNavi()
+	return fmt.Sprintf("%v", q.Pages[pg].NavigationalNum)
 }
 
 // HasNext if a next page exists
 func (q *QuestionaireT) HasNext() bool {
-	if q.CurrPage < len(q.Pages)-1 {
-		return true
-	}
-	return false
+	_, ok := q.nextInNavi()
+	return ok
 }
 
-// Next returns number of the next page
+// Next returns index of the next page
 func (q *QuestionaireT) Next() int {
-	if q.CurrPage < len(q.Pages)-1 {
-		return q.CurrPage + 1
-	}
-	return len(q.Pages) - 1
+	pg, _ := q.nextInNavi()
+	return pg
+}
+
+// NextNaviNum returns navigational number of the next page
+func (q *QuestionaireT) NextNaviNum() string {
+	pg, _ := q.nextInNavi()
+	return fmt.Sprintf("%v", q.Pages[pg].NavigationalNum)
+}
+
+// CurrPageInNavigation - it the current page
+// shown in navigation; convenience func for templates
+func (q *QuestionaireT) CurrPageInNavigation() bool {
+	return !q.Pages[q.CurrPage].NoNavigation
 }

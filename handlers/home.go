@@ -262,16 +262,28 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 	submit := sess.EffectiveStr("submitBtn")
 	if submit == "prev" {
 		currPage = q.Prev()
-	}
-	if submit == "next" {
+	} else if submit == "next" {
 		currPage = q.Next()
+	} else {
+		// Apart from "prev" and "next", submitBtn can also hold an explicit destination page
+		explicit, ok, err := sess.EffectiveInt("submitBtn")
+		if err != nil {
+			// invalid page value, just dont use it
+		}
+		if ok && err == nil && explicit > -1 {
+			log.Printf("curPage set explicitly by 'submitBtn' to %v", explicit)
+			currPage = explicit
+		}
 	}
+	// The progress bar uses "page" to submit an explicit destination page.
+	// There are no conflicts of overriding submitBtn and page
+	// since submitBtn has only a value if actually pressed.
 	explicit, ok, err := sess.EffectiveInt("page")
 	if err != nil {
 		// invalid page value, just dont use it
 	}
 	if ok && err == nil && explicit > -1 {
-		log.Printf("curPage set explicitly to %v", explicit)
+		log.Printf("curPage set explicitly by param 'page' to %v", explicit)
 		currPage = explicit
 	}
 	q.CurrPage = currPage // Put current page into questionaire
@@ -284,11 +296,14 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 	}
 	for i1 := 0; i1 < len(q.Pages[prevPage].Groups); i1++ {
 		for i2 := range q.Pages[prevPage].Groups[i1].Inputs {
-			nm := q.Pages[prevPage].Groups[i1].Inputs[i2].Name
-			ok := sess.EffectiveIsSet(nm)
+			inp := q.Pages[prevPage].Groups[i1].Inputs[i2]
+			if inp.IsLayout() {
+				continue
+			}
+			ok := sess.EffectiveIsSet(inp.Name)
 			if ok {
-				val := sess.EffectiveStr(nm)
-				log.Printf("(Page#%2v) Setting '%v' to '%v'", prevPage, nm, val)
+				val := sess.EffectiveStr(inp.Name)
+				log.Printf("(Page#%2v) Setting '%v' to '%v'", prevPage, inp.Name, val)
 				val = html.EscapeString(val) // XSS prevention
 				q.Pages[prevPage].Groups[i1].Inputs[i2].Response = val
 			}

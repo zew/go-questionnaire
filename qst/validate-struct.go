@@ -36,12 +36,18 @@ func (q *QuestionaireT) Validate() error {
 		return fmt.Errorf(s)
 	}
 
+	navigationalNum := 0
+
 	// Check inputs
 	// Set page and group width to 100
 	// Set values for radiogroups
 	for i1 := 0; i1 < len(q.Pages); i1++ {
 		if q.Pages[i1].Width == 0 {
 			q.Pages[i1].Width = 100
+		}
+		if !q.Pages[i1].NoNavigation {
+			navigationalNum++
+			q.Pages[i1].NavigationalNum = navigationalNum
 		}
 		for i2 := 0; i2 < len(q.Pages[i1].Groups); i2++ {
 			if q.Pages[i1].Groups[i2].Width == 0 {
@@ -86,9 +92,8 @@ func (q *QuestionaireT) Validate() error {
 
 				// grp := q.Pages[i1].Elements[i2].Name
 				nm := q.Pages[i1].Groups[i2].Inputs[i3].Name
-				tp := q.Pages[i1].Groups[i2].Inputs[i3].Type
 
-				if tp == "textblock" {
+				if q.Pages[i1].Groups[i2].Inputs[i3].IsLayout() {
 					continue
 				}
 

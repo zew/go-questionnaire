@@ -18,6 +18,31 @@ func Create() *qst.QuestionaireT {
 	quest.Survey.Org = trl.S{"de": "ZEW", "en": "ZEW"}
 	quest.Survey.Name = trl.S{"de": "Finanzmarkttest", "en": "Financial Markets Survey"}
 
+	// Page 0
+
+	{
+		page := quest.AddPage()
+		page.Label = trl.S{"de": "Begrüßung", "en": "Greeting"}
+		page.NoNavigation = true
+
+		{
+			gr := page.AddGroup()
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "button"
+				inp.Name = "submitBtn"
+				inp.Response = "1"
+				inp.Label = trl.S{
+					"de": "Weiter",
+					"en": "next",
+				}
+				inp.ColSpanControl = 1
+				inp.HAlignControl = qst.HCenter
+			}
+		}
+	}
+
 	// Page 1
 	{
 		page := quest.AddPage()
@@ -431,8 +456,8 @@ func Create() *qst.QuestionaireT {
 			{
 				inp := gr.AddInput()
 				inp.Type = "button"
-				inp.Name = "submit_final_ok"
-				inp.Response = "OK"
+				inp.Name = "submitBtn"
+				inp.Response = fmt.Sprintf("%v", len(quest.Pages)-1+1) // +1 since one page is appended below
 				inp.Label = trl.S{"de": "", "en": ""}
 				inp.Desc = trl.S{
 					"de": "OK",
@@ -445,6 +470,23 @@ func Create() *qst.QuestionaireT {
 
 		// page.ExampleSixColumnsLabelRight()
 
+	}
+
+	// Last page
+	{
+		page := quest.AddPage()
+		page.Label = trl.S{"de": "Ihre Eingaben", "en": "Summary of results"}
+		page.NoNavigation = true
+		{
+			gr := page.AddGroup()
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{"de": "Daten...", "en": "Data..."}
+				inp.ColSpanControl = 1
+				inp.HAlignControl = qst.HCenter
+			}
+		}
 	}
 
 	// quest.ClosingTime = time.Now()

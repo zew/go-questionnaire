@@ -7,10 +7,6 @@
 
 A http(s) webserver serving questionaires.
 
-## Status 
-
-Under development.
-
 ## Usage
 
 Install and setup [golang](https://golang.org/doc/install)
@@ -113,7 +109,8 @@ Stacking cells wit `float: left` takes away the nice vertical middle alignment o
 
 * Go-Questionaire is based on Go-App-Tpl
 
-* Go-App-Tpl is a template for a go web app.  
+* Go-App-Tpl is a number of packages for building go web applications.  
+
 
 It features
 
@@ -121,7 +118,7 @@ It features
 
   * Session package by Alex Edwards
 
-  * Configurable url prefix allows running multiple instances on same server:port
+  * Configurable url prefix for running multiple instances on same server:port
 
   * Middleware for logging, access restrictions etc.
 
@@ -129,27 +126,25 @@ It features
 
   * Static file handlers
   
-  * JSON config file with reloadable app settings 
+  * JSON config file with reloadable settings 
 
-  * JSON file with reloadable logins 
+  * JSON logins file, also reloadable
   
-  * Handlers for login, changing password
+  * Handlers for login, changing password, login by hash
 
-  * Layout template with jQuery from CDN cache; fallback to localhost 
-
-  * Templates having access to session and request
+  * Site layout template with jQuery from CDN cache; fallback to localhost 
 
   * Multi language strings
 
+  * Templates having access to session and request
+
   * Stack of dynamic subtemplate calls 
   
-  * Template pre-parsing configurable for development or production
+  * Template pre-parsing, configurable for development or production
 
   * Markdown file handler, rewriting image links 
   
-  * Wrapping into site layout, serving the global README
-
-  * Multi langue markdown files
+  * Multi language markdown files
   
   * Shell script to control application under Linux
 
@@ -161,7 +156,8 @@ It features
 
 * Subpackaging is done by concern, neither too amorphous nor too atomic. 
 
-* Go-App-Tpl has no "hooks" or interfaces for perfect isolation of "framework" code
-and "custom handlers".  
-Just copy it and add your handlers. Future updates can be merged.
+* Go-App-Tpl has no "hooks" or interfaces for isolation of "framework" code.  
+Just copy it and add your handlers. 
+
+Future updates can be merged.
 

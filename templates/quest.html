@@ -75,7 +75,9 @@
             </div><!-- /table-cell-1 --> 
         </div><!-- /t-row-1 --> 
 
-        
+
+        {{if .Q.CurrPageInNavigation}}
+
         <div id="t-row-2">
             <div class='table-cell-2' >
 
@@ -91,7 +93,7 @@
                     {{if .Q.HasNext}}
                     <!-- name="submitBtn" conflicts with JS form.submit() -->
                     <button type="submit" name="submitBtn" value="next" accesskey="n">
-                        {{.Trls.page.Tr .Q.LangCode}} {{addint .Q.Next 1}} >>
+                        {{.Trls.page.Tr .Q.LangCode}} {{.Q.NextNaviNum}} >>
                     </button>
                     {{end}}
                     &nbsp;
@@ -108,7 +110,7 @@
                                             width: 86px;
                                             padding: 2px;
                                             '>
-                            << {{.Trls.page.Tr .Q.LangCode}} {{addint .Q.Prev 1}} 
+                            << {{.Trls.page.Tr .Q.LangCode}} {{.Q.PrevNaviNum}} 
                         </button>
                     {{end}}
                 </div>
@@ -117,6 +119,7 @@
 
             </div><!-- /table-cell-2 -->
         </div><!-- /t-row-2 -->
+        {{end}}
 
 
 

@@ -73,7 +73,32 @@ and questionaire creation by directly editing of JSON files
 but that remains as elusive as it did with XML.
 
 
-### Layout concept details
+### Layout concept
+
+#### Accepted Solution
+
+We chose fixed table layout.
+
+We need full fledged markup, since mere CSS classes such as `<div style='display: table/table-row/table-cell'` do not support colspan or rowspan functionality. 
+
+Page width can be adjusted for each page. 
+Squeezing or stretching all rows equally.
+Page remains horizontally _centered_.
+
+![Page width](./static/img/doc/page-width.png)
+
+Each control group width can be adjusted.
+The control group remains left-aligned.
+
+![Group width](./static/img/doc/group-width.png)
+
+Group property `OddRowsColoring` to activate alternating background
+
+![Group width](./static/img/doc/odd-rows-coloring.png)
+
+The table border can be set via ./templates/site.css  
+`table.bordered td { myBorderCSS }`
+
 
 #### Rejected Solutions
 
@@ -82,20 +107,6 @@ the white space between inline block elements subtracts from the total width.
 The column width computation must be based on a compromise slack of i.e. 97.5 percent.
 
 Stacking cells wit `float: left` takes away the nice vertical middle alignment of the cells.
-
-#### Accepted Solution
-
-Thus, the we chose fixed table layout.
-
-We need full fledged markup, since mere CSS classes such as `<div style='display: table/table-row/table-cell'` do not support colspan or rowspan functionality. 
-
-Page width can be adjusted for each page. 
-Squeezing or stretching all rows equally.
-Page remains horizontally _centered_.
-
-Each control group width can be adjusted for each control group.
-The control group remains left-justified.
-
 
 
 ## About Go-App-Tpl

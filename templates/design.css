@@ -229,8 +229,8 @@ table.bordered {
 	/* border: 1px solid #eaeaea;  */
 }
 table.bordered td{
-	/* border: 1px solid #eaeaea;  */
 	border: 2px solid #fff; 
+	/* border: 2px solid #eaeaea;   */
 }
 
 

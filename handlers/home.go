@@ -88,6 +88,16 @@ func ReloadH(w http.ResponseWriter, r *http.Request) {
 
 	sess := sessx.New(w, r)
 
+	_, err := lgn.LoginByHash(w, r)
+	if err != nil {
+		log.Printf("Login by hash error 1: %v", err)
+		// Don't show the revealing original error
+		s := cfg.Get().Mp["login_by_hash_failed"].All()
+		s += "LoginByHash error."
+		helper(w, r, nil, s)
+		return
+	}
+
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
 	io.WriteString(w, `
 		<form method="POST" class="survey-edit-form" >
@@ -96,6 +106,7 @@ func ReloadH(w http.ResponseWriter, r *http.Request) {
 		<script> document.getElementById('submit').focus(); </script>	
 	`)
 
+	//
 	var q = &qst.QuestionaireT{}
 	ok, err := sess.EffectiveObj("questionaire", q)
 	if err != nil {
@@ -118,6 +129,8 @@ func ReloadH(w http.ResponseWriter, r *http.Request) {
 // 1.) an error
 // 2.) an error with string to wrap around
 // 3.) only a string - which is converted into an error
+//
+// Bad idea, because code lines of errors are lost.
 func helper(w http.ResponseWriter, r *http.Request, err error, msgs ...string) {
 	if len(msgs) > 0 {
 		if err == nil {

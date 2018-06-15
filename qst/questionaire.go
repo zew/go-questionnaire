@@ -248,7 +248,7 @@ type groupT struct {
 	Label trl.S `json:"label,omitempty"`
 	Desc  trl.S `json:"description,omitempty"`
 
-	Vertical bool `json:"vertical,omitempty"` // groups vertically, not horizontally
+	Vertical bool `json:"vertical,omitempty"` // groups vertically, not horizontally, not yet implemented
 
 	OddRowsColoring bool `json:"odd_rows_coloring"` // color odd rows
 	Width           int  `json:"width"`             // default is 100 percent

@@ -28,7 +28,7 @@ More info in [deploy on linux/unix](./static/doc/linux-instructions.md)
 ## Semantics
 
 * Package `generators` contains programs for creating various questionaires.  
-Questionaires are encoded as JSON file serving as template data entry.
+Questionaires are encoded as JSON file serving as data entry template.
 
 * Different questionaires are separated by URL path.
 
@@ -38,9 +38,9 @@ Questionaires are encoded as JSON file serving as template data entry.
 
 * Surveys contain no personal data - only a user ID, the questions and the answers.
 
-* The transferrer pulls the responses in-house.
+* The `transferrer` pulls in the responses from an internet server.
 
-* In-house, the results are fed into any JSON reading application.
+* Once inside your organization, the results are fed into any JSON reading application.
 
 
 ## Technical design principles
@@ -94,6 +94,11 @@ Group property `OddRowsColoring` to activate alternating background
 
 The table border can be set via ./templates/site.css  
 `table.bordered td { myBorderCSS }`
+
+Page property `NoNavigation` decouples the page from the
+navigational workflow. 
+Such pages can be jumped to by setting submit buttons to their index value.
+Useful for greeting- and goodbye-pages.
 
 
 #### Rejected Solutions

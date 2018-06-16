@@ -394,14 +394,14 @@ type QuestionaireT struct {
 	RemoteIP    string    `json:"remote_ip,omitempty"`
 	MD5         string    `json:"md_5,omitempty"`
 
-	Pages []*pageT `json:"pages,omitempty"`
-
 	// LangCode and LangCodes are imposed from cfg.LangCodes via session."lang_code"
 	LangCodes map[string]string `json:"lang_codes,omitempty"` // all possible lang codes - i.e. en, de
 	LangCode  string            `json:"lang_code,omitempty"`  // default lang code - and current lang code - i.e. de
 
 	CurrPage  int  `json:"curr_page,omitempty"`
 	HasErrors bool `json:"has_errors,omitempty"` // If any response is faulty; set by ValidateReponseData
+
+	Pages []*pageT `json:"pages,omitempty"`
 }
 
 // BasePath gives the 'root' for loading and saving questionaire JSON files.

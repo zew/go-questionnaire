@@ -9,7 +9,6 @@ import (
 	"encoding/hex"
 	"fmt"
 	"io"
-	"log"
 	"time"
 )
 
@@ -22,7 +21,7 @@ func tok(hourOffset int) string {
 	if hourOffset != 0 {
 		t = t.Add(time.Duration(hourOffset) * time.Hour)
 	}
-	log.Printf("token time: %v", t.Format("02.01.2006 15"))
+	// log.Printf("token time: %v", t.Format("02.01.2006 15"))
 	io.WriteString(hasher, t.Format("02.01.2006 15"))
 	hash := hasher.Sum(nil)
 	return hex.EncodeToString(hash)

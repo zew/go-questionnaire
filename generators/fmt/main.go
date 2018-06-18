@@ -650,13 +650,13 @@ func Create() *qst.QuestionaireT {
 			names3rdMatrix := []string{
 				"dax_fund",
 			}
-			labels123Matrix := []trl.S{
-				{
-					"de": " ",
-					"en": " ",
-				},
-			}
-			labels123Matrix = []trl.S{}
+			// labels123Matrix := []trl.S{
+			// 	{
+			// 		"de": " ",
+			// 		"en": " ",
+			// 	},
+			// }
+			labels123Matrix := []trl.S{}
 
 			gr := page.AddRadioMatrixGroup(labelsOvervaluedFairUndervalued(), names3rdMatrix, labels123Matrix)
 			gr.Label = trl.S{"de": "7c.", "en": "7c."}

@@ -110,3 +110,102 @@ func labelsIncreaseDecrease() []trl.S {
 	return tm
 
 }
+
+func labelsVeryHighVeryLow() []trl.S {
+
+	tm := []trl.S{
+		{
+			"de": "sehr hoch",
+			"en": "very high",
+		},
+		{
+			"de": "hoch",
+			"en": "high",
+		},
+		{
+			"de": "normal",
+			"en": "normal",
+		},
+		{
+			"de": "niedrig",
+			"en": "low",
+		},
+		{
+			"de": "sehr niedrig",
+			"en": "very low",
+		},
+		{
+			"de": "keine<br>Angabe",
+			"en": "no answer",
+		},
+	}
+
+	return tm
+
+}
+
+func labelsStrongIncreaseStrongDecrease() []trl.S {
+
+	tm := []trl.S{
+		{
+			"de": "stark steigen",
+			"en": "strongly increase",
+		},
+		{
+			"de": "steigen",
+			"en": "increase",
+		},
+		{
+			"de": "gleich bleiben",
+			"en": "remain unchanged",
+		},
+		{
+			"de": "sinken",
+			"en": "decrease",
+		},
+		{
+			"de": "stark sinken",
+			"en": "strongly decrease",
+		},
+		{
+			"de": "keine<br>Angabe",
+			"en": "no answer",
+		},
+	}
+
+	return tm
+
+}
+
+func labelsVeryPositiveVeryNegative() []trl.S {
+
+	tm := []trl.S{
+		{
+			"de": "sehr positiv",
+			"en": "very positive",
+		},
+		{
+			"de": "positiv",
+			"en": "positive",
+		},
+		{
+			"de": "neutral",
+			"en": "neutral",
+		},
+		{
+			"de": "negativ",
+			"en": "negative",
+		},
+		{
+			"de": "sehr negativ",
+			"en": "very negative",
+		},
+		{
+			"de": "keine<br>Angabe",
+			"en": "no answer",
+		},
+	}
+
+	return tm
+
+}

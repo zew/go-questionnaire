@@ -97,6 +97,10 @@ func (q *QuestionaireT) Validate() error {
 					continue
 				}
 
+				if q.Pages[i1].Groups[i2].Inputs[i3].IsReserved() {
+					return fmt.Errorf(s+"Name '%v' is reserved", nm)
+				}
+
 				if nm == "" {
 					return fmt.Errorf(s+"Name %v is empty", nm)
 				}

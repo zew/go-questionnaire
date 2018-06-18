@@ -146,6 +146,7 @@ func Create() *qst.QuestionaireT {
 	{
 		page := quest.AddPage()
 		page.Label = trl.S{"de": "Wachstum", "en": "Growth"}
+		page.AestheticCompensation = 8
 
 		{
 			gr := page.AddGroup()
@@ -234,6 +235,7 @@ func Create() *qst.QuestionaireT {
 	{
 		page := quest.AddPage()
 		page.Label = trl.S{"de": "Inflation und Zinsen", "en": "Inflation and Rates"}
+		page.AestheticCompensation = 5
 
 		//
 		// gr1
@@ -362,11 +364,187 @@ func Create() *qst.QuestionaireT {
 	{
 		page := quest.AddPage()
 		page.Section = trl.S{"de": "Kreditsituation", "en": "Credit situation"}
-		page.Label = trl.S{"de": "Markt", "en": "market"}
+		page.Label = trl.S{"de": "Markt", "en": "Market"}
 
-		gr := page.AddGroup()
-		gr.Cols = 2 // necessary, otherwise no vspacers
-		gr.Label = trl.S{"de": "5.", "en": "5."}
+		{
+			names3rdMatrix := []string{
+				"cd_deu",
+				"cs_deu",
+			}
+			labels123Matrix := []trl.S{
+				{
+					"de": "Kreditnachfrage",
+					"en": "Credit demand",
+				},
+				{
+					"de": "Kreditangebot",
+					"en": "Credit supply",
+				},
+			}
+
+			gr := page.AddRadioMatrixGroup(labelsVeryHighVeryLow(), names3rdMatrix, labels123Matrix)
+			gr.Label = trl.S{"de": "6a.", "en": "6a."}
+			gr.Desc = trl.S{
+				"de": "Wie schätzen Sie die Kreditsituation in Deutschland ein?",
+				"en": "How do you assess credit conditions in Germany?",
+			}
+			gr.Cols = 7 // necessary, otherwise no vspacers
+			gr.OddRowsColoring = true
+		}
+
+		{
+			names3rdMatrix := []string{
+				"c0_6",
+				"c0_24",
+			}
+			labels123Matrix := []trl.S{
+				{
+					"de": "mittelfristig (<b>6</b> Mo.)",
+					"en": "medium term (<b>6</b> months)",
+				},
+				{
+					"de": "langfristig (<b>24</b> Mo.)",
+					"en": "long term (<b>24</b> months)",
+				},
+			}
+
+			gr := page.AddRadioMatrixGroup(labelsStrongIncreaseStrongDecrease(), names3rdMatrix, labels123Matrix)
+			gr.Label = trl.S{"de": "6b.", "en": "6b."}
+			gr.Desc = trl.S{
+				"de": "Das (saisonbereinigte) Gesamtvolumen der Neukreditvergabe in Deutschland wird",
+				"en": "The seasonally adjusted volume of new credit in Germany will",
+			}
+			gr.Cols = 7 // necessary, otherwise no vspacers
+			gr.OddRowsColoring = true
+		}
+
+		{
+			names3rdMatrix := []string{
+				"cd_24_le",
+				"cd_24_sme",
+				"cd_24_re",
+				"cd_24_co",
+			}
+			labels123Matrix := []trl.S{
+				{
+					"de": "Großunternehmen",
+					"en": "Large enterprises",
+				},
+				{
+					"de": "KMU",
+					"en": "Small+medium enterprises",
+				},
+				{
+					"de": "Immobilienkredite",
+					"en": "Real estate credit",
+				},
+				{
+					"de": "Konsumentenkredite",
+					"en": "Consumer credit",
+				},
+			}
+
+			gr := page.AddRadioMatrixGroup(labelsStrongIncreaseStrongDecrease(), names3rdMatrix, labels123Matrix)
+			gr.Label = trl.S{"de": "6c.", "en": "6c."}
+			gr.Desc = trl.S{
+				"de": "Die (saisonbereinigte) Kreditnachfrage wird mittelfristig (<b>6</b> Mo.)",
+				"en": "The seasonally adjusted credit demand medium term (<b>6</b> months) will be",
+			}
+			gr.Cols = 7 // necessary, otherwise no vspacers
+			gr.OddRowsColoring = true
+		}
+
+	}
+
+	//
+	// page 5 - Credit influence factors
+	{
+		page := quest.AddPage()
+		// page.Section = trl.S{"de": "Kreditsituation", "en": "Credit situation"}
+		page.Label = trl.S{"de": "Einflussfaktoren", "en": "Influence factors"}
+
+		{
+			names3rdMatrix := []string{
+				"c_inf_6_dr",
+				"c_inf_6_ri",
+				"c_inf_6_re",
+				"c_inf_6_ce",
+				"c_inf_6_rg",
+				"c_inf_6_ep",
+			}
+			labels123Matrix := []trl.S{
+				{
+					"de": "Ausfallrisiken",
+					"en": "Default risk",
+				},
+				{
+					"de": "Risikotragfähigkeit",
+					"en": "Risk profile",
+				},
+				{
+					"de": "Refinanzierung",
+					"en": "Refinancing",
+				},
+				{
+					"de": "Wettbewerbssituation",
+					"en": "Competitive environment",
+				},
+				{
+					"de": "Regulierung",
+					"en": "Regulation",
+				},
+				{
+					"de": "EZB Politik",
+					"en": "ECB policy",
+				},
+			}
+
+			gr := page.AddRadioMatrixGroup(labelsVeryPositiveVeryNegative(), names3rdMatrix, labels123Matrix)
+			gr.Label = trl.S{"de": "6d.", "en": "6d."}
+			gr.Desc = trl.S{
+				"de": "Wie schätzen Sie den Einfluss folgender Faktoren auf die mittelfristige (<b>6</b> Mo.) Veränderung des Kreditangebots ein?",
+				"en": "How do you assess the influence of following factors on the medium term (<b>6</b> months) change of credit supply?",
+			}
+			gr.Cols = 7 // necessary, otherwise no vspacers
+			gr.OddRowsColoring = true
+		}
+
+		{
+			names3rdMatrix := []string{
+				"c_std_6_le",
+				"c_std_6_sme",
+				"c_std_6_re",
+				"c_std_6_co",
+			}
+			labels123Matrix := []trl.S{
+				{
+					"de": "Großunternehmen",
+					"en": "Large enterprises",
+				},
+				{
+					"de": "KMU",
+					"en": "Small+medium enterprises",
+				},
+				{
+					"de": "Immobilienkredite",
+					"en": "Real estate credit",
+				},
+				{
+					"de": "Konsumentenkredite",
+					"en": "Consumer credit",
+				},
+			}
+
+			gr := page.AddRadioMatrixGroup(labelsStrongIncreaseStrongDecrease(), names3rdMatrix, labels123Matrix)
+			gr.Label = trl.S{"de": "6e.", "en": "6e."}
+			gr.Desc = trl.S{
+				"de": "Die (saisonbereinigte) Kreditstandards für Neukredite werden mittelfristig (<b>6</b> Mo.)",
+				"en": "The seasonally adjusted credit standards medium term (<b>6</b> months) will",
+			}
+			gr.Cols = 7 // necessary, otherwise no vspacers
+			gr.OddRowsColoring = true
+		}
+
 	}
 
 	//

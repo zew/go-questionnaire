@@ -35,7 +35,7 @@ func FormToken() string {
 }
 
 // ValidateFormToken checks tokens
-// from previous hour to next two hours
+// from previous two hours - and from next hour
 func ValidateFormToken(arg string) error {
 	for i := 0; i > -3; i-- {
 		if arg == tok(i) {

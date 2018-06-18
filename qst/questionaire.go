@@ -114,6 +114,17 @@ func (i inputT) IsLayout() bool {
 	return false
 }
 
+// IsReserved returns whether the input name is reserved the survey engine
+func (i inputT) IsReserved() bool {
+	if i.Name == "page" {
+		return true
+	}
+	if i.Name == "lang_code" {
+		return true
+	}
+	return false
+}
+
 // Rendering one input to HTML
 // func (i inputT) HTML(langCode string, namePrefix string) string {
 func (i inputT) HTML(langCode string, numCols int) string {
@@ -371,7 +382,9 @@ type pageT struct {
 	NoNavigation    bool  `json:"no_navigation,omitempty"` // page will not show up in progress bar
 	NavigationalNum int   `json:"navi_num"`                // the number in Navigation order; computed by q.Validate
 
-	Width  int       `json:"width,omitempty"` // default is 100 percent
+	Width                 int `json:"width,omitempty"`                  // default is 100 percent
+	AestheticCompensation int `json:"aesthetic_compensation,omitempty"` // default is zero percent; if controls do not reach the right border
+
 	Groups []*groupT `json:"groups,omitempty"`
 
 	Finished time.Time `json:"finished,omitempty"` // truncated to second
@@ -483,10 +496,7 @@ func (q *QuestionaireT) PageHTML(idx int) (string, error) {
 
 	// set width less than 100 percent, for i.e. radios more closely together
 
-	padding := 6 // aesthetic compensation since control do not reach the right margin
-	if p.Width < 100 {
-		padding = 0
-	}
+	padding := p.AestheticCompensation
 	width := fmt.Sprintf("<div style='width: %v%%; margin: 0 auto; padding-left: %v%%' >", p.Width, padding)
 	b.WriteString(width)
 

@@ -139,7 +139,7 @@ func SimulateLoad(t *testing.T) {
 			}
 		}
 
-		t.Logf("Cookie is %+v \ngleaned from %v", sessCook, req.URL)
+		t.Logf("Cookie is %+v \ngleaned from %v; server log *above* shows result", sessCook, req.URL)
 		if sessCook == nil {
 			t.Fatal("we need a session cookie to continue")
 		}
@@ -148,6 +148,8 @@ func SimulateLoad(t *testing.T) {
 		mustHave := fmt.Sprintf("Logged in as %v", "systemtest")
 		if !strings.Contains(string(respBytes), mustHave) {
 			t.Fatalf("Response must contain '%v' \n\n%v", mustHave, string(respBytes))
+		} else {
+			t.Logf("Webpage reports: Login successful")
 		}
 
 	}
@@ -161,8 +163,21 @@ func SimulateLoad(t *testing.T) {
 		t.Logf("Main view")
 		t.Logf("==================")
 		urlReq := urlMain
-
 		waveID := qst.NewSurvey("fmt").WaveID()
+
+		{
+			t.Logf("\tGoto first entry page ")
+			t.Logf("\t==================")
+			vals := url.Values{}
+			vals.Set("token", lgn.FormToken())
+			vals.Set("page", "1")
+			t.Logf("POST requesting %v?%v", urlReq, vals.Encode())
+			_, err := util.Request("POST", urlReq, vals, []*http.Cookie{sessCook})
+			if err != nil {
+				t.Errorf("error requesting %v: %v", urlReq, err)
+			}
+
+		}
 
 		vals := url.Values{}
 		vals.Set("wave_id", waveID)
@@ -269,7 +284,8 @@ func fillInPage(t *testing.T, q *qst.QuestionaireT, idxPage int, urlMain string,
 		t.Errorf("error requesting %v: %v", urlMain, err)
 	}
 	t2 := time.Now()
-	t.Logf("Request roundtrip took %v", t2.Sub(t1))
+	dur := t2.Sub(t1).Nanoseconds() / 1000 / 1000
+	t.Logf("%9v ms request roundtrip", dur)
 	t3 := time.Now().Add(-15 * time.Millisecond).Truncate(time.Second)
 
 	q.Pages[idxPage].Finished = t3

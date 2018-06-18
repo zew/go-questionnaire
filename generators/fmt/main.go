@@ -548,12 +548,179 @@ func Create() *qst.QuestionaireT {
 	}
 
 	//
-	//
-	//
+	// page 6 - Financial markets
 	{
 		page := quest.AddPage()
-		page.Section = trl.S{"de": "Abschluss", "en": "Finish"}
+		page.Section = trl.S{"de": "Finanzmärkte", "en": "Financial markets"}
+		page.Label = trl.S{"de": "Preise", "en": "Prices"}
+		page.Width = 80
+
+		{
+			names3rdMatrix := []string{
+				"sto_dax",
+				"oil",
+				"gold",
+				"fx_usa",
+			}
+			labels123Matrix := []trl.S{
+				{
+					"de": "DAX",
+					"en": "German DAX",
+				},
+				{
+					"de": "Rohöl (Nordsee Brent)",
+					"en": "Brent Crude",
+				},
+				{
+					"de": "Gold",
+					"en": "Gold",
+				},
+				{
+					"de": "US-Dollar (ggü. €)",
+					"en": "Dollar / Euro",
+				},
+			}
+
+			gr := page.AddRadioMatrixGroup(labelsIncreaseDecrease(), names3rdMatrix, labels123Matrix)
+			gr.Label = trl.S{"de": "7a.", "en": "7a."}
+			gr.Desc = trl.S{
+				"de": "Die folgenden Aktienindizes / Rohstoffpreise / Wechselkurse werden mittefristig (<b>6</b> Mo.)",
+				"en": "Following stock indices / raw materials / exchange rates will medium term (<b>6</b> months)",
+			}
+
+			gr.Cols = 5 // necessary, otherwise no vspacers
+			gr.OddRowsColoring = true
+		}
+
+		gr := page.AddGroup()
+		gr.Label = trl.S{"de": "7b.", "en": "7b."}
+		gr.Cols = 100
+		{
+			inp := gr.AddInput()
+			inp.Type = "text"
+			inp.Name = "dax_6"
+			inp.MaxChars = 6
+			inp.Validator = "inRange10000"
+
+			inp.ColSpanLabel = 55
+			inp.CSSLabel = "vert-wider"
+			inp.ColSpanControl = 45
+			inp.Desc = trl.S{
+				"de": `Den DAX erwarten wir in 6 Monaten bei `,
+				"en": "We expect the German DAX in 6 month at",
+			}
+			inp.Suffix = trl.S{"de": "Punkten", "en": "points"}
+			inp.HAlignLabel = qst.HLeft
+			inp.HAlignControl = qst.HLeft
+		}
+
+		{
+			inp := gr.AddInput()
+			inp.Type = "text"
+			inp.Name = "dax_6_low"
+			inp.MaxChars = 6
+			inp.Validator = "inRange10000"
+
+			inp.ColSpanLabel = 55
+			inp.CSSLabel = "vert-wider"
+			inp.ColSpanControl = 21
+			inp.Desc = trl.S{
+				"de": `Mit einer Wahrscheinlichkeit von 90&nbsp;Prozent wird der DAX dann zwischen `,
+				"en": "With 90&nbsp;percent probability, the DAX will then be between",
+			}
+			inp.Suffix = trl.S{"de": "Punkten  &nbsp; und ", "en": "points &nbsp; and "}
+			inp.HAlignLabel = qst.HLeft
+			inp.HAlignControl = qst.HLeft
+		}
+
+		{
+			inp := gr.AddInput()
+			inp.Type = "text"
+			inp.Name = "dax_6_high"
+			inp.MaxChars = 6
+			inp.Validator = "inRange10000"
+
+			inp.ColSpanControl = 24
+			inp.Suffix = trl.S{"de": "Punkten liegen.", "en": "points"}
+			inp.HAlignLabel = qst.HLeft
+			inp.HAlignControl = qst.HLeft
+		}
+
+		{
+			names3rdMatrix := []string{
+				"dax_fund",
+			}
+			labels123Matrix := []trl.S{
+				{
+					"de": " ",
+					"en": " ",
+				},
+			}
+			labels123Matrix = []trl.S{}
+
+			gr := page.AddRadioMatrixGroup(labelsOvervaluedFairUndervalued(), names3rdMatrix, labels123Matrix)
+			gr.Label = trl.S{"de": "7c.", "en": "7c."}
+
+			gr.Desc = trl.S{
+				"de": "Aus Sicht der Fundamentaldaten der DAX-Unternehmen ist der DAX derzeit",
+				"en": "The fundamentals of the companies comprising the DAX make the DAX currently",
+			}
+
+			gr.Cols = 3 // necessary, otherwise no vspacers
+		}
+
+		//
+		//
+		{
+			gr := page.AddGroup()
+			gr.Label = trl.S{"de": "8.", "en": "8."}
+			gr.Cols = 100
+			{
+				inp := gr.AddInput()
+				inp.Type = "text"
+				inp.Name = "crash_low"
+				inp.MaxChars = 4
+				inp.Validator = "inRange100"
+
+				inp.ColSpanLabel = 55
+				inp.CSSLabel = "vert-wider"
+				inp.ColSpanControl = 33
+				inp.Desc = trl.S{
+					"de": `Die Wahrscheinlichkeit für ein Extremereignis im deutschen Finanzmarkt liegt mittefristig (<b>6</b> Mo.) bei`,
+					"en": "The probability for an extreme event in the German financial markets medium term (<b>6</b> months) is at ",
+				}
+				inp.Suffix = trl.S{
+					"de": "%  &nbsp; und langfristig (<b>24</b> Mo.) bei",
+					"en": "pct  &nbsp; and long term (<b>24</b> months) at ",
+				}
+				inp.HAlignLabel = qst.HLeft
+				inp.HAlignControl = qst.HLeft
+			}
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "text"
+				inp.Name = "crash_high"
+				inp.MaxChars = 4
+				inp.Validator = "inRange100"
+
+				inp.ColSpanControl = 12
+				inp.Suffix = trl.S{"de": "%", "en": "pct"}
+				inp.HAlignLabel = qst.HLeft
+				inp.HAlignControl = qst.HLeft
+			}
+		}
+
+	}
+
+	//
+	//
+	// Finish
+	{
+		page := quest.AddPage()
+		page.Section = trl.S{"de": "Abschluss", "en": " &nbsp; Finish"}
 		page.Label = trl.S{"de": "", "en": ""}
+		page.Width = 65
 
 		{
 			gr := page.AddGroup()
@@ -583,6 +750,7 @@ func Create() *qst.QuestionaireT {
 			gr := page.AddGroup()
 			gr.Cols = 4 // necessary, otherwise no vspacers
 			// gr.Desc = trl.S{"de": "Abschluss", "en": "Finish"}
+			gr.Width = 80
 			{
 
 				inp := gr.AddInput()
@@ -621,6 +789,7 @@ func Create() *qst.QuestionaireT {
 		{
 			gr := page.AddGroup()
 			gr.Cols = 4 // necessary, otherwise no vspacers
+			gr.Width = 80
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
@@ -650,7 +819,7 @@ func Create() *qst.QuestionaireT {
 
 	}
 
-	// Last page
+	// Report of results
 	{
 		page := quest.AddPage()
 		page.Label = trl.S{"de": "Ihre Eingaben", "en": "Summary of results"}

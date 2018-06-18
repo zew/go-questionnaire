@@ -209,3 +209,24 @@ func labelsVeryPositiveVeryNegative() []trl.S {
 	return tm
 
 }
+
+func labelsOvervaluedFairUndervalued() []trl.S {
+
+	tm := []trl.S{
+		{
+			"de": "überbewertet",
+			"en": "overvalued",
+		},
+		{
+			"de": "fair bewertet",
+			"en": "fair valued",
+		},
+		{
+			"de": "unterbewertet",
+			"en": "undervalued",
+		},
+	}
+
+	return tm
+
+}

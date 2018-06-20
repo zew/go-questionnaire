@@ -11,22 +11,22 @@ import (
 // Create creates a JSON file for a financial markets survey
 func Create() *qst.QuestionaireT {
 
-	quest := qst.QuestionaireT{}
-	quest.Survey = qst.NewSurvey("fmt")
-	quest.LangCodes = map[string]string{"de": "Deutsch", "en": "English"}
-	quest.LangCode = "de" // default language
-	quest.Survey.Org = trl.S{"de": "ZEW", "en": "ZEW"}
-	quest.Survey.Name = trl.S{"de": "Finanzmarkttest", "en": "Financial Markets Survey"}
+	q := qst.QuestionaireT{}
+	q.Survey = qst.NewSurvey("fmt")
+	q.LangCodes = map[string]string{"de": "Deutsch", "en": "English"}
+	q.LangCode = "de" // default language
+	q.Survey.Org = trl.S{"de": "ZEW", "en": "ZEW"}
+	q.Survey.Name = trl.S{"de": "Finanzmarkttest", "en": "Financial Markets Survey"}
 
 	// Page 0
 
 	{
-		page := quest.AddPage()
-		page.Label = trl.S{"de": "Begrüßung", "en": "Greeting"}
-		page.NoNavigation = true
+		p := q.AddPage()
+		p.Label = trl.S{"de": "Begrüßung", "en": "Greeting"}
+		p.NoNavigation = true
 
 		{
-			gr := page.AddGroup()
+			gr := p.AddGroup()
 
 			{
 				inp := gr.AddInput()
@@ -45,10 +45,10 @@ func Create() *qst.QuestionaireT {
 
 	// Page 1
 	{
-		page := quest.AddPage()
-		page.Section = trl.S{"de": "Konjunktur", "en": "Business cycle"}
-		page.Label = trl.S{"de": "Status und Ausblick", "en": "Status and outlook"}
-		page.Width = 70
+		p := q.AddPage()
+		p.Section = trl.S{"de": "Konjunktur", "en": "Business cycle"}
+		p.Label = trl.S{"de": "Status und Ausblick", "en": "Status and outlook"}
+		p.Width = 70
 
 		//
 		//
@@ -79,7 +79,7 @@ func Create() *qst.QuestionaireT {
 				"y0_usa",
 				"y0_glob",
 			}
-			gr := page.AddRadioMatrixGroup(labelsGoodBad(), names1stMatrix, labels123Matrix)
+			gr := p.AddRadioMatrixGroup(labelsGoodBad(), names1stMatrix, labels123Matrix)
 			gr.Cols = 5 // necessary, otherwise no vspacers
 			gr.OddRowsColoring = true
 			gr.Label = trl.S{
@@ -102,7 +102,7 @@ func Create() *qst.QuestionaireT {
 				"y_usa",
 				"y_glob",
 			}
-			gr := page.AddRadioMatrixGroup(labelsImproveDeteriorate(), names2stMatrix, labels123Matrix)
+			gr := p.AddRadioMatrixGroup(labelsImproveDeteriorate(), names2stMatrix, labels123Matrix)
 			gr.Cols = 5 // necessary, otherwise no vspacers
 			gr.OddRowsColoring = true
 			gr.Label = trl.S{
@@ -126,7 +126,7 @@ func Create() *qst.QuestionaireT {
 				"y24_glob",
 			}
 
-			gr := page.AddRadioMatrixGroup(labelsImproveDeteriorate(), names3rdMatrix, labels123Matrix)
+			gr := p.AddRadioMatrixGroup(labelsImproveDeteriorate(), names3rdMatrix, labels123Matrix)
 			gr.Cols = 5 // necessary, otherwise no vspacers
 			gr.OddRowsColoring = true
 			gr.Label = trl.S{
@@ -144,12 +144,12 @@ func Create() *qst.QuestionaireT {
 
 	// page 2
 	{
-		page := quest.AddPage()
-		page.Label = trl.S{"de": "Wachstum", "en": "Growth"}
-		page.AestheticCompensation = 8
+		p := q.AddPage()
+		p.Label = trl.S{"de": "Wachstum", "en": "Growth"}
+		p.AestheticCompensation = 8
 
 		{
-			gr := page.AddGroup()
+			gr := p.AddGroup()
 			gr.Cols = 5 // necessary, otherwise no vspacers
 			gr.Label = trl.S{"de": "3a.", "en": "3a."}
 			{
@@ -188,7 +188,7 @@ func Create() *qst.QuestionaireT {
 		}
 
 		{
-			gr := page.AddGroup()
+			gr := p.AddGroup()
 			gr.Cols = 5 // necessary, otherwise no vspacers
 			gr.Label = trl.S{"de": "3b.", "en": "3b."}
 
@@ -233,9 +233,9 @@ func Create() *qst.QuestionaireT {
 	//
 	// page 3 - inflation
 	{
-		page := quest.AddPage()
-		page.Label = trl.S{"de": "Inflation und Zinsen", "en": "Inflation and Rates"}
-		page.AestheticCompensation = 5
+		p := q.AddPage()
+		p.Label = trl.S{"de": "Inflation und Zinsen", "en": "Inflation and Rates"}
+		p.AestheticCompensation = 5
 
 		//
 		// gr1
@@ -254,7 +254,7 @@ func Create() *qst.QuestionaireT {
 				"pi_ez",
 				"pi_deu",
 			}
-			gr := page.AddRadioMatrixGroup(labelsIncreaseDecrease(), names1stMatrix, labels123Matrix)
+			gr := p.AddRadioMatrixGroup(labelsIncreaseDecrease(), names1stMatrix, labels123Matrix)
 			gr.Cols = 5 // necessary, otherwise no vspacers
 			gr.OddRowsColoring = true
 			gr.Width = 62
@@ -270,7 +270,7 @@ func Create() *qst.QuestionaireT {
 		}
 
 		{
-			gr := page.AddGroup()
+			gr := p.AddGroup()
 			gr.Cols = 100 // necessary, otherwise no vspacers
 			gr.Label = trl.S{"de": "5a.", "en": "5a."}
 			{
@@ -313,7 +313,7 @@ func Create() *qst.QuestionaireT {
 		}
 
 		{
-			gr := page.AddGroup()
+			gr := p.AddGroup()
 			gr.Cols = 100 // necessary, otherwise no vspacers
 			gr.Label = trl.S{"de": "5b.", "en": "5b."}
 
@@ -362,9 +362,9 @@ func Create() *qst.QuestionaireT {
 	//
 	// page 4 - Credit situation
 	{
-		page := quest.AddPage()
-		page.Section = trl.S{"de": "Kreditsituation", "en": "Credit situation"}
-		page.Label = trl.S{"de": "Markt", "en": "Market"}
+		p := q.AddPage()
+		p.Section = trl.S{"de": "Kreditsituation", "en": "Credit situation"}
+		p.Label = trl.S{"de": "Markt", "en": "Market"}
 
 		{
 			names3rdMatrix := []string{
@@ -382,7 +382,7 @@ func Create() *qst.QuestionaireT {
 				},
 			}
 
-			gr := page.AddRadioMatrixGroup(labelsVeryHighVeryLow(), names3rdMatrix, labels123Matrix)
+			gr := p.AddRadioMatrixGroup(labelsVeryHighVeryLow(), names3rdMatrix, labels123Matrix)
 			gr.Label = trl.S{"de": "6a.", "en": "6a."}
 			gr.Desc = trl.S{
 				"de": "Wie schätzen Sie die Kreditsituation in Deutschland ein?",
@@ -408,7 +408,7 @@ func Create() *qst.QuestionaireT {
 				},
 			}
 
-			gr := page.AddRadioMatrixGroup(labelsStrongIncreaseStrongDecrease(), names3rdMatrix, labels123Matrix)
+			gr := p.AddRadioMatrixGroup(labelsStrongIncreaseStrongDecrease(), names3rdMatrix, labels123Matrix)
 			gr.Label = trl.S{"de": "6b.", "en": "6b."}
 			gr.Desc = trl.S{
 				"de": "Das (saisonbereinigte) Gesamtvolumen der Neukreditvergabe in Deutschland wird",
@@ -444,7 +444,7 @@ func Create() *qst.QuestionaireT {
 				},
 			}
 
-			gr := page.AddRadioMatrixGroup(labelsStrongIncreaseStrongDecrease(), names3rdMatrix, labels123Matrix)
+			gr := p.AddRadioMatrixGroup(labelsStrongIncreaseStrongDecrease(), names3rdMatrix, labels123Matrix)
 			gr.Label = trl.S{"de": "6c.", "en": "6c."}
 			gr.Desc = trl.S{
 				"de": "Die (saisonbereinigte) Kreditnachfrage wird mittelfristig (<b>6</b> Mo.)",
@@ -459,9 +459,9 @@ func Create() *qst.QuestionaireT {
 	//
 	// page 5 - Credit influence factors
 	{
-		page := quest.AddPage()
+		p := q.AddPage()
 		// page.Section = trl.S{"de": "Kreditsituation", "en": "Credit situation"}
-		page.Label = trl.S{"de": "Einflussfaktoren", "en": "Influence factors"}
+		p.Label = trl.S{"de": "Einflussfaktoren", "en": "Influence factors"}
 
 		{
 			names3rdMatrix := []string{
@@ -499,7 +499,7 @@ func Create() *qst.QuestionaireT {
 				},
 			}
 
-			gr := page.AddRadioMatrixGroup(labelsVeryPositiveVeryNegative(), names3rdMatrix, labels123Matrix)
+			gr := p.AddRadioMatrixGroup(labelsVeryPositiveVeryNegative(), names3rdMatrix, labels123Matrix)
 			gr.Label = trl.S{"de": "6d.", "en": "6d."}
 			gr.Desc = trl.S{
 				"de": "Wie schätzen Sie den Einfluss folgender Faktoren auf die mittelfristige (<b>6</b> Mo.) Veränderung des Kreditangebots ein?",
@@ -535,7 +535,7 @@ func Create() *qst.QuestionaireT {
 				},
 			}
 
-			gr := page.AddRadioMatrixGroup(labelsStrongIncreaseStrongDecrease(), names3rdMatrix, labels123Matrix)
+			gr := p.AddRadioMatrixGroup(labelsStrongIncreaseStrongDecrease(), names3rdMatrix, labels123Matrix)
 			gr.Label = trl.S{"de": "6e.", "en": "6e."}
 			gr.Desc = trl.S{
 				"de": "Die (saisonbereinigte) Kreditstandards für Neukredite werden mittelfristig (<b>6</b> Mo.)",
@@ -550,10 +550,10 @@ func Create() *qst.QuestionaireT {
 	//
 	// page 6 - Financial markets
 	{
-		page := quest.AddPage()
-		page.Section = trl.S{"de": "Finanzmärkte", "en": "Financial markets"}
-		page.Label = trl.S{"de": "Preise", "en": "Prices"}
-		page.Width = 80
+		p := q.AddPage()
+		p.Section = trl.S{"de": "Finanzmärkte", "en": "Financial markets"}
+		p.Label = trl.S{"de": "Preise", "en": "Prices"}
+		p.Width = 80
 
 		{
 			names3rdMatrix := []string{
@@ -581,7 +581,7 @@ func Create() *qst.QuestionaireT {
 				},
 			}
 
-			gr := page.AddRadioMatrixGroup(labelsIncreaseDecrease(), names3rdMatrix, labels123Matrix)
+			gr := p.AddRadioMatrixGroup(labelsIncreaseDecrease(), names3rdMatrix, labels123Matrix)
 			gr.Label = trl.S{"de": "7a.", "en": "7a."}
 			gr.Desc = trl.S{
 				"de": "Die folgenden Aktienindizes / Rohstoffpreise / Wechselkurse werden mittefristig (<b>6</b> Mo.)",
@@ -592,7 +592,7 @@ func Create() *qst.QuestionaireT {
 			gr.OddRowsColoring = true
 		}
 
-		gr := page.AddGroup()
+		gr := p.AddGroup()
 		gr.Label = trl.S{"de": "7b.", "en": "7b."}
 		gr.Cols = 100
 		{
@@ -650,15 +650,9 @@ func Create() *qst.QuestionaireT {
 			names3rdMatrix := []string{
 				"dax_fund",
 			}
-			// labels123Matrix := []trl.S{
-			// 	{
-			// 		"de": " ",
-			// 		"en": " ",
-			// 	},
-			// }
 			labels123Matrix := []trl.S{}
 
-			gr := page.AddRadioMatrixGroup(labelsOvervaluedFairUndervalued(), names3rdMatrix, labels123Matrix)
+			gr := p.AddRadioMatrixGroup(labelsOvervaluedFairUndervalued(), names3rdMatrix, labels123Matrix)
 			gr.Label = trl.S{"de": "7c.", "en": "7c."}
 
 			gr.Desc = trl.S{
@@ -672,7 +666,7 @@ func Create() *qst.QuestionaireT {
 		//
 		//
 		{
-			gr := page.AddGroup()
+			gr := p.AddGroup()
 			gr.Label = trl.S{"de": "8.", "en": "8."}
 			gr.Cols = 100
 			{
@@ -717,13 +711,13 @@ func Create() *qst.QuestionaireT {
 	//
 	// Finish
 	{
-		page := quest.AddPage()
-		page.Section = trl.S{"de": "Abschluss", "en": " &nbsp; Finish"}
-		page.Label = trl.S{"de": "", "en": ""}
-		page.Width = 65
+		p := q.AddPage()
+		p.Section = trl.S{"de": "Abschluss", "en": " &nbsp; Finish"}
+		p.Label = trl.S{"de": "", "en": ""}
+		p.Width = 65
 
 		{
-			gr := page.AddGroup()
+			gr := p.AddGroup()
 			gr.Cols = 1 // necessary, otherwise no vspacers
 			gr.Label = trl.S{"de": "", "en": ""}
 			{
@@ -747,10 +741,10 @@ func Create() *qst.QuestionaireT {
 		}
 
 		{
-			gr := page.AddGroup()
+			gr := p.AddGroup()
 			gr.Cols = 4 // necessary, otherwise no vspacers
 			// gr.Desc = trl.S{"de": "Abschluss", "en": "Finish"}
-			gr.Width = 80
+			gr.Width = 100
 			{
 
 				inp := gr.AddInput()
@@ -787,7 +781,7 @@ func Create() *qst.QuestionaireT {
 		}
 
 		{
-			gr := page.AddGroup()
+			gr := p.AddGroup()
 			gr.Cols = 4 // necessary, otherwise no vspacers
 			gr.Width = 80
 			{
@@ -804,7 +798,7 @@ func Create() *qst.QuestionaireT {
 				inp := gr.AddInput()
 				inp.Type = "button"
 				inp.Name = "submitBtn"
-				inp.Response = fmt.Sprintf("%v", len(quest.Pages)-1+1) // +1 since one page is appended below
+				inp.Response = fmt.Sprintf("%v", len(q.Pages)-1+1) // +1 since one page is appended below
 				inp.Label = trl.S{"de": "", "en": ""}
 				inp.Desc = trl.S{
 					"de": "OK",
@@ -821,27 +815,26 @@ func Create() *qst.QuestionaireT {
 
 	// Report of results
 	{
-		page := quest.AddPage()
-		page.Label = trl.S{"de": "Ihre Eingaben", "en": "Summary of results"}
-		page.NoNavigation = true
+		p := q.AddPage()
+		p.Label = trl.S{"de": "Ihre Eingaben", "en": "Summary of results"}
+		p.NoNavigation = true
 		{
-			gr := page.AddGroup()
+			gr := p.AddGroup()
 			{
 				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.Label = trl.S{"de": "Daten...", "en": "Data..."}
-				inp.ColSpanControl = 1
-				inp.HAlignControl = qst.HCenter
+				inp.Name = "statistics"
+				inp.Type = "dynamic"
+				inp.DynamicFunc = "RepsonseStatistics"
 			}
 		}
 	}
 
 	// quest.ClosingTime = time.Now()
 
-	err := quest.Validate()
+	err := q.Validate()
 	if err != nil {
 		log.Fatalf("Error validating questionaire: %v", err)
 	}
 
-	return &quest
+	return &q
 }

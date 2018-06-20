@@ -16,6 +16,7 @@ var implementedTypes = map[string]interface{}{
 	// Helpers
 	"textblock": nil, // Only name, label and description are rendered
 	"button":    nil, // Only name, label and description are rendered
+	"dynamic":   nil, // Executed a request time
 }
 
 const (

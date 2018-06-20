@@ -5,6 +5,8 @@ import (
 	"log"
 	"regexp"
 	"strings"
+
+	"github.com/zew/go-questionaire/trl"
 )
 
 var not09azHyphenUnderscore = regexp.MustCompile(`[^a-z0-9\_\-]+`)
@@ -125,6 +127,24 @@ func (q *QuestionaireT) Validate() error {
 			s := fmt.Sprintf("Page element '%v' is not lower case  (%v)", k, v)
 			log.Printf(s)
 			return fmt.Errorf(s)
+		}
+	}
+
+	for i1 := 0; i1 < len(q.Pages); i1++ {
+		for i2 := 0; i2 < len(q.Pages[i1].Groups); i2++ {
+			for i3 := 0; i3 < len(q.Pages[i1].Groups[i2].Inputs); i3++ {
+				if q.Pages[i1].Groups[i2].Inputs[i3].Type == "dynamic" {
+					i := q.Pages[i1].Groups[i2].Inputs[i3]
+					if _, ok := DynFuncs[i.DynamicFunc]; !ok {
+						return fmt.Errorf("%v points to dynamic func %v - which does not exist or is not registered", i.Name, i.DynamicFunc)
+					}
+					str, err := DynFuncs[i.DynamicFunc](q)
+					if err != nil {
+						return fmt.Errorf("%v points to dynamic func %v - which returned error %v", i.Name, i.DynamicFunc, err)
+					}
+					q.Pages[i1].Groups[i2].Inputs[i3].Label = trl.S{q.LangCode: str}
+				}
+			}
 		}
 	}
 

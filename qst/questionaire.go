@@ -63,6 +63,8 @@ type inputT struct {
 
 	Response      string  `json:"response,omitempty"`       // but also Value
 	ResponseFloat float64 `json:"response_float,omitempty"` // also for integers
+
+	DynamicFunc string `json:"dynamic_func,omitempty"` // Refers to DynFuncs
 }
 
 // Returns an input filled in with globally enumerated label, decription etc.
@@ -111,6 +113,9 @@ func (i inputT) IsLayout() bool {
 	if i.Type == "button" {
 		return true
 	}
+	if i.Type == "dynamic" {
+		return true
+	}
 	return false
 }
 
@@ -132,6 +137,8 @@ func (i inputT) HTML(langCode string, numCols int) string {
 	nm := i.Name
 
 	switch i.Type {
+	case "dynamic":
+		return i.Label.Tr(langCode)
 	case "button":
 		lbl := fmt.Sprintf("<button type='submit' name='%v' value='%v' class='%v'><b>%v</b> %v</button>\n",
 			i.Name, i.Response, i.CSSControl,
@@ -385,9 +392,9 @@ type pageT struct {
 	Width                 int `json:"width,omitempty"`                  // default is 100 percent
 	AestheticCompensation int `json:"aesthetic_compensation,omitempty"` // default is zero percent; if controls do not reach the right border
 
-	Groups []*groupT `json:"groups,omitempty"`
-
 	Finished time.Time `json:"finished,omitempty"` // truncated to second
+
+	Groups []*groupT `json:"groups,omitempty"`
 }
 
 // AddGroup creates a new group

@@ -2,8 +2,15 @@ package qst
 
 import (
 	"fmt"
+	"log"
 	"time"
 )
+
+type dynFuncT func(*QuestionaireT) (string, error)
+
+var dynFuncs = map[string]dynFuncT{
+	"RepsonseStatistics": RepsonseStatistics,
+}
 
 // Statistics returns the percentage of
 // answers responded to
@@ -27,7 +34,7 @@ func (q *QuestionaireT) Statistics() (int, int, float64) {
 		}
 
 	}
-	return responses, inputs, float64(responses / inputs)
+	return responses, inputs, float64(100 * responses / inputs)
 }
 
 // RepsonseStatistics returns the percentage of
@@ -35,27 +42,22 @@ func (q *QuestionaireT) Statistics() (int, int, float64) {
 func RepsonseStatistics(q *QuestionaireT) (string, error) {
 
 	responses, inputs, pct := q.Statistics()
-	ct := q.ClosingTime
+	ct := q.Survey.Deadline
 	// ct = ct.Truncate(time.Hour)
 	cts := ct.Format("02.01.2006 15:04")
-	nextDay := q.ClosingTime.Add(24 * time.Hour)
+	nextDay := q.Survey.Deadline.Add(24 * time.Hour)
 	nextDayS := nextDay.Format("02.01.2006")
 
 	ret := ""
 	if q.LangCode == "de" {
-		s1 := fmt.Sprintf("Sie haben %v von %v beantwortet. %2.1f%%  <br>\n", responses, inputs, pct)
+		s1 := fmt.Sprintf("Sie haben %v von %v Fragen beantwortet: %2.1f%%.  <br>\n", responses, inputs, pct)
 		s2 := fmt.Sprintf("Umfrage endet am %v. Veröffentlichung am %v  <br>\n", cts, nextDayS)
 		ret = s1 + s2
 	} else if q.LangCode == "en" {
-		s1 := fmt.Sprintf("You answered %v out of %v questions. %2.1f%%  <br>\n", responses, inputs, pct)
+		s1 := fmt.Sprintf("You answered %v out of %v questions: %2.1f%%.  <br>\n", responses, inputs, pct)
 		s2 := fmt.Sprintf("Survey will finish at %v. Publication will be at %v<br>\n", cts, nextDayS)
 		ret = s1 + s2
 	}
+	log.Print("RepsonseStatistics: " + ret)
 	return ret, nil
-}
-
-type dynFuncT func(*QuestionaireT) (string, error)
-
-var DynFuncs = map[string]dynFuncT{
-	"RepsonseStatistics": RepsonseStatistics,
 }

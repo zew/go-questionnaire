@@ -64,7 +64,7 @@ type inputT struct {
 	Response      string  `json:"response,omitempty"`       // but also Value
 	ResponseFloat float64 `json:"response_float,omitempty"` // also for integers
 
-	DynamicFunc string `json:"dynamic_func,omitempty"` // Refers to DynFuncs
+	DynamicFunc string `json:"dynamic_func,omitempty"` // Refers to dynFuncs, for type == 'dynamic'
 }
 
 // Returns an input filled in with globally enumerated label, decription etc.

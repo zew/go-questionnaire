@@ -47,6 +47,7 @@ func loadQuestionaire(w http.ResponseWriter, r *http.Request, userSurveyType, us
 	}
 	if ok {
 		log.Printf("Questionaire loaded from session; %v pages", len(q.Pages))
+		q.ComputeDynamicContent()
 		return q, nil
 	}
 

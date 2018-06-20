@@ -130,23 +130,35 @@ func (q *QuestionaireT) Validate() error {
 		}
 	}
 
+	err := q.ComputeDynamicContent()
+	if err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// Validate checks whether essential elements of the questionaire exist.
+func (q *QuestionaireT) ComputeDynamicContent() error {
+
 	for i1 := 0; i1 < len(q.Pages); i1++ {
 		for i2 := 0; i2 < len(q.Pages[i1].Groups); i2++ {
 			for i3 := 0; i3 < len(q.Pages[i1].Groups[i2].Inputs); i3++ {
 				if q.Pages[i1].Groups[i2].Inputs[i3].Type == "dynamic" {
 					i := q.Pages[i1].Groups[i2].Inputs[i3]
-					if _, ok := DynFuncs[i.DynamicFunc]; !ok {
-						return fmt.Errorf("%v points to dynamic func %v - which does not exist or is not registered", i.Name, i.DynamicFunc)
+					if _, ok := dynFuncs[i.DynamicFunc]; !ok {
+						return fmt.Errorf("'%v' points to dynamic func '%v()' - which does not exist or is not registered", i.Name, i.DynamicFunc)
 					}
-					str, err := DynFuncs[i.DynamicFunc](q)
+					str, err := dynFuncs[i.DynamicFunc](q)
 					if err != nil {
-						return fmt.Errorf("%v points to dynamic func %v - which returned error %v", i.Name, i.DynamicFunc, err)
+						return fmt.Errorf("'%v' points to dynamic func '%v()' - which returned error %v", i.Name, i.DynamicFunc, err)
 					}
 					q.Pages[i1].Groups[i2].Inputs[i3].Label = trl.S{q.LangCode: str}
+					log.Printf("'%v' points to dynamic func '%v()' - which returned '%v'", i.Name, i.DynamicFunc, str)
 				}
 			}
 		}
 	}
-
 	return nil
+
 }

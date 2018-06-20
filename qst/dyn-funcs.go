@@ -34,7 +34,7 @@ func (q *QuestionaireT) Statistics() (int, int, float64) {
 		}
 
 	}
-	return responses, inputs, float64(100 * responses / inputs)
+	return responses, inputs, 100 * float64(responses) / float64(inputs)
 }
 
 // RepsonseStatistics returns the percentage of
@@ -50,12 +50,12 @@ func RepsonseStatistics(q *QuestionaireT) (string, error) {
 
 	ret := ""
 	if q.LangCode == "de" {
-		s1 := fmt.Sprintf("Sie haben %v von %v Fragen beantwortet: %2.1f%%.  <br>\n", responses, inputs, pct)
-		s2 := fmt.Sprintf("Umfrage endet am %v. Veröffentlichung am %v  <br>\n", cts, nextDayS)
+		s1 := fmt.Sprintf("Sie haben %v von %v Fragen beantwortet: %2.1f Prozent.  <br>\n", responses, inputs, pct)
+		s2 := fmt.Sprintf("Umfrage endet am %v. <br>\nVeröffentlichung am %v.  <br>\n", cts, nextDayS)
 		ret = s1 + s2
 	} else if q.LangCode == "en" {
-		s1 := fmt.Sprintf("You answered %v out of %v questions: %2.1f%%.  <br>\n", responses, inputs, pct)
-		s2 := fmt.Sprintf("Survey will finish at %v. Publication will be at %v<br>\n", cts, nextDayS)
+		s1 := fmt.Sprintf("You answered %v out of %v questions: %2.1f percent.  <br>\n", responses, inputs, pct)
+		s2 := fmt.Sprintf("Survey will finish at %v. <br>\nPublication will be at %v.<br>\n", cts, nextDayS)
 		ret = s1 + s2
 	}
 	log.Print("RepsonseStatistics: " + ret)

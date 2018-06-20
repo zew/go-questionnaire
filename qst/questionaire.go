@@ -138,7 +138,8 @@ func (i inputT) HTML(langCode string, numCols int) string {
 
 	switch i.Type {
 	case "dynamic":
-		return i.Label.Tr(langCode)
+		return fmt.Sprintf("<span class='go-quest-label %v'>%v</span>\n", i.CSSLabel, i.Label.Tr(langCode))
+
 	case "button":
 		lbl := fmt.Sprintf("<button type='submit' name='%v' value='%v' class='%v'><b>%v</b> %v</button>\n",
 			i.Name, i.Response, i.CSSControl,
@@ -304,7 +305,7 @@ func (gr *groupT) TableOpen(rows int) string {
 	}
 
 	// set width less than 100 percent, for i.e. radios more closely together
-	width := fmt.Sprintf("style='width: %v%%;' >", gr.Width)
+	width := fmt.Sprintf(" style='width: %v%%;' >", gr.Width)
 	to = strings.Replace(to, ">", width, -1)
 
 	return to

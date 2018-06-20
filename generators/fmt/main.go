@@ -5,6 +5,7 @@ import (
 	"log"
 
 	"github.com/zew/go-questionaire/qst"
+	"github.com/zew/go-questionaire/tpl"
 	"github.com/zew/go-questionaire/trl"
 )
 
@@ -820,11 +821,26 @@ func Create() *qst.QuestionaireT {
 		p.NoNavigation = true
 		{
 			gr := p.AddGroup()
+			gr.Cols = 1
 			{
 				inp := gr.AddInput()
-				inp.Name = "statistics"
 				inp.Type = "dynamic"
+				inp.CSSLabel = "vert-wider"
 				inp.DynamicFunc = "RepsonseStatistics"
+			}
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.CSSLabel = "vert-wider"
+				impr := trl.S{}
+				for lc := range q.LangCodes {
+					cnt, err := tpl.MarkDownFromFile("./static/doc/site-imprint.md", lc)
+					if err != nil {
+						log.Print(err)
+					}
+					impr[lc] = cnt
+				}
+				inp.Desc = impr
 			}
 		}
 	}

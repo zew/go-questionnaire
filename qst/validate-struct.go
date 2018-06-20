@@ -40,6 +40,8 @@ func (q *QuestionaireT) Validate() error {
 
 	navigationalNum := 0
 
+	logEntries := 0
+
 	// Check inputs
 	// Set page and group width to 100
 	// Set values for radiogroups
@@ -76,7 +78,10 @@ func (q *QuestionaireT) Validate() error {
 				for i4 := 0; i4 < len(inp.Radios); i4++ {
 					if inp.Radios[i4].Val == "" {
 						inp.Radios[i4].Val = fmt.Sprintf("%v", i4+1)
-						log.Printf(s + fmt.Sprintf("Value for %10v set to '%v'", inp.Radios[i4].Label, i4+1))
+						logEntries++
+						if logEntries < 10 {
+							log.Printf(s + fmt.Sprintf("Value for %10v set to '%v'", inp.Radios[i4].Label, i4+1))
+						}
 					}
 				}
 
@@ -138,7 +143,7 @@ func (q *QuestionaireT) Validate() error {
 	return nil
 }
 
-// Validate checks whether essential elements of the questionaire exist.
+// ComputeDynamicContent computes statistics
 func (q *QuestionaireT) ComputeDynamicContent() error {
 
 	for i1 := 0; i1 < len(q.Pages); i1++ {
@@ -154,7 +159,7 @@ func (q *QuestionaireT) ComputeDynamicContent() error {
 						return fmt.Errorf("'%v' points to dynamic func '%v()' - which returned error %v", i.Name, i.DynamicFunc, err)
 					}
 					q.Pages[i1].Groups[i2].Inputs[i3].Label = trl.S{q.LangCode: str}
-					log.Printf("'%v' points to dynamic func '%v()' - which returned '%v'", i.Name, i.DynamicFunc, str)
+					// log.Printf("'%v' points to dynamic func '%v()' - which returned '%v'", i.Name, i.DynamicFunc, str)
 				}
 			}
 		}

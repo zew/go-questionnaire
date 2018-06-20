@@ -648,19 +648,24 @@ func Create() *qst.QuestionaireT {
 		}
 
 		{
-			names3rdMatrix := []string{
-				"dax_fund",
+
+			// gr := p.AddRadioMatrixGroup(labelsOvervaluedFairUndervalued(), names3rdMatrix, labels123Matrix)
+			gr := p.AddGroup()
+			inp := gr.AddInput()
+			inp.Type = "radiogroup"
+			inp.Name = "dax_fund"
+			for i2, val := range labelsOvervaluedFairUndervalued() {
+				rad := inp.AddRadio()
+				rad.Label = val
+				// rad.HAlign = qst.HRight
+				rad.HAlign = qst.HLeft
+				rad.Val = fmt.Sprintf("%v", i2)
 			}
-			labels123Matrix := []trl.S{}
-
-			gr := p.AddRadioMatrixGroup(labelsOvervaluedFairUndervalued(), names3rdMatrix, labels123Matrix)
 			gr.Label = trl.S{"de": "7c.", "en": "7c."}
-
 			gr.Desc = trl.S{
 				"de": "Aus Sicht der Fundamentaldaten der DAX-Unternehmen ist der DAX derzeit",
 				"en": "The fundamentals of the companies comprising the DAX make the DAX currently",
 			}
-
 			gr.Cols = 3 // necessary, otherwise no vspacers
 		}
 
@@ -669,6 +674,10 @@ func Create() *qst.QuestionaireT {
 		{
 			gr := p.AddGroup()
 			gr.Label = trl.S{"de": "8.", "en": "8."}
+			gr.Desc = trl.S{
+				"de": "Die Wahrscheinlichkeit für ein Extremereignis im deutschen Finanzmarkt liegt",
+				"en": "The probability for an extreme event in the German financial markets is",
+			}
 			gr.Cols = 100
 			{
 				inp := gr.AddInput()
@@ -677,16 +686,16 @@ func Create() *qst.QuestionaireT {
 				inp.MaxChars = 4
 				inp.Validator = "inRange100"
 
-				inp.ColSpanLabel = 55
+				inp.ColSpanLabel = 22
 				inp.CSSLabel = "vert-wider"
-				inp.ColSpanControl = 33
+				inp.ColSpanControl = 34
 				inp.Desc = trl.S{
-					"de": `Die Wahrscheinlichkeit für ein Extremereignis im deutschen Finanzmarkt liegt mittefristig (<b>6</b> Mo.) bei`,
-					"en": "The probability for an extreme event in the German financial markets medium term (<b>6</b> months) is at ",
+					"de": ` mittefristig (<b>6</b> Mo.) bei  &nbsp;  `,
+					"en": " medium term (<b>6</b> months) at  &nbsp;  ",
 				}
 				inp.Suffix = trl.S{
-					"de": "%  &nbsp; und langfristig (<b>24</b> Mo.) bei",
-					"en": "pct  &nbsp; and long term (<b>24</b> months) at ",
+					"de": "%  &nbsp; und langfristig (<b>24</b> Mo.) bei &nbsp; ",
+					"en": "pct  &nbsp; and long term (<b>24</b> months) at &nbsp; ",
 				}
 				inp.HAlignLabel = qst.HLeft
 				inp.HAlignControl = qst.HLeft
@@ -699,7 +708,7 @@ func Create() *qst.QuestionaireT {
 				inp.MaxChars = 4
 				inp.Validator = "inRange100"
 
-				inp.ColSpanControl = 12
+				inp.ColSpanControl = 44
 				inp.Suffix = trl.S{"de": "%", "en": "pct"}
 				inp.HAlignLabel = qst.HLeft
 				inp.HAlignControl = qst.HLeft
@@ -713,7 +722,7 @@ func Create() *qst.QuestionaireT {
 	// Finish
 	{
 		p := q.AddPage()
-		p.Section = trl.S{"de": "Abschluss", "en": " &nbsp; Finish"}
+		p.Section = trl.S{"de": "Abschluss", "en": "Finish"}
 		p.Label = trl.S{"de": "", "en": ""}
 		p.Width = 65
 

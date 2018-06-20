@@ -6,14 +6,14 @@ import "github.com/zew/go-questionaire/trl"
 // and prepends a row with labels.
 func (p *pageT) AddRadioMatrixGroup(headerLabels []trl.S, inpNames []string, rowLabels []trl.S) *groupT {
 
-	grp := p.AddGroup()
+	gr := p.AddGroup()
 
 	// Header row - first column - empty cell
 	if len(rowLabels) > 0 {
 		if len(rowLabels) != len(inpNames) { // consistence check
 			panic("radioMatrix(): if row labels exist, they should exist for *all* rows")
 		}
-		inp := grp.AddInput()
+		inp := gr.AddInput()
 		inp.Type = "textblock"
 		inp.Label = trl.S{
 			"de": " &nbsp; ",
@@ -23,7 +23,7 @@ func (p *pageT) AddRadioMatrixGroup(headerLabels []trl.S, inpNames []string, row
 
 	// Header row - next columns
 	for _, lbl := range headerLabels {
-		inp := grp.AddInput()
+		inp := gr.AddInput()
 		inp.Type = "textblock"
 		inp.HAlignLabel = HCenter
 		inp.Desc = lbl // for instance trl.S{"de": "gut", "en": "good"}
@@ -31,7 +31,7 @@ func (p *pageT) AddRadioMatrixGroup(headerLabels []trl.S, inpNames []string, row
 
 	//
 	for i, name := range inpNames {
-		inp := grp.AddInput()
+		inp := gr.AddInput()
 		inp.Type = "radiogroup"
 		inp.Name = name // "y0_euro"
 		if len(rowLabels) > 0 {
@@ -45,7 +45,7 @@ func (p *pageT) AddRadioMatrixGroup(headerLabels []trl.S, inpNames []string, row
 		}
 	}
 
-	return grp
+	return gr
 
 }
 

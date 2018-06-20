@@ -263,6 +263,15 @@ table.main-table tr:nth-child(odd){
 
 
 
+.go-quest-group {
+	/* text-align: center; */
+}
+
+.go-quest-group-header {
+	/* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+	font-size: 12px !important;
+}
+
 
 
 .go-quest-page-section {
@@ -272,20 +281,12 @@ table.main-table tr:nth-child(odd){
 }
 .go-quest-page-header {
 	font-size: 16px;
+	font-weight: bold;
 	line-height: 18px;
 }
 .go-quest-page-desc {
 	font-size: 14px;
 	line-height: 18px;
-}
-
-.go-quest-group {
-	/* text-align: center; */
-}
-
-.go-quest-group-header {
-	/* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
-	font-size: 12px !important;
 }
 
 

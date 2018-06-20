@@ -87,6 +87,14 @@ func loadQuestionaire(w http.ResponseWriter, r *http.Request, userSurveyType, us
 // allowing to start anew
 func ReloadH(w http.ResponseWriter, r *http.Request) {
 
+	w.Header().Set("Content-Type", "text/html; charset=utf-8")
+	io.WriteString(w, `
+		<form method="POST" class="survey-edit-form" >
+			<input type="submit" name="submit" id="submit"  value="Submit" accesskey="s"  /> <br>
+		</form>
+		<script> document.getElementById('submit').focus(); </script>	
+	`)
+
 	sess := sessx.New(w, r)
 
 	_, err := lgn.LoginByHash(w, r)
@@ -98,31 +106,47 @@ func ReloadH(w http.ResponseWriter, r *http.Request) {
 		helper(w, r, nil, s)
 		return
 	}
-
-	w.Header().Set("Content-Type", "text/html; charset=utf-8")
-	io.WriteString(w, `
-		<form method="POST" class="survey-edit-form" >
-			<input type="submit" name="submit" id="submit"  value="Submit" accesskey="s"  /> <br>
-		</form>
-		<script> document.getElementById('submit').focus(); </script>	
-	`)
-
-	//
-	var q = &qst.QuestionaireT{}
-	ok, err := sess.EffectiveObj("questionaire", q)
+	l, isLoggedIn, err := lgn.LoggedInCheck(w, r)
 	if err != nil {
-		helper(w, r, err, "Error retrieving questionaire from session")
+		log.Printf("Login by hash error 2: %v", err)
+		s := cfg.Get().Mp["login_by_hash_failed"].All()
+		s += "LoggedInCheck error."
+		helper(w, r, err, s)
+		return
+	}
+	if !isLoggedIn {
+		log.Printf("Login by hash error 3: %v", "not logged in")
+		s := cfg.Get().Mp["login_by_hash_failed"].All()
+		s += "You are not logged in."
+		helper(w, r, nil, s)
 		return
 	}
 
-	if ok {
-		err := os.Remove(q.FilePath1())
-		if err != nil {
-			helper(w, r, err, "Error deleting questionaire file")
-			return
+	//
+
+	userSurveyType := ""
+	userWaveID := ""
+	for role, val := range l.Roles {
+		if role == "survey_id" {
+			userSurveyType = val
+		}
+		if role == "wave_id" {
+			userWaveID = val
 		}
 	}
-	sess.Remove(w, "questionaire")
+	pth := filepath.Join(".", qst.BasePath(), userSurveyType, userWaveID, l.User) + ".json"
+	err = os.Remove(pth)
+	if err != nil {
+		fmt.Fprintf(w, "Error deleting questionaire file: %v", err)
+	}
+	log.Printf("removed quest file %v", pth)
+
+	err = sess.Remove(w, "questionaire")
+	if err != nil {
+		helper(w, r, err, "Error deleting questionaire from session")
+		return
+	}
+	log.Printf("removed quest session")
 
 }
 

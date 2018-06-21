@@ -26,7 +26,7 @@ func (q *QuestionaireT) Statistics() (int, int, float64) {
 					continue
 				}
 				inputs++
-				if i.Response != "" {
+				if i.Response != "" && i.Response != "0" {
 					responses++
 				}
 			}

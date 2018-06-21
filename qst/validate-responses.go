@@ -68,6 +68,16 @@ func init() {
 		validators["inRange100"] = func(lc, arg string) error { return functionBase(lc, arg, 100) }
 		validators["inRange1000"] = func(lc, arg string) error { return functionBase(lc, arg, 1000) }
 		validators["inRange10000"] = func(lc, arg string) error { return functionBase(lc, arg, 10*1000) }
+		validators["inRange50000"] = func(lc, arg string) error { return functionBase(lc, arg, 50*1000) }
+		validators["mustRadioGroup"] = func(lc, arg string) error {
+			if arg == "0" || arg == "" {
+				if lc == "de" {
+					return fmt.Errorf("Bitte eine Option wählen")
+				}
+				return fmt.Errorf("Please choose one option")
+			}
+			return nil
+		}
 	}
 
 }

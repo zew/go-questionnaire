@@ -64,13 +64,13 @@ func (q *QuestionaireT) Validate() error {
 
 				// Check input type
 				if _, ok := implementedTypes[inp.Type]; !ok {
-					return fmt.Errorf(s + fmt.Sprintf("Type %v is not in %v ", inp.Type, implementedTypes))
+					return fmt.Errorf(s + fmt.Sprintf("Type '%v' is not in %v ", inp.Type, implementedTypes))
 				}
 
 				// Validator function exists
 				if inp.Validator != "" {
 					if _, ok := validators[inp.Validator]; !ok {
-						return fmt.Errorf(s + fmt.Sprintf("Type %v is not in %v ", inp.Type, implementedTypes))
+						return fmt.Errorf(s + fmt.Sprintf("Validator '%v' is not in %v ", inp.Validator, validators))
 					}
 				}
 

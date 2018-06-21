@@ -176,7 +176,6 @@ func SimulateLoad(t *testing.T) {
 			if err != nil {
 				t.Errorf("error requesting %v: %v", urlReq, err)
 			}
-
 		}
 
 		vals := url.Values{}
@@ -223,38 +222,63 @@ func SimulateLoad(t *testing.T) {
 		}
 
 	}
-	loadQuest(t, urlMain, sessCook)
+
+	{
+		urlReq := urlMain
+		t.Logf("\tGo back to page 0")
+		t.Logf("\t==================")
+		vals := url.Values{}
+		vals.Set("token", lgn.FormToken())
+		vals.Set("page", "0")
+		t.Logf("POST requesting %v?%v", urlReq, vals.Encode())
+		_, err := util.Request("POST", urlReq, vals, []*http.Cookie{sessCook})
+		if err != nil {
+			t.Errorf("error requesting %v: %v", urlReq, err)
+		}
+	}
+
+	clientQuest(t, urlMain, sessCook)
 
 }
 
-func loadQuest(t *testing.T, urlMain string, sessCook *http.Cookie) {
+func clientQuest(t *testing.T, urlMain string, sessCook *http.Cookie) {
 
 	var q = &qst.QuestionaireT{}
 	var err error
 	q, err = qst.Load1(q.FilePath1("fmt.json")) // new from template
 	if err != nil {
-		t.Fatalf("Loading questionaire from file caused error: %v", err)
+		t.Fatalf("Loading client questionaire from file caused error: %v", err)
 	}
 
 	q.Survey = qst.NewSurvey("fmt")
 	q.UserID = "systemtest"
 	q.RemoteIP = "127.0.0.1:12345"
-	q.CurrPage = len(q.Pages) - 1
-	q.CurrPage++ // server generated questionaire is driven one too far
+	q.CurrPage = 777 // hopeless to mimic every server side setting
 	err = q.Validate()
 	if err != nil {
-		t.Fatalf("Questionaire validation caused error: %v", err)
+		t.Fatalf("Client questionaire validation caused error: %v", err)
 	}
 
-	t.Logf("Questionaire loaded from file; %v pages", len(q.Pages))
+	t.Logf("Client questionaire loaded from file; %v pages", len(q.Pages))
 
 	for idx := range q.Pages {
-		fillInPage(t, q, idx, urlMain, sessCook)
+		clientPageToServer(t, q, idx, urlMain, sessCook)
 	}
+
 	q.Save1(q.FilePath1(filepath.Join(q.Survey.Type, q.Survey.WaveID(), "systemtest_src")))
+
+	v, err := qst.Load1(q.FilePath1(filepath.Join(q.Survey.Type, q.Survey.WaveID(), "systemtest"))) // new from template
+	if err != nil {
+		t.Fatalf("Loading questionaire v from file caused error: %v", err)
+	}
+	equal, err := q.Compare(v)
+	if !equal {
+		t.Fatalf("Questionaires are unequal: %v", err)
+	}
+
 }
 
-func fillInPage(t *testing.T, q *qst.QuestionaireT, idxPage int, urlMain string, sessCook *http.Cookie) {
+func clientPageToServer(t *testing.T, q *qst.QuestionaireT, idxPage int, urlMain string, sessCook *http.Cookie) {
 
 	ctr.Reset()
 	waveID := qst.NewSurvey("fmt").WaveID()
@@ -274,6 +298,7 @@ func fillInPage(t *testing.T, q *qst.QuestionaireT, idxPage int, urlMain string,
 				}
 				vals.Set(inp.Name, ctr.IncrementStr())
 				q.Pages[i1].Groups[i2].Inputs[i3].Response = ctr.GetLastStr()
+				log.Printf("Input %12v set to value %2v ", inp.Name, ctr.GetLastStr())
 			}
 		}
 	}

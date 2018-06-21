@@ -187,7 +187,11 @@ func (i inputT) HTML(langCode string, numCols int) string {
 		}
 		// The checkbox "empty catcher" must follow *after* the actual checkbox input,
 		// since golang http.Form.Get() fetches the *first* value.
-		if innerType == "checkbox" {
+		//
+		// The radio "empty catcher" becomes necessary,
+		// if no radio was selected by the user;
+		// but a "must..." validation rule is registered
+		if innerType == "radio" || innerType == "checkbox" {
 			ctrl += fmt.Sprintf("<input type='hidden' name='%v' id='%v_hidd' value='%v' />\n",
 				nm, nm, valEmpty)
 		}
@@ -604,8 +608,51 @@ func (q *QuestionaireT) NextNaviNum() string {
 	return fmt.Sprintf("%v", q.Pages[pg].NavigationalNum)
 }
 
-// CurrPageInNavigation - it the current page
+// CurrPageInNavigation - is the current page
 // shown in navigation; convenience func for templates
 func (q *QuestionaireT) CurrPageInNavigation() bool {
 	return !q.Pages[q.CurrPage].NoNavigation
+}
+
+// Compare compares page completion times and input responses.
+// Compare stops with the first difference and returns an error.
+func (q *QuestionaireT) Compare(v *QuestionaireT) (bool, error) {
+
+	if len(q.Pages) != len(v.Pages) {
+		return false, fmt.Errorf("Unequal numbers of pages: %v - %v", len(q.Pages), len(v.Pages))
+	}
+
+	for i1 := 0; i1 < len(q.Pages); i1++ {
+		if len(q.Pages[i1].Groups) != len(q.Pages[i1].Groups) {
+			return false, fmt.Errorf("Page %v: Unequal numbers of groups: %v - %v", i1, len(q.Pages[i1].Groups), v.Pages[i1].Groups)
+		}
+		if i1 < len(q.Pages)-1 { // No completion time comparison for last page
+			qf := q.Pages[i1].Finished
+			vf := v.Pages[i1].Finished
+			if qf.Sub(vf) > 20*time.Second || vf.Sub(qf) > 20*time.Second {
+				return false, fmt.Errorf("Page %v: Comletion time too distinct: %v - %v", i1, vf, qf)
+			}
+		}
+
+		for i2 := 0; i2 < len(q.Pages[i1].Groups); i2++ {
+			if len(q.Pages[i1].Groups[i2].Inputs) != len(v.Pages[i1].Groups[i2].Inputs) {
+				return false, fmt.Errorf("Page %v: Group %v: Unequal numbers of groups: %v - %v", i1, i2, len(q.Pages[i1].Groups[i2].Inputs), len(v.Pages[i1].Groups[i2].Inputs))
+			}
+			for i3 := 0; i3 < len(q.Pages[i1].Groups[i2].Inputs); i3++ {
+				if q.Pages[i1].Groups[i2].Inputs[i3].IsLayout() {
+					continue
+				}
+				if q.Pages[i1].Groups[i2].Inputs[i3].Response != v.Pages[i1].Groups[i2].Inputs[i3].Response {
+					return false, fmt.Errorf(
+						"Page %v: Group %v: Input %v %v: '%v' != '%v'",
+						i1, i2, i3,
+						q.Pages[i1].Groups[i2].Inputs[i3].Name,
+						q.Pages[i1].Groups[i2].Inputs[i3].Response,
+						v.Pages[i1].Groups[i2].Inputs[i3].Response,
+					)
+				}
+			}
+		}
+	}
+	return true, nil
 }

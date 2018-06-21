@@ -59,7 +59,7 @@ func Create() *qst.QuestionaireT {
 				inp.Desc = trl.S{"de": "Sind Sie die angeschriebene Person?", "en": "Are you the addressee?"}
 
 				inp.ColSpanLabel = 1
-				inp.ColSpanControl = 4 // ignored for radiogroup
+				inp.ColSpanControl = 2
 				{
 					rad := inp.AddRadio()
 					rad.HAlign = qst.HLeft
@@ -80,9 +80,9 @@ func Create() *qst.QuestionaireT {
 				}
 			}
 
-			gr = p.AddGroup()
-			gr.Cols = 5
-			gr.Width = 75
+			// gr = p.AddGroup()
+			// gr.Cols = 5
+			// gr.Width = 75
 			{
 				inp := gr.AddInput()
 				inp.Type = "textarea"
@@ -93,12 +93,12 @@ func Create() *qst.QuestionaireT {
 				}
 				inp.MaxChars = 300
 				inp.ColSpanLabel = 1
-				inp.ColSpanControl = 4
+				inp.ColSpanControl = 2
 			}
 
 			gr = p.AddGroup()
 			gr.Cols = 1
-			gr.Width = 73
+			gr.Width = 75
 			{
 				inp := gr.AddInput()
 				inp.Type = "button"
@@ -672,7 +672,7 @@ func Create() *qst.QuestionaireT {
 			inp.Type = "text"
 			inp.Name = "dax_6"
 			inp.MaxChars = 6
-			inp.Validator = "inRange10000"
+			inp.Validator = "inRange50000"
 
 			inp.ColSpanLabel = 55
 			inp.CSSLabel = "vert-wider"
@@ -691,7 +691,7 @@ func Create() *qst.QuestionaireT {
 			inp.Type = "text"
 			inp.Name = "dax_6_low"
 			inp.MaxChars = 6
-			inp.Validator = "inRange10000"
+			inp.Validator = "inRange50000"
 
 			inp.ColSpanLabel = 55
 			inp.CSSLabel = "vert-wider"
@@ -710,7 +710,7 @@ func Create() *qst.QuestionaireT {
 			inp.Type = "text"
 			inp.Name = "dax_6_high"
 			inp.MaxChars = 6
-			inp.Validator = "inRange10000"
+			inp.Validator = "inRange50000"
 
 			inp.ColSpanControl = 24
 			inp.Suffix = trl.S{"de": "Punkten liegen.", "en": "points"}
@@ -837,20 +837,18 @@ func Create() *qst.QuestionaireT {
 				inp.Desc = trl.S{"de": "", "en": ""}
 
 				inp.ColSpanLabel = 1
-				inp.ColSpanControl = 1 // ignored for radiogroup
+				inp.ColSpanControl = 1
+				inp.Validator = "mustRadioGroup"
 
 				{
 					rad := inp.AddRadio()
 					rad.HAlign = qst.HLeft
 					rad.HAlign = qst.HCenter
 					rad.Label = trl.S{
-						"de": "\nFragebogen ist abgeschlossen \nund kann nicht mehr geöffnet werden.",
-						"en": "\nQuestionaire is finished.\nNo more edits.",
-					}
-					rad.Label = trl.S{
 						"de": "Fragebogen ist abgeschlossen <br>\nund kann nicht mehr geöffnet werden.",
 						"en": "Questionaire is finished.\nNo more edits.",
 					}
+					rad.Val = "1"
 				}
 				{
 					rad := inp.AddRadio()
@@ -860,6 +858,7 @@ func Create() *qst.QuestionaireT {
 						"de": "Zugang bleibt bestehen.  \nDaten können in weiteren Sitzungen \ngeändert/ergänzt werden.",
 						"en": "Leave questionaire open. \nData  can be changed/completed     \nin later sessions.",
 					}
+					rad.Val = "2"
 				}
 			}
 

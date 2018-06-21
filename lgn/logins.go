@@ -55,6 +55,9 @@ type LoginT struct {
 
 // HasRole checks the login for a particular role, for instance "admin"
 func (l *LoginT) HasRole(role string) bool {
+	if l.IsInitPassword {
+		return false // no admin functions with an init password
+	}
 	_, ok := l.Roles[role]
 	return ok
 }

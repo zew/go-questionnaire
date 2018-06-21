@@ -28,7 +28,77 @@ func Create() *qst.QuestionaireT {
 
 		{
 			gr := p.AddGroup()
+			gr.Cols = 3
 
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.CSSLabel = "vert-wider"
+				inp.ColSpanLabel = 3
+				impr := trl.S{}
+				for lc := range q.LangCodes {
+					cnt, err := tpl.MarkDownFromFile("./static/doc/data-protection.md", lc)
+					if err != nil {
+						log.Print(err)
+					}
+					impr[lc] = cnt
+				}
+				inp.Desc = impr
+			}
+
+			gr = p.AddGroup()
+			gr.Cols = 3
+			gr.Width = 75
+			{
+				inp := gr.AddInput()
+				inp.Type = "radiogroup"
+				inp.Name = "proxy"
+				inp.CSSLabel = "vert-wider"
+
+				inp.Label = trl.S{"de": " ", "en": " "}
+				inp.Desc = trl.S{"de": "Sind Sie die angeschriebene Person?", "en": "Are you the addressee?"}
+
+				inp.ColSpanLabel = 1
+				inp.ColSpanControl = 4 // ignored for radiogroup
+				{
+					rad := inp.AddRadio()
+					rad.HAlign = qst.HLeft
+					rad.HAlign = qst.HCenter
+					rad.Label = trl.S{
+						"de": "Ja, ich bin die angeschriebene Person.",
+						"en": "Yes, I am the addressee.",
+					}
+				}
+				{
+					rad := inp.AddRadio()
+					rad.HAlign = qst.HLeft
+					rad.HAlign = qst.HCenter
+					rad.Label = trl.S{
+						"de": "Nein, ich fülle den Fragebogen in Vertretung der angeschriebenen Person aus.",
+						"en": "No. I am filling in for the addressee.",
+					}
+				}
+			}
+
+			gr = p.AddGroup()
+			gr.Cols = 5
+			gr.Width = 75
+			{
+				inp := gr.AddInput()
+				inp.Type = "textarea"
+				inp.Name = "address_change"
+				inp.Desc = trl.S{
+					"de": "Meine Adresse hat sich geändert",
+					"en": "My address has changed",
+				}
+				inp.MaxChars = 300
+				inp.ColSpanLabel = 1
+				inp.ColSpanControl = 4
+			}
+
+			gr = p.AddGroup()
+			gr.Cols = 1
+			gr.Width = 73
 			{
 				inp := gr.AddInput()
 				inp.Type = "button"
@@ -36,11 +106,12 @@ func Create() *qst.QuestionaireT {
 				inp.Response = "1"
 				inp.Label = trl.S{
 					"de": "Weiter",
-					"en": "next",
+					"en": "Next",
 				}
 				inp.ColSpanControl = 1
-				inp.HAlignControl = qst.HCenter
+				inp.HAlignControl = qst.HRight
 			}
+
 		}
 	}
 
@@ -775,6 +846,10 @@ func Create() *qst.QuestionaireT {
 					rad.Label = trl.S{
 						"de": "\nFragebogen ist abgeschlossen \nund kann nicht mehr geöffnet werden.",
 						"en": "\nQuestionaire is finished.\nNo more edits.",
+					}
+					rad.Label = trl.S{
+						"de": "Fragebogen ist abgeschlossen <br>\nund kann nicht mehr geöffnet werden.",
+						"en": "Questionaire is finished.\nNo more edits.",
 					}
 				}
 				{

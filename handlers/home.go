@@ -6,7 +6,6 @@ package handlers
 import (
 	"fmt"
 	"html"
-	"io"
 	"log"
 	"net/http"
 	"os"
@@ -36,8 +35,6 @@ func loadQuestionaire(w http.ResponseWriter, r *http.Request, userSurveyType, us
 
 	sess := sessx.New(w, r)
 
-	log.Printf("Deriving from the login: survey_id %v, wave_id %v, user_id: %v", userSurveyType, userWaveID, userID)
-
 	// from session
 	var q = &qst.QuestionaireT{}
 	ok, err := sess.EffectiveObj("questionaire", q)
@@ -52,6 +49,7 @@ func loadQuestionaire(w http.ResponseWriter, r *http.Request, userSurveyType, us
 	}
 
 	// from file
+	log.Printf("Deriving from the login: survey_id %v, wave_id %v, user_id: %v", userSurveyType, userWaveID, userID)
 	pth := q.FilePath1(filepath.Join(userSurveyType, userWaveID, userID))
 	log.Printf("Deriving path: %v", pth)
 	q, err = qst.Load1(pth) // previous session
@@ -80,73 +78,6 @@ func loadQuestionaire(w http.ResponseWriter, r *http.Request, userSurveyType, us
 
 	log.Printf("Questionaire loaded from file; %v pages", len(q.Pages))
 	return q, nil
-
-}
-
-// ReloadH removes the existing questioniare from the session,
-// allowing to start anew
-func ReloadH(w http.ResponseWriter, r *http.Request) {
-
-	w.Header().Set("Content-Type", "text/html; charset=utf-8")
-	io.WriteString(w, `
-		<form method="POST" class="survey-edit-form" >
-			<input type="submit" name="submit" id="submit"  value="Submit" accesskey="s"  /> <br>
-		</form>
-		<script> document.getElementById('submit').focus(); </script>	
-	`)
-
-	sess := sessx.New(w, r)
-
-	_, err := lgn.LoginByHash(w, r)
-	if err != nil {
-		log.Printf("Login by hash error 1: %v", err)
-		// Don't show the revealing original error
-		s := cfg.Get().Mp["login_by_hash_failed"].All()
-		s += "LoginByHash error."
-		helper(w, r, nil, s)
-		return
-	}
-	l, isLoggedIn, err := lgn.LoggedInCheck(w, r)
-	if err != nil {
-		log.Printf("Login by hash error 2: %v", err)
-		s := cfg.Get().Mp["login_by_hash_failed"].All()
-		s += "LoggedInCheck error."
-		helper(w, r, err, s)
-		return
-	}
-	if !isLoggedIn {
-		log.Printf("Login by hash error 3: %v", "not logged in")
-		s := cfg.Get().Mp["login_by_hash_failed"].All()
-		s += "You are not logged in."
-		helper(w, r, nil, s)
-		return
-	}
-
-	//
-
-	userSurveyType := ""
-	userWaveID := ""
-	for role, val := range l.Roles {
-		if role == "survey_id" {
-			userSurveyType = val
-		}
-		if role == "wave_id" {
-			userWaveID = val
-		}
-	}
-	pth := filepath.Join(".", qst.BasePath(), userSurveyType, userWaveID, l.User) + ".json"
-	err = os.Remove(pth)
-	if err != nil {
-		fmt.Fprintf(w, "Error deleting questionaire file: %v", err)
-	}
-	log.Printf("removed quest file %v", pth)
-
-	err = sess.Remove(w, "questionaire")
-	if err != nil {
-		helper(w, r, err, "Error deleting questionaire from session")
-		return
-	}
-	log.Printf("removed quest session")
 
 }
 

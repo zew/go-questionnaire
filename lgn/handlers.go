@@ -252,11 +252,12 @@ func LoginByHash(w http.ResponseWriter, r *http.Request) (bool, error) {
 
 	l := &LoginT{}
 	l.User = u
+	l.IsInitPassword = false // remembrance: only then do roles become effective
 	l.Roles = map[string]string{}
 
 	keys := []string{}
 	for key := range r.Form {
-		if key != "h" && key != "page" {
+		if key != "h" && key != "page" && key != "submit" {
 			keys = append(keys, key)
 		}
 	}

@@ -2,7 +2,6 @@ package qst
 
 import (
 	"fmt"
-	"log"
 	"time"
 )
 
@@ -58,6 +57,6 @@ func RepsonseStatistics(q *QuestionaireT) (string, error) {
 		s2 := fmt.Sprintf("Survey will finish at %v. <br>\nPublication will be at %v.<br>\n", cts, nextDayS)
 		ret = s1 + s2
 	}
-	log.Print("RepsonseStatistics: " + ret)
+	// log.Print("RepsonseStatistics: " + ret)
 	return ret, nil
 }

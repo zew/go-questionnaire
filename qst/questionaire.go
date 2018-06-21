@@ -196,7 +196,7 @@ func (i inputT) HTML(langCode string, numCols int) string {
 		ctrl += fmt.Sprintf("<span class='go-quest-label %v' >%v</span>\n", i.CSSLabel, i.ErrMsg.TrSilent(langCode)) // ugly layout  - but radiogroup and checkboxgroup won't have validation errors anyway
 
 		lbl := renderLabelDescription(langCode, i.HAlignLabel, i.Label, i.Desc, i.CSSLabel, i.ColSpanLabel, numCols)
-		// lbl = fmt.Sprintf("<label for='%v'>%v</label>\n", nm, lbl)
+		lbl = fmt.Sprintf("<label for='%v'>%v</label>\n", nm, lbl)
 		return lbl + ctrl
 
 	case "text", "textarea", "checkbox":

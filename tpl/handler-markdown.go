@@ -45,7 +45,7 @@ func MarkDownFromFile(fpth, langCode string) (string, error) {
 
 	// Render markdown
 	output := string(blackfriday.MarkdownCommon(bts))
-	output += "<br>\n<br>\n<br>\n<p style='font-size: 75%;'>\nRendered by russross/blackfriday</p>\n" // Inconspicuous rendering marker
+	// output += "<br>\n<br>\n<br>\n<p style='font-size: 75%;'>\nRendered by russross/blackfriday</p>\n" // Inconspicuous rendering marker
 
 	return output, nil
 

@@ -7,6 +7,10 @@
 
 A http(s) webserver serving questionaires.
 
+## Status
+
+Version 1.0
+
 ## Usage
 
 Install and setup [golang](https://golang.org/doc/install)
@@ -56,8 +60,8 @@ by __JSON files__.
    [a would-be JS client lib](http://www.javascript-coder.com/html-form/form-validation.phtml)
 
 
-* Package `systemtest` performs full circle filling out a questionaire and compares the 
-resulting JSON file.
+* Package `systemtest` performs full circle roundtrip - filling out a questionaire and comparing the 
+server JSON file with the entered data.
 
 * Column width for any label or form element can be set individually (`ColSpanLabel` and `ColSpanControl`)
 
@@ -108,6 +112,10 @@ the white space between inline block elements subtracts from the total width.
 The column width computation must be based on a compromise slack of i.e. 97.5 percent.
 
 Stacking cells wit `float: left` takes away the nice vertical middle alignment of the cells.
+
+## Optimization
+
+Saving only responses to session/JSON; not the entire questionaire data.
 
 
 ## About Go-App-Tpl

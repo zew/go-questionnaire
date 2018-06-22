@@ -4,9 +4,14 @@ import "github.com/zew/go-questionaire/trl"
 
 // AddRadioMatrixGroup adds several inputs of type radiogroup
 // and prepends a row with labels.
-func (p *pageT) AddRadioMatrixGroup(headerLabels []trl.S, inpNames []string, rowLabels []trl.S) *groupT {
+func (p *pageT) AddRadioMatrixGroup(headerLabels []trl.S, inpNames []string, rowLabels []trl.S, opt ...int) *groupT {
 
 	gr := p.AddGroup()
+
+	colSpanLabel := 1
+	if len(opt) > 0 {
+		colSpanLabel = opt[0]
+	}
 
 	// Header row - first column - empty cell
 	if len(rowLabels) > 0 {
@@ -19,6 +24,7 @@ func (p *pageT) AddRadioMatrixGroup(headerLabels []trl.S, inpNames []string, row
 			"de": " &nbsp; ",
 			"en": " &nbsp; ",
 		}
+		inp.ColSpanLabel = colSpanLabel
 	}
 
 	// Header row - next columns
@@ -43,6 +49,8 @@ func (p *pageT) AddRadioMatrixGroup(headerLabels []trl.S, inpNames []string, row
 			rad := inp.AddRadio()
 			rad.HAlign = HCenter
 		}
+		inp.ColSpanLabel = colSpanLabel
+
 	}
 
 	return gr

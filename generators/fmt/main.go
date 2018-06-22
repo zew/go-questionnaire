@@ -91,7 +91,7 @@ func Create() *qst.QuestionaireT {
 					"de": "Meine Adresse hat sich geändert",
 					"en": "My address has changed",
 				}
-				inp.MaxChars = 300
+				inp.MaxChars = 150
 				inp.ColSpanLabel = 1
 				inp.ColSpanControl = 2
 			}
@@ -786,6 +786,254 @@ func Create() *qst.QuestionaireT {
 			}
 		}
 
+	}
+
+	// Seasonal
+	{
+
+		// Special may questions revolve around the month of the Quarter.
+		//
+		// 	Business cycle & drivers: 		           Januar, April, Juli, October
+		// 	Inflation, drivers, central bank rates:    Februar, May, August, November
+		// 	Free special questoins:                    March, June, September, December
+		if monthOfQuarter() == 1 || true {
+
+			p := q.AddPage()
+			p.Section = trl.S{"de": "Sonderfrage", "en": "Special"}
+			p.Label = trl.S{"de": "Prognosetreiber Wachstum", "en": "Growth drivers"}
+			p.Width = 80
+
+			{
+				gr := p.AddGroup()
+				gr.Cols = 9
+				gr.Label = trl.S{
+					"de": "1.",
+					"en": "1.",
+				}
+				gr.Desc = trl.S{
+					"de": "Punktprognose der Wachstumsrate des deutschen BIP",
+					"en": "Forecast growth rate German GDP",
+				}
+
+				{
+					inp := gr.AddInput()
+					inp.Type = "textblock"
+					// inp.Label = trl.S{
+					// 	"de": "Prognose:<br>\n",
+					// 	"en": "Forecast:<br>\n",
+					// }
+					inp.Desc = trl.S{
+						"de": " <br>\n Prognose Wachstum des BIP <b>je Quartal</b> <br>\n (real, saisonbereinigt, nicht annualisiert) <br>\n <br>\n ",
+						"en": " <br>\n Forecast <b>quarterly</b> GDP growth <br>\n(real, seasonally adjusted, non annualized) <br>\n <br>\n ",
+					}
+					inp.ColSpanLabel = 3
+				}
+				{
+					inp := gr.AddInput()
+					inp.Type = "text"
+					inp.Name = "xquart1"
+					inp.MaxChars = 4
+					inp.Validator = "inRange20"
+					inp.Desc = trl.S{
+						"de": nextQ(-1) + " &nbsp; ",
+						"en": nextQ(-1) + " &nbsp; ",
+					}
+					inp.Suffix = trl.S{
+						"de": "%",
+						"en": "pct",
+					}
+					inp.HAlignLabel = qst.HRight
+
+				}
+				{
+					inp := gr.AddInput()
+					inp.Type = "text"
+					inp.Name = "xquart2"
+					inp.MaxChars = 4
+					inp.Validator = "inRange20"
+					inp.Desc = trl.S{
+						"de": nextQ(0) + " &nbsp; ",
+						"en": nextQ(0) + " &nbsp; ",
+					}
+					inp.Suffix = trl.S{
+						"de": "%",
+						"en": "pct",
+					}
+					inp.HAlignLabel = qst.HRight
+				}
+				{
+					inp := gr.AddInput()
+					inp.Type = "text"
+					inp.Name = "xquart3"
+					inp.MaxChars = 4
+					inp.Validator = "inRange20"
+					inp.Desc = trl.S{
+						"de": nextQ() + " &nbsp; ",
+						"en": nextQ() + " &nbsp; ",
+					}
+					inp.Suffix = trl.S{
+						"de": "%",
+						"en": "pct",
+					}
+					inp.HAlignLabel = qst.HRight
+
+				}
+
+				{
+					inp := gr.AddInput()
+					inp.Type = "textblock"
+					// inp.Label = trl.S{
+					// 	"de": "Prognose:<br>\n",
+					// 	"en": "Forecast:<br>\n",
+					// }
+					inp.Desc = trl.S{
+						"de": "Prognose Wachstum des BIP aufs&nbsp;<b>Jahr</b> <br>\n(real, saisonbereinigt)",
+						"en": "Forecast GDP growth per&nbsp;<b>year</b> <br>\n(real, seasonally adjusted)",
+					}
+					inp.ColSpanLabel = 3
+
+				}
+
+				{
+					inp := gr.AddInput()
+					inp.Type = "text"
+					inp.Name = "xyear1"
+					inp.MaxChars = 4
+					inp.Validator = "inRange20"
+					inp.Desc = trl.S{
+						"de": nextY(-1) + " &nbsp; ",
+						"en": nextY(-1) + " &nbsp; ",
+					}
+					inp.Suffix = trl.S{
+						"de": "%",
+						"en": "pct",
+					}
+					inp.HAlignLabel = qst.HRight
+
+				}
+				{
+					inp := gr.AddInput()
+					inp.Type = "text"
+					inp.Name = "xyear2"
+					inp.MaxChars = 4
+					inp.Validator = "inRange20"
+					inp.Desc = trl.S{
+						"de": nextY(0) + " &nbsp; ",
+						"en": nextY(0) + " &nbsp; ",
+					}
+					inp.Suffix = trl.S{
+						"de": "%",
+						"en": "pct",
+					}
+					inp.HAlignLabel = qst.HRight
+				}
+				{
+					inp := gr.AddInput()
+					inp.Type = "text"
+					inp.Name = "xyear3"
+					inp.MaxChars = 4
+					inp.Validator = "inRange20"
+					inp.Desc = trl.S{
+						"de": nextY() + " &nbsp; ",
+						"en": nextY() + " &nbsp; ",
+					}
+					inp.Suffix = trl.S{
+						"de": "%",
+						"en": "pct",
+					}
+					inp.HAlignLabel = qst.HRight
+
+				}
+				// // in between label
+				// {
+				// 	inp := gr.AddInput()
+				// 	inp.Type = "textblock"
+				// 	inp.Desc = trl.S{
+				// 		"de": `Wachstumsrate des realen BIP aufs Jahr`,
+				// 		"en": "Real growth rate per year",
+				// 	}
+				// 	inp.ColSpanLabel = 7
+				// 	inp.CSSLabel = "textblock-smaller"
+				// }
+
+			}
+
+			// gr1
+			{
+				labels123Matrix := []trl.S{
+					{
+						"de": "Konjunkturdaten Deutschland",
+						"en": "Business cycle data Germany",
+					},
+					{
+						"de": "Exportmärkte",
+						"en": "Export markets",
+					},
+					{
+						"de": "Wechselkurse",
+						"en": "Exchange rates",
+					},
+					{
+						"de": "EZB-Geldpolitik",
+						"en": "ECB monetary policy",
+					},
+					{
+						"de": "US-Geldpolitik",
+						"en": "FED monetary policy",
+					},
+					{
+						"de": "Geopol. Ereignisse",
+						"en": "Geopolitical events",
+					},
+					{
+						"de": "Regierungsbildung Deutschland",
+						"en": "Government formation Germany",
+					},
+					{
+						"de": "Sonstige",
+						"en": "Other",
+					},
+				}
+				names1stMatrix := []string{
+					"infl_cycle_data_deu",
+					"infl_exp_markets",
+					"infl_exch_rates",
+					"infl_mp_ecb",
+					"infl_mp_fed",
+					"infl_geopol",
+					"infl_gvt_form_deu",
+					"infl_other",
+				}
+				gr := p.AddRadioMatrixGroup(labelsStronglyPositiveStronglyNegativeInfluence(),
+					names1stMatrix, labels123Matrix, 2)
+				gr.Cols = 8 // necessary, otherwise no vspacers
+				gr.OddRowsColoring = true
+				gr.Label = trl.S{
+					"de": "2.",
+					"en": "2.",
+				}
+				gr.Desc = trl.S{
+					"de": "Haben Entwicklungen in den folgenden Bereichen Sie zu einer Revision (ggü. Vormonat) Ihrer Konjunkturprognosen für die deutsche Wirtschaft bewogen und wenn ja in welche Richtung?",
+					"en": "Which developments have lead you to change your assessment of the business cycle outlook for the German economy compared to the previous month",
+				}
+
+				{
+					inp := gr.AddInput()
+					inp.Type = "text"
+					inp.Name = "other_cycle_infl"
+					inp.Desc = trl.S{
+						"de": "Wenn sonstige - welche ?",
+						"en": "If other - which?",
+					}
+					inp.MaxChars = 30
+					inp.ColSpanLabel = 2
+					inp.ColSpanControl = 6
+					inp.CSSControl = "input-smaller"
+				}
+
+			}
+
+		}
 	}
 
 	//

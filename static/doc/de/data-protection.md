@@ -17,11 +17,8 @@ Hier finden Sie unsere [Datenschutz-Grundlagen](https://www.zew.de/de/datenschut
 
 Ihre Angaben werden streng vertraulich behandelt. 
 
-Zusätzlich bitten wir Sie um Ihr Einverständnis, dass wir Ihre Antworten speichern und mit Ihrer geschäftlichen Identität verknüpfen.
-
-Ihre geschäftliche Identität besteht aus Ihrem Namen, ihrer Funktion, geschäftl. Email und Telefonnummer,  Arbeitgeber und Teilnahmebeginn.
-
 Die Auswertung Ihrer Antworten erfolgt nur in anonymisierter Form.
 
 Ihre Daten werden auf einem geschützten Server im ZEW Hauptgebäude gespeichert, auf den nur Mitglieder des ZEW Teams für den Finanzmarkttest Zugriff haben.
 
+Zusätzlich bitten wir Sie um Ihr Einverständnis, dass wir intern Ihre Antworten mit Ihrer geschäftlichen Identität verknüpfen dürfen. Ihre geschäftliche Identität besteht aus Ihrem Namen, ihrer Funktion, geschäftl. Email und Telefonnummer, Arbeitgeber und Teilnahmebeginn.

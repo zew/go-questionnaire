@@ -16,24 +16,46 @@ func nextWaveID() string {
 }
 
 // Yields current quarter plus one
-func nextQ() string {
+func nextQ(opt ...int) string {
 	t := time.Now()
 	m := t.Month() // 1 - january
 	y := t.Year()
 	qNow := int((m-1)/3) + 1 // jan: int(0/3)+1 == 1   feb: int(1/3)+1 == 1    mar: int(2/3)+1 == 1     apr: int(3/3)+1 == 2
-	qNext := qNow + 1
+
+	offset := 1
+	if len(opt) > 0 {
+		offset = opt[0]
+	}
+	qNext := qNow + offset
 	if qNext > 4 {
 		qNext = 1
 		y++
 	}
+	if qNext < 1 {
+		qNext = 4
+		y--
+	}
 	return fmt.Sprintf("Q%v %v", qNext, y)
 }
 
-func nextY() string {
+func nextY(opt ...int) string {
 	t := time.Now()
 	y := t.Year()
-	y++
+
+	offset := 1
+	if len(opt) > 0 {
+		offset = opt[0]
+	}
+
+	y = y + offset
 	return fmt.Sprintf("%v", y)
+}
+
+func monthOfQuarter() int {
+	t := time.Now().Add(-10 * 24 * time.Hour)
+	m := int(t.Month())   // 1 - january
+	monthOfQuart := m % 3 // 1 => 1; 2 => 2; 3 => 3; 4 => 1; 5 => 1
+	return monthOfQuart
 }
 
 func labelsGoodBad() []trl.S {
@@ -199,6 +221,39 @@ func labelsVeryPositiveVeryNegative() []trl.S {
 		{
 			"de": "sehr negativ",
 			"en": "very negative",
+		},
+		{
+			"de": "keine<br>Angabe",
+			"en": "no answer",
+		},
+	}
+
+	return tm
+
+}
+
+func labelsStronglyPositiveStronglyNegativeInfluence() []trl.S {
+
+	tm := []trl.S{
+		{
+			"de": "stark positiv",
+			"en": "strongly positive",
+		},
+		{
+			"de": "positiv",
+			"en": "positive",
+		},
+		{
+			"de": "kein Einfluss",
+			"en": "no influence",
+		},
+		{
+			"de": "negativ",
+			"en": "negative",
+		},
+		{
+			"de": "stark negativ",
+			"en": "strongly negative",
 		},
 		{
 			"de": "keine<br>Angabe",

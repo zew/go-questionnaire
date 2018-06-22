@@ -1,3 +1,6 @@
+// Package handlers contains handler funcs; which are
+// not stored in the main package,
+// because the systemtests must access these handler funcs.
 package handlers
 
 import (

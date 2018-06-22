@@ -257,9 +257,22 @@ table.main-table tr:nth-child(odd){
 	line-height: 160%;
 }
 
+.input-smaller {
+    padding: 0px 0px;
+    font-size: 11px;
+}
+
 .alternate-background {
 	background-color: #ccc;
 }
+
+.textblock-smaller {
+	font-size: 65%;
+	padding-top:    2px;
+	padding-bottom: 12px;
+	display: inline-block;
+}
+
 
 
 

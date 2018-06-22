@@ -167,10 +167,10 @@ func (i inputT) HTML(langCode string, numCols int) string {
 			// one += fmt.Sprintf("Val %v", val)
 
 			if rad.Label != nil && rad.HAlign == HLeft {
-				one += fmt.Sprintf("<span class='go-quest-label %v'>%v</span>\n", i.CSSLabel, rad.Label.Tr(langCode))
+				one += fmt.Sprintf("<span class='go-quest-label vert-correct %v' >%v</span>\n", i.CSSLabel, rad.Label.Tr(langCode))
 			}
 			if rad.Label != nil && rad.HAlign == HCenter {
-				one += fmt.Sprintf("<span class='go-quest-label %v'>%v</span>\n", i.CSSLabel, rad.Label.Tr(langCode))
+				one += fmt.Sprintf("<span class='go-quest-label vert-correct %v'>%v</span>\n", i.CSSLabel, rad.Label.Tr(langCode))
 				one += vspacer
 			}
 
@@ -180,7 +180,7 @@ func (i inputT) HTML(langCode string, numCols int) string {
 			)
 
 			if rad.Label != nil && rad.HAlign == HRight {
-				one += fmt.Sprintf("<span class='go-quest-label %v'>%v</span>\n", i.CSSLabel, rad.Label.Tr(langCode))
+				one += fmt.Sprintf("<span class='go-quest-label vert-correct %v'>%v</span>\n", i.CSSLabel, rad.Label.Tr(langCode))
 			}
 			one = td(rad.HAlign, colWidth(1, numCols), one)
 			ctrl += one

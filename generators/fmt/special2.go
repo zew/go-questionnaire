@@ -146,27 +146,39 @@ func addSeasonal2(q *qst.QuestionaireT) {
 		gr := p.AddGroup()
 		gr.Label = trl.S{"de": "3.", "en": "3."}
 		gr.Desc = trl.S{
-			"de": "Den Hauptrefinanzierungssatz der EZB (am 01.02.2018: 0,0%) erwarte ich auf Sicht von ",
-			"en": "I expect the main refinance rate of the ECB (01.02.2018: 0,0%) in ",
+			"de": "Den Hauptrefinanzierungssatz der EZB (am 01.02.2018: 0,0%) erwarte ich auf Sicht von <br>\n &nbsp;",
+			"en": "I expect the main refinance rate of the ECB (01.02.2018: 0,0%) in <br>\n &nbsp;",
 		}
 		gr.Cols = 100
 
 		{
+			inp := gr.AddInput()
+			inp.Type = "textblock"
+			inp.ColSpanLabel = 8
+			inp.Desc = trl.S{
+				"de": "6 Monaten",
+				"en": "6 months",
+			}
+			inp.HAlignLabel = qst.HRight
+		}
+
+		{
+
 			inp := gr.AddInput()
 			inp.Type = "text"
 			inp.Name = "i_ez_06_low"
 			inp.MaxChars = 4
 			inp.Validator = "inRange20"
 
-			inp.ColSpanLabel = 15
+			inp.ColSpanLabel = 7
 			inp.CSSLabel = "vert-wider"
 			inp.ColSpanControl = 9
 			inp.Desc = trl.S{
-				"de": " &nbsp; 6 Monaten zwischen",
-				"en": " &nbsp; 6 months between",
+				"de": "zwischen&nbsp;",
+				"en": "between&nbsp;",
 			}
 			inp.Suffix = trl.S{"de": "%", "en": "pct"}
-			inp.HAlignLabel = qst.HLeft
+			inp.HAlignLabel = qst.HRight
 			inp.HAlignControl = qst.HLeft
 		}
 
@@ -190,20 +202,32 @@ func addSeasonal2(q *qst.QuestionaireT) {
 
 		{
 			inp := gr.AddInput()
+			inp.Type = "textblock"
+			inp.ColSpanLabel = 8
+			inp.Desc = trl.S{
+				"de": " 24 Monaten",
+				"en": " 24 months",
+			}
+			inp.HAlignLabel = qst.HRight
+		}
+
+		// Second row
+		{
+			inp := gr.AddInput()
 			inp.Type = "text"
 			inp.Name = "i_ez_24_low"
 			inp.MaxChars = 4
 			inp.Validator = "inRange20"
 
-			inp.ColSpanLabel = 15
+			inp.ColSpanLabel = 7
 			inp.CSSLabel = "vert-wider"
 			inp.ColSpanControl = 9
 			inp.Desc = trl.S{
-				"de": " 24 Monaten zwischen",
-				"en": " 24 months between",
+				"de": "zwischen&nbsp;",
+				"en": "between&nbsp;",
 			}
 			inp.Suffix = trl.S{"de": "%", "en": "pct"}
-			inp.HAlignLabel = qst.HLeft
+			inp.HAlignLabel = qst.HRight
 			inp.HAlignControl = qst.HLeft
 		}
 
@@ -240,7 +264,7 @@ func addSeasonal2(q *qst.QuestionaireT) {
 			inp.ColSpanLabel = 85
 			inp.Desc = trl.S{
 				"de": " [zentrales 90% Konfidenzintervall]",
-				"en": " [zentrales 90% Konfidenzintervall]",
+				"en": " [central 90pct confidence interval]",
 			}
 			inp.CSSLabel = "textblock-smaller"
 		}

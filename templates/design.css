@@ -257,6 +257,16 @@ table.main-table tr:nth-child(odd){
 	line-height: 160%;
 }
 
+.left-padding {
+	margin-left: 40px;
+}
+
+.vert-correct {
+	top: -3px;
+	position: relative;
+}
+
+
 .input-smaller {
     padding: 0px 0px;
     font-size: 11px;

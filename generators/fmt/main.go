@@ -219,6 +219,7 @@ func Create() *qst.QuestionaireT {
 		p := q.AddPage()
 		p.Label = trl.S{"de": "Wachstum", "en": "Growth"}
 		p.AestheticCompensation = 8
+		p.Width = 90
 
 		{
 			gr := p.AddGroup()
@@ -308,6 +309,7 @@ func Create() *qst.QuestionaireT {
 		p := q.AddPage()
 		p.Label = trl.S{"de": "Inflation und Zinsen", "en": "Inflation and Rates"}
 		p.AestheticCompensation = 5
+		p.Width = 80
 
 		//
 		// gr1
@@ -329,7 +331,7 @@ func Create() *qst.QuestionaireT {
 			gr := p.AddRadioMatrixGroup(labelsIncreaseDecrease(), names1stMatrix, labels123Matrix)
 			gr.Cols = 5 // necessary, otherwise no vspacers
 			gr.OddRowsColoring = true
-			gr.Width = 62
+			gr.Width = 90
 			gr.Label = trl.S{
 				"de": "4.",
 				"en": "4.",
@@ -345,6 +347,10 @@ func Create() *qst.QuestionaireT {
 			gr := p.AddGroup()
 			gr.Cols = 100 // necessary, otherwise no vspacers
 			gr.Label = trl.S{"de": "5a.", "en": "5a."}
+			gr.Desc = trl.S{
+				"de": "Die <b>kurzfristigen</b> Zinsen (3-Mo.-Interbanksätze) im <b>Euroraum</b> erwarten wir auf Sicht von 6&nbsp;Monaten <br>\n &nbsp;",
+				"en": "We expect <b>short term</b> interest rates (3 months interbank) in the <b>euro area</b>  <br>\n &nbsp;",
+			}
 			{
 				inp := gr.AddInput()
 				inp.Type = "text"
@@ -352,16 +358,15 @@ func Create() *qst.QuestionaireT {
 				inp.MaxChars = 4
 				inp.Validator = "inRange20"
 
-				inp.ColSpanLabel = 40
+				inp.ColSpanLabel = 10
 				inp.CSSLabel = "vert-wider"
-				inp.ColSpanControl = 5
+				inp.ColSpanControl = 12
 				inp.Desc = trl.S{
-					"de": `Die <b>kurzfristigen</b> Zinsen (3-Mo.-Interbanksätze) im <b>Euroraum</b> erwarten wir auf Sicht von 6&nbsp;Monaten<br>
-					 [zentrales 90%-Konfidenzintervall] zwischen`,
-					"en": "We expect <b>short term</b> interest rates (3 months interbank) in the <b>euro area</b> between",
+					"de": "zwischen&nbsp;",
+					"en": "between&nbsp;",
 				}
 				inp.Suffix = trl.S{"de": "%", "en": "pct"}
-				inp.HAlignLabel = qst.HLeft
+				inp.HAlignLabel = qst.HRight
 				inp.HAlignControl = qst.HLeft
 			}
 
@@ -372,8 +377,8 @@ func Create() *qst.QuestionaireT {
 				inp.MaxChars = 4
 				inp.Validator = "inRange20"
 
-				inp.ColSpanLabel = 2
-				inp.ColSpanControl = 10
+				inp.ColSpanLabel = 4
+				inp.ColSpanControl = 74
 				inp.Desc = trl.S{
 					"de": "und",
 					"en": "and",
@@ -382,12 +387,38 @@ func Create() *qst.QuestionaireT {
 				inp.HAlignLabel = qst.HLeft
 				inp.HAlignControl = qst.HLeft
 			}
+
+			// row below
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.ColSpanLabel = 11
+				inp.Desc = trl.S{
+					"de": " &nbsp;",
+					"en": " &nbsp;",
+				}
+			}
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.ColSpanLabel = 89
+				inp.Desc = trl.S{
+					"de": " [zentrales 90% Konfidenzintervall]",
+					"en": " [central 90pct confidence interval]",
+				}
+				inp.CSSLabel = "textblock-smaller"
+			}
+
 		}
 
 		{
 			gr := p.AddGroup()
 			gr.Cols = 100 // necessary, otherwise no vspacers
 			gr.Label = trl.S{"de": "5b.", "en": "5b."}
+			gr.Desc = trl.S{
+				"de": "Die <b>langfristigen</b> Zinsen (Renditen 10jg. Staatsanleihen) in <b>Deutschland</b> erwarten wir auf Sicht von 6&nbsp;Monaten <br>\n &nbsp;",
+				"en": "We expect <b>long term</b> interest rates in <b>Germany</b> in 6 months   <br>\n &nbsp;",
+			}
 
 			{
 				inp := gr.AddInput()
@@ -396,16 +427,15 @@ func Create() *qst.QuestionaireT {
 				inp.MaxChars = 4
 				inp.Validator = "inRange100"
 
-				inp.ColSpanLabel = 40
+				inp.ColSpanLabel = 10
 				inp.CSSLabel = "vert-wider"
-				inp.ColSpanControl = 5
+				inp.ColSpanControl = 12
 				inp.Desc = trl.S{
-					"de": `Die <b>langfristigen</b> Zinsen (Renditen 10jg. Staatsanleihen) in <b>Deutschland</b> erwarten wir auf Sicht von 6&nbsp;Monaten<br> 
-					[zentrales 90%-Konfidenzintervall] zwischen`,
-					"en": "We expect <b>long term</b> interest rates in <b>Germany</b> in 6 months between",
+					"de": "zwischen&nbsp;",
+					"en": "between&nbsp;",
 				}
 				inp.Suffix = trl.S{"de": "%", "en": "pct"}
-				inp.HAlignLabel = qst.HLeft
+				inp.HAlignLabel = qst.HRight
 				inp.HAlignControl = qst.HLeft
 			}
 
@@ -416,8 +446,8 @@ func Create() *qst.QuestionaireT {
 				inp.MaxChars = 4
 				inp.Validator = "inRange100"
 
-				inp.ColSpanLabel = 2
-				inp.ColSpanControl = 10
+				inp.ColSpanLabel = 4
+				inp.ColSpanControl = 74
 				inp.Desc = trl.S{
 					"de": "und",
 					"en": "and",
@@ -425,6 +455,27 @@ func Create() *qst.QuestionaireT {
 				inp.Suffix = trl.S{"de": "%", "en": "pct"}
 				inp.HAlignLabel = qst.HLeft
 				inp.HAlignControl = qst.HLeft
+			}
+
+			// row below
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.ColSpanLabel = 11
+				inp.Desc = trl.S{
+					"de": " &nbsp;",
+					"en": " &nbsp;",
+				}
+			}
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.ColSpanLabel = 89
+				inp.Desc = trl.S{
+					"de": " [zentrales 90% Konfidenzintervall]",
+					"en": " [central 90pct confidence interval]",
+				}
+				inp.CSSLabel = "textblock-smaller"
 			}
 
 		}
@@ -722,22 +773,34 @@ func Create() *qst.QuestionaireT {
 
 			// gr := p.AddRadioMatrixGroup(labelsOvervaluedFairUndervalued(), names3rdMatrix, labels123Matrix)
 			gr := p.AddGroup()
-			inp := gr.AddInput()
-			inp.Type = "radiogroup"
-			inp.Name = "dax_fund"
-			for i2, val := range labelsOvervaluedFairUndervalued() {
-				rad := inp.AddRadio()
-				rad.Label = val
-				// rad.HAlign = qst.HRight
-				rad.HAlign = qst.HLeft
-				rad.Val = fmt.Sprintf("%v", i2)
-			}
+			gr.Cols = 6 // necessary, otherwise no vspacers
 			gr.Label = trl.S{"de": "7c.", "en": "7c."}
 			gr.Desc = trl.S{
 				"de": "Aus Sicht der Fundamentaldaten der DAX-Unternehmen ist der DAX derzeit",
 				"en": "The fundamentals of the companies comprising the DAX make the DAX currently",
 			}
-			gr.Cols = 3 // necessary, otherwise no vspacers
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "radiogroup"
+				inp.Name = "dax_fund"
+				inp.CSSLabel = "left-padding"
+				for i2, val := range labelsOvervaluedFairUndervalued() {
+					rad := inp.AddRadio()
+					rad.Label = val
+					// rad.HAlign = qst.HRight
+					rad.HAlign = qst.HLeft
+					rad.Val = fmt.Sprintf("%v", i2)
+				}
+			}
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.ColSpanLabel = 2
+				inp.Desc = trl.S{"de": " &nbsp; ", "en": " &nbsp; "}
+			}
+
 		}
 
 		//
@@ -759,16 +822,13 @@ func Create() *qst.QuestionaireT {
 
 				inp.ColSpanLabel = 22
 				inp.CSSLabel = "vert-wider"
-				inp.ColSpanControl = 34
+				inp.ColSpanControl = 12
 				inp.Desc = trl.S{
 					"de": ` mittefristig (<b>6</b> Mo.) bei  &nbsp;  `,
 					"en": " medium term (<b>6</b> months) at  &nbsp;  ",
 				}
-				inp.Suffix = trl.S{
-					"de": "%  &nbsp; und langfristig (<b>24</b> Mo.) bei &nbsp; ",
-					"en": "pct  &nbsp; and long term (<b>24</b> months) at &nbsp; ",
-				}
-				inp.HAlignLabel = qst.HLeft
+				inp.Suffix = trl.S{"de": "%", "en": "pct"}
+				inp.HAlignLabel = qst.HRight
 				inp.HAlignControl = qst.HLeft
 			}
 
@@ -779,9 +839,15 @@ func Create() *qst.QuestionaireT {
 				inp.MaxChars = 4
 				inp.Validator = "inRange100"
 
-				inp.ColSpanControl = 44
+				inp.ColSpanLabel = 26
+				inp.ColSpanControl = 40
+				inp.Desc = trl.S{
+					"de": "und langfristig (<b>24</b> Mo.) bei &nbsp; ",
+					"en": "and long term (<b>24</b> months) at &nbsp; ",
+				}
+
 				inp.Suffix = trl.S{"de": "%", "en": "pct"}
-				inp.HAlignLabel = qst.HLeft
+				inp.HAlignLabel = qst.HRight
 				inp.HAlignControl = qst.HLeft
 			}
 		}
@@ -863,6 +929,7 @@ func Create() *qst.QuestionaireT {
 					}
 					rad.Val = "2"
 				}
+
 			}
 
 		}

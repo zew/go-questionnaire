@@ -37,7 +37,7 @@ func addSeasonal1(q *qst.QuestionaireT) {
 			inp := gr.AddInput()
 			inp.Type = "textblock"
 			inp.Desc = trl.S{
-				"de": " <br>\n Prognose Wachstum des BIP <b>je Quartal</b> <br>\n (real, saisonbereinigt, nicht annualisiert) <br>\n <br>\n ",
+				"de": " <br>\n Prognose Wachstum des BIP je <b>Quartal</b> <br>\n (real, saisonbereinigt, nicht annualisiert) <br>\n <br>\n ",
 				"en": " <br>\n Forecast <b>quarterly</b> GDP growth <br>\n(real, seasonally adjusted, non annualized) <br>\n <br>\n ",
 			}
 			inp.ColSpanLabel = 3
@@ -222,7 +222,7 @@ func addSeasonal1(q *qst.QuestionaireT) {
 			inp.Type = "text"
 			inp.Name = "other_cycle_infl"
 			inp.Desc = trl.S{
-				"de": "Wenn sonstige - welche ?",
+				"de": "Wenn sonstige - welche?",
 				"en": "If other - which?",
 			}
 			inp.MaxChars = 30

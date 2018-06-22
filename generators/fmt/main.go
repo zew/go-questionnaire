@@ -65,7 +65,7 @@ func Create() *qst.QuestionaireT {
 					rad.HAlign = qst.HLeft
 					rad.HAlign = qst.HCenter
 					rad.Label = trl.S{
-						"de": "Ja, ich bin die angeschriebene Person.",
+						"de": " &nbsp; <br>Ja, ich bin die angeschriebene Person.",
 						"en": "Yes, I am the addressee.",
 					}
 				}
@@ -80,9 +80,9 @@ func Create() *qst.QuestionaireT {
 				}
 			}
 
-			// gr = p.AddGroup()
-			// gr.Cols = 5
-			// gr.Width = 75
+			gr = p.AddGroup()
+			gr.Cols = 3
+			gr.Width = 75
 			{
 				inp := gr.AddInput()
 				inp.Type = "textarea"
@@ -108,6 +108,7 @@ func Create() *qst.QuestionaireT {
 					"de": "Weiter",
 					"en": "Next",
 				}
+				inp.AccessKey = "n"
 				inp.ColSpanControl = 1
 				inp.HAlignControl = qst.HRight
 			}
@@ -892,61 +893,59 @@ func Create() *qst.QuestionaireT {
 
 		{
 			gr := p.AddGroup()
-			gr.Cols = 4 // necessary, otherwise no vspacers
 			// gr.Desc = trl.S{"de": "Abschluss", "en": "Finish"}
 			gr.Width = 100
+			gr.Cols = 1 // necessary, otherwise no vspacers
 			{
 
-				inp := gr.AddInput()
-				inp.Type = "radiogroup"
-				inp.Name = "finished"
-				inp.CSSLabel = "vert-wider"
-
-				inp.Label = trl.S{"de": "Abschluss", "en": "Finish"}
-				inp.Desc = trl.S{"de": "", "en": ""}
-
-				inp.ColSpanLabel = 1
-				inp.ColSpanControl = 1
-				inp.Validator = "mustRadioGroup"
-
 				{
-					rad := inp.AddRadio()
-					rad.HAlign = qst.HLeft
-					rad.HAlign = qst.HCenter
-					rad.Label = trl.S{
-						"de": "Fragebogen ist abgeschlossen <br>\nund kann nicht mehr geöffnet werden.",
-						"en": "Questionaire is finished.\nNo more edits.",
+					inp := gr.AddInput()
+					inp.Type = "radiogroup"
+					inp.Name = "finished"
+					inp.CSSLabel = "vert-wider"
+					inp.ColSpanLabel = 1
+					inp.ColSpanControl = 1
+					inp.Validator = "mustRadioGroup"
+					{
+						rad := inp.AddRadio()
+						rad.HAlign = qst.HLeft
+						// rad.HAlign = qst.HCenter
+						rad.Label = trl.S{
+							"de": "Zugang bleibt bestehen.  Daten können in weiteren Sitzungen geändert/ergänzt werden. <br>\n &nbsp;",
+							"en": "Leave questionaire open. Data  can be changed/completed&nbsp;in later sessions. <br>\n &nbsp;",
+						}
+						rad.Val = "2" // any other non null value
 					}
-					rad.Val = "1"
-				}
-				{
-					rad := inp.AddRadio()
-					rad.HAlign = qst.HLeft
-					rad.HAlign = qst.HCenter
-					rad.Label = trl.S{
-						"de": "Zugang bleibt bestehen.  \nDaten können in weiteren Sitzungen \ngeändert/ergänzt werden.",
-						"en": "Leave questionaire open. \nData  can be changed/completed     \nin later sessions.",
+					{
+						rad := inp.AddRadio()
+						rad.HAlign = qst.HLeft
+						// rad.HAlign = qst.HCenter
+						rad.Label = trl.S{
+							"de": "Fragebogen ist abgeschlossen und kann nicht mehr geöffnet werden. <br>\n &nbsp;",
+							"en": "Questionaire is finished. No more edits. <br>\n &nbsp;",
+						}
+						rad.Val = qst.ValSet
 					}
-					rad.Val = "2"
-				}
 
+				}
 			}
 
 		}
 
 		{
 			gr := p.AddGroup()
-			gr.Cols = 4 // necessary, otherwise no vspacers
-			gr.Width = 80
+			gr.Cols = 2 // necessary, otherwise no vspacers
+			// gr.Width = 80
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
 				inp.Label = trl.S{"de": "", "en": ""}
 				inp.Desc = trl.S{
-					"de": "Durch Klicken auf 'OK' erhalten Sie eine Zusammenfassung Ihrer Antworten.",
-					"en": "By Clicking 'OK' you receive a summary of your answers.",
+					"de": "Durch Klicken auf 'OK' erhalten Sie eine Zusammenfassung Ihrer Antworten",
+					"en": "By Clicking 'OK' you receive a summary of your answers",
 				}
-				inp.ColSpanLabel = 2
+				inp.ColSpanLabel = 1
+				inp.CSSLabel = "vert-wider"
 			}
 			{
 				inp := gr.AddInput()
@@ -959,7 +958,9 @@ func Create() *qst.QuestionaireT {
 					"en": "OK",
 				}
 				inp.ColSpanControl = 1
+				inp.AccessKey = "n"
 				inp.HAlignControl = qst.HCenter
+				inp.HAlignControl = qst.HLeft
 			}
 		}
 
@@ -980,6 +981,12 @@ func Create() *qst.QuestionaireT {
 				inp.Type = "dynamic"
 				inp.CSSLabel = "vert-wider"
 				inp.DynamicFunc = "RepsonseStatistics"
+			}
+			{
+				inp := gr.AddInput()
+				inp.Type = "dynamic"
+				inp.CSSLabel = "vert-wider"
+				inp.DynamicFunc = "PersonalLink"
 			}
 			{
 				inp := gr.AddInput()

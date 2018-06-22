@@ -1,16 +1,27 @@
-### Data confidentiality
+Dear expert, welcome to the ZEW financial markets survey .
 
-These are our policies: 
+By clicking `Next` your answers will be saved and you progress to the next page.
+
+In case of an interruption (closing of the web browser) your answers remain saved. You can re-use your personal link to continue and change your answers.
+
+At the end you can finalize the questionaire preventing further changes.
 
 
-Please notice our [data protection policy](https://www.zew.de/en/datenschutz/).
+### Privacy Protection
 
 
-In addition we ask for your permission to store your answers and associate them with your business identity.
+Please notice our [privacy protection policy](https://www.zew.de/en/datenschutz/).
 
+Your data will we treated strictly confidential.
+
+Data processing is done in anonymized form.
+
+Your data will be stored on a protected server on the premises of ZEW Ltd. Only members of the financial markets team have access to this server.
+
+In addition we ask for your permission to associate your answers with your business identity.
 
 Your business identity consists of name, role, work phone and email, employer and start of contribution.
 
 
-Your answers are being stored on a protected server at ZEW premises. Only members of the ZEW team for the financial markets survey can access the data.
+
 

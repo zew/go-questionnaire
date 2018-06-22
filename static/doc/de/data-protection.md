@@ -5,10 +5,8 @@ Durch klicken auf `Weiter` werden Ihre Antworten gespeichert und Sie gelangen zu
 
 Bei einer Unterbrechung (Schließen des Browsers) bleiben Ihre Antworten erhalten und können später über Ihren persönlichen Link wieder aufgerufen und geändert werden.
 
-<br>
 Am Ende der Befragung können Sie den Fragebogen abschließen, so dass keine weiteren Änderungen möglich sind. 
 
-Außerdem bekommen Sie eine Übersicht Ihrer Antworten.
 
 
 ### Datenschutz
@@ -21,4 +19,6 @@ Die Auswertung Ihrer Antworten erfolgt nur in anonymisierter Form.
 
 Ihre Daten werden auf einem geschützten Server im ZEW Hauptgebäude gespeichert, auf den nur Mitglieder des ZEW Teams für den Finanzmarkttest Zugriff haben.
 
-Zusätzlich bitten wir Sie um Ihr Einverständnis, dass wir intern Ihre Antworten mit Ihrer geschäftlichen Identität verknüpfen dürfen. Ihre geschäftliche Identität besteht aus Ihrem Namen, ihrer Funktion, geschäftl. Email und Telefonnummer, Arbeitgeber und Teilnahmebeginn.
+Zusätzlich bitten wir Sie um Ihr Einverständnis, dass wir intern Ihre Antworten mit Ihrer geschäftlichen Identität verknüpfen dürfen. 
+
+Ihre geschäftliche Identität besteht aus Ihrem Namen, ihrer Funktion, geschäftl. Email und Telefonnummer, Arbeitgeber und Teilnahmebeginn.

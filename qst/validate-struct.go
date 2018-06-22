@@ -135,18 +135,21 @@ func (q *QuestionaireT) Validate() error {
 		}
 	}
 
-	err := q.ComputeDynamicContent()
-	if err != nil {
-		return err
-	}
+	// err := q.ComputeDynamicContent()
+	// if err != nil {
+	// 	return err
+	// }
 
 	return nil
 }
 
 // ComputeDynamicContent computes statistics
-func (q *QuestionaireT) ComputeDynamicContent() error {
+func (q *QuestionaireT) ComputeDynamicContent(idx int) error {
 
 	for i1 := 0; i1 < len(q.Pages); i1++ {
+		if i1 != idx {
+			continue
+		}
 		for i2 := 0; i2 < len(q.Pages[i1].Groups); i2++ {
 			for i3 := 0; i3 < len(q.Pages[i1].Groups[i2].Inputs); i3++ {
 				if q.Pages[i1].Groups[i2].Inputs[i3].Type == "dynamic" {

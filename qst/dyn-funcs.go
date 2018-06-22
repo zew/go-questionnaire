@@ -2,13 +2,17 @@ package qst
 
 import (
 	"fmt"
+	"log"
 	"time"
+
+	"github.com/zew/go-questionaire/cfg"
 )
 
 type dynFuncT func(*QuestionaireT) (string, error)
 
 var dynFuncs = map[string]dynFuncT{
 	"RepsonseStatistics": RepsonseStatistics,
+	"PersonalLink":       PersonalLink,
 }
 
 // Statistics returns the percentage of
@@ -47,16 +51,37 @@ func RepsonseStatistics(q *QuestionaireT) (string, error) {
 	nextDay := q.Survey.Deadline.Add(24 * time.Hour)
 	nextDayS := nextDay.Format("02.01.2006")
 
-	ret := ""
-	if q.LangCode == "de" {
-		s1 := fmt.Sprintf("Sie haben %v von %v Fragen beantwortet: %2.1f Prozent.  <br>\n", responses, inputs, pct)
-		s2 := fmt.Sprintf("Umfrage endet am %v. <br>\nVeröffentlichung am %v.  <br>\n", cts, nextDayS)
-		ret = s1 + s2
-	} else if q.LangCode == "en" {
-		s1 := fmt.Sprintf("You answered %v out of %v questions: %2.1f percent.  <br>\n", responses, inputs, pct)
-		s2 := fmt.Sprintf("Survey will finish at %v. <br>\nPublication will be at %v.<br>\n", cts, nextDayS)
-		ret = s1 + s2
-	}
+	s1 := fmt.Sprintf(cfg.Get().Mp["percentage_answered"][q.LangCode], responses, inputs, pct)
+	s2 := fmt.Sprintf(cfg.Get().Mp["survey_ending"][q.LangCode], cts, nextDayS)
+	ret := s1 + s2
 	// log.Print("RepsonseStatistics: " + ret)
+	return ret, nil
+}
+
+// PersonalLink returns the entry link
+func PersonalLink(q *QuestionaireT) (string, error) {
+
+	closed := false
+	for _, p := range q.Pages {
+		for _, gr := range p.Groups {
+			for _, inp := range gr.Inputs {
+				if inp.Name == "finished" {
+					if inp.Response == ValSet {
+						closed = true
+					}
+				}
+			}
+
+		}
+	}
+
+	ret := ""
+	if closed {
+		ret = cfg.Get().Mp["finished_by_user"][q.LangCode]
+		ret = fmt.Sprintf(ret, q.ClosingTime.Format("02.01.2006 15:04"))
+	} else {
+		ret = cfg.Get().Mp["review_by_personal_link"][q.LangCode]
+	}
+	log.Printf("PersonalLink: closed is %v", closed)
 	return ret, nil
 }

@@ -48,6 +48,7 @@ type inputT struct {
 	Label         trl.S               `json:"label,omitempty"`
 	Desc          trl.S               `json:"description,omitempty"`
 	Suffix        trl.S               `json:"suffix,omitempty"`
+	AccessKey     string              `json:"accesskey,omitempty"`
 
 	// How many column slots of the overall layout should the control occupy?
 	// The number adds up against group.Cols - determining newlines.
@@ -141,8 +142,8 @@ func (i inputT) HTML(langCode string, numCols int) string {
 		return fmt.Sprintf("<span class='go-quest-label %v'>%v</span>\n", i.CSSLabel, i.Label.Tr(langCode))
 
 	case "button":
-		lbl := fmt.Sprintf("<button type='submit' name='%v' value='%v' class='%v'><b>%v</b> %v</button>\n",
-			i.Name, i.Response, i.CSSControl,
+		lbl := fmt.Sprintf("<button type='submit' name='%v' value='%v' class='%v' accesskey='%v'><b>%v</b> %v</button>\n",
+			i.Name, i.Response, i.CSSControl, i.AccessKey,
 			i.Label.TrSilent(langCode), i.Desc.TrSilent(langCode),
 		)
 		lbl = td(i.HAlignControl, colWidth(i.ColSpanControl, numCols), lbl)

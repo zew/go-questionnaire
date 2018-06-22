@@ -41,7 +41,6 @@ func loadQuestionaire(w http.ResponseWriter, r *http.Request, userSurveyType, us
 	}
 	if ok {
 		log.Printf("Questionaire loaded from session; %v pages", len(q.Pages))
-		q.ComputeDynamicContent()
 		return q, nil
 	}
 
@@ -273,6 +272,14 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 		if sess.EffectiveStr("finished") == qst.ValSet {
 			q.ClosingTime = time.Now().Truncate(time.Second)
 		}
+	}
+	// err = q.ComputeDynamicContent(prevPage)
+	// if err != nil {
+	// 	log.Printf("ComputeDynamicContent computation for page %v caused error %v", prevPage, err)
+	// }
+	err = q.ComputeDynamicContent(q.CurrPage)
+	if err != nil {
+		log.Printf("ComputeDynamicContent computation for page %v caused error %v", prevPage, err)
 	}
 
 	//

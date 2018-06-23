@@ -14,11 +14,11 @@ Please notice our [privacy protection policy](https://www.zew.de/en/datenschutz/
 
 Your data will we treated strictly confidential.
 
-Data processing is done in anonymized form.
+Data processing is done as as panel data set in anonymized form.
 
 Your data will be stored on a protected server on the premises of ZEW Ltd. Only members of the financial markets team have access to this server.
 
-In addition we ask for your permission to associate your answers with your business identity.
+In addition we ask for permission to internally associate your answers with your business identity.
 
 Your business identity consists of name, role, work phone and email, employer and start of contribution.
 

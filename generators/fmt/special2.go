@@ -13,7 +13,8 @@ func addSeasonal2(q *qst.QuestionaireT) {
 
 	p := q.AddPage()
 	p.Section = trl.S{"de": "Sonderfrage", "en": "Special"}
-	p.Label = trl.S{"de": "Prognosetreiber Inflation + Geldpolitik", "en": "Inflation + monetary policy drivers"}
+	p.Label = trl.S{"de": "Prognosetreiber Inflation und Geldpolitik", "en": "Inflation and monetary policy drivers"}
+	p.Short = trl.S{"de": "Inflation, Geldpolitik", "en": "Inflation, monetary<br>policy"}
 	p.Width = 90
 
 	{

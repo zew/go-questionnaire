@@ -6,6 +6,7 @@ import (
 	"strconv"
 	"strings"
 
+	"github.com/zew/go-questionaire/cfg"
 	"github.com/zew/go-questionaire/trl"
 )
 
@@ -41,25 +42,16 @@ func init() {
 			if err != nil {
 				// ParseFloat yields ugly error messages
 				// strconv.ParseFloat: parsing "3 3" invalid syntax
-				if langCode == "de" {
-					return fmt.Errorf("'%v' keine Zahl", arg)
-				}
-				return fmt.Errorf("'%v' not a number", arg)
+				return fmt.Errorf(cfg.Get().Mp["not_a_number"].Tr(langCode), arg)
 			}
 			// Understandable in every language
 			if fl > limit {
 				log.Printf("%.2f > max %.0f", fl, limit)
-				if langCode == "de" {
-					return fmt.Errorf("Max %.0f", limit)
-				}
-				return fmt.Errorf("max %.0f", limit)
+				return fmt.Errorf(cfg.Get().Mp["too_big"].Tr(langCode), limit)
 			}
 			if fl < -limit {
 				log.Printf("%.2f < min %.0f", fl, -limit)
-				if langCode == "de" {
-					return fmt.Errorf("Min %.0f", -limit)
-				}
-				return fmt.Errorf("min %.0f", -limit)
+				return fmt.Errorf(cfg.Get().Mp["too_small"].Tr(langCode), limit)
 			}
 			return nil
 		}
@@ -71,10 +63,7 @@ func init() {
 		validators["inRange50000"] = func(lc, arg string) error { return functionBase(lc, arg, 50*1000) }
 		validators["mustRadioGroup"] = func(lc, arg string) error {
 			if arg == "0" || arg == "" {
-				if lc == "de" {
-					return fmt.Errorf("Bitte eine Option wählen")
-				}
-				return fmt.Errorf("Please choose one option")
+				return fmt.Errorf(cfg.Get().Mp["must_one_option"].Tr(lc))
 			}
 			return nil
 		}

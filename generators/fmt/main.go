@@ -121,6 +121,7 @@ func Create() *qst.QuestionaireT {
 		p := q.AddPage()
 		p.Section = trl.S{"de": "Konjunktur", "en": "Business cycle"}
 		p.Label = trl.S{"de": "Status und Ausblick", "en": "Status and outlook"}
+		p.Short = trl.S{"de": "Status,<br>Ausblick", "en": "Status,<br>outlook"}
 		p.Width = 70
 
 		//
@@ -308,7 +309,8 @@ func Create() *qst.QuestionaireT {
 	// page 3 - inflation
 	{
 		p := q.AddPage()
-		p.Label = trl.S{"de": "Inflation und Zinsen", "en": "Inflation and Rates"}
+		p.Label = trl.S{"de": "Inflation und Zinsen", "en": "Inflation and rates"}
+		p.Short = trl.S{"de": "Inflat, Zinsen", "en": "Inflation, rates"}
 		p.AestheticCompensation = 5
 		p.Width = 80
 
@@ -586,6 +588,7 @@ func Create() *qst.QuestionaireT {
 		p := q.AddPage()
 		// page.Section = trl.S{"de": "Kreditsituation", "en": "Credit situation"}
 		p.Label = trl.S{"de": "Einflussfaktoren", "en": "Influence factors"}
+		p.Short = trl.S{"de": "...", "en": "..."}
 
 		{
 			names3rdMatrix := []string{

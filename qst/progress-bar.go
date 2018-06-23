@@ -56,6 +56,11 @@ func (q *QuestionaireT) ProgressBar() string {
 			continue
 		}
 
+		eff := p.Label.Tr(q.LangCode)
+		if p.Short != nil {
+			eff = p.Short.Tr(q.LangCode)
+		}
+
 		liClass := ""
 		if idx < q.CurrPage {
 			liClass = "is-complete"
@@ -96,7 +101,7 @@ func (q *QuestionaireT) ProgressBar() string {
 				onclick,
 				liClass, p.NavigationalNum, //idx+1,
 				leftOrCenter,
-				sect, p.Label.Tr(q.LangCode),
+				sect, eff,
 			),
 		)
 

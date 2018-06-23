@@ -225,7 +225,7 @@ func PrefWTS(pth ...string) string {
 // Example writes a minimal configuration to file, to be extended or adapted
 func Example() {
 	ex := &ConfigT{
-		IsProduction:           false,
+		IsProduction:           true,
 		AppName:                "My Example App",
 		URLPathPrefix:          "exmpl",
 		AppMnemonic:            "exmpl",
@@ -246,9 +246,62 @@ func Example() {
 				"en": "Page",
 				"de": "Seite",
 			},
+			"app_label_h1": {
+				"en": "My Org",
+				"de": "Meine Organisation",
+			},
 			"app_label": {
 				"en": "My Example App", // yes, repeat of AppName
 				"de": "Meine Beispiel Anwendung",
+			},
+
+			"correct_errors": {
+				"de": "Bitte korrigieren Sie die unten angezeigten Fehler.",
+				"en": "Please correct the errors displayed below.",
+			},
+			"imprint": {
+				"de": "Impressum",
+				"en": "Imprint",
+			},
+			"login_by_hash_failed": {
+				"de": "Anmeldung via Hash gescheitert.\nBitte nutzen Sie den übermittelten Link um sich anzumelden.\nWenn der Link in zwei Zeilen geteilt wurde, verbinden Sie die Zeilen wieder.",
+				"en": "Login by hash failed.\nPlease use the provided link to login.\nIf the link was split into two lines, reconnect them.",
+			},
+			"finished_by_user": {
+				"de": "Sie haben den Fragebogen bereits abgeschlossen (%v).",
+				"en": "You already finished this survey wave at %v",
+			},
+			"deadline_exceeded": {
+				"de": "Diese Umfrage wurde am %v beendet.",
+				"en": "Current survey was closed at %v.",
+			},
+			"percentage_answered": {
+				"de": "Sie haben %v von %v Fragen beantwortet: %2.1f Prozent.  <br>\n",
+				"en": "You answered %v out of %v questions: %2.1f percent.  <br>\n",
+			},
+			"survey_ending": {
+				"de": "Umfrage endet am %v. <br>\nVeröffentlichung am %v.  <br>\n",
+				"en": "Survey will finish at %v. <br>\nPublication will be at %v.<br>\n",
+			},
+			"review_by_personal_link": {
+				"de": "Sie können ihre Daten jederzeit über Ihren persönlichen Link prüfen/ändern. <br>\n<a href='/?submitBtn=prev'>Zurück</a><br>\n",
+				"en": "You may review or change your data using your personal link. <br>\n<a href='/?submitBtn=prev'>Back</a><br>\n",
+			},
+			"not_a_number": {
+				"de": "'%v' keine Zahl",
+				"en": "'%v' not a number",
+			},
+			"too_big": {
+				"de": "Max %.0f",
+				"en": "max %.0f",
+			},
+			"too_small": {
+				"de": "Min %.0f",
+				"en": "min %.0f",
+			},
+			"must_one_option": {
+				"de": "Bitte eine Option wählen",
+				"en": "Please choose one option",
 			},
 		},
 	}

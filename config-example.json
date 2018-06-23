@@ -1,5 +1,5 @@
 {
- 	"is_production": false,
+ 	"is_production": true,
  	"app_name": "My Example App",
  	"urlpath_prefix": "exmpl",
  	"app_mnemonic": "exmpl",
@@ -24,9 +24,61 @@
  			"de": "Meine Beispiel Anwendung",
  			"en": "My Example App"
  		},
+ 		"app_label_h1": {
+ 			"de": "Meine Organisation",
+ 			"en": "My Org"
+ 		},
+ 		"correct_errors": {
+ 			"de": "Bitte korrigieren Sie die unten angezeigten Fehler.",
+ 			"en": "Please correct the errors displayed below."
+ 		},
+ 		"deadline_exceeded": {
+ 			"de": "Diese Umfrage wurde am %v beendet.",
+ 			"en": "Current survey was closed at %v."
+ 		},
+ 		"finished_by_user": {
+ 			"de": "Sie haben den Fragebogen bereits abgeschlossen (%v).",
+ 			"en": "You already finished this survey wave at %v"
+ 		},
+ 		"imprint": {
+ 			"de": "Impressum",
+ 			"en": "Imprint"
+ 		},
+ 		"login_by_hash_failed": {
+ 			"de": "Anmeldung via Hash gescheitert.\nBitte nutzen Sie den übermittelten Link um sich anzumelden.\nWenn der Link in zwei Zeilen geteilt wurde, verbinden Sie die Zeilen wieder.",
+ 			"en": "Login by hash failed.\nPlease use the provided link to login.\nIf the link was split into two lines, reconnect them."
+ 		},
+ 		"must_one_option": {
+ 			"de": "Bitte eine Option wählen",
+ 			"en": "Please choose one option"
+ 		},
+ 		"not_a_number": {
+ 			"de": "'%v' keine Zahl",
+ 			"en": "'%v' not a number"
+ 		},
  		"page": {
  			"de": "Seite",
  			"en": "Page"
+ 		},
+ 		"percentage_answered": {
+ 			"de": "Sie haben %v von %v Fragen beantwortet: %2.1f Prozent.  \u003cbr\u003e\n",
+ 			"en": "You answered %v out of %v questions: %2.1f percent.  \u003cbr\u003e\n"
+ 		},
+ 		"review_by_personal_link": {
+ 			"de": "Sie können ihre Daten jederzeit über Ihren persönlichen Link prüfen/ändern. \u003cbr\u003e\n\u003ca href='/?submitBtn=prev'\u003eZurück\u003c/a\u003e\u003cbr\u003e\n",
+ 			"en": "You may review or change your data using your personal link. \u003cbr\u003e\n\u003ca href='/?submitBtn=prev'\u003eBack\u003c/a\u003e\u003cbr\u003e\n"
+ 		},
+ 		"survey_ending": {
+ 			"de": "Umfrage endet am %v. \u003cbr\u003e\nVeröffentlichung am %v.  \u003cbr\u003e\n",
+ 			"en": "Survey will finish at %v. \u003cbr\u003e\nPublication will be at %v.\u003cbr\u003e\n"
+ 		},
+ 		"too_big": {
+ 			"de": "Max %.0f",
+ 			"en": "max %.0f"
+ 		},
+ 		"too_small": {
+ 			"de": "Min %.0f",
+ 			"en": "min %.0f"
  		}
  	}
  }

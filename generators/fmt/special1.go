@@ -19,6 +19,7 @@ func addSeasonal1(q *qst.QuestionaireT) {
 	p := q.AddPage()
 	p.Section = trl.S{"de": "Sonderfrage", "en": "Special"}
 	p.Label = trl.S{"de": "Prognosetreiber Wachstum", "en": "Growth drivers"}
+	p.Short = trl.S{"de": "Wachstum", "en": "Growth"}
 	p.Width = 80
 
 	{

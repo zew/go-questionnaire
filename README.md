@@ -31,12 +31,20 @@ More info in [deploy on linux/unix](./static/doc/linux-instructions.md)
 
 ## Semantics
 
-* Package `generators` contains programs for creating various questionaires.  
-Questionaires are encoded as JSON file serving as data entry template.
+![Plugin](./static/img/doc/app-and-questionaires.png)
 
-* Different questionaires are separated by URL path.
 
-* Survey results are pulled in by the independent command `transferrer`. 
+* Package `qst` contains generic functions to create questionaires.
+
+* Package `generators` uses qst for creating specific JSON questionaires.  
+
+* Application contains multi-language surrounding  
+and common functions for login, validation, session
+
+* Application renders questionaires.  
+Different questionaires are separated by login and URL path.
+
+* Survey results are pulled in by the `transferrer`. 
 
 ## Data thrift
 
@@ -71,6 +79,11 @@ server JSON file with the entered data.
 At inception we envisioned a JSON schema validator  
 and questionaire creation by directly editing of JSON files  
 but that remains as elusive as it did with XML.
+
+Our participants do not use Smartphones to fill out
+scientific questinaires. 
+If that changes, go-questionaire needs a separate mobile layout engine. 
+Combined solutions are insufficient.
 
 
 ### Layout concept

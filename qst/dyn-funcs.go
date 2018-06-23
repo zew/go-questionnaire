@@ -51,8 +51,8 @@ func RepsonseStatistics(q *QuestionaireT) (string, error) {
 	nextDay := q.Survey.Deadline.Add(24 * time.Hour)
 	nextDayS := nextDay.Format("02.01.2006")
 
-	s1 := fmt.Sprintf(cfg.Get().Mp["percentage_answered"][q.LangCode], responses, inputs, pct)
-	s2 := fmt.Sprintf(cfg.Get().Mp["survey_ending"][q.LangCode], cts, nextDayS)
+	s1 := fmt.Sprintf(cfg.Get().Mp["percentage_answered"].Tr(q.LangCode), responses, inputs, pct)
+	s2 := fmt.Sprintf(cfg.Get().Mp["survey_ending"].Tr(q.LangCode), cts, nextDayS)
 	ret := s1 + s2
 	// log.Print("RepsonseStatistics: " + ret)
 	return ret, nil
@@ -77,10 +77,10 @@ func PersonalLink(q *QuestionaireT) (string, error) {
 
 	ret := ""
 	if closed {
-		ret = cfg.Get().Mp["finished_by_user"][q.LangCode]
+		ret = cfg.Get().Mp["finished_by_user"].Tr(q.LangCode)
 		ret = fmt.Sprintf(ret, q.ClosingTime.Format("02.01.2006 15:04"))
 	} else {
-		ret = cfg.Get().Mp["review_by_personal_link"][q.LangCode]
+		ret = cfg.Get().Mp["review_by_personal_link"].Tr(q.LangCode)
 	}
 	log.Printf("PersonalLink: closed is %v", closed)
 	return ret, nil

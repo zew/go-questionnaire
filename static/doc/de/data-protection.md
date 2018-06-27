@@ -15,7 +15,7 @@ Hier finden Sie unsere [Datenschutz-Grundlagen](https://www.zew.de/de/datenschut
 
 Ihre Angaben werden streng vertraulich behandelt. 
 
-Die Auswertung Ihrer Antworten erfolgt als Panel-Datensatz in anonymisierter Form.
+Die Auswertung Ihrer Antworten erfolgt als [Panel-Datensatz](https://de.wikipedia.org/wiki/Paneldaten) in anonymisierter Form.
 
 Ihre Daten werden auf einem geschützten Server im ZEW Hauptgebäude gespeichert, auf den nur Mitglieder des ZEW Teams für den Finanzmarkttest Zugriff haben.
 

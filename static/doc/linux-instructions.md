@@ -34,12 +34,13 @@ Whichever you chose, copy the application files from `~/go/src/github.com/zew/go
 to your application directory:
 
     cp go-questionaire /opt/go-questionaire
-    cp static       /opt/go-questionaire
-    cp templates    /opt/go-questionaire
-    cp config.json  /opt/go-questionaire
-    cp logins.json  /opt/go-questionaire
-    cp server.key     /opt/go-questionaire
-    cp server.pem     /opt/go-questionaire
+    cp static          /opt/go-questionaire
+    cp templates       /opt/go-questionaire
+    cp config.json     /opt/go-questionaire
+    cp logins.json     /opt/go-questionaire
+    cp server.key      /opt/go-questionaire
+    cp server.pem      /opt/go-questionaire
+    mkdir /opt/go-questionaire/responses
 
     sudo chown -R gquser:gquser /opt/go-questionaire/*
     sudo chmod -R 644   /opt/go-questionaire/*

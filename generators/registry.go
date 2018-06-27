@@ -12,6 +12,7 @@ import (
 	"github.com/zew/go-questionaire/cfg"
 	"github.com/zew/go-questionaire/generators/fmt"
 	"github.com/zew/go-questionaire/generators/min"
+	"github.com/zew/go-questionaire/lgn"
 	"github.com/zew/go-questionaire/qst"
 )
 
@@ -41,7 +42,21 @@ func SurveyGenerate(w http.ResponseWriter, r *http.Request) {
 
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
 
-	s := qst.NewSurvey("fmt")
+	l, isLoggedIn, err := lgn.LoggedInCheck(w, r)
+	if err != nil {
+		myfmt.Fprintf(w, "Login error %v", err)
+		return
+	}
+	if !isLoggedIn {
+		myfmt.Fprintf(w, "Not logged in")
+		return
+	}
+	if !l.HasRole("admin") {
+		myfmt.Fprintf(w, "admin login required")
+		return
+	}
+
+	s := qst.NewSurvey("fmt") // type is modified later
 	if r.Method == "POST" {
 		frm := struct {
 			Type     string `json:"type"`

@@ -27,6 +27,23 @@ Install and setup [golang](https://golang.org/doc/install)
 More info in [deploy on linux/unix](./static/doc/linux-instructions.md)
 
 
+  Login as admin https://dev-domain:port/survey/login-primitive
+
+  Generate login hashes i.e.  https://dev-domain:port/survey/generate-hashes?wave_id=2018-07&survey_id=fmt   
+  
+      yields
+      /survey?u=99000&survey_id=fmt&wave_id=2018-07&h=bc11262f8ce8dda558de9a0ffa064941
+      ...
+
+Now create the base questionaire JSON file https://dev-domain:port/survey/generate-questionaire-templates
+
+Login  https://dev-domain:port/survey?u=98991&survey_id=fmt&wave_id=2018-07&h=4059d765e4a4f211658373c07c5affb9   
+  https://dev-domain:port/survey
+
+
+Reset  https://dev-domain:port/survey/reload-from-file?u=98991&survey_id=fmt&wave_id=2018-07&h=4059d765e4a4f211658373c07c5affb9
+
+
 
 
 ## Semantics
@@ -39,10 +56,10 @@ More info in [deploy on linux/unix](./static/doc/linux-instructions.md)
 * Package `generators` uses qst for creating specific JSON questionaires.  
 
 * Application contains multi-language surrounding  
-and common functions for login, validation, session
+and common functions for login, validation, session...
 
 * Application renders questionaires.  
-Different questionaires are separated by login and URL path.
+Different questionaires are separated by login.
 
 * Survey results are pulled in by the `transferrer`. 
 
@@ -81,9 +98,9 @@ and questionaire creation by directly editing of JSON files
 but that remains as elusive as it did with XML.
 
 Our participants do not use Smartphones to fill out
-scientific questinaires. 
-If that changes, go-questionaire needs a separate mobile layout engine. 
-Combined solutions are insufficient.
+scientific questionaires.  
+If that changes, go-questionaire needs a _separate_ mobile layout engine. 
+Hybrid solutions (_mobile first_) are insufficient.
 
 
 ### Layout concept

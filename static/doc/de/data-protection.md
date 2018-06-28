@@ -22,4 +22,4 @@ Ihre Daten werden auf einem geschützten Server im ZEW Hauptgebäude gespeichert
 Zusätzlich bitten wir um Ihr Einverständnis, dass wir Ihre Antworten 
 intern mit Ihrer geschäftlichen Identität verknüpfen. 
 
-Ihre geschäftliche Identität besteht aus Ihrem Namen, ihrer Funktion, geschäftl. Email und Telefonnummer, Arbeitgeber und Teilnahmebeginn.
+Ihre geschäftliche Identität besteht aus Ihrem Namen, Ihrer Funktion, geschäftl. Email und Telefonnummer, Arbeitgeber und Teilnahmebeginn.

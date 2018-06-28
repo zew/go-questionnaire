@@ -27,6 +27,8 @@ Install and setup [golang](https://golang.org/doc/install)
 More info in [deploy on linux/unix](./static/doc/linux-instructions.md)
 
 
+#### Create logins and questionaire
+
   Login as admin https://dev-domain:port/survey/login-primitive
 
   Generate login hashes i.e.  https://dev-domain:port/survey/generate-hashes?wave_id=2018-07&survey_id=fmt   
@@ -36,6 +38,9 @@ More info in [deploy on linux/unix](./static/doc/linux-instructions.md)
       ...
 
 Now create the base questionaire JSON file https://dev-domain:port/survey/generate-questionaire-templates
+
+
+#### User login and reset
 
 Login  https://dev-domain:port/survey?u=98991&survey_id=fmt&wave_id=2018-07&h=4059d765e4a4f211658373c07c5affb9   
   https://dev-domain:port/survey

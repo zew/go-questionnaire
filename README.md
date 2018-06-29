@@ -29,24 +29,32 @@ More info in [deploy on linux/unix](./static/doc/linux-instructions.md)
 
 #### Create logins and questionaire
 
-  Login as admin https://dev-domain:port/survey/login-primitive
+![Plugin](./static/img/doc/questionaire-lifecycle.png)
 
-  Generate login hashes i.e.  https://dev-domain:port/survey/generate-hashes?wave_id=2018-07&survey_id=fmt   
+* Login as admin https://dev-domain:port/survey/login-primitive
+
+* Create the base questionaire template - as JSON file  
+ https://dev-domain:port/survey/generate-questionaire-templates
+
+
+* Generate login hashes  
+   i.e.  https://dev-domain:port/survey/generate-hashes?wave_id=2018-07&survey_id=fmt   
+  yielding
   
-      yields
       /survey?u=99000&survey_id=fmt&wave_id=2018-07&h=bc11262f8ce8dda558de9a0ffa064941
       ...
 
-Now create the base questionaire JSON file https://dev-domain:port/survey/generate-questionaire-templates
 
+#### Participant login and reset
 
-#### User login and reset
+* Participants can now use these links and login  
+https://dev-domain:port/survey?u=98991&survey_id=fmt&wave_id=2018-07&h=4059d765e4a4f211658373c07c5affb9   
 
-Login  https://dev-domain:port/survey?u=98991&survey_id=fmt&wave_id=2018-07&h=4059d765e4a4f211658373c07c5affb9   
-  https://dev-domain:port/survey
+* They can now access the questionaire  
+https://dev-domain:port/survey
 
-
-Reset  https://dev-domain:port/survey/reload-from-file?u=98991&survey_id=fmt&wave_id=2018-07&h=4059d765e4a4f211658373c07c5affb9
+* For testing purposes, you may reset the questionaire  
+https://dev-domain:port/survey/reload-from-file?u=98991&survey_id=fmt&wave_id=2018-07&h=4059d765e4a4f211658373c07c5affb9
 
 
 
@@ -70,7 +78,7 @@ Different questionaires are separated by login.
 
 ## Data thrift
 
-* Surveys contain no personal data - only a user ID, the questions and the answers.
+* Surveys contain no personal data - only a participant ID, the questions and the answers.
 
 * The `transferrer` pulls in the responses from an internet server.
 

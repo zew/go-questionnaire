@@ -77,7 +77,7 @@ func PersonalLink(q *QuestionaireT) (string, error) {
 
 	ret := ""
 	if closed {
-		ret = cfg.Get().Mp["finished_by_user"].Tr(q.LangCode)
+		ret = cfg.Get().Mp["finished_by_participant"].Tr(q.LangCode)
 		ret = fmt.Sprintf(ret, q.ClosingTime.Format("02.01.2006 15:04"))
 	} else {
 		ret = cfg.Get().Mp["review_by_personal_link"].Tr(q.LangCode)

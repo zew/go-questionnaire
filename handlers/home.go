@@ -161,7 +161,7 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 
 	// Already finished?
 	if !q.ClosingTime.IsZero() {
-		s := cfg.Get().Mp["finished_by_user"].All()
+		s := cfg.Get().Mp["finished_by_participant"].All()
 		s = fmt.Sprintf(s, q.ClosingTime.Format("02.01.2006 15:04"), q.ClosingTime.Format("02.01.2006 15:04"))
 		helper(w, r, nil, s)
 		return
@@ -263,7 +263,7 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 	}
 	err = q.ValidateReponseData(prevPage, q.LangCode)
 	if err != nil {
-		q.CurrPage = prevPage // Prevent changing page, keep user on page with errors
+		q.CurrPage = prevPage // Prevent changing page, keep participant on page with errors
 	}
 	if r.RemoteAddr != "" {
 		q.RemoteIP = r.RemoteAddr

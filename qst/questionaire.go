@@ -190,7 +190,7 @@ func (i inputT) HTML(langCode string, numCols int) string {
 		// since golang http.Form.Get() fetches the *first* value.
 		//
 		// The radio "empty catcher" becomes necessary,
-		// if no radio was selected by the user;
+		// if no radio was selected by the participant;
 		// but a "must..." validation rule is registered
 		if innerType == "radio" || innerType == "checkbox" {
 			ctrl += fmt.Sprintf("<input type='hidden' name='%v' id='%v_hidd' value='%v' />\n",
@@ -416,7 +416,7 @@ func (p *pageT) AddGroup() *groupT {
 // QuestionaireT contains pages with groups with inputs
 type QuestionaireT struct {
 	Survey      surveyT   `json:"survey,omitempty"`
-	UserID      string    `json:"user_id,omitempty"`
+	UserID      string    `json:"user_id,omitempty"`      // participant ID
 	ClosingTime time.Time `json:"closing_time,omitempty"` // truncated to second
 	RemoteIP    string    `json:"remote_ip,omitempty"`
 	MD5         string    `json:"md_5,omitempty"`

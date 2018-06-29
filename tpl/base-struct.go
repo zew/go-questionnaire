@@ -36,7 +36,7 @@ func (t TplDataT) Trls() trl.Map {
 }
 
 // DefaultLangCode returns the language code to be used,
-// if no user preference was set.
+// if no participant preference was set.
 func (t TplDataT) DefaultLangCode() string {
 	return cfg.Get().LangCodes[0]
 }

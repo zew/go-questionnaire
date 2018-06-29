@@ -267,7 +267,7 @@ func Example() {
 				"de": "Anmeldung via Hash gescheitert.\nBitte nutzen Sie den übermittelten Link um sich anzumelden.\nWenn der Link in zwei Zeilen geteilt wurde, verbinden Sie die Zeilen wieder.",
 				"en": "Login by hash failed.\nPlease use the provided link to login.\nIf the link was split into two lines, reconnect them.",
 			},
-			"finished_by_user": {
+			"finished_by_participant": {
 				"de": "Sie haben den Fragebogen bereits abgeschlossen (%v).",
 				"en": "You already finished this survey wave at %v",
 			},

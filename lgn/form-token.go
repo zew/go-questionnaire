@@ -1,9 +1,5 @@
 package lgn
 
-/*
-	Should we add the user name into the hashed base?
-*/
-
 import (
 	"crypto/md5"
 	"encoding/hex"
@@ -29,6 +25,9 @@ func tok(hourOffset int) string {
 
 // FormToken returns a form token.
 // User independent.
+/*
+	Should we add the user name into the hashed base?
+*/
 func FormToken() string {
 	return tok(0)
 }

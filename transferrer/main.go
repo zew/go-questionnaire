@@ -23,9 +23,10 @@ import (
 	"github.com/zew/util"
 )
 
+// Some admin account
 const (
 	remoteHost = "https://survey2.zew.de"
-	user       = "pbu"
+	adminLogin = "pbu"
 	pass       = "pb165205"
 )
 
@@ -66,7 +67,7 @@ func main() {
 		urlReq := urlLogin
 
 		vals := url.Values{}
-		vals.Set("username", user)
+		vals.Set("username", adminLogin)
 		vals.Set("password", pass)
 		vals.Set("token", lgn.FormToken())
 		req, err := http.NewRequest("POST", urlReq, bytes.NewBufferString(vals.Encode())) // <-- URL-encoded payload
@@ -88,7 +89,7 @@ func main() {
 			}
 		}
 		respBytes, _ := ioutil.ReadAll(resp.Body)
-		mustHave := fmt.Sprintf("Logged in as %v", user)
+		mustHave := fmt.Sprintf("Logged in as %v", adminLogin)
 		if !strings.Contains(string(respBytes), mustHave) {
 			log.Fatalf("Login response must contain '%v'\n\n%v", mustHave, string(respBytes))
 		}
@@ -99,8 +100,8 @@ func main() {
 			return
 		}
 
-		if !strings.Contains(string(respBytes), "Logged in as "+user) {
-			log.Printf("Response must contain 'Logged in as %v' \n\n%v", user, string(respBytes))
+		if !strings.Contains(string(respBytes), "Logged in as "+adminLogin) {
+			log.Printf("Response must contain 'Logged in as %v' \n\n%v", adminLogin, string(respBytes))
 			return
 		}
 

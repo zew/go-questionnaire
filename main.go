@@ -17,6 +17,7 @@ import (
 	"github.com/zew/go-questionaire/generators"
 	"github.com/zew/go-questionaire/handlers"
 	"github.com/zew/go-questionaire/lgn"
+	"github.com/zew/go-questionaire/lgn/directlogin"
 	"github.com/zew/go-questionaire/muxwrap"
 	"github.com/zew/go-questionaire/sessx"
 	"github.com/zew/go-questionaire/tpl"
@@ -72,6 +73,7 @@ func main() {
 	mux1.HandleFunc(cfg.Pref("/logins-save"), lgn.SaveH)
 	mux1.HandleFunc(cfg.Pref("/logins-reload"), lgn.LoadH)
 	mux1.HandleFunc(cfg.Pref("/generate-password"), lgn.GeneratePasswordH)
+	mux1.HandleFunc(cfg.Pref("/generate-direct"), directlogin.GenerateH)
 	mux1.HandleFunc(cfg.Pref("/generate-hashes"), lgn.GenerateHashesH)
 	mux1.HandleFunc(cfg.Pref("/templates-reload"), tpl.ParseH)
 	mux1.HandleFunc(cfg.Pref("/generate-questionaire-templates"), generators.SurveyGenerate)

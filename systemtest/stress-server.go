@@ -1,5 +1,6 @@
 // Package systemtest contains system tests;
-// these are however run from the app dir one above.
+// ../main_test.go contains a detailed coverage test.
+// However, test is run from the app dir one above.
 // Working dir will be initially /go-questionaire/systemtest,
 // but we will step up one dir in the code below.
 package systemtest

@@ -452,12 +452,12 @@ func ChangePasswordPrimitiveH(w http.ResponseWriter, r *http.Request) {
 	tpl := template.New("anyname.html")
 	tpl, err = tpl.Parse(src)
 	if err != nil {
-		w.Write([]byte(fmt.Sprintf("Error parsing changepassword inline template: %v", err)))
+		fmt.Fprintf(w, "Error parsing changepassword inline template: %v", err)
 	}
 
 	err = tpl.Execute(w, data)
 	if err != nil {
-		w.Write([]byte(fmt.Sprintf("Error executing changepassword inline template: %v", err)))
+		fmt.Fprintf(w, "Error executing changepassword inline template: %v", err)
 	}
 
 }

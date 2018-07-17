@@ -51,7 +51,7 @@ func init() {
 			}
 			if fl < -limit {
 				log.Printf("%.2f < min %.0f", fl, -limit)
-				return fmt.Errorf(cfg.Get().Mp["too_small"].Tr(langCode), limit)
+				return fmt.Errorf(cfg.Get().Mp["too_small"].Tr(langCode), -limit)
 			}
 			return nil
 		}

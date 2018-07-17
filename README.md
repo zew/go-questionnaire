@@ -27,7 +27,7 @@ Install and setup [golang](https://golang.org/doc/install)
 More info in [deploy on linux/unix](./static/doc/linux-instructions.md)
 
 
-#### Create logins and questionaire
+#### Create questionaire and logins
 
 ![Plugin](./static/img/doc/questionaire-lifecycle.png)
 

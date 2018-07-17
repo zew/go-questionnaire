@@ -354,33 +354,35 @@ func GeneratePasswordH(w http.ResponseWriter, r *http.Request) {
 	}
 
 	w.Header().Set("Content-Type", "text/plain; charset=utf-8")
-	w.Write([]byte("Specify number of chars with ?len=xx \n\n"))
 
 	r.ParseForm()
 	sl := r.Form.Get("len")
 
-	if sl != "" {
-		l, _ := strconv.Atoi(sl)
-		if l > 2 {
-			pw := GeneratePassword(l)
-			str := fmt.Sprintf("len %v => %v \n", l, pw)
-			w.Write([]byte(str))
-		}
+	l, _ := strconv.Atoi(sl)
+	if l < 3 {
+		w.Write([]byte("Specify number of chars with ?len=xx \n\n"))
+		return
 	}
+	fmt.Fprintf(w, "len %v => %v \n", l, GeneratePassword(l))
 }
 
 // stackoverflow.com/questions/55556
-var stdCharsXX = []byte("!#%+23456789:=?@ABCDEFGHJKLMNPRSTUVWXYZabcdefghijkmnopqrstuvwxyz")
-var stdChars = []byte("!+23456789ABCDEFGHJKLMNPRSTUVWXYZabcdefghijkmnopqrstuvwxyz") // remove some ugly special chars
+var fullRange = []byte("!#%+23456789:=?@ABCDEFGHJKLMNPRSTUVWXYZabcdefghijkmnopqrstuvwxyz")
+var stdChars = []byte("!+23456789ABCDEFGHKLMNPRSTUVWXYZabcdefghkmnoprstuvwxyz") // remove ugly or dubious chars
 
 // GeneratePassword creates a password of requested length
 func GeneratePassword(length int) string {
+	return GeneratePwFromChars(stdChars, length)
+}
 
-	numChars := byte(len(stdChars))   // number of possible chars, i.e. 60, 64
-	modulus := 256 % len(stdChars)    // i.e. 256 % 60 =  16 ;  256 % 128 =   0 ; 256 % 127 = 2
+// GeneratePwFromChars uses chars to create a password of requested length
+func GeneratePwFromChars(chars []byte, length int) string {
+
+	numChars := byte(len(chars))      // number of possible chars, i.e. 60, 64
+	modulus := 256 % len(chars)       // i.e. 256 % 60 =  16 ;  256 % 128 =   0 ; 256 % 127 = 2
 	maxReadIdx := byte(255 - modulus) // i.e. 255 - 16 = 239 ;  255 -   0 = 255 ; 255 -   2 = 253
 	// Erroneous edge case: byte(256-0) == 0
-	log.Printf("Generate password - len(stdChars) %v -  modulus to 255 is %v => maxReadIdx is %v", len(stdChars), modulus, maxReadIdx)
+	log.Printf("Generate %v-char password - len(chars) %v -  modulus to 255 is %v => maxReadIdx is %v", length, len(chars), modulus, maxReadIdx)
 
 	pw := make([]byte, length)
 	rBB := make([]byte, length+(length/4)) // random bytes buffer; there is no reason why it has to by 1.25 * length
@@ -400,7 +402,7 @@ func GeneratePassword(length int) string {
 			if c > maxReadIdx { // i.e. skip 240...255 since unequal draws from
 				continue
 			}
-			pw[i] = stdChars[c%numChars] // 88 % 60 => 28
+			pw[i] = chars[c%numChars] // 88 % 60 => 28
 			// log.Printf("\t adding %2vth letter: %3v => %3v", i, c, c%numChars)
 			i++
 			if i == length {

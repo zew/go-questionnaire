@@ -36,7 +36,7 @@
  			"de": "Diese Umfrage wurde am %v beendet.",
  			"en": "Current survey was closed at %v."
  		},
- 		"finished_by_user": {
+ 		"finished_by_participant": {
  			"de": "Sie haben den Fragebogen bereits abgeschlossen (%v).",
  			"en": "You already finished this survey wave at %v"
  		},

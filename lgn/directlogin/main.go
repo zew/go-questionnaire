@@ -3,12 +3,14 @@
 // Authentication is contained in the value too.
 // Thus, no 'user database' required.
 // This single value contains a user ID and a checksum on that user ID.
-// User ID and a checksum must fit together - preventing accidential data entry by another person.
+// User ID and checksum must fit together - preventing accidential data entry by another person.
 // Param Length   determines the possible number of distinct logins. For example 30 power 3 => 27.000 logins.
-// Param CheckSum determines fault sensitivity. For example 30 power 2 => 900 is the chance of accidental correct login.
+// Param CheckSum determines fault sensitivity. For example 30 power 2 => 900 is the chance of accidentally correct login.
 // This authentication strategy is relatively weak against brute force attacks.
-// It is only applicable, when there is nothing to gain; like in an academic online survey.
-// There is still the issue of spamming the survey. When worried, increase the checksum to 3; requiring 3,5 hours for every brute force hit.
+// It should be applied only, where nothing is to be gained; in academic surveys for example.
+// There is the issue of spamming the survey.
+// Counter measure 1: Increase the checksum to 3; requiring 3,5 hours for every brute force hit.
+// Counter measure 2: Backing off on the IP address - for failed logins only.
 // The questionare must allow this authentication.
 package directlogin
 
@@ -18,6 +20,7 @@ import (
 	"log"
 	"net/http"
 	"strings"
+	"sync"
 	"time"
 
 	"github.com/monoculum/formam"
@@ -27,6 +30,9 @@ import (
 
 var ultraReadable = []byte("23456789ABCDEFGHKLMNPRSTUVWXYZ") // 30 chars - drop 5 and S ?
 var salt = len(ultraReadable) / 2
+
+// Todo: Recreate this map from time to time to free memory
+var failBackOff = sync.Map{}
 
 type directLoginT struct {
 	Length   int    `json:"length"`    // Digits for ID
@@ -138,7 +144,35 @@ func (d *directLoginT) Validate(string) bool {
 	if checkSum == d.L[d.Length:] {
 		return true
 	}
-	time.Sleep(1 * time.Second) // Hesitate against brute force
+
+	// Globally backing off on failed login attempts
+	key := time.Now().Truncate(20 * time.Second)
+	keyPrevious := key.Add(-20 * time.Second) // two slots - spanning 20 to 40 seconds
+	ctr := 0
+	{
+		ifac, ok := failBackOff.Load(key)
+		if ok {
+			i, _ := ifac.(int)
+			ctr += i
+		}
+	}
+	{
+		ifac, ok := failBackOff.Load(keyPrevious)
+		if ok {
+			i, _ := ifac.(int)
+			ctr += i
+		}
+	}
+	ctr++
+	failBackOff.Store(key, ctr)
+
+	bo := ctr * ctr // 1*1=1 ; 2*2=4 ; 5*5=25
+	if bo > 15 {
+		log.Printf("SPAM Suspicion: %v failed login attempts in 20-40secs", ctr)
+		bo = 15
+	}
+	time.Sleep(time.Duration(bo) * time.Second) // Hesitate against brute force
+
 	return false
 }
 

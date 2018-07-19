@@ -19,6 +19,7 @@ import (
 	"html/template"
 	"log"
 	"net/http"
+	"path"
 	"strings"
 	"sync"
 	"time"
@@ -26,6 +27,7 @@ import (
 	"github.com/monoculum/formam"
 	"github.com/zew/go-questionaire/cfg"
 	"github.com/zew/go-questionaire/lgn"
+	"github.com/zew/go-questionaire/sessx"
 )
 
 var ultraReadable = []byte("23456789ABCDEFGHKLMNPRSTUVWXYZ") // 30 chars - drop 5 and S ?
@@ -34,16 +36,22 @@ var salt = len(ultraReadable) / 2
 // Todo: Recreate this map from time to time to free memory
 var failBackOff = sync.Map{}
 
-type directLoginT struct {
+type DirectLoginT struct {
 	Length   int    `json:"length"`    // Digits for ID
 	CheckSum int    `json:"check_sum"` // Digits checksum
-	Token    string `json:"token"`
-	L        string `json:"-"` // The resulting login
+	L        string `json:"-"`         // The resulting login
+}
+
+type formEntryT struct {
+	DirectLoginT
+	Token string `json:"token"`
+	Start int    `json:"start"`
+	Stop  int    `json:"stop"`
 }
 
 // New returns a config for direct logins
-func New(digitsID, digitsChecksum int) *directLoginT {
-	return &directLoginT{Length: digitsID, CheckSum: digitsChecksum}
+func New(digitsID, digitsChecksum int) *DirectLoginT {
+	return &DirectLoginT{Length: digitsID, CheckSum: digitsChecksum}
 }
 
 // Translates a single digit to decimal
@@ -59,19 +67,43 @@ func toDec(r rune) int {
 	return 0
 }
 
-// CrossSum adds the index values of the digits
-func (d *directLoginT) CrossSum() int {
-	cs := 0
-	for _, r := range d.L[:d.Length] {
-		j := toDec(r)
-		cs += j
+// Takes a decimal number
+// and encodes it as with the characters of ultraReadable
+// Inverse func of Decimal()
+func toCode(i int) string {
+	s := ""
+	for {
+		mod := i % len(ultraReadable)
+		s = string(ultraReadable[mod]) + s
+		i -= mod
+		i /= len(ultraReadable)
+		if i < len(ultraReadable) {
+			if i != 0 {
+				s = string(ultraReadable[i]) + s
+			}
+			break
+		}
 	}
-	return cs
+	return s
 }
 
-// ToDecimalStr rewrites L6F3G to 17-4-13-1-14
-// Separated by hyphen
-func (d *directLoginT) ToDecimalStr() string {
+func (d DirectLoginT) computeCheckSum() string {
+	div := 1
+	for i := 0; i < d.CheckSum; i++ {
+		div *= len(ultraReadable)
+	}
+	mod := (d.Decimal() + salt) % div
+	coded := toCode(mod)
+	for len(coded) < d.CheckSum {
+		coded = string(ultraReadable[0]) + coded
+	}
+	return coded
+}
+
+// ToDecimalStr rewrites L6F3G to 17-4-13-1-14.
+// Separated by hyphen.
+// For debugging.
+func (d *DirectLoginT) ToDecimalStr() string {
 	ret := ""
 	for _, r := range d.L[:d.Length] {
 		j := toDec(r)
@@ -81,8 +113,20 @@ func (d *directLoginT) ToDecimalStr() string {
 	return ret
 }
 
+// CrossSum adds the index values of the digits
+// Unused
+func (d *DirectLoginT) CrossSum() int {
+	cs := 0
+	for _, r := range d.L[:d.Length] {
+		j := toDec(r)
+		cs += j
+	}
+	return cs
+}
+
 // Decimal computes a*30*30 + b*30 + c*1
-func (d *directLoginT) Decimal() int {
+// Inverse func of toCode
+func (d *DirectLoginT) Decimal() int {
 
 	if d.Length > 12 {
 		log.Printf("More than 12 digits: Decimal() will overflow. Truncating")
@@ -106,41 +150,27 @@ func (d *directLoginT) Decimal() int {
 	return dp
 }
 
-// Generate creates a login ID with checksum
-func (d *directLoginT) Generate() {
+// Generate creates a random login ID with checksum
+func (d *DirectLoginT) GenerateRandom() {
 	d.L = lgn.GeneratePwFromChars(ultraReadable, d.Length)
-	div := 1
-	for i := 0; i < d.CheckSum+1; i++ {
-		div *= len(ultraReadable)
-	}
-	mod := (d.Decimal() + salt) % div
-	d.L += toCode(mod)
+	d.L += d.computeCheckSum()
 }
 
-// Takes a decimal number
-// and encodes it as with the characters of ultraReadable
-func toCode(i int) string {
-	s := ""
-	for {
-		mod := i % len(ultraReadable)
-		s = string(ultraReadable[mod]) + s
-		i -= mod
-		i /= len(ultraReadable)
-		if i < len(ultraReadable) {
-			break
-		}
+// Generate creates a login ID with checksum
+func (d *DirectLoginT) GenerateFromDec(seed int) {
+	d.L = toCode(seed)
+	if len(d.L) > d.Length {
+		overFlow := d.Length - len(d.L)
+		d.L = d.L[overFlow:]
 	}
-	return s
+	for len(d.L) < d.Length {
+		d.L = string(ultraReadable[0]) + d.L // pad with leading 'zeroes'
+	}
+	d.L += d.computeCheckSum()
 }
 
-func (d *directLoginT) Validate(string) bool {
-	div := 1
-	for i := 0; i < d.CheckSum+1; i++ {
-		div *= len(ultraReadable)
-	}
-	mod := (d.Decimal() + salt) % div
-	checkSum := toCode(mod)
-
+func (d *DirectLoginT) Validate() bool {
+	checkSum := d.computeCheckSum()
 	if checkSum == d.L[d.Length:] {
 		return true
 	}
@@ -222,6 +252,10 @@ func GenerateH(w http.ResponseWriter, r *http.Request) {
 		<input type="submit"   name="submitclassic" accesskey="s"><br>
 
 		{{if  (len .Cnt   ) gt 0 }} <p style='white-space: pre; color:#222'>{{.Cnt   }}</p>{{end}}
+		
+		Start: 	<input name="start"      type="text"     value="{{.DL.Start}}"><br>
+		Stop: 	<input name="stop"       type="text"     value="{{.DL.Stop}}" ><br>
+		{{if  (len .List  ) gt 0 }} <p style='white-space: pre; color:#444'>{{.List  }}</p>{{end}}
 
 	</form>
 
@@ -229,14 +263,16 @@ func GenerateH(w http.ResponseWriter, r *http.Request) {
 </html>
 `
 	d := New(3, 2)
-
+	fe := formEntryT{}
+	fe.DirectLoginT = *d
 	// err := r.ParseForm()
 
 	dec := formam.NewDecoder(&formam.DecoderOptions{TagName: "json"})
-	err := dec.Decode(r.Form, d)
+	err := dec.Decode(r.Form, &fe)
 	if err != nil {
 		errMsg += fmt.Sprintf("Decoding error: %v\n", err)
 	}
+	d = &fe.DirectLoginT
 
 	if d.Length < 2 {
 		errMsg += fmt.Sprintf("Number of chars for Login < 2 - %v\n", d.Length)
@@ -245,7 +281,16 @@ func GenerateH(w http.ResponseWriter, r *http.Request) {
 		errMsg += fmt.Sprintf("Number of digits for checksum < 1 - %v\n", d.CheckSum)
 	}
 
-	d.Generate()
+	d.GenerateRandom()
+
+	list := ""
+	di := New(d.Length, d.CheckSum)
+	for i := fe.Start; i <= fe.Stop; i++ {
+		di.GenerateFromDec(i)
+		str := fmt.Sprintf("%05v\t%v\t%v\t%v\tValid: %v\n",
+			i, di.L, di.ToDecimalStr(), di.Decimal(), di.Validate())
+		list += str
+	}
 
 	// log.Printf(util.IndentedDump(d))
 
@@ -255,15 +300,17 @@ func GenerateH(w http.ResponseWriter, r *http.Request) {
 
 		ErrMsg string
 		Cnt    string
-		DL     directLoginT
+		DL     formEntryT
+		List   string
 	}
 	data := dataT{
 		SelfURL: r.URL.Path,
 		Token:   lgn.FormToken(),
 		ErrMsg:  errMsg,
 		Cnt: fmt.Sprintf("%-24v \n%4v   \n%v \nValid: %v",
-			d.L, d.ToDecimalStr(), d.Decimal(), d.Validate(d.L)),
-		DL: *d,
+			d.L, d.ToDecimalStr(), d.Decimal(), d.Validate()),
+		DL:   fe,
+		List: list,
 	}
 
 	tpl := template.New("anyname.html")
@@ -275,6 +322,55 @@ func GenerateH(w http.ResponseWriter, r *http.Request) {
 	err = tpl.Execute(w, data)
 	if err != nil {
 		fmt.Fprintf(w, "Error executing inline template: %v", err)
+	}
+
+}
+
+// CheckFailed shows failed direct login attempts
+func CheckFailed(w http.ResponseWriter, r *http.Request) {
+
+	w.Header().Set("Content-Type", "text/plain; charset=utf-8")
+
+	f := func(key interface{}, value interface{}) bool {
+		fmt.Fprintf(w, "%v  - Failed attempts %3v\n", key, value)
+		return true
+	}
+
+	failBackOff.Range(f)
+
+}
+
+// ValidateAndLogin takes the *last* directory of the URL path as direct login
+func ValidateAndLogin(w http.ResponseWriter, r *http.Request) {
+
+	sess := sessx.New(w, r)
+
+	w.Header().Set("Content-Type", "text/plain; charset=utf-8")
+
+	p := r.URL.Path
+	p = path.Base(p) // last element of path contains direct login
+
+	dl := New(3, 2)
+	dl.L = p
+	good := dl.Validate()
+
+	if !good {
+		fmt.Fprintf(w, "Not a valid login %v\n", p)
+		return
+	}
+
+	l := lgn.LoginT{}
+	l.User = dl.L[:dl.Length]
+	l.Roles = map[string]string{}
+	l.Roles["survey_id"] = "eup"
+	l.Roles["wave_id"] = "2018-09"
+	log.Printf("logged in as %v - ID %v", l.User, dl.Decimal())
+	fmt.Fprintf(w, "logged in as %v - ID %v", l.User, dl.Decimal())
+
+	err := sess.PutObject("login", l)
+	if err != nil {
+		http.Error(w, "Error saving login to session", http.StatusInternalServerError)
+		return
 	}
 
 }

@@ -105,10 +105,25 @@ server JSON file with the entered data.
 
 * Each label or form element can be styled additionally (`CSSLabel` and `CSSControl`)
 
+#### Page navigation sequence - special pages
+
+* Pages can be navigated by page number sequence using http params `previous` and `next` 
+
+* Pages can be navigated using `page` = [0,1,...] parameter
+
+* Page property `NoNavigation` decouples the page from the navigational sequence.  
+They are exempt from `previous` and `next`.  
+Such pages can reached to by setting submit buttons to their index value.  
+Useful for greeting- and goodbye-pages.
+
+#### Defining questionaires by code or by JSON file
 
 At inception we envisioned a JSON schema validator  
 and questionaire creation by directly editing of JSON files  
 but that remains as elusive as it did with XML.
+
+
+### Layout concept
 
 Our participants do not use Smartphones to fill out
 scientific questionaires.  
@@ -116,11 +131,9 @@ If that changes, go-questionaire needs a _separate_ mobile layout engine.
 Hybrid solutions (_mobile first_) are insufficient.
 
 
-### Layout concept
-
 #### Accepted Solution
 
-We chose fixed table layout.
+Considering `float-left` or `inline-block`, we chose `fixed table` layout.
 
 We need full fledged markup, since mere CSS classes such as `<div style='display: table/table-row/table-cell'` do not support colspan or rowspan functionality. 
 
@@ -141,12 +154,6 @@ Group property `OddRowsColoring` to activate alternating background
 
 The table border can be set via ./templates/site.css  
 `table.bordered td { myBorderCSS }`
-
-Page property `NoNavigation` decouples the page from the
-navigational workflow. 
-Such pages can be jumped to by setting submit buttons to their index value.
-Useful for greeting- and goodbye-pages.
-
 
 #### Rejected Solutions
 

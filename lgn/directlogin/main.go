@@ -341,6 +341,7 @@ func CheckFailed(w http.ResponseWriter, r *http.Request) {
 }
 
 // ValidateAndLogin takes the *last* directory of the URL path as direct login
+// The direct login parameters and the survey_id and wave_id are still hard coded.
 func ValidateAndLogin(w http.ResponseWriter, r *http.Request) {
 
 	sess := sessx.New(w, r)
@@ -355,7 +356,7 @@ func ValidateAndLogin(w http.ResponseWriter, r *http.Request) {
 	good := dl.Validate()
 
 	if !good {
-		fmt.Fprintf(w, "Not a valid login %v\n", p)
+		fmt.Fprintf(w, "Not a valid direct login %v\n", p)
 		return
 	}
 
@@ -364,8 +365,8 @@ func ValidateAndLogin(w http.ResponseWriter, r *http.Request) {
 	l.Roles = map[string]string{}
 	l.Roles["survey_id"] = "eup"
 	l.Roles["wave_id"] = "2018-09"
-	log.Printf("logged in as %v - ID %v", l.User, dl.Decimal())
-	fmt.Fprintf(w, "logged in as %v - ID %v", l.User, dl.Decimal())
+	log.Printf("directy logged in as %v - ID %v", l.User, dl.Decimal())
+	fmt.Fprintf(w, "directy logged in as %v - ID %v", l.User, dl.Decimal())
 
 	err := sess.PutObject("login", l)
 	if err != nil {

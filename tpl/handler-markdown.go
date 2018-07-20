@@ -81,7 +81,7 @@ func (fragm *staticPrefixT) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		// red := newPth + url.QueryEscape(r.URL.RawQuery)
 		red := newPth + "?" + r.URL.RawQuery
 		log.Printf("Redirecting %20v to %20v", r.URL.Path, red)
-		http.Redirect(w, r, red, http.StatusTemporaryRedirect)
+		http.Redirect(w, r, red, http.StatusSeeOther)
 		return
 	}
 

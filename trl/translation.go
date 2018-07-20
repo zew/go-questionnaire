@@ -17,7 +17,7 @@ const noTrans = "multi lingual string not initialized."
 
 // Tr translates by key.
 // Defaults           to english.
-// Defaults otherwise to first existing map key.
+// Defaults otherwise to first lang code.
 // Returns a 'signifiers string' if no translation exists,
 // to help to uncover missing translations.
 func (s S) Tr(langCode string) string {
@@ -45,6 +45,7 @@ func (s S) TrSilent(langCode string) string {
 }
 
 // String is the default "stringer" implementation
+// Similar to Tr() - except third try: take whatever exists
 func (s S) String() string {
 	if val, ok := s["en"]; ok {
 		return val
@@ -59,6 +60,7 @@ func (s S) String() string {
 }
 
 // All returns all translations
+// ordered by lang codes
 func (s S) All() string {
 	ret := ""
 	for _, key := range LangCodes {
@@ -68,6 +70,14 @@ func (s S) All() string {
 		}
 	}
 	return ret
+}
+
+// Set checks whether s is not empty
+func (s S) Set() bool {
+	if len(s) < 1 { // also covers s == nil
+		return false
+	}
+	return true
 }
 
 // Map - Translations Type

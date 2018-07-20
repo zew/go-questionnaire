@@ -10,6 +10,7 @@ import (
 
 	"github.com/monoculum/formam"
 	"github.com/zew/go-questionaire/cfg"
+	"github.com/zew/go-questionaire/generators/eup"
 	"github.com/zew/go-questionaire/generators/fmt"
 	"github.com/zew/go-questionaire/generators/min"
 	"github.com/zew/go-questionaire/lgn"
@@ -21,6 +22,7 @@ type genT func() *qst.QuestionaireT
 var gens = map[string]genT{
 	"fmt": fmt.Create,
 	"min": min.Create,
+	"eup": eup.Create,
 }
 
 // Get returns all questionaire generators

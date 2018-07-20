@@ -10,7 +10,7 @@
 // It should be applied only, where nothing is to be gained; in academic surveys for example.
 // There is the issue of spamming the survey.
 // Counter measure 1: Increase the checksum to 3; requiring 3,5 hours for every brute force hit.
-// Counter measure 2: Backing off on the IP address - for failed logins only.
+// Counter measure 2: Backing off on failed logins - slowing down the brute forcer.
 // The questionare must allow this authentication.
 package directlogin
 
@@ -330,13 +330,11 @@ func GenerateH(w http.ResponseWriter, r *http.Request) {
 func CheckFailed(w http.ResponseWriter, r *http.Request) {
 
 	w.Header().Set("Content-Type", "text/plain; charset=utf-8")
-
 	f := func(key interface{}, value interface{}) bool {
 		fmt.Fprintf(w, "%v  - Failed attempts %3v\n", key, value)
 		return true
 	}
-
-	failBackOff.Range(f)
+	failBackOff.Range(f) // iterating the concurrency safe map
 
 }
 
@@ -366,12 +364,18 @@ func ValidateAndLogin(w http.ResponseWriter, r *http.Request) {
 	l.Roles["survey_id"] = "eup"
 	l.Roles["wave_id"] = "2018-09"
 	log.Printf("directy logged in as %v - ID %v", l.User, dl.Decimal())
-	fmt.Fprintf(w, "directy logged in as %v - ID %v", l.User, dl.Decimal())
+	// fmt.Fprintf(w, "directy logged in as %v - ID %v\n", l.User, dl.Decimal())
 
 	err := sess.PutObject("login", l)
 	if err != nil {
 		http.Error(w, "Error saving login to session", http.StatusInternalServerError)
 		return
 	}
+
+	red := cfg.Pref("")
+	if len(r.URL.RawQuery) > 0 {
+		red += "?" + r.URL.RawQuery
+	}
+	http.Redirect(w, r, red, http.StatusSeeOther)
 
 }

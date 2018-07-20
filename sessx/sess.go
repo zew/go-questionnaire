@@ -1,5 +1,5 @@
 // Package sessx reads effective parameter values
-// from get, post and session.
+// from GET, POST and SESSION.
 // It also reads consolidated request params (GET, POST).
 package sessx
 

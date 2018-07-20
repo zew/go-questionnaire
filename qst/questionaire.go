@@ -197,8 +197,12 @@ func (i inputT) HTML(langCode string, numCols int) string {
 				nm, nm, valEmpty)
 		}
 
-		ctrl += fmt.Sprintf("<span class='go-quest-label %v' >%v</span>\n", i.CSSLabel, i.Suffix.TrSilent(langCode))
-		ctrl += fmt.Sprintf("<span class='go-quest-label %v' >%v</span>\n", i.CSSLabel, i.ErrMsg.TrSilent(langCode)) // ugly layout  - but radiogroup and checkboxgroup won't have validation errors anyway
+		if i.Suffix.Set() {
+			ctrl += fmt.Sprintf("<span class='go-quest-label %v' >%v</span>\n", i.CSSLabel, i.Suffix.TrSilent(langCode))
+		}
+		if i.ErrMsg.Set() {
+			ctrl += fmt.Sprintf("<span class='go-quest-label %v' >%v</span>\n", i.CSSLabel, i.ErrMsg.TrSilent(langCode)) // ugly layout  - but radiogroup and checkboxgroup won't have validation errors anyway
+		}
 
 		lbl := renderLabelDescription(langCode, i.HAlignLabel, i.Label, i.Desc, i.CSSLabel, i.ColSpanLabel, numCols)
 		lbl = fmt.Sprintf("<label for='%v'>%v</label>\n", nm, lbl)
@@ -247,8 +251,12 @@ func (i inputT) HTML(langCode string, numCols int) string {
 		}
 
 		// Append suffix and error message
-		ctrl += fmt.Sprintf("<span class='go-quest-label %v' >%v</span>\n", i.CSSLabel, i.Suffix.TrSilent(langCode))
-		ctrl += fmt.Sprintf("<span class='go-quest-label %v' >%v</span>\n", i.CSSLabel, i.ErrMsg.TrSilent(langCode))
+		if i.Suffix.Set() {
+			ctrl += fmt.Sprintf("<span class='go-quest-label %v' >%v</span>\n", i.CSSLabel, i.Suffix.TrSilent(langCode))
+		}
+		if i.ErrMsg.Set() {
+			ctrl += fmt.Sprintf("<span class='go-quest-label %v' >%v</span>\n", i.CSSLabel, i.ErrMsg.TrSilent(langCode))
+		}
 
 		ctrl = td(i.HAlignControl, colWidth(i.ColSpanControl, numCols), ctrl)
 
@@ -381,7 +389,7 @@ func (gr groupT) HTML(langCode string) string {
 		}
 	}
 
-	b.WriteString(tableClose)
+	// b.WriteString(tableClose)
 
 	return b.String()
 

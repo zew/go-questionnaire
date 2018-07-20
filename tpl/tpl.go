@@ -1,6 +1,6 @@
 // Package tpl parses bundles of related templates and keeps them in a map;
 // bundles can be master-layouts with several content-templates;
-// http requests dont need clones or specific template funcs;
+// http requests dont need clones for specific template funcs;
 // executeTemplate(bundle, dynamicName, data) replaces the static
 // {{template  constantName}}.
 // Parsing bundles into parsedBundles should be done at application init time,

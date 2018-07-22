@@ -3,6 +3,8 @@
 // we need some global store too.
 package trl
 
+import "strings"
+
 // LangCodes for returning multiple translations.
 // When no langCode is available, then the first entry rules.
 // A call to All() returns explicitly all key-values.
@@ -22,6 +24,7 @@ const noTrans = "multi lingual string not initialized."
 // to help to uncover missing translations.
 func (s S) Tr(langCode string) string {
 	if val, ok := s[langCode]; ok {
+		val = hyphenize(val)
 		return val
 	}
 	if val, ok := s[LangCodes[0]]; ok {
@@ -86,3 +89,34 @@ func (s S) Set() bool {
 // 		{{.Trls.imprint.Tr       .Sess.LangCode}}  // using .Tr(langCode)
 // 		{{.Trls.imprint.TrSilent .Sess.LangCode}}  //
 type Map map[string]S
+
+var hyph = []string{
+
+	"keine<br>An&shy;gabe",
+
+	"Ausfall&shy;risiken",
+	"Risiko&shy;trag&shy;fähig&shy;keit",
+	"Re&shy;finanz&shy;ierung",
+	// "Wett&shy;bewerbs&shy;situa&shy;tion",
+	"Wett&shy;be&shy;werbs&shy;sit&shy;uation",
+	"Regu&shy;lierung",
+	"Groß&shy;unter&shy;nehmen",
+	"Immob&shy;ilien&shy;kredite",
+	"Kon&shy;sum&shy;enten&shy;kredite",
+
+	"Regierungs&shy;bildung Deutschland",
+}
+var hyphm = map[string]string{}
+
+func init() {
+	for _, v := range hyph {
+		hyphm[strings.Replace(v, "&shy;", "", -1)] = v
+	}
+}
+
+func hyphenize(s string) string {
+	if _, ok := hyphm[s]; ok {
+		return hyphm[s]
+	}
+	return s
+}

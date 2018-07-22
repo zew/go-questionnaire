@@ -46,8 +46,8 @@ func addSeasonal2(q *qst.QuestionaireT) {
 			inp.MaxChars = 4
 			inp.Validator = "inRange20"
 			inp.Desc = trl.S{
-				"de": nextY(0) + " &nbsp; ",
-				"en": nextY(0) + " &nbsp; ",
+				"de": nextY(0),
+				"en": nextY(0),
 			}
 			inp.Suffix = trl.S{
 				"de": "%",
@@ -63,8 +63,8 @@ func addSeasonal2(q *qst.QuestionaireT) {
 			inp.MaxChars = 4
 			inp.Validator = "inRange20"
 			inp.Desc = trl.S{
-				"de": nextY(1) + " &nbsp; ",
-				"en": nextY(1) + " &nbsp; ",
+				"de": nextY(1),
+				"en": nextY(1),
 			}
 			inp.Suffix = trl.S{
 				"de": "%",
@@ -79,8 +79,8 @@ func addSeasonal2(q *qst.QuestionaireT) {
 			inp.MaxChars = 4
 			inp.Validator = "inRange20"
 			inp.Desc = trl.S{
-				"de": nextY(2) + " &nbsp; ",
-				"en": nextY(2) + " &nbsp; ",
+				"de": nextY(2),
+				"en": nextY(2),
 			}
 			inp.Suffix = trl.S{
 				"de": "%",

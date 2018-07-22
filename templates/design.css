@@ -89,7 +89,12 @@ pre {
 
 input, select{
 	margin: 0px 0px;
-    padding: 3px 0px;
+	padding: 3px 0px;
+	
+    /* prefix and suffix - % or € */
+    margin-left:  3px;
+    margin-right: 2px;
+
     font-size: 13px;
     /*width: 120px;*/  /*prevents the size attribute from working*/
 }

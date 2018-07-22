@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+{{ $lc := (.Sess.EffectiveStr "lang_code" .DefaultLangCode)}}
+<head>
+
+	<link rel="preconnect"   href="https://i.ebayimg.com"   />
+ 	<link rel="dns-prefetch" href="//i.ebayimg.com">
+
+	<meta charset="utf-8">
+	<link rel="shortcut icon" href="data:;base64,=">
+	<link rel="icon"          href="data:;base64,=">
+
+
+	<title>{{.Trls.app_label.Tr $lc}}</title>
+	<link  href="{{prefix "/css/mobile.css"}}" rel="stylesheet" type="text/css" />
+
+</head>
+<body >
+
+    <!-- width=100% inscribe -->
+    <form method="POST" action="{{prefix " "}}" class='go-quest-main-form' name='frmMain'>
+
+        {{if .Q.HasErrors}}
+        <p class="error" id="error" style="font-size:16px;margin: 20px 0px; ">{{.Trls.correct_errors.Tr .Q.LangCode}} </p>
+        <script>
+            $("#error").css("display", "none");
+            $("#error").fadeIn("slow", function () {
+                console.log("fade in complete");
+            });                    
+        </script> {{end}}
+        
+        <input type="hidden" name="token" value="{{formToken}}" /> {{toHtml (.Q.CurrentPageHTML) }}
+        {{toHtml (.Q.CurrentPageHTML) }}
+
+    </form>
+
+</body>
+</html>

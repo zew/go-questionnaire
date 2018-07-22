@@ -268,6 +268,8 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 	if r.RemoteAddr != "" {
 		q.RemoteIP = r.RemoteAddr
 	}
+	q.UserAgent = r.Header.Get("User-Agent")
+
 	if ok := sess.EffectiveIsSet("finished"); ok {
 		if sess.EffectiveStr("finished") == qst.ValSet {
 			q.ClosingTime = time.Now().Truncate(time.Second)
@@ -310,6 +312,21 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 	//
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
 	tplBundle := tpl.Get(w, r, "main.html")
+
+	mobile := false
+	mP := r.Form.Get("mobile")
+	if len(mP) > 0 {
+		mobile = true
+	}
+	if mobile {
+		tplBundle = tpl.Get(w, r, "mobile.html")
+		q.Pages[q.CurrPage].Width = 100
+		q.Pages[q.CurrPage].AestheticCompensation = 0
+		for i := 0; i < len(q.Pages[q.CurrPage].Groups); i++ {
+			q.Pages[q.CurrPage].Groups[i].Width = 100
+		}
+	}
+
 	ts := &tpl.StackT{"quest.html"}
 
 	d := tplDataExtT{

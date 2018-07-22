@@ -80,11 +80,16 @@ func newInputUnused() inputT {
 	return t
 }
 
+func renderLabelDescription(i inputT, langCode string, numCols int) string {
+	return renderLabelDescription2(i, langCode, i.Name, i.HAlignLabel,
+		i.Label, i.Desc, i.CSSLabel, i.ColSpanLabel, numCols)
+}
+
 // renderLabelDescription wraps lbl+desc into a <span> of class 'go-quest-cell' or td-cell.
 // A percent width is dynamically computed from colsLabel / numCols.
 // Argument numCols is the total number of cols per row.
 // It is used to compute the precise width in percent
-func renderLabelDescription(langCode string, hAlign horizontalAlignment,
+func renderLabelDescription2(i inputT, langCode string, nm string, hAlign horizontalAlignment,
 	lbl, desc trl.S, css string, colsLabel, numCols int) string {
 	ret := ""
 	if lbl == nil && desc == nil {
@@ -102,6 +107,11 @@ func renderLabelDescription(langCode string, hAlign horizontalAlignment,
 	ret = fmt.Sprintf(
 		"<span class='go-quest-label %v'><b>%v</b> %v </span>\n", css, e1, e2,
 	)
+
+	if nm != "" && !i.IsLayout() {
+		ret = fmt.Sprintf("<label for='%v'>%v</label>\n", nm, ret)
+	}
+
 	ret = td(hAlign, colWidth(colsLabel, numCols), ret)
 	return ret
 }
@@ -150,7 +160,7 @@ func (i inputT) HTML(langCode string, numCols int) string {
 		return lbl
 
 	case "textblock":
-		lbl := renderLabelDescription(langCode, i.HAlignLabel, i.Label, i.Desc, i.CSSLabel, i.ColSpanLabel, numCols)
+		lbl := renderLabelDescription(i, langCode, numCols)
 		return lbl
 
 	case "radiogroup", "checkboxgroup":
@@ -198,14 +208,14 @@ func (i inputT) HTML(langCode string, numCols int) string {
 		}
 
 		if i.Suffix.Set() {
+			// compare suffix with no break for ordinary inputs
 			ctrl += fmt.Sprintf("<span class='go-quest-label %v' >%v</span>\n", i.CSSLabel, i.Suffix.TrSilent(langCode))
 		}
 		if i.ErrMsg.Set() {
 			ctrl += fmt.Sprintf("<span class='go-quest-label %v' >%v</span>\n", i.CSSLabel, i.ErrMsg.TrSilent(langCode)) // ugly layout  - but radiogroup and checkboxgroup won't have validation errors anyway
 		}
 
-		lbl := renderLabelDescription(langCode, i.HAlignLabel, i.Label, i.Desc, i.CSSLabel, i.ColSpanLabel, numCols)
-		lbl = fmt.Sprintf("<label for='%v'>%v</label>\n", nm, lbl)
+		lbl := renderLabelDescription(i, langCode, numCols)
 		return lbl + ctrl
 
 	case "text", "textarea", "checkbox":
@@ -221,6 +231,7 @@ func (i inputT) HTML(langCode string, numCols int) string {
 		}
 
 		width := fmt.Sprintf("width: %vem;", int(float64(i.MaxChars)*1.05))
+		// width = "width: 98%;"
 		if i.Type == "checkbox" || i.Type == "radio" {
 			width = ""
 		}
@@ -250,18 +261,22 @@ func (i inputT) HTML(langCode string, numCols int) string {
 			ctrl += fmt.Sprintf("<input type='hidden' name='%v' id='%v_hidd' value='0' />\n", nm, nm)
 		}
 
-		// Append suffix and error message
+		// Append suffix
 		if i.Suffix.Set() {
-			ctrl += fmt.Sprintf("<span class='go-quest-label %v' >%v</span>\n", i.CSSLabel, i.Suffix.TrSilent(langCode))
+			ctrl = strings.TrimSuffix(ctrl, "\n")
+			sfx := fmt.Sprintf("<span class='go-quest-label %v' >%v</span>\n", i.CSSLabel, i.Suffix.TrSilent(langCode))
+			// We want to prevent line-break of the '%' or '€' character.
+			// inputs must be inline-block, for whitespace nowrap to work
+			ctrl = fmt.Sprintf("<span style='white-space: nowrap;' >%v%v</span>\n", ctrl, sfx)
 		}
+		// Append error message
 		if i.ErrMsg.Set() {
 			ctrl += fmt.Sprintf("<span class='go-quest-label %v' >%v</span>\n", i.CSSLabel, i.ErrMsg.TrSilent(langCode))
 		}
 
 		ctrl = td(i.HAlignControl, colWidth(i.ColSpanControl, numCols), ctrl)
 
-		lbl := renderLabelDescription(langCode, i.HAlignLabel, i.Label, i.Desc, i.CSSLabel, i.ColSpanLabel, numCols)
-		lbl = fmt.Sprintf("<label for='%v'>%v</label>\n", nm, lbl)
+		lbl := renderLabelDescription(i, langCode, numCols)
 		return lbl + ctrl
 
 	default:
@@ -333,7 +348,14 @@ func (gr groupT) HTML(langCode string) string {
 		gr.Width = 100
 	}
 	b.WriteString(fmt.Sprintf("<div class='go-quest-group' style='width:%v%%;'  cols='%v'>\n", gr.Width, gr.Cols)) // cols is just for debugging
-	lbl := renderLabelDescription(langCode, HLeft, gr.Label, gr.Desc, "go-quest-group-header", gr.Cols, gr.Cols)
+	i := inputT{Type: "textblock"}
+	i.HAlignLabel = HLeft
+	i.Label = gr.Label
+	i.Desc = gr.Desc
+	i.CSSLabel = "go-quest-group-header"
+	i.ColSpanLabel = gr.Cols
+	lbl := renderLabelDescription(i, langCode, gr.Cols)
+	// lbl := renderLabelDescription(inputT{Type: "textblock"},	langCode, "", HLeft, gr.Label, gr.Desc, "go-quest-group-header", gr.Cols, gr.Cols)
 
 	b.WriteString(lbl)
 	b.WriteString(vspacer)
@@ -389,7 +411,7 @@ func (gr groupT) HTML(langCode string) string {
 		}
 	}
 
-	// b.WriteString(tableClose)
+	// b.WriteString(tableClose) // this was double of code above
 
 	return b.String()
 
@@ -427,6 +449,7 @@ type QuestionaireT struct {
 	UserID      string    `json:"user_id,omitempty"`      // participant ID
 	ClosingTime time.Time `json:"closing_time,omitempty"` // truncated to second
 	RemoteIP    string    `json:"remote_ip,omitempty"`
+	UserAgent   string    `json:"user_agent,omitempty"`
 	MD5         string    `json:"md_5,omitempty"`
 
 	// LangCode and LangCodes are imposed from cfg.LangCodes via session."lang_code"

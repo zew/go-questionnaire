@@ -315,10 +315,12 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 	tplBundle := tpl.Get(w, r, "main.html")
 
 	mobile := false
-	ua := useragent.Parse(q.UserAgent)
-	log.Printf("%v on %v - V. %v - mobile or tablet: %v", ua.Name, ua.OS, ua.Version, ua.Mobile || ua.Tablet)
-	if ua.Mobile || ua.Tablet {
-		mobile = true
+	if q.UserAgent != "" {
+		ua := useragent.Parse(q.UserAgent)
+		log.Printf("%v on %v - V. %v - mobile or tablet: %v", ua.Name, ua.OS, ua.Version, ua.Mobile || ua.Tablet)
+		if ua.Mobile || ua.Tablet {
+			mobile = true
+		}
 	}
 	mP := r.Form.Get("mobile")
 	if len(mP) > 0 {

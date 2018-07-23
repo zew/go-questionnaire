@@ -3,7 +3,7 @@
 // Authentication is contained in the value too.
 // Thus, no 'user database' required.
 // This single value contains a user ID and a checksum on that user ID.
-// User ID and checksum must fit together - preventing accidential data entry by another person.
+// User ID and checksum must fit together - preventing accidental data entry by another person.
 // Param Length   determines the possible number of distinct logins. For example 30 power 3 => 27.000 logins.
 // Param CheckSum determines fault sensitivity. For example 30 power 2 => 900 is the chance of accidentally correct login.
 // This authentication strategy is relatively weak against brute force attacks.
@@ -36,6 +36,7 @@ var salt = len(ultraReadable) / 2
 // Todo: Recreate this map from time to time to free memory
 var failBackOff = sync.Map{}
 
+// DirectLoginT contains the ID part and the checksum part of a login
 type DirectLoginT struct {
 	Length   int    `json:"length"`    // Digits for ID
 	CheckSum int    `json:"check_sum"` // Digits checksum
@@ -150,13 +151,13 @@ func (d *DirectLoginT) Decimal() int {
 	return dp
 }
 
-// Generate creates a random login ID with checksum
+// GenerateRandom creates a random login ID with checksum
 func (d *DirectLoginT) GenerateRandom() {
 	d.L = lgn.GeneratePwFromChars(ultraReadable, d.Length)
 	d.L += d.computeCheckSum()
 }
 
-// Generate creates a login ID with checksum
+// GenerateFromDec creates a login ID with checksum from the seed argument
 func (d *DirectLoginT) GenerateFromDec(seed int) {
 	d.L = toCode(seed)
 	if len(d.L) > d.Length {
@@ -169,6 +170,7 @@ func (d *DirectLoginT) GenerateFromDec(seed int) {
 	d.L += d.computeCheckSum()
 }
 
+// Validate the login ID against the checksum
 func (d *DirectLoginT) Validate() bool {
 	checkSum := d.computeCheckSum()
 	if checkSum == d.L[d.Length:] {
@@ -364,7 +366,7 @@ func ValidateAndLogin(w http.ResponseWriter, r *http.Request) {
 	l.Roles = map[string]string{}
 	l.Roles["survey_id"] = "eup"
 	l.Roles["wave_id"] = "2018-07"
-	log.Printf("directy logged in as %v - ID %v", l.User, dl.Decimal())
+	log.Printf("directly logged in as %v - ID %v", l.User, dl.Decimal())
 	// fmt.Fprintf(w, "directly logged in as %v - ID %v\n", l.User, dl.Decimal())  // prevents redirect
 
 	err := sess.PutObject("login", l)

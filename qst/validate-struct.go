@@ -170,3 +170,26 @@ func (q *QuestionaireT) ComputeDynamicContent(idx int) error {
 	return nil
 
 }
+
+// Hyphenize replaces "mittelfristig" with "mittel&shy;fristig"
+// for all labels and descriptions
+func (q *QuestionaireT) Hyphenize() {
+
+	for i1 := 0; i1 < len(q.Pages); i1++ {
+		for i2 := 0; i2 < len(q.Pages[i1].Groups); i2++ {
+			for i3 := 0; i3 < len(q.Pages[i1].Groups[i2].Inputs); i3++ {
+				i := q.Pages[i1].Groups[i2].Inputs[i3]
+				// s := fmt.Sprintf("Page %v - Group %v - Input %v: ", i1, i2, i3)
+				// log.Printf("Hyphenize: %v", s)
+				for lc, v := range i.Label {
+					v = trl.HyphenizeText(v)
+					q.Pages[i1].Groups[i2].Inputs[i3].Label[lc] = v
+				}
+				for lc, v := range i.Desc {
+					v := trl.HyphenizeText(v)
+					q.Pages[i1].Groups[i2].Inputs[i3].Desc[lc] = v
+				}
+			}
+		}
+	}
+}

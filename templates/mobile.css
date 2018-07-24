@@ -15,6 +15,22 @@ body{
     padding-right: 1px;
 }
 
+.go-quest-page-section,
+.go-quest-page-header,
+dummy{
+    font-size:  130%;
+    font-weight: bold;
+    margin-top: 2px;
+}
+
+.go-quest-page-header,
+dummy{
+    font-size:  120%;
+}
+
+.go-quest-vspacer{
+    height: 2px;
+}
 
 .go-quest-label, dummy {
 	font-size:     13px;
@@ -33,6 +49,11 @@ td{
 	/* transform: rotate(90deg);
 	transform-origin: left top 0; */
 }
+td:nth-child(1){
+    /* width: 30% !important; */
+}
+
+
 td:nth-child(odd){
     background-color: #ddd;
 }
@@ -87,4 +108,9 @@ button[type=submit] {
     padding: 0px 0px;
     font-size: 11px !important;
     width: 25em !important;
+}
+
+.mobile-wider {
+    display: inline-block;
+    min-width: 85px;    
 }

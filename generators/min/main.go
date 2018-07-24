@@ -19,5 +19,6 @@ func Create() *qst.QuestionaireT {
 		page := quest.AddPage()
 		_ = page
 	}
+	(&quest).Hyphenize()
 	return &quest
 }

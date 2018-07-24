@@ -184,8 +184,8 @@ func Create() *qst.QuestionaireT {
 				"en": "2a.",
 			}
 			gr.Desc = trl.S{
-				"de": "Die gesamtwirtschaftliche Situation wird sich mittelfristig (<b>6</b> Mo.)",
-				"en": "The overall economic situation medium term (<b>6</b> months) will",
+				"de": "Die gesamtwirtschaftliche Situation wird sich mittelfristig (<b>6</b>&nbsp;Mo.)",
+				"en": "The overall economic situation medium term (<b>6</b>&nbsp;months) will",
 			}
 
 		}
@@ -208,8 +208,8 @@ func Create() *qst.QuestionaireT {
 				"en": "2b.",
 			}
 			gr.Desc = trl.S{
-				"de": "Die gesamtwirtschaftliche Situation wird sich langfristig (<b>24</b> Mo.)",
-				"en": "The overall economic situation long term (<b>24</b> months) will",
+				"de": "Die gesamtwirtschaftliche Situation wird sich langfristig (<b>24</b>&nbsp;Mo.)",
+				"en": "The overall economic situation long term (<b>24</b>&nbsp;months) will",
 			}
 
 		}
@@ -340,8 +340,8 @@ func Create() *qst.QuestionaireT {
 				"en": "4.",
 			}
 			gr.Desc = trl.S{
-				"de": "Die jährl. gesamtwirtschaftl. Inflationsrate wird mittelfristig (<b>6</b> Mo.)",
-				"en": "Medium term (<b>6</b> months) yearly overall inflation rate will",
+				"de": "Die jährl. gesamtwirtschaftl. Inflationsrate wird mittelfristig (<b>6</b>&nbsp;Mo.)",
+				"en": "Medium term (<b>6</b>&nbsp;months) yearly overall inflation rate will",
 			}
 
 		}
@@ -420,7 +420,7 @@ func Create() *qst.QuestionaireT {
 			gr.Label = trl.S{"de": "5b.", "en": "5b."}
 			gr.Desc = trl.S{
 				"de": "Die <b>langfristigen</b> Zinsen (Renditen 10jg. Staatsanleihen) in <b>Deutschland</b> erwarten wir auf Sicht von 6&nbsp;Monaten <br>\n &nbsp;",
-				"en": "We expect <b>long term</b> interest rates in <b>Germany</b> in 6 months   <br>\n &nbsp;",
+				"en": "We expect <b>long term</b> interest rates in <b>Germany</b> in 6&nbsp;months <br>\n &nbsp;",
 			}
 
 			{
@@ -525,12 +525,12 @@ func Create() *qst.QuestionaireT {
 			}
 			labels123Matrix := []trl.S{
 				{
-					"de": "mittelfristig (<b>6</b> Mo.)",
-					"en": "medium term (<b>6</b> months)",
+					"de": "mittelfristig (<b>6</b>&nbsp;Mo.)",
+					"en": "medium term (<b>6</b>&nbsp;months)",
 				},
 				{
-					"de": "langfristig (<b>24</b> Mo.)",
-					"en": "long term (<b>24</b> months)",
+					"de": "langfristig (<b>24</b>&nbsp;Mo.)",
+					"en": "long term (<b>24</b>&nbsp;months)",
 				},
 			}
 
@@ -573,8 +573,8 @@ func Create() *qst.QuestionaireT {
 			gr := p.AddRadioMatrixGroup(labelsStrongIncreaseStrongDecrease(), names3rdMatrix, labels123Matrix)
 			gr.Label = trl.S{"de": "6c.", "en": "6c."}
 			gr.Desc = trl.S{
-				"de": "Die (saisonbereinigte) Kreditnachfrage wird mittelfristig (<b>6</b> Mo.)",
-				"en": "The seasonally adjusted credit demand medium term (<b>6</b> months) will be",
+				"de": "Die (saisonbereinigte) Kreditnachfrage wird mittelfristig (<b>6</b>&nbsp;Mo.)",
+				"en": "The seasonally adjusted credit demand medium term (<b>6</b>&nbsp;months) will be",
 			}
 			gr.Cols = 7 // necessary, otherwise no vspacers
 			gr.OddRowsColoring = true
@@ -629,8 +629,8 @@ func Create() *qst.QuestionaireT {
 			gr := p.AddRadioMatrixGroup(labelsVeryPositiveVeryNegative(), names3rdMatrix, labels123Matrix)
 			gr.Label = trl.S{"de": "6d.", "en": "6d."}
 			gr.Desc = trl.S{
-				"de": "Wie schätzen Sie den Einfluss folgender Faktoren auf die mittelfristige (<b>6</b> Mo.) Veränderung des Kreditangebots ein?",
-				"en": "How do you assess the influence of following factors on the medium term (<b>6</b> months) change of credit supply?",
+				"de": "Wie schätzen Sie den Einfluss folgender Faktoren auf die mittelfristige (<b>6</b>&nbsp;Mo.) Veränderung des Kreditangebots ein?",
+				"en": "How do you assess the influence of following factors on the medium term (<b>6</b>&nbsp;months) change of credit supply?",
 			}
 			gr.Cols = 7 // necessary, otherwise no vspacers
 			gr.OddRowsColoring = true
@@ -665,8 +665,8 @@ func Create() *qst.QuestionaireT {
 			gr := p.AddRadioMatrixGroup(labelsStrongIncreaseStrongDecrease(), names3rdMatrix, labels123Matrix)
 			gr.Label = trl.S{"de": "6e.", "en": "6e."}
 			gr.Desc = trl.S{
-				"de": "Die (saisonbereinigte) Kreditstandards für Neukredite werden mittelfristig (<b>6</b> Mo.)",
-				"en": "The seasonally adjusted credit standards medium term (<b>6</b> months) will",
+				"de": "Die (saisonbereinigte) Kreditstandards für Neukredite werden mittelfristig (<b>6</b>&nbsp;Mo.)",
+				"en": "The seasonally adjusted credit standards medium term (<b>6</b>&nbsp;months) will",
 			}
 			gr.Cols = 7 // necessary, otherwise no vspacers
 			gr.OddRowsColoring = true
@@ -711,8 +711,8 @@ func Create() *qst.QuestionaireT {
 			gr := p.AddRadioMatrixGroup(labelsIncreaseDecrease(), names3rdMatrix, labels123Matrix)
 			gr.Label = trl.S{"de": "7a.", "en": "7a."}
 			gr.Desc = trl.S{
-				"de": "Die folgenden Aktienindizes / Rohstoffpreise / Wechselkurse werden mittefristig (<b>6</b> Mo.)",
-				"en": "Following stock indices / raw materials / exchange rates will medium term (<b>6</b> months)",
+				"de": "Die folgenden Aktienindizes / Rohstoffpreise / Wechselkurse werden mittefristig (<b>6</b>&nbsp;Mo.)",
+				"en": "Following stock indices / raw materials / exchange rates will medium term (<b>6</b>&nbsp;months)",
 			}
 
 			gr.Cols = 5 // necessary, otherwise no vspacers
@@ -733,8 +733,8 @@ func Create() *qst.QuestionaireT {
 			inp.CSSLabel = "vert-wider"
 			inp.ColSpanControl = 45
 			inp.Desc = trl.S{
-				"de": `Den DAX erwarten wir in 6 Monaten bei `,
-				"en": "We expect the German DAX in 6 month at",
+				"de": `Den DAX erwarten wir in 6&nbsp;Monaten bei `,
+				"en": "We expect the German DAX in 6&nbsp;month at",
 			}
 			inp.Suffix = trl.S{"de": "Punkten", "en": "points"}
 			inp.HAlignLabel = qst.HLeft
@@ -828,8 +828,8 @@ func Create() *qst.QuestionaireT {
 				inp.CSSLabel = "vert-wider"
 				inp.ColSpanControl = 12
 				inp.Desc = trl.S{
-					"de": ` mittefristig (<b>6</b> Mo.) bei  &nbsp;  `,
-					"en": " medium term (<b>6</b> months) at  &nbsp;  ",
+					"de": " mittefristig (<b>6</b>&nbsp;Mo.) bei  ",
+					"en": " medium term (<b>6</b>&nbsp;months) at ",
 				}
 				inp.Suffix = trl.S{"de": "%", "en": "pct"}
 				inp.HAlignLabel = qst.HRight
@@ -846,8 +846,8 @@ func Create() *qst.QuestionaireT {
 				inp.ColSpanLabel = 26
 				inp.ColSpanControl = 40
 				inp.Desc = trl.S{
-					"de": "und langfristig (<b>24</b> Mo.) bei &nbsp; ",
-					"en": "and long term (<b>24</b> months) at &nbsp; ",
+					"de": "und langfristig (<b>24</b>&nbsp;Mo.) bei ",
+					"en": "and long term (<b>24</b>&nbsp;months) at ",
 				}
 
 				inp.Suffix = trl.S{"de": "%", "en": "pct"}
@@ -898,7 +898,7 @@ func Create() *qst.QuestionaireT {
 			gr := p.AddGroup()
 			// gr.Desc = trl.S{"de": "Abschluss", "en": "Finish"}
 			gr.Width = 100
-			gr.Cols = 1 // necessary, otherwise no vspacers
+			gr.Cols = 2 // necessary, otherwise no vspacers
 			{
 
 				{
@@ -1014,6 +1014,7 @@ func Create() *qst.QuestionaireT {
 	if err != nil {
 		log.Fatalf("Error validating questionaire: %v", err)
 	}
+	q.Hyphenize()
 
 	return &q
 }

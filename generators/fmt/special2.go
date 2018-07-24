@@ -157,10 +157,11 @@ func addSeasonal2(q *qst.QuestionaireT) {
 			inp.Type = "textblock"
 			inp.ColSpanLabel = 8
 			inp.Desc = trl.S{
-				"de": "6 Monaten",
-				"en": "6 months",
+				"de": "6&nbsp;Monaten",
+				"en": "6&nbsp;months",
 			}
 			inp.HAlignLabel = qst.HRight
+			inp.CSSLabel = "mobile-wider"
 		}
 
 		{
@@ -206,10 +207,12 @@ func addSeasonal2(q *qst.QuestionaireT) {
 			inp.Type = "textblock"
 			inp.ColSpanLabel = 8
 			inp.Desc = trl.S{
-				"de": " 24 Monaten",
-				"en": " 24 months",
+				"de": " 24&nbsp;Monaten",
+				"en": " 24&nbsp;months",
 			}
 			inp.HAlignLabel = qst.HRight
+			inp.CSSLabel = "mobile-wider"
+
 		}
 
 		// Second row
@@ -258,16 +261,18 @@ func addSeasonal2(q *qst.QuestionaireT) {
 				"de": " &nbsp;",
 				"en": " &nbsp;",
 			}
+			inp.CSSLabel = "mobile-wider"
 		}
 		{
 			inp := gr.AddInput()
 			inp.Type = "textblock"
 			inp.ColSpanLabel = 85
 			inp.Desc = trl.S{
-				"de": " [zentrales 90% Konfidenzintervall]",
-				"en": " [central 90pct confidence interval]",
+				"de": "&nbsp; [zentrales 90% Konfidenzintervall]",
+				"en": "&nbsp; [central 90pct confidence interval]",
 			}
 			inp.CSSLabel = "textblock-smaller"
+
 		}
 
 	}

@@ -24,7 +24,6 @@ const noTrans = "multi lingual string not initialized."
 // to help to uncover missing translations.
 func (s S) Tr(langCode string) string {
 	if val, ok := s[langCode]; ok {
-		val = hyphenize(val)
 		return val
 	}
 	if val, ok := s[LangCodes[0]]; ok {
@@ -90,14 +89,26 @@ func (s S) Set() bool {
 // 		{{.Trls.imprint.TrSilent .Sess.LangCode}}  //
 type Map map[string]S
 
+//
+//
+// Hyphenization
+// =================
+//
+// hyphm is a map with words and their hyphenized form as value.
+// hyphm is filled during app initialization from hyph, below.
+var hyphm = map[string]string{}
+
+//
+// hyph is a slice _with_ hyphenized words.
+// During application init - we use it to fill hyphm
 var hyph = []string{
 
-	"keine<br>An&shy;gabe",
+	"An&shy;gabe",
 
 	"Ausfall&shy;risiken",
 	"Risiko&shy;trag&shy;fähig&shy;keit",
 	"Re&shy;finanz&shy;ierung",
-	// "Wett&shy;bewerbs&shy;situa&shy;tion",
+
 	"Wett&shy;be&shy;werbs&shy;sit&shy;uation",
 	"Regu&shy;lierung",
 	"Groß&shy;unter&shy;nehmen",
@@ -105,8 +116,11 @@ var hyph = []string{
 	"Kon&shy;sum&shy;enten&shy;kredite",
 
 	"Regierungs&shy;bildung Deutschland",
+	"Kredit&shy;nachfrage",
+	"Kredit&shy;angebot",
+
+	"mittel&shy;fristig",
 }
-var hyphm = map[string]string{}
 
 func init() {
 	for _, v := range hyph {
@@ -114,9 +128,18 @@ func init() {
 	}
 }
 
-func hyphenize(s string) string {
+func hyphenizeUnused(s string) string {
 	if _, ok := hyphm[s]; ok {
 		return hyphm[s]
+	}
+	return s
+}
+
+// HyphenizeText replaces "mittelfristig" with "mittel&shy;fristig"
+// We do it _once_ during creation of the questionare JSON template.
+func HyphenizeText(s string) string {
+	for k, v := range hyphm {
+		s = strings.Replace(s, k, v, -1)
 	}
 	return s
 }

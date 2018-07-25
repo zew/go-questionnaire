@@ -443,6 +443,23 @@ func (p *pageT) AddGroup() *groupT {
 	return ret
 }
 
+// paramT contains changing parameters to a questionaire
+type paramT struct {
+	Name      string `json:"name,omitempty"`      // i.e. main_refinance_rate_ecb
+	Challenge string `json:"challenge,omitempty"` // i.e. "Give X.X in `main refinance rate of the ECB (01.02.2018: X.X%)`"
+	Val       string `json:"val,omitempty"`       // i.e. "4.2"
+}
+
+// Param returns the value of a questionaire param
+func (q *QuestionaireT) Param(name string) string {
+	for _, p := range q.Params {
+		if p.Name == name {
+			return p.Val
+		}
+	}
+	return fmt.Sprintf("Param %q not found", name)
+}
+
 // QuestionaireT contains pages with groups with inputs
 type QuestionaireT struct {
 	Survey      surveyT   `json:"survey,omitempty"`
@@ -459,7 +476,8 @@ type QuestionaireT struct {
 	CurrPage  int  `json:"curr_page,omitempty"`
 	HasErrors bool `json:"has_errors,omitempty"` // If any response is faulty; set by ValidateReponseData
 
-	Pages []*pageT `json:"pages,omitempty"`
+	Params []*paramT `json:"params,omitempty"`
+	Pages  []*pageT  `json:"pages,omitempty"`
 }
 
 // BasePath gives the 'root' for loading and saving questionaire JSON files.

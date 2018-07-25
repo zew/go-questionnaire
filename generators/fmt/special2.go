@@ -147,10 +147,22 @@ func addSeasonal2(q *qst.QuestionaireT) {
 		gr := p.AddGroup()
 		gr.Label = trl.S{"de": "3.", "en": "3."}
 		gr.Desc = trl.S{
-			"de": "Den Hauptrefinanzierungssatz der EZB (am 01.02.2018: 0,0%) erwarte ich auf Sicht von <br>\n &nbsp;",
-			"en": "I expect the main refinance rate of the ECB (01.02.2018: 0,0%) in <br>\n &nbsp;",
+			"de": "Den Hauptrefinanzierungssatz der EZB (am 01.02.2018: 0,0%) erwarte ich auf Sicht von",
+			"en": "I expect the main refinance rate of the ECB (01.02.2018: 0,0%) in",
 		}
 		gr.Cols = 100
+
+		// Vertical spacer
+		{
+			inp := gr.AddInput()
+			inp.Type = "textblock"
+			inp.ColSpanLabel = 100
+			inp.Desc = trl.S{
+				"de": "&nbsp;",
+				"en": "&nbsp;",
+			}
+			inp.CSSLabel = "special-input-line-height-8"
+		}
 
 		{
 			inp := gr.AddInput()

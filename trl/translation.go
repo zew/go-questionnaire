@@ -95,15 +95,15 @@ type Map map[string]S
 // =================
 //
 // hyphm is a map with words and their hyphenized form as value.
-// hyphm is filled during app initialization from hyph, below.
+// hyphm is filled during app initialization from hyph below.
 var hyphm = map[string]string{}
 
-//
 // hyph is a slice _with_ hyphenized words.
-// During application init - we use it to fill hyphm
+// During application initialization we use it to fill hyphm above.
 var hyph = []string{
 
 	"An&shy;gabe",
+	"Konjunktur&shy;daten ",
 
 	"Ausfall&shy;risiken",
 	"Risiko&shy;trag&shy;fähig&shy;keit",
@@ -120,6 +120,26 @@ var hyph = []string{
 	"Kredit&shy;angebot",
 
 	"mittel&shy;fristig",
+	"lang&shy;fristig",
+
+	"Deutsch&shy;land",
+	"Welt&shy;wirtschaft",
+
+	"Small+&shy;medium",
+	"enter&shy;prises",
+	"in&shy;crease",
+	"de&shy;crease",
+	"un&shy;changed",
+	"in&shy;fluence",
+	"strong&shy;ly",
+	"pos&shy;itive",
+	"neg&shy;ative",
+
+	"Re&shy;financing",
+	"Comp&shy;etitive",
+	"environ&shy;ment",
+	"Cons&shy;umer",
+	"Reg&shy;ulation",
 }
 
 func init() {

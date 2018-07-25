@@ -34,6 +34,16 @@ func addSeasonal1(q *qst.QuestionaireT) {
 			"en": "Forecast growth rate German GDP",
 		}
 
+		/*
+			Quarterly estimates.
+			Quarterly results are published by Destatis six weeks after quarter ends. I.e. 15.May for Q1.
+			We dont want estimates, if final results are already published.
+
+			We are in first monthOfQuarter() == 1, i.e. April.
+
+			Thus: Previous quarter, current, next ...
+
+		*/
 		{
 			inp := gr.AddInput()
 			inp.Type = "textblock"
@@ -112,8 +122,8 @@ func addSeasonal1(q *qst.QuestionaireT) {
 			inp.MaxChars = 4
 			inp.Validator = "inRange20"
 			inp.Desc = trl.S{
-				"de": nextY(-1),
-				"en": nextY(-1),
+				"de": nextY(0),
+				"en": nextY(0),
 			}
 			inp.Suffix = trl.S{
 				"de": "%",
@@ -129,8 +139,8 @@ func addSeasonal1(q *qst.QuestionaireT) {
 			inp.MaxChars = 4
 			inp.Validator = "inRange20"
 			inp.Desc = trl.S{
-				"de": nextY(0),
-				"en": nextY(0),
+				"de": nextY(1),
+				"en": nextY(1),
 			}
 			inp.Suffix = trl.S{
 				"de": "%",
@@ -145,8 +155,8 @@ func addSeasonal1(q *qst.QuestionaireT) {
 			inp.MaxChars = 4
 			inp.Validator = "inRange20"
 			inp.Desc = trl.S{
-				"de": nextY(),
-				"en": nextY(),
+				"de": nextY(2),
+				"en": nextY(2),
 			}
 			inp.Suffix = trl.S{
 				"de": "%",

@@ -314,18 +314,7 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
 	tplBundle := tpl.Get(w, r, "main.html")
 
-	mobile := false
-	if q.UserAgent != "" {
-		ua := useragent.Parse(q.UserAgent)
-		log.Printf("%v on %v - V. %v - mobile or tablet: %v", ua.Name, ua.OS, ua.Version, ua.Mobile || ua.Tablet)
-		if ua.Mobile || ua.Tablet {
-			mobile = true
-		}
-	}
-	mP := r.Form.Get("mobile")
-	if len(mP) > 0 {
-		mobile = true
-	}
+	mobile := computeMobile(w, r, q)
 	if mobile {
 		tplBundle = tpl.Get(w, r, "mobile.html")
 		q.Pages[q.CurrPage].Width = 100
@@ -352,4 +341,31 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+}
+
+func computeMobile(w http.ResponseWriter, r *http.Request, q *qst.QuestionaireT) bool {
+
+	sess := sessx.New(w, r)
+
+	mobile := false
+
+	// Automatic determination from the browser string
+	if q.UserAgent != "" {
+		ua := useragent.Parse(q.UserAgent)
+		log.Printf("%v on %v - V. %v - mobile or tablet: %v", ua.Name, ua.OS, ua.Version, ua.Mobile || ua.Tablet)
+		if ua.Mobile || ua.Tablet {
+			mobile = true
+		}
+	}
+
+	// Override by explicit url parameter
+	mP := sess.EffectiveStr("mobile")
+	if mP == "true" || mP == "1" {
+		mobile = true
+	}
+	if mP == "false" || mP == "0" {
+		mobile = false
+	}
+
+	return mobile
 }

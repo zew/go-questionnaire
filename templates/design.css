@@ -277,6 +277,11 @@ table.main-table tr:nth-child(odd){
     font-size: 11px;
 }
 
+.special-input-line-height-8 {
+	line-height: 8px;
+}
+
+
 .alternate-background {
 	background-color: #ccc;
 }

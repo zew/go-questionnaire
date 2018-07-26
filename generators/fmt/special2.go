@@ -1,14 +1,16 @@
 package fmt
 
 import (
+	"fmt"
+
 	"github.com/zew/go-questionaire/qst"
 	"github.com/zew/go-questionaire/trl"
 )
 
-func addSeasonal2(q *qst.QuestionaireT) {
+func addSeasonal2(q *qst.QuestionaireT) error {
 
 	if monthOfQuarter() != 2 && false {
-		return
+		return nil
 	}
 
 	p := q.AddPage()
@@ -146,9 +148,14 @@ func addSeasonal2(q *qst.QuestionaireT) {
 	{
 		gr := p.AddGroup()
 		gr.Label = trl.S{"de": "3.", "en": "3."}
+		val, err := q.Survey.Param("main_refinance_rate_ecb") // 01.02.2018: 0,0
+		if err != nil {
+			return fmt.Errorf("Set field 'main_refinance_rate_ecb' to `01.02.2018: 3.2%%` as in `main refinance rate of the ECB (01.02.2018: 3.2%%)`; error was %v", err)
+		}
+
 		gr.Desc = trl.S{
-			"de": "Den Hauptrefinanzierungssatz der EZB (am 01.02.2018: 0,0%) erwarte ich auf Sicht von",
-			"en": "I expect the main refinance rate of the ECB (01.02.2018: 0,0%) in",
+			"de": fmt.Sprintf("Den Hauptrefinanzierungssatz der EZB (am %v) erwarte ich auf Sicht von", val),
+			"en": fmt.Sprintf("I expect the main refinance rate of the ECB (%v) in", val),
 		}
 		gr.Cols = 100
 
@@ -288,5 +295,7 @@ func addSeasonal2(q *qst.QuestionaireT) {
 		}
 
 	}
+
+	return nil
 
 }

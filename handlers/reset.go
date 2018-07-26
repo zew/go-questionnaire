@@ -14,6 +14,7 @@ import (
 )
 
 // ReloadH removes the existing questioniare from the session,
+// reading it anew from the questionaire template JSON file,
 // allowing to start anew
 func ReloadH(w http.ResponseWriter, r *http.Request) {
 
@@ -85,6 +86,11 @@ func ReloadH(w http.ResponseWriter, r *http.Request) {
 		userWaveID,
 		l.User,
 		r.Form.Get("h"),
+	)
+
+	fmt.Fprintf(w,
+		"<a href='%v?u=%v&survey_id=%v&wave_id=%v&h=%v'  target='_blank'>Start questionaire (again)<a> <br> ",
+		cfg.Pref(), l.User, userSurveyType, userWaveID, r.Form.Get("h"),
 	)
 
 }

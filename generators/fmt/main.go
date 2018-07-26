@@ -10,10 +10,11 @@ import (
 )
 
 // Create creates a JSON file for a financial markets survey
-func Create() *qst.QuestionaireT {
+func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 
 	q := qst.QuestionaireT{}
 	q.Survey = qst.NewSurvey("fmt")
+	q.Survey.Params = params
 	q.LangCodes = map[string]string{"de": "Deutsch", "en": "English"}
 	q.LangCode = "de" // default language
 	q.Survey.Org = trl.S{"de": "ZEW", "en": "ZEW"}
@@ -858,8 +859,15 @@ func Create() *qst.QuestionaireT {
 
 	}
 
-	addSeasonal1(&q)
-	addSeasonal2(&q)
+	err := addSeasonal1(&q)
+	if err != nil {
+		return nil, fmt.Errorf("Error adding seasonal1: %v", err)
+	}
+
+	err = addSeasonal2(&q)
+	if err != nil {
+		return nil, fmt.Errorf("Error adding seasonal2: %v", err)
+	}
 
 	//
 	//
@@ -1010,11 +1018,11 @@ func Create() *qst.QuestionaireT {
 
 	// quest.ClosingTime = time.Now()
 
-	err := q.Validate()
+	err = q.Validate()
 	if err != nil {
-		log.Fatalf("Error validating questionaire: %v", err)
+		return nil, fmt.Errorf("Error validating questionaire: %v", err)
 	}
 	q.Hyphenize()
 
-	return &q
+	return &q, nil
 }

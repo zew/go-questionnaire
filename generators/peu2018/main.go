@@ -1,4 +1,4 @@
-package eup
+package peu2018
 
 import (
 	"github.com/zew/go-questionaire/qst"
@@ -7,9 +7,10 @@ import (
 
 // Create creates an minimal example questionaire with a few pages and inputs.
 // It is saved to disk as an example.
-func Create() *qst.QuestionaireT {
+func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 	quest := qst.QuestionaireT{}
 	quest.Survey = qst.NewSurvey("eup")
+	quest.Survey.Params = params
 	quest.LangCodes = map[string]string{"de": "Deutsch", "en": "English"}
 	quest.LangCode = "de"
 	quest.Survey.Org = trl.S{"de": "ZEW", "en": "ZEW"}
@@ -20,5 +21,5 @@ func Create() *qst.QuestionaireT {
 		_ = page
 	}
 	(&quest).Hyphenize()
-	return &quest
+	return &quest, nil
 }

@@ -10,10 +10,10 @@ import (
 // 	1 of quarter: Business cycle & drivers: 		         Januar, April, Juli, October
 // 	2 of quarter: Inflation, drivers, central bank rates:    Februar, May, August, November
 // 	3 of quarter: Free special questoins:                    March, June, September, December
-func addSeasonal1(q *qst.QuestionaireT) {
+func addSeasonal1(q *qst.QuestionaireT) error {
 
 	if monthOfQuarter() != 1 && false {
-		return
+		return nil
 	}
 
 	p := q.AddPage()
@@ -243,5 +243,7 @@ func addSeasonal1(q *qst.QuestionaireT) {
 		}
 
 	}
+
+	return nil
 
 }

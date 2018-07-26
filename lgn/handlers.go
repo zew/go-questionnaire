@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"html"
 	"html/template"
-	"io"
 	"log"
 	"net/http"
 	"sort"
@@ -293,17 +292,17 @@ func GenerateHashesH(w http.ResponseWriter, r *http.Request) {
 
 	_, loggedIn, err := LoggedInCheck(w, r, "admin")
 	if err != nil {
-		io.WriteString(w, err.Error())
+		fmt.Fprint(w, err.Error())
 		return
 	}
 	if !loggedIn {
-		io.WriteString(w, "login required for this function")
+		fmt.Fprint(w, "login required for this function")
 		return
 	}
 
 	surveyID := r.URL.Query().Get("survey_id")
 	if surveyID == "" {
-		io.WriteString(w, "survey_id must be set as URL param")
+		fmt.Fprint(w, "survey_id must be set as URL param")
 		return
 	}
 
@@ -320,10 +319,17 @@ func GenerateHashesH(w http.ResponseWriter, r *http.Request) {
 		checkStr := fmt.Sprintf("%v-%v-%v-%v", surveyID, i, waveID, lgns.Salt)
 		hsh := Md5Str([]byte(checkStr))
 		url := fmt.Sprintf("%v?u=%v&survey_id=%v&wave_id=%v&h=%v", cfg.Pref(), i, surveyID, waveID, hsh)
-		a := fmt.Sprintf("<a href='%v'>%v<a><br>", url, url)
-		w.Write([]byte(a))
+		fmt.Fprintf(w, "<a href='%v'  target='_blank' >login as user %4v<a> ", url, i)
+
+		fmt.Fprint(w, " &nbsp; &nbsp; &nbsp; &nbsp; ")
+
+		url2 := fmt.Sprintf("%v?u=%v&survey_id=%v&wave_id=%v&h=%v", cfg.Pref("reload-from-questionaire-template"), i, surveyID, waveID, hsh)
+		fmt.Fprintf(w, "<a href='%v'  target='_blank' >reload from template<a>", url2)
+
+		fmt.Fprint(w, "<br>")
+
 	}
-	w.Write([]byte("Finish"))
+	fmt.Fprint(w, "Finish")
 
 }
 

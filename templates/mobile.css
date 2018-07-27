@@ -31,6 +31,9 @@ dummy{
 .go-quest-vspacer{
     height: 2px;
 }
+.go-quest-vspacer-16{
+    height: 5px;
+}
 
 .go-quest-label, dummy {
 	font-size:     13px;
@@ -90,17 +93,17 @@ input[type=checkbox], input[type=radio]  {
 
 button[type=submit] {
     appearance: none;
+
     margin: 1.5em 0;
-    font-size: 1em; line-height: 2.5em;
-    color: #333;
-    font-weight: bold;
+    font-size: 1em; 
+    color: #fff;
     height: 2.5em; width: 100%;
+ 
+    background-color: #0069B4;
+    border: 1px solid #0069B4;
+    background: linear-gradient(to bottom ,#4883ad 0%,#0069B4 100%);
     
-    background: #fdfdfd;    
-    background: linear-gradient(to bottom, #fdfdfd 0%,#bebebe 100%);
-    
-    border-radius: 10px;
-    border: 1px solid #bbb;
+    border-radius: 6px;
 }
 
 

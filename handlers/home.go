@@ -352,9 +352,13 @@ func computeMobile(w http.ResponseWriter, r *http.Request, q *qst.QuestionaireT)
 	// Automatic determination from the browser string
 	if q.UserAgent != "" {
 		ua := useragent.Parse(q.UserAgent)
-		log.Printf("%v on %v - V. %v - mobile or tablet: %v", ua.Name, ua.OS, ua.Version, ua.Mobile || ua.Tablet)
-		if ua.Mobile || ua.Tablet {
-			mobile = true
+		if ua == nil {
+			log.Printf("useragent.Parse yiedled nil for '%v'", q.UserAgent)
+		} else {
+			log.Printf("%v on %v - V. %v - mobile or tablet: %v", ua.Name, ua.OS, ua.Version, ua.Mobile || ua.Tablet)
+			if ua.Mobile || ua.Tablet {
+				mobile = true
+			}
 		}
 	}
 

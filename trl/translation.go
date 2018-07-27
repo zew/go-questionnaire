@@ -102,6 +102,8 @@ var hyphm = map[string]string{}
 // During application initialization we use it to fill hyphm above.
 var hyph = []string{
 
+	"ver&shy;schlechtern",
+
 	"An&shy;gabe",
 	"Konjunktur&shy;daten ",
 
@@ -124,6 +126,8 @@ var hyph = []string{
 
 	"Deutsch&shy;land",
 	"Welt&shy;wirtschaft",
+
+	// english
 
 	"Small+&shy;medium",
 	"enter&shy;prises",

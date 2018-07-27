@@ -47,14 +47,11 @@ More info in [deploy on linux/unix](./static/doc/linux-instructions.md)
 
 #### Participant login and reset
 
-* Participants can now use these links and login  
-https://dev-domain:port/survey?u=98991&survey_id=fmt&wave_id=2018-07&h=4059d765e4a4f211658373c07c5affb9   
+* Participants can now use these links to [login as user x](https://dev-domain:port/survey?u=98991&survey_id=fmt&wave_id=2018-07&h=4059d765e4a4f211658373c07c5affb9)   
 
-* They can now access the questionaire  
-https://dev-domain:port/survey
+* They can now [access the questionaire](https://dev-domain:port/survey)
 
-* For testing purposes, you may reset the questionaire  
-https://dev-domain:port/survey/reload-from-file?u=98991&survey_id=fmt&wave_id=2018-07&h=4059d765e4a4f211658373c07c5affb9
+* For testing purposes, you may [reset the questionaire](https://dev-domain:port/survey/reload-from-questionaire-template?u=98991&survey_id=fmt&wave_id=2018-07&h=4059d765e4a4f211658373c07c5affb9)
 
 
 

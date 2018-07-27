@@ -48,10 +48,11 @@ func addSeasonal1(q *qst.QuestionaireT) error {
 			inp := gr.AddInput()
 			inp.Type = "textblock"
 			inp.Desc = trl.S{
-				"de": " <br>\n Prognose Wachstum des BIP je <b>Quartal</b> <br>\n (real, saisonbereinigt, nicht annualisiert) <br>\n <br>\n ",
-				"en": " <br>\n Forecast <b>quarterly</b> GDP growth <br>\n(real, seasonally adjusted, non annualized) <br>\n <br>\n ",
+				"de": "Prognose Wachstum des BIP je <b>Quartal</b> <br>\n (real, saisonbereinigt, nicht annualisiert)",
+				"en": "Forecast <b>quarterly</b> GDP growth <br>\n(real, seasonally adjusted, non annualized)",
 			}
 			inp.ColSpanLabel = 3
+			inp.CSSLabel = "special-input-margin-vertical"
 		}
 		{
 			inp := gr.AddInput()
@@ -239,7 +240,7 @@ func addSeasonal1(q *qst.QuestionaireT) error {
 			inp.MaxChars = 30
 			inp.ColSpanLabel = 2
 			inp.ColSpanControl = 6
-			inp.CSSControl = "input-smaller"
+			inp.CSSControl = "mobile-input-smaller"
 		}
 
 	}

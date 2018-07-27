@@ -15,16 +15,30 @@ body{
     padding-right: 1px;
 }
 
+.go-quest-label {
+    display: inline-block;  /* activate line-height*/
+	font-size:     13px;
+	line-height:   14px;
+	/* white-space: nowrap; */
+}
+
+
+.go-quest-group-header{
+    display: inline-block;  /* activate line-height*/
+	line-height: 14px;    
+}
+
+
 .go-quest-page-section,
-.go-quest-page-header,
-dummy{
+.go-quest-page-header {
+    display: inline-block;  /* activate line-height*/
     font-size:  130%;
     font-weight: bold;
     margin-top: 2px;
 }
 
-.go-quest-page-header,
-dummy{
+
+.go-quest-page-header {
     font-size:  120%;
 }
 
@@ -35,11 +49,6 @@ dummy{
     height: 5px;
 }
 
-.go-quest-label, dummy {
-	font-size:     13px;
-	line-height:   1.0em;
-	/* white-space: nowrap; */
-}
 
 
 table{
@@ -47,7 +56,7 @@ table{
 }
 
 td{
-    border-bottom: 1px solid #2cc;
+    /* border-bottom: 1px solid #2cc; */
 	line-height:   0.9em;
 	/* transform: rotate(90deg);
 	transform-origin: left top 0; */
@@ -94,10 +103,13 @@ input[type=checkbox], input[type=radio]  {
 button[type=submit] {
     appearance: none;
 
-    margin: 1.5em 0;
     font-size: 1em; 
     color: #fff;
-    height: 2.5em; width: 100%;
+    height: 3.0em; 
+    width: 95%;
+    display: block;
+    margin: 0 auto;
+    margin-top: 6px;
  
     background-color: #0069B4;
     border: 1px solid #0069B4;
@@ -107,13 +119,28 @@ button[type=submit] {
 }
 
 
-.input-smaller {
+
+/* Ultra slim - old android devices */
+@media screen and (max-width: 410px)  {
+    input[type=checkbox], input[type=radio]  {
+        width: 18px; height: 18px;
+    }
+    .go-quest-label {
+        display: inline-block;  /* activate line-height*/
+        font-size: 13px;
+        line-height: 12px;
+    }
+}
+
+
+.mobile-input-smaller {
     padding: 0px 0px;
     font-size: 11px !important;
-    width: 25em !important;
+    width: 22em !important;
 }
 
 .mobile-wider {
     display: inline-block;
     min-width: 85px;    
 }
+

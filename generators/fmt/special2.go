@@ -39,6 +39,8 @@ func addSeasonal2(q *qst.QuestionaireT) error {
 				"en": "HICP  increase from Jan to Dec; expected value",
 			}
 			inp.ColSpanLabel = 3
+			inp.CSSLabel = "special-input-margin-vertical"
+
 		}
 
 		{
@@ -145,6 +147,7 @@ func addSeasonal2(q *qst.QuestionaireT) error {
 		}
 	}
 
+	// gr3
 	{
 		gr := p.AddGroup()
 		gr.Label = trl.S{"de": "3.", "en": "3."}
@@ -159,18 +162,6 @@ func addSeasonal2(q *qst.QuestionaireT) error {
 		}
 		gr.Cols = 100
 
-		// Vertical spacer
-		{
-			inp := gr.AddInput()
-			inp.Type = "textblock"
-			inp.ColSpanLabel = 100
-			inp.Desc = trl.S{
-				"de": "&nbsp;",
-				"en": "&nbsp;",
-			}
-			inp.CSSLabel = "special-input-line-height-8"
-		}
-
 		{
 			inp := gr.AddInput()
 			inp.Type = "textblock"
@@ -180,7 +171,7 @@ func addSeasonal2(q *qst.QuestionaireT) error {
 				"en": "6&nbsp;months",
 			}
 			inp.HAlignLabel = qst.HRight
-			inp.CSSLabel = "mobile-wider"
+			inp.CSSLabel = "mobile-wider  special-input-margin-vertical"
 		}
 
 		{
@@ -192,7 +183,7 @@ func addSeasonal2(q *qst.QuestionaireT) error {
 			inp.Validator = "inRange20"
 
 			inp.ColSpanLabel = 7
-			inp.CSSLabel = "vert-wider"
+			inp.CSSLabel = "special-input-vert-wider"
 			inp.ColSpanControl = 9
 			inp.Desc = trl.S{
 				"de": "zwischen&nbsp;",
@@ -243,7 +234,7 @@ func addSeasonal2(q *qst.QuestionaireT) error {
 			inp.Validator = "inRange20"
 
 			inp.ColSpanLabel = 7
-			inp.CSSLabel = "vert-wider"
+			inp.CSSLabel = "special-input-vert-wider"
 			inp.ColSpanControl = 9
 			inp.Desc = trl.S{
 				"de": "zwischen&nbsp;",
@@ -290,7 +281,7 @@ func addSeasonal2(q *qst.QuestionaireT) error {
 				"de": "&nbsp; [zentrales 90% Konfidenzintervall]",
 				"en": "&nbsp; [central 90pct confidence interval]",
 			}
-			inp.CSSLabel = "textblock-smaller"
+			inp.CSSLabel = "special-input-textblock-smaller"
 
 		}
 

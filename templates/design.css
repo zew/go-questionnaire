@@ -252,47 +252,6 @@ table.main-table tr:nth-child(odd){
 
 
 
-.go-quest-label,
-.dummy {
-	font-size:     12px;
-	line-height:   1.1em;
-}
-
-.vert-wider {
-	line-height: 160%;
-}
-
-.left-padding {
-	margin-left: 40px;
-}
-
-.vert-correct {
-	top: -3px;
-	position: relative;
-}
-
-
-.input-smaller {
-    padding: 0px 0px;
-    font-size: 11px;
-}
-
-.special-input-line-height-8 {
-	line-height: 8px;
-}
-
-
-.alternate-background {
-	background-color: #ccc;
-}
-
-.textblock-smaller {
-	font-size: 65%;
-	padding-top:    2px;
-	padding-bottom: 12px;
-	display: inline-block;
-}
-
 
 
 
@@ -300,12 +259,16 @@ table.main-table tr:nth-child(odd){
 	/* text-align: center; */
 }
 
-.go-quest-group-header {
-	/* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
-	font-size: 12px !important;
+.go-quest-label {
+    display: inline-block;  /* activate line-height*/
+	font-size:     12px;
+	line-height:   1.1em;
 }
 
-
+.go-quest-group-header {
+    display: inline-block;  /* activate line-height*/
+	font-size: 12px;
+}
 
 .go-quest-page-section {
 	font-size: 18px;
@@ -320,6 +283,52 @@ table.main-table tr:nth-child(odd){
 .go-quest-page-desc {
 	font-size: 14px;
 	line-height: 18px;
+}
+
+
+
+
+
+
+
+/* for radio inputs, rendering CSS */
+.vert-correct {
+	top: -3px;
+	position: relative;
+}
+
+
+.special-input-left-padding {
+	margin-left: 40px;
+}
+
+
+.special-input-input-smaller {
+    padding: 0px 0px;
+    font-size: 11px;
+}
+
+
+.special-input-vert-wider {
+	line-height: 160%;
+}
+
+.special-input-margin-vertical {
+	margin-top:    11px;
+	margin-bottom: 11px;
+}
+
+.special-input-textblock-smaller {
+	font-size: 65%;
+	padding-top:    2px;
+	padding-bottom: 12px;
+	display: inline-block;
+}
+
+
+
+.alternate-background {
+	background-color: #ccc;
 }
 
 

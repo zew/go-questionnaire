@@ -33,28 +33,25 @@
         {{toHtml (.Q.CurrentPageHTML) }}
 
 
-        <div style="float: right; min-width:90px; margin-right: 12px; position:relative; top: -10px;">
-            {{if .Q.HasNext}}
-            <!-- name="submitBtn" conflicts with JS form.submit() -->
-            <button type="submit" name="submitBtn" value="next" accesskey="n">
-                {{.Trls.page.Tr .Q.LangCode}} {{.Q.NextNaviNum}} >>
-            </button>
-            {{end}} 
-            &nbsp;
-        </div>
-        
-        <!-- the previous button is moved behind the next button -->
-        <div style="float: left; min-width:90px;">
-            &nbsp; 
-            {{if .Q.HasPrev}}
-            <!-- name="submitBtn" conflicts with JS form.submit() -->
-            <button type="submit" name="submitBtn" value="prev" accesskey="p" 
-                style='font-size:10px; height: 24px;
-                       width: 86px; padding: 2px;
-                '>
-                << {{.Trls.page.Tr .Q.LangCode}} {{.Q.PrevNaviNum}} </button>
-            {{end}}
-        </div>
+        {{if .Q.HasNext}}
+        <!-- name="submitBtn" conflicts with JS form.submit() -->
+        <button type="submit" name="submitBtn" value="next" accesskey="n">
+            {{.Trls.page.Tr .Q.LangCode}} {{.Q.NextNaviNum}} >>
+        </button>
+        {{end}} 
+
+        &nbsp;
+    
+        &nbsp; 
+        {{if .Q.HasPrev}}
+        <!-- name="submitBtn" conflicts with JS form.submit() -->
+        <button type="submit" name="submitBtn" value="prev" accesskey="p" 
+            style='font-size:10px; height: 24px;
+                    width: 86px; padding: 2px;
+                    display: bock; margin: 0; margin-left: 2.5%;
+            '>
+            << {{.Trls.page.Tr .Q.LangCode}} {{.Q.PrevNaviNum}} </button>
+        {{end}}
 
 
 

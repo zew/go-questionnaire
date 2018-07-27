@@ -34,7 +34,7 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				inp.CSSLabel = "vert-wider"
+				inp.CSSLabel = "special-input-vert-wider"
 				inp.ColSpanLabel = 3
 				impr := trl.S{}
 				for lc := range q.LangCodes {
@@ -54,7 +54,7 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 				inp := gr.AddInput()
 				inp.Type = "radiogroup"
 				inp.Name = "proxy"
-				inp.CSSLabel = "vert-wider"
+				inp.CSSLabel = "special-input-vert-wider"
 
 				inp.Label = trl.S{"de": " ", "en": " "}
 				inp.Desc = trl.S{"de": "Sind Sie die angeschriebene Person?", "en": "Are you the addressee?"}
@@ -363,7 +363,7 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 				inp.Validator = "inRange20"
 
 				inp.ColSpanLabel = 10
-				inp.CSSLabel = "vert-wider"
+				inp.CSSLabel = "special-input-vert-wider"
 				inp.ColSpanControl = 12
 				inp.Desc = trl.S{
 					"de": "zwischen&nbsp;",
@@ -410,7 +410,7 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 					"de": " [zentrales 90% Konfidenzintervall]",
 					"en": " [central 90pct confidence interval]",
 				}
-				inp.CSSLabel = "textblock-smaller"
+				inp.CSSLabel = "special-input-textblock-smaller"
 			}
 
 		}
@@ -432,7 +432,7 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 				inp.Validator = "inRange100"
 
 				inp.ColSpanLabel = 10
-				inp.CSSLabel = "vert-wider"
+				inp.CSSLabel = "special-input-vert-wider"
 				inp.ColSpanControl = 12
 				inp.Desc = trl.S{
 					"de": "zwischen&nbsp;",
@@ -479,7 +479,7 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 					"de": " [zentrales 90% Konfidenzintervall]",
 					"en": " [central 90pct confidence interval]",
 				}
-				inp.CSSLabel = "textblock-smaller"
+				inp.CSSLabel = "special-input-textblock-smaller"
 			}
 
 		}
@@ -731,7 +731,7 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 			inp.Validator = "inRange50000"
 
 			inp.ColSpanLabel = 55
-			inp.CSSLabel = "vert-wider"
+			inp.CSSLabel = "special-input-vert-wider"
 			inp.ColSpanControl = 45
 			inp.Desc = trl.S{
 				"de": `Den DAX erwarten wir in 6&nbsp;Monaten bei `,
@@ -750,7 +750,7 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 			inp.Validator = "inRange50000"
 
 			inp.ColSpanLabel = 55
-			inp.CSSLabel = "vert-wider"
+			inp.CSSLabel = "special-input-vert-wider"
 			inp.ColSpanControl = 21
 			inp.Desc = trl.S{
 				"de": `Mit einer Wahrscheinlichkeit von 90&nbsp;Prozent wird der DAX dann zwischen `,
@@ -789,7 +789,7 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 				inp := gr.AddInput()
 				inp.Type = "radiogroup"
 				inp.Name = "dax_fund"
-				inp.CSSLabel = "left-padding"
+				inp.CSSLabel = "special-input-left-padding"
 				for i2, val := range labelsOvervaluedFairUndervalued() {
 					rad := inp.AddRadio()
 					rad.Label = val
@@ -826,7 +826,7 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 				inp.Validator = "inRange100"
 
 				inp.ColSpanLabel = 22
-				inp.CSSLabel = "vert-wider"
+				inp.CSSLabel = "special-input-vert-wider"
 				inp.ColSpanControl = 12
 				inp.Desc = trl.S{
 					"de": " mittefristig (<b>6</b>&nbsp;Mo.) bei  ",
@@ -913,7 +913,7 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 					inp := gr.AddInput()
 					inp.Type = "radiogroup"
 					inp.Name = "finished"
-					inp.CSSLabel = "vert-wider"
+					inp.CSSLabel = "special-input-vert-wider"
 					inp.ColSpanLabel = 1
 					inp.ColSpanControl = 1
 					inp.Validator = "mustRadioGroup"
@@ -956,7 +956,7 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 					"en": "By Clicking 'OK' you receive a summary of your answers",
 				}
 				inp.ColSpanLabel = 1
-				inp.CSSLabel = "vert-wider"
+				inp.CSSLabel = "special-input-vert-wider"
 			}
 			{
 				inp := gr.AddInput()
@@ -990,19 +990,19 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "dynamic"
-				inp.CSSLabel = "vert-wider"
+				inp.CSSLabel = "special-input-vert-wider"
 				inp.DynamicFunc = "RepsonseStatistics"
 			}
 			{
 				inp := gr.AddInput()
 				inp.Type = "dynamic"
-				inp.CSSLabel = "vert-wider"
+				inp.CSSLabel = "special-input-vert-wider"
 				inp.DynamicFunc = "PersonalLink"
 			}
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				inp.CSSLabel = "vert-wider"
+				inp.CSSLabel = "special-input-vert-wider"
 				impr := trl.S{}
 				for lc := range q.LangCodes {
 					cnt, err := tpl.MarkDownFromFile("./static/doc/site-imprint.md", lc)

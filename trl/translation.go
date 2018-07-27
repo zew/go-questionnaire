@@ -103,6 +103,7 @@ var hyphm = map[string]string{}
 var hyph = []string{
 
 	"ver&shy;schlechtern",
+	// "saison&shy;bereinigt",
 
 	"An&shy;gabe",
 	"Konjunktur&shy;daten ",
@@ -117,8 +118,8 @@ var hyph = []string{
 	"Immob&shy;ilien&shy;kredite",
 	"Kon&shy;sum&shy;enten&shy;kredite",
 
-	"Regierungs&shy;bildung Deutschland",
-	"Kredit&shy;nachfrage",
+	"Regierungs&shy;bildung",
+	"Kredit&shy;nach&shy;frage",
 	"Kredit&shy;angebot",
 
 	"mittel&shy;fristig",

@@ -1,0 +1,85 @@
+/* hide the actual checkbox */
+.chkbx {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+}
+
+label[for="chkbx"] {
+
+    /* aloof - not scrolling */
+    /* 
+    position: fixed; 
+    top:  6px;
+    left: 6px;
+    */
+
+    position: relative;
+    display:  inline-block;
+    float: left;
+    margin: 4px;
+    margin-top: 6px;
+    margin-right: 6px;
+    margin-right: 12px;
+    margin-bottom: 8px;
+
+    z-index: 2;  /* > z-index of navigation */
+
+    width:  28px;
+    height: 22px;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' x='0px' y='0px' width='30px' height='30px' viewBox='0 0 30 30' enable-background='new 0 0 30 30' xml:space='preserve'><rect width='30' height='6'/><rect y='24' width='30' height='6'/><rect y='12' width='30' height='6'/></svg>");
+
+    background-size: contain; 
+}
+
+
+
+.navigation {
+    display:  inline-block;
+    position: absolute;
+    padding: 0;
+    z-index: 1;
+    background: #888;
+
+    list-style: none;
+    /* border: 1px solid blue; */
+    width:  300px;
+    height: auto;
+
+    /* refers to body:position:relative */
+    top:     2px;
+    left:    2px;
+
+}
+
+
+.navigation li {
+    border: 1px solid lightblue;
+    padding: 4px;
+    padding-left: 16px;
+}
+
+.navigation li.is-complete {
+    background-color: aliceblue;
+}
+.navigation li.is-active {
+    background-color: burlywood;
+}
+
+
+
+/* action */
+.chkbx:checked   ~ .navigation {
+    visibility: visible;
+    opacity:1;
+    transition:opacity 150ms;
+
+}
+.chkbx           ~ .navigation {
+    visibility: hidden;
+    opacity:0;
+    transition:opacity 200ms;
+}
+
+
+

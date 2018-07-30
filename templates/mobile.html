@@ -10,15 +10,25 @@
 	<link rel="shortcut icon" href="data:;base64,=">
 	<link rel="icon"          href="data:;base64,=">
 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
 
 	<title>{{.Trls.app_label.Tr $lc}}</title>
 	<link  href="{{prefix "/css/mobile.css"}}" rel="stylesheet" type="text/css" />
+	<link  href="{{prefix "/css/mobile-menu-without-js.css"}}" rel="stylesheet" type="text/css" />
 
 </head>
 <body >
 
     <!-- width=100% inscribe -->
-    <form method="POST" action="{{prefix " "}}" class='go-quest-main-form' name='frmMain'>
+    <form method="POST" action="{{prefix ""}}" class='go-quest-main-form' name='frmMain' >
+
+
+        <input id="chkbx" class="chkbx" type="checkbox" />
+        <label for="chkbx">&nbsp;</label>
+
+        {{toHtml (.Q.MenuMobile) }}
+
 
         {{if .Q.HasErrors}}
         <p class="error" id="error" style="font-size:16px;margin: 20px 0px; ">{{.Trls.correct_errors.Tr .Q.LangCode}} </p>

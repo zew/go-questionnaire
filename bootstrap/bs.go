@@ -51,7 +51,7 @@ func Config() {
 		log.Printf("done creating file %v", pth)
 	}
 
-	tpls := []string{"main.html", "design.css", "site.css", "mobile.html", "mobile.css"}
+	tpls := []string{"main.html", "design.css", "site.css", "mobile.html", "mobile.css", "mobile-menu-without-js.css"}
 	tpl.Parse(tpls...)
 
 }

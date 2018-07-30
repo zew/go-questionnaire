@@ -31,23 +31,13 @@ const (
 //
 // It should be clickable and jump to the indicated page.
 // This means, we have to submit the form and submit the destination page.
+// Compare MenuMobile()
 func (q *QuestionaireT) ProgressBar() string {
 
 	b := bytes.Buffer{}
 	// b.WriteString(fmt.Sprintf(htmlExample))
 
-	// This does not post the form :(
-	//		location.href='%v?page=%v
-	// We need
-	//
-	//		this.form.page.value='%v';
-	// this.form.submit();  - not working for <li> element
-	//		document.forms.frmMain.submit()
-	//
-	// Debug with
-	// 		console.log('document.forms.frmMain.page.value: ',document.forms.frmMain.page.value);
 	b.WriteString(fmt.Sprintf(`<input type="hidden" name="page" value="-1" >`))
-
 	b.WriteString(fmt.Sprintf("<ol class='progress'>"))
 
 	for idx, p := range q.Pages {
@@ -57,7 +47,7 @@ func (q *QuestionaireT) ProgressBar() string {
 		}
 
 		eff := p.Label.Tr(q.LangCode)
-		if p.Short != nil {
+		if p.Short != nil { // short label dedicated to menu
 			eff = p.Short.Tr(q.LangCode)
 		}
 
@@ -83,22 +73,34 @@ func (q *QuestionaireT) ProgressBar() string {
 		}
 
 		// make hyperlinks to the pages
-		onclick := fmt.Sprintf(` onclick="document.forms.frmMain.page.value='%v';document.forms.frmMain.submit();" style="cursor:pointer"  `, idx)
+		/*
+			This does not post the form :(
+					location.href='%v?page=%v
+			We need
+					this.form.page.value='%v';
+					this.form.submit();  - not working for <li> element
+					document.forms.frmMain.submit() // instead
+			Debug with
+					console.log('document.forms.frmMain.page.value: ',document.forms.frmMain.page.value);
+		*/
+		onclick := fmt.Sprintf(` onclick="document.forms.frmMain.page.value='%v';document.forms.frmMain.submit();" `, idx)
+		pointr := " style='cursor:pointer' "
 		if cfg.Get().AllowSkipForward == false && idx > q.CurrPage {
 			onclick = ""
+			pointr = ""
 		}
 
 		b.WriteString(
 			fmt.Sprintf(`
 					<li 
-						%v
+						%v %v
 						class="%v" data-step="%v">
 						<span style='display: inline-block; line-height: 95%%;  %v'>
 							%v%v
 						<span>
 					</li> 
 				`,
-				onclick,
+				onclick, pointr,
 				liClass, p.NavigationalNum, //idx+1,
 				leftOrCenter,
 				sect, eff,

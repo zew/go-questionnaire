@@ -3,6 +3,7 @@ package qst
 import (
 	"bytes"
 	"fmt"
+	"strings"
 
 	"github.com/zew/go-questionaire/cfg"
 )
@@ -85,22 +86,43 @@ func (q *QuestionaireT) MenuMobile() string {
 		)
 
 	}
-	lc := "EN | DE"
-	// t := tpl.TplDataT{}
-	// lc = t.LanguageChooser(cfg.Pref(), q.LangCode)
+	lc := languageChooser(q.LangCode)
 	fmt.Fprintf(&b, `
 		<li class="" >
 			%v
 		</li> 
 	`, lc)
 
+	imp := fmt.Sprintf("<a href='%v'>%v</a>",
+		cfg.Pref("/doc/site-imprint.md"),
+		cfg.Get().Mp["imprint"].Tr(q.LangCode),
+	)
+
 	fmt.Fprintf(&b, `
 		<li class="" >
 			%v
 		</li> 
-	`, "Imprint")
+	`, imp)
 
 	fmt.Fprintf(&b, "</ul>")
 
 	return b.String()
+}
+
+// A duplicate of
+// tpl.TplDataT{}.LanguageChooser(cfg.Pref(), q.LangCode)
+func languageChooser(currCode string) string {
+
+	s := []string{}
+	for _, key := range cfg.Get().LangCodes {
+		keyCap := strings.Title(key)
+		if key == currCode {
+			s = append(s, fmt.Sprintf("<b           title='%v'>%v</b>\n", key, keyCap))
+		} else {
+			uri := cfg.Pref() + "?lang_code=" + key
+			s = append(s, fmt.Sprintf("<a href='%v' title='%v'>%v</a>\n", uri, key, keyCap))
+		}
+	}
+	return strings.Join(s, "  |  ")
+
 }

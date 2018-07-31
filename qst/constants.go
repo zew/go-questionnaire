@@ -26,6 +26,7 @@ const (
 	// ValSet is returned, if the checkbox was checked
 	ValSet    = "1"
 	vspacer   = "<div class='go-quest-vspacer'> &nbsp; </div>\n"
+	vspacer8  = "<div class='go-quest-vspacer-8'> &nbsp; </div>\n"
 	vspacer16 = "<div class='go-quest-vspacer-16'> &nbsp; </div>\n"
 
 	tableOpen  = "<table class='main-table' ><tr>\n"

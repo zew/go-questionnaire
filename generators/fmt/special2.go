@@ -30,6 +30,7 @@ func addSeasonal2(q *qst.QuestionaireT) error {
 			"de": "Punktprognose der jährlichen Inflationsrate im Euroraum",
 			"en": "Forecast yearly inflation rate in the Euro area",
 		}
+		gr.GroupHeaderVSpacers = 1
 
 		{
 			inp := gr.AddInput()
@@ -39,8 +40,6 @@ func addSeasonal2(q *qst.QuestionaireT) error {
 				"en": "HICP  increase from Jan to Dec; expected value",
 			}
 			inp.ColSpanLabel = 3
-			inp.CSSLabel = "special-input-margin-vertical"
-
 		}
 
 		{
@@ -150,6 +149,7 @@ func addSeasonal2(q *qst.QuestionaireT) error {
 	// gr3
 	{
 		gr := p.AddGroup()
+		gr.Cols = 100
 		gr.Label = trl.S{"de": "3.", "en": "3."}
 		val, err := q.Survey.Param("main_refinance_rate_ecb") // 01.02.2018: 0,0
 		if err != nil {
@@ -160,7 +160,7 @@ func addSeasonal2(q *qst.QuestionaireT) error {
 			"de": fmt.Sprintf("Den Hauptrefinanzierungssatz der EZB (am %v) erwarte ich auf Sicht von", val),
 			"en": fmt.Sprintf("I expect the main refinance rate of the ECB (%v) in", val),
 		}
-		gr.Cols = 100
+		gr.GroupHeaderVSpacers = 1
 
 		{
 			inp := gr.AddInput()
@@ -171,7 +171,7 @@ func addSeasonal2(q *qst.QuestionaireT) error {
 				"en": "6&nbsp;months",
 			}
 			inp.HAlignLabel = qst.HRight
-			inp.CSSLabel = "mobile-wider  special-input-margin-vertical"
+			inp.CSSLabel = "mobile-wider"
 		}
 
 		{

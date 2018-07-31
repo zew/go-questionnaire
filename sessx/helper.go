@@ -8,6 +8,8 @@ package sessx
 //
 // It checks, whether any of the above had the param
 // key set to *empty* string.
+//
+// Second parameter is 'is set'
 func (sess *SessT) ReqParam(key string, defaultVal ...string) (string, bool) {
 
 	p := ""

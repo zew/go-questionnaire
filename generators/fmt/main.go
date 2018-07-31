@@ -352,9 +352,11 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 			gr.Cols = 100 // necessary, otherwise no vspacers
 			gr.Label = trl.S{"de": "5a.", "en": "5a."}
 			gr.Desc = trl.S{
-				"de": "Die <b>kurzfristigen</b> Zinsen (3-Mo.-Interbanksätze) im <b>Euroraum</b> erwarten wir auf Sicht von 6&nbsp;Monaten <br>\n &nbsp;",
-				"en": "We expect <b>short term</b> interest rates (3 months interbank) in the <b>euro area</b>  <br>\n &nbsp;",
+				"de": "Die <b>kurzfristigen</b> Zinsen (3-Mo.-Interbanksätze) im <b>Euroraum</b> erwarten wir auf Sicht von 6&nbsp;Monaten",
+				"en": "We expect <b>short term</b> interest rates (3 months interbank) in the <b>euro area</b>",
 			}
+			gr.GroupHeaderVSpacers = 1
+
 			{
 				inp := gr.AddInput()
 				inp.Type = "text"
@@ -363,7 +365,7 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 				inp.Validator = "inRange20"
 
 				inp.ColSpanLabel = 10
-				inp.CSSLabel = "special-input-vert-wider"
+				// inp.CSSLabel = "special-input-vert-wider"
 				inp.ColSpanControl = 12
 				inp.Desc = trl.S{
 					"de": "zwischen&nbsp;",
@@ -420,9 +422,10 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 			gr.Cols = 100 // necessary, otherwise no vspacers
 			gr.Label = trl.S{"de": "5b.", "en": "5b."}
 			gr.Desc = trl.S{
-				"de": "Die <b>langfristigen</b> Zinsen (Renditen 10jg. Staatsanleihen) in <b>Deutschland</b> erwarten wir auf Sicht von 6&nbsp;Monaten <br>\n &nbsp;",
-				"en": "We expect <b>long term</b> interest rates in <b>Germany</b> in 6&nbsp;months <br>\n &nbsp;",
+				"de": "Die <b>langfristigen</b> Zinsen (Renditen 10jg. Staatsanleihen) in <b>Deutschland</b> erwarten wir auf Sicht von 6&nbsp;Monaten",
+				"en": "We expect <b>long term</b> interest rates in <b>Germany</b> in 6&nbsp;months",
 			}
+			gr.GroupHeaderVSpacers = 1
 
 			{
 				inp := gr.AddInput()
@@ -432,7 +435,7 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 				inp.Validator = "inRange100"
 
 				inp.ColSpanLabel = 10
-				inp.CSSLabel = "special-input-vert-wider"
+				// inp.CSSLabel = "special-input-vert-wider"
 				inp.ColSpanControl = 12
 				inp.Desc = trl.S{
 					"de": "zwischen&nbsp;",
@@ -721,8 +724,9 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 		}
 
 		gr := p.AddGroup()
-		gr.Label = trl.S{"de": "7b.", "en": "7b."}
 		gr.Cols = 100
+		gr.Label = trl.S{"de": "7b.", "en": "7b."}
+
 		{
 			inp := gr.AddInput()
 			inp.Type = "text"
@@ -731,7 +735,7 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 			inp.Validator = "inRange50000"
 
 			inp.ColSpanLabel = 55
-			inp.CSSLabel = "special-input-vert-wider"
+			// inp.CSSLabel = "special-input-vert-wider"
 			inp.ColSpanControl = 45
 			inp.Desc = trl.S{
 				"de": `Den DAX erwarten wir in 6&nbsp;Monaten bei `,
@@ -750,7 +754,6 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 			inp.Validator = "inRange50000"
 
 			inp.ColSpanLabel = 55
-			inp.CSSLabel = "special-input-vert-wider"
 			inp.ColSpanControl = 21
 			inp.Desc = trl.S{
 				"de": `Mit einer Wahrscheinlichkeit von 90&nbsp;Prozent wird der DAX dann zwischen `,
@@ -784,6 +787,7 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 				"de": "Aus Sicht der Fundamentaldaten der DAX-Unternehmen ist der DAX derzeit",
 				"en": "The fundamentals of the companies comprising the DAX make the DAX currently",
 			}
+			gr.GroupHeaderVSpacers = 1
 
 			{
 				inp := gr.AddInput()
@@ -812,12 +816,14 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 		//
 		{
 			gr := p.AddGroup()
+			gr.Cols = 100
 			gr.Label = trl.S{"de": "8.", "en": "8."}
 			gr.Desc = trl.S{
 				"de": "Die Wahrscheinlichkeit für ein Extremereignis im deutschen Finanzmarkt liegt",
 				"en": "The probability for an extreme event in the German financial markets is",
 			}
-			gr.Cols = 100
+			gr.GroupHeaderVSpacers = 1
+
 			{
 				inp := gr.AddInput()
 				inp.Type = "text"
@@ -826,7 +832,6 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 				inp.Validator = "inRange100"
 
 				inp.ColSpanLabel = 22
-				inp.CSSLabel = "special-input-vert-wider"
 				inp.ColSpanControl = 12
 				inp.Desc = trl.S{
 					"de": " mittefristig (<b>6</b>&nbsp;Mo.) bei  ",

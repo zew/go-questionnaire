@@ -292,8 +292,9 @@ func (i inputT) HTML(langCode string, numCols int) string {
 // A group is a layout unit with a configurable number of columns.
 type groupT struct {
 	// Name  string
-	Label trl.S `json:"label,omitempty"`
-	Desc  trl.S `json:"description,omitempty"`
+	Label               trl.S `json:"label,omitempty"`
+	Desc                trl.S `json:"description,omitempty"`
+	GroupHeaderVSpacers int   `json:"bottom_half_rows,omitempty"` // number of half rows below the group header
 
 	Vertical bool `json:"vertical,omitempty"` // groups vertically, not horizontally, not yet implemented
 
@@ -361,6 +362,10 @@ func (gr groupT) HTML(langCode string) string {
 	b.WriteString(vspacer)
 
 	b.WriteString("</div>\n")
+
+	for i := 0; i < gr.GroupHeaderVSpacers; i++ {
+		b.WriteString(vspacer8)
+	}
 
 	// Rendering inputs
 	// Adding up columns
@@ -450,6 +455,7 @@ type QuestionaireT struct {
 	ClosingTime time.Time `json:"closing_time,omitempty"` // truncated to second
 	RemoteIP    string    `json:"remote_ip,omitempty"`
 	UserAgent   string    `json:"user_agent,omitempty"`
+	Mobile      int       `json:"mobile,omitempty"` // 0 - no preference, 1 - desktop, 2 - mobile
 	MD5         string    `json:"md_5,omitempty"`
 
 	// LangCode and LangCodes are imposed from cfg.LangCodes via session."lang_code"

@@ -276,14 +276,13 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 			q.ClosingTime = time.Now().Truncate(time.Second)
 		}
 	}
-	// err = q.ComputeDynamicContent(prevPage)
-	// if err != nil {
-	// 	log.Printf("ComputeDynamicContent computation for page %v caused error %v", prevPage, err)
-	// }
+
 	err = q.ComputeDynamicContent(q.CurrPage)
 	if err != nil {
 		log.Printf("ComputeDynamicContent computation for page %v caused error %v", prevPage, err)
 	}
+
+	mobile := computeMobile(w, r, q)
 
 	//
 	//
@@ -314,7 +313,6 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
 	tplBundle := tpl.Get(w, r, "main.html")
 
-	mobile := computeMobile(w, r, q)
 	if mobile {
 		tplBundle = tpl.Get(w, r, "mobile.html")
 		q.Pages[q.CurrPage].Width = 100
@@ -363,12 +361,28 @@ func computeMobile(w http.ResponseWriter, r *http.Request, q *qst.QuestionaireT)
 	}
 
 	// Override by explicit url parameter
-	mP := sess.EffectiveStr("mobile")
-	if mP == "true" || mP == "1" {
-		mobile = true
+	if mP, ok := sess.ReqParam("mobile"); ok {
+		if mP == "0" || mP == "false" {
+			mobile = false
+			q.Mobile = 0 // no user preference
+		}
+		if mP == "1" || mP == "true" {
+			mobile = true
+			q.Mobile = 1 // explicit mobile
+		}
+		if mP == "2" || mP == "desktop" {
+			mobile = false
+			q.Mobile = 2 // explicit desktop
+		}
 	}
-	if mP == "false" || mP == "0" {
-		mobile = false
+
+	// log.Printf("Mobile = %v", q.Mobile)
+
+	if q.Mobile == 1 {
+		return true
+	}
+	if q.Mobile == 2 {
+		return false
 	}
 
 	return mobile

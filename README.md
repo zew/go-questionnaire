@@ -122,13 +122,8 @@ but that remains as elusive as it did with XML.
 
 ### Layout concept
 
-Our participants do not use Smartphones to fill out
-scientific questionaires.  
-If that changes, go-questionaire needs a _separate_ mobile layout engine. 
-Hybrid solutions (_mobile first_) are insufficient.
 
-
-#### Accepted Solution
+#### Accepted solution
 
 Considering `float-left` or `inline-block`, we chose `fixed table` layout.
 
@@ -140,10 +135,32 @@ Page remains horizontally _centered_.
 
 ![Page width](./static/img/doc/page-width.png)
 
-Each control group width can be adjusted.
-The control group remains left-aligned.
+Each input group width can be adjusted.
+The input group remains left-aligned.
 
 ![Group width](./static/img/doc/group-width.png)
+
+
+Each input group has flexible number of columns.
+It is deliberately not standardized on hundred,
+so that odd distributions are possible - i.e. seven columns.
+
+
+![Group width](./static/img/doc/group-columns.png)
+
+
+The inputs are fitted in. Usual an input occupies one column 
+for its label and another column for its control part.
+These numbers are customizable, so that any distribution
+of labels and controls on an arbitrary grid is possible.
+
+Use textblocks with `&nbsp;` to create empty space.
+
+![Group width](./static/img/doc/group-with-label-and-input.png)
+
+The layout engine creates new rows, if the inputs have filled up
+the number of columns defined per group.
+
 
 Group property `OddRowsColoring` to activate alternating background
 
@@ -152,7 +169,12 @@ Group property `OddRowsColoring` to activate alternating background
 The table border can be set via ./templates/site.css  
 `table.bordered td { myBorderCSS }`
 
-#### Rejected Solutions
+Vertical alignment is baseline for everything outside the input tables.
+Input tables are vertically middled.
+
+We might introduce InputT.VAlignLabel and InputT.VAlignControl to customize this in future.
+
+#### Rejected solutions
 
 Inline block suffers from the disadvantage, that 
 the white space between inline block elements subtracts from the total width.
@@ -160,9 +182,26 @@ The column width computation must be based on a compromise slack of i.e. 97.5 pe
 
 Stacking cells wit `float: left` takes away the nice vertical middle alignment of the cells.
 
+
+### Mobile layout
+
+go-questionaire has a _separate_ layout for mobile clients.
+Hybrid solutions (_mobile first_) were considered complex and insufficient.
+
+The HTML rendering of groups and inputs remains unchanged.
+Global layout template and CSS files are different.
+Instead of progress bar and footer navigation, mobile clients get a `mobile menu`.
+
+Switching is done based on the user agent string, but can be overridden by `mobile` parameter.
+0 - automatic. 1 - mobile forced. 2 - desktop forced.
+
+Table layout `fixed` must be relinguished, otherwise labels and controls are cropped on devices with very small width.
+
 ## Optimization
 
-Saving only responses to session/JSON; not the entire questionaire data.
+* Saving only responses to session/JSON; not the entire questionaire data.
+
+* Table data is aligned vertically middle. Sometimes it should be configurable to baseline. 
 
 
 ## About Go-App-Tpl

@@ -37,7 +37,7 @@ type surveyT struct {
 
 	Deadline time.Time `json:"deadline,omitempty"` // No more responses accepted
 
-	Params []ParamT `json:"params,omitempty"`
+	Params []ParamT `json:"params,omitempty"` // I.e. NASDAQ at the time begin of the wave - being used in the wording of the questions
 }
 
 // NewSurvey returns a survey based on current time
@@ -142,7 +142,14 @@ func (s *surveyT) HTMLForm(questTypes []string) string {
 	dd := dropDown(questTypes, s.Type)
 
 	kv := ""
-	for i := 0; i < 2; i++ {
+
+	nP := 2
+	if len(s.Params) < nP {
+		for i := len(s.Params); i < nP; i++ {
+			s.Params = append(s.Params, ParamT{})
+		}
+	}
+	for i := 0; i < nP; i++ {
 		kv += fmt.Sprintf(
 			`
 			<span>Param%v    </span>

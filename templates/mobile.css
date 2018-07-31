@@ -17,6 +17,17 @@ body{
     background-color: yellowgreen
 }
 
+
+.error{
+	color:#622;
+	/* line-height:1.1em; */
+    max-width: 400px;
+    font-weight: bold;
+	white-space: pre-line;
+}
+
+
+
 .go-quest-main-form {
     padding-left: 4px;
     padding-right: 1px;
@@ -26,7 +37,7 @@ body{
     display: inline-block;  /* activate line-height*/
 	font-size:     13px;
 	line-height:   14px;
-	/* white-space: nowrap; */
+    /* white-space: nowrap; */
 }
 
 
@@ -52,26 +63,53 @@ body{
 .go-quest-vspacer{
     height: 2px;
 }
+.go-quest-vspacer-8{
+    height: 2px;
+}
 .go-quest-vspacer-16{
     height: 5px;
 }
 
 
-
-table{
-    border-collapse: collapse;
+table.main-table{
+	/* table-layout: fixed; */  /* prevents accommodating cell with to contents */
+	border-collapse: collapse; 
+	/* margin: 0 auto; */	
+	/* border: 1px solid #eaeaea;  */
 }
 
-td{
-    /* border-bottom: 1px solid #2cc; */
+table.alternate-row-color{
+	background-color:  #eaeaea; 
+}
+
+table.bordered {
+	/* border: 1px solid #eaeaea;  */
+}
+table.bordered td{
+	/* border: 2px solid #eaeaea;   */
+}
+
+
+table.main-table td{
+	margin: 0;
+	/* padding: 1px;
+	padding-bottom: 2px; */
 	line-height:   0.9em;
-	/* transform: rotate(90deg);
-	transform-origin: left top 0; */
-}
-td:nth-child(1){
-    /* width: 30% !important; */
+
+    vertical-align: middle;
+    /* vertical-align: bottom; */
+
+    /* border: 1px solid #eaeaea;  */
 }
 
+/* this does not work, since every row is rendered as separate table  */
+table.main-table tr:nth-child(odd){
+}
+
+.main-table +  .main-table {
+    /* margin-bottom: 3px; */
+    border-top: 2px solid crimson;
+}
 
 td:nth-child(odd){
     background-color: #ddd;
@@ -149,5 +187,10 @@ button[type=submit] {
 .mobile-wider {
     display: inline-block;
     min-width: 85px;    
+}
+
+/* increase line height for textblocks */
+.special-input-vert-wider {
+	line-height: 130%;
 }
 

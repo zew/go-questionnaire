@@ -4,6 +4,7 @@
     clip: rect(0, 0, 0, 0);
 }
 
+/* the label for the checkbox is styled as button with three bars */
 label[for="chkbx"] {
 
     /* aloof - not scrolling */
@@ -39,7 +40,10 @@ label[for="chkbx"] {
     position: absolute;
     padding: 0;
     z-index: 1;
-    background: #888;
+    background-color: #DDD;
+    box-shadow: 3px 2px #888;
+    border-radius: 2px;
+
 
     list-style: none;
     /* border: 1px solid blue; */
@@ -54,16 +58,19 @@ label[for="chkbx"] {
 
 
 .navigation li {
-    border: 1px solid lightblue;
+    border: 1px solid #BBB;
     padding: 4px;
     padding-left: 16px;
 }
 
 .navigation li.is-complete {
-    background-color: aliceblue;
+    border-left:  16px solid #DDD;
+}
+.navigation li.is-complete {
+    border-left:  16px solid #EEE;
 }
 .navigation li.is-active {
-    background-color: burlywood;
+    border-left:  16px solid #FFF;
 }
 
 

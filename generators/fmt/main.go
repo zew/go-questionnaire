@@ -231,6 +231,7 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "text"
+				inp.InputMode = " inputmode='numeric' "
 				inp.Name = "y_q_deu"
 				inp.MaxChars = 4
 				inp.Validator = "inRange20"
@@ -248,6 +249,7 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "text"
+				inp.InputMode = " inputmode='numeric' "
 				inp.Name = "y_y_deu"
 				inp.MaxChars = 4
 				inp.Validator = "inRange20"
@@ -271,6 +273,7 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "text"
+				inp.InputMode = " inputmode='numeric' "
 				inp.Name = "yshr_q_deu"
 				inp.MaxChars = 4
 				inp.Validator = "inRange100"
@@ -288,6 +291,7 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "text"
+				inp.InputMode = " inputmode='numeric' "
 				inp.Name = "yshr_y_deu"
 				inp.MaxChars = 4
 				inp.Validator = "inRange100"
@@ -360,6 +364,7 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "text"
+				inp.InputMode = " inputmode='numeric' "
 				inp.Name = "i_ez_low"
 				inp.MaxChars = 4
 				inp.Validator = "inRange20"
@@ -379,6 +384,7 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "text"
+				inp.InputMode = " inputmode='numeric' "
 				inp.Name = "i_ez_high"
 				inp.MaxChars = 4
 				inp.Validator = "inRange20"
@@ -430,6 +436,7 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "text"
+				inp.InputMode = " inputmode='numeric' "
 				inp.Name = "r_deu_low"
 				inp.MaxChars = 4
 				inp.Validator = "inRange100"
@@ -449,6 +456,7 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "text"
+				inp.InputMode = " inputmode='numeric' "
 				inp.Name = "r_deu_high"
 				inp.MaxChars = 4
 				inp.Validator = "inRange100"
@@ -730,6 +738,7 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 		{
 			inp := gr.AddInput()
 			inp.Type = "text"
+			inp.InputMode = " inputmode='numeric' "
 			inp.Name = "dax_6"
 			inp.MaxChars = 6
 			inp.Validator = "inRange50000"
@@ -749,6 +758,7 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 		{
 			inp := gr.AddInput()
 			inp.Type = "text"
+			inp.InputMode = " inputmode='numeric' "
 			inp.Name = "dax_6_low"
 			inp.MaxChars = 6
 			inp.Validator = "inRange50000"
@@ -767,6 +777,7 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 		{
 			inp := gr.AddInput()
 			inp.Type = "text"
+			inp.InputMode = " inputmode='numeric' "
 			inp.Name = "dax_6_high"
 			inp.MaxChars = 6
 			inp.Validator = "inRange50000"
@@ -827,6 +838,7 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "text"
+				inp.InputMode = " inputmode='numeric' "
 				inp.Name = "crash_low"
 				inp.MaxChars = 4
 				inp.Validator = "inRange100"
@@ -845,6 +857,7 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "text"
+				inp.InputMode = " inputmode='numeric' "
 				inp.Name = "crash_high"
 				inp.MaxChars = 4
 				inp.Validator = "inRange100"

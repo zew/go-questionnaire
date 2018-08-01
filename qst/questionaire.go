@@ -37,9 +37,10 @@ func (i *inputT) AddRadio() *radioT {
 // There is one exception for multiple radios (radiogroup) with the same name but distinct values.
 // Multiple checkboxes (checkboxgroup) with same name but distinct values are a dubious instrument. See comment to implementedType checkboxgroup.
 type inputT struct {
-	Name     string `json:"name,omitempty"`
-	Type     string `json:"type,omitempty"`
-	MaxChars int    `json:"max_chars,omitempty"` // Number of input chars, also used to computer width
+	Name      string `json:"name,omitempty"`
+	Type      string `json:"type,omitempty"`
+	InputMode string `json:"input_mode,omitempty"` // set to i.e. " inputmode='numeric' "
+	MaxChars  int    `json:"max_chars,omitempty"`  // Number of input chars, also used to computer width
 
 	HAlignLabel   horizontalAlignment `json:"horizontal_align_label,omitempty"`   // description left/center/right of input, default left, similar setting for radioT but not for group
 	HAlignControl horizontalAlignment `json:"horizontal_align_control,omitempty"` // label       left/center/right of input, default left, similar setting for radioT but not for group
@@ -250,8 +251,8 @@ func (i inputT) HTML(langCode string, numCols int) string {
 			ctrl += fmt.Sprintf("<textarea        name='%v' id='%v' title='%v %v' class='%v' style='%v' %v %v>%v</textarea>\n",
 				nm, nm, i.Label.TrSilent(langCode), i.Desc.TrSilent(langCode), i.CSSControl, width, maxChars, colsRows, val)
 		} else {
-			ctrl += fmt.Sprintf("<input type='%v' name='%v' id='%v' title='%v %v' class='%v' style='%v' %v %v  value='%v' />\n",
-				i.Type,
+			ctrl += fmt.Sprintf("<input type='%v' %v name='%v' id='%v' title='%v %v' class='%v' style='%v' %v %v  value='%v' />\n",
+				i.Type, i.InputMode,
 				nm, nm, i.Label.TrSilent(langCode), i.Desc.TrSilent(langCode), i.CSSControl, width, maxChars, checked, val)
 		}
 

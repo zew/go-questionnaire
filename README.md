@@ -192,6 +192,8 @@ The HTML rendering of groups and inputs remains unchanged.
 Global layout template and CSS files are different.
 Instead of progress bar and footer navigation, mobile clients get a `mobile menu`.
 
+The mobile layout is free of any JavaScript.
+
 Switching is done based on the user agent string, but can be overridden by `mobile` parameter.
 0 - automatic. 1 - mobile forced. 2 - desktop forced.
 

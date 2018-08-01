@@ -45,6 +45,7 @@ func addSeasonal2(q *qst.QuestionaireT) error {
 		{
 			inp := gr.AddInput()
 			inp.Type = "text"
+			inp.InputMode = " inputmode='numeric' "
 			inp.Name = "p1_y1"
 			inp.MaxChars = 4
 			inp.Validator = "inRange20"
@@ -62,6 +63,7 @@ func addSeasonal2(q *qst.QuestionaireT) error {
 		{
 			inp := gr.AddInput()
 			inp.Type = "text"
+			inp.InputMode = " inputmode='numeric' "
 			inp.Name = "p1_y2"
 			inp.MaxChars = 4
 			inp.Validator = "inRange20"
@@ -78,6 +80,7 @@ func addSeasonal2(q *qst.QuestionaireT) error {
 		{
 			inp := gr.AddInput()
 			inp.Type = "text"
+			inp.InputMode = " inputmode='numeric' "
 			inp.Name = "p1_y3"
 			inp.MaxChars = 4
 			inp.Validator = "inRange20"
@@ -178,6 +181,7 @@ func addSeasonal2(q *qst.QuestionaireT) error {
 
 			inp := gr.AddInput()
 			inp.Type = "text"
+			inp.InputMode = " inputmode='numeric' "
 			inp.Name = "i_ez_06_low"
 			inp.MaxChars = 4
 			inp.Validator = "inRange20"
@@ -197,6 +201,7 @@ func addSeasonal2(q *qst.QuestionaireT) error {
 		{
 			inp := gr.AddInput()
 			inp.Type = "text"
+			inp.InputMode = " inputmode='numeric' "
 			inp.Name = "i_ez_06_high"
 			inp.MaxChars = 4
 			inp.Validator = "inRange20"
@@ -229,6 +234,7 @@ func addSeasonal2(q *qst.QuestionaireT) error {
 		{
 			inp := gr.AddInput()
 			inp.Type = "text"
+			inp.InputMode = " inputmode='numeric' "
 			inp.Name = "i_ez_24_low"
 			inp.MaxChars = 4
 			inp.Validator = "inRange20"
@@ -248,6 +254,7 @@ func addSeasonal2(q *qst.QuestionaireT) error {
 		{
 			inp := gr.AddInput()
 			inp.Type = "text"
+			inp.InputMode = " inputmode='numeric' "
 			inp.Name = "i_ez_24_high"
 			inp.MaxChars = 4
 			inp.Validator = "inRange20"

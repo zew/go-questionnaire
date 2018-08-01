@@ -14,7 +14,7 @@ body{
     margin: 0;
     padding: 0;
     position: relative; /* for menu-wo-js */
-    background-color: yellowgreen
+    /* background-color: yellowgreen */
 }
 
 
@@ -81,6 +81,12 @@ table.main-table{
 table.alternate-row-color{
 	background-color:  #eaeaea; 
 }
+.main-table +  .main-table {
+    /* margin-bottom: 3px; */
+    border-top: 2px solid #ddd;
+    border-top: 2px solid #fff;
+}
+
 
 table.bordered {
 	/* border: 1px solid #eaeaea;  */
@@ -106,16 +112,12 @@ table.main-table td{
 table.main-table tr:nth-child(odd){
 }
 
-.main-table +  .main-table {
-    /* margin-bottom: 3px; */
-    border-top: 2px solid crimson;
-}
 
 td:nth-child(odd){
-    background-color: #ddd;
+    /* background-color: #ddd; */
 }
 td:nth-child(even){
-    background-color: #d2d;
+    /* background-color: #d2d; */
 }
 
 input {
@@ -126,7 +128,8 @@ input {
     large touch area
 
  */
-input[type=text], input[type=url], input[type=email], input[type=password], input[type=tel] {
+input[type=text], input[type=url], input[type=email]
+{
     appearance: none;
     margin: 0;
     height: 26px;
@@ -136,11 +139,20 @@ input[type=text], input[type=url], input[type=email], input[type=password], inpu
     /* prefix and suffix - % or € */
     margin-left:  3px;
     margin-right: 2px;
+
+    border-radius: 4px;
+  
 }
+
+textarea{
+    border-radius: 4px;
+	white-space:pre !important;  /*prevent inheritance of nowrap from surrounding */
+}
+
 
 input[type=checkbox], input[type=radio]  {
     width: 22px; height: 22px;
-    border-radius: 1px;
+    /* border-radius: 1px; */
     border: 1px solid #bbb;
 }
 

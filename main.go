@@ -56,8 +56,10 @@ func main() {
 		w.Write(bts)
 	}
 	mux1.HandleFunc("/favicon.ico", serveIcon)
-	mux1.HandleFunc(cfg.Pref("favicon.ico"), serveIcon)
-	mux1.HandleFunc(cfg.PrefWTS("favicon.ico"), serveIcon)
+	if cfg.Pref() != "" {
+		mux1.HandleFunc(cfg.Pref("favicon.ico"), serveIcon)
+		mux1.HandleFunc(cfg.PrefWTS("favicon.ico"), serveIcon)
+	}
 
 	//
 	// Extra handler for dynamic css
@@ -85,8 +87,10 @@ func main() {
 	// Standard handlers
 	tpl.CreateAndRegisterHandlerForDocs(mux1)
 	mux1.HandleFunc("/", handlers.MainH)
-	mux1.HandleFunc(cfg.Pref("/"), handlers.MainH)
-	mux1.HandleFunc(cfg.PrefWTS("/"), handlers.MainH)
+	if cfg.Pref() != "" {
+		mux1.HandleFunc(cfg.Pref("/"), handlers.MainH)
+		mux1.HandleFunc(cfg.PrefWTS("/"), handlers.MainH)
+	}
 	mux1.HandleFunc(cfg.Pref("/reload-from-questionaire-template"), handlers.ReloadH)
 	mux1.HandleFunc(cfg.Pref("/transferrer-endpoint"), handlers.TransferrerEndpointH)
 

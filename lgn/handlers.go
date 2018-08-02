@@ -318,12 +318,12 @@ func GenerateHashesH(w http.ResponseWriter, r *http.Request) {
 	for i := 99 * 1000; i > 99*1000-10; i-- {
 		checkStr := fmt.Sprintf("%v-%v-%v-%v", surveyID, i, waveID, lgns.Salt)
 		hsh := Md5Str([]byte(checkStr))
-		url := fmt.Sprintf("%v?u=%v&survey_id=%v&wave_id=%v&h=%v", cfg.Pref(), i, surveyID, waveID, hsh)
+		url := fmt.Sprintf("%v?u=%v&survey_id=%v&wave_id=%v&h=%v", cfg.PrefWTS(), i, surveyID, waveID, hsh)
 		fmt.Fprintf(w, "<a href='%v'  target='_blank' >login as user %4v<a> ", url, i)
 
 		fmt.Fprint(w, " &nbsp; &nbsp; &nbsp; &nbsp; ")
 
-		url2 := fmt.Sprintf("%v?u=%v&survey_id=%v&wave_id=%v&h=%v", cfg.Pref("reload-from-questionaire-template"), i, surveyID, waveID, hsh)
+		url2 := fmt.Sprintf("%v?u=%v&survey_id=%v&wave_id=%v&h=%v", cfg.PrefWTS("reload-from-questionaire-template"), i, surveyID, waveID, hsh)
 		fmt.Fprintf(w, "<a href='%v'  target='_blank' >reload from template<a>", url2)
 
 		fmt.Fprint(w, "<br>")

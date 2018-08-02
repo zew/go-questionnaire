@@ -238,44 +238,7 @@ func SimulateLoad(t *testing.T) {
 		}
 	}
 
-	clientQuest(t, urlMain, sessCook)
-
-}
-
-func clientQuest(t *testing.T, urlMain string, sessCook *http.Cookie) {
-
-	var q = &qst.QuestionaireT{}
-	var err error
-	q, err = qst.Load1(q.FilePath1("fmt.json")) // new from template
-	if err != nil {
-		t.Fatalf("Loading client questionaire from file caused error: %v", err)
-	}
-
-	q.Survey = qst.NewSurvey("fmt")
-	q.UserID = "systemtest"
-	q.RemoteIP = "127.0.0.1:12345"
-	q.CurrPage = 777 // hopeless to mimic every server side setting
-	err = q.Validate()
-	if err != nil {
-		t.Fatalf("Client questionaire validation caused error: %v", err)
-	}
-
-	t.Logf("Client questionaire loaded from file; %v pages", len(q.Pages))
-
-	for idx := range q.Pages {
-		clientPageToServer(t, q, idx, urlMain, sessCook)
-	}
-
-	q.Save1(q.FilePath1(filepath.Join(q.Survey.Type, q.Survey.WaveID(), "systemtest_src")))
-
-	v, err := qst.Load1(q.FilePath1(filepath.Join(q.Survey.Type, q.Survey.WaveID(), "systemtest"))) // new from template
-	if err != nil {
-		t.Fatalf("Loading questionaire v from file caused error: %v", err)
-	}
-	equal, err := q.Compare(v)
-	if !equal {
-		t.Fatalf("Questionaires are unequal: %v", err)
-	}
+	FillQuestAndComparesServerResult(t, urlMain, sessCook)
 
 }
 
@@ -318,5 +281,47 @@ func clientPageToServer(t *testing.T, q *qst.QuestionaireT, idxPage int, urlMain
 
 	_ = resp
 	// respStr := string(resp)
+
+}
+
+// FillQuestAndComparesServerResult loads a questionaire from at template.
+// It then fills the questionaire page by page.
+// It then compares the local copy of the questionaire data
+// with the "server" version.
+func FillQuestAndComparesServerResult(t *testing.T, urlMain string, sessCook *http.Cookie) {
+
+	var q = &qst.QuestionaireT{}
+	var err error
+	q, err = qst.Load1(q.FilePath1("fmt.json")) // new from template
+	if err != nil {
+		t.Fatalf("Loading client questionaire from file caused error: %v", err)
+	}
+
+	q.Survey = qst.NewSurvey("fmt")
+	q.UserID = "systemtest"
+	q.RemoteIP = "127.0.0.1:12345"
+	q.CurrPage = 777 // hopeless to mimic every server side setting
+	err = q.Validate()
+	if err != nil {
+		t.Fatalf("Client questionaire validation caused error: %v", err)
+	}
+
+	t.Logf("Client questionaire loaded from file; %v pages", len(q.Pages))
+
+	for idx := range q.Pages {
+		clientPageToServer(t, q, idx, urlMain, sessCook)
+	}
+
+	q.Save1(q.FilePath1(filepath.Join(q.Survey.Type, q.Survey.WaveID(), "systemtest_src")))
+
+	// Comparing client questionaire to server questionaire
+	serverQuest, err := qst.Load1(q.FilePath1(filepath.Join(q.Survey.Type, q.Survey.WaveID(), "systemtest"))) // new from template
+	if err != nil {
+		t.Fatalf("Loading questionaire v from file caused error: %v", err)
+	}
+	equal, err := q.Compare(serverQuest)
+	if !equal {
+		t.Fatalf("Questionaires are unequal: %v", err)
+	}
 
 }

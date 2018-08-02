@@ -47,6 +47,7 @@ to your application directory:
     sudo chmod -R 755   /opt/go-questionaire/go-questionaire # make it executable
     sudo chmod -R 755   /opt/go-questionaire/static
     sudo chmod -R 755   /opt/go-questionaire/templates
+    sudo chmod -R 755   /opt/go-questionaire/responses
 
 ### Enable ports 80 and 443 for non-root
 

@@ -31,13 +31,13 @@ More info in [deploy on linux/unix](./static/doc/linux-instructions.md)
 
 ![Plugin](./static/img/doc/questionaire-lifecycle.png)
 
-* Login as admin https://dev-domain:port/survey/login-primitive
+* Login as admin at https://dev-domain:port/survey/login-primitive
 
-* Create the base questionaire template - as JSON file  
+* Create a questionaire template - as JSON file  
  https://dev-domain:port/survey/generate-questionaire-templates
 
 
-* Generate login hashes  
+* Generate login hashes for the survey id and wave id above   
    i.e.  https://dev-domain:port/survey/generate-hashes?wave_id=2018-07&survey_id=fmt   
   yielding
   
@@ -47,9 +47,9 @@ More info in [deploy on linux/unix](./static/doc/linux-instructions.md)
 
 #### Participant login and reset
 
-* Participants can now use these links to [login as user x](https://dev-domain:port/survey?u=98991&survey_id=fmt&wave_id=2018-07&h=4059d765e4a4f211658373c07c5affb9)   
+* Participants can now use these login links to [access the questionaire](https://dev-domain:port/survey?u=98991&survey_id=fmt&wave_id=2018-07&h=4059d765e4a4f211658373c07c5affb9)   
 
-* They can now [access the questionaire](https://dev-domain:port/survey)
+* Once logged in, they can [re-access the questionaire](https://dev-domain:port/survey)
 
 * For testing purposes, you may [reset the questionaire](https://dev-domain:port/survey/reload-from-questionaire-template?u=98991&survey_id=fmt&wave_id=2018-07&h=4059d765e4a4f211658373c07c5affb9)
 
@@ -57,6 +57,8 @@ More info in [deploy on linux/unix](./static/doc/linux-instructions.md)
 
 
 ## Semantics
+
+* A `survey` is a `questionaire` with one or more `waves` (repetitions).
 
 ![Plugin](./static/img/doc/app-and-questionaires.png)
 
@@ -201,9 +203,28 @@ Table layout `fixed` must be relinguished, otherwise labels and controls are cro
 
 ## Optimization
 
-* Saving only responses to session/JSON; not the entire questionaire data.
+* Layout: Table data is now aligned vertically middled.  
+Sometimes it should be configurable to baseline. 
 
-* Table data is aligned vertically middle. Sometimes it should be configurable to baseline. 
+* The transferrer - or a new independent component - should  
+aggregate responses into a CSV file. 
+
+* The transferrer should truncate the pages from the online JSON files   
+leaving only user ID, completion time and  surevy data, .
+
+* For each user, only the responses should be saved to session/JSON; not the entire questionaire data.  
+The responses could be merged into the questionaire based on input name.
+
+
+* The generators should be independently compilable into a shared object.  
+The main application keeps its web site for parametrization and JSON file creation.  
+The main application dynamically loads the shared object before each JSON file creation.  
+Another option: The main application executes a command line with the parameters as JSON file.
+
+
+* Testing should be repeated with a mobile client.  
+Each questionaire should be tested.
+
 
 
 ## About Go-App-Tpl

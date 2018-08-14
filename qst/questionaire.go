@@ -13,6 +13,7 @@ import (
 	"strings"
 	"time"
 
+	"github.com/zew/go-questionaire/lgn/shuffler"
 	"github.com/zew/go-questionaire/trl"
 
 	"github.com/zew/go-questionaire/ctr"
@@ -466,6 +467,8 @@ type QuestionaireT struct {
 	CurrPage  int  `json:"curr_page,omitempty"`
 	HasErrors bool `json:"has_errors,omitempty"` // If any response is faulty; set by ValidateReponseData
 
+	Variations int `json:"variations,omitempty"` //  Deterministically shuffle groups based on user id into ... variations.
+
 	Pages []*pageT `json:"pages,omitempty"`
 }
 
@@ -564,7 +567,11 @@ func (q *QuestionaireT) PageHTML(idx int) (string, error) {
 	b.WriteString(fmt.Sprintf("<p  class='go-quest-page-desc'>%v</p>", p.Desc.Tr(q.LangCode)))
 	b.WriteString(vspacer16)
 
-	for i := 0; i < len(p.Groups); i++ {
+	q.Variations = 8
+	sh := shuffler.New(q.Variations, len(p.Groups), "32165")
+	order := sh.Slice()
+
+	for _, i := range order {
 		b.WriteString(p.Groups[i].HTML(q.LangCode) + "\n")
 		b.WriteString(vspacer16)
 		if i < len(p.Groups)-1 { // no vertical distance at the end of groups

@@ -9,8 +9,8 @@ import (
 
 const (
 	inputNumber           = " type='number' step='0.1'  "
-	inputNumberNoStepping = " type='number' step='any'  "
-	inputNumberPure       = " inputmode='numeric' type='number' "
+	inputNumberNoStepping = " type='number' step='any'  "         // android prevents decimal
+	inputNumberPure       = " type='number' inputmode='numeric' " // no effect
 )
 
 func nextWaveID() string {

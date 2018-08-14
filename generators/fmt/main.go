@@ -600,7 +600,7 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 		p := q.AddPage()
 		// page.Section = trl.S{"de": "Kreditsituation", "en": "Credit situation"}
 		p.Label = trl.S{"de": "Einflussfaktoren", "en": "Influence factors"}
-		p.Short = trl.S{"de": "...", "en": "..."}
+		p.Short = trl.S{"de": "Einfluss", "en": "Influence"}
 
 		{
 			names3rdMatrix := []string{

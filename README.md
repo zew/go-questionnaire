@@ -210,7 +210,7 @@ Sometimes it should be configurable to baseline.
 aggregate responses into a CSV file. 
 
 * The transferrer should truncate the pages from the online JSON files   
-leaving only user ID, completion time and  surevy data, .
+leaving only user ID, completion time and survey data.
 
 * For each user, only the responses should be saved to session/JSON; not the entire questionaire data.  
 The responses could be merged into the questionaire based on input name.

@@ -45,7 +45,7 @@ func addSeasonal2(q *qst.QuestionaireT) error {
 		{
 			inp := gr.AddInput()
 			inp.Type = "text"
-			inp.InputMode = " inputmode='numeric' "
+			inp.InputMode = inputNumber
 			inp.Name = "p1_y1"
 			inp.MaxChars = 4
 			inp.Validator = "inRange20"
@@ -63,7 +63,7 @@ func addSeasonal2(q *qst.QuestionaireT) error {
 		{
 			inp := gr.AddInput()
 			inp.Type = "text"
-			inp.InputMode = " inputmode='numeric' "
+			inp.InputMode = inputNumber
 			inp.Name = "p1_y2"
 			inp.MaxChars = 4
 			inp.Validator = "inRange20"
@@ -80,7 +80,7 @@ func addSeasonal2(q *qst.QuestionaireT) error {
 		{
 			inp := gr.AddInput()
 			inp.Type = "text"
-			inp.InputMode = " inputmode='numeric' "
+			inp.InputMode = inputNumber
 			inp.Name = "p1_y3"
 			inp.MaxChars = 4
 			inp.Validator = "inRange20"
@@ -181,7 +181,7 @@ func addSeasonal2(q *qst.QuestionaireT) error {
 
 			inp := gr.AddInput()
 			inp.Type = "text"
-			inp.InputMode = " inputmode='numeric' "
+			inp.InputMode = inputNumber
 			inp.Name = "i_ez_06_low"
 			inp.MaxChars = 4
 			inp.Validator = "inRange20"
@@ -201,7 +201,7 @@ func addSeasonal2(q *qst.QuestionaireT) error {
 		{
 			inp := gr.AddInput()
 			inp.Type = "text"
-			inp.InputMode = " inputmode='numeric' "
+			inp.InputMode = inputNumber
 			inp.Name = "i_ez_06_high"
 			inp.MaxChars = 4
 			inp.Validator = "inRange20"
@@ -234,7 +234,7 @@ func addSeasonal2(q *qst.QuestionaireT) error {
 		{
 			inp := gr.AddInput()
 			inp.Type = "text"
-			inp.InputMode = " inputmode='numeric' "
+			inp.InputMode = inputNumber
 			inp.Name = "i_ez_24_low"
 			inp.MaxChars = 4
 			inp.Validator = "inRange20"
@@ -254,7 +254,7 @@ func addSeasonal2(q *qst.QuestionaireT) error {
 		{
 			inp := gr.AddInput()
 			inp.Type = "text"
-			inp.InputMode = " inputmode='numeric' "
+			inp.InputMode = inputNumber
 			inp.Name = "i_ez_24_high"
 			inp.MaxChars = 4
 			inp.Validator = "inRange20"
@@ -286,7 +286,7 @@ func addSeasonal2(q *qst.QuestionaireT) error {
 			inp.ColSpanLabel = 85
 			inp.Desc = trl.S{
 				"de": "&nbsp; [zentrales 90% Konfidenzintervall]",
-				"en": "&nbsp; [central 90pct confidence interval]",
+				"en": "&nbsp; [central 90&nbsp;pct confidence interval]",
 			}
 			inp.CSSLabel = "special-input-textblock-smaller"
 

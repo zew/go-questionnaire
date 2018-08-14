@@ -90,7 +90,7 @@ func ReloadH(w http.ResponseWriter, r *http.Request) {
 
 	fmt.Fprintf(w,
 		"<a href='%v?u=%v&survey_id=%v&wave_id=%v&h=%v'  target='_blank'>Start questionaire (again)<a> <br> ",
-		cfg.Pref(), l.User, userSurveyType, userWaveID, r.Form.Get("h"),
+		cfg.PrefWTS(), l.User, userSurveyType, userWaveID, r.Form.Get("h"),
 	)
 
 }

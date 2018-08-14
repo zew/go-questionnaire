@@ -251,8 +251,8 @@ func (i inputT) HTML(langCode string, numCols int) string {
 			ctrl += fmt.Sprintf("<textarea        name='%v' id='%v' title='%v %v' class='%v' style='%v' %v %v>%v</textarea>\n",
 				nm, nm, i.Label.TrSilent(langCode), i.Desc.TrSilent(langCode), i.CSSControl, width, maxChars, colsRows, val)
 		} else {
-			ctrl += fmt.Sprintf("<input type='%v' %v name='%v' id='%v' title='%v %v' class='%v' style='%v' %v %v  value='%v' />\n",
-				i.Type, i.InputMode,
+			ctrl += fmt.Sprintf("<input %v  type='%v' name='%v' id='%v' title='%v %v' class='%v' style='%v' %v %v  value='%v' />\n",
+				i.InputMode, i.Type,
 				nm, nm, i.Label.TrSilent(langCode), i.Desc.TrSilent(langCode), i.CSSControl, width, maxChars, checked, val)
 		}
 
@@ -268,7 +268,7 @@ func (i inputT) HTML(langCode string, numCols int) string {
 			sfx := fmt.Sprintf("<span class='go-quest-label %v' >%v</span>\n", i.CSSLabel, i.Suffix.TrSilent(langCode))
 			// We want to prevent line-break of the '%' or '€' character.
 			// inputs must be inline-block, for whitespace nowrap to work
-			ctrl = fmt.Sprintf("<span style='white-space: nowrap;' >%v%v</span>\n", ctrl, sfx)
+			ctrl = fmt.Sprintf("<span class='suffix-nowrap' >%v%v</span>\n", ctrl, sfx)
 		}
 		// Append error message
 		if i.ErrMsg.Set() {

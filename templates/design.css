@@ -124,6 +124,19 @@ input:focus:invalid {
     border: 2px dotted red;
 }
 
+/* Hide HTML5 Up and Down arrows. */
+/* www.thatstevensguy.com/programming/disable-arrows-on-number-inputs/ */
+input[type="number"]::-webkit-outer-spin-button, 
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+ 
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+
 .error{
 	color:#622;
 	line-height:1.6em;
@@ -268,6 +281,12 @@ table.main-table tr:nth-child(odd){
 	font-size:     12px;
 	line-height:   1.1em;
 }
+
+/* prevent wrapping of suffix */
+.suffix-nowrap {
+    white-space: nowrap;
+}
+
 
 .go-quest-group-header {
     display: inline-block;  /* activate line-height*/

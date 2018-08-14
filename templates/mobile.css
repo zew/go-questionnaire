@@ -40,6 +40,11 @@ body{
     /* white-space: nowrap; */
 }
 
+/* prevent wrapping of suffix */
+.suffix-nowrap {
+    white-space: nowrap;
+}
+
 
 .go-quest-group-header{
     display: inline-block;  /* activate line-height*/
@@ -175,6 +180,18 @@ button[type=submit] {
     border-radius: 6px;
 }
 
+
+/* Hide HTML5 Up and Down arrows. */
+/* www.thatstevensguy.com/programming/disable-arrows-on-number-inputs/ */
+input[type="number"]::-webkit-outer-spin-button, 
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+ 
+input[type="number"] {
+    -moz-appearance: textfield;
+}
 
 
 /* Ultra slim - old android devices */

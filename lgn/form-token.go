@@ -6,16 +6,20 @@ import (
 	"fmt"
 	"io"
 	"time"
+
+	"github.com/zew/go-questionaire/cfg"
 )
 
 var tokenSaltNotWorking = GeneratePassword(22) // not interoperational between multiple instances of go-questionaire, transferrer, generator
 
-func tok(hourOffset int) string {
+// tok rounds time to hours
+// and computes a has from it
+func tok(hoursOffset int) string {
 	hasher := md5.New()
 	io.WriteString(hasher, lgns.Salt)
 	t := time.Now()
-	if hourOffset != 0 {
-		t = t.Add(time.Duration(hourOffset) * time.Hour)
+	if hoursOffset != 0 {
+		t = t.Add(time.Duration(hoursOffset) * time.Hour)
 	}
 	// log.Printf("token time: %v", t.Format("02.01.2006 15"))
 	io.WriteString(hasher, t.Format("02.01.2006 15"))
@@ -33,9 +37,16 @@ func FormToken() string {
 }
 
 // ValidateFormToken checks tokens
-// from previous two hours - and from next hour
+// against current hour - back to n previous hours.
+// Plus one more for bounding glitches / border crossing
+// 	when the rounding jumps from 12:59 to 13:00.
+// i.e.
+// FormTimeout := 2
+// lower bound := -4
+// => Checking token against current hour, previous hour, second previous hour, third previous hour
 func ValidateFormToken(arg string) error {
-	for i := 0; i > -3; i-- {
+	lowerBound := cfg.Get().FormTimeout*-1 - 1
+	for i := 0; i >= lowerBound; i-- {
 		if arg == tok(i) {
 			return nil
 		}

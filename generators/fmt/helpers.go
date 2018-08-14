@@ -7,6 +7,12 @@ import (
 	"github.com/zew/go-questionaire/trl"
 )
 
+const (
+	inputNumber           = " type='number' step='0.1'  "
+	inputNumberNoStepping = " type='number' step='any'  "
+	inputNumberPure       = " inputmode='numeric' type='number' "
+)
+
 func nextWaveID() string {
 	t := time.Now()
 	if t.Day() > 20 {

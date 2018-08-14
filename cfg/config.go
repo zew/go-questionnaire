@@ -41,8 +41,10 @@ type ConfigT struct {
 	WriteTimeOut           int    `json:"http_write_time_out"`     // for *responding* large files over slow networks, i.e. videos, set to 30 or 60 secs
 	MaxPostSize            int64  `json:"max_post_size,omitempty"` // request body size limit, against DOS attacks, limits file uploads
 
-	LocationName string         `json:"location,omitempty"` // i.e. "Europe/Berlin", see Go\lib\time\zoneinfo.zip
-	Loc          *time.Location `json:"-"`                  // Initialized during load
+	LocationName   string         `json:"location,omitempty"` // i.e. "Europe/Berlin", see Go\lib\time\zoneinfo.zip
+	Loc            *time.Location `json:"-"`                  // Initialized during load
+	SessionTimeout int            `json:"session_timeout"`    // hours until the session is lost
+	FormTimeout    int            `json:"form_timeout"`       // hours until a form post is rejected
 
 	AllowSkipForward bool `json:"allow_skip_forward"` // skipping back always allowed, skipping forward is configurable
 
@@ -239,6 +241,8 @@ func Example() {
 		WriteTimeOut:           30,
 		MaxPostSize:            int64(2 << 20), // 2 MB
 		LocationName:           "Europe/Berlin",
+		SessionTimeout:         2,
+		FormTimeout:            2,
 
 		LangCodes: []string{"de", "en"},
 		Mp: trl.Map{

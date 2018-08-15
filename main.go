@@ -93,6 +93,7 @@ func main() {
 		mux1.HandleFunc(cfg.PrefWTS("/"), handlers.MainH)
 	}
 	mux1.HandleFunc(cfg.Pref("/reload-from-questionaire-template"), handlers.ReloadH)
+	mux1.HandleFunc(cfg.PrefWTS("/reload-from-questionaire-template"), handlers.ReloadH)
 	mux1.HandleFunc(cfg.Pref("/transferrer-endpoint"), handlers.TransferrerEndpointH)
 
 	//

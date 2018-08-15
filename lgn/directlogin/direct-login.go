@@ -249,15 +249,21 @@ func GenerateH(w http.ResponseWriter, r *http.Request) {
 	<form method="post" action="{{.SelfURL}}"  style="margin: 50px;"  >
 		{{if  (len .ErrMsg) gt 0 }} <p style='white-space: pre; color:#E22'>{{.ErrMsg}}</p>{{end}}
 		Create direct login<br>
-		                <input name="token"       type="hidden"   value="{{.Token}}" />
-		Digits Login: 	<input name="length"      type="text"     value="{{.DL.Length}}"><br>
-		Digits Checksum:<input name="check_sum"   type="text"     value="{{.DL.CheckSum}}"><br>
-		<input type="submit"   name="submitclassic" accesskey="s"><br>
-
-		{{if  (len .Cnt   ) gt 0 }} <p style='white-space: pre; color:#222'>{{.Cnt   }}</p>{{end}}
+						<input name="token"       type="hidden"   value="{{.Token}}" />
+		<br>
+		Digits Login:    <input name="length"      type="text"     value="{{.DL.Length}}">
+		Digits Checksum: <input name="check_sum"   type="text"     value="{{.DL.CheckSum}}"><br>
 		
+		<br>
+		User IDs<br>
 		Start: 	<input name="start"      type="text"     value="{{.DL.Start}}"><br>
 		Stop: 	<input name="stop"       type="text"     value="{{.DL.Stop}}" ><br>
+		
+		<br>
+		<input type="submit"   name="submitclassic" accesskey="s"><br>
+		
+		{{if  (len .Cnt   ) gt 0 }} <p style='white-space: pre; color:#222'>{{.Cnt   }}</p>{{end}}
+
 		{{if  (len .Links  ) gt 0 }} <p style='                  color:#444'>{{.Links  }}</p>{{end}}
 		{{if  (len .List   ) gt 0 }} <p style='white-space: pre; color:#444'>{{.List   }}</p>{{end}}
 

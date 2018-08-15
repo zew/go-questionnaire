@@ -17,13 +17,17 @@ import (
 func ShufflesToCSV(w http.ResponseWriter, r *http.Request) {
 
 	if cfg.Get().IsProduction {
-		_, loggedIn, err := LoggedInCheck(w, r, "admin")
+		l, isLoggedIn, err := LoggedInCheck(w, r)
 		if err != nil {
-			http.Error(w, err.Error(), http.StatusInternalServerError)
+			fmt.Fprintf(w, "Login error %v", err)
 			return
 		}
-		if !loggedIn {
-			http.Error(w, "admin login required for this function", http.StatusInternalServerError)
+		if !isLoggedIn {
+			fmt.Fprintf(w, "Not logged in")
+			return
+		}
+		if !l.HasRole("admin") {
+			fmt.Fprintf(w, "admin login required")
 			return
 		}
 	}
@@ -39,8 +43,6 @@ func ShufflesToCSV(w http.ResponseWriter, r *http.Request) {
 	} else if !ok && r.Method == "POST" {
 		errMsg += fmt.Sprintf("Missing request token\n")
 	}
-
-	pages := 4
 
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
 	src := `<!DOCTYPE html>
@@ -82,6 +84,7 @@ func ShufflesToCSV(w http.ResponseWriter, r *http.Request) {
 </body>
 </html>
 `
+	pages := 4
 
 	type formEntryT struct {
 		Token string `json:"token"`

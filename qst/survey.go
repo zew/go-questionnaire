@@ -135,6 +135,7 @@ func (s *surveyT) HTMLForm(questTypes []string) string {
 
 			%v
 			%v
+			%v
 		`
 
 	if s == nil {
@@ -169,7 +170,11 @@ func (s *surveyT) HTMLForm(questTypes []string) string {
 		cfg.Pref(), s.Type, s.WaveID(),
 	)
 	link2 := fmt.Sprintf(
-		"<a href='%v/direct-login/generate?start=1&stop=2000' target='_blank' >Generate direct logins</a><br>",
+		"<a href='%v/direct-login/generate?start=1000&stop=1020' target='_blank' >Generate direct logins</a><br>",
+		cfg.Pref(),
+	)
+	link3 := fmt.Sprintf(
+		"<a href='%v/shufflings-to-csv?start=1000&stop=1020' target='_blank' >Shufflings to CSV</a><br>",
 		cfg.Pref(),
 	)
 
@@ -180,6 +185,7 @@ func (s *surveyT) HTMLForm(questTypes []string) string {
 		kv,
 		link1,
 		link2,
+		link3,
 	)
 	return ret
 

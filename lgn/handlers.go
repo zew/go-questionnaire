@@ -1,6 +1,7 @@
 package lgn
 
 import (
+	"bytes"
 	"fmt"
 	"html"
 	"html/template"
@@ -9,8 +10,10 @@ import (
 	"sort"
 	"time"
 
+	"github.com/monoculum/formam"
 	"github.com/zew/go-questionaire/cfg"
 	"github.com/zew/go-questionaire/sessx"
+	"github.com/zew/util"
 )
 
 // LogoutH is a convenience handler to logout via http request
@@ -291,48 +294,149 @@ func LoginByHash(w http.ResponseWriter, r *http.Request) (bool, error) {
 // See LoginByHash() for the construction of the check string.
 func GenerateHashesH(w http.ResponseWriter, r *http.Request) {
 
+	if cfg.Get().IsProduction {
+		l, isLoggedIn, err := LoggedInCheck(w, r)
+		if err != nil {
+			fmt.Fprintf(w, "Login error %v", err)
+			return
+		}
+		if !isLoggedIn {
+			fmt.Fprintf(w, "Not logged in")
+			return
+		}
+		if !l.HasRole("admin") {
+			fmt.Fprintf(w, "admin login required")
+			return
+		}
+	}
+
+	errMsg := ""
+
+	_, ok := r.PostForm["token"]
+	if ok {
+		err := ValidateFormToken(r.PostForm.Get("token"))
+		if err != nil {
+			errMsg += fmt.Sprintf("Invalid request token: %v\n", err)
+		}
+	} else if !ok && r.Method == "POST" {
+		errMsg += fmt.Sprintf("Missing request token\n")
+	}
+
+	//
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
 
-	_, loggedIn, err := LoggedInCheck(w, r, "admin")
-	if err != nil {
-		fmt.Fprint(w, err.Error())
-		return
-	}
-	if !loggedIn {
-		fmt.Fprint(w, "login required for this function")
-		return
-	}
+	src := `<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>hash logins</title>
+</head>
+<body>
+	<form method="post" action="{{.SelfURL}}"  style="margin: 50px;"  >
+		
+		{{if  (len .ErrMsg) gt 0 }} <p style='white-space: pre; color:#E22'>{{.ErrMsg}}</p>{{end}}
+		
+		Create hash logins<br>
 
-	surveyID := r.URL.Query().Get("survey_id")
-	if surveyID == "" {
+		                <input name="token"       type="hidden"   value="{{.Token}}" />
+
+		<br>
+		Survey<br>
+			Survey ID 	 <input name="survey_id"   type="text"     value="{{.SurveyID}}"><br>
+			Wave ID 	 <input name="wave_id"     type="text"     value="{{.WaveID}}" ><br>
+
+		<br>
+		User ID<br>
+			Start 	    <input name="start"       type="text"     value="{{.Start}}"><br>
+			Stop 	    <input name="stop"        type="text"     value="{{.Stop}}" ><br>
+
+		<input type="submit"   name="submitclassic" accesskey="s"><br>
+
+		{{if  (len .List   ) gt 0 }} <p style='white-space: pre; color:#444'>{{.List   }}</p>{{end}}
+
+
+	</form>
+
+</body>
+</html>
+`
+
+	type formEntryT struct {
+		SelfURL string `json:"self_url"`
+		Token   string `json:"token"`
+
+		ErrMsg string `json:"err_msg"`
+
+		SurveyID      string `json:"survey_id"`
+		WaveID        string `json:"wave_id"`
+		Start         int    `json:"start"`
+		Stop          int    `json:"stop"`
+		SubmitClassic string `json:"submitclassic"`
+
+		List template.HTML `json:"list"`
+	}
+	fe := formEntryT{}
+
+	//
+	dec := formam.NewDecoder(&formam.DecoderOptions{TagName: "json"})
+	err := dec.Decode(r.Form, &fe)
+	if err != nil {
+		errMsg += fmt.Sprintf("Decoding error: %v\n", err)
+	}
+	log.Printf(util.IndentedDump(fe))
+
+	if fe.SurveyID == "" {
 		fmt.Fprint(w, "survey_id must be set as URL param")
 		return
 	}
 
-	waveID := r.URL.Query().Get("wave_id")
-	if waveID == "" {
+	if fe.WaveID == "" {
 		t := time.Now()
 		if t.Day() > 20 {
 			t = t.AddDate(0, 1, 0)
 		}
-		waveID = t.Format("2006-01")
+		fe.WaveID = t.Format("2006-01")
 	}
 
-	for i := 99 * 1000; i > 99*1000-10; i-- {
-		checkStr := fmt.Sprintf("%v-%v-%v-%v", surveyID, i, waveID, lgns.Salt)
+	if fe.Start == 0 {
+		fe.Start = 1000
+	}
+
+	if fe.Stop == 0 {
+		fe.Stop = 1020
+	}
+
+	b := &bytes.Buffer{}
+	for i := fe.Start; i < fe.Stop; i++ {
+
+		checkStr := fmt.Sprintf("%v-%v-%v-%v", fe.SurveyID, i, fe.WaveID, lgns.Salt)
 		hsh := Md5Str([]byte(checkStr))
-		url := fmt.Sprintf("%v?u=%v&survey_id=%v&wave_id=%v&h=%v", cfg.PrefWTS(), i, surveyID, waveID, hsh)
-		fmt.Fprintf(w, "<a href='%v'  target='_blank' >login as user %4v<a> ", url, i)
+		url := fmt.Sprintf("%v?u=%v&survey_id=%v&wave_id=%v&h=%v", cfg.PrefWTS(), i, fe.SurveyID, fe.WaveID, hsh)
+		fmt.Fprintf(b, "<a href='%v'  target='_blank' >login as user %4v<a> ", url, i)
 
-		fmt.Fprint(w, " &nbsp; &nbsp; &nbsp; &nbsp; ")
+		fmt.Fprint(b, " &nbsp; &nbsp; &nbsp; &nbsp; ")
 
-		url2 := fmt.Sprintf("%v?u=%v&survey_id=%v&wave_id=%v&h=%v", cfg.PrefWTS("reload-from-questionaire-template"), i, surveyID, waveID, hsh)
-		fmt.Fprintf(w, "<a href='%v'  target='_blank' >reload from template<a>", url2)
+		url2 := fmt.Sprintf(
+			"%v?u=%v&survey_id=%v&wave_id=%v&h=%v",
+			cfg.PrefWTS("reload-from-questionaire-template"), i, fe.SurveyID, fe.WaveID, hsh,
+		)
+		fmt.Fprintf(b, "<a href='%v'  target='_blank' >reload from template<a>", url2)
 
-		fmt.Fprint(w, "<br>")
-
+		fmt.Fprint(b, "<br>")
 	}
-	fmt.Fprint(w, "Finish")
+
+	fe.List = template.HTML(b.String())
+
+	tpl := template.New("anyname.html")
+	tpl, err = tpl.Parse(src)
+	if err != nil {
+		fmt.Fprintf(w, "Error parsing inline template: %v", err)
+	}
+
+	err = tpl.Execute(w, fe)
+	if err != nil {
+		fmt.Fprintf(w, "Error executing inline template: %v", err)
+	}
 
 }
 

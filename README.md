@@ -208,7 +208,25 @@ Switching is done based on the user agent string, but can be overridden by `mobi
 
 Table layout `fixed` must be relinguished, otherwise labels and controls are cropped on devices with very small width.
 
+### Randomization - shuffling of input order
+
+* The order of inputs on pages can be randomized (shuffled).
+
+* Shuffling is random, but reproducible for user ID and page number.
+
+* Questionaire property `variations` sets the number of different classes of shufflings.  
+For example, if `variations==2`, even and odd user IDs get the same 
+ordering when on same page.  
+
+* `variations` should be set to the maximum number of inputs across pages.
+
+* [Shufflings can be exported for use in related applications](https://dev-domain:port/survey/shufflings-to-csv)
+
+
 ## Optimization
+
+* Layout: Input='number' with precision of 0.1 should be made 
+a separate type
 
 * Layout: Table data is now aligned vertically middled.  
 Sometimes it should be configurable to baseline. 

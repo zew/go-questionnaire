@@ -1,5 +1,5 @@
 // Package bootstrap provides identical initialization
-// for main(), but also to various integration tests
+// to main(), but also to system tests
 package bootstrap
 
 import (

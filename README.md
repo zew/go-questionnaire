@@ -70,7 +70,9 @@ More info in [deploy on linux/unix](./static/doc/linux-instructions.md)
 
 * Package `qst` contains generic functions to create questionaires.
 
-* Package `generators` uses qst for creating specific JSON questionaires.  
+* Package `generators` _uses_ qst for creating specific JSON questionaires.  
+
+* Directory `responses`stores questionaire templates and indididual answers.  
 
 * Application contains multi-language surrounding  
 and common functions for login, validation, session...

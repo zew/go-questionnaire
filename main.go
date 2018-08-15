@@ -80,6 +80,7 @@ func main() {
 	mux1.HandleFunc(cfg.Pref("/direct"), directlogin.ValidateAndLogin)
 	mux1.HandleFunc(cfg.PrefWTS("/direct"), directlogin.ValidateAndLogin)
 	mux1.HandleFunc(cfg.Pref("/generate-hashes"), lgn.GenerateHashesH)
+	mux1.HandleFunc(cfg.Pref("/shufflings-to-csv"), lgn.ShufflesToCSV)
 	mux1.HandleFunc(cfg.Pref("/templates-reload"), tpl.ParseH)
 	mux1.HandleFunc(cfg.Pref("/generate-questionaire-templates"), generators.SurveyGenerate)
 

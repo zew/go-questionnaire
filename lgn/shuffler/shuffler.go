@@ -1,5 +1,7 @@
-// Package shuffler shuffles slices of integers
-// deterministically based on the ID of the user.
+// Package shuffler creates slices of integers
+// random, but reproducible; based on the ID of the user;
+// classes of users see the same random order each time they visit;
+// each page has a different randomization of appropriate length.
 package shuffler
 
 import (

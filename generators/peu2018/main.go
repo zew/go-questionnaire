@@ -14,6 +14,8 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 	q := qst.QuestionaireT{}
 	q.Survey = qst.NewSurvey("eup")
 	q.Survey.Params = params
+	q.Variations = 6
+
 	q.LangCodes = map[string]string{"de": "Deutsch", "en": "English"}
 	q.LangCode = "de"
 	q.Survey.Org = trl.S{"de": "ZEW", "en": "ZEW"}
@@ -30,7 +32,6 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 			inp.Label = trl.S{"de": fmt.Sprintf("tb %v", i2)}
 		}
 	}
-	q.Variations = 8
 
 	(&q).Hyphenize()
 	(&q).ComputeMaxGroups()

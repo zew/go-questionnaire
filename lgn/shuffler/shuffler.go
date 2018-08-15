@@ -9,23 +9,30 @@ import (
 )
 
 type shufflerT struct {
-	Variations  int // How many different shuffled sets should be assigned to the IDs
-	MaxElements int // Max number of elements to shuffle
+	ID         int // Seed for shuffling; typically the user ID
+	Variations int // ID modulo Variations is the actual seed. Determines how many different shuffled sets are derived from various IDs
 
-	ID int // Basis for the variations; typically the user ID
+	MaxElements int // The number of elements to shuffle; typically the largest number of input groups across all pages of a questionaire.
 }
 
-// New creates a shufflerT with the reusable data,
-// to generate shuffled slices
-func New(variatons, maxNumberOfElements int, ID string) *shufflerT {
+// New() creates a Shuffler for creating deterministic variations
+// of a slice []int{1,2,3...,MaxElements}
+//
+// ID is the seed for the randomizer
+// Variations is the number of classes.
+// MaxElements is the slice length.
+func New(ID string, variatons int, maxNumberOfElements int) *shufflerT {
 	s := shufflerT{}
 	s.Variations = variatons
+
 	s.MaxElements = maxNumberOfElements
 	s.ID, _ = strconv.Atoi(ID)
 	return &s
 }
 
-func (s *shufflerT) Slice() []int {
+// Slice generates a shuffled slice.
+// Param iter gives the number of shufflings; typically the page number
+func (s *shufflerT) Slice(iter int) []int {
 
 	order := make([]int, s.MaxElements)
 	for i := 0; i < len(order); i++ {
@@ -49,9 +56,10 @@ func (s *shufflerT) Slice() []int {
 		swapFct := func(i, j int) {
 			order[i], order[j] = order[j], order[i]
 		}
-		gen.Shuffle(s.MaxElements, swapFct)
-		log.Printf("User %v is class %v => %+v", s.ID, class, order)
-
+		for i := 0; i <= iter; i++ {
+			gen.Shuffle(s.MaxElements, swapFct)
+			log.Printf("%2v: User %v is class %v => %+v", i, s.ID, class, order)
+		}
 	}
 
 	return order

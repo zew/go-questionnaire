@@ -101,10 +101,10 @@ func (d DirectLoginT) computeCheckSum() string {
 	return coded
 }
 
-// ToDecimalStr rewrites L6F3G to 17-4-13-1-14.
+// DecimalHyphenated rewrites L6F3G to 17-4-13-1-14.
 // Separated by hyphen.
 // For debugging.
-func (d *DirectLoginT) ToDecimalStr() string {
+func (d *DirectLoginT) DecimalHyphenated() string {
 	ret := ""
 	for _, r := range d.L[:d.Length] {
 		j := toDec(r)
@@ -127,6 +127,7 @@ func (d *DirectLoginT) CrossSum() int {
 
 // Decimal computes a*30*30 + b*30 + c*1
 // Inverse func of toCode
+// i.e. 22G => 16
 func (d *DirectLoginT) Decimal() int {
 
 	if d.Length > 12 {
@@ -257,7 +258,8 @@ func GenerateH(w http.ResponseWriter, r *http.Request) {
 		
 		Start: 	<input name="start"      type="text"     value="{{.DL.Start}}"><br>
 		Stop: 	<input name="stop"       type="text"     value="{{.DL.Stop}}" ><br>
-		{{if  (len .List  ) gt 0 }} <p style='white-space: pre; color:#444'>{{.List  }}</p>{{end}}
+		{{if  (len .Links  ) gt 0 }} <p style='                  color:#444'>{{.Links  }}</p>{{end}}
+		{{if  (len .List   ) gt 0 }} <p style='white-space: pre; color:#444'>{{.List   }}</p>{{end}}
 
 	</form>
 
@@ -285,12 +287,25 @@ func GenerateH(w http.ResponseWriter, r *http.Request) {
 
 	d.GenerateRandom()
 
-	list := ""
 	di := New(d.Length, d.CheckSum)
+
+	links := ""
 	for i := fe.Start; i <= fe.Stop; i++ {
 		di.GenerateFromDec(i)
-		str := fmt.Sprintf("%05v\t%v\t%v\t%v\tValid: %v\n",
-			i, di.L, di.ToDecimalStr(), di.Decimal(), di.Validate())
+		str := fmt.Sprintf(
+			"<a href='%v%v' target='_blank' >%v</a><br>\n",
+			cfg.PrefWTS("/direct"), di.L, di.Decimal(),
+		)
+		links += str
+	}
+
+	list := ""
+	for i := fe.Start; i <= fe.Stop; i++ {
+		di.GenerateFromDec(i)
+		str := fmt.Sprintf(
+			"%05v\t%v\t%v\t%v\tValid: %v\n",
+			i, di.L, di.DecimalHyphenated(), di.Decimal(), di.Validate(),
+		)
 		list += str
 	}
 
@@ -303,6 +318,7 @@ func GenerateH(w http.ResponseWriter, r *http.Request) {
 		ErrMsg string
 		Cnt    string
 		DL     formEntryT
+		Links  template.HTML
 		List   string
 	}
 	data := dataT{
@@ -310,9 +326,10 @@ func GenerateH(w http.ResponseWriter, r *http.Request) {
 		Token:   lgn.FormToken(),
 		ErrMsg:  errMsg,
 		Cnt: fmt.Sprintf("%-24v \n%4v   \n%v \nValid: %v",
-			d.L, d.ToDecimalStr(), d.Decimal(), d.Validate()),
-		DL:   fe,
-		List: list,
+			d.L, d.DecimalHyphenated(), d.Decimal(), d.Validate()),
+		DL:    fe,
+		Links: template.HTML(links),
+		List:  list,
 	}
 
 	tpl := template.New("anyname.html")
@@ -362,13 +379,14 @@ func ValidateAndLogin(w http.ResponseWriter, r *http.Request) {
 	}
 
 	l := lgn.LoginT{}
-	l.User = dl.L[:dl.Length]
+	l.User = fmt.Sprintf("%v", dl.Decimal())
 	l.Roles = map[string]string{}
-	l.Roles["survey_id"] = "eup"
-	l.Roles["wave_id"] = "2018-07"
+	l.Roles["survey_id"] = "peu2018"
+	l.Roles["wave_id"] = "2018-08"
 	log.Printf("directly logged in as %v - ID %v", l.User, dl.Decimal())
 	// fmt.Fprintf(w, "directly logged in as %v - ID %v\n", l.User, dl.Decimal())  // prevents redirect
 
+	lgn.LogoutH(w, r) // remove all previous session info
 	err := sess.PutObject("login", l)
 	if err != nil {
 		http.Error(w, "Error saving login to session", http.StatusInternalServerError)

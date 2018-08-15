@@ -193,3 +193,16 @@ func (q *QuestionaireT) Hyphenize() {
 		}
 	}
 }
+
+// ComputeMaxGroups computes the maximum number of groups
+// and puts them into q.MaxGroups
+func (q *QuestionaireT) ComputeMaxGroups() {
+
+	mG := 0
+	for i1 := 0; i1 < len(q.Pages); i1++ {
+		if len(q.Pages[i1].Groups) > mG {
+			mG = len(q.Pages[i1].Groups)
+		}
+	}
+	q.MaxGroups = mG
+}

@@ -16,7 +16,9 @@ import (
 // LogoutH is a convenience handler to logout via http request
 func LogoutH(w http.ResponseWriter, r *http.Request) error {
 	sess := sessx.New(w, r)
-	err := sess.Remove(w, "login")
+	// err := sess.Remove(w, "login")
+	// err := sess.Destroy(w)
+	err := sess.Clear(w)
 	return err
 }
 
@@ -84,6 +86,7 @@ func ValidateAndLogin(w http.ResponseWriter, r *http.Request) error {
 		return err
 	}
 
+	LogoutH(w, r) // remove all previous session info
 	log.Printf("logged in as %v", l.User)
 
 	err = sess.PutObject("login", l)

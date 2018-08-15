@@ -134,6 +134,7 @@ func (s *surveyT) HTMLForm(questTypes []string) string {
 		<script> document.getElementById('submit').focus(); </script>
 
 			%v
+			%v
 		`
 
 	if s == nil {
@@ -163,16 +164,22 @@ func (s *surveyT) HTMLForm(questTypes []string) string {
 		)
 	}
 
-	link := fmt.Sprintf(
+	link1 := fmt.Sprintf(
 		"<a href='%v/generate-hashes?survey_id=%v&wave_id=%v' target='_blank' >Generate hash logins</a><br>",
 		cfg.Pref(), s.Type, s.WaveID(),
 	)
+	link2 := fmt.Sprintf(
+		"<a href='%v/direct-login/generate?start=1&stop=2000' target='_blank' >Generate direct logins</a><br>",
+		cfg.Pref(),
+	)
 
-	ret = fmt.Sprintf(ret,
+	ret = fmt.Sprintf(
+		ret,
 		dd,
 		s.Year, fmt.Sprintf("%02d", int(s.Month)+0), s.Deadline.Format("02.01.2006 15:04"),
 		kv,
-		link,
+		link1,
+		link2,
 	)
 	return ret
 

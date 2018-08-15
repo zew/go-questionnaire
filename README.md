@@ -11,6 +11,11 @@ A http(s) webserver serving questionaires.
 
 Version 1.0
 
+## Requirements
+
+Go Version 1.__10__
+
+
 ## Usage
 
 Install and setup [golang](https://golang.org/doc/install)

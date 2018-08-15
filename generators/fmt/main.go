@@ -1041,6 +1041,7 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 		return nil, fmt.Errorf("Error validating questionaire: %v", err)
 	}
 	q.Hyphenize()
+	q.ComputeMaxGroups()
 
 	return &q, nil
 }

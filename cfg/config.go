@@ -46,9 +46,9 @@ type ConfigT struct {
 	SessionTimeout int            `json:"session_timeout"`    // hours until the session is lost
 	FormTimeout    int            `json:"form_timeout"`       // hours until a form post is rejected
 
-	AllowSkipForward bool `json:"allow_skip_forward"` // skipping back always allowed, skipping forward is configurable
-
 	CSS map[string]string `json:"css"` // differentiate multiple instances by color and stuff - without duplicating entire css files
+
+	AllowSkipForward bool `json:"allow_skip_forward"` // skipping back always allowed, skipping forward is configurable
 
 	// available language codes for the application, first element is default
 	LangCodes []string `json:"lang_codes"`
@@ -244,68 +244,83 @@ func Example() {
 		SessionTimeout:         2,
 		FormTimeout:            2,
 
-		LangCodes: []string{"de", "en"},
+		LangCodes: []string{"de", "en", "it"},
 		Mp: trl.Map{
 			"page": {
 				"en": "Page",
 				"de": "Seite",
+				"it": "Pagina",
 			},
 			"app_label_h1": {
 				"en": "My Org",
 				"de": "Meine Organisation",
+				"it": "La mia organizzazion",
 			},
 			"app_label": {
 				"en": "My Example App", // yes, repeat of AppName
 				"de": "Meine Beispiel Anwendung",
+				"it": "La mia App esempio",
 			},
 
 			"correct_errors": {
 				"de": "Bitte korrigieren Sie die unten angezeigten Fehler.",
 				"en": "Please correct the errors displayed below.",
+				"it": "Per piacere correga gli errori sottostanti.",
 			},
 			"imprint": {
 				"de": "Impressum",
 				"en": "Imprint",
+				"it": "Informazione legale",
 			},
 			"login_by_hash_failed": {
 				"de": "Anmeldung via Hash gescheitert.\nBitte nutzen Sie den übermittelten Link um sich anzumelden.\nWenn der Link in zwei Zeilen geteilt wurde, verbinden Sie die Zeilen wieder.",
 				"en": "Login by hash failed.\nPlease use the provided link to login.\nIf the link was split into two lines, reconnect them.",
+				"it": "Il login non è andato a buon fine.\nPer piacere si utilizzi il link fornitovi per effettuare il login.\nSe il link è spezzato in due, le due parti devono essere riconnesse.",
 			},
 			"finished_by_participant": {
 				"de": "Sie haben den Fragebogen bereits abgeschlossen (%v).",
 				"en": "You already finished this survey wave at %v",
+				"it": "Lei ha già completato questo questionario (%v)",
 			},
 			"deadline_exceeded": {
 				"de": "Diese Umfrage wurde am %v beendet.",
 				"en": "Current survey was closed at %v.",
+				"it": "Questo questionario è stato chiuso il %v.",
 			},
 			"percentage_answered": {
 				"de": "Sie haben %v von %v Fragen beantwortet: %2.1f Prozent.  <br>\n",
 				"en": "You answered %v out of %v questions: %2.1f percent.  <br>\n",
+				"it": "Lei ha risposto a %v domande su %v: %2.1f per cento.  <br>\n",
 			},
 			"survey_ending": {
 				"de": "Umfrage endet am %v. <br>\nVeröffentlichung am %v.  <br>\n",
 				"en": "Survey will finish at %v. <br>\nPublication will be at %v.<br>\n",
+				"it": "Il sondaggio verrà concluso il %v. <br>\nLa pubblicazione avverrà il %v.<br>\n",
 			},
 			"review_by_personal_link": {
 				"de": "Sie können ihre Daten jederzeit über Ihren persönlichen Link prüfen/ändern. <br>\n<a href='/?submitBtn=prev'>Zurück</a><br>\n",
 				"en": "You may review or change your data using your personal link. <br>\n<a href='/?submitBtn=prev'>Back</a><br>\n",
+				"it": "Può rivedere o modificare i suoi dati usando il Suo link personale. <br>\n<a href='/?submitBtn=prev'>Back</a><br>\n",
 			},
 			"not_a_number": {
 				"de": "'%v' keine Zahl",
 				"en": "'%v' not a number",
+				"it": "'%v' non è un numero",
 			},
 			"too_big": {
 				"de": "Max %.0f",
 				"en": "max %.0f",
+				"it": "Massimo %.0f",
 			},
 			"too_small": {
 				"de": "Min %.0f",
 				"en": "min %.0f",
+				"it": "Minimo %.0f",
 			},
 			"must_one_option": {
 				"de": "Bitte eine Option wählen",
 				"en": "Please choose one option",
+				"it": "Si prega di selezionare una opzione",
 			},
 		},
 	}

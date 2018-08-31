@@ -58,8 +58,8 @@ func (t TplDataT) LanguageChooser(uri string, curr ...string) string {
 		if key == currCode {
 			s = append(s, fmt.Sprintf("<b           title='%v'>%v</b>\n", key, keyCap))
 		} else {
-			uri += "?lang_code=" + key
-			s = append(s, fmt.Sprintf("<a href='%v' title='%v'>%v</a>\n", uri, key, keyCap))
+			uriExt := uri + "?lang_code=" + key
+			s = append(s, fmt.Sprintf("<a href='%v' title='%v'>%v</a>\n", uriExt, key, keyCap))
 		}
 	}
 	return strings.Join(s, "  |  ")

@@ -723,7 +723,7 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 			gr := p.AddRadioMatrixGroup(labelsIncreaseDecrease(), names3rdMatrix, labels123Matrix)
 			gr.Label = trl.S{"de": "7a.", "en": "7a."}
 			gr.Desc = trl.S{
-				"de": "Die folgenden Aktienindizes / Rohstoffpreise / Wechselkurse werden mittefristig (<b>6</b>&nbsp;Mo.)",
+				"de": "Die folgenden Aktienindizes / Rohstoffpreise / Wechselkurse werden mittelfristig (<b>6</b>&nbsp;Mo.)",
 				"en": "Following stock indices / raw materials / exchange rates will medium term (<b>6</b>&nbsp;months)",
 			}
 
@@ -846,7 +846,7 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 				inp.ColSpanLabel = 22
 				inp.ColSpanControl = 12
 				inp.Desc = trl.S{
-					"de": " mittefristig (<b>6</b>&nbsp;Mo.) bei  ",
+					"de": " mittelfristig (<b>6</b>&nbsp;Mo.) bei  ",
 					"en": " medium term (<b>6</b>&nbsp;months) at ",
 				}
 				inp.Suffix = trl.S{"de": "%", "en": "pct"}

@@ -38,7 +38,9 @@ func (m *handlerWrapper) ServeHTTP(w http.ResponseWriter, rNew *http.Request) {
 	shortened := fmt.Sprintf("%v?%v", rNew.URL.Path, rNew.URL.RawQuery)
 	// lg.Printf("------------------------------------------")
 	if !strings.HasSuffix(rNew.URL.Path, "favicon.ico") {
-		lg.Printf("%-60v | referr %v", shortened, util.UrlBeautify(rNew.Referer()))
+		if !util.StaticExtension(rNew) {
+			lg.Printf("%-60v | referr %v", shortened, util.UrlBeautify(rNew.Referer()))
+		}
 	}
 
 	// Limit POST request body size.

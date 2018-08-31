@@ -572,8 +572,10 @@ func (q *QuestionaireT) PageHTML(idx int) (string, error) {
 	order := sh.Slice(idx)
 	log.Printf("Return order %+v; cut to %v", order, len(q.Pages)-1)
 
-	for _, i := range order {
-		b.WriteString(p.Groups[i].HTML(q.LangCode) + "\n")
+	for effectiveIdx, i := range order {
+		grpHTML := p.Groups[i].HTML(q.LangCode)
+		grpHTML = strings.Replace(grpHTML, "[groupID]", fmt.Sprintf("%v", effectiveIdx+1), -1)
+		b.WriteString(grpHTML + "\n")
 		b.WriteString(vspacer16)
 		if i < len(p.Groups)-1 { // no vertical distance at the end of groups
 			b.WriteString(vspacer16)

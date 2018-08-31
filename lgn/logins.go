@@ -212,7 +212,7 @@ func (l *loginsT) Save(fn ...string) error {
 	fileBackup := strings.Replace(loginsFile, ".json", fmt.Sprintf("_%v.json", time.Now().Unix()), 1)
 	pthNew := path.Join(saveDir, fileBackup)
 
-	if loginsFile != "logins-example.json" {
+	if path.Base(loginsFile) != "logins-example.json" {
 		err = os.Rename(pthOld, pthNew)
 		if err != nil {
 			return err

@@ -102,11 +102,12 @@ textarea{
 	white-space:pre !important;  /*prevent inheritance of nowrap from surrounding */
 }
 
-button{
+button, input[type="submit"]{
 	padding: 7px 24px;
 	padding-bottom: 7px;
 	margin: 4px 6px;
 	cursor: pointer;
+	border-radius: 6px;
 }
 
 

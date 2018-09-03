@@ -121,13 +121,22 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 
 		p := q.AddPage()
 		p.Width = 70
-		p.Label = trl.S{
+		// p.Label = trl.S{
+		p.Section = trl.S{
 			"de": "1. Zur Aufgaben- und Kompetenzverteilung in Europa",
 			"en": "1. Competency allocation in Europe",
 			"es": "1. Sobre la distribución de las tareas y competencias en Europa",
 			"fr": "1. Répartition des missions et des compétences en Europe",
 			"it": "1. La distribuzione delle competenze in Europa tra i Paesi membri e la UE",
 			"pl": "1. Podział zadań i kompetencji w Europie",
+		}
+		p.Label = trl.S{
+			"de": "",
+			"en": "",
+			"es": "",
+			"fr": "",
+			"it": "",
+			"pl": "",
 		}
 		p.Desc = trl.S{
 			"de": "Inwieweit stimmen Sie den folgenden Aufgaben zu?",
@@ -349,13 +358,22 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 	}
 	{
 		p := q.AddPage()
-		p.Label = trl.S{
+		p.Width = 70
+		p.Section = trl.S{
 			"de": "2. Reforminitiativen in der Europäischen Währungsunion (EWU)",
 			"en": "2. Reform initiatives in the European Monetary Union (EMU)",
 			"es": "2. ",
 			"fr": "2. ",
 			"it": "2. ",
 			"pl": "2. ",
+		}
+		p.Label = trl.S{
+			"de": "",
+			"en": "",
+			"es": "",
+			"fr": "",
+			"it": "",
+			"pl": "",
 		}
 		p.Desc = trl.S{
 			"de": "Inwieweit stimmen Sie den folgenden Aussagen zu?",

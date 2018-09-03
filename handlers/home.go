@@ -162,16 +162,14 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 
 	// Already finished?
 	if !q.ClosingTime.IsZero() {
-		s := cfg.Get().Mp["finished_by_participant"].All()
-		s = fmt.Sprintf(s, q.ClosingTime.Format("02.01.2006 15:04"), q.ClosingTime.Format("02.01.2006 15:04"))
+		s := cfg.Get().Mp["finished_by_participant"].All(q.ClosingTime.Format("02.01.2006 15:04"))
 		helper(w, r, nil, s)
 		return
 	}
 
 	// Deadline exceeded?
 	if time.Now().After(q.Survey.Deadline) {
-		s := cfg.Get().Mp["deadline_exceeded"].All()
-		s = fmt.Sprintf(s, q.Survey.Deadline.Format("02.01.2006 15:04"), q.Survey.Deadline.Format("02.01.2006 15:04"))
+		s := cfg.Get().Mp["deadline_exceeded"].All(q.Survey.Deadline.Format("02.01.2006 15:04"))
 		helper(w, r, nil, s)
 		return
 	}

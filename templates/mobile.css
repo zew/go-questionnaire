@@ -58,6 +58,11 @@ body{
     font-size:  130%;
     font-weight: bold;
     margin-top: 2px;
+
+    width: 89%;  /* float right of the menu button */
+}
+
+.go-quest-page-desc{
 }
 
 
@@ -199,11 +204,18 @@ input[type="number"] {
     input[type=checkbox], input[type=radio]  {
         width: 18px; height: 18px;
     }
+
+    .go-quest-page-section,
+    .go-quest-page-header {
+        width: 80%;  /* float right of the menu button */
+    }
     .go-quest-label {
         display: inline-block;  /* activate line-height*/
         font-size: 13px;
         line-height: 12px;
     }
+
+
 }
 
 

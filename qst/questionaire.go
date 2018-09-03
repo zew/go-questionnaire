@@ -426,12 +426,12 @@ func (gr groupT) HTML(langCode string) string {
 
 // Type page contains groups with inputs
 type pageT struct {
-	Section         trl.S `json:"section,omitempty"` // several pages have a section headline
+	Section         trl.S `json:"section,omitempty"` // Several pages have a section headline, showing up mobile navigation menu
 	Label           trl.S `json:"label,omitempty"`
 	Desc            trl.S `json:"description,omitempty"`
 	Short           trl.S `json:"short,omitempty"`         // Short version of Label/Description - i.e. for progress bar
-	NoNavigation    bool  `json:"no_navigation,omitempty"` // page will not show up in progress bar
-	NavigationalNum int   `json:"navi_num"`                // the number in Navigation order; computed by q.Validate
+	NoNavigation    bool  `json:"no_navigation,omitempty"` // Page will not show up in progress bar
+	NavigationalNum int   `json:"navi_num"`                // The number in Navigation order; computed by q.Validate
 
 	Width                 int `json:"width,omitempty"`                  // default is 100 percent
 	AestheticCompensation int `json:"aesthetic_compensation,omitempty"` // default is zero percent; if controls do not reach the right border

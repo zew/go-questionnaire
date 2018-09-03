@@ -3,7 +3,10 @@
 // we need some global store too.
 package trl
 
-import "strings"
+import (
+	"fmt"
+	"strings"
+)
 
 // LangCodes for returning multiple translations.
 // When no langCode is available, then the first entry rules.
@@ -63,10 +66,17 @@ func (s S) String() string {
 
 // All returns all translations
 // ordered by lang codes
-func (s S) All() string {
+func (s S) All(args ...string) string {
+
+	argsIntf := make([]interface{}, len(args))
+	for i, v := range args {
+		argsIntf[i] = v
+	}
+
 	ret := ""
 	for _, key := range LangCodes {
 		if val, ok := s[key]; ok {
+			val = fmt.Sprintf(val, argsIntf...)
 			ret += val
 			ret += "\n\n"
 		}
@@ -128,6 +138,8 @@ var hyph = []string{
 	"Deutsch&shy;land",
 	"Welt&shy;wirtschaft",
 
+	"un&shy;ent&shy;schieden",
+
 	// english
 
 	"Small+&shy;medium",
@@ -145,6 +157,17 @@ var hyph = []string{
 	"environ&shy;ment",
 	"Cons&shy;umer",
 	"Reg&shy;ulation",
+
+	"Dis&shy;agree",
+	"Un&shy;decided",
+
+	// italian
+
+	"favo&shy;revole",
+	"Favo&shy;revole",
+
+	"in&shy;deciso",
+	"In&shy;deciso",
 }
 
 func init() {

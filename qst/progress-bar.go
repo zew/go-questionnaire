@@ -46,11 +46,6 @@ func (q *QuestionaireT) ProgressBar() string {
 			continue
 		}
 
-		eff := p.Label.Tr(q.LangCode)
-		if p.Short != nil { // short label dedicated to menu
-			eff = p.Short.Tr(q.LangCode)
-		}
-
 		liClass := ""
 		if idx < q.CurrPage {
 			liClass = "is-complete"
@@ -61,14 +56,24 @@ func (q *QuestionaireT) ProgressBar() string {
 		// Some positional finetuning
 		sect := p.Section.TrSilent(q.LangCode)
 		leftOrCenter := "text-align: left; width: 98%; transform: translate(25%, 0px);"
-		if sect != "" {
-			sect = fmt.Sprintf("<b>%v</b>", sect)
-			sect += vspacer
-			if idx == len(q.Pages)-1 {
-				// last element more to the right
-				leftOrCenter = "text-align: left; width: 98%; transform: translate(40%, 0px);"
+
+		if p.Short == nil {
+			if sect != "" {
+				sect = fmt.Sprintf("<b>%v</b>", sect)
+				sect += vspacer
+				if idx == len(q.Pages)-1 {
+					// last element more to the right
+					leftOrCenter = "text-align: left; width: 98%; transform: translate(40%, 0px);"
+				}
+			} else if sect == "" {
+				leftOrCenter = "transform: translate(0, 75%);"
 			}
-		} else if sect == "" {
+		}
+
+		eff := p.Label.Tr(q.LangCode)
+		if p.Short != nil { // short label dedicated to menu
+			eff = p.Short.Tr(q.LangCode)
+			sect = ""
 			leftOrCenter = "transform: translate(0, 75%);"
 		}
 

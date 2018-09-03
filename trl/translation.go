@@ -161,11 +161,18 @@ var hyph = []string{
 	"Dis&shy;agree",
 	"Un&shy;decided",
 
-	// italian
+	// spanish
+	"desa&shy;cuerdo",
+	"in­&shy;deciso",
+	"acuer&shy;do",
 
+	// french
+	"acc&shy;ord",
+	"In&shy;diff&shy;érent",
+
+	// italian
 	"favo&shy;revole",
 	"Favo&shy;revole",
-
 	"in&shy;deciso",
 	"In&shy;deciso",
 }

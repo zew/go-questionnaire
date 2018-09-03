@@ -426,6 +426,7 @@ func GenerateHashesH(w http.ResponseWriter, r *http.Request) {
 	}
 
 	fe.List = template.HTML(b.String())
+	fe.ErrMsg = errMsg
 
 	tpl := template.New("anyname.html")
 	tpl, err = tpl.Parse(src)

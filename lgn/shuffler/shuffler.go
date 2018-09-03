@@ -17,7 +17,7 @@ type shufflerT struct {
 	MaxElements int // The number of elements to shuffle; typically the largest number of input groups across all pages of a questionaire.
 }
 
-// New() creates a Shuffler for creating deterministic variations
+// New creates a Shuffler for creating deterministic variations
 // of a slice []int{1,2,3...,MaxElements}
 //
 // ID is the seed for the randomizer

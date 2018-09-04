@@ -453,7 +453,7 @@ func (p *pageT) AddGroup() *groupT {
 // QuestionaireT contains pages with groups with inputs
 type QuestionaireT struct {
 	Survey      surveyT   `json:"survey,omitempty"`
-	UserID      string    `json:"user_id,omitempty"`      // participant ID
+	UserID      string    `json:"user_id,omitempty"`      // participant ID, decimal, but string, i.E. 1011
 	ClosingTime time.Time `json:"closing_time,omitempty"` // truncated to second
 	RemoteIP    string    `json:"remote_ip,omitempty"`
 	UserAgent   string    `json:"user_agent,omitempty"`
@@ -461,8 +461,9 @@ type QuestionaireT struct {
 	MD5         string    `json:"md_5,omitempty"`
 
 	// LangCode and LangCodes are imposed from cfg.LangCodes via session."lang_code"
-	LangCodes map[string]string `json:"lang_codes,omitempty"` // all possible lang codes - i.e. en, de
-	LangCode  string            `json:"lang_code,omitempty"`  // default lang code - and current lang code - i.e. de
+	LangCodes      map[string]string `json:"lang_codes,omitempty"`       // all possible lang codes - i.e. en, de
+	LangCodesOrder []string          `json:"lang_codes_order,omitempty"` // en, de   -  or   - de, en
+	LangCode       string            `json:"lang_code,omitempty"`        // default lang code - and current lang code - i.e. de
 
 	CurrPage  int  `json:"curr_page,omitempty"`
 	HasErrors bool `json:"has_errors,omitempty"` // If any response is faulty; set by ValidateReponseData

@@ -7,11 +7,14 @@ package cfg
 
 import (
 	"encoding/json"
+	"fmt"
 	"io/ioutil"
 	"log"
 	"net/http"
 	"os"
 	"path"
+	"sort"
+	"strconv"
 	"sync"
 	"time"
 
@@ -53,7 +56,8 @@ type ConfigT struct {
 	// available language codes for the application, first element is default
 	LangCodes []string `json:"lang_codes"`
 	// multi language strings for the application
-	Mp trl.Map `json:"translation_map"`
+	Mp               trl.Map        `json:"translation_map"`
+	UserIDToLanguage map[int]string `json:"user_id_to_language,omitempty"` // user id to language preselection
 }
 
 // CfgPath is obtained by ENV variable or command line flag in main package.
@@ -188,6 +192,35 @@ func (c *ConfigT) Save(fn ...string) {
 	log.Printf("Saved config file to %v", savePath)
 }
 
+// UserLangCode returns the language code for a user ID.
+//
+// user_id_to_language: {
+// 	      1:   fr,
+// 	   1305:   en,
+//  }
+//
+func (c *ConfigT) UserLangCode(userIDStr string) (ret string, err error) {
+	userID, err := strconv.Atoi(userIDStr)
+	if err != nil {
+		return
+	}
+	idxUnsorted := make([]int, 0, len(c.UserIDToLanguage))
+	for id := range c.UserIDToLanguage {
+		idxUnsorted = append(idxUnsorted, id)
+	}
+	sort.Ints(idxUnsorted)
+	for _, key := range idxUnsorted {
+		if key > userID {
+			return
+		}
+		lc := c.UserIDToLanguage[key]
+		log.Printf("UserID %5v: key %4v for UserIDToLanguage[key] %v", userID, key, lc)
+		ret = lc
+	}
+	err = fmt.Errorf("No language code found for %v", userID)
+	return
+}
+
 // Pref prefixes a URL path with an application dir prefix.
 // Any URL Path is prefixed with the URLPathPrefix, if URLPathPrefix is set.
 // Prevents unnecessary slashes.
@@ -245,6 +278,42 @@ func Example() {
 		FormTimeout:            2,
 
 		LangCodes: []string{"de", "en", "es", "fr", "it", "pl"},
+		UserIDToLanguage: map[int]string{
+			1:    "fr",
+			578:  "de",
+			1305: "fr",
+			1326: "bg", //?
+			1343: "cy", //?
+			1349: "cz", //?
+			1370: "de",
+			1466: "dk", //?
+			1479: "ee", //?
+			1485: "es",
+			1538: "fi", //?
+			1551: "fr",
+			1625: "en",
+			1690: "gr", //?
+			1711: "hr", //?
+			1722: "hu", //?
+			1743: "ie", //?
+			1754: "it",
+			1828: "lt", //?
+			1834: "lv", //?
+			1835: "lt", //?
+			1840: "lu", //?
+			1845: "lv", //?
+			1852: "mt", //?
+			1858: "nl", //?
+			1884: "pl",
+			1935: "pt", //?
+			1956: "ro", //?
+			1988: "se", //?
+			2008: "si", //?
+			2016: "sk", //?
+			2030: "en",
+			2037: "fr",
+			2384: "it",
+		},
 		Mp: trl.Map{
 			"page": {
 				"en": "Page",

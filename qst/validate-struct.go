@@ -27,15 +27,25 @@ func (q *QuestionaireT) Validate() error {
 		log.Printf(s)
 		return fmt.Errorf(s)
 	}
-	if q.LangCode == "" {
-		s := fmt.Sprintf("Language code is empty. Must be one of %v", q.LangCodes)
+	if len(q.LangCodes) != len(q.LangCodesOrder) {
+		s := fmt.Sprintf("LangCodes must be same lengnth as LangCodesOrder %v -  %v", len(q.LangCodes), len(q.LangCodesOrder))
 		log.Printf(s)
 		return fmt.Errorf(s)
+	} else {
+		for _, lg := range q.LangCodesOrder {
+			if _, ok := q.LangCodes[lg]; !ok {
+				s := fmt.Sprintf("LangCodesOrder val %v is not a key in LangCodes", lg)
+				log.Printf(s)
+				return fmt.Errorf(s)
+			}
+		}
 	}
-	if _, ok := q.LangCodes[q.LangCode]; !ok {
-		s := fmt.Sprintf("Language code '%v' is not supported in %v", q.LangCode, q.LangCodes)
-		log.Printf(s)
-		return fmt.Errorf(s)
+	if q.LangCode != "" {
+		if _, ok := q.LangCodes[q.LangCode]; !ok {
+			s := fmt.Sprintf("Language code '%v' is not supported in %v", q.LangCode, q.LangCodes)
+			log.Printf(s)
+			return fmt.Errorf(s)
+		}
 	}
 
 	navigationalNum := 0

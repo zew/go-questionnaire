@@ -13,23 +13,30 @@ import (
 
 	"github.com/russross/blackfriday"
 	"github.com/zew/go-questionaire/cfg"
+	"github.com/zew/go-questionaire/qst"
 	"github.com/zew/go-questionaire/sessx"
 )
 
 // MarkDownFromFile handles markdown rendering.
-func MarkDownFromFile(fpth, langCode string) (string, error) {
+func MarkDownFromFile(fpth, surveyType, langCode string) (string, error) {
 
-	fpthLangage := filepath.Join(filepath.Dir(fpth), langCode, filepath.Base(fpth))
+	// bts, err = ioutil.ReadFile(strings.TrimSuffix(fpth, ".md") + ".MD")
 
-	bts, err := ioutil.ReadFile(fpthLangage)
+	fpthSurveyLang := filepath.Join(filepath.Dir(fpth), surveyType, langCode, filepath.Base(fpth))
+	fpthLang := filepath.Join(filepath.Dir(fpth), langCode, filepath.Base(fpth))
+
+	bts, err := ioutil.ReadFile(fpthSurveyLang)
 	if err != nil {
 		if os.IsNotExist(err) {
-			// bts, err = ioutil.ReadFile(strings.TrimSuffix(fpth, ".md") + ".MD")
-			bts, err = ioutil.ReadFile(fpth)
+			bts, err = ioutil.ReadFile(fpthLang)
+			if os.IsNotExist(err) {
+				bts, err = ioutil.ReadFile(fpth)
+			}
 		}
 	}
+
 	if err != nil {
-		s := fmt.Sprintf("MarkdownH: Found neither %v nor %v.", fpthLangage, fpth)
+		s := fmt.Sprintf("MarkdownH: Found neither %v nor %v nor %v.", fpthSurveyLang, fpthLang, fpth)
 		log.Printf(s)
 		return "", fmt.Errorf(s)
 	}
@@ -59,16 +66,26 @@ type staticPrefixT string // significant url path fragment
 //
 // And we want - github style - a README.md served from the app root.
 // URL should have *.html extension, not *.md.
+//
+//
+// We want files separated by survey type and language.
+// We link
+//     /doc/site-imprint.md
+// In the directory static, we will search
+//     /doc/fmt/en/site-imprint.md
+//     /doc/en/site-imprint.md
+//     /doc/site-imprint.md
 func (fragm *staticPrefixT) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 
+	ext := strings.ToLower(path.Ext(r.URL.Path)) // file extension
+	lcP := strings.ToLower(r.URL.Path)           // lower case path
+	ctns := strings.Contains                     // alias for function
+
+	markDown1 := ext == ".html" || ext == ".md"
+	markDown2 := ctns(lcP, "readme") || ctns(lcP, "/doc")
+
 	// Relay any non html and md request to static file handler
-	ext := strings.ToLower(path.Ext(r.URL.Path))
-	if ext != ".html" &&
-		ext != ".md" &&
-		!strings.HasSuffix(strings.ToLower(r.URL.Path), "readme") &&
-		!strings.HasSuffix(strings.ToLower(r.URL.Path), "/doc/") &&
-		!strings.HasSuffix(strings.ToLower(r.URL.Path), "doc") &&
-		true {
+	if !markDown1 || !markDown2 {
 		StaticDownloadH(w, r)
 		return
 	}
@@ -113,11 +130,9 @@ func (fragm *staticPrefixT) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		fpth = strings.Replace(fpth, ".html", ".md", -1)
 	}
 
-	{
-		s := fmt.Sprintf("doc path/fpath: %20v; %-20v", pth, fpth)
-		log.Printf(s)
-		// w.Write([]byte(s))
-	}
+	s := fmt.Sprintf("doc path/fpath: %20v; %-20v", pth, fpth)
+	log.Printf(s)
+	// w.Write([]byte(s))
 
 	langCode := cfg.Get().LangCodes[0]
 	sess := sessx.New(w, r)
@@ -125,7 +140,15 @@ func (fragm *staticPrefixT) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		langCode = sess.EffectiveStr("lang_code")
 	}
 
-	output, err := MarkDownFromFile(fpth, langCode)
+	// survey name
+	var q = &qst.QuestionaireT{}
+
+	surveyType := ""
+	if ok, _ := sess.EffectiveObj("questionaire", q); ok {
+		surveyType = q.Survey.Type
+	}
+
+	output, err := MarkDownFromFile(fpth, surveyType, langCode)
 	if err != nil {
 		fmt.Fprint(w, err.Error())
 		return

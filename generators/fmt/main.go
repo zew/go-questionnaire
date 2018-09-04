@@ -38,7 +38,7 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 				inp.ColSpanLabel = 3
 				impr := trl.S{}
 				for lc := range q.LangCodes {
-					cnt, err := tpl.MarkDownFromFile("./static/doc/data-protection.md", lc)
+					cnt, err := tpl.MarkDownFromFile("./static/doc/data-protection.md", q.Survey.Type, lc)
 					if err != nil {
 						log.Print(err)
 					}
@@ -1023,7 +1023,7 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 				inp.CSSLabel = "special-input-vert-wider"
 				impr := trl.S{}
 				for lc := range q.LangCodes {
-					cnt, err := tpl.MarkDownFromFile("./static/doc/site-imprint.md", lc)
+					cnt, err := tpl.MarkDownFromFile("./static/doc/site-imprint.md", q.Survey.Type, lc)
 					if err != nil {
 						log.Print(err)
 					}

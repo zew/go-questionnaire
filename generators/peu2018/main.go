@@ -2,8 +2,10 @@ package peu2018
 
 import (
 	"fmt"
+	"log"
 
 	"github.com/zew/go-questionaire/qst"
+	"github.com/zew/go-questionaire/tpl"
 	"github.com/zew/go-questionaire/trl"
 )
 
@@ -28,20 +30,28 @@ func labelsGoodBad17() []trl.S {
 			"pl": "jestem przeciwny/a",
 		},
 		{
-			"de": "...",
-			"en": "...",
-			"es": "...",
-			"fr": "...",
-			"it": "...",
-			"pl": "...",
+			"de": "-3",
+			"en": "-3",
+			"es": "-3",
+			"fr": "-3",
+			"it": "-3",
+			"pl": "-3",
 		},
 		{
-			"de": "...",
-			"en": "...",
-			"es": "...",
-			"fr": "...",
-			"it": "...",
-			"pl": "...",
+			"de": "-2",
+			"en": "-2",
+			"es": "-2",
+			"fr": "-2",
+			"it": "-2",
+			"pl": "-2",
+		},
+		{
+			"de": "-1",
+			"en": "-1",
+			"es": "-1",
+			"fr": "-1",
+			"it": "-1",
+			"pl": "-1",
 		},
 		{
 			"de": "unentschieden",
@@ -52,20 +62,28 @@ func labelsGoodBad17() []trl.S {
 			"pl": "jestem niezdecydowany/a",
 		},
 		{
-			"de": "...",
-			"en": "...",
-			"es": "...",
-			"fr": "...",
-			"it": "...",
-			"pl": "...",
+			"de": "1",
+			"en": "1",
+			"es": "1",
+			"fr": "1",
+			"it": "1",
+			"pl": "1",
 		},
 		{
-			"de": "...",
-			"en": "...",
-			"es": "...",
-			"fr": "...",
-			"it": "...",
-			"pl": "...",
+			"de": "2",
+			"en": "2",
+			"es": "2",
+			"fr": "2",
+			"it": "2",
+			"pl": "2",
+		},
+		{
+			"de": "3",
+			"en": "3",
+			"es": "3",
+			"fr": "3",
+			"it": "3",
+			"pl": "3",
 		},
 		{
 			"de": "stimme zu",
@@ -85,7 +103,7 @@ func labelsGoodBad17() []trl.S {
 // It is saved to disk as an example.
 func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 	q := qst.QuestionaireT{}
-	q.Survey = qst.NewSurvey("eup")
+	q.Survey = qst.NewSurvey("peu2018")
 	q.Survey.Params = params
 	q.Variations = 4
 
@@ -117,6 +135,62 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 	}
 
 	i2 := "[groupID]"
+
+	//
+	// Page Welcome
+	{
+		p := q.AddPage()
+		p.Label = trl.S{
+			"de": "Begrüßung",
+			"en": "Greeting",
+			"es": "Saludo",
+			"fr": "Salutation",
+			"it": "Saluto",
+			"pl": "Powitanie",
+		}
+		p.NoNavigation = true
+
+		{
+			// Only one group => shuffling is no problem
+			gr := p.AddGroup()
+			gr.Cols = 1
+			{
+
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.CSSLabel = "special-input-vert-wider"
+				inp.ColSpanLabel = 3
+				impr := trl.S{}
+				for lc := range q.LangCodes {
+					cnt, err := tpl.MarkDownFromFile("./static/doc/welcome.md", q.Survey.Type, lc)
+					if err != nil {
+						log.Print(err)
+					}
+					impr[lc] = cnt
+				}
+				inp.Desc = impr
+
+				{
+					inp := gr.AddInput()
+					inp.Type = "button"
+					inp.Name = "submitBtn"
+					inp.Response = "1"
+					inp.Label = trl.S{
+						"de": "Weiter",
+						"en": "Next",
+					}
+					inp.AccessKey = "n"
+					inp.ColSpanControl = 1
+					inp.HAlignControl = qst.HRight
+				}
+
+			}
+
+		}
+	}
+
+	//
+	// Page 1
 	{
 
 		p := q.AddPage()
@@ -160,7 +234,7 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 			names1stMatrix := []string{"energy"}
 			emptyRowLabels := []trl.S{}
 			gr := p.AddRadioMatrixGroup(labelsGoodBad17(), names1stMatrix, emptyRowLabels, 1)
-			gr.Cols = 7 // necessary, otherwise no vspacers
+			gr.Cols = 9 // necessary, otherwise no vspacers
 			gr.OddRowsColoring = true
 			gr.Label = trl.S{
 				"de": fmt.Sprintf("%v. Energiepolitik<br>", i2),
@@ -185,7 +259,7 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 			names1stMatrix := []string{"immigration"}
 			emptyRowLabels := []trl.S{}
 			gr := p.AddRadioMatrixGroup(labelsGoodBad17(), names1stMatrix, emptyRowLabels, 1)
-			gr.Cols = 7 // necessary, otherwise no vspacers
+			gr.Cols = 9 // necessary, otherwise no vspacers
 			gr.OddRowsColoring = true
 			gr.Label = trl.S{
 				"de": fmt.Sprintf("%v. Einwanderungspolitik<br>", i2),
@@ -210,7 +284,7 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 			names1stMatrix := []string{"defence"}
 			emptyRowLabels := []trl.S{}
 			gr := p.AddRadioMatrixGroup(labelsGoodBad17(), names1stMatrix, emptyRowLabels, 1)
-			gr.Cols = 7 // necessary, otherwise no vspacers
+			gr.Cols = 9 // necessary, otherwise no vspacers
 			gr.OddRowsColoring = true
 			gr.Label = trl.S{
 				"de": fmt.Sprintf("%v. Verteidigungspolitik<br>", i2),
@@ -235,7 +309,7 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 			names1stMatrix := []string{"wages"}
 			emptyRowLabels := []trl.S{}
 			gr := p.AddRadioMatrixGroup(labelsGoodBad17(), names1stMatrix, emptyRowLabels, 1)
-			gr.Cols = 7 // necessary, otherwise no vspacers
+			gr.Cols = 9 // necessary, otherwise no vspacers
 			gr.OddRowsColoring = true
 			gr.Label = trl.S{
 				"de": fmt.Sprintf("%v. Lohnpolitik<br>", i2),
@@ -260,7 +334,7 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 			names1stMatrix := []string{"flexibility"}
 			emptyRowLabels := []trl.S{}
 			gr := p.AddRadioMatrixGroup(labelsGoodBad17(), names1stMatrix, emptyRowLabels, 1)
-			gr.Cols = 7 // necessary, otherwise no vspacers
+			gr.Cols = 9 // necessary, otherwise no vspacers
 			gr.OddRowsColoring = true
 			gr.Label = trl.S{
 				"de": fmt.Sprintf("%v. Regeln des Arbeitsmarktes<br>", i2),
@@ -285,7 +359,7 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 			names1stMatrix := []string{"eutax"}
 			emptyRowLabels := []trl.S{}
 			gr := p.AddRadioMatrixGroup(labelsGoodBad17(), names1stMatrix, emptyRowLabels, 1)
-			gr.Cols = 7 // necessary, otherwise no vspacers
+			gr.Cols = 9 // necessary, otherwise no vspacers
 			gr.OddRowsColoring = true
 			gr.Label = trl.S{
 				"de": fmt.Sprintf("%v. EU-Steuer als neue Eigenmittelart<br>", i2),
@@ -310,7 +384,7 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 			names1stMatrix := []string{"taxpolicy"}
 			emptyRowLabels := []trl.S{}
 			gr := p.AddRadioMatrixGroup(labelsGoodBad17(), names1stMatrix, emptyRowLabels, 1)
-			gr.Cols = 7 // necessary, otherwise no vspacers
+			gr.Cols = 9 // necessary, otherwise no vspacers
 			gr.OddRowsColoring = true
 			gr.Label = trl.S{
 				"de": fmt.Sprintf("%v. Steuerpolitik<br>", i2),
@@ -335,7 +409,7 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 			names1stMatrix := []string{"initiative"}
 			emptyRowLabels := []trl.S{}
 			gr := p.AddRadioMatrixGroup(labelsGoodBad17(), names1stMatrix, emptyRowLabels, 1)
-			gr.Cols = 7 // necessary, otherwise no vspacers
+			gr.Cols = 9 // necessary, otherwise no vspacers
 			gr.OddRowsColoring = true
 			gr.Label = trl.S{
 				"de": fmt.Sprintf("%v. Initiativrechte für das Europäische Parlament<br>", i2),
@@ -356,6 +430,9 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 		}
 
 	}
+
+	//
+	// Page 2
 	{
 		p := q.AddPage()
 		p.Width = 70
@@ -397,7 +474,7 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 			names1stMatrix := []string{"investment"}
 			emptyRowLabels := []trl.S{}
 			gr := p.AddRadioMatrixGroup(labelsGoodBad17(), names1stMatrix, emptyRowLabels, 1)
-			gr.Cols = 7 // necessary, otherwise no vspacers
+			gr.Cols = 9 // necessary, otherwise no vspacers
 			gr.OddRowsColoring = true
 			gr.Label = trl.S{
 				"de": fmt.Sprintf("%v. Höhere Investitionen <br>", i2),
@@ -422,7 +499,7 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 			names1stMatrix := []string{"more_labor_flex"}
 			emptyRowLabels := []trl.S{}
 			gr := p.AddRadioMatrixGroup(labelsGoodBad17(), names1stMatrix, emptyRowLabels, 1)
-			gr.Cols = 7 // necessary, otherwise no vspacers
+			gr.Cols = 9 // necessary, otherwise no vspacers
 			gr.OddRowsColoring = true
 			gr.Label = trl.S{
 				"de": fmt.Sprintf("%v. Flexiblere Arbeitsmärkte<br>", i2),
@@ -447,7 +524,7 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 			names1stMatrix := []string{"unemployment_insurance"}
 			emptyRowLabels := []trl.S{}
 			gr := p.AddRadioMatrixGroup(labelsGoodBad17(), names1stMatrix, emptyRowLabels, 1)
-			gr.Cols = 7 // necessary, otherwise no vspacers
+			gr.Cols = 9 // necessary, otherwise no vspacers
 			gr.OddRowsColoring = true
 			gr.Label = trl.S{
 				"de": fmt.Sprintf("%v. Europäische Arbeitslosenversicherung<br>", i2),
@@ -472,7 +549,7 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 			names1stMatrix := []string{"eurobonds"}
 			emptyRowLabels := []trl.S{}
 			gr := p.AddRadioMatrixGroup(labelsGoodBad17(), names1stMatrix, emptyRowLabels, 1)
-			gr.Cols = 7 // necessary, otherwise no vspacers
+			gr.Cols = 9 // necessary, otherwise no vspacers
 			gr.OddRowsColoring = true
 			gr.Label = trl.S{
 				"de": fmt.Sprintf("%v. Eurobonds<br>", i2),
@@ -497,7 +574,7 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 			names1stMatrix := []string{"asset_purchase"}
 			emptyRowLabels := []trl.S{}
 			gr := p.AddRadioMatrixGroup(labelsGoodBad17(), names1stMatrix, emptyRowLabels, 1)
-			gr.Cols = 7 // necessary, otherwise no vspacers
+			gr.Cols = 9 // necessary, otherwise no vspacers
 			gr.OddRowsColoring = true
 			gr.Label = trl.S{
 				"de": fmt.Sprintf("%v. Wertpapierkaufprogramm der EZB<br>", i2),
@@ -522,7 +599,7 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 			names1stMatrix := []string{"growth_pact"}
 			emptyRowLabels := []trl.S{}
 			gr := p.AddRadioMatrixGroup(labelsGoodBad17(), names1stMatrix, emptyRowLabels, 1)
-			gr.Cols = 7 // necessary, otherwise no vspacers
+			gr.Cols = 9 // necessary, otherwise no vspacers
 			gr.OddRowsColoring = true
 			gr.Label = trl.S{
 				"de": fmt.Sprintf("%v. Stabilitäts- und Wachstumspakt (SWP)<br>", i2),
@@ -547,7 +624,7 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 			names1stMatrix := []string{"emu_institutions"}
 			emptyRowLabels := []trl.S{}
 			gr := p.AddRadioMatrixGroup(labelsGoodBad17(), names1stMatrix, emptyRowLabels, 1)
-			gr.Cols = 7 // necessary, otherwise no vspacers
+			gr.Cols = 9 // necessary, otherwise no vspacers
 			gr.OddRowsColoring = true
 			gr.Label = trl.S{
 				"de": fmt.Sprintf("%v. Neue EWU-Institutionen<br>", i2),
@@ -572,7 +649,7 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 			names1stMatrix := []string{"banking_union"}
 			emptyRowLabels := []trl.S{}
 			gr := p.AddRadioMatrixGroup(labelsGoodBad17(), names1stMatrix, emptyRowLabels, 1)
-			gr.Cols = 7 // necessary, otherwise no vspacers
+			gr.Cols = 9 // necessary, otherwise no vspacers
 			gr.OddRowsColoring = true
 			gr.Label = trl.S{
 				"de": fmt.Sprintf("%v. Vollendung der Bankenunion<br>", i2),
@@ -592,6 +669,63 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 			}
 		}
 
+	}
+
+	//
+	// Page Finish
+	{
+		p := q.AddPage()
+		p.Label = trl.S{
+			"de": "Zusammenfassung",
+			"en": "Summary of results",
+			"es": "Resumen",
+			"fr": "Résumé",
+			"it": "Riepilogo",
+			"pl": "Krótki opis",
+		}
+		// p.NoNavigation = true
+		{
+			// Only one group => shuffling is no problem
+			gr := p.AddGroup()
+			gr.Cols = 1
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.CSSLabel = "special-input-vert-wider"
+				inp.Desc = trl.S{
+					"de": "Danke",
+					"en": "Thank you",
+					"es": "Gracias",
+					"fr": "Merci",
+					"it": "Grazie",
+					"pl": "Dziękuję",
+				}
+			}
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "dynamic"
+				inp.CSSLabel = "special-input-vert-wider"
+				inp.DynamicFunc = "RepsonseStatistics"
+			}
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.CSSLabel = "special-input-vert-wider"
+				impr := trl.S{}
+				for lc := range q.LangCodes {
+					cnt, err := tpl.MarkDownFromFile("./static/doc/site-imprint.md", q.Survey.Type, lc)
+					if err != nil {
+						log.Print(err)
+					}
+					impr[lc] = cnt
+				}
+				inp.Desc = impr
+			}
+
+		}
 	}
 
 	(&q).Hyphenize()

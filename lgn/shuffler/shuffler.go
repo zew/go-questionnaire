@@ -20,7 +20,7 @@ type shufflerT struct {
 // New creates a Shuffler for creating deterministic variations
 // of a slice []int{1,2,3...,MaxElements}
 //
-// ID is the seed for the randomizer
+// ID is the seed for the randomizer.
 // Variations is the number of classes.
 // MaxElements is the slice length.
 func New(ID string, variatons int, maxNumberOfElements int) *shufflerT {

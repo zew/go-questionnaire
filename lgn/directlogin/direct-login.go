@@ -363,7 +363,7 @@ func CheckFailed(w http.ResponseWriter, r *http.Request) {
 
 }
 
-// ValidateAndLogin takes the *last* directory of the URL path as direct login
+// ValidateAndLogin takes the *last* directory of the URL path as direct login.
 // The direct login parameters and the survey_id and wave_id are still hard coded.
 // Login success forwards to the main handler
 func ValidateAndLogin(w http.ResponseWriter, r *http.Request) {

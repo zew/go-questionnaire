@@ -100,7 +100,7 @@ var LgnsPath = path.Join(".", "logins.json")
 
 var lgns *loginsT // package variable 'singleton' - needs to be an allocated struct - to hold pointer receiver-re-assignment
 
-// Get provides access to the logins data
+// Get provides access to the logins data.
 // It is essential to return a pointer,
 // otherwise the unlocking of the returned struct does not work.
 func Get() *loginsT {

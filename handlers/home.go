@@ -254,7 +254,7 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 			ok := sess.EffectiveIsSet(inp.Name)
 			if ok {
 				val := sess.EffectiveStr(inp.Name)
-				log.Printf("(Page#%2v) Setting '%12v' to '%v'", prevPage, inp.Name, val)
+				log.Printf("(Page#%2v) Setting %-24q to '%v'", prevPage, inp.Name, val)
 				val = html.EscapeString(val) // XSS prevention
 				q.Pages[prevPage].Groups[i1].Inputs[i2].Response = val
 			}

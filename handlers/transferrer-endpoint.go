@@ -15,7 +15,7 @@ import (
 	"github.com/zew/util"
 )
 
-// TransferrerEndpointH responds with with finished questionaires from the filesystem.
+// TransferrerEndpointH responds with finished questionaires from the filesystem.
 func TransferrerEndpointH(w http.ResponseWriter, r *http.Request) {
 
 	sess := sessx.New(w, r)

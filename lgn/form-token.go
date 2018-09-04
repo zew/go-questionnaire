@@ -29,9 +29,7 @@ func tok(hoursOffset int) string {
 
 // FormToken returns a form token.
 // User independent.
-/*
-	Should we add the user name into the hashed base?
-*/
+// Should we add the user name into the hashed base?
 func FormToken() string {
 	return tok(0)
 }
@@ -39,7 +37,7 @@ func FormToken() string {
 // ValidateFormToken checks tokens
 // against current hour - back to n previous hours.
 // Plus one more for bounding glitches / border crossing
-// 	when the rounding jumps from 12:59 to 13:00.
+// when the rounding jumps from 12:59 to 13:00.
 // i.e.
 // FormTimeout := 2
 // lower bound := -4

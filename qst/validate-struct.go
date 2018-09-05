@@ -31,13 +31,12 @@ func (q *QuestionaireT) Validate() error {
 		s := fmt.Sprintf("LangCodes must be same lengnth as LangCodesOrder %v -  %v", len(q.LangCodes), len(q.LangCodesOrder))
 		log.Printf(s)
 		return fmt.Errorf(s)
-	} else {
-		for _, lg := range q.LangCodesOrder {
-			if _, ok := q.LangCodes[lg]; !ok {
-				s := fmt.Sprintf("LangCodesOrder val %v is not a key in LangCodes", lg)
-				log.Printf(s)
-				return fmt.Errorf(s)
-			}
+	}
+	for _, lg := range q.LangCodesOrder {
+		if _, ok := q.LangCodes[lg]; !ok {
+			s := fmt.Sprintf("LangCodesOrder val %v is not a key in LangCodes", lg)
+			log.Printf(s)
+			return fmt.Errorf(s)
 		}
 	}
 	if q.LangCode != "" {

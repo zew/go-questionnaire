@@ -199,7 +199,7 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 		if err != nil {
 			log.Printf("Problem setting default lang_code '%v': %v", fromSess, err)
 		} else {
-			log.Printf("quest lang_code set to default '%v'", fromSess)
+			log.Printf("empty quest lang_code set to session value'%v'", fromSess)
 		}
 	}
 
@@ -221,7 +221,7 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 			log.Printf("Problem setting default lang_code '%v': %v", def, err)
 		} else {
 			sess.PutString("lang_code", q.LangCode)
-			log.Printf("lang_code set to '%v' - and saved to session", def)
+			log.Printf("empty lang_code set to userID lang_code or quest.Default '%v' - and saved to session", q.LangCode)
 		}
 	}
 

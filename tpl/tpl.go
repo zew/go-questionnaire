@@ -118,7 +118,7 @@ func (bt *bundleT) Parse(bundle string) *template.Template {
 		// => Keep bundles as small as possible
 		ext := filepath.Ext(bundle) // i.e. .html
 		mask := strings.TrimSuffix(bundle, ext) + "_*" + ext
-		if bundle == "main.html" {
+		if bundle == "main_desktop.html" || bundle == "main_mobile.html" {
 			mask = "*" + ext // main.html pulls in all *.html templates
 		}
 		additional1, err := bt.Template.ParseGlob(filepath.Join(".", "templates", mask)) // i.e. main_*.html
@@ -139,6 +139,11 @@ func (bt *bundleT) Parse(bundle string) *template.Template {
 		} else {
 			bt.Template = additional2
 		}
+
+		dt := bt.Template.DefinedTemplates()
+		dt = strings.Replace(dt, "; defined templates are:", "", -1)
+		dt = strings.Replace(dt, "\n", "", -1)
+		log.Printf("Bundle %-28v %v", bt.Template.Name(), dt)
 
 		bt.IsParsed = true
 	}

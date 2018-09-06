@@ -156,7 +156,7 @@ func (fragm *staticPrefixT) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
 
-	tplBundle := Get(w, r, "main.html")
+	tplBundle := Get(w, r, "main_desktop.html")
 	ts := &StackT{"markdown.html"}
 	err = tplBundle.Execute(
 		w,

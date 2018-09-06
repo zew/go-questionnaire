@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"log"
 
+	"github.com/zew/go-questionaire/cfg"
 	"github.com/zew/go-questionaire/qst"
 	"github.com/zew/go-questionaire/tpl"
 	"github.com/zew/go-questionaire/trl"
@@ -30,28 +31,28 @@ func labelsGoodBad17() []trl.S {
 			"pl": "jestem przeciwny/a",
 		},
 		{
-			"de": "-3",
-			"en": "-3",
-			"es": "-3",
-			"fr": "-3",
-			"it": "-3",
-			"pl": "-3",
+			"de": "",
+			"en": "",
+			"es": "",
+			"fr": "",
+			"it": "",
+			"pl": "",
 		},
 		{
-			"de": "-2",
-			"en": "-2",
-			"es": "-2",
-			"fr": "-2",
-			"it": "-2",
-			"pl": "-2",
+			"de": "",
+			"en": "",
+			"es": "",
+			"fr": "",
+			"it": "",
+			"pl": "",
 		},
 		{
-			"de": "-1",
-			"en": "-1",
-			"es": "-1",
-			"fr": "-1",
-			"it": "-1",
-			"pl": "-1",
+			"de": "",
+			"en": "",
+			"es": "",
+			"fr": "",
+			"it": "",
+			"pl": "",
 		},
 		{
 			"de": "unentschieden",
@@ -62,28 +63,28 @@ func labelsGoodBad17() []trl.S {
 			"pl": "jestem niezdecydowany/a",
 		},
 		{
-			"de": "1",
-			"en": "1",
-			"es": "1",
-			"fr": "1",
-			"it": "1",
-			"pl": "1",
+			"de": "",
+			"en": "",
+			"es": "",
+			"fr": "",
+			"it": "",
+			"pl": "",
 		},
 		{
-			"de": "2",
-			"en": "2",
-			"es": "2",
-			"fr": "2",
-			"it": "2",
-			"pl": "2",
+			"de": "",
+			"en": "",
+			"es": "",
+			"fr": "",
+			"it": "",
+			"pl": "",
 		},
 		{
-			"de": "3",
-			"en": "3",
-			"es": "3",
-			"fr": "3",
-			"it": "3",
-			"pl": "3",
+			"de": "",
+			"en": "",
+			"es": "",
+			"fr": "",
+			"it": "",
+			"pl": "",
 		},
 		{
 			"de": "stimme zu",
@@ -126,18 +127,18 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 	q.LangCode = "" // No default; forces usage of UserLangCode()
 
 	q.Survey.Org = trl.S{
-		"de": "ZEW",
-		"en": "ZEW",
-		"es": "ZEW",
-		"fr": "ZEW",
-		"it": "ZEW",
-		"pl": "ZEW",
+		"de": "  ",
+		"en": "  ",
+		"es": "  ",
+		"fr": "  ",
+		"it": "  ",
+		"pl": "  ",
 	}
 	q.Survey.Name = trl.S{
 		"de": "Umfrage: Zur Zukunft der Europäischen Union (EU)",
 		"en": "Survey: On the prospects of the European Union (EU)",
 		"es": "Cuestionario: El futuro de la Unión Europea (UE)",
-		"fr": "De l’avenir de l’Union Européenne",
+		"fr": "Questionnaire: De l’avenir de l’Union Européenne",
 		"it": "Questionario: le prospettive dell’Unione Europea (UE)",
 		"pl": "Badanie na temat: Przyszłość Unii Europejskiej (UE)",
 	}
@@ -149,12 +150,12 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 	{
 		p := q.AddPage()
 		p.Label = trl.S{
-			"de": "Begrüßung",
-			"en": "Greeting",
-			"es": "Saludo",
-			"fr": "Salutation",
-			"it": "Saluto",
-			"pl": "Powitanie",
+			"de": "Willkommen",
+			"en": "Welcome",
+			"es": "Bienvenido",
+			"fr": "Bienvenue",
+			"it": "Benvenuto",
+			"pl": "Zapraszamy",
 		}
 		p.NoNavigation = true
 
@@ -183,10 +184,7 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 					inp.Type = "button"
 					inp.Name = "submitBtn"
 					inp.Response = "1"
-					inp.Label = trl.S{
-						"de": "Weiter",
-						"en": "Next",
-					}
+					inp.Label = cfg.Get().Mp["start"]
 					inp.AccessKey = "n"
 					inp.ColSpanControl = 1
 					inp.HAlignControl = qst.HRight
@@ -702,21 +700,35 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 				inp.Type = "textblock"
 				inp.CSSLabel = "special-input-vert-wider"
 				inp.Desc = trl.S{
-					"de": "Danke",
-					"en": "Thank you",
-					"es": "Gracias",
-					"fr": "Merci",
-					"it": "Grazie",
-					"pl": "Dziękuję",
+					"de": "Danke für Ihre Teilnahme an unserer Umfrage.",
+					"en": "Thank you for your participation in our survey.",
+					"es": "Gracias por haber contestado a nuestro cuestionario.",
+					"fr": "Nous vous remercions d'avoir répondu à nos questions.",
+					"it": "Grazie per aver risposto al nostro questionario.",
+					"pl": "Dziękujemy za uczestnictwo w ankiecie.",
 				}
 			}
 
 			{
 				inp := gr.AddInput()
-				inp.Type = "dynamic"
+				inp.Type = "textblock"
 				inp.CSSLabel = "special-input-vert-wider"
-				inp.DynamicFunc = "RepsonseStatistics"
+				inp.Desc = trl.S{
+					"de": "<span style='font-size: 100%;'>Ihre Eingaben wurden gespeichert.</span>",
+					"en": "<span style='font-size: 100%;'>Your entries have been saved</span>",
+					"es": "<span style='font-size: 100%;'>Sus entradas se han guardado</span>",
+					"fr": "<span style='font-size: 100%;'>Vos entrées ont été sauvegardées</span>",
+					"it": "<span style='font-size: 100%;'>Le tue iscrizioni sono state salvate</span>",
+					"pl": "<span style='font-size: 100%;'>Twoje wpisy zostały zapisane</span>",
+				}
 			}
+
+			// {
+			// 	inp := gr.AddInput()
+			// 	inp.Type = "dynamic"
+			// 	inp.CSSLabel = "special-input-vert-wider"
+			// 	inp.DynamicFunc = "RepsonseStatistics"
+			// }
 
 			{
 				inp := gr.AddInput()

@@ -75,8 +75,8 @@ func (s surveyT) WaveID() string {
 	return t.Format("2006-01")
 }
 
-// Label is a pretty identifier
-func (s surveyT) Label() string {
+// WaveIDPretty is a pretty identifier
+func (s surveyT) WaveIDPretty() string {
 	if s.Year == 0 {
 		return ""
 	}

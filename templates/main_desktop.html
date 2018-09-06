@@ -1,12 +1,19 @@
 <html>
 {{ $lc := (.Sess.EffectiveStr "lang_code" .DefaultLangCode)}}
 <head>
+
 	<meta charset="utf-8">
 	<link rel="shortcut icon" href="data:;base64,=">
 	<link rel="icon"          href="data:;base64,=">
-		<title>{{.Trls.app_label.Tr $lc}}</title>
-	<link  href="{{prefix "/css/design.css"}}" rel="stylesheet" type="text/css" />
-	<link  href="{{prefix "/css/site.css"}}"   rel="stylesheet" type="text/css" />
+	<title>{{.Trls.app_label.Tr $lc}}</title>
+	<link href="{{prefix "/css/main_desktop1.css"}}" rel="stylesheet" type="text/css" />
+	<link href="{{prefix "/css/main_desktop2.css"}}" rel="stylesheet" type="text/css" />
+	{{if exists . "Q"}}
+		{{if ne .Q.Survey.Type ""}}
+			<link href="{{prefix "/css/main_desktop_"}}{{.Q.Survey.Type}}.css" rel="stylesheet" type="text/css" />
+		{{end}}
+	{{end}}
+
 	<!-- jQuery - as it is required almost always -->
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" ></script>
 	<script type="text/javascript">
@@ -35,10 +42,13 @@
 			'
 		>
 				{{if exists . "Q"}}  <!-- following if-condition cannot be on same line -->
-					{{if  ne .Q.Survey.Label ""}}
+					{{if  ne .Q.Survey.WaveIDPretty ""}}
 						<span style="font-size: 70%; position: relative; bottom: -1px; left: 4px;">
 							<span style='font-size: 130%'>{{.Q.Survey.Org.TrSilent $lc}} </span>
-							<span style="position: relative; bottom: 0px;" >{{.Q.Survey.Name.TrSilent $lc}} - {{toHtml (.Q.Survey.Label) }}</span>
+							<span style="position: relative; bottom: 0px;" >
+								{{.Q.Survey.Name.TrSilent $lc}} 
+								<span class="wave-id"> - {{toHtml (.Q.Survey.WaveIDPretty) }}</span>
+						</span>
 						</span>
 					{{else}}
 						<span style='font-size: 130%;'>{{.Trls.app_label_h1.Tr $lc}} </span> {{.Trls.app_label.Tr $lc}}
@@ -60,16 +70,16 @@
 	<!-- footer -->
 	<div class="footer">
 		{{if exists . "Q"}}
-			{{if  ne .Q.Survey.Label ""}}
+			{{if  ne .Q.Survey.WaveIDPretty ""}}
 				<div style='float: left; padding-left: 40px;'>
-					{{.Q.Survey.Name.TrSilent $lc}} - {{toHtml (.Q.Survey.Label) }}
+					{{.Q.Survey.Name.TrSilent $lc}} <span class="wave-id"> - {{toHtml (.Q.Survey.WaveIDPretty) }}</span>
 				</div>
 			{{end}}
 		{{end}}
 
 
 		<div style='float: right; padding-right: 40px;'>
-			<a href="{{prefix "/doc/site-imprint.md" }}">{{.Trls.imprint.Tr $lc}}</a>  
+			<a class="imprint"  href="{{prefix "/doc/site-imprint.md" }}">{{.Trls.imprint.Tr $lc}}</a>  
 			&nbsp; &nbsp; &nbsp; &nbsp;
 			{{toHtml (.LanguageChooser .Sess.ReqURI  $lc)}}
 		</div>	

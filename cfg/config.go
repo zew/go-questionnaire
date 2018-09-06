@@ -323,6 +323,22 @@ func Example() {
 				"it": "Pagina",
 				"pl": "Strona",
 			},
+			"start": {
+				"en": "Start",
+				"de": "Start",
+				"es": "Inicia",
+				"fr": "Commencer",
+				"it": "Inizia",
+				"pl": "Uruchomić",
+			},
+			"next": {
+				"en": "Next",
+				"de": "Weiter",
+				"es": "Continuar",
+				"fr": "Continuer",
+				"it": "Continuare",
+				"pl": "Kontynuować",
+			},
 			"app_label_h1": {
 				"en": "My Org",
 				"de": "Meine Organisation",

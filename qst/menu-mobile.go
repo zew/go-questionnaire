@@ -20,7 +20,7 @@ func (q *QuestionaireT) MenuMobile() string {
 	b.WriteString("<ul class='navigation'>")
 
 	lbl1 := q.Survey.Name.TrSilent(q.LangCode)
-	lbl2 := q.Survey.Label()
+	lbl2 := q.Survey.WaveIDPretty()
 
 	fmt.Fprintf(&b, `
 		<li style='

@@ -2,6 +2,8 @@ package generators
 
 import (
 	myfmt "fmt"
+	"io/ioutil"
+	"log"
 	"net/http"
 	"path/filepath"
 	"time"
@@ -13,6 +15,7 @@ import (
 	"github.com/zew/go-questionaire/generators/peu2018"
 	"github.com/zew/go-questionaire/lgn"
 	"github.com/zew/go-questionaire/qst"
+	"github.com/zew/util"
 )
 
 type genT func(params []qst.ParamT) (*qst.QuestionaireT, error)
@@ -121,6 +124,18 @@ func SurveyGenerate(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 		myfmt.Fprintf(w, "%v generated<br>\n", key)
+
+		//
+		// Create an empty main_desktop_[surveytype].css"
+		// if it does not exist yet
+		pth := filepath.Join(".", "templates", "main_desktop_"+q.Survey.Type+".css")
+		if ok, _ := util.FileExists(pth); !ok {
+			err := ioutil.WriteFile(pth, []byte{}, 0755)
+			if err != nil {
+				log.Fatalf("Could not create %v: %v", pth, err)
+			}
+			log.Printf("done creating file %v", pth)
+		}
 
 	}
 

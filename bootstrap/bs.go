@@ -3,9 +3,10 @@
 package bootstrap
 
 import (
-	"io/ioutil"
 	"log"
+	"os"
 	"path/filepath"
+	"strings"
 
 	"github.com/zew/go-questionaire/cfg"
 	"github.com/zew/go-questionaire/lgn"
@@ -39,19 +40,25 @@ func Config() {
 	lgn.LgnsPath = (*fl)[1].Val
 	lgn.Load()
 
-	//
-	//
-	// Create an empty site.css if it does not exist
-	pth := filepath.Join(".", "templates", "site.css")
-	if ok, _ := util.FileExists(pth); !ok {
-		err := ioutil.WriteFile(pth, []byte{}, 0755)
-		if err != nil {
-			log.Fatalf("Could not create %v: %v", pth, err)
-		}
-		log.Printf("done creating file %v", pth)
+	tpls := []string{
+		"main_desktop.html", "main_mobile.html",
+		"main_desktop1.css", "main_desktop2.css",
+		"main_mobile.css", "mobile_menu_without_js.css",
 	}
 
-	tpls := []string{"main.html", "design.css", "site.css", "mobile.html", "mobile.css", "mobile-menu-without-js.css"}
+	err := filepath.Walk(filepath.Join(".", "templates"), func(path string, f os.FileInfo, err error) error {
+		base := filepath.Base(path)
+		if strings.HasPrefix(base, "main_desktop_") ||
+			strings.HasPrefix(base, "main_mobile_") {
+			log.Printf("Adding %v", base)
+			tpls = append(tpls, base)
+		}
+		return nil
+	})
+	if err != nil {
+		log.Fatalf("Error walinkg templates: %v", err)
+	}
+
 	tpl.Parse(tpls...)
 
 }

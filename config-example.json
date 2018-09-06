@@ -90,6 +90,14 @@
  			"it": "Si prega di selezionare una opzione",
  			"pl": "Proszę wybrać jedną z opcji"
  		},
+ 		"next": {
+ 			"de": "Weiter",
+ 			"en": "Next",
+ 			"es": "Continuar",
+ 			"fr": "Continuer",
+ 			"it": "Continuare",
+ 			"pl": "Kontynuować"
+ 		},
  		"not_a_number": {
  			"de": "'%v' keine Zahl",
  			"en": "'%v' not a number",
@@ -121,6 +129,14 @@
  			"fr": "Vous pouvez consulter ou modifier vos données à l'aide de votre lien personnel.\u003cbr\u003e\n\u003ca href='/?submitBtn=prev'\u003ePrécédent\u003c/a\u003e\u003cbr\u003e\n",
  			"it": "Può rivedere o modificare i suoi dati usando il Suo link personale. \u003cbr\u003e\n\u003ca href='/?submitBtn=prev'\u003eIndietro\u003c/a\u003e\u003cbr\u003e\n",
  			"pl": "Dane można przejrzeć lub zmienić przy użyciu osobistego łącza.\u003cbr\u003e\n\u003ca href='/?submitBtn=prev'\u003eWstecz\u003c/a\u003e\u003cbr\u003e\n"
+ 		},
+ 		"start": {
+ 			"de": "Start",
+ 			"en": "Start",
+ 			"es": "Inicia",
+ 			"fr": "Commencer",
+ 			"it": "Inizia",
+ 			"pl": "Uruchomić"
  		},
  		"survey_ending": {
  			"de": "Umfrage endet am %v. \u003cbr\u003e\nVeröffentlichung am %v.  \u003cbr\u003e\n",

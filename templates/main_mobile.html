@@ -3,19 +3,13 @@
 {{ $lc := (.Sess.EffectiveStr "lang_code" .DefaultLangCode)}}
 <head>
 
-	<link rel="preconnect"   href="https://i.ebayimg.com"   />
- 	<link rel="dns-prefetch" href="//i.ebayimg.com">
-
-	<meta charset="utf-8">
-	<link rel="shortcut icon" href="data:;base64,=">
-	<link rel="icon"          href="data:;base64,=">
-
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="data:;base64,=">
+    <link rel="icon"          href="data:;base64,=">
+    <title>{{.Trls.app_label.Tr $lc}}</title>
+    <link href="{{prefix "/css/main_mobile.css"}}" rel="stylesheet" type="text/css" />
+    <link href="{{prefix "/css/mobile_menu_without_js.css"}}" rel="stylesheet" type="text/css" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-	<title>{{.Trls.app_label.Tr $lc}}</title>
-	<link  href="{{prefix "/css/mobile.css"}}" rel="stylesheet" type="text/css" />
-	<link  href="{{prefix "/css/mobile-menu-without-js.css"}}" rel="stylesheet" type="text/css" />
 
 </head>
 <body >
@@ -62,13 +56,6 @@
             '>
             << {{.Trls.page.Tr .Q.LangCode}} {{.Q.PrevNaviNum}} </button>
         {{end}}
-
-
-
-
-
-
-
 
 
 

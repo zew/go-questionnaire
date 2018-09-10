@@ -162,9 +162,9 @@ var hyph = []string{
 	"Un&shy;decided",
 
 	// spanish
-	"desa&shy;cuerdo",
 	"in­&shy;deciso",
 	"acuer&shy;do",
+	"desa&shy;cuer&shy;do",
 
 	// french
 	"acc&shy;ord",

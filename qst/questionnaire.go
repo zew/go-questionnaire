@@ -570,7 +570,8 @@ func (q *QuestionaireT) PageHTML(idx int) (string, error) {
 	b.WriteString(vspacer16)
 
 	sh := shuffler.New(q.UserID, q.Variations, len(p.Groups))
-	order := sh.Slice(idx)
+	// FIXME: Subtract 1 can be removed after peu2018 survey is finished.
+	order := sh.Slice(idx - 1) // an ex post correction for peu2018, since we inserted another page before
 	log.Printf("Return order %+v; cut to %v", order, len(q.Pages)-1)
 
 	for loopIdx, i := range order {

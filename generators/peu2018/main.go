@@ -138,7 +138,7 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 		"de": "Umfrage: Zur Zukunft der Europäischen Union (EU)",
 		"en": "Survey: On the prospects of the European Union (EU)",
 		"es": "Cuestionario: El futuro de la Unión Europea (UE)",
-		"fr": "Questionnaire: De l’avenir de l’Union Européenne",
+		"fr": "Questionnaire : De l’avenir de l’Union Européenne",
 		"it": "Questionario: le prospettive dell’Unione Europea (UE)",
 		"pl": "Badanie na temat: Przyszłość Unii Europejskiej (UE)",
 	}
@@ -715,11 +715,12 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 				inp.CSSLabel = "special-input-vert-wider"
 				inp.Desc = trl.S{
 					"de": "<span style='font-size: 100%;'>Ihre Eingaben wurden gespeichert.</span>",
-					"en": "<span style='font-size: 100%;'>Your entries have been saved</span>",
-					"es": "<span style='font-size: 100%;'>Sus entradas se han guardado</span>",
-					"fr": "<span style='font-size: 100%;'>Vos entrées ont été sauvegardées</span>",
-					"it": "<span style='font-size: 100%;'>Le tue iscrizioni sono state salvate</span>",
-					"pl": "<span style='font-size: 100%;'>Twoje wpisy zostały zapisane</span>",
+					"en": "<span style='font-size: 100%;'>Your entries have been saved.</span>",
+					"es": "<span style='font-size: 100%;'>Sus entradas se han guardado.</span>",
+					// "fx": "<span style='font-size: 100%;'>Vos entrées ont été sauvegardées</span>",
+					"fr": "<span style='font-size: 100%;'>Vos réponses ont été sauvegardées.</span>",
+					"it": "<span style='font-size: 100%;'>Le tue iscrizioni sono state salvate.</span>",
+					"pl": "<span style='font-size: 100%;'>Twoje wpisy zostały zapisane.</span>",
 				}
 			}
 

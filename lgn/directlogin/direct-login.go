@@ -373,7 +373,7 @@ func ValidateAndLogin(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "text/plain; charset=utf-8")
 
 	p := r.URL.Path
-	p = path.Base(p) // last element of path contains direct login
+	p = strings.ToUpper(path.Base(p)) // last element of path contains direct login
 
 	dl := New(3, 2)
 	dl.L = p

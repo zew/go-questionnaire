@@ -235,3 +235,14 @@ input[type="number"] {
 	line-height: 130%;
 }
 
+
+img[src="/img/doc/site-peu2018-logos.png"]{
+    width: 300px;
+    margin: auto;
+}
+
+
+.ordinals {
+	visibility: hidden;
+	display: none;
+}

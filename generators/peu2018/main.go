@@ -23,76 +23,76 @@ func labelsGoodBad17() []trl.S {
 
 	tm := []trl.S{
 		{
-			"de": "lehne ab",
-			"en": "Disagree",
-			"es": "en desacuerdo",
-			"fr": "Pas d’accord",
-			"it": "Non favorevole",
-			"pl": "jestem przeciwny/a",
+			"de": "lehne ab<span class='ordinals'><br>-4</span>",
+			"en": "Disagree<span class='ordinals'><br>-4</span>",
+			"es": "en desacuerdo<span class='ordinals'><br>-4</span>",
+			"fr": "Pas d’accord<span class='ordinals'><br>-4</span>",
+			"it": "Non favorevole<span class='ordinals'><br>-4</span>",
+			"pl": "jestem przeciwny/a<span class='ordinals'><br>-4</span>",
 		},
 		{
-			"de": "",
-			"en": "",
-			"es": "",
-			"fr": "",
-			"it": "",
-			"pl": "",
+			"de": "<span class='ordinals'><br>-3</span>",
+			"en": "<span class='ordinals'><br>-3</span>",
+			"es": "<span class='ordinals'><br>-3</span>",
+			"fr": "<span class='ordinals'><br>-3</span>",
+			"it": "<span class='ordinals'><br>-3</span>",
+			"pl": "<span class='ordinals'><br>-3</span>",
 		},
 		{
-			"de": "",
-			"en": "",
-			"es": "",
-			"fr": "",
-			"it": "",
-			"pl": "",
+			"de": "<span class='ordinals'><br>-2</span>",
+			"en": "<span class='ordinals'><br>-2</span>",
+			"es": "<span class='ordinals'><br>-2</span>",
+			"fr": "<span class='ordinals'><br>-2</span>",
+			"it": "<span class='ordinals'><br>-2</span>",
+			"pl": "<span class='ordinals'><br>-2</span>",
 		},
 		{
-			"de": "",
-			"en": "",
-			"es": "",
-			"fr": "",
-			"it": "",
-			"pl": "",
+			"de": "<span class='ordinals'><br>-1</span>",
+			"en": "<span class='ordinals'><br>-1</span>",
+			"es": "<span class='ordinals'><br>-1</span>",
+			"fr": "<span class='ordinals'><br>-1</span>",
+			"it": "<span class='ordinals'><br>-1</span>",
+			"pl": "<span class='ordinals'><br>-1</span>",
 		},
 		{
-			"de": "unentschieden",
-			"en": "Undecided",
-			"es": "indeciso",
-			"fr": "Indifférent",
-			"it": "Indeciso",
-			"pl": "jestem niezdecydowany/a",
+			"de": "unentschieden<span class='ordinals'><br>0</span>",
+			"en": "Undecided<span class='ordinals'><br>0</span>",
+			"es": "indeciso<span class='ordinals'><br>0</span>",
+			"fr": "Indifférent<span class='ordinals'><br>0</span>",
+			"it": "Indeciso<span class='ordinals'><br>0</span>",
+			"pl": "jestem niezdecydowany/a<span class='ordinals'><br>0</span>",
 		},
 		{
-			"de": "",
-			"en": "",
-			"es": "",
-			"fr": "",
-			"it": "",
-			"pl": "",
+			"de": "<span class='ordinals'><br>1</span>",
+			"en": "<span class='ordinals'><br>1</span>",
+			"es": "<span class='ordinals'><br>1</span>",
+			"fr": "<span class='ordinals'><br>1</span>",
+			"it": "<span class='ordinals'><br>1</span>",
+			"pl": "<span class='ordinals'><br>1</span>",
 		},
 		{
-			"de": "",
-			"en": "",
-			"es": "",
-			"fr": "",
-			"it": "",
-			"pl": "",
+			"de": "<span class='ordinals'><br>2</span>",
+			"en": "<span class='ordinals'><br>2</span>",
+			"es": "<span class='ordinals'><br>2</span>",
+			"fr": "<span class='ordinals'><br>2</span>",
+			"it": "<span class='ordinals'><br>2</span>",
+			"pl": "<span class='ordinals'><br>2</span>",
 		},
 		{
-			"de": "",
-			"en": "",
-			"es": "",
-			"fr": "",
-			"it": "",
-			"pl": "",
+			"de": "<span class='ordinals'><br>3</span>",
+			"en": "<span class='ordinals'><br>3</span>",
+			"es": "<span class='ordinals'><br>3</span>",
+			"fr": "<span class='ordinals'><br>3</span>",
+			"it": "<span class='ordinals'><br>3</span>",
+			"pl": "<span class='ordinals'><br>3</span>",
 		},
 		{
-			"de": "stimme zu",
-			"en": "Agree",
-			"es": "de acuerdo",
-			"fr": "D’accord",
-			"it": "Favorevole",
-			"pl": "zgadzam się",
+			"de": "stimme zu<span class='ordinals'><br>4</span>",
+			"en": "Agree<span class='ordinals'><br>4</span>",
+			"es": "de acuerdo<span class='ordinals'><br>4</span>",
+			"fr": "D’accord<span class='ordinals'><br>4</span>",
+			"it": "Favorevole<span class='ordinals'><br>4</span>",
+			"pl": "zgadzam się<span class='ordinals'><br>4</span>",
 		},
 	}
 
@@ -138,7 +138,7 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 		"de": "Umfrage: Zur Zukunft der Europäischen Union (EU)",
 		"en": "Survey: On the prospects of the European Union (EU)",
 		"es": "Cuestionario: El futuro de la Unión Europea (UE)",
-		"fr": "Questionnaire : De l’avenir de l’Union Européenne",
+		"fr": "Questionnaire : De l’avenir de l’Union Européenne (UE)",
 		"it": "Questionario: le prospettive dell’Unione Europea (UE)",
 		"pl": "Badanie na temat: Przyszłość Unii Europejskiej (UE)",
 	}
@@ -168,7 +168,7 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 				inp := gr.AddInput()
 				inp.Type = "textblock"
 				inp.CSSLabel = "special-input-vert-wider"
-				inp.ColSpanLabel = 3
+				inp.ColSpanLabel = 1
 				impr := trl.S{}
 				for lc := range q.LangCodes {
 					cnt, err := tpl.MarkDownFromFile("./static/doc/welcome.md", q.Survey.Type, lc)
@@ -187,7 +187,7 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 					inp.Label = cfg.Get().Mp["start"]
 					inp.AccessKey = "n"
 					inp.ColSpanControl = 1
-					inp.HAlignControl = qst.HRight
+					// inp.HAlignControl = qst.HRight
 				}
 
 			}
@@ -222,8 +222,9 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 			"de": "Inwieweit stimmen Sie den folgenden Aufgaben zu?",
 			"en": "Do you approve the following proposals?",
 			"es": "¿En qué medida está de acuerdo con las siguientes competencias?",
-			"fr": "Actuellement l’élargissement des compétences de l’UE dans certains domaines politiques est en débat. Approuvez-vous les propositions suivantes ?",
-			"it": "cosa pensa delle seguenti proposte?",
+			// "fr": "Actuellement l’élargissement des compétences de l’UE dans certains domaines politiques est en débat. Approuvez-vous les propositions suivantes ?",
+			"fr": "Approuvez-vous les propositions suivantes ?",
+			"it": "In che misura si trova d’accordo con le seguenti affermazioni?",
 			"pl": "Wskaż, w jakim stopniu zgadzasz się z poniższymi stwierdzeniami?",
 		}
 		p.Short = trl.S{
@@ -683,7 +684,7 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 		p := q.AddPage()
 		p.Label = trl.S{
 			"de": "Zusammenfassung",
-			"en": "Summary of results",
+			"en": "Summary",
 			"es": "Resumen",
 			"fr": "Résumé",
 			"it": "Riepilogo",
@@ -719,7 +720,8 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 					"es": "<span style='font-size: 100%;'>Sus entradas se han guardado.</span>",
 					// "fx": "<span style='font-size: 100%;'>Vos entrées ont été sauvegardées</span>",
 					"fr": "<span style='font-size: 100%;'>Vos réponses ont été sauvegardées.</span>",
-					"it": "<span style='font-size: 100%;'>Le tue iscrizioni sono state salvate.</span>",
+					// "it": "<span style='font-size: 100%;'>Le sue iscrizioni sono state salvate.</span>",
+					"it": "<span style='font-size: 100%;'>Le Sue risposte sono state salvate.</span>",
 					"pl": "<span style='font-size: 100%;'>Twoje wpisy zostały zapisane.</span>",
 				}
 			}

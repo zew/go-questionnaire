@@ -16,7 +16,8 @@ var dynFuncs = map[string]dynFuncT{
 }
 
 // Statistics returns the percentage of
-// answers responded to
+// answers responded to.
+// It is helper to RepsonseStatistics().
 func (q *QuestionaireT) Statistics() (int, int, float64) {
 	responses := 0
 	inputs := 0
@@ -41,7 +42,7 @@ func (q *QuestionaireT) Statistics() (int, int, float64) {
 }
 
 // RepsonseStatistics returns the percentage of
-// answers responded to
+// answers responded to.
 func RepsonseStatistics(q *QuestionaireT) (string, error) {
 
 	responses, inputs, pct := q.Statistics()
@@ -60,21 +61,7 @@ func RepsonseStatistics(q *QuestionaireT) (string, error) {
 
 // PersonalLink returns the entry link
 func PersonalLink(q *QuestionaireT) (string, error) {
-
-	closed := false
-	for _, p := range q.Pages {
-		for _, gr := range p.Groups {
-			for _, inp := range gr.Inputs {
-				if inp.Name == "finished" {
-					if inp.Response == ValSet {
-						closed = true
-					}
-				}
-			}
-
-		}
-	}
-
+	closed := q.FinishedEntirely()
 	ret := ""
 	if closed {
 		ret = cfg.Get().Mp["finished_by_participant"].Tr(q.LangCode)

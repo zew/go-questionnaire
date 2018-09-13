@@ -58,6 +58,14 @@
  			"it": "Questo questionario è stato chiuso il %v.",
  			"pl": "Aktualna Ankieta została zamknięta w %v"
  		},
+ 		"end": {
+ 			"de": "Ende",
+ 			"en": "End",
+ 			"es": "Fin",
+ 			"fr": "Fin",
+ 			"it": "Fine",
+ 			"pl": "Końcu"
+ 		},
  		"finished_by_participant": {
  			"de": "Sie haben den Fragebogen bereits abgeschlossen (%v).",
  			"en": "You already finished this survey wave at %v",

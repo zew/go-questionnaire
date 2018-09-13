@@ -588,7 +588,7 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 				"en": fmt.Sprintf("%v. Asset purchase program of ECB<br>", i2),
 				"es": fmt.Sprintf("%v. Programa de compra de bonos del BCE<br>", i2),
 				"fr": fmt.Sprintf("%v. Achats d’emprunts par la BCE<br>", i2),
-				"it": fmt.Sprintf("%v. Programma di acquisti di attività finanziare da parte della BCE<br>", i2),
+				"it": fmt.Sprintf("%v. Programma di acquisti di attività finanziarie da parte della BCE<br>", i2),
 				"pl": fmt.Sprintf("%v. Program zakupu papierów wartościowych EBC<br>", i2),
 			}
 			gr.Desc = trl.S{
@@ -718,9 +718,7 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 					"de": "<span style='font-size: 100%;'>Ihre Eingaben wurden gespeichert.</span>",
 					"en": "<span style='font-size: 100%;'>Your entries have been saved.</span>",
 					"es": "<span style='font-size: 100%;'>Sus entradas se han guardado.</span>",
-					// "fx": "<span style='font-size: 100%;'>Vos entrées ont été sauvegardées</span>",
 					"fr": "<span style='font-size: 100%;'>Vos réponses ont été sauvegardées.</span>",
-					// "it": "<span style='font-size: 100%;'>Le sue iscrizioni sono state salvate.</span>",
 					"it": "<span style='font-size: 100%;'>Le Sue risposte sono state salvate.</span>",
 					"pl": "<span style='font-size: 100%;'>Twoje wpisy zostały zapisane.</span>",
 				}
@@ -747,8 +745,81 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 				}
 				inp.Desc = impr
 			}
+			{
+				inp := gr.AddInput()
+				inp.Type = "button"
+				inp.Name = "finished"
+				inp.Name = "submitBtn"
+				inp.CSSControl = "special-input-vert-wider"
+				inp.Response = fmt.Sprintf("%v", len(q.Pages)-1+1) // +1 since one page is appended below
+				inp.Label = trl.S{"de": "", "en": ""}
+				inp.Desc = cfg.Get().Mp["end"]
+				inp.ColSpanControl = 1
+				inp.AccessKey = "n"
+				inp.HAlignControl = qst.HCenter
+				inp.HAlignControl = qst.HLeft
+			}
 
 		}
+	}
+
+	//
+	//
+	// End page
+	// End page is a copy of page finish
+	// without "End" button
+	// without navigation
+	{
+		p := q.AddPage()
+		p.Label = cfg.Get().Mp["end"]
+		p.NoNavigation = true
+		{
+			// Only one group => shuffling is no problem
+			gr := p.AddGroup()
+			gr.Cols = 1
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.CSSLabel = "special-input-vert-wider"
+				inp.Desc = trl.S{
+					"de": "Danke für Ihre Teilnahme an unserer Umfrage.",
+					"en": "Thank you for your participation in our survey.",
+					"es": "Gracias por haber contestado a nuestro cuestionario.",
+					"fr": "Nous vous remercions d'avoir répondu à nos questions.",
+					"it": "Grazie per aver risposto al nostro questionario.",
+					"pl": "Dziękujemy za uczestnictwo w ankiecie.",
+				}
+			}
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.CSSLabel = "special-input-vert-wider"
+				inp.Desc = trl.S{
+					"de": "<span style='font-size: 100%;'>Ihre Eingaben wurden gespeichert.</span>",
+					"en": "<span style='font-size: 100%;'>Your entries have been saved.</span>",
+					"es": "<span style='font-size: 100%;'>Sus entradas se han guardado.</span>",
+					"fr": "<span style='font-size: 100%;'>Vos réponses ont été sauvegardées.</span>",
+					"it": "<span style='font-size: 100%;'>Le Sue risposte sono state salvate.</span>",
+					"pl": "<span style='font-size: 100%;'>Twoje wpisy zostały zapisane.</span>",
+				}
+			}
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.CSSLabel = "special-input-vert-wider"
+				impr := trl.S{}
+				for lc := range q.LangCodes {
+					cnt, err := tpl.MarkDownFromFile("./static/doc/site-imprint.md", q.Survey.Type, lc)
+					if err != nil {
+						log.Print(err)
+					}
+					impr[lc] = cnt
+				}
+				inp.Desc = impr
+			}
+		}
+
 	}
 
 	(&q).Hyphenize()

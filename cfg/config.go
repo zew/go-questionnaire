@@ -340,6 +340,14 @@ func Example() {
 				"it": "Continuare",
 				"pl": "Kontynuować",
 			},
+			"end": {
+				"en": "End",
+				"de": "Ende",
+				"es": "Fin",
+				"fr": "Fin",
+				"it": "Fine",
+				"pl": "Końcu",
+			},
 			"app_label_h1": {
 				"en": "My Org",
 				"de": "Meine Organisation",

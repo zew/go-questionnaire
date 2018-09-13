@@ -236,11 +236,17 @@ input[type="number"] {
 }
 
 
+/* special elements invisible  */
+/* =========================== */
+a.imprint, li.imprint {
+	visibility: hidden;
+	display: none;
+}
+
 img[src="/img/doc/site-peu2018-logos.png"]{
     width: 300px;
     margin: auto;
 }
-
 
 .ordinals {
 	visibility: hidden;

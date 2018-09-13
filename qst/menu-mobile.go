@@ -99,7 +99,7 @@ func (q *QuestionaireT) MenuMobile() string {
 	)
 
 	fmt.Fprintf(&b, `
-		<li class="" >
+		<li class="imprint" >
 			%v
 		</li> 
 	`, imp)

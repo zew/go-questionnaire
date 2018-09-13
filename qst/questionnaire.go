@@ -436,7 +436,7 @@ type pageT struct {
 	Width                 int `json:"width,omitempty"`                  // default is 100 percent
 	AestheticCompensation int `json:"aesthetic_compensation,omitempty"` // default is zero percent; if controls do not reach the right border
 
-	Finished time.Time `json:"finished,omitempty"` // truncated to second
+	Finished time.Time `json:"finished,omitempty"` // truncated to second; *not* a marker for finished entirely - for that we use q.FinishedEntirely
 
 	Groups []*groupT `json:"groups,omitempty"`
 }
@@ -477,6 +477,25 @@ type QuestionaireT struct {
 // BasePath gives the 'root' for loading and saving questionaire JSON files.
 func BasePath() string {
 	return filepath.Join(".", "responses")
+}
+
+// FinishedEntirely does not go for the
+// page.Finished timestamps, but for
+// an explicit input called 'finished'
+func (q *QuestionaireT) FinishedEntirely() (closed bool) {
+	for _, p := range q.Pages {
+		for _, gr := range p.Groups {
+			for _, inp := range gr.Inputs {
+				if inp.Name == "finished" {
+					if inp.Response == ValSet {
+						closed = true
+						return
+					}
+				}
+			}
+		}
+	}
+	return
 }
 
 // FilePath1 returns the file system saving location of the questionaire.

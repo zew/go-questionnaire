@@ -727,3 +727,21 @@ func (q *QuestionaireT) Compare(v *QuestionaireT) (bool, error) {
 	}
 	return true, nil
 }
+
+// KeysValues returns all keys and values in defined order.
+// Empty values are also returned.
+// Major purpose is CSV export across several questionaires.
+func (q *QuestionaireT) KeysValues() (keys, vals []string) {
+	for i1 := 0; i1 < len(q.Pages); i1++ {
+		for i2 := 0; i2 < len(q.Pages[i1].Groups); i2++ {
+			for i3 := 0; i3 < len(q.Pages[i1].Groups[i2].Inputs); i3++ {
+				if q.Pages[i1].Groups[i2].Inputs[i3].IsLayout() {
+					continue
+				}
+				keys = append(keys, q.Pages[i1].Groups[i2].Inputs[i3].Name)
+				vals = append(vals, q.Pages[i1].Groups[i2].Inputs[i3].Response)
+			}
+		}
+	}
+	return
+}

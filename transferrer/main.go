@@ -23,23 +23,73 @@ import (
 	"github.com/zew/util"
 )
 
-var (
-	// remoteHost = "https://survey2.zew.de"
-	remoteHost = "https://www.peu2018.eu"
-	// remotePort = cfg.Get().BindSocket
-	remotePort = ""
+type RemoteT struct {
+	RemoteHost string
+	RemotePort string
 
-	// Some admin account
-	adminLogin = "pbu"
-	pass       = "pb165205"
+	AdminLogin string // Some admin account
+	Pass       string
 
-	// surveyType  = "fmt"
-	surveyType = "peu2018"
-	// waveID      = qst.NewSurvey(surveyType).WaveID()
-	waveID = "2018-08"
+	SurveyType string
+	WaveID     string
 
-	downloadDir = filepath.Join(qst.BasePath(), "downloaded")
-)
+	DownloadDir string
+}
+
+// Example returns a minimal configuration, to be extended or adapted
+func Example() RemoteT {
+	r := RemoteT{}
+	r.RemoteHost = "https://survey2.zew.de"
+	r.RemoteHost = "https://www.peu2018.eu"
+
+	r.RemotePort = fmt.Sprintf("%v", cfg.Get().BindSocket)
+	r.RemotePort = ""
+
+	r.AdminLogin = "login"
+	r.Pass = "secret"
+
+	r.SurveyType = "fmt"
+	r.SurveyType = "peu2018"
+
+	r.WaveID = qst.NewSurvey(r.SurveyType).WaveID()
+	r.WaveID = "2018-08"
+
+	r.DownloadDir = filepath.Join(qst.BasePath(), "downloaded")
+
+	return r
+}
+
+// Save writes a JSON file
+func (r *RemoteT) Save(fn string) {
+	byts, err := json.MarshalIndent(r, " ", "\t")
+	util.BubbleUp(err)
+	err = ioutil.WriteFile(fn, byts, 0644)
+	util.BubbleUp(err)
+}
+
+// Load loads a JSON file
+func Load(fn string) (r *RemoteT) {
+	file, err := util.LoadConfigFile(fn)
+	if err != nil {
+		log.Fatalf("Could not load config file %v: %v", fn, err)
+	}
+	log.Printf("Found config file: %v", fn)
+	defer func() {
+		err := file.Close()
+		if err != nil {
+			log.Fatalf("Err closing config file %v: %v", fn, err)
+		}
+		log.Printf("Closed config file: %v", fn)
+	}()
+	decoder := json.NewDecoder(file)
+	tempCfg := RemoteT{}
+	err = decoder.Decode(&tempCfg)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	return &tempCfg
+}
 
 func main() {
 
@@ -48,9 +98,16 @@ func main() {
 
 	bootstrap.Config()
 
-	host := fmt.Sprintf("%v:%v", remoteHost, remotePort)
-	if remotePort == "" {
-		host = remoteHost
+	var c2 RemoteT
+
+	//
+	c2 = Example()
+	c2.Save("transferrer-example.json")
+
+	c2 = *(Load("transferrer.json"))
+	host := fmt.Sprintf("%v:%v", c2.RemoteHost, c2.RemotePort)
+	if c2.RemotePort == "" {
+		host = c2.RemoteHost
 	}
 
 	defer func() {
@@ -77,8 +134,8 @@ func main() {
 		urlReq := urlLogin
 
 		vals := url.Values{}
-		vals.Set("username", adminLogin)
-		vals.Set("password", pass)
+		vals.Set("username", c2.AdminLogin)
+		vals.Set("password", c2.Pass)
 		vals.Set("token", lgn.FormToken())
 		req, err := http.NewRequest("POST", urlReq, bytes.NewBufferString(vals.Encode())) // <-- URL-encoded payload
 		if err != nil {
@@ -99,7 +156,7 @@ func main() {
 			}
 		}
 		respBytes, _ := ioutil.ReadAll(resp.Body)
-		mustHave := fmt.Sprintf("Logged in as %v", adminLogin)
+		mustHave := fmt.Sprintf("Logged in as %v", c2.AdminLogin)
 		if !strings.Contains(string(respBytes), mustHave) {
 			log.Fatalf("Login response must contain '%v'\n\n%v", mustHave, string(respBytes))
 		}
@@ -110,8 +167,8 @@ func main() {
 			return
 		}
 
-		if !strings.Contains(string(respBytes), "Logged in as "+adminLogin) {
-			log.Printf("Response must contain 'Logged in as %v' \n\n%v", adminLogin, string(respBytes))
+		if !strings.Contains(string(respBytes), "Logged in as "+c2.AdminLogin) {
+			log.Printf("Response must contain 'Logged in as %v' \n\n%v", c2.AdminLogin, string(respBytes))
 			return
 		}
 
@@ -130,8 +187,8 @@ func main() {
 		urlReq := urlMain
 
 		vals := url.Values{}
-		vals.Set("survey_id", surveyType)
-		vals.Set("wave_id", waveID)
+		vals.Set("survey_id", c2.SurveyType)
+		vals.Set("wave_id", c2.WaveID)
 		log.Printf("POST requesting %v?%v", urlReq, vals.Encode())
 		resp, err := util.Request("POST", urlReq, vals, []*http.Cookie{sessCook})
 		if err != nil {
@@ -139,7 +196,7 @@ func main() {
 			return
 		}
 
-		dir := filepath.Join(downloadDir, surveyType, waveID)
+		dir := filepath.Join(c2.DownloadDir, c2.SurveyType, c2.WaveID)
 		err = os.MkdirAll(dir, 0755)
 		if err != nil {
 			log.Printf("Could not create path 2 %v", dir)

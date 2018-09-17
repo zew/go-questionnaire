@@ -1,4 +1,4 @@
-package qst
+package main
 
 import (
 	"reflect"
@@ -18,19 +18,15 @@ func TestSuperset(t *testing.T) {
 			name: "one longer at the end - one in between",
 			args: [][]string{
 				[]string{"a1", "a2", "a3"},
-				[]string{"a1", "a2", "a3"},
 				[]string{"a1", "a2", "a3", "a4"},
-				[]string{"a1", "a2", "a3"},
 				[]string{"a1", "a3"},
 				[]string{"a1", "a12", "a3"},
-				[]string{"a1", "a2", "a3"},
 				[]string{"a1", "a2", "a21"},
-				[]string{"a1", "a2", "a3"},
-				[]string{"a3", "a31", "a32"},
+				[]string{"a3", "a31", "a32", "a1", "a13"},
 				[]string{"a5"},
 			},
 			wantSuperset: []string{
-				"a1", "a12",
+				"a1", "a13", "a12", // imperfect, but as good as it gets
 				"a2", "a21",
 				"a3", "a31", "a32",
 				"a4",

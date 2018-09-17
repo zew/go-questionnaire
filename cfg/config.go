@@ -135,7 +135,11 @@ func Load() {
 
 	//
 	cfgS = &tempCfg // replace pointer in one go - should be threadsafe
-	log.Printf("config loaded 1\n%s", util.IndentedDump(cfgS))
+	dmp := util.IndentedDump(cfgS)
+	if len(dmp) > 700 {
+		dmp = dmp[:700]
+	}
+	log.Printf("config loaded 1\n%s", dmp)
 }
 
 // LoadH is a convenience handler - to reload the config via http request

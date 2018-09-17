@@ -35,8 +35,10 @@ func Config() {
 		},
 	)
 	fl.Gen()
+
 	cfg.CfgPath = (*fl)[0].Val
 	cfg.Load()
+
 	lgn.LgnsPath = (*fl)[1].Val
 	lgn.Load()
 

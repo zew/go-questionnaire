@@ -21,7 +21,7 @@ body{
 .error{
 	color:#622;
 	/* line-height:1.1em; */
-    max-width: 400px;
+    max-width: 620px;
     font-weight: bold;
 	white-space: pre-line;
 }
@@ -201,6 +201,11 @@ input[type="number"] {
 
 /* Ultra slim - old android devices */
 @media screen and (max-width: 410px)  {
+
+    .error{
+        max-width: 400px;
+    }
+
     input[type=checkbox], input[type=radio]  {
         width: 18px; height: 18px;
     }

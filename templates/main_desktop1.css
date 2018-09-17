@@ -141,7 +141,7 @@ input[type="number"] {
 .error{
 	color:#622;
 	line-height:1.6em;
-	max-width: 400px;
+	max-width: 620px;
 	white-space: pre-line;
 }
 

@@ -23,14 +23,23 @@ import (
 	"github.com/zew/util"
 )
 
-// Some admin account
-const (
-	remoteHost = "https://survey2.zew.de"
+var (
+	// remoteHost = "https://survey2.zew.de"
+	remoteHost = "https://www.peu2018.eu"
+	// remotePort = cfg.Get().BindSocket
+	remotePort = ""
+
+	// Some admin account
 	adminLogin = "pbu"
 	pass       = "pb165205"
-)
 
-var downloadDir = filepath.Join(qst.BasePath(), "downloaded")
+	// surveyType  = "fmt"
+	surveyType = "peu2018"
+	// waveID      = qst.NewSurvey(surveyType).WaveID()
+	waveID = "2018-08"
+
+	downloadDir = filepath.Join(qst.BasePath(), "downloaded")
+)
 
 func main() {
 
@@ -39,9 +48,10 @@ func main() {
 
 	bootstrap.Config()
 
-	port := cfg.Get().BindSocket
-
-	host := fmt.Sprintf("%v:%v", remoteHost, port)
+	host := fmt.Sprintf("%v:%v", remoteHost, remotePort)
+	if remotePort == "" {
+		host = remoteHost
+	}
 
 	defer func() {
 		log.Printf("  ")
@@ -118,9 +128,6 @@ func main() {
 		log.Printf("Transferrer endpoint")
 		log.Printf("==================")
 		urlReq := urlMain
-
-		surveyType := "fmt"
-		waveID := qst.NewSurvey(surveyType).WaveID()
 
 		vals := url.Values{}
 		vals.Set("survey_id", surveyType)

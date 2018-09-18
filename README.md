@@ -80,7 +80,9 @@ and common functions for login, validation, session...
 * Application renders questionaires.  
 Different questionaires are separated by login.
 
-* Survey results are pulled in by the `transferrer`. 
+* Survey results are pulled in by the `transferrer`,  
+aggregating responses into a CSV file.
+
 
 ## Data thrift
 
@@ -231,21 +233,14 @@ a separate type
 * Layout: Table data is now aligned vertically middled.  
 Sometimes it should be configurable to baseline. 
 
-* The transferrer - or a new independent component - should  
-aggregate responses into a CSV file. 
-
 * The transferrer should truncate the pages from the online JSON files   
 leaving only user ID, completion time and survey data.
 
 * For each user, only the responses should be saved to session/JSON; not the entire questionaire data.  
 The responses could be merged into the questionaire based on input name.
 
-
-* The generators should be independently compilable into a shared object.  
-The main application keeps its web site for parametrization and JSON file creation.  
-The main application dynamically loads the shared object before each JSON file creation.  
-Another option: The main application executes a command line with the parameters as JSON file.
-
+* The generators should be compiled into independent executables.  
+Or the main application could execute a command line with the parameters as JSON file.
 
 * Testing should be repeated with a mobile client.  
 Each questionaire should be tested.

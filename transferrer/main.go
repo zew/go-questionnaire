@@ -4,6 +4,7 @@ package main
 
 import (
 	"bytes"
+	"encoding/csv"
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
@@ -166,9 +167,6 @@ func main() {
 			return
 		}
 
-		// log.Printf("\n\n%v", string(respBytes))
-		// return
-
 	}
 
 	//
@@ -183,6 +181,7 @@ func main() {
 		vals := url.Values{}
 		vals.Set("survey_id", c2.SurveyType)
 		vals.Set("wave_id", c2.WaveID)
+		vals.Set("fetch_all", "1")
 		log.Printf("POST requesting %v?%v", urlReq, vals.Encode())
 		resp, err := util.Request("POST", urlReq, vals, []*http.Cookie{sessCook})
 		if err != nil {
@@ -206,6 +205,9 @@ func main() {
 		}
 		log.Printf("%v questionaire(s) unmarshalled", len(qs))
 
+		allKeys := [][]string{}
+		allVals := [][]string{}
+
 		for i, q := range qs {
 
 			md5Want := q.MD5
@@ -214,14 +216,69 @@ func main() {
 			err := q.Save1(pth2)
 			if err != nil {
 				log.Printf("%3v: Error saving %v: %v", i, pth2, err)
-				return
+				continue
 			}
 
 			if q.MD5 != md5Want {
 				log.Printf("%3v: MD5 does not match: %v\nwnt %v\ngot %v", i, pth2, md5Want, q.MD5)
-				return
+				continue
+			}
+
+			ks, vs := q.KeysValues()
+			allKeys = append(allKeys, ks)
+			allVals = append(allVals, vs)
+		}
+
+		allKeysSuperset := Superset(allKeys)
+		allKeysSSMap := map[string]int{}
+		for idx, v := range allKeysSuperset {
+			allKeysSSMap[v] = idx
+		}
+		valsBySuperset := [][]string{}
+
+		log.Printf("%v", util.IndentedDump(allKeysSuperset))
+		// log.Printf("%v", util.IndentedDump(allKeysSSMap))
+		// log.Printf("%v", util.IndentedDump(allVals))
+
+		for i1 := 0; i1 < len(allVals); i1++ {
+			keys := allKeys[i1]
+			vals := allVals[i1]
+			valsBySuperset = append(valsBySuperset, make([]string, len(allKeysSuperset)))
+			for i2 := 0; i2 < len(keys); i2++ {
+				v := vals[i2]
+				k := keys[i2]
+				pos := allKeysSSMap[k]
+				valsBySuperset[i1][pos] = v
+			}
+
+		}
+		if len(valsBySuperset) > 10 {
+			log.Printf("%v", util.IndentedDump(valsBySuperset[:10]))
+		} else {
+			log.Printf("%v", util.IndentedDump(valsBySuperset))
+		}
+
+		var wtr = new(bytes.Buffer)
+		csvWtr := csv.NewWriter(wtr)
+		csvWtr.Comma = ';'
+		hdr := append([]string{"id"}, allKeysSuperset...)
+		if err := csvWtr.Write(hdr); err != nil {
+			log.Printf("error writing header line to csv: %v", err)
+		}
+		for idx, record := range valsBySuperset {
+			rec := append([]string{qs[idx].UserID}, record...)
+			if err := csvWtr.Write(rec); err != nil {
+				log.Printf("error writing record to csv: %v", err)
 			}
 		}
+
+		// Write any buffered data to the underlying writer (standard output).
+		csvWtr.Flush()
+		if err := csvWtr.Error(); err != nil {
+			log.Printf("error flushing csv to response writer: %v", err)
+		}
+
+		ioutil.WriteFile("out.csv", wtr.Bytes(), 0644)
 
 	}
 

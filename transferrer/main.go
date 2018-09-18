@@ -23,11 +23,12 @@ import (
 	"github.com/zew/util"
 )
 
-type RemoteT struct {
+// AddtlConfigT is on top of
+// of the remote config
+type AddtlConfigT struct {
 	RemoteHost string
-	RemotePort string
 
-	AdminLogin string // Some admin account
+	AdminLogin string // Some admin account of the remote machine
 	Pass       string
 
 	SurveyType string
@@ -37,13 +38,10 @@ type RemoteT struct {
 }
 
 // Example returns a minimal configuration, to be extended or adapted
-func Example() RemoteT {
-	r := RemoteT{}
+func Example() AddtlConfigT {
+	r := AddtlConfigT{}
 	r.RemoteHost = "https://survey2.zew.de"
 	r.RemoteHost = "https://www.peu2018.eu"
-
-	r.RemotePort = fmt.Sprintf("%v", cfg.Get().BindSocket)
-	r.RemotePort = ""
 
 	r.AdminLogin = "login"
 	r.Pass = "secret"
@@ -60,7 +58,7 @@ func Example() RemoteT {
 }
 
 // Save writes a JSON file
-func (r *RemoteT) Save(fn string) {
+func (r *AddtlConfigT) Save(fn string) {
 	byts, err := json.MarshalIndent(r, " ", "\t")
 	util.BubbleUp(err)
 	err = ioutil.WriteFile(fn, byts, 0644)
@@ -68,7 +66,7 @@ func (r *RemoteT) Save(fn string) {
 }
 
 // Load loads a JSON file
-func Load(fn string) (r *RemoteT) {
+func Load(fn string) (r *AddtlConfigT) {
 	file, err := util.LoadConfigFile(fn)
 	if err != nil {
 		log.Fatalf("Could not load config file %v: %v", fn, err)
@@ -82,12 +80,11 @@ func Load(fn string) (r *RemoteT) {
 		log.Printf("Closed config file: %v", fn)
 	}()
 	decoder := json.NewDecoder(file)
-	tempCfg := RemoteT{}
+	tempCfg := AddtlConfigT{}
 	err = decoder.Decode(&tempCfg)
 	if err != nil {
 		log.Fatal(err)
 	}
-
 	return &tempCfg
 }
 
@@ -98,17 +95,14 @@ func main() {
 
 	bootstrap.Config()
 
-	var c2 RemoteT
+	var c2 AddtlConfigT
 
 	//
 	c2 = Example()
 	c2.Save("transferrer-example.json")
 
 	c2 = *(Load("transferrer.json"))
-	host := fmt.Sprintf("%v:%v", c2.RemoteHost, c2.RemotePort)
-	if c2.RemotePort == "" {
-		host = c2.RemoteHost
-	}
+	host := fmt.Sprintf("%v:%v", c2.RemoteHost, cfg.Get().BindSocket)
 
 	defer func() {
 		log.Printf("  ")

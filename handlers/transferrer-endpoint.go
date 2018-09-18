@@ -74,7 +74,13 @@ func TransferrerEndpointH(w http.ResponseWriter, r *http.Request) {
 			helper(w, r, err, fmt.Sprintf("iter %3v: Questionaire validation caused error", i))
 		}
 
-		if q.ClosingTime.IsZero() {
+		// This is a crutch for the PEU survey,
+		// where we have no ClosingTime mechanism.
+		lastPage := q.Pages[len(q.Pages)-1]
+		if len(q.Pages) > 1 {
+			lastPage = q.Pages[len(q.Pages)-2]
+		}
+		if q.ClosingTime.IsZero() && lastPage.Finished.IsZero() {
 			log.Printf("%v unfinished yet; %v", info.Name(), q.ClosingTime)
 			if time.Now().Before(q.Survey.Deadline) {
 				log.Printf("%v not yet past global deadline => skipping", info.Name())

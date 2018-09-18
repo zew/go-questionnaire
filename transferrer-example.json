@@ -1,6 +1,5 @@
 {
  	"RemoteHost": "https://www.peu2018.eu",
- 	"RemotePort": "",
  	"AdminLogin": "login",
  	"Pass": "secret",
  	"SurveyType": "peu2018",

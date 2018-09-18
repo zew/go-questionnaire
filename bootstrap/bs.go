@@ -36,10 +36,10 @@ func Config() {
 	)
 	fl.Gen()
 
-	cfg.CfgPath = (*fl)[0].Val
+	cfg.CfgPath = fl.ByKey("cfg").Val
 	cfg.Load()
 
-	lgn.LgnsPath = (*fl)[1].Val
+	lgn.LgnsPath = fl.ByKey("lgn").Val
 	lgn.Load()
 
 	tpls := []string{

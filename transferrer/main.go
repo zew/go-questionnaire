@@ -100,9 +100,9 @@ func main() {
 
 	//
 	c2 = Example()
-	c2.Save("transferrer-example.json")
+	c2.Save("remote-additional-example.json")
 
-	c2 = *(Load("transferrer.json"))
+	c2 = *(Load("remote-additional.json"))
 	host := fmt.Sprintf("%v:%v", c2.RemoteHost, cfg.Get().BindSocket)
 
 	defer func() {

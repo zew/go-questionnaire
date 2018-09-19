@@ -2,8 +2,11 @@ package main
 
 import "log"
 
-// Superset returns the union of all keys
-//
+// Superset returns the union of all keys;
+// the sort order is kept;
+// new or sparse keys are inserted according to their last known predecessor;
+// otherwise at the end.
+// Purpose: Create CSV columns in intuitive order.
 func Superset(keys [][]string) (superset []string) {
 	if len(keys) > 0 {
 		superset = make([]string, 0, len(keys[0]))

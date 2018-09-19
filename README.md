@@ -83,6 +83,9 @@ Different questionaires are separated by login.
 * Survey results are pulled in by the `transferrer`,  
 aggregating responses into a CSV file.
 
+* In-flight changes to the questionnaire do not require any  
+"schema" or configuration effort. 
+
 
 ## Data thrift
 

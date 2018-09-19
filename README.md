@@ -5,11 +5,14 @@
 
 # Go-Questionaire 
 
-A http(s) webserver serving questionaires.
+Creating and serving questionnaires in flexible column layout.  
+Automatic desktop and mobile layout.
 
 ## Status
 
 Version 1.0
+
+Productive use at our research insitute.
 
 ## Requirements
 
@@ -70,15 +73,20 @@ More info in [deploy on linux/unix](./static/doc/linux-instructions.md)
 
 * Package `qst` contains generic functions to create questionaires.
 
-* Package `generators` _uses_ qst for creating specific JSON questionaires.  
+* Package `generators` _uses_ qst for creating specific questionaires.  
 
-* Directory `responses`stores questionaire templates and indididual answers.  
+* Package `lgn` contains several authentication schemes for participants.
 
-* Application contains multi-language surrounding  
-and common functions for login, validation, session...
+* Package `main` serves questionaires via http(s). 
 
-* Application renders questionaires.  
-Different questionaires are separated by login.
+* Directory `responses` stores indididual answers  
+(and initial questionaire templates).
+
+* There are global translations as well as  
+questionnaire specific multi-language strings.
+
+* There are common functions preventing duplicate question keys  
+ or missing translations.
 
 * Survey results are pulled in by the `transferrer`,  
 aggregating responses into a CSV file.
@@ -93,7 +101,7 @@ aggregating responses into a CSV file.
 
 * The `transferrer` pulls in the responses from an internet server.
 
-* Once inside your organization, the results are fed into any JSON reading application.
+* Once inside your organization, the results are fed into any CSV or JSON reading application.
 
 
 ## Technical design principles
@@ -103,20 +111,32 @@ by __JSON files__.
 
 * No database required.
 
-* Server side validation.
+* Server side validation.  
+An extensible set of number validation functions can be assigned to each field.
 
 * Client side JS validation is deliberately omitted;  
    [a would-be JS client lib](http://www.javascript-coder.com/html-form/form-validation.phtml)
 
 
-* Package `systemtest` performs full circle roundtrip - filling out a questionaire and comparing the 
-server JSON file with the entered data.
+* Package `systemtest` performs full circle roundtrip - filling out all available questionaire and comparing the 
+server JSON file with the entered data.  
+Both, mobile and desktop version are tested.
 
-* Column width for any label or form element can be set individually (`ColSpanLabel` and `ColSpanControl`)
+* Load testing script for 50 concurrent requests.
+
+### Design and Layout
+
+* Each row can have a different number of columns.
+
+* Every label and form element has its individual column width (`ColSpanLabel` and `ColSpanControl`)
 
 * Each label or form element can be styled additionally (`CSSLabel` and `CSSControl`)
 
 #### Page navigation sequence - special pages
+
+* Automatic navigation buttons and progress bar are provided for desktop and mobile layout.
+
+In addition:
 
 * Pages can be navigated by page number sequence using http params `previous` and `next` 
 
@@ -213,7 +233,7 @@ Switching is done based on the user agent string, but can be overridden by `mobi
 
 Table layout `fixed` must be relinguished, otherwise labels and controls are cropped on devices with very small width.
 
-### Randomization - shuffling of input order
+### Randomization for scientific studies - shuffling of input order
 
 * The order of inputs on pages can be randomized (shuffled).
 
@@ -233,7 +253,7 @@ ordering when on same page.
 * Layout: Input='number' with precision of 0.1 should be made 
 a separate type
 
-* Layout: Table data is now aligned vertically middled.  
+* Layout: Table data is currently aligned vertically middled.  
 Sometimes it should be configurable to baseline. 
 
 * The transferrer should truncate the pages from the online JSON files   
@@ -243,11 +263,7 @@ leaving only user ID, completion time and survey data.
 The responses could be merged into the questionaire based on input name.
 
 * The generators should be compiled into independent executables.  
-Or the main application could execute a command line with the parameters as JSON file.
-
-* Testing should be repeated with a mobile client.  
-Each questionaire should be tested.
-
+The could then be executed on the command line with the parameters as JSON file.
 
 
 ## About Go-App-Tpl

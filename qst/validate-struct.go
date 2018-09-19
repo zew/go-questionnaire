@@ -28,7 +28,7 @@ func (q *QuestionaireT) Validate() error {
 		return fmt.Errorf(s)
 	}
 	if len(q.LangCodes) != len(q.LangCodesOrder) {
-		s := fmt.Sprintf("LangCodes must be same lengnth as LangCodesOrder %v -  %v", len(q.LangCodes), len(q.LangCodesOrder))
+		s := fmt.Sprintf("LangCodes must be same length as LangCodesOrder %v -  %v", len(q.LangCodes), len(q.LangCodesOrder))
 		log.Printf(s)
 		return fmt.Errorf(s)
 	}

@@ -701,7 +701,7 @@ func (q *QuestionaireT) Compare(v *QuestionaireT) (bool, error) {
 			qf := q.Pages[i1].Finished
 			vf := v.Pages[i1].Finished
 			if qf.Sub(vf) > 20*time.Second || vf.Sub(qf) > 20*time.Second {
-				return false, fmt.Errorf("Page %v: Comletion time too distinct: %v - %v", i1, vf, qf)
+				return false, fmt.Errorf("Page %v: Completion time too distinct: %v - %v", i1, vf, qf)
 			}
 		}
 

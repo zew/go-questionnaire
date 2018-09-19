@@ -32,7 +32,6 @@ func main() {
 
 	if os.Getenv("GO_TEST_MODE") == "true" {
 		cfg.SwitchToTestConfig()
-		lgn.AddTestLogin()
 	}
 
 	cfg.Example()

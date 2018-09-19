@@ -26,7 +26,6 @@ import (
 	"golang.org/x/crypto/md4"
 
 	"github.com/zew/go-questionaire/cfg"
-	"github.com/zew/go-questionaire/qst"
 	"github.com/zew/util"
 )
 
@@ -110,23 +109,6 @@ func Get() *loginsT {
 	// logins.Lock()
 	// defer logins.Unlock()
 	return lgns
-}
-
-// AddTestLogin adds a systemtest login.
-// This func is only called by test funcs.
-func AddTestLogin() {
-	waveID := qst.NewSurvey("fmt").WaveID()
-	systest := LoginT{
-		User:  "systemtest",
-		Email: "delete this user in production environment",
-		Roles: map[string]string{
-			"survey_id": "fmt",
-			"wave_id":   waveID,
-		},
-		PassInitial:    "systemtest",
-		IsInitPassword: true,
-	}
-	lgns.Logins = append(lgns.Logins, systest)
 }
 
 // Load reads from a JSON file.

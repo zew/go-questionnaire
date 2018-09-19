@@ -21,7 +21,7 @@ func Test_1(t *testing.T) {
 		log.Printf("On travis, tests are executed in the app dir main_test.go")
 	} else {
 		// log.Printf("On gocover.io, tests in the app dir are ignored")
-		StartServer(t, true)
+		StartTestServer(t, true)
 		SimulateLoad(t)
 	}
 }

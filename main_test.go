@@ -2,7 +2,8 @@ package main
 
 /*
 
-These tests replaces the calling of sys_test.go in package systemtest.
+These tests replaces the calling of sys_test.go
+in package systemtest.
 
 Start the test from application root (i.e. /go-questionaire) with
 	go test ./...  -v
@@ -43,10 +44,17 @@ Note: This file is necessary for go-questionaire.test.exe binary to be generated
 
 */
 import (
+	"fmt"
+	"io/ioutil"
+	"log"
 	"os"
+	"path/filepath"
 	"testing"
 	"time"
 
+	"github.com/zew/go-questionaire/cfg"
+	"github.com/zew/go-questionaire/lgn"
+	"github.com/zew/go-questionaire/qst"
 	"github.com/zew/go-questionaire/systemtest"
 )
 
@@ -65,5 +73,62 @@ func TestSystem(t *testing.T) {
 		time.Sleep(time.Second) // wait for the server to come up
 		t.Logf("Waiting for the server to come up ... %v", i)
 	}
-	systemtest.SimulateLoad(t)
+
+	tplDir := "responses"
+
+	files, err := ioutil.ReadDir(filepath.Join(".", tplDir))
+	if err != nil {
+		t.Fatal(err)
+	}
+	for _, f := range files {
+		if f.IsDir() {
+			continue
+		}
+		t.Logf("Found quesionnaire template %v", f.Name())
+
+		pth := filepath.Join(".", tplDir, f.Name())
+		q, err := qst.Load1(pth)
+		if err != nil {
+			t.Fatalf("Could not load %v: %v", pth, err)
+		}
+		err = q.Validate()
+		if err != nil {
+			t.Fatalf("Questionaire validation caused error %v: %v", pth, err)
+		}
+
+		userName := "systemtest"
+		surveyID := q.Survey.Type
+		waveID := q.Survey.WaveID()
+
+		t.Logf("\tquesionnaire type - survey-id: %v %v", surveyID, waveID)
+
+		checkStr := fmt.Sprintf("%v-%v-%v-%v", surveyID, userName, waveID, lgn.Get().Salt)
+		hsh := lgn.Md5Str([]byte(checkStr))
+		loginURL := fmt.Sprintf("%v?u=%v&survey_id=%v&wave_id=%v&h=%v", cfg.PrefWTS(), userName, surveyID, waveID, hsh)
+		t.Logf("\tLoginURL: %v", loginURL)
+
+		removeSystemtestJSON(t)
+		systemtest.SimulateLoad(t, q, loginURL, "0")
+
+		removeSystemtestJSON(t)
+		systemtest.SimulateLoad(t, q, loginURL, "1")
+		// if surveyID == "peu2018" {
+		// 	systemtest.SimulateLoad(t, q, loginURL)
+		// }
+	}
+
+}
+
+func removeSystemtestJSON(t *testing.T) {
+	err := filepath.Walk(filepath.Join(".", "responses"), func(path string, f os.FileInfo, err error) error {
+		base := filepath.Base(path)
+		if base == "systemtest.json" {
+			log.Printf("Removing %v", path)
+			os.Remove(path)
+		}
+		return nil
+	})
+	if err != nil {
+		t.Fatal(err)
+	}
 }

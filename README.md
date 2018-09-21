@@ -265,6 +265,8 @@ The responses could be merged into the questionaire based on input name.
 They could then be executed on the command line with the parameters as JSON file.
 
 
+* Finish pages and finish field should be harmonized
+
 ## About Go-App-Tpl
 
 * Go-Questionaire is based on Go-App-Tpl

@@ -7,12 +7,6 @@ import (
 	"github.com/zew/go-questionaire/trl"
 )
 
-const (
-	inputNumber           = " type='number' step='0.1'  "
-	inputNumberNoStepping = " type='number' step='any'  "         // android prevents decimal
-	inputNumberPure       = " type='number' inputmode='numeric' " // no effect
-)
-
 func nextWaveID() string {
 	t := time.Now()
 	if t.Day() > 20 {

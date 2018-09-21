@@ -278,7 +278,7 @@ func main() {
 			log.Printf("error flushing csv to response writer: %v", err)
 		}
 
-		ioutil.WriteFile("out.csv", wtr.Bytes(), 0644)
+		ioutil.WriteFile("online-responses.csv", wtr.Bytes(), 0644)
 
 	}
 

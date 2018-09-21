@@ -104,7 +104,7 @@ aggregating responses into a CSV file.
 * Once inside your organization, the results are fed into any CSV or JSON reading application.
 
 
-## Technical design principles
+## More features
 
 * All content and all results are driven  
 by __JSON files__.
@@ -117,9 +117,10 @@ An extensible set of number validation functions can be assigned to each field.
 * Client side JS validation is deliberately omitted;  
    [a would-be JS client lib](http://www.javascript-coder.com/html-form/form-validation.phtml)
 
+* Dynamic textblocks such as `RepsonseStatistics` are available, and can be easily added.
 
-* Package `systemtest` performs full circle roundtrip - filling out all available questionaire and comparing the 
-server JSON file with the entered data.  
+* Package `systemtest` performs full circle roundtrip - filling out all available questionaire 
+and comparing the server JSON file with the entered data.  
 Both, mobile and desktop version are tested.
 
 * Load testing script for 50 concurrent requests.
@@ -250,9 +251,6 @@ ordering when on same page.
 
 ## Optimization
 
-* Layout: Input='number' with precision of 0.1 should be made 
-a separate type
-
 * Layout: Table data is currently aligned vertically middled.  
 Sometimes it should be configurable to baseline. 
 
@@ -262,8 +260,9 @@ leaving only user ID, completion time and survey data.
 * For each user, only the responses should be saved to session/JSON; not the entire questionaire data.  
 The responses could be merged into the questionaire based on input name.
 
+
 * The generators should be compiled into independent executables.  
-The could then be executed on the command line with the parameters as JSON file.
+They could then be executed on the command line with the parameters as JSON file.
 
 
 ## About Go-App-Tpl

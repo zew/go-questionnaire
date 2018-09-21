@@ -6,6 +6,7 @@ import (
 
 var implementedTypes = map[string]interface{}{
 	"text":     nil,
+	"number":   nil,
 	"textarea": nil,
 	"checkbox": nil, // A standalone checkbox - as a group, see below
 

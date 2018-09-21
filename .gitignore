@@ -8,6 +8,7 @@
 go-questionaire
 *.fdb
 out.csv
+online-responses.csv
 columns.csv
 setenv*.sh
 setenv*.bat

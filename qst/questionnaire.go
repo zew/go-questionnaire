@@ -732,10 +732,10 @@ func (q *QuestionaireT) Compare(v *QuestionaireT) (bool, error) {
 	return true, nil
 }
 
-// KeysValues returns all keys and values in defined order.
+// KeysValues returns all pages finish times; keys and values in defined order.
 // Empty values are also returned.
-// Major purpose is CSV export across several questionaires.
-func (q *QuestionaireT) KeysValues() (keys, vals []string) {
+// Major purpose is CSV export across several questionnaires.
+func (q *QuestionaireT) KeysValues() (finishes, keys, vals []string) {
 	for i1 := 0; i1 < len(q.Pages); i1++ {
 		for i2 := 0; i2 < len(q.Pages[i1].Groups); i2++ {
 			for i3 := 0; i3 < len(q.Pages[i1].Groups[i2].Inputs); i3++ {
@@ -745,6 +745,11 @@ func (q *QuestionaireT) KeysValues() (keys, vals []string) {
 				keys = append(keys, q.Pages[i1].Groups[i2].Inputs[i3].Name)
 				vals = append(vals, q.Pages[i1].Groups[i2].Inputs[i3].Response)
 			}
+		}
+		if q.Pages[i1].Finished.IsZero() {
+			finishes = append(finishes, "not_saved")
+		} else {
+			finishes = append(finishes, q.Pages[i1].Finished.Format("02.01.06 15:04:05"))
 		}
 	}
 	return

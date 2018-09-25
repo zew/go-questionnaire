@@ -1,6 +1,16 @@
 package main
 
-import "log"
+import (
+	"io/ioutil"
+	"log"
+	"os"
+)
+
+var lgS = log.New(os.Stdout, "", log.Llongfile)
+
+func init() {
+	lgS.SetOutput(ioutil.Discard) // enable/disable logging in this file
+}
 
 // Superset returns the union of all keys;
 // the sort order is kept;
@@ -19,7 +29,7 @@ func Superset(keys [][]string) (superset []string) {
 			if _, ok := has[k]; ok {
 				continue
 			}
-			log.Printf("%v of %v not found in %v", k, keys[i], superset)
+			lgS.Printf("%v of %v not found in %v", k, keys[i], superset)
 
 			// Insertion position for non-existing key k?
 			// We take the predecessors of k in descending order.
@@ -28,14 +38,14 @@ func Superset(keys [][]string) (superset []string) {
 			insAft := len(superset) - 1 // default: Insert at the end
 			for i3 := i2 - 1; i3 >= 0; i3-- {
 				similar := keys[i][i3]
-				log.Printf("\tTesting %v", similar)
+				lgS.Printf("\tTesting %v", similar)
 				if _, ok := has[similar]; ok {
 					for i4, val := range superset {
 						if val == similar {
 							insAft = i4
 						}
 					}
-					log.Printf("\tLast matching element of %v with %v is %v at %v",
+					lgS.Printf("\tLast matching element of %v with %v is %v at %v",
 						keys[i], superset, similar, insAft)
 					break
 				}
@@ -46,7 +56,7 @@ func Superset(keys [][]string) (superset []string) {
 			temp = append(temp, superset[insAft+1:]...)
 			superset = temp
 			has[k] = nil
-			log.Printf("New superset is %+v", superset)
+			lgS.Printf("New superset is %+v", superset)
 		}
 	}
 	return

@@ -205,8 +205,19 @@ func main() {
 		}
 		log.Printf("%v questionaire(s) unmarshalled", len(qs))
 
+		maxPages := 0
+		for _, q := range qs {
+			if maxPages < len(q.Pages) {
+				maxPages = len(q.Pages)
+			}
+		}
+
 		allKeys := [][]string{}
 		allVals := [][]string{}
+		staticCols := []string{"user_id"}
+		for iPg := 0; iPg < maxPages; iPg++ {
+			staticCols = append(staticCols, fmt.Sprintf("page_%v", iPg+1))
+		}
 
 		for i, q := range qs {
 
@@ -224,20 +235,34 @@ func main() {
 				continue
 			}
 
-			ks, vs := q.KeysValues()
+			finishes, ks, vs := q.KeysValues()
+
+			ks = append(staticCols, ks...)
 			allKeys = append(allKeys, ks)
+
+			//
+			prepend := []string{qs[i].UserID}
+			for iPg := 0; iPg < maxPages; iPg++ {
+				if iPg < len(finishes) {
+					prepend = append(prepend, finishes[iPg])
+				} else {
+					prepend = append(prepend, "n.a.") // response had less than max pages - not finishing time
+				}
+			}
+			vs = append(prepend, vs...)
 			allVals = append(allVals, vs)
 		}
 
 		allKeysSuperset := Superset(allKeys)
+
 		allKeysSSMap := map[string]int{}
 		for idx, v := range allKeysSuperset {
 			allKeysSSMap[v] = idx
 		}
 		valsBySuperset := [][]string{}
 
-		log.Printf("%v", util.IndentedDump(allKeysSuperset))
-		// log.Printf("%v", util.IndentedDump(allKeysSSMap))
+		log.Printf("%v keys superset; %v", len(allKeysSuperset), util.IndentedDump(allKeysSuperset))
+		log.Printf("%v map  keys    ; %v", len(allKeysSSMap), util.IndentedDump(allKeysSSMap))
 		// log.Printf("%v", util.IndentedDump(allVals))
 
 		for i1 := 0; i1 < len(allVals); i1++ {
@@ -250,24 +275,16 @@ func main() {
 				pos := allKeysSSMap[k]
 				valsBySuperset[i1][pos] = v
 			}
-
-		}
-		if len(valsBySuperset) > 10 {
-			log.Printf("%v", util.IndentedDump(valsBySuperset[:10]))
-		} else {
-			log.Printf("%v", util.IndentedDump(valsBySuperset))
 		}
 
 		var wtr = new(bytes.Buffer)
 		csvWtr := csv.NewWriter(wtr)
 		csvWtr.Comma = ';'
-		hdr := append([]string{"id"}, allKeysSuperset...)
-		if err := csvWtr.Write(hdr); err != nil {
+		if err := csvWtr.Write(allKeysSuperset); err != nil {
 			log.Printf("error writing header line to csv: %v", err)
 		}
-		for idx, record := range valsBySuperset {
-			rec := append([]string{qs[idx].UserID}, record...)
-			if err := csvWtr.Write(rec); err != nil {
+		for _, record := range valsBySuperset {
+			if err := csvWtr.Write(record); err != nil {
 				log.Printf("error writing record to csv: %v", err)
 			}
 		}

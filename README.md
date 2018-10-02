@@ -10,7 +10,7 @@ Automatic desktop and mobile layout.
 
 ## Status
 
-Version 1.0
+Version 1.1
 
 Productive use at our research insitute.
 

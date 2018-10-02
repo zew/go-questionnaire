@@ -265,7 +265,11 @@ The responses could be merged into the questionaire based on input name.
 They could then be executed on the command line with the parameters as JSON file.
 
 
-* Finish pages and finish field should be harmonized
+* Finish pages and finish field should be harmonized.  
+Currently one can either generate your own final page (in the example of the peu2018 survey).  
+Or one can set the "finalized" field and then gets system wide: You finished ... at ...
+
+
 
 ## About Go-App-Tpl
 

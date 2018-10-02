@@ -6,7 +6,8 @@ These tests replaces the calling of sys_test.go
 in package systemtest.
 
 Start the test from application root (i.e. /go-questionaire) with
-	go test ./...  -v
+	go test ./...    -v
+	go test .        -v
 
 For a particular package, start
 	go test ./mypackage/... -test.v
@@ -106,6 +107,17 @@ func TestSystem(t *testing.T) {
 		hsh := lgn.Md5Str([]byte(checkStr))
 		loginURL := fmt.Sprintf("%v?u=%v&survey_id=%v&wave_id=%v&h=%v", cfg.PrefWTS(), userName, surveyID, waveID, hsh)
 		t.Logf("\tLoginURL: %v", loginURL)
+
+		// Deadline exceeded?
+		if time.Now().After(q.Survey.Deadline) {
+			s := cfg.Get().Mp["deadline_exceeded"].All(q.Survey.Deadline.Format("02.01.2006 15:04"))
+			if len(s) > 100 {
+				s = s[:100]
+			}
+			t.Logf("%v", s)
+			t.Logf("Cannot test questionaire that which are already closed: %v\n\n", q.Survey.Type)
+			continue
+		}
 
 		removeSystemtestJSON(t)
 		systemtest.SimulateLoad(t, q, loginURL, "0")

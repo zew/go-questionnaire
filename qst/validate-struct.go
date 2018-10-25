@@ -152,7 +152,7 @@ func (q *QuestionaireT) Validate() error {
 	return nil
 }
 
-// ComputeDynamicContent computes statistics
+// ComputeDynamicContent computes elements of type dynamic func
 func (q *QuestionaireT) ComputeDynamicContent(idx int) error {
 
 	for i1 := 0; i1 < len(q.Pages); i1++ {

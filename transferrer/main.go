@@ -214,7 +214,7 @@ func main() {
 
 		allKeys := [][]string{}
 		allVals := [][]string{}
-		staticCols := []string{"user_id"}
+		staticCols := []string{"user_id", "lang_code"}
 		for iPg := 0; iPg < maxPages; iPg++ {
 			staticCols = append(staticCols, fmt.Sprintf("page_%v", iPg+1))
 		}
@@ -235,13 +235,20 @@ func main() {
 				continue
 			}
 
+			realEntries, _, _ := q.Statistics()
+			if realEntries == 0 {
+				log.Printf("%3v: %v. No answers given, skipping.", i, pth2)
+				continue
+			}
+
+			// Prepare columns...
 			finishes, ks, vs := q.KeysValues()
 
 			ks = append(staticCols, ks...)
 			allKeys = append(allKeys, ks)
 
 			//
-			prepend := []string{qs[i].UserID}
+			prepend := []string{qs[i].UserID, qs[i].LangCode}
 			for iPg := 0; iPg < maxPages; iPg++ {
 				if iPg < len(finishes) {
 					prepend = append(prepend, finishes[iPg])
@@ -265,6 +272,7 @@ func main() {
 		log.Printf("%v map  keys    ; %v", len(allKeysSSMap), util.IndentedDump(allKeysSSMap))
 		// log.Printf("%v", util.IndentedDump(allVals))
 
+		// Collect values...
 		for i1 := 0; i1 < len(allVals); i1++ {
 			keys := allKeys[i1]
 			vals := allVals[i1]
@@ -277,6 +285,7 @@ func main() {
 			}
 		}
 
+		// Data into CSV matrix...
 		var wtr = new(bytes.Buffer)
 		csvWtr := csv.NewWriter(wtr)
 		csvWtr.Comma = ';'
@@ -294,8 +303,10 @@ func main() {
 		if err := csvWtr.Error(); err != nil {
 			log.Printf("error flushing csv to response writer: %v", err)
 		}
-
-		ioutil.WriteFile("online-responses.csv", wtr.Bytes(), 0644)
+		err = ioutil.WriteFile("online-responses.csv", wtr.Bytes(), 0644)
+		if err != nil {
+			log.Printf("Could not write file: %v", err)
+		}
 
 	}
 

@@ -1,0 +1,8 @@
+{
+ 	"RemoteHost": "https://www.peu2018.eu",
+ 	"AdminLogin": "login",
+ 	"Pass": "secret",
+ 	"SurveyType": "peu2018",
+ 	"WaveID": "2018-08",
+ 	"DownloadDir": "responses\\downloaded"
+ }

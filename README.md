@@ -248,6 +248,17 @@ ordering when on same page.
 
 * [Shufflings can be exported for use in related applications](https://dev-domain:port/survey/shufflings-to-csv)
 
+## Possible enhancements 
+
+* Adding a docker script?
+
+* Migrate file storage to GoCloud library and make deployable on Google Appengine or AWS?
+
+* Mobile layout: Make URL bar colored
+
+* Mobile layout: Make the menu - and then the URL bar disappear upon scrolling down.  
+Such as https://www.alpro.com/de
+ 
 
 ## Optimization
 

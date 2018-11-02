@@ -5,7 +5,6 @@ package trl
 
 import (
 	"fmt"
-	"strings"
 )
 
 // LangCodes for returning multiple translations.
@@ -40,7 +39,7 @@ func (s S) Tr(langCode string) string {
 
 // TrSilent gives no warning - if the translation is not set.
 // Good if we do not require a translation string.
-// Good for i.e. HTML title attribute - where errors are easy to overlook.
+// Good for i.e. HTML title attribute - where errors would be overlooked anyway.
 func (s S) TrSilent(langCode string) string {
 	ret := s.Tr(langCode)
 	if ret == noTrans {
@@ -65,7 +64,9 @@ func (s S) String() string {
 }
 
 // All returns all translations
+// with their % placeholders filled in by param args;
 // ordered by lang codes
+// separated by '\n\n'
 func (s S) All(args ...string) string {
 
 	argsIntf := make([]interface{}, len(args))
@@ -90,111 +91,4 @@ func (s S) Set() bool {
 		return false
 	}
 	return true
-}
-
-// Map - Translations Type
-// Usage in templates
-// 		{{.Trls.imprint.en                     }}  // directly accessin a specific translation; chaining the map keys
-// 		{{.Trls.imprint.Tr       .Sess.LangCode}}  // using .Tr(langCode)
-// 		{{.Trls.imprint.TrSilent .Sess.LangCode}}  //
-type Map map[string]S
-
-//
-//
-// Hyphenization
-// =================
-//
-// hyphm is a map with words and their hyphenized form as value.
-// hyphm is filled during app initialization from hyph below.
-var hyphm = map[string]string{}
-
-// hyph is a slice _with_ hyphenized words.
-// During application initialization we use it to fill hyphm above.
-var hyph = []string{
-
-	"ver&shy;schlechtern",
-	// "saison&shy;bereinigt",
-
-	"An&shy;gabe",
-	"Konjunktur&shy;daten ",
-
-	"Ausfall&shy;risiken",
-	"Risiko&shy;trag&shy;fähig&shy;keit",
-	"Re&shy;finanz&shy;ierung",
-
-	"Wett&shy;be&shy;werbs&shy;sit&shy;uation",
-	"Regu&shy;lierung",
-	"Groß&shy;unter&shy;nehmen",
-	"Immob&shy;ilien&shy;kredite",
-	"Kon&shy;sum&shy;enten&shy;kredite",
-
-	"Regierungs&shy;bildung",
-	"Kredit&shy;nach&shy;frage",
-	"Kredit&shy;angebot",
-
-	"mittel&shy;fristig",
-	"lang&shy;fristig",
-
-	"Deutsch&shy;land",
-	"Welt&shy;wirtschaft",
-
-	"un&shy;ent&shy;schieden",
-
-	// english
-
-	"Small+&shy;medium",
-	"enter&shy;prises",
-	"in&shy;crease",
-	"de&shy;crease",
-	"un&shy;changed",
-	"in&shy;fluence",
-	"strong&shy;ly",
-	"pos&shy;itive",
-	"neg&shy;ative",
-
-	"Re&shy;financing",
-	"Comp&shy;etitive",
-	"environ&shy;ment",
-	"Cons&shy;umer",
-	"Reg&shy;ulation",
-
-	"Dis&shy;agree",
-	"Un&shy;decided",
-
-	// spanish
-	"in­&shy;deciso",
-	"acuer&shy;do",
-	"desa&shy;cuer&shy;do",
-
-	// french
-	"acc&shy;ord",
-	"In&shy;diff&shy;érent",
-
-	// italian
-	"favo&shy;revole",
-	"Favo&shy;revole",
-	"in&shy;deciso",
-	"In&shy;deciso",
-}
-
-func init() {
-	for _, v := range hyph {
-		hyphm[strings.Replace(v, "&shy;", "", -1)] = v
-	}
-}
-
-func hyphenizeUnused(s string) string {
-	if _, ok := hyphm[s]; ok {
-		return hyphm[s]
-	}
-	return s
-}
-
-// HyphenizeText replaces "mittelfristig" with "mittel&shy;fristig"
-// We do it _once_ during creation of the questionare JSON template.
-func HyphenizeText(s string) string {
-	for k, v := range hyphm {
-		s = strings.Replace(s, k, v, -1)
-	}
-	return s
 }

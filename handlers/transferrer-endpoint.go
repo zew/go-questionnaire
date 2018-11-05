@@ -93,9 +93,12 @@ func TransferrerEndpointH(w http.ResponseWriter, r *http.Request) {
 		helper(w, r, fmt.Errorf("Marschalling questionair failed: %v", err))
 		return
 	}
+	sz := fmt.Sprintf("%.3f MB", float64(len(qs)/(1<<10))/(1<<10))
+	log.Printf("%v bytes marshalled into bytes slice", sz)
 
 	w.Header().Set("Content-Type", "application/json; charset=utf-8")
 	w.Header().Set("Content-Length", fmt.Sprintf("%v", len(byts)))
 	w.Write(byts)
+	log.Printf("%v bytes written to http response", sz)
 
 }

@@ -190,7 +190,8 @@ func main() {
 		}
 
 		dir := filepath.Join(c2.DownloadDir, c2.SurveyType, c2.WaveID)
-		err = os.MkdirAll(dir, 0755)
+		dirEmpty := filepath.Join(dir, "empty")
+		err = os.MkdirAll(dirEmpty, 0755)
 		if err != nil {
 			log.Printf("Could not create path 2 %v", dir)
 			return
@@ -203,7 +204,7 @@ func main() {
 			log.Printf("Unmarshal %v", err)
 			return
 		}
-		log.Printf("%v questionaire(s) unmarshalled", len(qs))
+		log.Printf("%v questionaire(s) unmarshalled; %10.3f", len(qs), float64(len(resp)/(1<<10))/(1<<10))
 
 		maxPages := 0
 		for _, q := range qs {
@@ -238,6 +239,12 @@ func main() {
 			realEntries, _, _ := q.Statistics()
 			if realEntries == 0 {
 				log.Printf("%3v: %v. No answers given, skipping.", i, pth2)
+				pth2a := pth2 + ".json"
+				pth3 := filepath.Join(dirEmpty, q.UserID+".json")
+				err := os.Rename(pth2a, pth3)
+				if err != nil {
+					log.Printf("%3v: Error moving %v to %v - %v", i, pth2a, pth3, err)
+				}
 				continue
 			}
 
@@ -307,6 +314,7 @@ func main() {
 		if err != nil {
 			log.Printf("Could not write file: %v", err)
 		}
+		log.Printf("Regular finish. %v questionaire(s) processed; %.3f MB", len(qs), float64(len(resp)/(1<<10))/(1<<10))
 
 	}
 

@@ -9,24 +9,26 @@ import (
 	"time"
 
 	"github.com/monoculum/formam"
-	"github.com/zew/go-questionaire/cfg"
-	"github.com/zew/go-questionaire/generators/fmt"
-	"github.com/zew/go-questionaire/generators/min"
-	"github.com/zew/go-questionaire/generators/peu2018"
-	"github.com/zew/go-questionaire/lgn"
-	"github.com/zew/go-questionaire/qst"
+	"github.com/zew/go-questionnaire/cfg"
+	"github.com/zew/go-questionnaire/generators/fmt"
+	"github.com/zew/go-questionnaire/generators/min"
+	"github.com/zew/go-questionnaire/generators/mul"
+	"github.com/zew/go-questionnaire/generators/peu2018"
+	"github.com/zew/go-questionnaire/lgn"
+	"github.com/zew/go-questionnaire/qst"
 	"github.com/zew/util"
 )
 
-type genT func(params []qst.ParamT) (*qst.QuestionaireT, error)
+type genT func(params []qst.ParamT) (*qst.QuestionnaireT, error)
 
 var gens = map[string]genT{
 	"fmt":     fmt.Create,
 	"min":     min.Create,
 	"peu2018": peu2018.Create,
+	"mul":     mul.Create,
 }
 
-// Get returns all questionaire generators
+// Get returns all questionnaire generators
 func Get() map[string]genT {
 	return gens
 }
@@ -40,7 +42,7 @@ func get() []string {
 	return ret
 }
 
-// SurveyGenerate generates a questionaire for a bespoke survey
+// SurveyGenerate generates a questionnaire for a bespoke survey
 func SurveyGenerate(w http.ResponseWriter, r *http.Request) {
 
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")

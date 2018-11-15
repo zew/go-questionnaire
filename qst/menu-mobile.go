@@ -5,13 +5,13 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/zew/go-questionaire/cfg"
+	"github.com/zew/go-questionnaire/cfg"
 )
 
 // MenuMobile renders the progress bar and the
 // footer links such as imprint and language chooser.
 // Compare ProgressBar()
-func (q *QuestionaireT) MenuMobile() string {
+func (q *QuestionnaireT) MenuMobile() string {
 
 	b := bytes.Buffer{}
 

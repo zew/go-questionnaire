@@ -1,9 +1,9 @@
  
  
-[ ![GoDoc](http://godoc.org/github.com/zew/go-questionaire?status.svg)          ](https://godoc.org/github.com/zew/go-questionaire) [ ![Travis Build](https://travis-ci.org/zew/go-questionaire.svg?branch=master)  ](https://travis-ci.org/zew/go-questionaire) [ ![Report Card](https://goreportcard.com/badge/github.com/zew/go-questionaire) ](https://goreportcard.com/report/github.com/zew/go-questionaire) [ ![code-coverage](http://gocover.io/_badge/github.com/zew/go-questionaire) ](http://gocover.io/github.com/zew/go-questionaire) 
+[ ![GoDoc](http://godoc.org/github.com/zew/go-questionnaire?status.svg)          ](https://godoc.org/github.com/zew/go-questionnaire) [ ![Travis Build](https://travis-ci.org/zew/go-questionnaire.svg?branch=master)  ](https://travis-ci.org/zew/go-questionnaire) [ ![Report Card](https://goreportcard.com/badge/github.com/zew/go-questionnaire) ](https://goreportcard.com/report/github.com/zew/go-questionnaire) [ ![code-coverage](http://gocover.io/_badge/github.com/zew/go-questionnaire) ](http://gocover.io/github.com/zew/go-questionnaire) 
 
 
-# Go-Questionaire 
+# Go-Questionnaire 
 
 Creating and serving questionnaires in flexible column layout.  
 Automatic desktop and mobile layout.
@@ -12,7 +12,7 @@ Automatic desktop and mobile layout.
 
 Version 1.1
 
-Productive use at our research insitute.
+Productive use at our research institute.
 
 ## Requirements
 
@@ -24,25 +24,25 @@ Go Version 1.__10__
 Install and setup [golang](https://golang.org/doc/install)
 
     cd $HOME/go/src/github.com/zew
-    go get -u github.com/zew/go-questionaire
-    cd go-questionaire
+    go get -u github.com/zew/go-questionnaire
+    cd go-questionnaire
     mv config-example.json  config.json  # adapt to your purposes
     mv logins-example.json  logins.json  # dito
     touch ./templates/site.css           # put your site's styles here
     go build
-    ./go-questionaire                    # under windows: go-questionaire.exe
+    ./go-questionnaire                    # under windows: go-questionnaire.exe
 
 More info in [deploy on linux/unix](./static/doc/linux-instructions.md)
 
 
-#### Create questionaire and logins
+#### Create questionnaire and logins
 
-![Plugin](./static/img/doc/questionaire-lifecycle.png)
+![Plugin](./static/img/doc/questionnaire-lifecycle.png)
 
 * Login as admin at https://dev-domain:port/survey/login-primitive
 
-* Create a questionaire template - as JSON file  
- https://dev-domain:port/survey/generate-questionaire-templates
+* Create a questionnaire template - as JSON file  
+ https://dev-domain:port/survey/generate-questionnaire-templates
 
 
 * Generate login hashes for the survey id and wave id above   
@@ -55,32 +55,32 @@ More info in [deploy on linux/unix](./static/doc/linux-instructions.md)
 
 #### Participant login and reset
 
-* Participants can now use these login links to [access the questionaire](https://dev-domain:port/survey?u=98991&survey_id=fmt&wave_id=2018-07&h=4059d765e4a4f211658373c07c5affb9)   
+* Participants can now use these login links to [access the questionnaire](https://dev-domain:port/survey?u=98991&survey_id=fmt&wave_id=2018-07&h=4059d765e4a4f211658373c07c5affb9)   
 
-* Once logged in, they can [re-access the questionaire](https://dev-domain:port/survey)
+* Once logged in, they can [re-access the questionnaire](https://dev-domain:port/survey)
 
-* For testing purposes, you may [reset the questionaire](https://dev-domain:port/survey/reload-from-questionaire-template?u=98991&survey_id=fmt&wave_id=2018-07&h=4059d765e4a4f211658373c07c5affb9)
+* For testing purposes, you may [reset the questionnaire](https://dev-domain:port/survey/reload-from-questionnaire-template?u=98991&survey_id=fmt&wave_id=2018-07&h=4059d765e4a4f211658373c07c5affb9)
 
 
 
 
 ## Semantics
 
-* A `survey` is a `questionaire` with one or more `waves` (repetitions).
+* A `survey` is a `questionnaire` with one or more `waves` (repetitions).
 
-![Plugin](./static/img/doc/app-and-questionaires.png)
+![Plugin](./static/img/doc/app-and-questionnaires.png)
 
 
-* Package `qst` contains generic functions to create questionaires.
+* Package `qst` contains generic functions to create questionnaires.
 
-* Package `generators` _uses_ qst for creating specific questionaires.  
+* Package `generators` _uses_ qst for creating specific questionnaires.  
 
 * Package `lgn` contains several authentication schemes for participants.
 
-* Package `main` serves questionaires via http(s). 
+* Package `main` serves questionnaires via http(s). 
 
 * Directory `responses` stores indididual answers  
-(and initial questionaire templates).
+(and initial questionnaire templates).
 
 * There are global translations as well as  
 questionnaire specific multi-language strings.
@@ -119,7 +119,7 @@ An extensible set of number validation functions can be assigned to each field.
 
 * Dynamic textblocks such as `RepsonseStatistics` are available, and can be easily added.
 
-* Package `systemtest` performs full circle roundtrip - filling out all available questionaire 
+* Package `systemtest` performs full circle roundtrip - filling out all available questionnaires 
 and comparing the server JSON file with the entered data.  
 Both, mobile and desktop version are tested.
 
@@ -148,10 +148,10 @@ They are exempt from `previous` and `next`.
 Such pages can reached to by setting submit buttons to their index value.  
 Useful for greeting- and goodbye-pages.
 
-#### Defining questionaires by code or by JSON file
+#### Defining questionnaires by code or by JSON file
 
 At inception we envisioned a JSON schema validator  
-and questionaire creation by directly editing of JSON files  
+and questionnaire creation by directly editing of JSON files  
 but that remains as elusive as it did with XML.
 
 
@@ -220,7 +220,7 @@ Stacking cells wit `float: left` takes away the nice vertical middle alignment o
 
 ### Mobile layout
 
-go-questionaire has a _separate_ layout for mobile clients.
+go-questionnaire has a _separate_ layout for mobile clients.
 Hybrid solutions (_mobile first_) were considered complex and insufficient.
 
 The HTML rendering of groups and inputs remains unchanged.
@@ -240,7 +240,7 @@ Table layout `fixed` must be relinguished, otherwise labels and controls are cro
 
 * Shuffling is random, but reproducible for user ID and page number.
 
-* Questionaire property `variations` sets the number of different classes of shufflings.  
+* Questionnaire property `variations` sets the number of different classes of shufflings.  
 For example, if `variations==2`, even and odd user IDs get the same 
 ordering when on same page.  
 
@@ -268,8 +268,8 @@ Sometimes it should be configurable to baseline.
 * The transferrer should truncate the pages from the online JSON files   
 leaving only user ID, completion time and survey data.
 
-* For each user, only the responses should be saved to session/JSON; not the entire questionaire data.  
-The responses could be merged into the questionaire based on input name.
+* For each user, only the responses should be saved to session/JSON; not the entire questionnaire data.  
+The responses could be merged into the questionnaire based on input name.
 
 
 * The generators should be compiled into independent executables.  
@@ -284,7 +284,7 @@ Or one can set the "finalized" field and then gets system wide: You finished ...
 
 ## About Go-App-Tpl
 
-* Go-Questionaire is based on Go-App-Tpl
+* Go-Questionnaire is based on Go-App-Tpl
 
 * Go-App-Tpl is a number of packages for building go web applications.  
 

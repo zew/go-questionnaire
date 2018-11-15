@@ -5,10 +5,10 @@ import (
 	"html/template"
 	"strings"
 
-	"github.com/zew/go-questionaire/cfg"
-	"github.com/zew/go-questionaire/lgn"
-	"github.com/zew/go-questionaire/sessx"
-	"github.com/zew/go-questionaire/trl"
+	"github.com/zew/go-questionnaire/cfg"
+	"github.com/zew/go-questionnaire/lgn"
+	"github.com/zew/go-questionnaire/sessx"
+	"github.com/zew/go-questionnaire/trl"
 )
 
 // TplDataT is a conduit for templates to access request, session and application data
@@ -27,7 +27,7 @@ type TplDataT struct {
 	Cnt string // Alternative - just a string
 
 	// After embedding, we would add the major app specific object.
-	// For example Q   *qst.QuestionaireT
+	// For example Q   *qst.QuestionnaireT
 }
 
 // Trls returns translated strings, for instance HtmlTitle

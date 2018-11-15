@@ -1,6 +1,6 @@
 package qst
 
-import "github.com/zew/go-questionaire/trl"
+import "github.com/zew/go-questionnaire/trl"
 
 // AddRadioMatrixGroup adds several inputs of type radiogroup
 // and prepends a row with labels.

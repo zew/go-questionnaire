@@ -4,15 +4,15 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/zew/go-questionaire/qst"
-	"github.com/zew/go-questionaire/tpl"
-	"github.com/zew/go-questionaire/trl"
+	"github.com/zew/go-questionnaire/qst"
+	"github.com/zew/go-questionnaire/tpl"
+	"github.com/zew/go-questionnaire/trl"
 )
 
 // Create creates a JSON file for a financial markets survey
-func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
+func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
-	q := qst.QuestionaireT{}
+	q := qst.QuestionnaireT{}
 	q.Survey = qst.NewSurvey("fmt")
 	q.Survey.Params = params
 	q.LangCodes = map[string]string{"de": "Deutsch", "en": "English"}
@@ -929,7 +929,7 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 						// rad.HAlign = qst.HCenter
 						rad.Label = trl.S{
 							"de": "Zugang bleibt bestehen.  Daten können in weiteren Sitzungen geändert/ergänzt werden. <br>\n &nbsp;",
-							"en": "Leave questionaire open. Data  can be changed/completed&nbsp;in later sessions. <br>\n &nbsp;",
+							"en": "Leave questionnaire open. Data  can be changed/completed&nbsp;in later sessions. <br>\n &nbsp;",
 						}
 						rad.Val = "2" // any other non null value
 					}
@@ -939,7 +939,7 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 						// rad.HAlign = qst.HCenter
 						rad.Label = trl.S{
 							"de": "Fragebogen ist abgeschlossen und kann nicht mehr geöffnet werden. <br>\n &nbsp;",
-							"en": "Questionaire is finished. No more edits. <br>\n &nbsp;",
+							"en": "Questionnaire is finished. No more edits. <br>\n &nbsp;",
 						}
 						rad.Val = qst.ValSet
 					}
@@ -1026,7 +1026,7 @@ func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
 
 	err = q.Validate()
 	if err != nil {
-		return nil, fmt.Errorf("Error validating questionaire: %v", err)
+		return nil, fmt.Errorf("Error validating questionnaire: %v", err)
 	}
 	q.Hyphenize()
 	q.ComputeMaxGroups()

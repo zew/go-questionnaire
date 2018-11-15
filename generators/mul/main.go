@@ -1,4 +1,4 @@
-package peu2018
+package mul
 
 import (
 	"fmt"
@@ -104,27 +104,17 @@ func labelsGoodBad17() []trl.S {
 // It is saved to disk as an example.
 func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	q := qst.QuestionnaireT{}
-	q.Survey = qst.NewSurvey("peu2018")
+	q.Survey = qst.NewSurvey("aik")
 	q.Survey.Params = params
 	q.Variations = 4
 
 	q.LangCodes = map[string]string{
-		"de": "Deutsch",
 		"en": "English",
-		"es": "Español",
-		"fr": "Français",
-		"it": "Italiano",
-		"pl": "Polski",
 	}
 	q.LangCodesOrder = []string{
 		"en",
-		"fr",
-		"de",
-		"it",
-		"es",
-		"pl",
 	}
-	q.LangCode = "" // No default; forces usage of UserLangCode()
+	q.LangCode = "en" // No default; forces usage of UserLangCode()
 
 	q.Survey.Org = trl.S{
 		"de": "  ",

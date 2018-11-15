@@ -1,5 +1,5 @@
 // Package qst implements a four levels deep nested structure
-// with input controls, groups, pages and questionaire;
+// with input controls, groups, pages and questionnaire;
 // contains HTML rendering, page navigation,
 // loading/saving from/to JSON file, consistence validation,
 // multi-language support.
@@ -13,10 +13,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/zew/go-questionaire/lgn/shuffler"
-	"github.com/zew/go-questionaire/trl"
+	"github.com/zew/go-questionnaire/lgn/shuffler"
+	"github.com/zew/go-questionnaire/trl"
 
-	"github.com/zew/go-questionaire/ctr"
+	"github.com/zew/go-questionnaire/ctr"
 )
 
 // Special subtype of inputT; used for radiogroup
@@ -454,8 +454,8 @@ func (p *pageT) AddGroup() *groupT {
 	return ret
 }
 
-// QuestionaireT contains pages with groups with inputs
-type QuestionaireT struct {
+// QuestionnaireT contains pages with groups with inputs
+type QuestionnaireT struct {
 	Survey      surveyT   `json:"survey,omitempty"`
 	UserID      string    `json:"user_id,omitempty"`      // participant ID, decimal, but string, i.E. 1011
 	ClosingTime time.Time `json:"closing_time,omitempty"` // truncated to second
@@ -478,7 +478,7 @@ type QuestionaireT struct {
 	Pages []*pageT `json:"pages,omitempty"`
 }
 
-// BasePath gives the 'root' for loading and saving questionaire JSON files.
+// BasePath gives the 'root' for loading and saving questionnaire JSON files.
 func BasePath() string {
 	return filepath.Join(".", "responses")
 }
@@ -486,7 +486,7 @@ func BasePath() string {
 // FinishedEntirely does not go for the
 // page.Finished timestamps, but for
 // an explicit input called 'finished'
-func (q *QuestionaireT) FinishedEntirely() (closed bool) {
+func (q *QuestionnaireT) FinishedEntirely() (closed bool) {
 	for _, p := range q.Pages {
 		for _, gr := range p.Groups {
 			for _, inp := range gr.Inputs {
@@ -502,9 +502,9 @@ func (q *QuestionaireT) FinishedEntirely() (closed bool) {
 	return
 }
 
-// FilePath1 returns the file system saving location of the questionaire.
+// FilePath1 returns the file system saving location of the questionnaire.
 // The waveID/userID fragment can optionally be submitted by an argument.
-func (q *QuestionaireT) FilePath1(surveyAndWaveIDAndUserID ...string) string {
+func (q *QuestionnaireT) FilePath1(surveyAndWaveIDAndUserID ...string) string {
 	pth := ""
 	if len(surveyAndWaveIDAndUserID) > 0 {
 		pth = filepath.Join(BasePath(), surveyAndWaveIDAndUserID[0])
@@ -523,8 +523,8 @@ func (q *QuestionaireT) FilePath1(surveyAndWaveIDAndUserID ...string) string {
 }
 
 // AddPage creates a new page
-// and adds this page to the questionaire's pages
-func (q *QuestionaireT) AddPage() *pageT {
+// and adds this page to the questionnaire's pages
+func (q *QuestionnaireT) AddPage() *pageT {
 	cntr := ctr.Increment()
 	p := &pageT{
 		Label: trl.S{"en": fmt.Sprintf("PageLabel_%v", cntr), "de": fmt.Sprintf("Seitentitel_%v", cntr)},
@@ -535,8 +535,8 @@ func (q *QuestionaireT) AddPage() *pageT {
 	return ret
 }
 
-// SetLangCode tries to change the questionaire langCode if supported by langCodes.
-func (q *QuestionaireT) SetLangCode(newCode string) error {
+// SetLangCode tries to change the questionnaire langCode if supported by langCodes.
+func (q *QuestionnaireT) SetLangCode(newCode string) error {
 	if newCode != q.LangCode {
 		oldCode := q.LangCode
 		q.LangCode = newCode
@@ -551,12 +551,12 @@ func (q *QuestionaireT) SetLangCode(newCode string) error {
 }
 
 // CurrentPageHTML is a comfort shortcut to PageHTML
-func (q *QuestionaireT) CurrentPageHTML() (string, error) {
+func (q *QuestionnaireT) CurrentPageHTML() (string, error) {
 	return q.PageHTML(q.CurrPage)
 }
 
-// PageHTML generates HTML for a specific page of the questionaire
-func (q *QuestionaireT) PageHTML(idx int) (string, error) {
+// PageHTML generates HTML for a specific page of the questionnaire
+func (q *QuestionnaireT) PageHTML(idx int) (string, error) {
 
 	if q.CurrPage > len(q.Pages)-1 || q.CurrPage < 0 {
 		s := fmt.Sprintf("You requested page %v out of %v. Page does not exist", idx, len(q.Pages)-1)
@@ -614,7 +614,7 @@ func (q *QuestionaireT) PageHTML(idx int) (string, error) {
 }
 
 // next page to be shown in navigation
-func (q *QuestionaireT) nextInNavi() (int, bool) {
+func (q *QuestionnaireT) nextInNavi() (int, bool) {
 	// Find next page in navigation
 	for i := q.CurrPage + 1; i < len(q.Pages); i++ {
 		if !q.Pages[i].NoNavigation {
@@ -631,7 +631,7 @@ func (q *QuestionaireT) nextInNavi() (int, bool) {
 }
 
 // prev page to be shown in navigation
-func (q *QuestionaireT) prevInNavi() (int, bool) {
+func (q *QuestionnaireT) prevInNavi() (int, bool) {
 	// Find prev page in navigation
 	for i := q.CurrPage - 1; i >= 0; i-- {
 		if !q.Pages[i].NoNavigation {
@@ -648,50 +648,50 @@ func (q *QuestionaireT) prevInNavi() (int, bool) {
 }
 
 // HasPrev if a previous page exists
-func (q *QuestionaireT) HasPrev() bool {
+func (q *QuestionnaireT) HasPrev() bool {
 	_, ok := q.prevInNavi()
 	return ok
 }
 
 // Prev returns index of the previous page
-func (q *QuestionaireT) Prev() int {
+func (q *QuestionnaireT) Prev() int {
 	pg, _ := q.prevInNavi()
 	return pg
 }
 
 // PrevNaviNum returns navigational number of the prev page
-func (q *QuestionaireT) PrevNaviNum() string {
+func (q *QuestionnaireT) PrevNaviNum() string {
 	pg, _ := q.prevInNavi()
 	return fmt.Sprintf("%v", q.Pages[pg].NavigationalNum)
 }
 
 // HasNext if a next page exists
-func (q *QuestionaireT) HasNext() bool {
+func (q *QuestionnaireT) HasNext() bool {
 	_, ok := q.nextInNavi()
 	return ok
 }
 
 // Next returns index of the next page
-func (q *QuestionaireT) Next() int {
+func (q *QuestionnaireT) Next() int {
 	pg, _ := q.nextInNavi()
 	return pg
 }
 
 // NextNaviNum returns navigational number of the next page
-func (q *QuestionaireT) NextNaviNum() string {
+func (q *QuestionnaireT) NextNaviNum() string {
 	pg, _ := q.nextInNavi()
 	return fmt.Sprintf("%v", q.Pages[pg].NavigationalNum)
 }
 
 // CurrPageInNavigation - is the current page
 // shown in navigation; convenience func for templates
-func (q *QuestionaireT) CurrPageInNavigation() bool {
+func (q *QuestionnaireT) CurrPageInNavigation() bool {
 	return !q.Pages[q.CurrPage].NoNavigation
 }
 
 // Compare compares page completion times and input responses.
 // Compare stops with the first difference and returns an error.
-func (q *QuestionaireT) Compare(v *QuestionaireT) (bool, error) {
+func (q *QuestionnaireT) Compare(v *QuestionnaireT) (bool, error) {
 
 	if len(q.Pages) != len(v.Pages) {
 		return false, fmt.Errorf("Unequal numbers of pages: %v - %v", len(q.Pages), len(v.Pages))
@@ -735,7 +735,7 @@ func (q *QuestionaireT) Compare(v *QuestionaireT) (bool, error) {
 // KeysValues returns all pages finish times; keys and values in defined order.
 // Empty values are also returned.
 // Major purpose is CSV export across several questionnaires.
-func (q *QuestionaireT) KeysValues() (finishes, keys, vals []string) {
+func (q *QuestionnaireT) KeysValues() (finishes, keys, vals []string) {
 	for i1 := 0; i1 < len(q.Pages); i1++ {
 		if q.Pages[i1].Finished.IsZero() {
 			finishes = append(finishes, "not_saved")

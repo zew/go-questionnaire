@@ -18,8 +18,8 @@ import (
 	"reflect"
 	"strings"
 
-	"github.com/zew/go-questionaire/cfg"
-	"github.com/zew/go-questionaire/lgn"
+	"github.com/zew/go-questionnaire/cfg"
+	"github.com/zew/go-questionnaire/lgn"
 	"github.com/zew/util"
 )
 

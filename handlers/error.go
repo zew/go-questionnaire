@@ -8,10 +8,10 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/zew/go-questionaire/qst"
+	"github.com/zew/go-questionnaire/qst"
 
-	"github.com/zew/go-questionaire/sessx"
-	"github.com/zew/go-questionaire/tpl"
+	"github.com/zew/go-questionnaire/sessx"
+	"github.com/zew/go-questionnaire/tpl"
 )
 
 func errorH(w http.ResponseWriter, r *http.Request, msg string) {
@@ -27,7 +27,7 @@ func errorH(w http.ResponseWriter, r *http.Request, msg string) {
 	ts := &tpl.StackT{"error.html", "non-existent.html"}
 
 	d := tplDataExtT{
-		Q: &qst.QuestionaireT{LangCode: "en"}, // just setting the lang code for the outer layout template
+		Q: &qst.QuestionnaireT{LangCode: "en"}, // just setting the lang code for the outer layout template
 	}
 
 	d.TplDataT = tpl.TplDataT{

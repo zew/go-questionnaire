@@ -20,8 +20,8 @@ import (
 
 	"github.com/zew/util"
 
-	"github.com/zew/go-questionaire/sessx"
-	"github.com/zew/go-questionaire/trl"
+	"github.com/zew/go-questionnaire/sessx"
+	"github.com/zew/go-questionnaire/trl"
 )
 
 // ConfigT holds the application config

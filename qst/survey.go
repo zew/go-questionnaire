@@ -4,18 +4,18 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/zew/go-questionaire/cfg"
-	"github.com/zew/go-questionaire/trl"
+	"github.com/zew/go-questionnaire/cfg"
+	"github.com/zew/go-questionnaire/trl"
 )
 
-// ParamT contains changing parameters to a questionaire
+// ParamT contains changing parameters to a questionnaire
 type ParamT struct {
 	Name string `json:"name,omitempty"` // i.e. main_refinance_rate_ecb
 	Val  string `json:"val,omitempty"`  // i.e. "01.02.2018: 3.2%"
 	// Challenge string `json:"challenge,omitempty"` // i.e.  Set field 'main_refinance_rate_ecb' to `01.02.2018: 3.2%` as in `main refinance rate of the ECB (01.02.2018: 3.2%)`"
 }
 
-// Param returns the value of a questionaire param
+// Param returns the value of a questionnaire param
 func (s *surveyT) Param(name string) (string, error) {
 	for _, p := range s.Params {
 		if p.Name == name {
@@ -25,7 +25,7 @@ func (s *surveyT) Param(name string) (string, error) {
 	return "?", fmt.Errorf("Param %q not found", name)
 }
 
-// surveyT stores the interval components of a questionaire wave.
+// surveyT stores the interval components of a questionnaire wave.
 // For quarterly intervals, it needs to be extended
 type surveyT struct {
 	Type string `json:"type,omitempty"` // The type identifier, i.e. "fmt" or "cep"

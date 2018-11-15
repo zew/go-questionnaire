@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"path/filepath"
 
-	"github.com/zew/go-questionaire/cfg"
+	"github.com/zew/go-questionnaire/cfg"
 )
 
 // ServeDynCss is useful mainly,

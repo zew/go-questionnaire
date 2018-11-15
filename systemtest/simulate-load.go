@@ -1,7 +1,7 @@
 // Package systemtest contains system tests;
 // ../main_test.go contains a detailed coverage test.
 // However, test is run from the app dir one above.
-// Working dir will be initially /go-questionaire/systemtest,
+// Working dir will be initially /go-questionnaire/systemtest,
 // but we will step up one dir in the code below.
 package systemtest
 
@@ -17,10 +17,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/zew/go-questionaire/cfg"
-	"github.com/zew/go-questionaire/ctr"
-	"github.com/zew/go-questionaire/lgn"
-	"github.com/zew/go-questionaire/qst"
+	"github.com/zew/go-questionnaire/cfg"
+	"github.com/zew/go-questionnaire/ctr"
+	"github.com/zew/go-questionnaire/lgn"
+	"github.com/zew/go-questionnaire/qst"
 	"github.com/zew/util"
 )
 
@@ -30,7 +30,7 @@ func main() {
 
 }
 
-func clientPageToServer(t *testing.T, q *qst.QuestionaireT, idxPage int, urlMain string, sessCook *http.Cookie) {
+func clientPageToServer(t *testing.T, q *qst.QuestionnaireT, idxPage int, urlMain string, sessCook *http.Cookie) {
 
 	ctr.Reset()
 
@@ -70,17 +70,17 @@ func clientPageToServer(t *testing.T, q *qst.QuestionaireT, idxPage int, urlMain
 
 }
 
-// FillQuestAndComparesServerResult loads a questionaire from at template.
-// It then fills the questionaire page by page.
-// It then compares the local copy of the questionaire data
+// FillQuestAndComparesServerResult loads a questionnaire from at template.
+// It then fills the questionnaire page by page.
+// It then compares the local copy of the questionnaire data
 // with the "server" version.
-func FillQuestAndComparesServerResult(t *testing.T, qSrc *qst.QuestionaireT, urlMain string, sessCook *http.Cookie) {
+func FillQuestAndComparesServerResult(t *testing.T, qSrc *qst.QuestionnaireT, urlMain string, sessCook *http.Cookie) {
 
-	var clientQuest = &qst.QuestionaireT{}
+	var clientQuest = &qst.QuestionnaireT{}
 	var err error
 	clientQuest, err = qst.Load1(qSrc.FilePath1(qSrc.Survey.Type + ".json")) // new from template
 	if err != nil {
-		t.Fatalf("Loading client questionaire from file caused error: %v", err)
+		t.Fatalf("Loading client questionnaire from file caused error: %v", err)
 	}
 	clientQuest.Survey = qSrc.Survey
 	clientQuest.UserID = "systemtest"
@@ -88,9 +88,9 @@ func FillQuestAndComparesServerResult(t *testing.T, qSrc *qst.QuestionaireT, url
 	clientQuest.CurrPage = 777 // hopeless to mimic every server side setting
 	err = clientQuest.Validate()
 	if err != nil {
-		t.Fatalf("Client questionaire validation caused error: %v", err)
+		t.Fatalf("Client questionnaire validation caused error: %v", err)
 	}
-	t.Logf("Client questionaire loaded from file; %v pages", len(clientQuest.Pages))
+	t.Logf("Client questionnaire loaded from file; %v pages", len(clientQuest.Pages))
 
 	for idx := range clientQuest.Pages {
 		clientPageToServer(t, clientQuest, idx, urlMain, sessCook)
@@ -99,23 +99,23 @@ func FillQuestAndComparesServerResult(t *testing.T, qSrc *qst.QuestionaireT, url
 	clientPth := filepath.Join(clientQuest.Survey.Type, clientQuest.Survey.WaveID(), "systemtest_src")
 	clientQuest.Save1(clientQuest.FilePath1(clientPth))
 
-	// Comparing client questionaire to server questionaire
+	// Comparing client questionnaire to server questionnaire
 	serverPth := strings.Replace(clientPth, "systemtest_src", "systemtest", -1)
 	serverQuest, err := qst.Load1(clientQuest.FilePath1(serverPth)) // new from template
 	if err != nil {
-		t.Fatalf("Loading questionaire from file caused error: %v", err)
+		t.Fatalf("Loading questionnaire from file caused error: %v", err)
 	}
 	equal, err := clientQuest.Compare(serverQuest)
 	if !equal {
 		t.Logf("Delete older versions of systemtest.json")
-		t.Fatalf("Questionaires are unequal: %v", err)
+		t.Fatalf("Questionnaires are unequal: %v", err)
 	}
 
 }
 
 // SimulateLoad logs in as 'systemtest'
 // and performs some requests.
-func SimulateLoad(t *testing.T, qSrc *qst.QuestionaireT,
+func SimulateLoad(t *testing.T, qSrc *qst.QuestionnaireT,
 	loginURI, mobile string) {
 
 	port := cfg.Get().BindSocket

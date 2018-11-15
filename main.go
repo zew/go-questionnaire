@@ -12,15 +12,15 @@ import (
 	"os"
 	"time"
 
-	"github.com/zew/go-questionaire/bootstrap"
-	"github.com/zew/go-questionaire/cfg"
-	"github.com/zew/go-questionaire/generators"
-	"github.com/zew/go-questionaire/handlers"
-	"github.com/zew/go-questionaire/lgn"
-	"github.com/zew/go-questionaire/lgn/directlogin"
-	"github.com/zew/go-questionaire/muxwrap"
-	"github.com/zew/go-questionaire/sessx"
-	"github.com/zew/go-questionaire/tpl"
+	"github.com/zew/go-questionnaire/bootstrap"
+	"github.com/zew/go-questionnaire/cfg"
+	"github.com/zew/go-questionnaire/generators"
+	"github.com/zew/go-questionnaire/handlers"
+	"github.com/zew/go-questionnaire/lgn"
+	"github.com/zew/go-questionnaire/lgn/directlogin"
+	"github.com/zew/go-questionnaire/muxwrap"
+	"github.com/zew/go-questionnaire/sessx"
+	"github.com/zew/go-questionnaire/tpl"
 )
 
 func main() {
@@ -81,7 +81,7 @@ func main() {
 	mux1.HandleFunc(cfg.Pref("/generate-hashes"), lgn.GenerateHashesH)
 	mux1.HandleFunc(cfg.Pref("/shufflings-to-csv"), lgn.ShufflesToCSV)
 	mux1.HandleFunc(cfg.Pref("/templates-reload"), tpl.ParseH)
-	mux1.HandleFunc(cfg.Pref("/generate-questionaire-templates"), generators.SurveyGenerate)
+	mux1.HandleFunc(cfg.Pref("/generate-questionnaire-templates"), generators.SurveyGenerate)
 
 	//
 	// Standard handlers
@@ -91,8 +91,8 @@ func main() {
 		mux1.HandleFunc(cfg.Pref("/"), handlers.MainH)
 		mux1.HandleFunc(cfg.PrefWTS("/"), handlers.MainH)
 	}
-	mux1.HandleFunc(cfg.Pref("/reload-from-questionaire-template"), handlers.ReloadH)
-	mux1.HandleFunc(cfg.PrefWTS("/reload-from-questionaire-template"), handlers.ReloadH)
+	mux1.HandleFunc(cfg.Pref("/reload-from-questionnaire-template"), handlers.ReloadH)
+	mux1.HandleFunc(cfg.PrefWTS("/reload-from-questionnaire-template"), handlers.ReloadH)
 	mux1.HandleFunc(cfg.Pref("/transferrer-endpoint"), handlers.TransferrerEndpointH)
 
 	//

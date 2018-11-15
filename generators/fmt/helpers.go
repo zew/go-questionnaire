@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/zew/go-questionaire/trl"
+	"github.com/zew/go-questionnaire/trl"
 )
 
 func nextWaveID() string {

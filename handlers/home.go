@@ -10,38 +10,38 @@ import (
 	"time"
 
 	"github.com/xojoc/useragent"
-	"github.com/zew/go-questionaire/cfg"
-	"github.com/zew/go-questionaire/lgn"
-	"github.com/zew/go-questionaire/qst"
-	"github.com/zew/go-questionaire/sessx"
-	"github.com/zew/go-questionaire/tpl"
+	"github.com/zew/go-questionnaire/cfg"
+	"github.com/zew/go-questionnaire/lgn"
+	"github.com/zew/go-questionnaire/qst"
+	"github.com/zew/go-questionnaire/sessx"
+	"github.com/zew/go-questionnaire/tpl"
 
 	"github.com/pkg/errors"
 )
 
-// An extension with questionaire
+// An extension with questionnaire
 type tplDataExtT struct {
 	tpl.TplDataT
-	Q *qst.QuestionaireT // The major app specific object
+	Q *qst.QuestionnaireT // The major app specific object
 }
 
-// Loading questionaire.
+// Loading questionnaire.
 // First from session.
 // Then from file of previous session.
 // Finally from template.
-func loadQuestionaire(w http.ResponseWriter, r *http.Request, userSurveyType, userWaveID, userID string) (*qst.QuestionaireT, error) {
+func loadQuestionnaire(w http.ResponseWriter, r *http.Request, userSurveyType, userWaveID, userID string) (*qst.QuestionnaireT, error) {
 
 	sess := sessx.New(w, r)
 
 	// from session
-	var q = &qst.QuestionaireT{}
-	ok, err := sess.EffectiveObj("questionaire", q)
+	var q = &qst.QuestionnaireT{}
+	ok, err := sess.EffectiveObj("questionnaire", q)
 	if err != nil {
-		err = errors.Wrap(err, "Reading questionaire from session caused error")
+		err = errors.Wrap(err, "Reading questionnaire from session caused error")
 		return q, err
 	}
 	if ok {
-		log.Printf("Questionaire loaded from session; %v pages", len(q.Pages))
+		log.Printf("Questionnaire loaded from session; %v pages", len(q.Pages))
 		return q, nil
 	}
 
@@ -51,16 +51,16 @@ func loadQuestionaire(w http.ResponseWriter, r *http.Request, userSurveyType, us
 	log.Printf("Deriving path: %v", pth)
 	q, err = qst.Load1(pth) // previous session
 	if err != nil {
-		log.Printf("No previous file %v found. Loading new questionaire from file.", pth)
+		log.Printf("No previous file %v found. Loading new questionnaire from file.", pth)
 		q, err = qst.Load1(q.FilePath1(userSurveyType)) // new from template
 	}
 	if err != nil {
-		err = errors.Wrap(err, "Loading questionaire from file caused error")
+		err = errors.Wrap(err, "Loading questionnaire from file caused error")
 		return q, err
 	}
 	err = q.Validate()
 	if err != nil {
-		err = errors.Wrap(err, "Questionaire validation caused error")
+		err = errors.Wrap(err, "Questionnaire validation caused error")
 		return q, err
 	}
 
@@ -73,7 +73,7 @@ func loadQuestionaire(w http.ResponseWriter, r *http.Request, userSurveyType, us
 		return q, err
 	}
 
-	log.Printf("Questionaire loaded from file; %v pages", len(q.Pages))
+	log.Printf("Questionnaire loaded from file; %v pages", len(q.Pages))
 	return q, nil
 
 }
@@ -96,7 +96,7 @@ func helper(w http.ResponseWriter, r *http.Request, err error, msgs ...string) {
 	errorH(w, r, err.Error())
 }
 
-// MainH loads and displays the questionaire with page and lang_code
+// MainH loads and displays the questionnaire with page and lang_code
 func MainH(w http.ResponseWriter, r *http.Request) {
 
 	sess := sessx.New(w, r)
@@ -111,7 +111,7 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	if ok && err == nil {
-		sess.Remove(w, "questionaire") // upon successful, possibly new login - remove previous questionaire from session
+		sess.Remove(w, "questionnaire") // upon successful, possibly new login - remove previous questionnaire from session
 	}
 
 	l, isLoggedIn, err := lgn.LoggedInCheck(w, r)
@@ -153,7 +153,7 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	q, err := loadQuestionaire(w, r, userSurveyType, userWaveID, l.User)
+	q, err := loadQuestionnaire(w, r, userSurveyType, userWaveID, l.User)
 	if err != nil {
 		helper(w, r, err)
 		return
@@ -180,7 +180,7 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 
 	//
 	// Language code changed via URL parameter
-	// => Save into questionaire and session
+	// => Save into questionnaire and session
 	if newCode, ok := sess.ReqParam("lang_code"); ok {
 		err := q.SetLangCode(newCode)
 		if err != nil {
@@ -191,8 +191,8 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 
-	// Questionaire language code (still) not set
-	// => Try to set questionaire lang_code from session lang_code (from login)
+	// Questionnaire language code (still) not set
+	// => Try to set questionnaire lang_code from session lang_code (from login)
 	if q.LangCode == "" && sess.EffectiveIsSet("lang_code") {
 		fromSess := sess.EffectiveStr("lang_code")
 		err := q.SetLangCode(fromSess)
@@ -203,8 +203,8 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 
-	// Questionaire language code (still) not set
-	// => Try to set questionaire to application default lang code
+	// Questionnaire language code (still) not set
+	// => Try to set questionnaire to application default lang code
 	if q.LangCode == "" {
 		// def := cfg.Get().LangCodes[0]
 		def, err := cfg.Get().UserLangCode(q.UserID)
@@ -212,7 +212,7 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 		if err != nil {
 			log.Printf("Problem getting lang_code%v", err)
 			def = q.LangCodesOrder[0]
-			log.Printf("lang_code default for questionaire is '%v'", def)
+			log.Printf("lang_code default for questionnaire is '%v'", def)
 		} else {
 			log.Printf("lang_code for userID %v found '%v'", q.UserID, def)
 		}
@@ -225,7 +225,7 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 	// Sync *back* -
-	// questionaire lang_code => app lang_code
+	// questionnaire lang_code => app lang_code
 	if q.LangCode != "" {
 		sess.PutString("lang_code", q.LangCode)
 		log.Printf("empty lang_code set to userID lang_code or quest.Default '%v' - and saved to session", q.LangCode)
@@ -269,11 +269,11 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 		log.Printf("curPage set explicitly by param 'page' to %v", explicit)
 		currPage = explicit
 	}
-	q.CurrPage = currPage // Put current page into questionaire
+	q.CurrPage = currPage // Put current page into questionnaire
 	log.Printf("submitBtn was '%v' - new currPage is %v", submit, currPage)
 
 	//
-	// Put request values into questionaire
+	// Put request values into questionnaire
 	if q.Pages[prevPage].Finished.IsZero() {
 		q.Pages[prevPage].Finished = time.Now().Truncate(time.Second)
 	}
@@ -316,15 +316,15 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 
 	//
 	//
-	// Save questionaire into session
-	err = sess.PutObject("questionaire", q)
+	// Save questionnaire into session
+	err = sess.PutObject("questionnaire", q)
 	if err != nil {
-		helper(w, r, err, "Putting questionaire into session caused error")
+		helper(w, r, err, "Putting questionnaire into session caused error")
 		return
 	}
 
 	//
-	// Save questionaire to file
+	// Save questionnaire to file
 	pth := q.FilePath1()
 	err = os.MkdirAll(filepath.Dir(pth), 0755)
 	if err != nil {
@@ -334,7 +334,7 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 	}
 	err = q.Save1(pth)
 	if err != nil {
-		helper(w, r, err, "Putting questionaire into session caused error")
+		helper(w, r, err, "Putting questionnaire into session caused error")
 		return
 	}
 
@@ -371,7 +371,7 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 
 }
 
-func computeMobile(w http.ResponseWriter, r *http.Request, q *qst.QuestionaireT) bool {
+func computeMobile(w http.ResponseWriter, r *http.Request, q *qst.QuestionnaireT) bool {
 
 	sess := sessx.New(w, r)
 

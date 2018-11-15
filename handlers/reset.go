@@ -7,14 +7,14 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/zew/go-questionaire/cfg"
-	"github.com/zew/go-questionaire/lgn"
-	"github.com/zew/go-questionaire/qst"
-	"github.com/zew/go-questionaire/sessx"
+	"github.com/zew/go-questionnaire/cfg"
+	"github.com/zew/go-questionnaire/lgn"
+	"github.com/zew/go-questionnaire/qst"
+	"github.com/zew/go-questionnaire/sessx"
 )
 
 // ReloadH removes the existing questioniare from the session,
-// reading it anew from the questionaire template JSON file,
+// reading it anew from the questionnaire template JSON file,
 // allowing to start anew
 func ReloadH(w http.ResponseWriter, r *http.Request) {
 
@@ -60,14 +60,14 @@ func ReloadH(w http.ResponseWriter, r *http.Request) {
 	pth := filepath.Join(".", qst.BasePath(), userSurveyType, userWaveID, l.User) + ".json"
 	err = os.Remove(pth)
 	if err != nil {
-		log.Printf("Error deleting questionaire file: %v", err)
-		// fmt.Fprintf(w, "Error deleting questionaire file: %v", err)
+		log.Printf("Error deleting questionnaire file: %v", err)
+		// fmt.Fprintf(w, "Error deleting questionnaire file: %v", err)
 	}
 	log.Printf("removed quest file %v", pth)
 
-	err = sess.Remove(w, "questionaire")
+	err = sess.Remove(w, "questionnaire")
 	if err != nil {
-		helper(w, r, err, "Error deleting questionaire from session")
+		helper(w, r, err, "Error deleting questionnaire from session")
 		return
 	}
 	log.Printf("removed quest session")
@@ -89,7 +89,7 @@ func ReloadH(w http.ResponseWriter, r *http.Request) {
 	)
 
 	fmt.Fprintf(w,
-		"<a href='%v?u=%v&survey_id=%v&wave_id=%v&h=%v'  target='_blank'>Start questionaire (again)<a> <br> ",
+		"<a href='%v?u=%v&survey_id=%v&wave_id=%v&h=%v'  target='_blank'>Start questionnaire (again)<a> <br> ",
 		cfg.PrefWTS(), l.User, userSurveyType, userWaveID, r.Form.Get("h"),
 	)
 

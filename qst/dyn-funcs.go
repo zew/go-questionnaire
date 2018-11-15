@@ -5,10 +5,10 @@ import (
 	"log"
 	"time"
 
-	"github.com/zew/go-questionaire/cfg"
+	"github.com/zew/go-questionnaire/cfg"
 )
 
-type dynFuncT func(*QuestionaireT) (string, error)
+type dynFuncT func(*QuestionnaireT) (string, error)
 
 var dynFuncs = map[string]dynFuncT{
 	"RepsonseStatistics": RepsonseStatistics,
@@ -18,7 +18,7 @@ var dynFuncs = map[string]dynFuncT{
 // Statistics returns the percentage of
 // answers responded to.
 // It is helper to RepsonseStatistics().
-func (q *QuestionaireT) Statistics() (int, int, float64) {
+func (q *QuestionnaireT) Statistics() (int, int, float64) {
 	responses := 0
 	inputs := 0
 	for _, p := range q.Pages {
@@ -43,7 +43,7 @@ func (q *QuestionaireT) Statistics() (int, int, float64) {
 
 // RepsonseStatistics returns the percentage of
 // answers responded to.
-func RepsonseStatistics(q *QuestionaireT) (string, error) {
+func RepsonseStatistics(q *QuestionnaireT) (string, error) {
 
 	responses, inputs, pct := q.Statistics()
 	ct := q.Survey.Deadline
@@ -60,7 +60,7 @@ func RepsonseStatistics(q *QuestionaireT) (string, error) {
 }
 
 // PersonalLink returns the entry link
-func PersonalLink(q *QuestionaireT) (string, error) {
+func PersonalLink(q *QuestionnaireT) (string, error) {
 	closed := q.FinishedEntirely()
 	ret := ""
 	if closed {

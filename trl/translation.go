@@ -1,5 +1,5 @@
 // Package trl is a central store for application environment translations;
-// While specific objects such as QuestionaireT contain translations for its contents,
+// While specific objects such as QuestionnaireT contain translations for its contents,
 // we need some global store too.
 package trl
 

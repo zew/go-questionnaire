@@ -1,10 +1,10 @@
 #!/bin/sh
-# Startup script for go questionaire programm
+# Startup script for go questionnaire programm
 # www.der-taegliche-admin.de/2010/06/25/eigenes-start-stop-shell-script-erstellen/
-INSTANZ="Go Questionaire"
-BPDIR=/opt/go-questionaire
-Pidfile=/var/run/go-questionaire/prog.pid
-LOGFILE=/var/log/go-questionaire.log
+INSTANZ="Go questionnaire"
+BPDIR=/opt/go-questionnaire
+Pidfile=/var/run/go-questionnaire/prog.pid
+LOGFILE=/var/log/go-questionnaire.log
 
 if [ -f $Pidfile ]
 then
@@ -20,11 +20,11 @@ case "$1" in
 						echo "Starting $INSTANZ"
 						cd $BPDIR
 						#  stackoverflow.com/questions/4699790/
-						#  nohup ./go-questionaire 1>/var/log/out.log 2>/var/log/err.log &
-						nohup    ./go-questionaire >$LOGFILE 2>&1 &
+						#  nohup ./go-questionnaire 1>/var/log/out.log 2>/var/log/err.log &
+						nohup    ./go-questionnaire >$LOGFILE 2>&1 &
 
 						# Alternative: stdout and stderr into /dev/null
-						# nohup ./go-questionaire &> /dev/null &
+						# nohup ./go-questionnaire &> /dev/null &
 
 						echo $! > $Pidfile
 
@@ -35,14 +35,14 @@ case "$1" in
 						#  > x.log     =>  stdout to logfile
 						#  2>&1        =>  stderr to logfile too
 						#  
-						# nohup ./go-questionaire >$LOGFILE 2>&1 &
+						# nohup ./go-questionnaire >$LOGFILE 2>&1 &
 
 				fi
 		else
 				echo "Starting $INSTANZ"
 				cd $BPDIR
-				#./go-questionaire >$LOGFILE 2>&1 &
-				nohup ./go-questionaire >$LOGFILE 2>&1 &
+				#./go-questionnaire >$LOGFILE 2>&1 &
+				nohup ./go-questionnaire >$LOGFILE 2>&1 &
 				echo $! > $Pidfile
 		fi
 		;;

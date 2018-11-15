@@ -11,8 +11,8 @@ import (
 	"time"
 
 	"github.com/monoculum/formam"
-	"github.com/zew/go-questionaire/cfg"
-	"github.com/zew/go-questionaire/sessx"
+	"github.com/zew/go-questionnaire/cfg"
+	"github.com/zew/go-questionnaire/sessx"
 	"github.com/zew/util"
 )
 
@@ -352,6 +352,7 @@ func GenerateHashesH(w http.ResponseWriter, r *http.Request) {
 
 		<input type="submit"   name="submitclassic" accesskey="s"><br>
 
+		{{if  (len .Links  ) gt 0 }} <p style='                  color:#444'>{{.Links  }}</p>{{end}}
 		{{if  (len .List   ) gt 0 }} <p style='white-space: pre; color:#444'>{{.List   }}</p>{{end}}
 
 
@@ -373,7 +374,8 @@ func GenerateHashesH(w http.ResponseWriter, r *http.Request) {
 		Stop          int    `json:"stop"`
 		SubmitClassic string `json:"submitclassic"`
 
-		List template.HTML `json:"list"`
+		Links template.HTML `json:"links"`
+		List  string        `json:"list"`
 	}
 	fe := formEntryT{}
 
@@ -407,25 +409,28 @@ func GenerateHashesH(w http.ResponseWriter, r *http.Request) {
 	}
 
 	b := &bytes.Buffer{}
+	list := &bytes.Buffer{}
 	for i := fe.Start; i < fe.Stop; i++ {
 
 		checkStr := fmt.Sprintf("%v-%v-%v-%v", fe.SurveyID, i, fe.WaveID, lgns.Salt)
 		hsh := Md5Str([]byte(checkStr))
 		url := fmt.Sprintf("%v?u=%v&survey_id=%v&wave_id=%v&h=%v", cfg.PrefWTS(), i, fe.SurveyID, fe.WaveID, hsh)
 		fmt.Fprintf(b, "<a href='%v'  target='_blank' >login as user %4v<a> ", url, i)
+		fmt.Fprintf(list, "%4v\t\t%v\n", i, url)
 
 		fmt.Fprint(b, " &nbsp; &nbsp; &nbsp; &nbsp; ")
 
 		url2 := fmt.Sprintf(
 			"%v?u=%v&survey_id=%v&wave_id=%v&h=%v",
-			cfg.PrefWTS("reload-from-questionaire-template"), i, fe.SurveyID, fe.WaveID, hsh,
+			cfg.PrefWTS("reload-from-questionnaire-template"), i, fe.SurveyID, fe.WaveID, hsh,
 		)
 		fmt.Fprintf(b, "<a href='%v'  target='_blank' >reload from template<a>", url2)
 
 		fmt.Fprint(b, "<br>")
 	}
 
-	fe.List = template.HTML(b.String())
+	fe.Links = template.HTML(b.String())
+	fe.List = list.String()
 	fe.ErrMsg = errMsg
 
 	tpl := template.New("anyname.html")

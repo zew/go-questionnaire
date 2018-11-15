@@ -3,11 +3,11 @@ package fmt
 import (
 	"fmt"
 
-	"github.com/zew/go-questionaire/qst"
-	"github.com/zew/go-questionaire/trl"
+	"github.com/zew/go-questionnaire/qst"
+	"github.com/zew/go-questionnaire/trl"
 )
 
-func addSeasonal2(q *qst.QuestionaireT) error {
+func addSeasonal2(q *qst.QuestionnaireT) error {
 
 	if monthOfQuarter() != 2 && false {
 		return nil

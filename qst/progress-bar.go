@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"fmt"
 
-	"github.com/zew/go-questionaire/cfg"
+	"github.com/zew/go-questionnaire/cfg"
 )
 
 const (
@@ -32,7 +32,7 @@ const (
 // It should be clickable and jump to the indicated page.
 // This means, we have to submit the form and submit the destination page.
 // Compare MenuMobile()
-func (q *QuestionaireT) ProgressBar() string {
+func (q *QuestionnaireT) ProgressBar() string {
 
 	b := bytes.Buffer{}
 	// b.WriteString(fmt.Sprintf(htmlExample))

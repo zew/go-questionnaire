@@ -7,7 +7,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/zew/go-questionaire/sessx"
+	"github.com/zew/go-questionnaire/sessx"
 	"github.com/zew/util"
 )
 

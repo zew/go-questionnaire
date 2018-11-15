@@ -25,7 +25,7 @@ import (
 
 	"golang.org/x/crypto/md4"
 
-	"github.com/zew/go-questionaire/cfg"
+	"github.com/zew/go-questionnaire/cfg"
 	"github.com/zew/util"
 )
 

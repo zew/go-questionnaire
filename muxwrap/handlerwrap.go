@@ -8,8 +8,8 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/zew/go-questionaire/cfg"
-	"github.com/zew/go-questionaire/sessx"
+	"github.com/zew/go-questionnaire/cfg"
+	"github.com/zew/go-questionnaire/sessx"
 	"github.com/zew/logx"
 	"github.com/zew/util"
 )

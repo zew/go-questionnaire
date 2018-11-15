@@ -1,14 +1,14 @@
 package min
 
 import (
-	"github.com/zew/go-questionaire/qst"
-	"github.com/zew/go-questionaire/trl"
+	"github.com/zew/go-questionnaire/qst"
+	"github.com/zew/go-questionnaire/trl"
 )
 
-// Create creates an minimal example questionaire with a few pages and inputs.
+// Create creates an minimal example questionnaire with a few pages and inputs.
 // It is saved to disk as an example.
-func Create(params []qst.ParamT) (*qst.QuestionaireT, error) {
-	q := qst.QuestionaireT{}
+func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
+	q := qst.QuestionnaireT{}
 	q.Survey = qst.NewSurvey("min")
 	q.Survey.Params = params
 	q.LangCodes = map[string]string{"de": "Deutsch", "en": "English"}

@@ -12,9 +12,9 @@ import (
 	"strings"
 
 	"github.com/russross/blackfriday"
-	"github.com/zew/go-questionaire/cfg"
-	"github.com/zew/go-questionaire/qst"
-	"github.com/zew/go-questionaire/sessx"
+	"github.com/zew/go-questionnaire/cfg"
+	"github.com/zew/go-questionnaire/qst"
+	"github.com/zew/go-questionnaire/sessx"
 )
 
 // MarkDownFromFile handles markdown rendering.
@@ -141,10 +141,10 @@ func (fragm *staticPrefixT) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// survey name
-	var q = &qst.QuestionaireT{}
+	var q = &qst.QuestionnaireT{}
 
 	surveyType := ""
-	if ok, _ := sess.EffectiveObj("questionaire", q); ok {
+	if ok, _ := sess.EffectiveObj("questionnaire", q); ok {
 		surveyType = q.Survey.Type
 	}
 

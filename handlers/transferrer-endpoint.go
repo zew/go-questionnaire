@@ -8,14 +8,14 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/zew/go-questionaire/qst"
+	"github.com/zew/go-questionnaire/qst"
 
-	"github.com/zew/go-questionaire/lgn"
-	"github.com/zew/go-questionaire/sessx"
+	"github.com/zew/go-questionnaire/lgn"
+	"github.com/zew/go-questionnaire/sessx"
 	"github.com/zew/util"
 )
 
-// TransferrerEndpointH responds with finished questionaires from the filesystem.
+// TransferrerEndpointH responds with finished questionnaires from the filesystem.
 func TransferrerEndpointH(w http.ResponseWriter, r *http.Request) {
 
 	sess := sessx.New(w, r)
@@ -59,20 +59,20 @@ func TransferrerEndpointH(w http.ResponseWriter, r *http.Request) {
 		helper(w, r, err, "Could not read directory.")
 		return
 	}
-	qs := []*qst.QuestionaireT{}
+	qs := []*qst.QuestionnaireT{}
 	for i, info := range infos {
 		if info.Mode().IsRegular() {
 			log.Printf("Name: %v, Size: %v", info.Name(), info.Size())
 		}
 		pth := filepath.Join(qst.BasePath(), surveyID, waveID, info.Name())
-		// var q = &qst.QuestionaireT{}
+		// var q = &qst.QuestionnaireT{}
 		q, err := qst.Load1(pth)
 		if err != nil {
 			helper(w, r, err, fmt.Sprintf("iter %3v: No file %v found.", i, pth))
 		}
 		err = q.Validate()
 		if err != nil {
-			helper(w, r, err, fmt.Sprintf("iter %3v: Questionaire validation caused error", i))
+			helper(w, r, err, fmt.Sprintf("iter %3v: Questionnaire validation caused error", i))
 		}
 
 		if q.ClosingTime.IsZero() && fetchAll == "" {
@@ -85,12 +85,12 @@ func TransferrerEndpointH(w http.ResponseWriter, r *http.Request) {
 		qs = append(qs, q)
 	}
 
-	log.Printf("%3v questionaires ready for fetching home", len(qs))
+	log.Printf("%3v questionnaires ready for fetching home", len(qs))
 
 	firstColLeftMostPrefix := " "
 	byts, err := json.MarshalIndent(qs, firstColLeftMostPrefix, "\t")
 	if err != nil {
-		helper(w, r, fmt.Errorf("Marschalling questionair failed: %v", err))
+		helper(w, r, fmt.Errorf("Marschalling questionnair failed: %v", err))
 		return
 	}
 	sz := fmt.Sprintf("%.3f MB", float64(len(qs)/(1<<10))/(1<<10))

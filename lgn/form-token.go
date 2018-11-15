@@ -7,10 +7,10 @@ import (
 	"io"
 	"time"
 
-	"github.com/zew/go-questionaire/cfg"
+	"github.com/zew/go-questionnaire/cfg"
 )
 
-var tokenSaltNotWorking = GeneratePassword(22) // not interoperational between multiple instances of go-questionaire, transferrer, generator
+var tokenSaltNotWorking = GeneratePassword(22) // not interoperational between multiple instances of go-questionnaire, transferrer, generator
 
 // tok rounds time to hours
 // and computes a has from it

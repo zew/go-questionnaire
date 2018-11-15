@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/zew/go-questionaire/ctr"
-	"github.com/zew/go-questionaire/lgn"
+	"github.com/zew/go-questionnaire/ctr"
+	"github.com/zew/go-questionnaire/lgn"
 	"github.com/zew/util"
 )
 

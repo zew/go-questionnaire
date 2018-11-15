@@ -6,11 +6,11 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/zew/go-questionaire/lgn/shuffler"
+	"github.com/zew/go-questionnaire/lgn/shuffler"
 	"github.com/zew/util"
 
 	"github.com/monoculum/formam"
-	"github.com/zew/go-questionaire/cfg"
+	"github.com/zew/go-questionnaire/cfg"
 )
 
 // ShufflesToCSV computes random but deterministic shufflings for usage outside the app

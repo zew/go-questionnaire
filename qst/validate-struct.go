@@ -6,7 +6,7 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/zew/go-questionaire/trl"
+	"github.com/zew/go-questionnaire/trl"
 )
 
 var not09azHyphenUnderscore = regexp.MustCompile(`[^a-z0-9\_\-]+`)
@@ -19,8 +19,8 @@ func Mustaz09Underscore(s string) bool {
 	return true
 }
 
-// Validate checks whether essential elements of the questionaire exist.
-func (q *QuestionaireT) Validate() error {
+// Validate checks whether essential elements of the questionnaire exist.
+func (q *QuestionnaireT) Validate() error {
 
 	if q.Survey.Type == "" || !Mustaz09Underscore(q.Survey.Type) {
 		s := fmt.Sprintf("WaveID must contain a SurveyID string consisting of lower case letters: %v", q.Survey.Type)
@@ -153,7 +153,7 @@ func (q *QuestionaireT) Validate() error {
 }
 
 // ComputeDynamicContent computes elements of type dynamic func
-func (q *QuestionaireT) ComputeDynamicContent(idx int) error {
+func (q *QuestionnaireT) ComputeDynamicContent(idx int) error {
 
 	for i1 := 0; i1 < len(q.Pages); i1++ {
 		if i1 != idx {
@@ -182,7 +182,7 @@ func (q *QuestionaireT) ComputeDynamicContent(idx int) error {
 
 // Hyphenize replaces "mittelfristig" with "mittel&shy;fristig"
 // for all labels and descriptions
-func (q *QuestionaireT) Hyphenize() {
+func (q *QuestionnaireT) Hyphenize() {
 
 	for i1 := 0; i1 < len(q.Pages); i1++ {
 		for i2 := 0; i2 < len(q.Pages[i1].Groups); i2++ {
@@ -205,7 +205,7 @@ func (q *QuestionaireT) Hyphenize() {
 
 // ComputeMaxGroups computes the maximum number of groups
 // and puts them into q.MaxGroups
-func (q *QuestionaireT) ComputeMaxGroups() {
+func (q *QuestionnaireT) ComputeMaxGroups() {
 
 	mG := 0
 	for i1 := 0; i1 < len(q.Pages); i1++ {

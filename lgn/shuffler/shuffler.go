@@ -14,7 +14,7 @@ type shufflerT struct {
 	ID         int // Seed for shuffling; typically the user ID
 	Variations int // ID modulo Variations is the actual seed. Determines how many different shuffled sets are derived from various IDs
 
-	MaxElements int // The number of elements to shuffle; typically the largest number of input groups across all pages of a questionaire.
+	MaxElements int // The number of elements to shuffle; typically the largest number of input groups across all pages of a questionnaire.
 }
 
 // New creates a Shuffler for creating deterministic variations

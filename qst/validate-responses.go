@@ -6,8 +6,8 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/zew/go-questionaire/cfg"
-	"github.com/zew/go-questionaire/trl"
+	"github.com/zew/go-questionnaire/cfg"
+	"github.com/zew/go-questionnaire/trl"
 )
 
 type validatorT func(string, string) error
@@ -73,7 +73,7 @@ func init() {
 
 // ValidateReponseData applies all input validation rules on the responses.
 // Restricted by page, since validation errors are handled page-wise.
-func (q *QuestionaireT) ValidateReponseData(pageNum int, langCode string) (last error) {
+func (q *QuestionnaireT) ValidateReponseData(pageNum int, langCode string) (last error) {
 
 	for i1 := 0; i1 < len(q.Pages); i1++ {
 		if i1 != pageNum {
@@ -119,8 +119,8 @@ func (q *QuestionaireT) ValidateReponseData(pageNum int, langCode string) (last 
 	return
 }
 
-// DumpErrors logs all ErrMsgs from the questionaire
-func (q *QuestionaireT) DumpErrors() {
+// DumpErrors logs all ErrMsgs from the questionnaire
+func (q *QuestionnaireT) DumpErrors() {
 	for i1 := 0; i1 < len(q.Pages); i1++ {
 		for i2 := 0; i2 < len(q.Pages[i1].Groups); i2++ {
 			for i3 := 0; i3 < len(q.Pages[i1].Groups[i2].Inputs); i3++ {

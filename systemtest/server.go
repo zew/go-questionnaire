@@ -9,12 +9,12 @@ import (
 	"testing"
 	"time"
 
-	"github.com/zew/go-questionaire/bootstrap"
-	"github.com/zew/go-questionaire/cfg"
-	"github.com/zew/go-questionaire/handlers"
-	"github.com/zew/go-questionaire/lgn"
-	"github.com/zew/go-questionaire/muxwrap"
-	"github.com/zew/go-questionaire/sessx"
+	"github.com/zew/go-questionnaire/bootstrap"
+	"github.com/zew/go-questionnaire/cfg"
+	"github.com/zew/go-questionnaire/handlers"
+	"github.com/zew/go-questionnaire/lgn"
+	"github.com/zew/go-questionnaire/muxwrap"
+	"github.com/zew/go-questionnaire/sessx"
 )
 
 // StartTestServer starts a server almost like main().

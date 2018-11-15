@@ -21,70 +21,70 @@
 
 ## Prepare app dir
 
-    sudo mkdir               /opt/go-questionaire
-    sudo chmod 755           /opt/go-questionaire
-    sudo chown gquser:gquser /opt/go-questionaire
+    sudo mkdir               /opt/go-questionnaire
+    sudo chmod 755           /opt/go-questionnaire
+    sudo chown gquser:gquser /opt/go-questionnaire
 
 ## Now copy the app files
 
 The below sections `Golang installation` and `Download and compile this application`
 can be executed either on your work machine, or on the server.
 
-Whichever you chose, copy the application files from `~/go/src/github.com/zew/go-questionaire`
+Whichever you chose, copy the application files from `~/go/src/github.com/zew/go-questionnaire`
 to your application directory:
 
-    cp go-questionaire /opt/go-questionaire
-    cp static          /opt/go-questionaire
-    cp templates       /opt/go-questionaire
-    cp config.json     /opt/go-questionaire
-    cp logins.json     /opt/go-questionaire
-    cp server.key      /opt/go-questionaire
-    cp server.pem      /opt/go-questionaire
-    mkdir /opt/go-questionaire/responses
+    cp go-questionnaire /opt/go-questionnaire
+    cp static           /opt/go-questionnaire
+    cp templates        /opt/go-questionnaire
+    cp config.json      /opt/go-questionnaire
+    cp logins.json      /opt/go-questionnaire
+    cp server.key       /opt/go-questionnaire
+    cp server.pem       /opt/go-questionnaire
+    mkdir /opt/go-questionnaire/responses
 
-    sudo chown -R gquser:gquser /opt/go-questionaire/*
-    sudo chmod -R 644   /opt/go-questionaire/*
-    sudo chmod -R 755   /opt/go-questionaire/go-questionaire # make it executable
-    sudo chmod -R 755   /opt/go-questionaire/static
-    sudo chmod -R 755   /opt/go-questionaire/templates
-    sudo chmod -R 755   /opt/go-questionaire/responses
+    sudo chown -R gquser:gquser /opt/go-questionnaire/*
+    sudo chmod -R 644   /opt/go-questionnaire/*
+    sudo chmod -R 755   /opt/go-questionnaire/go-questionnaire # make it executable
+    sudo chmod -R 755   /opt/go-questionnaire/static
+    sudo chmod -R 755   /opt/go-questionnaire/templates
+    sudo chmod -R 755   /opt/go-questionnaire/responses
 
 ### Enable ports 80 and 443 for non-root
 
  Needs redo after *each* compilation.
 
-     sudo setcap cap_net_bind_service=+eip /opt/go-questionaire/go-questionaire
+     sudo setcap cap_net_bind_service=+eip /opt/go-questionnaire/go-questionnaire
      # 'e', 'i', and 'p' flags specify the (e)ffective, (i)nheritable and (p)ermitted sets.
 
 
 ## Prepare log file 
 
-     sudo touch /var/log/go-questionaire.log
-     sudo chown gquser:gquser /var/log/go-questionaire.log
+     sudo touch /var/log/go-questionnaire.log
+     sudo chown gquser:gquser /var/log/go-questionnaire.log
 
      # reset log
-     truncate   --size=0  /var/log/go-questionaire.log
+     truncate   --size=0  /var/log/go-questionnaire.log
 
 ##  Prepare pid file 
 
-     sudo mkdir /var/run/go-questionaire
-     sudo chown gquser:gquser /var/run/go-questionaire/
+     sudo mkdir /var/run/go-questionnaire
+     sudo chown gquser:gquser /var/run/go-questionnaire/
 
-     sudo touch       /var/run/go-questionaire/prog.pid
-     sudo chown gquser:gquser /var/run/go-questionaire/prog.pid
-     sudo rm          /var/run/go-questionaire/prog.pid
+     sudo touch       /var/run/go-questionnaire/prog.pid
+     sudo chown gquser:gquser /var/run/go-questionnaire/prog.pid
+     sudo rm          /var/run/go-questionnaire/prog.pid
 
 
 ## Make script reboot-hard - and accessible to all
 
-Put the script ```go-questionairectl``` to /etc/init.d
+Put the script ```go-questionnairectl``` to /etc/init.d
 
-```go-questionairectl``` is a start-stop script.
+```go-questionnairectl``` is a start-stop script.
 The source is in the same directory as this file.
 
-    sudo mv ./go-questionairectl  /etc/init.d/go-questionairectl
-    sudo chmod 755 /etc/init.d/go-questionairectl
-    fromdos /etc/init.d/go-questionairectl   # remove windows newlines
+    sudo mv ./go-questionnairectl  /etc/init.d/go-questionnairectl
+    sudo chmod 755 /etc/init.d/go-questionnairectl
+    fromdos /etc/init.d/go-questionnairectl   # remove windows newlines
 
 
 
@@ -97,7 +97,7 @@ Under debian, we do not need ```chkconfig``` - just put the script to init.d
               2,3,4,5      runlevel
               85           starting.
               15           stopping.
-      [root@host ~]# chkconfig --add go-questionairectl
+      [root@host ~]# chkconfig --add go-questionnairectl
       [root@host ~]# chkconfig --list | grep -i bspc
 
 
@@ -106,18 +106,18 @@ Under debian, we do not need ```chkconfig``` - just put the script to init.d
 
 ## Manage app with service commands
 
-     go-questionairectl status
-     go-questionairectl stop
-     go-questionairectl start
+     go-questionnairectl status
+     go-questionnairectl stop
+     go-questionnairectl start
 
 
 ## Manage app manually
 
-     cd /opt/go-questionaire/
-     ./go-questionaire > /var/log/go-questionaire.log 2>&1 &
-     tail /var/log/go-questionaire.log
-     ps aux | grep go-questionaire
-     pkill go-questionaire
+     cd /opt/go-questionnaire/
+     ./go-questionnaire > /var/log/go-questionnaire.log 2>&1 &
+     tail /var/log/go-questionnaire.log
+     ps aux | grep go-questionnaire
+     pkill go-questionnaire
 
 
 ## Denial of service consideration
@@ -156,15 +156,15 @@ preventing denial-of-service attacks on network level.
 
 ## Download and compile this application
 
-* Source code is hosted at https://github.com/zew/go-questionaire.
+* Source code is hosted at https://github.com/zew/go-questionnaire.
 
 * Thus the source code should go to
 
       # mkdir ...
       cd ~/go/src/github.com/zew
       cd ..
-      git clone https://github.com/zew/go-questionaire
-      cd go-questionaire
+      git clone https://github.com/zew/go-questionnaire
+      cd go-questionnaire
 
 * Fetch all required libraries with  
 
@@ -303,7 +303,7 @@ Edit httpd.conf:
 
 # enable mod_proxy_html.so
 <VirtualHost *:80>
-    ServerName go-questionaire.myorg.net
+    ServerName go-questionnaire.myorg.net
     ProxyPreserveHost On
     ProxyPass        "/"   "http://127.0.0.1:8080/"
     ProxyPassReverse "/"   "http://127.0.0.1:8080/"    
@@ -312,7 +312,7 @@ Edit httpd.conf:
 ```
 
 another example with multiple virtual hosts  
-_and_ multiple instances of go-questionaire
+_and_ multiple instances of go-questionnaire
 
 ```
 # cache nothing ever
@@ -336,9 +336,9 @@ _and_ multiple instances of go-questionaire
 
 # enable mod_proxy_html.so
 <VirtualHost *:80>
-    ServerName go-questionaire.myorg.net
+    ServerName go-questionnaire.myorg.net
     # doc root is ignored
-    DocumentRoot "/var/www/go-questionaire.myorg.net"
+    DocumentRoot "/var/www/go-questionnaire.myorg.net"
     <Directory /var/www/exceldb.myorg.net/>
         Options Indexes FollowSymLinks MultiViews
         AllowOverride None

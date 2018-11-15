@@ -14,10 +14,10 @@ import (
 	"time"
 )
 
-// Load1 loads a questionaire from a JSON file.
-func Load1(fn string) (*QuestionaireT, error) {
+// Load1 loads a questionnaire from a JSON file.
+func Load1(fn string) (*QuestionnaireT, error) {
 
-	q := QuestionaireT{}
+	q := QuestionnaireT{}
 
 	if !strings.HasSuffix(fn, ".json") {
 		fn += ".json"
@@ -45,8 +45,8 @@ func Load1(fn string) (*QuestionaireT, error) {
 	return &q, nil
 }
 
-// Save1 a questionaire to JSON
-func (q *QuestionaireT) Save1(fn string) error {
+// Save1 a questionnaire to JSON
+func (q *QuestionnaireT) Save1(fn string) error {
 
 	q.MD5 = "md5dummy"
 
@@ -78,7 +78,7 @@ func (q *QuestionaireT) Save1(fn string) error {
 	if keepBackup {
 		fileBackup := strings.Replace(questFile, ".json", fmt.Sprintf("_%v.json", time.Now().Unix()), 1)
 		pthBackup := path.Join(saveDir, fileBackup)
-		if questFile != "questionaire-example.json" {
+		if questFile != "questionnaire-example.json" {
 			err = os.Rename(pthOld, pthBackup)
 			if err != nil {
 				return err
@@ -90,7 +90,7 @@ func (q *QuestionaireT) Save1(fn string) error {
 	if err != nil {
 		return err
 	}
-	log.Printf("Saved questionaire file to %v", pthOld)
+	log.Printf("Saved questionnaire file to %v", pthOld)
 	return nil
 }
 

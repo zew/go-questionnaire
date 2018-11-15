@@ -1,4 +1,4 @@
-// Package transferrer fetches completed questionaires
+// Package transferrer fetches completed questionnaires
 // from /transferrer-endpoint as JSON via http request.
 package main
 
@@ -17,10 +17,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/zew/go-questionaire/bootstrap"
-	"github.com/zew/go-questionaire/cfg"
-	"github.com/zew/go-questionaire/lgn"
-	"github.com/zew/go-questionaire/qst"
+	"github.com/zew/go-questionnaire/bootstrap"
+	"github.com/zew/go-questionnaire/cfg"
+	"github.com/zew/go-questionnaire/lgn"
+	"github.com/zew/go-questionnaire/qst"
 	"github.com/zew/util"
 )
 
@@ -198,13 +198,13 @@ func main() {
 		}
 
 		// respStr := string(resp)
-		qs := []*qst.QuestionaireT{}
+		qs := []*qst.QuestionnaireT{}
 		err = json.Unmarshal(resp, &qs)
 		if err != nil {
 			log.Printf("Unmarshal %v", err)
 			return
 		}
-		log.Printf("%v questionaire(s) unmarshalled; %10.3f", len(qs), float64(len(resp)/(1<<10))/(1<<10))
+		log.Printf("%v questionnaire(s) unmarshalled; %10.3f", len(qs), float64(len(resp)/(1<<10))/(1<<10))
 
 		maxPages := 0
 		for _, q := range qs {
@@ -314,7 +314,7 @@ func main() {
 		if err != nil {
 			log.Printf("Could not write file: %v", err)
 		}
-		log.Printf("Regular finish. %v questionaire(s) processed; %.3f MB", len(qs), float64(len(resp)/(1<<10))/(1<<10))
+		log.Printf("Regular finish. %v questionnaire(s) processed; %.3f MB", len(qs), float64(len(resp)/(1<<10))/(1<<10))
 
 	}
 

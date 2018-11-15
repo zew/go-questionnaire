@@ -5,7 +5,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/zew/go-questionaire/qst"
+	"github.com/zew/go-questionnaire/qst"
 )
 
 // Run with
@@ -24,7 +24,7 @@ func Test_1(t *testing.T) {
 	} else {
 		// log.Printf("On gocover.io, tests in the app dir are ignored")
 		StartTestServer(t, true)
-		q := &qst.QuestionaireT{}
+		q := &qst.QuestionnaireT{}
 		SimulateLoad(t, q, "loginURL", "0")
 	}
 }

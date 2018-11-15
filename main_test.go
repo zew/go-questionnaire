@@ -5,7 +5,7 @@ package main
 These tests replaces the calling of sys_test.go
 in package systemtest.
 
-Start the test from application root (i.e. /go-questionaire) with
+Start the test from application root (i.e. /go-questionnaire) with
 	go test ./...    -v
 	go test .        -v
 
@@ -19,7 +19,7 @@ For a particular package, start
 Lots of hoops, if we want coverage tests, i.e. at gocover.io
 An introduction is at www.elastic.co/blog/code-coverage-for-your-golang-system-tests
 
-Note: This file is necessary for go-questionaire.test.exe binary to be generated.
+Note: This file is necessary for go-questionnaire.test.exe binary to be generated.
 
 
 1.) This leads to coverage: 0% of statements.
@@ -30,14 +30,14 @@ Note: This file is necessary for go-questionaire.test.exe binary to be generated
 	go test -c -cover -covermode=count -coverpkg ./...
 
 2b.) We could create a specific executable:
-	go test -c -cover -covermode=count -coverpkg ./...  -o go-questionaire1.test.exe
+	go test -c -cover -covermode=count -coverpkg ./...  -o go-questionnaire1.test.exe
 
 2c.) We could restrict by sub package:
-	go test -c -cover -covermode=count -coverpkg  "github.com/zew/go-questionaire/qst"
-	go test -c -cover -covermode=count -coverpkg  "github.com/zew/go-questionaire/systemtest"
+	go test -c -cover -covermode=count -coverpkg  "github.com/zew/go-questionnaire/qst"
+	go test -c -cover -covermode=count -coverpkg  "github.com/zew/go-questionnaire/systemtest"
 
 3.) Now we can collect coverage info.
-	go-questionaire.test.exe  -test.v -test.coverprofile coverage.log
+	go-questionnaire.test.exe  -test.v -test.coverprofile coverage.log
 
 4.) Convert to HTML
 	go tool cover -html=./coverage.log -o ./coverage.html
@@ -53,10 +53,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/zew/go-questionaire/cfg"
-	"github.com/zew/go-questionaire/lgn"
-	"github.com/zew/go-questionaire/qst"
-	"github.com/zew/go-questionaire/systemtest"
+	"github.com/zew/go-questionnaire/cfg"
+	"github.com/zew/go-questionnaire/lgn"
+	"github.com/zew/go-questionnaire/qst"
+	"github.com/zew/go-questionnaire/systemtest"
 )
 
 // Coverage is only started, when the test binary is run.
@@ -94,7 +94,7 @@ func TestSystem(t *testing.T) {
 		}
 		err = q.Validate()
 		if err != nil {
-			t.Fatalf("Questionaire validation caused error %v: %v", pth, err)
+			t.Fatalf("Questionnaire validation caused error %v: %v", pth, err)
 		}
 
 		userName := "systemtest"
@@ -115,7 +115,7 @@ func TestSystem(t *testing.T) {
 				s = s[:100]
 			}
 			t.Logf("%v", s)
-			t.Logf("Cannot test questionaire that which are already closed: %v\n\n", q.Survey.Type)
+			t.Logf("Cannot test questionnaire that which are already closed: %v\n\n", q.Survey.Type)
 			continue
 		}
 

@@ -5,7 +5,7 @@
 *.cert
 *.exe
 *.exe~
-go-questionaire
+go-questionnaire
 *.fdb
 out.csv
 online-responses.csv

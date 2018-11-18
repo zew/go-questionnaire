@@ -243,6 +243,7 @@ table.main-table{
 	/* border: 1px solid #eaeaea;  */
 }
 
+/* odd row  */
 table.alternate-row-color{
 	background-color:  #eaeaea; 
 }

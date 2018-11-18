@@ -45,7 +45,7 @@ func Config() {
 	tpls := []string{
 		"main_desktop.html", "main_mobile.html",
 		"main_desktop1.css", "main_desktop2.css",
-		"main_mobile.css", "mobile_menu_without_js.css",
+		"main_mobile.css", "main_mobile_menu_without_js.css",
 	}
 
 	err := filepath.Walk(filepath.Join(".", "templates"), func(path string, f os.FileInfo, err error) error {

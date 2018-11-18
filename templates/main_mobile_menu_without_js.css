@@ -1,3 +1,16 @@
+#fixed-header{
+    height: 41px;  /* same as header-disappear top */
+    position: fixed;
+    top: 0;
+    transition: top 0.2s ease-in-out;
+    width: 100%;
+    background: #efefef;
+}
+.header-disappear{
+    top: -41px !important ;  /* same as fixed-header height */
+}
+
+
 /* hide the actual checkbox */
 .chkbx {
     position: absolute;

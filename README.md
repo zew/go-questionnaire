@@ -28,9 +28,9 @@ Install and setup [golang](https://golang.org/doc/install)
     cd go-questionnaire
     mv config-example.json  config.json  # adapt to your purposes
     mv logins-example.json  logins.json  # dito
-    touch ./templates/site.css           # put your site's styles here
+    touch ./templates/main_desktop_[survey].css # put your site's styles here
     go build
-    ./go-questionnaire                    # under windows: go-questionnaire.exe
+    ./go-questionnaire                   # under windows: go-questionnaire.exe
 
 More info in [deploy on linux/unix](./static/doc/linux-instructions.md)
 
@@ -83,13 +83,15 @@ More info in [deploy on linux/unix](./static/doc/linux-instructions.md)
 (and initial questionnaire templates).
 
 * There are global translations as well as  
-questionnaire specific multi-language strings.
+questionnaire specific multi-language strings.  
+Global soft-hyphenizations for mobile layout.
 
 * There are common functions preventing duplicate question keys  
  or missing translations.
 
 * Survey results are pulled in by the `transferrer`,  
-aggregating responses into a CSV file.
+aggregating responses into a CSV file.  
+`transferrer` logic is agnostic of number of pages.
 
 * In-flight changes to the questionnaire do not require any  
 "schema" or configuration effort. 
@@ -121,7 +123,8 @@ An extensible set of number validation functions can be assigned to each field.
 
 * Package `systemtest` performs full circle roundtrip - filling out all available questionnaires 
 and comparing the server JSON file with the entered data.  
-Both, mobile and desktop version are tested.
+Both, mobile and desktop version are tested.  
+The `travis-ci` build logs contain the details. 
 
 * Load testing script for 50 concurrent requests.
 
@@ -132,6 +135,8 @@ Both, mobile and desktop version are tested.
 * Every label and form element has its individual column width (`ColSpanLabel` and `ColSpanControl`)
 
 * Each label or form element can be styled additionally (`CSSLabel` and `CSSControl`)
+
+* Global layout elements can be adapted using `main_desktop_[survey].css`.
 
 #### Page navigation sequence - special pages
 
@@ -201,13 +206,14 @@ Group property `OddRowsColoring` to activate alternating background
 
 ![Group width](./static/img/doc/odd-rows-coloring.png)
 
-The table border can be set via ./templates/site.css  
+The table border can be set via ./templates/main_desktop_[survey].css  
 `table.bordered td { myBorderCSS }`
 
 Vertical alignment is baseline for everything outside the input tables.
 Input tables are vertically middled.
 
-We might introduce InputT.VAlignLabel and InputT.VAlignControl to customize this in future.
+We might introduce vertical alignment control in future  
+(InputT.VAlignLabel and InputT.VAlignControl).
 
 #### Rejected solutions
 
@@ -215,7 +221,7 @@ Inline block suffers from the disadvantage, that
 the white space between inline block elements subtracts from the total width.
 The column width computation must be based on a compromise slack of i.e. 97.5 percent.
 
-Stacking cells wit `float: left` takes away the nice vertical middle alignment of the cells.
+Stacking cells wit `float:left` takes away the nice vertical middle alignment of the cells.
 
 
 ### Mobile layout
@@ -229,16 +235,22 @@ Instead of progress bar and footer navigation, mobile clients get a `mobile menu
 
 The mobile layout is free of any JavaScript.
 
-Switching is done based on the user agent string, but can be overridden by `mobile` parameter.
+Switching is done based on the user agent string, but can be overridden by `mobile` parameter:  
 0 - automatic. 1 - mobile forced. 2 - desktop forced.
 
 Table layout `fixed` must be relinguished, otherwise labels and controls are cropped on devices with very small width.
+
+Soft hyphenization is key to maintaining layout on narrow displays.  
+Package `trl` contains a map `hyph` containing manually hyphenized strings.  
+These are applied to all strings of any questionnaire at JSON creation time.
+
+Mobile layout was tested with `crossbrowsertesting.com`.
 
 ### Randomization for scientific studies - shuffling of input order
 
 * The order of inputs on pages can be randomized (shuffled).
 
-* Shuffling is random, but reproducible for user ID and page number.
+* Shuffling is random, but deterministically reproducible for user ID and page number.
 
 * Questionnaire property `variations` sets the number of different classes of shufflings.  
 For example, if `variations==2`, even and odd user IDs get the same 
@@ -248,17 +260,6 @@ ordering when on same page.
 
 * [Shufflings can be exported for use in related applications](https://dev-domain:port/survey/shufflings-to-csv)
 
-## Possible enhancements 
-
-* Adding a docker script?
-
-* Migrate file storage to GoCloud library and make deployable on Google Appengine or AWS?
-
-* Mobile layout: Make URL bar colored
-
-* Mobile layout: Make the menu - and then the URL bar disappear upon scrolling down.  
-Such as https://www.alpro.com/de
- 
 
 ## Optimization
 
@@ -280,6 +281,26 @@ They could then be executed on the command line with the parameters as JSON file
 Currently one can either generate your own final page (in the example of the peu2018 survey).  
 Or one can set the "finalized" field and then gets system wide: You finished ... at ...
 
+* The set of application languages in the footer is not restricted to the questionnaire languages.
+
+
+### Mobile layout tweaking
+
+* Make URL bar colored
+
+* Make the menu - and then the URL bar disappear upon scrolling down.  
+Such as https://www.alpro.com/de
+ 
+
+
+
+## Possible enhancements 
+
+* Adding a `Docker` script?
+
+* Adding `Lets encrypt`?
+
+* Migrate file storage to GoCloud library and make deployable on Google Appengine or AWS?
 
 
 ## About Go-App-Tpl
@@ -317,7 +338,7 @@ It features
 
   * Stack of dynamic subtemplate calls 
   
-  * Template pre-parsing, configurable for development or production
+  * Template pre-parsing (`bootstrap`), configurable for development or production
 
   * Markdown file handler, rewriting image links 
   

@@ -3,16 +3,91 @@
 {{ $lc := (.Sess.EffectiveStr "lang_code" .DefaultLangCode)}}
 <head>
 
+    <!-- URL Bar color     
+        www.crazyasianhacker.com/2018/11/how-to-change-chrome-tab-color.html
+        ahead of any JS or CSS
+    -->
+    <meta name="theme-color"                           content="#E4DFCE" />
+    <meta name="msapplication-TileColor"               content="#E4DFCE" />
+    <meta name="msapplication-navbutton-color"         content="#E4DFCE" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="#E4DFCE" />
+
     <meta charset="utf-8">
     <link rel="shortcut icon" href="data:;base64,=">
     <link rel="icon"          href="data:;base64,=">
+    <!-- Mobile Icon up to 192x192 -->
+    <link rel="icon" href="{{prefix "/img/ui/favicon-mobile.png"}}"  sizes="192x192" >
+
     <title>{{.Trls.app_label.Tr $lc}}</title>
     <link href="{{prefix "/css/main_mobile.css"}}" rel="stylesheet" type="text/css" />
-    <link href="{{prefix "/css/mobile_menu_without_js.css"}}" rel="stylesheet" type="text/css" />
+    <link href="{{prefix "/css/main_mobile_menu_without_js.css"}}" rel="stylesheet" type="text/css" />
+
+    <!-- does this make the title bar disappear?  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!-- 
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    -->
+
+
+    <!-- 
+        This is a javascript only solution, hiding a header-div based on scrolling.
+        Since our navigation header is not static, we dont need this.
+    -->
+	<script type="text/javascript">
+
+        var target = "see window.onload";
+        var locked = false;
+        var offset = 100;  // better some tolerance (delta) and some direction 
+
+        var lastTop = 0;   // see medium.com/@mariusc23/hide-header-on-scroll-down-show-on-scroll-up-67bbaae9a78c
+        var tolerance = 5;
+
+        function addClass(el, classNameToAdd){
+            if(el.className.indexOf(' ' + classNameToAdd) === -1){
+                el.className += ' ' + classNameToAdd;   
+            }
+        }
+
+        function removeClass(el, classNameToRemove){
+            var elClass = ' ' + el.className;
+            while(elClass.indexOf(' ' + classNameToRemove) !== -1){
+                elClass = elClass.replace(' ' + classNameToRemove, '');
+            }
+            el.className = elClass.trim();
+        }
+
+        var runOnScroll =  function(evt) {
+            if(locked) return;
+            locked = true;
+            var top = (window.pageYOffset || document.scrollTop)  - (document.clientTop || 0);  // jQuery source code
+            if(top > offset){
+                addClass(target, "header-disappear");
+            } else {
+                removeClass(target, "header-disappear");
+            }
+            // locked = false;           
+            setTimeout(function(){ locked = false; }, 200);  // performance; better have a setInterval observer
+            console.log("scrolled");
+        };
+
+        function init() {
+            target = document.getElementById("fixed-header");
+            window.addEventListener("scroll", function () {
+                runOnScroll();
+            }, false);
+            console.log("scroll listener added");
+        }
+        window.onload = init;
+
+	</script>
+
 
 </head>
 <body >
+
+    <div id="fixed-header" >   
+        <!-- we dont use this currently -->
+    </div>
 
     <!-- width=100% inscribe -->
     <form method="POST" action="{{prefix ""}}" class='go-quest-main-form' name='frmMain' >

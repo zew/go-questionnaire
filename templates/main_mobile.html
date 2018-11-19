@@ -3,10 +3,7 @@
 {{ $lc := (.Sess.EffectiveStr "lang_code" .DefaultLangCode)}}
 <head>
 
-    <!-- URL Bar color     
-        www.crazyasianhacker.com/2018/11/how-to-change-chrome-tab-color.html
-        ahead of any JS or CSS
-    -->
+    <!-- URL Bar color; ahead of any JS or CSS -->
     <meta name="theme-color"                           content="#E4DFCE" />
     <meta name="msapplication-TileColor"               content="#E4DFCE" />
     <meta name="msapplication-navbutton-color"         content="#E4DFCE" />
@@ -15,23 +12,24 @@
     <meta charset="utf-8">
     <link rel="shortcut icon" href="data:;base64,=">
     <link rel="icon"          href="data:;base64,=">
-    <!-- Mobile Icon up to 192x192 -->
-    <link rel="icon" href="{{prefix "/img/ui/favicon-mobile.png"}}"  sizes="192x192" >
+    <!-- Mobile Icon up to 192x192 
+    <link rel="icon"          href="{{prefix "/img/ui/favicon-mobile.png"}}"  sizes="192x192" >
+    <link rel="shortcut icon" href="{{prefix "/img/ui/favicon-mobile.png"}}"  sizes="192x192" >    
+    -->
 
     <title>{{.Trls.app_label.Tr $lc}}</title>
     <link href="{{prefix "/css/main_mobile.css"}}" rel="stylesheet" type="text/css" />
     <link href="{{prefix "/css/main_mobile_menu_without_js.css"}}" rel="stylesheet" type="text/css" />
 
-    <!-- does this make the title bar disappear?  -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <!-- 
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- No scaling
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     -->
 
 
     <!-- 
         This is a javascript only solution, hiding a header-div based on scrolling.
-        Since our navigation header is not static, we dont need this.
+        Since our navigation header is not fixed/static, we dont need this.
     -->
 	<script type="text/javascript">
 
@@ -77,7 +75,7 @@
             }, false);
             console.log("scroll listener added");
         }
-        window.onload = init;
+        // window.onload = init;
 
 	</script>
 

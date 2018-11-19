@@ -1,5 +1,5 @@
 #fixed-header{
-    height: 41px;  /* same as header-disappear top */
+    height: 1px;  /* same as header-disappear top */
     position: fixed;
     top: 0;
     transition: top 0.2s ease-in-out;
@@ -7,7 +7,7 @@
     background: #efefef;
 }
 .header-disappear{
-    top: -41px !important ;  /* same as fixed-header height */
+    top: -1px !important ;  /* same as fixed-header height */
 }
 
 

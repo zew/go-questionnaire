@@ -272,26 +272,14 @@ leaving only user ID, completion time and survey data.
 * For each user, only the responses should be saved to session/JSON; not the entire questionnaire data.  
 The responses could be merged into the questionnaire based on input name.
 
-
-* The generators should be compiled into independent executables.  
+* The generators could be compiled into independent executables.  
 They could then be executed on the command line with the parameters as JSON file.
-
 
 * Finish pages and finish field should be harmonized.  
 Currently one can either generate your own final page (in the example of the peu2018 survey).  
 Or one can set the "finalized" field and then gets system wide: You finished ... at ...
 
 * The set of application languages in the footer is not restricted to the questionnaire languages.
-
-
-### Mobile layout tweaking
-
-* Make URL bar colored
-
-* Make the menu - and then the URL bar disappear upon scrolling down.  
-Such as https://www.alpro.com/de
- 
-
 
 
 ## Possible enhancements 

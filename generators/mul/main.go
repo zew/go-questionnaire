@@ -2,11 +2,8 @@ package mul
 
 import (
 	"fmt"
-	"log"
 
-	"github.com/zew/go-questionnaire/cfg"
 	"github.com/zew/go-questionnaire/qst"
-	"github.com/zew/go-questionnaire/tpl"
 	"github.com/zew/go-questionnaire/trl"
 )
 
@@ -120,7 +117,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		"en": "  ",
 	}
 	q.Survey.Name = trl.S{
-		"en": "Multiplier Survey",
+		"en": "Macro Policy Survey",
 	}
 
 	i2 := "[groupID]"
@@ -130,19 +127,20 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	{
 
 		p := q.AddPage()
+		p.NoNavigation = true
 		p.Width = 70
 		// p.Label = trl.S{
 		p.Section = trl.S{
 			"en": "Do you agree with the following statements?",
 		}
 		p.Label = trl.S{
-			"en": " ",
+			"en": "",
 		}
 		p.Desc = trl.S{
-			"en": " ",
+			"en": "",
 		}
 		p.Short = trl.S{
-			"en": "Monetary Policy",
+			"en": "Survey",
 		}
 
 		// 11
@@ -250,103 +248,37 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			}
 		}
 
+		{
+			gr := p.AddGroup()
+			gr.Cols = 1
+			gr.Width = 99
+			{
+				inp := gr.AddInput()
+				inp.Type = "button"
+				inp.Name = "submitBtn"
+				inp.Response = "1"
+				inp.Label = trl.S{
+					"de": "Weiter",
+					"en": "Submit",
+				}
+				inp.AccessKey = "n"
+				inp.ColSpanControl = 1
+				inp.HAlignControl = qst.HRight
+			}
+		}
+
 	}
 
 	//
 	// Page Finish
 	{
 		p := q.AddPage()
-		p.Label = trl.S{
-			"de": "Zusammenfassung",
-			"en": "Summary",
-			"es": "Resumen",
-			"fr": "Résumé",
-			"it": "Riepilogo",
-			"pl": "Krótki opis",
-		}
-		// p.NoNavigation = true
-		{
-			// Only one group => shuffling is no problem
-			gr := p.AddGroup()
-			gr.Cols = 1
-
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.CSSLabel = "special-input-vert-wider"
-				inp.Desc = trl.S{
-					"de": "Danke für Ihre Teilnahme an unserer Umfrage.",
-					"en": "Thank you for your participation in our survey.",
-					"es": "Gracias por haber contestado a nuestro cuestionario.",
-					"fr": "Nous vous remercions d'avoir répondu à nos questions.",
-					"it": "Grazie per aver risposto al nostro questionario.",
-					"pl": "Dziękujemy za uczestnictwo w ankiecie.",
-				}
-			}
-
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.CSSLabel = "special-input-vert-wider"
-				inp.Desc = trl.S{
-					"de": "<span style='font-size: 100%;'>Ihre Eingaben wurden gespeichert.</span>",
-					"en": "<span style='font-size: 100%;'>Your entries have been saved.</span>",
-					"es": "<span style='font-size: 100%;'>Sus entradas se han guardado.</span>",
-					"fr": "<span style='font-size: 100%;'>Vos réponses ont été sauvegardées.</span>",
-					"it": "<span style='font-size: 100%;'>Le Sue risposte sono state salvate.</span>",
-					"pl": "<span style='font-size: 100%;'>Twoje wpisy zostały zapisane.</span>",
-				}
-			}
-
-			// {
-			// 	inp := gr.AddInput()
-			// 	inp.Type = "dynamic"
-			// 	inp.CSSLabel = "special-input-vert-wider"
-			// 	inp.DynamicFunc = "RepsonseStatistics"
-			// }
-
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.CSSLabel = "special-input-vert-wider"
-				impr := trl.S{}
-				for lc := range q.LangCodes {
-					cnt, err := tpl.MarkDownFromFile("./static/doc/site-imprint.md", q.Survey.Type, lc)
-					if err != nil {
-						log.Print(err)
-					}
-					impr[lc] = cnt
-				}
-				inp.Desc = impr
-			}
-			{
-				inp := gr.AddInput()
-				inp.Type = "button"
-				inp.Name = "finished"
-				inp.Name = "submitBtn"
-				inp.CSSControl = "special-input-vert-wider"
-				inp.Response = fmt.Sprintf("%v", len(q.Pages)-1+1) // +1 since one page is appended below
-				inp.Label = trl.S{"de": "", "en": ""}
-				inp.Desc = cfg.Get().Mp["end"]
-				inp.ColSpanControl = 1
-				inp.AccessKey = "n"
-				inp.HAlignControl = qst.HCenter
-				inp.HAlignControl = qst.HLeft
-			}
-
-		}
-	}
-
-	//
-	//
-	// End page
-	// End page is a copy of page finish
-	// without "End" button
-	// without navigation
-	{
-		p := q.AddPage()
-		p.Label = cfg.Get().Mp["end"]
 		p.NoNavigation = true
+		p.Label = trl.S{
+			"de": "Vielen Dank",
+			"en": "Thank you",
+		}
+
 		{
 			// Only one group => shuffling is no problem
 			gr := p.AddGroup()
@@ -365,6 +297,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 					"pl": "Dziękujemy za uczestnictwo w ankiecie.",
 				}
 			}
+
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
@@ -378,20 +311,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 					"pl": "<span style='font-size: 100%;'>Twoje wpisy zostały zapisane.</span>",
 				}
 			}
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.CSSLabel = "special-input-vert-wider"
-				impr := trl.S{}
-				for lc := range q.LangCodes {
-					cnt, err := tpl.MarkDownFromFile("./static/doc/site-imprint.md", q.Survey.Type, lc)
-					if err != nil {
-						log.Print(err)
-					}
-					impr[lc] = cnt
-				}
-				inp.Desc = impr
-			}
+
 		}
 
 	}

@@ -50,6 +50,11 @@ func main() {
 		mux1.HandleFunc(cfg.PrefWTS(v), tpl.StaticDownloadH)
 		log.Printf("static service %-20v => /static/[stripped:%v]%v", cfg.Pref(v), cfg.Get().AppMnemonic, v)
 	}
+	// Extra handler for dynamic css - served from templates
+	mux1.HandleFunc(cfg.PrefWTS("/css/"), tpl.ServeDynCss)
+	// markdown files in /doc
+	tpl.CreateAndRegisterHandlerForDocs(mux1)
+
 	serveIcon := func(w http.ResponseWriter, r *http.Request) {
 		bts, _ := ioutil.ReadFile("./static/img/ui/favicon.ico")
 		w.Write(bts)
@@ -59,10 +64,6 @@ func main() {
 		mux1.HandleFunc(cfg.Pref("favicon.ico"), serveIcon)
 		mux1.HandleFunc(cfg.PrefWTS("favicon.ico"), serveIcon)
 	}
-
-	//
-	// Extra handler for dynamic css
-	mux1.HandleFunc(cfg.PrefWTS("/css/"), tpl.ServeDynCss)
 
 	//
 	// Administrative handlers
@@ -82,17 +83,16 @@ func main() {
 	mux1.HandleFunc(cfg.Pref("/shufflings-to-csv"), lgn.ShufflesToCSV)
 	mux1.HandleFunc(cfg.Pref("/templates-reload"), tpl.ParseH)
 	mux1.HandleFunc(cfg.Pref("/generate-questionnaire-templates"), generators.SurveyGenerate)
+	mux1.HandleFunc(cfg.Pref("/reload-from-questionnaire-template"), handlers.ReloadH)
+	mux1.HandleFunc(cfg.PrefWTS("/reload-from-questionnaire-template"), handlers.ReloadH)
 
 	//
-	// Standard handlers
-	tpl.CreateAndRegisterHandlerForDocs(mux1)
+	// App specific
 	mux1.HandleFunc("/", handlers.MainH)
 	if cfg.Pref() != "" {
 		mux1.HandleFunc(cfg.Pref("/"), handlers.MainH)
 		mux1.HandleFunc(cfg.PrefWTS("/"), handlers.MainH)
 	}
-	mux1.HandleFunc(cfg.Pref("/reload-from-questionnaire-template"), handlers.ReloadH)
-	mux1.HandleFunc(cfg.PrefWTS("/reload-from-questionnaire-template"), handlers.ReloadH)
 	mux1.HandleFunc(cfg.Pref("/transferrer-endpoint"), handlers.TransferrerEndpointH)
 
 	//

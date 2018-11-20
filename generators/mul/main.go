@@ -169,7 +169,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				"en": fmt.Sprintf("%v. Appropriate monetary policy stance – US Federal Reserve<br>", i2),
 			}
 			gr.Desc = trl.S{
-				"en": "The EU should get a stronger role in immigration policy (e.g. decisions over admission standards or allocation of refugees).",
+				// "en": "The EU should get a stronger role in immigration policy (e.g. decisions over admission standards or allocation of refugees).",
+				"en": "The US Federal Reserve should continue with its course of interest rate increases well throughout 2019.",
 			}
 		}
 
@@ -196,10 +197,10 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			gr.Cols = 9 // necessary, otherwise no vspacers
 			gr.OddRowsColoring = true
 			gr.Label = trl.S{
-				"en": fmt.Sprintf("%v. Need for privatisation<br>", i2),
+				"en": fmt.Sprintf("%v. Need for privatization<br>", i2),
 			}
 			gr.Desc = trl.S{
-				"en": "In general, the large involvement of governments in market activities still impairs the growth potential of industrial countries. Privatisation should be one of the priorities in strategies to boost the growth potential in OECD countries.",
+				"en": "In general, the large involvement of governments in market activities still impairs the growth potential of industrial countries. Privatization should be one of the priorities in strategies to boost the growth potential in OECD countries.",
 			}
 		}
 

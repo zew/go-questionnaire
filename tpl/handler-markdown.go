@@ -17,7 +17,8 @@ import (
 	"github.com/zew/go-questionnaire/sessx"
 )
 
-// MarkDownFromFile handles markdown rendering.
+// MarkDownFromFile handles markdown rendering;
+// directory "doc" is a hardcoded assumption.
 func MarkDownFromFile(fpth, surveyType, langCode string) (string, error) {
 
 	// bts, err = ioutil.ReadFile(strings.TrimSuffix(fpth, ".md") + ".MD")
@@ -41,10 +42,42 @@ func MarkDownFromFile(fpth, surveyType, langCode string) (string, error) {
 		return "", fmt.Errorf(s)
 	}
 
+	//
 	// Rewrite source file URLs to be served by application
-	// i.e. ./my-image.jpg to  ./[AppPrefix]/doc/
-	dest := "(" + cfg.Pref() + "/doc/"
-	bts = bytes.Replace(bts, []byte("(./"), []byte(dest), -1)
+	//
+
+	// readme.md from root
+	// ./static/img/doc/my-img.png
+	//  /survey/img/doc/my-img.png
+	//         /img/doc/my-img.png  (without prefix)
+	{
+		needle := []byte("(./static/")
+		subst := []byte("(" + cfg.PrefWTS())
+		bts = bytes.Replace(bts, needle, subst, -1)
+	}
+
+	// relative urls from ./static/doc/
+	{
+		//     ./../../README.md
+		// /survey/doc/README.md
+		needle := []byte("(./../../")
+		subst := []byte("(" + cfg.PrefWTS("/doc/"))
+		bts = bytes.Replace(bts, needle, subst, -1)
+	}
+	{
+		//    ./../img/doc/zew-footer.png
+		// /survey/img/doc/zew-footer.png
+		needle := []byte("(./../img/")
+		subst := []byte("(" + cfg.PrefWTS("/img/"))
+		bts = bytes.Replace(bts, needle, subst, -1)
+	}
+	{
+		//            ./linux-instructions.md
+		// ./survey/doc/linux-instructions.md
+		needle := []byte("(./")
+		subst := []byte("(" + cfg.PrefWTS("/doc/"))
+		bts = bytes.Replace(bts, needle, subst, -1)
+	}
 
 	// Useful for links back to application:
 	// Rewrite Links with {{AppPrefix}} to application url prefix
@@ -60,7 +93,7 @@ func MarkDownFromFile(fpth, surveyType, langCode string) (string, error) {
 
 type staticPrefixT string // significant url path fragment
 
-// ServeHTTP serves everything under the file directory fragm.
+// ServeHTTP serves everything under the file directory fragm (for instance /doc/).
 // We want      the markdown files editable locally with locally working links and images.
 // We also want the markdown files served by the application.
 //
@@ -77,18 +110,36 @@ type staticPrefixT string // significant url path fragment
 //     /doc/site-imprint.md
 func (fragm *staticPrefixT) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 
-	ext := strings.ToLower(path.Ext(r.URL.Path)) // file extension
-	lcP := strings.ToLower(r.URL.Path)           // lower case path
-	ctns := strings.Contains                     // alias for function
+	fragWTS := string(*fragm)
+	frag := strings.TrimSuffix(fragWTS, "/")
 
-	markDown1 := ext == ".html" || ext == ".md"
-	markDown2 := ctns(lcP, "readme") || ctns(lcP, "/doc")
+	lcP := strings.ToLower(r.URL.Path) // lower case path
 
-	// Relay any non html and md request to static file handler
-	if !markDown1 || !markDown2 {
+	ext := path.Ext(r.URL.Path) // file extension
+	ext = strings.ToLower(ext)
+
+	sfx := strings.HasSuffix // alias for function
+	pfx := strings.HasPrefix
+
+	startsWithPath := pfx(lcP, cfg.Pref(fragWTS))
+
+	byExtension := ext == ".html" || ext == ".md"
+	pureReadme := sfx(lcP, "readme") // readme.html and readme.md and index.html are covered line above
+	endsWithPath := sfx(lcP, fragWTS) || sfx(lcP, frag)
+
+	isMarkup := startsWithPath && (byExtension || pureReadme || endsWithPath)
+
+	// log.Printf("path %q  ext %q", lcP, ext)
+	// log.Printf("isMarkup %v => (startsWithPath && (byExtension || pureReadme || endsWithPath)  =>  %v && (%v || %v || %v))", isMarkup, startsWithPath, byExtension, pureReadme, endsWithPath)
+
+	// Relay any non html or non md request to static file handler
+	if !isMarkup {
+		log.Printf("Markdown handler handing off to staticDownload(): \n%v", lcP)
 		StaticDownloadH(w, r)
 		return
 	}
+
+	// log.Printf("Markdown handler dealing with: \n%v", lcP)
 
 	// Requests ending on .md or readme are suffixed with .html and redirected
 	if ext == ".md" || strings.HasSuffix(strings.ToLower(r.URL.Path), "readme") {
@@ -103,7 +154,7 @@ func (fragm *staticPrefixT) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	}
 
 	pth := r.URL.Path
-	pth = strings.TrimPrefix(pth, cfg.Pref(string(*fragm)))
+	pth = strings.TrimPrefix(pth, cfg.Pref(fragWTS))
 	pth = strings.Trim(pth, "/")
 	if strings.Contains(pth, "../") {
 		s := fmt.Sprintf("no breaking out from doc dir: %v", pth)
@@ -118,7 +169,7 @@ func (fragm *staticPrefixT) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 
 	// the URL  path ends with .html,
 	// the file path ends with *.md
-	fpth := filepath.Join("static", string(*fragm), pth)
+	fpth := filepath.Join("static", fragWTS, pth)
 
 	// Special file path: Readme is read directly from the app root
 	if strings.HasSuffix(strings.ToLower(fpth), "readme.html") {

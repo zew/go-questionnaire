@@ -169,38 +169,37 @@ Considering `float-left` or `inline-block`, we chose `fixed table` layout.
 
 We need full fledged markup, since mere CSS classes such as `<div style='display: table/table-row/table-cell'` do not support colspan or rowspan functionality. 
 
-Page width can be adjusted for each page. 
+Each `page.Width` can be adjusted for each page. 
 Squeezing or stretching all rows equally.
 Page remains horizontally _centered_.
 
 ![Page width](./static/img/doc/page-width.png)
 
-Each input group width can be adjusted.
-The input group remains left-aligned.
+Each `group.Width` can be adjusted.  
+The group can be left-aligned (picture) or right-aligned.
 
 ![Group width](./static/img/doc/group-width.png)
 
 
-Each input group has flexible number of columns.
-It is deliberately not standardized on hundred,
+Each group has flexible number of columns.
+The number of columns is deliberately not standardized on hundred,
 so that odd distributions are possible - i.e. seven columns.
 
 
 ![Group width](./static/img/doc/group-columns.png)
 
 
-The inputs are fitted in. Usual an input occupies one column 
+The inputs are fitted in. Usually an input occupies one column 
 for its label and another column for its control part.
 These numbers are customizable, so that any distribution
 of labels and controls on an arbitrary grid is possible.
-
-Use textblocks with `&nbsp;` to create empty space.
 
 ![Group width](./static/img/doc/group-with-label-and-input.png)
 
 The layout engine creates new rows, if the inputs have filled up
 the number of columns defined per group.
 
+Use textblocks with `&nbsp;` to create empty space.
 
 Group property `OddRowsColoring` to activate alternating background
 

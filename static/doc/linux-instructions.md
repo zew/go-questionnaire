@@ -355,3 +355,6 @@ _and_ multiple instances of go-questionnaire
 ```
 
 
+[Back to documentation root](/{{AppPrefix}}/doc)
+
+[Back to app](/{{AppPrefix}})

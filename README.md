@@ -85,10 +85,10 @@ More info in [deploy on linux/unix](./static/doc/linux-instructions.md)
 
 * Survey results are pulled in by the `transferrer`,  
  aggregating responses into a CSV file.  
- `transferrer` logic is agnostic of number of pages.
+ `transferrer` logic is agnostic to questionnaire structure.
 
 * In-flight changes to the questionnaire do not require any  
- "schema" or configuration effort. 
+ "schema" or configuration effort.
 
 ## Data thrift
 
@@ -142,7 +142,7 @@ In addition:
 
 * Page property `NoNavigation` decouples the page from the navigational sequence.  
  They are exempt from `previous` and `next`.  
- Such pages can reached to by setting submit buttons to their index value.  
+ Such pages can be reached by setting submit buttons to their index value.  
  Useful for greeting- and goodbye-pages.
 
 #### Defining questionnaires by code or by JSON file
@@ -155,9 +155,8 @@ but that remains as elusive as it did with XML.
 
 #### Accepted solution
 
-Considering `float-left` or `inline-block`, we chose `fixed table` layout.
-
-We need full fledged markup, since mere CSS classes such as `<div style='display: table/table-row/table-cell'` do not support colspan or rowspan functionality.
+Considering `float-left` or `inline-block`, we chose `fixed table` layout.  
+We need this full-fledged markup, since mere CSS classes such as `<div style='display: table/table-row/table-cell'` do not support colspan or rowspan functionality.
 
 Each `page.Width` can be adjusted for each page.
 Squeezing or stretching all rows equally.
@@ -220,7 +219,7 @@ Instead of progress bar and footer navigation, mobile clients get a `mobile menu
 
 The mobile layout is free of any JavaScript.
 
-Switching is done based on the user agent string, but can be overridden by `mobile` parameter:  
+Switching is done based on the user agent string, but can be overridden by URL parameter `mobile`:  
 0 - automatic. 1 - mobile forced. 2 - desktop forced.
 
 Table layout `fixed` must be relinguished, otherwise labels and controls are cropped on devices with very small width.
@@ -260,7 +259,7 @@ Mobile layout was tested with `crossbrowsertesting.com`.
  They could then be executed on the command line with the parameters as JSON file.
 
 * Finish pages and finish field should be harmonized.  
- Currently one can either generate your own final page (in the example of the peu2018 survey).  
+ Currently one can either generate one's own final page (in the example of the peu2018 survey).  
  Or one can set the "finalized" field and then gets system wide: You finished ... at ...
 
 * The set of application languages in the footer is not restricted to the questionnaire languages.
@@ -322,6 +321,5 @@ It features
 * Subpackaging is done by concern, neither too amorphous nor too atomic.
 
 * Go-App-Tpl has no "hooks" or interfaces for isolation of "framework" code.  
- Just copy it and add your handlers.
-
-Future updates can be merged.
+ Just copy it and add your handlers.  
+ Future updates can be merged.

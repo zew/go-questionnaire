@@ -224,6 +224,23 @@ func main() {
 
 			md5Want := q.MD5
 
+			// "deadline": "2018-10-31T23:59:00Z"
+			tToBeCorrected := time.Date(2018, 10, 31, 24, 59, 0, 0, cfg.Get().Loc)
+			tInstead := time.Date(2019, 02, 28, 24, 59, 0, 0, cfg.Get().Loc)
+			if q.Survey.Deadline.Equal(tToBeCorrected) {
+				log.Printf("Correction needed: %v", q.Survey.Deadline)
+				q.Survey.Deadline = tInstead
+				pth2 := filepath.Join(dir, q.UserID)
+				err := q.Save1(pth2)
+				if err != nil {
+					log.Printf("%3v: Error saving %v: %v", i, pth2, err)
+					continue
+				}
+				continue
+			} else {
+				// log.Printf("Difference       : %v", q.Survey.Deadline.Sub(tToBeCorrected))
+			}
+
 			pth2 := filepath.Join(dir, q.UserID)
 			err := q.Save1(pth2)
 			if err != nil {

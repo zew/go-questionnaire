@@ -6,7 +6,7 @@ import sys
 
 # stackoverflow.com/questions/16181121/
 
-# my development 'server' - localhost
+# 'dev.zew.de' should point to your development server - i.e. localhost
 urlBase = "https://dev.zew.de:8081/survey"
 pathLogin = "/direct/"
 
@@ -66,10 +66,10 @@ urls = [
 ]
 
 
-def debugRequest(url, r, testString):
-    print("\nHeaders %s" % r.headers)
-    print("Url %s - Status Code %d" % (r.url, r.status_code))
-    if testString not in r.text:
+def printResponseData(url, req, testString):
+    print("\nHeaders %s" % req.headers)
+    print("Url %s - Status Code %d" % (req.url, req.status_code))
+    if testString not in req.text:
         # print(r.text)
         print("MISSING %s" % testString)
         sys.exit()
@@ -83,45 +83,52 @@ def debugRequest(url, r, testString):
 
 
 
-def fetch_url2(url):
-    # print("Trying URL %s" % url)
-    with requests.session() as s:
-        r = s.get(url, params = {}, allow_redirects=True)
-        testString = "type='submit' name='submitBtn' value='1'"
-        debugRequest(url, r, testString)
+def walkThroughApplication(startURL):
 
-        # we would need the request token
+    # print("Trying URL %s" % startURL)
+    with requests.session() as s:
+        
+        # Navigate to page 1
+        resp = s.get(startURL, params={}, allow_redirects=True)
+        testString = "type='submit' name='submitBtn' value='1'"
+        printResponseData(startURL, resp, testString)
+
+        # Extract request token from response
+        # Not the session key
         loc1 = 'type="hidden" name="token" value="'
-        if loc1 not in r.text:
-            print(loc1 + "not found")
-            quit()
-        pos1 = r.text.find(loc1)
-        pos2 = r.text.find("\"",len(loc1)+pos1+1)
-        tkn = r.text[pos1+len(loc1):pos2]
+        if loc1 not in resp.text:
+            print("Request token at location '%s' not found" % loc1)
+            return
+        pos1 = resp.text.find(loc1)
+        pos2 = resp.text.find("\"",len(loc1)+pos1+1)
+        tkn = resp.text[pos1+len(loc1):pos2]
 
         print("Pos1 %d - pos2 %d. Request token is %s" % (pos1, pos2, tkn))
-        print(r.text[pos1+len(loc1)-2:pos2+2])
+        print(resp.text[pos1+len(loc1)-2:pos2+2])
 
-        page2Str = 'submitBtn=1&xx=yy'.split('&')
-        page2 = {}
-        for item in page2Str:
+
+        # Navigate to page 2
+        paramsPage2 = 'submitBtn=1&xx=yy'.split('&')
+        pp2 = {}
+        for item in paramsPage2:
             key, value = item.split('=')
             if value:
-                page2[key] = value
-        page2["token"] = tkn
-
-        r = s.post(urlBase, params=page2, allow_redirects=True)
+                pp2[key] = value
+        pp2["token"] = tkn
+        resp = s.post(urlBase, params=pp2, allow_redirects=True)
         testString = 'type="submit" name="submitBtn" value="next"'
-        debugRequest(urlBase, r, testString)
+        printResponseData(urlBase, resp, testString)
 
         # with open('x.htm', 'wb') as f:
         #     f.write(r.text.encode('utf8'))
 
 
 
+
+
 start = time.time()
 
-threads = [threading.Thread(target=fetch_url2, args=(url,)) for url in urls]
+threads = [threading.Thread(target=walkThroughApplication, args=(url,)) for url in urls]
 for thread in threads:
     thread.start()
 for thread in threads:

@@ -1,9 +1,6 @@
- 
- 
 [ ![GoDoc](http://godoc.org/github.com/zew/go-questionnaire?status.svg)          ](https://godoc.org/github.com/zew/go-questionnaire) [ ![Travis Build](https://travis-ci.org/zew/go-questionnaire.svg?branch=master)  ](https://travis-ci.org/zew/go-questionnaire) [ ![Report Card](https://goreportcard.com/badge/github.com/zew/go-questionnaire) ](https://goreportcard.com/report/github.com/zew/go-questionnaire) [ ![code-coverage](http://gocover.io/_badge/github.com/zew/go-questionnaire) ](http://gocover.io/github.com/zew/go-questionnaire) 
 
-
-# Go-Questionnaire 
+# Go-Questionnaire
 
 Creating and serving questionnaires in flexible column layout.  
 Automatic desktop and mobile layout.
@@ -18,24 +15,15 @@ Productive use at our research institute.
 
 Go Version 1.__10__
 
+## Semantics
+
+* A `survey` is a `questionnaire` with one or more `waves` (repetitions).
+
+![Plugin](./static/img/doc/app-and-questionnaires.png)
 
 ## Usage
 
-Install and setup [golang](https://golang.org/doc/install)
-
-    cd $HOME/go/src/github.com/zew
-    go get -u github.com/zew/go-questionnaire
-    cd go-questionnaire
-    mv config-example.json  config.json  # adapt to your purposes
-    mv logins-example.json  logins.json  # dito
-    touch ./templates/main_desktop_[survey].css # put your site's styles here
-    go build
-    ./go-questionnaire                   # under windows: go-questionnaire.exe
-
-More info in [deploy on linux/unix](./static/doc/linux-instructions.md)
-
-
-#### Create questionnaire and logins
+### Create questionnaire and logins
 
 ![Plugin](./static/img/doc/questionnaire-lifecycle.png)
 
@@ -52,8 +40,7 @@ More info in [deploy on linux/unix](./static/doc/linux-instructions.md)
       /survey?u=99000&survey_id=fmt&wave_id=2018-07&h=bc11262f8ce8dda558de9a0ffa064941
       ...
 
-
-#### Participant login and reset
+### Participant login and reset
 
 * Participants can now use these login links to [access the questionnaire](https://dev-domain:port/survey?u=98991&survey_id=fmt&wave_id=2018-07&h=4059d765e4a4f211658373c07c5affb9)   
 
@@ -61,15 +48,22 @@ More info in [deploy on linux/unix](./static/doc/linux-instructions.md)
 
 * For testing purposes, you may [reset the questionnaire](https://dev-domain:port/survey/reload-from-questionnaire-template?u=98991&survey_id=fmt&wave_id=2018-07&h=4059d765e4a4f211658373c07c5affb9)
 
+### Setup
 
+Install and setup [golang](https://golang.org/doc/install)
 
+    cd $HOME/go/src/github.com/zew
+    go get -u github.com/zew/go-questionnaire
+    cd go-questionnaire
+    mv config-example.json  config.json  # adapt to your purposes
+    mv logins-example.json  logins.json  # dito
+    touch ./templates/main_desktop_[survey].css # put your site's styles here
+    go build
+    ./go-questionnaire                   # under windows: go-questionnaire.exe
 
-## Semantics
+More info in [deploy on linux/unix](./static/doc/linux-instructions.md)
 
-* A `survey` is a `questionnaire` with one or more `waves` (repetitions).
-
-![Plugin](./static/img/doc/app-and-questionnaires.png)
-
+### Packages
 
 * Package `qst` contains generic functions to create questionnaires.
 
@@ -77,25 +71,24 @@ More info in [deploy on linux/unix](./static/doc/linux-instructions.md)
 
 * Package `lgn` contains several authentication schemes for participants.
 
-* Package `main` serves questionnaires via http(s). 
+* Package `main` serves questionnaires via http(s).
 
 * Directory `responses` stores indididual answers  
-(and initial questionnaire templates).
+ (and initial questionnaire templates).
 
 * There are global translations as well as  
-questionnaire specific multi-language strings.  
-Global soft-hyphenizations for mobile layout.
+ questionnaire specific multi-language strings.  
+ Global soft-hyphenizations for mobile layout.
 
 * There are common functions preventing duplicate question keys  
  or missing translations.
 
 * Survey results are pulled in by the `transferrer`,  
-aggregating responses into a CSV file.  
-`transferrer` logic is agnostic of number of pages.
+ aggregating responses into a CSV file.  
+ `transferrer` logic is agnostic of number of pages.
 
 * In-flight changes to the questionnaire do not require any  
-"schema" or configuration effort. 
-
+ "schema" or configuration effort. 
 
 ## Data thrift
 
@@ -105,16 +98,15 @@ aggregating responses into a CSV file.
 
 * Once inside your organization, the results are fed into any CSV or JSON reading application.
 
-
 ## More features
 
 * All content and all results are driven  
-by __JSON files__.
+ by __JSON files__.
 
 * No database required.
 
 * Server side validation.  
-An extensible set of number validation functions can be assigned to each field.
+ An extensible set of number validation functions can be assigned to each field.
 
 * Client side JS validation is deliberately omitted;  
    [a would-be JS client lib](http://www.javascript-coder.com/html-form/form-validation.phtml)
@@ -149,9 +141,9 @@ In addition:
 * Pages can be navigated using `page` = [0,1,...] parameter
 
 * Page property `NoNavigation` decouples the page from the navigational sequence.  
-They are exempt from `previous` and `next`.  
-Such pages can reached to by setting submit buttons to their index value.  
-Useful for greeting- and goodbye-pages.
+ They are exempt from `previous` and `next`.  
+ Such pages can reached to by setting submit buttons to their index value.  
+ Useful for greeting- and goodbye-pages.
 
 #### Defining questionnaires by code or by JSON file
 
@@ -159,17 +151,15 @@ At inception we envisioned a JSON schema validator
 and questionnaire creation by directly editing of JSON files  
 but that remains as elusive as it did with XML.
 
-
 ### Layout concept
-
 
 #### Accepted solution
 
 Considering `float-left` or `inline-block`, we chose `fixed table` layout.
 
-We need full fledged markup, since mere CSS classes such as `<div style='display: table/table-row/table-cell'` do not support colspan or rowspan functionality. 
+We need full fledged markup, since mere CSS classes such as `<div style='display: table/table-row/table-cell'` do not support colspan or rowspan functionality.
 
-Each `page.Width` can be adjusted for each page. 
+Each `page.Width` can be adjusted for each page.
 Squeezing or stretching all rows equally.
 Page remains horizontally _centered_.
 
@@ -180,14 +170,11 @@ The group can be left-aligned (picture) or right-aligned.
 
 ![Group width](./static/img/doc/group-width.png)
 
-
 Each group has flexible number of columns.
 The number of columns is deliberately not standardized on hundred,
 so that odd distributions are possible - i.e. seven columns.
 
-
 ![Group width](./static/img/doc/group-columns.png)
-
 
 The inputs are fitted in. Usually an input occupies one column 
 for its label and another column for its control part.
@@ -222,7 +209,6 @@ The column width computation must be based on a compromise slack of i.e. 97.5 pe
 
 Stacking cells wit `float:left` takes away the nice vertical middle alignment of the cells.
 
-
 ### Mobile layout
 
 go-questionnaire has a _separate_ layout for mobile clients.
@@ -252,43 +238,40 @@ Mobile layout was tested with `crossbrowsertesting.com`.
 * Shuffling is random, but deterministically reproducible for user ID and page number.
 
 * Questionnaire property `variations` sets the number of different classes of shufflings.  
-For example, if `variations==2`, even and odd user IDs get the same 
-ordering when on same page.  
+ For example, if `variations==2`, even and odd user IDs get the same  
+ ordering when on same page.  
 
 * `variations` should be set to the maximum number of inputs across pages.
 
 * [Shufflings can be exported for use in related applications](https://dev-domain:port/survey/shufflings-to-csv)
 
-
 ## Optimization
 
 * Layout: Table data is currently aligned vertically middled.  
-Sometimes it should be configurable to baseline. 
+ Sometimes it should be configurable to baseline.
 
 * The transferrer should truncate the pages from the online JSON files   
-leaving only user ID, completion time and survey data.
+ leaving only user ID, completion time and survey data.
 
 * For each user, only the responses should be saved to session/JSON; not the entire questionnaire data.  
-The responses could be merged into the questionnaire based on input name.
+ The responses could be merged into the questionnaire based on input name.
 
 * The generators could be compiled into independent executables.  
-They could then be executed on the command line with the parameters as JSON file.
+ They could then be executed on the command line with the parameters as JSON file.
 
 * Finish pages and finish field should be harmonized.  
-Currently one can either generate your own final page (in the example of the peu2018 survey).  
-Or one can set the "finalized" field and then gets system wide: You finished ... at ...
+ Currently one can either generate your own final page (in the example of the peu2018 survey).  
+ Or one can set the "finalized" field and then gets system wide: You finished ... at ...
 
 * The set of application languages in the footer is not restricted to the questionnaire languages.
 
-
-## Possible enhancements 
+## Possible enhancements
 
 * Adding a `Docker` script?
 
-* Adding `Lets encrypt`?
+* Adding `Lets encrypt`?  Maybe via `mholt/certmagic`
 
 * Migrate file storage to GoCloud library and make deployable on Google Appengine or AWS?
-
 
 ## About Go-App-Tpl
 
@@ -296,53 +279,49 @@ Or one can set the "finalized" field and then gets system wide: You finished ...
 
 * Go-App-Tpl is a number of packages for building go web applications.  
 
-
 It features
 
-  * Http router with safe settings and optional https encryption
+* Http router with safe settings and optional https encryption
 
-  * Session package by Alex Edwards
+* Session package by Alex Edwards
 
-  * Configurable url prefix for running multiple instances on same server:port
+* Configurable url prefix for running multiple instances on same server:port
 
-  * Middleware for logging, access restrictions etc.
+* Middleware for logging, access restrictions etc.
 
-  * Middleware catches request handler panics
+* Middleware catches request handler panics
 
-  * Static file handlers
-  
-  * JSON config file with reloadable settings 
+* Static file handlers
 
-  * JSON logins file, also reloadable
-  
-  * Handlers for login, changing password, login by hash
+* JSON config file with reloadable settings 
 
-  * Site layout template with jQuery from CDN cache; fallback to localhost 
+* JSON logins file, also reloadable
 
-  * Multi language strings
+* Handlers for login, changing password, login by hash
 
-  * Templates having access to session and request
+* Site layout template with jQuery from CDN cache; fallback to localhost 
 
-  * Stack of dynamic subtemplate calls 
-  
-  * Template pre-parsing (`bootstrap`), configurable for development or production
+* Multi language strings
 
-  * Markdown file handler, rewriting image links 
-  
-  * Multi language markdown files
-  
-  * Shell script to control application under Linux
+* Templates having access to session and request
 
-  * CSRF and XSS defence
+* Stack of dynamic subtemplate calls 
 
-  
+* Template pre-parsing (`bootstrap`), configurable for development or production
+
+* Markdown file handler, rewriting image links 
+
+* Multi language markdown files
+
+* Shell script to control application under Linux
+
+* CSRF and XSS defence
 
 ## Technical design guidelines
 
-* Subpackaging is done by concern, neither too amorphous nor too atomic. 
+* Subpackaging is done by concern, neither too amorphous nor too atomic.
 
 * Go-App-Tpl has no "hooks" or interfaces for isolation of "framework" code.  
-Just copy it and add your handlers. 
+ Just copy it and add your handlers.
 
 Future updates can be merged.
-

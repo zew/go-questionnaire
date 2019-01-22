@@ -17,7 +17,6 @@ import (
 	"strings"
 	"time"
 
-	"github.com/zew/go-questionnaire/bootstrap"
 	"github.com/zew/go-questionnaire/cfg"
 	"github.com/zew/go-questionnaire/lgn"
 	"github.com/zew/go-questionnaire/qst"
@@ -94,16 +93,48 @@ func main() {
 	rand.Seed(time.Now().UTC().UnixNano())
 	log.SetFlags(log.Lshortfile | log.Ldate | log.Ltime)
 
-	bootstrap.Config()
+	// bootstrap.Config()
+
+	fl := util.NewFlags()
+	fl.Add(
+		util.FlagT{
+			Long:       "config_file",
+			Short:      "cfg",
+			DefaultVal: "config.json",
+			Desc:       "JSON file containing config data",
+		},
+	)
+	fl.Add(
+		util.FlagT{
+			Long:       "logins_file",
+			Short:      "lgn",
+			DefaultVal: "logins.json",
+			Desc:       "JSON file containing logins data",
+		},
+	)
+	fl.Add(
+		util.FlagT{
+			Long:       "remote_file",
+			Short:      "rmt",
+			DefaultVal: "transferrer-remote.json",
+			Desc:       "JSON file containing connection to remote host",
+		},
+	)
+	fl.Gen()
+	cfg.CfgPath = fl.ByKey("cfg").Val
+	cfg.Load()
+	lgn.LgnsPath = fl.ByKey("lgn").Val
+	lgn.Load()
 
 	var c2 AddtlConfigT
-
-	//
 	c2 = Example()
-	c2.Save("remote-additional-example.json")
+	c2.Save("transferrer-remote-example.json")
 
-	c2 = *(Load("remote-additional.json"))
+	rmt := fl.ByKey("rmt").Val
+	c2 = *(Load(rmt))
+
 	host := fmt.Sprintf("%v:%v", c2.RemoteHost, cfg.Get().BindSocket)
+	log.Printf("Remote host is: %v", host)
 
 	defer func() {
 		log.Printf("  ")

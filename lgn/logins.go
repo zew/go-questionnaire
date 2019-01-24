@@ -32,6 +32,22 @@ import (
 var errFoundButWrongPassword = fmt.Errorf("User found but wrong password")
 var errLoginNotFound = fmt.Errorf("Login not found")
 
+// Following URL params are not hashed for login check
+// They can be appended to the login-by-hash URL to modify app state
+var uncheckedURLParams = map[string]interface{}{
+	"page": nil, "submit": nil, "mobile": nil, "lang_code": nil, // general app control
+	"attrs": nil, // user attributes at login time
+	"h":     nil, // the hash
+}
+
+// ExplicitAttrs contains URL params going into LoginT.Attrs
+// upon login.
+// They serve as a property bag session
+var ExplicitAttrs = map[string]interface{}{
+	"survey_id": nil, "wave_id": nil,
+	"attrs": nil,
+}
+
 // LoginT must be exported, *not* because we need to pass a type to sessx.GetObject
 // 		l := lgn.LoginT{}
 // 		ok, err := sess.EffectiveObj("login", &l)
@@ -45,7 +61,8 @@ type LoginT struct {
 	User  string            `json:"user"`
 	Email string            `json:"email"`
 	Group string            `json:"-"`     // Derived from email domain - or LDAP org
-	Roles map[string]string `json:"roles"` // i.e. admin: true , gender: female, height: 188
+	Roles map[string]string `json:"roles"` // i.e. admin: true, can only be set via JSON config; therefore safe
+	Attrs map[string]string `json:"attrs"` // i.e. country: Poland, gender: female, height: 188, can be overriden by URL params, therefore unsafe.
 
 	PassInitial    string `json:"pass_initial"`       // For first login - unencrypted - grants restricted access to change password only
 	IsInitPassword bool   `json:"is_init_password"`   // Indicates authentication against PassInitial
@@ -298,7 +315,7 @@ func LoadH(w http.ResponseWriter, r *http.Request) {
 
 }
 
-// SaveH is a convenience func to save logins via http request.
+// SaveH is a convenience func to save logins file via http request.
 func SaveH(w http.ResponseWriter, r *http.Request) {
 
 	w.Header().Set("Content-Type", "text/plain; charset=utf-8")
@@ -413,7 +430,7 @@ func Md5Str(buf []byte) string {
 }
 
 // Example writes a single login to file, to be extended or adapted
-func Example() {
+func Example() *loginsT {
 	ex := &loginsT{
 		Salt: "your salt here",
 		Logins: []LoginT{
@@ -421,10 +438,12 @@ func Example() {
 				User:           "myUser",
 				Email:          "myUser@example.com",
 				Roles:          map[string]string{"admin": "yes"},
+				Attrs:          map[string]string{"country": "Sweden", "height": "174"},
 				PassInitial:    "Keep empty - have it set during startup - then call /logins-save",
 				IsInitPassword: true,
 			},
 		},
 	}
 	ex.Save("logins-example.json")
+	return ex
 }

@@ -23,10 +23,12 @@ import (
 	"github.com/zew/util"
 )
 
-// AddtlConfigT is on top of
-// of the remote config
-type AddtlConfigT struct {
-	RemoteHost string
+// RemoteConnConfigT is on top of
+// of the ordinary config
+type RemoteConnConfigT struct {
+	RemoteHost    string
+	BindSocket    int
+	URLPathPrefix string
 
 	AdminLogin string // Some admin account of the remote machine
 	Pass       string
@@ -38,10 +40,13 @@ type AddtlConfigT struct {
 }
 
 // Example returns a minimal configuration, to be extended or adapted
-func Example() AddtlConfigT {
-	r := AddtlConfigT{}
+func Example() RemoteConnConfigT {
+	r := RemoteConnConfigT{}
 	r.RemoteHost = "https://survey2.zew.de"
 	r.RemoteHost = "https://www.peu2018.eu"
+
+	r.BindSocket = 443
+	r.URLPathPrefix = "taxdb"
 
 	r.AdminLogin = "login"
 	r.Pass = "secret"
@@ -58,7 +63,7 @@ func Example() AddtlConfigT {
 }
 
 // Save writes a JSON file
-func (r *AddtlConfigT) Save(fn string) {
+func (r *RemoteConnConfigT) Save(fn string) {
 	byts, err := json.MarshalIndent(r, " ", "\t")
 	util.BubbleUp(err)
 	err = ioutil.WriteFile(fn, byts, 0644)
@@ -66,7 +71,7 @@ func (r *AddtlConfigT) Save(fn string) {
 }
 
 // Load loads a JSON file
-func Load(fn string) (r *AddtlConfigT) {
+func Load(fn string) (r *RemoteConnConfigT) {
 	file, err := util.LoadConfigFile(fn)
 	if err != nil {
 		log.Fatalf("Could not load config file %v: %v", fn, err)
@@ -80,7 +85,7 @@ func Load(fn string) (r *AddtlConfigT) {
 		log.Printf("Closed config file: %v", fn)
 	}()
 	decoder := json.NewDecoder(file)
-	tempCfg := AddtlConfigT{}
+	tempCfg := RemoteConnConfigT{}
 	err = decoder.Decode(&tempCfg)
 	if err != nil {
 		log.Fatal(err)
@@ -93,25 +98,32 @@ func main() {
 	rand.Seed(time.Now().UTC().UnixNano())
 	log.SetFlags(log.Lshortfile | log.Ldate | log.Ltime)
 
-	// bootstrap.Config()
+	// We need basic config and logins structures.
+	// See below.
+	{
+		//
+		// We take a config;
+		// save it to file and then activate it from file.
+		cf := &cfg.ConfigT{}
+		cf.AppName = "Transferrer for Go Questionnaire - http client"
+		cf.AppMnemonic = "tf"
+		cf.LangCodes = []string{"en"}
+		cf.Loc = time.FixedZone("UTC", 1*3600) // cf.Loc is needed below
+		// cf.URLPathPrefix is needed for cfg.Pref() properly working
+		// It is set later from transferrer config
+		cf.Save("config-autogen.json")
+		cfg.CfgPath = "config-autogen.json"
+		cfg.Load()
 
+		// logins data is directly read from file
+		// It only contains the remote salt
+		// required to create form request tokens
+		lgn.LgnsPath = "logins-remote-salt.json"
+		lgn.Load()
+	}
+
+	// The actual config for *this* app:
 	fl := util.NewFlags()
-	fl.Add(
-		util.FlagT{
-			Long:       "config_file",
-			Short:      "cfg",
-			DefaultVal: "config.json",
-			Desc:       "JSON file containing config data",
-		},
-	)
-	fl.Add(
-		util.FlagT{
-			Long:       "logins_file",
-			Short:      "lgn",
-			DefaultVal: "logins.json",
-			Desc:       "JSON file containing logins data",
-		},
-	)
 	fl.Add(
 		util.FlagT{
 			Long:       "remote_file",
@@ -121,27 +133,25 @@ func main() {
 		},
 	)
 	fl.Gen()
-	cfg.CfgPath = fl.ByKey("cfg").Val
-	cfg.Load()
-	lgn.LgnsPath = fl.ByKey("lgn").Val
-	lgn.Load()
 
-	var c2 AddtlConfigT
+	var c2 RemoteConnConfigT
 	c2 = Example()
 	c2.Save("transferrer-remote-example.json")
-
 	rmt := fl.ByKey("rmt").Val
 	c2 = *(Load(rmt))
 
-	host := fmt.Sprintf("%v:%v", c2.RemoteHost, cfg.Get().BindSocket)
+	// make cfg.Pref() work properly:
+	cfg.Get().URLPathPrefix = c2.URLPathPrefix
+
+	host := fmt.Sprintf("%v:%v", c2.RemoteHost, c2.BindSocket)
 	log.Printf("Remote host is: %v", host)
 
 	defer func() {
 		log.Printf("  ")
 		log.Printf("  ")
 		log.Printf("================")
-		log.Printf("Login         via   %v%v", host, "/survey/login-primitive")
-		log.Printf("Check results via   %v%v", host, "/survey/transferrer-endpoint?wave_id=2018-06")
+		log.Printf("Login         via   %v%v%v", host, cfg.Pref(), "login-primitive")
+		log.Printf("Check results via   %v%v%v", host, cfg.Pref(), "transferrer-endpoint?wave_id=2018-06")
 	}()
 
 	urlLogin := host + cfg.Pref("/login-primitive")
@@ -184,7 +194,7 @@ func main() {
 		respBytes, _ := ioutil.ReadAll(resp.Body)
 		mustHave := fmt.Sprintf("Logged in as %v", c2.AdminLogin)
 		if !strings.Contains(string(respBytes), mustHave) {
-			log.Fatalf("Login response must contain '%v'\n\n%v", mustHave, string(respBytes))
+			log.Fatalf("Login response must contain '%v'\n%v\n%v\n\n%v", mustHave, urlReq, vals, string(respBytes))
 		}
 
 		log.Printf("Cookie is %+v \ngleaned from %v", sessCook, req.URL)
@@ -288,12 +298,20 @@ func main() {
 			if realEntries == 0 {
 				log.Printf("%3v: %v. No answers given, skipping.", i, pth2)
 				pth2a := pth2 + ".json"
-				pth3 := filepath.Join(dirEmpty, q.UserID+".json")
-				err := os.Rename(pth2a, pth3)
+				pthEmpty := filepath.Join(dirEmpty, q.UserID+".json")
+				err := os.Rename(pth2a, pthEmpty)
 				if err != nil {
-					log.Printf("%3v: Error moving %v to %v - %v", i, pth2a, pth3, err)
+					log.Printf("%3v: Error moving %v to %v - %v", i, pth2a, pthEmpty, err)
 				}
 				continue
+			} else {
+				pthEmpty := filepath.Join(dirEmpty, q.UserID+".json")
+				if _, err := os.Stat(pthEmpty); err == nil {
+					err := os.Remove(pthEmpty)
+					if err != nil {
+						log.Printf("%3v: Error removing previously empty %v - %v", i, pthEmpty, err)
+					}
+				}
 			}
 
 			// Prepare columns...

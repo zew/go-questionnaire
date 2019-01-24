@@ -14,6 +14,7 @@ import (
 	"github.com/zew/go-questionnaire/generators/min"
 	"github.com/zew/go-questionnaire/generators/mul"
 	"github.com/zew/go-questionnaire/generators/peu2018"
+	"github.com/zew/go-questionnaire/generators/strube"
 	"github.com/zew/go-questionnaire/lgn"
 	"github.com/zew/go-questionnaire/qst"
 	"github.com/zew/util"
@@ -26,6 +27,7 @@ var gens = map[string]genT{
 	"min":     min.Create,
 	"peu2018": peu2018.Create,
 	"mul":     mul.Create,
+	"strube":  strube.Create,
 }
 
 // Get returns all questionnaire generators

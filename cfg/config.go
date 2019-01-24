@@ -57,7 +57,7 @@ type ConfigT struct {
 	LangCodes []string `json:"lang_codes"`
 	// multi language strings for the application
 	Mp               trl.Map        `json:"translation_map"`
-	UserIDToLanguage map[int]string `json:"user_id_to_language,omitempty"` // user id to language preselection
+	UserIDToLanguage map[int]string `json:"user_id_to_language,omitempty"` // user id to language preselection for direct login
 }
 
 // CfgPath is obtained by ENV variable or command line flag in main package.
@@ -197,6 +197,7 @@ func (c *ConfigT) Save(fn ...string) {
 }
 
 // UserLangCode returns the language code for a user ID.
+// Its taken from ConfigT.UserIDToLanguage
 //
 // user_id_to_language: {
 // 	      1:   fr,
@@ -262,7 +263,7 @@ func PrefWTS(pth ...string) string {
 }
 
 // Example writes a minimal configuration to file, to be extended or adapted
-func Example() {
+func Example() *ConfigT {
 	ex := &ConfigT{
 		IsProduction:           true,
 		AppName:                "My Example App",
@@ -468,4 +469,5 @@ func Example() {
 		},
 	}
 	ex.Save("config-example.json")
+	return ex
 }

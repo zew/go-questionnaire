@@ -48,6 +48,11 @@ type formEntryT struct {
 	Token string `json:"token"`
 	Start int    `json:"start"`
 	Stop  int    `json:"stop"`
+
+	LangCode string   `json:"lang_code"`
+	Attrs    []string `json:"attrs"`
+
+	SubmitClassic string `json:"submitclassic"`
 }
 
 // New returns a config for direct logins
@@ -243,24 +248,40 @@ func GenerateH(w http.ResponseWriter, r *http.Request) {
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>Direct Login</title>
+	<title>Direct Login</title>
 </head>
 <body>
 	<form method="post" action="{{.SelfURL}}"  style="margin: 50px;"  >
 		{{if  (len .ErrMsg) gt 0 }} <p style='white-space: pre; color:#E22'>{{.ErrMsg}}</p>{{end}}
 		Create direct login<br>
+		<p style='font-size:80%'> 
+			Direct login can only lead to a single survey/wave on a single server.
+			Those are hardcoded in directlogin.ValidateAndLogin
+		</p>
+
+
 						<input name="token"       type="hidden"   value="{{.Token}}" />
 		<br>
 		Digits Login:    <input name="length"      type="text"     value="{{.DL.Length}}">
-		Digits Checksum: <input name="check_sum"   type="text"     value="{{.DL.CheckSum}}"><br>
-		
+		Digits Checksum: <input name="check_sum"   type="text"     value="{{.DL.CheckSum}}"><br>		
 		<br>
+
 		User IDs<br>
 		Start: 	<input name="start"      type="text"     value="{{.DL.Start}}"><br>
 		Stop: 	<input name="stop"       type="text"     value="{{.DL.Stop}}" ><br>
-		
 		<br>
-		<input type="submit"   name="submitclassic" accesskey="s"><br>
+
+		Init language - overrides ConfigT.UserIDToLanguage<br>
+			Lang 	    <input name="lang_code"  type="text"     value="{{.DL.LangCode}}"><br>
+		<br>
+
+		Login attributes key:val <br>
+			Attr 	    <input name="attrs"       type="text"     value="{{index .DL.Attrs 0}}"><br>
+			Attr 	    <input name="attrs"       type="text"     value="{{index .DL.Attrs 1}}"><br>
+			Attr 	    <input name="attrs"       type="text"     value="{{index .DL.Attrs 2}}"><br>
+		<br>
+				
+		<input type="submit" name="submitclassic" value="submit" accesskey="s" ><br>
 		
 		{{if  (len .Cnt   ) gt 0 }} <p style='white-space: pre; color:#222'>{{.Cnt   }}</p>{{end}}
 
@@ -275,6 +296,11 @@ func GenerateH(w http.ResponseWriter, r *http.Request) {
 	d := New(3, 2)
 	fe := formEntryT{}
 	fe.DirectLoginT = *d
+
+	for len(fe.Attrs) < 3+1 {
+		fe.Attrs = append(fe.Attrs, "")
+	}
+
 	// err := r.ParseForm()
 
 	dec := formam.NewDecoder(&formam.DecoderOptions{TagName: "json"})
@@ -296,23 +322,33 @@ func GenerateH(w http.ResponseWriter, r *http.Request) {
 	di := New(d.Length, d.CheckSum)
 
 	links := ""
-	for i := fe.Start; i <= fe.Stop; i++ {
-		di.GenerateFromDec(i)
-		str := fmt.Sprintf(
-			"<a href='%v%v' target='_blank' >%v</a><br>\n",
-			cfg.PrefWTS("/direct"), di.L, di.Decimal(),
-		)
-		links += str
-	}
-
 	list := ""
 	for i := fe.Start; i <= fe.Stop; i++ {
+
 		di.GenerateFromDec(i)
-		str := fmt.Sprintf(
+
+		//
+		url := fmt.Sprintf("%v%v?", cfg.PrefWTS("/direct"), di.L)
+		if fe.LangCode != "" {
+			url += "&lang_code=" + fe.LangCode
+		}
+		for _, attr := range fe.Attrs {
+			if attr != "" {
+				url += "&attrs=" + attr
+			}
+		}
+		url = strings.TrimSuffix(url, "?")
+
+		link := fmt.Sprintf("<a href='%v' target='_blank' >%v</a><br>\n", url, di.Decimal())
+		links += link
+
+		//
+		lst := fmt.Sprintf(
 			"%05v\t%v\t%v\t%v\tValid: %v\n",
-			i, di.L, di.DecimalHyphenated(), di.Decimal(), di.Validate(),
+			i, url, di.DecimalHyphenated(), di.Decimal(), di.Validate(),
 		)
-		list += str
+		list += lst
+
 	}
 
 	// log.Printf(util.IndentedDump(d))
@@ -387,10 +423,28 @@ func ValidateAndLogin(w http.ResponseWriter, r *http.Request) {
 	l := lgn.LoginT{}
 	l.User = fmt.Sprintf("%v", dl.Decimal())
 	l.Roles = map[string]string{}
-	l.Roles["survey_id"] = "peu2018"
-	l.Roles["wave_id"] = "2018-08"
+	l.Attrs = map[string]string{}
+	l.Attrs["survey_id"] = "peu2018"
+	l.Attrs["wave_id"] = "2018-11"
 	log.Printf("directly logged in as %v - ID %v", l.User, dl.Decimal())
 	// fmt.Fprintf(w, "directly logged in as %v - ID %v\n", l.User, dl.Decimal())  // prevents redirect
+
+	for key := range r.Form {
+		// attrs=country:Sweden&attrs=height:176
+		if _, ok := lgn.ExplicitAttrs[key]; ok {
+			if key == "attrs" {
+				for i := 0; i < len(r.Form[key]); i++ { // instead of val := r.Form.Get(key)
+					val := r.Form[key][i]
+					kv := strings.Split(val, ":")
+					if len(kv) == 2 {
+						l.Attrs[kv[0]] = kv[1]
+					}
+				}
+			} else {
+				l.Attrs[key] = r.Form.Get(key)
+			}
+		}
+	}
 
 	lgn.LogoutH(w, r) // remove all previous session info
 	err := sess.PutObject("login", l)

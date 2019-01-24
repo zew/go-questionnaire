@@ -8,6 +8,7 @@ import (
 	"log"
 	"net/http"
 	"sort"
+	"strings"
 	"time"
 
 	"github.com/monoculum/formam"
@@ -259,29 +260,47 @@ func LoginByHash(w http.ResponseWriter, r *http.Request) (bool, error) {
 	l.User = u
 	l.IsInitPassword = false // remembrance: only then do roles become effective
 	l.Roles = map[string]string{}
+	l.Attrs = map[string]string{}
 
-	keys := []string{}
+	chkKeys := []string{}
 	for key := range r.Form {
-		if key != "h" && key != "page" && key != "submit" && key != "mobile" {
-			keys = append(keys, key)
+		if _, ok := uncheckedURLParams[key]; ok {
+			continue
 		}
+		chkKeys = append(chkKeys, key)
 	}
-	sort.Strings(keys)
 
+	sort.Strings(chkKeys)
 	checkStr := ""
-	for _, key := range keys {
+	for _, key := range chkKeys {
 		val := r.Form.Get(key)
 		checkStr += val + "-"
-		l.Roles[key] = val
 	}
 	checkStr += lgns.Salt
-	log.Printf("trying hash login over keys %v: '%v' ", keys, checkStr)
+	log.Printf("trying hash login over chkKeys %v: '%v' ", chkKeys, checkStr)
 	hExpected := Md5Str([]byte(checkStr))
 	if hExpected != h {
 		return false, fmt.Errorf("hash over check string unequal hash argument\n%v\n%v", hExpected, h)
 	}
 
-	log.Printf("logging in as %v", u)
+	for key := range r.Form {
+		// attrs=country:Sweden&attrs=height:176
+		if _, ok := ExplicitAttrs[key]; ok {
+			if key == "attrs" {
+				for i := 0; i < len(r.Form[key]); i++ { // instead of val := r.Form.Get(key)
+					val := r.Form[key][i]
+					kv := strings.Split(val, ":")
+					if len(kv) == 2 {
+						l.Attrs[kv[0]] = kv[1]
+					}
+				}
+			} else {
+				l.Attrs[key] = r.Form.Get(key)
+			}
+		}
+	}
+
+	log.Printf("logging in as %v with attrs %v", u, l.Attrs)
 	err = sess.PutObject("login", l)
 	if err != nil {
 		return false, err
@@ -344,13 +363,25 @@ func GenerateHashesH(w http.ResponseWriter, r *http.Request) {
 		Survey<br>
 			Survey ID 	 <input name="survey_id"   type="text"     value="{{.SurveyID}}"><br>
 			Wave ID 	 <input name="wave_id"     type="text"     value="{{.WaveID}}" ><br>
-
 		<br>
+
 		User ID<br>
 			Start 	    <input name="start"       type="text"     value="{{.Start}}"><br>
 			Stop 	    <input name="stop"        type="text"     value="{{.Stop}}" ><br>
+		<br>
 
-		<input type="submit"   name="submitclassic" accesskey="s"><br>
+		Init language<br>
+			Lang 	    <input name="lang_code"  type="text"     value="{{.LangCode}}"><br>
+		<br>
+
+		Login attributes key:val <br>
+			Attr 	    <input name="attrs"       type="text"     value="{{index .Attrs 0}}"><br>
+			Attr 	    <input name="attrs"       type="text"     value="{{index .Attrs 1}}"><br>
+			Attr 	    <input name="attrs"       type="text"     value="{{index .Attrs 2}}"><br>
+		<br>
+
+
+		<input type="submit" name="submitclassic" value="submit" accesskey="s"><br>
 
 		{{if  (len .Links  ) gt 0 }} <p style='                  color:#444'>{{.Links  }}</p>{{end}}
 		{{if  (len .List   ) gt 0 }} <p style='white-space: pre; color:#444'>{{.List   }}</p>{{end}}
@@ -374,10 +405,17 @@ func GenerateHashesH(w http.ResponseWriter, r *http.Request) {
 		Stop          int    `json:"stop"`
 		SubmitClassic string `json:"submitclassic"`
 
+		LangCode string   `json:"lang_code"`
+		Attrs    []string `json:"attrs"`
+
 		Links template.HTML `json:"links"`
 		List  string        `json:"list"`
 	}
 	fe := formEntryT{}
+	fe.Token = FormToken()
+	for len(fe.Attrs) < 3+1 {
+		fe.Attrs = append(fe.Attrs, "")
+	}
 
 	//
 	dec := formam.NewDecoder(&formam.DecoderOptions{TagName: "json"})
@@ -408,29 +446,41 @@ func GenerateHashesH(w http.ResponseWriter, r *http.Request) {
 		fe.Stop = 1020
 	}
 
-	b := &bytes.Buffer{}
-	list := &bytes.Buffer{}
+	b1 := &bytes.Buffer{}
+	b2 := &bytes.Buffer{}
 	for i := fe.Start; i < fe.Stop; i++ {
 
 		checkStr := fmt.Sprintf("%v-%v-%v-%v", fe.SurveyID, i, fe.WaveID, lgns.Salt)
 		hsh := Md5Str([]byte(checkStr))
 		url := fmt.Sprintf("%v?u=%v&survey_id=%v&wave_id=%v&h=%v", cfg.PrefWTS(), i, fe.SurveyID, fe.WaveID, hsh)
-		fmt.Fprintf(b, "<a href='%v'  target='_blank' >login as user %4v<a> ", url, i)
-		fmt.Fprintf(list, "%4v\t\t%v\n", i, url)
 
-		fmt.Fprint(b, " &nbsp; &nbsp; &nbsp; &nbsp; ")
+		if fe.LangCode != "" {
+			url += "&lang_code=" + fe.LangCode
+		}
+
+		for _, attr := range fe.Attrs {
+			if attr != "" {
+				url += "&attrs=" + attr
+			}
+		}
+
+		fmt.Fprintf(b1, "<a href='%v'  target='_blank' >login as user %4v<a> ", url, i)
+		fmt.Fprintf(b2, "%4v\t\t%v\n", i, url)
+
+		fmt.Fprint(b1, " &nbsp; &nbsp; &nbsp; &nbsp; ")
 
 		url2 := fmt.Sprintf(
 			"%v?u=%v&survey_id=%v&wave_id=%v&h=%v",
 			cfg.PrefWTS("reload-from-questionnaire-template"), i, fe.SurveyID, fe.WaveID, hsh,
 		)
-		fmt.Fprintf(b, "<a href='%v'  target='_blank' >reload from template<a>", url2)
+		fmt.Fprintf(b1, "<a href='%v'  target='_blank' >reload from template<a>", url2)
 
-		fmt.Fprint(b, "<br>")
+		fmt.Fprint(b1, "<br>")
 	}
 
-	fe.Links = template.HTML(b.String())
-	fe.List = list.String()
+	fe.Links = template.HTML(b1.String())
+	fe.List = b2.String()
+
 	fe.ErrMsg = errMsg
 
 	tpl := template.New("anyname.html")

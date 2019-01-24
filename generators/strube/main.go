@@ -1,4 +1,4 @@
-package mul
+package strube
 
 import (
 	"fmt"
@@ -100,23 +100,43 @@ func labelsGoodBad19() []trl.S {
 // Create creates a questionnaire with a few pages and inputs.
 func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	q := qst.QuestionnaireT{}
-	q.Survey = qst.NewSurvey("aik")
+	q.Survey = qst.NewSurvey("strube")
 	q.Survey.Params = params
 	q.Variations = 4
 
 	q.LangCodes = map[string]string{
+		"de": "Deutsch",
 		"en": "English",
+		"es": "Español",
+		"fr": "Français",
+		"it": "Italiano",
+		"pl": "Polski",
 	}
 	q.LangCodesOrder = []string{
 		"en",
+		"fr",
+		"de",
+		"it",
+		"es",
+		"pl",
 	}
 	q.LangCode = "en" // No default; forces usage of UserLangCode()
 
 	q.Survey.Org = trl.S{
+		"de": "  ",
 		"en": "  ",
+		"es": "  ",
+		"fr": "  ",
+		"it": "  ",
+		"pl": "  ",
 	}
 	q.Survey.Name = trl.S{
-		"en": "Macro Policy Survey",
+		"de": "",
+		"en": "General attitudes on euro and economic policy",
+		"es": "",
+		"fr": "",
+		"it": "",
+		"pl": "",
 	}
 
 	i2 := "[groupID]"
@@ -154,97 +174,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			}
 			gr.Desc = trl.S{
 				"en": "The European Central Bank should take its time to normalize its interest rates. There is no need to increase central bank rates in Europe before the year 2020.",
-			}
-		}
-
-		// 12
-		{
-			names1stMatrix := []string{"fed"}
-			emptyRowLabels := []trl.S{}
-			gr := p.AddRadioMatrixGroup(labelsGoodBad19(), names1stMatrix, emptyRowLabels, 1)
-			gr.Cols = 9 // necessary, otherwise no vspacers
-			gr.OddRowsColoring = true
-			gr.Label = trl.S{
-				"en": fmt.Sprintf("%v. Appropriate monetary policy stance – US Federal Reserve<br>", i2),
-			}
-			gr.Desc = trl.S{
-				// "en": "The EU should get a stronger role in immigration policy (e.g. decisions over admission standards or allocation of refugees).",
-				"en": "The US Federal Reserve should continue with its course of interest rate increases well throughout 2019.",
-			}
-		}
-
-		// 13
-		{
-			names1stMatrix := []string{"fiscal"}
-			emptyRowLabels := []trl.S{}
-			gr := p.AddRadioMatrixGroup(labelsGoodBad19(), names1stMatrix, emptyRowLabels, 1)
-			gr.Cols = 9 // necessary, otherwise no vspacers
-			gr.OddRowsColoring = true
-			gr.Label = trl.S{
-				"en": fmt.Sprintf("%v. Appropriate fiscal policy stance<br>", i2),
-			}
-			gr.Desc = trl.S{
-				"en": "Overall, the current economic situation in industrial countries allows more fiscal consolidation. OECD countries should consolidate more and try to reduce government debt. ",
-			}
-		}
-
-		// 14
-		{
-			names1stMatrix := []string{"privatization"}
-			emptyRowLabels := []trl.S{}
-			gr := p.AddRadioMatrixGroup(labelsGoodBad19(), names1stMatrix, emptyRowLabels, 1)
-			gr.Cols = 9 // necessary, otherwise no vspacers
-			gr.OddRowsColoring = true
-			gr.Label = trl.S{
-				"en": fmt.Sprintf("%v. Need for privatization<br>", i2),
-			}
-			gr.Desc = trl.S{
-				"en": "In general, the large involvement of governments in market activities still impairs the growth potential of industrial countries. Privatization should be one of the priorities in strategies to boost the growth potential in OECD countries.",
-			}
-		}
-
-		// 15
-		{
-			names1stMatrix := []string{"labor"}
-			emptyRowLabels := []trl.S{}
-			gr := p.AddRadioMatrixGroup(labelsGoodBad19(), names1stMatrix, emptyRowLabels, 1)
-			gr.Cols = 9 // necessary, otherwise no vspacers
-			gr.OddRowsColoring = true
-			gr.Label = trl.S{
-				"en": fmt.Sprintf("%v. Extent of labor market regulation<br>", i2),
-			}
-			gr.Desc = trl.S{
-				"en": "High long-run unemployment in some OECD countries largely reflects an excessive level of labor market regulation. In order to reduce this unemployment, countries would have to deregulate labor markets.",
-			}
-		}
-
-		// 16
-		{
-			names1stMatrix := []string{"redistribution"}
-			emptyRowLabels := []trl.S{}
-			gr := p.AddRadioMatrixGroup(labelsGoodBad19(), names1stMatrix, emptyRowLabels, 1)
-			gr.Cols = 9 // necessary, otherwise no vspacers
-			gr.OddRowsColoring = true
-			gr.Label = trl.S{
-				"en": fmt.Sprintf("%v. Redistribution<br>", i2),
-			}
-			gr.Desc = trl.S{
-				"en": "Current inequalities in OECD countries are not just a fairness issue but also detrimental for the growth potential. Governments should address these inequalities by more intense redistribution.",
-			}
-		}
-
-		// 17
-		{
-			names1stMatrix := []string{"rules"}
-			emptyRowLabels := []trl.S{}
-			gr := p.AddRadioMatrixGroup(labelsGoodBad19(), names1stMatrix, emptyRowLabels, 1)
-			gr.Cols = 9 // necessary, otherwise no vspacers
-			gr.OddRowsColoring = true
-			gr.Label = trl.S{
-				"en": fmt.Sprintf("%v. Fiscal Rules<br>", i2),
-			}
-			gr.Desc = trl.S{
-				"en": "Fiscal rules like the European Stability and Growth Pact constrain government on the size of the government deficit. Rules like this may not be perfectly effective but, in principle, they are helpful and support long-run economic stability.",
 			}
 		}
 

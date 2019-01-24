@@ -7,6 +7,10 @@
  			"roles": {
  				"admin": "yes"
  			},
+ 			"attrs": {
+ 				"country": "Sweden",
+ 				"height": "174"
+ 			},
  			"pass_initial": "Keep empty - have it set during startup - then call /logins-save",
  			"is_init_password": true
  		}

@@ -49,11 +49,11 @@ func ReloadH(w http.ResponseWriter, r *http.Request) {
 
 	userSurveyType := ""
 	userWaveID := ""
-	for role, val := range l.Roles {
-		if role == "survey_id" {
+	for attr, val := range l.Attrs {
+		if attr == "survey_id" {
 			userSurveyType = val
 		}
-		if role == "wave_id" {
+		if attr == "wave_id" {
 			userWaveID = val
 		}
 	}

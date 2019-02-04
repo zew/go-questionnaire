@@ -248,7 +248,7 @@ func GenerateH(w http.ResponseWriter, r *http.Request) {
 <html>
 <head>
     <meta charset="utf-8" />
-	<title>Direct Login</title>
+    <title>Direct Login</title>
 </head>
 <body>
 	<form method="post" action="{{.SelfURL}}"  style="margin: 50px;"  >
@@ -298,7 +298,7 @@ func GenerateH(w http.ResponseWriter, r *http.Request) {
 	fe.DirectLoginT = *d
 
 	for len(fe.Attrs) < 3+1 {
-		fe.Attrs = append(fe.Attrs, "")
+		fe.Attrs = append(fe.Attrs, "") // make room for attributes
 	}
 
 	// err := r.ParseForm()
@@ -430,9 +430,10 @@ func ValidateAndLogin(w http.ResponseWriter, r *http.Request) {
 	// fmt.Fprintf(w, "directly logged in as %v - ID %v\n", l.User, dl.Decimal())  // prevents redirect
 
 	for key := range r.Form {
-		// attrs=country:Sweden&attrs=height:176
 		if _, ok := lgn.ExplicitAttrs[key]; ok {
 			if key == "attrs" {
+				// same key - multiple values
+				// attrs=country:Sweden&attrs=height:176
 				for i := 0; i < len(r.Form[key]); i++ { // instead of val := r.Form.Get(key)
 					val := r.Form[key][i]
 					kv := strings.Split(val, ":")

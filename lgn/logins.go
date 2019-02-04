@@ -44,8 +44,9 @@ var uncheckedURLParams = map[string]interface{}{
 // upon login.
 // They serve as a property bag session
 var ExplicitAttrs = map[string]interface{}{
-	"survey_id": nil, "wave_id": nil,
-	"attrs": nil,
+	"survey_id": nil,
+	"wave_id":   nil,
+	"attrs":     nil, // general purpose - can occur several times - key:value
 }
 
 // LoginT must be exported, *not* because we need to pass a type to sessx.GetObject

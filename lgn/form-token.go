@@ -13,7 +13,7 @@ import (
 var tokenSaltNotWorking = GeneratePassword(22) // not interoperational between multiple instances of go-questionnaire, transferrer, generator
 
 // tok rounds time to hours
-// and computes a has from it
+// and computes a hash from it
 func tok(hoursOffset int) string {
 	hasher := md5.New()
 	io.WriteString(hasher, lgns.Salt)

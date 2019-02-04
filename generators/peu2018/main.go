@@ -143,7 +143,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		"pl": "Badanie na temat: Przyszłość Unii Europejskiej (UE)",
 	}
 
-	i2 := "[groupID]"
+	groupOrdinal := "[groupID]"
 
 	//
 	// Page Welcome
@@ -222,7 +222,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			"de": "Inwieweit stimmen Sie den folgenden Aufgaben zu?",
 			"en": "Do you approve the following proposals?",
 			"es": "¿En qué medida está de acuerdo con las siguientes competencias?",
-			// "fr": "Actuellement l’élargissement des compétences de l’UE dans certains domaines politiques est en débat. Approuvez-vous les propositions suivantes ?",
 			"fr": "Approuvez-vous les propositions suivantes ?",
 			"it": "In che misura si trova d’accordo con le seguenti affermazioni?",
 			"pl": "Wskaż, w jakim stopniu zgadzasz się z poniższymi stwierdzeniami?",
@@ -244,12 +243,12 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			gr.Cols = 9 // necessary, otherwise no vspacers
 			gr.OddRowsColoring = true
 			gr.Label = trl.S{
-				"de": fmt.Sprintf("%v. Energiepolitik<br>", i2),
-				"en": fmt.Sprintf("%v. Energy policy<br>", i2),
-				"es": fmt.Sprintf("%v. Política energética<br>", i2),
-				"fr": fmt.Sprintf("%v. Politique énergétique<br>", i2),
-				"it": fmt.Sprintf("%v. Politica energetica<br>", i2),
-				"pl": fmt.Sprintf("%v. Polityka energetyczna<br>", i2),
+				"de": fmt.Sprintf("%v. Energiepolitik<br>", groupOrdinal),
+				"en": fmt.Sprintf("%v. Energy policy<br>", groupOrdinal),
+				"es": fmt.Sprintf("%v. Política energética<br>", groupOrdinal),
+				"fr": fmt.Sprintf("%v. Politique énergétique<br>", groupOrdinal),
+				"it": fmt.Sprintf("%v. Politica energetica<br>", groupOrdinal),
+				"pl": fmt.Sprintf("%v. Polityka energetyczna<br>", groupOrdinal),
 			}
 			gr.Desc = trl.S{
 				"de": "Die EU sollte den Mitgliedstaaten verbindliche Vorgaben zum Energiemix machen dürfen (z.B. über den Anteil von erneuerbaren Energien, Kohle oder Kernenergie).",
@@ -269,12 +268,12 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			gr.Cols = 9 // necessary, otherwise no vspacers
 			gr.OddRowsColoring = true
 			gr.Label = trl.S{
-				"de": fmt.Sprintf("%v. Einwanderungspolitik<br>", i2),
-				"en": fmt.Sprintf("%v. Immigration policy<br>", i2),
-				"es": fmt.Sprintf("%v. Política migratoria<br>", i2),
-				"fr": fmt.Sprintf("%v. Politique d’immigration<br>", i2),
-				"it": fmt.Sprintf("%v. Immigrazione<br>", i2),
-				"pl": fmt.Sprintf("%v. Polityka imigracyjna<br>", i2),
+				"de": fmt.Sprintf("%v. Einwanderungspolitik<br>", groupOrdinal),
+				"en": fmt.Sprintf("%v. Immigration policy<br>", groupOrdinal),
+				"es": fmt.Sprintf("%v. Política migratoria<br>", groupOrdinal),
+				"fr": fmt.Sprintf("%v. Politique d’immigration<br>", groupOrdinal),
+				"it": fmt.Sprintf("%v. Immigrazione<br>", groupOrdinal),
+				"pl": fmt.Sprintf("%v. Polityka imigracyjna<br>", groupOrdinal),
 			}
 			gr.Desc = trl.S{
 				"de": "Die EU sollte eine stärkere Rolle in der Einwanderungspolitik erhalten (z.B. Aufnahmestandards festlegen oder über die Verteilung von Flüchtlingen entscheiden).",
@@ -294,12 +293,12 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			gr.Cols = 9 // necessary, otherwise no vspacers
 			gr.OddRowsColoring = true
 			gr.Label = trl.S{
-				"de": fmt.Sprintf("%v. Verteidigungspolitik<br>", i2),
-				"en": fmt.Sprintf("%v. Defence policy<br>", i2),
-				"es": fmt.Sprintf("%v. Política de defensa<br>", i2),
-				"fr": fmt.Sprintf("%v. Politique de défense<br>", i2),
-				"it": fmt.Sprintf("%v. Difesa<br>", i2),
-				"pl": fmt.Sprintf("%v. Polityka obronna<br>", i2),
+				"de": fmt.Sprintf("%v. Verteidigungspolitik<br>", groupOrdinal),
+				"en": fmt.Sprintf("%v. Defence policy<br>", groupOrdinal),
+				"es": fmt.Sprintf("%v. Política de defensa<br>", groupOrdinal),
+				"fr": fmt.Sprintf("%v. Politique de défense<br>", groupOrdinal),
+				"it": fmt.Sprintf("%v. Difesa<br>", groupOrdinal),
+				"pl": fmt.Sprintf("%v. Polityka obronna<br>", groupOrdinal),
 			}
 			gr.Desc = trl.S{
 				"de": "Eine unter dem Befehl der EU stehende und aus ihrem Haushalt finanzierte europäische Armee sollte Aufgaben der nationalen Streitkräfte für internationale Kriseneinsätze übernehmen.",
@@ -319,12 +318,12 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			gr.Cols = 9 // necessary, otherwise no vspacers
 			gr.OddRowsColoring = true
 			gr.Label = trl.S{
-				"de": fmt.Sprintf("%v. Lohnpolitik<br>", i2),
-				"en": fmt.Sprintf("%v. Wage policy<br>", i2),
-				"es": fmt.Sprintf("%v. Política salarial<br>", i2),
-				"fr": fmt.Sprintf("%v. Politique salariale<br>", i2),
-				"it": fmt.Sprintf("%v. Politica salariale<br>", i2),
-				"pl": fmt.Sprintf("%v. Polityka płacowa<br>", i2),
+				"de": fmt.Sprintf("%v. Lohnpolitik<br>", groupOrdinal),
+				"en": fmt.Sprintf("%v. Wage policy<br>", groupOrdinal),
+				"es": fmt.Sprintf("%v. Política salarial<br>", groupOrdinal),
+				"fr": fmt.Sprintf("%v. Politique salariale<br>", groupOrdinal),
+				"it": fmt.Sprintf("%v. Politica salariale<br>", groupOrdinal),
+				"pl": fmt.Sprintf("%v. Polityka płacowa<br>", groupOrdinal),
 			}
 			gr.Desc = trl.S{
 				"de": "Die EU sollte in der Lohnpolitik stärkere Eingriffsrechte erhalten (z.B. bezüglich der Höhe für allgemeine gesetzliche Mindestlöhne).",
@@ -344,12 +343,12 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			gr.Cols = 9 // necessary, otherwise no vspacers
 			gr.OddRowsColoring = true
 			gr.Label = trl.S{
-				"de": fmt.Sprintf("%v. Regeln des Arbeitsmarktes<br>", i2),
-				"en": fmt.Sprintf("%v. Labour market regulation<br>", i2),
-				"es": fmt.Sprintf("%v. Regulación del mercado laboral<br>", i2),
-				"fr": fmt.Sprintf("%v. Marché du travail<br>", i2),
-				"it": fmt.Sprintf("%v. Regolamentazione del mercato del lavoro<br>", i2),
-				"pl": fmt.Sprintf("%v. Zasady rynku pracy<br>", i2),
+				"de": fmt.Sprintf("%v. Regeln des Arbeitsmarktes<br>", groupOrdinal),
+				"en": fmt.Sprintf("%v. Labour market regulation<br>", groupOrdinal),
+				"es": fmt.Sprintf("%v. Regulación del mercado laboral<br>", groupOrdinal),
+				"fr": fmt.Sprintf("%v. Marché du travail<br>", groupOrdinal),
+				"it": fmt.Sprintf("%v. Regolamentazione del mercato del lavoro<br>", groupOrdinal),
+				"pl": fmt.Sprintf("%v. Zasady rynku pracy<br>", groupOrdinal),
 			}
 			gr.Desc = trl.S{
 				"de": "Die EU sollte den Mitgliedstaaten verbindliche Vorgaben zum Arbeitsmarkt machen dürfen (z.B. zur Ausgestaltung des Kündigungsschutzes oder von Zeitverträgen).",
@@ -369,12 +368,12 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			gr.Cols = 9 // necessary, otherwise no vspacers
 			gr.OddRowsColoring = true
 			gr.Label = trl.S{
-				"de": fmt.Sprintf("%v. EU-Steuer als neue Eigenmittelart<br>", i2),
-				"en": fmt.Sprintf("%v. EU tax as a new own resource<br>", i2),
-				"es": fmt.Sprintf("%v. Impuestos de la UE como nuevo recurso propio<br>", i2),
-				"fr": fmt.Sprintf("%v. Taxe commune pour participer au financement du budget européen.<br>", i2),
-				"it": fmt.Sprintf("%v. Imposte europee <br>", i2),
-				"pl": fmt.Sprintf("%v. Podatek unijny jako nowy rodzaj funduszy własnych<br>", i2),
+				"de": fmt.Sprintf("%v. EU-Steuer als neue Eigenmittelart<br>", groupOrdinal),
+				"en": fmt.Sprintf("%v. EU tax as a new own resource<br>", groupOrdinal),
+				"es": fmt.Sprintf("%v. Impuestos de la UE como nuevo recurso propio<br>", groupOrdinal),
+				"fr": fmt.Sprintf("%v. Taxe commune pour participer au financement du budget européen.<br>", groupOrdinal),
+				"it": fmt.Sprintf("%v. Imposte europee <br>", groupOrdinal),
+				"pl": fmt.Sprintf("%v. Podatek unijny jako nowy rodzaj funduszy własnych<br>", groupOrdinal),
 			}
 			gr.Desc = trl.S{
 				"de": "Es sollte eine neue steuerbasierte Eigenmittelart für den EU-Haushalt unter direkter Kontrolle der EU geben (z.B. eine EU-Steuer auf eine gemeinsame Körperschaftsteuer-Bemessungsgrundlage).",
@@ -394,12 +393,12 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			gr.Cols = 9 // necessary, otherwise no vspacers
 			gr.OddRowsColoring = true
 			gr.Label = trl.S{
-				"de": fmt.Sprintf("%v. Steuerpolitik<br>", i2),
-				"en": fmt.Sprintf("%v. Tax policy<br>", i2),
-				"es": fmt.Sprintf("%v. Política fiscal<br>", i2),
-				"fr": fmt.Sprintf("%v. Politique fiscale<br>", i2),
-				"it": fmt.Sprintf("%v. Tassazione<br>", i2),
-				"pl": fmt.Sprintf("%v. Polityka podatkowa<br>", i2),
+				"de": fmt.Sprintf("%v. Steuerpolitik<br>", groupOrdinal),
+				"en": fmt.Sprintf("%v. Tax policy<br>", groupOrdinal),
+				"es": fmt.Sprintf("%v. Política fiscal<br>", groupOrdinal),
+				"fr": fmt.Sprintf("%v. Politique fiscale<br>", groupOrdinal),
+				"it": fmt.Sprintf("%v. Tassazione<br>", groupOrdinal),
+				"pl": fmt.Sprintf("%v. Polityka podatkowa<br>", groupOrdinal),
 			}
 			gr.Desc = trl.S{
 				"de": "Der Rat der EU sollte mit qualifizierter Mehrheit anstelle von Einstimmigkeit über Steuern beschließen können (z.B. über verbindliche Ober- oder Untergrenzen für Unternehmenssteuern).",
@@ -419,12 +418,12 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			gr.Cols = 9 // necessary, otherwise no vspacers
 			gr.OddRowsColoring = true
 			gr.Label = trl.S{
-				"de": fmt.Sprintf("%v. Initiativrechte für das Europäische Parlament<br>", i2),
-				"en": fmt.Sprintf("%v. European Parliament and legislative initiative<br>", i2),
-				"es": fmt.Sprintf("%v. Derecho de iniciativa del Parlamento Europeo<br>", i2),
-				"fr": fmt.Sprintf("%v. Parlement européen et initiative législative<br>", i2),
-				"it": fmt.Sprintf("%v. Iniziativa legislative e Parlamento europeo <br>", i2),
-				"pl": fmt.Sprintf("%v. Prawo inicjatywy Parlamentu Europejskiego <br>", i2),
+				"de": fmt.Sprintf("%v. Initiativrechte für das Europäische Parlament<br>", groupOrdinal),
+				"en": fmt.Sprintf("%v. European Parliament and legislative initiative<br>", groupOrdinal),
+				"es": fmt.Sprintf("%v. Derecho de iniciativa del Parlamento Europeo<br>", groupOrdinal),
+				"fr": fmt.Sprintf("%v. Parlement européen et initiative législative<br>", groupOrdinal),
+				"it": fmt.Sprintf("%v. Iniziativa legislative e Parlamento europeo <br>", groupOrdinal),
+				"pl": fmt.Sprintf("%v. Prawo inicjatywy Parlamentu Europejskiego <br>", groupOrdinal),
 			}
 			gr.Desc = trl.S{
 				"de": "Das Europäische Parlament sollte das Recht erhalten, neue EU-Gesetze vorzuschlagen. Diese Gesetzesinitiative ist bisher der Europäischen Kommission vorbehalten.",
@@ -484,12 +483,12 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			gr.Cols = 9 // necessary, otherwise no vspacers
 			gr.OddRowsColoring = true
 			gr.Label = trl.S{
-				"de": fmt.Sprintf("%v. Höhere Investitionen <br>", i2),
-				"en": fmt.Sprintf("%v. Higher investment<br>", i2),
-				"es": fmt.Sprintf("%v. Mayores inversiones<br>", i2),
-				"fr": fmt.Sprintf("%v. Investissements plus élevés<br>", i2),
-				"it": fmt.Sprintf("%v. Investimenti pubblici<br>", i2),
-				"pl": fmt.Sprintf("%v. Wyższe inwestycje<br>", i2),
+				"de": fmt.Sprintf("%v. Höhere Investitionen <br>", groupOrdinal),
+				"en": fmt.Sprintf("%v. Higher investment<br>", groupOrdinal),
+				"es": fmt.Sprintf("%v. Mayores inversiones<br>", groupOrdinal),
+				"fr": fmt.Sprintf("%v. Investissements plus élevés<br>", groupOrdinal),
+				"it": fmt.Sprintf("%v. Investimenti pubblici<br>", groupOrdinal),
+				"pl": fmt.Sprintf("%v. Wyższe inwestycje<br>", groupOrdinal),
 			}
 			gr.Desc = trl.S{
 				"de": "Für ein höheres Wachstum der Eurozone ist es unverzichtbar, dass die Staaten der Eurozone ihre Ausgaben für Investitionen erhöhen.",
@@ -509,12 +508,12 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			gr.Cols = 9 // necessary, otherwise no vspacers
 			gr.OddRowsColoring = true
 			gr.Label = trl.S{
-				"de": fmt.Sprintf("%v. Flexiblere Arbeitsmärkte<br>", i2),
-				"en": fmt.Sprintf("%v. Flexible labour markets<br>", i2),
-				"es": fmt.Sprintf("%v. Mercados de trabajo más flexibles<br>", i2),
-				"fr": fmt.Sprintf("%v. Marché du travail plus flexible<br>", i2),
-				"it": fmt.Sprintf("%v. Mercato del lavoro flessibile<br>", i2),
-				"pl": fmt.Sprintf("%v. Elastyczniejsze rynki pracy<br>", i2),
+				"de": fmt.Sprintf("%v. Flexiblere Arbeitsmärkte<br>", groupOrdinal),
+				"en": fmt.Sprintf("%v. Flexible labour markets<br>", groupOrdinal),
+				"es": fmt.Sprintf("%v. Mercados de trabajo más flexibles<br>", groupOrdinal),
+				"fr": fmt.Sprintf("%v. Marché du travail plus flexible<br>", groupOrdinal),
+				"it": fmt.Sprintf("%v. Mercato del lavoro flessibile<br>", groupOrdinal),
+				"pl": fmt.Sprintf("%v. Elastyczniejsze rynki pracy<br>", groupOrdinal),
 			}
 			gr.Desc = trl.S{
 				"de": "Für ein höheres Wachstum der Eurozone ist es unverzichtbar, dass insbesondere die Staaten mit anhaltend hoher Arbeitslosigkeit ihre Arbeitsmärkte flexibler machen (z.B. durch eine Lockerung des Kündigungsschutzes oder eine Absenkung von gesetzlichen Mindestlöhnen).",
@@ -534,12 +533,12 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			gr.Cols = 9 // necessary, otherwise no vspacers
 			gr.OddRowsColoring = true
 			gr.Label = trl.S{
-				"de": fmt.Sprintf("%v. Europäische Arbeitslosenversicherung<br>", i2),
-				"en": fmt.Sprintf("%v. European unemployment insurance<br>", i2),
-				"es": fmt.Sprintf("%v. Seguro de desempleo europeo<br>", i2),
-				"fr": fmt.Sprintf("%v. Assurance chômage européenne <br>", i2),
-				"it": fmt.Sprintf("%v. Assicurazione europea contro la disoccupazione<br>", i2),
-				"pl": fmt.Sprintf("%v. Europejskie ubezpieczenie na wypadek bezrobocia <br>", i2),
+				"de": fmt.Sprintf("%v. Europäische Arbeitslosenversicherung<br>", groupOrdinal),
+				"en": fmt.Sprintf("%v. European unemployment insurance<br>", groupOrdinal),
+				"es": fmt.Sprintf("%v. Seguro de desempleo europeo<br>", groupOrdinal),
+				"fr": fmt.Sprintf("%v. Assurance chômage européenne <br>", groupOrdinal),
+				"it": fmt.Sprintf("%v. Assicurazione europea contro la disoccupazione<br>", groupOrdinal),
+				"pl": fmt.Sprintf("%v. Europejskie ubezpieczenie na wypadek bezrobocia <br>", groupOrdinal),
 			}
 			gr.Desc = trl.S{
 				"de": "Eine gemeinsame europäische Arbeitslosenversicherung sollte eingeführt werden, um Rezessionen in einzelnen Mitgliedsstaaten der Eurozone abzufedern.",
@@ -559,12 +558,12 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			gr.Cols = 9 // necessary, otherwise no vspacers
 			gr.OddRowsColoring = true
 			gr.Label = trl.S{
-				"de": fmt.Sprintf("%v. Eurobonds<br>", i2),
-				"en": fmt.Sprintf("%v. Eurobonds<br>", i2),
-				"es": fmt.Sprintf("%v. Eurobonos<br>", i2),
-				"fr": fmt.Sprintf("%v. Euro-obligations<br>", i2),
-				"it": fmt.Sprintf("%v. Eurobond<br>", i2),
-				"pl": fmt.Sprintf("%v. Euroobligacje<br>", i2),
+				"de": fmt.Sprintf("%v. Eurobonds<br>", groupOrdinal),
+				"en": fmt.Sprintf("%v. Eurobonds<br>", groupOrdinal),
+				"es": fmt.Sprintf("%v. Eurobonos<br>", groupOrdinal),
+				"fr": fmt.Sprintf("%v. Euro-obligations<br>", groupOrdinal),
+				"it": fmt.Sprintf("%v. Eurobond<br>", groupOrdinal),
+				"pl": fmt.Sprintf("%v. Euroobligacje<br>", groupOrdinal),
 			}
 			gr.Desc = trl.S{
 				"de": "Für Eurobonds haften alle Euro-Staaten gemeinsam und alle Euro-Staaten zahlen den gleichen Zins. Die EWU sollte Eurobonds ausgeben.",
@@ -584,12 +583,12 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			gr.Cols = 9 // necessary, otherwise no vspacers
 			gr.OddRowsColoring = true
 			gr.Label = trl.S{
-				"de": fmt.Sprintf("%v. Wertpapierkaufprogramm der EZB<br>", i2),
-				"en": fmt.Sprintf("%v. Asset purchase program of ECB<br>", i2),
-				"es": fmt.Sprintf("%v. Programa de compra de bonos del BCE<br>", i2),
-				"fr": fmt.Sprintf("%v. Achats d’emprunts par la BCE<br>", i2),
-				"it": fmt.Sprintf("%v. Programma di acquisti di attività finanziarie da parte della BCE<br>", i2),
-				"pl": fmt.Sprintf("%v. Program zakupu papierów wartościowych EBC<br>", i2),
+				"de": fmt.Sprintf("%v. Wertpapierkaufprogramm der EZB<br>", groupOrdinal),
+				"en": fmt.Sprintf("%v. Asset purchase program of ECB<br>", groupOrdinal),
+				"es": fmt.Sprintf("%v. Programa de compra de bonos del BCE<br>", groupOrdinal),
+				"fr": fmt.Sprintf("%v. Achats d’emprunts par la BCE<br>", groupOrdinal),
+				"it": fmt.Sprintf("%v. Programma di acquisti di attività finanziarie da parte della BCE<br>", groupOrdinal),
+				"pl": fmt.Sprintf("%v. Program zakupu papierów wartościowych EBC<br>", groupOrdinal),
 			}
 			gr.Desc = trl.S{
 				"de": "Die Europäische Zentralbank (EZB) hat in den zurückliegenden Jahren durch den Kauf von Staatsanleihen von Euro-Staaten eine sehr aktive Rolle gespielt. Diese starke Rolle der EZB sollte fortgesetzt werden.",
@@ -609,12 +608,12 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			gr.Cols = 9 // necessary, otherwise no vspacers
 			gr.OddRowsColoring = true
 			gr.Label = trl.S{
-				"de": fmt.Sprintf("%v. Stabilitäts- und Wachstumspakt (SWP)<br>", i2),
-				"en": fmt.Sprintf("%v. Stability and Growth Pact (SGP)<br>", i2),
-				"es": fmt.Sprintf("%v. Pacto de estabilidad y crecimiento<br>", i2),
-				"fr": fmt.Sprintf("%v. Pacte de Stabilité et de Croissance (PSC)<br>", i2),
-				"it": fmt.Sprintf("%v. Patto di Stabilità e Crescita (PSC)<br>", i2),
-				"pl": fmt.Sprintf("%v. Pakt na rzecz stabilności i wzrostu (PSW)<br>", i2),
+				"de": fmt.Sprintf("%v. Stabilitäts- und Wachstumspakt (SWP)<br>", groupOrdinal),
+				"en": fmt.Sprintf("%v. Stability and Growth Pact (SGP)<br>", groupOrdinal),
+				"es": fmt.Sprintf("%v. Pacto de estabilidad y crecimiento<br>", groupOrdinal),
+				"fr": fmt.Sprintf("%v. Pacte de Stabilité et de Croissance (PSC)<br>", groupOrdinal),
+				"it": fmt.Sprintf("%v. Patto di Stabilità e Crescita (PSC)<br>", groupOrdinal),
+				"pl": fmt.Sprintf("%v. Pakt na rzecz stabilności i wzrostu (PSW)<br>", groupOrdinal),
 			}
 			gr.Desc = trl.S{
 				"de": "Der SWP definiert Defizit- und Schuldengrenzen für EU-Mitgliedsstaaten. Der SWP schränkt die Fiskalpolitik der Mitgliedsstaaten unangemessen stark ein und sollte gelockert werden.",
@@ -634,12 +633,12 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			gr.Cols = 9 // necessary, otherwise no vspacers
 			gr.OddRowsColoring = true
 			gr.Label = trl.S{
-				"de": fmt.Sprintf("%v. Neue EWU-Institutionen<br>", i2),
-				"en": fmt.Sprintf("%v. New EMU institutions<br>", i2),
-				"es": fmt.Sprintf("%v. Nuevas instituciones de la UEM<br>", i2),
-				"fr": fmt.Sprintf("%v. Nouvelles institutions pour la zone euro<br>", i2),
-				"it": fmt.Sprintf("%v. Nuove istituzioni dell’UME<br>", i2),
-				"pl": fmt.Sprintf("%v. Nowe instytucje EUW<br>", i2),
+				"de": fmt.Sprintf("%v. Neue EWU-Institutionen<br>", groupOrdinal),
+				"en": fmt.Sprintf("%v. New EMU institutions<br>", groupOrdinal),
+				"es": fmt.Sprintf("%v. Nuevas instituciones de la UEM<br>", groupOrdinal),
+				"fr": fmt.Sprintf("%v. Nouvelles institutions pour la zone euro<br>", groupOrdinal),
+				"it": fmt.Sprintf("%v. Nuove istituzioni dell’UME<br>", groupOrdinal),
+				"pl": fmt.Sprintf("%v. Nowe instytucje EUW<br>", groupOrdinal),
 			}
 			gr.Desc = trl.S{
 				"de": "Für ein angemessenes Funktionieren benötigt die EWU neue Fiskalinstitutionen (z.B. ein Eurozonenbudget oder einen europäischen Finanzminister).",
@@ -659,12 +658,12 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			gr.Cols = 9 // necessary, otherwise no vspacers
 			gr.OddRowsColoring = true
 			gr.Label = trl.S{
-				"de": fmt.Sprintf("%v. Vollendung der Bankenunion<br>", i2),
-				"en": fmt.Sprintf("%v. Completion of Banking Union<br>", i2),
-				"es": fmt.Sprintf("%v. Culminación de la unión bancaria<br>", i2),
-				"fr": fmt.Sprintf("%v. Union bancaire<br>", i2),
-				"it": fmt.Sprintf("%v. Completamento dell’Unione Bancaria<br>", i2),
-				"pl": fmt.Sprintf("%v. Dokończenie budowy unii bankowej <br>", i2),
+				"de": fmt.Sprintf("%v. Vollendung der Bankenunion<br>", groupOrdinal),
+				"en": fmt.Sprintf("%v. Completion of Banking Union<br>", groupOrdinal),
+				"es": fmt.Sprintf("%v. Culminación de la unión bancaria<br>", groupOrdinal),
+				"fr": fmt.Sprintf("%v. Union bancaire<br>", groupOrdinal),
+				"it": fmt.Sprintf("%v. Completamento dell’Unione Bancaria<br>", groupOrdinal),
+				"pl": fmt.Sprintf("%v. Dokończenie budowy unii bankowej <br>", groupOrdinal),
 			}
 			gr.Desc = trl.S{
 				"de": "Für ein angemessenes Funktionieren sollte die europäische Bankenunion durch die Europäische Einlagensicherung (European Deposit Insurance System: EDIS) vollendet werden.",
@@ -824,5 +823,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 	(&q).Hyphenize()
 	(&q).ComputeMaxGroups()
+	if err := (&q).TranslationCompleteness(); err != nil {
+		return &q, err
+	}
 	return &q, nil
 }

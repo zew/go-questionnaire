@@ -1030,6 +1030,9 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	}
 	q.Hyphenize()
 	q.ComputeMaxGroups()
+	if err := (&q).TranslationCompleteness(); err != nil {
+		return &q, err
+	}
 
 	return &q, nil
 }

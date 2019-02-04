@@ -284,6 +284,7 @@ func LoginByHash(w http.ResponseWriter, r *http.Request) (bool, error) {
 	}
 
 	for key := range r.Form {
+		// same key - multiple values
 		// attrs=country:Sweden&attrs=height:176
 		if _, ok := ExplicitAttrs[key]; ok {
 			if key == "attrs" {

@@ -102,7 +102,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	q := qst.QuestionnaireT{}
 	q.Survey = qst.NewSurvey("aik")
 	q.Survey.Params = params
-	q.Variations = 4
+	q.Variations = 0
 
 	q.LangCodes = map[string]string{
 		"en": "English",
@@ -119,7 +119,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		"en": "Macro Policy Survey",
 	}
 
-	i2 := "[groupID]"
+	groupOrdinal := "[groupID]"
 
 	//
 	// Page 1
@@ -150,7 +150,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			gr.Cols = 9 // necessary, otherwise no vspacers
 			gr.OddRowsColoring = true
 			gr.Label = trl.S{
-				"en": fmt.Sprintf("%v. Appropriate monetary policy stance – European Central Bank<br>", i2),
+				"en": fmt.Sprintf("%v. Appropriate monetary policy stance – European Central Bank<br>", groupOrdinal),
 			}
 			gr.Desc = trl.S{
 				"en": "The European Central Bank should take its time to normalize its interest rates. There is no need to increase central bank rates in Europe before the year 2020.",
@@ -165,7 +165,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			gr.Cols = 9 // necessary, otherwise no vspacers
 			gr.OddRowsColoring = true
 			gr.Label = trl.S{
-				"en": fmt.Sprintf("%v. Appropriate monetary policy stance – US Federal Reserve<br>", i2),
+				"en": fmt.Sprintf("%v. Appropriate monetary policy stance – US Federal Reserve<br>", groupOrdinal),
 			}
 			gr.Desc = trl.S{
 				// "en": "The EU should get a stronger role in immigration policy (e.g. decisions over admission standards or allocation of refugees).",
@@ -181,7 +181,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			gr.Cols = 9 // necessary, otherwise no vspacers
 			gr.OddRowsColoring = true
 			gr.Label = trl.S{
-				"en": fmt.Sprintf("%v. Appropriate fiscal policy stance<br>", i2),
+				"en": fmt.Sprintf("%v. Appropriate fiscal policy stance<br>", groupOrdinal),
 			}
 			gr.Desc = trl.S{
 				"en": "Overall, the current economic situation in industrial countries allows more fiscal consolidation. OECD countries should consolidate more and try to reduce government debt. ",
@@ -196,7 +196,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			gr.Cols = 9 // necessary, otherwise no vspacers
 			gr.OddRowsColoring = true
 			gr.Label = trl.S{
-				"en": fmt.Sprintf("%v. Need for privatization<br>", i2),
+				"en": fmt.Sprintf("%v. Need for privatization<br>", groupOrdinal),
 			}
 			gr.Desc = trl.S{
 				"en": "In general, the large involvement of governments in market activities still impairs the growth potential of industrial countries. Privatization should be one of the priorities in strategies to boost the growth potential in OECD countries.",
@@ -211,7 +211,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			gr.Cols = 9 // necessary, otherwise no vspacers
 			gr.OddRowsColoring = true
 			gr.Label = trl.S{
-				"en": fmt.Sprintf("%v. Extent of labor market regulation<br>", i2),
+				"en": fmt.Sprintf("%v. Extent of labor market regulation<br>", groupOrdinal),
 			}
 			gr.Desc = trl.S{
 				"en": "High long-run unemployment in some OECD countries largely reflects an excessive level of labor market regulation. In order to reduce this unemployment, countries would have to deregulate labor markets.",
@@ -226,7 +226,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			gr.Cols = 9 // necessary, otherwise no vspacers
 			gr.OddRowsColoring = true
 			gr.Label = trl.S{
-				"en": fmt.Sprintf("%v. Redistribution<br>", i2),
+				"en": fmt.Sprintf("%v. Redistribution<br>", groupOrdinal),
 			}
 			gr.Desc = trl.S{
 				"en": "Current inequalities in OECD countries are not just a fairness issue but also detrimental for the growth potential. Governments should address these inequalities by more intense redistribution.",
@@ -241,7 +241,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			gr.Cols = 9 // necessary, otherwise no vspacers
 			gr.OddRowsColoring = true
 			gr.Label = trl.S{
-				"en": fmt.Sprintf("%v. Fiscal Rules<br>", i2),
+				"en": fmt.Sprintf("%v. Fiscal Rules<br>", groupOrdinal),
 			}
 			gr.Desc = trl.S{
 				"en": "Fiscal rules like the European Stability and Growth Pact constrain government on the size of the government deficit. Rules like this may not be perfectly effective but, in principle, they are helpful and support long-run economic stability.",
@@ -318,5 +318,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 	(&q).Hyphenize()
 	(&q).ComputeMaxGroups()
+	if err := (&q).TranslationCompleteness(); err != nil {
+		return &q, err
+	}
 	return &q, nil
 }

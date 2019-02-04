@@ -465,7 +465,7 @@ type QuestionnaireT struct {
 	MD5         string    `json:"md_5,omitempty"`
 
 	// LangCode and LangCodes are imposed from cfg.LangCodes via session."lang_code"
-	LangCodes      map[string]string `json:"lang_codes,omitempty"`       // all possible lang codes - i.e. en, de
+	LangCodes      map[string]string `json:"lang_codes,omitempty"`       // all possible lang codes - i.e. en - English, de - Deutsch
 	LangCodesOrder []string          `json:"lang_codes_order,omitempty"` // en, de   -  or   - de, en
 	LangCode       string            `json:"lang_code,omitempty"`        // default lang code - and current lang code - i.e. de
 
@@ -593,8 +593,7 @@ func (q *QuestionnaireT) PageHTML(idx int) (string, error) {
 	b.WriteString(vspacer16)
 
 	sh := shuffler.New(q.UserID, q.Variations, len(p.Groups))
-	// FIXME: Subtract 1 can be removed after peu2018 survey is finished.
-	order := sh.Slice(idx - 1) // an ex post correction for peu2018, since we inserted another page before
+	order := sh.Slice(idx)
 	log.Printf("Return order %+v; cut to %v", order, len(q.Pages)-1)
 
 	for loopIdx, i := range order {

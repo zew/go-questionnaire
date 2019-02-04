@@ -19,6 +19,83 @@ func Mustaz09Underscore(s string) bool {
 	return true
 }
 
+// Either no transation - or all lcs must be set
+func plausibleTranslation(key string, s trl.S, lcs map[string]string) error {
+
+	if !s.Set() {
+		// log.Printf("%-20v completely empty for %v", key, lcs)
+		return nil
+	}
+
+	allElementsEmpty := true
+	for lc := range lcs {
+		if strings.TrimSpace(s[lc]) != "" {
+			allElementsEmpty = false
+			break
+		}
+	}
+
+	if allElementsEmpty {
+		// log.Printf("%-20v has only empty strings for %v", key, lcs)
+		return nil
+	}
+
+	for lc := range lcs {
+		if strings.TrimSpace(s[lc]) == "" {
+			return fmt.Errorf("%-20v translation for %v is missing (%v)", key, lc, s.String())
+		}
+		// log.Printf("%-20v - %10v - %v", key, lc, strings.TrimSpace(s[lc]))
+	}
+
+	// log.Printf("%-20v - all translations set for %v", key, lcs)
+	return nil
+
+}
+
+// TranslationCompleteness tests all multilanguage strings for completeness.
+func (q *QuestionnaireT) TranslationCompleteness() error {
+	for i1 := 0; i1 < len(q.Pages); i1++ {
+		if err := plausibleTranslation(fmt.Sprintf("page%v_sect", i1), q.Pages[i1].Section, q.LangCodes); err != nil {
+			log.Print(err)
+			return err
+		}
+		if err := plausibleTranslation(fmt.Sprintf("page%v_lbl", i1), q.Pages[i1].Label, q.LangCodes); err != nil {
+			log.Print(err)
+			return err
+		}
+		if err := plausibleTranslation(fmt.Sprintf("page%v_desc", i1), q.Pages[i1].Desc, q.LangCodes); err != nil {
+			log.Print(err)
+			return err
+		}
+		if err := plausibleTranslation(fmt.Sprintf("page%v_short", i1), q.Pages[i1].Short, q.LangCodes); err != nil {
+			log.Print(err)
+			return err
+		}
+
+		for i2 := 0; i2 < len(q.Pages[i1].Groups); i2++ {
+			if err := plausibleTranslation(fmt.Sprintf("page%v_grp%v_lbl", i1, i2), q.Pages[i1].Groups[i2].Label, q.LangCodes); err != nil {
+				log.Print(err)
+				return err
+			}
+			if err := plausibleTranslation(fmt.Sprintf("page%v_grp%v_desc", i1, i2), q.Pages[i1].Groups[i2].Desc, q.LangCodes); err != nil {
+				log.Print(err)
+				return err
+			}
+			for i3 := 0; i3 < len(q.Pages[i1].Groups[i2].Inputs); i3++ {
+				if err := plausibleTranslation(fmt.Sprintf("page%v_grp%v_inp%v_lbl", i1, i2, i3), q.Pages[i1].Groups[i2].Inputs[i3].Label, q.LangCodes); err != nil {
+					log.Print(err)
+					return err
+				}
+				if err := plausibleTranslation(fmt.Sprintf("page%v_grp%v_inp%v_desc", i1, i2, i3), q.Pages[i1].Groups[i2].Inputs[i3].Desc, q.LangCodes); err != nil {
+					log.Print(err)
+					return err
+				}
+			}
+		}
+	}
+	return nil
+}
+
 // Validate checks whether essential elements of the questionnaire exist.
 func (q *QuestionnaireT) Validate() error {
 
@@ -45,6 +122,10 @@ func (q *QuestionnaireT) Validate() error {
 			log.Printf(s)
 			return fmt.Errorf(s)
 		}
+	}
+
+	if err := q.TranslationCompleteness(); err != nil {
+		return err
 	}
 
 	navigationalNum := 0

@@ -453,29 +453,27 @@ func GenerateHashesH(w http.ResponseWriter, r *http.Request) {
 
 		checkStr := fmt.Sprintf("%v-%v-%v-%v", fe.SurveyID, i, fe.WaveID, lgns.Salt)
 		hsh := Md5Str([]byte(checkStr))
-		url := fmt.Sprintf("%v?u=%v&survey_id=%v&wave_id=%v&h=%v", cfg.PrefWTS(), i, fe.SurveyID, fe.WaveID, hsh)
 
+		queryString := fmt.Sprintf("u=%v&survey_id=%v&wave_id=%v&h=%v", i, fe.SurveyID, fe.WaveID, hsh)
 		if fe.LangCode != "" {
-			url += "&lang_code=" + fe.LangCode
+			queryString += "&lang_code=" + fe.LangCode
 		}
-
 		for _, attr := range fe.Attrs {
 			if attr != "" {
-				url += "&attrs=" + attr
+				queryString += "&attrs=" + attr
 			}
 		}
+
+		url := fmt.Sprintf("%v?%v", cfg.PrefWTS(), queryString)
 
 		fmt.Fprintf(b1, "<a href='%v'  target='_blank' >login as user %4v<a> ", url, i)
 		fmt.Fprintf(b2, "%4v\t\t%v\n", i, url)
 
 		fmt.Fprint(b1, " &nbsp; &nbsp; &nbsp; &nbsp; ")
 
-		url2 := fmt.Sprintf(
-			"%v?u=%v&survey_id=%v&wave_id=%v&h=%v",
-			cfg.PrefWTS("reload-from-questionnaire-template"), i, fe.SurveyID, fe.WaveID, hsh,
-		)
-		fmt.Fprintf(b1, "<a href='%v'  target='_blank' >reload from template<a>", url2)
+		url2 := fmt.Sprintf("%v?&%v", cfg.PrefWTS("reload-from-questionnaire-template"), queryString)
 
+		fmt.Fprintf(b1, "<a href='%v'  target='_blank' >reload from template<a>", url2)
 		fmt.Fprint(b1, "<br>")
 	}
 

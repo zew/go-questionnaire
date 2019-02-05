@@ -70,8 +70,8 @@ type inputT struct {
 	DynamicFunc string `json:"dynamic_func,omitempty"` // Refers to dynFuncs, for type == 'dynamic'
 }
 
-// Returns an input filled in with globally enumerated label, decription etc.
-func newInputUnused() inputT {
+// NewInput returns an input filled in with globally enumerated label, decription etc.
+func NewInput() inputT {
 	cntr := ctr.Increment()
 	t := inputT{
 		Name:  fmt.Sprintf("input_%v", cntr),
@@ -326,6 +326,15 @@ func (gr *groupT) AddInput() *inputT {
 	gr.Inputs = append(gr.Inputs, i)
 	ret := gr.Inputs[len(gr.Inputs)-1]
 	return ret
+}
+
+// ReorderInputs changes order
+func (gr *groupT) ReorderInputs(newOrder []int) {
+	new := []*inputT{}
+	for _, newIdx := range newOrder {
+		new = append(new, gr.Inputs[newIdx])
+	}
+	gr.Inputs = new
 }
 
 // TableOpen creates a table markup with various CSS parameters
@@ -612,7 +621,8 @@ func (q *QuestionnaireT) PageHTML(idx int) (string, error) {
 
 	ret := b.String()
 
-	// [attr-country] => Latvia
+	// Inject user data into HTML text
+	// i.e. [attr-country] => Latvia
 	for k, v := range q.Attrs {
 		k1 := fmt.Sprintf("[attr-%v]", strings.ToLower(k))
 		ret = strings.Replace(ret, k1, v, -1)

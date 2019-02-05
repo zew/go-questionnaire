@@ -6,6 +6,7 @@ import (
 	"time"
 
 	"github.com/zew/go-questionnaire/cfg"
+	"github.com/zew/go-questionnaire/trl"
 )
 
 type dynFuncT func(*QuestionnaireT) (string, error)
@@ -13,6 +14,7 @@ type dynFuncT func(*QuestionnaireT) (string, error)
 var dynFuncs = map[string]dynFuncT{
 	"RepsonseStatistics": RepsonseStatistics,
 	"PersonalLink":       PersonalLink,
+	"HasEuroQuestion":    ResponseTextHasEuro,
 }
 
 // Statistics returns the percentage of
@@ -71,4 +73,44 @@ func PersonalLink(q *QuestionnaireT) (string, error) {
 	}
 	log.Printf("PersonalLink: closed is %v", closed)
 	return ret, nil
+}
+
+// ResponseTextHasEuro yields texts => want to keep € - want to have €
+func ResponseTextHasEuro(q *QuestionnaireT) (string, error) {
+
+	i0 := q.Attrs["euro-member"]
+	i1 := q.Attrs["country"]
+
+	hl := trl.S{
+		"de": "Wirtschaftlicher Nutzen des Euro<br>",
+		"en": "Economic benefits of euro<br>",
+		"fr": "Avantages économiques de l'euro<br>",
+		"it": "Benefici economici dell'Euro<br>",
+	}
+	desc := ""
+	ret := ""
+
+	if i0 == "yes" {
+		s1 := trl.S{
+			"de": fmt.Sprintf("Den Euro in %v als die offizielle Währung zu haben, ist wirtschaftlich vorteilhaft.", i1),
+			"en": fmt.Sprintf("Having the euro in %v as the official currency is economically beneficial.", i1),
+			"fr": fmt.Sprintf("Avoir l'euro dans %v comme monnaie officielle est économiquement avantageux.", i1),
+			"it": fmt.Sprintf("Avere l'Euro come valuta ufficiale nel %v è economicamente vantaggioso.", i1),
+		}
+		desc = s1[q.LangCode]
+
+	} else {
+		s1 := trl.S{
+			"de": fmt.Sprintf("Den Euro in %v als offizielle Währung einzuführen, wäre wirtschaftlich vorteilhaft. ", i1),
+			"en": fmt.Sprintf("Introducing the euro in %v as the official currency would be economically beneficial.", i1),
+			"fr": fmt.Sprintf("L'introduction de l'euro dans %v en tant que monnaie officielle serait économiquement avantageuse.", i1),
+			"it": fmt.Sprintf("Introdurre l'Euro come valuta ufficiale nel %v sarebbe economicamente vantaggioso.", i1),
+		}
+		desc = s1[q.LangCode]
+	}
+
+	ret = fmt.Sprintf("<b> %v </b> %v", hl[q.LangCode], desc)
+
+	return ret, nil
+
 }

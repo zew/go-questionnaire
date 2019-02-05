@@ -1,8 +1,6 @@
 package strube
 
 import (
-	"fmt"
-
 	"github.com/zew/go-questionnaire/cfg"
 	"github.com/zew/go-questionnaire/qst"
 	"github.com/zew/go-questionnaire/trl"
@@ -113,8 +111,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	}
 
 	i1 := "[attr-country]"
-	i2 := "[attr2]"
-	_ = i2
+	i2 := "[attr-has-euro]"
+	_, _ = i1, i2
 
 	//
 	// Page 1
@@ -150,23 +148,37 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 		// 11
 		{
+
+			// gr := p.AddGroup()
+			// inp := q.NewInput()
+
+			//
 			names1stMatrix := []string{"benefit"}
 			emptyRowLabels := []trl.S{}
 			gr := p.AddRadioMatrixGroup(labelsGoodBad19(), names1stMatrix, emptyRowLabels, 1)
 			gr.Cols = 9 // necessary, otherwise no vspacers
-			gr.OddRowsColoring = true
-			gr.Label = trl.S{
-				"de": "Wirtschaftlicher Nutzen des Euro<br>",
-				"en": "Economic benefits of euro<br>",
-				"fr": "Avantages économiques de l'euro<br>",
-				"it": "Benefici economici dell'Euro<br>",
-			}
-			gr.Desc = trl.S{
-				"de": fmt.Sprintf("Den Euro in %v als die offizielle Währung zu haben, ist wirtschaftlich vorteilhaft.", i1),
-				"en": fmt.Sprintf("Having the euro in %v as the official currency is economically beneficial.", i1),
-				"fr": fmt.Sprintf("Avoir l'euro dans %v comme monnaie officielle est économiquement avantageux.", i1),
-				"it": fmt.Sprintf("Avere l'Euro come valuta ufficiale nel %v è economicamente vantaggioso.", i1),
-			}
+			// gr.OddRowsColoring = true
+			// gr.Label = trl.S{
+			// 	"de": "Wirtschaftlicher Nutzen des Euro<br>",
+			// 	"en": "Economic benefits of euro<br>",
+			// 	"fr": "Avantages économiques de l'euro<br>",
+			// 	"it": "Benefici economici dell'Euro<br>",
+			// }
+			// gr.Desc = trl.S{
+			// 	"de": fmt.Sprintf("Den Euro in %v als die offizielle Währung zu haben, ist wirtschaftlich vorteilhaft.", i1),
+			// 	"en": fmt.Sprintf("Having the euro in %v as the official currency is economically beneficial.", i1),
+			// 	"fr": fmt.Sprintf("Avoir l'euro dans %v comme monnaie officielle est économiquement avantageux.", i1),
+			// 	"it": fmt.Sprintf("Avere l'Euro come valuta ufficiale nel %v è economicamente vantaggioso.", i1),
+			// }
+
+			inp := gr.AddInput()
+			inp.Type = "dynamic"
+			inp.DynamicFunc = "HasEuroQuestion"
+			inp.ColSpanLabel = 8
+			inp.ColSpanControl = 1
+
+			gr.ReorderInputs([]int{10, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9})
+
 		}
 
 		// 12
@@ -190,6 +202,82 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			}
 		}
 
+	}
+
+	//
+	// Page 2
+	{
+
+		p := q.AddPage()
+		// p.NoNavigation = true
+		p.Width = 70
+		p.Section = trl.S{
+			"de": "Zur Aufgaben- und Kompetenzverteilung in Europa",
+			"en": "EU competencies",
+			"fr": "Répartition des missions et des compétences en Europe",
+			"it": "Competenze dell'Unione europea (UE). È d'accordo con le seguenti affermazioni?",
+		}
+		p.Label = trl.S{
+			"de": "",
+			"en": "",
+			"fr": "",
+			"it": "",
+		}
+		p.Desc = trl.S{
+			"de": "",
+			"en": "",
+			"fr": "",
+			"it": "",
+		}
+		p.Short = trl.S{
+			"de": "Aufgaben- und Kompetenzverteilung",
+			"en": "EU competencies",
+			"fr": "Répartition des compétences",
+			"it": "Competenze UE",
+		}
+
+		// 21
+		{
+			names1stMatrix := []string{"tax"}
+			emptyRowLabels := []trl.S{}
+			gr := p.AddRadioMatrixGroup(labelsGoodBad19(), names1stMatrix, emptyRowLabels, 1)
+			gr.Cols = 9 // necessary, otherwise no vspacers
+			gr.OddRowsColoring = true
+			gr.Label = trl.S{
+				"de": "Steuerpolitik<br>",
+				"en": "Tax policy<br>",
+				"fr": "Politique fiscale<br>",
+				"it": "Tassazione<br>",
+			}
+			gr.Desc = trl.S{
+				"de": "Der Rat der EU sollte mit qualifizierter Mehrheit anstelle von Einstimmigkeit über Steuern beschließen können (z.B. über verbindliche Ober- oder Untergrenzen für Unternehmenssteuern).",
+				"en": "The European Council should be able to vote on tax issues with a qualified majority instead of una-nimity (e.g. common caps or floors for corporate taxes binding for member states).",
+				"fr": "Le Conseil européen devrait pouvoir statuer avec une majorité qualifiée sur les impôts perçus dans les États membres (par exemple sur des taux planchers et plafonds de l’impôt sur les Sociétés).",
+				"it": "Il Consiglio europeo dovrebbe poter votare su questioni tributarie a maggioranza qualificata invece che all’unanimità (ad esempio su limiti massimi e minimi per le imposte sulle aziende comuni a tutti gli Stati membri).",
+			}
+		}
+
+		// 22
+		{
+			names1stMatrix := []string{"redist"}
+			emptyRowLabels := []trl.S{}
+			gr := p.AddRadioMatrixGroup(labelsGoodBad19(), names1stMatrix, emptyRowLabels, 1)
+			gr.Cols = 9 // necessary, otherwise no vspacers
+			gr.OddRowsColoring = true
+			gr.Label = trl.S{
+				"de": "Umverteilung<br>",
+				"en": "Redistribution<br>",
+				"fr": "Redistribution des revenus<br>",
+				"it": "Ridistribuzione<br>",
+			}
+			gr.Desc = trl.S{
+				"de": "Es sollte mehr Umverteilung von reichen zu armen EU-Mitgliedstaaten geben.",
+				"en": "There should be more redistribution from richer to poorer EU member states.",
+				"fr": "Il devrait y avoir davantage de redistribution des États membres de l'UE les plus riches vers les plus pauvres.",
+				"it": "Ci dovrebbe essere maggiore ridistribuzione di risorse dagli Stati membri più ricchi a quelli più po-veri dell'UE.",
+			}
+		}
+
 		{
 			gr := p.AddGroup()
 			gr.Cols = 1
@@ -198,7 +286,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp := gr.AddInput()
 				inp.Type = "button"
 				inp.Name = "submitBtn"
-				inp.Response = "1"
+				inp.Response = "2"
 				inp.Label = cfg.Get().Mp["next"]
 				inp.AccessKey = "n"
 				inp.ColSpanControl = 1

@@ -231,6 +231,9 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 		log.Printf("empty lang_code set to userID lang_code or quest.Default '%v' - and saved to session", q.LangCode)
 	}
 
+	// Login attributes => questionaire attributes
+	q.Attrs = l.Attrs
+
 	//
 	// Page logic
 	//

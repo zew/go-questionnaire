@@ -456,13 +456,14 @@ func (p *pageT) AddGroup() *groupT {
 
 // QuestionnaireT contains pages with groups with inputs
 type QuestionnaireT struct {
-	Survey      surveyT   `json:"survey,omitempty"`
-	UserID      string    `json:"user_id,omitempty"`      // participant ID, decimal, but string, i.E. 1011
-	ClosingTime time.Time `json:"closing_time,omitempty"` // truncated to second
-	RemoteIP    string    `json:"remote_ip,omitempty"`
-	UserAgent   string    `json:"user_agent,omitempty"`
-	Mobile      int       `json:"mobile,omitempty"` // 0 - no preference, 1 - desktop, 2 - mobile
-	MD5         string    `json:"md_5,omitempty"`
+	Survey      surveyT           `json:"survey,omitempty"`
+	UserID      string            `json:"user_id,omitempty"`      // participant ID, decimal, but string, i.E. 1011
+	Attrs       map[string]string `json:"user_attrs,omitempty"`   // i.e. user country or euro-member - taken from lgn.LoginT
+	ClosingTime time.Time         `json:"closing_time,omitempty"` // truncated to second
+	RemoteIP    string            `json:"remote_ip,omitempty"`
+	UserAgent   string            `json:"user_agent,omitempty"`
+	Mobile      int               `json:"mobile,omitempty"` // 0 - no preference, 1 - desktop, 2 - mobile
+	MD5         string            `json:"md_5,omitempty"`
 
 	// LangCode and LangCodes are imposed from cfg.LangCodes via session."lang_code"
 	LangCodes      map[string]string `json:"lang_codes,omitempty"`       // all possible lang codes - i.e. en - English, de - Deutsch
@@ -609,7 +610,15 @@ func (q *QuestionnaireT) PageHTML(idx int) (string, error) {
 
 	b.WriteString("</div> <!-- width -->")
 
-	return b.String(), nil
+	ret := b.String()
+
+	// [attr-country] => Latvia
+	for k, v := range q.Attrs {
+		k1 := fmt.Sprintf("[attr-%v]", strings.ToLower(k))
+		ret = strings.Replace(ret, k1, v, -1)
+	}
+
+	return ret, nil
 }
 
 // next page to be shown in navigation

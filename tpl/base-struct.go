@@ -41,19 +41,30 @@ func (t TplDataT) DefaultLangCode() string {
 	return cfg.Get().LangCodes[0]
 }
 
-// LanguageChooser renders a HTML language chooser
+// LanguageChooser renders unspecific languages
+// taken from app instance config
+func (t TplDataT) LanguageChooser(uri string, curr ...string) string {
+	lcs := cfg.Get().LangCodes
+	return t.LanguageChooserExplicit(lcs, uri, curr...)
+}
+
+// LanguageChooserExplicit renders a HTML language chooser
 // If no current language is specified,
 // then the default language is chosen.
 // The URI is supposed to contain the app url prefix
-func (t TplDataT) LanguageChooser(uri string, curr ...string) string {
+func (t TplDataT) LanguageChooserExplicit(lcs []string, uri string, curr ...string) string {
 
-	currCode := cfg.Get().LangCodes[0]
+	if lcs == nil {
+		lcs = cfg.Get().LangCodes // necessary; member q might exist, but be nil
+	}
+
+	currCode := lcs[0]
 	if len(curr) > 0 {
 		currCode = curr[0]
 	}
 
 	s := []string{}
-	for _, key := range cfg.Get().LangCodes {
+	for _, key := range lcs {
 		keyCap := strings.Title(key)
 		if key == currCode {
 			s = append(s, fmt.Sprintf("<b           title='%v'>%v</b>\n", key, keyCap))
@@ -63,4 +74,5 @@ func (t TplDataT) LanguageChooser(uri string, curr ...string) string {
 		}
 	}
 	return strings.Join(s, "  |  ")
+
 }

@@ -81,7 +81,13 @@
 		<div style='float: right; padding-right: 40px;'>
 			<a class="imprint"  href="{{prefix "/doc/site-imprint.md" }}">{{.Trls.imprint.Tr $lc}}</a>  
 			&nbsp; &nbsp; &nbsp; &nbsp;
-			{{toHtml (.LanguageChooser .Sess.ReqURI  $lc)}}
+
+			{{if exists . "Q"}}
+				{{toHtml (.LanguageChooserExplicit .Q.LangCodesOrder .Sess.ReqURI  $lc)}}
+			{{else}}
+				{{toHtml (.LanguageChooser                           .Sess.ReqURI  $lc)}}
+			{{end}}
+
 		</div>	
 	</div>
 

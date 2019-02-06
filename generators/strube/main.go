@@ -81,7 +81,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	q := qst.QuestionnaireT{}
 	q.Survey = qst.NewSurvey("strube")
 	q.Survey.Params = params
-	// q.Variations = 4
+	q.Variations = 0 // attention => shuffles submit buttons if > 0
 
 	q.LangCodes = map[string]string{
 		"de": "Deutsch",
@@ -148,36 +148,20 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 		// 11
 		{
-
-			// gr := p.AddGroup()
-			// inp := q.NewInput()
-
-			//
-			names1stMatrix := []string{"benefit"}
-			emptyRowLabels := []trl.S{}
-			gr := p.AddRadioMatrixGroup(labelsGoodBad19(), names1stMatrix, emptyRowLabels, 1)
-			gr.Cols = 9 // necessary, otherwise no vspacers
-			// gr.OddRowsColoring = true
-			// gr.Label = trl.S{
-			// 	"de": "Wirtschaftlicher Nutzen des Euro<br>",
-			// 	"en": "Economic benefits of euro<br>",
-			// 	"fr": "Avantages économiques de l'euro<br>",
-			// 	"it": "Benefici economici dell'Euro<br>",
-			// }
-			// gr.Desc = trl.S{
-			// 	"de": fmt.Sprintf("Den Euro in %v als die offizielle Währung zu haben, ist wirtschaftlich vorteilhaft.", i1),
-			// 	"en": fmt.Sprintf("Having the euro in %v as the official currency is economically beneficial.", i1),
-			// 	"fr": fmt.Sprintf("Avoir l'euro dans %v comme monnaie officielle est économiquement avantageux.", i1),
-			// 	"it": fmt.Sprintf("Avere l'Euro come valuta ufficiale nel %v è economicamente vantaggioso.", i1),
-			// }
-
+			// Dynamic header for following headless radio matrix
+			gr := p.AddGroup()
+			gr.BottomVSpacers = 0
 			inp := gr.AddInput()
 			inp.Type = "dynamic"
 			inp.DynamicFunc = "HasEuroQuestion"
-			inp.ColSpanLabel = 8
-			inp.ColSpanControl = 1
-
-			gr.ReorderInputs([]int{10, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9})
+		}
+		{
+			// Headless radio matrix
+			names1stMatrix := []string{"benefit"}
+			emptyRowLabels := []trl.S{}
+			gr2 := p.AddRadioMatrixGroup(labelsGoodBad19(), names1stMatrix, emptyRowLabels, 1)
+			gr2.Cols = 9 // necessary, otherwise no vspacers
+			gr2.OddRowsColoring = true
 
 		}
 

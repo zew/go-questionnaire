@@ -298,9 +298,10 @@ func (i inputT) HTML(langCode string, numCols int) string {
 // A group is a layout unit with a configurable number of columns.
 type groupT struct {
 	// Name  string
-	Label               trl.S `json:"label,omitempty"`
-	Desc                trl.S `json:"description,omitempty"`
-	GroupHeaderVSpacers int   `json:"bottom_half_rows,omitempty"` // number of half rows below the group header
+	Label                trl.S `json:"label,omitempty"`
+	Desc                 trl.S `json:"description,omitempty"`
+	HeaderBottomVSpacers int   `json:"header_bottom_vspacers,omitempty"` // number of half rows below the group header
+	BottomVSpacers       int   `json:"bottom_half_vspacers,omitempty"`   // number of rows below the group
 
 	Vertical bool `json:"vertical,omitempty"` // groups vertically, not horizontally, not yet implemented
 
@@ -326,15 +327,6 @@ func (gr *groupT) AddInput() *inputT {
 	gr.Inputs = append(gr.Inputs, i)
 	ret := gr.Inputs[len(gr.Inputs)-1]
 	return ret
-}
-
-// ReorderInputs changes order
-func (gr *groupT) ReorderInputs(newOrder []int) {
-	new := []*inputT{}
-	for _, newIdx := range newOrder {
-		new = append(new, gr.Inputs[newIdx])
-	}
-	gr.Inputs = new
 }
 
 // TableOpen creates a table markup with various CSS parameters
@@ -378,7 +370,7 @@ func (gr groupT) HTML(langCode string) string {
 
 	b.WriteString("</div>\n")
 
-	for i := 0; i < gr.GroupHeaderVSpacers; i++ {
+	for i := 0; i < gr.HeaderBottomVSpacers; i++ {
 		b.WriteString(vspacer8)
 	}
 
@@ -458,6 +450,7 @@ type pageT struct {
 // and adds this group to the pages's groups
 func (p *pageT) AddGroup() *groupT {
 	g := &groupT{}
+	g.BottomVSpacers = 3
 	p.Groups = append(p.Groups, g)
 	ret := p.Groups[len(p.Groups)-1]
 	return ret
@@ -610,9 +603,13 @@ func (q *QuestionnaireT) PageHTML(idx int) (string, error) {
 		grpHTML := p.Groups[i].HTML(q.LangCode)
 		grpHTML = strings.Replace(grpHTML, "[groupID]", fmt.Sprintf("%v", loopIdx+1), -1)
 		b.WriteString(grpHTML + "\n")
-		b.WriteString(vspacer16)
-		if loopIdx < len(p.Groups)-1 { // no vertical distance at the end of groups
-			b.WriteString(vspacer16)
+
+		// vertical distance at the end of groups
+		if loopIdx < len(p.Groups)-1 {
+			for i2 := 0; i2 < p.Groups[i].BottomVSpacers; i2++ {
+				b.WriteString(vspacer16)
+			}
+		} else {
 			b.WriteString(vspacer16)
 		}
 	}

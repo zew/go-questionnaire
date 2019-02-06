@@ -356,7 +356,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				"de": "Die <b>kurzfristigen</b> Zinsen (3-Mo.-Interbanksätze) im <b>Euroraum</b> erwarten wir auf Sicht von 6&nbsp;Monaten",
 				"en": "We expect <b>short term</b> interest rates (3 months interbank) in the <b>euro area</b>",
 			}
-			gr.GroupHeaderVSpacers = 1
+			gr.HeaderBottomVSpacers = 1
 
 			{
 				inp := gr.AddInput()
@@ -426,7 +426,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				"de": "Die <b>langfristigen</b> Zinsen (Renditen 10jg. Staatsanleihen) in <b>Deutschland</b> erwarten wir auf Sicht von 6&nbsp;Monaten",
 				"en": "We expect <b>long term</b> interest rates in <b>Germany</b> in 6&nbsp;months",
 			}
-			gr.GroupHeaderVSpacers = 1
+			gr.HeaderBottomVSpacers = 1
 
 			{
 				inp := gr.AddInput()
@@ -788,7 +788,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				"de": "Aus Sicht der Fundamentaldaten der DAX-Unternehmen ist der DAX derzeit",
 				"en": "The fundamentals of the companies comprising the DAX make the DAX currently",
 			}
-			gr.GroupHeaderVSpacers = 1
+			gr.HeaderBottomVSpacers = 1
 
 			{
 				inp := gr.AddInput()
@@ -823,7 +823,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				"de": "Die Wahrscheinlichkeit für ein Extremereignis im deutschen Finanzmarkt liegt",
 				"en": "The probability for an extreme event in the German financial markets is",
 			}
-			gr.GroupHeaderVSpacers = 1
+			gr.HeaderBottomVSpacers = 1
 
 			{
 				inp := gr.AddInput()

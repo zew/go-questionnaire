@@ -30,7 +30,7 @@ func addSeasonal2(q *qst.QuestionnaireT) error {
 			"de": "Punktprognose der jährlichen Inflationsrate im Euroraum",
 			"en": "Forecast yearly inflation rate in the Euro area",
 		}
-		gr.GroupHeaderVSpacers = 1
+		gr.HeaderBottomVSpacers = 1
 
 		{
 			inp := gr.AddInput()
@@ -160,7 +160,7 @@ func addSeasonal2(q *qst.QuestionnaireT) error {
 			"de": fmt.Sprintf("Den Hauptrefinanzierungssatz der EZB (am %v) erwarte ich auf Sicht von", val),
 			"en": fmt.Sprintf("I expect the main refinance rate of the ECB (%v) in", val),
 		}
-		gr.GroupHeaderVSpacers = 1
+		gr.HeaderBottomVSpacers = 1
 
 		{
 			inp := gr.AddInput()

@@ -382,7 +382,9 @@ func GenerateHashesH(w http.ResponseWriter, r *http.Request) {
 		<br>
 
 
-		<input type="submit" name="submitclassic" value="submit" accesskey="s"><br>
+		<input type="submit" name="submitclassic" id="submit" value="submit" accesskey="s"><br>
+		<script> document.getElementById('submit').focus(); </script>
+
 
 		{{if  (len .Links  ) gt 0 }} <p style='                  color:#444'>{{.Links  }}</p>{{end}}
 		{{if  (len .List   ) gt 0 }} <p style='white-space: pre; color:#444'>{{.List   }}</p>{{end}}

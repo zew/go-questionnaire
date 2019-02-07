@@ -41,7 +41,7 @@ type inputT struct {
 	Name string `json:"name,omitempty"`
 	Type string `json:"type,omitempty"`
 	// Different Stepping;   InputMode string `json:"input_mode,omitempty"` // set to i.e. " inputmode='numeric' "
-	MaxChars int `json:"max_chars,omitempty"` // Number of input chars, also used to computer width
+	MaxChars int `json:"max_chars,omitempty"` // Number of input chars, also used to compute width
 
 	HAlignLabel   horizontalAlignment `json:"horizontal_align_label,omitempty"`   // description left/center/right of input, default left, similar setting for radioT but not for group
 	HAlignControl horizontalAlignment `json:"horizontal_align_control,omitempty"` // label       left/center/right of input, default left, similar setting for radioT but not for group
@@ -64,10 +64,12 @@ type inputT struct {
 	Validator string `json:"validator,omitempty"` // i.e. inRange20 - any string from validators
 	ErrMsg    trl.S  `json:"err_msg,omitempty"`
 
-	Response      string  `json:"response,omitempty"`       // but also Value
-	ResponseFloat float64 `json:"response_float,omitempty"` // also for integers
+	Response string `json:"response,omitempty"` // but also Value
+	// ResponseFloat float64 `json:"response_float,omitempty"` // also for integers
 
 	DynamicFunc string `json:"dynamic_func,omitempty"` // Refers to dynFuncs, for type == 'dynamic'
+
+	DD *DropdownT `json:"drop_down,omitempty"`
 }
 
 // NewInput returns an input filled in with globally enumerated label, decription etc.
@@ -150,8 +152,10 @@ func (i inputT) HTML(langCode string, numCols int) string {
 	nm := i.Name
 
 	switch i.Type {
-	case "dynamic":
-		return fmt.Sprintf("<span class='go-quest-label %v'>%v</span>\n", i.CSSLabel, i.Label.Tr(langCode))
+
+	case "textblock":
+		lbl := renderLabelDescription(i, langCode, numCols)
+		return lbl
 
 	case "button":
 		lbl := fmt.Sprintf("<button type='submit' name='%v' value='%v' class='%v' accesskey='%v'><b>%v</b> %v</button>\n",
@@ -161,9 +165,82 @@ func (i inputT) HTML(langCode string, numCols int) string {
 		lbl = td(i.HAlignControl, colWidth(i.ColSpanControl, numCols), lbl)
 		return lbl
 
-	case "textblock":
+	case "text", "number", "textarea", "checkbox", "dropdown":
+
+		ctrl := ""
+		val := i.Response
+
+		checked := ""
+		if i.Type == "checkbox" {
+			if val == ValSet {
+				checked = "checked=\"checked\""
+			}
+			val = ValSet
+		}
+
+		width := fmt.Sprintf("width: %vem;", int(float64(i.MaxChars)*1.05))
+		// width = "width: 98%;"
+		if i.Type == "checkbox" || i.Type == "radio" {
+			width = ""
+		}
+		maxChars := ""
+		if i.MaxChars > 0 {
+			maxChars = fmt.Sprintf(" MAXLENGTH='%v' ", i.MaxChars) // the right attribute for input and textarea
+		}
+
+		if i.Type == "textarea" {
+			colsRows := fmt.Sprintf(" cols='%v' rows='1' ", i.MaxChars+1)
+			if i.MaxChars > 80 {
+				colsRows = fmt.Sprintf(" cols='80' rows='%v' ", i.MaxChars/80+1)
+				// width = fmt.Sprintf("width: %vem;", int(float64(80)*1.05))
+				width = "width: 98%;"
+			}
+			ctrl += fmt.Sprintf("<textarea        name='%v' id='%v' title='%v %v' class='%v' style='%v' %v %v>%v</textarea>\n",
+				nm, nm, i.Label.TrSilent(langCode), i.Desc.TrSilent(langCode), i.CSSControl, width, maxChars, colsRows, val)
+
+		} else if i.Type == "dropdown" {
+
+			i.DD = &DropdownT{}
+			i.DD.SetName(i.Name)
+			i.DD.Select(i.Response)
+			i.DD.SetAttr("class", i.CSSControl)
+
+			ctrl += i.DD.RenderStr()
+
+		} else {
+			// input
+			inputMode := ""
+			if i.Type == "number" {
+				inputMode = " step='0.1'  "
+			}
+			ctrl += fmt.Sprintf("<input type='%v'  %v  name='%v' id='%v' title='%v %v' class='%v' style='%v' %v %v  value='%v' />\n",
+				i.Type, inputMode,
+				nm, nm, i.Label.TrSilent(langCode), i.Desc.TrSilent(langCode), i.CSSControl, width, maxChars, checked, val)
+		}
+
+		// The checkbox "empty catcher" must follow *after* the actual checkbox input,
+		// since http.Form.Get() fetches the first value.
+		if i.Type == "checkbox" {
+			ctrl += fmt.Sprintf("<input type='hidden' name='%v' id='%v_hidd' value='0' />\n", nm, nm)
+		}
+
+		// Append suffix
+		if i.Suffix.Set() {
+			ctrl = strings.TrimSuffix(ctrl, "\n")
+			sfx := fmt.Sprintf("<span class='go-quest-label %v' >%v</span>\n", i.CSSLabel, i.Suffix.TrSilent(langCode))
+			// We want to prevent line-break of the '%' or '€' character.
+			// inputs must be inline-block, for whitespace nowrap to work
+			ctrl = fmt.Sprintf("<span class='suffix-nowrap' >%v%v</span>\n", ctrl, sfx)
+		}
+		// Append error message
+		if i.ErrMsg.Set() {
+			ctrl += fmt.Sprintf("<span class='go-quest-label %v' >%v</span>\n", i.CSSLabel, i.ErrMsg.TrSilent(langCode))
+		}
+
+		ctrl = td(i.HAlignControl, colWidth(i.ColSpanControl, numCols), ctrl)
+
 		lbl := renderLabelDescription(i, langCode, numCols)
-		return lbl
+		return lbl + ctrl
 
 	case "radiogroup", "checkboxgroup":
 		ctrl := ""
@@ -220,70 +297,8 @@ func (i inputT) HTML(langCode string, numCols int) string {
 		lbl := renderLabelDescription(i, langCode, numCols)
 		return lbl + ctrl
 
-	case "text", "number", "textarea", "checkbox":
-		ctrl := ""
-		val := i.Response
-
-		checked := ""
-		if i.Type == "checkbox" {
-			if val == ValSet {
-				checked = "checked=\"checked\""
-			}
-			val = ValSet
-		}
-
-		width := fmt.Sprintf("width: %vem;", int(float64(i.MaxChars)*1.05))
-		// width = "width: 98%;"
-		if i.Type == "checkbox" || i.Type == "radio" {
-			width = ""
-		}
-		maxChars := ""
-		if i.MaxChars > 0 {
-			maxChars = fmt.Sprintf(" MAXLENGTH='%v' ", i.MaxChars) // the right attribute for input and textarea
-		}
-
-		if i.Type == "textarea" {
-			colsRows := fmt.Sprintf(" cols='%v' rows='1' ", i.MaxChars+1)
-			if i.MaxChars > 80 {
-				colsRows = fmt.Sprintf(" cols='80' rows='%v' ", i.MaxChars/80+1)
-				// width = fmt.Sprintf("width: %vem;", int(float64(80)*1.05))
-				width = "width: 98%;"
-			}
-			ctrl += fmt.Sprintf("<textarea        name='%v' id='%v' title='%v %v' class='%v' style='%v' %v %v>%v</textarea>\n",
-				nm, nm, i.Label.TrSilent(langCode), i.Desc.TrSilent(langCode), i.CSSControl, width, maxChars, colsRows, val)
-		} else {
-			inputMode := ""
-			if i.Type == "number" {
-				inputMode = " step='0.1'  "
-			}
-			ctrl += fmt.Sprintf("<input type='%v'  %v  name='%v' id='%v' title='%v %v' class='%v' style='%v' %v %v  value='%v' />\n",
-				i.Type, inputMode,
-				nm, nm, i.Label.TrSilent(langCode), i.Desc.TrSilent(langCode), i.CSSControl, width, maxChars, checked, val)
-		}
-
-		// The checkbox "empty catcher" must follow *after* the actual checkbox input,
-		// since http.Form.Get() fetches the first value.
-		if i.Type == "checkbox" {
-			ctrl += fmt.Sprintf("<input type='hidden' name='%v' id='%v_hidd' value='0' />\n", nm, nm)
-		}
-
-		// Append suffix
-		if i.Suffix.Set() {
-			ctrl = strings.TrimSuffix(ctrl, "\n")
-			sfx := fmt.Sprintf("<span class='go-quest-label %v' >%v</span>\n", i.CSSLabel, i.Suffix.TrSilent(langCode))
-			// We want to prevent line-break of the '%' or '€' character.
-			// inputs must be inline-block, for whitespace nowrap to work
-			ctrl = fmt.Sprintf("<span class='suffix-nowrap' >%v%v</span>\n", ctrl, sfx)
-		}
-		// Append error message
-		if i.ErrMsg.Set() {
-			ctrl += fmt.Sprintf("<span class='go-quest-label %v' >%v</span>\n", i.CSSLabel, i.ErrMsg.TrSilent(langCode))
-		}
-
-		ctrl = td(i.HAlignControl, colWidth(i.ColSpanControl, numCols), ctrl)
-
-		lbl := renderLabelDescription(i, langCode, numCols)
-		return lbl + ctrl
+	case "dynamic":
+		return fmt.Sprintf("<span class='go-quest-label %v'>%v</span>\n", i.CSSLabel, i.Label.Tr(langCode))
 
 	default:
 		return fmt.Sprintf("input %v: unknown type '%v'  - allowed are %v\n", nm, i.Type, implementedTypes)

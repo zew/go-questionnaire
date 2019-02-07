@@ -53,6 +53,7 @@ func plausibleTranslation(key string, s trl.S, lcs map[string]string) error {
 }
 
 // TranslationCompleteness tests all multilanguage strings for completeness.
+// Use only at JSON creation time, since dynamic elements have only one language.
 func (q *QuestionnaireT) TranslationCompleteness() error {
 	for i1 := 0; i1 < len(q.Pages); i1++ {
 		if err := plausibleTranslation(fmt.Sprintf("page%v_sect", i1), q.Pages[i1].Section, q.LangCodes); err != nil {
@@ -122,10 +123,6 @@ func (q *QuestionnaireT) Validate() error {
 			log.Printf(s)
 			return fmt.Errorf(s)
 		}
-	}
-
-	if err := q.TranslationCompleteness(); err != nil {
-		return err
 	}
 
 	navigationalNum := 0

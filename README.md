@@ -111,7 +111,8 @@ More info in [deploy on linux/unix](./static/doc/linux-instructions.md)
 * Client side JS validation is deliberately omitted;  
    [a would-be JS client lib](http://www.javascript-coder.com/html-form/form-validation.phtml)
 
-* Dynamic textblocks such as `RepsonseStatistics` are available, and can be easily added.
+* Dynamic textblocks such as `RepsonseStatistics` are available, and can be easily added.  
+ Inputs values and user attributes can be accessed. 
 
 * Package `systemtest` performs full circle roundtrip - filling out all available questionnaires 
 and comparing the server JSON file with the entered data.  

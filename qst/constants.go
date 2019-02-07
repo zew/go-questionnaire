@@ -18,6 +18,8 @@ var implementedTypes = map[string]interface{}{
 	"textblock": nil, // Only name, label and description are rendered
 	"button":    nil, // Only name, label and description are rendered
 	"dynamic":   nil, // Executed a request time
+
+	"dropdown": nil,
 }
 
 const (

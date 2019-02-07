@@ -1,7 +1,6 @@
 package strube
 
 import (
-	"github.com/zew/go-questionnaire/cfg"
 	"github.com/zew/go-questionnaire/qst"
 	"github.com/zew/go-questionnaire/trl"
 )
@@ -262,20 +261,301 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			}
 		}
 
+		// 23
+		{
+			names1stMatrix := []string{"immig"}
+			emptyRowLabels := []trl.S{}
+			gr := p.AddRadioMatrixGroup(labelsGoodBad19(), names1stMatrix, emptyRowLabels, 1)
+			gr.Cols = 9 // necessary, otherwise no vspacers
+			gr.OddRowsColoring = true
+			gr.Label = trl.S{
+				"de": "Einwanderungspolitik<br>",
+				"en": "Immigration policy<br>",
+				"fr": "Politique d’immigration<br>",
+				"it": "Immigrazione<br>",
+			}
+			gr.Desc = trl.S{
+				"de": "Die EU sollte eine stärkere Rolle in der Einwanderungspolitik erhalten (z.B. Aufnahmestandards festlegen oder über die Verteilung von Flüchtlingen entscheiden).",
+				"en": "The EU should get a stronger role in immigration policy (e.g. decisions over admission standards or allocation of refugees across member states).",
+				"fr": "L’UE devrait jouer un rôle renforcé dans la politique d’immigration des États membres (par exemple en fixant les normes d’accueil ou en décidant de la répartition des réfugiés).",
+				"it": "L’UE dovrebbe avere un ruolo più incisivo sull’immigrazione (ad esempio sulle decisioni relative ai criteri di ammissione o sulla distribuzione dei rifugiati tra i Paesi membri).",
+			}
+		}
+
+		// 24
+		{
+			names1stMatrix := []string{"defense"}
+			emptyRowLabels := []trl.S{}
+			gr := p.AddRadioMatrixGroup(labelsGoodBad19(), names1stMatrix, emptyRowLabels, 1)
+			gr.Cols = 9 // necessary, otherwise no vspacers
+			gr.OddRowsColoring = true
+			gr.Label = trl.S{
+				"de": "Verteidigungspolitik<br>",
+				"en": "Defence policy<br>",
+				"fr": "Politique de défense<br>",
+				"it": "Difesa<br>",
+			}
+			gr.Desc = trl.S{
+				"de": "Eine unter dem Befehl der EU stehende und aus ihrem Haushalt finanzierte europäische Armee sollte Aufgaben der nationalen Streitkräfte für internationale Kriseneinsätze übernehmen.",
+				"en": "A European army under the command of the EU and financed from its budget should take over duties from national armies regarding international conflict deployments.",
+				"fr": "L’UE pourrait constituer une armée européenne placée sous son commandement et financée par son budget avec pour mission d’assurer les opérations extérieures à la place des armées nationales.",
+				"it": "Un esercito Europeo sotto il comando dell’UE, finanziato dal budget europeo, dovrebbe subentrare alle forze armate nazionali nei conflitti internazionali.",
+			}
+		}
+
+		// {
+		// 	gr := p.AddGroup()
+		// 	gr.Cols = 1
+		// 	gr.Width = 99
+		// 	{
+		// 		inp := gr.AddInput()
+		// 		inp.Type = "button"
+		// 		inp.Name = "submitBtn"
+		// 		inp.Response = "2"
+		// 		inp.Label = cfg.Get().Mp["next"]
+		// 		inp.AccessKey = "n"
+		// 		inp.ColSpanControl = 1
+		// 		inp.HAlignControl = qst.HRight
+		// 	}
+		// }
+
+	}
+
+	//
+	// Page 3
+	{
+
+		p := q.AddPage()
+		// p.NoNavigation = true
+		p.Width = 70
+		p.Section = trl.S{
+			"de": "Europäische Währungsunion (EWU)",
+			"en": "European Monetary Union (EMU)",
+			"fr": "L'Union économique et monétaire de l'Union européenne (UEM)",
+			"it": "Unione monetaria europea (UME)",
+		}
+		p.Label = trl.S{
+			"de": "",
+			"en": "",
+			"fr": "",
+			"it": "",
+		}
+		p.Desc = trl.S{
+			"de": "",
+			"en": "",
+			"fr": "",
+			"it": "",
+		}
+		p.Short = trl.S{
+			"de": "Währungsunion",
+			"en": "Monetary Union",
+			"fr": "L'Union monétaire",
+			"it": "Unione monetaria",
+		}
+
+		// 31
+		{
+			names1stMatrix := []string{"insure"}
+			emptyRowLabels := []trl.S{}
+			gr := p.AddRadioMatrixGroup(labelsGoodBad19(), names1stMatrix, emptyRowLabels, 1)
+			gr.Cols = 9 // necessary, otherwise no vspacers
+			gr.OddRowsColoring = true
+			gr.Label = trl.S{
+				"de": "Europäische Arbeitslosenversicherung<br>",
+				"en": "European unemployment insurance<br>",
+				"fr": "Assurance chômage européenne<br>",
+				"it": "Indennità europea di disoccupazione<br>",
+			}
+			gr.Desc = trl.S{
+				"de": "Die EWU braucht fiskalische Stabilisierungsmechanismen, um Mitgliedstaaten gegen asymmetri-sche Schocks abzusichern (z.B. eine gemeinsame europäische Arbeitslosenversicherung).",
+				"en": "The EMU needs fiscal stabilization systems to insure member states against asymmetric shocks (e.g. a common European unemployment insurance).",
+				"fr": "L’UEM a besoin de systèmes de stabilisation budgétaire pour assurer les États membres contre les chocs asymétriques (par exemple, une assurance chômage européenne commune)",
+				"it": "La UME necessita di sistemi di stabilizzazione fiscale atti a proteggere gli Stati membri da shock asimmetrici (ad esempio un’indennità di disoccupazione europea comune).",
+			}
+		}
+
+		// 32
+		{
+			names1stMatrix := []string{"eurobonds"}
+			emptyRowLabels := []trl.S{}
+			gr := p.AddRadioMatrixGroup(labelsGoodBad19(), names1stMatrix, emptyRowLabels, 1)
+			gr.Cols = 9 // necessary, otherwise no vspacers
+			gr.OddRowsColoring = true
+			gr.Label = trl.S{
+				"de": "Eurobonds<br>",
+				"en": "Eurobonds<br>",
+				"fr": "Euro-obligations<br>",
+				"it": "Eurobond<br>",
+			}
+			gr.Desc = trl.S{
+				"de": "Für Eurobonds haften alle Euro-Staaten gemeinsam und alle Euro-Staaten zahlen den gleichen Zins. Die EWU sollte Eurobonds ausgeben.",
+				"en": "All euro countries are jointly liable for Eurobonds and all euro countries pay the same interest. The EMU should issue Eurobonds.",
+				"fr": "La zone euro devrait émettre des euro-obligations et les États membres s’en porter tous garants solidairement et bénéficier du même taux d’intérêt.",
+				"it": "Gli Eurobond sono titoli pubblici di debito di cui tutti i Paesi Euro sono collettivamente responsabili e su cui tutti i Paesi Euro pagano gli stessi interessi. La UME dovrebbe iniziare ad emettere Euro-bond.",
+			}
+		}
+
+		// 33
+		{
+			names1stMatrix := []string{"stability"}
+			emptyRowLabels := []trl.S{}
+			gr := p.AddRadioMatrixGroup(labelsGoodBad19(), names1stMatrix, emptyRowLabels, 1)
+			gr.Cols = 9 // necessary, otherwise no vspacers
+			gr.OddRowsColoring = true
+			gr.Label = trl.S{
+				"de": "Stabilitäts- und Wachstumspakt (SWP)<br>",
+				"en": "Stability and Growth Pact (SGP)<br>",
+				"fr": "Pacte de Stabilité et de Croissance (PSC)<br>",
+				"it": "Patto di Stabilità e Crescita (PSC)<br>",
+			}
+			gr.Desc = trl.S{
+				"de": "Der SWP definiert Defizit- und Schuldengrenzen für EU-Mitgliedsstaaten. Der SWP schränkt die Fiskalpolitik der Mitgliedsstaaten unangemessen stark ein und sollte gelockert werden.",
+				"en": "The SGP defines deficit and debt limits for EU member states. The SGP inappropriately constrains fiscal policy in member states and should be relaxed.",
+				"fr": "Le PSC définit des limites aux déficits et aux dettes des États membres. Le PSC représente une con-trainte excessive sur les politiques fiscales des États membres et devrait être assoupli.",
+				"it": "Il PSC definisce i limiti per il deficit e il debito pubblico dei Paesi membri dell’UE. Il PSC limita ecces-sivamente la politica fiscale degli Stati membri e dovrebbe essere allentato.",
+			}
+		}
+
+		// 34
+		{
+			names1stMatrix := []string{"bankruptcy"}
+			emptyRowLabels := []trl.S{}
+			gr := p.AddRadioMatrixGroup(labelsGoodBad19(), names1stMatrix, emptyRowLabels, 1)
+			gr.Cols = 9 // necessary, otherwise no vspacers
+			gr.OddRowsColoring = true
+			gr.Label = trl.S{
+				"de": "Insolvenzverfahren für Eurostaaten<br>",
+				"en": "Insolvency procedure for euro member states<br>",
+				"fr": "Procédure d'insolvabilité pour les États membres de l'euro<br>",
+				"it": "Procedura di insolvenza per gli Stati dell'Eurozona<br>",
+			}
+			gr.Desc = trl.S{
+				"de": "Es sollte ein klares Insolvenzverfahren für Eurostaaten mit unhaltbaren Schulden geben.",
+				"en": "There should be an explicit sovereign insolvency procedure for euro member states with unsus-tainable debt. ",
+				"fr": "Il devrait exister une procédure d'insolvabilité souveraine explicite pour les États membres de la zone euro ayant une dette insoutenable. ",
+				"it": "Dovrebbe esistere una esplicita procedura di insolvenza per i Paesi Euro con debito insostenibile.",
+			}
+		}
+
+		// 35
+		{
+			names1stMatrix := []string{"purchase"}
+			emptyRowLabels := []trl.S{}
+			gr := p.AddRadioMatrixGroup(labelsGoodBad19(), names1stMatrix, emptyRowLabels, 1)
+			gr.Cols = 9 // necessary, otherwise no vspacers
+			gr.OddRowsColoring = true
+			gr.Label = trl.S{
+				"de": "Wertpapierkaufprogramm der EZB<br>",
+				"en": "Asset purchase programme of ECB<br>",
+				"fr": "Achats d’emprunts par la BCE<br>",
+				"it": "Programma di acquisti di attività finanziarie da parte della Banca centrale europea (BCE) <br>",
+			}
+			gr.Desc = trl.S{
+				"de": "Die Europäische Zentralbank (EZB) hat in den zurückliegenden Jahren durch den Kauf von Staatsan-leihen von Euro-Staaten eine sehr aktive Rolle gespielt. Diese starke Rolle der EZB sollte fortgesetzt werden.",
+				"en": "The European Central Bank (ECB) has taken a strongly active position in recent years by purchasing sovereign bonds of euro countries. This strongly active position of the ECB should continue.",
+				"fr": "Pour combattre la crise, la Banque centrale européenne s’est engagée fortement dans les années passées en achetant des emprunts d’États de la zone euro. Cet engagement devrait se poursuivre.",
+				"it": "Negli ultimi anni la BCE ha attuato una politica monetaria molto espansiva comprando titoli di Stato dei Paesi Euro. Questa politica della BCE dovrebbe continuare in futuro.",
+			}
+		}
+
+		// 36
+		{
+			names1stMatrix := []string{"bankunion"}
+			emptyRowLabels := []trl.S{}
+			gr := p.AddRadioMatrixGroup(labelsGoodBad19(), names1stMatrix, emptyRowLabels, 1)
+			gr.Cols = 9 // necessary, otherwise no vspacers
+			gr.OddRowsColoring = true
+			gr.Label = trl.S{
+				"de": "Vollendung der Bankenunion<br>",
+				"en": "Completion of Banking Union<br>",
+				"fr": "Union bancaire<br>",
+				"it": "Completamento dell’Unione bancaria europea<br>",
+			}
+			gr.Desc = trl.S{
+				"de": "Für ein angemessenes Funktionieren sollte die europäische Bankenunion durch die Europäische Einlagensicherung (European Deposit Insurance System: EDIS) vollendet werden.",
+				"en": "For its proper functioning, the European Banking Union should be completed through the Europe-an Deposit Insurance Scheme (EDIS). ",
+				"fr": "Pour son bon fonctionnement, l’Union bancaire européenne devrait être complétée par le Système Européen de Garanties des Dépôts (SEGD).",
+				"it": "Per funzionare correttamente, l’Unione bancaria europea dovrebbe essere completata tramite l’introduzione di un sistema europeo di garanzia dei depositi.",
+			}
+		}
+
+	}
+
+	//
+	// Page 4
+	{
+
+		p := q.AddPage()
+		// p.NoNavigation = true
+		p.Width = 70
+		p.Section = trl.S{
+			"de": "Persönliche Fragen",
+			"en": "Personal questions",
+			"fr": "Questions personnelles",
+			"it": "Domande personali",
+		}
+		p.Label = trl.S{
+			"de": "",
+			"en": "",
+			"fr": "",
+			"it": "",
+		}
+		p.Desc = trl.S{
+			"de": "",
+			"en": "",
+			"fr": "",
+			"it": "",
+		}
+		p.Short = trl.S{
+			"de": "Über Sie",
+			"en": "About you",
+			"fr": "Q. personnelles",
+			"it": "D. personali",
+		}
+
+		// 41
 		{
 			gr := p.AddGroup()
-			gr.Cols = 1
-			gr.Width = 99
+			gr.Cols = 3
+			gr.OddRowsColoring = true
+
 			{
 				inp := gr.AddInput()
-				inp.Type = "button"
-				inp.Name = "submitBtn"
-				inp.Response = "2"
-				inp.Label = cfg.Get().Mp["next"]
-				inp.AccessKey = "n"
-				inp.ColSpanControl = 1
-				inp.HAlignControl = qst.HRight
+				inp.Name = "birth"
+				inp.Type = "text"
+				inp.ColSpanControl = 2
+				inp.ColSpanLabel = 1
+				inp.MaxChars = 4
+				inp.Label = trl.S{
+					"de": "In welchem Jahr wurden Sie geboren?",
+					"en": "In which year were you born?",
+					"fr": "Quelle est votre année de naissance ?",
+					"it": "In quale anno è nato?",
+				}
+
 			}
+
+			{
+				inp := gr.AddInput()
+				inp.Name = "nationality"
+				inp.Type = "dropdown"
+
+				inp.DD = &qst.DropdownT{}
+				inp.DD.Add("", "Please choose")
+				inp.DD.Add("ger", "Germany")
+				inp.DD.Add("uk", "UK")
+
+				inp.ColSpanControl = 2
+				inp.ColSpanLabel = 1
+				inp.Label = trl.S{
+					"de": "Welche Nationalität haben Sie?",
+					"en": "What is your nationality?",
+					"fr": "Quelle est votre nationalité ?",
+					"it": "Qual è la sua nazionalità?",
+				}
+
+			}
+
 		}
 
 	}

@@ -78,8 +78,8 @@ func PersonalLink(q *QuestionnaireT) (string, error) {
 // ResponseTextHasEuro yields texts => want to keep € - want to have €
 func ResponseTextHasEuro(q *QuestionnaireT) (string, error) {
 
-	i0 := q.Attrs["euro-member"]
-	i1 := q.Attrs["country"]
+	attr1 := q.Attrs["euro-member"]
+	attr2 := q.Attrs["country"]
 
 	hl := trl.S{
 		"de": "Wirtschaftlicher Nutzen des Euro<br>",
@@ -90,21 +90,21 @@ func ResponseTextHasEuro(q *QuestionnaireT) (string, error) {
 	desc := ""
 	ret := ""
 
-	if i0 == "yes" {
+	if attr1 == "yes" {
 		s1 := trl.S{
-			"de": fmt.Sprintf("Den Euro in %v als die offizielle Währung zu haben, ist wirtschaftlich vorteilhaft.", i1),
-			"en": fmt.Sprintf("Having the euro in %v as the official currency is economically beneficial.", i1),
-			"fr": fmt.Sprintf("Avoir l'euro dans %v comme monnaie officielle est économiquement avantageux.", i1),
-			"it": fmt.Sprintf("Avere l'Euro come valuta ufficiale nel %v è economicamente vantaggioso.", i1),
+			"de": fmt.Sprintf("Den Euro in %v als die offizielle Währung zu haben, ist wirtschaftlich vorteilhaft.", attr2),
+			"en": fmt.Sprintf("Having the euro in %v as the official currency is economically beneficial.", attr2),
+			"fr": fmt.Sprintf("Avoir l'euro dans %v comme monnaie officielle est économiquement avantageux.", attr2),
+			"it": fmt.Sprintf("Avere l'Euro come valuta ufficiale nel %v è economicamente vantaggioso.", attr2),
 		}
 		desc = s1[q.LangCode]
 
 	} else {
 		s1 := trl.S{
-			"de": fmt.Sprintf("Den Euro in %v als offizielle Währung einzuführen, wäre wirtschaftlich vorteilhaft. ", i1),
-			"en": fmt.Sprintf("Introducing the euro in %v as the official currency would be economically beneficial.", i1),
-			"fr": fmt.Sprintf("L'introduction de l'euro dans %v en tant que monnaie officielle serait économiquement avantageuse.", i1),
-			"it": fmt.Sprintf("Introdurre l'Euro come valuta ufficiale nel %v sarebbe economicamente vantaggioso.", i1),
+			"de": fmt.Sprintf("Den Euro in %v als offizielle Währung einzuführen, wäre wirtschaftlich vorteilhaft. ", attr2),
+			"en": fmt.Sprintf("Introducing the euro in %v as the official currency would be economically beneficial.", attr2),
+			"fr": fmt.Sprintf("L'introduction de l'euro dans %v en tant que monnaie officielle serait économiquement avantageuse.", attr2),
+			"it": fmt.Sprintf("Introdurre l'Euro come valuta ufficiale nel %v sarebbe economicamente vantaggioso.", attr2),
 		}
 		desc = s1[q.LangCode]
 	}

@@ -180,7 +180,7 @@ func (i inputT) HTML(langCode string, numCols int) string {
 
 		width := fmt.Sprintf("width: %vem;", int(float64(i.MaxChars)*1.05))
 		// width = "width: 98%;"
-		if i.Type == "checkbox" || i.Type == "radio" {
+		if i.Type == "checkbox" || i.Type == "radio" || i.Type == "dropdown" {
 			width = ""
 		}
 		maxChars := ""
@@ -200,9 +200,12 @@ func (i inputT) HTML(langCode string, numCols int) string {
 
 		} else if i.Type == "dropdown" {
 
-			i.DD = &DropdownT{}
+			// i.DD = &DropdownT{}
 			i.DD.SetName(i.Name)
+			i.DD.LC = langCode
+			i.DD.SetTitle(i.Label.TrSilent(langCode) + " " + i.Desc.TrSilent(langCode))
 			i.DD.Select(i.Response)
+			i.DD.SetAttr("style", width)
 			i.DD.SetAttr("class", i.CSSControl)
 
 			ctrl += i.DD.RenderStr()

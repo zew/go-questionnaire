@@ -541,9 +541,15 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Type = "dropdown"
 
 				inp.DD = &qst.DropdownT{}
-				inp.DD.Add("", "Please choose")
-				inp.DD.Add("ger", "Germany")
-				inp.DD.Add("uk", "UK")
+				for k, v := range trl.Countries {
+					inp.DD.Add(k, v)
+				}
+				inp.DD.AddPleaseSelect(trl.S{
+					"de": "please choose",
+					"en": "please choose",
+					"fr": "please choose",
+					"it": "please choose",
+				})
 
 				inp.ColSpanControl = 2
 				inp.ColSpanLabel = 1

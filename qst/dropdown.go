@@ -7,11 +7,13 @@ import (
 	"io"
 	"log"
 	"strings"
+
+	"github.com/zew/go-questionnaire/trl"
 )
 
 type optionT struct {
 	Key      string
-	Val      template.HTML
+	Val      trl.S //  template.HTML
 	Selected bool
 }
 
@@ -26,48 +28,10 @@ type DropdownT struct {
 	// management of 'style' and 'class' HTML attributes
 	Attrs map[template.HTMLAttr]template.HTMLAttr
 
-	LC string // LangCode
-
+	LC      string // LangCode
 	Options []optionT
 
 	NameJavaScriptExpression template.JSStr `json:"-"` // helper
-}
-
-var tplStr = `
-	<select 
-			name='{{ .Name }}'  id='{{ .Name }}'
-				
-			{{- if ne  .Title ""     }}title='{{.Title}}' {{end -}}
-			
-			{{- if .AutoSubmit}}
-				onchange='console.log(this.form.{{.NameJavaScriptExpression}}.options[this.form.{{.NameJavaScriptExpression}}.selectedIndex].value); this.form.submit();'
-			{{end -}}
-
-			{{- range $attr, $val := .Attrs}}
-				{{$attr}}='{{$val}}'
-			{{end -}}
-
-			{{- if .Disabled }}
-				disabled
-			{{end -}}
-
-	>
-
-		{{range $Option := .Options -}}
-			<!-- keep the ugly formatting of the end if -->
-			<option value="{{ $Option.Key }}" {{ if eq $Option.Selected true }}selected {{end}} >{{$Option.Val }}</option>
-		{{- end}}
-	</select>
-`
-
-var tpl = template.New("dd")
-
-func init() {
-	var err error
-	tpl, err = tpl.Parse(tplStr)
-	if err != nil {
-		panic(err)
-	}
 }
 
 // SetName - for usage in templates
@@ -150,17 +114,17 @@ func (d *DropdownT) RemoveAllAttrs() string {
 //
 
 // Add adds an option returns selected key
-func (d *DropdownT) Add(k, v string) string {
+func (d *DropdownT) Add(k string, v trl.S) string {
 	o := optionT{}
 	o.Key = k
-	o.Val = template.HTML(v)
+	o.Val = v
 	d.Options = append(d.Options, o)
 	return ""
 }
 
 // AddPleaseSelect adds a default option
-func (d *DropdownT) AddPleaseSelect(val string) {
-	leadOpt := []optionT{optionT{Key: "", Val: template.HTML(val)}} // i.e. "please choose"
+func (d *DropdownT) AddPleaseSelect(v trl.S) {
+	leadOpt := []optionT{optionT{Key: "", Val: v}} // i.e. "please choose"
 	(*d).Options = append(leadOpt, (*d).Options...)
 }
 
@@ -184,6 +148,48 @@ func (d *DropdownT) Select(selectKey string) string {
 		}
 	}
 	return ""
+}
+
+//
+// Template stuff
+//
+
+var tplStr = `
+	<select 
+			name='{{ .Name }}'  id='{{ .Name }}'
+				
+			{{- if ne  .Title "" }}title='{{.Title}}' {{end -}}
+			
+			{{- range $attr, $val := .Attrs}}
+				{{$attr}}='{{$val}}'
+			{{end -}}
+
+			{{- if .AutoSubmit}}
+				onchange='console.log(this.form.{{.NameJavaScriptExpression}}.options[this.form.{{.NameJavaScriptExpression}}.selectedIndex].value); this.form.submit();'
+			{{end -}}
+
+			{{- if .Disabled }}
+				disabled
+			{{end -}}
+
+	>
+
+		{{$outer := .}}
+		{{range $Option := .Options -}}
+			<!-- keep the ugly formatting of the end if -->
+			<option value="{{ $Option.Key }}" {{ if eq $Option.Selected true }}selected{{end}} >{{$Option.Val.Tr $outer.LC}}</option>
+		{{- end}}
+	</select>
+`
+
+var tpl = template.New("dd")
+
+func init() {
+	var err error
+	tpl, err = tpl.Parse(tplStr)
+	if err != nil {
+		panic(err)
+	}
 }
 
 // Render to io.Writer

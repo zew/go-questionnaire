@@ -124,7 +124,7 @@ func (d *DropdownT) Add(k string, v trl.S) string {
 
 // AddPleaseSelect adds a default option
 func (d *DropdownT) AddPleaseSelect(v trl.S) {
-	leadOpt := []optionT{optionT{Key: "", Val: v}} // i.e. "please choose"
+	leadOpt := []optionT{{Key: "", Val: v}} // i.e. "please choose"
 	(*d).Options = append(leadOpt, (*d).Options...)
 }
 

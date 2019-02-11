@@ -66,6 +66,14 @@
  			"it": "Fine",
  			"pl": "Końcu"
  		},
+ 		"finish_questionnaire": {
+ 			"de": "Fragebogen abschließen",
+ 			"en": "Finish this survey",
+ 			"es": "Terminé esta encuesta",
+ 			"fr": "Terminé cette enquête",
+ 			"it": "Finito questo sondaggio",
+ 			"pl": "Zakończyłem tę ankietę"
+ 		},
  		"finished_by_participant": {
  			"de": "Sie haben den Fragebogen bereits abgeschlossen (%v).",
  			"en": "You already finished this survey wave at %v",
@@ -105,6 +113,14 @@
  			"fr": "Continuer",
  			"it": "Continuare",
  			"pl": "Kontynuować"
+ 		},
+ 		"no": {
+ 			"de": "Nein",
+ 			"en": "No",
+ 			"es": "No",
+ 			"fr": "Non",
+ 			"it": "No",
+ 			"pl": "Nie"
  		},
  		"not_a_number": {
  			"de": "'%v' keine Zahl",
@@ -169,6 +185,14 @@
  			"fr": "Min %.0f",
  			"it": "Minimo %.0f",
  			"pl": "Minimalne %.0f"
+ 		},
+ 		"yes": {
+ 			"de": "Ja",
+ 			"en": "Yes",
+ 			"es": "Sí",
+ 			"fr": "Oui",
+ 			"it": "Sì",
+ 			"pl": "Tak"
  		}
  	},
  	"user_id_to_language": {

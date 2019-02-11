@@ -427,7 +427,10 @@ func (gr groupT) HTML(langCode string) string {
 				}
 			}
 
-			// log.Printf("%12v %2v %2v", inp.Type, cols, cols%gr.Cols) // so far
+			// log.Printf("%12v %2v %2v %2v => %3v %2v", inp.Type,
+			// 	inp.ColSpanLabel, inp.ColSpanControl, inp.ColSpanLabel+inp.ColSpanControl,
+			// 	cols, cols%gr.Cols,
+			// ) // dump columns filled so far
 
 			// end of row  - or end of group
 			if (cols+0)%gr.Cols == 0 || i == len(gr.Inputs)-1 {

@@ -143,6 +143,7 @@ func (bt *bundleT) Parse(bundle string) *template.Template {
 		dt := bt.Template.DefinedTemplates()
 		dt = strings.Replace(dt, "; defined templates are:", "", -1)
 		dt = strings.Replace(dt, "\n", "", -1)
+		_ = dt
 		// log.Printf("Bundle %-28v %v", bt.Template.Name(), dt)
 
 		bt.IsParsed = true

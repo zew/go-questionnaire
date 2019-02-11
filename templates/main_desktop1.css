@@ -1,4 +1,4 @@
-@media screen and (min-width: 1280px) and (min-height: 840px) {
+@media screen and (min-width: 1280px) and (min-height: 920px) {
 	html {
 		/* if chrome is not at 100 percent zoom, then this has no effect  */
 		zoom: 120%;

@@ -305,36 +305,19 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			}
 		}
 
-		// {
-		// 	gr := p.AddGroup()
-		// 	gr.Cols = 1
-		// 	gr.Width = 99
-		// 	{
-		// 		inp := gr.AddInput()
-		// 		inp.Type = "button"
-		// 		inp.Name = "submitBtn"
-		// 		inp.Response = "2"
-		// 		inp.Label = cfg.Get().Mp["next"]
-		// 		inp.AccessKey = "n"
-		// 		inp.ColSpanControl = 1
-		// 		inp.HAlignControl = qst.HRight
-		// 	}
-		// }
-
 	}
 
 	//
 	// Page 3
 	{
-
 		p := q.AddPage()
 		// p.NoNavigation = true
 		p.Width = 70
 		p.Section = trl.S{
-			"de": "Europäische Währungsunion (EWU)",
-			"en": "European Monetary Union (EMU)",
-			"fr": "L'Union économique et monétaire de l'Union européenne (UEM)",
-			"it": "Unione monetaria europea (UME)",
+			"de": "Europäische Währungsunion (EWU) - 1",
+			"en": "European Monetary Union (EMU) - 1",
+			"fr": "L'Union économique et monétaire de l'Union européenne (UEM) - 1",
+			"it": "Unione monetaria europea (UME) - 1",
 		}
 		p.Label = trl.S{
 			"de": "",
@@ -349,10 +332,10 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			"it": "",
 		}
 		p.Short = trl.S{
-			"de": "Währungsunion",
-			"en": "Monetary Union",
-			"fr": "L'Union monétaire",
-			"it": "Unione monetaria",
+			"de": "Währungsunion - 1",
+			"en": "Monetary Union - 1",
+			"fr": "L'Union monétaire - 1",
+			"it": "Unione monetaria - 1",
 		}
 
 		// 31
@@ -416,6 +399,40 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				"fr": "Le PSC définit des limites aux déficits et aux dettes des États membres. Le PSC représente une con-trainte excessive sur les politiques fiscales des États membres et devrait être assoupli.",
 				"it": "Il PSC definisce i limiti per il deficit e il debito pubblico dei Paesi membri dell’UE. Il PSC limita ecces-sivamente la politica fiscale degli Stati membri e dovrebbe essere allentato.",
 			}
+		}
+
+	}
+
+	//
+	// Page 4
+	{
+
+		p := q.AddPage()
+		// p.NoNavigation = true
+		p.Width = 70
+		p.Section = trl.S{
+			"de": "Europäische Währungsunion (EWU) - 2",
+			"en": "European Monetary Union (EMU) - 2",
+			"fr": "L'Union économique et monétaire de l'Union européenne (UEM) - 2",
+			"it": "Unione monetaria europea (UME) - 2",
+		}
+		p.Label = trl.S{
+			"de": "",
+			"en": "",
+			"fr": "",
+			"it": "",
+		}
+		p.Desc = trl.S{
+			"de": "",
+			"en": "",
+			"fr": "",
+			"it": "",
+		}
+		p.Short = trl.S{
+			"de": "Währungsunion - 2",
+			"en": "Monetary Union - 2",
+			"fr": "L'Union monétaire - 2",
+			"it": "Unione monetaria - 2",
 		}
 
 		// 34
@@ -484,7 +501,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	}
 
 	//
-	// Page 4
+	// Page 5
 	{
 
 		p := q.AddPage()
@@ -518,17 +535,17 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		// 41
 		{
 			gr := p.AddGroup()
-			gr.Cols = 3
-			gr.Width = 70
+			gr.Cols = 12
+			gr.Width = 80
 			gr.OddRowsColoring = true
 			gr.BottomVSpacers = 2
 
 			{
 				inp := gr.AddInput()
 				inp.Name = "birth"
-				inp.Type = "text"
+				inp.Type = "number"
+				inp.ColSpanLabel = 3
 				inp.ColSpanControl = 2
-				inp.ColSpanLabel = 1
 				inp.MaxChars = 4
 				inp.Label = trl.S{
 					"de": "In welchem Jahr wurden Sie geboren?",
@@ -545,6 +562,14 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp := gr.AddInput()
 				inp.Name = "nationality"
 				inp.Type = "dropdown"
+				inp.ColSpanControl = 4
+				inp.ColSpanLabel = 3
+				inp.Label = trl.S{
+					"de": "Welche Nationalität haben Sie?",
+					"en": "What is your nationality?",
+					"fr": "Quelle est votre nationalité ?",
+					"it": "Qual è la sua nazionalità?",
+				}
 
 				inp.DD = &qst.DropdownT{}
 				for k, v := range trl.Countries {
@@ -556,15 +581,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				}
 				inp.DD.AddPleaseSelect(chooseOne)
 
-				inp.ColSpanControl = 2
-				inp.ColSpanLabel = 1
-				inp.Label = trl.S{
-					"de": "Welche Nationalität haben Sie?",
-					"en": "What is your nationality?",
-					"fr": "Quelle est votre nationalité ?",
-					"it": "Qual è la sua nazionalità?",
-				}
-
 			}
 		}
 
@@ -573,6 +589,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			gr := p.AddGroup()
 			gr.Cols = 20
 			gr.OddRowsColoring = true
+			gr.BottomVSpacers = 1
 
 			rfs := []trl.S{ // research fields
 				{
@@ -624,10 +641,10 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 					"it": "Politica economica",
 				},
 				{
-					"de": "International Handel / Internationale Ökonomie",
-					"en": "Trade / International Economics",
-					"fr": "Économie de commerce / internationale",
-					"it": "Commercio / Economia internazionale",
+					"de": "International Handel / <br>\nInternationale Ökonomie",
+					"en": "Trade / <br>\nInternational Economics",
+					"fr": "Économie de commerce / <br>\ninternationale",
+					"it": "Commercio / <br>\nEconomia internazionale",
 				},
 				{
 					"de": "Entwicklungsökonomie",
@@ -678,8 +695,15 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			inp.Label = trl.S{
 				"de": "Wie würden Sie Ihr Forschungsgebiet beschreiben? <br>\nBei der Beantwortung dieser Frage sind mehrere Antworten möglich.",
 				"en": "How would you classify your field of research? <br>\nYou can choose several answers.",
-				"fr": "Comment classeriez-vous votre domaine de recherche ?<br>\nVous pouvez choisir plusieurs réponses.",
+				"fr": "Comment classeriez-vous votre domaine de recherche ? <br>\nVous pouvez choisir plusieurs réponses.",
 				"it": "Come classificherebbe il suo campo di ricerca? <br>\nPuò selezionare più risposte.",
+			}
+			// No newlines
+			inp.Label = trl.S{
+				"de": "Wie würden Sie Ihr Forschungsgebiet beschreiben?  &nbsp; Bei der Beantwortung dieser Frage sind mehrere Antworten möglich.",
+				"en": "How would you classify your field of research?  &nbsp; You can choose several answers.",
+				"fr": "Comment classeriez-vous votre domaine de recherche ?  &nbsp; Vous pouvez choisir plusieurs réponses.",
+				"it": "Come classificherebbe il suo campo di ricerca?  &nbsp; Può selezionare più risposte.",
 			}
 
 			for _, rf := range rfs {
@@ -687,8 +711,10 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Name = "research-field-" + util.LowerCasedUnderscored(rf["en"])
 				inp.Type = "checkbox"
 				inp.CSSLabel = "special-input-margin-vertical"
-				inp.ColSpanLabel = 4
-				inp.ColSpanControl = 1
+
+				// inp.ColSpanLabel = 4  // it's all the control part - with the suffix
+				inp.ColSpanControl = 5
+
 				// inp.HAlignLabel = qst.HCenter
 				inp.HAlignControl = qst.HCenter
 				inp.HAlignControl = qst.HLeft
@@ -697,10 +723,9 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 			} // research-fields - 43
 
-			gr.BottomVSpacers = 1
-
 			gr2 := p.AddGroup()
 			gr2.Cols = 24
+			gr2.BottomVSpacers = 1
 			// research-fields - free entry - 44
 			for _, rfo := range rfos {
 				inp := gr.AddInput()
@@ -716,6 +741,176 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Desc = rfo
 			} // research-fields - free entry - 44
 		} // gr2
+
+		//
+		// 45
+		{
+			gr3 := p.AddGroup()
+			gr3.Cols = 20
+			gr3.OddRowsColoring = true
+			gr3.BottomVSpacers = 2
+
+			rfs := []trl.S{ // research fields
+				{
+					"de": "ProfessorIn",
+					"en": "Professor",
+					"fr": "Professeur",
+					"it": "Professore ordinario",
+				},
+				{
+					"de": "JuniorprofessorIn",
+					"en": "Assistant professor",
+					"fr": "Professeur assistant/e",
+					"it": "Assistant professor",
+				},
+				{
+					"de": "Assoziierte/r ProfessorIn",
+					"en": "Associate professor",
+					"fr": "Professeur associé/e",
+					"it": "Professore associato",
+				},
+				{
+					"de": "Post-Doc",
+					"en": "Post-Doc",
+					"fr": "Post-Doc",
+					"it": "Ricercatore universitario",
+				},
+				{
+					"de": "DozentIn",
+					"en": "Lecturer",
+					"fr": "Maître de conférences",
+					"it": "Lecturer",
+				},
+				{
+					"de": "Senior researcher",
+					"en": "Senior researcher <br>\n(research institutes)",
+					"fr": "Senior researcher <br>\n(institut de recherche)",
+					"it": "Ricercatore presso istituto di ricerca",
+				},
+				{
+					"de": "DoktorandIn",
+					"en": "PhD Candidate",
+					"fr": "Étudiant en doctorat",
+					"it": "Dottorando",
+				},
+			}
+			rfos := []trl.S{ // research fields
+				{
+					"de": "Andere Position",
+					"en": "Other",
+					"fr": "Autre",
+					"it": "Altro",
+				},
+			}
+
+			inp := gr3.AddInput()
+			inp.Name = "label-research-fields"
+			inp.Type = "textblock"
+			inp.ColSpanLabel = 20
+			inp.Label = trl.S{
+				"de": "Was ist Ihre akademische Position? <br>\nBitte wählen Sie Ihre Haupttätigkeit.",
+				"en": "What is your position? <br>\nPlease choose your main activity.",
+				"fr": "Quelle est votre position ? <br>\nVeuillez choisir votre activité principale.",
+				"it": "Qual è la sua posizione? <br>\nPer favore selezioni la sua attività principale.",
+			}
+			// no newlines
+			inp.Label = trl.S{
+				"de": "Was ist Ihre akademische Position?  &nbsp; Bitte wählen Sie Ihre Haupttätigkeit.",
+				"en": "What is your position?  &nbsp; Please choose your main activity.",
+				"fr": "Quelle est votre position ? &nbsp; Veuillez choisir votre activité principale.",
+				"it": "Qual è la sua posizione?  &nbsp; Per favore selezioni la sua attività principale.",
+			}
+
+			for _, rf := range rfs {
+				inp := gr3.AddInput()
+				inp.Name = "academia-position-" + util.LowerCasedUnderscored(rf["en"])
+				inp.Type = "checkbox"
+				inp.CSSLabel = "special-input-margin-vertical"
+				// inp.ColSpanLabel = 4  // it's all the control part - with the suffix
+				inp.ColSpanControl = 5
+
+				// inp.HAlignLabel = qst.HCenter
+				inp.HAlignControl = qst.HCenter
+				inp.HAlignControl = qst.HLeft
+				inp.Suffix = rf
+				// inp.Desc = rf
+
+			} // research-fields - 45
+
+			// research-fields - free entry - 46
+			for _, rfo := range rfos {
+				inp := gr3.AddInput()
+				inp.Name = "research-field-" + util.LowerCasedUnderscored(rfo["en"])
+				inp.Type = "textarea"
+				inp.Type = "text"
+
+				inp.HAlignLabel = qst.HRight
+
+				inp.ColSpanLabel = 1
+				inp.ColSpanControl = 4
+
+				inp.MaxChars = 14
+				inp.Desc = rfo
+			} // research-fields - free entry - 46
+		} // gr3
+
+		//
+		// 47
+		{
+			names1stMatrix := []string{"qualified"}
+			emptyRowLabels := []trl.S{}
+			gr := p.AddRadioMatrixGroup(labelsGoodBad19(), names1stMatrix, emptyRowLabels, 1)
+			gr.Cols = 9 // necessary, otherwise no vspacers
+			gr.Width = 75
+			gr.OddRowsColoring = true
+			gr.Label = trl.S{
+				"de": "Ich fühlte mich ausreichend informiert, um die obenstehenden Fragen beantworten zu können.",
+				"en": "I had enough expertise to answer the questions of the survey.",
+				"fr": "J'ai eu suffisamment d'expertise pour répondre aux questions du sondage.",
+				"it": "“Ritengo di avere sufficiente esperienza per rispondere alle domande di questo sondaggio”. Quanto si sente rappresentato da questa affermazione?",
+			}
+		}
+
+		// 48
+		{
+			gr := p.AddGroup()
+			gr.Cols = 15
+			gr.Width = 100
+
+			gr.Label = trl.S{
+				"de": "Fragen der Europäischen Integration sind Gegenstand meiner persönlichen Forschung.",
+				"en": "Questions of European Integration are part of my research agenda.",
+				"fr": "Les questions de l'intégration européenne font partie de ma recherche.",
+				"it": "Le questioni di integrazione europea fanno parte della sua agenda di ricerca?",
+			}
+
+			{
+
+				inp := gr.AddInput()
+				inp.Name = "informed"
+				inp.Type = "radiogroup"
+				rd1 := inp.AddRadio()
+				rd2 := inp.AddRadio()
+				rd1.Label = cfg.Get().Mp["yes"]
+				rd2.Label = cfg.Get().Mp["no"]
+				rd1.HAlign = qst.HLeft
+				rd2.HAlign = qst.HLeft
+				inp.ColSpanLabel = 1
+				inp.ColSpanControl = 1
+			}
+			{
+				inp := gr.AddInput()
+				inp.Type = "button"
+				inp.Name = "submitBtn"
+				inp.Response = "5"
+				inp.Label = cfg.Get().Mp["next"]
+				inp.Label = cfg.Get().Mp["finish_questionnaire"]
+				inp.AccessKey = "n"
+				inp.HAlignControl = qst.HRight
+				inp.ColSpanControl = 13
+				inp.HAlignControl = qst.HRight
+			}
+		}
 
 	}
 

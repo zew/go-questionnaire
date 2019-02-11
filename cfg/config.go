@@ -394,6 +394,14 @@ func Example() *ConfigT {
 				"it": "Il login non è andato a buon fine.\nPer piacere si utilizzi il link fornitovi per effettuare il login.\nSe il link è spezzato in due, le due parti devono essere riconnesse.",
 				"pl": "Logowanie przez hash nie powiodło się. \nProszę użyć przesłanego linku, aby się zarejestrować. \nJeśli łącze zostało podzielone na dwa wiersze, Połącz ponownie wiersze.",
 			},
+			"finish_questionnaire": {
+				"de": "Fragebogen abschließen",
+				"en": "Finish this survey",
+				"es": "Terminé esta encuesta",
+				"fr": "Terminé cette enquête",
+				"it": "Finito questo sondaggio",
+				"pl": "Zakończyłem tę ankietę",
+			},
 			"finished_by_participant": {
 				"de": "Sie haben den Fragebogen bereits abgeschlossen (%v).",
 				"en": "You already finished this survey wave at %v",
@@ -465,6 +473,22 @@ func Example() *ConfigT {
 				"fr": "Veuillez choisir une option",
 				"it": "Si prega di selezionare una opzione",
 				"pl": "Proszę wybrać jedną z opcji",
+			},
+			"yes": {
+				"de": "Ja",
+				"en": "Yes",
+				"es": "Sí",
+				"fr": "Oui",
+				"it": "Sì",
+				"pl": "Tak",
+			},
+			"no": {
+				"de": "Nein",
+				"en": "No",
+				"es": "No",
+				"fr": "Non",
+				"it": "No",
+				"pl": "Nie",
 			},
 		},
 	}

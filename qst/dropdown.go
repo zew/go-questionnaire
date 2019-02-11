@@ -151,6 +151,14 @@ func (d *DropdownT) Select(selectKey string) string {
 }
 
 //
+// Sorting stuff
+//
+
+func (d *DropdownT) Len() int           { return len(d.Options) }
+func (d *DropdownT) Swap(i, j int)      { d.Options[i], d.Options[j] = d.Options[j], d.Options[i] }
+func (d *DropdownT) Less(i, j int) bool { return d.Options[i].Val[d.LC] < d.Options[j].Val[d.LC] }
+
+//
 // Template stuff
 //
 

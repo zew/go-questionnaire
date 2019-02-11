@@ -1,5 +1,6 @@
 package trl
 
+// Countries is contains translations of country names by ISO code
 var Countries = map[string]S{
 	"AF":             {"en": "Afghanistan", "fr": "Afghanistan", "de": "Afghanistan", "it": "Afghanistan"},
 	"AL":             {"en": "Albania", "fr": "Albanie", "de": "Albanien", "it": "Albania"},

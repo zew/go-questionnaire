@@ -10,6 +10,7 @@ import (
 	"fmt"
 	"log"
 	"path/filepath"
+	"sort"
 	"strings"
 	"time"
 
@@ -38,10 +39,9 @@ func (i *inputT) AddRadio() *radioT {
 // There is one exception for multiple radios (radiogroup) with the same name but distinct values.
 // Multiple checkboxes (checkboxgroup) with same name but distinct values are a dubious instrument. See comment to implementedType checkboxgroup.
 type inputT struct {
-	Name string `json:"name,omitempty"`
-	Type string `json:"type,omitempty"`
-	// Different Stepping;   InputMode string `json:"input_mode,omitempty"` // set to i.e. " inputmode='numeric' "
-	MaxChars int `json:"max_chars,omitempty"` // Number of input chars, also used to compute width
+	Name     string `json:"name,omitempty"`
+	Type     string `json:"type,omitempty"`
+	MaxChars int    `json:"max_chars,omitempty"` // Number of input chars, also used to compute width
 
 	HAlignLabel   horizontalAlignment `json:"horizontal_align_label,omitempty"`   // description left/center/right of input, default left, similar setting for radioT but not for group
 	HAlignControl horizontalAlignment `json:"horizontal_align_control,omitempty"` // label       left/center/right of input, default left, similar setting for radioT but not for group
@@ -59,17 +59,15 @@ type inputT struct {
 	ColSpanLabel   int `json:"col_span_label,omitempty"`
 	ColSpanControl int `json:"col_span_control,omitempty"`
 
-	Radios []*radioT `json:"radios,omitempty"` // This slice implements the radiogroup - and the senseless checkboxgroup
+	Radios []*radioT  `json:"radios,omitempty"`    // This slice implements the radiogroup - and the senseless checkboxgroup
+	DD     *DropdownT `json:"drop_down,omitempty"` // As pointer to prevent JSON cluttering
 
 	Validator string `json:"validator,omitempty"` // i.e. inRange20 - any string from validators
 	ErrMsg    trl.S  `json:"err_msg,omitempty"`
 
-	Response string `json:"response,omitempty"` // but also Value
-	// ResponseFloat float64 `json:"response_float,omitempty"` // also for integers
-
+	Response string `json:"response,omitempty"` // also contains the Value of options and checkboxes
+	//  ResponseFloat float64  - floats and integers are stored as strings in Response
 	DynamicFunc string `json:"dynamic_func,omitempty"` // Refers to dynFuncs, for type == 'dynamic'
-
-	DD *DropdownT `json:"drop_down,omitempty"`
 }
 
 // NewInput returns an input filled in with globally enumerated label, decription etc.
@@ -207,6 +205,8 @@ func (i inputT) HTML(langCode string, numCols int) string {
 			i.DD.Select(i.Response)
 			i.DD.SetAttr("style", width)
 			i.DD.SetAttr("class", i.CSSControl)
+
+			sort.Sort(i.DD)
 
 			ctrl += i.DD.RenderStr()
 

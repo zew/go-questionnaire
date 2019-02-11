@@ -1,8 +1,10 @@
 package strube
 
 import (
+	"github.com/zew/go-questionnaire/cfg"
 	"github.com/zew/go-questionnaire/qst"
 	"github.com/zew/go-questionnaire/trl"
+	"github.com/zew/util"
 )
 
 var xx = trl.S{
@@ -135,7 +137,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		p.Desc = trl.S{
 			"de": "Inwieweit stimmen Sie den folgenden Aufgaben zu?",
 			"en": "Do you agree with the following statements?",
-			"fr": "Approuvez-vous les propositions suivantes ?",
+			"fr": "Approuvez-vous les propositions suivantes&nbsp;?",
 			"it": "In che misura si trova d’accordo con le seguenti affermazioni?",
 		}
 		p.Short = trl.S{
@@ -487,7 +489,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 		p := q.AddPage()
 		// p.NoNavigation = true
-		p.Width = 70
+		p.Width = 95
 		p.Section = trl.S{
 			"de": "Persönliche Fragen",
 			"en": "Personal questions",
@@ -517,7 +519,9 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		{
 			gr := p.AddGroup()
 			gr.Cols = 3
+			gr.Width = 70
 			gr.OddRowsColoring = true
+			gr.BottomVSpacers = 2
 
 			{
 				inp := gr.AddInput()
@@ -529,12 +533,14 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Label = trl.S{
 					"de": "In welchem Jahr wurden Sie geboren?",
 					"en": "In which year were you born?",
-					"fr": "Quelle est votre année de naissance ?",
+					"fr": "Quelle est votre année de naissance&nbsp;?",
 					"it": "In quale anno è nato?",
 				}
+				inp.Validator = "inRange10000"
 
 			}
 
+			// 42
 			{
 				inp := gr.AddInput()
 				inp.Name = "nationality"
@@ -544,12 +550,11 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				for k, v := range trl.Countries {
 					inp.DD.Add(k, v)
 				}
-				inp.DD.AddPleaseSelect(trl.S{
-					"de": "please choose",
-					"en": "please choose",
-					"fr": "please choose",
-					"it": "please choose",
-				})
+				chooseOne := trl.S{}
+				for k, v := range cfg.Get().Mp["must_one_option"] {
+					chooseOne[k] = " " + v // prefix with ' ' such that sorting puts it at the top
+				}
+				inp.DD.AddPleaseSelect(chooseOne)
 
 				inp.ColSpanControl = 2
 				inp.ColSpanLabel = 1
@@ -561,8 +566,156 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				}
 
 			}
-
 		}
+
+		// 43
+		{
+			gr := p.AddGroup()
+			gr.Cols = 20
+			gr.OddRowsColoring = true
+
+			rfs := []trl.S{ // research fields
+				{
+					"de": "Mikroökonomie",
+					"en": "Microeconomics",
+					"fr": "Microéconomie",
+					"it": "Microeconomia",
+				},
+				{
+					"de": "Makroökonomie",
+					"en": "Macroeconomics",
+					"fr": "Macroéconomie",
+					"it": "Macroeconomia",
+				},
+				{
+					"de": "Monetäre Ökonomie",
+					"en": "Monetary Economics",
+					"fr": "Économie monétaire",
+					"it": "Economia monetaria",
+				},
+				{
+					"de": "Finanzwissenschaft",
+					"en": "Public Economics",
+					"fr": "Économie publique",
+					"it": "Economia pubblica<br>\n(Scienza delle finanze)",
+				},
+				{
+					"de": "Arbeitsmarktökonomie",
+					"en": "Labour Economics",
+					"fr": "Économie du travail",
+					"it": "Economia del lavoro",
+				},
+				{
+					"de": "Finanzwirtschaft",
+					"en": "Finance",
+					"fr": "Finance",
+					"it": "Finanza",
+				},
+				{
+					"de": "Wirtschaftspolitik",
+					"en": "Economic Policy",
+					"fr": "Économie politique",
+					"it": "Economia politica",
+				},
+				{
+					"de": "Politische Ökonomie",
+					"en": "Political Economy",
+					"fr": "Politique économique",
+					"it": "Politica economica",
+				},
+				{
+					"de": "International Handel / Internationale Ökonomie",
+					"en": "Trade / International Economics",
+					"fr": "Économie de commerce / internationale",
+					"it": "Commercio / Economia internazionale",
+				},
+				{
+					"de": "Entwicklungsökonomie",
+					"en": "Development Economics",
+					"fr": "Économie du développement",
+					"it": "Economia dello sviluppo",
+				},
+				{
+					"de": "Umweltökonomie",
+					"en": "Environmental Economics",
+					"fr": "Économie de l’environnement",
+					"it": "Economia ambientale",
+				},
+				{
+					"de": "Industrieökonomie",
+					"en": "Industrial Economics",
+					"fr": "Économie industrielle",
+					"it": "Economia industriale<br>\n(Organizzazione industriale)",
+				},
+			}
+
+			// research fields - free entry
+			rfos := []trl.S{
+				{
+					"de": "BWL, Fachgebiet",
+					"en": "Business Administration, field",
+					"fr": "Gestion d’entreprise, domaine",
+					"it": "Amministrazione aziendale, campo",
+				},
+				{
+					"de": "VWL weitere, Fachgebiet",
+					"en": "Economics other, field",
+					"fr": "Économie ni Gestion d’entreprise, domaine",
+					"it": "Economia altro",
+				},
+				{
+					"de": "Weder BWL noch VWL, Fachgebiet",
+					"en": "Neither Economics nor Business Administration, field",
+					"fr": "Ni Économie ni Gestion d’entreprise, domaine",
+					"it": "Né Economia né amministrazione aziendale, campo",
+				},
+			}
+
+			inp := gr.AddInput()
+			inp.Name = "label-research-fields"
+			inp.Type = "textblock"
+			inp.ColSpanLabel = 20
+			inp.Label = trl.S{
+				"de": "Wie würden Sie Ihr Forschungsgebiet beschreiben? <br>\nBei der Beantwortung dieser Frage sind mehrere Antworten möglich.",
+				"en": "How would you classify your field of research? <br>\nYou can choose several answers.",
+				"fr": "Comment classeriez-vous votre domaine de recherche ?<br>\nVous pouvez choisir plusieurs réponses.",
+				"it": "Come classificherebbe il suo campo di ricerca? <br>\nPuò selezionare più risposte.",
+			}
+
+			for _, rf := range rfs {
+				inp := gr.AddInput()
+				inp.Name = "research-field-" + util.LowerCasedUnderscored(rf["en"])
+				inp.Type = "checkbox"
+				inp.CSSLabel = "special-input-margin-vertical"
+				inp.ColSpanLabel = 4
+				inp.ColSpanControl = 1
+				// inp.HAlignLabel = qst.HCenter
+				inp.HAlignControl = qst.HCenter
+				inp.HAlignControl = qst.HLeft
+				inp.Suffix = rf
+				// inp.Desc = rf
+
+			} // research-fields - 43
+
+			gr.BottomVSpacers = 1
+
+			gr2 := p.AddGroup()
+			gr2.Cols = 24
+			// research-fields - free entry - 44
+			for _, rfo := range rfos {
+				inp := gr.AddInput()
+				inp.Name = "research-field-" + util.LowerCasedUnderscored(rfo["en"])
+				inp.Type = "textarea"
+				inp.Type = "text"
+
+				inp.HAlignLabel = qst.HRight
+
+				inp.ColSpanLabel = 3
+				inp.ColSpanControl = 5
+				inp.MaxChars = 14
+				inp.Desc = rfo
+			} // research-fields - free entry - 44
+		} // gr2
 
 	}
 

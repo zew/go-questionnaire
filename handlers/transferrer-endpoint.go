@@ -1,6 +1,7 @@
 package handlers
 
 import (
+	"compress/gzip"
 	"encoding/json"
 	"fmt"
 	"log"
@@ -90,15 +91,26 @@ func TransferrerEndpointH(w http.ResponseWriter, r *http.Request) {
 	firstColLeftMostPrefix := " "
 	byts, err := json.MarshalIndent(qs, firstColLeftMostPrefix, "\t")
 	if err != nil {
-		helper(w, r, fmt.Errorf("Marschalling questionnair failed: %v", err))
+		helper(w, r, fmt.Errorf("marshalling questionnaire failed: %v", err))
 		return
 	}
-	sz := fmt.Sprintf("%.3f MB", float64(len(qs)/(1<<10))/(1<<10))
-	log.Printf("%v bytes marshalled into bytes slice", sz)
+	sz1 := fmt.Sprintf("%.3f MB", float64(len(byts)/(1<<10))/(1<<10))
+	log.Printf("%v marshalled into bytes slice", sz1)
 
 	w.Header().Set("Content-Type", "application/json; charset=utf-8")
-	w.Header().Set("Content-Length", fmt.Sprintf("%v", len(byts)))
-	w.Write(byts)
-	log.Printf("%v bytes written to http response", sz)
+	w.Header().Set("Content-Encoding", "gzip")
+
+	// w.Header().Set("Content-Length", fmt.Sprintf("%v", len(byts)))  // do not set, if response is gzipped !
+	// w.Write(byts)
+
+	gz := gzip.NewWriter(w)
+	defer gz.Close()
+	gzipBytes, err := gz.Write(byts)
+	if err != nil {
+		helper(w, r, fmt.Errorf("gzipping questionnaire failed: %v", err))
+		return
+	}
+	sz2 := fmt.Sprintf("%.3f MB", float64(gzipBytes/(1<<10))/(1<<10))
+	log.Printf("%v gzipped written to http response", sz2)
 
 }

@@ -782,7 +782,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 					"it": "Lecturer",
 				},
 				{
-					"de": "Senior researcher",
+					"de": "Senior Researcher",
 					"en": "Senior researcher <br>\n(research institutes)",
 					"fr": "Senior researcher <br>\n(institut de recherche)",
 					"it": "Ricercatore presso istituto di ricerca",

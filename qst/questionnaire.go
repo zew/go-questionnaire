@@ -230,9 +230,10 @@ func (i inputT) HTML(langCode string, numCols int) string {
 		// Append suffix
 		if i.Suffix.Set() {
 			ctrl = strings.TrimSuffix(ctrl, "\n")
-			sfx := fmt.Sprintf("<span class='go-quest-label %v' >%v</span>\n", i.CSSLabel, i.Suffix.TrSilent(langCode))
-			// We want to prevent line-break of the '%' or '€' character.
-			// inputs must be inline-block, for whitespace nowrap to work
+			// We want to prevent line-break of the '%' or '€' suffix character.
+			// inputs must be inline-block, for whitespace nowrap to work.
+			// At the same time: suffix-inner enables wrapping for the suffix itself
+			sfx := fmt.Sprintf("<span class='go-quest-label %v  suffix-inner' >%v</span>\n", i.CSSLabel, i.Suffix.TrSilent(langCode))
 			ctrl = fmt.Sprintf("<span class='suffix-nowrap' >%v%v</span>\n", ctrl, sfx)
 		}
 		// Append error message

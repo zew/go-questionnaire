@@ -86,7 +86,7 @@ func (q *QuestionnaireT) MenuMobile() string {
 		)
 
 	}
-	lc := languageChooser(q.LangCode)
+	lc := q.languageChooser(q.LangCode)
 	fmt.Fprintf(&b, `
 		<li class="" >
 			%v
@@ -111,10 +111,11 @@ func (q *QuestionnaireT) MenuMobile() string {
 
 // A duplicate of
 // tpl.TplDataT{}.LanguageChooser(cfg.Pref(), q.LangCode)
-func languageChooser(currCode string) string {
+func (q *QuestionnaireT) languageChooser(currCode string) string {
 
 	s := []string{}
-	for _, key := range cfg.Get().LangCodes {
+	// for _, key := range cfg.Get().LangCodes {
+	for _, key := range q.LangCodesOrder {
 		keyCap := strings.Title(key)
 		if key == currCode {
 			s = append(s, fmt.Sprintf("<b           title='%v'>%v</b>\n", key, keyCap))

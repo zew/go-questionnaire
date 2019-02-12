@@ -20,6 +20,11 @@
     <title>{{.Trls.app_label.Tr $lc}}</title>
     <link href="{{prefix "/css/main_mobile.css"}}" rel="stylesheet" type="text/css" />
     <link href="{{prefix "/css/main_mobile_menu_without_js.css"}}" rel="stylesheet" type="text/css" />
+	{{if exists . "Q"}}
+		{{if ne .Q.Survey.Type ""}}
+			<link href="{{prefix "/css/main_mobile_"}}{{.Q.Survey.Type}}.css" rel="stylesheet" type="text/css" />
+		{{end}}
+	{{end}}
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- No scaling

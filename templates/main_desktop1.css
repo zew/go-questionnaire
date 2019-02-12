@@ -284,9 +284,21 @@ table.main-table tr:nth-child(odd){
 	line-height:   1.1em;
 }
 
-/* prevent wrapping of suffix */
+/* 
+    We want to prevent line-break of the '%' or '€' suffix character.
+    inputs must be inline-block, for whitespace nowrap to work.
+    At the same time: suffix-inner enables wrapping for the suffix itself
+*/
 .suffix-nowrap {
     white-space: nowrap;
+}
+
+.suffix-inner {
+    white-space: normal !important;  /* overriding outer element setting */
+
+    display: inline-block;
+    vertical-align: top;
+    width: 75%;
 }
 
 

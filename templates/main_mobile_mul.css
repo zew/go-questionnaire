@@ -1,0 +1,7 @@
+
+/* prevent wrapping of suffix */
+.suffix-nowrap {
+    /* white-space: nowrap; */
+    white-space: normal;
+}
+

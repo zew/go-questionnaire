@@ -276,6 +276,10 @@ func (q *QuestionnaireT) Hyphenize() {
 					v := trl.HyphenizeText(v)
 					q.Pages[i1].Groups[i2].Inputs[i3].Desc[lc] = v
 				}
+				for lc, v := range i.Suffix {
+					v := trl.HyphenizeText(v)
+					q.Pages[i1].Groups[i2].Inputs[i3].Suffix[lc] = v
+				}
 			}
 		}
 	}

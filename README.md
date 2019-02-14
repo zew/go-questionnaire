@@ -121,6 +121,8 @@ The `travis-ci` build logs contain the details.
 
 * Load testing script for 50 concurrent requests.
 
+* Automatic `Lets encrypt` certification.
+
 ### Design and Layout
 
 * Each row can have a different number of columns.
@@ -268,8 +270,6 @@ Mobile layout was tested with `crossbrowsertesting.com`.
 ## Possible enhancements
 
 * Adding a `Docker` script?
-
-* Adding `Lets encrypt`?  Maybe via `mholt/certmagic`
 
 * Migrate file storage to GoCloud library and make deployable on Google Appengine or AWS?
 

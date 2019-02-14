@@ -21,6 +21,7 @@ import (
 	"github.com/zew/go-questionnaire/muxwrap"
 	"github.com/zew/go-questionnaire/sessx"
 	"github.com/zew/go-questionnaire/tpl"
+	"golang.org/x/crypto/acme/autocert"
 )
 
 func main() {
@@ -122,6 +123,14 @@ func main() {
 
 	//
 	if cfg.Get().TLS {
+
+		// stackoverflow.com/questions/37321760
+		certManager := autocert.Manager{
+			Prompt:     autocert.AcceptTOS,
+			HostPolicy: autocert.HostWhitelist(cfg.Get().HostName), // Your domain here
+			Cache:      autocert.DirCache("certs"),                 // Folder for storing certificates
+		}
+
 		fallbackSrv := &http.Server{
 			ReadTimeout: time.Duration(cfg.Get().ReadTimeOut) * time.Second,
 			// ReadHeaderTimeout:  120 * time.Second,  // individual request can control body timeout
@@ -133,6 +142,9 @@ func main() {
 				url := "https://" + req.Host + req.URL.String()
 				http.Redirect(w, req, url, http.StatusMovedPermanently)
 			}),
+		}
+		if cfg.Get().LetsEncrypt {
+			fallbackSrv.Handler = certManager.HTTPHandler(nil)
 		}
 		go func() { log.Fatal(fallbackSrv.ListenAndServe()) }()
 
@@ -162,6 +174,9 @@ func main() {
 			tlsCfg.CipherSuites = append(tlsCfg.CipherSuites, tls.TLS_RSA_WITH_AES_256_GCM_SHA384)
 			tlsCfg.CipherSuites = append(tlsCfg.CipherSuites, tls.TLS_RSA_WITH_AES_128_GCM_SHA256)
 		}
+		if cfg.Get().LetsEncrypt {
+			tlsCfg.GetCertificate = certManager.GetCertificate
+		}
 
 		// err = http.ListenAndServeTLS(IpPort, "server.pem", "server.key", mux3)
 		srv := &http.Server{
@@ -173,7 +188,12 @@ func main() {
 			TLSNextProto: make(map[string]func(*http.Server, *tls.Conn, http.Handler), 0),
 			Handler:      mux3,
 		}
-		log.Fatal(srv.ListenAndServeTLS("server.pem", "server.key"))
+		if cfg.Get().LetsEncrypt {
+			log.Fatal(srv.ListenAndServeTLS("", "")) // "", "" => empty key and cert files; key+cert come from Let's Encrypt
+		} else {
+			log.Fatal(srv.ListenAndServeTLS("server.pem", "server.key"))
+		}
+
 	} else {
 		log.Fatal(http.ListenAndServe(IpPort, mux3))
 	}

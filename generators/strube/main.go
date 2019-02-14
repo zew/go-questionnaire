@@ -79,6 +79,7 @@ func labelsGoodBad19() []trl.S {
 
 // Create creates a questionnaire with a few pages and inputs.
 func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
+
 	q := qst.QuestionnaireT{}
 	q.Survey = qst.NewSurvey("strube")
 	q.Survey.Params = params
@@ -109,6 +110,156 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		"en": "Survey: Design of the European Union",
 		"fr": "Questionnaire: Design de l’Union Européenne",
 		"it": "Questionario: Design dell'Unione Europea",
+	}
+
+	rfs := []trl.S{ // research fields
+		{
+			"de": "Mikroökonomie",
+			"en": "Microeconomics",
+			"fr": "Microéconomie",
+			"it": "Microeconomia",
+		},
+		{
+			"de": "Makroökonomie",
+			"en": "Macroeconomics",
+			"fr": "Macroéconomie",
+			"it": "Macroeconomia",
+		},
+		{
+			"de": "Monetäre Ökonomie",
+			"en": "Monetary Economics",
+			"fr": "Économie monétaire",
+			"it": "Economia monetaria",
+		},
+		{
+			"de": "Finanzwissenschaft",
+			"en": "Public Economics",
+			"fr": "Économie publique",
+			"it": "Economia pubblica<br>\n(Scienza delle finanze)",
+		},
+		{
+			"de": "Arbeitsmarktökonomie",
+			"en": "Labour Economics",
+			"fr": "Économie du travail",
+			"it": "Economia del lavoro",
+		},
+		{
+			"de": "Finanzwirtschaft",
+			"en": "Finance",
+			"fr": "Finance",
+			"it": "Finanza",
+		},
+		{
+			"de": "Wirtschaftspolitik",
+			"en": "Economic Policy",
+			"fr": "Économie politique",
+			"it": "Economia politica",
+		},
+		{
+			"de": "Politische Ökonomie",
+			"en": "Political Economy",
+			"fr": "Politique économique",
+			"it": "Politica economica",
+		},
+		{
+			"de": "International Handel / <br>\nInternationale Ökonomie",
+			"en": "Trade / <br>\nInternational Economics",
+			"fr": "Économie de commerce / <br>\ninternationale",
+			"it": "Commercio / <br>\nEconomia internazionale",
+		},
+		{
+			"de": "Entwicklungsökonomie",
+			"en": "Development Economics",
+			"fr": "Économie du développement",
+			"it": "Economia dello sviluppo",
+		},
+		{
+			"de": "Umweltökonomie",
+			"en": "Environmental Economics",
+			"fr": "Économie de l’environnement",
+			"it": "Economia ambientale",
+		},
+		{
+			"de": "Industrieökonomie",
+			"en": "Industrial Economics",
+			"fr": "Économie industrielle",
+			"it": "Economia industriale<br>\n(Organizzazione industriale)",
+		},
+	}
+
+	// research fields - free entry
+	rfos := []trl.S{
+		{
+			"de": "BWL, Fachgebiet",
+			"en": "Business Administration, field",
+			"fr": "Gestion d’entreprise, domaine",
+			"it": "Amministrazione aziendale, campo",
+		},
+		{
+			"de": "VWL weitere, Fachgebiet",
+			"en": "Economics other, field",
+			"fr": "Économie ni Gestion d’entreprise, domaine",
+			"it": "Economia altro",
+		},
+		{
+			"de": "Weder BWL noch VWL, Fachgebiet",
+			"en": "Neither Economics nor Business Administration, field",
+			"fr": "Ni Économie ni Gestion d’entreprise, domaine",
+			"it": "Né Economia né amministrazione aziendale, campo",
+		},
+	}
+
+	jobTitles := []trl.S{ // research fields
+		{
+			"de": "ProfessorIn",
+			"en": "Professor",
+			"fr": "Professeur",
+			"it": "Professore ordinario",
+		},
+		{
+			"de": "JuniorprofessorIn",
+			"en": "Assistant professor",
+			"fr": "Professeur assistant/e",
+			"it": "Professore Assistente",
+		},
+		{
+			"de": "Assoziierte/r ProfessorIn",
+			"en": "Associate professor",
+			"fr": "Professeur associé/e",
+			"it": "Professore associato",
+		},
+		{
+			"de": "Post-Doc",
+			"en": "Post-Doc",
+			"fr": "Post-Doc",
+			"it": "Assegnista di ricerca",
+		},
+		{
+			"de": "DozentIn",
+			"en": "Lecturer",
+			"fr": "Maître de conférences",
+			"it": "Ricercatore Universitario",
+		},
+		{
+			"de": "Senior Researcher",
+			"en": "Senior researcher <br>\n(research institute)",
+			"fr": "Senior researcher <br>\n(institut de recherche)",
+			"it": "Ricercatore presso istituto di ricerca",
+		},
+		{
+			"de": "DoktorandIn",
+			"en": "PhD Candidate",
+			"fr": "Doctorant/e", //   Étudiant en doctorat
+			"it": "Dottorando",
+		},
+	}
+	jobTitlesOther := []trl.S{
+		{
+			"de": "Andere Position",
+			"en": "Other",
+			"fr": "Autre",
+			"it": "Altro",
+		},
 	}
 
 	i1 := "[attr-country]"
@@ -196,23 +347,12 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		p := q.AddPage()
 		// p.NoNavigation = true
 		p.Width = 70
-		p.Section = trl.S{
-			"de": "Zur Aufgaben- und Kompetenzverteilung in Europa",
-			"en": "EU competencies",
-			"fr": "Répartition des missions et des compétences en Europe",
-			"it": "Competenze dell'Unione europea (UE). È d'accordo con le seguenti affermazioni?",
-		}
+		p.Section = trl.S{}
 		p.Label = trl.S{
-			"de": "",
-			"en": "",
-			"fr": "",
-			"it": "",
-		}
-		p.Desc = trl.S{
-			"de": "",
-			"en": "",
-			"fr": "",
-			"it": "",
+			"de": " &nbsp; ",
+			"en": " &nbsp; ",
+			"fr": " &nbsp; ",
+			"it": " &nbsp; ",
 		}
 		p.Short = trl.S{
 			"de": "Aufgaben- und Kompetenzverteilung",
@@ -221,6 +361,20 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			"it": "Competenze UE",
 		}
 
+		//
+		//
+		{
+			gr := p.AddGroup()
+			gr.Label = trl.S{
+				"de": "Zur Aufgaben- und Kompetenzverteilung in Europa",
+				"en": "EU competencies",
+				"fr": "Répartition des missions et des compétences en Europe",
+				"it": "Competenze dell'Unione europea (UE). È d'accordo con le seguenti affermazioni?",
+			}
+			gr.BottomVSpacers = 0
+		}
+
+		//
 		// 21
 		{
 			names1stMatrix := []string{"tax"}
@@ -305,40 +459,20 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			}
 		}
 
-	}
-
-	//
-	// Page 3
-	{
-		p := q.AddPage()
-		// p.NoNavigation = true
-		p.Width = 70
-		p.Section = trl.S{
-			"de": "Europäische Währungsunion (EWU) - 1",
-			"en": "European Monetary Union (EMU) - 1",
-			"fr": "L'Union économique et monétaire de l'Union européenne (UEM) - 1",
-			"it": "Unione monetaria europea (UME) - 1",
-		}
-		p.Label = trl.S{
-			"de": "",
-			"en": "",
-			"fr": "",
-			"it": "",
-		}
-		p.Desc = trl.S{
-			"de": "",
-			"en": "",
-			"fr": "",
-			"it": "",
-		}
-		p.Short = trl.S{
-			"de": "Währungsunion - 1",
-			"en": "Monetary Union - 1",
-			"fr": "L'Union monétaire - 1",
-			"it": "Unione monetaria - 1",
+		//
+		//
+		{
+			gr := p.AddGroup()
+			gr.Label = trl.S{
+				"de": "Europäische Währungsunion (EWU)",
+				"en": "European Monetary Union (EMU)",
+				"fr": "L'Union économique et monétaire de l'Union européenne (UEM)",
+				"it": "Unione monetaria europea (UME)",
+			}
+			gr.BottomVSpacers = 0
 		}
 
-		// 31
+		// 25
 		{
 			names1stMatrix := []string{"insure"}
 			emptyRowLabels := []trl.S{}
@@ -359,7 +493,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			}
 		}
 
-		// 32
+		// 26
 		{
 			names1stMatrix := []string{"eurobonds"}
 			emptyRowLabels := []trl.S{}
@@ -380,7 +514,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			}
 		}
 
-		// 33
+		// 27
 		{
 			names1stMatrix := []string{"stability"}
 			emptyRowLabels := []trl.S{}
@@ -401,41 +535,9 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			}
 		}
 
-	}
-
-	//
-	// Page 4
-	{
-
-		p := q.AddPage()
-		// p.NoNavigation = true
-		p.Width = 70
-		p.Section = trl.S{
-			"de": "Europäische Währungsunion (EWU) - 2",
-			"en": "European Monetary Union (EMU) - 2",
-			"fr": "L'Union économique et monétaire de l'Union européenne (UEM) - 2",
-			"it": "Unione monetaria europea (UME) - 2",
-		}
-		p.Label = trl.S{
-			"de": "",
-			"en": "",
-			"fr": "",
-			"it": "",
-		}
-		p.Desc = trl.S{
-			"de": "",
-			"en": "",
-			"fr": "",
-			"it": "",
-		}
-		p.Short = trl.S{
-			"de": "Währungsunion - 2",
-			"en": "Monetary Union - 2",
-			"fr": "L'Union monétaire - 2",
-			"it": "Unione monetaria - 2",
-		}
-
-		// 34
+		//
+		//
+		// 28
 		{
 			names1stMatrix := []string{"bankruptcy"}
 			emptyRowLabels := []trl.S{}
@@ -456,7 +558,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			}
 		}
 
-		// 35
+		// 29
 		{
 			names1stMatrix := []string{"purchase"}
 			emptyRowLabels := []trl.S{}
@@ -477,7 +579,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			}
 		}
 
-		// 36
+		// 30
 		{
 			names1stMatrix := []string{"bankunion"}
 			emptyRowLabels := []trl.S{}
@@ -501,7 +603,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	}
 
 	//
-	// Page 5
+	// Page 3
 	{
 
 		p := q.AddPage()
@@ -532,14 +634,14 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			"it": "D. personali",
 		}
 
-		// 41
 		{
 			gr := p.AddGroup()
 			gr.Cols = 12
-			gr.Width = 80
+			gr.Width = 72
 			gr.OddRowsColoring = true
-			gr.BottomVSpacers = 2
+			gr.BottomVSpacers = 1
 
+			// 41
 			{
 				inp := gr.AddInput()
 				inp.Name = "birth"
@@ -562,13 +664,48 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp := gr.AddInput()
 				inp.Name = "nationality"
 				inp.Type = "dropdown"
-				inp.ColSpanControl = 4
 				inp.ColSpanLabel = 3
+				inp.ColSpanControl = 4
 				inp.Label = trl.S{
 					"de": "Welche Nationalität haben Sie?",
 					"en": "What is your nationality?",
 					"fr": "Quelle est votre nationalité ?",
 					"it": "Qual è la sua nazionalità?",
+				}
+
+				inp.DD = &qst.DropdownT{}
+				// for k, v := range trl.Countries {
+				for _, iso := range trl.CountryISOs {
+					inp.DD.Add(iso, trl.Countries[iso])
+				}
+				chooseOne := trl.S{}
+				for k, v := range cfg.Get().Mp["must_one_option"] {
+					chooseOne[k] = " " + v // prefix with ' ' such that sorting puts it at the top
+				}
+				inp.DD.AddPleaseSelect(chooseOne)
+
+			}
+		}
+
+		{
+			gr := p.AddGroup()
+			gr.Cols = 12
+			gr.Width = 72
+			gr.OddRowsColoring = true
+			gr.BottomVSpacers = 1
+
+			// 43
+			{
+				inp := gr.AddInput()
+				inp.Name = "residence"
+				inp.Type = "dropdown"
+				inp.ColSpanLabel = 3
+				inp.ColSpanControl = 9
+				inp.Label = trl.S{
+					"de": "In welchem Land wohnen Sie?",
+					"en": "What is your country of residence?",
+					"fr": "Quel est votre pays de résidence ?",
+					"it": "In quale Paese risiede?",
 				}
 
 				inp.DD = &qst.DropdownT{}
@@ -584,114 +721,70 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			}
 		}
 
-		// 43
 		{
 			gr := p.AddGroup()
-			gr.Cols = 20
+			gr.Cols = 12
+			gr.Width = 72
 			gr.OddRowsColoring = true
-			gr.BottomVSpacers = 1
+			gr.BottomVSpacers = 3
 
-			rfs := []trl.S{ // research fields
-				{
-					"de": "Mikroökonomie",
-					"en": "Microeconomics",
-					"fr": "Microéconomie",
-					"it": "Microeconomia",
-				},
-				{
-					"de": "Makroökonomie",
-					"en": "Macroeconomics",
-					"fr": "Macroéconomie",
-					"it": "Macroeconomia",
-				},
-				{
-					"de": "Monetäre Ökonomie",
-					"en": "Monetary Economics",
-					"fr": "Économie monétaire",
-					"it": "Economia monetaria",
-				},
-				{
-					"de": "Finanzwissenschaft",
-					"en": "Public Economics",
-					"fr": "Économie publique",
-					"it": "Economia pubblica<br>\n(Scienza delle finanze)",
-				},
-				{
-					"de": "Arbeitsmarktökonomie",
-					"en": "Labour Economics",
-					"fr": "Économie du travail",
-					"it": "Economia del lavoro",
-				},
-				{
-					"de": "Finanzwirtschaft",
-					"en": "Finance",
-					"fr": "Finance",
-					"it": "Finanza",
-				},
-				{
-					"de": "Wirtschaftspolitik",
-					"en": "Economic Policy",
-					"fr": "Économie politique",
-					"it": "Economia politica",
-				},
-				{
-					"de": "Politische Ökonomie",
-					"en": "Political Economy",
-					"fr": "Politique économique",
-					"it": "Politica economica",
-				},
-				{
-					"de": "International Handel / <br>\nInternationale Ökonomie",
-					"en": "Trade / <br>\nInternational Economics",
-					"fr": "Économie de commerce / <br>\ninternationale",
-					"it": "Commercio / <br>\nEconomia internazionale",
-				},
-				{
-					"de": "Entwicklungsökonomie",
-					"en": "Development Economics",
-					"fr": "Économie du développement",
-					"it": "Economia dello sviluppo",
-				},
-				{
-					"de": "Umweltökonomie",
-					"en": "Environmental Economics",
-					"fr": "Économie de l’environnement",
-					"it": "Economia ambientale",
-				},
-				{
-					"de": "Industrieökonomie",
-					"en": "Industrial Economics",
-					"fr": "Économie industrielle",
-					"it": "Economia industriale<br>\n(Organizzazione industriale)",
-				},
+			// 44
+			{
+				inp := gr.AddInput()
+				inp.Name = "promotion-year"
+				inp.Type = "number"
+				inp.ColSpanLabel = 3
+				inp.ColSpanControl = 2
+				inp.MaxChars = 4
+				inp.Label = trl.S{
+					"de": "In welchem Jahr haben Sie Ihren Doktortitel erhalten?",
+					"en": "In which year did you receive your doctoral degree?",
+					"fr": "En quelle année avez-vous reçu votre doctorat ?",
+					"it": "In quale anno ha conseguito il dottorato di ricerca?",
+				}
+				inp.Validator = "inRange10000"
+
 			}
 
-			// research fields - free entry
-			rfos := []trl.S{
-				{
-					"de": "BWL, Fachgebiet",
-					"en": "Business Administration, field",
-					"fr": "Gestion d’entreprise, domaine",
-					"it": "Amministrazione aziendale, campo",
-				},
-				{
-					"de": "VWL weitere, Fachgebiet",
-					"en": "Economics other, field",
-					"fr": "Économie ni Gestion d’entreprise, domaine",
-					"it": "Economia altro",
-				},
-				{
-					"de": "Weder BWL noch VWL, Fachgebiet",
-					"en": "Neither Economics nor Business Administration, field",
-					"fr": "Ni Économie ni Gestion d’entreprise, domaine",
-					"it": "Né Economia né amministrazione aziendale, campo",
-				},
+			// 45
+			{
+				inp := gr.AddInput()
+				inp.Name = "promotion-country"
+				inp.Type = "dropdown"
+				inp.ColSpanLabel = 3
+				inp.ColSpanControl = 4
+				inp.Label = trl.S{
+					"de": "In welchem Land haben Sie Ihren Doktortitel erhalten?",
+					"en": "In which country did you receive your doctoral degree?",
+					"fr": "Dans quel pays avez-vous reçu votre doctorat ?",
+					"it": "In quale Paese ha ricevuto il diploma di dottorato?",
+				}
+
+				inp.DD = &qst.DropdownT{}
+				for k, v := range trl.Countries {
+					inp.DD.Add(k, v)
+				}
+				chooseOne := trl.S{}
+				for k, v := range cfg.Get().Mp["must_one_option"] {
+					chooseOne[k] = " " + v // prefix with ' ' such that sorting puts it at the top
+				}
+				inp.DD.AddPleaseSelect(chooseOne)
+
 			}
+
+		}
+
+		// 43x
+		{
+			gr := p.AddGroup()
+			gr.Cols = 15
+			gr.OddRowsColoring = true
+			gr.BottomVSpacers = 0
 
 			inp := gr.AddInput()
 			inp.Name = "label-research-fields"
 			inp.Type = "textblock"
-			inp.ColSpanLabel = 20
+			inp.ColSpanLabel = 15
 			inp.Label = trl.S{
 				"de": "Wie würden Sie Ihr Forschungsgebiet beschreiben? <br>\nBei der Beantwortung dieser Frage sind mehrere Antworten möglich.",
 				"en": "How would you classify your field of research? <br>\nYou can choose several answers.",
@@ -723,90 +816,44 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 			} // research-fields - 43
 
+			//
+			//
+			// research-fields - free entry - 44x
 			gr2 := p.AddGroup()
-			gr2.Cols = 24
-			gr2.BottomVSpacers = 1
-			// research-fields - free entry - 44
-			for _, rfo := range rfos {
-				inp := gr.AddInput()
+			gr2.Cols = 16
+			gr2.BottomVSpacers = 3
+			for elementIdx, rfo := range rfos {
+				inp := gr2.AddInput()
 				inp.Name = "research-field-" + util.LowerCasedUnderscored(rfo["en"])
 				inp.Type = "textarea"
 				inp.Type = "text"
 
-				inp.HAlignLabel = qst.HRight
+				// inp.HAlignLabel = qst.HRight
+				inp.HAlignLabel = qst.HLeft
 
 				inp.ColSpanLabel = 3
-				inp.ColSpanControl = 5
-				inp.MaxChars = 14
+				inp.ColSpanControl = 5 + 8
+				if elementIdx == 2 {
+					// inp.ColSpanControl = 5 + 8
+
+				}
+				inp.MaxChars = 22
 				inp.Desc = rfo
-			} // research-fields - free entry - 44
+			} // research-fields - free entry - 44x
 		} // gr2
 
 		//
-		// 45
+		// 45x
 		{
 			gr3 := p.AddGroup()
-			gr3.Cols = 20
+			gr3.Cols = 15
 			gr3.OddRowsColoring = true
-			gr3.BottomVSpacers = 2
-
-			rfs := []trl.S{ // research fields
-				{
-					"de": "ProfessorIn",
-					"en": "Professor",
-					"fr": "Professeur",
-					"it": "Professore ordinario",
-				},
-				{
-					"de": "JuniorprofessorIn",
-					"en": "Assistant professor",
-					"fr": "Professeur assistant/e",
-					"it": "Assistant professor",
-				},
-				{
-					"de": "Assoziierte/r ProfessorIn",
-					"en": "Associate professor",
-					"fr": "Professeur associé/e",
-					"it": "Professore associato",
-				},
-				{
-					"de": "Post-Doc",
-					"en": "Post-Doc",
-					"fr": "Post-Doc",
-					"it": "Ricercatore universitario",
-				},
-				{
-					"de": "DozentIn",
-					"en": "Lecturer",
-					"fr": "Maître de conférences",
-					"it": "Lecturer",
-				},
-				{
-					"de": "Senior Researcher",
-					"en": "Senior researcher <br>\n(research institutes)",
-					"fr": "Senior researcher <br>\n(institut de recherche)",
-					"it": "Ricercatore presso istituto di ricerca",
-				},
-				{
-					"de": "DoktorandIn",
-					"en": "PhD Candidate",
-					"fr": "Étudiant en doctorat",
-					"it": "Dottorando",
-				},
-			}
-			rfos := []trl.S{ // research fields
-				{
-					"de": "Andere Position",
-					"en": "Other",
-					"fr": "Autre",
-					"it": "Altro",
-				},
-			}
+			// gr3.BottomVSpacers = 2
 
 			inp := gr3.AddInput()
 			inp.Name = "label-research-fields"
 			inp.Type = "textblock"
-			inp.ColSpanLabel = 20
+			inp.ColSpanLabel = 15
 			inp.Label = trl.S{
 				"de": "Was ist Ihre akademische Position? <br>\nBitte wählen Sie Ihre Haupttätigkeit.",
 				"en": "What is your position? <br>\nPlease choose your main activity.",
@@ -821,41 +868,47 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				"it": "Qual è la sua posizione?  &nbsp; Per favore selezioni la sua attività principale.",
 			}
 
-			for _, rf := range rfs {
+			//
+			for elementIdx, jobTit := range jobTitles {
 				inp := gr3.AddInput()
-				inp.Name = "academia-position-" + util.LowerCasedUnderscored(rf["en"])
+				inp.Name = "academia-position-" + util.LowerCasedUnderscored(jobTit["en"])
 				inp.Type = "checkbox"
 				inp.CSSLabel = "special-input-margin-vertical"
 				// inp.ColSpanLabel = 4  // it's all the control part - with the suffix
 				inp.ColSpanControl = 5
+				if elementIdx == 6 {
+					inp.ColSpanControl = 5
+				}
 
 				// inp.HAlignLabel = qst.HCenter
 				inp.HAlignControl = qst.HCenter
 				inp.HAlignControl = qst.HLeft
-				inp.Suffix = rf
-				// inp.Desc = rf
+				inp.Suffix = jobTit
+				// inp.Desc = jobTit
 
-			} // research-fields - 45
+			} // research-fields - 45x
 
-			// research-fields - free entry - 46
-			for _, rfo := range rfos {
+			// research-fields - free entry - 46x
+			for _, jobTitleOther := range jobTitlesOther {
 				inp := gr3.AddInput()
-				inp.Name = "research-field-" + util.LowerCasedUnderscored(rfo["en"])
+				inp.Name = "research-field-" + util.LowerCasedUnderscored(jobTitleOther["en"])
 				inp.Type = "textarea"
 				inp.Type = "text"
 
 				inp.HAlignLabel = qst.HRight
+				inp.HAlignLabel = qst.HLeft
 
 				inp.ColSpanLabel = 1
 				inp.ColSpanControl = 4
+				inp.ColSpanControl = 9
 
-				inp.MaxChars = 14
-				inp.Desc = rfo
-			} // research-fields - free entry - 46
+				inp.MaxChars = 22
+				inp.Desc = jobTitleOther
+			} // research-fields - free entry - 46x
 		} // gr3
 
 		//
-		// 47
+		// 47x
 		{
 			names1stMatrix := []string{"qualified"}
 			emptyRowLabels := []trl.S{}
@@ -871,19 +924,18 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			}
 		}
 
-		// 48
+		// 48x
 		{
 			gr := p.AddGroup()
 			gr.Cols = 15
+			gr.BottomVSpacers = 0
 			gr.Width = 100
-
 			gr.Label = trl.S{
 				"de": "Fragen der Europäischen Integration sind Gegenstand meiner persönlichen Forschung.",
 				"en": "Questions of European Integration are part of my research agenda.",
 				"fr": "Les questions de l'intégration européenne font partie de ma recherche.",
 				"it": "Le questioni di integrazione europea fanno parte della sua agenda di ricerca?",
 			}
-
 			{
 
 				inp := gr.AddInput()
@@ -900,15 +952,33 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			}
 			{
 				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{
+					"de": " &nbsp; ",
+					"en": " &nbsp; ",
+					"fr": " &nbsp; ",
+					"it": " &nbsp; ",
+				}
+				inp.ColSpanLabel = 11
+			}
+		}
+
+		{
+			gr := p.AddGroup()
+			gr.Cols = 3
+			gr.Width = 90
+			gr.BottomVSpacers = 4
+			{
+				inp := gr.AddInput()
 				inp.Type = "button"
 				inp.Name = "submitBtn"
 				inp.Response = "5"
 				inp.Label = cfg.Get().Mp["next"]
 				inp.Label = cfg.Get().Mp["finish_questionnaire"]
 				inp.AccessKey = "n"
+				inp.ColSpanControl = 3
 				inp.HAlignControl = qst.HRight
-				inp.ColSpanControl = 13
-				inp.HAlignControl = qst.HRight
+				// inp.HAlignControl = qst.HLeft
 			}
 		}
 
@@ -954,7 +1024,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 					"it": "<span style='font-size: 100%;'>Le Sue risposte sono state salvate.</span>",
 				}
 			}
-
 		}
 
 	}

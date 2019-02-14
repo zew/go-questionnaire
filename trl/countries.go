@@ -1,5 +1,7 @@
 package trl
 
+import "sort"
+
 // Countries is contains translations of country names by ISO code
 var Countries = map[string]S{
 	"AF":             {"en": "Afghanistan", "fr": "Afghanistan", "de": "Afghanistan", "it": "Afghanistan"},
@@ -221,4 +223,14 @@ var Countries = map[string]S{
 	"YE":             {"en": "Yemen, Rep.", "fr": "Yémen, Rép. du", "de": "Jemen", "it": "Yemen"},
 	"ZM":             {"en": "Zambia", "fr": "Zambie", "de": "Sambia", "it": "Zambia"},
 	"ZW":             {"en": "Zimbabwe", "fr": "Zimbabwe", "de": "Simbabwe", "it": "Zimbabwe"},
+}
+
+// CountryISOs provides some stable default sorting
+var CountryISOs = []string{}
+
+func init() {
+	for k := range Countries {
+		CountryISOs = append(CountryISOs, k)
+	}
+	sort.Strings(CountryISOs)
 }

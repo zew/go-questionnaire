@@ -34,10 +34,13 @@ type ConfigT struct {
 	URLPathPrefix string `json:"urlpath_prefix"` // lower case - no slashes, i.e. 'myapp'
 	AppMnemonic   string `json:"app_mnemonic"`   // For differentiation of static dirs - when URLPathPrefix is empty; imagine multiple instances
 
-	BindHost               string `json:"bind_host"`
-	BindSocket             int    `json:"bind_socket"`
-	BindSocketFallbackHTTP int    `json:"bind_socket_fallback_http"`
-	BindSocketTests        int    `json:"bind_socket_tests,omitempty"` // another port for running test server
+	LetsEncrypt bool   `json:"lets_encrypt"`
+	HostName    string `json:"host_name"` // for ACME cert; i.e. survey2.zew.de
+
+	BindHost               string `json:"bind_host"`                   // "0.0.0.0"
+	BindSocket             int    `json:"bind_socket"`                 // 8081 or 80
+	BindSocketFallbackHTTP int    `json:"bind_socket_fallback_http"`   // 8082
+	BindSocketTests        int    `json:"bind_socket_tests,omitempty"` // another port for running test server, 8181
 	TLS                    bool   `json:"tls"`
 	TLS13                  bool   `json:"tls13"`                   // ultra safe - but excludes internet explorer 11
 	ReadTimeOut            int    `json:"http_read_time_out"`      // for large requests
@@ -269,6 +272,7 @@ func Example() *ConfigT {
 		AppName:                "My Example App",
 		URLPathPrefix:          "exmpl",
 		AppMnemonic:            "exmpl",
+		HostName:               "survey2.zew.de",
 		BindHost:               "0.0.0.0",
 		BindSocket:             8081,
 		BindSocketFallbackHTTP: 8082,
@@ -382,7 +386,7 @@ func Example() *ConfigT {
 				"de": "Impressum",
 				"en": "Imprint",
 				"es": "Empreinte",
-				"fr": "Impresión",
+				"fr": "Mentions légales", //"Impresión" ahv,
 				"it": "Impronta",
 				"pl": "Nadrukiem",
 			},
@@ -398,7 +402,7 @@ func Example() *ConfigT {
 				"de": "Fragebogen abschließen",
 				"en": "Finish this survey",
 				"es": "Terminé esta encuesta",
-				"fr": "Terminé cette enquête",
+				"fr": "Terminer ce sondage", // "Terminé cette enquête" ahv,
 				"it": "Finito questo sondaggio",
 				"pl": "Zakończyłem tę ankietę",
 			},

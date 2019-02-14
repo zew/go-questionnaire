@@ -94,7 +94,7 @@ func ResponseTextHasEuro(q *QuestionnaireT) (string, error) {
 		s1 := trl.S{
 			"de": fmt.Sprintf("Den Euro in %v als die offizielle Währung zu haben, ist wirtschaftlich vorteilhaft.", attr2),
 			"en": fmt.Sprintf("Having the euro in %v as the official currency is economically beneficial.", attr2),
-			"fr": fmt.Sprintf("Avoir l'euro dans %v comme monnaie officielle est économiquement avantageux.", attr2),
+			"fr": fmt.Sprintf("Avoir l'euro en %v comme monnaie officielle est économiquement avantageux.", attr2),
 			"it": fmt.Sprintf("Avere l'Euro come valuta ufficiale nel %v è economicamente vantaggioso.", attr2),
 		}
 		desc = s1[q.LangCode]

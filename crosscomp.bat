@@ -7,3 +7,4 @@ SET GOARCH=amd64
 
 go build -v github.com\zew\go-questionnaire
 
+pause

@@ -403,7 +403,7 @@ func Example() *ConfigT {
 				"en": "Finish this survey",
 				"es": "Terminé esta encuesta",
 				"fr": "Terminer ce sondage", // "Terminé cette enquête" ahv,
-				"it": "Finito questo sondaggio",
+				"it": "Finire questo sondaggio",
 				"pl": "Zakończyłem tę ankietę",
 			},
 			"finished_by_participant": {

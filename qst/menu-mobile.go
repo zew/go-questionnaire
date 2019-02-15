@@ -46,18 +46,12 @@ func (q *QuestionnaireT) MenuMobile() string {
 		if p.Short != nil { // short label dedicated to menu
 			eff = p.Short.Tr(q.LangCode)
 		}
-		_ = eff
 
 		liClass := ""
 		if idx < q.CurrPage {
 			liClass = "is-complete"
 		} else if idx == q.CurrPage {
 			liClass = "is-active"
-		}
-
-		sect := p.Section.TrSilent(q.LangCode)
-		if sect == "" { // only show major entries
-			continue
 		}
 
 		//
@@ -82,7 +76,7 @@ func (q *QuestionnaireT) MenuMobile() string {
 			onclick, pointr,
 			liClass, p.NavigationalNum,
 			// sect, eff,
-			sect, "",
+			eff, "",
 		)
 
 	}

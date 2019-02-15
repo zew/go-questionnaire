@@ -42,7 +42,7 @@ var hyph = []string{
 	"Deutsch&shy;land",
 	"Welt&shy;wirtschaft",
 	"un&shy;ent&shy;schieden",
-	// german strube
+	// german euref
 	"Öko&shy;no&shy;mie",
 	"Mi&shy;kro&shy;öko&shy;no&shy;mie",
 	"Ma&shy;kro&shy;öko&shy;no&shy;mie",
@@ -75,7 +75,7 @@ var hyph = []string{
 	"Reg&shy;ulation",
 	"Dis&shy;agree",
 	"Un&shy;decided",
-	// english strube:
+	// english euref:
 	"na&shy;tion&shy;al&shy;i&shy;ty",
 	"mi&shy;cro&shy;eco&shy;nom&shy;ics",
 	"mac&shy;ro&shy;eco&shy;nom&shy;ics",

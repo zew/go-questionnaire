@@ -1,4 +1,4 @@
-package strube
+package euref
 
 import (
 	"github.com/zew/go-questionnaire/cfg"
@@ -81,7 +81,7 @@ func labelsGoodBad19() []trl.S {
 func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 	q := qst.QuestionnaireT{}
-	q.Survey = qst.NewSurvey("strube")
+	q.Survey = qst.NewSurvey("euref")
 	q.Survey.Params = params
 	q.Variations = 0 // attention => shuffles submit buttons if > 0
 
@@ -196,10 +196,10 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			"it": "Amministrazione aziendale, campo",
 		},
 		{
-			"de": "VWL weitere, Fachgebiet",
-			"en": "Economics other, field",
-			"fr": "Économie ni Gestion d’entreprise, domaine",
-			"it": "Economia altro",
+			"de": "VWL, Fachgebiet",
+			"en": "Economics, field",
+			"fr": "Economie, domaine",
+			"it": "Economia",
 		},
 		{
 			"de": "Weder BWL noch VWL, Fachgebiet",
@@ -331,7 +331,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				"it": "Politiche della domanda e dell'offerta<br>",
 			}
 			gr.Desc = trl.S{
-				"de": "Regierungen können versuchen, das Wirtschaftswachstum durch verschiedene Instrumente zu stimulieren. Einige argumentieren, dass nachfragebezogene Politikmaßnahmen (z. B. eine Erhöhung der durch Schulden finanzierten öffentlichen Ausgaben) wirksamer sind als angebotsbezogene Maßnahmen (z. B. eine Verringerung der Regulierung der Arbeits- und Gütermärkte).",
+				"de": "Regierungen können versuchen, das Wirtschaftswachstum durch verschiedene Instrumente zu stimulieren. Einige argumentieren, dass nachfragebezogene Politikmaßnahmen (z. B. eine Erhöhung der durch schuldenfinanzierten öffentlichen Ausgaben) wirksamer sind als angebotsbezogene Maßnahmen (z. B. eine Verringerung der Regulierung der Arbeits- und Gütermärkte).",
 				"en": "Governments can try to stimulate economic growth through different instruments. Some argue that demand-side policies (e.g. an increase of debt-financed public spending) are more effective than supply-side policies (e.g. a reduction of regulation in labour and good markets).",
 				"fr": "Les gouvernements peuvent essayer de stimuler la croissance économique grâce à différents instruments. Certains font valoir que les politiques axées sur la demande (par exemple, une augmentation des dépenses publiques financées par l’endettement) sont plus efficaces que les politiques axées sur l'offre (par exemple, une réduction de la réglementation sur le marché du travail et des biens).",
 				"it": "I governi possono cercare di stimolare la crescita economica attraverso diversi strumenti. Alcuni sostengono che le politiche di sostegno della domanda (ad esempio un aumento della spesa pubblica finanziato in deficit) siano più efficaci delle politiche di sostegno dell’offerta (ad esempio un alleggerimento della regolamentazione del mercato del lavoro e dei beni).",
@@ -347,12 +347,17 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		p := q.AddPage()
 		// p.NoNavigation = true
 		p.Width = 70
-		p.Section = trl.S{}
 		p.Label = trl.S{
 			"de": " &nbsp; ",
 			"en": " &nbsp; ",
 			"fr": " &nbsp; ",
 			"it": " &nbsp; ",
+		}
+		p.Label = trl.S{
+			"de": "",
+			"en": "",
+			"fr": "",
+			"it": "",
 		}
 		p.Short = trl.S{
 			"de": "Aufgaben- und Kompetenzverteilung",
@@ -390,7 +395,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			}
 			gr.Desc = trl.S{
 				"de": "Der Rat der EU sollte mit qualifizierter Mehrheit anstelle von Einstimmigkeit über Steuern beschließen können (z.B. über verbindliche Ober- oder Untergrenzen für Unternehmenssteuern).",
-				"en": "The European Council should be able to vote on tax issues with a qualified majority instead of una-nimity (e.g. common caps or floors for corporate taxes binding for member states).",
+				"en": "The European Council should be able to vote on tax issues with a qualified majority instead of unanimity (e.g. common caps or floors for corporate taxes binding for member states).",
 				"fr": "Le Conseil européen devrait pouvoir statuer avec une majorité qualifiée sur les impôts perçus dans les États membres (par exemple sur des taux planchers et plafonds de l’impôt sur les Sociétés).",
 				"it": "Il Consiglio europeo dovrebbe poter votare su questioni tributarie a maggioranza qualificata invece che all’unanimità (ad esempio su limiti massimi e minimi per le imposte sulle aziende comuni a tutti gli Stati membri).",
 			}
@@ -413,7 +418,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				"de": "Es sollte mehr Umverteilung von reichen zu armen EU-Mitgliedstaaten geben.",
 				"en": "There should be more redistribution from richer to poorer EU member states.",
 				"fr": "Il devrait y avoir davantage de redistribution des États membres de l'UE les plus riches vers les plus pauvres.",
-				"it": "Ci dovrebbe essere maggiore ridistribuzione di risorse dagli Stati membri più ricchi a quelli più po-veri dell'UE.",
+				"it": "Ci dovrebbe essere maggiore ridistribuzione di risorse dagli Stati membri più ricchi a quelli più poveri dell'UE.",
 			}
 		}
 
@@ -486,7 +491,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				"it": "Indennità europea di disoccupazione<br>",
 			}
 			gr.Desc = trl.S{
-				"de": "Die EWU braucht fiskalische Stabilisierungsmechanismen, um Mitgliedstaaten gegen asymmetri-sche Schocks abzusichern (z.B. eine gemeinsame europäische Arbeitslosenversicherung).",
+				"de": "Die EWU braucht fiskalische Stabilisierungsmechanismen, um Mitgliedstaaten gegen asymmetrische Schocks abzusichern (z.B. eine gemeinsame europäische Arbeitslosenversicherung).",
 				"en": "The EMU needs fiscal stabilization systems to insure member states against asymmetric shocks (e.g. a common European unemployment insurance).",
 				"fr": "L’UEM a besoin de systèmes de stabilisation budgétaire pour assurer les États membres contre les chocs asymétriques (par exemple, une assurance chômage européenne commune)",
 				"it": "La UME necessita di sistemi di stabilizzazione fiscale atti a proteggere gli Stati membri da shock asimmetrici (ad esempio un’indennità di disoccupazione europea comune).",
@@ -552,7 +557,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			}
 			gr.Desc = trl.S{
 				"de": "Es sollte ein klares Insolvenzverfahren für Eurostaaten mit unhaltbaren Schulden geben.",
-				"en": "There should be an explicit sovereign insolvency procedure for euro member states with unsus-tainable debt. ",
+				"en": "There should be an explicit sovereign insolvency procedure for euro member states with unsustainable debt. ",
 				"fr": "Il devrait exister une procédure d'insolvabilité souveraine explicite pour les États membres de la zone euro ayant une dette insoutenable. ",
 				"it": "Dovrebbe esistere una esplicita procedura di insolvenza per i Paesi Euro con debito insostenibile.",
 			}
@@ -594,7 +599,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			}
 			gr.Desc = trl.S{
 				"de": "Für ein angemessenes Funktionieren sollte die europäische Bankenunion durch die Europäische Einlagensicherung (European Deposit Insurance System: EDIS) vollendet werden.",
-				"en": "For its proper functioning, the European Banking Union should be completed through the Europe-an Deposit Insurance Scheme (EDIS). ",
+				"en": "For its proper functioning, the European Banking Union should be completed through the European Deposit Insurance Scheme (EDIS). ",
 				"fr": "Pour son bon fonctionnement, l’Union bancaire européenne devrait être complétée par le Système Européen de Garanties des Dépôts (SEGD).",
 				"it": "Per funzionare correttamente, l’Unione bancaria europea dovrebbe essere completata tramite l’introduzione di un sistema europeo di garanzia dei depositi.",
 			}
@@ -636,10 +641,10 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 		{
 			gr := p.AddGroup()
-			gr.Cols = 12
+			gr.Cols = 5
 			gr.Width = 72
 			gr.OddRowsColoring = true
-			gr.BottomVSpacers = 1
+			gr.BottomVSpacers = 3
 
 			// 41
 			{
@@ -649,7 +654,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.ColSpanLabel = 3
 				inp.ColSpanControl = 2
 				inp.MaxChars = 4
-				inp.Label = trl.S{
+				inp.Desc = trl.S{
 					"de": "In welchem Jahr wurden Sie geboren?",
 					"en": "In which year were you born?",
 					"fr": "Quelle est votre année de naissance&nbsp;?",
@@ -665,8 +670,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Name = "nationality"
 				inp.Type = "dropdown"
 				inp.ColSpanLabel = 3
-				inp.ColSpanControl = 4
-				inp.Label = trl.S{
+				inp.ColSpanControl = 2
+				inp.Desc = trl.S{
 					"de": "Welche Nationalität haben Sie?",
 					"en": "What is your nationality?",
 					"fr": "Quelle est votre nationalité ?",
@@ -674,7 +679,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				}
 
 				inp.DD = &qst.DropdownT{}
-				// for k, v := range trl.Countries {
+				// for k, v := range trl.Countries { // dont add in random order => json files become random
 				for _, iso := range trl.CountryISOs {
 					inp.DD.Add(iso, trl.Countries[iso])
 				}
@@ -685,14 +690,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.DD.AddPleaseSelect(chooseOne)
 
 			}
-		}
-
-		{
-			gr := p.AddGroup()
-			gr.Cols = 12
-			gr.Width = 72
-			gr.OddRowsColoring = true
-			gr.BottomVSpacers = 1
 
 			// 43
 			{
@@ -700,8 +697,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Name = "residence"
 				inp.Type = "dropdown"
 				inp.ColSpanLabel = 3
-				inp.ColSpanControl = 9
-				inp.Label = trl.S{
+				inp.ColSpanControl = 2
+				inp.Desc = trl.S{
 					"de": "In welchem Land wohnen Sie?",
 					"en": "What is your country of residence?",
 					"fr": "Quel est votre pays de résidence ?",
@@ -709,8 +706,9 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				}
 
 				inp.DD = &qst.DropdownT{}
-				for k, v := range trl.Countries {
-					inp.DD.Add(k, v)
+				// for k, v := range trl.Countries { // dont add in random order => json files become random
+				for _, iso := range trl.CountryISOs {
+					inp.DD.Add(iso, trl.Countries[iso])
 				}
 				chooseOne := trl.S{}
 				for k, v := range cfg.Get().Mp["must_one_option"] {
@@ -719,14 +717,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.DD.AddPleaseSelect(chooseOne)
 
 			}
-		}
-
-		{
-			gr := p.AddGroup()
-			gr.Cols = 12
-			gr.Width = 72
-			gr.OddRowsColoring = true
-			gr.BottomVSpacers = 3
 
 			// 44
 			{
@@ -736,7 +726,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.ColSpanLabel = 3
 				inp.ColSpanControl = 2
 				inp.MaxChars = 4
-				inp.Label = trl.S{
+				inp.Desc = trl.S{
 					"de": "In welchem Jahr haben Sie Ihren Doktortitel erhalten?",
 					"en": "In which year did you receive your doctoral degree?",
 					"fr": "En quelle année avez-vous reçu votre doctorat ?",
@@ -752,8 +742,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Name = "promotion-country"
 				inp.Type = "dropdown"
 				inp.ColSpanLabel = 3
-				inp.ColSpanControl = 4
-				inp.Label = trl.S{
+				inp.ColSpanControl = 2
+				inp.Desc = trl.S{
 					"de": "In welchem Land haben Sie Ihren Doktortitel erhalten?",
 					"en": "In which country did you receive your doctoral degree?",
 					"fr": "Dans quel pays avez-vous reçu votre doctorat ?",
@@ -761,8 +751,9 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				}
 
 				inp.DD = &qst.DropdownT{}
-				for k, v := range trl.Countries {
-					inp.DD.Add(k, v)
+				// for k, v := range trl.Countries { // dont add in random order => json files become random
+				for _, iso := range trl.CountryISOs {
+					inp.DD.Add(iso, trl.Countries[iso])
 				}
 				chooseOne := trl.S{}
 				for k, v := range cfg.Get().Mp["must_one_option"] {
@@ -837,7 +828,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 					// inp.ColSpanControl = 5 + 8
 
 				}
-				inp.MaxChars = 22
+				inp.MaxChars = 19
 				inp.Desc = rfo
 			} // research-fields - free entry - 44x
 		} // gr2
@@ -848,7 +839,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			gr3 := p.AddGroup()
 			gr3.Cols = 15
 			gr3.OddRowsColoring = true
-			// gr3.BottomVSpacers = 2
+			gr3.BottomVSpacers = 0
 
 			inp := gr3.AddInput()
 			inp.Name = "label-research-fields"
@@ -877,7 +868,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				// inp.ColSpanLabel = 4  // it's all the control part - with the suffix
 				inp.ColSpanControl = 5
 				if elementIdx == 6 {
-					inp.ColSpanControl = 5
+					inp.ColSpanControl = 15
 				}
 
 				// inp.HAlignLabel = qst.HCenter
@@ -888,9 +879,15 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 			} // research-fields - 45x
 
+		} // gr3
+
+		{
+			gr4 := p.AddGroup()
+			gr4.Cols = 15
+			gr4.BottomVSpacers = 3
 			// research-fields - free entry - 46x
 			for _, jobTitleOther := range jobTitlesOther {
-				inp := gr3.AddInput()
+				inp := gr4.AddInput()
 				inp.Name = "research-field-" + util.LowerCasedUnderscored(jobTitleOther["en"])
 				inp.Type = "textarea"
 				inp.Type = "text"
@@ -898,14 +895,14 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.HAlignLabel = qst.HRight
 				inp.HAlignLabel = qst.HLeft
 
-				inp.ColSpanLabel = 1
-				inp.ColSpanControl = 4
-				inp.ColSpanControl = 9
+				inp.ColSpanLabel = 3
+				inp.ColSpanControl = 12
 
-				inp.MaxChars = 22
+				inp.MaxChars = 19
 				inp.Desc = jobTitleOther
 			} // research-fields - free entry - 46x
-		} // gr3
+
+		}
 
 		//
 		// 47x
@@ -920,7 +917,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				"de": "Ich fühlte mich ausreichend informiert, um die obenstehenden Fragen beantworten zu können.",
 				"en": "I had enough expertise to answer the questions of the survey.",
 				"fr": "J'ai eu suffisamment d'expertise pour répondre aux questions du sondage.",
-				"it": "“Ritengo di avere sufficiente esperienza per rispondere alle domande di questo sondaggio”. Quanto si sente rappresentato da questa affermazione?",
+				"it": "Ritengo di avere sufficiente esperienza per rispondere alle domande di questo sondaggio.",
 			}
 		}
 
@@ -930,6 +927,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			gr.Cols = 15
 			gr.BottomVSpacers = 0
 			gr.Width = 100
+			gr.OddRowsColoring = true
 			gr.Label = trl.S{
 				"de": "Fragen der Europäischen Integration sind Gegenstand meiner persönlichen Forschung.",
 				"en": "Questions of European Integration are part of my research agenda.",
@@ -966,13 +964,13 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		{
 			gr := p.AddGroup()
 			gr.Cols = 3
-			gr.Width = 90
+			gr.Width = 99
 			gr.BottomVSpacers = 4
 			{
 				inp := gr.AddInput()
 				inp.Type = "button"
 				inp.Name = "submitBtn"
-				inp.Response = "5"
+				inp.Response = "3"
 				inp.Label = cfg.Get().Mp["next"]
 				inp.Label = cfg.Get().Mp["finish_questionnaire"]
 				inp.AccessKey = "n"

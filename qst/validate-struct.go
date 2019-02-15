@@ -4,8 +4,10 @@ import (
 	"fmt"
 	"log"
 	"regexp"
+	"strconv"
 	"strings"
 
+	"github.com/pkg/errors"
 	"github.com/zew/go-questionnaire/trl"
 )
 
@@ -151,7 +153,18 @@ func (q *QuestionnaireT) Validate() error {
 
 				// Check input type
 				if _, ok := implementedTypes[inp.Type]; !ok {
-					return fmt.Errorf(s + fmt.Sprintf("Type '%v' is not in %v ", inp.Type, implementedTypes))
+					return fmt.Errorf("%v: Type '%v' is not in %v ", s, inp.Type, implementedTypes)
+				}
+
+				// Jump to page exists?
+				if inp.Type == "button" && inp.Response != "" {
+					pgIdx, err := strconv.Atoi(inp.Response)
+					if err != nil {
+						return errors.Wrap(err, s)
+					}
+					if pgIdx < 0 || pgIdx > len(q.Pages)-1 {
+						return fmt.Errorf("%v points to page index non existant %v", s, inp.Response)
+					}
 				}
 
 				// Validator function exists

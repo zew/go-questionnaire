@@ -142,7 +142,7 @@ td:nth-child(even){
     /* background-color: #d2d; */
 }
 
-input {
+input, select {
     display:inline-block ;
 }
 
@@ -150,7 +150,8 @@ input {
     large touch area
 
  */
-input[type=text], input[type=url], input[type=email]
+input[type=text], input[type=number], input[type=url], input[type=email], 
+select
 {
     appearance: none;
     margin: 0;
@@ -252,20 +253,3 @@ input[type="number"] {
 	line-height: 130%;
 }
 
-
-/* special elements invisible  */
-/* =========================== */
-a.imprint, li.imprint {
-	visibility: hidden;
-	display: none;
-}
-
-img[src="/img/doc/site-peu2018-logos.png"]{
-    width: 300px;
-    margin: auto;
-}
-
-.ordinals {
-	visibility: hidden;
-	display: none;
-}

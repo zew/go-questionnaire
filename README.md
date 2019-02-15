@@ -71,24 +71,25 @@ More info in [deploy on linux/unix](./static/doc/linux-instructions.md)
 
 * Package `lgn` contains several authentication schemes for participants.
 
-* Package `main` serves questionnaires via http(s).
+* Package `main` serves questionnaires via http(s).  
+with automatic `Lets encrypt` certification.
 
 * Directory `responses` stores indididual answers  
  (and initial questionnaire templates).
 
 * There are global translations as well as  
  questionnaire specific multi-language strings.  
- Global soft-hyphenizations for mobile layout.
+ Global hyphenizations helps with long words on mobile devices.
 
-* There are common functions preventing duplicate question keys  
+* Common proof functions prevent duplicate question keys  
  or missing translations.
 
 * Survey results are pulled in by the `transferrer`,  
  aggregating responses into a CSV file.  
  `transferrer` logic is agnostic to questionnaire structure.
 
-* In-flight changes to the questionnaire do not require any  
- "schema" or configuration effort.
+* The `updater` subpackage automates in-flight changes to the questionnaire.  
+No need for database "schema" artistry.  
 
 ## Data thrift
 
@@ -101,9 +102,8 @@ More info in [deploy on linux/unix](./static/doc/linux-instructions.md)
 ## More features
 
 * All content and all results are driven  
- by __JSON files__.
-
-* No database required.
+ by __JSON files__.  
+ No database required.
 
 * Server side validation.  
  An extensible set of number validation functions can be assigned to each field.
@@ -111,17 +111,15 @@ More info in [deploy on linux/unix](./static/doc/linux-instructions.md)
 * Client side JS validation is deliberately omitted;  
    [a would-be JS client lib](http://www.javascript-coder.com/html-form/form-validation.phtml)
 
-* Dynamic textblocks such as `RepsonseStatistics` are available, and can be easily added.  
- Inputs values and user attributes can be accessed. 
+* Dynamic textblocks such as `RepsonseStatistics` are available.  
+ Inputs values and user attributes can be accessed.
 
-* Package `systemtest` performs full circle roundtrip - filling out all available questionnaires 
+* Package `systemtest` performs a full circle roundtrip - filling out all available questionnaires  
 and comparing the server JSON file with the entered data.  
 Both, mobile and desktop version are tested.  
-The `travis-ci` build logs contain the details. 
+See the `travis-ci` build logs for details.
 
-* Load testing script for 50 concurrent requests.
-
-* Automatic `Lets encrypt` certification.
+* Load testing script for 50 concurrent requests in `Python`.
 
 ### Design and Layout
 
@@ -131,7 +129,7 @@ The `travis-ci` build logs contain the details.
 
 * Each label or form element can be styled additionally (`CSSLabel` and `CSSControl`)
 
-* Global layout elements can be adapted using `main_desktop_[survey].css`.
+* Global layout elements can be adapted using `main_desktop_[survey].css` and  `main_mobile_[survey].css`.
 
 #### Page navigation sequence - special pages
 
@@ -247,31 +245,32 @@ Mobile layout was tested with `crossbrowsertesting.com`.
 
 * [Shufflings can be exported for use in related applications](https://dev-domain:port/survey/shufflings-to-csv)
 
-## Optimization
+## Optimizations
 
 * Layout: Table data is currently aligned vertically middled.  
  Sometimes it should be configurable to baseline.
 
-* The transferrer should truncate the pages from the online JSON files   
+* The transferrer could truncate the pages from the online JSON files  
  leaving only user ID, completion time and survey data.
 
-* For each user, only the responses should be saved to session/JSON; not the entire questionnaire data.  
+* For each user, only the responses could be saved to session/JSON; not the entire questionnaire data.  
  The responses could be merged into the questionnaire based on input name.
 
 * The generators could be compiled into independent executables.  
  They could then be executed on the command line with the parameters as JSON file.
 
-* Finish pages and finish field should be harmonized.  
+* Finish page and finish field could be harmonized.  
  Currently one can either generate one's own final page (in the example of the peu2018 survey).  
  Or one can set the "finalized" field and then gets system wide: You finished ... at ...
 
-* The set of application languages in the footer is not restricted to the questionnaire languages.
-
 ## Possible enhancements
 
-* Adding a `Docker` script?
+* Adding a `Docker` script?  
+ It would mostly contain the instructions of `linux-instructions.md`.
 
-* Migrate file storage to GoCloud library and make deployable on Google Appengine or AWS?
+* Migrate file storage to GoCloud library and make  
+deployable on Google Appengine or AWS without EBS (elastic block devices)?  
+To be implemented into the load/save() methods of ConfigT, LoginsT and QuestionnaireT.
 
 ## About Go-App-Tpl
 

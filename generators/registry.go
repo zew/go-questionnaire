@@ -10,11 +10,11 @@ import (
 
 	"github.com/monoculum/formam"
 	"github.com/zew/go-questionnaire/cfg"
+	"github.com/zew/go-questionnaire/generators/euref"
 	"github.com/zew/go-questionnaire/generators/fmt"
 	"github.com/zew/go-questionnaire/generators/min"
 	"github.com/zew/go-questionnaire/generators/mul"
 	"github.com/zew/go-questionnaire/generators/peu2018"
-	"github.com/zew/go-questionnaire/generators/strube"
 	"github.com/zew/go-questionnaire/lgn"
 	"github.com/zew/go-questionnaire/qst"
 	"github.com/zew/util"
@@ -27,7 +27,7 @@ var gens = map[string]genT{
 	"min":     min.Create,
 	"peu2018": peu2018.Create,
 	"mul":     mul.Create,
-	"strube":  strube.Create,
+	"euref":   euref.Create,
 }
 
 // Get returns all questionnaire generators

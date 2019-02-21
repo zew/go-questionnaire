@@ -3,6 +3,7 @@ package qst
 import (
 	"fmt"
 	"log"
+	"strings"
 	"time"
 
 	"github.com/zew/go-questionnaire/cfg"
@@ -82,6 +83,11 @@ func ResponseTextHasEuro(q *QuestionnaireT) (string, error) {
 	attr2 := q.Attrs["country"] // ISO
 
 	cntry := trl.Countries[attr2]
+
+	cntry["en"] = strings.Replace(cntry["en"], "Czech Republic", "Czechia", -1)
+	cntry["de"] = strings.Replace(cntry["de"], "Tschechische Republik", "Tschechien", -1)
+	cntry["fr"] = strings.Replace(cntry["fr"], "République tchèque", "Tchéquie", -1)
+	cntry["it"] = strings.Replace(cntry["it"], "Repubblica Ceca", "Cechia", -1)
 
 	hl := trl.S{
 		"de": "Wirtschaftlicher Nutzen des Euro<br>",

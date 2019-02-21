@@ -42,10 +42,11 @@ type ConfigT struct {
 	BindSocketFallbackHTTP int    `json:"bind_socket_fallback_http"`   // 8082
 	BindSocketTests        int    `json:"bind_socket_tests,omitempty"` // another port for running test server, 8181
 	TLS                    bool   `json:"tls"`
-	TLS13                  bool   `json:"tls13"`                   // ultra safe - but excludes internet explorer 11
-	ReadTimeOut            int    `json:"http_read_time_out"`      // for large requests
-	WriteTimeOut           int    `json:"http_write_time_out"`     // for *responding* large files over slow networks, i.e. videos, set to 30 or 60 secs
-	MaxPostSize            int64  `json:"max_post_size,omitempty"` // request body size limit, against DOS attacks, limits file uploads
+	TLS13                  bool   `json:"tls13"`                     // ultra safe - but excludes internet explorer 11
+	ReadTimeOut            int    `json:"http_read_time_out"`        // limit large requests
+	ReadHeaderTimeOut      int    `json:"http_header_read_time_out"` // limit request header time - then use per request restrictions r = r.WithContext(ctx) to limit - stackoverflow.com/questions/39946583
+	WriteTimeOut           int    `json:"http_write_time_out"`       // for *responding* large files over slow networks, i.e. videos, set to 30 or 60 secs
+	MaxPostSize            int64  `json:"max_post_size,omitempty"`   // request body size limit, against DOS attacks, limits file uploads
 
 	LocationName   string         `json:"location,omitempty"` // i.e. "Europe/Berlin", see Go\lib\time\zoneinfo.zip
 	Loc            *time.Location `json:"-"`                  // Initialized during load
@@ -280,6 +281,7 @@ func Example() *ConfigT {
 		TLS:                    false,
 		TLS13:                  false,
 		ReadTimeOut:            5,
+		ReadHeaderTimeOut:      5,
 		WriteTimeOut:           30,
 		MaxPostSize:            int64(2 << 20), // 2 MB
 		LocationName:           "Europe/Berlin",

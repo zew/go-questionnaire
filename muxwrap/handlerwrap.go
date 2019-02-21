@@ -7,6 +7,7 @@ import (
 	"fmt"
 	"net/http"
 	"strings"
+	"time"
 
 	"github.com/zew/go-questionnaire/cfg"
 	"github.com/zew/go-questionnaire/sessx"
@@ -64,8 +65,26 @@ func (m *handlerWrapper) ServeHTTP(w http.ResponseWriter, rNew *http.Request) {
 	sess.PutString("session-test-key", "session-test-value")
 	paramPersister(rNew, &sess) // before creating first state
 
+	if false {
+		//
+		// Additional constraint on each request
+		// on top of ReadTimeout/ReadHeaderTimeout + WriteTimeout
+		//
+		// Reason: We have to globally increase ReadHeaderTimeout due to transferrer-endpoint
+		// But here restrain normal requests again
+		perReqTimeout := time.Duration(30)
+		if strings.Contains(rNew.URL.Path, "transferrer-endpoint") {
+			perReqTimeout = time.Duration(30 * 30)
+		}
+		ctx, perReqCancel := context.WithTimeout(rNew.Context(), time.Duration(perReqTimeout*time.Second))
+		defer perReqCancel()
+		rNew = rNew.WithContext(ctx)
+		// log.Printf("setting timeout for %v to %v", rNew.URL.Path, time.Duration(perReqTimeout*time.Second))
+	}
+
 	//
 	// Access rights
+	// ...
 
 	//
 	// Wrapping the handler into a "global panic catcher"

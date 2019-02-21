@@ -132,11 +132,11 @@ func main() {
 		}
 
 		fallbackSrv := &http.Server{
-			ReadTimeout: time.Duration(cfg.Get().ReadTimeOut) * time.Second,
-			// ReadHeaderTimeout:  120 * time.Second,  // individual request can control body timeout
-			WriteTimeout: time.Duration(cfg.Get().WriteTimeOut) * time.Second,
-			IdleTimeout:  120 * time.Second,
-			Addr:         fmt.Sprintf(":%v", cfg.Get().BindSocketFallbackHTTP),
+			ReadTimeout:       time.Duration(cfg.Get().ReadTimeOut) * time.Second,
+			ReadHeaderTimeout: time.Duration(cfg.Get().ReadHeaderTimeOut) * time.Second,
+			WriteTimeout:      time.Duration(cfg.Get().WriteTimeOut) * time.Second,
+			IdleTimeout:       120 * time.Second,
+			Addr:              fmt.Sprintf(":%v", cfg.Get().BindSocketFallbackHTTP),
 			Handler: http.HandlerFunc(func(w http.ResponseWriter, req *http.Request) {
 				w.Header().Set("Connection", "close")
 				url := "https://" + req.Host + req.URL.String()
@@ -180,13 +180,14 @@ func main() {
 
 		// err = http.ListenAndServeTLS(IpPort, "server.pem", "server.key", mux3)
 		srv := &http.Server{
-			ReadTimeout:  time.Duration(cfg.Get().ReadTimeOut) * time.Second,
-			WriteTimeout: time.Duration(cfg.Get().WriteTimeOut) * time.Second,
-			IdleTimeout:  120 * time.Second,
-			Addr:         IpPort,
-			TLSConfig:    tlsCfg,
-			TLSNextProto: make(map[string]func(*http.Server, *tls.Conn, http.Handler), 0),
-			Handler:      mux3,
+			ReadTimeout:       time.Duration(cfg.Get().ReadTimeOut) * time.Second,
+			ReadHeaderTimeout: time.Duration(cfg.Get().ReadHeaderTimeOut) * time.Second,
+			WriteTimeout:      time.Duration(cfg.Get().WriteTimeOut) * time.Second,
+			IdleTimeout:       120 * time.Second,
+			Addr:              IpPort,
+			TLSConfig:         tlsCfg,
+			TLSNextProto:      make(map[string]func(*http.Server, *tls.Conn, http.Handler), 0),
+			Handler:           mux3,
 		}
 		if cfg.Get().LetsEncrypt {
 			log.Fatal(srv.ListenAndServeTLS("", "")) // "", "" => empty key and cert files; key+cert come from Let's Encrypt

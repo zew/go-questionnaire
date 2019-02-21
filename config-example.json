@@ -12,6 +12,7 @@
  	"tls": false,
  	"tls13": false,
  	"http_read_time_out": 5,
+ 	"http_header_read_time_out": 5,
  	"http_write_time_out": 30,
  	"max_post_size": 2097152,
  	"location": "Europe/Berlin",

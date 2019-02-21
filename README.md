@@ -323,3 +323,14 @@ It features
 * Go-App-Tpl has no "hooks" or interfaces for isolation of "framework" code.  
  Just copy it and add your handlers.  
  Future updates can be merged.
+
+## gocloc
+
+Language | files | blank | comment | code
+--- | --- | --- | --- | ---
+Go | 62 | 1671 | 1351 | 10581
+CSS | 12 | 261 | 144 | 713
+Markdown | 26 | 429 | 0 | 611
+HTML | 6 | 96 | 31 | 319
+Python | 1 | 31 | 16 | 94
+Bourne | Shell | 2 | 15 | 15 | 74

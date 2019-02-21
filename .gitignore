@@ -30,3 +30,10 @@ profiles/*
 main_desktop_*.css
 site*
 site/*
+
+# corel
+Backup_of*.CDR
+
+# updater
+updater/updater
+updater/updater.exe

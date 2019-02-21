@@ -213,19 +213,19 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		{
 			"de": "ProfessorIn",
 			"en": "Professor",
-			"fr": "Professeur",
+			"fr": "Professeur/e",
 			"it": "Professore ordinario",
 		},
 		{
 			"de": "JuniorprofessorIn",
 			"en": "Assistant professor",
-			"fr": "Professeur assistant/e",
+			"fr": "Professeur/e assistant/e",
 			"it": "Professore Assistente",
 		},
 		{
 			"de": "Assoziierte/r ProfessorIn",
 			"en": "Associate professor",
-			"fr": "Professeur associé/e",
+			"fr": "Professeur/e associé/e",
 			"it": "Professore associato",
 		},
 		{
@@ -394,7 +394,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				"it": "Tassazione<br>",
 			}
 			gr.Desc = trl.S{
-				"de": "Der Rat der EU sollte mit qualifizierter Mehrheit anstelle von Einstimmigkeit über Steuern beschließen können (z.B. über verbindliche Ober- oder Untergrenzen für Unternehmenssteuern).",
+				"de": "Der Rat der EU sollte mit qualifizierter Mehrheit anstelle von Einstimmigkeit über Steuern entscheiden können (z.B. über verbindliche Ober- oder Untergrenzen für Unternehmenssteuern).",
 				"en": "The European Council should be able to vote on tax issues with a qualified majority instead of unanimity (e.g. common caps or floors for corporate taxes binding for member states).",
 				"fr": "Le Conseil européen devrait pouvoir statuer avec une majorité qualifiée sur les impôts perçus dans les États membres (par exemple sur des taux planchers et plafonds de l’impôt sur les Sociétés).",
 				"it": "Il Consiglio europeo dovrebbe poter votare su questioni tributarie a maggioranza qualificata invece che all’unanimità (ad esempio su limiti massimi e minimi per le imposte sulle aziende comuni a tutti gli Stati membri).",
@@ -493,7 +493,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			gr.Desc = trl.S{
 				"de": "Die EWU braucht fiskalische Stabilisierungsmechanismen, um Mitgliedstaaten gegen asymmetrische Schocks abzusichern (z.B. eine gemeinsame europäische Arbeitslosenversicherung).",
 				"en": "The EMU needs fiscal stabilization systems to insure member states against asymmetric shocks (e.g. a common European unemployment insurance).",
-				"fr": "L’UEM a besoin de systèmes de stabilisation budgétaire pour assurer les États membres contre les chocs asymétriques (par exemple, une assurance chômage européenne commune)",
+				"fr": "L’UEM a besoin de systèmes de stabilisation budgétaire pour assurer les États membres contre les chocs asymétriques (par exemple, une assurance chômage européenne commune).",
 				"it": "La UME necessita di sistemi di stabilizzazione fiscale atti a proteggere gli Stati membri da shock asimmetrici (ad esempio un’indennità di disoccupazione europea comune).",
 			}
 		}
@@ -535,7 +535,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			gr.Desc = trl.S{
 				"de": "Der SWP definiert Defizit- und Schuldengrenzen für EU-Mitgliedsstaaten. Der SWP schränkt die Fiskalpolitik der Mitgliedsstaaten unangemessen stark ein und sollte gelockert werden.",
 				"en": "The SGP defines deficit and debt limits for EU member states. The SGP inappropriately constrains fiscal policy in member states and should be relaxed.",
-				"fr": "Le PSC définit des limites aux déficits et aux dettes des États membres. Le PSC représente une con-trainte excessive sur les politiques fiscales des États membres et devrait être assoupli.",
+				"fr": "Le PSC définit des limites aux déficits et aux dettes des États membres. Le PSC représente une contrainte excessive sur les politiques fiscales des États membres et devrait être assoupli.",
 				"it": "Il PSC definisce i limiti per il deficit e il debito pubblico dei Paesi membri dell’UE. Il PSC limita ecces-sivamente la politica fiscale degli Stati membri e dovrebbe essere allentato.",
 			}
 		}
@@ -577,7 +577,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				"it": "Programma di acquisti di attività finanziarie da parte della Banca centrale europea (BCE) <br>",
 			}
 			gr.Desc = trl.S{
-				"de": "Die Europäische Zentralbank (EZB) hat in den zurückliegenden Jahren durch den Kauf von Staatsan-leihen von Euro-Staaten eine sehr aktive Rolle gespielt. Diese starke Rolle der EZB sollte fortgesetzt werden.",
+				"de": "Die Europäische Zentralbank (EZB) hat in den zurückliegenden Jahren durch den Kauf von Staatsanleihen von Euro-Staaten eine sehr aktive Rolle gespielt. Diese starke Rolle der EZB sollte fortgesetzt werden.",
 				"en": "The European Central Bank (ECB) has taken a strongly active position in recent years by purchasing sovereign bonds of euro countries. This strongly active position of the ECB should continue.",
 				"fr": "Pour combattre la crise, la Banque centrale européenne s’est engagée fortement dans les années passées en achetant des emprunts d’États de la zone euro. Cet engagement devrait se poursuivre.",
 				"it": "Negli ultimi anni la BCE ha attuato una politica monetaria molto espansiva comprando titoli di Stato dei Paesi Euro. Questa politica della BCE dovrebbe continuare in futuro.",

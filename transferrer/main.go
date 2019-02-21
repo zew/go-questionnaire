@@ -4,9 +4,11 @@ package main
 
 import (
 	"bytes"
+	"compress/gzip"
 	"encoding/csv"
 	"encoding/json"
 	"fmt"
+	"io"
 	"io/ioutil"
 	"log"
 	"math/rand"
@@ -17,11 +19,19 @@ import (
 	"strings"
 	"time"
 
+	"github.com/pkg/errors"
 	"github.com/zew/go-questionnaire/cfg"
 	"github.com/zew/go-questionnaire/lgn"
 	"github.com/zew/go-questionnaire/qst"
 	"github.com/zew/util"
 )
+
+func getClient() *http.Client {
+	client := util.HttpClient()
+	client = &http.Client{}
+	log.Printf("client timeout is %v", client.Timeout)
+	return client
+}
 
 // RemoteConnConfigT is on top of
 // of the ordinary config
@@ -151,7 +161,7 @@ func main() {
 		log.Printf("  ")
 		log.Printf("================")
 		log.Printf("Login         via   %v%v%v", host, cfg.Pref(), "login-primitive")
-		log.Printf("Check results via   %v%v%v", host, cfg.Pref(), "transferrer-endpoint?wave_id=2018-06")
+		log.Printf("Check results via   %v%v%v", host, cfg.Pref(), "transferrer-endpoint?...")
 	}()
 
 	urlLogin := host + cfg.Pref("/login-primitive")
@@ -179,11 +189,9 @@ func main() {
 			return
 		}
 		req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
-		client := util.HttpClient()
-		resp, err := client.Do(req)
+		resp, err := getClient().Do(req)
 		if err != nil {
 			log.Printf("error requesting cookie from %v: %v; %v", urlReq, err, resp)
-			return
 		}
 		defer resp.Body.Close()
 		for _, v := range resp.Cookies() {
@@ -223,10 +231,44 @@ func main() {
 		vals.Set("survey_id", c2.SurveyType)
 		vals.Set("wave_id", c2.WaveID)
 		vals.Set("fetch_all", "1")
-		log.Printf("POST requesting %v?%v", urlReq, vals.Encode())
-		resp, err := util.Request("POST", urlReq, vals, []*http.Cookie{sessCook})
+		method := "POST"
+		log.Printf("%v requesting %v?%v", method, urlReq, vals.Encode())
+		req, err := http.NewRequest(method, urlReq, bytes.NewBufferString(vals.Encode())) // <-- URL-encoded payload
+		if err != nil {
+			log.Printf("error creating request %v: %v", urlReq, err)
+			return
+		}
+		// strangely, the json *reponse* is empty, if we omit this:
+		req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
+		for _, v := range []*http.Cookie{sessCook} {
+			req.AddCookie(v)
+		}
+
+		resp, err := getClient().Do(req)
 		if err != nil {
 			log.Printf("error requesting %v: %v", urlReq, err)
+			return
+		}
+
+		defer resp.Body.Close()
+		var rdr1 io.ReadCloser
+		switch resp.Header.Get("Content-Encoding") {
+		case "gzip":
+			// the server actually sent compressed data
+			rdr1, err = gzip.NewReader(resp.Body)
+			if err != nil {
+				err = errors.Wrap(err, "could not read the response as gzip")
+				return
+			}
+			defer rdr1.Close()
+		default:
+			rdr1 = resp.Body
+		}
+
+		// Check response status
+		rsc := resp.StatusCode
+		if rsc != http.StatusOK && rsc != http.StatusTemporaryRedirect && rsc != http.StatusSeeOther {
+			log.Printf("bad response %q ", resp.Status)
 			return
 		}
 
@@ -238,15 +280,18 @@ func main() {
 			return
 		}
 
-		// respStr := string(resp)
 		qs := []*qst.QuestionnaireT{}
-		err = json.Unmarshal(resp, &qs)
+		// err = json.Unmarshal(respBytes, &qs)
+		dec := json.NewDecoder(rdr1)
+		err = dec.Decode(&qs)
 		if err != nil {
 			log.Printf("Unmarshal %v", err)
 			return
 		}
-		log.Printf("%v questionnaire(s) unmarshalled; %10.3f", len(qs), float64(len(resp)/(1<<10))/(1<<10))
 
+		//
+		//
+		//
 		maxPages := 0
 		for _, q := range qs {
 			if maxPages < len(q.Pages) {
@@ -264,23 +309,6 @@ func main() {
 		for i, q := range qs {
 
 			md5Want := q.MD5
-
-			// "deadline": "2018-10-31T23:59:00Z"
-			tToBeCorrected := time.Date(2018, 10, 31, 24, 59, 0, 0, cfg.Get().Loc)
-			tInstead := time.Date(2019, 02, 28, 24, 59, 0, 0, cfg.Get().Loc)
-			if q.Survey.Deadline.Equal(tToBeCorrected) {
-				log.Printf("Correction needed: %v", q.Survey.Deadline)
-				q.Survey.Deadline = tInstead
-				pth2 := filepath.Join(dir, q.UserID)
-				err := q.Save1(pth2)
-				if err != nil {
-					log.Printf("%3v: Error saving %v: %v", i, pth2, err)
-					continue
-				}
-				continue
-			} else {
-				// log.Printf("Difference       : %v", q.Survey.Deadline.Sub(tToBeCorrected))
-			}
 
 			pth2 := filepath.Join(dir, q.UserID)
 			err := q.Save1(pth2)
@@ -380,7 +408,7 @@ func main() {
 		if err != nil {
 			log.Printf("Could not write file: %v", err)
 		}
-		log.Printf("Regular finish. %v questionnaire(s) processed; %.3f MB", len(qs), float64(len(resp)/(1<<10))/(1<<10))
+		log.Printf("Regular finish. %v questionnaire(s) processed", len(qs))
 
 	}
 

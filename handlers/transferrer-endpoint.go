@@ -19,6 +19,15 @@ import (
 // TransferrerEndpointH responds with finished questionnaires from the filesystem.
 func TransferrerEndpointH(w http.ResponseWriter, r *http.Request) {
 
+	w.Header().Set("Content-Type", "application/json; charset=utf-8")
+	w.Header().Set("Content-Encoding", "gzip")
+
+	// w.Header().Set("Content-Length", fmt.Sprintf("%v", len(byts)))  // do not set, if response is gzipped !
+	// w.Write(byts)
+
+	dl, ok := r.Context().Deadline()
+	log.Printf("transferrer-endpoint-start; has deadline %v of %v", ok, dl)
+
 	sess := sessx.New(w, r)
 
 	l, isLoggedIn, err := lgn.LoggedInCheck(w, r)
@@ -55,15 +64,25 @@ func TransferrerEndpointH(w http.ResponseWriter, r *http.Request) {
 
 	fetchAll, _ := sess.ReqParam("fetch_all")
 
+	log.Printf("transferrer-endpoint-reading-directory %v", dir.Name())
 	infos, err := dir.Readdir(-1)
 	if err != nil {
 		helper(w, r, err, "Could not read directory.")
 		return
 	}
-	qs := []*qst.QuestionnaireT{}
+
+	// qs := []*qst.QuestionnaireT{}
+	cntr := 0
+	btsCtr := 0
+	gz := gzip.NewWriter(w)
+	defer gz.Close()
+
+	gz.Write([]byte("["))
 	for i, info := range infos {
 		if info.Mode().IsRegular() {
-			log.Printf("Name: %v, Size: %v", info.Name(), info.Size())
+			if i < 10 || i%50 == 0 {
+				log.Printf("iter %3v: Name: %v, Size: %v", i, info.Name(), info.Size())
+			}
 		}
 		pth := filepath.Join(qst.BasePath(), surveyID, waveID, info.Name())
 		// var q = &qst.QuestionnaireT{}
@@ -83,34 +102,28 @@ func TransferrerEndpointH(w http.ResponseWriter, r *http.Request) {
 				continue
 			}
 		}
-		qs = append(qs, q)
+
+		firstColLeftMostPrefix := " "
+		byts, err := json.MarshalIndent(q, firstColLeftMostPrefix, "\t")
+		if err != nil {
+			helper(w, r, fmt.Errorf("marshalling questionnaire failed: %v", err))
+			return
+		}
+
+		if cntr > 0 {
+			gz.Write([]byte(","))
+		}
+		gzipBytes, err := gz.Write(byts)
+		if err != nil {
+			helper(w, r, fmt.Errorf("gzipping questionnaire failed: %v", err))
+			return
+		}
+		cntr++
+		btsCtr += gzipBytes
+
 	}
-
-	log.Printf("%3v questionnaires ready for fetching home", len(qs))
-
-	firstColLeftMostPrefix := " "
-	byts, err := json.MarshalIndent(qs, firstColLeftMostPrefix, "\t")
-	if err != nil {
-		helper(w, r, fmt.Errorf("marshalling questionnaire failed: %v", err))
-		return
-	}
-	sz1 := fmt.Sprintf("%.3f MB", float64(len(byts)/(1<<10))/(1<<10))
-	log.Printf("%v marshalled into bytes slice", sz1)
-
-	w.Header().Set("Content-Type", "application/json; charset=utf-8")
-	w.Header().Set("Content-Encoding", "gzip")
-
-	// w.Header().Set("Content-Length", fmt.Sprintf("%v", len(byts)))  // do not set, if response is gzipped !
-	// w.Write(byts)
-
-	gz := gzip.NewWriter(w)
-	defer gz.Close()
-	gzipBytes, err := gz.Write(byts)
-	if err != nil {
-		helper(w, r, fmt.Errorf("gzipping questionnaire failed: %v", err))
-		return
-	}
-	sz2 := fmt.Sprintf("%.3f MB", float64(gzipBytes/(1<<10))/(1<<10))
-	log.Printf("%v gzipped written to http response", sz2)
+	gz.Write([]byte("]"))
+	sz1 := fmt.Sprintf("%.3f MB", float64(btsCtr/(1<<10))/(1<<10))
+	log.Printf("%v questionnaires to http response written - gzipped %v", cntr, sz1)
 
 }

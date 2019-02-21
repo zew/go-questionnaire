@@ -11,6 +11,7 @@ import (
 	"math/rand"
 	"os"
 	"path/filepath"
+	"strings"
 	"time"
 
 	"github.com/zew/go-questionnaire/qst"
@@ -57,6 +58,7 @@ func main() {
 	}
 
 	//
+	cntrChanged := 0
 	for i, f := range files {
 
 		pth := filepath.Join(dir, f.Name())
@@ -84,7 +86,7 @@ func main() {
 		// loc := time.FixedZone("UTC", 1*3600)
 		// tToBeCorrected := time.Date(2018, 10, 31, 24, 59, 0, 0, loc)  // "deadline": "2018-10-31T23:59:00Z"
 		// if q.Survey.Deadline.Equal(tToBeCorrected) {
-		if q.Variations > 0 {
+		if false && q.Variations > 0 {
 			log.Printf("%3v: questionnaire %v - correction needed %v", i, pth, q.Survey.Deadline)
 			// q.Survey.Deadline = tInstead
 			q.Variations = 0
@@ -92,14 +94,28 @@ func main() {
 			if err != nil {
 				log.Printf("%3v: Error saving %v: %v", i, pth, err)
 			}
+			cntrChanged++
 			log.Printf("%3v: questionnaire %v saved", i, pth)
+		}
 
+		search := q.Pages[1].Groups[8].Desc["fr"]
+		old := "con-trainte"
+		new := "contrainte"
+		if strings.Contains(search, old) {
+			replaced := strings.Replace(search, old, new, -1)
+			q.Pages[1].Groups[8].Desc["fr"] = replaced
+			err := q.Save1(pth)
+			if err != nil {
+				log.Printf("%3v: Error saving %v: %v", i, pth, err)
+			}
+			cntrChanged++
+			log.Printf("%3v: questionnaire %v - %v corrected to %v", i, pth, old, new)
 		} else {
-			log.Printf("%3v: questionnaire %v - correction not needed", i, pth)
+			log.Printf("%3v: questionnaire %v - correction not needed %v", i, pth, search)
 		}
 
 	}
 	log.Printf("================")
-	log.Printf("Finish")
+	log.Printf("Finish - %v changes", cntrChanged)
 
 }

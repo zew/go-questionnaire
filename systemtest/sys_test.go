@@ -8,6 +8,8 @@ import (
 	"github.com/zew/go-questionnaire/qst"
 )
 
+// This is obsolete - see ../main_test.go for details
+//
 // Run with
 //   go test ./systemtest/... -test.v
 // or

@@ -52,5 +52,5 @@ func ValidateFormToken(arg string) error {
 	if arg == tok(1) {
 		return nil
 	}
-	return fmt.Errorf("The form token was not issued within the last two hours. \nPlease re-login.")
+	return fmt.Errorf("form token was not issued within the last two hours. \nPlease re-login")
 }

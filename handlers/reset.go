@@ -4,12 +4,9 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-	"os"
-	"path/filepath"
 
 	"github.com/zew/go-questionnaire/cfg"
 	"github.com/zew/go-questionnaire/lgn"
-	"github.com/zew/go-questionnaire/qst"
 	"github.com/zew/go-questionnaire/sessx"
 )
 
@@ -19,6 +16,8 @@ import (
 func ReloadH(w http.ResponseWriter, r *http.Request) {
 
 	sess := sessx.New(w, r)
+
+	log.Printf("reset start")
 
 	_, err := lgn.LoginByHash(w, r)
 	if err != nil {
@@ -45,34 +44,17 @@ func ReloadH(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	//
-
-	userSurveyType := ""
-	userWaveID := ""
-	for attr, val := range l.Attrs {
-		if attr == "survey_id" {
-			userSurveyType = val
-		}
-		if attr == "wave_id" {
-			userWaveID = val
-		}
-	}
-	pth := filepath.Join(".", qst.BasePath(), userSurveyType, userWaveID, l.User) + ".json"
-	err = os.Remove(pth)
-	if err != nil {
-		log.Printf("Error deleting questionnaire file: %v", err)
-		// fmt.Fprintf(w, "Error deleting questionnaire file: %v", err)
-	}
-	log.Printf("removed quest file %v", pth)
-
-	err = sess.Remove(w, "questionnaire")
-	if err != nil {
-		helper(w, r, err, "Error deleting questionnaire from session")
-		return
-	}
-	log.Printf("removed quest session")
-
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
+
+	msg := ""
+	if r.Method == "POST" {
+		l.DeleteFiles()
+		sess.Remove("questionnaire")
+		log.Printf("removed quest session")
+		msg = "User files deleted. Questionnaire deleted from session."
+	} else {
+		msg = "Not a POST request. No delete action taken."
+	}
 
 	relForm := r.Form // relevant Form
 	if len(r.PostForm) > 5 {
@@ -87,27 +69,37 @@ func ReloadH(w http.ResponseWriter, r *http.Request) {
 	}
 
 	fmt.Fprintf(w, `
-		<form method="POST" class="survey-edit-form" >
-				<input type="text"   name="survey_id"           value="%v"   /> <br>
-				<input type="text"   name="wave_id"             value="%v"   /> <br>
-				<input type="text"   name="u"                   value="%v"   /> <br>
-				<input type="text"   name="h"    size=40        value="%v"   /> <br>
-	lang code	<input type="text"   name="lang_code"  size=6   value="%v"   /> <br>
-				%v
-				<input type="submit" name="submit" id="submit"  value="Submit" accesskey="s"  /> <br>
-		</form>
-		<script> document.getElementById('submit').focus(); </script>
+	<html>
+		<head></head>
+		<body>
+			<b>%v<b>
+			<form method="POST" class="survey-edit-form" >
+					<input type="text"   name="sid"                 value="%v"   /> <br>
+					<input type="text"   name="wid"                 value="%v"   /> <br>
+					<input type="text"   name="u"                   value="%v"   /> <br>
+					<input type="text"   name="h"    size=40        value="%v"   /> <br>
+		lang code	<input type="text"   name="lang_code"  size=6   value="%v"   /> <br>
+					%v
+					<input type="submit" name="submit" id="submit"  value="Submit" accesskey="s"  /> <br>
+			</form>
+			<script> document.getElementById('submit').focus(); </script>
+				
+		</body>
+	</html>
+
 		`,
-		userSurveyType,
-		userWaveID,
+		msg,
+		l.Attrs["survey_id"],
+		l.Attrs["wave_id"],
 		l.User,
 		relForm.Get("h"),
 		relForm.Get("lang_code"),
 		attrsStr,
 	)
 
-	queryString := fmt.Sprintf("u=%v&survey_id=%v&wave_id=%v&h=%v",
-		relForm.Get("u"), relForm.Get("survey_id"), relForm.Get("wave_id"), relForm.Get("h"))
+	queryString := lgn.LoginURL(
+		relForm.Get("u"), relForm.Get("sid"), relForm.Get("wid"), relForm.Get("h"),
+	)
 	if relForm.Get("lang_code") != "" {
 		queryString += "&lang_code=" + relForm.Get("lang_code")
 	}

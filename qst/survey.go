@@ -124,7 +124,7 @@ func (s *surveyT) HTMLForm(questTypes []string) string {
 
 			<span>Year     </span><input type="text" name="year"      value="%v"  /> <br>
 	 		<span>Month    </span><input type="text" name="month"     value="%v"  /> <br>
-			<span>Deadline </span><input type="text" name="deadline"  value="%v" placeholder="dd.mm.yyyy hh:mm" /> <br>
+			<span>Deadline </span><input type="text" name="deadline"  value="%v" placeholder="dd.mm.yyyy hh:mm" /> '01.01.2030 00:00' for indefinite   <br>
 
 			%v
 
@@ -133,7 +133,6 @@ func (s *surveyT) HTMLForm(questTypes []string) string {
 
 		<script> document.getElementById('submit').focus(); </script>
 
-			%v
 			%v
 			%v
 		`
@@ -158,7 +157,7 @@ func (s *surveyT) HTMLForm(questTypes []string) string {
 			<input type="text" name="Params[%v].Name" placeholder="name%v"  value="%v" /> 
 			<input type="text" name="Params[%v].Val"  placeholder="val%v"   value="%v" />
 			<br>
-		`,
+			`,
 			i,
 			i, i, s.Params[i].Name,
 			i, i, s.Params[i].Val,
@@ -169,10 +168,10 @@ func (s *surveyT) HTMLForm(questTypes []string) string {
 		"<a href='%v/generate-hashes?survey_id=%v&wave_id=%v' target='_blank' >Generate hash logins</a><br>",
 		cfg.Pref(), s.Type, s.WaveID(),
 	)
-	link2 := fmt.Sprintf(
-		"<a href='%v/direct-login/generate?start=1000&stop=1020' target='_blank' >Generate direct logins</a><br>",
-		cfg.Pref(),
-	)
+	// link2 := fmt.Sprintf(
+	// 	"<a href='%v/direct-login/generate?start=1000&stop=1020' target='_blank' >Generate direct logins</a><br>",
+	// 	cfg.Pref(),
+	// )
 	link3 := fmt.Sprintf(
 		"<a href='%v/shufflings-to-csv?start=1000&stop=1020' target='_blank' >Shufflings to CSV</a><br>",
 		cfg.Pref(),
@@ -181,10 +180,11 @@ func (s *surveyT) HTMLForm(questTypes []string) string {
 	ret = fmt.Sprintf(
 		ret,
 		dd,
-		s.Year, fmt.Sprintf("%02d", int(s.Month)+0), s.Deadline.Format("02.01.2006 15:04"),
+		s.Year,
+		fmt.Sprintf("%02d", int(s.Month)+0), // month
+		s.Deadline.Format("02.01.2006 15:04"),
 		kv,
 		link1,
-		link2,
 		link3,
 	)
 	return ret

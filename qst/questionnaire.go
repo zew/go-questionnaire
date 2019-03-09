@@ -7,6 +7,7 @@ package qst
 
 import (
 	"bytes"
+	"encoding/gob"
 	"fmt"
 	"log"
 	"path/filepath"
@@ -458,7 +459,7 @@ type pageT struct {
 	Desc            trl.S `json:"description,omitempty"`
 	Short           trl.S `json:"short,omitempty"`         // Short version of Label/Description - i.e. for progress bar
 	NoNavigation    bool  `json:"no_navigation,omitempty"` // Page will not show up in progress bar
-	NavigationalNum int   `json:"navi_num"`                // The number in Navigation order; computed by q.Validate
+	NavigationalNum int   `json:"navi_num"`                // The number in Navigation order; based on NoNavigation; computed by q.Validate
 
 	Width                 int `json:"width,omitempty"`                  // default is 100 percent
 	AestheticCompensation int `json:"aesthetic_compensation,omitempty"` // default is zero percent; if controls do not reach the right border
@@ -503,6 +504,11 @@ type QuestionnaireT struct {
 	Pages []*pageT `json:"pages,omitempty"`
 }
 
+// We need to register all types who are saved into a session
+func init() {
+	gob.Register(QuestionnaireT{})
+}
+
 // BasePath gives the 'root' for loading and saving questionnaire JSON files.
 func BasePath() string {
 	return filepath.Join(".", "responses")
@@ -527,23 +533,16 @@ func (q *QuestionnaireT) FinishedEntirely() (closed bool) {
 	return
 }
 
-// FilePath1 returns the file system saving location of the questionnaire.
-// The waveID/userID fragment can optionally be submitted by an argument.
-func (q *QuestionnaireT) FilePath1(surveyAndWaveIDAndUserID ...string) string {
-	pth := ""
-	if len(surveyAndWaveIDAndUserID) > 0 {
-		pth = filepath.Join(BasePath(), surveyAndWaveIDAndUserID[0])
-	} else {
-		pth = filepath.Join(BasePath(), q.Survey.Type, q.Survey.WaveID(), q.UserID)
-	}
-
+// FilePath1 returns the location of the questionnaire file.
+// Similar to lgn.LoginT.QuestPath()
+func (q *QuestionnaireT) FilePath1() string {
+	pth := filepath.Join(BasePath(), q.Survey.Type, q.Survey.WaveID(), q.UserID)
 	if strings.HasSuffix(pth, ".json.json") {
 		pth = strings.TrimSuffix(pth, ".json")
 	}
 	if !strings.HasSuffix(pth, ".json") {
 		pth += ".json"
 	}
-
 	return pth
 }
 
@@ -728,7 +727,7 @@ func (q *QuestionnaireT) CurrPageInNavigation() bool {
 
 // Compare compares page completion times and input responses.
 // Compare stops with the first difference and returns an error.
-func (q *QuestionnaireT) Compare(v *QuestionnaireT) (bool, error) {
+func (q *QuestionnaireT) Compare(v *QuestionnaireT, lenient bool) (bool, error) {
 
 	if len(q.Pages) != len(v.Pages) {
 		return false, fmt.Errorf("Unequal numbers of pages: %v - %v", len(q.Pages), len(v.Pages))
@@ -741,8 +740,8 @@ func (q *QuestionnaireT) Compare(v *QuestionnaireT) (bool, error) {
 		if i1 < len(q.Pages)-1 { // No completion time comparison for last page
 			qf := q.Pages[i1].Finished
 			vf := v.Pages[i1].Finished
-			if qf.Sub(vf) > 20*time.Second || vf.Sub(qf) > 20*time.Second {
-				return false, fmt.Errorf("Page %v: Completion time too distinct: %v - %v", i1, vf, qf)
+			if qf.Sub(vf) > 30*time.Second || vf.Sub(qf) > 30*time.Second {
+				return false, fmt.Errorf("Page %v: Completion time too distinct: %v - %v", i1, qf, vf)
 			}
 		}
 
@@ -754,7 +753,13 @@ func (q *QuestionnaireT) Compare(v *QuestionnaireT) (bool, error) {
 				if q.Pages[i1].Groups[i2].Inputs[i3].IsLayout() {
 					continue
 				}
-				if q.Pages[i1].Groups[i2].Inputs[i3].Response != v.Pages[i1].Groups[i2].Inputs[i3].Response {
+				qr := q.Pages[i1].Groups[i2].Inputs[i3].Response
+				vr := v.Pages[i1].Groups[i2].Inputs[i3].Response
+				if lenient && (qr == "" && vr == "0" || qr == "0" && vr == "") {
+					qr = "0"
+					vr = "0"
+				}
+				if qr != vr {
 					return false, fmt.Errorf(
 						"Page %v: Group %v: Input %v %v: '%v' != '%v'",
 						i1, i2, i3,

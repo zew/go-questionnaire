@@ -159,18 +159,24 @@ func LoadH(w http.ResponseWriter, r *http.Request) {
 		User  string            `json:"user"`
 		Roles map[string]string `json:"roles"` // i.e. admin: true , gender: female, height: 188
 	}
-	l := &loginTypeTemp{}
-	loggedIn, err := sess.EffectiveObj("login", l)
+	intf, loggedIn, err := sess.EffectiveObj("login")
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
 	if !loggedIn {
-		http.Error(w, "admin login required for this function", http.StatusInternalServerError)
+		http.Error(w, "login required for this function", http.StatusInternalServerError)
 		return
 	}
+	l, ok := intf.(*loginTypeTemp)
+	if !ok {
+		errMsg := fmt.Sprintf("Expected loginTypeTemp, got %T %v", intf, intf)
+		http.Error(w, errMsg, http.StatusInternalServerError)
+		return
+	}
+
 	if _, ok := l.Roles["admin"]; !ok {
-		http.Error(w, "admin login required for this function", http.StatusInternalServerError)
+		http.Error(w, "admin role required for this function", http.StatusInternalServerError)
 		return
 	}
 

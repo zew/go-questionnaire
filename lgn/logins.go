@@ -9,6 +9,8 @@ package lgn
 import (
 	"crypto/md5"
 	"crypto/rand"
+	"encoding/base64"
+	"encoding/gob"
 	"encoding/hex"
 	"encoding/json"
 	"fmt"
@@ -18,6 +20,7 @@ import (
 	"net/http"
 	"os"
 	"path"
+	"path/filepath"
 	"strconv"
 	"strings"
 	"sync"
@@ -26,32 +29,34 @@ import (
 	"golang.org/x/crypto/md4"
 
 	"github.com/zew/go-questionnaire/cfg"
+	"github.com/zew/go-questionnaire/qst"
 	"github.com/zew/util"
 )
 
 var errFoundButWrongPassword = fmt.Errorf("User found but wrong password")
 var errLoginNotFound = fmt.Errorf("Login not found")
 
-// Following URL params are not hashed for login check
-// They can be appended to the login-by-hash URL to modify app state
-var uncheckedURLParams = map[string]interface{}{
+// exempted URL params are not hashed for login check
+// They can be freely added to the login-by-hash URL to modify app state
+var exempted = map[string]interface{}{
 	"page": nil, "submit": nil, "mobile": nil, "lang_code": nil, // general app control
 	"attrs": nil, // user attributes at login time
 	"h":     nil, // the hash
 }
 
-// ExplicitAttrs contains URL params going into LoginT.Attrs
+// userAttrs contains URL params going into LoginT.Attrs
 // upon login.
-// They serve as a property bag session
-var ExplicitAttrs = map[string]interface{}{
-	"survey_id": nil,
-	"wave_id":   nil,
-	"attrs":     nil, // general purpose - can occur several times - key:value
+// They serve as a property bag session.
+// Key is the short form - from the URL. Val is the long form.
+var userAttrs = map[string]string{
+	"sid":   "survey_id",
+	"wid":   "wave_id",
+	"attrs": "attrs", // general purpose - can occur several times - key:value
 }
 
 // LoginT must be exported, *not* because we need to pass a type to sessx.GetObject
 // 		l := lgn.LoginT{}
-// 		ok, err := sess.EffectiveObj("login", &l)
+// 		l, ok, err := sess.EffectiveObj("login")
 // but because we need to declare variables of this type
 // 		type TplDataT struct {
 // 			...
@@ -68,6 +73,89 @@ type LoginT struct {
 	PassInitial    string `json:"pass_initial"`       // For first login - unencrypted - grants restricted access to change password only
 	IsInitPassword bool   `json:"is_init_password"`   // Indicates authentication against PassInitial
 	PassMd5        string `json:"pass_md5,omitempty"` // Encrypted password, created from login, permanent password, salt
+}
+
+// We need to register all types who are saved into a session
+func init() {
+	gob.Register(LoginT{})
+}
+
+// LoginURL returns a URL plus query fragment,
+// using the expected param names u, sid, wid, h
+func LoginURL(userName, surveyID, waveID string, optHash ...string) string {
+
+	checkStr := fmt.Sprintf("%v-%v-%v-%v", surveyID, userName, waveID, Get().Salt)
+	hsh := ""
+	if len(optHash) == 0 {
+		hsh = Md5Str([]byte(checkStr))
+	} else {
+		hsh = optHash[0]
+	}
+
+	loginURL := fmt.Sprintf("%v?u=%v&sid=%v&wid=%v&h=%v", cfg.PrefWTS(), userName, surveyID, waveID, hsh)
+	return loginURL
+
+}
+
+// QuestPath returns the path to the JSON questionnaire,
+// Similar to qst.QuestionnaireT.FilePath1()
+func (l *LoginT) QuestPath() string {
+
+	userSurveyType := ""
+	userWaveID := ""
+	for attr, val := range l.Attrs {
+		if attr == "survey_id" {
+			userSurveyType = val
+		}
+		if attr == "wave_id" {
+			userWaveID = val
+		}
+	}
+
+	if userSurveyType == "" || userWaveID == "" {
+		log.Printf("Error constructing path for user questionnaire file; userSurveyType or userWaveID is empty: %v - %v", userSurveyType, userWaveID)
+	}
+
+	pth := filepath.Join(".", qst.BasePath(), userSurveyType, userWaveID, l.User) + ".json"
+	return pth
+}
+
+// DeleteFiles deletes all JSON files
+func (l *LoginT) DeleteFiles() {
+
+	userSurveyType := ""
+	userWaveID := ""
+	for attr, val := range l.Attrs {
+		if attr == "survey_id" {
+			userSurveyType = val
+		}
+		if attr == "wave_id" {
+			userWaveID = val
+		}
+	}
+
+	if userSurveyType == "" || userWaveID == "" {
+		log.Printf("Error deleting questionnaire file;  userSurveyType or userWaveID is empty: %v - %v", userSurveyType, userWaveID)
+		return
+	}
+
+	pth1 := filepath.Join(".", qst.BasePath(), userSurveyType, userWaveID, l.User) + ".json"
+	pth2 := filepath.Join(".", qst.BasePath(), userSurveyType, userWaveID, l.User) + "_joined.json"
+	pth3 := filepath.Join(".", qst.BasePath(), userSurveyType, userWaveID, l.User) + "_split.json"
+
+	pths := []string{pth1, pth2, pth3}
+
+	for _, pth := range pths {
+		err1 := os.Remove(pth)
+		if err1 != nil {
+			if !os.IsNotExist(err1) {
+				log.Printf("Error deleting questionnaire file: %v", err1)
+			}
+		} else {
+			log.Printf("removed quest file %v", pth1)
+		}
+	}
+
 }
 
 // HasRole checks the login for a particular role, for instance "admin"
@@ -426,8 +514,11 @@ func Md5Str(buf []byte) string {
 	}
 	hasher := md5.New()
 	hasher.Write(buf)
-	hash := hasher.Sum(nil)
-	return hex.EncodeToString(hash)
+	hshBytes := hasher.Sum(nil)
+
+	ret := hex.EncodeToString(hshBytes)
+	ret = base64.URLEncoding.EncodeToString(hshBytes)
+	return ret
 }
 
 // Example writes a single login to file, to be extended or adapted

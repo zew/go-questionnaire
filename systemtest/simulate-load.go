@@ -12,6 +12,7 @@ import (
 	"log"
 	"net/http"
 	"net/url"
+	"os"
 	"path/filepath"
 	"strings"
 	"testing"
@@ -28,6 +29,20 @@ import (
 // "no buildable Go source files" on travis
 func main() {
 
+}
+
+func removeSystemtestJSON(t *testing.T) {
+	err := filepath.Walk(filepath.Join(".", "responses"), func(path string, f os.FileInfo, err error) error {
+		base := filepath.Base(path)
+		if base == "systemtest.json" || base == "systemtest_src.json" {
+			log.Printf("Removing %v", path)
+			os.Remove(path)
+		}
+		return nil
+	})
+	if err != nil {
+		t.Fatal(err)
+	}
 }
 
 func clientPageToServer(t *testing.T, q *qst.QuestionnaireT, idxPage int, urlMain string, sessCook *http.Cookie) {
@@ -61,8 +76,8 @@ func clientPageToServer(t *testing.T, q *qst.QuestionnaireT, idxPage int, urlMai
 	t2 := time.Now()
 	dur := t2.Sub(t1).Nanoseconds() / 1000 / 1000
 	t.Logf("%9v ms request roundtrip", dur)
-	t3 := time.Now().Add(-15 * time.Millisecond).Truncate(time.Second)
 
+	t3 := time.Now().Add(-15 * time.Millisecond).Truncate(time.Second)
 	q.Pages[idxPage].Finished = t3
 
 	_ = resp
@@ -70,7 +85,7 @@ func clientPageToServer(t *testing.T, q *qst.QuestionnaireT, idxPage int, urlMai
 
 }
 
-// FillQuestAndComparesServerResult loads a questionnaire from at template.
+// FillQuestAndComparesServerResult loads a questionnaire from a template.
 // It then fills the questionnaire page by page.
 // It then compares the local copy of the questionnaire data
 // with the "server" version.
@@ -78,9 +93,14 @@ func FillQuestAndComparesServerResult(t *testing.T, qSrc *qst.QuestionnaireT, ur
 
 	var clientQuest = &qst.QuestionnaireT{}
 	var err error
-	clientQuest, err = qst.Load1(qSrc.FilePath1(qSrc.Survey.Type + ".json")) // new from template
+	pthBase := filepath.Join(qst.BasePath(), qSrc.Survey.Type+".json")
+	clientQuest, err = qst.Load1(pthBase)
 	if err != nil {
-		t.Fatalf("Loading client questionnaire from file caused error: %v", err)
+		t.Fatalf("Client questionnaire loading from file failed: %v", err)
+	}
+	clientQuest, err = clientQuest.Split()
+	if err != nil {
+		t.Fatalf("Client questionnaire splitting failed: %v", err)
 	}
 	clientQuest.Survey = qSrc.Survey
 	clientQuest.UserID = "systemtest"
@@ -92,23 +112,40 @@ func FillQuestAndComparesServerResult(t *testing.T, qSrc *qst.QuestionnaireT, ur
 	}
 	t.Logf("Client questionnaire loaded from file; %v pages", len(clientQuest.Pages))
 
+	//
+	// Doing load
 	for idx := range clientQuest.Pages {
 		clientPageToServer(t, clientQuest, idx, urlMain, sessCook)
 	}
 
-	clientPth := filepath.Join(clientQuest.Survey.Type, clientQuest.Survey.WaveID(), "systemtest_src")
-	clientQuest.Save1(clientQuest.FilePath1(clientPth))
-
+	//
 	// Comparing client questionnaire to server questionnaire
-	serverPth := strings.Replace(clientPth, "systemtest_src", "systemtest", -1)
-	serverQuest, err := qst.Load1(clientQuest.FilePath1(serverPth)) // new from template
+	clientPth := strings.Replace(clientQuest.FilePath1(), "systemtest.json", "systemtest_src.json", -1)
+	clientQuest.Split()
+	clientQuest.Save1(clientPth)
+	serverQuest, err := qst.Load1(clientQuest.FilePath1()) // new from template
 	if err != nil {
 		t.Fatalf("Loading questionnaire from file caused error: %v", err)
 	}
-	equal, err := clientQuest.Compare(serverQuest)
+
+	t.Logf("clientQuest and serverQuest saved: \n\t%v \n\t%v  ", clientPth, serverQuest.FilePath1())
+
+	equal, err := clientQuest.Compare(serverQuest, false)
 	if !equal {
+
+		clientPthFail := strings.Replace(clientPth, ".json", "_FAIL.json", -1)
+		os.Remove(clientPthFail)
+		os.Rename(clientPth, clientPthFail)
+		serverPthFail := strings.Replace(serverQuest.FilePath1(), ".json", "_FAIL.json", -1)
+		os.Remove(serverPthFail)
+		os.Rename(serverQuest.FilePath1(), serverPthFail)
+
 		t.Logf("Delete older versions of systemtest.json")
 		t.Fatalf("Questionnaires are unequal: %v", err)
+	} else {
+		t.Logf("clientQuest and serverQuest EQUAL")
+		t.Logf("=================================")
+		t.Logf("   ")
 	}
 
 }
@@ -117,6 +154,9 @@ func FillQuestAndComparesServerResult(t *testing.T, qSrc *qst.QuestionnaireT, ur
 // and performs some requests.
 func SimulateLoad(t *testing.T, qSrc *qst.QuestionnaireT,
 	loginURI, mobile string) {
+
+	removeSystemtestJSON(t)
+	defer removeSystemtestJSON(t)
 
 	port := cfg.Get().BindSocket
 	host := fmt.Sprintf("http://localhost:%v", port)
@@ -158,6 +198,9 @@ func SimulateLoad(t *testing.T, qSrc *qst.QuestionnaireT,
 
 		t.Logf("Cookie is %+v \ngleaned from %v; server log *above* shows result", sessCook, req.URL)
 		if sessCook == nil {
+			for k, v := range resp.Cookies() {
+				t.Logf("\tfound cookie\t%v %v", k, v)
+			}
 			t.Fatal("we need a session cookie to continue")
 		}
 

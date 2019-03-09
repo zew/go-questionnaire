@@ -79,7 +79,7 @@ with automatic `Lets encrypt` certification.
 
 * There are global translations as well as  
  questionnaire specific multi-language strings.  
- Global hyphenizations helps with long words on mobile devices.
+ Global hyphenizations help with long words on mobile devices.
 
 * Common proof functions prevent duplicate question keys  
  or missing translations.
@@ -253,9 +253,6 @@ Mobile layout was tested with `crossbrowsertesting.com`.
 * The transferrer could truncate the pages from the online JSON files  
  leaving only user ID, completion time and survey data.
 
-* For each user, only the responses could be saved to session/JSON; not the entire questionnaire data.  
- The responses could be merged into the questionnaire based on input name.
-
 * The generators could be compiled into independent executables.  
  They could then be executed on the command line with the parameters as JSON file.
 
@@ -265,18 +262,20 @@ Mobile layout was tested with `crossbrowsertesting.com`.
 
 ## Possible enhancements
 
-* Adding a `Docker` script?  
- It would mostly contain the instructions of `linux-instructions.md`.
+* Either the login URL must be shortened, or an URL shortener service must be integrated  
+
+* Improving the `Docker` script  
+ It should contain the equivalent of `linux-instructions.md`.
 
 * Migrate file storage to GoCloud library and make  
 deployable on Google Appengine or AWS without EBS (elastic block devices)?  
 To be implemented into the load/save() methods of ConfigT, LoginsT and QuestionnaireT.
 
-## About Go-App-Tpl
+## About go-app-tpl
 
-* Go-Questionnaire is based on Go-App-Tpl
+* Go-Questionnaire is based on go-app-tpl
 
-* Go-App-Tpl is a number of packages for building go web applications.  
+* go-app-tpl is a number of packages for building go web applications.  
 
 It features
 
@@ -292,23 +291,23 @@ It features
 
 * Static file handlers
 
-* JSON config file with reloadable settings 
+* JSON config file with reloadable settings
 
 * JSON logins file, also reloadable
 
 * Handlers for login, changing password, login by hash
 
-* Site layout template with jQuery from CDN cache; fallback to localhost 
+* Site layout template with jQuery from CDN cache; fallback to localhost
 
 * Multi language strings
 
 * Templates having access to session and request
 
-* Stack of dynamic subtemplate calls 
+* Stack of dynamic subtemplate calls
 
 * Template pre-parsing (`bootstrap`), configurable for development or production
 
-* Markdown file handler, rewriting image links 
+* Markdown file handler, rewriting image links
 
 * Multi language markdown files
 
@@ -320,7 +319,7 @@ It features
 
 * Subpackaging is done by concern, neither too amorphous nor too atomic.
 
-* Go-App-Tpl has no "hooks" or interfaces for isolation of "framework" code.  
+* go-app-tpl has no "hooks" or interfaces for isolation of "framework" code.  
  Just copy it and add your handlers.  
  Future updates can be merged.
 

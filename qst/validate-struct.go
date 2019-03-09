@@ -99,7 +99,17 @@ func (q *QuestionnaireT) TranslationCompleteness() error {
 	return nil
 }
 
-// Validate checks whether essential elements of the questionnaire exist.
+// Validate performs integrity tests - suitable for every request
+// 		waveId, langCodes valid?
+// 		input type valid?
+// 		submit button jump page exists
+// 		validator func exists?
+// 		input names uniqueness?
+//
+// Validate also does some initialization stuff - needed only at JSON creation time
+//		Setting page and group width to 100
+//		Setting values for radiogroups
+//		Setting navigation sequence enumeration values
 func (q *QuestionnaireT) Validate() error {
 
 	if q.Survey.Type == "" || !Mustaz09Underscore(q.Survey.Type) {
@@ -134,6 +144,7 @@ func (q *QuestionnaireT) Validate() error {
 	// Check inputs
 	// Set page and group width to 100
 	// Set values for radiogroups
+	// Enumerate pages being in navigation sequence
 	for i1 := 0; i1 < len(q.Pages); i1++ {
 		if q.Pages[i1].Width == 0 {
 			q.Pages[i1].Width = 100
@@ -234,12 +245,6 @@ func (q *QuestionnaireT) Validate() error {
 			return fmt.Errorf(s)
 		}
 	}
-
-	// err := q.ComputeDynamicContent()
-	// if err != nil {
-	// 	return err
-	// }
-
 	return nil
 }
 

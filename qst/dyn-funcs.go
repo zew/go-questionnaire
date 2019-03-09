@@ -79,8 +79,16 @@ func PersonalLink(q *QuestionnaireT) (string, error) {
 // ResponseTextHasEuro yields texts => want to keep € - want to have €
 func ResponseTextHasEuro(q *QuestionnaireT) (string, error) {
 
-	attr1 := q.Attrs["euro-member"]
-	attr2 := q.Attrs["country"] // ISO
+	if q.Attrs == nil {
+
+	}
+
+	attr1, ok1 := q.Attrs["euro-member"]
+	attr2, ok2 := q.Attrs["country"] // country of residence - not language - ISO
+
+	if !ok1 || !ok2 {
+		return "Question requires known euro-membership and residence code.", nil
+	}
 
 	cntry := trl.Countries[attr2]
 

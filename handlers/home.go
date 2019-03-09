@@ -29,47 +29,64 @@ type tplDataExtT struct {
 // First from session.
 // Then from file of previous session.
 // Finally from template.
-func loadQuestionnaire(w http.ResponseWriter, r *http.Request, userSurveyType, userWaveID, userID string) (*qst.QuestionnaireT, error) {
+func loadQuestionnaire(w http.ResponseWriter, r *http.Request, l *lgn.LoginT) (*qst.QuestionnaireT, error) {
 
 	sess := sessx.New(w, r)
 
 	// from session
 	var q = &qst.QuestionnaireT{}
-	ok, err := sess.EffectiveObj("questionnaire", q)
+	intf, qFound, err := sess.EffectiveObj("questionnaire")
 	if err != nil {
 		err = errors.Wrap(err, "Reading questionnaire from session caused error")
 		return q, err
 	}
-	if ok {
-		log.Printf("Questionnaire loaded from session; %v pages", len(q.Pages))
+	if qFound {
+		qp, ok := intf.(qst.QuestionnaireT)
+		if !ok {
+			return q, fmt.Errorf("Expected qst.QuestionnaireT, got %T %v", intf, intf)
+		}
+		q = &qp
 		return q, nil
 	}
 
 	// from file
-	log.Printf("Deriving from the login: survey_id %v, wave_id %v, user_id: %v", userSurveyType, userWaveID, userID)
-	pth := q.FilePath1(filepath.Join(userSurveyType, userWaveID, userID))
-	log.Printf("Deriving path: %v", pth)
-	q, err = qst.Load1(pth) // previous session
+	log.Printf("Deriving from login: survey_id %v, wave_id %v, user_id %v", l.Attrs["survey_id"], l.Attrs["wave_id"], l.User)
+	pthBase := filepath.Join(qst.BasePath(), l.Attrs["survey_id"]+".json")
+	qBase, err := qst.Load1(pthBase)
 	if err != nil {
-		log.Printf("No previous file %v found. Loading new questionnaire from file.", pth)
-		q, err = qst.Load1(q.FilePath1(userSurveyType)) // new from template
-	}
-	if err != nil {
-		err = errors.Wrap(err, "Loading questionnaire from file caused error")
-		return q, err
-	}
-	err = q.Validate()
-	if err != nil {
-		err = errors.Wrap(err, "Questionnaire validation caused error")
+		err = errors.Wrap(err, "Loading base questionnaire from template file caused error")
 		return q, err
 	}
 
-	if q.Survey.Type != userSurveyType {
-		err = fmt.Errorf("Logged in for survey %v - but template is for %v", userSurveyType, q.Survey.Type)
+	pth := l.QuestPath()
+	log.Printf("Deriving path: %v", pth)
+	qSplit, err := qst.Load1(pth) // previous session
+	if err != nil {
+		if !os.IsNotExist(err) {
+			return q, err
+		}
+		log.Printf("No previous user questionnaire file %v found. Using base file.", pth)
+	} else {
+		err = qBase.Join(qSplit)
+		if err != nil {
+			log.Printf("\tJoining base questionnaire with user data yielded error:    %v", err)
+			return q, err
+		}
+	}
+
+	q = qBase
+	err = q.Validate()
+	if err != nil {
+		err = errors.Wrap(err, "Joined questionnaire validation error")
 		return q, err
 	}
-	if q.Survey.WaveID() != userWaveID {
-		err = fmt.Errorf("Logged in for wave %v - but template is for %v", userWaveID, q.Survey.WaveID())
+
+	if q.Survey.Type != l.Attrs["survey_id"] {
+		err = fmt.Errorf("Logged in for survey %v - but template is for %v", l.Attrs["survey_id"], q.Survey.Type)
+		return q, err
+	}
+	if q.Survey.WaveID() != l.Attrs["wave_id"] {
+		err = fmt.Errorf("Logged in for wave %v - but template is for %v", l.Attrs["wave_id"], q.Survey.WaveID())
 		return q, err
 	}
 
@@ -78,7 +95,7 @@ func loadQuestionnaire(w http.ResponseWriter, r *http.Request, userSurveyType, u
 
 }
 
-// You can provite
+// You can provide
 // 1.) an error
 // 2.) an error with string to wrap around
 // 3.) only a string - which is converted into an error
@@ -111,7 +128,7 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	if ok && err == nil {
-		sess.Remove(w, "questionnaire") // upon successful, possibly new login - remove previous questionnaire from session
+		sess.Remove("questionnaire") // upon successful, possibly new login - remove previous questionnaire from session
 	}
 
 	l, isLoggedIn, err := lgn.LoggedInCheck(w, r)
@@ -130,17 +147,6 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	userSurveyType := ""
-	userWaveID := ""
-	for attr, val := range l.Attrs {
-		if attr == "survey_id" {
-			userSurveyType = val
-		}
-		if attr == "wave_id" {
-			userWaveID = val
-		}
-	}
-
 	token, ok := sess.ReqParam("token")
 	if ok {
 		err = lgn.ValidateFormToken(token)
@@ -153,7 +159,7 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	q, err := loadQuestionnaire(w, r, userSurveyType, userWaveID, l.User)
+	q, err := loadQuestionnaire(w, r, &l)
 	if err != nil {
 		helper(w, r, err)
 		return
@@ -335,9 +341,10 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 		helper(w, r, err, s)
 		return
 	}
-	err = q.Save1(pth)
+	q2, _ := q.Split()
+	err = q2.Save1(l.QuestPath())
 	if err != nil {
-		helper(w, r, err, "Putting questionnaire into session caused error")
+		helper(w, r, err, "Saving splitted repsonses to file caused error")
 		return
 	}
 

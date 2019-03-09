@@ -34,6 +34,8 @@ func fmtSpecialTest(t *testing.T, urlMain string, sessCook *http.Cookie) {
 			}
 		}
 
+		ctr.Reset() // first response should be '1' - since we check this later
+
 		vals := url.Values{}
 		vals.Set("y0_ez", ctr.IncrementStr()) // Don't forget to reset; otherwise depending on generate.FMT() the result is not deterministic
 		vals.Set("y0_deu", ctr.IncrementStr())
@@ -59,7 +61,7 @@ func fmtSpecialTest(t *testing.T, urlMain string, sessCook *http.Cookie) {
 				needle1, needle2, pos1, pos2, pos2-pos1,
 			)
 			if pos1 < 1 || pos2 < 1 || (pos2-pos1) > scope {
-				t.Fatal("Failed")
+				t.Fatalf("Failed: %v %v  %v", pos1, pos2, pos2-pos1)
 			}
 		}
 		{

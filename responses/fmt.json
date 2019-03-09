@@ -1,0 +1,3567 @@
+{
+ 	"survey": {
+ 		"type": "fmt",
+ 		"org": {
+ 			"de": "ZEW",
+ 			"en": "ZEW"
+ 		},
+ 		"name": {
+ 			"de": "Finanzmarkttest",
+ 			"en": "Financial Markets Survey"
+ 		},
+ 		"year": 2019,
+ 		"month": 6,
+ 		"deadline": "2030-01-01T00:00:00Z",
+ 		"params": [
+ 			{
+ 				"name": "main_refinance_rate_ecb",
+ 				"val": "4"
+ 			},
+ 			{}
+ 		]
+ 	},
+ 	"closing_time": "0001-01-01T00:00:00Z",
+ 	"md_5": "2887b1e5e4d85d035bc53509689e9473",
+ 	"lang_codes": {
+ 		"de": "Deutsch",
+ 		"en": "English"
+ 	},
+ 	"lang_codes_order": [
+ 		"de",
+ 		"en"
+ 	],
+ 	"lang_code": "de",
+ 	"max_groups": 4,
+ 	"pages": [
+ 		{
+ 			"label": {
+ 				"de": "Begrüßung",
+ 				"en": "Greeting"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"no_navigation": true,
+ 			"navi_num": 0,
+ 			"width": 100,
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_half_vspacers": 3,
+ 					"odd_rows_coloring": false,
+ 					"width": 100,
+ 					"columns": 3,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"css_label": "special-input-vert-wider",
+ 							"description": {
+ 								"de": "\u003cp\u003eSehr geehrte Finanzmarktexpertin, sehr geehrter Finanzmarktexperte, herzlich willkommen beim ZEW-Finanzmarkttest.\u003c/p\u003e\n\n\u003cp\u003eDurch klicken auf \u003ccode\u003eWeiter\u003c/code\u003e werden Ihre Antworten gespeichert und Sie gelangen zur jeweils nächsten Seite.\u003c/p\u003e\n\n\u003cp\u003eBei einer Unterbrechung (Schließen des Browsers) bleiben Ihre Antworten erhalten und können später über Ihren persönlichen Link wieder aufgerufen und geändert werden.\u003c/p\u003e\n\n\u003cp\u003eAm Ende der Befragung können Sie den Fragebogen abschließen, so dass keine weiteren Änderungen möglich sind.\u003c/p\u003e\n\n\u003ch3\u003eDatenschutz\u003c/h3\u003e\n\n\u003cp\u003eHier finden Sie unsere \u003ca href=\"https://www.zew.de/de/datenschutz/\"\u003eDatenschutz-Grundlagen\u003c/a\u003e.\u003c/p\u003e\n\n\u003cp\u003eIhre An\u0026shy;gaben werden streng vertraulich behandelt.\u003c/p\u003e\n\n\u003cp\u003eDie Auswertung Ihrer Antworten erfolgt als \u003ca href=\"https://de.wikipedia.org/wiki/Paneldaten\"\u003ePanel-Datensatz\u003c/a\u003e in anonymisierter Form.\u003c/p\u003e\n\n\u003cp\u003eIhre Daten werden auf einem geschützten Server im ZEW Hauptgebäude gespeichert, auf den nur Mitglieder des ZEW Teams für den Finanzmarkttest Zugriff haben.\u003c/p\u003e\n\n\u003cp\u003eZusätzlich bitten wir um Ihr Einverständnis, dass wir Ihre Antworten\nintern mit Ihrer geschäftlichen Identität verknüpfen.\u003c/p\u003e\n\n\u003cp\u003eIhre geschäftliche Identität besteht aus Ihrem Namen, Ihrer Funktion, geschäftl. Email und Telefonnummer, Arbeitgeber und Teilnahmebeginn.\u003c/p\u003e\n",
+ 								"en": "\u003cp\u003eDear expert, welcome to the ZEW financial markets survey .\u003c/p\u003e\n\n\u003cp\u003eBy clicking \u003ccode\u003eNext\u003c/code\u003e your answers will be saved and you progress to the next page.\u003c/p\u003e\n\n\u003cp\u003eIn case of an interruption (closing of the web browser) your answers remain saved. You can re-use your personal link to continue and change your answers.\u003c/p\u003e\n\n\u003cp\u003eAt the end you can finalize the questionnaire preventing further changes.\u003c/p\u003e\n\n\u003ch3\u003ePrivacy Protection\u003c/h3\u003e\n\n\u003cp\u003ePlease notice our \u003ca href=\"https://www.zew.de/en/datenschutz/\"\u003eprivacy protection policy\u003c/a\u003e.\u003c/p\u003e\n\n\u003cp\u003eYour data will we treated strictly confidential.\u003c/p\u003e\n\n\u003cp\u003eData processing is done as as \u003ca href=\"https://en.wikipedia.org/wiki/Panel_data\"\u003epanel data set\u003c/a\u003e in anonymized form.\u003c/p\u003e\n\n\u003cp\u003eYour data will be stored on a protected server on the premises of ZEW Ltd. Only members of the financial markets team have access to this server.\u003c/p\u003e\n\n\u003cp\u003eIn addition we ask for permission to internally as\u0026shy;so\u0026shy;ci\u0026shy;ate your answers with your busi\u0026shy;ness identity.\u003c/p\u003e\n\n\u003cp\u003eYour busi\u0026shy;ness identity consists of name, role, work phone and email, employer and start of contribution.\u003c/p\u003e\n"
+ 							},
+ 							"col_span_label": 3
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_half_vspacers": 3,
+ 					"odd_rows_coloring": false,
+ 					"width": 75,
+ 					"columns": 3,
+ 					"inputs": [
+ 						{
+ 							"name": "proxy",
+ 							"type": "radiogroup",
+ 							"css_label": "special-input-vert-wider",
+ 							"label": {
+ 								"de": " ",
+ 								"en": " "
+ 							},
+ 							"description": {
+ 								"de": "Sind Sie die angeschriebene Person?",
+ 								"en": "Are you the addressee?"
+ 							},
+ 							"col_span_label": 1,
+ 							"col_span_control": 2,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"label": {
+ 										"de": " \u0026nbsp; \u003cbr\u003eJa, ich bin die angeschriebene Person.",
+ 										"en": "Yes, I am the addressee."
+ 									},
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"label": {
+ 										"de": "Nein, ich fülle den Fragebogen in Vertretung der angeschriebenen Person aus.",
+ 										"en": "No. I am filling in for the addressee."
+ 									},
+ 									"val": "2"
+ 								}
+ 							]
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_half_vspacers": 3,
+ 					"odd_rows_coloring": false,
+ 					"width": 75,
+ 					"columns": 3,
+ 					"inputs": [
+ 						{
+ 							"name": "address_change",
+ 							"type": "textarea",
+ 							"max_chars": 150,
+ 							"description": {
+ 								"de": "Meine Adresse hat sich geändert",
+ 								"en": "My address has changed"
+ 							},
+ 							"col_span_label": 1,
+ 							"col_span_control": 2
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_half_vspacers": 3,
+ 					"odd_rows_coloring": false,
+ 					"width": 75,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"name": "submitBtn",
+ 							"type": "button",
+ 							"horizontal_align_control": 2,
+ 							"label": {
+ 								"de": "Weiter",
+ 								"en": "Next"
+ 							},
+ 							"accesskey": "n",
+ 							"col_span_control": 1,
+ 							"response": "1"
+ 						}
+ 					]
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"section": {
+ 				"de": "Konjunktur",
+ 				"en": "Business cycle"
+ 			},
+ 			"label": {
+ 				"de": "Status und Ausblick",
+ 				"en": "Status and outlook"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"short": {
+ 				"de": "Status,\u003cbr\u003eAusblick",
+ 				"en": "Status,\u003cbr\u003eoutlook"
+ 			},
+ 			"navi_num": 1,
+ 			"width": 70,
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"label": {
+ 						"de": "1.",
+ 						"en": "1."
+ 					},
+ 					"description": {
+ 						"de": "Die gesamtwirtschaftliche Situation beurteilen wir als",
+ 						"en": "We assess the overall economic situation as"
+ 					},
+ 					"bottom_half_vspacers": 3,
+ 					"odd_rows_coloring": true,
+ 					"width": 100,
+ 					"columns": 5,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"horizontal_align_label": 1,
+ 							"description": {
+ 								"de": "gut",
+ 								"en": "good"
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"horizontal_align_label": 1,
+ 							"description": {
+ 								"de": "normal",
+ 								"en": "normal"
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"horizontal_align_label": 1,
+ 							"description": {
+ 								"de": "schlecht",
+ 								"en": "bad"
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"horizontal_align_label": 1,
+ 							"description": {
+ 								"de": "keine\u003cbr\u003eAn\u0026shy;gabe",
+ 								"en": "no answer"
+ 							}
+ 						},
+ 						{
+ 							"name": "y0_ez",
+ 							"type": "radiogroup",
+ 							"description": {
+ 								"de": "Euroraum",
+ 								"en": "Euro area"
+ 							},
+ 							"col_span_label": 1,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "4"
+ 								}
+ 							]
+ 						},
+ 						{
+ 							"name": "y0_deu",
+ 							"type": "radiogroup",
+ 							"description": {
+ 								"de": "Deutsch\u0026shy;land",
+ 								"en": "Germany"
+ 							},
+ 							"col_span_label": 1,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "4"
+ 								}
+ 							]
+ 						},
+ 						{
+ 							"name": "y0_usa",
+ 							"type": "radiogroup",
+ 							"description": {
+ 								"de": "USA",
+ 								"en": "US"
+ 							},
+ 							"col_span_label": 1,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "4"
+ 								}
+ 							]
+ 						},
+ 						{
+ 							"name": "y0_glob",
+ 							"type": "radiogroup",
+ 							"description": {
+ 								"de": "Welt\u0026shy;wirtschaft",
+ 								"en": "Global econ\u0026shy;o\u0026shy;my"
+ 							},
+ 							"col_span_label": 1,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "4"
+ 								}
+ 							]
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"label": {
+ 						"de": "2a.",
+ 						"en": "2a."
+ 					},
+ 					"description": {
+ 						"de": "Die gesamtwirtschaftliche Situation wird sich mittelfristig (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;Mo.)",
+ 						"en": "The overall economic situation medium term (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;months) will"
+ 					},
+ 					"bottom_half_vspacers": 3,
+ 					"odd_rows_coloring": true,
+ 					"width": 100,
+ 					"columns": 5,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"horizontal_align_label": 1,
+ 							"description": {
+ 								"de": "verbessern",
+ 								"en": "improve"
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"horizontal_align_label": 1,
+ 							"description": {
+ 								"de": "nicht verändern",
+ 								"en": "not change"
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"horizontal_align_label": 1,
+ 							"description": {
+ 								"de": "ver\u0026shy;schlechtern",
+ 								"en": "deteriorate"
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"horizontal_align_label": 1,
+ 							"description": {
+ 								"de": "keine\u003cbr\u003eAn\u0026shy;gabe",
+ 								"en": "no answer"
+ 							}
+ 						},
+ 						{
+ 							"name": "y_ez",
+ 							"type": "radiogroup",
+ 							"description": {
+ 								"de": "Euroraum",
+ 								"en": "Euro area"
+ 							},
+ 							"col_span_label": 1,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "4"
+ 								}
+ 							]
+ 						},
+ 						{
+ 							"name": "y_deu",
+ 							"type": "radiogroup",
+ 							"description": {
+ 								"de": "Deutsch\u0026shy;land",
+ 								"en": "Germany"
+ 							},
+ 							"col_span_label": 1,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "4"
+ 								}
+ 							]
+ 						},
+ 						{
+ 							"name": "y_usa",
+ 							"type": "radiogroup",
+ 							"description": {
+ 								"de": "USA",
+ 								"en": "US"
+ 							},
+ 							"col_span_label": 1,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "4"
+ 								}
+ 							]
+ 						},
+ 						{
+ 							"name": "y_glob",
+ 							"type": "radiogroup",
+ 							"description": {
+ 								"de": "Welt\u0026shy;wirtschaft",
+ 								"en": "Global econ\u0026shy;o\u0026shy;my"
+ 							},
+ 							"col_span_label": 1,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "4"
+ 								}
+ 							]
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"label": {
+ 						"de": "2b.",
+ 						"en": "2b."
+ 					},
+ 					"description": {
+ 						"de": "Die gesamtwirtschaftliche Situation wird sich langfristig (\u003cb\u003e24\u003c/b\u003e\u0026nbsp;Mo.)",
+ 						"en": "The overall economic situation long term (\u003cb\u003e24\u003c/b\u003e\u0026nbsp;months) will"
+ 					},
+ 					"bottom_half_vspacers": 3,
+ 					"odd_rows_coloring": true,
+ 					"width": 100,
+ 					"columns": 5,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"horizontal_align_label": 1,
+ 							"description": {
+ 								"de": "verbessern",
+ 								"en": "improve"
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"horizontal_align_label": 1,
+ 							"description": {
+ 								"de": "nicht verändern",
+ 								"en": "not change"
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"horizontal_align_label": 1,
+ 							"description": {
+ 								"de": "ver\u0026shy;schlechtern",
+ 								"en": "deteriorate"
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"horizontal_align_label": 1,
+ 							"description": {
+ 								"de": "keine\u003cbr\u003eAn\u0026shy;gabe",
+ 								"en": "no answer"
+ 							}
+ 						},
+ 						{
+ 							"name": "y24_ez",
+ 							"type": "radiogroup",
+ 							"description": {
+ 								"de": "Euroraum",
+ 								"en": "Euro area"
+ 							},
+ 							"col_span_label": 1,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "4"
+ 								}
+ 							]
+ 						},
+ 						{
+ 							"name": "y24_deu",
+ 							"type": "radiogroup",
+ 							"description": {
+ 								"de": "Deutsch\u0026shy;land",
+ 								"en": "Germany"
+ 							},
+ 							"col_span_label": 1,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "4"
+ 								}
+ 							]
+ 						},
+ 						{
+ 							"name": "y24_usa",
+ 							"type": "radiogroup",
+ 							"description": {
+ 								"de": "USA",
+ 								"en": "US"
+ 							},
+ 							"col_span_label": 1,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "4"
+ 								}
+ 							]
+ 						},
+ 						{
+ 							"name": "y24_glob",
+ 							"type": "radiogroup",
+ 							"description": {
+ 								"de": "Welt\u0026shy;wirtschaft",
+ 								"en": "Global econ\u0026shy;o\u0026shy;my"
+ 							},
+ 							"col_span_label": 1,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "4"
+ 								}
+ 							]
+ 						}
+ 					]
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "Wachstum",
+ 				"en": "Growth"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"navi_num": 2,
+ 			"width": 90,
+ 			"aesthetic_compensation": 8,
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"label": {
+ 						"de": "3a.",
+ 						"en": "3a."
+ 					},
+ 					"bottom_half_vspacers": 3,
+ 					"odd_rows_coloring": false,
+ 					"width": 100,
+ 					"columns": 5,
+ 					"inputs": [
+ 						{
+ 							"name": "y_q_deu",
+ 							"type": "number",
+ 							"max_chars": 4,
+ 							"description": {
+ 								"de": "Unsere Prognose für das \u003cb\u003edeutsche\u003c/b\u003e BIP Wachstum in Q3 2019 (real, saisonbereinigt, nicht annualisiert):",
+ 								"en": "Our estimate for the \u003cb\u003eGerman\u003c/b\u003e GDP growth in Q3 2019 (real, seasonally adjusted, non annualized):"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "pct"
+ 							},
+ 							"col_span_label": 4,
+ 							"validator": "inRange20"
+ 						},
+ 						{
+ 							"name": "y_y_deu",
+ 							"type": "number",
+ 							"max_chars": 4,
+ 							"description": {
+ 								"de": "Unsere Prognose für das BIP Wachstum für das Jahr 2020 (real, saisonbereinigt):",
+ 								"en": "Our estimate for the GDP growth in 2020 (real, seasonally adjusted):"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "pct"
+ 							},
+ 							"col_span_label": 4,
+ 							"validator": "inRange20"
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"label": {
+ 						"de": "3b.",
+ 						"en": "3b."
+ 					},
+ 					"bottom_half_vspacers": 3,
+ 					"odd_rows_coloring": false,
+ 					"width": 100,
+ 					"columns": 5,
+ 					"inputs": [
+ 						{
+ 							"name": "yshr_q_deu",
+ 							"type": "number",
+ 							"max_chars": 4,
+ 							"description": {
+ 								"de": "Die Wahrscheinlichkeit eines neg\u0026shy;ativen Wachstums des \u003cb\u003edeutschen\u003c/b\u003e BIP in Q3 2019 liegt bei:",
+ 								"en": "The probability of neg\u0026shy;ative growth for the \u003cb\u003eGerman\u003c/b\u003e GDP in Q3 2019 is:"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "pct"
+ 							},
+ 							"col_span_label": 4,
+ 							"validator": "inRange100"
+ 						},
+ 						{
+ 							"name": "yshr_y_deu",
+ 							"type": "number",
+ 							"max_chars": 4,
+ 							"description": {
+ 								"de": "Die Wahrscheinlichkeit einer Rezession in Deutsch\u0026shy;land (mind. 2\u0026nbsp;Quartale neg. Wachstum) bis Q4 2020 liegt bei:",
+ 								"en": "The probability of a recession in Germany (at least 2\u0026nbsp;quarters neg. growth) until Q4 2020 is:"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "pct"
+ 							},
+ 							"col_span_label": 4,
+ 							"validator": "inRange100"
+ 						}
+ 					]
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "Inflation und Zinsen",
+ 				"en": "Inflation and rates"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"short": {
+ 				"de": "Inflat, Zinsen",
+ 				"en": "Inflation, rates"
+ 			},
+ 			"navi_num": 3,
+ 			"width": 80,
+ 			"aesthetic_compensation": 5,
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"label": {
+ 						"de": "4.",
+ 						"en": "4."
+ 					},
+ 					"description": {
+ 						"de": "Die jährl. gesamtwirtschaftl. Inflationsrate wird mittelfristig (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;Mo.)",
+ 						"en": "Medium term (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;months) yearly overall inflation rate will"
+ 					},
+ 					"bottom_half_vspacers": 3,
+ 					"odd_rows_coloring": true,
+ 					"width": 90,
+ 					"columns": 5,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"horizontal_align_label": 1,
+ 							"description": {
+ 								"de": "steigen",
+ 								"en": "in\u0026shy;crease"
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"horizontal_align_label": 1,
+ 							"description": {
+ 								"de": "gleich bleiben",
+ 								"en": "remain un\u0026shy;changed"
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"horizontal_align_label": 1,
+ 							"description": {
+ 								"de": "sinken",
+ 								"en": "de\u0026shy;crease"
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"horizontal_align_label": 1,
+ 							"description": {
+ 								"de": "keine\u003cbr\u003eAn\u0026shy;gabe",
+ 								"en": "no answer"
+ 							}
+ 						},
+ 						{
+ 							"name": "pi_ez",
+ 							"type": "radiogroup",
+ 							"description": {
+ 								"de": "Euroraum",
+ 								"en": "Euro area"
+ 							},
+ 							"col_span_label": 1,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "4"
+ 								}
+ 							]
+ 						},
+ 						{
+ 							"name": "pi_deu",
+ 							"type": "radiogroup",
+ 							"description": {
+ 								"de": "Deutsch\u0026shy;land",
+ 								"en": "Germany"
+ 							},
+ 							"col_span_label": 1,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "4"
+ 								}
+ 							]
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"label": {
+ 						"de": "5a.",
+ 						"en": "5a."
+ 					},
+ 					"description": {
+ 						"de": "Die \u003cb\u003ekurzfristigen\u003c/b\u003e Zinsen (3-Mo.-Interbanksätze) im \u003cb\u003eEuroraum\u003c/b\u003e erwarten wir auf Sicht von 6\u0026nbsp;Monaten",
+ 						"en": "We expect \u003cb\u003eshort term\u003c/b\u003e interest rates (3 months interbank) in the \u003cb\u003eeuro area\u003c/b\u003e"
+ 					},
+ 					"header_bottom_vspacers": 1,
+ 					"bottom_half_vspacers": 3,
+ 					"odd_rows_coloring": false,
+ 					"width": 100,
+ 					"columns": 100,
+ 					"inputs": [
+ 						{
+ 							"name": "i_ez_low",
+ 							"type": "number",
+ 							"max_chars": 4,
+ 							"horizontal_align_label": 2,
+ 							"description": {
+ 								"de": "zwischen\u0026nbsp;",
+ 								"en": "between\u0026nbsp;"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "pct"
+ 							},
+ 							"col_span_label": 10,
+ 							"col_span_control": 12,
+ 							"validator": "inRange20"
+ 						},
+ 						{
+ 							"name": "i_ez_high",
+ 							"type": "number",
+ 							"max_chars": 4,
+ 							"description": {
+ 								"de": "und",
+ 								"en": "and"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "pct"
+ 							},
+ 							"col_span_label": 4,
+ 							"col_span_control": 74,
+ 							"validator": "inRange20"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": " \u0026nbsp;",
+ 								"en": " \u0026nbsp;"
+ 							},
+ 							"col_span_label": 11
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"css_label": "special-input-textblock-smaller",
+ 							"description": {
+ 								"de": " [zentrales 90% Konfidenzintervall]",
+ 								"en": " [central 90\u0026nbsp;pct confidence interval]"
+ 							},
+ 							"col_span_label": 89
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"label": {
+ 						"de": "5b.",
+ 						"en": "5b."
+ 					},
+ 					"description": {
+ 						"de": "Die \u003cb\u003elangfristigen\u003c/b\u003e Zinsen (Renditen 10jg. Staatsanleihen) in \u003cb\u003eDeutschland\u003c/b\u003e erwarten wir auf Sicht von 6\u0026nbsp;Monaten",
+ 						"en": "We expect \u003cb\u003elong term\u003c/b\u003e interest rates in \u003cb\u003eGermany\u003c/b\u003e in 6\u0026nbsp;months"
+ 					},
+ 					"header_bottom_vspacers": 1,
+ 					"bottom_half_vspacers": 3,
+ 					"odd_rows_coloring": false,
+ 					"width": 100,
+ 					"columns": 100,
+ 					"inputs": [
+ 						{
+ 							"name": "r_deu_low",
+ 							"type": "number",
+ 							"max_chars": 4,
+ 							"horizontal_align_label": 2,
+ 							"description": {
+ 								"de": "zwischen\u0026nbsp;",
+ 								"en": "between\u0026nbsp;"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "pct"
+ 							},
+ 							"col_span_label": 10,
+ 							"col_span_control": 12,
+ 							"validator": "inRange100"
+ 						},
+ 						{
+ 							"name": "r_deu_high",
+ 							"type": "number",
+ 							"max_chars": 4,
+ 							"description": {
+ 								"de": "und",
+ 								"en": "and"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "pct"
+ 							},
+ 							"col_span_label": 4,
+ 							"col_span_control": 74,
+ 							"validator": "inRange100"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": " \u0026nbsp;",
+ 								"en": " \u0026nbsp;"
+ 							},
+ 							"col_span_label": 11
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"css_label": "special-input-textblock-smaller",
+ 							"description": {
+ 								"de": " [zentrales 90% Konfidenzintervall]",
+ 								"en": " [central 90\u0026nbsp;pct confidence interval]"
+ 							},
+ 							"col_span_label": 89
+ 						}
+ 					]
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"section": {
+ 				"de": "Kreditsituation",
+ 				"en": "Credit situation"
+ 			},
+ 			"label": {
+ 				"de": "Markt",
+ 				"en": "Market"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"navi_num": 4,
+ 			"width": 100,
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"label": {
+ 						"de": "6a.",
+ 						"en": "6a."
+ 					},
+ 					"description": {
+ 						"de": "Wie schätzen Sie die Kreditsituation in Deutschland ein?",
+ 						"en": "How do you assess credit conditions in Germany?"
+ 					},
+ 					"bottom_half_vspacers": 3,
+ 					"odd_rows_coloring": true,
+ 					"width": 100,
+ 					"columns": 7,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"horizontal_align_label": 1,
+ 							"description": {
+ 								"de": "sehr hoch",
+ 								"en": "very high"
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"horizontal_align_label": 1,
+ 							"description": {
+ 								"de": "hoch",
+ 								"en": "high"
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"horizontal_align_label": 1,
+ 							"description": {
+ 								"de": "normal",
+ 								"en": "normal"
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"horizontal_align_label": 1,
+ 							"description": {
+ 								"de": "niedrig",
+ 								"en": "low"
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"horizontal_align_label": 1,
+ 							"description": {
+ 								"de": "sehr niedrig",
+ 								"en": "very low"
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"horizontal_align_label": 1,
+ 							"description": {
+ 								"de": "keine\u003cbr\u003eAn\u0026shy;gabe",
+ 								"en": "no answer"
+ 							}
+ 						},
+ 						{
+ 							"name": "cd_deu",
+ 							"type": "radiogroup",
+ 							"description": {
+ 								"de": "Kredit\u0026shy;nach\u0026shy;frage",
+ 								"en": "Credit demand"
+ 							},
+ 							"col_span_label": 1,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "4"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "5"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "6"
+ 								}
+ 							]
+ 						},
+ 						{
+ 							"name": "cs_deu",
+ 							"type": "radiogroup",
+ 							"description": {
+ 								"de": "Kredit\u0026shy;angebot",
+ 								"en": "Credit supply"
+ 							},
+ 							"col_span_label": 1,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "4"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "5"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "6"
+ 								}
+ 							]
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"label": {
+ 						"de": "6b.",
+ 						"en": "6b."
+ 					},
+ 					"description": {
+ 						"de": "Das (saisonbereinigte) Gesamtvolumen der Neukreditvergabe in Deutschland wird",
+ 						"en": "The seasonally adjusted volume of new credit in Germany will"
+ 					},
+ 					"bottom_half_vspacers": 3,
+ 					"odd_rows_coloring": true,
+ 					"width": 100,
+ 					"columns": 7,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"horizontal_align_label": 1,
+ 							"description": {
+ 								"de": "stark steigen",
+ 								"en": "strong\u0026shy;ly in\u0026shy;crease"
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"horizontal_align_label": 1,
+ 							"description": {
+ 								"de": "steigen",
+ 								"en": "in\u0026shy;crease"
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"horizontal_align_label": 1,
+ 							"description": {
+ 								"de": "gleich bleiben",
+ 								"en": "remain un\u0026shy;changed"
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"horizontal_align_label": 1,
+ 							"description": {
+ 								"de": "sinken",
+ 								"en": "de\u0026shy;crease"
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"horizontal_align_label": 1,
+ 							"description": {
+ 								"de": "stark sinken",
+ 								"en": "strong\u0026shy;ly de\u0026shy;crease"
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"horizontal_align_label": 1,
+ 							"description": {
+ 								"de": "keine\u003cbr\u003eAn\u0026shy;gabe",
+ 								"en": "no answer"
+ 							}
+ 						},
+ 						{
+ 							"name": "c0_6",
+ 							"type": "radiogroup",
+ 							"description": {
+ 								"de": "mittel\u0026shy;fristig (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;Mo.)",
+ 								"en": "medium term (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;months)"
+ 							},
+ 							"col_span_label": 1,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "4"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "5"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "6"
+ 								}
+ 							]
+ 						},
+ 						{
+ 							"name": "c0_24",
+ 							"type": "radiogroup",
+ 							"description": {
+ 								"de": "lang\u0026shy;fristig (\u003cb\u003e24\u003c/b\u003e\u0026nbsp;Mo.)",
+ 								"en": "long term (\u003cb\u003e24\u003c/b\u003e\u0026nbsp;months)"
+ 							},
+ 							"col_span_label": 1,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "4"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "5"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "6"
+ 								}
+ 							]
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"label": {
+ 						"de": "6c.",
+ 						"en": "6c."
+ 					},
+ 					"description": {
+ 						"de": "Die (saisonbereinigte) Kreditnachfrage wird mittelfristig (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;Mo.)",
+ 						"en": "The seasonally adjusted credit demand medium term (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;months) will be"
+ 					},
+ 					"bottom_half_vspacers": 3,
+ 					"odd_rows_coloring": true,
+ 					"width": 100,
+ 					"columns": 7,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"horizontal_align_label": 1,
+ 							"description": {
+ 								"de": "stark steigen",
+ 								"en": "strong\u0026shy;ly in\u0026shy;crease"
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"horizontal_align_label": 1,
+ 							"description": {
+ 								"de": "steigen",
+ 								"en": "in\u0026shy;crease"
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"horizontal_align_label": 1,
+ 							"description": {
+ 								"de": "gleich bleiben",
+ 								"en": "remain un\u0026shy;changed"
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"horizontal_align_label": 1,
+ 							"description": {
+ 								"de": "sinken",
+ 								"en": "de\u0026shy;crease"
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"horizontal_align_label": 1,
+ 							"description": {
+ 								"de": "stark sinken",
+ 								"en": "strong\u0026shy;ly de\u0026shy;crease"
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"horizontal_align_label": 1,
+ 							"description": {
+ 								"de": "keine\u003cbr\u003eAn\u0026shy;gabe",
+ 								"en": "no answer"
+ 							}
+ 						},
+ 						{
+ 							"name": "cd_24_le",
+ 							"type": "radiogroup",
+ 							"description": {
+ 								"de": "Groß\u0026shy;unter\u0026shy;nehmen",
+ 								"en": "Large enter\u0026shy;prises"
+ 							},
+ 							"col_span_label": 1,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "4"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "5"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "6"
+ 								}
+ 							]
+ 						},
+ 						{
+ 							"name": "cd_24_sme",
+ 							"type": "radiogroup",
+ 							"description": {
+ 								"de": "KMU",
+ 								"en": "Small+\u0026shy;medium enter\u0026shy;prises"
+ 							},
+ 							"col_span_label": 1,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "4"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "5"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "6"
+ 								}
+ 							]
+ 						},
+ 						{
+ 							"name": "cd_24_re",
+ 							"type": "radiogroup",
+ 							"description": {
+ 								"de": "Immob\u0026shy;ilien\u0026shy;kredite",
+ 								"en": "Real estate credit"
+ 							},
+ 							"col_span_label": 1,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "4"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "5"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "6"
+ 								}
+ 							]
+ 						},
+ 						{
+ 							"name": "cd_24_co",
+ 							"type": "radiogroup",
+ 							"description": {
+ 								"de": "Kon\u0026shy;sum\u0026shy;enten\u0026shy;kredite",
+ 								"en": "Cons\u0026shy;umer credit"
+ 							},
+ 							"col_span_label": 1,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "4"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "5"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "6"
+ 								}
+ 							]
+ 						}
+ 					]
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "Einflussfaktoren",
+ 				"en": "Influence factors"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"short": {
+ 				"de": "Einfluss",
+ 				"en": "Influence"
+ 			},
+ 			"navi_num": 5,
+ 			"width": 100,
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"label": {
+ 						"de": "6d.",
+ 						"en": "6d."
+ 					},
+ 					"description": {
+ 						"de": "Wie schätzen Sie den Einfluss folgender Faktoren auf die mittelfristige (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;Mo.) Veränderung des Kreditangebots ein?",
+ 						"en": "How do you assess the influence of following factors on the medium term (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;months) change of credit supply?"
+ 					},
+ 					"bottom_half_vspacers": 3,
+ 					"odd_rows_coloring": true,
+ 					"width": 100,
+ 					"columns": 7,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"horizontal_align_label": 1,
+ 							"description": {
+ 								"de": "sehr positiv",
+ 								"en": "very pos\u0026shy;itive"
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"horizontal_align_label": 1,
+ 							"description": {
+ 								"de": "positiv",
+ 								"en": "pos\u0026shy;itive"
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"horizontal_align_label": 1,
+ 							"description": {
+ 								"de": "neutral",
+ 								"en": "neutral"
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"horizontal_align_label": 1,
+ 							"description": {
+ 								"de": "negativ",
+ 								"en": "neg\u0026shy;ative"
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"horizontal_align_label": 1,
+ 							"description": {
+ 								"de": "sehr negativ",
+ 								"en": "very neg\u0026shy;ative"
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"horizontal_align_label": 1,
+ 							"description": {
+ 								"de": "keine\u003cbr\u003eAn\u0026shy;gabe",
+ 								"en": "no answer"
+ 							}
+ 						},
+ 						{
+ 							"name": "c_inf_6_dr",
+ 							"type": "radiogroup",
+ 							"description": {
+ 								"de": "Ausfall\u0026shy;risiken",
+ 								"en": "Default risk"
+ 							},
+ 							"col_span_label": 1,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "4"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "5"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "6"
+ 								}
+ 							]
+ 						},
+ 						{
+ 							"name": "c_inf_6_ri",
+ 							"type": "radiogroup",
+ 							"description": {
+ 								"de": "Risiko\u0026shy;trag\u0026shy;fähig\u0026shy;keit",
+ 								"en": "Risk profile"
+ 							},
+ 							"col_span_label": 1,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "4"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "5"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "6"
+ 								}
+ 							]
+ 						},
+ 						{
+ 							"name": "c_inf_6_re",
+ 							"type": "radiogroup",
+ 							"description": {
+ 								"de": "Re\u0026shy;finanz\u0026shy;ierung",
+ 								"en": "Re\u0026shy;financing"
+ 							},
+ 							"col_span_label": 1,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "4"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "5"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "6"
+ 								}
+ 							]
+ 						},
+ 						{
+ 							"name": "c_inf_6_ce",
+ 							"type": "radiogroup",
+ 							"description": {
+ 								"de": "Wett\u0026shy;be\u0026shy;werbs\u0026shy;sit\u0026shy;uation",
+ 								"en": "Comp\u0026shy;etitive en\u0026shy;vi\u0026shy;ron\u0026shy;ment"
+ 							},
+ 							"col_span_label": 1,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "4"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "5"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "6"
+ 								}
+ 							]
+ 						},
+ 						{
+ 							"name": "c_inf_6_rg",
+ 							"type": "radiogroup",
+ 							"description": {
+ 								"de": "Regu\u0026shy;lierung",
+ 								"en": "Reg\u0026shy;ulation"
+ 							},
+ 							"col_span_label": 1,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "4"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "5"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "6"
+ 								}
+ 							]
+ 						},
+ 						{
+ 							"name": "c_inf_6_ep",
+ 							"type": "radiogroup",
+ 							"description": {
+ 								"de": "EZB Politik",
+ 								"en": "ECB policy"
+ 							},
+ 							"col_span_label": 1,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "4"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "5"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "6"
+ 								}
+ 							]
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"label": {
+ 						"de": "6e.",
+ 						"en": "6e."
+ 					},
+ 					"description": {
+ 						"de": "Die (saisonbereinigte) Kreditstandards für Neukredite werden mittelfristig (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;Mo.)",
+ 						"en": "The seasonally adjusted credit standards medium term (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;months) will"
+ 					},
+ 					"bottom_half_vspacers": 3,
+ 					"odd_rows_coloring": true,
+ 					"width": 100,
+ 					"columns": 7,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"horizontal_align_label": 1,
+ 							"description": {
+ 								"de": "stark steigen",
+ 								"en": "strong\u0026shy;ly in\u0026shy;crease"
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"horizontal_align_label": 1,
+ 							"description": {
+ 								"de": "steigen",
+ 								"en": "in\u0026shy;crease"
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"horizontal_align_label": 1,
+ 							"description": {
+ 								"de": "gleich bleiben",
+ 								"en": "remain un\u0026shy;changed"
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"horizontal_align_label": 1,
+ 							"description": {
+ 								"de": "sinken",
+ 								"en": "de\u0026shy;crease"
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"horizontal_align_label": 1,
+ 							"description": {
+ 								"de": "stark sinken",
+ 								"en": "strong\u0026shy;ly de\u0026shy;crease"
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"horizontal_align_label": 1,
+ 							"description": {
+ 								"de": "keine\u003cbr\u003eAn\u0026shy;gabe",
+ 								"en": "no answer"
+ 							}
+ 						},
+ 						{
+ 							"name": "c_std_6_le",
+ 							"type": "radiogroup",
+ 							"description": {
+ 								"de": "Groß\u0026shy;unter\u0026shy;nehmen",
+ 								"en": "Large enter\u0026shy;prises"
+ 							},
+ 							"col_span_label": 1,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "4"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "5"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "6"
+ 								}
+ 							]
+ 						},
+ 						{
+ 							"name": "c_std_6_sme",
+ 							"type": "radiogroup",
+ 							"description": {
+ 								"de": "KMU",
+ 								"en": "Small+\u0026shy;medium enter\u0026shy;prises"
+ 							},
+ 							"col_span_label": 1,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "4"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "5"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "6"
+ 								}
+ 							]
+ 						},
+ 						{
+ 							"name": "c_std_6_re",
+ 							"type": "radiogroup",
+ 							"description": {
+ 								"de": "Immob\u0026shy;ilien\u0026shy;kredite",
+ 								"en": "Real estate credit"
+ 							},
+ 							"col_span_label": 1,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "4"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "5"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "6"
+ 								}
+ 							]
+ 						},
+ 						{
+ 							"name": "c_std_6_co",
+ 							"type": "radiogroup",
+ 							"description": {
+ 								"de": "Kon\u0026shy;sum\u0026shy;enten\u0026shy;kredite",
+ 								"en": "Cons\u0026shy;umer credit"
+ 							},
+ 							"col_span_label": 1,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "4"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "5"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "6"
+ 								}
+ 							]
+ 						}
+ 					]
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"section": {
+ 				"de": "Finanzmärkte",
+ 				"en": "Financial markets"
+ 			},
+ 			"label": {
+ 				"de": "Preise",
+ 				"en": "Prices"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"navi_num": 6,
+ 			"width": 80,
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"label": {
+ 						"de": "7a.",
+ 						"en": "7a."
+ 					},
+ 					"description": {
+ 						"de": "Die folgenden Aktienindizes / Rohstoffpreise / Wechselkurse werden mittelfristig (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;Mo.)",
+ 						"en": "Following stock indices / raw materials / exchange rates will medium term (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;months)"
+ 					},
+ 					"bottom_half_vspacers": 3,
+ 					"odd_rows_coloring": true,
+ 					"width": 100,
+ 					"columns": 5,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"horizontal_align_label": 1,
+ 							"description": {
+ 								"de": "steigen",
+ 								"en": "in\u0026shy;crease"
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"horizontal_align_label": 1,
+ 							"description": {
+ 								"de": "gleich bleiben",
+ 								"en": "remain un\u0026shy;changed"
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"horizontal_align_label": 1,
+ 							"description": {
+ 								"de": "sinken",
+ 								"en": "de\u0026shy;crease"
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"horizontal_align_label": 1,
+ 							"description": {
+ 								"de": "keine\u003cbr\u003eAn\u0026shy;gabe",
+ 								"en": "no answer"
+ 							}
+ 						},
+ 						{
+ 							"name": "sto_dax",
+ 							"type": "radiogroup",
+ 							"description": {
+ 								"de": "DAX",
+ 								"en": "German DAX"
+ 							},
+ 							"col_span_label": 1,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "4"
+ 								}
+ 							]
+ 						},
+ 						{
+ 							"name": "oil",
+ 							"type": "radiogroup",
+ 							"description": {
+ 								"de": "Rohöl (Nordsee Brent)",
+ 								"en": "Brent Crude"
+ 							},
+ 							"col_span_label": 1,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "4"
+ 								}
+ 							]
+ 						},
+ 						{
+ 							"name": "gold",
+ 							"type": "radiogroup",
+ 							"description": {
+ 								"de": "Gold",
+ 								"en": "Gold"
+ 							},
+ 							"col_span_label": 1,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "4"
+ 								}
+ 							]
+ 						},
+ 						{
+ 							"name": "fx_usa",
+ 							"type": "radiogroup",
+ 							"description": {
+ 								"de": "US-Dollar (ggü. €)",
+ 								"en": "Dollar / Euro"
+ 							},
+ 							"col_span_label": 1,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "4"
+ 								}
+ 							]
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"label": {
+ 						"de": "7b.",
+ 						"en": "7b."
+ 					},
+ 					"bottom_half_vspacers": 3,
+ 					"odd_rows_coloring": false,
+ 					"width": 100,
+ 					"columns": 100,
+ 					"inputs": [
+ 						{
+ 							"name": "dax_6",
+ 							"type": "number",
+ 							"max_chars": 6,
+ 							"description": {
+ 								"de": "Den DAX erwarten wir in 6\u0026nbsp;Monaten bei ",
+ 								"en": "We expect the German DAX in 6\u0026nbsp;month at"
+ 							},
+ 							"suffix": {
+ 								"de": "Punkten",
+ 								"en": "points"
+ 							},
+ 							"col_span_label": 55,
+ 							"col_span_control": 45,
+ 							"validator": "inRange50000"
+ 						},
+ 						{
+ 							"name": "dax_6_low",
+ 							"type": "number",
+ 							"max_chars": 6,
+ 							"description": {
+ 								"de": "Mit einer Wahrscheinlichkeit von 90\u0026nbsp;Prozent wird der DAX dann zwischen ",
+ 								"en": "With 90\u0026nbsp;percent probability, the DAX will then be between"
+ 							},
+ 							"suffix": {
+ 								"de": "Punkten  \u0026nbsp; und ",
+ 								"en": "points \u0026nbsp; and "
+ 							},
+ 							"col_span_label": 55,
+ 							"col_span_control": 21,
+ 							"validator": "inRange50000"
+ 						},
+ 						{
+ 							"name": "dax_6_high",
+ 							"type": "number",
+ 							"max_chars": 6,
+ 							"suffix": {
+ 								"de": "Punkten liegen.",
+ 								"en": "points"
+ 							},
+ 							"col_span_control": 24,
+ 							"validator": "inRange50000"
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"label": {
+ 						"de": "7c.",
+ 						"en": "7c."
+ 					},
+ 					"description": {
+ 						"de": "Aus Sicht der Fundamentaldaten der DAX-Unternehmen ist der DAX derzeit",
+ 						"en": "The fundamentals of the companies comprising the DAX make the DAX currently"
+ 					},
+ 					"header_bottom_vspacers": 1,
+ 					"bottom_half_vspacers": 3,
+ 					"odd_rows_coloring": false,
+ 					"width": 100,
+ 					"columns": 6,
+ 					"inputs": [
+ 						{
+ 							"name": "dax_fund",
+ 							"type": "radiogroup",
+ 							"css_label": "special-input-left-padding",
+ 							"radios": [
+ 								{
+ 									"label": {
+ 										"de": "überbewertet",
+ 										"en": "overvalued"
+ 									},
+ 									"val": "0"
+ 								},
+ 								{
+ 									"label": {
+ 										"de": "fair\u0026nbsp;bewertet",
+ 										"en": "fair\u0026nbsp;valued"
+ 									},
+ 									"val": "1"
+ 								},
+ 								{
+ 									"label": {
+ 										"de": "unterbewertet",
+ 										"en": "undervalued"
+ 									},
+ 									"val": "2"
+ 								}
+ 							]
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_label": 2
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"label": {
+ 						"de": "8.",
+ 						"en": "8."
+ 					},
+ 					"description": {
+ 						"de": "Die Wahrscheinlichkeit für ein Extremereignis im deutschen Finanzmarkt liegt",
+ 						"en": "The probability for an extreme event in the German financial markets is"
+ 					},
+ 					"header_bottom_vspacers": 1,
+ 					"bottom_half_vspacers": 3,
+ 					"odd_rows_coloring": false,
+ 					"width": 100,
+ 					"columns": 100,
+ 					"inputs": [
+ 						{
+ 							"name": "crash_low",
+ 							"type": "number",
+ 							"max_chars": 4,
+ 							"horizontal_align_label": 2,
+ 							"description": {
+ 								"de": " mittel\u0026shy;fristig (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;Mo.) bei  ",
+ 								"en": " medium term (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;months) at "
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "pct"
+ 							},
+ 							"col_span_label": 22,
+ 							"col_span_control": 12,
+ 							"validator": "inRange100"
+ 						},
+ 						{
+ 							"name": "crash_high",
+ 							"type": "number",
+ 							"max_chars": 4,
+ 							"horizontal_align_label": 2,
+ 							"description": {
+ 								"de": "und lang\u0026shy;fristig (\u003cb\u003e24\u003c/b\u003e\u0026nbsp;Mo.) bei ",
+ 								"en": "and long term (\u003cb\u003e24\u003c/b\u003e\u0026nbsp;months) at "
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "pct"
+ 							},
+ 							"col_span_label": 26,
+ 							"col_span_control": 40,
+ 							"validator": "inRange100"
+ 						}
+ 					]
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"section": {
+ 				"de": "Sonderfrage",
+ 				"en": "Special"
+ 			},
+ 			"label": {
+ 				"de": "Prognosetreiber Wachstum",
+ 				"en": "Growth drivers"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"short": {
+ 				"de": "Wachstum",
+ 				"en": "Growth"
+ 			},
+ 			"navi_num": 7,
+ 			"width": 80,
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"label": {
+ 						"de": "1.",
+ 						"en": "1."
+ 					},
+ 					"description": {
+ 						"de": "Punktprognose der Wachstumsrate des deutschen BIP",
+ 						"en": "Forecast growth rate German GDP"
+ 					},
+ 					"bottom_half_vspacers": 3,
+ 					"odd_rows_coloring": false,
+ 					"width": 100,
+ 					"columns": 9,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"css_label": "special-input-margin-vertical",
+ 							"description": {
+ 								"de": "Prognose Wachstum des BIP je \u003cb\u003eQuartal\u003c/b\u003e \u003cbr\u003e\n (real, saisonbereinigt, nicht annualisiert)",
+ 								"en": "Forecast \u003cb\u003equarterly\u003c/b\u003e GDP growth \u003cbr\u003e\n(real, seasonally adjusted, non annualized)"
+ 							},
+ 							"col_span_label": 3
+ 						},
+ 						{
+ 							"name": "xquart1",
+ 							"type": "number",
+ 							"max_chars": 4,
+ 							"horizontal_align_label": 2,
+ 							"description": {
+ 								"de": "Q1 2019",
+ 								"en": "Q1 2019"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "pct"
+ 							},
+ 							"validator": "inRange20"
+ 						},
+ 						{
+ 							"name": "xquart2",
+ 							"type": "number",
+ 							"max_chars": 4,
+ 							"horizontal_align_label": 2,
+ 							"description": {
+ 								"de": "Q2 2019",
+ 								"en": "Q2 2019"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "pct"
+ 							},
+ 							"validator": "inRange20"
+ 						},
+ 						{
+ 							"name": "xquart3",
+ 							"type": "number",
+ 							"max_chars": 4,
+ 							"horizontal_align_label": 2,
+ 							"description": {
+ 								"de": "Q3 2019",
+ 								"en": "Q3 2019"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "pct"
+ 							},
+ 							"validator": "inRange20"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "Prognose Wachstum des BIP aufs\u0026nbsp;\u003cb\u003eJahr\u003c/b\u003e \u003cbr\u003e\n(real, saisonbereinigt)",
+ 								"en": "Forecast GDP growth per\u0026nbsp;\u003cb\u003eyear\u003c/b\u003e \u003cbr\u003e\n(real, seasonally adjusted)"
+ 							},
+ 							"col_span_label": 3
+ 						},
+ 						{
+ 							"name": "xyear1",
+ 							"type": "number",
+ 							"max_chars": 4,
+ 							"horizontal_align_label": 2,
+ 							"description": {
+ 								"de": "2019",
+ 								"en": "2019"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "pct"
+ 							},
+ 							"validator": "inRange20"
+ 						},
+ 						{
+ 							"name": "xyear2",
+ 							"type": "number",
+ 							"max_chars": 4,
+ 							"horizontal_align_label": 2,
+ 							"description": {
+ 								"de": "2020",
+ 								"en": "2020"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "pct"
+ 							},
+ 							"validator": "inRange20"
+ 						},
+ 						{
+ 							"name": "xyear3",
+ 							"type": "number",
+ 							"max_chars": 4,
+ 							"horizontal_align_label": 2,
+ 							"description": {
+ 								"de": "2021",
+ 								"en": "2021"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "pct"
+ 							},
+ 							"validator": "inRange20"
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"label": {
+ 						"de": "2.",
+ 						"en": "2."
+ 					},
+ 					"description": {
+ 						"de": "Haben Entwicklungen in den folgenden Bereichen Sie zu einer Revision Ihrer Konjunkturprognosen (ggü. Vormonat) für die deutsche Wirtschaft bewogen und wenn ja in welche Richtung?",
+ 						"en": "Which developments have lead you to change your assessment of the business cycle outlook for the German economy compared to the previous month"
+ 					},
+ 					"bottom_half_vspacers": 3,
+ 					"odd_rows_coloring": true,
+ 					"width": 100,
+ 					"columns": 8,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_label": 2
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"horizontal_align_label": 1,
+ 							"description": {
+ 								"de": "stark positiv",
+ 								"en": "strong\u0026shy;ly pos\u0026shy;itive"
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"horizontal_align_label": 1,
+ 							"description": {
+ 								"de": "positiv",
+ 								"en": "pos\u0026shy;itive"
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"horizontal_align_label": 1,
+ 							"description": {
+ 								"de": "kein Einfluss",
+ 								"en": "no in\u0026shy;fluence"
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"horizontal_align_label": 1,
+ 							"description": {
+ 								"de": "negativ",
+ 								"en": "neg\u0026shy;ative"
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"horizontal_align_label": 1,
+ 							"description": {
+ 								"de": "stark negativ",
+ 								"en": "strong\u0026shy;ly neg\u0026shy;ative"
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"horizontal_align_label": 1,
+ 							"description": {
+ 								"de": "keine\u003cbr\u003eAn\u0026shy;gabe",
+ 								"en": "no answer"
+ 							}
+ 						},
+ 						{
+ 							"name": "iobc_cycle_data_deu",
+ 							"type": "radiogroup",
+ 							"description": {
+ 								"de": "Konjunktur\u0026shy;daten Deutsch\u0026shy;land",
+ 								"en": "Busi\u0026shy;ness cycle data Germany"
+ 							},
+ 							"col_span_label": 2,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "4"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "5"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "6"
+ 								}
+ 							]
+ 						},
+ 						{
+ 							"name": "iobc_exp_markets",
+ 							"type": "radiogroup",
+ 							"description": {
+ 								"de": "Exportmärkte",
+ 								"en": "Export markets"
+ 							},
+ 							"col_span_label": 2,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "4"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "5"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "6"
+ 								}
+ 							]
+ 						},
+ 						{
+ 							"name": "iobc_exch_rates",
+ 							"type": "radiogroup",
+ 							"description": {
+ 								"de": "Wechselkurse",
+ 								"en": "Exchange rates"
+ 							},
+ 							"col_span_label": 2,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "4"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "5"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "6"
+ 								}
+ 							]
+ 						},
+ 						{
+ 							"name": "iobc_mp_ecb",
+ 							"type": "radiogroup",
+ 							"description": {
+ 								"de": "EZB-Geldpolitik",
+ 								"en": "ECB monetary policy"
+ 							},
+ 							"col_span_label": 2,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "4"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "5"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "6"
+ 								}
+ 							]
+ 						},
+ 						{
+ 							"name": "iobc_mp_fed",
+ 							"type": "radiogroup",
+ 							"description": {
+ 								"de": "US-Geldpolitik",
+ 								"en": "FED monetary policy"
+ 							},
+ 							"col_span_label": 2,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "4"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "5"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "6"
+ 								}
+ 							]
+ 						},
+ 						{
+ 							"name": "iobc_geopol",
+ 							"type": "radiogroup",
+ 							"description": {
+ 								"de": "Geopol. Ereignisse",
+ 								"en": "Geopolitical events"
+ 							},
+ 							"col_span_label": 2,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "4"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "5"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "6"
+ 								}
+ 							]
+ 						},
+ 						{
+ 							"name": "iobc_gvt_form_deu",
+ 							"type": "radiogroup",
+ 							"description": {
+ 								"de": "Regierungs\u0026shy;bildung Deutsch\u0026shy;land",
+ 								"en": "Government formation Germany"
+ 							},
+ 							"col_span_label": 2,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "4"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "5"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "6"
+ 								}
+ 							]
+ 						},
+ 						{
+ 							"name": "iobc_other",
+ 							"type": "radiogroup",
+ 							"description": {
+ 								"de": "Sonstige",
+ 								"en": "Other"
+ 							},
+ 							"col_span_label": 2,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "4"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "5"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "6"
+ 								}
+ 							]
+ 						},
+ 						{
+ 							"name": "other_cycle_infl",
+ 							"type": "text",
+ 							"max_chars": 30,
+ 							"css_control": "mobile-input-smaller",
+ 							"description": {
+ 								"de": "Wenn sonstige - welche?",
+ 								"en": "If other - which?"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 6
+ 						}
+ 					]
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"section": {
+ 				"de": "Sonderfrage",
+ 				"en": "Special"
+ 			},
+ 			"label": {
+ 				"de": "Prognosetreiber Inflation und Geldpolitik",
+ 				"en": "Inflation and monetary policy drivers"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"short": {
+ 				"de": "Inflation, Geldpolitik",
+ 				"en": "Inflation, monetary\u003cbr\u003epolicy"
+ 			},
+ 			"navi_num": 8,
+ 			"width": 90,
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"label": {
+ 						"de": "1.",
+ 						"en": "1."
+ 					},
+ 					"description": {
+ 						"de": "Punktprognose der jährlichen Inflationsrate im Euroraum",
+ 						"en": "Forecast yearly inflation rate in the Euro area"
+ 					},
+ 					"header_bottom_vspacers": 1,
+ 					"bottom_half_vspacers": 3,
+ 					"odd_rows_coloring": false,
+ 					"width": 100,
+ 					"columns": 9,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "Anstieg des HICP von Jan bis Dez; Erwartungswert",
+ 								"en": "HICP  in\u0026shy;crease from Jan to Dec; expected value"
+ 							},
+ 							"col_span_label": 3
+ 						},
+ 						{
+ 							"name": "p1_y1",
+ 							"type": "number",
+ 							"max_chars": 4,
+ 							"horizontal_align_label": 2,
+ 							"description": {
+ 								"de": "2019",
+ 								"en": "2019"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "pct"
+ 							},
+ 							"validator": "inRange20"
+ 						},
+ 						{
+ 							"name": "p1_y2",
+ 							"type": "number",
+ 							"max_chars": 4,
+ 							"horizontal_align_label": 2,
+ 							"description": {
+ 								"de": "2020",
+ 								"en": "2020"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "pct"
+ 							},
+ 							"validator": "inRange20"
+ 						},
+ 						{
+ 							"name": "p1_y3",
+ 							"type": "number",
+ 							"max_chars": 4,
+ 							"horizontal_align_label": 2,
+ 							"description": {
+ 								"de": "2021",
+ 								"en": "2021"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "pct"
+ 							},
+ 							"validator": "inRange20"
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"label": {
+ 						"de": "2.",
+ 						"en": "2."
+ 					},
+ 					"description": {
+ 						"de": "Haben Entwicklungen in den folgenden Bereichen Sie zu einer Revision Ihrer Inflationsprognosen (ggü. Vormonat) für den Euroraum bewogen und wenn ja in welche Richtung?",
+ 						"en": "Which developments have lead you to change your assessment of the inflation outlook for the Euro are compared to the previous month"
+ 					},
+ 					"bottom_half_vspacers": 3,
+ 					"odd_rows_coloring": true,
+ 					"width": 100,
+ 					"columns": 8,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_label": 2
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"horizontal_align_label": 1,
+ 							"description": {
+ 								"de": "stark positiv",
+ 								"en": "strong\u0026shy;ly pos\u0026shy;itive"
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"horizontal_align_label": 1,
+ 							"description": {
+ 								"de": "positiv",
+ 								"en": "pos\u0026shy;itive"
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"horizontal_align_label": 1,
+ 							"description": {
+ 								"de": "kein Einfluss",
+ 								"en": "no in\u0026shy;fluence"
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"horizontal_align_label": 1,
+ 							"description": {
+ 								"de": "negativ",
+ 								"en": "neg\u0026shy;ative"
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"horizontal_align_label": 1,
+ 							"description": {
+ 								"de": "stark negativ",
+ 								"en": "strong\u0026shy;ly neg\u0026shy;ative"
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"horizontal_align_label": 1,
+ 							"description": {
+ 								"de": "keine\u003cbr\u003eAn\u0026shy;gabe",
+ 								"en": "no answer"
+ 							}
+ 						},
+ 						{
+ 							"name": "ioi_cycle_data_ea",
+ 							"type": "radiogroup",
+ 							"description": {
+ 								"de": "Konjunktur\u0026shy;daten Euroraum",
+ 								"en": "Busi\u0026shy;ness cycle data Euro area"
+ 							},
+ 							"col_span_label": 2,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "4"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "5"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "6"
+ 								}
+ 							]
+ 						},
+ 						{
+ 							"name": "ioi_cycle_data_gl",
+ 							"type": "radiogroup",
+ 							"description": {
+ 								"de": "Konjunktur\u0026shy;daten global",
+ 								"en": "Busi\u0026shy;ness cycle data globally"
+ 							},
+ 							"col_span_label": 2,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "4"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "5"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "6"
+ 								}
+ 							]
+ 						},
+ 						{
+ 							"name": "ioi_wages_ea",
+ 							"type": "radiogroup",
+ 							"description": {
+ 								"de": "Löhne Euroraum",
+ 								"en": "Wages Euro area"
+ 							},
+ 							"col_span_label": 2,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "4"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "5"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "6"
+ 								}
+ 							]
+ 						},
+ 						{
+ 							"name": "ioi_rmp",
+ 							"type": "radiogroup",
+ 							"description": {
+ 								"de": "Rohstoffpreise",
+ 								"en": "Raw material prices"
+ 							},
+ 							"col_span_label": 2,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "4"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "5"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "6"
+ 								}
+ 							]
+ 						},
+ 						{
+ 							"name": "ioi_exch_rates",
+ 							"type": "radiogroup",
+ 							"description": {
+ 								"de": "Wechselkurse",
+ 								"en": "Exchange rates"
+ 							},
+ 							"col_span_label": 2,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "4"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "5"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "6"
+ 								}
+ 							]
+ 						},
+ 						{
+ 							"name": "ioi_mp_ecb",
+ 							"type": "radiogroup",
+ 							"description": {
+ 								"de": "EZB-Geldpolitik",
+ 								"en": "ECB monetary policy"
+ 							},
+ 							"col_span_label": 2,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "4"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "5"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "6"
+ 								}
+ 							]
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"label": {
+ 						"de": "3.",
+ 						"en": "3."
+ 					},
+ 					"description": {
+ 						"de": "Den Hauptrefinanzierungssatz der EZB (am 4) erwarte ich auf Sicht von",
+ 						"en": "I expect the main refinance rate of the ECB (4) in"
+ 					},
+ 					"header_bottom_vspacers": 1,
+ 					"bottom_half_vspacers": 3,
+ 					"odd_rows_coloring": false,
+ 					"width": 100,
+ 					"columns": 100,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"horizontal_align_label": 2,
+ 							"css_label": "mobile-wider",
+ 							"description": {
+ 								"de": "6\u0026nbsp;Monaten",
+ 								"en": "6\u0026nbsp;months"
+ 							},
+ 							"col_span_label": 8
+ 						},
+ 						{
+ 							"name": "i_ez_06_low",
+ 							"type": "number",
+ 							"max_chars": 4,
+ 							"horizontal_align_label": 2,
+ 							"css_label": "special-input-vert-wider",
+ 							"description": {
+ 								"de": "zwischen\u0026nbsp;",
+ 								"en": "between\u0026nbsp;"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "pct"
+ 							},
+ 							"col_span_label": 7,
+ 							"col_span_control": 9,
+ 							"validator": "inRange20"
+ 						},
+ 						{
+ 							"name": "i_ez_06_high",
+ 							"type": "number",
+ 							"max_chars": 4,
+ 							"description": {
+ 								"de": "und",
+ 								"en": "and"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "pct"
+ 							},
+ 							"col_span_label": 3,
+ 							"col_span_control": 73,
+ 							"validator": "inRange20"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"horizontal_align_label": 2,
+ 							"css_label": "mobile-wider",
+ 							"description": {
+ 								"de": " 24\u0026nbsp;Monaten",
+ 								"en": " 24\u0026nbsp;months"
+ 							},
+ 							"col_span_label": 8
+ 						},
+ 						{
+ 							"name": "i_ez_24_low",
+ 							"type": "number",
+ 							"max_chars": 4,
+ 							"horizontal_align_label": 2,
+ 							"css_label": "special-input-vert-wider",
+ 							"description": {
+ 								"de": "zwischen\u0026nbsp;",
+ 								"en": "between\u0026nbsp;"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "pct"
+ 							},
+ 							"col_span_label": 7,
+ 							"col_span_control": 9,
+ 							"validator": "inRange20"
+ 						},
+ 						{
+ 							"name": "i_ez_24_high",
+ 							"type": "number",
+ 							"max_chars": 4,
+ 							"description": {
+ 								"de": "und",
+ 								"en": "and"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "pct"
+ 							},
+ 							"col_span_label": 3,
+ 							"col_span_control": 73,
+ 							"validator": "inRange20"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"css_label": "mobile-wider",
+ 							"description": {
+ 								"de": " \u0026nbsp;",
+ 								"en": " \u0026nbsp;"
+ 							},
+ 							"col_span_label": 15
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"css_label": "special-input-textblock-smaller",
+ 							"description": {
+ 								"de": "\u0026nbsp; [zentrales 90% Konfidenzintervall]",
+ 								"en": "\u0026nbsp; [central 90\u0026nbsp;pct confidence interval]"
+ 							},
+ 							"col_span_label": 85
+ 						}
+ 					]
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"section": {
+ 				"de": "Abschluss",
+ 				"en": "Finish"
+ 			},
+ 			"label": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"navi_num": 9,
+ 			"width": 65,
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"label": {
+ 						"de": "",
+ 						"en": ""
+ 					},
+ 					"bottom_half_vspacers": 3,
+ 					"odd_rows_coloring": false,
+ 					"width": 100,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Kommentar zur Umfrage: ",
+ 								"en": "Comment on the survey: "
+ 							},
+ 							"description": {
+ 								"de": "Wollen Sie uns noch etwas mitteilen?",
+ 								"en": "Any remarks or advice for us?"
+ 							},
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "remark",
+ 							"type": "textarea",
+ 							"max_chars": 300,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_half_vspacers": 3,
+ 					"odd_rows_coloring": false,
+ 					"width": 100,
+ 					"columns": 2,
+ 					"inputs": [
+ 						{
+ 							"name": "finished",
+ 							"type": "radiogroup",
+ 							"css_label": "special-input-vert-wider",
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"radios": [
+ 								{
+ 									"label": {
+ 										"de": "Zugang bleibt bestehen.  Daten können in weiteren Sitzungen geändert/ergänzt werden. \u003cbr\u003e\n \u0026nbsp;",
+ 										"en": "Leave questionnaire open. Data  can be changed/completed\u0026nbsp;in later sessions. \u003cbr\u003e\n \u0026nbsp;"
+ 									},
+ 									"val": "2"
+ 								},
+ 								{
+ 									"label": {
+ 										"de": "Fragebogen ist abgeschlossen und kann nicht mehr geöffnet werden. \u003cbr\u003e\n \u0026nbsp;",
+ 										"en": "Questionnaire is finished. No more edits. \u003cbr\u003e\n \u0026nbsp;"
+ 									},
+ 									"val": "1"
+ 								}
+ 							],
+ 							"validator": "mustRadioGroup"
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_half_vspacers": 3,
+ 					"odd_rows_coloring": false,
+ 					"width": 100,
+ 					"columns": 2,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"css_label": "special-input-vert-wider",
+ 							"label": {
+ 								"de": "",
+ 								"en": ""
+ 							},
+ 							"description": {
+ 								"de": "Durch Klicken auf 'OK' erhalten Sie eine Zusammenfassung Ihrer Antworten",
+ 								"en": "By Clicking 'OK' you receive a summary of your answers"
+ 							},
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "submitBtn",
+ 							"type": "button",
+ 							"label": {
+ 								"de": "",
+ 								"en": ""
+ 							},
+ 							"description": {
+ 								"de": "OK",
+ 								"en": "OK"
+ 							},
+ 							"accesskey": "n",
+ 							"col_span_control": 1,
+ 							"response": "10"
+ 						}
+ 					]
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "Ihre Eingaben",
+ 				"en": "Summary of results"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"no_navigation": true,
+ 			"navi_num": 0,
+ 			"width": 100,
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_half_vspacers": 3,
+ 					"odd_rows_coloring": false,
+ 					"width": 100,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "dynamic",
+ 							"css_label": "special-input-vert-wider",
+ 							"dynamic_func": "RepsonseStatistics"
+ 						},
+ 						{
+ 							"type": "dynamic",
+ 							"css_label": "special-input-vert-wider",
+ 							"dynamic_func": "PersonalLink"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"css_label": "special-input-vert-wider",
+ 							"description": {
+ 								"de": "\u003ch3\u003eAnsprechpartner\u003c/h3\u003e\n\n\u003cp\u003eDr. Michael Schröder\u003c/p\u003e\n\n\u003cp\u003eTelefon: 0621/1235-368\u003c/p\u003e\n\n\u003cp\u003eTelefax: 0621/1235-4223\u003c/p\u003e\n\n\u003cp\u003eE-Mail: schroeder@zew.de\u003c/p\u003e\n\n\u003ch3\u003eAdresse\u003c/h3\u003e\n\n\u003cp\u003eZentrum für Europäische Wirtschaftsforschung GmbH (ZEW)\u003c/p\u003e\n\n\u003cp\u003ePostfach 10 34 43\u003c/p\u003e\n\n\u003cp\u003e68034 Mannheim\u003c/p\u003e\n\n\u003ch3\u003eTechnische Probleme\u003c/h3\u003e\n\n\u003cp\u003eBei technischen Fragen zur Online-Erhebung\u003cbr /\u003e\nwenden Sie sich bitte an:\u003c/p\u003e\n\n\u003cp\u003ePeter Buchmann (buchmann@zew.de)\u003c/p\u003e\n",
+ 								"en": "\u003ch3\u003eContact\u003c/h3\u003e\n\n\u003cp\u003eDr. Michael Schröder\u003c/p\u003e\n\n\u003cp\u003ePhone: 0621/1235-368\u003c/p\u003e\n\n\u003cp\u003eFax: 0621/1235-4223\u003c/p\u003e\n\n\u003cp\u003eEmail: schroeder@zew.de\u003c/p\u003e\n\n\u003ch3\u003eAddress\u003c/h3\u003e\n\n\u003cp\u003eCentre for European Eco\u0026shy;nom\u0026shy;ic Re\u0026shy;search (ZEW) Mannheim\u003c/p\u003e\n\n\u003cp\u003ePostfach 10 34 43\u003c/p\u003e\n\n\u003cp\u003e68034 Mannheim\u003c/p\u003e\n\n\u003cp\u003eGermany\u003c/p\u003e\n\n\u003ch3\u003eTechnical issues\u003c/h3\u003e\n\n\u003cp\u003ePlease report technical issues\nwith the online questionnaire to:\u003c/p\u003e\n\n\u003cp\u003ePeter Buchmann (buchmann@zew.de)\u003c/p\u003e\n"
+ 							}
+ 						}
+ 					]
+ 				}
+ 			]
+ 		}
+ 	]
+ }

@@ -25,7 +25,7 @@ func Load1(fn string) (*QuestionnaireT, error) {
 
 	bts, err := ioutil.ReadFile(fn)
 	if err != nil {
-		log.Printf("Could not read file: %v", err)
+		// log.Printf("Could not read file: %v", err)
 		return &q, err
 	}
 

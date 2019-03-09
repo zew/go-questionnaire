@@ -1,9 +1,10 @@
 language: go
 
 go:
-  # - 1.9.3
-  - 1.10.2
+  # go 1.10.x does no longer work because of Alex Edwards scs go getting...
+  # - 1.10.2 
   - 1.11
+  - 1.12
   # - tip
 
 os:

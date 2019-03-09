@@ -20,21 +20,25 @@ import (
 // LogoutH is a convenience handler to logout via http request
 func LogoutH(w http.ResponseWriter, r *http.Request) error {
 	sess := sessx.New(w, r)
-	// err := sess.Remove(w, "login")
-	// err := sess.Destroy(w)
-	err := sess.Clear(w)
-	return err
+	sess.Clear()
+	return nil
 }
 
 // LoggedInCheck checks, whether as user is logged in,
 // and checks whether he has the required roles
-func LoggedInCheck(w http.ResponseWriter, r *http.Request, roles ...string) (l *LoginT, loggedIn bool, err error) {
+func LoggedInCheck(w http.ResponseWriter, r *http.Request, roles ...string) (l LoginT, loggedIn bool, err error) {
 
 	sess := sessx.New(w, r)
 
-	l = &LoginT{}
-	loggedIn, err = sess.EffectiveObj("login", l)
+	var intf interface{}
+	intf, loggedIn, err = sess.EffectiveObj("login")
 	if err != nil {
+		return
+	}
+
+	l, ok := intf.(LoginT)
+	if !ok {
+		err = fmt.Errorf("Expected LoginT, got %T %v", intf, intf)
 		return
 	}
 
@@ -91,12 +95,13 @@ func ValidateAndLogin(w http.ResponseWriter, r *http.Request) error {
 	}
 
 	LogoutH(w, r) // remove all previous session info
-	log.Printf("logged in as %v", l.User)
+	log.Printf("logged in as %v %T", l.User, l)
 
 	err = sess.PutObject("login", l)
 	if err != nil {
 		return err
 	}
+	log.Printf("login saved to session as %T by validate (username+password)", &l)
 
 	return nil
 }
@@ -108,13 +113,17 @@ func ChangePassword(w http.ResponseWriter, r *http.Request) (string, error) {
 
 	sess := sessx.New(w, r)
 
-	l := LoginT{}
-	ok, err := sess.EffectiveObj("login", &l)
+	var intf interface{}
+	intf, ok, err := sess.EffectiveObj("login")
 	if err != nil {
-		return "", fmt.Errorf("Could not get login from session.")
+		return "", fmt.Errorf("Could not get login from session")
 	}
 	if !ok {
-		return "", fmt.Errorf("You are not logged in.")
+		return "", fmt.Errorf("You are not logged in")
+	}
+	l, ok := intf.(*LoginT)
+	if !ok {
+		return "", fmt.Errorf("Expected LoginT, got %T %v", intf, intf)
 	}
 
 	err = r.ParseForm()
@@ -147,15 +156,15 @@ func ChangePassword(w http.ResponseWriter, r *http.Request) (string, error) {
 	u = html.EscapeString(u) // XSS prevention
 
 	if l.User != u {
-		return "", fmt.Errorf("Changing passwd for user %v requires login as user %v.", u, u)
+		return "", fmt.Errorf("changing passwd for user %v requires login as user %v", u, u)
 	}
 	if u == "" {
-		return "", fmt.Errorf("No username given.")
+		return "", fmt.Errorf("no username given")
 	}
 
 	if _, ok := r.PostForm["newpassword"]; ok {
 		if len(n) < 2 {
-			return "", fmt.Errorf("New password too short.")
+			return "", fmt.Errorf("new password too short")
 		}
 	}
 
@@ -164,11 +173,11 @@ func ChangePassword(w http.ResponseWriter, r *http.Request) (string, error) {
 		log.Printf("tuc: %+v", r.PostForm["termsAndConditions"])
 		vals := r.PostForm["termsAndConditions"]
 		if len(vals) == 1 && vals[0] != "1" {
-			return "", fmt.Errorf("You must agree to the terms and conditions.")
+			return "", fmt.Errorf("you must agree to the terms and conditions")
 		} else if len(vals) == 2 {
 			both := vals[0] != "1" && vals[1] != "1"
 			if both {
-				return "", fmt.Errorf("You must agree to the terms and conditions.")
+				return "", fmt.Errorf("you must agree to the terms and conditions")
 			}
 		}
 	}
@@ -192,7 +201,7 @@ func ChangePassword(w http.ResponseWriter, r *http.Request) (string, error) {
 			if match {
 
 				if n != n2 {
-					return "", fmt.Errorf("New passwords did not match.")
+					return "", fmt.Errorf("new passwords did not match")
 				}
 
 				// Change user database (json file)
@@ -222,7 +231,7 @@ func ChangePassword(w http.ResponseWriter, r *http.Request) (string, error) {
 			return "", fmt.Errorf("Neither init nor encrypted password did match for user %v", u)
 		}
 	}
-	return "", fmt.Errorf("Old password incorrect (or username not found).")
+	return "", fmt.Errorf("old password incorrect (or username not found)")
 }
 
 // LoginByHash takes request value "u" and hash "h";
@@ -256,7 +265,7 @@ func LoginByHash(w http.ResponseWriter, r *http.Request) (bool, error) {
 	u = html.EscapeString(u) // XSS prevention
 	h := r.Form.Get("h")     // hash
 
-	l := &LoginT{}
+	l := LoginT{}
 	l.User = u
 	l.IsInitPassword = false // remembrance: only then do roles become effective
 	l.Roles = map[string]string{}
@@ -264,7 +273,7 @@ func LoginByHash(w http.ResponseWriter, r *http.Request) (bool, error) {
 
 	chkKeys := []string{}
 	for key := range r.Form {
-		if _, ok := uncheckedURLParams[key]; ok {
+		if _, ok := exempted[key]; ok {
 			continue
 		}
 		chkKeys = append(chkKeys, key)
@@ -277,7 +286,7 @@ func LoginByHash(w http.ResponseWriter, r *http.Request) (bool, error) {
 		checkStr += val + "-"
 	}
 	checkStr += lgns.Salt
-	log.Printf("trying hash login over chkKeys %v: '%v' ", chkKeys, checkStr)
+	log.Printf("trying hash login over chkKeys %v-salt: '%v' ", strings.Join(chkKeys, "-"), checkStr)
 	hExpected := Md5Str([]byte(checkStr))
 	if hExpected != h {
 		return false, fmt.Errorf("hash over check string unequal hash argument\n%v\n%v", hExpected, h)
@@ -286,7 +295,7 @@ func LoginByHash(w http.ResponseWriter, r *http.Request) (bool, error) {
 	for key := range r.Form {
 		// same key - multiple values
 		// attrs=country:Sweden&attrs=height:176
-		if _, ok := ExplicitAttrs[key]; ok {
+		if val, ok := userAttrs[key]; ok {
 			if key == "attrs" {
 				for i := 0; i < len(r.Form[key]); i++ { // instead of val := r.Form.Get(key)
 					val := r.Form[key][i]
@@ -296,16 +305,17 @@ func LoginByHash(w http.ResponseWriter, r *http.Request) (bool, error) {
 					}
 				}
 			} else {
-				l.Attrs[key] = r.Form.Get(key)
+				l.Attrs[val] = r.Form.Get(key)
 			}
 		}
 	}
 
-	log.Printf("logging in as %v with attrs %v", u, l.Attrs)
+	log.Printf("logging in as %v with attrs %v type %T", u, l.Attrs, l)
 	err = sess.PutObject("login", l)
 	if err != nil {
 		return false, err
 	}
+	log.Printf("login saved to session as %T from loginByHash", l)
 
 	return true, nil
 }
@@ -453,10 +463,7 @@ func GenerateHashesH(w http.ResponseWriter, r *http.Request) {
 	b2 := &bytes.Buffer{}
 	for i := fe.Start; i < fe.Stop; i++ {
 
-		checkStr := fmt.Sprintf("%v-%v-%v-%v", fe.SurveyID, i, fe.WaveID, lgns.Salt)
-		hsh := Md5Str([]byte(checkStr))
-
-		queryString := fmt.Sprintf("u=%v&survey_id=%v&wave_id=%v&h=%v", i, fe.SurveyID, fe.WaveID, hsh)
+		queryString := LoginURL(fmt.Sprintf("%v", i), fe.SurveyID, fe.WaveID)
 		if fe.LangCode != "" {
 			queryString += "&lang_code=" + fe.LangCode
 		}
@@ -550,7 +557,7 @@ func LoginPrimitiveH(w http.ResponseWriter, r *http.Request) {
 		SelfURL: r.URL.Path,
 		Cnt:     msg,
 		Token:   FormToken(),
-		L:       l,
+		L:       &l,
 	}
 
 	tpl := template.New("anyname.html")
@@ -616,7 +623,7 @@ func ChangePasswordPrimitiveH(w http.ResponseWriter, r *http.Request) {
 		SelfURL: r.URL.Path,
 		Cnt:     msg,
 		Token:   FormToken(),
-		L:       l,
+		L:       &l,
 	}
 
 	tpl := template.New("anyname.html")

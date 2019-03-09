@@ -192,10 +192,13 @@ func (fragm *staticPrefixT) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// survey name
-	var q = &qst.QuestionnaireT{}
-
 	surveyType := ""
-	if ok, _ := sess.EffectiveObj("questionnaire", q); ok {
+	if intf, ok, _ := sess.EffectiveObj("questionnaire"); ok {
+		q, ok := intf.(*qst.QuestionnaireT)
+		if !ok {
+			fmt.Fprint(w, fmt.Errorf("Expected *qst.QuestionnaireT, got %T %v", intf, intf))
+			return
+		}
 		surveyType = q.Survey.Type
 	}
 

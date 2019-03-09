@@ -1031,5 +1031,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	if err := (&q).TranslationCompleteness(); err != nil {
 		return &q, err
 	}
+	if err := (&q).Validate(); err != nil {
+		return &q, err
+	}
 	return &q, nil
 }

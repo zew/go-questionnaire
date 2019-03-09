@@ -17,7 +17,6 @@ import (
 	"github.com/zew/go-questionnaire/generators"
 	"github.com/zew/go-questionnaire/handlers"
 	"github.com/zew/go-questionnaire/lgn"
-	"github.com/zew/go-questionnaire/lgn/directlogin"
 	"github.com/zew/go-questionnaire/muxwrap"
 	"github.com/zew/go-questionnaire/sessx"
 	"github.com/zew/go-questionnaire/tpl"
@@ -76,10 +75,6 @@ func main() {
 	mux1.HandleFunc(cfg.Pref("/logins-save"), lgn.SaveH)
 	mux1.HandleFunc(cfg.Pref("/logins-reload"), lgn.LoadH)
 	mux1.HandleFunc(cfg.Pref("/generate-password"), lgn.GeneratePasswordH)
-	mux1.HandleFunc(cfg.Pref("/direct-login/generate"), directlogin.GenerateH)
-	mux1.HandleFunc(cfg.Pref("/direct-login/check-failed"), directlogin.CheckFailed)
-	mux1.HandleFunc(cfg.Pref("/direct"), directlogin.ValidateAndLogin)
-	mux1.HandleFunc(cfg.PrefWTS("/direct"), directlogin.ValidateAndLogin)
 	mux1.HandleFunc(cfg.Pref("/generate-hashes"), lgn.GenerateHashesH)
 	mux1.HandleFunc(cfg.Pref("/shufflings-to-csv"), lgn.ShufflesToCSV)
 	mux1.HandleFunc(cfg.Pref("/templates-reload"), tpl.ParseH)
@@ -110,16 +105,20 @@ func main() {
 	//
 	// => Wrap the base router into an unconditional middleware
 	mux2 := muxwrap.NewHandlerMiddleware(mux1)
+
 	// => Wrap in mux2 in session manager
-	sessx.Mgr().Secure(true)                                                  // true breaks session persistence in excel-db - but not in go-countdown
-	sessx.Mgr().Lifetime(time.Duration(cfg.Get().SessionTimeout) * time.Hour) // default is 24 hours
-	sessx.Mgr().Persist(false)
-	mux3 := sessx.Mgr().Use(mux2)
+	sessx.Mgr().Lifetime = time.Duration(cfg.Get().SessionTimeout) * time.Hour // default is 24 hours
+	sessx.Mgr().Cookie.Secure = true                                           // true breaks session persistence in excel-db - but not in go-countdown
+	sessx.Mgr().Cookie.Persist = false
+
+	mux3 := sessx.Mgr().LoadAndSave(mux2)
 
 	//
 	// Prepare web server launch
-	IpPort := fmt.Sprintf("%v:%v", cfg.Get().BindHost, cfg.Get().BindSocket)
-	log.Printf("starting http server at %v ... (Forward from %v)", IpPort, cfg.Get().BindSocketFallbackHTTP)
+	IPPort := fmt.Sprintf("%v:%v", cfg.Get().BindHost, cfg.Get().BindSocket)
+	log.Printf("starting http server at %v ... (Forward from %v)", IPPort, cfg.Get().BindSocketFallbackHTTP)
+	log.Printf("==========================")
+	log.Printf("  ")
 
 	//
 	if cfg.Get().TLS {
@@ -178,13 +177,13 @@ func main() {
 			tlsCfg.GetCertificate = certManager.GetCertificate
 		}
 
-		// err = http.ListenAndServeTLS(IpPort, "server.pem", "server.key", mux3)
+		// err = http.ListenAndServeTLS(IPPort, "server.pem", "server.key", mux3)
 		srv := &http.Server{
 			ReadTimeout:       time.Duration(cfg.Get().ReadTimeOut) * time.Second,
 			ReadHeaderTimeout: time.Duration(cfg.Get().ReadHeaderTimeOut) * time.Second,
 			WriteTimeout:      time.Duration(cfg.Get().WriteTimeOut) * time.Second,
 			IdleTimeout:       120 * time.Second,
-			Addr:              IpPort,
+			Addr:              IPPort,
 			TLSConfig:         tlsCfg,
 			TLSNextProto:      make(map[string]func(*http.Server, *tls.Conn, http.Handler), 0),
 			Handler:           mux3,
@@ -196,7 +195,7 @@ func main() {
 		}
 
 	} else {
-		log.Fatal(http.ListenAndServe(IpPort, mux3))
+		log.Fatal(http.ListenAndServe(IPPort, mux3))
 	}
 
 }

@@ -45,9 +45,7 @@ Note: This file is necessary for go-questionnaire.test.exe binary to be generate
 
 */
 import (
-	"fmt"
 	"io/ioutil"
-	"log"
 	"os"
 	"path/filepath"
 	"testing"
@@ -100,12 +98,9 @@ func TestSystem(t *testing.T) {
 		userName := "systemtest"
 		surveyID := q.Survey.Type
 		waveID := q.Survey.WaveID()
-
 		t.Logf("\tquesionnaire type - survey-id: %v %v", surveyID, waveID)
 
-		checkStr := fmt.Sprintf("%v-%v-%v-%v", surveyID, userName, waveID, lgn.Get().Salt)
-		hsh := lgn.Md5Str([]byte(checkStr))
-		loginURL := fmt.Sprintf("%v?u=%v&survey_id=%v&wave_id=%v&h=%v", cfg.PrefWTS(), userName, surveyID, waveID, hsh)
+		loginURL := lgn.LoginURL(userName, surveyID, waveID)
 		t.Logf("\tLoginURL: %v", loginURL)
 
 		// Deadline exceeded?
@@ -119,28 +114,12 @@ func TestSystem(t *testing.T) {
 			continue
 		}
 
-		removeSystemtestJSON(t)
 		systemtest.SimulateLoad(t, q, loginURL, "0")
 
-		removeSystemtestJSON(t)
 		systemtest.SimulateLoad(t, q, loginURL, "1")
 		// if surveyID == "peu2018" {
 		// 	systemtest.SimulateLoad(t, q, loginURL)
 		// }
 	}
 
-}
-
-func removeSystemtestJSON(t *testing.T) {
-	err := filepath.Walk(filepath.Join(".", "responses"), func(path string, f os.FileInfo, err error) error {
-		base := filepath.Base(path)
-		if base == "systemtest.json" {
-			log.Printf("Removing %v", path)
-			os.Remove(path)
-		}
-		return nil
-	})
-	if err != nil {
-		t.Fatal(err)
-	}
 }

@@ -19,7 +19,6 @@ import (
 	"strings"
 	"time"
 
-	"github.com/pkg/errors"
 	"github.com/zew/go-questionnaire/cfg"
 	"github.com/zew/go-questionnaire/lgn"
 	"github.com/zew/go-questionnaire/qst"
@@ -257,7 +256,7 @@ func main() {
 			// the server actually sent compressed data
 			rdr1, err = gzip.NewReader(resp.Body)
 			if err != nil {
-				err = errors.Wrap(err, "could not read the response as gzip")
+				log.Printf("could not read the response as gzip: %v", err)
 				return
 			}
 			defer rdr1.Close()

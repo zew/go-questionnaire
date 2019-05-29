@@ -13,7 +13,7 @@ Productive use at our research institute.
 
 ## Requirements
 
-Go Version 1.__10__
+Go Version 1.__11__
 
 ## Semantics
 
@@ -260,12 +260,30 @@ Mobile layout was tested with `crossbrowsertesting.com`.
  Currently one can either generate one's own final page (in the example of the peu2018 survey).  
  Or one can set the "finalized" field and then gets system wide: You finished ... at ...
 
+## Open
+
+* Either the login URL must be shortened,  
+or an URL shortener service must be integrated  
+
+* Improve the `.docker/3-multi/Dockerfile`  
+all file and dir preparations from `static/doc/linux-instructions.md` must be replicated into Dockerfile  
+`RUN   touch                 /go-questionnaire/stuff/templates/site.css` must be created
+golang log must be written to $LOG_FILE_LOCATION
+
+    import "gopkg.in/natefinch/lumberjack.v2"
+
+    LOG_FILE_LOCATION := os.Getenv("LOG_FILE_LOCATION")
+    if LOG_FILE_LOCATION != "" {
+        log.SetOutput(&lumberjack.Logger{
+            Filename:   LOG_FILE_LOCATION,
+            MaxSize:    500, // megabytes
+            MaxBackups: 3,
+            MaxAge:     28,   //days
+            Compress:   true, // disabled by default
+        })
+    }
+
 ## Possible enhancements
-
-* Either the login URL must be shortened, or an URL shortener service must be integrated  
-
-* Improving the `Docker` script  
- It should contain the equivalent of `linux-instructions.md`.
 
 * Migrate file storage to GoCloud library and make  
 deployable on Google Appengine or AWS without EBS (elastic block devices)?  

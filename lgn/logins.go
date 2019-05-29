@@ -48,6 +48,7 @@ var exempted = map[string]interface{}{
 // upon login.
 // They serve as a property bag session.
 // Key is the short form - from the URL. Val is the long form.
+// LoginT methods Query(), LoginURL() and partly QuestPath() tie into this logic.
 var userAttrs = map[string]string{
 	"sid":   "survey_id",
 	"wid":   "wave_id",
@@ -68,7 +69,7 @@ type LoginT struct {
 	Email string            `json:"email"`
 	Group string            `json:"-"`     // Derived from email domain - or LDAP org
 	Roles map[string]string `json:"roles"` // i.e. admin: true, can only be set via JSON config; therefore safe
-	Attrs map[string]string `json:"attrs"` // i.e. country: Poland, gender: female, height: 188, can be overriden by URL params, therefore unsafe.
+	Attrs map[string]string `json:"attrs"` // i.e. country: Poland, gender: female, height: 188, can be overridden by URL params, therefore unsafe.
 
 	PassInitial    string `json:"pass_initial"`       // For first login - unencrypted - grants restricted access to change password only
 	IsInitPassword bool   `json:"is_init_password"`   // Indicates authentication against PassInitial
@@ -80,9 +81,10 @@ func init() {
 	gob.Register(LoginT{})
 }
 
-// LoginURL returns a URL plus query fragment,
+// Query returns a query fragment,
 // using the expected param names u, sid, wid, h
-func LoginURL(userName, surveyID, waveID string, optHash ...string) string {
+// See also userAttrs{}
+func Query(userName, surveyID, waveID string, optHash ...string) string {
 
 	checkStr := fmt.Sprintf("%v-%v-%v-%v", surveyID, userName, waveID, Get().Salt)
 	hsh := ""
@@ -92,13 +94,21 @@ func LoginURL(userName, surveyID, waveID string, optHash ...string) string {
 		hsh = optHash[0]
 	}
 
-	loginURL := fmt.Sprintf("%v?u=%v&sid=%v&wid=%v&h=%v", cfg.PrefWTS(), userName, surveyID, waveID, hsh)
+	loginURL := fmt.Sprintf("u=%v&sid=%v&wid=%v&h=%v", userName, surveyID, waveID, hsh)
+	return loginURL
+
+}
+
+// LoginURL returns a URL plus a query fragment,
+func LoginURL(userName, surveyID, waveID string, optHash ...string) string {
+	loginURL := fmt.Sprintf("%v?%v", cfg.PrefWTS(), Query(userName, surveyID, waveID, optHash...))
 	return loginURL
 
 }
 
 // QuestPath returns the path to the JSON questionnaire,
 // Similar to qst.QuestionnaireT.FilePath1()
+// See also userAttrs{}
 func (l *LoginT) QuestPath() string {
 
 	userSurveyType := ""
@@ -517,7 +527,8 @@ func Md5Str(buf []byte) string {
 	hshBytes := hasher.Sum(nil)
 
 	ret := hex.EncodeToString(hshBytes)
-	ret = base64.URLEncoding.EncodeToString(hshBytes)
+	// ret = base64.URLEncoding.EncodeToString(hshBytes)
+	ret = base64.RawURLEncoding.EncodeToString(hshBytes) // no trailing equal signs
 	return ret
 }
 

@@ -237,7 +237,7 @@ func main() {
 			log.Printf("error creating request %v: %v", urlReq, err)
 			return
 		}
-		// strangely, the json *reponse* is empty, if we omit this:
+		// strangely, the json *response* is empty, if we omit this:
 		req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
 		for _, v := range []*http.Cookie{sessCook} {
 			req.AddCookie(v)

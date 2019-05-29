@@ -97,7 +97,7 @@ func ReloadH(w http.ResponseWriter, r *http.Request) {
 		attrsStr,
 	)
 
-	queryString := lgn.LoginURL(
+	queryString := lgn.Query(
 		relForm.Get("u"), relForm.Get("sid"), relForm.Get("wid"), relForm.Get("h"),
 	)
 	if relForm.Get("lang_code") != "" {

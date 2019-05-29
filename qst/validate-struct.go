@@ -21,7 +21,7 @@ func Mustaz09Underscore(s string) bool {
 	return true
 }
 
-// Either no transation - or all lcs must be set
+// Either no translation - or all lcs must be set
 func plausibleTranslation(key string, s trl.S, lcs map[string]string) error {
 
 	if !s.Set() {
@@ -174,7 +174,7 @@ func (q *QuestionnaireT) Validate() error {
 						return errors.Wrap(err, s)
 					}
 					if pgIdx < 0 || pgIdx > len(q.Pages)-1 {
-						return fmt.Errorf("%v points to page index non existant %v", s, inp.Response)
+						return fmt.Errorf("%v points to page index non existent %v", s, inp.Response)
 					}
 				}
 

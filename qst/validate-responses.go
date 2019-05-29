@@ -71,9 +71,9 @@ func init() {
 
 }
 
-// ValidateReponseData applies all input validation rules on the responses.
+// ValidateResponseData applies all input validation rules on the responses.
 // Restricted by page, since validation errors are handled page-wise.
-func (q *QuestionnaireT) ValidateReponseData(pageNum int, langCode string) (last error) {
+func (q *QuestionnaireT) ValidateResponseData(pageNum int, langCode string) (last error) {
 
 	for i1 := 0; i1 < len(q.Pages); i1++ {
 		if i1 != pageNum {

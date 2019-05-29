@@ -109,7 +109,7 @@ func helper(w http.ResponseWriter, r *http.Request, err error, msgs ...string) {
 			err = errors.Wrap(err, msgs[0])
 		}
 	}
-	log.Print(err)
+	// log.Print(shorter) errorH logs
 	errorH(w, r, err.Error())
 }
 
@@ -301,7 +301,7 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 			}
 		}
 	}
-	err = q.ValidateReponseData(prevPage, q.LangCode)
+	err = q.ValidateResponseData(prevPage, q.LangCode)
 	if err != nil {
 		q.CurrPage = prevPage // Prevent changing page, keep participant on page with errors
 	}

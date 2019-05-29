@@ -15,13 +15,13 @@
  		"params": [
  			{
  				"name": "main_refinance_rate_ecb",
- 				"val": "4"
+ 				"val": "3"
  			},
  			{}
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "2887b1e5e4d85d035bc53509689e9473",
+ 	"md_5": "ab8be20d3067e1fbd9a352ceada92b8a",
  	"lang_codes": {
  		"de": "Deutsch",
  		"en": "English"
@@ -3284,8 +3284,8 @@
  						"en": "3."
  					},
  					"description": {
- 						"de": "Den Hauptrefinanzierungssatz der EZB (am 4) erwarte ich auf Sicht von",
- 						"en": "I expect the main refinance rate of the ECB (4) in"
+ 						"de": "Den Hauptrefinanzierungssatz der EZB (am 3) erwarte ich auf Sicht von",
+ 						"en": "I expect the main refinance rate of the ECB (3) in"
  					},
  					"header_bottom_vspacers": 1,
  					"bottom_half_vspacers": 3,

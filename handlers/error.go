@@ -18,7 +18,11 @@ func errorH(w http.ResponseWriter, r *http.Request, msg string) {
 
 	sess := sessx.New(w, r)
 
-	log.Print(msg)
+	shorter := msg
+	if len(shorter) > 100 {
+		shorter = shorter[:100]
+	}
+	log.Print(shorter)
 
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
 

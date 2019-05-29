@@ -463,7 +463,7 @@ func GenerateHashesH(w http.ResponseWriter, r *http.Request) {
 	b2 := &bytes.Buffer{}
 	for i := fe.Start; i < fe.Stop; i++ {
 
-		queryString := LoginURL(fmt.Sprintf("%v", i), fe.SurveyID, fe.WaveID)
+		queryString := Query(fmt.Sprintf("%v", i), fe.SurveyID, fe.WaveID)
 		if fe.LangCode != "" {
 			queryString += "&lang_code=" + fe.LangCode
 		}

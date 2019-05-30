@@ -526,9 +526,9 @@ func Md5Str(buf []byte) string {
 	hasher.Write(buf)
 	hshBytes := hasher.Sum(nil)
 
-	ret := hex.EncodeToString(hshBytes)
+	// ret := hex.EncodeToString(hshBytes)
 	// ret = base64.URLEncoding.EncodeToString(hshBytes)
-	ret = base64.RawURLEncoding.EncodeToString(hshBytes) // no trailing equal signs
+	ret := base64.RawURLEncoding.EncodeToString(hshBytes) // no trailing equal signs
 	return ret
 }
 

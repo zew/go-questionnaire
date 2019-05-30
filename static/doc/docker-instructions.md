@@ -32,6 +32,7 @@ add  `export PATH=$PATH:/usr/local/go/bin`
 
     go get -d -v -t github.com/zew/go-questionnaire
     cd $GOPATH/src/github.com/zew/go-questionnaire
+    cd /home/ec2-user/go/src/github.com/zew/go-questionnaire
     go build
     ./go-questionnaire
 
@@ -43,17 +44,27 @@ open another shell
 
     cd /home/ec2-user/go/src/github.com/zew/go-questionnaire
 
-    docker build -t dockered-quest .
+    docker build -t dockered-qst .
 
     docker image ls
 
     # either
-    docker run -d -p 8081:8081 dockered-quest
+    docker run -d  -p 8081:8081  dockered-qst
+
     # or
-    mkdir ~/app-logs
-    docker run -d -p 8081:8081 -v ~/app-logs:/go-questionnaire/logs dockered-quest
+    sudo mkdir -p /var/log/go-questionnaire
+    sudo touch /var/log/go-questionnaire/app.log
+    sudo chown ec2-user:ec2-user /var/log/go-questionnaire/app.log
+    docker run -d  -p 8081:8081  -v /var/log/go-questionnaire:/root/logdir  dockered-qst
+
+    #or
+    mkdir -p ~/log
+    docker run -d  -p 8081:8081  -v ~/log:/root/logdir  dockered-qst
 
     docker container ls
+
+    sudo journalctl -fu docker.service
+    docker exec -it <mycontainer> bash
 
     wget http://localhost:8081/survey/generate-questionnaire-templates
 

@@ -262,8 +262,18 @@ Mobile layout was tested with `crossbrowsertesting.com`.
 
 ## Open
 
+### Shortening URL
+
 * Either the login URL must be shortened,  
 or an URL shortener service must be integrated  
+
+* change attrs to a
+
+* introduce numbered attribute sets
+
+* introduce hash length per questionnaire
+
+### Dockerfile
 
 * Improve the `.docker/3-multi/Dockerfile`  
 all file and dir preparations from `static/doc/linux-instructions.md` must be replicated into Dockerfile  

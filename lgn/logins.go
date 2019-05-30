@@ -39,9 +39,14 @@ var errLoginNotFound = fmt.Errorf("Login not found")
 // exempted URL params are not hashed for login check
 // They can be freely added to the login-by-hash URL to modify app state
 var exempted = map[string]interface{}{
-	"page": nil, "submit": nil, "mobile": nil, "lang_code": nil, // general app control
-	"attrs": nil, // user attributes at login time
-	"h":     nil, // the hash
+	// general app control
+	"page":      nil,
+	"submit":    nil,
+	"mobile":    nil,
+	"lang_code": nil,
+	// the hash itself
+	"h": nil,
+	// "attrs": nil, // user attributes at login time - must be hashed to prevent
 }
 
 // userAttrs contains URL params going into LoginT.Attrs
@@ -50,9 +55,10 @@ var exempted = map[string]interface{}{
 // Key is the short form - from the URL. Val is the long form.
 // LoginT methods Query(), LoginURL() and partly QuestPath() tie into this logic.
 var userAttrs = map[string]string{
-	"sid":   "survey_id",
-	"wid":   "wave_id",
-	"attrs": "attrs", // general purpose - can occur several times - key:value
+	"sid": "survey_id",
+	"wid": "wave_id",
+	"p":   "profile", // user profile, replaces attrs
+	"a":   "attrs",   // general purpose - can occur several times - key:value - or a profile id
 }
 
 // LoginT must be exported, *not* because we need to pass a type to sessx.GetObject
@@ -528,8 +534,19 @@ func Md5Str(buf []byte) string {
 
 	// ret := hex.EncodeToString(hshBytes)
 	// ret = base64.URLEncoding.EncodeToString(hshBytes)
-	ret := base64.RawURLEncoding.EncodeToString(hshBytes) // no trailing equal signs
-	return ret
+	return base64.RawURLEncoding.EncodeToString(hshBytes) // no trailing equal signs
+}
+
+// Md5Equality compares the prefixes of two hashes for equality.
+// Base64 for URL encoded MD5 hashes consist of 23 characters.
+// The safe line length for emails is 70 character.
+// stackoverflow.com/questions/11794698 suggests maximum size of 70 or 76 characters
+// For normal questionnaires, a hash length of 5 => 64^^5 = 1.073.741.824 combinations is sufficient.
+//
+// Our URL then is 63 characters:
+// https://surve2.zew.de/?u=1000&sid=fmt&wid=2019-06&h=57I7U&p=12
+func Md5Equality(a, b string) bool {
+	return true
 }
 
 // Example writes a single login to file, to be extended or adapted

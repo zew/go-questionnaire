@@ -2,8 +2,11 @@
 
 # Go-Questionnaire
 
-Creating and serving questionnaires in flexible column layout.  
-Automatic desktop and mobile layout.
+* Creating and serving questionnaires
+
+* Precise layout - no HTML fumble
+
+* Automatic mobile version
 
 ## Status
 
@@ -17,38 +20,13 @@ Go Version 1.__11__
 
 ## Semantics
 
+* This application serves any number of `surveys`.
+
 * A `survey` is a `questionnaire` with one or more `waves` (repetitions).
 
-![Plugin](./static/img/doc/app-and-questionnaires.png)
+![Plugin](./static/img/doc/app-and-questionnaires.jpg)
 
-## Usage
-
-### Create questionnaire and logins
-
-![Plugin](./static/img/doc/questionnaire-lifecycle.png)
-
-* Login as admin at https://dev-domain:port/survey/login-primitive
-
-* Create a questionnaire template - as JSON file  
- https://dev-domain:port/survey/generate-questionnaire-templates
-
-
-* Generate login hashes for the survey id and wave id above   
-   i.e.  https://dev-domain:port/survey/generate-hashes?wave_id=2018-07&survey_id=fmt   
-  yielding
-  
-      /survey?u=99000&survey_id=fmt&wave_id=2018-07&h=bc11262f8ce8dda558de9a0ffa064941
-      ...
-
-### Participant login and reset
-
-* Participants can now use these login links to [access the questionnaire](https://dev-domain:port/survey?u=98991&survey_id=fmt&wave_id=2018-07&h=4059d765e4a4f211658373c07c5affb9)   
-
-* Once logged in, they can [re-access the questionnaire](https://dev-domain:port/survey)
-
-* For testing purposes, you may [reset the questionnaire](https://dev-domain:port/survey/reload-from-questionnaire-template?u=98991&survey_id=fmt&wave_id=2018-07&h=4059d765e4a4f211658373c07c5affb9)
-
-### Setup
+## Setup
 
 Install and setup [golang](https://golang.org/doc/install)
 
@@ -62,6 +40,63 @@ Install and setup [golang](https://golang.org/doc/install)
     ./go-questionnaire                   # under windows: go-questionnaire.exe
 
 More info in [deploy on linux/unix](./static/doc/linux-instructions.md)
+
+## Create new questionnaire `myquest`
+
+* Copy `generators/min` to `generators/myquest`
+
+* Open `generators/myquest/main.go`  
+and change package name: `package myquest`
+
+* Add your new questionnaire to `generators/registry.go`  
+`"myquest": myquest.Create,`
+
+* In `generators/myquest/main.go`  
+under `page := q.AddPage()` you can add  
+additonal `pages`, `groups` and `inputs`.
+
+* Additional groups are to change column layout within a page. Details below.
+
+### Input types
+
+* `text` - your classic text input
+* `number` - number input - mobile browsers show the numbers keyboard
+* `textarea` - multi line text input
+* `dropdown` - list of fixed choices
+* `checkbox` - yes/no input
+* `radiogroup`, `checkboxgroup` - fields of choices
+* `textblock` - block of text without input
+* `button` - submit button
+* `dynamic` - any input that depends on user properties or wave-specific data
+
+Each input can have a multi-language label, -description, a multi-language suffix and a validation function.
+
+Each input has a column span and an alignment for its label and for its input-field.
+
+## Create survey and logins
+
+If you have created your survey `myquest` you need to restart the application.
+
+* Login as admin at https://dev-domain:port/survey/login-primitive
+
+* Create a questionnaire template - as JSON file  
+ https://dev-domain:port/survey/generate-questionnaire-templates
+
+![Plugin](./static/img/doc/questionnaire-lifecycle.jpg)
+
+* Generate login hashes for the survey id and wave id above  
+   i.e.  https://dev-domain:port/survey/generate-hashes?wave_id=2018-07&survey_id=fmt  
+  yielding
+  
+      /survey?u=99000&sid=fmt&wid=2018-07&h=57I7UVp6
+      ...
+### Participant login and reset
+
+* Participants can now use these login links to [access the questionnaire](https://dev-domain:port/survey?u=98991&survey_id=fmt&wave_id=2018-07&h=4059d765e4a4f211658373c07c5affb9)   
+
+* Once logged in, they can [re-access the questionnaire](https://dev-domain:port/survey)
+
+* For testing purposes, you may [reset the questionnaire](https://dev-domain:port/survey/reload-from-questionnaire-template?u=98991&survey_id=fmt&wave_id=2018-07&h=4059d765e4a4f211658373c07c5affb9)
 
 ### Packages
 
@@ -77,11 +112,12 @@ with automatic `Lets encrypt` certification.
 * Directory `responses` stores indididual answers  
  (and initial questionnaire templates).
 
-* There are global translations as well as  
- questionnaire specific multi-language strings.  
- Global hyphenizations help with long words on mobile devices.
+* `trl` contains the type `multi-language string` and 
+ a global hyphenizations map for mobile layout. 
+ `cfg` contains universal multi-language strings.  
+ Each `questionnaire` contains specific multi-language strings.  
 
-* Common proof functions prevent duplicate question keys  
+* Common proof functions in `qst` prevent duplicate question keys  
  or missing translations.
 
 * Survey results are pulled in by the `transferrer`,  
@@ -260,12 +296,14 @@ Mobile layout was tested with `crossbrowsertesting.com`.
  Currently one can either generate one's own final page (in the example of the peu2018 survey).  
  Or one can set the "finalized" field and then gets system wide: You finished ... at ...
 
-## Open
+## Open / todo
+
+Update stresstest
 
 ### Shortening URL
 
 * Either the login URL must be shortened,  
-or an URL shortener service must be integrated  
+or an URL [shortener service](https://github.com/zew/urlshort) must be integrated  
 
 * change attrs to a
 
@@ -273,31 +311,22 @@ or an URL shortener service must be integrated
 
 * introduce hash length per questionnaire
 
-### Dockerfile
-
-* Improve the `.docker/3-multi/Dockerfile`  
-all file and dir preparations from `static/doc/linux-instructions.md` must be replicated into Dockerfile  
-`RUN   touch                 /go-questionnaire/stuff/templates/site.css` must be created
-golang log must be written to $LOG_FILE_LOCATION
-
-    import "gopkg.in/natefinch/lumberjack.v2"
-
-    LOG_FILE_LOCATION := os.Getenv("LOG_FILE_LOCATION")
-    if LOG_FILE_LOCATION != "" {
-        log.SetOutput(&lumberjack.Logger{
-            Filename:   LOG_FILE_LOCATION,
-            MaxSize:    500, // megabytes
-            MaxBackups: 3,
-            MaxAge:     28,   //days
-            Compress:   true, // disabled by default
-        })
-    }
-
 ## Possible enhancements
 
 * Migrate file storage to GoCloud library and make  
 deployable on Google Appengine or AWS without EBS (elastic block devices)?  
 To be implemented into the load/save() methods of ConfigT, LoginsT and QuestionnaireT.
+
+* Revolving and compressing logfiles
+
+    import "gopkg.in/natefinch/lumberjack.v2"
+    log.SetOutput(&lumberjack.Logger{
+        Filename:   LOG_FILE_LOCATION,
+        MaxSize:    500, // MB
+        MaxBackups: 3,
+        MaxAge:     28,   //days
+        Compress:   true, // disabled by default
+    })
 
 ## About go-app-tpl
 
@@ -319,11 +348,17 @@ It features
 
 * Static file handlers
 
+* Markdown file handler, rewriting image links
+
+* Multi language markdown files
+
 * JSON config file with reloadable settings
 
 * JSON logins file, also reloadable
 
 * Handlers for login, changing password, login by hash
+
+* CSRF and XSS defence
 
 * Site layout template with jQuery from CDN cache; fallback to localhost
 
@@ -335,29 +370,25 @@ It features
 
 * Template pre-parsing (`bootstrap`), configurable for development or production
 
-* Markdown file handler, rewriting image links
-
-* Multi language markdown files
-
 * Shell script to control application under Linux
 
-* CSRF and XSS defence
+* [Dockerfile](https://en.wikipedia.org/wiki/Docker_%28software%29) to deploy on modern cloud servers
 
 ## Technical design guidelines
 
 * Subpackaging is done by concern, neither too amorphous nor too atomic.
 
 * go-app-tpl has no "hooks" or interfaces for isolation of "framework" code.  
- Just copy it and add your handlers.  
- Future updates can be merged.
+ Clone it and add your handlers.  
+ Future updates will be merged.
 
 ## gocloc
 
 Language | files | blank | comment | code
 --- | --- | --- | --- | ---
-Go | 62 | 1671 | 1351 | 10581
+Go | 62 | 1640 | 1363 | 10490
 CSS | 12 | 261 | 144 | 713
-Markdown | 26 | 429 | 0 | 611
+Markdown | 27 | 485 | 0 | 727
 HTML | 6 | 96 | 31 | 319
 Python | 1 | 31 | 16 | 94
-Bourne | Shell | 2 | 15 | 15 | 74
+Bourne | Shell | 3 | 17 | 19 | 76

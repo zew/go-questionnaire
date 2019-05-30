@@ -19,7 +19,11 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 	for i1 := 0; i1 < 3; i1++ {
 		page := q.AddPage()
-		_ = page
+		gr := page.AddGroup()
+		inp := gr.AddInput()
+		inp.Name = "name"
+		inp.Type = "text"
+		inp.Label = trl.S{"de": "Vorname", "en": "first name"}
 	}
 	(&q).Hyphenize()
 	(&q).ComputeMaxGroups()

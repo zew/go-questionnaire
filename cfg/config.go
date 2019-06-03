@@ -13,8 +13,6 @@ import (
 	"net/http"
 	"os"
 	"path"
-	"sort"
-	"strconv"
 	"sync"
 	"time"
 
@@ -23,6 +21,19 @@ import (
 	"github.com/zew/go-questionnaire/sessx"
 	"github.com/zew/go-questionnaire/trl"
 )
+
+// directLoginRangeT draws a connection from a survey
+// to a group of user IDs.
+// Hashed ids between Start and Stop are allowed to directly login.
+// A login is created for the specified SurveyID/WaveID (which must exist)
+// and with the attributes stored in Profile i.e. "lang_code": "en"
+type directLoginRangeT struct {
+	Start    int               `json:"start,omitempty"`
+	Stop     int               `json:"stop,omitempty"`
+	SurveyID string            `json:"survey_id,omitempty"`
+	WaveID   string            `json:"wave_id,omitempty"`
+	Profile  map[string]string `json:"profile,omitempty"`
+}
 
 // ConfigT holds the application config
 type ConfigT struct {
@@ -60,8 +71,12 @@ type ConfigT struct {
 	// available language codes for the application, first element is default
 	LangCodes []string `json:"lang_codes"`
 	// multi language strings for the application
-	Mp               trl.Map        `json:"translation_map"`
-	UserIDToLanguage map[int]string `json:"user_id_to_language,omitempty"` // user id to language preselection for direct login
+	Mp trl.Map `json:"translation_map"`
+
+	// Profiles are sets of attributes, selected by the `p` parameter at login, containing key-values which are copied into the logged in user's attributes
+	Profiles map[string]map[string]string
+
+	DirectLoginRanges []directLoginRangeT `json:"direct_login_ranges,omitempty"` // user id to language preselection for direct login
 }
 
 // CfgPath is obtained by ENV variable or command line flag in main package.
@@ -134,7 +149,12 @@ func Load() {
 
 	tempCfg.Loc, err = time.LoadLocation(tempCfg.LocationName)
 	if err != nil {
-		log.Fatalf("Your location name must be valid, i.e. 'Europe/Berlin', compare Go\\lib\\time\\zoneinfo.zip: %v", err)
+		log.Printf("Your location name must be valid, i.e. 'Europe/Berlin', compare Go\\lib\\time\\zoneinfo.zip: %v", err)
+		// Under windows, we get errors; see golang.org/pkg/time/#LoadLocation
+		// $GOROOT/lib/time/zoneinfo.zip
+		//
+		// Fallback:
+		tempCfg.Loc = time.FixedZone("UTC_-2", -2*60*60)
 	}
 
 	//
@@ -206,36 +226,6 @@ func (c *ConfigT) Save(fn ...string) {
 	log.Printf("Saved config file to %v", savePath)
 }
 
-// UserLangCode returns the language code for a user ID.
-// Its taken from ConfigT.UserIDToLanguage
-//
-// user_id_to_language: {
-// 	      1:   fr,
-// 	   1305:   en,
-//  }
-//
-func (c *ConfigT) UserLangCode(userIDStr string) (ret string, err error) {
-	userID, err := strconv.Atoi(userIDStr)
-	if err != nil {
-		return
-	}
-	idxUnsorted := make([]int, 0, len(c.UserIDToLanguage))
-	for id := range c.UserIDToLanguage {
-		idxUnsorted = append(idxUnsorted, id)
-	}
-	sort.Ints(idxUnsorted)
-	for _, key := range idxUnsorted {
-		if key > userID {
-			return
-		}
-		lc := c.UserIDToLanguage[key]
-		log.Printf("UserID %5v: key %4v for UserIDToLanguage[key] %v", userID, key, lc)
-		ret = lc
-	}
-	err = fmt.Errorf("No language code found for %v", userID)
-	return
-}
-
 // Pref prefixes a URL path with an application dir prefix.
 // Any URL Path is prefixed with the URLPathPrefix, if URLPathPrefix is set.
 // Prevents unnecessary slashes.
@@ -295,42 +285,37 @@ func Example() *ConfigT {
 		FormTimeout:            2,
 
 		LangCodes: []string{"de", "en", "es", "fr", "it", "pl"},
-		UserIDToLanguage: map[int]string{
-			1:        "fr",
-			578:      "de",
-			1305:     "en", // Belgians
-			1326:     "en", // bg
-			1343:     "en", // cy
-			1349:     "en", // cz
-			1370:     "de",
-			1466:     "en", // dk
-			1479:     "en", // ee
-			1484:     "es",
-			1538:     "en", // fi
-			1551:     "fr",
-			1625:     "en",
-			1690:     "en", // gr
-			1711:     "en", // hr
-			1722:     "en", // hu
-			1743:     "en", // ie
-			1754:     "it",
-			1828:     "en", // lt
-			1834:     "en", // lv
-			1835:     "en", // lt
-			1840:     "en", // lu
-			1845:     "en", // lv
-			1852:     "en", // mt
-			1858:     "en", // nl
-			1884:     "pl",
-			1935:     "en", // pt
-			1956:     "en", // ro
-			1988:     "en", // se
-			2008:     "en", // si
-			2016:     "en", // sk
-			2030:     "en",
-			2037:     "fr",
-			2384:     "it",
-			10000000: "it", // needed for closure
+		Profiles: map[string]map[string]string{
+			"fmt1": map[string]string{
+				"lang_code":               "de",
+				"main_refinance_rate_ecb": "3.5",
+			},
+			"fmt2": map[string]string{
+				"lang_code":               "en",
+				"main_refinance_rate_ecb": "3.5",
+			},
+		},
+		DirectLoginRanges: []directLoginRangeT{
+			{
+				Start:    1000 + 0,
+				Stop:     1000 + 29,
+				SurveyID: "peu2018",
+				WaveID:   "2019-02",
+				Profile: map[string]string{
+					"lang_code":               "de",
+					"main_refinance_rate_ecb": "3.5",
+				},
+			},
+			{
+				Start:    1000 + 30,
+				Stop:     1000 + 59,
+				SurveyID: "peu2018",
+				WaveID:   "2019-02",
+				Profile: map[string]string{
+					"lang_code":               "en",
+					"main_refinance_rate_ecb": "3.5",
+				},
+			},
 		},
 		Mp: trl.Map{
 			"page": {

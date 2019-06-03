@@ -1,6 +1,16 @@
+<img src="./static/img/doc/mascot/mascot.png" style="float: left; width:8%; min-width: 140px; max-width: 20%; margin-right:5%; margin-bottom: 2%;">
+
 [ ![GoDoc](http://godoc.org/github.com/zew/go-questionnaire?status.svg)          ](https://godoc.org/github.com/zew/go-questionnaire) [ ![Travis Build](https://travis-ci.org/zew/go-questionnaire.svg?branch=master)  ](https://travis-ci.org/zew/go-questionnaire) [ ![Report Card](https://goreportcard.com/badge/github.com/zew/go-questionnaire) ](https://goreportcard.com/report/github.com/zew/go-questionnaire) [ ![code-coverage](http://gocover.io/_badge/github.com/zew/go-questionnaire) ](http://gocover.io/github.com/zew/go-questionnaire) 
 
+<!-- 
+<div >&nbsp;</div>
+<div >&nbsp;</div> 
+-->
+
 # Go-Questionnaire
+
+<div style="position: static">
+<div style="position: relative; left: 25px;">
 
 * Creating and serving questionnaires
 
@@ -8,15 +18,95 @@
 
 * Automatic mobile version
 
+</div>
+</div>
+
+<div style="clear:both"></div>
+
 ## Status
 
-Version 1.1
+Version 1.2
 
 Productive use at our research institute.
 
 ## Requirements
 
 Go Version 1.__11__
+
+### Non-technical properties
+
+* Any number of surveys via single server - any path
+
+* Secure login URLs < 65 characters in size
+
+* Shortcut logins `example.com/d/A5FE3P`
+
+* Automatic smartphone version
+
+* Simple design of new questionnaires
+
+* Layout freedom - without HTML fumbling
+
+* Support for any number of languages - Polish, Russian, Chinese
+
+* Text blocks, support pages in several languages - written in simple `markdown` format
+
+* Fully dynamic questions based on login profile  
+
+  * Distinct questions depending Euro membership
+
+  * Distinct questions by industry sector
+
+  * Dynamic questions based on previous answers
+
+* Customization for each wave
+
+  * Reference interest rates in question text
+
+* Order of questions randomizable, but constant for each participant
+
+* Easy changes during survey time; i.e. typos or question rewording
+
+* Universal CSV export directly available to the researcher running the survey
+
+* Documentation
+
+* Open source license
+
+* Published on github.com
+
+### Partly technical properties
+
+* `Docker` technology for easy installation on any cloud server
+
+* Builtin `https` self configuration
+
+* `CSRF` and `XSS` hack defense
+
+* Consistence check for questionnaires - no duplicate field names, no missing translations
+
+* Server self test - checks correctness of participant data entry for each questionnaire
+
+* All content and all results are driven  
+ by __JSON files__.  
+ No database required.
+
+* Data thrift: Surveys contain no personal data - only a participant ID, the questions and the answers.
+
+* Stress test - 60 participants at once
+
+### Boring properties
+
+* Extensible set of validation functions easily assignable to each field.  
+ Server side validation - no client side validation.
+
+### Technical properties
+
+* `loadtest` performs 60 concurrent requests 1.41 seconds - on 2018 Lenovo Notebook.
+
+* Server self test on `travis-ci`; see build logs for details.
+
+* The `transferrer` pulls in the responses from an internet server. Once inside your organization, the results are fed into any CSV or JSON reading application.
 
 ## Semantics
 
@@ -42,6 +132,11 @@ Install and setup [golang](https://golang.org/doc/install)
 More info in [deploy on linux/unix](./static/doc/linux-instructions.md)
 
 ## Create new questionnaire `myquest`
+
+<a href="https://youtu.be/zFasU5kAKvE" target="_new">  
+
+<img src="./static/img/doc/youtube-still.png" xalign="left" width="24%" style="margin-left:4%; margin-bottom: 0%;">
+</a>  
 
 * Copy `generators/min` to `generators/myquest`
 
@@ -104,7 +199,12 @@ If you have created your survey `myquest` you need to restart the application.
 
 * Package `generators` _uses_ qst for creating specific questionnaires.  
 
-* Package `lgn` contains several authentication schemes for participants.
+* Package `lgn` contains three authentication schemes for participants.  
+  * Regular login via username and password.
+  * Login via URL parameters for user ID, survey ID, wave ID and profile ID plus hash.
+  * Login via [hash id](https://hashids.org) with above parameters configured in `directLoginRanges`.  
+  Profiles are configures key-value sets who are copied into the logged-in user's attributes.  
+  This way any number of user properties can be specified, while the login URL remains short or ultra short.
 
 * Package `main` serves questionnaires via http(s).  
 with automatic `Lets encrypt` certification.
@@ -126,36 +226,6 @@ with automatic `Lets encrypt` certification.
 
 * The `updater` subpackage automates in-flight changes to the questionnaire.  
 No need for database "schema" artistry.  
-
-## Data thrift
-
-* Surveys contain no personal data - only a participant ID, the questions and the answers.
-
-* The `transferrer` pulls in the responses from an internet server.
-
-* Once inside your organization, the results are fed into any CSV or JSON reading application.
-
-## More features
-
-* All content and all results are driven  
- by __JSON files__.  
- No database required.
-
-* Server side validation.  
- An extensible set of number validation functions can be assigned to each field.
-
-* Client side JS validation is deliberately omitted;  
-   [a would-be JS client lib](http://www.javascript-coder.com/html-form/form-validation.phtml)
-
-* Dynamic textblocks such as `RepsonseStatistics` are available.  
- Inputs values and user attributes can be accessed.
-
-* Package `systemtest` performs a full circle roundtrip - filling out all available questionnaires  
-and comparing the server JSON file with the entered data.  
-Both, mobile and desktop version are tested.  
-See the `travis-ci` build logs for details.
-
-* Load testing script for 50 concurrent requests in `Python`.
 
 ### Design and Layout
 
@@ -298,18 +368,7 @@ Mobile layout was tested with `crossbrowsertesting.com`.
 
 ## Open / todo
 
-Update stresstest
-
-### Shortening URL
-
-* Either the login URL must be shortened,  
-or an URL [shortener service](https://github.com/zew/urlshort) must be integrated  
-
-* change attrs to a
-
-* introduce numbered attribute sets
-
-* introduce hash length per questionnaire
+(currently nothing)
 
 ## Possible enhancements
 
@@ -328,7 +387,14 @@ To be implemented into the load/save() methods of ConfigT, LoginsT and Questionn
         Compress:   true, // disabled by default
     })
 
-## About go-app-tpl
+* The regular login URL was shortened.  
+Direct logins via hash-ids are also supported.  
+ [A URL shortening service](https://github.com/zew/urlshort) should not be required
+
+* Hash length for login is hard coded to 5 digits.  
+We could make it configurable per questionnaire, code being cumbersome.
+
+## About go-app-tpl - extremely technical properties
 
 * Go-Questionnaire is based on go-app-tpl
 
@@ -346,6 +412,8 @@ It features
 
 * Middleware catches request handler panics
 
+* Multi language strings
+
 * Static file handlers
 
 * Markdown file handler, rewriting image links
@@ -356,13 +424,11 @@ It features
 
 * JSON logins file, also reloadable
 
-* Handlers for login, changing password, login by hash
+* Handlers for login, changing password, login by hash ID
 
 * CSRF and XSS defence
 
 * Site layout template with jQuery from CDN cache; fallback to localhost
-
-* Multi language strings
 
 * Templates having access to session and request
 

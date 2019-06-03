@@ -124,7 +124,7 @@ func (s *surveyT) HTMLForm(questTypes []string) string {
 
 			<span>Year     </span><input type="text" name="year"      value="%v"  /> <br>
 	 		<span>Month    </span><input type="text" name="month"     value="%v"  /> <br>
-			<span>Deadline </span><input type="text" name="deadline"  value="%v" placeholder="dd.mm.yyyy hh:mm" /> '01.01.2030 00:00' for indefinite   <br>
+			<span>Deadline </span><input type="text" name="deadline"  value="%v" placeholder="dd.mm.yyyy hh:mm" /> <br> 01.01.2030 00:00 for indefinite   <br>
 
 			%v
 
@@ -133,6 +133,7 @@ func (s *surveyT) HTMLForm(questTypes []string) string {
 
 		<script> document.getElementById('submit').focus(); </script>
 
+			%v
 			%v
 			%v
 		`
@@ -165,13 +166,13 @@ func (s *surveyT) HTMLForm(questTypes []string) string {
 	}
 
 	link1 := fmt.Sprintf(
-		"<a href='%v/generate-hashes?survey_id=%v&wave_id=%v' target='_blank' >Generate hash logins</a><br>",
-		cfg.Pref(), s.Type, s.WaveID(),
+		"<a href='%v/generate-hashes?survey_id=%v&wave_id=%v&p=%v' target='_blank' >Generate hash logins</a> - securing login with a base64 encoded MD5 hash<br>",
+		cfg.Pref(), s.Type, s.WaveID(), "1",
 	)
-	// link2 := fmt.Sprintf(
-	// 	"<a href='%v/direct-login/generate?start=1000&stop=1020' target='_blank' >Generate direct logins</a><br>",
-	// 	cfg.Pref(),
-	// )
+	link2 := fmt.Sprintf(
+		"<a href='%v/generate-hash-ids?start=1000&stop=1020' target='_blank' >Generate hash IDs for direct login</a> - ultra short login URL - requires matching DirectLoginRanges in config<br>",
+		cfg.Pref(),
+	)
 	link3 := fmt.Sprintf(
 		"<a href='%v/shufflings-to-csv?start=1000&stop=1020' target='_blank' >Shufflings to CSV</a><br>",
 		cfg.Pref(),
@@ -185,6 +186,7 @@ func (s *surveyT) HTMLForm(questTypes []string) string {
 		s.Deadline.Format("02.01.2006 15:04"),
 		kv,
 		link1,
+		link2,
 		link3,
 	)
 	return ret

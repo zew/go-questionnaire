@@ -123,8 +123,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		"it",
 		"es",
 		"pl",
-	}
-	q.LangCode = "" // No default; forces usage of UserLangCode()
+	} // governs default language code
 
 	q.Survey.Org = trl.S{
 		"de": "  ",

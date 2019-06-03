@@ -3,67 +3,81 @@ import time
 import requests
 import sys
 
+print("Set is_production to True")
+time.sleep(3)
+
 
 # stackoverflow.com/questions/16181121/
 
 # 'dev.zew.de' should point to your development server - i.e. localhost
 urlBase = "https://dev.zew.de:8081/survey"
-pathLogin = "/direct/"
+pathLogin = "/d/"
 
 urls = [
-    # French
-    urlBase + pathLogin + "22R38",
-    urlBase + pathLogin + "22S39",
-    urlBase + pathLogin + "22T3A",
-    urlBase + pathLogin + "22U3B",
-    urlBase + pathLogin + "22V3C",
-    urlBase + pathLogin + "22W3D",
-    urlBase + pathLogin + "22X3E",
-    urlBase + pathLogin + "22Y3F",
-    urlBase + pathLogin + "22Z3G",
-    urlBase + pathLogin + "2323H",
-    urlBase + pathLogin + "2333K",
-    urlBase + pathLogin + "2343L",
-    urlBase + pathLogin + "2353M",
-    urlBase + pathLogin + "2363N",
-    urlBase + pathLogin + "2373P",
-    urlBase + pathLogin + "2383R",
-    urlBase + pathLogin + "2393S",
-    urlBase + pathLogin + "23A3T",
-    urlBase + pathLogin + "23B3U",
-    urlBase + pathLogin + "23C3V",
-    urlBase + pathLogin + "23D3W",
-    urlBase + pathLogin + "23E3X",
-    urlBase + pathLogin + "23F3Y",
-    urlBase + pathLogin + "23G3Z",
-    urlBase + pathLogin + "23H42",
-    urlBase + pathLogin + "23K43",
-    urlBase + pathLogin + "23L44",
-    urlBase + pathLogin + "23M45",
-    urlBase + pathLogin + "23N46",
-    urlBase + pathLogin + "23P47",
-    urlBase + pathLogin + "23R48",
-    urlBase + pathLogin + "23S49",
-    urlBase + pathLogin + "23T4A",
-    urlBase + pathLogin + "23U4B",
-    urlBase + pathLogin + "23V4C",
-    urlBase + pathLogin + "23W4D",
-    # Germans
-    urlBase + pathLogin + "2NANT",
-    urlBase + pathLogin + "2NBNU",
-    # Belgians - English
-    urlBase + pathLogin + "3FHG2",
-    urlBase + pathLogin + "3FKG3",
-    # Spaniards
-    urlBase + pathLogin + "3NGNZ",
-    urlBase + pathLogin + "3NHP2",
-    # Italians
-    urlBase + pathLogin + "3YGYZ",
-    urlBase + pathLogin + "3YHZ2",
-    # Poles
-    urlBase + pathLogin + "44U5B",
-    urlBase + pathLogin + "44V5C",
+    urlBase + pathLogin + "RZWPB7",
+    urlBase + pathLogin + "7P8GA7",
+    urlBase + pathLogin + "7EWV87",
+    urlBase + pathLogin + "74D457",
+    urlBase + pathLogin + "7K9MX7",
+    urlBase + pathLogin + "RW3NDR",
+    urlBase + pathLogin + "RDYKB7",
+    urlBase + pathLogin + "RYNZM7",
+    urlBase + pathLogin + "RXB58R",
+    urlBase + pathLogin + "R9XZW7",
+    urlBase + pathLogin + "RB6M6R",
+    urlBase + pathLogin + "R3GYWR",
+    urlBase + pathLogin + "75ZYPR",
+    urlBase + pathLogin + "76PY67",
+    urlBase + pathLogin + "7GZ99R",
+    urlBase + pathLogin + "RAXMZ7",
+    urlBase + pathLogin + "RLBPER",
+    urlBase + pathLogin + "7N84Z7",
+    urlBase + pathLogin + "7M8E3R",
+    urlBase + pathLogin + "784YX7",
+    urlBase + pathLogin + "RV43YR",
+    urlBase + pathLogin + "7ZW5BR",
+    urlBase + pathLogin + "RP8WAR",
+    urlBase + pathLogin + "REWA8R",
+    urlBase + pathLogin + "R4DG5R",
+    urlBase + pathLogin + "RK9ZXR",
+    urlBase + pathLogin + "7W39D7",
+    urlBase + pathLogin + "7DYMBR",
+    urlBase + pathLogin + "7YN8MR",
+    urlBase + pathLogin + "7XBE87",
+    urlBase + pathLogin + "79X3WR",
+    urlBase + pathLogin + "7B6P67",
+    urlBase + pathLogin + "73G9W7",
+    urlBase + pathLogin + "R5Z9P7",
+    urlBase + pathLogin + "R6PL6R",
+    urlBase + pathLogin + "RGZD97",
+    urlBase + pathLogin + "7AXZZR",
+    urlBase + pathLogin + "7LBLE7",
+    urlBase + pathLogin + "RN8VZR",
+    urlBase + pathLogin + "RM8L37",
+    urlBase + pathLogin + "R849XR",
+    urlBase + pathLogin + "7V4ZY7",
+    urlBase + pathLogin + "RZWKB7",
+    urlBase + pathLogin + "7P85A7",
+    urlBase + pathLogin + "7EWK87",
+    urlBase + pathLogin + "74DL57",
+    urlBase + pathLogin + "7K9LX7",
+    urlBase + pathLogin + "RW3PDR",
+    urlBase + pathLogin + "RDY4B7",
+    urlBase + pathLogin + "RYN4M7",
+    urlBase + pathLogin + "RXBD8R",
+    urlBase + pathLogin + "R9XBW7",
+    urlBase + pathLogin + "RB6Z6R",
+    urlBase + pathLogin + "R3G6WR",
+    urlBase + pathLogin + "75ZLPR",
+    urlBase + pathLogin + "76PB67",
+    urlBase + pathLogin + "7GZW9R",
+    urlBase + pathLogin + "RAXNZ7",
+    urlBase + pathLogin + "RLBEER",
+    urlBase + pathLogin + "7N8KZ7",
 ]
+
+
+
 
 
 def printResponseData(url, req, testString):

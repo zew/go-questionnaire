@@ -1,6 +1,8 @@
 package min
 
 import (
+	"fmt"
+
 	"github.com/zew/go-questionnaire/qst"
 	"github.com/zew/go-questionnaire/trl"
 )
@@ -12,8 +14,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	q.Survey = qst.NewSurvey("min")
 	q.Survey.Params = params
 	q.LangCodes = map[string]string{"de": "Deutsch", "en": "English"}
-	q.LangCodesOrder = []string{"en", "de"}
-	q.LangCode = "de"
+	q.LangCodesOrder = []string{"en", "de"} // governs default language code
+
 	q.Survey.Org = trl.S{"de": "ZEW", "en": "ZEW"}
 	q.Survey.Name = trl.S{"de": "Beispielumfrage", "en": "Example survey"}
 
@@ -21,7 +23,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		page := q.AddPage()
 		gr := page.AddGroup()
 		inp := gr.AddInput()
-		inp.Name = "name"
+		inp.Name = fmt.Sprintf("name%v", i1)
 		inp.Type = "text"
 		inp.Label = trl.S{"de": "Vorname", "en": "first name"}
 	}

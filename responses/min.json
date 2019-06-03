@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "7bc324495e61b1223069c25a82a89f4c",
+ 	"md_5": "30ba7074409e8a56e8992daf0b4e1fb3",
  	"lang_codes": {
  		"de": "Deutsch",
  		"en": "English"
@@ -30,43 +30,97 @@
  		"en",
  		"de"
  	],
- 	"lang_code": "de",
+ 	"max_groups": 1,
  	"pages": [
  		{
  			"label": {
- 				"de": "Seitentitel_25",
- 				"en": "PageLabel_25"
+ 				"de": "Seitentitel_1",
+ 				"en": "PageLabel_1"
  			},
  			"description": {
  				"de": "",
  				"en": ""
  			},
- 			"navi_num": 0,
- 			"finished": "0001-01-01T00:00:00Z"
+ 			"navi_num": 1,
+ 			"width": 100,
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_half_vspacers": 3,
+ 					"odd_rows_coloring": false,
+ 					"width": 100,
+ 					"inputs": [
+ 						{
+ 							"name": "name0",
+ 							"type": "text",
+ 							"label": {
+ 								"de": "Vorname",
+ 								"en": "first name"
+ 							}
+ 						}
+ 					]
+ 				}
+ 			]
  		},
  		{
  			"label": {
- 				"de": "Seitentitel_26",
- 				"en": "PageLabel_26"
+ 				"de": "Seitentitel_2",
+ 				"en": "PageLabel_2"
  			},
  			"description": {
  				"de": "",
  				"en": ""
  			},
- 			"navi_num": 0,
- 			"finished": "0001-01-01T00:00:00Z"
+ 			"navi_num": 2,
+ 			"width": 100,
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_half_vspacers": 3,
+ 					"odd_rows_coloring": false,
+ 					"width": 100,
+ 					"inputs": [
+ 						{
+ 							"name": "name1",
+ 							"type": "text",
+ 							"label": {
+ 								"de": "Vorname",
+ 								"en": "first name"
+ 							}
+ 						}
+ 					]
+ 				}
+ 			]
  		},
  		{
  			"label": {
- 				"de": "Seitentitel_27",
- 				"en": "PageLabel_27"
+ 				"de": "Seitentitel_3",
+ 				"en": "PageLabel_3"
  			},
  			"description": {
  				"de": "",
  				"en": ""
  			},
- 			"navi_num": 0,
- 			"finished": "0001-01-01T00:00:00Z"
+ 			"navi_num": 3,
+ 			"width": 100,
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_half_vspacers": 3,
+ 					"odd_rows_coloring": false,
+ 					"width": 100,
+ 					"inputs": [
+ 						{
+ 							"name": "name2",
+ 							"type": "text",
+ 							"label": {
+ 								"de": "Vorname",
+ 								"en": "first name"
+ 							}
+ 						}
+ 					]
+ 				}
+ 			]
  		}
  	]
  }

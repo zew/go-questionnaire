@@ -15,6 +15,7 @@ import (
 	"github.com/zew/go-questionnaire/cfg"
 	"github.com/zew/go-questionnaire/sessx"
 	"github.com/zew/util"
+	// hashids
 )
 
 // LogoutH is a convenience handler to logout via http request
@@ -257,7 +258,36 @@ func LoginByHash(w http.ResponseWriter, r *http.Request) (bool, error) {
 		return false, err
 	}
 
-	if _, isSet := r.Form["u"]; !isSet { // Form has GET *and* POST values
+	if _, isSet := r.Form["u"]; !isSet { // Form contains GET *and* POST values
+		if _, isSet := r.Form["h"]; isSet {
+			// hash is set - but userId is not
+			userID := HashIDDecodeFirst(r.Form.Get("h"))
+			log.Printf("Trying hash-id login %v %v", r.Form.Get("h"), userID)
+			if userID > 0 {
+				for _, dlr := range cfg.Get().DirectLoginRanges {
+					if userID >= dlr.Start && userID <= dlr.Stop {
+						log.Printf("Direct range login for user %v - %+v", userID, dlr)
+						l := LoginT{}
+						l.User = fmt.Sprintf("%v", userID)
+						l.IsInitPassword = false // roles become effective only for non init passwords
+						l.Roles = map[string]string{}
+						l.Attrs = map[string]string{}
+						l.Attrs["survey_id"] = dlr.SurveyID
+						l.Attrs["wave_id"] = dlr.WaveID
+						for pk, pv := range dlr.Profile {
+							l.Attrs[pk] = pv
+						}
+						err = sess.PutObject("login", l)
+						if err != nil {
+							return false, err
+						}
+						log.Printf("login saved to session as %T from loginByHash", l)
+						return true, nil
+					}
+				}
+
+			}
+		}
 		return false, nil
 	}
 
@@ -267,7 +297,7 @@ func LoginByHash(w http.ResponseWriter, r *http.Request) (bool, error) {
 
 	l := LoginT{}
 	l.User = u
-	l.IsInitPassword = false // remembrance: only then do roles become effective
+	l.IsInitPassword = false // roles become effective only for non init passwords
 	l.Roles = map[string]string{}
 	l.Attrs = map[string]string{}
 
@@ -297,12 +327,22 @@ func LoginByHash(w http.ResponseWriter, r *http.Request) (bool, error) {
 		// attrs=country:Sweden&attrs=height:176
 		if val, ok := userAttrs[key]; ok {
 			if key == "attrs" {
-				for i := 0; i < len(r.Form[key]); i++ { // instead of val := r.Form.Get(key)
-					val := r.Form[key][i]
-					kv := strings.Split(val, ":")
-					if len(kv) == 2 {
-						l.Attrs[kv[0]] = kv[1]
-					}
+				// for i := 0; i < len(r.Form[key]); i++ { // instead of val := r.Form.Get(key)
+				// 	val := r.Form[key][i]
+				// 	kv := strings.Split(val, ":")
+				// 	if len(kv) == 2 {
+				// 		l.Attrs[kv[0]] = kv[1]
+				// 	}
+			} else if key == "p" {
+				profileKey := r.Form.Get("sid") + r.Form.Get(key)
+				prof, ok := cfg.Get().Profiles[profileKey]
+				if !ok {
+					log.Printf("Did not find profile %v", profileKey)
+					continue
+				}
+				for pk, pv := range prof {
+					log.Printf("\tprofile to attr key-val  %-20v - %v", pk, pv)
+					l.Attrs[pk] = pv
 				}
 			} else {
 				l.Attrs[val] = r.Form.Get(key)
@@ -320,7 +360,7 @@ func LoginByHash(w http.ResponseWriter, r *http.Request) (bool, error) {
 	return true, nil
 }
 
-// GenerateHashesH is a convenience func to lookup some hashes.
+// GenerateHashesH is a admin UI to create login hashes for specific survey and user profile.
 // See LoginByHash() for the construction of the check string.
 func GenerateHashesH(w http.ResponseWriter, r *http.Request) {
 
@@ -381,16 +421,25 @@ func GenerateHashesH(w http.ResponseWriter, r *http.Request) {
 			Stop 	    <input name="stop"        type="text"     value="{{.Stop}}" ><br>
 		<br>
 
+		User profile<br>
+			Profile 	<input name="p"           type="text"     value="{{.Profile}}"><br>
+		<br>
+
+		<!--
+		<hr>
+		<i>deprecated; use profile above</i>
+
 		Init language<br>
 			Lang 	    <input name="lang_code"  type="text"     value="{{.LangCode}}"><br>
 		<br>
+
 
 		Login attributes key:val <br>
 			Attr 	    <input name="attrs"       type="text"     value="{{index .Attrs 0}}"><br>
 			Attr 	    <input name="attrs"       type="text"     value="{{index .Attrs 1}}"><br>
 			Attr 	    <input name="attrs"       type="text"     value="{{index .Attrs 2}}"><br>
 		<br>
-
+		-->
 
 		<input type="submit" name="submitclassic" id="submit" value="submit" accesskey="s"><br>
 		<script> document.getElementById('submit').focus(); </script>
@@ -412,14 +461,16 @@ func GenerateHashesH(w http.ResponseWriter, r *http.Request) {
 
 		ErrMsg string `json:"err_msg"`
 
-		SurveyID      string `json:"survey_id"`
-		WaveID        string `json:"wave_id"`
-		Start         int    `json:"start"`
-		Stop          int    `json:"stop"`
-		SubmitClassic string `json:"submitclassic"`
+		SurveyID string `json:"survey_id"`
+		WaveID   string `json:"wave_id"`
+		Start    int    `json:"start"`
+		Stop     int    `json:"stop"`
+		Profile  string `json:"p"`
 
 		LangCode string   `json:"lang_code"`
 		Attrs    []string `json:"attrs"`
+
+		SubmitClassic string `json:"submitclassic"`
 
 		Links template.HTML `json:"links"`
 		List  string        `json:"list"`
@@ -463,7 +514,7 @@ func GenerateHashesH(w http.ResponseWriter, r *http.Request) {
 	b2 := &bytes.Buffer{}
 	for i := fe.Start; i < fe.Stop; i++ {
 
-		queryString := Query(fmt.Sprintf("%v", i), fe.SurveyID, fe.WaveID)
+		queryString := Query(fmt.Sprintf("%v", i), fe.SurveyID, fe.WaveID, fe.Profile)
 		if fe.LangCode != "" {
 			queryString += "&lang_code=" + fe.LangCode
 		}
@@ -501,6 +552,116 @@ func GenerateHashesH(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		fmt.Fprintf(w, "Error executing inline template: %v", err)
 	}
+
+}
+
+// ReloadH removes the existing questioniare from the session,
+// reading it anew from the questionnaire template JSON file,
+// allowing to start anew
+func ReloadH(w http.ResponseWriter, r *http.Request) {
+
+	sess := sessx.New(w, r)
+
+	log.Printf("reset start")
+
+	_, err := LoginByHash(w, r)
+	if err != nil {
+		log.Printf("Login by hash error 1: %v", err)
+		// Don't show the revealing original error
+		s := cfg.Get().Mp["login_by_hash_failed"].All()
+		s += "LoginByHash error."
+		log.Print(s)
+		w.Write([]byte(s))
+		return
+	}
+	l, isLoggedIn, err := LoggedInCheck(w, r)
+	if err != nil {
+		log.Printf("Login by hash error 2: %v", err)
+		s := cfg.Get().Mp["login_by_hash_failed"].All()
+		s += "LoggedInCheck error."
+		log.Print(s)
+		w.Write([]byte(s))
+		return
+	}
+	if !isLoggedIn {
+		log.Printf("Login by hash error 3: %v", "not logged in")
+		s := cfg.Get().Mp["login_by_hash_failed"].All()
+		s += "You are not logged in."
+		log.Print(s)
+		w.Write([]byte(s))
+		return
+	}
+
+	w.Header().Set("Content-Type", "text/html; charset=utf-8")
+
+	msg := ""
+	if r.Method == "POST" {
+		l.DeleteFiles()
+		sess.Remove("questionnaire")
+		log.Printf("removed quest session")
+		msg = "User files deleted. Questionnaire deleted from session."
+	} else {
+		msg = "Not a POST request. No delete action taken."
+	}
+
+	relForm := r.Form // relevant Form
+	if len(r.PostForm) > 5 {
+		relForm = r.PostForm
+	}
+
+	attrsStr := ""
+	for _, val := range relForm["attrs"] {
+		if val != "" {
+			attrsStr += fmt.Sprintf("<input type=\"text\" name=\"attrs\" value=\"%v\" /> <br>\n", val)
+		}
+	}
+
+	fmt.Fprintf(w, `
+	<html>
+		<head></head>
+		<body>
+			<b>%v<b>
+			<form method="POST" class="survey-edit-form" >
+					<input type="text"   name="u"                   value="%v"   /> <br>
+					<input type="text"   name="sid"                 value="%v"   /> <br>
+					<input type="text"   name="wid"                 value="%v"   /> <br>
+					<input type="text"   name="p"                   value="%v"   /> <br>
+					<input type="text"   name="h"    size=40        value="%v"   /> <br>
+		lang code	<input type="text"   name="lang_code"  size=6   value="%v"   /> <br>
+					%v
+					<input type="submit" name="submit" id="submit"  value="Submit" accesskey="s"  /> <br>
+			</form>
+			<script> document.getElementById('submit').focus(); </script>
+				
+		</body>
+	</html>
+
+		`,
+		msg,
+		l.User,
+		l.Attrs["survey_id"],
+		l.Attrs["wave_id"],
+		relForm.Get("p"),
+		relForm.Get("h"),
+		relForm.Get("lang_code"),
+		attrsStr,
+	)
+
+	queryString := Query(
+		relForm.Get("u"), relForm.Get("sid"), relForm.Get("wid"), relForm.Get("p"), relForm.Get("h"),
+	)
+	if relForm.Get("lang_code") != "" {
+		queryString += "&lang_code=" + relForm.Get("lang_code")
+	}
+	for _, attr := range relForm["attrs"] {
+		if attr != "" {
+			queryString += "&attrs=" + attr
+		}
+	}
+
+	url := fmt.Sprintf("%v?%v", cfg.PrefWTS(), queryString)
+
+	fmt.Fprintf(w, "<a href='%v'  target='_blank'>Start questionnaire (again)<a> <br> ", url)
 
 }
 

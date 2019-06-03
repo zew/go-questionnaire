@@ -66,21 +66,25 @@ func main() {
 	}
 
 	//
-	// Administrative handlers
+	// Administrative handlers - common
 	mux1.HandleFunc(cfg.Pref("/session-put"), sessx.SessionPut)
 	mux1.HandleFunc(cfg.Pref("/session-get"), sessx.SessionGet)
 	mux1.HandleFunc(cfg.Pref("/config-reload"), cfg.LoadH)
+	mux1.HandleFunc(cfg.Pref("/templates-reload"), tpl.ParseH)
+	// Login primitives
 	mux1.HandleFunc(cfg.Pref("/login-primitive"), lgn.LoginPrimitiveH)
 	mux1.HandleFunc(cfg.Pref("/change-password-primitive"), lgn.ChangePasswordPrimitiveH)
+	// Workflow - logins for survey
+	mux1.HandleFunc(cfg.Pref("/generate-questionnaire-templates"), generators.SurveyGenerate)
+	mux1.HandleFunc(cfg.Pref("/generate-hashes"), lgn.GenerateHashesH)
+	mux1.HandleFunc(cfg.Pref("/generate-hash-ids"), lgn.GenerateHashIDs)
+	mux1.HandleFunc(cfg.Pref("/reload-from-questionnaire-template"), lgn.ReloadH)
+	mux1.HandleFunc(cfg.PrefWTS("/reload-from-questionnaire-template"), lgn.ReloadH)
+	mux1.HandleFunc(cfg.Pref("/shufflings-to-csv"), lgn.ShufflesToCSV)
+	// Rare login funcs
 	mux1.HandleFunc(cfg.Pref("/logins-save"), lgn.SaveH)
 	mux1.HandleFunc(cfg.Pref("/logins-reload"), lgn.LoadH)
 	mux1.HandleFunc(cfg.Pref("/generate-password"), lgn.GeneratePasswordH)
-	mux1.HandleFunc(cfg.Pref("/generate-hashes"), lgn.GenerateHashesH)
-	mux1.HandleFunc(cfg.Pref("/shufflings-to-csv"), lgn.ShufflesToCSV)
-	mux1.HandleFunc(cfg.Pref("/templates-reload"), tpl.ParseH)
-	mux1.HandleFunc(cfg.Pref("/generate-questionnaire-templates"), generators.SurveyGenerate)
-	mux1.HandleFunc(cfg.Pref("/reload-from-questionnaire-template"), handlers.ReloadH)
-	mux1.HandleFunc(cfg.PrefWTS("/reload-from-questionnaire-template"), handlers.ReloadH)
 
 	//
 	// App specific
@@ -89,6 +93,7 @@ func main() {
 		mux1.HandleFunc(cfg.Pref("/"), handlers.MainH)
 		mux1.HandleFunc(cfg.PrefWTS("/"), handlers.MainH)
 	}
+	mux1.HandleFunc(cfg.PrefWTS("/d"), handlers.LoginByHashID)
 	mux1.HandleFunc(cfg.Pref("/transferrer-endpoint"), handlers.TransferrerEndpointH)
 
 	//
@@ -122,7 +127,6 @@ func main() {
 
 	//
 	if cfg.Get().TLS {
-
 		// stackoverflow.com/questions/37321760
 		certManager := autocert.Manager{
 			Prompt:     autocert.AcceptTOS,

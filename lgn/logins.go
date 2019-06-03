@@ -1,9 +1,11 @@
 // Package lgn implements an internal login database;
 // users are stored in a JSON file;
-// contains convenience handlers for user retrieval and password change.
+// contains convenience handlers for user retrieval and password change;
+// contains login by hashed url and login by hash id;
+// contains profiles - groups of attributes for users.
 // Filename must be given as command line argument
 // or environment variable.
-// Access to the logins data is made in threadsafe manner.
+// Access to the logins data is threadsafe.
 package lgn
 
 import (
@@ -52,13 +54,13 @@ var exempted = map[string]interface{}{
 // userAttrs contains URL params going into LoginT.Attrs
 // upon login.
 // They serve as a property bag session.
-// Key is the short form - from the URL. Val is the long form.
+// Key is the short form - from the URL. Val is the long form to be saved as login attrs
 // LoginT methods Query(), LoginURL() and partly QuestPath() tie into this logic.
 var userAttrs = map[string]string{
 	"sid": "survey_id",
 	"wid": "wave_id",
 	"p":   "profile", // user profile, replaces attrs
-	"a":   "attrs",   // general purpose - can occur several times - key:value - or a profile id
+	// "a":   "attrs",   // general purpose - can occur several times - key:value - or a profile id
 }
 
 // LoginT must be exported, *not* because we need to pass a type to sessx.GetObject
@@ -90,9 +92,11 @@ func init() {
 // Query returns a query fragment,
 // using the expected param names u, sid, wid, h
 // See also userAttrs{}
-func Query(userName, surveyID, waveID string, optHash ...string) string {
+func Query(userName, surveyID, waveID, profile string, optHash ...string) string {
 
-	checkStr := fmt.Sprintf("%v-%v-%v-%v", surveyID, userName, waveID, Get().Salt)
+	// Needs to be in alphabetic order of keys
+	// p-sid-u-wid  then salt
+	checkStr := fmt.Sprintf("%v-%v-%v-%v-%v", profile, surveyID, userName, waveID, Get().Salt)
 	hsh := ""
 	if len(optHash) == 0 {
 		hsh = Md5Str([]byte(checkStr))
@@ -100,14 +104,14 @@ func Query(userName, surveyID, waveID string, optHash ...string) string {
 		hsh = optHash[0]
 	}
 
-	loginURL := fmt.Sprintf("u=%v&sid=%v&wid=%v&h=%v", userName, surveyID, waveID, hsh)
+	loginURL := fmt.Sprintf("u=%v&sid=%v&wid=%v&p=%v&h=%v", userName, surveyID, waveID, profile, hsh)
 	return loginURL
 
 }
 
 // LoginURL returns a URL plus a query fragment,
-func LoginURL(userName, surveyID, waveID string, optHash ...string) string {
-	loginURL := fmt.Sprintf("%v?%v", cfg.PrefWTS(), Query(userName, surveyID, waveID, optHash...))
+func LoginURL(userName, surveyID, waveID, profile string, optHash ...string) string {
+	loginURL := fmt.Sprintf("%v?%v", cfg.PrefWTS(), Query(userName, surveyID, waveID, profile, optHash...))
 	return loginURL
 
 }
@@ -517,7 +521,25 @@ func GeneratePwFromChars(chars []byte, length int) string {
 	// panic("something wrong with password generation 2")  // golint says "unreachable"
 }
 
-// Md5Str computes the md5 hash of a byte slice.
+// Md5Str computes the MD5 hash of a byte slice;
+// MD5 consists 16 bytes of number.
+// We encode these 16 bytes into a Base64 encoded string suitable for URLs.
+// Such Base64-for-URL encoded MD5 hash consist of 23 characters.
+//
+// Now we want to reduce that length to get short login URLs.
+// The safe line length for emails is 70 character.
+// stackoverflow.com/questions/11794698 suggests maximum size of 70 or 76 characters
+//
+// We can simply cut off some of the 23 characters,
+// since MD5 has good avalanching properties.
+//
+// For questionnaires without large monetary rewards,
+// a hash length of 5 => 64^^5 = 1.073.741.824 combinations is
+// sufficient to discourage brute force attacks.
+//
+// Our URL now has 64 characters:
+// https://survey2.zew.de/?u=1000&sid=fmt&wid=2019-06&h=57I7U&p=12
+//
 func Md5Str(buf []byte) string {
 	pfx := cfg.Get().URLPathPrefix
 	if pfx == "taxkit" || pfx == "eta" {
@@ -534,19 +556,7 @@ func Md5Str(buf []byte) string {
 
 	// ret := hex.EncodeToString(hshBytes)
 	// ret = base64.URLEncoding.EncodeToString(hshBytes)
-	return base64.RawURLEncoding.EncodeToString(hshBytes) // no trailing equal signs
-}
-
-// Md5Equality compares the prefixes of two hashes for equality.
-// Base64 for URL encoded MD5 hashes consist of 23 characters.
-// The safe line length for emails is 70 character.
-// stackoverflow.com/questions/11794698 suggests maximum size of 70 or 76 characters
-// For normal questionnaires, a hash length of 5 => 64^^5 = 1.073.741.824 combinations is sufficient.
-//
-// Our URL then is 63 characters:
-// https://surve2.zew.de/?u=1000&sid=fmt&wid=2019-06&h=57I7U&p=12
-func Md5Equality(a, b string) bool {
-	return true
+	return base64.RawURLEncoding.EncodeToString(hshBytes)[:5] // no trailing equal signs
 }
 
 // Example writes a single login to file, to be extended or adapted

@@ -198,41 +198,36 @@
  			"pl": "Tak"
  		}
  	},
- 	"user_id_to_language": {
- 		"1": "fr",
- 		"10000000": "it",
- 		"1305": "en",
- 		"1326": "en",
- 		"1343": "en",
- 		"1349": "en",
- 		"1370": "de",
- 		"1466": "en",
- 		"1479": "en",
- 		"1484": "es",
- 		"1538": "en",
- 		"1551": "fr",
- 		"1625": "en",
- 		"1690": "en",
- 		"1711": "en",
- 		"1722": "en",
- 		"1743": "en",
- 		"1754": "it",
- 		"1828": "en",
- 		"1834": "en",
- 		"1835": "en",
- 		"1840": "en",
- 		"1845": "en",
- 		"1852": "en",
- 		"1858": "en",
- 		"1884": "pl",
- 		"1935": "en",
- 		"1956": "en",
- 		"1988": "en",
- 		"2008": "en",
- 		"2016": "en",
- 		"2030": "en",
- 		"2037": "fr",
- 		"2384": "it",
- 		"578": "de"
- 	}
+ 	"Profiles": {
+ 		"fmt1": {
+ 			"lang_code": "de",
+ 			"main_refinance_rate_ecb": "3.5"
+ 		},
+ 		"fmt2": {
+ 			"lang_code": "en",
+ 			"main_refinance_rate_ecb": "3.5"
+ 		}
+ 	},
+ 	"direct_login_ranges": [
+ 		{
+ 			"start": 1000,
+ 			"stop": 1029,
+ 			"survey_id": "peu2018",
+ 			"wave_id": "2019-02",
+ 			"profile": {
+ 				"lang_code": "de",
+ 				"main_refinance_rate_ecb": "3.5"
+ 			}
+ 		},
+ 		{
+ 			"start": 1030,
+ 			"stop": 1059,
+ 			"survey_id": "peu2018",
+ 			"wave_id": "2019-02",
+ 			"profile": {
+ 				"lang_code": "en",
+ 				"main_refinance_rate_ecb": "3.5"
+ 			}
+ 		}
+ 	]
  }

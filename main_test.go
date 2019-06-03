@@ -100,7 +100,7 @@ func TestSystem(t *testing.T) {
 		waveID := q.Survey.WaveID()
 		t.Logf("\tquesionnaire type - survey-id: %v %v", surveyID, waveID)
 
-		loginURL := lgn.LoginURL(userName, surveyID, waveID)
+		loginURL := lgn.LoginURL(userName, surveyID, waveID, "")
 		t.Logf("\tLoginURL: %v", loginURL)
 
 		// Deadline exceeded?

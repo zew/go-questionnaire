@@ -109,8 +109,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	}
 	q.LangCodesOrder = []string{
 		"en",
-	}
-	q.LangCode = "en" // No default; forces usage of UserLangCode()
+	} // governs default language code
 
 	q.Survey.Org = trl.S{
 		"en": "  ",

@@ -5,14 +5,13 @@ import (
 	"html"
 	"log"
 	"net/http"
-	"os"
 	"path"
-	"path/filepath"
 	"strings"
 	"time"
 
 	"github.com/xojoc/useragent"
 	"github.com/zew/go-questionnaire/cfg"
+	"github.com/zew/go-questionnaire/cloudio"
 	"github.com/zew/go-questionnaire/lgn"
 	"github.com/zew/go-questionnaire/qst"
 	"github.com/zew/go-questionnaire/sessx"
@@ -37,23 +36,18 @@ func loadQuestionnaire(w http.ResponseWriter, r *http.Request, l *lgn.LoginT) (*
 
 	// from session
 	var q = &qst.QuestionnaireT{}
-	intf, qFound, err := sess.EffectiveObj("questionnaire")
+	ok, err := sess.EffectiveObj("questionnaire", q)
 	if err != nil {
 		err = errors.Wrap(err, "Reading questionnaire from session caused error")
 		return q, err
 	}
-	if qFound {
-		qp, ok := intf.(qst.QuestionnaireT)
-		if !ok {
-			return q, fmt.Errorf("Expected qst.QuestionnaireT, got %T %v", intf, intf)
-		}
-		q = &qp
+	if ok {
 		return q, nil
 	}
 
 	// from file
 	log.Printf("Deriving from login: survey_id %v, wave_id %v, user_id %v", l.Attrs["survey_id"], l.Attrs["wave_id"], l.User)
-	pthBase := filepath.Join(qst.BasePath(), l.Attrs["survey_id"]+".json")
+	pthBase := path.Join(qst.BasePath(), l.Attrs["survey_id"]+".json")
 	qBase, err := qst.Load1(pthBase)
 	if err != nil {
 		err = errors.Wrap(err, "Loading base questionnaire from template file caused error")
@@ -64,7 +58,7 @@ func loadQuestionnaire(w http.ResponseWriter, r *http.Request, l *lgn.LoginT) (*
 	log.Printf("Deriving path: %v", pth)
 	qSplit, err := qst.Load1(pth) // previous session
 	if err != nil {
-		if !os.IsNotExist(err) {
+		if !cloudio.IsNotExist(err) {
 			return q, err
 		}
 		log.Printf("No previous user questionnaire file %v found. Using base file.", pth)
@@ -157,7 +151,7 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	if ok && err == nil {
-		sess.Remove("questionnaire") // upon successful, possibly new login - remove previous questionnaire from session
+		sess.Remove(w, "questionnaire") // upon successful, possibly new login - remove previous questionnaire from session
 	}
 
 	l, isLoggedIn, err := lgn.LoggedInCheck(w, r)
@@ -188,7 +182,7 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	q, err := loadQuestionnaire(w, r, &l)
+	q, err := loadQuestionnaire(w, r, l)
 	if err != nil {
 		helper(w, r, err)
 		return
@@ -357,15 +351,6 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	//
-	// Save questionnaire to file
-	pth := q.FilePath1()
-	err = os.MkdirAll(filepath.Dir(pth), 0755)
-	if err != nil {
-		s := fmt.Sprintf("Could not create path %v", filepath.Dir(pth))
-		helper(w, r, err, s)
-		return
-	}
 	q2, _ := q.Split()
 	err = q2.Save1(l.QuestPath())
 	if err != nil {

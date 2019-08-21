@@ -47,7 +47,7 @@ Note: This file is necessary for go-questionnaire.test.exe binary to be generate
 import (
 	"io/ioutil"
 	"os"
-	"path/filepath"
+	"path"
 	"testing"
 	"time"
 
@@ -75,7 +75,7 @@ func TestSystem(t *testing.T) {
 
 	tplDir := "responses"
 
-	files, err := ioutil.ReadDir(filepath.Join(".", tplDir))
+	files, err := ioutil.ReadDir(path.Join(".", tplDir))
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -85,7 +85,7 @@ func TestSystem(t *testing.T) {
 		}
 		t.Logf("Found quesionnaire template %v", f.Name())
 
-		pth := filepath.Join(".", tplDir, f.Name())
+		pth := path.Join(".", tplDir, f.Name())
 		q, err := qst.Load1(pth)
 		if err != nil {
 			t.Fatalf("Could not load %v: %v", pth, err)

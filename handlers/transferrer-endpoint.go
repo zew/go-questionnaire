@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-	"path/filepath"
+	"path"
 	"time"
 
 	"github.com/zew/go-questionnaire/qst"
@@ -54,7 +54,7 @@ func TransferrerEndpointH(w http.ResponseWriter, r *http.Request) {
 		helper(w, r, nil, "You need to specify a wave_id parameter.")
 		return
 	}
-	pth := filepath.Join(qst.BasePath(), surveyID, waveID)
+	pth := path.Join(qst.BasePath(), surveyID, waveID)
 	dir, err := util.Directory(pth)
 	if err != nil {
 		helper(w, r, err, "Your wave_id value pointed to a non existing directory.")
@@ -84,7 +84,7 @@ func TransferrerEndpointH(w http.ResponseWriter, r *http.Request) {
 				log.Printf("iter %3v: Name: %v, Size: %v", i, info.Name(), info.Size())
 			}
 		}
-		pth := filepath.Join(qst.BasePath(), surveyID, waveID, info.Name())
+		pth := path.Join(qst.BasePath(), surveyID, waveID, info.Name())
 		// var q = &qst.QuestionnaireT{}
 		q, err := qst.Load1(pth)
 		if err != nil {

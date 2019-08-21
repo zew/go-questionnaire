@@ -16,12 +16,12 @@ setenv*.bat
 !setenv_example.bat
 !setenv_example.sh
 *.json
+*.json.attrs
 !config-example.json
 !logins-example.json
-!remote-additional-example.json
 # exclude everything under responses - but include direct children *.json
-responses/**
-!responses/*.json
+app-bucket/responses/**
+!app-bucket/responses/*.json
 coverage.html
 tmp/*
 tmp*

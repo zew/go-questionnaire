@@ -1,56 +1,29 @@
 // Package sessx reads effective parameter values
-// from GET, POST and SESSION.
+// from get, post and session.
 // It also reads consolidated request params (GET, POST).
-// Alex Edwards has changed the API three times now.
 package sessx
 
 import (
 	"fmt"
+	"log"
 	"net/http"
 	"strconv"
 	"time"
 
-	"go.etcd.io/bbolt"
+	"github.com/zew/util"
 
 	"github.com/alexedwards/scs"
-	"github.com/alexedwards/scs/boltstore"
-	"github.com/alexedwards/scs/memstore"
+	"github.com/alexedwards/scs/stores/cookiestore" // encrypted cookie
+	"github.com/alexedwards/scs/stores/memstore"    // fast, but sessions do not survive server restart
 )
 
-var sessionManager = scs.NewSession()
-
-func init() {
-
-	//
-	var store1 scs.Store
-	if false {
-		var db *bbolt.DB
-		store1 = boltstore.NewWithCleanupInterval(db, 20*time.Second)
-	}
-
-	store2 := memstore.New()
-	//
-	// defer store2.StopCleanup()
-	sessionManager.Store = store1
-	sessionManager.Store = store2
-
-	if false {
-		// These are examples
-		// Values should be set in main()
-		sessionManager.Lifetime = 3 * time.Hour
-		sessionManager.IdleTimeout = 20 * time.Minute
-		sessionManager.Cookie.HttpOnly = true
-		sessionManager.Cookie.Domain = "example.com" // default is ""
-		sessionManager.Cookie.Path = "/example/"     // default is "/"
-		sessionManager.Cookie.Persist = true
-		sessionManager.Cookie.SameSite = http.SameSiteStrictMode
-		// sessionManager.Cookie.Secure = true
-	}
-
-}
+var key = "fG+sVjCMKEn6F7ANZLg5tXg9bzzvS!A3bx8" // lgn.GeneratePassword(35)
+var sessionManager1 = scs.NewManager(cookiestore.New([]byte(key)))
+var sessionManager2 = scs.NewManager(memstore.New(2 * time.Hour))
+var sessionManager = sessionManager2
 
 // Mgr exposes the session manager
-func Mgr() *scs.Session {
+func Mgr() *scs.Manager {
 	return sessionManager
 }
 
@@ -63,22 +36,12 @@ type SessT struct {
 
 // New returns a new enhanced session variable.
 func New(w http.ResponseWriter, r *http.Request) SessT {
-	// sess := sessionManager.Load(r)
+	sess := sessionManager.Load(r)
 	return SessT{
 		w:       w,
 		r:       r,
-		Session: *sessionManager,
+		Session: *sess,
 	}
-}
-
-// Clear removes all keys
-func (sess *SessT) Clear() {
-	sess.Session.Destroy(sess.r.Context())
-}
-
-// Remove removes a specific key
-func (sess *SessT) Remove(key string) {
-	sess.Session.Remove(sess.r.Context(), key)
 }
 
 // EffectiveIsSet checks, whether a key is set.
@@ -100,11 +63,12 @@ func (sess *SessT) EffectiveIsSet(key string) bool {
 	}
 
 	// Session was set, but with empty string?
-	exists := sess.Exists(sess.r.Context(), key)
-	// log.Printf("Checking   key  %-14v - exists %v", key, exists)
+	exists, err := sess.Exists(key)
+	util.CheckErr(err)
 	if exists {
 		return true
 	}
+
 	return false
 
 }
@@ -122,9 +86,11 @@ func (sess *SessT) EffectiveStr(key string, defaultVal ...string) string {
 
 	// Session
 	// Session was set, but with empty string?
-	exists := sess.Exists(sess.r.Context(), key)
+	exists, err := sess.Exists(key)
+	util.CheckErr(err)
 	if exists {
-		p := sess.GetString(sess.r.Context(), key)
+		p, err := sess.GetString(key)
+		util.CheckErr(err)
 		return p
 	}
 
@@ -195,39 +161,44 @@ func (sess *SessT) EffectiveFloat(key string, defaultVal ...float64) (float64, b
 }
 
 // EffectiveObj helps to retrieve an compound variable from the session.
-func (sess *SessT) EffectiveObj(key string) (interface{}, bool, error) {
+// The parameter obj must be pointer.
+func (sess *SessT) EffectiveObj(key string, obj interface{}) (bool, error) {
 	ok := sess.EffectiveIsSet(key)
 	if !ok {
-		return nil, false, nil
+		return false, nil
 	}
-	obj := sess.Session.Get(sess.r.Context(), key)
-	// log.Printf("Object from session: %v %T ", key, obj)
-	return obj, true, nil
+	err := sess.GetObject(key, obj)
+	if err != nil {
+		return false, err
+	}
+	return true, nil
 }
 
 // PutString stores a string into the session.
 func (sess *SessT) PutString(key, val string) error {
-	sess.Session.Put(sess.r.Context(), key, val)
-	return nil
+	err := sess.Session.PutString(sess.w, key, val)
+	if err != nil {
+		log.Printf("Put string for session session-key %v failed: %v", key, err)
+	}
+	return err
 }
 
 // PutObject stores an object into the session.
-// Retrieval via sess.get(...)
-// Super tricky caveat:
-// Same request -      pointers are retrieved as pointers.
-// Succinct requests - pointers are retrieved de-referenced.
 func (sess *SessT) PutObject(key string, val interface{}) error {
-	sess.Session.Put(sess.r.Context(), key, val)
-	// log.Printf("Object into session: %v %T ", key, val)
-	return nil
+	err := sess.Session.PutObject(sess.w, key, val)
+	if err != nil {
+		log.Printf("Put object for session session-key %v failed: %v", key, err)
+	}
+	return err
 }
 
 // SessionPut is a convenience request handler for diagnosis via http
 func SessionPut(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "text/plain; charset=utf-8")
 	sess := New(w, r)
-	sess.PutString("session-test-key", "session-test-value")
-	w.Write([]byte("session[session-test-key] set to session-test-value"))
+	_ = sess.PutString("session-test-key", "session-test-value")
+	fmt.Fprint(w, "session[session-test-key] set to session-test-value")
+
 }
 
 // SessionGet is a convenience request handler for diagnosis via http
@@ -236,19 +207,19 @@ func SessionGet(w http.ResponseWriter, r *http.Request) {
 	sess := New(w, r)
 	val1 := sess.EffectiveStr("session-test-key")
 	cnt1 := fmt.Sprintf("session-test-key is %v\n", val1)
-	w.Write([]byte(cnt1))
+	fmt.Fprint(w, cnt1)
 	val2 := sess.EffectiveStr("request-test-key")
 	cnt2 := fmt.Sprintf("request-test-key is %v\n", val2)
-	w.Write([]byte(cnt2))
+	fmt.Fprint(w, cnt2)
 
-	w.Write([]byte("\n\n"))
-	keys := sess.Keys(sess.r.Context())
+	fmt.Fprint(w, "\n\n")
+	keys, _ := sess.Keys()
 	for _, key := range keys {
 		dis := fmt.Sprintf("key %20v is set", key)
 		// Beware - since the vals are typed differently
 		func() {
 			if rec := recover(); rec != nil {
-				w.Write([]byte(fmt.Sprintf("Error: %v", rec)))
+				fmt.Fprintf(w, "Error: %v", rec)
 			}
 			val := sess.EffectiveStr(key)
 			if len(val) > 80 {
@@ -256,6 +227,6 @@ func SessionGet(w http.ResponseWriter, r *http.Request) {
 			}
 			dis += fmt.Sprintf("; val is %v\n\n", val)
 		}()
-		w.Write([]byte(dis))
+		fmt.Fprint(w, dis)
 	}
 }

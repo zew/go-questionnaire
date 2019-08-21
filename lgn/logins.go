@@ -13,24 +13,17 @@ import (
 	"crypto/rand"
 	"encoding/base64"
 	"encoding/gob"
-	"encoding/hex"
 	"encoding/json"
 	"fmt"
 	"io"
-	"io/ioutil"
 	"log"
 	"net/http"
-	"os"
 	"path"
-	"path/filepath"
 	"strconv"
 	"strings"
-	"sync"
-	"time"
-
-	"golang.org/x/crypto/md4"
 
 	"github.com/zew/go-questionnaire/cfg"
+	"github.com/zew/go-questionnaire/cloudio"
 	"github.com/zew/go-questionnaire/qst"
 	"github.com/zew/util"
 )
@@ -111,9 +104,8 @@ func Query(userName, surveyID, waveID, profile string, optHash ...string) string
 
 // LoginURL returns a URL plus a query fragment,
 func LoginURL(userName, surveyID, waveID, profile string, optHash ...string) string {
-	loginURL := fmt.Sprintf("%v?%v", cfg.PrefWTS(), Query(userName, surveyID, waveID, profile, optHash...))
+	loginURL := fmt.Sprintf("%v?%v", cfg.PrefTS(), Query(userName, surveyID, waveID, profile, optHash...))
 	return loginURL
-
 }
 
 // QuestPath returns the path to the JSON questionnaire,
@@ -136,7 +128,7 @@ func (l *LoginT) QuestPath() string {
 		log.Printf("Error constructing path for user questionnaire file; userSurveyType or userWaveID is empty: %v - %v", userSurveyType, userWaveID)
 	}
 
-	pth := filepath.Join(".", qst.BasePath(), userSurveyType, userWaveID, l.User) + ".json"
+	pth := path.Join(".", qst.BasePath(), userSurveyType, userWaveID, l.User) + ".json"
 	return pth
 }
 
@@ -159,20 +151,21 @@ func (l *LoginT) DeleteFiles() {
 		return
 	}
 
-	pth1 := filepath.Join(".", qst.BasePath(), userSurveyType, userWaveID, l.User) + ".json"
-	pth2 := filepath.Join(".", qst.BasePath(), userSurveyType, userWaveID, l.User) + "_joined.json"
-	pth3 := filepath.Join(".", qst.BasePath(), userSurveyType, userWaveID, l.User) + "_split.json"
+	// pth1 := path.Join(".", qst.BasePath(), userSurveyType, userWaveID, l.User) + "_joined.json"
+	// pth2 := path.Join(".", qst.BasePath(), userSurveyType, userWaveID, l.User) + "_split.json"
+	pth3 := path.Join(".", qst.BasePath(), userSurveyType, userWaveID, l.User) + ".json"
+	// pth4 := path.Join(".", qst.BasePath(), userSurveyType, userWaveID, l.User) + ".json.attrs"
 
-	pths := []string{pth1, pth2, pth3}
+	pths := []string{pth3}
 
 	for _, pth := range pths {
-		err1 := os.Remove(pth)
-		if err1 != nil {
-			if !os.IsNotExist(err1) {
-				log.Printf("Error deleting questionnaire file: %v", err1)
+		err := cloudio.Delete(pth)
+		if err != nil {
+			if !cloudio.IsNotExist(err) {
+				log.Printf("Error deleting questionnaire file: %v", err)
 			}
 		} else {
-			log.Printf("removed quest file %v", pth1)
+			log.Printf("removed quest file %v", pth)
 		}
 	}
 
@@ -240,26 +233,11 @@ func Get() *loginsT {
 // Load reads from a JSON file.
 // No method to loginsT, no pointer receiver;
 // We could only *copy*:  *c = *newCfg
-func Load() {
-	// l.Lock()
-	// defer l.Unlock()
+func Load(r io.Reader) {
 
-	file, err := util.LoadConfigFile(LgnsPath)
-	if err != nil {
-		log.Fatalf("Could not load logins file: %v", err)
-	}
-	log.Printf("Found logins file: %v", LgnsPath)
-	defer func() {
-		err := file.Close()
-		if err != nil {
-			log.Fatalf("Error closing logins file: %v", err)
-		}
-		log.Printf("Closed logins file: %v", LgnsPath)
-	}()
-
-	decoder := json.NewDecoder(file)
+	decoder := json.NewDecoder(r)
 	tmpLogins := loginsT{} // Important, to avoid inconsistent reads from other goroutines
-	err = decoder.Decode(&tmpLogins)
+	err := decoder.Decode(&tmpLogins)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -288,53 +266,6 @@ func Load() {
 
 	log.Printf("\n%s", util.IndentedDump(tmpLogins))
 	lgns = &tmpLogins // replace pointer in one go - should be threadsafe
-}
-
-var saveMutex sync.Mutex
-
-// Save stores logins to a JSON file
-func (l *loginsT) Save(fn ...string) error {
-	// l.Lock()
-	// defer l.Unlock()
-	saveMutex.Lock()
-	defer saveMutex.Unlock()
-
-	firstColLeftMostPrefix := " "
-	byts, err := json.MarshalIndent(l, firstColLeftMostPrefix, "\t")
-	if err != nil {
-		return err
-	}
-
-	saveDir := path.Dir(LgnsPath)
-	err = os.Chmod(saveDir, 0755)
-	if err != nil {
-		return err
-	}
-
-	loginsFile := path.Base(LgnsPath)
-	if len(fn) > 0 {
-		loginsFile = fn[0]
-	}
-
-	pthOld := path.Join(saveDir, loginsFile)
-	fileBackup := strings.Replace(loginsFile, ".json", fmt.Sprintf("_%v.json", time.Now().Unix()), 1)
-	pthNew := path.Join(saveDir, fileBackup)
-
-	if path.Base(loginsFile) != "logins-example.json" {
-		err = os.Rename(pthOld, pthNew)
-		if err != nil {
-			return err
-		}
-		log.Printf("Keep logins backup at %v", pthNew)
-	}
-
-	err = ioutil.WriteFile(pthOld, byts, 0644)
-	if err != nil {
-		return err
-	}
-
-	log.Printf("Saved logins file to %v", pthOld)
-	return nil
 }
 
 // FindAndCheck takes a username and password
@@ -388,10 +319,10 @@ func IsFound(err error) bool {
 // LoadH is a convenience func to reload logins via http request.
 // It reloads logins from json file
 // and checks for a specific login
-func LoadH(w http.ResponseWriter, r *http.Request) {
+func LoadH(w http.ResponseWriter, req *http.Request) {
 	w.Header().Set("Content-Type", "text/plain; charset=utf-8")
 
-	_, loggedIn, err := LoggedInCheck(w, r, "admin")
+	_, loggedIn, err := LoggedInCheck(w, req, "admin")
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
@@ -403,13 +334,31 @@ func LoadH(w http.ResponseWriter, r *http.Request) {
 
 	w.Header().Set("Content-Type", "text/plain; charset=utf-8")
 
-	Load()
+	fileName := LgnsPath
+	r, bucketClose, err := cloudio.Open(fileName)
+	if err != nil {
+		log.Fatalf("Error opening writer to %v: %v", fileName, err)
+	}
+	defer func() {
+		err := r.Close()
+		if err != nil {
+			log.Printf("Error closing writer to bucket to %v: %v", fileName, err)
+		}
+	}()
+	defer func() {
+		err := bucketClose()
+		if err != nil {
+			log.Printf("Error closing bucket of writer to %v: %v", fileName, err)
+		}
+	}()
+	log.Printf("Opened reader to cloud config %v", fileName)
+	Load(r)
 
 	w.Write([]byte("Login json file reloaded successfully. \n\n"))
 	w.Write([]byte("Check for specific user with ?u=[loginname] \n\n"))
 
-	r.ParseForm()
-	u := r.Form.Get("u")
+	req.ParseForm()
+	u := req.Form.Get("u")
 	l, err := Get().FindAndCheck(u)
 	if err != nil {
 		str := fmt.Sprintf("%q not found: %v \n", u, err)
@@ -439,7 +388,7 @@ func SaveH(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	err = lgns.Save()
+	err = cloudio.MarshalWriteFile(lgns, "logins.json")
 	if err != nil {
 		w.Write([]byte(err.Error()))
 		return
@@ -541,19 +490,9 @@ func GeneratePwFromChars(chars []byte, length int) string {
 // https://survey2.zew.de/?u=1000&sid=fmt&wid=2019-06&h=57I7U&p=12
 //
 func Md5Str(buf []byte) string {
-	pfx := cfg.Get().URLPathPrefix
-	if pfx == "taxkit" || pfx == "eta" {
-		// It is md4 (FOUR) by mistake -
-		// but since the application was already deplyoed, we cannot correct
-		hasher := md4.New()
-		hasher.Write(buf)
-		hash := hasher.Sum(nil)
-		return hex.EncodeToString(hash)
-	}
 	hasher := md5.New()
 	hasher.Write(buf)
 	hshBytes := hasher.Sum(nil)
-
 	// ret := hex.EncodeToString(hshBytes)
 	// ret = base64.URLEncoding.EncodeToString(hshBytes)
 	return base64.RawURLEncoding.EncodeToString(hshBytes)[:5] // no trailing equal signs
@@ -574,6 +513,5 @@ func Example() *loginsT {
 			},
 		},
 	}
-	ex.Save("logins-example.json")
 	return ex
 }

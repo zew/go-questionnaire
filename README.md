@@ -77,6 +77,9 @@ Go Version 1.__11__
 
 ### Partly technical properties
 
+* Ready for deployment on [Google App Engine](https://en.wikipedia.org/wiki/Google_App_Engine)  
+by using [gocloud blob](https://godoc.org/gocloud.dev/blob) for local file system and google buckets.
+
 * `Docker` technology for easy installation on any cloud server
 
 * Builtin `https` self configuration
@@ -134,11 +137,10 @@ More info in [deploy on linux/unix](./static/doc/linux-instructions.md)
 ## Create new questionnaire `myquest`
 
 <a href="https://youtu.be/zFasU5kAKvE" target="_new">  
-
-<img src="./static/img/doc/youtube-still.png" xalign="left" width="24%" style="margin-left:4%; margin-bottom: 0%;">
+   <img src="./static/img/doc/youtube-still.png" xalign="left" width="24%" style="margin-left:4%; margin-bottom: 0%;">
 </a>  
 
-* Copy `generators/min` to `generators/myquest`
+* Copy `generators/example` to `generators/myquest`
 
 * Open `generators/myquest/main.go`  
 and change package name: `package myquest`
@@ -185,13 +187,52 @@ If you have created your survey `myquest` you need to restart the application.
   
       /survey?u=99000&sid=fmt&wid=2018-07&h=57I7UVp6
       ...
+
 ### Participant login and reset
 
-* Participants can now use these login links to [access the questionnaire](https://dev-domain:port/survey?u=98991&survey_id=fmt&wave_id=2018-07&h=4059d765e4a4f211658373c07c5affb9)   
+* Participants can now use these login links to [access the questionnaire](https://dev-domain:port/survey?u=98991&survey_id=fmt&wave_id=2018-07&h=4059d765e4a4f211658373c07c5affb9)
 
 * Once logged in, they can [re-access the questionnaire](https://dev-domain:port/survey)
 
 * For testing purposes, you may [reset the questionnaire](https://dev-domain:port/survey/reload-from-questionnaire-template?u=98991&survey_id=fmt&wave_id=2018-07&h=4059d765e4a4f211658373c07c5affb9)
+
+## Deploy to appengine
+
+### Docs
+
+* [runtime](https://cloud.google.com/appengine/docs/standard/go112/runtime)
+* [environment_variables](https://cloud.google.com/appengine/docs/standard/go112/config/appref#environment_variables)
+
+### Remote
+
+#### Deploy
+
+    gcloud config set project "financial-literacy-test"
+    gcloud app deploy
+
+Read the logs
+
+    gcloud app logs tail -s default
+
+Open in browser
+
+    gcloud app browse
+
+#### URLs
+
+* [Frontend](https://financial-literacy-test.appspot.com)
+* [Backend](https://console.cloud.google.com/home/dashboard?project=financial-literacy-test)
+* [Datastore](https://console.cloud.google.com/storage/browser/financial-literacy-test.appspot.com/?project=financial-literacy-test&src=ac)
+
+#### Creation of signed URLs via cloud.google.com/go/storage
+
+    SET   GOOGLE_APPLICATION_CREDENTIALS=c:\Users\pbu\.ssh\google-cloud-rentomat-creds.json
+    ECHO %GOOGLE_APPLICATION_CREDENTIALS%
+
+### Local
+
+    dev_appserver.py app.yaml
+    "c:\Program Files (x86)\Google\Cloud SDK\google-cloud-sdk\platform\bundledpython\python.exe" "c:\Program Files (x86)\Google\Cloud SDK\google-cloud-sdk\bin\dev_appserver.py" app.yaml
 
 ### Packages
 
@@ -243,7 +284,7 @@ No need for database "schema" artistry.
 
 In addition:
 
-* Pages can be navigated by page number sequence using http params `previous` and `next` 
+* Pages can be navigated by page number sequence using http params `previous` and `next`
 
 * Pages can be navigated using `page` = [0,1,...] parameter
 
@@ -368,13 +409,9 @@ Mobile layout was tested with `crossbrowsertesting.com`.
 
 ## Open / todo
 
-(currently nothing)
+The project specific templates and CSS files should to to `app-bucket` dir.
 
 ## Possible enhancements
-
-* Migrate file storage to GoCloud library and make  
-deployable on Google Appengine or AWS without EBS (elastic block devices)?  
-To be implemented into the load/save() methods of ConfigT, LoginsT and QuestionnaireT.
 
 * Revolving and compressing logfiles
 

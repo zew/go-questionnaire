@@ -13,6 +13,7 @@ import (
 	"net/http"
 	"net/url"
 	"os"
+	"path"
 	"path/filepath"
 	"strings"
 	"testing"
@@ -93,7 +94,7 @@ func FillQuestAndComparesServerResult(t *testing.T, qSrc *qst.QuestionnaireT, ur
 
 	var clientQuest = &qst.QuestionnaireT{}
 	var err error
-	pthBase := filepath.Join(qst.BasePath(), qSrc.Survey.Type+".json")
+	pthBase := path.Join(qst.BasePath(), qSrc.Survey.Type+".json")
 	clientQuest, err = qst.Load1(pthBase)
 	if err != nil {
 		t.Fatalf("Client questionnaire loading from file failed: %v", err)

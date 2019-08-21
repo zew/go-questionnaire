@@ -10,7 +10,7 @@ import (
 	"encoding/gob"
 	"fmt"
 	"log"
-	"path/filepath"
+	"path"
 	"sort"
 	"strings"
 	"time"
@@ -511,7 +511,7 @@ func init() {
 
 // BasePath gives the 'root' for loading and saving questionnaire JSON files.
 func BasePath() string {
-	return filepath.Join(".", "responses")
+	return path.Join(".", "responses")
 }
 
 // FinishedEntirely does not go for the
@@ -536,7 +536,7 @@ func (q *QuestionnaireT) FinishedEntirely() (closed bool) {
 // FilePath1 returns the location of the questionnaire file.
 // Similar to lgn.LoginT.QuestPath()
 func (q *QuestionnaireT) FilePath1() string {
-	pth := filepath.Join(BasePath(), q.Survey.Type, q.Survey.WaveID(), q.UserID)
+	pth := path.Join(BasePath(), q.Survey.Type, q.Survey.WaveID(), q.UserID)
 	if strings.HasSuffix(pth, ".json.json") {
 		pth = strings.TrimSuffix(pth, ".json")
 	}

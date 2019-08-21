@@ -52,7 +52,7 @@ func MarkDownFromFile(fpth, surveyType, langCode string) (string, error) {
 	//         /img/doc/my-img.png  (without prefix)
 	{
 		needle := []byte("(./static/")
-		subst := []byte("(" + cfg.PrefWTS())
+		subst := []byte("(" + cfg.PrefTS())
 		bts = bytes.Replace(bts, needle, subst, -1)
 	}
 
@@ -61,21 +61,21 @@ func MarkDownFromFile(fpth, surveyType, langCode string) (string, error) {
 		//     ./../../README.md
 		// /survey/doc/README.md
 		needle := []byte("(./../../")
-		subst := []byte("(" + cfg.PrefWTS("/doc/"))
+		subst := []byte("(" + cfg.PrefTS("/doc/"))
 		bts = bytes.Replace(bts, needle, subst, -1)
 	}
 	{
 		//    ./../img/doc/zew-footer.png
 		// /survey/img/doc/zew-footer.png
 		needle := []byte("(./../img/")
-		subst := []byte("(" + cfg.PrefWTS("/img/"))
+		subst := []byte("(" + cfg.PrefTS("/img/"))
 		bts = bytes.Replace(bts, needle, subst, -1)
 	}
 	{
 		//            ./linux-instructions.md
 		// ./survey/doc/linux-instructions.md
 		needle := []byte("(./")
-		subst := []byte("(" + cfg.PrefWTS("/doc/"))
+		subst := []byte("(" + cfg.PrefTS("/doc/"))
 		bts = bytes.Replace(bts, needle, subst, -1)
 	}
 
@@ -84,7 +84,7 @@ func MarkDownFromFile(fpth, surveyType, langCode string) (string, error) {
 	bts = bytes.Replace(bts, []byte("/{{AppPrefix}}"), []byte(cfg.Pref()), -1)
 
 	// Render markdown
-	output := string(blackfriday.MarkdownCommon(bts))
+	output := string(blackfriday.Run(bts))
 	// output += "<br>\n<br>\n<br>\n<p style='font-size: 75%;'>\nRendered by russross/blackfriday</p>\n" // Inconspicuous rendering marker
 
 	return output, nil
@@ -193,12 +193,8 @@ func (fragm *staticPrefixT) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 
 	// survey name
 	surveyType := ""
-	if intf, ok, _ := sess.EffectiveObj("questionnaire"); ok {
-		q, ok := intf.(*qst.QuestionnaireT)
-		if !ok {
-			fmt.Fprint(w, fmt.Errorf("Expected *qst.QuestionnaireT, got %T %v", intf, intf))
-			return
-		}
+	q := &qst.QuestionnaireT{}
+	if ok, _ := sess.EffectiveObj("questionnaire", q); ok {
 		surveyType = q.Survey.Type
 	}
 
@@ -237,7 +233,7 @@ func CreateAndRegisterHandlerForDocs(mux1 *http.ServeMux) {
 	fragm := "/doc/"
 	fragmH := staticPrefixT(fragm)
 	mux1.Handle(cfg.Pref(fragm), &fragmH)
-	mux1.Handle(cfg.PrefWTS(fragm), &fragmH) // make sure /taxkit/doc/...  also serves &fragmH, see config.Pref()
+	mux1.Handle(cfg.PrefTS(fragm), &fragmH) // make sure /taxkit/doc/...  also serves &fragmH, see config.Pref()
 	log.Printf("registering docs handler %-30v 'funcVar' %T \n", cfg.Pref(fragm), &fragmH)
 
 }

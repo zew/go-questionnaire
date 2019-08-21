@@ -1,0 +1,105 @@
+{
+ 	"survey": {
+ 		"type": "flit",
+ 		"org": {
+ 			"de": "ZEW"
+ 		},
+ 		"name": {
+ 			"de": "Beispielumfrage"
+ 		},
+ 		"year": 2019,
+ 		"month": 9,
+ 		"deadline": "2019-10-31T23:59:00Z",
+ 		"params": [
+ 			{},
+ 			{}
+ 		]
+ 	},
+ 	"closing_time": "0001-01-01T00:00:00Z",
+ 	"md_5": "88b51541c66b3e36e46a9f225ff5f66d",
+ 	"lang_codes": {
+ 		"de": "Deutsch"
+ 	},
+ 	"lang_codes_order": [
+ 		"de"
+ 	],
+ 	"max_groups": 1,
+ 	"pages": [
+ 		{
+ 			"label": {
+ 				"de": "Seitentitel_1",
+ 				"en": "PageLabel_1"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"navi_num": 1,
+ 			"width": 100,
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_half_vspacers": 3,
+ 					"odd_rows_coloring": false,
+ 					"width": 100,
+ 					"columns": 4,
+ 					"inputs": [
+ 						{
+ 							"name": "first_name",
+ 							"type": "text",
+ 							"max_chars": 10,
+ 							"label": {
+ 								"de": "Vorname"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "first_name2",
+ 							"type": "text",
+ 							"max_chars": 10,
+ 							"label": {
+ 								"de": "Vorname2"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 2
+ 						}
+ 					]
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "Seitentitel_2",
+ 				"en": "PageLabel_2"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"navi_num": 2,
+ 			"width": 100,
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_half_vspacers": 3,
+ 					"odd_rows_coloring": false,
+ 					"width": 100,
+ 					"columns": 4,
+ 					"inputs": [
+ 						{
+ 							"name": "last_name",
+ 							"type": "text",
+ 							"max_chars": 20,
+ 							"label": {
+ 								"de": "Familienname"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 2
+ 						}
+ 					]
+ 				}
+ 			]
+ 		}
+ 	]
+ }

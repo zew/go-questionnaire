@@ -50,7 +50,7 @@ func StartTestServer(t *testing.T, doChDirUp bool) {
 		mux1 := http.NewServeMux()
 		mux1.HandleFunc(cfg.Pref("/login-primitive"), lgn.LoginPrimitiveH)
 		mux1.HandleFunc(cfg.Pref("/"), handlers.MainH)
-		mux1.HandleFunc(cfg.PrefWTS("/"), handlers.MainH)
+		mux1.HandleFunc(cfg.PrefTS("/"), handlers.MainH)
 		mux2 := muxwrap.NewHandlerMiddleware(mux1)
 		sessx.Mgr().Lifetime = 2 * time.Hour // default is 24 hours
 		sessx.Mgr().Cookie.Persist = false

@@ -10,8 +10,8 @@
  			"en": "Financial Markets Survey"
  		},
  		"year": 2019,
- 		"month": 6,
- 		"deadline": "2030-01-01T00:00:00Z",
+ 		"month": 8,
+ 		"deadline": "2019-08-28T23:59:00Z",
  		"params": [
  			{
  				"name": "main_refinance_rate_ecb",
@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "ea2ba1a91d7ce706e11f6bddb9c750c7",
+ 	"md_5": "53caf7dbce5105c6c6b26f73ea42ea8f",
  	"lang_codes": {
  		"de": "Deutsch",
  		"en": "English"
@@ -56,8 +56,8 @@
  							"type": "textblock",
  							"css_label": "special-input-vert-wider",
  							"description": {
- 								"de": "\u003cp\u003eSehr geehrte Finanzmarktexpertin, sehr geehrter Finanzmarktexperte, herzlich willkommen beim ZEW-Finanzmarkttest.\u003c/p\u003e\n\n\u003cp\u003eDurch klicken auf \u003ccode\u003eWeiter\u003c/code\u003e werden Ihre Antworten gespeichert und Sie gelangen zur jeweils nächsten Seite.\u003c/p\u003e\n\n\u003cp\u003eBei einer Unterbrechung (Schließen des Browsers) bleiben Ihre Antworten erhalten und können später über Ihren persönlichen Link wieder aufgerufen und geändert werden.\u003c/p\u003e\n\n\u003cp\u003eAm Ende der Befragung können Sie den Fragebogen abschließen, so dass keine weiteren Änderungen möglich sind.\u003c/p\u003e\n\n\u003ch3\u003eDatenschutz\u003c/h3\u003e\n\n\u003cp\u003eHier finden Sie unsere \u003ca href=\"https://www.zew.de/de/datenschutz/\"\u003eDatenschutz-Grundlagen\u003c/a\u003e.\u003c/p\u003e\n\n\u003cp\u003eIhre An\u0026shy;gaben werden streng vertraulich behandelt.\u003c/p\u003e\n\n\u003cp\u003eDie Auswertung Ihrer Antworten erfolgt als \u003ca href=\"https://de.wikipedia.org/wiki/Paneldaten\"\u003ePanel-Datensatz\u003c/a\u003e in anonymisierter Form.\u003c/p\u003e\n\n\u003cp\u003eIhre Daten werden auf einem geschützten Server im ZEW Hauptgebäude gespeichert, auf den nur Mitglieder des ZEW Teams für den Finanzmarkttest Zugriff haben.\u003c/p\u003e\n\n\u003cp\u003eZusätzlich bitten wir um Ihr Einverständnis, dass wir Ihre Antworten\nintern mit Ihrer geschäftlichen Identität verknüpfen.\u003c/p\u003e\n\n\u003cp\u003eIhre geschäftliche Identität besteht aus Ihrem Namen, Ihrer Funktion, geschäftl. Email und Telefonnummer, Arbeitgeber und Teilnahmebeginn.\u003c/p\u003e\n",
- 								"en": "\u003cp\u003eDear expert, welcome to the ZEW financial markets survey .\u003c/p\u003e\n\n\u003cp\u003eBy clicking \u003ccode\u003eNext\u003c/code\u003e your answers will be saved and you progress to the next page.\u003c/p\u003e\n\n\u003cp\u003eIn case of an interruption (closing of the web browser) your answers remain saved. You can re-use your personal link to continue and change your answers.\u003c/p\u003e\n\n\u003cp\u003eAt the end you can finalize the questionnaire preventing further changes.\u003c/p\u003e\n\n\u003ch3\u003ePrivacy Protection\u003c/h3\u003e\n\n\u003cp\u003ePlease notice our \u003ca href=\"https://www.zew.de/en/datenschutz/\"\u003eprivacy protection policy\u003c/a\u003e.\u003c/p\u003e\n\n\u003cp\u003eYour data will we treated strictly confidential.\u003c/p\u003e\n\n\u003cp\u003eData processing is done as as \u003ca href=\"https://en.wikipedia.org/wiki/Panel_data\"\u003epanel data set\u003c/a\u003e in anonymized form.\u003c/p\u003e\n\n\u003cp\u003eYour data will be stored on a protected server on the premises of ZEW Ltd. Only members of the financial markets team have access to this server.\u003c/p\u003e\n\n\u003cp\u003eIn addition we ask for permission to internally as\u0026shy;so\u0026shy;ci\u0026shy;ate your answers with your busi\u0026shy;ness identity.\u003c/p\u003e\n\n\u003cp\u003eYour busi\u0026shy;ness identity consists of name, role, work phone and email, employer and start of contribution.\u003c/p\u003e\n"
+ 								"de": "\u003cp\u003e\r\nSehr geehrte Finanzmarktexpertin, sehr geehrter Finanzmarktexperte, herzlich willkommen beim ZEW-Finanzmarkttest. \r\n\r\nDurch klicken auf \u003ccode\u003eWeiter\u003c/code\u003e werden Ihre Antworten gespeichert und Sie gelangen zur jeweils nächsten Seite. \r\n\r\nBei einer Unterbrechung (Schließen des Browsers) bleiben Ihre Antworten erhalten und können später über Ihren persönlichen Link wieder aufgerufen und geändert werden.\r\n\r\nAm Ende der Befragung können Sie den Fragebogen abschließen, so dass keine weiteren Änderungen möglich sind. \r\n\r\n\r\n\r\u003c/p\u003e\n\n\u003ch3\u003eDatenschutz\r\u003c/h3\u003e\n\n\u003cp\u003e\r\nHier finden Sie unsere \u003ca href=\"https://www.zew.de/de/datenschutz/\"\u003eDatenschutz-Grundlagen\u003c/a\u003e.\r\n\r\nIhre An\u0026shy;gaben werden streng vertraulich behandelt. \r\n\r\nDie Auswertung Ihrer Antworten erfolgt als \u003ca href=\"https://de.wikipedia.org/wiki/Paneldaten\"\u003ePanel-Datensatz\u003c/a\u003e in anonymisierter Form.\r\n\r\nIhre Daten werden auf einem geschützten Server im ZEW Hauptgebäude gespeichert, auf den nur Mitglieder des ZEW Teams für den Finanzmarkttest Zugriff haben.\r\n\r\nZusätzlich bitten wir um Ihr Einverständnis, dass wir Ihre Antworten \r\nintern mit Ihrer geschäftlichen Identität verknüpfen. \r\n\r\nIhre geschäftliche Identität besteht aus Ihrem Namen, Ihrer Funktion, geschäftl. Email und Telefonnummer, Arbeitgeber und Teilnahmebeginn.\r\u003c/p\u003e\n",
+ 								"en": "\u003cp\u003eDear expert, welcome to the ZEW financial markets survey .\r\n\r\nBy clicking \u003ccode\u003eNext\u003c/code\u003e your answers will be saved and you progress to the next page.\r\n\r\nIn case of an interruption (closing of the web browser) your answers remain saved. You can re-use your personal link to continue and change your answers.\r\n\r\nAt the end you can finalize the questionnaire preventing further changes.\r\n\r\n\r\u003c/p\u003e\n\n\u003ch3\u003ePrivacy Protection\r\u003c/h3\u003e\n\n\u003cp\u003e\r\n\r\nPlease notice our \u003ca href=\"https://www.zew.de/en/datenschutz/\"\u003eprivacy protection policy\u003c/a\u003e.\r\n\r\nYour data will we treated strictly confidential.\r\n\r\nData processing is done as as \u003ca href=\"https://en.wikipedia.org/wiki/Panel_data\"\u003epanel data set\u003c/a\u003e in anonymized form.\r\n\r\nYour data will be stored on a protected server on the premises of ZEW Ltd. Only members of the financial markets team have access to this server.\r\n\r\nIn addition we ask for permission to internally as\u0026shy;so\u0026shy;ci\u0026shy;ate your answers with your busi\u0026shy;ness identity.\r\n\r\nYour busi\u0026shy;ness identity consists of name, role, work phone and email, employer and start of contribution.\r\n\r\n\r\n\r\n\r\u003c/p\u003e\n"
  							},
  							"col_span_label": 3
  						}
@@ -689,8 +689,8 @@
  							"type": "number",
  							"max_chars": 4,
  							"description": {
- 								"de": "Unsere Prognose für das \u003cb\u003edeutsche\u003c/b\u003e BIP Wachstum in Q3 2019 (real, saisonbereinigt, nicht annualisiert):",
- 								"en": "Our estimate for the \u003cb\u003eGerman\u003c/b\u003e GDP growth in Q3 2019 (real, seasonally adjusted, non annualized):"
+ 								"de": "Unsere Prognose für das \u003cb\u003edeutsche\u003c/b\u003e BIP Wachstum in Q4 2019 (real, saisonbereinigt, nicht annualisiert):",
+ 								"en": "Our estimate for the \u003cb\u003eGerman\u003c/b\u003e GDP growth in Q4 2019 (real, seasonally adjusted, non annualized):"
  							},
  							"suffix": {
  								"de": "%",
@@ -731,8 +731,8 @@
  							"type": "number",
  							"max_chars": 4,
  							"description": {
- 								"de": "Die Wahrscheinlichkeit eines neg\u0026shy;ativen Wachstums des \u003cb\u003edeutschen\u003c/b\u003e BIP in Q3 2019 liegt bei:",
- 								"en": "The probability of neg\u0026shy;ative growth for the \u003cb\u003eGerman\u003c/b\u003e GDP in Q3 2019 is:"
+ 								"de": "Die Wahrscheinlichkeit eines neg\u0026shy;ativen Wachstums des \u003cb\u003edeutschen\u003c/b\u003e BIP in Q4 2019 liegt bei:",
+ 								"en": "The probability of neg\u0026shy;ative growth for the \u003cb\u003eGerman\u003c/b\u003e GDP in Q4 2019 is:"
  							},
  							"suffix": {
  								"de": "%",
@@ -2444,8 +2444,8 @@
  							"max_chars": 4,
  							"horizontal_align_label": 2,
  							"description": {
- 								"de": "Q1 2019",
- 								"en": "Q1 2019"
+ 								"de": "Q2 2019",
+ 								"en": "Q2 2019"
  							},
  							"suffix": {
  								"de": "%",
@@ -2459,8 +2459,8 @@
  							"max_chars": 4,
  							"horizontal_align_label": 2,
  							"description": {
- 								"de": "Q2 2019",
- 								"en": "Q2 2019"
+ 								"de": "Q3 2019",
+ 								"en": "Q3 2019"
  							},
  							"suffix": {
  								"de": "%",
@@ -2474,8 +2474,8 @@
  							"max_chars": 4,
  							"horizontal_align_label": 2,
  							"description": {
- 								"de": "Q3 2019",
- 								"en": "Q3 2019"
+ 								"de": "Q4 2019",
+ 								"en": "Q4 2019"
  							},
  							"suffix": {
  								"de": "%",
@@ -3554,8 +3554,8 @@
  							"type": "textblock",
  							"css_label": "special-input-vert-wider",
  							"description": {
- 								"de": "\u003ch3\u003eAnsprechpartner\u003c/h3\u003e\n\n\u003cp\u003eDr. Michael Schröder\u003c/p\u003e\n\n\u003cp\u003eTelefon: 0621/1235-368\u003c/p\u003e\n\n\u003cp\u003eTelefax: 0621/1235-4223\u003c/p\u003e\n\n\u003cp\u003eE-Mail: schroeder@zew.de\u003c/p\u003e\n\n\u003ch3\u003eAdresse\u003c/h3\u003e\n\n\u003cp\u003eZentrum für Europäische Wirtschaftsforschung GmbH (ZEW)\u003c/p\u003e\n\n\u003cp\u003ePostfach 10 34 43\u003c/p\u003e\n\n\u003cp\u003e68034 Mannheim\u003c/p\u003e\n\n\u003ch3\u003eTechnische Probleme\u003c/h3\u003e\n\n\u003cp\u003eBei technischen Fragen zur Online-Erhebung\u003cbr /\u003e\nwenden Sie sich bitte an:\u003c/p\u003e\n\n\u003cp\u003ePeter Buchmann (buchmann@zew.de)\u003c/p\u003e\n",
- 								"en": "\u003ch3\u003eContact\u003c/h3\u003e\n\n\u003cp\u003eDr. Michael Schröder\u003c/p\u003e\n\n\u003cp\u003ePhone: 0621/1235-368\u003c/p\u003e\n\n\u003cp\u003eFax: 0621/1235-4223\u003c/p\u003e\n\n\u003cp\u003eEmail: schroeder@zew.de\u003c/p\u003e\n\n\u003ch3\u003eAddress\u003c/h3\u003e\n\n\u003cp\u003eCentre for European Eco\u0026shy;nom\u0026shy;ic Re\u0026shy;search (ZEW) Mannheim\u003c/p\u003e\n\n\u003cp\u003ePostfach 10 34 43\u003c/p\u003e\n\n\u003cp\u003e68034 Mannheim\u003c/p\u003e\n\n\u003cp\u003eGermany\u003c/p\u003e\n\n\u003ch3\u003eTechnical issues\u003c/h3\u003e\n\n\u003cp\u003ePlease report technical issues\nwith the online questionnaire to:\u003c/p\u003e\n\n\u003cp\u003ePeter Buchmann (buchmann@zew.de)\u003c/p\u003e\n"
+ 								"de": "\u003ch3\u003eAnsprechpartner\r\u003c/h3\u003e\n\n\u003cp\u003e\r\nDr. Michael Schröder\r\n\r\nTelefon: 0621/1235-368\r\n\r\nTelefax: 0621/1235-4223\r\n\r\nE-Mail: schroeder@zew.de\t\r\n\r\n\r\u003c/p\u003e\n\n\u003ch3\u003eAdresse\r\u003c/h3\u003e\n\n\u003cp\u003e\r\nZentrum für Europäische Wirtschaftsforschung GmbH (ZEW)\r\n\r\nPostfach 10 34 43\r\n\r\n68034 Mannheim\r\n\r\n\r\u003c/p\u003e\n\n\u003ch3\u003eTechnische Probleme\r\u003c/h3\u003e\n\n\u003cp\u003e\r\nBei technischen Fragen zur Online-Erhebung  \r\nwenden Sie sich bitte an:  \r\n\r\nPeter Buchmann (buchmann@zew.de)\r\u003c/p\u003e\n",
+ 								"en": "\u003ch3\u003eContact\r\u003c/h3\u003e\n\n\u003cp\u003e\r\nDr. Michael Schröder\r\n\r\nPhone: 0621/1235-368\r\n\r\nFax: 0621/1235-4223\r\n\r\nEmail: schroeder@zew.de\t\r\n\r\n\r\u003c/p\u003e\n\n\u003ch3\u003eAddress\r\u003c/h3\u003e\n\n\u003cp\u003e\r\nCentre for European Eco\u0026shy;nom\u0026shy;ic Re\u0026shy;search (ZEW) Mannheim\r\n\r\nPostfach 10 34 43 \r\n\r\n68034 Mannheim\r\n\r\nGermany\r\n\r\n\r\u003c/p\u003e\n\n\u003ch3\u003eTechnical issues\r\u003c/h3\u003e\n\n\u003cp\u003e\r\nPlease report technical issues \r\nwith the online questionnaire to:  \r\n\r\nPeter Buchmann (buchmann@zew.de)\r\u003c/p\u003e\n"
  							}
  						}
  					]

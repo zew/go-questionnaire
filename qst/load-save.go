@@ -6,12 +6,11 @@ import (
 	"encoding/hex"
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
 	"log"
-	"os"
 	"path"
 	"strings"
-	"time"
+
+	"github.com/zew/go-questionnaire/cloudio"
 )
 
 // Load1 loads a questionnaire from a JSON file.
@@ -23,7 +22,9 @@ func Load1(fn string) (*QuestionnaireT, error) {
 		fn += ".json"
 	}
 
-	bts, err := ioutil.ReadFile(fn)
+	log.Printf("Trying loading qst from: %v", fn)
+
+	bts, err := cloudio.ReadFile(fn)
 	if err != nil {
 		// log.Printf("Could not read file: %v", err)
 		return &q, err
@@ -62,10 +63,19 @@ func (q *QuestionnaireT) Save1(fn string) error {
 	q.MD5 = hsh
 
 	saveDir := path.Dir(fn)
-	err = os.Chmod(saveDir, 0755)
-	if err != nil {
-		return err
-	}
+
+	//
+	// err = os.MkdirAll(saveDir, 0755)
+	// if err != nil {
+	// 	s := fmt.Sprintf("Could not create path %v", path.Dir(pth))
+	// 	helper(w, r, err, s)
+	// 	return
+	// }
+
+	// err = os.Chmod(saveDir, 0755)
+	// if err != nil {
+	// 	return err
+	// }
 
 	questFile := path.Base(fn)
 	if !strings.HasSuffix(questFile, ".json") {
@@ -74,19 +84,19 @@ func (q *QuestionnaireT) Save1(fn string) error {
 
 	pthOld := path.Join(saveDir, questFile)
 
-	keepBackup := false
-	if keepBackup {
-		fileBackup := strings.Replace(questFile, ".json", fmt.Sprintf("_%v.json", time.Now().Unix()), 1)
-		pthBackup := path.Join(saveDir, fileBackup)
-		if questFile != "questionnaire-example.json" {
-			err = os.Rename(pthOld, pthBackup)
-			if err != nil {
-				return err
-			}
-		}
-	}
+	// keepBackup := false
+	// if keepBackup {
+	// 	fileBackup := strings.Replace(questFile, ".json", fmt.Sprintf("_%v.json", time.Now().Unix()), 1)
+	// 	pthBackup := path.Join(saveDir, fileBackup)
+	// 	if questFile != "questionnaire-example.json" {
+	// 		err = os.Rename(pthOld, pthBackup)
+	// 		if err != nil {
+	// 			return err
+	// 		}
+	// 	}
+	// }
 
-	err = ioutil.WriteFile(pthOld, bts, 0644)
+	err = cloudio.WriteFile(pthOld, bytes.NewReader(bts), 0644)
 	if err != nil {
 		return err
 	}

@@ -7,18 +7,14 @@ package cfg
 
 import (
 	"encoding/json"
-	"fmt"
-	"io/ioutil"
+	"io"
 	"log"
-	"net/http"
-	"os"
 	"path"
-	"sync"
+	"path/filepath"
 	"time"
 
 	"github.com/zew/util"
 
-	"github.com/zew/go-questionnaire/sessx"
 	"github.com/zew/go-questionnaire/trl"
 )
 
@@ -37,7 +33,7 @@ type directLoginRangeT struct {
 
 // ConfigT holds the application config
 type ConfigT struct {
-	sync.Mutex
+	// sync.Mutex not needed since we swap the pointer
 
 	IsProduction bool `json:"is_production"` // true => templates are not recompiled
 
@@ -83,7 +79,7 @@ type ConfigT struct {
 // Being set from the main package.
 // Holds the relative path and filename to look for; could be ".cfg/config.json".
 // Relative to the app main dir.
-var CfgPath = path.Join(".", "config.json")
+var CfgPath = filepath.Join(".", "config.json")
 
 var cfgS *ConfigT // package variable 'singleton' - needs to be an allocated struct - to hold pointer receiver-re-assignment
 
@@ -104,7 +100,9 @@ func SwitchToTestConfig() {
 	log.Printf("Testing config: Port %v, TLS %v", cfgS.BindSocket, cfgS.TLS)
 }
 
-// Load reads from a JSON file.
+// Load reads from an io.Reader
+// to avoid cyclical deps.
+//
 // To avoid concurrent access problems:
 // No method to ConfigT, no pointer receiver.
 // We could *copy* at the end of method  *c = *newCfg,
@@ -113,25 +111,11 @@ func SwitchToTestConfig() {
 // cfgS = &tempCfg
 //
 // Contains some validations.
-func Load() {
-	// c.Lock()
-	// defer c.Unlock()
-	file, err := util.LoadConfigFile(CfgPath)
-	if err != nil {
-		log.Fatalf("Could not load config file: %v", err)
-	}
-	log.Printf("Found config file: %v", CfgPath)
-	defer func() {
-		err := file.Close()
-		if err != nil {
-			log.Fatalf("Err closing config file: %v", err)
-		}
-		log.Printf("Closed config file: %v", CfgPath)
-	}()
+func Load(r io.Reader) {
 
-	decoder := json.NewDecoder(file)
+	decoder := json.NewDecoder(r)
 	tempCfg := ConfigT{}
-	err = decoder.Decode(&tempCfg)
+	err := decoder.Decode(&tempCfg)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -163,67 +147,7 @@ func Load() {
 	if len(dmp) > 700 {
 		dmp = dmp[:700]
 	}
-	log.Printf("config loaded 1\n%s", dmp)
-}
-
-// LoadH is a convenience handler - to reload the config via http request
-func LoadH(w http.ResponseWriter, r *http.Request) {
-
-	w.Header().Set("Content-Type", "text/plain; charset=utf-8")
-
-	// We cannot use lgn.LoggedInCheck()
-	// causing circular dependency
-	// Therefore we need implementing it here
-	sess := sessx.New(w, r)
-	type loginTypeTemp struct {
-		User  string            `json:"user"`
-		Roles map[string]string `json:"roles"` // i.e. admin: true , gender: female, height: 188
-	}
-	intf, loggedIn, err := sess.EffectiveObj("login")
-	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
-		return
-	}
-	if !loggedIn {
-		http.Error(w, "login required for this function", http.StatusInternalServerError)
-		return
-	}
-	l, ok := intf.(*loginTypeTemp)
-	if !ok {
-		errMsg := fmt.Sprintf("Expected loginTypeTemp, got %T %v", intf, intf)
-		http.Error(w, errMsg, http.StatusInternalServerError)
-		return
-	}
-
-	if _, ok := l.Roles["admin"]; !ok {
-		http.Error(w, "admin role required for this function", http.StatusInternalServerError)
-		return
-	}
-
-	Load()
-	w.Write([]byte("cfg reloaded"))
-}
-
-// Save stores the config to a JSON file
-func (c *ConfigT) Save(fn ...string) {
-
-	firstColLeftMostPrefix := " "
-	byts, err := json.MarshalIndent(c, firstColLeftMostPrefix, "\t")
-	util.BubbleUp(err)
-
-	saveDir := path.Dir(CfgPath)
-	err = os.Chmod(saveDir, 0755)
-	util.BubbleUp(err)
-
-	configFile := path.Base(CfgPath)
-	if len(fn) > 0 {
-		configFile = fn[0]
-	}
-	savePath := path.Join(saveDir, configFile)
-	err = ioutil.WriteFile(savePath, byts, 0644)
-	util.BubbleUp(err)
-
-	log.Printf("Saved config file to %v", savePath)
+	log.Printf("\n%s\n...config loaded", dmp)
 }
 
 // Pref prefixes a URL path with an application dir prefix.
@@ -236,8 +160,8 @@ func (c *ConfigT) Save(fn ...string) {
 // since it depends on the ORDER of registrations.
 //
 // Best strategy might be
-//    mux.HandleFunc(appcfg.Pref(urlPath), argFunc)      // Claim "/path"
-//    mux.HandleFunc(appcfg.PrefWTS(urlPath), argFunc)   // Claim "/path/"
+//    mux.HandleFunc(appcfg.Pref(urlPath),   argFunc)   // Claim "/path"
+//    mux.HandleFunc(appcfg.PrefTS(urlPath), argFunc)   // Claim "/path/"
 // Notice the order - other way around would block "/path" with a redirect handler
 func Pref(pth ...string) string {
 
@@ -256,8 +180,15 @@ func Pref(pth ...string) string {
 
 }
 
-// PrefWTS is like Prefix(); WTS stands for with trailing slash
-func PrefWTS(pth ...string) string {
+// Pref for templates: cfg.Pref
+func (c *ConfigT) Pref(pth ...string) string {
+	return Pref(pth...)
+}
+
+// PrefTS is like Prefix(); TS stands for (with) trailing slash;
+// useful for registering handlers
+// so that /p1/p2/  also serves /p1/p2
+func PrefTS(pth ...string) string {
 	p := Pref(pth...)
 	return p + "/"
 }
@@ -489,6 +420,5 @@ func Example() *ConfigT {
 			},
 		},
 	}
-	ex.Save("config-example.json")
 	return ex
 }

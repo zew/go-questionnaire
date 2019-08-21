@@ -13,6 +13,7 @@ import (
 
 	"github.com/monoculum/formam"
 	"github.com/zew/go-questionnaire/cfg"
+	"github.com/zew/go-questionnaire/cloudio"
 	"github.com/zew/go-questionnaire/sessx"
 	"github.com/zew/util"
 	// hashids
@@ -21,25 +22,19 @@ import (
 // LogoutH is a convenience handler to logout via http request
 func LogoutH(w http.ResponseWriter, r *http.Request) error {
 	sess := sessx.New(w, r)
-	sess.Clear()
+	sess.Clear(w)
 	return nil
 }
 
 // LoggedInCheck checks, whether as user is logged in,
 // and checks whether he has the required roles
-func LoggedInCheck(w http.ResponseWriter, r *http.Request, roles ...string) (l LoginT, loggedIn bool, err error) {
+func LoggedInCheck(w http.ResponseWriter, r *http.Request, roles ...string) (l *LoginT, loggedIn bool, err error) {
 
 	sess := sessx.New(w, r)
 
-	var intf interface{}
-	intf, loggedIn, err = sess.EffectiveObj("login")
+	l = &LoginT{}
+	loggedIn, err = sess.EffectiveObj("login", l)
 	if err != nil {
-		return
-	}
-
-	l, ok := intf.(LoginT)
-	if !ok {
-		err = fmt.Errorf("Expected LoginT, got %T %v", intf, intf)
 		return
 	}
 
@@ -114,17 +109,13 @@ func ChangePassword(w http.ResponseWriter, r *http.Request) (string, error) {
 
 	sess := sessx.New(w, r)
 
-	var intf interface{}
-	intf, ok, err := sess.EffectiveObj("login")
+	l := &LoginT{}
+	ok, err := sess.EffectiveObj("login", l)
 	if err != nil {
 		return "", fmt.Errorf("Could not get login from session")
 	}
 	if !ok {
 		return "", fmt.Errorf("You are not logged in")
-	}
-	l, ok := intf.(*LoginT)
-	if !ok {
-		return "", fmt.Errorf("Expected LoginT, got %T %v", intf, intf)
 	}
 
 	err = r.ParseForm()
@@ -210,7 +201,8 @@ func ChangePassword(w http.ResponseWriter, r *http.Request) (string, error) {
 				logins[idx].PassInitial = ""
 				logins[idx].IsInitPassword = false
 				logins[idx].PassMd5 = newPassEncr
-				err := Get().Save()
+				cloudio.MarshalWriteFile(Get(), "logins.json")
+
 				if err != nil {
 					return "", err
 				}
@@ -524,14 +516,14 @@ func GenerateHashesH(w http.ResponseWriter, r *http.Request) {
 			}
 		}
 
-		url := fmt.Sprintf("%v?%v", cfg.PrefWTS(), queryString)
+		url := fmt.Sprintf("%v?%v", cfg.PrefTS(), queryString)
 
 		fmt.Fprintf(b1, "<a href='%v'  target='_blank' >login as user %4v<a> ", url, i)
 		fmt.Fprintf(b2, "%4v\t\t%v\n", i, url)
 
 		fmt.Fprint(b1, " &nbsp; &nbsp; &nbsp; &nbsp; ")
 
-		url2 := fmt.Sprintf("%v?&%v", cfg.PrefWTS("reload-from-questionnaire-template"), queryString)
+		url2 := fmt.Sprintf("%v?&%v", cfg.PrefTS("reload-from-questionnaire-template"), queryString)
 
 		fmt.Fprintf(b1, "<a href='%v'  target='_blank' >reload from template<a>", url2)
 		fmt.Fprint(b1, "<br>")
@@ -597,7 +589,7 @@ func ReloadH(w http.ResponseWriter, r *http.Request) {
 	msg := ""
 	if r.Method == "POST" {
 		l.DeleteFiles()
-		sess.Remove("questionnaire")
+		sess.Remove(w, "questionnaire")
 		log.Printf("removed quest session")
 		msg = "User files deleted. Questionnaire deleted from session."
 	} else {
@@ -659,7 +651,7 @@ func ReloadH(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 
-	url := fmt.Sprintf("%v?%v", cfg.PrefWTS(), queryString)
+	url := fmt.Sprintf("%v?%v", cfg.PrefTS(), queryString)
 
 	fmt.Fprintf(w, "<a href='%v'  target='_blank'>Start questionnaire (again)<a> <br> ", url)
 
@@ -718,7 +710,7 @@ func LoginPrimitiveH(w http.ResponseWriter, r *http.Request) {
 		SelfURL: r.URL.Path,
 		Cnt:     msg,
 		Token:   FormToken(),
-		L:       &l,
+		L:       l,
 	}
 
 	tpl := template.New("anyname.html")
@@ -784,7 +776,7 @@ func ChangePasswordPrimitiveH(w http.ResponseWriter, r *http.Request) {
 		SelfURL: r.URL.Path,
 		Cnt:     msg,
 		Token:   FormToken(),
-		L:       &l,
+		L:       l,
 	}
 
 	tpl := template.New("anyname.html")

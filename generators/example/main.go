@@ -1,4 +1,4 @@
-package min
+package example
 
 import (
 	"fmt"
@@ -11,7 +11,7 @@ import (
 // It is saved to disk as an example.
 func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	q := qst.QuestionnaireT{}
-	q.Survey = qst.NewSurvey("min")
+	q.Survey = qst.NewSurvey("example")
 	q.Survey.Params = params
 	q.LangCodes = map[string]string{"de": "Deutsch", "en": "English"}
 	q.LangCodesOrder = []string{"en", "de"} // governs default language code
@@ -22,11 +22,14 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	for i1 := 0; i1 < 3; i1++ {
 		page := q.AddPage()
 		gr := page.AddGroup()
+		gr.Cols = 3
 		inp := gr.AddInput()
 		inp.Name = fmt.Sprintf("name%v", i1)
 		inp.Type = "text"
 		inp.Label = trl.S{"de": "Vorname", "en": "first name"}
+		inp.MaxChars = 10
 	}
+
 	(&q).Hyphenize()
 	(&q).ComputeMaxGroups()
 	if err := (&q).TranslationCompleteness(); err != nil {

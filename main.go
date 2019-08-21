@@ -9,6 +9,7 @@ import (
 	"log"
 	"math/rand"
 	"net/http"
+	_ "net/http/pprof"
 	"os"
 	"time"
 
@@ -34,9 +35,6 @@ func main() {
 		cfg.SwitchToTestConfig()
 	}
 
-	cfg.Example()
-	lgn.Example()
-
 	//
 	//
 	// Http server
@@ -47,29 +45,29 @@ func main() {
 	staticDirs := []string{"/img", "/js"}
 	for _, v := range staticDirs {
 		mux1.HandleFunc(cfg.Pref(v), tpl.StaticDownloadH)
-		mux1.HandleFunc(cfg.PrefWTS(v), tpl.StaticDownloadH)
+		mux1.HandleFunc(cfg.PrefTS(v), tpl.StaticDownloadH)
 		log.Printf("static service %-20v => /static/[stripped:%v]%v", cfg.Pref(v), cfg.Get().AppMnemonic, v)
 	}
 	// Extra handler for dynamic css - served from templates
-	mux1.HandleFunc(cfg.PrefWTS("/css/"), tpl.ServeDynCss)
+	mux1.HandleFunc(cfg.PrefTS("/css/"), tpl.ServeDynCss)
 	// markdown files in /doc
 	tpl.CreateAndRegisterHandlerForDocs(mux1)
 
 	serveIcon := func(w http.ResponseWriter, r *http.Request) {
 		bts, _ := ioutil.ReadFile("./static/img/ui/favicon.ico")
-		w.Write(bts)
+		fmt.Fprint(w, bts)
 	}
 	mux1.HandleFunc("/favicon.ico", serveIcon)
 	if cfg.Pref() != "" {
 		mux1.HandleFunc(cfg.Pref("favicon.ico"), serveIcon)
-		mux1.HandleFunc(cfg.PrefWTS("favicon.ico"), serveIcon)
+		mux1.HandleFunc(cfg.PrefTS("favicon.ico"), serveIcon)
 	}
 
 	//
 	// Administrative handlers - common
 	mux1.HandleFunc(cfg.Pref("/session-put"), sessx.SessionPut)
 	mux1.HandleFunc(cfg.Pref("/session-get"), sessx.SessionGet)
-	mux1.HandleFunc(cfg.Pref("/config-reload"), cfg.LoadH)
+	mux1.HandleFunc(cfg.Pref("/config-reload"), handlers.ConfigReloadH)
 	mux1.HandleFunc(cfg.Pref("/templates-reload"), tpl.ParseH)
 	// Login primitives
 	mux1.HandleFunc(cfg.Pref("/login-primitive"), lgn.LoginPrimitiveH)
@@ -79,7 +77,7 @@ func main() {
 	mux1.HandleFunc(cfg.Pref("/generate-hashes"), lgn.GenerateHashesH)
 	mux1.HandleFunc(cfg.Pref("/generate-hash-ids"), lgn.GenerateHashIDs)
 	mux1.HandleFunc(cfg.Pref("/reload-from-questionnaire-template"), lgn.ReloadH)
-	mux1.HandleFunc(cfg.PrefWTS("/reload-from-questionnaire-template"), lgn.ReloadH)
+	mux1.HandleFunc(cfg.PrefTS("/reload-from-questionnaire-template"), lgn.ReloadH)
 	mux1.HandleFunc(cfg.Pref("/shufflings-to-csv"), lgn.ShufflesToCSV)
 	// Rare login funcs
 	mux1.HandleFunc(cfg.Pref("/logins-save"), lgn.SaveH)
@@ -91,9 +89,9 @@ func main() {
 	mux1.HandleFunc("/", handlers.MainH)
 	if cfg.Pref() != "" {
 		mux1.HandleFunc(cfg.Pref("/"), handlers.MainH)
-		mux1.HandleFunc(cfg.PrefWTS("/"), handlers.MainH)
+		mux1.HandleFunc(cfg.PrefTS("/"), handlers.MainH)
 	}
-	mux1.HandleFunc(cfg.PrefWTS("/d"), handlers.LoginByHashID)
+	mux1.HandleFunc(cfg.PrefTS("/d"), handlers.LoginByHashID)
 	mux1.HandleFunc(cfg.Pref("/transferrer-endpoint"), handlers.TransferrerEndpointH)
 
 	//
@@ -110,17 +108,24 @@ func main() {
 	//
 	// => Wrap the base router into an unconditional middleware
 	mux2 := muxwrap.NewHandlerMiddleware(mux1)
-
 	// => Wrap in mux2 in session manager
-	sessx.Mgr().Lifetime = time.Duration(cfg.Get().SessionTimeout) * time.Hour // default is 24 hours
-	sessx.Mgr().Cookie.Secure = true                                           // true breaks session persistence in excel-db - but not in go-countdown
-	sessx.Mgr().Cookie.Persist = false
+	sessx.Mgr().Secure(true)            // true breaks session persistence in excel-db - but not in go-countdown
+	sessx.Mgr().Lifetime(2 * time.Hour) // default is 24 hours
+	sessx.Mgr().Persist(false)
 
-	mux3 := sessx.Mgr().LoadAndSave(mux2)
+	mux3 := sessx.Mgr().Use(mux2)
 
 	//
 	// Prepare web server launch
-	IPPort := fmt.Sprintf("%v:%v", cfg.Get().BindHost, cfg.Get().BindSocket)
+	//
+	// Special port handling for google appengine
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = fmt.Sprintf("%v", cfg.Get().BindSocket)
+		log.Printf("No env variable PORT - defaulting cfg val %s", port)
+	}
+
+	IPPort := fmt.Sprintf("%v:%v", cfg.Get().BindHost, port)
 	log.Printf("starting http server at %v ... (Forward from %v)", IPPort, cfg.Get().BindSocketFallbackHTTP)
 	log.Printf("==========================")
 	log.Printf("  ")
@@ -136,7 +141,7 @@ func main() {
 
 		fallbackSrv := &http.Server{
 			ReadTimeout:       time.Duration(cfg.Get().ReadTimeOut) * time.Second,
-			ReadHeaderTimeout: time.Duration(cfg.Get().ReadHeaderTimeOut) * time.Second,
+			ReadHeaderTimeout: time.Duration(cfg.Get().ReadHeaderTimeOut) * time.Second, // individual request cannot control body timeout
 			WriteTimeout:      time.Duration(cfg.Get().WriteTimeOut) * time.Second,
 			IdleTimeout:       120 * time.Second,
 			Addr:              fmt.Sprintf(":%v", cfg.Get().BindSocketFallbackHTTP),
@@ -184,7 +189,7 @@ func main() {
 		// err = http.ListenAndServeTLS(IPPort, "server.pem", "server.key", mux3)
 		srv := &http.Server{
 			ReadTimeout:       time.Duration(cfg.Get().ReadTimeOut) * time.Second,
-			ReadHeaderTimeout: time.Duration(cfg.Get().ReadHeaderTimeOut) * time.Second,
+			ReadHeaderTimeout: time.Duration(cfg.Get().ReadHeaderTimeOut) * time.Second, // individual request cannot control body timeout
 			WriteTimeout:      time.Duration(cfg.Get().WriteTimeOut) * time.Second,
 			IdleTimeout:       120 * time.Second,
 			Addr:              IPPort,
@@ -197,7 +202,6 @@ func main() {
 		} else {
 			log.Fatal(srv.ListenAndServeTLS("server.pem", "server.key"))
 		}
-
 	} else {
 		log.Fatal(http.ListenAndServe(IPPort, mux3))
 	}

@@ -5,14 +5,17 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
+	"path"
 	"path/filepath"
 	"time"
 
+	
 	"github.com/monoculum/formam"
 	"github.com/zew/go-questionnaire/cfg"
 	"github.com/zew/go-questionnaire/generators/euref"
 	"github.com/zew/go-questionnaire/generators/fmt"
-	"github.com/zew/go-questionnaire/generators/min"
+	"github.com/zew/go-questionnaire/generators/flit"
+	"github.com/zew/go-questionnaire/generators/example"
 	"github.com/zew/go-questionnaire/generators/mul"
 	"github.com/zew/go-questionnaire/generators/peu2018"
 	"github.com/zew/go-questionnaire/lgn"
@@ -24,7 +27,8 @@ type genT func(params []qst.ParamT) (*qst.QuestionnaireT, error)
 
 var gens = map[string]genT{
 	"fmt":     fmt.Create,
-	"min":     min.Create,
+	"flit":     flit.Create,
+	"example":     example.Create,
 	"peu2018": peu2018.Create,
 	"mul":     mul.Create,
 	"euref":   euref.Create,
@@ -121,7 +125,7 @@ func SurveyGenerate(w http.ResponseWriter, r *http.Request) {
 		q.Survey = s
 		q.Survey.Org, q.Survey.Name = tr1, tr2
 
-		fn := filepath.Join(qst.BasePath(), key+".json")
+		fn := path.Join(qst.BasePath(), key+".json")
 		err = q.Save1(fn)
 		if err != nil {
 			myfmt.Fprintf(w, "Error saving %v: %v<br>\n", fn, err)

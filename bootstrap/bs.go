@@ -1,5 +1,7 @@
 // Package bootstrap provides identical initialization
-// to main(), but also to system tests
+// to main(), but also to system tests;
+// initialization is gocloud-enabled so that config files
+// can be loaded from an app engine bucket.
 package bootstrap
 
 import (
@@ -9,6 +11,7 @@ import (
 	"strings"
 
 	"github.com/zew/go-questionnaire/cfg"
+	"github.com/zew/go-questionnaire/cloudio"
 	"github.com/zew/go-questionnaire/lgn"
 	"github.com/zew/go-questionnaire/tpl"
 	"github.com/zew/util"
@@ -36,12 +39,60 @@ func Config() {
 	)
 	fl.Gen()
 
-	cfg.CfgPath = fl.ByKey("cfg").Val
-	cfg.Load()
+	{
+		cfg.CfgPath = fl.ByKey("cfg").Val
 
-	lgn.LgnsPath = fl.ByKey("lgn").Val
-	lgn.Load()
+		fileName := cfg.CfgPath
+		r, bucketClose, err := cloudio.Open(fileName)
+		if err != nil {
+			log.Fatalf("Error opening writer to %v: %v", fileName, err)
+		}
+		defer func() {
+			err := r.Close()
+			if err != nil {
+				log.Printf("Error closing writer to bucket to %v: %v", fileName, err)
+			}
+		}()
+		defer func() {
+			err := bucketClose()
+			if err != nil {
+				log.Printf("Error closing bucket of writer to %v: %v", fileName, err)
+			}
+		}()
+		log.Printf("Opened reader to cloud config %v", fileName)
+		cfg.Load(r)
 
+		cloudio.MarshalWriteFile(cfg.Example(), "config-example.json")
+	}
+
+	{
+		lgn.LgnsPath = fl.ByKey("lgn").Val
+		fileName := lgn.LgnsPath
+		r, bucketClose, err := cloudio.Open(fileName)
+		if err != nil {
+			log.Fatalf("Error opening writer to %v: %v", fileName, err)
+		}
+		defer func() {
+			err := r.Close()
+			if err != nil {
+				log.Printf("Error closing writer to bucket to %v: %v", fileName, err)
+			}
+		}()
+		defer func() {
+			err := bucketClose()
+			if err != nil {
+				log.Printf("Error closing bucket of writer to %v: %v", fileName, err)
+			}
+		}()
+		log.Printf("Opened reader to cloud config %v", fileName)
+		lgn.Load(r)
+
+		cloudio.MarshalWriteFile(lgn.Example(), "logins-example.json")
+
+	}
+
+	//
+	//
 	tpls := []string{
 		"main_desktop.html", "main_mobile.html",
 		"main_desktop1.css", "main_desktop2.css",

@@ -297,7 +297,7 @@ table.main-table tr:nth-child(odd){
     white-space: normal !important;  /* overriding outer element setting */
 
     display: inline-block;
-    vertical-align: top;
+    aavertical-align: top;
     width: 75%;
 }
 
@@ -332,7 +332,10 @@ table.main-table tr:nth-child(odd){
 .vert-correct {
 	top: -3px;
 	position: relative;
+	margin-top:    0px;  
+	margin-bottom: 0px;
 }
+
 
 
 .special-input-left-padding {
@@ -351,6 +354,7 @@ table.main-table tr:nth-child(odd){
 	line-height: 160%;
 }
 
+/* vertical margins between rows */
 .special-input-margin-vertical {
 	margin-top:    11px;
 	margin-bottom: 11px;
@@ -369,5 +373,10 @@ table.main-table tr:nth-child(odd){
 	background-color: #ccc;
 }
 
+.css-radio-label{
+	position: relative;
+	/* top: 2px; */
+	/* color: #C22; */
+}
 
 

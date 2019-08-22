@@ -40,13 +40,15 @@ func (i *inputT) AddRadio() *radioT {
 // There is one exception for multiple radios (radiogroup) with the same name but distinct values.
 // Multiple checkboxes (checkboxgroup) with same name but distinct values are a dubious instrument. See comment to implementedType checkboxgroup.
 type inputT struct {
-	Name     string `json:"name,omitempty"`
-	Type     string `json:"type,omitempty"`
-	MaxChars int    `json:"max_chars,omitempty"` // Number of input chars, also used to compute width
+	Name     string  `json:"name,omitempty"`
+	Type     string  `json:"type,omitempty"`
+	MaxChars int     `json:"max_chars,omitempty"` // Number of input chars, also used to compute width
+	Step     float64 `json:"step,omitempty"`      // stepping interval for number input
 
 	HAlignLabel   horizontalAlignment `json:"horizontal_align_label,omitempty"`   // description left/center/right of input, default left, similar setting for radioT but not for group
 	HAlignControl horizontalAlignment `json:"horizontal_align_control,omitempty"` // label       left/center/right of input, default left, similar setting for radioT but not for group
 	CSSLabel      string              `json:"css_label,omitempty"`
+	CSSRadioLabel string              `json:"css_rad_label,omitempty"` // radio label
 	CSSControl    string              `json:"css_control,omitempty"`
 	Label         trl.S               `json:"label,omitempty"`
 	Desc          trl.S               `json:"description,omitempty"`
@@ -215,7 +217,11 @@ func (i inputT) HTML(langCode string, numCols int) string {
 			// input
 			inputMode := ""
 			if i.Type == "number" {
-				inputMode = " step='0.1'  "
+				if i.Step >= 1 {
+					inputMode = fmt.Sprintf(" step='%.0f'  ", i.Step)
+				} else {
+					inputMode = fmt.Sprintf(" step='%.f'  ", i.Step)
+				}
 			}
 			ctrl += fmt.Sprintf("<input type='%v'  %v  name='%v' id='%v' title='%v %v' class='%v' style='%v' %v %v  value='%v' />\n",
 				i.Type, inputMode,
@@ -262,10 +268,10 @@ func (i inputT) HTML(langCode string, numCols int) string {
 			// one += fmt.Sprintf("Val %v", val)
 
 			if rad.Label != nil && rad.HAlign == HLeft {
-				one += fmt.Sprintf("<span class='go-quest-label vert-correct %v' >%v</span>\n", i.CSSLabel, rad.Label.Tr(langCode))
+				one += fmt.Sprintf("<span class='go-quest-label vert-correct %v' >%v</span>\n", i.CSSRadioLabel, rad.Label.Tr(langCode))
 			}
 			if rad.Label != nil && rad.HAlign == HCenter {
-				one += fmt.Sprintf("<span class='go-quest-label vert-correct %v'>%v</span>\n", i.CSSLabel, rad.Label.Tr(langCode))
+				one += fmt.Sprintf("<span class='go-quest-label vert-correct %v'>%v</span>\n", i.CSSRadioLabel, rad.Label.Tr(langCode))
 				one += vspacer
 			}
 
@@ -275,7 +281,7 @@ func (i inputT) HTML(langCode string, numCols int) string {
 			)
 
 			if rad.Label != nil && rad.HAlign == HRight {
-				one += fmt.Sprintf("<span class='go-quest-label vert-correct %v'>%v</span>\n", i.CSSLabel, rad.Label.Tr(langCode))
+				one += fmt.Sprintf("<span class='go-quest-label vert-correct %v'>%v</span>\n", i.CSSRadioLabel, rad.Label.Tr(langCode))
 			}
 			one = td(rad.HAlign, colWidth(1, numCols), one)
 			ctrl += one
@@ -321,7 +327,7 @@ type groupT struct {
 	Label                trl.S `json:"label,omitempty"`
 	Desc                 trl.S `json:"description,omitempty"`
 	HeaderBottomVSpacers int   `json:"header_bottom_vspacers,omitempty"` // number of half rows below the group header
-	BottomVSpacers       int   `json:"bottom_half_vspacers,omitempty"`   // number of rows below the group
+	BottomVSpacers       int   `json:"bottom_half_vspacers,omitempty"`   // number of rows below the group, initialized to 3
 
 	Vertical bool `json:"vertical,omitempty"` // groups vertically, not horizontally, not yet implemented
 

@@ -54,6 +54,7 @@ func main() {
 	tpl.CreateAndRegisterHandlerForDocs(mux1)
 
 	serveIcon := func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Content-Type", "image/x-icon")
 		bts, _ := ioutil.ReadFile("./static/img/ui/favicon.ico")
 		fmt.Fprint(w, bts)
 	}

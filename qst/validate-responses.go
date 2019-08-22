@@ -16,57 +16,63 @@ var validators = map[string]validatorT{}
 
 func init() {
 
-	{
-		functionBase := func(langCode, arg string, limit float64) error {
+	functionBase := func(langCode, arg string, limit float64) error {
 
-			arg = strings.TrimSpace(arg)
+		arg = strings.TrimSpace(arg)
 
-			// comma => dot
-			if strings.Contains(arg, ",") && !strings.Contains(arg, ".") {
-				arg = strings.Replace(arg, ",", ".", -1)
-			}
-
-			// comma and dot; i.e. 100.000,00 or 100,000.00
-			if strings.Contains(arg, ",") && strings.Contains(arg, ".") {
-				arg = strings.Replace(arg, ",", ".", -1) // map everything to dot
-			}
-
-			// 100.000.00 => 100000.00
-			if occs := strings.Count(arg, "."); occs > 1 {
-				arg = strings.Replace(arg, ".", "", occs-1) // replace every dot but the last
-			}
-
-			fl, err := strconv.ParseFloat(arg, 64)
-
-			// log.Printf("Checking %6v against %6v => %6v %v", arg, limit, fl, err)
-			if err != nil {
-				// ParseFloat yields ugly error messages
-				// strconv.ParseFloat: parsing "3 3" invalid syntax
-				return fmt.Errorf(cfg.Get().Mp["not_a_number"].Tr(langCode), arg)
-			}
-			// Understandable in every language
-			if fl > limit {
-				log.Printf("%.2f > max %.0f", fl, limit)
-				return fmt.Errorf(cfg.Get().Mp["too_big"].Tr(langCode), limit)
-			}
-			if fl < -limit {
-				log.Printf("%.2f < min %.0f", fl, -limit)
-				return fmt.Errorf(cfg.Get().Mp["too_small"].Tr(langCode), -limit)
-			}
-			return nil
+		// comma => dot
+		if strings.Contains(arg, ",") && !strings.Contains(arg, ".") {
+			arg = strings.Replace(arg, ",", ".", -1)
 		}
 
-		validators["inRange20"] = func(lc, arg string) error { return functionBase(lc, arg, 20) }
-		validators["inRange100"] = func(lc, arg string) error { return functionBase(lc, arg, 100) }
-		validators["inRange1000"] = func(lc, arg string) error { return functionBase(lc, arg, 1000) }
-		validators["inRange10000"] = func(lc, arg string) error { return functionBase(lc, arg, 10*1000) }
-		validators["inRange50000"] = func(lc, arg string) error { return functionBase(lc, arg, 50*1000) }
-		validators["mustRadioGroup"] = func(lc, arg string) error {
-			if arg == "0" || arg == "" {
-				return fmt.Errorf(cfg.Get().Mp["must_one_option"].Tr(lc))
-			}
-			return nil
+		// comma and dot; i.e. 100.000,00 or 100,000.00
+		if strings.Contains(arg, ",") && strings.Contains(arg, ".") {
+			arg = strings.Replace(arg, ",", ".", -1) // map everything to dot
 		}
+
+		// 100.000.00 => 100000.00
+		if occs := strings.Count(arg, "."); occs > 1 {
+			arg = strings.Replace(arg, ".", "", occs-1) // replace every dot but the last
+		}
+
+		fl, err := strconv.ParseFloat(arg, 64)
+
+		// log.Printf("Checking %6v against %6v => %6v %v", arg, limit, fl, err)
+		if err != nil {
+			// ParseFloat yields ugly error messages
+			// strconv.ParseFloat: parsing "3 3" invalid syntax
+			return fmt.Errorf(cfg.Get().Mp["not_a_number"].Tr(langCode), arg)
+		}
+		// Understandable in every language
+		if fl > limit {
+			log.Printf("%.2f > max %.0f", fl, limit)
+			return fmt.Errorf(cfg.Get().Mp["too_big"].Tr(langCode), limit)
+		}
+		if fl < -limit {
+			log.Printf("%.2f < min %.0f", fl, -limit)
+			return fmt.Errorf(cfg.Get().Mp["too_small"].Tr(langCode), -limit)
+		}
+		return nil
+	}
+
+	validators["inRange20"] = func(lc, arg string) error { return functionBase(lc, arg, 20) }
+	validators["inRange100"] = func(lc, arg string) error { return functionBase(lc, arg, 100) }
+	validators["inRange1000"] = func(lc, arg string) error { return functionBase(lc, arg, 1000) }
+	validators["inRange10000"] = func(lc, arg string) error { return functionBase(lc, arg, 10*1000) }
+	validators["inRange50000"] = func(lc, arg string) error { return functionBase(lc, arg, 50*1000) }
+	validators["inRange1Mio"] = func(lc, arg string) error { return functionBase(lc, arg, 1*1000*1000) }
+
+	validators["mustRadioGroup"] = func(lc, arg string) error {
+		if arg == "0" || arg == "" {
+			return fmt.Errorf(cfg.Get().Mp["must_one_option"].Tr(lc))
+		}
+		return nil
+	}
+	validators["must"] = func(lc, arg string) error {
+		if strings.TrimSpace(arg) == "" {
+			return fmt.Errorf(cfg.Get().Mp["must_not_empty"].Tr(lc))
+		}
+		return nil
 	}
 
 }
@@ -90,19 +96,16 @@ func (q *QuestionnaireT) ValidateResponseData(pageNum int, langCode string) (las
 				// Validator function exists
 				if inp.Validator != "" {
 					if vd, ok := validators[inp.Validator]; ok {
-						if inp.Response != "" {
-							err := vd(langCode, inp.Response)
-							if err != nil {
-								last = err
-								str := err.Error()
-								str = fmt.Sprintf("<span class='error'>&nbsp; %v</span>", str)
-								// log.Printf("inp error msg is now %v", str)
-								q.Pages[i1].Groups[i2].Inputs[i3].ErrMsg = trl.S{"de": str, "en": str} // TODO: multi-lingo here :(
-							} else {
-								// Reset previous errors
-								q.Pages[i1].Groups[i2].Inputs[i3].ErrMsg = nil
-							}
+						err := vd(langCode, inp.Response)
+						// log.Printf("Validating %22s  -%s-  %v", inp.Name, inp.Response, err)
+						if err != nil {
+							last = err
+							str := err.Error()
+							str = fmt.Sprintf("<span class='error'>&nbsp; %v</span>", str)
+							// log.Printf("inp error msg is now %v", str)
+							q.Pages[i1].Groups[i2].Inputs[i3].ErrMsg = trl.S{"de": str, "en": str} // TODO: multi-lingo here :(
 						} else {
+							// Reset previous errors
 							q.Pages[i1].Groups[i2].Inputs[i3].ErrMsg = nil
 						}
 					}

@@ -320,10 +320,14 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 			}
 		}
 	}
-	err = q.ValidateResponseData(prevPage, q.LangCode)
-	if err != nil {
-		q.CurrPage = prevPage // Prevent changing page, keep participant on page with errors
+
+	if sess.EffectiveStr("skip_validation") == "" {
+		err = q.ValidateResponseData(prevPage, q.LangCode)
+		if err != nil {
+			q.CurrPage = prevPage // Prevent changing page, keep participant on page with errors
+		}
 	}
+
 	if r.RemoteAddr != "" {
 		q.RemoteIP = r.RemoteAddr
 	}

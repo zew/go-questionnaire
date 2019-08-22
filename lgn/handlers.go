@@ -596,6 +596,12 @@ func ReloadH(w http.ResponseWriter, r *http.Request) {
 		msg = "Not a POST request. No delete action taken."
 	}
 
+	if sess.EffectiveStr("skip_validation") != "" {
+		sess.PutString("skip_validation", "true")
+	} else {
+		sess.Remove(w, "skip_validation")
+	}
+
 	relForm := r.Form // relevant Form
 	if len(r.PostForm) > 5 {
 		relForm = r.PostForm
@@ -614,19 +620,18 @@ func ReloadH(w http.ResponseWriter, r *http.Request) {
 		<body>
 			<b>%v<b>
 			<form method="POST" class="survey-edit-form" >
-					<input type="text"   name="u"                   value="%v"   /> <br>
-					<input type="text"   name="sid"                 value="%v"   /> <br>
-					<input type="text"   name="wid"                 value="%v"   /> <br>
-					<input type="text"   name="p"                   value="%v"   /> <br>
-					<input type="text"   name="h"    size=40        value="%v"   /> <br>
-		lang code	<input type="text"   name="lang_code"  size=6   value="%v"   /> <br>
-					%v
-					<input type="submit" name="submit" id="submit"  value="Submit" accesskey="s"  /> <br>
+						<input type="text"   name="u"                   value="%v"   /> <br>
+						<input type="text"   name="sid"                 value="%v"   /> <br>
+						<input type="text"   name="wid"                 value="%v"   /> <br>
+						<input type="text"   name="p"                   value="%v"   /> <br>
+						<input type="text"   name="h"    size=40        value="%v"   /> <br>
+		lang code		<input type="text"   name="lang_code"  size=6   value="%v"   /> <br>
+		page			<input type="text"   name="page"                value="%v"   /> <br>
+		skip validation	<input type="text"   name="skip_validation"     value="%v"   /> <br>
+						%v
+						<input type="submit" name="submit" id="submit"  value="Submit" accesskey="s"  /> <br>
 			</form>
 			<script> document.getElementById('submit').focus(); </script>
-				
-		</body>
-	</html>
 
 		`,
 		msg,
@@ -636,12 +641,17 @@ func ReloadH(w http.ResponseWriter, r *http.Request) {
 		relForm.Get("p"),
 		relForm.Get("h"),
 		relForm.Get("lang_code"),
+		relForm.Get("page"),
+		relForm.Get("skip_validation"),
 		attrsStr,
 	)
 
 	queryString := Query(
 		relForm.Get("u"), relForm.Get("sid"), relForm.Get("wid"), relForm.Get("p"), relForm.Get("h"),
 	)
+	if relForm.Get("page") != "" {
+		queryString += "&page=" + relForm.Get("page")
+	}
 	if relForm.Get("lang_code") != "" {
 		queryString += "&lang_code=" + relForm.Get("lang_code")
 	}
@@ -653,7 +663,21 @@ func ReloadH(w http.ResponseWriter, r *http.Request) {
 
 	url := fmt.Sprintf("%v?%v", cfg.PrefTS(), queryString)
 
-	fmt.Fprintf(w, "<a href='%v'  target='_blank'>Start questionnaire (again)<a> <br> ", url)
+	fmt.Fprintf(w, "<a href='%v'  target='_blank'>Start questionnaire (again)<a> <br>\n", url)
+	if r.Method == "POST" {
+		fmt.Fprintf(w,
+			`
+		<SCRIPT language="JavaScript1.2">
+			//window.open('%s','mywindow','menubar=1,resizable=1,width=350,height=250,target=q');
+			var win = window.open('%s', 'qst');
+			win.focus();
+		</SCRIPT>`,
+			url,
+			url,
+		)
+	}
+
+	fmt.Fprint(w, "\t</body>\n</html>")
 
 }
 

@@ -42,6 +42,7 @@ var exempted = map[string]interface{}{
 	// the hash itself
 	"h": nil,
 	// "attrs": nil, // user attributes at login time - must be hashed to prevent
+	"skip_validation": nil,
 }
 
 // userAttrs contains URL params going into LoginT.Attrs

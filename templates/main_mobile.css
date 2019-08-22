@@ -53,7 +53,7 @@ body{
     white-space: normal !important;  /* overriding outer element setting */
 
     display: inline-block;
-    vertical-align: top;
+    aavertical-align: top;
     width: 75%;
 }
 

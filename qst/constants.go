@@ -15,7 +15,7 @@ var implementedTypes = map[string]interface{}{
 	"checkboxgroup": nil, // checkboxgroup has no *sensible* use case. There was an 'amenities' array in another app, with encodings: 4 for bath, 8 for balcony... They should better be designed as independent checkboxes bath and balcony. I cannot think of any useful 'additive flags', and those would have to be added and decoded server side. We keep the type, but untested.
 
 	// Helpers
-	"textblock": nil, // Only name, label and description are rendered
+	"textblock": nil, // Only name, label and description are rendered - ColSpanLabel counts, ColSpanControl is ignored
 	"button":    nil, // Only name, label and description are rendered
 	"dynamic":   nil, // Executed a request time
 

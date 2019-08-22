@@ -1,6 +1,14 @@
 package qst
 
-import "github.com/zew/go-questionnaire/trl"
+import (
+	"fmt"
+
+	"github.com/zew/go-questionnaire/ctr"
+	"github.com/zew/go-questionnaire/trl"
+)
+
+var RadioVali = ""
+var RadioCSSControl = ""
 
 // AddRadioMatrixGroup adds several inputs of type radiogroup
 // and prepends a row with labels.
@@ -20,6 +28,7 @@ func (p *pageT) AddRadioMatrixGroup(headerLabels []trl.S, inpNames []string, row
 		}
 		inp := gr.AddInput()
 		inp.Type = "textblock"
+		inp.CSSLabel = "css-radio-label"
 		inp.Label = trl.S{
 			"de": " &nbsp; ",
 			"en": " &nbsp; ",
@@ -31,6 +40,7 @@ func (p *pageT) AddRadioMatrixGroup(headerLabels []trl.S, inpNames []string, row
 	for _, lbl := range headerLabels {
 		inp := gr.AddInput()
 		inp.Type = "textblock"
+		inp.CSSLabel = "css-radio-label"
 		inp.HAlignLabel = HCenter
 		inp.Desc = lbl // for instance trl.S{"de": "gut", "en": "good"}
 	}
@@ -39,7 +49,11 @@ func (p *pageT) AddRadioMatrixGroup(headerLabels []trl.S, inpNames []string, row
 	for i, name := range inpNames {
 		inp := gr.AddInput()
 		inp.Type = "radiogroup"
+		inp.CSSControl = RadioCSSControl
+
 		inp.Name = name // "y0_euro"
+		inp.Validator = RadioVali
+		// inp.CSSRadioLabel = "css-radio-label" - label rendered above
 		if len(rowLabels) > 0 {
 			// for instance trl.S{"de": "Euroraum", "en": "euro area"}
 			// inp.Label = rowLabels[i]
@@ -79,4 +93,14 @@ func (p *pageT) ExampleSixColumnsLabelRight() *groupT {
 	grp.Label = map[string]string{"de": "Fünf mit Label", "en": "Five with label"}
 	grp.Desc = map[string]string{"de": "", "en": ""}
 	return grp
+}
+
+// EmptyCells to fill up rows
+func (gr *groupT) EmptyCells(rowSpan int) {
+	inp := gr.AddInput()
+	inp.Type = "textblock"
+	inp.Name = fmt.Sprintf("vspacer%02d", ctr.Increment())
+	inp.Label = trl.S{"de": " ", "en": " "}
+	inp.Desc = trl.S{"de": " ", "en": " "}
+	inp.ColSpanLabel = rowSpan
 }

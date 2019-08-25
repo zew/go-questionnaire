@@ -522,3 +522,77 @@ func agreeToDisagree5() []trl.S {
 	return tm
 
 }
+
+func optimistic7() []trl.S {
+
+	tm := []trl.S{
+		{
+			"de": "xxx",
+			"en": "Not at all optimistic",
+		},
+		{
+			"de": " &nbsp; ",
+			"en": "Strongly non-optimistic",
+		},
+		{
+			"de": " &nbsp; ",
+			"en": "A little non-optimistic",
+		},
+		{
+			"de": " &nbsp; ",
+			"en": "Indifferent",
+		},
+		{
+			"de": " &nbsp; ",
+			"en": "A little optimistic",
+		},
+		{
+			"de": " &nbsp; ",
+			"en": "Strongly optimistic",
+		},
+		{
+			"de": "xxx",
+			"en": "Very optimistic",
+		},
+	}
+
+	return tm
+
+}
+
+func pessimistic7() []trl.S {
+
+	tm := []trl.S{
+		{
+			"de": "xxx",
+			"en": "Not at all pessimistic",
+		},
+		{
+			"de": " &nbsp; ",
+			"en": "Strongly non-pessimistic",
+		},
+		{
+			"de": " &nbsp; ",
+			"en": "A little non-pessimistic",
+		},
+		{
+			"de": " &nbsp; ",
+			"en": "Indifferent",
+		},
+		{
+			"de": " &nbsp; ",
+			"en": "A little pessimistic",
+		},
+		{
+			"de": " &nbsp; ",
+			"en": "Strongly pessimistic",
+		},
+		{
+			"de": "xxx",
+			"en": "Very pessimistic",
+		},
+	}
+
+	return tm
+
+}

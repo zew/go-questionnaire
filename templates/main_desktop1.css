@@ -279,7 +279,7 @@ table.main-table tr:nth-child(odd){
 }
 
 .go-quest-label {
-    display: inline-block;  /* activate line-height*/
+    display: inline-block;  /* activate line-height - and for whitespace nowrap with suffix*/
 	font-size:     12px;
 	line-height:   1.1em;
 }
@@ -294,10 +294,9 @@ table.main-table tr:nth-child(odd){
 }
 
 .suffix-inner {
+    /* vertical-align: top; */
     white-space: normal !important;  /* overriding outer element setting */
-
     display: inline-block;
-    aavertical-align: top;
     width: 75%;
 }
 
@@ -329,7 +328,14 @@ table.main-table tr:nth-child(odd){
 
 
 /* for radio inputs, rendering CSS */
-.vert-correct {
+.vert-correct-center {
+	top: -3px;
+	position: relative;
+	margin-top:    0px;  
+	margin-bottom: 0px;
+    line-height: 120%;
+}
+.vert-correct-left-right {
 	top: -3px;
 	position: relative;
 	margin-top:    0px;  
@@ -337,20 +343,13 @@ table.main-table tr:nth-child(odd){
 }
 
 
-
 .special-input-left-padding {
-	margin-left: 40px;
-}
-
-
-.special-input-input-smaller {
-    padding: 0px 0px;
-    font-size: 11px;
+	padding-left: 40px;
 }
 
 
 /* increase line height for textblocks */
-.special-input-vert-wider {
+.special-line-height-higher {
 	line-height: 160%;
 }
 
@@ -367,16 +366,22 @@ table.main-table tr:nth-child(odd){
 	display: inline-block;
 }
 
+.special-submit-big {
+	padding: 10px 64px;
+}
+
+.special-min-width-85 {
+    display: inline-block;
+    min-width: 85px;    
+}
+
+
+
 
 
 .alternate-background {
 	background-color: #ccc;
 }
 
-.css-radio-label{
-	position: relative;
-	/* top: 2px; */
-	/* color: #C22; */
-}
 
 

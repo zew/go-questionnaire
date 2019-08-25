@@ -51,9 +51,7 @@ body{
 
 .suffix-inner {
     white-space: normal !important;  /* overriding outer element setting */
-
     display: inline-block;
-    aavertical-align: top;
     width: 75%;
 }
 
@@ -86,10 +84,10 @@ body{
     height: 2px;
 }
 .go-quest-vspacer-8{
-    height: 2px;
+    height: 4px;
 }
 .go-quest-vspacer-16{
-    height: 5px;
+    height: 8px;
 }
 
 
@@ -237,19 +235,64 @@ input[type="number"] {
 }
 
 
-.mobile-input-smaller {
-    padding: 0px 0px;
-    font-size: 11px !important;
-    width: 22em !important;
+/* for radio inputs, rendering CSS */
+.vert-correct-center {
+	top: -3px;
+	position: relative;
+	margin-top:    0px;  
+    margin-bottom: 0px;
+    line-height: 110%;
+}
+.vert-correct-left-right {
+	top: -6px;
+	position: relative;
+	margin-top:    0px;  
+	margin-bottom: 0px;
 }
 
-.mobile-wider {
+
+.special-input-left-padding {
+	padding-left: 20px;
+}
+
+
+/* increase line height for textblocks */
+.special-line-height-higher {
+	line-height: 120%;
+}
+
+/* vertical margins between rows */
+.special-input-margin-vertical {
+	margin-top:    12px;
+	margin-bottom: 12px;
+}
+
+
+.special-input-textblock-smaller {
+	font-size: 65%;
+	padding-top:    2px;
+	padding-bottom: 12px;
+	display: inline-block;
+}
+
+.special-submit-big {
+	padding: 10px 64px;
+}
+
+
+.special-min-width-85 {
     display: inline-block;
     min-width: 85px;    
 }
 
-/* increase line height for textblocks */
-.special-input-vert-wider {
-	line-height: 130%;
-}
+
+
+/*
+ mobile-input-smaller {
+    padding: 0px 0px;
+    font-size: 11px !important;
+    width: 22em     !important;
+} 
+
+*/
 

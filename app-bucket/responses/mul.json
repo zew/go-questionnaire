@@ -1245,7 +1245,7 @@
  					"inputs": [
  						{
  							"type": "textblock",
- 							"css_label": "special-input-vert-wider",
+ 							"css_label": "special-line-height-higher",
  							"description": {
  								"de": "Danke für Ihre Teilnahme an unserer Umfrage.",
  								"en": "Thank you for your participation in our survey.",
@@ -1257,7 +1257,7 @@
  						},
  						{
  							"type": "textblock",
- 							"css_label": "special-input-vert-wider",
+ 							"css_label": "special-line-height-higher",
  							"description": {
  								"de": "\u003cspan style='font-size: 100%;'\u003eIhre Eingaben wurden gespeichert.\u003c/span\u003e",
  								"en": "\u003cspan style='font-size: 100%;'\u003eYour entries have been saved.\u003c/span\u003e",

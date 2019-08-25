@@ -75,7 +75,7 @@
  					"inputs": [
  						{
  							"type": "textblock",
- 							"css_label": "special-input-vert-wider",
+ 							"css_label": "special-line-height-higher",
  							"description": {
  								"de": "\u003cp\u003eWillkommen zur 2018 Umfrage\u003cbr /\u003e\nzur Zukunft der Europäischen Union\u003c/p\u003e\n\n\u003cp\u003e\u003cbr\u003e\u003c/p\u003e\n\n\u003cp\u003e\u003cimg src=\"/survey/img/doc/site-peu2018-logos.png\" alt=\"logo\" /\u003e\u003c/p\u003e\n\n\u003cp\u003e\u003cbr\u003e\u003c/p\u003e\n",
  								"en": "\u003cp\u003eWelcome to the 2018 survey\u003cbr /\u003e\non the prospects of the European Union\u003c/p\u003e\n\n\u003cp\u003e\u003cbr\u003e\u003c/p\u003e\n\n\u003cp\u003e\u003cimg src=\"/survey/img/doc/site-peu2018-logos.png\" alt=\"logo\" /\u003e\u003c/p\u003e\n\n\u003cp\u003e\u003cbr\u003e\u003c/p\u003e\n",
@@ -3008,7 +3008,7 @@
  					"inputs": [
  						{
  							"type": "textblock",
- 							"css_label": "special-input-vert-wider",
+ 							"css_label": "special-line-height-higher",
  							"description": {
  								"de": "Danke für Ihre Teilnahme an unserer Umfrage.",
  								"en": "Thank you for your participation in our survey.",
@@ -3020,7 +3020,7 @@
  						},
  						{
  							"type": "textblock",
- 							"css_label": "special-input-vert-wider",
+ 							"css_label": "special-line-height-higher",
  							"description": {
  								"de": "\u003cspan style='font-size: 100%;'\u003eIhre Eingaben wurden gespeichert.\u003c/span\u003e",
  								"en": "\u003cspan style='font-size: 100%;'\u003eYour entries have been saved.\u003c/span\u003e",
@@ -3032,7 +3032,7 @@
  						},
  						{
  							"type": "textblock",
- 							"css_label": "special-input-vert-wider",
+ 							"css_label": "special-line-height-higher",
  							"description": {
  								"de": "\u003ch3\u003eTechnische Probleme\u003c/h3\u003e\n\n\u003cp\u003eBei technischen Fragen zur Online-Erhebung\u003cbr /\u003e\nwenden Sie sich bitte an:\u003c/p\u003e\n\n\u003cp\u003ePeter Buchmann (buchmann@zew.de)\u003c/p\u003e\n\n\u003cp\u003e\u003cbr\u003e\u003c/p\u003e\n",
  								"en": "\u003ch3\u003eTechnical issues\u003c/h3\u003e\n\n\u003cp\u003ePlease report technical issues\nwith the online questionnaire to:\u003c/p\u003e\n\n\u003cp\u003ePeter Buchmann (buchmann@zew.de)\u003c/p\u003e\n\n\u003cp\u003e\u003cbr\u003e\u003c/p\u003e\n",
@@ -3045,7 +3045,7 @@
  						{
  							"name": "submitBtn",
  							"type": "button",
- 							"css_control": "special-input-vert-wider",
+ 							"css_control": "special-line-height-higher",
  							"label": {
  								"de": "",
  								"en": ""
@@ -3092,7 +3092,7 @@
  					"inputs": [
  						{
  							"type": "textblock",
- 							"css_label": "special-input-vert-wider",
+ 							"css_label": "special-line-height-higher",
  							"description": {
  								"de": "Danke für Ihre Teilnahme an unserer Umfrage.",
  								"en": "Thank you for your participation in our survey.",
@@ -3104,7 +3104,7 @@
  						},
  						{
  							"type": "textblock",
- 							"css_label": "special-input-vert-wider",
+ 							"css_label": "special-line-height-higher",
  							"description": {
  								"de": "\u003cspan style='font-size: 100%;'\u003eIhre Eingaben wurden gespeichert.\u003c/span\u003e",
  								"en": "\u003cspan style='font-size: 100%;'\u003eYour entries have been saved.\u003c/span\u003e",
@@ -3116,7 +3116,7 @@
  						},
  						{
  							"type": "textblock",
- 							"css_label": "special-input-vert-wider",
+ 							"css_label": "special-line-height-higher",
  							"description": {
  								"de": "\u003ch3\u003eTechnische Probleme\u003c/h3\u003e\n\n\u003cp\u003eBei technischen Fragen zur Online-Erhebung\u003cbr /\u003e\nwenden Sie sich bitte an:\u003c/p\u003e\n\n\u003cp\u003ePeter Buchmann (buchmann@zew.de)\u003c/p\u003e\n\n\u003cp\u003e\u003cbr\u003e\u003c/p\u003e\n",
  								"en": "\u003ch3\u003eTechnical issues\u003c/h3\u003e\n\n\u003cp\u003ePlease report technical issues\nwith the online questionnaire to:\u003c/p\u003e\n\n\u003cp\u003ePeter Buchmann (buchmann@zew.de)\u003c/p\u003e\n\n\u003cp\u003e\u003cbr\u003e\u003c/p\u003e\n",

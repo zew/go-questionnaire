@@ -240,7 +240,7 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 			inp.MaxChars = 30
 			inp.ColSpanLabel = 2
 			inp.ColSpanControl = 6
-			inp.CSSControl = "mobile-input-smaller"
+			inp.CSSControl = "special-input-textblock-smaller"
 		}
 
 	}

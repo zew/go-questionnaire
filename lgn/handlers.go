@@ -616,24 +616,26 @@ func ReloadH(w http.ResponseWriter, r *http.Request) {
 
 	fmt.Fprintf(w, `
 	<html>
-		<head></head>
-		<body>
-			<b>%v<b>
-			<form method="POST" class="survey-edit-form" >
-						<input type="text"   name="u"                   value="%v"   /> <br>
-						<input type="text"   name="sid"                 value="%v"   /> <br>
-						<input type="text"   name="wid"                 value="%v"   /> <br>
-						<input type="text"   name="p"                   value="%v"   /> <br>
-						<input type="text"   name="h"    size=40        value="%v"   /> <br>
-		lang code		<input type="text"   name="lang_code"  size=6   value="%v"   /> <br>
-		page			<input type="text"   name="page"                value="%v"   /> <br>
-		skip validation	<input type="text"   name="skip_validation"     value="%v"   /> <br>
-						%v
-						<input type="submit" name="submit" id="submit"  value="Submit" accesskey="s"  /> <br>
-			</form>
-			<script> document.getElementById('submit').focus(); </script>
-
-		`,
+      <head></head>
+          <style>
+              * {font-family: monospace;}
+          </style>
+      <body style='white-space:pre'>
+        <b>%v<b>
+        <form method="POST" class="survey-edit-form" >
+            User ID          <input type="text"   name="u"                   value="%v"   /> <br>
+            Survey ID        <input type="text"   name="sid"                 value="%v"   /> <br>
+            Wave ID          <input type="text"   name="wid"                 value="%v"   /> <br>
+            User profile #   <input type="text"   name="p"                   value="%v"   /> country name, currency etc.<br>
+            Hash             <input type="text"   name="h"    size=40        value="%v"   /> <br>
+            Lang code        <input type="text"   name="lang_code"  size=6   value="%v"   /> 'en', 'de' ...<br>
+            Page             <input type="text"   name="page"                value="%v"   /> zero-indexed <br>
+            Mobile           <input type="text"   name="mobile"              value="%v"   /> 0-auto, 1-mobile, 2-desktop <br>
+            Skip validation  <input type="text"   name="skip_validation"     value="%v"   /> <br>
+            %v
+                             <input type="submit" name="submit" id="submit"  value="Submit" accesskey="s"  /> <br>
+		</form>        
+		<script> document.getElementById('submit').focus(); </script>  `,
 		msg,
 		l.User,
 		l.Attrs["survey_id"],
@@ -642,6 +644,7 @@ func ReloadH(w http.ResponseWriter, r *http.Request) {
 		relForm.Get("h"),
 		relForm.Get("lang_code"),
 		relForm.Get("page"),
+		relForm.Get("mobile"),
 		relForm.Get("skip_validation"),
 		attrsStr,
 	)
@@ -649,11 +652,14 @@ func ReloadH(w http.ResponseWriter, r *http.Request) {
 	queryString := Query(
 		relForm.Get("u"), relForm.Get("sid"), relForm.Get("wid"), relForm.Get("p"), relForm.Get("h"),
 	)
+	if relForm.Get("lang_code") != "" {
+		queryString += "&lang_code=" + relForm.Get("lang_code")
+	}
 	if relForm.Get("page") != "" {
 		queryString += "&page=" + relForm.Get("page")
 	}
-	if relForm.Get("lang_code") != "" {
-		queryString += "&lang_code=" + relForm.Get("lang_code")
+	if relForm.Get("mobile") != "" {
+		queryString += "&mobile=" + relForm.Get("mobile")
 	}
 	for _, attr := range relForm["attrs"] {
 		if attr != "" {
@@ -668,7 +674,7 @@ func ReloadH(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintf(w,
 			`
 		<SCRIPT language="JavaScript1.2">
-			//window.open('%s','mywindow','menubar=1,resizable=1,width=350,height=250,target=q');
+			//var win = window.open('%s','qst','menubar=1,resizable=1,width=350,height=250,target=q');
 			var win = window.open('%s', 'qst');
 			win.focus();
 		</SCRIPT>`,

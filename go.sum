@@ -52,6 +52,7 @@ github.com/GoogleCloudPlatform/cloudsql-proxy v0.0.0-20190605020000-c4ba1fdf4d36
 github.com/GoogleCloudPlatform/cloudsql-proxy v0.0.0-20190725230627-253d1edd4416/go.mod h1:aJ4qN3TfrelA6NZ6AXsXRfmEVaYin3EDbSPJrKS8OXo=
 github.com/ajstarks/svgo v0.0.0-20190820131727-1cb896ff21bc h1:unuLQ9ljOc+jY6+6YIpfKQ0QJTRFM8BNfdG5rbfL97s=
 github.com/ajstarks/svgo v0.0.0-20190820131727-1cb896ff21bc/go.mod h1:K08gAheRH3/J6wwsYMMT4xOr94bZjxIelGM0+d/wbFw=
+github.com/ajstarks/svgo v0.0.0-20190820155441-07834c060b06 h1:acJMgiJQJsPMBRFSxMLBXmUTPtMrw0rxs8O0pzO7FUE=
 github.com/ajstarks/svgo v0.0.0-20190820155441-07834c060b06/go.mod h1:K08gAheRH3/J6wwsYMMT4xOr94bZjxIelGM0+d/wbFw=
 github.com/alexedwards/scs v1.4.1 h1:/5L5a07IlqApODcEfZyMsu8Smd1S7Q4nBjEyKxIRTp0=
 github.com/alexedwards/scs v1.4.1/go.mod h1:JRIFiXthhMSivuGbxpzUa0/hT5rz2hpyw61Bmd+S1bg=

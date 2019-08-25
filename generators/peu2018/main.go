@@ -166,7 +166,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				inp.CSSLabel = "special-input-vert-wider"
+				inp.CSSLabel = "special-line-height-higher"
 				inp.ColSpanLabel = 1
 				impr := trl.S{}
 				for lc := range q.LangCodes {
@@ -697,7 +697,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				inp.CSSLabel = "special-input-vert-wider"
+				inp.CSSLabel = "special-line-height-higher"
 				inp.Desc = trl.S{
 					"de": "Danke für Ihre Teilnahme an unserer Umfrage.",
 					"en": "Thank you for your participation in our survey.",
@@ -711,7 +711,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				inp.CSSLabel = "special-input-vert-wider"
+				inp.CSSLabel = "special-line-height-higher"
 				inp.Desc = trl.S{
 					"de": "<span style='font-size: 100%;'>Ihre Eingaben wurden gespeichert.</span>",
 					"en": "<span style='font-size: 100%;'>Your entries have been saved.</span>",
@@ -725,14 +725,14 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			// {
 			// 	inp := gr.AddInput()
 			// 	inp.Type = "dynamic"
-			// 	inp.CSSLabel = "special-input-vert-wider"
+			// 	inp.CSSLabel = "special-line-height-higher"
 			// 	inp.DynamicFunc = "RepsonseStatistics"
 			// }
 
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				inp.CSSLabel = "special-input-vert-wider"
+				inp.CSSLabel = "special-line-height-higher"
 				impr := trl.S{}
 				for lc := range q.LangCodes {
 					cnt, err := tpl.MarkDownFromFile("./static/doc/site-imprint.md", q.Survey.Type, lc)
@@ -748,7 +748,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Type = "button"
 				inp.Name = "finished"
 				inp.Name = "submitBtn"
-				inp.CSSControl = "special-input-vert-wider"
+				inp.CSSControl = "special-line-height-higher"
 				inp.Response = fmt.Sprintf("%v", len(q.Pages)-1+1) // +1 since one page is appended below
 				inp.Label = trl.S{"de": "", "en": ""}
 				inp.Desc = cfg.Get().Mp["end"]
@@ -779,7 +779,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				inp.CSSLabel = "special-input-vert-wider"
+				inp.CSSLabel = "special-line-height-higher"
 				inp.Desc = trl.S{
 					"de": "Danke für Ihre Teilnahme an unserer Umfrage.",
 					"en": "Thank you for your participation in our survey.",
@@ -792,7 +792,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				inp.CSSLabel = "special-input-vert-wider"
+				inp.CSSLabel = "special-line-height-higher"
 				inp.Desc = trl.S{
 					"de": "<span style='font-size: 100%;'>Ihre Eingaben wurden gespeichert.</span>",
 					"en": "<span style='font-size: 100%;'>Your entries have been saved.</span>",
@@ -805,7 +805,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				inp.CSSLabel = "special-input-vert-wider"
+				inp.CSSLabel = "special-line-height-higher"
 				impr := trl.S{}
 				for lc := range q.LangCodes {
 					cnt, err := tpl.MarkDownFromFile("./static/doc/site-imprint.md", q.Survey.Type, lc)

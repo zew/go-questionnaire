@@ -35,7 +35,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				inp.CSSLabel = "special-input-vert-wider"
+				inp.CSSLabel = "special-line-height-higher"
 				inp.ColSpanLabel = 3
 				impr := trl.S{}
 				for lc := range q.LangCodes {
@@ -55,7 +55,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp := gr.AddInput()
 				inp.Type = "radiogroup"
 				inp.Name = "proxy"
-				inp.CSSLabel = "special-input-vert-wider"
+				inp.CSSLabel = "special-line-height-higher"
 
 				inp.Label = trl.S{"de": " ", "en": " "}
 				inp.Desc = trl.S{"de": "Sind Sie die angeschriebene Person?", "en": "Are you the addressee?"}
@@ -366,7 +366,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Validator = "inRange20"
 
 				inp.ColSpanLabel = 10
-				// inp.CSSLabel = "special-input-vert-wider"
+				// inp.CSSLabel = "special-line-height-higher"
 				inp.ColSpanControl = 12
 				inp.Desc = trl.S{
 					"de": "zwischen&nbsp;",
@@ -436,7 +436,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Validator = "inRange100"
 
 				inp.ColSpanLabel = 10
-				// inp.CSSLabel = "special-input-vert-wider"
+				// inp.CSSLabel = "special-line-height-higher"
 				inp.ColSpanControl = 12
 				inp.Desc = trl.S{
 					"de": "zwischen&nbsp;",
@@ -736,7 +736,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			inp.Validator = "inRange50000"
 
 			inp.ColSpanLabel = 55
-			// inp.CSSLabel = "special-input-vert-wider"
+			// inp.CSSLabel = "special-line-height-higher"
 			inp.ColSpanControl = 45
 			inp.Desc = trl.S{
 				"de": `Den DAX erwarten wir in 6&nbsp;Monaten bei `,
@@ -877,7 +877,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 	//
 	//
-	// Finish
+	// Finish questionnaire?  - one before last page
 	{
 		p := q.AddPage()
 		p.Section = trl.S{"de": "Abschluss", "en": "Finish"}
@@ -919,7 +919,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 					inp := gr.AddInput()
 					inp.Type = "radiogroup"
 					inp.Name = "finished"
-					inp.CSSLabel = "special-input-vert-wider"
+					inp.CSSLabel = "special-line-height-higher"
 					inp.ColSpanLabel = 1
 					inp.ColSpanControl = 1
 					inp.Validator = "mustRadioGroup"
@@ -962,7 +962,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 					"en": "By Clicking 'OK' you receive a summary of your answers",
 				}
 				inp.ColSpanLabel = 1
-				inp.CSSLabel = "special-input-vert-wider"
+				inp.CSSLabel = "special-line-height-higher"
 			}
 			{
 				inp := gr.AddInput()
@@ -996,19 +996,19 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "dynamic"
-				inp.CSSLabel = "special-input-vert-wider"
+				inp.CSSLabel = "special-line-height-higher"
 				inp.DynamicFunc = "RepsonseStatistics"
 			}
 			{
 				inp := gr.AddInput()
 				inp.Type = "dynamic"
-				inp.CSSLabel = "special-input-vert-wider"
+				inp.CSSLabel = "special-line-height-higher"
 				inp.DynamicFunc = "PersonalLink"
 			}
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				inp.CSSLabel = "special-input-vert-wider"
+				inp.CSSLabel = "special-line-height-higher"
 				impr := trl.S{}
 				for lc := range q.LangCodes {
 					cnt, err := tpl.MarkDownFromFile("./static/doc/site-imprint.md", q.Survey.Type, lc)

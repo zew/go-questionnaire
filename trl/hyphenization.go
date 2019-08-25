@@ -108,6 +108,21 @@ var hyph = []string{
 	"Favo&shy;revole",
 	"in&shy;deciso",
 	"In&shy;deciso",
+
+	// financial literacy
+	"ap&shy;pli&shy;ca&shy;ble",
+	"in&shy;vest&shy;ment",
+	"sav&shy;ings",
+	"ac&shy;counts",
+	"av&shy;er&shy;age",
+	"an&shy;swer",
+	"com&shy;plete&shy;ly",
+	"strong&shy;ly",
+	"op&shy;ti&shy;mis&shy;tic",
+	"pes&shy;si&shy;mis&shy;tic",
+	"in&shy;dif&shy;fer&shy;ent",
+	"will&shy;ing",
+	"nei&shy;ther",
 }
 
 // hyphm is a map with words and their hyphenized form as value.

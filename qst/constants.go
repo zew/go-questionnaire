@@ -38,7 +38,8 @@ const (
 )
 
 func td(hAlign horizontalAlignment, widthPercent string, payload string, args ...string) string {
-	return fmt.Sprintf("<td style='text-align:%v; %v; '>%v</td>\n",
+	return fmt.Sprintf(
+		"<td style='text-align:%v; %v; '>%v</td>\n",
 		hAlign, widthPercent, payload)
 	// return fmt.Sprintf("<span class='go-quest-cell-%v' style='%v;'>%v</span>\n",
 	// 	hAlign, widthPercent, payload)

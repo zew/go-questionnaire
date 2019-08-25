@@ -1001,7 +1001,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				inp.CSSLabel = "special-input-vert-wider"
+				inp.CSSLabel = "special-line-height-higher"
 				inp.Desc = trl.S{
 					"de": "Danke für Ihre Teilnahme an unserer Umfrage.",
 					"en": "Thank you for your participation in our survey.",
@@ -1013,7 +1013,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				inp.CSSLabel = "special-input-vert-wider"
+				inp.CSSLabel = "special-line-height-higher"
 				inp.Desc = trl.S{
 					"de": "<span style='font-size: 100%;'>Ihre Eingaben wurden gespeichert.</span>",
 					"en": "<span style='font-size: 100%;'>Your entries have been saved.</span>",

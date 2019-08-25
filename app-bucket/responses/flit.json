@@ -16,36 +16,35 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "8794794b1a26d99fe159f2ee336394d1",
+ 	"md_5": "733161e7381cb634e98076e1362a5b2f",
  	"lang_codes": {
  		"en": "English"
  	},
  	"lang_codes_order": [
  		"en"
  	],
- 	"max_groups": 8,
+ 	"max_groups": 10,
  	"pages": [
  		{
  			"section": {
- 				"en": "Sociodemographics"
+ 				"en": "Sociodemographics 1"
  			},
  			"label": {
- 				"en": "Experience"
+ 				"en": "Age, origin, experience"
  			},
  			"description": {
  				"de": "",
  				"en": ""
  			},
  			"short": {
- 				"en": "Experience"
+ 				"en": "Sociodemo-\u003cbr\u003egraphics\u0026nbsp;1"
  			},
  			"navi_num": 1,
  			"width": 75,
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
  				{
- 					"bottom_half_vspacers": 3,
- 					"odd_rows_coloring": false,
+ 					"bottom_vspacers": 3,
  					"width": 100,
  					"columns": 4,
  					"inputs": [
@@ -54,7 +53,6 @@
  							"type": "number",
  							"max_chars": 3,
  							"step": 1,
- 							"css_label": "special-input-margin-vertical special-input-vert-wider",
  							"label": {
  								"en": " "
  							},
@@ -64,6 +62,7 @@
  							"suffix": {
  								"en": "\u0026nbsp; years"
  							},
+ 							"css_label": "special-input-margin-vertical special-line-height-higher",
  							"col_span_label": 2,
  							"col_span_control": 1,
  							"validator": "inRange100"
@@ -85,13 +84,13 @@
  							"name": "country_birth",
  							"type": "text",
  							"max_chars": 20,
- 							"css_label": "special-input-margin-vertical special-input-vert-wider",
  							"label": {
  								"en": " "
  							},
  							"description": {
  								"en": "What is your country of birth?"
  							},
+ 							"css_label": "special-input-margin-vertical special-line-height-higher",
  							"col_span_label": 2,
  							"col_span_control": 1,
  							"validator": "must"
@@ -112,13 +111,13 @@
  						{
  							"name": "gender",
  							"type": "radiogroup",
- 							"css_label": "special-input-margin-vertical special-input-vert-wider",
  							"label": {
  								"en": " "
  							},
  							"description": {
  								"en": "What is your gender?"
  							},
+ 							"css_label": "special-input-margin-vertical special-line-height-higher",
  							"col_span_label": 2,
  							"col_span_control": 2,
  							"radios": [
@@ -142,13 +141,13 @@
  						{
  							"name": "visiting_student",
  							"type": "radiogroup",
- 							"css_label": "special-input-margin-vertical special-input-vert-wider",
  							"label": {
  								"en": " "
  							},
  							"description": {
  								"en": "Are you currently an exchange student in Mannheim?"
  							},
+ 							"css_label": "special-input-margin-vertical special-line-height-higher",
  							"col_span_label": 2,
  							"col_span_control": 2,
  							"radios": [
@@ -173,13 +172,13 @@
  							"name": "country_study",
  							"type": "text",
  							"max_chars": 20,
- 							"css_label": "special-input-margin-vertical special-input-vert-wider special-input-left-padding",
  							"label": {
  								"en": " "
  							},
  							"description": {
  								"en": "If yes: from which country?"
  							},
+ 							"css_label": "special-input-margin-vertical special-line-height-higher special-input-left-padding",
  							"col_span_label": 2,
  							"col_span_control": 1
  						},
@@ -199,13 +198,13 @@
  						{
  							"name": "professional_experience",
  							"type": "radiogroup",
- 							"css_label": "special-input-margin-vertical special-input-vert-wider",
  							"label": {
  								"en": " "
  							},
  							"description": {
  								"en": "Do you already have professional experience from working in a job (other than a student job)?"
  							},
+ 							"css_label": "special-input-margin-vertical special-line-height-higher",
  							"col_span_label": 2,
  							"col_span_control": 2,
  							"radios": [
@@ -229,13 +228,13 @@
  						{
  							"name": "professional_finance",
  							"type": "radiogroup",
- 							"css_label": "special-input-margin-vertical special-input-vert-wider special-input-left-padding",
  							"label": {
  								"en": " "
  							},
  							"description": {
  								"en": "If yes: was this experience related to finance?"
  							},
+ 							"css_label": "special-input-margin-vertical special-line-height-higher special-input-left-padding",
  							"col_span_label": 2,
  							"col_span_control": 2,
  							"radios": [
@@ -258,13 +257,13 @@
  						{
  							"name": "experience_stata_or_r",
  							"type": "radiogroup",
- 							"css_label": "special-input-margin-vertical special-input-vert-wider",
  							"label": {
  								"en": " "
  							},
  							"description": {
  								"en": "Have you ever worked with a statistics program like Stata or\u0026nbspR?"
  							},
+ 							"css_label": "special-input-margin-vertical special-line-height-higher",
  							"col_span_label": 2,
  							"col_span_control": 2,
  							"radios": [
@@ -304,7 +303,7 @@
  		},
  		{
  			"section": {
- 				"en": "Sociodemographics"
+ 				"en": "Sociodemographics 2"
  			},
  			"label": {
  				"en": "Health, wealth, assets"
@@ -314,90 +313,94 @@
  				"en": ""
  			},
  			"short": {
- 				"en": "Sociodemo\u0026shy;graphics\u0026nbsp;"
+ 				"en": "Sociodemo-\u003cbr\u003egraphics\u0026nbsp;2"
  			},
  			"navi_num": 2,
  			"width": 80,
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
  				{
- 					"bottom_half_vspacers": 2,
- 					"odd_rows_coloring": false,
  					"width": 100,
- 					"columns": 8,
+ 					"columns": 3,
  					"inputs": [
  						{
+ 							"name": "textblock7",
  							"type": "textblock",
- 							"css_label": "css-radio-label",
  							"label": {
- 								"de": " \u0026nbsp; ",
- 								"en": " \u0026nbsp; "
+ 								"en": " "
  							},
- 							"col_span_label": 2
- 						},
- 						{
- 							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
- 							"description": {
- 								"de": "Sehr gut",
- 								"en": "Very good"
- 							}
- 						},
- 						{
- 							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
- 							"description": {
- 								"de": "Gut",
- 								"en": "Good"
- 							}
- 						},
- 						{
- 							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
- 							"description": {
- 								"de": "Durchschnittlich",
- 								"en": "Fair"
- 							}
- 						},
- 						{
- 							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
- 							"description": {
- 								"de": "Schlecht",
- 								"en": "Bad"
- 							}
- 						},
- 						{
- 							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
- 							"description": {
- 								"de": "Sehr schlecht",
- 								"en": "Very bad"
- 							}
- 						},
- 						{
- 							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
- 							"description": {
- 								"de": "Keine\u003cbr\u003eAn\u0026shy;gabe",
- 								"en": "No answer"
- 							}
- 						},
- 						{
- 							"name": "health",
- 							"type": "radiogroup",
- 							"css_control": "special-input-margin-vertical",
  							"description": {
  								"de": "Sie schätzen Ihren Gesundheitszustand als",
  								"en": "Would you say your health\u0026nbsp;is"
  							},
- 							"col_span_label": 2,
+ 							"css_label": "special-line-height-higher",
+ 							"col_span_label": 3
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"width": 100,
+ 					"columns": 6,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "Sehr gut",
+ 								"en": "Very good"
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "Gut",
+ 								"en": "Good"
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "Durchschnittlich",
+ 								"en": "Fair"
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "Schlecht",
+ 								"en": "Bad"
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "Sehr schlecht",
+ 								"en": "Very bad"
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "Keine\u003cbr\u003eAn\u0026shy;gabe",
+ 								"en": "No an\u0026shy;swer"
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
+ 						},
+ 						{
+ 							"name": "health",
+ 							"type": "radiogroup",
+ 							"css_label": "special-input-margin-vertical special-line-height-higher",
  							"radios": [
  								{
  									"hori_align": 1,
@@ -429,8 +432,7 @@
  					]
  				},
  				{
- 					"bottom_half_vspacers": 2,
- 					"odd_rows_coloring": false,
+ 					"bottom_vspacers": 2,
  					"width": 100,
  					"columns": 4,
  					"inputs": [
@@ -438,10 +440,9 @@
  							"name": "income",
  							"type": "number",
  							"max_chars": 6,
- 							"step": 10,
- 							"css_label": "special-input-vert-wider",
+ 							"step": 1,
  							"label": {
- 								"en": "What is your current income"
+ 								"en": "What is your current income?"
  							},
  							"description": {
  								"en": "\u003cbr\u003ePlease consider all sources of current income from work, transfers from your parents, stipends etc."
@@ -449,6 +450,7 @@
  							"suffix": {
  								"en": "\u0026nbspEuros"
  							},
+ 							"css_label": "special-line-height-higher",
  							"col_span_label": 2,
  							"col_span_control": 1,
  							"validator": "inRange50000"
@@ -469,22 +471,40 @@
  					]
  				},
  				{
- 					"bottom_half_vspacers": 2,
- 					"odd_rows_coloring": false,
+ 					"bottom_vspacers": 2,
  					"width": 100,
  					"columns": 4,
  					"inputs": [
  						{
  							"name": "textblock1",
  							"type": "textblock",
- 							"css_label": "special-input-vert-wider",
  							"label": {
  								"en": "What is approximately the amount of wealth you own"
  							},
  							"description": {
  								"en": " "
  							},
- 							"col_span_label": 2
+ 							"css_label": "special-line-height-higher",
+ 							"col_span_label": 4
+ 						},
+ 						{
+ 							"name": "wealth_liquid",
+ 							"type": "number",
+ 							"max_chars": 9,
+ 							"step": 1,
+ 							"label": {
+ 								"en": " "
+ 							},
+ 							"description": {
+ 								"en": "In cash (also on a debit account, sav\u0026shy;ings account etc.)"
+ 							},
+ 							"suffix": {
+ 								"en": "\u0026nbspEuros"
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"validator": "inRange1Mio"
  						},
  						{
  							"name": "vspacer08",
@@ -497,23 +517,23 @@
  								"de": " ",
  								"en": " "
  							},
- 							"col_span_label": 2
+ 							"col_span_label": 1
  						},
  						{
- 							"name": "wealth_liquid",
+ 							"name": "wealth_fungible",
  							"type": "number",
  							"max_chars": 9,
- 							"step": 100,
- 							"css_label": "special-input-vert-wider",
+ 							"step": 1,
  							"label": {
  								"en": " "
  							},
  							"description": {
- 								"en": "In cash (also on a debit account, savings account etc.)"
+ 								"en": "In assets, e.g. in stocks, bonds, mutual funds etc."
  							},
  							"suffix": {
  								"en": "\u0026nbspEuros"
  							},
+ 							"css_label": "special-line-height-higher",
  							"col_span_label": 2,
  							"col_span_control": 1,
  							"validator": "inRange1Mio"
@@ -532,20 +552,20 @@
  							"col_span_label": 1
  						},
  						{
- 							"name": "wealth_fungible",
+ 							"name": "wealth_re",
  							"type": "number",
  							"max_chars": 9,
- 							"step": 100,
- 							"css_label": "special-input-vert-wider",
+ 							"step": 1,
  							"label": {
  								"en": " "
  							},
  							"description": {
- 								"en": "In assets, e.g. in stocks, bonds, mutual funds etc."
+ 								"en": "In real estate"
  							},
  							"suffix": {
  								"en": "\u0026nbspEuros"
  							},
+ 							"css_label": "special-line-height-higher",
  							"col_span_label": 2,
  							"col_span_control": 1,
  							"validator": "inRange1Mio"
@@ -564,20 +584,20 @@
  							"col_span_label": 1
  						},
  						{
- 							"name": "wealth_re",
+ 							"name": "wealth_other",
  							"type": "number",
  							"max_chars": 9,
- 							"step": 100,
- 							"css_label": "special-input-vert-wider",
+ 							"step": 1,
  							"label": {
  								"en": " "
  							},
  							"description": {
- 								"en": "In real estate"
+ 								"en": "In other valuables (e.g. cars, durables, art etc.)"
  							},
  							"suffix": {
  								"en": "\u0026nbspEuros"
  							},
+ 							"css_label": "special-line-height-higher",
  							"col_span_label": 2,
  							"col_span_control": 1,
  							"validator": "inRange1Mio"
@@ -594,22 +614,41 @@
  								"en": " "
  							},
  							"col_span_label": 1
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"width": 100,
+ 					"columns": 4,
+ 					"inputs": [
+ 						{
+ 							"name": "textblock2",
+ 							"type": "textblock",
+ 							"label": {
+ 								"en": "What is the amount of debt you owe"
+ 							},
+ 							"description": {
+ 								"en": " "
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"col_span_label": 4
  						},
  						{
- 							"name": "wealth_other",
+ 							"name": "debt_bank",
  							"type": "number",
  							"max_chars": 9,
- 							"step": 100,
- 							"css_label": "special-input-vert-wider",
+ 							"step": 1,
  							"label": {
  								"en": " "
  							},
  							"description": {
- 								"en": "In other valuables (e.g. cars, durables, art etc.)"
+ 								"en": "To a bank"
  							},
  							"suffix": {
  								"en": "\u0026nbspEuros"
  							},
+ 							"css_label": "special-line-height-higher",
  							"col_span_label": 2,
  							"col_span_control": 1,
  							"validator": "inRange1Mio"
@@ -626,26 +665,25 @@
  								"en": " "
  							},
  							"col_span_label": 1
- 						}
- 					]
- 				},
- 				{
- 					"bottom_half_vspacers": 2,
- 					"odd_rows_coloring": false,
- 					"width": 100,
- 					"columns": 4,
- 					"inputs": [
+ 						},
  						{
- 							"name": "textblock2",
- 							"type": "textblock",
- 							"css_label": "special-input-vert-wider",
+ 							"name": "debt_other",
+ 							"type": "number",
+ 							"max_chars": 9,
+ 							"step": 1,
  							"label": {
- 								"en": "What is the amount of debt you owe"
- 							},
- 							"description": {
  								"en": " "
  							},
- 							"col_span_label": 2
+ 							"description": {
+ 								"en": "To another institution"
+ 							},
+ 							"suffix": {
+ 								"en": "\u0026nbspEuros"
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"validator": "inRange1Mio"
  						},
  						{
  							"name": "vspacer13",
@@ -658,23 +696,23 @@
  								"de": " ",
  								"en": " "
  							},
- 							"col_span_label": 2
+ 							"col_span_label": 1
  						},
  						{
- 							"name": "debt_bank",
+ 							"name": "debt_parents",
  							"type": "number",
  							"max_chars": 9,
- 							"step": 100,
- 							"css_label": "special-input-vert-wider",
+ 							"step": 1,
  							"label": {
  								"en": " "
  							},
  							"description": {
- 								"en": "To a bank"
+ 								"en": "To your parents"
  							},
  							"suffix": {
  								"en": "\u0026nbspEuros"
  							},
+ 							"css_label": "special-line-height-higher",
  							"col_span_label": 2,
  							"col_span_control": 1,
  							"validator": "inRange1Mio"
@@ -693,20 +731,20 @@
  							"col_span_label": 1
  						},
  						{
- 							"name": "debt_other",
+ 							"name": "debt_friends",
  							"type": "number",
  							"max_chars": 9,
- 							"step": 100,
- 							"css_label": "special-input-vert-wider",
+ 							"step": 1,
  							"label": {
  								"en": " "
  							},
  							"description": {
- 								"en": "To another institution"
+ 								"en": "To other friends or relatives"
  							},
  							"suffix": {
  								"en": "\u0026nbspEuros"
  							},
+ 							"css_label": "special-line-height-higher",
  							"col_span_label": 2,
  							"col_span_control": 1,
  							"validator": "inRange1Mio"
@@ -723,25 +761,265 @@
  								"en": " "
  							},
  							"col_span_label": 1
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"width": 100,
+ 					"columns": 4,
+ 					"inputs": [
+ 						{
+ 							"name": "textblock4",
+ 							"type": "textblock",
+ 							"label": {
+ 								"en": "Do you currently own/use any of the following financial products?"
+ 							},
+ 							"description": {
+ 								"en": " "
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"col_span_label": 4
  						},
  						{
- 							"name": "debt_parents",
- 							"type": "number",
- 							"max_chars": 9,
- 							"step": 100,
- 							"css_label": "special-input-vert-wider",
+ 							"name": "asset_investment_account",
+ 							"type": "checkbox",
  							"label": {
  								"en": " "
  							},
  							"description": {
- 								"en": "To your parents"
+ 								"en": "An in\u0026shy;vest\u0026shy;ment account"
  							},
- 							"suffix": {
- 								"en": "\u0026nbspEuros"
+ 							"css_label": "special-input-margin-vertical special-line-height-higher",
+ 							"col_span_label": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "asset_savings_account",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"en": " "
  							},
- 							"col_span_label": 2,
- 							"col_span_control": 1,
- 							"validator": "inRange1Mio"
+ 							"description": {
+ 								"en": "A sav\u0026shy;ings account"
+ 							},
+ 							"css_label": "special-input-margin-vertical special-line-height-higher",
+ 							"col_span_label": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "asset_stocks",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"en": " "
+ 							},
+ 							"description": {
+ 								"en": "Stocks and shares"
+ 							},
+ 							"css_label": "special-input-margin-vertical special-line-height-higher",
+ 							"col_span_label": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "asset_mutual",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"en": " "
+ 							},
+ 							"description": {
+ 								"en": "Mutual funds"
+ 							},
+ 							"css_label": "special-input-margin-vertical special-line-height-higher",
+ 							"col_span_label": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "asset_bonds",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"en": " "
+ 							},
+ 							"description": {
+ 								"en": "Bonds"
+ 							},
+ 							"css_label": "special-input-margin-vertical special-line-height-higher",
+ 							"col_span_label": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "asset_credit_card",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"en": " "
+ 							},
+ 							"description": {
+ 								"en": "A credit card"
+ 							},
+ 							"css_label": "special-input-margin-vertical special-line-height-higher",
+ 							"col_span_label": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "asset_insurance",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"en": " "
+ 							},
+ 							"description": {
+ 								"en": "An insurance contract (except mandatory health insurance)"
+ 							},
+ 							"css_label": "special-input-margin-vertical special-line-height-higher",
+ 							"col_span_label": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "asset_mobile_account",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"en": " "
+ 							},
+ 							"description": {
+ 								"en": "A mobile phone payment app (e.g. Google pay, Apple pay etc.)"
+ 							},
+ 							"css_label": "special-input-margin-vertical special-line-height-higher",
+ 							"col_span_label": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "asset_crypto",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"en": " "
+ 							},
+ 							"description": {
+ 								"en": "Crypto assets (e.g. Bitcoin) or ICOs (Initial Coin Offerings)"
+ 							},
+ 							"css_label": "special-input-margin-vertical special-line-height-higher",
+ 							"col_span_label": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "asset_no_answer",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"en": " "
+ 							},
+ 							"description": {
+ 								"en": "No an\u0026shy;swer"
+ 							},
+ 							"css_label": "special-input-margin-vertical special-line-height-higher",
+ 							"col_span_label": 1,
+ 							"col_span_control": 1
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"width": 100,
+ 					"columns": 4,
+ 					"inputs": [
+ 						{
+ 							"name": "textblock3",
+ 							"type": "textblock",
+ 							"label": {
+ 								"en": "Do you do any of the following for yourself or your household?"
+ 							},
+ 							"description": {
+ 								"en": " "
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"col_span_label": 4
+ 						},
+ 						{
+ 							"name": "beh_planning",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"en": " "
+ 							},
+ 							"description": {
+ 								"en": "Make a plan to manage your income and expenses"
+ 							},
+ 							"css_label": "special-input-margin-vertical special-line-height-higher",
+ 							"col_span_label": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "beh_expenses_notes",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"en": " "
+ 							},
+ 							"description": {
+ 								"en": "Keep a note of your spending"
+ 							},
+ 							"css_label": "special-input-margin-vertical special-line-height-higher",
+ 							"col_span_label": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "beh_money_stashes",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"en": " "
+ 							},
+ 							"description": {
+ 								"en": "Keep money for bills separate from day-to-day spending money"
+ 							},
+ 							"css_label": "special-input-margin-vertical special-line-height-higher",
+ 							"col_span_label": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "beh_planning_due_payments",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"en": " "
+ 							},
+ 							"description": {
+ 								"en": "Make a note of upcoming bills to make sure you  don't miss them"
+ 							},
+ 							"css_label": "special-input-margin-vertical special-line-height-higher",
+ 							"col_span_label": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "beh_app",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"en": " "
+ 							},
+ 							"description": {
+ 								"en": "Use a banking app or money management tool to keep track of your outgoings"
+ 							},
+ 							"css_label": "special-input-margin-vertical special-line-height-higher",
+ 							"col_span_label": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "beh_automatic_payments",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"en": " "
+ 							},
+ 							"description": {
+ 								"en": "Arrange automatic payments for regular outgoings"
+ 							},
+ 							"css_label": "special-input-margin-vertical special-line-height-higher",
+ 							"col_span_label": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "beh_no_reply",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"en": " "
+ 							},
+ 							"description": {
+ 								"en": "No an\u0026shy;swer"
+ 							},
+ 							"css_label": "special-input-margin-vertical special-line-height-higher",
+ 							"col_span_label": 1,
+ 							"col_span_control": 1
  						},
  						{
  							"name": "vspacer16",
@@ -754,542 +1032,7 @@
  								"de": " ",
  								"en": " "
  							},
- 							"col_span_label": 1
- 						},
- 						{
- 							"name": "debt_friends",
- 							"type": "number",
- 							"max_chars": 9,
- 							"step": 100,
- 							"css_label": "special-input-vert-wider",
- 							"label": {
- 								"en": " "
- 							},
- 							"description": {
- 								"en": "To other friends or relatives"
- 							},
- 							"suffix": {
- 								"en": "\u0026nbspEuros"
- 							},
- 							"col_span_label": 2,
- 							"col_span_control": 1,
- 							"validator": "inRange1Mio"
- 						},
- 						{
- 							"name": "vspacer17",
- 							"type": "textblock",
- 							"label": {
- 								"de": " ",
- 								"en": " "
- 							},
- 							"description": {
- 								"de": " ",
- 								"en": " "
- 							},
- 							"col_span_label": 1
- 						}
- 					]
- 				},
- 				{
- 					"bottom_half_vspacers": 2,
- 					"odd_rows_coloring": false,
- 					"width": 100,
- 					"columns": 4,
- 					"inputs": [
- 						{
- 							"name": "textblock4",
- 							"type": "textblock",
- 							"css_label": "special-input-vert-wider",
- 							"label": {
- 								"en": "Do you currenlty own/use any of the following financial products?"
- 							},
- 							"description": {
- 								"en": " "
- 							},
  							"col_span_label": 2
- 						},
- 						{
- 							"name": "vspacer18",
- 							"type": "textblock",
- 							"label": {
- 								"de": " ",
- 								"en": " "
- 							},
- 							"description": {
- 								"de": " ",
- 								"en": " "
- 							},
- 							"col_span_label": 2
- 						},
- 						{
- 							"name": "asset_investment_account",
- 							"type": "checkbox",
- 							"css_label": "special-input-margin-vertical",
- 							"label": {
- 								"en": " "
- 							},
- 							"description": {
- 								"en": "An investment account"
- 							},
- 							"col_span_label": 1,
- 							"col_span_control": 1
- 						},
- 						{
- 							"name": "asset_savings_account",
- 							"type": "checkbox",
- 							"css_label": "special-input-margin-vertical",
- 							"label": {
- 								"en": " "
- 							},
- 							"description": {
- 								"en": "A savings account"
- 							},
- 							"col_span_label": 1,
- 							"col_span_control": 1
- 						},
- 						{
- 							"name": "asset_stocks",
- 							"type": "checkbox",
- 							"css_label": "special-input-margin-vertical",
- 							"label": {
- 								"en": " "
- 							},
- 							"description": {
- 								"en": "Stocks and shares"
- 							},
- 							"col_span_label": 1,
- 							"col_span_control": 1
- 						},
- 						{
- 							"name": "asset_mutual",
- 							"type": "checkbox",
- 							"css_label": "special-input-margin-vertical",
- 							"label": {
- 								"en": " "
- 							},
- 							"description": {
- 								"en": "Mutual funds"
- 							},
- 							"col_span_label": 1,
- 							"col_span_control": 1
- 						},
- 						{
- 							"name": "asset_bonds",
- 							"type": "checkbox",
- 							"css_label": "special-input-margin-vertical",
- 							"label": {
- 								"en": " "
- 							},
- 							"description": {
- 								"en": "Bonds"
- 							},
- 							"col_span_label": 1,
- 							"col_span_control": 1
- 						},
- 						{
- 							"name": "asset_credit_card",
- 							"type": "checkbox",
- 							"css_label": "special-input-margin-vertical",
- 							"label": {
- 								"en": " "
- 							},
- 							"description": {
- 								"en": "A credit card"
- 							},
- 							"col_span_label": 1,
- 							"col_span_control": 1
- 						},
- 						{
- 							"name": "asset_insurance",
- 							"type": "checkbox",
- 							"css_label": "special-input-margin-vertical",
- 							"label": {
- 								"en": " "
- 							},
- 							"description": {
- 								"en": "An insurance contract (except health insurance, which is mandatory)"
- 							},
- 							"col_span_label": 1,
- 							"col_span_control": 1
- 						},
- 						{
- 							"name": "asset_mobile_account",
- 							"type": "checkbox",
- 							"css_label": "special-input-margin-vertical",
- 							"label": {
- 								"en": " "
- 							},
- 							"description": {
- 								"en": "A mobile phone payment app (e.g. google pay, Apple pay etc.)"
- 							},
- 							"col_span_label": 1,
- 							"col_span_control": 1
- 						},
- 						{
- 							"name": "asset_crypto",
- 							"type": "checkbox",
- 							"css_label": "special-input-margin-vertical",
- 							"label": {
- 								"en": " "
- 							},
- 							"description": {
- 								"en": "Crypto assets (e.g. Bitcoin) or ICOs (Initial Coin Offerings)"
- 							},
- 							"col_span_label": 1,
- 							"col_span_control": 1
- 						},
- 						{
- 							"name": "asset_no_answer",
- 							"type": "checkbox",
- 							"css_label": "special-input-margin-vertical",
- 							"label": {
- 								"en": " "
- 							},
- 							"description": {
- 								"en": "No answer"
- 							},
- 							"col_span_label": 1,
- 							"col_span_control": 1
- 						}
- 					]
- 				},
- 				{
- 					"bottom_half_vspacers": 2,
- 					"odd_rows_coloring": false,
- 					"width": 100,
- 					"columns": 4,
- 					"inputs": [
- 						{
- 							"name": "textblock3",
- 							"type": "textblock",
- 							"css_label": "special-input-vert-wider",
- 							"label": {
- 								"en": "Do you do any of the following for yourself or your household?"
- 							},
- 							"description": {
- 								"en": " "
- 							},
- 							"col_span_label": 2
- 						},
- 						{
- 							"name": "vspacer19",
- 							"type": "textblock",
- 							"label": {
- 								"de": " ",
- 								"en": " "
- 							},
- 							"description": {
- 								"de": " ",
- 								"en": " "
- 							},
- 							"col_span_label": 2
- 						},
- 						{
- 							"name": "beh_planning",
- 							"type": "checkbox",
- 							"css_label": "special-input-margin-vertical",
- 							"label": {
- 								"en": " "
- 							},
- 							"description": {
- 								"en": "Make a plan to manage your income and expenses"
- 							},
- 							"col_span_label": 1,
- 							"col_span_control": 1
- 						},
- 						{
- 							"name": "beh_expenses_notes",
- 							"type": "checkbox",
- 							"css_label": "special-input-margin-vertical",
- 							"label": {
- 								"en": " "
- 							},
- 							"description": {
- 								"en": "Keep a note of your spending"
- 							},
- 							"col_span_label": 1,
- 							"col_span_control": 1
- 						},
- 						{
- 							"name": "beh_money_stashes",
- 							"type": "checkbox",
- 							"css_label": "special-input-margin-vertical",
- 							"label": {
- 								"en": " "
- 							},
- 							"description": {
- 								"en": "Keep money for bills separate from day-to-day spending money"
- 							},
- 							"col_span_label": 1,
- 							"col_span_control": 1
- 						},
- 						{
- 							"name": "beh_planning_due_payments",
- 							"type": "checkbox",
- 							"css_label": "special-input-margin-vertical",
- 							"label": {
- 								"en": " "
- 							},
- 							"description": {
- 								"en": "Make a note of upcoming bills to make sure you  don't miss them"
- 							},
- 							"col_span_label": 1,
- 							"col_span_control": 1
- 						},
- 						{
- 							"name": "beh_app",
- 							"type": "checkbox",
- 							"css_label": "special-input-margin-vertical",
- 							"label": {
- 								"en": " "
- 							},
- 							"description": {
- 								"en": "Use a banking app or money management tool to keep track of your outgoings"
- 							},
- 							"col_span_label": 1,
- 							"col_span_control": 1
- 						},
- 						{
- 							"name": "beh_automatic_payments",
- 							"type": "checkbox",
- 							"css_label": "special-input-margin-vertical",
- 							"label": {
- 								"en": " "
- 							},
- 							"description": {
- 								"en": "Arrange automatic payments for regular outgoings"
- 							},
- 							"col_span_label": 1,
- 							"col_span_control": 1
- 						},
- 						{
- 							"name": "beh_no_reply",
- 							"type": "checkbox",
- 							"css_label": "special-input-margin-vertical",
- 							"label": {
- 								"en": " "
- 							},
- 							"description": {
- 								"en": "No answer"
- 							},
- 							"col_span_label": 1,
- 							"col_span_control": 1
- 						},
- 						{
- 							"name": "vspacer20",
- 							"type": "textblock",
- 							"label": {
- 								"de": " ",
- 								"en": " "
- 							},
- 							"description": {
- 								"de": " ",
- 								"en": " "
- 							},
- 							"col_span_label": 2
- 						}
- 					]
- 				},
- 				{
- 					"bottom_half_vspacers": 2,
- 					"odd_rows_coloring": false,
- 					"width": 100,
- 					"columns": 8,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"css_label": "css-radio-label",
- 							"label": {
- 								"de": " \u0026nbsp; ",
- 								"en": " \u0026nbsp; "
- 							},
- 							"col_span_label": 3
- 						},
- 						{
- 							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
- 							"description": {
- 								"de": "Ja",
- 								"en": "Yes"
- 							}
- 						},
- 						{
- 							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
- 							"description": {
- 								"de": "Nein",
- 								"en": "No"
- 							}
- 						},
- 						{
- 							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
- 							"description": {
- 								"de": "Weiß nicht",
- 								"en": "Do not know"
- 							}
- 						},
- 						{
- 							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
- 							"description": {
- 								"de": "Nicht anwendbar",
- 								"en": "Not applicable"
- 							}
- 						},
- 						{
- 							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
- 							"description": {
- 								"de": "Keine Antwort",
- 								"en": "No answer"
- 							}
- 						},
- 						{
- 							"name": "broke_before_paycheck",
- 							"type": "radiogroup",
- 							"css_control": "special-input-margin-vertical",
- 							"description": {
- 								"de": "xxx",
- 								"en": "Sometimes people find that their income does not quite cover their living expenses. \n\t\t\t\t\tIn the last 12\u0026nbsp;months, has this happened to you personally?"
- 							},
- 							"col_span_label": 3,
- 							"radios": [
- 								{
- 									"hori_align": 1,
- 									"val": "1"
- 								},
- 								{
- 									"hori_align": 1,
- 									"val": "2"
- 								},
- 								{
- 									"hori_align": 1,
- 									"val": "3"
- 								},
- 								{
- 									"hori_align": 1,
- 									"val": "4"
- 								},
- 								{
- 									"hori_align": 1,
- 									"val": "5"
- 								}
- 							],
- 							"validator": "mustRadioGroup"
- 						}
- 					]
- 				},
- 				{
- 					"bottom_half_vspacers": 2,
- 					"odd_rows_coloring": false,
- 					"width": 100,
- 					"columns": 8,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"css_label": "css-radio-label",
- 							"label": {
- 								"de": " \u0026nbsp; ",
- 								"en": " \u0026nbsp; "
- 							},
- 							"col_span_label": 2
- 						},
- 						{
- 							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
- 							"description": {
- 								"de": "Sehr hoch",
- 								"en": "Very high"
- 							}
- 						},
- 						{
- 							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
- 							"description": {
- 								"de": "Ziemlich hoch",
- 								"en": "Quite high"
- 							}
- 						},
- 						{
- 							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
- 							"description": {
- 								"de": "Durchschnittlich",
- 								"en": "About average"
- 							}
- 						},
- 						{
- 							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
- 							"description": {
- 								"de": "Ziemlich gering",
- 								"en": "Quite low"
- 							}
- 						},
- 						{
- 							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
- 							"description": {
- 								"de": "Sehr gering",
- 								"en": "Very low"
- 							}
- 						},
- 						{
- 							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
- 							"description": {
- 								"de": "Keine Antwort",
- 								"en": "No answer"
- 							}
- 						},
- 						{
- 							"name": "self_assessment",
- 							"type": "radiogroup",
- 							"css_control": "special-input-margin-vertical",
- 							"description": {
- 								"de": "xxx",
- 								"en": "How you would rate your overall knowledge about financial matters compared with other adults?"
- 							},
- 							"col_span_label": 2,
- 							"radios": [
- 								{
- 									"hori_align": 1,
- 									"val": "1"
- 								},
- 								{
- 									"hori_align": 1,
- 									"val": "2"
- 								},
- 								{
- 									"hori_align": 1,
- 									"val": "3"
- 								},
- 								{
- 									"hori_align": 1,
- 									"val": "4"
- 								},
- 								{
- 									"hori_align": 1,
- 									"val": "5"
- 								},
- 								{
- 									"hori_align": 1,
- 									"val": "6"
- 								}
- 							],
- 							"validator": "mustRadioGroup"
  						}
  					]
  				}
@@ -1314,107 +1057,290 @@
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
  				{
- 					"bottom_half_vspacers": 2,
- 					"odd_rows_coloring": false,
+ 					"bottom_vspacers": 2,
  					"width": 100,
  					"columns": 8,
  					"inputs": [
  						{
  							"type": "textblock",
- 							"css_label": "css-radio-label",
  							"label": {
  								"de": " \u0026nbsp; ",
  								"en": " \u0026nbsp; "
  							},
+ 							"css_label": "special-line-height-higher",
+ 							"col_span_label": 3
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "Ja",
+ 								"en": "Yes"
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "Nein",
+ 								"en": "No"
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "Weiß nicht",
+ 								"en": "Do not know"
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "Nicht anwendbar",
+ 								"en": "Not ap\u0026shy;pli\u0026shy;ca\u0026shy;ble"
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "Keine Antwort",
+ 								"en": "No an\u0026shy;swer"
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
+ 						},
+ 						{
+ 							"name": "broke_before_paycheck",
+ 							"type": "radiogroup",
+ 							"description": {
+ 								"de": "xxx",
+ 								"en": "Sometimes people find that their income does not quite cover their living expenses. \n\t\t\t\t\tIn the last 12\u0026nbsp;months, has this happened to you personally?"
+ 							},
+ 							"css_label": "special-input-margin-vertical special-line-height-higher",
+ 							"col_span_label": 3,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "4"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "5"
+ 								}
+ 							],
+ 							"validator": "mustRadioGroup"
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"width": 100,
+ 					"columns": 8,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"css_label": "special-line-height-higher",
  							"col_span_label": 2
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
  							"description": {
- 								"de": "Der Aktienmarkt hilft Dividendenerträge vorauszusagen.",
- 								"en": "The stock market helps to predict stock earnings."
- 							}
+ 								"de": "Sehr hoch",
+ 								"en": "Very high"
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
  							"description": {
- 								"de": "Der Aktienmarkt führt zu einer Preiserhöhung für Aktien.",
- 								"en": "The stock market results in an in\u0026shy;crease in the price of stocks. "
- 							}
+ 								"de": "Ziemlich hoch",
+ 								"en": "Quite high"
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
  							"description": {
- 								"de": "Der Aktienmarkt bringt Aktienkäufer und -verkäufer zusammen.",
- 								"en": "The stock market brings people who want to buy stock together with those who want to sell stocks. "
- 							}
+ 								"de": "Durchschnittlich",
+ 								"en": "About av\u0026shy;er\u0026shy;age"
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
  							"description": {
- 								"de": "Keine der Antworten",
- 								"en": "None of the above"
- 							}
+ 								"de": "Ziemlich gering",
+ 								"en": "Quite low"
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
  							"description": {
- 								"de": "Weiß nicht",
- 								"en": "Do not know"
- 							}
+ 								"de": "Sehr gering",
+ 								"en": "Very low"
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
  							"description": {
- 								"de": "Keine\u003cbr\u003eAn\u0026shy;gabe",
- 								"en": "No answer"
- 							}
+ 								"de": "Keine Antwort",
+ 								"en": "No an\u0026shy;swer"
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
+ 						{
+ 							"name": "self_assessment",
+ 							"type": "radiogroup",
+ 							"description": {
+ 								"de": "xxx",
+ 								"en": "How would you rate your overall knowledge about financial matters compared with other adults?"
+ 							},
+ 							"css_label": "special-input-margin-vertical special-line-height-higher",
+ 							"col_span_label": 2,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "4"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "5"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "6"
+ 								}
+ 							],
+ 							"validator": "mustRadioGroup"
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"width": 100,
+ 					"columns": 3,
+ 					"inputs": [
+ 						{
+ 							"name": "textblock7",
+ 							"type": "textblock",
+ 							"label": {
+ 								"en": "Which of the following statements describes the main function of the stock market?"
+ 							},
+ 							"description": {
+ 								"en": " "
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"col_span_label": 3
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"width": 100,
+ 					"columns": 1,
+ 					"inputs": [
  						{
  							"name": "stock_market_function",
  							"type": "radiogroup",
- 							"css_control": "special-input-margin-vertical",
- 							"description": {
- 								"de": "xxx",
- 								"en": "Which of the following statements describes the main function of the stock market?"
- 							},
- 							"col_span_label": 2,
+ 							"css_label": "special-input-margin-vertical special-line-height-higher",
  							"radios": [
  								{
- 									"hori_align": 1,
- 									"val": "1"
+ 									"hori_align": 2,
+ 									"label": {
+ 										"de": "Der Aktienmarkt hilft Dividendenerträge vorauszusagen.",
+ 										"en": "The stock market helps to predict stock earnings."
+ 									},
+ 									"val": "1",
+ 									"columns": 2
  								},
  								{
- 									"hori_align": 1,
- 									"val": "2"
+ 									"hori_align": 2,
+ 									"label": {
+ 										"de": "Der Aktienmarkt führt zu einer Preiserhöhung für Aktien.",
+ 										"en": "The stock market results in an increase in the price of stocks. "
+ 									},
+ 									"val": "2",
+ 									"column": 1,
+ 									"columns": 2
  								},
  								{
- 									"hori_align": 1,
- 									"val": "3"
+ 									"hori_align": 2,
+ 									"label": {
+ 										"de": "Der Aktienmarkt bringt Aktienkäufer und -verkäufer zusammen.",
+ 										"en": "The stock market brings people who want to buy stock together with those who want to sell stocks. "
+ 									},
+ 									"val": "3",
+ 									"columns": 2
  								},
  								{
- 									"hori_align": 1,
- 									"val": "4"
+ 									"hori_align": 2,
+ 									"label": {
+ 										"de": "Keine der Antworten",
+ 										"en": "None of the above"
+ 									},
+ 									"val": "4",
+ 									"column": 1,
+ 									"columns": 2
  								},
  								{
- 									"hori_align": 1,
- 									"val": "5"
+ 									"hori_align": 2,
+ 									"label": {
+ 										"de": "Weiß nicht",
+ 										"en": "Do not know"
+ 									},
+ 									"val": "5",
+ 									"columns": 2
  								},
  								{
- 									"hori_align": 1,
- 									"val": "6"
+ 									"hori_align": 2,
+ 									"label": {
+ 										"de": "Keine\u003cbr\u003eAngabe",
+ 										"en": "No answer"
+ 									},
+ 									"val": "6",
+ 									"column": 1,
+ 									"columns": 2
  								}
  							],
  							"validator": "mustRadioGroup"
@@ -1422,107 +1348,89 @@
  					]
  				},
  				{
- 					"bottom_half_vspacers": 2,
- 					"odd_rows_coloring": false,
  					"width": 100,
- 					"columns": 8,
+ 					"columns": 3,
  					"inputs": [
  						{
+ 							"name": "textblock7",
  							"type": "textblock",
- 							"css_label": "css-radio-label",
  							"label": {
- 								"de": " \u0026nbsp; ",
- 								"en": " \u0026nbsp; "
+ 								"en": "Which of the following statements is correct?"
  							},
- 							"col_span_label": 2
- 						},
- 						{
- 							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
  							"description": {
- 								"de": "xxx",
- 								"en": "Once one invests in a mutual fund, one cannot withdraw the money in the first year."
- 							}
- 						},
- 						{
- 							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
- 							"description": {
- 								"de": "xxx",
- 								"en": "Mutual funds can invest in several assets, for example invest in both stocks and bonds."
- 							}
- 						},
- 						{
- 							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
- 							"description": {
- 								"de": "xxx",
- 								"en": "Mutual funds pay a guaranteed rate of return which depends on their past performance."
- 							}
- 						},
- 						{
- 							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
- 							"description": {
- 								"de": "Keine der Antworten",
- 								"en": "None of the above"
- 							}
- 						},
- 						{
- 							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
- 							"description": {
- 								"de": "Weiß nicht",
- 								"en": "Do not know"
- 							}
- 						},
- 						{
- 							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
- 							"description": {
- 								"de": "Keine\u003cbr\u003eAn\u0026shy;gabe",
- 								"en": "No answer"
- 							}
- 						},
+ 								"en": " "
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"col_span_label": 3
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"width": 100,
+ 					"columns": 1,
+ 					"inputs": [
  						{
  							"name": "mutual_fund_withdrawal",
  							"type": "radiogroup",
- 							"css_control": "special-input-margin-vertical",
- 							"description": {
- 								"de": "xxx",
- 								"en": "Which of the following statements is correct?"
- 							},
- 							"col_span_label": 2,
+ 							"css_label": "special-input-margin-vertical special-line-height-higher",
  							"radios": [
  								{
- 									"hori_align": 1,
- 									"val": "1"
+ 									"hori_align": 2,
+ 									"label": {
+ 										"de": "xxx",
+ 										"en": "Once one invests in a mutual fund, one cannot withdraw the money in the first year."
+ 									},
+ 									"val": "1",
+ 									"columns": 2
  								},
  								{
- 									"hori_align": 1,
- 									"val": "2"
+ 									"hori_align": 2,
+ 									"label": {
+ 										"de": "xxx",
+ 										"en": "Mutual funds can invest in several assets, for example invest in both stocks and bonds."
+ 									},
+ 									"val": "2",
+ 									"column": 1,
+ 									"columns": 2
  								},
  								{
- 									"hori_align": 1,
- 									"val": "3"
+ 									"hori_align": 2,
+ 									"label": {
+ 										"de": "xxx",
+ 										"en": "Mutual funds pay a guaranteed rate of return which depends on their past performance."
+ 									},
+ 									"val": "3",
+ 									"columns": 2
  								},
  								{
- 									"hori_align": 1,
- 									"val": "4"
+ 									"hori_align": 2,
+ 									"label": {
+ 										"de": "Keine der Antworten",
+ 										"en": "None of the above"
+ 									},
+ 									"val": "4",
+ 									"column": 1,
+ 									"columns": 2
  								},
  								{
- 									"hori_align": 1,
- 									"val": "5"
+ 									"hori_align": 2,
+ 									"label": {
+ 										"de": "Weiß nicht",
+ 										"en": "Do not know"
+ 									},
+ 									"val": "5",
+ 									"columns": 2
  								},
  								{
- 									"hori_align": 1,
- 									"val": "6"
+ 									"hori_align": 2,
+ 									"label": {
+ 										"de": "Keine\u003cbr\u003eAngabe",
+ 										"en": "No answer"
+ 									},
+ 									"val": "6",
+ 									"column": 1,
+ 									"columns": 2
  								}
  							],
  							"validator": "mustRadioGroup"
@@ -1530,64 +1438,63 @@
  					]
  				},
  				{
- 					"bottom_half_vspacers": 2,
- 					"odd_rows_coloring": false,
+ 					"bottom_vspacers": 2,
  					"width": 100,
  					"columns": 7,
  					"inputs": [
  						{
  							"type": "textblock",
- 							"css_label": "css-radio-label",
  							"label": {
  								"de": " \u0026nbsp; ",
  								"en": " \u0026nbsp; "
  							},
+ 							"css_label": "special-line-height-higher",
  							"col_span_label": 3
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
  							"description": {
  								"de": "Wahr",
  								"en": "True"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
  							"description": {
  								"de": "Falsch",
  								"en": "False"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
  							"description": {
  								"de": "Weiß nicht",
  								"en": "Do not know"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
  							"description": {
  								"de": "Keine Antwort",
- 								"en": "No answer"
- 							}
+ 								"en": "No an\u0026shy;swer"
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"name": "mutual_fund_risk",
  							"type": "radiogroup",
- 							"css_control": "special-input-margin-vertical",
  							"description": {
  								"de": "xxx",
  								"en": "Do you think that the following statement is true or false? \n\t\t\t\t\tBuying a single company stock usually provides a safer return than a stock mutual fund."
  							},
+ 							"css_label": "special-input-margin-vertical special-line-height-higher",
  							"col_span_label": 3,
  							"radios": [
  								{
@@ -1612,73 +1519,72 @@
  					]
  				},
  				{
- 					"bottom_half_vspacers": 2,
- 					"odd_rows_coloring": false,
+ 					"bottom_vspacers": 2,
  					"width": 100,
  					"columns": 7,
  					"inputs": [
  						{
  							"type": "textblock",
- 							"css_label": "css-radio-label",
  							"label": {
  								"de": " \u0026nbsp; ",
  								"en": " \u0026nbsp; "
  							},
+ 							"css_label": "special-line-height-higher",
  							"col_span_label": 2
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
  							"description": {
  								"de": "Sparbuch",
- 								"en": "Savings accounts"
- 							}
+ 								"en": "Sav\u0026shy;ings ac\u0026shy;counts"
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
  							"description": {
  								"de": "Anleihen",
  								"en": "Bonds"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
  							"description": {
  								"de": "Aktien",
  								"en": "Stocks"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
  							"description": {
  								"de": "Weiß nicht",
  								"en": "Do not know"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
  							"description": {
  								"de": "Keine\u003cbr\u003eAn\u0026shy;gabe",
- 								"en": "No answer"
- 							}
+ 								"en": "No an\u0026shy;swer"
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"name": "asset_variance",
  							"type": "radiogroup",
- 							"css_control": "special-input-margin-vertical",
  							"description": {
  								"de": "xxx",
  								"en": "Normally, which asset displays the highest fluctuations over time?"
  							},
+ 							"css_label": "special-input-margin-vertical special-line-height-higher",
  							"col_span_label": 2,
  							"radios": [
  								{
@@ -1707,73 +1613,72 @@
  					]
  				},
  				{
- 					"bottom_half_vspacers": 2,
- 					"odd_rows_coloring": false,
+ 					"bottom_vspacers": 2,
  					"width": 100,
  					"columns": 7,
  					"inputs": [
  						{
  							"type": "textblock",
- 							"css_label": "css-radio-label",
  							"label": {
  								"de": " \u0026nbsp; ",
  								"en": " \u0026nbsp; "
  							},
+ 							"css_label": "special-line-height-higher",
  							"col_span_label": 2
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
  							"description": {
  								"de": "xxx",
- 								"en": "Savings accounts"
- 							}
+ 								"en": "Sav\u0026shy;ings ac\u0026shy;counts"
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
  							"description": {
  								"de": "xxx",
  								"en": "Stocks"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
  							"description": {
  								"de": "xxx",
  								"en": "Bonds"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
  							"description": {
  								"de": "Weiß nicht",
  								"en": "Do not know"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
  							"description": {
  								"de": "Keine\u003cbr\u003eAn\u0026shy;gabe",
- 								"en": "No answer"
- 							}
+ 								"en": "No an\u0026shy;swer"
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"name": "max_long_term_return",
  							"type": "radiogroup",
- 							"css_control": "special-input-margin-vertical",
  							"description": {
  								"de": "xxx",
- 								"en": "Considering a long time period (for example 20 years), which asset normal gives the highest average return"
+ 								"en": "Considering a long time period (for example 20 years), which asset normal gives the highest av\u0026shy;er\u0026shy;age return"
  							},
+ 							"css_label": "special-input-margin-vertical special-line-height-higher",
  							"col_span_label": 2,
  							"radios": [
  								{
@@ -1802,73 +1707,72 @@
  					]
  				},
  				{
- 					"bottom_half_vspacers": 2,
- 					"odd_rows_coloring": false,
+ 					"bottom_vspacers": 2,
  					"width": 100,
  					"columns": 7,
  					"inputs": [
  						{
  							"type": "textblock",
- 							"css_label": "css-radio-label",
  							"label": {
  								"de": " \u0026nbsp; ",
  								"en": " \u0026nbsp; "
  							},
+ 							"css_label": "special-line-height-higher",
  							"col_span_label": 2
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
  							"description": {
  								"de": "xxx",
  								"en": "In\u0026shy;crease"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
  							"description": {
  								"de": "xxx",
  								"en": "De\u0026shy;crease"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
  							"description": {
  								"de": "xxx",
  								"en": "Stay the same"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
  							"description": {
  								"de": "Weiß nicht",
  								"en": "Do not know"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
  							"description": {
  								"de": "Keine\u003cbr\u003eAn\u0026shy;gabe",
- 								"en": "No answer"
- 							}
+ 								"en": "No an\u0026shy;swer"
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"name": "diversification_risk",
  							"type": "radiogroup",
- 							"css_control": "special-input-margin-vertical",
  							"description": {
  								"de": "xxx",
  								"en": "When an investor spreads his money among different assets, does the risk of losing money "
  							},
+ 							"css_label": "special-input-margin-vertical special-line-height-higher",
  							"col_span_label": 2,
  							"radios": [
  								{
@@ -1917,73 +1821,72 @@
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
  				{
- 					"bottom_half_vspacers": 2,
- 					"odd_rows_coloring": false,
+ 					"bottom_vspacers": 2,
  					"width": 100,
  					"columns": 7,
  					"inputs": [
  						{
  							"type": "textblock",
- 							"css_label": "css-radio-label",
  							"label": {
  								"de": " \u0026nbsp; ",
  								"en": " \u0026nbsp; "
  							},
+ 							"css_label": "special-line-height-higher",
  							"col_span_label": 2
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
  							"description": {
  								"de": "xxx",
  								"en": "More than 102 Euros"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
  							"description": {
  								"de": "xxx",
  								"en": "Exactly 102 Euros"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
  							"description": {
  								"de": "xxx",
  								"en": "Less than 102"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
  							"description": {
  								"de": "Weiß nicht",
  								"en": "Do not know"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
  							"description": {
  								"de": "Keine\u003cbr\u003eAn\u0026shy;gabe",
- 								"en": "No answer"
- 							}
+ 								"en": "No an\u0026shy;swer"
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"name": "compound_interest",
  							"type": "radiogroup",
- 							"css_control": "special-input-margin-vertical",
  							"description": {
  								"de": "xxx",
- 								"en": "Suppose you had 100 Euros in a savings account and the interest rate was 2% per year. \n\t\t\t\t\tAfter 5 years, how much do you think you would have in the account if you left the money to grow?"
+ 								"en": "Suppose you had 100 Euros in a sav\u0026shy;ings account and the interest rate was 2% per year. \n\t\t\t\t\tAfter 5 years, how much do you think you would have in the account if you left the money to grow?"
  							},
+ 							"css_label": "special-input-margin-vertical special-line-height-higher",
  							"col_span_label": 2,
  							"radios": [
  								{
@@ -2012,73 +1915,72 @@
  					]
  				},
  				{
- 					"bottom_half_vspacers": 2,
- 					"odd_rows_coloring": false,
+ 					"bottom_vspacers": 2,
  					"width": 100,
  					"columns": 7,
  					"inputs": [
  						{
  							"type": "textblock",
- 							"css_label": "css-radio-label",
  							"label": {
  								"de": " \u0026nbsp; ",
  								"en": " \u0026nbsp; "
  							},
+ 							"css_label": "special-line-height-higher",
  							"col_span_label": 2
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
  							"description": {
  								"de": "xxx",
  								"en": "More than today"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
  							"description": {
  								"de": "xxx",
  								"en": "Exactly the same"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
  							"description": {
  								"de": "xxx",
  								"en": "Less than today"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
  							"description": {
  								"de": "Weiß nicht",
  								"en": "Do not know"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
  							"description": {
  								"de": "Keine\u003cbr\u003eAn\u0026shy;gabe",
- 								"en": "No answer"
- 							}
+ 								"en": "No an\u0026shy;swer"
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"name": "real_interest",
  							"type": "radiogroup",
- 							"css_control": "special-input-margin-vertical",
  							"description": {
  								"de": "xxx",
- 								"en": "Imagine that the interest rate on your savings account was 1% per year and inflation was 2% per year. \n\t\t\t\t\tAfter 1 year, would you be able to buy more than, exactly the same as, or less than today with the money in this account?"
+ 								"en": "Imagine that the interest rate on your sav\u0026shy;ings account was 1% per year and inflation was 2% per year. \n\t\t\t\t\tAfter 1 year, would you be able to buy more than, exactly the same as, or less than today with the money in this account?"
  							},
+ 							"css_label": "special-input-margin-vertical special-line-height-higher",
  							"col_span_label": 2,
  							"radios": [
  								{
@@ -2107,73 +2009,72 @@
  					]
  				},
  				{
- 					"bottom_half_vspacers": 2,
- 					"odd_rows_coloring": false,
+ 					"bottom_vspacers": 2,
  					"width": 100,
  					"columns": 7,
  					"inputs": [
  						{
  							"type": "textblock",
- 							"css_label": "css-radio-label",
  							"label": {
  								"de": " \u0026nbsp; ",
  								"en": " \u0026nbsp; "
  							},
+ 							"css_label": "special-line-height-higher",
  							"col_span_label": 2
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
  							"description": {
  								"de": "xxx",
  								"en": "More than 200 Euros"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
  							"description": {
  								"de": "xxx",
  								"en": "Exactly 200 Euros"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
  							"description": {
  								"de": "xxx",
  								"en": "Less than 200"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
  							"description": {
  								"de": "Weiß nicht",
  								"en": "Do not know"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
  							"description": {
  								"de": "Keine\u003cbr\u003eAn\u0026shy;gabe",
- 								"en": "No answer"
- 							}
+ 								"en": "No an\u0026shy;swer"
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"name": "compound_multi",
  							"type": "radiogroup",
- 							"css_control": "special-input-margin-vertical",
  							"description": {
  								"de": "xxx",
- 								"en": "Suppose you had 100 Euros in a savings account and the interest rate is 20% per year and you never withdraw money or interest payments.  \n\t\t\t\t\tAfter 5 years, how much would you have on this account in total?"
+ 								"en": "Suppose you had 100 Euros in a sav\u0026shy;ings account and the interest rate is 20% per year and you never withdraw money or interest payments.  \n\t\t\t\t\tAfter 5 years, how much would you have on this account in total?"
  							},
+ 							"css_label": "special-input-margin-vertical special-line-height-higher",
  							"col_span_label": 2,
  							"radios": [
  								{
@@ -2202,73 +2103,72 @@
  					]
  				},
  				{
- 					"bottom_half_vspacers": 2,
- 					"odd_rows_coloring": false,
+ 					"bottom_vspacers": 2,
  					"width": 100,
  					"columns": 7,
  					"inputs": [
  						{
  							"type": "textblock",
- 							"css_label": "css-radio-label",
  							"label": {
  								"de": " \u0026nbsp; ",
  								"en": " \u0026nbsp; "
  							},
+ 							"css_label": "special-line-height-higher",
  							"col_span_label": 2
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
  							"description": {
  								"de": "xxx",
  								"en": "More than today"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
  							"description": {
  								"de": "xxx",
  								"en": "The same"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
  							"description": {
  								"de": "xxx",
  								"en": "Less than today"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
  							"description": {
  								"de": "Weiß nicht",
  								"en": "Do not know"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
  							"description": {
  								"de": "Keine\u003cbr\u003eAn\u0026shy;gabe",
- 								"en": "No answer"
- 							}
+ 								"en": "No an\u0026shy;swer"
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"name": "inflation_indexing",
  							"type": "radiogroup",
- 							"css_control": "special-input-margin-vertical",
  							"description": {
  								"de": "xxx",
  								"en": "Suppose that in the year 2020, your income has doubled and prices of all goods have doubled too. \n\t\t\t\t\tIn 2020, how much will you be able to buy with your income?"
  							},
+ 							"css_label": "special-input-margin-vertical special-line-height-higher",
  							"col_span_label": 2,
  							"radios": [
  								{
@@ -2297,73 +2197,72 @@
  					]
  				},
  				{
- 					"bottom_half_vspacers": 2,
- 					"odd_rows_coloring": false,
+ 					"bottom_vspacers": 2,
  					"width": 100,
  					"columns": 7,
  					"inputs": [
  						{
  							"type": "textblock",
- 							"css_label": "css-radio-label",
  							"label": {
  								"de": " \u0026nbsp; ",
  								"en": " \u0026nbsp; "
  							},
+ 							"css_label": "special-line-height-higher",
  							"col_span_label": 2
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
  							"description": {
  								"de": "xxx",
  								"en": "They rise"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
  							"description": {
  								"de": "xxx",
  								"en": "They fall"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
  							"description": {
  								"de": "xxx",
  								"en": "They stay the same"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
  							"description": {
  								"de": "Weiß nicht",
  								"en": "Do not know"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
  							"description": {
  								"de": "Keine\u003cbr\u003eAn\u0026shy;gabe",
- 								"en": "No answer"
- 							}
+ 								"en": "No an\u0026shy;swer"
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"name": "interest_bond_price",
  							"type": "radiogroup",
- 							"css_control": "special-input-margin-vertical",
  							"description": {
  								"de": "xxx",
  								"en": "If the interest rates fall, what happens to bond prices?"
  							},
+ 							"css_label": "special-input-margin-vertical special-line-height-higher",
  							"col_span_label": 2,
  							"radios": [
  								{
@@ -2405,15 +2304,14 @@
  				"en": ""
  			},
  			"short": {
- 				"en": "Fin. literacy 2"
+ 				"en": "Fin. literacy 3"
  			},
  			"navi_num": 5,
  			"width": 80,
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
  				{
- 					"bottom_half_vspacers": 2,
- 					"odd_rows_coloring": false,
+ 					"bottom_vspacers": 2,
  					"width": 100,
  					"columns": 3,
  					"inputs": [
@@ -2422,7 +2320,6 @@
  							"type": "number",
  							"max_chars": 4,
  							"step": 0.01,
- 							"css_label": "special-input-vert-wider special-input-margin-vertical",
  							"label": {
  								"en": ""
  							},
@@ -2432,6 +2329,7 @@
  							"suffix": {
  								"en": "\u0026nbspCents"
  							},
+ 							"css_label": "special-line-height-higher special-input-margin-vertical",
  							"col_span_label": 2,
  							"col_span_control": 1,
  							"validator": "inRange100"
@@ -2441,16 +2339,16 @@
  							"type": "number",
  							"max_chars": 4,
  							"step": 0.1,
- 							"css_label": "special-input-vert-wider special-input-margin-vertical",
  							"label": {
  								"en": ""
  							},
  							"description": {
- 								"en": "If it takes 5\u0026nbsp;machines 5\u0026nbsp;minutes to make 5\u0026nbsp;widgets, \n\t\t\thow long would it take 100 machines to make 100 widgets? "
+ 								"en": "If it takes 5\u0026nbsp;machines 5\u0026nbsp;minutes to make 5\u0026nbsp;widgets, \n\t\t\thow long would it take 100\u0026nbsp;machines to make 100\u0026nbsp;widgets? "
  							},
  							"suffix": {
  								"en": "\u0026nbspMinutes"
  							},
+ 							"css_label": "special-line-height-higher special-input-margin-vertical",
  							"col_span_label": 2,
  							"col_span_control": 1,
  							"validator": "inRange100"
@@ -2460,7 +2358,6 @@
  							"type": "number",
  							"max_chars": 4,
  							"step": 1,
- 							"css_label": "special-input-vert-wider special-input-margin-vertical",
  							"label": {
  								"en": ""
  							},
@@ -2470,6 +2367,7 @@
  							"suffix": {
  								"en": "\u0026nbspDays"
  							},
+ 							"css_label": "special-line-height-higher special-input-margin-vertical",
  							"col_span_label": 2,
  							"col_span_control": 1,
  							"validator": "inRange100"
@@ -2477,92 +2375,95 @@
  					]
  				},
  				{
- 					"bottom_half_vspacers": 3,
- 					"odd_rows_coloring": false,
  					"width": 100,
- 					"columns": 10,
+ 					"columns": 3,
+ 					"inputs": [
+ 						{
+ 							"name": "textblock6a",
+ 							"type": "textblock",
+ 							"label": {
+ 								"en": "How do you see yourself – how will\u0026shy;ing are you in general to take risks?"
+ 							},
+ 							"description": {
+ 								"en": ""
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"col_span_label": 3
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"width": 100,
+ 					"columns": 7,
  					"inputs": [
  						{
  							"type": "textblock",
- 							"css_label": "css-radio-label",
- 							"label": {
+ 							"description": {
+ 								"de": "xxx",
+ 								"en": "Not at all will\u0026shy;ing to take risks"
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
  								"de": " \u0026nbsp; ",
  								"en": " \u0026nbsp; "
  							},
- 							"col_span_label": 3
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
+ 							"description": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
  							"description": {
  								"de": "xxx",
- 								"en": "Not at all willing to take risks"
- 							}
- 						},
- 						{
- 							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
- 							"description": {
- 								"de": " \u0026nbsp; ",
- 								"en": " \u0026nbsp; "
- 							}
- 						},
- 						{
- 							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
- 							"description": {
- 								"de": " \u0026nbsp; ",
- 								"en": " \u0026nbsp; "
- 							}
- 						},
- 						{
- 							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
- 							"description": {
- 								"de": " \u0026nbsp; ",
- 								"en": " \u0026nbsp; "
- 							}
- 						},
- 						{
- 							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
- 							"description": {
- 								"de": " \u0026nbsp; ",
- 								"en": " \u0026nbsp; "
- 							}
- 						},
- 						{
- 							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
- 							"description": {
- 								"de": " \u0026nbsp; ",
- 								"en": " \u0026nbsp; "
- 							}
- 						},
- 						{
- 							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
- 							"description": {
- 								"de": "xxx",
- 								"en": "Very willing to take risks"
- 							}
+ 								"en": "Very will\u0026shy;ing to take risks"
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"name": "risk_preference",
  							"type": "radiogroup",
- 							"css_control": "special-input-margin-vertical",
- 							"description": {
- 								"de": "",
- 								"en": "How do you see yourself – how willing are you in general to take risks?"
- 							},
- 							"col_span_label": 3,
+ 							"css_label": "special-input-margin-vertical special-line-height-higher",
  							"radios": [
  								{
  									"hori_align": 1,
@@ -2598,110 +2499,108 @@
  					]
  				},
  				{
- 					"odd_rows_coloring": false,
  					"width": 100,
  					"columns": 3,
  					"inputs": [
  						{
  							"name": "textblock6",
  							"type": "textblock",
- 							"css_label": "special-input-vert-wider",
  							"label": {
- 								"en": " "
- 							},
- 							"description": {
  								"en": "How do you see yourself on a scale from ..."
  							},
+ 							"description": {
+ 								"en": " "
+ 							},
+ 							"css_label": "special-line-height-higher",
  							"col_span_label": 3
  						}
  					]
  				},
  				{
- 					"bottom_half_vspacers": 2,
- 					"odd_rows_coloring": false,
+ 					"bottom_vspacers": 2,
  					"width": 100,
  					"columns": 10,
  					"inputs": [
  						{
  							"type": "textblock",
- 							"css_label": "css-radio-label",
  							"label": {
  								"de": " \u0026nbsp; ",
  								"en": " \u0026nbsp; "
  							},
+ 							"css_label": "special-line-height-higher",
  							"col_span_label": 3
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
  							"description": {
  								"de": "xxx",
- 								"en": "Dis\u0026shy;agree completely"
- 							}
+ 								"en": "Dis\u0026shy;agree com\u0026shy;plete\u0026shy;ly"
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
  							"description": {
  								"de": " \u0026nbsp; ",
  								"en": "Dis\u0026shy;agree strong\u0026shy;ly"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
  							"description": {
  								"de": " \u0026nbsp; ",
  								"en": "Dis\u0026shy;agree a little"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
  							"description": {
  								"de": " \u0026nbsp; ",
- 								"en": "Neither agree nor dis\u0026shy;agree"
- 							}
+ 								"en": "Nei\u0026shy;ther agree nor dis\u0026shy;agree"
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
  							"description": {
  								"de": " \u0026nbsp; ",
  								"en": "Agree a little"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
  							"description": {
  								"de": " \u0026nbsp; ",
  								"en": "Agree strong\u0026shy;ly"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
- 							"css_label": "css-radio-label",
  							"description": {
  								"de": "xxx",
- 								"en": "Agree completely"
- 							}
+ 								"en": "Agree com\u0026shy;plete\u0026shy;ly"
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"name": "temptation_resistance",
  							"type": "radiogroup",
- 							"css_control": "special-input-margin-vertical",
  							"description": {
  								"de": "xxx",
  								"en": "I am good at resisting temptation"
  							},
+ 							"css_label": "special-input-margin-vertical special-line-height-higher",
  							"col_span_label": 3,
  							"radios": [
  								{
@@ -2738,11 +2637,11 @@
  						{
  							"name": "bad_things_refusal",
  							"type": "radiogroup",
- 							"css_control": "special-input-margin-vertical",
  							"description": {
  								"de": "xxx",
  								"en": "I refuse things that are bad for me"
  							},
+ 							"css_label": "special-input-margin-vertical special-line-height-higher",
  							"col_span_label": 3,
  							"radios": [
  								{
@@ -2779,11 +2678,11 @@
  						{
  							"name": "more_self_discipline",
  							"type": "radiogroup",
- 							"css_control": "special-input-margin-vertical",
  							"description": {
  								"de": "xxx",
  								"en": "I wish I had more self discipline (R)"
  							},
+ 							"css_label": "special-input-margin-vertical special-line-height-higher",
  							"col_span_label": 3,
  							"radios": [
  								{
@@ -2820,11 +2719,11 @@
  						{
  							"name": "pleasure_prevents_me",
  							"type": "radiogroup",
- 							"css_control": "special-input-margin-vertical",
  							"description": {
  								"de": "xxx",
  								"en": "Pleasure and fun sometimes keep me from getting work done (R)"
  							},
+ 							"css_label": "special-input-margin-vertical special-line-height-higher",
  							"col_span_label": 3,
  							"radios": [
  								{
@@ -2861,11 +2760,11 @@
  						{
  							"name": "trouble_concentrating",
  							"type": "radiogroup",
- 							"css_control": "special-input-margin-vertical",
  							"description": {
  								"de": "xxx",
  								"en": "I have trouble concentrating (R)"
  							},
+ 							"css_label": "special-input-margin-vertical special-line-height-higher",
  							"col_span_label": 3,
  							"radios": [
  								{
@@ -2902,11 +2801,11 @@
  						{
  							"name": "long_term_goal_oriented",
  							"type": "radiogroup",
- 							"css_control": "special-input-margin-vertical",
  							"description": {
  								"de": "xxx",
  								"en": "I am able to work effectively towards long term goals"
  							},
+ 							"css_label": "special-input-margin-vertical special-line-height-higher",
  							"col_span_label": 3,
  							"radios": [
  								{
@@ -2943,11 +2842,11 @@
  						{
  							"name": "cannot_stop_myself",
  							"type": "radiogroup",
- 							"css_control": "special-input-margin-vertical",
  							"description": {
  								"de": "xxx",
  								"en": "Sometimes I cant stop myself from doing something, even if I know it is wrong (R)"
  							},
+ 							"css_label": "special-input-margin-vertical special-line-height-higher",
  							"col_span_label": 3,
  							"radios": [
  								{
@@ -2984,11 +2883,11 @@
  						{
  							"name": "acting_without_thinking",
  							"type": "radiogroup",
- 							"css_control": "special-input-margin-vertical",
  							"description": {
  								"de": "xxx",
  								"en": "I often act without thinking through the alternatives (R)"
  							},
+ 							"css_label": "special-input-margin-vertical special-line-height-higher",
  							"col_span_label": 3,
  							"radios": [
  								{
@@ -3025,11 +2924,11 @@
  						{
  							"name": "impulsive_purchases",
  							"type": "radiogroup",
- 							"css_control": "special-input-margin-vertical",
  							"description": {
  								"de": "xxx",
  								"en": "I am impulsive and tend to buy things even when I can’t really afford them."
  							},
+ 							"css_label": "special-input-margin-vertical special-line-height-higher",
  							"col_span_label": 3,
  							"radios": [
  								{
@@ -3066,11 +2965,11 @@
  						{
  							"name": "financial_goals",
  							"type": "radiogroup",
- 							"css_control": "special-input-margin-vertical",
  							"description": {
  								"de": "xxx",
  								"en": "I set financial goals for the next 1–2 months for what I want to achieve with my money."
  							},
+ 							"css_label": "special-input-margin-vertical special-line-height-higher",
  							"col_span_label": 3,
  							"radios": [
  								{
@@ -3103,6 +3002,817 @@
  								}
  							],
  							"validator": "mustRadioGroup"
+ 						}
+ 					]
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"section": {
+ 				"en": "Financial literacy 4"
+ 			},
+ 			"label": {
+ 				"en": ""
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"short": {
+ 				"en": "Fin. literacy 4"
+ 			},
+ 			"navi_num": 6,
+ 			"width": 80,
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"width": 100,
+ 					"columns": 3,
+ 					"inputs": [
+ 						{
+ 							"name": "textblock7",
+ 							"type": "textblock",
+ 							"label": {
+ 								"en": " "
+ 							},
+ 							"description": {
+ 								"en": "How well do the following statements describe your personality?\u003cbr\u003e\n\t\t\tI see myself as someone who..."
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"col_span_label": 3
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"width": 100,
+ 					"columns": 8,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"col_span_label": 3
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": "Dis\u0026shy;agree strong\u0026shy;ly"
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": "Dis\u0026shy;agree a little"
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": "Nei\u0026shy;ther agree nor dis\u0026shy;agree"
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": "Agree a little"
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": "Agree strong\u0026shy;ly"
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
+ 						},
+ 						{
+ 							"name": "personality_reserved",
+ 							"type": "radiogroup",
+ 							"description": {
+ 								"de": "xxx",
+ 								"en": "...is reserved"
+ 							},
+ 							"css_label": "special-input-margin-vertical special-line-height-higher",
+ 							"col_span_label": 3,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "4"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "5"
+ 								}
+ 							],
+ 							"validator": "mustRadioGroup"
+ 						},
+ 						{
+ 							"name": "personality_trusting",
+ 							"type": "radiogroup",
+ 							"description": {
+ 								"de": "xxx",
+ 								"en": "...is generally trusting"
+ 							},
+ 							"css_label": "special-input-margin-vertical special-line-height-higher",
+ 							"col_span_label": 3,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "4"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "5"
+ 								}
+ 							],
+ 							"validator": "mustRadioGroup"
+ 						},
+ 						{
+ 							"name": "personality_lazy",
+ 							"type": "radiogroup",
+ 							"description": {
+ 								"de": "xxx",
+ 								"en": "...tends to be lazy"
+ 							},
+ 							"css_label": "special-input-margin-vertical special-line-height-higher",
+ 							"col_span_label": 3,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "4"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "5"
+ 								}
+ 							],
+ 							"validator": "mustRadioGroup"
+ 						},
+ 						{
+ 							"name": "personality_stress_tolerant",
+ 							"type": "radiogroup",
+ 							"description": {
+ 								"de": "xxx",
+ 								"en": "...is relaxed, handles stress well"
+ 							},
+ 							"css_label": "special-input-margin-vertical special-line-height-higher",
+ 							"col_span_label": 3,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "4"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "5"
+ 								}
+ 							],
+ 							"validator": "mustRadioGroup"
+ 						},
+ 						{
+ 							"name": "personality_prosaic",
+ 							"type": "radiogroup",
+ 							"description": {
+ 								"de": "xxx",
+ 								"en": "...has few artistic interests"
+ 							},
+ 							"css_label": "special-input-margin-vertical special-line-height-higher",
+ 							"col_span_label": 3,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "4"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "5"
+ 								}
+ 							],
+ 							"validator": "mustRadioGroup"
+ 						},
+ 						{
+ 							"name": "personality_sociable",
+ 							"type": "radiogroup",
+ 							"description": {
+ 								"de": "xxx",
+ 								"en": "...is outgoing, sociable"
+ 							},
+ 							"css_label": "special-input-margin-vertical special-line-height-higher",
+ 							"col_span_label": 3,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "4"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "5"
+ 								}
+ 							],
+ 							"validator": "mustRadioGroup"
+ 						},
+ 						{
+ 							"name": "personality_critical",
+ 							"type": "radiogroup",
+ 							"description": {
+ 								"de": "xxx",
+ 								"en": "...tends to find fault with others"
+ 							},
+ 							"css_label": "special-input-margin-vertical special-line-height-higher",
+ 							"col_span_label": 3,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "4"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "5"
+ 								}
+ 							],
+ 							"validator": "mustRadioGroup"
+ 						},
+ 						{
+ 							"name": "personality_thorough",
+ 							"type": "radiogroup",
+ 							"description": {
+ 								"de": "xxx",
+ 								"en": "...does a thorough job"
+ 							},
+ 							"css_label": "special-input-margin-vertical special-line-height-higher",
+ 							"col_span_label": 3,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "4"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "5"
+ 								}
+ 							],
+ 							"validator": "mustRadioGroup"
+ 						},
+ 						{
+ 							"name": "personality_irritable",
+ 							"type": "radiogroup",
+ 							"description": {
+ 								"de": "xxx",
+ 								"en": "...gets nervous easily"
+ 							},
+ 							"css_label": "special-input-margin-vertical special-line-height-higher",
+ 							"col_span_label": 3,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "4"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "5"
+ 								}
+ 							],
+ 							"validator": "mustRadioGroup"
+ 						},
+ 						{
+ 							"name": "personality_imaginative",
+ 							"type": "radiogroup",
+ 							"description": {
+ 								"de": "xxx",
+ 								"en": "...has an active imagination"
+ 							},
+ 							"css_label": "special-input-margin-vertical special-line-height-higher",
+ 							"col_span_label": 3,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "4"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "5"
+ 								}
+ 							],
+ 							"validator": "mustRadioGroup"
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"width": 100,
+ 					"columns": 3,
+ 					"inputs": [
+ 						{
+ 							"name": "textblock7",
+ 							"type": "textblock",
+ 							"label": {
+ 								"en": " "
+ 							},
+ 							"description": {
+ 								"en": "The next question deals with optimism.\u003cbr\u003e\n\t\t\tOptimistis are people who look to the future with confidence and who mostly expect good things to happen.\n\t\t\tHow would you describe yourself?\n\t\t\tHow op\u0026shy;ti\u0026shy;mis\u0026shy;tic are you in general?"
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"col_span_label": 3
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"width": 100,
+ 					"columns": 7,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "xxx",
+ 								"en": "Not at all op\u0026shy;ti\u0026shy;mis\u0026shy;tic"
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": "Strong\u0026shy;ly non-op\u0026shy;ti\u0026shy;mis\u0026shy;tic"
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": "A little non-op\u0026shy;ti\u0026shy;mis\u0026shy;tic"
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": "In\u0026shy;dif\u0026shy;fer\u0026shy;ent"
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": "A little op\u0026shy;ti\u0026shy;mis\u0026shy;tic"
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": "Strong\u0026shy;ly op\u0026shy;ti\u0026shy;mis\u0026shy;tic"
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "xxx",
+ 								"en": "Very op\u0026shy;ti\u0026shy;mis\u0026shy;tic"
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
+ 						},
+ 						{
+ 							"name": "optimistic",
+ 							"type": "radiogroup",
+ 							"css_label": "special-input-margin-vertical special-line-height-higher",
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "4"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "5"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "6"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "7"
+ 								}
+ 							],
+ 							"validator": "mustRadioGroup"
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"width": 100,
+ 					"columns": 3,
+ 					"inputs": [
+ 						{
+ 							"name": "textblock7",
+ 							"type": "textblock",
+ 							"label": {
+ 								"en": " "
+ 							},
+ 							"description": {
+ 								"en": "The next question is about pessimism.\u003cbr\u003e\n\t\t\tPessimists are people who are full of doubt when they look to the future and who mostly expect bad things to happen.\n\t\t\tHow would you describe yourself?\n\t\t\tHow pes\u0026shy;si\u0026shy;mis\u0026shy;tic are you in general?"
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"col_span_label": 3
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"width": 100,
+ 					"columns": 7,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "xxx",
+ 								"en": "Not at all pes\u0026shy;si\u0026shy;mis\u0026shy;tic"
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": "Strong\u0026shy;ly non-pes\u0026shy;si\u0026shy;mis\u0026shy;tic"
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": "A little non-pes\u0026shy;si\u0026shy;mis\u0026shy;tic"
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": "In\u0026shy;dif\u0026shy;fer\u0026shy;ent"
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": "A little pes\u0026shy;si\u0026shy;mis\u0026shy;tic"
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": "Strong\u0026shy;ly pes\u0026shy;si\u0026shy;mis\u0026shy;tic"
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "xxx",
+ 								"en": "Very pes\u0026shy;si\u0026shy;mis\u0026shy;tic"
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
+ 						},
+ 						{
+ 							"name": "pessimistic",
+ 							"type": "radiogroup",
+ 							"css_label": "special-input-margin-vertical special-line-height-higher",
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "4"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "5"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "6"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "7"
+ 								}
+ 							],
+ 							"validator": "mustRadioGroup"
+ 						}
+ 					]
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "Abschluss",
+ 				"en": "Finish"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"short": {
+ 				"de": "Abschluss",
+ 				"en": "Finish"
+ 			},
+ 			"navi_num": 7,
+ 			"width": 65,
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"label": {
+ 						"de": "",
+ 						"en": ""
+ 					},
+ 					"bottom_vspacers": 2,
+ 					"width": 100,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Kommentar zur Umfrage",
+ 								"en": "Comment on the survey"
+ 							},
+ 							"description": {
+ 								"de": "\u003cbr\u003eWollen Sie uns noch etwas mitteilen?",
+ 								"en": "\u003cbr\u003eAny remarks or advice for us?"
+ 							},
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "remark",
+ 							"type": "textarea",
+ 							"max_chars": 300,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"width": 100,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"name": "finished",
+ 							"type": "radiogroup",
+ 							"css_label": "special-line-height-higher",
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"radios": [
+ 								{
+ 									"hori_align": 2,
+ 									"label": {
+ 										"de": "Zugang bleibt bestehen.  \n\t\t\t\t\t\t\tDaten können in weiteren Sitzungen geändert werden.",
+ 										"en": "Leave questionnaire open. \n\t\t\t\t\t\t\tData can be changed\u0026nbsp;in later sessions."
+ 									},
+ 									"val": "2",
+ 									"columns": 1
+ 								},
+ 								{
+ 									"hori_align": 2,
+ 									"label": {
+ 										"de": "Fragebogen ist abgeschlossen. Keine Änderungen möglich.",
+ 										"en": "Questionnaire is finished. No more edits."
+ 									},
+ 									"val": "1",
+ 									"columns": 1
+ 								}
+ 							],
+ 							"validator": "mustRadioGroup"
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"width": 100,
+ 					"columns": 2,
+ 					"inputs": [
+ 						{
+ 							"name": "submitBtn",
+ 							"type": "button",
+ 							"label": {
+ 								"de": "",
+ 								"en": ""
+ 							},
+ 							"description": {
+ 								"de": "OK",
+ 								"en": "OK"
+ 							},
+ 							"accesskey": "n",
+ 							"css_control": "special-submit-big",
+ 							"col_span_control": 1,
+ 							"response": "7"
+ 						}
+ 					]
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "Ihre Eingaben sind gespeichert.",
+ 				"en": "Your entries have been saved."
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"no_navigation": true,
+ 			"navi_num": 0,
+ 			"width": 100,
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"width": 100,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "dynamic",
+ 							"css_label": "special-input-margin-vertical special-line-height-higher",
+ 							"dynamic_func": "RepsonseStatistics"
  						}
  					]
  				}

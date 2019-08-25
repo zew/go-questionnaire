@@ -8,7 +8,40 @@ import (
 )
 
 var RadioVali = ""
-var RadioCSSControl = ""
+var CSSLabelHeader = ""
+var CSSLabelRow = ""
+
+/* AddRadioGroupVertical prints ooptions vertically
+
+   Green   x
+   Red     x
+   Black   x
+
+*/
+func (p *pageT) AddRadioGroupVertical(name string, rowLabels []trl.S) *groupT {
+
+	//
+	var gr *groupT
+	gr = p.AddGroup()
+	gr.Cols = 1
+	radGroup := gr.AddInput()
+	radGroup.Type = "radiogroup"
+	radGroup.Name = name // "y0_euro"
+	radGroup.CSSLabel = CSSLabelRow
+	radGroup.Validator = RadioVali
+
+	for idx, lbl := range rowLabels {
+
+		rad := radGroup.AddRadio()
+		rad.HAlign = HRight
+		rad.Label = lbl
+		rad.Col = idx % 2 // 0 1 --  0 1
+		rad.Cols = 2
+
+	}
+
+	return gr
+}
 
 // AddRadioMatrixGroup adds several inputs of type radiogroup
 // and prepends a row with labels.
@@ -21,49 +54,47 @@ func (p *pageT) AddRadioMatrixGroup(headerLabels []trl.S, inpNames []string, row
 		colSpanLabel = opt[0]
 	}
 
-	// Header row - first column - empty cell
+	// top-left cell => empty
 	if len(rowLabels) > 0 {
-		if len(rowLabels) != len(inpNames) { // consistence check
-			panic("radioMatrix(): if row labels exist, they should exist for *all* rows")
+		if len(rowLabels) != len(inpNames) { // consistence check, deliberately inside if condition
+			panic("AddRadioMatrixGroup(): if row labels exist, they should exist for *all* rows")
 		}
 		inp := gr.AddInput()
 		inp.Type = "textblock"
-		inp.CSSLabel = "css-radio-label"
 		inp.Label = trl.S{
 			"de": " &nbsp; ",
 			"en": " &nbsp; ",
 		}
 		inp.ColSpanLabel = colSpanLabel
+		inp.CSSLabel = CSSLabelHeader // apply even if its empty
 	}
 
 	// Header row - next columns
 	for _, lbl := range headerLabels {
 		inp := gr.AddInput()
 		inp.Type = "textblock"
-		inp.CSSLabel = "css-radio-label"
 		inp.HAlignLabel = HCenter
 		inp.Desc = lbl // for instance trl.S{"de": "gut", "en": "good"}
+		inp.CSSLabel = CSSLabelHeader
 	}
 
 	//
-	for i, name := range inpNames {
-		inp := gr.AddInput()
-		inp.Type = "radiogroup"
-		inp.CSSControl = RadioCSSControl
-
-		inp.Name = name // "y0_euro"
-		inp.Validator = RadioVali
-		// inp.CSSRadioLabel = "css-radio-label" - label rendered above
+	for i1, name := range inpNames {
+		radGroup := gr.AddInput()
+		radGroup.Type = "radiogroup"
+		radGroup.Name = name // "y0_euro"
+		radGroup.ColSpanLabel = colSpanLabel
+		radGroup.CSSLabel = CSSLabelRow
+		radGroup.Validator = RadioVali
 		if len(rowLabels) > 0 {
 			// for instance trl.S{"de": "Euroraum", "en": "euro area"}
 			// inp.Label = rowLabels[i]
-			inp.Desc = rowLabels[i]
+			radGroup.Desc = rowLabels[i1]
 		}
 		for i2 := 0; i2 < len(headerLabels); i2++ {
-			rad := inp.AddRadio()
+			rad := radGroup.AddRadio()
 			rad.HAlign = HCenter
 		}
-		inp.ColSpanLabel = colSpanLabel
 
 	}
 

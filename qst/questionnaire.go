@@ -21,12 +21,31 @@ import (
 	"github.com/zew/go-questionnaire/ctr"
 )
 
+// no wrap between input and suffix
+func appendSuffix(ctrl string, i *inputT, langCode string) string {
+
+	if !i.Suffix.Set() {
+		return ctrl
+	}
+
+	ctrl = strings.TrimSuffix(ctrl, "\n")
+	// We want to prevent line-break of the '%' or '€' suffix character.
+	// inputs must be inline-block, for whitespace nowrap to work.
+	// At the same time: suffix-inner enables wrapping for the suffix itself
+	sfx := fmt.Sprintf("<span class='go-quest-label %v  suffix-inner' >%v</span>\n", i.CSSLabel, i.Suffix.TrSilent(langCode))
+	ctrl = fmt.Sprintf("<span class='suffix-nowrap' >%v%v</span>\n", ctrl, sfx)
+
+	return ctrl
+}
+
 // Special subtype of inputT; used for radiogroup
 type radioT struct {
 	HAlign horizontalAlignment `json:"hori_align,omitempty"` // label and description left/center/right of input, default left, similar setting for radioT but not for group
 	Label  trl.S               `json:"label,omitempty"`
-	Val    string              `json:"val,omitempty"` // Val is allowed to be nil; it then gets initialized to 1...n by Validate(). 0 indicates 'no entry'.
-	// Notice the absence of Response;
+	Val    string              `json:"val,omitempty"`     // Val is allowed to be nil; it then gets initialized to 1...n by Validate(). 0 indicates 'no entry'.
+	Col    int                 `json:"column,omitempty"`  // col x of cols
+	Cols   int                 `json:"columns,omitempty"` //
+	// field 'response' is absent, it is added dynamically;
 }
 
 func (i *inputT) AddRadio() *radioT {
@@ -38,22 +57,24 @@ func (i *inputT) AddRadio() *radioT {
 
 // Input represents a single form input element.
 // There is one exception for multiple radios (radiogroup) with the same name but distinct values.
-// Multiple checkboxes (checkboxgroup) with same name but distinct values are a dubious instrument. See comment to implementedType checkboxgroup.
+// Multiple checkboxes (checkboxgroup) with same name but distinct values are a dubious instrument.
+// See comment to implementedType checkboxgroup.
 type inputT struct {
 	Name     string  `json:"name,omitempty"`
 	Type     string  `json:"type,omitempty"`
 	MaxChars int     `json:"max_chars,omitempty"` // Number of input chars, also used to compute width
 	Step     float64 `json:"step,omitempty"`      // stepping interval for number input
 
+	Label     trl.S  `json:"label,omitempty"`
+	Desc      trl.S  `json:"description,omitempty"`
+	Suffix    trl.S  `json:"suffix,omitempty"`
+	AccessKey string `json:"accesskey,omitempty"`
+
+	CSSLabel      string              `json:"css_label,omitempty"`                // vertical margins, line-height, indent - usually for the entire label+input
 	HAlignLabel   horizontalAlignment `json:"horizontal_align_label,omitempty"`   // description left/center/right of input, default left, similar setting for radioT but not for group
 	HAlignControl horizontalAlignment `json:"horizontal_align_control,omitempty"` // label       left/center/right of input, default left, similar setting for radioT but not for group
-	CSSLabel      string              `json:"css_label,omitempty"`
-	CSSRadioLabel string              `json:"css_rad_label,omitempty"` // radio label
-	CSSControl    string              `json:"css_control,omitempty"`
-	Label         trl.S               `json:"label,omitempty"`
-	Desc          trl.S               `json:"description,omitempty"`
-	Suffix        trl.S               `json:"suffix,omitempty"`
-	AccessKey     string              `json:"accesskey,omitempty"`
+
+	CSSControl string `json:"css_control,omitempty"` // usually only for the input element's inner style
 
 	// How many column slots of the overall layout should the control occupy?
 	// The number adds up against group.Cols - determining newlines.
@@ -235,14 +256,8 @@ func (i inputT) HTML(langCode string, numCols int) string {
 		}
 
 		// Append suffix
-		if i.Suffix.Set() {
-			ctrl = strings.TrimSuffix(ctrl, "\n")
-			// We want to prevent line-break of the '%' or '€' suffix character.
-			// inputs must be inline-block, for whitespace nowrap to work.
-			// At the same time: suffix-inner enables wrapping for the suffix itself
-			sfx := fmt.Sprintf("<span class='go-quest-label %v  suffix-inner' >%v</span>\n", i.CSSLabel, i.Suffix.TrSilent(langCode))
-			ctrl = fmt.Sprintf("<span class='suffix-nowrap' >%v%v</span>\n", ctrl, sfx)
-		}
+		ctrl = appendSuffix(ctrl, &i, langCode)
+
 		// Append error message
 		if i.ErrMsg.Set() {
 			ctrl += fmt.Sprintf("<span class='go-quest-label %v' >%v</span>\n", i.CSSLabel, i.ErrMsg.TrSilent(langCode))
@@ -259,7 +274,8 @@ func (i inputT) HTML(langCode string, numCols int) string {
 		if i.Type == "checkboxgroup" {
 			innerType = "checkbox"
 		}
-		for _, rad := range i.Radios {
+
+		for radIdx, rad := range i.Radios {
 			one := ""
 			checked := ""
 			if i.Response == rad.Val {
@@ -268,10 +284,12 @@ func (i inputT) HTML(langCode string, numCols int) string {
 			// one += fmt.Sprintf("Val %v", val)
 
 			if rad.Label != nil && rad.HAlign == HLeft {
-				one += fmt.Sprintf("<span class='go-quest-label vert-correct %v' >%v</span>\n", i.CSSRadioLabel, rad.Label.Tr(langCode))
+				one += fmt.Sprintf("<span class='go-quest-label vert-correct-left-right %v' >%v</span>\n", i.CSSLabel, rad.Label.Tr(langCode))
 			}
 			if rad.Label != nil && rad.HAlign == HCenter {
-				one += fmt.Sprintf("<span class='go-quest-label vert-correct %v'>%v</span>\n", i.CSSRadioLabel, rad.Label.Tr(langCode))
+				// one += fmt.Sprintf("<span class='go-quest-label vert-correct-center %v'>%v</span>\n", i.CSSLabel, rad.Label.Tr(langCode))
+				// no margins or left-paddings...
+				one += fmt.Sprintf("<span class='go-quest-label vert-correct-center '>%v</span>\n", rad.Label.Tr(langCode))
 				one += vspacer
 			}
 
@@ -281,10 +299,31 @@ func (i inputT) HTML(langCode string, numCols int) string {
 			)
 
 			if rad.Label != nil && rad.HAlign == HRight {
-				one += fmt.Sprintf("<span class='go-quest-label vert-correct %v'>%v</span>\n", i.CSSRadioLabel, rad.Label.Tr(langCode))
+				one += fmt.Sprintf("<span class='go-quest-label vert-correct-left-right %v'>%v</span>\n", i.CSSLabel, rad.Label.Tr(langCode))
 			}
-			one = td(rad.HAlign, colWidth(1, numCols), one)
-			ctrl += one
+
+			cellAlign := rad.HAlign
+			if rad.HAlign == HRight {
+				cellAlign = HLeft
+			}
+
+			if rad.Cols == 0 {
+				one = td(cellAlign, colWidth(1, numCols), one)
+				ctrl += one
+			} else {
+				if radIdx > 0 && rad.Col == 0 {
+					log.Printf("new row for rad %v", rad)
+					ctrl += tableClose
+					to := tableOpen
+					// width := fmt.Sprintf(" style='width: %v%%;' >", 100/(lastCol+1))
+					width := fmt.Sprintf(" style='width: %v%%;' >", 100) // table width 100 percent
+					to = strings.Replace(to, ">", width, -1)
+					ctrl += to
+				}
+				one = td(cellAlign, colWidth(1, rad.Cols), one)
+				ctrl += one
+			}
+
 		}
 		// The checkbox "empty catcher" must follow *after* the actual checkbox input,
 		// since golang http.Form.Get() fetches the *first* value.
@@ -297,10 +336,12 @@ func (i inputT) HTML(langCode string, numCols int) string {
 				nm, nm, valEmpty)
 		}
 
+		// Append suffix
 		if i.Suffix.Set() {
-			// compare suffix with no break for ordinary inputs
+			// compare appendSuffix() forcing no wrap for ordinary inputs
 			ctrl += fmt.Sprintf("<span class='go-quest-label %v' >%v</span>\n", i.CSSLabel, i.Suffix.TrSilent(langCode))
 		}
+
 		if i.ErrMsg.Set() {
 			ctrl += fmt.Sprintf("<span class='go-quest-label %v' >%v</span>\n", i.CSSLabel, i.ErrMsg.TrSilent(langCode)) // ugly layout  - but radiogroup and checkboxgroup won't have validation errors anyway
 		}
@@ -327,12 +368,12 @@ type groupT struct {
 	Label                trl.S `json:"label,omitempty"`
 	Desc                 trl.S `json:"description,omitempty"`
 	HeaderBottomVSpacers int   `json:"header_bottom_vspacers,omitempty"` // number of half rows below the group header
-	BottomVSpacers       int   `json:"bottom_half_vspacers,omitempty"`   // number of rows below the group, initialized to 3
+	BottomVSpacers       int   `json:"bottom_vspacers,omitempty"`        // number of rows below the group, initialized to 3
 
 	Vertical bool `json:"vertical,omitempty"` // groups vertically, not horizontally, not yet implemented
 
-	OddRowsColoring bool `json:"odd_rows_coloring"` // color odd rows
-	Width           int  `json:"width"`             // default is 100 percent
+	OddRowsColoring bool `json:"odd_rows_coloring,omitempty"` // color odd rows
+	Width           int  `json:"width"`                       // default is 100 percent
 
 	// Number of vertical columns;
 	// for horizontal *and* (not yet implemented) vertical layouts;
@@ -376,7 +417,7 @@ func (gr *groupT) TableOpen(rows int) string {
 // HTML renders a group of inputs to HTML
 func (gr groupT) HTML(langCode string) string {
 
-	b := bytes.Buffer{}
+	b := &bytes.Buffer{}
 
 	if gr.Width == 0 {
 		gr.Width = 100
@@ -408,10 +449,11 @@ func (gr groupT) HTML(langCode string) string {
 	b.WriteString(gr.TableOpen(rows))
 	for i, inp := range gr.Inputs {
 
-		b.WriteString(inp.HTML(langCode, gr.Cols)) // rendering markup
+		fmt.Fprint(b, inp.HTML(langCode, gr.Cols)) // rendering markup
 
 		if gr.Cols > 0 {
 
+			// incrementing label columns
 			if inp.Type != "button" { // button has label *inside of it*
 				if inp.ColSpanLabel > 1 {
 					cols += inp.ColSpanLabel // wider labels
@@ -424,11 +466,17 @@ func (gr groupT) HTML(langCode string) string {
 				}
 			}
 
+			// incrementing control columns
 			if inp.Type != "textblock" { // textblock has no control part
 				if inp.ColSpanControl > 1 {
 					cols += inp.ColSpanControl // larger input controls
 				} else if len(inp.Radios) > 0 {
-					cols += len(inp.Radios) // radiogroups, if no ColSpan is set
+					if inp.Radios[0].Cols > 0 {
+						cols += inp.Radios[0].Cols
+					} else {
+						cols += len(inp.Radios) // radiogroups, if no ColSpan is set
+					}
+
 				} else {
 					// nothing specified => input control occupies one column
 					cols++

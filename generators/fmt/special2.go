@@ -171,7 +171,7 @@ func addSeasonal2(q *qst.QuestionnaireT) error {
 				"en": "6&nbsp;months",
 			}
 			inp.HAlignLabel = qst.HRight
-			inp.CSSLabel = "mobile-wider"
+			inp.CSSLabel = "special-min-width-85"
 		}
 
 		{
@@ -183,7 +183,7 @@ func addSeasonal2(q *qst.QuestionnaireT) error {
 			inp.Validator = "inRange20"
 
 			inp.ColSpanLabel = 7
-			inp.CSSLabel = "special-input-vert-wider"
+			inp.CSSLabel = "special-line-height-higher"
 			inp.ColSpanControl = 9
 			inp.Desc = trl.S{
 				"de": "zwischen&nbsp;",
@@ -234,7 +234,7 @@ func addSeasonal2(q *qst.QuestionnaireT) error {
 			inp.Validator = "inRange20"
 
 			inp.ColSpanLabel = 7
-			inp.CSSLabel = "special-input-vert-wider"
+			inp.CSSLabel = "special-line-height-higher"
 			inp.ColSpanControl = 9
 			inp.Desc = trl.S{
 				"de": "zwischen&nbsp;",

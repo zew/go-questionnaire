@@ -21,6 +21,41 @@ import (
 	"github.com/zew/go-questionnaire/ctr"
 )
 
+/*
+ No line wrapping between element 1 and 2
+
+ But line wrapping *inside* each of them.
+
+ el1 and el2 must be inline-block, for whitespace nowrap to work.
+
+*/
+func nobreakGlue(el1, glue, el2 string) string {
+
+	if el1 == "" || el2 == "" {
+		return el1 + el2
+	}
+
+	reduction := 82 // 	el2 is overflowing :(
+
+	el1 = strings.TrimSpace(el1) // includes \n
+	el2 = strings.TrimSpace(el2)
+
+	el1 = fmt.Sprintf(
+		"<span style='white-space: normal; display: inline-block; vertical-align: top;' >%v</span>",
+		el1,
+	)
+	el2 = fmt.Sprintf(
+		"<span style='white-space: normal; display: inline-block; vertical-align: top; ' >%v</span>",
+		el2,
+	)
+	ret := fmt.Sprintf(
+		"<span style='white-space: nowrap; display: inline-block; width: %v%%;'>%v%v%v</span>\n",
+		reduction,
+		el1, glue, el2,
+	)
+	return ret
+}
+
 // no wrap between input and suffix
 func appendSuffix(ctrl string, i *inputT, langCode string) string {
 
@@ -281,26 +316,48 @@ func (i inputT) HTML(langCode string, numCols int) string {
 			if i.Response == rad.Val {
 				checked = "checked=\"checked\""
 			}
-			// one += fmt.Sprintf("Val %v", val)
 
-			if rad.Label != nil && rad.HAlign == HLeft {
-				one += fmt.Sprintf("<span class='go-quest-label vert-correct-left-right %v' >%v</span>\n", i.CSSLabel, rad.Label.Tr(langCode))
-			}
-			if rad.Label != nil && rad.HAlign == HCenter {
-				// one += fmt.Sprintf("<span class='go-quest-label vert-correct-center %v'>%v</span>\n", i.CSSLabel, rad.Label.Tr(langCode))
-				// no margins or left-paddings...
-				one += fmt.Sprintf("<span class='go-quest-label vert-correct-center '>%v</span>\n", rad.Label.Tr(langCode))
-				one += vspacer
-			}
-
-			one += fmt.Sprintf("<input type='%v' name='%v' id='%v' title='%v %v' class='%v' value='%v' %v />\n",
-				innerType, nm, nm, i.Label.TrSilent(langCode), i.Desc.TrSilent(langCode), i.CSSControl,
+			radio := fmt.Sprintf(
+				"<input type='%v' name='%v' id='%v' title='%v %v' class='%v' value='%v' %v />\n",
+				innerType, nm, nm, i.Label.TrSilent(langCode), i.Desc.TrSilent(langCode),
+				i.CSSControl,
 				rad.Val, checked,
 			)
 
-			if rad.Label != nil && rad.HAlign == HRight {
-				one += fmt.Sprintf("<span class='go-quest-label vert-correct-left-right %v'>%v</span>\n", i.CSSLabel, rad.Label.Tr(langCode))
+			lbl := ""
+			if !rad.Label.Set() {
+				one = radio
+			} else {
+				if rad.HAlign == HLeft {
+					lbl = fmt.Sprintf(
+						"<span class=' vert-correct-left-right' >%v</span>\n",
+						rad.Label.Tr(langCode),
+					)
+					one = nobreakGlue(lbl, "&nbsp;", radio)
+				}
+				if rad.HAlign == HCenter {
+					// no i.CSSLabel to prevent left margins/paddings to uncenter
+					lbl = fmt.Sprintf(
+						"<span class=' vert-correct-center '>%v</span>\n",
+						rad.Label.Tr(langCode),
+					)
+					lbl += vspacer
+					one = lbl + radio
+				}
+
+				if rad.HAlign == HRight {
+					lbl = fmt.Sprintf(
+						"<span class=' vert-correct-left-right'>%v</span>\n",
+						rad.Label.Tr(langCode),
+					)
+					one = nobreakGlue(radio, "&nbsp;", lbl)
+				}
 			}
+
+			if rad.HAlign == HCenter {
+				i.CSSLabel = strings.Replace(i.CSSLabel, "special-input-left-padding", "", -1)
+			}
+			one = fmt.Sprintf("<span class='go-quest-label %v'>%v</span>\n", i.CSSLabel, one)
 
 			cellAlign := rad.HAlign
 			if rad.HAlign == HRight {
@@ -311,17 +368,39 @@ func (i inputT) HTML(langCode string, numCols int) string {
 				one = td(cellAlign, colWidth(1, numCols), one)
 				ctrl += one
 			} else {
-				if radIdx > 0 && rad.Col == 0 {
-					log.Printf("new row for rad %v", rad)
-					ctrl += tableClose
-					to := tableOpen
-					// width := fmt.Sprintf(" style='width: %v%%;' >", 100/(lastCol+1))
-					width := fmt.Sprintf(" style='width: %v%%;' >", 100) // table width 100 percent
-					to = strings.Replace(to, ">", width, -1)
-					ctrl += to
+
+				/* Explanation by example:
+				   Cols = 3, Col = [0, 1, 2, 3, 4, 5, 6], Col%Cols = [0, 1, 2, 0, 1, 2, 0]
+				   closing/opening should happen  after      Col%Cols == Cols-1 == 2
+				           opening should happen *before*    Col == 0
+				   closing         should happen  after      Col == len(Cols)-1
+
+
+					Cols = 2, Col = [0, 1, 2, 3, 4, 5, 6], Col%Cols = [0, 1, 0, 1, 0, 1, 0]
+
+				*/
+
+				if rad.Col == 0 {
+					tOpen := tableOpen
+					width := fmt.Sprintf(" style='width: %v%%;' >", 100) // table width 100 percent - better would be group.Width
+					tOpen = strings.Replace(tOpen, ">", width, -1)
+					ctrl += tOpen
 				}
+
 				one = td(cellAlign, colWidth(1, rad.Cols), one)
 				ctrl += one
+
+				if (rad.Col+0)%rad.Cols == rad.Cols-1 || radIdx == len(i.Radios)-1 {
+
+					ctrl += tableClose
+				}
+				if (rad.Col+0)%rad.Cols == rad.Cols-1 && radIdx < len(i.Radios)-1 {
+					tOpen := tableOpen
+					width := fmt.Sprintf(" style='width: %v%%;' >", 100) // table width 100 percent - better would be group.Width
+					tOpen = strings.Replace(tOpen, ">", width, -1)
+					ctrl += tOpen
+				}
+
 			}
 
 		}

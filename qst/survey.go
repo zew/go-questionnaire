@@ -2,6 +2,7 @@ package qst
 
 import (
 	"fmt"
+	"strings"
 	"time"
 
 	"github.com/zew/go-questionnaire/cfg"
@@ -108,40 +109,51 @@ func dropDown(vals []string, selected string) string {
 
 // HTMLForm renders an HTML edit form
 // for survey data
-func (s *surveyT) HTMLForm(questTypes []string) string {
+func (s *surveyT) HTMLForm(questTypes []string, errStr string) string {
 
-	ret := `
-		<style>
-			.survey-edit-form span {
-				display: inline-block;
-				min-width: 140px;
-			}
-		</style>
+	ret := `<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>hash logins</title>
+	<style>
+		* {font-family: monospace;}
+		.survey-edit-form span {
+			display: inline-block;
+			min-width: 140px;
+		}
 
-		<form method="POST" class="survey-edit-form" >
-		
-			<span>Type     </span> %v <br>
+	</style>
+</head>
+<body>
+		<b>Generate JSON questionnaires</b><br>
 
-			<span>Year     </span><input type="text" name="year"      value="%v"  /> <br>
-	 		<span>Month    </span><input type="text" name="month"     value="%v"  /> <br>
-			<span>Deadline </span><input type="text" name="deadline"  value="%v" placeholder="dd.mm.yyyy hh:mm" /> <br> 01.01.2030 00:00 for indefinite   <br>
+		%v
 
-			%v
-
-			<input type="submit" name="submit" id="submit"  value="Submit" accesskey="s"  /> <br>
+        <form method="POST" class="survey-edit-form"  style='white-space:pre' >
+            Type     %v
+            Year     <input type="text" name="year"      value="%v"  />
+            Month    <input type="text" name="month"     value="%v"  />
+            Deadline <input type="text" name="deadline"  value="%v" placeholder="dd.mm.yyyy hh:mm" /> 01.01.2030 00:00 for indefinite   <br>
+%v
+                     <input type="submit" name="submit" id="submit"  value="Submit" accesskey="s"  /> <br>
 		</form>
+		
+        <script> document.getElementById('submit').focus(); </script>
+            %v
+            %v
+            %v    	
+            %v    	
+</body>
+</html>
 
-		<script> document.getElementById('submit').focus(); </script>
-
-			%v
-			%v
-			%v
 		`
 
 	if s == nil {
 		*s = NewSurvey("fmt")
 	}
 	dd := dropDown(questTypes, s.Type)
+	dd = strings.TrimSpace(dd)
 
 	kv := ""
 
@@ -153,12 +165,7 @@ func (s *surveyT) HTMLForm(questTypes []string) string {
 	}
 	for i := 0; i < nP; i++ {
 		kv += fmt.Sprintf(
-			`
-			<span>Param%v    </span>
-			<input type="text" name="Params[%v].Name" placeholder="name%v"  value="%v" /> 
-			<input type="text" name="Params[%v].Val"  placeholder="val%v"   value="%v" />
-			<br>
-			`,
+			`            Param%v   <input type="text" name="Params[%v].Name" placeholder="name%v"  value="%v" /> <input type="text" name="Params[%v].Val"  placeholder="val%v"   value="%v" /><br>`,
 			i,
 			i, i, s.Params[i].Name,
 			i, i, s.Params[i].Val,
@@ -177,9 +184,14 @@ func (s *surveyT) HTMLForm(questTypes []string) string {
 		"<a href='%v/shufflings-to-csv?start=1000&stop=1020' target='_blank' >Shufflings to CSV</a><br>",
 		cfg.Pref(),
 	)
+	link4 := fmt.Sprintf(
+		"<a href='%v/create-anonymous-id' target='_blank' >Create anonymous ID</a><br>",
+		cfg.Pref(),
+	)
 
 	ret = fmt.Sprintf(
 		ret,
+		errStr,
 		dd,
 		s.Year,
 		fmt.Sprintf("%02d", int(s.Month)+0), // month
@@ -188,6 +200,7 @@ func (s *surveyT) HTMLForm(questTypes []string) string {
 		link1,
 		link2,
 		link3,
+		link4,
 	)
 	return ret
 

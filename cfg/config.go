@@ -7,6 +7,7 @@ package cfg
 
 import (
 	"encoding/json"
+	"fmt"
 	"io"
 	"log"
 	"path"
@@ -24,8 +25,8 @@ import (
 // A login is created for the specified SurveyID/WaveID (which must exist)
 // and with the attributes stored in Profile i.e. "lang_code": "en"
 type directLoginRangeT struct {
-	Start    int               `json:"start,omitempty"`
-	Stop     int               `json:"stop,omitempty"`
+	Start    string            `json:"start,omitempty"`
+	Stop     string            `json:"stop,omitempty"`
 	SurveyID string            `json:"survey_id,omitempty"`
 	WaveID   string            `json:"wave_id,omitempty"`
 	Profile  map[string]string `json:"profile,omitempty"`
@@ -228,20 +229,30 @@ func Example() *ConfigT {
 		},
 		DirectLoginRanges: []directLoginRangeT{
 			{
-				Start:    1000 + 0,
-				Stop:     1000 + 29,
-				SurveyID: "peu2018",
-				WaveID:   "2019-02",
+				Start:    "PEU--" + fmt.Sprint(1000+0),
+				Stop:     "PEU--" + fmt.Sprint(1000+29),
+				SurveyID: "flit",
+				WaveID:   "2019-09",
 				Profile: map[string]string{
 					"lang_code":               "de",
 					"main_refinance_rate_ecb": "3.5",
 				},
 			},
 			{
-				Start:    1000 + 30,
-				Stop:     1000 + 59,
-				SurveyID: "peu2018",
-				WaveID:   "2019-02",
+				Start:    "PEU--" + fmt.Sprint(1000+50),
+				Stop:     "PEU--" + fmt.Sprint(1000+59),
+				SurveyID: "flit",
+				WaveID:   "2019-09",
+				Profile: map[string]string{
+					"lang_code":               "en",
+					"main_refinance_rate_ecb": "3.5",
+				},
+			},
+			{
+				Start:    "FLIT--0",             // ASCII smallest
+				Stop:     "FLIT--zzzzzzzzzzzzz", // ASCII biggest
+				SurveyID: "flit",
+				WaveID:   "2019-09",
 				Profile: map[string]string{
 					"lang_code":               "en",
 					"main_refinance_rate_ecb": "3.5",

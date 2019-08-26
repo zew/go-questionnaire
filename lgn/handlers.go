@@ -52,10 +52,10 @@ func LoggedInCheck(w http.ResponseWriter, r *http.Request, roles ...string) (l *
 
 }
 
-// ValidateAndLogin takes request value "username" and "password".
+// validateAndLogin takes request values "username" and "password".
 // Searches for matching user and stores that user
 // into the session under key "login".
-func ValidateAndLogin(w http.ResponseWriter, r *http.Request) error {
+func validateAndLogin(w http.ResponseWriter, r *http.Request) error {
 
 	sess := sessx.New(w, r)
 
@@ -102,10 +102,10 @@ func ValidateAndLogin(w http.ResponseWriter, r *http.Request) error {
 	return nil
 }
 
-// ChangePassword takes values from request.Form
+// changePassword takes values from request.Form
 // and tries change the user's password.
 // The result is updated in the session "login" type.
-func ChangePassword(w http.ResponseWriter, r *http.Request) (string, error) {
+func changePassword(w http.ResponseWriter, r *http.Request) (string, error) {
 
 	sess := sessx.New(w, r)
 
@@ -227,12 +227,14 @@ func ChangePassword(w http.ResponseWriter, r *http.Request) (string, error) {
 	return "", fmt.Errorf("old password incorrect (or username not found)")
 }
 
-// LoginByHash takes request value "u" and hash "h";
-// and *any number* of additional request parameters.
-// It checks the hash against the values except "h";
-// ordered by parameter name; plus loginsT.Salt.
-// This way we are completely flexible; except for
-// inadvertently added parameters.
+// LoginByHash takes request values "u" and hash "h" - and not any password;
+// it checks the hash against the values except "h";
+// any other request parameters are sorted and included into the hashing check;
+// extended by loginsT.Salt.
+// reduced  by those in 'exempted';
+//
+// request values "h" without an "u" are considered direct login attempts,
+// where the hash actually represents a user ID.
 //
 // On success, function creates a logged in user
 // out of nothing by the name of u.
@@ -250,17 +252,30 @@ func LoginByHash(w http.ResponseWriter, r *http.Request) (bool, error) {
 		return false, err
 	}
 
-	if _, isSet := r.Form["u"]; !isSet { // Form contains GET *and* POST values
+	u := r.Form.Get("u")
+	u = html.EscapeString(u) // XSS prevention
+	h := r.Form.Get("h")     // hash
+
+	// First - try direct login
+	if _, isSet := r.Form["u"]; !isSet { // Note: r.Form[key] contains GET *and* POST values
 		if _, isSet := r.Form["h"]; isSet {
-			// hash is set - but userId is not
-			userID := HashIDDecodeFirst(r.Form.Get("h"))
-			log.Printf("Trying hash-id login %v %v", r.Form.Get("h"), userID)
-			if userID > 0 {
+			// => userId is not set - but hash is set
+
+			prefix := ""
+			if els := strings.Split(h, "--"); len(els) == 2 {
+				prefix = els[0]
+				h = els[1]
+			}
+			userID := fmt.Sprint(HashIDDecodeFirst(h))
+
+			log.Printf("Trying hash-id login %v %v", h, userID)
+			if userID > "0" {
 				for _, dlr := range cfg.Get().DirectLoginRanges {
-					if userID >= dlr.Start && userID <= dlr.Stop {
-						log.Printf("Direct range login for user %v - %+v", userID, dlr)
+					cmp := prefix + "--" + userID
+					if cmp >= dlr.Start && cmp <= dlr.Stop {
+						log.Printf("Checking direct range login for %v - %v %v", cmp, dlr.Start, dlr.Stop)
 						l := LoginT{}
-						l.User = fmt.Sprintf("%v", userID)
+						l.User = userID
 						l.IsInitPassword = false // roles become effective only for non init passwords
 						l.Roles = map[string]string{}
 						l.Attrs = map[string]string{}
@@ -277,15 +292,12 @@ func LoginByHash(w http.ResponseWriter, r *http.Request) (bool, error) {
 						return true, nil
 					}
 				}
-
 			}
 		}
 		return false, nil
 	}
 
-	u := r.Form.Get("u")
-	u = html.EscapeString(u) // XSS prevention
-	h := r.Form.Get("h")     // hash
+	// Second - try login from user database
 
 	l := LoginT{}
 	l.User = u
@@ -392,57 +404,34 @@ func GenerateHashesH(w http.ResponseWriter, r *http.Request) {
 <head>
     <meta charset="utf-8" />
     <title>hash logins</title>
+	<style>
+	* {font-family: monospace;}
+	</style>
 </head>
 <body>
-	<form method="post" action="{{.SelfURL}}"  style="margin: 50px;"  >
-		
-		{{if  (len .ErrMsg) gt 0 }} <p style='white-space: pre; color:#E22'>{{.ErrMsg}}</p>{{end}}
-		
-		Create hash logins<br>
 
-		                <input name="token"       type="hidden"   value="{{.Token}}" />
+{{if  (len .ErrMsg) gt 0 }} <p style='white-space: pre; color:#E22'>{{.ErrMsg}}</p>{{end}}
 
-		<br>
-		Survey<br>
-			Survey ID 	 <input name="survey_id"   type="text"     value="{{.SurveyID}}"><br>
-			Wave ID 	 <input name="wave_id"     type="text"     value="{{.WaveID}}" ><br>
-		<br>
+<form method="post" action="{{.SelfURL}}"  style='white-space:pre' >
+    <b>Create hash logins</b>
+		<input name="token"       type="hidden"   value="{{.Token}}" />
+        Survey
+            Survey ID   <input name="survey_id"   type="text"     value="{{.SurveyID}}"><br>
+            Wave ID     <input name="wave_id"     type="text"     value="{{.WaveID}}" ><br>
 
-		User ID<br>
-			Start 	    <input name="start"       type="text"     value="{{.Start}}"><br>
-			Stop 	    <input name="stop"        type="text"     value="{{.Stop}}" ><br>
-		<br>
+        User ID
+            Start       <input name="start"       type="text"     value="{{.Start}}"><br>
+            Stop        <input name="stop"        type="text"     value="{{.Stop}}" ><br>
 
-		User profile<br>
-			Profile 	<input name="p"           type="text"     value="{{.Profile}}"><br>
-		<br>
+        User profile<br>
+            Profile     <input name="p"           type="text"     value="{{.Profile}}"><br>
 
-		<!--
-		<hr>
-		<i>deprecated; use profile above</i>
-
-		Init language<br>
-			Lang 	    <input name="lang_code"  type="text"     value="{{.LangCode}}"><br>
-		<br>
-
-
-		Login attributes key:val <br>
-			Attr 	    <input name="attrs"       type="text"     value="{{index .Attrs 0}}"><br>
-			Attr 	    <input name="attrs"       type="text"     value="{{index .Attrs 1}}"><br>
-			Attr 	    <input name="attrs"       type="text"     value="{{index .Attrs 2}}"><br>
-		<br>
-		-->
-
-		<input type="submit" name="submitclassic" id="submit" value="submit" accesskey="s"><br>
-		<script> document.getElementById('submit').focus(); </script>
-
-
-		{{if  (len .Links  ) gt 0 }} <p style='                  color:#444'>{{.Links  }}</p>{{end}}
-		{{if  (len .List   ) gt 0 }} <p style='white-space: pre; color:#444'>{{.List   }}</p>{{end}}
-
-
-	</form>
-
+                        <input type="submit" name="submitclassic" id="submit" value="submit" accesskey="s"><br>
+        <script> document.getElementById('submit').focus(); </script>
+        {{if  (len .Links  ) gt 0 }} <p style='                  color:#444'>{{.Links  }}</p>{{end}}
+        {{if  (len .List   ) gt 0 }} <p style='white-space: pre; color:#444'>{{.List   }}</p>{{end}}
+</form>
+	
 </body>
 </html>
 `
@@ -616,12 +605,15 @@ func ReloadH(w http.ResponseWriter, r *http.Request) {
 
 	fmt.Fprintf(w, `
 	<html>
-      <head></head>
-          <style>
-              * {font-family: monospace;}
-          </style>
+	  <head>
+		<meta charset="utf-8" />
+		<title>Reset entries</title>
+		<style>
+		* {font-family: monospace;}
+		</style>
+	  </head>
       <body style='white-space:pre'>
-        <b>%v<b>
+        <b>%v</b>
         <form method="POST" class="survey-edit-form" >
             User ID          <input type="text"   name="u"                   value="%v"   /> <br>
             Survey ID        <input type="text"   name="sid"                 value="%v"   /> <br>
@@ -677,6 +669,7 @@ func ReloadH(w http.ResponseWriter, r *http.Request) {
 			//var win = window.open('%s','qst','menubar=1,resizable=1,width=350,height=250,target=q');
 			var win = window.open('%s', 'qst');
 			win.focus();
+			console.log('window opened')
 		</SCRIPT>`,
 			url,
 			url,
@@ -687,13 +680,13 @@ func ReloadH(w http.ResponseWriter, r *http.Request) {
 
 }
 
-// LoginPrimitiveH is a primitive handler for http form based login.
+// LoginPrimitiveH is a primitive handler for http form based login by username and password.
 // It serves as pattern for an application specific login.
 // It also serves as real handler for applications having only a few admin users.
 func LoginPrimitiveH(w http.ResponseWriter, r *http.Request) {
 
 	msg := ""
-	err := ValidateAndLogin(w, r)
+	err := validateAndLogin(w, r)
 	if err != nil {
 		msg += fmt.Sprintf("%v\n", err)
 	}
@@ -761,7 +754,7 @@ func LoginPrimitiveH(w http.ResponseWriter, r *http.Request) {
 // It also serves as real handler for applications having only a few admin users.
 func ChangePasswordPrimitiveH(w http.ResponseWriter, r *http.Request) {
 
-	msg, err := ChangePassword(w, r)
+	msg, err := changePassword(w, r)
 	if err != nil {
 		msg += fmt.Sprintf("%v\n", err)
 	}

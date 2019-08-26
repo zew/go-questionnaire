@@ -15,17 +15,12 @@ import (
 
 	no answer AND do not know - or rather just no answer
 
-	full validation?
-
 	validation for non-empty values
-	 or also for empty values
+	 or also full validation for empty values?
 
 	 €  instead of Euros
 
-	 Header für option groups kürzen
-
-	 Vertical option group: no break
-
+	 Header für option groups kürzen - sprachlich - und Spalten - mal 5 mal 7
 
 
 */
@@ -671,16 +666,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			inp.ColSpanLabel = 3
 		}
 
-		// {
-		// 	lbls := []trl.S{}
-		// 	flds := []string{
-		// 		"mutual_fund_withdrawal",
-		// 	}
-		// 	gr := p.AddRadioMatrixGroup(mutualFunds6(), flds, lbls, 2)
-		// 	gr.Cols = 6 //
-		// 	gr.BottomVSpacers = 2
-		// }
-
 		{
 			gr := p.AddRadioGroupVertical("mutual_fund_withdrawal", mutualFunds6())
 			gr.BottomVSpacers = 2
@@ -1270,14 +1255,14 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			"en": "Your entries have been saved.",
 		}
 		{
-			gr := p.AddGroup()
-			gr.Cols = 1
-			{
-				inp := gr.AddInput()
-				inp.Type = "dynamic"
-				inp.CSSLabel = "special-input-margin-vertical special-line-height-higher"
-				inp.DynamicFunc = "RepsonseStatistics"
-			}
+			// gr := p.AddGroup()
+			// gr.Cols = 1
+			// {
+			// 	inp := gr.AddInput()
+			// 	inp.Type = "dynamic"
+			// 	inp.CSSLabel = "special-input-margin-vertical special-line-height-higher"
+			// 	inp.DynamicFunc = "RepsonseStatistics"
+			// }
 		}
 	}
 

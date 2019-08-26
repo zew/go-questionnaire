@@ -210,20 +210,30 @@
  	},
  	"direct_login_ranges": [
  		{
- 			"start": 1000,
- 			"stop": 1029,
- 			"survey_id": "peu2018",
- 			"wave_id": "2019-02",
+ 			"start": "PEU--1000",
+ 			"stop": "PEU--1029",
+ 			"survey_id": "flit",
+ 			"wave_id": "2019-09",
  			"profile": {
  				"lang_code": "de",
  				"main_refinance_rate_ecb": "3.5"
  			}
  		},
  		{
- 			"start": 1030,
- 			"stop": 1059,
- 			"survey_id": "peu2018",
- 			"wave_id": "2019-02",
+ 			"start": "PEU--1050",
+ 			"stop": "PEU--1059",
+ 			"survey_id": "flit",
+ 			"wave_id": "2019-09",
+ 			"profile": {
+ 				"lang_code": "en",
+ 				"main_refinance_rate_ecb": "3.5"
+ 			}
+ 		},
+ 		{
+ 			"start": "FLIT--0",
+ 			"stop": "FLIT--zzzzzzzzzzzzz",
+ 			"survey_id": "flit",
+ 			"wave_id": "2019-09",
  			"profile": {
  				"lang_code": "en",
  				"main_refinance_rate_ecb": "3.5"

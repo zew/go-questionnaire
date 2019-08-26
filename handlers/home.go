@@ -321,7 +321,7 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 
-	if sess.EffectiveStr("skip_validation") == "" {
+	if sess.EffectiveStr("skip_validation") == "" && r.Method == "POST" {
 		err = q.ValidateResponseData(prevPage, q.LangCode)
 		if err != nil {
 			q.CurrPage = prevPage // Prevent changing page, keep participant on page with errors

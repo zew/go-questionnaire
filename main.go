@@ -73,6 +73,7 @@ func main() {
 	// Login primitives
 	mux1.HandleFunc(cfg.Pref("/login-primitive"), lgn.LoginPrimitiveH)
 	mux1.HandleFunc(cfg.Pref("/change-password-primitive"), lgn.ChangePasswordPrimitiveH)
+	mux1.HandleFunc(cfg.PrefTS("/d"), handlers.LoginByHashID) // 'd' for direct
 	// Workflow - logins for survey
 	mux1.HandleFunc(cfg.Pref("/generate-questionnaire-templates"), generators.SurveyGenerate)
 	mux1.HandleFunc(cfg.Pref("/generate-hashes"), lgn.GenerateHashesH)
@@ -84,6 +85,7 @@ func main() {
 	mux1.HandleFunc(cfg.Pref("/logins-save"), lgn.SaveH)
 	mux1.HandleFunc(cfg.Pref("/logins-reload"), lgn.LoadH)
 	mux1.HandleFunc(cfg.Pref("/generate-password"), lgn.GeneratePasswordH)
+	mux1.HandleFunc(cfg.Pref("/create-anonymous-id"), lgn.CreateAnonymousID)
 
 	//
 	// App specific
@@ -92,7 +94,6 @@ func main() {
 		mux1.HandleFunc(cfg.Pref("/"), handlers.MainH)
 		mux1.HandleFunc(cfg.PrefTS("/"), handlers.MainH)
 	}
-	mux1.HandleFunc(cfg.PrefTS("/d"), handlers.LoginByHashID)
 	mux1.HandleFunc(cfg.Pref("/transferrer-endpoint"), handlers.TransferrerEndpointH)
 
 	//

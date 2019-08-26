@@ -235,7 +235,7 @@ input[type="number"] {
 }
 
 
-/* for radio inputs, rendering CSS */
+/* for radio inputs, adjust the label top position */
 .vert-correct-center {
 	top: -3px;
 	position: relative;
@@ -244,7 +244,7 @@ input[type="number"] {
     line-height: 110%;
 }
 .vert-correct-left-right {
-	top: -6px;
+	top: 1px;
 	position: relative;
 	margin-top:    0px;  
 	margin-bottom: 0px;

@@ -13,7 +13,7 @@ import (
 
 var gen *hashids.HashIDData
 
-// Every trial with init() construction failed
+// init() is impossible
 // because Get().Salt is not yet initialized
 func getGen() *hashids.HashIDData {
 	if gen == nil {
@@ -23,7 +23,6 @@ func getGen() *hashids.HashIDData {
 		gen.Salt = Get().Salt
 	}
 	return gen
-
 }
 
 // HashIDDecodeFirst turns a string into a slice of integers
@@ -111,11 +110,12 @@ But keep an eye on the application log.
 
 		h, err := hashids.NewWithData(getGen())
 		if err != nil {
-			w.Write([]byte(err.Error()))
+			fmt.Fprintf(w, "Error creating hash ID: %v", err.Error())
 		}
+
 		encoded, err := h.Encode([]int{i})
 		if err != nil {
-			w.Write([]byte(err.Error()))
+			fmt.Fprintf(w, "Error encoding hash ID: %v", err.Error())
 		}
 
 		// encode multiple numbers

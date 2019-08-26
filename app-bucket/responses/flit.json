@@ -11,12 +11,15 @@
  		"month": 9,
  		"deadline": "2019-10-31T23:59:00Z",
  		"params": [
- 			{},
+ 			{
+ 				"name": "main_refinance_rate_ecb",
+ 				"val": "3"
+ 			},
  			{}
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "733161e7381cb634e98076e1362a5b2f",
+ 	"md_5": "56dca465fc9cd1ead1cb1a17235fd88e",
  	"lang_codes": {
  		"en": "English"
  	},
@@ -3802,21 +3805,7 @@
  			"no_navigation": true,
  			"navi_num": 0,
  			"width": 100,
- 			"finished": "0001-01-01T00:00:00Z",
- 			"groups": [
- 				{
- 					"bottom_vspacers": 3,
- 					"width": 100,
- 					"columns": 1,
- 					"inputs": [
- 						{
- 							"type": "dynamic",
- 							"css_label": "special-input-margin-vertical special-line-height-higher",
- 							"dynamic_func": "RepsonseStatistics"
- 						}
- 					]
- 				}
- 			]
+ 			"finished": "0001-01-01T00:00:00Z"
  		}
  	]
  }

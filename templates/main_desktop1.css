@@ -297,7 +297,7 @@ table.main-table tr:nth-child(odd){
     /* vertical-align: top; */
     white-space: normal !important;  /* overriding outer element setting */
     display: inline-block;
-    width: 75%;
+	width: 75%;
 }
 
 
@@ -327,7 +327,7 @@ table.main-table tr:nth-child(odd){
 
 
 
-/* for radio inputs, rendering CSS */
+/* for radio inputs, adjust the label top position */
 .vert-correct-center {
 	top: -3px;
 	position: relative;
@@ -336,7 +336,7 @@ table.main-table tr:nth-child(odd){
     line-height: 120%;
 }
 .vert-correct-left-right {
-	top: -3px;
+	top: -4px;
 	position: relative;
 	margin-top:    0px;  
 	margin-bottom: 0px;

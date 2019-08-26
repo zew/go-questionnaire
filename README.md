@@ -220,6 +220,10 @@ Open in browser
 
     gcloud app browse
 
+[QR Code](http://financial-literacy-test.appspot.com/img/ui/qr.png)
+
+[Anonymous login](https://financial-literacy-test.appspot.com/create-anonymous-id)
+
 #### URLs
 
 * [Frontend](https://financial-literacy-test.appspot.com)

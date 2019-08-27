@@ -25,7 +25,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "56ee63b326f06176b066a23dbc100c12",
+ 	"md_5": "08773ff1e41f62c90cad3dec429a5ea0",
  	"lang_codes": {
  		"de": "Deutsch",
  		"en": "English",
@@ -70,7 +70,6 @@
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
  				{
- 					"odd_rows_coloring": false,
  					"width": 100,
  					"inputs": [
  						{
@@ -80,100 +79,100 @@
  					]
  				},
  				{
- 					"bottom_half_vspacers": 3,
+ 					"bottom_vspacers": 3,
  					"odd_rows_coloring": true,
  					"width": 100,
  					"columns": 9,
  					"inputs": [
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "lehne ab\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"en": "Dis\u0026shy;agree\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"fr": "Pas d’acc\u0026shy;ord\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"it": "Non favo\u0026shy;revole\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "un\u0026shy;ent\u0026shy;schieden\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"en": "Un\u0026shy;decided\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"fr": "In\u0026shy;diff\u0026shy;érent\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"it": "In\u0026shy;deciso\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "stimme zu\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"en": "Agree\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"fr": "D’acc\u0026shy;ord\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"it": "Favo\u0026shy;revole\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"name": "benefit",
@@ -233,100 +232,100 @@
  						"fr": "Les gouvernements peuvent essayer de stimuler la croissance économique grâce à différents instruments. Certains font valoir que les politiques axées sur la demande (par exemple, une augmentation des dépenses publiques financées par l’endettement) sont plus efficaces que les politiques axées sur l'offre (par exemple, une réduction de la réglementation sur le marché du travail et des biens).",
  						"it": "I governi possono cercare di stimolare la crescita economica attraverso diversi strumenti. Alcuni sostengono che le politiche di sostegno della domanda (ad esempio un aumento della spesa pubblica finanziato in deficit) siano più efficaci delle politiche di sostegno dell’offerta (ad esempio un alleggerimento della regolamentazione del mercato del lavoro e dei beni)."
  					},
- 					"bottom_half_vspacers": 3,
+ 					"bottom_vspacers": 3,
  					"odd_rows_coloring": true,
  					"width": 100,
  					"columns": 9,
  					"inputs": [
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "lehne ab\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"en": "Dis\u0026shy;agree\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"fr": "Pas d’acc\u0026shy;ord\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"it": "Non favo\u0026shy;revole\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "un\u0026shy;ent\u0026shy;schieden\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"en": "Un\u0026shy;decided\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"fr": "In\u0026shy;diff\u0026shy;érent\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"it": "In\u0026shy;deciso\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "stimme zu\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"en": "Agree\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"fr": "D’acc\u0026shy;ord\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"it": "Favo\u0026shy;revole\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"name": "supply",
@@ -403,7 +402,6 @@
  						"fr": "Répartition des missions et des compétences en Europe",
  						"it": "Competenze dell'Unione europea (UE). È d'accordo con le seguenti affermazioni?"
  					},
- 					"odd_rows_coloring": false,
  					"width": 100
  				},
  				{
@@ -419,100 +417,100 @@
  						"fr": "Le Conseil européen devrait pouvoir statuer avec une majorité qualifiée sur les impôts perçus dans les États membres (par exemple sur des taux planchers et plafonds de l’impôt sur les Sociétés).",
  						"it": "Il Consiglio europeo dovrebbe poter votare su questioni tributarie a maggioranza qualificata invece che all’unanimità (ad esempio su limiti massimi e minimi per le imposte sulle aziende comuni a tutti gli Stati membri)."
  					},
- 					"bottom_half_vspacers": 3,
+ 					"bottom_vspacers": 3,
  					"odd_rows_coloring": true,
  					"width": 100,
  					"columns": 9,
  					"inputs": [
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "lehne ab\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"en": "Dis\u0026shy;agree\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"fr": "Pas d’acc\u0026shy;ord\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"it": "Non favo\u0026shy;revole\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "un\u0026shy;ent\u0026shy;schieden\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"en": "Un\u0026shy;decided\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"fr": "In\u0026shy;diff\u0026shy;érent\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"it": "In\u0026shy;deciso\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "stimme zu\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"en": "Agree\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"fr": "D’acc\u0026shy;ord\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"it": "Favo\u0026shy;revole\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"name": "tax",
@@ -572,100 +570,100 @@
  						"fr": "Il devrait y avoir davantage de redistribution des États membres de l'UE les plus riches vers les plus pauvres.",
  						"it": "Ci dovrebbe essere maggiore ridistribuzione di risorse dagli Stati membri più ricchi a quelli più poveri dell'UE."
  					},
- 					"bottom_half_vspacers": 3,
+ 					"bottom_vspacers": 3,
  					"odd_rows_coloring": true,
  					"width": 100,
  					"columns": 9,
  					"inputs": [
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "lehne ab\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"en": "Dis\u0026shy;agree\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"fr": "Pas d’acc\u0026shy;ord\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"it": "Non favo\u0026shy;revole\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "un\u0026shy;ent\u0026shy;schieden\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"en": "Un\u0026shy;decided\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"fr": "In\u0026shy;diff\u0026shy;érent\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"it": "In\u0026shy;deciso\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "stimme zu\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"en": "Agree\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"fr": "D’acc\u0026shy;ord\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"it": "Favo\u0026shy;revole\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"name": "redist",
@@ -725,100 +723,100 @@
  						"fr": "L’UE devrait jouer un rôle renforcé dans la politique d’immigration des États membres (par exemple en fixant les normes d’accueil ou en décidant de la répartition des réfugiés).",
  						"it": "L’UE dovrebbe avere un ruolo più incisivo sull’immigrazione (ad esempio sulle decisioni relative ai criteri di ammissione o sulla distribuzione dei rifugiati tra i Paesi membri)."
  					},
- 					"bottom_half_vspacers": 3,
+ 					"bottom_vspacers": 3,
  					"odd_rows_coloring": true,
  					"width": 100,
  					"columns": 9,
  					"inputs": [
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "lehne ab\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"en": "Dis\u0026shy;agree\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"fr": "Pas d’acc\u0026shy;ord\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"it": "Non favo\u0026shy;revole\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "un\u0026shy;ent\u0026shy;schieden\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"en": "Un\u0026shy;decided\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"fr": "In\u0026shy;diff\u0026shy;érent\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"it": "In\u0026shy;deciso\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "stimme zu\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"en": "Agree\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"fr": "D’acc\u0026shy;ord\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"it": "Favo\u0026shy;revole\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"name": "immig",
@@ -878,100 +876,100 @@
  						"fr": "L’UE pourrait constituer une armée européenne placée sous son commandement et financée par son budget avec pour mission d’assurer les opérations extérieures à la place des armées nationales.",
  						"it": "Un esercito Europeo sotto il comando dell’UE, finanziato dal budget europeo, dovrebbe subentrare alle forze armate nazionali nei conflitti internazionali."
  					},
- 					"bottom_half_vspacers": 3,
+ 					"bottom_vspacers": 3,
  					"odd_rows_coloring": true,
  					"width": 100,
  					"columns": 9,
  					"inputs": [
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "lehne ab\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"en": "Dis\u0026shy;agree\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"fr": "Pas d’acc\u0026shy;ord\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"it": "Non favo\u0026shy;revole\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "un\u0026shy;ent\u0026shy;schieden\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"en": "Un\u0026shy;decided\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"fr": "In\u0026shy;diff\u0026shy;érent\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"it": "In\u0026shy;deciso\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "stimme zu\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"en": "Agree\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"fr": "D’acc\u0026shy;ord\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"it": "Favo\u0026shy;revole\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"name": "defense",
@@ -1025,7 +1023,6 @@
  						"fr": "L'Union économique et monétaire de l'Union européenne (UEM)",
  						"it": "Unione monetaria europea (UME)"
  					},
- 					"odd_rows_coloring": false,
  					"width": 100
  				},
  				{
@@ -1041,100 +1038,100 @@
  						"fr": "L’UEM a besoin de systèmes de stabilisation budgétaire pour assurer les États membres contre les chocs asymétriques (par exemple, une assurance chômage européenne commune).",
  						"it": "La UME necessita di sistemi di stabilizzazione fiscale atti a proteggere gli Stati membri da shock asimmetrici (ad esempio un’indennità di disoccupazione europea comune)."
  					},
- 					"bottom_half_vspacers": 3,
+ 					"bottom_vspacers": 3,
  					"odd_rows_coloring": true,
  					"width": 100,
  					"columns": 9,
  					"inputs": [
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "lehne ab\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"en": "Dis\u0026shy;agree\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"fr": "Pas d’acc\u0026shy;ord\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"it": "Non favo\u0026shy;revole\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "un\u0026shy;ent\u0026shy;schieden\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"en": "Un\u0026shy;decided\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"fr": "In\u0026shy;diff\u0026shy;érent\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"it": "In\u0026shy;deciso\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "stimme zu\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"en": "Agree\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"fr": "D’acc\u0026shy;ord\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"it": "Favo\u0026shy;revole\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"name": "insure",
@@ -1194,100 +1191,100 @@
  						"fr": "La zone euro devrait émettre des euro-obligations et les États membres s’en porter tous garants solidairement et bénéficier du même taux d’intérêt.",
  						"it": "Gli Eurobond sono titoli pubblici di debito di cui tutti i Paesi Euro sono collettivamente responsabili e su cui tutti i Paesi Euro pagano gli stessi interessi. La UME dovrebbe iniziare ad emettere Euro-bond."
  					},
- 					"bottom_half_vspacers": 3,
+ 					"bottom_vspacers": 3,
  					"odd_rows_coloring": true,
  					"width": 100,
  					"columns": 9,
  					"inputs": [
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "lehne ab\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"en": "Dis\u0026shy;agree\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"fr": "Pas d’acc\u0026shy;ord\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"it": "Non favo\u0026shy;revole\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "un\u0026shy;ent\u0026shy;schieden\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"en": "Un\u0026shy;decided\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"fr": "In\u0026shy;diff\u0026shy;érent\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"it": "In\u0026shy;deciso\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "stimme zu\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"en": "Agree\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"fr": "D’acc\u0026shy;ord\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"it": "Favo\u0026shy;revole\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"name": "eurobonds",
@@ -1347,100 +1344,100 @@
  						"fr": "Le PSC définit des limites aux déficits et aux dettes des États membres. Le PSC représente une contrainte excessive sur les politiques fiscales des États membres et devrait être assoupli.",
  						"it": "Il PSC definisce i limiti per il deficit e il debito pubblico dei Paesi membri dell’UE. Il PSC limita ecces-sivamente la politica fiscale degli Stati membri e dovrebbe essere allentato."
  					},
- 					"bottom_half_vspacers": 3,
+ 					"bottom_vspacers": 3,
  					"odd_rows_coloring": true,
  					"width": 100,
  					"columns": 9,
  					"inputs": [
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "lehne ab\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"en": "Dis\u0026shy;agree\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"fr": "Pas d’acc\u0026shy;ord\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"it": "Non favo\u0026shy;revole\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "un\u0026shy;ent\u0026shy;schieden\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"en": "Un\u0026shy;decided\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"fr": "In\u0026shy;diff\u0026shy;érent\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"it": "In\u0026shy;deciso\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "stimme zu\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"en": "Agree\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"fr": "D’acc\u0026shy;ord\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"it": "Favo\u0026shy;revole\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"name": "stability",
@@ -1500,100 +1497,100 @@
  						"fr": "Il devrait exister une procédure d'insolvabilité souveraine explicite pour les États membres de la zone euro ayant une dette insoutenable. ",
  						"it": "Dovrebbe esistere una esplicita procedura di insolvenza per i Paesi Euro con debito insostenibile."
  					},
- 					"bottom_half_vspacers": 3,
+ 					"bottom_vspacers": 3,
  					"odd_rows_coloring": true,
  					"width": 100,
  					"columns": 9,
  					"inputs": [
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "lehne ab\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"en": "Dis\u0026shy;agree\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"fr": "Pas d’acc\u0026shy;ord\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"it": "Non favo\u0026shy;revole\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "un\u0026shy;ent\u0026shy;schieden\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"en": "Un\u0026shy;decided\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"fr": "In\u0026shy;diff\u0026shy;érent\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"it": "In\u0026shy;deciso\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "stimme zu\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"en": "Agree\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"fr": "D’acc\u0026shy;ord\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"it": "Favo\u0026shy;revole\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"name": "bankruptcy",
@@ -1653,100 +1650,100 @@
  						"fr": "Pour combattre la crise, la Banque centrale européenne s’est engagée fortement dans les années passées en achetant des emprunts d’États de la zone euro. Cet engagement devrait se poursuivre.",
  						"it": "Negli ultimi anni la BCE ha attuato una politica monetaria molto espansiva comprando titoli di Stato dei Paesi Euro. Questa politica della BCE dovrebbe continuare in futuro."
  					},
- 					"bottom_half_vspacers": 3,
+ 					"bottom_vspacers": 3,
  					"odd_rows_coloring": true,
  					"width": 100,
  					"columns": 9,
  					"inputs": [
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "lehne ab\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"en": "Dis\u0026shy;agree\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"fr": "Pas d’acc\u0026shy;ord\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"it": "Non favo\u0026shy;revole\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "un\u0026shy;ent\u0026shy;schieden\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"en": "Un\u0026shy;decided\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"fr": "In\u0026shy;diff\u0026shy;érent\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"it": "In\u0026shy;deciso\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "stimme zu\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"en": "Agree\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"fr": "D’acc\u0026shy;ord\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"it": "Favo\u0026shy;revole\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"name": "purchase",
@@ -1806,100 +1803,100 @@
  						"fr": "Pour son bon fonctionnement, l’Union bancaire européenne devrait être complétée par le Système Européen de Garanties des Dépôts (SEGD).",
  						"it": "Per funzionare correttamente, l’Unione bancaria europea dovrebbe essere completata tramite l’introduzione di un sistema europeo di garanzia dei depositi."
  					},
- 					"bottom_half_vspacers": 3,
+ 					"bottom_vspacers": 3,
  					"odd_rows_coloring": true,
  					"width": 100,
  					"columns": 9,
  					"inputs": [
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "lehne ab\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"en": "Dis\u0026shy;agree\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"fr": "Pas d’acc\u0026shy;ord\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"it": "Non favo\u0026shy;revole\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "un\u0026shy;ent\u0026shy;schieden\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"en": "Un\u0026shy;decided\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"fr": "In\u0026shy;diff\u0026shy;érent\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"it": "In\u0026shy;deciso\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "stimme zu\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"en": "Agree\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"fr": "D’acc\u0026shy;ord\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"it": "Favo\u0026shy;revole\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"name": "bankunion",
@@ -1978,7 +1975,7 @@
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
  				{
- 					"bottom_half_vspacers": 3,
+ 					"bottom_vspacers": 3,
  					"odd_rows_coloring": true,
  					"width": 72,
  					"columns": 5,
@@ -8692,7 +8689,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "Wie würden Sie Ihr Forschungsgebiet beschreiben?  \u0026nbsp; Bei der Beantwortung dieser Frage sind mehrere Antworten möglich.",
- 								"en": "How would you classify your field of re\u0026shy;search?  \u0026nbsp; You can choose several answers.",
+ 								"en": "How would you classify your field of re\u0026shy;search?  \u0026nbsp; You can choose several an\u0026shy;swers.",
  								"fr": "Comment classeriez-vous votre domaine de recherche ?  \u0026nbsp; Vous pouvez choisir plusieurs réponses.",
  								"it": "Come classificherebbe il suo campo di ricerca?  \u0026nbsp; Può selezionare più risposte."
  							},
@@ -8701,152 +8698,151 @@
  						{
  							"name": "research-field-microeconomics",
  							"type": "checkbox",
- 							"css_label": "special-input-margin-vertical",
  							"suffix": {
  								"de": "Mi\u0026shy;kro\u0026shy;öko\u0026shy;no\u0026shy;mie",
  								"en": "Mi\u0026shy;cro\u0026shy;eco\u0026shy;nom\u0026shy;ics",
  								"fr": "Microéconomie",
  								"it": "Microeconomia"
  							},
+ 							"css_label": "special-input-margin-vertical",
  							"col_span_control": 5
  						},
  						{
  							"name": "research-field-macroeconomics",
  							"type": "checkbox",
- 							"css_label": "special-input-margin-vertical",
  							"suffix": {
  								"de": "Ma\u0026shy;kro\u0026shy;öko\u0026shy;no\u0026shy;mie",
  								"en": "Mac\u0026shy;ro\u0026shy;eco\u0026shy;nom\u0026shy;ics",
  								"fr": "Macroéconomie",
  								"it": "Macroeconomia"
  							},
+ 							"css_label": "special-input-margin-vertical",
  							"col_span_control": 5
  						},
  						{
  							"name": "research-field-monetary_economics",
  							"type": "checkbox",
- 							"css_label": "special-input-margin-vertical",
  							"suffix": {
  								"de": "Monetäre Öko\u0026shy;no\u0026shy;mie",
  								"en": "Monetary Eco\u0026shy;nom\u0026shy;ics",
  								"fr": "Économie monétaire",
  								"it": "Economia monetaria"
  							},
+ 							"css_label": "special-input-margin-vertical",
  							"col_span_control": 5
  						},
  						{
  							"name": "research-field-public_economics",
  							"type": "checkbox",
- 							"css_label": "special-input-margin-vertical",
  							"suffix": {
  								"de": "Fi\u0026shy;nanz\u0026shy;wis\u0026shy;sen\u0026shy;schaft",
  								"en": "Public Eco\u0026shy;nom\u0026shy;ics",
  								"fr": "Économie publique",
  								"it": "Economia pubblica\u003cbr\u003e\n(Scienza delle finanze)"
  							},
+ 							"css_label": "special-input-margin-vertical",
  							"col_span_control": 5
  						},
  						{
  							"name": "research-field-labour_economics",
  							"type": "checkbox",
- 							"css_label": "special-input-margin-vertical",
  							"suffix": {
  								"de": "Arbeits\u0026shy;markt\u0026shy;öko\u0026shy;no\u0026shy;mie",
  								"en": "Labour Eco\u0026shy;nom\u0026shy;ics",
  								"fr": "Économie du travail",
  								"it": "Economia del lavoro"
  							},
+ 							"css_label": "special-input-margin-vertical",
  							"col_span_control": 5
  						},
  						{
  							"name": "research-field-finance",
  							"type": "checkbox",
- 							"css_label": "special-input-margin-vertical",
  							"suffix": {
  								"de": "Finanz\u0026shy;wirt\u0026shy;schaft",
  								"en": "Finance",
  								"fr": "Finance",
  								"it": "Finanza"
  							},
+ 							"css_label": "special-input-margin-vertical",
  							"col_span_control": 5
  						},
  						{
  							"name": "research-field-economic_policy",
  							"type": "checkbox",
- 							"css_label": "special-input-margin-vertical",
  							"suffix": {
  								"de": "Wirt\u0026shy;schafts\u0026shy;politik",
  								"en": "Eco\u0026shy;nom\u0026shy;ic Policy",
  								"fr": "Économie politique",
  								"it": "Economia politica"
  							},
+ 							"css_label": "special-input-margin-vertical",
  							"col_span_control": 5
  						},
  						{
  							"name": "research-field-political_economy",
  							"type": "checkbox",
- 							"css_label": "special-input-margin-vertical",
  							"suffix": {
  								"de": "Politische Öko\u0026shy;no\u0026shy;mie",
  								"en": "Political Econ\u0026shy;o\u0026shy;my",
  								"fr": "Politique économique",
  								"it": "Politica eco\u0026shy;nom\u0026shy;ica"
  							},
+ 							"css_label": "special-input-margin-vertical",
  							"col_span_control": 5
  						},
  						{
  							"name": "research-field-trade_br_international_economics",
  							"type": "checkbox",
- 							"css_label": "special-input-margin-vertical",
  							"suffix": {
  								"de": "In\u0026shy;ter\u0026shy;na\u0026shy;tion\u0026shy;al Handel / \u003cbr\u003e\nIn\u0026shy;ter\u0026shy;na\u0026shy;tion\u0026shy;ale Öko\u0026shy;no\u0026shy;mie",
  								"en": "Trade / \u003cbr\u003e\nIn\u0026shy;ter\u0026shy;na\u0026shy;tion\u0026shy;al Eco\u0026shy;nom\u0026shy;ics",
  								"fr": "Économie de commerce / \u003cbr\u003e\nin\u0026shy;ter\u0026shy;na\u0026shy;tion\u0026shy;ale",
  								"it": "Commercio / \u003cbr\u003e\nEconomia internazionale"
  							},
+ 							"css_label": "special-input-margin-vertical",
  							"col_span_control": 5
  						},
  						{
  							"name": "research-field-development_economics",
  							"type": "checkbox",
- 							"css_label": "special-input-margin-vertical",
  							"suffix": {
  								"de": "Ent\u0026shy;wick\u0026shy;lungs\u0026shy;öko\u0026shy;no\u0026shy;mie",
  								"en": "De\u0026shy;vel\u0026shy;op\u0026shy;ment Eco\u0026shy;nom\u0026shy;ics",
  								"fr": "Économie du développement",
  								"it": "Economia dello sviluppo"
  							},
+ 							"css_label": "special-input-margin-vertical",
  							"col_span_control": 5
  						},
  						{
  							"name": "research-field-environmental_economics",
  							"type": "checkbox",
- 							"css_label": "special-input-margin-vertical",
  							"suffix": {
  								"de": "Um\u0026shy;welt\u0026shy;öko\u0026shy;no\u0026shy;mie",
  								"en": "En\u0026shy;vi\u0026shy;ron\u0026shy;mental Eco\u0026shy;nom\u0026shy;ics",
  								"fr": "Économie de l’environnement",
  								"it": "Economia ambientale"
  							},
+ 							"css_label": "special-input-margin-vertical",
  							"col_span_control": 5
  						},
  						{
  							"name": "research-field-industrial_economics",
  							"type": "checkbox",
- 							"css_label": "special-input-margin-vertical",
  							"suffix": {
  								"de": "In\u0026shy;dus\u0026shy;trie\u0026shy;öko\u0026shy;no\u0026shy;mie",
  								"en": "In\u0026shy;dus\u0026shy;tri\u0026shy;al Eco\u0026shy;nom\u0026shy;ics",
  								"fr": "Économie industrielle",
  								"it": "Economia in\u0026shy;dus\u0026shy;tri\u0026shy;ale\u003cbr\u003e\n(Organizzazione in\u0026shy;dus\u0026shy;tri\u0026shy;ale)"
  							},
+ 							"css_label": "special-input-margin-vertical",
  							"col_span_control": 5
  						}
  					]
  				},
  				{
- 					"bottom_half_vspacers": 3,
- 					"odd_rows_coloring": false,
+ 					"bottom_vspacers": 3,
  					"width": 100,
  					"columns": 16,
  					"inputs": [
@@ -8882,7 +8878,7 @@
  							"max_chars": 19,
  							"description": {
  								"de": "Weder BWL noch VWL, Fachgebiet",
- 								"en": "Neither Eco\u0026shy;nom\u0026shy;ics nor Busi\u0026shy;ness Ad\u0026shy;min\u0026shy;is\u0026shy;tra\u0026shy;tion, field",
+ 								"en": "Nei\u0026shy;ther Eco\u0026shy;nom\u0026shy;ics nor Busi\u0026shy;ness Ad\u0026shy;min\u0026shy;is\u0026shy;tra\u0026shy;tion, field",
  								"fr": "Ni Économie ni Gestion d’entreprise, domaine",
  								"it": "Né Economia né amministrazione aziendale, campo"
  							},
@@ -8910,92 +8906,91 @@
  						{
  							"name": "academia-position-professor",
  							"type": "checkbox",
- 							"css_label": "special-input-margin-vertical",
  							"suffix": {
  								"de": "Pro\u0026shy;fes\u0026shy;sorIn",
  								"en": "Pro\u0026shy;fes\u0026shy;sor",
  								"fr": "Professeur/e",
  								"it": "Pro\u0026shy;fes\u0026shy;sore ordinario"
  							},
+ 							"css_label": "special-input-margin-vertical",
  							"col_span_control": 5
  						},
  						{
  							"name": "academia-position-assistant_professor",
  							"type": "checkbox",
- 							"css_label": "special-input-margin-vertical",
  							"suffix": {
  								"de": "Junior\u0026shy;pro\u0026shy;fes\u0026shy;sorIn",
  								"en": "As\u0026shy;sis\u0026shy;tant pro\u0026shy;fes\u0026shy;sor",
  								"fr": "Professeur/e as\u0026shy;sis\u0026shy;tant/e",
  								"it": "Pro\u0026shy;fes\u0026shy;sore Assistente"
  							},
+ 							"css_label": "special-input-margin-vertical",
  							"col_span_control": 5
  						},
  						{
  							"name": "academia-position-associate_professor",
  							"type": "checkbox",
- 							"css_label": "special-input-margin-vertical",
  							"suffix": {
  								"de": "As\u0026shy;so\u0026shy;zi\u0026shy;ie\u0026shy;rte/r Pro\u0026shy;fes\u0026shy;sorIn",
  								"en": "As\u0026shy;so\u0026shy;ci\u0026shy;ate pro\u0026shy;fes\u0026shy;sor",
  								"fr": "Professeur/e associé/e",
  								"it": "Pro\u0026shy;fes\u0026shy;sore associato"
  							},
+ 							"css_label": "special-input-margin-vertical",
  							"col_span_control": 5
  						},
  						{
  							"name": "academia-position-post_doc",
  							"type": "checkbox",
- 							"css_label": "special-input-margin-vertical",
  							"suffix": {
  								"de": "Post-Doc",
  								"en": "Post-Doc",
  								"fr": "Post-Doc",
  								"it": "Assegnista di ricerca"
  							},
+ 							"css_label": "special-input-margin-vertical",
  							"col_span_control": 5
  						},
  						{
  							"name": "academia-position-lecturer",
  							"type": "checkbox",
- 							"css_label": "special-input-margin-vertical",
  							"suffix": {
  								"de": "Do\u0026shy;zen\u0026shy;tIn",
  								"en": "Lecturer",
  								"fr": "Maître de conférences",
  								"it": "Ricercatore Universitario"
  							},
+ 							"css_label": "special-input-margin-vertical",
  							"col_span_control": 5
  						},
  						{
  							"name": "academia-position-senior_researcher_br_research_institute",
  							"type": "checkbox",
- 							"css_label": "special-input-margin-vertical",
  							"suffix": {
  								"de": "Senior Re\u0026shy;searcher",
  								"en": "Senior re\u0026shy;searcher \u003cbr\u003e\n(re\u0026shy;search in\u0026shy;sti\u0026shy;tute)",
  								"fr": "Senior re\u0026shy;searcher \u003cbr\u003e\n(institut de recherche)",
  								"it": "Ricercatore presso istituto di ricerca"
  							},
+ 							"css_label": "special-input-margin-vertical",
  							"col_span_control": 5
  						},
  						{
  							"name": "academia-position-phd_candidate",
  							"type": "checkbox",
- 							"css_label": "special-input-margin-vertical",
  							"suffix": {
  								"de": "DoktorandIn",
  								"en": "PhD Can\u0026shy;di\u0026shy;date",
  								"fr": "Doctorant/e",
  								"it": "Dottorando"
  							},
+ 							"css_label": "special-input-margin-vertical",
  							"col_span_control": 15
  						}
  					]
  				},
  				{
- 					"bottom_half_vspacers": 3,
- 					"odd_rows_coloring": false,
+ 					"bottom_vspacers": 3,
  					"width": 100,
  					"columns": 15,
  					"inputs": [
@@ -9021,100 +9016,100 @@
  						"fr": "J'ai eu suffisamment d'expertise pour répondre aux questions du sondage.",
  						"it": "Ritengo di avere sufficiente esperienza per rispondere alle domande di questo sondaggio."
  					},
- 					"bottom_half_vspacers": 3,
+ 					"bottom_vspacers": 3,
  					"odd_rows_coloring": true,
  					"width": 75,
  					"columns": 9,
  					"inputs": [
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "lehne ab\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"en": "Dis\u0026shy;agree\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"fr": "Pas d’acc\u0026shy;ord\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"it": "Non favo\u0026shy;revole\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "un\u0026shy;ent\u0026shy;schieden\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"en": "Un\u0026shy;decided\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"fr": "In\u0026shy;diff\u0026shy;érent\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"it": "In\u0026shy;deciso\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "stimme zu\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"en": "Agree\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"fr": "D’acc\u0026shy;ord\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"it": "Favo\u0026shy;revole\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e"
- 							}
+ 							},
+ 							"horizontal_align_label": 1
  						},
  						{
  							"name": "qualified",
@@ -9215,15 +9210,13 @@
  					]
  				},
  				{
- 					"bottom_half_vspacers": 4,
- 					"odd_rows_coloring": false,
+ 					"bottom_vspacers": 4,
  					"width": 99,
  					"columns": 3,
  					"inputs": [
  						{
  							"name": "submitBtn",
  							"type": "button",
- 							"horizontal_align_control": 2,
  							"label": {
  								"de": "Fragebogen abschließen",
  								"en": "Finish this survey",
@@ -9233,6 +9226,7 @@
  								"pl": "Zakończyłem tę ankietę"
  							},
  							"accesskey": "n",
+ 							"horizontal_align_control": 2,
  							"col_span_control": 3,
  							"response": "3"
  						}
@@ -9257,30 +9251,29 @@
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
  				{
- 					"bottom_half_vspacers": 3,
- 					"odd_rows_coloring": false,
+ 					"bottom_vspacers": 3,
  					"width": 100,
  					"columns": 1,
  					"inputs": [
  						{
  							"type": "textblock",
- 							"css_label": "special-line-height-higher",
  							"description": {
  								"de": "Danke für Ihre Teilnahme an unserer Umfrage.",
  								"en": "Thank you for your participation in our survey.",
  								"fr": "Nous vous remercions d'avoir répondu à nos questions.",
  								"it": "Grazie per aver risposto al nostro questionario."
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
- 							"css_label": "special-line-height-higher",
  							"description": {
  								"de": "\u003cspan style='font-size: 100%;'\u003eIhre Eingaben wurden gespeichert.\u003c/span\u003e",
  								"en": "\u003cspan style='font-size: 100%;'\u003eYour entries have been saved.\u003c/span\u003e",
  								"fr": "\u003cspan style='font-size: 100%;'\u003eVos réponses ont été sauvegardées.\u003c/span\u003e",
  								"it": "\u003cspan style='font-size: 100%;'\u003eLe Sue risposte sono state salvate.\u003c/span\u003e"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher"
  						}
  					]
  				}

@@ -5,6 +5,7 @@ import (
 	"log"
 
 	"github.com/zew/go-questionnaire/cfg"
+	"github.com/zew/go-questionnaire/ctr"
 	"github.com/zew/go-questionnaire/qst"
 	"github.com/zew/go-questionnaire/tpl"
 	"github.com/zew/go-questionnaire/trl"
@@ -103,6 +104,9 @@ func labelsGoodBad17() []trl.S {
 // Create creates an minimal example questionnaire with a few pages and inputs.
 // It is saved to disk as an example.
 func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
+
+	ctr.Reset()
+
 	q := qst.QuestionnaireT{}
 	q.Survey = qst.NewSurvey("peu2018")
 	q.Survey.Params = params

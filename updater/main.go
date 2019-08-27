@@ -1,7 +1,7 @@
 // Package updater makes a change to all questionaires in a given directory;
 // can be applied to single origin json - as well as to filled out json files.
-//     updater.exe -dir ../responses/mul.json
-//     updater.exe -dir ../responses/mul/2019-02
+//     updater.exe -dir ../app-bucket/responses/mul.json
+//     updater.exe -dir ../app-bucket/responses/mul/2019-02
 package main
 
 import (
@@ -29,8 +29,8 @@ func main() {
 		util.FlagT{
 			Long:  "directory",
 			Short: "dir",
-			// DefaultVal: "../responses/mul.json",
-			DefaultVal: "../responses/mul/2019-02/",
+			// DefaultVal: "../app-bucket/responses/mul.json",
+			DefaultVal: "../app-bucket/responses/mul/2019-02/",
 			Desc:       "filename - or directory or to iterate",
 		},
 	)

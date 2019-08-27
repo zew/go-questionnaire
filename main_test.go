@@ -45,13 +45,14 @@ Note: This file is necessary for go-questionnaire.test.exe binary to be generate
 
 */
 import (
-	"io/ioutil"
+	"log"
 	"os"
 	"path"
 	"testing"
 	"time"
 
 	"github.com/zew/go-questionnaire/cfg"
+	"github.com/zew/go-questionnaire/cloudio"
 	"github.com/zew/go-questionnaire/lgn"
 	"github.com/zew/go-questionnaire/qst"
 	"github.com/zew/go-questionnaire/systemtest"
@@ -63,6 +64,7 @@ import (
 // We dont want to restrict execution by flag systemTest
 // since the test should also run on gocover.io
 func TestSystem(t *testing.T) {
+
 	os.Setenv("GO_TEST_MODE", "true")
 	defer os.Setenv("GO_TEST_MODE", "false")
 	go func() {
@@ -73,32 +75,43 @@ func TestSystem(t *testing.T) {
 		t.Logf("Waiting for the server to come up ... %v", i)
 	}
 
-	tplDir := "responses"
+	log.SetFlags(log.Lshortfile)
 
-	files, err := ioutil.ReadDir(path.Join(".", tplDir))
+	tplDir := "responses"
+	files, err := cloudio.ReadDir(path.Join(".", tplDir) + "/")
 	if err != nil {
 		t.Fatal(err)
 	}
-	for _, f := range files {
-		if f.IsDir() {
+	for _, f := range *files {
+
+		t.Logf("\n\n\n")
+
+		if f.IsDir {
+			t.Logf("Skipping directory %v", f.Key)
 			continue
 		}
-		t.Logf("Found quesionnaire template %v", f.Name())
+		if path.Ext(f.Key) != ".json" {
+			t.Logf("Skipping non json file %v", f.Key)
+			continue
+		}
 
-		pth := path.Join(".", tplDir, f.Name())
-		q, err := qst.Load1(pth)
+		// t.Logf("Found questionnaire template %v", f.Key)
+
+		// pth := path.Join(".", tplDir, f.Key)
+		q, err := qst.Load1(f.Key)
 		if err != nil {
-			t.Fatalf("Could not load %v: %v", pth, err)
+			t.Fatalf("Could not load %v: %v", f.Key, err)
 		}
 		err = q.Validate()
 		if err != nil {
-			t.Fatalf("Questionnaire validation caused error %v: %v", pth, err)
+			t.Fatalf("Questionnaire validation caused error %v: %v", f.Key, err)
 		}
+
+		t.Logf("\tquesionnaire type - survey-id: %v - %v", q.Survey.String(), f.Key)
 
 		userName := "systemtest"
 		surveyID := q.Survey.Type
 		waveID := q.Survey.WaveID()
-		t.Logf("\tquesionnaire type - survey-id: %v %v", surveyID, waveID)
 
 		loginURL := lgn.LoginURL(userName, surveyID, waveID, "")
 		t.Logf("\tLoginURL: %v", loginURL)
@@ -115,8 +128,8 @@ func TestSystem(t *testing.T) {
 		}
 
 		systemtest.SimulateLoad(t, q, loginURL, "0")
-
 		systemtest.SimulateLoad(t, q, loginURL, "1")
+
 		// if surveyID == "peu2018" {
 		// 	systemtest.SimulateLoad(t, q, loginURL)
 		// }

@@ -61,15 +61,17 @@ func (c *iDElements) Encode(w io.Writer) (int, string) {
 // CreateAnonymousID creates a non-personal ID from personal characteristics
 func CreateAnonymousID(w http.ResponseWriter, r *http.Request) {
 
+	/*
+			Please note that the code is CASE sensitive.
+		First letters should be in capitals, letters in the name should be small.
+
+	*/
 	msg := `	This is needed if we collect more data on your financial choices and preferences 
 	and want to link the questionnaires using pseudonyms over time.
 
-	Please note that the code is CASE sensitive. 
-	First letters should be in capitals, letters in the name should be small. 
-
 	Names such as László should be used as Laszlo.
 
-	It is important that you construct the code in such a way, 
+	It is important that you construct the code in such a way 
 	that you can reconstruct it each time we conduct a survey.
 `
 	err := r.ParseForm()
@@ -97,43 +99,54 @@ func CreateAnonymousID(w http.ResponseWriter, r *http.Request) {
 <html>
 <head>
     <meta charset="utf-8" />
-	<title>Anonymous access code</title>
+	<title>Anonymous access ID</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
 	<style>
-	* {font-family: monospace;}
+	* {
+		font-family: monospace;
+		font-size: 11px;
+	}
 	::placeholder { 
 		color:    #ccc;
 		opacity:  1;
 	}
-
 	</style>
 </head>
 <body>
 
 
-	<div style='margin-left: 20px;'>
-	
-		<div style='color: red;'>%v</div>
-		
-		<h3>Anonymous deterministic access ID</h3>
-		
-		<div style='white-space:pre-line;'>%v</div>
-	
-	</div>
-	
-	<form method="POST" class="survey-edit-form"  style='white-space:pre'>
+<div style='margin-left: 10px;'>
 
-    What is the first letter of your mother’s first name?  <input type="text"   name="mother_first"         value="%v"   maxlength='1' size='3' pattern='[A-Z]{1}' placeholder='A-Z' /> e.g. <u>A</u>lice  <br>
-    What is the first letter of your father’s first name?  <input type="text"   name="father_first"         value="%v"   maxlength='1' size='3' pattern='[A-Z]{1}' placeholder='A-Z' /> e.g. <u>B</u>ob  <br>
-    On which day is your birthday?                         <input type="text"   name="birthday_second"      value="%v"   maxlength='1' size='3' pattern='[0-9]{1}' placeholder='0-9'/> e.g. 3<u>0</u>. September or <u>7</u>. October,   <br>
-    What is the last letter of your first name?            <input type="text"   name="first_name_last"      value="%v"   maxlength='1' size='3' pattern='[a-z]{1}' placeholder='a-z' /> e.g. Caro<u>l</u>  <br>
-                                                           <input type="submit" name="btnSubmit" id="btnSubmit"  value="Submit" accesskey="s"  />
+	<div style='color: red;'>%v</div>
+	
+	<h3>Anonymous deterministic access ID</h3>
+	
+	<div style='white-space:pre-line;'>%v</div>
 
+</div>
+	
+	
+  <form method="POST" class="survey-edit-form"  style='white-space:pre; font-size: 11px;'>
+
+  What is the first letter 
+  of your mother’s first name?   <input type="text"   name="mother_first"         value="%v"   maxlength='1' size='3' pattern='[A-Z]{1}' placeholder='A-Z' /> e.g. <u>A</u>lice  <br>
+  What is the first letter 
+  of your father’s first name?   <input type="text"   name="father_first"         value="%v"   maxlength='1' size='3' pattern='[A-Z]{1}' placeholder='A-Z' /> e.g. <u>B</u>ob  <br>
+  On which day is your birthday? <input type="text"   name="birthday_second"      value="%v"   maxlength='1' size='3' pattern='[0-9]{1}' placeholder='0-9'/> e.g. 3<u>0</u>. September or <u>7</u>. October,   <br>
+  What is the last letter 
+  of your first name?            <input type="text"   name="first_name_last"      value="%v"   maxlength='1' size='3' pattern='[a-z]{1}' placeholder='a-z' /> e.g. Caro<u>l</u>  <br>
+                                 <input type="submit" name="btnSubmit" id="btnSubmit"  value="Submit" accesskey="s" style='padding: 8px 28px;' />
+<!--								   
     Your personal code is -%v-
-    Numeric -%v-
-    Hash -%v-
-	%v
-	</form>        
-	<script> document.getElementById('submit').focus(); </script> 
+    Numeric               -%v-
+	Hash                  -%v-
+-->	
+  %v
+</form>        
+<script> document.getElementById('btnSubmit').focus(); </script> 
+
+
 </body>
 </html>`,
 		err,

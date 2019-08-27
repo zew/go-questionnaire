@@ -22,8 +22,8 @@ func fmtSpecialTest(t *testing.T, urlMain string, sessCook *http.Cookie) {
 		urlReq := urlMain
 
 		{
-			t.Logf("\tGoto first entry page ")
-			t.Logf("\t==================")
+			t.Logf("Goto first entry page ")
+			t.Logf("==================")
 			vals := url.Values{}
 			vals.Set("token", lgn.FormToken())
 			vals.Set("page", "1")
@@ -82,8 +82,8 @@ func fmtSpecialTest(t *testing.T, urlMain string, sessCook *http.Cookie) {
 
 	{
 		urlReq := urlMain
-		t.Logf("\tGo back to page 0")
-		t.Logf("\t==================")
+		t.Logf("Go back to page 0")
+		t.Logf("==================")
 		vals := url.Values{}
 		vals.Set("token", lgn.FormToken())
 		vals.Set("page", "0")

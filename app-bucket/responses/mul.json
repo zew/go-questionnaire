@@ -19,7 +19,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "1a755434f52b8c8ababe976fb4bd0625",
+ 	"md_5": "bbed5b892fe8c0f2a8a34b7b77f11e6e",
  	"lang_codes": {
  		"en": "English"
  	},
@@ -53,14 +53,13 @@
  					"description": {
  						"en": "The European Central Bank should take its time to normalize its interest rates. There is no need to increase central bank rates in Europe before the year 2020."
  					},
- 					"bottom_half_vspacers": 3,
+ 					"bottom_vspacers": 3,
  					"odd_rows_coloring": true,
  					"width": 100,
  					"columns": 9,
  					"inputs": [
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "lehne ab\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"en": "Dis\u0026shy;agree\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
@@ -68,11 +67,12 @@
  								"fr": "Pas d’acc\u0026shy;ord\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"it": "Non favo\u0026shy;revole\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"pl": "jestem przeciwny/a\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
@@ -80,11 +80,12 @@
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
@@ -92,11 +93,12 @@
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
@@ -104,11 +106,12 @@
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "un\u0026shy;ent\u0026shy;schieden\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"en": "Un\u0026shy;decided\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
@@ -116,11 +119,12 @@
  								"fr": "In\u0026shy;diff\u0026shy;érent\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"it": "In\u0026shy;deciso\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"pl": "jestem niezdecydowany/a\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
@@ -128,11 +132,12 @@
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
@@ -140,11 +145,12 @@
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
@@ -152,11 +158,12 @@
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "stimme zu\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"en": "Agree\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
@@ -164,11 +171,14 @@
  								"fr": "D’acc\u0026shy;ord\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"it": "Favo\u0026shy;revole\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"pl": "zgadzam się\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"name": "ecb",
  							"type": "radiogroup",
+ 							"css_label": "special-input-margin-vertical special-line-height-higher",
  							"col_span_label": 1,
  							"radios": [
  								{
@@ -207,7 +217,8 @@
  									"hori_align": 1,
  									"val": "9"
  								}
- 							]
+ 							],
+ 							"validator": "mustRadioGroup"
  						}
  					]
  				},
@@ -218,14 +229,13 @@
  					"description": {
  						"en": "The US Federal Reserve should continue with its course of interest rate increases well throughout 2019."
  					},
- 					"bottom_half_vspacers": 3,
+ 					"bottom_vspacers": 3,
  					"odd_rows_coloring": true,
  					"width": 100,
  					"columns": 9,
  					"inputs": [
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "lehne ab\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"en": "Dis\u0026shy;agree\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
@@ -233,11 +243,12 @@
  								"fr": "Pas d’acc\u0026shy;ord\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"it": "Non favo\u0026shy;revole\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"pl": "jestem przeciwny/a\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
@@ -245,11 +256,12 @@
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
@@ -257,11 +269,12 @@
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
@@ -269,11 +282,12 @@
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "un\u0026shy;ent\u0026shy;schieden\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"en": "Un\u0026shy;decided\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
@@ -281,11 +295,12 @@
  								"fr": "In\u0026shy;diff\u0026shy;érent\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"it": "In\u0026shy;deciso\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"pl": "jestem niezdecydowany/a\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
@@ -293,11 +308,12 @@
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
@@ -305,11 +321,12 @@
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
@@ -317,11 +334,12 @@
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "stimme zu\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"en": "Agree\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
@@ -329,11 +347,14 @@
  								"fr": "D’acc\u0026shy;ord\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"it": "Favo\u0026shy;revole\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"pl": "zgadzam się\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"name": "fed",
  							"type": "radiogroup",
+ 							"css_label": "special-input-margin-vertical special-line-height-higher",
  							"col_span_label": 1,
  							"radios": [
  								{
@@ -372,7 +393,8 @@
  									"hori_align": 1,
  									"val": "9"
  								}
- 							]
+ 							],
+ 							"validator": "mustRadioGroup"
  						}
  					]
  				},
@@ -383,14 +405,13 @@
  					"description": {
  						"en": "Overall, the current economic situation in industrial countries allows more fiscal consolidation. OECD countries should consolidate more and try to reduce government debt. "
  					},
- 					"bottom_half_vspacers": 3,
+ 					"bottom_vspacers": 3,
  					"odd_rows_coloring": true,
  					"width": 100,
  					"columns": 9,
  					"inputs": [
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "lehne ab\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"en": "Dis\u0026shy;agree\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
@@ -398,11 +419,12 @@
  								"fr": "Pas d’acc\u0026shy;ord\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"it": "Non favo\u0026shy;revole\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"pl": "jestem przeciwny/a\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
@@ -410,11 +432,12 @@
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
@@ -422,11 +445,12 @@
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
@@ -434,11 +458,12 @@
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "un\u0026shy;ent\u0026shy;schieden\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"en": "Un\u0026shy;decided\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
@@ -446,11 +471,12 @@
  								"fr": "In\u0026shy;diff\u0026shy;érent\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"it": "In\u0026shy;deciso\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"pl": "jestem niezdecydowany/a\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
@@ -458,11 +484,12 @@
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
@@ -470,11 +497,12 @@
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
@@ -482,11 +510,12 @@
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "stimme zu\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"en": "Agree\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
@@ -494,11 +523,14 @@
  								"fr": "D’acc\u0026shy;ord\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"it": "Favo\u0026shy;revole\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"pl": "zgadzam się\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"name": "fiscal",
  							"type": "radiogroup",
+ 							"css_label": "special-input-margin-vertical special-line-height-higher",
  							"col_span_label": 1,
  							"radios": [
  								{
@@ -537,7 +569,8 @@
  									"hori_align": 1,
  									"val": "9"
  								}
- 							]
+ 							],
+ 							"validator": "mustRadioGroup"
  						}
  					]
  				},
@@ -548,14 +581,13 @@
  					"description": {
  						"en": "In general, the large involvement of governments in market activities still impairs the growth potential of industrial countries. Privatization should be one of the priorities in strategies to boost the growth potential in OECD countries."
  					},
- 					"bottom_half_vspacers": 3,
+ 					"bottom_vspacers": 3,
  					"odd_rows_coloring": true,
  					"width": 100,
  					"columns": 9,
  					"inputs": [
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "lehne ab\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"en": "Dis\u0026shy;agree\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
@@ -563,11 +595,12 @@
  								"fr": "Pas d’acc\u0026shy;ord\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"it": "Non favo\u0026shy;revole\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"pl": "jestem przeciwny/a\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
@@ -575,11 +608,12 @@
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
@@ -587,11 +621,12 @@
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
@@ -599,11 +634,12 @@
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "un\u0026shy;ent\u0026shy;schieden\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"en": "Un\u0026shy;decided\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
@@ -611,11 +647,12 @@
  								"fr": "In\u0026shy;diff\u0026shy;érent\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"it": "In\u0026shy;deciso\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"pl": "jestem niezdecydowany/a\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
@@ -623,11 +660,12 @@
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
@@ -635,11 +673,12 @@
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
@@ -647,11 +686,12 @@
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "stimme zu\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"en": "Agree\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
@@ -659,11 +699,14 @@
  								"fr": "D’acc\u0026shy;ord\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"it": "Favo\u0026shy;revole\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"pl": "zgadzam się\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"name": "privatization",
  							"type": "radiogroup",
+ 							"css_label": "special-input-margin-vertical special-line-height-higher",
  							"col_span_label": 1,
  							"radios": [
  								{
@@ -702,7 +745,8 @@
  									"hori_align": 1,
  									"val": "9"
  								}
- 							]
+ 							],
+ 							"validator": "mustRadioGroup"
  						}
  					]
  				},
@@ -713,14 +757,13 @@
  					"description": {
  						"en": "High long-run unemployment in some OECD countries largely reflects an excessive level of labor market regulation. In order to reduce this unemployment, countries would have to deregulate labor markets."
  					},
- 					"bottom_half_vspacers": 3,
+ 					"bottom_vspacers": 3,
  					"odd_rows_coloring": true,
  					"width": 100,
  					"columns": 9,
  					"inputs": [
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "lehne ab\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"en": "Dis\u0026shy;agree\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
@@ -728,11 +771,12 @@
  								"fr": "Pas d’acc\u0026shy;ord\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"it": "Non favo\u0026shy;revole\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"pl": "jestem przeciwny/a\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
@@ -740,11 +784,12 @@
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
@@ -752,11 +797,12 @@
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
@@ -764,11 +810,12 @@
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "un\u0026shy;ent\u0026shy;schieden\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"en": "Un\u0026shy;decided\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
@@ -776,11 +823,12 @@
  								"fr": "In\u0026shy;diff\u0026shy;érent\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"it": "In\u0026shy;deciso\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"pl": "jestem niezdecydowany/a\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
@@ -788,11 +836,12 @@
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
@@ -800,11 +849,12 @@
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
@@ -812,11 +862,12 @@
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "stimme zu\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"en": "Agree\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
@@ -824,11 +875,14 @@
  								"fr": "D’acc\u0026shy;ord\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"it": "Favo\u0026shy;revole\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"pl": "zgadzam się\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"name": "labor",
  							"type": "radiogroup",
+ 							"css_label": "special-input-margin-vertical special-line-height-higher",
  							"col_span_label": 1,
  							"radios": [
  								{
@@ -867,7 +921,8 @@
  									"hori_align": 1,
  									"val": "9"
  								}
- 							]
+ 							],
+ 							"validator": "mustRadioGroup"
  						}
  					]
  				},
@@ -878,14 +933,13 @@
  					"description": {
  						"en": "Current inequalities in OECD countries are not just a fairness issue but also detrimental for the growth potential. Governments should address these inequalities by more intense redistribution."
  					},
- 					"bottom_half_vspacers": 3,
+ 					"bottom_vspacers": 3,
  					"odd_rows_coloring": true,
  					"width": 100,
  					"columns": 9,
  					"inputs": [
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "lehne ab\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"en": "Dis\u0026shy;agree\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
@@ -893,11 +947,12 @@
  								"fr": "Pas d’acc\u0026shy;ord\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"it": "Non favo\u0026shy;revole\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"pl": "jestem przeciwny/a\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
@@ -905,11 +960,12 @@
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
@@ -917,11 +973,12 @@
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
@@ -929,11 +986,12 @@
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "un\u0026shy;ent\u0026shy;schieden\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"en": "Un\u0026shy;decided\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
@@ -941,11 +999,12 @@
  								"fr": "In\u0026shy;diff\u0026shy;érent\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"it": "In\u0026shy;deciso\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"pl": "jestem niezdecydowany/a\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
@@ -953,11 +1012,12 @@
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
@@ -965,11 +1025,12 @@
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
@@ -977,11 +1038,12 @@
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "stimme zu\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"en": "Agree\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
@@ -989,11 +1051,14 @@
  								"fr": "D’acc\u0026shy;ord\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"it": "Favo\u0026shy;revole\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"pl": "zgadzam się\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"name": "redistribution",
  							"type": "radiogroup",
+ 							"css_label": "special-input-margin-vertical special-line-height-higher",
  							"col_span_label": 1,
  							"radios": [
  								{
@@ -1032,7 +1097,8 @@
  									"hori_align": 1,
  									"val": "9"
  								}
- 							]
+ 							],
+ 							"validator": "mustRadioGroup"
  						}
  					]
  				},
@@ -1043,14 +1109,13 @@
  					"description": {
  						"en": "Fiscal rules like the European Stability and Growth Pact constrain government on the size of the government deficit. Rules like this may not be perfectly effective but, in principle, they are helpful and support long-run economic stability."
  					},
- 					"bottom_half_vspacers": 3,
+ 					"bottom_vspacers": 3,
  					"odd_rows_coloring": true,
  					"width": 100,
  					"columns": 9,
  					"inputs": [
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "lehne ab\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"en": "Dis\u0026shy;agree\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
@@ -1058,11 +1123,12 @@
  								"fr": "Pas d’acc\u0026shy;ord\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"it": "Non favo\u0026shy;revole\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"pl": "jestem przeciwny/a\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
@@ -1070,11 +1136,12 @@
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
@@ -1082,11 +1149,12 @@
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
@@ -1094,11 +1162,12 @@
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "un\u0026shy;ent\u0026shy;schieden\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"en": "Un\u0026shy;decided\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
@@ -1106,11 +1175,12 @@
  								"fr": "In\u0026shy;diff\u0026shy;érent\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"it": "In\u0026shy;deciso\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"pl": "jestem niezdecydowany/a\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
@@ -1118,11 +1188,12 @@
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
@@ -1130,11 +1201,12 @@
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"en": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
@@ -1142,11 +1214,12 @@
  								"fr": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"type": "textblock",
- 							"horizontal_align_label": 1,
  							"description": {
  								"de": "stimme zu\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"en": "Agree\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
@@ -1154,11 +1227,14 @@
  								"fr": "D’acc\u0026shy;ord\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"it": "Favo\u0026shy;revole\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"pl": "zgadzam się\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher",
+ 							"horizontal_align_label": 1
  						},
  						{
  							"name": "rules",
  							"type": "radiogroup",
+ 							"css_label": "special-input-margin-vertical special-line-height-higher",
  							"col_span_label": 1,
  							"radios": [
  								{
@@ -1197,25 +1273,25 @@
  									"hori_align": 1,
  									"val": "9"
  								}
- 							]
+ 							],
+ 							"validator": "mustRadioGroup"
  						}
  					]
  				},
  				{
- 					"bottom_half_vspacers": 3,
- 					"odd_rows_coloring": false,
+ 					"bottom_vspacers": 3,
  					"width": 99,
  					"columns": 1,
  					"inputs": [
  						{
  							"name": "submitBtn",
  							"type": "button",
- 							"horizontal_align_control": 2,
  							"label": {
  								"de": "Weiter",
  								"en": "Submit"
  							},
  							"accesskey": "n",
+ 							"horizontal_align_control": 2,
  							"col_span_control": 1,
  							"response": "1"
  						}
@@ -1238,14 +1314,12 @@
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
  				{
- 					"bottom_half_vspacers": 3,
- 					"odd_rows_coloring": false,
+ 					"bottom_vspacers": 3,
  					"width": 100,
  					"columns": 1,
  					"inputs": [
  						{
  							"type": "textblock",
- 							"css_label": "special-line-height-higher",
  							"description": {
  								"de": "Danke für Ihre Teilnahme an unserer Umfrage.",
  								"en": "Thank you for your participation in our survey.",
@@ -1253,11 +1327,11 @@
  								"fr": "Nous vous remercions d'avoir répondu à nos questions.",
  								"it": "Grazie per aver risposto al nostro questionario.",
  								"pl": "Dziękujemy za uczestnictwo w ankiecie."
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
- 							"css_label": "special-line-height-higher",
  							"description": {
  								"de": "\u003cspan style='font-size: 100%;'\u003eIhre Eingaben wurden gespeichert.\u003c/span\u003e",
  								"en": "\u003cspan style='font-size: 100%;'\u003eYour entries have been saved.\u003c/span\u003e",
@@ -1265,7 +1339,8 @@
  								"fr": "\u003cspan style='font-size: 100%;'\u003eVos réponses ont été sauvegardées.\u003c/span\u003e",
  								"it": "\u003cspan style='font-size: 100%;'\u003eLe Sue risposte sono state salvate.\u003c/span\u003e",
  								"pl": "\u003cspan style='font-size: 100%;'\u003eTwoje wpisy zostały zapisane.\u003c/span\u003e"
- 							}
+ 							},
+ 							"css_label": "special-line-height-higher"
  						}
  					]
  				}

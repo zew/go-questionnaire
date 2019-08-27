@@ -3,6 +3,7 @@ package mul
 import (
 	"fmt"
 
+	"github.com/zew/go-questionnaire/ctr"
 	"github.com/zew/go-questionnaire/qst"
 	"github.com/zew/go-questionnaire/trl"
 )
@@ -99,6 +100,9 @@ func labelsGoodBad19() []trl.S {
 
 // Create creates a questionnaire with a few pages and inputs.
 func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
+
+	ctr.Reset()
+
 	q := qst.QuestionnaireT{}
 	q.Survey = qst.NewSurvey("aik")
 	q.Survey.Params = params

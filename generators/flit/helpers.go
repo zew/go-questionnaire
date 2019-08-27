@@ -105,12 +105,12 @@ func assetVariance5() []trl.S {
 			"en": "Savings accounts",
 		},
 		{
-			"de": "Anleihen",
-			"en": "Bonds",
-		},
-		{
 			"de": "Aktien",
 			"en": "Stocks",
+		},
+		{
+			"de": "Anleihen",
+			"en": "Bonds",
 		},
 		{
 			"de": "Weiß nicht",
@@ -193,7 +193,7 @@ func stockMarketFuncs6() []trl.S {
 		},
 		{
 			"de": "Der Aktienmarkt bringt Aktienkäufer und -verkäufer zusammen.",
-			"en": "The stock market brings people who want to buy stock together with those who want to sell stocks. ",
+			"en": "The stock market brings people who want to buy stocks together with those who want to sell stocks. ",
 		},
 		{
 			"de": "Keine der Antworten",
@@ -425,31 +425,31 @@ func riskPreference7() []trl.S {
 	tm := []trl.S{
 		{
 			"de": "xxx",
-			"en": "Not at all willing to take risks",
+			"en": "1. Not at all willing to take risks",
 		},
 		{
 			"de": " &nbsp; ",
-			"en": " &nbsp; ",
+			"en": "2. &nbsp; ",
 		},
 		{
 			"de": " &nbsp; ",
-			"en": " &nbsp; ",
+			"en": "3.  &nbsp; ",
 		},
 		{
 			"de": " &nbsp; ",
-			"en": " &nbsp; ",
+			"en": "4.  &nbsp; ",
 		},
 		{
 			"de": " &nbsp; ",
-			"en": " &nbsp; ",
+			"en": "5.  &nbsp; ",
 		},
 		{
 			"de": " &nbsp; ",
-			"en": " &nbsp; ",
+			"en": "6.  &nbsp; ",
 		},
 		{
 			"de": "xxx",
-			"en": "Very willing to take risks",
+			"en": "7. Very willing to take risks",
 		},
 	}
 

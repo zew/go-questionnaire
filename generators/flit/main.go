@@ -3,6 +3,7 @@ package flit
 import (
 	"fmt"
 
+	"github.com/zew/go-questionnaire/ctr"
 	"github.com/zew/go-questionnaire/qst"
 	"github.com/zew/go-questionnaire/trl"
 )
@@ -26,6 +27,8 @@ import (
 */
 
 func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
+
+	ctr.Reset()
 
 	qst.RadioVali = "mustRadioGroup"
 	qst.CSSLabelHeader = "special-line-height-higher"
@@ -849,7 +852,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			inp.ColSpanLabel = 2
 			inp.ColSpanControl = 1
 			inp.Suffix = trl.S{"en": "&nbspCents"}
-			inp.Validator = "inRange100"
+			inp.Validator = "inRange1000"
 		}
 
 		{
@@ -943,15 +946,15 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				},
 				{
 					"de": "xxx",
-					"en": `I wish I had more self discipline (R)`,
+					"en": `I wish I had more self discipline`,
 				},
 				{
 					"de": "xxx",
-					"en": `Pleasure and fun sometimes keep me from getting work done (R)`,
+					"en": `Pleasure and fun sometimes keep me from getting work done`,
 				},
 				{
 					"de": "xxx",
-					"en": `I have trouble concentrating (R)`,
+					"en": `I have trouble concentrating`,
 				},
 				{
 					"de": "xxx",
@@ -959,11 +962,11 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				},
 				{
 					"de": "xxx",
-					"en": `Sometimes I cant stop myself from doing something, even if I know it is wrong (R)`,
+					"en": `Sometimes I cant stop myself from doing something, even if I know it is wrong`,
 				},
 				{
 					"de": "xxx",
-					"en": `I often act without thinking through the alternatives (R)`,
+					"en": `I often act without thinking through the alternatives`,
 				},
 				{
 					"de": "xxx",

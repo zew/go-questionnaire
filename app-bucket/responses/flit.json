@@ -19,7 +19,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "56dca465fc9cd1ead1cb1a17235fd88e",
+ 	"md_5": "9f3bf4b124619b19cb75def0f2e26b2f",
  	"lang_codes": {
  		"en": "English"
  	},
@@ -1311,7 +1311,7 @@
  									"hori_align": 2,
  									"label": {
  										"de": "Der Aktienmarkt bringt Aktienkäufer und -verkäufer zusammen.",
- 										"en": "The stock market brings people who want to buy stock together with those who want to sell stocks. "
+ 										"en": "The stock market brings people who want to buy stocks together with those who want to sell stocks. "
  									},
  									"val": "3",
  									"columns": 2
@@ -1547,8 +1547,8 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "Anleihen",
- 								"en": "Bonds"
+ 								"de": "Aktien",
+ 								"en": "Stocks"
  							},
  							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
@@ -1556,8 +1556,8 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "Aktien",
- 								"en": "Stocks"
+ 								"de": "Anleihen",
+ 								"en": "Bonds"
  							},
  							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
@@ -2335,7 +2335,7 @@
  							"css_label": "special-line-height-higher special-input-margin-vertical",
  							"col_span_label": 2,
  							"col_span_control": 1,
- 							"validator": "inRange100"
+ 							"validator": "inRange1000"
  						},
  						{
  							"name": "minutes_100_widgets",
@@ -2404,7 +2404,7 @@
  							"type": "textblock",
  							"description": {
  								"de": "xxx",
- 								"en": "Not at all will\u0026shy;ing to take risks"
+ 								"en": "1. Not at all will\u0026shy;ing to take risks"
  							},
  							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
@@ -2413,7 +2413,7 @@
  							"type": "textblock",
  							"description": {
  								"de": " \u0026nbsp; ",
- 								"en": " \u0026nbsp; "
+ 								"en": "2. \u0026nbsp; "
  							},
  							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
@@ -2422,7 +2422,7 @@
  							"type": "textblock",
  							"description": {
  								"de": " \u0026nbsp; ",
- 								"en": " \u0026nbsp; "
+ 								"en": "3.  \u0026nbsp; "
  							},
  							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
@@ -2431,7 +2431,7 @@
  							"type": "textblock",
  							"description": {
  								"de": " \u0026nbsp; ",
- 								"en": " \u0026nbsp; "
+ 								"en": "4.  \u0026nbsp; "
  							},
  							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
@@ -2440,7 +2440,7 @@
  							"type": "textblock",
  							"description": {
  								"de": " \u0026nbsp; ",
- 								"en": " \u0026nbsp; "
+ 								"en": "5.  \u0026nbsp; "
  							},
  							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
@@ -2449,7 +2449,7 @@
  							"type": "textblock",
  							"description": {
  								"de": " \u0026nbsp; ",
- 								"en": " \u0026nbsp; "
+ 								"en": "6.  \u0026nbsp; "
  							},
  							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
@@ -2458,7 +2458,7 @@
  							"type": "textblock",
  							"description": {
  								"de": "xxx",
- 								"en": "Very will\u0026shy;ing to take risks"
+ 								"en": "7. Very will\u0026shy;ing to take risks"
  							},
  							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
@@ -2683,7 +2683,7 @@
  							"type": "radiogroup",
  							"description": {
  								"de": "xxx",
- 								"en": "I wish I had more self discipline (R)"
+ 								"en": "I wish I had more self discipline"
  							},
  							"css_label": "special-input-margin-vertical special-line-height-higher",
  							"col_span_label": 3,
@@ -2724,7 +2724,7 @@
  							"type": "radiogroup",
  							"description": {
  								"de": "xxx",
- 								"en": "Pleasure and fun sometimes keep me from getting work done (R)"
+ 								"en": "Pleasure and fun sometimes keep me from getting work done"
  							},
  							"css_label": "special-input-margin-vertical special-line-height-higher",
  							"col_span_label": 3,
@@ -2765,7 +2765,7 @@
  							"type": "radiogroup",
  							"description": {
  								"de": "xxx",
- 								"en": "I have trouble concentrating (R)"
+ 								"en": "I have trouble concentrating"
  							},
  							"css_label": "special-input-margin-vertical special-line-height-higher",
  							"col_span_label": 3,
@@ -2847,7 +2847,7 @@
  							"type": "radiogroup",
  							"description": {
  								"de": "xxx",
- 								"en": "Sometimes I cant stop myself from doing something, even if I know it is wrong (R)"
+ 								"en": "Sometimes I cant stop myself from doing something, even if I know it is wrong"
  							},
  							"css_label": "special-input-margin-vertical special-line-height-higher",
  							"col_span_label": 3,
@@ -2888,7 +2888,7 @@
  							"type": "radiogroup",
  							"description": {
  								"de": "xxx",
- 								"en": "I often act without thinking through the alternatives (R)"
+ 								"en": "I often act without thinking through the alternatives"
  							},
  							"css_label": "special-input-margin-vertical special-line-height-higher",
  							"col_span_label": 3,

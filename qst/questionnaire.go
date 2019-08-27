@@ -452,7 +452,7 @@ type groupT struct {
 	Vertical bool `json:"vertical,omitempty"` // groups vertically, not horizontally, not yet implemented
 
 	OddRowsColoring bool `json:"odd_rows_coloring,omitempty"` // color odd rows
-	Width           int  `json:"width"`                       // default is 100 percent
+	Width           int  `json:"width,omitempty"`             // default is 100 percent
 
 	// Number of vertical columns;
 	// for horizontal *and* (not yet implemented) vertical layouts;

@@ -15,11 +15,12 @@ import (
 	"net/http"
 	"net/url"
 	"os"
-	"path/filepath"
+	"path"
 	"strings"
 	"time"
 
 	"github.com/zew/go-questionnaire/cfg"
+	"github.com/zew/go-questionnaire/cloudio"
 	"github.com/zew/go-questionnaire/lgn"
 	"github.com/zew/go-questionnaire/qst"
 	"github.com/zew/util"
@@ -66,7 +67,7 @@ func Example() RemoteConnConfigT {
 	r.WaveID = qst.NewSurvey(r.SurveyType).WaveID()
 	r.WaveID = "2018-08"
 
-	r.DownloadDir = filepath.Join(qst.BasePath(), "downloaded")
+	r.DownloadDir = path.Join(qst.BasePath(), "downloaded")
 
 	return r
 }
@@ -107,7 +108,17 @@ func main() {
 	rand.Seed(time.Now().UTC().UnixNano())
 	log.SetFlags(log.Lshortfile | log.Ldate | log.Ltime)
 
-	// We need basic config and logins structures.
+	// For database files, static files and templates relative paths to work,
+	// as if running from main app dir:
+	err := os.Chdir("..")
+	if err != nil {
+		log.Fatalf("Error - cannot 'cd' to main app dir: %v", err)
+	}
+	// if doChDirUp {
+	// }
+
+	// We need config and logins
+	// for main app at least initialized
 	// See below.
 	{
 		//
@@ -120,16 +131,62 @@ func main() {
 		cf.Loc = time.FixedZone("UTC", 1*3600) // cf.Loc is needed below
 		// cf.URLPathPrefix is needed for cfg.Pref() properly working
 		// It is set later from transferrer config
-		cf.Save("config-autogen.json")
-		cfg.CfgPath = "config-autogen.json"
-		cfg.Load()
 
-		// logins data is directly read from file
-		// It only contains the remote salt
-		// required to create form request tokens
-		lgn.LgnsPath = "logins-remote-salt.json"
-		lgn.Load()
+		pthAutogen := path.Join("/transferrer", "config-autogen.json")
+		cloudio.MarshalWriteFile(&cf, pthAutogen)
+		cfg.CfgPath = pthAutogen
+
+		fileName := cfg.CfgPath
+		r, bucketClose, err := cloudio.Open(fileName)
+		if err != nil {
+			log.Fatalf("Error opening writer to %v: %v", fileName, err)
+		}
+		defer func() {
+			err := r.Close()
+			if err != nil {
+				log.Printf("Error closing writer to bucket to %v: %v", fileName, err)
+			}
+		}()
+		defer func() {
+			err := bucketClose()
+			if err != nil {
+				log.Printf("Error closing bucket of writer to %v: %v", fileName, err)
+			}
+		}()
+		log.Printf("Opened reader to cloud config %v", fileName)
+		cfg.Load(r)
 	}
+
+	// logins data is directly read from file
+	// It only contains the remote salt
+	// required to create form request tokens
+	lgn.LgnsPath = path.Join("/transferrer", "logins-remote-salt.json")
+	{
+		fileName := lgn.LgnsPath
+		r, bucketClose, err := cloudio.Open(fileName)
+		if err != nil {
+			log.Fatalf("Error opening writer to %v: %v", fileName, err)
+		}
+		defer func() {
+			err := r.Close()
+			if err != nil {
+				log.Printf("Error closing writer to bucket to %v: %v", fileName, err)
+			}
+		}()
+		defer func() {
+			err := bucketClose()
+			if err != nil {
+				log.Printf("Error closing bucket of writer to %v: %v", fileName, err)
+			}
+		}()
+		log.Printf("Opened reader to cloud config %v", fileName)
+		lgn.Load(r)
+
+		cloudio.MarshalWriteFile(lgn.Example(), path.Join("/transferrer", "logins-example.json"))
+
+	}
+
+	return
 
 	// The actual config for *this* app:
 	fl := util.NewFlags()
@@ -271,8 +328,8 @@ func main() {
 			return
 		}
 
-		dir := filepath.Join(c2.DownloadDir, c2.SurveyType, c2.WaveID)
-		dirEmpty := filepath.Join(dir, "empty")
+		dir := path.Join(c2.DownloadDir, c2.SurveyType, c2.WaveID)
+		dirEmpty := path.Join(dir, "empty")
 		err = os.MkdirAll(dirEmpty, 0755)
 		if err != nil {
 			log.Printf("Could not create path 2 %v", dir)
@@ -309,7 +366,7 @@ func main() {
 
 			md5Want := q.MD5
 
-			pth2 := filepath.Join(dir, q.UserID)
+			pth2 := path.Join(dir, q.UserID)
 			err := q.Save1(pth2)
 			if err != nil {
 				log.Printf("%3v: Error saving %v: %v", i, pth2, err)
@@ -325,14 +382,14 @@ func main() {
 			if realEntries == 0 {
 				log.Printf("%3v: %v. No answers given, skipping.", i, pth2)
 				pth2a := pth2 + ".json"
-				pthEmpty := filepath.Join(dirEmpty, q.UserID+".json")
+				pthEmpty := path.Join(dirEmpty, q.UserID+".json")
 				err := os.Rename(pth2a, pthEmpty)
 				if err != nil {
 					log.Printf("%3v: Error moving %v to %v - %v", i, pth2a, pthEmpty, err)
 				}
 				continue
 			} else {
-				pthEmpty := filepath.Join(dirEmpty, q.UserID+".json")
+				pthEmpty := path.Join(dirEmpty, q.UserID+".json")
 				if _, err := os.Stat(pthEmpty); err == nil {
 					err := os.Remove(pthEmpty)
 					if err != nil {

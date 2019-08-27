@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"log"
 
+	"github.com/zew/go-questionnaire/ctr"
 	"github.com/zew/go-questionnaire/qst"
 	"github.com/zew/go-questionnaire/tpl"
 	"github.com/zew/go-questionnaire/trl"
@@ -11,6 +12,8 @@ import (
 
 // Create creates a JSON file for a financial markets survey
 func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
+
+	ctr.Reset()
 
 	q := qst.QuestionnaireT{}
 	q.Survey = qst.NewSurvey("fmt")

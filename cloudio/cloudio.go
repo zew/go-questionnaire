@@ -29,6 +29,7 @@ import (
 	"path/filepath"
 	"strings"
 
+	"cloud.google.com/go/storage"
 	"github.com/pkg/errors"
 	"gocloud.dev/blob"
 	_ "gocloud.dev/blob/fileblob" // local file system
@@ -44,8 +45,6 @@ func IsNotExist(err error) bool {
 }
 
 func prepareLocalDir() error {
-	// bucketDir := cfg.Get().StorageDriverURL
-	// bucketDir = strings.TrimPrefix(bucketDir, "file:///")
 	bucketDir := filepath.Join(".", "app-bucket")
 	if err := os.MkdirAll(filepath.Join(".", bucketDir), 0755); err != nil {
 		return err // MkdirAll does not report "already exists" as error
@@ -59,8 +58,13 @@ func bucketLocal() (*blob.Bucket, error) {
 		return nil, err
 	}
 	ctx := context.Background()
+
+	wd, err := os.Getwd()
+	if err != nil {
+		return nil, err
+	}
+	storageDriverURL := fmt.Sprintf("file:///%s", filepath.Join(wd, "app-bucket")+"/") // relative directory not working on travis - but on appengine and windows
 	// storageDriverURL := cfg.Get().StorageDriverURL
-	storageDriverURL := fmt.Sprintf("file:///%s", filepath.Join(".", "app-bucket"))
 	bucket, err := blob.OpenBucket(ctx, storageDriverURL)
 	if err != nil {
 		return nil, fmt.Errorf("could not open local bucket for %v: %v", storageDriverURL, err)
@@ -178,7 +182,9 @@ func ReadFile(fileName string) (bts []byte, err error) {
 	// Reader of "filename" in bucket
 	r, err := buck.NewReader(ctx, fileName, nil)
 	if err != nil {
-		log.Printf("Error opening writer to bucket: %v", err)
+		if !IsNotExist(err) {
+			log.Printf("Error opening writer to bucket: %v", err)
+		}
 		return
 	}
 	defer func() {
@@ -359,4 +365,85 @@ func Delete(fileName string) error {
 	}
 	log.Printf("File %v successfully deleted from bucket", fileName)
 	return nil
+}
+
+//
+//
+// ReadDir preparation
+var beforeList = func(as func(interface{}) bool) error {
+	var q *storage.Query
+	if as(&q) { // access storage.Query via q here.
+		log.Printf("beforeFunc(): delim - pref - versions: %v %v %#v", q.Delimiter, q.Prefix, q.Versions)
+	} else {
+		log.Printf("beforeFunc(): no response to %T", as)
+	}
+	return nil
+}
+
+var list func(context.Context, *blob.Bucket, string, int, int, *[]*blob.ListObject) //
+
+func init() {
+	/*
+		list() lists files in buck starting with prefix.
+		list() recurses into "directories" delimited by "/",
+		It is is strongly consistent, but is not guaranteed to work on all services.
+
+		Usage
+		ret := &[]*blob.ListObject{}
+		list(ctx, buck, "", 0,0, ret)
+	*/
+	list = func(ctx context.Context, buck *blob.Bucket, prefix string, indent, maxIndent int, results *[]*blob.ListObject) {
+		iter := buck.List(
+			&blob.ListOptions{
+				Delimiter:  "/",
+				Prefix:     prefix,
+				BeforeList: beforeList,
+			})
+		for {
+			obj, err := iter.Next(ctx)
+			if err == io.EOF {
+				break
+			}
+			if err != nil {
+				log.Printf("Error iterating with Next(): %v", err)
+				break
+			}
+			fmt.Printf("%s%s\n", strings.Repeat("    ", indent), obj.Key)
+			*results = append(*results, obj)
+			if obj.IsDir && indent < maxIndent {
+				list(ctx, buck, obj.Key, indent+1, maxIndent, results)
+			}
+		}
+	}
+}
+
+// ReadDir is similar to osutil.ReadDir but returns ListObjects instead of FileInfos
+func ReadDir(prefix string) (*[]*blob.ListObject, error) {
+	ctx := context.Background()
+	var buck *blob.Bucket
+	var errSec error
+
+	// ret := []os.FileInfo{}
+	ret := &[]*blob.ListObject{}
+
+	if !strings.HasSuffix(prefix, "/") {
+		prefix += "/"
+	}
+
+	buck, err := bucket()
+	if err != nil {
+		log.Printf("Error opening bucket for file deletion: %v", err)
+		return ret, err
+	}
+	defer func() {
+		errSec = buck.Close()
+		if errSec != nil {
+			err = errors.Wrap(err, errSec.Error())
+			log.Printf("Error closing bucket for file deletion: %v", errSec)
+		}
+	}()
+
+	list(ctx, buck, prefix, 0, 0, ret)
+	return ret, nil
+
 }

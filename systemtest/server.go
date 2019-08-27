@@ -52,9 +52,11 @@ func StartTestServer(t *testing.T, doChDirUp bool) {
 		mux1.HandleFunc(cfg.Pref("/"), handlers.MainH)
 		mux1.HandleFunc(cfg.PrefTS("/"), handlers.MainH)
 		mux2 := muxwrap.NewHandlerMiddleware(mux1)
-		sessx.Mgr().Lifetime = 2 * time.Hour // default is 24 hours
-		sessx.Mgr().Cookie.Persist = false
-		mux3 := sessx.Mgr().LoadAndSave(mux2)
+
+		sessx.Mgr().Secure(true)            // true breaks session persistence in excel-db - but not in go-countdown
+		sessx.Mgr().Lifetime(2 * time.Hour) // default is 24 hours
+		sessx.Mgr().Persist(false)
+		mux3 := sessx.Mgr().Use(mux2)
 
 		IPPort := fmt.Sprintf("%v:%v", cfg.Get().BindHost, cfg.Get().BindSocket)
 		t.Logf("starting http server at %v ...", IPPort)

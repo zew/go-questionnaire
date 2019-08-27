@@ -3,6 +3,7 @@ package example
 import (
 	"fmt"
 
+	"github.com/zew/go-questionnaire/ctr"
 	"github.com/zew/go-questionnaire/qst"
 	"github.com/zew/go-questionnaire/trl"
 )
@@ -10,6 +11,9 @@ import (
 // Create creates an minimal example questionnaire with a few pages and inputs.
 // It is saved to disk as an example.
 func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
+
+	ctr.Reset()
+
 	q := qst.QuestionnaireT{}
 	q.Survey = qst.NewSurvey("example")
 	q.Survey.Params = params

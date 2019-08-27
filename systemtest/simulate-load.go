@@ -12,14 +12,13 @@ import (
 	"log"
 	"net/http"
 	"net/url"
-	"os"
 	"path"
-	"path/filepath"
 	"strings"
 	"testing"
 	"time"
 
 	"github.com/zew/go-questionnaire/cfg"
+	"github.com/zew/go-questionnaire/cloudio"
 	"github.com/zew/go-questionnaire/ctr"
 	"github.com/zew/go-questionnaire/lgn"
 	"github.com/zew/go-questionnaire/qst"
@@ -32,26 +31,32 @@ func main() {
 
 }
 
-func removeSystemtestJSON(t *testing.T) {
-	err := filepath.Walk(filepath.Join(".", "responses"), func(path string, f os.FileInfo, err error) error {
-		base := filepath.Base(path)
-		if base == "systemtest.json" || base == "systemtest_src.json" {
-			log.Printf("Removing %v", path)
-			os.Remove(path)
-		}
-		return nil
-	})
-	if err != nil {
-		t.Fatal(err)
+func removeSystemtestJSON(t *testing.T, qSrc *qst.QuestionnaireT) {
+
+	clientPth := strings.Replace(qSrc.FilePath1(), "systemtest.json", "systemtest_src.json", -1)
+
+	t.Logf("Deleting %v and 'systemtest_src.json' ", qSrc.FilePath1())
+
+	err := cloudio.Delete(clientPth)
+	if err != nil && !cloudio.IsNotExist(err) {
+		t.Logf("Could not delete %v: %v", clientPth, err)
 	}
+	err = cloudio.Delete(qSrc.FilePath1())
+	if err != nil && !cloudio.IsNotExist(err) {
+		t.Logf("Could not delete %v: %v", qSrc.FilePath1(), err)
+	}
+
 }
 
-func clientPageToServer(t *testing.T, q *qst.QuestionnaireT, idxPage int, urlMain string, sessCook *http.Cookie) {
+func clientPageToServer(t *testing.T, clQ *qst.QuestionnaireT, idxPage int, urlMain string, sessCook *http.Cookie) {
 
 	ctr.Reset()
 
+	// values from ctr.IncrementStr() are stored into clQ (client questionnaire)
+	// and POSTed to the server
+
 	vals := url.Values{}
-	for i1, p := range q.Pages {
+	for i1, p := range clQ.Pages {
 		if i1 != idxPage {
 			continue
 		}
@@ -63,12 +68,13 @@ func clientPageToServer(t *testing.T, q *qst.QuestionnaireT, idxPage int, urlMai
 					continue
 				}
 				vals.Set(inp.Name, ctr.IncrementStr())
-				q.Pages[i1].Groups[i2].Inputs[i3].Response = ctr.GetLastStr()
+				clQ.Pages[i1].Groups[i2].Inputs[i3].Response = ctr.GetLastStr()
 				log.Printf("Input %12v set to value %2v ", inp.Name, ctr.GetLastStr())
 			}
 		}
 	}
-	t.Logf("POST requesting %v?\n%v", urlMain, strings.Replace(vals.Encode(), "submitBtn=next&token="+lgn.FormToken(), "...", -1))
+	tmp := strings.Replace(vals.Encode(), "submitBtn=next&token="+lgn.FormToken(), "...", -1)
+	t.Logf("POST requesting %v?%v", urlMain, util.UpTo(tmp, 60))
 	t1 := time.Now()
 	resp, err := util.Request("POST", urlMain, vals, []*http.Cookie{sessCook})
 	if err != nil {
@@ -76,10 +82,10 @@ func clientPageToServer(t *testing.T, q *qst.QuestionnaireT, idxPage int, urlMai
 	}
 	t2 := time.Now()
 	dur := t2.Sub(t1).Nanoseconds() / 1000 / 1000
-	t.Logf("%9v ms request roundtrip", dur)
+	t.Logf("request roundtrip %9v ms", dur)
 
 	t3 := time.Now().Add(-15 * time.Millisecond).Truncate(time.Second)
-	q.Pages[idxPage].Finished = t3
+	clQ.Pages[idxPage].Finished = t3
 
 	_ = resp
 	// respStr := string(resp)
@@ -92,61 +98,61 @@ func clientPageToServer(t *testing.T, q *qst.QuestionnaireT, idxPage int, urlMai
 // with the "server" version.
 func FillQuestAndComparesServerResult(t *testing.T, qSrc *qst.QuestionnaireT, urlMain string, sessCook *http.Cookie) {
 
-	var clientQuest = &qst.QuestionnaireT{}
+	var clQ = &qst.QuestionnaireT{}
 	var err error
 	pthBase := path.Join(qst.BasePath(), qSrc.Survey.Type+".json")
-	clientQuest, err = qst.Load1(pthBase)
+
+	// creating client quest from scratch
+	clQ, err = qst.Load1(pthBase)
 	if err != nil {
 		t.Fatalf("Client questionnaire loading from file failed: %v", err)
 	}
-	clientQuest, err = clientQuest.Split()
+	clQ, err = clQ.Split()
 	if err != nil {
 		t.Fatalf("Client questionnaire splitting failed: %v", err)
 	}
-	clientQuest.Survey = qSrc.Survey
-	clientQuest.UserID = "systemtest"
-	clientQuest.RemoteIP = "127.0.0.1:12345"
-	clientQuest.CurrPage = 777 // hopeless to mimic every server side setting
-	err = clientQuest.Validate()
+	clQ.Survey = qSrc.Survey
+	for i := 0; i < len(clQ.Pages); i++ {
+		clQ.Pages[i].Finished = time.Now()
+	}
+	clQ.UserID = "systemtest"
+	clQ.RemoteIP = "127.0.0.1:12345"
+	clQ.CurrPage = 777 // hopeless to mimic every server side setting
+	err = clQ.Validate()
 	if err != nil {
 		t.Fatalf("Client questionnaire validation caused error: %v", err)
 	}
-	t.Logf("Client questionnaire loaded from file; %v pages", len(clientQuest.Pages))
+	t.Logf("Client questionnaire loaded from file; %v pages", len(clQ.Pages))
+
+	// After UserID have been set => deletion possible
+	removeSystemtestJSON(t, clQ)
+	defer removeSystemtestJSON(t, clQ)
 
 	//
 	// Doing load
-	for idx := range clientQuest.Pages {
-		clientPageToServer(t, clientQuest, idx, urlMain, sessCook)
+	for idx := range clQ.Pages {
+		clientPageToServer(t, clQ, idx, urlMain, sessCook)
 	}
+
+	clientPth := strings.Replace(clQ.FilePath1(), "systemtest.json", "systemtest_src.json", -1)
 
 	//
 	// Comparing client questionnaire to server questionnaire
-	clientPth := strings.Replace(clientQuest.FilePath1(), "systemtest.json", "systemtest_src.json", -1)
-	clientQuest.Split()
-	clientQuest.Save1(clientPth)
-	serverQuest, err := qst.Load1(clientQuest.FilePath1()) // new from template
+	clQ.Split()
+	clQ.Save1(clientPth)
+	srvQ, err := qst.Load1(clQ.FilePath1()) // new from template
 	if err != nil {
 		t.Fatalf("Loading questionnaire from file caused error: %v", err)
 	}
 
-	t.Logf("clientQuest and serverQuest saved: \n\t%v \n\t%v  ", clientPth, serverQuest.FilePath1())
+	t.Logf("clientQst saved to %v  - server %v", clientPth, srvQ.FilePath1())
 
-	equal, err := clientQuest.Compare(serverQuest, false)
+	equal, err := clQ.Compare(srvQ, false)
 	if !equal {
-
-		clientPthFail := strings.Replace(clientPth, ".json", "_FAIL.json", -1)
-		os.Remove(clientPthFail)
-		os.Rename(clientPth, clientPthFail)
-		serverPthFail := strings.Replace(serverQuest.FilePath1(), ".json", "_FAIL.json", -1)
-		os.Remove(serverPthFail)
-		os.Rename(serverQuest.FilePath1(), serverPthFail)
-
-		t.Logf("Delete older versions of systemtest.json")
-		t.Fatalf("Questionnaires are unequal: %v", err)
+		t.Fatalf("%22s - questionnaires are unequal: %v \n\t%v\n\t%v", clQ.Survey.String(), err, clQ.FilePath1(), srvQ.FilePath1())
 	} else {
-		t.Logf("clientQuest and serverQuest EQUAL")
-		t.Logf("=================================")
-		t.Logf("   ")
+		t.Logf("==================================================")
+		t.Logf("clientQst and srvQst are EQUAL for %v", clQ.Survey.String())
 	}
 
 }
@@ -156,25 +162,21 @@ func FillQuestAndComparesServerResult(t *testing.T, qSrc *qst.QuestionnaireT, ur
 func SimulateLoad(t *testing.T, qSrc *qst.QuestionnaireT,
 	loginURI, mobile string) {
 
-	removeSystemtestJSON(t)
-	defer removeSystemtestJSON(t)
-
 	port := cfg.Get().BindSocket
 	host := fmt.Sprintf("http://localhost:%v", port)
 
 	urlLogin := host + loginURI
-	t.Logf("url login  %v", urlLogin)
+	// t.Logf("url login  %v", urlLogin)
 
 	urlMain := host + cfg.Pref()
-	t.Logf("url main   %v", urlMain)
+	// t.Logf("url main   %v", urlMain)
 
 	//
 	// Login and save session cookie
 	var sessCook *http.Cookie
 	{
-		t.Logf(" ")
-		t.Logf("Getting cookie")
-		t.Logf("==================")
+		t.Logf("\nGetting cookie for %v mobile %v", qSrc.Survey.String(), mobile)
+		t.Logf("================================")
 		urlReq := urlLogin
 
 		vals := url.Values{}

@@ -1,6 +1,6 @@
 <img src="./static/img/doc/mascot/mascot.png" style="float: left; width:8%; min-width: 140px; max-width: 20%; margin-right:5%; margin-bottom: 2%;">
 
-[ ![GoDoc](http://godoc.org/github.com/zew/go-questionnaire?status.svg)          ](https://godoc.org/github.com/zew/go-questionnaire) [ ![Travis Build](https://travis-ci.org/zew/go-questionnaire.svg?branch=master)  ](https://travis-ci.org/zew/go-questionnaire) [ ![Report Card](https://goreportcard.com/badge/github.com/zew/go-questionnaire) ](https://goreportcard.com/report/github.com/zew/go-questionnaire) [ ![code-coverage](http://gocover.io/_badge/github.com/zew/go-questionnaire) ](http://gocover.io/github.com/zew/go-questionnaire) 
+[ ![GoDoc](http://godoc.org/github.com/zew/go-questionnaire?status.svg)          ](https://godoc.org/github.com/zew/go-questionnaire) [ ![Travis Build](https://travis-ci.org/zew/go-questionnaire.svg?branch=master)  ](https://travis-ci.org/zew/go-questionnaire) [ ![Report Card](https://goreportcard.com/badge/github.com/zew/go-questionnaire) ](https://goreportcard.com/report/github.com/zew/go-questionnaire) [ ![code-coverage](https://gocover.io/_badge/github.com/zew/go-questionnaire) ](https://gocover.io/github.com/zew/go-questionnaire) 
 
 <!-- 
 <div >&nbsp;</div>
@@ -220,9 +220,9 @@ Open in browser
 
     gcloud app browse
 
-[QR Code](http://financial-literacy-test.appspot.com/img/ui/qr.png)
+[Anonymous ID example](https://financial-literacy-test.appspot.com/create-anonymous-id)
 
-[Anonymous login](https://financial-literacy-test.appspot.com/create-anonymous-id)
+[QR code example](http://financial-literacy-test.appspot.com/img/ui/qr.png)
 
 #### URLs
 
@@ -249,7 +249,10 @@ Open in browser
 * Package `lgn` contains three authentication schemes for participants.  
   * Regular login via username and password.
   * Login via URL parameters for user ID, survey ID, wave ID and profile ID plus hash.
-  * Login via [hash id](https://hashids.org) with above parameters configured in `directLoginRanges`.  
+  * Login via [hash ID](https://hashids.org) with above parameters configured in `directLoginRanges`.  
+  * Login via anonymous ID [(example)](https://financial-literacy-test.appspot.com/create-anonymous-id) -  
+   with above parameters configured in `directLoginRanges`.  
+   The anonymous ID is converted into an integer, which is encoded as a hash ID
   Profiles are configures key-value sets who are copied into the logged-in user's attributes.  
   This way any number of user properties can be specified, while the login URL remains short or ultra short.
 
@@ -482,6 +485,10 @@ It features
 * Shell script to control application under Linux
 
 * [Dockerfile](https://en.wikipedia.org/wiki/Docker_%28software%29) to deploy on modern cloud servers
+
+* The package cloudio is a convenience wrapper around [Gocloud blob](https://godoc.org/gocloud.dev/blob)  
+The entire persistence layer is moved from ioutil... to cloudio...  
+Thus the application can be hosted by cloud providers with buckets or on classical webservers.
 
 ## Technical design guidelines
 

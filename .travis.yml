@@ -3,7 +3,7 @@ language: go
 go:
   # go 1.10.x does no longer work because of Alex Edwards scs go getting...
   # - 1.10.2 
-  - 1.11
+  # - 1.11
   - 1.12
   # - tip
 
@@ -24,21 +24,21 @@ addons:
   
 env:
   matrix:
-    - DATASOURCE1=travis SQL_PW="" 
+    - DATASOURCE1=travis   SQL_PW=""    GO111MODULE=on 
 
 before_install:
   # - go get -v github.com/golang/lint/golint
 
 
 install:
-  # Add Godeps dependencies to GOPATH and PATH
+  # Adding Godeps dependencies to GOPATH and PATH
   # - export GOPATH="${TRAVIS_BUILD_DIR}/Godeps/_workspace:$GOPATH"
   # - export PATH="${TRAVIS_BUILD_DIR}/Godeps/_workspace/bin:$PATH"
-  # - go get -t ./...  
   # - go get -u github.com/zew/go-questionnaire
   - go get -t ./...  
-  - mv logins-example.json  logins.json
-  - mv config-example.json  config.json
+  - chmod 777 app-bucket
+  - mv app-bucket/config-example.json  app-bucket/config.json
+  - mv app-bucket/logins-example.json  app-bucket/logins.json
   - touch ./templates/site.css
 
 before_script:
@@ -46,6 +46,8 @@ before_script:
   # - go vet ./...
 
 script:
+  #- env GO111MODULE=on go build
+  #- env GO111MODULE=on go test
   - go test -v ./...
 
 notifications:

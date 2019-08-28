@@ -1,7 +1,7 @@
 // Package lgn implements an internal login database;
 // users are stored in a JSON file;
 // contains convenience handlers for user retrieval and password change;
-// contains login by hashed url and login by hash id;
+// contains login by hashed URL and login by hash ID;
 // contains profiles - groups of attributes for users.
 // Filename must be given as command line argument
 // or environment variable.
@@ -41,7 +41,7 @@ var exempted = map[string]interface{}{
 	"lang_code": nil,
 	// the hash itself
 	"h": nil,
-	// "attrs": nil, // user attributes at login time - must be hashed to prevent
+	// "attrs": nil, // user attributes at login time - must be hashed to prevent tampering
 	"skip_validation": nil,
 }
 

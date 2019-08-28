@@ -78,7 +78,7 @@ type ConfigT struct {
 
 // CfgPath is obtained by ENV variable or command line flag in main package.
 // Being set from the main package.
-// Holds the relative path and filename to look for; could be ".cfg/config.json".
+// Holds the relative path and filename to look for; could be "./cfg/config.json".
 // Relative to the app main dir.
 var CfgPath = filepath.Join(".", "config.json")
 
@@ -153,9 +153,10 @@ func Load(r io.Reader) {
 
 // Pref prefixes a URL path with an application dir prefix.
 // Any URL Path is prefixed with the URLPathPrefix, if URLPathPrefix is set.
+//
 // Prevents unnecessary slashes.
-// No trailing slash
-// Routes with trailing "/" such as "/path/"
+//
+// No trailing slash; routes with trailing "/" such as "/path/"
 // get a redirect "/path" => "/path/" if "/path" is not registered yet.
 // This behavior of func server.go - (mux *ServeMux) Handle(...) is nasty
 // since it depends on the ORDER of registrations.

@@ -212,6 +212,8 @@ Returns ReadCloser for the blob/file and bucketCloser() for the underlying bucke
 
 No memory allocation
 
+Example
+
     fileName := "config.json"
     r, bucketClose, err := cloudio.Open(fileName)
     if err != nil {
@@ -294,7 +296,7 @@ func OpenAny(fileName string, optSubdirs ...string) (r io.ReadCloser, bucketClos
 	return
 }
 
-// MarshalWriteFile is like WriteFile - but marshals to JSON first
+// MarshalWriteFile is like WriteFile - but marshals to JSON first;
 // allocates contents of intf into []byte slice
 func MarshalWriteFile(intf interface{}, fileName string) error {
 

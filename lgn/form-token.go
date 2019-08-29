@@ -12,12 +12,15 @@ import (
 
 var tokenSaltNotWorking = GeneratePassword(22) // not interoperational between multiple instances of go-questionnaire, transferrer, generator
 
+// set timezone to a constant - this is important for client-server talks, e.g. appengine frankfurt runs on different zone
+var fixedLocation = time.FixedZone("UTC_-2", -2*60*60)
+
 // tok rounds time to hours
 // and computes a hash from it
 func tok(hoursOffset int) string {
 	hasher := md5.New()
 	io.WriteString(hasher, lgns.Salt)
-	t := time.Now()
+	t := time.Now().In(fixedLocation)
 	if hoursOffset != 0 {
 		t = t.Add(time.Duration(hoursOffset) * time.Hour)
 	}

@@ -9,11 +9,11 @@ import (
 	"path"
 	"time"
 
+	"github.com/zew/go-questionnaire/cloudio"
 	"github.com/zew/go-questionnaire/qst"
 
 	"github.com/zew/go-questionnaire/lgn"
 	"github.com/zew/go-questionnaire/sessx"
-	"github.com/zew/util"
 )
 
 // TransferrerEndpointH responds with finished questionnaires from the filesystem.
@@ -44,6 +44,8 @@ func TransferrerEndpointH(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	fetchAll, _ := sess.ReqParam("fetch_all")
+
 	surveyID, ok := sess.ReqParam("survey_id")
 	if !ok {
 		helper(w, r, nil, "You need to specify a survey_id parameter.")
@@ -55,36 +57,29 @@ func TransferrerEndpointH(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	pth := path.Join(qst.BasePath(), surveyID, waveID)
-	dir, err := util.Directory(pth)
-	if err != nil {
-		helper(w, r, err, "Your wave_id value pointed to a non existing directory.")
-		return
-	}
-	defer dir.Close()
 
-	fetchAll, _ := sess.ReqParam("fetch_all")
-
-	log.Printf("transferrer-endpoint-reading-directory %v", dir.Name())
-	infos, err := dir.Readdir(-1)
+	log.Printf("transferrer-endpoint-reading-directory %v", pth)
+	infos, err := cloudio.ReadDir(pth)
+	// infos, err := dir.Readdir(-1)
 	if err != nil {
 		helper(w, r, err, "Could not read directory.")
 		return
 	}
 
-	// qs := []*qst.QuestionnaireT{}
 	cntr := 0
 	btsCtr := 0
 	gz := gzip.NewWriter(w)
 	defer gz.Close()
 
 	gz.Write([]byte("["))
-	for i, info := range infos {
-		if info.Mode().IsRegular() {
+	for i, info := range *infos {
+		if !info.IsDir {
 			if i < 10 || i%50 == 0 {
-				log.Printf("iter %3v: Name: %v, Size: %v", i, info.Name(), info.Size())
+				log.Printf("iter %3v: Name: %v, Size: %v", i, info.Key, info.Size)
 			}
 		}
-		pth := path.Join(qst.BasePath(), surveyID, waveID, info.Name())
+		// pth := path.Join(qst.BasePath(), surveyID, waveID, info.Key)
+		pth := info.Key
 		// var q = &qst.QuestionnaireT{}
 		q, err := qst.Load1(pth)
 		if err != nil {
@@ -96,9 +91,9 @@ func TransferrerEndpointH(w http.ResponseWriter, r *http.Request) {
 		}
 
 		if q.ClosingTime.IsZero() && fetchAll == "" {
-			log.Printf("%v unfinished yet; %v", info.Name(), q.ClosingTime)
+			log.Printf("%v unfinished yet; %v", info.Key, q.ClosingTime)
 			if time.Now().Before(q.Survey.Deadline) {
-				log.Printf("%v not yet past global deadline => skipping", info.Name())
+				log.Printf("%v not yet past global deadline => skipping", info.Key)
 				continue
 			}
 		}

@@ -37,7 +37,7 @@ func getClient() *http.Client {
 // of the ordinary config
 type RemoteConnConfigT struct {
 	RemoteHost    string
-	BindSocket    int
+	BindSocket    string
 	URLPathPrefix string
 
 	AdminLogin string // Some admin account of the remote machine
@@ -54,51 +54,36 @@ func Example() RemoteConnConfigT {
 	r := RemoteConnConfigT{}
 	r.RemoteHost = "https://survey2.zew.de"
 	r.RemoteHost = "https://www.peu2018.eu"
+	r.RemoteHost = "https://financial-literacy-test.appspot.com"
 
-	r.BindSocket = 443
-	r.URLPathPrefix = "taxdb"
+	r.BindSocket = "443"
+	r.URLPathPrefix = "survey"
 
-	r.AdminLogin = "login"
-	r.Pass = "secret"
+	r.AdminLogin = "transferrer"
+	r.Pass = "32-secret-8"
 
 	r.SurveyType = "fmt"
-	r.SurveyType = "peu2018"
+	r.SurveyType = "flit"
 
 	r.WaveID = qst.NewSurvey(r.SurveyType).WaveID()
-	r.WaveID = "2018-08"
+	r.WaveID = "2019-09"
 
-	r.DownloadDir = path.Join(qst.BasePath(), "downloaded")
+	r.DownloadDir = "dl"
 
 	return r
 }
 
-// Save writes a JSON file
-func (r *RemoteConnConfigT) Save(fn string) {
-	byts, err := json.MarshalIndent(r, " ", "\t")
-	util.BubbleUp(err)
-	err = ioutil.WriteFile(fn, byts, 0644)
-	util.BubbleUp(err)
-}
+// LoadRemote reads from an io.Reader
+// to avoid cyclical deps.
+func LoadRemote(r io.Reader) *RemoteConnConfigT {
 
-// Load loads a JSON file
-func Load(fn string) (r *RemoteConnConfigT) {
-	file, err := util.LoadConfigFile(fn)
-	if err != nil {
-		log.Fatalf("Could not load config file %v: %v", fn, err)
-	}
-	log.Printf("Found config file: %v", fn)
-	defer func() {
-		err := file.Close()
-		if err != nil {
-			log.Fatalf("Err closing config file %v: %v", fn, err)
-		}
-		log.Printf("Closed config file: %v", fn)
-	}()
-	decoder := json.NewDecoder(file)
+	log.Printf("Loading remote config...")
+
+	decoder := json.NewDecoder(r)
 	tempCfg := RemoteConnConfigT{}
-	err = decoder.Decode(&tempCfg)
+	err := decoder.Decode(&tempCfg)
 	if err != nil {
-		log.Fatal(err)
+		log.Fatalf("error decoding into RemoteConnConfigT: %v", err)
 	}
 	return &tempCfg
 }
@@ -108,18 +93,14 @@ func main() {
 	rand.Seed(time.Now().UTC().UnixNano())
 	log.SetFlags(log.Lshortfile | log.Ldate | log.Ltime)
 
-	// For database files, static files and templates relative paths to work,
-	// as if running from main app dir:
+	// we must change to main app dir, so that referring to ./app-bucket works
 	err := os.Chdir("..")
 	if err != nil {
 		log.Fatalf("Error - cannot 'cd' to main app dir: %v", err)
 	}
-	// if doChDirUp {
-	// }
 
 	// We need config and logins
 	// for main app at least initialized
-	// See below.
 	{
 		//
 		// We take a config;
@@ -186,15 +167,14 @@ func main() {
 
 	}
 
-	return
-
+	//
 	// The actual config for *this* app:
 	fl := util.NewFlags()
 	fl.Add(
 		util.FlagT{
 			Long:       "remote_file",
 			Short:      "rmt",
-			DefaultVal: "transferrer-remote.json",
+			DefaultVal: path.Join("/transferrer", "remote.json"),
 			Desc:       "JSON file containing connection to remote host",
 		},
 	)
@@ -202,14 +182,38 @@ func main() {
 
 	var c2 RemoteConnConfigT
 	c2 = Example()
-	c2.Save("transferrer-remote-example.json")
-	rmt := fl.ByKey("rmt").Val
-	c2 = *(Load(rmt))
+	cloudio.MarshalWriteFile(&c2, path.Join("/transferrer", "remote-example.json"))
+
+	{
+		rmt := fl.ByKey("rmt").Val
+		fileName := rmt
+		r, bucketClose, err := cloudio.Open(fileName)
+		if err != nil {
+			log.Fatalf("Error opening writer to %v: %v", fileName, err)
+		}
+		defer func() {
+			err := r.Close()
+			if err != nil {
+				log.Printf("Error closing writer to bucket to %v: %v", fileName, err)
+			}
+		}()
+		defer func() {
+			err := bucketClose()
+			if err != nil {
+				log.Printf("Error closing bucket of writer to %v: %v", fileName, err)
+			}
+		}()
+		log.Printf("Opened reader to cloud config %v", fileName)
+		c2 = *(LoadRemote(r))
+	}
 
 	// make cfg.Pref() work properly:
 	cfg.Get().URLPathPrefix = c2.URLPathPrefix
 
 	host := fmt.Sprintf("%v:%v", c2.RemoteHost, c2.BindSocket)
+	if c2.BindSocket == "" {
+		host = c2.RemoteHost
+	}
 	log.Printf("Remote host is: %v", host)
 
 	defer func() {
@@ -239,7 +243,11 @@ func main() {
 		vals.Set("username", c2.AdminLogin)
 		vals.Set("password", c2.Pass)
 		vals.Set("token", lgn.FormToken())
-		req, err := http.NewRequest("POST", urlReq, bytes.NewBufferString(vals.Encode())) // <-- URL-encoded payload
+		req, err := http.NewRequest(
+			"POST",
+			urlReq,
+			strings.NewReader(vals.Encode()), // <-- URL-encoded payload
+		)
 		if err != nil {
 			log.Printf("error creating request for %v: %v", urlReq, err)
 			return
@@ -258,7 +266,10 @@ func main() {
 		respBytes, _ := ioutil.ReadAll(resp.Body)
 		mustHave := fmt.Sprintf("Logged in as %v", c2.AdminLogin)
 		if !strings.Contains(string(respBytes), mustHave) {
-			log.Fatalf("Login response must contain '%v'\n%v\n%v\n\n%v", mustHave, urlReq, vals, string(respBytes))
+			log.Fatalf(
+				"Login response must contain '%v'\n%v\n%v\n\n%v",
+				mustHave, urlReq, vals, string(respBytes),
+			)
 		}
 
 		log.Printf("Cookie is %+v \ngleaned from %v", sessCook, req.URL)
@@ -328,22 +339,17 @@ func main() {
 			return
 		}
 
-		dir := path.Join(c2.DownloadDir, c2.SurveyType, c2.WaveID)
-		dirEmpty := path.Join(dir, "empty")
-		err = os.MkdirAll(dirEmpty, 0755)
-		if err != nil {
-			log.Printf("Could not create path 2 %v", dir)
-			return
-		}
+		dirFull := path.Join(c2.DownloadDir, c2.SurveyType, c2.WaveID)
+		dirEmpty := path.Join(dirFull, "empty")
 
 		qs := []*qst.QuestionnaireT{}
-		// err = json.Unmarshal(respBytes, &qs)
 		dec := json.NewDecoder(rdr1)
 		err = dec.Decode(&qs)
 		if err != nil {
 			log.Printf("Unmarshal %v", err)
 			return
 		}
+		log.Printf("Unmarshalled %v questionnaires from responese stream", len(qs))
 
 		//
 		//
@@ -362,40 +368,47 @@ func main() {
 			staticCols = append(staticCols, fmt.Sprintf("page_%v", iPg+1))
 		}
 
+		//
+		//
+		// Process questionnaires
 		for i, q := range qs {
 
-			md5Want := q.MD5
+			serverSideMD5 := q.MD5
 
-			pth2 := path.Join(dir, q.UserID)
-			err := q.Save1(pth2)
+			pthFull := path.Join(dirFull, q.UserID)
+			err := q.Save1(pthFull)
 			if err != nil {
-				log.Printf("%3v: Error saving %v: %v", i, pth2, err)
+				log.Printf("%3v: Error saving %v: %v", i, pthFull, err)
 				continue
 			}
 
-			if q.MD5 != md5Want {
-				log.Printf("%3v: MD5 does not match: %v\nwnt %v\ngot %v", i, pth2, md5Want, q.MD5)
-				continue
+			//
+			if q.MD5 != serverSideMD5 {
+				// log.Printf("%3v: MD5 does not match: %v\nwnt %v\ngot %v", i, pth2, md5BeforeSave, q.MD5)
+				log.Printf("%3v: Server side and new client side MD5 hashes do not match %v - %v", i, q.Survey.String(), pthFull)
 			}
 
+			//
+			//
+			// Delete empty questionnaires and save them elsewhere
+			pthEmpty := path.Join(dirEmpty, q.UserID+".json")
+			err = cloudio.Delete(pthEmpty)
+			if err != nil && !cloudio.IsNotExist(err) {
+				log.Printf("%3v: Error removing previously empty %v - %v", i, pthEmpty, err)
+			}
 			realEntries, _, _ := q.Statistics()
 			if realEntries == 0 {
-				log.Printf("%3v: %v. No answers given, skipping.", i, pth2)
-				pth2a := pth2 + ".json"
-				pthEmpty := path.Join(dirEmpty, q.UserID+".json")
-				err := os.Rename(pth2a, pthEmpty)
+				log.Printf("%3v: %v. No answers given, skipping, deleting, moving to %v.", i, pthFull, pthEmpty)
+				err = cloudio.Delete(pthFull)
+				if err != nil && !cloudio.IsNotExist(err) {
+					log.Printf("%3v: Error removing empty %v - %v", i, pthFull, err)
+				}
+
+				err := q.Save1(pthEmpty)
 				if err != nil {
-					log.Printf("%3v: Error moving %v to %v - %v", i, pth2a, pthEmpty, err)
+					log.Printf("%3v: Error saving  to empty %v: %v", i, pthEmpty, err)
 				}
 				continue
-			} else {
-				pthEmpty := path.Join(dirEmpty, q.UserID+".json")
-				if _, err := os.Stat(pthEmpty); err == nil {
-					err := os.Remove(pthEmpty)
-					if err != nil {
-						log.Printf("%3v: Error removing previously empty %v - %v", i, pthEmpty, err)
-					}
-				}
 			}
 
 			// Prepare columns...
@@ -425,7 +438,7 @@ func main() {
 		}
 		valsBySuperset := [][]string{}
 
-		log.Printf("%v keys superset; %v", len(allKeysSuperset), util.IndentedDump(allKeysSuperset))
+		// log.Printf("%v keys superset; %v", len(allKeysSuperset), util.IndentedDump(allKeysSuperset))
 		log.Printf("%v map  keys    ; %v", len(allKeysSSMap), util.IndentedDump(allKeysSSMap))
 		// log.Printf("%v", util.IndentedDump(allVals))
 
@@ -460,7 +473,8 @@ func main() {
 		if err := csvWtr.Error(); err != nil {
 			log.Printf("error flushing csv to response writer: %v", err)
 		}
-		err = ioutil.WriteFile("online-responses.csv", wtr.Bytes(), 0644)
+		fn := fmt.Sprintf("/dl/online-responses-%v-%v.csv", c2.SurveyType, c2.WaveID)
+		err = cloudio.WriteFile(fn, wtr, 0644)
 		if err != nil {
 			log.Printf("Could not write file: %v", err)
 		}

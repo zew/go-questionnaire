@@ -110,11 +110,12 @@ func main() {
 	//
 	// => Wrap the base router into an unconditional middleware
 	mux2 := muxwrap.NewHandlerMiddleware(mux1)
-	// => Wrap in mux2 in session manager
-	// sessx.Mgr().Secure(true)            // true breaks session persistence in excel-db - but not in go-countdown - it leads to sesson breakdown on iphone safari mobile
+
+	// sessx.Mgr().Secure(true)            // true breaks session persistence in excel-db - but not in go-countdown - it leads to sesson breakdown on iphone safari mobile, maybe because appengine is http with TLS outside
 	sessx.Mgr().Lifetime(2 * time.Hour) // default is 24 hours
 	sessx.Mgr().Persist(false)
 
+	// => Wrap in mux2 in session manager
 	mux3 := sessx.Mgr().Use(mux2)
 
 	//

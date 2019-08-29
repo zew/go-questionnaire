@@ -4,6 +4,7 @@
 package sessx
 
 import (
+	"crypto/rand"
 	"fmt"
 	"log"
 	"net/http"
@@ -17,10 +18,19 @@ import (
 	"github.com/alexedwards/scs/stores/memstore"    // fast, but sessions do not survive server restart
 )
 
-var key = "fG+sVjCMKEn6F7ANZLg5tXg9bzzvS!A3bx8" // lgn.GeneratePassword(35)
-var sessionManager1 = scs.NewManager(cookiestore.New([]byte(key)))
-var sessionManager2 = scs.NewManager(memstore.New(2 * time.Hour))
-var sessionManager = sessionManager2
+var secret = make([]byte, 32)
+
+func init() {
+	_, err := rand.Read(secret)
+	if err != nil {
+		log.Fatalf("error creating secret session manager %v", err)
+	}
+	cookieBased = scs.NewManager(cookiestore.New(secret))
+}
+
+var cookieBased = scs.NewManager(cookiestore.New(secret))
+var memoryOnly = scs.NewManager(memstore.New(2 * time.Hour))
+var sessionManager = memoryOnly
 
 // Mgr exposes the session manager
 func Mgr() *scs.Manager {

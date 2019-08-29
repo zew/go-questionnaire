@@ -161,7 +161,7 @@ additonal `pages`, `groups` and `inputs`.
 * `textarea` - multi line text input
 * `dropdown` - list of fixed choices
 * `checkbox` - yes/no input
-* `radiogroup`, `checkboxgroup` - fields of choices
+* `radiogroup`, `checkboxgroup` - fields of choices - helpers for horizontal and vertical display
 * `textblock` - block of text without input
 * `button` - submit button
 * `dynamic` - any input that depends on user properties or wave-specific data
@@ -220,10 +220,6 @@ Open in browser
 
     gcloud app browse
 
-[Anonymous ID example](https://financial-literacy-test.appspot.com/create-anonymous-id)
-
-[QR code example](http://financial-literacy-test.appspot.com/img/ui/qr.png)
-
 #### URLs
 
 * [Frontend](https://financial-literacy-test.appspot.com)
@@ -244,6 +240,9 @@ Open in browser
 
 * Package `qst` contains generic functions to create questionnaires.
 
+* Common proof functions in `qst` prevent duplicate question keys  
+ or missing translations.
+
 * Package `generators` _uses_ qst for creating specific questionnaires.  
 
 * Package `lgn` contains three authentication schemes for participants.  
@@ -252,23 +251,26 @@ Open in browser
   * Login via [hash ID](https://hashids.org) with above parameters configured in `directLoginRanges`.  
   * Login via anonymous ID [(example)](https://financial-literacy-test.appspot.com/create-anonymous-id) -  
    with above parameters configured in `directLoginRanges`.  
-   The anonymous ID is converted into an integer, which is encoded as a hash ID
-  Profiles are configures key-value sets who are copied into the logged-in user's attributes.  
+   The anonymous ID is converted into an integer, which is encoded as a hash ID.  
+   [QR code example](http://financial-literacy-test.appspot.com/img/ui/qr.png).  
+Profiles are configured key-value sets who are copied into the logged-in user's attributes.  
   This way any number of user properties can be specified, while the login URL remains short or ultra short.
 
 * Package `main` serves questionnaires via http(s).  
 with automatic `Lets encrypt` certification.
 
-* Directory `responses` stores indididual answers  
+* Directory `app-bucket/responses` stores indididual answers  
  (and initial questionnaire templates).
 
-* `trl` contains the type `multi-language string` and 
- a global hyphenizations map for mobile layout. 
- `cfg` contains universal multi-language strings.  
+* `trl` contains the type `multi-language string` and  
+ a global hyphenizations map for mobile layout.
+
+* `cfg` contains universal multi-language strings.  
  Each `questionnaire` contains specific multi-language strings.  
 
-* Common proof functions in `qst` prevent duplicate question keys  
- or missing translations.
+* Package cloudio is a convenience wrapper around [Gocloud blob](https://godoc.org/gocloud.dev/blob)  
+The entire persistence layer is moved from ioutil... to cloudio...  
+Thus the application can be hosted by cloud providers with buckets or on classical webservers.
 
 * Survey results are pulled in by the `transferrer`,  
  aggregating responses into a CSV file.  
@@ -486,9 +488,8 @@ It features
 
 * [Dockerfile](https://en.wikipedia.org/wiki/Docker_%28software%29) to deploy on modern cloud servers
 
-* The package cloudio is a convenience wrapper around [Gocloud blob](https://godoc.org/gocloud.dev/blob)  
-The entire persistence layer is moved from ioutil... to cloudio...  
-Thus the application can be hosted by cloud providers with buckets or on classical webservers.
+* Package `cloudio` wraps all io operations into [Gocloud blob functionality](https://godoc.org/gocloud.dev/blob).  
+Thus the application can be hosted by cloud providers with buckets *or* on classical webservers.
 
 ## Technical design guidelines
 
@@ -502,9 +503,12 @@ Thus the application can be hosted by cloud providers with buckets or on classic
 
 Language | files | blank | comment | code
 --- | --- | --- | --- | ---
-Go | 62 | 1640 | 1363 | 10490
+Go generic | 51 | 1313 | 1267 | 6860
+Go questionnaires | 12 |  602 |  273 |  5281
 CSS | 12 | 261 | 144 | 713
 Markdown | 27 | 485 | 0 | 727
 HTML | 6 | 96 | 31 | 319
 Python | 1 | 31 | 16 | 94
 Bourne | Shell | 3 | 17 | 19 | 76
+
+Go                              12            602            273           5281

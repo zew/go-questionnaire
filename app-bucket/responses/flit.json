@@ -19,18 +19,18 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "9f3bf4b124619b19cb75def0f2e26b2f",
+ 	"md_5": "28334a068dc639fcba3cf71f485953db",
  	"lang_codes": {
  		"en": "English"
  	},
  	"lang_codes_order": [
  		"en"
  	],
- 	"max_groups": 10,
+ 	"max_groups": 9,
  	"pages": [
  		{
  			"section": {
- 				"en": "Sociodemographics 1"
+ 				"en": "Sociodemographics"
  			},
  			"label": {
  				"en": "Age, origin, experience"
@@ -40,14 +40,14 @@
  				"en": ""
  			},
  			"short": {
- 				"en": "Sociodemo-\u003cbr\u003egraphics\u0026nbsp;1"
+ 				"en": "Sociodemo-\u003cbr\u003egraphics"
  			},
  			"navi_num": 1,
  			"width": 75,
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
  				{
- 					"bottom_vspacers": 3,
+ 					"bottom_vspacers": 1,
  					"width": 100,
  					"columns": 4,
  					"inputs": [
@@ -148,7 +148,7 @@
  								"en": " "
  							},
  							"description": {
- 								"en": "Are you currently an exchange student in Mannheim?"
+ 								"en": "Are you currently an \u003ci\u003e\u003cb\u003eexchange\u003c/b\u003e\u003c/i\u003e student in Mannheim?"
  							},
  							"css_label": "special-input-margin-vertical special-line-height-higher",
  							"col_span_label": 2,
@@ -301,27 +301,7 @@
  							"col_span_label": 1
  						}
  					]
- 				}
- 			]
- 		},
- 		{
- 			"section": {
- 				"en": "Sociodemographics 2"
- 			},
- 			"label": {
- 				"en": "Health, wealth, assets"
- 			},
- 			"description": {
- 				"de": "",
- 				"en": ""
- 			},
- 			"short": {
- 				"en": "Sociodemo-\u003cbr\u003egraphics\u0026nbsp;2"
- 			},
- 			"navi_num": 2,
- 			"width": 80,
- 			"finished": "0001-01-01T00:00:00Z",
- 			"groups": [
+ 				},
  				{
  					"width": 100,
  					"columns": 3,
@@ -433,7 +413,27 @@
  							"validator": "mustRadioGroup"
  						}
  					]
- 				},
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"section": {
+ 				"en": "Financial decisions"
+ 			},
+ 			"label": {
+ 				"en": "Wealth, assets"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"short": {
+ 				"en": "Financial\u003cbr\u003edecisions"
+ 			},
+ 			"navi_num": 2,
+ 			"width": 80,
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
  				{
  					"bottom_vspacers": 2,
  					"width": 100,
@@ -1038,27 +1038,7 @@
  							"col_span_label": 2
  						}
  					]
- 				}
- 			]
- 		},
- 		{
- 			"section": {
- 				"en": "Financial literacy 1"
- 			},
- 			"label": {
- 				"en": ""
- 			},
- 			"description": {
- 				"de": "",
- 				"en": ""
- 			},
- 			"short": {
- 				"en": "Fin. literacy 1"
- 			},
- 			"navi_num": 3,
- 			"width": 80,
- 			"finished": "0001-01-01T00:00:00Z",
- 			"groups": [
+ 				},
  				{
  					"bottom_vspacers": 2,
  					"width": 100,
@@ -1152,7 +1132,27 @@
  							"validator": "mustRadioGroup"
  						}
  					]
- 				},
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"section": {
+ 				"en": "Financial literacy 1"
+ 			},
+ 			"label": {
+ 				"en": ""
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"short": {
+ 				"en": "Financial\u003cbr\u003eliteracy\u0026nbsp;1"
+ 			},
+ 			"navi_num": 3,
+ 			"width": 80,
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
  				{
  					"bottom_vspacers": 2,
  					"width": 100,
@@ -1817,7 +1817,7 @@
  				"en": ""
  			},
  			"short": {
- 				"en": "Fin. literacy 2"
+ 				"en": "Financial\u003cbr\u003eliteracy\u0026nbsp;2"
  			},
  			"navi_num": 4,
  			"width": 80,
@@ -2297,7 +2297,7 @@
  		},
  		{
  			"section": {
- 				"en": "Financial literacy 3"
+ 				"en": "Preferences and personality 1"
  			},
  			"label": {
  				"en": ""
@@ -2307,7 +2307,7 @@
  				"en": ""
  			},
  			"short": {
- 				"en": "Fin. literacy 3"
+ 				"en": "Preferences\u0026nbsp;\u0026\u003cbr\u003epersonality\u0026nbsp;1"
  			},
  			"navi_num": 5,
  			"width": 80,
@@ -2847,7 +2847,7 @@
  							"type": "radiogroup",
  							"description": {
  								"de": "xxx",
- 								"en": "Sometimes I cant stop myself from doing something, even if I know it is wrong"
+ 								"en": "Sometimes I can't stop myself from doing something, even if I know it is wrong"
  							},
  							"css_label": "special-input-margin-vertical special-line-height-higher",
  							"col_span_label": 3,
@@ -3012,7 +3012,7 @@
  		},
  		{
  			"section": {
- 				"en": "Financial literacy 4"
+ 				"en": "Preferences and personality 2"
  			},
  			"label": {
  				"en": ""
@@ -3022,7 +3022,7 @@
  				"en": ""
  			},
  			"short": {
- 				"en": "Fin. literacy 4"
+ 				"en": "Preferences\u0026nbsp;\u0026\u003cbr\u003epersonality\u0026nbsp;2"
  			},
  			"navi_num": 6,
  			"width": 80,
@@ -3448,7 +3448,7 @@
  								"en": " "
  							},
  							"description": {
- 								"en": "The next question deals with optimism.\u003cbr\u003e\n\t\t\tOptimistis are people who look to the future with confidence and who mostly expect good things to happen.\n\t\t\tHow would you describe yourself?\n\t\t\tHow op\u0026shy;ti\u0026shy;mis\u0026shy;tic are you in general?"
+ 								"en": "The next question deals with optimism.\u003cbr\u003e\n\t\t\tOptimists are people who look to the future with confidence and who mostly expect good things to happen.\n\t\t\tHow would you describe yourself?\n\t\t\tHow op\u0026shy;ti\u0026shy;mis\u0026shy;tic are you in general?"
  							},
  							"css_label": "special-line-height-higher",
  							"col_span_label": 3

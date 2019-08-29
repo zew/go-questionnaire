@@ -1,2 +1,2 @@
-transferrer.exe -rmt=transferrer-remote-mul.json
+transferrer.exe -rmt=transferrer/remote-mul.json
 pause

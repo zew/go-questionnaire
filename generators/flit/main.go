@@ -48,13 +48,14 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	{
 		p := q.AddPage()
 
-		p.Section = trl.S{"en": "Sociodemographics 1"}
+		p.Section = trl.S{"en": "Sociodemographics"}
 		p.Label = trl.S{"en": "Age, origin, experience"}
-		p.Short = trl.S{"en": "Sociodemo-<br>graphics&nbsp;1"}
+		p.Short = trl.S{"en": "Sociodemo-<br>graphics"}
 		p.Width = 75
 
 		gr := p.AddGroup()
 		gr.Cols = 4
+		gr.BottomVSpacers = 1
 
 		{
 			inp := gr.AddInput()
@@ -123,7 +124,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			inp.Name = "visiting_student"
 			inp.CSSLabel = "special-input-margin-vertical special-line-height-higher"
 			inp.Label = trl.S{"en": " "}
-			inp.Desc = trl.S{"en": "Are you currently an exchange student in Mannheim?"}
+			inp.Desc = trl.S{"en": "Are you currently an <i><b>exchange</b></i> student in Mannheim?"}
 			inp.ColSpanLabel = 2
 			inp.ColSpanControl = 2
 			inp.Validator = "mustRadioGroup"
@@ -252,28 +253,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 		gr.EmptyCells(1)
 
-	} // page1
-
-	// page 2
-	{
-
-		p := q.AddPage()
-		p.Width = 80
-		p.Section = trl.S{"en": "Sociodemographics 2"}
-		p.Label = trl.S{"en": "Health, wealth, assets"}
-		p.Short = trl.S{"en": "Sociodemo-<br>graphics&nbsp;2"}
-
-		// {
-		// 	lbls := []trl.S{
-		// 	}
-		// 	flds := []string{
-		// 		"health",
-		// 	}
-		// 	gr := p.AddRadioMatrixGroup(labelsGoodBad6(), flds, lbls, 2)
-		// 	gr.Cols = 8 //
-		// 	gr.BottomVSpacers = 2
-		// }
-
 		{
 			gr := p.AddGroup()
 			gr.Cols = 3
@@ -300,6 +279,17 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			gr.Cols = 6 //
 			gr.BottomVSpacers = 2
 		}
+
+	} // page1
+
+	// page 2
+	{
+
+		p := q.AddPage()
+		p.Width = 80
+		p.Section = trl.S{"en": "Financial decisions"}
+		p.Label = trl.S{"en": "Wealth, assets"}
+		p.Short = trl.S{"en": "Financial<br>decisions"}
 
 		{
 			//
@@ -593,18 +583,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 		}
 
-	} // p2
-
-	// p3
-	{
-
-		p := q.AddPage()
-		p.Width = 80
-		p.Section = trl.S{"en": "Financial literacy 1"}
-		// p.Label = trl.S{"en": "Financial literacy, wealth, assets, preferences"}
-		p.Label = trl.S{"en": ""}
-		p.Short = trl.S{"en": "Fin. literacy 1"}
-
 		{
 			lbls := []trl.S{
 				{
@@ -620,6 +598,18 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			gr.Cols = 8 //
 			gr.BottomVSpacers = 2
 		}
+
+	} // p2
+
+	// p3
+	{
+
+		p := q.AddPage()
+		p.Width = 80
+		p.Section = trl.S{"en": "Financial literacy 1"}
+		// p.Label = trl.S{"en": "Financial literacy, wealth, assets, preferences"}
+		p.Label = trl.S{"en": ""}
+		p.Short = trl.S{"en": "Financial<br>literacy&nbsp;1"}
 
 		{
 			lbls := []trl.S{
@@ -744,7 +734,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		p.Section = trl.S{"en": "Financial literacy 2"}
 		// p.Label = trl.S{"en": "Financial literacy, wealth, assets, preferences"}
 		p.Label = trl.S{"en": ""}
-		p.Short = trl.S{"en": "Fin. literacy 2"}
+		p.Short = trl.S{"en": "Financial<br>literacy&nbsp;2"}
 
 		{
 			lbls := []trl.S{
@@ -831,10 +821,10 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	{
 		p := q.AddPage()
 		p.Width = 80
-		p.Section = trl.S{"en": "Financial literacy 3"}
+		p.Section = trl.S{"en": "Preferences and personality 1"}
 		// p.Label = trl.S{"en": "Financial literacy, wealth, assets, preferences"}
 		p.Label = trl.S{"en": ""}
-		p.Short = trl.S{"en": "Fin. literacy 3"}
+		p.Short = trl.S{"en": "Preferences&nbsp;&<br>personality&nbsp;1"}
 
 		gr := p.AddGroup()
 		gr.Cols = 3
@@ -962,7 +952,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				},
 				{
 					"de": "xxx",
-					"en": `Sometimes I cant stop myself from doing something, even if I know it is wrong`,
+					"en": `Sometimes I can't stop myself from doing something, even if I know it is wrong`,
 				},
 				{
 					"de": "xxx",
@@ -1000,10 +990,10 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	{
 		p := q.AddPage()
 		p.Width = 80
-		p.Section = trl.S{"en": "Financial literacy 4"}
+		p.Section = trl.S{"en": "Preferences and personality 2"}
 		// p.Label = trl.S{"en": "Financial literacy, wealth, assets, preferences"}
 		p.Label = trl.S{"en": ""}
-		p.Short = trl.S{"en": "Fin. literacy 4"}
+		p.Short = trl.S{"en": "Preferences&nbsp;&<br>personality&nbsp;2"}
 
 		{
 			gr := p.AddGroup()
@@ -1094,7 +1084,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			inp.CSSLabel = "special-line-height-higher"
 			inp.Label = trl.S{"en": " "}
 			inp.Desc = trl.S{"en": `The next question deals with optimism.<br>
-			Optimistis are people who look to the future with confidence and who mostly expect good things to happen.
+			Optimists are people who look to the future with confidence and who mostly expect good things to happen.
 			How would you describe yourself?
 			How optimistic are you in general?`}
 			inp.ColSpanLabel = 3

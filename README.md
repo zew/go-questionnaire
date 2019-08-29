@@ -420,7 +420,7 @@ Mobile layout was tested with `crossbrowsertesting.com`.
 
 ## Open / todo
 
-The project specific templates and CSS files should to to `app-bucket` dir.
+The project specific templates and CSS files should go to `app-bucket` dir.
 
 ## Possible enhancements
 
@@ -511,4 +511,3 @@ HTML | 6 | 96 | 31 | 319
 Python | 1 | 31 | 16 | 94
 Bourne | Shell | 3 | 17 | 19 | 76
 
-Go                              12            602            273           5281

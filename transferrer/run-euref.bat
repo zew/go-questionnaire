@@ -1,2 +1,2 @@
-transferrer.exe -rmt=transferrer-remote-euref.json
+transferrer.exe -rmt=transferrer/remote-euref.json
 pause

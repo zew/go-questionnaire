@@ -354,10 +354,11 @@ func (i inputT) HTML(langCode string, numCols int) string {
 				}
 			}
 
+			cssNoLeft := i.CSSLabel
 			if rad.HAlign == HCenter {
-				i.CSSLabel = strings.Replace(i.CSSLabel, "special-input-left-padding", "", -1)
+				cssNoLeft = strings.Replace(i.CSSLabel, "special-input-left-padding", "", -1)
 			}
-			one = fmt.Sprintf("<span class='go-quest-label %v'>%v</span>\n", i.CSSLabel, one)
+			one = fmt.Sprintf("<span class='go-quest-label %v'>%v</span>\n", cssNoLeft, one)
 
 			cellAlign := rad.HAlign
 			if rad.HAlign == HRight {

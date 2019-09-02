@@ -14,7 +14,7 @@
  			"it": "Questionario: Design dell'Unione Europea"
  		},
  		"year": 2019,
- 		"month": 2,
+ 		"month": 9,
  		"deadline": "2030-01-01T00:00:00Z",
  		"params": [
  			{
@@ -25,7 +25,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "08773ff1e41f62c90cad3dec429a5ea0",
+ 	"md_5": "8e4999c3ba0fb0ee9febf8ffef0d71a2",
  	"lang_codes": {
  		"de": "Deutsch",
  		"en": "English",

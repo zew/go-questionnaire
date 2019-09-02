@@ -14,6 +14,11 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 	ctr.Reset()
 
+	// qst.RadioVali = "mustRadioGroup"
+	qst.RadioVali = ""
+	qst.CSSLabelHeader = ""
+	qst.CSSLabelRow = ""
+
 	q := qst.QuestionnaireT{}
 	q.Survey = qst.NewSurvey("example")
 	q.Survey.Params = params

@@ -1,4 +1,4 @@
-package muxwrap
+package wrap
 
 import (
 	"fmt"
@@ -35,7 +35,7 @@ func paramPersister(r *http.Request, sess *sessx.SessT) {
 
 }
 
-func microErrorPage(r *http.Request, w http.ResponseWriter, msg string) {
+func microErrorPage(w http.ResponseWriter, r *http.Request, msg string) {
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
 
 	wr := func(s string, args ...interface{}) {

@@ -336,7 +336,7 @@ table.main-table tr:nth-child(odd){
     line-height: 120%;
 }
 .vert-correct-left-right {
-	top: -4px;
+	top: -3px;  /* the higher line-height -  the more negative this value */
 	position: relative;
 	margin-top:    0px;  
 	margin-bottom: 0px;

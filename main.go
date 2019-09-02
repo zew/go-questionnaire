@@ -9,7 +9,7 @@ import (
 	"log"
 	"math/rand"
 	"net/http"
-	_ "net/http/pprof"
+	"net/http/pprof"
 	"os"
 	"time"
 
@@ -18,9 +18,9 @@ import (
 	"github.com/zew/go-questionnaire/generators"
 	"github.com/zew/go-questionnaire/handlers"
 	"github.com/zew/go-questionnaire/lgn"
-	"github.com/zew/go-questionnaire/muxwrap"
 	"github.com/zew/go-questionnaire/sessx"
 	"github.com/zew/go-questionnaire/tpl"
+	"github.com/zew/go-questionnaire/wrap"
 	"golang.org/x/crypto/acme/autocert"
 )
 
@@ -64,28 +64,39 @@ func main() {
 		mux1.HandleFunc(cfg.PrefTS("favicon.ico"), serveIcon)
 	}
 
-	//
-	// Administrative handlers - common
-	mux1.HandleFunc(cfg.Pref("/session-put"), sessx.SessionPut)
-	mux1.HandleFunc(cfg.Pref("/session-get"), sessx.SessionGet)
-	mux1.HandleFunc(cfg.Pref("/config-reload"), handlers.ConfigReloadH)
-	mux1.HandleFunc(cfg.Pref("/templates-reload"), tpl.ParseH)
-	// Login primitives
+	// Login primitives for everybody
 	mux1.HandleFunc(cfg.Pref("/login-primitive"), lgn.LoginPrimitiveH)
 	mux1.HandleFunc(cfg.Pref("/change-password-primitive"), lgn.ChangePasswordPrimitiveH)
 	mux1.HandleFunc(cfg.PrefTS("/d"), handlers.LoginByHashID) // 'd' for direct
+	// Administrative handlers - common
+	mux1.Handle(cfg.Pref("/session-put"), wrap.AdminFunc(sessx.SessionPut))
+	mux1.Handle(cfg.Pref("/session-get"), wrap.AdminFunc(sessx.SessionGet))
+	mux1.Handle(cfg.Pref("/config-reload"), wrap.AdminFunc(handlers.ConfigReloadH))
+	mux1.Handle(cfg.Pref("/templates-reload"), wrap.AdminFunc(tpl.ParseH))
 	// Workflow - logins for survey
-	mux1.HandleFunc(cfg.Pref("/generate-questionnaire-templates"), generators.SurveyGenerate)
-	mux1.HandleFunc(cfg.Pref("/generate-hashes"), lgn.GenerateHashesH)
-	mux1.HandleFunc(cfg.Pref("/generate-hash-ids"), lgn.GenerateHashIDs)
-	mux1.HandleFunc(cfg.Pref("/reload-from-questionnaire-template"), lgn.ReloadH)
-	mux1.HandleFunc(cfg.PrefTS("/reload-from-questionnaire-template"), lgn.ReloadH)
-	mux1.HandleFunc(cfg.Pref("/shufflings-to-csv"), lgn.ShufflesToCSV)
+	mux1.Handle(cfg.Pref("/generate-questionnaire-templates"), wrap.AdminFunc(generators.SurveyGenerate))
+	mux1.Handle(cfg.Pref("/generate-hashes"), wrap.AdminFunc(lgn.GenerateHashesH))
+	mux1.Handle(cfg.Pref("/generate-hash-ids"), wrap.AdminFunc(lgn.GenerateHashIDs))
+	mux1.Handle(cfg.Pref("/reload-from-questionnaire-template"), wrap.AdminFunc(lgn.ReloadH))
+	mux1.Handle(cfg.PrefTS("/reload-from-questionnaire-template"), wrap.AdminFunc(lgn.ReloadH))
+	mux1.Handle(cfg.Pref("/shufflings-to-csv"), wrap.AdminFunc(lgn.ShufflesToCSV))
 	// Rare login funcs
-	mux1.HandleFunc(cfg.Pref("/logins-save"), lgn.SaveH)
-	mux1.HandleFunc(cfg.Pref("/logins-reload"), lgn.LoadH)
-	mux1.HandleFunc(cfg.Pref("/generate-password"), lgn.GeneratePasswordH)
+	mux1.Handle(cfg.Pref("/logins-save"), wrap.AdminFunc(lgn.SaveH))
+	mux1.Handle(cfg.Pref("/logins-reload"), wrap.AdminFunc(lgn.LoadH))
+	mux1.Handle(cfg.Pref("/generate-password"), wrap.AdminFunc(lgn.GeneratePasswordH))
 	mux1.HandleFunc(cfg.Pref("/create-anonymous-id"), lgn.CreateAnonymousID)
+	// PProf stuff
+	mux1.Handle(cfg.Pref("/diag/pprof"), wrap.AdminFunc(pprof.Index))
+	mux1.Handle(cfg.Pref("/diag/allocs"), wrap.AdminFunc(pprof.Handler("allocs").ServeHTTP))
+	mux1.Handle(cfg.Pref("/diag/block"), wrap.AdminFunc(pprof.Handler("block").ServeHTTP))
+	mux1.Handle(cfg.Pref("/diag/cmdline"), wrap.AdminFunc(pprof.Cmdline))
+	mux1.Handle(cfg.Pref("/diag/goroutine"), wrap.AdminFunc(pprof.Handler("goroutine").ServeHTTP))
+	mux1.Handle(cfg.Pref("/diag/heap"), wrap.AdminFunc(pprof.Handler("heap").ServeHTTP))
+	mux1.Handle(cfg.Pref("/diag/mutex"), wrap.AdminFunc(pprof.Handler("mutex").ServeHTTP))
+	mux1.Handle(cfg.Pref("/diag/profile"), wrap.AdminFunc(pprof.Profile))
+	mux1.Handle(cfg.Pref("/diag/threadcreate"), wrap.AdminFunc(pprof.Handler("threadcreate").ServeHTTP))
+	mux1.Handle(cfg.Pref("/diag/trace"), wrap.AdminFunc(pprof.Trace))
+	mux1.Handle(cfg.Pref("/diag/symbol"), wrap.AdminFunc(pprof.Symbol))
 
 	//
 	// App specific
@@ -96,20 +107,21 @@ func main() {
 	}
 	mux1.HandleFunc(cfg.Pref("/transferrer-endpoint"), handlers.TransferrerEndpointH)
 
-	//
-	// Session manager and session management.
-	// The order is counter-intuitive.
-	// We want requests be handled like this:
-	//
-	//  mux3         - establishes sessions
-	// 		mux2     - logging - param persisting
-	//  		mux1 - call special handler
-	//
-	// To achieve this, we must *reversely* wrap
-	// mux1 first in mux2, then in mux3
-	//
-	// => Wrap the base router into an unconditional middleware
-	mux2 := muxwrap.NewHandlerMiddleware(mux1)
+	/*
+		Adding session management.
+
+		The order is counter-intuitive.
+		We want requests be handled like this:
+
+		mux3         - establishes sessions
+		 	mux2     - recovery, logging
+		  		mux1 - call the actual handler
+
+		 To achieve this, we must *reversely* wrap
+		 mux1 first in mux2, then in mux3
+
+	*/
+	mux2 := wrap.LogAndRecover(mux1)
 
 	// sessx.Mgr().Secure(true)            // true breaks session persistence in excel-db - but not in go-countdown - it leads to sesson breakdown on iphone safari mobile, maybe because appengine is http with TLS outside
 	sessx.Mgr().Lifetime(2 * time.Hour) // default is 24 hours

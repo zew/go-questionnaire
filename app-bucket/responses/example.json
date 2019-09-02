@@ -1,0 +1,129 @@
+{
+ 	"survey": {
+ 		"type": "example",
+ 		"org": {
+ 			"de": "ZEW",
+ 			"en": "ZEW"
+ 		},
+ 		"name": {
+ 			"de": "Beispielumfrage",
+ 			"en": "Example survey"
+ 		},
+ 		"year": 2019,
+ 		"month": 9,
+ 		"deadline": "2030-01-01T00:00:00Z",
+ 		"params": [
+ 			{
+ 				"name": "main_refinance_rate_ecb",
+ 				"val": "3"
+ 			},
+ 			{}
+ 		]
+ 	},
+ 	"closing_time": "0001-01-01T00:00:00Z",
+ 	"md_5": "74dbcd3f2174d6d20efd09de5d0567c3",
+ 	"lang_codes": {
+ 		"de": "Deutsch",
+ 		"en": "English"
+ 	},
+ 	"lang_codes_order": [
+ 		"en",
+ 		"de"
+ 	],
+ 	"max_groups": 1,
+ 	"pages": [
+ 		{
+ 			"label": {
+ 				"de": "Seitentitel_1",
+ 				"en": "PageLabel_1"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"navi_num": 1,
+ 			"width": 100,
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"width": 100,
+ 					"columns": 3,
+ 					"inputs": [
+ 						{
+ 							"name": "name0",
+ 							"type": "text",
+ 							"max_chars": 10,
+ 							"label": {
+ 								"de": "Vorname",
+ 								"en": "first name"
+ 							}
+ 						}
+ 					]
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "Seitentitel_2",
+ 				"en": "PageLabel_2"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"navi_num": 2,
+ 			"width": 100,
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"width": 100,
+ 					"columns": 3,
+ 					"inputs": [
+ 						{
+ 							"name": "name1",
+ 							"type": "text",
+ 							"max_chars": 10,
+ 							"label": {
+ 								"de": "Vorname",
+ 								"en": "first name"
+ 							}
+ 						}
+ 					]
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "Seitentitel_3",
+ 				"en": "PageLabel_3"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"navi_num": 3,
+ 			"width": 100,
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"width": 100,
+ 					"columns": 3,
+ 					"inputs": [
+ 						{
+ 							"name": "name2",
+ 							"type": "text",
+ 							"max_chars": 10,
+ 							"label": {
+ 								"de": "Vorname",
+ 								"en": "first name"
+ 							}
+ 						}
+ 					]
+ 				}
+ 			]
+ 		}
+ 	]
+ }

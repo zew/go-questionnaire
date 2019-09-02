@@ -8,24 +8,18 @@ import (
 	"github.com/zew/go-questionnaire/trl"
 )
 
-/*
+/*Create questionnaire
 
-	Weitere Teilüberschriften?
+no answer AND do not know - or rather just no answer
 
-	Mehr Einzelseiten - weniger scrollen?
+validation for non-empty values
+ or also full validation for empty values?
 
-	no answer AND do not know - or rather just no answer
+ €  instead of Euros
 
-	validation for non-empty values
-	 or also full validation for empty values?
-
-	 €  instead of Euros
-
-	 Header für option groups kürzen - sprachlich - und Spalten - mal 5 mal 7
-
+ Header für option groups kürzen - sprachlich - und Spalten - mal 5 mal 7
 
 */
-
 func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 	ctr.Reset()

@@ -18,7 +18,7 @@
  			"pl": "Badanie na temat: Przyszłość Unii Europejskiej (UE)"
  		},
  		"year": 2019,
- 		"month": 2,
+ 		"month": 9,
  		"deadline": "2030-01-01T00:00:00Z",
  		"params": [
  			{
@@ -29,7 +29,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "1984a6468c37b876b10af7ec7f1c19bb",
+ 	"md_5": "a908dfa52e5efba53f2d3e1d36a44faf",
  	"lang_codes": {
  		"de": "Deutsch",
  		"en": "English",
@@ -173,7 +173,6 @@
  								"it": "Non favo\u0026shy;revole\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"pl": "jestem przeciwny/a\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -186,7 +185,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -199,7 +197,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -212,7 +209,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -225,7 +221,6 @@
  								"it": "In\u0026shy;deciso\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"pl": "jestem niezdecydowany/a\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -238,7 +233,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -251,7 +245,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -264,7 +257,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -277,13 +269,11 @@
  								"it": "Favo\u0026shy;revole\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"pl": "zgadzam się\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
  							"name": "energy",
  							"type": "radiogroup",
- 							"css_label": "special-input-margin-vertical special-line-height-higher",
  							"col_span_label": 1,
  							"radios": [
  								{
@@ -322,8 +312,7 @@
  									"hori_align": 1,
  									"val": "9"
  								}
- 							],
- 							"validator": "mustRadioGroup"
+ 							]
  						}
  					]
  				},
@@ -359,7 +348,6 @@
  								"it": "Non favo\u0026shy;revole\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"pl": "jestem przeciwny/a\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -372,7 +360,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -385,7 +372,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -398,7 +384,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -411,7 +396,6 @@
  								"it": "In\u0026shy;deciso\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"pl": "jestem niezdecydowany/a\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -424,7 +408,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -437,7 +420,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -450,7 +432,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -463,13 +444,11 @@
  								"it": "Favo\u0026shy;revole\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"pl": "zgadzam się\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
  							"name": "immigration",
  							"type": "radiogroup",
- 							"css_label": "special-input-margin-vertical special-line-height-higher",
  							"col_span_label": 1,
  							"radios": [
  								{
@@ -508,8 +487,7 @@
  									"hori_align": 1,
  									"val": "9"
  								}
- 							],
- 							"validator": "mustRadioGroup"
+ 							]
  						}
  					]
  				},
@@ -545,7 +523,6 @@
  								"it": "Non favo\u0026shy;revole\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"pl": "jestem przeciwny/a\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -558,7 +535,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -571,7 +547,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -584,7 +559,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -597,7 +571,6 @@
  								"it": "In\u0026shy;deciso\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"pl": "jestem niezdecydowany/a\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -610,7 +583,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -623,7 +595,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -636,7 +607,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -649,13 +619,11 @@
  								"it": "Favo\u0026shy;revole\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"pl": "zgadzam się\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
  							"name": "defence",
  							"type": "radiogroup",
- 							"css_label": "special-input-margin-vertical special-line-height-higher",
  							"col_span_label": 1,
  							"radios": [
  								{
@@ -694,8 +662,7 @@
  									"hori_align": 1,
  									"val": "9"
  								}
- 							],
- 							"validator": "mustRadioGroup"
+ 							]
  						}
  					]
  				},
@@ -731,7 +698,6 @@
  								"it": "Non favo\u0026shy;revole\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"pl": "jestem przeciwny/a\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -744,7 +710,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -757,7 +722,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -770,7 +734,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -783,7 +746,6 @@
  								"it": "In\u0026shy;deciso\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"pl": "jestem niezdecydowany/a\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -796,7 +758,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -809,7 +770,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -822,7 +782,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -835,13 +794,11 @@
  								"it": "Favo\u0026shy;revole\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"pl": "zgadzam się\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
  							"name": "wages",
  							"type": "radiogroup",
- 							"css_label": "special-input-margin-vertical special-line-height-higher",
  							"col_span_label": 1,
  							"radios": [
  								{
@@ -880,8 +837,7 @@
  									"hori_align": 1,
  									"val": "9"
  								}
- 							],
- 							"validator": "mustRadioGroup"
+ 							]
  						}
  					]
  				},
@@ -917,7 +873,6 @@
  								"it": "Non favo\u0026shy;revole\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"pl": "jestem przeciwny/a\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -930,7 +885,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -943,7 +897,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -956,7 +909,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -969,7 +921,6 @@
  								"it": "In\u0026shy;deciso\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"pl": "jestem niezdecydowany/a\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -982,7 +933,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -995,7 +945,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -1008,7 +957,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -1021,13 +969,11 @@
  								"it": "Favo\u0026shy;revole\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"pl": "zgadzam się\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
  							"name": "flexibility",
  							"type": "radiogroup",
- 							"css_label": "special-input-margin-vertical special-line-height-higher",
  							"col_span_label": 1,
  							"radios": [
  								{
@@ -1066,8 +1012,7 @@
  									"hori_align": 1,
  									"val": "9"
  								}
- 							],
- 							"validator": "mustRadioGroup"
+ 							]
  						}
  					]
  				},
@@ -1103,7 +1048,6 @@
  								"it": "Non favo\u0026shy;revole\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"pl": "jestem przeciwny/a\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -1116,7 +1060,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -1129,7 +1072,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -1142,7 +1084,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -1155,7 +1096,6 @@
  								"it": "In\u0026shy;deciso\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"pl": "jestem niezdecydowany/a\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -1168,7 +1108,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -1181,7 +1120,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -1194,7 +1132,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -1207,13 +1144,11 @@
  								"it": "Favo\u0026shy;revole\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"pl": "zgadzam się\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
  							"name": "eutax",
  							"type": "radiogroup",
- 							"css_label": "special-input-margin-vertical special-line-height-higher",
  							"col_span_label": 1,
  							"radios": [
  								{
@@ -1252,8 +1187,7 @@
  									"hori_align": 1,
  									"val": "9"
  								}
- 							],
- 							"validator": "mustRadioGroup"
+ 							]
  						}
  					]
  				},
@@ -1289,7 +1223,6 @@
  								"it": "Non favo\u0026shy;revole\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"pl": "jestem przeciwny/a\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -1302,7 +1235,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -1315,7 +1247,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -1328,7 +1259,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -1341,7 +1271,6 @@
  								"it": "In\u0026shy;deciso\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"pl": "jestem niezdecydowany/a\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -1354,7 +1283,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -1367,7 +1295,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -1380,7 +1307,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -1393,13 +1319,11 @@
  								"it": "Favo\u0026shy;revole\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"pl": "zgadzam się\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
  							"name": "taxpolicy",
  							"type": "radiogroup",
- 							"css_label": "special-input-margin-vertical special-line-height-higher",
  							"col_span_label": 1,
  							"radios": [
  								{
@@ -1438,8 +1362,7 @@
  									"hori_align": 1,
  									"val": "9"
  								}
- 							],
- 							"validator": "mustRadioGroup"
+ 							]
  						}
  					]
  				},
@@ -1475,7 +1398,6 @@
  								"it": "Non favo\u0026shy;revole\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"pl": "jestem przeciwny/a\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -1488,7 +1410,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -1501,7 +1422,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -1514,7 +1434,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -1527,7 +1446,6 @@
  								"it": "In\u0026shy;deciso\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"pl": "jestem niezdecydowany/a\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -1540,7 +1458,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -1553,7 +1470,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -1566,7 +1482,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -1579,13 +1494,11 @@
  								"it": "Favo\u0026shy;revole\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"pl": "zgadzam się\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
  							"name": "initiative",
  							"type": "radiogroup",
- 							"css_label": "special-input-margin-vertical special-line-height-higher",
  							"col_span_label": 1,
  							"radios": [
  								{
@@ -1624,8 +1537,7 @@
  									"hori_align": 1,
  									"val": "9"
  								}
- 							],
- 							"validator": "mustRadioGroup"
+ 							]
  						}
  					]
  				}
@@ -1700,7 +1612,6 @@
  								"it": "Non favo\u0026shy;revole\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"pl": "jestem przeciwny/a\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -1713,7 +1624,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -1726,7 +1636,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -1739,7 +1648,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -1752,7 +1660,6 @@
  								"it": "In\u0026shy;deciso\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"pl": "jestem niezdecydowany/a\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -1765,7 +1672,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -1778,7 +1684,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -1791,7 +1696,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -1804,13 +1708,11 @@
  								"it": "Favo\u0026shy;revole\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"pl": "zgadzam się\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
  							"name": "investment",
  							"type": "radiogroup",
- 							"css_label": "special-input-margin-vertical special-line-height-higher",
  							"col_span_label": 1,
  							"radios": [
  								{
@@ -1849,8 +1751,7 @@
  									"hori_align": 1,
  									"val": "9"
  								}
- 							],
- 							"validator": "mustRadioGroup"
+ 							]
  						}
  					]
  				},
@@ -1886,7 +1787,6 @@
  								"it": "Non favo\u0026shy;revole\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"pl": "jestem przeciwny/a\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -1899,7 +1799,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -1912,7 +1811,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -1925,7 +1823,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -1938,7 +1835,6 @@
  								"it": "In\u0026shy;deciso\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"pl": "jestem niezdecydowany/a\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -1951,7 +1847,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -1964,7 +1859,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -1977,7 +1871,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -1990,13 +1883,11 @@
  								"it": "Favo\u0026shy;revole\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"pl": "zgadzam się\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
  							"name": "more_labor_flex",
  							"type": "radiogroup",
- 							"css_label": "special-input-margin-vertical special-line-height-higher",
  							"col_span_label": 1,
  							"radios": [
  								{
@@ -2035,8 +1926,7 @@
  									"hori_align": 1,
  									"val": "9"
  								}
- 							],
- 							"validator": "mustRadioGroup"
+ 							]
  						}
  					]
  				},
@@ -2072,7 +1962,6 @@
  								"it": "Non favo\u0026shy;revole\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"pl": "jestem przeciwny/a\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -2085,7 +1974,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -2098,7 +1986,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -2111,7 +1998,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -2124,7 +2010,6 @@
  								"it": "In\u0026shy;deciso\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"pl": "jestem niezdecydowany/a\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -2137,7 +2022,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -2150,7 +2034,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -2163,7 +2046,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -2176,13 +2058,11 @@
  								"it": "Favo\u0026shy;revole\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"pl": "zgadzam się\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
  							"name": "unemployment_insurance",
  							"type": "radiogroup",
- 							"css_label": "special-input-margin-vertical special-line-height-higher",
  							"col_span_label": 1,
  							"radios": [
  								{
@@ -2221,8 +2101,7 @@
  									"hori_align": 1,
  									"val": "9"
  								}
- 							],
- 							"validator": "mustRadioGroup"
+ 							]
  						}
  					]
  				},
@@ -2258,7 +2137,6 @@
  								"it": "Non favo\u0026shy;revole\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"pl": "jestem przeciwny/a\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -2271,7 +2149,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -2284,7 +2161,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -2297,7 +2173,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -2310,7 +2185,6 @@
  								"it": "In\u0026shy;deciso\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"pl": "jestem niezdecydowany/a\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -2323,7 +2197,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -2336,7 +2209,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -2349,7 +2221,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -2362,13 +2233,11 @@
  								"it": "Favo\u0026shy;revole\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"pl": "zgadzam się\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
  							"name": "eurobonds",
  							"type": "radiogroup",
- 							"css_label": "special-input-margin-vertical special-line-height-higher",
  							"col_span_label": 1,
  							"radios": [
  								{
@@ -2407,8 +2276,7 @@
  									"hori_align": 1,
  									"val": "9"
  								}
- 							],
- 							"validator": "mustRadioGroup"
+ 							]
  						}
  					]
  				},
@@ -2444,7 +2312,6 @@
  								"it": "Non favo\u0026shy;revole\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"pl": "jestem przeciwny/a\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -2457,7 +2324,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -2470,7 +2336,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -2483,7 +2348,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -2496,7 +2360,6 @@
  								"it": "In\u0026shy;deciso\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"pl": "jestem niezdecydowany/a\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -2509,7 +2372,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -2522,7 +2384,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -2535,7 +2396,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -2548,13 +2408,11 @@
  								"it": "Favo\u0026shy;revole\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"pl": "zgadzam się\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
  							"name": "asset_purchase",
  							"type": "radiogroup",
- 							"css_label": "special-input-margin-vertical special-line-height-higher",
  							"col_span_label": 1,
  							"radios": [
  								{
@@ -2593,8 +2451,7 @@
  									"hori_align": 1,
  									"val": "9"
  								}
- 							],
- 							"validator": "mustRadioGroup"
+ 							]
  						}
  					]
  				},
@@ -2630,7 +2487,6 @@
  								"it": "Non favo\u0026shy;revole\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"pl": "jestem przeciwny/a\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -2643,7 +2499,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -2656,7 +2511,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -2669,7 +2523,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -2682,7 +2535,6 @@
  								"it": "In\u0026shy;deciso\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"pl": "jestem niezdecydowany/a\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -2695,7 +2547,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -2708,7 +2559,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -2721,7 +2571,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -2734,13 +2583,11 @@
  								"it": "Favo\u0026shy;revole\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"pl": "zgadzam się\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
  							"name": "growth_pact",
  							"type": "radiogroup",
- 							"css_label": "special-input-margin-vertical special-line-height-higher",
  							"col_span_label": 1,
  							"radios": [
  								{
@@ -2779,8 +2626,7 @@
  									"hori_align": 1,
  									"val": "9"
  								}
- 							],
- 							"validator": "mustRadioGroup"
+ 							]
  						}
  					]
  				},
@@ -2816,7 +2662,6 @@
  								"it": "Non favo\u0026shy;revole\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"pl": "jestem przeciwny/a\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -2829,7 +2674,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -2842,7 +2686,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -2855,7 +2698,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -2868,7 +2710,6 @@
  								"it": "In\u0026shy;deciso\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"pl": "jestem niezdecydowany/a\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -2881,7 +2722,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -2894,7 +2734,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -2907,7 +2746,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -2920,13 +2758,11 @@
  								"it": "Favo\u0026shy;revole\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"pl": "zgadzam się\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
  							"name": "emu_institutions",
  							"type": "radiogroup",
- 							"css_label": "special-input-margin-vertical special-line-height-higher",
  							"col_span_label": 1,
  							"radios": [
  								{
@@ -2965,8 +2801,7 @@
  									"hori_align": 1,
  									"val": "9"
  								}
- 							],
- 							"validator": "mustRadioGroup"
+ 							]
  						}
  					]
  				},
@@ -3002,7 +2837,6 @@
  								"it": "Non favo\u0026shy;revole\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e",
  								"pl": "jestem przeciwny/a\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -3015,7 +2849,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -3028,7 +2861,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -3041,7 +2873,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -3054,7 +2885,6 @@
  								"it": "In\u0026shy;deciso\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e",
  								"pl": "jestem niezdecydowany/a\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -3067,7 +2897,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -3080,7 +2909,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -3093,7 +2921,6 @@
  								"it": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e",
  								"pl": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
@@ -3106,13 +2933,11 @@
  								"it": "Favo\u0026shy;revole\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e",
  								"pl": "zgadzam się\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 1
  						},
  						{
  							"name": "banking_union",
  							"type": "radiogroup",
- 							"css_label": "special-input-margin-vertical special-line-height-higher",
  							"col_span_label": 1,
  							"radios": [
  								{
@@ -3151,8 +2976,7 @@
  									"hori_align": 1,
  									"val": "9"
  								}
- 							],
- 							"validator": "mustRadioGroup"
+ 							]
  						}
  					]
  				}

@@ -210,7 +210,7 @@ If you have created your survey `myquest` you need to restart the application.
     gcloud config set project "financial-literacy-test"
     gcloud app deploy
     Y
-    Y 
+    # 
 
 Read the logs
 

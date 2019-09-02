@@ -13,8 +13,8 @@ import (
 	"github.com/zew/go-questionnaire/cfg"
 	"github.com/zew/go-questionnaire/handlers"
 	"github.com/zew/go-questionnaire/lgn"
-	"github.com/zew/go-questionnaire/muxwrap"
 	"github.com/zew/go-questionnaire/sessx"
+	"github.com/zew/go-questionnaire/wrap"
 )
 
 // StartTestServer starts a server almost like main().
@@ -51,7 +51,7 @@ func StartTestServer(t *testing.T, doChDirUp bool) {
 		mux1.HandleFunc(cfg.Pref("/login-primitive"), lgn.LoginPrimitiveH)
 		mux1.HandleFunc(cfg.Pref("/"), handlers.MainH)
 		mux1.HandleFunc(cfg.PrefTS("/"), handlers.MainH)
-		mux2 := muxwrap.NewHandlerMiddleware(mux1)
+		mux2 := wrap.LogAndRecover(mux1)
 
 		sessx.Mgr().Secure(true)            // true breaks session persistence in excel-db - but not in go-countdown
 		sessx.Mgr().Lifetime(2 * time.Hour) // default is 24 hours

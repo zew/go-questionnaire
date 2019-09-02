@@ -1,6 +1,6 @@
-// Package muxwrap inserts some common logic,
+// Package wrap inserts some common logic,
 // before calling the actual handler func.
-package muxwrap
+package wrap
 
 import (
 	"context"
@@ -17,23 +17,30 @@ import (
 
 // The wrapper has two characteristics
 // 1.) It implements http.Handler
-// 2.) It stores the previous mux/handler.
+// 2.) It *could* store the previous mux/handler.
 // http ListenAndServe and ListenAndServeTLS each dont
 // need a mux; they only need http handler.
-type handlerWrapper struct {
+type logAndRecover struct {
 	h http.Handler
 }
 
-// NewHandlerMiddleware returns a new http handlerfunc.
-func NewHandlerMiddleware(innerHandler http.Handler) http.Handler {
-	m := &handlerWrapper{
+// LogAndRecover takes a single handler
+// and returns a new wrapped http handler.
+//
+// Magically, we can pass in an *entire mux* -
+// having *all* its routes wrapped into recover
+func LogAndRecover(innerHandler http.Handler) http.Handler {
+	return &logAndRecover{
 		h: innerHandler,
 	}
-	return m
 }
 
-// Implementing http.Handler interface
-func (m *handlerWrapper) ServeHTTP(w http.ResponseWriter, rNew *http.Request) {
+//
+// 1. Logging each request
+// 2. Recover from panic
+// 3. Execute inner handler
+// And implementing http.Handler interface
+func (m *logAndRecover) ServeHTTP(w http.ResponseWriter, rNew *http.Request) {
 
 	// Global logging stuff
 	shortened := fmt.Sprintf("%v?%v", rNew.URL.Path, rNew.URL.RawQuery)
@@ -83,10 +90,6 @@ func (m *handlerWrapper) ServeHTTP(w http.ResponseWriter, rNew *http.Request) {
 	}
 
 	//
-	// Access rights
-	// ...
-
-	//
 	// Wrapping the handler into a "global panic catcher"
 	func() {
 		defer func() {
@@ -97,21 +100,20 @@ func (m *handlerWrapper) ServeHTTP(w http.ResponseWriter, rNew *http.Request) {
 				msg1 += "<span style='font-size:80%;'>If panic not triggered by logx.Fatal:</span>\n"
 				msg1 += "Direct stacktrace."
 				msg1 += logx.SPrintStackTrace(1, 10)
-				microErrorPage(rNew, w, msg1)
+				microErrorPage(w, rNew, msg1)
 			}
 		}()
 		m.h.ServeHTTP(w, rNew)
 	}()
-
 }
 
 //
-// Alternative way to create the same middle ware would be:
-func (m *handlerWrapper) Use(next http.Handler, anotherParam int) http.Handler {
+// UseLogRecover is an alternative way to create the same middle ware
+func UseLogRecover(inner http.Handler, aParam int) http.Handler {
 	// Possible stuff outside the closure
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		ctx := context.WithValue(context.Background(), ctxKey("anotherParam"), anotherParam)
-		next.ServeHTTP(w, r.WithContext(ctx))
+		ctx := context.WithValue(context.Background(), ctxKey("param"), aParam)
+		inner.ServeHTTP(w, r.WithContext(ctx))
 	})
 }
 

@@ -17,7 +17,6 @@ import (
 	"github.com/zew/go-questionnaire/generators/fmt"
 	"github.com/zew/go-questionnaire/generators/mul"
 	"github.com/zew/go-questionnaire/generators/peu2018"
-	"github.com/zew/go-questionnaire/lgn"
 	"github.com/zew/go-questionnaire/qst"
 	"github.com/zew/util"
 )
@@ -51,22 +50,6 @@ func get() []string {
 func SurveyGenerate(w http.ResponseWriter, r *http.Request) {
 
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
-
-	if cfg.Get().IsProduction {
-		l, isLoggedIn, err := lgn.LoggedInCheck(w, r)
-		if err != nil {
-			myfmt.Fprintf(w, "Login error %v", err)
-			return
-		}
-		if !isLoggedIn {
-			myfmt.Fprintf(w, "Not logged in")
-			return
-		}
-		if !l.HasRole("admin") {
-			myfmt.Fprintf(w, "admin login required")
-			return
-		}
-	}
 
 	s := qst.NewSurvey("fmt") // type is modified later
 	errStr := ""

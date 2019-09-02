@@ -7,7 +7,6 @@ import (
 
 	"github.com/monoculum/formam"
 	hashids "github.com/speps/go-hashids"
-	"github.com/zew/go-questionnaire/cfg"
 	"github.com/zew/util"
 )
 
@@ -43,22 +42,6 @@ func HashIDDecodeFirst(encoded string) int {
 
 // GenerateHashIDs encodes integer IDs into a kind of base64 encoded string.
 func GenerateHashIDs(w http.ResponseWriter, r *http.Request) {
-
-	if cfg.Get().IsProduction {
-		l, isLoggedIn, err := LoggedInCheck(w, r)
-		if err != nil {
-			fmt.Fprintf(w, "Login error %v", err)
-			return
-		}
-		if !isLoggedIn {
-			fmt.Fprintf(w, "Not logged in")
-			return
-		}
-		if !l.HasRole("admin") {
-			fmt.Fprintf(w, "admin login required")
-			return
-		}
-	}
 
 	w.Header().Set("Content-Type", "text/plain; charset=utf-8")
 

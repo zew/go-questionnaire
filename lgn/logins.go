@@ -321,20 +321,8 @@ func IsFound(err error) bool {
 // It reloads logins from json file
 // and checks for a specific login
 func LoadH(w http.ResponseWriter, req *http.Request) {
-	w.Header().Set("Content-Type", "text/plain; charset=utf-8")
-
-	_, loggedIn, err := LoggedInCheck(w, req, "admin")
-	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
-		return
-	}
-	if !loggedIn {
-		http.Error(w, "admin login required for this function", http.StatusInternalServerError)
-		return
-	}
 
 	w.Header().Set("Content-Type", "text/plain; charset=utf-8")
-
 	fileName := LgnsPath
 	r, bucketClose, err := cloudio.Open(fileName)
 	if err != nil {
@@ -376,20 +364,8 @@ func LoadH(w http.ResponseWriter, req *http.Request) {
 
 // SaveH is a convenience func to save logins file via http request.
 func SaveH(w http.ResponseWriter, r *http.Request) {
-
 	w.Header().Set("Content-Type", "text/plain; charset=utf-8")
-
-	_, loggedIn, err := LoggedInCheck(w, r, "admin")
-	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
-		return
-	}
-	if !loggedIn {
-		http.Error(w, "login required for this function", http.StatusInternalServerError)
-		return
-	}
-
-	err = cloudio.MarshalWriteFile(lgns, "logins.json")
+	err := cloudio.MarshalWriteFile(lgns, "logins.json")
 	if err != nil {
 		w.Write([]byte(err.Error()))
 		return
@@ -400,19 +376,7 @@ func SaveH(w http.ResponseWriter, r *http.Request) {
 // GeneratePasswordH is a convenience func to generate passwords via http request.
 // URL parameter len specifies the password length.
 func GeneratePasswordH(w http.ResponseWriter, r *http.Request) {
-
-	_, loggedIn, err := LoggedInCheck(w, r, "admin")
-	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
-		return
-	}
-	if !loggedIn {
-		http.Error(w, "admin login required for this function", http.StatusInternalServerError)
-		return
-	}
-
 	w.Header().Set("Content-Type", "text/plain; charset=utf-8")
-
 	r.ParseForm()
 	sl := r.Form.Get("len")
 

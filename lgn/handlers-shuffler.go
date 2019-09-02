@@ -10,27 +10,10 @@ import (
 	"github.com/zew/util"
 
 	"github.com/monoculum/formam"
-	"github.com/zew/go-questionnaire/cfg"
 )
 
 // ShufflesToCSV computes random but deterministic shufflings for usage outside the app
 func ShufflesToCSV(w http.ResponseWriter, r *http.Request) {
-
-	if cfg.Get().IsProduction {
-		l, isLoggedIn, err := LoggedInCheck(w, r)
-		if err != nil {
-			fmt.Fprintf(w, "Login error %v", err)
-			return
-		}
-		if !isLoggedIn {
-			fmt.Fprintf(w, "Not logged in")
-			return
-		}
-		if !l.HasRole("admin") {
-			fmt.Fprintf(w, "admin login required")
-			return
-		}
-	}
 
 	errMsg := ""
 

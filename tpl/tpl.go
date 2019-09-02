@@ -186,15 +186,6 @@ func Parse(bundles ...string) {
 
 // ParseH is a convenience handler to parse all base templates anew.
 func ParseH(w http.ResponseWriter, r *http.Request) {
-	_, loggedIn, err := lgn.LoggedInCheck(w, r, "admin")
-	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
-		return
-	}
-	if !loggedIn {
-		http.Error(w, "admin login required for this function", http.StatusInternalServerError)
-		return
-	}
 	for bundle := range parsedBundles {
 		bt := &bundleT{}
 		bt.Parse(bundle)

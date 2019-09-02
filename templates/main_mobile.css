@@ -9,6 +9,13 @@
 }
 
 
+/* 
+    prevent Safari to auto-increase font size
+    stackoverflow.com/questions/3226001 
+*/
+body{
+    -webkit-text-size-adjust: none;
+}
 
 body{
     margin: 0;
@@ -153,9 +160,12 @@ select
 {
     appearance: none;
     margin: 0;
-    height: 26px;
+    /* 
+      No height limit
+       height: 26px;
+       line-height: 40px;  
+    */
     font-size: 13px;
-    line-height: 40px; 
 
     /* prefix and suffix - % or € */
     margin-left:  3px;

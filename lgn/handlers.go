@@ -256,6 +256,10 @@ func LoginByHash(w http.ResponseWriter, r *http.Request) (bool, error) {
 	u = html.EscapeString(u) // XSS prevention
 	h := r.Form.Get("h")     // hash
 
+	if u == "" && h == "" {
+		return false, nil
+	}
+
 	// First - try direct login
 	if _, isSet := r.Form["u"]; !isSet { // Note: r.Form[key] contains GET *and* POST values
 		if _, isSet := r.Form["h"]; isSet {
@@ -367,22 +371,6 @@ func LoginByHash(w http.ResponseWriter, r *http.Request) (bool, error) {
 // GenerateHashesH is a admin UI to create login hashes for specific survey and user profile.
 // See LoginByHash() for the construction of the check string.
 func GenerateHashesH(w http.ResponseWriter, r *http.Request) {
-
-	if cfg.Get().IsProduction {
-		l, isLoggedIn, err := LoggedInCheck(w, r)
-		if err != nil {
-			fmt.Fprintf(w, "Login error %v", err)
-			return
-		}
-		if !isLoggedIn {
-			fmt.Fprintf(w, "Not logged in")
-			return
-		}
-		if !l.HasRole("admin") {
-			fmt.Fprintf(w, "admin login required")
-			return
-		}
-	}
 
 	errMsg := ""
 

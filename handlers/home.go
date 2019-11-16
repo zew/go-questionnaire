@@ -9,9 +9,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/xojoc/useragent"
 	"github.com/zew/go-questionnaire/cfg"
 	"github.com/zew/go-questionnaire/cloudio"
+	"github.com/zew/go-questionnaire/detect"
 	"github.com/zew/go-questionnaire/lgn"
 	"github.com/zew/go-questionnaire/qst"
 	"github.com/zew/go-questionnaire/sessx"
@@ -32,11 +32,7 @@ type tplDataExtT struct {
 // Finally from template.
 func loadQuestionnaire(w http.ResponseWriter, r *http.Request, l *lgn.LoginT) (*qst.QuestionnaireT, error) {
 
-	sess := sessx.New(w, r)
-
-	// from session
-	var q = &qst.QuestionnaireT{}
-	ok, err := sess.EffectiveObj("questionnaire", q)
+	q, ok, err := qst.FromSession(w, r)
 	if err != nil {
 		err = errors.Wrap(err, "Reading questionnaire from session caused error")
 		return q, err
@@ -151,7 +147,7 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	if ok && err == nil {
-		sess.Remove(w, "questionnaire") // upon successful, possibly new login - remove previous questionnaire from session
+		sess.Remove(r.Context(), "questionnaire") // upon successful, possibly new login - remove previous questionnaire from session
 	}
 
 	l, isLoggedIn, err := lgn.LoggedInCheck(w, r)
@@ -349,11 +345,7 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 	//
 	//
 	// Save questionnaire into session
-	err = sess.PutObject("questionnaire", q)
-	if err != nil {
-		helper(w, r, err, "Putting questionnaire into session caused error")
-		return
-	}
+	sess.PutObject("questionnaire", q)
 
 	q2, _ := q.Split()
 	err = q2.Save1(l.QuestPath())
@@ -399,22 +391,13 @@ func computeMobile(w http.ResponseWriter, r *http.Request, q *qst.QuestionnaireT
 
 	sess := sessx.New(w, r)
 
+	// determination from the browser string
 	mobile := false
-
-	// Automatic determination from the browser string
-	if q.UserAgent != "" {
-		ua := useragent.Parse(q.UserAgent)
-		if ua == nil {
-			log.Printf("useragent.Parse yiedled nil for '%v'", q.UserAgent)
-		} else {
-			log.Printf("%v on %v - V. %v - mobile or tablet: %v", ua.Name, ua.OS, ua.Version, ua.Mobile || ua.Tablet)
-			if ua.Mobile || ua.Tablet {
-				mobile = true
-			}
-		}
+	if detect.IsMobile(r) {
+		mobile = true
 	}
 
-	// Override by explicit url parameter
+	// override by explicit url parameter
 	if mP, ok := sess.ReqParam("mobile"); ok {
 		if mP == "0" || mP == "false" {
 			mobile = false

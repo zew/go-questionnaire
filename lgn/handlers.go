@@ -22,7 +22,7 @@ import (
 // LogoutH is a convenience handler to logout via http request
 func LogoutH(w http.ResponseWriter, r *http.Request) error {
 	sess := sessx.New(w, r)
-	sess.Clear(w)
+	sess.Clear(r.Context())
 	return nil
 }
 
@@ -30,14 +30,10 @@ func LogoutH(w http.ResponseWriter, r *http.Request) error {
 // and checks whether he has the required roles
 func LoggedInCheck(w http.ResponseWriter, r *http.Request, roles ...string) (l *LoginT, loggedIn bool, err error) {
 
-	sess := sessx.New(w, r)
-
-	l = &LoginT{}
-	loggedIn, err = sess.EffectiveObj("login", l)
+	l, loggedIn, err = FromSession(w, r)
 	if err != nil {
 		return
 	}
-
 	if !loggedIn || l.User == "" {
 		return
 	}
@@ -93,10 +89,7 @@ func validateAndLogin(w http.ResponseWriter, r *http.Request) error {
 	LogoutH(w, r) // remove all previous session info
 	log.Printf("logged in as %v %T", l.User, l)
 
-	err = sess.PutObject("login", l)
-	if err != nil {
-		return err
-	}
+	sess.PutObject("login", l)
 	log.Printf("login saved to session as %T by validate (username+password)", &l)
 
 	return nil
@@ -107,12 +100,9 @@ func validateAndLogin(w http.ResponseWriter, r *http.Request) error {
 // The result is updated in the session "login" type.
 func changePassword(w http.ResponseWriter, r *http.Request) (string, error) {
 
-	sess := sessx.New(w, r)
-
-	l := &LoginT{}
-	ok, err := sess.EffectiveObj("login", l)
+	l, ok, err := FromSession(w, r)
 	if err != nil {
-		return "", fmt.Errorf("Could not get login from session")
+		return "", fmt.Errorf("Could not get login from session; %v", err)
 	}
 	if !ok {
 		return "", fmt.Errorf("You are not logged in")
@@ -212,10 +202,8 @@ func changePassword(w http.ResponseWriter, r *http.Request) (string, error) {
 				l.PassInitial = ""
 				l.IsInitPassword = false
 				l.PassMd5 = newPassEncr
-				err = sess.PutObject("login", l)
-				if err != nil {
-					return "", err
-				}
+				sess := sessx.New(w, r)
+				sess.PutObject("login", l)
 
 				// SUCCESS
 				return "Password changed successfully.", nil
@@ -288,10 +276,7 @@ func LoginByHash(w http.ResponseWriter, r *http.Request) (bool, error) {
 						for pk, pv := range dlr.Profile {
 							l.Attrs[pk] = pv
 						}
-						err = sess.PutObject("login", l)
-						if err != nil {
-							return false, err
-						}
+						sess.PutObject("login", l)
 						log.Printf("login saved to session as %T from loginByHash", l)
 						return true, nil
 					}
@@ -359,10 +344,7 @@ func LoginByHash(w http.ResponseWriter, r *http.Request) (bool, error) {
 	}
 
 	log.Printf("logging in as %v with attrs %v type %T", u, l.Attrs, l)
-	err = sess.PutObject("login", l)
-	if err != nil {
-		return false, err
-	}
+	sess.PutObject("login", l)
 	log.Printf("login saved to session as %T from loginByHash", l)
 
 	return true, nil
@@ -566,7 +548,7 @@ func ReloadH(w http.ResponseWriter, r *http.Request) {
 	msg := ""
 	if r.Method == "POST" {
 		l.DeleteFiles()
-		sess.Remove(w, "questionnaire")
+		sess.Remove(r.Context(), "questionnaire")
 		log.Printf("removed quest session")
 		msg = "User files deleted. Questionnaire deleted from session."
 	} else {
@@ -576,7 +558,7 @@ func ReloadH(w http.ResponseWriter, r *http.Request) {
 	if sess.EffectiveStr("skip_validation") != "" {
 		sess.PutString("skip_validation", "true")
 	} else {
-		sess.Remove(w, "skip_validation")
+		sess.Remove(r.Context(), "skip_validation")
 	}
 
 	relForm := r.Form // relevant Form

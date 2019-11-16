@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "071a216d94107e2d2c625e3d8d0c5a4d",
+ 	"md_5": "43aa727d003521a1ef8c14d31591ff65",
  	"lang_codes": {
  		"de": "Deutsch",
  		"en": "English"
@@ -684,8 +684,8 @@
  							"type": "number",
  							"max_chars": 4,
  							"description": {
- 								"de": "Unsere Prognose für das \u003cb\u003edeutsche\u003c/b\u003e BIP Wachstum in Q4 2019 (real, saisonbereinigt, nicht annualisiert):",
- 								"en": "Our estimate for the \u003cb\u003eGerman\u003c/b\u003e GDP growth in Q4 2019 (real, seasonally adjusted, non annualized):"
+ 								"de": "Unsere Prognose für das \u003cb\u003edeutsche\u003c/b\u003e BIP Wachstum in Q1 2020 (real, saisonbereinigt, nicht annualisiert):",
+ 								"en": "Our estimate for the \u003cb\u003eGerman\u003c/b\u003e GDP growth in Q1 2020 (real, seasonally adjusted, non annualized):"
  							},
  							"suffix": {
  								"de": "%",
@@ -725,8 +725,8 @@
  							"type": "number",
  							"max_chars": 4,
  							"description": {
- 								"de": "Die Wahrscheinlichkeit eines neg\u0026shy;ativen Wachstums des \u003cb\u003edeutschen\u003c/b\u003e BIP in Q4 2019 liegt bei:",
- 								"en": "The probability of neg\u0026shy;ative growth for the \u003cb\u003eGerman\u003c/b\u003e GDP in Q4 2019 is:"
+ 								"de": "Die Wahrscheinlichkeit eines neg\u0026shy;ativen Wachstums des \u003cb\u003edeutschen\u003c/b\u003e BIP in Q1 2020 liegt bei:",
+ 								"en": "The probability of neg\u0026shy;ative growth for the \u003cb\u003eGerman\u003c/b\u003e GDP in Q1 2020 is:"
  							},
  							"suffix": {
  								"de": "%",
@@ -2431,8 +2431,8 @@
  							"type": "number",
  							"max_chars": 4,
  							"description": {
- 								"de": "Q2 2019",
- 								"en": "Q2 2019"
+ 								"de": "Q3 2019",
+ 								"en": "Q3 2019"
  							},
  							"suffix": {
  								"de": "%",
@@ -2446,8 +2446,8 @@
  							"type": "number",
  							"max_chars": 4,
  							"description": {
- 								"de": "Q3 2019",
- 								"en": "Q3 2019"
+ 								"de": "Q4 2019",
+ 								"en": "Q4 2019"
  							},
  							"suffix": {
  								"de": "%",
@@ -2461,8 +2461,8 @@
  							"type": "number",
  							"max_chars": 4,
  							"description": {
- 								"de": "Q4 2019",
- 								"en": "Q4 2019"
+ 								"de": "Q1 2020",
+ 								"en": "Q1 2020"
  							},
  							"suffix": {
  								"de": "%",

@@ -53,10 +53,9 @@ func StartTestServer(t *testing.T, doChDirUp bool) {
 		mux1.HandleFunc(cfg.PrefTS("/"), handlers.MainH)
 		mux2 := wrap.LogAndRecover(mux1)
 
-		sessx.Mgr().Secure(true)            // true breaks session persistence in excel-db - but not in go-countdown
-		sessx.Mgr().Lifetime(2 * time.Hour) // default is 24 hours
-		sessx.Mgr().Persist(false)
-		mux3 := sessx.Mgr().Use(mux2)
+		sessx.Mgr().Lifetime = time.Duration(cfg.Get().SessionTimeout) * time.Hour // default is 24 hours
+		// sessx.Mgr().Secure(true)            // true breaks session persistence in excel-db - but not in go-countdown - it leads to sesson breakdown on iphone safari mobile, maybe because appengine is http with TLS outside
+		mux3 := sessx.Mgr().LoadAndSave(mux2)
 
 		IPPort := fmt.Sprintf("%v:%v", cfg.Get().BindHost, cfg.Get().BindSocket)
 		t.Logf("starting http server at %v ...", IPPort)

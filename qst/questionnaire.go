@@ -9,13 +9,16 @@ import (
 	"bytes"
 	"encoding/gob"
 	"fmt"
+	"io"
 	"log"
+	"net/http"
 	"path"
 	"sort"
 	"strings"
 	"time"
 
 	"github.com/zew/go-questionnaire/lgn/shuffler"
+	"github.com/zew/go-questionnaire/sessx"
 	"github.com/zew/go-questionnaire/trl"
 
 	"github.com/zew/go-questionnaire/ctr"
@@ -445,10 +448,11 @@ func (i inputT) HTML(langCode string, numCols int) string {
 // A group is a layout unit with a configurable number of columns.
 type groupT struct {
 	// Name  string
-	Label                trl.S `json:"label,omitempty"`
-	Desc                 trl.S `json:"description,omitempty"`
-	HeaderBottomVSpacers int   `json:"header_bottom_vspacers,omitempty"` // number of half rows below the group header
-	BottomVSpacers       int   `json:"bottom_vspacers,omitempty"`        // number of rows below the group, initialized to 3
+	Label trl.S `json:"label,omitempty"`
+	Desc  trl.S `json:"description,omitempty"`
+	// Vertical space control:
+	HeaderBottomVSpacers int `json:"header_bottom_vspacers,omitempty"` // number of half rows below the group header
+	BottomVSpacers       int `json:"bottom_vspacers,omitempty"`        // number of rows below the group, initialized to 3
 
 	Vertical bool `json:"vertical,omitempty"` // groups vertically, not horizontally, not yet implemented
 
@@ -641,6 +645,27 @@ type QuestionnaireT struct {
 // We need to register all types who are saved into a session
 func init() {
 	gob.Register(QuestionnaireT{})
+}
+
+// FromSession loads a graph from session;
+// second return value contains 'is set'.
+func FromSession(w io.Writer, r *http.Request) (*QuestionnaireT, bool, error) {
+
+	sess := sessx.New(w, r)
+	key := "questionnaire"
+
+	qstIntf, ok := sess.EffectiveObj(key)
+	if !ok {
+		log.Printf("key %v for QuestionnaireT{} is not in session", key)
+		return nil, false, nil
+	}
+
+	q, ok := qstIntf.(QuestionnaireT)
+	if !ok {
+		return nil, false, fmt.Errorf("key %v for QuestionnaireT{} does not point to qst.QuestionnaireT - but to %T", key, qstIntf)
+	}
+
+	return &q, true, nil
 }
 
 // BasePath gives the 'root' for loading and saving questionnaire JSON files.

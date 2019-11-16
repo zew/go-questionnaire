@@ -25,6 +25,7 @@ import (
 	"github.com/zew/go-questionnaire/cfg"
 	"github.com/zew/go-questionnaire/cloudio"
 	"github.com/zew/go-questionnaire/qst"
+	"github.com/zew/go-questionnaire/sessx"
 	"github.com/zew/util"
 )
 
@@ -81,6 +82,27 @@ type LoginT struct {
 // We need to register all types who are saved into a session
 func init() {
 	gob.Register(LoginT{})
+}
+
+// FromSession loads a login from session;
+// second return value contains 'is set'.
+func FromSession(w io.Writer, r *http.Request) (*LoginT, bool, error) {
+
+	sess := sessx.New(w, r)
+	key := "login"
+
+	loginIntf, ok := sess.EffectiveObj(key)
+	if !ok {
+		log.Printf("key %v for LoginT{} is not in session", key)
+		return nil, false, nil
+	}
+
+	l, ok := loginIntf.(LoginT)
+	if !ok {
+		return nil, false, fmt.Errorf("key %v for LoginT{} does not point to lgn.LoginT{} - but to %T", key, loginIntf)
+	}
+
+	return &l, true, nil
 }
 
 // Query returns a query fragment,

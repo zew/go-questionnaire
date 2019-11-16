@@ -28,6 +28,7 @@ func main() {
 
 	rand.Seed(time.Now().UTC().UnixNano())
 	log.SetFlags(log.Lshortfile | log.Ldate | log.Ltime)
+	log.SetFlags(log.Lshortfile | log.Ltime)
 
 	bootstrap.Config()
 
@@ -49,12 +50,15 @@ func main() {
 		log.Printf("static service %-20v => /static/[stripped:%v]%v", cfg.Pref(v), cfg.Get().AppMnemonic, v)
 	}
 	// Extra handler for dynamic css - served from templates
-	mux1.HandleFunc(cfg.PrefTS("/css/"), tpl.ServeDynCss)
+	mux1.HandleFunc(cfg.PrefTS("/css/"), tpl.ServeDynCSS)
 	// markdown files in /doc
 	tpl.CreateAndRegisterHandlerForDocs(mux1)
 
 	serveIcon := func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "image/x-icon")
+		// andrewlock.net/adding-cache-control-headers-to-static-files-in-asp-net.core/
+		// but does not help
+		w.Header().Set("Cache-Control", fmt.Sprintf("public,max-age=%d", 60*60*24))
 		bts, _ := ioutil.ReadFile("./static/img/ui/favicon.ico")
 		fmt.Fprint(w, bts)
 	}
@@ -122,13 +126,8 @@ func main() {
 
 	*/
 	mux2 := wrap.LogAndRecover(mux1)
-
-	// sessx.Mgr().Secure(true)            // true breaks session persistence in excel-db - but not in go-countdown - it leads to sesson breakdown on iphone safari mobile, maybe because appengine is http with TLS outside
-	sessx.Mgr().Lifetime(2 * time.Hour) // default is 24 hours
-	sessx.Mgr().Persist(false)
-
 	// => Wrap in mux2 in session manager
-	mux3 := sessx.Mgr().Use(mux2)
+	mux3 := sessx.Mgr().LoadAndSave(mux2)
 
 	//
 	// Prepare web server launch

@@ -1,56 +1,46 @@
 // Package sessx reads effective parameter values
-// from get, post and session.
+// from GET, POST and SESSION.
 // It also reads consolidated request params (GET, POST).
 package sessx
 
 import (
-	"crypto/rand"
+	"context"
+	"encoding/gob"
 	"fmt"
-	"log"
+	"io"
 	"net/http"
 	"strconv"
 	"time"
 
-	"github.com/zew/util"
-
-	"github.com/alexedwards/scs"
-	"github.com/alexedwards/scs/stores/cookiestore" // encrypted cookie
-	"github.com/alexedwards/scs/stores/memstore"    // fast, but sessions do not survive server restart
+	"github.com/alexedwards/scs/v2"
 )
 
-var secret = make([]byte, 32)
+var sessionManager = scs.New()
 
 func init() {
-	_, err := rand.Read(secret)
-	if err != nil {
-		log.Fatalf("error creating secret session manager %v", err)
-	}
-	cookieBased = scs.NewManager(cookiestore.New(secret))
+	sessionManager.Lifetime = 24 * time.Hour
 }
 
-var cookieBased = scs.NewManager(cookiestore.New(secret))
-var memoryOnly = scs.NewManager(memstore.New(2 * time.Hour))
-var sessionManager = memoryOnly
-
 // Mgr exposes the session manager
-func Mgr() *scs.Manager {
+func Mgr() *scs.SessionManager {
 	return sessionManager
 }
 
 // SessT enhances the alexedwards/scs session.
 type SessT struct {
-	scs.Session
-	w http.ResponseWriter
+	*scs.SessionManager
+	ctx context.Context
+	// w   io.Writer // no longer required
 	r *http.Request
 }
 
 // New returns a new enhanced session variable.
-func New(w http.ResponseWriter, r *http.Request) SessT {
-	sess := sessionManager.Load(r)
+func New(w io.Writer, r *http.Request) SessT {
 	return SessT{
-		w:       w,
-		r:       r,
-		Session: *sess,
+		SessionManager: sessionManager, // I cannot see the problem with this linter msg here :(
+		ctx:            r.Context(),
+		// w:              w,
+		r: r,
 	}
 }
 
@@ -73,8 +63,7 @@ func (sess *SessT) EffectiveIsSet(key string) bool {
 	}
 
 	// Session was set, but with empty string?
-	exists, err := sess.Exists(key)
-	util.CheckErr(err)
+	exists := sess.SessionManager.Exists(sess.ctx, key)
 	if exists {
 		return true
 	}
@@ -83,7 +72,7 @@ func (sess *SessT) EffectiveIsSet(key string) bool {
 
 }
 
-// EffectiveStr returns the corresponding value from request or session .
+// EffectiveStr returns the corresponding value from request or session.
 // It returns the zero value "", regardless whether the key was not set at all,
 // or whether key was set to value "".
 func (sess *SessT) EffectiveStr(key string, defaultVal ...string) string {
@@ -96,11 +85,9 @@ func (sess *SessT) EffectiveStr(key string, defaultVal ...string) string {
 
 	// Session
 	// Session was set, but with empty string?
-	exists, err := sess.Exists(key)
-	util.CheckErr(err)
+	exists := sess.SessionManager.Exists(sess.ctx, key)
 	if exists {
-		p, err := sess.GetString(key)
-		util.CheckErr(err)
+		p = sess.SessionManager.GetString(sess.ctx, key)
 		return p
 	}
 
@@ -171,71 +158,102 @@ func (sess *SessT) EffectiveFloat(key string, defaultVal ...float64) (float64, b
 }
 
 // EffectiveObj helps to retrieve an compound variable from the session.
-// The parameter obj must be pointer.
-func (sess *SessT) EffectiveObj(key string, obj interface{}) (bool, error) {
-	ok := sess.EffectiveIsSet(key)
+func (sess *SessT) EffectiveObj(key string) (obj interface{}, ok bool) {
+	ok = sess.EffectiveIsSet(key)
 	if !ok {
-		return false, nil
+		return
 	}
-	err := sess.GetObject(key, obj)
-	if err != nil {
-		return false, err
-	}
-	return true, nil
+	obj = sess.SessionManager.Get(sess.ctx, key)
+	return
 }
 
 // PutString stores a string into the session.
-func (sess *SessT) PutString(key, val string) error {
-	err := sess.Session.PutString(sess.w, key, val)
-	if err != nil {
-		log.Printf("Put string for session session-key %v failed: %v", key, err)
-	}
-	return err
+// Almost identical to PutObject.
+func (sess *SessT) PutString(key, val string) {
+	sess.SessionManager.Put(sess.ctx, key, val)
 }
 
 // PutObject stores an object into the session.
-func (sess *SessT) PutObject(key string, val interface{}) error {
-	err := sess.Session.PutObject(sess.w, key, val)
-	if err != nil {
-		log.Printf("Put object for session session-key %v failed: %v", key, err)
-	}
-	return err
+// Almost identical to PutString.
+// val can be pointer or value.
+func (sess *SessT) PutObject(key string, val interface{}) {
+	sess.SessionManager.Put(sess.ctx, key, val)
 }
 
-// SessionPut is a convenience request handler for diagnosis via http
+//
+//
+//
+type testObject struct {
+	Name  string
+	Birth time.Time
+}
+
+func (to testObject) String() string {
+	return fmt.Sprintf("Name %v, Birth %v", to.Name, to.Birth.Format(time.RFC822))
+}
+
+func init() {
+	gob.Register(testObject{})
+}
+
+// SessionPut - request handler for session diagnosis via http
 func SessionPut(w http.ResponseWriter, r *http.Request) {
+
 	w.Header().Set("Content-Type", "text/plain; charset=utf-8")
 	sess := New(w, r)
-	_ = sess.PutString("session-test-key", "session-test-value")
-	fmt.Fprint(w, "session[session-test-key] set to session-test-value")
+
+	sess.PutString("key1", "valStr1")
+	fmt.Fprint(w, "session[key1] set to valStr1\n")
+
+	testObj := testObject{"Horst", time.Date(1968, 6, 15, 10, 33, 0, 0, time.UTC)}
+	sess.PutObject("key2", &testObj)
+	fmt.Fprintf(w, "session[key2] set to %s\n", testObj)
 
 }
 
-// SessionGet is a convenience request handler for diagnosis via http
+// SessionGet - request handler for session diagnosis via http
 func SessionGet(w http.ResponseWriter, r *http.Request) {
+
 	w.Header().Set("Content-Type", "text/plain; charset=utf-8")
 	sess := New(w, r)
-	val1 := sess.EffectiveStr("session-test-key")
-	cnt1 := fmt.Sprintf("session-test-key is %v\n", val1)
-	fmt.Fprint(w, cnt1)
-	val2 := sess.EffectiveStr("request-test-key")
-	cnt2 := fmt.Sprintf("request-test-key is %v\n", val2)
-	fmt.Fprint(w, cnt2)
+
+	{
+		val := sess.EffectiveStr("key1")
+		cnt := fmt.Sprintf("key1   is %v\n", val)
+		fmt.Fprint(w, cnt)
+	}
+
+	{
+		val := sess.EffectiveStr("reqKey")
+		cnt := fmt.Sprintf("reqKey is %v\n", val)
+		fmt.Fprint(w, cnt)
+	}
+
+	{
+		testObjIntf, ok := sess.EffectiveObj("key2")
+		cnt := fmt.Sprintf("key2   is %v - %s - %T %#v\n", ok, testObjIntf, testObjIntf, testObjIntf)
+		fmt.Fprint(w, cnt)
+
+		testObj, ok := testObjIntf.(testObject)
+		cnt = fmt.Sprintf("conversio %v - %s - %T\n", ok, testObj, testObj)
+		fmt.Fprint(w, cnt)
+	}
 
 	fmt.Fprint(w, "\n\n")
-	keys, _ := sess.Keys()
+	keys := sess.Keys(sess.ctx)
 	for _, key := range keys {
-		dis := fmt.Sprintf("key %20v is set", key)
+		dis := fmt.Sprintf("key %-12v is set", key)
 		// Beware - since the vals are typed differently
 		func() {
 			if rec := recover(); rec != nil {
 				fmt.Fprintf(w, "Error: %v", rec)
 			}
-			val := sess.EffectiveStr(key)
-			if len(val) > 80 {
-				val = val[:80]
+			val, _ := sess.EffectiveObj(key)
+			objToStr := fmt.Sprintf("%#v", val)
+			if len(objToStr) > 140 {
+				objToStr = objToStr[:140] + "..."
 			}
-			dis += fmt.Sprintf("; val is %v\n\n", val)
+			dis += fmt.Sprintf("; type %-18T - %v\n", val, objToStr)
 		}()
 		fmt.Fprint(w, dis)
 	}

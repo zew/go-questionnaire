@@ -193,8 +193,7 @@ func (fragm *staticPrefixT) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 
 	// survey name
 	surveyType := ""
-	q := &qst.QuestionnaireT{}
-	if ok, _ := sess.EffectiveObj("questionnaire", q); ok {
+	if q, ok, _ := qst.FromSession(w, r); ok {
 		surveyType = q.Survey.Type
 	}
 

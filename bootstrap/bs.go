@@ -9,10 +9,12 @@ import (
 	"os"
 	"path/filepath"
 	"strings"
+	"time"
 
 	"github.com/zew/go-questionnaire/cfg"
 	"github.com/zew/go-questionnaire/cloudio"
 	"github.com/zew/go-questionnaire/lgn"
+	"github.com/zew/go-questionnaire/sessx"
 	"github.com/zew/go-questionnaire/tpl"
 	"github.com/zew/util"
 )
@@ -113,5 +115,8 @@ func Config() {
 	}
 
 	tpl.Parse(tpls...)
+
+	sessx.Mgr().Lifetime = time.Duration(cfg.Get().SessionTimeout) * time.Hour // default is 24 hours
+	// sessx.Mgr().Secure(true)            // true breaks session persistence in excel-db - but not in go-countdown - it leads to sesson breakdown on iphone safari mobile, maybe because appengine is http with TLS outside
 
 }

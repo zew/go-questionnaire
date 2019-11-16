@@ -55,7 +55,7 @@ func (wr *mustAdmin) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 	}
 
 	//
-	ctx := context.WithValue(context.Background(), ctxKey("lgn"), l)
+	ctx := context.WithValue(req.Context(), ctxKey("login_middleware"), l) // unused
 	wr.inner.ServeHTTP(w, req.WithContext(ctx))
 
 }

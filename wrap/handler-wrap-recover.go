@@ -5,6 +5,7 @@ package wrap
 import (
 	"context"
 	"fmt"
+	"log"
 	"net/http"
 	"strings"
 	"time"
@@ -72,21 +73,32 @@ func (m *logAndRecover) ServeHTTP(w http.ResponseWriter, rNew *http.Request) {
 	sess.PutString("session-test-key", "session-test-value")
 	paramPersister(rNew, &sess) // before creating first state
 
-	if false {
-		//
-		// Additional constraint on each request
-		// on top of ReadTimeout/ReadHeaderTimeout + WriteTimeout
-		//
-		// Reason: We have to globally increase ReadHeaderTimeout due to transferrer-endpoint
-		// But here restrain normal requests again
-		perReqTimeout := time.Duration(30)
-		if strings.Contains(rNew.URL.Path, "transferrer-endpoint") {
-			perReqTimeout = time.Duration(30 * 30)
+	/*
+		Filippo Valsorda
+		blog.cloudflare.com/the-complete-guide-to-golang-net-http-timeouts/
+
+		Additional constraint on each request;
+		more restrictive than ReadTimeout/ReadHeaderTimeout + WriteTimeout
+		Similar to http.TimeoutHandler()
+
+		Reason: We have to globally increase WriteTimeout
+		due to transferrer-endpoint and download requests;
+		here we restrain normal requests again
+	*/
+	if cfg.Get().TimeOutUsual > 0 {
+		perReqTimeout := time.Duration(cfg.Get().TimeOutUsual) * time.Second // reduce from 60 secs to 10 secs
+		apply := true
+		for _, s := range cfg.Get().TimeOutExceptions {
+			if strings.Contains(rNew.URL.Path, s) {
+				apply = false
+			}
 		}
-		ctx, perReqCancel := context.WithTimeout(rNew.Context(), time.Duration(perReqTimeout*time.Second))
-		defer perReqCancel()
-		rNew = rNew.WithContext(ctx)
-		// log.Printf("setting timeout for %v to %v", rNew.URL.Path, time.Duration(perReqTimeout*time.Second))
+		if apply {
+			log.Printf("DE-creasing req timeout to %v for %v", perReqTimeout, rNew.URL.Path)
+			ctx, perReqCancel := context.WithTimeout(rNew.Context(), time.Duration(perReqTimeout*time.Second))
+			defer perReqCancel()
+			rNew = rNew.WithContext(ctx)
+		}
 	}
 
 	//

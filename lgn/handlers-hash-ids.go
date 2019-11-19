@@ -13,7 +13,7 @@ import (
 var gen *hashids.HashIDData
 
 // init() is impossible
-// because Get().Salt is not yet initialized
+// because lgn.Get().Salt is not yet initialized
 func getGen() *hashids.HashIDData {
 	if gen == nil {
 		gen = hashids.NewData()
@@ -69,7 +69,7 @@ little to gain from getting someone elses responses.
 But keep an eye on the application log.
 	
 `
-	w.Write([]byte(msg))
+	fmt.Fprint(w, msg)
 
 	type formEntryT struct {
 		Start int `json:"start"`

@@ -83,6 +83,10 @@ func MarkDownFromFile(fpth, surveyType, langCode string) (string, error) {
 	// Rewrite Links with {{AppPrefix}} to application url prefix
 	bts = bytes.Replace(bts, []byte("/{{AppPrefix}}"), []byte(cfg.Pref()), -1)
 
+	// Since blackfriday version 1.52, bullet lists only work for UNIX line breaks
+	bts = bytes.ReplaceAll(bts, []byte("\r\n"), []byte("\n"))
+
+
 	// Render markdown
 	output := string(blackfriday.Run(bts))
 	// output += "<br>\n<br>\n<br>\n<p style='font-size: 75%;'>\nRendered by russross/blackfriday</p>\n" // Inconspicuous rendering marker

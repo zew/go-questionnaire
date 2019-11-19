@@ -1,5 +1,3 @@
-// +build !appengine
-
 package main
 
 import (
@@ -19,6 +17,7 @@ import (
 	"github.com/zew/go-questionnaire/handlers"
 	"github.com/zew/go-questionnaire/lgn"
 	"github.com/zew/go-questionnaire/sessx"
+	"github.com/zew/go-questionnaire/stream"
 	"github.com/zew/go-questionnaire/tpl"
 	"github.com/zew/go-questionnaire/wrap"
 	"golang.org/x/crypto/acme/autocert"
@@ -36,71 +35,59 @@ func main() {
 		cfg.SwitchToTestConfig()
 	}
 
-	//
-	//
-	// Http server
+	/*
+		Http server and mux
+
+		The order of the muxes is counter-intuitive:
+
+		mux4             - static requests, streaming - no session
+			mux3         - establishes sessions
+				mux2     - recovery, logging
+					mux1 - dynamic requests with session
+
+		To achieve this, we must *reversely*
+		wrap mux1 with mux2
+		wrap mux2 with mux3
+		wrap mux3 with mux4
+
+	*/
 	mux1 := http.NewServeMux() // base router
-
-	// Static file serving to the base router.
-	// Static requests will also trigger the middleware funcs below.
-	staticDirs := []string{"/img", "/js"}
-	for _, v := range staticDirs {
-		mux1.HandleFunc(cfg.Pref(v), tpl.StaticDownloadH)
-		mux1.HandleFunc(cfg.PrefTS(v), tpl.StaticDownloadH)
-		log.Printf("static service %-20v => /static/[stripped:%v]%v", cfg.Pref(v), cfg.Get().AppMnemonic, v)
-	}
-	// Extra handler for dynamic css - served from templates
-	mux1.HandleFunc(cfg.PrefTS("/css/"), tpl.ServeDynCSS)
-	// markdown files in /doc
-	tpl.CreateAndRegisterHandlerForDocs(mux1)
-
-	serveIcon := func(w http.ResponseWriter, r *http.Request) {
-		w.Header().Set("Content-Type", "image/x-icon")
-		// andrewlock.net/adding-cache-control-headers-to-static-files-in-asp-net.core/
-		// but does not help
-		w.Header().Set("Cache-Control", fmt.Sprintf("public,max-age=%d", 60*60*24))
-		bts, _ := ioutil.ReadFile("./static/img/ui/favicon.ico")
-		fmt.Fprint(w, bts)
-	}
-	mux1.HandleFunc("/favicon.ico", serveIcon)
-	if cfg.Pref() != "" {
-		mux1.HandleFunc(cfg.Pref("favicon.ico"), serveIcon)
-		mux1.HandleFunc(cfg.PrefTS("favicon.ico"), serveIcon)
-	}
-
+	//
 	// Login primitives for everybody
 	mux1.HandleFunc(cfg.Pref("/login-primitive"), lgn.LoginPrimitiveH)
-	mux1.HandleFunc(cfg.Pref("/change-password-primitive"), lgn.ChangePasswordPrimitiveH)
+	mux1.Handle(cfg.Pref("/change-password-primitive"), wrap.MustLogin(lgn.ChangePasswordPrimitiveH))
 	mux1.HandleFunc(cfg.PrefTS("/d"), handlers.LoginByHashID) // 'd' for direct
 	// Administrative handlers - common
-	mux1.Handle(cfg.Pref("/session-put"), wrap.AdminFunc(sessx.SessionPut))
-	mux1.Handle(cfg.Pref("/session-get"), wrap.AdminFunc(sessx.SessionGet))
-	mux1.Handle(cfg.Pref("/config-reload"), wrap.AdminFunc(handlers.ConfigReloadH))
-	mux1.Handle(cfg.Pref("/templates-reload"), wrap.AdminFunc(tpl.ParseH))
+	mux1.Handle(cfg.Pref("/session-put"), wrap.MustAdmin(sessx.SessionPut))
+	mux1.Handle(cfg.Pref("/session-get"), wrap.MustAdmin(sessx.SessionGet))
+	mux1.Handle(cfg.Pref("/config-reload"), wrap.MustAdmin(handlers.ConfigReloadH))
+	mux1.Handle(cfg.Pref("/templates-reload"), wrap.MustAdmin(tpl.ParseH))
 	// Workflow - logins for survey
-	mux1.Handle(cfg.Pref("/generate-questionnaire-templates"), wrap.AdminFunc(generators.SurveyGenerate))
-	mux1.Handle(cfg.Pref("/generate-hashes"), wrap.AdminFunc(lgn.GenerateHashesH))
-	mux1.Handle(cfg.Pref("/generate-hash-ids"), wrap.AdminFunc(lgn.GenerateHashIDs))
-	mux1.Handle(cfg.Pref("/reload-from-questionnaire-template"), wrap.AdminFunc(lgn.ReloadH))
-	mux1.Handle(cfg.PrefTS("/reload-from-questionnaire-template"), wrap.AdminFunc(lgn.ReloadH))
-	mux1.Handle(cfg.Pref("/shufflings-to-csv"), wrap.AdminFunc(lgn.ShufflesToCSV))
+	mux1.Handle(cfg.Pref("/generate-questionnaire-templates"), wrap.MustAdmin(generators.SurveyGenerate))
+	mux1.Handle(cfg.Pref("/generate-hashes"), wrap.MustAdmin(lgn.GenerateHashesH))
+	mux1.Handle(cfg.Pref("/generate-hash-ids"), wrap.MustAdmin(lgn.GenerateHashIDs))
+	mux1.Handle(cfg.Pref("/reload-from-questionnaire-template"), wrap.MustAdmin(lgn.ReloadH))
+	mux1.Handle(cfg.PrefTS("/reload-from-questionnaire-template"), wrap.MustAdmin(lgn.ReloadH))
+	mux1.Handle(cfg.Pref("/shufflings-to-csv"), wrap.MustAdmin(lgn.ShufflesToCSV))
 	// Rare login funcs
-	mux1.Handle(cfg.Pref("/logins-save"), wrap.AdminFunc(lgn.SaveH))
-	mux1.Handle(cfg.Pref("/logins-reload"), wrap.AdminFunc(lgn.LoadH))
-	mux1.Handle(cfg.Pref("/generate-password"), wrap.AdminFunc(lgn.GeneratePasswordH))
+	mux1.Handle(cfg.Pref("/logins-save"), wrap.MustAdmin(lgn.SaveH))
+	mux1.Handle(cfg.Pref("/logins-reload"), wrap.MustAdmin(lgn.LoadH))
+	mux1.Handle(cfg.Pref("/generate-password"), wrap.MustAdmin(lgn.GeneratePasswordH))
 	mux1.HandleFunc(cfg.Pref("/create-anonymous-id"), lgn.CreateAnonymousID)
+	// Stream tests
+	mux1.Handle(cfg.Pref("/instance-info"), wrap.MustAdmin(stream.InstanceInfo))
 	// PProf stuff
-	mux1.Handle(cfg.Pref("/diag/pprof"), wrap.AdminFunc(pprof.Index))
-	mux1.Handle(cfg.Pref("/diag/allocs"), wrap.AdminFunc(pprof.Handler("allocs").ServeHTTP))
-	mux1.Handle(cfg.Pref("/diag/block"), wrap.AdminFunc(pprof.Handler("block").ServeHTTP))
-	mux1.Handle(cfg.Pref("/diag/cmdline"), wrap.AdminFunc(pprof.Cmdline))
-	mux1.Handle(cfg.Pref("/diag/goroutine"), wrap.AdminFunc(pprof.Handler("goroutine").ServeHTTP))
-	mux1.Handle(cfg.Pref("/diag/heap"), wrap.AdminFunc(pprof.Handler("heap").ServeHTTP))
-	mux1.Handle(cfg.Pref("/diag/mutex"), wrap.AdminFunc(pprof.Handler("mutex").ServeHTTP))
-	mux1.Handle(cfg.Pref("/diag/profile"), wrap.AdminFunc(pprof.Profile))
-	mux1.Handle(cfg.Pref("/diag/threadcreate"), wrap.AdminFunc(pprof.Handler("threadcreate").ServeHTTP))
-	mux1.Handle(cfg.Pref("/diag/trace"), wrap.AdminFunc(pprof.Trace))
-	mux1.Handle(cfg.Pref("/diag/symbol"), wrap.AdminFunc(pprof.Symbol))
+	mux1.Handle(cfg.Pref("/diag/pprof"), wrap.MustAdmin(pprof.Index))
+	mux1.Handle(cfg.Pref("/diag/allocs"), wrap.MustAdmin(pprof.Handler("allocs").ServeHTTP))
+	mux1.Handle(cfg.Pref("/diag/block"), wrap.MustAdmin(pprof.Handler("block").ServeHTTP))
+	mux1.Handle(cfg.Pref("/diag/cmdline"), wrap.MustAdmin(pprof.Cmdline))
+	mux1.Handle(cfg.Pref("/diag/goroutine"), wrap.MustAdmin(pprof.Handler("goroutine").ServeHTTP))
+	mux1.Handle(cfg.Pref("/diag/heap"), wrap.MustAdmin(pprof.Handler("heap").ServeHTTP))
+	mux1.Handle(cfg.Pref("/diag/mutex"), wrap.MustAdmin(pprof.Handler("mutex").ServeHTTP))
+	mux1.Handle(cfg.Pref("/diag/profile"), wrap.MustAdmin(pprof.Profile))
+	mux1.Handle(cfg.Pref("/diag/threadcreate"), wrap.MustAdmin(pprof.Handler("threadcreate").ServeHTTP))
+	mux1.Handle(cfg.Pref("/diag/trace"), wrap.MustAdmin(pprof.Trace))
+	mux1.Handle(cfg.Pref("/diag/symbol"), wrap.MustAdmin(pprof.Symbol))
 
 	//
 	// App specific
@@ -111,23 +98,46 @@ func main() {
 	}
 	mux1.HandleFunc(cfg.Pref("/transferrer-endpoint"), handlers.TransferrerEndpointH)
 
-	/*
-		Adding session management.
+	// vert align diff view
+	// vert align diff view
+	mux2 := wrap.LogAndRecover(mux1)      // wrap mux1 into logger/recoverer
+	mux3 := sessx.Mgr().LoadAndSave(mux2) // wrap mux2 into session manager
 
-		The order is counter-intuitive.
-		We want requests be handled like this:
+	mux4 := http.NewServeMux() // top router for non-middlewared handlers
+	mux4.Handle("/", mux3)
+	if cfg.Pref() != "" {
+		mux4.Handle(cfg.Pref("/"), mux3) // wrap mux3 into mux4
+		mux4.Handle(cfg.PrefTS("/"), mux3)
+	}
+	mux4.HandleFunc(cfg.Pref("/slow-buffered"), stream.SlowBuffered)
+	mux4.HandleFunc(cfg.Pref("/slow-hijacked"), stream.SlowHijacked)
 
-		mux3         - establishes sessions
-		 	mux2     - recovery, logging
-		  		mux1 - call the actual handler
+	// Static file serving to the base router.
+	// Static requests will also trigger the middleware funcs below.
+	staticDirs := []string{"/img", "/js"}
+	for _, v := range staticDirs {
+		mux4.HandleFunc(cfg.Pref(v), tpl.StaticDownloadH)
+		mux4.HandleFunc(cfg.PrefTS(v), tpl.StaticDownloadH)
+		log.Printf("static service %-20v => /static/[stripped:%v]%v", cfg.Pref(v), cfg.Get().AppMnemonic, v)
+	}
+	// Extra handler for dynamic css - served from templates
+	mux4.HandleFunc(cfg.PrefTS("/css/"), tpl.ServeDynCSS)
+	// markdown files in /doc
+	tpl.CreateAndRegisterHandlerForDocs(mux4)
 
-		 To achieve this, we must *reversely* wrap
-		 mux1 first in mux2, then in mux3
-
-	*/
-	mux2 := wrap.LogAndRecover(mux1)
-	// => Wrap in mux2 in session manager
-	mux3 := sessx.Mgr().LoadAndSave(mux2)
+	serveIcon := func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Content-Type", "image/x-icon")
+		// andrewlock.net/adding-cache-control-headers-to-static-files-in-asp-net.core/
+		// but does not help
+		w.Header().Set("Cache-Control", fmt.Sprintf("public,max-age=%d", 60*60*24))
+		bts, _ := ioutil.ReadFile("./static/img/ui/favicon.ico")
+		fmt.Fprint(w, bts)
+	}
+	mux4.HandleFunc("/favicon.ico", serveIcon)
+	if cfg.Pref() != "" {
+		mux4.HandleFunc(cfg.Pref("favicon.ico"), serveIcon)
+		mux4.HandleFunc(cfg.PrefTS("favicon.ico"), serveIcon)
+	}
 
 	//
 	// Prepare web server launch
@@ -154,8 +164,9 @@ func main() {
 		}
 
 		fallbackSrv := &http.Server{
+			// upper limits for individual request timeouts - see wrap.LogAndRecover()
 			ReadTimeout:       time.Duration(cfg.Get().ReadTimeOut) * time.Second,
-			ReadHeaderTimeout: time.Duration(cfg.Get().ReadHeaderTimeOut) * time.Second, // individual request cannot control body timeout
+			ReadHeaderTimeout: time.Duration(cfg.Get().ReadHeaderTimeOut) * time.Second,
 			WriteTimeout:      time.Duration(cfg.Get().WriteTimeOut) * time.Second,
 			IdleTimeout:       120 * time.Second,
 			Addr:              fmt.Sprintf(":%v", cfg.Get().BindSocketFallbackHTTP),
@@ -200,16 +211,17 @@ func main() {
 			tlsCfg.GetCertificate = certManager.GetCertificate
 		}
 
-		// err = http.ListenAndServeTLS(IPPort, "server.pem", "server.key", mux3)
+		// err = http.ListenAndServeTLS(IPPort, "server.pem", "server.key", mux4)
 		srv := &http.Server{
+			// upper limits for individual request timeouts - see wrap.LogAndRecover()
 			ReadTimeout:       time.Duration(cfg.Get().ReadTimeOut) * time.Second,
-			ReadHeaderTimeout: time.Duration(cfg.Get().ReadHeaderTimeOut) * time.Second, // individual request cannot control body timeout
+			ReadHeaderTimeout: time.Duration(cfg.Get().ReadHeaderTimeOut) * time.Second,
 			WriteTimeout:      time.Duration(cfg.Get().WriteTimeOut) * time.Second,
 			IdleTimeout:       120 * time.Second,
 			Addr:              IPPort,
 			TLSConfig:         tlsCfg,
 			TLSNextProto:      make(map[string]func(*http.Server, *tls.Conn, http.Handler), 0),
-			Handler:           mux3,
+			Handler:           mux4,
 		}
 		if cfg.Get().LetsEncrypt {
 			log.Fatal(srv.ListenAndServeTLS("", "")) // "", "" => empty key and cert files; key+cert come from Let's Encrypt
@@ -217,7 +229,7 @@ func main() {
 			log.Fatal(srv.ListenAndServeTLS("server.pem", "server.key"))
 		}
 	} else {
-		log.Fatal(http.ListenAndServe(IPPort, mux3))
+		log.Fatal(http.ListenAndServe(IPPort, mux4))
 	}
 
 }

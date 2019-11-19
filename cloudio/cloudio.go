@@ -15,6 +15,9 @@
 // but deviates in that is also returns a bucket closer func.
 //
 // OpenAny() is just a wrapper arond Open() searching in various subdirectories.
+//
+// ServeFileBulk() serves files to via http
+// ServeFileStream() serves large files as stream
 package cloudio
 
 import (
@@ -36,6 +39,19 @@ import (
 	_ "gocloud.dev/blob/gcsblob"
 )
 
+var appsID string // Google app engine ID
+
+func init() {
+	appsID = os.Getenv("GAE_APPLICATION")
+	if len(appsID) > 2 {
+		// chopping of g~ or h~ ...
+		tokens := strings.Split(appsID, "~")
+		if len(tokens) > 1 {
+			appsID = tokens[1]
+		}
+	}
+}
+
 // IsNotExist function for cloudio
 func IsNotExist(err error) bool {
 	if os.IsNotExist(err) || strings.Contains(err.Error(), "code=NotFound") {
@@ -46,7 +62,7 @@ func IsNotExist(err error) bool {
 
 func prepareLocalDir() error {
 	bucketDir := filepath.Join(".", "app-bucket")
-	if err := os.MkdirAll(filepath.Join(".", bucketDir), 0755); err != nil {
+	if err := os.MkdirAll(filepath.Join(".", bucketDir), 0750); err != nil {
 		return err // MkdirAll does not report "already exists" as error
 	}
 	return nil
@@ -74,19 +90,14 @@ func bucketLocal() (*blob.Bucket, error) {
 
 func bucketGoogle() (*blob.Bucket, error) {
 	ctx := context.Background()
-	envCreds := os.Getenv("GOOGLE_APPLICATION_CREDENTIALS")
-	if envCreds == "" {
-		log.Print("SET GOOGLE_APPLICATION_CREDENTIALS=~/.ssh/google-cloud-[appname]-creds.json")
-	}
-	appID := os.Getenv("GAE_APPLICATION")
-	if strings.HasPrefix(appID, "e~") {
-		appID = strings.TrimPrefix(appID, "e~")
-	}
-	if strings.HasPrefix(appID, "h~") {
-		appID = strings.TrimPrefix(appID, "h~")
+	if len(appsID) < 2 {
+		envCreds := os.Getenv("GOOGLE_APPLICATION_CREDENTIALS")
+		if envCreds == "" {
+			log.Print("SET GOOGLE_APPLICATION_CREDENTIALS=~/.ssh/google-cloud-[appname]-creds.json")
+		}
 	}
 	// storageDriverURL := cfg.Get().StorageDriverURL
-	storageDriverURL := fmt.Sprintf("gs://%s.appspot.com", appID)
+	storageDriverURL := fmt.Sprintf("gs://%s.appspot.com", appsID)
 	bucket, err := blob.OpenBucket(ctx, storageDriverURL)
 	if err != nil {
 		return nil, fmt.Errorf("could not open google bucket for %v: %v", storageDriverURL, err)
@@ -95,16 +106,42 @@ func bucketGoogle() (*blob.Bucket, error) {
 }
 
 func bucket() (*blob.Bucket, error) {
-	// se := cfg.Get().StorageEngine
-	// if se == "gcsblob" {
-	// } else if se == "fileblob" || se == "memblob" {
-	// }
-	// return nil, fmt.Errorf("Unknown storage engine: %v", se)
-	appID := os.Getenv("GAE_APPLICATION")
-	if appID != "" {
+	if appsID != "" {
 		return bucketGoogle()
 	}
 	return bucketLocal()
+}
+
+// Attrs retrieves the attributes from a path;
+// though file size seems the only use case.
+func Attrs(fpth string) (attrs *blob.Attributes, err error) {
+
+	ctx := context.Background()
+	var errSec error
+	attrs = &blob.Attributes{}
+
+	// Bucket / directory
+	buck, err := bucket()
+	if err != nil {
+		log.Printf("cloudio.Stream(): Error opening bucket: %v", err)
+		return
+	}
+	defer func() {
+		errSec = buck.Close()
+		if errSec != nil {
+			err = errors.Wrap(err, errSec.Error())
+			log.Printf("cloudio.Stream(): Error closing bucket: %v", errSec)
+		}
+	}()
+
+	attrs, err = buck.Attributes(ctx, fpth)
+	if err != nil {
+		log.Printf("cloudio.Stream(): Error reading attrs for %v: %v", fpth, err)
+		return
+	}
+
+	return
+
 }
 
 // WriteFile is the cousin of ioutil.WriteFile.
@@ -303,15 +340,15 @@ func MarshalWriteFile(intf interface{}, fileName string) error {
 	firstColLeftMostPrefix := " "
 	bts, err := json.MarshalIndent(intf, firstColLeftMostPrefix, "\t")
 	if err != nil {
-		log.Printf("Could not marshal example config %v", err)
+		log.Printf("Could not marshal file %v - %v", fileName, err)
 		return err
 	}
 	err = WriteFile(fileName, bytes.NewReader(bts), 0644)
 	if err != nil {
-		log.Printf("Could not save example config: %v", err)
+		log.Printf("Could not save file %v - %v", fileName, err)
 		return err
 	}
-	log.Printf("File %v saved", fileName)
+	// log.Printf("File saved: %v ", fileName)
 	return nil
 
 }
@@ -375,7 +412,7 @@ func Delete(fileName string) error {
 var beforeList = func(as func(interface{}) bool) error {
 	var q *storage.Query
 	if as(&q) { // access storage.Query via q here.
-		log.Printf("beforeFunc(): delim - pref - versions: %v %v %#v", q.Delimiter, q.Prefix, q.Versions)
+		// log.Printf("beforeFunc(): delim - pref - versions: %v %v %#v", q.Delimiter, q.Prefix, q.Versions)
 	} else {
 		log.Printf("beforeFunc(): no response to %T", as)
 	}
@@ -410,7 +447,7 @@ func init() {
 				log.Printf("Error iterating with Next(): %v", err)
 				break
 			}
-			fmt.Printf("%s%s\n", strings.Repeat("    ", indent), obj.Key)
+			// fmt.Printf("%s%s\n", strings.Repeat("    ", indent), obj.Key)
 			*results = append(*results, obj)
 			if obj.IsDir && indent < maxIndent {
 				list(ctx, buck, obj.Key, indent+1, maxIndent, results)

@@ -9,26 +9,44 @@ import (
 	"github.com/zew/go-questionnaire/lgn"
 )
 
-type mustAdmin struct {
-	inner http.Handler
+type mustLogin struct {
+	inner     http.Handler
+	mustAdmin bool
 }
 
-// Admin returns a new http handler.
-func Admin(innerHandler http.Handler) http.Handler {
-	return &mustAdmin{
-		inner: innerHandler,
+// MustLogin takes a handler *func* and returns a wrapped around http handler.
+func MustLogin(innerFunc http.HandlerFunc) http.Handler {
+	return &mustLogin{
+		inner:     innerFunc,
+		mustAdmin: false,
 	}
 }
 
-// AdminFunc returns a new http handler.
-func AdminFunc(innerFunc http.HandlerFunc) http.Handler {
-	return &mustAdmin{
-		inner: innerFunc,
+// MustAdmin takes a handler *func* and returns a wrapped around http handler.
+func MustAdmin(innerFunc http.HandlerFunc) http.Handler {
+	return &mustLogin{
+		inner:     innerFunc,
+		mustAdmin: true,
 	}
+}
+
+// MustAdminHandler takes a handler and returns a wrapped around http handler.
+func MustAdminHandler(innerHandler http.Handler) http.Handler {
+	return &mustLogin{
+		inner:     innerHandler,
+		mustAdmin: true,
+	}
+}
+
+// MustAdmin upgrades requirements from
+// just a logged in user to one with admin rights.
+// Unused, since we dont expose mustLogin
+func (wr *mustLogin) MustAdmin(must bool) {
+	wr.mustAdmin = must
 }
 
 // Implementing http.Handler interface
-func (wr *mustAdmin) ServeHTTP(w http.ResponseWriter, req *http.Request) {
+func (wr *mustLogin) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 
 	var (
 		l          *lgn.LoginT
@@ -48,9 +66,11 @@ func (wr *mustAdmin) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 			fmt.Fprintf(w, "Not logged in\n")
 			return
 		}
-		if !l.HasRole("admin") {
-			fmt.Fprintf(w, "Login found, but must have role 'admin'\n")
-			return
+		if wr.mustAdmin {
+			if !l.HasRole("admin") {
+				fmt.Fprintf(w, "Login found, but must have role 'admin'\n")
+				return
+			}
 		}
 	}
 

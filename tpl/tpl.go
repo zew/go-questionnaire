@@ -14,6 +14,7 @@ import (
 	"html/template"
 	"log"
 	"net/http"
+	"sync"
 	"path/filepath"
 	"reflect"
 	"strings"
@@ -56,7 +57,7 @@ var staticTplFuncs = template.FuncMap{
 	},
 }
 
-// StaticFuncMap returns the static funcs every template should have.
+// StaticFuncMap returns the static funcs, every template should have.
 func StaticFuncMap() template.FuncMap {
 	return staticTplFuncs
 }
@@ -75,6 +76,7 @@ type bundleT struct {
 // coherent templates organized by a string, the bundle type
 // for instance main.html or style.css
 var parsedBundles = map[string]*bundleT{}
+var lock sync.Mutex
 
 // Parse prepares a bunch of templates (bundle) for execution.
 // bundles are grouped by name:
@@ -87,7 +89,7 @@ var parsedBundles = map[string]*bundleT{}
 // Finally: main.html bundles all html templates.
 //     bundle would be main.html =>  for main.html, *.html
 // The parsed bundle will be *big* and will be used for *many* request.
-// But this does not matter, since it is a pointer and since we dont clone it.
+// But this does *not* matter, since it is a pointer and since we dont clone it.
 //
 // Our bundles are completely threadsafe - but are still able
 // to *dynamically*  xecute sub templates by calling executeTemplate.
@@ -160,7 +162,9 @@ func Get(w http.ResponseWriter, r *http.Request, bundle string) *template.Templa
 	}
 	if !cfg.Get().IsProduction {
 		bt := &bundleT{}
+		lock.Lock()
 		bt.Parse(bundle)
+		lock.Unlock()
 		parsedBundles[bundle] = bt // this causes: "fatal error: concurrent map writes" in development mode
 	}
 
@@ -192,6 +196,6 @@ func ParseH(w http.ResponseWriter, r *http.Request) {
 		parsedBundles[bundle] = bt
 	}
 	w.Header().Set("Content-Type", "text/plain; charset=utf-8")
-	w.Write([]byte("templates reloaded"))
-	w.Write([]byte(util.IndentedDump(parsedBundles)))
+	fmt.Fprint(w, "templates reloaded")
+	fmt.Fprint(w, util.IndentedDump(parsedBundles))
 }

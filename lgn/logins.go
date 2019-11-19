@@ -9,8 +9,8 @@
 package lgn
 
 import (
-	"crypto/md5"
 	"crypto/rand"
+	"crypto/sha256"
 	"encoding/base64"
 	"encoding/gob"
 	"encoding/json"
@@ -24,7 +24,6 @@ import (
 
 	"github.com/zew/go-questionnaire/cfg"
 	"github.com/zew/go-questionnaire/cloudio"
-	"github.com/zew/go-questionnaire/qst"
 	"github.com/zew/go-questionnaire/sessx"
 	"github.com/zew/util"
 )
@@ -93,7 +92,7 @@ func FromSession(w io.Writer, r *http.Request) (*LoginT, bool, error) {
 
 	loginIntf, ok := sess.EffectiveObj(key)
 	if !ok {
-		log.Printf("key %v for LoginT{} is not in session", key)
+		// log.Printf("key %v for LoginT{} is not in session", key)
 		return nil, false, nil
 	}
 
@@ -131,69 +130,6 @@ func LoginURL(userName, surveyID, waveID, profile string, optHash ...string) str
 	return loginURL
 }
 
-// QuestPath returns the path to the JSON questionnaire,
-// Similar to qst.QuestionnaireT.FilePath1()
-// See also userAttrs{}
-func (l *LoginT) QuestPath() string {
-
-	userSurveyType := ""
-	userWaveID := ""
-	for attr, val := range l.Attrs {
-		if attr == "survey_id" {
-			userSurveyType = val
-		}
-		if attr == "wave_id" {
-			userWaveID = val
-		}
-	}
-
-	if userSurveyType == "" || userWaveID == "" {
-		log.Printf("Error constructing path for user questionnaire file; userSurveyType or userWaveID is empty: %v - %v", userSurveyType, userWaveID)
-	}
-
-	pth := path.Join(".", qst.BasePath(), userSurveyType, userWaveID, l.User) + ".json"
-	return pth
-}
-
-// DeleteFiles deletes all JSON files
-func (l *LoginT) DeleteFiles() {
-
-	userSurveyType := ""
-	userWaveID := ""
-	for attr, val := range l.Attrs {
-		if attr == "survey_id" {
-			userSurveyType = val
-		}
-		if attr == "wave_id" {
-			userWaveID = val
-		}
-	}
-
-	if userSurveyType == "" || userWaveID == "" {
-		log.Printf("Error deleting questionnaire file;  userSurveyType or userWaveID is empty: %v - %v", userSurveyType, userWaveID)
-		return
-	}
-
-	// pth1 := path.Join(".", qst.BasePath(), userSurveyType, userWaveID, l.User) + "_joined.json"
-	// pth2 := path.Join(".", qst.BasePath(), userSurveyType, userWaveID, l.User) + "_split.json"
-	pth3 := path.Join(".", qst.BasePath(), userSurveyType, userWaveID, l.User) + ".json"
-	// pth4 := path.Join(".", qst.BasePath(), userSurveyType, userWaveID, l.User) + ".json.attrs"
-
-	pths := []string{pth3}
-
-	for _, pth := range pths {
-		err := cloudio.Delete(pth)
-		if err != nil {
-			if !cloudio.IsNotExist(err) {
-				log.Printf("Error deleting questionnaire file: %v", err)
-			}
-		} else {
-			log.Printf("removed quest file %v", pth)
-		}
-	}
-
-}
-
 // HasRole checks the login for a particular role, for instance "admin"
 func (l *LoginT) HasRole(role string) bool {
 	if l.IsInitPassword {
@@ -206,10 +142,6 @@ func (l *LoginT) HasRole(role string) bool {
 // ComputeMD5Password is deliberately not a method
 func ComputeMD5Password(u, p, salt string) string {
 	hashBase := u + p + salt
-	pfx := cfg.Get().URLPathPrefix
-	if pfx == "taxkit" || pfx == "eta" {
-		hashBase = p + salt
-	}
 	return Md5Str([]byte(hashBase))
 }
 
@@ -365,23 +297,26 @@ func LoadH(w http.ResponseWriter, req *http.Request) {
 	log.Printf("Opened reader to cloud config %v", fileName)
 	Load(r)
 
-	w.Write([]byte("Login json file reloaded successfully. \n\n"))
-	w.Write([]byte("Check for specific user with ?u=[loginname] \n\n"))
+	fmt.Fprint(w, "Login json file reloaded successfully. \n\n")
+	fmt.Fprint(w, "Check for specific user with ?u=[loginname] \n\n")
 
-	req.ParseForm()
+	err = req.ParseForm()
+	if err != nil {
+		log.Printf("Error parsing form: %v", err)
+		fmt.Fprintf(w, "Error parsing form: %v", err)
+	}
 	u := req.Form.Get("u")
 	l, err := Get().FindAndCheck(u)
 	if err != nil {
 		str := fmt.Sprintf("%q not found: %v \n", u, err)
-		w.Write([]byte(str))
+		fmt.Fprint(w, str)
 		return
 	}
 
 	l.PassMd5 = "xxxx"
 	l.PassInitial = "xxxx"
 	str := fmt.Sprintf("Found %v => %v \n", u, util.IndentedDump(l))
-	w.Write([]byte(str))
-
+	fmt.Fprint(w, str)
 }
 
 // SaveH is a convenience func to save logins file via http request.
@@ -389,22 +324,25 @@ func SaveH(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "text/plain; charset=utf-8")
 	err := cloudio.MarshalWriteFile(lgns, "logins.json")
 	if err != nil {
-		w.Write([]byte(err.Error()))
+		fmt.Fprintf(w, "error writing logins file: %v", err)
 		return
 	}
-	w.Write([]byte("logins saved"))
+	fmt.Fprint(w, "logins saved")
 }
 
 // GeneratePasswordH is a convenience func to generate passwords via http request.
 // URL parameter len specifies the password length.
 func GeneratePasswordH(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "text/plain; charset=utf-8")
-	r.ParseForm()
+	err := r.ParseForm()
+	if err != nil {
+		fmt.Fprintf(w, "Error parsing form: %v \n\n", err)
+	}
 	sl := r.Form.Get("len")
 
 	l, _ := strconv.Atoi(sl)
 	if l < 3 {
-		w.Write([]byte("Specify number of chars with ?len=xx \n\n"))
+		fmt.Fprint(w, "Specify number of chars with ?len=xx \n\n")
 		return
 	}
 	fmt.Fprintf(w, "len %v => %v \n", l, GeneratePassword(l))
@@ -477,12 +415,16 @@ func GeneratePwFromChars(chars []byte, length int) string {
 // https://survey2.zew.de/?u=1000&sid=fmt&wid=2019-06&h=57I7U&p=12
 //
 func Md5Str(buf []byte) string {
-	hasher := md5.New()
-	hasher.Write(buf)
+	hasher := sha256.New()
+	_, err := hasher.Write(buf)
+	if err != nil {
+		log.Printf("lgn.Md5Str() could not write %v: %v", buf, err)
+	}
 	hshBytes := hasher.Sum(nil)
 	// ret := hex.EncodeToString(hshBytes)
-	// ret = base64.URLEncoding.EncodeToString(hshBytes)
-	return base64.RawURLEncoding.EncodeToString(hshBytes)[:5] // no trailing equal signs
+	// return base64.RawURLEncoding.EncodeToString(hshBytes)[:5] // direct login
+	// return base64.URLEncoding.EncodeToString(hshBytes) //    trailing equal signs
+	return base64.RawURLEncoding.EncodeToString(hshBytes) // no trailing equal signs
 }
 
 // Example writes a single login to file, to be extended or adapted

@@ -89,9 +89,17 @@ func Config() {
 		log.Printf("Opened reader to cloud config %v", fileName)
 		lgn.Load(r)
 
-		cloudio.MarshalWriteFile(lgn.Example(), "logins-example.json")
+		err = cloudio.MarshalWriteFile(lgn.Example(), "logins-example.json")
+		if err != nil {
+			log.Printf("logins example save: %v", err)
+		}
 
 	}
+
+	if cfg.Get().SessionTimeout > 0 {
+		sessx.Mgr().Lifetime = time.Duration(cfg.Get().SessionTimeout) * time.Hour // default is 24 hours
+	}
+	// sessx.Mgr().Secure(true)            // true breaks session persistence in excel-db - but not in go-countdown - it leads to sesson breakdown on iphone safari mobile, maybe because appengine is http with TLS outside
 
 	//
 	//
@@ -116,7 +124,5 @@ func Config() {
 
 	tpl.Parse(tpls...)
 
-	sessx.Mgr().Lifetime = time.Duration(cfg.Get().SessionTimeout) * time.Hour // default is 24 hours
-	// sessx.Mgr().Secure(true)            // true breaks session persistence in excel-db - but not in go-countdown - it leads to sesson breakdown on iphone safari mobile, maybe because appengine is http with TLS outside
 
 }

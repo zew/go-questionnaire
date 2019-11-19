@@ -1,6 +1,7 @@
 // Package sessx reads effective parameter values
 // from GET, POST and SESSION.
 // It also reads consolidated request params (GET, POST).
+// Environment variable REDIS_SESSION_STORE switches to redis storage.
 package sessx
 
 import (
@@ -8,17 +9,47 @@ import (
 	"encoding/gob"
 	"fmt"
 	"io"
+	"log"
+	"net"
 	"net/http"
+	"os"
 	"strconv"
 	"time"
 
+	"github.com/alexedwards/scs/redisstore"
+	"github.com/gomodule/redigo/redis"
+
 	"github.com/alexedwards/scs/v2"
+	"github.com/alexedwards/scs/v2/memstore"
 )
 
 var sessionManager = scs.New()
 
 func init() {
+
+	//
+	addr := os.Getenv("REDIS_SESSION_STORE")
+	if addr != "" {
+		pool := &redis.Pool{
+			MaxIdle: 10,
+			Dial: func() (redis.Conn, error) {
+				return redis.Dial("tcp", addr)
+			},
+		}
+		sessionManager.Store = redisstore.New(pool)
+		log.Printf("session storage: redis")
+
+		d := net.Dialer{Timeout: 4 * time.Second}
+		_, err := d.Dial("tcp", addr)
+		if err != nil {
+			log.Printf("could not reach redis server %v - %v", addr, err)
+			sessionManager.Store = memstore.New() // fallback to memory
+		}
+	}
+
 	sessionManager.Lifetime = 24 * time.Hour
+	sessionManager.IdleTimeout = 2 * time.Hour
+
 }
 
 // Mgr exposes the session manager

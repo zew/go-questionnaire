@@ -489,7 +489,17 @@ It features
 * [Dockerfile](https://en.wikipedia.org/wiki/Docker_%28software%29) to deploy on modern cloud servers
 
 * Package `cloudio` wraps all io operations into [Gocloud blob functionality](https://godoc.org/gocloud.dev/blob).  
-Thus the application can be hosted by cloud providers with buckets *or* on classical webservers.
+Thus the application can be hosted by cloud providers with buckets *or* on servers with plain old hard disks.
+
+* Package `sessx` can store sessions in a Redis server, keeping sessions sticky on autoscaling app engine deployments, otherwise fallback to local memory store.
+
+* Package `stream` serves huge files without memory consumption in a protected way.
+
+* Package `detect` discovers mobile clients
+
+* Package `struct2form` generates HTML forms alone from structs with comments
+
+* Package `graph` creates interactive SVG graphs
 
 ## Technical design guidelines
 

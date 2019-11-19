@@ -54,14 +54,22 @@ type ConfigT struct {
 	ReadTimeOut            int    `json:"http_read_time_out"`        // limit large requests
 	ReadHeaderTimeOut      int    `json:"http_header_read_time_out"` // limit request header time - then use per request restrictions r = r.WithContext(ctx) to limit - stackoverflow.com/questions/39946583
 	WriteTimeOut           int    `json:"http_write_time_out"`       // for *responding* large files over slow networks, i.e. videos, set to 30 or 60 secs
-	MaxPostSize            int64  `json:"max_post_size,omitempty"`   // request body size limit, against DOS attacks, limits file uploads
+
+	TimeOutUsual      int      `json:"time_out_usual,omitempty"`
+	TimeOutExceptions []string `json:"time_out_exceptions,omitempty"`
+
+	MaxPostSize int64 `json:"max_post_size,omitempty"` // request body size limit, against DOS attacks, limits file uploads
 
 	LocationName   string         `json:"location,omitempty"` // i.e. "Europe/Berlin", see Go\lib\time\zoneinfo.zip
 	Loc            *time.Location `json:"-"`                  // Initialized during load
 	SessionTimeout int            `json:"session_timeout"`    // hours until the session is lost
 	FormTimeout    int            `json:"form_timeout"`       // hours until a form post is rejected
 
+	AppInstanceID int64 `json:"app_instance_id,omitempty"` // append to URLs of cached static jpg, js and css files - change to trigger reload
+
 	CSS map[string]string `json:"css"` // differentiate multiple instances by color and stuff - without duplicating entire css files
+
+	CPUProfile string `json:"cpu_profile"` // the filename to write to
 
 	AllowSkipForward bool `json:"allow_skip_forward"` // skipping back always allowed, skipping forward is configurable
 
@@ -142,6 +150,8 @@ func Load(r io.Reader) {
 		tempCfg.Loc = time.FixedZone("UTC_-2", -2*60*60)
 	}
 
+	tempCfg.AppInstanceID = time.Now().Unix()
+
 	//
 	cfgS = &tempCfg // replace pointer in one go - should be threadsafe
 	dmp := util.IndentedDump(cfgS)
@@ -155,8 +165,8 @@ func Load(r io.Reader) {
 // Any URL Path is prefixed with the URLPathPrefix, if URLPathPrefix is set.
 //
 // Prevents unnecessary slashes.
-//
-// No trailing slash; routes with trailing "/" such as "/path/"
+// No trailing slash
+// Routes with trailing "/" such as "/path/"
 // get a redirect "/path" => "/path/" if "/path" is not registered yet.
 // This behavior of func server.go - (mux *ServeMux) Handle(...) is nasty
 // since it depends on the ORDER of registrations.
@@ -209,14 +219,19 @@ func Example() *ConfigT {
 		BindSocketTests:        8181,
 		TLS:                    false,
 		TLS13:                  false,
-		ReadTimeOut:            5,
-		ReadHeaderTimeOut:      5,
-		WriteTimeOut:           30,
+		ReadTimeOut:            10,
+		ReadHeaderTimeOut:      10,
+		WriteTimeOut:           60,
+		TimeOutUsual:           10,
+		TimeOutExceptions:      []string{"transferrer-endpoint", "download/", "download-stream/"},
 		MaxPostSize:            int64(2 << 20), // 2 MB
 		LocationName:           "Europe/Berlin",
 		SessionTimeout:         2,
 		FormTimeout:            2,
-
+		CSS: map[string]string{
+			"body_background_color": "#e2e2e2",
+		},
+		AppInstanceID: time.Now().Unix(),
 		LangCodes: []string{"de", "en", "es", "fr", "it", "pl"},
 		Profiles: map[string]map[string]string{
 			"fmt1": map[string]string{

@@ -8,18 +8,15 @@
  			"en": "Financial Literacy Test"
  		},
  		"year": 2019,
- 		"month": 9,
- 		"deadline": "2019-10-31T23:59:00Z",
+ 		"month": 12,
+ 		"deadline": "2030-01-01T00:00:00Z",
  		"params": [
- 			{
- 				"name": "main_refinance_rate_ecb",
- 				"val": "3"
- 			},
+ 			{},
  			{}
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "28334a068dc639fcba3cf71f485953db",
+ 	"md_5": "5f08d6dc8919e4a85e0cf2b85c2167c6",
  	"lang_codes": {
  		"en": "English"
  	},

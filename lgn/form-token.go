@@ -1,10 +1,11 @@
 package lgn
 
 import (
-	"crypto/md5"
+	"crypto/sha256"
 	"encoding/hex"
 	"fmt"
 	"io"
+	"log"
 	"time"
 
 	"github.com/zew/go-questionnaire/cfg"
@@ -18,14 +19,20 @@ var fixedLocation = time.FixedZone("UTC_-2", -2*60*60)
 // tok rounds time to hours
 // and computes a hash from it
 func tok(hoursOffset int) string {
-	hasher := md5.New()
-	io.WriteString(hasher, lgns.Salt)
+	hasher := sha256.New()
+	_, err := io.WriteString(hasher, lgns.Salt)
+	if err != nil {
+		log.Printf("Error writing salt to hasher: %v", err)
+	}
 	t := time.Now().In(fixedLocation)
 	if hoursOffset != 0 {
 		t = t.Add(time.Duration(hoursOffset) * time.Hour)
 	}
 	// log.Printf("token time: %v", t.Format("02.01.2006 15"))
-	io.WriteString(hasher, t.Format("02.01.2006 15"))
+	_, err = io.WriteString(hasher, t.Format("02.01.2006 15"))
+	if err != nil {
+		log.Printf("Error writing date-hour to hasher: %v", err)
+	}
 	hash := hasher.Sum(nil)
 	return hex.EncodeToString(hash)
 }

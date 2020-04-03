@@ -1,13 +1,15 @@
+# Go-Questionnaire
+
 <img src="./static/img/doc/mascot/mascot.png" style="float: left; width:8%; min-width: 140px; max-width: 20%; margin-right:5%; margin-bottom: 2%;">
 
-[ ![GoDoc](http://godoc.org/github.com/zew/go-questionnaire?status.svg)          ](https://godoc.org/github.com/zew/go-questionnaire) [ ![Travis Build](https://travis-ci.org/zew/go-questionnaire.svg?branch=master)  ](https://travis-ci.org/zew/go-questionnaire) [ ![Report Card](https://goreportcard.com/badge/github.com/zew/go-questionnaire) ](https://goreportcard.com/report/github.com/zew/go-questionnaire) [ ![code-coverage](https://gocover.io/_badge/github.com/zew/go-questionnaire) ](https://gocover.io/github.com/zew/go-questionnaire) 
+[![GoDoc](http://godoc.org/github.com/zew/go-questionnaire?status.svg)](https://godoc.org/github.com/zew/go-questionnaire)        [![Travis Build](https://travis-ci.org/zew/go-questionnaire.svg?branch=master)](https://travis-ci.org/zew/go-questionnaire)        [![Report Card](https://goreportcard.com/badge/github.com/zew/go-questionnaire)](https://goreportcard.com/report/github.com/zew/go-questionnaire)      [![codecov](https://codecov.io/gh/zew/go-questionnaire/branch/master/graph/badge.svg)](https://codecov.io/gh/zew/go-questionnaire)
+
+
 
 <!-- 
 <div >&nbsp;</div>
 <div >&nbsp;</div> 
 -->
-
-# Go-Questionnaire
 
 <div style="position: static">
 <div style="position: relative; left: 25px;">

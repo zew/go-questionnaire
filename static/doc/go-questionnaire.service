@@ -1,0 +1,32 @@
+[Unit]
+Description=go-questionnaire
+After=syslog.target
+After=network.target
+#Requires=mariadb.service
+#Requires=postgresql.service
+
+[Service]
+#LimitMEMLOCK=infinity
+#LimitNOFILE=65535
+RestartSec=2s
+Type=simple
+User=gquser
+Group=gquser
+WorkingDirectory=/opt/go-questionnaire/
+ExecStart=/opt/go-questionnaire/go-questionnaire
+Restart=always
+Environment=USER=gquser HOME=/home/gquser
+# bind to a port below 1024
+CapabilityBoundingSet=CAP_NET_BIND_SERVICE
+AmbientCapabilities=CAP_NET_BIND_SERVICE
+#
+# stackoverflow.com/questions/37585758/
+SyslogIdentifier=go-questionnaire
+StandardOutput=syslog
+StandardError=syslog
+# file:/var/log/go-questionnaire.log does not work yet...
+#StandardOutput=file:/var/log/go-questionnaire.log
+#StandardError=file:/var/log/go-questionnaire.log
+
+[Install]
+WantedBy=multi-user.target

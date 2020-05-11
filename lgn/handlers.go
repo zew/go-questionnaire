@@ -244,7 +244,7 @@ func GenerateHashesH(w http.ResponseWriter, r *http.Request) {
 </head>
 <body>
 
-{{if  (len .ErrMsg) gt 0 }} <p style='white-space: pre; color:#E22'>{{.ErrMsg}}</p>{{end}}
+{{if gt (len .ErrMsg) 0 }} <p style='white-space: pre; color:#E22'>{{.ErrMsg}}</p>{{end}}
 
 <form method="post" action="{{.SelfURL}}"  style='white-space:pre' >
     <b>Create hash logins</b>
@@ -262,8 +262,8 @@ func GenerateHashesH(w http.ResponseWriter, r *http.Request) {
 
                         <input type="submit" name="submitclassic" id="submit" value="submit" accesskey="s"><br>
         <script> document.getElementById('submit').focus(); </script>
-        {{if  (len .Links  ) gt 0 }} <p style='                  color:#444'>{{.Links  }}</p>{{end}}
-        {{if  (len .List   ) gt 0 }} <p style='white-space: pre; color:#444'>{{.List   }}</p>{{end}}
+        {{if gt (len .Links  ) 0 }} <p style='                  color:#444'>{{.Links  }}</p>{{end}}
+        {{if gt (len .List   ) 0 }} <p style='white-space: pre; color:#444'>{{.List   }}</p>{{end}}
 </form>
 	
 </body>
@@ -403,7 +403,7 @@ func LoginPrimitiveH(w http.ResponseWriter, r *http.Request) {
 </head>
 <body>
 	<form method="post" action="{{.SelfURL}}"  style="margin: 50px;"  >
-		{{if  (len .Cnt) gt 0 }} <p style='white-space: pre; color:#E22'>{{.Cnt}}</p>{{end}}
+		{{if gt (len .Cnt) 0 }} <p style='white-space: pre; color:#E22'>{{.Cnt}}</p>{{end}}
 		Login<br>
 					<input name="token"    type="hidden"   value="{{.Token}}" />
 		Username:	<input name="username" type="text"     value="{{.L.User}}"><br>
@@ -467,7 +467,7 @@ func ChangePasswordPrimitiveH(w http.ResponseWriter, r *http.Request) {
 </head>
 <body>
 	<form method="post" action="{{.SelfURL}}"  style="margin: 50px;"  >
-		{{if  (len .Cnt) gt 0 }} <p style='white-space: pre; color:#E22'>{{.Cnt}}</p>{{end}}
+		{{if gt (len .Cnt) 0 }} <p style='white-space: pre; color:#E22'>{{.Cnt}}</p>{{end}}
 		Change password<br>
 		                <input name="token"        type="hidden"   value="{{.Token}}" />
 		Username: 		<input name="username"     type="text"     value="{{.L.User}}"><br>

@@ -92,7 +92,10 @@ func CreateAnonymousID(w http.ResponseWriter, r *http.Request) {
 
 	url := ""
 	if len(frm.String()) > 3 {
-		url = fmt.Sprintf("<a href='%v'>Start questionnaire</a>", cfg.Pref(fmt.Sprintf("/d/%v--%v", "flit", hashID)))
+		url = fmt.Sprintf(
+			"<a href='%v'>Start questionnaire</a>",
+			cfg.Pref(fmt.Sprintf("/d/%v--%v", cfg.Get().AnonymousSurveyID, hashID)),
+		)
 	}
 
 	fmt.Fprintf(w, `<!DOCTYPE html>
@@ -133,7 +136,7 @@ func CreateAnonymousID(w http.ResponseWriter, r *http.Request) {
   of your mother’s first name?   <input type="text"   name="mother_first"         value="%v"   maxlength='1' size='3' pattern='[A-Z]{1}' placeholder='A-Z' /> e.g. <u>A</u>lice  <br>
   What is the first letter 
   of your father’s first name?   <input type="text"   name="father_first"         value="%v"   maxlength='1' size='3' pattern='[A-Z]{1}' placeholder='A-Z' /> e.g. <u>B</u>ob  <br>
-  On which day is your birthday? <input type="text"   name="birthday_second"      value="%v"   maxlength='1' size='3' pattern='[0-9]{1}' placeholder='0-9'/> e.g. 3<u>0</u>. September or <u>7</u>. October,   <br>
+  Last digit of your birthday?   <input type="text"   name="birthday_second"      value="%v"   maxlength='1' size='3' pattern='[0-9]{1}' placeholder='0-9'/> e.g. 3<u>0</u>. September or <u>7</u>. October,   <br>
   What is the last letter 
   of your first name?            <input type="text"   name="first_name_last"      value="%v"   maxlength='1' size='3' pattern='[a-z]{1}' placeholder='a-z' /> e.g. Caro<u>l</u>  <br>
                                  <input type="submit" name="btnSubmit" id="btnSubmit"  value="Submit" accesskey="s" style='padding: 8px 28px;' />

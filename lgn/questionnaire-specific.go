@@ -15,7 +15,11 @@ import (
 	"github.com/zew/go-questionnaire/sessx"
 )
 
-// LoginByHash takes request values "u" and hash "h" - and not any password;
+// LoginByHash first checks for direct login;
+// extra short and preconfigured in config.json;
+// last part of the path - moved into h;
+//
+// LoginByHash then takes request values "u" and hash "h" - and not any password;
 // it checks the hash against the values except "h";
 // any other request parameters are sorted and included into the hashing check;
 // extended by loginsT.Salt.
@@ -53,19 +57,24 @@ func LoginByHash(w http.ResponseWriter, r *http.Request) (bool, error) {
 		if _, isSet := r.Form["h"]; isSet {
 			// => userId is not set - but hash is set
 
-			prefix := ""
-			if els := strings.Split(h, "--"); len(els) == 2 {
-				prefix = els[0]
-				h = els[1]
+			//
+			surveyID := ""
+			parts := strings.Split(h, "--") // h coming from anonymous id
+			if len(parts) > 1 {
+				surveyID = strings.ToLower(parts[0])
+				h = parts[1]
 			}
+
 			userID := fmt.Sprint(HashIDDecodeFirst(h))
 
-			log.Printf("Trying hash-id login %v %v", h, userID)
 			if userID > "0" {
+				log.Printf("Trying anonymous login - surveyID | hashID | userID - %v | %v | %v", surveyID, h, userID)
 				for _, dlr := range cfg.Get().DirectLoginRanges {
-					cmp := prefix + "--" + userID
-					if cmp >= dlr.Start && cmp <= dlr.Stop {
-						log.Printf("Checking direct range login for %v - %v %v", cmp, dlr.Start, dlr.Stop)
+					cmp := userID
+					if (surveyID != "" && surveyID == dlr.SurveyID) ||
+						cmp >= dlr.Start && cmp <= dlr.Stop {
+						log.Printf("Matching survey %v - or direct login range %v <=  %v <=  %v",
+							dlr.SurveyID, dlr.Start, cmp, dlr.Stop)
 						l := LoginT{}
 						l.User = userID
 						l.IsInitPassword = false // roles become effective only for non init passwords

@@ -114,19 +114,19 @@ func LoginByHashID(w http.ResponseWriter, r *http.Request) {
 
 	err := r.ParseForm()
 	if err != nil {
-		log.Printf("Parse Form error: %v", err)
-		fmt.Fprintf(w, "Parse Form error: %v", err)
+		log.Printf("parse form error: %v", err)
+		fmt.Fprintf(w, "parse form error: %v", err)
 		return
 	}
 
 	if r.Form.Get("h") != "" {
-		log.Printf("There is already a Form value for h %v", r.Form.Get("h"))
-		fmt.Fprintf(w, "There is already a Form value for h %v", r.Form.Get("h"))
+		log.Printf("there is already a Form value for h %v", r.Form.Get("h"))
+		fmt.Fprintf(w, "there is already a Form value for h %v", r.Form.Get("h"))
 		return
 	}
 
 	r.Form.Set("h", hashID)
-	log.Printf("HashID put into h-param %v", r.Form.Get("h"))
+	log.Printf("hashID put into h-param %v", r.Form.Get("h"))
 
 	MainH(w, r)
 
@@ -203,28 +203,28 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 	// Meta parameters
 	// =============
 
-	//
-	// Language code changed via URL parameter
-	// => Save into questionnaire and session
-	if newCode, ok := sess.ReqParam("lang_code"); ok {
-		err := q.SetLangCode(newCode)
-		if err != nil {
-			log.Printf("Problem setting new lang_code '%v': %v", newCode, err)
-		} else {
-			sess.PutString("lang_code", q.LangCode)
-			log.Printf("new quest lang_code set to '%v' - and saved to session", q.LangCode)
-		}
-	}
-
 	// Questionnaire language code (still) not set
-	// => Try to set questionnaire lang_code from session lang_code (from login)
+	// => Try to set questionnaire lang_code
+	//        from URL parameter
+	//     or from session lang_code (from login)
 	if q.LangCode == "" && sess.EffectiveIsSet("lang_code") {
 		fromSess := sess.EffectiveStr("lang_code")
 		err := q.SetLangCode(fromSess)
 		if err != nil {
-			log.Printf("Problem setting default lang_code '%v': %v", fromSess, err)
+			log.Printf("Problem setting lang_code from URL GET or session '%v': %v", fromSess, err)
 		} else {
-			log.Printf("empty quest lang_code set to session value'%v'", fromSess)
+			log.Printf("empty quest lang_code set to request/session value'%v'", fromSess)
+		}
+	}
+
+	// Questionnaire language code (still) not set
+	// => Try login attribute
+	if q.LangCode == "" {
+		err := q.SetLangCode(l.Attrs["lang_code"])
+		if err != nil {
+			log.Printf("Problem setting default lang_code from login attr '%v': %v", l.Attrs["lang_code"], err)
+		} else {
+			log.Printf("empty quest lang_code set to login attr '%v'", l.Attrs["lang_code"])
 		}
 	}
 
@@ -235,21 +235,18 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 		if len(q.LangCodesOrder) > 0 {
 			def = q.LangCodesOrder[0] // questionnaire specific default
 		}
-		if langCodeUser, ok := l.Attrs["lang_code"]; ok {
-			def = langCodeUser
-		}
 		err = q.SetLangCode(def)
 		if err != nil {
 			log.Printf("Problem setting default lang_code '%v': %v", def, err)
 		}
-		log.Printf("Empty quest lang_code set to %v", def)
+		log.Printf("Empty quest lang_code set to global/quest default %v", def)
 
 	}
 	// Sync *back* -
 	// questionnaire lang_code => app lang_code
 	if q.LangCode != "" {
 		sess.PutString("lang_code", q.LangCode)
-		log.Printf("empty lang_code set to userID lang_code or quest.Default '%v' - and saved to session", q.LangCode)
+		log.Printf("newly set qst.lang_code='%v' synced back to session", q.LangCode)
 	}
 
 	// Login attributes => questionaire attributes

@@ -81,6 +81,7 @@ type ConfigT struct {
 	// Profiles are sets of attributes, selected by the `p` parameter at login, containing key-values which are copied into the logged in user's attributes
 	Profiles map[string]map[string]string
 
+	AnonymousSurveyID string              `json:"anonymous_survey_id,omitempty"` // anonymous survey ID login to which survey?
 	DirectLoginRanges []directLoginRangeT `json:"direct_login_ranges,omitempty"` // user id to language preselection for direct login
 }
 
@@ -232,7 +233,7 @@ func Example() *ConfigT {
 			"body_background_color": "#e2e2e2",
 		},
 		AppInstanceID: time.Now().Unix(),
-		LangCodes: []string{"de", "en", "es", "fr", "it", "pl"},
+		LangCodes:     []string{"de", "en", "es", "fr", "it", "pl"},
 		Profiles: map[string]map[string]string{
 			"fmt1": map[string]string{
 				"lang_code":               "de",

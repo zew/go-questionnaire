@@ -64,7 +64,10 @@ func Config() {
 		log.Printf("Opened reader to cloud config %v", fileName)
 		cfg.Load(r)
 
-		cloudio.MarshalWriteFile(cfg.Example(), "config-example.json")
+		err = cloudio.MarshalWriteFile(cfg.Example(), "config-example.json")
+		if err != nil {
+			log.Printf("config example save: %v", err)
+		}
 	}
 
 	{
@@ -123,6 +126,5 @@ func Config() {
 	}
 
 	tpl.Parse(tpls...)
-
 
 }

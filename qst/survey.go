@@ -185,7 +185,7 @@ func (s *surveyT) HTMLForm(questTypes []string, errStr string) string {
 		cfg.Pref(),
 	)
 	link4 := fmt.Sprintf(
-		"<a href='%v/create-anonymous-id' target='_blank' >Create anonymous ID</a><br>",
+		"<a href='%v/create-anonymous-id' target='_blank' >Create anonymous ID</a> - requires anonymous_survey_id and matching direct_login_range<br>",
 		cfg.Pref(),
 	)
 

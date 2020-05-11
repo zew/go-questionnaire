@@ -93,12 +93,12 @@ func FromSession(w io.Writer, r *http.Request) (*LoginT, bool, error) {
 	loginIntf, ok := sess.EffectiveObj(key)
 	if !ok {
 		// log.Printf("key %v for LoginT{} is not in session", key)
-		return nil, false, nil
+		return &LoginT{}, false, nil
 	}
 
 	l, ok := loginIntf.(LoginT)
 	if !ok {
-		return nil, false, fmt.Errorf("key %v for LoginT{} does not point to lgn.LoginT{} - but to %T", key, loginIntf)
+		return &LoginT{}, false, fmt.Errorf("key %v for LoginT{} does not point to lgn.LoginT{} - but to %T", key, loginIntf)
 	}
 
 	return &l, true, nil

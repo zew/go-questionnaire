@@ -37,7 +37,7 @@ func ShufflesToCSV(w http.ResponseWriter, r *http.Request) {
 <body>
 	<form method="post" action="{{.SelfURL}}"  style="margin: 50px;"  >
 		
-		{{if  (len .ErrMsg) gt 0 }} <p style='white-space: pre; color:#E22'>{{.ErrMsg}}</p>{{end}}
+		{{if gt (len .ErrMsg) 0 }} <p style='white-space: pre; color:#E22'>{{.ErrMsg}}</p>{{end}}
 		
 		Create Shufflings<br>
 
@@ -59,7 +59,7 @@ func ShufflesToCSV(w http.ResponseWriter, r *http.Request) {
 
 		<input type="submit"   name="submitclassic" accesskey="s"><br>
 
-		{{if  (len .List   ) gt 0 }} <p style='white-space: pre; color:#444'>{{.List   }}</p>{{end}}
+		{{if  gt (len .List   ) 0 }} <p style='white-space: pre; color:#444'>{{.List   }}</p>{{end}}
 
 
 	</form>

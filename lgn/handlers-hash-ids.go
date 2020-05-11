@@ -7,6 +7,7 @@ import (
 
 	"github.com/monoculum/formam"
 	hashids "github.com/speps/go-hashids"
+	"github.com/zew/go-questionnaire/cfg"
 	"github.com/zew/util"
 )
 
@@ -43,9 +44,9 @@ func HashIDDecodeFirst(encoded string) int {
 // GenerateHashIDs encodes integer IDs into a kind of base64 encoded string.
 func GenerateHashIDs(w http.ResponseWriter, r *http.Request) {
 
-	w.Header().Set("Content-Type", "text/plain; charset=utf-8")
+	w.Header().Set("Content-Type", "text/html; charset=utf-8")
 
-	msg := `GenerateHashIDs encodes user IDs into encoded strings;
+	msg := `<pre>GenerateHashIDs encodes user IDs into encoded strings;
 See https://hashids.org for background;	
 the alphabet is strongly reduced for readability (far less than base64);
 encoded strings are usable for direct login by the string alone,
@@ -67,7 +68,9 @@ where comfort really matters. Where there is little incentive to cheat and
 little to gain from getting someone elses responses.
 
 But keep an eye on the application log.
-	
+
+
+</pre>	
 `
 	fmt.Fprint(w, msg)
 
@@ -85,8 +88,8 @@ But keep an eye on the application log.
 	}
 
 	if fe.Start == 0 || fe.Stop == 0 {
-		fe.Start = 1000
-		fe.Stop = 1010
+		fe.Start = 1000 + 0
+		fe.Stop = 1000 + 10
 	}
 
 	for i := fe.Start + 0; i < fe.Stop; i++ {
@@ -107,7 +110,7 @@ But keep an eye on the application log.
 			fmt.Fprintf(w, "%v - %v\n", i, encodedLong)
 		}
 
-		fmt.Fprintf(w, "%v\t%v\t%v\n", i, encoded, HashIDDecodeFirst(encoded))
+		fmt.Fprintf(w, "%v\t%v\t<a href='%v' target=_blank>%v</a>   <br>\n", i, HashIDDecodeFirst(encoded), cfg.Pref("d/"+encoded), encoded)
 	}
 
 }

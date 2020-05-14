@@ -89,3 +89,26 @@ func labelsFiverWichtig() []trl.S {
 	return tm
 
 }
+func labelsFiverDafuerDagegen() []trl.S {
+
+	tm := []trl.S{
+		{
+			"de": "sehr dafür",
+		},
+		{
+			"de": "eher dafür",
+		},
+		{
+			"de": "eher dagegen",
+		},
+		{
+			"de": "sehr dagegen",
+		},
+		{
+			"de": "weder dafür noch dagegen",
+		},
+	}
+
+	return tm
+
+}

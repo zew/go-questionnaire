@@ -11,7 +11,7 @@ var RadioVali = ""
 var CSSLabelHeader = ""
 var CSSLabelRow = ""
 
-/* AddRadioGroupVertical prints ooptions vertically
+/* AddRadioGroupVertical prints options vertically
 
    Green   x
    Red     x

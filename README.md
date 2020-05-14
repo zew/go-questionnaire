@@ -433,6 +433,8 @@ but adapt generators.SurveyGenerate()
 
 * Document the label / checkbox vertical case
 
+* Why is page width 70% not always rendered?
+
 ## Possible enhancements
 
 * Revolving and compressing logfiles

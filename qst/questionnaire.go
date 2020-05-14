@@ -764,7 +764,7 @@ func (q *QuestionnaireT) PageHTML(idx int) (string, error) {
 	// set width less than 100 percent, for i.e. radios more closely together
 
 	padding := p.AestheticCompensation
-	width := fmt.Sprintf("<div style='width: %v%%; margin: 0 auto; padding-left: %v%%' >", p.Width, padding)
+	width := fmt.Sprintf("<div class='page-margins'  style='width: %v%%; margin: 0 auto; padding-left: %v%%' >", p.Width, padding)
 	b.WriteString(width)
 
 	if p.Section != nil {

@@ -48,6 +48,8 @@ var hyph = []string{
 	"si&shy;cher",
 	"un&shy;wich&shy;tig",
 	"wich&shy;tig",
+	"da&shyfür",
+	"da&shyge&shygen",
 	// german euref
 	"Öko&shy;no&shy;mie",
 	"Mi&shy;kro&shy;öko&shy;no&shy;mie",

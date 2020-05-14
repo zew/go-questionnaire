@@ -11,12 +11,18 @@
  		"month": 5,
  		"deadline": "2030-01-01T00:00:00Z",
  		"params": [
- 			{},
- 			{}
+ 			{
+ 				"name": "aboveOrBelowMedian",
+ 				"val": "besseren"
+ 			},
+ 			{
+ 				"name": "varianten",
+ 				"val": "1111"
+ 			}
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "c889c1193fe94b8e0671b9a525c9f665",
+ 	"md_5": "d4bf648753271d89d3e3a42b113368a2",
  	"lang_codes": {
  		"de": "Deutsch"
  	},
@@ -58,63 +64,72 @@
  							"description": {
  								"de": "aus\u0026shy;ge\u0026shy;schlos\u0026shy;sen\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "go-quest-opt-label"
  						},
  						{
  							"type": "textblock",
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "go-quest-opt-label"
  						},
  						{
  							"type": "textblock",
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "go-quest-opt-label"
  						},
  						{
  							"type": "textblock",
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "go-quest-opt-label"
  						},
  						{
  							"type": "textblock",
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "go-quest-opt-label"
  						},
  						{
  							"type": "textblock",
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "go-quest-opt-label"
  						},
  						{
  							"type": "textblock",
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "go-quest-opt-label"
  						},
  						{
  							"type": "textblock",
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "go-quest-opt-label"
  						},
  						{
  							"type": "textblock",
  							"description": {
  								"de": "si\u0026shy;cher\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "go-quest-opt-label"
  						},
  						{
  							"name": "einhaltung2020",
@@ -178,18 +193,17 @@
  							"max_chars": 6,
  							"step": 0.1,
  							"description": {
- 								"de": "a) Welches Haushaltsdefizit erwarten Sie für Ihr Bundesland in 2020?"
+ 								"de": "\u003cb\u003ea)\u003c/b\u003e Welches Haushaltsdefizit erwarten Sie für Ihr Bundesland in 2020?"
  							},
  							"suffix": {
  								"de": "Mrd. Euro"
- 							},
- 							"validator": "inRange20"
+ 							}
  						}
  					]
  				},
  				{
  					"description": {
- 						"de": "b) Welches wirtschaftliche Wachstum (Bruttoinlandsprodukt / BIP) \n\t\t\t\t\terwarten Sie für Ihr Bundesland in 2020?"
+ 						"de": "\u003cb\u003eb)\u003c/b\u003e Welches wirtschaftliche Wachstum (Bruttoinlandsprodukt / BIP) \n\t\t\t\t\terwarten Sie für Ihr Bundesland in 2020?"
  					},
  					"bottom_vspacers": 3,
  					"width": 100,
@@ -200,35 +214,40 @@
  							"description": {
  								"de": "weniger als -15%"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "go-quest-opt-label"
  						},
  						{
  							"type": "textblock",
  							"description": {
  								"de": "-10 bis -15%"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "go-quest-opt-label"
  						},
  						{
  							"type": "textblock",
  							"description": {
  								"de": " -5 bis -10% "
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "go-quest-opt-label"
  						},
  						{
  							"type": "textblock",
  							"description": {
  								"de": "0 bis -5%"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "go-quest-opt-label"
  						},
  						{
  							"type": "textblock",
  							"description": {
  								"de": "mehr als 0%"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "go-quest-opt-label"
  						},
  						{
  							"name": "bundesland_wachstum_2020",
@@ -261,7 +280,7 @@
  				},
  				{
  					"label": {
- 						"de": "Frage [groupID]: \u003cbr\u003e"
+ 						"de": "Frage 3: \u003cbr\u003e"
  					},
  					"description": {
  						"de": "Für wie erstrebenswert erachten Sie es, dass Ihr Bundesland wieder einen ausgeglichenen Haushalt \n\t\t\t\t\tgemäß Vorgaben der Schuldenbremse vorlegt, wenn die Corona-Krise vorbei ist?\u003cbr\u003e"
@@ -275,63 +294,72 @@
  							"description": {
  								"de": "über\u0026shy;haupt nicht er\u0026shy;stre\u0026shy;bens\u0026shy;wert\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "go-quest-opt-label"
  						},
  						{
  							"type": "textblock",
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-3\u003c/span\u003e"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "go-quest-opt-label"
  						},
  						{
  							"type": "textblock",
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-2\u003c/span\u003e"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "go-quest-opt-label"
  						},
  						{
  							"type": "textblock",
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e-1\u003c/span\u003e"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "go-quest-opt-label"
  						},
  						{
  							"type": "textblock",
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e0\u003c/span\u003e"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "go-quest-opt-label"
  						},
  						{
  							"type": "textblock",
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e1\u003c/span\u003e"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "go-quest-opt-label"
  						},
  						{
  							"type": "textblock",
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e2\u003c/span\u003e"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "go-quest-opt-label"
  						},
  						{
  							"type": "textblock",
  							"description": {
  								"de": "\u003cspan class='ordinals'\u003e\u003cbr\u003e3\u003c/span\u003e"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "go-quest-opt-label"
  						},
  						{
  							"type": "textblock",
  							"description": {
  								"de": "sehr er\u0026shy;stre\u0026shy;bens\u0026shy;wert\u003cspan class='ordinals'\u003e\u003cbr\u003e4\u003c/span\u003e"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "go-quest-opt-label"
  						},
  						{
  							"name": "balanced_budget",
@@ -461,7 +489,7 @@
  						{
  							"name": "sb_sonstiges_1",
  							"type": "text",
- 							"max_chars": 40,
+ 							"max_chars": 22,
  							"description": {
  								"de": "Sonstiges"
  							},
@@ -534,7 +562,7 @@
  						{
  							"name": "sb_sonstiges_2",
  							"type": "text",
- 							"max_chars": 40,
+ 							"max_chars": 22,
  							"description": {
  								"de": "Sonstiges"
  							},
@@ -578,35 +606,40 @@
  							"description": {
  								"de": "sehr wich\u0026shy;tig"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "go-quest-opt-label"
  						},
  						{
  							"type": "textblock",
  							"description": {
  								"de": "eher wich\u0026shy;tig"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "go-quest-opt-label"
  						},
  						{
  							"type": "textblock",
  							"description": {
  								"de": "eher un\u0026shy;wich\u0026shy;tig"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "go-quest-opt-label"
  						},
  						{
  							"type": "textblock",
  							"description": {
  								"de": "sehr un\u0026shy;wich\u0026shy;tig"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "go-quest-opt-label"
  						},
  						{
  							"type": "textblock",
  							"description": {
  								"de": "weder wich\u0026shy;tig noch un\u0026shy;wich\u0026shy;tig"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "go-quest-opt-label"
  						},
  						{
  							"name": "leistung_vergleichbarkeit",
@@ -634,7 +667,14 @@
  									"val": "5"
  								}
  							]
- 						},
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"width": 100,
+ 					"columns": 5,
+ 					"inputs": [
  						{
  							"name": "leistung_vergleichbarkeit_buerger",
  							"type": "number",
@@ -650,8 +690,7 @@
  								"de": "Prozent"
  							},
  							"col_span_label": 4,
- 							"col_span_control": 1,
- 							"validator": "inRange100"
+ 							"col_span_control": 1
  						}
  					]
  				}
@@ -676,40 +715,40 @@
  			"groups": [
  				{
  					"label": {
- 						"de": "Frage 8\u003cbr\u003e"
+ 						"de": "Frage 8: \u003cbr\u003e\u003cbr\u003e"
  					},
  					"description": {
- 						"de": "\n\t\t\t\t\u003cb\u003ea)\u003c/b\u003e \u003cbr\u003e\n\t\t\t\tWas \u003cb\u003eschätzen\u003c/b\u003e Sie, welcher Anteil der öffentlichen Finanzierung von Schulen \n\t\t\t\t(allgemeinbildend und beruflich) kommt derzeit von den verschiedenen staatlichen Ebenen in Deutschland?\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cdiv style='display: inline-block; margin: 6px 0; font-size: 85%'\u003eBitte achten Sie darauf, \n\t\t\t\tdass Ihre Angaben insgesamt 100% ergeben.\u003c/div\u003e\n\t\t\t\t"
+ 						"de": "\n\t\t\t\t\u003cb\u003ea)\u003c/b\u003e \u003cbr\u003e\n\t\t\t\tWas \u003cb\u003eschätzen\u003c/b\u003e Sie, welcher Anteil der öffentlichen Finanzierung von Schulen \n\t\t\t\t(allgemeinbildend und beruflich) kommt derzeit von den verschiedenen staatlichen Ebenen in Deutschland?\n\t\t\t\t"
  					},
- 					"bottom_vspacers": 3,
+ 					"bottom_vspacers": 1,
  					"width": 100,
  					"columns": 4,
  					"inputs": [
  						{
  							"name": "tb1",
  							"type": "textblock",
- 							"label": {
+ 							"description": {
  								"de": "Gemeinden"
  							}
  						},
  						{
  							"name": "tb2",
  							"type": "textblock",
- 							"label": {
+ 							"description": {
  								"de": "Bundesländer"
  							}
  						},
  						{
  							"name": "tb3",
  							"type": "textblock",
- 							"label": {
+ 							"description": {
  								"de": "Bund"
  							}
  						},
  						{
  							"name": "tb4",
  							"type": "textblock",
- 							"label": {
+ 							"description": {
  								"de": "Summe"
  							}
  						},
@@ -721,8 +760,7 @@
  							"suffix": {
  								"de": "%"
  							},
- 							"col_span_control": 1,
- 							"validator": "inRange100"
+ 							"col_span_control": 1
  						},
  						{
  							"name": "bildungsfinanzierung_laender_ist",
@@ -732,8 +770,7 @@
  							"suffix": {
  								"de": "%"
  							},
- 							"col_span_control": 1,
- 							"validator": "inRange100"
+ 							"col_span_control": 1
  						},
  						{
  							"name": "bildungsfinanzierung_bund_ist",
@@ -743,8 +780,7 @@
  							"suffix": {
  								"de": "%"
  							},
- 							"col_span_control": 1,
- 							"validator": "inRange100"
+ 							"col_span_control": 1
  						},
  						{
  							"name": "tb5",
@@ -752,42 +788,69 @@
  							"description": {
  								"de": "100%"
  							}
+ 						},
+ 						{
+ 							"name": "tb1000",
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cdiv style='display: inline-block; margin: 6px 0; font-size: 95%'\u003eBitte achten Sie darauf, \n\t\t\t\tdass Ihre An\u0026shy;gaben insgesamt 100% ergeben.\u003c/div\u003e\n\t\t\t\t"
+ 							},
+ 							"col_span_label": 4
  						}
  					]
- 				},
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"section": {
+ 				"de": "Fragen zum Bildungsföderalismus"
+ 			},
+ 			"label": {
+ 				"de": "Teil 3"
+ 			},
+ 			"description": {
+ 				"de": ""
+ 			},
+ 			"short": {
+ 				"de": "Bildung 3"
+ 			},
+ 			"navi_num": 5,
+ 			"width": 70,
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
  				{
  					"description": {
  						"de": "\n\t\t\t\t\u003cb\u003eb)\u003c/b\u003e \u003cbr\u003e\n\t\t\t\tUnd welcher Anteil der öffentlichen Finanzierung für Schulen (allgemeinbildend und beruflich) \n\t\t\t\t\u003cb\u003esollte\u003c/b\u003e Ihrer Meinung nach von den verschiedenen staatlichen Ebenen kommen?\n\t\t\t\t\n\t\t\t\t"
  					},
- 					"bottom_vspacers": 3,
+ 					"bottom_vspacers": 1,
  					"width": 100,
  					"columns": 4,
  					"inputs": [
  						{
  							"name": "tb6",
  							"type": "textblock",
- 							"label": {
+ 							"description": {
  								"de": "Gemeinden"
  							}
  						},
  						{
  							"name": "tb7",
  							"type": "textblock",
- 							"label": {
+ 							"description": {
  								"de": "Bundesländer"
  							}
  						},
  						{
  							"name": "tb8",
  							"type": "textblock",
- 							"label": {
+ 							"description": {
  								"de": "Bund"
  							}
  						},
  						{
  							"name": "tb9",
  							"type": "textblock",
- 							"label": {
+ 							"description": {
  								"de": "Summe"
  							}
  						},
@@ -799,8 +862,7 @@
  							"suffix": {
  								"de": "%"
  							},
- 							"col_span_control": 1,
- 							"validator": "inRange100"
+ 							"col_span_control": 1
  						},
  						{
  							"name": "bildungsfinanzierung_laender_soll",
@@ -810,8 +872,7 @@
  							"suffix": {
  								"de": "%"
  							},
- 							"col_span_control": 1,
- 							"validator": "inRange100"
+ 							"col_span_control": 1
  						},
  						{
  							"name": "bildungsfinanzierung_bund_soll",
@@ -821,8 +882,7 @@
  							"suffix": {
  								"de": "%"
  							},
- 							"col_span_control": 1,
- 							"validator": "inRange100"
+ 							"col_span_control": 1
  						},
  						{
  							"name": "tb10",
@@ -830,6 +890,374 @@
  							"description": {
  								"de": "100%"
  							}
+ 						}
+ 					]
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"section": {
+ 				"de": "Fragen zum Bildungsföderalismus"
+ 			},
+ 			"label": {
+ 				"de": "Teil 4"
+ 			},
+ 			"description": {
+ 				"de": ""
+ 			},
+ 			"short": {
+ 				"de": "Bildung 4"
+ 			},
+ 			"navi_num": 6,
+ 			"width": 70,
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"width": 100,
+ 					"columns": 4,
+ 					"inputs": [
+ 						{
+ 							"name": "mathematik_rang",
+ 							"type": "number",
+ 							"max_chars": 2,
+ 							"step": 1,
+ 							"label": {
+ 								"de": "Frage 9:\u003cbr\u003e"
+ 							},
+ 							"description": {
+ 								"de": "\n\t\t\t\t\tEine aktuelle Bildungsstudie hat die Mathematikleistungen von Schüler*innen der 9. Jahrgangsstufe \u003cbr\u003e\n\t\t\t\t\tin den 16 deutschen Bundesländern verglichen. \u003cbr\u003e \n\t\t\t\t\tWas schätzen Sie, welchen Platz haben die Schüler*innen Ihres Bundeslandes belegt? \u003cbr\u003e\n\t\t\t\t\t(1 ist der beste Platz, 16 der schlechteste Platz.)\t\t\t\t\n\t\t\t\t\n\t\t\t\t\t"
+ 							},
+ 							"suffix": {
+ 								"de": "-ter Platz"
+ 							},
+ 							"col_span_label": 3,
+ 							"col_span_control": 1
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"width": 100,
+ 					"columns": 4,
+ 					"inputs": [
+ 						{
+ 							"name": "mathematik_rang_buerger",
+ 							"type": "number",
+ 							"max_chars": 2,
+ 							"step": 1,
+ 							"label": {
+ 								"de": "Frage 10:\u003cbr\u003e"
+ 							},
+ 							"description": {
+ 								"de": "\n\t\t\t\t\t\tWas schätzen Sie, was denken die Bürger*innen Ihres Bundeslandes, welchen Platz die Schüler*innen \u003cbr\u003e\n\t\t\t\t\t\tihres Bundeslandes bei der Bildungsstudie belegt haben? \u003cbr\u003e\n\t\t\t\t\t\t(1 ist der beste Platz, 16 der schlechteste Platz.)\t\t\t\t\n\t\t\t\t\t"
+ 							},
+ 							"suffix": {
+ 								"de": "-ter Platz"
+ 							},
+ 							"col_span_label": 3,
+ 							"col_span_control": 1
+ 						}
+ 					]
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"section": {
+ 				"de": "Fragen zum Bildungsföderalismus"
+ 			},
+ 			"label": {
+ 				"de": "Teil 5"
+ 			},
+ 			"description": {
+ 				"de": ""
+ 			},
+ 			"short": {
+ 				"de": "Bildung 5"
+ 			},
+ 			"navi_num": 7,
+ 			"width": 70,
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"label": {
+ 						"de": "Frage 11: \u003cbr\u003e"
+ 					},
+ 					"description": {
+ 						"de": "\n\t\t\t\tSind Sie für oder gegen folgenden Reformvorschlag: \u003cbr\u003e\n\t\t\t\tEs werden deutschlandweit einheitliche Schülervergleichstests in Mathematik und Deutsch in allen Schulformen eingeführt, \n\t\t\t\tdie ab der 5. Klasse alle zwei Jahre regelmäßig stattfinden. \n\t\t\t\tDie Durchschnittsergebnisse pro Bundesland werden veröffentlicht, um die Schülerleistungen der Bundesländer miteinander zu vergleichen.\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\tIch bin… \n\t\t\t\t\n\t\t\t\t"
+ 					},
+ 					"bottom_vspacers": 1,
+ 					"width": 100,
+ 					"columns": 5,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "sehr dafür"
+ 							},
+ 							"horizontal_align_label": 1,
+ 							"css_label": "go-quest-opt-label"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "eher dafür"
+ 							},
+ 							"horizontal_align_label": 1,
+ 							"css_label": "go-quest-opt-label"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "eher dagegen"
+ 							},
+ 							"horizontal_align_label": 1,
+ 							"css_label": "go-quest-opt-label"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "sehr dagegen"
+ 							},
+ 							"horizontal_align_label": 1,
+ 							"css_label": "go-quest-opt-label"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "weder dafür noch dagegen"
+ 							},
+ 							"horizontal_align_label": 1,
+ 							"css_label": "go-quest-opt-label"
+ 						},
+ 						{
+ 							"name": "schuelervergleichstest",
+ 							"type": "radiogroup",
+ 							"col_span_label": 1,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "4"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "5"
+ 								}
+ 							]
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"width": 100,
+ 					"columns": 5,
+ 					"inputs": [
+ 						{
+ 							"name": "schuelervergleichstest_buerger",
+ 							"type": "number",
+ 							"max_chars": 4,
+ 							"step": 1,
+ 							"label": {
+ 								"de": "Frage 12: \u003cbr\u003e"
+ 							},
+ 							"description": {
+ 								"de": "Was schätzen Sie, welcher Anteil der Bürger*innen Ihres Bundeslandes ist „sehr“ oder „eher“ für \n\t\t\t\t\tden vorher genannten Reformvorschlag, deutsch\u0026shy;landweit einheitliche Schülervergleichstests einzuführen?"
+ 							},
+ 							"suffix": {
+ 								"de": "Prozent"
+ 							},
+ 							"col_span_label": 4,
+ 							"col_span_control": 1
+ 						}
+ 					]
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"section": {
+ 				"de": "Fragen zum Bildungsföderalismus"
+ 			},
+ 			"label": {
+ 				"de": "Teil 6"
+ 			},
+ 			"description": {
+ 				"de": ""
+ 			},
+ 			"short": {
+ 				"de": "Bildung 6"
+ 			},
+ 			"navi_num": 8,
+ 			"width": 70,
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"label": {
+ 						"de": "Frage 13: \u003cbr\u003e"
+ 					},
+ 					"description": {
+ 						"de": "\n\t\t\t\t\tJetzt würden wir gerne noch einmal Ihre Meinung zu regelmäßigen Vergleichstests erfahren.\u003cbr\u003e\n\n\t\t\t\t\tIn einer aktuellen Bildungsstudie sind die Mathematikleistungen der Schüler*innen Ihres Bundeslandes \n\t\t\tin der besseren Hälfte aller Bundesländer. \u003cbr\u003e\n\n\t\t\t\t\tSind Sie für oder gegen vorher genannten Reformvorschlag, \n\t\t\t\t\tdeutschlandweit einheitliche Schülervergleichstests einzuführen?\u003cbr\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t Ich bin… \n\t\t\t\t\n\t\t\t\t"
+ 					},
+ 					"bottom_vspacers": 1,
+ 					"width": 100,
+ 					"columns": 5,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "sehr dafür"
+ 							},
+ 							"horizontal_align_label": 1,
+ 							"css_label": "go-quest-opt-label"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "eher dafür"
+ 							},
+ 							"horizontal_align_label": 1,
+ 							"css_label": "go-quest-opt-label"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "eher dagegen"
+ 							},
+ 							"horizontal_align_label": 1,
+ 							"css_label": "go-quest-opt-label"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "sehr dagegen"
+ 							},
+ 							"horizontal_align_label": 1,
+ 							"css_label": "go-quest-opt-label"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "weder dafür noch dagegen"
+ 							},
+ 							"horizontal_align_label": 1,
+ 							"css_label": "go-quest-opt-label"
+ 						},
+ 						{
+ 							"name": "vergleichstest_regelmaessig",
+ 							"type": "radiogroup",
+ 							"col_span_label": 1,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "4"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "5"
+ 								}
+ 							]
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"label": {
+ 						"de": "Frage 14: \u003cbr\u003e"
+ 					},
+ 					"description": {
+ 						"de": "\n\t\t\t\t\tParallel zu unserer Landtagsumfrage befragen wir aktuell auch die deutsche Bevölkerung zu den gleichen Themen.\u003cbr\u003e\n\t\t\t\t\tIm Folgenden bieten wir Ihnen an, dass Sie nach Abschluss der Umfragen erfahren, \n\t\t\t\t\t wie andere Befragte zum Reformvorschlag, deutschlandweit einheitliche Schülervergleichstests einzuführen, stehen.\n\t\t\t\t\tWir senden Ihnen die gewählten Informationen per E-Mail zu. \u003cbr\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\tWelche der folgenden Informationen möchten Sie erhalten?\u003cbr\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\tDie durchschnittliche Zustimmung…\n\t\t\t\t\n\t\t\t\t"
+ 					},
+ 					"bottom_vspacers": 1,
+ 					"width": 100,
+ 					"columns": 5,
+ 					"inputs": [
+ 						{
+ 							"name": "info_ueber_andere",
+ 							"type": "radiogroup",
+ 							"radios": [
+ 								{
+ 									"hori_align": 2,
+ 									"label": {
+ 										"de": "… aller befragter Wähler*innen Ihrer Partei in Ihrem Bundesland."
+ 									},
+ 									"val": "1",
+ 									"columns": 2
+ 								},
+ 								{
+ 									"hori_align": 2,
+ 									"label": {
+ 										"de": "… aller befragter Wähler*innen Ihrer Partei in Deutschland."
+ 									},
+ 									"val": "2",
+ 									"column": 1,
+ 									"columns": 2
+ 								},
+ 								{
+ 									"hori_align": 2,
+ 									"label": {
+ 										"de": "… aller befragter Bürger*innen in Ihrem Bundesland."
+ 									},
+ 									"val": "3",
+ 									"columns": 2
+ 								},
+ 								{
+ 									"hori_align": 2,
+ 									"label": {
+ 										"de": "… aller befragter Bürger*innen in Deutschland."
+ 									},
+ 									"val": "4",
+ 									"column": 1,
+ 									"columns": 2
+ 								},
+ 								{
+ 									"hori_align": 2,
+ 									"label": {
+ 										"de": "Ich möchte keine Informationen erhalten."
+ 									},
+ 									"val": "5",
+ 									"columns": 2
+ 								}
+ 							]
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"width": 99,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"name": "submitBtn",
+ 							"type": "button",
+ 							"label": {
+ 								"de": "Umfrage abschließen"
+ 							},
+ 							"accesskey": "n",
+ 							"horizontal_align_control": 2,
+ 							"col_span_control": 1,
+ 							"response": "8"
  						}
  					]
  				}

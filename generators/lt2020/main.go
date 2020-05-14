@@ -12,10 +12,31 @@ import (
 // It is saved to disk as an example.
 func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
+	/*
+		immer nur ein step forward
+		never backwards
+
+		4 und 5 beide aufwärts oder beide abwärts
+
+		7 anzeigen oder nicht
+
+		8a und 8b auf separate seiten
+
+		 9, 10 separat
+
+		11, 12 separat
+
+		13 separat
+
+		14 separat
+
+
+	*/
+
 	ctr.Reset()
 
 	// qst.RadioVali = "mustRadioGroup"
-	qst.CSSLabelHeader = ""
+	qst.CSSLabelHeader = "go-quest-opt-label"
 	qst.CSSLabelRow = ""
 
 	q := qst.QuestionnaireT{}
@@ -28,6 +49,21 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	q.Survey.Name = trl.S{"de": "Landtagsumfrage"}
 
 	groupOrdinal := "[groupID]"
+
+	vars, err := q.Survey.Param("varianten")
+	if err != nil {
+		return &q, err
+	}
+	if len(vars) != 4 {
+		return &q, fmt.Errorf("varianten must have four '0's and '1's - is %v", vars)
+	}
+	varianten := []bool{true, true, true, true}
+	for idx, v := range vars {
+		if v != '0' && v != '1' {
+			return &q, fmt.Errorf("varianten must consist of '0's and '1's - is %v", vars)
+		}
+		varianten[idx] = (v == '1')
+	}
 
 	//
 	// Page 1
@@ -88,9 +124,9 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 					inp.Type = "number"
 					inp.Step = 0.1
 					inp.MaxChars = 6
-					inp.Validator = "inRange20"
+					// inp.Validator = "inRange1000"
 					inp.Desc = trl.S{
-						"de": `a) Welches Haushaltsdefizit erwarten Sie für Ihr Bundesland in 2020?`,
+						"de": `<b>a)</b> Welches Haushaltsdefizit erwarten Sie für Ihr Bundesland in 2020?`,
 					}
 					inp.Suffix = trl.S{
 						"de": `Mrd. Euro`,
@@ -107,7 +143,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				gr.Cols = 5 // necessary, otherwise no vspacers
 				gr.OddRowsColoring = false
 				gr.Desc = trl.S{
-					"de": fmt.Sprintf(`b) Welches wirtschaftliche Wachstum (Bruttoinlandsprodukt / BIP) 
+					"de": fmt.Sprintf(`<b>b)</b> Welches wirtschaftliche Wachstum (Bruttoinlandsprodukt / BIP) 
 					erwarten Sie für Ihr Bundesland in 2020?`),
 				}
 			}
@@ -120,7 +156,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				gr.Cols = 9 // necessary, otherwise no vspacers
 				gr.OddRowsColoring = false
 				gr.Label = trl.S{
-					"de": fmt.Sprintf(`Frage %v: <br>`, groupOrdinal),
+					// "de": fmt.Sprintf(`Frage %v: <br>`, groupOrdinal),
+					"de": fmt.Sprintf(`Frage 3: <br>`),
 				}
 				gr.Desc = trl.S{
 					"de": fmt.Sprintf(`Für wie erstrebenswert erachten Sie es, dass Ihr Bundesland wieder einen ausgeglichenen Haushalt 
@@ -130,24 +167,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 		}
 
-		/* 		{
-		   			gr := p.AddGroup()
-		   			gr.Cols = 1
-		   			gr.Width = 99
-		   			{
-		   				inp := gr.AddInput()
-		   				inp.Type = "button"
-		   				inp.Name = "submitBtn"
-		   				inp.Response = "1"
-		   				inp.Label = trl.S{
-		   					"de": "Weiter",
-		   				}
-		   				inp.AccessKey = "n"
-		   				inp.ColSpanControl = 1
-		   				inp.HAlignControl = qst.HRight
-		   			}
-		   		}
-		*/
 	}
 
 	//
@@ -187,63 +206,123 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 					`,
 			}
 
-			{
-				inp := gr.AddInput()
-				inp.Name = "sb_verschaerfung_1"
-				inp.Type = "checkbox"
-				inp.ColSpanLabel = 4
-				inp.ColSpanControl = 1
-				inp.HAlignControl = qst.HCenter
-				inp.Desc = trl.S{
-					"de": `Verschärfung der Schuldenbremse und Verringerung des Verschuldungsspielraums.`,
-				}
-			}
+			if varianten[0] {
 
-			{
-				inp := gr.AddInput()
-				inp.Name = "sb_lockerung_1"
-				inp.Type = "checkbox"
-				inp.ColSpanLabel = 4
-				inp.ColSpanControl = 1
-				inp.HAlignControl = qst.HCenter
-				inp.Desc = trl.S{
-					"de": `Lockerung der Schuldenbremse und generelle Erhöhung des Verschuldungsspielraums.`,
+				{
+					inp := gr.AddInput()
+					inp.Name = "sb_verschaerfung_1"
+					inp.Type = "checkbox"
+					inp.ColSpanLabel = 4
+					inp.ColSpanControl = 1
+					inp.HAlignControl = qst.HCenter
+					inp.Desc = trl.S{
+						"de": `Verschärfung der Schuldenbremse und Verringerung des Verschuldungsspielraums.`,
+					}
 				}
-			}
+				{
+					inp := gr.AddInput()
+					inp.Name = "sb_lockerung_1"
+					inp.Type = "checkbox"
+					inp.ColSpanLabel = 4
+					inp.ColSpanControl = 1
+					inp.HAlignControl = qst.HCenter
+					inp.Desc = trl.S{
+						"de": `Lockerung der Schuldenbremse und generelle Erhöhung des Verschuldungsspielraums.`,
+					}
+				}
+				{
+					inp := gr.AddInput()
+					inp.Name = "schulden_f_infrastruktur_1"
+					inp.Type = "checkbox"
+					inp.ColSpanLabel = 4
+					inp.ColSpanControl = 1
+					inp.HAlignControl = qst.HCenter
+					inp.Desc = trl.S{
+						"de": `Verschuldung für Investitionen in Infrastruktur zulassen.`,
+					}
+				}
+				{
+					inp := gr.AddInput()
+					inp.Name = "schulden_f_klima_1"
+					inp.Type = "checkbox"
+					inp.ColSpanLabel = 4
+					inp.ColSpanControl = 1
+					inp.HAlignControl = qst.HCenter
+					inp.Desc = trl.S{
+						"de": `Verschuldung für Klimapolitik zulassen.`,
+					}
+				}
+				{
+					inp := gr.AddInput()
+					inp.Name = "sb_unveraendert_1"
+					inp.Type = "checkbox"
+					inp.ColSpanLabel = 4
+					inp.ColSpanControl = 1
+					inp.HAlignControl = qst.HCenter
+					inp.Desc = trl.S{
+						"de": `Schuldenbremse sollte unverändert bleiben.`,
+					}
+				}
 
-			{
-				inp := gr.AddInput()
-				inp.Name = "schulden_f_infrastruktur_1"
-				inp.Type = "checkbox"
-				inp.ColSpanLabel = 4
-				inp.ColSpanControl = 1
-				inp.HAlignControl = qst.HCenter
-				inp.Desc = trl.S{
-					"de": `Verschuldung für Investitionen in Infrastruktur zulassen.`,
-				}
-			}
+			} else {
 
-			{
-				inp := gr.AddInput()
-				inp.Name = "schulden_f_klima_1"
-				inp.Type = "checkbox"
-				inp.ColSpanLabel = 4
-				inp.ColSpanControl = 1
-				inp.HAlignControl = qst.HCenter
-				inp.Desc = trl.S{
-					"de": `Verschuldung für Klimapolitik zulassen.`,
+				{
+					inp := gr.AddInput()
+					inp.Name = "sb_unveraendert_1"
+					inp.Type = "checkbox"
+					inp.ColSpanLabel = 4
+					inp.ColSpanControl = 1
+					inp.HAlignControl = qst.HCenter
+					inp.Desc = trl.S{
+						"de": `Schuldenbremse sollte unverändert bleiben.`,
+					}
 				}
-			}
-			{
-				inp := gr.AddInput()
-				inp.Name = "sb_unveraendert_1"
-				inp.Type = "checkbox"
-				inp.ColSpanLabel = 4
-				inp.ColSpanControl = 1
-				inp.HAlignControl = qst.HCenter
-				inp.Desc = trl.S{
-					"de": `Schuldenbremse sollte unverändert bleiben.`,
+				//
+				{
+					inp := gr.AddInput()
+					inp.Name = "schulden_f_klima_1"
+					inp.Type = "checkbox"
+					inp.ColSpanLabel = 4
+					inp.ColSpanControl = 1
+					inp.HAlignControl = qst.HCenter
+					inp.Desc = trl.S{
+						"de": `Verschuldung für Klimapolitik zulassen.`,
+					}
 				}
+				{
+					inp := gr.AddInput()
+					inp.Name = "schulden_f_infrastruktur_1"
+					inp.Type = "checkbox"
+					inp.ColSpanLabel = 4
+					inp.ColSpanControl = 1
+					inp.HAlignControl = qst.HCenter
+					inp.Desc = trl.S{
+						"de": `Verschuldung für Investitionen in Infrastruktur zulassen.`,
+					}
+				}
+				{
+					inp := gr.AddInput()
+					inp.Name = "sb_lockerung_1"
+					inp.Type = "checkbox"
+					inp.ColSpanLabel = 4
+					inp.ColSpanControl = 1
+					inp.HAlignControl = qst.HCenter
+					inp.Desc = trl.S{
+						"de": `Lockerung der Schuldenbremse und generelle Erhöhung des Verschuldungsspielraums.`,
+					}
+				}
+				{
+					inp := gr.AddInput()
+					inp.Name = "sb_verschaerfung_1"
+					inp.Type = "checkbox"
+					inp.ColSpanLabel = 4
+					inp.ColSpanControl = 1
+					inp.HAlignControl = qst.HCenter
+					inp.Desc = trl.S{
+						"de": `Verschärfung der Schuldenbremse und Verringerung des Verschuldungsspielraums.`,
+					}
+				}
+
 			}
 
 			{
@@ -252,7 +331,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Type = "text"
 				inp.ColSpanLabel = 1
 				inp.ColSpanControl = 4
-				inp.MaxChars = 40
+				inp.MaxChars = 22
 				inp.Desc = trl.S{
 					"de": `Sonstiges`,
 				}
@@ -275,63 +354,122 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 					`,
 			}
 
-			{
-				inp := gr.AddInput()
-				inp.Name = "sb_verschaerfung_2"
-				inp.Type = "checkbox"
-				inp.ColSpanLabel = 4
-				inp.ColSpanControl = 1
-				inp.HAlignControl = qst.HCenter
-				inp.Desc = trl.S{
-					"de": `Verschärfung der Schuldenbremse und Verringerung des Verschuldungsspielraums.`,
-				}
-			}
+			if varianten[0] {
 
-			{
-				inp := gr.AddInput()
-				inp.Name = "sb_lockerung_2"
-				inp.Type = "checkbox"
-				inp.ColSpanLabel = 4
-				inp.ColSpanControl = 1
-				inp.HAlignControl = qst.HCenter
-				inp.Desc = trl.S{
-					"de": `Lockerung der Schuldenbremse und generelle Erhöhung des Verschuldungsspielraums.`,
+				{
+					inp := gr.AddInput()
+					inp.Name = "sb_verschaerfung_2"
+					inp.Type = "checkbox"
+					inp.ColSpanLabel = 4
+					inp.ColSpanControl = 1
+					inp.HAlignControl = qst.HCenter
+					inp.Desc = trl.S{
+						"de": `Verschärfung der Schuldenbremse und Verringerung des Verschuldungsspielraums.`,
+					}
 				}
-			}
+				{
+					inp := gr.AddInput()
+					inp.Name = "sb_lockerung_2"
+					inp.Type = "checkbox"
+					inp.ColSpanLabel = 4
+					inp.ColSpanControl = 1
+					inp.HAlignControl = qst.HCenter
+					inp.Desc = trl.S{
+						"de": `Lockerung der Schuldenbremse und generelle Erhöhung des Verschuldungsspielraums.`,
+					}
+				}
+				{
+					inp := gr.AddInput()
+					inp.Name = "schulden_f_infrastruktur_2"
+					inp.Type = "checkbox"
+					inp.ColSpanLabel = 4
+					inp.ColSpanControl = 1
+					inp.HAlignControl = qst.HCenter
+					inp.Desc = trl.S{
+						"de": `Verschuldung für Investitionen in Infrastruktur zulassen.`,
+					}
+				}
+				{
+					inp := gr.AddInput()
+					inp.Name = "schulden_f_klima_2"
+					inp.Type = "checkbox"
+					inp.ColSpanLabel = 4
+					inp.ColSpanControl = 1
+					inp.HAlignControl = qst.HCenter
+					inp.Desc = trl.S{
+						"de": `Verschuldung für Klimapolitik zulassen.`,
+					}
+				}
+				{
+					inp := gr.AddInput()
+					inp.Name = "sb_unveraendert_2"
+					inp.Type = "checkbox"
+					inp.ColSpanLabel = 4
+					inp.ColSpanControl = 1
+					inp.HAlignControl = qst.HCenter
+					inp.Desc = trl.S{
+						"de": `Schuldenbremse sollte unverändert bleiben.`,
+					}
+				}
 
-			{
-				inp := gr.AddInput()
-				inp.Name = "schulden_f_infrastruktur_2"
-				inp.Type = "checkbox"
-				inp.ColSpanLabel = 4
-				inp.ColSpanControl = 1
-				inp.HAlignControl = qst.HCenter
-				inp.Desc = trl.S{
-					"de": `Verschuldung für Investitionen in Infrastruktur zulassen.`,
-				}
-			}
+			} else {
 
-			{
-				inp := gr.AddInput()
-				inp.Name = "schulden_f_klima_2"
-				inp.Type = "checkbox"
-				inp.ColSpanLabel = 4
-				inp.ColSpanControl = 1
-				inp.HAlignControl = qst.HCenter
-				inp.Desc = trl.S{
-					"de": `Verschuldung für Klimapolitik zulassen.`,
+				{
+					inp := gr.AddInput()
+					inp.Name = "sb_unveraendert_2"
+					inp.Type = "checkbox"
+					inp.ColSpanLabel = 4
+					inp.ColSpanControl = 1
+					inp.HAlignControl = qst.HCenter
+					inp.Desc = trl.S{
+						"de": `Schuldenbremse sollte unverändert bleiben.`,
+					}
 				}
-			}
-			{
-				inp := gr.AddInput()
-				inp.Name = "sb_unveraendert_2"
-				inp.Type = "checkbox"
-				inp.ColSpanLabel = 4
-				inp.ColSpanControl = 1
-				inp.HAlignControl = qst.HCenter
-				inp.Desc = trl.S{
-					"de": `Schuldenbremse sollte unverändert bleiben.`,
+				{
+					inp := gr.AddInput()
+					inp.Name = "schulden_f_klima_2"
+					inp.Type = "checkbox"
+					inp.ColSpanLabel = 4
+					inp.ColSpanControl = 1
+					inp.HAlignControl = qst.HCenter
+					inp.Desc = trl.S{
+						"de": `Verschuldung für Klimapolitik zulassen.`,
+					}
 				}
+				{
+					inp := gr.AddInput()
+					inp.Name = "schulden_f_infrastruktur_2"
+					inp.Type = "checkbox"
+					inp.ColSpanLabel = 4
+					inp.ColSpanControl = 1
+					inp.HAlignControl = qst.HCenter
+					inp.Desc = trl.S{
+						"de": `Verschuldung für Investitionen in Infrastruktur zulassen.`,
+					}
+				}
+				{
+					inp := gr.AddInput()
+					inp.Name = "sb_lockerung_2"
+					inp.Type = "checkbox"
+					inp.ColSpanLabel = 4
+					inp.ColSpanControl = 1
+					inp.HAlignControl = qst.HCenter
+					inp.Desc = trl.S{
+						"de": `Lockerung der Schuldenbremse und generelle Erhöhung des Verschuldungsspielraums.`,
+					}
+				}
+				{
+					inp := gr.AddInput()
+					inp.Name = "sb_verschaerfung_2"
+					inp.Type = "checkbox"
+					inp.ColSpanLabel = 4
+					inp.ColSpanControl = 1
+					inp.HAlignControl = qst.HCenter
+					inp.Desc = trl.S{
+						"de": `Verschärfung der Schuldenbremse und Verringerung des Verschuldungsspielraums.`,
+					}
+				}
+
 			}
 
 			{
@@ -340,7 +478,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Type = "text"
 				inp.ColSpanLabel = 1
 				inp.ColSpanControl = 4
-				inp.MaxChars = 40
+				inp.MaxChars = 22
 				inp.Desc = trl.S{
 					"de": `Sonstiges`,
 				}
@@ -348,24 +486,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 		}
 
-		/* 		{
-		   			gr := p.AddGroup()
-		   			gr.Cols = 1
-		   			gr.Width = 99
-		   			{
-		   				inp := gr.AddInput()
-		   				inp.Type = "button"
-		   				inp.Name = "submitBtn"
-		   				inp.Response = "2"
-		   				inp.Label = trl.S{
-		   					"de": "Weiter",
-		   				}
-		   				inp.AccessKey = "n"
-		   				inp.ColSpanControl = 1
-		   				inp.HAlignControl = qst.HRight
-		   			}
-		   		}
-		*/
 	}
 
 	//
@@ -403,48 +523,38 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				"de": fmt.Sprintf(`Für wie wichtig halten Sie es, dass Schülerleistungen zwischen den Bundesländern vergleichbar sind?`),
 			}
 
-			// p3q7
-			{
-				inp := gr.AddInput()
-				inp.Name = "leistung_vergleichbarkeit_buerger"
-				inp.Type = "number"
-				inp.MaxChars = 4
-				inp.Step = 1
-				inp.ColSpanLabel = 4
-				inp.ColSpanControl = 1
-				inp.Validator = "inRange100"
-				inp.Label = trl.S{
-					"de": fmt.Sprintf(`Frage 7: <br>`),
-				}
-				inp.Desc = trl.S{
-					"de": `Was schätzen Sie, welcher Anteil der Bürger*innen Ihres Bundeslandes hält es für „sehr“ oder „eher“ wichtig, 
-					dass Schülerleistungen zwischen den Bundesländern vergleichbar sind?`,
-				}
-				inp.Suffix = trl.S{
-					"de": `Prozent`,
-				}
-			}
-
 		}
 
-		/* 		{
-		   			gr := p.AddGroup()
-		   			gr.Cols = 1
-		   			gr.Width = 99
-		   			{
-		   				inp := gr.AddInput()
-		   				inp.Type = "button"
-		   				inp.Name = "submitBtn"
-		   				inp.Response = "3"
-		   				inp.Label = trl.S{
-		   					"de": "Weiter",
-		   				}
-		   				inp.AccessKey = "n"
-		   				inp.ColSpanControl = 1
-		   				inp.HAlignControl = qst.HRight
-		   			}
-		   		}
-		*/
+		if varianten[1] {
+			{
+				gr := p.AddGroup()
+				gr.Cols = 5 // necessary, otherwise no vspacers
+				gr.OddRowsColoring = false
+				// p3q7
+				{
+					inp := gr.AddInput()
+					inp.Name = "leistung_vergleichbarkeit_buerger"
+					inp.Type = "number"
+					inp.MaxChars = 4
+					inp.Step = 1
+					inp.ColSpanLabel = 4
+					inp.ColSpanControl = 1
+					// inp.Validator = "inRange100"
+					inp.Label = trl.S{
+						"de": fmt.Sprintf(`Frage 7: <br>`),
+					}
+					inp.Desc = trl.S{
+						"de": `Was schätzen Sie, welcher Anteil der Bürger*innen Ihres Bundeslandes hält es für „sehr“ oder „eher“ wichtig, 
+					dass Schülerleistungen zwischen den Bundesländern vergleichbar sind?`,
+					}
+					inp.Suffix = trl.S{
+						"de": `Prozent`,
+					}
+				}
+
+			}
+		}
+
 	}
 
 	//
@@ -472,17 +582,15 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			gr := p.AddGroup()
 			gr.Cols = 4 // necessary, otherwise no vspacers
 			gr.OddRowsColoring = false
+			gr.BottomVSpacers = 1
 			gr.Label = trl.S{
-				"de": fmt.Sprintf(`Frage 8<br>`),
+				"de": fmt.Sprintf(`Frage 8: <br><br>`),
 			}
 			gr.Desc = trl.S{
 				"de": fmt.Sprintf(`
 				<b>a)</b> <br>
 				Was <b>schätzen</b> Sie, welcher Anteil der öffentlichen Finanzierung von Schulen 
 				(allgemeinbildend und beruflich) kommt derzeit von den verschiedenen staatlichen Ebenen in Deutschland?
-				<br>
-				<div style='display: inline-block; margin: 6px 0; font-size: 85%%'>Bitte achten Sie darauf, 
-				dass Ihre Angaben insgesamt 100%% ergeben.</div>
 				`),
 			}
 
@@ -491,7 +599,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp := gr.AddInput()
 				inp.Name = "tb1"
 				inp.Type = "textblock"
-				inp.Label = trl.S{
+				inp.Desc = trl.S{
 					"de": fmt.Sprintf(`Gemeinden`),
 				}
 			}
@@ -499,7 +607,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp := gr.AddInput()
 				inp.Name = "tb2"
 				inp.Type = "textblock"
-				inp.Label = trl.S{
+				inp.Desc = trl.S{
 					"de": fmt.Sprintf(`Bundesländer`),
 				}
 			}
@@ -507,7 +615,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp := gr.AddInput()
 				inp.Name = "tb3"
 				inp.Type = "textblock"
-				inp.Label = trl.S{
+				inp.Desc = trl.S{
 					"de": fmt.Sprintf(`Bund`),
 				}
 			}
@@ -515,7 +623,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp := gr.AddInput()
 				inp.Name = "tb4"
 				inp.Type = "textblock"
-				inp.Label = trl.S{
+				inp.Desc = trl.S{
 					"de": fmt.Sprintf(`Summe`),
 				}
 			}
@@ -528,7 +636,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Step = 1
 				inp.ColSpanLabel = 0
 				inp.ColSpanControl = 1
-				inp.Validator = "inRange100"
+				// inp.Validator = "inRange100"
 				inp.Suffix = trl.S{
 					"de": `%`,
 				}
@@ -542,7 +650,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Step = 1
 				inp.ColSpanLabel = 0
 				inp.ColSpanControl = 1
-				inp.Validator = "inRange100"
+				// inp.Validator = "inRange100"
 				inp.Suffix = trl.S{
 					"de": `%`,
 				}
@@ -556,7 +664,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Step = 1
 				inp.ColSpanLabel = 0
 				inp.ColSpanControl = 1
-				inp.Validator = "inRange100"
+				// inp.Validator = "inRange100"
 				inp.Suffix = trl.S{
 					"de": `%`,
 				}
@@ -571,12 +679,50 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				}
 			}
 
+			{
+				inp := gr.AddInput()
+				inp.Name = "tb1000"
+				inp.Type = "textblock"
+				inp.ColSpanLabel = 4
+				inp.Desc = trl.S{
+					"de": fmt.Sprintf(`
+				<br>
+				<div style='display: inline-block; margin: 6px 0; font-size: 95%%'>Bitte achten Sie darauf, 
+				dass Ihre Angaben insgesamt 100%% ergeben.</div>
+				`),
+				}
+			}
+
+		}
+
+	}
+
+	//
+	// Page 5
+	{
+
+		p := q.AddPage()
+		p.NoNavigation = false
+		p.Width = 70
+		// p.Label = trl.S{
+		p.Section = trl.S{
+			"de": "Fragen zum Bildungsföderalismus",
+		}
+		p.Label = trl.S{
+			"de": "Teil 3",
+		}
+		p.Desc = trl.S{
+			"de": "",
+		}
+		p.Short = trl.S{
+			"de": "Bildung 3",
 		}
 
 		{
 			gr := p.AddGroup()
 			gr.Cols = 4 // necessary, otherwise no vspacers
 			gr.OddRowsColoring = false
+			gr.BottomVSpacers = 1
 			gr.Label = trl.S{
 				// "de": fmt.Sprintf(`Frage 8<br>`),
 			}
@@ -594,7 +740,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp := gr.AddInput()
 				inp.Name = "tb6"
 				inp.Type = "textblock"
-				inp.Label = trl.S{
+				inp.Desc = trl.S{
 					"de": fmt.Sprintf(`Gemeinden`),
 				}
 			}
@@ -602,7 +748,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp := gr.AddInput()
 				inp.Name = "tb7"
 				inp.Type = "textblock"
-				inp.Label = trl.S{
+				inp.Desc = trl.S{
 					"de": fmt.Sprintf(`Bundesländer`),
 				}
 			}
@@ -610,7 +756,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp := gr.AddInput()
 				inp.Name = "tb8"
 				inp.Type = "textblock"
-				inp.Label = trl.S{
+				inp.Desc = trl.S{
 					"de": fmt.Sprintf(`Bund`),
 				}
 			}
@@ -618,7 +764,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp := gr.AddInput()
 				inp.Name = "tb9"
 				inp.Type = "textblock"
-				inp.Label = trl.S{
+				inp.Desc = trl.S{
 					"de": fmt.Sprintf(`Summe`),
 				}
 			}
@@ -631,7 +777,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Step = 1
 				inp.ColSpanLabel = 0
 				inp.ColSpanControl = 1
-				inp.Validator = "inRange100"
+				// inp.Validator = "inRange100"
 				inp.Suffix = trl.S{
 					"de": `%`,
 				}
@@ -645,7 +791,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Step = 1
 				inp.ColSpanLabel = 0
 				inp.ColSpanControl = 1
-				inp.Validator = "inRange100"
+				// inp.Validator = "inRange100"
 				inp.Suffix = trl.S{
 					"de": `%`,
 				}
@@ -659,7 +805,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Step = 1
 				inp.ColSpanLabel = 0
 				inp.ColSpanControl = 1
-				inp.Validator = "inRange100"
+				// inp.Validator = "inRange100"
 				inp.Suffix = trl.S{
 					"de": `%`,
 				}
@@ -674,6 +820,294 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				}
 			}
 
+		}
+
+	}
+
+	//
+	// Page 6
+	{
+
+		p := q.AddPage()
+		p.NoNavigation = false
+		p.Width = 70
+		// p.Label = trl.S{
+		p.Section = trl.S{
+			"de": "Fragen zum Bildungsföderalismus",
+		}
+		p.Label = trl.S{
+			"de": "Teil 4",
+		}
+		p.Desc = trl.S{
+			"de": "",
+		}
+		p.Short = trl.S{
+			"de": "Bildung 4",
+		}
+
+		{
+			gr := p.AddGroup()
+			gr.Cols = 4 // necessary, otherwise no vspacers
+			gr.BottomVSpacers = 1
+			gr.OddRowsColoring = false
+
+			// p4q9
+			{
+				inp := gr.AddInput()
+				inp.Name = "mathematik_rang"
+				inp.Type = "number"
+				inp.MaxChars = 2
+				inp.Step = 1
+				inp.ColSpanLabel = 3
+				inp.ColSpanControl = 1
+				// inp.Validator = "inRange20"
+				inp.Label = trl.S{
+					"de": fmt.Sprintf(`Frage 9:<br>`),
+				}
+				inp.Desc = trl.S{
+					"de": fmt.Sprintf(`
+					Eine aktuelle Bildungsstudie hat die Mathematikleistungen von Schüler*innen der 9. Jahrgangsstufe <br>
+					in den 16 deutschen Bundesländern verglichen. <br> 
+					Was schätzen Sie, welchen Platz haben die Schüler*innen Ihres Bundeslandes belegt? <br>
+					(1 ist der beste Platz, 16 der schlechteste Platz.)				
+				
+					`),
+				}
+				inp.Suffix = trl.S{
+					"de": fmt.Sprintf(`-ter Platz`),
+				}
+			}
+		}
+
+		{
+			gr := p.AddGroup()
+			gr.Cols = 4 // necessary, otherwise no vspacers
+			gr.BottomVSpacers = 1
+			gr.OddRowsColoring = false
+
+			// p4q10
+			{
+				inp := gr.AddInput()
+				inp.Name = "mathematik_rang_buerger"
+				inp.Type = "number"
+				inp.MaxChars = 2
+				inp.Step = 1
+				inp.ColSpanLabel = 3
+				inp.ColSpanControl = 1
+				// inp.Validator = "inRange20"
+				inp.Label = trl.S{
+					"de": fmt.Sprintf(`Frage 10:<br>`),
+				}
+				inp.Desc = trl.S{
+					"de": fmt.Sprintf(`
+						Was schätzen Sie, was denken die Bürger*innen Ihres Bundeslandes, welchen Platz die Schüler*innen <br>
+						ihres Bundeslandes bei der Bildungsstudie belegt haben? <br>
+						(1 ist der beste Platz, 16 der schlechteste Platz.)				
+					`),
+				}
+				inp.Suffix = trl.S{
+					"de": fmt.Sprintf(`-ter Platz`),
+				}
+			}
+
+		}
+
+	}
+
+	//
+	// Page 7
+	{
+
+		p := q.AddPage()
+		p.NoNavigation = false
+		p.Width = 70
+		// p.Label = trl.S{
+		p.Section = trl.S{
+			"de": "Fragen zum Bildungsföderalismus",
+		}
+		p.Label = trl.S{
+			"de": "Teil 5",
+		}
+		p.Desc = trl.S{
+			"de": "",
+		}
+		p.Short = trl.S{
+			"de": "Bildung 5",
+		}
+
+		{
+			names1stMatrix := []string{"schuelervergleichstest"}
+			emptyRowLabels := []trl.S{}
+			gr := p.AddRadioMatrixGroup(labelsFiverDafuerDagegen(), names1stMatrix, emptyRowLabels, 1)
+			gr.Cols = 5 // necessary, otherwise no vspacers
+			gr.OddRowsColoring = false
+			gr.BottomVSpacers = 1
+			gr.Label = trl.S{
+				"de": fmt.Sprintf(`Frage 11: <br>`),
+			}
+			gr.Desc = trl.S{
+				"de": fmt.Sprintf(`
+				Sind Sie für oder gegen folgenden Reformvorschlag: <br>
+				Es werden deutschlandweit einheitliche Schülervergleichstests in Mathematik und Deutsch in allen Schulformen eingeführt, 
+				die ab der 5. Klasse alle zwei Jahre regelmäßig stattfinden. 
+				Die Durchschnittsergebnisse pro Bundesland werden veröffentlicht, um die Schülerleistungen der Bundesländer miteinander zu vergleichen.<br>
+				<br>
+				Ich bin… 
+				
+				`),
+			}
+
+		}
+
+		{
+			gr := p.AddGroup()
+			gr.Cols = 5 // necessary, otherwise no vspacers
+			gr.OddRowsColoring = false
+			// p3q7
+			{
+				inp := gr.AddInput()
+				inp.Name = "schuelervergleichstest_buerger"
+				inp.Type = "number"
+				inp.MaxChars = 4
+				inp.Step = 1
+				inp.ColSpanLabel = 4
+				inp.ColSpanControl = 1
+				// inp.Validator = "inRange100"
+				inp.Label = trl.S{
+					"de": fmt.Sprintf(`Frage 12: <br>`),
+				}
+				inp.Desc = trl.S{
+					"de": `Was schätzen Sie, welcher Anteil der Bürger*innen Ihres Bundeslandes ist „sehr“ oder „eher“ für 
+					den vorher genannten Reformvorschlag, deutschlandweit einheitliche Schülervergleichstests einzuführen?`,
+				}
+				inp.Suffix = trl.S{
+					"de": `Prozent`,
+				}
+			}
+
+		}
+
+	}
+
+	//
+	// Page 8
+	{
+
+		p := q.AddPage()
+		p.NoNavigation = false
+		p.Width = 70
+		// p.Label = trl.S{
+		p.Section = trl.S{
+			"de": "Fragen zum Bildungsföderalismus",
+		}
+		p.Label = trl.S{
+			"de": "Teil 6",
+		}
+		p.Desc = trl.S{
+			"de": "",
+		}
+		p.Short = trl.S{
+			"de": "Bildung 6",
+		}
+
+		{
+			names1stMatrix := []string{"vergleichstest_regelmaessig"}
+			emptyRowLabels := []trl.S{}
+			gr := p.AddRadioMatrixGroup(labelsFiverDafuerDagegen(), names1stMatrix, emptyRowLabels, 1)
+			gr.Cols = 5 // necessary, otherwise no vspacers
+			gr.OddRowsColoring = false
+			gr.BottomVSpacers = 1
+			gr.Label = trl.S{
+				"de": fmt.Sprintf(`Frage 13: <br>`),
+			}
+
+			// besseren/schlechteren
+			aob, err := q.Survey.Param("aboveOrBelowMedian")
+			if err != nil {
+				return &q, err
+			}
+			treatment := fmt.Sprintf(`In einer aktuellen Bildungsstudie sind die Mathematikleistungen der Schüler*innen Ihres Bundeslandes 
+			in der %v Hälfte aller Bundesländer. <br>`, aob)
+
+			if !varianten[2] {
+				treatment = ""
+			}
+
+			gr.Desc = trl.S{
+				"de": fmt.Sprintf(`
+					Jetzt würden wir gerne noch einmal Ihre Meinung zu regelmäßigen Vergleichstests erfahren.<br>
+
+					%v
+
+					Sind Sie für oder gegen vorher genannten Reformvorschlag, 
+					deutschlandweit einheitliche Schülervergleichstests einzuführen?<br>
+					<br>
+					 Ich bin… 
+				
+				`, treatment),
+			}
+
+		}
+		{
+			rowLabels := []trl.S{
+				{"de": "… aller befragter Bürger*innen in Deutschland."},
+				{"de": "… aller befragter Bürger*innen in Ihrem Bundesland."},
+				{"de": "… aller befragter Wähler*innen Ihrer Partei in Deutschland."},
+				{"de": "… aller befragter Wähler*innen Ihrer Partei in Ihrem Bundesland."},
+				{"de": "Ich möchte keine Informationen erhalten."},
+			}
+
+			if varianten[3] {
+				rowLabels = []trl.S{
+					{"de": "… aller befragter Wähler*innen Ihrer Partei in Ihrem Bundesland."},
+					{"de": "… aller befragter Wähler*innen Ihrer Partei in Deutschland."},
+					{"de": "… aller befragter Bürger*innen in Ihrem Bundesland."},
+					{"de": "… aller befragter Bürger*innen in Deutschland."},
+
+					{"de": "Ich möchte keine Informationen erhalten."},
+				}
+
+			}
+
+			gr := p.AddRadioGroupVertical("info_ueber_andere", rowLabels)
+			gr.Cols = 5 // necessary, otherwise no vspacers
+			gr.OddRowsColoring = false
+			gr.BottomVSpacers = 1
+			gr.Label = trl.S{
+				"de": fmt.Sprintf(`Frage 14: <br>`),
+			}
+			gr.Desc = trl.S{
+				"de": fmt.Sprintf(`
+					Parallel zu unserer Landtagsumfrage befragen wir aktuell auch die deutsche Bevölkerung zu den gleichen Themen.<br>
+					Im Folgenden bieten wir Ihnen an, dass Sie nach Abschluss der Umfragen erfahren, 
+					 wie andere Befragte zum Reformvorschlag, deutschlandweit einheitliche Schülervergleichstests einzuführen, stehen.
+					Wir senden Ihnen die gewählten Informationen per E-Mail zu. <br>
+					<br>
+					Welche der folgenden Informationen möchten Sie erhalten?<br>
+					<br>
+					Die durchschnittliche Zustimmung…
+				
+				`),
+			}
+
+		}
+
+		{
+			gr := p.AddGroup()
+			gr.Cols = 1
+			gr.Width = 99
+			{
+				inp := gr.AddInput()
+				inp.Type = "button"
+				inp.Name = "submitBtn"
+				inp.Response = "8"
+				inp.Label = trl.S{
+					"de": "Umfrage abschließen",
+				}
+				inp.AccessKey = "n"
+				inp.ColSpanControl = 1
+				inp.HAlignControl = qst.HRight
+			}
 		}
 
 	}

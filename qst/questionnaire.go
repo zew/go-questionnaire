@@ -11,6 +11,7 @@ import (
 	"fmt"
 	"io"
 	"log"
+	"math"
 	"net/http"
 	"path"
 	"sort"
@@ -99,8 +100,8 @@ func (i *inputT) AddRadio() *radioT {
 // See comment to implementedType checkboxgroup.
 type inputT struct {
 	Name     string  `json:"name,omitempty"`
-	Type     string  `json:"type,omitempty"`
-	MaxChars int     `json:"max_chars,omitempty"` // Number of input chars, also used to compute width
+	Type     string  `json:"type,omitempty"`      // see implementedTypes
+	MaxChars int     `json:"max_chars,omitempty"` // Number of input chars, also to compute width
 	Step     float64 `json:"step,omitempty"`      // stepping interval for number input
 
 	Label     trl.S  `json:"label,omitempty"`
@@ -108,10 +109,11 @@ type inputT struct {
 	Suffix    trl.S  `json:"suffix,omitempty"`
 	AccessKey string `json:"accesskey,omitempty"`
 
-	CSSLabel      string              `json:"css_label,omitempty"`                // vertical margins, line-height, indent - usually for the entire label+input
 	HAlignLabel   horizontalAlignment `json:"horizontal_align_label,omitempty"`   // description left/center/right of input, default left, similar setting for radioT but not for group
 	HAlignControl horizontalAlignment `json:"horizontal_align_control,omitempty"` // label       left/center/right of input, default left, similar setting for radioT but not for group
 
+	// extra styling - a CSS class must exist
+	CSSLabel   string `json:"css_label,omitempty"`   // vertical margins, line-height, indent - usually for the entire label+input
 	CSSControl string `json:"css_control,omitempty"` // usually only for the input element's inner style
 
 	// How many column slots of the overall layout should the control occupy?
@@ -124,7 +126,7 @@ type inputT struct {
 	Radios []*radioT  `json:"radios,omitempty"`    // This slice implements the radiogroup - and the senseless checkboxgroup
 	DD     *DropdownT `json:"drop_down,omitempty"` // As pointer to prevent JSON cluttering
 
-	Validator string `json:"validator,omitempty"` // i.e. inRange20 - any string from validators
+	Validator string `json:"validator,omitempty"` // i.e. any key from validators, i.e. "must;inRange20"
 	ErrMsg    trl.S  `json:"err_msg,omitempty"`
 
 	Response string `json:"response,omitempty"` // also contains the Value of options and checkboxes
@@ -279,7 +281,9 @@ func (i inputT) HTML(langCode string, numCols int) string {
 				if i.Step >= 1 {
 					inputMode = fmt.Sprintf(" step='%.0f'  ", i.Step)
 				} else {
-					inputMode = fmt.Sprintf(" step='%.f'  ", i.Step)
+					prec := int(math.Log10(1 / i.Step))
+					f := fmt.Sprintf(" step='%%.%vf'  ", prec)
+					inputMode = fmt.Sprintf(f, i.Step)
 				}
 			}
 			ctrl += fmt.Sprintf("<input type='%v'  %v  name='%v' id='%v' title='%v %v' class='%v' style='%v' %v %v  value='%v' />\n",

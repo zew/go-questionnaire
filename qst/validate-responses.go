@@ -20,6 +20,11 @@ func init() {
 
 		arg = strings.TrimSpace(arg)
 
+		// non-empty is in separate validator 'must'
+		if arg == "" {
+			return nil
+		}
+
 		// comma => dot
 		if strings.Contains(arg, ",") && !strings.Contains(arg, ".") {
 			arg = strings.Replace(arg, ",", ".", -1)
@@ -95,20 +100,24 @@ func (q *QuestionnaireT) ValidateResponseData(pageNum int, langCode string) (las
 
 				// Validator function exists
 				if inp.Validator != "" {
-					if vd, ok := validators[inp.Validator]; ok {
-						err := vd(langCode, inp.Response)
-						// log.Printf("Validating %22s  -%s-  %v", inp.Name, inp.Response, err)
-						if err != nil {
-							last = err
-							str := err.Error()
-							str = fmt.Sprintf("<span class='error'>&nbsp; %v</span>", str)
-							// log.Printf("inp error msg is now %v", str)
-							q.Pages[i1].Groups[i2].Inputs[i3].ErrMsg = trl.S{"de": str, "en": str} // TODO: multi-lingo here :(
-						} else {
-							// Reset previous errors
-							q.Pages[i1].Groups[i2].Inputs[i3].ErrMsg = nil
+					valiKeys := strings.Split(inp.Validator, ";")
+					for _, valiKey := range valiKeys {
+						if vd, ok := validators[strings.TrimSpace(valiKey)]; ok {
+							err := vd(langCode, inp.Response)
+							// log.Printf("Validating %22s  -%s-  %v", inp.Name, inp.Response, err)
+							if err != nil {
+								last = err
+								str := err.Error()
+								str = fmt.Sprintf("<span class='error'>&nbsp; %v</span>", str)
+								// log.Printf("inp error msg is now %v", str)
+								q.Pages[i1].Groups[i2].Inputs[i3].ErrMsg = trl.S{"de": str, "en": str} // TODO: multi-lingo here :(
+							} else {
+								// Reset previous errors
+								q.Pages[i1].Groups[i2].Inputs[i3].ErrMsg = nil
+							}
 						}
 					}
+
 				}
 
 			}

@@ -105,6 +105,8 @@ by using [gocloud blob](https://godoc.org/gocloud.dev/blob) for local file syste
 * Extensible set of validation functions easily assignable to each field.  
  Server side validation - no client side validation.
 
+* For example `must ; inRange20` or only `inRange100` or only `must`
+
 ### Technical properties
 
 * `loadtest` performs 60 concurrent requests 1.41 seconds - on 2018 Lenovo Notebook.
@@ -158,15 +160,15 @@ additonal `pages`, `groups` and `inputs`.
 
 ### Input types
 
-* `text` - your classic text input
-* `number` - number input - mobile browsers show the numbers keyboard
-* `textarea` - multi line text input
-* `dropdown` - list of fixed choices
-* `checkbox` - yes/no input
-* `radiogroup`, `checkboxgroup` - fields of choices - helpers for horizontal and vertical display
-* `textblock` - block of text without input
-* `button` - submit button
-* `dynamic` - any input that depends on user properties or wave-specific data
+* `text`       - your classic text input
+* `number`     - number input - mobile browsers show the numbers keyboard
+* `textarea`   - multi line text input
+* `dropdown`   - list of fixed choices
+* `checkbox`   - yes/no input
+* `radiogroup`, `checkboxgroup` - fields of choices - helpers for horizontal and vertical display (see flit example)
+* `textblock`  - block of text without input
+* `button`     - submit button
+* `dynamic`    - any input that depends on user properties or wave-specific data
 
 Each input can have a multi-language label, -description, a multi-language suffix and a validation function.
 
@@ -422,7 +424,14 @@ Mobile layout was tested with `crossbrowsertesting.com`.
 
 ## Open / todo
 
-The project specific templates and CSS files should go to `app-bucket` dir.
+* Templates and CSS files should go to `app-bucket` dir -  
+take implementation from project tfre  
+remove bootstrap.go template creation  
+but adapt generators.SurveyGenerate()
+
+* Should we have a checkbox where the control comes first?
+
+* Document the label / checkbox vertical case
 
 ## Possible enhancements
 
@@ -522,4 +531,3 @@ Markdown | 27 | 485 | 0 | 727
 HTML | 6 | 96 | 31 | 319
 Python | 1 | 31 | 16 | 94
 Bourne | Shell | 3 | 17 | 19 | 76
-

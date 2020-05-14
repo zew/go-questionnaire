@@ -117,16 +117,21 @@ func SurveyGenerate(w http.ResponseWriter, r *http.Request) {
 		myfmt.Fprintf(w, "%v generated<br>\n", key)
 
 		//
-		// Create an empty main_desktop_[surveytype].css"
-		// if it does not exist yet
-		pth := filepath.Join(".", "templates", "main_desktop_"+q.Survey.Type+".css")
-		if ok, _ := util.FileExists(pth); !ok {
-			err := ioutil.WriteFile(pth, []byte{}, 0755)
-			if err != nil {
-				log.Fatalf("Could not create %v: %v", pth, err)
+		// create empty main_desktop_[surveytype].css"
+		// create empty main_mobile_[surveytype].css"
+		// if it does not yet exist
+		fcCreate := func(desktopOrMobile string) {
+			pth := filepath.Join(".", "templates", desktopOrMobile+q.Survey.Type+".css")
+			if ok, _ := util.FileExists(pth); !ok {
+				err := ioutil.WriteFile(pth, []byte{}, 0755)
+				if err != nil {
+					log.Fatalf("Could not create %v: %v", pth, err)
+				}
+				log.Printf("done creating file %v", pth)
 			}
-			log.Printf("done creating file %v", pth)
 		}
+		fcCreate("main_desktop_")
+		fcCreate("main_mobile_")
 
 	}
 

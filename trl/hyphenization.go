@@ -42,6 +42,12 @@ var hyph = []string{
 	"Deutsch&shy;land",
 	"Welt&shy;wirtschaft",
 	"un&shy;ent&shy;schieden",
+	"über&shy;haupt",
+	"er&shy;stre&shy;bens&shy;wert",
+	"aus&shy;ge&shy;schlos&shy;sen",
+	"si&shy;cher",
+	"un&shy;wich&shy;tig",
+	"wich&shy;tig",
 	// german euref
 	"Öko&shy;no&shy;mie",
 	"Mi&shy;kro&shy;öko&shy;no&shy;mie",

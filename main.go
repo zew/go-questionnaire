@@ -63,7 +63,9 @@ func main() {
 	mux1.Handle(cfg.Pref("/config-reload"), wrap.MustAdmin(handlers.ConfigReloadH))
 	mux1.Handle(cfg.Pref("/templates-reload"), wrap.MustAdmin(tpl.ParseH))
 	// Workflow - logins for survey
-	mux1.Handle(cfg.Pref("/generate-questionnaire-templates"), wrap.MustAdmin(generators.SurveyGenerate))
+	mux1.Handle(cfg.Pref("/generate-questionnaire-templates"), wrap.MustAdmin(generators.GenerateQuestionnaireTemplates))
+	mux1.Handle(cfg.PrefTS("/generate-questionnaire-templates"), wrap.MustAdmin(generators.GenerateQuestionnaireTemplates))
+	mux1.Handle(cfg.Pref("/generate-landtag-variations"), wrap.MustAdmin(generators.GenerateLandtagsVariations))
 	mux1.Handle(cfg.Pref("/generate-hashes"), wrap.MustAdmin(lgn.GenerateHashesH))
 	mux1.Handle(cfg.Pref("/generate-hash-ids"), wrap.MustAdmin(lgn.GenerateHashIDs))
 	mux1.Handle(cfg.Pref("/reload-from-questionnaire-template"), wrap.MustAdmin(lgn.ReloadH))

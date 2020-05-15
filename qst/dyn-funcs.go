@@ -13,9 +13,10 @@ import (
 type dynFuncT func(*QuestionnaireT) (string, error)
 
 var dynFuncs = map[string]dynFuncT{
-	"RepsonseStatistics": RepsonseStatistics,
-	"PersonalLink":       PersonalLink,
-	"HasEuroQuestion":    ResponseTextHasEuro,
+	"RepsonseStatistics":             RepsonseStatistics,
+	"PersonalLink":                   PersonalLink,
+	"HasEuroQuestion":                ResponseTextHasEuro,
+	"FederalStateAboveOrBelowMedian": FederalStateAboveOrBelowMedian,
 }
 
 // Statistics returns the percentage of
@@ -136,5 +137,18 @@ func ResponseTextHasEuro(q *QuestionnaireT) (string, error) {
 	ret = fmt.Sprintf("<b> %v </b> %v", hl[q.LangCode], desc)
 
 	return ret, nil
+
+}
+
+// FederalStateAboveOrBelowMedian returns "besser" or "schlechter";
+// depending on the user's federal state education ranking
+func FederalStateAboveOrBelowMedian(q *QuestionnaireT) (string, error) {
+
+	attr1, ok := q.Attrs["aboveOrBelowMedian"]
+
+	if !ok {
+		return "Question requires known euro-membership and residence code.", nil
+	}
+	return attr1, nil
 
 }

@@ -17,12 +17,12 @@
  			},
  			{
  				"name": "varianten",
- 				"val": "1111"
+ 				"val": "1011"
  			}
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "d4bf648753271d89d3e3a42b113368a2",
+ 	"md_5": "46a11f9c8b7aa82b6e2ed57b5ca1f41d",
  	"lang_codes": {
  		"de": "Deutsch"
  	},
@@ -50,7 +50,7 @@
  			"groups": [
  				{
  					"label": {
- 						"de": "Frage [groupID]: \u003cbr\u003e"
+ 						"de": "Frage 1: \u003cbr\u003e"
  					},
  					"description": {
  						"de": "Erinnern Sie sich bitte an die Zeit zu Anfang 2020, also vor Ausbruch der Corona-Krise.\u003cbr\u003e\n\t\t\t\tFür wie wahrscheinlich hielten Sie es zu diesem Zeitpunkt, \n\t\t\t\tdass Ihr Bundesland die Vorgaben der grundgesetzlichen Schuldenbremse einhalten \n\t\t\t\tund ab 2020 einen (konjunkturbereinigt) ausgeglichenen Haushalt aufweisen würde?"
@@ -178,7 +178,7 @@
  				},
  				{
  					"label": {
- 						"de": "Frage [groupID]: \u003cbr\u003e"
+ 						"de": "Frage 2: \u003cbr\u003e"
  					},
  					"description": {
  						"de": "Die Corona-Krise führt voraussichtlich zu einem starken Rückgang der wirtschaftlichen Aktivität \n\t\t\t\tin diesem Jahr und damit verbunden zu einer Verschlechterung der öffentlichen Haushaltslage."
@@ -500,7 +500,7 @@
  				},
  				{
  					"label": {
- 						"de": "Frage 5: \u003cbr\u003e \n\t\t\t\t\t"
+ 						"de": "Frage 5: \u003cbr\u003e"
  					},
  					"description": {
  						"de": "Welche Position in der Diskussion zur grundgesetzlichen Schuldenbremse würden \n\t\t\t\tSie heute am ehesten unterstützen?\u003cbr\u003e\n\t\t\t\t\t(Mehrfachantworten möglich)\n\t\t\t\t\t"
@@ -669,30 +669,6 @@
  							]
  						}
  					]
- 				},
- 				{
- 					"bottom_vspacers": 3,
- 					"width": 100,
- 					"columns": 5,
- 					"inputs": [
- 						{
- 							"name": "leistung_vergleichbarkeit_buerger",
- 							"type": "number",
- 							"max_chars": 4,
- 							"step": 1,
- 							"label": {
- 								"de": "Frage 7: \u003cbr\u003e"
- 							},
- 							"description": {
- 								"de": "Was schätzen Sie, welcher Anteil der Bürger*innen Ihres Bundeslandes hält es für „sehr“ oder „eher“ wich\u0026shy;tig, \n\t\t\t\t\tdass Schülerleistungen zwischen den Bundesländern vergleichbar sind?"
- 							},
- 							"suffix": {
- 								"de": "Prozent"
- 							},
- 							"col_span_label": 4,
- 							"col_span_control": 1
- 						}
- 					]
  				}
  			]
  		},
@@ -715,7 +691,7 @@
  			"groups": [
  				{
  					"label": {
- 						"de": "Frage 8: \u003cbr\u003e\u003cbr\u003e"
+ 						"de": "Frage 7: \u003cbr\u003e\u003cbr\u003e"
  					},
  					"description": {
  						"de": "\n\t\t\t\t\u003cb\u003ea)\u003c/b\u003e \u003cbr\u003e\n\t\t\t\tWas \u003cb\u003eschätzen\u003c/b\u003e Sie, welcher Anteil der öffentlichen Finanzierung von Schulen \n\t\t\t\t(allgemeinbildend und beruflich) kommt derzeit von den verschiedenen staatlichen Ebenen in Deutschland?\n\t\t\t\t"
@@ -923,7 +899,7 @@
  							"max_chars": 2,
  							"step": 1,
  							"label": {
- 								"de": "Frage 9:\u003cbr\u003e"
+ 								"de": "Frage 8: \u003cbr\u003e"
  							},
  							"description": {
  								"de": "\n\t\t\t\t\tEine aktuelle Bildungsstudie hat die Mathematikleistungen von Schüler*innen der 9. Jahrgangsstufe \u003cbr\u003e\n\t\t\t\t\tin den 16 deutschen Bundesländern verglichen. \u003cbr\u003e \n\t\t\t\t\tWas schätzen Sie, welchen Platz haben die Schüler*innen Ihres Bundeslandes belegt? \u003cbr\u003e\n\t\t\t\t\t(1 ist der beste Platz, 16 der schlechteste Platz.)\t\t\t\t\n\t\t\t\t\n\t\t\t\t\t"
@@ -947,7 +923,7 @@
  							"max_chars": 2,
  							"step": 1,
  							"label": {
- 								"de": "Frage 10:\u003cbr\u003e"
+ 								"de": "Frage 9: \u003cbr\u003e"
  							},
  							"description": {
  								"de": "\n\t\t\t\t\t\tWas schätzen Sie, was denken die Bürger*innen Ihres Bundeslandes, welchen Platz die Schüler*innen \u003cbr\u003e\n\t\t\t\t\t\tihres Bundeslandes bei der Bildungsstudie belegt haben? \u003cbr\u003e\n\t\t\t\t\t\t(1 ist der beste Platz, 16 der schlechteste Platz.)\t\t\t\t\n\t\t\t\t\t"
@@ -981,7 +957,7 @@
  			"groups": [
  				{
  					"label": {
- 						"de": "Frage 11: \u003cbr\u003e"
+ 						"de": "Frage 10: \u003cbr\u003e"
  					},
  					"description": {
  						"de": "\n\t\t\t\tSind Sie für oder gegen folgenden Reformvorschlag: \u003cbr\u003e\n\t\t\t\tEs werden deutschlandweit einheitliche Schülervergleichstests in Mathematik und Deutsch in allen Schulformen eingeführt, \n\t\t\t\tdie ab der 5. Klasse alle zwei Jahre regelmäßig stattfinden. \n\t\t\t\tDie Durchschnittsergebnisse pro Bundesland werden veröffentlicht, um die Schülerleistungen der Bundesländer miteinander zu vergleichen.\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\tIch bin… \n\t\t\t\t\n\t\t\t\t"
@@ -1070,7 +1046,7 @@
  							"max_chars": 4,
  							"step": 1,
  							"label": {
- 								"de": "Frage 12: \u003cbr\u003e"
+ 								"de": "Frage 11: \u003cbr\u003e"
  							},
  							"description": {
  								"de": "Was schätzen Sie, welcher Anteil der Bürger*innen Ihres Bundeslandes ist „sehr“ oder „eher“ für \n\t\t\t\t\tden vorher genannten Reformvorschlag, deutsch\u0026shy;landweit einheitliche Schülervergleichstests einzuführen?"
@@ -1104,7 +1080,7 @@
  			"groups": [
  				{
  					"label": {
- 						"de": "Frage 13: \u003cbr\u003e"
+ 						"de": "Frage 12: \u003cbr\u003e"
  					},
  					"description": {
  						"de": "\n\t\t\t\t\tJetzt würden wir gerne noch einmal Ihre Meinung zu regelmäßigen Vergleichstests erfahren.\u003cbr\u003e\n\n\t\t\t\t\tIn einer aktuellen Bildungsstudie sind die Mathematikleistungen der Schüler*innen Ihres Bundeslandes \n\t\t\tin der besseren Hälfte aller Bundesländer. \u003cbr\u003e\n\n\t\t\t\t\tSind Sie für oder gegen vorher genannten Reformvorschlag, \n\t\t\t\t\tdeutschlandweit einheitliche Schülervergleichstests einzuführen?\u003cbr\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t Ich bin… \n\t\t\t\t\n\t\t\t\t"
@@ -1184,7 +1160,7 @@
  				},
  				{
  					"label": {
- 						"de": "Frage 14: \u003cbr\u003e"
+ 						"de": "Frage 13: \u003cbr\u003e"
  					},
  					"description": {
  						"de": "\n\t\t\t\t\tParallel zu unserer Landtagsumfrage befragen wir aktuell auch die deutsche Bevölkerung zu den gleichen Themen.\u003cbr\u003e\n\t\t\t\t\tIm Folgenden bieten wir Ihnen an, dass Sie nach Abschluss der Umfragen erfahren, \n\t\t\t\t\t wie andere Befragte zum Reformvorschlag, deutschlandweit einheitliche Schülervergleichstests einzuführen, stehen.\n\t\t\t\t\tWir senden Ihnen die gewählten Informationen per E-Mail zu. \u003cbr\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\tWelche der folgenden Informationen möchten Sie erhalten?\u003cbr\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\tDie durchschnittliche Zustimmung…\n\t\t\t\t\n\t\t\t\t"

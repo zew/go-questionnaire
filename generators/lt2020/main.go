@@ -13,27 +13,11 @@ import (
 func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 	/*
-		immer nur ein step forward
-		never backwards
 
-		4 und 5 beide aufwärts oder beide abwärts
-
-		7 anzeigen oder nicht
-
-		8a und 8b auf separate seiten
-
-		 9, 10 separat
-
-		11, 12 separat
-
-		13 separat
-
-		14 separat
-
-
-	*/
+	 */
 
 	ctr.Reset()
+	ctrPages := ctr.New()
 
 	// qst.RadioVali = "mustRadioGroup"
 	qst.CSSLabelHeader = "go-quest-opt-label"
@@ -48,7 +32,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	q.Survey.Org = trl.S{"de": "ZEW"}
 	q.Survey.Name = trl.S{"de": "Landtagsumfrage"}
 
-	groupOrdinal := "[groupID]"
+	// groupOrdinal := "[groupID]"
 
 	vars, err := q.Survey.Param("varianten")
 	if err != nil {
@@ -94,7 +78,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			gr.Cols = 9 // necessary, otherwise no vspacers
 			gr.OddRowsColoring = false
 			gr.Label = trl.S{
-				"de": fmt.Sprintf("Frage %v: <br>", groupOrdinal),
+				"de": fmt.Sprintf("Frage %v: <br>", ctrPages.Increment()), // Frage 1
 			}
 			gr.Desc = trl.S{
 				"de": `Erinnern Sie sich bitte an die Zeit zu Anfang 2020, also vor Ausbruch der Corona-Krise.<br>
@@ -111,7 +95,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				gr.Cols = 2 // necessary, otherwise no vspacers
 				gr.OddRowsColoring = false
 				gr.Label = trl.S{
-					"de": fmt.Sprintf(`Frage %v: <br>`, groupOrdinal),
+					"de": fmt.Sprintf("Frage %v: <br>", ctrPages.Increment()), // Frage 2
 				}
 				gr.Desc = trl.S{
 					"de": fmt.Sprintf(`Die Corona-Krise führt voraussichtlich zu einem starken Rückgang der wirtschaftlichen Aktivität 
@@ -156,8 +140,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				gr.Cols = 9 // necessary, otherwise no vspacers
 				gr.OddRowsColoring = false
 				gr.Label = trl.S{
-					// "de": fmt.Sprintf(`Frage %v: <br>`, groupOrdinal),
-					"de": fmt.Sprintf(`Frage 3: <br>`),
+					"de": fmt.Sprintf("Frage %v: <br>", ctrPages.Increment()), // Frage 3
 				}
 				gr.Desc = trl.S{
 					"de": fmt.Sprintf(`Für wie erstrebenswert erachten Sie es, dass Ihr Bundesland wieder einen ausgeglichenen Haushalt 
@@ -196,7 +179,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			gr.Cols = 5 // necessary, otherwise no vspacers
 			gr.OddRowsColoring = false
 			gr.Label = trl.S{
-				"de": `Frage 4: <br>`,
+				"de": fmt.Sprintf("Frage %v: <br>", ctrPages.Increment()), // Frage 4
 			}
 			gr.Desc = trl.S{
 				"de": `Vor Ausbruch der Corona-Krise wurde vermehrt diskutiert, 
@@ -344,8 +327,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			gr.Cols = 5 // necessary, otherwise no vspacers
 			gr.OddRowsColoring = false
 			gr.Label = trl.S{
-				"de": `Frage 5: <br> 
-					`,
+				"de": fmt.Sprintf("Frage %v: <br>", ctrPages.Increment()), // Frage 5
 			}
 			gr.Desc = trl.S{
 				"de": `Welche Position in der Diskussion zur grundgesetzlichen Schuldenbremse würden 
@@ -517,7 +499,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			gr.Cols = 5 // necessary, otherwise no vspacers
 			gr.OddRowsColoring = false
 			gr.Label = trl.S{
-				"de": fmt.Sprintf(`Frage 6: <br>`),
+				"de": fmt.Sprintf("Frage %v: <br>", ctrPages.Increment()), // Frage 6
 			}
 			gr.Desc = trl.S{
 				"de": fmt.Sprintf(`Für wie wichtig halten Sie es, dass Schülerleistungen zwischen den Bundesländern vergleichbar sind?`),
@@ -541,7 +523,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 					inp.ColSpanControl = 1
 					// inp.Validator = "inRange100"
 					inp.Label = trl.S{
-						"de": fmt.Sprintf(`Frage 7: <br>`),
+						"de": fmt.Sprintf("Frage %v: <br>", ctrPages.Increment()), // Frage 7
 					}
 					inp.Desc = trl.S{
 						"de": `Was schätzen Sie, welcher Anteil der Bürger*innen Ihres Bundeslandes hält es für „sehr“ oder „eher“ wichtig, 
@@ -584,7 +566,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			gr.OddRowsColoring = false
 			gr.BottomVSpacers = 1
 			gr.Label = trl.S{
-				"de": fmt.Sprintf(`Frage 8: <br><br>`),
+				"de": fmt.Sprintf("Frage %v: <br><br>", ctrPages.Increment()), // Frage 8
 			}
 			gr.Desc = trl.S{
 				"de": fmt.Sprintf(`
@@ -724,7 +706,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			gr.OddRowsColoring = false
 			gr.BottomVSpacers = 1
 			gr.Label = trl.S{
-				// "de": fmt.Sprintf(`Frage 8<br>`),
+				// "de": fmt.Sprintf("Frage %v: <br>", ctrPages.Increment()),  // Frage 8
 			}
 			gr.Desc = trl.S{
 				"de": fmt.Sprintf(`
@@ -862,7 +844,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.ColSpanControl = 1
 				// inp.Validator = "inRange20"
 				inp.Label = trl.S{
-					"de": fmt.Sprintf(`Frage 9:<br>`),
+					"de": fmt.Sprintf("Frage %v: <br>", ctrPages.Increment()), // Frage 9
 				}
 				inp.Desc = trl.S{
 					"de": fmt.Sprintf(`
@@ -896,7 +878,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.ColSpanControl = 1
 				// inp.Validator = "inRange20"
 				inp.Label = trl.S{
-					"de": fmt.Sprintf(`Frage 10:<br>`),
+					"de": fmt.Sprintf("Frage %v: <br>", ctrPages.Increment()), // Frage 10
 				}
 				inp.Desc = trl.S{
 					"de": fmt.Sprintf(`
@@ -943,7 +925,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			gr.OddRowsColoring = false
 			gr.BottomVSpacers = 1
 			gr.Label = trl.S{
-				"de": fmt.Sprintf(`Frage 11: <br>`),
+				"de": fmt.Sprintf("Frage %v: <br>", ctrPages.Increment()), // Frage 11
 			}
 			gr.Desc = trl.S{
 				"de": fmt.Sprintf(`
@@ -974,7 +956,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.ColSpanControl = 1
 				// inp.Validator = "inRange100"
 				inp.Label = trl.S{
-					"de": fmt.Sprintf(`Frage 12: <br>`),
+					"de": fmt.Sprintf("Frage %v: <br>", ctrPages.Increment()), // Frage 12
 				}
 				inp.Desc = trl.S{
 					"de": `Was schätzen Sie, welcher Anteil der Bürger*innen Ihres Bundeslandes ist „sehr“ oder „eher“ für 
@@ -1018,14 +1000,26 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			gr.OddRowsColoring = false
 			gr.BottomVSpacers = 1
 			gr.Label = trl.S{
-				"de": fmt.Sprintf(`Frage 13: <br>`),
+				"de": fmt.Sprintf("Frage %v: <br>", ctrPages.Increment()), // Frage 13
 			}
+
+			/*
+				{
+					// Dynamic header for following headless radio matrix
+					gr := p.AddGroup()
+					gr.BottomVSpacers = 0
+					inp := gr.AddInput()
+					inp.Type = "dynamic"
+					inp.DynamicFunc = "HasEuroQuestion"
+				}
+			*/
 
 			// besseren/schlechteren
 			aob, err := q.Survey.Param("aboveOrBelowMedian")
 			if err != nil {
 				return &q, err
 			}
+
 			treatment := fmt.Sprintf(`In einer aktuellen Bildungsstudie sind die Mathematikleistungen der Schüler*innen Ihres Bundeslandes 
 			in der %v Hälfte aller Bundesländer. <br>`, aob)
 
@@ -1074,7 +1068,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			gr.OddRowsColoring = false
 			gr.BottomVSpacers = 1
 			gr.Label = trl.S{
-				"de": fmt.Sprintf(`Frage 14: <br>`),
+				"de": fmt.Sprintf("Frage %v: <br>", ctrPages.Increment()), // Frage 14
 			}
 			gr.Desc = trl.S{
 				"de": fmt.Sprintf(`

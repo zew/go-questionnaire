@@ -1,12 +1,14 @@
 package generators
 
 import (
+	"bytes"
 	myfmt "fmt"
 	"io/ioutil"
-	"log"
 	"net/http"
+	"net/url"
 	"path"
 	"path/filepath"
+	"strings"
 	"time"
 
 	"github.com/monoculum/formam"
@@ -19,6 +21,7 @@ import (
 	"github.com/zew/go-questionnaire/generators/mul"
 	"github.com/zew/go-questionnaire/generators/peu2018"
 	"github.com/zew/go-questionnaire/qst"
+	"github.com/zew/go-questionnaire/tpl"
 	"github.com/zew/util"
 )
 
@@ -48,25 +51,27 @@ func get() []string {
 	return ret
 }
 
-// SurveyGenerate generates a questionnaire for a bespoke survey
-func SurveyGenerate(w http.ResponseWriter, r *http.Request) {
+type frmT struct {
+	Type     string       `json:"type"`
+	Year     int          `json:"year"`
+	Month    int          `json:"month"`
+	Deadline string       `json:"deadline"`
+	Params   []qst.ParamT `json:"params"`
+	Submit   string       `json:"submit"`
+}
+
+// GenerateQuestionnaireTemplates generates a questionnaire for a bespoke survey
+func GenerateQuestionnaireTemplates(w http.ResponseWriter, r *http.Request) {
 
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
 
 	s := qst.NewSurvey("fmt") // type is modified later
 	errStr := ""
 	if r.Method == "POST" {
-		frm := struct {
-			Type     string       `json:"type"`
-			Year     int          `json:"year"`
-			Month    int          `json:"month"`
-			Deadline string       `json:"deadline"`
-			Params   []qst.ParamT `json:"params"`
-			Submit   string       `json:"submit"`
-		}{}
+		// myfmt.Fprint(w, "is POST<br>\n")
+		frm := frmT{}
 		dec := formam.NewDecoder(&formam.DecoderOptions{TagName: "json"})
 		err := dec.Decode(r.Form, &frm)
-
 		if err != nil {
 			errStr += myfmt.Sprint(err.Error() + "<br>\n")
 		}
@@ -89,8 +94,10 @@ func SurveyGenerate(w http.ResponseWriter, r *http.Request) {
 		// myfmt.Fprint(w, "<pre>"+util.IndentedDump(s)+"</pre><br>\n")
 
 	}
+
 	html := s.HTMLForm(get(), errStr)
 	myfmt.Fprintf(w, html)
+	myfmt.Fprintf(w, "<br>")
 	//
 	for key, fnc := range Get() {
 
@@ -120,18 +127,110 @@ func SurveyGenerate(w http.ResponseWriter, r *http.Request) {
 		// create empty main_desktop_[surveytype].css"
 		// create empty main_mobile_[surveytype].css"
 		// if it does not yet exist
-		fcCreate := func(desktopOrMobile string) {
+		fcCreate := func(desktopOrMobile string) (bool, error) {
 			pth := filepath.Join(".", "templates", desktopOrMobile+q.Survey.Type+".css")
 			if ok, _ := util.FileExists(pth); !ok {
 				err := ioutil.WriteFile(pth, []byte{}, 0755)
 				if err != nil {
-					log.Fatalf("Could not create %v: %v", pth, err)
+					return false, myfmt.Errorf("Could not create %v: %v", pth, err)
 				}
-				log.Printf("done creating file %v", pth)
+				myfmt.Fprintf(w, "done creating template %v", pth)
+				return true, nil
+			}
+			return false, nil
+		}
+
+		for _, bt := range []string{"main_desktop_", "main_mobile_"} {
+			ok, err := fcCreate(bt)
+			if err != nil {
+				myfmt.Fprintf(w, "Could not generated template %v for %v<br>\n", bt, err)
+				continue
+			}
+			if ok {
+				tpl.ParseH(w, r)
 			}
 		}
-		fcCreate("main_desktop_")
-		fcCreate("main_mobile_")
+
+	}
+}
+
+// GenerateLandtagsVariations creates 16 questionnaire templates
+func GenerateLandtagsVariations(w http.ResponseWriter, r *http.Request) {
+
+	w.Header().Set("Content-Type", "text/html; charset=utf-8")
+
+	key := "lt2020"
+
+	for i := 0; i < 32; i++ {
+
+		form := url.Values{}
+		form.Add("type", key)
+		form.Add("year", "2020")
+		form.Add("month", "5")
+		form.Add("deadline", "01.01.2030 00:00")
+		form.Add("params[0].name", "varianten")
+		form.Add("params[0].val", myfmt.Sprintf("%04b", i%16))
+		form.Add("params[1].name", "aboveOrBelowMedian")
+		if i < 16 {
+			form.Add("params[1].val", "besseren")
+		} else {
+			form.Add("params[1].val", "schlechteren")
+		}
+		form.Add("Submit", "any")
+		// myfmt.Fprint(w, "<pre>"+util.IndentedDump(form)+"</pre><br>\n")
+
+		var resp *http.Response
+		var err error
+
+		if true {
+			req, err := http.NewRequest(
+				"POST",
+				"https://localhost:8083"+cfg.PrefTS("generate-questionnaire-templates"),
+				bytes.NewBufferString(form.Encode()),
+			)
+			if err != nil {
+				myfmt.Fprintf(w, "Request creation error %v", err)
+				return
+			}
+			req.Header.Set("Content-Type", "application/x-www-form-urlencoded; param=value")
+			client := http.DefaultClient
+			resp, err = client.Do(req)
+			if err != nil {
+				myfmt.Fprintf(w, "Request execution error %v", err)
+				return
+			}
+		} else {
+			resp, err = http.PostForm(
+				"https://localhost:8083"+cfg.PrefTS("generate-questionnaire-templates"),
+				form,
+			)
+			if err != nil {
+				myfmt.Fprintf(w, "Request execution error %v", err)
+				return
+			}
+		}
+
+		defer resp.Body.Close()
+		respBts, err := ioutil.ReadAll(resp.Body)
+		if err != nil {
+			myfmt.Fprintf(w, "Error reading response body %v", err)
+			return
+		}
+
+		myfmt.Fprintf(w, "%s\n", respBts)
+
+		fn := path.Join(qst.BasePath(), key+".json")
+		qst, err := qst.Load1(fn)
+		if err != nil {
+			myfmt.Fprintf(w, "Error re-loading qst for %v: %v", fn, err)
+			return
+		}
+
+		fnNew := strings.ReplaceAll(fn, ".json", myfmt.Sprintf("%02v.json", i))
+		qst.Save1(fnNew)
+
+		myfmt.Fprintf(w, "Iter %v - stop; resp status %v<br><br>\n", i, resp.Status)
+		myfmt.Fprintf(w, "<hr>\n")
 
 	}
 

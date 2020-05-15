@@ -71,6 +71,7 @@ But keep an eye on the application log.
 
 
 </pre>	
+<span style='font-family: monospace;' >
 `
 	fmt.Fprint(w, msg)
 
@@ -110,7 +111,8 @@ But keep an eye on the application log.
 			fmt.Fprintf(w, "%v - %v\n", i, encodedLong)
 		}
 
-		fmt.Fprintf(w, "%v\t%v\t<a href='%v' target=_blank>%v</a>   <br>\n", i, HashIDDecodeFirst(encoded), cfg.Pref("d/"+encoded), encoded)
+		fmt.Fprintf(w, "survey2.zew.de/d/%v  &nbsp;  &nbsp; %v\t%v\t<a href='%v' target=_blank>%v</a>   <br>\n", encoded, i, HashIDDecodeFirst(encoded), cfg.Pref("d/"+encoded), encoded)
 	}
 
+	fmt.Fprint(w, "</span>")
 }

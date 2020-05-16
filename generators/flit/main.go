@@ -635,7 +635,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		}
 
 		{
-			gr := p.AddRadioGroupVertical("stock_market_function", stockMarketFuncs6())
+			gr := p.AddRadioGroupVertical("stock_market_function", stockMarketFuncs6(), 2)
 			gr.BottomVSpacers = 2
 		}
 
@@ -654,7 +654,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		}
 
 		{
-			gr := p.AddRadioGroupVertical("mutual_fund_withdrawal", mutualFunds6())
+			gr := p.AddRadioGroupVertical("mutual_fund_withdrawal", mutualFunds6(), 2)
 			gr.BottomVSpacers = 2
 		}
 

@@ -433,7 +433,8 @@ but adapt generators.SurveyGenerate()
 
 * Document the label / checkbox vertical case
 
-* Why is page width 70% not always rendered?
+* Why is page width 70% not rendered  
+after switch between mobile=1 and back to mobile=2 ?
 
 ## Possible enhancements
 

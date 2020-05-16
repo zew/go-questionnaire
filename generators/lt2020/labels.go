@@ -82,7 +82,7 @@ func labelsFiverWichtig() []trl.S {
 			"de": "sehr unwichtig",
 		},
 		{
-			"de": "weder wichtig noch unwichtig",
+			"de": "weder wichtig<br>noch unwichtig",
 		},
 	}
 

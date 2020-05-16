@@ -17,19 +17,19 @@
  			},
  			{
  				"name": "varianten",
- 				"val": "1011"
+ 				"val": "0011"
  			}
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "46a11f9c8b7aa82b6e2ed57b5ca1f41d",
+ 	"md_5": "bf783347b27585bc3fe068de250f3e82",
  	"lang_codes": {
  		"de": "Deutsch"
  	},
  	"lang_codes_order": [
  		"de"
  	],
- 	"max_groups": 4,
+ 	"max_groups": 3,
  	"pages": [
  		{
  			"section": {
@@ -42,12 +42,23 @@
  				"de": ""
  			},
  			"short": {
- 				"de": "Schuldenbremse 1"
+ 				"de": "Schulden-\u003cbr\u003ebremse 1"
  			},
  			"navi_num": 1,
  			"width": 70,
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
+ 				{
+ 					"label": {
+ 						"de": ""
+ 					},
+ 					"description": {
+ 						"de": "\n\t\t\t\tSehr geehrte Frau Landtagsabgeordnete, \u003cbr\u003e\n\t\t\t\tSehr geehrter Herr Landtagsabgeordneter,\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\tgemeinsam mit der Universität Mannheim untersucht das ZEW – Leibniz-Zentrum für Europäische Wirtschaftsforschung im Rahmen einer Umfrage, wie Landtagsabgeordnete über die im Grundgesetz verankerte „Schuldenbremse“ und den Bildungsföderalismus in Deutschland denken. Dabei ist uns auch an Ihrer Einschätzung sehr gelegen.\n\t\t\t\tDurch Ihre Beteiligung unterstützen Sie ein wichtiges wissenschaftliches Forschungsprojekt zur deutschen Finanzpolitik, das von der Deutschen Forschungsgemeinschaft (DFG) gefördert wird. Wir sind Ihnen dafür sehr dankbar.\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\tMit freundlichen Grüßen\u003cbr\u003e\n\t\t\t\tProf. Dr. Friedrich Heinemann\u003cbr\u003e\n\t\t\t\t\n\t\t\t\t"
+ 					},
+ 					"bottom_vspacers": 3,
+ 					"width": 100,
+ 					"columns": 2
+ 				},
  				{
  					"label": {
  						"de": "Frage 1: \u003cbr\u003e"
@@ -62,7 +73,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "aus\u0026shy;ge\u0026shy;schlos\u0026shy;sen\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e"
+ 								"de": "ausge\u0026shy;schlossen\u003cspan class='ordinals'\u003e\u003cbr\u003e-4\u003c/span\u003e"
  							},
  							"horizontal_align_label": 1,
  							"css_label": "go-quest-opt-label"
@@ -175,13 +186,32 @@
  							]
  						}
  					]
- 				},
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"section": {
+ 				"de": "Fragen zur grundgesetzlichen Schuldenbremse"
+ 			},
+ 			"label": {
+ 				"de": "Teil 2"
+ 			},
+ 			"description": {
+ 				"de": ""
+ 			},
+ 			"short": {
+ 				"de": "Schulden-\u003cbr\u003ebremse 2"
+ 			},
+ 			"navi_num": 2,
+ 			"width": 70,
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
  				{
  					"label": {
  						"de": "Frage 2: \u003cbr\u003e"
  					},
  					"description": {
- 						"de": "Die Corona-Krise führt voraussichtlich zu einem starken Rückgang der wirtschaftlichen Aktivität \n\t\t\t\tin diesem Jahr und damit verbunden zu einer Verschlechterung der öffentlichen Haushaltslage."
+ 						"de": "Die Corona-Krise führt voraussichtlich zu einem starken Rückgang der wirtschaftlichen Aktivität \n\t\t\t\tin diesem Jahr und damit verbunden zu einer Verschlechterung der öffentlichen Haushaltslage.\u003cbr\u003e\n\t\t\t\t\n\t\t\t\t\u003cb\u003ea)\u003c/b\u003e Welches Haushaltsdefizit erwarten Sie für Ihr Bundesland in 2020?\n\t\t\t\t"
  					},
  					"bottom_vspacers": 3,
  					"width": 100,
@@ -193,7 +223,7 @@
  							"max_chars": 6,
  							"step": 0.1,
  							"description": {
- 								"de": "\u003cb\u003ea)\u003c/b\u003e Welches Haushaltsdefizit erwarten Sie für Ihr Bundesland in 2020?"
+ 								"de": ""
  							},
  							"suffix": {
  								"de": "Mrd. Euro"
@@ -203,7 +233,7 @@
  				},
  				{
  					"description": {
- 						"de": "\u003cb\u003eb)\u003c/b\u003e Welches wirtschaftliche Wachstum (Bruttoinlandsprodukt / BIP) \n\t\t\t\t\terwarten Sie für Ihr Bundesland in 2020?"
+ 						"de": "\u003cb\u003eb)\u003c/b\u003e Welches wirtschaftliche Wachstum (BIP) \n\t\t\t\t\terwarten Sie für Ihr Bundesland in 2020?"
  					},
  					"bottom_vspacers": 3,
  					"width": 100,
@@ -413,15 +443,15 @@
  				"de": "Fragen zur grundgesetzlichen Schuldenbremse"
  			},
  			"label": {
- 				"de": "Teil 2"
+ 				"de": "Teil 3"
  			},
  			"description": {
  				"de": ""
  			},
  			"short": {
- 				"de": "Schuldenbremse 2"
+ 				"de": "Schulden-\u003cbr\u003ebremse 3"
  			},
- 			"navi_num": 2,
+ 			"navi_num": 3,
  			"width": 70,
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
@@ -488,11 +518,12 @@
  						},
  						{
  							"name": "sb_sonstiges_1",
- 							"type": "text",
- 							"max_chars": 22,
+ 							"type": "textarea",
+ 							"max_chars": 155,
  							"description": {
  								"de": "Sonstiges"
  							},
+ 							"css_label": "vertical-align-top-two-rows",
  							"col_span_label": 1,
  							"col_span_control": 4
  						}
@@ -561,11 +592,12 @@
  						},
  						{
  							"name": "sb_sonstiges_2",
- 							"type": "text",
- 							"max_chars": 22,
+ 							"type": "textarea",
+ 							"max_chars": 155,
  							"description": {
  								"de": "Sonstiges"
  							},
+ 							"css_label": "vertical-align-top-two-rows",
  							"col_span_label": 1,
  							"col_span_control": 4
  						}
@@ -586,7 +618,7 @@
  			"short": {
  				"de": "Bildung 1"
  			},
- 			"navi_num": 3,
+ 			"navi_num": 4,
  			"width": 70,
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
@@ -636,7 +668,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "weder wich\u0026shy;tig noch un\u0026shy;wich\u0026shy;tig"
+ 								"de": "weder wich\u0026shy;tig\u003cbr\u003enoch un\u0026shy;wich\u0026shy;tig"
  							},
  							"horizontal_align_label": 1,
  							"css_label": "go-quest-opt-label"
@@ -669,6 +701,29 @@
  							]
  						}
  					]
+ 				},
+ 				{
+ 					"label": {
+ 						"de": "Frage 7: \u003cbr\u003e"
+ 					},
+ 					"description": {
+ 						"de": "Was schätzen Sie, welcher Anteil der Bürger*innen Ihres Bundeslandes hält es für „sehr“ oder „eher“ wichtig, \n\t\t\t\t\tdass Schülerleistungen zwischen den Bundesländern vergleichbar sind?"
+ 					},
+ 					"bottom_vspacers": 3,
+ 					"width": 100,
+ 					"columns": 2,
+ 					"inputs": [
+ 						{
+ 							"name": "leistung_vergleichbarkeit_buerger",
+ 							"type": "number",
+ 							"max_chars": 4,
+ 							"step": 1,
+ 							"suffix": {
+ 								"de": "Prozent"
+ 							},
+ 							"col_span_control": 2
+ 						}
+ 					]
  				}
  			]
  		},
@@ -685,16 +740,16 @@
  			"short": {
  				"de": "Bildung 2"
  			},
- 			"navi_num": 4,
+ 			"navi_num": 5,
  			"width": 70,
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
  				{
  					"label": {
- 						"de": "Frage 7: \u003cbr\u003e\u003cbr\u003e"
+ 						"de": "Frage 8a: \u003cbr\u003e"
  					},
  					"description": {
- 						"de": "\n\t\t\t\t\u003cb\u003ea)\u003c/b\u003e \u003cbr\u003e\n\t\t\t\tWas \u003cb\u003eschätzen\u003c/b\u003e Sie, welcher Anteil der öffentlichen Finanzierung von Schulen \n\t\t\t\t(allgemeinbildend und beruflich) kommt derzeit von den verschiedenen staatlichen Ebenen in Deutschland?\n\t\t\t\t"
+ 						"de": "\n\t\t\t\tWas \u003cb\u003eschätzen\u003c/b\u003e Sie, welcher Anteil der öffentlichen Finanzierung von Schulen \n\t\t\t\t(allgemeinbildend und beruflich) kommt derzeit von den verschiedenen staatlichen Ebenen in Deutschland?\n\t\t\t\t"
  					},
  					"bottom_vspacers": 1,
  					"width": 100,
@@ -790,13 +845,16 @@
  			"short": {
  				"de": "Bildung 3"
  			},
- 			"navi_num": 5,
+ 			"navi_num": 6,
  			"width": 70,
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
  				{
+ 					"label": {
+ 						"de": "Frage 8b: \u003cbr\u003e"
+ 					},
  					"description": {
- 						"de": "\n\t\t\t\t\u003cb\u003eb)\u003c/b\u003e \u003cbr\u003e\n\t\t\t\tUnd welcher Anteil der öffentlichen Finanzierung für Schulen (allgemeinbildend und beruflich) \n\t\t\t\t\u003cb\u003esollte\u003c/b\u003e Ihrer Meinung nach von den verschiedenen staatlichen Ebenen kommen?\n\t\t\t\t\n\t\t\t\t"
+ 						"de": "\n\t\t\t\tUnd welcher Anteil der öffentlichen Finanzierung für Schulen (allgemeinbildend und beruflich) \n\t\t\t\t\u003cb\u003esollte\u003c/b\u003e Ihrer Meinung nach von den verschiedenen staatlichen Ebenen kommen?\n\t\t\t\t\n\t\t\t\t"
  					},
  					"bottom_vspacers": 1,
  					"width": 100,
@@ -884,7 +942,7 @@
  			"short": {
  				"de": "Bildung 4"
  			},
- 			"navi_num": 6,
+ 			"navi_num": 7,
  			"width": 70,
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
@@ -899,10 +957,10 @@
  							"max_chars": 2,
  							"step": 1,
  							"label": {
- 								"de": "Frage 8: \u003cbr\u003e"
+ 								"de": "Frage 9: \u003cbr\u003e"
  							},
  							"description": {
- 								"de": "\n\t\t\t\t\tEine aktuelle Bildungsstudie hat die Mathematikleistungen von Schüler*innen der 9. Jahrgangsstufe \u003cbr\u003e\n\t\t\t\t\tin den 16 deutschen Bundesländern verglichen. \u003cbr\u003e \n\t\t\t\t\tWas schätzen Sie, welchen Platz haben die Schüler*innen Ihres Bundeslandes belegt? \u003cbr\u003e\n\t\t\t\t\t(1 ist der beste Platz, 16 der schlechteste Platz.)\t\t\t\t\n\t\t\t\t\n\t\t\t\t\t"
+ 								"de": "\n\t\t\t\t\tEine aktuelle Bildungsstudie hat die Mathematikleistungen von Schüler*innen der 9. Jahrgangsstufe\n\t\t\t\t\tin den 16 deutschen Bundesländern verglichen. \u003cbr\u003e \n\t\t\t\t\tWas schätzen Sie, welchen Platz haben die Schüler*innen Ihres Bundeslandes belegt? \u003cbr\u003e\n\t\t\t\t\t(1 ist der beste Platz, 16 der schlechteste Platz.)\t\t\t\t\n\t\t\t\t\n\t\t\t\t\t"
  							},
  							"suffix": {
  								"de": "-ter Platz"
@@ -923,10 +981,10 @@
  							"max_chars": 2,
  							"step": 1,
  							"label": {
- 								"de": "Frage 9: \u003cbr\u003e"
+ 								"de": "Frage 10: \u003cbr\u003e"
  							},
  							"description": {
- 								"de": "\n\t\t\t\t\t\tWas schätzen Sie, was denken die Bürger*innen Ihres Bundeslandes, welchen Platz die Schüler*innen \u003cbr\u003e\n\t\t\t\t\t\tihres Bundeslandes bei der Bildungsstudie belegt haben? \u003cbr\u003e\n\t\t\t\t\t\t(1 ist der beste Platz, 16 der schlechteste Platz.)\t\t\t\t\n\t\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\tWas schätzen Sie, was denken die Bürger*innen Ihres Bundeslandes, welchen Platz die Schüler*innen\n\t\t\t\t\t\tihres Bundeslandes bei der Bildungsstudie belegt haben? \u003cbr\u003e\n\t\t\t\t\t\t(1 ist der beste Platz, 16 der schlechteste Platz.)\t\t\t\t\n\t\t\t\t\t"
  							},
  							"suffix": {
  								"de": "-ter Platz"
@@ -951,18 +1009,18 @@
  			"short": {
  				"de": "Bildung 5"
  			},
- 			"navi_num": 7,
+ 			"navi_num": 8,
  			"width": 70,
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
  				{
  					"label": {
- 						"de": "Frage 10: \u003cbr\u003e"
+ 						"de": "Frage 11: \u003cbr\u003e"
  					},
  					"description": {
  						"de": "\n\t\t\t\tSind Sie für oder gegen folgenden Reformvorschlag: \u003cbr\u003e\n\t\t\t\tEs werden deutschlandweit einheitliche Schülervergleichstests in Mathematik und Deutsch in allen Schulformen eingeführt, \n\t\t\t\tdie ab der 5. Klasse alle zwei Jahre regelmäßig stattfinden. \n\t\t\t\tDie Durchschnittsergebnisse pro Bundesland werden veröffentlicht, um die Schülerleistungen der Bundesländer miteinander zu vergleichen.\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\tIch bin… \n\t\t\t\t\n\t\t\t\t"
  					},
- 					"bottom_vspacers": 1,
+ 					"bottom_vspacers": 3,
  					"width": 100,
  					"columns": 5,
  					"inputs": [
@@ -1036,26 +1094,25 @@
  					]
  				},
  				{
+ 					"label": {
+ 						"de": "Frage 12: \u003cbr\u003e"
+ 					},
+ 					"description": {
+ 						"de": "Was schätzen Sie, welcher Anteil der Bürger*innen Ihres Bundeslandes ist „sehr“ oder „eher“ für \n\t\t\t\t\tden vorher genannten Reformvorschlag, deutschlandweit einheitliche Schülervergleichstests einzuführen?"
+ 					},
  					"bottom_vspacers": 3,
  					"width": 100,
- 					"columns": 5,
+ 					"columns": 2,
  					"inputs": [
  						{
  							"name": "schuelervergleichstest_buerger",
  							"type": "number",
  							"max_chars": 4,
  							"step": 1,
- 							"label": {
- 								"de": "Frage 11: \u003cbr\u003e"
- 							},
- 							"description": {
- 								"de": "Was schätzen Sie, welcher Anteil der Bürger*innen Ihres Bundeslandes ist „sehr“ oder „eher“ für \n\t\t\t\t\tden vorher genannten Reformvorschlag, deutsch\u0026shy;landweit einheitliche Schülervergleichstests einzuführen?"
- 							},
  							"suffix": {
  								"de": "Prozent"
  							},
- 							"col_span_label": 4,
- 							"col_span_control": 1
+ 							"col_span_control": 2
  						}
  					]
  				}
@@ -1074,16 +1131,16 @@
  			"short": {
  				"de": "Bildung 6"
  			},
- 			"navi_num": 8,
+ 			"navi_num": 9,
  			"width": 70,
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
  				{
  					"label": {
- 						"de": "Frage 12: \u003cbr\u003e"
+ 						"de": "Frage 13: \u003cbr\u003e"
  					},
  					"description": {
- 						"de": "\n\t\t\t\t\tJetzt würden wir gerne noch einmal Ihre Meinung zu regelmäßigen Vergleichstests erfahren.\u003cbr\u003e\n\n\t\t\t\t\tIn einer aktuellen Bildungsstudie sind die Mathematikleistungen der Schüler*innen Ihres Bundeslandes \n\t\t\tin der besseren Hälfte aller Bundesländer. \u003cbr\u003e\n\n\t\t\t\t\tSind Sie für oder gegen vorher genannten Reformvorschlag, \n\t\t\t\t\tdeutschlandweit einheitliche Schülervergleichstests einzuführen?\u003cbr\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t Ich bin… \n\t\t\t\t\n\t\t\t\t"
+ 						"de": "\n\t\t\t\t\tJetzt würden wir gerne noch einmal Ihre Meinung zu regelmäßigen Vergleichstests erfahren.\u003cbr\u003e\n\n\t\t\t\t\t\u003cbr\u003eIn einer aktuellen Bildungsstudie sind die Mathematikleistungen der Schüler*innen Ihres Bundeslandes \n\t\t\tin der besseren Hälfte aller Bundesländer. \u003cbr\u003e\n\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\tSind Sie für oder gegen vorher genannten Reformvorschlag, \n\t\t\t\t\tdeutschlandweit einheitliche Schülervergleichstests einzuführen?\u003cbr\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t Ich bin… \n\t\t\t\t\n\t\t\t\t"
  					},
  					"bottom_vspacers": 1,
  					"width": 100,
@@ -1160,14 +1217,14 @@
  				},
  				{
  					"label": {
- 						"de": "Frage 13: \u003cbr\u003e"
+ 						"de": "Frage 14: \u003cbr\u003e"
  					},
  					"description": {
- 						"de": "\n\t\t\t\t\tParallel zu unserer Landtagsumfrage befragen wir aktuell auch die deutsche Bevölkerung zu den gleichen Themen.\u003cbr\u003e\n\t\t\t\t\tIm Folgenden bieten wir Ihnen an, dass Sie nach Abschluss der Umfragen erfahren, \n\t\t\t\t\t wie andere Befragte zum Reformvorschlag, deutschlandweit einheitliche Schülervergleichstests einzuführen, stehen.\n\t\t\t\t\tWir senden Ihnen die gewählten Informationen per E-Mail zu. \u003cbr\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\tWelche der folgenden Informationen möchten Sie erhalten?\u003cbr\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\tDie durchschnittliche Zustimmung…\n\t\t\t\t\n\t\t\t\t"
+ 						"de": "\n\t\t\t\t\tParallel zu unserer Landtagsumfrage befragen wir aktuell auch die deutsche Bevölkerung zu den gleichen Themen.\u003cbr\u003e\n\t\t\t\t\tIm Folgenden bieten wir Ihnen an, dass Sie nach Abschluss der Umfragen erfahren, \n\t\t\t\t\t wie andere Befragte zum Reformvorschlag, deutschlandweit einheitliche Schülervergleichstests einzuführen, stehen.\n\t\t\t\t\tWir senden Ihnen die gewählten Informationen per E-Mail zu. \u003cbr\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\tWelche der folgenden Informationen möchten Sie erhalten?\u003cbr\u003e\n\t\t\t\t\t(Bitte wählen Sie \u003cb\u003eeine\u003c/b\u003e der folgenden Optionen)\u003cbr\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\tDie durchschnittliche Zustimmung…\n\t\t\t\t\n\t\t\t\t"
  					},
  					"bottom_vspacers": 1,
  					"width": 100,
- 					"columns": 5,
+ 					"columns": 1,
  					"inputs": [
  						{
  							"name": "info_ueber_andere",
@@ -1187,7 +1244,6 @@
  										"de": "… aller befragter Wähler*innen Ihrer Partei in Deutschland."
  									},
  									"val": "2",
- 									"column": 1,
  									"columns": 2
  								},
  								{
@@ -1204,7 +1260,6 @@
  										"de": "… aller befragter Bürger*innen in Deutschland."
  									},
  									"val": "4",
- 									"column": 1,
  									"columns": 2
  								},
  								{
@@ -1233,7 +1288,7 @@
  							"accesskey": "n",
  							"horizontal_align_control": 2,
  							"col_span_control": 1,
- 							"response": "8"
+ 							"response": "9"
  						}
  					]
  				}

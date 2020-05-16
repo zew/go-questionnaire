@@ -18,7 +18,7 @@ var CSSLabelRow = ""
    Black   x
 
 */
-func (p *pageT) AddRadioGroupVertical(name string, rowLabels []trl.S) *groupT {
+func (p *pageT) AddRadioGroupVertical(name string, rowLabels []trl.S, cols int) *groupT {
 
 	//
 	var gr *groupT
@@ -35,8 +35,17 @@ func (p *pageT) AddRadioGroupVertical(name string, rowLabels []trl.S) *groupT {
 		rad := radGroup.AddRadio()
 		rad.HAlign = HRight
 		rad.Label = lbl
-		rad.Col = idx % 2 // 0 1 --  0 1
-		rad.Cols = 2
+
+		if cols == 2 {
+			rad.Col = idx % 2 // 0 1 --  0 1
+			rad.Cols = 2
+		}
+
+		// does not work yet
+		if cols == 1 {
+			rad.Col = 0
+			rad.Cols = 2
+		}
 
 	}
 

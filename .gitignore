@@ -23,7 +23,7 @@ setenv*.bat
 app-bucket/responses/**
 app-bucket/transferrer/**
 app-bucket/dl/**
-app-bucket/*.attrs
+app-bucket/**.attrs
 !app-bucket/responses/*.json
 coverage.html
 tmp/*

@@ -226,7 +226,7 @@ func GenerateLandtagsVariations(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 
-		fnNew := strings.ReplaceAll(fn, ".json", myfmt.Sprintf("%02v.json", i))
+		fnNew := strings.ReplaceAll(fn, ".json", myfmt.Sprintf("-%02v.json", i))
 		qst.Save1(fnNew)
 
 		myfmt.Fprintf(w, "Iter %v - stop; resp status %v<br><br>\n", i, resp.Status)

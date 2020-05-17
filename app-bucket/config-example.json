@@ -24,7 +24,7 @@
  	"location": "Europe/Berlin",
  	"session_timeout": 2,
  	"form_timeout": 2,
- 	"app_instance_id": 1589643112,
+ 	"app_instance_id": 1590006391,
  	"css": {
  		"body_background_color": "#e2e2e2"
  	},
@@ -220,8 +220,8 @@
  	},
  	"direct_login_ranges": [
  		{
- 			"start": "PEU--1000",
- 			"stop": "PEU--1029",
+ 			"start": 1000,
+ 			"stop": 1029,
  			"survey_id": "flit",
  			"wave_id": "2019-09",
  			"profile": {
@@ -230,18 +230,8 @@
  			}
  		},
  		{
- 			"start": "PEU--1050",
- 			"stop": "PEU--1059",
- 			"survey_id": "flit",
- 			"wave_id": "2019-09",
- 			"profile": {
- 				"lang_code": "en",
- 				"main_refinance_rate_ecb": "3.5"
- 			}
- 		},
- 		{
- 			"start": "FLIT--0",
- 			"stop": "FLIT--zzzzzzzzzzzzz",
+ 			"start": 1050,
+ 			"stop": 1059,
  			"survey_id": "flit",
  			"wave_id": "2019-09",
  			"profile": {

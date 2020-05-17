@@ -5,6 +5,7 @@ import (
 )
 
 var implementedTypes = map[string]interface{}{
+	"hidden":   nil,
 	"text":     nil,
 	"number":   nil,
 	"textarea": nil,

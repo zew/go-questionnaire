@@ -7,13 +7,17 @@ import (
 	"net/http"
 	"path"
 	"sort"
+	"strconv"
 	"strings"
 
 	"github.com/zew/go-questionnaire/cfg"
 	"github.com/zew/go-questionnaire/cloudio"
+	"github.com/zew/go-questionnaire/ctr"
 	"github.com/zew/go-questionnaire/qst"
 	"github.com/zew/go-questionnaire/sessx"
 )
+
+var ltCounter = ctr.New()
 
 // LoginByHash first checks for direct login;
 // extra short and preconfigured in config.json;
@@ -65,22 +69,46 @@ func LoginByHash(w http.ResponseWriter, r *http.Request) (bool, error) {
 				h = parts[1]
 			}
 
-			userID := fmt.Sprint(HashIDDecodeFirst(h))
+			strUserID := fmt.Sprint(HashIDDecodeFirst(h))
+			userID, err := strconv.Atoi(strUserID)
+			if err != nil {
+				// "This can merely indicate, that the hash was not intended encoding a userID
+				log.Printf("Hash yielded userID - no hash ID could be extracted: %v from %v", err, h)
+			}
 
-			if userID > "0" {
+			if userID > 0 {
 				log.Printf("Trying anonymous login - surveyID | hashID | userID - %v | %v | %v", surveyID, h, userID)
+
 				for _, dlr := range cfg.Get().DirectLoginRanges {
-					cmp := userID
-					if (surveyID != "" && surveyID == dlr.SurveyID) ||
-						cmp >= dlr.Start && cmp <= dlr.Stop {
+					if (surveyID != "" && surveyID == dlr.SurveyID) || // either non-empty matching survey ID
+						userID >= dlr.Start && userID <= dlr.Stop { // or emtpy survey - but userID in range
 						log.Printf("Matching survey %v - or direct login range %v <=  %v <=  %v",
-							dlr.SurveyID, dlr.Start, cmp, dlr.Stop)
+							dlr.SurveyID, dlr.Start, userID, dlr.Stop)
 						l := LoginT{}
-						l.User = userID
+						l.User = strUserID
 						l.IsInitPassword = false // roles become effective only for non init passwords
 						l.Roles = map[string]string{}
 						l.Attrs = map[string]string{}
 						l.Attrs["survey_id"] = dlr.SurveyID
+
+						if dlr.SurveyID == "lt2020" {
+
+							userID2, _ := strconv.Atoi(l.User)
+							userID2Version := userID2 % 4
+							log.Printf("lt2020 userID  %7v => version %2v  (%v)", userID2, userID2Version, userID2Version+1)
+
+							roundRobin := int(ltCounter.Increment() % 4)
+							log.Printf("  round robin %7v =>         %2v", ltCounter.GetLast(), roundRobin)
+
+							variant := userID2Version*4 + roundRobin
+							if userID2 >= 20*1000 {
+								variant += 16
+							}
+
+							l.Attrs["survey_variant"] = fmt.Sprintf("%02v", variant)
+							log.Printf("logged in for  %-7v - variant %2v   (4*%v + %v)", l.Attrs["survey_id"], variant, userID2Version, roundRobin)
+						}
+
 						l.Attrs["wave_id"] = dlr.WaveID
 						for pk, pv := range dlr.Profile {
 							l.Attrs[pk] = pv
@@ -254,6 +282,7 @@ func ReloadH(w http.ResponseWriter, r *http.Request) {
 		msg,
 		l.User,
 		l.Attrs["survey_id"],
+		// l.Attrs["variant"], is not part of the checksum - and is derived from userID - thus no need to have the parameter
 		l.Attrs["wave_id"],
 		relForm.Get("p"),
 		relForm.Get("h"),

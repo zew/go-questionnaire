@@ -42,8 +42,11 @@ func loadQuestionnaire(w http.ResponseWriter, r *http.Request, l *lgn.LoginT) (*
 	}
 
 	// from file
-	log.Printf("Deriving from login: survey_id %v, wave_id %v, user_id %v", l.Attrs["survey_id"], l.Attrs["wave_id"], l.User)
+	log.Printf("Deriving from login: survey_id %v, wave_id %v, variant %v, user_id %v", l.Attrs["survey_id"], l.Attrs["survey_variant"], l.Attrs["wave_id"], l.User)
 	pthBase := path.Join(qst.BasePath(), l.Attrs["survey_id"]+".json")
+	if l.Attrs["survey_variant"] != "" {
+		pthBase = path.Join(qst.BasePath(), l.Attrs["survey_id"]+"-"+l.Attrs["survey_variant"]+".json")
+	}
 	qBase, err := qst.Load1(pthBase)
 	if err != nil {
 		err = errors.Wrap(err, "Loading base questionnaire from template file caused error")
@@ -77,6 +80,7 @@ func loadQuestionnaire(w http.ResponseWriter, r *http.Request, l *lgn.LoginT) (*
 		err = fmt.Errorf("Logged in for survey %v - but template is for %v", l.Attrs["survey_id"], q.Survey.Type)
 		return q, err
 	}
+
 	if q.Survey.WaveID() != l.Attrs["wave_id"] {
 		err = fmt.Errorf("Logged in for wave %v - but template is for %v", l.Attrs["wave_id"], q.Survey.WaveID())
 		return q, err

@@ -178,15 +178,15 @@ Each input has a column span and an alignment for its label and for its input-fi
 
 If you have created your survey `myquest` you need to restart the application.
 
-* Login as admin at https://dev-domain:port/survey/login-primitive
+* Login as admin at <https://dev-domain:port/survey/login-primitive>
 
 * Create a questionnaire template - as JSON file  
- https://dev-domain:port/survey/generate-questionnaire-templates
+ <https://dev-domain:port/survey/generate-questionnaire-templates>
 
 ![Plugin](./static/img/doc/questionnaire-lifecycle.jpg)
 
 * Generate login hashes for the survey id and wave id above  
-   i.e.  https://dev-domain:port/survey/generate-hashes?wave_id=2018-07&survey_id=fmt  
+   i.e.  <https://dev-domain:port/survey/generate-hashes?wave_id=2018-07&survey_id=fmt>  
   yielding
   
       /survey?u=99000&sid=fmt&wid=2018-07&h=57I7UVp6
@@ -336,19 +336,32 @@ Each group has flexible number of columns.
 The number of columns is deliberately not standardized on hundred,
 so that odd distributions are possible - i.e. seven columns.
 
-![Group width](./static/img/doc/group-columns.png)
+![Group columns](./static/img/doc/group-columns.png)
 
-The inputs are fitted in. Usually an input occupies one column 
+The inputs are fitted in. Usually an input occupies one column
 for its label and another column for its control part.
 These numbers are customizable, so that any distribution
 of labels and controls on an arbitrary grid is possible.
 
-![Group width](./static/img/doc/group-with-label-and-input.png)
+![Input width](./static/img/doc/group-with-label-and-input.png)
 
 The layout engine creates new rows, if the inputs have filled up
 the number of columns defined per group.
 
-Use textblocks with `&nbsp;` to create empty space.
+* `group.Label` and `input.Label` are always in bold font weight;
+`group.Desc` and `input.Desc` are normal weight.
+
+* Use `&nbsp;` in labels, descriptions and suffixes to fine-tune horizontal space.
+
+##### Vertical spacing
+
+* Rows of each group are vertically tight.
+
+* Start a new group, to create three lines of vertical spacing;  
+this can be adjusted using `BottomVSpacers`;  
+last group per page automatically gets only 0.5 vertical spacing.
+
+##### Other
 
 Group property `OddRowsColoring` to activate alternating background
 
@@ -365,7 +378,7 @@ We might introduce vertical alignment control in future
 
 #### Rejected solutions
 
-Inline block suffers from the disadvantage, that 
+Inline block suffers from the disadvantage, that
 the white space between inline block elements subtracts from the total width.
 The column width computation must be based on a compromise slack of i.e. 97.5 percent.
 

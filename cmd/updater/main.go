@@ -27,9 +27,8 @@ func main() {
 	fl := util.NewFlags()
 	fl.Add(
 		util.FlagT{
-			Long:  "directory",
-			Short: "dir",
-			// DefaultVal: "../app-bucket/responses/mul.json",
+			Long:       "directory",
+			Short:      "dir",
 			DefaultVal: "../app-bucket/responses/mul/2019-02/",
 			Desc:       "filename - or directory or to iterate",
 		},

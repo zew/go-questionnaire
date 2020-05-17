@@ -40,6 +40,7 @@ func nobreakGlue(el1, glue, el2 string) string {
 	}
 
 	reduction := 82 // 	el2 is overflowing :(
+	reduction = 95  // 2020-05 - relaxed
 
 	el1 = strings.TrimSpace(el1) // includes \n
 	el2 = strings.TrimSpace(el2)
@@ -227,7 +228,7 @@ func (i inputT) HTML(langCode string, numCols int) string {
 		lbl = td(i.HAlignControl, colWidth(i.ColSpanControl, numCols), lbl)
 		return lbl
 
-	case "text", "number", "textarea", "checkbox", "dropdown":
+	case "text", "number", "hidden", "textarea", "checkbox", "dropdown":
 
 		ctrl := ""
 		val := i.Response

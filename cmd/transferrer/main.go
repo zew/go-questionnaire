@@ -52,23 +52,25 @@ type RemoteConnConfigT struct {
 // Example returns a minimal configuration, to be extended or adapted
 func Example() RemoteConnConfigT {
 	r := RemoteConnConfigT{}
-	r.RemoteHost = "https://survey2.zew.de"
 	r.RemoteHost = "https://www.peu2018.eu"
 	r.RemoteHost = "https://financial-literacy-test.appspot.com"
+	r.RemoteHost = "https://survey2.zew.de"
 
 	r.BindSocket = "443"
 	r.URLPathPrefix = "survey"
+	r.URLPathPrefix = ""
 
 	r.AdminLogin = "transferrer"
-	r.Pass = "32-secret-8"
+	r.Pass = "Spark!sh32"
 
 	r.SurveyType = "fmt"
 	r.SurveyType = "flit"
+	r.SurveyType = "lt2020"
 
 	r.WaveID = qst.NewSurvey(r.SurveyType).WaveID()
-	r.WaveID = "2019-09"
+	r.WaveID = "2020-05"
 
-	r.DownloadDir = "dl"
+	r.DownloadDir = "../../app-bucket/dl"
 
 	return r
 }
@@ -93,8 +95,9 @@ func main() {
 	rand.Seed(time.Now().UTC().UnixNano())
 	log.SetFlags(log.Lshortfile | log.Ldate | log.Ltime)
 
-	// we must change to main app dir, so that referring to ./app-bucket works
-	err := os.Chdir("..")
+	// we must change to main app dir,
+	// so that referring to ./app-bucket works
+	err := os.Chdir("../..")
 	if err != nil {
 		log.Fatalf("Error - cannot 'cd' to main app dir: %v", err)
 	}

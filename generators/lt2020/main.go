@@ -49,25 +49,31 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		varianten[idx] = (v == '1')
 	}
 
+	// besseren/schlechteren
+	aob, err := q.Survey.Param("aboveOrBelowMedian")
+	if err != nil {
+		return &q, err
+	}
+
 	//
 	// Page 1
 	{
 
 		p := q.AddPage()
-		p.NoNavigation = false
+		p.NoNavigation = true
 		p.Width = 70
 		// p.Label = trl.S{
 		p.Section = trl.S{
-			"de": "Fragen zur grundgesetzlichen Schuldenbremse",
+			"de": "Begrüßung",
 		}
 		p.Label = trl.S{
-			"de": "Teil 1",
+			"de": "",
 		}
 		p.Desc = trl.S{
 			"de": "",
 		}
 		p.Short = trl.S{
-			"de": "Schulden-<br>bremse 1",
+			"de": "Begrüßung",
 		}
 
 		{
@@ -89,8 +95,66 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				Mit freundlichen Grüßen<br>
 				Prof. Dr. Friedrich Heinemann<br>
 				
-				`),
+<!--
+				<input type='hidden' name='variant'          value='%v' />
+				<input type='hidden' name='besserschlechter' value='%v' />
+-->
+				`, vars, aob),
 			}
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "hidden"
+				inp.Name = "variant"
+				inp.Response = vars
+			}
+			{
+				inp := gr.AddInput()
+				inp.Type = "hidden"
+				inp.Name = "besserschlechter"
+				inp.Response = aob
+			}
+
+			{
+				gr := p.AddGroup()
+				gr.Cols = 1
+				gr.Width = 99
+				{
+					inp := gr.AddInput()
+					inp.Type = "button"
+					inp.Name = "submitBtn"
+					inp.Response = "1"
+					inp.Label = trl.S{
+						"de": "Umfrage starten",
+					}
+					inp.AccessKey = "n"
+					inp.ColSpanControl = 1
+					inp.HAlignControl = qst.HRight
+				}
+			}
+
+		}
+	}
+
+	//
+	// Page 2
+	{
+
+		p := q.AddPage()
+		p.NoNavigation = false
+		p.Width = 70
+		// p.Label = trl.S{
+		p.Section = trl.S{
+			"de": "Fragen zur grundgesetzlichen Schuldenbremse",
+		}
+		p.Label = trl.S{
+			"de": "Teil 1",
+		}
+		p.Desc = trl.S{
+			"de": "",
+		}
+		p.Short = trl.S{
+			"de": "Verschuldung 1",
 		}
 
 		{
@@ -110,11 +174,12 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				dass Ihr Bundesland die Vorgaben der grundgesetzlichen Schuldenbremse einhalten 
 				und ab 2020 einen (konjunkturbereinigt) ausgeglichenen Haushalt aufweisen würde?`,
 			}
+
 		}
 	}
 
 	//
-	// Page 2
+	// Page 3
 	{
 
 		p := q.AddPage()
@@ -131,7 +196,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			"de": "",
 		}
 		p.Short = trl.S{
-			"de": "Schulden-<br>bremse 2",
+			"de": "Verschuldung 2",
 		}
 
 		{
@@ -200,7 +265,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	}
 
 	//
-	// Page 3
+	// Page 4
 	{
 
 		p := q.AddPage()
@@ -217,7 +282,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			"de": "",
 		}
 		p.Short = trl.S{
-			"de": "Schulden-<br>bremse 3",
+			"de": "Verschuldung 3",
 		}
 
 		// group1
@@ -236,7 +301,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 					`,
 			}
 
-			if !varianten[0] {
+			if !varianten[1] {
 
 				{
 					inp := gr.AddInput()
@@ -384,7 +449,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 					`,
 			}
 
-			if !varianten[0] {
+			if !varianten[1] {
 
 				{
 					inp := gr.AddInput()
@@ -520,7 +585,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	}
 
 	//
-	// Page 4
+	// Page 5
 	{
 
 		p := q.AddPage()
@@ -556,7 +621,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 		}
 
-		if !varianten[1] {
+		if !varianten[0] {
 			{
 				gr := p.AddGroup()
 				gr.Cols = 2 // necessary, otherwise no vspacers
@@ -591,7 +656,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	}
 
 	//
-	// Page 5
+	// Page 6
 	{
 
 		p := q.AddPage()
@@ -730,7 +795,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	}
 
 	//
-	// Page 6
+	// Page 7
 	{
 
 		p := q.AddPage()
@@ -856,7 +921,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	}
 
 	//
-	// Page 7
+	// Page 8
 	{
 
 		p := q.AddPage()
@@ -946,7 +1011,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	}
 
 	//
-	// Page 8
+	// Page 9
 	{
 
 		p := q.AddPage()
@@ -1021,7 +1086,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	}
 
 	//
-	// Page 9
+	// Page 10
 	{
 
 		p := q.AddPage()
@@ -1063,14 +1128,13 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				}
 			*/
 
-			// besseren/schlechteren
-			aob, err := q.Survey.Param("aboveOrBelowMedian")
-			if err != nil {
-				return &q, err
-			}
-
-			treatment := fmt.Sprintf(`<br>In einer aktuellen Bildungsstudie sind die Mathematikleistungen der Schüler*innen Ihres Bundeslandes 
-			in der %v Hälfte aller Bundesländer. <br>`, aob)
+			treatment := fmt.Sprintf(`
+				<br>
+				<div style='border: 1px solid grey; marging 12px 0; padding: 8px;'>
+					In einer aktuellen Bildungsstudie sind die Mathematikleistungen der Schüler*innen 
+					Ihres Bundeslandes in der <b>%v</b> Hälfte aller Bundesländer. 
+				</div>
+				`, aob)
 
 			if !varianten[2] {
 				treatment = ""
@@ -1092,6 +1156,30 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			}
 
 		}
+
+	}
+
+	//
+	// Page 11
+	{
+
+		p := q.AddPage()
+		p.NoNavigation = false
+		p.Width = 70
+		// p.Label = trl.S{
+		p.Section = trl.S{
+			"de": "Fragen zum Bildungsföderalismus",
+		}
+		p.Label = trl.S{
+			"de": "Teil 7",
+		}
+		p.Desc = trl.S{
+			"de": "",
+		}
+		p.Short = trl.S{
+			"de": "Bildung 7",
+		}
+
 		{
 
 			rowLabels := []trl.S{}
@@ -1099,6 +1187,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				rowLabels = []trl.S{
 					{"de": "… aller befragter Bürger*innen in Deutschland."},
 					{"de": "… aller befragter Bürger*innen in Ihrem Bundesland."},
+
 					{"de": "… aller befragter Wähler*innen Ihrer Partei in Deutschland."},
 					{"de": "… aller befragter Wähler*innen Ihrer Partei in Ihrem Bundesland."},
 
@@ -1107,10 +1196,11 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 			} else {
 				rowLabels = []trl.S{
-					{"de": "… aller befragter Wähler*innen Ihrer Partei in Ihrem Bundesland."},
 					{"de": "… aller befragter Wähler*innen Ihrer Partei in Deutschland."},
-					{"de": "… aller befragter Bürger*innen in Ihrem Bundesland."},
+					{"de": "… aller befragter Wähler*innen Ihrer Partei in Ihrem Bundesland."},
+
 					{"de": "… aller befragter Bürger*innen in Deutschland."},
+					{"de": "… aller befragter Bürger*innen in Ihrem Bundesland."},
 
 					{"de": "Ich möchte keine Informationen erhalten."},
 				}
@@ -1149,7 +1239,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp := gr.AddInput()
 				inp.Type = "button"
 				inp.Name = "submitBtn"
-				inp.Response = "9"
+				inp.Response = "11"
 				inp.Label = trl.S{
 					"de": "Umfrage abschließen",
 				}

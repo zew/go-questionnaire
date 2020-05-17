@@ -12,17 +12,17 @@
  		"deadline": "2030-01-01T00:00:00Z",
  		"params": [
  			{
- 				"name": "aboveOrBelowMedian",
- 				"val": "besseren"
+ 				"name": "varianten",
+ 				"val": "1111"
  			},
  			{
- 				"name": "varianten",
- 				"val": "0011"
+ 				"name": "aboveOrBelowMedian",
+ 				"val": "schlechteren"
  			}
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "bf783347b27585bc3fe068de250f3e82",
+ 	"md_5": "079d66ab14f5e3b9e3aebecd18d6bebd",
  	"lang_codes": {
  		"de": "Deutsch"
  	},
@@ -31,6 +31,67 @@
  	],
  	"max_groups": 3,
  	"pages": [
+ 		{
+ 			"section": {
+ 				"de": "Begrüßung"
+ 			},
+ 			"label": {
+ 				"de": ""
+ 			},
+ 			"description": {
+ 				"de": ""
+ 			},
+ 			"short": {
+ 				"de": "Begrüßung"
+ 			},
+ 			"no_navigation": true,
+ 			"navi_num": 0,
+ 			"width": 70,
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"label": {
+ 						"de": ""
+ 					},
+ 					"description": {
+ 						"de": "\n\t\t\t\tSehr geehrte Frau Landtagsabgeordnete, \u003cbr\u003e\n\t\t\t\tSehr geehrter Herr Landtagsabgeordneter,\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\tgemeinsam mit der Universität Mannheim untersucht das ZEW – Leibniz-Zentrum für Europäische Wirtschaftsforschung im Rahmen einer Umfrage, wie Landtagsabgeordnete über die im Grundgesetz verankerte „Schuldenbremse“ und den Bildungsföderalismus in Deutschland denken. Dabei ist uns auch an Ihrer Einschätzung sehr gelegen.\n\t\t\t\tDurch Ihre Beteiligung unterstützen Sie ein wichtiges wissenschaftliches Forschungsprojekt zur deutschen Finanzpolitik, das von der Deutschen Forschungsgemeinschaft (DFG) gefördert wird. Wir sind Ihnen dafür sehr dankbar.\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\tMit freundlichen Grüßen\u003cbr\u003e\n\t\t\t\tProf. Dr. Friedrich Heinemann\u003cbr\u003e\n\t\t\t\t\n\u003c!--\n\t\t\t\t\u003cinput type='hidden' name='variant'          value='1111' /\u003e\n\t\t\t\t\u003cinput type='hidden' name='besserschlechter' value='schlechteren' /\u003e\n--\u003e\n\t\t\t\t"
+ 					},
+ 					"bottom_vspacers": 3,
+ 					"width": 100,
+ 					"columns": 2,
+ 					"inputs": [
+ 						{
+ 							"name": "variant",
+ 							"type": "hidden",
+ 							"response": "1111"
+ 						},
+ 						{
+ 							"name": "besserschlechter",
+ 							"type": "hidden",
+ 							"response": "schlechteren"
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"width": 99,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"name": "submitBtn",
+ 							"type": "button",
+ 							"label": {
+ 								"de": "Umfrage starten"
+ 							},
+ 							"accesskey": "n",
+ 							"horizontal_align_control": 2,
+ 							"col_span_control": 1,
+ 							"response": "1"
+ 						}
+ 					]
+ 				}
+ 			]
+ 		},
  		{
  			"section": {
  				"de": "Fragen zur grundgesetzlichen Schuldenbremse"
@@ -42,23 +103,12 @@
  				"de": ""
  			},
  			"short": {
- 				"de": "Schulden-\u003cbr\u003ebremse 1"
+ 				"de": "Verschuldung 1"
  			},
  			"navi_num": 1,
  			"width": 70,
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
- 				{
- 					"label": {
- 						"de": ""
- 					},
- 					"description": {
- 						"de": "\n\t\t\t\tSehr geehrte Frau Landtagsabgeordnete, \u003cbr\u003e\n\t\t\t\tSehr geehrter Herr Landtagsabgeordneter,\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\tgemeinsam mit der Universität Mannheim untersucht das ZEW – Leibniz-Zentrum für Europäische Wirtschaftsforschung im Rahmen einer Umfrage, wie Landtagsabgeordnete über die im Grundgesetz verankerte „Schuldenbremse“ und den Bildungsföderalismus in Deutschland denken. Dabei ist uns auch an Ihrer Einschätzung sehr gelegen.\n\t\t\t\tDurch Ihre Beteiligung unterstützen Sie ein wichtiges wissenschaftliches Forschungsprojekt zur deutschen Finanzpolitik, das von der Deutschen Forschungsgemeinschaft (DFG) gefördert wird. Wir sind Ihnen dafür sehr dankbar.\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\tMit freundlichen Grüßen\u003cbr\u003e\n\t\t\t\tProf. Dr. Friedrich Heinemann\u003cbr\u003e\n\t\t\t\t\n\t\t\t\t"
- 					},
- 					"bottom_vspacers": 3,
- 					"width": 100,
- 					"columns": 2
- 				},
  				{
  					"label": {
  						"de": "Frage 1: \u003cbr\u003e"
@@ -200,7 +250,7 @@
  				"de": ""
  			},
  			"short": {
- 				"de": "Schulden-\u003cbr\u003ebremse 2"
+ 				"de": "Verschuldung 2"
  			},
  			"navi_num": 2,
  			"width": 70,
@@ -449,7 +499,7 @@
  				"de": ""
  			},
  			"short": {
- 				"de": "Schulden-\u003cbr\u003ebremse 3"
+ 				"de": "Verschuldung 3"
  			},
  			"navi_num": 3,
  			"width": 70,
@@ -467,30 +517,10 @@
  					"columns": 5,
  					"inputs": [
  						{
- 							"name": "sb_verschaerfung_1",
+ 							"name": "sb_unveraendert_1",
  							"type": "checkbox",
  							"description": {
- 								"de": "Verschärfung der Schuldenbremse und Verringerung des Verschuldungsspielraums."
- 							},
- 							"horizontal_align_control": 1,
- 							"col_span_label": 4,
- 							"col_span_control": 1
- 						},
- 						{
- 							"name": "sb_lockerung_1",
- 							"type": "checkbox",
- 							"description": {
- 								"de": "Lockerung der Schuldenbremse und generelle Erhöhung des Verschuldungsspielraums."
- 							},
- 							"horizontal_align_control": 1,
- 							"col_span_label": 4,
- 							"col_span_control": 1
- 						},
- 						{
- 							"name": "schulden_f_infrastruktur_1",
- 							"type": "checkbox",
- 							"description": {
- 								"de": "Verschuldung für Investitionen in Infrastruktur zulassen."
+ 								"de": "Schuldenbremse sollte unverändert bleiben."
  							},
  							"horizontal_align_control": 1,
  							"col_span_label": 4,
@@ -507,10 +537,30 @@
  							"col_span_control": 1
  						},
  						{
- 							"name": "sb_unveraendert_1",
+ 							"name": "schulden_f_infrastruktur_1",
  							"type": "checkbox",
  							"description": {
- 								"de": "Schuldenbremse sollte unverändert bleiben."
+ 								"de": "Verschuldung für Investitionen in Infrastruktur zulassen."
+ 							},
+ 							"horizontal_align_control": 1,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "sb_lockerung_1",
+ 							"type": "checkbox",
+ 							"description": {
+ 								"de": "Lockerung der Schuldenbremse und generelle Erhöhung des Verschuldungsspielraums."
+ 							},
+ 							"horizontal_align_control": 1,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "sb_verschaerfung_1",
+ 							"type": "checkbox",
+ 							"description": {
+ 								"de": "Verschärfung der Schuldenbremse und Verringerung des Verschuldungsspielraums."
  							},
  							"horizontal_align_control": 1,
  							"col_span_label": 4,
@@ -541,30 +591,10 @@
  					"columns": 5,
  					"inputs": [
  						{
- 							"name": "sb_verschaerfung_2",
+ 							"name": "sb_unveraendert_2",
  							"type": "checkbox",
  							"description": {
- 								"de": "Verschärfung der Schuldenbremse und Verringerung des Verschuldungsspielraums."
- 							},
- 							"horizontal_align_control": 1,
- 							"col_span_label": 4,
- 							"col_span_control": 1
- 						},
- 						{
- 							"name": "sb_lockerung_2",
- 							"type": "checkbox",
- 							"description": {
- 								"de": "Lockerung der Schuldenbremse und generelle Erhöhung des Verschuldungsspielraums."
- 							},
- 							"horizontal_align_control": 1,
- 							"col_span_label": 4,
- 							"col_span_control": 1
- 						},
- 						{
- 							"name": "schulden_f_infrastruktur_2",
- 							"type": "checkbox",
- 							"description": {
- 								"de": "Verschuldung für Investitionen in Infrastruktur zulassen."
+ 								"de": "Schuldenbremse sollte unverändert bleiben."
  							},
  							"horizontal_align_control": 1,
  							"col_span_label": 4,
@@ -581,10 +611,30 @@
  							"col_span_control": 1
  						},
  						{
- 							"name": "sb_unveraendert_2",
+ 							"name": "schulden_f_infrastruktur_2",
  							"type": "checkbox",
  							"description": {
- 								"de": "Schuldenbremse sollte unverändert bleiben."
+ 								"de": "Verschuldung für Investitionen in Infrastruktur zulassen."
+ 							},
+ 							"horizontal_align_control": 1,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "sb_lockerung_2",
+ 							"type": "checkbox",
+ 							"description": {
+ 								"de": "Lockerung der Schuldenbremse und generelle Erhöhung des Verschuldungsspielraums."
+ 							},
+ 							"horizontal_align_control": 1,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "sb_verschaerfung_2",
+ 							"type": "checkbox",
+ 							"description": {
+ 								"de": "Verschärfung der Schuldenbremse und Verringerung des Verschuldungsspielraums."
  							},
  							"horizontal_align_control": 1,
  							"col_span_label": 4,
@@ -701,29 +751,6 @@
  							]
  						}
  					]
- 				},
- 				{
- 					"label": {
- 						"de": "Frage 7: \u003cbr\u003e"
- 					},
- 					"description": {
- 						"de": "Was schätzen Sie, welcher Anteil der Bürger*innen Ihres Bundeslandes hält es für „sehr“ oder „eher“ wichtig, \n\t\t\t\t\tdass Schülerleistungen zwischen den Bundesländern vergleichbar sind?"
- 					},
- 					"bottom_vspacers": 3,
- 					"width": 100,
- 					"columns": 2,
- 					"inputs": [
- 						{
- 							"name": "leistung_vergleichbarkeit_buerger",
- 							"type": "number",
- 							"max_chars": 4,
- 							"step": 1,
- 							"suffix": {
- 								"de": "Prozent"
- 							},
- 							"col_span_control": 2
- 						}
- 					]
  				}
  			]
  		},
@@ -746,7 +773,7 @@
  			"groups": [
  				{
  					"label": {
- 						"de": "Frage 8a: \u003cbr\u003e"
+ 						"de": "Frage 7a: \u003cbr\u003e"
  					},
  					"description": {
  						"de": "\n\t\t\t\tWas \u003cb\u003eschätzen\u003c/b\u003e Sie, welcher Anteil der öffentlichen Finanzierung von Schulen \n\t\t\t\t(allgemeinbildend und beruflich) kommt derzeit von den verschiedenen staatlichen Ebenen in Deutschland?\n\t\t\t\t"
@@ -851,7 +878,7 @@
  			"groups": [
  				{
  					"label": {
- 						"de": "Frage 8b: \u003cbr\u003e"
+ 						"de": "Frage 7b: \u003cbr\u003e"
  					},
  					"description": {
  						"de": "\n\t\t\t\tUnd welcher Anteil der öffentlichen Finanzierung für Schulen (allgemeinbildend und beruflich) \n\t\t\t\t\u003cb\u003esollte\u003c/b\u003e Ihrer Meinung nach von den verschiedenen staatlichen Ebenen kommen?\n\t\t\t\t\n\t\t\t\t"
@@ -957,7 +984,7 @@
  							"max_chars": 2,
  							"step": 1,
  							"label": {
- 								"de": "Frage 9: \u003cbr\u003e"
+ 								"de": "Frage 8: \u003cbr\u003e"
  							},
  							"description": {
  								"de": "\n\t\t\t\t\tEine aktuelle Bildungsstudie hat die Mathematikleistungen von Schüler*innen der 9. Jahrgangsstufe\n\t\t\t\t\tin den 16 deutschen Bundesländern verglichen. \u003cbr\u003e \n\t\t\t\t\tWas schätzen Sie, welchen Platz haben die Schüler*innen Ihres Bundeslandes belegt? \u003cbr\u003e\n\t\t\t\t\t(1 ist der beste Platz, 16 der schlechteste Platz.)\t\t\t\t\n\t\t\t\t\n\t\t\t\t\t"
@@ -981,7 +1008,7 @@
  							"max_chars": 2,
  							"step": 1,
  							"label": {
- 								"de": "Frage 10: \u003cbr\u003e"
+ 								"de": "Frage 9: \u003cbr\u003e"
  							},
  							"description": {
  								"de": "\n\t\t\t\t\t\tWas schätzen Sie, was denken die Bürger*innen Ihres Bundeslandes, welchen Platz die Schüler*innen\n\t\t\t\t\t\tihres Bundeslandes bei der Bildungsstudie belegt haben? \u003cbr\u003e\n\t\t\t\t\t\t(1 ist der beste Platz, 16 der schlechteste Platz.)\t\t\t\t\n\t\t\t\t\t"
@@ -1015,7 +1042,7 @@
  			"groups": [
  				{
  					"label": {
- 						"de": "Frage 11: \u003cbr\u003e"
+ 						"de": "Frage 10: \u003cbr\u003e"
  					},
  					"description": {
  						"de": "\n\t\t\t\tSind Sie für oder gegen folgenden Reformvorschlag: \u003cbr\u003e\n\t\t\t\tEs werden deutschlandweit einheitliche Schülervergleichstests in Mathematik und Deutsch in allen Schulformen eingeführt, \n\t\t\t\tdie ab der 5. Klasse alle zwei Jahre regelmäßig stattfinden. \n\t\t\t\tDie Durchschnittsergebnisse pro Bundesland werden veröffentlicht, um die Schülerleistungen der Bundesländer miteinander zu vergleichen.\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\tIch bin… \n\t\t\t\t\n\t\t\t\t"
@@ -1095,7 +1122,7 @@
  				},
  				{
  					"label": {
- 						"de": "Frage 12: \u003cbr\u003e"
+ 						"de": "Frage 11: \u003cbr\u003e"
  					},
  					"description": {
  						"de": "Was schätzen Sie, welcher Anteil der Bürger*innen Ihres Bundeslandes ist „sehr“ oder „eher“ für \n\t\t\t\t\tden vorher genannten Reformvorschlag, deutschlandweit einheitliche Schülervergleichstests einzuführen?"
@@ -1137,10 +1164,10 @@
  			"groups": [
  				{
  					"label": {
- 						"de": "Frage 13: \u003cbr\u003e"
+ 						"de": "Frage 12: \u003cbr\u003e"
  					},
  					"description": {
- 						"de": "\n\t\t\t\t\tJetzt würden wir gerne noch einmal Ihre Meinung zu regelmäßigen Vergleichstests erfahren.\u003cbr\u003e\n\n\t\t\t\t\t\u003cbr\u003eIn einer aktuellen Bildungsstudie sind die Mathematikleistungen der Schüler*innen Ihres Bundeslandes \n\t\t\tin der besseren Hälfte aller Bundesländer. \u003cbr\u003e\n\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\tSind Sie für oder gegen vorher genannten Reformvorschlag, \n\t\t\t\t\tdeutschlandweit einheitliche Schülervergleichstests einzuführen?\u003cbr\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t Ich bin… \n\t\t\t\t\n\t\t\t\t"
+ 						"de": "\n\t\t\t\t\tJetzt würden wir gerne noch einmal Ihre Meinung zu regelmäßigen Vergleichstests erfahren.\u003cbr\u003e\n\n\t\t\t\t\t\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cdiv style='border: 1px solid grey; marging 12px 0; padding: 8px;'\u003e\n\t\t\t\t\tIn einer aktuellen Bildungsstudie sind die Mathematikleistungen der Schüler*innen \n\t\t\t\t\tIhres Bundeslandes in der \u003cb\u003eschlechteren\u003c/b\u003e Hälfte aller Bundesländer. \n\t\t\t\t\u003c/div\u003e\n\t\t\t\t\n\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\tSind Sie für oder gegen vorher genannten Reformvorschlag, \n\t\t\t\t\tdeutschlandweit einheitliche Schülervergleichstests einzuführen?\u003cbr\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t Ich bin… \n\t\t\t\t\n\t\t\t\t"
  					},
  					"bottom_vspacers": 1,
  					"width": 100,
@@ -1214,10 +1241,29 @@
  							]
  						}
  					]
- 				},
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"section": {
+ 				"de": "Fragen zum Bildungsföderalismus"
+ 			},
+ 			"label": {
+ 				"de": "Teil 7"
+ 			},
+ 			"description": {
+ 				"de": ""
+ 			},
+ 			"short": {
+ 				"de": "Bildung 7"
+ 			},
+ 			"navi_num": 10,
+ 			"width": 70,
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
  				{
  					"label": {
- 						"de": "Frage 14: \u003cbr\u003e"
+ 						"de": "Frage 13: \u003cbr\u003e"
  					},
  					"description": {
  						"de": "\n\t\t\t\t\tParallel zu unserer Landtagsumfrage befragen wir aktuell auch die deutsche Bevölkerung zu den gleichen Themen.\u003cbr\u003e\n\t\t\t\t\tIm Folgenden bieten wir Ihnen an, dass Sie nach Abschluss der Umfragen erfahren, \n\t\t\t\t\t wie andere Befragte zum Reformvorschlag, deutschlandweit einheitliche Schülervergleichstests einzuführen, stehen.\n\t\t\t\t\tWir senden Ihnen die gewählten Informationen per E-Mail zu. \u003cbr\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\tWelche der folgenden Informationen möchten Sie erhalten?\u003cbr\u003e\n\t\t\t\t\t(Bitte wählen Sie \u003cb\u003eeine\u003c/b\u003e der folgenden Optionen)\u003cbr\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\tDie durchschnittliche Zustimmung…\n\t\t\t\t\n\t\t\t\t"
@@ -1233,7 +1279,7 @@
  								{
  									"hori_align": 2,
  									"label": {
- 										"de": "… aller befragter Wähler*innen Ihrer Partei in Ihrem Bundesland."
+ 										"de": "… aller befragter Wähler*innen Ihrer Partei in Deutschland."
  									},
  									"val": "1",
  									"columns": 2
@@ -1241,7 +1287,7 @@
  								{
  									"hori_align": 2,
  									"label": {
- 										"de": "… aller befragter Wähler*innen Ihrer Partei in Deutschland."
+ 										"de": "… aller befragter Wähler*innen Ihrer Partei in Ihrem Bundesland."
  									},
  									"val": "2",
  									"columns": 2
@@ -1249,7 +1295,7 @@
  								{
  									"hori_align": 2,
  									"label": {
- 										"de": "… aller befragter Bürger*innen in Ihrem Bundesland."
+ 										"de": "… aller befragter Bürger*innen in Deutschland."
  									},
  									"val": "3",
  									"columns": 2
@@ -1257,7 +1303,7 @@
  								{
  									"hori_align": 2,
  									"label": {
- 										"de": "… aller befragter Bürger*innen in Deutschland."
+ 										"de": "… aller befragter Bürger*innen in Ihrem Bundesland."
  									},
  									"val": "4",
  									"columns": 2
@@ -1288,7 +1334,7 @@
  							"accesskey": "n",
  							"horizontal_align_control": 2,
  							"col_span_control": 1,
- 							"response": "9"
+ 							"response": "11"
  						}
  					]
  				}

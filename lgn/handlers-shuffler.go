@@ -6,10 +6,9 @@ import (
 	"log"
 	"net/http"
 
+	"github.com/go-playground/form"
 	"github.com/zew/go-questionnaire/lgn/shuffler"
 	"github.com/zew/util"
-
-	"github.com/monoculum/formam"
 )
 
 // ShufflesToCSV computes random but deterministic shufflings for usage outside the app
@@ -81,8 +80,10 @@ func ShufflesToCSV(w http.ResponseWriter, r *http.Request) {
 	fe := formEntryT{}
 
 	//
-	dec := formam.NewDecoder(&formam.DecoderOptions{TagName: "json"})
-	err := dec.Decode(r.Form, &fe)
+	// dec := for--mam.NewDecoder(&for--mam.DecoderOptions{TagName: "json"})
+	dec := form.NewDecoder()
+	dec.SetTagName("json") // recognizes and ignores ,omitempty
+	err := dec.Decode(&fe, r.Form)
 	if err != nil {
 		errMsg += fmt.Sprintf("Decoding error: %v\n", err)
 	}

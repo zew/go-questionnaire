@@ -8,7 +8,7 @@ import (
 	"time"
 
 	"github.com/go-playground/form"
-	"github.com/zew/go-questionnaire/struct2form"
+	"github.com/pbberlin/struc2frm"
 	"github.com/zew/util"
 )
 
@@ -57,7 +57,7 @@ func SlowHijacked(w http.ResponseWriter, r *http.Request) {
 
 	//
 	fmt.Fprintf(w, "<h3>Slow requests - hijacked and streamed</h3>")
-	fmt.Fprint(w, struct2form.HTML(*frm))
+	fmt.Fprint(w, struc2frm.New().HTML(*frm))
 
 	env(w)
 

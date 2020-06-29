@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "43aa727d003521a1ef8c14d31591ff65",
+ 	"md_5": "55116df87d615dbcb6ab25ae7ae81179",
  	"lang_codes": {
  		"de": "Deutsch",
  		"en": "English"
@@ -54,8 +54,8 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\u003cp\u003e\r\nSehr geehrte Finanzmarktexpertin, sehr geehrter Finanzmarktexperte, herzlich willkommen beim ZEW-Finanzmarkttest. \r\n\r\nDurch klicken auf \u003ccode\u003eWeiter\u003c/code\u003e werden Ihre Antworten gespeichert und Sie gelangen zur jeweils nächsten Seite. \r\n\r\nBei einer Unterbrechung (Schließen des Browsers) bleiben Ihre Antworten erhalten und können später über Ihren persönlichen Link wieder aufgerufen und geändert werden.\r\n\r\nAm Ende der Befragung können Sie den Fragebogen abschließen, so dass keine weiteren Änderungen möglich sind. \r\n\r\n\r\n\r\u003c/p\u003e\n\n\u003ch3\u003eDatenschutz\r\u003c/h3\u003e\n\n\u003cp\u003e\r\nHier finden Sie unsere \u003ca href=\"https://www.zew.de/de/datenschutz/\"\u003eDatenschutz-Grundlagen\u003c/a\u003e.\r\n\r\nIhre An\u0026shy;gaben werden streng vertraulich behandelt. \r\n\r\nDie Auswertung Ihrer Antworten erfolgt als \u003ca href=\"https://de.wikipedia.org/wiki/Paneldaten\"\u003ePanel-Datensatz\u003c/a\u003e in anonymisierter Form.\r\n\r\nIhre Daten werden auf einem geschützten Server im ZEW Hauptgebäude gespeichert, auf den nur Mitglieder des ZEW Teams für den Finanzmarkttest Zugriff haben.\r\n\r\nZusätzlich bitten wir um Ihr Einverständnis, dass wir Ihre Antworten \r\nintern mit Ihrer geschäftlichen Identität verknüpfen. \r\n\r\nIhre geschäftliche Identität besteht aus Ihrem Namen, Ihrer Funktion, geschäftl. Email und Telefonnummer, Arbeitgeber und Teilnahmebeginn.\r\u003c/p\u003e\n",
- 								"en": "\u003cp\u003eDear expert, welcome to the ZEW financial markets survey .\r\n\r\nBy clicking \u003ccode\u003eNext\u003c/code\u003e your an\u0026shy;swers will be saved and you progress to the next page.\r\n\r\nIn case of an interruption (closing of the web browser) your an\u0026shy;swers remain saved. You can re-use your personal link to continue and change your an\u0026shy;swers.\r\n\r\nAt the end you can finalize the questionnaire preventing further changes.\r\n\r\n\r\u003c/p\u003e\n\n\u003ch3\u003ePrivacy Protection\r\u003c/h3\u003e\n\n\u003cp\u003e\r\n\r\nPlease notice our \u003ca href=\"https://www.zew.de/en/datenschutz/\"\u003eprivacy protection policy\u003c/a\u003e.\r\n\r\nYour data will we treated strictly confidential.\r\n\r\nData processing is done as as \u003ca href=\"https://en.wikipedia.org/wiki/Panel_data\"\u003epanel data set\u003c/a\u003e in anonymized form.\r\n\r\nYour data will be stored on a protected server on the premises of ZEW Ltd. Only members of the financial markets team have access to this server.\r\n\r\nIn addition we ask for permission to internally as\u0026shy;so\u0026shy;ci\u0026shy;ate your an\u0026shy;swers with your busi\u0026shy;ness identity.\r\n\r\nYour busi\u0026shy;ness identity consists of name, role, work phone and email, employer and start of contribution.\r\n\r\n\r\n\r\n\r\u003c/p\u003e\n"
+ 								"de": "\u003cp\u003eSehr geehrte Finanzmarktexpertin, sehr geehrter Finanzmarktexperte, herzlich willkommen beim ZEW-Finanzmarkttest.\u003c/p\u003e\n\n\u003cp\u003eDurch klicken auf \u003ccode\u003eWeiter\u003c/code\u003e werden Ihre Antworten gespeichert und Sie gelangen zur jeweils nächsten Seite.\u003c/p\u003e\n\n\u003cp\u003eBei einer Unterbrechung (Schließen des Browsers) bleiben Ihre Antworten erhalten und können später über Ihren persönlichen Link wieder aufgerufen und geändert werden.\u003c/p\u003e\n\n\u003cp\u003eAm Ende der Befragung können Sie den Fragebogen abschließen, so dass keine weiteren Änderungen möglich sind.\u003c/p\u003e\n\n\u003ch3\u003eDatenschutz\u003c/h3\u003e\n\n\u003cp\u003eHier finden Sie unsere \u003ca href=\"https://www.zew.de/de/datenschutz/\"\u003eDatenschutz-Grundlagen\u003c/a\u003e.\u003c/p\u003e\n\n\u003cp\u003eIhre An\u0026shy;gaben werden streng vertraulich behandelt.\u003c/p\u003e\n\n\u003cp\u003eDie Auswertung Ihrer Antworten erfolgt als \u003ca href=\"https://de.wikipedia.org/wiki/Paneldaten\"\u003ePanel-Datensatz\u003c/a\u003e in anonymisierter Form.\u003c/p\u003e\n\n\u003cp\u003eIhre Daten werden auf einem geschützten Server im ZEW Hauptgebäude gespeichert, auf den nur Mitglieder des ZEW Teams für den Finanzmarkttest Zugriff haben.\u003c/p\u003e\n\n\u003cp\u003eZusätzlich bitten wir um Ihr Einverständnis, dass wir Ihre Antworten\nintern mit Ihrer geschäftlichen Identität verknüpfen.\u003c/p\u003e\n\n\u003cp\u003eIhre geschäftliche Identität besteht aus Ihrem Namen, Ihrer Funktion, geschäftl. Email und Telefonnummer, Arbeitgeber und Teilnahmebeginn.\u003c/p\u003e\n",
+ 								"en": "\u003cp\u003eDear expert, welcome to the ZEW financial markets survey .\u003c/p\u003e\n\n\u003cp\u003eBy clicking \u003ccode\u003eNext\u003c/code\u003e your an\u0026shy;swers will be saved and you progress to the next page.\u003c/p\u003e\n\n\u003cp\u003eIn case of an interruption (closing of the web browser) your an\u0026shy;swers remain saved. You can re-use your personal link to continue and change your an\u0026shy;swers.\u003c/p\u003e\n\n\u003cp\u003eAt the end you can finalize the questionnaire preventing further changes.\u003c/p\u003e\n\n\u003ch3\u003ePrivacy Protection\u003c/h3\u003e\n\n\u003cp\u003ePlease notice our \u003ca href=\"https://www.zew.de/en/datenschutz/\"\u003eprivacy protection policy\u003c/a\u003e.\u003c/p\u003e\n\n\u003cp\u003eYour data will we treated strictly confidential.\u003c/p\u003e\n\n\u003cp\u003eData processing is done as as \u003ca href=\"https://en.wikipedia.org/wiki/Panel_data\"\u003epanel data set\u003c/a\u003e in anonymized form.\u003c/p\u003e\n\n\u003cp\u003eYour data will be stored on a protected server on the premises of ZEW Ltd. Only members of the financial markets team have access to this server.\u003c/p\u003e\n\n\u003cp\u003eIn addition we ask for permission to internally as\u0026shy;so\u0026shy;ci\u0026shy;ate your an\u0026shy;swers with your busi\u0026shy;ness identity.\u003c/p\u003e\n\n\u003cp\u003eYour busi\u0026shy;ness identity consists of name, role, work phone and email, employer and start of contribution.\u003c/p\u003e\n"
  							},
  							"css_label": "special-line-height-higher",
  							"col_span_label": 3
@@ -684,8 +684,8 @@
  							"type": "number",
  							"max_chars": 4,
  							"description": {
- 								"de": "Unsere Prognose für das \u003cb\u003edeutsche\u003c/b\u003e BIP Wachstum in Q1 2020 (real, saisonbereinigt, nicht annualisiert):",
- 								"en": "Our estimate for the \u003cb\u003eGerman\u003c/b\u003e GDP growth in Q1 2020 (real, seasonally adjusted, non annualized):"
+ 								"de": "Unsere Prognose für das \u003cb\u003edeutsche\u003c/b\u003e BIP Wachstum in Q3 2020 (real, saisonbereinigt, nicht annualisiert):",
+ 								"en": "Our estimate for the \u003cb\u003eGerman\u003c/b\u003e GDP growth in Q3 2020 (real, seasonally adjusted, non annualized):"
  							},
  							"suffix": {
  								"de": "%",
@@ -699,8 +699,8 @@
  							"type": "number",
  							"max_chars": 4,
  							"description": {
- 								"de": "Unsere Prognose für das BIP Wachstum für das Jahr 2020 (real, saisonbereinigt):",
- 								"en": "Our estimate for the GDP growth in 2020 (real, seasonally adjusted):"
+ 								"de": "Unsere Prognose für das BIP Wachstum für das Jahr 2021 (real, saisonbereinigt):",
+ 								"en": "Our estimate for the GDP growth in 2021 (real, seasonally adjusted):"
  							},
  							"suffix": {
  								"de": "%",
@@ -725,8 +725,8 @@
  							"type": "number",
  							"max_chars": 4,
  							"description": {
- 								"de": "Die Wahrscheinlichkeit eines neg\u0026shy;ativen Wachstums des \u003cb\u003edeutschen\u003c/b\u003e BIP in Q1 2020 liegt bei:",
- 								"en": "The probability of neg\u0026shy;ative growth for the \u003cb\u003eGerman\u003c/b\u003e GDP in Q1 2020 is:"
+ 								"de": "Die Wahrscheinlichkeit eines neg\u0026shy;ativen Wachstums des \u003cb\u003edeutschen\u003c/b\u003e BIP in Q3 2020 liegt bei:",
+ 								"en": "The probability of neg\u0026shy;ative growth for the \u003cb\u003eGerman\u003c/b\u003e GDP in Q3 2020 is:"
  							},
  							"suffix": {
  								"de": "%",
@@ -740,8 +740,8 @@
  							"type": "number",
  							"max_chars": 4,
  							"description": {
- 								"de": "Die Wahrscheinlichkeit einer Rezession in Deutsch\u0026shy;land (mind. 2\u0026nbsp;Quartale neg. Wachstum) bis Q4 2020 liegt bei:",
- 								"en": "The probability of a recession in Germany (at least 2\u0026nbsp;quarters neg. growth) until Q4 2020 is:"
+ 								"de": "Die Wahrscheinlichkeit einer Rezession in Deutsch\u0026shy;land (mind. 2\u0026nbsp;Quartale neg. Wachstum) bis Q4 2021 liegt bei:",
+ 								"en": "The probability of a recession in Germany (at least 2\u0026nbsp;quarters neg. growth) until Q4 2021 is:"
  							},
  							"suffix": {
  								"de": "%",
@@ -2431,8 +2431,8 @@
  							"type": "number",
  							"max_chars": 4,
  							"description": {
- 								"de": "Q3 2019",
- 								"en": "Q3 2019"
+ 								"de": "Q1 2020",
+ 								"en": "Q1 2020"
  							},
  							"suffix": {
  								"de": "%",
@@ -2446,8 +2446,8 @@
  							"type": "number",
  							"max_chars": 4,
  							"description": {
- 								"de": "Q4 2019",
- 								"en": "Q4 2019"
+ 								"de": "Q2 2020",
+ 								"en": "Q2 2020"
  							},
  							"suffix": {
  								"de": "%",
@@ -2461,8 +2461,8 @@
  							"type": "number",
  							"max_chars": 4,
  							"description": {
- 								"de": "Q1 2020",
- 								"en": "Q1 2020"
+ 								"de": "Q3 2020",
+ 								"en": "Q3 2020"
  							},
  							"suffix": {
  								"de": "%",
@@ -2484,8 +2484,8 @@
  							"type": "number",
  							"max_chars": 4,
  							"description": {
- 								"de": "2019",
- 								"en": "2019"
+ 								"de": "2020",
+ 								"en": "2020"
  							},
  							"suffix": {
  								"de": "%",
@@ -2499,8 +2499,8 @@
  							"type": "number",
  							"max_chars": 4,
  							"description": {
- 								"de": "2020",
- 								"en": "2020"
+ 								"de": "2021",
+ 								"en": "2021"
  							},
  							"suffix": {
  								"de": "%",
@@ -2514,8 +2514,8 @@
  							"type": "number",
  							"max_chars": 4,
  							"description": {
- 								"de": "2021",
- 								"en": "2021"
+ 								"de": "2022",
+ 								"en": "2022"
  							},
  							"suffix": {
  								"de": "%",
@@ -2940,8 +2940,8 @@
  							"type": "number",
  							"max_chars": 4,
  							"description": {
- 								"de": "2019",
- 								"en": "2019"
+ 								"de": "2020",
+ 								"en": "2020"
  							},
  							"suffix": {
  								"de": "%",
@@ -2955,8 +2955,8 @@
  							"type": "number",
  							"max_chars": 4,
  							"description": {
- 								"de": "2020",
- 								"en": "2020"
+ 								"de": "2021",
+ 								"en": "2021"
  							},
  							"suffix": {
  								"de": "%",
@@ -2970,8 +2970,8 @@
  							"type": "number",
  							"max_chars": 4,
  							"description": {
- 								"de": "2021",
- 								"en": "2021"
+ 								"de": "2022",
+ 								"en": "2022"
  							},
  							"suffix": {
  								"de": "%",
@@ -3284,8 +3284,8 @@
  								"de": "6\u0026nbsp;Monaten",
  								"en": "6\u0026nbsp;months"
  							},
- 							"css_label": "special-min-width-85",
  							"horizontal_align_label": 2,
+ 							"css_label": "special-min-width-85",
  							"col_span_label": 8
  						},
  						{
@@ -3300,8 +3300,8 @@
  								"de": "%",
  								"en": "pct"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 2,
+ 							"css_label": "special-line-height-higher",
  							"col_span_label": 7,
  							"col_span_control": 9,
  							"validator": "inRange20"
@@ -3328,8 +3328,8 @@
  								"de": " 24\u0026nbsp;Monaten",
  								"en": " 24\u0026nbsp;months"
  							},
- 							"css_label": "mobile-wider",
  							"horizontal_align_label": 2,
+ 							"css_label": "mobile-wider",
  							"col_span_label": 8
  						},
  						{
@@ -3344,8 +3344,8 @@
  								"de": "%",
  								"en": "pct"
  							},
- 							"css_label": "special-line-height-higher",
  							"horizontal_align_label": 2,
+ 							"css_label": "special-line-height-higher",
  							"col_span_label": 7,
  							"col_span_control": 9,
  							"validator": "inRange20"
@@ -3535,8 +3535,8 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\u003ch3\u003eAnsprechpartner\r\u003c/h3\u003e\n\n\u003cp\u003e\r\nDr. Michael Schröder\r\n\r\nTelefon: 0621/1235-368\r\n\r\nTelefax: 0621/1235-4223\r\n\r\nE-Mail: schroeder@zew.de\t\r\n\r\n\r\u003c/p\u003e\n\n\u003ch3\u003eAdresse\r\u003c/h3\u003e\n\n\u003cp\u003e\r\nZentrum für Europäische Wirtschaftsforschung GmbH (ZEW)\r\n\r\nPostfach 10 34 43\r\n\r\n68034 Mannheim\r\n\r\n\r\u003c/p\u003e\n\n\u003ch3\u003eTechnische Probleme\r\u003c/h3\u003e\n\n\u003cp\u003e\r\nBei technischen Fragen zur Online-Erhebung  \r\nwenden Sie sich bitte an:  \r\n\r\nPeter Buchmann (buchmann@zew.de)\r\u003c/p\u003e\n",
- 								"en": "\u003ch3\u003eContact\r\u003c/h3\u003e\n\n\u003cp\u003e\r\nDr. Michael Schröder\r\n\r\nPhone: 0621/1235-368\r\n\r\nFax: 0621/1235-4223\r\n\r\nEmail: schroeder@zew.de\t\r\n\r\n\r\u003c/p\u003e\n\n\u003ch3\u003eAddress\r\u003c/h3\u003e\n\n\u003cp\u003e\r\nCentre for European Eco\u0026shy;nom\u0026shy;ic Re\u0026shy;search (ZEW) Mannheim\r\n\r\nPostfach 10 34 43 \r\n\r\n68034 Mannheim\r\n\r\nGermany\r\n\r\n\r\u003c/p\u003e\n\n\u003ch3\u003eTechnical issues\r\u003c/h3\u003e\n\n\u003cp\u003e\r\nPlease report technical issues \r\nwith the online questionnaire to:  \r\n\r\nPeter Buchmann (buchmann@zew.de)\r\u003c/p\u003e\n"
+ 								"de": "\u003ch3\u003eAnsprechpartner\u003c/h3\u003e\n\n\u003cp\u003eDr. Michael Schröder\u003c/p\u003e\n\n\u003cp\u003eTelefon: 0621/1235-368\u003c/p\u003e\n\n\u003cp\u003eTelefax: 0621/1235-4223\u003c/p\u003e\n\n\u003cp\u003eE-Mail: schroeder@zew.de\t\u003c/p\u003e\n\n\u003ch3\u003eAdresse\u003c/h3\u003e\n\n\u003cp\u003eZentrum für Europäische Wirtschaftsforschung GmbH (ZEW)\u003c/p\u003e\n\n\u003cp\u003ePostfach 10 34 43\u003c/p\u003e\n\n\u003cp\u003e68034 Mannheim\u003c/p\u003e\n\n\u003ch3\u003eTechnische Probleme\u003c/h3\u003e\n\n\u003cp\u003eBei technischen Fragen zur Online-Erhebung\u003cbr /\u003e\nwenden Sie sich bitte an:\u003c/p\u003e\n\n\u003cp\u003ePeter Buchmann (buchmann@zew.de)\u003c/p\u003e\n",
+ 								"en": "\u003ch3\u003eContact\u003c/h3\u003e\n\n\u003cp\u003eDr. Michael Schröder\u003c/p\u003e\n\n\u003cp\u003ePhone: 0621/1235-368\u003c/p\u003e\n\n\u003cp\u003eFax: 0621/1235-4223\u003c/p\u003e\n\n\u003cp\u003eEmail: schroeder@zew.de\t\u003c/p\u003e\n\n\u003ch3\u003eAddress\u003c/h3\u003e\n\n\u003cp\u003eCentre for European Eco\u0026shy;nom\u0026shy;ic Re\u0026shy;search (ZEW) Mannheim\u003c/p\u003e\n\n\u003cp\u003ePostfach 10 34 43\u003c/p\u003e\n\n\u003cp\u003e68034 Mannheim\u003c/p\u003e\n\n\u003cp\u003eGermany\u003c/p\u003e\n\n\u003ch3\u003eTechnical issues\u003c/h3\u003e\n\n\u003cp\u003ePlease report technical issues\nwith the online questionnaire to:\u003c/p\u003e\n\n\u003cp\u003ePeter Buchmann (buchmann@zew.de)\u003c/p\u003e\n"
  							},
  							"css_label": "special-line-height-higher"
  						}

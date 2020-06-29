@@ -5,7 +5,7 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/monoculum/formam"
+	"github.com/go-playground/form"
 	hashids "github.com/speps/go-hashids"
 	"github.com/zew/go-questionnaire/cfg"
 	"github.com/zew/util"
@@ -80,8 +80,9 @@ But keep an eye on the application log.
 		Stop  int `json:"stop"`
 	}
 	fe := formEntryT{}
-	dec := formam.NewDecoder(&formam.DecoderOptions{TagName: "json"})
-	err := dec.Decode(r.Form, &fe)
+	dec := form.NewDecoder()
+	dec.SetTagName("json") // recognizes and ignores ,omitempty
+	err := dec.Decode(&fe, r.Form)
 	if err != nil {
 		fmt.Fprintf(w, "%v\n", err)
 		fmt.Fprintf(w, "%v\n", util.IndentedDump(fe))
@@ -111,7 +112,7 @@ But keep an eye on the application log.
 			fmt.Fprintf(w, "%v - %v\n", i, encodedLong)
 		}
 
-		fmt.Fprintf(w, "survey2.zew.de/d/%v  &nbsp;  &nbsp; %v\t%v\t<a href='%v' target=_blank>%v</a>   <br>\n", encoded, i, HashIDDecodeFirst(encoded), cfg.Pref("d/"+encoded), encoded)
+		fmt.Fprintf(w, "%v\t%v\t<a href='%v' target=_blank>%v</a>   <br>\n", i, HashIDDecodeFirst(encoded), cfg.Pref("d/"+encoded), encoded)
 	}
 
 	fmt.Fprint(w, "</span>")

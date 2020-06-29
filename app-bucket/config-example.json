@@ -24,12 +24,7 @@
  	"location": "Europe/Berlin",
  	"session_timeout": 2,
  	"form_timeout": 2,
- 	"app_instance_id": 1590006391,
- 	"css": {
- 		"body_background_color": "#e2e2e2"
- 	},
- 	"cpu_profile": "",
- 	"allow_skip_forward": false,
+ 	"app_instance_id": 1593455288,
  	"lang_codes": [
  		"de",
  		"en",
@@ -38,6 +33,11 @@
  		"it",
  		"pl"
  	],
+ 	"css": {
+ 		"body_background_color": "#e2e2e2"
+ 	},
+ 	"cpu_profile": "",
+ 	"allow_skip_forward": false,
  	"translation_map": {
  		"app_label": {
  			"de": "Meine Beispiel Anwendung",

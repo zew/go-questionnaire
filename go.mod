@@ -9,8 +9,8 @@ require (
 	github.com/golang/protobuf v1.4.1 // indirect
 	github.com/gomodule/redigo v2.0.0+incompatible
 	github.com/google/wire v0.4.0 // indirect
-	github.com/jstemmer/go-junit-report v0.9.1 // indirect
 	github.com/monoculum/formam v0.0.0-20200316225015-49f0baed3a1b
+	github.com/pbberlin/struc2frm v1.0.5
 	github.com/pkg/errors v0.9.1
 	github.com/russross/blackfriday v2.0.0+incompatible
 	github.com/shurcooL/sanitized_anchor_name v1.0.0 // indirect
@@ -19,14 +19,11 @@ require (
 	github.com/zew/util v0.0.0-20190309202910-a8bebbe09dc9
 	gocloud.dev v0.19.0
 	golang.org/x/crypto v0.0.0-20200510223506-06a226fb4e37
-	golang.org/x/exp v0.0.0-20200331195152-e8c3332aa8e5 // indirect
 	golang.org/x/net v0.0.0-20200506145744-7e3656a0809f // indirect
 	golang.org/x/sys v0.0.0-20200509044756-6aff5f38e54f // indirect
 	golang.org/x/tools v0.0.0-20200511202723-1762287ae9dd // indirect
-	golang.org/x/xerrors v0.0.0-20191204190536-9bdfabe68543 // indirect
 	google.golang.org/api v0.24.0
 	google.golang.org/genproto v0.0.0-20200511104702-f5ebc3bea380 // indirect
-	gopkg.in/go-playground/assert.v1 v1.2.1 // indirect
 )
 
 go 1.13

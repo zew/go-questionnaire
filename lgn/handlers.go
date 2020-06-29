@@ -9,13 +9,31 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/monoculum/formam"
+	"github.com/go-playground/form"
 	"github.com/zew/go-questionnaire/cfg"
 	"github.com/zew/go-questionnaire/cloudio"
 	"github.com/zew/go-questionnaire/sessx"
 	"github.com/zew/util"
-	// hashids
 )
+
+// OuterHTMLPost wraps parameter content into a HTML 5 scaffold
+// and a form tag
+func OuterHTMLPost(htmlTitle, content string) string {
+	return fmt.Sprintf(`<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>%v</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body>
+	<form method="post" action="{{.SelfURL}}"  style="margin: 50px;"  >
+	%v
+	</form>
+</body>
+</html>
+`, htmlTitle, content)
+}
 
 // LogoutH is a convenience handler to logout via http request
 func LogoutH(w http.ResponseWriter, r *http.Request) error {
@@ -32,12 +50,15 @@ func LoggedInCheck(w http.ResponseWriter, r *http.Request, roles ...string) (l *
 		return
 	}
 	if !loggedIn || l.User == "" {
+		loggedIn = false
 		return
 	}
 
 	for _, role := range roles {
 		if !l.HasRole(role) {
 			err = fmt.Errorf("Logged in, but role %v is missing", role)
+
+			// returning loggedIn == true, but error != nil
 			return
 		}
 	}
@@ -297,8 +318,10 @@ func GenerateHashesH(w http.ResponseWriter, r *http.Request) {
 	}
 
 	//
-	dec := formam.NewDecoder(&formam.DecoderOptions{TagName: "json"})
-	err := dec.Decode(r.Form, &fe)
+	// dec := for--mam.NewDecoder(&for--mam.DecoderOptions{TagName: "json"})
+	dec := form.NewDecoder()
+	dec.SetTagName("json") // recognizes and ignores ,omitempty
+	err := dec.Decode(&fe, r.Form)
 	if err != nil {
 		errMsg += fmt.Sprintf("Decoding error: %v\n", err)
 	}
@@ -370,10 +393,20 @@ func GenerateHashesH(w http.ResponseWriter, r *http.Request) {
 
 }
 
-// LoginPrimitiveH is a primitive handler for http form based login by username and password.
+// LoginPrimitiveH has outer HTML scaffold - for more, see loginPrimitive
+func LoginPrimitiveH(w http.ResponseWriter, r *http.Request) {
+	loginPrimitive(w, r, true)
+}
+
+// LoginPrimitiveCoreH has *no* outer HTML scaffold - for more, see loginPrimitive
+func LoginPrimitiveCoreH(w http.ResponseWriter, r *http.Request) {
+	loginPrimitive(w, r, false)
+}
+
+// loginPrimitive is a primitive handler for http form based login by username and password.
 // It serves as pattern for an application specific login.
 // It also serves as real handler for applications having only a few admin users.
-func LoginPrimitiveH(w http.ResponseWriter, r *http.Request) {
+func loginPrimitive(w http.ResponseWriter, r *http.Request, outerHTML bool) {
 
 	msg := ""
 	err := ValidateAndLogin(w, r)
@@ -393,26 +426,30 @@ func LoginPrimitiveH(w http.ResponseWriter, r *http.Request) {
 		// http.Redirect(w, r, cfg.Pref("/"), http.StatusFound)
 	}
 
-	w.Header().Set("Content-Type", "text/html; charset=utf-8")
+	if outerHTML {
+		w.Header().Set("Content-Type", "text/html; charset=utf-8")
+	}
 
-	src := `<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title>Login</title>
-</head>
-<body>
-	<form method="post" action="{{.SelfURL}}"  style="margin: 50px;"  >
+	src := `
 		{{if gt (len .Cnt) 0 }} <p style='white-space: pre; color:#E22'>{{.Cnt}}</p>{{end}}
-		Login<br>
-					<input name="token"    type="hidden"   value="{{.Token}}" />
-		Username:	<input name="username" type="text"     value="{{.L.User}}"><br>
-		Password:	<input name="password" type="password" /><br>
-		<input type="submit" name="submitclassic" accesskey="l">
-	</form>
-</body>
-</html>
-`
+		<h3>Application login</h3>
+		<br>
+		<input name="token"    type="hidden"   value="{{.Token}}" />
+
+		<label for="username" class="top">Username</label>
+		<input id="username" name="username" type="text"     value="{{.L.User}}"><br>
+
+		<label for="password" class="top">Password</label>
+		<input id="password" name="password" type="password" /><br>
+
+		<div style="height: 0.6rem"> </div>
+		<button name="btnSubmit" accesskey="t" >Submi<u>t</u></button>
+	`
+
+	if outerHTML {
+		src = OuterHTMLPost("Login", src)
+	}
+
 	type dataT struct {
 		SelfURL string
 		Cnt     string
@@ -439,10 +476,20 @@ func LoginPrimitiveH(w http.ResponseWriter, r *http.Request) {
 
 }
 
-// ChangePasswordPrimitiveH is a primitive handler for http form based password change.
+// ChangePasswordPrimitiveH has outer HTML scaffold - for more, see ChangePasswordPrimitive
+func ChangePasswordPrimitiveH(w http.ResponseWriter, r *http.Request) {
+	changePasswordPrimitive(w, r, true)
+}
+
+// ChangePasswordPrimitiveCoreH has *no* outer HTML scaffold - for more, see ChangePasswordPrimitive
+func ChangePasswordPrimitiveCoreH(w http.ResponseWriter, r *http.Request) {
+	changePasswordPrimitive(w, r, false)
+}
+
+// changePasswordPrimitive is a primitive handler for http form based password change.
 // It serves as pattern for an application specific password change.
 // It also serves as real handler for applications having only a few admin users.
-func ChangePasswordPrimitiveH(w http.ResponseWriter, r *http.Request) {
+func changePasswordPrimitive(w http.ResponseWriter, r *http.Request, outerHTML bool) {
 
 	msg, err := ChangePassword(w, r)
 	if err != nil {
@@ -457,28 +504,37 @@ func ChangePasswordPrimitiveH(w http.ResponseWriter, r *http.Request) {
 		msg += fmt.Sprintf("You are not logged in.\n")
 	}
 
-	w.Header().Set("Content-Type", "text/html; charset=utf-8")
+	if outerHTML {
+		w.Header().Set("Content-Type", "text/html; charset=utf-8")
+	}
 
-	src := `<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title>Login</title>
-</head>
-<body>
-	<form method="post" action="{{.SelfURL}}"  style="margin: 50px;"  >
+	src := `
 		{{if gt (len .Cnt) 0 }} <p style='white-space: pre; color:#E22'>{{.Cnt}}</p>{{end}}
-		Change password<br>
-		                <input name="token"        type="hidden"   value="{{.Token}}" />
-		Username: 		<input name="username"     type="text"     value="{{.L.User}}"><br>
-		Old password: 	<input name="oldpassword"  type="password" value="" /><br>
-		New password: 	<input name="newpassword"  type="password" value="" /><br>
-		Repeat:			<input name="newpassword2" type="password" value="" /><br>
-		<input type="submit" name="submitclassic" accesskey="l">
-	</form>
-</body>
-</html>
-`
+
+		<h3>Change password</h3>
+		<br>
+		
+		<input name="token"        type="hidden"   value="{{.Token}}" />
+
+		<label for="username" class="top">Username</label>
+		<input id="username"     name="username"     type="text"     value="{{.L.User}}"><br>
+
+		<label for="oldpassword" class="top">Old password</label>
+		<input id="oldpassword"  name="oldpassword"  type="password" value="" /><br>
+
+		<label for="newpassword" class="top">New password</label>
+		<input id="newpassword"  name="newpassword"  type="password" value="" /><br>
+
+		<label for="newpassword2" class="top">Repeat</label>
+		<input id="newpassword2" name="newpassword2" type="password" value="" /><br>
+
+		<div style="height: 0.6rem"> </div>
+		<button name="btnSubmit" accesskey="t" >Submi<u>t</u></button>
+	`
+	if outerHTML {
+		src = OuterHTMLPost("Change Password", src)
+	}
+
 	type dataT struct {
 		SelfURL string
 		Cnt     string

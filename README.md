@@ -437,6 +437,8 @@ Mobile layout was tested with `crossbrowsertesting.com`.
 
 ## Open / todo
 
+* Apply attributes `autocapitalize` and `inputmode` to text inputs
+
 * Templates and CSS files should go to `app-bucket` dir -  
 take implementation from project tfre  
 remove bootstrap.go template creation  

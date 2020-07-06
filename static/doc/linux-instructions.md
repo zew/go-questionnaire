@@ -152,6 +152,18 @@ sudo systemctl enable   go-questionnaire.service
 # put together
 sudo systemctl daemon-reload && sudo systemctl restart  go-questionnaire.service
 sudo journalctl -u go-questionnaire.service --since -2m
+```
+
+## Deploy executable
+
+```bash
+sudo systemctl stop    go-questionnaire.service  
+cp -f  go-questionnaire-next  go-questionnaire  
+sudo systemctl start   go-questionnaire.service  
+
+sudo systemctl stop    go-questionnaire.service
+cp -f  go-questionnaire-previous  go-questionnaire
+sudo systemctl start   go-questionnaire.service
 
 ```
 

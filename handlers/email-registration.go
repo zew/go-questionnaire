@@ -15,15 +15,15 @@ import (
 
 type reportForm struct {
 	// stackoverflow.com/questions/399078 - inside character classes escape ^-]\
-	Email       string `json:"email"        form:"maxlength='42',size='28',pattern='[a-zA-Z0-9\\.\\-_%+]+@[a-zA-Z0-9\\.\\-]+\\.[a-zA-Z]{0&comma;2}'"`
-	Vorname     string `json:"first_name"   form:"maxlength='42',size='28',suffix='optional'"`
-	Nachname    string `json:"last_name"    form:"maxlength='42',size='28',suffix='optional'"`
-	Affiliation string `json:"affiliation"  form:"maxlength='42',size='28',suffix='optional',placeholder='Ihre Organisation'"`
+	Email       string `json:"email"        form:"maxlength='42',size='28',pattern='[a-zA-Z0-9\\.\\-_%+]+@[a-zA-Z0-9\\.\\-]+\\.[a-zA-Z]{2&comma;18}'"`
+	Firstname   string `json:"vorname"      form:"maxlength='42',size='28',suffix=''"`
+	Lastname    string `json:"nachname"     form:"maxlength='42',size='28',suffix=''"`
+	Affiliation string `json:"affiliation"  form:"maxlength='42',size='28',suffix='',placeholder='Ihre Organisation'"`
 	Terms       bool   `json:"terms"        form:"suffix='replace_me'"`
 }
 
 func (rp *reportForm) CSVLine() string {
-	return fmt.Sprintf("%v;%v;%v;%v;\n", rp.Email, rp.Vorname, rp.Nachname, rp.Affiliation)
+	return fmt.Sprintf("%v;%v;%v;%v;\n", rp.Email, rp.Firstname, rp.Lastname, rp.Affiliation)
 }
 
 var mtx = sync.Mutex{}
@@ -49,10 +49,10 @@ func FMReportFormH(w http.ResponseWriter, r *http.Request) {
 	}
 
 	//
-	fmt.Fprintf(w, "<h3>Finanzmarktreport per Email</h3>")
-	fmt.Fprintf(w, `<p>Sehr geehrte Damen und Herren,<br>
-	bitte tragen Sie die Email-Adresse ein, <br>
-	unter der Sie den Finanzmarktreport künftig elektronisch erhalten.
+	fmt.Fprintf(w, "<h3>Finanzmarktreport per E-Mail</h3>")
+	fmt.Fprintf(w, `<p>Sehr geehrte Damen und Herren,<br><br>
+	bitte tragen Sie die E-Mail-Adresse ein, <br>
+	unter der Sie künftig den Finanzmarktreport im PDF-Format erhalten möchten.
 	
 	</p>`)
 
@@ -92,6 +92,20 @@ func FMReportFormH(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprint(w1, s2f.HTML(*frm))
 
 	s2 := strings.ReplaceAll(w1.String(), "replace_me", `Ich erkläre mich mit den <a tabindex='-1' href='https://www.zew.de/de/datenschutz' target='_blank' >Datenschutzbestimmungen</a> einverstanden`)
+
+	s2 = strings.ReplaceAll(s2, ">Email", ">E-Mail")
+	s2 = strings.ReplaceAll(s2, ">Vorname", ">Vorname (optional)")
+	s2 = strings.ReplaceAll(s2, ">Nachname", ">Nachname (optional)")
+	s2 = strings.ReplaceAll(s2, ">Affiliation", ">Affiliation (optional)")
+	s2 = strings.ReplaceAll(s2, ">Terms", ">Datenschutzbedingungen")
+	s2 = strings.ReplaceAll(s2, "<b>S</b>ubmit", "<b>S</b>peichern")
+
+	fmt.Fprint(w, `<style>
+		body {
+			font-family: -apple-system,BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+		}
+	
+	</style>`)
 
 	fmt.Fprint(w, s2)
 

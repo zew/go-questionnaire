@@ -54,10 +54,16 @@ func init() {
 
 // IsNotExist function for cloudio
 func IsNotExist(err error) bool {
-	if os.IsNotExist(err) || strings.Contains(err.Error(), "code=NotFound") {
+	if errors.Is(err, os.ErrNotExist) || strings.Contains(err.Error(), "code=NotFound") {
 		return true
 	}
 	return false
+}
+
+// CreateNotExist returns a "not exists" - similar to io package behaviour.
+// Sadly, the original gocloud error can only be retained as string message
+func CreateNotExist(err error) error {
+	return errors.Wrap(os.ErrNotExist, err.Error()) // wrap err not exists; we would like to keep the orig error - but cannot
 }
 
 func prepareLocalDir() error {
@@ -219,8 +225,10 @@ func ReadFile(fileName string) (bts []byte, err error) {
 	// Reader of "filename" in bucket
 	r, err := buck.NewReader(ctx, fileName, nil)
 	if err != nil {
-		if !IsNotExist(err) {
-			log.Printf("Error opening writer to bucket: %v", err)
+		if IsNotExist(err) {
+			err = CreateNotExist(err)
+		} else {
+			log.Printf("Error opening writer to file in bucket: %v", err)
 		}
 		return
 	}
@@ -425,7 +433,7 @@ func init() {
 	/*
 		list() lists files in buck starting with prefix.
 		list() recurses into "directories" delimited by "/",
-		It is is strongly consistent, but is not guaranteed to work on all services.
+		Strongly consistent, but not guaranteed to work on all services.
 
 		Usage
 		ret := &[]*blob.ListObject{}
@@ -447,7 +455,10 @@ func init() {
 				log.Printf("Error iterating with Next(): %v", err)
 				break
 			}
-			// fmt.Printf("%s%s\n", strings.Repeat("    ", indent), obj.Key)
+			if obj.Key == prefix && obj.IsDir {
+				continue // skip the directory itself -  occurs only on cloud - not on filesystem
+			}
+			fmt.Printf("%s%s\n", strings.Repeat("    ", indent), obj.Key)
 			*results = append(*results, obj)
 			if obj.IsDir && indent < maxIndent {
 				list(ctx, buck, obj.Key, indent+1, maxIndent, results)
@@ -456,7 +467,14 @@ func init() {
 	}
 }
 
-// ReadDir is similar to osutil.ReadDir but returns ListObjects instead of FileInfos
+// ReadDir is similar to osutil.ReadDir but returns ListObjects instead of FileInfos;
+// prefix is the path to search into;
+// returned keys will nevertheless consist of  path . path.Separator . fileName;
+// under windows we might have to
+//     o.Key = strings.ReplaceAll(o.Key, "\\", "/")
+//
+// On windows,   `prefix` directory itself is not returned
+// On appengine, `prefix` directory itself is returned as well
 func ReadDir(prefix string) (*[]*blob.ListObject, error) {
 	ctx := context.Background()
 	var buck *blob.Bucket
@@ -465,6 +483,8 @@ func ReadDir(prefix string) (*[]*blob.ListObject, error) {
 	// ret := []os.FileInfo{}
 	ret := &[]*blob.ListObject{}
 
+	// necessary, but entails returning the prefix dir itself
+	// see: skip the directory itself
 	if !strings.HasSuffix(prefix, "/") {
 		prefix += "/"
 	}

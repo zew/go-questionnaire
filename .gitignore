@@ -7,6 +7,8 @@
 *.exe
 *.exe~
 go-questionnaire
+go-questionnaire-previous
+go-questionnaire-next
 *.fdb
 out.csv
 online-responses.csv

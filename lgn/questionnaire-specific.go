@@ -86,10 +86,12 @@ func LoginByHash(w http.ResponseWriter, r *http.Request) (bool, error) {
 							dlr.SurveyID, dlr.Start, userID, dlr.Stop)
 						l := LoginT{}
 						l.User = strUserID
+						l.Provider = "anonymous/direct"
 						l.IsInitPassword = false // roles become effective only for non init passwords
 						l.Roles = map[string]string{}
 						l.Attrs = map[string]string{}
 						l.Attrs["survey_id"] = dlr.SurveyID
+						// todo - attrs from profiles? see below
 
 						if dlr.SurveyID == "lt2020" {
 
@@ -151,18 +153,16 @@ func LoginByHash(w http.ResponseWriter, r *http.Request) (bool, error) {
 	if hExpected != h {
 		return false, fmt.Errorf("hash over check string unequal hash argument\n%v\n%v", hExpected, h)
 	}
+	l.Provider = "hash"
 
+	//
+	// set attributes from configured profiles
 	for key := range r.Form {
 		// same key - multiple values
 		// attrs=country:Sweden&attrs=height:176
 		if val, ok := userAttrs[key]; ok {
 			if key == "attrs" {
-				// for i := 0; i < len(r.Form[key]); i++ { // instead of val := r.Form.Get(key)
-				// 	val := r.Form[key][i]
-				// 	kv := strings.Split(val, ":")
-				// 	if len(kv) == 2 {
-				// 		l.Attrs[kv[0]] = kv[1]
-				// 	}
+				// obsolete
 			} else if key == "p" {
 				profileKey := r.Form.Get("sid") + r.Form.Get(key)
 				prof, ok := cfg.Get().Profiles[profileKey]

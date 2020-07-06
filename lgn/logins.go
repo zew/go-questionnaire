@@ -67,11 +67,12 @@ var userAttrs = map[string]string{
 // 			...
 // 		}
 type LoginT struct {
-	User  string            `json:"user"`
-	Email string            `json:"email"`
-	Group string            `json:"-"`     // Derived from email domain - or LDAP org
-	Roles map[string]string `json:"roles"` // i.e. admin: true, can only be set via JSON config; therefore safe
-	Attrs map[string]string `json:"attrs"` // i.e. country: Poland, gender: female, height: 188, can be overridden by URL params, therefore unsafe.
+	User     string            `json:"user"`
+	Email    string            `json:"email"`
+	Group    string            `json:"-"`     // Derived from email domain - or LDAP org
+	Provider string            `json:"-"`     // twitter, facebook, ... or hash, anonymous/direct, JSON, LDAP
+	Roles    map[string]string `json:"roles"` // i.e. admin: true, can only be set via JSON config; therefore safe
+	Attrs    map[string]string `json:"attrs"` // i.e. country: Poland, gender: female, height: 188, can be overridden by URL params, therefore unsafe.
 
 	PassInitial    string `json:"pass_initial"`       // For first login - unencrypted - grants restricted access to change password only
 	IsInitPassword bool   `json:"is_init_password"`   // Indicates authentication against PassInitial
@@ -217,6 +218,7 @@ func Load(r io.Reader) {
 			group = els[1]
 		}
 		tmpLogins.Logins[i].Group = group
+		tmpLogins.Logins[i].Provider = "JSON"
 	}
 
 	log.Printf("\n%s", util.IndentedDump(tmpLogins))

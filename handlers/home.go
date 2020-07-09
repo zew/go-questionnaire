@@ -358,10 +358,10 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 	//
 	//
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
-	tplBundle := tpl.Get(w, r, "main_desktop.html")
+	tplBundle := tpl.Get(w, r, "main-desktop.html")
 
 	if mobile {
-		tplBundle = tpl.Get(w, r, "main_mobile.html")
+		tplBundle = tpl.Get(w, r, "main-mobile.html")
 		q.Pages[q.CurrPage].Width = 100
 		q.Pages[q.CurrPage].AestheticCompensation = 0
 		for i := 0; i < len(q.Pages[q.CurrPage].Groups); i++ {

@@ -124,8 +124,8 @@ func GenerateQuestionnaireTemplates(w http.ResponseWriter, r *http.Request) {
 		myfmt.Fprintf(w, "%v generated<br>\n", key)
 
 		//
-		// create empty main_desktop_[surveytype].css"
-		// create empty main_mobile_[surveytype].css"
+		// create empty main-desktop-[surveytype].css"
+		// create empty main-mobile-[surveytype].css"
 		// if it does not yet exist
 		fcCreate := func(desktopOrMobile string) (bool, error) {
 			pth := filepath.Join(".", "templates", desktopOrMobile+q.Survey.Type+".css")
@@ -140,7 +140,7 @@ func GenerateQuestionnaireTemplates(w http.ResponseWriter, r *http.Request) {
 			return false, nil
 		}
 
-		for _, bt := range []string{"main_desktop_", "main_mobile_"} {
+		for _, bt := range []string{"main-desktop-", "main-mobile-"} {
 			ok, err := fcCreate(bt)
 			if err != nil {
 				myfmt.Fprintf(w, "Could not generated template %v for %v<br>\n", bt, err)

@@ -6,9 +6,8 @@ package bootstrap
 
 import (
 	"log"
-	"os"
-	"path/filepath"
-	"strings"
+	"net/http"
+	"net/http/httptest"
 	"time"
 
 	"github.com/zew/go-questionnaire/cfg"
@@ -99,32 +98,21 @@ func Config() {
 
 	}
 
+	{
+		dummyReq, err := http.NewRequest("GET", "", nil)
+		if err != nil {
+			log.Fatalf("failed to create request for pre-loading assets %v", err)
+		}
+		respRec := httptest.NewRecorder()
+		tpl.TemplatesPreparse(respRec, dummyReq)
+		log.Printf("\n%v", respRec.Body.String())
+	}
+
 	if cfg.Get().SessionTimeout > 0 {
 		sessx.Mgr().Lifetime = time.Duration(cfg.Get().SessionTimeout) * time.Hour // default is 24 hours
 	}
-	// sessx.Mgr().Secure(true)            // true breaks session persistence in excel-db - but not in go-countdown - it leads to sesson breakdown on iphone safari mobile, maybe because appengine is http with TLS outside
+	// sessx.Mgr().Secure(true)            // true breaks session persistence in excel-db - but not in go-countdown - it leads to sesson breakdown on iphone safari mobile, maybe because appengine is pbberlin outside
 
-	//
-	//
-	tpls := []string{
-		"main_desktop.html", "main_mobile.html",
-		"main_desktop1.css", "main_desktop2.css",
-		"main_mobile.css", "main_mobile_menu_without_js.css",
-	}
-
-	err := filepath.Walk(filepath.Join(".", "templates"), func(path string, f os.FileInfo, err error) error {
-		base := filepath.Base(path)
-		if strings.HasPrefix(base, "main_desktop_") ||
-			strings.HasPrefix(base, "main_mobile_") {
-			log.Printf("Adding %v", base)
-			tpls = append(tpls, base)
-		}
-		return nil
-	})
-	if err != nil {
-		log.Fatalf("Error walinkg templates: %v", err)
-	}
-
-	tpl.Parse(tpls...)
+	// struc--2frm.S2F.Indent = 90
 
 }

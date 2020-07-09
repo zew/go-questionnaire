@@ -13,6 +13,36 @@ import (
 	"github.com/zew/go-questionnaire/cfg"
 )
 
+// contained checks if a path breaks of the current dir;
+// i.e.
+//    ./content/site1/../../../etc/passwd
+// does break out
+func contained(pth string) bool {
+
+	if strings.HasSuffix(pth, "README.md") {
+		return true
+	}
+
+	cntr := 0
+	dirs := strings.Split(pth, "/")
+
+	for _, dir := range dirs {
+		if dir == "." || dir == "" {
+			continue
+		}
+		if dir == ".." {
+			cntr--
+		} else {
+			cntr++
+		}
+		if cntr < 0 {
+			return false
+		}
+	}
+	return true
+
+}
+
 // StaticDownloadH serves static files.
 // It guesses the Content-Type header.
 // It writes a Content-Length header.
@@ -22,11 +52,17 @@ func StaticDownloadH(w http.ResponseWriter, r *http.Request) {
 	pth := r.URL.Path
 	pth = strings.TrimPrefix(pth, cfg.Pref())
 	pth = strings.Trim(pth, "/")
+	if !contained(pth) {
+		s := fmt.Sprintf("no breaking out from doc dir: %v", pth)
+		log.Print(s)
+		fmt.Fprint(w, s)
+		return
+	}
+
 	m := mime.TypeByExtension(filepath.Ext(pth))
 	if m != "" {
 		w.Header().Set("Content-Type", m)
 	}
-	pth = strings.ReplaceAll(pth, "..", "")   // prevent climbing up, such as ./static/../../../root/passwd
 	fpth := filepath.Join(".", "static", pth) // this enforces only local files
 
 	/* #nosec */
@@ -50,7 +86,7 @@ func StaticDownloadH(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Length", fmt.Sprintf("%v", contentLength))
 
 	// andrewlock.net/adding-cache-control-headers-to-static-files-in-asp-net.core/
-	w.Header().Set("Cache-Control", fmt.Sprintf("public,max-age=%d", 60*60*24))
+	w.Header().Set("Cache-Control", fmt.Sprintf("public,max-age=%d", 60*60*120))
 
 	_, err = io.Copy(w, f) // most memory efficient
 	if err != nil {

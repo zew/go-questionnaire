@@ -26,7 +26,7 @@ func errorH(w http.ResponseWriter, r *http.Request, msg string) {
 
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
 
-	tplBundle := tpl.Get(w, r, "main_desktop.html")
+	tplBundle := tpl.Get(w, r, "main-desktop.html")
 
 	ts := &tpl.StackT{"error.html", "non-existent.html"}
 

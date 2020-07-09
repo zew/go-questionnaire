@@ -28,7 +28,7 @@ button, input[type="submit"]{
 
 .header{
  	min-height: 68px;
-  /* background-image: url({{prefix "/img/site/zew_logo.png"}}); */
+  /* background-image: url(cfg.Pref "/img/site/zew_logo.png"}}); */
 	background-repeat: no-repeat;
 	background-position-x: 48px;
 	background-position-y: 14px;

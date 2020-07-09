@@ -458,7 +458,7 @@ func init() {
 			if obj.Key == prefix && obj.IsDir {
 				continue // skip the directory itself -  occurs only on cloud - not on filesystem
 			}
-			fmt.Printf("%s%s\n", strings.Repeat("    ", indent), obj.Key)
+			// fmt.Printf("%s%s\n", strings.Repeat("    ", indent), obj.Key)
 			*results = append(*results, obj)
 			if obj.IsDir && indent < maxIndent {
 				list(ctx, buck, obj.Key, indent+1, maxIndent, results)

@@ -33,9 +33,6 @@
  		"it",
  		"pl"
  	],
- 	"css": {
- 		"body_background_color": "#e2e2e2"
- 	},
  	"cpu_profile": "",
  	"allow_skip_forward": false,
  	"translation_map": {

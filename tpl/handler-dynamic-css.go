@@ -1,24 +1,55 @@
 package tpl
 
 import (
+	"fmt"
 	"log"
 	"net/http"
-	"path/filepath"
+	"path"
 
 	"github.com/zew/go-questionnaire/cfg"
 )
 
-// ServeDynCSS is useful mainly,
-// when you have several instances of your application,
-// differentiated by a few colors.
+/*ServeDynCSS can serve CSS files for different sites;
+the url path specifies the key to a CSSVarsSite entry;
+i.e.    /css/site1/design.css
+
+Currently though, all CSS vars are set in the main template main-desktop.html;
+therefore CSS files can be aggressively cached.
+
+Access from CSS would be
+	{{ cfg.CSSVarsSite.site1.HTML }}
+	{{  (.ByKey "sec-drk2" ).RGBA    }}
+
+
+Thus currently we would not need to serve CSS files as golang templates,
+but it costs nothing since templates are preparsed at application init,
+and it retains the possibility to use templating dynamics in future.
+
+*/
+/**/
 func ServeDynCSS(w http.ResponseWriter, r *http.Request) {
 
 	w.Header().Set("Content-Type", "text/css")
+	// andrewlock.net/adding-cache-control-headers-to-static-files-in-asp-net.core/
+	w.Header().Set("Cache-Control", fmt.Sprintf("public,max-age=%d", 60*60*120))
 
-	cssFileName := filepath.Base(r.URL.Path) //  "/css/design.css"  => design.css
-	t := GetStatic(w, r, cssFileName)
-	err := t.ExecuteTemplate(w, cssFileName, cfg.Get().CSS)
+	dir := path.Dir(r.URL.Path) //  /css/site1/design.css  => /css/site1/
+	siteName := path.Base(dir)  //  /css/site1/            => site1
+
+	cssFileName := path.Base(r.URL.Path) //  /css/site1/design.css  => design.css
+	t, err := tpl(r, cssFileName)
 	if err != nil {
-		log.Printf("Error executing template %v: %v", cssFileName, err)
+		log.Printf("Error compiling CSS template %v site %q: %v", cssFileName, siteName, err)
 	}
+
+	if _, ok := cfg.Get().CSSVarsSite[siteName]; !ok {
+		log.Printf("CSS template: %v site %q does not exist in cfg.CSSVarsSite", cssFileName, siteName)
+	}
+
+	err = t.ExecuteTemplate(w, cssFileName, cfg.Get().CSSVarsSite[siteName])
+	if err != nil {
+		log.Printf("Error executing CSS template %v site %q: %v", cssFileName, siteName, err)
+	}
+
+	// log.Printf("Success executing CSS template %v site %q", cssFileName, siteName)
 }

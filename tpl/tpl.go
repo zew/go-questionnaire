@@ -1,45 +1,87 @@
-// Package tpl parses bundles of related templates and keeps them in a map;
-// bundles can be master-layouts with several content-templates;
+// Package tpl parses and bundles templates related by `/templates/bundles.json`
+// and stores them into a map `cache`;
+// i.e. bundles of master-layouts with content-templates;
 // http requests dont need clones for specific template funcs;
-// executeTemplate(bundle, dynamicName, data) replaces the static
-// {{template  constantName}}.
-// Parsing bundles into parsedBundles should be done at application init time,
-// to avoid mutexing the parsedBundles map.
-// The func Parse() is exposed for this purpose - for bootstrapping.
+// function executeTemplate(...dynamicName...) replaces {{template  constantName}}.
+// Parsing and bundling is done at application init time,
+// avoiding mutexing the `cache` map.
 package tpl
 
 import (
 	"bytes"
 	"fmt"
 	"html/template"
+	"io"
 	"log"
 	"net/http"
-	"sync"
-	"path/filepath"
+	"net/http/httptest"
+	"path"
 	"reflect"
 	"strings"
 
+	"github.com/pkg/errors"
 	"github.com/zew/go-questionnaire/cfg"
+	"github.com/zew/go-questionnaire/cloudio"
+	"github.com/zew/go-questionnaire/handler"
 	"github.com/zew/go-questionnaire/lgn"
-	"github.com/zew/util"
 )
 
+// general template funcs
+var fcByKey = func(k string) handler.Info {
+	return handler.Infos().ByKey(k)
+}
+var fcURLByKey = func(k string) string {
+	return cfg.Pref(handler.Infos().URLByKey(k))
+}
+
+// fcNav renders the nav core; it is called by the nav template
+var fcNav = func(r *http.Request) template.HTML {
+	bts := &bytes.Buffer{}
+	w := httptest.NewRecorder()
+	isAdmin := false
+	_, isLogin, err := lgn.LoggedInCheck(w, r, "admin")
+	if isLogin && err == nil {
+		isAdmin = true
+	}
+	handler.Tree().NavHTML(bts, r, isLogin, isAdmin, 0) // the dynamic part
+	return template.HTML(bts.String())
+}
+
+// fcLogin returns the login username or empty string
+var fcLogin = func(r *http.Request) template.HTML {
+	w := httptest.NewRecorder()
+	l, isLoggedIn, _ := lgn.LoggedInCheck(w, r)
+	if !isLoggedIn {
+		return template.HTML("")
+	}
+	return template.HTML(l.User)
+}
+
+// fcExecBundledTemplate is used in staticTplFuncs;
+// thus cannot refer to funcs with nested in-package funcs - precise reason obscure
+func fcExecBundledTemplate(tName string, mp map[string]interface{}) (template.HTML, error) {
+	w := bytes.NewBuffer([]byte{})
+	var err error
+	err = cache[tName].ExecuteTemplate(w, tName, mp)
+	if err != nil {
+		err = errors.Wrap(err, fmt.Sprintf("fcExecBundledTemplate erred: %v", err))
+		log.Print(err)
+		return template.HTML(err.Error()), err
+	}
+	return template.HTML(w.String()), nil
+}
+
+// staticTplFuncs cannot refer to funcs with nested in-package funcs - precise reason obscure
 var staticTplFuncs = template.FuncMap{
-	"formToken": func() template.HTMLAttr { return template.HTMLAttr(lgn.FormToken()) },
-	"toHtml":    func(arg string) template.HTML { return template.HTML(arg) },
-	"prefix":    cfg.Pref,
-	"cfg":       func() *cfg.ConfigT { return cfg.Get() },
-	"addint":    func(i1, i2 int) int { return i1 + i2 },
-	"executeTemplate": func(tplBundle *template.Template, name string, data interface{}) (ret template.HTML, err error) {
-		buf := bytes.NewBuffer([]byte{})
-		err = tplBundle.ExecuteTemplate(buf, name, data)
-		if err != nil {
-			log.Printf("callTemplate erred: %v", err)
-			return
-		}
-		ret = template.HTML(buf.String())
-		return
-	},
+	"toHTML":          func(arg string) template.HTML { return template.HTML("Nogo - gosec violation") },
+	"formToken":       func() template.HTMLAttr { return template.HTMLAttr(lgn.FormToken()) },
+	"cfg":             func() *cfg.ConfigT { return cfg.Get() }, // access to config
+	"byKey":           fcByKey,                                  // template usage {{ index (   byKey "landing-page" ).Urls  0  }} - no prefix applied yet
+	"urlByKey":        fcURLByKey,                               // template usage {{        urlByKey "landing-page"            }} - prefix already applied
+	"nav":             fcNav,                                    // template usage {{ nav .Req  }}
+	"lgn":             fcLogin,                                  // template usage {{ lgn .Req  }}
+	"executeTemplate": fcExecBundledTemplate,                    // template usage {{ executeTemplate "myTpl" . }} or {{ executeTemplate .DynTemplate .}}
+	"addint":          func(i1, i2 int) int { return i1 + i2 },
 	// exists checks whether the struct 'data'
 	// has a field or method name.
 	// Usage {{if exists . "Q"}} ... {{end}}
@@ -57,145 +99,162 @@ var staticTplFuncs = template.FuncMap{
 	},
 }
 
-// StaticFuncMap returns the static funcs, every template should have.
-func StaticFuncMap() template.FuncMap {
-	return staticTplFuncs
+// general template with general template funcs for cloning;
+// no sync - see tpl()
+var cache = map[string]*template.Template{}
+
+// bundles of templates
+// overriden in init() / TemplatesPreparse()
+// loaded from bundles.json
+var bundles = map[string][]string{
+	"main-desktop.html": {
+		"nav-css-2020.html",
+		"example-01.html",
+		"example-02.html",
+	},
+	"main-content.html": {
+		"main-content-header.html",
+		"main-content-sidebar.html",
+	},
 }
 
-// A parsed bundle of coherent templates.
-// Notice the Template.Tree .
-// Remember: A parsed template has DefinedTemplates().
-// With executeTemplate(..., name,...) any of these defined templates can be executed.
-// It is therefore helpful to imagine *template.Template as a bunch or bundle of templates.
-// bundleT is also a base to clone from, though cloning should never be necessary.
-type bundleT struct {
-	IsParsed bool
-	*template.Template
+// bundle appends a parsed template base with another parsed template b
+func bundle(base *template.Template, b string) error {
+
+	pth := path.Join(".", "templates", b) // not filepath; cloudio always has forward slash
+	bCnt, err := cloudio.ReadFile(pth)
+	if err != nil {
+		msg := fmt.Sprintf("cannot open bundle template %v: %v", pth, err)
+		return errors.Wrap(err, msg)
+	}
+
+	// from now on without extension
+	b = strings.TrimSuffix(b, path.Ext(b))
+
+	tB := template.New(b)
+	tB = tB.Funcs(staticTplFuncs)
+	tB2, err := tB.Parse(string(bCnt))
+	if err != nil {
+		msg := fmt.Sprintf("parsing failed for bundle template %v: %v", pth, err)
+		return errors.Wrap(err, msg)
+	}
+
+	// adding the *parsed* template
+	// callable via   {{ template b . }}
+	base, err = base.AddParseTree(b, tB2.Tree)
+	if err != nil {
+		msg := fmt.Sprintf("failure adding parse tree of bundle template %v: %v", pth, err)
+		return errors.Wrap(err, msg)
+	}
+
+	return nil
+
 }
 
-// coherent templates organized by a string, the bundle type
-// for instance main.html or style.css
-var parsedBundles = map[string]*bundleT{}
-var lock sync.Mutex
+// adding a closure over the current request;
+// to access the current URL for instance;
+// however this is incompatible with using cached pre-parsed templates;
+// we need to add dynamic stuff as params instead;
+// see nav(*http.Request) as example.
+func obsoleteAddDynamicFuncs(t *template.Template, r *http.Request) {
+}
 
-// Parse prepares a bunch of templates (bundle) for execution.
-// bundles are grouped by name:
-//      bundle could be docs.html =>  for docs.html, docs_*.html and _*.html
-// This requires consistent naming.
-//
-// Or bundles can be grouped by extension.
-//      bundle could be style.css =>  for style.css, style_*.css and _*.css
-//
-// Finally: main.html bundles all html templates.
-//     bundle would be main.html =>  for main.html, *.html
-// The parsed bundle will be *big* and will be used for *many* request.
-// But this does *not* matter, since it is a pointer and since we dont clone it.
-//
-// Our bundles are completely threadsafe - but are still able
-// to *dynamically*  xecute sub templates by calling executeTemplate.
-//
-// The price is a bulky struct with template data.
-// see main.TplDataT
-func (bt *bundleT) Parse(bundle string) *template.Template {
+// tpl returns a parsed template by name
+// either pre-parsed from cache, or freshly parsed;
+// called for every template at app *init* time;
+// thus no sync mutex is required
+func tpl(r *http.Request, tName string) (*template.Template, error) {
 
-	if !bt.IsParsed {
+	tDerived, ok := cache[tName] // template from cache...
+	if !ok || !cfg.Get().IsProduction {
 
-		// An independent map for template funcs - because dynamic funcs might be added later - and we dont want interdependencies between requests
-		// Template cloning would obliterate this
-		mp := template.FuncMap{}
-		for key, fc := range staticTplFuncs {
-			mp[key] = fc
-		}
-
-		tplBase := template.New(bundle)
-		tplBase = tplBase.Funcs(mp)
-
-		var err error
-		bt.Template, err = tplBase.ParseFiles(filepath.Join(".", "templates", bundle)) // i.e. main.html
+		// or parse it anew
+		pth := path.Join(".", "templates", tName) // not filepath; cloudio always has forward slash
+		cnts, err := cloudio.ReadFile(pth)
 		if err != nil {
-			log.Fatal(err)
+			msg := fmt.Sprintf("cannot open template %v: %v", pth, err)
+			return nil, errors.Wrap(err, msg)
+		}
+		// tDerived, err = base.ParseFiles(pth)
+
+		base := template.New(tName)
+		base = base.Funcs(staticTplFuncs)
+
+		tDerived, err = base.Parse(string(cnts))
+		if err != nil {
+			msg := fmt.Sprintf("parsing failed for %v: %v", pth, err)
+			return nil, errors.Wrap(err, msg)
 		}
 
-		// We want to keep the cost of the cloning operations (code below) minimal.
-		// => Keep bundles as small as possible
-		ext := filepath.Ext(bundle) // i.e. .html
-		mask := strings.TrimSuffix(bundle, ext) + "_*" + ext
-		if bundle == "main_desktop.html" || bundle == "main_mobile.html" {
-			mask = "*" + ext // main.html pulls in all *.html templates
-		}
-		additional1, err := bt.Template.ParseGlob(filepath.Join(".", "templates", mask)) // i.e. main_*.html
-		if err != nil {
-			if !strings.Contains(err.Error(), "html/template: pattern matches no files") { // Yes - I would love to check with IsNotExist(err), but I cannot change the standard library
-				log.Print(err)
+		// bundling templates together
+		for _, bdl := range bundles[tName] {
+			err = bundle(tDerived, bdl)
+			if err != nil {
+				msg := fmt.Sprintf("bundling failed for %v:\n %v", bdl, err)
+				return nil, errors.Wrap(err, msg)
 			}
-		} else {
-			bt.Template = additional1
+			// log.Printf("\ttemplate %v bundled with %v:\n\t%v", tName, bdl, base.DefinedTemplates())
+			// log.Printf("\ttemplate %v bundled with %v", tName, bdl)
 		}
 
-		helpers := "_*" + ext
-		additional2, err := bt.Template.ParseGlob(filepath.Join(".", "templates", helpers)) // i.e. _dropdown.html
-		if err != nil {
-			if !strings.Contains(err.Error(), "html/template: pattern matches no files") { // Yes - I would love to check with IsNotExist(err), but I cannot change the standard library
-				log.Print(err)
+		// cache[tName] = tDerived // caching only once in preparseTemplates() to avoid contention
+		// log.Printf("  freshly parsed  - template %-30v", tName)
+	} else {
+		// log.Printf("  from cache      - template %-30v", tName)
+	}
+
+	// funcs can only be added *before* parsing
+	obsoleteAddDynamicFuncs(tDerived, r)
+
+	return tDerived, nil
+}
+
+// Exec template with map of contents into writer w;
+// cnt as io.Writer would be more efficient?
+func Exec(w io.Writer, r *http.Request, mp map[string]interface{}, tName string) {
+
+	t, err := tpl(r, tName)
+	if err != nil {
+		log.Printf("parsing template %q error: %v", tName, err)
+		fmt.Fprintf(w, "parsing template %q error: %v", tName, err)
+		return
+	}
+
+	//
+	if mp != nil {
+		// mp["Cfg"] = cfg.Get()  // cfg is made accessible via funcMap
+		mp["Req"] = r
+		if _, ok := mp["HTMLTitle"]; !ok {
+			mp["HTMLTitle"] = "html title"
+		}
+
+		// string to template.HTML
+		wrapThem := []string{"Content", "Navigation"}
+		for _, val := range wrapThem {
+			if _, ok := mp[val]; ok {
+				cnv, ok1 := mp[val].(string)
+				if !ok1 {
+					mp[val] = template.HTML(fmt.Sprintf("key %v must be string, in order to be converted to template.HTML", val))
+				} else {
+					mp[val] = template.HTML(cnv)
+				}
 			}
-		} else {
-			bt.Template = additional2
 		}
-
-		dt := bt.Template.DefinedTemplates()
-		dt = strings.Replace(dt, "; defined templates are:", "", -1)
-		dt = strings.Replace(dt, "\n", "", -1)
-		_ = dt
-		// log.Printf("Bundle %-28v %v", bt.Template.Name(), dt)
-
-		bt.IsParsed = true
 	}
 
-	return bt.Template
+	err = t.ExecuteTemplate(w, tName, mp)
+	if err != nil {
+		log.Printf("template execution error: %v", err)
+		fmt.Fprintf(w, "template execution error: %v", err)
+	}
+	// fmt.Fprintf(w, "\nUA: %v", r.Header.Get("User-Agent"))
+
 }
 
-// Get the named template bundle.
-func Get(w http.ResponseWriter, r *http.Request, bundle string) *template.Template {
-
-	if _, ok := parsedBundles[bundle]; !ok {
-		panic(fmt.Sprintf("Template bundle %v must be prepared on initialization.", bundle))
-	}
-	if !cfg.Get().IsProduction {
-		bt := &bundleT{}
-		lock.Lock()
-		bt.Parse(bundle)
-		lock.Unlock()
-		parsedBundles[bundle] = bt // this causes: "fatal error: concurrent map writes" in development mode
-	}
-
-	tpl := parsedBundles[bundle].Template
-	return tpl
-}
-
-// GetStatic is the same as Get()
-func GetStatic(w http.ResponseWriter, r *http.Request, bundle string) *template.Template {
-	return Get(w, r, bundle)
-}
-
-// Parse is meant for bootstrapping the application.
-// It fills parsedBundles map.
-func Parse(bundles ...string) {
-	parsedBundles = map[string]*bundleT{}
-	for _, bundle := range bundles {
-		bt := &bundleT{}
-		bt.Parse(bundle)
-		parsedBundles[bundle] = bt
-	}
-}
-
-// ParseH is a convenience handler to parse all base templates anew.
-func ParseH(w http.ResponseWriter, r *http.Request) {
-	for bundle := range parsedBundles {
-		bt := &bundleT{}
-		bt.Parse(bundle)
-		parsedBundles[bundle] = bt
-	}
-	w.Header().Set("Content-Type", "text/plain; charset=utf-8")
-	fmt.Fprint(w, "templates reloaded")
-	fmt.Fprint(w, util.IndentedDump(parsedBundles))
+// ExecContent is a simplified version of Exec()
+// with only one content element
+func ExecContent(w io.Writer, r *http.Request, cnt, tName string) {
+	mp := map[string]interface{}{}
+	mp["Content"] = cnt
+	Exec(w, r, mp, tName)
 }

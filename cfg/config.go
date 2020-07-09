@@ -67,7 +67,8 @@ type ConfigT struct {
 	AppInstanceID int64    `json:"app_instance_id,omitempty"` // append to URLs of cached static jpg, js and css files - change to trigger reload
 	LangCodes     []string `json:"lang_codes"`
 
-	CSS map[string]string `json:"css"` // differentiate multiple instances by color and stuff - without duplicating entire css files
+	CSSVars     cssVars            `json:"css_vars"`      // global CSS variables
+	CSSVarsSite map[string]cssVars `json:"css_vars_site"` // site specific overwrites of css_vars
 
 	CPUProfile string `json:"cpu_profile"` // the filename to write to
 
@@ -80,7 +81,7 @@ type ConfigT struct {
 	// Profiles are sets of attributes, selected by the `p` parameter at login, containing key-values which are copied into the logged in user's attributes
 	Profiles map[string]map[string]string
 
-	AnonymousSurveyID string              `json:"anonymous_survey_id,omitempty"` // anonymous survey ID login to which survey?
+	AnonymousSurveyID string              `json:"anonymous_survey_id,omitempty"` // anonymous login - redirect / forward url
 	DirectLoginRanges []directLoginRangeT `json:"direct_login_ranges,omitempty"` // user id to language preselection for direct login
 }
 
@@ -152,6 +153,11 @@ func Load(r io.Reader) {
 
 	tempCfg.AppInstanceID = time.Now().Unix()
 
+	for key := range tempCfg.CSSVarsSite {
+		tempCfg.CSSVarsSite[key] = Stack(tempCfg.CSSVars, tempCfg.CSSVarsSite[key])
+		log.Printf("combined CSSVars base plus %-10s- computed; %v entries", key, len(tempCfg.CSSVarsSite[key]))
+	}
+
 	//
 	cfgS = &tempCfg // replace pointer in one go - should be threadsafe
 	dmp := util.IndentedDump(cfgS)
@@ -209,7 +215,7 @@ func PrefTS(pth ...string) string {
 func Example() *ConfigT {
 	ex := &ConfigT{
 		IsProduction:           true,
-		AppName:                "My Example App",
+		AppName:                "My Example App Label",
 		URLPathPrefix:          "exmpl",
 		AppMnemonic:            "exmpl",
 		HostName:               "survey2.zew.de",
@@ -228,11 +234,65 @@ func Example() *ConfigT {
 		LocationName:           "Europe/Berlin",
 		SessionTimeout:         2,
 		FormTimeout:            2,
-		CSS: map[string]string{
-			"body_background_color": "#e2e2e2",
+		CSSVars: cssVars{
+			{Key: "logo-text", Val: "ZEW"},
+			{IsURL: true, Key: "img-bg", Val: "/img/ui/bg-bw-bland.jpg"},
+			{IsURL: true, Key: "img-logo-icon", Val: "/img/ui/icon-forschung-zew-prim.svg"},
+			{IsURL: true, Key: "img-loggedin-icon", Val: "/img/ui/logged-in-icon-zew.svg"},
+			{Key: "nav-height", Val: "8vh"},
+			{Key: "nav-rest-height", Val: "calc(100vh - var(--nav-height))", Desc: "we can calc() the remainder"},
+			{Key: "nav-bar-position", Val: "relative", Desc: "fixed or relative"},
+			{Key: "content-top", Val: "0", Desc: "fixed navbar => content-top = var(--nav-height); otherwise 0"},
+			{Key: "bg", Colorname: "white", Desc: "main background f <body>"},
+			{Key: "fg", Colorname: "black", Desc: "main foreground"},
+			{Key: "input-bg", Colorname: "white", Desc: "input+select background"},
+			{Key: "input-fg", Colorname: "black", Desc: "input+select foreground"},
+			{Key: "valid", R: 233, G: 255, B: 233, Alpha: .999, Desc: "ok, valid"}, // slight hue of input-bg, otherwise too annoying for empty inputs
+			{Key: "err", Colorname: "lightcoral", Desc: "errors and alerts"},
+			{Key: "pri", R: 000, G: 105, B: 180, Alpha: .999, Desc: "primary color"},
+			{Key: "pri-hov", R: 002, G: 134, B: 228, Desc: "hover   - slightly lighter"},
+			{Key: "pri-vis", R: 000, G: 071, B: 122, Desc: "visited - slightly darker"},
+			{Key: "sec", R: 228, G: 223, B: 206, Alpha: 1.0},
+			{Key: "sec-drk1", R: 219, G: 216, B: 194, Desc: "darker, for menu 3"},
+			{Key: "sec-drk2", R: 190, G: 187, B: 170, Desc: "darker, for borders"},
+			{Key: "zew2-md", R: 207, G: 136, B: 135},
+			{Key: "zew2-dk", R: 177, G: 29, B: 28},
+			{Key: "zew3-md", R: 138, G: 187, B: 206},
+			{Key: "zew3-dk", R: 22, G: 119, B: 158},
+			{Key: "zew4-md", R: 202, G: 192, B: 156},
+			{Key: "zew4-dk", R: 149, G: 129, B: 58},
+			{Key: "zew5-md", R: 233, G: 206, B: 134},
+			{Key: "zew5-dk", R: 211, G: 158, B: 13},
+		},
+		CSSVarsSite: map[string]cssVars{
+			"site1": {
+				{Key: "logo-text", Val: "4WALLS"},
+				{IsURL: true, Key: "img-bg", Val: "none"},
+				{IsURL: true, Key: "img-logo-icon", Val: "/img/ui/4walls-logo-3.png"},
+				{IsURL: true, Key: "img-loggedin-icon", Val: "/img/ui/logged-in-icon-4walls.svg"},
+				{Key: "bg", R: 12, G: 12, B: 12, Desc: "main background f <body>"},
+				{Key: "fg", R: 224, G: 224, B: 224, Alpha: .999, Desc: "main foreground"},
+				{Key: "input-bg", R: 224, G: 224, B: 224, Desc: "input+select background"},
+				{Key: "input-fg", R: 12, G: 12, B: 12, Desc: "input+select foreground"},
+				{Key: "pri", R: 216, G: 29, B: 160, Alpha: .999, Desc: "primary color"},
+				{Key: "pri-hov", R: 250, G: 50, B: 200, Desc: "hover   - slightly lighter"},
+				{Key: "pri-vis", R: 166, G: 12, B: 120, Desc: "visited - slightly darker"},
+
+				{Key: "pri", R: 247, G: 19, B: 78, Alpha: .999, Desc: "primary color"},
+				{Key: "pri-hov", R: 255, G: 45, B: 100, Desc: "hover   - slightly lighter"},
+				{Key: "pri-vis", R: 200, G: 9, B: 90, Desc: "visited - slightly darker"},
+
+				{Key: "sec", R: 48, G: 48, B: 48, Alpha: 1.0},
+				{Key: "sec-drk1", R: 32, G: 32, B: 32, Desc: "darker, for menu 3"},
+				{Key: "sec-drk2", R: 1, G: 1, B: 1, Desc: "darker, for borders"},
+			}, "zew": {
+				{Key: "dummy", R: 48, G: 48, B: 48, Alpha: 1.0},
+			},
 		},
 		AppInstanceID: time.Now().Unix(),
 		LangCodes:     []string{"de", "en", "es", "fr", "it", "pl"},
+		CPUProfile:    "", // the filename, i.e. cpu.pprof
+
 		Profiles: map[string]map[string]string{
 			"fmt1": {
 				"lang_code":               "de",
@@ -243,6 +303,7 @@ func Example() *ConfigT {
 				"main_refinance_rate_ecb": "3.5",
 			},
 		},
+		AnonymousSurveyID: "4walls",
 		DirectLoginRanges: []directLoginRangeT{
 			{
 				Start:    1000 + 0,

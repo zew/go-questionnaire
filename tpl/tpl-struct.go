@@ -15,7 +15,7 @@ import (
 // It is meant to be embedded/extended by various apps
 type TplDataT struct {
 	TplBundle *template.Template // A bundle of compiled templates, so we can can executeTemplate(TplBundle, name, data) without independently of the request
-	TS        *StackT            // Stack of template names to pop from
+	// TS        *StackT            // Stack of template names to pop from
 
 	// Access to session and request values
 	// Session also transmits the language via lang_code to main.html

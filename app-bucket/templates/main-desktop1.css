@@ -22,7 +22,7 @@ body {
 	margin: 24px;
 	padding-top:    48px; /*for header*/
 	padding-bottom: 35px; /*for footer*/
-	background-color:{{ .body_background_color }};
+	background-color: #ccc;
 
 	font-family: tahoma;
 	font-size:   14px;  

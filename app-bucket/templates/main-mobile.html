@@ -14,16 +14,16 @@
     <link rel="shortcut icon" href="data:;base64,=">
     <link rel="icon"          href="data:;base64,=">
     <!-- Mobile Icon up to 192x192 
-    <link rel="icon"          href="{{prefix "/img/ui/favicon-mobile.png"}}"  sizes="192x192" >
-    <link rel="shortcut icon" href="{{prefix "/img/ui/favicon-mobile.png"}}"  sizes="192x192" >    
+    <link rel="icon"          href="cfg.Pref "/img/ui/favicon-mobile.png"}}"  sizes="192x192" >
+    <link rel="shortcut icon" href="cfg.Pref "/img/ui/favicon-mobile.png"}}"  sizes="192x192" >    
     -->
 
     <title>{{.Trls.app_label.Tr $lc}}</title>
-    <link href="{{prefix "/css/main_mobile.css"}}" rel="stylesheet" type="text/css" />
-    <link href="{{prefix "/css/main_mobile_menu_without_js.css"}}" rel="stylesheet" type="text/css" />
+    <link href="cfg.Pref "/css/main-mobile.css"}}" rel="stylesheet" type="text/css" />
+    <link href="cfg.Pref "/css/main-mobile-menu_without_js.css"}}" rel="stylesheet" type="text/css" />
 	{{if exists . "Q"}}
 		{{if ne .Q.Survey.Type ""}}
-			<link href="{{prefix "/css/main_mobile_"}}{{.Q.Survey.Type}}.css" rel="stylesheet" type="text/css" />
+			<link href="cfg.Pref "/css/main-mobile-"}}{{.Q.Survey.Type}}.css" rel="stylesheet" type="text/css" />
 		{{end}}
 	{{end}}
 
@@ -94,7 +94,7 @@
     </div>
 
     <!-- width=100% inscribe -->
-    <form method="POST" action="{{prefix ""}}" class='go-quest-main-form' name='frmMain' >
+    <form method="POST" action="cfg.Pref ""}}" class='go-quest-main-form' name='frmMain' >
 
 
         <input id="chkbx" class="chkbx" type="checkbox" />

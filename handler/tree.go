@@ -19,10 +19,10 @@ type TreeT struct {
 func Tree() *TreeT {
 
 	return &TreeT{
-		Node: Info{Title: "Root Node", Visible: true},
+		Node: Info{Title: "Root Node", InNav: true},
 		Children: []TreeT{
 			{Node: infos.ByKey("create-anonymous-id")},
-			{Node: Info{Title: "Sys admin", Visible: true},
+			{Node: Info{Title: "Sys admin", InNav: true},
 				Children: []TreeT{
 					{Node: infos.ByKey("login-primitive")},
 					{Node: infos.ByKey("logout")},
@@ -124,7 +124,7 @@ func (t *TreeT) NavHTML(w io.Writer, r *http.Request, isLogin, isAdmin bool, lvl
 		return
 	}
 
-	if t.Node.Visible {
+	if t.Node.InNav {
 
 		htmlIndent := strings.Repeat(" ", 10*lvl) // just for readability in HTML source
 		navURL := ""

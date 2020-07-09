@@ -1,6 +1,6 @@
 {
  	"is_production": true,
- 	"app_name": "My Example App",
+ 	"app_name": "My Example App Label",
  	"urlpath_prefix": "exmpl",
  	"app_mnemonic": "exmpl",
  	"lets_encrypt": false,
@@ -24,7 +24,7 @@
  	"location": "Europe/Berlin",
  	"session_timeout": 2,
  	"form_timeout": 2,
- 	"app_instance_id": 1594057716,
+ 	"app_instance_id": 1594385063,
  	"lang_codes": [
  		"de",
  		"en",
@@ -33,6 +33,294 @@
  		"it",
  		"pl"
  	],
+ 	"css_vars": [
+ 		{
+ 			"key": "logo-text",
+ 			"val": "ZEW"
+ 		},
+ 		{
+ 			"key": "img-bg",
+ 			"val": "/img/ui/bg-bw-bland.jpg",
+ 			"is_url": true
+ 		},
+ 		{
+ 			"key": "img-logo-icon",
+ 			"val": "/img/ui/icon-forschung-zew-prim.svg",
+ 			"is_url": true
+ 		},
+ 		{
+ 			"key": "img-loggedin-icon",
+ 			"val": "/img/ui/logged-in-icon-zew.svg",
+ 			"is_url": true
+ 		},
+ 		{
+ 			"key": "nav-height",
+ 			"val": "8vh"
+ 		},
+ 		{
+ 			"key": "nav-rest-height",
+ 			"val": "calc(100vh - var(--nav-height))",
+ 			"desc": "we can calc() the remainder"
+ 		},
+ 		{
+ 			"key": "nav-bar-position",
+ 			"val": "relative",
+ 			"desc": "fixed or relative"
+ 		},
+ 		{
+ 			"key": "content-top",
+ 			"val": "0",
+ 			"desc": "fixed navbar =\u003e content-top = var(--nav-height); otherwise 0"
+ 		},
+ 		{
+ 			"key": "bg",
+ 			"desc": "main background f \u003cbody\u003e",
+ 			"color_name": "white"
+ 		},
+ 		{
+ 			"key": "fg",
+ 			"desc": "main foreground",
+ 			"color_name": "black"
+ 		},
+ 		{
+ 			"key": "input-bg",
+ 			"desc": "input+select background",
+ 			"color_name": "white"
+ 		},
+ 		{
+ 			"key": "input-fg",
+ 			"desc": "input+select foreground",
+ 			"color_name": "black"
+ 		},
+ 		{
+ 			"key": "valid",
+ 			"desc": "ok, valid",
+ 			"r": 233,
+ 			"g": 255,
+ 			"b": 233,
+ 			"alpha": 0.999
+ 		},
+ 		{
+ 			"key": "err",
+ 			"desc": "errors and alerts",
+ 			"color_name": "lightcoral"
+ 		},
+ 		{
+ 			"key": "pri",
+ 			"desc": "primary color",
+ 			"g": 105,
+ 			"b": 180,
+ 			"alpha": 0.999
+ 		},
+ 		{
+ 			"key": "pri-hov",
+ 			"desc": "hover   - slightly lighter",
+ 			"r": 2,
+ 			"g": 134,
+ 			"b": 228
+ 		},
+ 		{
+ 			"key": "pri-vis",
+ 			"desc": "visited - slightly darker",
+ 			"g": 57,
+ 			"b": 122
+ 		},
+ 		{
+ 			"key": "sec",
+ 			"r": 228,
+ 			"g": 223,
+ 			"b": 206,
+ 			"alpha": 1
+ 		},
+ 		{
+ 			"key": "sec-drk1",
+ 			"desc": "darker, for menu 3",
+ 			"r": 219,
+ 			"g": 216,
+ 			"b": 194
+ 		},
+ 		{
+ 			"key": "sec-drk2",
+ 			"desc": "darker, for borders",
+ 			"r": 190,
+ 			"g": 187,
+ 			"b": 170
+ 		},
+ 		{
+ 			"key": "zew2-md",
+ 			"r": 207,
+ 			"g": 136,
+ 			"b": 135
+ 		},
+ 		{
+ 			"key": "zew2-dk",
+ 			"r": 177,
+ 			"g": 29,
+ 			"b": 28
+ 		},
+ 		{
+ 			"key": "zew3-md",
+ 			"r": 138,
+ 			"g": 187,
+ 			"b": 206
+ 		},
+ 		{
+ 			"key": "zew3-dk",
+ 			"r": 22,
+ 			"g": 119,
+ 			"b": 158
+ 		},
+ 		{
+ 			"key": "zew4-md",
+ 			"r": 202,
+ 			"g": 192,
+ 			"b": 156
+ 		},
+ 		{
+ 			"key": "zew4-dk",
+ 			"r": 149,
+ 			"g": 129,
+ 			"b": 58
+ 		},
+ 		{
+ 			"key": "zew5-md",
+ 			"r": 233,
+ 			"g": 206,
+ 			"b": 134
+ 		},
+ 		{
+ 			"key": "zew5-dk",
+ 			"r": 211,
+ 			"g": 158,
+ 			"b": 13
+ 		}
+ 	],
+ 	"css_vars_site": {
+ 		"site1": [
+ 			{
+ 				"key": "logo-text",
+ 				"val": "4WALLS"
+ 			},
+ 			{
+ 				"key": "img-bg",
+ 				"val": "none",
+ 				"is_url": true
+ 			},
+ 			{
+ 				"key": "img-logo-icon",
+ 				"val": "/img/ui/4walls-logo-3.png",
+ 				"is_url": true
+ 			},
+ 			{
+ 				"key": "img-loggedin-icon",
+ 				"val": "/img/ui/logged-in-icon-4walls.svg",
+ 				"is_url": true
+ 			},
+ 			{
+ 				"key": "bg",
+ 				"desc": "main background f \u003cbody\u003e",
+ 				"r": 12,
+ 				"g": 12,
+ 				"b": 12
+ 			},
+ 			{
+ 				"key": "fg",
+ 				"desc": "main foreground",
+ 				"r": 224,
+ 				"g": 224,
+ 				"b": 224,
+ 				"alpha": 0.999
+ 			},
+ 			{
+ 				"key": "input-bg",
+ 				"desc": "input+select background",
+ 				"r": 224,
+ 				"g": 224,
+ 				"b": 224
+ 			},
+ 			{
+ 				"key": "input-fg",
+ 				"desc": "input+select foreground",
+ 				"r": 12,
+ 				"g": 12,
+ 				"b": 12
+ 			},
+ 			{
+ 				"key": "pri",
+ 				"desc": "primary color",
+ 				"r": 216,
+ 				"g": 29,
+ 				"b": 160,
+ 				"alpha": 0.999
+ 			},
+ 			{
+ 				"key": "pri-hov",
+ 				"desc": "hover   - slightly lighter",
+ 				"r": 250,
+ 				"g": 50,
+ 				"b": 200
+ 			},
+ 			{
+ 				"key": "pri-vis",
+ 				"desc": "visited - slightly darker",
+ 				"r": 166,
+ 				"g": 12,
+ 				"b": 120
+ 			},
+ 			{
+ 				"key": "pri",
+ 				"desc": "primary color",
+ 				"r": 247,
+ 				"g": 19,
+ 				"b": 78,
+ 				"alpha": 0.999
+ 			},
+ 			{
+ 				"key": "pri-hov",
+ 				"desc": "hover   - slightly lighter",
+ 				"r": 255,
+ 				"g": 45,
+ 				"b": 100
+ 			},
+ 			{
+ 				"key": "pri-vis",
+ 				"desc": "visited - slightly darker",
+ 				"r": 200,
+ 				"g": 9,
+ 				"b": 90
+ 			},
+ 			{
+ 				"key": "sec",
+ 				"r": 48,
+ 				"g": 48,
+ 				"b": 48,
+ 				"alpha": 1
+ 			},
+ 			{
+ 				"key": "sec-drk1",
+ 				"desc": "darker, for menu 3",
+ 				"r": 32,
+ 				"g": 32,
+ 				"b": 32
+ 			},
+ 			{
+ 				"key": "sec-drk2",
+ 				"desc": "darker, for borders",
+ 				"r": 1,
+ 				"g": 1,
+ 				"b": 1
+ 			}
+ 		],
+ 		"zew": [
+ 			{
+ 				"key": "dummy",
+ 				"r": 48,
+ 				"g": 48,
+ 				"b": 48,
+ 				"alpha": 1
+ 			}
+ 		]
+ 	},
  	"cpu_profile": "",
  	"allow_skip_forward": false,
  	"translation_map": {
@@ -215,6 +503,7 @@
  			"main_refinance_rate_ecb": "3.5"
  		}
  	},
+ 	"anonymous_survey_id": "4walls",
  	"direct_login_ranges": [
  		{
  			"start": 1000,

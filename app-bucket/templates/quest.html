@@ -47,7 +47,7 @@
 <div class="hori-center-me">
 
     <!-- width=100% inscribe -->
-    <form method="POST" action="cfg.Pref ""}}" class='go-quest-main-form' name='frmMain' >
+    <form method="POST" action="{{cfg.Pref ""}}" class='go-quest-main-form' name='frmMain' >
         
         <div id="t-row-1">
             <div class='table-cell-1'>
@@ -58,7 +58,7 @@
                 -->
 
                 {{if .Q.HasErrors}}
-                    <p class="error" id="error" style="font-size:16px;margin: 20px 0px; ">{{.Trls.correct_errors.Tr .Q.LangCode}}  </p>
+                    <p class="error" id="error" style="font-size:16px;margin: 20px 0px; ">{{.MoreFuncs.Trls.correct_errors.Tr .Q.LangCode}}  </p>
                     <script>
                         $("#error").css("display","none");           
                         $("#error").fadeIn("slow", function () {
@@ -68,7 +68,7 @@
                 {{end}}
                 
                 <input type="hidden" name="token" value="{{formToken}}" />
-                {{toHtml (.Q.CurrentPageHTML) }}
+                {{toHTML (.Q.CurrentPageHTML) }}
 
 
             </div><!-- /table-cell-1 --> 
@@ -84,7 +84,7 @@
                     display: inline-block; 
                     width: 75%;
                 ">
-                    {{toHtml (.Q.ProgressBar) }}
+                    {{toHTML (.Q.ProgressBar) }}
                 </div>
 
 
@@ -92,7 +92,7 @@
                     {{if .Q.HasNext}}
                     <!-- name="submitBtn" conflicts with JS form.submit() -->
                     <button type="submit" name="submitBtn" value="next" accesskey="n">
-                        {{.Trls.page.Tr .Q.LangCode}} {{.Q.NextNaviNum}} >>
+                        {{.MoreFuncs.Trls.page.Tr .Q.LangCode}} {{.Q.NextNaviNum}} >>
                     </button>
                     {{end}}
                     &nbsp;
@@ -109,7 +109,7 @@
                                             width: 86px;
                                             padding: 2px;
                                             '>
-                            << {{.Trls.page.Tr .Q.LangCode}} {{.Q.PrevNaviNum}} 
+                            << {{.MoreFuncs.Trls.page.Tr .Q.LangCode}} {{.Q.PrevNaviNum}} 
                         </button>
                     {{end}}
                 </div>

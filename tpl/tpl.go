@@ -24,6 +24,7 @@ import (
 	"github.com/zew/go-questionnaire/cloudio"
 	"github.com/zew/go-questionnaire/handler"
 	"github.com/zew/go-questionnaire/lgn"
+	"github.com/zew/go-questionnaire/sessx"
 )
 
 // general template funcs
@@ -73,7 +74,8 @@ func fcExecBundledTemplate(tName string, mp map[string]interface{}) (template.HT
 
 // staticTplFuncs cannot refer to funcs with nested in-package funcs - precise reason obscure
 var staticTplFuncs = template.FuncMap{
-	"toHTML":          func(arg string) template.HTML { return template.HTML("Nogo - gosec violation") },
+	// "toHTML":          func(arg string) template.HTML { return template.HTML("gosec violation") },
+	"toHTML":          func(arg string) template.HTML { return template.HTML(arg) },
 	"formToken":       func() template.HTMLAttr { return template.HTMLAttr(lgn.FormToken()) },
 	"cfg":             func() *cfg.ConfigT { return cfg.Get() }, // access to config
 	"byKey":           fcByKey,                                  // template usage {{ index (   byKey "landing-page" ).Urls  0  }} - no prefix applied yet
@@ -209,8 +211,24 @@ func tpl(r *http.Request, tName string) (*template.Template, error) {
 	return tDerived, nil
 }
 
-// Exec template with map of contents into writer w;
-// cnt as io.Writer would be more efficient?
+/*
+Exec template with map of contents into writer w;
+cnt as io.Writer would be more efficient?
+
+Automatically created keys
+		Req
+		Sess
+		L
+		MoreFuncs
+
+Keys expected to be supplied by caller
+		Content
+
+Keys possibly supplied by caller
+		HTMLTitle
+		Navigation
+
+*/
 func Exec(w io.Writer, r *http.Request, mp map[string]interface{}, tName string) {
 
 	t, err := tpl(r, tName)
@@ -221,27 +239,57 @@ func Exec(w io.Writer, r *http.Request, mp map[string]interface{}, tName string)
 	}
 
 	//
-	if mp != nil {
-		// mp["Cfg"] = cfg.Get()  // cfg is made accessible via funcMap
-		mp["Req"] = r
-		if _, ok := mp["HTMLTitle"]; !ok {
-			mp["HTMLTitle"] = "html title"
-		}
+	if mp == nil {
+		mp = map[string]interface{}{}
+	}
 
-		// string to template.HTML
-		wrapThem := []string{"Content", "Navigation"}
-		for _, val := range wrapThem {
-			if _, ok := mp[val]; ok {
-				cnv, ok1 := mp[val].(string)
-				if !ok1 {
-					mp[val] = template.HTML(fmt.Sprintf("key %v must be string, in order to be converted to template.HTML", val))
-				} else {
-					mp[val] = template.HTML(cnv)
-				}
+	// set certain keys automatically
+
+	// mp["Cfg"] = cfg.Get()  // cfg is made accessible via funcMap
+
+	mp["Req"] = r
+
+	if _, ok := mp["Sess"]; !ok {
+		mp["Sess"] = sessx.New(w, r)
+	}
+
+	if _, ok := mp["L"]; !ok {
+		l, _, err := lgn.LoggedInCheck(w, r)
+		if err != nil {
+			log.Printf("Login by hash error: %v", err)
+			fmt.Fprintf(w, "Login by hash error: %v", err)
+		}
+		// if !isLoggedIn { // valid condition
+		mp["L"] = l
+	}
+
+	// move these four funcs into staticTplFuncs
+	if _, ok := mp["MoreFuncs"]; !ok {
+		mp["MoreFuncs"] = TplDataT{}
+	}
+
+	if _, ok := mp["HTMLTitle"]; !ok {
+		mp["HTMLTitle"] = "html-title"
+	}
+
+	if _, ok := mp["Content"]; !ok {
+		mp["Content"] = "no-content-supplied"
+	}
+
+	// string to template.HTML
+	wrapThem := []string{"Content", "Navigation"}
+	for _, val := range wrapThem {
+		if _, ok := mp[val]; ok {
+			cnv, ok1 := mp[val].(string)
+			if !ok1 {
+				mp[val] = template.HTML(fmt.Sprintf("key %v must be string, to be converted to template.HTML", val))
+			} else {
+				mp[val] = template.HTML(cnv)
 			}
 		}
 	}
 
+	//
 	err = t.ExecuteTemplate(w, tName, mp)
 	if err != nil {
 		log.Printf("template execution error: %v", err)

@@ -49,7 +49,7 @@ type Info struct {
 
 	Handler http.HandlerFunc `json:"-"`
 
-	Visible  bool   `json:"visible,omitempty"`   // Show in Navigation
+	InNav    bool   `json:"in_nav,omitempty"`    // Show in Navigation
 	NewCol   bool   `json:"new_col,omitempty"`   // Start new column afterwards
 	ShortCut string `json:"short_cut,omitempty"` // accesskey attribute in main navi
 

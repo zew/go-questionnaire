@@ -52,6 +52,10 @@ func main() {
 
 	*/
 	mux1 := http.NewServeMux() // base router
+	// markdown files in /doc
+	tpl.NewDocServer("/doc/")
+	mux1.HandleFunc("/doc", tpl.ServeDoc)
+
 	//
 	// Login primitives for everybody
 	mux1.HandleFunc(cfg.Pref("/login-primitive"), lgn.LoginPrimitiveH)
@@ -61,7 +65,7 @@ func main() {
 	mux1.Handle(cfg.Pref("/session-put"), wrap.MustAdmin(sessx.SessionPut))
 	mux1.Handle(cfg.Pref("/session-get"), wrap.MustAdmin(sessx.SessionGet))
 	mux1.Handle(cfg.Pref("/config-reload"), wrap.MustAdmin(handlers.ConfigReloadH))
-	mux1.Handle(cfg.Pref("/templates-reload"), wrap.MustAdmin(tpl.ParseH))
+	mux1.Handle(cfg.Pref("/templates-reload"), wrap.MustAdmin(tpl.TemplatesPreparse))
 	// Workflow - logins for survey
 	mux1.Handle(cfg.Pref("/generate-questionnaire-templates"), wrap.MustAdmin(generators.GenerateQuestionnaireTemplates))
 	mux1.Handle(cfg.PrefTS("/generate-questionnaire-templates"), wrap.MustAdmin(generators.GenerateQuestionnaireTemplates))
@@ -125,8 +129,6 @@ func main() {
 	}
 	// Extra handler for dynamic css - served from templates
 	mux4.HandleFunc(cfg.PrefTS("/css/"), tpl.ServeDynCSS)
-	// markdown files in /doc
-	tpl.CreateAndRegisterHandlerForDocs(mux4)
 
 	serveIcon := func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "image/x-icon")

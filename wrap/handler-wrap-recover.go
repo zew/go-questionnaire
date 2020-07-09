@@ -5,7 +5,6 @@ package wrap
 import (
 	"context"
 	"fmt"
-	"log"
 	"net/http"
 	"strings"
 	"time"
@@ -71,7 +70,7 @@ func (m *logAndRecover) ServeHTTP(w http.ResponseWriter, rNew *http.Request) {
 	// Global session stuff
 	sess := sessx.New(w, rNew)
 	sess.PutString("session-test-key", "session-test-value")
-	paramPersister(rNew, &sess) // before creating first state
+	paramPersister(rNew, sess) // before creating first state
 
 	/*
 		Filippo Valsorda
@@ -94,7 +93,7 @@ func (m *logAndRecover) ServeHTTP(w http.ResponseWriter, rNew *http.Request) {
 			}
 		}
 		if apply {
-			log.Printf("DE-creasing req timeout to %v for %v", perReqTimeout, rNew.URL.Path)
+			// log.Printf("*de*creasing req timeout to %v for %v", perReqTimeout, rNew.URL.Path)
 			ctx, perReqCancel := context.WithTimeout(rNew.Context(), time.Duration(perReqTimeout*time.Second))
 			defer perReqCancel()
 			rNew = rNew.WithContext(ctx)

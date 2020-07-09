@@ -19,6 +19,13 @@ import (
 	"github.com/zew/go-questionnaire/sessx"
 )
 
+var sfx = strings.HasSuffix // alias for function
+var pfx = strings.HasPrefix
+
+type staticPrefixT string // significant url path fragment
+
+var packageDocPrefix = staticPrefixT("/doc/") // application singleton
+
 // MarkDownFromFile handles markdown rendering;
 // files reside inside ./app-bucket/content;
 // files are further specified by /[site]/[lang]/subPth
@@ -44,8 +51,8 @@ func MarkDownFromFile(subPth, site, lang string) (string, error) {
 		//          /urlprefix/doc/somedir/my-img.png
 		//                    /doc/somedir/my-img.png  (without prefix)
 		{
-			needle := []byte("(./app-bucket/content/")
-			subst := []byte("(" + cfg.PrefTS("/doc"))
+			needle := []byte("./app-bucket/content/")
+			subst := []byte(cfg.PrefTS(string(packageDocPrefix)))
 			bts = bytes.Replace(bts, needle, subst, -1)
 		}
 
@@ -68,9 +75,13 @@ func MarkDownFromFile(subPth, site, lang string) (string, error) {
 
 		{
 			// static and dynamic link back
-			needle := []byte("(./../../../../README.md")
+			needle1 := []byte("(./../../../../../../README.md")
+			needle2 := []byte("(./../../../../../README.md")
+			needle3 := []byte("(./../../../../README.md")
 			subst := []byte("(" + cfg.Pref("/doc/README.md"))
-			bts = bytes.Replace(bts, needle, subst, -1)
+			bts = bytes.Replace(bts, needle1, subst, -1)
+			bts = bytes.Replace(bts, needle2, subst, -1)
+			bts = bytes.Replace(bts, needle3, subst, -1)
 		}
 
 		{
@@ -97,16 +108,13 @@ func MarkDownFromFile(subPth, site, lang string) (string, error) {
 
 	// Render markdown
 	output := string(blackfriday.MarkdownCommon(bts))
+	output = "<div class='markdown'>" + output + "</div>"
+
 	// output += "<br>\n<br>\n<br>\n<p style='font-size: 75%;'>\nRendered by russross/blackfriday</p>\n" // Inconspicuous rendering marker
 
 	return output, nil
 
 }
-
-var sfx = strings.HasSuffix // alias for function
-var pfx = strings.HasPrefix
-
-type staticPrefixT string // significant url path fragment
 
 // ServeHTTP serves everything under the file directory fragm (for instance /doc/).
 // We want the markdown files editable locally with locally working links and images.
@@ -199,7 +207,7 @@ func (fragm *staticPrefixT) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 
 }
 
-// CreateAndRegisterHandlerForDocs maps docPrefix to ./app-bucket/content;
+// NewDocServer maps docPrefix to ./app-bucket/content;
 // for instance
 //             /doc/
 //   /urlprefix/doc/
@@ -208,17 +216,23 @@ func (fragm *staticPrefixT) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 //
 // Markdown files are converted to HTML;
 // needs session to differentiate files by language setting
-func CreateAndRegisterHandlerForDocs(docPrefix string, mux *http.ServeMux) {
+func NewDocServer(docPrefix string) {
 
 	if !strings.HasPrefix(docPrefix, "/") {
 		docPrefix = "/" + docPrefix
 	}
 	if !strings.HasSuffix(docPrefix, "/") {
-		docPrefix = "/" + docPrefix
+		docPrefix = docPrefix + "/"
 	}
-	fragmH := staticPrefixT(docPrefix)
-	mux.Handle(cfg.Pref(docPrefix), &fragmH)
-	mux.Handle(cfg.PrefTS(docPrefix), &fragmH) //  fragmH also serves  /urlprefix/doc/...
-	log.Printf("registering docs handler %-30v 'funcVar' %T \n", cfg.Pref(docPrefix), &fragmH)
 
+	packageDocPrefix = staticPrefixT(docPrefix)
+
+	// mux.Handle(cfg.Pref(docPrefix), &packageDocPrefix) // now via ServeMarkdown()
+	// mux.Handle(cfg.PrefTS(docPrefix), &packageDocPrefix) // now via ServeMarkdown()
+
+}
+
+// ServeDoc serves markdown and other content in app-prefix/doc/
+func ServeDoc(w http.ResponseWriter, r *http.Request) {
+	packageDocPrefix.ServeHTTP(w, r)
 }

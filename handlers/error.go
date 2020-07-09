@@ -4,19 +4,16 @@
 package handlers
 
 import (
-	"fmt"
+	"bytes"
 	"log"
 	"net/http"
 
 	"github.com/zew/go-questionnaire/qst"
 
-	"github.com/zew/go-questionnaire/sessx"
 	"github.com/zew/go-questionnaire/tpl"
 )
 
 func errorH(w http.ResponseWriter, r *http.Request, msg string) {
-
-	sess := sessx.New(w, r)
 
 	shorter := msg
 	if len(shorter) > 100 {
@@ -26,26 +23,14 @@ func errorH(w http.ResponseWriter, r *http.Request, msg string) {
 
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
 
-	tplBundle := tpl.Get(w, r, "main-desktop.html")
+	w2 := &bytes.Buffer{}
+	tpl.ExecContent(w2, r, msg, "error.html")
 
-	ts := &tpl.StackT{"error.html", "non-existent.html"}
-
-	d := tplDataExtT{
-		Q: &qst.QuestionnaireT{LangCode: "en"}, // just setting the lang code for the outer layout template
+	mp := map[string]interface{}{
+		"HTMLTitle": "Error page",
+		"Q":         &qst.QuestionnaireT{LangCode: "en"}, // just the lang code for the outer layout template
+		"Content":   w2.String(),
 	}
+	tpl.Exec(w, r, mp, "main-desktop.html")
 
-	d.TplDataT = tpl.TplDataT{
-		TplBundle: tplBundle,
-		TS:        ts,
-		Sess:      &sess,
-		Cnt:       msg,
-	}
-
-	err := tplBundle.Execute(w, d)
-	if err != nil {
-		s := fmt.Sprintf("Executing template caused: %v", err)
-		log.Print(s)
-		w.Write([]byte(s))
-		return
-	}
 }

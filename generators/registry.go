@@ -4,7 +4,9 @@ import (
 	"bytes"
 	myfmt "fmt"
 	"io/ioutil"
+	"log"
 	"net/http"
+	"net/http/httptest"
 	"net/url"
 	"path"
 	"path/filepath"
@@ -147,7 +149,15 @@ func GenerateQuestionnaireTemplates(w http.ResponseWriter, r *http.Request) {
 				continue
 			}
 			if ok {
-				tpl.ParseH(w, r)
+				// parse new and previous templates
+				dummyReq, err := http.NewRequest("GET", "", nil)
+				if err != nil {
+					log.Fatalf("failed to create request for pre-loading assets %v", err)
+				}
+				respRec := httptest.NewRecorder()
+				tpl.TemplatesPreparse(respRec, dummyReq)
+				log.Printf("\n%v", respRec.Body.String())
+
 			}
 		}
 

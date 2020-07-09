@@ -1,6 +1,7 @@
 package handlers
 
 import (
+	"bytes"
 	"fmt"
 	"html"
 	"log"
@@ -19,12 +20,6 @@ import (
 
 	"github.com/pkg/errors"
 )
-
-// An extension with questionnaire
-type tplDataExtT struct {
-	tpl.TplDataT
-	Q *qst.QuestionnaireT // The major app specific object
-}
 
 // Loading questionnaire.
 // First from session.
@@ -358,32 +353,25 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 	//
 	//
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
-	tplBundle := tpl.Get(w, r, "main-desktop.html")
+
+	mp := map[string]interface{}{
+		"Q":       q,
+		"Content": "",
+	}
 
 	if mobile {
-		tplBundle = tpl.Get(w, r, "main-mobile.html")
 		q.Pages[q.CurrPage].Width = 100
 		q.Pages[q.CurrPage].AestheticCompensation = 0
 		for i := 0; i < len(q.Pages[q.CurrPage].Groups); i++ {
 			q.Pages[q.CurrPage].Groups[i].Width = 100
 		}
-	}
+		tpl.Exec(w, r, mp, "main-mobile.html")
+	} else {
 
-	ts := &tpl.StackT{"quest.html"}
-
-	d := tplDataExtT{
-		Q: q,
-	}
-	d.TplDataT = tpl.TplDataT{
-		TplBundle: tplBundle,
-		TS:        ts,
-		Sess:      &sess,
-	}
-
-	err = tplBundle.Execute(w, d)
-	if err != nil {
-		helper(w, r, err, "Executing template caused error")
-		return
+		w2 := &bytes.Buffer{}
+		tpl.Exec(w2, r, mp, "quest.html")
+		mp["Content"] = w2.String()
+		tpl.Exec(w, r, mp, "main-desktop.html")
 	}
 
 }

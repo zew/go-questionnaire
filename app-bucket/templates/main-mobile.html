@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-{{ $lc := (.Sess.EffectiveStr "lang_code" .DefaultLangCode)}}
+{{ $lc := (.Sess.EffectiveStr "lang_code" .MoreFuncs.DefaultLangCode)}}
 <head>
 
     <!-- URL Bar color; ahead of any JS or CSS -->
@@ -14,16 +14,16 @@
     <link rel="shortcut icon" href="data:;base64,=">
     <link rel="icon"          href="data:;base64,=">
     <!-- Mobile Icon up to 192x192 
-    <link rel="icon"          href="cfg.Pref "/img/ui/favicon-mobile.png"}}"  sizes="192x192" >
-    <link rel="shortcut icon" href="cfg.Pref "/img/ui/favicon-mobile.png"}}"  sizes="192x192" >    
+    <link rel="icon"          href="{{cfg.Pref "/img/ui/favicon-mobile.png"}}"  sizes="192x192" >
+    <link rel="shortcut icon" href="{{cfg.Pref "/img/ui/favicon-mobile.png"}}"  sizes="192x192" >    
     -->
 
-    <title>{{.Trls.app_label.Tr $lc}}</title>
-    <link href="cfg.Pref "/css/main-mobile.css"}}" rel="stylesheet" type="text/css" />
-    <link href="cfg.Pref "/css/main-mobile-menu_without_js.css"}}" rel="stylesheet" type="text/css" />
+    <title>{{.MoreFuncs.Trls.app_label.Tr $lc}}</title>
+    <link href="{{cfg.Pref "/css/main-mobile.css"}}" rel="stylesheet" type="text/css" />
+    <link href="{{cfg.Pref "/css/main-mobile-menu-without-js.css"}}" rel="stylesheet" type="text/css" />
 	{{if exists . "Q"}}
 		{{if ne .Q.Survey.Type ""}}
-			<link href="cfg.Pref "/css/main-mobile-"}}{{.Q.Survey.Type}}.css" rel="stylesheet" type="text/css" />
+			<link href="{{cfg.Pref "/css/main-mobile-"}}{{.Q.Survey.Type}}.css" rel="stylesheet" type="text/css" />
 		{{end}}
 	{{end}}
 
@@ -94,17 +94,17 @@
     </div>
 
     <!-- width=100% inscribe -->
-    <form method="POST" action="cfg.Pref ""}}" class='go-quest-main-form' name='frmMain' >
+    <form method="POST" action="{{cfg.Pref ""}}" class='go-quest-main-form' name='frmMain' >
 
 
         <input id="chkbx" class="chkbx" type="checkbox" />
         <label for="chkbx">&nbsp;</label>
 
-        {{toHtml (.Q.MenuMobile) }}
+        {{toHTML (.Q.MenuMobile) }}
 
 
         {{if .Q.HasErrors}}
-        <p class="error" id="error" style="font-size:16px;margin: 20px 0px; ">{{.Trls.correct_errors.Tr .Q.LangCode}} </p>
+        <p class="error" id="error" style="font-size:16px;margin: 20px 0px; ">{{.MoreFuncs.Trls.correct_errors.Tr .Q.LangCode}} </p>
         <script>
             $("#error").css("display", "none");
             $("#error").fadeIn("slow", function () {
@@ -113,7 +113,15 @@
         </script> {{end}}
         
         <input type="hidden" name="token" value="{{formToken}}" /> 
-        {{toHtml (.Q.CurrentPageHTML) }}
+
+
+        <!-- {if exists . "Q"} -->
+        {{if ne .Content ""}}
+            {{.Content}}
+        {{else}}
+            {{toHTML .Q.CurrentPageHTML}}
+        {{end}}
+
 
 
 
@@ -123,7 +131,7 @@
             {{if .Q.HasNext}}
             <!-- name="submitBtn" conflicts with JS form.submit() -->
             <button type="submit" name="submitBtn" value="next" accesskey="n">
-                {{.Trls.page.Tr .Q.LangCode}} {{.Q.NextNaviNum}} >>
+                {{.MoreFuncs.Trls.page.Tr .Q.LangCode}} {{.Q.NextNaviNum}} >>
             </button>
             {{end}} 
 
@@ -137,7 +145,7 @@
                         width: 86px; padding: 2px;
                         display: bock; margin: 0; margin-left: 2.5%;
                 '>
-                << {{.Trls.page.Tr .Q.LangCode}} {{.Q.PrevNaviNum}} </button>
+                << {{.MoreFuncs.Trls.page.Tr .Q.LangCode}} {{.Q.PrevNaviNum}} </button>
             {{end}}
 
 

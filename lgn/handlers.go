@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"html"
 	"html/template"
+	"io"
 	"log"
 	"net/http"
 	"time"
@@ -43,7 +44,7 @@ func LogoutH(w http.ResponseWriter, r *http.Request) error {
 
 // LoggedInCheck checks, whether as user is logged in,
 // and checks whether he has the required roles
-func LoggedInCheck(w http.ResponseWriter, r *http.Request, roles ...string) (l *LoginT, loggedIn bool, err error) {
+func LoggedInCheck(w io.Writer, r *http.Request, roles ...string) (l *LoginT, loggedIn bool, err error) {
 
 	l, loggedIn, err = FromSession(w, r)
 	if err != nil {

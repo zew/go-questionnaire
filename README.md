@@ -1,6 +1,6 @@
 # Go-Questionnaire
 
-<img src="./static/img/doc/mascot/mascot.png" style="float: left; width:8%; min-width: 140px; max-width: 20%; margin-right:5%; margin-bottom: 2%;">
+<img src="./app-bucket/content/img/mascot/mascot.png" style="float: left; width:8%; min-width: 140px; max-width: 20%; margin-right:5%; margin-bottom: 2%;">
 
 [![GoDoc](http://godoc.org/github.com/zew/go-questionnaire?status.svg)](https://godoc.org/github.com/zew/go-questionnaire)        [![Travis Build](https://travis-ci.org/zew/go-questionnaire.svg?branch=master)](https://travis-ci.org/zew/go-questionnaire)        [![Report Card](https://goreportcard.com/badge/github.com/zew/go-questionnaire)](https://goreportcard.com/report/github.com/zew/go-questionnaire)      [![codecov](https://codecov.io/gh/zew/go-questionnaire/branch/master/graph/badge.svg)](https://codecov.io/gh/zew/go-questionnaire)
 
@@ -11,16 +11,15 @@
 <div >&nbsp;</div> 
 -->
 
+<!-- elements inside <div>...</div> are exempted from blackfriday markdown rendering -->
 <div style="position: static">
-<div style="position: relative; left: 25px;">
-
-* Creating and serving questionnaires
-
-* Precise layout - no HTML fumble
-
-* Automatic mobile version
-
-</div>
+    <div style="position: relative; left: 25px;">
+        <ul>
+            <li>Creating and serving questionnaires</li>
+            <li>Precise layout - no HTML fumble</li>
+            <li>Automatic mobile version</li>
+        </ul>
+    </div>
 </div>
 
 <div style="clear:both"></div>
@@ -121,7 +120,7 @@ by using [gocloud blob](https://godoc.org/gocloud.dev/blob) for local file syste
 
 * A `survey` is a `questionnaire` with one or more `waves` (repetitions).
 
-![Plugin](./static/img/doc/app-and-questionnaires.jpg)
+![Plugin](./app-bucket/content/img/app-and-questionnaires.jpg)
 
 ## Setup
 
@@ -136,12 +135,12 @@ Install and setup [golang](https://golang.org/doc/install)
     go build
     ./go-questionnaire                   # under windows: go-questionnaire.exe
 
-More info in [deploy on linux/unix](./static/doc/linux-instructions.md)
+More info in [deploy on linux/unix](./app-bucket/content/linux-instructions.md)
 
 ## Create new questionnaire `myquest`
 
 <a href="https://youtu.be/zFasU5kAKvE" target="_new">  
-   <img src="./static/img/doc/youtube-still.png" xalign="left" width="24%" style="margin-left:4%; margin-bottom: 0%;">
+   <img src="./app-bucket/content/img/youtube-still.png" xalign="left" width="24%" style="margin-left:4%; margin-bottom: 0%;">
 </a>  
 
 * Copy `generators/example` to `generators/myquest`
@@ -183,7 +182,7 @@ If you have created your survey `myquest` you need to restart the application.
 * Create a questionnaire template - as JSON file  
  <https://dev-domain:port/survey/generate-questionnaire-templates>
 
-![Plugin](./static/img/doc/questionnaire-lifecycle.jpg)
+![Plugin](./app-bucket/content/img/questionnaire-lifecycle.jpg)
 
 * Generate login hashes for the survey id and wave id above  
    i.e.  <https://dev-domain:port/survey/generate-hashes?wave_id=2018-07&survey_id=fmt>  
@@ -325,25 +324,25 @@ Each `page.Width` can be adjusted for each page.
 Squeezing or stretching all rows equally.
 Page remains horizontally _centered_.
 
-![Page width](./static/img/doc/page-width.png)
+![Page width](./app-bucket/content/img/page-width.png)
 
 Each `group.Width` can be adjusted.  
 The group can be left-aligned (picture) or right-aligned.
 
-![Group width](./static/img/doc/group-width.png)
+![Group width](./app-bucket/content/img/group-width.png)
 
 Each group has flexible number of columns.
 The number of columns is deliberately not standardized on hundred,
 so that odd distributions are possible - i.e. seven columns.
 
-![Group columns](./static/img/doc/group-columns.png)
+![Group columns](./app-bucket/content/img/group-columns.png)
 
 The inputs are fitted in. Usually an input occupies one column
 for its label and another column for its control part.
 These numbers are customizable, so that any distribution
 of labels and controls on an arbitrary grid is possible.
 
-![Input width](./static/img/doc/group-with-label-and-input.png)
+![Input width](./app-bucket/content/img/group-with-label-and-input.png)
 
 The layout engine creates new rows, if the inputs have filled up
 the number of columns defined per group.
@@ -365,7 +364,7 @@ last group per page automatically gets only 0.5 vertical spacing.
 
 Group property `OddRowsColoring` to activate alternating background
 
-![Group width](./static/img/doc/odd-rows-coloring.png)
+![Group width](./app-bucket/content/img/odd-rows-coloring.png)
 
 The table border can be set via ./templates/main-desktop-[survey].css  
 `table.bordered td { myBorderCSS }`
@@ -438,11 +437,6 @@ Mobile layout was tested with `crossbrowsertesting.com`.
 ## Open / todo
 
 * Apply attributes `autocapitalize` and `inputmode` to text inputs
-
-* Templates and CSS files should go to `app-bucket` dir -  
-take implementation from project tfre  
-remove bootstrap.go template creation  
-but adapt generators.SurveyGenerate()
 
 * Should we have a checkbox where the control comes first?
 

@@ -66,8 +66,8 @@ type SessT struct {
 }
 
 // New returns a new enhanced session variable.
-func New(w io.Writer, r *http.Request) SessT {
-	return SessT{
+func New(w io.Writer, r *http.Request) *SessT {
+	return &SessT{
 		SessionManager: sessionManager, // I cannot see the problem with this linter msg here :(
 		ctx:            r.Context(),
 		// w:              w,

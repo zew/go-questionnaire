@@ -130,8 +130,8 @@ func Stack(base, addenum cssVars) cssVars {
 	for i1, cadd := range addenum {
 		for i2, c := range ret {
 			if cadd.Key == c.Key {
+				// log.Printf("  overwr %-10v => %10v\n", c.Key, addenum[i1])
 				ret[i2] = addenum[i1]
-				// log.Printf("\toverwriting %6v", c.Key)
 			}
 		}
 	}

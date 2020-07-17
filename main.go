@@ -7,17 +7,13 @@ import (
 	"log"
 	"math/rand"
 	"net/http"
-	"net/http/pprof"
 	"os"
 	"time"
 
 	"github.com/zew/go-questionnaire/bootstrap"
 	"github.com/zew/go-questionnaire/cfg"
-	"github.com/zew/go-questionnaire/generators"
 	"github.com/zew/go-questionnaire/handlers"
-	"github.com/zew/go-questionnaire/lgn"
 	"github.com/zew/go-questionnaire/sessx"
-	"github.com/zew/go-questionnaire/stream"
 	"github.com/zew/go-questionnaire/tpl"
 	"github.com/zew/go-questionnaire/wrap"
 	"golang.org/x/crypto/acme/autocert"
@@ -51,62 +47,16 @@ func main() {
 		wrap mux3 with mux4
 
 	*/
+	tpl.NewDocServer("/doc/")  // before RegisterHandlers()
 	mux1 := http.NewServeMux() // base router
-	// markdown files in /doc
-	tpl.NewDocServer("/doc/")
-	mux1.HandleFunc("/doc", tpl.ServeDoc)
+	handlers.RegisterHandlers(mux1)
+	// log.Print(util.IndentedDump(handler.Tree()))
+	// handler.Tree().HTML(ioutil.Discard)
 
-	//
-	// Login primitives for everybody
-	mux1.HandleFunc(cfg.Pref("/login-primitive"), lgn.LoginPrimitiveH)
-	mux1.Handle(cfg.Pref("/change-password-primitive"), wrap.MustLogin(lgn.ChangePasswordPrimitiveH))
-	mux1.HandleFunc(cfg.PrefTS("/d"), handlers.LoginByHashID) // 'd' for direct
-	// Administrative handlers - common
-	mux1.Handle(cfg.Pref("/session-put"), wrap.MustAdmin(sessx.SessionPut))
-	mux1.Handle(cfg.Pref("/session-get"), wrap.MustAdmin(sessx.SessionGet))
-	mux1.Handle(cfg.Pref("/config-reload"), wrap.MustAdmin(handlers.ConfigReloadH))
-	mux1.Handle(cfg.Pref("/templates-reload"), wrap.MustAdmin(tpl.TemplatesPreparse))
-	// Workflow - logins for survey
-	mux1.Handle(cfg.Pref("/generate-questionnaire-templates"), wrap.MustAdmin(generators.GenerateQuestionnaireTemplates))
-	mux1.Handle(cfg.PrefTS("/generate-questionnaire-templates"), wrap.MustAdmin(generators.GenerateQuestionnaireTemplates))
-	mux1.Handle(cfg.Pref("/generate-landtag-variations"), wrap.MustAdmin(generators.GenerateLandtagsVariations))
-	mux1.Handle(cfg.Pref("/generate-hashes"), wrap.MustAdmin(lgn.GenerateHashesH))
-	mux1.Handle(cfg.Pref("/generate-hash-ids"), wrap.MustAdmin(lgn.GenerateHashIDs))
-	mux1.Handle(cfg.Pref("/reload-from-questionnaire-template"), wrap.MustAdmin(lgn.ReloadH))
-	mux1.Handle(cfg.PrefTS("/reload-from-questionnaire-template"), wrap.MustAdmin(lgn.ReloadH))
-	mux1.Handle(cfg.Pref("/shufflings-to-csv"), wrap.MustAdmin(lgn.ShufflesToCSV))
-	// Rare login funcs
-	mux1.Handle(cfg.Pref("/logins-save"), wrap.MustAdmin(lgn.SaveH))
-	mux1.Handle(cfg.Pref("/logins-reload"), wrap.MustAdmin(lgn.LoadH))
-	mux1.Handle(cfg.Pref("/generate-password"), wrap.MustAdmin(lgn.GeneratePasswordH))
-	mux1.HandleFunc(cfg.Pref("/create-anonymous-id"), lgn.CreateAnonymousIDH)
-	mux1.HandleFunc(cfg.Pref("/fmreport-email"), handlers.FMReportFormH)
-	// Stream tests
-	mux1.Handle(cfg.Pref("/instance-info"), wrap.MustAdmin(stream.InstanceInfo))
-	// PProf stuff
-	mux1.Handle(cfg.Pref("/diag/pprof"), wrap.MustAdmin(pprof.Index))
-	mux1.Handle(cfg.Pref("/diag/allocs"), wrap.MustAdmin(pprof.Handler("allocs").ServeHTTP))
-	mux1.Handle(cfg.Pref("/diag/block"), wrap.MustAdmin(pprof.Handler("block").ServeHTTP))
-	mux1.Handle(cfg.Pref("/diag/cmdline"), wrap.MustAdmin(pprof.Cmdline))
-	mux1.Handle(cfg.Pref("/diag/goroutine"), wrap.MustAdmin(pprof.Handler("goroutine").ServeHTTP))
-	mux1.Handle(cfg.Pref("/diag/heap"), wrap.MustAdmin(pprof.Handler("heap").ServeHTTP))
-	mux1.Handle(cfg.Pref("/diag/mutex"), wrap.MustAdmin(pprof.Handler("mutex").ServeHTTP))
-	mux1.Handle(cfg.Pref("/diag/profile"), wrap.MustAdmin(pprof.Profile))
-	mux1.Handle(cfg.Pref("/diag/threadcreate"), wrap.MustAdmin(pprof.Handler("threadcreate").ServeHTTP))
-	mux1.Handle(cfg.Pref("/diag/trace"), wrap.MustAdmin(pprof.Trace))
-	mux1.Handle(cfg.Pref("/diag/symbol"), wrap.MustAdmin(pprof.Symbol))
-
-	//
-	// App specific
-	mux1.HandleFunc("/", handlers.MainH)
 	if cfg.Pref() != "" {
-		mux1.HandleFunc(cfg.Pref("/"), handlers.MainH)
-		mux1.HandleFunc(cfg.PrefTS("/"), handlers.MainH)
+		mux1.HandleFunc("/", handlers.MainH) // also register for document root
 	}
-	mux1.HandleFunc(cfg.Pref("/transferrer-endpoint"), handlers.TransferrerEndpointH)
 
-	// vert align diff view
-	// vert align diff view
 	mux2 := wrap.LogAndRecover(mux1)      // wrap mux1 into logger/recoverer
 	mux3 := sessx.Mgr().LoadAndSave(mux2) // wrap mux2 into session manager
 
@@ -116,8 +66,8 @@ func main() {
 		mux4.Handle(cfg.Pref("/"), mux3) // wrap mux3 into mux4
 		mux4.Handle(cfg.PrefTS("/"), mux3)
 	}
-	mux4.HandleFunc(cfg.Pref("/slow-buffered"), stream.SlowBuffered)
-	mux4.HandleFunc(cfg.Pref("/slow-hijacked"), stream.SlowHijacked)
+	// mux4.HandleFunc(cfg.Pref("/slow-buffered"), stream.SlowBuffered)
+	// mux4.HandleFunc(cfg.Pref("/slow-hijacked"), stream.SlowHijacked)
 
 	// Static file serving to the base router.
 	// Static requests will also trigger the middleware funcs below.

@@ -216,6 +216,8 @@ func (fragm *staticPrefixT) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 //
 // Markdown files are converted to HTML;
 // needs session to differentiate files by language setting
+//
+// No handler registration
 func NewDocServer(docPrefix string) {
 
 	if !strings.HasPrefix(docPrefix, "/") {

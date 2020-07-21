@@ -22,79 +22,6 @@ func RegisterHandlers(mux *http.ServeMux) {
 
 	infos := handler.InfosT{
 
-		// Application
-		{
-			Urls:     []string{"/", "/home"},
-			Handler:  MainH,
-			Title:    "Home",
-			Keys:     []string{"main", "index"},
-			InNav:    true,
-			ShortCut: "p",
-		},
-		{
-			Urls:    []string{"/d"}, // 'd' for direct
-			Title:   "Login by hash ID",
-			Handler: LoginByHashID,
-			Keys:    []string{"login-by-hash-id"},
-		},
-		{
-			Urls:    []string{"/fmreport-email"}, // 'd' for direct
-			Title:   "FM Report email registration",
-			Handler: FMReportFormH,
-			Keys:    []string{"fmreport-email"},
-		},
-
-		// Application specific admin
-		{
-			Urls:    []string{"/generate-questionnaire-templates"},
-			Handler: generators.GenerateQuestionnaireTemplates,
-			Title:   "Generate Questionnaire Templates",
-			Keys:    []string{"generate-questionnaire-templates"},
-			Allow:   map[handler.Privilege]bool{handler.Admin: true},
-		},
-		{
-			Urls:    []string{"/generate-landtag-variations"},
-			Handler: generators.GenerateLandtagsVariations,
-			Title:   "Generate Landtag Variations",
-			Keys:    []string{"generate-landtag-variations"},
-			Allow:   map[handler.Privilege]bool{handler.Admin: true},
-		},
-		{
-			Urls:    []string{"/generate-hashes"},
-			Handler: lgn.GenerateHashesH,
-			Title:   "Generate Hashes",
-			Keys:    []string{"generate-hashes"},
-			Allow:   map[handler.Privilege]bool{handler.Admin: true},
-		},
-		{
-			Urls:    []string{"/generate-hash-ids"},
-			Handler: lgn.GenerateHashIDs,
-			Title:   "Generate Hash IDs",
-			Keys:    []string{"generate-hash-ids"},
-			Allow:   map[handler.Privilege]bool{handler.Admin: true},
-		},
-		{
-			Urls:    []string{"/reload-from-questionnaire-template"},
-			Handler: lgn.ReloadH,
-			Title:   "Reload from Questionnaire Template",
-			Keys:    []string{"reload-from-questionnaire-template"},
-			Allow:   map[handler.Privilege]bool{handler.Admin: true},
-		},
-		{
-			Urls:    []string{"/shufflings-to-csv"},
-			Handler: lgn.ShufflesToCSV,
-			Title:   "Shufflings to CSV",
-			Keys:    []string{"shufflings-to-csv"},
-			Allow:   map[handler.Privilege]bool{handler.Admin: true},
-		},
-		{
-			Urls:    []string{"/transferrer-endpoint"},
-			Handler: TransferrerEndpointH,
-			Title:   "Transferrer server",
-			Keys:    []string{"transferrer-endpoint"},
-			Allow:   map[handler.Privilege]bool{handler.Admin: true},
-		},
-
 		//
 		//
 		// generic app - generic admin
@@ -105,21 +32,13 @@ func RegisterHandlers(mux *http.ServeMux) {
 			Keys:    []string{"doc-server"},
 		},
 		{
-			Urls:    []string{"/create-anonymous-id"},
-			Title:   "Anonymous login",
-			Handler: lgn.CreateAnonymousIDH,
-			Keys:    []string{"create-anonymous-id"},
-			InNav:   true,
-			Allow:   map[handler.Privilege]bool{handler.LoggedOut: true},
-		},
-		{
 			Urls:    []string{"/login-primitive"},
 			Title:   "Login app",
 			Handler: lgn.LoginPrimitiveH,
 			// 	Handler: LoginPrimitiveSiteH,
 			Keys:  []string{"login-primitive"},
 			InNav: true,
-			// Allow: ... // login must be free
+			Allow: map[handler.Privilege]bool{handler.LoggedOut: true},
 		},
 		{
 			Urls:    []string{"/change-password-primitive"},
@@ -130,14 +49,14 @@ func RegisterHandlers(mux *http.ServeMux) {
 			InNav: true,
 			Allow: map[handler.Privilege]bool{handler.Admin: true},
 		},
-		// {
-		// 	Urls:    []string{"/logout"},
-		// 	Title:   "Logout",
-		// 	Handler: LogoutSiteH,
-		// 	Keys:    []string{"logout"},
-		// 	InNav:   true,
-		// 	Allow:   map[handler.Privilege]bool{handler.LoggedIn: true},
-		// },
+		{
+			Urls:    []string{"/create-anonymous-id"},
+			Title:   "Anonymous login",
+			Handler: lgn.CreateAnonymousIDH,
+			Keys:    []string{"create-anonymous-id"},
+			InNav:   true,
+			Allow:   map[handler.Privilege]bool{handler.LoggedOut: true},
+		},
 		{
 			Urls:    []string{"/logins/reload"},
 			Title:   "Logins reload",
@@ -297,6 +216,88 @@ func RegisterHandlers(mux *http.ServeMux) {
 			InNav:   true,
 			Allow:   map[handler.Privilege]bool{handler.Admin: true},
 		},
+
+		// Application
+		{
+			Urls:     []string{"/", "/home"},
+			Handler:  MainH,
+			Title:    "Home",
+			Keys:     []string{"main", "index"},
+			InNav:    true,
+			ShortCut: "p",
+		},
+		{
+			Urls:    []string{"/d"}, // 'd' for direct
+			Title:   "Login by hash ID",
+			Handler: LoginByHashID,
+			Keys:    []string{"login-by-hash-id"},
+			InNav:   true,
+		},
+		{
+			Urls:    []string{"/logout"},
+			Title:   "Logout",
+			Handler: LogoutSiteH,
+			Keys:    []string{"logout"},
+			InNav:   true,
+			Allow:   map[handler.Privilege]bool{handler.LoggedIn: true},
+		},
+		{
+			Urls:    []string{"/fmreport-email"}, // 'd' for direct
+			Title:   "FM Report email registration",
+			Handler: FMReportFormH,
+			Keys:    []string{"fmreport-email"},
+		},
+
+		// Application specific admin
+		{
+			Urls:    []string{"/generate-questionnaire-templates"},
+			Handler: generators.GenerateQuestionnaireTemplates,
+			Title:   "Generate Questionnaire Templates",
+			Keys:    []string{"generate-questionnaire-templates"},
+			Allow:   map[handler.Privilege]bool{handler.Admin: true},
+		},
+		{
+			Urls:    []string{"/generate-landtag-variations"},
+			Handler: generators.GenerateLandtagsVariations,
+			Title:   "Generate Landtag Variations",
+			Keys:    []string{"generate-landtag-variations"},
+			Allow:   map[handler.Privilege]bool{handler.Admin: true},
+		},
+		{
+			Urls:    []string{"/generate-hashes"},
+			Handler: lgn.GenerateHashesH,
+			Title:   "Generate Hashes",
+			Keys:    []string{"generate-hashes"},
+			Allow:   map[handler.Privilege]bool{handler.Admin: true},
+		},
+		{
+			Urls:    []string{"/generate-hash-ids"},
+			Handler: lgn.GenerateHashIDs,
+			Title:   "Generate Hash IDs",
+			Keys:    []string{"generate-hash-ids"},
+			Allow:   map[handler.Privilege]bool{handler.Admin: true},
+		},
+		{
+			Urls:    []string{"/reload-from-questionnaire-template"},
+			Handler: lgn.ReloadH,
+			Title:   "Reload from Questionnaire Template",
+			Keys:    []string{"reload-from-questionnaire-template"},
+			Allow:   map[handler.Privilege]bool{handler.Admin: true},
+		},
+		{
+			Urls:    []string{"/shufflings-to-csv"},
+			Handler: lgn.ShufflesToCSV,
+			Title:   "Shufflings to CSV",
+			Keys:    []string{"shufflings-to-csv"},
+			Allow:   map[handler.Privilege]bool{handler.Admin: true},
+		},
+		{
+			Urls:    []string{"/transferrer-endpoint"},
+			Handler: TransferrerEndpointH,
+			Title:   "Transferrer server",
+			Keys:    []string{"transferrer-endpoint"},
+			Allow:   map[handler.Privilege]bool{handler.Admin: true},
+		},
 	}
 
 	infos.MakeKeys()
@@ -310,6 +311,11 @@ func RegisterHandlers(mux *http.ServeMux) {
 			if l.Allow[handler.Admin] {
 				mux.Handle(cfg.Pref(url), wrap.MustAdminHandler(l.Handler))
 				mux.Handle(cfg.PrefTS(url), wrap.MustAdminHandler(l.Handler))
+				continue
+			}
+			if l.Allow[handler.LoggedIn] {
+				mux.Handle(cfg.Pref(url), wrap.MustLogin(l.Handler))
+				mux.Handle(cfg.PrefTS(url), wrap.MustLogin(l.Handler))
 				continue
 			}
 			mux.HandleFunc(cfg.Pref(url), l.Handler)

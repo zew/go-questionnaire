@@ -119,6 +119,8 @@ description:
 
 Put [systemd config file](go-questionnaire.service) to `sudo vim /etc/systemd/system/go-questionnaire.service`.
 
+Make it boot hard with `sudo systemctl enable go-questionnaire.service`
+
 Combining syslog with standard log file, [stackoverflow](stackoverflow.com/questions/37585758/) suggests:
 
 ```bash

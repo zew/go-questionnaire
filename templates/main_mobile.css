@@ -301,6 +301,9 @@ input[type="number"] {
 	padding-bottom: 16px;
 }
 
+.special-vertical-align-top {
+	vertical-align: top;
+}
 
 /*
  mobile-input-smaller {

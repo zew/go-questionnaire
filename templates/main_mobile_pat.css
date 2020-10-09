@@ -1,0 +1,124 @@
+/* disable link in header - header invisible */
+.header a{
+  pointer-events: none;
+  cursor: default;
+  opacity: 0.9;
+  visibility: hidden;
+}
+.footer div:first-child{
+  visibility: hidden;
+}
+
+span.wave-id {
+	visibility: hidden;
+}
+
+
+sup {
+    /* display: none; */
+    font-size: 80%;
+    position: relative;
+    top: -3px;
+    vertical-align: baseline;
+}
+
+.go-quest-label {
+    line-height: normal;
+    padding-top: 0.1rem;
+    padding-bottom: 0.1rem;
+}
+
+
+
+
+#t01 table, #t01 th, #t01 td {
+    border-collapse: collapse;
+}
+#t01 table {
+    border: none;
+    width: 32rem;
+    width: 28rem;
+}
+
+/* td */
+#t01 td {
+    border: 1px solid grey;
+    margin: 0;
+    padding: 0.05rem 0.35rem;
+    font-size: 0.7rem;
+    text-align: center;
+    width: 3.6rem;
+}
+/* first columns */
+#t01 tr td:nth-child(1) {
+    text-align: left;
+}
+/* last two columns */
+#t01 tr td:nth-child(5),
+#t01 tr td:nth-child(6)
+{
+    width: 1.1rem;
+}
+
+
+/* first row exceptions */
+#t01 tr:first-child td {
+    border-top: none;
+    background-color: inherit;
+    vertical-align: top;
+    height: 1.8rem;
+}
+#t01 tr:first-child td:nth-child(2)  {
+    background-color: lightgrey;
+}
+
+/* coloring */
+#t01 tr td {
+    background-color: lightgrey;
+}
+/* coloring column-wise */
+#t01 tr td:nth-child(3) {
+    background-color: darkgrey;
+}
+#t01 tr td:nth-child(4) {
+    background-color: grey;
+}
+/* column-wise vertical borders */
+#t01 tr td:nth-child(2) {
+    border-right: none;
+}
+#t01 tr td:nth-child(3) {
+    border-left: none;
+    border-right: none;
+}
+#t01 tr td:nth-child(4) {
+    border-left: none;
+}
+
+
+
+/* in between rows */
+#t01 td.betw {
+    border: none;
+    background-color: inherit;
+    height:       0.49rem;
+    line-height:  0.49rem;
+    max-height:   0.49rem;
+    padding: 0;
+    margin:  0;
+}
+
+#t01 img {
+    xxborder: 1px solid grey;
+    height: 1.6rem;
+    width:  0.8rem;
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+
+
+ul.navigation li:nth-child(1){
+    /* color: red ; */
+    visibility: hidden;
+}

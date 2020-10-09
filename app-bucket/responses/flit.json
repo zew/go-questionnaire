@@ -7,8 +7,8 @@
  		"name": {
  			"en": "Financial Literacy Test"
  		},
- 		"year": 2019,
- 		"month": 12,
+ 		"year": 2020,
+ 		"month": 10,
  		"deadline": "2030-01-01T00:00:00Z",
  		"params": [
  			{},
@@ -16,7 +16,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "5f08d6dc8919e4a85e0cf2b85c2167c6",
+ 	"md_5": "c4eca4a44acd3f60c942baa0c9c8e582",
  	"lang_codes": {
  		"en": "English"
  	},
@@ -329,8 +329,8 @@
  								"de": "Sehr gut",
  								"en": "Very good"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -338,8 +338,8 @@
  								"de": "Gut",
  								"en": "Good"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -347,8 +347,8 @@
  								"de": "Durchschnittlich",
  								"en": "Fair"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -356,8 +356,8 @@
  								"de": "Schlecht",
  								"en": "Bad"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -365,8 +365,8 @@
  								"de": "Sehr schlecht",
  								"en": "Very bad"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -374,8 +374,8 @@
  								"de": "Keine\u003cbr\u003eAn\u0026shy;gabe",
  								"en": "No an\u0026shy;swer"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"name": "health",
@@ -1056,8 +1056,8 @@
  								"de": "Ja",
  								"en": "Yes"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -1065,8 +1065,8 @@
  								"de": "Nein",
  								"en": "No"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -1074,8 +1074,8 @@
  								"de": "Weiß nicht",
  								"en": "Do not know"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -1083,8 +1083,8 @@
  								"de": "Nicht anwendbar",
  								"en": "Not ap\u0026shy;pli\u0026shy;ca\u0026shy;ble"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -1092,8 +1092,8 @@
  								"de": "Keine Antwort",
  								"en": "No an\u0026shy;swer"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"name": "broke_before_paycheck",
@@ -1170,8 +1170,8 @@
  								"de": "Sehr hoch",
  								"en": "Very high"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -1179,8 +1179,8 @@
  								"de": "Ziemlich hoch",
  								"en": "Quite high"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -1188,8 +1188,8 @@
  								"de": "Durchschnittlich",
  								"en": "About av\u0026shy;er\u0026shy;age"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -1197,8 +1197,8 @@
  								"de": "Ziemlich gering",
  								"en": "Quite low"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -1206,8 +1206,8 @@
  								"de": "Sehr gering",
  								"en": "Very low"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -1215,8 +1215,8 @@
  								"de": "Keine Antwort",
  								"en": "No an\u0026shy;swer"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"name": "self_assessment",
@@ -1457,8 +1457,8 @@
  								"de": "Wahr",
  								"en": "True"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -1466,8 +1466,8 @@
  								"de": "Falsch",
  								"en": "False"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -1475,8 +1475,8 @@
  								"de": "Weiß nicht",
  								"en": "Do not know"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -1484,8 +1484,8 @@
  								"de": "Keine Antwort",
  								"en": "No an\u0026shy;swer"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"name": "mutual_fund_risk",
@@ -1538,8 +1538,8 @@
  								"de": "Sparbuch",
  								"en": "Sav\u0026shy;ings ac\u0026shy;counts"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -1547,8 +1547,8 @@
  								"de": "Aktien",
  								"en": "Stocks"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -1556,8 +1556,8 @@
  								"de": "Anleihen",
  								"en": "Bonds"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -1565,8 +1565,8 @@
  								"de": "Weiß nicht",
  								"en": "Do not know"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -1574,8 +1574,8 @@
  								"de": "Keine\u003cbr\u003eAn\u0026shy;gabe",
  								"en": "No an\u0026shy;swer"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"name": "asset_variance",
@@ -1632,8 +1632,8 @@
  								"de": "xxx",
  								"en": "Sav\u0026shy;ings ac\u0026shy;counts"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -1641,8 +1641,8 @@
  								"de": "xxx",
  								"en": "Stocks"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -1650,8 +1650,8 @@
  								"de": "xxx",
  								"en": "Bonds"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -1659,8 +1659,8 @@
  								"de": "Weiß nicht",
  								"en": "Do not know"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -1668,8 +1668,8 @@
  								"de": "Keine\u003cbr\u003eAn\u0026shy;gabe",
  								"en": "No an\u0026shy;swer"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"name": "max_long_term_return",
@@ -1726,8 +1726,8 @@
  								"de": "xxx",
  								"en": "In\u0026shy;crease"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -1735,8 +1735,8 @@
  								"de": "xxx",
  								"en": "De\u0026shy;crease"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -1744,8 +1744,8 @@
  								"de": "xxx",
  								"en": "Stay the same"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -1753,8 +1753,8 @@
  								"de": "Weiß nicht",
  								"en": "Do not know"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -1762,8 +1762,8 @@
  								"de": "Keine\u003cbr\u003eAn\u0026shy;gabe",
  								"en": "No an\u0026shy;swer"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"name": "diversification_risk",
@@ -1840,8 +1840,8 @@
  								"de": "xxx",
  								"en": "More than 102 Euros"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -1849,8 +1849,8 @@
  								"de": "xxx",
  								"en": "Exactly 102 Euros"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -1858,8 +1858,8 @@
  								"de": "xxx",
  								"en": "Less than 102"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -1867,8 +1867,8 @@
  								"de": "Weiß nicht",
  								"en": "Do not know"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -1876,8 +1876,8 @@
  								"de": "Keine\u003cbr\u003eAn\u0026shy;gabe",
  								"en": "No an\u0026shy;swer"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"name": "compound_interest",
@@ -1934,8 +1934,8 @@
  								"de": "xxx",
  								"en": "More than today"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -1943,8 +1943,8 @@
  								"de": "xxx",
  								"en": "Exactly the same"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -1952,8 +1952,8 @@
  								"de": "xxx",
  								"en": "Less than today"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -1961,8 +1961,8 @@
  								"de": "Weiß nicht",
  								"en": "Do not know"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -1970,8 +1970,8 @@
  								"de": "Keine\u003cbr\u003eAn\u0026shy;gabe",
  								"en": "No an\u0026shy;swer"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"name": "real_interest",
@@ -2028,8 +2028,8 @@
  								"de": "xxx",
  								"en": "More than 200 Euros"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -2037,8 +2037,8 @@
  								"de": "xxx",
  								"en": "Exactly 200 Euros"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -2046,8 +2046,8 @@
  								"de": "xxx",
  								"en": "Less than 200"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -2055,8 +2055,8 @@
  								"de": "Weiß nicht",
  								"en": "Do not know"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -2064,8 +2064,8 @@
  								"de": "Keine\u003cbr\u003eAn\u0026shy;gabe",
  								"en": "No an\u0026shy;swer"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"name": "compound_multi",
@@ -2122,8 +2122,8 @@
  								"de": "xxx",
  								"en": "More than today"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -2131,8 +2131,8 @@
  								"de": "xxx",
  								"en": "The same"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -2140,8 +2140,8 @@
  								"de": "xxx",
  								"en": "Less than today"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -2149,8 +2149,8 @@
  								"de": "Weiß nicht",
  								"en": "Do not know"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -2158,8 +2158,8 @@
  								"de": "Keine\u003cbr\u003eAn\u0026shy;gabe",
  								"en": "No an\u0026shy;swer"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"name": "inflation_indexing",
@@ -2216,8 +2216,8 @@
  								"de": "xxx",
  								"en": "They rise"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -2225,8 +2225,8 @@
  								"de": "xxx",
  								"en": "They fall"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -2234,8 +2234,8 @@
  								"de": "xxx",
  								"en": "They stay the same"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -2243,8 +2243,8 @@
  								"de": "Weiß nicht",
  								"en": "Do not know"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -2252,8 +2252,8 @@
  								"de": "Keine\u003cbr\u003eAn\u0026shy;gabe",
  								"en": "No an\u0026shy;swer"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"name": "interest_bond_price",
@@ -2403,8 +2403,8 @@
  								"de": "xxx",
  								"en": "1. Not at all will\u0026shy;ing to take risks"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -2412,8 +2412,8 @@
  								"de": " \u0026nbsp; ",
  								"en": "2. \u0026nbsp; "
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -2421,8 +2421,8 @@
  								"de": " \u0026nbsp; ",
  								"en": "3.  \u0026nbsp; "
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -2430,8 +2430,8 @@
  								"de": " \u0026nbsp; ",
  								"en": "4.  \u0026nbsp; "
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -2439,8 +2439,8 @@
  								"de": " \u0026nbsp; ",
  								"en": "5.  \u0026nbsp; "
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -2448,8 +2448,8 @@
  								"de": " \u0026nbsp; ",
  								"en": "6.  \u0026nbsp; "
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -2457,8 +2457,8 @@
  								"de": "xxx",
  								"en": "7. Very will\u0026shy;ing to take risks"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"name": "risk_preference",
@@ -2536,8 +2536,8 @@
  								"de": "xxx",
  								"en": "Dis\u0026shy;agree com\u0026shy;plete\u0026shy;ly"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -2545,8 +2545,8 @@
  								"de": " \u0026nbsp; ",
  								"en": "Dis\u0026shy;agree strong\u0026shy;ly"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -2554,8 +2554,8 @@
  								"de": " \u0026nbsp; ",
  								"en": "Dis\u0026shy;agree a little"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -2563,8 +2563,8 @@
  								"de": " \u0026nbsp; ",
  								"en": "Nei\u0026shy;ther agree nor dis\u0026shy;agree"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -2572,8 +2572,8 @@
  								"de": " \u0026nbsp; ",
  								"en": "Agree a little"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -2581,8 +2581,8 @@
  								"de": " \u0026nbsp; ",
  								"en": "Agree strong\u0026shy;ly"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -2590,8 +2590,8 @@
  								"de": "xxx",
  								"en": "Agree com\u0026shy;plete\u0026shy;ly"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"name": "temptation_resistance",
@@ -3063,8 +3063,8 @@
  								"de": " \u0026nbsp; ",
  								"en": "Dis\u0026shy;agree strong\u0026shy;ly"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -3072,8 +3072,8 @@
  								"de": " \u0026nbsp; ",
  								"en": "Dis\u0026shy;agree a little"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -3081,8 +3081,8 @@
  								"de": " \u0026nbsp; ",
  								"en": "Nei\u0026shy;ther agree nor dis\u0026shy;agree"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -3090,8 +3090,8 @@
  								"de": " \u0026nbsp; ",
  								"en": "Agree a little"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -3099,8 +3099,8 @@
  								"de": " \u0026nbsp; ",
  								"en": "Agree strong\u0026shy;ly"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"name": "personality_reserved",
@@ -3463,8 +3463,8 @@
  								"de": "xxx",
  								"en": "Not at all op\u0026shy;ti\u0026shy;mis\u0026shy;tic"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -3472,8 +3472,8 @@
  								"de": " \u0026nbsp; ",
  								"en": "Strong\u0026shy;ly non-op\u0026shy;ti\u0026shy;mis\u0026shy;tic"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -3481,8 +3481,8 @@
  								"de": " \u0026nbsp; ",
  								"en": "A little non-op\u0026shy;ti\u0026shy;mis\u0026shy;tic"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -3490,8 +3490,8 @@
  								"de": " \u0026nbsp; ",
  								"en": "In\u0026shy;dif\u0026shy;fer\u0026shy;ent"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -3499,8 +3499,8 @@
  								"de": " \u0026nbsp; ",
  								"en": "A little op\u0026shy;ti\u0026shy;mis\u0026shy;tic"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -3508,8 +3508,8 @@
  								"de": " \u0026nbsp; ",
  								"en": "Strong\u0026shy;ly op\u0026shy;ti\u0026shy;mis\u0026shy;tic"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -3517,8 +3517,8 @@
  								"de": "xxx",
  								"en": "Very op\u0026shy;ti\u0026shy;mis\u0026shy;tic"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"name": "optimistic",
@@ -3587,8 +3587,8 @@
  								"de": "xxx",
  								"en": "Not at all pes\u0026shy;si\u0026shy;mis\u0026shy;tic"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -3596,8 +3596,8 @@
  								"de": " \u0026nbsp; ",
  								"en": "Strong\u0026shy;ly non-pes\u0026shy;si\u0026shy;mis\u0026shy;tic"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -3605,8 +3605,8 @@
  								"de": " \u0026nbsp; ",
  								"en": "A little non-pes\u0026shy;si\u0026shy;mis\u0026shy;tic"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -3614,8 +3614,8 @@
  								"de": " \u0026nbsp; ",
  								"en": "In\u0026shy;dif\u0026shy;fer\u0026shy;ent"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -3623,8 +3623,8 @@
  								"de": " \u0026nbsp; ",
  								"en": "A little pes\u0026shy;si\u0026shy;mis\u0026shy;tic"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -3632,8 +3632,8 @@
  								"de": " \u0026nbsp; ",
  								"en": "Strong\u0026shy;ly pes\u0026shy;si\u0026shy;mis\u0026shy;tic"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"type": "textblock",
@@ -3641,8 +3641,8 @@
  								"de": "xxx",
  								"en": "Very pes\u0026shy;si\u0026shy;mis\u0026shy;tic"
  							},
- 							"css_label": "special-line-height-higher",
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-line-height-higher"
  						},
  						{
  							"name": "pessimistic",

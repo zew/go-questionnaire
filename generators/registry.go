@@ -16,9 +16,11 @@ import (
 	"github.com/zew/go-questionnaire/generators/euref"
 	"github.com/zew/go-questionnaire/generators/example"
 	"github.com/zew/go-questionnaire/generators/flit"
+	"github.com/zew/go-questionnaire/generators/flit2"
 	"github.com/zew/go-questionnaire/generators/fmt"
 	"github.com/zew/go-questionnaire/generators/lt2020"
 	"github.com/zew/go-questionnaire/generators/mul"
+	"github.com/zew/go-questionnaire/generators/pat"
 	"github.com/zew/go-questionnaire/generators/peu2018"
 	"github.com/zew/go-questionnaire/qst"
 	"github.com/zew/go-questionnaire/tpl"
@@ -30,8 +32,10 @@ type genT func(params []qst.ParamT) (*qst.QuestionnaireT, error)
 var gens = map[string]genT{
 	"fmt":     fmt.Create,
 	"flit":    flit.Create,
+	"flit2":   flit2.Create,
 	"example": example.Create,
 	"peu2018": peu2018.Create,
+	"pat":     pat.Create,
 	"mul":     mul.Create,
 	"euref":   euref.Create,
 	"lt2020":  lt2020.Create,

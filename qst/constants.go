@@ -18,7 +18,11 @@ var implementedTypes = map[string]interface{}{
 	// helpers
 	"textblock": nil, // Only name, label and description are rendered - ColSpanLabel counts, ColSpanControl is ignored
 	"button":    nil, // Only name, label and description are rendered
-	"dynamic":   nil, // Executed a request time
+	"dynamic":   nil, // Executed a http request time, contains no inputs - can be used as dynamic label for following inputs
+
+	// fully dynamic composits
+	"composit":        nil, // executed a http request time, completeley free dynamic fragment of text and  multiple inputs
+	"composit-scalar": nil, // rendered by a composit
 
 	"dropdown": nil,
 }

@@ -214,6 +214,9 @@ func (q *QuestionnaireT) Validate() error {
 				if q.Pages[i1].Groups[i2].Inputs[i3].IsLayout() {
 					continue
 				}
+				if q.Pages[i1].Groups[i2].Inputs[i3].Type == "composit" {
+					continue
+				}
 
 				if q.Pages[i1].Groups[i2].Inputs[i3].IsReserved() {
 					return fmt.Errorf(s+"Name '%v' is reserved", nm)

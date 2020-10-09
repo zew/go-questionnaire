@@ -100,6 +100,7 @@ func main() {
 		mux1.HandleFunc(cfg.PrefTS("/"), handlers.MainH)
 	}
 	mux1.HandleFunc(cfg.Pref("/transferrer-endpoint"), handlers.TransferrerEndpointH)
+	tpl.CreateAndRegisterHandlerForDocs(mux1) // needs session
 
 	// vert align diff view
 	// vert align diff view
@@ -126,7 +127,6 @@ func main() {
 	// Extra handler for dynamic css - served from templates
 	mux4.HandleFunc(cfg.PrefTS("/css/"), tpl.ServeDynCSS)
 	// markdown files in /doc
-	tpl.CreateAndRegisterHandlerForDocs(mux4)
 
 	serveIcon := func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "image/x-icon")

@@ -270,7 +270,9 @@ table.main-table tr:nth-child(odd){
 }
 
 
-
+.page-margins {
+	/* min-width: 60ch; */
+}
 
 
 
@@ -373,6 +375,12 @@ table.main-table tr:nth-child(odd){
 .special-min-width-85 {
     display: inline-block;
     min-width: 85px;    
+}
+
+.special-vertical-align-top {
+	vertical-align: top;
+	min-height: 4rem;
+	margin-top: 0.4rem;
 }
 
 /* crutch to get vertical centering of control label  */

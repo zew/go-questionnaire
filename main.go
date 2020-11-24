@@ -76,7 +76,9 @@ func main() {
 	mux1.Handle(cfg.Pref("/logins-reload"), wrap.MustAdmin(lgn.LoadH))
 	mux1.Handle(cfg.Pref("/generate-password"), wrap.MustAdmin(lgn.GeneratePasswordH))
 	mux1.HandleFunc(cfg.Pref("/create-anonymous-id"), lgn.CreateAnonymousIDH)
-	mux1.HandleFunc(cfg.Pref("/fmreport-email"), handlers.FMReportFormH)
+	mux1.HandleFunc(cfg.Pref("/fmreport-email"), handlers.RegistrationFMRH)
+	mux1.HandleFunc(cfg.Pref("/registrationfmr"), handlers.RegistrationFMRH) // without hyphen
+	mux1.HandleFunc(cfg.Pref("/registrationfmt"), handlers.RegistrationFMTH) // without hyphen
 	// Stream tests
 	mux1.Handle(cfg.Pref("/instance-info"), wrap.MustAdmin(stream.InstanceInfo))
 	// PProf stuff

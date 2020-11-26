@@ -10,7 +10,7 @@ require (
 	github.com/gomodule/redigo v2.0.0+incompatible
 	github.com/google/wire v0.4.0 // indirect
 	github.com/monoculum/formam v0.0.0-20200316225015-49f0baed3a1b
-	github.com/pbberlin/struc2frm v1.2.2
+	github.com/pbberlin/struc2frm v1.2.3
 	github.com/pkg/errors v0.9.1
 	github.com/russross/blackfriday v2.0.0+incompatible
 	github.com/shurcooL/sanitized_anchor_name v1.0.0 // indirect

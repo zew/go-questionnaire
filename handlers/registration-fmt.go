@@ -1,10 +1,13 @@
 package handlers
 
 import (
+	"bytes"
 	"fmt"
 	"log"
 	"net/http"
+	"net/smtp"
 	"os"
+	"strconv"
 	"strings"
 	"sync"
 
@@ -23,17 +26,35 @@ type formRegistrationFMT struct {
 	Email   string `json:"email"              form:"maxlength='40',size='40',pattern='[a-zA-Z0-9\\.\\-_%+]+@[a-zA-Z0-9\\.\\-]+\\.[a-zA-Z]{0&comma;2}'"`
 	Telefon string `json:"telefon"            form:"maxlength='40',size='40',label='Telefon'"`
 
-	Separator1 string `json:"separator1"      form:"subtype='separator'"`
+	Separator1 string `json:"separator1"      form:"subtype='separator',label='replace_me_2'"`
 
 	Geschlecht  string `json:"geschlecht"     form:"subtype='select'"`
-	Geburtsjahr int    `json:"geburtsjahr"    form:"maxlength='5',size='5',min='0',max='2010'"`
+	Geburtsjahr string `json:"geburtsjahr"    form:"maxlength='5',size='5'"`
 	Abschluss   string `json:"abschluss"      form:"maxlength='40',size='40',label='Höchster Abschluss',suffix='z.B. Diplom'"`
 	Studienfach string `json:"studienfach"    form:"maxlength='40',size='40',label='Ggf. Studienfach',suffix='z.B. VWL'"`
 	Hochschule  string `json:"hochschule"     form:"maxlength='40',size='40',label='Ggf. Hochschule',suffix='z.B. Uni Mannheim'"`
-	Einstieg    int    `json:"einstieg"       form:"maxlength='5',size='5',min='0',max='2010',label='Einstieg ins Berufsleben',suffix='Jahr'"`
-	Leitung     int    `json:"Leitung"        form:"maxlength='6',size='6',min='0',max='1000000',label='Leitungsbefugnis',suffix='über Anzahl Mitarbeiter'"`
+	Einstieg    string `json:"einstieg"       form:"maxlength='5',size='5',label='Einstieg ins Berufsleben',suffix='(Jahr)'"`
+	Leitung     string `json:"leitung"        form:"subtype='select',size='1',label='Leitungsbefugnis über',suffix='Mitarbeiter'"`
 
-	Terms bool `json:"terms"        form:"label='Datenschutz',suffix='replace_me'"`
+	Terms bool `json:"terms"        form:"label='Datenschutz',suffix='replace_me_1'"`
+}
+
+// yearValid - either empty or within 1930 and 2050
+func yearValid(s string) bool {
+	if s == "" {
+		return true // no number is ok
+	}
+	i, err := strconv.Atoi(s)
+	if err != nil {
+		return false // not a number => not ok
+	}
+	if i < 1930 {
+		return false
+	}
+	if i > 2050 {
+		return false
+	}
+	return true
 }
 
 func (frm formRegistrationFMT) Validate() (map[string]string, bool) {
@@ -72,12 +93,22 @@ func (frm formRegistrationFMT) Validate() (map[string]string, bool) {
 	}
 	//
 
-	g12 := frm.Terms
+	g10 := yearValid(frm.Geburtsjahr)
+	if !g10 {
+		errs["geburtsjahr"] = "Bitte geben Sie ein sinnvolles Geburtsjahr - oder gar nichts - ein."
+	}
+	g11 := yearValid(frm.Einstieg)
+	if !g11 {
+		errs["einstieg"] = "Bitte geben Sie ein sinnvolles Einstiegsjahr - oder gar nichts - ein."
+	}
+
+	g20 := frm.Terms
 	if !frm.Terms {
 		errs["terms"] = "Bitte nehmen Sie Kenntnis von unserer Datenschutz-Richtlinie."
 	}
 	fields := g1 && g2 && g3 && g4 && g5 && g6 && g7 && g8
-	fields = fields && g12
+	fields = fields && g10 && g11
+	fields = fields && g20
 	return errs, fields
 }
 
@@ -88,15 +119,22 @@ func RegistrationFMTH(w http.ResponseWriter, r *http.Request) {
 
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
 
-	//
-	fmt.Fprintf(w, "<h3>Registrierung von Finanzmarkttest-Teilnehmern</h3>")
-
 	s2f := struc2frm.New()
+	s2f.ShowHeadline = true
 	s2f.Indent = 170
-	s2f.CSS = strings.ReplaceAll(s2f.CSS, "max-width: 40px;", "max-width: 220px;")
-	s2f.CSS = strings.ReplaceAll(s2f.CSS, "div.struc2frm {", " * { font-family: BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; }  div.struc2frm {")
+	s2f.CSS = strings.ReplaceAll(
+		s2f.CSS,
+		"max-width: 40px;",
+		"max-width: 220px;",
+	)
+	s2f.CSS += ` 
+	* { 
+		font-family: BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; 
+	}  `
+	s2f.CSS += ` div.struc2frm span.postlabel { font-size: 80%; } `
 	s2f.SetOptions("department", []string{"ub", "fm"}, []string{"UB", "FM"})
 	s2f.SetOptions("geschlecht", []string{"", "male", "female"}, []string{"Bitte auswählen", "Männlich", "Weiblich"})
+	s2f.SetOptions("leitung", []string{"", "<=10", "<=50", "<=100", "<=1000", ">1000"}, []string{" ", "bis 10", "bis 50", "bis 100", "bis 1000", "über 1000"})
 
 	frm := formRegistrationFMT{}
 
@@ -138,6 +176,29 @@ func RegistrationFMTH(w http.ResponseWriter, r *http.Request) {
 				return
 			}
 			fmt.Fprintf(w, "<p style='color: red; font-size: 115%%;'>Ihre Daten wurden gespeichert</p>")
+
+			to := []string{"finanzmarkttest@zew.de", "peter.buchmann@zew.de"}
+			mimeHTML := "MIME-version: 1.0;\nContent-Type: text/html; charset=\"UTF-8\";\n\n"
+			mimeHTML = "MIME-version: 1.0;\r\nContent-Type: text/html; charset=\"UTF-8\";\r\n"
+			body := &bytes.Buffer{}
+			// headers
+			fmt.Fprintf(body, "To: %v \r\n", strings.Join(to, ", ")) // "To: billy@microsoft.com, stevie@microsoft.com \r\n"
+			fmt.Fprintf(body, mimeHTML)
+			fmt.Fprintf(body, "FMT Registration %v %v\r\n", frm.Vorname, frm.Nachname)
+			// ending of headers
+			fmt.Fprint(body, "\r\n")
+			fmt.Fprint(body, s2f.Card(frm))
+			err = smtp.SendMail(
+				"hermes.zew-private.de:25",
+				nil,                               // smtp.Auth interface
+				"Registration-FMT@survey2.zew.de", // from
+				to,                                // twice - once here - and then again inside the body
+				body.Bytes(),
+			)
+			if err != nil {
+				fmt.Fprint(w, fmt.Sprintf("Error sending email hermes.xxx: %v <br>\n", err))
+			}
+
 		}
 	}
 
@@ -147,27 +208,36 @@ func RegistrationFMTH(w http.ResponseWriter, r *http.Request) {
 		// 	`<p>REGISTRIERUNG VON FINANZMARKTTEST-TEILNEHMERN
 		// 	</p>`)
 		fmt.Fprint(w1, s2f.Form(frm))
-		s2 := strings.ReplaceAll(w1.String(), "replace_me",
+		s2 := strings.ReplaceAll(w1.String(), "replace_me_1",
 			`<div style="margin-top: 1.8em;">
 			Ich erkläre mich mit den <a tabindex='-1' 
 			href='https://www.zew.de/de/datenschutz' target='_blank' >Datenschutzbestimmungen</a> 
 			einverstanden</div>`,
 		)
-		s3 := strings.ReplaceAll(s2, "<div class='separator'></div>",
+		s3 := strings.ReplaceAll(s2, "replace_me_2",
 			`
-			<div style="margin-left:200px; max-width: 500px; margin-bottom: 1.4rem; font-size: 85%;" >
+			<div style="margin:0.2rem 2rem;  margin-bottom: 1.4rem; 
+				max-width: 700px;
+				line-height: 130%;" 
+				font-size: 92%;" 
+			>
 			<p> 1. Im ZEW Finanzmarktreport liefern wir Ihnen monatlich eine detaillierte Darstellung 
-				der aktuellsten Umfrageergebnisse. <br>
+				der aktuellsten Umfrageergebnisse. 
+				<sbr>
 				Den ZEW Finanzmarktreport sowie den monatlichen Finanzmarkttest-Fragebogen 
 				schicken wir Ihnen grundsätzlich per Email zu. 
 			</p> 
 			
-			<p> 2. Wir würden uns sehr darüber freuen, wenn Sie zusätzliche Angaben zu Ihrer Person machen könnten. <br>
+			<p> 2. Wir würden uns sehr darüber freuen, 
+				wenn Sie zusätzliche Angaben zu Ihrer Person machen könnten. 
+				<sbr>
 				Ihre Daten bleiben anonym, so dass keine Rückschlüsse auf Ihre Person oder Ihr Unternehmen möglich sind.
 			</p> 
 			</div>
 		 `)
-		fmt.Fprint(w, s3)
+
+		s4 := strings.ReplaceAll(s3, "Form registration fmt", "Registrierung von Finanzmarkttest-Teilnehmern")
+		fmt.Fprint(w, s4)
 
 	}
 

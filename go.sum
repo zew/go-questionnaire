@@ -201,6 +201,8 @@ github.com/pbberlin/struc2frm v1.2.1 h1:GtYynEzUjShuXQbi64vzv8LePUvtZ7JQycEjkcpQ
 github.com/pbberlin/struc2frm v1.2.1/go.mod h1:hsIWVzQqFpVlrgEwfkkpYRF8nP0wPAjs0O8+o+S9/9I=
 github.com/pbberlin/struc2frm v1.2.2 h1:imUD19udBia2lcHM0S/+3YcompaO8cTV2u+GFvoGwO4=
 github.com/pbberlin/struc2frm v1.2.2/go.mod h1:hsIWVzQqFpVlrgEwfkkpYRF8nP0wPAjs0O8+o+S9/9I=
+github.com/pbberlin/struc2frm v1.2.3 h1:OM1XPa4wmpWiqQli3kZurRHdJPDogbHq4gixdTkfDq4=
+github.com/pbberlin/struc2frm v1.2.3/go.mod h1:hsIWVzQqFpVlrgEwfkkpYRF8nP0wPAjs0O8+o+S9/9I=
 github.com/pkg/errors v0.8.0/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
 github.com/pkg/errors v0.8.1 h1:iURUrRGxPUNPdy5/HRSm+Yj6okJ6UtLINN0Q9M4+h3I=
 github.com/pkg/errors v0.8.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=

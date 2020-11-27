@@ -165,21 +165,10 @@ func RegistrationFMTH(w http.ResponseWriter, r *http.Request) {
 			mtxFMT.Lock()
 			defer mtxFMT.Unlock()
 
-			f, err := os.OpenFile("registration-fmt.csv", os.O_APPEND|os.O_WRONLY, 0600)
-			if err != nil {
-				fmt.Fprintf(w, "<p style='color: red; font-size: 115%%;'>registration-fmt.csv konnte nicht geöffnet werden. Informieren Sie peter.buchmann@zew.de.<br>%v</p>", err)
-				return
-			}
-			defer f.Close()
-			if _, err = f.WriteString(s2f.CSVLine(frm)); err != nil {
-				fmt.Fprintf(w, "<p style='color: red; font-size: 115%%;'>Ihre Daten konnten nicht nach fmr.csv gespeichert werden. Informieren Sie peter.buchmann@zew.de.<br>%v</p>", err)
-				return
-			}
-			fmt.Fprintf(w, "<p style='color: red; font-size: 115%%;'>Ihre Daten wurden gespeichert</p>")
+			var failure1, failure2 bool
 
 			to := []string{"finanzmarkttest@zew.de", "peter.buchmann@zew.de"}
-			mimeHTML := "MIME-version: 1.0;\nContent-Type: text/html; charset=\"UTF-8\";\n\n"
-			mimeHTML = "MIME-version: 1.0;\r\nContent-Type: text/html; charset=\"UTF-8\";\r\n"
+			mimeHTML := "MIME-version: 1.0;\r\nContent-Type: text/html; charset=\"UTF-8\";\r\n"
 			body := &bytes.Buffer{}
 			// headers
 			fmt.Fprintf(body, "To: %v \r\n", strings.Join(to, ", ")) // "To: billy@microsoft.com, stevie@microsoft.com \r\n"
@@ -187,6 +176,7 @@ func RegistrationFMTH(w http.ResponseWriter, r *http.Request) {
 			fmt.Fprintf(body, "FMT Registration %v %v\r\n", frm.Vorname, frm.Nachname)
 			// ending of headers
 			fmt.Fprint(body, "\r\n")
+			s2f.CardViewOptions.SkipEmpty = true
 			fmt.Fprint(body, s2f.Card(frm))
 			err = smtp.SendMail(
 				"hermes.zew-private.de:25",
@@ -196,8 +186,26 @@ func RegistrationFMTH(w http.ResponseWriter, r *http.Request) {
 				body.Bytes(),
 			)
 			if err != nil {
-				fmt.Fprint(w, fmt.Sprintf("Error sending email hermes.xxx: %v <br>\n", err))
+				fmt.Fprint(w, fmt.Sprintf("Error sending email: %v <br>\n", err))
+				log.Print(w, fmt.Sprintf(" Error sending email: %v", err))
+				failure1 = true
 			}
+
+			f, err := os.OpenFile("registration-fmt.csv", os.O_APPEND|os.O_WRONLY, 0600)
+			if err != nil {
+				fmt.Fprintf(w, "<p style='color: red; font-size: 115%%;'>registration-fmt.csv konnte nicht geöffnet werden. Informieren Sie peter.buchmann@zew.de.<br>%v</p>", err)
+				failure2 = true
+			}
+			defer f.Close()
+			if _, err = f.WriteString(s2f.CSVLine(frm, ";")); err != nil {
+				fmt.Fprintf(w, "<p style='color: red; font-size: 115%%;'>Ihre Daten konnten nicht nach fmr.csv gespeichert werden. Informieren Sie peter.buchmann@zew.de.<br>%v</p>", err)
+				failure2 = true
+			}
+
+			if failure1 || failure2 {
+				return
+			}
+			fmt.Fprintf(w, "<p style='color: red; font-size: 115%%;'>Ihre Daten wurden gespeichert</p>")
 
 		}
 	}

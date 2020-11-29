@@ -10,6 +10,7 @@ import (
 	"strconv"
 	"strings"
 	"sync"
+	"time"
 
 	"github.com/pbberlin/struc2frm"
 	"github.com/zew/util"
@@ -165,9 +166,10 @@ func RegistrationFMTH(w http.ResponseWriter, r *http.Request) {
 			mtxFMT.Lock()
 			defer mtxFMT.Unlock()
 
-			var failure1, failure2 bool
+			var failureEmail, failureCSV bool
 
 			to := []string{"finanzmarkttest@zew.de", "peter.buchmann@zew.de"}
+			to = []string{"finanzmarkttest@zew.de"}
 			mimeHTML := "MIME-version: 1.0;\r\nContent-Type: text/html; charset=\"UTF-8\";\r\n"
 			body := &bytes.Buffer{}
 			// headers
@@ -178,31 +180,33 @@ func RegistrationFMTH(w http.ResponseWriter, r *http.Request) {
 			fmt.Fprint(body, "\r\n")
 			s2f.CardViewOptions.SkipEmpty = true
 			fmt.Fprint(body, s2f.Card(frm))
+			fmt.Fprintf(body, "<p>Form sent %v</p>", time.Now().Format(time.RFC850))
 			err = smtp.SendMail(
-				"hermes.zew-private.de:25",
+				// "hermes.zew-private.de:25", // from intern
+				"hermes.zew.de:25",                // from DMZ - does not work
 				nil,                               // smtp.Auth interface
 				"Registration-FMT@survey2.zew.de", // from
 				to,                                // twice - once here - and then again inside the body
 				body.Bytes(),
 			)
 			if err != nil {
-				fmt.Fprint(w, fmt.Sprintf("Error sending email: %v <br>\n", err))
+				// fmt.Fprint(w, fmt.Sprintf("Error sending email: %v <br>\n", err))
 				log.Print(w, fmt.Sprintf(" Error sending email: %v", err))
-				failure1 = true
+				failureEmail = true
 			}
 
 			f, err := os.OpenFile("registration-fmt.csv", os.O_APPEND|os.O_WRONLY, 0600)
 			if err != nil {
 				fmt.Fprintf(w, "<p style='color: red; font-size: 115%%;'>registration-fmt.csv konnte nicht geöffnet werden. Informieren Sie peter.buchmann@zew.de.<br>%v</p>", err)
-				failure2 = true
+				failureCSV = true
 			}
 			defer f.Close()
 			if _, err = f.WriteString(s2f.CSVLine(frm, ";")); err != nil {
 				fmt.Fprintf(w, "<p style='color: red; font-size: 115%%;'>Ihre Daten konnten nicht nach fmr.csv gespeichert werden. Informieren Sie peter.buchmann@zew.de.<br>%v</p>", err)
-				failure2 = true
+				failureCSV = true
 			}
 
-			if failure1 || failure2 {
+			if failureEmail && failureCSV {
 				return
 			}
 			fmt.Fprintf(w, "<p style='color: red; font-size: 115%%;'>Ihre Daten wurden gespeichert</p>")

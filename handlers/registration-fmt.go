@@ -22,12 +22,17 @@ type formRegistrationFMT struct {
 	Unternehmen string `json:"unternehmen"    form:"maxlength='40',size='40',placeholder='Ihr Unternehmen oder Organisation'"`
 	Abteilung   string `json:"abteilung"      form:"maxlength='40',size='40',"`
 	Position    string `json:"position"       form:"maxlength='40',size='40',suffix='Bezeichnung Ihrer aktuellen Position'"`
-	Anschrift   string `json:"anschrift"      form:"maxlength='40',size='40',label='Postanschrift'"`
+
+	Separator1 string `json:"separator1"      form:"subtype='separator',label=''"`
+
+	PLZ     string `json:"plz"                form:"maxlength='6',size='6',label='PLZ',xxnobreak='true'"`
+	Ort     string `json:"ort"                form:"maxlength='40',size='40'"`
+	Strasse string `json:"strasse"            form:"maxlength='40',size='40',suffix='mit Hausnummer'"`
 	// stackoverflow.com/questions/399078 - inside character classes escape ^-]\
 	Email   string `json:"email"              form:"maxlength='40',size='40',pattern='[a-zA-Z0-9\\.\\-_%+]+@[a-zA-Z0-9\\.\\-]+\\.[a-zA-Z]{0&comma;2}'"`
 	Telefon string `json:"telefon"            form:"maxlength='40',size='40',label='Telefon'"`
 
-	Separator1 string `json:"separator1"      form:"subtype='separator',label='replace_me_2'"`
+	Separator2 string `json:"separator2"      form:"subtype='separator',label='replace_me_2'"`
 
 	Geschlecht  string `json:"geschlecht"     form:"subtype='select'"`
 	Geburtsjahr string `json:"geburtsjahr"    form:"maxlength='5',size='5'"`
@@ -80,9 +85,17 @@ func (frm formRegistrationFMT) Validate() (map[string]string, bool) {
 	if frm.Position == "" {
 		errs["position"] = "Bitte geben Sie Ihre Position an."
 	}
-	g6 := frm.Anschrift != ""
-	if frm.Anschrift == "" {
-		errs["anschrift"] = "Bitte geben Sie Ihre Anschrift an."
+	g6a := frm.PLZ != ""
+	if frm.PLZ == "" {
+		errs["plz"] = "Bitte geben Sie Ihre PLZ an."
+	}
+	g6b := frm.Ort != ""
+	if frm.Ort == "" {
+		errs["ort"] = "Bitte geben Sie Ihren Ort an."
+	}
+	g6c := frm.Strasse != ""
+	if frm.Strasse == "" {
+		errs["strasse"] = "Bitte geben Sie Ihre Strasse an."
 	}
 	g7 := frm.Email != ""
 	if frm.Email == "" {
@@ -107,7 +120,7 @@ func (frm formRegistrationFMT) Validate() (map[string]string, bool) {
 	if !frm.Terms {
 		errs["terms"] = "Bitte nehmen Sie Kenntnis von unserer Datenschutz-Richtlinie."
 	}
-	fields := g1 && g2 && g3 && g4 && g5 && g6 && g7 && g8
+	fields := g1 && g2 && g3 && g4 && g5 && g6a && g6b && g6c && g7 && g8
 	fields = fields && g10 && g11
 	fields = fields && g20
 	return errs, fields
@@ -226,25 +239,36 @@ func RegistrationFMTH(w http.ResponseWriter, r *http.Request) {
 			href='https://www.zew.de/de/datenschutz' target='_blank' >Datenschutzbestimmungen</a> 
 			einverstanden</div>`,
 		)
+
 		s3 := strings.ReplaceAll(s2, "replace_me_2",
 			`
-			<div style="margin:0.2rem 2rem;  margin-bottom: 1.4rem; 
-				max-width: 700px;
-				line-height: 130%;" 
-				font-size: 92%;" 
+			<div style="
+				margin:0.2rem  3rem;  
+				margin-top:    1.4rem; 
+				margin-bottom: 1.4rem; 
+				max-width: 49rem;
+				" 			
 			>
-			<p> 1. Im ZEW Finanzmarktreport liefern wir Ihnen monatlich eine detaillierte Darstellung 
-				der aktuellsten Umfrageergebnisse. 
-				<sbr>
-				Den ZEW Finanzmarktreport sowie den monatlichen Finanzmarkttest-Fragebogen 
-				schicken wir Ihnen grundsätzlich per Email zu. 
-			</p> 
-			
-			<p> 2. Wir würden uns sehr darüber freuen, 
-				wenn Sie zusätzliche Angaben zu Ihrer Person machen könnten. 
-				<sbr>
-				Ihre Daten bleiben anonym, so dass keine Rückschlüsse auf Ihre Person oder Ihr Unternehmen möglich sind.
-			</p> 
+
+				<label style="text-align: left; font-size: clamp(0.7rem, 0.86vw, 2.8rem); ">
+					Wir werden Sie jeden Monat direkt nach der Umfrage über die aktuellen Ergebnisse per Email informieren. 
+					Außerdem erhalten Sie von uns einige Tage später den ZEW-Finanzmarktreport mit detaillierten Analysen der Ergebnisse. 
+					Den neuen Fragebogen senden wir Ihnen jeweils bei Umfragebeginn an Ihre Email-Adresse.
+				</label> 
+
+				<label style="text-align: left; font-size: clamp(0.7rem, 0.86vw, 2.8rem); ">
+					Wir würden uns freuen, wenn Sie uns mit dieser Anmeldung noch 
+					zusätzliche Angaben zu Ihrer Person machen könnten. 
+					Wir werden diese Informationen in einigen wissenschaftlichen 
+					Analysen zur Erwartungsbildung verwenden.
+				</label> 
+				
+				<label style="text-align: left; font-size: clamp(0.7rem, 0.86vw, 2.8rem); ">
+					Alle Informationen, die Sie uns mit dieser Anmeldung geben, 
+					bleiben selbstverständlich anonym, 
+					so dass keine Rückschlüsse auf Ihre Person oder Ihr Unternehmen möglich sind.
+				</label> 
+
 			</div>
 		 `)
 

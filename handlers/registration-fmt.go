@@ -23,7 +23,7 @@ type formRegistrationFMT struct {
 	Abteilung   string `json:"abteilung"      form:"maxlength='40',size='40',"`
 	Position    string `json:"position"       form:"maxlength='40',size='40',suffix='Bezeichnung Ihrer aktuellen Position'"`
 
-	Separator1 string `json:"separator1"      form:"subtype='separator',label=''"`
+	// Separator1 string `json:"separator1"      form:"subtype='separator',label=''"`
 
 	PLZ     string `json:"plz"                form:"maxlength='6',size='6',label='PLZ',xxnobreak='true'"`
 	Ort     string `json:"ort"                form:"maxlength='40',size='40'"`
@@ -42,7 +42,30 @@ type formRegistrationFMT struct {
 	Einstieg    string `json:"einstieg"       form:"maxlength='5',size='5',label='Einstieg ins Berufsleben',suffix='(Jahr)'"`
 	Leitung     string `json:"leitung"        form:"subtype='select',size='1',label='Leitungsbefugnis über',suffix='Mitarbeiter'"`
 
-	Terms bool `json:"terms"        form:"label='Datenschutz',suffix='replace_me_1'"`
+	// Taetigkeiten
+	Separator3                   string `json:"separator3"                      form:"subtype='separator',label='replace_me_3'"`
+	VWLAnalyseHaupt              bool   `json:"vwl_analyse_haupt"               form:"label='Volkswirtschaftl. Analyse',label-style='min-width:240px;position: relative; left: -20px;',nobreak='true'"`
+	VWLAnalyseManchmal           bool   `json:"vwl_analyse_manchmal"            form:"label=' ',label-style='min-width:4.8rem'"`
+	WertpapierhandelHaupt        bool   `json:"wertpapierhandel_haupt"          form:"label='Wertpapierhandel',label-style='min-width:240px;position: relative; left: -20px;',nobreak='true'"`
+	WertpapierhandelManchmal     bool   `json:"wertpapierhandel_manchmal"       form:"label=' ',label-style='min-width:4.8rem'"`
+	FinanzierungHaupt            bool   `json:"finanzierung_haupt"              form:"label='Finanzierung',label-style='min-width:240px;position: relative; left: -20px;',nobreak='true'"`
+	FinanzierungManchmal         bool   `json:"finanzierung_manchmal"           form:"label=' ',label-style='min-width:4.8rem'"`
+	ManagementHaupt              bool   `json:"management_haupt"                form:"label='Management',label-style='min-width:240px;position: relative; left: -20px;',nobreak='true'"`
+	ManagementManchmal           bool   `json:"management_manchmal"             form:"label=' ',label-style='min-width:4.8rem'"`
+	WertpapieranalyseHaupt       bool   `json:"wertpapieranalyse_haupt"         form:"label='Wertpapieranalyse',label-style='min-width:240px;position: relative; left: -20px;',nobreak='true'"`
+	WertpapieranalyseManchmal    bool   `json:"wertpapieranalyse_manchmal"      form:"label=' ',label-style='min-width:4.8rem'"`
+	PortfoliomanagementHaupt     bool   `json:"portfoliomanagement_haupt"       form:"label='Fonds-/Portfoliomanagmt.',label-style='min-width:240px;position: relative; left: -20px;',nobreak='true'"`
+	PortfoliomanagementManchmal  bool   `json:"portfoliomanagement_manchmal"    form:"label=' ',label-style='min-width:4.8rem'"`
+	AnlageberatungHaupt          bool   `json:"anlageberatung_haupt"            form:"label='Anlageberatung',label-style='min-width:240px;position: relative; left: -20px;',nobreak='true'"`
+	AnlageberatungManchmal       bool   `json:"anlageberatung_manchmal"         form:"label=' ',label-style='min-width:4.8rem'"`
+	VermoegensverwaltungHaupt    bool   `json:"vermoegensverwaltung_haupt"      form:"label='Vermögensverwaltung',label-style='min-width:240px;position: relative; left: -20px;',nobreak='true'"`
+	VermoegensverwaltungManchmal bool   `json:"vermoegensverwaltung_manchmal"   form:"label=' ',label-style='min-width:4.8rem'"`
+	RisikomanagementHaupt        bool   `json:"risikomanagement_haupt"          form:"label='Risikomanagement',label-style='min-width:240px;position: relative; left: -20px;',nobreak='true'"`
+	RisikomanagementManchmal     bool   `json:"risikomanagement_manchmal"       form:"label=' ',label-style='min-width:4.8rem'"`
+	Sonstiges                    string `json:"sonstiges"                       form:"maxlength='40',size='40',label='',label-style='min-width:240px;position: relative; left: -20px;',suffix='sonstige Tätigkeiten'"`
+
+	Separator4 string `json:"separator4"   form:"subtype='separator',label=' &nbsp; '"`
+	Terms      bool   `json:"terms"        form:"label='Datenschutz',suffix='replace_me_1'"`
 }
 
 // yearValid - either empty or within 1930 and 2050
@@ -135,7 +158,7 @@ func RegistrationFMTH(w http.ResponseWriter, r *http.Request) {
 
 	s2f := struc2frm.New()
 	s2f.ShowHeadline = true
-	s2f.Indent = 170
+	s2f.Indent = 180
 	s2f.CSS = strings.ReplaceAll(
 		s2f.CSS,
 		"max-width: 40px;",
@@ -147,8 +170,8 @@ func RegistrationFMTH(w http.ResponseWriter, r *http.Request) {
 	}  `
 	s2f.CSS += ` div.struc2frm span.postlabel { font-size: 80%; } `
 	s2f.SetOptions("department", []string{"ub", "fm"}, []string{"UB", "FM"})
-	s2f.SetOptions("geschlecht", []string{"", "male", "female"}, []string{"Bitte auswählen", "Männlich", "Weiblich"})
-	s2f.SetOptions("leitung", []string{"", "<=10", "<=50", "<=100", "<=1000", ">1000"}, []string{" ", "bis 10", "bis 50", "bis 100", "bis 1000", "über 1000"})
+	s2f.SetOptions("geschlecht", []string{"", "male", "female", "diverse"}, []string{"Bitte auswählen", "Männlich", "Weiblich", "Divers"})
+	s2f.SetOptions("leitung", []string{"0", "<=10", "<=50", "<=100", "<=1000", ">1000"}, []string{"-", "bis 10", "bis 50", "bis 100", "bis 1000", "über 1000"})
 
 	frm := formRegistrationFMT{}
 
@@ -215,7 +238,7 @@ func RegistrationFMTH(w http.ResponseWriter, r *http.Request) {
 			}
 			defer f.Close()
 			if _, err = f.WriteString(s2f.CSVLine(frm, ";")); err != nil {
-				fmt.Fprintf(w, "<p style='color: red; font-size: 115%%;'>Ihre Daten konnten nicht nach fmr.csv gespeichert werden. Informieren Sie peter.buchmann@zew.de.<br>%v</p>", err)
+				fmt.Fprintf(w, "<p style='color: red; font-size: 115%%;'>Ihre Daten konnten nicht nach registration-fmt.csv gespeichert werden. Informieren Sie peter.buchmann@zew.de.<br>%v</p>", err)
 				failureCSV = true
 			}
 
@@ -234,7 +257,7 @@ func RegistrationFMTH(w http.ResponseWriter, r *http.Request) {
 		// 	</p>`)
 		fmt.Fprint(w1, s2f.Form(frm))
 		s2 := strings.ReplaceAll(w1.String(), "replace_me_1",
-			`<div style="margin-top: 1.8em;">
+			`<div style="aamargin-top: 1.8em; max-width: 18rem; ">
 			Ich erkläre mich mit den <a tabindex='-1' 
 			href='https://www.zew.de/de/datenschutz' target='_blank' >Datenschutzbestimmungen</a> 
 			einverstanden</div>`,
@@ -251,29 +274,43 @@ func RegistrationFMTH(w http.ResponseWriter, r *http.Request) {
 			>
 
 				<label style="text-align: left; font-size: clamp(0.7rem, 0.86vw, 2.8rem); ">
-					Wir werden Sie jeden Monat direkt nach der Umfrage über die aktuellen Ergebnisse per Email informieren. 
-					Außerdem erhalten Sie von uns einige Tage später den ZEW-Finanzmarktreport mit detaillierten Analysen der Ergebnisse. 
-					Den neuen Fragebogen senden wir Ihnen jeweils bei Umfragebeginn an Ihre Email-Adresse.
+					Nach ihrer erfolgreichen Anmeldung erhalten Sie monatlich folgende Dokumente per E-Mail:
+
+					<ul>
+						<li style='margin-bottom: 0.4rem;'>
+							Den ZEW-Finanzmarkttest-Fragebogen, jeweils zum Umfragebeginn
+						</li>
+						<li style='margin-bottom: 0.4rem;'>
+							Die Umfrageergebnisse, jeweils zum Veröffentlichungszeitpunkt
+						</li>
+						<li style='margin-bottom: 0.4rem;'>
+							Den ZEW-Finanzmarktteport, in dem die Ergebnisse detailliert analysiert werden, 
+							einige Tage nach Veröffentlichung der jeweils neusten Umfrageergebnisse.
+						</li>
+					</ul>
+
 				</label> 
 
 				<label style="text-align: left; font-size: clamp(0.7rem, 0.86vw, 2.8rem); ">
-					Wir würden uns freuen, wenn Sie uns mit dieser Anmeldung noch 
-					zusätzliche Angaben zu Ihrer Person machen könnten. 
-					Wir werden diese Informationen in einigen wissenschaftlichen 
-					Analysen zur Erwartungsbildung verwenden.
-				</label> 
-				
-				<label style="text-align: left; font-size: clamp(0.7rem, 0.86vw, 2.8rem); ">
-					Alle Informationen, die Sie uns mit dieser Anmeldung geben, 
-					bleiben selbstverständlich anonym, 
+					Wir würden uns freuen, wenn Sie uns noch zusätzliche Angaben zu Ihrer Person machen könnten. 
+					Diese Informationen werden <u><b>ausschließlich für wissenschaftliche Zwecke</b></u> verwendet. 
+					Alle Informationen, die Sie uns mit dieser Anmeldung geben, bleiben anonym, 
 					so dass keine Rückschlüsse auf Ihre Person oder Ihr Unternehmen möglich sind.
 				</label> 
+				
 
 			</div>
 		 `)
 
-		s4 := strings.ReplaceAll(s3, "Form registration fmt", "Registrierung von Finanzmarkttest-Teilnehmern")
-		fmt.Fprint(w, s4)
+		s4 := strings.ReplaceAll(s3, "replace_me_3",
+			`<div style='margin-left:1.6rem;margin-top:1.5rem;' >
+				Welche Tätigkeiten führen Sie beruflich aus? <br>
+				(Mehrfachantwort möglich)<br>
+				<div style='margin-top: 0.4rem; margin-left: 200px; '>Haupttätigkeit   &nbsp; &nbsp;  Gelegentliche Tätigkeit</div>
+			</div>`)
+		s5 := strings.ReplaceAll(s4, "Form registration fmt", "Registrierung von Finanzmarkttest-Teilnehmern")
+
+		fmt.Fprint(w, s5)
 
 	}
 

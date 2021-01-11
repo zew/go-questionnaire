@@ -31,6 +31,6 @@ func errorH(w http.ResponseWriter, r *http.Request, msg string) {
 		"Q":         &qst.QuestionnaireT{LangCode: "en"}, // just the lang code for the outer layout template
 		"Content":   w2.String(),
 	}
-	tpl.Exec(w, r, mp, "main-desktop.html")
+	tpl.Exec(w, r, mp, "layout.html")
 
 }

@@ -381,10 +381,17 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 		tpl.Exec(w, r, mp, "main-mobile.html")
 	} else {
 
+		w1 := &bytes.Buffer{}
+		tpl.Exec(w1, r, mp, "quest.html")
+
 		w2 := &bytes.Buffer{}
-		tpl.Exec(w2, r, mp, "quest.html")
+		mp["Content"] = w1.String()
+		mp["Q"] = q
+		tpl.Exec(w2, r, mp, "main-desktop.html")
+
+		//
 		mp["Content"] = w2.String()
-		tpl.Exec(w, r, mp, "main-desktop.html")
+		tpl.Exec(w, r, mp, "layout.html")
 	}
 
 }

@@ -25,6 +25,7 @@ import (
 	"github.com/zew/go-questionnaire/handler"
 	"github.com/zew/go-questionnaire/lgn"
 	"github.com/zew/go-questionnaire/sessx"
+	"github.com/zew/util"
 )
 
 // general template funcs
@@ -35,16 +36,59 @@ var fcURLByKey = func(k string) string {
 	return cfg.Pref(handler.Infos().URLByKey(k))
 }
 
-// fcNav renders the nav core; it is called by the nav template
-var fcNav = func(r *http.Request) template.HTML {
-	bts := &bytes.Buffer{}
+// fcNav renders the nav core;
+// it is called by the nav template via {{nav .Req .S.BookMarkUri}};
+// param SBookMarkURI is app specific
+var fcNav = func(r *http.Request, SBookMarkURI string) template.HTML {
+	bts := &strings.Builder{}
 	w := httptest.NewRecorder()
 	isAdmin := false
-	_, isLogin, err := lgn.LoggedInCheck(w, r, "admin")
+	_ = isAdmin
+	l, isLogin, err := lgn.LoggedInCheck(w, r, "admin")
 	if isLogin && err == nil {
 		isAdmin = true
 	}
-	handler.Tree().NavHTML(bts, r, isLogin, isAdmin, 0) // the dynamic part
+	root := handler.Tree()
+
+	// append user name to logout link
+	if isLogin {
+		nd := root.ByKey("logout")
+		if nd != nil {
+			nd.Node.Title += fmt.Sprintf(" (%v)", l.User)
+			ok := root.SetByKey("logout", &nd.Node)
+			if !ok {
+				log.Printf("could not replace node 'logout'")
+			}
+		}
+	}
+
+	// add bookmarkable URI
+	{
+		hdlr := &handler.Info{
+			Keys:     []string{"bookmark"},
+			Urls:     []string{strings.TrimPrefix(SBookMarkURI, cfg.Pref())},
+			Title:    "Bookmark URL",
+			ShortCut: "k",
+		}
+		after := "pdf-files-browse"
+		after = "documentation"
+		after = "changes-across-tabs"
+		ok := root.AppendAfterByKey(after, hdlr)
+		if !ok {
+			log.Printf("could not append 'bookmark' after node '%v'", after)
+		}
+	}
+
+	nd := root.ByKey("main")
+	if nd != nil {
+		nd.Node.Title = "Main&nbsp;view"
+		ok := root.SetByKey("main", &nd.Node)
+		if !ok {
+			log.Printf("could not replace node 'main'")
+		}
+	}
+
+	root.NavHTML(bts, r, isLogin, isAdmin, 0) // the dynamic part
 	return template.HTML(bts.String())
 }
 
@@ -74,7 +118,7 @@ func fcExecBundledTemplate(tName string, mp map[string]interface{}) (template.HT
 
 // staticTplFuncs cannot refer to funcs with nested in-package funcs - precise reason obscure
 var staticTplFuncs = template.FuncMap{
-	// "toHTML":          func(arg string) template.HTML { return template.HTML("gosec violation") },
+	// "toHTML":          func(arg string) template.HTML { return template.HTML("Nogo - gosec violation") },
 	"toHTML":          func(arg string) template.HTML { return template.HTML(arg) },
 	"formToken":       func() template.HTMLAttr { return template.HTMLAttr(lgn.FormToken()) },
 	"cfg":             func() *cfg.ConfigT { return cfg.Get() }, // access to config
@@ -83,13 +127,58 @@ var staticTplFuncs = template.FuncMap{
 	"nav":             fcNav,                                    // template usage {{ nav .Req  }}
 	"lgn":             fcLogin,                                  // template usage {{ lgn .Req  }}
 	"executeTemplate": fcExecBundledTemplate,                    // template usage {{ executeTemplate "myTpl" . }} or {{ executeTemplate .DynTemplate .}}
-	"addint":          func(i1, i2 int) int { return i1 + i2 },
+
+	//
+	//
+	// Type conversion stuff (static)
+	"toJs":       func(arg string) template.JS { return template.JS(arg) },       // JavaScript expression
+	"toJsStr":    func(arg string) template.JSStr { return template.JSStr(arg) }, // JavaScript string - *automatic quotation*
+	"toURL":      func(arg string) template.URL { return template.URL(arg) },
+	"toHtml":     func(arg string) template.HTML { return template.HTML(arg) },
+	"toHtmlAttr": func(arg string) template.HTMLAttr { return template.HTMLAttr(arg) },
+	"toCss":      func(arg string) template.CSS { return template.CSS(arg) },
+
+	// Advanced conversions (still static)
+	"toStr":    func(v interface{}) string { return fmt.Sprintf("%v", v) },
+	"title":    strings.Title,
+	"humanize": func(arg float64) template.HTML { return template.HTML(util.HumanizeFloat(arg)) },
+
+	// Dynamic info about links
+	"linkByKey": func(arg string) handler.Info { return handler.Infos().ByKey(arg) },
+	"linksForNavigation": func() handler.InfosT {
+		ret := handler.InfosT{}
+		infos := []handler.Info(*handler.Infos())
+		for _, l := range infos {
+			ret = append(ret, l)
+		}
+		return ret
+	},
+
+	// Algebra
+	"addInt": func(a, summand int) int {
+		return a + summand
+	},
+	"max": func(a, b int) int {
+		if a > b {
+			return a
+		}
+		return b
+	},
+
 	// exists checks whether the struct 'data'
 	// has a field or method name.
 	// Usage {{if exists . "Q"}} ... {{end}}
 	// 'bad' but inevitable in *general purpose* layout templates.
 	// stackoverflow.com/questions/44675087/
+	//
+	// data might be a simple map - this is checked first
 	"exists": func(data interface{}, name string) bool {
+		mp, ok := data.(map[string]interface{})
+		if ok {
+			_, ok = mp[name]
+			return ok
+		}
+
 		v := reflect.ValueOf(data)
 		if v.Kind() == reflect.Ptr {
 			v = v.Elem()
@@ -109,7 +198,7 @@ var cache = map[string]*template.Template{}
 // overriden in init() / TemplatesPreparse()
 // loaded from bundles.json
 var bundles = map[string][]string{
-	"main-desktop.html": {
+	"layout.html": {
 		"nav-css-2020.html",
 		"example-01.html",
 		"example-02.html",
@@ -121,19 +210,20 @@ var bundles = map[string][]string{
 }
 
 // bundle appends a parsed template base with another parsed template b
-func bundle(base *template.Template, b string) error {
+func bundle(base *template.Template, extend string) error {
 
-	pth := path.Join(".", "templates", b) // not filepath; cloudio always has forward slash
+	pth := path.Join(".", "templates", extend) // not filepath; cloudio always has forward slash
 	bCnt, err := cloudio.ReadFile(pth)
 	if err != nil {
 		msg := fmt.Sprintf("cannot open bundle template %v: %v", pth, err)
 		return errors.Wrap(err, msg)
 	}
 
-	// from now on without extension
-	b = strings.TrimSuffix(b, path.Ext(b))
+	// either everything with extension - or everything without
+	//   we do the latter
+	// extend = strings.TrimSuffix(extend, path.Ext(extend))
 
-	tB := template.New(b)
+	tB := template.New(extend)
 	tB = tB.Funcs(staticTplFuncs)
 	tB2, err := tB.Parse(string(bCnt))
 	if err != nil {
@@ -143,7 +233,7 @@ func bundle(base *template.Template, b string) error {
 
 	// adding the *parsed* template
 	// callable via   {{ template b . }}
-	base, err = base.AddParseTree(b, tB2.Tree)
+	base, err = base.AddParseTree(extend, tB2.Tree)
 	if err != nil {
 		msg := fmt.Sprintf("failure adding parse tree of bundle template %v: %v", pth, err)
 		return errors.Wrap(err, msg)
@@ -161,7 +251,7 @@ func bundle(base *template.Template, b string) error {
 func obsoleteAddDynamicFuncs(t *template.Template, r *http.Request) {
 }
 
-// tpl returns a parsed template by name
+// tpl returns a parsed bundle of templates by name
 // either pre-parsed from cache, or freshly parsed;
 // called for every template at app *init* time;
 // thus no sync mutex is required
@@ -238,6 +328,13 @@ func Exec(w io.Writer, r *http.Request, mp map[string]interface{}, tName string)
 		return
 	}
 
+	// check for associated templates - not applicable
+	if t.Lookup(tName) == nil && t.Name() != tName {
+		log.Printf("template bundle %q does not contain %q: %v", tName, tName, err)
+		fmt.Fprintf(w, "template bundle %q does not contain %q: %v", tName, tName, err)
+		return
+	}
+
 	//
 	if mp == nil {
 		mp = map[string]interface{}{}
@@ -263,17 +360,21 @@ func Exec(w io.Writer, r *http.Request, mp map[string]interface{}, tName string)
 		mp["L"] = l
 	}
 
-	// move these four funcs into staticTplFuncs
+	// move these four funcs of TplDataT into staticTplFuncs
 	if _, ok := mp["MoreFuncs"]; !ok {
 		mp["MoreFuncs"] = TplDataT{}
 	}
 
 	if _, ok := mp["HTMLTitle"]; !ok {
-		mp["HTMLTitle"] = "html-title"
+		mp["HTMLTitle"] = cfg.Get().AppName
+	}
+
+	if _, ok := mp["CSSSite"]; !ok {
+		mp["CSSSite"] = cfg.Get().CSSVarsSite[cfg.Get().AppMnemonic]
 	}
 
 	if _, ok := mp["Content"]; !ok {
-		mp["Content"] = "no-content-supplied"
+		mp["Content"] = "<p style='color:red;' >Warning: no content supplied</p>\n"
 	}
 
 	// string to template.HTML

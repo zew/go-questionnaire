@@ -68,7 +68,7 @@ func LoggedInCheck(w io.Writer, r *http.Request, roles ...string) (l *LoginT, lo
 }
 
 // ValidateAndLogin takes request values "username" and "password".
-// Searches for matching user and stores that user
+// Searches for matching user in the internal JSON database and stores that user
 // into the session under key "login".
 func ValidateAndLogin(w http.ResponseWriter, r *http.Request) error {
 
@@ -213,7 +213,7 @@ func ChangePassword(w http.ResponseWriter, r *http.Request) (string, error) {
 				logins[idx].PassInitial = ""
 				logins[idx].IsInitPassword = false
 				logins[idx].PassMd5 = newPassEncr
-				err = cloudio.MarshalWriteFile(Get(), "logins.json")
+				err = cloudio.MarshalWriteFile(Get(), LgnsPath)
 				if err != nil {
 					return "", fmt.Errorf("could not save logins file: %v", err)
 				}
@@ -453,13 +453,13 @@ func loginPrimitive(w http.ResponseWriter, r *http.Request, outerHTML bool) {
 
 	type dataT struct {
 		SelfURL string
-		Cnt     string
+		Content string
 		Token   string
 		L       *LoginT
 	}
 	data := dataT{
 		SelfURL: r.URL.Path,
-		Cnt:     msg,
+		Content: msg,
 		Token:   FormToken(),
 		L:       l,
 	}
@@ -538,13 +538,13 @@ func changePasswordPrimitive(w http.ResponseWriter, r *http.Request, outerHTML b
 
 	type dataT struct {
 		SelfURL string
-		Cnt     string
+		Content string
 		Token   string
 		L       *LoginT
 	}
 	data := dataT{
 		SelfURL: r.URL.Path,
-		Cnt:     msg,
+		Content: msg,
 		Token:   FormToken(),
 		L:       l,
 	}

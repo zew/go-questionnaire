@@ -57,15 +57,24 @@ var userAttrs = map[string]string{
 	// "a":   "attrs",   // general purpose - can occur several times - key:value - or a profile id
 }
 
-// LoginT must be exported, *not* because we need to pass a type to sessx.GetObject
-// 		l := lgn.LoginT{}
-// 		l, ok, err := sess.EffectiveObj("login")
-// but because we need to declare variables of this type
-// 		type TplDataT struct {
-// 			...
-// 			L      lgn.LoginT
-// 			...
-// 		}
+/*
+LoginT must be exported, *not* because we need to pass a type to sessx.GetObject
+	loginIntf, ok := sess.EffectiveObj(key)
+	if !ok {
+		// log.Printf("key %v for LoginT{} is not in session", key)
+		return &LoginT{}, false, nil
+	}
+	l, ok := loginIntf.(LoginT)
+	if !ok {
+		return &LoginT{}, false, fmt.Errorf("key %v for LoginT{} does not point to lgn.LoginT{} - but to %T", key, loginIntf)
+	}
+but because we need to declare variables of this type
+	type TplDataT struct {
+		...
+		L      lgn.LoginT
+		...
+	}
+*/
 type LoginT struct {
 	User     string            `json:"user"`
 	Email    string            `json:"email"`
@@ -186,6 +195,21 @@ func Get() *loginsT {
 	return lgns
 }
 
+// AddTestLogin adds a systemtest login.
+// This func is only called by test funcs.
+func AddTestLogin() {
+	systest := LoginT{
+		User:  "systemtest",
+		Email: "delete this user in production environment",
+		Roles: map[string]string{
+			"survey_id": "fmt",
+		},
+		PassInitial:    "systemtest",
+		IsInitPassword: true,
+	}
+	lgns.Logins = append(lgns.Logins, systest)
+}
+
 // Load reads from a JSON file.
 // No method to loginsT, no pointer receiver;
 // We could only *copy*:  *c = *newCfg
@@ -226,7 +250,7 @@ func Load(r io.Reader) {
 }
 
 // FindAndCheck takes a username and password
-// and scans for matching users.
+// and scans for matching users in the internal JSON database.
 // If optPw is given, a check for matching password is also made
 func (l *loginsT) FindAndCheck(u string, optPw ...string) (LoginT, error) {
 
@@ -282,7 +306,7 @@ func LoadH(w http.ResponseWriter, req *http.Request) {
 	fileName := LgnsPath
 	r, bucketClose, err := cloudio.Open(fileName)
 	if err != nil {
-		log.Fatalf("Error opening writer to %v: %v", fileName, err)
+		log.Panicf("Error opening writer to %v: %v", fileName, err)
 	}
 	defer func() {
 		err := r.Close()
@@ -324,7 +348,7 @@ func LoadH(w http.ResponseWriter, req *http.Request) {
 // SaveH is a convenience func to save logins file via http request.
 func SaveH(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "text/plain; charset=utf-8")
-	err := cloudio.MarshalWriteFile(lgns, "logins.json")
+	err := cloudio.MarshalWriteFile(lgns, LgnsPath)
 	if err != nil {
 		fmt.Fprintf(w, "error writing logins file: %v", err)
 		return

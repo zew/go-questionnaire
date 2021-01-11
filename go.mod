@@ -12,7 +12,8 @@ require (
 	github.com/monoculum/formam v0.0.0-20200527175922-6f3cce7a46cf
 	github.com/pbberlin/struc2frm v1.2.8
 	github.com/pkg/errors v0.9.1
-	github.com/russross/blackfriday v1.5.2
+	github.com/russross/blackfriday v2.0.0+incompatible
+	github.com/shurcooL/sanitized_anchor_name v1.0.0 // indirect
 	github.com/speps/go-hashids v2.0.0+incompatible
 	github.com/zew/logx v0.0.0-20180516170210-9f79c321751a
 	github.com/zew/util v0.0.0-20190309202910-a8bebbe09dc9

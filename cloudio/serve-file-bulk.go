@@ -17,14 +17,13 @@ import (
 	"gocloud.dev/blob"
 )
 
-/*ServeFileBulk writes a binary file into the response;
-it's inner body is similar to ReadFile;
-files > 128 kB are offloaded to ServeFileStream()
-at hugely reduced memory consumption.
-As ServeFileStream() can not read session data,
-since the session middleware brings a buffered writer,
-we need to authorize the hand off with a hash
-*/
+// ServeFileBulk writes a binary file into the response;
+// it's inner body is similar to ReadFile;
+// files > 128 kB are offloaded to ServeFileStream()
+// at hugely reduced memory consumption.
+// As ServeFileStream() can not read session data,
+// since the session middleware brings a buffered writer,
+// we need to authorize the hand off with a hash
 func ServeFileBulk(w http.ResponseWriter, req *http.Request) {
 
 	// convenience

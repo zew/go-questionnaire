@@ -1,0 +1,81 @@
+<!-- this is the rump navigation -->
+
+<nav>
+
+    <!-- 
+        logo text and image are part of the design; 
+        img src attr set via CSS  .logo img  -> content: var(--img-logo-icon);
+
+        no whithespace in following line 
+    -->
+    <a href="{{cfg.Pref "" }}" class="logo"><img src="" alt="">{{  (.CSSSite.ByKey "logo-text" ).Plain    }}</a>
+
+    
+    <div style="display: none;">     
+        {{if lgn .Req}}
+        <a href='{{cfg.Pref "/user-profile" }}' class="login-icon">
+            <!-- src attr set via CSS img.logged-in  ->  content: var(--img-logo-icon);   -->
+            <img class="logged-in" src="" title="logged in as {{ lgn .Req }}">
+        </a>
+        {{- end -}}
+    </div>
+
+
+    <!-- burger checkbox - moved out of viewport - still can be tabbed and get focus -->
+    <!-- tabindex="-1" prevents empty tab in desktop view - but also prevents tabbing in mobile view -->
+    <input type="checkbox" id="mnu-1st-lvl-toggler" class="mnu-1st-lvl-toggler" >
+
+    <!-- burger label -->
+    <label for="mnu-1st-lvl-toggler" class="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+    </label>
+
+    <!-- menu second level-->
+    <ul class="mnu-2nd-lvl">
+
+    <!--         
+        {{if lgn .Req}}
+          <li  style="text-align:right;">
+                <a href='#'  >
+                    <img class="logged-in"  src="" title="logged in as {{ lgn .Req }}"  >
+                </a>
+          </li>            
+        {{- end -}}  
+    -->
+
+
+    {{if .S}}
+        {{- nav .Req .S.BookMarkUri -}}
+    {{end}}
+<!-- 
+
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contact</a></li>
+
+        <li class='nde-2nd-lvl'>
+            <a href='#' onclick='return false;'>Sys Admin</a>
+
+            <ul class='mnu-3rd-lvl'>
+                <li><a href='/login-primitive' class=''>Login app</a></li>
+                <li><a href='/login-appengine' class=''>Login appengine</a></li>
+                <li><a href='/google-token-signin' class=''>Google token sign-in</a></li>
+            </ul>
+        </li>
+        <li class='nde-2nd-lvl'>
+            <a href="#">About</a>
+
+            <ul class='mnu-3rd-lvl'>
+                <li><a href='/login-primitive' class=''>More</a></li>
+                <li><a href='/login-primitive' class=''>Subitems</a></li>
+            </ul>
+
+        </li>
+
+    </ul>
+
+
+ -->
+</nav>

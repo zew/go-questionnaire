@@ -11,7 +11,7 @@ import (
 	"github.com/zew/go-questionnaire/cfg"
 )
 
-var tokenSaltNotWorking = GeneratePassword(22) // not interoperational between multiple instances of go-questionnaire, transferrer, generator
+var tokenSaltNotWorking = GeneratePassword(22) // not interoperational between multiple instances of go-qu--estionnaire, transferrer, generator
 
 // set timezone to a constant - this is important for client-server talks, e.g. appengine frankfurt runs on different zone
 var fixedLocation = time.FixedZone("UTC_-2", -2*60*60)

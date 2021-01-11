@@ -15,7 +15,7 @@ import (
 
 // contained checks if a path breaks of the current dir;
 // i.e.
-//    ./content/site1/../../../etc/passwd
+//    ./content/site-x/../../../etc/passwd
 // does break out
 func contained(pth string) bool {
 
@@ -62,6 +62,7 @@ func StaticDownloadH(w http.ResponseWriter, r *http.Request) {
 	m := mime.TypeByExtension(filepath.Ext(pth))
 	if m != "" {
 		w.Header().Set("Content-Type", m)
+		// log.Printf("Found Content-Type %-22v for %v", m, pth)
 	}
 	fpth := filepath.Join(".", "static", pth) // this enforces only local files
 
@@ -71,6 +72,7 @@ func StaticDownloadH(w http.ResponseWriter, r *http.Request) {
 		s := fmt.Sprintf("StaticDownloadH: Could not open %v: %v", fpth, err)
 		log.Printf(s)
 		fmt.Fprint(w, s)
+		w.WriteHeader(http.StatusNotFound) // otherwise - browser CSS files are retried eternally
 		return
 	}
 	defer f.Close()
@@ -80,6 +82,7 @@ func StaticDownloadH(w http.ResponseWriter, r *http.Request) {
 		s := fmt.Sprintf("StaticDownloadH: Could not get fInfo of %v: %v", fpth, err)
 		log.Printf(s)
 		fmt.Fprint(w, s)
+		w.WriteHeader(http.StatusNotFound) // otherwise - browser CSS files are retried eternally
 		return
 	}
 	contentLength := fInfo.Size()

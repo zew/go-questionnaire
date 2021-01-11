@@ -16,9 +16,9 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/alexedwards/scs/redisstore"
 	"github.com/gomodule/redigo/redis"
 
+	"github.com/alexedwards/scs/redisstore"
 	"github.com/alexedwards/scs/v2"
 	"github.com/alexedwards/scs/v2/memstore"
 )
@@ -208,6 +208,7 @@ func (sess *SessT) PutString(key, val string) {
 // Almost identical to PutString.
 // val can be pointer or value.
 func (sess *SessT) PutObject(key string, val interface{}) {
+	// log.Printf("Putobject key %v %T - %v", key, val, util.StackTraceStr(1, 7))
 	sess.SessionManager.Put(sess.ctx, key, val)
 }
 

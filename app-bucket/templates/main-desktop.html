@@ -1,37 +1,5 @@
-<html>
-{{ $lc := (.Sess.EffectiveStr "lang_code" .MoreFuncs.DefaultLangCode)}}
-<head>
 
-	<meta charset="utf-8">
-	<!-- suppressing favicon altogether -->
-	<link rel="shortcut icon" type="image/x-icon"  href="data:;base64,=">
-	<link rel="icon"          type="image/x-icon"  href="data:;base64,=">
-	<title>{{.MoreFuncs.Trls.app_label.Tr $lc}}</title>
-	<link href="{{cfg.Pref "/css/main-desktop1.css"}}" rel="stylesheet" type="text/css" />
-	<link href="{{cfg.Pref "/css/main-desktop2.css"}}" rel="stylesheet" type="text/css" />
-	{{if exists . "Q"}}
-		{{if ne .Q.Survey.Type ""}}
-			<link href="{{cfg.Pref "/css/main-desktop-"}}{{.Q.Survey.Type}}.css" rel="stylesheet" type="text/css" />
-		{{end}}
-	{{end}}
-
-	<!-- jQuery - as it is required almost always -->
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" ></script>
-	<script type="text/javascript">
-		const PREFIX = "{{cfg.Pref ""}}";
-		if (!window.jQuery) { 
-			document.write('<script src="{{cfg.Pref "/js/jquery.min.js"}}" ><\/script>'); 
-			console.log('CDN version not available: fallback to local resource.'); 
-		}
-	</script>
-</head>
-<body>
-	<script type="text/javascript">
-		$(document).ready(function() {
-			console.log('body: jQuery doc.ready()');
-			// $( "body" ).children().last().append( "<p>jQuery doc.ready()</p>" );
-		});
-	</script>
+	{{ $lc := (.Sess.EffectiveStr "lang_code" .MoreFuncs.DefaultLangCode)}}
 	
 	<!-- header -->
 	<div class="header">
@@ -96,6 +64,3 @@
 		</div>	
 	</div>
 
-
-</body>
-</html>

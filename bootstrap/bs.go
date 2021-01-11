@@ -46,21 +46,21 @@ func Config() {
 		fileName := cfg.CfgPath
 		r, bucketClose, err := cloudio.Open(fileName)
 		if err != nil {
-			log.Fatalf("Error opening writer to %v: %v", fileName, err)
+			log.Fatalf("error opening writer to %v: %v", fileName, err)
 		}
 		defer func() {
 			err := r.Close()
 			if err != nil {
-				log.Printf("Error closing writer to bucket to %v: %v", fileName, err)
+				log.Printf("error closing writer to bucket to %v: %v", fileName, err)
 			}
 		}()
 		defer func() {
 			err := bucketClose()
 			if err != nil {
-				log.Printf("Error closing bucket of writer to %v: %v", fileName, err)
+				log.Printf("error closing bucket of writer to %v: %v", fileName, err)
 			}
 		}()
-		log.Printf("Opened reader to cloud config %v", fileName)
+		log.Printf("opened reader to cloud config %v", fileName)
 		cfg.Load(r)
 
 		err = cloudio.MarshalWriteFile(cfg.Example(), "config-example.json")
@@ -74,21 +74,21 @@ func Config() {
 		fileName := lgn.LgnsPath
 		r, bucketClose, err := cloudio.Open(fileName)
 		if err != nil {
-			log.Fatalf("Error opening writer to %v: %v", fileName, err)
+			log.Fatalf("error opening writer to %v: %v", fileName, err)
 		}
 		defer func() {
 			err := r.Close()
 			if err != nil {
-				log.Printf("Error closing writer to bucket to %v: %v", fileName, err)
+				log.Printf("error closing writer to bucket to %v: %v", fileName, err)
 			}
 		}()
 		defer func() {
 			err := bucketClose()
 			if err != nil {
-				log.Printf("Error closing bucket of writer to %v: %v", fileName, err)
+				log.Printf("error closing bucket of writer to %v: %v", fileName, err)
 			}
 		}()
-		log.Printf("Opened reader to cloud config %v", fileName)
+		log.Printf("opened reader to cloud config %v", fileName)
 		lgn.Load(r)
 
 		err = cloudio.MarshalWriteFile(lgn.Example(), "logins-example.json")
@@ -98,6 +98,7 @@ func Config() {
 
 	}
 
+	// template stuff
 	{
 		dummyReq, err := http.NewRequest("GET", "", nil)
 		if err != nil {
@@ -111,7 +112,11 @@ func Config() {
 	if cfg.Get().SessionTimeout > 0 {
 		sessx.Mgr().Lifetime = time.Duration(cfg.Get().SessionTimeout) * time.Hour // default is 24 hours
 	}
-	// sessx.Mgr().Secure(true)            // true breaks session persistence in excel-db - but not in go-countdown - it leads to sesson breakdown on iphone safari mobile, maybe because appengine is pbberlin outside
+	// true breaks session persistence in excel-db -
+	// but not in go-count?down;
+	// it also leads to session breakdown on iphone safari mobile,
+	// maybe because appengine is pbberlin outside
+	sessx.Mgr().Cookie.Secure = false // default is false
 
 	// struc--2frm.S2F.Indent = 90
 

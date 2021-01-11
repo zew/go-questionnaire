@@ -1,0 +1,1652 @@
+@charset "UTF-8";
+
+/* @import url('https://fonts.googleapis.com/css?family=Work+Sans:300,600'); */
+/* ===================================== */
+/* global stuff */
+/* normalize is partly incorporated; if you need all of it, uncomment... */
+/* @import url("normalize.css"); */
+/*
+	IE <= 9 and IE10/11 need a shock message
+	IE <= 9 is done by conditional comment
+	for IE10/11 see philipnewcomer.net/2014/04/target-internet-explorer-10-11-css
+*/
+.ie-warning {
+	display: none;
+}
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+	.ie-warning {
+		display: block;
+	}
+}
+
+/* reset - this is not in normalize.css */
+/* universal operator for properties not inherited by children */
+* {
+	box-sizing: border-box; /* css3 rec */
+	margin:	0;
+	padding: 0;
+	border:	0;	/* also input and button naked */
+	outline: 0;
+	line-height: 1.15;
+
+	/* color: violet; */
+	background-color: transparent;
+}
+
+/* must be explicitly set */
+*::before, *::after {
+	/* box-sizing: border-box; */
+	box-sizing: inherit;
+}
+
+/*
+	root points to HTML or SVG - stackoverflow.com/questions/15899615
+*/
+:root {
+	/*
+
+	 48rem(768px)	1rem(16px)
+			increasing to
+	120rem(1920px) 2rem(32px)
+
+	the expression (1vw - .48rem)
+	ranges from 0.00rem to 0.35rem
+
+	the expression calc(1rem + ((1vw - .48rem) * 1.4))
+	ranges from 0.65rem to 1.14rem
+
+	<p id="ptest1" style="padding: 1rem 2rem; font-size: calc(1vw - .48rem)">
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br>
+		sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+	</p>
+	<p id="ptest2" style="padding: 1rem 2rem; font-size: calc(1rem + ((1vw - .48rem) * 1.4))">
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br>
+		sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+	</p>
+	<p id="ptest3" style="padding: 1rem 2rem;">
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br>
+		sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+	</p>
+
+
+	<script>
+		function convertRemToPixels(rem) {
+			return rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
+		}
+		{
+			var px = document.getElementById("ptest1");
+			var st = window.getComputedStyle(px);
+			px.innerHTML += "<br> font-size " + st.fontSize + "  - " + parseFloat(st.fontSize)/convertRemToPixels(1.0) + "rem";
+		}
+		{
+			var px = document.getElementById("ptest2");
+			var st = window.getComputedStyle(px);
+			px.innerHTML += "<br> font-size " + st.fontSize + "  - " + parseFloat(st.fontSize)/convertRemToPixels(1.0) + "rem";
+		}
+		{
+			var px = document.getElementById("ptest3");
+			var st = window.getComputedStyle(px);
+			px.innerHTML += "<br> font-size " + st.fontSize + "  - " + parseFloat(st.fontSize)/convertRemToPixels(1.0) + "rem";
+		}
+	</script>
+
+
+	*/
+	font-size: clamp(0.75rem, calc(0.8rem + ((1vw - .48rem) * 1.2)), 0.90rem);
+
+	/* color: var(--clr-fg); */
+
+	background: var(--clr-bg);
+	font-weight: 400;
+
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+	/* zew */
+	font-family: "MetaWeb", Verdana, sans-serif;
+
+	/* welt.de */
+	font-family: 'Helvetica Neue', Helvetica, Arial , sans-serif;
+
+	/* markdown viewer */
+	font-family: -apple-system,BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+}
+
+
+body {
+	min-height: 0vw;
+}
+
+/* remove firefox focus outline *inside* button	*/
+*::-moz-focus-inner {
+	border: 0;
+}
+
+/* active, focus and hover stuff - for links, inputs and buttons */
+
+a:active, a:hover {
+	outline: 0;
+}
+
+/* inputs and links - active style
+	 hover for links handled separately
+*/
+*:focus {
+	/* outline: 4px solid var(--clr-pri-hov); */
+
+	/* remove all classic focus rectangles */
+	outline: none;
+
+	/* like border - but without displacement	*/
+	box-shadow:
+		0 0 0 0.175em var(--clr-sec),
+		0 0 0 0.250em var(--clr-pri-hov);
+	box-shadow:
+		0 0 0 0.075em var(--clr-sec),
+		0 0 0 0.150em var(--clr-pri-hov);
+}
+
+a {
+	color: var(--clr-pri);
+	text-decoration: none;
+}
+
+a:visited {
+	color: var(--clr-pri-vis);
+}
+
+/* default hover for links and buttons */
+a:hover, button:hover {
+	/* color: var(--clr-pri-hov); */
+	box-shadow:
+		0 0 0 0.175em var(--clr-sec),
+		0 0 0 0.210em var(--clr-pri-hov);
+}
+
+/* for debugging
+
+*:hover {
+	outline: 1px solid var(--clr-pri-hov);
+}
+*/
+
+
+
+
+
+/* ===================================== */
+/* common elements stuff */
+
+p, h1, h2, h3, li {
+	padding: 0.26em	0;
+}
+
+h2 {
+	font-size: 1.3rem;
+}
+h3 {
+	font-size: 1.15rem;
+}
+h4 {
+	font-size: 1.05rem;
+}
+
+p {
+	text-align: justify;
+}
+
+pre {
+	overflow: auto;
+
+	background: #eee;
+	font-family: "Courier 10 Pitch", Courier, monospace;
+	font-size: 15px;
+	font-size: .9rem;
+	line-height: 1.6;
+	max-width: 100%;
+	margin:  0.2em 0.95em;
+	padding: 0.5em 0.6em;
+}
+
+img {
+	height: auto;
+	max-width: 100%;
+}
+
+svg:not(:root) {
+	overflow: hidden;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+hr {
+	border: 1.5px solid var(--clr-fg);
+	margin-top:		0.5rem;
+	margin-bottom: 0.6rem;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	margin: 0 0 1.5em;
+	width: 100%;
+}
+
+td, th {
+	vertical-align: top;
+	padding: 0;
+}
+
+th {
+	padding: .4em;
+	text-align: left;
+}
+
+tr {
+	border-bottom: 1px solid #eee;
+}
+
+td {
+	padding: .4em;
+}
+
+/* form stuff */
+
+form, .form-alike {
+	width: 100%;
+	/* max-width: clamp(32rem, 96vw, 36rem); */
+
+	padding: 0.1rem 0.6rem;
+	background-color: var(--clr-sec);
+	border-radius: 0.5rem;
+}
+
+form {
+	display: inline-block;
+}
+
+legend {
+	border: 0;
+	padding: 0.1em 0.3em;
+	margin-left: 0.3em;
+
+	font-size: 0.91rem; /* like label */
+	letter-spacing:	0.03rem;
+	font-weight: 300; /* visibility in mobile browser */
+}
+
+label, .postlabel {
+
+	display:        inline-block;
+	vertical-align: middle;
+	padding-bottom: 0.15rem;  /* for vertical alignment */
+	margin-right: 0.5rem;
+
+	font-size: 0.91rem;	/* like legend */
+	letter-spacing:	0.03rem;
+	font-weight: 300; /* visibility in mobile browser */
+
+	white-space: nowrap;	/* explicit wrapping using -<br> */
+
+	text-align: right;
+
+	/* make flexible with media query if needed */
+	min-width:  8rem;
+}
+
+
+div.struc2frm  button[type=submit],
+div.struc2frm  input[type=submit]
+dummy {
+    margin-left: calc(8rem + 0.7rem); /* same as label min-width plus label margin */
+ }
+
+
+label.top {
+	top: 0.15rem;
+}
+
+label.bottom {
+	top: inherit;
+	bottom: 0.00rem;
+}
+
+.postlabel {
+	font-size: 0.78rem;
+	margin-left: 0.35rem;
+	min-width: inherit;  /* reset from label */
+}
+
+div.struc2frm  div.separator {
+    height: 1px; 
+    border-top: 1px solid #aaa; 
+
+    padding: 0;
+    margin: 0;
+    margin-top: 4px;
+    margin-bottom: 12px;
+}
+
+/*
+	fieldset flex horizontal does not work in chrome.
+	stackoverflow.com/questions/28078681
+	Use this instead
+
+	<fieldset class="border">
+		<legend>...
+			<div class="flex-horizonal">
+
+*/
+
+fieldset {
+	margin: 0.65em -0.2em;
+	margin: 0.65em	0.0em;
+	border: none;
+}
+
+fieldset.border {
+	padding: 0.55em 0.6em;
+	border:	0.150em solid var(--clr-sec-drk2);
+	border-radius: 0.5rem;
+}
+
+/* normalize form elements - start */
+
+button, input, optgroup, select, textarea {
+	color: inherit;
+	font:	inherit;
+	margin: 0;
+}
+
+textarea {
+	overflow: auto;
+}
+
+button {
+	overflow: visible;
+}
+
+button, select {
+	text-transform: none;
+}
+
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+	-webkit-appearance: button;
+	cursor: pointer;
+}
+
+button[disabled], html input[disabled] {
+	cursor: default;
+}
+
+button::-moz-focus-inner, input::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+
+input {
+	line-height: normal;
+}
+
+input[type="checkbox"], input[type="radio"] {
+	-webkit-box-sizing: border-box;
+			box-sizing: border-box;
+	padding: 0;
+}
+
+input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
+	height: auto;
+}
+
+/* normalize form elements - end */
+
+input, select, button, textarea, a.button {
+	padding: 0.2em 0.1em;
+	margin:	0.2em 0;
+	border-radius: 0.15em;
+	font-size: 0.9rem;
+	font-weight: 300;
+	line-height: 1.2;
+
+	/* width: calc(100% - 1rem); */
+	/*width: 120px;*/	/*prevents the size attribute from working*/
+	/* width: 100%; */
+
+	color: var(--clr-input-fg);
+	background-color: var(--clr-input-bg);
+
+
+	border: 1px solid #888;	/* chrome defaults to 2 pixel shadow */
+}
+
+::placeholder {
+	color: #000;
+	opacity: 0.20;
+}
+
+a.button {
+	display: inline-block;
+	text-align: center;
+}
+
+button, input[type="submit"], input[type="reset"], a.button {
+	padding: 0.4em	0.6em;
+	padding-bottom: 0.5em;
+	background-color: var(--clr-pri);
+	color: var(--clr-fg);
+	color: var(--clr-sec);
+	font-weight: 500;
+}
+
+/* suppressing default arrow icon from dropdown */
+select::-ms-expand {
+	display: none;
+}
+
+select {
+	/* -moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none; */
+	text-indent: 1px;
+	text-overflow: '';
+	border: none;
+
+	/* suppressing light blue background from options - does not work */
+	outline: none;
+}
+
+option {
+	padding: 0.4em;
+	color: #000;
+	background-color: transparent;
+	border: none;
+}
+
+select:-moz-focusring {
+	color:	transparent;
+	text-shadow: 0 0 0 #000;
+}
+
+/* 
+	artificial arrow icon for select/dropdown
+	by wrapping a div around each select ;
+	looks more stylish;
+	the arrow is creatd by the ::after pseudo tag;
+	requires the dropdown button itself to be suppressed;
+
+	even when the pseudo class is disabled, this style must be set;
+
+	also created by struc2frm
+*/
+.select-arrow {
+	position: relative;
+	display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+div.wildcardselect {
+    display: inline-block;
+	margin-top: 0.2rem; 
+	vertical-align: top;
+}
+div.wildcardselect input {
+    font-size: 80%;
+    padding: 1px;
+    margin:  2px;
+    width:  2.2rem;
+}
+
+.DISABLED-select-arrow::after {
+
+	/* display:	inline-block; */
+	position: absolute;
+	right:		 1.5rem;
+	top:			 1.3rem;
+	/* z-index: 3; */
+
+	pointer-events: none;
+
+	content: " ";
+	width:	0.6em;
+	height: 0.6em;
+
+	transform-origin: center;
+	transform: rotate(-45deg);
+	/* background-color: blueviolet; */
+	background: transparent;
+	color: var(--clr-pri);
+	border-left:	 2px solid var(--clr-pri);
+	border-bottom: 2px solid var(--clr-pri);
+}
+input:invalid {
+	box-shadow:
+		0 0 0 0.175em var(--clr-sec),
+		0 0 0 0.250em var(--clr-err);
+}
+
+input:focus:invalid {
+	background-color: var(--clr-err);
+	/*background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAeVJREFUeNqkU01oE1EQ/mazSTdRmqSxLVSJVKU9RYoHD8WfHr16kh5EFA8eSy6hXrwUPBSKZ6E9V1CU4tGf0DZWDEQrGkhprRDbCvlpavan3ezu+LLSUnADLZnHwHvzmJlvvpkhZkY7IqFNaTuAfPhhP/8Uo87SGSaDsP27hgYM/lUpy6lHdqsAtM+BPfvqKp3ufYKwcgmWCug6oKmrrG3PoaqngWjdd/922hOBs5C/jJA6x7AiUt8VYVUAVQXXShfIqCYRMZO8/N1N+B8H1sOUwivpSUSVCJ2MAjtVwBAIdv+AQkHQqbOgc+fBvorjyQENDcch16/BtkQdAlC4E6jrYHGgGU18Io3gmhzJuwub6/fQJYNi/YBpCifhbDaAPXFvCBVxXbvfbNGFeN8DkjogWAd8DljV3KRutcEAeHMN/HXZ4p9bhncJHCyhNx52R0Kv/XNuQvYBnM+CP7xddXL5KaJw0TMAF8qjnMvegeK/SLHubhpKDKIrJDlvXoMX3y9xcSMZyBQ+tpyk5hzsa2Ns7LGdfWdbL6fZvHn92d7dgROH/730YBLtiZmEdGPkFnhX4kxmjVe2xgPfCtrRd6GHRtEh9zsL8xVe+pwSzj+OtwvletZZ/wLeKD71L+ZeHHWZ/gowABkp7AwwnEjFAAAAAElFTkSuQmCC);*/
+	background-position: right top;
+	background-repeat: no-repeat;
+	border: 2px dotted red;
+}
+.error-block {
+	color: var(--clr-err);
+}
+
+/*
+	valid style - but only for non empty inputs would be
+		 input:not([value=""]):focus:valid
+	but its impossible with CSS: stackoverflow.com/questions/16952526/
+	*/
+input:focus:valid {
+	background-color: var(--clr-valid);
+}
+
+input[type=checkbox],
+input[type=radio] {
+
+	display: inline-block;
+	/* inline-block needs some width;
+		firefox takes it as base for scale(2) below;
+	*/
+	width:	1.2em;
+	/* even better: no bloated focus rectangle */
+	width:	auto;
+
+	vertical-align: middle;
+	margin: 0.70rem 0.45rem; /* labels far away enough from scaled input; padding is useless here	*/
+	margin-bottom: 0.45rem;
+
+	/*
+		zoom:	 2.0;
+		height: 2.0em;
+
+		both no worki on firefox -	though in chrome
+		therefore we resort to scale:
+	*/
+	transform: scale(2.25);
+
+	/*
+	all these are ignored:
+		color: crimson;
+		background-color: bisque;
+		border: 1px solid red !important;
+	*/
+
+}
+
+/*
+	firefox and chrome need different scaling
+	stackoverflow.com/questions/952861
+
+*/
+@supports (-moz-appearance:none) {
+	/* p { color:red; }	*/
+	input[type=checkbox],
+	input[type=radio] {
+		transform: scale(2);
+	}
+}
+input[type=checkbox]:focus,
+input[type=radio]:focus		 {
+	 /* scale(2) also scales the focus rectangle :( */
+	box-shadow:
+		0 0 0 0.020em var(--clr-sec),
+		0 0 0 0.060em var(--clr-pri-hov);
+}
+#console-log {
+	color: black;
+	background-color: white;
+	/* like pre; one addition: lines too long are broken
+		naturally assumes and extends to 100% of container
+		thus usually - a limiting width should be specified
+	*/
+	white-space: pre-wrap;
+	line-height: 120%;
+	background-color:#eee;
+	margin: 8px 0;
+	margin-left: 46px;
+	display: none;
+}
+
+
+/* ================= flex grid stuff - start	================= */
+
+/* flexbox container */
+.flex-horizonal {
+	display: flex;
+	flex-direction: row;
+
+	justify-content: space-around;  /* axis-1: [start, end, baseline, space-between] */
+	align-content:	 space-around;  /*          justify-content of the whole multi-lined compound  */
+
+	align-items:		   center;	/* axis-2 */
+	/* counterpart to align-self on flex-item */
+	/* [stretch | flex-end | flex-start] */
+
+	flex-wrap: nowrap;
+
+	/* gap is supported by firefx + chrome  */
+	/* gap: 0.1em; */
+}
+
+/* instead of center */
+.flex-horizonal-top {
+	align-items:		 start   ;
+	align-items:		 baseline;
+}
+
+/* flexbox container 2 */
+.flex-vertical {
+	display: flex;
+	flex-direction:	column;
+
+	justify-content: space-around;
+	align-content:	 space-around;
+
+	align-items:		 center;
+
+	flex-wrap: nowrap;
+}
+
+.wrap {
+	flex-wrap: wrap;
+}
+
+.flex-item {
+	flex-grow:   1;  /* extra space is allocated  1 / (sum of all flex-grow)  */
+	flex-shrink: 1;
+	flex-basis: inherit;  /* multiplier for flex-shrink and -grow */
+	align-self: inherit;  /* counterpart to container-align-items*/
+
+	/* order: 1; */  /* overrides the HTML order - screen reader and tab order get messed up */
+}
+
+.flex-item-horizontal {
+	border: none;
+	border: 0.2em solid #252;
+	border: 0.2em solid transparent;
+	border-left:  0.1em solid transparent;
+	border-right: 0.5em solid transparent;
+}
+
+.flex-item-vertical {
+	border-bottom:  0.75em solid transparent;
+	border-top:		0.75em solid transparent;
+}
+
+.flex-item-center {
+	text-align: center;
+}
+
+.flex-item-horizontal,
+.flex-item-vertical {
+	/* background-color: blueviolet; */
+}
+
+/* for javascript trigggered testing */
+.directionColumn {
+	max-height: 20rem;
+	flex-direction: column;
+}
+/* ================= flex grid stuff - end ================= */
+
+
+/* ===================================== */
+/* navigation + menu */
+/* mobile case */
+
+/*
+mobile case
+
+	nav
+		logo
+		1st level - consisting of invisible toggle and visible label 'burger'
+			2nd level menu
+				3rd level menu
+
+desktop case
+
+	nav
+		logo
+		2nd level menu
+			3rd level menu
+
+*/
+nav {
+	position: var(--nav-bar-position);
+	z-index: 3; /* over content*/
+	width: 100%;
+	min-height:			 var(--nav-height);
+	display: grid;
+	grid-template-columns: 0.4fr 4fr 4fr 2em 0.15fr;
+	grid-template-columns: 0.4fr 4fr 4fr 3.0em 2em 0.15fr;
+	/* main axis */
+	/*
+	css-tricks.com/snippets/css/a-guide-to-flexbox/
+	css-tricks.com/wp-content/uploads/2018/10/justify-content.svg
+			justify-content: center plus using up all width: space-around
+	*/
+	justify-content:	right;
+	/* justify-items: center;	/* not ignored - as some sources say */
+	/* justify-self	below */
+	/* no justify-items and no justify-self?	stackoverflow.com/questions/32551291/	*/
+	/* cross axis */
+	/* css-tricks.com/wp-content/uploads/2018/10/align-items.svg */
+	align-content:	 space-around;
+	align-items:		 center;
+
+	background-color: var(--clr-sec);
+
+}
+
+.logo {
+	position: relative;
+	color: var(--clr-pri);
+	font-size: 1.7rem;
+	letter-spacing: 0.10rem;
+	white-space: nowrap;
+
+	grid-column: 2 / 3;
+
+}
+
+/* dont color logo as 'visited' */
+.logo:visited {
+	color: var(--clr-pri);
+}
+
+/* placeholder for img insertion */
+.logo img {
+	display: inline-block;
+	position: relative;
+
+	top:			0.15rem;
+	left:		-0.10rem;
+
+	width:	 1.8rem;
+	height:	1.6rem;
+
+	margin-right: 0.4rem;
+
+	/* requires diplay, width and height being set */
+	content: var(--img-logo-icon);
+}
+
+.login-icon {
+	grid-column: 4 / 5;
+	justify-self: center;
+}
+
+img.logged-in {
+	display:	inline-block;
+	position: relative;
+	top:		 0.20rem;
+	width:	 1.6rem;
+	height:	1.4rem;
+	/* requires diplay, width and height being set */
+	content: var(--img-loggedin-icon);
+}
+/*
+	checkbox;
+	out of sight; but not invisible;
+	=> can receive fo-cus, keeping it tabbable, showing a pseudo fo-cus on its label
+*/
+.mnu-1st-lvl-toggler {
+	position: absolute !important;
+	top:			 -9999px !important;
+	left:			-9999px !important;
+}
+/* burger is the label for mnu-1st-lvl-toggler	*/
+/* only non-systematic name; instead of mnu-1st-lvl-label */
+.burger {
+	cursor: pointer;
+	grid-column: 5 / 6;
+	width: 1.32em;
+	font-size: 1.0rem;
+}
+
+/* burger label contents */
+.burger div{
+	width: 25px;
+	height: 3px;
+	background-color: var(--clr-pri);
+	margin: 5px 0;
+}
+
+/*
+	labels dont have a focus - only the referenced input has;
+	which is out of sight;
+	=> *simulate* focus on burger / label
+*/
+.mnu-1st-lvl-toggler:focus ~ .burger {
+	box-shadow:
+		0 0 0 0.175em var(--clr-sec),
+		0 0 0 0.250em var(--clr-pri-hov);
+}
+
+/* burger animation */
+.mnu-1st-lvl-toggler:checked ~	.burger .line1 {
+	transform:	rotate(-45deg) translate(-5px, 6px);
+	transition: transform 67ms ease-in;
+}
+.mnu-1st-lvl-toggler:checked ~	.burger .line2 {
+	opacity: 0;
+	transition: opacity 14ms ease-in-out;
+}
+.mnu-1st-lvl-toggler:checked ~	.burger .line3 {
+	transform:	rotate(45deg) translate(-5px, -6px);
+	transition: transform 67ms ease-in;
+}
+
+/* 2nd level menu - inside nav */
+ul.mnu-2nd-lvl {
+
+	position: absolute;
+	z-index: 99;
+	right:		0;
+	top:		var(--nav-height);
+
+	background-color: var(--clr-sec);
+	/* background-color: red; */
+
+	display: flex;
+	flex-direction: column;
+	/* vertical align; interacts with margins on ul.mnu-2nd-lvl a */
+	align-items: center;
+	width:	 60%;
+	width:	 66%;
+	height: auto;
+	/* height: var(--nav-rest-height); */
+
+	padding-bottom: 0.4em;
+	border-left:	 6px solid var(--clr-sec-drk2);
+	border-bottom: 6px solid var(--clr-sec-drk2);
+
+
+	/*
+		css-tricks.com/snippets/css/a-guide-to-flexbox/
+		css-tricks.com/wp-content/uploads/2018/10/justify-content.svg
+		justify-content: center plus using up all width: space-around
+	*/
+	justify-content: space-around;
+
+	/* multi line flex */
+	/*	flex-wrap: wrap;
+			align-content: stretch;
+			align-content: flex-end;
+	*/
+	transform-origin: top;
+
+}
+/* second level menu item */
+ul.mnu-2nd-lvl li {
+	width: 100%;
+}
+
+/* second level menu item - with a 3rd level child node */
+ul.mnu-2nd-lvl li.nde-2nd-lvl {
+	/* relative positioning - a fix point for third level dropdown */
+	position: relative;
+	/* reserve room for the pseudo element icon */
+	/* padding-right: 2em; */
+}
+
+/* second level item - icon to open third level */
+ul.mnu-2nd-lvl li.nde-2nd-lvl::before {
+
+	position: absolute;
+	z-index:	5;
+	display:	block;
+
+	content: ' ';
+
+	width:	0.7em;
+	height: 0.7em;
+
+	pointer-events: none;
+
+	right: 1.7em;
+	top:	 1.16em;
+
+	background-color: blueviolet;
+	background: transparent;
+
+	transform-origin: center;
+	transform: rotate(-45deg);
+
+	color: var(--clr-pri);
+	border-left:	 2px solid var(--clr-pri);
+	border-bottom: 2px solid var(--clr-pri);
+
+}
+/* static styling of all the links inside menu */
+ul.mnu-2nd-lvl a {
+	display: inline-block;
+	width:	 auto;
+
+	padding: 0.12em	0.8em; /* padding here - for focus rectangle distance */
+	margin:	0.75em	1.0em;
+
+	border-radius: 0.35em;
+
+	color: var(--clr-pri);
+	font-size: 1.02rem;
+	text-decoration: none;
+	letter-spacing: 0.10em;
+}
+ul.mnu-2nd-lvl a:hover,
+ul.mnu-2nd-lvl a:focus
+{
+	color: var(--clr-pri-hov);
+}
+/* animations from checkbox switching 2st level menu on and off... */
+
+/* contract menu by unchecking */
+ul.mnu-2nd-lvl {
+	transition: transform	130ms ease-in-out;
+	transform: scaleY(0);
+}
+
+/* expand	 menu by	checking */
+.mnu-1st-lvl-toggler:checked ~ ul.mnu-2nd-lvl {
+	transition: transform 240ms ease-in-out;
+	transform: scaleY(1);
+}
+
+/* hide links by	 unchecking */
+ul.mnu-2nd-lvl a {
+	visibility: hidden;	/* => no tabbing */
+	opacity: 0;
+	transition: opacity 190ms ease-in-out;
+}
+
+/* show links by		 checking - with delay */
+.mnu-1st-lvl-toggler:checked ~ ul.mnu-2nd-lvl a {
+	visibility: visible;
+	opacity: 1;
+	transition: opacity 190ms ease-in-out 250ms;
+}
+/* static menu third level - 3rd level */
+ul.mnu-3rd-lvl {
+
+	display:	block;
+	position: relative;	/* vertically embed - for horizontal breakout: absolutes */
+
+	top:		 50%;
+	left:		1.2em; /* reset */
+	right:	 inherit;
+
+	width: calc(100% - 1.2em);
+	/* z-index: 20; */
+	background-color: var(--clr-sec);
+	/* background-color: var(--clr-zew2-md); */
+	/* box-shadow: 0 0 0.1em 0.4em darkorchid; */
+
+	transform-origin: top;
+}
+
+/*
+	show hide 3rd level
+	state closed - default
+*/
+ul.mnu-3rd-lvl {
+
+	/*
+	visibility hidden does not free the space of the 3rd level menu.
+	display:none does, but also removes the links inside from tab order.
+	=> we can only move the menu out of layout flow using position: absolute;
+	then combining position relative, transform and opacity
+	to animate it into existence
+	*/
+	position:	absolute;
+	transform: scaleY(0.0);
+	opacity:	 0.0;
+
+	transition:
+		transform 180ms ease-in-out,
+		opacity	 180ms ease-in-out
+	;
+
+}
+/*
+	state opened - by focus/hover over parent .nde-2nd-lvl or focus on itself + its children
+
+				show		3rd level menu on mouse hover
+				show		3rd level menu on parent focus
+	keep	showing 3rd level menu, once focus is inside
+
+	css-tricks.com/keeping-parent-visible-child-focus/
+*/
+.nde-2nd-lvl:hover		ul.mnu-3rd-lvl,
+.nde-2nd-lvl a:focus ~	ul.mnu-3rd-lvl,
+						ul.mnu-3rd-lvl:focus-within,
+oh-god-this-works-1 {
+	position:	relative;
+	opacity:	 1;
+	transform: scaleY(1);
+}
+
+/* helper class, to hide mnu-3rd-lvl
+		attached / detached by only via javascript
+		similar to mnu-3rd-lvl - but stronger because !important
+
+		we would love to change li.nde-2nd-lvl::before
+		into an upward arrow, but pseudo elements
+		cannot be styled via javascript
+*/
+.mnu-3rd-lvl-pull-up{
+	position:	absolute		!important;
+	opacity:	 0.0				 !important;
+	transform: scaleY(0.0) !important;
+}
+
+ul.mnu-3rd-lvl li {
+	font-size: 0.95rem;
+	background-color: var(--clr-sec-drk1);
+	/* background-image: linear-gradient(	 -25deg,	var(--clr-sec), var(--clr-sec), var(--clr-sec), var(--clr-sec), var(--clr-sec-drk2)); */
+
+	border-bottom: 0.08em solid var(--clr-sec-drk2);
+}
+
+ul.mnu-3rd-lvl li a:hover,
+ul.mnu-3rd-lvl li a:focus {
+	box-shadow:
+		0 0 0 0.175em var(--clr-sec-drk1),
+		0 0 0 0.250em var(--clr-pri-hov)
+		;
+}
+
+ul.mnu-3rd-lvl li:last-child {
+	border-bottom: none;
+}
+
+/* menu desktop */
+@media screen and (min-width: 800px) {
+
+	nav {
+		/* unsupported with IE */
+		all: unset;
+
+		position: var(--nav-bar-position);
+		z-index: 3; /* over content*/
+
+		width: 100%;
+		min-height:			 var(--nav-height);
+		background-color: var(--clr-sec);
+
+		display: grid;
+		grid-template-columns: 1fr 4fr 4fr 0.7fr 2fr 1fr;
+
+		justify-content: right;
+
+		align-content: space-around;
+		align-items: center;
+
+	}
+
+	.login-icon {
+		width: 1.4rem;
+		grid-column: 4 / 5;
+		justify-self: center;
+	}
+
+	.burger {
+		display: none;
+	}
+
+	ul.mnu-2nd-lvl	{
+
+		/* all: unset; */
+		visibility: visible;
+
+		transform:	translateX(0);
+		transition: none;
+
+		grid-column: 5 / 6;
+		width: 100%;
+
+		position: relative;
+		top:	 0;
+		right: 0;
+
+		display: flex;
+		flex-direction: row;
+
+		/*
+			css-tricks.com/snippets/css/a-guide-to-flexbox/
+			css-tricks.com/wp-content/uploads/2018/10/justify-content.svg
+			justify-content: center plus using up all width: space-around
+		*/
+		justify-content: space-between;
+		align-content:	 space-around;
+		align-items:		 center;
+		/* justify-items: center;	this property is ignored */
+		padding-bottom:	 0;
+		border-left:	 none;
+		border-bottom: none;
+	}
+
+	li.nde-2nd-lvl::before {
+		content: none !important;
+	}
+
+	ul.mnu-3rd-lvl {
+
+		position: absolute !important;	/* otherwise selector is not strong enough*/
+
+		top:			100%;
+		left:			 0%;
+		right: inherit;	/* reset */
+
+		/* needs being wider than the 2nd lvl menu item => align right last child	*/
+		width: 160%;
+	}
+
+	ul.mnu-2nd-lvl li:last-child	ul.mnu-3rd-lvl {
+		width: 140%;
+		left:	inherit;
+		/* => align right last child */
+		right:			 -1.4em;
+		/* background-color: red;	*/
+	}
+
+	ul.mnu-2nd-lvl a {
+		visibility: visible;
+		opacity: 1;
+
+		padding: 0.2em 0.4em;
+		top:		 0.05em; /* compensate for focus ::after */
+
+		box-shadow: none; /* for focus instead animated ::after underline*/
+
+	}
+
+	/* hover for links 1: animated underline for the links */
+	ul.mnu-2nd-lvl a::after {
+		content: '';
+		display: block;
+		background-color: var(--clr-pri-hov);
+
+		/* position: absolute; */
+		position: relative;
+		left:	0;
+		right: 0;
+
+		height:	 0.1em;
+		bottom: -0.11em;
+
+		transform: scale(0, 1);
+		transition: transform ease-in-out 110ms;
+	}
+	/* hover for links 2 */
+	ul.mnu-2nd-lvl a:hover::after {
+		transform: scale(1,1);
+	}
+	ul.mnu-2nd-lvl a:focus::after {
+		transform: scale(1,1);
+		/* focus gets a stronger bar */
+		box-shadow: 0 0 0 0.02em var(--clr-pri-hov) ;
+	}
+	li.nde-2nd-lvl {
+		/* restore reserved space for pseudo element icon */
+		padding-right: 0.0em;
+	}
+
+	ul.mnu-3rd-lvl li {
+		background-color: var(--clr-sec);
+
+		padding-bottom: 0.4em;
+		border-right:	0.15rem solid var(--clr-sec-drk2);
+		border-left:	 0.15rem solid var(--clr-sec-drk2);
+
+	}
+
+	ul.mnu-3rd-lvl li:last-child {
+		border-bottom: 0.15rem solid var(--clr-sec-drk2);
+	}
+
+	ul.mnu-3rd-lvl li a:hover,
+	ul.mnu-3rd-lvl li a:focus {
+		box-shadow: none;
+	}
+}
+
+/* ===================================== */
+
+.content {
+
+	display: flex;
+	flex-direction: column;
+	position: relative;
+
+	top:	 var(--content-top);
+	width:	 100%;
+	margin:	 0 auto;
+	padding: 0;
+
+	/* to test scrolling */
+	/* min-height: 120vh;	*/
+	min-height: 91.6vh;
+
+	/* todo: this needs to be put into config */
+	background-color: var(--clr-sec);
+	background-color: var(--clr-sec-drk1);
+	background-blend-mode: multiply;
+
+	background-size: cover;
+
+	/* justify-content: center /* makes the content twitch on loading */
+	justify-items: center;		 /* not ignored - as some sources say */
+	/* justify-self on item level */
+
+	align-items:	 center;
+	/* place-items: center start; */
+}
+
+.content ul {
+	margin-top:		0.3rem;
+	margin-bottom: 0.5rem;
+}
+
+.content li {
+	list-style-type: square;
+	margin-left: 1.1rem;
+}
+
+
+.content-frame{
+	width: calc(100% - 1.2rem);
+	background-color: var(--clr-sec);
+	padding-bottom: 0.8rem;
+}
+
+/* replace with just h3 ? */
+.content-frame-title{
+	font-size:15px;
+	margin-bottom:-2px;
+}
+
+/*tab navigation for param groups/worksheets*/
+.tab-lvl-1{
+	/* font-size:16px; */
+	line-height:80%;
+	text-decoration: none;
+	display:inline-block;
+	padding: 8px 12px;
+	padding-top:8px;
+	margin: 0;
+	border: 1px solid #888;
+	border-bottom: none;
+	border-top-right-radius: 6px;
+	border-top-left-radius:	6px;
+	position:relative;
+	aaz-index:6;
+}
+
+.tab-lvl-1-passive{
+	background-color:	var(--clr-tab-background-color);
+	color:						 var(--clr-tab-foreground-color);
+	margin-top: 10px; /*as tall as active */
+}
+
+.tab-lvl-1-active{
+	background-color:	var(--clr-tab-background-color);
+	color:						 var(--clr-tab-foreground-color);
+	aaz-index:8;
+	/*font-weight:bold;*/
+	font-size:160%;	/*make it taller */
+	margin-top: 1px; /*but less margin*/
+}
+
+
+
+.tab-tip{
+	/*min-height: 10px;*/
+	margin:0;
+	display: inline-block;
+	position: absolute;
+	right:14px;
+	top:-7px;
+	font-size: 9px;
+	color: var(--clr-tab-background-color);
+	padding: 0px 8px;
+	padding-bottom: 2px 8px;
+	border: 1px solid #888;
+	border-bottom: none;
+	border-top-right-radius: 2px;
+	border-top-left-radius:	2px;
+	/*border: none;*/
+	background-color:	var(--clr-tab-background-color);
+	aaz-index:12; /*higher than tab level 1*/
+}
+.tab-tip-2{
+	right:9px;
+	top:13px;
+	width: 20px;
+	overflow:hidden;
+	padding: 0px;
+	font-size: 11px;
+	cursor: pointer;
+	border: none;
+}
+
+/*
+	IE10+ does not heed conditional comments anymore
+	IE10+ selective CSS styles via media query:
+*/
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+	.tab-tip{
+		top:-17px;
+	}
+	.tab-tip-2{
+		top:3px;
+	}
+}
+
+
+/* see flex-horizonal */
+.tab-body{
+
+	padding: 4px 8px;
+	padding-right: 0;
+	padding: 4px 4px;
+	margin-top: -2px;
+	margin-top: 12px;
+	background-color: var(--clr-tab-background-color);
+	border: 1px solid #888;
+
+
+	justify-content:  space-between;  /* axis-1 */
+	align-content:    space-between;
+
+	align-items:		   stretch;	  /* axis-2 */
+
+	min-height: 60vh;
+
+
+}
+
+.tab-body-pdf{
+	min-height: 0;
+	position: relative; /* to absolutely anchor the 'manage PDF link' */
+}
+
+
+/* see flex-horizonal */
+.param-block-div{
+	margin: 0;
+	min-width: 15rem; 
+	/* border: 1px solid rebeccapurple; */
+
+	flex-grow: 1;
+}
+
+.param-block-div + .param-block-div{
+	/* border-left: 2px solid grey; */
+}
+
+xxxxx.param-block-div{
+	vertical-align: top ;
+	display: inline-block;
+
+	/* forced to div to stretch as wide as it's contents */
+	/* white-space:nowrap;  */
+
+	/*border-left: 1px solid #2a2;*/
+	/* border: 1px solid #2a2; */
+	border: 1px solid var(--clr-sec-drk2);
+}
+
+
+div.control-widg {
+	/* forced to div to stretch as wide as it's contents */
+	white-space:nowrap;
+
+	/* max-width: 89%; */
+	/* background-color: #252; */
+
+}
+
+
+/* width of the first column of the main sheet */
+.col-1 {
+	min-width: 80px;
+}
+
+.vspacer-0,.vspacer-00 {
+	height:0px;
+}
+
+.vspacer-2,.vspacer-02 {
+	height:02px;
+}
+
+.vspacer-8,.vspacer-08 {
+	height:08px;
+}
+.vspacer-16 {
+	height:16px;
+}
+.vspacer-24 {
+	height:24px;
+}
+
+.ib {
+	display:inline-block;
+	vertical-align: middle;
+	/* 	width:150px;	no width; leave it dynamic*/
+	white-space:nowrap; /* forced to div to stretch as wide as it's contents */
+}
+
+.ib-030, .ib-060, .ib-090, .ib-120, .ib-150, .ib-200, .ib-250, .ib-300 {
+	display:inline-block;
+	vertical-align: middle;
+	white-space:nowrap;
+}
+
+.ib-030 { 	min-width:030px;	}
+.ib-060 { 	min-width:060px;	}
+.ib-090 { 	min-width:090px;	}
+.ib-120 { 	min-width:120px;	}
+.ib-150 { 	min-width:150px;	}
+.ib-200 { 	min-width:200px;	}
+.ib-250 { 	min-width:250px;	}
+.ib-300 { 	min-width:300px;	}
+
+input.ib-060 { 	width:060px;	}
+input.ib-090 { 	width:090px;	}
+input.ib-120 { 	width:120px;	}
+input.ib-150 { 	width:150px;	}
+input.ib-200 { 	width:200px;	}
+input.ib-250 { 	width:250px;	}
+input.ib-300 { 	width:300px;	}
+
+
+
+
+/*
+	Statically created for each input-widget.
+	In normal flow after the input control.
+	Before anchor-for-added-menues
+*/
+.expression-solution {
+	/* like disabled input */
+	border: 1px solid #aaa;
+	color: #222;
+	/* font-size: 90%; */
+	background-color: #ececec;
+	/* padding similar to input, select */
+	padding: 0.2em 0.1em;
+	padding-top: 0.05rem;
+	padding-bottom: 0.0rem;
+	margin:	0.2em 0;
+
+}
+
+/* common props of msg boxes */
+.top-msg-div ,
+.dyn-msg-div ,	/* dont use explicitly - only via javascript */
+.dummy {
+	font-size:14px;
+	color:#c44;
+	background-color:#eee;
+	border-radius: 6px;
+	padding: 4px 8px;
+	white-space:pre;
+}
+
+.top-msg-div {
+	margin-bottom: 8px;
+}
+
+/*flowing after anchor-for-added-menues*/
+.compare-msg {
+	padding: 4px 0px;
+	font-size: 80%;
+	color:#622;
+	border: 2px solid #e8e8e8;
+	/*background-color:#e8e8e8;*/
+	white-space:pre;
+	letter-spacing: -0.03rem;
+}
+.compare-msg-added {
+	color:#252;
+}
+.compare-msg-missing {
+	color:#622;
+}
+
+.error{
+	color:#622;
+}
+
+
+/*
+	Now the props for absolute flow
+*/
+
+/* 	Similar to top-msg-div,
+	but with dynamic creation and positioning.
+	To be appended after anchor-for-added-menues.
+*/
+.dyn-msg-div {
+	min-width: 150px;
+	min-height: 36px; /* same as control-menu */
+}
+
+/*To be appended after anchor-for-added-menues.*/
+.control-menu{
+
+	width: 125px;	/* counteract .ib	white-space:nowrap; */
+	min-height: 36px; /* same as dyn-msg-div */
+
+	background-color: #fff;
+	opacity: 0.9;
+
+
+	border: 1px dotted #ddd;
+	border-radius: 8px;
+	box-shadow: 4px 4px 3px grey;
+
+	padding:		6px 2px;
+
+	/*
+		This somehow destroyed the effect of .ib white-space:nowrap; :
+		We put it into the style attribute of the div. There it does not disturb.
+		(Chrome 2016-11)
+
+		display: none;
+
+	*/
+}
+
+
+/*
+	Make absolute positioned divs
+	vertically middly positioned.
+
+	Requires a height !
+
+	smashingmagazine.com/2013/08/absolute-horizontal-vertical-centering-css/
+*/
+.absolute-and-centered {
+	position: absolute;
+	z-index:21;
+	margin: auto;
+	top: 0; left: 0; bottom: 0; right: 0;
+}
+
+
+.plain-text-broken {
+	/* like pre; one addition: lines too long are broken
+		naturally assumes and extends to 100% of container
+		thus usually - a limiting width should be specified
+	*/
+	white-space: pre-wrap;
+
+	display: inline-block;
+	font-family: 'Courier New', Courier;
+
+}
+
+.bold {
+	font-weight: bold;
+}
+
+img.icon {
+	width: 20px;
+}
+
+img.icon-halve {
+	width: 12px;
+}
+
+img.icon2{
+	width: 1.2rem;
+	position: relative;
+	top: 0.3rem;
+}
+
+a.image-link {
+	text-decoration: none;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+textarea{
+	white-space:pre !important;	/*prevent inheritance of nowrap from surrounding */
+}
+
+
+input:not([type=submit]):valid,
+dummy {
+	background-color:#fff;
+}
+
+input:disabled, select:disabled {
+	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIklEQVQIW2NkQAKrVq36zwjjgzhhYWGMYAEYB8RmROaABADeOQ8CXl/xfgAAAABJRU5ErkJggg==) repeat;
+}
+
+
+
+
+.input-label {
+	font-size: 0.8rem;
+	text-align: right;
+	padding-right: 2px;
+	/*vertical-align: top !important;*/
+}
+
+div:focus {
+	background: #ddd;
+	outline: none;
+	border-left: none;
+	border-right: none;
+}
+

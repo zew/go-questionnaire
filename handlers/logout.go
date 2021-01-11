@@ -27,5 +27,5 @@ func LogoutSiteH(w http.ResponseWriter, r *http.Request) {
 		"Content":        string(body),
 	}
 
-	tpl.Exec(w, r, mp, "main-desktop.html")
+	tpl.Exec(w, r, mp, "layout.html")
 }

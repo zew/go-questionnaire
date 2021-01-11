@@ -51,6 +51,6 @@ func TestCloudStore(w1 http.ResponseWriter, r *http.Request) {
 
 	fmt.Fprintf(w, "Config is <pre>%v</pre>", util.IndentedDump(cfg.Get()))
 
-	tpl.ExecContent(w1, r, w.String(), "main-desktop.html")
+	tpl.ExecContent(w1, r, w.String(), "layout.html")
 
 }

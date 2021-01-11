@@ -3,6 +3,7 @@ package fmt
 import (
 	"fmt"
 	"log"
+	"strings"
 
 	"github.com/zew/go-questionnaire/ctr"
 	"github.com/zew/go-questionnaire/qst"
@@ -47,11 +48,13 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.ColSpanLabel = 3
 				impr := trl.S{}
 				for lc := range q.LangCodes {
-					cnt, err := tpl.MarkDownFromFile("./static/doc/data-protection.md", q.Survey.Type, lc)
+					w1 := &strings.Builder{}
+					err := tpl.RenderStaticContent(w1, "./static/doc/data-protection.md", q.Survey.Type, lc)
 					if err != nil {
 						log.Print(err)
 					}
-					impr[lc] = cnt
+					impr[lc] = w1.String()
+
 				}
 				inp.Desc = impr
 			}
@@ -1019,11 +1022,13 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.CSSLabel = "special-line-height-higher"
 				impr := trl.S{}
 				for lc := range q.LangCodes {
-					cnt, err := tpl.MarkDownFromFile("./static/doc/site-imprint.md", q.Survey.Type, lc)
+					w1 := &strings.Builder{}
+					err := tpl.RenderStaticContent(w1, "./static/doc/site-imprint.md", q.Survey.Type, lc)
 					if err != nil {
 						log.Print(err)
 					}
-					impr[lc] = cnt
+					impr[lc] = w1.String()
+
 				}
 				inp.Desc = impr
 			}

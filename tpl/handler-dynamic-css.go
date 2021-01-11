@@ -11,13 +11,13 @@ import (
 
 /*ServeDynCSS can serve CSS files for different sites;
 the url path specifies the key to a CSSVarsSite entry;
-i.e.    /css/site1/design.css
+i.e.    /css/site-1/design.css
 
-Currently though, all CSS vars are set in the main template main-desktop.html;
+Currently though, all CSS vars are set in the main template layout.html;
 therefore CSS files can be aggressively cached.
 
 Access from CSS would be
-	{{ cfg.CSSVarsSite.site1.HTML }}
+	{{ cfg.CSSVarsSite.site-1.HTML }}
 	{{  (.ByKey "sec-drk2" ).RGBA    }}
 
 
@@ -33,10 +33,10 @@ func ServeDynCSS(w http.ResponseWriter, r *http.Request) {
 	// andrewlock.net/adding-cache-control-headers-to-static-files-in-asp-net.core/
 	w.Header().Set("Cache-Control", fmt.Sprintf("public,max-age=%d", 60*60*120))
 
-	dir := path.Dir(r.URL.Path) //  /css/site1/design.css  => /css/site1/
-	siteName := path.Base(dir)  //  /css/site1/            => site1
+	dir := path.Dir(r.URL.Path) //  /css/site-1/design.css  => /css/site-1/
+	siteName := path.Base(dir)  //  /css/site-1/            => site-1
 
-	cssFileName := path.Base(r.URL.Path) //  /css/site1/design.css  => design.css
+	cssFileName := path.Base(r.URL.Path) //  /css/site-1/design.css  => design.css
 	t, err := tpl(r, cssFileName)
 	if err != nil {
 		log.Printf("Error compiling CSS template %v site %q: %v", cssFileName, siteName, err)

@@ -12,26 +12,31 @@ import (
 
 // TemplatesPreparse - parsing templates is expensive;
 // concurrent access is expensive;
-// we parse all templates at app start in bootstrap
+// we parse all templates in this http handler
+// which is also used for initialization at app start in bootstrap.
 func TemplatesPreparse(w http.ResponseWriter, req *http.Request) {
 
 	w.Header().Set("Content-Type", "text/plain; charset=utf-8")
 
+	// reading the bundling info
 	err := cloudio.MarshalWriteFile(bundles, path.Join(".", "templates", "bundles-example.json"))
 	if err != nil {
-		log.Fatalf("failed to create 'templates/bundles-example.json': %v", err)
+		log.Panicf("failed to create 'templates/bundles-example.json': %v", err)
 	}
 	err = cloudio.ReadFileUnmarshal(path.Join(".", "templates", "bundles.json"), &bundles)
 	if err != nil {
-		log.Fatalf("failed to read/unmarshal 'templates/bundles.json': %v", err)
+		log.Panicf("failed to read/unmarshal 'templates/bundles.json': %v", err)
 	}
 
+	// reading all template files from the directory
+	// and pushing them to tpl()
+	// tpl() adds the bundled templates - reading the files redunantly via bundle()
 	lo, err := cloudio.ReadDir("templates")
 	if err != nil {
 		fmt.Fprintf(w, "cannot read directory 'templates': %v \n", err)
 		return
 	}
-
+	reqDummy, _ := http.NewRequest("GET", "dummy", nil) // helper for below
 	for _, o := range *lo {
 
 		if o.IsDir {
@@ -47,15 +52,22 @@ func TemplatesPreparse(w http.ResponseWriter, req *http.Request) {
 			continue
 		}
 
-		req, _ := http.NewRequest("GET", "dummy", nil)
-		t, err := tpl(req, tName)
+		t, err := tpl(reqDummy, tName)
 		if err != nil {
 			fmt.Fprintf(w, "preparse failure template %-30v: %v\n", tName, err)
 			continue
 		}
 		cache[tName] = t // cache write only here
 
-		// fmt.Fprintf(w, "preparse success template %-30v\n", tName)
+		// logging the relationships
+		if false {
+			fmt.Fprintf(w, "preparse success template  %-30v\n", tName)
+			for _, tSub := range t.Templates() {
+				if tSub.Name() != tName {
+					fmt.Fprintf(w, "  preparse success subtpl  %-30v\n", tSub.Name())
+				}
+			}
+		}
 	}
 
 	fmt.Fprintf(w, "\n")

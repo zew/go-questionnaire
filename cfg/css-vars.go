@@ -19,7 +19,7 @@ type cssVar struct {
 	Key   string `json:"key,omitempty"`
 	Val   string `json:"val,omitempty"`
 	Desc  string `json:"desc,omitempty"`
-	IsURL bool   `json:"is_url,omitempty"` // prepend val with prefix and clad into url() => content: url(/4walls/img/ui/icon-forschung-zew-prim.svg
+	IsURL bool   `json:"is_url,omitempty"` // prepend val with prefix and clad into url() => content: url(/taxkit/img/ui/icon-forschung-zew-prim.svg
 
 	// if val is empty - following fields for color become relevant
 	Colorname string  `json:"color_name,omitempty"` // alternative to RGB-Alpha: 'white' or 'cyan' - replaces R/G/B - has no alpha value
@@ -128,11 +128,18 @@ func Stack(base, addenum cssVars) cssVars {
 
 	// clobber addenum over base
 	for i1, cadd := range addenum {
+		found := false
 		for i2, c := range ret {
 			if cadd.Key == c.Key {
 				// log.Printf("  overwr %-10v => %10v\n", c.Key, addenum[i1])
 				ret[i2] = addenum[i1]
+				found = true
+				break
 			}
+		}
+		if !found {
+			// not contained in base => not overwrite - but append
+			ret = append(ret, cadd)
 		}
 	}
 	return ret

@@ -5,15 +5,15 @@ import (
 	"strings"
 
 	"github.com/zew/go-questionnaire/cfg"
-	"github.com/zew/go-questionnaire/qst"
 	"github.com/zew/go-questionnaire/trl"
 )
 
-// TplDataT is a conduit for templates to access request, session and application data
-// It is meant to be embedded/extended by various apps
+// TplDataT is just a bunch of funcs;
+// made available to templates,
+// by adding an instance of TplDataT as "MoreFuncs" in Exec()
 type TplDataT struct {
-	Q       *qst.QuestionnaireT // The major app specific object
-	Content string              // Alternative - just a string
+	// Q       *qst.QuestionnaireT // The major app specific object
+	// Content string              // Alternative - just a string
 }
 
 // Trls returns translated strings, for instance HtmlTitle

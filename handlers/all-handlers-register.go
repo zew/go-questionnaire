@@ -37,7 +37,6 @@ func RegisterHandlers(mux *http.ServeMux) {
 			Handler: lgn.LoginPrimitiveH,
 			// 	Handler: LoginPrimitiveSiteH,
 			Keys:  []string{"login-primitive"},
-			InNav: true,
 			Allow: map[handler.Privilege]bool{handler.LoggedOut: true},
 		},
 		{
@@ -46,7 +45,6 @@ func RegisterHandlers(mux *http.ServeMux) {
 			Handler: lgn.ChangePasswordPrimitiveH,
 			// 	Handler: ChangePasswordPrimitiveSiteH,
 			Keys:  []string{"change-password-primitive"},
-			InNav: true,
 			Allow: map[handler.Privilege]bool{handler.Admin: true},
 		},
 		{
@@ -54,7 +52,6 @@ func RegisterHandlers(mux *http.ServeMux) {
 			Title:   "Anonymous login",
 			Handler: lgn.CreateAnonymousIDH,
 			Keys:    []string{"create-anonymous-id"},
-			InNav:   true,
 			Allow:   map[handler.Privilege]bool{handler.LoggedOut: true},
 		},
 		{
@@ -62,7 +59,6 @@ func RegisterHandlers(mux *http.ServeMux) {
 			Title:   "Logins reload",
 			Handler: lgn.LoadH,
 			Keys:    []string{"logins-reload"},
-			InNav:   true,
 			Allow:   map[handler.Privilege]bool{handler.Admin: true},
 		},
 		{
@@ -70,7 +66,6 @@ func RegisterHandlers(mux *http.ServeMux) {
 			Title:   "Generate password",
 			Handler: lgn.GeneratePasswordH,
 			Keys:    []string{"logins-generate-password"},
-			InNav:   true,
 			Allow:   map[handler.Privilege]bool{handler.Admin: true},
 		},
 		{
@@ -78,7 +73,6 @@ func RegisterHandlers(mux *http.ServeMux) {
 			Title:   "Config reload",
 			Handler: ConfigReloadH, // must be in this package
 			Keys:    []string{"config-reload"},
-			InNav:   true,
 			Allow:   map[handler.Privilege]bool{handler.Admin: true},
 		},
 		{
@@ -86,7 +80,6 @@ func RegisterHandlers(mux *http.ServeMux) {
 			Title:   "Templates reload",
 			Handler: tpl.TemplatesPreparse,
 			Keys:    []string{"templates-reload"},
-			InNav:   true,
 			Allow:   map[handler.Privilege]bool{handler.Admin: true},
 		},
 		{
@@ -94,7 +87,6 @@ func RegisterHandlers(mux *http.ServeMux) {
 			Handler: stream.SlowBuffered,
 			Title:   "Slow buffered",
 			Keys:    []string{"slow-buffered"},
-			InNav:   true,
 			Allow:   map[handler.Privilege]bool{handler.Admin: true},
 		},
 		{
@@ -102,7 +94,6 @@ func RegisterHandlers(mux *http.ServeMux) {
 			Handler: stream.SlowHijacked,
 			Title:   "Slow hijacked",
 			Keys:    []string{"slow-hijacked"},
-			InNav:   true,
 			Allow:   map[handler.Privilege]bool{handler.Admin: true},
 		},
 		{
@@ -110,7 +101,6 @@ func RegisterHandlers(mux *http.ServeMux) {
 			Title:   "Session put",
 			Handler: sessx.SessionPut,
 			Keys:    []string{"session-put"},
-			InNav:   true,
 			Allow:   map[handler.Privilege]bool{handler.Admin: true},
 		},
 		{
@@ -118,7 +108,6 @@ func RegisterHandlers(mux *http.ServeMux) {
 			Title:   "Session get",
 			Handler: sessx.SessionGet,
 			Keys:    []string{"session-get"},
-			InNav:   true,
 			Allow:   map[handler.Privilege]bool{handler.Admin: true},
 		},
 		{
@@ -126,7 +115,6 @@ func RegisterHandlers(mux *http.ServeMux) {
 			Handler: TestCloudStore,
 			Title:   "Cloud store test",
 			Keys:    []string{"cloud-store-test"},
-			InNav:   true,
 			Allow:   map[handler.Privilege]bool{handler.Admin: true},
 		},
 		{
@@ -134,7 +122,6 @@ func RegisterHandlers(mux *http.ServeMux) {
 			Handler: stream.InstanceInfo,
 			Title:   "Instance info",
 			Keys:    []string{"instance-info"},
-			InNav:   true,
 			Allow:   map[handler.Privilege]bool{handler.Admin: true},
 		},
 
@@ -143,77 +130,66 @@ func RegisterHandlers(mux *http.ServeMux) {
 			Urls:    []string{"/diag/pprof"},
 			Title:   "PProf index",
 			Handler: pprof.Index,
-			InNav:   true,
 			Allow:   map[handler.Privilege]bool{handler.Admin: true},
 		},
 		{
 			Urls:    []string{"/diag/allocs"},
 			Title:   "PProf allocations",
 			Handler: pprof.Handler("allocs").ServeHTTP,
-			InNav:   true,
 			Allow:   map[handler.Privilege]bool{handler.Admin: true},
 		},
 		{
 			Urls:    []string{"/diag/block"},
 			Title:   "PProf block",
 			Handler: pprof.Handler("block").ServeHTTP,
-			InNav:   true,
 			Allow:   map[handler.Privilege]bool{handler.Admin: true},
 		},
 		{
 			Urls:    []string{"/diag/cmdline"},
 			Title:   "PProf cmdline",
 			Handler: pprof.Cmdline,
-			InNav:   true,
 			Allow:   map[handler.Privilege]bool{handler.Admin: true},
 		},
 		{
 			Urls:    []string{"/diag/goroutine"},
 			Title:   "PProf goroutine",
 			Handler: pprof.Handler("goroutine").ServeHTTP,
-			InNav:   true,
 			Allow:   map[handler.Privilege]bool{handler.Admin: true},
 		},
 		{
 			Urls:    []string{"/diag/heap"},
 			Title:   "PProf heap",
 			Handler: pprof.Handler("heap").ServeHTTP,
-			InNav:   true,
 			Allow:   map[handler.Privilege]bool{handler.Admin: true},
 		},
 		{
 			Urls:    []string{"/diag/mutex"},
 			Title:   "PProf mutex",
 			Handler: pprof.Handler("mutex").ServeHTTP,
-			InNav:   true,
 			Allow:   map[handler.Privilege]bool{handler.Admin: true},
 		},
 		{
 			Urls:    []string{"/diag/profile"},
 			Title:   "PProf profile",
 			Handler: pprof.Profile,
-			InNav:   true,
 			Allow:   map[handler.Privilege]bool{handler.Admin: true},
 		},
 		{
 			Urls:    []string{"/diag/threadcreate"},
 			Title:   "PProf thread",
 			Handler: pprof.Handler("threadcreate").ServeHTTP,
-			InNav:   true,
 			Allow:   map[handler.Privilege]bool{handler.Admin: true},
 		},
 		{
 			Urls:    []string{"/diag/trace"},
 			Title:   "PProf trace",
 			Handler: pprof.Trace,
-			InNav:   true,
 			Allow:   map[handler.Privilege]bool{handler.Admin: true},
 		},
 		{
 			Urls:    []string{"/diag/symbol"},
 			Title:   "PProf symbol",
 			Handler: pprof.Symbol,
-			InNav:   true,
 			Allow:   map[handler.Privilege]bool{handler.Admin: true},
 		},
 
@@ -223,7 +199,6 @@ func RegisterHandlers(mux *http.ServeMux) {
 			Handler:  MainH,
 			Title:    "Home",
 			Keys:     []string{"main", "index"},
-			InNav:    true,
 			ShortCut: "p",
 		},
 		{
@@ -231,14 +206,12 @@ func RegisterHandlers(mux *http.ServeMux) {
 			Title:   "Login by hash ID",
 			Handler: LoginByHashID,
 			Keys:    []string{"login-by-hash-id"},
-			InNav:   true,
 		},
 		{
 			Urls:    []string{"/logout"},
 			Title:   "Logout",
 			Handler: LogoutSiteH,
 			Keys:    []string{"logout"},
-			InNav:   true,
 			Allow:   map[handler.Privilege]bool{handler.LoggedIn: true},
 		},
 		{

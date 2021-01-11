@@ -3,6 +3,7 @@ package tpl
 import (
 	"bytes"
 	"fmt"
+	"io"
 	"io/ioutil"
 	"log"
 	"mime"
@@ -15,6 +16,7 @@ import (
 	"github.com/russross/blackfriday"
 	"github.com/zew/go-questionnaire/cfg"
 	"github.com/zew/go-questionnaire/cloudio"
+	"github.com/zew/go-questionnaire/lgn"
 	"github.com/zew/go-questionnaire/qst"
 	"github.com/zew/go-questionnaire/sessx"
 )
@@ -26,11 +28,12 @@ type staticPrefixT string // significant url path fragment
 
 var packageDocPrefix = staticPrefixT("/doc/") // application singleton
 
-// MarkDownFromFile handles markdown rendering;
-// files reside inside ./app-bucket/content;
-// files are further specified by /[site]/[lang]/subPth
+// RenderStaticContent handles rendering of static content;
+// *.md files are rendered to HTML; *.html files only get URLs rewriting;
+// static files reside in ./app-bucket/content;
+// files may be differentiated by /[site]/[lang]/subPth
 // subPth is a partial path plus filename
-func MarkDownFromFile(subPth, site, lang string) (string, error) {
+func RenderStaticContent(w io.Writer, subPth, site, lang string) error {
 
 	var (
 		bts []byte
@@ -43,7 +46,7 @@ func MarkDownFromFile(subPth, site, lang string) (string, error) {
 		if err != nil {
 			s := fmt.Sprintf("MarkdownH: cannot open README.md in app root: %v", err)
 			log.Printf(s)
-			return "", errors.Wrap(err, s)
+			return errors.Wrap(err, s)
 		}
 		// rewrite links in README.MD from app root
 		//    ./app-bucket/content/somedir/my-img.png
@@ -70,7 +73,7 @@ func MarkDownFromFile(subPth, site, lang string) (string, error) {
 		if err != nil {
 			s := fmt.Sprintf("MarkdownH: cannot open markdown %v or upwards: %v", pth, err)
 			log.Printf(s)
-			return "", errors.Wrap(err, s)
+			return errors.Wrap(err, s)
 		}
 
 		{
@@ -106,23 +109,35 @@ func MarkDownFromFile(subPth, site, lang string) (string, error) {
 	// Since blackfriday version 1.52, bullet lists only work for UNIX line breaks
 	// bts = bytes.ReplaceAll(bts, []byte("\r\n"), []byte("\n"))
 
-	// Render markdown
-	output := string(blackfriday.MarkdownCommon(bts))
-	output = "<div class='markdown'>" + output + "</div>"
+	fmt.Fprint(w, "\n\t<div class='markdown'>\n")
+
+	ext := path.Ext(subPth)
+	if ext == ".html" {
+		fmt.Fprint(w, string(bts)) // html direct
+	} else {
+		fmt.Fprint(w, string(blackfriday.Run(bts))) // render markdown
+	}
+
+	fmt.Fprint(w, "\n\t</div>  <!-- markdown -->\n")
 
 	// output += "<br>\n<br>\n<br>\n<p style='font-size: 75%;'>\nRendered by russross/blackfriday</p>\n" // Inconspicuous rendering marker
 
-	return output, nil
+	return nil
 
 }
 
 // ServeHTTP serves everything under the file directory fragm (for instance /doc/).
+// It is an improved http.FileServer(...).
 // We want the markdown files editable locally with locally working links and images.
 // We want the markdown files served by the application.
 // We want the markdown files served at github.com and git.zew.de.
 //
 // We want README.md served from the app root.
-// URL should have *.html extension, not *.md.
+//
+// Markdown is rendered to HTML.
+// Markdown and HTML get URLs rewritten
+// Image files and other content is just served with automatic content-type detection
+// and aggressive caching
 //
 //
 // We want files separated by survey type and language.
@@ -168,20 +183,49 @@ func (fragm *staticPrefixT) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// site name
-	siteName := "site1"
+	siteName := cfg.Get().AppMnemonic
 	if q, ok, _ := qst.FromSession(w, r); ok {
 		siteName = q.Survey.Type
 	}
 
 	if isMarkdown {
 		w.Header().Set("Content-Type", "text/html; charset=utf-8")
-		output, err := MarkDownFromFile(pth, siteName, langCode)
+
+		w1 := &strings.Builder{}
+
+		l, _, err := lgn.LoggedInCheck(w, r)
+		if err != nil {
+			fmt.Fprintf(w1, "login_by_hash_failed 2: %v", "LoginByHash error.")
+			log.Printf("Login by hash error 2: %v", err)
+		}
+
+		fmt.Fprintf(w1, "\n")
+		fmt.Fprintf(w1, "\t<script> var userID='%v';    </script>\n", l.User)
+		fmt.Fprintf(w1, "\t<script> var provider='%v';  </script>\n", l.Provider)
+
+		err = RenderStaticContent(w1, pth, siteName, langCode)
 		if err != nil {
 			fmt.Fprint(w, err.Error())
 			return
 		}
-		ExecContent(w, r, output, "main-desktop.html")
-	} else {
+
+		HTMLTitle := path.Base(pth)
+		HTMLTitle = strings.TrimSuffix(HTMLTitle, path.Ext(HTMLTitle))
+		HTMLTitle = strings.ReplaceAll(HTMLTitle, "-", " ")
+		if len(HTMLTitle) > 0 {
+			HTMLTitle = strings.Title(HTMLTitle[0:1]) + HTMLTitle[1:]
+		}
+
+		mp := map[string]interface{}{
+			"HTMLTitle": HTMLTitle,
+			"Content":   w1.String(),
+		}
+
+		// Exec(w, r, mp, "layout.html", "documentation.html")
+		RenderStack(r, w, []string{"layout.html", "documentation.html"}, mp)
+
+	} else { // neither *.md nor *.html ...
+
 		m := mime.TypeByExtension(ext)
 		if m != "" {
 			w.Header().Set("Content-Type", m)
@@ -215,9 +259,7 @@ func (fragm *staticPrefixT) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 //  ./app-bucket/content
 //
 // Markdown files are converted to HTML;
-// needs session to differentiate files by language setting and survey name
-//
-// No handler registration
+// needs session to differentiate files by language setting
 func NewDocServer(docPrefix string) {
 
 	if !strings.HasPrefix(docPrefix, "/") {

@@ -688,20 +688,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 					"pl": "<span style='font-size: 100%;'>Twoje wpisy zostały zapisane.</span>",
 				}
 			}
-			// {
-			// 	inp := gr.AddInput()
-			// 	inp.Type = "textblock"
-			// 	inp.CSSLabel = "special-line-height-higher"
-			// 	impr := trl.S{}
-			// 	for lc := range q.LangCodes {
-			// 		cnt, err := tpl.MarkDownFromFile("./static/doc/site-imprint.md", q.Survey.Type, lc)
-			// 		if err != nil {
-			// 			log.Print(err)
-			// 		}
-			// 		impr[lc] = cnt
-			// 	}
-			// 	inp.Desc = impr
-			// }
 		}
 
 	}

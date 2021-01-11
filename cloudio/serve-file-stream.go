@@ -18,25 +18,23 @@ import (
 	"github.com/zew/go-questionnaire/stream"
 )
 
-/*ServeFileStream writes a binary file into the response;
-it's inner body is similar to ReadFile;
-the URL for this handler must be exempted from session middleware and
-logAndRecover middleware - anything buffering the response.
-URL GET parameter hijack [true,false] governs the way of flushing;
-ordinary flushing requires middleware free unbuffered http.ResponseWriter
-and after each write a
-    flusher, ok := w.(http.Flusher) ...flusher.Flush()
-instead, we use
-		w ... := stream.NewFlushable(w)
-with auto flushing;
-however, stream.NewFlushable() *hijacks* the connection;
-preempting middleware but also requiring explicit headers and
-		fmt.Fprintf(w, "HTTP/1.1 200 OK\n")
-
-URL GET parameter file-size must contain the correct file size;
-URL GET parameter h (hask)  must contain a checksum;
-.
-*/
+// ServeFileStream writes a binary file into the response;
+// it's inner body is similar to ReadFile;
+// the URL for this handler must be exempted from session middleware and
+// logAndRecover middleware - anything buffering the response.
+// URL GET parameter hijack [true,false] governs the way of flushing;
+// ordinary flushing requires middleware free unbuffered http.ResponseWriter
+// and after each write a
+//     flusher, ok := w.(http.Flusher) ...flusher.Flush()
+// instead, we use
+// 		w ... := stream.NewFlushable(w)
+// with auto flushing;
+// however, stream.NewFlushable() *hijacks* the connection;
+// preempting middleware but also requiring explicit headers and
+// 		fmt.Fprintf(w, "HTTP/1.1 200 OK\n")
+//
+// URL GET parameter file-size must contain the correct file size;
+// URL GET parameter h (hask)  must contain a checksum;
 func ServeFileStream(w http.ResponseWriter, req *http.Request) {
 
 	// convenience

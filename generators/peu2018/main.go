@@ -3,6 +3,7 @@ package peu2018
 import (
 	"fmt"
 	"log"
+	"strings"
 
 	"github.com/zew/go-questionnaire/cfg"
 	"github.com/zew/go-questionnaire/ctr"
@@ -179,11 +180,12 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.ColSpanLabel = 1
 				impr := trl.S{}
 				for lc := range q.LangCodes {
-					cnt, err := tpl.MarkDownFromFile("./static/doc/welcome.md", q.Survey.Type, lc)
+					w1 := &strings.Builder{}
+					err := tpl.RenderStaticContent(w1, "./static/doc/welcome.md", q.Survey.Type, lc)
 					if err != nil {
 						log.Print(err)
 					}
-					impr[lc] = cnt
+					impr[lc] = w1.String()
 				}
 				inp.Desc = impr
 
@@ -744,11 +746,12 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.CSSLabel = "special-line-height-higher"
 				impr := trl.S{}
 				for lc := range q.LangCodes {
-					cnt, err := tpl.MarkDownFromFile("./static/doc/site-imprint.md", q.Survey.Type, lc)
+					w1 := &strings.Builder{}
+					err := tpl.RenderStaticContent(w1, "./static/doc/site-imprint.md", q.Survey.Type, lc)
 					if err != nil {
 						log.Print(err)
 					}
-					impr[lc] = cnt
+					impr[lc] = w1.String()
 				}
 				inp.Desc = impr
 			}
@@ -817,11 +820,12 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.CSSLabel = "special-line-height-higher"
 				impr := trl.S{}
 				for lc := range q.LangCodes {
-					cnt, err := tpl.MarkDownFromFile("./static/doc/site-imprint.md", q.Survey.Type, lc)
+					w1 := &strings.Builder{}
+					err := tpl.RenderStaticContent(w1, "./static/doc/site-imprint.md", q.Survey.Type, lc)
 					if err != nil {
 						log.Print(err)
 					}
-					impr[lc] = cnt
+					impr[lc] = w1.String()
 				}
 				inp.Desc = impr
 			}

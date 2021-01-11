@@ -39,7 +39,7 @@ func SlowHijacked(w http.ResponseWriter, r *http.Request) {
 	frm := &slowRequestForm{Repeats: 4}
 	err = dec.Decode(frm, r.Form)
 	if err != nil {
-		logAndShow("cannot parse form: %v<br>\n <pre>%v</pre>", err, util.IndentedDump(r.Form))
+		logAndShow("cannot decode form: %v<br>\n <pre>%v</pre>", err, util.IndentedDump(r.Form))
 		return
 	}
 

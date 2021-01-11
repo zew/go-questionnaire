@@ -9,9 +9,9 @@ import (
 )
 
 type slowRequestForm struct {
-	Delay   int `json:"delay"    form:"min=0, max=1100, maxlength='3', size='3', suffix='seconds before write'"`
-	Repeats int `json:"repeats"  form:"min=1, max=1100, maxlength='3', size='3'"`
-	Chunks  int `json:"chunks"   form:"min=0, max=1024, maxlength='3', size='3' , suffix='kB'"`
+	Delay   int `json:"delay"    form:"min=0,max=1100,maxlength='3',size='3',suffix='seconds before write'"`
+	Repeats int `json:"repeats"  form:"min=1,max=1100,maxlength='3',size='3'"`
+	Chunks  int `json:"chunks"   form:"min=0,max=1024,maxlength='3',size='3',suffix='kB'"`
 	// NoHijack bool `json:"no_hijack" form:""`
 }
 

@@ -234,6 +234,8 @@ func Example() *ConfigT {
 		LocationName:           "Europe/Berlin",
 		SessionTimeout:         2,
 		FormTimeout:            2,
+		AppInstanceID:          time.Now().Unix(),
+		LangCodes:              []string{"de", "en", "es", "fr", "it", "pl"},
 		CSSVars: cssVars{
 			{Key: "logo-text", Val: "ZEW"},
 			{IsURL: true, Key: "img-bg", Val: "/img/ui/bg-bw-bland.jpg"},
@@ -289,9 +291,7 @@ func Example() *ConfigT {
 				{Key: "dummy", R: 48, G: 48, B: 48, Alpha: 1.0},
 			},
 		},
-		AppInstanceID: time.Now().Unix(),
-		LangCodes:     []string{"de", "en", "es", "fr", "it", "pl"},
-		CPUProfile:    "", // the filename, i.e. cpu.pprof
+		CPUProfile: "", // the filename, i.e. cpu.pprof
 
 		Profiles: map[string]map[string]string{
 			"fmt1": {

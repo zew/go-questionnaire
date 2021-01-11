@@ -9,12 +9,12 @@ import (
 	"net/http/httptest"
 	"net/url"
 	"path"
-	"path/filepath"
 	"strings"
 	"time"
 
 	"github.com/monoculum/formam"
 	"github.com/zew/go-questionnaire/cfg"
+	"github.com/zew/go-questionnaire/cloudio"
 	"github.com/zew/go-questionnaire/generators/euref"
 	"github.com/zew/go-questionnaire/generators/example"
 	"github.com/zew/go-questionnaire/generators/flit"
@@ -25,7 +25,6 @@ import (
 	"github.com/zew/go-questionnaire/generators/peu2018"
 	"github.com/zew/go-questionnaire/qst"
 	"github.com/zew/go-questionnaire/tpl"
-	"github.com/zew/util"
 )
 
 type genT func(params []qst.ParamT) (*qst.QuestionnaireT, error)
@@ -132,14 +131,20 @@ func GenerateQuestionnaireTemplates(w http.ResponseWriter, r *http.Request) {
 		// create empty main-mobile-[surveytype].css"
 		// if it does not yet exist
 		fcCreate := func(desktopOrMobile string) (bool, error) {
-			pth := filepath.Join(".", "templates", desktopOrMobile+q.Survey.Type+".css")
-			if ok, _ := util.FileExists(pth); !ok {
-				err := ioutil.WriteFile(pth, []byte{}, 0755)
-				if err != nil {
-					return false, myfmt.Errorf("Could not create %v: %v", pth, err)
+			pth := path.Join(".", "templates", desktopOrMobile+q.Survey.Type+".css")
+			_, err := cloudio.ReadFile(pth)
+			if err != nil {
+				if cloudio.IsNotExist(err) {
+					rdr := &bytes.Buffer{}
+					err := cloudio.WriteFile(pth, rdr, 0755)
+					if err != nil {
+						return false, myfmt.Errorf("Could not create %v: %v <br>\n", pth, err)
+					}
+					myfmt.Fprintf(w, "Done creating template %v<br>\n", pth)
+					return true, nil
+				} else {
+					return false, myfmt.Errorf("Other error while checking for %v: %v <br>\n", pth, err)
 				}
-				myfmt.Fprintf(w, "done creating template %v", pth)
-				return true, nil
 			}
 			return false, nil
 		}
@@ -147,7 +152,7 @@ func GenerateQuestionnaireTemplates(w http.ResponseWriter, r *http.Request) {
 		for _, bt := range []string{"main-desktop-", "main-mobile-"} {
 			ok, err := fcCreate(bt)
 			if err != nil {
-				myfmt.Fprintf(w, "Could not generated template %v for %v<br>\n", bt, err)
+				myfmt.Fprintf(w, "Could not generate template %v for %v<br>\n", bt, err)
 				continue
 			}
 			if ok {

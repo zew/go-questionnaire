@@ -1,0 +1,1280 @@
+{
+ 	"survey": {
+ 		"type": "pat",
+ 		"org": {
+ 			"de": "ZEW"
+ 		},
+ 		"name": {
+ 			"de": "Paternalismus Umfrage"
+ 		},
+ 		"year": 2021,
+ 		"month": 1,
+ 		"deadline": "2030-01-01T00:00:00Z",
+ 		"params": [
+ 			{
+ 				"name": "main_refinance_rate_ecb",
+ 				"val": "3"
+ 			},
+ 			{
+ 				"name": "varianten",
+ 				"val": "1111"
+ 			}
+ 		]
+ 	},
+ 	"closing_time": "0001-01-01T00:00:00Z",
+ 	"md_5": "4fee9b2d310ac183ed0c319b67e35ffb",
+ 	"lang_codes": {
+ 		"de": "Deutsch"
+ 	},
+ 	"lang_codes_order": [
+ 		"de"
+ 	],
+ 	"variations": 4,
+ 	"max_groups": 8,
+ 	"pages": [
+ 		{
+ 			"label": {
+ 				"de": ""
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"no_navigation": true,
+ 			"navi_num": 0,
+ 			"width": 50,
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"label": {
+ 						"de": "HERZLICH WILLKOMMEN ZU UNSERER STUDIE UND VIELEN DANK FÜR IHRE TEILNAHME!\u003cbr\u003e\u003cbr\u003e"
+ 					},
+ 					"description": {
+ 						"de": "Wir sind Wissenschaftler des Zentrums für Europäische Wirtschaftsforschung (ZEW) in Mannheim \n\t\t\t\tsowie der Universitäten in Köln, Mannheim, Münster und Zürich. \n\t\t\t\tIhre Teilnahme an unserer Umfrage, die aus drei Teilen besteht, \n\t\t\t\twird nur wenige Minuten in Anspruch nehmen. \n\t\t\t\tSie unterstützen damit die Wissenschaft.\n\t\t\t\tEs gibt keine richtigen oder falschen Antworten. \n\t\t\t\tBitte entscheiden Sie immer gemäß Ihren persönlichen Ansichten. \n\t\t\t\tTeilweise werden Ihre Entscheidungen andere Personen betreffen. \n\t\t\t\tBitte beachten Sie, dass wir eine dieser Entscheidungen zufällig auswählen\n\t\t\t\t und genauso umsetzen werden, wie hier beschrieben. \n\t\t\t\t Sie werden also mit Ihren Antworten tatsächlich auf andere Personen \n\t\t\t\t Einfluss ausüben. \n\t\t\t\t \u003cb\u003eGleichzeitig werden alle Ihre Antworten vollständig anonym bleiben\u003c/b\u003e.\n\t\t\t\t \u003cbr\u003e\n\t\t\t\t \u003cbr\u003e\n\t\t\t\t"
+ 					},
+ 					"bottom_vspacers": 3,
+ 					"width": 100,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"name": "submitBtn",
+ 							"type": "button",
+ 							"label": {
+ 								"de": "Weiter"
+ 							},
+ 							"accesskey": "n",
+ 							"response": "1"
+ 						}
+ 					]
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "TEIL 1"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"navi_num": 1,
+ 			"width": 60,
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"width": 100,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"name": "text01",
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "In Teil 1 sind sie einem/r deutschen Staatsangehörigen \n\t\t\t\t\tim Alter von 18 bis 30 zugeordnet \n\t\t\t\t\tder-/die ebenfalls an dieser Studie teilnimmt. \n\t\t\t\t\tWir bitten Sie zu entscheiden, welche Entscheidungsoptionen dieser Person \n\t\t\t\t\tzur Verfügung stehen. Die Person wird frei wählen können zwischen allen Optionen, \n\t\t\t\t\tdie Sie zur Verfügung stellen; \n\t\t\t\t\tdie anderen Optionen kann die Person nicht wählen. \n\t\t\t\t\tIn der letzten Spalte können Sie darüber hinaus von Optionen abraten."
+ 							}
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"label": {
+ 						"de": "Frage [groupID]\u003cbr\u003e"
+ 					},
+ 					"description": {
+ 						"de": "Wir werden eine Geldzahlung an die Person auslösen. \n\t\t\t\tDie Person kann zwischen den von Ihnen verfügbar gemachten Optionen \n\t\t\t\tfür Zahlungen an zwei unterschiedlichen Zeitpunkten \n\t\t\t\t(sofort und 6 Monate nach der Studie) wählen."
+ 					},
+ 					"bottom_vspacers": 1,
+ 					"width": 90,
+ 					"columns": 6,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_label": 3
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "Ver\u0026shy;füg\u0026shy;bar"
+ 							},
+ 							"horizontal_align_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "Nicht ver\u0026shy;füg\u0026shy;bar"
+ 							},
+ 							"horizontal_align_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "Von dieser Alternative abraten\u003csup\u003e1\u003c/sup\u003e"
+ 							},
+ 							"horizontal_align_label": 1
+ 						},
+ 						{
+ 							"name": "q1_1_15_6",
+ 							"type": "radiogroup",
+ 							"description": {
+ 								"de": "\u003cb\u003e1\u003c/b\u003e Euro sofort und \u003cb\u003e15\u003c/b\u003e\u0026nbsp;Euro in \u003cb\u003e6\u003c/b\u003e\u0026nbsp;Monaten"
+ 							},
+ 							"col_span_label": 3,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								}
+ 							]
+ 						},
+ 						{
+ 							"name": "q1_3_07_6",
+ 							"type": "radiogroup",
+ 							"description": {
+ 								"de": "\u003cb\u003e3\u003c/b\u003e Euro sofort und \u0026nbsp;\u003cb\u003e7\u003c/b\u003e\u0026nbsp;Euro in \u003cb\u003e6\u003c/b\u003e\u0026nbsp;Monaten"
+ 							},
+ 							"col_span_label": 3,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								}
+ 							]
+ 						},
+ 						{
+ 							"name": "q1_4_06_6",
+ 							"type": "radiogroup",
+ 							"description": {
+ 								"de": "\u003cb\u003e4\u003c/b\u003e Euro sofort und \u0026nbsp;\u003cb\u003e1\u003c/b\u003e\u0026nbsp;Euro in \u003cb\u003e6\u003c/b\u003e\u0026nbsp;Monaten"
+ 							},
+ 							"col_span_label": 3,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								}
+ 							]
+ 						}
+ 					],
+ 					"randomization_group": 1
+ 				},
+ 				{
+ 					"label": {
+ 						"de": "Frage [groupID]"
+ 					},
+ 					"description": {
+ 						"de": "\u0026nbsp;"
+ 					},
+ 					"bottom_vspacers": 1,
+ 					"width": 90,
+ 					"columns": 6,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_label": 3
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "Ver\u0026shy;füg\u0026shy;bar"
+ 							},
+ 							"horizontal_align_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "Nicht ver\u0026shy;füg\u0026shy;bar"
+ 							},
+ 							"horizontal_align_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "Von dieser Alternative abraten\u003csup\u003e1\u003c/sup\u003e"
+ 							},
+ 							"horizontal_align_label": 1
+ 						},
+ 						{
+ 							"name": "q2_1_15_7",
+ 							"type": "radiogroup",
+ 							"description": {
+ 								"de": "\u003cb\u003e1\u003c/b\u003e Euro sofort und \u003cb\u003e15\u003c/b\u003e\u0026nbsp;Euro in \u003cb\u003e7\u003c/b\u003e\u0026nbsp;Monaten"
+ 							},
+ 							"col_span_label": 3,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								}
+ 							]
+ 						},
+ 						{
+ 							"name": "q2_3_07_7",
+ 							"type": "radiogroup",
+ 							"description": {
+ 								"de": "\u003cb\u003e3\u003c/b\u003e Euro sofort und \u0026nbsp;\u003cb\u003e7\u003c/b\u003e\u0026nbsp;Euro in \u003cb\u003e7\u003c/b\u003e\u0026nbsp;Monaten"
+ 							},
+ 							"col_span_label": 3,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								}
+ 							]
+ 						},
+ 						{
+ 							"name": "q2_4_06_7",
+ 							"type": "radiogroup",
+ 							"description": {
+ 								"de": "\u003cb\u003e4\u003c/b\u003e Euro sofort und \u0026nbsp;\u003cb\u003e1\u003c/b\u003e\u0026nbsp;Euro in \u003cb\u003e7\u003c/b\u003e\u0026nbsp;Monaten"
+ 							},
+ 							"col_span_label": 3,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								}
+ 							]
+ 						}
+ 					],
+ 					"randomization_group": 1
+ 				},
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"width": 100,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"name": "text04",
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "In den nächsten zwei Entscheidungen bitten wir Sie, \n\t\t\t\t\tvorherzusagen, wie sich die Staatsangehörigen entscheiden werden:"
+ 							}
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"width": 100,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"name": "text05",
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Frage 3\u003cbr\u003e"
+ 							},
+ 							"description": {
+ 								"de": "\n\t\t\t\t\t\n\t\t\t\t\t\tStellen Sie sich eine repräsentative Gruppe von 10 Personen vor, \n\t\t\t\t\t\tdie sich frei zwischen den drei folgenden Optionen entscheiden.\n\n\u003cbr\u003e\n\n\u003cstyle\u003e\n    .b1 {\n        display: inline-block;\n        margin: 0.7rem;\n        width: 10.4rem;\n        border: 1px solid grey;\n    }\n    .b2, .b3 {\n        padding: 0.2rem;\n    }\n    .b2 {\n        border-bottom: 1px solid grey;\n    }\n\n\u003c/style\u003e\n\n\n\u003cdiv class=\"b1\"\u003e\n    \u003cdiv class=\"b2\"\u003e\n        Option A\n    \u003c/div\u003e\n    \u003cdiv class=\"b3\"\u003e\n         \u003cb\u003e0\u003c/b\u003e Euro in \u003cb\u003e1\u003c/b\u003e Monat und\u003cbr\u003e\n        \u003cb\u003e15\u003c/b\u003e Euro in \u003cb\u003e7\u003c/b\u003e Monaten\n    \u003c/div\u003e\n\u003c/div\u003e\n\n\n\u003cdiv class=\"b1\"\u003e\n    \u003cdiv class=\"b2\"\u003e\n        Option B\n    \u003c/div\u003e\n\n    \u003cdiv class=\"b3\"\u003e\n        \u003cb\u003e3\u003c/b\u003e Euro in \u003cb\u003e1\u003c/b\u003e Monat und\u003cbr\u003e\n        \u003cb\u003e7\u003c/b\u003e Euro in \u003cb\u003e7\u003c/b\u003e Monaten\n    \u003c/div\u003e\n\u003c/div\u003e\n\n\n\u003cdiv class=\"b1\"\u003e\n    \u003cdiv class=\"b2\"\u003e\n        Option C\n    \u003c/div\u003e\n\n    \u003cdiv class=\"b3\"\u003e\n        \u003cb\u003e4\u003c/b\u003e Euro in \u003cb\u003e1\u003c/b\u003e Monat und\u003cbr\u003e\n        \u003cb\u003e1\u003c/b\u003e Euro in \u003cb\u003e7\u003c/b\u003e Monaten\n    \u003c/div\u003e\n\u003c/div\u003e\n\n\n\t\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t"
+ 							}
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"width": 55,
+ 					"columns": 4,
+ 					"inputs": [
+ 						{
+ 							"name": "q3_a",
+ 							"type": "number",
+ 							"max_chars": 2,
+ 							"description": {
+ 								"de": "Wie viele wählen Option A? Ihre Antwort:"
+ 							},
+ 							"suffix": {
+ 								"de": " \u0026nbsp; von 10"
+ 							},
+ 							"col_span_label": 3,
+ 							"col_span_control": 1,
+ 							"validator": "inRange20"
+ 						},
+ 						{
+ 							"name": "q3_b",
+ 							"type": "number",
+ 							"max_chars": 2,
+ 							"description": {
+ 								"de": "Wie viele wählen Option B? Ihre Antwort:"
+ 							},
+ 							"suffix": {
+ 								"de": " \u0026nbsp; von 10"
+ 							},
+ 							"col_span_label": 3,
+ 							"col_span_control": 1,
+ 							"validator": "inRange20"
+ 						},
+ 						{
+ 							"name": "q3_c",
+ 							"type": "number",
+ 							"max_chars": 2,
+ 							"description": {
+ 								"de": "Wie viele wählen Option C? Ihre Antwort:"
+ 							},
+ 							"suffix": {
+ 								"de": " \u0026nbsp; von 10"
+ 							},
+ 							"col_span_label": 3,
+ 							"col_span_control": 1,
+ 							"validator": "inRange20"
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"label": {
+ 						"de": "Frage 4\u003cbr\u003e"
+ 					},
+ 					"description": {
+ 						"de": "Sollten alle Erwerbstätigen in Deutschland verpflichtend \n\t\t\t\teinen gewissen Anteil Teil Ihres Arbeitseinkommens \n\t\t\t\tfür die private Altersvorsorge sparen, \n\t\t\t\tund falls ja, wieviel?"
+ 					},
+ 					"bottom_vspacers": 3,
+ 					"width": 90,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"name": "q4",
+ 							"type": "radiogroup",
+ 							"radios": [
+ 								{
+ 									"hori_align": 2,
+ 									"label": {
+ 										"de": "Es sollte keine solche Verpflichtung geben"
+ 									},
+ 									"val": "1",
+ 									"columns": 2
+ 								},
+ 								{
+ 									"hori_align": 2,
+ 									"label": {
+ 										"de": "Jede(r) Erwerbstätige sollte verpflichtet sein, mindestens \u0026nbsp;\u003cb\u003e2.5%\u003c/b\u003e zu sparen"
+ 									},
+ 									"val": "2",
+ 									"columns": 2
+ 								},
+ 								{
+ 									"hori_align": 2,
+ 									"label": {
+ 										"de": "Jede(r) Erwerbstätige sollte verpflichtet sein, mindestens \u0026nbsp;\u003cb\u003e5%\u003c/b\u003e zu sparen"
+ 									},
+ 									"val": "3",
+ 									"columns": 2
+ 								},
+ 								{
+ 									"hori_align": 2,
+ 									"label": {
+ 										"de": "Jede(r) Erwerbstätige sollte verpflichtet sein, mindestens \u003cb\u003e10%\u003c/b\u003e zu sparen"
+ 									},
+ 									"val": "4",
+ 									"columns": 2
+ 								},
+ 								{
+ 									"hori_align": 2,
+ 									"label": {
+ 										"de": "Jede(r) Erwerbstätige sollte verpflichtet sein, mindestens \u003cb\u003e20%\u003c/b\u003e zu sparen"
+ 									},
+ 									"val": "5",
+ 									"columns": 2
+ 								},
+ 								{
+ 									"hori_align": 2,
+ 									"label": {
+ 										"de": "Jede(r) Erwerbstätige sollte verpflichtet sein, mindestens \u003cb\u003e30%\u003c/b\u003e zu sparen"
+ 									},
+ 									"val": "6",
+ 									"columns": 2
+ 								}
+ 							]
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"width": 100,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"name": "text03",
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\u003csup\u003e1)\u003c/sup\u003e \n\t\t\t\t\tFalls Sie hier ankreuzen werden Studienteilnehmende folgende Botschaft sehen: \n\t\t\t\t\t“Ein gewählter Volksvertreter oder eine gewählte Volksvertreterin der \n\t\t\t\t\toder die an dieser Studie teilgenommen hat, rät Ihnen davon ab, \n\t\t\t\t\tdiese Alternative zu wählen”.\n\t\t\t\t\t"
+ 							}
+ 						}
+ 					]
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "TEIL 2a"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"navi_num": 2,
+ 			"width": 60,
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"width": 100,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"name": "text01",
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "Jede der sechs Bundestagsparteien ist mit einer parteinahen Stiftung verbunden.\u003csup\u003e2\u003c/sup\u003e  \n\t\t\t\tIn diesem Teil der Studie geht es um eine Spende in Höhe von 30 EURO, \n\t\t\t\twelche \u003ci\u003eeine\u003c/i\u003e dieser Stiftungen erhalten wird. \n\t\t\t\tWir haben fünf deutsche Staatsangehörige befragt, \n\t\t\t\twelche der Stiftungen die Spende erhalten soll. \n\t\t\t\tSie entscheiden nun darüber, \n\t\t\t\tauf welche Weise die Wünsche der fünf Befragten \n\t\t\t\tin eine finale Entscheidung zusammengefasst werden sollen."
+ 							}
+ 						},
+ 						{
+ 							"name": "text01",
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "Dafür zeigt Ihnen jede der nächsten sechs Fragen die möglichen Wünsche von fünf Befragten. \n\t\t\t\tDie Wünsche in \u003ci\u003eeiner\u003c/i\u003e dieser Fragen stammen von einer Gruppe, \n\t\t\t\tdie wir tatsächlich bereits befragt haben. \n\t\t\t\tWir werden die Entscheidung ausführen, die Sie in dieser Frage treffen. \n\t\t\t\tAllerdings wissen Sie nicht, welche der Fragen das ist. \n\t\t\t\tDie fünf Befragten wurden aus einer Stichprobe gezogen, \n\t\t\t\tin welcher es jeweils gleich viele Personen gab, \n\t\t\t\tdie politisch rechts, mittig, oder links stehen.\n\t\t\t\t\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\n\t\t\t\t\u003cb\u003eEntscheidung 1\u003c/b\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\n\t\t\t\tDie Stiftungen sind anonymisiert; die Auswahl von drei Stiftungen \n\t\t\t\taus den sechs Stiftungen erfolgte zufällig. \n\t\t\t\tSie können nun entscheiden, ob Sie beispielsweise eher eine Kompromisslösung \n\t\t\t\toder eher eine kontroverse Mehrheitslösung implementieren, \n\t\t\t\taber sie können nicht angeben, ob Sie eine bestimmte Stiftung bevorzugen. \n\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\tDie Wünsche der fünf Befragten werden wie folgt grafisch dargestellt. \n\n\n\t\t\t\t"
+ 							}
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"width": 100,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "composit",
+ 							"dynamic_func": "PoliticalFoundations__0"
+ 						},
+ 						{
+ 							"name": "dec0_r",
+ 							"type": "composit-scalar"
+ 						},
+ 						{
+ 							"name": "dec0_r1",
+ 							"type": "composit-scalar"
+ 						},
+ 						{
+ 							"name": "dec0_r2",
+ 							"type": "composit-scalar"
+ 						},
+ 						{
+ 							"name": "dec0_r3",
+ 							"type": "composit-scalar"
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"width": 100,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"name": "text01",
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\n\t\t\t\t\n\t\t\t\tIn diesem Fall mögen zwei Befragte Stiftung A am meisten, drei weitere mögen Stiftung C am meisten, und niemand der fünf mag Stiftung B am meisten. Dafür mögen zwei Staatsangehörige Stiftung B am zweitmeisten, und niemand mag Stiftung C am zweitmeisten. Und so weiter.  \t\t\t\t\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\n\t\t\t\tEntscheiden Sie bitte nun, welche Stiftung die Spende erhalten soll. Dafür setzen Sie bitte ein Kreuz in die Spalte „Auswahl“ bei jener Alternative, von der Sie denken, dass sie die Wünsche der Befragten am besten reflektiert. Falls sie eine zweite Alternative genauso gut finden wie die ausgewählte Alternative, setzen Sie bitte ein Kreuz in die Spalte „Genauso gut“. \n\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\u003cspan style='display: inline-block; margin: 2rem;'\u003e\n\t\t\t\t\u003ci\u003e\n\t\t\t\t\tEs gibt keine richtigen oder falschen Antworten; teilen Sie uns bitte einfach mit, welche Stiftung angesichts der Wünsche der Befragten die Spende erhalten soll. \n\t\t\t\t\u003c/i\u003e\n\t\t\t\t\u003c/span\u003e\n\n\n\t\t\t\t"
+ 							}
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"width": 100,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"name": "text03",
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\u003csup\u003e2)\u003c/sup\u003e \n\t\t\t\t\tDie Stiftungen und zugehörige Parteien sind: Friedrich-Ebert-Stiftung (SPD, 1954), \n\t\t\t\t\tKonrad-Adenauer-Stiftung (CDU, 1955), \n\t\t\t\t\tFriedrich-Naumann-Stiftung für die Freiheit (FDP, 1958), \n\t\t\t\t\tRosa-Luxemburg-Stiftung (Die Linke, 1990), \n\t\t\t\t\tHeinrich-Böll-Stiftung (Grüne, 1996), \n\t\t\t\t\tDesiderius-Erasmus-Stiftung (AfD, 2017) \n\t\t\t\t\t(Liste geordnet nach Gründungsjahr).\n\t\t\t\t\t"
+ 							}
+ 						}
+ 					]
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "TEIL 2b"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"navi_num": 3,
+ 			"width": 60,
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"width": 100,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"name": "text01",
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\n\t\t\t\t\n\t\t\t\tBitte entscheiden Sie nun auch für die folgenden Fälle, welche Stiftung die Spende erhalten soll. Eine der Entscheidungen 1 – 6 zeigt die echten Wünsche der fünf Befragten; wir werden die entsprechende Entscheidung ausführen. \n\n\t\t\t\t"
+ 							}
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"width": 100,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "composit",
+ 							"dynamic_func": "PoliticalFoundations__1"
+ 						},
+ 						{
+ 							"name": "dec1_r",
+ 							"type": "composit-scalar"
+ 						},
+ 						{
+ 							"name": "dec1_r1",
+ 							"type": "composit-scalar"
+ 						},
+ 						{
+ 							"name": "dec1_r2",
+ 							"type": "composit-scalar"
+ 						},
+ 						{
+ 							"name": "dec1_r3",
+ 							"type": "composit-scalar"
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"width": 100,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "composit",
+ 							"dynamic_func": "PoliticalFoundations__2"
+ 						},
+ 						{
+ 							"name": "dec2_r",
+ 							"type": "composit-scalar"
+ 						},
+ 						{
+ 							"name": "dec2_r1",
+ 							"type": "composit-scalar"
+ 						},
+ 						{
+ 							"name": "dec2_r2",
+ 							"type": "composit-scalar"
+ 						},
+ 						{
+ 							"name": "dec2_r3",
+ 							"type": "composit-scalar"
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"width": 100,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "composit",
+ 							"dynamic_func": "PoliticalFoundations__3"
+ 						},
+ 						{
+ 							"name": "dec3_r",
+ 							"type": "composit-scalar"
+ 						},
+ 						{
+ 							"name": "dec3_r1",
+ 							"type": "composit-scalar"
+ 						},
+ 						{
+ 							"name": "dec3_r2",
+ 							"type": "composit-scalar"
+ 						},
+ 						{
+ 							"name": "dec3_r3",
+ 							"type": "composit-scalar"
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"width": 100,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "composit",
+ 							"dynamic_func": "PoliticalFoundations__4"
+ 						},
+ 						{
+ 							"name": "dec4_r",
+ 							"type": "composit-scalar"
+ 						},
+ 						{
+ 							"name": "dec4_r1",
+ 							"type": "composit-scalar"
+ 						},
+ 						{
+ 							"name": "dec4_r2",
+ 							"type": "composit-scalar"
+ 						},
+ 						{
+ 							"name": "dec4_r3",
+ 							"type": "composit-scalar"
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"width": 100,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "composit",
+ 							"dynamic_func": "PoliticalFoundations__5"
+ 						},
+ 						{
+ 							"name": "dec5_r",
+ 							"type": "composit-scalar"
+ 						},
+ 						{
+ 							"name": "dec5_r1",
+ 							"type": "composit-scalar"
+ 						},
+ 						{
+ 							"name": "dec5_r2",
+ 							"type": "composit-scalar"
+ 						},
+ 						{
+ 							"name": "dec5_r3",
+ 							"type": "composit-scalar"
+ 						}
+ 					]
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "TEIL 3"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"navi_num": 4,
+ 			"width": 55,
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"label": {
+ 						"de": "Frage [groupID]\u003cbr\u003e"
+ 					},
+ 					"description": {
+ 						"de": "\n\t\t\t\tSind Sie im Vergleich zu Anderen im Allgemeinen bereit, \n\t\t\t\theute auf etwas zu verzichten, \n\t\t\t\tum in der Zukunft davon zu profitieren, \n\t\t\t\toder sind Sie im Vergleich zu Anderen dazu nicht bereit? \n\t\t\t\tBitte klicken Sie ein Kästchen auf der Skala an.\n\t\t\t\t"
+ 					},
+ 					"bottom_vspacers": 2,
+ 					"width": 100,
+ 					"columns": 11,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "0\u003cbr\u003egar nicht bereit"
+ 							},
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-vertical-align-top"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "1"
+ 							},
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-vertical-align-top"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "2"
+ 							},
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-vertical-align-top"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "3"
+ 							},
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-vertical-align-top"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "4"
+ 							},
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-vertical-align-top"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "5"
+ 							},
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-vertical-align-top"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "6"
+ 							},
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-vertical-align-top"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "7"
+ 							},
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-vertical-align-top"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "8"
+ 							},
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-vertical-align-top"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "9"
+ 							},
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-vertical-align-top"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "10\u003cbr\u003eAbsolut bereit"
+ 							},
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-vertical-align-top"
+ 						},
+ 						{
+ 							"name": "q11_time_pref",
+ 							"type": "radiogroup",
+ 							"col_span_label": 1,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "4"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "5"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "6"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "7"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "8"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "9"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "10"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "11"
+ 								}
+ 							]
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"label": {
+ 						"de": "Frage [groupID]\u003cbr\u003e"
+ 					},
+ 					"description": {
+ 						"de": "\n\t\t\t\tWie schätzen Sie sich persönlich ein? \n\t\t\t\tSind Sie im Allgemeinen ein risikobereiter Mensch oder versuchen Sie, \n\t\t\t\tRisiken zu vermeiden? \n\t\t\t\tBitte klicken Sie ein Kästchen auf der Skala an.\n\t\t\t\t"
+ 					},
+ 					"bottom_vspacers": 2,
+ 					"width": 100,
+ 					"columns": 11,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "0\u003cbr\u003eRi\u0026shy;si\u0026shy;ko\u0026shy;ver\u0026shy;mei\u0026shy;den"
+ 							},
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-vertical-align-top"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "1"
+ 							},
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-vertical-align-top"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "2"
+ 							},
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-vertical-align-top"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "3"
+ 							},
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-vertical-align-top"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "4"
+ 							},
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-vertical-align-top"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "5"
+ 							},
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-vertical-align-top"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "6"
+ 							},
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-vertical-align-top"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "7"
+ 							},
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-vertical-align-top"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "8"
+ 							},
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-vertical-align-top"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "9"
+ 							},
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-vertical-align-top"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "10\u003cbr\u003eRi\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reit"
+ 							},
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-vertical-align-top"
+ 						},
+ 						{
+ 							"name": "q12_risk_pref",
+ 							"type": "radiogroup",
+ 							"col_span_label": 1,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "4"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "5"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "6"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "7"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "8"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "9"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "10"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "11"
+ 								}
+ 							]
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"label": {
+ 						"de": "Frage [groupID]\u003cbr\u003e"
+ 					},
+ 					"description": {
+ 						"de": "\n\t\t\t\tWie schätzen Sie Ihre Bereitschaft mit anderen zu teilen, \n\t\t\t\tohne dafür eine Gegenleistung zu erwarten? \n\t\t\t\tBitte klicken Sie ein Kästchen auf der Skala an.\n\t\t\t\t"
+ 					},
+ 					"bottom_vspacers": 3,
+ 					"width": 100,
+ 					"columns": 11,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "0\u003cbr\u003eTeile nicht gern"
+ 							},
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-vertical-align-top"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "1"
+ 							},
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-vertical-align-top"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "2"
+ 							},
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-vertical-align-top"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "3"
+ 							},
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-vertical-align-top"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "4"
+ 							},
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-vertical-align-top"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "5"
+ 							},
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-vertical-align-top"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "6"
+ 							},
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-vertical-align-top"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "7"
+ 							},
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-vertical-align-top"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "8"
+ 							},
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-vertical-align-top"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "9"
+ 							},
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-vertical-align-top"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "10\u003cbr\u003eTeile gern"
+ 							},
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-vertical-align-top"
+ 						},
+ 						{
+ 							"name": "q13_sharing",
+ 							"type": "radiogroup",
+ 							"col_span_label": 1,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "4"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "5"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "6"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "7"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "8"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "9"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "10"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "11"
+ 								}
+ 							]
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"width": 100,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"name": "submitBtn",
+ 							"type": "button",
+ 							"label": {
+ 								"de": "",
+ 								"en": ""
+ 							},
+ 							"description": {
+ 								"de": "Ende",
+ 								"en": "End",
+ 								"es": "Fin",
+ 								"fr": "Fin",
+ 								"it": "Fine",
+ 								"pl": "Końcu"
+ 							},
+ 							"accesskey": "n",
+ 							"css_control": "special-line-height-higher",
+ 							"col_span_control": 1,
+ 							"response": "5"
+ 						}
+ 					]
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "Ende",
+ 				"en": "End",
+ 				"es": "Fin",
+ 				"fr": "Fin",
+ 				"it": "Fine",
+ 				"pl": "Końcu"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"no_navigation": true,
+ 			"navi_num": 0,
+ 			"width": 100,
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"width": 100,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "Danke für Ihre Teilnahme an unserer Umfrage.",
+ 								"en": "Thank you for your participation in our survey.",
+ 								"es": "Gracias por haber contestado a nuestro cuestionario.",
+ 								"fr": "Nous vous remercions d'avoir répondu à nos questions.",
+ 								"it": "Grazie per aver risposto al nostro questionario.",
+ 								"pl": "Dziękujemy za uczestnictwo w ankiecie."
+ 							},
+ 							"css_label": "special-line-height-higher"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\u003cspan style='font-size: 100%;'\u003eIhre Eingaben wurden gespeichert.\u003c/span\u003e",
+ 								"en": "\u003cspan style='font-size: 100%;'\u003eYour entries have been saved.\u003c/span\u003e",
+ 								"es": "\u003cspan style='font-size: 100%;'\u003eSus entradas se han guardado.\u003c/span\u003e",
+ 								"fr": "\u003cspan style='font-size: 100%;'\u003eVos réponses ont été sauvegardées.\u003c/span\u003e",
+ 								"it": "\u003cspan style='font-size: 100%;'\u003eLe Sue risposte sono state salvate.\u003c/span\u003e",
+ 								"pl": "\u003cspan style='font-size: 100%;'\u003eTwoje wpisy zostały zapisane.\u003c/span\u003e"
+ 							},
+ 							"css_label": "special-line-height-higher"
+ 						}
+ 					]
+ 				}
+ 			]
+ 		}
+ 	]
+ }

@@ -10,7 +10,7 @@ require (
 	github.com/go-playground/form v3.1.4+incompatible
 	github.com/gomodule/redigo v1.8.2
 	github.com/monoculum/formam v0.0.0-20200527175922-6f3cce7a46cf
-	github.com/pbberlin/struc2frm v1.0.5
+	github.com/pbberlin/struc2frm v1.2.8
 	github.com/pkg/errors v0.9.1
 	github.com/russross/blackfriday v1.5.2
 	github.com/speps/go-hashids v2.0.0+incompatible

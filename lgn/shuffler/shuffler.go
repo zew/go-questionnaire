@@ -42,6 +42,7 @@ func (s *shufflerT) Slice(iter int) []int {
 	}
 	if s.Variations == 0 {
 		// keep the slice
+		// log.Printf("shuffler: variations == 0  ->  no shufflings")
 	} else {
 		class := int64(s.ID % s.Variations) // user 12; variations 5 => class 2
 		src := rand.NewSource(class)        // not ...UTC().UnixNano(), but constant init
@@ -58,6 +59,7 @@ func (s *shufflerT) Slice(iter int) []int {
 		swapFct := func(i, j int) {
 			order[i], order[j] = order[j], order[i]
 		}
+		iter = iter % 7
 		for i := 0; i <= iter; i++ {
 			gen.Shuffle(s.MaxElements, swapFct)
 			log.Printf("%2v: User %v is class %v => %+v", i, s.ID, class, order)

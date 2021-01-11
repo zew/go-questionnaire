@@ -46,10 +46,11 @@ func ShufflesToCSV(w http.ResponseWriter, r *http.Request) {
 
 		<br>
 		Groups on page  (questions on page):  <br> 
-			Page 1 		<input name="grop[0]"      type="text"     value="{{index .DL.GroupsOnPage 0}}"   ><br>
-			Page 2 		<input name="grop[1]"      type="text"     value="{{index .DL.GroupsOnPage 1}}"   ><br>
-			Page 3 		<input name="grop[2]"      type="text"     value="{{index .DL.GroupsOnPage 2}}"   ><br>
-			Page 4 		<input name="grop[3]"      type="text"     value="{{index .DL.GroupsOnPage 3}}"   ><br>
+			Page 0 		<input name="grop[0]"      type="text"     value="{{index .DL.GroupsOnPage 0}}"   ><br>
+			Page 1 		<input name="grop[1]"      type="text"     value="{{index .DL.GroupsOnPage 1}}"   ><br>
+			Page 2 		<input name="grop[2]"      type="text"     value="{{index .DL.GroupsOnPage 2}}"   ><br>
+			Page 3 		<input name="grop[3]"      type="text"     value="{{index .DL.GroupsOnPage 3}}"   ><br>
+			Page 4 		<input name="grop[4]"      type="text"     value="{{index .DL.GroupsOnPage 4}}"   ><br>
 
 		<br>
 		User ID:<br>
@@ -66,7 +67,7 @@ func ShufflesToCSV(w http.ResponseWriter, r *http.Request) {
 </body>
 </html>
 `
-	pages := 4
+	pages := 5
 
 	type formEntryT struct {
 		Token string `json:"token"`

@@ -310,6 +310,7 @@ func main() {
 		}
 		// strangely, the json *response* is empty, if we omit this:
 		req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
+		req.Header.Set("Accept-Encoding", "gzip, deflate, br")
 		for _, v := range []*http.Cookie{sessCook} {
 			req.AddCookie(v)
 		}
@@ -322,9 +323,28 @@ func main() {
 
 		defer resp.Body.Close()
 		var rdr1 io.ReadCloser
+
+		log.Printf("Content encoding is -%v-", resp.Header.Get("Content-Encoding"))
+
 		switch resp.Header.Get("Content-Encoding") {
 		case "gzip":
-			// the server actually sent compressed data
+
+			if false {
+				// a hack - to spy into the response
+				// if the http download does not work...
+				bts, err := ioutil.ReadAll(resp.Body)
+				if err != nil {
+					log.Printf("could not read all response %v", err)
+					return
+				}
+				log.Printf("response is %v bytes", len(bts))
+				if len(bts) < 15000 {
+					log.Printf("response is %s", bts)
+				}
+				btsRdr := bytes.NewReader(bts)
+				rdr1, err = gzip.NewReader(btsRdr)
+			}
+
 			rdr1, err = gzip.NewReader(resp.Body)
 			if err != nil {
 				log.Printf("could not read the response as gzip: %v", err)
@@ -333,6 +353,17 @@ func main() {
 			defer rdr1.Close()
 		default:
 			rdr1 = resp.Body
+		}
+
+		if false {
+			// a hack - to load from file
+			// if the http download would not work...
+			fr, err := os.Open("./app-bucket/dl/transferrer-endpoint.json")
+			if err != nil {
+				log.Printf("shortcut file not present; %v", err)
+			} else {
+				rdr1 = fr
+			}
 		}
 
 		// Check response status
@@ -479,9 +510,9 @@ func main() {
 		fn := fmt.Sprintf("/dl/online-responses-%v-%v.csv", c2.SurveyType, c2.WaveID)
 		err = cloudio.WriteFile(fn, wtr, 0644)
 		if err != nil {
-			log.Printf("Could not write file: %v", err)
+			log.Printf("Could not write file %v: %v", fn, err)
 		}
-		log.Printf("Regular finish. %v questionnaire(s) processed", len(qs))
+		log.Printf("Regular finish. %v questionnaire(s) processed. %v", len(qs), fn)
 
 	}
 

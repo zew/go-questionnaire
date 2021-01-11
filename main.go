@@ -47,7 +47,7 @@ func main() {
 		wrap mux3 with mux4
 
 	*/
-	tpl.NewDocServer("/doc/")  // before RegisterHandlers()
+	tpl.NewDocServer("/doc/")  // before RegisterHandlers() - needs session to differentiate files by language setting and survey name
 	mux1 := http.NewServeMux() // base router
 	handlers.RegisterHandlers(mux1)
 	// log.Print(util.IndentedDump(handler.Tree()))

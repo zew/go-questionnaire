@@ -375,6 +375,12 @@ table.main-table tr:nth-child(odd){
     min-width: 85px;    
 }
 
+.special-vertical-align-top {
+	vertical-align: top;
+	min-height: 4rem;
+	margin-top: 0.4rem;
+}
+
 /* crutch to get vertical centering of control label  */
 .vertical-align-top-two-rows {
 	vertical-align: top;

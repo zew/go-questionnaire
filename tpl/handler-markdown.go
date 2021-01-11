@@ -215,7 +215,7 @@ func (fragm *staticPrefixT) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 //  ./app-bucket/content
 //
 // Markdown files are converted to HTML;
-// needs session to differentiate files by language setting
+// needs session to differentiate files by language setting and survey name
 //
 // No handler registration
 func NewDocServer(docPrefix string) {

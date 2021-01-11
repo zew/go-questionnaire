@@ -131,6 +131,12 @@ var hyph = []string{
 	"in&shy;dif&shy;fer&shy;ent",
 	"will&shy;ing",
 	"nei&shy;ther",
+
+	// paternalism
+	"Ver&shy;füg&shy;bar",
+	"ver&shy;füg&shy;bar",
+	"Ri&shy;si&shy;ko&shy;ver&shy;mei&shy;den",
+	"Ri&shy;si&shy;ko&shy;be&shy;reit",
 }
 
 // hyphm is a map with words and their hyphenized form as value.

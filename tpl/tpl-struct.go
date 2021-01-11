@@ -44,6 +44,10 @@ func (t TplDataT) LanguageChooserExplicit(lcs []string, uri string, curr ...stri
 		lcs = cfg.Get().LangCodes // necessary; member q might exist, but be nil
 	}
 
+	if len(lcs) == 1 {
+		return "" // only one language exists - choosing in pointless
+	}
+
 	currCode := lcs[0]
 	if len(curr) > 0 {
 		currCode = curr[0]

@@ -15,24 +15,23 @@ import (
 	"net/http"
 	"path"
 	"sort"
+	"strconv"
 	"strings"
 	"time"
 
 	"github.com/zew/go-questionnaire/lgn/shuffler"
 	"github.com/zew/go-questionnaire/sessx"
 	"github.com/zew/go-questionnaire/trl"
+	"github.com/zew/util"
 
 	"github.com/zew/go-questionnaire/ctr"
 )
 
-/*
- No line wrapping between element 1 and 2
-
- But line wrapping *inside* each of them.
-
- el1 and el2 must be inline-block, for whitespace nowrap to work.
-
-*/
+// No line wrapping between element 1 and 2
+//
+//  But line wrapping *inside* each of them.
+//
+//  el1 and el2 must be inline-block, for whitespace nowrap to work.
 func nobreakGlue(el1, glue, el2 string) string {
 
 	if el1 == "" || el2 == "" {
@@ -132,7 +131,7 @@ type inputT struct {
 
 	Response string `json:"response,omitempty"` // also contains the Value of options and checkboxes
 	//  ResponseFloat float64  - floats and integers are stored as strings in Response
-	DynamicFunc string `json:"dynamic_func,omitempty"` // Refers to dynFuncs, for type == 'dynamic'
+	DynamicFunc string `json:"dynamic_func,omitempty"` // Refers to dynFuncs for type == 'dynamic', or compositFuncs for type == 'composit'
 }
 
 // NewInput returns an input filled in with globally enumerated label, decription etc.
@@ -279,12 +278,14 @@ func (i inputT) HTML(langCode string, numCols int) string {
 			// input
 			inputMode := ""
 			if i.Type == "number" {
-				if i.Step >= 1 {
-					inputMode = fmt.Sprintf(" step='%.0f'  ", i.Step)
-				} else {
-					prec := int(math.Log10(1 / i.Step))
-					f := fmt.Sprintf(" step='%%.%vf'  ", prec)
-					inputMode = fmt.Sprintf(f, i.Step)
+				if i.Step != 0 {
+					if i.Step >= 1 {
+						inputMode = fmt.Sprintf(" step='%.0f'  ", i.Step)
+					} else {
+						prec := int(math.Log10(1 / i.Step))
+						f := fmt.Sprintf(" step='%%.%vf'  ", prec)
+						inputMode = fmt.Sprintf(f, i.Step)
+					}
 				}
 			}
 			ctrl += fmt.Sprintf("<input type='%v'  %v  name='%v' id='%v' title='%v %v' class='%v' style='%v' %v %v  value='%v' />\n",
@@ -440,6 +441,10 @@ func (i inputT) HTML(langCode string, numCols int) string {
 	case "dynamic":
 		return fmt.Sprintf("<span class='go-quest-label %v'>%v</span>\n", i.CSSLabel, i.Label.Tr(langCode))
 
+	case "composit", "composit-scalar":
+		// rendered at group level -  rendered by composit
+		return ""
+
 	default:
 		return fmt.Sprintf("input %v: unknown type '%v'  - allowed are %v\n", nm, i.Type, implementedTypes)
 	}
@@ -473,7 +478,8 @@ type groupT struct {
 	// Cols determines the 'slot' width for these above settings using colWidth(colsElement, colsTotal)
 	Cols int `json:"columns,omitempty"`
 
-	Inputs []*inputT `json:"inputs,omitempty"`
+	Inputs             []*inputT `json:"inputs,omitempty"`
+	RandomizationGroup int       `json:"randomization_group,omitempty"` // >0 => group can be repositioned for randomization
 }
 
 // AddInput creates a new input
@@ -501,6 +507,25 @@ func (gr *groupT) TableOpen(rows int) string {
 	to = strings.Replace(to, ">", width, -1)
 
 	return to
+}
+
+// HasComposit - group contains composit element?
+func (gr groupT) HasComposit() bool {
+	hasComposit := false
+	for _, inp := range gr.Inputs {
+		if inp.Type == "composit" {
+			hasComposit = true
+			break
+		}
+	}
+	if hasComposit {
+		for _, inp := range gr.Inputs {
+			if inp.Type != "composit" && inp.Type != "composit-scalar" {
+				log.Panicf("group contains a input type 'composit' - but *other* inputs too")
+			}
+		}
+	}
+	return hasComposit
 }
 
 // HTML renders a group of inputs to HTML
@@ -538,7 +563,16 @@ func (gr groupT) HTML(langCode string) string {
 	b.WriteString(gr.TableOpen(rows))
 	for i, inp := range gr.Inputs {
 
+		if inp.Type == "composit-scalar" {
+			continue
+		}
+		if inp.Type == "composit" {
+			continue
+		}
+
+		fmt.Fprint(b, "<td>")
 		fmt.Fprint(b, inp.HTML(langCode, gr.Cols)) // rendering markup
+		fmt.Fprint(b, "</td>")
 
 		if gr.Cols > 0 {
 
@@ -743,16 +777,122 @@ func (q *QuestionnaireT) CurrentPageHTML() (string, error) {
 	return q.PageHTML(q.CurrPage)
 }
 
+// shufflingGroupsT is a helper for RandomizeOrder()
+type shufflingGroupsT struct {
+	Orig     int // orig pos
+	Shuffled int // shuffled pos - new pos
+
+	Group int // shuffling group
+
+	Start int // shuffling group start idx    - across gaps
+	Idx   int // sequence in shuffling group  - across gaps - dense 0,1...6,7
+
+	// seqStart int // shuffling group start idx - continuous chunk
+	// seqIdx   int // index in shuffling group  - continuous chunk
+}
+
+// String representation for dump
+func (sg shufflingGroupsT) String() string {
+	return fmt.Sprintf("orig %02v -> shuff %02v - G%v strt%v seq%v", sg.Orig, sg.Shuffled, sg.Group, sg.Start, sg.Idx)
+}
+
+// RandomizeOrder creates a shuffled ordering of groups marked by .RandomizationGroup ;
+// static groups with RandomizationGroup==0 remain on fixed order position ;
+// others get a randomized position
+func (q *QuestionnaireT) RandomizeOrder(pageIdx int) []int {
+
+	p := q.Pages[pageIdx]
+
+	// helper - separating groups by their RandomizationGroup value - with positional indexes
+	shufflingGroups := map[int][]int{}
+	maxSg := 0
+	for i := 0; i < len(p.Groups); i++ {
+		sg := p.Groups[i].RandomizationGroup
+		shufflingGroups[sg] = append(shufflingGroups[sg], i)
+		if sg > maxSg {
+			maxSg = sg
+		}
+	}
+	if len(shufflingGroups) == 1 && maxSg == 0 {
+		return shufflingGroups[0]
+	}
+
+	// helper to construct the sequence across gaps within each shuffling group
+	shufflingGroupsCntr := map[int]int{}
+	for sg := range shufflingGroups {
+		shufflingGroupsCntr[sg] = 0
+	}
+
+	log.Printf(
+		"max sg idx %v \nshufflingGroups %v",
+		maxSg,
+		util.IndentedDump(shufflingGroups),
+	)
+
+	//
+	// compute the main array
+	sgs := make([]shufflingGroupsT, len(p.Groups))
+	for i := 0; i < len(p.Groups); i++ {
+
+		sg := p.Groups[i].RandomizationGroup
+		sgs[i].Orig = i
+		sgs[i].Group = sg
+
+		sgs[i].Start = shufflingGroups[sg][0]
+		sgs[i].Idx = shufflingGroupsCntr[sg]
+		shufflingGroupsCntr[sg]++
+	}
+
+	//
+	// randomize
+	for i := 0; i < len(sgs); i++ {
+		if sgs[i].Group == 0 {
+			sgs[i].Shuffled = sgs[i].Orig
+		} else {
+			if sgs[i].Idx == 0 {
+				sg := sgs[i].Group
+				// this must conform with ShufflesToCSV()
+				// q.MaxGroups instead of len(shufflingGroups[sg])
+				// order = order[0:len(shufflingGroups[sg])]
+				sh := shuffler.New(q.UserID, q.Variations, len(shufflingGroups[sg]))
+				order := sh.Slice(pageIdx) // cannot add sg to conform to ShufflesToCSV()
+				log.Printf("%v - seq %16s in order %16s - iter %v", sg, fmt.Sprint(shufflingGroups[sg]), fmt.Sprint(order), pageIdx+sg)
+				for i := 0; i < len(shufflingGroups[sg]); i++ {
+					offset := shufflingGroups[sg][i] // i.e. [1, 9]
+					i2 := order[i]
+					sgs[offset].Shuffled = shufflingGroups[sg][i2]
+				}
+
+			}
+
+		}
+	}
+	for i := 0; i < len(sgs); i++ {
+		log.Printf("lp%02v  %v", i, sgs[i])
+	}
+
+	// extract the new order - with randomized elements
+	shuffled := make([]int, len(p.Groups))
+	for i := 0; i < len(p.Groups); i++ {
+		shuffled[i] = sgs[i].Shuffled
+	}
+
+	log.Printf("=> shuffled %v", shuffled)
+
+	return shuffled
+
+}
+
 // PageHTML generates HTML for a specific page of the questionnaire
-func (q *QuestionnaireT) PageHTML(idx int) (string, error) {
+func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 
 	if q.CurrPage > len(q.Pages)-1 || q.CurrPage < 0 {
-		s := fmt.Sprintf("You requested page %v out of %v. Page does not exist", idx, len(q.Pages)-1)
+		s := fmt.Sprintf("You requested page %v out of %v. Page does not exist", pageIdx, len(q.Pages)-1)
 		log.Printf(s)
 		return s, fmt.Errorf(s)
 	}
 
-	p := q.Pages[idx]
+	p := q.Pages[pageIdx]
 
 	if _, ok := q.LangCodes[q.LangCode]; !ok || q.LangCode == "" {
 		s := fmt.Sprintf("Language code '%v' is not supported in %v", q.LangCode, q.LangCodes)
@@ -776,22 +916,53 @@ func (q *QuestionnaireT) PageHTML(idx int) (string, error) {
 	}
 
 	b.WriteString(fmt.Sprintf("<span class='go-quest-page-header' >%v</span>", p.Label.Tr(q.LangCode)))
-	b.WriteString(vspacer)
-	b.WriteString(fmt.Sprintf("<p  class='go-quest-page-desc'>%v</p>", p.Desc.Tr(q.LangCode)))
+	if p.Desc.Tr(q.LangCode) != "" {
+		b.WriteString(vspacer)
+		b.WriteString(fmt.Sprintf("<p  class='go-quest-page-desc'>%v</p>", p.Desc.Tr(q.LangCode)))
+	}
 	b.WriteString(vspacer16)
 
-	sh := shuffler.New(q.UserID, q.Variations, len(p.Groups))
-	order := sh.Slice(idx)
-	log.Printf("Return order %+v; cut to %v", order, len(q.Pages)-1)
+	order := q.RandomizeOrder(pageIdx)
+	compositCntr := -1
+	nonCompositCntr := -1
+	for loopIdx, seqIdx := range order {
+		if p.Groups[seqIdx].HasComposit() {
+			compositCntr++
+			compFuncNameWithParamSet := p.Groups[seqIdx].Inputs[0].DynamicFunc
 
-	for loopIdx, i := range order {
-		grpHTML := p.Groups[i].HTML(q.LangCode)
-		grpHTML = strings.Replace(grpHTML, "[groupID]", fmt.Sprintf("%v", loopIdx+1), -1)
-		b.WriteString(grpHTML + "\n")
+			splt := strings.Split(compFuncNameWithParamSet, "__")
+			if len(splt) != 2 {
+				log.Panicf("composite func name %v must consist of func name '__' param set index", compFuncNameWithParamSet)
+			}
+			// log.Printf("composite func %v -> %v", splt[0], splt[1])
+			compFuncName := splt[0]
+			paramSetIdx, err := strconv.Atoi(splt[1])
+			if err != nil {
+				log.Panicf("second part of composite func name %v could not be parsed into int \n %v", compFuncNameWithParamSet, err)
+			}
+
+			cF, ok := compositeFuncs[compFuncName]
+			if !ok {
+				log.Panicf("composite func name %v does not exist", compFuncName)
+			}
+			grpHTML, _, err := cF(q, compositCntr, paramSetIdx)
+			if err != nil {
+				b.WriteString(fmt.Sprintf("composite func error %v \n", err))
+			} else {
+				b.WriteString(grpHTML + "\n")
+			}
+		} else {
+			grpHTML := p.Groups[seqIdx].HTML(q.LangCode)
+			if strings.Contains(grpHTML, "[groupID]") {
+				nonCompositCntr++
+				grpHTML = strings.Replace(grpHTML, "[groupID]", fmt.Sprintf("%v", nonCompositCntr+1), -1)
+			}
+			b.WriteString(grpHTML + "\n")
+		}
 
 		// vertical distance at the end of groups
 		if loopIdx < len(p.Groups)-1 {
-			for i2 := 0; i2 < p.Groups[i].BottomVSpacers; i2++ {
+			for i2 := 0; i2 < p.Groups[seqIdx].BottomVSpacers; i2++ {
 				b.WriteString(vspacer16)
 			}
 		} else {
@@ -959,4 +1130,23 @@ func (q *QuestionnaireT) KeysValues() (finishes, keys, vals []string) {
 		}
 	}
 	return
+}
+
+// ByName retrieves an input element by name
+func (q *QuestionnaireT) ByName(n string) *inputT {
+	for i1 := 0; i1 < len(q.Pages); i1++ {
+		for i2 := 0; i2 < len(q.Pages[i1].Groups); i2++ {
+			for i3 := 0; i3 < len(q.Pages[i1].Groups[i2].Inputs); i3++ {
+				if q.Pages[i1].Groups[i2].Inputs[i3].IsLayout() {
+					continue
+				}
+
+				if q.Pages[i1].Groups[i2].Inputs[i3].Name == n {
+					return q.Pages[i1].Groups[i2].Inputs[i3]
+				}
+
+			}
+		}
+	}
+	return nil
 }

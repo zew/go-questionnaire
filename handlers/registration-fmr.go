@@ -13,7 +13,7 @@ import (
 	"github.com/zew/util"
 )
 
-type reportForm struct {
+type formRegistrationFMR struct {
 	// stackoverflow.com/questions/399078 - inside character classes escape ^-]\
 	Email       string `json:"email"        form:"maxlength='42',size='28',pattern='[a-zA-Z0-9\\.\\-_%+]+@[a-zA-Z0-9\\.\\-]+\\.[a-zA-Z]{2&comma;18}'"`
 	Firstname   string `json:"vorname"      form:"maxlength='42',size='28',suffix=''"`
@@ -22,14 +22,14 @@ type reportForm struct {
 	Terms       bool   `json:"terms"        form:"suffix='replace_me'"`
 }
 
-func (rp *reportForm) CSVLine() string {
+func (rp *formRegistrationFMR) CSVLine() string {
 	return fmt.Sprintf("%v;%v;%v;%v;\n", rp.Email, rp.Firstname, rp.Lastname, rp.Affiliation)
 }
 
-var mtx = sync.Mutex{}
+var mtxFMR = sync.Mutex{}
 
-// FMReportFormH shows a registraton form for FMT report
-func FMReportFormH(w http.ResponseWriter, r *http.Request) {
+// RegistrationFMRH shows a registraton form for FMT report
+func RegistrationFMRH(w http.ResponseWriter, r *http.Request) {
 
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
 
@@ -41,7 +41,7 @@ func FMReportFormH(w http.ResponseWriter, r *http.Request) {
 	}
 	dec := form.NewDecoder()
 	dec.SetTagName("json")
-	frm := &reportForm{}
+	frm := &formRegistrationFMR{}
 	err = dec.Decode(frm, r.Form)
 	if err != nil {
 		fmt.Fprintf(w, "cannot decode request into form: %v<br>\n <pre>%v</pre>", err, util.IndentedDump(r.Form))
@@ -65,8 +65,8 @@ func FMReportFormH(w http.ResponseWriter, r *http.Request) {
 		}
 
 		if frm.Email != "" && frm.Terms {
-			mtx.Lock()
-			defer mtx.Unlock()
+			mtxFMR.Lock()
+			defer mtxFMR.Unlock()
 
 			f, err := os.OpenFile("fmr.csv", os.O_APPEND|os.O_WRONLY, 0600)
 			if err != nil {
@@ -89,7 +89,7 @@ func FMReportFormH(w http.ResponseWriter, r *http.Request) {
 	s2f.Indent = 170
 	s2f.CSS = strings.ReplaceAll(s2f.CSS, "max-width: 40px;", "max-width: 220px;")
 
-	fmt.Fprint(w1, s2f.HTML(*frm))
+	fmt.Fprint(w1, s2f.Form(*frm))
 
 	s2 := strings.ReplaceAll(w1.String(), "replace_me", `Ich erkläre mich mit den <a tabindex='-1' href='https://www.zew.de/de/datenschutz' target='_blank' >Datenschutzbestimmungen</a> einverstanden`)
 

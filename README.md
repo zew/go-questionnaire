@@ -443,7 +443,9 @@ Mobile layout was tested with `crossbrowsertesting.com`.
 * Document the label / checkbox vertical case
 
 * Why is page width 70% not rendered  
-after switch between mobile=1 and back to mobile=2 ?
+after switch between mobile=1 and back to mobile=2 ?  
+Because the template is cached in session and  
+permanently changed in mobile view; append `reload=1` to URL
 
 ## Possible enhancements
 

@@ -27,6 +27,14 @@ import (
 // Finally from template.
 func loadQuestionnaire(w http.ResponseWriter, r *http.Request, l *lgn.LoginT) (*qst.QuestionnaireT, error) {
 
+	if r.Form.Get("reload") != "" {
+		// forcing reload from file -
+		// to regain page.width and group.width != 100
+		sess := sessx.New(w, r)
+		sess.Remove(r.Context(), "questionnaire")
+		log.Printf("template will be reloaded from file")
+	}
+
 	q, ok, err := qst.FromSession(w, r)
 	if err != nil {
 		err = errors.Wrap(err, "Reading questionnaire from session caused error")
@@ -182,6 +190,7 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 		helper(w, r, err)
 		return
 	}
+
 	q.UserID = l.User
 
 	// Already finished?
@@ -244,8 +253,11 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 	// Sync *back* -
 	// questionnaire lang_code => app lang_code
 	if q.LangCode != "" {
-		sess.PutString("lang_code", q.LangCode)
-		log.Printf("newly set qst.lang_code='%v' synced back to session", q.LangCode)
+		lcSess := sess.EffectiveStr("lang_code")
+		if lcSess != q.LangCode {
+			sess.PutString("lang_code", q.LangCode)
+			log.Printf("newly set qst.lang_code='%v' synced back to session", q.LangCode)
+		}
 	}
 
 	// Login attributes => questionaire attributes
@@ -303,6 +315,7 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 			if inp.IsLayout() {
 				continue
 			}
+			// log.Printf("checking for %v", inp.Name)
 			ok := sess.EffectiveIsSet(inp.Name)
 			if ok {
 				val := sess.EffectiveStr(inp.Name)

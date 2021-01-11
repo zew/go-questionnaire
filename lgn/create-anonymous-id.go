@@ -6,6 +6,7 @@ import (
 	"log"
 	"net/http"
 	"strconv"
+	"strings"
 
 	"github.com/go-playground/form"
 	hashids "github.com/speps/go-hashids"
@@ -216,6 +217,7 @@ func createAnonymousID(w http.ResponseWriter, r *http.Request, outerHTML bool) {
 
 	if outerHTML {
 		src = OuterHTMLPost("Anonymous deterministic access ID", src)
+		src = strings.ReplaceAll(src, "action=\"{{.SelfURL}}\"", "")
 	}
 
 	fmt.Fprint(w, src)

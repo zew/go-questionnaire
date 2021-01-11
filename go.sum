@@ -206,6 +206,8 @@ github.com/monoculum/formam v0.0.0-20200527175922-6f3cce7a46cf h1:DJ+VDi88ZNh+C3
 github.com/monoculum/formam v0.0.0-20200527175922-6f3cce7a46cf/go.mod h1:JKa2av1XVkGjhxdLS59nDoXa2JpmIHpnURWNbzCtXtc=
 github.com/pbberlin/struc2frm v1.0.5 h1:l+g0wLdXpYZIN4VW8iFjoSoSTDnVffsgvoIN/52g1ek=
 github.com/pbberlin/struc2frm v1.0.5/go.mod h1:8eNBRzJ5yN7j+Ik8tVhTCJPs08V8OlMep5Bl67MCt2o=
+github.com/pbberlin/struc2frm v1.2.8 h1:HotdxSAraGPI8ywfcp/+PsyZ+Xq8dGyQwufNceTbIc4=
+github.com/pbberlin/struc2frm v1.2.8/go.mod h1:hsIWVzQqFpVlrgEwfkkpYRF8nP0wPAjs0O8+o+S9/9I=
 github.com/pkg/errors v0.8.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
 github.com/pkg/errors v0.9.1 h1:FEBLx1zS214owpjy7qsBeixbURkuhQAwrK5UwLGTwt4=
 github.com/pkg/errors v0.9.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=

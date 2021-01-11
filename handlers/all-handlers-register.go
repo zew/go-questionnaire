@@ -242,10 +242,16 @@ func RegisterHandlers(mux *http.ServeMux) {
 			Allow:   map[handler.Privilege]bool{handler.LoggedIn: true},
 		},
 		{
-			Urls:    []string{"/fmreport-email"}, // 'd' for direct
-			Title:   "FM Report email registration",
-			Handler: FMReportFormH,
+			Urls:    []string{"/fmreport-email", "/registrationfmr"}, // second without hyphen - avoid MS word escaping of URL
+			Title:   "Registration FM Report email",
+			Handler: RegistrationFMRH,
 			Keys:    []string{"fmreport-email"},
+		},
+		{
+			Urls:    []string{"/registrationfmt"}, // without hyphen - avoid MS word escaping of URL
+			Title:   "Registration FMT",
+			Handler: RegistrationFMTH,
+			Keys:    []string{"registration-fmt"},
 		},
 
 		// Application specific admin

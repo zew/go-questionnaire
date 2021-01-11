@@ -48,7 +48,7 @@ func SlowBuffered(w http.ResponseWriter, r *http.Request) {
 
 	//
 	fmt.Fprintf(w, "<h3>Slow requests - fully buffered</h3>")
-	fmt.Fprint(w, struc2frm.New().HTML(*frm))
+	fmt.Fprint(w, struc2frm.New().Form(*frm))
 
 	env(w)
 

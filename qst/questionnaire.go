@@ -760,14 +760,15 @@ func (q *QuestionnaireT) AddPage() *pageT {
 // SetLangCode tries to change the questionnaire langCode if supported by langCodes.
 func (q *QuestionnaireT) SetLangCode(newCode string) error {
 	if newCode != q.LangCode {
-		oldCode := q.LangCode
-		q.LangCode = newCode
-		err := q.Validate()
-		if err != nil {
-			q.LangCode = oldCode
-			return err
+		for _, lc := range q.LangCodesOrder {
+			if _, ok := q.LangCodes[lc]; ok {
+				q.LangCode = newCode
+				return nil
+			}
 		}
-		// sess.PutString("lang_code", q.LangCode)
+		err := fmt.Errorf("LangCodesOrder val %v is not a key in LangCodes %v", newCode, q.LangCodes)
+		log.Print(err)
+		return err
 	}
 	return nil
 }

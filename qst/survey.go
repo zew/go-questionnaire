@@ -2,6 +2,7 @@ package qst
 
 import (
 	"fmt"
+	"html/template"
 	"strings"
 	"time"
 
@@ -88,6 +89,37 @@ func (s surveyT) WaveIDPretty() string {
 	t := time.Date(s.Year, s.Month+1, 0, 0, 0, 0, 0, cfg.Get().Loc)
 	// return t.Format("January 2006") // yields English month names.
 	return t.Format("2006-01")
+}
+
+// TemplateLogoText for display in HTML
+func (s surveyT) TemplateLogoText(langCode string) template.HTML {
+
+	ret := ""
+
+	if s.WaveIDPretty() != "" {
+		ret = fmt.Sprintf(`
+		<span style="font-size: 70%%; position: relative; bottom: 2px; left: 4px;">
+			<span style='font-size: 130%%'>%v </span>
+			<span style="position: relative; bottom: 0px;" >
+				%v 
+				<span class="wave-id"> - %v</span>
+			</span>
+		</span>
+		`,
+			s.Org.TrSilent(langCode),
+			s.Name.TrSilent(langCode),
+			s.WaveIDPretty(),
+		)
+
+	} else {
+		ret = fmt.Sprintf(`<span style='font-size: 130%%;'>%v</span> %v`,
+			cfg.Get().Mp["app_label_h1"].TrSilent((langCode)),
+			cfg.Get().Mp["app_label"].TrSilent((langCode)),
+		)
+	}
+
+	return template.HTML(ret)
+
 }
 
 func dropDown(vals []string, selected string) string {

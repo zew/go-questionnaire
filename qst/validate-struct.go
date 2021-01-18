@@ -122,9 +122,9 @@ func (q *QuestionnaireT) Validate() error {
 		log.Printf(s)
 		return fmt.Errorf(s)
 	}
-	for _, lg := range q.LangCodesOrder {
-		if _, ok := q.LangCodes[lg]; !ok {
-			s := fmt.Sprintf("LangCodesOrder val %v is not a key in LangCodes", lg)
+	for _, lc := range q.LangCodesOrder {
+		if _, ok := q.LangCodes[lc]; !ok {
+			s := fmt.Sprintf("LangCodesOrder val %v is not a key in LangCodes", lc)
 			log.Printf(s)
 			return fmt.Errorf(s)
 		}

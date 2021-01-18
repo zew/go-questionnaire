@@ -211,52 +211,48 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 	// Meta parameters
 	// =============
 
-	// Questionnaire language code (still) not set
-	// => Try to set questionnaire lang_code
-	//        from URL parameter
-	//     or from session lang_code (from login)
-	if q.LangCode == "" && sess.EffectiveIsSet("lang_code") {
-		fromSess := sess.EffectiveStr("lang_code")
-		err := q.SetLangCode(fromSess)
-		if err != nil {
-			log.Printf("Problem setting lang_code from URL GET or session '%v': %v", fromSess, err)
-		} else {
-			log.Printf("empty quest lang_code set to request/session value'%v'", fromSess)
-		}
-	}
-
-	// Questionnaire language code (still) not set
-	// => Try login attribute
+	// lang_code default
 	if q.LangCode == "" {
-		err := q.SetLangCode(l.Attrs["lang_code"])
-		if err != nil {
-			log.Printf("Problem setting default lang_code from login attr '%v': %v", l.Attrs["lang_code"], err)
-		} else {
-			log.Printf("empty quest lang_code set to login attr '%v'", l.Attrs["lang_code"])
+		lc := l.Attrs["lang_code"] // from login / login profile
+		if lc != "" {
+			err := q.SetLangCode(lc)
+			if err != nil {
+				log.Printf("Problem setting default lang_code from login attr '%v': %v", l.Attrs["lang_code"], err)
+			}
+			log.Printf("quest lang_code set to default from login/profile  %v", lc)
+		}
+		if q.LangCode == "" {
+			if len(q.LangCodesOrder) > 0 {
+				lc = q.LangCodesOrder[0] // questionnaire specific default
+			}
+			if lc == "" {
+				lc = cfg.Get().LangCodes[0] // global default
+			}
+			err = q.SetLangCode(lc)
+			if err != nil {
+				log.Printf("Problem setting default lang_code from q.LangCodesOrder / cfg.LangCodes '%v': %v", lc, err)
+			}
+			log.Printf("quest lang_code set to default from global/quest %v", lc)
 		}
 	}
 
-	// Questionnaire language code (still) not set
-	// => Try to set questionnaire to application default lang code
-	if q.LangCode == "" {
-		def := cfg.Get().LangCodes[0] // global default
-		if len(q.LangCodesOrder) > 0 {
-			def = q.LangCodesOrder[0] // questionnaire specific default
-		}
-		err = q.SetLangCode(def)
-		if err != nil {
-			log.Printf("Problem setting default lang_code '%v': %v", def, err)
-		}
-		log.Printf("Empty quest lang_code set to global/quest default %v", def)
-
-	}
-	// Sync *back* -
-	// questionnaire lang_code => app lang_code
-	if q.LangCode != "" {
+	// lang_code from URL GET or session
+	if sess.EffectiveIsSet("lang_code") {
+		lcReq, okReq := sess.ReqParam("lang_code")
 		lcSess := sess.EffectiveStr("lang_code")
-		if lcSess != q.LangCode {
-			sess.PutString("lang_code", q.LangCode)
-			log.Printf("newly set qst.lang_code='%v' synced back to session", q.LangCode)
+		if okReq && lcReq != lcSess {
+			sess.PutString("lang_code", lcReq)
+			log.Printf("REQ lang_code '%v' synced back to session", lcReq)
+			lcSess = lcReq
+		}
+
+		if q.LangCode != lcSess {
+			err := q.SetLangCode(lcSess)
+			if err != nil {
+				log.Printf("error setting lang_code '%v' from URL GET or session: %v", lcSess, err)
+			} else {
+				log.Printf("setting lang_code '%v' from URL GET or session", lcSess)
+			}
 		}
 	}
 
@@ -365,12 +361,14 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 
 	//
 	//
-	w.Header().Set("Content-Type", "text/html; charset=utf-8")
 
 	mp := map[string]interface{}{
+		"CSSSite": cfg.Get().CSSVarsSite[q.Survey.Type],
 		"Q":       q,
 		"Content": "",
 	}
+
+	w.Header().Set("Content-Type", "text/html; charset=utf-8")
 
 	if mobile {
 		q.Pages[q.CurrPage].Width = 100
@@ -384,9 +382,10 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 		w1 := &bytes.Buffer{}
 		tpl.Exec(w1, r, mp, "quest.html")
 
-		w2 := &bytes.Buffer{}
 		mp["Content"] = w1.String()
-		mp["Q"] = q
+		// tpl.RenderStack(r, w, []string{"layout.html", "main-desktop.html"}, mp)
+
+		w2 := &bytes.Buffer{}
 		tpl.Exec(w2, r, mp, "main-desktop.html")
 
 		//

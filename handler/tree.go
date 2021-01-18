@@ -3,6 +3,7 @@ package handler
 import (
 	"fmt"
 	"io"
+	"log"
 	"net/http"
 	"strings"
 
@@ -23,14 +24,32 @@ func Tree() *TreeT {
 
 	root := &TreeT{
 
-		Node: Info{Title: "Root Node"},
+		Node: Info{Title: "Root Node", Keys: []string{"root"}},
 		Children: []TreeT{
-			{Node: infos.ByKey("create-anonymous-id")},
-			{Node: Info{Title: "Sys admin"},
+			// {Node: Info{Title: "Language", Keys: []string{"language"}},
+			// 	Children: []TreeT{
+			// 		{Node: Info{Title: "Deutsch"}},
+			// 		{Node: Info{Title: "English"}},
+			// 	},
+			// },
+			{Node: Info{Title: "Login/Logout", Keys: []string{"loginlogout"}},
 				Children: []TreeT{
 					{Node: infos.ByKey("login-primitive")},
 					{Node: infos.ByKey("logout")},
 					{Node: infos.ByKey("change-password-primitive")},
+					{Node: infos.ByKey("create-anonymous-id")},
+				},
+			},
+			{Node: Info{Title: "About"},
+				Children: []TreeT{
+					{Node: infos.ByKey("imprint")},
+				},
+			},
+			{Node: Info{
+				Title: "Sys admin",
+				Allow: map[Privilege]bool{Admin: true},
+			},
+				Children: []TreeT{
 					{Node: infos.ByKey("logins-reload")},
 					{Node: infos.ByKey("config-reload")},
 					{Node: infos.ByKey("templates-reload")},
@@ -50,22 +69,17 @@ func Tree() *TreeT {
 		},
 	}
 
-	// if cfg.Get().ForwardCopyByCountry {
-	//	addenum := infos.ByKey("export-import-directly")
-	//	root.AppendAfterByKey("backup", &addenum)
-	// }
-
 	return root
 
 }
 
 // ByKey recursively retrieves a node;
 // use ByKey() and SetByKey() to modify the nav tree
-func (rt *TreeT) ByKey(key string) *TreeT {
-	if rt.Node.HasKey(key) {
-		return rt
+func (tr *TreeT) ByKey(key string) *TreeT {
+	if tr.Node.HasKey(key) {
+		return tr
 	}
-	for _, c := range rt.Children {
+	for _, c := range tr.Children {
 		if c.Node.HasKey(key) {
 			return &c
 		}
@@ -79,13 +93,13 @@ func (rt *TreeT) ByKey(key string) *TreeT {
 
 // SetByKey recursively replaces an existing node;
 // use ByKey() and SetByKey() to modify the nav tree
-func (rt *TreeT) SetByKey(key string, repl *Info) bool {
-	if rt.Node.HasKey(key) {
-		rt.Node = *repl
+func (tr *TreeT) SetByKey(key string, repl *Info) bool {
+	if tr.Node.HasKey(key) {
+		tr.Node = *repl
 		return true
 	}
-	for idx := range rt.Children {
-		if rt.Children[idx].SetByKey(key, repl) { // we have to access via slice - to really change the underlying instance
+	for idx := range tr.Children {
+		if tr.Children[idx].SetByKey(key, repl) { // we have to access via slice - to really change the underlying instance
 			return true
 		}
 	}
@@ -93,21 +107,45 @@ func (rt *TreeT) SetByKey(key string, repl *Info) bool {
 }
 
 // AppendAfterByKey recursively appends behind an existing node
-func (rt *TreeT) AppendAfterByKey(key string, summand *Info) bool {
+// asChild == false => append on same level
+// asChild == true  => append on one  level deeper
+func (tr *TreeT) AppendAfterByKey(key string, summand *Info, asChild ...bool) bool {
+
+	asCh := false
+	if len(asChild) > 0 {
+		asCh = asChild[0]
+	}
+
 	// if rt.Node.HasKey(key) {
-	//   level 0 root should never get appended
+	//   omitted; since level 0 root should never get appended
 	// }
-	for idx := range rt.Children {
-		if rt.Children[idx].Node.HasKey(key) {
-			ln := len(rt.Children)
-			cp := make([]TreeT, 0, ln+1)
-			cp = append(cp, rt.Children[0:idx+1]...)
-			cp = append(cp, TreeT{Node: *summand})
-			cp = append(cp, rt.Children[idx+1:ln]...)
-			rt.Children = cp
+	for idx := range tr.Children {
+		if tr.Children[idx].Node.HasKey(key) {
+
+			// 		rt.Children[idx].Children
+			// 			or
+			//		rt.Children
+			if asCh {
+				log.Printf("appending node %-12q - %v as child", summand.Title, summand.Keys[0])
+				ln := len(tr.Children[idx].Children)
+				cp := make([]TreeT, 0, ln+1)
+				cp = append(cp, TreeT{Node: *summand})        // first slot
+				cp = append(cp, tr.Children[idx].Children...) // previous children
+				tr.Children[idx].Children = cp
+			} else {
+				log.Printf("appending node %-12q - %v as sibling", summand.Title, summand.Keys[0])
+				ln := len(tr.Children)
+				cp := make([]TreeT, 0, ln+1)
+				cp = append(cp, tr.Children[0:idx+1]...)
+				cp = append(cp, TreeT{Node: *summand})
+				cp = append(cp, tr.Children[idx+1:ln]...)
+				tr.Children = cp
+			}
 			return true
+
 		}
-		if rt.Children[idx].AppendAfterByKey(key, summand) {
+		found := tr.Children[idx].AppendAfterByKey(key, summand, asCh) // this is no oversight; return only on true
+		if found {
 			return true
 		}
 	}
@@ -170,25 +208,25 @@ being mapped to tpl.fcNav
 
 
 */
-func (rt *TreeT) NavHTML(w io.Writer, r *http.Request, isLogin, isAdmin bool, lvl int) {
+func (tr *TreeT) NavHTML(w io.Writer, r *http.Request, isLogin, isAdmin bool, lvl int) {
 
 	// The root node itself is not rendered - we go straight to the children
 	if lvl == 0 {
-		for _, child := range rt.Children {
+		for _, child := range tr.Children {
 			child.NavHTML(w, r, isLogin, isAdmin, lvl+1)
 		}
 		return
 	}
 
-	needsLogout := rt.Node.Allow[LoggedOut]
+	needsLogout := tr.Node.Allow[LoggedOut]
 	if needsLogout && isLogin {
 		return
 	}
-	needsLogin := rt.Node.Allow[LoggedIn]
+	needsLogin := tr.Node.Allow[LoggedIn]
 	if needsLogin && !isLogin {
 		return
 	}
-	needsAdmin := rt.Node.Allow[Admin]
+	needsAdmin := tr.Node.Allow[Admin]
 	if needsAdmin && !isAdmin {
 		return
 	}
@@ -204,13 +242,13 @@ func (rt *TreeT) NavHTML(w io.Writer, r *http.Request, isLogin, isAdmin bool, lv
 		preventClck := "" // nav items without URL should not be clickable;
 
 		accessKey := ""
-		if rt.Node.ShortCut != "" {
-			accessKey = fmt.Sprintf(" accesskey='%v' ", rt.Node.ShortCut)
-			rt.Node.Title += fmt.Sprintf(" <span title='Keyboard shortcut SHIFT+ALT+%v' >(%v)</span>", rt.Node.ShortCut, rt.Node.ShortCut)
+		if tr.Node.ShortCut != "" {
+			accessKey = fmt.Sprintf(" accesskey='%v' ", tr.Node.ShortCut)
+			tr.Node.Title += fmt.Sprintf(" <span title='Keyboard shortcut SHIFT+ALT+%v' >(%v)</span>", tr.Node.ShortCut, tr.Node.ShortCut)
 		}
 
-		if len(rt.Node.Urls) > 0 {
-			navURL = cfg.Pref(rt.Node.Urls[0])
+		if len(tr.Node.Urls) > 0 {
+			navURL = cfg.Pref(tr.Node.Urls[0])
 		}
 
 		// log.Printf("cmp %v to %v", strings.TrimSuffix(r.URL.Path, "/"), navURL)
@@ -224,10 +262,10 @@ func (rt *TreeT) NavHTML(w io.Writer, r *http.Request, isLogin, isAdmin bool, lv
 			preventClck = " onclick='return false;' "
 		}
 
-		if len(rt.Children) == 0 {
+		if len(tr.Children) == 0 {
 
 			fmt.Fprintf(w, "\n%v<li><a href='%v'   %v  %v  %v  >%v</a></li>  \n",
-				htmlIndent, navURL, activeStyle, preventClck, accessKey, rt.Node.Title,
+				htmlIndent, navURL, activeStyle, preventClck, accessKey, tr.Node.Title,
 			)
 
 		} else {
@@ -249,11 +287,11 @@ func (rt *TreeT) NavHTML(w io.Writer, r *http.Request, isLogin, isAdmin bool, lv
 
 			// same as above - without enclosing <li>
 			fmt.Fprintf(w, "%v<a href='%v'   %v  %v  %v  >%v</a>  \n",
-				htmlIndent, navURL, activeStyle, preventClck, accessKey, rt.Node.Title,
+				htmlIndent, navURL, activeStyle, preventClck, accessKey, tr.Node.Title,
 			)
 
 			fmt.Fprintf(w, "%v     <ul class='mnu-3rd-lvl'>\n", htmlIndent)
-			for _, child := range rt.Children {
+			for _, child := range tr.Children {
 				child.NavHTML(w, r, isLogin, isAdmin, lvl+1)
 			}
 			fmt.Fprintf(w, "%v     </ul>\n", htmlIndent)

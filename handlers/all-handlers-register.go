@@ -28,16 +28,17 @@ func RegisterHandlers(mux *http.ServeMux) {
 		{
 			Urls:    []string{"/doc"},
 			Handler: tpl.ServeDoc,
-			Title:   "Serve content under app-bucket",
-			Keys:    []string{"doc-server"},
+			Title:   "Documentation", // Serve content under app-bucket
+			Keys:    []string{"doc-server", "documentation"},
 		},
 		{
-			Urls:    []string{"/login-primitive"},
-			Title:   "Login app",
-			Handler: lgn.LoginPrimitiveH,
+			Urls: []string{"/login-primitive"},
 			// 	Handler: LoginPrimitiveSiteH,
-			Keys:  []string{"login-primitive"},
-			Allow: map[handler.Privilege]bool{handler.LoggedOut: true},
+			Handler:  lgn.LoginPrimitiveH,
+			Title:    "Login app",
+			Keys:     []string{"login-primitive"},
+			ShortCut: "l",
+			Allow:    map[handler.Privilege]bool{handler.LoggedOut: true},
 		},
 		{
 			Urls:    []string{"/change-password-primitive"},
@@ -56,8 +57,8 @@ func RegisterHandlers(mux *http.ServeMux) {
 		},
 		{
 			Urls:    []string{"/logins/reload"},
-			Title:   "Logins reload",
 			Handler: lgn.LoadH,
+			Title:   "Logins reload",
 			Keys:    []string{"logins-reload"},
 			Allow:   map[handler.Privilege]bool{handler.Admin: true},
 		},
@@ -225,6 +226,12 @@ func RegisterHandlers(mux *http.ServeMux) {
 			Title:   "Registration FMT",
 			Handler: RegistrationFMTH,
 			Keys:    []string{"registration-fmt"},
+		},
+		{
+			Urls:    []string{"/doc/site-imprint.md"},
+			Handler: tpl.ServeDoc,
+			Title:   "Imprint",
+			Keys:    []string{"imprint"},
 		},
 
 		// Application specific admin

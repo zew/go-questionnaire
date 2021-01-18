@@ -43,7 +43,6 @@ var fcNav = func(r *http.Request, SBookMarkURI string) template.HTML {
 	bts := &strings.Builder{}
 	w := httptest.NewRecorder()
 	isAdmin := false
-	_ = isAdmin
 	l, isLogin, err := lgn.LoggedInCheck(w, r, "admin")
 	if isLogin && err == nil {
 		isAdmin = true
@@ -62,30 +61,25 @@ var fcNav = func(r *http.Request, SBookMarkURI string) template.HTML {
 		}
 	}
 
-	// add bookmarkable URI
-	{
-		hdlr := &handler.Info{
-			Keys:     []string{"bookmark"},
-			Urls:     []string{strings.TrimPrefix(SBookMarkURI, cfg.Pref())},
-			Title:    "Bookmark URL",
-			ShortCut: "k",
-		}
-		after := "pdf-files-browse"
-		after = "documentation"
-		after = "changes-across-tabs"
-		ok := root.AppendAfterByKey(after, hdlr)
-		if !ok {
-			log.Printf("could not append 'bookmark' after node '%v'", after)
-		}
+	prev := "loginlogout"
+
+	type insert struct {
+		asChild bool
+		handler.Info
 	}
 
-	nd := root.ByKey("main")
-	if nd != nil {
-		nd.Node.Title = "Main&nbsp;view"
-		ok := root.SetByKey("main", &nd.Node)
+	inserts := []insert{
+		{false, handler.Info{Title: "Language", Keys: []string{"language"}}},
+		{true, handler.Info{Title: "English", Keys: []string{"english"}}},
+		{false, handler.Info{Title: "Deutsch", Keys: []string{"deutsch"}}},
+	}
+	for i := 0; i < len(inserts); i++ {
+		ok := root.AppendAfterByKey(prev, &inserts[i].Info, inserts[i].asChild)
 		if !ok {
-			log.Printf("could not replace node 'main'")
+			log.Printf("appending %vth node %v after %v asChild %v failed", i, inserts[i].Title, prev, inserts[i].asChild)
+			break
 		}
+		prev = inserts[i].Keys[0]
 	}
 
 	root.NavHTML(bts, r, isLogin, isAdmin, 0) // the dynamic part
@@ -369,6 +363,7 @@ func Exec(w io.Writer, r *http.Request, mp map[string]interface{}, tName string)
 		mp["HTMLTitle"] = cfg.Get().AppName
 	}
 
+	// mp["CSSSite"] must be of type cfg.[]cssVar; we only check for existence
 	if _, ok := mp["CSSSite"]; !ok {
 		mp["CSSSite"] = cfg.Get().CSSVarsSite[cfg.Get().AppMnemonic]
 	}

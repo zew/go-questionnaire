@@ -327,7 +327,8 @@ func (i inputT) HTML(langCode string, numCols int) string {
 			}
 
 			radio := fmt.Sprintf(
-				"<input type='%v' name='%v' id='%v' title='%v %v' class='%v' value='%v' %v />\n",
+				// 2021-01 - id must be unique
+				"<input type='%v' name='%v' id-disabled='%v' title='%v %v' class='%v' value='%v' %v />\n",
 				innerType, nm, nm, i.Label.TrSilent(langCode), i.Desc.TrSilent(langCode),
 				i.CSSControl,
 				rad.Val, checked,
@@ -634,7 +635,7 @@ type pageT struct {
 	Section         trl.S `json:"section,omitempty"` // Several pages have a section headline, showing up mobile navigation menu
 	Label           trl.S `json:"label,omitempty"`
 	Desc            trl.S `json:"description,omitempty"`
-	Short           trl.S `json:"short,omitempty"`         // Short version of Label/Description - i.e. for progress bar
+	Short           trl.S `json:"short,omitempty"`         // Short version of Label/Description - i.e. for progress bar, replaces Label/Desc in progressbar
 	NoNavigation    bool  `json:"no_navigation,omitempty"` // Page will not show up in progress bar
 	NavigationalNum int   `json:"navi_num"`                // The number in Navigation order; based on NoNavigation; computed by q.Validate
 

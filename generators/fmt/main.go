@@ -134,7 +134,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		p := q.AddPage()
 		p.Section = trl.S{"de": "Konjunktur", "en": "Business cycle"}
 		p.Label = trl.S{"de": "Status und Ausblick", "en": "Status and outlook"}
-		p.Short = trl.S{"de": "Status,<br>Ausblick", "en": "Status,<br>outlook"}
+		p.Short = trl.S{"de": "Konjunktur:<br>Status,<br>Ausblick", "en": "Business cycle:<br>Status,<br>Outlook"}
 		p.Width = 70
 
 		//
@@ -323,7 +323,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	{
 		p := q.AddPage()
 		p.Label = trl.S{"de": "Inflation und Zinsen", "en": "Inflation and rates"}
-		p.Short = trl.S{"de": "Inflat, Zinsen", "en": "Inflation, rates"}
+		p.Short = trl.S{"de": "Inflation,<br>Zinsen", "en": "Inflation,<br>Rates"}
 		p.AestheticCompensation = 5
 		p.Width = 80
 
@@ -507,6 +507,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		p := q.AddPage()
 		p.Section = trl.S{"de": "Kreditsituation", "en": "Credit situation"}
 		p.Label = trl.S{"de": "Markt", "en": "Market"}
+		p.Short = trl.S{"de": "Kredit-<br>situation:<br>Markt", "en": "Credit<br>situation:<br>Market"}
 
 		{
 			names3rdMatrix := []string{
@@ -604,7 +605,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		p := q.AddPage()
 		// page.Section = trl.S{"de": "Kreditsituation", "en": "Credit situation"}
 		p.Label = trl.S{"de": "Einflussfaktoren", "en": "Influence factors"}
-		p.Short = trl.S{"de": "Einfluss", "en": "Influence"}
+		p.Short = trl.S{"de": "Einfluss-<br>faktoren", "en": "Influence<br>factors"}
 
 		{
 			names3rdMatrix := []string{
@@ -696,6 +697,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		p := q.AddPage()
 		p.Section = trl.S{"de": "Finanzmärkte", "en": "Financial markets"}
 		p.Label = trl.S{"de": "Preise", "en": "Prices"}
+		p.Short = trl.S{"de": "Finanz-<br>märkte:<br>Preise", "en": "Financial<br>markets:<br>Prices"}
+
 		p.Width = 80
 
 		{
@@ -893,6 +896,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		p := q.AddPage()
 		p.Section = trl.S{"de": "Abschluss", "en": "Finish"}
 		p.Label = trl.S{"de": "", "en": ""}
+		p.Short = trl.S{"de": "Abschluss", "en": "Finish"}
 		p.Width = 65
 
 		{

@@ -13,20 +13,18 @@ import (
 the url path specifies the key to a CSSVarsSite entry;
 i.e.    /css/site-1/design.css
 
-Currently though, all CSS vars are set in the main template layout.html;
+Currently all CSS vars are set in the main template layout.html;
 therefore CSS files can be aggressively cached.
 
 Access from CSS would be
 	{{ cfg.CSSVarsSite.site-1.HTML }}
 	{{  (.ByKey "sec-drk2" ).RGBA    }}
 
-
-Thus currently we would not need to serve CSS files as golang templates,
+Thus currently we dont need to serve CSS files as golang templates,
 but it costs nothing since templates are preparsed at application init,
-and it retains the possibility to use templating dynamics in future.
+and we retain the possibility to use templating dynamics in future.
 
 */
-/**/
 func ServeDynCSS(w http.ResponseWriter, r *http.Request) {
 
 	w.Header().Set("Content-Type", "text/css")

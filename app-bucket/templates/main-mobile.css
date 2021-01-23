@@ -35,7 +35,7 @@ body{
 
 
 
-.go-quest-main-form {
+form[name=frmMain] {
     padding-left: 4px;
     padding-right: 1px;
 }
@@ -87,13 +87,13 @@ body{
     font-size:  120%;
 }
 
-.go-quest-vspacer{
+.vspacer-00{
     height: 2px;
 }
-.go-quest-vspacer-8{
+.vspacer-08{
     height: 4px;
 }
-.go-quest-vspacer-16{
+.vspacer-16{
     height: 8px;
 }
 

@@ -1,0 +1,145 @@
+/* app specific - specific to go-questionnaire - all surveys */
+
+@media screen and (min-width: 1280px) and (min-height: 920px) {
+	html {
+		/* if chrome is not at 100 percent zoom, then this has no effect  */
+		zoom: 120%;
+	}
+}
+
+
+
+
+
+table.main-table{
+	table-layout: fixed;
+	border-collapse: collapse; 
+	/* margin: 0 auto; */	
+	/* border: 1px solid #eaeaea;  */
+}
+
+/* odd row  */
+table.alternate-row-color{
+	background-color:  #eaeaea; 
+}
+
+table.bordered {
+	/* border: 1px solid #eaeaea;  */
+}
+table.bordered td{
+	border: 2px solid #fff; 
+	/* border: 2px solid #eaeaea;   */
+}
+
+
+table.main-table td{
+	margin: 0;
+	padding: 1px;
+	padding-bottom: 2px;
+    vertical-align: middle;
+	/* border: 1px solid #eaeaea;  */
+}
+
+/* this does not work, since every row is rendered as separate table  */
+table.main-table tr:nth-child(odd){
+}
+
+
+.go-quest-group {
+	/* text-align: center; */
+}
+
+.go-quest-label {
+    display: inline-block;  /* activate line-height - and for whitespace nowrap with suffix*/
+	font-size:     12px;
+	line-height:   1.1em;
+}
+
+
+.go-quest-group-header {
+    display: inline-block;  /* activate line-height*/
+	font-size: 12px;
+}
+
+.go-quest-page-section {
+	font-size: 18px;
+	line-height: 20px;
+	font-weight: 900;
+}
+.go-quest-page-header {
+	font-size: 16px;
+	font-weight: bold;
+	line-height: 18px;
+}
+.go-quest-page-desc {
+	font-size: 14px;
+	line-height: 18px;
+}
+
+
+
+
+/* for radio inputs, adjust the label top position */
+.vert-correct-center {
+	top: -3px;
+	position: relative;
+	margin-top:    0px;  
+	margin-bottom: 0px;
+    line-height: 120%;
+}
+.vert-correct-left-right {
+	top: -3px;  /* the higher line-height -  the more negative this value */
+	position: relative;
+	margin-top:    0px;  
+	margin-bottom: 0px;
+}
+
+
+.special-input-left-padding {
+	padding-left: 40px;
+}
+
+
+/* increase line height for textblocks */
+.special-line-height-higher {
+	line-height: 160%;
+}
+
+/* vertical margins between rows */
+.special-input-margin-vertical {
+	margin-top:    11px;
+	margin-bottom: 11px;
+}
+
+.special-input-textblock-smaller {
+	font-size: 65%;
+	padding-top:    2px;
+	padding-bottom: 12px;
+	display: inline-block;
+}
+
+.special-submit-big {
+	padding: 10px 64px;
+}
+
+.special-min-width-85 {
+    display: inline-block;
+    min-width: 85px;    
+}
+
+.special-vertical-align-top {
+	vertical-align: top;
+	min-height: 4rem;
+	margin-top: 0.4rem;
+}
+
+/* crutch to get vertical centering of control label  */
+.vertical-align-top-two-rows {
+	vertical-align: top;
+	padding-bottom: 16px;
+}
+
+
+
+
+

@@ -1,8 +1,8 @@
 package qst
 
 import (
-	"bytes"
 	"fmt"
+	"strings"
 
 	"github.com/zew/go-questionnaire/cfg"
 )
@@ -34,11 +34,12 @@ const (
 // Compare MenuMobile()
 func (q *QuestionnaireT) ProgressBar() string {
 
-	b := bytes.Buffer{}
+	b := &strings.Builder{}
 	// b.WriteString(fmt.Sprintf(htmlExample))
 
-	b.WriteString(fmt.Sprintf(`<input type="hidden" name="page" value="-1" >`))
-	b.WriteString(fmt.Sprintf("<ol class='progress'>"))
+	b.WriteString("\n")
+	b.WriteString(fmt.Sprintf("\t\t\t\t<ol class='progress'>\n"))
+	b.WriteString(fmt.Sprintf("\t\t\t\t\t<input type='hidden' name='page' value='-1' >\n"))
 
 	for idx, p := range q.Pages {
 
@@ -46,44 +47,23 @@ func (q *QuestionnaireT) ProgressBar() string {
 			continue
 		}
 
-		liClass := ""
+		completeOrActive := ""
 		if idx < q.CurrPage {
-			liClass = "is-complete"
+			completeOrActive = "is-complete"
 		} else if idx == q.CurrPage {
-			liClass = "is-active"
+			completeOrActive = "is-active"
 		}
 
-		// Some positional finetuning
-		sect := p.Section.TrSilent(q.LangCode)
-		leftOrCenter := "text-align: left; width: 98%; transform: translate(25%, 0px);"
+		eff := p.Short.TrSilent(q.LangCode)
 
-		if p.Short == nil {
-			if sect != "" {
-				sect = fmt.Sprintf("<b>%v</b>", sect)
-				sect += vspacer
-				if idx == len(q.Pages)-1 {
-					// last element more to the right
-					leftOrCenter = "text-align: left; width: 98%; transform: translate(40%, 0px);"
-				}
-			} else if sect == "" {
-				leftOrCenter = "transform: translate(0, 75%);"
-			}
-		}
-
-		eff := p.Label.Tr(q.LangCode)
-		if p.Short != nil { // short label dedicated to menu
-			eff = p.Short.Tr(q.LangCode)
-			sect = ""
-			leftOrCenter = "transform: translate(0, 75%);"
-		}
-
-		// make hyperlinks to the pages
 		/*
-			This does not post the form :(
+			<li> elements become hyperlinks to the questionnaire pages
+
+			This would not post current page form data:
 					location.href='%v?page=%v
-			We need
+			Thus:
 					this.form.page.value='%v';
-					this.form.submit();  - not working for <li> element
+					this.form.submit();  // does not work for <li> element
 					document.forms.frmMain.submit() // instead
 			Debug with
 					console.log('document.forms.frmMain.page.value: ',document.forms.frmMain.page.value);
@@ -100,15 +80,14 @@ func (q *QuestionnaireT) ProgressBar() string {
 					<li 
 						%v %v
 						class="%v" data-step="%v">
-						<span style='display: inline-block; line-height: 95%%;  %v'>
-							%v%v
+						<span  class="progress-bar-label" >
+							%v
 						<span>
 					</li> 
 				`,
 				onclick, pointr,
-				liClass, p.NavigationalNum, //idx+1,
-				leftOrCenter,
-				sect, eff,
+				completeOrActive, p.NavigationalNum,
+				eff,
 			),
 		)
 

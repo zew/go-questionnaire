@@ -59,7 +59,7 @@
         {{- end -}}  
     -->
 
-    {{- nav .Req (.Req.URL.Path) -}}
+    {{- nav .Req .Q (.Req.URL.Path) -}}
     {{if .S}}
     {{end}}
 <!-- 

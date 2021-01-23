@@ -65,7 +65,7 @@ type ConfigT struct {
 	FormTimeout    int            `json:"form_timeout"`       // hours until a form post is rejected
 
 	AppInstanceID int64    `json:"app_instance_id,omitempty"` // append to URLs of cached static jpg, js and css files - change to trigger reload
-	LangCodes     []string `json:"lang_codes"`
+	LangCodes     []string `json:"lang_codes"`                // available language codes for the application, first element is default
 
 	CSSVars     cssVars            `json:"css_vars"`      // global CSS variables
 	CSSVarsSite map[string]cssVars `json:"css_vars_site"` // site specific overwrites of css_vars
@@ -74,7 +74,6 @@ type ConfigT struct {
 
 	AllowSkipForward bool `json:"allow_skip_forward"` // skipping back always allowed, skipping forward is configurable
 
-	// available language codes for the application, first element is default
 	// multi language strings for the application
 	Mp trl.Map `json:"translation_map"`
 

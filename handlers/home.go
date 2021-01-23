@@ -211,7 +211,7 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 	// Meta parameters
 	// =============
 
-	// lang_code default
+	// lang_code of questionnaire - defaults
 	if q.LangCode == "" {
 		lc := l.Attrs["lang_code"] // from login / login profile
 		if lc != "" {
@@ -236,23 +236,30 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 
-	// lang_code from URL GET or session
-	if sess.EffectiveIsSet("lang_code") {
-		lcReq, okReq := sess.ReqParam("lang_code")
+	// lang_code of URL GET...
+	lcReq, okReq := sess.ReqParam("lang_code")
+	if okReq {
+		// ... dominates session
 		lcSess := sess.EffectiveStr("lang_code")
-		if okReq && lcReq != lcSess {
+		if lcReq != lcSess {
 			sess.PutString("lang_code", lcReq)
 			log.Printf("REQ lang_code '%v' synced back to session", lcReq)
-			lcSess = lcReq
 		}
-
-		if q.LangCode != lcSess {
-			err := q.SetLangCode(lcSess)
+		// ... dominates questionnaire
+		if lcReq != q.LangCode {
+			err := q.SetLangCode(lcReq)
 			if err != nil {
-				log.Printf("error setting lang_code '%v' from URL GET or session: %v", lcSess, err)
+				log.Printf("error setting quest lang_code '%v' from URL GET or session: %v", lcReq, err)
 			} else {
-				log.Printf("setting lang_code '%v' from URL GET or session", lcSess)
+				log.Printf("setting quest lang_code '%v' from URL GET", lcReq)
 			}
+		}
+	} else {
+		// questionnaire dominates session
+		lcSess := sess.EffectiveStr("lang_code")
+		if q.LangCode != lcSess {
+			sess.PutString("lang_code", q.LangCode)
+			log.Printf("Quest lang_code '%v' synced back to session", q.LangCode)
 		}
 	}
 
@@ -370,7 +377,7 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
 
-	if mobile {
+	if mobile && false {
 		q.Pages[q.CurrPage].Width = 100
 		q.Pages[q.CurrPage].AestheticCompensation = 0
 		for i := 0; i < len(q.Pages[q.CurrPage].Groups); i++ {
@@ -383,13 +390,8 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 		tpl.Exec(w1, r, mp, "quest.html")
 
 		mp["Content"] = w1.String()
-		// tpl.RenderStack(r, w, []string{"layout.html", "main-desktop.html"}, mp)
+		// tpl.RenderStack(r, w, []string{"layout.html"}, mp)
 
-		w2 := &bytes.Buffer{}
-		tpl.Exec(w2, r, mp, "main-desktop.html")
-
-		//
-		mp["Content"] = w2.String()
 		tpl.Exec(w, r, mp, "layout.html")
 	}
 

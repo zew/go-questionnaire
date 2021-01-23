@@ -24,6 +24,7 @@ import (
 	"github.com/zew/go-questionnaire/cloudio"
 	"github.com/zew/go-questionnaire/handler"
 	"github.com/zew/go-questionnaire/lgn"
+	"github.com/zew/go-questionnaire/qst"
 	"github.com/zew/go-questionnaire/sessx"
 	"github.com/zew/util"
 )
@@ -39,7 +40,7 @@ var fcURLByKey = func(k string) string {
 // fcNav renders the nav core;
 // it is called by the nav template via {{nav .Req .S.BookMarkUri}};
 // param SBookMarkURI is app specific
-var fcNav = func(r *http.Request, SBookMarkURI string) template.HTML {
+var fcNav = func(r *http.Request, q *qst.QuestionnaireT, SBookMarkURI string) template.HTML {
 	bts := &strings.Builder{}
 	w := httptest.NewRecorder()
 	isAdmin := false
@@ -61,17 +62,39 @@ var fcNav = func(r *http.Request, SBookMarkURI string) template.HTML {
 		}
 	}
 
-	prev := "loginlogout"
-
-	type insert struct {
-		asChild bool
-		handler.Info
+	// localize imprint
+	nd := root.ByKey("imprint")
+	if nd != nil {
+		nd.Node.Title = cfg.Get().Mp["imprint"][q.LangCode]
+		ok := root.SetByKey("imprint", &nd.Node)
+		if !ok {
+			log.Printf("could not replace node 'imprint'")
+		}
 	}
 
+	prev := "loginlogout"
+	prev = "root"
+
+	type insert struct {
+		handler.Info
+		asChild bool
+	}
+
+	url := r.URL.Path + "?"
+
 	inserts := []insert{
-		{false, handler.Info{Title: "Language", Keys: []string{"language"}}},
-		{true, handler.Info{Title: "English", Keys: []string{"english"}}},
-		{false, handler.Info{Title: "Deutsch", Keys: []string{"deutsch"}}},
+		{
+			handler.Info{Title: "Language", Keys: []string{"language"}},
+			false,
+		},
+		{
+			handler.Info{Title: "English", Keys: []string{"english"}, Urls: []string{url + "&lang_code=en"}},
+			true,
+		},
+		{
+			handler.Info{Title: "Deutsch", Keys: []string{"deutsch"}, Urls: []string{url + "&lang_code=de"}},
+			false,
+		},
 	}
 	for i := 0; i < len(inserts); i++ {
 		ok := root.AppendAfterByKey(prev, &inserts[i].Info, inserts[i].asChild)

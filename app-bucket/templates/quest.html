@@ -1,132 +1,113 @@
 
-<style>
-    /*
-        To have the progress bar always at the bottom
-        of the page, we use two table rows with 
-        one cell in each row,
-        and the second cell contents at vertical bottom.
 
-        www.codingforums.com/html-and-css/142757-how-expand-divs-height-automatically-fill-up-available-space.html
-    */
-    .go-quest-main-form {
-        display: table;
-        width:  100%;
-        height:  99%;  /* avoidng vertical scroll bars at 100 pct */
-        border-collapse: collapse;        
-        /* border: 4px solid #abb; */
-    }
+<style>
 
     #t-row-1 {
-        display: table-row;
-        height: 40px;  /* some small value, which is heighened by content  */
-        /* border: 1px solid #caa; */
+        display: flex; 
+
+        width: 95%;
+        margin: 0 auto;
+        margin-bottom: 1rem;
+
+        border: 1px solid #228;
     }
-    #t-row-2 {
-        display: table-row;
-        /* border: 1px solid #8c8; */
+
+    #t-row-b2 {
+        display: flex; 
+        min-height: 40px;  
+        border: 1px solid #caa;
     }
-    .table-cell-1, .table-cell-2  {
-        display: table-cell;
-    }
-    .table-cell-2 {
-        vertical-align: bottom;
-        font-size: 15px;
-        width: 100%;
-        padding-top: 2.5em;
-        padding-bottom: 0.2em;
-        text-align: center;
+
+    #t-row-b3 {
+        display:         inline-flex;
+        flex-direction:  row;
+        flex-wrap:       nowrap;
+        justify-content: space-around;
+        justify-content: space-between;
+
+        align-items: center;     /* cross axis */
+        align-items: flex-start; /* cross axis */
         
-        /* border: 1px solid  #2c8; */
+
+        width: 95%;
+        margin: 0 auto;
+        margin-top: 1rem;
+
+        border: 1px solid #8c8;
+
+
     }
+
 
 </style>
 
 
-
-<!-- padding - without disturbing width=100% inscribe -->
-<div class="hori-center-me">
-
-    <!-- width=100% inscribe -->
-    <form method="POST" action="{{cfg.Pref ""}}" class='go-quest-main-form' name='frmMain' >
-        
-        <div id="t-row-1">
-            <div class='table-cell-1'>
-
-                <!--
-                    {{$lc := .Sess.EffectiveStr "lang_code"}}
-                    Langcode is -{{$lc}}-
-                -->
-
-                {{if .Q.HasErrors}}
-                    <p class="error" id="error" style="font-size:16px;margin: 20px 0px; ">{{.MoreFuncs.Trls.correct_errors.Tr .Q.LangCode}}  </p>
-                    <script>
-                        $("#error").css("display","none");           
-                        $("#error").fadeIn("slow", function () {
-                            console.log("fade in complete");
-                        });                    
-                    </script>
-                {{end}}
-                
-                <input type="hidden" name="token" value="{{formToken}}" />
-                {{toHTML (.Q.CurrentPageHTML) }}
+{{if .Q.CurrPageInNavigation}}
+    {{toHTML (.Q.ProgressBar) }}
+{{end}}
 
 
-            </div><!-- /table-cell-1 --> 
-        </div><!-- /t-row-1 --> 
 
 
-        {{if .Q.CurrPageInNavigation}}
+<div id="t-row-b2">
 
-        <div id="t-row-2">
-            <div class='table-cell-2' >
+        <!--
+            {{$lc := .Sess.EffectiveStr "lang_code"}}
+            Langcode is -{{$lc}}-
+        -->
 
-                <div style="
-                    display: inline-block; 
-                    width: 75%;
-                ">
-                    {{toHTML (.Q.ProgressBar) }}
-                </div>
-
-
-                <div style="float: right; min-width:90px;">
-                    {{if .Q.HasNext}}
-                    <!-- name="submitBtn" conflicts with JS form.submit() -->
-                    <button type="submit" name="submitBtn" value="next" accesskey="n">
-                        {{.MoreFuncs.Trls.page.Tr .Q.LangCode}} {{.Q.NextNaviNum}} >>
-                    </button>
-                    {{end}}
-                    &nbsp;
-                </div>
-            
-                <!-- the previous button is moved behind the next button -->
-                <div style="float: left; min-width:90px;">
-                     &nbsp;
-                    {{if .Q.HasPrev}}
-                        <!-- name="submitBtn" conflicts with JS form.submit() -->
-                        <button type="submit" name="submitBtn" value="prev" accesskey="p" style='
-                                            font-size:11px; 
-                                            height: 25px;
-                                            width: 86px;
-                                            padding: 2px;
-                                            '>
-                            << {{.MoreFuncs.Trls.page.Tr .Q.LangCode}} {{.Q.PrevNaviNum}} 
-                        </button>
-                    {{end}}
-                </div>
-                
-
-
-            </div><!-- /table-cell-2 -->
-        </div><!-- /t-row-2 -->
+        {{if .Q.HasErrors}}
+            <p class="error" id="error" style="font-size:16px;margin: 20px 0px; ">{{.MoreFuncs.Trls.correct_errors.Tr .Q.LangCode}}  </p>
+            <script>
+                $("#error").css("display","none");           
+                $("#error").fadeIn("slow", function () {
+                    console.log("fade in complete");
+                });                    
+            </script>
         {{end}}
+        
+        <input type="hidden" name="token" value="{{formToken}}" />
+        {{toHTML (.Q.CurrentPageHTML) }}
+
+
+</div><!-- /t-row-b2 --> 
 
 
 
-    </form>
-
-    
-</div><!-- end of hori-center me-->
 
 
 
 
+
+
+{{if .Q.CurrPageInNavigation}}
+
+<div id="t-row-b3">
+
+        <!-- display order reversed for tabbing -->
+
+        <div style="order: 2;">
+            {{if .Q.HasNext}}
+            <!-- name="submit" conflicts with JS form.submit() -->
+            <button type="submit" name="submitBtn" value="next" accesskey="n">
+                {{.MoreFuncs.Trls.page.Tr .Q.LangCode}} {{.Q.NextNaviNum}} >>
+            </button>
+            {{end}}
+        </div>
+
+        <div style="order: 1;">
+            {{if .Q.HasPrev}}
+            <!-- name="submit" conflicts with JS form.submit() -->
+            <button type="submit" name="submitBtn" value="prev" accesskey="p" style='
+                                    font-size:75%; 
+                                    height: 25px;
+                                    width:  86px;
+                                    '>
+                << {{.MoreFuncs.Trls.page.Tr .Q.LangCode}} {{.Q.PrevNaviNum}} </button>
+            {{end}}
+        </div>
+
+
+
+</div><!-- /t-row-b3 -->
+{{end}}

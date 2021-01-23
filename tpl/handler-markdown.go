@@ -219,6 +219,7 @@ func (fragm *staticPrefixT) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		mp := map[string]interface{}{
 			"HTMLTitle": HTMLTitle,
 			"Content":   w1.String(),
+			"Q":         &qst.QuestionnaireT{Survey: qst.NewSurvey(siteName)},
 		}
 
 		// Exec(w, r, mp, "layout.html", "documentation.html")

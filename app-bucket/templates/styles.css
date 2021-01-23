@@ -151,6 +151,11 @@ a {
 	text-decoration: none;
 }
 
+/* unvisited links */
+a:link {
+	color: var(--clr-pri);
+}
+
 a:visited {
 	color: var(--clr-pri-vis);
 }
@@ -171,6 +176,11 @@ a:hover, button:hover {
 */
 
 
+/* selected text - anywhere */
+::selection {
+	color:      var(--clr-input-bg);
+	background: var(--clr-input-fg);		
+}
 
 
 
@@ -190,6 +200,22 @@ h3 {
 h4 {
 	font-size: 1.05rem;
 }
+
+h1, h2, h3, h4, h5, h6, h7 {
+	line-height:   1.6em;
+	margin-top:    1.5em;
+	margin-bottom: 0.1em;
+}
+
+/* stackoverflow.com/questions/1132366/ */
+h1+h1, h1+h2, h1+h3, h1+h4, h1+h5, h1+h6,
+       h2+h2, h2+h3, h2+h4, h2+h5, h2+h6,
+              h3+h3, h3+h4, h3+h5, h3+h6,
+                     h4+h4, h4+h5, h4+h6,
+dummy {
+	margin-top: 0.1em;
+}
+
 
 p {
 	text-align: justify;
@@ -245,7 +271,7 @@ th {
 }
 
 tr {
-	border-bottom: 1px solid #eee;
+	/* border-bottom: 1px solid #eee; */
 }
 
 td {
@@ -265,6 +291,8 @@ form, .form-alike {
 
 form {
 	display: inline-block;
+	margin:  0;
+	padding: 0;
 }
 
 legend {
@@ -289,6 +317,15 @@ label, .postlabel {
 	font-weight: 300; /* visibility in mobile browser */
 
 	white-space: nowrap;	/* explicit wrapping using -<br> */
+	/* like pre but lines too long are broken
+		not stretching the container
+		extends to 100% of container
+		thus container [max]-width should be specified
+		
+		pre-wrap => preserve white space
+		pre-line => collapse white space
+	*/
+	white-space: pre-wrap; /* see also .postlabel, .plain-text-broken and .error */
 
 	text-align: right;
 
@@ -317,16 +354,6 @@ label.bottom {
 	font-size: 0.78rem;
 	margin-left: 0.35rem;
 	min-width: inherit;  /* reset from label */
-}
-
-div.struc2frm  div.separator {
-    height: 1px; 
-    border-top: 1px solid #aaa; 
-
-    padding: 0;
-    margin: 0;
-    margin-top: 4px;
-    margin-bottom: 12px;
 }
 
 /*
@@ -421,9 +448,41 @@ input, select, button, textarea, a.button {
 	border: 1px solid #888;	/* chrome defaults to 2 pixel shadow */
 }
 
+/* make the placeholder lighter */
 ::placeholder {
 	color: #000;
 	opacity: 0.20;
+}
+
+/*
+	valid style only for non empty inputs would be
+		 input:not([value=""]):focus:valid
+	but its impossible with CSS: stackoverflow.com/questions/16952526/
+*/
+input:focus:valid {
+}
+
+input:not([type=submit]):valid {
+}
+
+input:not([type=submit]):focus:valid {
+	background-color: var(--clr-valid);
+}
+
+input:disabled, select:disabled {
+	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIklEQVQIW2NkQAKrVq36zwjjgzhhYWGMYAEYB8RmROaABADeOQ8CXl/xfgAAAABJRU5ErkJggg==) repeat;
+}
+
+/* Hide HTML5 Up and Down arrows. */
+/* www.thatstevensguy.com/programming/disable-arrows-on-number-inputs/ */
+input[type="number"]::-webkit-outer-spin-button, 
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+ 
+input[type="number"] {
+    -moz-appearance: textfield;
 }
 
 a.button {
@@ -469,6 +528,20 @@ select:-moz-focusring {
 	text-shadow: 0 0 0 #000;
 }
 
+/*
+	select-inputs with long labels should not stretch their container
+	stackoverflow.com/questions/2591796
+*/
+select {
+	max-width: 99%      !important;
+	/*overflow:  hidden !important; */
+}
+option {
+	max-width: 99%      !important;
+	/*overflow:  hidden !important; */
+}
+
+
 /* 
 	artificial arrow icon for select/dropdown
 	by wrapping a div around each select ;
@@ -505,7 +578,7 @@ div.wildcardselect input {
 	position: absolute;
 	right:		 1.5rem;
 	top:			 1.3rem;
-	/* z-index: 3; */
+	/* z-index: 103; */
 
 	pointer-events: none;
 
@@ -520,31 +593,6 @@ div.wildcardselect input {
 	color: var(--clr-pri);
 	border-left:	 2px solid var(--clr-pri);
 	border-bottom: 2px solid var(--clr-pri);
-}
-input:invalid {
-	box-shadow:
-		0 0 0 0.175em var(--clr-sec),
-		0 0 0 0.250em var(--clr-err);
-}
-
-input:focus:invalid {
-	background-color: var(--clr-err);
-	/*background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAeVJREFUeNqkU01oE1EQ/mazSTdRmqSxLVSJVKU9RYoHD8WfHr16kh5EFA8eSy6hXrwUPBSKZ6E9V1CU4tGf0DZWDEQrGkhprRDbCvlpavan3ezu+LLSUnADLZnHwHvzmJlvvpkhZkY7IqFNaTuAfPhhP/8Uo87SGSaDsP27hgYM/lUpy6lHdqsAtM+BPfvqKp3ufYKwcgmWCug6oKmrrG3PoaqngWjdd/922hOBs5C/jJA6x7AiUt8VYVUAVQXXShfIqCYRMZO8/N1N+B8H1sOUwivpSUSVCJ2MAjtVwBAIdv+AQkHQqbOgc+fBvorjyQENDcch16/BtkQdAlC4E6jrYHGgGU18Io3gmhzJuwub6/fQJYNi/YBpCifhbDaAPXFvCBVxXbvfbNGFeN8DkjogWAd8DljV3KRutcEAeHMN/HXZ4p9bhncJHCyhNx52R0Kv/XNuQvYBnM+CP7xddXL5KaJw0TMAF8qjnMvegeK/SLHubhpKDKIrJDlvXoMX3y9xcSMZyBQ+tpyk5hzsa2Ns7LGdfWdbL6fZvHn92d7dgROH/730YBLtiZmEdGPkFnhX4kxmjVe2xgPfCtrRd6GHRtEh9zsL8xVe+pwSzj+OtwvletZZ/wLeKD71L+ZeHHWZ/gowABkp7AwwnEjFAAAAAElFTkSuQmCC);*/
-	background-position: right top;
-	background-repeat: no-repeat;
-	border: 2px dotted red;
-}
-.error-block {
-	color: var(--clr-err);
-}
-
-/*
-	valid style - but only for non empty inputs would be
-		 input:not([value=""]):focus:valid
-	but its impossible with CSS: stackoverflow.com/questions/16952526/
-	*/
-input:focus:valid {
-	background-color: var(--clr-valid);
 }
 
 input[type=checkbox],
@@ -599,20 +647,83 @@ input[type=radio]:focus		 {
 		0 0 0 0.020em var(--clr-sec),
 		0 0 0 0.060em var(--clr-pri-hov);
 }
+
+
+.error-block, .error {
+	color: var(--clr-err);
+}
+
+.error{
+	line-height:1.6em;
+	/* like pre but lines too long are broken
+		not stretching the container
+		extends to 100% of container
+		thus container [max]-width should be specified
+		
+		pre-wrap => preserve white space
+		pre-line => collapse white space
+	*/
+	white-space: pre-line; /* see also .postlabel, .plain-text-broken and .error */
+	max-width: 620px;
+}
+
 #console-log {
 	color: black;
 	background-color: white;
-	/* like pre; one addition: lines too long are broken
-		naturally assumes and extends to 100% of container
-		thus usually - a limiting width should be specified
+	/* like pre but lines too long are broken
+		not stretching the container
+		extends to 100% of container
+		thus container [max]-width should be specified
+		
+		pre-wrap => preserve white space
+		pre-line => collapse white space
 	*/
-	white-space: pre-wrap;
+	white-space: pre-wrap; /* see also .postlabel, .plain-text-broken and .error */
 	line-height: 120%;
 	background-color:#eee;
 	margin: 8px 0;
 	margin-left: 46px;
 	display: none;
 }
+
+/* text helpers */
+
+
+.bold {
+	font-weight: bold;
+}
+
+/* 
+    We want to prevent line-break of the '%' or '€' suffix character.
+    inputs must be inline-block, for whitespace nowrap to work.
+    At the same time: suffix-inner enables wrapping for the suffix itself
+*/
+.suffix-nowrap {
+    white-space: nowrap;
+}
+
+.suffix-inner {
+    /* vertical-align: top; */
+    white-space: normal !important;  /* overriding outer element setting */
+    display: inline-block;
+	width: 75%;
+}
+
+.plain-text-broken {
+	/* like pre but lines too long are broken
+		not stretching the container
+		extends to 100% of container
+		thus container [max]-width should be specified
+	*/
+	white-space: pre-wrap; /* see also .postlabel, .plain-text-broken and .error */
+
+	display: inline-block;
+	font-family: 'Courier New', Courier;
+
+}
+
+
+
 
 
 /* ================= flex grid stuff - start	================= */
@@ -697,7 +808,7 @@ input[type=radio]:focus		 {
 /* ================= flex grid stuff - end ================= */
 
 
-/* ===================================== */
+/* ================= nav start =================== */
 /* navigation + menu */
 /* mobile case */
 
@@ -720,7 +831,7 @@ desktop case
 */
 nav {
 	position: var(--nav-bar-position);
-	z-index: 3; /* over content*/
+	z-index: 103; /* over content*/
 	width: 100%;
 	min-height:			 var(--nav-height);
 	display: grid;
@@ -848,7 +959,7 @@ img.logged-in {
 ul.mnu-2nd-lvl {
 
 	position: absolute;
-	z-index: 99;
+	z-index: 199;
 	right:		0;
 	top:		var(--nav-height);
 
@@ -901,7 +1012,7 @@ ul.mnu-2nd-lvl li.nde-2nd-lvl {
 ul.mnu-2nd-lvl li.nde-2nd-lvl::before {
 
 	position: absolute;
-	z-index:	5;
+	z-index:	105;
 	display:	block;
 
 	content: ' ';
@@ -983,7 +1094,7 @@ ul.mnu-3rd-lvl {
 	right:	 inherit;
 
 	width: calc(100% - 1.2em);
-	/* z-index: 20; */
+	/* z-index: 120; */
 	background-color: var(--clr-sec);
 	/* background-color: var(--clr-zew2-md); */
 	/* box-shadow: 0 0 0.1em 0.4em darkorchid; */
@@ -1074,7 +1185,7 @@ ul.mnu-3rd-lvl li:last-child {
 		all: unset;
 
 		position: var(--nav-bar-position);
-		z-index: 3; /* over content*/
+		z-index: 103; /* over content*/
 
 		width: 100%;
 		min-height:			 var(--nav-height);
@@ -1217,12 +1328,14 @@ ul.mnu-3rd-lvl li:last-child {
 	}
 }
 
-/* ===================================== */
+/* ============= nav end ======================== */
 
+/* child of body - sibling of nav - parent of hori-center-me */
 .content {
 
 	display: flex;
 	flex-direction: column;
+
 	position: relative;
 
 	top:	 var(--content-top);
@@ -1251,7 +1364,7 @@ ul.mnu-3rd-lvl li:last-child {
 
 .content ul {
 	margin-top:		0.3rem;
-	margin-bottom: 0.5rem;
+	margin-bottom:	0.5rem;
 }
 
 .content li {
@@ -1259,180 +1372,76 @@ ul.mnu-3rd-lvl li:last-child {
 	margin-left: 1.1rem;
 }
 
+/* 	for global padding
+	 children can have padding:0; width=100%  
+	 previously hori-center-me
+ */
+form[name=frmMain] {
+	
+	display: flex;
+	flex-direction: column;
 
-.content-frame{
-	width: calc(100% - 1.2rem);
-	background-color: var(--clr-sec);
-	padding-bottom: 0.8rem;
-}
+	width:      100%; 
+	min-width:  960px; 
 
-/* replace with just h3 ? */
-.content-frame-title{
-	font-size:15px;
-	margin-bottom:-2px;
-}
+	margin:  0 auto;  
+	padding: 0;
+	/* padding-top:20px; => causes vert scroll bar; use body.padding to adjust  */
+	/* padding-left:6%;  => aesthetic compensation moved to page rendering */
+	padding-right:  0px;	
+	padding-bottom: 0px;	
 
-/*tab navigation for param groups/worksheets*/
-.tab-lvl-1{
-	/* font-size:16px; */
-	line-height:80%;
-	text-decoration: none;
-	display:inline-block;
-	padding: 8px 12px;
-	padding-top:8px;
-	margin: 0;
-	border: 1px solid #888;
-	border-bottom: none;
-	border-top-right-radius: 6px;
-	border-top-left-radius:	6px;
-	position:relative;
-	aaz-index:6;
-}
-
-.tab-lvl-1-passive{
-	background-color:	var(--clr-tab-background-color);
-	color:						 var(--clr-tab-foreground-color);
-	margin-top: 10px; /*as tall as active */
-}
-
-.tab-lvl-1-active{
-	background-color:	var(--clr-tab-background-color);
-	color:						 var(--clr-tab-foreground-color);
-	aaz-index:8;
-	/*font-weight:bold;*/
-	font-size:160%;	/*make it taller */
-	margin-top: 1px; /*but less margin*/
-}
-
-
-
-.tab-tip{
-	/*min-height: 10px;*/
-	margin:0;
-	display: inline-block;
-	position: absolute;
-	right:14px;
-	top:-7px;
-	font-size: 9px;
-	color: var(--clr-tab-background-color);
-	padding: 0px 8px;
-	padding-bottom: 2px 8px;
-	border: 1px solid #888;
-	border-bottom: none;
-	border-top-right-radius: 2px;
-	border-top-left-radius:	2px;
-	/*border: none;*/
-	background-color:	var(--clr-tab-background-color);
-	aaz-index:12; /*higher than tab level 1*/
-}
-.tab-tip-2{
-	right:9px;
-	top:13px;
-	width: 20px;
-	overflow:hidden;
-	padding: 0px;
-	font-size: 11px;
-	cursor: pointer;
 	border: none;
+	background-color: transparent ;   /* important for progress bar */
+
 }
 
-/*
-	IE10+ does not heed conditional comments anymore
-	IE10+ selective CSS styles via media query:
-*/
-@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-	.tab-tip{
-		top:-17px;
-	}
-	.tab-tip-2{
-		top:3px;
+@media screen and (min-width: 800px) {
+	form[name=frmMain] {
+		width:      70%; 
 	}
 }
 
 
-/* see flex-horizonal */
-.tab-body{
-
-	padding: 4px 8px;
-	padding-right: 0;
-	padding: 4px 4px;
-	margin-top: -2px;
-	margin-top: 12px;
-	background-color: var(--clr-tab-background-color);
-	border: 1px solid #888;
 
 
-	justify-content:  space-between;  /* axis-1 */
-	align-content:    space-between;
+/* more helper stuff */
 
-	align-items:		   stretch;	  /* axis-2 */
+div.separator {
+    height: 1px; 
+    border-top: 1px solid var(--clr-sec-drk2); 
 
-	min-height: 60vh;
-
-
+    padding:        0;
+    margin:         0;
+    margin-top:     4px;
+    margin-bottom: 12px;
 }
 
-.tab-body-pdf{
-	min-height: 0;
-	position: relative; /* to absolutely anchor the 'manage PDF link' */
-}
-
-
-/* see flex-horizonal */
-.param-block-div{
+.vspacer-00,
+.vspacer-08,
+.vspacer-16,
+dummy
+{
 	margin: 0;
-	min-width: 15rem; 
-	/* border: 1px solid rebeccapurple; */
-
-	flex-grow: 1;
-}
-
-.param-block-div + .param-block-div{
-	/* border-left: 2px solid grey; */
-}
-
-xxxxx.param-block-div{
-	vertical-align: top ;
-	display: inline-block;
-
-	/* forced to div to stretch as wide as it's contents */
-	/* white-space:nowrap;  */
-
-	/*border-left: 1px solid #2a2;*/
-	/* border: 1px solid #2a2; */
-	border: 1px solid var(--clr-sec-drk2);
-}
-
-
-div.control-widg {
-	/* forced to div to stretch as wide as it's contents */
-	white-space:nowrap;
-
-	/* max-width: 89%; */
-	/* background-color: #252; */
-
-}
-
-
-/* width of the first column of the main sheet */
-.col-1 {
-	min-width: 80px;
+	clear: both;
 }
 
 .vspacer-0,.vspacer-00 {
-	height:0px;
+	height: 0px;
 }
 
 .vspacer-2,.vspacer-02 {
-	height:02px;
+	height: 2px;
 }
 
 .vspacer-8,.vspacer-08 {
-	height:08px;
+	height: 8px;
 }
+
 .vspacer-16 {
 	height:16px;
 }
+
 .vspacer-24 {
 	height:24px;
 }
@@ -1470,183 +1479,16 @@ input.ib-300 { 	width:300px;	}
 
 
 
-/*
-	Statically created for each input-widget.
-	In normal flow after the input control.
-	Before anchor-for-added-menues
-*/
-.expression-solution {
-	/* like disabled input */
-	border: 1px solid #aaa;
-	color: #222;
-	/* font-size: 90%; */
-	background-color: #ececec;
-	/* padding similar to input, select */
-	padding: 0.2em 0.1em;
-	padding-top: 0.05rem;
-	padding-bottom: 0.0rem;
-	margin:	0.2em 0;
-
-}
-
-/* common props of msg boxes */
-.top-msg-div ,
-.dyn-msg-div ,	/* dont use explicitly - only via javascript */
-.dummy {
-	font-size:14px;
-	color:#c44;
-	background-color:#eee;
-	border-radius: 6px;
-	padding: 4px 8px;
-	white-space:pre;
-}
-
-.top-msg-div {
-	margin-bottom: 8px;
-}
-
-/*flowing after anchor-for-added-menues*/
-.compare-msg {
-	padding: 4px 0px;
-	font-size: 80%;
-	color:#622;
-	border: 2px solid #e8e8e8;
-	/*background-color:#e8e8e8;*/
-	white-space:pre;
-	letter-spacing: -0.03rem;
-}
-.compare-msg-added {
-	color:#252;
-}
-.compare-msg-missing {
-	color:#622;
-}
-
-.error{
-	color:#622;
-}
-
-
-/*
-	Now the props for absolute flow
-*/
-
-/* 	Similar to top-msg-div,
-	but with dynamic creation and positioning.
-	To be appended after anchor-for-added-menues.
-*/
-.dyn-msg-div {
-	min-width: 150px;
-	min-height: 36px; /* same as control-menu */
-}
-
-/*To be appended after anchor-for-added-menues.*/
-.control-menu{
-
-	width: 125px;	/* counteract .ib	white-space:nowrap; */
-	min-height: 36px; /* same as dyn-msg-div */
-
-	background-color: #fff;
-	opacity: 0.9;
-
-
-	border: 1px dotted #ddd;
-	border-radius: 8px;
-	box-shadow: 4px 4px 3px grey;
-
-	padding:		6px 2px;
-
-	/*
-		This somehow destroyed the effect of .ib white-space:nowrap; :
-		We put it into the style attribute of the div. There it does not disturb.
-		(Chrome 2016-11)
-
-		display: none;
-
-	*/
-}
-
-
-/*
-	Make absolute positioned divs
-	vertically middly positioned.
-
-	Requires a height !
-
-	smashingmagazine.com/2013/08/absolute-horizontal-vertical-centering-css/
-*/
-.absolute-and-centered {
-	position: absolute;
-	z-index:21;
-	margin: auto;
-	top: 0; left: 0; bottom: 0; right: 0;
-}
-
-
-.plain-text-broken {
-	/* like pre; one addition: lines too long are broken
-		naturally assumes and extends to 100% of container
-		thus usually - a limiting width should be specified
-	*/
-	white-space: pre-wrap;
-
-	display: inline-block;
-	font-family: 'Courier New', Courier;
-
-}
-
-.bold {
-	font-weight: bold;
-}
-
-img.icon {
-	width: 20px;
-}
-
-img.icon-halve {
-	width: 12px;
-}
-
-img.icon2{
-	width: 1.2rem;
-	position: relative;
-	top: 0.3rem;
-}
-
-a.image-link {
-	text-decoration: none;
-	display: inline-block;
-	vertical-align: middle;
-}
-
-textarea{
-	white-space:pre !important;	/*prevent inheritance of nowrap from surrounding */
-}
-
-
-input:not([type=submit]):valid,
-dummy {
-	background-color:#fff;
-}
-
-input:disabled, select:disabled {
-	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIklEQVQIW2NkQAKrVq36zwjjgzhhYWGMYAEYB8RmROaABADeOQ8CXl/xfgAAAABJRU5ErkJggg==) repeat;
-}
 
 
 
 
-.input-label {
-	font-size: 0.8rem;
-	text-align: right;
-	padding-right: 2px;
-	/*vertical-align: top !important;*/
-}
 
-div:focus {
-	background: #ddd;
-	outline: none;
-	border-left: none;
-	border-right: none;
-}
+
+
+
+
+
+
+
 

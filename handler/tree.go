@@ -107,8 +107,8 @@ func (tr *TreeT) SetByKey(key string, repl *Info) bool {
 }
 
 // AppendAfterByKey recursively appends behind an existing node
-// asChild == false => append on same level
-// asChild == true  => append on one  level deeper
+// asChild == false => append as sibling - same level
+// asChild == true  => append as child   - one  level deeper
 func (tr *TreeT) AppendAfterByKey(key string, summand *Info, asChild ...bool) bool {
 
 	asCh := false
@@ -116,30 +116,41 @@ func (tr *TreeT) AppendAfterByKey(key string, summand *Info, asChild ...bool) bo
 		asCh = asChild[0]
 	}
 
-	// if rt.Node.HasKey(key) {
-	//   omitted; since level 0 root should never get appended
-	// }
+	//
+	//
+	//		tr.Node                    - new child to root
+	// 			or
+	//		tr.Children                - new sibling to child
+	// 			or
+	// 		tr.Children[idx].Children  - new child to child
+	if key == "root" && tr.Node.HasKey(key) {
+		// level 0 - root
+		// special case - should never get siblings - only children
+		log.Printf("appending node %-12q - %-12v as child   to root", summand.Title, summand.Keys[0])
+		ln := len(tr.Children)
+		cp := make([]TreeT, 0, ln+1)
+		cp = append(cp, TreeT{Node: *summand}) // first slot
+		cp = append(cp, tr.Children...)        // previous children
+		tr.Children = cp
+		return true
+	}
 	for idx := range tr.Children {
 		if tr.Children[idx].Node.HasKey(key) {
-
-			// 		rt.Children[idx].Children
-			// 			or
-			//		rt.Children
-			if asCh {
-				log.Printf("appending node %-12q - %v as child", summand.Title, summand.Keys[0])
-				ln := len(tr.Children[idx].Children)
-				cp := make([]TreeT, 0, ln+1)
-				cp = append(cp, TreeT{Node: *summand})        // first slot
-				cp = append(cp, tr.Children[idx].Children...) // previous children
-				tr.Children[idx].Children = cp
-			} else {
-				log.Printf("appending node %-12q - %v as sibling", summand.Title, summand.Keys[0])
+			if !asCh {
+				log.Printf("appending node %-12q - %-12v as sibling to child", summand.Title, summand.Keys[0])
 				ln := len(tr.Children)
 				cp := make([]TreeT, 0, ln+1)
 				cp = append(cp, tr.Children[0:idx+1]...)
 				cp = append(cp, TreeT{Node: *summand})
 				cp = append(cp, tr.Children[idx+1:ln]...)
 				tr.Children = cp
+			} else {
+				log.Printf("appending node %-12q - %-12v as child   to child", summand.Title, summand.Keys[0])
+				ln := len(tr.Children[idx].Children)
+				cp := make([]TreeT, 0, ln+1)
+				cp = append(cp, TreeT{Node: *summand})        // first slot
+				cp = append(cp, tr.Children[idx].Children...) // previous children
+				tr.Children[idx].Children = cp
 			}
 			return true
 
@@ -231,7 +242,7 @@ func (tr *TreeT) NavHTML(w io.Writer, r *http.Request, isLogin, isAdmin bool, lv
 		return
 	}
 
-	// if rt.Node.InNav {
+	// if tr.Node.InNav {
 	{
 
 		htmlIndent := strings.Repeat(" ", 10*lvl) // just for readability in HTML source

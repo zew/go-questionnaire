@@ -668,10 +668,8 @@ type QuestionnaireT struct {
 	Mobile      int               `json:"mobile,omitempty"` // 0 - no preference, 1 - desktop, 2 - mobile
 	MD5         string            `json:"md_5,omitempty"`
 
-	// LangCode and LangCodes are imposed from cfg.LangCodes via session."lang_code"
-	LangCodes      map[string]string `json:"lang_codes,omitempty"`       // all possible lang codes - i.e. en - English, de - Deutsch
-	LangCodesOrder []string          `json:"lang_codes_order,omitempty"` // en, de   -  or   - de, en
-	LangCode       string            `json:"lang_code,omitempty"`        // default lang code - and current lang code - i.e. de
+	LangCodes []string `json:"lang_codes,omitempty"` // default, order and availability - [en, de, ...] or [de, en, ...]
+	LangCode  string   `json:"lang_code,omitempty"`  // current lang code - i.e. 'de' - session key lang_code
 
 	CurrPage  int  `json:"curr_page,omitempty"`
 	HasErrors bool `json:"has_errors,omitempty"` // If any response is faulty; set by ValidateReponseData
@@ -761,15 +759,19 @@ func (q *QuestionnaireT) AddPage() *pageT {
 // SetLangCode tries to change the questionnaire langCode if supported by langCodes.
 func (q *QuestionnaireT) SetLangCode(newCode string) error {
 	if newCode != q.LangCode {
-		for _, lc := range q.LangCodesOrder {
-			if _, ok := q.LangCodes[lc]; ok {
-				q.LangCode = newCode
-				return nil
+		found := false
+		for _, lc := range q.LangCodes {
+			if newCode == lc {
+				found = true
+				break
 			}
 		}
-		err := fmt.Errorf("LangCodesOrder val %v is not a key in LangCodes %v", newCode, q.LangCodes)
-		log.Print(err)
-		return err
+		if !found {
+			err := fmt.Errorf("Language code '%v' is not supported in %v", newCode, q.LangCodes)
+			log.Print(err)
+			return err
+		}
+		q.LangCode = newCode
 	}
 	return nil
 }
@@ -896,7 +898,14 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 
 	p := q.Pages[pageIdx]
 
-	if _, ok := q.LangCodes[q.LangCode]; !ok || q.LangCode == "" {
+	found := false
+	for _, lc := range q.LangCodes {
+		if q.LangCode == lc {
+			found = true
+			break
+		}
+	}
+	if !found {
 		s := fmt.Sprintf("Language code '%v' is not supported in %v", q.LangCode, q.LangCodes)
 		log.Printf(s)
 		return s, fmt.Errorf(s)

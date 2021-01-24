@@ -118,15 +118,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	q.Survey.Params = params
 	q.Variations = 4
 
-	q.LangCodes = map[string]string{
-		"de": "Deutsch",
-		"en": "English",
-		"es": "Español",
-		"fr": "Français",
-		"it": "Italiano",
-		"pl": "Polski",
-	}
-	q.LangCodesOrder = []string{
+	q.LangCodes = []string{
 		"en",
 		"fr",
 		"de",
@@ -179,7 +171,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.CSSLabel = "special-line-height-higher"
 				inp.ColSpanLabel = 1
 				impr := trl.S{}
-				for lc := range q.LangCodes {
+				for _, lc := range q.LangCodes {
 					w1 := &strings.Builder{}
 					err := tpl.RenderStaticContent(w1, "./static/doc/welcome.md", q.Survey.Type, lc)
 					if err != nil {
@@ -745,7 +737,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Type = "textblock"
 				inp.CSSLabel = "special-line-height-higher"
 				impr := trl.S{}
-				for lc := range q.LangCodes {
+				for _, lc := range q.LangCodes {
 					w1 := &strings.Builder{}
 					err := tpl.RenderStaticContent(w1, "./static/doc/site-imprint.md", q.Survey.Type, lc)
 					if err != nil {
@@ -819,7 +811,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Type = "textblock"
 				inp.CSSLabel = "special-line-height-higher"
 				impr := trl.S{}
-				for lc := range q.LangCodes {
+				for _, lc := range q.LangCodes {
 					w1 := &strings.Builder{}
 					err := tpl.RenderStaticContent(w1, "./static/doc/site-imprint.md", q.Survey.Type, lc)
 					if err != nil {

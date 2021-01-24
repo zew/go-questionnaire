@@ -109,7 +109,7 @@ func (q *QuestionnaireT) languageChooser(currCode string) string {
 
 	s := []string{}
 	// for _, key := range cfg.Get().LangCodes {
-	for _, key := range q.LangCodesOrder {
+	for _, key := range q.LangCodes {
 		keyCap := strings.Title(key)
 		if key == currCode {
 			s = append(s, fmt.Sprintf("<b           title='%v'>%v</b>\n", key, keyCap))

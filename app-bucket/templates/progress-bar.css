@@ -10,7 +10,7 @@
 ol.progress {
 
   position: relative;
-  left:  1.2em;
+  left:  0.2em;
   width: 100%;
 
   margin:  0;
@@ -40,6 +40,7 @@ ol.progress {
   z-index: 13;
   position: relative;
 
+  margin: 0;
 
   flex: 1;
   flex-shrink: 1;
@@ -64,15 +65,10 @@ ol.progress {
   position: relative;
   left: -0.4em;
 
-
   line-height: 95%;  
   line-height: 120%; 
 
   vertical-align: top;
-
-
-  /* border: 1px solid royalblue; */
-
 }
 
 .progress > li:before,
@@ -126,6 +122,9 @@ ol.progress {
 /* suppress last stripe */
 .progress > li:last-child:after {
   display: none;
+}
+.progress > li:last-child {
+  flex-grow:   0.1;    
 }
 
 

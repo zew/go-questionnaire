@@ -93,13 +93,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	q.Survey.Params = params
 	q.Variations = 0 // attention => shuffles submit buttons if > 0
 
-	q.LangCodes = map[string]string{
-		"de": "Deutsch",
-		"en": "English",
-		"fr": "Français",
-		"it": "Italiano",
-	}
-	q.LangCodesOrder = []string{
+	q.LangCodes = []string{
 		"en",
 		"fr",
 		"de",

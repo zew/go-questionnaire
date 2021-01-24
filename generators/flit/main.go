@@ -31,8 +31,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	q := qst.QuestionnaireT{}
 	q.Survey = qst.NewSurvey("flit")
 	q.Survey.Params = params
-	q.LangCodes = map[string]string{"en": "English"}
-	q.LangCodesOrder = []string{"en"} // governs default language code
+	q.LangCodes = []string{"en"} // governs default language code
 
 	q.Survey.Org = trl.S{"en": "ZEW"}
 	q.Survey.Name = trl.S{"en": "Financial Literacy Test"}

@@ -21,12 +21,8 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "a998003df769a3b606a8dea10dd3e8fd",
- 	"lang_codes": {
- 		"de": "Deutsch",
- 		"en": "English"
- 	},
- 	"lang_codes_order": [
+ 	"md_5": "1d41a6079c27f85aec91a25406c11bf9",
+ 	"lang_codes": [
  		"de",
  		"en"
  	],

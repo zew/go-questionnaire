@@ -8,6 +8,7 @@ import (
 	"strings"
 
 	"github.com/pkg/errors"
+	"github.com/zew/go-questionnaire/cfg"
 	"github.com/zew/go-questionnaire/trl"
 )
 
@@ -22,7 +23,7 @@ func Mustaz09Underscore(s string) bool {
 }
 
 // Either no translation - or all lcs must be set
-func plausibleTranslation(key string, s trl.S, lcs map[string]string) error {
+func plausibleTranslation(key string, s trl.S, lcs []string) error {
 
 	if !s.Set() {
 		// log.Printf("%-20v completely empty for %v", key, lcs)
@@ -30,7 +31,7 @@ func plausibleTranslation(key string, s trl.S, lcs map[string]string) error {
 	}
 
 	allElementsEmpty := true
-	for lc := range lcs {
+	for _, lc := range lcs {
 		if strings.TrimSpace(s[lc]) != "" {
 			allElementsEmpty = false
 			break
@@ -42,7 +43,7 @@ func plausibleTranslation(key string, s trl.S, lcs map[string]string) error {
 		return nil
 	}
 
-	for lc := range lcs {
+	for _, lc := range lcs {
 		if strings.TrimSpace(s[lc]) == "" {
 			return fmt.Errorf("%-20v translation for %v is missing (%v)", key, lc, s.String())
 		}
@@ -117,21 +118,10 @@ func (q *QuestionnaireT) Validate() error {
 		log.Printf(s)
 		return fmt.Errorf(s)
 	}
-	if len(q.LangCodes) != len(q.LangCodesOrder) {
-		s := fmt.Sprintf("LangCodes must be same length as LangCodesOrder %v -  %v", len(q.LangCodes), len(q.LangCodesOrder))
-		log.Printf(s)
-		return fmt.Errorf(s)
-	}
-	for _, lc := range q.LangCodesOrder {
-		if _, ok := q.LangCodes[lc]; !ok {
-			s := fmt.Sprintf("LangCodesOrder val %v is not a key in LangCodes", lc)
-			log.Printf(s)
-			return fmt.Errorf(s)
-		}
-	}
-	if q.LangCode != "" {
-		if _, ok := q.LangCodes[q.LangCode]; !ok {
-			s := fmt.Sprintf("Language code '%v' is not supported in %v", q.LangCode, q.LangCodes)
+
+	for _, lc := range q.LangCodes {
+		if _, ok := cfg.Get().Mp["lang_"+lc]; !ok {
+			s := fmt.Sprintf("LangCodes val %v is not a key in cfg.Get().Mp['lang_...']", lc)
 			log.Printf(s)
 			return fmt.Errorf(s)
 		}

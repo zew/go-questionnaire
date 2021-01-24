@@ -113,10 +113,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	q.Survey.Params = params
 	q.Variations = 0
 
-	q.LangCodes = map[string]string{
-		"en": "English",
-	}
-	q.LangCodesOrder = []string{
+	q.LangCodes = []string{
 		"en",
 	} // governs default language code
 

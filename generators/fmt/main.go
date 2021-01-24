@@ -24,8 +24,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	q := qst.QuestionnaireT{}
 	q.Survey = qst.NewSurvey("fmt")
 	q.Survey.Params = params
-	q.LangCodes = map[string]string{"de": "Deutsch", "en": "English"}
-	q.LangCodesOrder = []string{"de", "en"} // governs default language code
+	q.LangCodes = []string{"de", "en"} // governs default language code
 
 	q.Survey.Org = trl.S{"de": "ZEW", "en": "ZEW"}
 	q.Survey.Name = trl.S{"de": "Finanzmarkttest", "en": "Financial Markets Survey"}
@@ -47,7 +46,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.CSSLabel = "special-line-height-higher"
 				inp.ColSpanLabel = 3
 				impr := trl.S{}
-				for lc := range q.LangCodes {
+				for _, lc := range q.LangCodes {
 					w1 := &strings.Builder{}
 					err := tpl.RenderStaticContent(w1, "./static/doc/data-protection.md", q.Survey.Type, lc)
 					if err != nil {
@@ -1025,7 +1024,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Type = "textblock"
 				inp.CSSLabel = "special-line-height-higher"
 				impr := trl.S{}
-				for lc := range q.LangCodes {
+				for _, lc := range q.LangCodes {
 					w1 := &strings.Builder{}
 					err := tpl.RenderStaticContent(w1, "./static/doc/site-imprint.md", q.Survey.Type, lc)
 					if err != nil {

@@ -222,8 +222,8 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 			log.Printf("quest lang_code set to default from login/profile  %v", lc)
 		}
 		if q.LangCode == "" {
-			if len(q.LangCodesOrder) > 0 {
-				lc = q.LangCodesOrder[0] // questionnaire specific default
+			if len(q.LangCodes) > 0 {
+				lc = q.LangCodes[0] // questionnaire specific default
 			}
 			if lc == "" {
 				lc = cfg.Get().LangCodes[0] // global default

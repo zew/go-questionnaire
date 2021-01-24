@@ -24,7 +24,7 @@
  	"location": "Europe/Berlin",
  	"session_timeout": 2,
  	"form_timeout": 2,
- 	"app_instance_id": 1611428244,
+ 	"app_instance_id": 1611526793,
  	"lang_codes": [
  		"de",
  		"en",
@@ -387,6 +387,54 @@
  			"fr": "Mentions légales",
  			"it": "Impronta",
  			"pl": "Nadrukiem"
+ 		},
+ 		"lang_de": {
+ 			"de": "Deutsch",
+ 			"en": "German",
+ 			"es": "Alemán",
+ 			"fr": "Allemand",
+ 			"it": "Tedesco",
+ 			"pl": "Niemiecki"
+ 		},
+ 		"lang_en": {
+ 			"de": "English",
+ 			"en": "English",
+ 			"es": "Inglés",
+ 			"fr": "Anglais",
+ 			"it": "Inglese",
+ 			"pl": "Angielsku"
+ 		},
+ 		"lang_es": {
+ 			"de": "Spanisch",
+ 			"en": "Spanish",
+ 			"es": "Español",
+ 			"fr": "Espagnol",
+ 			"it": "Spagnolo",
+ 			"pl": "Hiszpańsku"
+ 		},
+ 		"lang_fr": {
+ 			"de": "Französisch",
+ 			"en": "French",
+ 			"es": "Francés",
+ 			"fr": "Français",
+ 			"it": "Francese",
+ 			"pl": "Francusku"
+ 		},
+ 		"lang_it": {
+ 			"de": "Italienisch",
+ 			"en": "Italian",
+ 			"es": "Italiano",
+ 			"fr": "Italien",
+ 			"it": "Italiano",
+ 			"pl": "Włosku"
+ 		},
+ 		"lang_pl": {
+ 			"de": "Polnisch",
+ 			"en": "Polish",
+ 			"es": "Polaco",
+ 			"fr": "Polonais",
+ 			"it": "Polacco",
+ 			"pl": "Polsku"
  		},
  		"login_by_hash_failed": {
  			"de": "Anmeldung via Hash gescheitert.\nBitte nutzen Sie den übermittelten Link um sich anzumelden.\nWenn der Link in zwei Zeilen geteilt wurde, verbinden Sie die Zeilen wieder.",

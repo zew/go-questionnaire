@@ -230,7 +230,7 @@ func RegisterHandlers(mux *http.ServeMux) {
 		{
 			Urls:    []string{"/doc/site-imprint.md"},
 			Handler: tpl.ServeDoc,
-			Title:   "Imprint",
+			Title:   "imprint", // keep lowercase for translation
 			Keys:    []string{"imprint"},
 		},
 

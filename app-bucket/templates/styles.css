@@ -168,6 +168,24 @@ a:hover, button:hover {
 		0 0 0 0.210em var(--clr-pri-hov);
 }
 
+nav a[href=""].is-active {
+	color: var(--clr-fg);
+	font-weight: bold;
+}
+
+/* undoing hyperlink effects */
+nav a[href=""].is-active:hover {
+	color: var(--clr-fg) ;
+}
+nav a[href=""].is-active:focus {
+	color: var(--clr-fg) ;
+}
+nav a[href=""].is-active:hover::after {
+	transform: scale(0, 1);
+}
+
+
+
 /* for debugging
 
 *:hover {
@@ -577,7 +595,7 @@ div.wildcardselect input {
 	/* display:	inline-block; */
 	position: absolute;
 	right:		 1.5rem;
-	top:			 1.3rem;
+	top:		 1.3rem;
 	/* z-index: 103; */
 
 	pointer-events: none;
@@ -1286,8 +1304,8 @@ ul.mnu-3rd-lvl li:last-child {
 
 		/* position: absolute; */
 		position: relative;
-		left:	0;
-		right: 0;
+		left:	 0;
+		right:   0;
 
 		height:	 0.1em;
 		bottom: -0.11em;

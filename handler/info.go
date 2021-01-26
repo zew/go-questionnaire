@@ -11,6 +11,8 @@ import (
 	"reflect"
 	"runtime"
 	"strings"
+
+	"github.com/zew/go-questionnaire/cfg"
 )
 
 // Privilege encodes some
@@ -54,7 +56,7 @@ type Info struct {
 	// also determines showing up in navigation
 	Allow map[Privilege]bool `json:"-"`
 
-	// active           bool  // this would remove thread safety; we use HasKey instead
+	Active bool `json:"-"` // per menu rendering per request/thread
 }
 
 // InfosT models a collection of all app specific handlers
@@ -101,6 +103,14 @@ func (l *InfosT) ByKey(argKey string) Info {
 	}
 	log.Panicf("unknown link key %v", argKey)
 	return Info{}
+}
+
+// ByKeyTranslated retrieves a handlerinfo by key and translates the title
+func (l *InfosT) ByKeyTranslated(argKey, langCode string) Info {
+	nd := l.ByKey(argKey)
+	// log.Printf("translating %v by '%v' to %v", nd.Title, langCode, cfg.Get().Mp[nd.Title][langCode])
+	nd.Title = cfg.Get().Mp[nd.Title][langCode]
+	return nd
 }
 
 // URLByKey directly returns canonical URL by key

@@ -3,7 +3,6 @@ package handler
 import (
 	"fmt"
 	"io"
-	"log"
 	"net/http"
 	"strings"
 
@@ -20,7 +19,7 @@ type TreeT struct {
 // based on which a navigation can be rendered;
 // we dont use a package variable,
 // since the nav tree may be modified by requests
-func Tree() *TreeT {
+func Tree(lc string) *TreeT {
 
 	root := &TreeT{
 
@@ -32,7 +31,7 @@ func Tree() *TreeT {
 			// 		{Node: Info{Title: "English"}},
 			// 	},
 			// },
-			{Node: Info{Title: "Login/Logout", Keys: []string{"loginlogout"}},
+			{Node: Info{Title: cfg.Get().Mp["user"].Tr(lc), Keys: []string{"loginlogout"}},
 				Children: []TreeT{
 					{Node: infos.ByKey("login-primitive")},
 					{Node: infos.ByKey("logout")},
@@ -40,9 +39,9 @@ func Tree() *TreeT {
 					{Node: infos.ByKey("create-anonymous-id")},
 				},
 			},
-			{Node: Info{Title: "About"},
+			{Node: Info{Title: "&nbsp;" + cfg.Get().Mp["about"].Tr(lc) + "&nbsp;&nbsp"},
 				Children: []TreeT{
-					{Node: infos.ByKey("imprint")},
+					{Node: infos.ByKeyTranslated("imprint", lc)},
 				},
 			},
 			{Node: Info{
@@ -126,7 +125,7 @@ func (tr *TreeT) AppendAfterByKey(key string, summand *Info, asChild ...bool) bo
 	if key == "root" && tr.Node.HasKey(key) {
 		// level 0 - root
 		// special case - should never get siblings - only children
-		log.Printf("appending node %-12q - %-12v as child   to root", summand.Title, summand.Keys[0])
+		// log.Printf("appending node %-12q - %-12v as child   to root", summand.Title, summand.Keys[0])
 		ln := len(tr.Children)
 		cp := make([]TreeT, 0, ln+1)
 		cp = append(cp, TreeT{Node: *summand}) // first slot
@@ -137,7 +136,7 @@ func (tr *TreeT) AppendAfterByKey(key string, summand *Info, asChild ...bool) bo
 	for idx := range tr.Children {
 		if tr.Children[idx].Node.HasKey(key) {
 			if !asCh {
-				log.Printf("appending node %-12q - %-12v as sibling to child", summand.Title, summand.Keys[0])
+				// log.Printf("appending node %-12q - %-12v as sibling to child", summand.Title, summand.Keys[0])
 				ln := len(tr.Children)
 				cp := make([]TreeT, 0, ln+1)
 				cp = append(cp, tr.Children[0:idx+1]...)
@@ -145,7 +144,7 @@ func (tr *TreeT) AppendAfterByKey(key string, summand *Info, asChild ...bool) bo
 				cp = append(cp, tr.Children[idx+1:ln]...)
 				tr.Children = cp
 			} else {
-				log.Printf("appending node %-12q - %-12v as child   to child", summand.Title, summand.Keys[0])
+				// log.Printf("appending node %-12q - %-12v as child   to child", summand.Title, summand.Keys[0])
 				ln := len(tr.Children[idx].Children)
 				cp := make([]TreeT, 0, ln+1)
 				cp = append(cp, TreeT{Node: *summand})        // first slot
@@ -248,8 +247,6 @@ func (tr *TreeT) NavHTML(w io.Writer, r *http.Request, isLogin, isAdmin bool, lv
 		htmlIndent := strings.Repeat(" ", 10*lvl) // just for readability in HTML source
 		navURL := ""
 		activeClass := "" // style the active nav item
-		_ = activeClass
-		activeStyle := "" // ...
 		preventClck := "" // nav items without URL should not be clickable;
 
 		accessKey := ""
@@ -262,11 +259,9 @@ func (tr *TreeT) NavHTML(w io.Writer, r *http.Request, isLogin, isAdmin bool, lv
 			navURL = cfg.Pref(tr.Node.Urls[0])
 		}
 
-		// log.Printf("cmp %v to %v", strings.TrimSuffix(r.URL.Path, "/"), navURL)
-		if navURL == strings.TrimSuffix(r.URL.Path, "/") {
+		if navURL == strings.TrimSuffix(r.URL.Path, "/") || tr.Node.Active {
 			navURL = ""
 			activeClass = " is-active "
-			activeStyle = " style='font-weight: bold;' "
 		}
 
 		if navURL == "" {
@@ -275,8 +270,8 @@ func (tr *TreeT) NavHTML(w io.Writer, r *http.Request, isLogin, isAdmin bool, lv
 
 		if len(tr.Children) == 0 {
 
-			fmt.Fprintf(w, "\n%v<li><a href='%v'   %v  %v  %v  >%v</a></li>  \n",
-				htmlIndent, navURL, activeStyle, preventClck, accessKey, tr.Node.Title,
+			fmt.Fprintf(w, "\n%v<li><a href='%v' class='%v'  %v  %v  >%v</a></li>  \n",
+				htmlIndent, navURL, activeClass, preventClck, accessKey, tr.Node.Title,
 			)
 
 		} else {
@@ -297,8 +292,8 @@ func (tr *TreeT) NavHTML(w io.Writer, r *http.Request, isLogin, isAdmin bool, lv
 			fmt.Fprintf(w, "%v<li class='nde-2nd-lvl'>\n", htmlIndent)
 
 			// same as above - without enclosing <li>
-			fmt.Fprintf(w, "%v<a href='%v'   %v  %v  %v  >%v</a>  \n",
-				htmlIndent, navURL, activeStyle, preventClck, accessKey, tr.Node.Title,
+			fmt.Fprintf(w, "%v<a href='%v' class='%v'  %v  %v  >%v</a>  \n",
+				htmlIndent, navURL, activeClass, preventClck, accessKey, tr.Node.Title,
 			)
 
 			fmt.Fprintf(w, "%v     <ul class='mnu-3rd-lvl'>\n", htmlIndent)

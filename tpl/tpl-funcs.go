@@ -58,67 +58,112 @@ var fcNav = func(r *http.Request, q *qst.QuestionnaireT, SBookMarkURI string) te
 	}
 
 	//
-	// langCodes := cfg.Get().LangCodes
-	// if q != nil {
-	// 	langCodes = q.LangCodesOrder
-	// }
+	langCodes := cfg.Get().LangCodes
+	if q != nil {
+		langCodes = q.LangCodes
+	}
 
 	//
-	root := handler.Tree()
+	// nav items dynamic
+	root := handler.Tree(lc)
+	prev := "root"
+	reqURL := cfg.TrimPrefix(r.URL.Path) + "?"
+	type insertT struct {
+		handler.Info
+		asChild bool
+	}
 
-	// append user name to logout link
+	// nav language
+	{
+		inserts := []insertT{
+			{
+				handler.Info{Title: cfg.Get().Mp["language"].Tr(lc), Keys: []string{"language"}},
+				false,
+			},
+		}
+		for i, lpLC := range langCodes {
+			title := cfg.Get().Mp["lang_"+lpLC].Tr(lc)
+			nodeURL := reqURL + "&lang_code=" + lpLC
+			// log.Printf("url is '%v'", nodeURL)
+			asChild := false // default is sibling
+			if i == 0 {
+				asChild = true
+			}
+			ins := insertT{
+				handler.Info{Title: title, Keys: []string{"lang_" + lpLC}, Urls: []string{nodeURL}},
+				asChild,
+			}
+			if lc == lpLC {
+				ins.Urls = []string{}
+				ins.Active = true
+			}
+			inserts = append(inserts, ins)
+		}
+		for i := 0; i < len(inserts); i++ {
+			ok := root.AppendAfterByKey(prev, &inserts[i].Info, inserts[i].asChild)
+			if !ok {
+				log.Printf("appending %vth node %v after %v asChild %v failed", i, inserts[i].Title, prev, inserts[i].asChild)
+				break
+			}
+			prev = inserts[i].Keys[0]
+		}
+	}
+
+	// nav questionnaire pages
+	prev = "language"
+
+	if q != nil && len(q.Pages) > 0 {
+		inserts := []insertT{
+			{
+				handler.Info{Title: cfg.Get().Mp["questionnaire"].Tr(lc), Keys: []string{"quest-pages"}},
+				false,
+			},
+		}
+		cntr := 0
+		for i, lpP := range q.Pages {
+			if lpP.NoNavigation {
+				continue
+			}
+			cntr++
+			title := lpP.Short.Tr(lc)
+			nodeURL := cfg.Pref("?&page=" + fmt.Sprint(i))
+			// log.Printf("url is '%v'", nodeURL)
+			asChild := false // default is sibling
+			if cntr == 1 {
+				asChild = true
+			}
+			ins := insertT{
+				handler.Info{Title: title, Keys: []string{nodeURL}, Urls: []string{nodeURL}},
+				asChild,
+			}
+			if i == q.CurrPage {
+				ins.Urls = []string{}
+				ins.Active = true
+			}
+			inserts = append(inserts, ins)
+		}
+		for i := 0; i < len(inserts); i++ {
+			ok := root.AppendAfterByKey(prev, &inserts[i].Info, inserts[i].asChild)
+			if !ok {
+				log.Printf("appending %vth node %v after %v asChild %v failed", i, inserts[i].Title, prev, inserts[i].asChild)
+				break
+			}
+			prev = inserts[i].Keys[0]
+		}
+
+	}
+
+	//
+	// change logout title
 	if isLogin {
 		nd := root.ByKey("logout")
 		if nd != nil {
-			nd.Node.Title += fmt.Sprintf(" (%v)", l.User)
+			nd.Node.Title = cfg.Get().Mp["logout"].Tr(lc) + fmt.Sprintf(" (%v)", l.User) // append user name
 			ok := root.SetByKey("logout", &nd.Node)
 			if !ok {
 				log.Printf("could not replace node 'logout'")
 			}
 		}
-	}
-
-	// localize imprint
-	nd := root.ByKey("imprint")
-	if nd != nil {
-		nd.Node.Title = cfg.Get().Mp["imprint"][lc]
-		ok := root.SetByKey("imprint", &nd.Node)
-		if !ok {
-			log.Printf("could not replace node 'imprint'")
-		}
-	}
-
-	prev := "loginlogout"
-	prev = "root"
-
-	type insert struct {
-		handler.Info
-		asChild bool
-	}
-
-	url := r.URL.Path + "?"
-
-	inserts := []insert{
-		{
-			handler.Info{Title: "Language", Keys: []string{"language"}},
-			false,
-		},
-		{
-			handler.Info{Title: "English", Keys: []string{"english"}, Urls: []string{url + "&lang_code=en"}},
-			true,
-		},
-		{
-			handler.Info{Title: "Deutsch", Keys: []string{"deutsch"}, Urls: []string{url + "&lang_code=de"}},
-			false,
-		},
-	}
-	for i := 0; i < len(inserts); i++ {
-		ok := root.AppendAfterByKey(prev, &inserts[i].Info, inserts[i].asChild)
-		if !ok {
-			log.Printf("appending %vth node %v after %v asChild %v failed", i, inserts[i].Title, prev, inserts[i].asChild)
-			break
-		}
-		prev = inserts[i].Keys[0]
 	}
 
 	root.NavHTML(bts, r, isLogin, isAdmin, 0) // the dynamic part

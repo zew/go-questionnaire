@@ -11,6 +11,7 @@ import (
 	"log"
 	"path"
 	"path/filepath"
+	"strings"
 	"time"
 
 	"github.com/zew/util"
@@ -157,6 +158,12 @@ func Load(r io.Reader) {
 		log.Printf("combined CSSVars base plus %-10s- computed; %v entries", key, len(tempCfg.CSSVarsSite[key]))
 	}
 
+	basePlusCustom := trl.CoreTranslations()
+	for key := range tempCfg.Mp {
+		basePlusCustom[key] = tempCfg.Mp[key] // set anew or overwrite base
+	}
+	tempCfg.Mp = basePlusCustom
+
 	//
 	cfgS = &tempCfg // replace pointer in one go - should be threadsafe
 	dmp := util.IndentedDump(cfgS)
@@ -195,6 +202,13 @@ func Pref(pth ...string) string {
 	}
 	return ""
 
+}
+
+// TrimPrefix removes the prefix from a URL
+func TrimPrefix(url string) (ret string) {
+	ret = strings.TrimSuffix(url, "/")
+	ret = strings.TrimSuffix(ret, cfgS.URLPathPrefix)
+	return
 }
 
 // Pref for templates: cfg.Pref
@@ -325,223 +339,25 @@ func Example() *ConfigT {
 				},
 			},
 		},
+		//
+		// first  example translation *overwrites* trl.CoreTranslations()
+		// second example translation *appends*    trl.CoreTranslations()
 		Mp: trl.Map{
-			"lang_de": {
-				"de": "Deutsch",
-				"en": "German",
-				"es": "Alemán",
-				"fr": "Allemand",
-				"it": "Tedesco",
-				"pl": "Niemiecki",
-			},
-			"lang_en": {
-				"de": "English",
-				"en": "English",
-				"es": "Inglés",
-				"fr": "Anglais",
-				"it": "Inglese",
-				"pl": "Angielsku",
-			},
-			"lang_es": {
-				"de": "Spanisch",
-				"en": "Spanish",
-				"es": "Español",
-				"fr": "Espagnol",
-				"it": "Spagnolo",
-				"pl": "Hiszpańsku",
-			},
-			"lang_fr": {
-				"de": "Französisch",
-				"en": "French",
-				"es": "Francés",
-				"fr": "Français",
-				"it": "Francese",
-				"pl": "Francusku",
-			},
-			"lang_it": {
-				"de": "Italienisch",
-				"en": "Italian",
-				"es": "Italiano",
-				"fr": "Italien",
-				"it": "Italiano",
-				"pl": "Włosku",
-			},
-			"lang_pl": {
-				"de": "Polnisch",
-				"en": "Polish",
-				"es": "Polaco",
-				"fr": "Polonais",
-				"it": "Polacco",
-				"pl": "Polsku",
-			},
-			"page": {
-				"en": "Page",
-				"de": "Seite",
-				"es": "Página",
-				"fr": "Page",
-				"it": "Pagina",
-				"pl": "Strona",
-			},
-			"start": {
-				"en": "Start",
-				"de": "Start",
-				"es": "Inicia",
-				"fr": "Commencer",
-				"it": "Inizia",
-				"pl": "Uruchomić",
-			},
-			"next": {
-				"en": "Next",
-				"de": "Weiter",
-				"es": "Continuar",
-				"fr": "Continuer",
-				"it": "Continuare",
-				"pl": "Kontynuować",
-			},
-			"end": {
-				"en": "End",
-				"de": "Ende",
-				"es": "Fin",
-				"fr": "Fin",
-				"it": "Fine",
-				"pl": "Końcu",
-			},
-			"app_label_h1": {
-				"en": "My Org",
-				"de": "Meine Organisation",
-				"es": "Mi organización",
-				"fr": "Mon organisation",
-				"it": "La mia organizzazion",
-				"pl": "Moja organizacja",
-			},
 			"app_label": {
-				"en": "My Example App", // yes, repeat of AppName
-				"de": "Meine Beispiel Anwendung",
+				"de": "Meine --spezielle-- Beispiel Anwendung",
+				"en": "My --special-- example app",
 				"es": "Mi aplicación de ejemplo",
 				"fr": "Mon exemple d'application",
 				"it": "La mia App esempio",
 				"pl": "Moja Przykładowa aplikacja",
 			},
-
-			"correct_errors": {
-				"de": "Bitte korrigieren Sie die unten angezeigten Fehler.",
-				"en": "Please correct the errors displayed below.",
-				"es": "Por favor corrija los errores que aparecen a continuación",
-				"fr": "Veuillez corriger les erreurs affichées ci-dessous",
-				"it": "Per piacere correga gli errori sottostanti.",
-				"pl": "Popraw błędy wyświetlane poniżej",
-			},
-			"imprint": {
-				"de": "Impressum",
-				"en": "Imprint",
-				"es": "Empreinte",
-				"fr": "Mentions légales", //"Impresión" ahv,
-				"it": "Impronta",
-				"pl": "Nadrukiem",
-			},
-			"login_by_hash_failed": {
-				"de": "Anmeldung via Hash gescheitert.\nBitte nutzen Sie den übermittelten Link um sich anzumelden.\nWenn der Link in zwei Zeilen geteilt wurde, verbinden Sie die Zeilen wieder.",
-				"en": "Login by hash failed.\nPlease use the provided link to login.\nIf the link was split into two lines, reconnect them.",
-				"es": "Error al iniciar sesión por hash.\nPor favor, utilice el enlace proporcionado para iniciar sesión.\nSi el enlace se dividió en dos líneas, vuelva a conectarlas.",
-				"fr": "Login par hachage a échoué.\nVeuillez utiliser le lien fourni pour vous connecter.\nSi le lien a été divisé en deux lignes, reconnectez-les.",
-				"it": "Il login non è andato a buon fine.\nPer piacere si utilizzi il link fornitovi per effettuare il login.\nSe il link è spezzato in due, le due parti devono essere riconnesse.",
-				"pl": "Logowanie przez hash nie powiodło się. \nProszę użyć przesłanego linku, aby się zarejestrować. \nJeśli łącze zostało podzielone na dwa wiersze, Połącz ponownie wiersze.",
-			},
-			"finish_questionnaire": {
-				"de": "Fragebogen abschließen",
-				"en": "Finish this survey",
-				"es": "Terminé esta encuesta",
-				"fr": "Terminer ce sondage", // "Terminé cette enquête" ahv,
-				"it": "Finire questo sondaggio",
-				"pl": "Zakończyłem tę ankietę",
-			},
-			"finished_by_participant": {
-				"de": "Sie haben den Fragebogen bereits abgeschlossen (%v).",
-				"en": "You already finished this survey wave at %v",
-				"es": "Usted ya terminó esta ola de encuestas en %v",
-				"fr": "Vous avez déjà terminé cette vague de sondage à %v",
-				"it": "Lei ha già completato questo questionario (%v)",
-				"pl": "Już skończyłeś tę falę pomiarową na %v",
-			},
-			"deadline_exceeded": {
-				"de": "Diese Umfrage wurde am %v beendet.",
-				"en": "Current survey was closed at %v.",
-				"es": "La encuesta actual se cerró en %v",
-				"fr": "L'enquête en cours a été clôturée à %v",
-				"it": "Questo questionario è stato chiuso il %v.",
-				"pl": "Aktualna Ankieta została zamknięta w %v",
-			},
-			"percentage_answered": {
-				"de": "Sie haben %v von %v Fragen beantwortet: %2.1f Prozent.  <br>\n",
-				"en": "You answered %v out of %v questions: %2.1f percent.  <br>\n",
-				"es": "Usted contestó %v de %v preguntas: %2.1f por ciento. <br>\n",
-				"fr": "Vous avez répondu %v sur %v questions: %2.1f pour cent. <br>\n",
-				"it": "Lei ha risposto a %v domande su %v: %2.1f per cento.  <br>\n",
-				"pl": "Odpowiedziałeś %v na %v pytania: %2.1f procent. <br>\n",
-			},
-			"survey_ending": {
-				"de": "Umfrage endet am %v. <br>\nVeröffentlichung am %v.  <br>\n",
-				"en": "Survey will finish at %v. <br>\nPublication will be at %v.<br>\n",
-				"es": "La encuesta terminará en %v.\nPublicación será en %v. <br>\n",
-				"fr": "L'enquête se terminera à %v.\nPublication sera à %v. <br>\n",
-				"it": "Il sondaggio verrà concluso il %v. <br>\nLa pubblicazione avverrà il %v.<br>\n",
-				"pl": "Ankieta zakończy się w %v.\nPublikacja będzie %v. <br>\n",
-			},
-			"review_by_personal_link": {
-				"de": "Sie können ihre Daten jederzeit über Ihren persönlichen Link prüfen/ändern. <br>\n<a href='/?submitBtn=prev'>Zurück</a><br>\n",
-				"en": "You may review or change your data using your personal link. <br>\n<a href='/?submitBtn=prev'>Back</a><br>\n",
-				"es": "Usted puede revisar o cambiar sus datos usando su enlace personal.<br>\n<a href='/?submitBtn=prev'>Atrás</a><br>\n",
-				"fr": "Vous pouvez consulter ou modifier vos données à l'aide de votre lien personnel.<br>\n<a href='/?submitBtn=prev'>Précédent</a><br>\n",
-				"it": "Può rivedere o modificare i suoi dati usando il Suo link personale. <br>\n<a href='/?submitBtn=prev'>Indietro</a><br>\n",
-				"pl": "Dane można przejrzeć lub zmienić przy użyciu osobistego łącza.<br>\n<a href='/?submitBtn=prev'>Wstecz</a><br>\n",
-			},
-			"not_a_number": {
-				"de": "'%v' keine Zahl",
-				"en": "'%v' not a number",
-				"es": "'%v' no es un número",
-				"fr": "'%v' pas un certain nombre",
-				"it": "'%v' non è un numero",
-				"pl": "'%v' nie liczba",
-			},
-			"too_big": {
-				"de": "Max %.0f",
-				"en": "max %.0f",
-				"es": "Máximo %.0f",
-				"fr": "Max %.0f",
-				"it": "Massimo %.0f",
-				"pl": "Maksymalna %.0f",
-			},
-			"too_small": {
-				"de": "Min %.0f",
-				"en": "min %.0f",
-				"es": "Mínimo %.0f",
-				"fr": "Min %.0f",
-				"it": "Minimo %.0f",
-				"pl": "Minimalne %.0f",
-			},
-			"must_one_option": {
-				"de": "Bitte eine Option wählen",
-				"en": "Please choose one option",
-				"es": "Por favor elija una opción",
-				"fr": "Veuillez choisir une option",
-				"it": "Si prega di selezionare una opzione",
-				"pl": "Proszę wybrać jedną z opcji",
-			},
-			"yes": {
-				"de": "Ja",
-				"en": "Yes",
-				"es": "Sí",
-				"fr": "Oui",
-				"it": "Sì",
-				"pl": "Tak",
-			},
-			"no": {
-				"de": "Nein",
-				"en": "No",
-				"es": "No",
-				"fr": "Non",
-				"it": "No",
-				"pl": "Nie",
+			"app_label_h2": {
+				"de": "Meine Organisation h2",
+				"en": "My Org h2",
+				"es": "Mi organización h2",
+				"fr": "Mon organisation h2",
+				"it": "La mia organizzazion h2",
+				"pl": "Moja organizacja h2",
 			},
 		},
 	}

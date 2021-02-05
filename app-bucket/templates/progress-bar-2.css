@@ -80,8 +80,7 @@ ol.progress {
 
 .progress > li:before,
 .progress > li:after {
-
-  line-height: 2.05em;
+  line-height: 1.95em;
   text-align: center;
   font-size:  1.0rem;
 }
@@ -117,6 +116,8 @@ ol.progress {
 .progress > li:last-child:after {
   /* display: none; */
 }
+
+/* no arrow on last child */
 .progress > li:last-child {
   /* flex-grow:   0.1; */
   clip-path: polygon(0 0, 87% 0, 87% 50%, 87% 100%, 0% 100%);
@@ -131,8 +132,9 @@ ol.progress {
 .progress > li.is-complete:before,
 .progress > li.is-complete:after
 {
-  color: #FFF;
-  background: #989898;
+  /* color: #FFF; */
+  /* background: #989898; */
+  opacity: 0.6;
 }
 
 

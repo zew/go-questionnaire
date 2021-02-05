@@ -7,9 +7,9 @@ package qst
 //
 // parameters
 //   dynamic questionnaire - filled with response values
-//   userID
-//   dynamic sequence - from random order
-//   param set index -  statically determined - from a slice of param sets
+//   param set idx  -  statically determined - from a slice of param sets
+//   sequence  idx  -  usually a visible page sequence
+//   userID         -  for custom randomization
 //
 // returns
 //   rendered HTML of the group

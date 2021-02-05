@@ -45,13 +45,23 @@ var reshuffle6basedOn16 = [][]int{
 // politicalFoundationsParamsT.Ppls for rendering icons of peoples to certain positions;
 // return 1 is the HTML code
 // return 2 are the input names, based on seq0to5;
-func PoliticalFoundations(q *QuestionnaireT, userID, seq0to5, paramSetIdx int) (string, []string, error) {
+func PoliticalFoundations(q *QuestionnaireT, paramSetIdx, seq0to5, userID int) (string, []string, error) {
 
 	zeroTo15 := userID % 16
 
-	oneOfSix := reshuffle6basedOn16[zeroTo15][seq0to5] - 1
+	oneOfSix := reshuffle6basedOn16[zeroTo15][seq0to5] - 1 // display order => reshuffled questions order
 
-	oneOfFour := zeroTo15 % 4
+	oneOfFour := zeroTo15 % 4 // table rows permutation
+
+	log.Printf(
+		`
+userID  %4v - zeroTo15  %2v
+seq0to5 %4v - oneOfFour [0...3] %2v  - oneOfSix [0...5] %2v`,
+		userID, zeroTo15,
+		seq0to5, oneOfFour, oneOfSix,
+	)
+
+	log.Printf(`%v`, fourPermutationsOf6x3x3[oneOfFour][oneOfSix].Ppls)
 
 	return politicalFoundations(
 		q,
@@ -116,17 +126,36 @@ func politicalFoundations(q *QuestionnaireT, seq0to5 int, questionID string, ppl
 	}
 
 	s := fmt.Sprintf(`
+
+<span class="go-quest-label">
+	
+<p>
+	<b>Entscheidung %v.</b>
+</p>
+
+<p>
+	Welche Stiftung soll die 30 € bei folgender Präferenzkonstellation erhalten?<br>
+
+	<span style="font-size: 88%%;">
+		(Bitte ein Kreuz in der Spalte „Auswahl“, 
+		und ggf. weitere Kreuze in der Spalte „Gleich gut“)
+	</span>
+</p>
+
+<br>
+
+
 <div id="t01">
 
 
 <table>
     <tr>
-        <td>Entscheidung&nbsp;%v</td>
-        <td>Beste</td>
-        <td>Mittel</td>
-        <td>Schlechteste</td>
-        <td>Auswahl</td>
-        <td>Genauso gut</td>
+        <td style="width: 16%%;" > &nbsp; </td>
+        <td style="width: 20%%;" >Am besten</td>
+        <td style="width: 20%%;" >Mittel</td>
+        <td style="width: 20%%;" >Am schlechtesten</td>
+        <td style="width: 12%%;" >Auswahl</td>
+        <td style="width: 12%%;" >Gleich gut</td>
     </tr>
 
     <tr>
@@ -179,6 +208,9 @@ func politicalFoundations(q *QuestionnaireT, seq0to5 int, questionID string, ppl
 
 
 </table>
+
+</span> <!-- /go-quest-label -->
+
 
 </div>
 	`,

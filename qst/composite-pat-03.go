@@ -2,7 +2,7 @@ package qst
 
 func init() {
 
-	fourPermutationsOf6x3x3[1] = []preferences3x3T{
+	fourPermutationsOf6x3x3[2] = []preferences3x3T{
 		{
 			ID: 1, // Frage 1
 			Ppls: [][]int{

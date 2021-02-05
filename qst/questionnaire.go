@@ -479,7 +479,7 @@ type groupT struct {
 	Cols int `json:"columns,omitempty"`
 
 	Inputs             []*inputT `json:"inputs,omitempty"`
-	RandomizationGroup int       `json:"randomization_group,omitempty"` // >0 => group can be repositioned for randomization
+	RandomizationGroup int       `json:"randomization_group,omitempty"` // > 0 => group can be repositioned for randomization
 }
 
 // AddInput creates a new input
@@ -528,14 +528,15 @@ func (gr groupT) HasComposit() bool {
 	return hasComposit
 }
 
-func validateComposit(pageIdx, grpIdx int, compFuncNameWithParamSet string) (compositFuncT, int) {
+func validateComposit(
+	pageIdx, grpIdx int, compFuncNameWithParamSet string) (compositFuncT, int, int) {
 
 	splt := strings.Split(compFuncNameWithParamSet, "__")
-	if len(splt) != 2 {
+	if len(splt) != 3 {
 		log.Panicf(
 			`page %v group %v: 
 			composite func name %v 
-			must consist of func name '__' param set index`,
+			must consist of func name '__' param set index '__' sequence idx`,
 			pageIdx,
 			grpIdx,
 			compFuncNameWithParamSet,
@@ -548,6 +549,8 @@ func validateComposit(pageIdx, grpIdx int, compFuncNameWithParamSet string) (com
 		log.Panicf(
 			`page %v group %v: 
 			composite func name %v does not exist`,
+			pageIdx,
+			grpIdx,
 			compFuncName,
 		)
 	}
@@ -565,8 +568,21 @@ func validateComposit(pageIdx, grpIdx int, compFuncNameWithParamSet string) (com
 			err,
 		)
 	}
+	seqIdx, err := strconv.Atoi(splt[2])
+	if err != nil {
+		log.Panicf(
+			`page %v group %v: 
+			third part of composite func name %v 
+			could not be parsed into int
+			%v`,
+			pageIdx,
+			grpIdx,
+			compFuncNameWithParamSet,
+			err,
+		)
+	}
 
-	return cF, paramSetIdx
+	return cF, paramSetIdx, seqIdx
 
 }
 
@@ -981,8 +997,8 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 		if p.Groups[grpIdx].HasComposit() {
 			compositCntr++
 			compFuncNameWithParamSet := p.Groups[grpIdx].Inputs[0].DynamicFunc
-			cF, paramSetIdx := validateComposit(pageIdx, grpIdx, compFuncNameWithParamSet)
-			grpHTML, _, err := cF(q, q.UserIDInt(), compositCntr, paramSetIdx)
+			cF, paramSetIdx, seqIdx := validateComposit(pageIdx, grpIdx, compFuncNameWithParamSet)
+			grpHTML, _, err := cF(q, paramSetIdx, seqIdx, q.UserIDInt())
 			if err != nil {
 				b.WriteString(fmt.Sprintf("composite func error %v \n", err))
 			} else {

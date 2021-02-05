@@ -94,16 +94,24 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 				<br>
 
-				<table>
+				<style>
+					table.drei-stiftungen td {
+						text-align: center;
+						text-align: center;
+
+					}
+				</style>
+
+				<table class="drei-stiftungen">
 				<tr>
-					<td>Politisch links</td>
-					<td>Politische Mitte</td>
-					<td>Politisch konservativ</td>
+					<td style="width: 33%">Politisch links</td>
+					<td style="width: 33%">Politische Mitte</td>
+					<td style="width: 33%">Politisch konservativ</td>
 				<tr>
 				<tr>
-					<td><b>Hans-Böckler-Stiftung</b></td>
-					<td><b>Bund der Steuerzahler Deutschland e. V.</b></td>
-					<td><b>Ludwig-Erhard-Stiftung</b></td>
+					<td style="vertical-align: top;" ><b>Hans-Böckler-Stiftung</b></td>
+					<td style="vertical-align: top;" ><b>Bund der Steuerzahler Deutschland e.V.</b></td>
+					<td style="vertical-align: top;" ><b>Ludwig-Erhard-Stiftung</b></td>
 				<tr>
 				</table>
 
@@ -144,13 +152,13 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "composit"
-				inp.DynamicFunc = "PoliticalFoundations__0"
+				inp.DynamicFunc = "PoliticalFoundations__0__0"
 			}
-			_, inputNames, _ := qst.PoliticalFoundations(nil, userID, 0, 0)
+			_, inputNames, _ := qst.PoliticalFoundations(nil, 0, 0, userID)
 			for _, inpName := range inputNames {
 				inp := gr.AddInput()
 				inp.Type = "composit-scalar"
-				inp.Name = inpName
+				inp.Name = inpName + "_page0"
 			}
 
 		}
@@ -158,7 +166,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		{
 			gr := page.AddGroup()
 			gr.Cols = 1
-			gr.BottomVSpacers = 2
+			gr.BottomVSpacers = 1
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
@@ -178,9 +186,13 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Name = "text03"
 				// inp.Label = trl.S{"de": "Dummy<br>"}
 				inp.Desc = trl.S{
-					"de": `<sup>1)</sup>
+					"de": `
+				<span style="display: inline-block; font-size:87%; line-height: 120%;">
+
+				<sup>1)</sup>
 				Nur in einer der sechs Entscheidungen stammen die Präferenzen von den Personen, die wir befragt haben, und nur diese Entscheidung kann umgesetzt werden. In den anderen Entscheidungen wurden die Präferenzen von uns zusammengestellt. Da Sie nicht wissen, in welcher Entscheidung die Präferenzen von den Befragten stammen, sollten Sie in allen sechs Entscheidungen so entscheiden, als seien die jeweiligen Präferenzen von der echten Gruppe.
-					`,
+				</span>
+				`,
 				}
 			}
 
@@ -198,89 +210,37 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 		{
 			gr := page.AddGroup()
-			gr.Cols = 1
-			gr.BottomVSpacers = 2
+			gr.Cols = 2
+			gr.BottomVSpacers = 1
 			{
 				inp := gr.AddInput()
+				inp.ColSpanLabel = 2
 				inp.Type = "textblock"
 				inp.Name = "text01"
 				inp.Desc = trl.S{"de": `
-
-				Bitte entscheiden Sie nun auch für die folgenden Fälle, welche Stiftung die Spende erhalten soll. Eine der Entscheidungen 1 – 6 zeigt die echten Wünsche der fünf Befragten; wir werden die entsprechende Entscheidung ausführen.
-
+				Entscheiden Sie im Folgenden, an welche Stiftung das Geld gehen soll. Setzen Sie dazu bei der entsprechenden Stiftung ein Kreuz in der Spalte „Auswahl“. Falls Sie eine zweite oder dritte Alternative als genauso gut empfinden, setzen Sie ein Kreuz in der Spalte „Gleich gut“. Berücksichtigen Sie die dargestellten Präferenzen der Gruppenmitglieder. 
 				`}
 			}
 		}
 
 		// loop over matrix questions
-		for i := 1; i < 6; i++ {
+		for i := 0; i < 6; i++ {
 			{
 				gr := page.AddGroup()
 				gr.Cols = 1
-				gr.BottomVSpacers = 3
+				gr.BottomVSpacers = 2
 				gr.RandomizationGroup = 1 - 1
 
 				{
 					inp := gr.AddInput()
 					inp.Type = "composit"
-					inp.DynamicFunc = fmt.Sprintf("PoliticalFoundations__%v", i)
+					inp.DynamicFunc = fmt.Sprintf("PoliticalFoundations__%v__%v", i, i)
 				}
-				_, inputNames, _ := qst.PoliticalFoundations(nil, userID, i, 0)
+				_, inputNames, _ := qst.PoliticalFoundations(nil, i, i, userID)
 				for _, inpName := range inputNames {
 					inp := gr.AddInput()
 					inp.Type = "composit-scalar"
 					inp.Name = inpName
-				}
-			}
-		}
-
-		if false {
-			// DUMMMY  DUMMMY  DUMMMY
-			{
-				gr := page.AddGroup()
-				gr.Cols = 1
-				gr.RandomizationGroup = 2
-				{
-					inp := gr.AddInput()
-					inp.Type = "textblock"
-					inp.Name = "text03"
-					inp.Desc = trl.S{"de": `sg1 - el1`}
-				}
-			}
-			// DUMMMY  DUMMMY  DUMMMY
-			{
-				gr := page.AddGroup()
-				gr.Cols = 1
-				gr.RandomizationGroup = 0
-				{
-					inp := gr.AddInput()
-					inp.Type = "textblock"
-					inp.Name = "text03"
-					inp.Desc = trl.S{"de": `no shuffle`}
-				}
-			}
-			// DUMMMY  DUMMMY  DUMMMY
-			{
-				gr := page.AddGroup()
-				gr.Cols = 1
-				gr.RandomizationGroup = 2
-				{
-					inp := gr.AddInput()
-					inp.Type = "textblock"
-					inp.Name = "text03"
-					inp.Desc = trl.S{"de": `sg1 - el2`}
-				}
-			}
-			// DUMMMY  DUMMMY  DUMMMY
-			{
-				gr := page.AddGroup()
-				gr.Cols = 1
-				gr.RandomizationGroup = 2
-				{
-					inp := gr.AddInput()
-					inp.Type = "textblock"
-					inp.Name = "text03"
-					inp.Desc = trl.S{"de": `sg1 - el3`}
 				}
 			}
 		}
@@ -318,7 +278,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 		{
 			gr := page.AddRadioMatrixGroup(labelsVerfuegbarNicht, q1Names, q1Labels, 3)
-			gr.RandomizationGroup = 2 - 1
+			gr.RandomizationGroup = 2 - 2
 			gr.BottomVSpacers = 1
 			gr.Cols = 6
 			gr.Width = 90
@@ -336,7 +296,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 		{
 			gr := page.AddRadioMatrixGroup(labelsVerfuegbarNicht, q2Names, q2Labels, 3)
-			gr.RandomizationGroup = 2 - 1
+			gr.RandomizationGroup = 2 - 2
 			gr.BottomVSpacers = 1
 			gr.Cols = 6
 			gr.Width = 90

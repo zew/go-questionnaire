@@ -16,7 +16,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "4eb3cbe3b3d3363c05e9a95bf65ed624",
+ 	"md_5": "099fc9d7aa3cc96ee66fa2bee54642f0",
  	"lang_codes": [
  		"de"
  	],
@@ -83,7 +83,7 @@
  							"name": "text01",
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\u003cp\u003e\u003cb\u003e\n\t\t\t\tIm Folgenden geht es um eine Spende von 30 €, die \u003ci\u003eeine\u003c/i\u003e dieser drei Stiftungen erhalten soll:\n\t\t\t\t\u003c/b\u003e\u003c/p\u003e\n\n\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\u003ctable\u003e\n\t\t\t\t\u003ctr\u003e\n\t\t\t\t\t\u003ctd\u003ePolitisch links\u003c/td\u003e\n\t\t\t\t\t\u003ctd\u003ePolitische Mitte\u003c/td\u003e\n\t\t\t\t\t\u003ctd\u003ePolitisch konservativ\u003c/td\u003e\n\t\t\t\t\u003ctr\u003e\n\t\t\t\t\u003ctr\u003e\n\t\t\t\t\t\u003ctd\u003e\u003cb\u003eHans-Böckler-Stiftung\u003c/b\u003e\u003c/td\u003e\n\t\t\t\t\t\u003ctd\u003e\u003cb\u003eBund der Steuerzahler Deutsch\u0026shy;land e. V.\u003c/b\u003e\u003c/td\u003e\n\t\t\t\t\t\u003ctd\u003e\u003cb\u003eLudwig-Erhard-Stiftung\u003c/b\u003e\u003c/td\u003e\n\t\t\t\t\u003ctr\u003e\n\t\t\t\t\u003c/table\u003e\n\n\t\t\t\t\u003cp\u003e\n\t\t\t\tFür jede Ihrer ersten sechs Entscheidungen zeigen wir Ihnen die Präferenzen fünf deutscher Staatsangehöriger darüber, welche der drei Stiftungen die Spende erhalten soll.  Sie entscheiden, wie die Präferenzen der fünf Personen in eine gemeinsame Entscheidung zusammengefasst werden.\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp\u003e\n\t\t\t\tDie Präferenzen stammen von fünf Personen, die an einer Vorstudie teilgenommen haben\u003csup\u003e1)\u003c/sup\u003e.  Diese fünf Personen wurden aus einer Stichprobe gezogen, in der sich gleich viele Personen politisch links, in der Mitte oder als konservativ einordnen. Jede Person wurde einzeln befragt, welche der drei Stiftungen sie als am besten, mittel, und am schlechtesten erachtet. Den Personen wurde mitgeteilt, dass ihre Präferenzen zusammen mit den Präferenzen von vier anderen Personen an einen zukünftigen Teilnehmer der Studie gegeben werden, der die Präferenzen in eine Entscheidung zusammenfasst.\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\u003cp\u003e\u003cb\u003e\n\t\t\t\tIm Folgenden geht es um eine Spende von 30 €, die \u003ci\u003eeine\u003c/i\u003e dieser drei Stiftungen erhalten soll:\n\t\t\t\t\u003c/b\u003e\u003c/p\u003e\n\n\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\u003cstyle\u003e\n\t\t\t\t\ttable.drei-stiftungen td {\n\t\t\t\t\t\ttext-align: center;\n\t\t\t\t\t\ttext-align: center;\n\n\t\t\t\t\t}\n\t\t\t\t\u003c/style\u003e\n\n\t\t\t\t\u003ctable class=\"drei-stiftungen\"\u003e\n\t\t\t\t\u003ctr\u003e\n\t\t\t\t\t\u003ctd style=\"width: 33%\"\u003ePolitisch links\u003c/td\u003e\n\t\t\t\t\t\u003ctd style=\"width: 33%\"\u003ePolitische Mitte\u003c/td\u003e\n\t\t\t\t\t\u003ctd style=\"width: 33%\"\u003ePolitisch konservativ\u003c/td\u003e\n\t\t\t\t\u003ctr\u003e\n\t\t\t\t\u003ctr\u003e\n\t\t\t\t\t\u003ctd style=\"vertical-align: top;\" \u003e\u003cb\u003eHans-Böckler-Stiftung\u003c/b\u003e\u003c/td\u003e\n\t\t\t\t\t\u003ctd style=\"vertical-align: top;\" \u003e\u003cb\u003eBund der Steuerzahler Deutsch\u0026shy;land e.V.\u003c/b\u003e\u003c/td\u003e\n\t\t\t\t\t\u003ctd style=\"vertical-align: top;\" \u003e\u003cb\u003eLudwig-Erhard-Stiftung\u003c/b\u003e\u003c/td\u003e\n\t\t\t\t\u003ctr\u003e\n\t\t\t\t\u003c/table\u003e\n\n\t\t\t\t\u003cp\u003e\n\t\t\t\tFür jede Ihrer ersten sechs Entscheidungen zeigen wir Ihnen die Präferenzen fünf deutscher Staatsangehöriger darüber, welche der drei Stiftungen die Spende erhalten soll.  Sie entscheiden, wie die Präferenzen der fünf Personen in eine gemeinsame Entscheidung zusammengefasst werden.\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp\u003e\n\t\t\t\tDie Präferenzen stammen von fünf Personen, die an einer Vorstudie teilgenommen haben\u003csup\u003e1)\u003c/sup\u003e.  Diese fünf Personen wurden aus einer Stichprobe gezogen, in der sich gleich viele Personen politisch links, in der Mitte oder als konservativ einordnen. Jede Person wurde einzeln befragt, welche der drei Stiftungen sie als am besten, mittel, und am schlechtesten erachtet. Den Personen wurde mitgeteilt, dass ihre Präferenzen zusammen mit den Präferenzen von vier anderen Personen an einen zukünftigen Teilnehmer der Studie gegeben werden, der die Präferenzen in eine Entscheidung zusammenfasst.\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							}
  						},
  						{
@@ -101,7 +101,94 @@
  					"inputs": [
  						{
  							"type": "composit",
- 							"dynamic_func": "PoliticalFoundations__0"
+ 							"dynamic_func": "PoliticalFoundations__0__0"
+ 						},
+ 						{
+ 							"name": "dec1_1_r_page0",
+ 							"type": "composit-scalar"
+ 						},
+ 						{
+ 							"name": "dec1_1_r1_page0",
+ 							"type": "composit-scalar"
+ 						},
+ 						{
+ 							"name": "dec1_1_r2_page0",
+ 							"type": "composit-scalar"
+ 						},
+ 						{
+ 							"name": "dec1_1_r3_page0",
+ 							"type": "composit-scalar"
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"width": 100,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"name": "text01",
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\n\t\t\t\tDie Stiftungen wurden anonymisiert und in eine zufällige Reihenfolge gebracht, so dass Sie nicht wissen, um welche Stiftung es sich bei den Stiftungen A, B und C handelt. Sie entscheiden also nicht darüber, welche Stiftung die 30 € erhält. Stattdessen entscheiden Sie, wie die Präferenzen der Gruppenmitglieder in eine Entscheidung zusammengefasst werden und ob Sie beispielsweise eher eine Kompromisslösung oder eher eine Mehrheitslösung für Ihre Gruppe bevorzugen.\n\t\t\t\t"
+ 							}
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"width": 100,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"name": "text03",
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\n\t\t\t\t\u003cspan style=\"display: inline-block; font-size:87%; line-height: 120%;\"\u003e\n\n\t\t\t\t\u003csup\u003e1)\u003c/sup\u003e\n\t\t\t\tNur in einer der sechs Entscheidungen stammen die Präferenzen von den Personen, die wir befragt haben, und nur diese Entscheidung kann umgesetzt werden. In den anderen Entscheidungen wurden die Präferenzen von uns zusammengestellt. Da Sie nicht wissen, in welcher Entscheidung die Präferenzen von den Befragten stammen, sollten Sie in allen sechs Entscheidungen so entscheiden, als seien die jeweiligen Präferenzen von der echten Gruppe.\n\t\t\t\t\u003c/span\u003e\n\t\t\t\t"
+ 							}
+ 						}
+ 					]
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "TEIL 1b"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"short": {
+ 				"de": "TEIL 1b"
+ 			},
+ 			"navi_num": 2,
+ 			"width": 60,
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"width": 100,
+ 					"columns": 2,
+ 					"inputs": [
+ 						{
+ 							"name": "text01",
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\n\t\t\t\tEntscheiden Sie im Folgenden, an welche Stiftung das Geld gehen soll. Setzen Sie dazu bei der entsprechenden Stiftung ein Kreuz in der Spalte „Auswahl“. Falls Sie eine zweite oder dritte Alternative als genauso gut empfinden, setzen Sie ein Kreuz in der Spalte „Gleich gut“. Berücksichtigen Sie die dargestellten Präferenzen der Gruppenmitglieder \n\t\t\t\t"
+ 							},
+ 							"col_span_label": 2
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"width": 100,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "composit",
+ 							"dynamic_func": "PoliticalFoundations__0__0"
  						},
  						{
  							"name": "dec1_1_r",
@@ -127,67 +214,8 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "text01",
- 							"type": "textblock",
- 							"description": {
- 								"de": "\n\t\t\t\tDie Stiftungen wurden anonymisiert und in eine zufällige Reihenfolge gebracht, so dass Sie nicht wissen, um welche Stiftung es sich bei den Stiftungen A, B und C handelt. Sie entscheiden also nicht darüber, welche Stiftung die 30 € erhält. Stattdessen entscheiden Sie, wie die Präferenzen der Gruppenmitglieder in eine Entscheidung zusammengefasst werden und ob Sie beispielsweise eher eine Kompromisslösung oder eher eine Mehrheitslösung für Ihre Gruppe bevorzugen.\n\t\t\t\t"
- 							}
- 						}
- 					]
- 				},
- 				{
- 					"bottom_vspacers": 3,
- 					"width": 100,
- 					"columns": 1,
- 					"inputs": [
- 						{
- 							"name": "text03",
- 							"type": "textblock",
- 							"description": {
- 								"de": "\u003csup\u003e1)\u003c/sup\u003e\n\t\t\t\tNur in einer der sechs Entscheidungen stammen die Präferenzen von den Personen, die wir befragt haben, und nur diese Entscheidung kann umgesetzt werden. In den anderen Entscheidungen wurden die Präferenzen von uns zusammengestellt. Da Sie nicht wissen, in welcher Entscheidung die Präferenzen von den Befragten stammen, sollten Sie in allen sechs Entscheidungen so entscheiden, als seien die jeweiligen Präferenzen von der echten Gruppe.\n\t\t\t\t\t"
- 							}
- 						}
- 					]
- 				}
- 			]
- 		},
- 		{
- 			"label": {
- 				"de": "TEIL 1b"
- 			},
- 			"description": {
- 				"de": "",
- 				"en": ""
- 			},
- 			"short": {
- 				"de": "TEIL 1b"
- 			},
- 			"navi_num": 2,
- 			"width": 60,
- 			"finished": "0001-01-01T00:00:00Z",
- 			"groups": [
- 				{
- 					"bottom_vspacers": 2,
- 					"width": 100,
- 					"columns": 1,
- 					"inputs": [
- 						{
- 							"name": "text01",
- 							"type": "textblock",
- 							"description": {
- 								"de": "\n\n\t\t\t\tBitte entscheiden Sie nun auch für die folgenden Fälle, welche Stiftung die Spende erhalten soll. Eine der Entscheidungen 1 – 6 zeigt die echten Wünsche der fünf Befragten; wir werden die entsprechende Entscheidung ausführen.\n\n\t\t\t\t"
- 							}
- 						}
- 					]
- 				},
- 				{
- 					"bottom_vspacers": 3,
- 					"width": 100,
- 					"columns": 1,
- 					"inputs": [
- 						{
  							"type": "composit",
- 							"dynamic_func": "PoliticalFoundations__1"
+ 							"dynamic_func": "PoliticalFoundations__1__1"
  						},
  						{
  							"name": "dec1_2_r",
@@ -208,13 +236,13 @@
  					]
  				},
  				{
- 					"bottom_vspacers": 3,
+ 					"bottom_vspacers": 2,
  					"width": 100,
  					"columns": 1,
  					"inputs": [
  						{
  							"type": "composit",
- 							"dynamic_func": "PoliticalFoundations__2"
+ 							"dynamic_func": "PoliticalFoundations__2__2"
  						},
  						{
  							"name": "dec1_3_r",
@@ -235,13 +263,13 @@
  					]
  				},
  				{
- 					"bottom_vspacers": 3,
+ 					"bottom_vspacers": 2,
  					"width": 100,
  					"columns": 1,
  					"inputs": [
  						{
  							"type": "composit",
- 							"dynamic_func": "PoliticalFoundations__3"
+ 							"dynamic_func": "PoliticalFoundations__3__3"
  						},
  						{
  							"name": "dec1_4_r",
@@ -262,13 +290,13 @@
  					]
  				},
  				{
- 					"bottom_vspacers": 3,
+ 					"bottom_vspacers": 2,
  					"width": 100,
  					"columns": 1,
  					"inputs": [
  						{
  							"type": "composit",
- 							"dynamic_func": "PoliticalFoundations__4"
+ 							"dynamic_func": "PoliticalFoundations__4__4"
  						},
  						{
  							"name": "dec1_5_r",
@@ -289,13 +317,13 @@
  					]
  				},
  				{
- 					"bottom_vspacers": 3,
+ 					"bottom_vspacers": 2,
  					"width": 100,
  					"columns": 1,
  					"inputs": [
  						{
  							"type": "composit",
- 							"dynamic_func": "PoliticalFoundations__5"
+ 							"dynamic_func": "PoliticalFoundations__5__5"
  						},
  						{
  							"name": "dec1_6_r",
@@ -449,8 +477,7 @@
  								}
  							]
  						}
- 					],
- 					"randomization_group": 1
+ 					]
  				},
  				{
  					"label": {
@@ -558,8 +585,7 @@
  								}
  							]
  						}
- 					],
- 					"randomization_group": 1
+ 					]
  				},
  				{
  					"bottom_vspacers": 1,

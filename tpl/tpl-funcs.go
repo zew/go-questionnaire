@@ -74,7 +74,7 @@ var fcNav = func(r *http.Request, q *qst.QuestionnaireT, SBookMarkURI string) te
 	}
 
 	// nav language
-	{
+	if len(langCodes) > 1 {
 		inserts := []insertT{
 			{
 				handler.Info{Title: cfg.Get().Mp["language"].Tr(lc), Keys: []string{"language"}},
@@ -107,11 +107,11 @@ var fcNav = func(r *http.Request, q *qst.QuestionnaireT, SBookMarkURI string) te
 			}
 			prev = inserts[i].Keys[0]
 		}
+		//
+		prev = "language"
 	}
 
 	// nav questionnaire pages
-	prev = "language"
-
 	if q != nil && len(q.Pages) > 0 {
 		inserts := []insertT{
 			{

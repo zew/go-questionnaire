@@ -131,7 +131,7 @@ type inputT struct {
 
 	Response string `json:"response,omitempty"` // also contains the Value of options and checkboxes
 	//  ResponseFloat float64  - floats and integers are stored as strings in Response
-	DynamicFunc string `json:"dynamic_func,omitempty"` // Refers to dynFuncs for type == 'dynamic', or compositFuncs for type == 'composit'
+	DynamicFunc string `json:"dynamic_func,omitempty"` // compositFunc for type == 'composit' OR dynFunc for type == 'dynamic'
 }
 
 // NewInput returns an input filled in with globally enumerated label, decription etc.
@@ -452,20 +452,19 @@ func (i inputT) HTML(langCode string, numCols int) string {
 
 }
 
-// A group consists of several input controls.
-// It contains no response information.
-// It can bundle checkbox or text inputs with *distinct* names.
-// Whereas: radiogroup and checkboxgroup have the *same* name and a single response.
-// A group is a layout unit with a configurable number of columns.
+// A group consists of several input controls;
+// it contains no response information;
+// a group is a layout unit with a configurable number of columns.
 type groupT struct {
 	// Name  string
 	Label trl.S `json:"label,omitempty"`
 	Desc  trl.S `json:"description,omitempty"`
+
 	// Vertical space control:
 	HeaderBottomVSpacers int `json:"header_bottom_vspacers,omitempty"` // number of half rows below the group header
 	BottomVSpacers       int `json:"bottom_vspacers,omitempty"`        // number of rows below the group, initialized to 3
 
-	Vertical bool `json:"vertical,omitempty"` // groups vertically, not horizontally, not yet implemented
+	Vertical bool `json:"vertical,omitempty"` // groups vertically, not horizontally
 
 	OddRowsColoring bool `json:"odd_rows_coloring,omitempty"` // color odd rows
 	Width           int  `json:"width,omitempty"`             // default is 100 percent
@@ -527,6 +526,48 @@ func (gr groupT) HasComposit() bool {
 		}
 	}
 	return hasComposit
+}
+
+func validateComposit(pageIdx, grpIdx int, compFuncNameWithParamSet string) (compositFuncT, int) {
+
+	splt := strings.Split(compFuncNameWithParamSet, "__")
+	if len(splt) != 2 {
+		log.Panicf(
+			`page %v group %v: 
+			composite func name %v 
+			must consist of func name '__' param set index`,
+			pageIdx,
+			grpIdx,
+			compFuncNameWithParamSet,
+		)
+	}
+
+	compFuncName := splt[0]
+	cF, ok := compositeFuncs[compFuncName]
+	if !ok {
+		log.Panicf(
+			`page %v group %v: 
+			composite func name %v does not exist`,
+			compFuncName,
+		)
+	}
+
+	paramSetIdx, err := strconv.Atoi(splt[1])
+	if err != nil {
+		log.Panicf(
+			`page %v group %v: 
+			second part of composite func name %v 
+			could not be parsed into int
+			%v`,
+			pageIdx,
+			grpIdx,
+			compFuncNameWithParamSet,
+			err,
+		)
+	}
+
+	return cF, paramSetIdx
+
 }
 
 // HTML renders a group of inputs to HTML
@@ -933,37 +974,22 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 	}
 	b.WriteString(vspacer16)
 
-	order := q.RandomizeOrder(pageIdx)
+	grpOrder := q.RandomizeOrder(pageIdx)
 	compositCntr := -1
 	nonCompositCntr := -1
-	for loopIdx, seqIdx := range order {
-		if p.Groups[seqIdx].HasComposit() {
+	for loopIdx, grpIdx := range grpOrder {
+		if p.Groups[grpIdx].HasComposit() {
 			compositCntr++
-			compFuncNameWithParamSet := p.Groups[seqIdx].Inputs[0].DynamicFunc
-
-			splt := strings.Split(compFuncNameWithParamSet, "__")
-			if len(splt) != 2 {
-				log.Panicf("composite func name %v must consist of func name '__' param set index", compFuncNameWithParamSet)
-			}
-			// log.Printf("composite func %v -> %v", splt[0], splt[1])
-			compFuncName := splt[0]
-			paramSetIdx, err := strconv.Atoi(splt[1])
-			if err != nil {
-				log.Panicf("second part of composite func name %v could not be parsed into int \n %v", compFuncNameWithParamSet, err)
-			}
-
-			cF, ok := compositeFuncs[compFuncName]
-			if !ok {
-				log.Panicf("composite func name %v does not exist", compFuncName)
-			}
-			grpHTML, _, err := cF(q, compositCntr, paramSetIdx)
+			compFuncNameWithParamSet := p.Groups[grpIdx].Inputs[0].DynamicFunc
+			cF, paramSetIdx := validateComposit(pageIdx, grpIdx, compFuncNameWithParamSet)
+			grpHTML, _, err := cF(q, q.UserIDInt(), compositCntr, paramSetIdx)
 			if err != nil {
 				b.WriteString(fmt.Sprintf("composite func error %v \n", err))
 			} else {
 				b.WriteString(grpHTML + "\n")
 			}
 		} else {
-			grpHTML := p.Groups[seqIdx].HTML(q.LangCode)
+			grpHTML := p.Groups[grpIdx].HTML(q.LangCode)
 			if strings.Contains(grpHTML, "[groupID]") {
 				nonCompositCntr++
 				grpHTML = strings.Replace(grpHTML, "[groupID]", fmt.Sprintf("%v", nonCompositCntr+1), -1)
@@ -973,7 +999,7 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 
 		// vertical distance at the end of groups
 		if loopIdx < len(p.Groups)-1 {
-			for i2 := 0; i2 < p.Groups[seqIdx].BottomVSpacers; i2++ {
+			for i2 := 0; i2 < p.Groups[grpIdx].BottomVSpacers; i2++ {
 				b.WriteString(vspacer16)
 			}
 		} else {
@@ -1141,6 +1167,23 @@ func (q *QuestionnaireT) KeysValues() (finishes, keys, vals []string) {
 		}
 	}
 	return
+}
+
+// UserIDInt retrieves the userID as int
+func (q *QuestionnaireT) UserIDInt() int {
+	userID, err := strconv.Atoi(q.UserID)
+	if err != nil {
+		if q.UserID == "" {
+			return 0
+		}
+		log.Panicf(
+			`questionnaire user ID %v
+			could not be parsed into integer
+			%v`,
+			q.UserID, err,
+		)
+	}
+	return userID
 }
 
 // ByName retrieves an input element by name

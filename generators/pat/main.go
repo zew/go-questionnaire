@@ -30,6 +30,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	q.Variations = 0
 	q.Variations = 4
 
+	userID := q.UserIDInt()
+
 	// page 0
 	{
 		page := q.AddPage()
@@ -43,19 +45,16 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			"de": "HERZLICH WILLKOMMEN ZU UNSERER STUDIE UND VIELEN DANK FÜR IHRE TEILNAHME!<br><br>",
 		}
 		gr.Desc = trl.S{
-			"de": `Wir sind Wissenschaftler des Zentrums für Europäische Wirtschaftsforschung (ZEW) in Mannheim 
-				sowie der Universitäten in Köln, Mannheim, Münster und Zürich. 
-				Ihre Teilnahme an unserer Umfrage, die aus drei Teilen besteht, 
-				wird nur wenige Minuten in Anspruch nehmen. 
-				Sie unterstützen damit die Wissenschaft.
-				Es gibt keine richtigen oder falschen Antworten. 
-				Bitte entscheiden Sie immer gemäß Ihren persönlichen Ansichten. 
-				Teilweise werden Ihre Entscheidungen andere Personen betreffen. 
-				Bitte beachten Sie, dass wir eine dieser Entscheidungen zufällig auswählen
-				 und genauso umsetzen werden, wie hier beschrieben. 
-				 Sie werden also mit Ihren Antworten tatsächlich auf andere Personen 
-				 Einfluss ausüben. 
-				 <b>Gleichzeitig werden alle Ihre Antworten vollständig anonym bleiben</b>.
+			"de": `
+<p>Dies ist eine Studie des Zentrums für €päische Wirtschaftsforschung (ZEW) in Mannheim sowie der Universitäten in Köln, Mannheim, Münster und Zürich. Ihre Teilnahme wird nur wenige Minuten in Anspruch nehmen und Sie unterstützen damit die Forschung zu Entscheidungsprozessen in der Politik.
+</p>
+
+<p>In dieser Studie treffen Sie acht Entscheidungen und beantworten sieben Fragen. Nach der Erhebung werden 10 % aller Teilnehmer zufällig ausgewählt. Von jedem ausgewählten Teilnehmer wird eine der acht Entscheidungen zufällig bestimmt und genau wie unten beschrieben umgesetzt (alle unten erwähnten Personen existieren wirklich und alle Auszahlungen werden wie beschrieben getätigt).
+</p>
+
+<p>In dieser Umfrage gibt es keine richtigen oder falschen Antworten. Bitte entscheiden Sie daher immer gemäß Ihren persönlichen Ansichten. Sie werden dabei vollständig anonym bleiben.
+</p>
+
 				 <br>
 				 <br>
 				`,
@@ -75,325 +74,79 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	// page 1
 	{
 		page := q.AddPage()
-		// page.Section = trl.S{"de": "TEIL 1"}
-		page.Label = trl.S{"de": "TEIL 1"}
+		page.Label = trl.S{"de": "TEIL 1a"}
+		page.Short = trl.S{"de": "TEIL 1a"}
 		page.Width = 60
 
 		{
-			gr := page.AddGroup()
-			gr.Cols = 1
-			gr.BottomVSpacers = 1
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.Name = "text01"
-				// inp.Label = trl.S{"de": "Dummy<br>"}
-				inp.Desc = trl.S{
-					"de": `In Teil 1 sind sie einem/r deutschen Staatsangehörigen 
-					im Alter von 18 bis 30 zugeordnet 
-					der-/die ebenfalls an dieser Studie teilnimmt. 
-					Wir bitten Sie zu entscheiden, welche Entscheidungsoptionen dieser Person 
-					zur Verfügung stehen. Die Person wird frei wählen können zwischen allen Optionen, 
-					die Sie zur Verfügung stellen; 
-					die anderen Optionen kann die Person nicht wählen. 
-					In der letzten Spalte können Sie darüber hinaus von Optionen abraten.`,
-				}
-			}
-		}
-
-		{
-			gr := page.AddRadioMatrixGroup(labelsVerfuegbarNicht, q1Names, q1Labels, 3)
-			gr.RandomizationGroup = 2 - 1
-			gr.BottomVSpacers = 1
-			gr.Cols = 6
-			gr.Width = 90
-
-			gr.Label = trl.S{
-				"de": "Frage [groupID]<br>",
-			}
-			gr.Desc = trl.S{
-				"de": `Wir werden eine Geldzahlung an die Person auslösen. 
-				Die Person kann zwischen den von Ihnen verfügbar gemachten Optionen 
-				für Zahlungen an zwei unterschiedlichen Zeitpunkten 
-				(sofort und 6 Monate nach der Studie) wählen.`,
-			}
-		}
-
-		{
-			gr := page.AddRadioMatrixGroup(labelsVerfuegbarNicht, q2Names, q2Labels, 3)
-			gr.RandomizationGroup = 2 - 1
-			gr.BottomVSpacers = 1
-			gr.Cols = 6
-			gr.Width = 90
-			gr.Label = trl.S{"de": "Frage [groupID]"}
-			gr.Desc = trl.S{"de": "&nbsp;"}
-		}
-
-		/* 		page := q.AddPage()
-		   		page.Label = trl.S{"de": "TEIL 1 - Sektion B"}
-		   		page.Label = trl.S{"de": "Sektion B"}
-		   		page.Width = 65
-		*/
-		{
-			gr := page.AddGroup()
-			gr.Cols = 1
-			gr.BottomVSpacers = 1
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.Name = "text04"
-				// inp.Label = trl.S{"de": "Dummy<br>"}
-				inp.Desc = trl.S{
-					"de": `In den nächsten zwei Entscheidungen bitten wir Sie, 
-					vorherzusagen, wie sich die Staatsangehörigen entscheiden werden:`,
-				}
-			}
-		}
-
-		{
-
 			gr := page.AddGroup()
 			gr.Cols = 1
 			gr.BottomVSpacers = 0
-
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.Name = "text05"
-				inp.Label = trl.S{"de": "Frage 3<br>"}
-				inp.Desc = trl.S{
-					"de": `
-					
-						Stellen Sie sich eine repräsentative Gruppe von 10 Personen vor, 
-						die sich frei zwischen den drei folgenden Optionen entscheiden.
-
-<br>
-
-<style>
-    .b1 {
-        display: inline-block;
-        margin: 0.7rem;
-        width: 10.4rem;
-        border: 1px solid grey;
-    }
-    .b2, .b3 {
-        padding: 0.2rem;
-    }
-    .b2 {
-        border-bottom: 1px solid grey;
-    }
-
-</style>
-
-
-<div class="b1">
-    <div class="b2">
-        Option A
-    </div>
-    <div class="b3">
-         <b>0</b> Euro in <b>1</b> Monat und<br>
-        <b>15</b> Euro in <b>7</b> Monaten
-    </div>
-</div>
-
-
-<div class="b1">
-    <div class="b2">
-        Option B
-    </div>
-
-    <div class="b3">
-        <b>3</b> Euro in <b>1</b> Monat und<br>
-        <b>7</b> Euro in <b>7</b> Monaten
-    </div>
-</div>
-
-
-<div class="b1">
-    <div class="b2">
-        Option C
-    </div>
-
-    <div class="b3">
-        <b>4</b> Euro in <b>1</b> Monat und<br>
-        <b>1</b> Euro in <b>7</b> Monaten
-    </div>
-</div>
-
-
-						
-					
-					
-					
-					`,
-				}
-			}
-
-		}
-
-		{
-			gr := page.AddGroup()
-			gr.Cols = 4
-			gr.Width = 55
-			gr.BottomVSpacers = 2
-
-			{
-				inp := gr.AddInput()
-				inp.Type = "number"
-				inp.Name = "q3_a"
-				inp.MaxChars = 2
-				inp.ColSpanLabel = 3
-				inp.ColSpanControl = 1
-				inp.Desc = trl.S{"de": "Wie viele wählen Option A? Ihre Antwort:"}
-				inp.Suffix = trl.S{"de": " &nbsp; von 10"}
-				inp.Validator = "inRange20"
-			}
-			{
-				inp := gr.AddInput()
-				inp.Type = "number"
-				inp.Name = "q3_b"
-				inp.MaxChars = 2
-				inp.ColSpanLabel = 3
-				inp.ColSpanControl = 1
-				inp.Desc = trl.S{"de": "Wie viele wählen Option B? Ihre Antwort:"}
-				inp.Suffix = trl.S{"de": " &nbsp; von 10"}
-				inp.Validator = "inRange20"
-			}
-			{
-				inp := gr.AddInput()
-				inp.Type = "number"
-				inp.Name = "q3_c"
-				inp.MaxChars = 2
-				inp.ColSpanLabel = 3
-				inp.ColSpanControl = 1
-				inp.Desc = trl.S{"de": "Wie viele wählen Option C? Ihre Antwort:"}
-				inp.Suffix = trl.S{"de": " &nbsp; von 10"}
-				inp.Validator = "inRange20"
-			}
-		}
-
-		{
-			gr := page.AddRadioGroupVertical("q4", q4Labels, 1)
-			gr.Cols = 1
-			gr.Width = 90
-			gr.Label = trl.S{
-				"de": "Frage 4<br>",
-			}
-			gr.Desc = trl.S{
-				"de": `Sollten alle Erwerbstätigen in Deutschland verpflichtend 
-				einen gewissen Anteil Teil Ihres Arbeitseinkommens 
-				für die private Altersvorsorge sparen, 
-				und falls ja, wieviel?`,
-			}
-
-		}
-
-		{
-			gr := page.AddGroup()
-			gr.Cols = 1
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.Name = "text03"
-				// inp.Label = trl.S{"de": "Dummy<br>"}
-				inp.Desc = trl.S{
-					"de": `<sup>1)</sup> 
-					Falls Sie hier ankreuzen werden Studienteilnehmende folgende Botschaft sehen: 
-					“Ein gewählter Volksvertreter oder eine gewählte Volksvertreterin der 
-					oder die an dieser Studie teilgenommen hat, rät Ihnen davon ab, 
-					diese Alternative zu wählen”.
-					`,
-				}
-			}
-		}
-
-	}
-
-	//  page 2
-	{
-		page := q.AddPage()
-		// page.Section = trl.S{"de": "TEIL 2"}
-		page.Label = trl.S{"de": "TEIL 2a"}
-		page.Width = 60
-
-		{
-			gr := page.AddGroup()
-			gr.Cols = 1
-			gr.BottomVSpacers = 1
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
 				inp.Name = "text01"
 				// inp.Label = trl.S{"de": "Dummy<br>"}
-				inp.Desc = trl.S{"de": `Jede der sechs Bundestagsparteien ist mit einer parteinahen Stiftung verbunden.<sup>2</sup>  
-				In diesem Teil der Studie geht es um eine Spende in Höhe von 30 EURO, 
-				welche <i>eine</i> dieser Stiftungen erhalten wird. 
-				Wir haben fünf deutsche Staatsangehörige befragt, 
-				welche der Stiftungen die Spende erhalten soll. 
-				Sie entscheiden nun darüber, 
-				auf welche Weise die Wünsche der fünf Befragten 
-				in eine finale Entscheidung zusammengefasst werden sollen.`}
-			}
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.Name = "text01"
-				// inp.Label = trl.S{"de": "Dummy<br>"}
-				inp.Desc = trl.S{"de": `Dafür zeigt Ihnen jede der nächsten sechs Fragen die möglichen Wünsche von fünf Befragten. 
-				Die Wünsche in <i>einer</i> dieser Fragen stammen von einer Gruppe, 
-				die wir tatsächlich bereits befragt haben. 
-				Wir werden die Entscheidung ausführen, die Sie in dieser Frage treffen. 
-				Allerdings wissen Sie nicht, welche der Fragen das ist. 
-				Die fünf Befragten wurden aus einer Stichprobe gezogen, 
-				in welcher es jeweils gleich viele Personen gab, 
-				die politisch rechts, mittig, oder links stehen.
-				
-				<br>
-				<br>
-				
-				<b>Entscheidung 1</b>
-				<br>
-				<br>
-
-				Die Stiftungen sind anonymisiert; die Auswahl von drei Stiftungen 
-				aus den sechs Stiftungen erfolgte zufällig. 
-				Sie können nun entscheiden, ob Sie beispielsweise eher eine Kompromisslösung 
-				oder eher eine kontroverse Mehrheitslösung implementieren, 
-				aber sie können nicht angeben, ob Sie eine bestimmte Stiftung bevorzugen. 
+				inp.Desc = trl.S{"de": `
+				<p><b>
+				Im Folgenden geht es um eine Spende von 30 €, die <i>eine</i> dieser drei Stiftungen erhalten soll:
+				</b></p>
 
 				<br>
-				<br>
-				Die Wünsche der fünf Befragten werden wie folgt grafisch dargestellt. 
 
+				<table>
+				<tr>
+					<td>Politisch links</td>
+					<td>Politische Mitte</td>
+					<td>Politisch konservativ</td>
+				<tr>
+				<tr>
+					<td><b>Hans-Böckler-Stiftung</b></td>
+					<td><b>Bund der Steuerzahler Deutschland e. V.</b></td>
+					<td><b>Ludwig-Erhard-Stiftung</b></td>
+				<tr>
+				</table>
 
+				<p>
+				Für jede Ihrer ersten sechs Entscheidungen zeigen wir Ihnen die Präferenzen fünf deutscher Staatsangehöriger darüber, welche der drei Stiftungen die Spende erhalten soll.  Sie entscheiden, wie die Präferenzen der fünf Personen in eine gemeinsame Entscheidung zusammengefasst werden.
+				</p>
+
+				<p>
+				Die Präferenzen stammen von fünf Personen, die an einer Vorstudie teilgenommen haben<sup>1)</sup>.  Diese fünf Personen wurden aus einer Stichprobe gezogen, in der sich gleich viele Personen politisch links, in der Mitte oder als konservativ einordnen. Jede Person wurde einzeln befragt, welche der drei Stiftungen sie als am besten, mittel, und am schlechtesten erachtet. Den Personen wurde mitgeteilt, dass ihre Präferenzen zusammen mit den Präferenzen von vier anderen Personen an einen zukünftigen Teilnehmer der Studie gegeben werden, der die Präferenzen in eine Entscheidung zusammenfasst.
+				</p>
 				`}
+
 			}
-			// {
-			// 	inp := gr.AddInput()
-			// 	inp.Type = "checkbox"
-			// 	inp.Name = "checktest"
-			// }
-			// {
-			// 	inp := gr.AddInput()
-			// 	inp.Type = "radiogroup"
-			// 	inp.Name = "radiotest"
-			// 	rd1 := inp.AddRadio()
-			// 	rd2 := inp.AddRadio()
-			// 	_, _ = rd1, rd2
-			// }
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Name = "text01"
+				// inp.Label = trl.S{"de": "Dummy<br>"}
+				inp.Desc = trl.S{"de": fmt.Sprintf(`
+				In <b>Entscheidung 1</b> wird Stiftung A von zwei Personen 
+				
+				(<img src='%v' style='display: inline-block; height: 1.0rem;
+					position: relative; top: 0.2rem; left: 0.1rem;
+				'> ) 
+				
+				mittel eingestuft und von drei weiteren am schlechtesten. Stiftung B wird von drei Personen am besten eingestuft und von zweien am schlechtesten, und so weiter.
+				`, cfg.Pref("/img/person.png")),
+				}
+			}
+
 		}
 
 		{
 			gr := page.AddGroup()
 			gr.Cols = 1
-			gr.BottomVSpacers = 1
+			gr.BottomVSpacers = 0
 			gr.RandomizationGroup = 1 - 1
 			{
 				inp := gr.AddInput()
 				inp.Type = "composit"
 				inp.DynamicFunc = "PoliticalFoundations__0"
 			}
-			_, inputNames, _ := qst.PoliticalFoundations(nil, -1, 0)
+			_, inputNames, _ := qst.PoliticalFoundations(nil, userID, 0, 0)
 			for _, inpName := range inputNames {
 				inp := gr.AddInput()
 				inp.Type = "composit-scalar"
@@ -411,21 +164,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Type = "textblock"
 				inp.Name = "text01"
 				inp.Desc = trl.S{"de": `
-				
-				In diesem Fall mögen zwei Befragte Stiftung A am meisten, drei weitere mögen Stiftung C am meisten, und niemand der fünf mag Stiftung B am meisten. Dafür mögen zwei Staatsangehörige Stiftung B am zweitmeisten, und niemand mag Stiftung C am zweitmeisten. Und so weiter.  				
-				<br>
-				<br>
-				
-				Entscheiden Sie bitte nun, welche Stiftung die Spende erhalten soll. Dafür setzen Sie bitte ein Kreuz in die Spalte „Auswahl“ bei jener Alternative, von der Sie denken, dass sie die Wünsche der Befragten am besten reflektiert. Falls sie eine zweite Alternative genauso gut finden wie die ausgewählte Alternative, setzen Sie bitte ein Kreuz in die Spalte „Genauso gut“. 
-				<br>
-
-				<span style='display: inline-block; margin: 2rem;'>
-				<i>
-					Es gibt keine richtigen oder falschen Antworten; teilen Sie uns bitte einfach mit, welche Stiftung angesichts der Wünsche der Befragten die Spende erhalten soll. 
-				</i>
-				</span>
-
-
+				Die Stiftungen wurden anonymisiert und in eine zufällige Reihenfolge gebracht, so dass Sie nicht wissen, um welche Stiftung es sich bei den Stiftungen A, B und C handelt. Sie entscheiden also nicht darüber, welche Stiftung die 30 € erhält. Stattdessen entscheiden Sie, wie die Präferenzen der Gruppenmitglieder in eine Entscheidung zusammengefasst werden und ob Sie beispielsweise eher eine Kompromisslösung oder eher eine Mehrheitslösung für Ihre Gruppe bevorzugen.
 				`}
 			}
 		}
@@ -439,14 +178,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Name = "text03"
 				// inp.Label = trl.S{"de": "Dummy<br>"}
 				inp.Desc = trl.S{
-					"de": `<sup>2)</sup> 
-					Die Stiftungen und zugehörige Parteien sind: Friedrich-Ebert-Stiftung (SPD, 1954), 
-					Konrad-Adenauer-Stiftung (CDU, 1955), 
-					Friedrich-Naumann-Stiftung für die Freiheit (FDP, 1958), 
-					Rosa-Luxemburg-Stiftung (Die Linke, 1990), 
-					Heinrich-Böll-Stiftung (Grüne, 1996), 
-					Desiderius-Erasmus-Stiftung (AfD, 2017) 
-					(Liste geordnet nach Gründungsjahr).
+					"de": `<sup>1)</sup>
+				Nur in einer der sechs Entscheidungen stammen die Präferenzen von den Personen, die wir befragt haben, und nur diese Entscheidung kann umgesetzt werden. In den anderen Entscheidungen wurden die Präferenzen von uns zusammengestellt. Da Sie nicht wissen, in welcher Entscheidung die Präferenzen von den Befragten stammen, sollten Sie in allen sechs Entscheidungen so entscheiden, als seien die jeweiligen Präferenzen von der echten Gruppe.
 					`,
 				}
 			}
@@ -455,11 +188,12 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 	}
 
+	// page 2
 	{
 
 		page := q.AddPage()
-		// page.Section = trl.S{"de": "TEIL 2"}
-		page.Label = trl.S{"de": "TEIL 2b"}
+		page.Label = trl.S{"de": "TEIL 1b"}
+		page.Short = trl.S{"de": "TEIL 1b"}
 		page.Width = 60
 
 		{
@@ -471,8 +205,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Type = "textblock"
 				inp.Name = "text01"
 				inp.Desc = trl.S{"de": `
-				
-				Bitte entscheiden Sie nun auch für die folgenden Fälle, welche Stiftung die Spende erhalten soll. Eine der Entscheidungen 1 – 6 zeigt die echten Wünsche der fünf Befragten; wir werden die entsprechende Entscheidung ausführen. 
+
+				Bitte entscheiden Sie nun auch für die folgenden Fälle, welche Stiftung die Spende erhalten soll. Eine der Entscheidungen 1 – 6 zeigt die echten Wünsche der fünf Befragten; wir werden die entsprechende Entscheidung ausführen.
 
 				`}
 			}
@@ -491,7 +225,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 					inp.Type = "composit"
 					inp.DynamicFunc = fmt.Sprintf("PoliticalFoundations__%v", i)
 				}
-				_, inputNames, _ := qst.PoliticalFoundations(nil, -1, i)
+				_, inputNames, _ := qst.PoliticalFoundations(nil, userID, i, 0)
 				for _, inpName := range inputNames {
 					inp := gr.AddInput()
 					inp.Type = "composit-scalar"
@@ -556,7 +290,239 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	// page 3
 	{
 		page := q.AddPage()
-		// page.Section = trl.S{"de": "TEIL 3"}
+		// p.Section = trl.S{"de": "TEIL 1"}
+		page.Label = trl.S{"de": "TEIL 1"}
+		page.Width = 60
+
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 1
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Name = "text01"
+				// inp.Label = trl.S{"de": "Dummy<br>"}
+				inp.Desc = trl.S{
+					"de": `In Teil 1 sind sie einem/r deutschen Staatsangehörigen
+					im Alter von 18 bis 30 zugeordnet
+					der-/die ebenfalls an dieser Studie teilnimmt.
+					Wir bitten Sie zu entscheiden, welche Entscheidungsoptionen dieser Person
+					zur Verfügung stehen. Die Person wird frei wählen können zwischen allen Optionen,
+					die Sie zur Verfügung stellen;
+					die anderen Optionen kann die Person nicht wählen.
+					In der letzten Spalte können Sie darüber hinaus von Optionen abraten.`,
+				}
+			}
+		}
+
+		{
+			gr := page.AddRadioMatrixGroup(labelsVerfuegbarNicht, q1Names, q1Labels, 3)
+			gr.RandomizationGroup = 2 - 1
+			gr.BottomVSpacers = 1
+			gr.Cols = 6
+			gr.Width = 90
+
+			gr.Label = trl.S{
+				"de": "Frage [groupID]<br>",
+			}
+			gr.Desc = trl.S{
+				"de": `Wir werden eine Geldzahlung an die Person auslösen.
+				Die Person kann zwischen den von Ihnen verfügbar gemachten Optionen
+				für Zahlungen an zwei unterschiedlichen Zeitpunkten
+				(sofort und 6 Monate nach der Studie) wählen.`,
+			}
+		}
+
+		{
+			gr := page.AddRadioMatrixGroup(labelsVerfuegbarNicht, q2Names, q2Labels, 3)
+			gr.RandomizationGroup = 2 - 1
+			gr.BottomVSpacers = 1
+			gr.Cols = 6
+			gr.Width = 90
+			gr.Label = trl.S{"de": "Frage [groupID]"}
+			gr.Desc = trl.S{"de": "&nbsp;"}
+		}
+
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 1
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Name = "text04"
+				// inp.Label = trl.S{"de": "Dummy<br>"}
+				inp.Desc = trl.S{
+					"de": `In den nächsten zwei Entscheidungen bitten wir Sie,
+					vorherzusagen, wie sich die Staatsangehörigen entscheiden werden:`,
+				}
+			}
+		}
+
+		{
+
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 0
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Name = "text05"
+				inp.Label = trl.S{"de": "Frage 3<br>"}
+				inp.Desc = trl.S{
+					"de": `
+
+						Stellen Sie sich eine repräsentative Gruppe von 10 Personen vor,
+						die sich frei zwischen den drei folgenden Optionen entscheiden.
+
+<br>
+
+<style>
+    .b1 {
+        display: inline-block;
+        margin: 0.7rem;
+        width: 10.4rem;
+        border: 1px solid grey;
+    }
+    .b2, .b3 {
+        padding: 0.2rem;
+    }
+    .b2 {
+        border-bottom: 1px solid grey;
+    }
+
+</style>
+
+
+<div class="b1">
+    <div class="b2">
+        Option A
+    </div>
+    <div class="b3">
+         <b>0</b> € in <b>1</b> Monat und<br>
+        <b>15</b> € in <b>7</b> Monaten
+    </div>
+</div>
+
+
+<div class="b1">
+    <div class="b2">
+        Option B
+    </div>
+
+    <div class="b3">
+        <b>3</b> € in <b>1</b> Monat und<br>
+        <b>7</b> € in <b>7</b> Monaten
+    </div>
+</div>
+
+
+<div class="b1">
+    <div class="b2">
+        Option C
+    </div>
+
+    <div class="b3">
+        <b>4</b> € in <b>1</b> Monat und<br>
+        <b>1</b> € in <b>7</b> Monaten
+    </div>
+</div>
+
+
+
+
+
+
+					`,
+				}
+			}
+
+		}
+
+		{
+			gr := page.AddGroup()
+			gr.Cols = 4
+			gr.Width = 55
+			gr.BottomVSpacers = 2
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "number"
+				inp.Name = "q3_a"
+				inp.MaxChars = 2
+				inp.ColSpanLabel = 3
+				inp.ColSpanControl = 1
+				inp.Desc = trl.S{"de": "Wie viele wählen Option A? Ihre Antwort:"}
+				inp.Suffix = trl.S{"de": " &nbsp; von 10"}
+				inp.Validator = "inRange20"
+			}
+			{
+				inp := gr.AddInput()
+				inp.Type = "number"
+				inp.Name = "q3_b"
+				inp.MaxChars = 2
+				inp.ColSpanLabel = 3
+				inp.ColSpanControl = 1
+				inp.Desc = trl.S{"de": "Wie viele wählen Option B? Ihre Antwort:"}
+				inp.Suffix = trl.S{"de": " &nbsp; von 10"}
+				inp.Validator = "inRange20"
+			}
+			{
+				inp := gr.AddInput()
+				inp.Type = "number"
+				inp.Name = "q3_c"
+				inp.MaxChars = 2
+				inp.ColSpanLabel = 3
+				inp.ColSpanControl = 1
+				inp.Desc = trl.S{"de": "Wie viele wählen Option C? Ihre Antwort:"}
+				inp.Suffix = trl.S{"de": " &nbsp; von 10"}
+				inp.Validator = "inRange20"
+			}
+		}
+
+		{
+			gr := page.AddRadioGroupVertical("q4", q4Labels, 1)
+			gr.Cols = 1
+			gr.Width = 90
+			gr.Label = trl.S{
+				"de": "Frage 4<br>",
+			}
+			gr.Desc = trl.S{
+				"de": `Sollten alle Erwerbstätigen in Deutschland verpflichtend
+				einen gewissen Anteil Teil Ihres Arbeitseinkommens
+				für die private Altersvorsorge sparen,
+				und falls ja, wieviel?`,
+			}
+
+		}
+
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Name = "text03"
+				// inp.Label = trl.S{"de": "Dummy<br>"}
+				inp.Desc = trl.S{
+					"de": `<sup>1)</sup>
+					Falls Sie hier ankreuzen werden Studienteilnehmende folgende Botschaft sehen:
+					“Ein gewählter Volksvertreter oder eine gewählte Volksvertreterin der
+					oder die an dieser Studie teilgenommen hat, rät Ihnen davon ab,
+					diese Alternative zu wählen”.
+					`,
+				}
+			}
+		}
+
+	}
+
+	// page 4
+	{
+		page := q.AddPage()
+		// p.Section = trl.S{"de": "TEIL 3"}
 		page.Label = trl.S{"de": "TEIL 3"}
 		page.Width = 55
 
@@ -572,10 +538,10 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			}
 			gr.Desc = trl.S{
 				"de": `
-				Sind Sie im Vergleich zu Anderen im Allgemeinen bereit, 
-				heute auf etwas zu verzichten, 
-				um in der Zukunft davon zu profitieren, 
-				oder sind Sie im Vergleich zu Anderen dazu nicht bereit? 
+				Sind Sie im Vergleich zu Anderen im Allgemeinen bereit,
+				heute auf etwas zu verzichten,
+				um in der Zukunft davon zu profitieren,
+				oder sind Sie im Vergleich zu Anderen dazu nicht bereit?
 				Bitte klicken Sie ein Kästchen auf der Skala an.
 				`,
 			}
@@ -593,9 +559,9 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			}
 			gr.Desc = trl.S{
 				"de": `
-				Wie schätzen Sie sich persönlich ein? 
-				Sind Sie im Allgemeinen ein risikobereiter Mensch oder versuchen Sie, 
-				Risiken zu vermeiden? 
+				Wie schätzen Sie sich persönlich ein?
+				Sind Sie im Allgemeinen ein risikobereiter Mensch oder versuchen Sie,
+				Risiken zu vermeiden?
 				Bitte klicken Sie ein Kästchen auf der Skala an.
 				`,
 			}
@@ -613,8 +579,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			}
 			gr.Desc = trl.S{
 				"de": `
-				Wie schätzen Sie Ihre Bereitschaft mit anderen zu teilen, 
-				ohne dafür eine Gegenleistung zu erwarten? 
+				Wie schätzen Sie Ihre Bereitschaft mit anderen zu teilen,
+				ohne dafür eine Gegenleistung zu erwarten?
 				Bitte klicken Sie ein Kästchen auf der Skala an.
 				`,
 			}

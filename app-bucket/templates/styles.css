@@ -549,6 +549,11 @@ select:-moz-focusring {
 /*
 	select-inputs with long labels should not stretch their container
 	stackoverflow.com/questions/2591796
+
+	2021-02:         
+	all it takes to preven long options from stretching the select:
+        max-width: 80px;
+
 */
 select {
 	max-width: 99%      !important;

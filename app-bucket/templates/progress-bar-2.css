@@ -1,0 +1,155 @@
+/* 	progress bar
+	  https://fribly.com/2015/01/01/scalable-responsive-progress-bar/
+*/
+
+.progress *:after, .progress *:before {
+  box-sizing: border-box;
+}
+
+
+ol.progress {
+
+  position: relative;
+  width: 100%;
+
+  margin:  0;
+  padding: 0;
+  padding: 0.4em 0;
+
+  display:         inline-flex;
+  flex-direction:  row;
+  flex-wrap:       nowrap;
+  justify-content: center;         /* main  axis - horizontally */
+  justify-content: space-between;
+  align-items:     center;         /* cross axis - vertically */
+  align-items:     baseline;
+  align-items:     flex-start;     /* 'top' */
+  align-items:     stretch;
+
+  color: var(--clr-pri);
+
+
+
+  /* border: inherit; */
+
+}
+
+.progress > li {
+
+  z-index: 13;
+  position: relative;
+
+  margin: 0;
+  padding: 0.8 0.2em;
+
+  flex: 1;
+  flex-shrink: 1;
+  flex-grow:   1;
+  flex-basis:  auto; /* based on content width */
+  flex-basis:  0%;   /* equal, wider if necessary  */
+
+  list-style:  none;
+  font-size:   0.8rem;
+  /* line-height: 3.05em; */ /* => progress-bar-label */
+  text-align:  left;
+
+  background-color:   rgba(255, 165, 0, 0.23);
+  /* border:  2px solid  rgba(255, 165, 0, 0.43); */
+  white-space: nowrap;
+  /* clip-path: polygon(0 0, 87% 0, 96% 50%, 87% 100%, 0% 100%); */
+  clip-path: polygon(0 0, calc(100% - 1em) 0, calc(100% - 0.5em) 50%, calc(100% - 1em) 100%, 0% 100%);
+  /* transform: rotate(180deg); */
+
+  
+
+}
+
+.progress-bar-label {
+
+  z-index: 14;
+  position: relative;
+  display:  inline-block;
+  left: 0.5em;
+  margin-right: 2em;
+
+  line-height: 95%;
+  line-height: 120%;
+
+  vertical-align: top;
+}
+
+.progress > li:before,
+.progress > li:after {
+
+  line-height: 2.05em;
+  text-align: center;
+  font-size:  1.0rem;
+}
+
+
+/* round bullet with inscribed page number */
+.progress > li:before {
+
+  z-index: 12;
+  position: relative;
+  display: inline-block;
+  left: 0.2em;
+
+  width:  2em;
+  height: 2em;
+
+  margin: 0 auto;
+  margin-left: 0;
+  margin-bottom: 0.25em;
+  border-radius: 100%;
+
+  background-color: var(--clr-sec-drk2);
+
+  content: attr(data-step);
+
+}
+
+/* stripe between bullets */
+.progress > li:after {
+}
+
+/* suppress last stripe */
+.progress > li:last-child:after {
+  /* display: none; */
+}
+.progress > li:last-child {
+  /* flex-grow:   0.1; */
+  clip-path: polygon(0 0, 87% 0, 87% 50%, 87% 100%, 0% 100%);
+  clip-path: polygon(0 0, calc(100% - 0.1em) 0, calc(100% - 0.05em) 50%, calc(100% - 0.1em) 100%, 0% 100%);
+}
+
+
+/* completed pages */
+.progress > li.is-complete {
+  color: #989898;
+}
+.progress > li.is-complete:before,
+.progress > li.is-complete:after
+{
+  color: #FFF;
+  background: #989898;
+}
+
+
+/* active page */
+.progress > li.is-active {
+  color: #0069B4;
+  color: #555;
+}
+.progress > li.is-active:before {
+  color: #FFF;
+  background: #0069B4;
+  background: #555;
+}
+
+/* Needed for IE8 */
+.progress__last:after {
+  display: none !important;
+}
+
+

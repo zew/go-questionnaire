@@ -11,6 +11,15 @@ var implementedTypes = map[string]interface{}{
 	"textarea": nil,
 	"checkbox": nil, // A standalone checkbox - as a group, see below
 
+	/*
+		checkbox or text inputs have *distinct* names,
+		whereas radio*group* and checkbox*group*
+		have the same name and also a single response value.
+
+		radio*group* and checkbox*group*
+		  are similar to
+		select       and select[multiple=true]
+	*/
 	// radiogroup and checkboxgroup -  all inputs have the same input name - but different values
 	"radiogroup":    nil, // A standalone radio makes no sense; only a radiogroup.
 	"checkboxgroup": nil, // checkboxgroup has no *sensible* use case. There was an 'amenities' array in another app, with encodings: 4 for bath, 8 for balcony... They should better be designed as independent checkboxes bath and balcony. I cannot think of any useful 'additive flags', and those would have to be added and decoded server side. We keep the type, but untested.

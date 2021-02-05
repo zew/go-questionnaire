@@ -194,6 +194,24 @@ func (q *QuestionnaireT) Validate() error {
 	names := map[string]int{}
 	for i1 := 0; i1 < len(q.Pages); i1++ {
 		for i2 := 0; i2 < len(q.Pages[i1].Groups); i2++ {
+
+			if q.Pages[i1].Groups[i2].HasComposit() {
+				compFuncNameWithParamSet := q.Pages[i1].Groups[i2].Inputs[0].DynamicFunc
+				cF, paramSetIdx := validateComposit(i1, i2, compFuncNameWithParamSet)
+				_, _, err := cF(q, q.UserIDInt(), i2, paramSetIdx)
+				if err != nil {
+					return fmt.Errorf(
+						`Page %v - Group %v - Composit func %v
+						err %v
+						`,
+						i1, i2,
+						compFuncNameWithParamSet,
+						err,
+					)
+				}
+
+			}
+
 			for i3 := 0; i3 < len(q.Pages[i1].Groups[i2].Inputs); i3++ {
 
 				s := fmt.Sprintf("Page %v - Group %v - Input %v: ", i1, i2, i3)
@@ -251,13 +269,13 @@ func (q *QuestionnaireT) ComputeDynamicContent(idx int) error {
 		for i2 := 0; i2 < len(q.Pages[i1].Groups); i2++ {
 			for i3 := 0; i3 < len(q.Pages[i1].Groups[i2].Inputs); i3++ {
 				if q.Pages[i1].Groups[i2].Inputs[i3].Type == "dynamic" {
-					i := q.Pages[i1].Groups[i2].Inputs[i3]
-					if _, ok := dynFuncs[i.DynamicFunc]; !ok {
-						return fmt.Errorf("'%v' points to dynamic func '%v()' - which does not exist or is not registered", i.Name, i.DynamicFunc)
+					inp := q.Pages[i1].Groups[i2].Inputs[i3]
+					if _, ok := dynFuncs[inp.DynamicFunc]; !ok {
+						return fmt.Errorf("'%v' points to dynamic func '%v()' - which does not exist or is not registered", inp.Name, inp.DynamicFunc)
 					}
-					str, err := dynFuncs[i.DynamicFunc](q)
+					str, err := dynFuncs[inp.DynamicFunc](q)
 					if err != nil {
-						return fmt.Errorf("'%v' points to dynamic func '%v()' - which returned error %v", i.Name, i.DynamicFunc, err)
+						return fmt.Errorf("'%v' points to dynamic func '%v()' - which returned error %v", inp.Name, inp.DynamicFunc, err)
 					}
 					q.Pages[i1].Groups[i2].Inputs[i3].Label = trl.S{q.LangCode: str}
 					// log.Printf("'%v' points to dynamic func '%v()' - which returned '%v'", i.Name, i.DynamicFunc, str)

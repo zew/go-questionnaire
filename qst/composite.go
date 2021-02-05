@@ -7,6 +7,7 @@ package qst
 //
 // parameters
 //   dynamic questionnaire - filled with response values
+//   userID
 //   dynamic sequence - from random order
 //   param set index -  statically determined - from a slice of param sets
 //
@@ -14,7 +15,7 @@ package qst
 //   rendered HTML of the group
 //   slice of input names
 //   error
-type compositFuncT func(*QuestionnaireT, int, int) (string, []string, error)
+type compositFuncT func(*QuestionnaireT, int, int, int) (string, []string, error)
 
 var compositeFuncs = map[string]compositFuncT{
 	"PoliticalFoundations": PoliticalFoundations,

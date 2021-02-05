@@ -1,4 +1,4 @@
-/* 	progress bar 
+/* 	progress bar
 	  https://fribly.com/2015/01/01/scalable-responsive-progress-bar/
 */
 
@@ -19,14 +19,12 @@ ol.progress {
   display:         inline-flex;
   flex-direction:  row;
   flex-wrap:       nowrap;
-  justify-content: center;
+  justify-content: center;         /* main  axis - horizontally */
   justify-content: space-between;
-  align-items:     center;         /* cross axis */
+  align-items:     center;         /* cross axis - vertically */
   align-items:     baseline;
-  align-items:     flex-start;
+  align-items:     flex-start;     /* 'top' */
 
-
-  
   color: var(--clr-pri);
 
 
@@ -44,36 +42,33 @@ ol.progress {
 
   flex: 1;
   flex-shrink: 1;
-  flex-grow:   1;    /* inherit => 0 */
-  flex-basis:  100%; 
-  flex-basis:  auto;
-  flex-basis:  2%; 
-  flex-basis:  0%;   
+  flex-grow:   1;
+  flex-basis:  auto; /* based on content width */
+  flex-basis:  0%;   /* equal, wider if necessary  */
 
-  list-style: none;
+  list-style:  none;
   font-size:   0.8rem;
   line-height: 3.05em; /* => progress-bar-label */
-  text-align: center;
-  text-align: left;
+  text-align:  left;
 
 
 }
 
 .progress-bar-label {
-  
-  display: inline-block; 
+
   position: relative;
+  display: inline-block;
   left: -0.4em;
 
-  line-height: 95%;  
-  line-height: 120%; 
+  line-height: 95%;
+  line-height: 120%;
 
   vertical-align: top;
 }
 
 .progress > li:before,
 .progress > li:after {
-  
+
   line-height: 2.05em;
   text-align: center;
   font-size:  1.0rem;
@@ -93,9 +88,9 @@ ol.progress {
   margin-left: 0;
   margin-bottom: 0.25em;
   border-radius: 100%;
-  
+
   background-color: var(--clr-sec-drk2);
-  
+
   content: attr(data-step);
 
 }
@@ -124,7 +119,7 @@ ol.progress {
   display: none;
 }
 .progress > li:last-child {
-  flex-grow:   0.1;    
+  flex-grow:   0.1;
 }
 
 
@@ -132,7 +127,7 @@ ol.progress {
 .progress > li.is-complete {
   color: #989898;
 }
-.progress > li.is-complete:before, 
+.progress > li.is-complete:before,
 .progress > li.is-complete:after
 {
   color: #FFF;

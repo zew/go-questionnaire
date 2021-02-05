@@ -9,60 +9,33 @@ import (
 	"github.com/zew/go-questionnaire/cfg"
 )
 
-type politicalFoundationsParamsT struct {
-	ID   int
-	Ppls [][]int
+type preferences3x3T struct {
+	ID   int     // Frage-ID - not the sequence
+	Ppls [][]int // three cols - three rows  =>  0...5 person images
 }
 
-var politicalFoundationsParams = []politicalFoundationsParamsT{
-	{
-		ID: 0, // Frage 1
-		Ppls: [][]int{
-			{2, 3, 0},
-			{0, 2, 3},
-			{3, 0, 2},
-		},
-	},
-	{
-		ID: 1, // Frage 2
-		Ppls: [][]int{
-			{3, 0, 2},
-			{0, 3, 2},
-			{2, 2, 1},
-		},
-	},
-	{
-		ID: 2, // Frage 3
-		Ppls: [][]int{
-			{2, 0, 3},
-			{0, 5, 0},
-			{3, 0, 2},
-		},
-	},
-	{
-		ID: 3, // Frage 4
-		Ppls: [][]int{
-			{1, 0, 4},
-			{1, 4, 0},
-			{3, 1, 2},
-		},
-	},
-	{
-		ID: 4, // Frage 5
-		Ppls: [][]int{
-			{3, 0, 2},
-			{2, 1, 2},
-			{0, 4, 1},
-		},
-	},
-	{
-		ID: 5, // Frage 6
-		Ppls: [][]int{
-			{1, 0, 4},
-			{4, 0, 1},
-			{0, 5, 0},
-		},
-	},
+var fourPermutationsOf6x3x3 = make([][]preferences3x3T, 4)
+
+var reshuffle6basedOn16 = [][]int{
+	{1, 2, 3, 4, 5, 6},
+	{1, 2, 3, 4, 5, 6},
+	{1, 2, 3, 4, 5, 6},
+	{1, 2, 3, 4, 5, 6},
+
+	{6, 5, 4, 3, 2, 1},
+	{6, 5, 4, 3, 2, 1},
+	{6, 5, 4, 3, 2, 1},
+	{6, 5, 4, 3, 2, 1},
+
+	{6, 1, 5, 2, 4, 3},
+	{6, 1, 5, 2, 4, 3},
+	{6, 1, 5, 2, 4, 3},
+	{6, 1, 5, 2, 4, 3},
+
+	{3, 4, 2, 5, 1, 6},
+	{3, 4, 2, 5, 1, 6},
+	{3, 4, 2, 5, 1, 6},
+	{3, 4, 2, 5, 1, 6},
 }
 
 // PoliticalFoundations creates
@@ -71,25 +44,32 @@ var politicalFoundationsParams = []politicalFoundationsParamsT{
 // politicalFoundationsParamsT.ID for rendering the numbering;
 // politicalFoundationsParamsT.Ppls for rendering icons of peoples to certain positions;
 // return 1 is the HTML code
-// return 2 are the input names, based in paramSetIdx;
-func PoliticalFoundations(q *QuestionnaireT, renderSeq int, paramSetIdx int) (string, []string, error) {
+// return 2 are the input names, based on seq0to5;
+func PoliticalFoundations(q *QuestionnaireT, userID, seq0to5, paramSetIdx int) (string, []string, error) {
+
+	zeroTo15 := userID % 16
+
+	oneOfSix := reshuffle6basedOn16[zeroTo15][seq0to5] - 1
+
+	oneOfFour := zeroTo15 % 4
+
 	return politicalFoundations(
 		q,
-		renderSeq,
-		politicalFoundationsParams[paramSetIdx].ID,
-		politicalFoundationsParams[paramSetIdx].Ppls,
+		seq0to5, // visible question seq 1...6 on the questionnaire
+		fmt.Sprintf("%v_%v", oneOfFour+1, oneOfSix+1), // questionID - fourPermutationsOf6x3x3[oneOfFour][oneOfSix] -
+		fourPermutationsOf6x3x3[oneOfFour][oneOfSix].Ppls,
 	)
 }
 
-func politicalFoundations(q *QuestionnaireT, renderSeq, sequenceID int, ppls [][]int) (string, []string, error) {
+func politicalFoundations(q *QuestionnaireT, seq0to5 int, questionID string, ppls [][]int) (string, []string, error) {
 
 	//
 	//
 	inputNames := []string{}
-	name := fmt.Sprintf("dec%v_r", sequenceID)
+	name := fmt.Sprintf("dec%v_r", questionID)
 	inputNames = append(inputNames, name)
 	for i := 0; i < 3; i++ {
-		name := fmt.Sprintf("dec%v_r%v", sequenceID, i+1)
+		name := fmt.Sprintf("dec%v_r%v", questionID, i+1)
 		inputNames = append(inputNames, name)
 	}
 
@@ -106,7 +86,7 @@ func politicalFoundations(q *QuestionnaireT, renderSeq, sequenceID int, ppls [][
 		if inp.Response != "" && inp.Response != "0" {
 			idx, _ := strconv.Atoi(inp.Response)
 			idx--
-			log.Printf(" sequenceID %v - inputNames[0] %v - inp.Response %v - idx %v", sequenceID, inputNames[0], inp.Response, idx)
+			log.Printf(" sequenceID %v - inputNames[0] %v - inp.Response %v - idx %v", questionID, inputNames[0], inp.Response, idx)
 			inputValsOptiongroup[idx] = " checked='checked' "
 		}
 	}
@@ -202,7 +182,7 @@ func politicalFoundations(q *QuestionnaireT, renderSeq, sequenceID int, ppls [][
 
 </div>
 	`,
-		renderSeq+1,
+		seq0to5+1,
 		imgs[ppls[0][0]], imgs[ppls[0][1]], imgs[ppls[0][2]],
 		inputValsOptiongroup[0], inputValsCheckbox[0],
 		imgs[ppls[1][0]], imgs[ppls[1][1]], imgs[ppls[1][2]],
@@ -211,7 +191,7 @@ func politicalFoundations(q *QuestionnaireT, renderSeq, sequenceID int, ppls [][
 		inputValsOptiongroup[2], inputValsCheckbox[2],
 	)
 
-	rep := fmt.Sprintf(`name="dec%v`, sequenceID)
+	rep := fmt.Sprintf(`name="dec%v`, questionID)
 	s = strings.ReplaceAll(s, `name="`, rep)
 
 	s = strings.ReplaceAll(s, "/survey/", cfg.PrefTS())

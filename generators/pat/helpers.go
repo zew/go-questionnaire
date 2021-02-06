@@ -86,3 +86,14 @@ var labelsOneToTen3 = []trl.S{
 	{"de": "9"},
 	{"de": "10<br>Teile gern"},
 }
+
+var labelsOneToSeven1 = []trl.S{
+	{"de": "0<br>Stimme gar nicht zu"},
+	{"de": "1"},
+	{"de": "2"},
+	{"de": "3"},
+	{"de": "4"},
+	{"de": "5"},
+	{"de": "6"},
+	{"de": "7<br>Stimme komplett zu"},
+}

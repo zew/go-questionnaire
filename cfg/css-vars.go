@@ -47,6 +47,9 @@ func (c cssVar) Plain() string {
 
 // for HTML header <meta name="theme-color"...  - ColorHex not needed
 func (c cssVar) RGBA() string {
+	if c.Alpha == 0 {
+		return fmt.Sprintf("rgb(%3v, %3v, %3v)", c.R, c.G, c.B)
+	}
 	return fmt.Sprintf("rgba(%3v, %3v, %3v, %5.3f)", c.R, c.G, c.B, c.Alpha)
 }
 
@@ -78,9 +81,10 @@ func (c cssVar) HTML() string {
 		clr = c.Colorname
 	} else {
 		if c.Alpha == 0.00 {
-			c.Alpha = 1.0
+			clr = fmt.Sprintf("rgb(%3v, %3v, %3v)", c.R, c.G, c.B)
+		} else {
+			clr = fmt.Sprintf("rgba(%3v, %3v, %3v, %5.3f)", c.R, c.G, c.B, c.Alpha)
 		}
-		clr = fmt.Sprintf("rgba(%3v, %3v, %3v, %5.3f)", c.R, c.G, c.B, c.Alpha)
 	}
 
 	repeat := ""

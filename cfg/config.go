@@ -247,8 +247,9 @@ func Example() *ConfigT {
 		LocationName:           "Europe/Berlin",
 		SessionTimeout:         2,
 		FormTimeout:            2,
-		AppInstanceID:          time.Now().Unix(),
-		LangCodes:              []string{"de", "en", "es", "fr", "it", "pl"},
+		// each cfg load or reload updates this value
+		// AppInstanceID:          time.Now().Unix(),
+		LangCodes: []string{"de", "en", "es", "fr", "it", "pl"},
 		CSSVars: cssVars{
 			{Key: "logo-text", Val: "ZEW"},
 			{IsURL: true, Key: "img-bg", Val: "/img/ui/bg-bw-bland.jpg"},
@@ -262,12 +263,18 @@ func Example() *ConfigT {
 			{Key: "fg", Colorname: "black", Desc: "main foreground"},
 			{Key: "input-bg", Colorname: "white", Desc: "input+select background"},
 			{Key: "input-fg", Colorname: "black", Desc: "input+select foreground"},
-			{Key: "valid", R: 233, G: 255, B: 233, Alpha: .999, Desc: "ok, valid"}, // slight hue of input-bg, otherwise too annoying for empty inputs
+
+			/* we dont want Alpha: .5 anymore
+			   instead we use flexible alpha values as follows:
+			   background-color:   rgba(var(--clr-pri), 0.5); */
+			{Key: "has-alpha", R: 240, G: 240, B: 240, Alpha: .9, Desc: "has alpha - but takes away flexibility"},
+
+			{Key: "valid", R: 233, G: 255, B: 233, Desc: "ok, valid"}, // slight hue of input-bg, otherwise too annoying for empty inputs
 			{Key: "err", Colorname: "lightcoral", Desc: "errors and alerts"},
-			{Key: "pri", R: 000, G: 105, B: 180, Alpha: .999, Desc: "primary color"},
+			{Key: "pri", R: 000, G: 105, B: 180, Desc: "primary color - fonts and icons"},
 			{Key: "pri-hov", R: 002, G: 134, B: 228, Desc: "hover   - slightly lighter"},
 			{Key: "pri-vis", R: 000, G: 071, B: 122, Desc: "visited - slightly darker"},
-			{Key: "sec", R: 228, G: 223, B: 206, Alpha: 1.0},
+			{Key: "sec", R: 228, G: 223, B: 206, Desc: "secondary color - for backgrounds"},
 			{Key: "sec-drk1", R: 219, G: 216, B: 194, Desc: "darker, for menu 3"},
 			{Key: "sec-drk2", R: 190, G: 187, B: 170, Desc: "darker, for borders"},
 			{Key: "zew2-md", R: 207, G: 136, B: 135},
@@ -286,22 +293,22 @@ func Example() *ConfigT {
 				{IsURL: true, Key: "img-logo-icon", Val: "/img/ui/4walls-logo-3.png"},
 				{IsURL: true, Key: "img-loggedin-icon", Val: "/img/ui/logged-in-icon-4walls.svg"},
 				{Key: "bg", R: 12, G: 12, B: 12, Desc: "main background f <body>"},
-				{Key: "fg", R: 224, G: 224, B: 224, Alpha: .999, Desc: "main foreground"},
+				{Key: "fg", R: 224, G: 224, B: 224, Desc: "main foreground"},
 				{Key: "input-bg", R: 224, G: 224, B: 224, Desc: "input+select background"},
 				{Key: "input-fg", R: 12, G: 12, B: 12, Desc: "input+select foreground"},
-				{Key: "pri", R: 216, G: 29, B: 160, Alpha: .999, Desc: "primary color"},
+				{Key: "pri", R: 216, G: 29, B: 160, Desc: "primary color - fonts and icons"},
 				{Key: "pri-hov", R: 250, G: 50, B: 200, Desc: "hover   - slightly lighter"},
 				{Key: "pri-vis", R: 166, G: 12, B: 120, Desc: "visited - slightly darker"},
 
-				{Key: "pri", R: 247, G: 19, B: 78, Alpha: .999, Desc: "primary color"},
+				{Key: "pri", R: 247, G: 19, B: 78, Desc: "primary color - fonts and icons"},
 				{Key: "pri-hov", R: 255, G: 45, B: 100, Desc: "hover   - slightly lighter"},
 				{Key: "pri-vis", R: 200, G: 9, B: 90, Desc: "visited - slightly darker"},
 
-				{Key: "sec", R: 48, G: 48, B: 48, Alpha: 1.0},
+				{Key: "sec", R: 48, G: 48, B: 48, Desc: "secondary color - for backgrounds"},
 				{Key: "sec-drk1", R: 32, G: 32, B: 32, Desc: "darker, for menu 3"},
 				{Key: "sec-drk2", R: 1, G: 1, B: 1, Desc: "darker, for borders"},
 			}, "zew": {
-				{Key: "dummy", R: 48, G: 48, B: 48, Alpha: 1.0},
+				{Key: "dummy", R: 48, G: 48, B: 48},
 			},
 		},
 		CPUProfile: "", // the filename, i.e. cpu.pprof

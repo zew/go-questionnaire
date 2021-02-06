@@ -54,7 +54,7 @@ func PoliticalFoundations(q *QuestionnaireT, paramSetIdx, seq0to5, userID int) (
 	oneOfFour := zeroTo15 % 4 // table rows permutation
 
 	log.Printf(
-		`
+		`PoliticalFoundations
 userID  %4v - zeroTo15  %2v
 seq0to5 %4v - oneOfFour [0...3] %2v  - oneOfSix [0...5] %2v`,
 		userID, zeroTo15,
@@ -66,7 +66,7 @@ seq0to5 %4v - oneOfFour [0...3] %2v  - oneOfSix [0...5] %2v`,
 	return politicalFoundations(
 		q,
 		seq0to5, // visible question seq 1...6 on the questionnaire
-		fmt.Sprintf("%v_%v", oneOfFour+1, oneOfSix+1), // questionID - fourPermutationsOf6x3x3[oneOfFour][oneOfSix] -
+		fmt.Sprintf("q1a_%v_%v_", oneOfSix+1, oneOfFour+1), // questionID => fourPermutationsOf6x3x3[oneOfFour][oneOfSix] -
 		fourPermutationsOf6x3x3[oneOfFour][oneOfSix].Ppls,
 	)
 }
@@ -217,12 +217,15 @@ func politicalFoundations(q *QuestionnaireT, seq0to5 int, questionID string, ppl
 		seq0to5+1,
 		imgs[ppls[0][0]], imgs[ppls[0][1]], imgs[ppls[0][2]],
 		inputValsOptiongroup[0], inputValsCheckbox[0],
+
 		imgs[ppls[1][0]], imgs[ppls[1][1]], imgs[ppls[1][2]],
 		inputValsOptiongroup[1], inputValsCheckbox[1],
+
 		imgs[ppls[2][0]], imgs[ppls[2][1]], imgs[ppls[2][2]],
 		inputValsOptiongroup[2], inputValsCheckbox[2],
 	)
 
+	// prefix name=" with questionID
 	rep := fmt.Sprintf(`name="dec%v`, questionID)
 	s = strings.ReplaceAll(s, `name="`, rep)
 

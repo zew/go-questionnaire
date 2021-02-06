@@ -24,7 +24,6 @@
  	"location": "Europe/Berlin",
  	"session_timeout": 2,
  	"form_timeout": 2,
- 	"app_instance_id": 1612550605,
  	"lang_codes": [
  		"de",
  		"en",
@@ -93,12 +92,19 @@
  			"color_name": "black"
  		},
  		{
+ 			"key": "has-alpha",
+ 			"desc": "has alpha - but takes away flexibility",
+ 			"r": 240,
+ 			"g": 240,
+ 			"b": 240,
+ 			"alpha": 0.9
+ 		},
+ 		{
  			"key": "valid",
  			"desc": "ok, valid",
  			"r": 233,
  			"g": 255,
- 			"b": 233,
- 			"alpha": 0.999
+ 			"b": 233
  		},
  		{
  			"key": "err",
@@ -107,10 +113,9 @@
  		},
  		{
  			"key": "pri",
- 			"desc": "primary color",
+ 			"desc": "primary color - fonts and icons",
  			"g": 105,
- 			"b": 180,
- 			"alpha": 0.999
+ 			"b": 180
  		},
  		{
  			"key": "pri-hov",
@@ -127,10 +132,10 @@
  		},
  		{
  			"key": "sec",
+ 			"desc": "secondary color - for backgrounds",
  			"r": 228,
  			"g": 223,
- 			"b": 206,
- 			"alpha": 1
+ 			"b": 206
  		},
  		{
  			"key": "sec-drk1",
@@ -228,8 +233,7 @@
  				"desc": "main foreground",
  				"r": 224,
  				"g": 224,
- 				"b": 224,
- 				"alpha": 0.999
+ 				"b": 224
  			},
  			{
  				"key": "input-bg",
@@ -247,11 +251,10 @@
  			},
  			{
  				"key": "pri",
- 				"desc": "primary color",
+ 				"desc": "primary color - fonts and icons",
  				"r": 216,
  				"g": 29,
- 				"b": 160,
- 				"alpha": 0.999
+ 				"b": 160
  			},
  			{
  				"key": "pri-hov",
@@ -269,11 +272,10 @@
  			},
  			{
  				"key": "pri",
- 				"desc": "primary color",
+ 				"desc": "primary color - fonts and icons",
  				"r": 247,
  				"g": 19,
- 				"b": 78,
- 				"alpha": 0.999
+ 				"b": 78
  			},
  			{
  				"key": "pri-hov",
@@ -291,10 +293,10 @@
  			},
  			{
  				"key": "sec",
+ 				"desc": "secondary color - for backgrounds",
  				"r": 48,
  				"g": 48,
- 				"b": 48,
- 				"alpha": 1
+ 				"b": 48
  			},
  			{
  				"key": "sec-drk1",
@@ -316,8 +318,7 @@
  				"key": "dummy",
  				"r": 48,
  				"g": 48,
- 				"b": 48,
- 				"alpha": 1
+ 				"b": 48
  			}
  		]
  	},

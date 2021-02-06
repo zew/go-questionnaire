@@ -129,9 +129,13 @@ type inputT struct {
 	Validator string `json:"validator,omitempty"` // i.e. any key from validators, i.e. "must;inRange20"
 	ErrMsg    trl.S  `json:"err_msg,omitempty"`
 
-	Response string `json:"response,omitempty"` // also contains the Value of options and checkboxes
 	//  ResponseFloat float64  - floats and integers are stored as strings in Response
-	DynamicFunc string `json:"dynamic_func,omitempty"` // compositFunc for type == 'composit' OR dynFunc for type == 'dynamic'
+	// also contains the Value of options and checkboxes
+	Response string `json:"response,omitempty"`
+
+	/* compositFunc == 'composit' OR dynFunc == 'dynamic'
+	'composit' =>    first arg paramSetIdx, second arg seqIdx */
+	DynamicFunc string `json:"dynamic_func,omitempty"`
 }
 
 // NewInput returns an input filled in with globally enumerated label, decription etc.
@@ -462,7 +466,7 @@ type groupT struct {
 
 	// Vertical space control:
 	HeaderBottomVSpacers int `json:"header_bottom_vspacers,omitempty"` // number of half rows below the group header
-	BottomVSpacers       int `json:"bottom_vspacers,omitempty"`        // number of rows below the group, initialized to 3
+	BottomVSpacers       int `json:"bottom_vspacers,omitempty"`        // number of rows below the group, addGroup() initializes to 3
 
 	Vertical bool `json:"vertical,omitempty"` // groups vertically, not horizontally
 
@@ -689,10 +693,10 @@ func (gr groupT) HTML(langCode string) string {
 
 // Type page contains groups with inputs
 type pageT struct {
-	Section         trl.S `json:"section,omitempty"` // Several pages have a section headline, showing up mobile navigation menu
-	Label           trl.S `json:"label,omitempty"`
-	Desc            trl.S `json:"description,omitempty"`
-	Short           trl.S `json:"short,omitempty"`         // Short version of Label/Description - i.e. for progress bar, replaces Label/Desc in progressbar
+	Section         trl.S `json:"section,omitempty"`       // summary headline for multiple pages - extra strong before label in content - and in progress bar and navigation menu
+	Label           trl.S `json:"label,omitempty"`         // content headline
+	Desc            trl.S `json:"description,omitempty"`   // content abstract
+	Short           trl.S `json:"short,omitempty"`         // sort version of section/label/description - in progress bar and navigation menu
 	NoNavigation    bool  `json:"no_navigation,omitempty"` // Page will not show up in progress bar
 	NavigationalNum int   `json:"navi_num"`                // The number in Navigation order; based on NoNavigation; computed by q.Validate
 

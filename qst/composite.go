@@ -19,4 +19,5 @@ type compositFuncT func(*QuestionnaireT, int, int, int) (string, []string, error
 
 var compositeFuncs = map[string]compositFuncT{
 	"PoliticalFoundations": PoliticalFoundations,
+	"TimePreferenceSelf":   TimePreferenceSelf,
 }

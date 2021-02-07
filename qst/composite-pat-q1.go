@@ -45,7 +45,12 @@ var reshuffle6basedOn16 = [][]int{
 // politicalFoundationsParamsT.Ppls for rendering icons of peoples to certain positions;
 // return 1 is the HTML code
 // return 2 are the input names, based on seq0to5;
-func PoliticalFoundations(q *QuestionnaireT, paramSetIdx, seq0to5, userID int) (string, []string, error) {
+func PoliticalFoundations(q *QuestionnaireT, seq0to5, paramSetIdx int) (string, []string, error) {
+
+	userID := 0
+	if q != nil {
+		userID = q.UserIDInt()
+	}
 
 	zeroTo15 := userID % 16
 
@@ -53,20 +58,23 @@ func PoliticalFoundations(q *QuestionnaireT, paramSetIdx, seq0to5, userID int) (
 
 	oneOfFour := zeroTo15 % 4 // table rows permutation
 
-	log.Printf(
-		`PoliticalFoundations
-userID  %4v - zeroTo15  %2v
-seq0to5 %4v - oneOfFour [0...3] %2v  - oneOfSix [0...5] %2v`,
-		userID, zeroTo15,
-		seq0to5, oneOfFour, oneOfSix,
-	)
+	// 	log.Printf(
+	// 		`PoliticalFoundations
+	// userID  %4v - zeroTo15  %2v
+	// seq0to5 %4v - oneOfFour [0...3] %2v  - oneOfSix [0...5] %2v`,
+	// 		userID, zeroTo15,
+	// 		seq0to5, oneOfFour, oneOfSix,
+	// 	)
 
-	log.Printf(`%v`, fourPermutationsOf6x3x3[oneOfFour][oneOfSix].Ppls)
+	// log.Printf(`%v`, fourPermutationsOf6x3x3[oneOfFour][oneOfSix].Ppls)
+
+	questionID := fmt.Sprintf("q1_seq%v__%vof6_%vof4", seq0to5+1, oneOfSix+1, oneOfFour+1)
+	questionID = fmt.Sprintf("q1_seq%v", seq0to5+1)
 
 	return politicalFoundations(
 		q,
 		seq0to5, // visible question seq 1...6 on the questionnaire
-		fmt.Sprintf("q1a_%v_%v_", oneOfSix+1, oneOfFour+1), // questionID => fourPermutationsOf6x3x3[oneOfFour][oneOfSix] -
+		questionID,
 		fourPermutationsOf6x3x3[oneOfFour][oneOfSix].Ppls,
 	)
 }
@@ -76,10 +84,10 @@ func politicalFoundations(q *QuestionnaireT, seq0to5 int, questionID string, ppl
 	//
 	//
 	inputNames := []string{}
-	name := fmt.Sprintf("dec%v_r", questionID)
+	name := fmt.Sprintf("%v_r", questionID)
 	inputNames = append(inputNames, name)
 	for i := 0; i < 3; i++ {
-		name := fmt.Sprintf("dec%v_r%v", questionID, i+1)
+		name := fmt.Sprintf("%v_r%v", questionID, i+1)
 		inputNames = append(inputNames, name)
 	}
 
@@ -96,9 +104,11 @@ func politicalFoundations(q *QuestionnaireT, seq0to5 int, questionID string, ppl
 		if inp.Response != "" && inp.Response != "0" {
 			idx, _ := strconv.Atoi(inp.Response)
 			idx--
-			log.Printf(" sequenceID %v - inputNames[0] %v - inp.Response %v - idx %v", questionID, inputNames[0], inp.Response, idx)
+			// log.Printf(" sequenceID %v - inputNames[0] %v - inp.Response %v - idx %v", questionID, inputNames[0], inp.Response, idx)
 			inputValsOptiongroup[idx] = " checked='checked' "
 		}
+	} else {
+		log.Printf("poliFoundations: did not find radio input %v", inputNames[0])
 	}
 
 	inputValsCheckbox := make([]string, 3)
@@ -108,6 +118,8 @@ func politicalFoundations(q *QuestionnaireT, seq0to5 int, questionID string, ppl
 			if inp.Response != "" && inp.Response != "0" {
 				inputValsCheckbox[i-1] = " checked='checked' "
 			}
+		} else {
+			log.Printf("poliFoundations: did not find checkbox %v", inputNames[i])
 		}
 	}
 
@@ -167,7 +179,9 @@ func politicalFoundations(q *QuestionnaireT, seq0to5 int, questionID string, ppl
         <td> %v </td>
         <td> %v </td>
         <td> %v </td>
-        <td> <input type="radio"    name="_r"  value="1" %v > </td>
+		<td> 
+			<input type="radio"    name="_r"  value="1" %v > 
+		</td>
 		<td>
 			<input type="checkbox" name="_r1" value="1"  %v > 
 			<input type="hidden"   name="_r1" value="0" >
@@ -183,7 +197,9 @@ func politicalFoundations(q *QuestionnaireT, seq0to5 int, questionID string, ppl
         <td> %v </td>
         <td> %v </td>
         <td> %v </td>
-        <td> <input type="radio"    name="_r"  value="2" %v > </td>
+		<td> 
+			<input type="radio"    name="_r"  value="2" %v > 
+		</td>
 		<td>  
 			<input type="checkbox" name="_r2" value="1"  %v > 
 			<input type="hidden"   name="_r2" value="0" >
@@ -199,7 +215,9 @@ func politicalFoundations(q *QuestionnaireT, seq0to5 int, questionID string, ppl
         <td> %v </td>
         <td> %v </td>
         <td> %v </td>
-        <td> <input type="radio"    name="_r"  value="3" %v > </td>
+		<td> 
+			<input type="radio"    name="_r"  value="3" %v > 
+		</td>
 		<td>
 			<input type="checkbox" name="_r3" value="1" %v  > 
 			<input type="hidden"   name="_r3" value="0" >
@@ -226,7 +244,7 @@ func politicalFoundations(q *QuestionnaireT, seq0to5 int, questionID string, ppl
 	)
 
 	// prefix name=" with questionID
-	rep := fmt.Sprintf(`name="dec%v`, questionID)
+	rep := fmt.Sprintf(`name="%v`, questionID)
 	s = strings.ReplaceAll(s, `name="`, rep)
 
 	s = strings.ReplaceAll(s, "/survey/", cfg.PrefTS())

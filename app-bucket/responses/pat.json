@@ -16,7 +16,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "b66fe366f7d229f5480ebfc85d555e81",
+ 	"md_5": "d14889afab38fc95c224603b2d7a9b85",
  	"lang_codes": [
  		"de"
  	],
@@ -104,19 +104,19 @@
  							"dynamic_func": "PoliticalFoundations__0__0"
  						},
  						{
- 							"name": "decq1a_1_1__r_page0",
+ 							"name": "q1_seq1_r_page0",
  							"type": "composit-scalar"
  						},
  						{
- 							"name": "decq1a_1_1__r1_page0",
+ 							"name": "q1_seq1_r1_page0",
  							"type": "composit-scalar"
  						},
  						{
- 							"name": "decq1a_1_1__r2_page0",
+ 							"name": "q1_seq1_r2_page0",
  							"type": "composit-scalar"
  						},
  						{
- 							"name": "decq1a_1_1__r3_page0",
+ 							"name": "q1_seq1_r3_page0",
  							"type": "composit-scalar"
  						}
  					]
@@ -191,19 +191,19 @@
  							"dynamic_func": "PoliticalFoundations__0__0"
  						},
  						{
- 							"name": "decq1a_1_1__r",
+ 							"name": "q1_seq1_r",
  							"type": "composit-scalar"
  						},
  						{
- 							"name": "decq1a_1_1__r1",
+ 							"name": "q1_seq1_r1",
  							"type": "composit-scalar"
  						},
  						{
- 							"name": "decq1a_1_1__r2",
+ 							"name": "q1_seq1_r2",
  							"type": "composit-scalar"
  						},
  						{
- 							"name": "decq1a_1_1__r3",
+ 							"name": "q1_seq1_r3",
  							"type": "composit-scalar"
  						}
  					]
@@ -218,19 +218,19 @@
  							"dynamic_func": "PoliticalFoundations__1__1"
  						},
  						{
- 							"name": "decq1a_2_1__r",
+ 							"name": "q1_seq2_r",
  							"type": "composit-scalar"
  						},
  						{
- 							"name": "decq1a_2_1__r1",
+ 							"name": "q1_seq2_r1",
  							"type": "composit-scalar"
  						},
  						{
- 							"name": "decq1a_2_1__r2",
+ 							"name": "q1_seq2_r2",
  							"type": "composit-scalar"
  						},
  						{
- 							"name": "decq1a_2_1__r3",
+ 							"name": "q1_seq2_r3",
  							"type": "composit-scalar"
  						}
  					]
@@ -245,19 +245,19 @@
  							"dynamic_func": "PoliticalFoundations__2__2"
  						},
  						{
- 							"name": "decq1a_3_1__r",
+ 							"name": "q1_seq3_r",
  							"type": "composit-scalar"
  						},
  						{
- 							"name": "decq1a_3_1__r1",
+ 							"name": "q1_seq3_r1",
  							"type": "composit-scalar"
  						},
  						{
- 							"name": "decq1a_3_1__r2",
+ 							"name": "q1_seq3_r2",
  							"type": "composit-scalar"
  						},
  						{
- 							"name": "decq1a_3_1__r3",
+ 							"name": "q1_seq3_r3",
  							"type": "composit-scalar"
  						}
  					]
@@ -272,19 +272,19 @@
  							"dynamic_func": "PoliticalFoundations__3__3"
  						},
  						{
- 							"name": "decq1a_4_1__r",
+ 							"name": "q1_seq4_r",
  							"type": "composit-scalar"
  						},
  						{
- 							"name": "decq1a_4_1__r1",
+ 							"name": "q1_seq4_r1",
  							"type": "composit-scalar"
  						},
  						{
- 							"name": "decq1a_4_1__r2",
+ 							"name": "q1_seq4_r2",
  							"type": "composit-scalar"
  						},
  						{
- 							"name": "decq1a_4_1__r3",
+ 							"name": "q1_seq4_r3",
  							"type": "composit-scalar"
  						}
  					]
@@ -299,19 +299,19 @@
  							"dynamic_func": "PoliticalFoundations__4__4"
  						},
  						{
- 							"name": "decq1a_5_1__r",
+ 							"name": "q1_seq5_r",
  							"type": "composit-scalar"
  						},
  						{
- 							"name": "decq1a_5_1__r1",
+ 							"name": "q1_seq5_r1",
  							"type": "composit-scalar"
  						},
  						{
- 							"name": "decq1a_5_1__r2",
+ 							"name": "q1_seq5_r2",
  							"type": "composit-scalar"
  						},
  						{
- 							"name": "decq1a_5_1__r3",
+ 							"name": "q1_seq5_r3",
  							"type": "composit-scalar"
  						}
  					]
@@ -326,19 +326,19 @@
  							"dynamic_func": "PoliticalFoundations__5__5"
  						},
  						{
- 							"name": "decq1a_6_1__r",
+ 							"name": "q1_seq6_r",
  							"type": "composit-scalar"
  						},
  						{
- 							"name": "decq1a_6_1__r1",
+ 							"name": "q1_seq6_r1",
  							"type": "composit-scalar"
  						},
  						{
- 							"name": "decq1a_6_1__r2",
+ 							"name": "q1_seq6_r2",
  							"type": "composit-scalar"
  						},
  						{
- 							"name": "decq1a_6_1__r3",
+ 							"name": "q1_seq6_r3",
  							"type": "composit-scalar"
  						}
  					]
@@ -446,19 +446,27 @@
  							"dynamic_func": "TimePreferenceSelf__0__0"
  						},
  						{
- 							"name": "decq2_0__r",
+ 							"name": "q2_seq1_row1_rad",
  							"type": "composit-scalar"
  						},
  						{
- 							"name": "decq2_0__r1",
+ 							"name": "q2_seq1_row2_rad",
  							"type": "composit-scalar"
  						},
  						{
- 							"name": "decq2_0__r2",
+ 							"name": "q2_seq1_row3_rad",
  							"type": "composit-scalar"
  						},
  						{
- 							"name": "decq2_0__r3",
+ 							"name": "q2_seq1_row1_chk",
+ 							"type": "composit-scalar"
+ 						},
+ 						{
+ 							"name": "q2_seq1_row2_chk",
+ 							"type": "composit-scalar"
+ 						},
+ 						{
+ 							"name": "q2_seq1_row3_chk",
  							"type": "composit-scalar"
  						}
  					]
@@ -482,22 +490,30 @@
  					"inputs": [
  						{
  							"type": "composit",
- 							"dynamic_func": "TimePreferenceSelf__1__0"
+ 							"dynamic_func": "TimePreferenceSelf__1__1"
  						},
  						{
- 							"name": "decq2_0__r_q3b",
+ 							"name": "q2_seq2_row1_rad",
  							"type": "composit-scalar"
  						},
  						{
- 							"name": "decq2_0__r1_q3b",
+ 							"name": "q2_seq2_row2_rad",
  							"type": "composit-scalar"
  						},
  						{
- 							"name": "decq2_0__r2_q3b",
+ 							"name": "q2_seq2_row3_rad",
  							"type": "composit-scalar"
  						},
  						{
- 							"name": "decq2_0__r3_q3b",
+ 							"name": "q2_seq2_row1_chk",
+ 							"type": "composit-scalar"
+ 						},
+ 						{
+ 							"name": "q2_seq2_row2_chk",
+ 							"type": "composit-scalar"
+ 						},
+ 						{
+ 							"name": "q2_seq2_row3_chk",
  							"type": "composit-scalar"
  						}
  					]

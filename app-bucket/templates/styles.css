@@ -631,7 +631,8 @@ input[type=radio] {
 
 	vertical-align: middle;
 	margin: 0.70rem 0.45rem; /* labels far away enough from scaled input; padding is useless here	*/
-	margin-bottom: 0.45rem;
+	
+	/* margin-bottom: 0.45rem; */  /*  2021-02 - height correction removed  */
 
 	/*
 		zoom:	 2.0;
@@ -641,6 +642,7 @@ input[type=radio] {
 		therefore we resort to scale:
 	*/
 	transform: scale(2.25);
+	transform: scale(1.75);
 
 	/*
 	all these are ignored:

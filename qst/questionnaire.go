@@ -532,7 +532,8 @@ func (gr groupT) HasComposit() bool {
 	return hasComposit
 }
 
-func validateComposit(
+// returns the func, the sequence idx, the param set idx
+func validateComposite(
 	pageIdx, grpIdx int, compFuncNameWithParamSet string) (compositFuncT, int, int) {
 
 	splt := strings.Split(compFuncNameWithParamSet, "__")
@@ -559,7 +560,21 @@ func validateComposit(
 		)
 	}
 
-	paramSetIdx, err := strconv.Atoi(splt[1])
+	seqIdx, err := strconv.Atoi(splt[1])
+	if err != nil {
+		log.Panicf(
+			`page %v group %v: 
+			third part of composite func name %v 
+			could not be parsed into int
+			%v`,
+			seqIdx,
+			grpIdx,
+			compFuncNameWithParamSet,
+			err,
+		)
+	}
+
+	paramSetIdx, err := strconv.Atoi(splt[2])
 	if err != nil {
 		log.Panicf(
 			`page %v group %v: 
@@ -572,21 +587,8 @@ func validateComposit(
 			err,
 		)
 	}
-	seqIdx, err := strconv.Atoi(splt[2])
-	if err != nil {
-		log.Panicf(
-			`page %v group %v: 
-			third part of composite func name %v 
-			could not be parsed into int
-			%v`,
-			pageIdx,
-			grpIdx,
-			compFuncNameWithParamSet,
-			err,
-		)
-	}
 
-	return cF, paramSetIdx, seqIdx
+	return cF, seqIdx, paramSetIdx
 
 }
 
@@ -1001,8 +1003,8 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 		if p.Groups[grpIdx].HasComposit() {
 			compositCntr++
 			compFuncNameWithParamSet := p.Groups[grpIdx].Inputs[0].DynamicFunc
-			cF, paramSetIdx, seqIdx := validateComposit(pageIdx, grpIdx, compFuncNameWithParamSet)
-			grpHTML, _, err := cF(q, paramSetIdx, seqIdx, q.UserIDInt())
+			cF, seqIdx, paramSetIdx := validateComposite(pageIdx, grpIdx, compFuncNameWithParamSet)
+			grpHTML, _, err := cF(q, seqIdx, paramSetIdx)
 			if err != nil {
 				b.WriteString(fmt.Sprintf("composite func error %v \n", err))
 			} else {

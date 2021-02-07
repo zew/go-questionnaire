@@ -30,8 +30,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	q.Variations = 0
 	q.Variations = 4
 
-	userID := q.UserIDInt()
-
 	// page 0
 	{
 		page := q.AddPage()
@@ -156,7 +154,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Type = "composit"
 				inp.DynamicFunc = "PoliticalFoundations__0__0"
 			}
-			_, inputNames, _ := qst.PoliticalFoundations(nil, 0, 0, userID)
+			_, inputNames, _ := qst.PoliticalFoundations(nil, 0, 0)
 			for _, inpName := range inputNames {
 				inp := gr.AddInput()
 				inp.Type = "composit-scalar"
@@ -239,7 +237,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 					inp.Type = "composit"
 					inp.DynamicFunc = fmt.Sprintf("PoliticalFoundations__%v__%v", i, i)
 				}
-				_, inputNames, _ := qst.PoliticalFoundations(nil, i, i, userID)
+				_, inputNames, _ := qst.PoliticalFoundations(nil, i, i)
 				for _, inpName := range inputNames {
 					inp := gr.AddInput()
 					inp.Type = "composit-scalar"
@@ -389,11 +387,10 @@ Bei verfügbar gemachten Optionen können Sie zusätzlich „Von dieser Option a
 				inp.Type = "composit"
 				inp.DynamicFunc = "TimePreferenceSelf__0__0"
 			}
-			_, inputNames, _ := qst.TimePreferenceSelf(nil, 0, 0, userID)
+			_, inputNames, _ := qst.TimePreferenceSelf(nil, 0, 0)
 			for _, inpName := range inputNames {
 				inp := gr.AddInput()
 				inp.Type = "composit-scalar"
-				inp.Name = inpName + "_page0"
 				inp.Name = inpName
 			}
 
@@ -433,13 +430,13 @@ Welche Optionen sollen der Person (nicht) zur Verfügung stehen, falls die Optio
 			{
 				inp := gr.AddInput()
 				inp.Type = "composit"
-				inp.DynamicFunc = "TimePreferenceSelf__1__0"
+				inp.DynamicFunc = "TimePreferenceSelf__1__1"
 			}
-			_, inputNames, _ := qst.TimePreferenceSelf(nil, 1, 0, userID)
+			_, inputNames, _ := qst.TimePreferenceSelf(nil, 1, 1)
 			for _, inpName := range inputNames {
 				inp := gr.AddInput()
 				inp.Type = "composit-scalar"
-				inp.Name = inpName + "_q3b"
+				inp.Name = inpName
 			}
 
 		}

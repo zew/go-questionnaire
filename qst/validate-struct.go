@@ -197,9 +197,9 @@ func (q *QuestionnaireT) Validate() error {
 
 			if q.Pages[i1].Groups[i2].HasComposit() {
 				compFuncNameWithParamSet := q.Pages[i1].Groups[i2].Inputs[0].DynamicFunc
-				cF, paramSetIdx, seqIdx := validateComposit(i1, i2, compFuncNameWithParamSet)
+				cF, seqIdx, paramSetIdx := validateComposite(i1, i2, compFuncNameWithParamSet)
 				log.Printf("checking composit func '%v' for page %v, group %v", compFuncNameWithParamSet, i1, i2)
-				_, _, err := cF(q, paramSetIdx, seqIdx, q.UserIDInt())
+				_, _, err := cF(q, seqIdx, paramSetIdx)
 				if err != nil {
 					return fmt.Errorf(
 						`Page %v - Group %v - Composit func %v

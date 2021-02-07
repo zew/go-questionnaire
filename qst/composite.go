@@ -7,15 +7,15 @@ package qst
 //
 // parameters
 //   dynamic questionnaire - filled with response values
-//   param set idx  -  statically determined - from a slice of param sets
 //   sequence  idx  -  usually a visible page sequence
-//   userID         -  for custom randomization
+//   param set idx  -  statically determined - from a slice of param sets
+//
 //
 // returns
 //   rendered HTML of the group
 //   slice of input names
 //   error
-type compositFuncT func(*QuestionnaireT, int, int, int) (string, []string, error)
+type compositFuncT func(*QuestionnaireT, int, int) (string, []string, error)
 
 var compositeFuncs = map[string]compositFuncT{
 	"PoliticalFoundations": PoliticalFoundations,

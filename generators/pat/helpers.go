@@ -87,13 +87,16 @@ var labelsOneToTen3 = []trl.S{
 	{"de": "10<br>Teile gern"},
 }
 
+/*
+	2021-02 - doch keine Ziffern
+*/
 var labelsOneToSeven1 = []trl.S{
-	{"de": "0<br>Stimme gar nicht zu"},
-	{"de": "1"},
-	{"de": "2"},
-	{"de": "3"},
-	{"de": "4"},
-	{"de": "5"},
-	{"de": "6"},
-	{"de": "7<br>Stimme komplett zu"},
+	{"de": "Stimme gar nicht zu"},
+	{"de": ""},
+	{"de": ""},
+	{"de": ""},
+	{"de": ""},
+	{"de": ""},
+	{"de": ""},
+	{"de": "Stimme komplett zu"},
 }

@@ -5,7 +5,7 @@
  			"de": "ZEW"
  		},
  		"name": {
- 			"de": "Paternalismus Umfrage"
+ 			"de": "Umfrage zu Entscheidungsprozessen in der Politik"
  		},
  		"year": 2021,
  		"month": 2,
@@ -16,7 +16,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "d3300dfad20f84cda3ea6a66db331667",
+ 	"md_5": "d690d5ccb294e9a0d49164d1f029613e",
  	"lang_codes": [
  		"de"
  	],
@@ -526,14 +526,14 @@
  		},
  		{
  			"label": {
- 				"de": "Gruppenpräferenenzen"
+ 				"de": "Gruppenpräferenzen"
  			},
  			"description": {
  				"de": "",
  				"en": ""
  			},
  			"short": {
- 				"de": "Gruppen-\u003cbr\u003epräferenenzen"
+ 				"de": "Gruppen-\u003cbr\u003epräferenzen"
  			},
  			"navi_num": 4,
  			"width": 60,
@@ -711,7 +711,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "0\u003cbr\u003eStimme gar nicht zu"
+ 								"de": "Stimme gar nicht zu"
  							},
  							"horizontal_align_label": 1,
  							"css_label": "special-vertical-align-top"
@@ -719,7 +719,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "1"
+ 								"de": ""
  							},
  							"horizontal_align_label": 1,
  							"css_label": "special-vertical-align-top"
@@ -727,7 +727,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "2"
+ 								"de": ""
  							},
  							"horizontal_align_label": 1,
  							"css_label": "special-vertical-align-top"
@@ -735,7 +735,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "3"
+ 								"de": ""
  							},
  							"horizontal_align_label": 1,
  							"css_label": "special-vertical-align-top"
@@ -743,7 +743,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "4"
+ 								"de": ""
  							},
  							"horizontal_align_label": 1,
  							"css_label": "special-vertical-align-top"
@@ -751,7 +751,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "5"
+ 								"de": ""
  							},
  							"horizontal_align_label": 1,
  							"css_label": "special-vertical-align-top"
@@ -759,7 +759,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "6"
+ 								"de": ""
  							},
  							"horizontal_align_label": 1,
  							"css_label": "special-vertical-align-top"
@@ -767,7 +767,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "7\u003cbr\u003eStimme komplett zu"
+ 								"de": "Stimme komplett zu"
  							},
  							"horizontal_align_label": 1,
  							"css_label": "special-vertical-align-top"

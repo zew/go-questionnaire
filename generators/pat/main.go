@@ -27,6 +27,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 	q.Survey.Org = trl.S{"de": "ZEW"}
 	q.Survey.Name = trl.S{"de": "Paternalismus Umfrage"}
+	q.Survey.Name = trl.S{"de": "Umfrage zu Entscheidungsprozessen in der Politik"}
 	q.Variations = 0
 	q.Variations = 4
 
@@ -443,8 +444,8 @@ Welche Optionen sollen der Person (nicht) zur Verfügung stehen, falls die Optio
 	// page 4
 	{
 		page := q.AddPage()
-		page.Label = trl.S{"de": "Gruppenpräferenenzen"}
-		page.Short = trl.S{"de": "Gruppen-<br>präferenenzen"}
+		page.Label = trl.S{"de": "Gruppenpräferenzen"}
+		page.Short = trl.S{"de": "Gruppen-<br>präferenzen"}
 		page.Width = 60
 
 		{

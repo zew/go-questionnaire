@@ -10,12 +10,10 @@ import (
 )
 
 // TimePreferenceSelf creates
-// a HTML table with three option and three checkbox inputs;
-// renderSeq is the numbering
-// TimePreferenceSelfParamsT.ID for rendering the numbering;
-// TimePreferenceSelfParamsT.Ppls for rendering icons of peoples to certain positions;
-// return 1 is the HTML code
-// return 2 are the input names, based on seq0to5;
+// a HTML table with six option and three checkbox inputs;
+// based on userIDInt() - 8 versions - via paramSetIdx + dataQ2;
+// seq0to5 is the numbering;
+// see composite.go for more.
 func TimePreferenceSelf(q *QuestionnaireT, seq0to5, paramSetIdx int) (string, []string, error) {
 
 	userID := 0
@@ -53,7 +51,6 @@ func TimePreferenceSelf(q *QuestionnaireT, seq0to5, paramSetIdx int) (string, []
 
 func timePreferenceSelf(q *QuestionnaireT, seq0to0 int, questionID string, rowLabels []string) (string, []string, error) {
 
-	//
 	//
 	inputNames := []string{}
 	for i := 0; i < 3; i++ {
@@ -106,6 +103,7 @@ func timePreferenceSelf(q *QuestionnaireT, seq0to0 int, questionID string, rowLa
 
 <div id="t02">
 
+<div class="vspacer-08"> &nbsp; </div>
 
 <table>
     <tr>

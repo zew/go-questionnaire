@@ -32,7 +32,7 @@ func getQ2Labels(version0to15 int, aOrB string) []string {
 		return dataQ2[key][1]
 	}
 
-	log.Panicf("getQ2 - second argument must be 'a' or 'b' - was %v", aOrB)
+	log.Panicf("pat-getQ2 - second argument must be 'a' or 'b' - was %v", aOrB)
 	return []string{"invalid", "invalid", "invalid"}
 
 }

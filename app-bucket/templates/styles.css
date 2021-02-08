@@ -267,14 +267,13 @@ ol, ul {
 
 hr {
 	border: 1.5px solid var(--clr-fg);
-	margin-top:		0.5rem;
+	margin-top:	   0.5rem;
 	margin-bottom: 0.6rem;
 }
 
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
-	margin: 0 0 1.5em;
 	width: 100%;
 }
 

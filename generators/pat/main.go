@@ -79,7 +79,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		{
 			gr := page.AddGroup()
 			gr.Cols = 1
-			gr.BottomVSpacers = 0
+			gr.BottomVSpacers = 1
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
@@ -113,6 +113,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				<tr>
 				</table>
 
+				<div class='vspacer-08'> &nbsp; </div>
+
 				<p>
 				Für jede Ihrer ersten sechs Entscheidungen zeigen wir Ihnen die Präferenzen fünf deutscher Staatsangehöriger darüber, welche der drei Stiftungen die Spende erhalten soll.  Sie entscheiden, wie die Präferenzen der fünf Personen in eine gemeinsame Entscheidung zusammengefasst werden.
 				</p>
@@ -123,6 +125,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				`}
 
 			}
+
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
@@ -166,7 +169,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		{
 			gr := page.AddGroup()
 			gr.Cols = 1
-			gr.BottomVSpacers = 1
+			gr.BottomVSpacers = 2
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
@@ -291,7 +294,7 @@ Beste Stiftung:_______	Mittlere Stiftung:_______	Schlechteste Stiftung:_______
 			gr := page.AddGroup()
 			gr.Cols = 15
 			gr.Width = 100
-			gr.BottomVSpacers = 0
+			gr.BottomVSpacers = 2
 
 			// q2
 			{
@@ -364,11 +367,6 @@ Sie können nun entscheiden, welche der drei Optionen der Person (nicht) zur Ver
 <p>
 Bei verfügbar gemachten Optionen können Sie zusätzlich „Von dieser Option abraten“ ankreuzen. In diesem Fall erhält die Person die Botschaft: „Ein früherer Teilnehmer dieser Studie rät Ihnen davon ab, diese Option zu wählen”.
 </p>
-
-
-
-
-
 					`,
 				}
 			}
@@ -379,7 +377,7 @@ Bei verfügbar gemachten Optionen können Sie zusätzlich „Von dieser Option a
 			gr := page.AddGroup()
 			gr.Cols = 12
 			gr.Width = 100
-			gr.BottomVSpacers = 0
+			gr.BottomVSpacers = 2
 
 			// q3a
 			{
@@ -424,7 +422,7 @@ Welche Optionen sollen der Person (nicht) zur Verfügung stehen, falls die Optio
 			gr := page.AddGroup()
 			gr.Cols = 12
 			gr.Width = 100
-			gr.BottomVSpacers = 0
+			gr.BottomVSpacers = 2
 
 			// q3b
 			{
@@ -459,68 +457,35 @@ Welche Optionen sollen der Person (nicht) zur Verfügung stehen, falls die Optio
 				inp := gr.AddInput()
 				inp.Type = "textblock"
 				inp.Name = "text09"
-				inp.Label = trl.S{"de": "Frage 2<br>"}
+				// inp.Label = trl.S{"de": "Frage 2<br>"}
 				inp.Desc = trl.S{
 					"de": `
-
-Schätzen Sie bitte: Wie viele Mitglieder einer Gruppe von 10 zufällig ausgewählten Personen wählen jeweils die folgenden Optionen A, B und C.
-<i>(Ihre Antworten müssen sich auf 10 summieren.)</i>
-
-
-<br>
-
-<style>
-    .b1 {
-        display: inline-block;
-        margin: 0.7rem;
-        width: 10.4rem;
-        border: 1px solid grey;
-    }
-    .b2, .b3 {
-        padding: 0.2rem;
-    }
-    .b2 {
-        border-bottom: 1px solid grey;
-    }
-
-</style>
-
-
-<div class="b1">
-    <div class="b2">
-        Option A
-    </div>
-    <div class="b3">
-         <b>0</b> € in <b>1</b> Monat und<br>
-        <b>15</b> € in <b>7</b> Monaten
-    </div>
-</div>
-
-
-<div class="b1">
-    <div class="b2">
-        Option B
-    </div>
-
-    <div class="b3">
-        <b>3</b> € in <b>1</b> Monat und<br>
-        <b>7</b> € in <b>7</b> Monaten
-    </div>
-</div>
-
-
-<div class="b1">
-    <div class="b2">
-        Option C
-    </div>
-
-    <div class="b3">
-        <b>4</b> € in <b>1</b> Monat und<br>
-        <b>1</b> € in <b>7</b> Monaten
-    </div>
-</div>
+					<b>Frage 2. </b>
+					Schätzen Sie bitte: Wie viele Mitglieder einer Gruppe von 10 zufällig ausgewählten Personen wählen jeweils die folgenden Optionen A, B und C.
+					<i>(Ihre Antworten müssen sich auf 10 summieren.)</i>
 					`,
 				}
+			}
+
+		}
+
+		{
+			gr := page.AddGroup()
+			gr.Cols = 12
+			gr.Width = 100
+			gr.BottomVSpacers = 0
+
+			// q4a
+			{
+				inp := gr.AddInput()
+				inp.Type = "composit"
+				inp.DynamicFunc = "GroupPreferences__0__0"
+			}
+			_, inputNames, _ := qst.GroupPreferences(nil, 0, 0)
+			for _, inpName := range inputNames {
+				inp := gr.AddInput()
+				inp.Type = "composit-scalar"
+				inp.Name = inpName
 			}
 
 		}
@@ -535,7 +500,7 @@ Schätzen Sie bitte: Wie viele Mitglieder einer Gruppe von 10 zufällig ausgewä
 			{
 				inp := gr.AddInput()
 				inp.Type = "number"
-				inp.Name = "q4_a"
+				inp.Name = "q4a_opt1"
 				inp.MaxChars = 2
 				inp.ColSpanLabel = 3
 				inp.ColSpanControl = 2
@@ -547,7 +512,7 @@ Schätzen Sie bitte: Wie viele Mitglieder einer Gruppe von 10 zufällig ausgewä
 			{
 				inp := gr.AddInput()
 				inp.Type = "number"
-				inp.Name = "q4_b"
+				inp.Name = "q4a_opt2"
 				inp.MaxChars = 2
 				inp.ColSpanLabel = 3
 				inp.ColSpanControl = 2
@@ -559,7 +524,97 @@ Schätzen Sie bitte: Wie viele Mitglieder einer Gruppe von 10 zufällig ausgewä
 			{
 				inp := gr.AddInput()
 				inp.Type = "number"
-				inp.Name = "q4_c"
+				inp.Name = "q4a_opt3"
+				inp.MaxChars = 2
+				inp.ColSpanLabel = 3
+				inp.ColSpanControl = 2
+				inp.Desc = trl.S{"de": "Wie viele wählen Option C? Ihre Antwort:"}
+				inp.Suffix = trl.S{"de": "&nbsp;von&nbsp;10&nbsp;&nbsp;&nbsp;"}
+				inp.HAlignLabel = qst.HLeft
+				inp.Validator = "inRange20"
+			}
+		}
+
+		//
+
+		{
+
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 0
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Name = "text10"
+				// inp.Label = trl.S{"de": "Frage 3<br>"}
+				inp.Desc = trl.S{
+					"de": `
+					<b>Frage 3. </b>
+					Und wie lautet Ihre Schätzung für die folgenden drei Optionen?
+					<i>(Ihre Antworten müssen sich auf 10 summieren. Die Zeitpunkte und Beträge sind anders als in Frage 2.)</i>
+					`,
+				}
+			}
+
+		}
+
+		{
+			gr := page.AddGroup()
+			gr.Cols = 12
+			gr.Width = 100
+			gr.BottomVSpacers = 0
+
+			// q4b
+			{
+				inp := gr.AddInput()
+				inp.Type = "composit"
+				inp.DynamicFunc = "GroupPreferences__1__1"
+			}
+			_, inputNames, _ := qst.GroupPreferences(nil, 1, 1)
+			for _, inpName := range inputNames {
+				inp := gr.AddInput()
+				inp.Type = "composit-scalar"
+				inp.Name = inpName
+			}
+
+		}
+
+		{
+			gr := page.AddGroup()
+			gr.Cols = 15
+			gr.Width = 100
+			gr.BottomVSpacers = 2
+
+			// q4b
+			{
+				inp := gr.AddInput()
+				inp.Type = "number"
+				inp.Name = "q4b_opt1"
+				inp.MaxChars = 2
+				inp.ColSpanLabel = 3
+				inp.ColSpanControl = 2
+				inp.Desc = trl.S{"de": "Wie viele wählen Option A? Ihre Antwort:"}
+				inp.Suffix = trl.S{"de": "&nbsp;von&nbsp;10&nbsp;&nbsp;&nbsp;"}
+				inp.HAlignLabel = qst.HLeft
+				inp.Validator = "inRange20"
+			}
+			{
+				inp := gr.AddInput()
+				inp.Type = "number"
+				inp.Name = "q4b_opt2"
+				inp.MaxChars = 2
+				inp.ColSpanLabel = 3
+				inp.ColSpanControl = 2
+				inp.Desc = trl.S{"de": "Wie viele wählen Option B? Ihre Antwort:"}
+				inp.Suffix = trl.S{"de": "&nbsp;von&nbsp;10&nbsp;&nbsp;&nbsp;"}
+				inp.HAlignLabel = qst.HLeft
+				inp.Validator = "inRange20"
+			}
+			{
+				inp := gr.AddInput()
+				inp.Type = "number"
+				inp.Name = "q4b_opt3"
 				inp.MaxChars = 2
 				inp.ColSpanLabel = 3
 				inp.ColSpanControl = 2

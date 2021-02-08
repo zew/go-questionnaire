@@ -16,7 +16,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "d14889afab38fc95c224603b2d7a9b85",
+ 	"md_5": "d3300dfad20f84cda3ea6a66db331667",
  	"lang_codes": [
  		"de"
  	],
@@ -76,6 +76,7 @@
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
  				{
+ 					"bottom_vspacers": 1,
  					"width": 100,
  					"columns": 1,
  					"inputs": [
@@ -83,7 +84,7 @@
  							"name": "text01",
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\u003cp\u003e\u003cb\u003e\n\t\t\t\tIm Folgenden geht es um eine Spende von 30 €, die \u003ci\u003eeine\u003c/i\u003e dieser drei Stiftungen erhalten soll:\n\t\t\t\t\u003c/b\u003e\u003c/p\u003e\n\n\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\u003cstyle\u003e\n\t\t\t\t\ttable.drei-stiftungen td {\n\t\t\t\t\t\ttext-align: center;\n\t\t\t\t\t\ttext-align: center;\n\n\t\t\t\t\t}\n\t\t\t\t\u003c/style\u003e\n\n\t\t\t\t\u003ctable class=\"drei-stiftungen\"\u003e\n\t\t\t\t\u003ctr\u003e\n\t\t\t\t\t\u003ctd style=\"width: 33%\"\u003ePolitisch links\u003c/td\u003e\n\t\t\t\t\t\u003ctd style=\"width: 33%\"\u003ePolitische Mitte\u003c/td\u003e\n\t\t\t\t\t\u003ctd style=\"width: 33%\"\u003ePolitisch konservativ\u003c/td\u003e\n\t\t\t\t\u003ctr\u003e\n\t\t\t\t\u003ctr\u003e\n\t\t\t\t\t\u003ctd style=\"vertical-align: top;\" \u003e\u003cb\u003eHans-Böckler-Stiftung\u003c/b\u003e\u003c/td\u003e\n\t\t\t\t\t\u003ctd style=\"vertical-align: top;\" \u003e\u003cb\u003eBund der Steuerzahler Deutsch\u0026shy;land e.V.\u003c/b\u003e\u003c/td\u003e\n\t\t\t\t\t\u003ctd style=\"vertical-align: top;\" \u003e\u003cb\u003eLudwig-Erhard-Stiftung\u003c/b\u003e\u003c/td\u003e\n\t\t\t\t\u003ctr\u003e\n\t\t\t\t\u003c/table\u003e\n\n\t\t\t\t\u003cp\u003e\n\t\t\t\tFür jede Ihrer ersten sechs Entscheidungen zeigen wir Ihnen die Präferenzen fünf deutscher Staatsangehöriger darüber, welche der drei Stiftungen die Spende erhalten soll.  Sie entscheiden, wie die Präferenzen der fünf Personen in eine gemeinsame Entscheidung zusammengefasst werden.\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp\u003e\n\t\t\t\tDie Präferenzen stammen von fünf Personen, die an einer Vorstudie teilgenommen haben\u003csup\u003e1)\u003c/sup\u003e.  Diese fünf Personen wurden aus einer Stichprobe gezogen, in der sich gleich viele Personen politisch links, in der Mitte oder als konservativ einordnen. Jede Person wurde einzeln befragt, welche der drei Stiftungen sie als am besten, mittel, und am schlechtesten erachtet. Den Personen wurde mitgeteilt, dass ihre Präferenzen zusammen mit den Präferenzen von vier anderen Personen an einen zukünftigen Teilnehmer der Studie gegeben werden, der die Präferenzen in eine Entscheidung zusammenfasst.\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\u003cp\u003e\u003cb\u003e\n\t\t\t\tIm Folgenden geht es um eine Spende von 30 €, die \u003ci\u003eeine\u003c/i\u003e dieser drei Stiftungen erhalten soll:\n\t\t\t\t\u003c/b\u003e\u003c/p\u003e\n\n\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\u003cstyle\u003e\n\t\t\t\t\ttable.drei-stiftungen td {\n\t\t\t\t\t\ttext-align: center;\n\t\t\t\t\t\ttext-align: center;\n\n\t\t\t\t\t}\n\t\t\t\t\u003c/style\u003e\n\n\t\t\t\t\u003ctable class=\"drei-stiftungen\"\u003e\n\t\t\t\t\u003ctr\u003e\n\t\t\t\t\t\u003ctd style=\"width: 33%\"\u003ePolitisch links\u003c/td\u003e\n\t\t\t\t\t\u003ctd style=\"width: 33%\"\u003ePolitische Mitte\u003c/td\u003e\n\t\t\t\t\t\u003ctd style=\"width: 33%\"\u003ePolitisch konservativ\u003c/td\u003e\n\t\t\t\t\u003ctr\u003e\n\t\t\t\t\u003ctr\u003e\n\t\t\t\t\t\u003ctd style=\"vertical-align: top;\" \u003e\u003cb\u003eHans-Böckler-Stiftung\u003c/b\u003e\u003c/td\u003e\n\t\t\t\t\t\u003ctd style=\"vertical-align: top;\" \u003e\u003cb\u003eBund der Steuerzahler Deutsch\u0026shy;land e.V.\u003c/b\u003e\u003c/td\u003e\n\t\t\t\t\t\u003ctd style=\"vertical-align: top;\" \u003e\u003cb\u003eLudwig-Erhard-Stiftung\u003c/b\u003e\u003c/td\u003e\n\t\t\t\t\u003ctr\u003e\n\t\t\t\t\u003c/table\u003e\n\n\t\t\t\t\u003cdiv class='vspacer-08'\u003e \u0026nbsp; \u003c/div\u003e\n\n\t\t\t\t\u003cp\u003e\n\t\t\t\tFür jede Ihrer ersten sechs Entscheidungen zeigen wir Ihnen die Präferenzen fünf deutscher Staatsangehöriger darüber, welche der drei Stiftungen die Spende erhalten soll.  Sie entscheiden, wie die Präferenzen der fünf Personen in eine gemeinsame Entscheidung zusammengefasst werden.\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp\u003e\n\t\t\t\tDie Präferenzen stammen von fünf Personen, die an einer Vorstudie teilgenommen haben\u003csup\u003e1)\u003c/sup\u003e.  Diese fünf Personen wurden aus einer Stichprobe gezogen, in der sich gleich viele Personen politisch links, in der Mitte oder als konservativ einordnen. Jede Person wurde einzeln befragt, welche der drei Stiftungen sie als am besten, mittel, und am schlechtesten erachtet. Den Personen wurde mitgeteilt, dass ihre Präferenzen zusammen mit den Präferenzen von vier anderen Personen an einen zukünftigen Teilnehmer der Studie gegeben werden, der die Präferenzen in eine Entscheidung zusammenfasst.\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							}
  						},
  						{
@@ -122,7 +123,7 @@
  					]
  				},
  				{
- 					"bottom_vspacers": 1,
+ 					"bottom_vspacers": 2,
  					"width": 100,
  					"columns": 1,
  					"inputs": [
@@ -374,6 +375,7 @@
  					]
  				},
  				{
+ 					"bottom_vspacers": 2,
  					"width": 100,
  					"columns": 15,
  					"inputs": [
@@ -432,12 +434,13 @@
  							"name": "text07",
  							"type": "textblock",
  							"description": {
- 								"de": "\n\n\n\n\u003cp\u003e\n\u003cb\u003eIm Folgenden legen Sie fest, welche Optionen ein zukünftiger Studienteilnehmer wählen kann:\u003c/b\u003e\n\u003c/p\u003e\n\n\u003cp\u003e\n\u003cb\u003eEntscheidung 7.\u003c/b\u003e\u003cbr\u003e\nSie sind einem deutschen Staatsangehörigen zugeordnet, der an einer zukünftigen Studie teilnehmen wird und verschiedene Optionen für Geldauszahlungen an unterschiedlichen Zeitpunkten hat.\n\u003c/p\u003e\n\n\u003cp\u003e\nSie können nun entscheiden, welche der drei Optionen der Person (nicht) zur Verfügung stehen sollen, indem Sie in jeder Zeile ein Kreuz entweder bei „Ver\u0026shy;füg\u0026shy;bar” oder bei „Nicht ver\u0026shy;füg\u0026shy;bar” setzen. \u003cb\u003eEs muss am Ende mindestens eine Option „Ver\u0026shy;füg\u0026shy;bar“ sein.\u003c/b\u003e Folgen Sie dabei einfach Ihren Vorstellungen – es gibt keine richtigen oder falschen Antworten. Die nicht ver\u0026shy;füg\u0026shy;baren Optionen werden der Person nicht als Auswahloptionen angezeigt. Falls mehr als eine Option ver\u0026shy;füg\u0026shy;bar ist, kann die die Person aus diesen Optionen wählen.\n\u003c/p\u003e\n\n\u003cp\u003e\nBei ver\u0026shy;füg\u0026shy;bar gemachten Optionen können Sie zusätzlich „Von dieser Option abraten“ ankreuzen. In diesem Fall erhält die Person die Botschaft: „Ein früherer Teilnehmer dieser Studie rät Ihnen davon ab, diese Option zu wählen”.\n\u003c/p\u003e\n\n\n\n\n\n\t\t\t\t\t"
+ 								"de": "\n\n\n\n\u003cp\u003e\n\u003cb\u003eIm Folgenden legen Sie fest, welche Optionen ein zukünftiger Studienteilnehmer wählen kann:\u003c/b\u003e\n\u003c/p\u003e\n\n\u003cp\u003e\n\u003cb\u003eEntscheidung 7.\u003c/b\u003e\u003cbr\u003e\nSie sind einem deutschen Staatsangehörigen zugeordnet, der an einer zukünftigen Studie teilnehmen wird und verschiedene Optionen für Geldauszahlungen an unterschiedlichen Zeitpunkten hat.\n\u003c/p\u003e\n\n\u003cp\u003e\nSie können nun entscheiden, welche der drei Optionen der Person (nicht) zur Verfügung stehen sollen, indem Sie in jeder Zeile ein Kreuz entweder bei „Ver\u0026shy;füg\u0026shy;bar” oder bei „Nicht ver\u0026shy;füg\u0026shy;bar” setzen. \u003cb\u003eEs muss am Ende mindestens eine Option „Ver\u0026shy;füg\u0026shy;bar“ sein.\u003c/b\u003e Folgen Sie dabei einfach Ihren Vorstellungen – es gibt keine richtigen oder falschen Antworten. Die nicht ver\u0026shy;füg\u0026shy;baren Optionen werden der Person nicht als Auswahloptionen angezeigt. Falls mehr als eine Option ver\u0026shy;füg\u0026shy;bar ist, kann die die Person aus diesen Optionen wählen.\n\u003c/p\u003e\n\n\u003cp\u003e\nBei ver\u0026shy;füg\u0026shy;bar gemachten Optionen können Sie zusätzlich „Von dieser Option abraten“ ankreuzen. In diesem Fall erhält die Person die Botschaft: „Ein früherer Teilnehmer dieser Studie rät Ihnen davon ab, diese Option zu wählen”.\n\u003c/p\u003e\n\t\t\t\t\t"
  							}
  						}
  					]
  				},
  				{
+ 					"bottom_vspacers": 2,
  					"width": 100,
  					"columns": 12,
  					"inputs": [
@@ -485,6 +488,7 @@
  					]
  				},
  				{
+ 					"bottom_vspacers": 2,
  					"width": 100,
  					"columns": 12,
  					"inputs": [
@@ -542,12 +546,19 @@
  						{
  							"name": "text09",
  							"type": "textblock",
- 							"label": {
- 								"de": "Frage 2\u003cbr\u003e"
- 							},
  							"description": {
- 								"de": "\n\nSchätzen Sie bitte: Wie viele Mitglieder einer Gruppe von 10 zufällig ausgewählten Personen wählen jeweils die folgenden Optionen A, B und C.\n\u003ci\u003e(Ihre Antworten müssen sich auf 10 summieren.)\u003c/i\u003e\n\n\n\u003cbr\u003e\n\n\u003cstyle\u003e\n    .b1 {\n        display: inline-block;\n        margin: 0.7rem;\n        width: 10.4rem;\n        border: 1px solid grey;\n    }\n    .b2, .b3 {\n        padding: 0.2rem;\n    }\n    .b2 {\n        border-bottom: 1px solid grey;\n    }\n\n\u003c/style\u003e\n\n\n\u003cdiv class=\"b1\"\u003e\n    \u003cdiv class=\"b2\"\u003e\n        Option A\n    \u003c/div\u003e\n    \u003cdiv class=\"b3\"\u003e\n         \u003cb\u003e0\u003c/b\u003e € in \u003cb\u003e1\u003c/b\u003e Monat und\u003cbr\u003e\n        \u003cb\u003e15\u003c/b\u003e € in \u003cb\u003e7\u003c/b\u003e Monaten\n    \u003c/div\u003e\n\u003c/div\u003e\n\n\n\u003cdiv class=\"b1\"\u003e\n    \u003cdiv class=\"b2\"\u003e\n        Option B\n    \u003c/div\u003e\n\n    \u003cdiv class=\"b3\"\u003e\n        \u003cb\u003e3\u003c/b\u003e € in \u003cb\u003e1\u003c/b\u003e Monat und\u003cbr\u003e\n        \u003cb\u003e7\u003c/b\u003e € in \u003cb\u003e7\u003c/b\u003e Monaten\n    \u003c/div\u003e\n\u003c/div\u003e\n\n\n\u003cdiv class=\"b1\"\u003e\n    \u003cdiv class=\"b2\"\u003e\n        Option C\n    \u003c/div\u003e\n\n    \u003cdiv class=\"b3\"\u003e\n        \u003cb\u003e4\u003c/b\u003e € in \u003cb\u003e1\u003c/b\u003e Monat und\u003cbr\u003e\n        \u003cb\u003e1\u003c/b\u003e € in \u003cb\u003e7\u003c/b\u003e Monaten\n    \u003c/div\u003e\n\u003c/div\u003e\n\t\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cb\u003eFrage 2. \u003c/b\u003e\n\t\t\t\t\tSchätzen Sie bitte: Wie viele Mitglieder einer Gruppe von 10 zufällig ausgewählten Personen wählen jeweils die folgenden Optionen A, B und C.\n\t\t\t\t\t\u003ci\u003e(Ihre Antworten müssen sich auf 10 summieren.)\u003c/i\u003e\n\t\t\t\t\t"
  							}
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"width": 100,
+ 					"columns": 12,
+ 					"inputs": [
+ 						{
+ 							"type": "composit",
+ 							"dynamic_func": "GroupPreferences__0__0"
  						}
  					]
  				},
@@ -557,7 +568,7 @@
  					"columns": 15,
  					"inputs": [
  						{
- 							"name": "q4_a",
+ 							"name": "q4a_opt1",
  							"type": "number",
  							"max_chars": 2,
  							"description": {
@@ -571,7 +582,7 @@
  							"validator": "inRange20"
  						},
  						{
- 							"name": "q4_b",
+ 							"name": "q4a_opt2",
  							"type": "number",
  							"max_chars": 2,
  							"description": {
@@ -585,7 +596,79 @@
  							"validator": "inRange20"
  						},
  						{
- 							"name": "q4_c",
+ 							"name": "q4a_opt3",
+ 							"type": "number",
+ 							"max_chars": 2,
+ 							"description": {
+ 								"de": "Wie viele wählen Option C? Ihre Antwort:"
+ 							},
+ 							"suffix": {
+ 								"de": "\u0026nbsp;von\u0026nbsp;10\u0026nbsp;\u0026nbsp;\u0026nbsp;"
+ 							},
+ 							"col_span_label": 3,
+ 							"col_span_control": 2,
+ 							"validator": "inRange20"
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"width": 100,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"name": "text10",
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\n\t\t\t\t\t\u003cb\u003eFrage 3. \u003c/b\u003e\n\t\t\t\t\tUnd wie lautet Ihre Schätzung für die folgenden drei Optionen?\n\t\t\t\t\t\u003ci\u003e(Ihre Antworten müssen sich auf 10 summieren. Die Zeitpunkte und Beträge sind anders als in Frage 2.)\u003c/i\u003e\n\t\t\t\t\t"
+ 							}
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"width": 100,
+ 					"columns": 12,
+ 					"inputs": [
+ 						{
+ 							"type": "composit",
+ 							"dynamic_func": "GroupPreferences__1__1"
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"width": 100,
+ 					"columns": 15,
+ 					"inputs": [
+ 						{
+ 							"name": "q4b_opt1",
+ 							"type": "number",
+ 							"max_chars": 2,
+ 							"description": {
+ 								"de": "Wie viele wählen Option A? Ihre Antwort:"
+ 							},
+ 							"suffix": {
+ 								"de": "\u0026nbsp;von\u0026nbsp;10\u0026nbsp;\u0026nbsp;\u0026nbsp;"
+ 							},
+ 							"col_span_label": 3,
+ 							"col_span_control": 2,
+ 							"validator": "inRange20"
+ 						},
+ 						{
+ 							"name": "q4b_opt2",
+ 							"type": "number",
+ 							"max_chars": 2,
+ 							"description": {
+ 								"de": "Wie viele wählen Option B? Ihre Antwort:"
+ 							},
+ 							"suffix": {
+ 								"de": "\u0026nbsp;von\u0026nbsp;10\u0026nbsp;\u0026nbsp;\u0026nbsp;"
+ 							},
+ 							"col_span_label": 3,
+ 							"col_span_control": 2,
+ 							"validator": "inRange20"
+ 						},
+ 						{
+ 							"name": "q4b_opt3",
  							"type": "number",
  							"max_chars": 2,
  							"description": {

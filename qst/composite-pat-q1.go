@@ -10,7 +10,7 @@ import (
 )
 
 type preferences3x3T struct {
-	ID   int     // Frage-ID - not the sequence
+	ID   int     // unused - Frage-ID - not the sequence - unused
 	Ppls [][]int // three cols - three rows  =>  0...5 person images
 }
 
@@ -40,11 +40,9 @@ var reshuffle6basedOn16 = [][]int{
 
 // PoliticalFoundations creates
 // a HTML table with three option and three checkbox inputs;
-// renderSeq is the numbering
-// politicalFoundationsParamsT.ID for rendering the numbering;
-// politicalFoundationsParamsT.Ppls for rendering icons of peoples to certain positions;
-// return 1 is the HTML code
-// return 2 are the input names, based on seq0to5;
+// seq0to5 is the numbering;
+// based on userIDInt() - 4 versions / 4 permutations - via fourPermutationsOf6x3x3 + reshuffle6basedOn16;
+// see composite.go for more.
 func PoliticalFoundations(q *QuestionnaireT, seq0to5, paramSetIdx int) (string, []string, error) {
 
 	userID := 0
@@ -81,7 +79,6 @@ func PoliticalFoundations(q *QuestionnaireT, seq0to5, paramSetIdx int) (string, 
 
 func politicalFoundations(q *QuestionnaireT, seq0to5 int, questionID string, ppls [][]int) (string, []string, error) {
 
-	//
 	//
 	inputNames := []string{}
 	name := fmt.Sprintf("%v_r", questionID)
@@ -154,8 +151,7 @@ func politicalFoundations(q *QuestionnaireT, seq0to5 int, questionID string, ppl
 	</span>
 </p>
 
-<br>
-
+<div class="vspacer-08"> &nbsp; </div>
 
 <div id="t01">
 

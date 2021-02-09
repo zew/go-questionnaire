@@ -236,6 +236,22 @@ var coreTranslations = Map{
 		"it": "Finire questo sondaggio",
 		"pl": "Zakończyłem tę ankietę",
 	},
+	"entries_saved": {
+		"de": "Ihre Eingaben wurden gespeichert.",
+		"en": "Your entries have been saved.",
+		"es": "Sus entradas se han guardado.",
+		"fr": "Vos réponses ont été sauvegardées.",
+		"it": "Le Sue risposte sono state salvate.",
+		"pl": "Twoje wpisy zostały zapisane.",
+	},
+	"thanks_for_participation": {
+		"de": "Danke für Ihre Teilnahme an unserer Umfrage.",
+		"en": "Thank you for your participation in our survey.",
+		"es": "Gracias por haber contestado a nuestro cuestionario.",
+		"fr": "Nous vous remercions d'avoir répondu à nos questions.",
+		"it": "Grazie per aver risposto al nostro questionario.",
+		"pl": "Dziękujemy za uczestnictwo w ankiecie.",
+	},
 	"finished_by_participant": {
 		"de": "Sie haben den Fragebogen bereits abgeschlossen (%v).",
 		"en": "You already finished this survey wave at %v",

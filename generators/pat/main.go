@@ -666,10 +666,12 @@ Welche Optionen sollen der Person (nicht) zur Verfügung stehen, falls die Optio
 				inp.Response = fmt.Sprintf("%v", len(q.Pages)-1+1) // +1 since one page is appended below
 				inp.Label = trl.S{"de": "", "en": ""}
 				inp.Desc = cfg.Get().Mp["end"]
+				inp.Desc = cfg.Get().Mp["finish_questionnaire"]
 				inp.ColSpanControl = 1
 				inp.AccessKey = "n"
 				inp.HAlignControl = qst.HCenter
 				inp.HAlignControl = qst.HLeft
+				inp.HAlignControl = qst.HRight
 			}
 		}
 
@@ -694,27 +696,13 @@ Welche Optionen sollen der Person (nicht) zur Verfügung stehen, falls die Optio
 				inp := gr.AddInput()
 				inp.Type = "textblock"
 				inp.CSSLabel = "special-line-height-higher"
-				inp.Desc = trl.S{
-					"de": "Danke für Ihre Teilnahme an unserer Umfrage.",
-					"en": "Thank you for your participation in our survey.",
-					"es": "Gracias por haber contestado a nuestro cuestionario.",
-					"fr": "Nous vous remercions d'avoir répondu à nos questions.",
-					"it": "Grazie per aver risposto al nostro questionario.",
-					"pl": "Dziękujemy za uczestnictwo w ankiecie.",
-				}
+				inp.Desc = cfg.Get().Mp["thanks_for_participation"]
 			}
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
 				inp.CSSLabel = "special-line-height-higher"
-				inp.Desc = trl.S{
-					"de": "<span style='font-size: 100%;'>Ihre Eingaben wurden gespeichert.</span>",
-					"en": "<span style='font-size: 100%;'>Your entries have been saved.</span>",
-					"es": "<span style='font-size: 100%;'>Sus entradas se han guardado.</span>",
-					"fr": "<span style='font-size: 100%;'>Vos réponses ont été sauvegardées.</span>",
-					"it": "<span style='font-size: 100%;'>Le Sue risposte sono state salvate.</span>",
-					"pl": "<span style='font-size: 100%;'>Twoje wpisy zostały zapisane.</span>",
-				}
+				inp.Desc = cfg.Get().Mp["entries_saved"]
 			}
 		}
 

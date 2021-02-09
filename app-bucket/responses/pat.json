@@ -16,7 +16,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "d690d5ccb294e9a0d49164d1f029613e",
+ 	"md_5": "4c60fe50873a824e45dde4e0b4c54e17",
  	"lang_codes": [
  		"de"
  	],
@@ -826,14 +826,15 @@
  								"en": ""
  							},
  							"description": {
- 								"de": "Ende",
- 								"en": "End",
- 								"es": "Fin",
- 								"fr": "Fin",
- 								"it": "Fine",
- 								"pl": "Końcu"
+ 								"de": "Fragebogen abschließen",
+ 								"en": "Finish this survey",
+ 								"es": "Terminé esta encuesta",
+ 								"fr": "Terminer ce sondage",
+ 								"it": "Finire questo sondaggio",
+ 								"pl": "Zakończyłem tę ankietę"
  							},
  							"accesskey": "n",
+ 							"horizontal_align_control": 2,
  							"css_control": "special-line-height-higher",
  							"col_span_control": 1,
  							"response": "6"
@@ -880,12 +881,12 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\u003cspan style='font-size: 100%;'\u003eIhre Eingaben wurden gespeichert.\u003c/span\u003e",
- 								"en": "\u003cspan style='font-size: 100%;'\u003eYour entries have been saved.\u003c/span\u003e",
- 								"es": "\u003cspan style='font-size: 100%;'\u003eSus entradas se han guardado.\u003c/span\u003e",
- 								"fr": "\u003cspan style='font-size: 100%;'\u003eVos réponses ont été sauvegardées.\u003c/span\u003e",
- 								"it": "\u003cspan style='font-size: 100%;'\u003eLe Sue risposte sono state salvate.\u003c/span\u003e",
- 								"pl": "\u003cspan style='font-size: 100%;'\u003eTwoje wpisy zostały zapisane.\u003c/span\u003e"
+ 								"de": "Ihre Eingaben wurden gespeichert.",
+ 								"en": "Your entries have been saved.",
+ 								"es": "Sus entradas se han guardado.",
+ 								"fr": "Vos réponses ont été sauvegardées.",
+ 								"it": "Le Sue risposte sono state salvate.",
+ 								"pl": "Twoje wpisy zostały zapisane."
  							},
  							"css_label": "special-line-height-higher"
  						}

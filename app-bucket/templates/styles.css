@@ -317,7 +317,7 @@ legend {
 	padding: 0.1em 0.3em;
 	margin-left: 0.3em;
 
-	font-size: 0.91rem; /* like label */
+	font-size: 95%; /* like label */
 	letter-spacing:	0.03rem;
 	font-weight: 300; /* visibility in mobile browser */
 }
@@ -329,7 +329,7 @@ label, .postlabel {
 	padding-bottom: 0.15rem;  /* for vertical alignment */
 	margin-right: 0.5rem;
 
-	font-size: 0.91rem;	/* like legend */
+	font-size: 95%;	/* like legend */
 	letter-spacing:	0.03rem;
 	font-weight: 300; /* visibility in mobile browser */
 
@@ -731,6 +731,10 @@ input[type=radio]:focus		 {
     white-space: normal !important;  /* overriding outer element setting */
     display: inline-block;
 	width: 75%;
+
+	font-size: 95%; /* like label and suffix */
+	letter-spacing:	0.03rem;
+
 }
 
 .plain-text-broken {

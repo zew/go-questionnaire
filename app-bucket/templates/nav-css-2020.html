@@ -8,9 +8,14 @@
 
         no whithespace in following line 
     -->
-    <a href="{{cfg.Pref "" }}" class="logo"><img src="" 
-        alt="">
+    <a href="{{cfg.Pref "" }}" class="logo">
+        <img src=""  alt="">
         
+    
+    
+    </a>
+
+    <a href="{{cfg.Pref "" }}" class="title">
         {{ $lc := (.Sess.EffectiveStr "lang_code" .MoreFuncs.DefaultLangCode)}}
         {{if exists . "Q"}}
             <!--  
@@ -20,9 +25,9 @@
         {{else}}
             <span style='font-size: 130%;'>{{.MoreFuncs.Trls.app_label_h1.Tr $lc}} </span> {{.MoreFuncs.Trls.app_label.Tr $lc}}
         {{end}}
-    
-    
+
     </a>
+
 
     
     <div style="display: none;">     
@@ -59,7 +64,10 @@
         {{- end -}}  
     -->
 
-    {{- nav .Req .Q (.Req.URL.Path) -}}
+    {{- nav .Req .Q (.Req.URL.Path) }}
+
+    </ul>
+   
     {{if .S}}
     {{end}}
 <!-- 

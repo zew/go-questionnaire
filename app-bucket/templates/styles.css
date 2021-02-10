@@ -197,7 +197,7 @@ nav a[href=""].is-active:hover::after {
 /* selected text - anywhere */
 ::selection {
 	color:      var(--clr-input-bg);
-	background: var(--clr-input-fg);		
+	background: var(--clr-input-fg);
 }
 
 
@@ -338,7 +338,7 @@ label, .postlabel {
 		not stretching the container
 		extends to 100% of container
 		thus container [max]-width should be specified
-		
+
 		pre-wrap => preserve white space
 		pre-line => collapse white space
 	*/
@@ -369,7 +369,7 @@ label.bottom {
 
 .postlabel {
 	/* font-size: 0.78rem; */
-	text-align: left;	
+	text-align: left;
 	margin-left: 0.35rem;
 	min-width: inherit;  /* reset from label */
 }
@@ -493,12 +493,12 @@ input:disabled, select:disabled {
 
 /* Hide HTML5 Up and Down arrows. */
 /* www.thatstevensguy.com/programming/disable-arrows-on-number-inputs/ */
-input[type="number"]::-webkit-outer-spin-button, 
+input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
- 
+
 input[type="number"] {
     -moz-appearance: textfield;
 }
@@ -550,7 +550,7 @@ select:-moz-focusring {
 	select-inputs with long labels should not stretch their container
 	stackoverflow.com/questions/2591796
 
-	2021-02:         
+	2021-02:
 	all it takes to preven long options from stretching the select:
         max-width: 80px;
 
@@ -565,7 +565,7 @@ option {
 }
 
 
-/* 
+/*
 	artificial arrow icon for select/dropdown
 	by wrapping a div around each select ;
 	looks more stylish;
@@ -585,7 +585,7 @@ option {
 
 div.wildcardselect {
     display: inline-block;
-	margin-top: 0.2rem; 
+	margin-top: 0.2rem;
 	vertical-align: top;
 }
 div.wildcardselect input {
@@ -631,7 +631,7 @@ input[type=radio] {
 
 	vertical-align: middle;
 	margin: 0.70rem 0.45rem; /* labels far away enough from scaled input; padding is useless here	*/
-	
+
 	/* margin-bottom: 0.45rem; */  /*  2021-02 - height correction removed  */
 
 	/*
@@ -684,7 +684,7 @@ input[type=radio]:focus		 {
 		not stretching the container
 		extends to 100% of container
 		thus container [max]-width should be specified
-		
+
 		pre-wrap => preserve white space
 		pre-line => collapse white space
 	*/
@@ -699,7 +699,7 @@ input[type=radio]:focus		 {
 		not stretching the container
 		extends to 100% of container
 		thus container [max]-width should be specified
-		
+
 		pre-wrap => preserve white space
 		pre-line => collapse white space
 	*/
@@ -718,7 +718,7 @@ input[type=radio]:focus		 {
 	font-weight: bold;
 }
 
-/* 
+/*
     We want to prevent line-break of the '%' or '€' suffix character.
     inputs must be inline-block, for whitespace nowrap to work.
     At the same time: suffix-inner enables wrapping for the suffix itself
@@ -864,8 +864,7 @@ nav {
 	width: 100%;
 	min-height:			 var(--nav-height);
 	display: grid;
-	grid-template-columns: 0.4fr 4fr 4fr 2em 0.15fr;
-	grid-template-columns: 0.4fr 4fr 4fr 3.0em 2em 0.15fr;
+	grid-template-columns: 4fr 4fr 3.0em [col-menu] 2em 0.15fr;
 	/* main axis */
 	/*
 	css-tricks.com/snippets/css/a-guide-to-flexbox/
@@ -885,41 +884,48 @@ nav {
 
 }
 
-.logo {
-	position: relative;
-	color: var(--clr-pri);
-	font-size: 1.7rem;
+nav a.logo,
+nav a.title
+{
+	display:        inline-block;
+    vertical-align: middle;
+
+	position:       relative;
+
+	color:          var(--clr-pri);
+
+	font-size:      unset;
+	line-height:    unset;
 	letter-spacing: 0.10rem;
-	white-space: nowrap;
-
-	grid-column: 2 / 3;
-
+	/* white-space: nowrap; */
 }
+
+/* placeholder for img insertion */
+nav a.logo img {
+	display:        inline-block;  /* activates margins */
+    vertical-align: middle;
+
+	position: relative;
+	top:		 0.15rem;
+	left:		-0.10rem;
+
+	height: calc(var(--nav-height) - 0.8rem);
+
+	margin-right: 0.2rem;
+
+	/* requires diplay, width and height being set */
+	content: var(--img-logo-icon);
+}
+
+
 
 /* dont color logo as 'visited' */
 .logo:visited {
 	color: var(--clr-pri);
 }
 
-/* placeholder for img insertion */
-.logo img {
-	display: inline-block;
-	position: relative;
-
-	top:			0.15rem;
-	left:		-0.10rem;
-
-	width:	 1.8rem;
-	height:	1.6rem;
-
-	margin-right: 0.4rem;
-
-	/* requires diplay, width and height being set */
-	content: var(--img-logo-icon);
-}
-
 .login-icon {
-	grid-column: 4 / 5;
+	grid-column: col-menu/span 1;
 	justify-self: center;
 }
 
@@ -946,7 +952,8 @@ img.logged-in {
 /* only non-systematic name; instead of mnu-1st-lvl-label */
 .burger {
 	cursor: pointer;
-	grid-column: 5 / 6;
+    grid-column: col-menu/span 1;
+
 	width: 1.32em;
 	font-size: 1.0rem;
 }
@@ -1221,7 +1228,8 @@ ul.mnu-3rd-lvl li:last-child {
 		background-color: var(--clr-sec);
 
 		display: grid;
-		grid-template-columns: 1fr 4fr 4fr 0.7fr 2fr 1fr;
+		grid-template-columns: 4fr 4fr 0.7fr 2fr [col-menu] 1fr;
+
 
 		justify-content: right;
 
@@ -1232,7 +1240,7 @@ ul.mnu-3rd-lvl li:last-child {
 
 	.login-icon {
 		width: 1.4rem;
-		grid-column: 4 / 5;
+		grid-column: col-menu/span 1;
 		justify-self: center;
 	}
 
@@ -1248,7 +1256,8 @@ ul.mnu-3rd-lvl li:last-child {
 		transform:	translateX(0);
 		transition: none;
 
-		grid-column: 5 / 6;
+		grid-column: col-menu/span 1;
+
 		width: 100%;
 
 		position: relative;
@@ -1402,23 +1411,23 @@ ul.mnu-3rd-lvl li:last-child {
 }
 
 /* 	for global padding
-	 children can have padding:0; width=100%  
+	 children can have padding:0; width=100%
 	 previously hori-center-me
  */
 form[name=frmMain] {
-	
+
 	display: flex;
 	flex-direction: column;
 
-	width:      100%; 
-	min-width:  960px; 
+	width:      100%;
+	min-width:  960px;
 
-	margin:  0 auto;  
+	margin:  0 auto;
 	padding: 0;
 	/* padding-top:20px; => causes vert scroll bar; use body.padding to adjust  */
 	/* padding-left:6%;  => aesthetic compensation moved to page rendering */
-	padding-right:  0px;	
-	padding-bottom: 0px;	
+	padding-right:  0px;
+	padding-bottom: 0px;
 
 	border: none;
 	background-color: transparent ;   /* important for progress bar */
@@ -1427,7 +1436,7 @@ form[name=frmMain] {
 
 @media screen and (min-width: 800px) {
 	form[name=frmMain] {
-		width:      70%; 
+		width:      70%;
 	}
 }
 
@@ -1437,8 +1446,8 @@ form[name=frmMain] {
 /* more helper stuff */
 
 div.separator {
-    height: 1px; 
-    border-top: 1px solid var(--clr-sec-drk2); 
+    height: 1px;
+    border-top: 1px solid var(--clr-sec-drk2);
 
     padding:        0;
     margin:         0;

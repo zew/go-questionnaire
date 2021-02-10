@@ -98,13 +98,9 @@ func (s surveyT) TemplateLogoText(langCode string) template.HTML {
 
 	if s.WaveIDPretty() != "" {
 		ret = fmt.Sprintf(`
-		<span style="font-size: 70%%; position: relative; bottom: 2px; left: 4px;">
-			<span style='font-size: 130%%'>%v </span>
-			<span style="position: relative; bottom: 0px;" >
-				%v 
-				<span class="wave-id"> - %v</span>
-			</span>
-		</span>
+			<span class="survey-org"        >%v </span>
+			<span class="survey-name"       >%v </span>
+			<span class="survey-wave-id" > - %v</span>
 		`,
 			s.Org.TrSilent(langCode),
 			s.Name.TrSilent(langCode),
@@ -149,7 +145,7 @@ func (s *surveyT) HTMLForm(questTypes []string, errStr string) string {
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>hash logins</title>
+    <title>Generate JSON questionnaires</title>
 	<style>
 		* {font-family: monospace;}
 		.survey-edit-form span {

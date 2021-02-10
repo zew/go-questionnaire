@@ -2,10 +2,10 @@
  	"survey": {
  		"type": "pat",
  		"org": {
- 			"de": ""
+ 			"de": "ZEW"
  		},
  		"name": {
- 			"de": "Politische Entscheidungsprozesse"
+ 			"de": "Umfrage zu Entscheidungsprozessen in der Politik"
  		},
  		"year": 2021,
  		"month": 2,
@@ -16,7 +16,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "edc7f03ca89159a5e96a8a19f401cca4",
+ 	"md_5": "d6ec6be0d222ed5ce006c53988005be3",
  	"lang_codes": [
  		"de"
  	],
@@ -32,7 +32,7 @@
  			},
  			"no_navigation": true,
  			"navi_num": 0,
- 			"width": 80,
+ 			"width": 70,
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
  				{

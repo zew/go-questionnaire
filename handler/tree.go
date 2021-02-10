@@ -31,7 +31,10 @@ func Tree(lc string) *TreeT {
 			// 		{Node: Info{Title: "English"}},
 			// 	},
 			// },
-			{Node: Info{Title: cfg.Get().Mp["user"].Tr(lc), Keys: []string{"loginlogout"}},
+			{Node: Info{
+				Title: cfg.Get().Mp["user"].Tr(lc),
+				Keys:  []string{"loginlogout"},
+			},
 				Children: []TreeT{
 					{Node: infos.ByKey("login-primitive")},
 					{Node: infos.ByKey("logout")},
@@ -39,13 +42,17 @@ func Tree(lc string) *TreeT {
 					{Node: infos.ByKey("create-anonymous-id")},
 				},
 			},
-			{Node: Info{Title: "&nbsp;" + cfg.Get().Mp["about"].Tr(lc) + "&nbsp;&nbsp"},
+			{Node: Info{
+				Title: "&nbsp;" + cfg.Get().Mp["about"].Tr(lc) + "&nbsp;&nbsp",
+				Keys:  []string{"about"},
+			},
 				Children: []TreeT{
 					{Node: infos.ByKeyTranslated("imprint", lc)},
 				},
 			},
 			{Node: Info{
 				Title: "Sys admin",
+				Keys:  []string{"admin"},
 				Allow: map[Privilege]bool{Admin: true},
 			},
 				Children: []TreeT{
@@ -220,12 +227,16 @@ being mapped to tpl.fcNav
 */
 func (tr *TreeT) NavHTML(w io.Writer, r *http.Request, isLogin, isAdmin bool, lvl int) {
 
-	// The root node itself is not rendered - we go straight to the children
+	// the root node itself is not rendered - we go straight to the children
 	if lvl == 0 {
 		for _, child := range tr.Children {
 			child.NavHTML(w, r, isLogin, isAdmin, lvl+1)
 		}
 		return
+	}
+
+	if lvl == 1 {
+		fmt.Fprint(w, "\n") // pretty indentations in HTML source
 	}
 
 	needsLogout := tr.Node.Allow[LoggedOut]
@@ -245,14 +256,14 @@ func (tr *TreeT) NavHTML(w io.Writer, r *http.Request, isLogin, isAdmin bool, lv
 	{
 
 		htmlIndent := strings.Repeat(" ", 10*lvl) // just for readability in HTML source
+		key := ""
 		navURL := ""
 		activeClass := "" // style the active nav item
 		preventClck := "" // nav items without URL should not be clickable;
-
 		accessKey := ""
-		if tr.Node.ShortCut != "" {
-			accessKey = fmt.Sprintf(" accesskey='%v' ", tr.Node.ShortCut)
-			tr.Node.Title += fmt.Sprintf(" <span title='Keyboard shortcut SHIFT+ALT+%v' >(%v)</span>", tr.Node.ShortCut, tr.Node.ShortCut)
+
+		if len(tr.Node.Keys) > 0 {
+			key = tr.Node.Keys[0]
 		}
 
 		if len(tr.Node.Urls) > 0 {
@@ -268,11 +279,18 @@ func (tr *TreeT) NavHTML(w io.Writer, r *http.Request, isLogin, isAdmin bool, lv
 			preventClck = " onclick='return false;' "
 		}
 
+		if tr.Node.ShortCut != "" {
+			accessKey = fmt.Sprintf(" accesskey='%v' ", tr.Node.ShortCut)
+			tr.Node.Title += fmt.Sprintf(" <span title='Keyboard shortcut SHIFT+ALT+%v' >(%v)</span>", tr.Node.ShortCut, tr.Node.ShortCut)
+		}
+
 		if len(tr.Children) == 0 {
 
-			fmt.Fprintf(w, "\n%v<li><a href='%v' class='%v'  %v  %v  >%v</a></li>  \n",
+			fmt.Fprintf(w, "%v<li id='%v' >\n", htmlIndent, key)
+			fmt.Fprintf(w, "%v  <a href='%v' class='%v'  %v  %v  >%v</a>\n",
 				htmlIndent, navURL, activeClass, preventClck, accessKey, tr.Node.Title,
 			)
+			fmt.Fprintf(w, "%v</li>\n", htmlIndent)
 
 		} else {
 
@@ -289,10 +307,10 @@ func (tr *TreeT) NavHTML(w io.Writer, r *http.Request, isLogin, isAdmin bool, lv
 
 			*/
 
-			fmt.Fprintf(w, "%v<li class='nde-2nd-lvl'>\n", htmlIndent)
+			fmt.Fprintf(w, "%v<li  class='nde-2nd-lvl' id='%v' >\n", htmlIndent, key)
 
 			// same as above - without enclosing <li>
-			fmt.Fprintf(w, "%v<a href='%v' class='%v'  %v  %v  >%v</a>  \n",
+			fmt.Fprintf(w, "%v  <a href='%v' class='%v'  %v  %v  >%v</a>  \n",
 				htmlIndent, navURL, activeClass, preventClck, accessKey, tr.Node.Title,
 			)
 

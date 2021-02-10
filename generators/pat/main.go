@@ -25,18 +25,18 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	q.Survey.Params = params
 	q.LangCodes = []string{"de"} // governs default language code
 
-	q.Survey.Org = trl.S{"de": ""} // no ZEW
+	q.Survey.Org = trl.S{"de": "ZEW"}
 	q.Survey.Name = trl.S{"de": "Paternalismus Umfrage"}
-	q.Survey.Name = trl.S{"de": "Umfrage zu Entscheidungsprozessen in der Politik"}
 	q.Survey.Name = trl.S{"de": "Entscheidungsprozesse in der Politik"}
 	q.Survey.Name = trl.S{"de": "Politische Entscheidungsprozesse"}
+	q.Survey.Name = trl.S{"de": "Umfrage zu Entscheidungsprozessen in der Politik"}
 	q.Variations = 4
 	q.Variations = 0
 
 	// page 0
 	{
 		page := q.AddPage()
-		page.Width = 80
+		page.Width = 60
 		page.Label = trl.S{"de": "&nbsp;"}
 		page.Label = trl.S{"de": ""}
 		page.NoNavigation = true

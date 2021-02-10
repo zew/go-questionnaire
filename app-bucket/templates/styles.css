@@ -368,7 +368,8 @@ label.bottom {
 }
 
 .postlabel {
-	font-size: 0.78rem;
+	/* font-size: 0.78rem; */
+	text-align: left;	
 	margin-left: 0.35rem;
 	min-width: inherit;  /* reset from label */
 }

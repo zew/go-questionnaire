@@ -25,16 +25,18 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	q.Survey.Params = params
 	q.LangCodes = []string{"de"} // governs default language code
 
-	q.Survey.Org = trl.S{"de": "ZEW"}
+	q.Survey.Org = trl.S{"de": ""} // no ZEW
 	q.Survey.Name = trl.S{"de": "Paternalismus Umfrage"}
 	q.Survey.Name = trl.S{"de": "Umfrage zu Entscheidungsprozessen in der Politik"}
-	q.Variations = 0
+	q.Survey.Name = trl.S{"de": "Entscheidungsprozesse in der Politik"}
+	q.Survey.Name = trl.S{"de": "Politische Entscheidungsprozesse"}
 	q.Variations = 4
+	q.Variations = 0
 
 	// page 0
 	{
 		page := q.AddPage()
-		page.Width = 50
+		page.Width = 80
 		page.Label = trl.S{"de": "&nbsp;"}
 		page.Label = trl.S{"de": ""}
 		page.NoNavigation = true
@@ -45,7 +47,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		}
 		gr.Desc = trl.S{
 			"de": `
-<p>Dies ist eine Studie des Zentrums für €päische Wirtschaftsforschung (ZEW) in Mannheim sowie der Universitäten in Köln, Mannheim, Münster und Zürich. Ihre Teilnahme wird nur wenige Minuten in Anspruch nehmen und Sie unterstützen damit die Forschung zu Entscheidungsprozessen in der Politik.
+<p>Dies ist eine Studie des Zentrums für Europäische Wirtschaftsforschung (ZEW) in Mannheim sowie der Universitäten in Köln, Mannheim, Münster und Zürich. Ihre Teilnahme wird nur wenige Minuten in Anspruch nehmen und Sie unterstützen damit die Forschung zu Entscheidungsprozessen in der Politik.
 </p>
 
 <p>In dieser Studie treffen Sie acht Entscheidungen und beantworten sieben Fragen. Nach der Erhebung werden 10 % aller Teilnehmer zufällig ausgewählt. Von jedem ausgewählten Teilnehmer wird eine der acht Entscheidungen zufällig bestimmt und genau wie unten beschrieben umgesetzt (alle unten erwähnten Personen existieren wirklich und alle Auszahlungen werden wie beschrieben getätigt).
@@ -55,8 +57,20 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 </p>
 
 				 <br>
+
+<div class="uni-logos  logo-imgs-in-content">
+    <img src="/survey/img/pat/uni-mannheim-wide.png"  style="width:61%;"  alt=""  >
+    <img src="/survey/img/pat/uni-koeln.png"          style="width:33%;"  alt=""  >
+    <img src="/survey/img/pat/uni-muenster.png"       style="width:50%;"  alt=""  >
+    <img src="/survey/img/pat/uni-zurich.png"         style="width:44%;"  alt=""  >
+</div>
+
 				 <br>
-				`,
+				 <br>
+
+
+
+				 `,
 		}
 
 		{
@@ -65,6 +79,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			inp.Name = "submitBtn"
 			inp.Response = "1"
 			inp.Label = trl.S{"de": "Weiter"}
+			inp.HAlignControl = qst.HRight
 			inp.AccessKey = "n"
 		}
 
@@ -140,7 +155,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				'> )
 
 				mittel eingestuft und von drei weiteren am schlechtesten. Stiftung B wird von drei Personen am besten eingestuft und von zweien am schlechtesten, und so weiter.
-				`, cfg.Pref("/img/person.png")),
+				`, cfg.Pref("/img/pat/person.png")),
 				}
 			}
 
@@ -273,16 +288,16 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Desc = trl.S{
 					"de": `
 
-<p>
-<b>Frage 1.</b> Schätzen Sie bitte: Was wäre eine zufällig ausgewählte Person aus unserer Vorstudie maximal bereit zu zahlen, damit eine Spende von 30 € an die Stiftung überwiesen wird, die diese Person als am besten/mittel/am schlechtesten erachtet?
-<i>(Wenn Sie meinen, die Person würde dafür bezahlen, dass die Stiftung die 30 € nicht erhält, schreiben Sie bitte ein Minuszeichen vor den jeweiligen Betrag.)</i>
-</p>
+					<p>
+					<b>Frage 1.</b> Schätzen Sie bitte: Was wäre eine zufällig ausgewählte Person aus unserer Vorstudie maximal bereit zu zahlen, damit eine Spende von 30 € an die Stiftung überwiesen wird, die diese Person als am besten/mittel/am schlechtesten erachtet?
+					<i>(Wenn Sie meinen, die Person würde dafür bezahlen, dass die Stiftung die 30 € nicht erhält, schreiben Sie bitte ein Minuszeichen vor den jeweiligen Betrag.)</i>
+					</p>
 
-<p>
-<!--
-Beste Stiftung:_______	Mittlere Stiftung:_______	Schlechteste Stiftung:_______
-</p>
--->
+					<p>
+					<!--
+					Beste Stiftung:_______	Mittlere Stiftung:_______	Schlechteste Stiftung:_______
+					</p>
+					-->
 
 
 					`,
@@ -307,7 +322,7 @@ Beste Stiftung:_______	Mittlere Stiftung:_______	Schlechteste Stiftung:_______
 				inp.ColSpanControl = 2
 				inp.HAlignLabel = qst.HRight
 				inp.Desc = trl.S{"de": "Beste Stiftung"}
-				inp.Suffix = trl.S{"de": " &nbsp; €"}
+				inp.Suffix = trl.S{"de": "€"}
 				inp.Validator = "inRange1000"
 			}
 			{
@@ -319,7 +334,7 @@ Beste Stiftung:_______	Mittlere Stiftung:_______	Schlechteste Stiftung:_______
 				inp.ColSpanControl = 2
 				inp.HAlignLabel = qst.HRight
 				inp.Desc = trl.S{"de": "Mittlere Stiftung"}
-				inp.Suffix = trl.S{"de": " &nbsp; €"}
+				inp.Suffix = trl.S{"de": "€"}
 				inp.Validator = "inRange1000"
 			}
 			{
@@ -331,7 +346,7 @@ Beste Stiftung:_______	Mittlere Stiftung:_______	Schlechteste Stiftung:_______
 				inp.ColSpanControl = 2
 				inp.HAlignLabel = qst.HRight
 				inp.Desc = trl.S{"de": "Schlechteste Stiftung"}
-				inp.Suffix = trl.S{"de": " &nbsp; €"}
+				inp.Suffix = trl.S{"de": "€"}
 				inp.Validator = "inRange1000"
 			}
 		}
@@ -506,9 +521,9 @@ Welche Optionen sollen der Person (nicht) zur Verfügung stehen, falls die Optio
 				inp.ColSpanLabel = 3
 				inp.ColSpanControl = 2
 				inp.Desc = trl.S{"de": "Wie viele wählen Option A? Ihre Antwort:"}
-				inp.Suffix = trl.S{"de": "&nbsp;von&nbsp;10&nbsp;&nbsp;&nbsp;"}
+				inp.Suffix = trl.S{"de": "von&nbsp;10&nbsp;"}
 				inp.HAlignLabel = qst.HLeft
-				inp.Validator = "inRange20"
+				inp.Validator = "inRange10"
 			}
 			{
 				inp := gr.AddInput()
@@ -518,9 +533,9 @@ Welche Optionen sollen der Person (nicht) zur Verfügung stehen, falls die Optio
 				inp.ColSpanLabel = 3
 				inp.ColSpanControl = 2
 				inp.Desc = trl.S{"de": "Wie viele wählen Option B? Ihre Antwort:"}
-				inp.Suffix = trl.S{"de": "&nbsp;von&nbsp;10&nbsp;&nbsp;&nbsp;"}
+				inp.Suffix = trl.S{"de": "von&nbsp;10&nbsp;"}
 				inp.HAlignLabel = qst.HLeft
-				inp.Validator = "inRange20"
+				inp.Validator = "inRange10"
 			}
 			{
 				inp := gr.AddInput()
@@ -530,9 +545,9 @@ Welche Optionen sollen der Person (nicht) zur Verfügung stehen, falls die Optio
 				inp.ColSpanLabel = 3
 				inp.ColSpanControl = 2
 				inp.Desc = trl.S{"de": "Wie viele wählen Option C? Ihre Antwort:"}
-				inp.Suffix = trl.S{"de": "&nbsp;von&nbsp;10&nbsp;&nbsp;&nbsp;"}
+				inp.Suffix = trl.S{"de": "von&nbsp;10&nbsp;"}
 				inp.HAlignLabel = qst.HLeft
-				inp.Validator = "inRange20"
+				inp.Validator = "inRange10"
 			}
 		}
 
@@ -596,9 +611,9 @@ Welche Optionen sollen der Person (nicht) zur Verfügung stehen, falls die Optio
 				inp.ColSpanLabel = 3
 				inp.ColSpanControl = 2
 				inp.Desc = trl.S{"de": "Wie viele wählen Option A? Ihre Antwort:"}
-				inp.Suffix = trl.S{"de": "&nbsp;von&nbsp;10&nbsp;&nbsp;&nbsp;"}
+				inp.Suffix = trl.S{"de": "von&nbsp;10&nbsp;"}
 				inp.HAlignLabel = qst.HLeft
-				inp.Validator = "inRange20"
+				inp.Validator = "inRange10"
 			}
 			{
 				inp := gr.AddInput()
@@ -608,9 +623,9 @@ Welche Optionen sollen der Person (nicht) zur Verfügung stehen, falls die Optio
 				inp.ColSpanLabel = 3
 				inp.ColSpanControl = 2
 				inp.Desc = trl.S{"de": "Wie viele wählen Option B? Ihre Antwort:"}
-				inp.Suffix = trl.S{"de": "&nbsp;von&nbsp;10&nbsp;&nbsp;&nbsp;"}
+				inp.Suffix = trl.S{"de": "von&nbsp;10&nbsp;"}
 				inp.HAlignLabel = qst.HLeft
-				inp.Validator = "inRange20"
+				inp.Validator = "inRange10"
 			}
 			{
 				inp := gr.AddInput()
@@ -620,9 +635,9 @@ Welche Optionen sollen der Person (nicht) zur Verfügung stehen, falls die Optio
 				inp.ColSpanLabel = 3
 				inp.ColSpanControl = 2
 				inp.Desc = trl.S{"de": "Wie viele wählen Option C? Ihre Antwort:"}
-				inp.Suffix = trl.S{"de": "&nbsp;von&nbsp;10&nbsp;&nbsp;&nbsp;"}
+				inp.Suffix = trl.S{"de": "von&nbsp;10&nbsp;"}
 				inp.HAlignLabel = qst.HLeft
-				inp.Validator = "inRange20"
+				inp.Validator = "inRange10"
 			}
 		}
 

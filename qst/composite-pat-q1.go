@@ -122,7 +122,7 @@ func politicalFoundations(q *QuestionnaireT, seq0to5 int, questionID string, ppl
 
 	//
 	//
-	img := `<img src="/survey/img/person.png">`
+	img := `<img src="/survey/img/pat/person.png">`
 
 	imgs := []string{
 		"",

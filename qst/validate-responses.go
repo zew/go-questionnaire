@@ -60,6 +60,7 @@ func init() {
 		return nil
 	}
 
+	validators["inRange10"] = func(lc, arg string) error { return functionBase(lc, arg, 10) }
 	validators["inRange20"] = func(lc, arg string) error { return functionBase(lc, arg, 20) }
 	validators["inRange100"] = func(lc, arg string) error { return functionBase(lc, arg, 100) }
 	validators["inRange1000"] = func(lc, arg string) error { return functionBase(lc, arg, 1000) }

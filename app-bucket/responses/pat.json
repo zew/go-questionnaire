@@ -2,10 +2,10 @@
  	"survey": {
  		"type": "pat",
  		"org": {
- 			"de": "ZEW"
+ 			"de": ""
  		},
  		"name": {
- 			"de": "Umfrage zu Entscheidungsprozessen in der Politik"
+ 			"de": "Politische Entscheidungsprozesse"
  		},
  		"year": 2021,
  		"month": 2,
@@ -16,11 +16,10 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "4c60fe50873a824e45dde4e0b4c54e17",
+ 	"md_5": "edc7f03ca89159a5e96a8a19f401cca4",
  	"lang_codes": [
  		"de"
  	],
- 	"variations": 4,
  	"max_groups": 7,
  	"pages": [
  		{
@@ -33,7 +32,7 @@
  			},
  			"no_navigation": true,
  			"navi_num": 0,
- 			"width": 50,
+ 			"width": 80,
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
  				{
@@ -41,7 +40,7 @@
  						"de": "HERZLICH WILLKOMMEN ZU UNSERER STUDIE UND VIELEN DANK FÜR IHRE TEILNAHME!\u003cbr\u003e\u003cbr\u003e"
  					},
  					"description": {
- 						"de": "\n\u003cp\u003eDies ist eine Studie des Zentrums für €päische Wirtschaftsforschung (ZEW) in Mannheim sowie der Universitäten in Köln, Mannheim, Münster und Zürich. Ihre Teilnahme wird nur wenige Minuten in Anspruch nehmen und Sie unterstützen damit die Forschung zu Entscheidungsprozessen in der Politik.\n\u003c/p\u003e\n\n\u003cp\u003eIn dieser Studie treffen Sie acht Entscheidungen und beantworten sieben Fragen. Nach der Erhebung werden 10 % aller Teilnehmer zufällig ausgewählt. Von jedem ausgewählten Teilnehmer wird eine der acht Entscheidungen zufällig bestimmt und genau wie unten beschrieben umgesetzt (alle unten erwähnten Personen existieren wirklich und alle Auszahlungen werden wie beschrieben getätigt).\n\u003c/p\u003e\n\n\u003cp\u003eIn dieser Umfrage gibt es keine richtigen oder falschen Antworten. Bitte entscheiden Sie daher immer gemäß Ihren persönlichen Ansichten. Sie werden dabei vollständig anonym bleiben.\n\u003c/p\u003e\n\n\t\t\t\t \u003cbr\u003e\n\t\t\t\t \u003cbr\u003e\n\t\t\t\t"
+ 						"de": "\n\u003cp\u003eDies ist eine Studie des Zentrums für Europäische Wirtschaftsforschung (ZEW) in Mannheim sowie der Universitäten in Köln, Mannheim, Münster und Zürich. Ihre Teilnahme wird nur wenige Minuten in Anspruch nehmen und Sie unterstützen damit die Forschung zu Entscheidungsprozessen in der Politik.\n\u003c/p\u003e\n\n\u003cp\u003eIn dieser Studie treffen Sie acht Entscheidungen und beantworten sieben Fragen. Nach der Erhebung werden 10 % aller Teilnehmer zufällig ausgewählt. Von jedem ausgewählten Teilnehmer wird eine der acht Entscheidungen zufällig bestimmt und genau wie unten beschrieben umgesetzt (alle unten erwähnten Personen existieren wirklich und alle Auszahlungen werden wie beschrieben getätigt).\n\u003c/p\u003e\n\n\u003cp\u003eIn dieser Umfrage gibt es keine richtigen oder falschen Antworten. Bitte entscheiden Sie daher immer gemäß Ihren persönlichen Ansichten. Sie werden dabei vollständig anonym bleiben.\n\u003c/p\u003e\n\n\t\t\t\t \u003cbr\u003e\n\n\u003cdiv class=\"uni-logos  logo-imgs-in-content\"\u003e\n    \u003cimg src=\"/survey/img/pat/uni-mannheim-wide.png\"  style=\"width:61%;\"  alt=\"\"  \u003e\n    \u003cimg src=\"/survey/img/pat/uni-koeln.png\"          style=\"width:33%;\"  alt=\"\"  \u003e\n    \u003cimg src=\"/survey/img/pat/uni-muenster.png\"       style=\"width:50%;\"  alt=\"\"  \u003e\n    \u003cimg src=\"/survey/img/pat/uni-zurich.png\"         style=\"width:44%;\"  alt=\"\"  \u003e\n\u003c/div\u003e\n\n\t\t\t\t \u003cbr\u003e\n\t\t\t\t \u003cbr\u003e\n\n\n\n\t\t\t\t "
  					},
  					"bottom_vspacers": 3,
  					"width": 100,
@@ -54,6 +53,7 @@
  								"de": "Weiter"
  							},
  							"accesskey": "n",
+ 							"horizontal_align_control": 2,
  							"response": "1"
  						}
  					]
@@ -91,7 +91,7 @@
  							"name": "text02",
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\tIn \u003cb\u003eEntscheidung 1\u003c/b\u003e wird Stiftung A von zwei Personen\n\n\t\t\t\t(\u003cimg src='/survey/img/person.png' style='display: inline-block; height: 1.0rem;\n\t\t\t\t\tposition: relative; top: 0.2rem; left: 0.1rem;\n\t\t\t\t'\u003e )\n\n\t\t\t\tmittel eingestuft und von drei weiteren am schlechtesten. Stiftung B wird von drei Personen am besten eingestuft und von zweien am schlechtesten, und so weiter.\n\t\t\t\t"
+ 								"de": "\n\t\t\t\tIn \u003cb\u003eEntscheidung 1\u003c/b\u003e wird Stiftung A von zwei Personen\n\n\t\t\t\t(\u003cimg src='/survey/img/pat/person.png' style='display: inline-block; height: 1.0rem;\n\t\t\t\t\tposition: relative; top: 0.2rem; left: 0.1rem;\n\t\t\t\t'\u003e )\n\n\t\t\t\tmittel eingestuft und von drei weiteren am schlechtesten. Stiftung B wird von drei Personen am besten eingestuft und von zweien am schlechtesten, und so weiter.\n\t\t\t\t"
  							}
  						}
  					]
@@ -369,7 +369,7 @@
  							"name": "text06",
  							"type": "textblock",
  							"description": {
- 								"de": "\n\n\u003cp\u003e\n\u003cb\u003eFrage 1.\u003c/b\u003e Schätzen Sie bitte: Was wäre eine zufällig ausgewählte Person aus unserer Vorstudie maximal bereit zu zahlen, damit eine Spende von 30 € an die Stiftung überwiesen wird, die diese Person als am besten/mittel/am schlechtesten erachtet?\n\u003ci\u003e(Wenn Sie meinen, die Person würde dafür bezahlen, dass die Stiftung die 30 € nicht erhält, schreiben Sie bitte ein Minuszeichen vor den jeweiligen Betrag.)\u003c/i\u003e\n\u003c/p\u003e\n\n\u003cp\u003e\n\u003c!--\nBeste Stiftung:_______\tMittlere Stiftung:_______\tSchlechteste Stiftung:_______\n\u003c/p\u003e\n--\u003e\n\n\n\t\t\t\t\t"
+ 								"de": "\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage 1.\u003c/b\u003e Schätzen Sie bitte: Was wäre eine zufällig ausgewählte Person aus unserer Vorstudie maximal bereit zu zahlen, damit eine Spende von 30 € an die Stiftung überwiesen wird, die diese Person als am besten/mittel/am schlechtesten erachtet?\n\t\t\t\t\t\u003ci\u003e(Wenn Sie meinen, die Person würde dafür bezahlen, dass die Stiftung die 30 € nicht erhält, schreiben Sie bitte ein Minuszeichen vor den jeweiligen Betrag.)\u003c/i\u003e\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003c!--\n\t\t\t\t\tBeste Stiftung:_______\tMittlere Stiftung:_______\tSchlechteste Stiftung:_______\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t--\u003e\n\n\n\t\t\t\t\t"
  							}
  						}
  					]
@@ -387,7 +387,7 @@
  								"de": "Beste Stiftung"
  							},
  							"suffix": {
- 								"de": " \u0026nbsp; €"
+ 								"de": "€"
  							},
  							"horizontal_align_label": 2,
  							"col_span_label": 3,
@@ -402,7 +402,7 @@
  								"de": "Mittlere Stiftung"
  							},
  							"suffix": {
- 								"de": " \u0026nbsp; €"
+ 								"de": "€"
  							},
  							"horizontal_align_label": 2,
  							"col_span_label": 3,
@@ -417,7 +417,7 @@
  								"de": "Schlechteste Stiftung"
  							},
  							"suffix": {
- 								"de": " \u0026nbsp; €"
+ 								"de": "€"
  							},
  							"horizontal_align_label": 2,
  							"col_span_label": 3,
@@ -575,11 +575,11 @@
  								"de": "Wie viele wählen Option A? Ihre Antwort:"
  							},
  							"suffix": {
- 								"de": "\u0026nbsp;von\u0026nbsp;10\u0026nbsp;\u0026nbsp;\u0026nbsp;"
+ 								"de": "von\u0026nbsp;10\u0026nbsp;"
  							},
  							"col_span_label": 3,
  							"col_span_control": 2,
- 							"validator": "inRange20"
+ 							"validator": "inRange10"
  						},
  						{
  							"name": "q4a_opt2",
@@ -589,11 +589,11 @@
  								"de": "Wie viele wählen Option B? Ihre Antwort:"
  							},
  							"suffix": {
- 								"de": "\u0026nbsp;von\u0026nbsp;10\u0026nbsp;\u0026nbsp;\u0026nbsp;"
+ 								"de": "von\u0026nbsp;10\u0026nbsp;"
  							},
  							"col_span_label": 3,
  							"col_span_control": 2,
- 							"validator": "inRange20"
+ 							"validator": "inRange10"
  						},
  						{
  							"name": "q4a_opt3",
@@ -603,11 +603,11 @@
  								"de": "Wie viele wählen Option C? Ihre Antwort:"
  							},
  							"suffix": {
- 								"de": "\u0026nbsp;von\u0026nbsp;10\u0026nbsp;\u0026nbsp;\u0026nbsp;"
+ 								"de": "von\u0026nbsp;10\u0026nbsp;"
  							},
  							"col_span_label": 3,
  							"col_span_control": 2,
- 							"validator": "inRange20"
+ 							"validator": "inRange10"
  						}
  					]
  				},
@@ -647,11 +647,11 @@
  								"de": "Wie viele wählen Option A? Ihre Antwort:"
  							},
  							"suffix": {
- 								"de": "\u0026nbsp;von\u0026nbsp;10\u0026nbsp;\u0026nbsp;\u0026nbsp;"
+ 								"de": "von\u0026nbsp;10\u0026nbsp;"
  							},
  							"col_span_label": 3,
  							"col_span_control": 2,
- 							"validator": "inRange20"
+ 							"validator": "inRange10"
  						},
  						{
  							"name": "q4b_opt2",
@@ -661,11 +661,11 @@
  								"de": "Wie viele wählen Option B? Ihre Antwort:"
  							},
  							"suffix": {
- 								"de": "\u0026nbsp;von\u0026nbsp;10\u0026nbsp;\u0026nbsp;\u0026nbsp;"
+ 								"de": "von\u0026nbsp;10\u0026nbsp;"
  							},
  							"col_span_label": 3,
  							"col_span_control": 2,
- 							"validator": "inRange20"
+ 							"validator": "inRange10"
  						},
  						{
  							"name": "q4b_opt3",
@@ -675,11 +675,11 @@
  								"de": "Wie viele wählen Option C? Ihre Antwort:"
  							},
  							"suffix": {
- 								"de": "\u0026nbsp;von\u0026nbsp;10\u0026nbsp;\u0026nbsp;\u0026nbsp;"
+ 								"de": "von\u0026nbsp;10\u0026nbsp;"
  							},
  							"col_span_label": 3,
  							"col_span_control": 2,
- 							"validator": "inRange20"
+ 							"validator": "inRange10"
  						}
  					]
  				}

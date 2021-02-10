@@ -61,9 +61,9 @@ func nobreakGlue(el1, glue, el2 string) string {
 }
 
 // no wrap between input and suffix
-func appendSuffix(ctrl string, i *inputT, langCode string) string {
+func appendSuffix(ctrl string, inp *inputT, langCode string) string {
 
-	if !i.Suffix.Set() {
+	if !inp.Suffix.Set() {
 		return ctrl
 	}
 
@@ -71,7 +71,7 @@ func appendSuffix(ctrl string, i *inputT, langCode string) string {
 	// We want to prevent line-break of the '%' or '€' suffix character.
 	// inputs must be inline-block, for whitespace nowrap to work.
 	// At the same time: suffix-inner enables wrapping for the suffix itself
-	sfx := fmt.Sprintf("<span class='go-quest-label %v  suffix-inner' >%v</span>\n", i.CSSLabel, i.Suffix.TrSilent(langCode))
+	sfx := fmt.Sprintf("<span class='postlabel %v  suffix-inner' >%v</span>\n", inp.CSSLabel, inp.Suffix.TrSilent(langCode))
 	ctrl = fmt.Sprintf("<span class='suffix-nowrap' >%v%v</span>\n", ctrl, sfx)
 
 	return ctrl
@@ -433,7 +433,8 @@ func (i inputT) HTML(langCode string, numCols int) string {
 		// Append suffix
 		if i.Suffix.Set() {
 			// compare appendSuffix() forcing no wrap for ordinary inputs
-			ctrl += fmt.Sprintf("<span class='go-quest-label %v' >%v</span>\n", i.CSSLabel, i.Suffix.TrSilent(langCode))
+			// ctrl += fmt.Sprintf("<span class='go-quest-label %v' >%v</span>\n", i.CSSLabel, i.Suffix.TrSilent(langCode))
+			ctrl += fmt.Sprintf("<span class='postlabel %v' >%v</span>\n", i.CSSLabel, i.Suffix.TrSilent(langCode))
 		}
 
 		if i.ErrMsg.Set() {

@@ -38,9 +38,9 @@ type ConfigT struct {
 
 	IsProduction bool `json:"is_production"` // true => templates are not recompiled
 
-	AppName       string `json:"app_name"`       // with case, i.e. 'My App'
+	AppName       string `json:"app_name"`       // with case, i.e. 'Survey Server'; use localized trl.Map app_label, app_org
 	URLPathPrefix string `json:"urlpath_prefix"` // lower case - no slashes, i.e. 'myapp'
-	AppMnemonic   string `json:"app_mnemonic"`   // For differentiation of static dirs - when URLPathPrefix is empty; imagine multiple instances
+	AppMnemonic   string `json:"app_mnemonic"`   // differentiation of static dirs - when URLPathPrefix is empty; imagine multiple instances
 
 	LetsEncrypt bool   `json:"lets_encrypt"`
 	HostName    string `json:"host_name"` // for ACME cert; i.e. survey2.zew.de
@@ -68,21 +68,20 @@ type ConfigT struct {
 	AppInstanceID int64    `json:"app_instance_id,omitempty"` // append to URLs of cached static jpg, js and css files - change to trigger reload
 	LangCodes     []string `json:"lang_codes"`                // available language codes for the application, first element is default
 
-	CSSVars     cssVars            `json:"css_vars"`      // global CSS variables
-	CSSVarsSite map[string]cssVars `json:"css_vars_site"` // site specific overwrites of css_vars
+	CPUProfile string `json:"cpu_profile"` // CPUProfile - output filename
 
-	CPUProfile string `json:"cpu_profile"` // the filename to write to
+	Mp     trl.Map     `json:"translations_generic"` // Mp     - multi language strings for entire application -       [key].Tr(lc)
+	MpSite trl.MapSite `json:"translations_site"`    // MpSite - multi language strings for specific survey -    [site][key].Tr(lc)
 
-	AllowSkipForward bool `json:"allow_skip_forward"` // skipping back always allowed, skipping forward is configurable
+	// keep this last - since it trashes diff view
+	CSSVars     cssVars            `json:"css_vars"`      // global CSS variables - no localization
+	CSSVarsSite map[string]cssVars `json:"css_vars_site"` // [site|Survey.Type] specific CSS - overwrites/appends global css_vars - no localization
 
-	// multi language strings for the application
-	Mp trl.Map `json:"translation_map"`
+	AllowSkipForward  bool                         `json:"allow_skip_forward"`            // AllowSkipForward- skipping back always allowed, skipping forward is configurable
+	AnonymousSurveyID string                       `json:"anonymous_survey_id,omitempty"` // AnonymousSurveyID - anonymous login - redirect / forward url
+	Profiles          map[string]map[string]string `json:"profiles"`                      // Profiles are sets of attributes, selected by the `p` parameter at login, containing key-values which are copied into the logged in user's attributes
+	DirectLoginRanges []directLoginRangeT          `json:"direct_login_ranges,omitempty"` // DirectLoginRanges - user id to language preselection for direct login
 
-	// Profiles are sets of attributes, selected by the `p` parameter at login, containing key-values which are copied into the logged in user's attributes
-	Profiles map[string]map[string]string
-
-	AnonymousSurveyID string              `json:"anonymous_survey_id,omitempty"` // anonymous login - redirect / forward url
-	DirectLoginRanges []directLoginRangeT `json:"direct_login_ranges,omitempty"` // user id to language preselection for direct login
 }
 
 // CfgPath is obtained by ENV variable or command line flag in main package.
@@ -216,6 +215,16 @@ func (c *ConfigT) Pref(pth ...string) string {
 	return Pref(pth...)
 }
 
+// Tr for templates: cfg.Tr
+func (c *ConfigT) Tr(langCode, key string) string {
+	return c.Mp[key].Tr(langCode)
+}
+
+// TrSite for templates: cfg.TrSite
+func (c *ConfigT) TrSite(site, langCode, key string) string {
+	return c.MpSite[site][key].Tr(langCode)
+}
+
 // PrefTS is like Prefix(); TS stands for (with) trailing slash;
 // useful for registering handlers
 // so that /p1/p2/  also serves /p1/p2
@@ -251,7 +260,7 @@ func Example() *ConfigT {
 		// AppInstanceID:          time.Now().Unix(),
 		LangCodes: []string{"de", "en", "es", "fr", "it", "pl"},
 		CSSVars: cssVars{
-			{Key: "logo-text", Val: "ZEW"},
+			// {Key: "logo-text", Val: "ZEW"}, // use localized trl.Map app_label, app_org
 			{IsURL: true, Key: "img-bg", Val: "/img/ui/bg-bw-bland.jpg"},
 			{IsURL: true, Key: "img-logo-icon", Val: "/img/ui/icon-forschung-zew-prim.svg"},
 			{IsURL: true, Key: "img-loggedin-icon", Val: "/img/ui/logged-in-icon-zew.svg"},
@@ -287,8 +296,7 @@ func Example() *ConfigT {
 			{Key: "zew5-dk", R: 211, G: 158, B: 13},
 		},
 		CSSVarsSite: map[string]cssVars{
-			"site1": {
-				{Key: "logo-text", Val: "4WALLS"},
+			"4walls": {
 				{IsURL: true, Key: "img-bg", Val: "none"},
 				{IsURL: true, Key: "img-logo-icon", Val: "/img/ui/4walls-logo-3.png"},
 				{IsURL: true, Key: "img-loggedin-icon", Val: "/img/ui/logged-in-icon-4walls.svg"},
@@ -307,7 +315,11 @@ func Example() *ConfigT {
 				{Key: "sec", R: 48, G: 48, B: 48, Desc: "secondary color - for backgrounds"},
 				{Key: "sec-drk1", R: 32, G: 32, B: 32, Desc: "darker, for menu 3"},
 				{Key: "sec-drk2", R: 1, G: 1, B: 1, Desc: "darker, for borders"},
-			}, "zew": {
+			},
+			"fmt": {
+				{Key: "dummy", R: 48, G: 48, B: 48},
+			},
+			"pat": {
 				{Key: "dummy", R: 48, G: 48, B: 48},
 			},
 		},
@@ -347,9 +359,12 @@ func Example() *ConfigT {
 			},
 		},
 		//
-		// first  example translation *overwrites* trl.CoreTranslations()
+		// first
 		// second example translation *appends*    trl.CoreTranslations()
 		Mp: trl.Map{
+			// example translation *keeps*      trl.CoreTranslations() defaults
+			//    no "app_org": {...},
+			// example translation *overwrites* trl.CoreTranslations()
 			"app_label": {
 				"de": "Meine --spezielle-- Beispiel Anwendung",
 				"en": "My --special-- example app",
@@ -358,13 +373,23 @@ func Example() *ConfigT {
 				"it": "La mia App esempio",
 				"pl": "Moja Przykładowa aplikacja",
 			},
-			"app_label_h2": {
-				"de": "Meine Organisation h2",
-				"en": "My Org h2",
-				"es": "Mi organización h2",
-				"fr": "Mon organisation h2",
-				"it": "La mia organizzazion h2",
-				"pl": "Moja organizacja h2",
+			// example translation *appends*    trl.CoreTranslations()
+			"app_dept": {
+				"de": "Meine Abteilung",
+				"en": "My Department",
+			},
+		},
+		MpSite: trl.MapSite{
+			"fmt": {
+				"app_label": {
+					"de": "Finanzmarkttest",
+					"en": "financial markets survey",
+				},
+			},
+			"pat": {
+				"app_label": {
+					"de": "Umfrage zu Entscheidungsprozessen in der Politik",
+				},
 			},
 		},
 	}

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-{{ $lc := (.Sess.EffectiveStr "lang_code" .MoreFuncs.DefaultLangCode)}}
 <head>
 
 	<meta charset="UTF-8">
@@ -9,9 +8,7 @@
 	<link rel="icon"          href="data:;base64,="                      type="image/x-icon" />    
 	<link rel="icon"          href="{{cfg.Pref "/img/ui/favicon.ico" }}" type="image/x-icon" />
 	<!-- {{.Req.URL.Path}}-->
-	<title>{{.MoreFuncs.Trls.app_label.Tr $lc}}</title>
-
-
+	<title>{{.HTMLTitle}}</title>
 
 	<!-- chrome on android: header color; first value sticks  -->
 	<meta name="theme-color"  content="{{  (.CSSSite.ByKey "sec-drk2" ).RGBA	}}" />
@@ -19,21 +16,21 @@
 
 	<script src="{{cfg.Pref "/js/menu-and-form-control-keys.js" }}?v={{cfg.AppInstanceID}}"></script>
 
-
-
 	<style>
+	/*
+		{{ cfg.Tr           "de" "app_org"    }}<br>
+		{{ cfg.Tr           "en" "app_label"  }}<br>
+		{{ cfg.TrSite .Site "de" "app_org"    }}<br>
+		{{ cfg.TrSite .Site "en" "app_label"  }}<br>
+	*/
+
 	/*
 		static CSS files
 		dynamic template files
 		CSS variation goes here
 	*/
 	:root {
-		{{ cfg.CSSVarsSite.pat.HTML }}
-
-		<!-- cfg.CSSVars.HTML  -->
-		<!-- .CSSSite.HTML  -->
-		<!-- cfg.CSSVarsSite.taxkit.HTML  -->
-		<!-- cfg.CSSVarsSite.eta.HTML  -->
+		{{ .CSSSite.HTML }}	
 	}
 	</style>
 	<!-- after CSS variables -->
@@ -47,7 +44,7 @@
 
 	<link href="{{cfg.Pref  (print  "/css/" .Q.Survey.Type "/styles.css")          }}?v={{cfg.AppInstanceID}}"  rel="stylesheet" type="text/css" />
 	<link href="{{cfg.Pref  (print  "/css/" .Q.Survey.Type "/styles-quest.css")    }}?v={{cfg.AppInstanceID}}"  rel="stylesheet" type="text/css" />
-	<link href="{{cfg.Pref  (print  "/css/" .Q.Survey.Type "/progress-bar-2.css")    }}?v={{cfg.AppInstanceID}}"  rel="stylesheet" type="text/css" />
+	<link href="{{cfg.Pref  (print  "/css/" .Q.Survey.Type "/progress-bar-2.css")  }}?v={{cfg.AppInstanceID}}"  rel="stylesheet" type="text/css" />
 
 	<!-- <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script> -->
 	<!-- <link rel="stylesheet" href="styles/debug.css"> -->

@@ -2,35 +2,21 @@
 
 <nav>
 
-    <!-- 
-        logo text and image are part of the design; 
+    <!--
+        logo text and image are part of the design;
         img src attr set via CSS  .logo img  -> content: var(--img-logo-icon);
 
-        no whithespace in following line 
+        no whithespace in following line
     -->
     <a href="{{cfg.Pref "" }}" class="logo">
         <img src=""  alt="">
-        
-    
-    
     </a>
 
     <a href="{{cfg.Pref "" }}" class="title">
-        {{ $lc := (.Sess.EffectiveStr "lang_code" .MoreFuncs.DefaultLangCode)}}
-        {{if exists . "Q"}}
-            <!--  
-                {{ (.CSSSite.ByKey "logo-text" ).Plain }}
-            -->
-            {{.Q.Survey.TemplateLogoText $lc}}
-        {{else}}
-            <span style='font-size: 130%;'>{{.MoreFuncs.Trls.app_label_h1.Tr $lc}} </span> {{.MoreFuncs.Trls.app_label.Tr $lc}}
-        {{end}}
-
+        {{.LogoTitle}}
     </a>
 
-
-    
-    <div style="display: none;">     
+    <div style="display: none;">
         {{if lgn .Req}}
         <a href='{{cfg.Pref "/user-profile" }}' class="login-icon">
             <!-- src attr set via CSS img.logged-in  ->  content: var(--img-login-icon);   -->
@@ -54,23 +40,19 @@
     <!-- menu second level-->
     <ul class="mnu-2nd-lvl">
 
-    <!--         
+    <!--
         {{if lgn .Req}}
           <li  style="text-align:right;">
                 <a href='#'  >
                     <img class="logged-in"  src="" title="logged in as {{ lgn .Req }}"  >
                 </a>
-          </li>            
-        {{- end -}}  
+          </li>
+        {{- end -}}
     -->
 
     {{- nav .Req .Q (.Req.URL.Path) }}
 
-    </ul>
-   
-    {{if .S}}
-    {{end}}
-<!-- 
+    <!--
 
         <li><a href="#">Home</a></li>
         <li><a href="#">Blog</a></li>
@@ -95,8 +77,10 @@
 
         </li>
 
+     -->
+     
+     {{if .S}}
+     {{end}}
+     
     </ul>
-
-
- -->
 </nav>

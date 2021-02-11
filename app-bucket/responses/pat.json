@@ -16,7 +16,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "d6ec6be0d222ed5ce006c53988005be3",
+ 	"md_5": "d0bcd429ea67be4dc165fc0dbe629f36",
  	"lang_codes": [
  		"de"
  	],
@@ -32,7 +32,7 @@
  			},
  			"no_navigation": true,
  			"navi_num": 0,
- 			"width": 70,
+ 			"width": 60,
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
  				{
@@ -40,12 +40,16 @@
  						"de": "HERZLICH WILLKOMMEN ZU UNSERER STUDIE UND VIELEN DANK FÜR IHRE TEILNAHME!\u003cbr\u003e\u003cbr\u003e"
  					},
  					"description": {
- 						"de": "\n\u003cp\u003eDies ist eine Studie des Zentrums für Europäische Wirtschaftsforschung (ZEW) in Mannheim sowie der Universitäten in Köln, Mannheim, Münster und Zürich. Ihre Teilnahme wird nur wenige Minuten in Anspruch nehmen und Sie unterstützen damit die Forschung zu Entscheidungsprozessen in der Politik.\n\u003c/p\u003e\n\n\u003cp\u003eIn dieser Studie treffen Sie acht Entscheidungen und beantworten sieben Fragen. Nach der Erhebung werden 10 % aller Teilnehmer zufällig ausgewählt. Von jedem ausgewählten Teilnehmer wird eine der acht Entscheidungen zufällig bestimmt und genau wie unten beschrieben umgesetzt (alle unten erwähnten Personen existieren wirklich und alle Auszahlungen werden wie beschrieben getätigt).\n\u003c/p\u003e\n\n\u003cp\u003eIn dieser Umfrage gibt es keine richtigen oder falschen Antworten. Bitte entscheiden Sie daher immer gemäß Ihren persönlichen Ansichten. Sie werden dabei vollständig anonym bleiben.\n\u003c/p\u003e\n\n\t\t\t\t \u003cbr\u003e\n\n\u003cdiv class=\"uni-logos  logo-imgs-in-content\"\u003e\n    \u003cimg src=\"/survey/img/pat/uni-mannheim-wide.png\"  style=\"width:61%;\"  alt=\"\"  \u003e\n    \u003cimg src=\"/survey/img/pat/uni-koeln.png\"          style=\"width:33%;\"  alt=\"\"  \u003e\n    \u003cimg src=\"/survey/img/pat/uni-muenster.png\"       style=\"width:50%;\"  alt=\"\"  \u003e\n    \u003cimg src=\"/survey/img/pat/uni-zurich.png\"         style=\"width:44%;\"  alt=\"\"  \u003e\n\u003c/div\u003e\n\n\t\t\t\t \u003cbr\u003e\n\t\t\t\t \u003cbr\u003e\n\n\n\n\t\t\t\t "
+ 						"de": "\n\u003cp\u003eDies ist eine Studie des Zentrums für Europäische Wirtschaftsforschung (ZEW) in Mannheim sowie der Universitäten in Köln, Mannheim, Münster und Zürich. Ihre Teilnahme wird nur wenige Minuten in Anspruch nehmen und Sie unterstützen damit die Forschung zu Entscheidungsprozessen in der Politik.\n\u003c/p\u003e\n\n\u003cp\u003eIn dieser Studie treffen Sie acht Entscheidungen und beantworten sieben Fragen. Nach der Erhebung werden 10 % aller Teilnehmer zufällig ausgewählt. Von jedem ausgewählten Teilnehmer wird eine der acht Entscheidungen zufällig bestimmt und genau wie unten beschrieben umgesetzt (alle unten erwähnten Personen existieren wirklich und alle Auszahlungen werden wie beschrieben getätigt).\n\u003c/p\u003e\n\n\u003cp\u003eIn dieser Umfrage gibt es keine richtigen oder falschen Antworten. Bitte entscheiden Sie daher immer gemäß Ihren persönlichen Ansichten. Sie werden dabei vollständig anonym bleiben.\n\u003c/p\u003e\n\n\t\t\t\t \u003cbr\u003e\n\n\n\t\t\t\t \u003cbr\u003e\n\n\t\t\t\t "
  					},
  					"bottom_vspacers": 3,
  					"width": 100,
  					"columns": 1,
  					"inputs": [
+ 						{
+ 							"type": "dynamic",
+ 							"dynamic_func": "PatLogos"
+ 						},
  						{
  							"name": "submitBtn",
  							"type": "button",
@@ -62,7 +66,7 @@
  		},
  		{
  			"label": {
- 				"de": "Präferenzen 1"
+ 				"de": ""
  			},
  			"description": {
  				"de": "",
@@ -154,7 +158,7 @@
  		},
  		{
  			"label": {
- 				"de": "Präferenzen 2"
+ 				"de": ""
  			},
  			"description": {
  				"de": "",
@@ -348,7 +352,7 @@
  		},
  		{
  			"label": {
- 				"de": "Auswertung"
+ 				"de": ""
  			},
  			"description": {
  				"de": "",
@@ -526,7 +530,7 @@
  		},
  		{
  			"label": {
- 				"de": "Gruppenpräferenzen"
+ 				"de": ""
  			},
  			"description": {
  				"de": "",
@@ -687,7 +691,7 @@
  		},
  		{
  			"label": {
- 				"de": "Eigene Einstellung"
+ 				"de": ""
  			},
  			"description": {
  				"de": "",

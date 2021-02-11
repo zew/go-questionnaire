@@ -352,8 +352,6 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 		log.Printf("ComputeDynamicContent computation for page %v caused error %v", prevPage, err)
 	}
 
-	mobile := computeMobile(w, r, q)
-
 	//
 	//
 	// Save questionnaire into session
@@ -368,32 +366,33 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 
 	//
 	//
+	htmlTitle := fmt.Sprintf(
+		"%v %v",
+		cfg.Get().MpSite[q.Survey.Type]["app_org"].TrSilent(q.LangCode),
+		cfg.Get().MpSite[q.Survey.Type]["app_label"].TrSilent(q.LangCode),
+	)
 
 	mp := map[string]interface{}{
-		"CSSSite": cfg.Get().CSSVarsSite[q.Survey.Type],
-		"Q":       q,
-		"Content": "",
+		"LangCode":  q.LangCode, // default would be cfg.Get().LangCodes[0]
+		"Site":      q.Survey.Type,
+		"CSSSite":   cfg.Get().CSSVarsSite[q.Survey.Type],
+		"HTMLTitle": htmlTitle,
+		"LogoTitle": q.Survey.TemplateLogoText(q.LangCode),
+		"Q":         q,
+		"Content":   "",
 	}
+
+	// mobile := computeMobile(w, r, q)
 
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
 
-	if mobile && false {
-		q.Pages[q.CurrPage].Width = 100
-		q.Pages[q.CurrPage].AestheticCompensation = 0
-		for i := 0; i < len(q.Pages[q.CurrPage].Groups); i++ {
-			q.Pages[q.CurrPage].Groups[i].Width = 100
-		}
-		tpl.Exec(w, r, mp, "main-mobile.html")
-	} else {
+	w1 := &bytes.Buffer{}
+	tpl.Exec(w1, r, mp, "quest.html")
 
-		w1 := &bytes.Buffer{}
-		tpl.Exec(w1, r, mp, "quest.html")
+	mp["Content"] = w1.String()
+	// tpl.RenderStack(r, w, []string{"layout.html"}, mp)
 
-		mp["Content"] = w1.String()
-		// tpl.RenderStack(r, w, []string{"layout.html"}, mp)
-
-		tpl.Exec(w, r, mp, "layout.html")
-	}
+	tpl.Exec(w, r, mp, "layout.html")
 
 }
 

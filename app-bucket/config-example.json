@@ -32,11 +32,35 @@
  		"it",
  		"pl"
  	],
- 	"css_vars": [
- 		{
- 			"key": "logo-text",
- 			"val": "ZEW"
+ 	"cpu_profile": "",
+ 	"translations_generic": {
+ 		"app_dept": {
+ 			"de": "Meine Abteilung",
+ 			"en": "My Department"
  		},
+ 		"app_label": {
+ 			"de": "Meine --spezielle-- Beispiel Anwendung",
+ 			"en": "My --special-- example app",
+ 			"es": "Mi aplicación de ejemplo",
+ 			"fr": "Mon exemple d'application",
+ 			"it": "La mia App esempio",
+ 			"pl": "Moja Przykładowa aplikacja"
+ 		}
+ 	},
+ 	"translations_site": {
+ 		"fmt": {
+ 			"app_label": {
+ 				"de": "Finanzmarkttest",
+ 				"en": "financial markets survey"
+ 			}
+ 		},
+ 		"pat": {
+ 			"app_label": {
+ 				"de": "Umfrage zu Entscheidungsprozessen in der Politik"
+ 			}
+ 		}
+ 	},
+ 	"css_vars": [
  		{
  			"key": "img-bg",
  			"val": "/img/ui/bg-bw-bland.jpg",
@@ -201,11 +225,7 @@
  		}
  	],
  	"css_vars_site": {
- 		"site1": [
- 			{
- 				"key": "logo-text",
- 				"val": "4WALLS"
- 			},
+ 		"4walls": [
  			{
  				"key": "img-bg",
  				"val": "none",
@@ -313,7 +333,15 @@
  				"b": 1
  			}
  		],
- 		"zew": [
+ 		"fmt": [
+ 			{
+ 				"key": "dummy",
+ 				"r": 48,
+ 				"g": 48,
+ 				"b": 48
+ 			}
+ 		],
+ 		"pat": [
  			{
  				"key": "dummy",
  				"r": 48,
@@ -322,27 +350,9 @@
  			}
  		]
  	},
- 	"cpu_profile": "",
  	"allow_skip_forward": false,
- 	"translation_map": {
- 		"app_label": {
- 			"de": "Meine --spezielle-- Beispiel Anwendung",
- 			"en": "My --special-- example app",
- 			"es": "Mi aplicación de ejemplo",
- 			"fr": "Mon exemple d'application",
- 			"it": "La mia App esempio",
- 			"pl": "Moja Przykładowa aplikacja"
- 		},
- 		"app_label_h2": {
- 			"de": "Meine Organisation h2",
- 			"en": "My Org h2",
- 			"es": "Mi organización h2",
- 			"fr": "Mon organisation h2",
- 			"it": "La mia organizzazion h2",
- 			"pl": "Moja organizacja h2"
- 		}
- 	},
- 	"Profiles": {
+ 	"anonymous_survey_id": "4walls",
+ 	"profiles": {
  		"fmt1": {
  			"lang_code": "de",
  			"main_refinance_rate_ecb": "3.5"
@@ -352,7 +362,6 @@
  			"main_refinance_rate_ecb": "3.5"
  		}
  	},
- 	"anonymous_survey_id": "4walls",
  	"direct_login_ranges": [
  		{
  			"start": 1000,

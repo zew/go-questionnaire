@@ -8,7 +8,7 @@ func CoreTranslations() Map {
 }
 
 var coreTranslations = Map{
-	"app_label_h1": {
+	"app_org": {
 		"en": "My Org",
 		"de": "Meine Organisation",
 		"es": "Mi organización",

@@ -126,6 +126,7 @@ table.main-table tr:nth-child(odd){
 }
 
 .special-vertical-align-top {
+	display: inline-block;
 	vertical-align: top;
 	min-height: 4rem;
 	margin-top: 0.4rem;

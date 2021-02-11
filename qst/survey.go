@@ -108,10 +108,14 @@ func (s surveyT) TemplateLogoText(langCode string) template.HTML {
 		)
 
 	} else {
-		ret = fmt.Sprintf(`<span style='font-size: 130%%;'>%v</span> %v`,
-			cfg.Get().Mp["app_label_h1"].TrSilent((langCode)),
-			cfg.Get().Mp["app_label"].TrSilent((langCode)),
+		ret = fmt.Sprintf(`
+			<span class="survey-org"        >%v </span>
+			<span class="survey-name"       >%v </span>
+		`,
+			cfg.Get().Mp["app_org"].TrSilent(langCode),
+			cfg.Get().Mp["app_label"].TrSilent(langCode),
 		)
+
 	}
 
 	return template.HTML(ret)

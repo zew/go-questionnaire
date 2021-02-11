@@ -159,7 +159,7 @@ func renderLabelDescription(i inputT, langCode string, numCols int) string {
 // A percent width is dynamically computed from colsLabel / numCols.
 // Argument numCols is the total number of cols per row.
 // It is used to compute the precise width in percent
-func renderLabelDescription2(i inputT, langCode string, nm string, hAlign horizontalAlignment,
+func renderLabelDescription2(i inputT, langCode string, name string, hAlign horizontalAlignment,
 	lbl, desc trl.S, css string, colsLabel, numCols int) string {
 	ret := ""
 	if lbl == nil && desc == nil {
@@ -174,12 +174,17 @@ func renderLabelDescription2(i inputT, langCode string, nm string, hAlign horizo
 		e2 = "" // Suppress "Translation map not initialized." here
 	}
 
+	// pure text or layout
 	ret = fmt.Sprintf(
-		"<span class='go-quest-label %v'><b>%v</b> %v </span>\n", css, e1, e2,
+		"<span class='%v'><b>%v</b> %v </span>\n",
+		css, e1, e2,
 	)
 
-	if nm != "" && !i.IsLayout() {
-		ret = fmt.Sprintf("<label for='%v'>%v</label>\n", nm, ret)
+	if name != "" && !i.IsLayout() {
+		ret = fmt.Sprintf(
+			"<label for='%v' class='%v' ><b>%v</b> %v </label>\n",
+			name, css, e1, e2,
+		)
 	}
 
 	ret = td(hAlign, colWidth(colsLabel, numCols), ret)

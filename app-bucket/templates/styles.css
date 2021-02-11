@@ -330,6 +330,7 @@ label, .postlabel {
 	margin-right: 0.5rem;
 
 	font-size: 95%;	/* like legend */
+	line-height: 110%;
 	letter-spacing:	0.03rem;
 	font-weight: 300; /* visibility in mobile browser */
 

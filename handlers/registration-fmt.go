@@ -273,7 +273,7 @@ func RegistrationFMTH(w http.ResponseWriter, r *http.Request) {
 				" 			
 			>
 
-				<label style="text-align: left; font-size: clamp(0.7rem, 0.86vw, 2.8rem); ">
+				<label style="text-align: left; font-size: clamp(0.7rem, 0.86vw, 2.8rem); white-space: normal; ">
 					Nach ihrer erfolgreichen Anmeldung erhalten Sie monatlich folgende Dokumente per E-Mail:
 
 					<ul>

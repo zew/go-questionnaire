@@ -6,13 +6,6 @@ import (
 	"strings"
 )
 
-// Map - Translations Type
-// Usage in templates
-// 		{{.Trls.imprint.en                     }}  // directly accessing a specific translation; chaining the map keys
-// 		{{.Trls.imprint.Tr       .Sess.LangCode}}  // using .Tr(langCode)
-// 		{{.Trls.imprint.TrSilent .Sess.LangCode}}  //
-type Map map[string]S
-
 //
 //
 // Hyphenization

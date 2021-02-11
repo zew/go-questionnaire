@@ -37,9 +37,10 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	{
 		page := q.AddPage()
 		page.Width = 60
-		page.Label = trl.S{"de": "&nbsp;"}
 		page.Label = trl.S{"de": ""}
 		page.NoNavigation = true
+
+		//
 		gr := page.AddGroup()
 		gr.Cols = 1
 		gr.Label = trl.S{
@@ -58,21 +59,17 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 				 <br>
 
-<div class="uni-logos  logo-imgs-in-content">
-    <img src="/survey/img/pat/uni-mannheim-wide.png"  style="width:61%;"  alt=""  >
-    <img src="/survey/img/pat/uni-koeln.png"          style="width:33%;"  alt=""  >
-    <img src="/survey/img/pat/uni-muenster.png"       style="width:50%;"  alt=""  >
-    <img src="/survey/img/pat/uni-zurich.png"         style="width:44%;"  alt=""  >
-</div>
 
 				 <br>
-				 <br>
-
-
 
 				 `,
 		}
 
+		{
+			inp := gr.AddInput()
+			inp.Type = "dynamic"
+			inp.DynamicFunc = "PatLogos"
+		}
 		{
 			inp := gr.AddInput()
 			inp.Type = "button"
@@ -88,7 +85,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	// page 1
 	{
 		page := q.AddPage()
-		page.Label = trl.S{"de": "Präferenzen 1"}
+		// page.Label = trl.S{"de": "Präferenzen 1"}
+		page.Label = trl.S{"de": ""}
 		page.Short = trl.S{"de": "Präferenzen 1"}
 		page.Width = 60
 
@@ -223,7 +221,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	{
 
 		page := q.AddPage()
-		page.Label = trl.S{"de": "Präferenzen 2"}
+		// page.Label = trl.S{"de": "Präferenzen 2"}
+		page.Label = trl.S{"de": ""}
 		page.Short = trl.S{"de": "Präferenzen 2"}
 		page.Width = 60
 
@@ -270,7 +269,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	// page 3
 	{
 		page := q.AddPage()
-		page.Label = trl.S{"de": "Auswertung"}
+		// page.Label = trl.S{"de": "Auswertung"}
+		page.Label = trl.S{"de": ""}
 		page.Short = trl.S{"de": "Auswertung"}
 		page.Width = 60
 
@@ -459,7 +459,8 @@ Welche Optionen sollen der Person (nicht) zur Verfügung stehen, falls die Optio
 	// page 4
 	{
 		page := q.AddPage()
-		page.Label = trl.S{"de": "Gruppenpräferenzen"}
+		// page.Label = trl.S{"de": "Gruppenpräferenzen"}
+		page.Label = trl.S{"de": ""}
 		page.Short = trl.S{"de": "Gruppen-<br>präferenzen"}
 		page.Width = 60
 
@@ -646,7 +647,8 @@ Welche Optionen sollen der Person (nicht) zur Verfügung stehen, falls die Optio
 	// page 5
 	{
 		page := q.AddPage()
-		page.Label = trl.S{"de": "Eigene Einstellung"}
+		// page.Label = trl.S{"de": "Eigene Einstellung"}
+		page.Label = trl.S{"de": ""}
 		page.Short = trl.S{"de": "Eigene Einstellung"}
 		page.Width = 55
 

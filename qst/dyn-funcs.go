@@ -17,6 +17,7 @@ var dynFuncs = map[string]dynFuncT{
 	"PersonalLink":                   PersonalLink,
 	"HasEuroQuestion":                ResponseTextHasEuro,
 	"FederalStateAboveOrBelowMedian": FederalStateAboveOrBelowMedian,
+	"PatLogos":                       PatLogos,
 }
 
 // Statistics returns the percentage of
@@ -150,5 +151,30 @@ func FederalStateAboveOrBelowMedian(q *QuestionnaireT) (string, error) {
 		return "Question requires known euro-membership and residence code.", nil
 	}
 	return attr1, nil
+
+}
+
+// PatLogos - only for the img src URLs
+func PatLogos(q *QuestionnaireT) (string, error) {
+
+	return fmt.Sprintf(
+		`
+		<div class="uni-logos  logo-imgs-in-content">
+			<img src="%v"  style="width:61%%;"  alt=""  >
+			<img src="%v"  style="width:33%%;"  alt=""  >
+			<img src="%v"  style="width:50%%;"  alt=""  >
+			<img src="%v"  style="width:44%%;"  alt=""  >
+			<img src="%v"  style="width:28%%;"  alt=""  >
+		</div>
+		
+		<br>
+		
+		`,
+		cfg.Pref("/img/pat/uni-mannheim-wide.png"),
+		cfg.Pref("/img/pat/uni-koeln.png"),
+		cfg.Pref("/img/pat/uni-muenster.png"),
+		cfg.Pref("/img/pat/uni-zurich.png"),
+		cfg.Pref("/img/pat/zew.png"),
+	), nil
 
 }

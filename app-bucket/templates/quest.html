@@ -1,11 +1,23 @@
+<style>
+    /* temporary */
+    /* .logo-imgs-in-content img {
+        margin-bottom: 0 !important;
+        margin-right:  4rem !important;
+        border: 1px solid red !important;
+    } */
+
+</style>
+
 <!-- 
-                <div class="uni-logos">
-                    <img src="/survey/img/pat/uni-mannheim-wide.png"  style="width:320px;"  alt=""  >
-                    <img src="/survey/img/pat/uni-koeln.png"          style="width:180px;"  alt=""  >
-                    <img src="/survey/img/pat/uni-muenster.png"       style="width:320px;"  alt=""  >
-                    <img src="/survey/img/pat/uni-zurich.png"         style="width:280px;"  alt=""  >
-                </div>
--->
+<div class="uni-logos  logo-imgs-in-content" style="width: 140%">
+    <img src="/survey/img/pat/uni-mannheim-wide.png"  style="width:calc(61%/4);"  alt=""  >
+    <img src="/survey/img/pat/uni-koeln.png"          style="width:calc(33%/4);"  alt=""  >
+    <img src="/survey/img/pat/uni-muenster.png"       style="width:calc(50%/4);"  alt=""  >
+    <img src="/survey/img/pat/uni-zurich.png"         style="width:calc(44%/4);"  alt=""  >
+    <img src="/survey/img/pat/zew.png"                style="width:calc(28%/4);"  alt=""  >
+</div>
+ -->
+
  
  <style>
 
@@ -40,6 +52,7 @@
         width: 95%;
         margin: 0 auto;
         margin-top: 1rem;
+        margin-bottom: 1rem;
 
         xx-border: 2px solid #8c8;
 
@@ -65,7 +78,8 @@
         -->
 
         {{if .Q.HasErrors}}
-            <p class="error" id="error" style="font-size:16px;margin: 20px 0px; ">{{.MoreFuncs.Trls.correct_errors.Tr .Q.LangCode}}  </p>
+            <p class="error" id="error" style="font-size:16px;margin: 20px 0px; " 
+            >{{ cfg.Tr .Q.LangCode "correct_errors" }}</p>
             <script>
                 $("#error").css("display","none");           
                 $("#error").fadeIn("slow", function () {
@@ -98,7 +112,7 @@
             {{if .Q.HasNext}}
             <!-- name="submit" conflicts with JS form.submit() -->
             <button type="submit" name="submitBtn" value="next" accesskey="n">
-                {{.MoreFuncs.Trls.page.Tr .Q.LangCode}} {{.Q.NextNaviNum}} >>
+                {{ cfg.Tr .Q.LangCode "page" }} {{.Q.NextNaviNum}} >>
             </button>
             {{end}}
         </div>
@@ -111,7 +125,7 @@
                                     height: 25px;
                                     width:  86px;
                                     '>
-                << {{.MoreFuncs.Trls.page.Tr .Q.LangCode}} {{.Q.PrevNaviNum}} </button>
+                << {{ cfg.Tr .Q.LangCode "page" }} {{.Q.PrevNaviNum}} </button>
             {{end}}
         </div>
 

@@ -3,7 +3,6 @@ package qst
 import (
 	"bytes"
 	"fmt"
-	"strings"
 
 	"github.com/zew/go-questionnaire/cfg"
 )
@@ -80,12 +79,6 @@ func (q *QuestionnaireT) MenuMobile() string {
 		)
 
 	}
-	lc := q.languageChooser(q.LangCode)
-	fmt.Fprintf(&b, `
-		<li class="" >
-			%v
-		</li> 
-	`, lc)
 
 	imp := fmt.Sprintf("<a href='%v'>%v</a>",
 		cfg.Pref("/doc/site-imprint.md"),
@@ -101,23 +94,4 @@ func (q *QuestionnaireT) MenuMobile() string {
 	fmt.Fprintf(&b, "</ul>")
 
 	return b.String()
-}
-
-// A duplicate of
-// tpl.TplDataT{}.LanguageChooser(cfg.Pref(), q.LangCode)
-func (q *QuestionnaireT) languageChooser(currCode string) string {
-
-	s := []string{}
-	// for _, key := range cfg.Get().LangCodes {
-	for _, key := range q.LangCodes {
-		keyCap := strings.Title(key)
-		if key == currCode {
-			s = append(s, fmt.Sprintf("<b           title='%v'>%v</b>\n", key, keyCap))
-		} else {
-			uri := cfg.Pref() + "?lang_code=" + key
-			s = append(s, fmt.Sprintf("<a href='%v' title='%v'>%v</a>\n", uri, key, keyCap))
-		}
-	}
-	return strings.Join(s, "  |  ")
-
 }

@@ -7,18 +7,6 @@ import (
 	"fmt"
 )
 
-// LangCodes for returning multiple translations.
-// When no langCode is available, then the first entry rules.
-// A call to All() returns explicitly all key-values.
-// LangCodes will be initialized in cfg.Load().LangCodes; we prevent circular dependency
-var LangCodes = []string{"de", "en"}
-
-// S stores a multi lingual string.
-// Contains one value for each language code.
-type S map[string]string
-
-const noTrans = "multi lingual string not initialized."
-
 // Tr translates by key.
 // Defaults           to english.
 // Defaults otherwise to first lang code.

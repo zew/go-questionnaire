@@ -156,14 +156,17 @@ Automatically created keys
 		Req
 		Sess
 		L
-		MoreFuncs
+		LangCode
+		Site
+
+		CSSSite
+
+		HTMLTitle
+		LogoTitle
+
 
 Keys expected to be supplied by caller
 		Content
-
-Keys possibly supplied by caller
-		HTMLTitle
-		Navigation
 
 */
 func Exec(w io.Writer, r *http.Request, mp map[string]interface{}, tName string) {
@@ -207,18 +210,41 @@ func Exec(w io.Writer, r *http.Request, mp map[string]interface{}, tName string)
 		mp["L"] = l
 	}
 
-	// move these four funcs of TplDataT into staticTplFuncs
-	if _, ok := mp["MoreFuncs"]; !ok {
-		mp["MoreFuncs"] = TplDataT{}
+	//
+	if _, ok := mp["LangCode"]; !ok {
+		mp["LangCode"] = cfg.Get().LangCodes[0]
 	}
 
-	if _, ok := mp["HTMLTitle"]; !ok {
-		mp["HTMLTitle"] = cfg.Get().AppName
+	if _, ok := mp["Site"]; !ok {
+		mp["Site"] = "no-site-specified"
 	}
 
 	// mp["CSSSite"] must be of type cfg.[]cssVar; we only check for existence
 	if _, ok := mp["CSSSite"]; !ok {
-		mp["CSSSite"] = cfg.Get().CSSVarsSite[cfg.Get().AppMnemonic]
+		if site, okSite := mp["Site"]; !okSite {
+			mp["CSSSite"] = cfg.Get().CSSVarsSite[site.(string)]
+		} else {
+			mp["CSSSite"] = cfg.Get().CSSVars
+		}
+	}
+
+	if _, ok := mp["HTMLTitle"]; !ok {
+		if site, okSite := mp["Site"]; !okSite {
+			mp["HTMLTitle"] =
+				cfg.Get().MpSite[site.(string)]["app_org"].Tr(mp["LangCode"].(string)) +
+					" " +
+					cfg.Get().MpSite[site.(string)]["app_label"].Tr(mp["LangCode"].(string))
+
+		} else {
+			mp["HTMLTitle"] =
+				cfg.Get().Mp["app_org"].Tr(mp["LangCode"].(string)) +
+					" " +
+					cfg.Get().Mp["app_label"].Tr(mp["LangCode"].(string))
+		}
+	}
+
+	if _, ok := mp["LogoTitle"]; !ok {
+		mp["LogoTitle"] = mp["HTMLTitle"]
 	}
 
 	if _, ok := mp["Content"]; !ok {

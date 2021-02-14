@@ -153,7 +153,10 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				'> )
 
 				mittel eingestuft und von drei weiteren am schlechtesten. Stiftung B wird von drei Personen am besten eingestuft und von zweien am schlechtesten, und so weiter.
-				`, cfg.Pref("/img/pat/person.png")),
+				`,
+					"/img/pat/person.png", // works on survey2.zew.de - not locally
+					// cfg.Pref("/img/pat/person.png"),
+				),
 				}
 			}
 
@@ -653,7 +656,7 @@ Welche Optionen sollen der Person (nicht) zur Verfügung stehen, falls die Optio
 		page.Width = 55
 
 		{
-			gr := page.AddRadioMatrixGroupNoLabels(labelsOneToSeven1, []string{"q11_time_pref"})
+			gr := page.AddRadioMatrixGroupNoLabels(labelsOneToSeven1, []string{"q4"})
 			gr.RandomizationGroup = 1 - 1
 			gr.BottomVSpacers = 2
 			gr.Cols = 8
@@ -662,7 +665,69 @@ Welche Optionen sollen der Person (nicht) zur Verfügung stehen, falls die Optio
 			gr.Desc = trl.S{
 				"de": `
 				<b>Frage 4.</b> 
-				Wie sehr stimmen Sie der folgenden Aussage zu: <i>„Alle Erwerbstätigen in Deutschland sollten verpflichtend einen gewissen Teil ihres Arbeitseinkommens im Rahmen einer privaten Altersvorsorge sparen, um eine Rentenhöhe zu erreichen, die über dem Rentenanspruch aus der gesetzlichen Rentenversicherung liegt.</i>“`,
+				Wie sehr stimmen Sie der folgenden Aussage zu: 
+				<i>„Alle Erwerbstätigen in Deutschland sollten verpflichtend einen gewissen Teil ihres Arbeitseinkommens 
+				im Rahmen einer privaten Altersvorsorge sparen, 
+				um eine Rentenhöhe zu erreichen, die über dem Rentenanspruch 
+				aus der gesetzlichen Rentenversicherung liegt.</i>“`,
+			}
+		}
+
+		{
+			gr := page.AddRadioMatrixGroupNoLabels(labelsOneToSeven2, []string{"q5"})
+			gr.RandomizationGroup = 1 - 1
+			gr.BottomVSpacers = 2
+			gr.Cols = 8
+			gr.Width = 100
+			// gr.Label = trl.S{"de": "Frage [groupID]<br>"}
+			gr.Desc = trl.S{
+				"de": `
+
+				<p>
+				<b>Zum Schluss bitten wir Sie drei Fragen über sich selbst zu beantworten:</b>
+				</p>
+
+				<br>
+				<b>Frage 5.</b>
+				 Sind Sie im Vergleich zu anderen im Allgemeinen bereit, 
+				 heute auf etwas zu verzichten, 
+				 um in der Zukunft davon zu profitieren, 
+				 oder sind Sie im Vergleich zu anderen dazu nicht bereit? 
+				`,
+			}
+		}
+
+		{
+			gr := page.AddRadioMatrixGroupNoLabels(labelsOneToSeven3, []string{"q6"})
+			gr.RandomizationGroup = 1 - 1
+			gr.BottomVSpacers = 2
+			gr.Cols = 8
+			gr.Width = 100
+			// gr.Label = trl.S{"de": "Frage [groupID]<br>"}
+			gr.Desc = trl.S{
+				"de": `
+
+				<b>Frage 6.</b>
+				Wie schätzen Sie sich persönlich ein? 
+				Sind Sie im Allgemeinen ein risikobereiter Mensch 
+				oder versuchen Sie, Risiken zu vermeiden? 				`,
+			}
+		}
+
+		{
+			gr := page.AddRadioMatrixGroupNoLabels(labelsOneToSeven2, []string{"q7"})
+			gr.RandomizationGroup = 1 - 1
+			gr.BottomVSpacers = 2
+			gr.Cols = 8
+			gr.Width = 100
+			// gr.Label = trl.S{"de": "Frage [groupID]<br>"}
+			gr.Desc = trl.S{
+				"de": `
+
+				<b>Frage 7.</b>
+				Wie schätzen Sie Ihre Bereitschaft ein mit anderen zu teilen, 
+				ohne dafür eine Gegenleistung zu erwarten?
+				`,
 			}
 		}
 
@@ -673,6 +738,14 @@ Welche Optionen sollen der Person (nicht) zur Verfügung stehen, falls die Optio
 			gr.BottomVSpacers = 2
 			gr.Cols = 1
 			gr.Width = 100
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Name = "text11"
+				// inp.CSSControl = "special-line-height-higher"
+				inp.Desc = trl.S{"de": "Vielen Dank für das Ausfüllen dieser Umfrage! "}
+			}
 
 			{
 				inp := gr.AddInput()

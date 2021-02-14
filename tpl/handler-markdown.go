@@ -28,7 +28,7 @@ type staticPrefixT string // significant url path fragment
 
 var packageDocPrefix = staticPrefixT("/doc/") // application singleton
 
-// RenderStaticContent handles rendering of static content;
+// RenderStaticContent writes the content of subPth into w;
 // *.md files are rendered to HTML; *.html files only get URLs rewriting;
 // static files reside in ./app-bucket/content;
 // files may be differentiated by /[site]/[lang]/subPth

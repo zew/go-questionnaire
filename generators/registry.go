@@ -149,6 +149,7 @@ func GenerateQuestionnaireTemplates(w http.ResponseWriter, r *http.Request) {
 			return false, nil
 		}
 
+		// add to parsed templates
 		for _, bt := range []string{"main-desktop-", "main-mobile-"} {
 			ok, err := fcCreate(bt)
 			if err != nil {

@@ -48,7 +48,9 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				impr := trl.S{}
 				for _, lc := range q.LangCodes {
 					w1 := &strings.Builder{}
-					err := tpl.RenderStaticContent(w1, "./static/doc/data-protection.md", q.Survey.Type, lc)
+					err := tpl.RenderStaticContent(
+						w1, "data-protection.md", q.Survey.Type, lc,
+					)
 					if err != nil {
 						log.Print(err)
 					}
@@ -1026,7 +1028,9 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				impr := trl.S{}
 				for _, lc := range q.LangCodes {
 					w1 := &strings.Builder{}
-					err := tpl.RenderStaticContent(w1, "./static/doc/site-imprint.md", q.Survey.Type, lc)
+					err := tpl.RenderStaticContent(
+						w1, "site-imprint.md", q.Survey.Type, lc,
+					)
 					if err != nil {
 						log.Print(err)
 					}

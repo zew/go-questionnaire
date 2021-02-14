@@ -16,7 +16,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "d0bcd429ea67be4dc165fc0dbe629f36",
+ 	"md_5": "9e8fb0d072d61d3f4704dc93b2fcb451",
  	"lang_codes": [
  		"de"
  	],
@@ -95,7 +95,7 @@
  							"name": "text02",
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\tIn \u003cb\u003eEntscheidung 1\u003c/b\u003e wird Stiftung A von zwei Personen\n\n\t\t\t\t(\u003cimg src='/survey/img/pat/person.png' style='display: inline-block; height: 1.0rem;\n\t\t\t\t\tposition: relative; top: 0.2rem; left: 0.1rem;\n\t\t\t\t'\u003e )\n\n\t\t\t\tmittel eingestuft und von drei weiteren am schlechtesten. Stiftung B wird von drei Personen am besten eingestuft und von zweien am schlechtesten, und so weiter.\n\t\t\t\t"
+ 								"de": "\n\t\t\t\tIn \u003cb\u003eEntscheidung 1\u003c/b\u003e wird Stiftung A von zwei Personen\n\n\t\t\t\t(\u003cimg src='/img/pat/person.png' style='display: inline-block; height: 1.0rem;\n\t\t\t\t\tposition: relative; top: 0.2rem; left: 0.1rem;\n\t\t\t\t'\u003e )\n\n\t\t\t\tmittel eingestuft und von drei weiteren am schlechtesten. Stiftung B wird von drei Personen am besten eingestuft und von zweien am schlechtesten, und so weiter.\n\t\t\t\t"
  							}
  						}
  					]
@@ -706,7 +706,7 @@
  			"groups": [
  				{
  					"description": {
- 						"de": "\n\t\t\t\t\u003cb\u003eFrage 4.\u003c/b\u003e \n\t\t\t\tWie sehr stimmen Sie der folgenden Aussage zu: \u003ci\u003e„Alle Erwerbstätigen in Deutschland sollten verpflichtend einen gewissen Teil ihres Arbeitseinkommens im Rahmen einer privaten Altersvorsorge sparen, um eine Rentenhöhe zu erreichen, die über dem Rentenanspruch aus der gesetzlichen Rentenversicherung liegt.\u003c/i\u003e“"
+ 						"de": "\n\t\t\t\t\u003cb\u003eFrage 4.\u003c/b\u003e \n\t\t\t\tWie sehr stimmen Sie der folgenden Aussage zu: \n\t\t\t\t\u003ci\u003e„Alle Erwerbstätigen in Deutschland sollten verpflichtend einen gewissen Teil ihres Arbeitseinkommens \n\t\t\t\tim Rahmen einer privaten Altersvorsorge sparen, \n\t\t\t\tum eine Rentenhöhe zu erreichen, die über dem Rentenanspruch \n\t\t\t\taus der gesetzlichen Rentenversicherung liegt.\u003c/i\u003e“"
  					},
  					"bottom_vspacers": 2,
  					"width": 100,
@@ -777,7 +777,346 @@
  							"css_label": "special-vertical-align-top"
  						},
  						{
- 							"name": "q11_time_pref",
+ 							"name": "q4",
+ 							"type": "radiogroup",
+ 							"col_span_label": 1,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "4"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "5"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "6"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "7"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "8"
+ 								}
+ 							]
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"description": {
+ 						"de": "\n\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\u003cb\u003eZum Schluss bitten wir Sie drei Fragen über sich selbst zu beantworten:\u003c/b\u003e\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cb\u003eFrage 5.\u003c/b\u003e\n\t\t\t\t Sind Sie im Vergleich zu anderen im Allgemeinen bereit, \n\t\t\t\t heute auf etwas zu verzichten, \n\t\t\t\t um in der Zukunft davon zu profitieren, \n\t\t\t\t oder sind Sie im Vergleich zu anderen dazu nicht bereit? \n\t\t\t\t"
+ 					},
+ 					"bottom_vspacers": 2,
+ 					"width": 100,
+ 					"columns": 8,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "Gar nicht bereit"
+ 							},
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-vertical-align-top"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": ""
+ 							},
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-vertical-align-top"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": ""
+ 							},
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-vertical-align-top"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": ""
+ 							},
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-vertical-align-top"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": ""
+ 							},
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-vertical-align-top"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": ""
+ 							},
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-vertical-align-top"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": ""
+ 							},
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-vertical-align-top"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "Sehr bereit"
+ 							},
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-vertical-align-top"
+ 						},
+ 						{
+ 							"name": "q5",
+ 							"type": "radiogroup",
+ 							"col_span_label": 1,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "4"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "5"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "6"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "7"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "8"
+ 								}
+ 							]
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"description": {
+ 						"de": "\n\n\t\t\t\t\u003cb\u003eFrage 6.\u003c/b\u003e\n\t\t\t\tWie schätzen Sie sich persönlich ein? \n\t\t\t\tSind Sie im Allgemeinen ein risikobereiter Mensch \n\t\t\t\toder versuchen Sie, Risiken zu vermeiden? \t\t\t\t"
+ 					},
+ 					"bottom_vspacers": 2,
+ 					"width": 100,
+ 					"columns": 8,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "Gar nicht ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reit"
+ 							},
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-vertical-align-top"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": ""
+ 							},
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-vertical-align-top"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": ""
+ 							},
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-vertical-align-top"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": ""
+ 							},
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-vertical-align-top"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": ""
+ 							},
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-vertical-align-top"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": ""
+ 							},
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-vertical-align-top"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": ""
+ 							},
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-vertical-align-top"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "Sehr ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reit"
+ 							},
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-vertical-align-top"
+ 						},
+ 						{
+ 							"name": "q6",
+ 							"type": "radiogroup",
+ 							"col_span_label": 1,
+ 							"radios": [
+ 								{
+ 									"hori_align": 1,
+ 									"val": "1"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "2"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "3"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "4"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "5"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "6"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "7"
+ 								},
+ 								{
+ 									"hori_align": 1,
+ 									"val": "8"
+ 								}
+ 							]
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"description": {
+ 						"de": "\n\n\t\t\t\t\u003cb\u003eFrage 7.\u003c/b\u003e\n\t\t\t\tWie schätzen Sie Ihre Bereitschaft ein mit anderen zu teilen, \n\t\t\t\tohne dafür eine Gegenleistung zu erwarten?\n\t\t\t\t"
+ 					},
+ 					"bottom_vspacers": 2,
+ 					"width": 100,
+ 					"columns": 8,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "Gar nicht bereit"
+ 							},
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-vertical-align-top"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": ""
+ 							},
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-vertical-align-top"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": ""
+ 							},
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-vertical-align-top"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": ""
+ 							},
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-vertical-align-top"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": ""
+ 							},
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-vertical-align-top"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": ""
+ 							},
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-vertical-align-top"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": ""
+ 							},
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-vertical-align-top"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "Sehr bereit"
+ 							},
+ 							"horizontal_align_label": 1,
+ 							"css_label": "special-vertical-align-top"
+ 						},
+ 						{
+ 							"name": "q7",
  							"type": "radiogroup",
  							"col_span_label": 1,
  							"radios": [
@@ -822,6 +1161,13 @@
  					"width": 100,
  					"columns": 1,
  					"inputs": [
+ 						{
+ 							"name": "text11",
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "Vielen Dank für das Ausfüllen dieser Umfrage! "
+ 							}
+ 						},
  						{
  							"name": "submitBtn",
  							"type": "button",

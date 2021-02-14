@@ -372,6 +372,7 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 		cfg.Get().MpSite[q.Survey.Type]["app_label"].TrSilent(q.LangCode),
 	)
 
+	//
 	mp := map[string]interface{}{
 		"LangCode":  q.LangCode, // default would be cfg.Get().LangCodes[0]
 		"Site":      q.Survey.Type,

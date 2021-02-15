@@ -107,7 +107,7 @@ func timePreferenceSelf(q *QuestionnaireT, seq0to0 int, questionID string, rowLa
 
 <table>
     <tr>
-        <td style="width: 35%%"  rowspan=2 >Optionen</td>
+        <td style="width: 37%%"  rowspan=2 >Optionen</td>
         <td style="width: 18%%"            ><b>Verfügbar</b></td>
         <td style="width: 18%%"            ><b>Nicht verfügbar</b></td>
         <td style="width: 15%%"  rowspan=2 >Von dieser Option abraten</td>

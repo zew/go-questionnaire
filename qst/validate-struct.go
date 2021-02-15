@@ -157,6 +157,19 @@ func (q *QuestionnaireT) Validate() error {
 					return fmt.Errorf("%v: Type '%v' is not in %v ", s, inp.Type, implementedTypes)
 				}
 
+				// number inputes
+				if inp.Type == "number" {
+					if inp.Max-inp.Min <= 0 {
+						return fmt.Errorf("%v: max - min needs to be positive", s)
+					}
+				}
+
+				if inp.Type == "text" || inp.Type == "number" || inp.Type == "textarea" || inp.Type == "dropdown" {
+					if inp.MaxChars < 1 {
+						return fmt.Errorf("%v: MaxChars for required", s)
+					}
+				}
+
 				// Jump to page exists?
 				if inp.Type == "button" && inp.Response != "" {
 					pgIdx, err := strconv.Atoi(inp.Response)

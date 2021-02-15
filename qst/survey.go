@@ -103,7 +103,7 @@ func (s surveyT) TemplateLogoText(langCode string) template.HTML {
 			<span class="survey-wave-id" > - %v</span>
 		`,
 			s.Org.TrSilent(langCode),
-			s.Name.TrSilent(langCode),
+			trl.HyphenizeText(s.Name.TrSilent(langCode)),
 			s.WaveIDPretty(),
 		)
 
@@ -113,7 +113,7 @@ func (s surveyT) TemplateLogoText(langCode string) template.HTML {
 			<span class="survey-name"       >%v </span>
 		`,
 			cfg.Get().Mp["app_org"].TrSilent(langCode),
-			cfg.Get().Mp["app_label"].TrSilent(langCode),
+			trl.HyphenizeText(cfg.Get().Mp["app_label"].TrSilent(langCode)),
 		)
 
 	}

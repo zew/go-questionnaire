@@ -31,10 +31,10 @@ type genT func(params []qst.ParamT) (*qst.QuestionnaireT, error)
 
 var gens = map[string]genT{
 	"fmt":     fmt.Create,
+	"pat":     pat.Create,
 	"flit":    flit.Create,
 	"example": example.Create,
 	"peu2018": peu2018.Create,
-	"pat":     pat.Create,
 	"mul":     mul.Create,
 	"euref":   euref.Create,
 	"lt2020":  lt2020.Create,

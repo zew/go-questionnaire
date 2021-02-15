@@ -184,6 +184,39 @@ nav a[href=""].is-active:hover::after {
 	transform: scale(0, 1);
 }
 
+nav a.logo,
+nav a.title
+{
+    justify-self: center;
+}
+
+
+/* text after logo */
+nav a.title {
+    margin-left: 1.3rem;
+    padding: 0.3rem 0.1rem;	
+    font-weight: 500;
+    letter-spacing: 0.01rem;
+    background-color: var(--clr-sec-drk1);
+    border-radius: 0.3rem;
+}
+
+/* text after logo - three sub components */
+/* i.e. ZEW  */
+nav a.title span.survey-org {
+    font-size: 120%;
+}
+
+/* i.e. Finanzmarkttest */
+nav a.title span.survey-name {
+    font-size:   120%;
+    line-height: 100%;
+}
+
+/* i.e. 2021-02 */
+nav a.title span.survey-wave-id {
+    font-size: 70%;
+}
 
 
 /* for debugging
@@ -265,11 +298,43 @@ ol, ul {
 	list-style: none;
 }
 
+.content ul {
+	margin-top:		0.3rem;
+	margin-bottom:	0.5rem;
+}
+
+.content li {
+	list-style-type: square;
+	margin-left:     1.1rem;
+}
+
 hr {
 	border: 1.5px solid var(--clr-fg);
 	margin-top:	   0.5rem;
 	margin-bottom: 0.6rem;
 }
+
+div.separator {
+    height: 1px;
+    border-top: 1px solid var(--clr-sec-drk2);
+
+    padding:        0;
+    margin:         0;
+    margin-top:     4px;
+    margin-bottom: 12px;
+}
+
+
+
+/* foot notes */
+sup {
+    font-size: 80%;
+    position: relative;
+    top: -3px;
+    vertical-align: baseline;
+}
+
+/* table stuff */
 
 table {
 	border-collapse: collapse;
@@ -324,15 +389,15 @@ legend {
 
 label, .postlabel {
 
-	display:        inline-block;
-	vertical-align: middle;
-	padding-bottom: 0.15rem;  /* for vertical alignment */
-	margin-right: 0.5rem;
+	display:           inline-block;
+	vertical-align:    middle;
+	padding-bottom:    0.15rem;  /* for vertical alignment */
+	margin-right:      0.5rem;
 
-	font-size: 95%;	/* like legend */
-	line-height: 110%;
-	letter-spacing:	0.03rem;
-	font-weight: 300; /* visibility in mobile browser */
+	font-size:        95%;	/* like legend */
+	line-height:     110%;
+	letter-spacing:	   0.03rem;
+	font-weight:     300; /* visibility in mobile browser */
 
 	white-space: nowrap;	/* explicit wrapping using -<br> */
 	/* like pre but lines too long are broken
@@ -370,9 +435,11 @@ label.bottom {
 
 .postlabel {
 	/* font-size: 0.78rem; */
-	text-align: left;
-	margin-left: 0.35rem;
-	min-width: inherit;  /* reset from label */
+	text-align:    left;
+	margin-left:   0.35rem;
+	margin-right:  0.01rem;
+
+	min-width:     inherit;  /* reset from label */
 }
 
 /*
@@ -510,7 +577,7 @@ a.button {
 }
 
 button, input[type="submit"], input[type="reset"], a.button {
-	padding: 0.4em	0.6em;
+	padding: 0.4em	0.8em;
 	padding-bottom: 0.5em;
 	background-color: var(--clr-pri);
 	color: var(--clr-fg);
@@ -729,10 +796,12 @@ input[type=radio]:focus		 {
 }
 
 .suffix-inner {
+
+	display: inline-block;
+	/* width: 75%; */  /* 2021-02 - disabled */
+	
     /* vertical-align: top; */
     white-space: normal !important;  /* overriding outer element setting */
-    display: inline-block;
-	width: 75%;
 
 	font-size: 95%; /* like label and suffix */
 	letter-spacing:	0.03rem;
@@ -839,8 +908,7 @@ input[type=radio]:focus		 {
 
 
 /* ================= nav start =================== */
-/* navigation + menu */
-/* mobile case */
+/* nav mobile start */
 
 /*
 mobile case
@@ -866,6 +934,8 @@ nav {
 	min-height:			 var(--nav-height);
 	display: grid;
 	grid-template-columns: 4fr 4fr 3.0em [col-menu] 2em 0.15fr;
+	grid-template-columns: [col-img] 6fr [col-title] 4fr [col-menu] 1fr ;
+
 	/* main axis */
 	/*
 	css-tricks.com/snippets/css/a-guide-to-flexbox/
@@ -957,6 +1027,8 @@ img.logged-in {
 
 	width: 1.32em;
 	font-size: 1.0rem;
+
+	white-space: normal; /* undo label */
 }
 
 /* burger label contents */
@@ -1213,13 +1285,16 @@ ul.mnu-3rd-lvl li a:focus {
 ul.mnu-3rd-lvl li:last-child {
 	border-bottom: none;
 }
+/* nav mobile end */
 
-/* menu desktop */
+/* nav desktop start */
 @media screen and (min-width: 800px) {
 
 	nav {
 		/* unsupported with IE */
 		all: unset;
+
+
 
 		position: var(--nav-bar-position);
 		z-index: 103; /* over content*/
@@ -1230,6 +1305,7 @@ ul.mnu-3rd-lvl li:last-child {
 
 		display: grid;
 		grid-template-columns: 4fr 4fr 0.7fr 2fr [col-menu] 1fr;
+	    grid-template-columns: [col-img] 6fr [col-title] 4fr [col-menu] 1fr ;
 
 
 		justify-content: right;
@@ -1367,31 +1443,21 @@ ul.mnu-3rd-lvl li:last-child {
 	}
 }
 
-/* ============= nav end ======================== */
+/* nav desktop end */
 
 /* child of body - sibling of nav - parent of hori-center-me */
 .content {
 
-	display: flex;
+	position:   relative;
+	top:	    var(--content-top);
+	width:	    100%;
+	min-height: 91.6vh;  /* to test scrolling: min-height: 120vh; */
+	margin:	    0 auto;
+	padding:    0;
+
+
+	display:        flex;
 	flex-direction: column;
-
-	position: relative;
-
-	top:	 var(--content-top);
-	width:	 100%;
-	margin:	 0 auto;
-	padding: 0;
-
-	/* to test scrolling */
-	/* min-height: 120vh;	*/
-	min-height: 91.6vh;
-
-	/* todo: this needs to be put into config */
-	background-color: var(--clr-sec);
-	background-color: var(--clr-sec-drk1);
-	background-blend-mode: multiply;
-
-	background-size: cover;
 
 	/* justify-content: center /* makes the content twitch on loading */
 	justify-items: center;		 /* not ignored - as some sources say */
@@ -1399,17 +1465,16 @@ ul.mnu-3rd-lvl li:last-child {
 
 	align-items:	 center;
 	/* place-items: center start; */
+
+
+	/* todo: this needs to be put into config */
+	background-color: var(--clr-sec);
+	background-color: var(--clr-sec-drk1);
+	background-blend-mode: multiply;
+	background-size: cover;
+
 }
 
-.content ul {
-	margin-top:		0.3rem;
-	margin-bottom:	0.5rem;
-}
-
-.content li {
-	list-style-type: square;
-	margin-left: 1.1rem;
-}
 
 /* 	for global padding
 	 children can have padding:0; width=100%
@@ -1420,7 +1485,7 @@ form[name=frmMain] {
 	display: flex;
 	flex-direction: column;
 
-	width:      100%;
+	width:       70%;
 	min-width:  960px;
 
 	margin:  0 auto;
@@ -1435,26 +1500,35 @@ form[name=frmMain] {
 
 }
 
-@media screen and (min-width: 800px) {
-	form[name=frmMain] {
-		width:      70%;
-	}
+.content form[name=frmMain] .content-quest {
+	display:         flex;
+	min-height:      40px;
+	border-top:      1.4rem solid transparent;
+}
+
+.content form[name=frmMain] .content-footer {
+	width:           95%;
+	margin:          0 auto;
+	margin-top:      1rem;
+	margin-bottom:   1rem;
+
+	display:         flex;
+	flex-direction:  row;
+	flex-wrap:       nowrap;
+
+	/* main axis */
+	justify-content: space-around;
+	justify-content: space-between;
+
+	/* cross axis */
+	align-items:     center;
+	align-items:     flex-start;
 }
 
 
 
 
 /* more helper stuff */
-
-div.separator {
-    height: 1px;
-    border-top: 1px solid var(--clr-sec-drk2);
-
-    padding:        0;
-    margin:         0;
-    margin-top:     4px;
-    margin-bottom: 12px;
-}
 
 .vspacer-00,
 .vspacer-08,
@@ -1514,20 +1588,5 @@ input.ib-150 { 	width:150px;	}
 input.ib-200 { 	width:200px;	}
 input.ib-250 { 	width:250px;	}
 input.ib-300 { 	width:300px;	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

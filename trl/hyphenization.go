@@ -16,6 +16,7 @@ import (
 var hyph = []string{
 
 	// german
+	"schlech&shy;teste",
 	"ver&shy;schlechtern",
 	"An&shy;gabe",
 	"Konjunktur&shy;daten ",
@@ -126,6 +127,7 @@ var hyph = []string{
 	"nei&shy;ther",
 
 	// paternalism
+	"Ent&shy;schei&shy;dungs&shy;pro&shy;zessen",
 	"Ver&shy;füg&shy;bar",
 	"ver&shy;füg&shy;bar",
 	"Ri&shy;si&shy;ko&shy;ver&shy;mei&shy;den",

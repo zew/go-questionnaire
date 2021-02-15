@@ -24,36 +24,23 @@
 		{{ cfg.TrSite .Site "en" "app_label"  }}<br>
 	*/
 
-	/*
-		static CSS files
-		dynamic template files
-		CSS variation goes here
-	*/
+	/* CSS variables - then CSS files */
 	:root {
 		{{ .CSSSite.HTML }}	
 	}
 	</style>
 	<!-- after CSS variables -->
-	{{  $cssPath := cfg.AppMnemonic }}
-	<!-- 
-		concatenating the CSS path
-		cfg.AppMnemonic is -{{  $cssPath }}- 
-		CSS path is {{  print  "/css/" $cssPath "/styles.css" }}	
-		<link href="{{cfg.Pref  (print  "/css/" $cssPath "/styles.css") }}?v={{cfg.AppInstanceID}}"  rel="stylesheet" type="text/css" />
-	-->
-
 	<link href="{{cfg.Pref  (print  "/css/" .Q.Survey.Type "/styles.css")          }}?v={{cfg.AppInstanceID}}"  rel="stylesheet" type="text/css" />
+	<link href="{{cfg.Pref  (print  "/css/" .Q.Survey.Type "/styles-mobile.css")   }}?v={{cfg.AppInstanceID}}"  rel="stylesheet" type="text/css" />
 	<link href="{{cfg.Pref  (print  "/css/" .Q.Survey.Type "/styles-quest.css")    }}?v={{cfg.AppInstanceID}}"  rel="stylesheet" type="text/css" />
 	<link href="{{cfg.Pref  (print  "/css/" .Q.Survey.Type "/progress-bar-2.css")  }}?v={{cfg.AppInstanceID}}"  rel="stylesheet" type="text/css" />
-
-	<!-- <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script> -->
-	<!-- <link rel="stylesheet" href="styles/debug.css"> -->
-
 	{{if exists . "Q"}}
 		{{if ne .Q.Survey.Type ""}}
 			<link href="{{cfg.Pref  "/css/"}}/{{.Q.Survey.Type}}/main-desktop-{{.Q.Survey.Type}}.css" rel="stylesheet" type="text/css" />
 		{{end}}
 	{{end}}
+	<!-- <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script> -->
+	<!-- <link rel="stylesheet" href="styles/debug.css"> -->
 
 </head>
 <body>
@@ -82,9 +69,8 @@
 -->
 
 
+<span class='content-separator'></span> <!-- split out content - outside because div.content is CSS grid -->
 <div class="content">
-	<span class='content-separator'></span> <!-- to make the content extractable by splitting -->
-	
 
 	<form method="POST" action="{{cfg.Pref ""}}" name='frmMain'>
 
@@ -95,9 +81,8 @@
 
 	</form>
 
-
-	<span class='content-separator'></span> <!-- to make the content extractable by splitting -->
 </div><!-- /content -->
+<span class='content-separator'></span> <!-- split out content - outside because div.content is CSS grid -->
 
 
 </body>

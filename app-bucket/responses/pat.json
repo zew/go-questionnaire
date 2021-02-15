@@ -16,7 +16,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "9e8fb0d072d61d3f4704dc93b2fcb451",
+ 	"md_5": "b930e429b28f889f57092babb21fc42f",
  	"lang_codes": [
  		"de"
  	],
@@ -88,14 +88,14 @@
  							"name": "text01",
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\u003cp\u003e\u003cb\u003e\n\t\t\t\tIm Folgenden geht es um eine Spende von 30 €, die \u003ci\u003eeine\u003c/i\u003e dieser drei Stiftungen erhalten soll:\n\t\t\t\t\u003c/b\u003e\u003c/p\u003e\n\n\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\u003cstyle\u003e\n\t\t\t\t\ttable.drei-stiftungen td {\n\t\t\t\t\t\ttext-align: center;\n\t\t\t\t\t\ttext-align: center;\n\n\t\t\t\t\t}\n\t\t\t\t\u003c/style\u003e\n\n\t\t\t\t\u003ctable class=\"drei-stiftungen\"\u003e\n\t\t\t\t\u003ctr\u003e\n\t\t\t\t\t\u003ctd style=\"width: 33%\"\u003ePolitisch links\u003c/td\u003e\n\t\t\t\t\t\u003ctd style=\"width: 33%\"\u003ePolitische Mitte\u003c/td\u003e\n\t\t\t\t\t\u003ctd style=\"width: 33%\"\u003ePolitisch konservativ\u003c/td\u003e\n\t\t\t\t\u003ctr\u003e\n\t\t\t\t\u003ctr\u003e\n\t\t\t\t\t\u003ctd style=\"vertical-align: top;\" \u003e\u003cb\u003eHans-Böckler-Stiftung\u003c/b\u003e\u003c/td\u003e\n\t\t\t\t\t\u003ctd style=\"vertical-align: top;\" \u003e\u003cb\u003eBund der Steuerzahler Deutsch\u0026shy;land e.V.\u003c/b\u003e\u003c/td\u003e\n\t\t\t\t\t\u003ctd style=\"vertical-align: top;\" \u003e\u003cb\u003eLudwig-Erhard-Stiftung\u003c/b\u003e\u003c/td\u003e\n\t\t\t\t\u003ctr\u003e\n\t\t\t\t\u003c/table\u003e\n\n\t\t\t\t\u003cdiv class='vspacer-08'\u003e \u0026nbsp; \u003c/div\u003e\n\n\t\t\t\t\u003cp\u003e\n\t\t\t\tFür jede Ihrer ersten sechs Entscheidungen zeigen wir Ihnen die Präferenzen fünf deutscher Staatsangehöriger darüber, welche der drei Stiftungen die Spende erhalten soll.  Sie entscheiden, wie die Präferenzen der fünf Personen in eine gemeinsame Entscheidung zusammengefasst werden.\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp\u003e\n\t\t\t\tDie Präferenzen stammen von fünf Personen, die an einer Vorstudie teilgenommen haben\u003csup\u003e1)\u003c/sup\u003e.  Diese fünf Personen wurden aus einer Stichprobe gezogen, in der sich gleich viele Personen politisch links, in der Mitte oder als konservativ einordnen. Jede Person wurde einzeln befragt, welche der drei Stiftungen sie als am besten, mittel, und am schlechtesten erachtet. Den Personen wurde mitgeteilt, dass ihre Präferenzen zusammen mit den Präferenzen von vier anderen Personen an einen zukünftigen Teilnehmer der Studie gegeben werden, der die Präferenzen in eine Entscheidung zusammenfasst.\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\u003cp\u003e\u003cb\u003e\n\t\t\t\tIm Folgenden geht es um eine Spende von 30 €, die \u003ci\u003eeine\u003c/i\u003e dieser drei Stiftungen erhalten soll:\n\t\t\t\t\u003c/b\u003e\u003c/p\u003e\n\n\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\u003cstyle\u003e\n\t\t\t\t\ttable.drei-stiftungen td {\n\t\t\t\t\t\ttext-align: center;\n\t\t\t\t\t\ttext-align: center;\n\n\t\t\t\t\t}\n\t\t\t\t\u003c/style\u003e\n\n\t\t\t\t\u003ctable class=\"drei-stiftungen\"\u003e\n\t\t\t\t\u003ctr\u003e\n\t\t\t\t\t\u003ctd style=\"width: 33%\"\u003ePolitisch links\u003c/td\u003e\n\t\t\t\t\t\u003ctd style=\"width: 33%\"\u003ePolitische Mitte\u003c/td\u003e\n\t\t\t\t\t\u003ctd style=\"width: 33%\"\u003ePolitisch konservativ\u003c/td\u003e\n\t\t\t\t\u003ctr\u003e\n\t\t\t\t\u003ctr\u003e\n\t\t\t\t\t\u003ctd style=\"vertical-align: top;\" \u003e\u003cb\u003eHans-Böckler-Stiftung\u003c/b\u003e\u003c/td\u003e\n\t\t\t\t\t\u003ctd style=\"vertical-align: top;\" \u003e\u003cb\u003eBund der Steuerzahler Deutsch\u0026shy;land e.V.\u003c/b\u003e\u003c/td\u003e\n\t\t\t\t\t\u003ctd style=\"vertical-align: top;\" \u003e\u003cb\u003eLudwig-Erhard-Stiftung\u003c/b\u003e\u003c/td\u003e\n\t\t\t\t\u003ctr\u003e\n\t\t\t\t\u003c/table\u003e\n\n\t\t\t\t\u003cdiv class='vspacer-08'\u003e \u0026nbsp; \u003c/div\u003e\n\n\t\t\t\t\u003cp\u003e\n\t\t\t\tFür jede Ihrer ersten sechs Entscheidungen zeigen wir Ihnen die Präferenzen fünf deutscher Staatsangehöriger darüber, welche der drei Stiftungen die Spende erhalten soll.  Sie entscheiden, wie die Präferenzen der fünf Personen in eine gemeinsame Entscheidung zusammengefasst werden.\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp\u003e\n\t\t\t\tDie Präferenzen stammen von fünf Personen, die an einer Vorstudie teilgenommen haben\u003csup\u003e1)\u003c/sup\u003e.  Diese fünf Personen wurden aus einer Stichprobe gezogen, in der sich gleich viele Personen politisch links, in der Mitte oder als konservativ einordnen. Jede Person wurde einzeln befragt, welche der drei Stiftungen sie als am besten, mittel, und am schlech\u0026shy;testen erachtet. Den Personen wurde mitgeteilt, dass ihre Präferenzen zusammen mit den Präferenzen von vier anderen Personen an einen zukünftigen Teilnehmer der Studie gegeben werden, der die Präferenzen in eine Entscheidung zusammenfasst.\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							}
  						},
  						{
  							"name": "text02",
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\tIn \u003cb\u003eEntscheidung 1\u003c/b\u003e wird Stiftung A von zwei Personen\n\n\t\t\t\t(\u003cimg src='/img/pat/person.png' style='display: inline-block; height: 1.0rem;\n\t\t\t\t\tposition: relative; top: 0.2rem; left: 0.1rem;\n\t\t\t\t'\u003e )\n\n\t\t\t\tmittel eingestuft und von drei weiteren am schlechtesten. Stiftung B wird von drei Personen am besten eingestuft und von zweien am schlechtesten, und so weiter.\n\t\t\t\t"
+ 								"de": "\n\t\t\t\tIn \u003cb\u003eEntscheidung 1\u003c/b\u003e wird Stiftung A von zwei Personen\n\n\t\t\t\t(\u003cimg src='/img/pat/person.png' style='display: inline-block; height: 1.0rem;\n\t\t\t\t\tposition: relative; top: 0.2rem; left: 0.1rem;\n\t\t\t\t'\u003e )\n\n\t\t\t\tmittel eingestuft und von drei weiteren am schlech\u0026shy;testen. Stiftung B wird von drei Personen am besten eingestuft und von zweien am schlech\u0026shy;testen, und so weiter.\n\t\t\t\t"
  							}
  						}
  					]
@@ -373,7 +373,7 @@
  							"name": "text06",
  							"type": "textblock",
  							"description": {
- 								"de": "\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage 1.\u003c/b\u003e Schätzen Sie bitte: Was wäre eine zufällig ausgewählte Person aus unserer Vorstudie maximal bereit zu zahlen, damit eine Spende von 30 € an die Stiftung überwiesen wird, die diese Person als am besten/mittel/am schlechtesten erachtet?\n\t\t\t\t\t\u003ci\u003e(Wenn Sie meinen, die Person würde dafür bezahlen, dass die Stiftung die 30 € nicht erhält, schreiben Sie bitte ein Minuszeichen vor den jeweiligen Betrag.)\u003c/i\u003e\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003c!--\n\t\t\t\t\tBeste Stiftung:_______\tMittlere Stiftung:_______\tSchlechteste Stiftung:_______\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t--\u003e\n\n\n\t\t\t\t\t"
+ 								"de": "\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage 1.\u003c/b\u003e Schätzen Sie bitte: Was wäre eine zufällig ausgewählte Person aus unserer Vorstudie maximal bereit zu zahlen, damit eine Spende von 30 € an die Stiftung überwiesen wird, die diese Person als am besten/mittel/am schlech\u0026shy;testen erachtet?\n\t\t\t\t\t\u003ci\u003e(Wenn Sie meinen, die Person würde dafür bezahlen, dass die Stiftung die 30 € nicht erhält, schreiben Sie bitte ein Minuszeichen vor den jeweiligen Betrag.)\u003c/i\u003e\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003c!--\n\t\t\t\t\tBeste Stiftung:_______\tMittlere Stiftung:_______\tSchlech\u0026shy;teste Stiftung:_______\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t--\u003e\n\n\n\t\t\t\t\t"
  							}
  						}
  					]
@@ -387,13 +387,14 @@
  							"name": "q2_a",
  							"type": "number",
  							"max_chars": 4,
+ 							"min": -1000,
+ 							"max": 1000,
  							"description": {
  								"de": "Beste Stiftung"
  							},
  							"suffix": {
  								"de": "€"
  							},
- 							"horizontal_align_label": 2,
  							"col_span_label": 3,
  							"col_span_control": 2,
  							"validator": "inRange1000"
@@ -402,13 +403,14 @@
  							"name": "q2_b",
  							"type": "number",
  							"max_chars": 4,
+ 							"min": -1000,
+ 							"max": 1000,
  							"description": {
  								"de": "Mittlere Stiftung"
  							},
  							"suffix": {
  								"de": "€"
  							},
- 							"horizontal_align_label": 2,
  							"col_span_label": 3,
  							"col_span_control": 2,
  							"validator": "inRange1000"
@@ -417,13 +419,14 @@
  							"name": "q2_c",
  							"type": "number",
  							"max_chars": 4,
+ 							"min": -1000,
+ 							"max": 1000,
  							"description": {
- 								"de": "Schlechteste Stiftung"
+ 								"de": "Schlech\u0026shy;teste Stiftung"
  							},
  							"suffix": {
  								"de": "€"
  							},
- 							"horizontal_align_label": 2,
  							"col_span_label": 3,
  							"col_span_control": 2,
  							"validator": "inRange1000"
@@ -575,11 +578,12 @@
  							"name": "q4a_opt1",
  							"type": "number",
  							"max_chars": 2,
+ 							"max": 10,
  							"description": {
  								"de": "Wie viele wählen Option A? Ihre Antwort:"
  							},
  							"suffix": {
- 								"de": "von\u0026nbsp;10\u0026nbsp;"
+ 								"de": "von\u0026nbsp;\u003cbr\u003e10"
  							},
  							"col_span_label": 3,
  							"col_span_control": 2,
@@ -589,11 +593,12 @@
  							"name": "q4a_opt2",
  							"type": "number",
  							"max_chars": 2,
+ 							"max": 10,
  							"description": {
  								"de": "Wie viele wählen Option B? Ihre Antwort:"
  							},
  							"suffix": {
- 								"de": "von\u0026nbsp;10\u0026nbsp;"
+ 								"de": "von\u0026nbsp;\u003cbr\u003e10"
  							},
  							"col_span_label": 3,
  							"col_span_control": 2,
@@ -603,11 +608,12 @@
  							"name": "q4a_opt3",
  							"type": "number",
  							"max_chars": 2,
+ 							"max": 10,
  							"description": {
  								"de": "Wie viele wählen Option C? Ihre Antwort:"
  							},
  							"suffix": {
- 								"de": "von\u0026nbsp;10\u0026nbsp;"
+ 								"de": "von\u0026nbsp;\u003cbr\u003e10"
  							},
  							"col_span_label": 3,
  							"col_span_control": 2,
@@ -647,11 +653,12 @@
  							"name": "q4b_opt1",
  							"type": "number",
  							"max_chars": 2,
+ 							"max": 10,
  							"description": {
  								"de": "Wie viele wählen Option A? Ihre Antwort:"
  							},
  							"suffix": {
- 								"de": "von\u0026nbsp;10\u0026nbsp;"
+ 								"de": "von\u0026nbsp;\u003cbr\u003e10"
  							},
  							"col_span_label": 3,
  							"col_span_control": 2,
@@ -661,11 +668,12 @@
  							"name": "q4b_opt2",
  							"type": "number",
  							"max_chars": 2,
+ 							"max": 10,
  							"description": {
  								"de": "Wie viele wählen Option B? Ihre Antwort:"
  							},
  							"suffix": {
- 								"de": "von\u0026nbsp;10\u0026nbsp;"
+ 								"de": "von\u0026nbsp;\u003cbr\u003e10"
  							},
  							"col_span_label": 3,
  							"col_span_control": 2,
@@ -675,11 +683,12 @@
  							"name": "q4b_opt3",
  							"type": "number",
  							"max_chars": 2,
+ 							"max": 10,
  							"description": {
  								"de": "Wie viele wählen Option C? Ihre Antwort:"
  							},
  							"suffix": {
- 								"de": "von\u0026nbsp;10\u0026nbsp;"
+ 								"de": "von\u0026nbsp;\u003cbr\u003e10"
  							},
  							"col_span_label": 3,
  							"col_span_control": 2,
@@ -1159,7 +1168,7 @@
  				{
  					"bottom_vspacers": 2,
  					"width": 100,
- 					"columns": 1,
+ 					"columns": 2,
  					"inputs": [
  						{
  							"name": "text11",

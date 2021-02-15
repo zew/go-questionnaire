@@ -9,6 +9,7 @@ var implementedTypes = map[string]interface{}{
 	"text":     nil,
 	"number":   nil,
 	"textarea": nil,
+	"dropdown": nil,
 	"checkbox": nil, // A standalone checkbox - as a group, see below
 
 	/*
@@ -33,7 +34,6 @@ var implementedTypes = map[string]interface{}{
 	"composit":        nil, // executed at http request time, completeley free dynamic fragment of text and  multiple inputs
 	"composit-scalar": nil, // rendered by a composit
 
-	"dropdown": nil,
 }
 
 const (

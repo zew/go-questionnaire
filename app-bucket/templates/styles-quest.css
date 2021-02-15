@@ -1,16 +1,3 @@
-/* app specific - specific to go-questionnaire - all surveys */
-
-@media screen and (min-width: 1280px) and (min-height: 920px) {
-	html {
-		/* if chrome is not at 100 percent zoom, then this has no effect  */
-		zoom: 120%;
-	}
-}
-
-
-
-
-
 table.main-table{
 	table-layout:    fixed;
 	border-collapse: collapse; 

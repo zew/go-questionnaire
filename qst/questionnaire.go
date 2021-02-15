@@ -99,10 +99,13 @@ func (i *inputT) AddRadio() *radioT {
 // Multiple checkboxes (checkboxgroup) with same name but distinct values are a dubious instrument.
 // See comment to implementedType checkboxgroup.
 type inputT struct {
-	Name     string  `json:"name,omitempty"`
-	Type     string  `json:"type,omitempty"`      // see implementedTypes
-	MaxChars int     `json:"max_chars,omitempty"` // Number of input chars, also to compute width
-	Step     float64 `json:"step,omitempty"`      // stepping interval for number input
+	Name     string `json:"name,omitempty"`
+	Type     string `json:"type,omitempty"`      // see implementedTypes
+	MaxChars int    `json:"max_chars,omitempty"` // input chars; => SIZE for input, MAXLENGTH for textarea, text; also used for width
+
+	Step float64 `json:"step,omitempty"` // for number input:  stepping interval
+	Min  float64 `json:"min,omitempty"`  //      ~
+	Max  float64 `json:"max,omitempty"`  //      ~
 
 	Label     trl.S  `json:"label,omitempty"`
 	Desc      trl.S  `json:"description,omitempty"`
@@ -249,25 +252,16 @@ func (i inputT) HTML(langCode string, numCols int) string {
 			val = ValSet
 		}
 
-		width := fmt.Sprintf("width: %vem;", int(float64(i.MaxChars)*1.05))
-		// width = "width: 98%;"
-		if i.Type == "checkbox" || i.Type == "radio" || i.Type == "dropdown" {
-			width = ""
-		}
-		maxChars := ""
-		if i.MaxChars > 0 {
-			maxChars = fmt.Sprintf(" MAXLENGTH='%v' ", i.MaxChars) // the right attribute for input and textarea
-		}
-
 		if i.Type == "textarea" {
+			width := ""
 			colsRows := fmt.Sprintf(" cols='%v' rows='1' ", i.MaxChars+1)
 			if i.MaxChars > 80 {
 				colsRows = fmt.Sprintf(" cols='80' rows='%v' ", i.MaxChars/80+1)
 				// width = fmt.Sprintf("width: %vem;", int(float64(80)*1.05))
 				width = "width: 98%;"
 			}
-			ctrl += fmt.Sprintf("<textarea        name='%v' id='%v' title='%v %v' class='%v' style='%v' %v %v>%v</textarea>\n",
-				nm, nm, i.Label.TrSilent(langCode), i.Desc.TrSilent(langCode), i.CSSControl, width, maxChars, colsRows, val)
+			ctrl += fmt.Sprintf("<textarea        name='%v' id='%v' title='%v %v' class='%v' style='%v' MAXLENGTH='%v' %v>%v</textarea>\n",
+				nm, nm, i.Label.TrSilent(langCode), i.Desc.TrSilent(langCode), i.CSSControl, width, i.MaxChars, colsRows, val)
 
 		} else if i.Type == "dropdown" {
 
@@ -276,7 +270,6 @@ func (i inputT) HTML(langCode string, numCols int) string {
 			i.DD.LC = langCode
 			i.DD.SetTitle(i.Label.TrSilent(langCode) + " " + i.Desc.TrSilent(langCode))
 			i.DD.Select(i.Response)
-			i.DD.SetAttr("style", width)
 			i.DD.SetAttr("class", i.CSSControl)
 
 			sort.Sort(i.DD)
@@ -297,9 +290,13 @@ func (i inputT) HTML(langCode string, numCols int) string {
 					}
 				}
 			}
-			ctrl += fmt.Sprintf("<input type='%v'  %v  name='%v' id='%v' title='%v %v' class='%v' style='%v' %v %v  value='%v' />\n",
+			ctrl += fmt.Sprintf(
+				`<input type='%v'  %v  name='%v' id='%v' title='%v %v' 
+				class='%v' style='width:%vrem'  SIZE='%v' MAXLENGTH=%v MIN='%v' MAX='%v'  %v  value='%v' />
+				`,
 				i.Type, inputMode,
-				nm, nm, i.Label.TrSilent(langCode), i.Desc.TrSilent(langCode), i.CSSControl, width, maxChars, checked, val)
+				nm, nm, i.Label.TrSilent(langCode), i.Desc.TrSilent(langCode),
+				i.CSSControl, fmt.Sprintf("%.2f", float32(i.MaxChars)*0.65), i.MaxChars, i.MaxChars, i.Min, i.Max, checked, val)
 		}
 
 		// The checkbox "empty catcher" must follow *after* the actual checkbox input,
@@ -984,8 +981,10 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 
 	// set width less than 100 percent, for i.e. radios more closely together
 
-	padding := p.AestheticCompensation
-	width := fmt.Sprintf("<div class='page-margins'  style='width: %v%%; margin: 0 auto; padding-left: %v%%' >", p.Width, padding)
+	width := fmt.Sprintf(
+		"<div class='page-margins'  style='width: %v%%; margin: 0 auto; padding-left: %v%%' >",
+		p.Width, p.AestheticCompensation,
+	)
 	b.WriteString(width)
 
 	if p.Section != nil {

@@ -1,0 +1,42 @@
+/*
+    ===========================================
+          all media queries - except nav
+    ===========================================
+
+*/
+
+
+/* very big display => enlarge */
+@media screen and (min-width: 1280px) and (min-height: 920px) {
+	html {
+		/* has no effect, if chrome browser not at 100 percent zoom */
+		zoom: 120%;
+	}
+}
+
+
+@media screen and (max-width: 800px) {
+
+    label, .postlabel {
+        min-width: unset;
+    }
+
+    nav a.title {
+        margin-left: 0.2rem;
+        font-size: 90%;
+    }
+
+	form[name=frmMain] {
+		width:      100%;
+		min-width:  unset;
+	}
+
+    .page-margins {
+        width: calc(100% - 1.2rem) !important;
+    }
+
+    .content form[name=frmMain] .content-quest {
+        border-top:      none;
+    }
+
+}

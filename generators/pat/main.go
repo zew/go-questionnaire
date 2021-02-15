@@ -321,9 +321,12 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Type = "number"
 				inp.Name = "q2_a"
 				inp.MaxChars = 4
+				inp.Min = -1000
+				inp.Max = 1000
 				inp.ColSpanLabel = 3
 				inp.ColSpanControl = 2
 				inp.HAlignLabel = qst.HRight
+				inp.HAlignLabel = qst.HLeft
 				inp.Desc = trl.S{"de": "Beste Stiftung"}
 				inp.Suffix = trl.S{"de": "€"}
 				inp.Validator = "inRange1000"
@@ -333,9 +336,12 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Type = "number"
 				inp.Name = "q2_b"
 				inp.MaxChars = 4
+				inp.Min = -1000
+				inp.Max = 1000
 				inp.ColSpanLabel = 3
 				inp.ColSpanControl = 2
 				inp.HAlignLabel = qst.HRight
+				inp.HAlignLabel = qst.HLeft
 				inp.Desc = trl.S{"de": "Mittlere Stiftung"}
 				inp.Suffix = trl.S{"de": "€"}
 				inp.Validator = "inRange1000"
@@ -345,9 +351,12 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Type = "number"
 				inp.Name = "q2_c"
 				inp.MaxChars = 4
+				inp.Min = -1000
+				inp.Max = 1000
 				inp.ColSpanLabel = 3
 				inp.ColSpanControl = 2
 				inp.HAlignLabel = qst.HRight
+				inp.HAlignLabel = qst.HLeft
 				inp.Desc = trl.S{"de": "Schlechteste Stiftung"}
 				inp.Suffix = trl.S{"de": "€"}
 				inp.Validator = "inRange1000"
@@ -522,10 +531,12 @@ Welche Optionen sollen der Person (nicht) zur Verfügung stehen, falls die Optio
 				inp.Type = "number"
 				inp.Name = "q4a_opt1"
 				inp.MaxChars = 2
+				inp.Min = 0
+				inp.Max = 10
 				inp.ColSpanLabel = 3
 				inp.ColSpanControl = 2
 				inp.Desc = trl.S{"de": "Wie viele wählen Option A? Ihre Antwort:"}
-				inp.Suffix = trl.S{"de": "von&nbsp;10&nbsp;"}
+				inp.Suffix = trl.S{"de": "von&nbsp;<br>10"}
 				inp.HAlignLabel = qst.HLeft
 				inp.Validator = "inRange10"
 			}
@@ -534,10 +545,12 @@ Welche Optionen sollen der Person (nicht) zur Verfügung stehen, falls die Optio
 				inp.Type = "number"
 				inp.Name = "q4a_opt2"
 				inp.MaxChars = 2
+				inp.Min = 0
+				inp.Max = 10
 				inp.ColSpanLabel = 3
 				inp.ColSpanControl = 2
 				inp.Desc = trl.S{"de": "Wie viele wählen Option B? Ihre Antwort:"}
-				inp.Suffix = trl.S{"de": "von&nbsp;10&nbsp;"}
+				inp.Suffix = trl.S{"de": "von&nbsp;<br>10"}
 				inp.HAlignLabel = qst.HLeft
 				inp.Validator = "inRange10"
 			}
@@ -546,10 +559,12 @@ Welche Optionen sollen der Person (nicht) zur Verfügung stehen, falls die Optio
 				inp.Type = "number"
 				inp.Name = "q4a_opt3"
 				inp.MaxChars = 2
+				inp.Min = 0
+				inp.Max = 10
 				inp.ColSpanLabel = 3
 				inp.ColSpanControl = 2
 				inp.Desc = trl.S{"de": "Wie viele wählen Option C? Ihre Antwort:"}
-				inp.Suffix = trl.S{"de": "von&nbsp;10&nbsp;"}
+				inp.Suffix = trl.S{"de": "von&nbsp;<br>10"}
 				inp.HAlignLabel = qst.HLeft
 				inp.Validator = "inRange10"
 			}
@@ -612,10 +627,12 @@ Welche Optionen sollen der Person (nicht) zur Verfügung stehen, falls die Optio
 				inp.Type = "number"
 				inp.Name = "q4b_opt1"
 				inp.MaxChars = 2
+				inp.Min = 0
+				inp.Max = 10
 				inp.ColSpanLabel = 3
 				inp.ColSpanControl = 2
 				inp.Desc = trl.S{"de": "Wie viele wählen Option A? Ihre Antwort:"}
-				inp.Suffix = trl.S{"de": "von&nbsp;10&nbsp;"}
+				inp.Suffix = trl.S{"de": "von&nbsp;<br>10"}
 				inp.HAlignLabel = qst.HLeft
 				inp.Validator = "inRange10"
 			}
@@ -624,10 +641,12 @@ Welche Optionen sollen der Person (nicht) zur Verfügung stehen, falls die Optio
 				inp.Type = "number"
 				inp.Name = "q4b_opt2"
 				inp.MaxChars = 2
+				inp.Min = 0
+				inp.Max = 10
 				inp.ColSpanLabel = 3
 				inp.ColSpanControl = 2
 				inp.Desc = trl.S{"de": "Wie viele wählen Option B? Ihre Antwort:"}
-				inp.Suffix = trl.S{"de": "von&nbsp;10&nbsp;"}
+				inp.Suffix = trl.S{"de": "von&nbsp;<br>10"}
 				inp.HAlignLabel = qst.HLeft
 				inp.Validator = "inRange10"
 			}
@@ -636,10 +655,12 @@ Welche Optionen sollen der Person (nicht) zur Verfügung stehen, falls die Optio
 				inp.Type = "number"
 				inp.Name = "q4b_opt3"
 				inp.MaxChars = 2
+				inp.Min = 0
+				inp.Max = 10
 				inp.ColSpanLabel = 3
 				inp.ColSpanControl = 2
 				inp.Desc = trl.S{"de": "Wie viele wählen Option C? Ihre Antwort:"}
-				inp.Suffix = trl.S{"de": "von&nbsp;10&nbsp;"}
+				inp.Suffix = trl.S{"de": "von&nbsp;<br>10"}
 				inp.HAlignLabel = qst.HLeft
 				inp.Validator = "inRange10"
 			}
@@ -736,7 +757,7 @@ Welche Optionen sollen der Person (nicht) zur Verfügung stehen, falls die Optio
 		{
 			gr := page.AddGroup()
 			gr.BottomVSpacers = 2
-			gr.Cols = 1
+			gr.Cols = 2
 			gr.Width = 100
 
 			{

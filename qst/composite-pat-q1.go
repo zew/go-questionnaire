@@ -158,12 +158,13 @@ func politicalFoundations(q *QuestionnaireT, seq0to5 int, questionID string, ppl
 
 <table>
     <tr>
-        <td style="width: 16%%;" > &nbsp; </td>
+        <td style="width: 18%%;" > &nbsp; </td>
         <td style="width: 20%%;" >Am besten</td>
         <td style="width: 20%%;" >Mittel</td>
-        <td style="width: 20%%;" >Am schlechtesten</td>
-        <td style="width: 12%%;" >Auswahl</td>
-        <td style="width: 12%%;" >Gleich gut</td>
+		<!-- https://www.wortbedeutung.info/schlecht/  -->
+        <td style="width: 20%%;" >Am schlech&shy;tes&shy;ten</td>
+        <td style="width: 11%%;" >Aus&shy;wahl</td>
+        <td style="width: 11%%;" >Gleich gut</td>
     </tr>
 
     <tr>

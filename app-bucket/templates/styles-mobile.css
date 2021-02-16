@@ -1,8 +1,7 @@
 /*
-    ===========================================
-          all media queries - except nav
-    ===========================================
-
+===========================================
+    generic changes for mobile - except nav
+===========================================
 */
 
 
@@ -17,13 +16,24 @@
 
 @media screen and (max-width: 800px) {
 
+    :root {
+    	font-size: clamp(0.95rem, calc(0.8rem + ((1vw - .48rem) * 1.2)), 0.90rem);
+    }
+
     label, .postlabel {
         min-width: unset;
     }
 
+    label {
+        margin-right: 0.01rem;
+    }
+    
+    .postlabel {
+        margin-left:  0.01rem;
+    }
+
     nav a.title {
-        margin-left: 0.2rem;
-        font-size: 90%;
+        font-size: 80%;
     }
 
 	form[name=frmMain] {
@@ -37,6 +47,10 @@
 
     .content form[name=frmMain] .content-quest {
         border-top:      none;
+    }
+
+    table.main-table td {
+        padding: 0;
     }
 
 }

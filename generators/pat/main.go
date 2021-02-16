@@ -29,7 +29,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	q.Survey.Name = trl.S{"de": "Paternalismus Umfrage"}
 	q.Survey.Name = trl.S{"de": "Entscheidungsprozesse in der Politik"}
 	q.Survey.Name = trl.S{"de": "Politische Entscheidungsprozesse"}
-	q.Survey.Name = trl.S{"de": "Umfrage zu Entscheidungsprozessen in der Politik"}
+	q.Survey.Name = trl.S{"de": "Entscheidungsprozesse in der Politik"}
 	q.Variations = 4
 	q.Variations = 0
 
@@ -146,6 +146,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Name = "text02"
 				// inp.Label = trl.S{"de": "Dummy<br>"}
 				inp.Desc = trl.S{"de": fmt.Sprintf(`
+				<p>
 				In <b>Entscheidung 1</b> wird Stiftung A von zwei Personen
 
 				(<img src='%v' style='display: inline-block; height: 1.0rem;
@@ -153,6 +154,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				'> )
 
 				mittel eingestuft und von drei weiteren am schlechtesten. Stiftung B wird von drei Personen am besten eingestuft und von zweien am schlechtesten, und so weiter.
+				</p>
 				`,
 					"/img/pat/person.png", // works on survey2.zew.de - not locally
 					// cfg.Pref("/img/pat/person.png"),
@@ -165,7 +167,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		{
 			gr := page.AddGroup()
 			gr.Cols = 1
-			gr.BottomVSpacers = 0
+			gr.BottomVSpacers = 1
 			gr.RandomizationGroup = 1 - 1
 
 			// q1a
@@ -192,7 +194,9 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Type = "textblock"
 				inp.Name = "text03"
 				inp.Desc = trl.S{"de": `
+				<p>
 				Die Stiftungen wurden anonymisiert und in eine zufällige Reihenfolge gebracht, so dass Sie nicht wissen, um welche Stiftung es sich bei den Stiftungen A, B und C handelt. Sie entscheiden also nicht darüber, welche Stiftung die 30 € erhält. Stattdessen entscheiden Sie, wie die Präferenzen der Gruppenmitglieder in eine Entscheidung zusammengefasst werden und ob Sie beispielsweise eher eine Kompromisslösung oder eher eine Mehrheitslösung für Ihre Gruppe bevorzugen.
+				</p>
 				`}
 			}
 		}
@@ -239,7 +243,9 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Type = "textblock"
 				inp.Name = "text05"
 				inp.Desc = trl.S{"de": `
-				Entscheiden Sie im Folgenden, an welche Stiftung das Geld gehen soll. Setzen Sie dazu bei der entsprechenden Stiftung ein Kreuz in der Spalte „Auswahl“. Falls Sie eine zweite oder dritte Alternative als genauso gut empfinden, setzen Sie ein Kreuz in der Spalte „Gleich gut“. Berücksichtigen Sie die dargestellten Präferenzen der Gruppenmitglieder.
+				<p>
+				Entscheiden Sie im Folgenden, an welche Stiftung das Geld gehen soll. Setzen Sie dazu bei der entsprechenden Stiftung ein Kreuz in der Spalte „Auswahl“. Falls Sie eine zweite oder dritte Alternative als genauso gut empfinden, setzen Sie ein Kreuz in der Spalte „Gleich gut“. Berücksichtigen Sie die dargestellten Präferenzen der Gruppen&shy;mitglieder.
+				</p>
 				`}
 			}
 		}
@@ -320,9 +326,9 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp := gr.AddInput()
 				inp.Type = "number"
 				inp.Name = "q2_a"
-				inp.MaxChars = 4
-				inp.Min = -1000
-				inp.Max = 1000
+				inp.MaxChars = 3
+				inp.Min = -999
+				inp.Max = 999
 				inp.ColSpanLabel = 3
 				inp.ColSpanControl = 2
 				inp.HAlignLabel = qst.HRight
@@ -335,9 +341,9 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp := gr.AddInput()
 				inp.Type = "number"
 				inp.Name = "q2_b"
-				inp.MaxChars = 4
-				inp.Min = -1000
-				inp.Max = 1000
+				inp.MaxChars = 3
+				inp.Min = -999
+				inp.Max = 999
 				inp.ColSpanLabel = 3
 				inp.ColSpanControl = 2
 				inp.HAlignLabel = qst.HRight
@@ -350,9 +356,9 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp := gr.AddInput()
 				inp.Type = "number"
 				inp.Name = "q2_c"
-				inp.MaxChars = 4
-				inp.Min = -1000
-				inp.Max = 1000
+				inp.MaxChars = 3
+				inp.Min = -999
+				inp.Max = 999
 				inp.ColSpanLabel = 3
 				inp.ColSpanControl = 2
 				inp.HAlignLabel = qst.HRight
@@ -489,9 +495,11 @@ Welche Optionen sollen der Person (nicht) zur Verfügung stehen, falls die Optio
 				// inp.Label = trl.S{"de": "Frage 2<br>"}
 				inp.Desc = trl.S{
 					"de": `
+					<p>
 					<b>Frage 2. </b>
 					Schätzen Sie bitte: Wie viele Mitglieder einer Gruppe von 10 zufällig ausgewählten Personen wählen jeweils die folgenden Optionen A, B und C.
 					<i>(Ihre Antworten müssen sich auf 10 summieren.)</i>
+					</p>
 					`,
 				}
 			}
@@ -521,7 +529,7 @@ Welche Optionen sollen der Person (nicht) zur Verfügung stehen, falls die Optio
 
 		{
 			gr := page.AddGroup()
-			gr.Cols = 15
+			gr.Cols = 24 - 0
 			gr.Width = 100
 			gr.BottomVSpacers = 2
 
@@ -533,10 +541,11 @@ Welche Optionen sollen der Person (nicht) zur Verfügung stehen, falls die Optio
 				inp.MaxChars = 2
 				inp.Min = 0
 				inp.Max = 10
-				inp.ColSpanLabel = 3
-				inp.ColSpanControl = 2
+				inp.ColSpanLabel = 3 - 2
+				inp.ColSpanControl = 7
 				inp.Desc = trl.S{"de": "Wie viele wählen Option A? Ihre Antwort:"}
-				inp.Suffix = trl.S{"de": "von&nbsp;<br>10"}
+				inp.Desc = trl.S{"de": " "}
+				inp.Suffix = trl.S{"de": "von 10<br>wählen<br>Option A"}
 				inp.HAlignLabel = qst.HLeft
 				inp.Validator = "inRange10"
 			}
@@ -547,10 +556,11 @@ Welche Optionen sollen der Person (nicht) zur Verfügung stehen, falls die Optio
 				inp.MaxChars = 2
 				inp.Min = 0
 				inp.Max = 10
-				inp.ColSpanLabel = 3
-				inp.ColSpanControl = 2
+				inp.ColSpanLabel = 3 - 2
+				inp.ColSpanControl = 7
 				inp.Desc = trl.S{"de": "Wie viele wählen Option B? Ihre Antwort:"}
-				inp.Suffix = trl.S{"de": "von&nbsp;<br>10"}
+				inp.Desc = trl.S{"de": " "}
+				inp.Suffix = trl.S{"de": "von 10<br>wählen<br>Option B"}
 				inp.HAlignLabel = qst.HLeft
 				inp.Validator = "inRange10"
 			}
@@ -561,10 +571,11 @@ Welche Optionen sollen der Person (nicht) zur Verfügung stehen, falls die Optio
 				inp.MaxChars = 2
 				inp.Min = 0
 				inp.Max = 10
-				inp.ColSpanLabel = 3
-				inp.ColSpanControl = 2
+				inp.ColSpanLabel = 3 - 2
+				inp.ColSpanControl = 7
 				inp.Desc = trl.S{"de": "Wie viele wählen Option C? Ihre Antwort:"}
-				inp.Suffix = trl.S{"de": "von&nbsp;<br>10"}
+				inp.Desc = trl.S{"de": " "}
+				inp.Suffix = trl.S{"de": "von 10<br>wählen<br>Option C"}
 				inp.HAlignLabel = qst.HLeft
 				inp.Validator = "inRange10"
 			}
@@ -585,9 +596,11 @@ Welche Optionen sollen der Person (nicht) zur Verfügung stehen, falls die Optio
 				// inp.Label = trl.S{"de": "Frage 3<br>"}
 				inp.Desc = trl.S{
 					"de": `
+					<p>
 					<b>Frage 3. </b>
 					Und wie lautet Ihre Schätzung für die folgenden drei Optionen?
 					<i>(Ihre Antworten müssen sich auf 10 summieren. Die Zeitpunkte und Beträge sind anders als in Frage 2.)</i>
+					</p>
 					`,
 				}
 			}
@@ -617,7 +630,7 @@ Welche Optionen sollen der Person (nicht) zur Verfügung stehen, falls die Optio
 
 		{
 			gr := page.AddGroup()
-			gr.Cols = 15
+			gr.Cols = 24 - 0
 			gr.Width = 100
 			gr.BottomVSpacers = 2
 
@@ -629,10 +642,11 @@ Welche Optionen sollen der Person (nicht) zur Verfügung stehen, falls die Optio
 				inp.MaxChars = 2
 				inp.Min = 0
 				inp.Max = 10
-				inp.ColSpanLabel = 3
-				inp.ColSpanControl = 2
+				inp.ColSpanLabel = 3 - 2
+				inp.ColSpanControl = 7
 				inp.Desc = trl.S{"de": "Wie viele wählen Option A? Ihre Antwort:"}
-				inp.Suffix = trl.S{"de": "von&nbsp;<br>10"}
+				inp.Desc = trl.S{"de": " "}
+				inp.Suffix = trl.S{"de": "von 10<br>wählen<br>Option A"}
 				inp.HAlignLabel = qst.HLeft
 				inp.Validator = "inRange10"
 			}
@@ -643,10 +657,11 @@ Welche Optionen sollen der Person (nicht) zur Verfügung stehen, falls die Optio
 				inp.MaxChars = 2
 				inp.Min = 0
 				inp.Max = 10
-				inp.ColSpanLabel = 3
-				inp.ColSpanControl = 2
+				inp.ColSpanLabel = 3 - 2
+				inp.ColSpanControl = 7
 				inp.Desc = trl.S{"de": "Wie viele wählen Option B? Ihre Antwort:"}
-				inp.Suffix = trl.S{"de": "von&nbsp;<br>10"}
+				inp.Desc = trl.S{"de": " "}
+				inp.Suffix = trl.S{"de": "von 10<br>wählen<br>Option B"}
 				inp.HAlignLabel = qst.HLeft
 				inp.Validator = "inRange10"
 			}
@@ -657,10 +672,11 @@ Welche Optionen sollen der Person (nicht) zur Verfügung stehen, falls die Optio
 				inp.MaxChars = 2
 				inp.Min = 0
 				inp.Max = 10
-				inp.ColSpanLabel = 3
-				inp.ColSpanControl = 2
+				inp.ColSpanLabel = 3 - 2
+				inp.ColSpanControl = 7
 				inp.Desc = trl.S{"de": "Wie viele wählen Option C? Ihre Antwort:"}
-				inp.Suffix = trl.S{"de": "von&nbsp;<br>10"}
+				inp.Desc = trl.S{"de": " "}
+				inp.Suffix = trl.S{"de": "von 10<br>wählen<br>Option C"}
 				inp.HAlignLabel = qst.HLeft
 				inp.Validator = "inRange10"
 			}
@@ -685,12 +701,15 @@ Welche Optionen sollen der Person (nicht) zur Verfügung stehen, falls die Optio
 			// gr.Label = trl.S{"de": "Frage [groupID]<br>"}
 			gr.Desc = trl.S{
 				"de": `
+				<p>
 				<b>Frage 4.</b> 
 				Wie sehr stimmen Sie der folgenden Aussage zu: 
 				<i>„Alle Erwerbstätigen in Deutschland sollten verpflichtend einen gewissen Teil ihres Arbeitseinkommens 
 				im Rahmen einer privaten Altersvorsorge sparen, 
 				um eine Rentenhöhe zu erreichen, die über dem Rentenanspruch 
-				aus der gesetzlichen Rentenversicherung liegt.</i>“`,
+				aus der gesetzlichen Rentenversicherung liegt.</i>“
+				</p>
+				`,
 			}
 		}
 
@@ -706,7 +725,6 @@ Welche Optionen sollen der Person (nicht) zur Verfügung stehen, falls die Optio
 
 				<p>
 				<b>Zum Schluss bitten wir Sie drei Fragen über sich selbst zu beantworten:</b>
-				</p>
 
 				<br>
 				<b>Frage 5.</b>
@@ -714,6 +732,9 @@ Welche Optionen sollen der Person (nicht) zur Verfügung stehen, falls die Optio
 				 heute auf etwas zu verzichten, 
 				 um in der Zukunft davon zu profitieren, 
 				 oder sind Sie im Vergleich zu anderen dazu nicht bereit? 
+
+				</p>
+
 				`,
 			}
 		}
@@ -727,11 +748,13 @@ Welche Optionen sollen der Person (nicht) zur Verfügung stehen, falls die Optio
 			// gr.Label = trl.S{"de": "Frage [groupID]<br>"}
 			gr.Desc = trl.S{
 				"de": `
-
+				</p>
 				<b>Frage 6.</b>
 				Wie schätzen Sie sich persönlich ein? 
 				Sind Sie im Allgemeinen ein risikobereiter Mensch 
-				oder versuchen Sie, Risiken zu vermeiden? 				`,
+				oder versuchen Sie, Risiken zu vermeiden?
+				</p>
+				`,
 			}
 		}
 
@@ -744,10 +767,11 @@ Welche Optionen sollen der Person (nicht) zur Verfügung stehen, falls die Optio
 			// gr.Label = trl.S{"de": "Frage [groupID]<br>"}
 			gr.Desc = trl.S{
 				"de": `
-
+				<p>
 				<b>Frage 7.</b>
 				Wie schätzen Sie Ihre Bereitschaft ein mit anderen zu teilen, 
 				ohne dafür eine Gegenleistung zu erwarten?
+				</p>
 				`,
 			}
 		}
@@ -766,6 +790,7 @@ Welche Optionen sollen der Person (nicht) zur Verfügung stehen, falls die Optio
 				inp.Name = "text11"
 				// inp.CSSControl = "special-line-height-higher"
 				inp.Desc = trl.S{"de": "Vielen Dank für das Ausfüllen dieser Umfrage! "}
+				inp.Desc = trl.S{"de": "  "} // next page
 			}
 
 			{
@@ -795,12 +820,12 @@ Welche Optionen sollen der Person (nicht) zur Verfügung stehen, falls die Optio
 	// without "End" button
 	// without navigation
 	{
-		p := q.AddPage()
-		p.Label = cfg.Get().Mp["end"]
-		p.NoNavigation = true
+		page := q.AddPage()
+		page.Label = cfg.Get().Mp["end"]
+		page.NoNavigation = true
 		{
 			// Only one group => shuffling is no problem
-			gr := p.AddGroup()
+			gr := page.AddGroup()
 			gr.Cols = 1
 
 			{

@@ -16,6 +16,7 @@ import (
 var hyph = []string{
 
 	// german
+	"kom&shy;plett",
 	"schlech&shy;teste",
 	"ver&shy;schlechtern",
 	"An&shy;gabe",
@@ -127,12 +128,14 @@ var hyph = []string{
 	"nei&shy;ther",
 
 	// paternalism
-	"Ent&shy;schei&shy;dungs&shy;pro&shy;zessen",
-	"Ver&shy;füg&shy;bar",
+	"Ent&shy;schei&shy;dungs&shy;pro&shy;zesse",
+	// "Ver&shy;füg&shy;bar",
 	"ver&shy;füg&shy;bar",
 	"Ri&shy;si&shy;ko&shy;ver&shy;mei&shy;den",
-	"Ri&shy;si&shy;ko&shy;be&shy;reit",
+	// "Ri&shy;si&shy;ko&shy;be&shy;reit",
 	"ri&shy;si&shy;ko&shy;be&shy;reit",
+	"Prä&shy;ferenz&shy;konstellation",
+	"Stif&shy;tung",
 }
 
 // hyphm is a map with words and their hyphenized form as value.

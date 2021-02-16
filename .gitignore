@@ -32,7 +32,6 @@ tmp/*
 tmp*
 profiles/*
 # everything site specific
-main-desktop-*.css
 site*
 site/*
 

@@ -698,9 +698,9 @@ func (gr groupT) HTML(langCode string) string {
 
 // Type page contains groups with inputs
 type pageT struct {
-	Section         trl.S `json:"section,omitempty"`       // summary headline for multiple pages - extra strong before label in content - and in progress bar and navigation menu
-	Label           trl.S `json:"label,omitempty"`         // content headline
-	Desc            trl.S `json:"description,omitempty"`   // content abstract
+	Section         trl.S `json:"section,omitempty"`       // extra strong before label in content - summary headline for multiple pages
+	Label           trl.S `json:"label,omitempty"`         // headline, set to "" to prevent rendering
+	Desc            trl.S `json:"description,omitempty"`   // abstract
 	Short           trl.S `json:"short,omitempty"`         // sort version of section/label/description - in progress bar and navigation menu
 	NoNavigation    bool  `json:"no_navigation,omitempty"` // Page will not show up in progress bar
 	NavigationalNum int   `json:"navi_num"`                // The number in Navigation order; based on NoNavigation; computed by q.Validate
@@ -987,19 +987,31 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 	)
 	b.WriteString(width)
 
+	b.WriteString(vspacer8)
+
+	hasHeader := false
+
 	if p.Section != nil {
-		b.WriteString(fmt.Sprintf("<span class='go-quest-page-section' >%v</span>", p.Section.Tr(q.LangCode)))
+		b.WriteString(
+			fmt.Sprintf("<span class='go-quest-page-section' >%v</span>", p.Section.Tr(q.LangCode)))
 		if p.Label.Tr(q.LangCode) != "" {
 			b.WriteString("<span class='go-quest-page-desc'> &nbsp; - &nbsp; </span>")
 		}
+		hasHeader = true
 	}
-
-	b.WriteString(fmt.Sprintf("<span class='go-quest-page-header' >%v</span>", p.Label.Tr(q.LangCode)))
+	if p.Label.Tr(q.LangCode) != "" {
+		b.WriteString(fmt.Sprintf("<span class='go-quest-page-header' >%v</span>", p.Label.Tr(q.LangCode)))
+		hasHeader = true
+	}
 	if p.Desc.Tr(q.LangCode) != "" {
 		b.WriteString(vspacer)
 		b.WriteString(fmt.Sprintf("<p  class='go-quest-page-desc'>%v</p>", p.Desc.Tr(q.LangCode)))
+		hasHeader = true
 	}
-	b.WriteString(vspacer16)
+
+	if hasHeader {
+		b.WriteString(vspacer16)
+	}
 
 	grpOrder := q.RandomizeOrder(pageIdx)
 	compositCntr := -1
@@ -1013,6 +1025,7 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 			if err != nil {
 				b.WriteString(fmt.Sprintf("composite func error %v \n", err))
 			} else {
+				grpHTML = trl.HyphenizeText(grpHTML)
 				b.WriteString(grpHTML + "\n")
 			}
 		} else {

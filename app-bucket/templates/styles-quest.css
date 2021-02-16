@@ -1,3 +1,12 @@
+/*
+===========================================
+	go-questionnaire specific stuff
+	mostly content rendering
+===========================================
+
+*/
+
+
 table.main-table{
 	table-layout:    fixed;
 	border-collapse: collapse; 
@@ -25,6 +34,12 @@ table.main-table td{
 	padding-bottom: 2px;
     vertical-align: middle;
 	/* border: 1px solid #eaeaea;  */
+}
+
+@media screen and (max-width: 800px) {
+	table.main-table td{
+		padding: 0;
+	}
 }
 
 /* this does not work, since every row is rendered as separate table  */

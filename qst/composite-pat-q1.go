@@ -136,7 +136,6 @@ func politicalFoundations(q *QuestionnaireT, seq0to5 int, questionID string, ppl
 
 	s := fmt.Sprintf(`
 
-<span class="go-quest-label">
 	
 <p>
 	<b>Entscheidung %v.</b>

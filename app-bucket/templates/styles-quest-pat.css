@@ -1,0 +1,441 @@
+@media screen and (max-width: 800px) {
+    :root {
+        --img-logo-icon:         url(/survey/img/pat/vier-uni-logos-mobile.png);
+    }
+}
+
+
+
+/* disable link in header - header invisible */
+nav a.logo,
+nav a.title
+{
+    pointer-events: none;
+    cursor: default;
+    /* opacity: 0.4; */
+    /* visibility: hidden; */
+    justify-self: center;
+}
+
+/* dont show as link */
+nav a.title {
+    color: var(--clr-fg);
+}
+
+@media screen and (min-width: 800px) {
+    nav a.title {
+        background-color: var(--clr-sec-drk1);
+    }
+}
+
+@media screen and (max-width: 800px) {
+    nav a.title {
+        /* margin-left: 0.7rem; */
+        margin-left:  0.02rem;
+        margin-right: 0.2rem;
+        font-size: 75%;
+
+    }
+}
+
+/* text after logo - three sub components */
+/* i.e. ZEW  */
+nav a.title span.survey-org {
+    display:   none;
+}
+
+/* i.e. Finanzmarkttest */
+nav a.title span.survey-name {
+}
+
+/* i.e. 2021-02 */
+nav a.title span.survey-wave-id {
+	display:   none;
+}
+
+
+
+/* remove position correction for small default image */
+nav a.logo img {
+    top:  0;
+    left: 0;
+}
+
+/* nav menu items  */
+#quest-pages {
+    display: none;
+}
+@media screen and (max-width: 800px) {
+    #quest-pages {
+        display: inline-block;
+    }
+}
+
+#loginlogout {
+    display: none;
+}
+
+/* progress bar  */
+ol.progress {
+    display: none;
+}
+
+/*
+    content
+*/
+
+
+.go-quest-label {
+    line-height: normal;
+    padding-top: 0.1rem;
+    padding-bottom: 0.1rem;
+}
+
+
+
+/*
+==============================
+    FIRST table CSS
+==============================
+*/
+
+
+
+#t01 table, #t01 th, #t01 td {
+    border-collapse: collapse;
+}
+#t01 table {
+    border: none;
+    /* width: 32rem; */
+    max-width: 46rem;
+}
+
+/* td */
+#t01 td {
+    border: 1px solid grey;
+    margin: 0;
+    padding: 0.05rem 0.35rem;
+    /* font-size: 0.7rem; */
+    text-align: center;
+    width: 3.6rem;
+    vertical-align: middle;
+}
+/* first columns */
+#t01 tr td:nth-child(1) {
+    text-align: left;
+}
+/* last two columns */
+#t01 tr td:nth-child(5),
+#t01 tr td:nth-child(6)
+{
+    width: 1.1rem;
+}
+
+
+/* first row exceptions */
+#t01 tr:first-child td {
+    border-top: none;
+    background-color: inherit;
+    vertical-align: top;
+    vertical-align: middle;
+    height: 1.8rem;
+}
+#t01 tr:first-child td:nth-child(2)  {
+    background-color: lightgrey;
+}
+
+#t01 tr:first-child td:nth-child(1)  {
+    /* border-left: 2px solid red !important; */
+    border-left: none;
+}
+
+/* coloring */
+#t01 tr td {
+    background-color: lightgrey;
+}
+/* coloring column-wise */
+#t01 tr td:nth-child(3) {
+    background-color: darkgrey;
+}
+#t01 tr td:nth-child(4) {
+    background-color: grey;
+}
+
+/* column-wise vertical borders */
+#t01 tr td:nth-child(2) {
+    border-right: none;
+}
+#t01 tr td:nth-child(3) {
+    border-left:  none;
+    border-right: none;
+}
+#t01 tr td:nth-child(4) {
+    border-left: none;
+}
+
+
+
+/* in between rows */
+#t01 td.betw {
+    border: none;
+    background-color: inherit;
+    height:       0.49rem;
+    line-height:  0.49rem;
+    max-height:   0.49rem;
+    padding: 0;
+    margin:  0;
+}
+
+#t01 img {
+    height: 1.6rem;
+    width:  0.8rem;
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+
+.special-vertical-align-top {
+    line-height: 90%;
+    margin-top: 0.6rem;
+    padding: 0;
+    min-height: unset;
+}
+
+
+@media screen and (max-width: 800px) {
+    #t01 td {
+        padding: 0.25rem 0.1rem;
+        /* font-size:     90%;
+        padding-left:   0.05rem;
+        padding-right:  0.01rem; */
+    }
+    #t01  tr:nth-child(3) td:nth-child(1),
+    #t01  tr:nth-child(5) td:nth-child(1),
+    #t01  tr:nth-child(7) td:nth-child(1),
+    dummmy {
+        font-size: 100%;
+    }
+}
+
+
+
+/*
+==============================
+    SECOND table CSS
+==============================
+*/
+
+#t02 table, #t02 th, #t02 td {
+    border-collapse: collapse;
+}
+#t02 table {
+    border: none;
+    max-width: 46rem;
+}
+
+/* td */
+#t02 td {
+    border: 1px solid grey;
+    margin: 0;
+    padding: 0.05rem 0.35rem;
+    text-align: center;
+    width: 3.6rem;
+    vertical-align: middle;
+    background-color: lightgrey;
+}
+
+/* first row exceptions */
+#t02 tr:first-child td {
+    height: 1rem;
+    text-align: center;
+    background-color: transparent;
+    padding: 0.1rem 0;
+}
+/* first row - first col */
+#t02 tr:first-child td:nth-child(1) {
+    vertical-align: top;
+    padding: 0.2rem 0.1rem;
+}
+/* second row is part of the header */
+#t02 tr:nth-child(2) td:nth-child(1) {
+    text-align: center;
+    background-color: transparent;
+    padding: 0.1rem 0;
+}
+
+
+/* last columns */
+#t02 td:last-child,
+#t02 tr:first-child td:last-child
+{
+    background-color: darkgray;
+}
+
+/* in between rows */
+#t02 td.betw {
+    border: none;
+    background-color: inherit;
+    height:       0.49rem;
+    line-height:  0.49rem;
+    max-height:   0.49rem;
+    padding: 0;
+    margin:  0;
+}
+
+/* first col */
+#t02  tr:nth-child(1) td:nth-child(1),
+dummy {
+    text-align:  left;
+}
+
+#t02  tr:nth-child(3) td:nth-child(1),
+#t02  tr:nth-child(4) td:nth-child(1),
+#t02  tr:nth-child(5) td:nth-child(1),
+#t02  tr:nth-child(6) td:nth-child(1),
+dummmy {
+    text-align:  left;
+    white-space: pre-wrap;
+    padding-left: 0.4rem;
+    font-family: monospace;
+    font-size: 110%;
+}
+
+@media screen and (max-width: 800px) {
+    #t02 td {
+        font-size:     90%;
+        padding-left:   0.05rem;
+        padding-right:  0.01rem;
+    }
+    #t02  tr:nth-child(3) td:nth-child(1),
+    #t02  tr:nth-child(4) td:nth-child(1),
+    #t02  tr:nth-child(5) td:nth-child(1),
+    #t02  tr:nth-child(6) td:nth-child(1),
+    dummmy {
+        font-size: 88%;
+    }
+}
+
+
+
+
+
+/*
+==============================
+    THIRD table CSS
+==============================
+*/
+
+
+
+#t03 .b1 {
+    display: inline-block;
+    width:    31.5%;
+
+    margin:         0.7rem 0;
+    margin-right:   1.2%;
+
+    border:   1px solid grey;
+}
+
+#t03 .b1:nth-child(3) {
+    margin-right:   0.0rem;
+    /* border-right: 3px solid aquamarine; */
+}
+
+
+
+#t03 .b3 {
+    white-space: pre-wrap;
+    background-color: lightgray;
+
+
+    font-family: monospace;
+    font-size: 110%;
+}
+
+
+#t03 .b2,
+#t03 .b3 {
+    padding: 0.2rem;
+}
+#t03 .b2 {
+    border-bottom: 1px solid grey;
+}
+
+
+@media screen and (max-width: 800px) {
+    #t03 .b3 {
+        font-weight:    normal;
+        font-size:      99%;
+        font-size:      86%;
+        letter-spacing:	-0.1rem;
+        padding: 0.2rem   0.01rem;
+    }
+}
+
+
+/*
+==============================
+university logos
+==============================
+*/
+
+
+
+.logo-imgs-in-content {
+    position: relative;
+    left: -5%;
+    font-size: 0.1px;
+
+    margin: 0 auto;
+    padding: 1rem;
+
+    width: 100%;
+    width: 70%;
+
+    text-align: center;
+
+    background-color: var(--clr-sec);
+
+}
+
+@media screen and (max-width: 800px) {
+    .logo-imgs-in-content {
+        left: 0%;
+        width: 100%;
+    }
+}
+
+.logo-imgs-in-content img{
+    display: inline-block;
+
+    vertical-align: middle;
+    margin: 0 2.5rem;
+
+    opacity: 0.75;
+    zoom: 0.4;
+
+
+    padding: 0;
+    margin:  0;
+    opacity: 0.75;
+    zoom: 0.4;
+}
+
+.logo-imgs-in-content img:nth-child(1),
+.logo-imgs-in-content img:nth-child(3) {
+    margin-right:  5%;
+}
+
+.logo-imgs-in-content img:nth-child(1),
+.logo-imgs-in-content img:nth-child(2)
+{
+    margin-bottom: 5rem;
+}
+
+.logo-imgs-in-content img:nth-child(3),
+.logo-imgs-in-content img:nth-child(4)
+{
+    margin-bottom: 5rem;
+}
+

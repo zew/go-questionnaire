@@ -5,7 +5,7 @@
  			"de": "ZEW"
  		},
  		"name": {
- 			"de": "Umfrage zu Entscheidungsprozessen in der Politik"
+ 			"de": "Entscheidungsprozesse in der Politik"
  		},
  		"year": 2021,
  		"month": 2,
@@ -16,7 +16,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "b930e429b28f889f57092babb21fc42f",
+ 	"md_5": "fdc5d26e2a8857ead677e34c0c9324fe",
  	"lang_codes": [
  		"de"
  	],
@@ -88,19 +88,20 @@
  							"name": "text01",
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\u003cp\u003e\u003cb\u003e\n\t\t\t\tIm Folgenden geht es um eine Spende von 30 €, die \u003ci\u003eeine\u003c/i\u003e dieser drei Stiftungen erhalten soll:\n\t\t\t\t\u003c/b\u003e\u003c/p\u003e\n\n\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\u003cstyle\u003e\n\t\t\t\t\ttable.drei-stiftungen td {\n\t\t\t\t\t\ttext-align: center;\n\t\t\t\t\t\ttext-align: center;\n\n\t\t\t\t\t}\n\t\t\t\t\u003c/style\u003e\n\n\t\t\t\t\u003ctable class=\"drei-stiftungen\"\u003e\n\t\t\t\t\u003ctr\u003e\n\t\t\t\t\t\u003ctd style=\"width: 33%\"\u003ePolitisch links\u003c/td\u003e\n\t\t\t\t\t\u003ctd style=\"width: 33%\"\u003ePolitische Mitte\u003c/td\u003e\n\t\t\t\t\t\u003ctd style=\"width: 33%\"\u003ePolitisch konservativ\u003c/td\u003e\n\t\t\t\t\u003ctr\u003e\n\t\t\t\t\u003ctr\u003e\n\t\t\t\t\t\u003ctd style=\"vertical-align: top;\" \u003e\u003cb\u003eHans-Böckler-Stiftung\u003c/b\u003e\u003c/td\u003e\n\t\t\t\t\t\u003ctd style=\"vertical-align: top;\" \u003e\u003cb\u003eBund der Steuerzahler Deutsch\u0026shy;land e.V.\u003c/b\u003e\u003c/td\u003e\n\t\t\t\t\t\u003ctd style=\"vertical-align: top;\" \u003e\u003cb\u003eLudwig-Erhard-Stiftung\u003c/b\u003e\u003c/td\u003e\n\t\t\t\t\u003ctr\u003e\n\t\t\t\t\u003c/table\u003e\n\n\t\t\t\t\u003cdiv class='vspacer-08'\u003e \u0026nbsp; \u003c/div\u003e\n\n\t\t\t\t\u003cp\u003e\n\t\t\t\tFür jede Ihrer ersten sechs Entscheidungen zeigen wir Ihnen die Präferenzen fünf deutscher Staatsangehöriger darüber, welche der drei Stiftungen die Spende erhalten soll.  Sie entscheiden, wie die Präferenzen der fünf Personen in eine gemeinsame Entscheidung zusammengefasst werden.\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp\u003e\n\t\t\t\tDie Präferenzen stammen von fünf Personen, die an einer Vorstudie teilgenommen haben\u003csup\u003e1)\u003c/sup\u003e.  Diese fünf Personen wurden aus einer Stichprobe gezogen, in der sich gleich viele Personen politisch links, in der Mitte oder als konservativ einordnen. Jede Person wurde einzeln befragt, welche der drei Stiftungen sie als am besten, mittel, und am schlech\u0026shy;testen erachtet. Den Personen wurde mitgeteilt, dass ihre Präferenzen zusammen mit den Präferenzen von vier anderen Personen an einen zukünftigen Teilnehmer der Studie gegeben werden, der die Präferenzen in eine Entscheidung zusammenfasst.\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\u003cp\u003e\u003cb\u003e\n\t\t\t\tIm Folgenden geht es um eine Spende von 30 €, die \u003ci\u003eeine\u003c/i\u003e dieser drei Stif\u0026shy;tungen erhalten soll:\n\t\t\t\t\u003c/b\u003e\u003c/p\u003e\n\n\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\u003cstyle\u003e\n\t\t\t\t\ttable.drei-stif\u0026shy;tungen td {\n\t\t\t\t\t\ttext-align: center;\n\t\t\t\t\t\ttext-align: center;\n\n\t\t\t\t\t}\n\t\t\t\t\u003c/style\u003e\n\n\t\t\t\t\u003ctable class=\"drei-stif\u0026shy;tungen\"\u003e\n\t\t\t\t\u003ctr\u003e\n\t\t\t\t\t\u003ctd style=\"width: 33%\"\u003ePolitisch links\u003c/td\u003e\n\t\t\t\t\t\u003ctd style=\"width: 33%\"\u003ePolitische Mitte\u003c/td\u003e\n\t\t\t\t\t\u003ctd style=\"width: 33%\"\u003ePolitisch konservativ\u003c/td\u003e\n\t\t\t\t\u003ctr\u003e\n\t\t\t\t\u003ctr\u003e\n\t\t\t\t\t\u003ctd style=\"vertical-align: top;\" \u003e\u003cb\u003eHans-Böckler-Stif\u0026shy;tung\u003c/b\u003e\u003c/td\u003e\n\t\t\t\t\t\u003ctd style=\"vertical-align: top;\" \u003e\u003cb\u003eBund der Steuerzahler Deutsch\u0026shy;land e.V.\u003c/b\u003e\u003c/td\u003e\n\t\t\t\t\t\u003ctd style=\"vertical-align: top;\" \u003e\u003cb\u003eLudwig-Erhard-Stif\u0026shy;tung\u003c/b\u003e\u003c/td\u003e\n\t\t\t\t\u003ctr\u003e\n\t\t\t\t\u003c/table\u003e\n\n\t\t\t\t\u003cdiv class='vspacer-08'\u003e \u0026nbsp; \u003c/div\u003e\n\n\t\t\t\t\u003cp\u003e\n\t\t\t\tFür jede Ihrer ersten sechs Entscheidungen zeigen wir Ihnen die Präferenzen fünf deutscher Staatsangehöriger darüber, welche der drei Stif\u0026shy;tungen die Spende erhalten soll.  Sie entscheiden, wie die Präferenzen der fünf Personen in eine gemeinsame Entscheidung zusammengefasst werden.\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp\u003e\n\t\t\t\tDie Präferenzen stammen von fünf Personen, die an einer Vorstudie teilgenommen haben\u003csup\u003e1)\u003c/sup\u003e.  Diese fünf Personen wurden aus einer Stichprobe gezogen, in der sich gleich viele Personen politisch links, in der Mitte oder als konservativ einordnen. Jede Person wurde einzeln befragt, welche der drei Stif\u0026shy;tungen sie als am besten, mittel, und am schlech\u0026shy;testen erachtet. Den Personen wurde mitgeteilt, dass ihre Präferenzen zusammen mit den Präferenzen von vier anderen Personen an einen zukünftigen Teilnehmer der Studie gegeben werden, der die Präferenzen in eine Entscheidung zusammenfasst.\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							}
  						},
  						{
  							"name": "text02",
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\tIn \u003cb\u003eEntscheidung 1\u003c/b\u003e wird Stiftung A von zwei Personen\n\n\t\t\t\t(\u003cimg src='/img/pat/person.png' style='display: inline-block; height: 1.0rem;\n\t\t\t\t\tposition: relative; top: 0.2rem; left: 0.1rem;\n\t\t\t\t'\u003e )\n\n\t\t\t\tmittel eingestuft und von drei weiteren am schlech\u0026shy;testen. Stiftung B wird von drei Personen am besten eingestuft und von zweien am schlech\u0026shy;testen, und so weiter.\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\u003cp\u003e\n\t\t\t\tIn \u003cb\u003eEntscheidung 1\u003c/b\u003e wird Stif\u0026shy;tung A von zwei Personen\n\n\t\t\t\t(\u003cimg src='/img/pat/person.png' style='display: inline-block; height: 1.0rem;\n\t\t\t\t\tposition: relative; top: 0.2rem; left: 0.1rem;\n\t\t\t\t'\u003e )\n\n\t\t\t\tmittel eingestuft und von drei weiteren am schlech\u0026shy;testen. Stif\u0026shy;tung B wird von drei Personen am besten eingestuft und von zweien am schlech\u0026shy;testen, und so weiter.\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							}
  						}
  					]
  				},
  				{
+ 					"bottom_vspacers": 1,
  					"width": 100,
  					"columns": 1,
  					"inputs": [
@@ -135,7 +136,7 @@
  							"name": "text03",
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\tDie Stiftungen wurden anonymisiert und in eine zufällige Reihenfolge gebracht, so dass Sie nicht wissen, um welche Stiftung es sich bei den Stiftungen A, B und C handelt. Sie entscheiden also nicht darüber, welche Stiftung die 30 € erhält. Stattdessen entscheiden Sie, wie die Präferenzen der Gruppenmitglieder in eine Entscheidung zusammengefasst werden und ob Sie beispielsweise eher eine Kompromisslösung oder eher eine Mehrheitslösung für Ihre Gruppe bevorzugen.\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\u003cp\u003e\n\t\t\t\tDie Stif\u0026shy;tungen wurden anonymisiert und in eine zufällige Reihenfolge gebracht, so dass Sie nicht wissen, um welche Stif\u0026shy;tung es sich bei den Stif\u0026shy;tungen A, B und C handelt. Sie entscheiden also nicht darüber, welche Stif\u0026shy;tung die 30 € erhält. Stattdessen entscheiden Sie, wie die Präferenzen der Gruppenmitglieder in eine Entscheidung zusammengefasst werden und ob Sie beispielsweise eher eine Kompromisslösung oder eher eine Mehrheitslösung für Ihre Gruppe bevorzugen.\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							}
  						}
  					]
@@ -180,7 +181,7 @@
  							"name": "text05",
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\tEntscheiden Sie im Folgenden, an welche Stiftung das Geld gehen soll. Setzen Sie dazu bei der entsprechenden Stiftung ein Kreuz in der Spalte „Auswahl“. Falls Sie eine zweite oder dritte Alternative als genauso gut empfinden, setzen Sie ein Kreuz in der Spalte „Gleich gut“. Berücksichtigen Sie die dargestellten Präferenzen der Gruppenmitglieder.\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\u003cp\u003e\n\t\t\t\tEntscheiden Sie im Folgenden, an welche Stif\u0026shy;tung das Geld gehen soll. Setzen Sie dazu bei der entsprechenden Stif\u0026shy;tung ein Kreuz in der Spalte „Auswahl“. Falls Sie eine zweite oder dritte Alternative als genauso gut empfinden, setzen Sie ein Kreuz in der Spalte „Gleich gut“. Berücksichtigen Sie die dargestellten Präferenzen der Gruppen\u0026shy;mitglieder.\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span_label": 2
  						}
@@ -373,7 +374,7 @@
  							"name": "text06",
  							"type": "textblock",
  							"description": {
- 								"de": "\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage 1.\u003c/b\u003e Schätzen Sie bitte: Was wäre eine zufällig ausgewählte Person aus unserer Vorstudie maximal bereit zu zahlen, damit eine Spende von 30 € an die Stiftung überwiesen wird, die diese Person als am besten/mittel/am schlech\u0026shy;testen erachtet?\n\t\t\t\t\t\u003ci\u003e(Wenn Sie meinen, die Person würde dafür bezahlen, dass die Stiftung die 30 € nicht erhält, schreiben Sie bitte ein Minuszeichen vor den jeweiligen Betrag.)\u003c/i\u003e\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003c!--\n\t\t\t\t\tBeste Stiftung:_______\tMittlere Stiftung:_______\tSchlech\u0026shy;teste Stiftung:_______\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t--\u003e\n\n\n\t\t\t\t\t"
+ 								"de": "\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage 1.\u003c/b\u003e Schätzen Sie bitte: Was wäre eine zufällig ausgewählte Person aus unserer Vorstudie maximal bereit zu zahlen, damit eine Spende von 30 € an die Stif\u0026shy;tung überwiesen wird, die diese Person als am besten/mittel/am schlech\u0026shy;testen erachtet?\n\t\t\t\t\t\u003ci\u003e(Wenn Sie meinen, die Person würde dafür bezahlen, dass die Stif\u0026shy;tung die 30 € nicht erhält, schreiben Sie bitte ein Minuszeichen vor den jeweiligen Betrag.)\u003c/i\u003e\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003c!--\n\t\t\t\t\tBeste Stif\u0026shy;tung:_______\tMittlere Stif\u0026shy;tung:_______\tSchlech\u0026shy;teste Stif\u0026shy;tung:_______\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t--\u003e\n\n\n\t\t\t\t\t"
  							}
  						}
  					]
@@ -386,11 +387,11 @@
  						{
  							"name": "q2_a",
  							"type": "number",
- 							"max_chars": 4,
- 							"min": -1000,
- 							"max": 1000,
+ 							"max_chars": 3,
+ 							"min": -999,
+ 							"max": 999,
  							"description": {
- 								"de": "Beste Stiftung"
+ 								"de": "Beste Stif\u0026shy;tung"
  							},
  							"suffix": {
  								"de": "€"
@@ -402,11 +403,11 @@
  						{
  							"name": "q2_b",
  							"type": "number",
- 							"max_chars": 4,
- 							"min": -1000,
- 							"max": 1000,
+ 							"max_chars": 3,
+ 							"min": -999,
+ 							"max": 999,
  							"description": {
- 								"de": "Mittlere Stiftung"
+ 								"de": "Mittlere Stif\u0026shy;tung"
  							},
  							"suffix": {
  								"de": "€"
@@ -418,11 +419,11 @@
  						{
  							"name": "q2_c",
  							"type": "number",
- 							"max_chars": 4,
- 							"min": -1000,
- 							"max": 1000,
+ 							"max_chars": 3,
+ 							"min": -999,
+ 							"max": 999,
  							"description": {
- 								"de": "Schlech\u0026shy;teste Stiftung"
+ 								"de": "Schlech\u0026shy;teste Stif\u0026shy;tung"
  							},
  							"suffix": {
  								"de": "€"
@@ -554,7 +555,7 @@
  							"name": "text09",
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\t\u003cb\u003eFrage 2. \u003c/b\u003e\n\t\t\t\t\tSchätzen Sie bitte: Wie viele Mitglieder einer Gruppe von 10 zufällig ausgewählten Personen wählen jeweils die folgenden Optionen A, B und C.\n\t\t\t\t\t\u003ci\u003e(Ihre Antworten müssen sich auf 10 summieren.)\u003c/i\u003e\n\t\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage 2. \u003c/b\u003e\n\t\t\t\t\tSchätzen Sie bitte: Wie viele Mitglieder einer Gruppe von 10 zufällig ausgewählten Personen wählen jeweils die folgenden Optionen A, B und C.\n\t\t\t\t\t\u003ci\u003e(Ihre Antworten müssen sich auf 10 summieren.)\u003c/i\u003e\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
  							}
  						}
  					]
@@ -572,7 +573,7 @@
  				{
  					"bottom_vspacers": 2,
  					"width": 100,
- 					"columns": 15,
+ 					"columns": 24,
  					"inputs": [
  						{
  							"name": "q4a_opt1",
@@ -580,13 +581,13 @@
  							"max_chars": 2,
  							"max": 10,
  							"description": {
- 								"de": "Wie viele wählen Option A? Ihre Antwort:"
+ 								"de": " "
  							},
  							"suffix": {
- 								"de": "von\u0026nbsp;\u003cbr\u003e10"
+ 								"de": "von 10\u003cbr\u003ewählen\u003cbr\u003eOption A"
  							},
- 							"col_span_label": 3,
- 							"col_span_control": 2,
+ 							"col_span_label": 1,
+ 							"col_span_control": 7,
  							"validator": "inRange10"
  						},
  						{
@@ -595,13 +596,13 @@
  							"max_chars": 2,
  							"max": 10,
  							"description": {
- 								"de": "Wie viele wählen Option B? Ihre Antwort:"
+ 								"de": " "
  							},
  							"suffix": {
- 								"de": "von\u0026nbsp;\u003cbr\u003e10"
+ 								"de": "von 10\u003cbr\u003ewählen\u003cbr\u003eOption B"
  							},
- 							"col_span_label": 3,
- 							"col_span_control": 2,
+ 							"col_span_label": 1,
+ 							"col_span_control": 7,
  							"validator": "inRange10"
  						},
  						{
@@ -610,13 +611,13 @@
  							"max_chars": 2,
  							"max": 10,
  							"description": {
- 								"de": "Wie viele wählen Option C? Ihre Antwort:"
+ 								"de": " "
  							},
  							"suffix": {
- 								"de": "von\u0026nbsp;\u003cbr\u003e10"
+ 								"de": "von 10\u003cbr\u003ewählen\u003cbr\u003eOption C"
  							},
- 							"col_span_label": 3,
- 							"col_span_control": 2,
+ 							"col_span_label": 1,
+ 							"col_span_control": 7,
  							"validator": "inRange10"
  						}
  					]
@@ -629,7 +630,7 @@
  							"name": "text10",
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\t\u003cb\u003eFrage 3. \u003c/b\u003e\n\t\t\t\t\tUnd wie lautet Ihre Schätzung für die folgenden drei Optionen?\n\t\t\t\t\t\u003ci\u003e(Ihre Antworten müssen sich auf 10 summieren. Die Zeitpunkte und Beträge sind anders als in Frage 2.)\u003c/i\u003e\n\t\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage 3. \u003c/b\u003e\n\t\t\t\t\tUnd wie lautet Ihre Schätzung für die folgenden drei Optionen?\n\t\t\t\t\t\u003ci\u003e(Ihre Antworten müssen sich auf 10 summieren. Die Zeitpunkte und Beträge sind anders als in Frage 2.)\u003c/i\u003e\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
  							}
  						}
  					]
@@ -647,7 +648,7 @@
  				{
  					"bottom_vspacers": 2,
  					"width": 100,
- 					"columns": 15,
+ 					"columns": 24,
  					"inputs": [
  						{
  							"name": "q4b_opt1",
@@ -655,13 +656,13 @@
  							"max_chars": 2,
  							"max": 10,
  							"description": {
- 								"de": "Wie viele wählen Option A? Ihre Antwort:"
+ 								"de": " "
  							},
  							"suffix": {
- 								"de": "von\u0026nbsp;\u003cbr\u003e10"
+ 								"de": "von 10\u003cbr\u003ewählen\u003cbr\u003eOption A"
  							},
- 							"col_span_label": 3,
- 							"col_span_control": 2,
+ 							"col_span_label": 1,
+ 							"col_span_control": 7,
  							"validator": "inRange10"
  						},
  						{
@@ -670,13 +671,13 @@
  							"max_chars": 2,
  							"max": 10,
  							"description": {
- 								"de": "Wie viele wählen Option B? Ihre Antwort:"
+ 								"de": " "
  							},
  							"suffix": {
- 								"de": "von\u0026nbsp;\u003cbr\u003e10"
+ 								"de": "von 10\u003cbr\u003ewählen\u003cbr\u003eOption B"
  							},
- 							"col_span_label": 3,
- 							"col_span_control": 2,
+ 							"col_span_label": 1,
+ 							"col_span_control": 7,
  							"validator": "inRange10"
  						},
  						{
@@ -685,13 +686,13 @@
  							"max_chars": 2,
  							"max": 10,
  							"description": {
- 								"de": "Wie viele wählen Option C? Ihre Antwort:"
+ 								"de": " "
  							},
  							"suffix": {
- 								"de": "von\u0026nbsp;\u003cbr\u003e10"
+ 								"de": "von 10\u003cbr\u003ewählen\u003cbr\u003eOption C"
  							},
- 							"col_span_label": 3,
- 							"col_span_control": 2,
+ 							"col_span_label": 1,
+ 							"col_span_control": 7,
  							"validator": "inRange10"
  						}
  					]
@@ -715,7 +716,7 @@
  			"groups": [
  				{
  					"description": {
- 						"de": "\n\t\t\t\t\u003cb\u003eFrage 4.\u003c/b\u003e \n\t\t\t\tWie sehr stimmen Sie der folgenden Aussage zu: \n\t\t\t\t\u003ci\u003e„Alle Erwerbstätigen in Deutschland sollten verpflichtend einen gewissen Teil ihres Arbeitseinkommens \n\t\t\t\tim Rahmen einer privaten Altersvorsorge sparen, \n\t\t\t\tum eine Rentenhöhe zu erreichen, die über dem Rentenanspruch \n\t\t\t\taus der gesetzlichen Rentenversicherung liegt.\u003c/i\u003e“"
+ 						"de": "\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\u003cb\u003eFrage 4.\u003c/b\u003e \n\t\t\t\tWie sehr stimmen Sie der folgenden Aussage zu: \n\t\t\t\t\u003ci\u003e„Alle Erwerbstätigen in Deutschland sollten verpflichtend einen gewissen Teil ihres Arbeitseinkommens \n\t\t\t\tim Rahmen einer privaten Altersvorsorge sparen, \n\t\t\t\tum eine Rentenhöhe zu erreichen, die über dem Rentenanspruch \n\t\t\t\taus der gesetzlichen Rentenversicherung liegt.\u003c/i\u003e“\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  					},
  					"bottom_vspacers": 2,
  					"width": 100,
@@ -780,7 +781,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "Stimme komplett zu"
+ 								"de": "Stimme kom\u0026shy;plett zu"
  							},
  							"horizontal_align_label": 1,
  							"css_label": "special-vertical-align-top"
@@ -828,7 +829,7 @@
  				},
  				{
  					"description": {
- 						"de": "\n\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\u003cb\u003eZum Schluss bitten wir Sie drei Fragen über sich selbst zu beantworten:\u003c/b\u003e\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cb\u003eFrage 5.\u003c/b\u003e\n\t\t\t\t Sind Sie im Vergleich zu anderen im Allgemeinen bereit, \n\t\t\t\t heute auf etwas zu verzichten, \n\t\t\t\t um in der Zukunft davon zu profitieren, \n\t\t\t\t oder sind Sie im Vergleich zu anderen dazu nicht bereit? \n\t\t\t\t"
+ 						"de": "\n\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\u003cb\u003eZum Schluss bitten wir Sie drei Fragen über sich selbst zu beantworten:\u003c/b\u003e\n\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cb\u003eFrage 5.\u003c/b\u003e\n\t\t\t\t Sind Sie im Vergleich zu anderen im Allgemeinen bereit, \n\t\t\t\t heute auf etwas zu verzichten, \n\t\t\t\t um in der Zukunft davon zu profitieren, \n\t\t\t\t oder sind Sie im Vergleich zu anderen dazu nicht bereit? \n\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t"
  					},
  					"bottom_vspacers": 2,
  					"width": 100,
@@ -941,7 +942,7 @@
  				},
  				{
  					"description": {
- 						"de": "\n\n\t\t\t\t\u003cb\u003eFrage 6.\u003c/b\u003e\n\t\t\t\tWie schätzen Sie sich persönlich ein? \n\t\t\t\tSind Sie im Allgemeinen ein risikobereiter Mensch \n\t\t\t\toder versuchen Sie, Risiken zu vermeiden? \t\t\t\t"
+ 						"de": "\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t\u003cb\u003eFrage 6.\u003c/b\u003e\n\t\t\t\tWie schätzen Sie sich persönlich ein? \n\t\t\t\tSind Sie im Allgemeinen ein risikobereiter Mensch \n\t\t\t\toder versuchen Sie, Risiken zu vermeiden?\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  					},
  					"bottom_vspacers": 2,
  					"width": 100,
@@ -1054,7 +1055,7 @@
  				},
  				{
  					"description": {
- 						"de": "\n\n\t\t\t\t\u003cb\u003eFrage 7.\u003c/b\u003e\n\t\t\t\tWie schätzen Sie Ihre Bereitschaft ein mit anderen zu teilen, \n\t\t\t\tohne dafür eine Gegenleistung zu erwarten?\n\t\t\t\t"
+ 						"de": "\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\u003cb\u003eFrage 7.\u003c/b\u003e\n\t\t\t\tWie schätzen Sie Ihre Bereitschaft ein mit anderen zu teilen, \n\t\t\t\tohne dafür eine Gegenleistung zu erwarten?\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  					},
  					"bottom_vspacers": 2,
  					"width": 100,
@@ -1174,7 +1175,7 @@
  							"name": "text11",
  							"type": "textblock",
  							"description": {
- 								"de": "Vielen Dank für das Ausfüllen dieser Umfrage! "
+ 								"de": "  "
  							}
  						},
  						{

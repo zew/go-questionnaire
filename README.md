@@ -131,7 +131,7 @@ Install and setup [golang](https://golang.org/doc/install)
     cd go-questionnaire
     mv config-example.json  config.json  # adapt to your purposes
     mv logins-example.json  logins.json  # dito
-    touch ./templates/main-desktop-[survey].css # put your site's styles here
+    touch ./templates/styles-quest-[survey].css # put your site's styles here
     go build
     ./go-questionnaire                   # under windows: go-questionnaire.exe
 
@@ -290,7 +290,7 @@ No need for database "schema" artistry.
 
 * Each label or form element can be styled additionally (`CSSLabel` and `CSSControl`)
 
-* Global layout elements can be adapted using `main-desktop-[survey].css` and  `main-mobile-[survey].css`.
+* Global layout elements can be adapted using `styles-quest-[survey].css``.
 
 #### Page navigation sequence - special pages
 
@@ -366,7 +366,7 @@ Group property `OddRowsColoring` to activate alternating background
 
 ![Group width](./app-bucket/content/img/odd-rows-coloring.png)
 
-The table border can be set via ./templates/main-desktop-[survey].css  
+The table border can be set via ./templates/styles-quest-[survey].css  
 `table.bordered td { myBorderCSS }`
 
 Vertical alignment is baseline for everything outside the input tables.

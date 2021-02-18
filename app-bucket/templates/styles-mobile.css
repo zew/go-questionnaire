@@ -17,7 +17,7 @@
 @media screen and (max-width: 800px) {
 
     :root {
-    	font-size: clamp(0.95rem, calc(0.8rem + ((1vw - .48rem) * 1.2)), 0.90rem);
+    	font-size: clamp(0.95rem, calc(0.8rem + ((1vw - .48rem) * 1.2)), 1.05rem);
     }
 
     label, .postlabel {
@@ -32,9 +32,18 @@
         margin-left:  0.01rem;
     }
 
+    nav a.logo .logo-img-desktop {
+        display: none;
+    }
+
+    nav a.logo .logo-img-mobile {
+        display: inline-block;
+    }
+
+
     nav a.title {
         font-size: 80%;
-    }
+    }    
 
 	form[name=frmMain] {
 		width:      100%;
@@ -47,10 +56,6 @@
 
     .content form[name=frmMain] .content-quest {
         border-top:      none;
-    }
-
-    table.main-table td {
-        padding: 0;
     }
 
 }

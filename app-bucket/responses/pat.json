@@ -16,7 +16,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "fdc5d26e2a8857ead677e34c0c9324fe",
+ 	"md_5": "d39803eed290ceb8510a22e8b5c36887",
  	"lang_codes": [
  		"de"
  	],
@@ -40,7 +40,7 @@
  						"de": "HERZLICH WILLKOMMEN ZU UNSERER STUDIE UND VIELEN DANK FÜR IHRE TEILNAHME!\u003cbr\u003e\u003cbr\u003e"
  					},
  					"description": {
- 						"de": "\n\u003cp\u003eDies ist eine Studie des Zentrums für Europäische Wirtschaftsforschung (ZEW) in Mannheim sowie der Universitäten in Köln, Mannheim, Münster und Zürich. Ihre Teilnahme wird nur wenige Minuten in Anspruch nehmen und Sie unterstützen damit die Forschung zu Entscheidungsprozessen in der Politik.\n\u003c/p\u003e\n\n\u003cp\u003eIn dieser Studie treffen Sie acht Entscheidungen und beantworten sieben Fragen. Nach der Erhebung werden 10 % aller Teilnehmer zufällig ausgewählt. Von jedem ausgewählten Teilnehmer wird eine der acht Entscheidungen zufällig bestimmt und genau wie unten beschrieben umgesetzt (alle unten erwähnten Personen existieren wirklich und alle Auszahlungen werden wie beschrieben getätigt).\n\u003c/p\u003e\n\n\u003cp\u003eIn dieser Umfrage gibt es keine richtigen oder falschen Antworten. Bitte entscheiden Sie daher immer gemäß Ihren persönlichen Ansichten. Sie werden dabei vollständig anonym bleiben.\n\u003c/p\u003e\n\n\t\t\t\t \u003cbr\u003e\n\n\n\t\t\t\t \u003cbr\u003e\n\n\t\t\t\t "
+ 						"de": "\n\t\t\t\t\u003cp\u003eDies ist eine Studie des Zentrums für Europäische Wirtschaftsforschung (ZEW) in Mannheim sowie der Universitäten in Köln, Mannheim, Münster und Zürich. Ihre Teilnahme wird nur wenige Minuten in Anspruch nehmen und Sie unterstützen damit die Forschung zu Entscheidungsprozessen in der Politik.\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp\u003eIn dieser Studie treffen Sie acht Entscheidungen und beantworten sieben Fragen. Nach der Erhebung werden 10 % aller Teilnehmer zufällig ausgewählt. Von jedem ausgewählten Teilnehmer wird eine der acht Entscheidungen zufällig bestimmt und genau wie unten beschrieben umgesetzt (alle unten erwähnten Personen existieren wirklich und alle Auszahlungen werden wie beschrieben getätigt).\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp\u003eIn dieser Umfrage gibt es keine richtigen oder falschen Antworten. Bitte entscheiden Sie daher immer gemäß Ihren persönlichen Ansichten. Sie werden dabei vollständig anonym bleiben.\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t \u003cbr\u003e\n\n\n\t\t\t\t \u003cbr\u003e\n\n\t\t\t\t "
  					},
  					"bottom_vspacers": 3,
  					"width": 100,
@@ -90,13 +90,17 @@
  							"description": {
  								"de": "\n\t\t\t\t\u003cp\u003e\u003cb\u003e\n\t\t\t\tIm Folgenden geht es um eine Spende von 30 €, die \u003ci\u003eeine\u003c/i\u003e dieser drei Stif\u0026shy;tungen erhalten soll:\n\t\t\t\t\u003c/b\u003e\u003c/p\u003e\n\n\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\u003cstyle\u003e\n\t\t\t\t\ttable.drei-stif\u0026shy;tungen td {\n\t\t\t\t\t\ttext-align: center;\n\t\t\t\t\t\ttext-align: center;\n\n\t\t\t\t\t}\n\t\t\t\t\u003c/style\u003e\n\n\t\t\t\t\u003ctable class=\"drei-stif\u0026shy;tungen\"\u003e\n\t\t\t\t\u003ctr\u003e\n\t\t\t\t\t\u003ctd style=\"width: 33%\"\u003ePolitisch links\u003c/td\u003e\n\t\t\t\t\t\u003ctd style=\"width: 33%\"\u003ePolitische Mitte\u003c/td\u003e\n\t\t\t\t\t\u003ctd style=\"width: 33%\"\u003ePolitisch konservativ\u003c/td\u003e\n\t\t\t\t\u003ctr\u003e\n\t\t\t\t\u003ctr\u003e\n\t\t\t\t\t\u003ctd style=\"vertical-align: top;\" \u003e\u003cb\u003eHans-Böckler-Stif\u0026shy;tung\u003c/b\u003e\u003c/td\u003e\n\t\t\t\t\t\u003ctd style=\"vertical-align: top;\" \u003e\u003cb\u003eBund der Steuerzahler Deutsch\u0026shy;land e.V.\u003c/b\u003e\u003c/td\u003e\n\t\t\t\t\t\u003ctd style=\"vertical-align: top;\" \u003e\u003cb\u003eLudwig-Erhard-Stif\u0026shy;tung\u003c/b\u003e\u003c/td\u003e\n\t\t\t\t\u003ctr\u003e\n\t\t\t\t\u003c/table\u003e\n\n\t\t\t\t\u003cdiv class='vspacer-08'\u003e \u0026nbsp; \u003c/div\u003e\n\n\t\t\t\t\u003cp\u003e\n\t\t\t\tFür jede Ihrer ersten sechs Entscheidungen zeigen wir Ihnen die Präferenzen fünf deutscher Staatsangehöriger darüber, welche der drei Stif\u0026shy;tungen die Spende erhalten soll.  Sie entscheiden, wie die Präferenzen der fünf Personen in eine gemeinsame Entscheidung zusammengefasst werden.\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp\u003e\n\t\t\t\tDie Präferenzen stammen von fünf Personen, die an einer Vorstudie teilgenommen haben\u003csup\u003e1)\u003c/sup\u003e.  Diese fünf Personen wurden aus einer Stichprobe gezogen, in der sich gleich viele Personen politisch links, in der Mitte oder als konservativ einordnen. Jede Person wurde einzeln befragt, welche der drei Stif\u0026shy;tungen sie als am besten, mittel, und am schlech\u0026shy;testen erachtet. Den Personen wurde mitgeteilt, dass ihre Präferenzen zusammen mit den Präferenzen von vier anderen Personen an einen zukünftigen Teilnehmer der Studie gegeben werden, der die Präferenzen in eine Entscheidung zusammenfasst.\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							}
- 						},
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"width": 100,
+ 					"columns": 1,
+ 					"inputs": [
  						{
- 							"name": "text02",
- 							"type": "textblock",
- 							"description": {
- 								"de": "\n\t\t\t\t\u003cp\u003e\n\t\t\t\tIn \u003cb\u003eEntscheidung 1\u003c/b\u003e wird Stif\u0026shy;tung A von zwei Personen\n\n\t\t\t\t(\u003cimg src='/img/pat/person.png' style='display: inline-block; height: 1.0rem;\n\t\t\t\t\tposition: relative; top: 0.2rem; left: 0.1rem;\n\t\t\t\t'\u003e )\n\n\t\t\t\tmittel eingestuft und von drei weiteren am schlech\u0026shy;testen. Stif\u0026shy;tung B wird von drei Personen am besten eingestuft und von zweien am schlech\u0026shy;testen, und so weiter.\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
- 							}
+ 							"type": "composit",
+ 							"dynamic_func": "PoliticalFoundationsPretext__0__0"
  						}
  					]
  				},
@@ -548,6 +552,7 @@
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
  				{
+ 					"bottom_vspacers": 1,
  					"width": 100,
  					"columns": 1,
  					"inputs": [
@@ -561,6 +566,7 @@
  					]
  				},
  				{
+ 					"bottom_vspacers": 1,
  					"width": 100,
  					"columns": 12,
  					"inputs": [

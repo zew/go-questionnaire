@@ -48,15 +48,46 @@
  		}
  	},
  	"translations_site": {
+ 		"4walls": {
+ 			"app_label": {
+ 				"en": "4walls"
+ 			},
+ 			"img_logo_icon": {
+ 				"default": "/img/ui/4walls-logo-3.png"
+ 			},
+ 			"img_logo_icon_mobile": {
+ 				"default": "/img/ui/4walls-logo-3.png"
+ 			}
+ 		},
+ 		"default": {
+ 			"img_logo_icon": {
+ 				"default": "/img/ui/icon-forschung-zew-prim.svg"
+ 			},
+ 			"img_logo_icon_mobile": {
+ 				"default": "/img/ui/icon-forschung-zew-prim.svg"
+ 			}
+ 		},
  		"fmt": {
  			"app_label": {
  				"de": "Finanzmarkttest",
  				"en": "financial markets survey"
+ 			},
+ 			"img_logo_icon": {
+ 				"default": "/img/ui/icon-forschung-zew-prim.svg"
+ 			},
+ 			"img_logo_icon_mobile": {
+ 				"default": "/img/ui/icon-forschung-zew-prim.svg"
  			}
  		},
  		"pat": {
  			"app_label": {
- 				"de": "Umfrage zu Entscheidungsprozessen in der Politik"
+ 				"de": "Entscheidungsprozesse in der Politik"
+ 			},
+ 			"img_logo_icon": {
+ 				"default": "/img/pat/vier-uni-logos.png"
+ 			},
+ 			"img_logo_icon_mobile": {
+ 				"default": "/img/pat/vier-uni-logos-mobile.png"
  			}
  		}
  	},
@@ -64,11 +95,6 @@
  		{
  			"key": "img-bg",
  			"val": "/img/ui/bg-bw-bland.jpg",
- 			"is_url": true
- 		},
- 		{
- 			"key": "img-logo-icon",
- 			"val": "/img/ui/icon-forschung-zew-prim.svg",
  			"is_url": true
  		},
  		{
@@ -232,11 +258,6 @@
  				"is_url": true
  			},
  			{
- 				"key": "img-logo-icon",
- 				"val": "/img/ui/4walls-logo-3.png",
- 				"is_url": true
- 			},
- 			{
  				"key": "img-loggedin-icon",
  				"val": "/img/ui/logged-in-icon-4walls.svg",
  				"is_url": true
@@ -335,18 +356,16 @@
  		],
  		"fmt": [
  			{
- 				"key": "dummy",
- 				"r": 48,
- 				"g": 48,
- 				"b": 48
+ 				"key": "img-bg",
+ 				"val": "none",
+ 				"is_url": true
  			}
  		],
  		"pat": [
  			{
- 				"key": "dummy",
- 				"r": 48,
- 				"g": 48,
- 				"b": 48
+ 				"key": "img-bg",
+ 				"val": "none",
+ 				"is_url": true
  			}
  		]
  	},

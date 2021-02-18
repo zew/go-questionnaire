@@ -516,7 +516,7 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
 
 input, select, button, textarea, a.button {
 	padding: 0.2em 0.1em;
-	margin:	0.2em 0;
+	margin:	 0.2em 0;
 	border-radius: 0.15em;
 	font-size: 0.9rem;
 	font-weight: 300;
@@ -576,8 +576,8 @@ a.button {
 }
 
 button, input[type="submit"], input[type="reset"], a.button {
-	padding: 0.4em	0.8em;
-	padding-bottom: 0.5em;
+	padding:         0.5em  0.9em;
+	padding-bottom:  0.6em;
 	background-color: var(--clr-pri);
 	color: var(--clr-fg);
 	color: var(--clr-sec);
@@ -983,10 +983,22 @@ nav a.logo img {
 
 	margin-right: 0.2rem;
 
-	/* requires diplay, width and height being set */
-	content: var(--img-logo-icon);
+	/* requires display, width and height being set */
+	/* content: var(--img-logo-icon); */
+
+	/* not working in firefox
+	   https://css-tricks.com/replace-the-image-in-an-img-with-css/ 
+	   does not work for unknown sizes
+	*/
 }
 
+
+nav a.logo .logo-img-desktop {
+}
+
+nav a.logo .logo-img-mobile {
+	display: none;
+}
 
 
 /* dont color logo as 'visited' */

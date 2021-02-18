@@ -18,10 +18,23 @@
 
 	<style>
 	/*
-		{{ cfg.Tr           "de" "app_org"    }}<br>
-		{{ cfg.Tr           "en" "app_label"  }}<br>
-		{{ cfg.TrSite .Site "de" "app_org"    }}<br>
-		{{ cfg.TrSite .Site "en" "app_label"  }}<br>
+		{{ .Site     }} <br>
+		{{ .LangCode }} <br>
+
+		{{ cfg.MpSite.default }}  <br>
+		{{ cfg.MpSite.default.img_logo_icon }} <br>
+		{{ cfg.MpSite.pat }} <br>
+
+		language strings <br>
+		{{ cfg.Tr         .LangCode  "app_org"    }} <br>
+		{{ cfg.Tr         .LangCode  "app_label"  }} <br>
+
+		site and language strings <br>
+		{{ cfg.Val .Site "en"      "app_label"}}            <br>
+		{{ cfg.Val .Site "default" "img_logo_icon"}}        <br>
+		{{ cfg.Val .Site "default" "img_logo_icon_mobile"}} <br>
+
+
 	*/
 
 	/* CSS variables - then CSS files */

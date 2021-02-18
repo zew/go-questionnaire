@@ -169,6 +169,11 @@ func Load(r io.Reader) {
 	if len(dmp) > 700 {
 		dmp = dmp[:700]
 	}
+	{
+		dmp := util.IndentedDump(tempCfg.MpSite)
+		log.Printf("\n%s\n...config loaded", dmp)
+	}
+
 	log.Printf("\n%s\n...config loaded", dmp)
 }
 
@@ -215,13 +220,29 @@ func (c *ConfigT) Pref(pth ...string) string {
 	return Pref(pth...)
 }
 
-// Tr for templates: cfg.Tr
+// Tr for global translations in templates
+// i.e. {{ cfg.Tr .Q.LangCode "correct_errors" }}
 func (c *ConfigT) Tr(langCode, key string) string {
 	return c.Mp[key].Tr(langCode)
 }
 
-// TrSite for templates: cfg.TrSite
-func (c *ConfigT) TrSite(site, langCode, key string) string {
+// Val for site and language specific values in templates;
+// function falls back to key "default";
+// i.e. {{ cfg.Val .Site "en"      "app_label"}}
+//      {{ cfg.Val .Site "default" "img_logo_icon"}}
+func (c *ConfigT) Val(site, langCode, key string) string {
+	// site key missing
+	if _, ok := c.MpSite[site]; !ok {
+		// lang key missing
+		if _, ok := c.MpSite["default"][key][langCode]; !ok {
+			return c.MpSite["default"][key]["default"]
+		}
+		return c.MpSite["default"][key].Tr(langCode)
+	}
+	// site ok - but lang key missing
+	if _, ok := c.MpSite[site][key][langCode]; !ok {
+		return c.MpSite[site][key]["default"]
+	}
 	return c.MpSite[site][key].Tr(langCode)
 }
 
@@ -262,7 +283,6 @@ func Example() *ConfigT {
 		CSSVars: cssVars{
 			// {Key: "logo-text", Val: "ZEW"}, // use localized trl.Map app_label, app_org
 			{IsURL: true, Key: "img-bg", Val: "/img/ui/bg-bw-bland.jpg"},
-			{IsURL: true, Key: "img-logo-icon", Val: "/img/ui/icon-forschung-zew-prim.svg"},
 			{IsURL: true, Key: "img-loggedin-icon", Val: "/img/ui/logged-in-icon-zew.svg"},
 			{Key: "nav-height", Val: "8vh"},
 			{Key: "nav-rest-height", Val: "calc(100vh - var(--nav-height))", Desc: "we can calc() the remainder"},
@@ -298,7 +318,6 @@ func Example() *ConfigT {
 		CSSVarsSite: map[string]cssVars{
 			"4walls": {
 				{IsURL: true, Key: "img-bg", Val: "none"},
-				{IsURL: true, Key: "img-logo-icon", Val: "/img/ui/4walls-logo-3.png"},
 				{IsURL: true, Key: "img-loggedin-icon", Val: "/img/ui/logged-in-icon-4walls.svg"},
 				{Key: "bg", R: 12, G: 12, B: 12, Desc: "main background f <body>"},
 				{Key: "fg", R: 224, G: 224, B: 224, Desc: "main foreground"},
@@ -317,10 +336,10 @@ func Example() *ConfigT {
 				{Key: "sec-drk2", R: 1, G: 1, B: 1, Desc: "darker, for borders"},
 			},
 			"fmt": {
-				{Key: "dummy", R: 48, G: 48, B: 48},
+				{IsURL: true, Key: "img-bg", Val: "none"},
 			},
 			"pat": {
-				{Key: "dummy", R: 48, G: 48, B: 48},
+				{IsURL: true, Key: "img-bg", Val: "none"},
 			},
 		},
 		CPUProfile: "", // the filename, i.e. cpu.pprof
@@ -380,15 +399,46 @@ func Example() *ConfigT {
 			},
 		},
 		MpSite: trl.MapSite{
+			"default": {
+				"img_logo_icon": {
+					"default": "/img/ui/icon-forschung-zew-prim.svg",
+				},
+				"img_logo_icon_mobile": {
+					"default": "/img/ui/icon-forschung-zew-prim.svg",
+				},
+			},
+			"4walls": {
+				"app_label": {
+					"en": "4walls",
+				},
+				"img_logo_icon": {
+					"default": "/img/ui/4walls-logo-3.png",
+				},
+				"img_logo_icon_mobile": {
+					"default": "/img/ui/4walls-logo-3.png",
+				},
+			},
 			"fmt": {
 				"app_label": {
 					"de": "Finanzmarkttest",
 					"en": "financial markets survey",
 				},
+				"img_logo_icon": {
+					"default": "/img/ui/icon-forschung-zew-prim.svg",
+				},
+				"img_logo_icon_mobile": {
+					"default": "/img/ui/icon-forschung-zew-prim.svg",
+				},
 			},
 			"pat": {
 				"app_label": {
-					"de": "Umfrage zu Entscheidungsprozessen in der Politik",
+					"de": "Entscheidungsprozesse in der Politik",
+				},
+				"img_logo_icon": {
+					"default": "/img/pat/vier-uni-logos.png",
+				},
+				"img_logo_icon_mobile": {
+					"default": "/img/pat/vier-uni-logos-mobile.png",
 				},
 			},
 		},

@@ -26,7 +26,8 @@ package qst
 type compositFuncT func(*QuestionnaireT, int, int) (string, []string, error)
 
 var compositeFuncs = map[string]compositFuncT{
-	"PoliticalFoundations": PoliticalFoundations, // belongs to pat
-	"TimePreferenceSelf":   TimePreferenceSelf,   // belongs to pat
-	"GroupPreferences":     GroupPreferences,     // belongs to pat
+	"PoliticalFoundationsPretext": PoliticalFoundationsPretext, // belongs to pat
+	"PoliticalFoundations":        PoliticalFoundations,        // belongs to pat
+	"TimePreferenceSelf":          TimePreferenceSelf,          // belongs to pat
+	"GroupPreferences":            GroupPreferences,            // belongs to pat
 }

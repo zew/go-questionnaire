@@ -31,7 +31,7 @@
         <div style="order: 2;">
             {{if .Q.HasNext}}
             <!-- name="submit" conflicts with JS form.submit() -->
-            <button type="submit" name="submitBtn" value="next" accesskey="n" style='padding: 0.4rem 1.8rem'>
+            <button type="submit" name="submitBtn" value="next" accesskey="n" style='padding: 0.4rem 1.8rem; padding-bottom: 0.6rem'>
                 {{ cfg.Tr .Q.LangCode "page" }} {{.Q.NextNaviNum}} >>
             </button>
             {{end}}
@@ -40,7 +40,7 @@
         <div style="order: 1;">
             {{if .Q.HasPrev}}
             <!-- name="submit" conflicts with JS form.submit() -->
-            <button type="submit" name="submitBtn" value="prev" accesskey="p" style='font-size:75%;'>
+            <button type="submit" name="submitBtn" value="prev" accesskey="p" style='font-size:70%;'>
                 << {{ cfg.Tr .Q.LangCode "page" }} {{.Q.PrevNaviNum}} </button>
             {{end}}
         </div>

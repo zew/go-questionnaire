@@ -48,14 +48,14 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		}
 		gr.Desc = trl.S{
 			"de": `
-<p>Dies ist eine Studie des Zentrums für Europäische Wirtschaftsforschung (ZEW) in Mannheim sowie der Universitäten in Köln, Mannheim, Münster und Zürich. Ihre Teilnahme wird nur wenige Minuten in Anspruch nehmen und Sie unterstützen damit die Forschung zu Entscheidungsprozessen in der Politik.
-</p>
+				<p>Dies ist eine Studie des Zentrums für Europäische Wirtschaftsforschung (ZEW) in Mannheim sowie der Universitäten in Köln, Mannheim, Münster und Zürich. Ihre Teilnahme wird nur wenige Minuten in Anspruch nehmen und Sie unterstützen damit die Forschung zu Entscheidungsprozessen in der Politik.
+				</p>
 
-<p>In dieser Studie treffen Sie acht Entscheidungen und beantworten sieben Fragen. Nach der Erhebung werden 10 % aller Teilnehmer zufällig ausgewählt. Von jedem ausgewählten Teilnehmer wird eine der acht Entscheidungen zufällig bestimmt und genau wie unten beschrieben umgesetzt (alle unten erwähnten Personen existieren wirklich und alle Auszahlungen werden wie beschrieben getätigt).
-</p>
+				<p>In dieser Studie treffen Sie acht Entscheidungen und beantworten sieben Fragen. Nach der Erhebung werden 10 % aller Teilnehmer zufällig ausgewählt. Von jedem ausgewählten Teilnehmer wird eine der acht Entscheidungen zufällig bestimmt und genau wie unten beschrieben umgesetzt (alle unten erwähnten Personen existieren wirklich und alle Auszahlungen werden wie beschrieben getätigt).
+				</p>
 
-<p>In dieser Umfrage gibt es keine richtigen oder falschen Antworten. Bitte entscheiden Sie daher immer gemäß Ihren persönlichen Ansichten. Sie werden dabei vollständig anonym bleiben.
-</p>
+				<p>In dieser Umfrage gibt es keine richtigen oder falschen Antworten. Bitte entscheiden Sie daher immer gemäß Ihren persönlichen Ansichten. Sie werden dabei vollständig anonym bleiben.
+				</p>
 
 				 <br>
 
@@ -140,26 +140,41 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 			}
 
+			/*
+				{
+					inp := gr.AddInput()
+					inp.Type = "textblock"
+					inp.Name = "text02"
+					// inp.Label = trl.S{"de": "Dummy<br>"}
+					inp.Desc = trl.S{"de": fmt.Sprintf(`
+					<p>
+					In <b>Entscheidung 1</b> wird Stiftung A von zwei Personen
+
+					(<img src='%v' style='display: inline-block; height: 1.0rem;
+						position: relative; top: 0.2rem; left: 0.1rem;
+					'> )
+
+					mittel eingestuft und von drei weiteren am schlechtesten. Stiftung B wird von drei Personen am besten eingestuft und von zweien am schlechtesten, und so weiter.
+					</p>
+					`,
+						"/img/pat/person.png", // works on survey2.zew.de - not locally
+						// cfg.Pref("/img/pat/person.png"),
+					),
+					}
+				}
+			*/
+		}
+
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 1
+			gr.RandomizationGroup = 1 - 1
+			// q1-pretext
 			{
 				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.Name = "text02"
-				// inp.Label = trl.S{"de": "Dummy<br>"}
-				inp.Desc = trl.S{"de": fmt.Sprintf(`
-				<p>
-				In <b>Entscheidung 1</b> wird Stiftung A von zwei Personen
-
-				(<img src='%v' style='display: inline-block; height: 1.0rem;
-					position: relative; top: 0.2rem; left: 0.1rem;
-				'> )
-
-				mittel eingestuft und von drei weiteren am schlechtesten. Stiftung B wird von drei Personen am besten eingestuft und von zweien am schlechtesten, und so weiter.
-				</p>
-				`,
-					"/img/pat/person.png", // works on survey2.zew.de - not locally
-					// cfg.Pref("/img/pat/person.png"),
-				),
-				}
+				inp.Type = "composit"
+				inp.DynamicFunc = "PoliticalFoundationsPretext__0__0"
 			}
 
 		}
@@ -486,7 +501,7 @@ Welche Optionen sollen der Person (nicht) zur Verfügung stehen, falls die Optio
 
 			gr := page.AddGroup()
 			gr.Cols = 1
-			gr.BottomVSpacers = 0
+			gr.BottomVSpacers = 1
 
 			{
 				inp := gr.AddInput()
@@ -510,7 +525,7 @@ Welche Optionen sollen der Person (nicht) zur Verfügung stehen, falls die Optio
 			gr := page.AddGroup()
 			gr.Cols = 12
 			gr.Width = 100
-			gr.BottomVSpacers = 0
+			gr.BottomVSpacers = 1
 
 			// q4a
 			{

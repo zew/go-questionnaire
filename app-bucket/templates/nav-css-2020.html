@@ -9,7 +9,14 @@
         no whithespace in following line
     -->
     <a href="{{cfg.Pref "" }}" class="logo">
-        <img src=""  alt="">
+        {{ $srcDesktop := cfg.Val  .Site "default" "img_logo_icon" }}
+        {{ $srcDesktop := cfg.Pref $srcDesktop }}
+        <img src="{{$srcDesktop}}"  alt="" class="logo-img-desktop" >  <!-- src injection via CSS failed in firefox -->
+
+
+        {{ $srcMobile  := cfg.Val  .Site "default" "img_logo_icon_mobile" }}
+        {{ $srcMobile  := cfg.Pref $srcMobile  }}
+        <img src="{{$srcMobile}}"   alt="" class="logo-img-mobile" >  <!-- src injection via CSS failed in firefox -->
     </a>
 
     <a href="{{cfg.Pref "" }}" class="title">
@@ -78,9 +85,9 @@
         </li>
 
      -->
-     
+
      {{if .S}}
      {{end}}
-     
+
     </ul>
 </nav>

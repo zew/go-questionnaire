@@ -412,7 +412,7 @@ label, .postlabel {
 	text-align: right;
 
 	/* make flexible with media query if needed */
-	min-width:  8rem;
+	min-width:  2rem;  /* attention: overflow in multicolumn */
 }
 
 
@@ -933,7 +933,7 @@ nav {
 	min-height:			 var(--nav-height);
 	display: grid;
 	grid-template-columns: 4fr 4fr 3.0em [col-menu] 2em 0.15fr;
-	grid-template-columns: [col-img] 6fr [col-title] 4fr [col-menu] 1fr ;
+	grid-template-columns: [col-img] 6fr [col-title] 4fr [col-menu] 1fr;
 
 	/* main axis */
 	/*

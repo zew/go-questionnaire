@@ -159,8 +159,9 @@ window.onload = function () {
     var elements = document.forms.frmMain.elements;
     for (var i = 0, element; element = elements[i++];) {
         if (element.type !== "hidden") {
-            element.focus();
-            console.log("focus on form main input number", i, element.name);
+            // pbu 2021-02: dropped - first control is sometimes too far down - init view scrolls down
+            // element.focus();
+            // console.log("focus on form main input number", i, element.name);
             break;
         }
     }

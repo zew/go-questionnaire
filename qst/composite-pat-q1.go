@@ -151,6 +151,7 @@ func politicalFoundations(q *QuestionnaireT, seq0to5 int, questionID string, ppl
 </p>
 
 <div class="vspacer-08"> &nbsp; </div>
+<div class="vspacer-08"> &nbsp; </div>
 
 <div id="t01">
 

@@ -43,15 +43,16 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		//
 		gr := page.AddGroup()
 		gr.Cols = 1
+		gr.Style.TemplateColumns = "template columns"
 		gr.Label = trl.S{
-			"de": "HERZLICH WILLKOMMEN ZU UNSERER STUDIE UND VIELEN DANK FÜR IHRE TEILNAHME!<br><br>",
+			"de": "HERZLICH WILLKOMMEN UND VIELEN DANK FÜR IHRE TEILNAHME!<br><br>",
 		}
 		gr.Desc = trl.S{
 			"de": `
 				<p>Dies ist eine Studie des Zentrums für Europäische Wirtschaftsforschung (ZEW) in Mannheim sowie der Universitäten in Köln, Mannheim, Münster und Zürich. Ihre Teilnahme wird nur wenige Minuten in Anspruch nehmen und Sie unterstützen damit die Forschung zu Entscheidungsprozessen in der Politik.
 				</p>
 
-				<p>In dieser Studie treffen Sie acht Entscheidungen und beantworten sieben Fragen. Nach der Erhebung werden 10 % aller Teilnehmer zufällig ausgewählt. Von jedem ausgewählten Teilnehmer wird eine der acht Entscheidungen zufällig bestimmt und genau wie unten beschrieben umgesetzt (alle unten erwähnten Personen existieren wirklich und alle Auszahlungen werden wie beschrieben getätigt).
+				<p>In dieser Studie treffen Sie acht Entscheidungen und beantworten sieben Fragen. Nach der Erhebung werden 10 % aller Teilnehmer zufällig ausgewählt. Von jedem ausgewählten Teilnehmer wird eine der acht Entscheidungen zufällig bestimmt und genau wie im Folgenden beschrieben umgesetzt (alle erwähnten Personen existieren wirklich und alle Auszahlungen werden wie beschrieben getätigt).
 				</p>
 
 				<p>In dieser Umfrage gibt es keine richtigen oder falschen Antworten. Bitte entscheiden Sie daher immer gemäß Ihren persönlichen Ansichten. Sie werden dabei vollständig anonym bleiben.
@@ -85,9 +86,9 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	// page 1
 	{
 		page := q.AddPage()
-		// page.Label = trl.S{"de": "Präferenzen 1"}
+		// page.Label = trl.S{"de": "Stiftungen 1"}
 		page.Label = trl.S{"de": ""}
-		page.Short = trl.S{"de": "Präferenzen 1"}
+		page.Short = trl.S{"de": "Stiftungen 1"}
 		page.Width = 60
 
 		{
@@ -240,33 +241,30 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	}
 
 	// page 2
+	page := q.AddPage()
+	// page.Label = trl.S{"de": "Stiftungen 2"}
+	page.Label = trl.S{"de": ""}
+	page.Short = trl.S{"de": "Stiftungen 2"}
+	page.Width = 60
+
 	{
-
-		page := q.AddPage()
-		// page.Label = trl.S{"de": "Präferenzen 2"}
-		page.Label = trl.S{"de": ""}
-		page.Short = trl.S{"de": "Präferenzen 2"}
-		page.Width = 60
-
+		gr := page.AddGroup()
+		gr.Cols = 2
+		gr.BottomVSpacers = 1
 		{
-			gr := page.AddGroup()
-			gr.Cols = 2
-			gr.BottomVSpacers = 1
-			{
-				inp := gr.AddInput()
-				inp.ColSpanLabel = 2
-				inp.Type = "textblock"
-				inp.Name = "text05"
-				inp.Desc = trl.S{"de": `
+			inp := gr.AddInput()
+			inp.ColSpanLabel = 2
+			inp.Type = "textblock"
+			inp.Name = "text05"
+			inp.Desc = trl.S{"de": `
 				<p>
 				Entscheiden Sie im Folgenden, an welche Stiftung das Geld gehen soll. Setzen Sie dazu bei der entsprechenden Stiftung ein Kreuz in der Spalte „Auswahl“. Falls Sie eine zweite oder dritte Alternative als genauso gut empfinden, setzen Sie ein Kreuz in der Spalte „Gleich gut“. Berücksichtigen Sie die dargestellten Präferenzen der Gruppen&shy;mitglieder.
 				</p>
 				`}
-			}
 		}
 
 		// loop over matrix questions
-		for i := 0; i < 6; i++ {
+		for i := 0; i < 3; i++ {
 			{
 				gr := page.AddGroup()
 				gr.Cols = 1
@@ -290,7 +288,41 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 	}
 
-	// page 3
+	// page 2
+	{
+
+		page := q.AddPage()
+		// page.Label = trl.S{"de": "Stiftungen 2"}
+		page.Label = trl.S{"de": ""}
+		page.Short = trl.S{"de": "Stiftungen 3"}
+		page.Width = 60
+
+		// loop over matrix questions
+		for i := 3; i < 6; i++ {
+			{
+				gr := page.AddGroup()
+				gr.Cols = 1
+				gr.BottomVSpacers = 2
+				gr.RandomizationGroup = 1 - 1
+
+				// q1b
+				{
+					inp := gr.AddInput()
+					inp.Type = "composit"
+					inp.DynamicFunc = fmt.Sprintf("PoliticalFoundations__%v__%v", i, i)
+				}
+				_, inputNames, _ := qst.PoliticalFoundations(nil, i, i)
+				for _, inpName := range inputNames {
+					inp := gr.AddInput()
+					inp.Type = "composit-scalar"
+					inp.Name = inpName
+				}
+			}
+		}
+
+	}
+
+	// page 4
 	{
 		page := q.AddPage()
 		// page.Label = trl.S{"de": "Auswertung"}
@@ -404,6 +436,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 <b>Im Folgenden legen Sie fest, welche Optionen ein zukünftiger Studienteilnehmer wählen kann:</b>
 </p>
 
+<div class="vspacer-16"> &nbsp; </div>
+
 <p>
 <b>Entscheidung 7.</b><br>
 Sie sind einem deutschen Staatsangehörigen zugeordnet, der an einer zukünftigen Studie teilnehmen wird und verschiedene Optionen für Geldauszahlungen an unterschiedlichen Zeitpunkten hat.
@@ -416,6 +450,20 @@ Sie können nun entscheiden, welche der drei Optionen der Person (nicht) zur Ver
 <p>
 Bei verfügbar gemachten Optionen können Sie zusätzlich „Von dieser Option abraten“ ankreuzen. In diesem Fall erhält die Person die Botschaft: „Ein früherer Teilnehmer dieser Studie rät Ihnen davon ab, diese Option zu wählen”.
 </p>
+
+
+<h2>Alternativ</h2>
+
+<p>
+„Sie sind einem deutschen Staatsangehörigen zugeordnet, der an einer zukünftigen Studie teilnehmen wird und verschiedene Optionen für Geldauszahlungen an unterschiedlichen Zeitpunkten hat. 
+<b>Er erhält in dieser Studie genau eine der unten beschriebenen Optionen, die ihm tatsächlich an den genannten Zeitpunkten ausgezahlt wird.</b>“
+</p>
+
+<p>
+„Den Personen wurde mitgeteilt, dass ihre Präferenzen zusammen mit den Präferenzen von vier anderen Personen an einen zukünftigen Teilnehmer der Studie gegeben werden, der die Präferenzen in eine Entscheidung zusammenfasst. <b>Dieser zukünftige Teilnehmer sind Sie.</b>“
+</p>
+
+
 					`,
 				}
 			}
@@ -489,7 +537,7 @@ Welche Optionen sollen der Person (nicht) zur Verfügung stehen, falls die Optio
 		}
 
 	}
-	// page 4
+	// page 5
 	{
 		page := q.AddPage()
 		// page.Label = trl.S{"de": "Gruppenpräferenzen"}
@@ -699,7 +747,7 @@ Welche Optionen sollen der Person (nicht) zur Verfügung stehen, falls die Optio
 
 	}
 
-	// page 5
+	// page 6
 	{
 		page := q.AddPage()
 		// page.Label = trl.S{"de": "Eigene Einstellung"}
@@ -711,7 +759,7 @@ Welche Optionen sollen der Person (nicht) zur Verfügung stehen, falls die Optio
 			gr := page.AddRadioMatrixGroupNoLabels(labelsOneToSeven1, []string{"q4"})
 			gr.RandomizationGroup = 1 - 1
 			gr.BottomVSpacers = 2
-			gr.Cols = 8
+			gr.Cols = 7
 			gr.Width = 100
 			// gr.Label = trl.S{"de": "Frage [groupID]<br>"}
 			gr.Desc = trl.S{
@@ -732,7 +780,7 @@ Welche Optionen sollen der Person (nicht) zur Verfügung stehen, falls die Optio
 			gr := page.AddRadioMatrixGroupNoLabels(labelsOneToSeven2, []string{"q5"})
 			gr.RandomizationGroup = 1 - 1
 			gr.BottomVSpacers = 2
-			gr.Cols = 8
+			gr.Cols = 7
 			gr.Width = 100
 			// gr.Label = trl.S{"de": "Frage [groupID]<br>"}
 			gr.Desc = trl.S{
@@ -741,6 +789,7 @@ Welche Optionen sollen der Person (nicht) zur Verfügung stehen, falls die Optio
 				<p>
 				<b>Zum Schluss bitten wir Sie drei Fragen über sich selbst zu beantworten:</b>
 
+				<br>
 				<br>
 				<b>Frage 5.</b>
 				 Sind Sie im Vergleich zu anderen im Allgemeinen bereit, 
@@ -758,7 +807,7 @@ Welche Optionen sollen der Person (nicht) zur Verfügung stehen, falls die Optio
 			gr := page.AddRadioMatrixGroupNoLabels(labelsOneToSeven3, []string{"q6"})
 			gr.RandomizationGroup = 1 - 1
 			gr.BottomVSpacers = 2
-			gr.Cols = 8
+			gr.Cols = 7
 			gr.Width = 100
 			// gr.Label = trl.S{"de": "Frage [groupID]<br>"}
 			gr.Desc = trl.S{
@@ -777,7 +826,7 @@ Welche Optionen sollen der Person (nicht) zur Verfügung stehen, falls die Optio
 			gr := page.AddRadioMatrixGroupNoLabels(labelsOneToSeven2, []string{"q7"})
 			gr.RandomizationGroup = 1 - 1
 			gr.BottomVSpacers = 2
-			gr.Cols = 8
+			gr.Cols = 7
 			gr.Width = 100
 			// gr.Label = trl.S{"de": "Frage [groupID]<br>"}
 			gr.Desc = trl.S{

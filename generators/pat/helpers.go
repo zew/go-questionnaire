@@ -97,12 +97,10 @@ var labelsOneToSeven1 = []trl.S{
 	{"de": ""},
 	{"de": ""},
 	{"de": ""},
-	{"de": ""},
 	{"de": "Stimme komplett zu"},
 }
 var labelsOneToSeven2 = []trl.S{
 	{"de": "Gar nicht bereit"},
-	{"de": ""},
 	{"de": ""},
 	{"de": ""},
 	{"de": ""},
@@ -113,7 +111,6 @@ var labelsOneToSeven2 = []trl.S{
 
 var labelsOneToSeven3 = []trl.S{
 	{"de": "Gar nicht risikobereit"},
-	{"de": ""},
 	{"de": ""},
 	{"de": ""},
 	{"de": ""},

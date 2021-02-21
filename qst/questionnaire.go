@@ -19,6 +19,7 @@ import (
 	"strings"
 	"time"
 
+	"github.com/zew/go-questionnaire/css"
 	"github.com/zew/go-questionnaire/lgn/shuffler"
 	"github.com/zew/go-questionnaire/sessx"
 	"github.com/zew/go-questionnaire/trl"
@@ -99,13 +100,13 @@ func (i *inputT) AddRadio() *radioT {
 // Multiple checkboxes (checkboxgroup) with same name but distinct values are a dubious instrument.
 // See comment to implementedType checkboxgroup.
 type inputT struct {
-	Name     string `json:"name,omitempty"`
-	Type     string `json:"type,omitempty"`      // see implementedTypes
-	MaxChars int    `json:"max_chars,omitempty"` // input chars; => SIZE for input, MAXLENGTH for textarea, text; also used for width
+	Name string `json:"name,omitempty"`
+	Type string `json:"type,omitempty"` // see implementedTypes
 
-	Step float64 `json:"step,omitempty"` // for number input:  stepping interval
-	Min  float64 `json:"min,omitempty"`  //      ~
-	Max  float64 `json:"max,omitempty"`  //      ~
+	MaxChars int     `json:"max_chars,omitempty"` // input chars; => SIZE for input, MAXLENGTH for textarea, text; also used for width
+	Step     float64 `json:"step,omitempty"`      // for number input:  stepping interval
+	Min      float64 `json:"min,omitempty"`       //      ~
+	Max      float64 `json:"max,omitempty"`       //      ~
 
 	Label     trl.S  `json:"label,omitempty"`
 	Desc      trl.S  `json:"description,omitempty"`
@@ -487,6 +488,8 @@ type groupT struct {
 
 	Inputs             []*inputT `json:"inputs,omitempty"`
 	RandomizationGroup int       `json:"randomization_group,omitempty"` // > 0 => group can be repositioned for randomization
+
+	Style css.GridContainer `json:"style,omitempty"`
 }
 
 // AddInput creates a new input

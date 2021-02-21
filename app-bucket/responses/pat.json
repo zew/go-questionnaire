@@ -16,11 +16,11 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "d39803eed290ceb8510a22e8b5c36887",
+ 	"md_5": "d8cbf930c5ac1d01a24dfc4df6f638ea",
  	"lang_codes": [
  		"de"
  	],
- 	"max_groups": 7,
+ 	"max_groups": 6,
  	"pages": [
  		{
  			"label": {
@@ -37,10 +37,10 @@
  			"groups": [
  				{
  					"label": {
- 						"de": "HERZLICH WILLKOMMEN ZU UNSERER STUDIE UND VIELEN DANK FÜR IHRE TEILNAHME!\u003cbr\u003e\u003cbr\u003e"
+ 						"de": "HERZLICH WILLKOMMEN UND VIELEN DANK FÜR IHRE TEILNAHME!\u003cbr\u003e\u003cbr\u003e"
  					},
  					"description": {
- 						"de": "\n\t\t\t\t\u003cp\u003eDies ist eine Studie des Zentrums für Europäische Wirtschaftsforschung (ZEW) in Mannheim sowie der Universitäten in Köln, Mannheim, Münster und Zürich. Ihre Teilnahme wird nur wenige Minuten in Anspruch nehmen und Sie unterstützen damit die Forschung zu Entscheidungsprozessen in der Politik.\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp\u003eIn dieser Studie treffen Sie acht Entscheidungen und beantworten sieben Fragen. Nach der Erhebung werden 10 % aller Teilnehmer zufällig ausgewählt. Von jedem ausgewählten Teilnehmer wird eine der acht Entscheidungen zufällig bestimmt und genau wie unten beschrieben umgesetzt (alle unten erwähnten Personen existieren wirklich und alle Auszahlungen werden wie beschrieben getätigt).\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp\u003eIn dieser Umfrage gibt es keine richtigen oder falschen Antworten. Bitte entscheiden Sie daher immer gemäß Ihren persönlichen Ansichten. Sie werden dabei vollständig anonym bleiben.\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t \u003cbr\u003e\n\n\n\t\t\t\t \u003cbr\u003e\n\n\t\t\t\t "
+ 						"de": "\n\t\t\t\t\u003cp\u003eDies ist eine Studie des Zentrums für Europäische Wirtschaftsforschung (ZEW) in Mannheim sowie der Universitäten in Köln, Mannheim, Münster und Zürich. Ihre Teilnahme wird nur wenige Minuten in Anspruch nehmen und Sie unterstützen damit die Forschung zu Entscheidungsprozessen in der Politik.\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp\u003eIn dieser Studie treffen Sie acht Entscheidungen und beantworten sieben Fragen. Nach der Erhebung werden 10 % aller Teilnehmer zufällig ausgewählt. Von jedem ausgewählten Teilnehmer wird eine der acht Entscheidungen zufällig bestimmt und genau wie im Folgenden beschrieben umgesetzt (alle erwähnten Personen existieren wirklich und alle Auszahlungen werden wie beschrieben getätigt).\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp\u003eIn dieser Umfrage gibt es keine richtigen oder falschen Antworten. Bitte entscheiden Sie daher immer gemäß Ihren persönlichen Ansichten. Sie werden dabei vollständig anonym bleiben.\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t \u003cbr\u003e\n\n\n\t\t\t\t \u003cbr\u003e\n\n\t\t\t\t "
  					},
  					"bottom_vspacers": 3,
  					"width": 100,
@@ -60,7 +60,13 @@
  							"horizontal_align_control": 2,
  							"response": "1"
  						}
- 					]
+ 					],
+ 					"style": {
+ 						"grid_container_style": {
+ 							"template_columns": "template columns"
+ 						},
+ 						"box_style": {}
+ 					}
  				}
  			]
  		},
@@ -73,7 +79,7 @@
  				"en": ""
  			},
  			"short": {
- 				"de": "Präferenzen 1"
+ 				"de": "Stiftungen 1"
  			},
  			"navi_num": 1,
  			"width": 60,
@@ -91,7 +97,11 @@
  								"de": "\n\t\t\t\t\u003cp\u003e\u003cb\u003e\n\t\t\t\tIm Folgenden geht es um eine Spende von 30 €, die \u003ci\u003eeine\u003c/i\u003e dieser drei Stif\u0026shy;tungen erhalten soll:\n\t\t\t\t\u003c/b\u003e\u003c/p\u003e\n\n\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\u003cstyle\u003e\n\t\t\t\t\ttable.drei-stif\u0026shy;tungen td {\n\t\t\t\t\t\ttext-align: center;\n\t\t\t\t\t\ttext-align: center;\n\n\t\t\t\t\t}\n\t\t\t\t\u003c/style\u003e\n\n\t\t\t\t\u003ctable class=\"drei-stif\u0026shy;tungen\"\u003e\n\t\t\t\t\u003ctr\u003e\n\t\t\t\t\t\u003ctd style=\"width: 33%\"\u003ePolitisch links\u003c/td\u003e\n\t\t\t\t\t\u003ctd style=\"width: 33%\"\u003ePolitische Mitte\u003c/td\u003e\n\t\t\t\t\t\u003ctd style=\"width: 33%\"\u003ePolitisch konservativ\u003c/td\u003e\n\t\t\t\t\u003ctr\u003e\n\t\t\t\t\u003ctr\u003e\n\t\t\t\t\t\u003ctd style=\"vertical-align: top;\" \u003e\u003cb\u003eHans-Böckler-Stif\u0026shy;tung\u003c/b\u003e\u003c/td\u003e\n\t\t\t\t\t\u003ctd style=\"vertical-align: top;\" \u003e\u003cb\u003eBund der Steuerzahler Deutsch\u0026shy;land e.V.\u003c/b\u003e\u003c/td\u003e\n\t\t\t\t\t\u003ctd style=\"vertical-align: top;\" \u003e\u003cb\u003eLudwig-Erhard-Stif\u0026shy;tung\u003c/b\u003e\u003c/td\u003e\n\t\t\t\t\u003ctr\u003e\n\t\t\t\t\u003c/table\u003e\n\n\t\t\t\t\u003cdiv class='vspacer-08'\u003e \u0026nbsp; \u003c/div\u003e\n\n\t\t\t\t\u003cp\u003e\n\t\t\t\tFür jede Ihrer ersten sechs Entscheidungen zeigen wir Ihnen die Präferenzen fünf deutscher Staatsangehöriger darüber, welche der drei Stif\u0026shy;tungen die Spende erhalten soll.  Sie entscheiden, wie die Präferenzen der fünf Personen in eine gemeinsame Entscheidung zusammengefasst werden.\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp\u003e\n\t\t\t\tDie Präferenzen stammen von fünf Personen, die an einer Vorstudie teilgenommen haben\u003csup\u003e1)\u003c/sup\u003e.  Diese fünf Personen wurden aus einer Stichprobe gezogen, in der sich gleich viele Personen politisch links, in der Mitte oder als konservativ einordnen. Jede Person wurde einzeln befragt, welche der drei Stif\u0026shy;tungen sie als am besten, mittel, und am schlech\u0026shy;testen erachtet. Den Personen wurde mitgeteilt, dass ihre Präferenzen zusammen mit den Präferenzen von vier anderen Personen an einen zukünftigen Teilnehmer der Studie gegeben werden, der die Präferenzen in eine Entscheidung zusammenfasst.\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							}
  						}
- 					]
+ 					],
+ 					"style": {
+ 						"grid_container_style": {},
+ 						"box_style": {}
+ 					}
  				},
  				{
  					"bottom_vspacers": 1,
@@ -102,7 +112,11 @@
  							"type": "composit",
  							"dynamic_func": "PoliticalFoundationsPretext__0__0"
  						}
- 					]
+ 					],
+ 					"style": {
+ 						"grid_container_style": {},
+ 						"box_style": {}
+ 					}
  				},
  				{
  					"bottom_vspacers": 1,
@@ -129,7 +143,11 @@
  							"name": "q1_seq1_r3_page0",
  							"type": "composit-scalar"
  						}
- 					]
+ 					],
+ 					"style": {
+ 						"grid_container_style": {},
+ 						"box_style": {}
+ 					}
  				},
  				{
  					"bottom_vspacers": 2,
@@ -143,7 +161,11 @@
  								"de": "\n\t\t\t\t\u003cp\u003e\n\t\t\t\tDie Stif\u0026shy;tungen wurden anonymisiert und in eine zufällige Reihenfolge gebracht, so dass Sie nicht wissen, um welche Stif\u0026shy;tung es sich bei den Stif\u0026shy;tungen A, B und C handelt. Sie entscheiden also nicht darüber, welche Stif\u0026shy;tung die 30 € erhält. Stattdessen entscheiden Sie, wie die Präferenzen der Gruppenmitglieder in eine Entscheidung zusammengefasst werden und ob Sie beispielsweise eher eine Kompromisslösung oder eher eine Mehrheitslösung für Ihre Gruppe bevorzugen.\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							}
  						}
- 					]
+ 					],
+ 					"style": {
+ 						"grid_container_style": {},
+ 						"box_style": {}
+ 					}
  				},
  				{
  					"bottom_vspacers": 3,
@@ -157,7 +179,11 @@
  								"de": "\n\t\t\t\t\u003cspan style=\"display: inline-block; font-size:87%; line-height: 120%;\"\u003e\n\n\t\t\t\t\u003csup\u003e1)\u003c/sup\u003e\n\t\t\t\tNur in einer der sechs Entscheidungen stammen die Präferenzen von den Personen, die wir befragt haben, und nur diese Entscheidung kann umgesetzt werden. In den anderen Entscheidungen wurden die Präferenzen von uns zusammengestellt. Da Sie nicht wissen, in welcher Entscheidung die Präferenzen von den Befragten stammen, sollten Sie in allen sechs Entscheidungen so entscheiden, als seien die jeweiligen Präferenzen von der echten Gruppe.\n\t\t\t\t\u003c/span\u003e\n\t\t\t\t"
  							}
  						}
- 					]
+ 					],
+ 					"style": {
+ 						"grid_container_style": {},
+ 						"box_style": {}
+ 					}
  				}
  			]
  		},
@@ -170,7 +196,7 @@
  				"en": ""
  			},
  			"short": {
- 				"de": "Präferenzen 2"
+ 				"de": "Stiftungen 2"
  			},
  			"navi_num": 2,
  			"width": 60,
@@ -189,7 +215,11 @@
  							},
  							"col_span_label": 2
  						}
- 					]
+ 					],
+ 					"style": {
+ 						"grid_container_style": {},
+ 						"box_style": {}
+ 					}
  				},
  				{
  					"bottom_vspacers": 2,
@@ -216,7 +246,11 @@
  							"name": "q1_seq1_r3",
  							"type": "composit-scalar"
  						}
- 					]
+ 					],
+ 					"style": {
+ 						"grid_container_style": {},
+ 						"box_style": {}
+ 					}
  				},
  				{
  					"bottom_vspacers": 2,
@@ -243,7 +277,11 @@
  							"name": "q1_seq2_r3",
  							"type": "composit-scalar"
  						}
- 					]
+ 					],
+ 					"style": {
+ 						"grid_container_style": {},
+ 						"box_style": {}
+ 					}
  				},
  				{
  					"bottom_vspacers": 2,
@@ -270,8 +308,29 @@
  							"name": "q1_seq3_r3",
  							"type": "composit-scalar"
  						}
- 					]
- 				},
+ 					],
+ 					"style": {
+ 						"grid_container_style": {},
+ 						"box_style": {}
+ 					}
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": ""
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"short": {
+ 				"de": "Stiftungen 3"
+ 			},
+ 			"navi_num": 3,
+ 			"width": 60,
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
  				{
  					"bottom_vspacers": 2,
  					"width": 100,
@@ -297,7 +356,11 @@
  							"name": "q1_seq4_r3",
  							"type": "composit-scalar"
  						}
- 					]
+ 					],
+ 					"style": {
+ 						"grid_container_style": {},
+ 						"box_style": {}
+ 					}
  				},
  				{
  					"bottom_vspacers": 2,
@@ -324,7 +387,11 @@
  							"name": "q1_seq5_r3",
  							"type": "composit-scalar"
  						}
- 					]
+ 					],
+ 					"style": {
+ 						"grid_container_style": {},
+ 						"box_style": {}
+ 					}
  				},
  				{
  					"bottom_vspacers": 2,
@@ -351,7 +418,11 @@
  							"name": "q1_seq6_r3",
  							"type": "composit-scalar"
  						}
- 					]
+ 					],
+ 					"style": {
+ 						"grid_container_style": {},
+ 						"box_style": {}
+ 					}
  				}
  			]
  		},
@@ -366,7 +437,7 @@
  			"short": {
  				"de": "Auswertung"
  			},
- 			"navi_num": 3,
+ 			"navi_num": 4,
  			"width": 60,
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
@@ -381,7 +452,11 @@
  								"de": "\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage 1.\u003c/b\u003e Schätzen Sie bitte: Was wäre eine zufällig ausgewählte Person aus unserer Vorstudie maximal bereit zu zahlen, damit eine Spende von 30 € an die Stif\u0026shy;tung überwiesen wird, die diese Person als am besten/mittel/am schlech\u0026shy;testen erachtet?\n\t\t\t\t\t\u003ci\u003e(Wenn Sie meinen, die Person würde dafür bezahlen, dass die Stif\u0026shy;tung die 30 € nicht erhält, schreiben Sie bitte ein Minuszeichen vor den jeweiligen Betrag.)\u003c/i\u003e\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003c!--\n\t\t\t\t\tBeste Stif\u0026shy;tung:_______\tMittlere Stif\u0026shy;tung:_______\tSchlech\u0026shy;teste Stif\u0026shy;tung:_______\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t--\u003e\n\n\n\t\t\t\t\t"
  							}
  						}
- 					]
+ 					],
+ 					"style": {
+ 						"grid_container_style": {},
+ 						"box_style": {}
+ 					}
  				},
  				{
  					"bottom_vspacers": 2,
@@ -436,7 +511,11 @@
  							"col_span_control": 2,
  							"validator": "inRange1000"
  						}
- 					]
+ 					],
+ 					"style": {
+ 						"grid_container_style": {},
+ 						"box_style": {}
+ 					}
  				},
  				{
  					"width": 100,
@@ -446,10 +525,14 @@
  							"name": "text07",
  							"type": "textblock",
  							"description": {
- 								"de": "\n\n\n\n\u003cp\u003e\n\u003cb\u003eIm Folgenden legen Sie fest, welche Optionen ein zukünftiger Studienteilnehmer wählen kann:\u003c/b\u003e\n\u003c/p\u003e\n\n\u003cp\u003e\n\u003cb\u003eEntscheidung 7.\u003c/b\u003e\u003cbr\u003e\nSie sind einem deutschen Staatsangehörigen zugeordnet, der an einer zukünftigen Studie teilnehmen wird und verschiedene Optionen für Geldauszahlungen an unterschiedlichen Zeitpunkten hat.\n\u003c/p\u003e\n\n\u003cp\u003e\nSie können nun entscheiden, welche der drei Optionen der Person (nicht) zur Verfügung stehen sollen, indem Sie in jeder Zeile ein Kreuz entweder bei „Ver\u0026shy;füg\u0026shy;bar” oder bei „Nicht ver\u0026shy;füg\u0026shy;bar” setzen. \u003cb\u003eEs muss am Ende mindestens eine Option „Ver\u0026shy;füg\u0026shy;bar“ sein.\u003c/b\u003e Folgen Sie dabei einfach Ihren Vorstellungen – es gibt keine richtigen oder falschen Antworten. Die nicht ver\u0026shy;füg\u0026shy;baren Optionen werden der Person nicht als Auswahloptionen angezeigt. Falls mehr als eine Option ver\u0026shy;füg\u0026shy;bar ist, kann die die Person aus diesen Optionen wählen.\n\u003c/p\u003e\n\n\u003cp\u003e\nBei ver\u0026shy;füg\u0026shy;bar gemachten Optionen können Sie zusätzlich „Von dieser Option abraten“ ankreuzen. In diesem Fall erhält die Person die Botschaft: „Ein früherer Teilnehmer dieser Studie rät Ihnen davon ab, diese Option zu wählen”.\n\u003c/p\u003e\n\t\t\t\t\t"
+ 								"de": "\n\n\n\n\u003cp\u003e\n\u003cb\u003eIm Folgenden legen Sie fest, welche Optionen ein zukünftiger Studienteilnehmer wählen kann:\u003c/b\u003e\n\u003c/p\u003e\n\n\u003cdiv class=\"vspacer-16\"\u003e \u0026nbsp; \u003c/div\u003e\n\n\u003cp\u003e\n\u003cb\u003eEntscheidung 7.\u003c/b\u003e\u003cbr\u003e\nSie sind einem deutschen Staatsangehörigen zugeordnet, der an einer zukünftigen Studie teilnehmen wird und verschiedene Optionen für Geldauszahlungen an unterschiedlichen Zeitpunkten hat.\n\u003c/p\u003e\n\n\u003cp\u003e\nSie können nun entscheiden, welche der drei Optionen der Person (nicht) zur Verfügung stehen sollen, indem Sie in jeder Zeile ein Kreuz entweder bei „Ver\u0026shy;füg\u0026shy;bar” oder bei „Nicht ver\u0026shy;füg\u0026shy;bar” setzen. \u003cb\u003eEs muss am Ende mindestens eine Option „Ver\u0026shy;füg\u0026shy;bar“ sein.\u003c/b\u003e Folgen Sie dabei einfach Ihren Vorstellungen – es gibt keine richtigen oder falschen Antworten. Die nicht ver\u0026shy;füg\u0026shy;baren Optionen werden der Person nicht als Auswahloptionen angezeigt. Falls mehr als eine Option ver\u0026shy;füg\u0026shy;bar ist, kann die die Person aus diesen Optionen wählen.\n\u003c/p\u003e\n\n\u003cp\u003e\nBei ver\u0026shy;füg\u0026shy;bar gemachten Optionen können Sie zusätzlich „Von dieser Option abraten“ ankreuzen. In diesem Fall erhält die Person die Botschaft: „Ein früherer Teilnehmer dieser Studie rät Ihnen davon ab, diese Option zu wählen”.\n\u003c/p\u003e\n\n\n\u003ch2\u003eAlternativ\u003c/h2\u003e\n\n\u003cp\u003e\n„Sie sind einem deutschen Staatsangehörigen zugeordnet, der an einer zukünftigen Studie teilnehmen wird und verschiedene Optionen für Geldauszahlungen an unterschiedlichen Zeitpunkten hat. \n\u003cb\u003eEr erhält in dieser Studie genau eine der unten beschriebenen Optionen, die ihm tatsächlich an den genannten Zeitpunkten ausgezahlt wird.\u003c/b\u003e“\n\u003c/p\u003e\n\n\u003cp\u003e\n„Den Personen wurde mitgeteilt, dass ihre Präferenzen zusammen mit den Präferenzen von vier anderen Personen an einen zukünftigen Teilnehmer der Studie gegeben werden, der die Präferenzen in eine Entscheidung zusammenfasst. \u003cb\u003eDieser zukünftige Teilnehmer sind Sie.\u003c/b\u003e“\n\u003c/p\u003e\n\n\n\t\t\t\t\t"
  							}
  						}
- 					]
+ 					],
+ 					"style": {
+ 						"grid_container_style": {},
+ 						"box_style": {}
+ 					}
  				},
  				{
  					"bottom_vspacers": 2,
@@ -484,7 +567,11 @@
  							"name": "q2_seq1_row3_chk",
  							"type": "composit-scalar"
  						}
- 					]
+ 					],
+ 					"style": {
+ 						"grid_container_style": {},
+ 						"box_style": {}
+ 					}
  				},
  				{
  					"width": 100,
@@ -497,7 +584,11 @@
  								"de": "\n\n\u003cp\u003e\n\u003cb\u003eEntscheidung 8. \u003c/b\u003e\u003cbr\u003e\nWelche Optionen sollen der Person (nicht) zur Verfügung stehen, falls die Optionen wie folgt lauten?\n\u003ci\u003e(Beachten Sie: Sowohl die Zeitpunkte der Auszahlung als auch die Beträge sind anders als in der vorherigen Entscheidung.)\u003c/i\u003e\n\u003c/p\u003e\n\t\t\t\t\t"
  							}
  						}
- 					]
+ 					],
+ 					"style": {
+ 						"grid_container_style": {},
+ 						"box_style": {}
+ 					}
  				},
  				{
  					"bottom_vspacers": 2,
@@ -532,7 +623,11 @@
  							"name": "q2_seq2_row3_chk",
  							"type": "composit-scalar"
  						}
- 					]
+ 					],
+ 					"style": {
+ 						"grid_container_style": {},
+ 						"box_style": {}
+ 					}
  				}
  			]
  		},
@@ -547,7 +642,7 @@
  			"short": {
  				"de": "Gruppen-\u003cbr\u003epräferenzen"
  			},
- 			"navi_num": 4,
+ 			"navi_num": 5,
  			"width": 60,
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
@@ -563,7 +658,11 @@
  								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage 2. \u003c/b\u003e\n\t\t\t\t\tSchätzen Sie bitte: Wie viele Mitglieder einer Gruppe von 10 zufällig ausgewählten Personen wählen jeweils die folgenden Optionen A, B und C.\n\t\t\t\t\t\u003ci\u003e(Ihre Antworten müssen sich auf 10 summieren.)\u003c/i\u003e\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
  							}
  						}
- 					]
+ 					],
+ 					"style": {
+ 						"grid_container_style": {},
+ 						"box_style": {}
+ 					}
  				},
  				{
  					"bottom_vspacers": 1,
@@ -574,7 +673,11 @@
  							"type": "composit",
  							"dynamic_func": "GroupPreferences__0__0"
  						}
- 					]
+ 					],
+ 					"style": {
+ 						"grid_container_style": {},
+ 						"box_style": {}
+ 					}
  				},
  				{
  					"bottom_vspacers": 2,
@@ -626,7 +729,11 @@
  							"col_span_control": 7,
  							"validator": "inRange10"
  						}
- 					]
+ 					],
+ 					"style": {
+ 						"grid_container_style": {},
+ 						"box_style": {}
+ 					}
  				},
  				{
  					"width": 100,
@@ -639,7 +746,11 @@
  								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage 3. \u003c/b\u003e\n\t\t\t\t\tUnd wie lautet Ihre Schätzung für die folgenden drei Optionen?\n\t\t\t\t\t\u003ci\u003e(Ihre Antworten müssen sich auf 10 summieren. Die Zeitpunkte und Beträge sind anders als in Frage 2.)\u003c/i\u003e\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
  							}
  						}
- 					]
+ 					],
+ 					"style": {
+ 						"grid_container_style": {},
+ 						"box_style": {}
+ 					}
  				},
  				{
  					"width": 100,
@@ -649,7 +760,11 @@
  							"type": "composit",
  							"dynamic_func": "GroupPreferences__1__1"
  						}
- 					]
+ 					],
+ 					"style": {
+ 						"grid_container_style": {},
+ 						"box_style": {}
+ 					}
  				},
  				{
  					"bottom_vspacers": 2,
@@ -701,7 +816,11 @@
  							"col_span_control": 7,
  							"validator": "inRange10"
  						}
- 					]
+ 					],
+ 					"style": {
+ 						"grid_container_style": {},
+ 						"box_style": {}
+ 					}
  				}
  			]
  		},
@@ -716,7 +835,7 @@
  			"short": {
  				"de": "Eigene Einstellung"
  			},
- 			"navi_num": 5,
+ 			"navi_num": 6,
  			"width": 55,
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
@@ -726,20 +845,12 @@
  					},
  					"bottom_vspacers": 2,
  					"width": 100,
- 					"columns": 8,
+ 					"columns": 7,
  					"inputs": [
  						{
  							"type": "textblock",
  							"description": {
  								"de": "Stimme gar nicht zu"
- 							},
- 							"horizontal_align_label": 1,
- 							"css_label": "special-vertical-align-top"
- 						},
- 						{
- 							"type": "textblock",
- 							"description": {
- 								"de": ""
  							},
  							"horizontal_align_label": 1,
  							"css_label": "special-vertical-align-top"
@@ -824,35 +935,27 @@
  								{
  									"hori_align": 1,
  									"val": "7"
- 								},
- 								{
- 									"hori_align": 1,
- 									"val": "8"
  								}
  							]
  						}
- 					]
+ 					],
+ 					"style": {
+ 						"grid_container_style": {},
+ 						"box_style": {}
+ 					}
  				},
  				{
  					"description": {
- 						"de": "\n\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\u003cb\u003eZum Schluss bitten wir Sie drei Fragen über sich selbst zu beantworten:\u003c/b\u003e\n\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cb\u003eFrage 5.\u003c/b\u003e\n\t\t\t\t Sind Sie im Vergleich zu anderen im Allgemeinen bereit, \n\t\t\t\t heute auf etwas zu verzichten, \n\t\t\t\t um in der Zukunft davon zu profitieren, \n\t\t\t\t oder sind Sie im Vergleich zu anderen dazu nicht bereit? \n\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t"
+ 						"de": "\n\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\u003cb\u003eZum Schluss bitten wir Sie drei Fragen über sich selbst zu beantworten:\u003c/b\u003e\n\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cb\u003eFrage 5.\u003c/b\u003e\n\t\t\t\t Sind Sie im Vergleich zu anderen im Allgemeinen bereit, \n\t\t\t\t heute auf etwas zu verzichten, \n\t\t\t\t um in der Zukunft davon zu profitieren, \n\t\t\t\t oder sind Sie im Vergleich zu anderen dazu nicht bereit? \n\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t"
  					},
  					"bottom_vspacers": 2,
  					"width": 100,
- 					"columns": 8,
+ 					"columns": 7,
  					"inputs": [
  						{
  							"type": "textblock",
  							"description": {
  								"de": "Gar nicht bereit"
- 							},
- 							"horizontal_align_label": 1,
- 							"css_label": "special-vertical-align-top"
- 						},
- 						{
- 							"type": "textblock",
- 							"description": {
- 								"de": ""
  							},
  							"horizontal_align_label": 1,
  							"css_label": "special-vertical-align-top"
@@ -937,14 +1040,14 @@
  								{
  									"hori_align": 1,
  									"val": "7"
- 								},
- 								{
- 									"hori_align": 1,
- 									"val": "8"
  								}
  							]
  						}
- 					]
+ 					],
+ 					"style": {
+ 						"grid_container_style": {},
+ 						"box_style": {}
+ 					}
  				},
  				{
  					"description": {
@@ -952,20 +1055,12 @@
  					},
  					"bottom_vspacers": 2,
  					"width": 100,
- 					"columns": 8,
+ 					"columns": 7,
  					"inputs": [
  						{
  							"type": "textblock",
  							"description": {
  								"de": "Gar nicht ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reit"
- 							},
- 							"horizontal_align_label": 1,
- 							"css_label": "special-vertical-align-top"
- 						},
- 						{
- 							"type": "textblock",
- 							"description": {
- 								"de": ""
  							},
  							"horizontal_align_label": 1,
  							"css_label": "special-vertical-align-top"
@@ -1050,14 +1145,14 @@
  								{
  									"hori_align": 1,
  									"val": "7"
- 								},
- 								{
- 									"hori_align": 1,
- 									"val": "8"
  								}
  							]
  						}
- 					]
+ 					],
+ 					"style": {
+ 						"grid_container_style": {},
+ 						"box_style": {}
+ 					}
  				},
  				{
  					"description": {
@@ -1065,20 +1160,12 @@
  					},
  					"bottom_vspacers": 2,
  					"width": 100,
- 					"columns": 8,
+ 					"columns": 7,
  					"inputs": [
  						{
  							"type": "textblock",
  							"description": {
  								"de": "Gar nicht bereit"
- 							},
- 							"horizontal_align_label": 1,
- 							"css_label": "special-vertical-align-top"
- 						},
- 						{
- 							"type": "textblock",
- 							"description": {
- 								"de": ""
  							},
  							"horizontal_align_label": 1,
  							"css_label": "special-vertical-align-top"
@@ -1163,14 +1250,14 @@
  								{
  									"hori_align": 1,
  									"val": "7"
- 								},
- 								{
- 									"hori_align": 1,
- 									"val": "8"
  								}
  							]
  						}
- 					]
+ 					],
+ 					"style": {
+ 						"grid_container_style": {},
+ 						"box_style": {}
+ 					}
  				},
  				{
  					"bottom_vspacers": 2,
@@ -1203,9 +1290,13 @@
  							"horizontal_align_control": 2,
  							"css_control": "special-line-height-higher",
  							"col_span_control": 1,
- 							"response": "6"
+ 							"response": "7"
  						}
- 					]
+ 					],
+ 					"style": {
+ 						"grid_container_style": {},
+ 						"box_style": {}
+ 					}
  				}
  			]
  		},
@@ -1256,7 +1347,11 @@
  							},
  							"css_label": "special-line-height-higher"
  						}
- 					]
+ 					],
+ 					"style": {
+ 						"grid_container_style": {},
+ 						"box_style": {}
+ 					}
  				}
  			]
  		}

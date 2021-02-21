@@ -4,6 +4,7 @@ import (
 	"fmt"
 
 	"github.com/zew/go-questionnaire/cfg"
+	"github.com/zew/go-questionnaire/css"
 	"github.com/zew/go-questionnaire/ctr"
 	"github.com/zew/go-questionnaire/qst"
 	"github.com/zew/go-questionnaire/trl"
@@ -43,7 +44,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		//
 		gr := page.AddGroup()
 		gr.Cols = 1
-		gr.Style.TemplateColumns = "template columns"
 		gr.Label = trl.S{
 			"de": "HERZLICH WILLKOMMEN UND VIELEN DANK FÜR IHRE TEILNAHME!<br><br>",
 		}
@@ -95,6 +95,12 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			gr := page.AddGroup()
 			gr.Cols = 1
 			gr.BottomVSpacers = 1
+
+			gr.Style = css.NewGridContainer()
+			gr.Style = css.GridContainerResponsiveExample()
+			gr.Style.Desktop.Width = "70%"
+			gr.Style.Mobile.Width = "100%"
+
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"

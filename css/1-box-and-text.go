@@ -5,7 +5,8 @@ import (
 	"strings"
 )
 
-type boxStyle struct {
+// BoxStyle styles
+type BoxStyle struct {
 	Display  string `json:"display,omitempty"`
 	Position string `json:"position,omitempty"`
 	ZIndex   int    `json:"z_index,omitempty"`
@@ -30,8 +31,8 @@ type boxStyle struct {
 	BorderRadius    string `json:"border_radius,omitempty"`
 }
 
-func boxStyleExample1() boxStyle {
-	return boxStyle{
+func boxStyleExample1() BoxStyle {
+	return BoxStyle{
 		Display:         "block",
 		Position:        "relative",
 		ZIndex:          103,
@@ -63,7 +64,8 @@ func boxStyleExample1Want() string {
 `
 }
 
-func (bs boxStyle) CSS() string {
+// CSS renders styles
+func (bs BoxStyle) CSS() string {
 	s := &strings.Builder{}
 	if bs.Display != "" {
 		fmt.Fprintf(s, "\tdisplay: %v;\n", bs.Display)
@@ -129,7 +131,8 @@ func (bs boxStyle) CSS() string {
 	return s.String()
 }
 
-type textStyle struct {
+// TextStyle styles
+type TextStyle struct {
 	FontFamily string `json:"font_family,omitempty"`
 	FontSize   int    `json:"font_size,omitempty"` // percent
 	Color      string `json:"color,omitempty"`
@@ -143,8 +146,8 @@ type textStyle struct {
 	WhiteSpace string `json:"white_space,omitempty"`
 }
 
-func textStyleExample1() textStyle {
-	return textStyle{
+func textStyleExample1() TextStyle {
+	return TextStyle{
 		FontFamily:      "'Segoe UI', Tahoma, Geneva, Verdana",
 		FontSize:        120,
 		Color:           "#CCC",
@@ -166,7 +169,8 @@ func textStyleExample1Want() string {
 `
 }
 
-func (ts textStyle) CSS() string {
+// CSS renders styles
+func (ts TextStyle) CSS() string {
 	s := &strings.Builder{}
 	if ts.FontFamily != "" {
 		fmt.Fprintf(s, "\tfont-family: %v;\n", ts.FontFamily)

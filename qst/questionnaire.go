@@ -489,7 +489,7 @@ type groupT struct {
 	Inputs             []*inputT `json:"inputs,omitempty"`
 	RandomizationGroup int       `json:"randomization_group,omitempty"` // > 0 => group can be repositioned for randomization
 
-	Style css.GridContainer `json:"style,omitempty"`
+	Style *css.GridContainerResponsive `json:"style,omitempty"` // pointer, to avoid empty JSON blocks
 }
 
 // AddInput creates a new input
@@ -602,6 +602,10 @@ func validateComposite(
 func (gr groupT) HTML(langCode string) string {
 
 	b := &bytes.Buffer{}
+
+	if gr.Style != nil {
+		fmt.Fprint(b, gr.Style.CSS(fmt.Sprintf("cls-%v", ctr.Increment())))
+	}
 
 	if gr.Width == 0 {
 		gr.Width = 100
@@ -749,7 +753,7 @@ type QuestionnaireT struct {
 	Pages []*pageT `json:"pages,omitempty"`
 }
 
-// We need to register all types who are saved into a session
+// registering all types, being saved into a session
 func init() {
 	gob.Register(QuestionnaireT{})
 }

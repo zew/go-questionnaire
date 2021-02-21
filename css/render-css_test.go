@@ -1,30 +1,32 @@
 package css
 
-import "testing"
+import (
+	"testing"
+)
 
-func Test_boxStyle_CSS(t *testing.T) {
+func Test_render_CSS_class(t *testing.T) {
 	tests := []struct {
 		name  string
-		csser CSSer
+		csser CSSerSimple
 		want  string
 	}{
 		{
-			name:  "box styles",
+			name:  "box-style-1",
 			csser: boxStyleExample1(),
 			want:  boxStyleExample1Want(),
 		},
 		{
-			name:  "text styles",
+			name:  "text-style-1",
 			csser: textStyleExample1(),
 			want:  textStyleExample1Want(),
 		},
 		{
-			name:  "grid container styles",
+			name:  "grid-container-style-1",
 			csser: gridContainerStyleExample1(),
 			want:  gridContainerStyleExample1Want(),
 		},
 		{
-			name:  "grid item styles",
+			name:  "grid-item-style-1",
 			csser: gridItemStyleExample1(),
 			want:  gridItemStyleExample1Want(),
 		},
@@ -32,7 +34,28 @@ func Test_boxStyle_CSS(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			if got := tt.csser.CSS(); got != tt.want {
-				t.Errorf("boxStyle.CSS() = \n%v, \nwant \n%v", got, tt.want)
+				t.Errorf("csser.CSS() = \n%v, \nwant \n%v", got, tt.want)
+			}
+		})
+	}
+}
+
+func Test_render_CSS_responsive(t *testing.T) {
+	tests := []struct {
+		name  string
+		csser CSSer
+		want  string
+	}{
+		{
+			name:  "test-1",
+			csser: GridContainerResponsiveExample(),
+			want:  gridContainerResponsiveExampleWant("test-1"),
+		},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := tt.csser.CSS(tt.name); got != tt.want {
+				t.Errorf("responsive.CSS() = \n%v, \nwant \n%v", got, tt.want)
 			}
 		})
 	}

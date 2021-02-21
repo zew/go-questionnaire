@@ -5,13 +5,13 @@ import (
 	"strings"
 )
 
-type gridContainerStyle struct {
+type GridContainerStyle struct {
 	AutoFlow string `json:"auto_flow,omitempty"` // column | row | dense | dense column | dense row
 
 	AutoColumns string `json:"auto_columns,omitempty"` // default beyond TemplateColumns
 	AutoRows    string `json:"auto_rows,omitempty"`    // default beyond TemplateRows
 
-	TemplateColumns string `json:"template_columns,omitempty"`
+	TemplateColumns string `json:"template_columns,omitempty"` // i.e. minmax(4rem, 2fr) [col-title] minmax(4rem, 2fr) minmax(4rem, 2fr)
 	TemplateRows    string `json:"template_rows,omitempty"`
 	JustifyContent  string `json:"justify_content,omitempty"` // main axis   - all items inside container - space-around | space-between
 	JustifyItems    string `json:"justify_items,omitempty"`   // main axis   - item inside its 'cell' - stretch | baseline | center | start | end
@@ -19,8 +19,8 @@ type gridContainerStyle struct {
 	AlignItems      string `json:"align_items,omitempty"`     // second axis - item inside its 'cell' - stretch | baseline | center | start | end
 }
 
-func gridContainerStyleExample1() gridContainerStyle {
-	return gridContainerStyle{
+func gridContainerStyleExample1() GridContainerStyle {
+	return GridContainerStyle{
 		AutoFlow:        "column",
 		AutoColumns:     "minmax(auto,  300px)",
 		AutoRows:        "minmax(100px, auto)",
@@ -46,7 +46,8 @@ func gridContainerStyleExample1Want() string {
 `
 }
 
-func (gcs gridContainerStyle) CSS() string {
+// CSS renders styles
+func (gcs GridContainerStyle) CSS() string {
 	s := &strings.Builder{}
 	if gcs.AutoFlow != "" {
 		fmt.Fprintf(s, "\tgrid-auto-flow: %v;\n", gcs.AutoFlow)
@@ -78,7 +79,7 @@ func (gcs gridContainerStyle) CSS() string {
 	return s.String()
 }
 
-type gridItemStyle struct {
+type GridItemStyle struct {
 	JustifySelf string `json:"justify_self,omitempty"`
 	AlignSelf   string `json:"align_self,omitempty"`
 	Col         string `json:"col,omitempty"`
@@ -86,8 +87,8 @@ type gridItemStyle struct {
 	Order       int    `json:"order,omitempty"`
 }
 
-func gridItemStyleExample1() gridItemStyle {
-	return gridItemStyle{
+func gridItemStyleExample1() GridItemStyle {
+	return GridItemStyle{
 		JustifySelf: "start",
 		AlignSelf:   "stretch",
 		Col:         "col-menu/span 1",
@@ -105,7 +106,8 @@ func gridItemStyleExample1Want() string {
 `
 }
 
-func (gis gridItemStyle) CSS() string {
+// CSS renders styles
+func (gis GridItemStyle) CSS() string {
 	s := &strings.Builder{}
 	if gis.JustifySelf != "" {
 		fmt.Fprintf(s, "\tjustify-self: %v;\n", gis.JustifySelf)

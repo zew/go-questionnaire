@@ -49,21 +49,19 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		}
 		gr.Desc = trl.S{
 			"de": `
-				<p>Dies ist eine Studie des Zentrums für Europäische Wirtschaftsforschung (ZEW) in Mannheim sowie der Universitäten in Köln, Mannheim, Münster und Zürich. Ihre Teilnahme wird nur wenige Minuten in Anspruch nehmen und Sie unterstützen damit die Forschung zu Entscheidungsprozessen in der Politik.
-				</p>
+			<p>Dies ist eine Studie des Zentrums für Europäische Wirtschaftsforschung (ZEW) in Mannheim sowie der Universitäten in Köln, Mannheim, Münster und Zürich. Ihre Teilnahme wird nur wenige Minuten in Anspruch nehmen und Sie unterstützen damit die Forschung zu Entscheidungsprozessen in der Politik.
+			</p>
 
-				<p>In dieser Studie treffen Sie acht Entscheidungen und beantworten sieben Fragen. Nach der Erhebung werden 10 % aller Teilnehmer zufällig ausgewählt. Von jedem ausgewählten Teilnehmer wird eine der acht Entscheidungen zufällig bestimmt und genau wie im Folgenden beschrieben umgesetzt (alle erwähnten Personen existieren wirklich und alle Auszahlungen werden wie beschrieben getätigt).
-				</p>
+			<p>In dieser Studie treffen Sie acht Entscheidungen und beantworten sieben Fragen. Nach der Erhebung werden 10 % aller Teilnehmer zufällig ausgewählt. Von jedem ausgewählten Teilnehmer wird eine der acht Entscheidungen zufällig bestimmt und genau wie im Folgenden beschrieben umgesetzt (alle erwähnten Personen existieren wirklich und alle Auszahlungen werden wie beschrieben getätigt).
+			</p>
 
-				<p>In dieser Umfrage gibt es keine richtigen oder falschen Antworten. Bitte entscheiden Sie daher immer gemäß Ihren persönlichen Ansichten. Sie werden dabei vollständig anonym bleiben.
-				</p>
+			<p>In dieser Umfrage gibt es keine richtigen oder falschen Antworten. Bitte entscheiden Sie daher immer gemäß Ihren persönlichen Ansichten. Sie werden dabei vollständig anonym bleiben.
+			</p>
 
-				 <br>
+			<br>
+			<br>
 
-
-				 <br>
-
-				 `,
+			`,
 		}
 
 		{
@@ -95,11 +93,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			gr := page.AddGroup()
 			gr.Cols = 1
 			gr.BottomVSpacers = 1
-
 			gr.Style = css.NewGridContainer()
-			gr.Style = css.GridContainerResponsiveExample()
-			gr.Style.Desktop.Width = "70%"
-			gr.Style.Mobile.Width = "100%"
 
 			{
 				inp := gr.AddInput()
@@ -113,19 +107,19 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 				<br>
 
+				<!-- beware of hyphenization of css class names  -->
 				<style>
-					table.drei-stiftungen td {
+					table.xxx01 td {
 						text-align: center;
 						text-align: center;
-
 					}
 				</style>
 
-				<table class="drei-stiftungen">
+				<table class="xxx01">
 				<tr>
-					<td style="width: 33%">Politisch links</td>
-					<td style="width: 33%">Politische Mitte</td>
-					<td style="width: 33%">Politisch konservativ</td>
+					<td style="width: 33.2%">Politisch links</td>
+					<td style="width: 33.2%">Politische Mitte</td>
+					<td style="width: 33.2%">Politisch konservativ</td>
 				<tr>
 				<tr>
 					<td style="vertical-align: top;" ><b>Hans-Böckler-Stiftung</b></td>
@@ -147,29 +141,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 			}
 
-			/*
-				{
-					inp := gr.AddInput()
-					inp.Type = "textblock"
-					inp.Name = "text02"
-					// inp.Label = trl.S{"de": "Dummy<br>"}
-					inp.Desc = trl.S{"de": fmt.Sprintf(`
-					<p>
-					In <b>Entscheidung 1</b> wird Stiftung A von zwei Personen
-
-					(<img src='%v' style='display: inline-block; height: 1.0rem;
-						position: relative; top: 0.2rem; left: 0.1rem;
-					'> )
-
-					mittel eingestuft und von drei weiteren am schlechtesten. Stiftung B wird von drei Personen am besten eingestuft und von zweien am schlechtesten, und so weiter.
-					</p>
-					`,
-						"/img/pat/person.png", // works on survey2.zew.de - not locally
-						// cfg.Pref("/img/pat/person.png"),
-					),
-					}
-				}
-			*/
 		}
 
 		{
@@ -263,10 +234,10 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			inp.Type = "textblock"
 			inp.Name = "text05"
 			inp.Desc = trl.S{"de": `
-				<p>
-				Entscheiden Sie im Folgenden, an welche Stiftung das Geld gehen soll. Setzen Sie dazu bei der entsprechenden Stiftung ein Kreuz in der Spalte „Auswahl“. Falls Sie eine zweite oder dritte Alternative als genauso gut empfinden, setzen Sie ein Kreuz in der Spalte „Gleich gut“. Berücksichtigen Sie die dargestellten Präferenzen der Gruppen&shy;mitglieder.
-				</p>
-				`}
+			<p>
+			Entscheiden Sie im Folgenden, an welche Stiftung das Geld gehen soll. Setzen Sie dazu bei der entsprechenden Stiftung ein Kreuz in der Spalte „Auswahl“. Falls Sie eine zweite oder dritte Alternative als genauso gut empfinden, setzen Sie ein Kreuz in der Spalte „Gleich gut“. Berücksichtigen Sie die dargestellten Präferenzen der Gruppen&shy;mitglieder.
+			</p>
+			`}
 		}
 
 		// loop over matrix questions
@@ -435,39 +406,36 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				// inp.Label = trl.S{"de": "Frage 3<br>"}
 				inp.Desc = trl.S{
 					"de": `
+					<p>
+					<b>Im Folgenden legen Sie fest, welche Optionen ein zukünftiger Studienteilnehmer wählen kann:</b>
+					</p>
+
+					<div class="vspacer-16"> &nbsp; </div>
+
+					<p>
+					<b>Entscheidung 7.</b><br>
+					Sie sind einem deutschen Staatsangehörigen zugeordnet, der an einer zukünftigen Studie teilnehmen wird und verschiedene Optionen für Geldauszahlungen an unterschiedlichen Zeitpunkten hat.
+					</p>
+
+					<p>
+					Sie können nun entscheiden, welche der drei Optionen der Person (nicht) zur Verfügung stehen sollen, indem Sie in jeder Zeile ein Kreuz entweder bei „Verfügbar” oder bei „Nicht verfügbar” setzen. <b>Es muss am Ende mindestens eine Option „Verfügbar“ sein.</b> Folgen Sie dabei einfach Ihren Vorstellungen – es gibt keine richtigen oder falschen Antworten. Die nicht verfügbaren Optionen werden der Person nicht als Auswahloptionen angezeigt. Falls mehr als eine Option verfügbar ist, kann die die Person aus diesen Optionen wählen.
+					</p>
+
+					<p>
+					Bei verfügbar gemachten Optionen können Sie zusätzlich „Von dieser Option abraten“ ankreuzen. In diesem Fall erhält die Person die Botschaft: „Ein früherer Teilnehmer dieser Studie rät Ihnen davon ab, diese Option zu wählen”.
+					</p>
 
 
+					<h2>Alternativ</h2>
 
-<p>
-<b>Im Folgenden legen Sie fest, welche Optionen ein zukünftiger Studienteilnehmer wählen kann:</b>
-</p>
+					<p>
+					„Sie sind einem deutschen Staatsangehörigen zugeordnet, der an einer zukünftigen Studie teilnehmen wird und verschiedene Optionen für Geldauszahlungen an unterschiedlichen Zeitpunkten hat. 
+					<b>Er erhält in dieser Studie genau eine der unten beschriebenen Optionen, die ihm tatsächlich an den genannten Zeitpunkten ausgezahlt wird.</b>“
+					</p>
 
-<div class="vspacer-16"> &nbsp; </div>
-
-<p>
-<b>Entscheidung 7.</b><br>
-Sie sind einem deutschen Staatsangehörigen zugeordnet, der an einer zukünftigen Studie teilnehmen wird und verschiedene Optionen für Geldauszahlungen an unterschiedlichen Zeitpunkten hat.
-</p>
-
-<p>
-Sie können nun entscheiden, welche der drei Optionen der Person (nicht) zur Verfügung stehen sollen, indem Sie in jeder Zeile ein Kreuz entweder bei „Verfügbar” oder bei „Nicht verfügbar” setzen. <b>Es muss am Ende mindestens eine Option „Verfügbar“ sein.</b> Folgen Sie dabei einfach Ihren Vorstellungen – es gibt keine richtigen oder falschen Antworten. Die nicht verfügbaren Optionen werden der Person nicht als Auswahloptionen angezeigt. Falls mehr als eine Option verfügbar ist, kann die die Person aus diesen Optionen wählen.
-</p>
-
-<p>
-Bei verfügbar gemachten Optionen können Sie zusätzlich „Von dieser Option abraten“ ankreuzen. In diesem Fall erhält die Person die Botschaft: „Ein früherer Teilnehmer dieser Studie rät Ihnen davon ab, diese Option zu wählen”.
-</p>
-
-
-<h2>Alternativ</h2>
-
-<p>
-„Sie sind einem deutschen Staatsangehörigen zugeordnet, der an einer zukünftigen Studie teilnehmen wird und verschiedene Optionen für Geldauszahlungen an unterschiedlichen Zeitpunkten hat. 
-<b>Er erhält in dieser Studie genau eine der unten beschriebenen Optionen, die ihm tatsächlich an den genannten Zeitpunkten ausgezahlt wird.</b>“
-</p>
-
-<p>
-„Den Personen wurde mitgeteilt, dass ihre Präferenzen zusammen mit den Präferenzen von vier anderen Personen an einen zukünftigen Teilnehmer der Studie gegeben werden, der die Präferenzen in eine Entscheidung zusammenfasst. <b>Dieser zukünftige Teilnehmer sind Sie.</b>“
-</p>
+					<p>
+					„Den Personen wurde mitgeteilt, dass ihre Präferenzen zusammen mit den Präferenzen von vier anderen Personen an einen zukünftigen Teilnehmer der Studie gegeben werden, der die Präferenzen in eine Entscheidung zusammenfasst. <b>Dieser zukünftige Teilnehmer sind Sie.</b>“
+					</p>
 
 
 					`,
@@ -511,11 +479,12 @@ Bei verfügbar gemachten Optionen können Sie zusätzlich „Von dieser Option a
 				inp.Desc = trl.S{
 					"de": `
 
-<p>
-<b>Entscheidung 8. </b><br>
-Welche Optionen sollen der Person (nicht) zur Verfügung stehen, falls die Optionen wie folgt lauten?
-<i>(Beachten Sie: Sowohl die Zeitpunkte der Auszahlung als auch die Beträge sind anders als in der vorherigen Entscheidung.)</i>
-</p>
+					<p>
+					<b>Entscheidung 8. </b><br>
+					Welche Optionen sollen der Person (nicht) zur Verfügung stehen, falls die Optionen wie folgt lauten?
+					<i>(Beachten Sie: Sowohl die Zeitpunkte der Auszahlung als auch die Beträge sind anders als in der vorherigen Entscheidung.)</i>
+					</p>
+
 					`,
 				}
 			}

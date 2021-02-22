@@ -140,6 +140,8 @@ type inputT struct {
 	/* compositFunc == 'composit' OR dynFunc == 'dynamic'
 	'composit' =>    first arg paramSetIdx, second arg seqIdx */
 	DynamicFunc string `json:"dynamic_func,omitempty"`
+
+	Style *css.GridItemResponsive `json:"style,omitempty"` // pointer, to avoid empty JSON blocks
 }
 
 // NewInput returns an input filled in with globally enumerated label, decription etc.
@@ -598,35 +600,42 @@ func validateComposite(
 
 }
 
-// HTML renders a group of inputs to HTML
-func (gr groupT) HTML(langCode string) string {
+// GroupHTML renders a group of inputs to GroupHTML
+func (q QuestionnaireT) GroupHTML(pageIdx, grpIdx int) string {
 
-	b := &bytes.Buffer{}
-
-	if gr.Style != nil {
-		fmt.Fprint(b, gr.Style.CSS(fmt.Sprintf("cls-%v", ctr.Increment())))
+	if q.Pages[pageIdx].Groups[grpIdx].Style != nil {
+		return q.GroupHTMLGrid(pageIdx, grpIdx)
 	}
+
+	w := &strings.Builder{}
+	gr := q.Pages[pageIdx].Groups[grpIdx]
 
 	if gr.Width == 0 {
 		gr.Width = 100
 	}
-	b.WriteString(fmt.Sprintf("<div class='go-quest-group' style='width:%v%%;'  cols='%v'>\n", gr.Width, gr.Cols)) // cols is just for debugging
+	fmt.Fprintf(
+		w,
+		fmt.Sprintf(
+			"<div class='go-quest-group' style='width:%v%%;'  cols='%v'>\n",
+			gr.Width, gr.Cols, // cols is just for debugging
+		),
+	)
 	i := inputT{Type: "textblock"}
 	i.HAlignLabel = HLeft
 	i.Label = gr.Label
 	i.Desc = gr.Desc
 	i.CSSLabel = "go-quest-group-header"
 	i.ColSpanLabel = gr.Cols
-	lbl := renderLabelDescription(i, langCode, gr.Cols)
+	lbl := renderLabelDescription(i, q.LangCode, gr.Cols)
 	// lbl := renderLabelDescription(inputT{Type: "textblock"},	langCode, "", HLeft, gr.Label, gr.Desc, "go-quest-group-header", gr.Cols, gr.Cols)
 
-	b.WriteString(lbl)
-	b.WriteString(vspacer)
+	fmt.Fprintf(w, lbl)
+	fmt.Fprintf(w, vspacer)
 
-	b.WriteString("</div>\n")
+	fmt.Fprintf(w, "</div>\n")
 
 	for i := 0; i < gr.HeaderBottomVSpacers; i++ {
-		b.WriteString(vspacer8)
+		fmt.Fprintf(w, vspacer8)
 	}
 
 	// Rendering inputs
@@ -634,7 +643,7 @@ func (gr groupT) HTML(langCode string) string {
 	// Find out when a new row starts
 	cols := 0 // cols counter
 	rows := 0
-	b.WriteString(gr.TableOpen(rows))
+	fmt.Fprintf(w, gr.TableOpen(rows))
 	for i, inp := range gr.Inputs {
 
 		if inp.Type == "composit-scalar" {
@@ -644,9 +653,9 @@ func (gr groupT) HTML(langCode string) string {
 			continue
 		}
 
-		fmt.Fprint(b, "<td>")
-		fmt.Fprint(b, inp.HTML(langCode, gr.Cols)) // rendering markup
-		fmt.Fprint(b, "</td>")
+		fmt.Fprint(w, "<td>")
+		fmt.Fprint(w, inp.HTML(q.LangCode, gr.Cols)) // rendering markup
+		fmt.Fprint(w, "</td>")
 
 		if gr.Cols > 0 {
 
@@ -687,19 +696,18 @@ func (gr groupT) HTML(langCode string) string {
 
 			// end of row  - or end of group
 			if (cols+0)%gr.Cols == 0 || i == len(gr.Inputs)-1 {
-				b.WriteString(tableClose)
+				fmt.Fprintf(w, tableClose)
 			}
 			if (cols+0)%gr.Cols == 0 && i < len(gr.Inputs)-1 {
 				rows++
-				b.WriteString(gr.TableOpen(rows))
+				fmt.Fprintf(w, gr.TableOpen(rows))
 			}
-
 		}
 	}
 
 	// b.WriteString(tableClose) // this was double of code above
 
-	return b.String()
+	return w.String()
 
 }
 
@@ -1036,7 +1044,7 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 				b.WriteString(grpHTML + "\n")
 			}
 		} else {
-			grpHTML := p.Groups[grpIdx].HTML(q.LangCode)
+			grpHTML := q.GroupHTML(pageIdx, grpIdx)
 			if strings.Contains(grpHTML, "[groupID]") {
 				nonCompositCntr++
 				grpHTML = strings.Replace(grpHTML, "[groupID]", fmt.Sprintf("%v", nonCompositCntr+1), -1)

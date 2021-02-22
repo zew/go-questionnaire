@@ -144,15 +144,23 @@ func (q *QuestionnaireT) Validate() error {
 			q.Pages[i1].NavigationalNum = navigationalNum
 		}
 		for i2 := 0; i2 < len(q.Pages[i1].Groups); i2++ {
+
+			// group default width is 100
 			if q.Pages[i1].Groups[i2].Width == 0 {
 				q.Pages[i1].Groups[i2].Width = 100
 			}
+
+			// a number of columns per group must be set
+			if q.Pages[i1].Groups[i2].Cols < 1 {
+				return fmt.Errorf("Page %v - Group %v - Number of columns must be greater 0: ", i1, i2)
+			}
+
 			for i3 := 0; i3 < len(q.Pages[i1].Groups[i2].Inputs); i3++ {
 
 				s := fmt.Sprintf("Page %v - Group %v - Input %v: ", i1, i2, i3)
 				inp := q.Pages[i1].Groups[i2].Inputs[i3]
 
-				// Check input type
+				// check input type
 				if _, ok := implementedTypes[inp.Type]; !ok {
 					return fmt.Errorf("%v: Type '%v' is not in %v ", s, inp.Type, implementedTypes)
 				}
@@ -170,7 +178,7 @@ func (q *QuestionnaireT) Validate() error {
 					}
 				}
 
-				// Jump to page exists?
+				// jump to page exists?
 				if inp.Type == "button" && inp.Response != "" {
 					pgIdx, err := strconv.Atoi(inp.Response)
 					if err != nil {
@@ -181,14 +189,14 @@ func (q *QuestionnaireT) Validate() error {
 					}
 				}
 
-				// Validator function exists
+				// validator function exists
 				if inp.Validator != "" {
 					if _, ok := validators[inp.Validator]; !ok {
 						return fmt.Errorf(s + fmt.Sprintf("Validator '%v' is not in %v ", inp.Validator, validators))
 					}
 				}
 
-				// Helper: Add values 1...x for radiogroups
+				// helper: add values 1...x for radiogroups
 				for i4 := 0; i4 < len(inp.Radios); i4++ {
 					if inp.Radios[i4].Val == "" {
 						inp.Radios[i4].Val = fmt.Sprintf("%v", i4+1)
@@ -203,7 +211,7 @@ func (q *QuestionnaireT) Validate() error {
 		}
 	}
 
-	// Make sure, input names are unique
+	// make sure, input names are unique
 	names := map[string]int{}
 	for i1 := 0; i1 < len(q.Pages); i1++ {
 		for i2 := 0; i2 < len(q.Pages[i1].Groups); i2++ {

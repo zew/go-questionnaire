@@ -58,7 +58,6 @@ table.main-table tr:nth-child(odd){
 
 .go-quest-group-header {
     display: inline-block;  /* activate line-height*/
-	/* font-size: 12px; */
 }
 
 .go-quest-page-section {

@@ -71,8 +71,11 @@ func NewGridContainer() *GridContainerResponsive {
 // GridContainerResponsiveExample to test
 func GridContainerResponsiveExample() *GridContainerResponsive {
 	grSt := NewGridContainer()
-	grSt.Desktop.TemplateColumns = "minmax(4rem, 2fr) minmax(4rem, 2fr) minmax(4rem, 2fr)"
-	grSt.Mobile.GridContainerStyle.AutoFlow = "row"
+
+	grSt.Desktop.GridContainerStyle.AutoFlow = "row"
+	grSt.Desktop.GridContainerStyle.TemplateColumns = "minmax(4rem, 2fr) minmax(4rem, 2fr) minmax(4rem, 2fr)"
+
+	grSt.Mobile.GridContainerStyle.AutoFlow = "col"
 	return grSt
 }
 

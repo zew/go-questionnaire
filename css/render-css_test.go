@@ -4,7 +4,7 @@ import (
 	"testing"
 )
 
-func Test_render_CSS_class(t *testing.T) {
+func Test_renderStyles(t *testing.T) {
 	tests := []struct {
 		name  string
 		csser CSSerSimple
@@ -40,7 +40,7 @@ func Test_render_CSS_class(t *testing.T) {
 	}
 }
 
-func Test_render_CSS_responsive(t *testing.T) {
+func Test_renderResponsive(t *testing.T) {
 	tests := []struct {
 		name  string
 		csser CSSer

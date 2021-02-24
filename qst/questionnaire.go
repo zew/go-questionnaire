@@ -173,11 +173,11 @@ func renderLabelDescription2(i inputT, langCode string, name string, hAlign hori
 	}
 	e1 := lbl.Tr(langCode)
 	if lbl == nil {
-		e1 = "" // Suppress "Translation map not initialized." here
+		e1 = "" // suppress "Translation map not initialized." here
 	}
 	e2 := desc.Tr(langCode)
 	if desc == nil {
-		e2 = "" // Suppress "Translation map not initialized." here
+		e2 = "" // suppress "Translation map not initialized." here
 	}
 
 	// pure text or layout
@@ -360,7 +360,7 @@ func (i inputT) HTML(langCode string, numCols int) string {
 						"<span class=' vert-correct-center '>%v</span>\n",
 						rad.Label.Tr(langCode),
 					)
-					lbl += vspacer
+					lbl += vspacer0
 					one = lbl + radio
 				}
 
@@ -630,7 +630,7 @@ func (q QuestionnaireT) GroupHTML(pageIdx, grpIdx int) string {
 	// lbl := renderLabelDescription(inputT{Type: "textblock"},	langCode, "", HLeft, gr.Label, gr.Desc, "go-quest-group-header", gr.Cols, gr.Cols)
 
 	fmt.Fprintf(w, lbl)
-	fmt.Fprintf(w, vspacer)
+	fmt.Fprintf(w, vspacer0)
 
 	fmt.Fprintf(w, "</div>\n")
 
@@ -1019,7 +1019,7 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 		hasHeader = true
 	}
 	if p.Desc.Tr(q.LangCode) != "" {
-		b.WriteString(vspacer)
+		b.WriteString(vspacer0)
 		b.WriteString(fmt.Sprintf("<p  class='go-quest-page-desc'>%v</p>", p.Desc.Tr(q.LangCode)))
 		hasHeader = true
 	}

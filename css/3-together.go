@@ -140,3 +140,25 @@ func NewGridItem() *GridItemResponsive {
 		Mobile:  GridItem{},
 	}
 }
+
+// CSS renders styles
+func (gir GridItemResponsive) CSS(className string) string {
+	s := &strings.Builder{}
+
+	fmt.Fprintf(s, "<style>\n")
+
+	fmt.Fprintf(s, ".%v {\n", className)
+	fmt.Fprint(s, notEmpty("\t/* box-style */\n", gir.Desktop.BoxStyle.CSS(), "\n"))
+	fmt.Fprint(s, notEmpty("\t/* grid-item */\n", gir.Desktop.GridItemStyle.CSS(), "\n"))
+	fmt.Fprintf(s, "}\n")
+
+	fmt.Fprintf(s, "@media screen and (max-width: 800px) {\n")
+	fmt.Fprintf(s, ".%v {\n", className)
+	fmt.Fprint(s, notEmpty("\t/* box-style */\n", gir.Mobile.BoxStyle.CSS(), "\n"))
+	fmt.Fprint(s, notEmpty("\t/* grid-item */\n", gir.Mobile.GridItemStyle.CSS(), "\n"))
+	fmt.Fprintf(s, "}\n")
+	fmt.Fprintf(s, "}\n")
+
+	fmt.Fprintf(s, "</style>\n\n")
+	return s.String()
+}

@@ -136,16 +136,20 @@ func (q *QuestionnaireT) Validate() error {
 	// Set values for radiogroups
 	// Enumerate pages being in navigation sequence
 	for i1 := 0; i1 < len(q.Pages); i1++ {
+
+		// page default width is 100 - like group
 		if q.Pages[i1].Width == 0 {
 			q.Pages[i1].Width = 100
 		}
+
 		if !q.Pages[i1].NoNavigation {
 			navigationalNum++
 			q.Pages[i1].NavigationalNum = navigationalNum
 		}
+
 		for i2 := 0; i2 < len(q.Pages[i1].Groups); i2++ {
 
-			// group default width is 100
+			// group default width is 100 - like page
 			if q.Pages[i1].Groups[i2].Width == 0 {
 				q.Pages[i1].Groups[i2].Width = 100
 			}
@@ -159,6 +163,19 @@ func (q *QuestionnaireT) Validate() error {
 
 				s := fmt.Sprintf("Page %v - Group %v - Input %v: ", i1, i2, i3)
 				inp := q.Pages[i1].Groups[i2].Inputs[i3]
+
+				// textblock  =>  span at least 1
+				if inp.Type == "textblock" {
+					inp.ColSpanControl = 0
+					if inp.ColSpanLabel == 0 {
+						q.Pages[i1].Groups[i2].Inputs[i3].ColSpanLabel = 1
+					}
+				}
+
+				// input label or desc not empty  =>  span > 0
+				if (!inp.Label.Empty() || !inp.Desc.Empty()) && inp.ColSpanLabel == 0 {
+					q.Pages[i1].Groups[i2].Inputs[i3].ColSpanLabel = 1
+				}
 
 				// check input type
 				if _, ok := implementedTypes[inp.Type]; !ok {

@@ -73,10 +73,20 @@ func (s S) All(args ...string) string {
 	return ret
 }
 
-// Set checks whether s is not empty
+// Set checks whether s is nil or has no keys
 func (s S) Set() bool {
 	if len(s) < 1 { // also covers s == nil
 		return false
+	}
+	return true
+}
+
+// Empty checks whether s has only empty translations
+func (s S) Empty() bool {
+	for _, loc := range s {
+		if len(loc) > 0 {
+			return false
+		}
 	}
 	return true
 }

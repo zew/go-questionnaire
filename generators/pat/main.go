@@ -93,13 +93,17 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			gr := page.AddGroup()
 			gr.Cols = 1
 			gr.BottomVSpacers = 1
+			// gr.Label = trl.S{"de": "group label"}
+			// gr.Desc = trl.S{"de": "group Desc"}
+			// gr.HeaderBottomVSpacers = 5
 			gr.Style = css.NewGridContainer()
+			gr.Style.Desktop.BoxStyle.Width = "99.9%"
+			gr.Style.Mobile.BoxStyle.Width = "100%"
 
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				inp.Name = "text01"
-				// inp.Label = trl.S{"de": "Dummy<br>"}
+				// inp.Label = trl.S{"de": "input label"}
 				inp.Desc = trl.S{"de": `
 				<p><b>
 				Im Folgenden geht es um eine Spende von 30 €, die <i>eine</i> dieser drei Stiftungen erhalten soll:
@@ -131,11 +135,20 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				<div class='vspacer-08'> &nbsp; </div>
 
 				<p>
-				Für jede Ihrer ersten sechs Entscheidungen zeigen wir Ihnen die Präferenzen fünf deutscher Staatsangehöriger darüber, welche der drei Stiftungen die Spende erhalten soll.  Sie entscheiden, wie die Präferenzen der fünf Personen in eine gemeinsame Entscheidung zusammengefasst werden.
+				Für jede Ihrer ersten sechs Entscheidungen zeigen wir Ihnen die Präferenzen fünf deutscher Staatsangehöriger darüber, 
+				welche der drei Stiftungen die Spende erhalten soll. 
+				Sie entscheiden, wie die Präferenzen der fünf Personen in eine gemeinsame Entscheidung zusammengefasst werden.
 				</p>
 
 				<p>
-				Die Präferenzen stammen von fünf Personen, die an einer Vorstudie teilgenommen haben<sup>1)</sup>.  Diese fünf Personen wurden aus einer Stichprobe gezogen, in der sich gleich viele Personen politisch links, in der Mitte oder als konservativ einordnen. Jede Person wurde einzeln befragt, welche der drei Stiftungen sie als am besten, mittel, und am schlechtesten erachtet. Den Personen wurde mitgeteilt, dass ihre Präferenzen zusammen mit den Präferenzen von vier anderen Personen an einen zukünftigen Teilnehmer der Studie gegeben werden, der die Präferenzen in eine Entscheidung zusammenfasst.
+				Die Präferenzen stammen von fünf Personen, die an einer Vorstudie teilgenommen haben<sup>1)</sup>. 
+				Diese fünf Personen wurden aus einer Stichprobe gezogen, in der sich gleich viele Personen politisch links, 
+				in der Mitte oder als konservativ einordnen. 
+				Jede Person wurde einzeln befragt, welche der drei Stiftungen sie als am besten, mittel, und am schlechtesten erachtet. 
+				Den Personen wurde mitgeteilt, 
+				dass ihre Präferenzen zusammen mit den Präferenzen von vier anderen Personen 
+				an einen zukünftigen Teilnehmer der Studie gegeben werden, 
+				der die Präferenzen in eine Entscheidung zusammenfasst.
 				</p>
 				`}
 
@@ -185,7 +198,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				inp.Name = "text03"
 				inp.Desc = trl.S{"de": `
 				<p>
 				Die Stiftungen wurden anonymisiert und in eine zufällige Reihenfolge gebracht, so dass Sie nicht wissen, um welche Stiftung es sich bei den Stiftungen A, B und C handelt. Sie entscheiden also nicht darüber, welche Stiftung die 30 € erhält. Stattdessen entscheiden Sie, wie die Präferenzen der Gruppenmitglieder in eine Entscheidung zusammengefasst werden und ob Sie beispielsweise eher eine Kompromisslösung oder eher eine Mehrheitslösung für Ihre Gruppe bevorzugen.
@@ -200,7 +212,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				inp.Name = "text04"
 				// inp.Label = trl.S{"de": "Dummy<br>"}
 				inp.Desc = trl.S{
 					"de": `
@@ -232,7 +243,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			inp := gr.AddInput()
 			inp.ColSpanLabel = 2
 			inp.Type = "textblock"
-			inp.Name = "text05"
 			inp.Desc = trl.S{"de": `
 			<p>
 			Entscheiden Sie im Folgenden, an welche Stiftung das Geld gehen soll. Setzen Sie dazu bei der entsprechenden Stiftung ein Kreuz in der Spalte „Auswahl“. Falls Sie eine zweite oder dritte Alternative als genauso gut empfinden, setzen Sie ein Kreuz in der Spalte „Gleich gut“. Berücksichtigen Sie die dargestellten Präferenzen der Gruppen&shy;mitglieder.
@@ -316,7 +326,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				inp.Name = "text06"
 				// inp.Label = trl.S{"de": "Frage 3<br>"}
 				inp.Desc = trl.S{
 					"de": `
@@ -402,7 +411,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				inp.Name = "text07"
 				// inp.Label = trl.S{"de": "Frage 3<br>"}
 				inp.Desc = trl.S{
 					"de": `
@@ -474,7 +482,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				inp.Name = "text08"
 				// inp.Label = trl.S{"de": "Frage 3<br>"}
 				inp.Desc = trl.S{
 					"de": `
@@ -529,7 +536,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				inp.Name = "text09"
 				// inp.Label = trl.S{"de": "Frage 2<br>"}
 				inp.Desc = trl.S{
 					"de": `
@@ -630,7 +636,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				inp.Name = "text10"
 				// inp.Label = trl.S{"de": "Frage 3<br>"}
 				inp.Desc = trl.S{
 					"de": `
@@ -826,7 +831,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				inp.Name = "text11"
 				// inp.CSSControl = "special-line-height-higher"
 				inp.Desc = trl.S{"de": "Vielen Dank für das Ausfüllen dieser Umfrage! "}
 				inp.Desc = trl.S{"de": "  "} // next page

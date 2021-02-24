@@ -40,13 +40,13 @@ func getQ2Labels(version0to15 int, aOrB string) []string {
 var dataQ2 = map[string][][]string{
 
 	"version-01-02": {
-		// q3a
+		// q2a
 		{
 			"<b> 0&nbsp;€ sofort</b> und<br><b>16&nbsp;€</b> in 6&nbsp;Monaten",
 			"<b> 2&nbsp;€ sofort</b> und<br><b>10&nbsp;€</b> in 6&nbsp;Monaten",
 			"<b> 4&nbsp;€ sofort</b> und<br> <b>2&nbsp;€</b> in 6&nbsp;Monaten",
 		},
-		// q3b
+		// q2b
 		{
 			"<b> 0&nbsp;€</b> in 1&nbsp;Monat und<br><b>24&nbsp;€</b> in 7&nbsp;Monaten",
 			"<b> 3&nbsp;€</b> in 1&nbsp;Monat und<br><b>15&nbsp;€</b> in 7&nbsp;Monaten",

@@ -25,6 +25,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	q.Survey = qst.NewSurvey("pat")
 	q.Survey.Params = params
 	q.LangCodes = []string{"de"} // governs default language code
+	q.Version = 1
 
 	q.Survey.Org = trl.S{"de": "ZEW"}
 	q.Survey.Name = trl.S{"de": "Paternalismus Umfrage"}
@@ -44,24 +45,37 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		//
 		gr := page.AddGroup()
 		gr.Cols = 1
-		gr.Label = trl.S{
-			"de": "HERZLICH WILLKOMMEN UND VIELEN DANK FÜR IHRE TEILNAHME!<br><br>",
-		}
-		gr.Desc = trl.S{
-			"de": `
-			<p>Dies ist eine Studie des Zentrums für Europäische Wirtschaftsforschung (ZEW) in Mannheim sowie der Universitäten in Köln, Mannheim, Münster und Zürich. Ihre Teilnahme wird nur wenige Minuten in Anspruch nehmen und Sie unterstützen damit die Forschung zu Entscheidungsprozessen in der Politik.
-			</p>
 
-			<p>In dieser Studie treffen Sie acht Entscheidungen und beantworten sieben Fragen. Nach der Erhebung werden 10 % aller Teilnehmer zufällig ausgewählt. Von jedem ausgewählten Teilnehmer wird eine der acht Entscheidungen zufällig bestimmt und genau wie im Folgenden beschrieben umgesetzt (alle erwähnten Personen existieren wirklich und alle Auszahlungen werden wie beschrieben getätigt).
-			</p>
+		{
+			inp := gr.AddInput()
+			inp.Type = "textblock"
+			inp.Label = trl.S{
+				"de": "HERZLICH WILLKOMMEN UND VIELEN DANK FÜR IHRE TEILNAHME!<br><br>",
+			}
+			inp.Desc = trl.S{
+				"de": `
+				<p>Dies ist eine Studie des Zentrums für Europäische Wirtschaftsforschung (ZEW) in Mannheim 
+				sowie der Universitäten in Köln, Mannheim, Münster und Zürich. 
+				Ihre Teilnahme wird nur wenige Minuten in Anspruch nehmen 
+				und Sie unterstützen damit die Forschung zu Entscheidungsprozessen in der Politik.
+				</p>
 
-			<p>In dieser Umfrage gibt es keine richtigen oder falschen Antworten. Bitte entscheiden Sie daher immer gemäß Ihren persönlichen Ansichten. Sie werden dabei vollständig anonym bleiben.
-			</p>
+				<p>In dieser Studie treffen Sie acht Entscheidungen und beantworten sieben Fragen. 
+				Nach der Erhebung werden 10 % aller Teilnehmer zufällig ausgewählt. 
+				Von jedem ausgewählten Teilnehmer wird eine der acht Entscheidungen zufällig bestimmt 
+				und genau wie im Folgenden beschrieben umgesetzt 
+				(alle erwähnten Personen existieren wirklich und alle Auszahlungen werden wie beschrieben getätigt).
+				</p>
 
-			<br>
-			<br>
+				<p>In dieser Umfrage gibt es keine richtigen oder falschen Antworten. 
+				Bitte entscheiden Sie daher immer gemäß Ihren persönlichen Ansichten. 
+				Sie werden dabei vollständig anonym bleiben.
+				</p>
 
-			`,
+				<br>
+				<br>
+				`,
+			}
 		}
 
 		{
@@ -93,9 +107,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			gr := page.AddGroup()
 			gr.Cols = 1
 			gr.BottomVSpacers = 1
-			// gr.Label = trl.S{"de": "group label"}
-			// gr.Desc = trl.S{"de": "group Desc"}
-			// gr.HeaderBottomVSpacers = 5
+
 			gr.Style = css.NewGridContainer()
 			gr.Style.Desktop.BoxStyle.Width = "99.9%"
 			gr.Style.Mobile.BoxStyle.Width = "100%"
@@ -137,7 +149,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				<p>
 				Für jede Ihrer ersten sechs Entscheidungen zeigen wir Ihnen die Präferenzen fünf deutscher Staatsangehöriger darüber, 
 				welche der drei Stiftungen die Spende erhalten soll. 
-				Sie entscheiden, wie die Präferenzen der fünf Personen in eine gemeinsame Entscheidung zusammengefasst werden.
+				Sie entscheiden, wie die Präferenzen der fünf Personen in <i>eine</i> gemeinsame Entscheidung zusammengefasst werden.
 				</p>
 
 				<p>
@@ -145,11 +157,16 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				Diese fünf Personen wurden aus einer Stichprobe gezogen, in der sich gleich viele Personen politisch links, 
 				in der Mitte oder als konservativ einordnen. 
 				Jede Person wurde einzeln befragt, welche der drei Stiftungen sie als am besten, mittel, und am schlechtesten erachtet. 
-				Den Personen wurde mitgeteilt, 
-				dass ihre Präferenzen zusammen mit den Präferenzen von vier anderen Personen 
-				an einen zukünftigen Teilnehmer der Studie gegeben werden, 
-				der die Präferenzen in eine Entscheidung zusammenfasst.
 				</p>
+				
+				<p>
+				Den Personen wurde mitgeteilt, dass ihre Präferenzen 
+				zusammen mit den Präferenzen von vier anderen Personen 
+				an einen zukünftigen Teilnehmer der Studie gegeben werden, 
+				der die Präferenzen in eine Entscheidung zusammenfasst. 
+				<b>Dieser zukünftige Teilnehmer sind Sie.</b>
+				</p>
+				
 				`}
 
 			}
@@ -200,7 +217,11 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Type = "textblock"
 				inp.Desc = trl.S{"de": `
 				<p>
-				Die Stiftungen wurden anonymisiert und in eine zufällige Reihenfolge gebracht, so dass Sie nicht wissen, um welche Stiftung es sich bei den Stiftungen A, B und C handelt. Sie entscheiden also nicht darüber, welche Stiftung die 30 € erhält. Stattdessen entscheiden Sie, wie die Präferenzen der Gruppenmitglieder in eine Entscheidung zusammengefasst werden und ob Sie beispielsweise eher eine Kompromisslösung oder eher eine Mehrheitslösung für Ihre Gruppe bevorzugen.
+				Die Stiftungen wurden anonymisiert und in eine zufällige Reihenfolge gebracht, so dass Sie nicht wissen, 
+				um welche Stiftung es sich bei den Stiftungen A, B und C handelt. 
+				Sie entscheiden also nicht darüber, welche Stiftung die 30 € erhält. 
+				Stattdessen entscheiden Sie, wie die Präferenzen der Gruppenmitglieder in <i>eine</i> Entscheidung zusammengefasst werden 
+				und ob Sie beispielsweise eher eine Kompromisslösung oder eher eine Mehrheitslösung für Ihre Gruppe bevorzugen.
 				</p>
 				`}
 			}
@@ -245,7 +266,11 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			inp.Type = "textblock"
 			inp.Desc = trl.S{"de": `
 			<p>
-			Entscheiden Sie im Folgenden, an welche Stiftung das Geld gehen soll. Setzen Sie dazu bei der entsprechenden Stiftung ein Kreuz in der Spalte „Auswahl“. Falls Sie eine zweite oder dritte Alternative als genauso gut empfinden, setzen Sie ein Kreuz in der Spalte „Gleich gut“. Berücksichtigen Sie die dargestellten Präferenzen der Gruppen&shy;mitglieder.
+			Entscheiden Sie im Folgenden, an welche Stiftung das Geld gehen soll. 
+			<b>Setzen Sie dazu bei der entsprechenden Stiftung ein Kreuz in der Spalte „Auswahl“.</b>
+			Falls Sie eine zweite oder dritte Alternative als genauso gut empfinden, 
+			setzen Sie ein Kreuz in der Spalte „Gleich gut“. 
+			Berücksichtigen Sie die dargestellten Präferenzen der Gruppen&shy;mitglieder.
 			</p>
 			`}
 		}
@@ -422,29 +447,34 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 					<p>
 					<b>Entscheidung 7.</b><br>
-					Sie sind einem deutschen Staatsangehörigen zugeordnet, der an einer zukünftigen Studie teilnehmen wird und verschiedene Optionen für Geldauszahlungen an unterschiedlichen Zeitpunkten hat.
+					Sie sind einem deutschen Staatsangehörigen zugeordnet, der an einer zukünftigen Studie teilnehmen wird 
+					und verschiedene Optionen für Geldauszahlungen an unterschiedlichen Zeitpunkten hat.
+					
+					<b>Er erhält in dieser Studie genau eine der unten beschriebenen Optionen, 
+					die ihm tatsächlich an den genannten Zeitpunkten ausgezahlt wird.</b>
 					</p>
 
 					<p>
-					Sie können nun entscheiden, welche der drei Optionen der Person (nicht) zur Verfügung stehen sollen, indem Sie in jeder Zeile ein Kreuz entweder bei „Verfügbar” oder bei „Nicht verfügbar” setzen. <b>Es muss am Ende mindestens eine Option „Verfügbar“ sein.</b> Folgen Sie dabei einfach Ihren Vorstellungen – es gibt keine richtigen oder falschen Antworten. Die nicht verfügbaren Optionen werden der Person nicht als Auswahloptionen angezeigt. Falls mehr als eine Option verfügbar ist, kann die die Person aus diesen Optionen wählen.
+					Den Personen wurde mitgeteilt, dass ihre Präferenzen 
+					zusammen mit den Präferenzen von vier anderen Personen 
+					an einen zukünftigen Teilnehmer der Studie gegeben werden, 
+					der die Präferenzen in <i>eine</i> Entscheidung zusammenfasst. 
+					<b>Dieser zukünftige Teilnehmer sind Sie.</b>
+					</p>
+
+
+					<p>
+					Sie können nun entscheiden, welche der drei Optionen der Person (nicht) zur Verfügung stehen sollen, 
+					indem Sie in jeder Zeile ein Kreuz entweder bei „Verfügbar” oder bei „Nicht verfügbar” setzen. 
+					<b>Es muss am Ende mindestens eine Option „Verfügbar“ sein.</b> 
+					Folgen Sie dabei einfach Ihren Vorstellungen – es gibt keine richtigen oder falschen Antworten. 
+					Die nicht verfügbaren Optionen werden der Person nicht als Auswahloptionen angezeigt. 
+					Falls mehr als eine Option verfügbar ist, kann die die Person aus diesen Optionen wählen.
 					</p>
 
 					<p>
 					Bei verfügbar gemachten Optionen können Sie zusätzlich „Von dieser Option abraten“ ankreuzen. In diesem Fall erhält die Person die Botschaft: „Ein früherer Teilnehmer dieser Studie rät Ihnen davon ab, diese Option zu wählen”.
 					</p>
-
-
-					<h2>Alternativ</h2>
-
-					<p>
-					„Sie sind einem deutschen Staatsangehörigen zugeordnet, der an einer zukünftigen Studie teilnehmen wird und verschiedene Optionen für Geldauszahlungen an unterschiedlichen Zeitpunkten hat. 
-					<b>Er erhält in dieser Studie genau eine der unten beschriebenen Optionen, die ihm tatsächlich an den genannten Zeitpunkten ausgezahlt wird.</b>“
-					</p>
-
-					<p>
-					„Den Personen wurde mitgeteilt, dass ihre Präferenzen zusammen mit den Präferenzen von vier anderen Personen an einen zukünftigen Teilnehmer der Studie gegeben werden, der die Präferenzen in eine Entscheidung zusammenfasst. <b>Dieser zukünftige Teilnehmer sind Sie.</b>“
-					</p>
-
 
 					`,
 				}
@@ -531,7 +561,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 			gr := page.AddGroup()
 			gr.Cols = 1
-			gr.BottomVSpacers = 1
+			gr.BottomVSpacers = 0
 
 			{
 				inp := gr.AddInput()
@@ -554,7 +584,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			gr := page.AddGroup()
 			gr.Cols = 12
 			gr.Width = 100
-			gr.BottomVSpacers = 1
+			gr.BottomVSpacers = 0
 
 			// q4a
 			{
@@ -626,7 +656,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		}
 
 		//
-
+		//
+		//
 		{
 
 			gr := page.AddGroup()
@@ -736,14 +767,17 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		page.Width = 55
 
 		{
-			gr := page.AddRadioMatrixGroupNoLabels(labelsOneToSeven1, []string{"q4"})
+			gr := page.AddGroup()
 			gr.RandomizationGroup = 1 - 1
-			gr.BottomVSpacers = 2
-			gr.Cols = 7
+			gr.BottomVSpacers = 0
+			gr.Cols = 1
 			gr.Width = 100
-			// gr.Label = trl.S{"de": "Frage [groupID]<br>"}
-			gr.Desc = trl.S{
-				"de": `
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				// inp.Label = trl.S{"de": "Frage [groupID]<br>"}
+				inp.Desc = trl.S{
+					"de": `
 				<p>
 				<b>Frage 4.</b> 
 				Wie sehr stimmen Sie der folgenden Aussage zu: 
@@ -753,71 +787,120 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				aus der gesetzlichen Rentenversicherung liegt.</i>“
 				</p>
 				`,
+				}
 			}
 		}
+		{
+			gr := page.AddRadioMatrixGroupNoLabels(labelsOneToSeven1, []string{"q4"})
+			gr.RandomizationGroup = 1 - 1
+			gr.BottomVSpacers = 2
+			gr.Cols = 7
+			gr.Width = 100
+		}
 
+		//
+		{
+			gr := page.AddGroup()
+			gr.RandomizationGroup = 1 - 1
+			gr.BottomVSpacers = 0
+			gr.Cols = 1
+			gr.Width = 100
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				// inp.Label = trl.S{"de": "Frage [groupID]<br>"}
+				inp.Desc = trl.S{
+					"de": `
+					<p>
+					<b>Zum Schluss bitten wir Sie drei Fragen über sich selbst zu beantworten:</b>
+
+					<br>
+					<br>
+					<b>Frage 5.</b>
+					Sind Sie im Vergleich zu anderen im Allgemeinen bereit, 
+					heute auf etwas zu verzichten, 
+					um in der Zukunft davon zu profitieren, 
+					oder sind Sie im Vergleich zu anderen dazu nicht bereit? 
+
+					</p>
+
+				`,
+				}
+			}
+
+		}
 		{
 			gr := page.AddRadioMatrixGroupNoLabels(labelsOneToSeven2, []string{"q5"})
 			gr.RandomizationGroup = 1 - 1
 			gr.BottomVSpacers = 2
 			gr.Cols = 7
 			gr.Width = 100
-			// gr.Label = trl.S{"de": "Frage [groupID]<br>"}
-			gr.Desc = trl.S{
-				"de": `
 
-				<p>
-				<b>Zum Schluss bitten wir Sie drei Fragen über sich selbst zu beantworten:</b>
-
-				<br>
-				<br>
-				<b>Frage 5.</b>
-				 Sind Sie im Vergleich zu anderen im Allgemeinen bereit, 
-				 heute auf etwas zu verzichten, 
-				 um in der Zukunft davon zu profitieren, 
-				 oder sind Sie im Vergleich zu anderen dazu nicht bereit? 
-
-				</p>
-
-				`,
-			}
 		}
 
+		//
+		//
+		{
+			gr := page.AddGroup()
+			gr.RandomizationGroup = 1 - 1
+			gr.BottomVSpacers = 0
+			gr.Cols = 1
+			gr.Width = 100
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				// inp.Label = trl.S{"de": "Frage [groupID]<br>"}
+				inp.Desc = trl.S{
+					"de": `
+					</p>
+					<b>Frage 6.</b>
+					Wie schätzen Sie sich persönlich ein? 
+					Sind Sie im Allgemeinen ein risikobereiter Mensch 
+					oder versuchen Sie, Risiken zu vermeiden?
+					</p>
+
+				`,
+				}
+			}
+		}
 		{
 			gr := page.AddRadioMatrixGroupNoLabels(labelsOneToSeven3, []string{"q6"})
 			gr.RandomizationGroup = 1 - 1
 			gr.BottomVSpacers = 2
 			gr.Cols = 7
 			gr.Width = 100
-			// gr.Label = trl.S{"de": "Frage [groupID]<br>"}
-			gr.Desc = trl.S{
-				"de": `
-				</p>
-				<b>Frage 6.</b>
-				Wie schätzen Sie sich persönlich ein? 
-				Sind Sie im Allgemeinen ein risikobereiter Mensch 
-				oder versuchen Sie, Risiken zu vermeiden?
-				</p>
-				`,
-			}
 		}
 
+		//
+		//
+		{
+			gr := page.AddGroup()
+			gr.RandomizationGroup = 1 - 1
+			gr.BottomVSpacers = 0
+			gr.Cols = 1
+			gr.Width = 100
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				// inp.Label = trl.S{"de": "Frage [groupID]<br>"}
+				inp.Desc = trl.S{
+					"de": `
+					<p>
+					<b>Frage 7.</b>
+					Wie schätzen Sie Ihre Bereitschaft ein mit anderen zu teilen, 
+					ohne dafür eine Gegenleistung zu erwarten?
+					</p>
+				`,
+				}
+			}
+		}
 		{
 			gr := page.AddRadioMatrixGroupNoLabels(labelsOneToSeven2, []string{"q7"})
 			gr.RandomizationGroup = 1 - 1
 			gr.BottomVSpacers = 2
 			gr.Cols = 7
 			gr.Width = 100
-			// gr.Label = trl.S{"de": "Frage [groupID]<br>"}
-			gr.Desc = trl.S{
-				"de": `
-				<p>
-				<b>Frage 7.</b>
-				Wie schätzen Sie Ihre Bereitschaft ein mit anderen zu teilen, 
-				ohne dafür eine Gegenleistung zu erwarten?
-				</p>
-				`,
-			}
+
 		}
 
 		//

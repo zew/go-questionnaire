@@ -149,17 +149,11 @@ table.main-table tr:nth-child(odd){
 .group-label-description {
 }
 
-.group-label-text {
-	font-size: 120%;
-	font-weight: bold;
-}
-.group-description-text {
-	font-size: 100%;
-}
 
+/* not yet */
 .input-label-text {
-	font-size: 100%;
+	/* font-size: 100%; */
 }
 .input-description-text {
-	font-size: 90%;
+	/* font-size: 90%; */
 }

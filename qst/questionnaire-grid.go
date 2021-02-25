@@ -47,13 +47,14 @@ func (inp inputT) labelDescription(w io.Writer, langCode string) {
 	wOuter := &strings.Builder{}
 	if !inp.IsLayout() && inp.Name != "" {
 		fmt.Fprintf(wOuter, "<label for='%v'>%v</label>\n", inp.Name, wInner.String())
-		fmt.Fprintf(w, wOuter.String())
+		fmt.Fprint(w, wOuter.String())
 	} else {
-		fmt.Fprintf(w, wInner.String())
+		fmt.Fprint(w, wInner.String())
 	}
 
 }
 
+/*
 func (gr *groupT) labelDescription(w io.Writer, langCode string) {
 
 	if gr.Label == nil { // desc without label is ignored
@@ -71,6 +72,7 @@ func (gr *groupT) labelDescription(w io.Writer, langCode string) {
 	fmt.Fprintf(w, wInner.String())
 
 }
+*/
 
 //
 //
@@ -99,12 +101,14 @@ func (q QuestionnaireT) GroupHTMLGrid(pageIdx, grpIdx int) string {
 	//
 	wInner := &strings.Builder{} // inside the container
 
-	wGroupHeader := &strings.Builder{} // label and control of input
-	gr.labelDescription(wGroupHeader, q.LangCode)
-	style := ""
-	style += fmt.Sprintf("grid-column: auto / span %v;", gr.Cols)                       // we need this in a media-query class
-	style += fmt.Sprintf("margin-bottom: %vrem;", 0.5*float32(gr.HeaderBottomVSpacers)) // we need this in a media-query class
-	divWrap(wInner, "group-label-description grid-item ", style, wGroupHeader.String())
+	/*
+		wGroupHeader := &strings.Builder{} // label and control of input
+		gr.labelDescription(wGroupHeader, q.LangCode)
+		style := ""
+		style += fmt.Sprintf("grid-column: auto / span %v;", gr.Cols)                       // we need this in a media-query class
+		style += fmt.Sprintf("margin-bottom: %vrem;", 0.5*float32(gr.HeaderBottomVSpacers)) // we need this in a media-query class
+		divWrap(wInner, "group-label-description grid-item ", style, wGroupHeader.String())
+	*/
 
 	for inpIdx, inp := range gr.Inputs {
 		if inp.Type == "composit-scalar" {

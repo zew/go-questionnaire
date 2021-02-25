@@ -23,7 +23,7 @@ func getQ2Labels(version0to15 int, aOrB string) []string {
 	//                                    2*1 + 1            2*1 + 2
 	//                                    2*3 + 1            2*3 + 2
 	key := fmt.Sprintf("version-%02v-%02v", 2*version0to7+1, 2*version0to7+2)
-	log.Printf("key is %v", key)
+	// log.Printf("key is %v", key)
 
 	if aOrB == "a" {
 		return dataQ2[key][0]

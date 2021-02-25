@@ -603,7 +603,7 @@ func validateComposite(
 // GroupHTML renders a group of inputs to GroupHTML
 func (q QuestionnaireT) GroupHTML(pageIdx, grpIdx int) string {
 
-	if q.Pages[pageIdx].Groups[grpIdx].Style != nil {
+	if q.Version > 0 && q.Pages[pageIdx].Groups[grpIdx].Style != nil {
 		return q.GroupHTMLGrid(pageIdx, grpIdx)
 	}
 
@@ -613,7 +613,7 @@ func (q QuestionnaireT) GroupHTML(pageIdx, grpIdx int) string {
 	if gr.Width == 0 {
 		gr.Width = 100
 	}
-	fmt.Fprintf(
+	fmt.Fprint(
 		w,
 		fmt.Sprintf(
 			"<div class='go-quest-group' style='width:%v%%;'  cols='%v'>\n",
@@ -643,7 +643,7 @@ func (q QuestionnaireT) GroupHTML(pageIdx, grpIdx int) string {
 	// Find out when a new row starts
 	cols := 0 // cols counter
 	rows := 0
-	fmt.Fprintf(w, gr.TableOpen(rows))
+	fmt.Fprint(w, gr.TableOpen(rows))
 	for i, inp := range gr.Inputs {
 
 		if inp.Type == "composit-scalar" {
@@ -700,7 +700,7 @@ func (q QuestionnaireT) GroupHTML(pageIdx, grpIdx int) string {
 			}
 			if (cols+0)%gr.Cols == 0 && i < len(gr.Inputs)-1 {
 				rows++
-				fmt.Fprintf(w, gr.TableOpen(rows))
+				fmt.Fprint(w, gr.TableOpen(rows))
 			}
 		}
 	}
@@ -759,6 +759,8 @@ type QuestionnaireT struct {
 	MaxGroups  int `json:"max_groups,omitempty"` //  Max number of groups - computed during initialization.
 
 	Pages []*pageT `json:"pages,omitempty"`
+
+	Version int `json:"version,omitempty"` // 0 - rendering as HTML table   -   1 - rendering as CSS Grid
 }
 
 // registering all types, being saved into a session
@@ -997,7 +999,7 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 	// set width less than 100 percent, for i.e. radios more closely together
 
 	width := fmt.Sprintf(
-		"<div class='page-margins'  style='width: %v%%; margin: 0 auto; padding-left: %v%%' >",
+		"<div class='page-margins'  style='width: %v%%; margin: 0 auto; padding-left: %v%%' >\n",
 		p.Width, p.AestheticCompensation,
 	)
 	b.WriteString(width)
@@ -1066,11 +1068,16 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 
 	ret := b.String()
 
-	// Inject user data into HTML text
+	// inject user data into HTML text
 	// i.e. [attr-country] => Latvia
 	for k, v := range q.Attrs {
 		k1 := fmt.Sprintf("[attr-%v]", strings.ToLower(k))
 		ret = strings.Replace(ret, k1, v, -1)
+	}
+
+	if strings.Contains(ret, "(MISSING)") {
+		log.Printf("PageHTML() returns (MISSING). Reason:  Printf(w, fmt.Sprintf('xxx ... %% ... '))  -  remove suffix 'f' from outer call.")
+		// ret = strings.ReplaceAll(ret, "(MISSING)", "")
 	}
 
 	return ret, nil

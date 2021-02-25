@@ -16,7 +16,7 @@ require (
 	github.com/shurcooL/sanitized_anchor_name v1.0.0 // indirect
 	github.com/speps/go-hashids v2.0.0+incompatible
 	github.com/zew/logx v0.0.0-20180516170210-9f79c321751a
-	github.com/zew/util v0.0.0-20190309202910-a8bebbe09dc9
+	github.com/zew/util v1.0.5
 	go.opencensus.io v0.22.4 // indirect
 	gocloud.dev v0.20.0
 	golang.org/x/crypto v0.0.0-20200709230013-948cd5f35899

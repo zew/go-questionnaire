@@ -159,6 +159,12 @@ func (q *QuestionnaireT) Validate() error {
 				return fmt.Errorf("Page %v - Group %v - Number of columns must be greater 0: ", i1, i2)
 			}
 
+			if q.Version > 0 {
+				if q.Pages[i1].Groups[i2].Label != nil || q.Pages[i1].Groups[i2].Desc != nil {
+					return fmt.Errorf("Page %v - Group %v - No group label or descriptions - use textblock", i1, i2)
+				}
+			}
+
 			for i3 := 0; i3 < len(q.Pages[i1].Groups[i2].Inputs); i3++ {
 
 				s := fmt.Sprintf("Page %v - Group %v - Input %v: ", i1, i2, i3)
@@ -169,6 +175,9 @@ func (q *QuestionnaireT) Validate() error {
 					inp.ColSpanControl = 0
 					if inp.ColSpanLabel == 0 {
 						q.Pages[i1].Groups[i2].Inputs[i3].ColSpanLabel = 1
+					}
+					if inp.Name != "" {
+						return fmt.Errorf("%v: Type '%v' - no 'name' for textblock inputs ", s, inp.Type)
 					}
 				}
 
@@ -228,6 +237,7 @@ func (q *QuestionnaireT) Validate() error {
 		}
 	}
 
+	// preflight for composite funcs
 	// make sure, input names are unique
 	names := map[string]int{}
 	for i1 := 0; i1 < len(q.Pages); i1++ {
@@ -236,7 +246,7 @@ func (q *QuestionnaireT) Validate() error {
 			if q.Pages[i1].Groups[i2].HasComposit() {
 				compFuncNameWithParamSet := q.Pages[i1].Groups[i2].Inputs[0].DynamicFunc
 				cF, seqIdx, paramSetIdx := validateComposite(i1, i2, compFuncNameWithParamSet)
-				log.Printf("checking composit func '%v' for page %v, group %v", compFuncNameWithParamSet, i1, i2)
+				// log.Printf("checking composite func '%v' for page %v, group %v", compFuncNameWithParamSet, i1, i2)
 				_, _, err := cF(q, seqIdx, paramSetIdx)
 				if err != nil {
 					return fmt.Errorf(

@@ -236,6 +236,8 @@ github.com/zew/logx v0.0.0-20180516170210-9f79c321751a h1:NWo9TMhd6Le7k6SyfVoeVU
 github.com/zew/logx v0.0.0-20180516170210-9f79c321751a/go.mod h1:/FDlA/gcELT+vsz6h1cocqc7a2+XSkoqfPpfDxA+QOw=
 github.com/zew/util v0.0.0-20190309202910-a8bebbe09dc9 h1:eEOOExY28xlFZXq5mGwaQUr/cyi0YdW/El7I+SNEdkQ=
 github.com/zew/util v0.0.0-20190309202910-a8bebbe09dc9/go.mod h1:Dcww64EEP4RiUWy18dHiY3DFDsU5RgyB3SZ4KbRdkVI=
+github.com/zew/util v1.0.5 h1:AqVVNyaEDVaKsSaQno8X1in6zmhSCzvGqgrmFw+IEwM=
+github.com/zew/util v1.0.5/go.mod h1:aT6baif7k1N59OJFm8nA/McSNunkSMX7MaTUt7KxxWo=
 go.opencensus.io v0.15.0/go.mod h1:UffZAU+4sDEINUGP/B7UfBBkq4fqLu9zXAX7ke6CHW0=
 go.opencensus.io v0.21.0/go.mod h1:mSImk1erAIZhrmZN+AvHh14ztQfjbGwt4TtuofqLduU=
 go.opencensus.io v0.22.0/go.mod h1:+kGneAE2xo2IficOXnaByMWTGM9T73dGwxeWcUqIpI8=

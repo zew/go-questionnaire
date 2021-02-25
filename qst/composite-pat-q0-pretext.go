@@ -1,6 +1,10 @@
 package qst
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/zew/go-questionnaire/cfg"
+)
 
 var q1Pretext = []string{
 	"<p>In <b>Entscheidung 1</b> wird Stiftung A von drei Personen (%v) am besten eingestuft und von zwei weiteren am schlechtesten. Stiftung B wird von zwei Personen am besten eingestuft und von dreien mittel, und so weiter.</p>",
@@ -34,9 +38,8 @@ func PoliticalFoundationsPretext(q *QuestionnaireT, seq0to5, paramSetIdx int) (s
 
 	imgTag := fmt.Sprintf(
 		`<img src='%v' class='q1-pretext-img' >`,
-		// works on survey2.zew.de - not locally
-		// cfg.Pref("/img/pat/person.png"),
-		"/img/pat/person.png",
+		// since fully dynamic - this works across localhost and survey2.zew.de
+		cfg.Pref("/img/pat/person.png"),
 	)
 
 	return fmt.Sprintf(q1Pretext[zeroTo15], imgTag), []string{}, nil

@@ -143,7 +143,7 @@ type TextStyle struct {
 	LineHeight    int    `json:"line_height,omitempty"`
 	LetterSpacing string `json:"letter_spacing,omitempty"`
 
-	WhiteSpace string `json:"white_space,omitempty"`
+	WhiteSpace string `json:"white_space,omitempty"` // normal | nowrap | pre | pre-wrap | pre-line | break-spaces
 }
 
 func textStyleExample1() TextStyle {

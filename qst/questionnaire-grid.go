@@ -114,6 +114,8 @@ func (q QuestionnaireT) GroupHTMLGrid(pageIdx, grpIdx int) string {
 				wLbl := &strings.Builder{}
 				lblStyle := css.NewStylesResponsive()
 				lblStyle.Desktop.GridItemStyle.Col = fmt.Sprintf("auto / span %v", inp.ColSpanLabel)
+				lblStyle.Desktop.GridItemStyle.JustifySelf = "end"
+				lblStyle.Desktop.GridItemStyle.AlignSelf = "center"
 				lblClass := fmt.Sprintf("pg%02v-grp%02v-inp%02v-lbl", pageIdx, grpIdx, inpIdx)
 				fmt.Fprint(wCSS, lblStyle.CSS(lblClass))
 				inp.labelDescription(wLbl, q.LangCode)

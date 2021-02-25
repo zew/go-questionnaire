@@ -80,8 +80,8 @@ func (gcs GridContainerStyle) CSS() string {
 }
 
 type GridItemStyle struct {
-	JustifySelf string `json:"justify_self,omitempty"`
-	AlignSelf   string `json:"align_self,omitempty"`
+	JustifySelf string `json:"justify_self,omitempty"` // main axis   - item inside its 'cell' - stretch | baseline | center | start | end
+	AlignSelf   string `json:"align_self,omitempty"`   // second axis - item inside its 'cell' - stretch | baseline | center | start | end
 	Col         string `json:"col,omitempty"`
 	Row         string `json:"row,omitempty"`
 	Order       int    `json:"order,omitempty"`

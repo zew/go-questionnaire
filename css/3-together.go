@@ -63,6 +63,7 @@ func stylesResponsiveExampleWant(className string) string {
 
 }
 }
+
 `, className, className)
 }
 
@@ -84,26 +85,31 @@ func StyleTag(content string) string {
 
 // CSS renders styles
 func (gcr StylesResponsive) CSS(className string) string {
-	s := &strings.Builder{}
+	w := &strings.Builder{}
 
-	// fmt.Fprintf(s, "<style>\n")
+	// desktop
+	fmt.Fprintf(w, ".%v {\n", className)
+	fmt.Fprint(w, notEmpty("\t/* box-style */\n", gcr.Desktop.BoxStyle.CSS(), "\n"))
+	fmt.Fprint(w, notEmpty("\t/* grid-container */\n", gcr.Desktop.GridContainerStyle.CSS(), "\n"))
+	fmt.Fprint(w, notEmpty("\t/* grid-item */\n", gcr.Desktop.GridItemStyle.CSS(), "\n"))
+	fmt.Fprint(w, notEmpty("\t/* text-style */\n", gcr.Desktop.TextStyle.CSS(), "\n"))
+	fmt.Fprint(w, "}\n")
 
-	fmt.Fprintf(s, ".%v {\n", className)
-	fmt.Fprint(s, notEmpty("\t/* box-style */\n", gcr.Desktop.BoxStyle.CSS(), "\n"))
-	fmt.Fprint(s, notEmpty("\t/* grid-container */\n", gcr.Desktop.GridContainerStyle.CSS(), "\n"))
-	fmt.Fprint(s, notEmpty("\t/* grid-item */\n", gcr.Desktop.GridItemStyle.CSS(), "\n"))
-	fmt.Fprint(s, notEmpty("\t/* text-style */\n", gcr.Desktop.TextStyle.CSS(), "\n"))
-	fmt.Fprintf(s, "}\n")
+	// mobile
+	wMob := &strings.Builder{}
+	fmt.Fprint(wMob, notEmpty("\t/* box-style */\n", gcr.Mobile.BoxStyle.CSS(), "\n"))
+	fmt.Fprint(wMob, notEmpty("\t/* grid-container */\n", gcr.Mobile.GridContainerStyle.CSS(), "\n"))
+	fmt.Fprint(wMob, notEmpty("\t/* grid-item */\n", gcr.Mobile.GridItemStyle.CSS(), "\n"))
+	fmt.Fprint(wMob, notEmpty("\t/* text-style */\n", gcr.Mobile.TextStyle.CSS(), "\n"))
+	if wMob.Len() > 0 {
+		fmt.Fprint(w, "@media screen and (max-width: 800px) {\n")
+		fmt.Fprintf(w, ".%v {\n", className)
+		fmt.Fprint(w, wMob.String())
+		fmt.Fprint(w, "}\n")
+		fmt.Fprint(w, "}\n")
+	}
 
-	fmt.Fprintf(s, "@media screen and (max-width: 800px) {\n")
-	fmt.Fprintf(s, ".%v {\n", className)
-	fmt.Fprint(s, notEmpty("\t/* box-style */\n", gcr.Mobile.BoxStyle.CSS(), "\n"))
-	fmt.Fprint(s, notEmpty("\t/* grid-container */\n", gcr.Mobile.GridContainerStyle.CSS(), "\n"))
-	fmt.Fprint(s, notEmpty("\t/* grid-item */\n", gcr.Mobile.GridItemStyle.CSS(), "\n"))
-	fmt.Fprint(s, notEmpty("\t/* text-style */\n", gcr.Mobile.TextStyle.CSS(), "\n"))
-	fmt.Fprintf(s, "}\n")
-	fmt.Fprintf(s, "}\n")
+	fmt.Fprint(w, "\n")
 
-	// fmt.Fprintf(s, "</style>\n\n")
-	return s.String()
+	return w.String()
 }

@@ -178,11 +178,11 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Name = "inp01"
 				inp.Min = 10
 				inp.Max = 20
-				inp.MaxChars = 10
+				inp.MaxChars = 12
 				inp.Label = trl.S{"de": "inp 1 label"}
-				inp.Suffix = trl.S{"de": "inp 1 suffix"}
+				inp.Suffix = trl.S{"de": "sfx 1"}
 				inp.ColSpanLabel = 2
-				inp.ColSpanControl = 1
+				inp.ColSpanControl = 2
 			}
 
 			{
@@ -191,9 +191,9 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Name = "inp02"
 				inp.Min = 10
 				inp.Max = 20
-				inp.MaxChars = 10
+				inp.MaxChars = 2
 				inp.Label = trl.S{"de": "inp 2 label"}
-				inp.Suffix = trl.S{"de": "inp 2 suffix"}
+				inp.Suffix = trl.S{"de": "sfx 2"}
 				inp.ColSpanLabel = 1
 				inp.ColSpanControl = 1
 			}

@@ -31,8 +31,8 @@ var implementedTypes = map[string]interface{}{
 	"dynamic":   nil, // Executed a http request time, contains no inputs - can be used as dynamic label for following inputs
 
 	// fully dynamic composits
-	"composit":        nil, // executed at http request time, completeley free dynamic fragment of text and  multiple inputs
-	"composit-scalar": nil, // rendered by a composit
+	"composit":        nil, // executed at http request time, free dynamic fragment of text and multiple inputs
+	"composit-scalar": nil, // an input of a composit - rendered by the composit
 
 }
 

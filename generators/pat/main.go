@@ -105,16 +105,17 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 		{
 			gr := page.AddGroup()
-			gr.Cols = 1
+			gr.Cols = 6
 			gr.BottomVSpacers = 1
 
-			gr.Style = css.NewGridContainer()
+			gr.Style = css.NewStylesResponsive()
 			gr.Style.Desktop.BoxStyle.Width = "99.9%"
 			gr.Style.Mobile.BoxStyle.Width = "100%"
 
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
+				inp.ColSpanLabel = 5
 				// inp.Label = trl.S{"de": "input label"}
 				inp.Desc = trl.S{"de": `
 				<p><b>
@@ -169,6 +170,32 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				
 				`}
 
+			}
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "number"
+				inp.Name = "inp01"
+				inp.Min = 10
+				inp.Max = 20
+				inp.MaxChars = 10
+				inp.Label = trl.S{"de": "inp 1 label"}
+				inp.Suffix = trl.S{"de": "inp 1 suffix"}
+				inp.ColSpanLabel = 2
+				inp.ColSpanControl = 1
+			}
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "number"
+				inp.Name = "inp02"
+				inp.Min = 10
+				inp.Max = 20
+				inp.MaxChars = 10
+				inp.Label = trl.S{"de": "inp 2 label"}
+				inp.Suffix = trl.S{"de": "inp 2 suffix"}
+				inp.ColSpanLabel = 1
+				inp.ColSpanControl = 1
 			}
 
 		}

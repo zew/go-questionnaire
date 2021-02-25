@@ -15,62 +15,32 @@ type CSSer interface {
 	CSS(className string) string
 }
 
-/*
-
-
-
- */
-
-// Core styles - neither CSS container nor CSS item
-type Core struct {
-	BoxStyle  `json:"box_style,omitempty"`
-	TextStyle `json:"text_style,omitempty"`
-}
-
-// GridItem styles
-type GridItem struct {
-	GridItemStyle `json:"grid_item_style,omitempty"`
-	BoxStyle      `json:"box_style,omitempty"`
-	TextStyle     `json:"text_style,omitempty"`
-}
-
-// GridContainer styles
-type GridContainer struct {
+// Styles groups all possible styles;
+// there is no point in separating different sets
+type Styles struct {
 	GridContainerStyle `json:"grid_container_style,omitempty"`
 	BoxStyle           `json:"box_style,omitempty"`
+	GridItemStyle      `json:"grid_item_style,omitempty"`
+	TextStyle          `json:"text_style,omitempty"`
 }
 
-// CoreResponsive contains styles for labels or controls
-type CoreResponsive struct {
-	Desktop Core `json:"desktop,omitempty"`
-	Mobile  Core `json:"mobile,omitempty"`
+// StylesResponsive contains styles for CSS grid container
+type StylesResponsive struct {
+	Desktop Styles `json:"desktop,omitempty"`
+	Mobile  Styles `json:"mobile,omitempty"`
 }
 
-// NewCore returns style struct
-func NewCore() *CoreResponsive {
-	return &CoreResponsive{
-		Desktop: Core{},
-		Mobile:  Core{},
+// NewStylesResponsive returns style struct
+func NewStylesResponsive() *StylesResponsive {
+	return &StylesResponsive{
+		Desktop: Styles{},
+		Mobile:  Styles{},
 	}
 }
 
-// GridContainerResponsive contains styles for CSS grid container
-type GridContainerResponsive struct {
-	Desktop GridContainer `json:"desktop,omitempty"`
-	Mobile  GridContainer `json:"mobile,omitempty"`
-}
-
-// NewGridContainer returns style struct
-func NewGridContainer() *GridContainerResponsive {
-	return &GridContainerResponsive{
-		Desktop: GridContainer{},
-		Mobile:  GridContainer{},
-	}
-}
-
-// GridContainerResponsiveExample to test
-func GridContainerResponsiveExample() *GridContainerResponsive {
-	grSt := NewGridContainer()
+// stylesResponsiveExample to test
+func stylesResponsiveExample() *StylesResponsive {
+	grSt := NewStylesResponsive()
 
 	grSt.Desktop.GridContainerStyle.AutoFlow = "row"
 	grSt.Desktop.GridContainerStyle.TemplateColumns = "minmax(4rem, 2fr) minmax(4rem, 2fr) minmax(4rem, 2fr)"
@@ -79,22 +49,20 @@ func GridContainerResponsiveExample() *GridContainerResponsive {
 	return grSt
 }
 
-func gridContainerResponsiveExampleWant(className string) string {
-	return fmt.Sprintf(`<style>
-.%v {
+func stylesResponsiveExampleWant(className string) string {
+	return fmt.Sprintf(`.%v {
 	/* grid-container */
+	grid-auto-flow: row;
 	grid-template-columns: minmax(4rem, 2fr) minmax(4rem, 2fr) minmax(4rem, 2fr);
 
 }
 @media screen and (max-width: 800px) {
 .%v {
 	/* grid-container */
-	grid-auto-flow: row;
+	grid-auto-flow: col;
 
 }
 }
-</style>
-
 `, className, className)
 }
 
@@ -105,60 +73,37 @@ func notEmpty(prefix, s, suffix string) string {
 	return ""
 }
 
+// StyleTag wraps s into a style tag
+func StyleTag(content string) string {
+	s := &strings.Builder{}
+	fmt.Fprint(s, "<style>\n")
+	fmt.Fprint(s, content)
+	fmt.Fprint(s, "</style>\n\n")
+	return s.String()
+}
+
 // CSS renders styles
-func (gcr GridContainerResponsive) CSS(className string) string {
+func (gcr StylesResponsive) CSS(className string) string {
 	s := &strings.Builder{}
 
-	fmt.Fprintf(s, "<style>\n")
+	// fmt.Fprintf(s, "<style>\n")
 
 	fmt.Fprintf(s, ".%v {\n", className)
 	fmt.Fprint(s, notEmpty("\t/* box-style */\n", gcr.Desktop.BoxStyle.CSS(), "\n"))
 	fmt.Fprint(s, notEmpty("\t/* grid-container */\n", gcr.Desktop.GridContainerStyle.CSS(), "\n"))
+	fmt.Fprint(s, notEmpty("\t/* grid-item */\n", gcr.Desktop.GridItemStyle.CSS(), "\n"))
+	fmt.Fprint(s, notEmpty("\t/* text-style */\n", gcr.Desktop.TextStyle.CSS(), "\n"))
 	fmt.Fprintf(s, "}\n")
 
 	fmt.Fprintf(s, "@media screen and (max-width: 800px) {\n")
 	fmt.Fprintf(s, ".%v {\n", className)
 	fmt.Fprint(s, notEmpty("\t/* box-style */\n", gcr.Mobile.BoxStyle.CSS(), "\n"))
 	fmt.Fprint(s, notEmpty("\t/* grid-container */\n", gcr.Mobile.GridContainerStyle.CSS(), "\n"))
+	fmt.Fprint(s, notEmpty("\t/* grid-item */\n", gcr.Mobile.GridItemStyle.CSS(), "\n"))
+	fmt.Fprint(s, notEmpty("\t/* text-style */\n", gcr.Mobile.TextStyle.CSS(), "\n"))
 	fmt.Fprintf(s, "}\n")
 	fmt.Fprintf(s, "}\n")
 
-	fmt.Fprintf(s, "</style>\n\n")
-	return s.String()
-}
-
-// GridItemResponsive contains styles for CSS grid item
-type GridItemResponsive struct {
-	Desktop GridItem `json:"desktop,omitempty"`
-	Mobile  GridItem `json:"mobile,omitempty"`
-}
-
-// NewGridItem returns style struct
-func NewGridItem() *GridItemResponsive {
-	return &GridItemResponsive{
-		Desktop: GridItem{},
-		Mobile:  GridItem{},
-	}
-}
-
-// CSS renders styles
-func (gir GridItemResponsive) CSS(className string) string {
-	s := &strings.Builder{}
-
-	fmt.Fprintf(s, "<style>\n")
-
-	fmt.Fprintf(s, ".%v {\n", className)
-	fmt.Fprint(s, notEmpty("\t/* box-style */\n", gir.Desktop.BoxStyle.CSS(), "\n"))
-	fmt.Fprint(s, notEmpty("\t/* grid-item */\n", gir.Desktop.GridItemStyle.CSS(), "\n"))
-	fmt.Fprintf(s, "}\n")
-
-	fmt.Fprintf(s, "@media screen and (max-width: 800px) {\n")
-	fmt.Fprintf(s, ".%v {\n", className)
-	fmt.Fprint(s, notEmpty("\t/* box-style */\n", gir.Mobile.BoxStyle.CSS(), "\n"))
-	fmt.Fprint(s, notEmpty("\t/* grid-item */\n", gir.Mobile.GridItemStyle.CSS(), "\n"))
-	fmt.Fprintf(s, "}\n")
-	fmt.Fprintf(s, "}\n")
-
-	fmt.Fprintf(s, "</style>\n\n")
+	// fmt.Fprintf(s, "</style>\n\n")
 	return s.String()
 }

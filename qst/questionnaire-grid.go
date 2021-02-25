@@ -54,26 +54,6 @@ func (inp inputT) labelDescription(w io.Writer, langCode string) {
 
 }
 
-/*
-func (gr *groupT) labelDescription(w io.Writer, langCode string) {
-
-	if gr.Label == nil { // desc without label is ignored
-		return
-	}
-
-	wInner := &strings.Builder{}
-	if !gr.Label.Empty() {
-		fmt.Fprintf(wInner, " <span class='group-label-text' >%v</span>", gr.Label.Tr(langCode))
-	}
-	if !gr.Desc.Empty() {
-		fmt.Fprintf(wInner, " <span class='group-description-text' >%v</span>", gr.Desc.Tr(langCode))
-	}
-
-	fmt.Fprintf(w, wInner.String())
-
-}
-*/
-
 //
 //
 // GroupHTMLGrid renders a group of inputs to GroupHTMLGrid
@@ -85,7 +65,7 @@ func (q QuestionnaireT) GroupHTMLGrid(pageIdx, grpIdx int) string {
 	//
 	//
 	if gr.Style == nil {
-		gr.Style = css.NewGridContainer()
+		gr.Style = css.NewStylesResponsive()
 	}
 	gr.Style.Desktop.BoxStyle.Display = "grid"
 	if gr.Style.Desktop.GridContainerStyle.AutoFlow == "" {
@@ -101,15 +81,6 @@ func (q QuestionnaireT) GroupHTMLGrid(pageIdx, grpIdx int) string {
 	//
 	wInner := &strings.Builder{} // inside the container
 
-	/*
-		wGroupHeader := &strings.Builder{} // label and control of input
-		gr.labelDescription(wGroupHeader, q.LangCode)
-		style := ""
-		style += fmt.Sprintf("grid-column: auto / span %v;", gr.Cols)                       // we need this in a media-query class
-		style += fmt.Sprintf("margin-bottom: %vrem;", 0.5*float32(gr.HeaderBottomVSpacers)) // we need this in a media-query class
-		divWrap(wInner, "group-label-description grid-item ", style, wGroupHeader.String())
-	*/
-
 	for inpIdx, inp := range gr.Inputs {
 		if inp.Type == "composit-scalar" {
 			continue
@@ -119,20 +90,50 @@ func (q QuestionnaireT) GroupHTMLGrid(pageIdx, grpIdx int) string {
 		}
 
 		if inp.Style == nil {
-			inp.Style = css.NewGridItem()
+			inp.Style = css.NewStylesResponsive()
 		}
 		if inp.Style.Desktop.GridItemStyle.Col == "" {
+			// input wrapper is item      to group
 			inp.Style.Desktop.GridItemStyle.Col = fmt.Sprintf("auto / span %v", inp.ColSpanLabel+inp.ColSpanControl)
+
+			// input wrapper is container to label and control
+			inp.Style.Desktop.BoxStyle.Display = "grid"
+			if inp.Style.Desktop.GridContainerStyle.AutoFlow == "" {
+				inp.Style.Desktop.GridContainerStyle.AutoFlow = "row"
+			}
+			inp.Style.Desktop.GridContainerStyle.TemplateColumns = strings.Repeat("1fr ", inp.ColSpanLabel+inp.ColSpanControl)
 		}
 		gridItemClass := fmt.Sprintf("pg%02v-grp%02v-inp%02v", pageIdx, grpIdx, inpIdx)
 		fmt.Fprint(wCSS, inp.Style.CSS(gridItemClass))
 
 		wInp := &strings.Builder{} // label and control of input
-		inp.labelDescription(wInp, q.LangCode)
-		fmt.Fprint(wInp, q.InputHTMLGrid(pageIdx, grpIdx, inpIdx))
+
+		{
+
+			if inp.ColSpanLabel > 0 {
+				wLbl := &strings.Builder{}
+				lblStyle := css.NewStylesResponsive()
+				lblStyle.Desktop.GridItemStyle.Col = fmt.Sprintf("auto / span %v", inp.ColSpanLabel)
+				lblClass := fmt.Sprintf("pg%02v-grp%02v-inp%02v-lbl", pageIdx, grpIdx, inpIdx)
+				fmt.Fprint(wCSS, lblStyle.CSS(lblClass))
+				inp.labelDescription(wLbl, q.LangCode)
+				divWrap(wInp, lblClass+" grid-item-lvl-2", "", wLbl.String())
+			}
+
+			if inp.ColSpanControl > 0 {
+				wCtl := &strings.Builder{}
+				ctlStyle := css.NewStylesResponsive()
+				ctlStyle.Desktop.GridItemStyle.Col = fmt.Sprintf("auto / span %v", inp.ColSpanControl)
+				ctlClass := fmt.Sprintf("pg%02v-grp%02v-inp%02v-ctl", pageIdx, grpIdx, inpIdx)
+				fmt.Fprint(wCSS, ctlStyle.CSS(ctlClass))
+				fmt.Fprint(wCtl, q.InputHTMLGrid(pageIdx, grpIdx, inpIdx))
+				divWrap(wInp, ctlClass+" grid-item-lvl-2", "", wCtl.String())
+			}
+
+		}
 
 		//
-		divWrap(wInner, gridItemClass+" grid-item", "", wInp.String())
+		divWrap(wInner, gridItemClass+" grid-item-lvl-1", "", wInp.String())
 	}
 
 	//
@@ -141,7 +142,7 @@ func (q QuestionnaireT) GroupHTMLGrid(pageIdx, grpIdx int) string {
 	divWrap(wContainer, gridContainerClass+" grid-container", "", wInner.String())
 
 	w := &strings.Builder{}
-	fmt.Fprint(w, wCSS.String())
+	fmt.Fprint(w, css.StyleTag(wCSS.String()))
 	fmt.Fprint(w, wContainer.String())
 	return w.String()
 

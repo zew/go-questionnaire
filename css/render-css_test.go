@@ -48,8 +48,8 @@ func Test_renderResponsive(t *testing.T) {
 	}{
 		{
 			name:  "test-1",
-			csser: GridContainerResponsiveExample(),
-			want:  gridContainerResponsiveExampleWant("test-1"),
+			csser: stylesResponsiveExample(),
+			want:  stylesResponsiveExampleWant("test-1"),
 		},
 	}
 	for _, tt := range tests {

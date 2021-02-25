@@ -1,6 +1,6 @@
 package qst
 
-// Compposite inputs combine challenging HTML and
+// CompositFuncT inputs combine challenging HTML and
 // multiple inputs in complicated ways
 //
 // A composite func returns dynamic HTML with session values inserted from the questionnaire
@@ -23,9 +23,10 @@ package qst
 //   slice of input names
 //   error
 //
-type compositFuncT func(*QuestionnaireT, int, int) (string, []string, error)
+type CompositFuncT func(*QuestionnaireT, int, int) (string, []string, error)
 
-var compositeFuncs = map[string]compositFuncT{
+// CompositeFuncs is a lookup map
+var CompositeFuncs = map[string]CompositFuncT{
 	"PoliticalFoundationsPretext": PoliticalFoundationsPretext, // belongs to pat
 	"PoliticalFoundations":        PoliticalFoundations,        // belongs to pat
 	"TimePreferenceSelf":          TimePreferenceSelf,          // belongs to pat

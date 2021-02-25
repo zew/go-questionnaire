@@ -16,7 +16,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "8fc8e8a93a88fd74f619f04ab1390eea",
+ 	"md_5": "967670bf73715acab79360220953575b",
  	"lang_codes": [
  		"de"
  	],
@@ -87,14 +87,44 @@
  				{
  					"bottom_vspacers": 1,
  					"width": 100,
- 					"columns": 1,
+ 					"columns": 6,
  					"inputs": [
  						{
  							"type": "textblock",
  							"description": {
  								"de": "\n\t\t\t\t\u003cp\u003e\u003cb\u003e\n\t\t\t\tIm Folgenden geht es um eine Spende von 30 €, die \u003ci\u003eeine\u003c/i\u003e dieser drei Stif\u0026shy;tungen erhalten soll:\n\t\t\t\t\u003c/b\u003e\u003c/p\u003e\n\n\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\u003c!-- beware of hyphenization of css class names  --\u003e\n\t\t\t\t\u003cstyle\u003e\n\t\t\t\t\ttable.xxx01 td {\n\t\t\t\t\t\ttext-align: center;\n\t\t\t\t\t\ttext-align: center;\n\t\t\t\t\t}\n\t\t\t\t\u003c/style\u003e\n\n\t\t\t\t\u003ctable class=\"xxx01\"\u003e\n\t\t\t\t\u003ctr\u003e\n\t\t\t\t\t\u003ctd style=\"width: 33.2%\"\u003ePolitisch links\u003c/td\u003e\n\t\t\t\t\t\u003ctd style=\"width: 33.2%\"\u003ePolitische Mitte\u003c/td\u003e\n\t\t\t\t\t\u003ctd style=\"width: 33.2%\"\u003ePolitisch konservativ\u003c/td\u003e\n\t\t\t\t\u003ctr\u003e\n\t\t\t\t\u003ctr\u003e\n\t\t\t\t\t\u003ctd style=\"vertical-align: top;\" \u003e\u003cb\u003eHans-Böckler-Stif\u0026shy;tung\u003c/b\u003e\u003c/td\u003e\n\t\t\t\t\t\u003ctd style=\"vertical-align: top;\" \u003e\u003cb\u003eBund der Steuerzahler Deutsch\u0026shy;land e.V.\u003c/b\u003e\u003c/td\u003e\n\t\t\t\t\t\u003ctd style=\"vertical-align: top;\" \u003e\u003cb\u003eLudwig-Erhard-Stif\u0026shy;tung\u003c/b\u003e\u003c/td\u003e\n\t\t\t\t\u003ctr\u003e\n\t\t\t\t\u003c/table\u003e\n\n\t\t\t\t\u003cdiv class='vspacer-08'\u003e \u0026nbsp; \u003c/div\u003e\n\n\t\t\t\t\u003cp\u003e\n\t\t\t\tFür jede Ihrer ersten sechs Entscheidungen zeigen wir Ihnen die Präferenzen fünf deutscher Staatsangehöriger darüber, \n\t\t\t\twelche der drei Stif\u0026shy;tungen die Spende erhalten soll. \n\t\t\t\tSie entscheiden, wie die Präferenzen der fünf Personen in \u003ci\u003eeine\u003c/i\u003e gemeinsame Entscheidung zusammengefasst werden.\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp\u003e\n\t\t\t\tDie Präferenzen stammen von fünf Personen, die an einer Vorstudie teilgenommen haben\u003csup\u003e1)\u003c/sup\u003e. \n\t\t\t\tDiese fünf Personen wurden aus einer Stichprobe gezogen, in der sich gleich viele Personen politisch links, \n\t\t\t\tin der Mitte oder als konservativ einordnen. \n\t\t\t\tJede Person wurde einzeln befragt, welche der drei Stif\u0026shy;tungen sie als am besten, mittel, und am schlech\u0026shy;testen erachtet. \n\t\t\t\t\u003c/p\u003e\n\t\t\t\t\n\t\t\t\t\u003cp\u003e\n\t\t\t\tDen Personen wurde mitgeteilt, dass ihre Präferenzen \n\t\t\t\tzusammen mit den Präferenzen von vier anderen Personen \n\t\t\t\tan einen zukünftigen Teilnehmer der Studie gegeben werden, \n\t\t\t\tder die Präferenzen in eine Entscheidung zusammenfasst. \n\t\t\t\t\u003cb\u003eDieser zukünftige Teilnehmer sind Sie.\u003c/b\u003e\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t\n\t\t\t\t"
  							},
- 							"col_span_label": 1
+ 							"col_span_label": 5
+ 						},
+ 						{
+ 							"name": "inp01",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"min": 10,
+ 							"max": 20,
+ 							"label": {
+ 								"de": "inp 1 label"
+ 							},
+ 							"suffix": {
+ 								"de": "inp 1 suffix"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "inp02",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"min": 10,
+ 							"max": 20,
+ 							"label": {
+ 								"de": "inp 2 label"
+ 							},
+ 							"suffix": {
+ 								"de": "inp 2 suffix"
+ 							},
+ 							"col_span_label": 1,
+ 							"col_span_control": 1
  						}
  					],
  					"style": {
@@ -102,13 +132,17 @@
  							"grid_container_style": {},
  							"box_style": {
  								"width": "99.9%"
- 							}
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
  						},
  						"mobile": {
  							"grid_container_style": {},
  							"box_style": {
  								"width": "100%"
- 							}
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
  						}
  					}
  				},

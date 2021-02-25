@@ -200,7 +200,7 @@ func (q *QuestionnaireT) Validate() error {
 
 				if inp.Type == "text" || inp.Type == "number" || inp.Type == "textarea" || inp.Type == "dropdown" {
 					if inp.MaxChars < 1 {
-						return fmt.Errorf("%v: MaxChars for required", s)
+						return fmt.Errorf("%v: MaxChars setting required", s)
 					}
 				}
 

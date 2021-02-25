@@ -141,7 +141,7 @@ type inputT struct {
 	'composit' =>    first arg paramSetIdx, second arg seqIdx */
 	DynamicFunc string `json:"dynamic_func,omitempty"`
 
-	Style *css.GridItemResponsive `json:"style,omitempty"` // pointer, to avoid empty JSON blocks
+	Style *css.StylesResponsive `json:"style,omitempty"` // pointer, to avoid empty JSON blocks
 }
 
 // NewInput returns an input filled in with globally enumerated label, decription etc.
@@ -491,7 +491,7 @@ type groupT struct {
 	Inputs             []*inputT `json:"inputs,omitempty"`
 	RandomizationGroup int       `json:"randomization_group,omitempty"` // > 0 => group can be repositioned for randomization
 
-	Style *css.GridContainerResponsive `json:"style,omitempty"` // pointer, to avoid empty JSON blocks
+	Style *css.StylesResponsive `json:"style,omitempty"` // pointer, to avoid empty JSON blocks
 }
 
 // AddInput creates a new input
@@ -542,7 +542,7 @@ func (gr groupT) HasComposit() bool {
 
 // returns the func, the sequence idx, the param set idx
 func validateComposite(
-	pageIdx, grpIdx int, compFuncNameWithParamSet string) (compositFuncT, int, int) {
+	pageIdx, grpIdx int, compFuncNameWithParamSet string) (CompositFuncT, int, int) {
 
 	splt := strings.Split(compFuncNameWithParamSet, "__")
 	if len(splt) != 3 {
@@ -557,7 +557,7 @@ func validateComposite(
 	}
 
 	compFuncName := splt[0]
-	cF, ok := compositeFuncs[compFuncName]
+	cF, ok := CompositeFuncs[compFuncName]
 	if !ok {
 		log.Panicf(
 			`page %v group %v: 

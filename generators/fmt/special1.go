@@ -16,22 +16,24 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 		return nil
 	}
 
-	p := q.AddPage()
-	p.Section = trl.S{"de": "Sonderfrage", "en": "Special"}
-	p.Label = trl.S{"de": "Prognosetreiber Wachstum", "en": "Growth drivers"}
-	p.Short = trl.S{"de": "Sonderfrage:<br>Wachstums-<br>treiber", "en": "Special:<br>Growth<br>drivers"}
-	p.Width = 80
+	page := q.AddPage()
+	page.Section = trl.S{"de": "Sonderfrage", "en": "Special"}
+	page.Label = trl.S{"de": "Prognosetreiber Wachstum", "en": "Growth drivers"}
+	page.Short = trl.S{"de": "Sonderfrage:<br>Wachstums-<br>treiber", "en": "Special:<br>Growth<br>drivers"}
+	page.Width = 80
 
 	{
-		gr := p.AddGroup()
+		gr := page.AddGroup()
 		gr.Cols = 9
-		gr.Label = trl.S{
-			"de": "1.",
-			"en": "1.",
-		}
-		gr.Desc = trl.S{
-			"de": "Punktprognose der Wachstumsrate des deutschen BIP",
-			"en": "Forecast growth rate German GDP",
+
+		{
+			inp := gr.AddInput()
+			inp.Type = "textblock"
+			inp.ColSpanLabel = 9
+			inp.Desc = trl.S{
+				"de": "<b>1.</b> Punktprognose der Wachstumsrate des deutschen BIP",
+				"en": "<b>1.</b> Forecast growth rate German GDP",
+			}
 		}
 
 		/*
@@ -58,8 +60,10 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 			inp := gr.AddInput()
 			inp.Type = "number"
 			inp.Name = "xquart1"
-			inp.MaxChars = 4
-			inp.Validator = "inRange20"
+			inp.Min = 0
+			inp.Max = 20
+			inp.MaxChars = 3
+			// inp.Validator = "inRange20"
 			inp.Desc = trl.S{
 				"de": nextQ(-1),
 				"en": nextQ(-1),
@@ -75,8 +79,10 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 			inp := gr.AddInput()
 			inp.Type = "number"
 			inp.Name = "xquart2"
-			inp.MaxChars = 4
-			inp.Validator = "inRange20"
+			inp.Min = 0
+			inp.Max = 20
+			inp.MaxChars = 3
+			// inp.Validator = "inRange20"
 			inp.Desc = trl.S{
 				"de": nextQ(0),
 				"en": nextQ(0),
@@ -91,8 +97,10 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 			inp := gr.AddInput()
 			inp.Type = "number"
 			inp.Name = "xquart3"
-			inp.MaxChars = 4
-			inp.Validator = "inRange20"
+			inp.Min = 0
+			inp.Max = 20
+			inp.MaxChars = 3
+			// inp.Validator = "inRange20"
 			inp.Desc = trl.S{
 				"de": nextQ(),
 				"en": nextQ(),
@@ -120,8 +128,10 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 			inp := gr.AddInput()
 			inp.Type = "number"
 			inp.Name = "xyear1"
-			inp.MaxChars = 4
-			inp.Validator = "inRange20"
+			inp.Min = 0
+			inp.Max = 20
+			inp.MaxChars = 3
+			// inp.Validator = "inRange20"
 			inp.Desc = trl.S{
 				"de": nextY(0),
 				"en": nextY(0),
@@ -137,8 +147,10 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 			inp := gr.AddInput()
 			inp.Type = "number"
 			inp.Name = "xyear2"
-			inp.MaxChars = 4
-			inp.Validator = "inRange20"
+			inp.Min = 0
+			inp.Max = 20
+			inp.MaxChars = 3
+			// inp.Validator = "inRange20"
 			inp.Desc = trl.S{
 				"de": nextY(1),
 				"en": nextY(1),
@@ -153,8 +165,10 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 			inp := gr.AddInput()
 			inp.Type = "number"
 			inp.Name = "xyear3"
-			inp.MaxChars = 4
-			inp.Validator = "inRange20"
+			inp.Min = 0
+			inp.Max = 20
+			inp.MaxChars = 3
+			// inp.Validator = "inRange20"
 			inp.Desc = trl.S{
 				"de": nextY(2),
 				"en": nextY(2),
@@ -170,6 +184,19 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 	}
 
 	// gr1
+	{
+		gr := page.AddGroup()
+		gr.Cols = 1
+		gr.BottomVSpacers = 0
+		{
+			inp := gr.AddInput()
+			inp.Type = "textblock"
+			inp.Desc = trl.S{
+				"de": "<b>2.</b> Haben Entwicklungen in den folgenden Bereichen Sie zu einer Revision Ihrer Konjunkturprognosen (ggü. Vormonat) für die deutsche Wirtschaft bewogen und wenn ja in welche Richtung?",
+				"en": "<b>2.</b> Which developments have lead you to change your assessment of the business cycle outlook for the German economy compared to the previous month",
+			}
+		}
+	}
 	{
 		labels123Matrix := []trl.S{
 			{
@@ -216,18 +243,10 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 			"iobc_gvt_form_deu",
 			"iobc_other",
 		}
-		gr := p.AddRadioMatrixGroup(labelsStronglyPositiveStronglyNegativeInfluence(),
+		gr := page.AddRadioMatrixGroup(labelsStronglyPositiveStronglyNegativeInfluence(),
 			names1stMatrix, labels123Matrix, 2)
 		gr.Cols = 8 // necessary, otherwise no vspacers
 		gr.OddRowsColoring = true
-		gr.Label = trl.S{
-			"de": "2.",
-			"en": "2.",
-		}
-		gr.Desc = trl.S{
-			"de": "Haben Entwicklungen in den folgenden Bereichen Sie zu einer Revision Ihrer Konjunkturprognosen (ggü. Vormonat) für die deutsche Wirtschaft bewogen und wenn ja in welche Richtung?",
-			"en": "Which developments have lead you to change your assessment of the business cycle outlook for the German economy compared to the previous month",
-		}
 
 		{
 			inp := gr.AddInput()

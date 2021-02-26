@@ -11,7 +11,7 @@
  		},
  		"year": 2021,
  		"month": 2,
- 		"deadline": "2030-01-01T00:00:00Z",
+ 		"deadline": "2021-02-28T23:59:00Z",
  		"params": [
  			{
  				"name": "main_refinance_rate_ecb",
@@ -21,12 +21,12 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "1d41a6079c27f85aec91a25406c11bf9",
+ 	"md_5": "131f6480b39f5da09f8397b315345890",
  	"lang_codes": [
  		"de",
  		"en"
  	],
- 	"max_groups": 4,
+ 	"max_groups": 8,
  	"pages": [
  		{
  			"label": {
@@ -50,8 +50,8 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "",
- 								"en": ""
+ 								"de": "\n\t\u003cdiv class='markdown'\u003e\n\u003cp\u003e\r\nSehr geehrte Finanzmarktexpertin, sehr geehrter Finanzmarktexperte, herzlich willkommen beim ZEW-Finanzmarkttest. \r\n\r\nDurch klicken auf \u003ccode\u003eWeiter\u003c/code\u003e werden Ihre Antworten gespeichert und Sie gelangen zur jeweils nächsten Seite. \r\n\r\nBei einer Unterbrechung (Schließen des Browsers) bleiben Ihre Antworten erhalten und können später über Ihren persönlichen Link wieder aufgerufen und geändert werden.\r\n\r\nAm Ende der Befragung können Sie den Fragebogen abschließen, so dass keine weiteren Änderungen möglich sind. \r\n\r\n\r\n\r\u003c/p\u003e\n\n\u003ch3\u003eDatenschutz\r\u003c/h3\u003e\n\n\u003cp\u003e\r\nHier finden Sie unsere \u003ca href=\"https://www.zew.de/de/datenschutz/\"\u003eDatenschutz-Grundlagen\u003c/a\u003e.\r\n\r\nIhre An\u0026shy;gaben werden streng vertraulich behandelt. \r\n\r\nDie Auswertung Ihrer Antworten erfolgt als \u003ca href=\"https://de.wikipedia.org/wiki/Paneldaten\"\u003ePanel-Datensatz\u003c/a\u003e in anonymisierter Form.\r\n\r\nIhre Daten werden auf einem geschützten Server im ZEW Hauptgebäude gespeichert, auf den nur Mitglieder des ZEW Teams für den Finanzmarkttest Zugriff haben.\r\n\r\nZusätzlich bitten wir um Ihr Einverständnis, dass wir Ihre Antworten \r\nintern mit Ihrer geschäftlichen Identität verknüpfen. \r\n\r\nIhre geschäftliche Identität besteht aus Ihrem Namen, Ihrer Funktion, geschäftl. Email und Telefonnummer, Arbeitgeber und Teilnahmebeginn.\r\u003c/p\u003e\n\n\t\u003c/div\u003e  \u003c!-- markdown --\u003e\n",
+ 								"en": "\n\t\u003cdiv class='markdown'\u003e\n\u003cp\u003eDear expert, welcome to the ZEW financial markets survey .\r\n\r\nBy clicking \u003ccode\u003eNext\u003c/code\u003e your an\u0026shy;swers will be saved and you progress to the next page.\r\n\r\nIn case of an interruption (closing of the web browser) your an\u0026shy;swers remain saved. You can re-use your personal link to continue and change your an\u0026shy;swers.\r\n\r\nAt the end you can finalize the questionnaire preventing further changes.\r\n\r\n\r\u003c/p\u003e\n\n\u003ch3\u003ePrivacy Protection\r\u003c/h3\u003e\n\n\u003cp\u003e\r\n\r\nPlease notice our \u003ca href=\"https://www.zew.de/en/datenschutz/\"\u003eprivacy protection policy\u003c/a\u003e.\r\n\r\nYour data will we treated strictly confidential.\r\n\r\nData processing is done as as \u003ca href=\"https://en.wikipedia.org/wiki/Panel_data\"\u003epanel data set\u003c/a\u003e in anonymized form.\r\n\r\nYour data will be stored on a protected server on the premises of ZEW Ltd. Only members of the financial markets team have access to this server.\r\n\r\nIn addition we ask for permission to internally as\u0026shy;so\u0026shy;ci\u0026shy;ate your an\u0026shy;swers with your busi\u0026shy;ness identity.\r\n\r\nYour busi\u0026shy;ness identity consists of name, role, work phone and email, employer and start of contribution.\r\n\r\n\r\n\r\n\r\u003c/p\u003e\n\n\t\u003c/div\u003e  \u003c!-- markdown --\u003e\n"
  							},
  							"css_label": "special-line-height-higher",
  							"col_span_label": 3
@@ -130,6 +130,7 @@
  							},
  							"accesskey": "n",
  							"horizontal_align_control": 2,
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"response": "1"
  						}
@@ -159,14 +160,20 @@
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
  				{
- 					"label": {
- 						"de": "1.",
- 						"en": "1."
- 					},
- 					"description": {
- 						"de": "Die gesamtwirtschaftliche Situation beurteilen wir als",
- 						"en": "We assess the overall economic situation as"
- 					},
+ 					"width": 100,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\u003cb\u003e1.\u003c/b\u003e Die gesamtwirtschaftliche Situation beurteilen wir als",
+ 								"en": "\u003cb\u003e1.\u003c/b\u003e We assess the overall eco\u0026shy;nom\u0026shy;ic situation as"
+ 							},
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				},
+ 				{
  					"bottom_vspacers": 3,
  					"odd_rows_coloring": true,
  					"width": 100,
@@ -186,7 +193,8 @@
  								"de": "gut",
  								"en": "good"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"col_span_label": 1
  						},
  						{
  							"type": "textblock",
@@ -194,7 +202,8 @@
  								"de": "normal",
  								"en": "normal"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"col_span_label": 1
  						},
  						{
  							"type": "textblock",
@@ -202,7 +211,8 @@
  								"de": "schlecht",
  								"en": "bad"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"col_span_label": 1
  						},
  						{
  							"type": "textblock",
@@ -210,7 +220,8 @@
  								"de": "keine\u003cbr\u003eAn\u0026shy;gabe",
  								"en": "no an\u0026shy;swer"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"col_span_label": 1
  						},
  						{
  							"name": "y0_ez",
@@ -323,14 +334,21 @@
  					]
  				},
  				{
- 					"label": {
- 						"de": "2a.",
- 						"en": "2a."
- 					},
- 					"description": {
- 						"de": "Die gesamtwirtschaftliche Situation wird sich mittelfristig (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;Mo.)",
- 						"en": "The overall economic situation medium term (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;months) will"
- 					},
+ 					"bottom_vspacers": 3,
+ 					"width": 100,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\u003cb\u003e2a.\u003c/b\u003e Die gesamtwirtschaftliche Situation wird sich mittel\u0026shy;fristig (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;Mo.)",
+ 								"en": "\u003cb\u003e2a.\u003c/b\u003e The overall eco\u0026shy;nom\u0026shy;ic situation medium term (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;months) will"
+ 							},
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				},
+ 				{
  					"bottom_vspacers": 3,
  					"odd_rows_coloring": true,
  					"width": 100,
@@ -350,7 +368,8 @@
  								"de": "verbessern",
  								"en": "improve"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"col_span_label": 1
  						},
  						{
  							"type": "textblock",
@@ -358,7 +377,8 @@
  								"de": "nicht verändern",
  								"en": "not change"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"col_span_label": 1
  						},
  						{
  							"type": "textblock",
@@ -366,7 +386,8 @@
  								"de": "ver\u0026shy;schlechtern",
  								"en": "deteriorate"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"col_span_label": 1
  						},
  						{
  							"type": "textblock",
@@ -374,7 +395,8 @@
  								"de": "keine\u003cbr\u003eAn\u0026shy;gabe",
  								"en": "no an\u0026shy;swer"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"col_span_label": 1
  						},
  						{
  							"name": "y_ez",
@@ -487,14 +509,21 @@
  					]
  				},
  				{
- 					"label": {
- 						"de": "2b.",
- 						"en": "2b."
- 					},
- 					"description": {
- 						"de": "Die gesamtwirtschaftliche Situation wird sich langfristig (\u003cb\u003e24\u003c/b\u003e\u0026nbsp;Mo.)",
- 						"en": "The overall economic situation long term (\u003cb\u003e24\u003c/b\u003e\u0026nbsp;months) will"
- 					},
+ 					"bottom_vspacers": 3,
+ 					"width": 100,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\u003cb\u003e2b.\u003c/b\u003e Die gesamtwirtschaftliche Situation wird sich lang\u0026shy;fristig (\u003cb\u003e24\u003c/b\u003e\u0026nbsp;Mo.)",
+ 								"en": "\u003cb\u003e2b.\u003c/b\u003e The overall eco\u0026shy;nom\u0026shy;ic situation long term (\u003cb\u003e24\u003c/b\u003e\u0026nbsp;months) will"
+ 							},
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				},
+ 				{
  					"bottom_vspacers": 3,
  					"odd_rows_coloring": true,
  					"width": 100,
@@ -514,7 +543,8 @@
  								"de": "verbessern",
  								"en": "improve"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"col_span_label": 1
  						},
  						{
  							"type": "textblock",
@@ -522,7 +552,8 @@
  								"de": "nicht verändern",
  								"en": "not change"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"col_span_label": 1
  						},
  						{
  							"type": "textblock",
@@ -530,7 +561,8 @@
  								"de": "ver\u0026shy;schlechtern",
  								"en": "deteriorate"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"col_span_label": 1
  						},
  						{
  							"type": "textblock",
@@ -538,7 +570,8 @@
  								"de": "keine\u003cbr\u003eAn\u0026shy;gabe",
  								"en": "no an\u0026shy;swer"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"col_span_label": 1
  						},
  						{
  							"name": "y24_ez",
@@ -667,18 +700,23 @@
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
  				{
- 					"label": {
- 						"de": "3a.",
- 						"en": "3a."
- 					},
  					"bottom_vspacers": 3,
  					"width": 100,
  					"columns": 5,
  					"inputs": [
  						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\u003cb\u003e3a.\u003c/b\u003e ",
+ 								"en": "\u003cb\u003e3a.\u003c/b\u003e "
+ 							},
+ 							"col_span_label": 5
+ 						},
+ 						{
  							"name": "y_q_deu",
  							"type": "number",
- 							"max_chars": 4,
+ 							"max_chars": 3,
+ 							"max": 20,
  							"description": {
  								"de": "Unsere Prognose für das \u003cb\u003edeutsche\u003c/b\u003e BIP Wachstum in Q2 2021 (real, saisonbereinigt, nicht annualisiert):",
  								"en": "Our estimate for the \u003cb\u003eGerman\u003c/b\u003e GDP growth in Q2 2021 (real, seasonally adjusted, non annualized):"
@@ -687,13 +725,13 @@
  								"de": "%",
  								"en": "pct"
  							},
- 							"col_span_label": 4,
- 							"validator": "inRange20"
+ 							"col_span_label": 4
  						},
  						{
  							"name": "y_y_deu",
  							"type": "number",
- 							"max_chars": 4,
+ 							"max_chars": 3,
+ 							"max": 50,
  							"description": {
  								"de": "Unsere Prognose für das BIP Wachstum für das Jahr 2022 (real, saisonbereinigt):",
  								"en": "Our estimate for the GDP growth in 2022 (real, seasonally adjusted):"
@@ -702,24 +740,28 @@
  								"de": "%",
  								"en": "pct"
  							},
- 							"col_span_label": 4,
- 							"validator": "inRange20"
+ 							"col_span_label": 4
  						}
  					]
  				},
  				{
- 					"label": {
- 						"de": "3b.",
- 						"en": "3b."
- 					},
  					"bottom_vspacers": 3,
  					"width": 100,
  					"columns": 5,
  					"inputs": [
  						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\u003cb\u003e3b.\u003c/b\u003e ",
+ 								"en": "\u003cb\u003e3b.\u003c/b\u003e "
+ 							},
+ 							"col_span_label": 5
+ 						},
+ 						{
  							"name": "yshr_q_deu",
  							"type": "number",
  							"max_chars": 4,
+ 							"max": 100,
  							"description": {
  								"de": "Die Wahrscheinlichkeit eines neg\u0026shy;ativen Wachstums des \u003cb\u003edeutschen\u003c/b\u003e BIP in Q2 2021 liegt bei:",
  								"en": "The probability of neg\u0026shy;ative growth for the \u003cb\u003eGerman\u003c/b\u003e GDP in Q2 2021 is:"
@@ -728,13 +770,13 @@
  								"de": "%",
  								"en": "pct"
  							},
- 							"col_span_label": 4,
- 							"validator": "inRange100"
+ 							"col_span_label": 4
  						},
  						{
  							"name": "yshr_y_deu",
  							"type": "number",
  							"max_chars": 4,
+ 							"max": 100,
  							"description": {
  								"de": "Die Wahrscheinlichkeit einer Rezession in Deutsch\u0026shy;land (mind. 2\u0026nbsp;Quartale neg. Wachstum) bis Q4 2022 liegt bei:",
  								"en": "The probability of a recession in Germany (at least 2\u0026nbsp;quarters neg. growth) until Q4 2022 is:"
@@ -743,8 +785,7 @@
  								"de": "%",
  								"en": "pct"
  							},
- 							"col_span_label": 4,
- 							"validator": "inRange100"
+ 							"col_span_label": 4
  						}
  					]
  				}
@@ -769,14 +810,20 @@
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
  				{
- 					"label": {
- 						"de": "4.",
- 						"en": "4."
- 					},
- 					"description": {
- 						"de": "Die jährl. gesamtwirtschaftl. Inflationsrate wird mittelfristig (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;Mo.)",
- 						"en": "Medium term (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;months) yearly overall inflation rate will"
- 					},
+ 					"width": 100,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\u003cb\u003e4.\u003c/b\u003e Die jährl. gesamtwirtschaftl. Inflationsrate wird mittel\u0026shy;fristig (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;Mo.)",
+ 								"en": "\u003cb\u003e4.\u003c/b\u003e Medium term (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;months) yearly overall inflation rate will"
+ 							},
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				},
+ 				{
  					"bottom_vspacers": 3,
  					"odd_rows_coloring": true,
  					"width": 90,
@@ -796,7 +843,8 @@
  								"de": "steigen",
  								"en": "in\u0026shy;crease"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"col_span_label": 1
  						},
  						{
  							"type": "textblock",
@@ -804,7 +852,8 @@
  								"de": "gleich bleiben",
  								"en": "remain un\u0026shy;changed"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"col_span_label": 1
  						},
  						{
  							"type": "textblock",
@@ -812,7 +861,8 @@
  								"de": "sinken",
  								"en": "de\u0026shy;crease"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"col_span_label": 1
  						},
  						{
  							"type": "textblock",
@@ -820,7 +870,8 @@
  								"de": "keine\u003cbr\u003eAn\u0026shy;gabe",
  								"en": "no an\u0026shy;swer"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"col_span_label": 1
  						},
  						{
  							"name": "pi_ez",
@@ -879,23 +930,24 @@
  					]
  				},
  				{
- 					"label": {
- 						"de": "5a.",
- 						"en": "5a."
- 					},
- 					"description": {
- 						"de": "Die \u003cb\u003ekurzfristigen\u003c/b\u003e Zinsen (3-Mo.-Interbanksätze) im \u003cb\u003eEuroraum\u003c/b\u003e erwarten wir auf Sicht von 6\u0026nbsp;Monaten",
- 						"en": "We expect \u003cb\u003eshort term\u003c/b\u003e interest rates (3 months interbank) in the \u003cb\u003eeuro area\u003c/b\u003e"
- 					},
  					"header_bottom_vspacers": 1,
  					"bottom_vspacers": 3,
  					"width": 100,
  					"columns": 100,
  					"inputs": [
  						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\u003cb\u003e5a.\u003c/b\u003e Die \u003cb\u003ekurzfristigen\u003c/b\u003e Zinsen (3-Mo.-Interbanksätze) im \u003cb\u003eEuroraum\u003c/b\u003e erwarten wir auf Sicht von 6\u0026nbsp;Monaten",
+ 								"en": "\u003cb\u003e5a.\u003c/b\u003e We expect \u003cb\u003eshort term\u003c/b\u003e interest rates (3 months interbank) in the \u003cb\u003eeuro area\u003c/b\u003e"
+ 							},
+ 							"col_span_label": 100
+ 						},
+ 						{
  							"name": "i_ez_low",
  							"type": "number",
- 							"max_chars": 4,
+ 							"max_chars": 3,
+ 							"max": 20,
  							"description": {
  								"de": "zwischen\u0026nbsp;",
  								"en": "between\u0026nbsp;"
@@ -906,13 +958,13 @@
  							},
  							"horizontal_align_label": 2,
  							"col_span_label": 10,
- 							"col_span_control": 12,
- 							"validator": "inRange20"
+ 							"col_span_control": 12
  						},
  						{
  							"name": "i_ez_high",
  							"type": "number",
- 							"max_chars": 4,
+ 							"max_chars": 3,
+ 							"max": 20,
  							"description": {
  								"de": "und",
  								"en": "and"
@@ -922,8 +974,7 @@
  								"en": "pct"
  							},
  							"col_span_label": 4,
- 							"col_span_control": 74,
- 							"validator": "inRange20"
+ 							"col_span_control": 74
  						},
  						{
  							"type": "textblock",
@@ -945,23 +996,24 @@
  					]
  				},
  				{
- 					"label": {
- 						"de": "5b.",
- 						"en": "5b."
- 					},
- 					"description": {
- 						"de": "Die \u003cb\u003elangfristigen\u003c/b\u003e Zinsen (Renditen 10jg. Staatsanleihen) in \u003cb\u003eDeutschland\u003c/b\u003e erwarten wir auf Sicht von 6\u0026nbsp;Monaten",
- 						"en": "We expect \u003cb\u003elong term\u003c/b\u003e interest rates in \u003cb\u003eGermany\u003c/b\u003e in 6\u0026nbsp;months"
- 					},
  					"header_bottom_vspacers": 1,
  					"bottom_vspacers": 3,
  					"width": 100,
  					"columns": 100,
  					"inputs": [
  						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\u003cb\u003e5b.\u003c/b\u003e Die \u003cb\u003elang\u0026shy;fristigen\u003c/b\u003e Zinsen (Renditen 10jg. Staatsanleihen) in \u003cb\u003eDeutsch\u0026shy;land\u003c/b\u003e erwarten wir auf Sicht von 6\u0026nbsp;Monaten",
+ 								"en": "\u003cb\u003e5b.\u003c/b\u003e We expect \u003cb\u003elong term\u003c/b\u003e interest rates in \u003cb\u003eGermany\u003c/b\u003e in 6\u0026nbsp;months"
+ 							},
+ 							"col_span_label": 100
+ 						},
+ 						{
  							"name": "r_deu_low",
  							"type": "number",
  							"max_chars": 4,
+ 							"max": 100,
  							"description": {
  								"de": "zwischen\u0026nbsp;",
  								"en": "between\u0026nbsp;"
@@ -972,13 +1024,13 @@
  							},
  							"horizontal_align_label": 2,
  							"col_span_label": 10,
- 							"col_span_control": 12,
- 							"validator": "inRange100"
+ 							"col_span_control": 12
  						},
  						{
  							"name": "r_deu_high",
  							"type": "number",
  							"max_chars": 4,
+ 							"max": 100,
  							"description": {
  								"de": "und",
  								"en": "and"
@@ -988,8 +1040,7 @@
  								"en": "pct"
  							},
  							"col_span_label": 4,
- 							"col_span_control": 74,
- 							"validator": "inRange100"
+ 							"col_span_control": 74
  						},
  						{
  							"type": "textblock",
@@ -1034,14 +1085,24 @@
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
  				{
- 					"label": {
- 						"de": "6a.",
- 						"en": "6a."
- 					},
- 					"description": {
- 						"de": "Wie schätzen Sie die Kreditsituation in Deutschland ein?",
- 						"en": "How do you assess credit conditions in Germany?"
- 					},
+ 					"width": 100,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "6a.",
+ 								"en": "6a."
+ 							},
+ 							"description": {
+ 								"de": "\u003cb\u003e6a.\u003c/b\u003e Wie schätzen Sie die Kreditsituation in Deutsch\u0026shy;land ein?",
+ 								"en": "\u003cb\u003e6a.\u003c/b\u003e How do you assess credit conditions in Germany?"
+ 							},
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				},
+ 				{
  					"bottom_vspacers": 3,
  					"odd_rows_coloring": true,
  					"width": 100,
@@ -1061,7 +1122,8 @@
  								"de": "sehr hoch",
  								"en": "very high"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"col_span_label": 1
  						},
  						{
  							"type": "textblock",
@@ -1069,7 +1131,8 @@
  								"de": "hoch",
  								"en": "high"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"col_span_label": 1
  						},
  						{
  							"type": "textblock",
@@ -1077,7 +1140,8 @@
  								"de": "normal",
  								"en": "normal"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"col_span_label": 1
  						},
  						{
  							"type": "textblock",
@@ -1085,7 +1149,8 @@
  								"de": "niedrig",
  								"en": "low"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"col_span_label": 1
  						},
  						{
  							"type": "textblock",
@@ -1093,7 +1158,8 @@
  								"de": "sehr niedrig",
  								"en": "very low"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"col_span_label": 1
  						},
  						{
  							"type": "textblock",
@@ -1101,7 +1167,8 @@
  								"de": "keine\u003cbr\u003eAn\u0026shy;gabe",
  								"en": "no an\u0026shy;swer"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"col_span_label": 1
  						},
  						{
  							"name": "cd_deu",
@@ -1176,14 +1243,24 @@
  					]
  				},
  				{
- 					"label": {
- 						"de": "6b.",
- 						"en": "6b."
- 					},
- 					"description": {
- 						"de": "Das (saisonbereinigte) Gesamtvolumen der Neukreditvergabe in Deutschland wird",
- 						"en": "The seasonally adjusted volume of new credit in Germany will"
- 					},
+ 					"width": 100,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "6a.",
+ 								"en": "6a."
+ 							},
+ 							"description": {
+ 								"de": "\u003cb\u003e6b.\u003c/b\u003e Das (saisonbereinigte) Gesamtvolumen der Neukreditvergabe in Deutsch\u0026shy;land wird",
+ 								"en": "\u003cb\u003e6b.\u003c/b\u003e The seasonally adjusted volume of new credit in Germany will"
+ 							},
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				},
+ 				{
  					"bottom_vspacers": 3,
  					"odd_rows_coloring": true,
  					"width": 100,
@@ -1203,7 +1280,8 @@
  								"de": "stark steigen",
  								"en": "strong\u0026shy;ly in\u0026shy;crease"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"col_span_label": 1
  						},
  						{
  							"type": "textblock",
@@ -1211,7 +1289,8 @@
  								"de": "steigen",
  								"en": "in\u0026shy;crease"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"col_span_label": 1
  						},
  						{
  							"type": "textblock",
@@ -1219,7 +1298,8 @@
  								"de": "gleich bleiben",
  								"en": "remain un\u0026shy;changed"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"col_span_label": 1
  						},
  						{
  							"type": "textblock",
@@ -1227,7 +1307,8 @@
  								"de": "sinken",
  								"en": "de\u0026shy;crease"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"col_span_label": 1
  						},
  						{
  							"type": "textblock",
@@ -1235,7 +1316,8 @@
  								"de": "stark sinken",
  								"en": "strong\u0026shy;ly de\u0026shy;crease"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"col_span_label": 1
  						},
  						{
  							"type": "textblock",
@@ -1243,7 +1325,8 @@
  								"de": "keine\u003cbr\u003eAn\u0026shy;gabe",
  								"en": "no an\u0026shy;swer"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"col_span_label": 1
  						},
  						{
  							"name": "c0_6",
@@ -1318,14 +1401,24 @@
  					]
  				},
  				{
- 					"label": {
- 						"de": "6c.",
- 						"en": "6c."
- 					},
- 					"description": {
- 						"de": "Die (saisonbereinigte) Kreditnachfrage wird mittelfristig (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;Mo.)",
- 						"en": "The seasonally adjusted credit demand medium term (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;months) will be"
- 					},
+ 					"width": 100,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "6a.",
+ 								"en": "6a."
+ 							},
+ 							"description": {
+ 								"de": "\u003cb\u003e6c.\u003c/b\u003e Die (saisonbereinigte) Kredit\u0026shy;nach\u0026shy;frage wird mittel\u0026shy;fristig (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;Mo.)",
+ 								"en": "\u003cb\u003e6c.\u003c/b\u003e The seasonally adjusted credit demand medium term (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;months) will be"
+ 							},
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				},
+ 				{
  					"bottom_vspacers": 3,
  					"odd_rows_coloring": true,
  					"width": 100,
@@ -1345,7 +1438,8 @@
  								"de": "stark steigen",
  								"en": "strong\u0026shy;ly in\u0026shy;crease"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"col_span_label": 1
  						},
  						{
  							"type": "textblock",
@@ -1353,7 +1447,8 @@
  								"de": "steigen",
  								"en": "in\u0026shy;crease"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"col_span_label": 1
  						},
  						{
  							"type": "textblock",
@@ -1361,7 +1456,8 @@
  								"de": "gleich bleiben",
  								"en": "remain un\u0026shy;changed"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"col_span_label": 1
  						},
  						{
  							"type": "textblock",
@@ -1369,7 +1465,8 @@
  								"de": "sinken",
  								"en": "de\u0026shy;crease"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"col_span_label": 1
  						},
  						{
  							"type": "textblock",
@@ -1377,7 +1474,8 @@
  								"de": "stark sinken",
  								"en": "strong\u0026shy;ly de\u0026shy;crease"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"col_span_label": 1
  						},
  						{
  							"type": "textblock",
@@ -1385,7 +1483,8 @@
  								"de": "keine\u003cbr\u003eAn\u0026shy;gabe",
  								"en": "no an\u0026shy;swer"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"col_span_label": 1
  						},
  						{
  							"name": "cd_24_le",
@@ -1549,14 +1648,20 @@
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
  				{
- 					"label": {
- 						"de": "6d.",
- 						"en": "6d."
- 					},
- 					"description": {
- 						"de": "Wie schätzen Sie den Einfluss folgender Faktoren auf die mittelfristige (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;Mo.) Veränderung des Kreditangebots ein?",
- 						"en": "How do you assess the influence of following factors on the medium term (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;months) change of credit supply?"
- 					},
+ 					"width": 100,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\u003cb\u003e6d.\u003c/b\u003e Wie schätzen Sie den Einfluss folgender Faktoren auf die mittel\u0026shy;fristige (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;Mo.) Veränderung des Kredit\u0026shy;angebots ein?",
+ 								"en": "\u003cb\u003e6d.\u003c/b\u003e How do you assess the in\u0026shy;fluence of following factors on the medium term (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;months) change of credit supply?"
+ 							},
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				},
+ 				{
  					"bottom_vspacers": 3,
  					"odd_rows_coloring": true,
  					"width": 100,
@@ -1576,7 +1681,8 @@
  								"de": "sehr positiv",
  								"en": "very pos\u0026shy;itive"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"col_span_label": 1
  						},
  						{
  							"type": "textblock",
@@ -1584,7 +1690,8 @@
  								"de": "positiv",
  								"en": "pos\u0026shy;itive"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"col_span_label": 1
  						},
  						{
  							"type": "textblock",
@@ -1592,7 +1699,8 @@
  								"de": "neutral",
  								"en": "neutral"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"col_span_label": 1
  						},
  						{
  							"type": "textblock",
@@ -1600,7 +1708,8 @@
  								"de": "negativ",
  								"en": "neg\u0026shy;ative"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"col_span_label": 1
  						},
  						{
  							"type": "textblock",
@@ -1608,7 +1717,8 @@
  								"de": "sehr negativ",
  								"en": "very neg\u0026shy;ative"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"col_span_label": 1
  						},
  						{
  							"type": "textblock",
@@ -1616,7 +1726,8 @@
  								"de": "keine\u003cbr\u003eAn\u0026shy;gabe",
  								"en": "no an\u0026shy;swer"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"col_span_label": 1
  						},
  						{
  							"name": "c_inf_6_dr",
@@ -1831,14 +1942,20 @@
  					]
  				},
  				{
- 					"label": {
- 						"de": "6e.",
- 						"en": "6e."
- 					},
- 					"description": {
- 						"de": "Die (saisonbereinigte) Kreditstandards für Neukredite werden mittelfristig (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;Mo.)",
- 						"en": "The seasonally adjusted credit standards medium term (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;months) will"
- 					},
+ 					"width": 100,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\u003cb\u003e6e.\u003c/b\u003e Die (saisonbereinigte) Kreditstandards für Neukredite werden mittel\u0026shy;fristig (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;Mo.)",
+ 								"en": "\u003cb\u003e6e.\u003c/b\u003e The seasonally adjusted credit standards medium term (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;months) will"
+ 							},
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				},
+ 				{
  					"bottom_vspacers": 3,
  					"odd_rows_coloring": true,
  					"width": 100,
@@ -1858,7 +1975,8 @@
  								"de": "stark steigen",
  								"en": "strong\u0026shy;ly in\u0026shy;crease"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"col_span_label": 1
  						},
  						{
  							"type": "textblock",
@@ -1866,7 +1984,8 @@
  								"de": "steigen",
  								"en": "in\u0026shy;crease"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"col_span_label": 1
  						},
  						{
  							"type": "textblock",
@@ -1874,7 +1993,8 @@
  								"de": "gleich bleiben",
  								"en": "remain un\u0026shy;changed"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"col_span_label": 1
  						},
  						{
  							"type": "textblock",
@@ -1882,7 +2002,8 @@
  								"de": "sinken",
  								"en": "de\u0026shy;crease"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"col_span_label": 1
  						},
  						{
  							"type": "textblock",
@@ -1890,7 +2011,8 @@
  								"de": "stark sinken",
  								"en": "strong\u0026shy;ly de\u0026shy;crease"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"col_span_label": 1
  						},
  						{
  							"type": "textblock",
@@ -1898,7 +2020,8 @@
  								"de": "keine\u003cbr\u003eAn\u0026shy;gabe",
  								"en": "no an\u0026shy;swer"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"col_span_label": 1
  						},
  						{
  							"name": "c_std_6_le",
@@ -2066,14 +2189,20 @@
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
  				{
- 					"label": {
- 						"de": "7a.",
- 						"en": "7a."
- 					},
- 					"description": {
- 						"de": "Die folgenden Aktienindizes / Rohstoffpreise / Wechselkurse werden mittelfristig (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;Mo.)",
- 						"en": "Following stock indices / raw materials / exchange rates will medium term (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;months)"
- 					},
+ 					"width": 100,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\u003cb\u003e7a.\u003c/b\u003e Die folgenden Aktienindizes / Rohstoffpreise / Wechselkurse werden mittel\u0026shy;fristig (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;Mo.)",
+ 								"en": "\u003cb\u003e7a.\u003c/b\u003e Following stock indices / raw materials / exchange rates will medium term (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;months)"
+ 							},
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				},
+ 				{
  					"bottom_vspacers": 3,
  					"odd_rows_coloring": true,
  					"width": 100,
@@ -2093,7 +2222,8 @@
  								"de": "steigen",
  								"en": "in\u0026shy;crease"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"col_span_label": 1
  						},
  						{
  							"type": "textblock",
@@ -2101,7 +2231,8 @@
  								"de": "gleich bleiben",
  								"en": "remain un\u0026shy;changed"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"col_span_label": 1
  						},
  						{
  							"type": "textblock",
@@ -2109,7 +2240,8 @@
  								"de": "sinken",
  								"en": "de\u0026shy;crease"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"col_span_label": 1
  						},
  						{
  							"type": "textblock",
@@ -2117,7 +2249,8 @@
  								"de": "keine\u003cbr\u003eAn\u0026shy;gabe",
  								"en": "no an\u0026shy;swer"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"col_span_label": 1
  						},
  						{
  							"name": "sto_dax",
@@ -2230,10 +2363,20 @@
  					]
  				},
  				{
- 					"label": {
- 						"de": "7b.",
- 						"en": "7b."
- 					},
+ 					"width": 100,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\u003cb\u003e7b.\u003c/b\u003e",
+ 								"en": "\u003cb\u003e7b.\u003c/b\u003e"
+ 							},
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				},
+ 				{
  					"bottom_vspacers": 3,
  					"width": 100,
  					"columns": 100,
@@ -2242,6 +2385,8 @@
  							"name": "dax_6",
  							"type": "number",
  							"max_chars": 6,
+ 							"min": 1000,
+ 							"max": 50000,
  							"description": {
  								"de": "Den DAX erwarten wir in 6\u0026nbsp;Monaten bei ",
  								"en": "We expect the German DAX in 6\u0026nbsp;month at"
@@ -2251,13 +2396,14 @@
  								"en": "points"
  							},
  							"col_span_label": 55,
- 							"col_span_control": 45,
- 							"validator": "inRange50000"
+ 							"col_span_control": 45
  						},
  						{
  							"name": "dax_6_low",
  							"type": "number",
  							"max_chars": 6,
+ 							"min": 1000,
+ 							"max": 50000,
  							"description": {
  								"de": "Mit einer Wahrscheinlichkeit von 90\u0026nbsp;Prozent wird der DAX dann zwischen ",
  								"en": "With 90\u0026nbsp;percent probability, the DAX will then be between"
@@ -2267,31 +2413,37 @@
  								"en": "points \u0026nbsp; and "
  							},
  							"col_span_label": 55,
- 							"col_span_control": 21,
- 							"validator": "inRange50000"
+ 							"col_span_control": 21
  						},
  						{
  							"name": "dax_6_high",
  							"type": "number",
  							"max_chars": 6,
+ 							"min": 1000,
+ 							"max": 50000,
  							"suffix": {
  								"de": "Punkten liegen.",
  								"en": "points"
  							},
- 							"col_span_control": 24,
- 							"validator": "inRange50000"
+ 							"col_span_control": 24
  						}
  					]
  				},
  				{
- 					"label": {
- 						"de": "7c.",
- 						"en": "7c."
- 					},
- 					"description": {
- 						"de": "Aus Sicht der Fundamentaldaten der DAX-Unternehmen ist der DAX derzeit",
- 						"en": "The fundamentals of the companies comprising the DAX make the DAX currently"
- 					},
+ 					"width": 100,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\u003cb\u003e7c.\u003c/b\u003e Aus Sicht der Fundamentaldaten der DAX-Unternehmen ist der DAX derzeit",
+ 								"en": "\u003cb\u003e7c.\u003c/b\u003e The fundamentals of the companies comprising the DAX make the DAX currently"
+ 							},
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				},
+ 				{
  					"header_bottom_vspacers": 1,
  					"bottom_vspacers": 3,
  					"width": 100,
@@ -2336,14 +2488,20 @@
  					]
  				},
  				{
- 					"label": {
- 						"de": "8.",
- 						"en": "8."
- 					},
- 					"description": {
- 						"de": "Die Wahrscheinlichkeit für ein Extremereignis im deutschen Finanzmarkt liegt",
- 						"en": "The probability for an extreme event in the German financial markets is"
- 					},
+ 					"width": 100,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\u003cb\u003e8.\u003c/b\u003e Die Wahrscheinlichkeit für ein Extremereignis im deutschen Finanzmarkt liegt",
+ 								"en": "\u003cb\u003e8.\u003c/b\u003e The probability for an extreme event in the German financial markets is"
+ 							},
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				},
+ 				{
  					"header_bottom_vspacers": 1,
  					"bottom_vspacers": 3,
  					"width": 100,
@@ -2353,6 +2511,7 @@
  							"name": "crash_low",
  							"type": "number",
  							"max_chars": 4,
+ 							"max": 100,
  							"description": {
  								"de": " mittel\u0026shy;fristig (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;Mo.) bei  ",
  								"en": " medium term (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;months) at "
@@ -2363,13 +2522,13 @@
  							},
  							"horizontal_align_label": 2,
  							"col_span_label": 22,
- 							"col_span_control": 12,
- 							"validator": "inRange100"
+ 							"col_span_control": 12
  						},
  						{
  							"name": "crash_high",
  							"type": "number",
  							"max_chars": 4,
+ 							"max": 100,
  							"description": {
  								"de": "und lang\u0026shy;fristig (\u003cb\u003e24\u003c/b\u003e\u0026nbsp;Mo.) bei ",
  								"en": "and long term (\u003cb\u003e24\u003c/b\u003e\u0026nbsp;months) at "
@@ -2380,8 +2539,7 @@
  							},
  							"horizontal_align_label": 2,
  							"col_span_label": 26,
- 							"col_span_control": 40,
- 							"validator": "inRange100"
+ 							"col_span_control": 40
  						}
  					]
  				}
@@ -2409,18 +2567,18 @@
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
  				{
- 					"label": {
- 						"de": "1.",
- 						"en": "1."
- 					},
- 					"description": {
- 						"de": "Punktprognose der Wachstumsrate des deutschen BIP",
- 						"en": "Forecast growth rate German GDP"
- 					},
  					"bottom_vspacers": 3,
  					"width": 100,
  					"columns": 9,
  					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\u003cb\u003e1.\u003c/b\u003e Punktprognose der Wachstumsrate des deutschen BIP",
+ 								"en": "\u003cb\u003e1.\u003c/b\u003e Forecast growth rate German GDP"
+ 							},
+ 							"col_span_label": 9
+ 						},
  						{
  							"type": "textblock",
  							"description": {
@@ -2433,7 +2591,8 @@
  						{
  							"name": "xquart1",
  							"type": "number",
- 							"max_chars": 4,
+ 							"max_chars": 3,
+ 							"max": 20,
  							"description": {
  								"de": "Q4 2020",
  								"en": "Q4 2020"
@@ -2443,12 +2602,13 @@
  								"en": "pct"
  							},
  							"horizontal_align_label": 2,
- 							"validator": "inRange20"
+ 							"col_span_label": 1
  						},
  						{
  							"name": "xquart2",
  							"type": "number",
- 							"max_chars": 4,
+ 							"max_chars": 3,
+ 							"max": 20,
  							"description": {
  								"de": "Q1 2021",
  								"en": "Q1 2021"
@@ -2458,12 +2618,13 @@
  								"en": "pct"
  							},
  							"horizontal_align_label": 2,
- 							"validator": "inRange20"
+ 							"col_span_label": 1
  						},
  						{
  							"name": "xquart3",
  							"type": "number",
- 							"max_chars": 4,
+ 							"max_chars": 3,
+ 							"max": 20,
  							"description": {
  								"de": "Q2 2021",
  								"en": "Q2 2021"
@@ -2473,7 +2634,7 @@
  								"en": "pct"
  							},
  							"horizontal_align_label": 2,
- 							"validator": "inRange20"
+ 							"col_span_label": 1
  						},
  						{
  							"type": "textblock",
@@ -2486,7 +2647,8 @@
  						{
  							"name": "xyear1",
  							"type": "number",
- 							"max_chars": 4,
+ 							"max_chars": 3,
+ 							"max": 20,
  							"description": {
  								"de": "2021",
  								"en": "2021"
@@ -2496,12 +2658,13 @@
  								"en": "pct"
  							},
  							"horizontal_align_label": 2,
- 							"validator": "inRange20"
+ 							"col_span_label": 1
  						},
  						{
  							"name": "xyear2",
  							"type": "number",
- 							"max_chars": 4,
+ 							"max_chars": 3,
+ 							"max": 20,
  							"description": {
  								"de": "2022",
  								"en": "2022"
@@ -2511,12 +2674,13 @@
  								"en": "pct"
  							},
  							"horizontal_align_label": 2,
- 							"validator": "inRange20"
+ 							"col_span_label": 1
  						},
  						{
  							"name": "xyear3",
  							"type": "number",
- 							"max_chars": 4,
+ 							"max_chars": 3,
+ 							"max": 20,
  							"description": {
  								"de": "2023",
  								"en": "2023"
@@ -2526,19 +2690,25 @@
  								"en": "pct"
  							},
  							"horizontal_align_label": 2,
- 							"validator": "inRange20"
+ 							"col_span_label": 1
  						}
  					]
  				},
  				{
- 					"label": {
- 						"de": "2.",
- 						"en": "2."
- 					},
- 					"description": {
- 						"de": "Haben Entwicklungen in den folgenden Bereichen Sie zu einer Revision Ihrer Konjunkturprognosen (ggü. Vormonat) für die deutsche Wirtschaft bewogen und wenn ja in welche Richtung?",
- 						"en": "Which developments have lead you to change your assessment of the business cycle outlook for the German economy compared to the previous month"
- 					},
+ 					"width": 100,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\u003cb\u003e2.\u003c/b\u003e Haben Entwicklungen in den folgenden Bereichen Sie zu einer Revision Ihrer Konjunkturprognosen (ggü. Vormonat) für die deutsche Wirtschaft bewogen und wenn ja in welche Richtung?",
+ 								"en": "\u003cb\u003e2.\u003c/b\u003e Which de\u0026shy;vel\u0026shy;op\u0026shy;ments have lead you to change your assessment of the busi\u0026shy;ness cycle outlook for the German econ\u0026shy;o\u0026shy;my compared to the previous month"
+ 							},
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				},
+ 				{
  					"bottom_vspacers": 3,
  					"odd_rows_coloring": true,
  					"width": 100,
@@ -2558,7 +2728,8 @@
  								"de": "stark positiv",
  								"en": "strong\u0026shy;ly pos\u0026shy;itive"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"col_span_label": 1
  						},
  						{
  							"type": "textblock",
@@ -2566,7 +2737,8 @@
  								"de": "positiv",
  								"en": "pos\u0026shy;itive"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"col_span_label": 1
  						},
  						{
  							"type": "textblock",
@@ -2574,7 +2746,8 @@
  								"de": "kein Einfluss",
  								"en": "no in\u0026shy;fluence"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"col_span_label": 1
  						},
  						{
  							"type": "textblock",
@@ -2582,7 +2755,8 @@
  								"de": "negativ",
  								"en": "neg\u0026shy;ative"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"col_span_label": 1
  						},
  						{
  							"type": "textblock",
@@ -2590,7 +2764,8 @@
  								"de": "stark negativ",
  								"en": "strong\u0026shy;ly neg\u0026shy;ative"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"col_span_label": 1
  						},
  						{
  							"type": "textblock",
@@ -2598,7 +2773,8 @@
  								"de": "keine\u003cbr\u003eAn\u0026shy;gabe",
  								"en": "no an\u0026shy;swer"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"col_span_label": 1
  						},
  						{
  							"name": "iobc_cycle_data_deu",
@@ -2918,19 +3094,19 @@
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
  				{
- 					"label": {
- 						"de": "1.",
- 						"en": "1."
- 					},
- 					"description": {
- 						"de": "Punktprognose der jährlichen Inflationsrate im Euroraum",
- 						"en": "Forecast yearly inflation rate in the Euro area"
- 					},
  					"header_bottom_vspacers": 1,
  					"bottom_vspacers": 3,
  					"width": 100,
  					"columns": 9,
  					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\u003cb\u003e1.\u003c/b\u003e Punktprognose der jährlichen Inflationsrate im Euroraum",
+ 								"en": "\u003cb\u003e1.\u003c/b\u003e Forecast yearly inflation rate in the Euro area"
+ 							},
+ 							"col_span_label": 9
+ 						},
  						{
  							"type": "textblock",
  							"description": {
@@ -2942,7 +3118,9 @@
  						{
  							"name": "p1_y1",
  							"type": "number",
- 							"max_chars": 4,
+ 							"max_chars": 3,
+ 							"min": -10,
+ 							"max": 20,
  							"description": {
  								"de": "2021",
  								"en": "2021"
@@ -2952,12 +3130,14 @@
  								"en": "pct"
  							},
  							"horizontal_align_label": 2,
- 							"validator": "inRange20"
+ 							"col_span_label": 1
  						},
  						{
  							"name": "p1_y2",
  							"type": "number",
- 							"max_chars": 4,
+ 							"max_chars": 3,
+ 							"min": -10,
+ 							"max": 20,
  							"description": {
  								"de": "2022",
  								"en": "2022"
@@ -2967,12 +3147,14 @@
  								"en": "pct"
  							},
  							"horizontal_align_label": 2,
- 							"validator": "inRange20"
+ 							"col_span_label": 1
  						},
  						{
  							"name": "p1_y3",
  							"type": "number",
- 							"max_chars": 4,
+ 							"max_chars": 3,
+ 							"min": -10,
+ 							"max": 20,
  							"description": {
  								"de": "2023",
  								"en": "2023"
@@ -2982,19 +3164,25 @@
  								"en": "pct"
  							},
  							"horizontal_align_label": 2,
- 							"validator": "inRange20"
+ 							"col_span_label": 1
  						}
  					]
  				},
  				{
- 					"label": {
- 						"de": "2.",
- 						"en": "2."
- 					},
- 					"description": {
- 						"de": "Haben Entwicklungen in den folgenden Bereichen Sie zu einer Revision Ihrer Inflationsprognosen (ggü. Vormonat) für den Euroraum bewogen und wenn ja in welche Richtung?",
- 						"en": "Which developments have lead you to change your assessment of the inflation outlook for the Euro are compared to the previous month"
- 					},
+ 					"width": 100,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\u003cb\u003e2.\u003c/b\u003e Haben Entwicklungen in den folgenden Bereichen Sie zu einer Revision Ihrer Inflationsprognosen (ggü. Vormonat) für den Euroraum bewogen und wenn ja in welche Richtung?",
+ 								"en": "\u003cb\u003e2.\u003c/b\u003e Which de\u0026shy;vel\u0026shy;op\u0026shy;ments have lead you to change your assessment of the inflation outlook for the Euro are compared to the previous month"
+ 							},
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				},
+ 				{
  					"bottom_vspacers": 3,
  					"odd_rows_coloring": true,
  					"width": 100,
@@ -3014,7 +3202,8 @@
  								"de": "stark positiv",
  								"en": "strong\u0026shy;ly pos\u0026shy;itive"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"col_span_label": 1
  						},
  						{
  							"type": "textblock",
@@ -3022,7 +3211,8 @@
  								"de": "positiv",
  								"en": "pos\u0026shy;itive"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"col_span_label": 1
  						},
  						{
  							"type": "textblock",
@@ -3030,7 +3220,8 @@
  								"de": "kein Einfluss",
  								"en": "no in\u0026shy;fluence"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"col_span_label": 1
  						},
  						{
  							"type": "textblock",
@@ -3038,7 +3229,8 @@
  								"de": "negativ",
  								"en": "neg\u0026shy;ative"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"col_span_label": 1
  						},
  						{
  							"type": "textblock",
@@ -3046,7 +3238,8 @@
  								"de": "stark negativ",
  								"en": "strong\u0026shy;ly neg\u0026shy;ative"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"col_span_label": 1
  						},
  						{
  							"type": "textblock",
@@ -3054,7 +3247,8 @@
  								"de": "keine\u003cbr\u003eAn\u0026shy;gabe",
  								"en": "no an\u0026shy;swer"
  							},
- 							"horizontal_align_label": 1
+ 							"horizontal_align_label": 1,
+ 							"col_span_label": 1
  						},
  						{
  							"name": "ioi_cycle_data_ea",
@@ -3269,19 +3463,19 @@
  					]
  				},
  				{
- 					"label": {
- 						"de": "3.",
- 						"en": "3."
- 					},
- 					"description": {
- 						"de": "Den Hauptrefinanzierungssatz der EZB (am 3) erwarte ich auf Sicht von",
- 						"en": "I expect the main refinance rate of the ECB (3) in"
- 					},
  					"header_bottom_vspacers": 1,
  					"bottom_vspacers": 3,
  					"width": 100,
  					"columns": 100,
  					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\u003cb\u003e3.\u003c/b\u003e Den Hauptre\u0026shy;finanz\u0026shy;ierungssatz der EZB (am 3) erwarte ich auf Sicht von",
+ 								"en": "\u003cb\u003e3.\u003c/b\u003e I expect the main refinance rate of the ECB (3) in"
+ 							},
+ 							"col_span_label": 100
+ 						},
  						{
  							"type": "textblock",
  							"description": {
@@ -3295,7 +3489,9 @@
  						{
  							"name": "i_ez_06_low",
  							"type": "number",
- 							"max_chars": 4,
+ 							"max_chars": 3,
+ 							"min": -10,
+ 							"max": 20,
  							"description": {
  								"de": "zwischen\u0026nbsp;",
  								"en": "between\u0026nbsp;"
@@ -3307,13 +3503,14 @@
  							"horizontal_align_label": 2,
  							"css_label": "special-line-height-higher",
  							"col_span_label": 7,
- 							"col_span_control": 9,
- 							"validator": "inRange20"
+ 							"col_span_control": 9
  						},
  						{
  							"name": "i_ez_06_high",
  							"type": "number",
- 							"max_chars": 4,
+ 							"max_chars": 3,
+ 							"min": -10,
+ 							"max": 20,
  							"description": {
  								"de": "und",
  								"en": "and"
@@ -3323,8 +3520,7 @@
  								"en": "pct"
  							},
  							"col_span_label": 3,
- 							"col_span_control": 73,
- 							"validator": "inRange20"
+ 							"col_span_control": 73
  						},
  						{
  							"type": "textblock",
@@ -3339,7 +3535,9 @@
  						{
  							"name": "i_ez_24_low",
  							"type": "number",
- 							"max_chars": 4,
+ 							"max_chars": 3,
+ 							"min": -10,
+ 							"max": 20,
  							"description": {
  								"de": "zwischen\u0026nbsp;",
  								"en": "between\u0026nbsp;"
@@ -3351,13 +3549,14 @@
  							"horizontal_align_label": 2,
  							"css_label": "special-line-height-higher",
  							"col_span_label": 7,
- 							"col_span_control": 9,
- 							"validator": "inRange20"
+ 							"col_span_control": 9
  						},
  						{
  							"name": "i_ez_24_high",
  							"type": "number",
- 							"max_chars": 4,
+ 							"max_chars": 3,
+ 							"min": -10,
+ 							"max": 20,
  							"description": {
  								"de": "und",
  								"en": "and"
@@ -3367,8 +3566,7 @@
  								"en": "pct"
  							},
  							"col_span_label": 3,
- 							"col_span_control": 73,
- 							"validator": "inRange20"
+ 							"col_span_control": 73
  						},
  						{
  							"type": "textblock",
@@ -3414,10 +3612,6 @@
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
  				{
- 					"label": {
- 						"de": "",
- 						"en": ""
- 					},
  					"bottom_vspacers": 3,
  					"width": 100,
  					"columns": 1,
@@ -3504,6 +3698,7 @@
  								"en": "OK"
  							},
  							"accesskey": "n",
+ 							"col_span_label": 1,
  							"col_span_control": 1,
  							"response": "10"
  						}
@@ -3543,14 +3738,16 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "",
- 								"en": ""
+ 								"de": "\n\t\u003cdiv class='markdown'\u003e\n\u003ch1\u003eHinweise\u003c/h1\u003e\n\n\u003cul\u003e\n\u003cli\u003e\u003cp\u003eDurch klicken auf \u003ccode\u003eWeiter\u003c/code\u003e werden Ihre Antworten gespeichert und Sie gelangen zur jeweils nächsten Seite.\u003c/p\u003e\u003c/li\u003e\n\n\u003cli\u003e\u003cp\u003eBei einer Unterbrechung (Schließen des Browsers) bleiben Ihre Antworten erhalten und können später über Ihren persönlichen Link wieder aufgerufen und geändert werden.\u003c/p\u003e\u003c/li\u003e\n\n\u003cli\u003e\u003cp\u003eAm Ende der Befragung können Sie den Fragebogen abschließen, so dass keine weiteren Änderungen möglich sind.\u003c/p\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\n\u003ch2\u003eDatenschutz\u003c/h2\u003e\n\n\u003cul\u003e\n\u003cli\u003e\u003cp\u003eHier finden Sie unsere \u003ca href=\"https://www.zew.de/de/datenschutz/\"\u003eDatenschutz-Grundlagen\u003c/a\u003e.\u003c/p\u003e\u003c/li\u003e\n\n\u003cli\u003e\u003cp\u003eIhre An\u0026shy;gaben werden streng vertraulich behandelt.\u003c/p\u003e\u003c/li\u003e\n\n\u003cli\u003e\u003cp\u003eDie Auswertung Ihrer Antworten erfolgt als \u003ca href=\"https://de.wikipedia.org/wiki/Paneldaten\"\u003ePanel-Datensatz\u003c/a\u003e in anonymisierter Form.\u003c/p\u003e\u003c/li\u003e\n\n\u003cli\u003e\u003cp\u003eIhre Daten werden auf einem geschützten Server im ZEW Hauptgebäude gespeichert, auf den nur Mitglieder des ZEW Teams für den Finanzmarkttest Zugriff haben.\u003c/p\u003e\u003c/li\u003e\n\n\u003cli\u003e\u003cp\u003eZusätzlich bitten wir um Ihr Einverständnis, dass wir Ihre Antworten intern mit Ihrer geschäftlichen Identität verknüpfen.\u003c/p\u003e\u003c/li\u003e\n\n\u003cli\u003e\u003cp\u003eIhre geschäftliche Identität besteht aus Ihrem Namen, Ihrer Funktion, geschäftl. Email und Telefonnummer, Arbeitgeber und Teilnahmebeginn.\u003c/p\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\n\t\u003c/div\u003e  \u003c!-- markdown --\u003e\n",
+ 								"en": "\n\t\u003cdiv class='markdown'\u003e\n\u003ch3\u003eContact\u003c/h3\u003e\n\n\u003cp\u003eDr. Michael Schröder\u003c/p\u003e\n\n\u003cp\u003ePhone: 0621/1235-368\u003c/p\u003e\n\n\u003cp\u003eFax: 0621/1235-4223\u003c/p\u003e\n\n\u003cp\u003eEmail: schroeder@zew.de\u003c/p\u003e\n\n\u003ch3\u003eAddress\u003c/h3\u003e\n\n\u003cp\u003eCentre for European Eco\u0026shy;nom\u0026shy;ic Re\u0026shy;search (ZEW) Mannheim\u003c/p\u003e\n\n\u003cp\u003ePostfach 10 34 43\u003c/p\u003e\n\n\u003cp\u003e68034 Mannheim\u003c/p\u003e\n\n\u003cp\u003eGermany\u003c/p\u003e\n\n\u003ch3\u003eTechnical issues\u003c/h3\u003e\n\n\u003cp\u003ePlease report technical issues\u003cbr /\u003e\nwith the online questionnaire to:\u003c/p\u003e\n\n\u003cp\u003ePeter Buchmann (buchmann@zew.de)\u003c/p\u003e\n\n\t\u003c/div\u003e  \u003c!-- markdown --\u003e\n"
  							},
- 							"css_label": "special-line-height-higher"
+ 							"css_label": "special-line-height-higher",
+ 							"col_span_label": 1
  						}
  					]
  				}
  			]
  		}
- 	]
+ 	],
+ 	"version": 1
  }

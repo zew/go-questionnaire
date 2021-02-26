@@ -13,24 +13,26 @@ func addSeasonal2(q *qst.QuestionnaireT) error {
 		return nil
 	}
 
-	p := q.AddPage()
-	p.Section = trl.S{"de": "Sonderfrage", "en": "Special"}
-	p.Label = trl.S{"de": "Prognosetreiber Inflation und Geldpolitik", "en": "Inflation and monetary policy drivers"}
-	p.Short = trl.S{"de": "Sonderfrage:<br>Inflation,<br>Geldpolitik", "en": "Special:<br>Inflation,<br>Mon. Policy"}
-	p.Width = 90
+	page := q.AddPage()
+	page.Section = trl.S{"de": "Sonderfrage", "en": "Special"}
+	page.Label = trl.S{"de": "Prognosetreiber Inflation und Geldpolitik", "en": "Inflation and monetary policy drivers"}
+	page.Short = trl.S{"de": "Sonderfrage:<br>Inflation,<br>Geldpolitik", "en": "Special:<br>Inflation,<br>Mon. Policy"}
+	page.Width = 90
 
 	{
-		gr := p.AddGroup()
+		gr := page.AddGroup()
 		gr.Cols = 9
-		gr.Label = trl.S{
-			"de": "1.",
-			"en": "1.",
-		}
-		gr.Desc = trl.S{
-			"de": "Punktprognose der jährlichen Inflationsrate im Euroraum",
-			"en": "Forecast yearly inflation rate in the Euro area",
-		}
 		gr.HeaderBottomVSpacers = 1
+
+		{
+			inp := gr.AddInput()
+			inp.Type = "textblock"
+			inp.ColSpanLabel = 9
+			inp.Desc = trl.S{
+				"de": "<b>1.</b> Punktprognose der jährlichen Inflationsrate im Euroraum",
+				"en": "<b>1.</b> Forecast yearly inflation rate in the Euro area",
+			}
+		}
 
 		{
 			inp := gr.AddInput()
@@ -46,8 +48,10 @@ func addSeasonal2(q *qst.QuestionnaireT) error {
 			inp := gr.AddInput()
 			inp.Type = "number"
 			inp.Name = "p1_y1"
-			inp.MaxChars = 4
-			inp.Validator = "inRange20"
+			inp.Min = -10
+			inp.Max = +20
+			inp.MaxChars = 3
+			// inp.Validator = "inRange20"
 			inp.Desc = trl.S{
 				"de": nextY(0),
 				"en": nextY(0),
@@ -63,8 +67,10 @@ func addSeasonal2(q *qst.QuestionnaireT) error {
 			inp := gr.AddInput()
 			inp.Type = "number"
 			inp.Name = "p1_y2"
-			inp.MaxChars = 4
-			inp.Validator = "inRange20"
+			inp.Min = -10
+			inp.Max = +20
+			inp.MaxChars = 3
+			// inp.Validator = "inRange20"
 			inp.Desc = trl.S{
 				"de": nextY(1),
 				"en": nextY(1),
@@ -79,8 +85,10 @@ func addSeasonal2(q *qst.QuestionnaireT) error {
 			inp := gr.AddInput()
 			inp.Type = "number"
 			inp.Name = "p1_y3"
-			inp.MaxChars = 4
-			inp.Validator = "inRange20"
+			inp.Min = -10
+			inp.Max = +20
+			inp.MaxChars = 3
+			// inp.Validator = "inRange20"
 			inp.Desc = trl.S{
 				"de": nextY(2),
 				"en": nextY(2),
@@ -96,6 +104,19 @@ func addSeasonal2(q *qst.QuestionnaireT) error {
 	}
 
 	// gr1
+	{
+		gr := page.AddGroup()
+		gr.Cols = 1
+		gr.BottomVSpacers = 0
+		{
+			inp := gr.AddInput()
+			inp.Type = "textblock"
+			inp.Desc = trl.S{
+				"de": "<b>2.</b> Haben Entwicklungen in den folgenden Bereichen Sie zu einer Revision Ihrer Inflationsprognosen (ggü. Vormonat) für den Euroraum bewogen und wenn ja in welche Richtung?",
+				"en": "<b>2.</b> Which developments have lead you to change your assessment of the inflation outlook for the Euro are compared to the previous month",
+			}
+		}
+	}
 	{
 		labels123Matrix := []trl.S{
 			{
@@ -132,35 +153,31 @@ func addSeasonal2(q *qst.QuestionnaireT) error {
 			"ioi_exch_rates",
 			"ioi_mp_ecb",
 		}
-		gr := p.AddRadioMatrixGroup(labelsStronglyPositiveStronglyNegativeInfluence(),
+		gr := page.AddRadioMatrixGroup(labelsStronglyPositiveStronglyNegativeInfluence(),
 			names1stMatrix, labels123Matrix, 2)
 		gr.Cols = 8 // necessary, otherwise no vspacers
 		gr.OddRowsColoring = true
-		gr.Label = trl.S{
-			"de": "2.",
-			"en": "2.",
-		}
-		gr.Desc = trl.S{
-			"de": "Haben Entwicklungen in den folgenden Bereichen Sie zu einer Revision Ihrer Inflationsprognosen (ggü. Vormonat) für den Euroraum bewogen und wenn ja in welche Richtung?",
-			"en": "Which developments have lead you to change your assessment of the inflation outlook for the Euro are compared to the previous month",
-		}
 	}
 
 	// gr3
 	{
-		gr := p.AddGroup()
+		gr := page.AddGroup()
 		gr.Cols = 100
-		gr.Label = trl.S{"de": "3.", "en": "3."}
+		gr.HeaderBottomVSpacers = 1
 		val, err := q.Survey.Param("main_refinance_rate_ecb") // 01.02.2018: 0,0
 		if err != nil {
 			return fmt.Errorf("Set field 'main_refinance_rate_ecb' to `01.02.2018: 3.2%%` as in `main refinance rate of the ECB (01.02.2018: 3.2%%)`; error was %v", err)
 		}
 
-		gr.Desc = trl.S{
-			"de": fmt.Sprintf("Den Hauptrefinanzierungssatz der EZB (am %v) erwarte ich auf Sicht von", val),
-			"en": fmt.Sprintf("I expect the main refinance rate of the ECB (%v) in", val),
+		{
+			inp := gr.AddInput()
+			inp.Type = "textblock"
+			inp.ColSpanLabel = 100
+			inp.Desc = trl.S{
+				"de": fmt.Sprintf("<b>3.</b> Den Hauptrefinanzierungssatz der EZB (am %v) erwarte ich auf Sicht von", val),
+				"en": fmt.Sprintf("<b>3.</b> I expect the main refinance rate of the ECB (%v) in", val),
+			}
 		}
-		gr.HeaderBottomVSpacers = 1
 
 		{
 			inp := gr.AddInput()
@@ -179,8 +196,10 @@ func addSeasonal2(q *qst.QuestionnaireT) error {
 			inp := gr.AddInput()
 			inp.Type = "number"
 			inp.Name = "i_ez_06_low"
-			inp.MaxChars = 4
-			inp.Validator = "inRange20"
+			inp.Min = -10
+			inp.Max = +20
+			inp.MaxChars = 3
+			// inp.Validator = "inRange20"
 
 			inp.ColSpanLabel = 7
 			inp.CSSLabel = "special-line-height-higher"
@@ -198,8 +217,10 @@ func addSeasonal2(q *qst.QuestionnaireT) error {
 			inp := gr.AddInput()
 			inp.Type = "number"
 			inp.Name = "i_ez_06_high"
-			inp.MaxChars = 4
-			inp.Validator = "inRange20"
+			inp.Min = -10
+			inp.Max = +20
+			inp.MaxChars = 3
+			// inp.Validator = "inRange20"
 
 			inp.ColSpanLabel = 3
 			inp.ColSpanControl = 73
@@ -230,8 +251,10 @@ func addSeasonal2(q *qst.QuestionnaireT) error {
 			inp := gr.AddInput()
 			inp.Type = "number"
 			inp.Name = "i_ez_24_low"
-			inp.MaxChars = 4
-			inp.Validator = "inRange20"
+			inp.Min = -10
+			inp.Max = +20
+			inp.MaxChars = 3
+			// inp.Validator = "inRange20"
 
 			inp.ColSpanLabel = 7
 			inp.CSSLabel = "special-line-height-higher"
@@ -249,8 +272,10 @@ func addSeasonal2(q *qst.QuestionnaireT) error {
 			inp := gr.AddInput()
 			inp.Type = "number"
 			inp.Name = "i_ez_24_high"
-			inp.MaxChars = 4
-			inp.Validator = "inRange20"
+			inp.Min = -10
+			inp.Max = +20
+			inp.MaxChars = 3
+			// inp.Validator = "inRange20"
 
 			inp.ColSpanLabel = 3
 			inp.ColSpanControl = 73

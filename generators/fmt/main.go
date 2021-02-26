@@ -268,11 +268,12 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "number"
+				inp.Name = "y_q_deu"
 				inp.Min = 0
 				inp.Max = 20
 				inp.MaxChars = 2
-				inp.Name = "y_q_deu"
 				inp.MaxChars = 3
+				// inp.Validator = "inRange20"
 
 				inp.ColSpanLabel = 4
 				inp.Desc = trl.S{
@@ -576,6 +577,20 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		page.Short = trl.S{"de": "Kredit-<br>situation:<br>Markt", "en": "Credit<br>situation:<br>Market"}
 
 		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 0
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{"de": "6a.", "en": "6a."}
+				inp.Desc = trl.S{
+					"de": "<b>6a.</b> Wie schätzen Sie die Kreditsituation in Deutschland ein?",
+					"en": "<b>6a.</b> How do you assess credit conditions in Germany?",
+				}
+			}
+		}
+		{
 			names3rdMatrix := []string{
 				"cd_deu",
 				"cs_deu",
@@ -592,15 +607,26 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			}
 
 			gr := page.AddRadioMatrixGroup(labelsVeryHighVeryLow(), names3rdMatrix, labels123Matrix)
-			gr.Label = trl.S{"de": "6a.", "en": "6a."}
-			gr.Desc = trl.S{
-				"de": "Wie schätzen Sie die Kreditsituation in Deutschland ein?",
-				"en": "How do you assess credit conditions in Germany?",
-			}
 			gr.Cols = 7 // necessary, otherwise no vspacers
 			gr.OddRowsColoring = true
 		}
 
+		//
+		//
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 0
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{"de": "6a.", "en": "6a."}
+				inp.Desc = trl.S{
+					"de": "<b>6b.</b> Das (saisonbereinigte) Gesamtvolumen der Neukreditvergabe in Deutschland wird",
+					"en": "<b>6b.</b> The seasonally adjusted volume of new credit in Germany will",
+				}
+			}
+		}
 		{
 			names3rdMatrix := []string{
 				"c0_6",
@@ -618,15 +644,26 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			}
 
 			gr := page.AddRadioMatrixGroup(labelsStrongIncreaseStrongDecrease(), names3rdMatrix, labels123Matrix)
-			gr.Label = trl.S{"de": "6b.", "en": "6b."}
-			gr.Desc = trl.S{
-				"de": "Das (saisonbereinigte) Gesamtvolumen der Neukreditvergabe in Deutschland wird",
-				"en": "The seasonally adjusted volume of new credit in Germany will",
-			}
 			gr.Cols = 7 // necessary, otherwise no vspacers
 			gr.OddRowsColoring = true
 		}
 
+		//
+		//
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 0
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{"de": "6a.", "en": "6a."}
+				inp.Desc = trl.S{
+					"de": "<b>6c.</b> Die (saisonbereinigte) Kreditnachfrage wird mittelfristig (<b>6</b>&nbsp;Mo.)",
+					"en": "<b>6c.</b> The seasonally adjusted credit demand medium term (<b>6</b>&nbsp;months) will be",
+				}
+			}
+		}
 		{
 			names3rdMatrix := []string{
 				"cd_24_le",
@@ -654,11 +691,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			}
 
 			gr := page.AddRadioMatrixGroup(labelsStrongIncreaseStrongDecrease(), names3rdMatrix, labels123Matrix)
-			gr.Label = trl.S{"de": "6c.", "en": "6c."}
-			gr.Desc = trl.S{
-				"de": "Die (saisonbereinigte) Kreditnachfrage wird mittelfristig (<b>6</b>&nbsp;Mo.)",
-				"en": "The seasonally adjusted credit demand medium term (<b>6</b>&nbsp;months) will be",
-			}
 			gr.Cols = 7 // necessary, otherwise no vspacers
 			gr.OddRowsColoring = true
 		}
@@ -673,6 +705,21 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		page.Label = trl.S{"de": "Einflussfaktoren", "en": "Influence factors"}
 		page.Short = trl.S{"de": "Einfluss-<br>faktoren", "en": "Influence<br>factors"}
 
+		//
+		//
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 0
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Desc = trl.S{
+					"de": "<b>6d.</b> Wie schätzen Sie den Einfluss folgender Faktoren auf die mittelfristige (<b>6</b>&nbsp;Mo.) Veränderung des Kreditangebots ein?",
+					"en": "<b>6d.</b> How do you assess the influence of following factors on the medium term (<b>6</b>&nbsp;months) change of credit supply?",
+				}
+			}
+		}
 		{
 			names3rdMatrix := []string{
 				"c_inf_6_dr",
@@ -710,15 +757,25 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			}
 
 			gr := page.AddRadioMatrixGroup(labelsVeryPositiveVeryNegative(), names3rdMatrix, labels123Matrix)
-			gr.Label = trl.S{"de": "6d.", "en": "6d."}
-			gr.Desc = trl.S{
-				"de": "Wie schätzen Sie den Einfluss folgender Faktoren auf die mittelfristige (<b>6</b>&nbsp;Mo.) Veränderung des Kreditangebots ein?",
-				"en": "How do you assess the influence of following factors on the medium term (<b>6</b>&nbsp;months) change of credit supply?",
-			}
 			gr.Cols = 7 // necessary, otherwise no vspacers
 			gr.OddRowsColoring = true
 		}
 
+		//
+		//
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 0
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Desc = trl.S{
+					"de": "<b>6e.</b> Die (saisonbereinigte) Kreditstandards für Neukredite werden mittelfristig (<b>6</b>&nbsp;Mo.)",
+					"en": "<b>6e.</b> The seasonally adjusted credit standards medium term (<b>6</b>&nbsp;months) will",
+				}
+			}
+		}
 		{
 			names3rdMatrix := []string{
 				"c_std_6_le",
@@ -746,11 +803,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			}
 
 			gr := page.AddRadioMatrixGroup(labelsStrongIncreaseStrongDecrease(), names3rdMatrix, labels123Matrix)
-			gr.Label = trl.S{"de": "6e.", "en": "6e."}
-			gr.Desc = trl.S{
-				"de": "Die (saisonbereinigte) Kreditstandards für Neukredite werden mittelfristig (<b>6</b>&nbsp;Mo.)",
-				"en": "The seasonally adjusted credit standards medium term (<b>6</b>&nbsp;months) will",
-			}
 			gr.Cols = 7 // necessary, otherwise no vspacers
 			gr.OddRowsColoring = true
 		}
@@ -767,6 +819,21 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 		page.Width = 80
 
+		//
+		//
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 0
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Desc = trl.S{
+					"de": "<b>7a.</b> Die folgenden Aktienindizes / Rohstoffpreise / Wechselkurse werden mittelfristig (<b>6</b>&nbsp;Mo.)",
+					"en": "<b>7a.</b> Following stock indices / raw materials / exchange rates will medium term (<b>6</b>&nbsp;months)",
+				}
+			}
+		}
 		{
 			names3rdMatrix := []string{
 				"sto_dax",
@@ -794,82 +861,105 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			}
 
 			gr := page.AddRadioMatrixGroup(labelsIncreaseDecrease(), names3rdMatrix, labels123Matrix)
-			gr.Label = trl.S{"de": "7a.", "en": "7a."}
-			gr.Desc = trl.S{
-				"de": "Die folgenden Aktienindizes / Rohstoffpreise / Wechselkurse werden mittelfristig (<b>6</b>&nbsp;Mo.)",
-				"en": "Following stock indices / raw materials / exchange rates will medium term (<b>6</b>&nbsp;months)",
-			}
-
 			gr.Cols = 5 // necessary, otherwise no vspacers
 			gr.OddRowsColoring = true
 		}
 
-		gr := page.AddGroup()
-		gr.Cols = 100
-		gr.Label = trl.S{"de": "7b.", "en": "7b."}
-
+		//
+		//
 		{
-			inp := gr.AddInput()
-			inp.Type = "number"
-			inp.Name = "dax_6"
-			inp.MaxChars = 6
-			inp.Validator = "inRange50000"
-
-			inp.ColSpanLabel = 55
-			// inp.CSSLabel = "special-line-height-higher"
-			inp.ColSpanControl = 45
-			inp.Desc = trl.S{
-				"de": `Den DAX erwarten wir in 6&nbsp;Monaten bei `,
-				"en": "We expect the German DAX in 6&nbsp;month at",
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 0
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Desc = trl.S{
+					"de": "<b>7b.</b>",
+					"en": "<b>7b.</b>",
+				}
 			}
-			inp.Suffix = trl.S{"de": "Punkten", "en": "points"}
-			inp.HAlignLabel = qst.HLeft
-			inp.HAlignControl = qst.HLeft
 		}
-
 		{
-			inp := gr.AddInput()
-			inp.Type = "number"
-			inp.Name = "dax_6_low"
-			inp.MaxChars = 6
-			inp.Validator = "inRange50000"
+			gr := page.AddGroup()
+			gr.Cols = 100
+			{
+				inp := gr.AddInput()
+				inp.Type = "number"
+				inp.Name = "dax_6"
+				inp.Min = 1000
+				inp.Max = 50000
+				inp.MaxChars = 6
+				// inp.Validator = "inRange50000"
 
-			inp.ColSpanLabel = 55
-			inp.ColSpanControl = 21
-			inp.Desc = trl.S{
-				"de": `Mit einer Wahrscheinlichkeit von 90&nbsp;Prozent wird der DAX dann zwischen `,
-				"en": "With 90&nbsp;percent probability, the DAX will then be between",
+				inp.ColSpanLabel = 55
+				// inp.CSSLabel = "special-line-height-higher"
+				inp.ColSpanControl = 45
+				inp.Desc = trl.S{
+					"de": `Den DAX erwarten wir in 6&nbsp;Monaten bei `,
+					"en": "We expect the German DAX in 6&nbsp;month at",
+				}
+				inp.Suffix = trl.S{"de": "Punkten", "en": "points"}
+				inp.HAlignLabel = qst.HLeft
+				inp.HAlignControl = qst.HLeft
 			}
-			inp.Suffix = trl.S{"de": "Punkten  &nbsp; und ", "en": "points &nbsp; and "}
-			inp.HAlignLabel = qst.HLeft
-			inp.HAlignControl = qst.HLeft
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "number"
+				inp.Name = "dax_6_low"
+				inp.Min = 1000
+				inp.Max = 50000
+				inp.MaxChars = 6
+				// inp.Validator = "inRange50000"
+
+				inp.ColSpanLabel = 55
+				inp.ColSpanControl = 21
+				inp.Desc = trl.S{
+					"de": `Mit einer Wahrscheinlichkeit von 90&nbsp;Prozent wird der DAX dann zwischen `,
+					"en": "With 90&nbsp;percent probability, the DAX will then be between",
+				}
+				inp.Suffix = trl.S{"de": "Punkten  &nbsp; und ", "en": "points &nbsp; and "}
+				inp.HAlignLabel = qst.HLeft
+				inp.HAlignControl = qst.HLeft
+			}
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "number"
+				inp.Name = "dax_6_high"
+				inp.Min = 1000
+				inp.Max = 50000
+				inp.MaxChars = 6
+				// inp.Validator = "inRange50000"
+
+				inp.ColSpanControl = 24
+				inp.Suffix = trl.S{"de": "Punkten liegen.", "en": "points"}
+				inp.HAlignLabel = qst.HLeft
+				inp.HAlignControl = qst.HLeft
+			}
 		}
 
+		//
+		//
 		{
-			inp := gr.AddInput()
-			inp.Type = "number"
-			inp.Name = "dax_6_high"
-			inp.MaxChars = 6
-			inp.Validator = "inRange50000"
-
-			inp.ColSpanControl = 24
-			inp.Suffix = trl.S{"de": "Punkten liegen.", "en": "points"}
-			inp.HAlignLabel = qst.HLeft
-			inp.HAlignControl = qst.HLeft
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 0
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Desc = trl.S{
+					"de": "<b>7c.</b> Aus Sicht der Fundamentaldaten der DAX-Unternehmen ist der DAX derzeit",
+					"en": "<b>7c.</b> The fundamentals of the companies comprising the DAX make the DAX currently",
+				}
+			}
 		}
-
 		{
-
 			// gr := p.AddRadioMatrixGroup(labelsOvervaluedFairUndervalued(), names3rdMatrix, labels123Matrix)
 			gr := page.AddGroup()
 			gr.Cols = 6 // necessary, otherwise no vspacers
-			gr.Label = trl.S{"de": "7c.", "en": "7c."}
-			gr.Desc = trl.S{
-				"de": "Aus Sicht der Fundamentaldaten der DAX-Unternehmen ist der DAX derzeit",
-				"en": "The fundamentals of the companies comprising the DAX make the DAX currently",
-			}
 			gr.HeaderBottomVSpacers = 1
-
 			{
 				inp := gr.AddInput()
 				inp.Type = "radiogroup"
@@ -883,7 +973,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 					rad.Val = fmt.Sprintf("%v", i2)
 				}
 			}
-
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
@@ -897,20 +986,29 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		//
 		{
 			gr := page.AddGroup()
-			gr.Cols = 100
-			gr.Label = trl.S{"de": "8.", "en": "8."}
-			gr.Desc = trl.S{
-				"de": "Die Wahrscheinlichkeit für ein Extremereignis im deutschen Finanzmarkt liegt",
-				"en": "The probability for an extreme event in the German financial markets is",
+			gr.Cols = 1
+			gr.BottomVSpacers = 0
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Desc = trl.S{
+					"de": "<b>8.</b> Die Wahrscheinlichkeit für ein Extremereignis im deutschen Finanzmarkt liegt",
+					"en": "<b>8.</b> The probability for an extreme event in the German financial markets is",
+				}
 			}
+		}
+		{
+			gr := page.AddGroup()
+			gr.Cols = 100
 			gr.HeaderBottomVSpacers = 1
-
 			{
 				inp := gr.AddInput()
 				inp.Type = "number"
 				inp.Name = "crash_low"
+				inp.Min = 0
+				inp.Max = 100
 				inp.MaxChars = 4
-				inp.Validator = "inRange100"
+				// inp.Validator = "inRange100"
 
 				inp.ColSpanLabel = 22
 				inp.ColSpanControl = 12
@@ -927,8 +1025,10 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp := gr.AddInput()
 				inp.Type = "number"
 				inp.Name = "crash_high"
+				inp.Min = 0
+				inp.Max = 100
 				inp.MaxChars = 4
-				inp.Validator = "inRange100"
+				// inp.Validator = "inRange100"
 
 				inp.ColSpanLabel = 26
 				inp.ColSpanControl = 40
@@ -956,19 +1056,19 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	}
 
 	//
-	// page 7
+	// page 7 - after seasonal
 	// Finish questionnaire?  - one before last page
 	{
-		p := q.AddPage()
-		p.Section = trl.S{"de": "Abschluss", "en": "Finish"}
-		p.Label = trl.S{"de": "", "en": ""}
-		p.Short = trl.S{"de": "Abschluss", "en": "Finish"}
-		p.Width = 65
+		page := q.AddPage()
+		page.Section = trl.S{"de": "Abschluss", "en": "Finish"}
+		page.Label = trl.S{"de": "", "en": ""}
+		page.Short = trl.S{"de": "Abschluss", "en": "Finish"}
+		page.Width = 65
 
 		{
-			gr := p.AddGroup()
+			gr := page.AddGroup()
 			gr.Cols = 1 // necessary, otherwise no vspacers
-			gr.Label = trl.S{"de": "", "en": ""}
+
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
@@ -990,48 +1090,45 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		}
 
 		{
-			gr := p.AddGroup()
-			// gr.Desc = trl.S{"de": "Abschluss", "en": "Finish"}
+			gr := page.AddGroup()
 			gr.Width = 100
 			gr.Cols = 2 // necessary, otherwise no vspacers
+
 			{
-
+				inp := gr.AddInput()
+				inp.Type = "radiogroup"
+				inp.Name = "finished"
+				inp.CSSLabel = "special-line-height-higher"
+				inp.ColSpanLabel = 1
+				inp.ColSpanControl = 1
+				inp.Validator = "mustRadioGroup"
 				{
-					inp := gr.AddInput()
-					inp.Type = "radiogroup"
-					inp.Name = "finished"
-					inp.CSSLabel = "special-line-height-higher"
-					inp.ColSpanLabel = 1
-					inp.ColSpanControl = 1
-					inp.Validator = "mustRadioGroup"
-					{
-						rad := inp.AddRadio()
-						rad.HAlign = qst.HLeft
-						// rad.HAlign = qst.HCenter
-						rad.Label = trl.S{
-							"de": "Zugang bleibt bestehen.  Daten können in weiteren Sitzungen geändert/ergänzt werden. <br>\n &nbsp;",
-							"en": "Leave questionnaire open. Data  can be changed/completed&nbsp;in later sessions. <br>\n &nbsp;",
-						}
-						rad.Val = "2" // any other non null value
+					rad := inp.AddRadio()
+					rad.HAlign = qst.HLeft
+					// rad.HAlign = qst.HCenter
+					rad.Label = trl.S{
+						"de": "Zugang bleibt bestehen.  Daten können in weiteren Sitzungen geändert/ergänzt werden. <br>\n &nbsp;",
+						"en": "Leave questionnaire open. Data  can be changed/completed&nbsp;in later sessions. <br>\n &nbsp;",
 					}
-					{
-						rad := inp.AddRadio()
-						rad.HAlign = qst.HLeft
-						// rad.HAlign = qst.HCenter
-						rad.Label = trl.S{
-							"de": "Fragebogen ist abgeschlossen und kann nicht mehr geöffnet werden. <br>\n &nbsp;",
-							"en": "Questionnaire is finished. No more edits. <br>\n &nbsp;",
-						}
-						rad.Val = qst.ValSet
-					}
-
+					rad.Val = "2" // any other non null value
 				}
+				{
+					rad := inp.AddRadio()
+					rad.HAlign = qst.HLeft
+					// rad.HAlign = qst.HCenter
+					rad.Label = trl.S{
+						"de": "Fragebogen ist abgeschlossen und kann nicht mehr geöffnet werden. <br>\n &nbsp;",
+						"en": "Questionnaire is finished. No more edits. <br>\n &nbsp;",
+					}
+					rad.Val = qst.ValSet
+				}
+
 			}
 
 		}
 
 		{
-			gr := p.AddGroup()
+			gr := page.AddGroup()
 			gr.Cols = 2 // necessary, otherwise no vspacers
 			// gr.Width = 80
 			{
@@ -1066,7 +1163,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 	}
 
-	// page 8
+	// page 8 - after seasonal
 	// Report of results
 	{
 		p := q.AddPage()

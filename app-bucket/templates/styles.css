@@ -390,15 +390,20 @@ label, .postlabel {
 
 	display:           inline-block;
 	vertical-align:    middle;
-	padding-bottom:    0.15rem;  /* for vertical alignment */
-	margin-right:      0.5rem;
+	
+	/* 2021-02 - not needed in CSS grid */
+	/* for vertical alignment */
+	/* padding-bottom:    0.15rem; */	
+	/* margin-right:      0.5rem; */
 
 	font-size:        95%;	/* like legend */
 	line-height:     110%;
 	letter-spacing:	   0.03rem;
 	font-weight:     300; /* visibility in mobile browser */
 
-	white-space: nowrap;	/* explicit wrapping using -<br> */
+
+	/* 2021-02 - not needed in CSS grid */
+	xx-white-space: nowrap;	/* explicit wrapping using -<br> */
 	/* like pre but lines too long are broken
 		not stretching the container
 		extends to 100% of container
@@ -407,7 +412,7 @@ label, .postlabel {
 		pre-wrap => preserve white space
 		pre-line => collapse white space
 	*/
-	white-space: pre-wrap; /* see also .postlabel, .plain-text-broken and .error */
+	xx-white-space: pre-wrap; /* see also .postlabel, .plain-text-broken and .error */
 
 	text-align: right;
 
@@ -435,8 +440,8 @@ label.bottom {
 .postlabel {
 	/* font-size: 0.78rem; */
 	text-align:    left;
-	margin-left:   0.35rem;
-	margin-right:  0.01rem;
+	/* margin-left:   0.35rem;
+	margin-right:  0.01rem; */
 
 	min-width:     inherit;  /* reset from label */
 }
@@ -517,6 +522,7 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
 input, select, button, textarea, a.button {
 	padding: 0.2em 0.1em;
 	margin:	 0.2em 0;
+	margin:  0.2em 0.3em; /* 2021-02 - horizontal padding for label pre and post */
 	border-radius: 0.15em;
 	font-size: 0.9rem;
 	font-weight: 300;

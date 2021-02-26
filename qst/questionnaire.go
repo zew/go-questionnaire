@@ -64,15 +64,15 @@ func nobreakGlue(el1, glue, el2 string) string {
 // no wrap between input and suffix
 func appendSuffix(ctrl string, inp *inputT, langCode string) string {
 
-	if !inp.Suffix.Set() {
+	if inp.Suffix.Empty() {
 		return ctrl
 	}
 
 	ctrl = strings.TrimSuffix(ctrl, "\n")
-	// We want to prevent line-break of the '%' or '€' suffix character.
+	// We want to prevent line-break between input and suffix with '%' or '€'.
 	// inputs must be inline-block, for whitespace nowrap to work.
 	// At the same time: suffix-inner enables wrapping for the suffix itself
-	sfx := fmt.Sprintf("<span class='postlabel %v  suffix-inner' >%v</span>\n", inp.CSSLabel, inp.Suffix.TrSilent(langCode))
+	sfx := fmt.Sprintf("<span class=' %v  postlabel suffix-inner' >%v</span>\n", inp.CSSLabel, inp.Suffix.TrSilent(langCode))
 	ctrl = fmt.Sprintf("<span class='suffix-nowrap' >%v%v</span>\n", ctrl, sfx)
 
 	return ctrl
@@ -110,7 +110,7 @@ type inputT struct {
 
 	Label     trl.S  `json:"label,omitempty"`
 	Desc      trl.S  `json:"description,omitempty"`
-	Suffix    trl.S  `json:"suffix,omitempty"`
+	Suffix    trl.S  `json:"suffix,omitempty"` // only for short units - such as € or % - for longer text use label.Style...Order = 2
 	AccessKey string `json:"accesskey,omitempty"`
 
 	HAlignLabel   horizontalAlignment `json:"horizontal_align_label,omitempty"`   // description left/center/right of input, default left, similar setting for radioT but not for group
@@ -141,7 +141,9 @@ type inputT struct {
 	'composit' =>    first arg paramSetIdx, second arg seqIdx */
 	DynamicFunc string `json:"dynamic_func,omitempty"`
 
-	Style *css.StylesResponsive `json:"style,omitempty"` // pointer, to avoid empty JSON blocks
+	Style    *css.StylesResponsive `json:"style,omitempty"` // pointer, to avoid empty JSON blocks
+	StyleLbl *css.StylesResponsive `json:"style_label,omitempty"`
+	StyleCtl *css.StylesResponsive `json:"style_control,omitempty"`
 }
 
 // NewInput returns an input filled in with globally enumerated label, decription etc.
@@ -436,7 +438,7 @@ func (i inputT) HTML(langCode string, numCols int) string {
 		}
 
 		// Append suffix
-		if i.Suffix.Set() {
+		if !i.Suffix.Empty() {
 			// compare appendSuffix() forcing no wrap for ordinary inputs
 			// ctrl += fmt.Sprintf("<span class='go-quest-label %v' >%v</span>\n", i.CSSLabel, i.Suffix.TrSilent(langCode))
 			ctrl += fmt.Sprintf("<span class='postlabel %v' >%v</span>\n", i.CSSLabel, i.Suffix.TrSilent(langCode))
@@ -603,7 +605,7 @@ func validateComposite(
 // GroupHTML renders a group of inputs to GroupHTML
 func (q QuestionnaireT) GroupHTML(pageIdx, grpIdx int) string {
 
-	if q.Version > 0 && q.Pages[pageIdx].Groups[grpIdx].Style != nil {
+	if q.Version > 0 {
 		return q.GroupHTMLGrid(pageIdx, grpIdx)
 	}
 

@@ -29,15 +29,17 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	q.Survey.Org = trl.S{"de": "ZEW", "en": "ZEW"}
 	q.Survey.Name = trl.S{"de": "Finanzmarkttest", "en": "Financial Markets Survey"}
 
-	// Page 0
+	q.Version = 1
+
+	// page 0
 
 	{
-		p := q.AddPage()
-		p.Label = trl.S{"de": "Begrüßung", "en": "Greeting"}
-		p.NoNavigation = true
+		page := q.AddPage()
+		page.Label = trl.S{"de": "Begrüßung", "en": "Greeting"}
+		page.NoNavigation = true
 
 		{
-			gr := p.AddGroup()
+			gr := page.AddGroup()
 			gr.Cols = 3
 
 			{
@@ -60,7 +62,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Desc = impr
 			}
 
-			gr = p.AddGroup()
+			gr = page.AddGroup()
 			gr.Cols = 3
 			gr.Width = 75
 			{
@@ -94,7 +96,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				}
 			}
 
-			gr = p.AddGroup()
+			gr = page.AddGroup()
 			gr.Cols = 3
 			gr.Width = 75
 			{
@@ -110,7 +112,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.ColSpanControl = 2
 			}
 
-			gr = p.AddGroup()
+			gr = page.AddGroup()
 			gr.Cols = 1
 			gr.Width = 75
 			{
@@ -130,13 +132,13 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		}
 	}
 
-	// Page 1
+	// page 1
 	{
-		p := q.AddPage()
-		p.Section = trl.S{"de": "Konjunktur", "en": "Business cycle"}
-		p.Label = trl.S{"de": "Status und Ausblick", "en": "Status and outlook"}
-		p.Short = trl.S{"de": "Konjunktur:<br>Status,<br>Ausblick", "en": "Business cycle:<br>Status,<br>Outlook"}
-		p.Width = 70
+		page := q.AddPage()
+		page.Section = trl.S{"de": "Konjunktur", "en": "Business cycle"}
+		page.Label = trl.S{"de": "Status und Ausblick", "en": "Status and outlook"}
+		page.Short = trl.S{"de": "Konjunktur:<br>Status,<br>Ausblick", "en": "Business cycle:<br>Status,<br>Outlook"}
+		page.Width = 70
 
 		//
 		//
@@ -159,7 +161,21 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			},
 		}
 
-		// gr1
+		// gr1a
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 0
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Desc = trl.S{
+					"de": "<b>1.</b> Die gesamtwirtschaftliche Situation beurteilen wir als",
+					"en": "<b>1.</b> We assess the overall economic situation as",
+				}
+			}
+		}
+		// gr1b
 		{
 			names1stMatrix := []string{
 				"y0_ez",
@@ -167,22 +183,26 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				"y0_usa",
 				"y0_glob",
 			}
-			gr := p.AddRadioMatrixGroup(labelsGoodBad(), names1stMatrix, labels123Matrix)
+			gr := page.AddRadioMatrixGroup(labelsGoodBad(), names1stMatrix, labels123Matrix)
 			gr.Cols = 5 // necessary, otherwise no vspacers
 			gr.OddRowsColoring = true
-			gr.Label = trl.S{
-				"de": "1.",
-				"en": "1.",
-			}
-			gr.Desc = trl.S{
-				"de": "Die gesamtwirtschaftliche Situation beurteilen wir als",
-				"en": "We assess the overall economic situation as",
-			}
-
 		}
 
 		//
-		// gr2
+		// gr2a
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Desc = trl.S{
+					"de": "<b>2a.</b> Die gesamtwirtschaftliche Situation wird sich mittelfristig (<b>6</b>&nbsp;Mo.)",
+					"en": "<b>2a.</b> The overall economic situation medium term (<b>6</b>&nbsp;months) will",
+				}
+			}
+		}
+		// gr2b
 		{
 			names2stMatrix := []string{
 				"y_ez",
@@ -190,22 +210,26 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				"y_usa",
 				"y_glob",
 			}
-			gr := p.AddRadioMatrixGroup(labelsImproveDeteriorate(), names2stMatrix, labels123Matrix)
+			gr := page.AddRadioMatrixGroup(labelsImproveDeteriorate(), names2stMatrix, labels123Matrix)
 			gr.Cols = 5 // necessary, otherwise no vspacers
 			gr.OddRowsColoring = true
-			gr.Label = trl.S{
-				"de": "2a.",
-				"en": "2a.",
-			}
-			gr.Desc = trl.S{
-				"de": "Die gesamtwirtschaftliche Situation wird sich mittelfristig (<b>6</b>&nbsp;Mo.)",
-				"en": "The overall economic situation medium term (<b>6</b>&nbsp;months) will",
-			}
-
 		}
 
 		//
-		// gr3
+		// gr3a
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Desc = trl.S{
+					"de": "<b>2b.</b> Die gesamtwirtschaftliche Situation wird sich langfristig (<b>24</b>&nbsp;Mo.)",
+					"en": "<b>2b.</b> The overall economic situation long term (<b>24</b>&nbsp;months) will",
+				}
+			}
+		}
+		// gr3b
 		{
 			names3rdMatrix := []string{
 				"y24_ez",
@@ -214,39 +238,41 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				"y24_glob",
 			}
 
-			gr := p.AddRadioMatrixGroup(labelsImproveDeteriorate(), names3rdMatrix, labels123Matrix)
+			gr := page.AddRadioMatrixGroup(labelsImproveDeteriorate(), names3rdMatrix, labels123Matrix)
 			gr.Cols = 5 // necessary, otherwise no vspacers
 			gr.OddRowsColoring = true
-			gr.Label = trl.S{
-				"de": "2b.",
-				"en": "2b.",
-			}
-			gr.Desc = trl.S{
-				"de": "Die gesamtwirtschaftliche Situation wird sich langfristig (<b>24</b>&nbsp;Mo.)",
-				"en": "The overall economic situation long term (<b>24</b>&nbsp;months) will",
-			}
-
 		}
-
 	}
 
+	//
 	// page 2
 	{
-		p := q.AddPage()
-		p.Label = trl.S{"de": "Wachstum", "en": "Growth"}
-		p.AestheticCompensation = 8
-		p.Width = 90
+		page := q.AddPage()
+		page.Label = trl.S{"de": "Wachstum", "en": "Growth"}
+		page.AestheticCompensation = 8
+		page.Width = 90
 
 		{
-			gr := p.AddGroup()
+			gr := page.AddGroup()
 			gr.Cols = 5 // necessary, otherwise no vspacers
-			gr.Label = trl.S{"de": "3a.", "en": "3a."}
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.ColSpanLabel = 5
+				inp.Desc = trl.S{
+					"de": "<b>3a.</b> ",
+					"en": "<b>3a.</b> ",
+				}
+			}
 			{
 				inp := gr.AddInput()
 				inp.Type = "number"
+				inp.Min = 0
+				inp.Max = 20
+				inp.MaxChars = 2
 				inp.Name = "y_q_deu"
-				inp.MaxChars = 4
-				inp.Validator = "inRange20"
+				inp.MaxChars = 3
 
 				inp.ColSpanLabel = 4
 				inp.Desc = trl.S{
@@ -262,8 +288,10 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp := gr.AddInput()
 				inp.Type = "number"
 				inp.Name = "y_y_deu"
-				inp.MaxChars = 4
-				inp.Validator = "inRange20"
+				inp.Min = 0
+				inp.Max = 50
+				inp.MaxChars = 3
+				// inp.Validator = "inRange20"
 
 				inp.ColSpanLabel = 4
 				inp.Desc = trl.S{
@@ -277,16 +305,26 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		}
 
 		{
-			gr := p.AddGroup()
+			gr := page.AddGroup()
 			gr.Cols = 5 // necessary, otherwise no vspacers
-			gr.Label = trl.S{"de": "3b.", "en": "3b."}
 
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.ColSpanLabel = 5
+				inp.Desc = trl.S{
+					"de": "<b>3b.</b> ",
+					"en": "<b>3b.</b> ",
+				}
+			}
 			{
 				inp := gr.AddInput()
 				inp.Type = "number"
 				inp.Name = "yshr_q_deu"
+				inp.Min = 0
+				inp.Max = 100
 				inp.MaxChars = 4
-				inp.Validator = "inRange100"
+				// inp.Validator = "inRange100"
 
 				inp.ColSpanLabel = 4
 				inp.Desc = trl.S{
@@ -302,8 +340,10 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp := gr.AddInput()
 				inp.Type = "number"
 				inp.Name = "yshr_y_deu"
+				inp.Min = 0
+				inp.Max = 100
 				inp.MaxChars = 4
-				inp.Validator = "inRange100"
+				// inp.Validator = "inRange100"
 
 				inp.ColSpanLabel = 4
 				inp.Desc = trl.S{
@@ -322,14 +362,28 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	//
 	// page 3 - inflation
 	{
-		p := q.AddPage()
-		p.Label = trl.S{"de": "Inflation und Zinsen", "en": "Inflation and rates"}
-		p.Short = trl.S{"de": "Inflation,<br>Zinsen", "en": "Inflation,<br>Rates"}
-		p.AestheticCompensation = 5
-		p.Width = 80
+		page := q.AddPage()
+		page.Label = trl.S{"de": "Inflation und Zinsen", "en": "Inflation and rates"}
+		page.Short = trl.S{"de": "Inflation,<br>Zinsen", "en": "Inflation,<br>Rates"}
+		page.AestheticCompensation = 5
+		page.Width = 80
 
 		//
-		// gr1
+		// gr1a
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 0
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Desc = trl.S{
+					"de": "<b>4.</b> Die jährl. gesamtwirtschaftl. Inflationsrate wird mittelfristig (<b>6</b>&nbsp;Mo.)",
+					"en": "<b>4.</b> Medium term (<b>6</b>&nbsp;months) yearly overall inflation rate will",
+				}
+			}
+		}
+		// gr1b
 		{
 			labels123Matrix := []trl.S{
 				{
@@ -345,37 +399,36 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				"pi_ez",
 				"pi_deu",
 			}
-			gr := p.AddRadioMatrixGroup(labelsIncreaseDecrease(), names1stMatrix, labels123Matrix)
+			gr := page.AddRadioMatrixGroup(labelsIncreaseDecrease(), names1stMatrix, labels123Matrix)
 			gr.Cols = 5 // necessary, otherwise no vspacers
 			gr.OddRowsColoring = true
 			gr.Width = 90
-			gr.Label = trl.S{
-				"de": "4.",
-				"en": "4.",
-			}
-			gr.Desc = trl.S{
-				"de": "Die jährl. gesamtwirtschaftl. Inflationsrate wird mittelfristig (<b>6</b>&nbsp;Mo.)",
-				"en": "Medium term (<b>6</b>&nbsp;months) yearly overall inflation rate will",
-			}
-
 		}
 
+		//
+		// gr2
 		{
-			gr := p.AddGroup()
+			gr := page.AddGroup()
 			gr.Cols = 100 // necessary, otherwise no vspacers
-			gr.Label = trl.S{"de": "5a.", "en": "5a."}
-			gr.Desc = trl.S{
-				"de": "Die <b>kurzfristigen</b> Zinsen (3-Mo.-Interbanksätze) im <b>Euroraum</b> erwarten wir auf Sicht von 6&nbsp;Monaten",
-				"en": "We expect <b>short term</b> interest rates (3 months interbank) in the <b>euro area</b>",
-			}
 			gr.HeaderBottomVSpacers = 1
 
 			{
 				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.ColSpanLabel = 100
+				inp.Desc = trl.S{
+					"de": "<b>5a.</b> Die <b>kurzfristigen</b> Zinsen (3-Mo.-Interbanksätze) im <b>Euroraum</b> erwarten wir auf Sicht von 6&nbsp;Monaten",
+					"en": "<b>5a.</b> We expect <b>short term</b> interest rates (3 months interbank) in the <b>euro area</b>",
+				}
+			}
+			{
+				inp := gr.AddInput()
 				inp.Type = "number"
 				inp.Name = "i_ez_low"
-				inp.MaxChars = 4
-				inp.Validator = "inRange20"
+				inp.Min = 0
+				inp.Max = 20
+				inp.MaxChars = 3
+				// inp.Validator = "inRange20"
 
 				inp.ColSpanLabel = 10
 				// inp.CSSLabel = "special-line-height-higher"
@@ -393,8 +446,10 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp := gr.AddInput()
 				inp.Type = "number"
 				inp.Name = "i_ez_high"
-				inp.MaxChars = 4
-				inp.Validator = "inRange20"
+				inp.Min = 0
+				inp.Max = 20
+				inp.MaxChars = 3
+				// inp.Validator = "inRange20"
 
 				inp.ColSpanLabel = 4
 				inp.ColSpanControl = 74
@@ -430,22 +485,30 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 		}
 
+		// gr3
 		{
-			gr := p.AddGroup()
+			gr := page.AddGroup()
 			gr.Cols = 100 // necessary, otherwise no vspacers
-			gr.Label = trl.S{"de": "5b.", "en": "5b."}
-			gr.Desc = trl.S{
-				"de": "Die <b>langfristigen</b> Zinsen (Renditen 10jg. Staatsanleihen) in <b>Deutschland</b> erwarten wir auf Sicht von 6&nbsp;Monaten",
-				"en": "We expect <b>long term</b> interest rates in <b>Germany</b> in 6&nbsp;months",
-			}
 			gr.HeaderBottomVSpacers = 1
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.ColSpanLabel = 100
+				inp.Desc = trl.S{
+					"de": "<b>5b.</b> Die <b>langfristigen</b> Zinsen (Renditen 10jg. Staatsanleihen) in <b>Deutschland</b> erwarten wir auf Sicht von 6&nbsp;Monaten",
+					"en": "<b>5b.</b> We expect <b>long term</b> interest rates in <b>Germany</b> in 6&nbsp;months",
+				}
+			}
 
 			{
 				inp := gr.AddInput()
 				inp.Type = "number"
 				inp.Name = "r_deu_low"
+				inp.Min = 0
+				inp.Max = 100
 				inp.MaxChars = 4
-				inp.Validator = "inRange100"
+				// inp.Validator = "inRange100"
 
 				inp.ColSpanLabel = 10
 				// inp.CSSLabel = "special-line-height-higher"
@@ -463,8 +526,10 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp := gr.AddInput()
 				inp.Type = "number"
 				inp.Name = "r_deu_high"
+				inp.Min = 0
+				inp.Max = 100
 				inp.MaxChars = 4
-				inp.Validator = "inRange100"
+				// inp.Validator = "inRange100"
 
 				inp.ColSpanLabel = 4
 				inp.ColSpanControl = 74
@@ -505,10 +570,10 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	//
 	// page 4 - Credit situation
 	{
-		p := q.AddPage()
-		p.Section = trl.S{"de": "Kreditsituation", "en": "Credit situation"}
-		p.Label = trl.S{"de": "Markt", "en": "Market"}
-		p.Short = trl.S{"de": "Kredit-<br>situation:<br>Markt", "en": "Credit<br>situation:<br>Market"}
+		page := q.AddPage()
+		page.Section = trl.S{"de": "Kreditsituation", "en": "Credit situation"}
+		page.Label = trl.S{"de": "Markt", "en": "Market"}
+		page.Short = trl.S{"de": "Kredit-<br>situation:<br>Markt", "en": "Credit<br>situation:<br>Market"}
 
 		{
 			names3rdMatrix := []string{
@@ -526,7 +591,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				},
 			}
 
-			gr := p.AddRadioMatrixGroup(labelsVeryHighVeryLow(), names3rdMatrix, labels123Matrix)
+			gr := page.AddRadioMatrixGroup(labelsVeryHighVeryLow(), names3rdMatrix, labels123Matrix)
 			gr.Label = trl.S{"de": "6a.", "en": "6a."}
 			gr.Desc = trl.S{
 				"de": "Wie schätzen Sie die Kreditsituation in Deutschland ein?",
@@ -552,7 +617,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				},
 			}
 
-			gr := p.AddRadioMatrixGroup(labelsStrongIncreaseStrongDecrease(), names3rdMatrix, labels123Matrix)
+			gr := page.AddRadioMatrixGroup(labelsStrongIncreaseStrongDecrease(), names3rdMatrix, labels123Matrix)
 			gr.Label = trl.S{"de": "6b.", "en": "6b."}
 			gr.Desc = trl.S{
 				"de": "Das (saisonbereinigte) Gesamtvolumen der Neukreditvergabe in Deutschland wird",
@@ -588,7 +653,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				},
 			}
 
-			gr := p.AddRadioMatrixGroup(labelsStrongIncreaseStrongDecrease(), names3rdMatrix, labels123Matrix)
+			gr := page.AddRadioMatrixGroup(labelsStrongIncreaseStrongDecrease(), names3rdMatrix, labels123Matrix)
 			gr.Label = trl.S{"de": "6c.", "en": "6c."}
 			gr.Desc = trl.S{
 				"de": "Die (saisonbereinigte) Kreditnachfrage wird mittelfristig (<b>6</b>&nbsp;Mo.)",
@@ -603,10 +668,10 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	//
 	// page 5 - Credit influence factors
 	{
-		p := q.AddPage()
+		page := q.AddPage()
 		// page.Section = trl.S{"de": "Kreditsituation", "en": "Credit situation"}
-		p.Label = trl.S{"de": "Einflussfaktoren", "en": "Influence factors"}
-		p.Short = trl.S{"de": "Einfluss-<br>faktoren", "en": "Influence<br>factors"}
+		page.Label = trl.S{"de": "Einflussfaktoren", "en": "Influence factors"}
+		page.Short = trl.S{"de": "Einfluss-<br>faktoren", "en": "Influence<br>factors"}
 
 		{
 			names3rdMatrix := []string{
@@ -644,7 +709,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				},
 			}
 
-			gr := p.AddRadioMatrixGroup(labelsVeryPositiveVeryNegative(), names3rdMatrix, labels123Matrix)
+			gr := page.AddRadioMatrixGroup(labelsVeryPositiveVeryNegative(), names3rdMatrix, labels123Matrix)
 			gr.Label = trl.S{"de": "6d.", "en": "6d."}
 			gr.Desc = trl.S{
 				"de": "Wie schätzen Sie den Einfluss folgender Faktoren auf die mittelfristige (<b>6</b>&nbsp;Mo.) Veränderung des Kreditangebots ein?",
@@ -680,7 +745,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				},
 			}
 
-			gr := p.AddRadioMatrixGroup(labelsStrongIncreaseStrongDecrease(), names3rdMatrix, labels123Matrix)
+			gr := page.AddRadioMatrixGroup(labelsStrongIncreaseStrongDecrease(), names3rdMatrix, labels123Matrix)
 			gr.Label = trl.S{"de": "6e.", "en": "6e."}
 			gr.Desc = trl.S{
 				"de": "Die (saisonbereinigte) Kreditstandards für Neukredite werden mittelfristig (<b>6</b>&nbsp;Mo.)",
@@ -695,12 +760,12 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	//
 	// page 6 - Financial markets
 	{
-		p := q.AddPage()
-		p.Section = trl.S{"de": "Finanzmärkte", "en": "Financial markets"}
-		p.Label = trl.S{"de": "Preise", "en": "Prices"}
-		p.Short = trl.S{"de": "Finanz-<br>märkte:<br>Preise", "en": "Financial<br>markets:<br>Prices"}
+		page := q.AddPage()
+		page.Section = trl.S{"de": "Finanzmärkte", "en": "Financial markets"}
+		page.Label = trl.S{"de": "Preise", "en": "Prices"}
+		page.Short = trl.S{"de": "Finanz-<br>märkte:<br>Preise", "en": "Financial<br>markets:<br>Prices"}
 
-		p.Width = 80
+		page.Width = 80
 
 		{
 			names3rdMatrix := []string{
@@ -728,7 +793,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				},
 			}
 
-			gr := p.AddRadioMatrixGroup(labelsIncreaseDecrease(), names3rdMatrix, labels123Matrix)
+			gr := page.AddRadioMatrixGroup(labelsIncreaseDecrease(), names3rdMatrix, labels123Matrix)
 			gr.Label = trl.S{"de": "7a.", "en": "7a."}
 			gr.Desc = trl.S{
 				"de": "Die folgenden Aktienindizes / Rohstoffpreise / Wechselkurse werden mittelfristig (<b>6</b>&nbsp;Mo.)",
@@ -739,7 +804,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			gr.OddRowsColoring = true
 		}
 
-		gr := p.AddGroup()
+		gr := page.AddGroup()
 		gr.Cols = 100
 		gr.Label = trl.S{"de": "7b.", "en": "7b."}
 
@@ -796,7 +861,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		{
 
 			// gr := p.AddRadioMatrixGroup(labelsOvervaluedFairUndervalued(), names3rdMatrix, labels123Matrix)
-			gr := p.AddGroup()
+			gr := page.AddGroup()
 			gr.Cols = 6 // necessary, otherwise no vspacers
 			gr.Label = trl.S{"de": "7c.", "en": "7c."}
 			gr.Desc = trl.S{
@@ -831,7 +896,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		//
 		//
 		{
-			gr := p.AddGroup()
+			gr := page.AddGroup()
 			gr.Cols = 100
 			gr.Label = trl.S{"de": "8.", "en": "8."}
 			gr.Desc = trl.S{
@@ -891,7 +956,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	}
 
 	//
-	//
+	// page 7
 	// Finish questionnaire?  - one before last page
 	{
 		p := q.AddPage()
@@ -1001,6 +1066,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 	}
 
+	// page 8
 	// Report of results
 	{
 		p := q.AddPage()

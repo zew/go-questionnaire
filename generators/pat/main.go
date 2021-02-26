@@ -4,7 +4,6 @@ import (
 	"fmt"
 
 	"github.com/zew/go-questionnaire/cfg"
-	"github.com/zew/go-questionnaire/css"
 	"github.com/zew/go-questionnaire/ctr"
 	"github.com/zew/go-questionnaire/qst"
 	"github.com/zew/go-questionnaire/trl"
@@ -108,14 +107,10 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			gr.Cols = 6
 			gr.BottomVSpacers = 1
 
-			gr.Style = css.NewStylesResponsive()
-			gr.Style.Desktop.BoxStyle.Width = "99.9%"
-			gr.Style.Mobile.BoxStyle.Width = "100%"
-
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				inp.ColSpanLabel = 5
+				inp.ColSpanLabel = 6
 				// inp.Label = trl.S{"de": "input label"}
 				inp.Desc = trl.S{"de": `
 				<p><b>
@@ -171,33 +166,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				`}
 
 			}
-
-			{
-				inp := gr.AddInput()
-				inp.Type = "number"
-				inp.Name = "inp01"
-				inp.Min = 10
-				inp.Max = 20
-				inp.MaxChars = 12
-				inp.Label = trl.S{"de": "inp 1 label"}
-				inp.Suffix = trl.S{"de": "sfx 1"}
-				inp.ColSpanLabel = 2
-				inp.ColSpanControl = 2
-			}
-
-			{
-				inp := gr.AddInput()
-				inp.Type = "number"
-				inp.Name = "inp02"
-				inp.Min = 10
-				inp.Max = 20
-				inp.MaxChars = 2
-				inp.Label = trl.S{"de": "inp 2 label"}
-				inp.Suffix = trl.S{"de": "sfx 2"}
-				inp.ColSpanLabel = 1
-				inp.ColSpanControl = 1
-			}
-
 		}
 
 		{
@@ -416,8 +384,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Max = 999
 				inp.ColSpanLabel = 3
 				inp.ColSpanControl = 2
-				inp.HAlignLabel = qst.HRight
 				inp.HAlignLabel = qst.HLeft
+				inp.HAlignLabel = qst.HRight
 				inp.Desc = trl.S{"de": "Beste Stiftung"}
 				inp.Suffix = trl.S{"de": "€"}
 				inp.Validator = "inRange1000"

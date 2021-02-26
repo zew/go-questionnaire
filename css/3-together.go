@@ -28,13 +28,19 @@ type Styles struct {
 type StylesResponsive struct {
 	Desktop Styles `json:"desktop,omitempty"`
 	Mobile  Styles `json:"mobile,omitempty"`
+	// Classes []string `json:"classes,omitempty"` // static CSS classes
 }
 
 // NewStylesResponsive returns style struct
 func NewStylesResponsive() *StylesResponsive {
 	return &StylesResponsive{
-		Desktop: Styles{},
-		Mobile:  Styles{},
+		Desktop: Styles{
+			BoxStyle: BoxStyle{
+				HeightMin: "0", // default auto - stackoverflow.com/questions/43311943/
+				WidthMin:  "0",
+			},
+		},
+		Mobile: Styles{},
 	}
 }
 

@@ -117,7 +117,7 @@ func (p *pageT) AddRadioMatrixGroup(headerLabels []trl.S, inpNames []string, row
 }
 
 // AddRadioMatrixGroupNoLabels - like AddRadioMatrixGroup
-// but no first column
+// but no first column with labels
 func (p *pageT) AddRadioMatrixGroupNoLabels(headerLabels []trl.S, inpNames []string, opt ...int) *groupT {
 
 	gr := p.AddGroup()

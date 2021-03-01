@@ -177,15 +177,24 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		}
 		// gr1b
 		{
-			names1stMatrix := []string{
-				"y0_ez",
-				"y0_deu",
-				"y0_usa",
-				"y0_glob",
-			}
-			gr := page.AddRadioMatrixGroup(labelsGoodBad(), names1stMatrix, labels123Matrix)
-			gr.Cols = 5 // necessary, otherwise no vspacers
+			// names1stMatrix := []string{
+			// 	"y0_ez",
+			// 	"y0_deu",
+			// 	"y0_usa",
+			// 	"y0_glob",
+			// }
+			// gr := page.AddRadioMatrixGroupCSSGrid(names1stMatrix, len(labelsGoodBad()), labelsGoodBad(), labels123Matrix, 0)
+			// gr.OddRowsColoring = true
+		}
+
+		//
+		// gr1b--xx
+		{
+			erm := qst.ExampleRadioMatrix()
+			gr := page.AddRadioMatrix2(erm)
 			gr.OddRowsColoring = true
+
+			// log.Print(util.IndentedDump(gr))
 		}
 
 		//
@@ -210,8 +219,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				"y_usa",
 				"y_glob",
 			}
-			gr := page.AddRadioMatrixGroup(labelsImproveDeteriorate(), names2stMatrix, labels123Matrix)
-			gr.Cols = 5 // necessary, otherwise no vspacers
+			gr := page.AddRadioMatrixGroupCSSGrid(names2stMatrix, len(labelsImproveDeteriorate()), labelsImproveDeteriorate(), labels123Matrix, 0)
 			gr.OddRowsColoring = true
 		}
 
@@ -238,8 +246,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				"y24_glob",
 			}
 
-			gr := page.AddRadioMatrixGroup(labelsImproveDeteriorate(), names3rdMatrix, labels123Matrix)
-			gr.Cols = 5 // necessary, otherwise no vspacers
+			gr := page.AddRadioMatrixGroupCSSGrid(names3rdMatrix, len(labelsImproveDeteriorate()), labelsImproveDeteriorate(), labels123Matrix, 0)
 			gr.OddRowsColoring = true
 		}
 	}
@@ -283,6 +290,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Suffix = trl.S{"de": "%", "en": "pct"}
 				inp.HAlignLabel = qst.HLeft
 				inp.HAlignControl = qst.HLeft
+				inp.ColSpanControl = 1
 			}
 
 			{
@@ -302,6 +310,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Suffix = trl.S{"de": "%", "en": "pct"}
 				inp.HAlignLabel = qst.HLeft
 				inp.HAlignControl = qst.HLeft
+				inp.ColSpanControl = 1
 			}
 		}
 
@@ -335,6 +344,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Suffix = trl.S{"de": "%", "en": "pct"}
 				inp.HAlignLabel = qst.HLeft
 				inp.HAlignControl = qst.HLeft
+				inp.ColSpanControl = 1
 			}
 
 			{
@@ -354,6 +364,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Suffix = trl.S{"de": "%", "en": "pct"}
 				inp.HAlignLabel = qst.HLeft
 				inp.HAlignControl = qst.HLeft
+				inp.ColSpanControl = 1
 			}
 
 		}
@@ -386,7 +397,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		}
 		// gr1b
 		{
-			labels123Matrix := []trl.S{
+			labels1stCol := []trl.S{
 				{
 					"de": "Euroraum",
 					"en": "Euro area",
@@ -400,8 +411,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				"pi_ez",
 				"pi_deu",
 			}
-			gr := page.AddRadioMatrixGroup(labelsIncreaseDecrease(), names1stMatrix, labels123Matrix)
-			gr.Cols = 5 // necessary, otherwise no vspacers
+			gr := page.AddRadioMatrixGroupCSSGrid(names1stMatrix, len(labelsIncreaseDecrease()),
+				labelsIncreaseDecrease(), labels1stCol, 0)
 			gr.OddRowsColoring = true
 			gr.Width = 90
 		}
@@ -606,8 +617,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				},
 			}
 
-			gr := page.AddRadioMatrixGroup(labelsVeryHighVeryLow(), names3rdMatrix, labels123Matrix)
-			gr.Cols = 7 // necessary, otherwise no vspacers
+			gr := page.AddRadioMatrixGroupCSSGrid(names3rdMatrix, len(labelsVeryHighVeryLow()), labelsVeryHighVeryLow(), labels123Matrix, 0)
 			gr.OddRowsColoring = true
 		}
 
@@ -643,8 +653,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				},
 			}
 
-			gr := page.AddRadioMatrixGroup(labelsStrongIncreaseStrongDecrease(), names3rdMatrix, labels123Matrix)
-			gr.Cols = 7 // necessary, otherwise no vspacers
+			gr := page.AddRadioMatrixGroupCSSGrid(names3rdMatrix, len(labelsStrongIncreaseStrongDecrease()), labelsStrongIncreaseStrongDecrease(), labels123Matrix, 0)
 			gr.OddRowsColoring = true
 		}
 
@@ -690,8 +699,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				},
 			}
 
-			gr := page.AddRadioMatrixGroup(labelsStrongIncreaseStrongDecrease(), names3rdMatrix, labels123Matrix)
-			gr.Cols = 7 // necessary, otherwise no vspacers
+			gr := page.AddRadioMatrixGroupCSSGrid(names3rdMatrix, len(labelsStrongIncreaseStrongDecrease()), labelsStrongIncreaseStrongDecrease(), labels123Matrix, 0)
 			gr.OddRowsColoring = true
 		}
 
@@ -756,8 +764,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				},
 			}
 
-			gr := page.AddRadioMatrixGroup(labelsVeryPositiveVeryNegative(), names3rdMatrix, labels123Matrix)
-			gr.Cols = 7 // necessary, otherwise no vspacers
+			gr := page.AddRadioMatrixGroupCSSGrid(names3rdMatrix, len(labelsVeryPositiveVeryNegative()), labelsVeryPositiveVeryNegative(), labels123Matrix, 0)
 			gr.OddRowsColoring = true
 		}
 
@@ -802,8 +809,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				},
 			}
 
-			gr := page.AddRadioMatrixGroup(labelsStrongIncreaseStrongDecrease(), names3rdMatrix, labels123Matrix)
-			gr.Cols = 7 // necessary, otherwise no vspacers
+			gr := page.AddRadioMatrixGroupCSSGrid(names3rdMatrix, len(labelsStrongIncreaseStrongDecrease()), labelsStrongIncreaseStrongDecrease(), labels123Matrix, 0)
 			gr.OddRowsColoring = true
 		}
 
@@ -860,8 +866,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				},
 			}
 
-			gr := page.AddRadioMatrixGroup(labelsIncreaseDecrease(), names3rdMatrix, labels123Matrix)
-			gr.Cols = 5 // necessary, otherwise no vspacers
+			gr := page.AddRadioMatrixGroupCSSGrid(names3rdMatrix, len(labelsIncreaseDecrease()), labelsIncreaseDecrease(), labels123Matrix, 0)
 			gr.OddRowsColoring = true
 		}
 
@@ -956,7 +961,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			}
 		}
 		{
-			// gr := p.AddRadioMatrixGroup(labelsOvervaluedFairUndervalued(), names3rdMatrix, labels123Matrix)
+			// gr := p.AddRadioMatrixGroupCSSGrid(labelsOvervaluedFairUndervalued(), names3rdMatrix, labels123Matrix)
 			gr := page.AddGroup()
 			gr.Cols = 6 // necessary, otherwise no vspacers
 			gr.HeaderBottomVSpacers = 1
@@ -1131,6 +1136,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			gr := page.AddGroup()
 			gr.Cols = 2 // necessary, otherwise no vspacers
 			// gr.Width = 80
+
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"

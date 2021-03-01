@@ -44,9 +44,9 @@
 	</style>
 	<!-- after CSS variables -->
 	<link href="{{cfg.Pref  (print  "/css/" .Q.Survey.Type "/styles.css")          }}?v={{cfg.AppInstanceID}}"  rel="stylesheet" type="text/css" />
+	<link href="{{cfg.Pref  (print  "/css/" .Q.Survey.Type "/progress-bar-2.css")  }}?v={{cfg.AppInstanceID}}"  rel="stylesheet" type="text/css" />
 	<link href="{{cfg.Pref  (print  "/css/" .Q.Survey.Type "/styles-mobile.css")   }}?v={{cfg.AppInstanceID}}"  rel="stylesheet" type="text/css" />
 	<link href="{{cfg.Pref  (print  "/css/" .Q.Survey.Type "/styles-quest.css")    }}?v={{cfg.AppInstanceID}}"  rel="stylesheet" type="text/css" />
-	<link href="{{cfg.Pref  (print  "/css/" .Q.Survey.Type "/progress-bar-2.css")  }}?v={{cfg.AppInstanceID}}"  rel="stylesheet" type="text/css" />
 	{{if exists . "Q"}}
 		{{if ne .Q.Survey.Type ""}}
 			<link href="{{cfg.Pref  "/css/"}}/{{.Q.Survey.Type}}/styles-quest-{{.Q.Survey.Type}}.css" rel="stylesheet" type="text/css" />

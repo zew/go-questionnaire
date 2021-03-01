@@ -11,7 +11,7 @@
  		},
  		"year": 2021,
  		"month": 2,
- 		"deadline": "2021-02-28T23:59:00Z",
+ 		"deadline": "2021-03-28T23:59:00Z",
  		"params": [
  			{
  				"name": "main_refinance_rate_ecb",
@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "131f6480b39f5da09f8397b315345890",
+ 	"md_5": "40839426413a9d06e3c06b3a933ce43e",
  	"lang_codes": [
  		"de",
  		"en"
@@ -130,7 +130,6 @@
  							},
  							"accesskey": "n",
  							"horizontal_align_control": 2,
- 							"col_span_label": 1,
  							"col_span_control": 1,
  							"response": "1"
  						}
@@ -177,7 +176,7 @@
  					"bottom_vspacers": 3,
  					"odd_rows_coloring": true,
  					"width": 100,
- 					"columns": 5,
+ 					"columns": 6,
  					"inputs": [
  						{
  							"type": "textblock",
@@ -185,7 +184,7 @@
  								"de": " \u0026nbsp; ",
  								"en": " \u0026nbsp; "
  							},
- 							"col_span_label": 1
+ 							"col_span_label": 2
  						},
  						{
  							"type": "textblock",
@@ -193,8 +192,45 @@
  								"de": "gut",
  								"en": "good"
  							},
- 							"horizontal_align_label": 1,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
@@ -202,8 +238,45 @@
  								"de": "normal",
  								"en": "normal"
  							},
- 							"horizontal_align_label": 1,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
@@ -211,8 +284,45 @@
  								"de": "schlecht",
  								"en": "bad"
  							},
- 							"horizontal_align_label": 1,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
@@ -220,116 +330,161 @@
  								"de": "keine\u003cbr\u003eAn\u0026shy;gabe",
  								"en": "no an\u0026shy;swer"
  							},
- 							"horizontal_align_label": 1,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "y0_ez",
- 							"type": "radiogroup",
- 							"description": {
+ 							"type": "radio",
+ 							"label": {
  								"de": "Euroraum",
  								"en": "Euro area"
  							},
- 							"col_span_label": 1,
- 							"radios": [
- 								{
- 									"hori_align": 1,
- 									"val": "1"
- 								},
- 								{
- 									"hori_align": 1,
- 									"val": "2"
- 								},
- 								{
- 									"hori_align": 1,
- 									"val": "3"
- 								},
- 								{
- 									"hori_align": 1,
- 									"val": "4"
- 								}
- 							]
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1"
+ 						},
+ 						{
+ 							"name": "y0_ez",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "y0_ez",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "y0_ez",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
  						},
  						{
  							"name": "y0_deu",
- 							"type": "radiogroup",
- 							"description": {
+ 							"type": "radio",
+ 							"label": {
  								"de": "Deutsch\u0026shy;land",
  								"en": "Germany"
  							},
- 							"col_span_label": 1,
- 							"radios": [
- 								{
- 									"hori_align": 1,
- 									"val": "1"
- 								},
- 								{
- 									"hori_align": 1,
- 									"val": "2"
- 								},
- 								{
- 									"hori_align": 1,
- 									"val": "3"
- 								},
- 								{
- 									"hori_align": 1,
- 									"val": "4"
- 								}
- 							]
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1"
+ 						},
+ 						{
+ 							"name": "y0_deu",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "y0_deu",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "y0_deu",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
  						},
  						{
  							"name": "y0_usa",
- 							"type": "radiogroup",
- 							"description": {
+ 							"type": "radio",
+ 							"label": {
  								"de": "USA",
  								"en": "US"
  							},
- 							"col_span_label": 1,
- 							"radios": [
- 								{
- 									"hori_align": 1,
- 									"val": "1"
- 								},
- 								{
- 									"hori_align": 1,
- 									"val": "2"
- 								},
- 								{
- 									"hori_align": 1,
- 									"val": "3"
- 								},
- 								{
- 									"hori_align": 1,
- 									"val": "4"
- 								}
- 							]
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1"
+ 						},
+ 						{
+ 							"name": "y0_usa",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "y0_usa",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "y0_usa",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
  						},
  						{
  							"name": "y0_glob",
- 							"type": "radiogroup",
- 							"description": {
+ 							"type": "radio",
+ 							"label": {
  								"de": "Welt\u0026shy;wirtschaft",
  								"en": "Global econ\u0026shy;o\u0026shy;my"
  							},
- 							"col_span_label": 1,
- 							"radios": [
- 								{
- 									"hori_align": 1,
- 									"val": "1"
- 								},
- 								{
- 									"hori_align": 1,
- 									"val": "2"
- 								},
- 								{
- 									"hori_align": 1,
- 									"val": "3"
- 								},
- 								{
- 									"hori_align": 1,
- 									"val": "4"
- 								}
- 							]
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1"
+ 						},
+ 						{
+ 							"name": "y0_glob",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "y0_glob",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "y0_glob",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
  						}
  					]
  				},
@@ -368,8 +523,45 @@
  								"de": "verbessern",
  								"en": "improve"
  							},
- 							"horizontal_align_label": 1,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
@@ -377,8 +569,45 @@
  								"de": "nicht verändern",
  								"en": "not change"
  							},
- 							"horizontal_align_label": 1,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
@@ -386,8 +615,45 @@
  								"de": "ver\u0026shy;schlechtern",
  								"en": "deteriorate"
  							},
- 							"horizontal_align_label": 1,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
@@ -395,17 +661,58 @@
  								"de": "keine\u003cbr\u003eAn\u0026shy;gabe",
  								"en": "no an\u0026shy;swer"
  							},
- 							"horizontal_align_label": 1,
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Euroraum",
+ 								"en": "Euro area"
+ 							},
  							"col_span_label": 1
  						},
  						{
  							"name": "y_ez",
  							"type": "radiogroup",
- 							"description": {
- 								"de": "Euroraum",
- 								"en": "Euro area"
- 							},
- 							"col_span_label": 1,
+ 							"col_span_control": 4,
  							"radios": [
  								{
  									"hori_align": 1,
@@ -424,15 +731,19 @@
  									"val": "4"
  								}
  							]
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Deutsch\u0026shy;land",
+ 								"en": "Germany"
+ 							},
+ 							"col_span_label": 1
  						},
  						{
  							"name": "y_deu",
  							"type": "radiogroup",
- 							"description": {
- 								"de": "Deutsch\u0026shy;land",
- 								"en": "Germany"
- 							},
- 							"col_span_label": 1,
+ 							"col_span_control": 4,
  							"radios": [
  								{
  									"hori_align": 1,
@@ -451,15 +762,19 @@
  									"val": "4"
  								}
  							]
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "USA",
+ 								"en": "US"
+ 							},
+ 							"col_span_label": 1
  						},
  						{
  							"name": "y_usa",
  							"type": "radiogroup",
- 							"description": {
- 								"de": "USA",
- 								"en": "US"
- 							},
- 							"col_span_label": 1,
+ 							"col_span_control": 4,
  							"radios": [
  								{
  									"hori_align": 1,
@@ -480,13 +795,17 @@
  							]
  						},
  						{
- 							"name": "y_glob",
- 							"type": "radiogroup",
- 							"description": {
+ 							"type": "textblock",
+ 							"label": {
  								"de": "Welt\u0026shy;wirtschaft",
  								"en": "Global econ\u0026shy;o\u0026shy;my"
  							},
- 							"col_span_label": 1,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "y_glob",
+ 							"type": "radiogroup",
+ 							"col_span_control": 4,
  							"radios": [
  								{
  									"hori_align": 1,
@@ -543,8 +862,45 @@
  								"de": "verbessern",
  								"en": "improve"
  							},
- 							"horizontal_align_label": 1,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
@@ -552,8 +908,45 @@
  								"de": "nicht verändern",
  								"en": "not change"
  							},
- 							"horizontal_align_label": 1,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
@@ -561,8 +954,45 @@
  								"de": "ver\u0026shy;schlechtern",
  								"en": "deteriorate"
  							},
- 							"horizontal_align_label": 1,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
@@ -570,17 +1000,58 @@
  								"de": "keine\u003cbr\u003eAn\u0026shy;gabe",
  								"en": "no an\u0026shy;swer"
  							},
- 							"horizontal_align_label": 1,
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Euroraum",
+ 								"en": "Euro area"
+ 							},
  							"col_span_label": 1
  						},
  						{
  							"name": "y24_ez",
  							"type": "radiogroup",
- 							"description": {
- 								"de": "Euroraum",
- 								"en": "Euro area"
- 							},
- 							"col_span_label": 1,
+ 							"col_span_control": 4,
  							"radios": [
  								{
  									"hori_align": 1,
@@ -599,15 +1070,19 @@
  									"val": "4"
  								}
  							]
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Deutsch\u0026shy;land",
+ 								"en": "Germany"
+ 							},
+ 							"col_span_label": 1
  						},
  						{
  							"name": "y24_deu",
  							"type": "radiogroup",
- 							"description": {
- 								"de": "Deutsch\u0026shy;land",
- 								"en": "Germany"
- 							},
- 							"col_span_label": 1,
+ 							"col_span_control": 4,
  							"radios": [
  								{
  									"hori_align": 1,
@@ -626,15 +1101,19 @@
  									"val": "4"
  								}
  							]
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "USA",
+ 								"en": "US"
+ 							},
+ 							"col_span_label": 1
  						},
  						{
  							"name": "y24_usa",
  							"type": "radiogroup",
- 							"description": {
- 								"de": "USA",
- 								"en": "US"
- 							},
- 							"col_span_label": 1,
+ 							"col_span_control": 4,
  							"radios": [
  								{
  									"hori_align": 1,
@@ -655,13 +1134,17 @@
  							]
  						},
  						{
- 							"name": "y24_glob",
- 							"type": "radiogroup",
- 							"description": {
+ 							"type": "textblock",
+ 							"label": {
  								"de": "Welt\u0026shy;wirtschaft",
  								"en": "Global econ\u0026shy;o\u0026shy;my"
  							},
- 							"col_span_label": 1,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "y24_glob",
+ 							"type": "radiogroup",
+ 							"col_span_control": 4,
  							"radios": [
  								{
  									"hori_align": 1,
@@ -725,7 +1208,8 @@
  								"de": "%",
  								"en": "pct"
  							},
- 							"col_span_label": 4
+ 							"col_span_label": 4,
+ 							"col_span_control": 1
  						},
  						{
  							"name": "y_y_deu",
@@ -740,7 +1224,8 @@
  								"de": "%",
  								"en": "pct"
  							},
- 							"col_span_label": 4
+ 							"col_span_label": 4,
+ 							"col_span_control": 1
  						}
  					]
  				},
@@ -770,7 +1255,8 @@
  								"de": "%",
  								"en": "pct"
  							},
- 							"col_span_label": 4
+ 							"col_span_label": 4,
+ 							"col_span_control": 1
  						},
  						{
  							"name": "yshr_y_deu",
@@ -785,7 +1271,8 @@
  								"de": "%",
  								"en": "pct"
  							},
- 							"col_span_label": 4
+ 							"col_span_label": 4,
+ 							"col_span_control": 1
  						}
  					]
  				}
@@ -843,8 +1330,45 @@
  								"de": "steigen",
  								"en": "in\u0026shy;crease"
  							},
- 							"horizontal_align_label": 1,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
@@ -852,8 +1376,45 @@
  								"de": "gleich bleiben",
  								"en": "remain un\u0026shy;changed"
  							},
- 							"horizontal_align_label": 1,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
@@ -861,8 +1422,45 @@
  								"de": "sinken",
  								"en": "de\u0026shy;crease"
  							},
- 							"horizontal_align_label": 1,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
@@ -870,17 +1468,58 @@
  								"de": "keine\u003cbr\u003eAn\u0026shy;gabe",
  								"en": "no an\u0026shy;swer"
  							},
- 							"horizontal_align_label": 1,
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Euroraum",
+ 								"en": "Euro area"
+ 							},
  							"col_span_label": 1
  						},
  						{
  							"name": "pi_ez",
  							"type": "radiogroup",
- 							"description": {
- 								"de": "Euroraum",
- 								"en": "Euro area"
- 							},
- 							"col_span_label": 1,
+ 							"col_span_control": 4,
  							"radios": [
  								{
  									"hori_align": 1,
@@ -901,13 +1540,17 @@
  							]
  						},
  						{
- 							"name": "pi_deu",
- 							"type": "radiogroup",
- 							"description": {
+ 							"type": "textblock",
+ 							"label": {
  								"de": "Deutsch\u0026shy;land",
  								"en": "Germany"
  							},
- 							"col_span_label": 1,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "pi_deu",
+ 							"type": "radiogroup",
+ 							"col_span_control": 4,
  							"radios": [
  								{
  									"hori_align": 1,
@@ -1122,8 +1765,45 @@
  								"de": "sehr hoch",
  								"en": "very high"
  							},
- 							"horizontal_align_label": 1,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
@@ -1131,8 +1811,45 @@
  								"de": "hoch",
  								"en": "high"
  							},
- 							"horizontal_align_label": 1,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
@@ -1140,8 +1857,45 @@
  								"de": "normal",
  								"en": "normal"
  							},
- 							"horizontal_align_label": 1,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
@@ -1149,8 +1903,45 @@
  								"de": "niedrig",
  								"en": "low"
  							},
- 							"horizontal_align_label": 1,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
@@ -1158,8 +1949,45 @@
  								"de": "sehr niedrig",
  								"en": "very low"
  							},
- 							"horizontal_align_label": 1,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
@@ -1167,17 +1995,58 @@
  								"de": "keine\u003cbr\u003eAn\u0026shy;gabe",
  								"en": "no an\u0026shy;swer"
  							},
- 							"horizontal_align_label": 1,
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Kredit\u0026shy;nach\u0026shy;frage",
+ 								"en": "Credit demand"
+ 							},
  							"col_span_label": 1
  						},
  						{
  							"name": "cd_deu",
  							"type": "radiogroup",
- 							"description": {
- 								"de": "Kredit\u0026shy;nach\u0026shy;frage",
- 								"en": "Credit demand"
- 							},
- 							"col_span_label": 1,
+ 							"col_span_control": 6,
  							"radios": [
  								{
  									"hori_align": 1,
@@ -1206,13 +2075,17 @@
  							]
  						},
  						{
- 							"name": "cs_deu",
- 							"type": "radiogroup",
- 							"description": {
+ 							"type": "textblock",
+ 							"label": {
  								"de": "Kredit\u0026shy;angebot",
  								"en": "Credit supply"
  							},
- 							"col_span_label": 1,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "cs_deu",
+ 							"type": "radiogroup",
+ 							"col_span_control": 6,
  							"radios": [
  								{
  									"hori_align": 1,
@@ -1280,8 +2153,45 @@
  								"de": "stark steigen",
  								"en": "strong\u0026shy;ly in\u0026shy;crease"
  							},
- 							"horizontal_align_label": 1,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
@@ -1289,8 +2199,45 @@
  								"de": "steigen",
  								"en": "in\u0026shy;crease"
  							},
- 							"horizontal_align_label": 1,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
@@ -1298,8 +2245,45 @@
  								"de": "gleich bleiben",
  								"en": "remain un\u0026shy;changed"
  							},
- 							"horizontal_align_label": 1,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
@@ -1307,8 +2291,45 @@
  								"de": "sinken",
  								"en": "de\u0026shy;crease"
  							},
- 							"horizontal_align_label": 1,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
@@ -1316,8 +2337,45 @@
  								"de": "stark sinken",
  								"en": "strong\u0026shy;ly de\u0026shy;crease"
  							},
- 							"horizontal_align_label": 1,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
@@ -1325,17 +2383,58 @@
  								"de": "keine\u003cbr\u003eAn\u0026shy;gabe",
  								"en": "no an\u0026shy;swer"
  							},
- 							"horizontal_align_label": 1,
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "mittel\u0026shy;fristig (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;Mo.)",
+ 								"en": "medium term (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;months)"
+ 							},
  							"col_span_label": 1
  						},
  						{
  							"name": "c0_6",
  							"type": "radiogroup",
- 							"description": {
- 								"de": "mittel\u0026shy;fristig (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;Mo.)",
- 								"en": "medium term (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;months)"
- 							},
- 							"col_span_label": 1,
+ 							"col_span_control": 6,
  							"radios": [
  								{
  									"hori_align": 1,
@@ -1364,13 +2463,17 @@
  							]
  						},
  						{
- 							"name": "c0_24",
- 							"type": "radiogroup",
- 							"description": {
+ 							"type": "textblock",
+ 							"label": {
  								"de": "lang\u0026shy;fristig (\u003cb\u003e24\u003c/b\u003e\u0026nbsp;Mo.)",
  								"en": "long term (\u003cb\u003e24\u003c/b\u003e\u0026nbsp;months)"
  							},
- 							"col_span_label": 1,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "c0_24",
+ 							"type": "radiogroup",
+ 							"col_span_control": 6,
  							"radios": [
  								{
  									"hori_align": 1,
@@ -1438,8 +2541,45 @@
  								"de": "stark steigen",
  								"en": "strong\u0026shy;ly in\u0026shy;crease"
  							},
- 							"horizontal_align_label": 1,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
@@ -1447,8 +2587,45 @@
  								"de": "steigen",
  								"en": "in\u0026shy;crease"
  							},
- 							"horizontal_align_label": 1,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
@@ -1456,8 +2633,45 @@
  								"de": "gleich bleiben",
  								"en": "remain un\u0026shy;changed"
  							},
- 							"horizontal_align_label": 1,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
@@ -1465,8 +2679,45 @@
  								"de": "sinken",
  								"en": "de\u0026shy;crease"
  							},
- 							"horizontal_align_label": 1,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
@@ -1474,8 +2725,45 @@
  								"de": "stark sinken",
  								"en": "strong\u0026shy;ly de\u0026shy;crease"
  							},
- 							"horizontal_align_label": 1,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
@@ -1483,17 +2771,58 @@
  								"de": "keine\u003cbr\u003eAn\u0026shy;gabe",
  								"en": "no an\u0026shy;swer"
  							},
- 							"horizontal_align_label": 1,
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Groß\u0026shy;unter\u0026shy;nehmen",
+ 								"en": "Large enter\u0026shy;prises"
+ 							},
  							"col_span_label": 1
  						},
  						{
  							"name": "cd_24_le",
  							"type": "radiogroup",
- 							"description": {
- 								"de": "Groß\u0026shy;unter\u0026shy;nehmen",
- 								"en": "Large enter\u0026shy;prises"
- 							},
- 							"col_span_label": 1,
+ 							"col_span_control": 6,
  							"radios": [
  								{
  									"hori_align": 1,
@@ -1520,15 +2849,19 @@
  									"val": "6"
  								}
  							]
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "KMU",
+ 								"en": "Small+\u0026shy;medium enter\u0026shy;prises"
+ 							},
+ 							"col_span_label": 1
  						},
  						{
  							"name": "cd_24_sme",
  							"type": "radiogroup",
- 							"description": {
- 								"de": "KMU",
- 								"en": "Small+\u0026shy;medium enter\u0026shy;prises"
- 							},
- 							"col_span_label": 1,
+ 							"col_span_control": 6,
  							"radios": [
  								{
  									"hori_align": 1,
@@ -1555,15 +2888,19 @@
  									"val": "6"
  								}
  							]
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Immob\u0026shy;ilien\u0026shy;kredite",
+ 								"en": "Real estate credit"
+ 							},
+ 							"col_span_label": 1
  						},
  						{
  							"name": "cd_24_re",
  							"type": "radiogroup",
- 							"description": {
- 								"de": "Immob\u0026shy;ilien\u0026shy;kredite",
- 								"en": "Real estate credit"
- 							},
- 							"col_span_label": 1,
+ 							"col_span_control": 6,
  							"radios": [
  								{
  									"hori_align": 1,
@@ -1592,13 +2929,17 @@
  							]
  						},
  						{
- 							"name": "cd_24_co",
- 							"type": "radiogroup",
- 							"description": {
+ 							"type": "textblock",
+ 							"label": {
  								"de": "Kon\u0026shy;sum\u0026shy;enten\u0026shy;kredite",
  								"en": "Cons\u0026shy;umer credit"
  							},
- 							"col_span_label": 1,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "cd_24_co",
+ 							"type": "radiogroup",
+ 							"col_span_control": 6,
  							"radios": [
  								{
  									"hori_align": 1,
@@ -1681,8 +3022,45 @@
  								"de": "sehr positiv",
  								"en": "very pos\u0026shy;itive"
  							},
- 							"horizontal_align_label": 1,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
@@ -1690,8 +3068,45 @@
  								"de": "positiv",
  								"en": "pos\u0026shy;itive"
  							},
- 							"horizontal_align_label": 1,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
@@ -1699,8 +3114,45 @@
  								"de": "neutral",
  								"en": "neutral"
  							},
- 							"horizontal_align_label": 1,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
@@ -1708,8 +3160,45 @@
  								"de": "negativ",
  								"en": "neg\u0026shy;ative"
  							},
- 							"horizontal_align_label": 1,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
@@ -1717,8 +3206,45 @@
  								"de": "sehr negativ",
  								"en": "very neg\u0026shy;ative"
  							},
- 							"horizontal_align_label": 1,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
@@ -1726,17 +3252,58 @@
  								"de": "keine\u003cbr\u003eAn\u0026shy;gabe",
  								"en": "no an\u0026shy;swer"
  							},
- 							"horizontal_align_label": 1,
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Ausfall\u0026shy;risiken",
+ 								"en": "Default risk"
+ 							},
  							"col_span_label": 1
  						},
  						{
  							"name": "c_inf_6_dr",
  							"type": "radiogroup",
- 							"description": {
- 								"de": "Ausfall\u0026shy;risiken",
- 								"en": "Default risk"
- 							},
- 							"col_span_label": 1,
+ 							"col_span_control": 6,
  							"radios": [
  								{
  									"hori_align": 1,
@@ -1763,15 +3330,19 @@
  									"val": "6"
  								}
  							]
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Risiko\u0026shy;trag\u0026shy;fähig\u0026shy;keit",
+ 								"en": "Risk profile"
+ 							},
+ 							"col_span_label": 1
  						},
  						{
  							"name": "c_inf_6_ri",
  							"type": "radiogroup",
- 							"description": {
- 								"de": "Risiko\u0026shy;trag\u0026shy;fähig\u0026shy;keit",
- 								"en": "Risk profile"
- 							},
- 							"col_span_label": 1,
+ 							"col_span_control": 6,
  							"radios": [
  								{
  									"hori_align": 1,
@@ -1798,15 +3369,19 @@
  									"val": "6"
  								}
  							]
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Re\u0026shy;finanz\u0026shy;ierung",
+ 								"en": "Re\u0026shy;financing"
+ 							},
+ 							"col_span_label": 1
  						},
  						{
  							"name": "c_inf_6_re",
  							"type": "radiogroup",
- 							"description": {
- 								"de": "Re\u0026shy;finanz\u0026shy;ierung",
- 								"en": "Re\u0026shy;financing"
- 							},
- 							"col_span_label": 1,
+ 							"col_span_control": 6,
  							"radios": [
  								{
  									"hori_align": 1,
@@ -1833,15 +3408,19 @@
  									"val": "6"
  								}
  							]
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Wett\u0026shy;be\u0026shy;werbs\u0026shy;sit\u0026shy;uation",
+ 								"en": "Comp\u0026shy;etitive en\u0026shy;vi\u0026shy;ron\u0026shy;ment"
+ 							},
+ 							"col_span_label": 1
  						},
  						{
  							"name": "c_inf_6_ce",
  							"type": "radiogroup",
- 							"description": {
- 								"de": "Wett\u0026shy;be\u0026shy;werbs\u0026shy;sit\u0026shy;uation",
- 								"en": "Comp\u0026shy;etitive en\u0026shy;vi\u0026shy;ron\u0026shy;ment"
- 							},
- 							"col_span_label": 1,
+ 							"col_span_control": 6,
  							"radios": [
  								{
  									"hori_align": 1,
@@ -1868,15 +3447,19 @@
  									"val": "6"
  								}
  							]
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Regu\u0026shy;lierung",
+ 								"en": "Reg\u0026shy;ulation"
+ 							},
+ 							"col_span_label": 1
  						},
  						{
  							"name": "c_inf_6_rg",
  							"type": "radiogroup",
- 							"description": {
- 								"de": "Regu\u0026shy;lierung",
- 								"en": "Reg\u0026shy;ulation"
- 							},
- 							"col_span_label": 1,
+ 							"col_span_control": 6,
  							"radios": [
  								{
  									"hori_align": 1,
@@ -1905,13 +3488,17 @@
  							]
  						},
  						{
- 							"name": "c_inf_6_ep",
- 							"type": "radiogroup",
- 							"description": {
+ 							"type": "textblock",
+ 							"label": {
  								"de": "EZB Politik",
  								"en": "ECB policy"
  							},
- 							"col_span_label": 1,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "c_inf_6_ep",
+ 							"type": "radiogroup",
+ 							"col_span_control": 6,
  							"radios": [
  								{
  									"hori_align": 1,
@@ -1975,8 +3562,45 @@
  								"de": "stark steigen",
  								"en": "strong\u0026shy;ly in\u0026shy;crease"
  							},
- 							"horizontal_align_label": 1,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
@@ -1984,8 +3608,45 @@
  								"de": "steigen",
  								"en": "in\u0026shy;crease"
  							},
- 							"horizontal_align_label": 1,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
@@ -1993,8 +3654,45 @@
  								"de": "gleich bleiben",
  								"en": "remain un\u0026shy;changed"
  							},
- 							"horizontal_align_label": 1,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
@@ -2002,8 +3700,45 @@
  								"de": "sinken",
  								"en": "de\u0026shy;crease"
  							},
- 							"horizontal_align_label": 1,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
@@ -2011,8 +3746,45 @@
  								"de": "stark sinken",
  								"en": "strong\u0026shy;ly de\u0026shy;crease"
  							},
- 							"horizontal_align_label": 1,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
@@ -2020,17 +3792,58 @@
  								"de": "keine\u003cbr\u003eAn\u0026shy;gabe",
  								"en": "no an\u0026shy;swer"
  							},
- 							"horizontal_align_label": 1,
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Groß\u0026shy;unter\u0026shy;nehmen",
+ 								"en": "Large enter\u0026shy;prises"
+ 							},
  							"col_span_label": 1
  						},
  						{
  							"name": "c_std_6_le",
  							"type": "radiogroup",
- 							"description": {
- 								"de": "Groß\u0026shy;unter\u0026shy;nehmen",
- 								"en": "Large enter\u0026shy;prises"
- 							},
- 							"col_span_label": 1,
+ 							"col_span_control": 6,
  							"radios": [
  								{
  									"hori_align": 1,
@@ -2057,15 +3870,19 @@
  									"val": "6"
  								}
  							]
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "KMU",
+ 								"en": "Small+\u0026shy;medium enter\u0026shy;prises"
+ 							},
+ 							"col_span_label": 1
  						},
  						{
  							"name": "c_std_6_sme",
  							"type": "radiogroup",
- 							"description": {
- 								"de": "KMU",
- 								"en": "Small+\u0026shy;medium enter\u0026shy;prises"
- 							},
- 							"col_span_label": 1,
+ 							"col_span_control": 6,
  							"radios": [
  								{
  									"hori_align": 1,
@@ -2092,15 +3909,19 @@
  									"val": "6"
  								}
  							]
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Immob\u0026shy;ilien\u0026shy;kredite",
+ 								"en": "Real estate credit"
+ 							},
+ 							"col_span_label": 1
  						},
  						{
  							"name": "c_std_6_re",
  							"type": "radiogroup",
- 							"description": {
- 								"de": "Immob\u0026shy;ilien\u0026shy;kredite",
- 								"en": "Real estate credit"
- 							},
- 							"col_span_label": 1,
+ 							"col_span_control": 6,
  							"radios": [
  								{
  									"hori_align": 1,
@@ -2129,13 +3950,17 @@
  							]
  						},
  						{
- 							"name": "c_std_6_co",
- 							"type": "radiogroup",
- 							"description": {
+ 							"type": "textblock",
+ 							"label": {
  								"de": "Kon\u0026shy;sum\u0026shy;enten\u0026shy;kredite",
  								"en": "Cons\u0026shy;umer credit"
  							},
- 							"col_span_label": 1,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "c_std_6_co",
+ 							"type": "radiogroup",
+ 							"col_span_control": 6,
  							"radios": [
  								{
  									"hori_align": 1,
@@ -2222,8 +4047,45 @@
  								"de": "steigen",
  								"en": "in\u0026shy;crease"
  							},
- 							"horizontal_align_label": 1,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
@@ -2231,8 +4093,45 @@
  								"de": "gleich bleiben",
  								"en": "remain un\u0026shy;changed"
  							},
- 							"horizontal_align_label": 1,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
@@ -2240,8 +4139,45 @@
  								"de": "sinken",
  								"en": "de\u0026shy;crease"
  							},
- 							"horizontal_align_label": 1,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
@@ -2249,17 +4185,58 @@
  								"de": "keine\u003cbr\u003eAn\u0026shy;gabe",
  								"en": "no an\u0026shy;swer"
  							},
- 							"horizontal_align_label": 1,
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "DAX",
+ 								"en": "German DAX"
+ 							},
  							"col_span_label": 1
  						},
  						{
  							"name": "sto_dax",
  							"type": "radiogroup",
- 							"description": {
- 								"de": "DAX",
- 								"en": "German DAX"
- 							},
- 							"col_span_label": 1,
+ 							"col_span_control": 4,
  							"radios": [
  								{
  									"hori_align": 1,
@@ -2278,15 +4255,19 @@
  									"val": "4"
  								}
  							]
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Rohöl (Nordsee Brent)",
+ 								"en": "Brent Crude"
+ 							},
+ 							"col_span_label": 1
  						},
  						{
  							"name": "oil",
  							"type": "radiogroup",
- 							"description": {
- 								"de": "Rohöl (Nordsee Brent)",
- 								"en": "Brent Crude"
- 							},
- 							"col_span_label": 1,
+ 							"col_span_control": 4,
  							"radios": [
  								{
  									"hori_align": 1,
@@ -2305,15 +4286,19 @@
  									"val": "4"
  								}
  							]
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Gold",
+ 								"en": "Gold"
+ 							},
+ 							"col_span_label": 1
  						},
  						{
  							"name": "gold",
  							"type": "radiogroup",
- 							"description": {
- 								"de": "Gold",
- 								"en": "Gold"
- 							},
- 							"col_span_label": 1,
+ 							"col_span_control": 4,
  							"radios": [
  								{
  									"hori_align": 1,
@@ -2334,13 +4319,17 @@
  							]
  						},
  						{
- 							"name": "fx_usa",
- 							"type": "radiogroup",
- 							"description": {
+ 							"type": "textblock",
+ 							"label": {
  								"de": "US-Dollar (ggü. €)",
  								"en": "Dollar / Euro"
  							},
- 							"col_span_label": 1,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "fx_usa",
+ 							"type": "radiogroup",
+ 							"col_span_control": 4,
  							"radios": [
  								{
  									"hori_align": 1,
@@ -2602,7 +4591,8 @@
  								"en": "pct"
  							},
  							"horizontal_align_label": 2,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"col_span_control": 1
  						},
  						{
  							"name": "xquart2",
@@ -2618,7 +4608,8 @@
  								"en": "pct"
  							},
  							"horizontal_align_label": 2,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"col_span_control": 1
  						},
  						{
  							"name": "xquart3",
@@ -2634,7 +4625,8 @@
  								"en": "pct"
  							},
  							"horizontal_align_label": 2,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"col_span_control": 1
  						},
  						{
  							"type": "textblock",
@@ -2658,7 +4650,8 @@
  								"en": "pct"
  							},
  							"horizontal_align_label": 2,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"col_span_control": 1
  						},
  						{
  							"name": "xyear2",
@@ -2674,7 +4667,8 @@
  								"en": "pct"
  							},
  							"horizontal_align_label": 2,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"col_span_control": 1
  						},
  						{
  							"name": "xyear3",
@@ -2690,7 +4684,8 @@
  								"en": "pct"
  							},
  							"horizontal_align_label": 2,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"col_span_control": 1
  						}
  					]
  				},
@@ -2728,8 +4723,45 @@
  								"de": "stark positiv",
  								"en": "strong\u0026shy;ly pos\u0026shy;itive"
  							},
- 							"horizontal_align_label": 1,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
@@ -2737,8 +4769,45 @@
  								"de": "positiv",
  								"en": "pos\u0026shy;itive"
  							},
- 							"horizontal_align_label": 1,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
@@ -2746,8 +4815,45 @@
  								"de": "kein Einfluss",
  								"en": "no in\u0026shy;fluence"
  							},
- 							"horizontal_align_label": 1,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
@@ -2755,8 +4861,45 @@
  								"de": "negativ",
  								"en": "neg\u0026shy;ative"
  							},
- 							"horizontal_align_label": 1,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
@@ -2764,8 +4907,45 @@
  								"de": "stark negativ",
  								"en": "strong\u0026shy;ly neg\u0026shy;ative"
  							},
- 							"horizontal_align_label": 1,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
@@ -2773,17 +4953,58 @@
  								"de": "keine\u003cbr\u003eAn\u0026shy;gabe",
  								"en": "no an\u0026shy;swer"
  							},
- 							"horizontal_align_label": 1,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Konjunktur\u0026shy;daten Deutsch\u0026shy;land",
+ 								"en": "Busi\u0026shy;ness cycle data Germany"
+ 							},
+ 							"col_span_label": 2
  						},
  						{
  							"name": "iobc_cycle_data_deu",
  							"type": "radiogroup",
- 							"description": {
- 								"de": "Konjunktur\u0026shy;daten Deutsch\u0026shy;land",
- 								"en": "Busi\u0026shy;ness cycle data Germany"
- 							},
- 							"col_span_label": 2,
+ 							"col_span_control": 6,
  							"radios": [
  								{
  									"hori_align": 1,
@@ -2810,15 +5031,19 @@
  									"val": "6"
  								}
  							]
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Exportmärkte",
+ 								"en": "Export markets"
+ 							},
+ 							"col_span_label": 2
  						},
  						{
  							"name": "iobc_exp_markets",
  							"type": "radiogroup",
- 							"description": {
- 								"de": "Exportmärkte",
- 								"en": "Export markets"
- 							},
- 							"col_span_label": 2,
+ 							"col_span_control": 6,
  							"radios": [
  								{
  									"hori_align": 1,
@@ -2845,15 +5070,19 @@
  									"val": "6"
  								}
  							]
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Wechselkurse",
+ 								"en": "Exchange rates"
+ 							},
+ 							"col_span_label": 2
  						},
  						{
  							"name": "iobc_exch_rates",
  							"type": "radiogroup",
- 							"description": {
- 								"de": "Wechselkurse",
- 								"en": "Exchange rates"
- 							},
- 							"col_span_label": 2,
+ 							"col_span_control": 6,
  							"radios": [
  								{
  									"hori_align": 1,
@@ -2880,15 +5109,19 @@
  									"val": "6"
  								}
  							]
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "EZB-Geldpolitik",
+ 								"en": "ECB monetary policy"
+ 							},
+ 							"col_span_label": 2
  						},
  						{
  							"name": "iobc_mp_ecb",
  							"type": "radiogroup",
- 							"description": {
- 								"de": "EZB-Geldpolitik",
- 								"en": "ECB monetary policy"
- 							},
- 							"col_span_label": 2,
+ 							"col_span_control": 6,
  							"radios": [
  								{
  									"hori_align": 1,
@@ -2915,15 +5148,19 @@
  									"val": "6"
  								}
  							]
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "US-Geldpolitik",
+ 								"en": "FED monetary policy"
+ 							},
+ 							"col_span_label": 2
  						},
  						{
  							"name": "iobc_mp_fed",
  							"type": "radiogroup",
- 							"description": {
- 								"de": "US-Geldpolitik",
- 								"en": "FED monetary policy"
- 							},
- 							"col_span_label": 2,
+ 							"col_span_control": 6,
  							"radios": [
  								{
  									"hori_align": 1,
@@ -2950,15 +5187,19 @@
  									"val": "6"
  								}
  							]
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Geopol. Ereignisse",
+ 								"en": "Geopolitical events"
+ 							},
+ 							"col_span_label": 2
  						},
  						{
  							"name": "iobc_geopol",
  							"type": "radiogroup",
- 							"description": {
- 								"de": "Geopol. Ereignisse",
- 								"en": "Geopolitical events"
- 							},
- 							"col_span_label": 2,
+ 							"col_span_control": 6,
  							"radios": [
  								{
  									"hori_align": 1,
@@ -2985,15 +5226,19 @@
  									"val": "6"
  								}
  							]
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Regierungs\u0026shy;bildung Deutsch\u0026shy;land",
+ 								"en": "Government formation Germany"
+ 							},
+ 							"col_span_label": 2
  						},
  						{
  							"name": "iobc_gvt_form_deu",
  							"type": "radiogroup",
- 							"description": {
- 								"de": "Regierungs\u0026shy;bildung Deutsch\u0026shy;land",
- 								"en": "Government formation Germany"
- 							},
- 							"col_span_label": 2,
+ 							"col_span_control": 6,
  							"radios": [
  								{
  									"hori_align": 1,
@@ -3022,13 +5267,17 @@
  							]
  						},
  						{
- 							"name": "iobc_other",
- 							"type": "radiogroup",
- 							"description": {
+ 							"type": "textblock",
+ 							"label": {
  								"de": "Sonstige",
  								"en": "Other"
  							},
- 							"col_span_label": 2,
+ 							"col_span_label": 2
+ 						},
+ 						{
+ 							"name": "iobc_other",
+ 							"type": "radiogroup",
+ 							"col_span_control": 6,
  							"radios": [
  								{
  									"hori_align": 1,
@@ -3130,7 +5379,8 @@
  								"en": "pct"
  							},
  							"horizontal_align_label": 2,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"col_span_control": 1
  						},
  						{
  							"name": "p1_y2",
@@ -3147,7 +5397,8 @@
  								"en": "pct"
  							},
  							"horizontal_align_label": 2,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"col_span_control": 1
  						},
  						{
  							"name": "p1_y3",
@@ -3164,7 +5415,8 @@
  								"en": "pct"
  							},
  							"horizontal_align_label": 2,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"col_span_control": 1
  						}
  					]
  				},
@@ -3202,8 +5454,45 @@
  								"de": "stark positiv",
  								"en": "strong\u0026shy;ly pos\u0026shy;itive"
  							},
- 							"horizontal_align_label": 1,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
@@ -3211,8 +5500,45 @@
  								"de": "positiv",
  								"en": "pos\u0026shy;itive"
  							},
- 							"horizontal_align_label": 1,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
@@ -3220,8 +5546,45 @@
  								"de": "kein Einfluss",
  								"en": "no in\u0026shy;fluence"
  							},
- 							"horizontal_align_label": 1,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
@@ -3229,8 +5592,45 @@
  								"de": "negativ",
  								"en": "neg\u0026shy;ative"
  							},
- 							"horizontal_align_label": 1,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
@@ -3238,8 +5638,45 @@
  								"de": "stark negativ",
  								"en": "strong\u0026shy;ly neg\u0026shy;ative"
  							},
- 							"horizontal_align_label": 1,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
@@ -3247,17 +5684,58 @@
  								"de": "keine\u003cbr\u003eAn\u0026shy;gabe",
  								"en": "no an\u0026shy;swer"
  							},
- 							"horizontal_align_label": 1,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Konjunktur\u0026shy;daten Euroraum",
+ 								"en": "Busi\u0026shy;ness cycle data Euro area"
+ 							},
+ 							"col_span_label": 2
  						},
  						{
  							"name": "ioi_cycle_data_ea",
  							"type": "radiogroup",
- 							"description": {
- 								"de": "Konjunktur\u0026shy;daten Euroraum",
- 								"en": "Busi\u0026shy;ness cycle data Euro area"
- 							},
- 							"col_span_label": 2,
+ 							"col_span_control": 6,
  							"radios": [
  								{
  									"hori_align": 1,
@@ -3284,15 +5762,19 @@
  									"val": "6"
  								}
  							]
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Konjunktur\u0026shy;daten global",
+ 								"en": "Busi\u0026shy;ness cycle data globally"
+ 							},
+ 							"col_span_label": 2
  						},
  						{
  							"name": "ioi_cycle_data_gl",
  							"type": "radiogroup",
- 							"description": {
- 								"de": "Konjunktur\u0026shy;daten global",
- 								"en": "Busi\u0026shy;ness cycle data globally"
- 							},
- 							"col_span_label": 2,
+ 							"col_span_control": 6,
  							"radios": [
  								{
  									"hori_align": 1,
@@ -3319,15 +5801,19 @@
  									"val": "6"
  								}
  							]
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Löhne Euroraum",
+ 								"en": "Wages Euro area"
+ 							},
+ 							"col_span_label": 2
  						},
  						{
  							"name": "ioi_wages_ea",
  							"type": "radiogroup",
- 							"description": {
- 								"de": "Löhne Euroraum",
- 								"en": "Wages Euro area"
- 							},
- 							"col_span_label": 2,
+ 							"col_span_control": 6,
  							"radios": [
  								{
  									"hori_align": 1,
@@ -3354,15 +5840,19 @@
  									"val": "6"
  								}
  							]
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Rohstoffpreise",
+ 								"en": "Raw material prices"
+ 							},
+ 							"col_span_label": 2
  						},
  						{
  							"name": "ioi_rmp",
  							"type": "radiogroup",
- 							"description": {
- 								"de": "Rohstoffpreise",
- 								"en": "Raw material prices"
- 							},
- 							"col_span_label": 2,
+ 							"col_span_control": 6,
  							"radios": [
  								{
  									"hori_align": 1,
@@ -3389,15 +5879,19 @@
  									"val": "6"
  								}
  							]
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Wechselkurse",
+ 								"en": "Exchange rates"
+ 							},
+ 							"col_span_label": 2
  						},
  						{
  							"name": "ioi_exch_rates",
  							"type": "radiogroup",
- 							"description": {
- 								"de": "Wechselkurse",
- 								"en": "Exchange rates"
- 							},
- 							"col_span_label": 2,
+ 							"col_span_control": 6,
  							"radios": [
  								{
  									"hori_align": 1,
@@ -3426,13 +5920,17 @@
  							]
  						},
  						{
- 							"name": "ioi_mp_ecb",
- 							"type": "radiogroup",
- 							"description": {
+ 							"type": "textblock",
+ 							"label": {
  								"de": "EZB-Geldpolitik",
  								"en": "ECB monetary policy"
  							},
- 							"col_span_label": 2,
+ 							"col_span_label": 2
+ 						},
+ 						{
+ 							"name": "ioi_mp_ecb",
+ 							"type": "radiogroup",
+ 							"col_span_control": 6,
  							"radios": [
  								{
  									"hori_align": 1,
@@ -3698,7 +6196,6 @@
  								"en": "OK"
  							},
  							"accesskey": "n",
- 							"col_span_label": 1,
  							"col_span_control": 1,
  							"response": "10"
  						}

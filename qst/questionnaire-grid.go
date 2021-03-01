@@ -10,10 +10,6 @@ import (
 	"github.com/zew/go-questionnaire/css"
 )
 
-func tdDummy(a horizontalAlignment, b, payload string) string {
-	return payload
-}
-
 func wrap(w io.Writer, tagName, forVal, className, style, content string) {
 
 	forKeyVal := ""
@@ -51,7 +47,7 @@ func (inp inputT) labelDescription(w io.Writer, langCode string) {
 		return
 	}
 
-	if inp.Type == "textblock" {
+	if inp.IsLayout() {
 		if !inp.Label.Empty() {
 			fmt.Fprint(w, inp.Label.Tr(langCode))
 		}
@@ -154,7 +150,7 @@ func (q QuestionnaireT) GroupHTMLGrid(pageIdx, grpIdx int) string {
 				fmt.Fprint(wCSS, inp.StyleLbl.CSS(lblClass))
 
 				inp.labelDescription(wLbl, q.LangCode)
-				if inp.Type == "textblock" {
+				if inp.IsLayout() {
 					divWrap(wInp, lblClass+" grid-item-lvl-2", "", wLbl.String())
 				} else {
 					wrap(wInp, "label", inp.Name, lblClass+" grid-item-lvl-2", "", wLbl.String())
@@ -169,6 +165,17 @@ func (q QuestionnaireT) GroupHTMLGrid(pageIdx, grpIdx int) string {
 					inp.StyleCtl.Desktop.GridItemStyle.AlignSelf = "center"
 					inp.StyleCtl.Desktop.TextStyle.WhiteSpace = "nowrap" // prevent suffix from being wrapped
 				}
+				if inp.Type == "radiogroup" || inp.Type == "checkboxgroup" {
+					inp.StyleCtl.Desktop.BoxStyle.Display = "grid"
+					inp.StyleCtl.Desktop.GridContainerStyle.AutoFlow = "row"
+					inp.StyleCtl.Desktop.GridContainerStyle.TemplateColumns = strings.Repeat("1fr ", len(inp.Radios))
+				}
+				if inp.Type == "radio" || inp.Type == "checkbox" {
+					inp.StyleCtl.Desktop.GridItemStyle.JustifySelf = "center"
+					inp.StyleCtl.Desktop.GridItemStyle.AlignSelf = "center"
+					inp.StyleCtl.Desktop.TextStyle.AlignHorizontal = "center"
+				}
+
 				ctlClass := fmt.Sprintf("pg%02v-grp%02v-inp%02v-ctl", pageIdx, grpIdx, inpIdx)
 				fmt.Fprint(wCSS, inp.StyleCtl.CSS(ctlClass))
 
@@ -197,110 +204,113 @@ func (q QuestionnaireT) GroupHTMLGrid(pageIdx, grpIdx int) string {
 // InputHTMLGrid renders an input to HTML
 func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int) string {
 
-	gr := q.Pages[pageIdx].Groups[grpIdx]
+	// gr := q.Pages[pageIdx].Groups[grpIdx]
 	inp := *q.Pages[pageIdx].Groups[grpIdx].Inputs[inpIdx]
 	nm := inp.Name
+	ctrl := ""
 
 	switch inp.Type {
 
 	case "textblock":
-		return ""
+		// no op
 
 	case "button":
-		lbl := fmt.Sprintf("<button type='submit' name='%v' value='%v' class='%v' accesskey='%v'><b>%v</b> %v</button>\n",
+		ctrl = fmt.Sprintf(
+			"<button type='submit' name='%v' value='%v' class='%v' accesskey='%v'><b>%v</b> %v</button>\n",
 			inp.Name, inp.Response, inp.CSSControl, inp.AccessKey,
 			inp.Label.TrSilent(q.LangCode), inp.Desc.TrSilent(q.LangCode),
 		)
-		lbl = tdDummy(inp.HAlignControl, colWidth(inp.ColSpanControl, gr.Cols), lbl)
-		return lbl
 
-	case "text", "number", "hidden", "textarea", "checkbox", "dropdown":
+	case "textarea":
+		width := ""
+		colsRows := fmt.Sprintf(" cols='%v' rows='1' ", inp.MaxChars+1)
+		if inp.MaxChars > 80 {
+			colsRows = fmt.Sprintf(" cols='80' rows='%v' ", inp.MaxChars/80+1)
+			// width = fmt.Sprintf("width: %vem;", int(float64(80)*1.05))
+			width = "width: 98%;"
+		}
+		ctrl += fmt.Sprintf("<textarea        name='%v' id='%v' title='%v %v' class='%v' style='%v' maxlength='%v' %v  autocomplete='off' >%v</textarea>\n",
+			nm, nm, inp.Label.TrSilent(q.LangCode), inp.Desc.TrSilent(q.LangCode), inp.CSSControl, width, inp.MaxChars, colsRows, inp.Response)
 
-		ctrl := ""
-		val := inp.Response
+	case "dropdown":
+		// i.DD = &DropdownT{}
+		inp.DD.SetName(inp.Name)
+		inp.DD.LC = q.LangCode
+		inp.DD.SetTitle(inp.Label.TrSilent(q.LangCode) + " " + inp.Desc.TrSilent(q.LangCode))
+		inp.DD.Select(inp.Response)
+		inp.DD.SetAttr("class", inp.CSSControl)
+		sort.Sort(inp.DD)
+
+		ctrl += inp.DD.RenderStr()
+
+	case "text", "number", "hidden", "checkbox", "radio":
+		rspvl := inp.Response
 
 		checked := ""
 		if inp.Type == "checkbox" {
-			if val == ValSet {
+			if rspvl == ValSet {
 				checked = "checked=\"checked\""
 			}
-			val = ValSet
+			rspvl = ValSet
+		}
+		if inp.Type == "radio" {
+			if rspvl == inp.ValueRadio {
+				checked = "checked=\"checked\""
+			}
+			rspvl = inp.ValueRadio
 		}
 
-		if inp.Type == "textarea" {
-			width := ""
-			colsRows := fmt.Sprintf(" cols='%v' rows='1' ", inp.MaxChars+1)
-			if inp.MaxChars > 80 {
-				colsRows = fmt.Sprintf(" cols='80' rows='%v' ", inp.MaxChars/80+1)
-				// width = fmt.Sprintf("width: %vem;", int(float64(80)*1.05))
-				width = "width: 98%;"
-			}
-			ctrl += fmt.Sprintf("<textarea        name='%v' id='%v' title='%v %v' class='%v' style='%v' MAXLENGTH='%v' %v>%v</textarea>\n",
-				nm, nm, inp.Label.TrSilent(q.LangCode), inp.Desc.TrSilent(q.LangCode), inp.CSSControl, width, inp.MaxChars, colsRows, val)
+		width := fmt.Sprintf("width:%.2frem", float32(inp.MaxChars)*0.65)
+		if inp.Type == "checkbox" || inp.Type == "radio" {
+			width = ""
+		}
 
-		} else if inp.Type == "dropdown" {
-
-			// i.DD = &DropdownT{}
-			inp.DD.SetName(inp.Name)
-			inp.DD.LC = q.LangCode
-			inp.DD.SetTitle(inp.Label.TrSilent(q.LangCode) + " " + inp.Desc.TrSilent(q.LangCode))
-			inp.DD.Select(inp.Response)
-			inp.DD.SetAttr("class", inp.CSSControl)
-
-			sort.Sort(inp.DD)
-
-			ctrl += inp.DD.RenderStr()
-
-		} else {
-			// input
-			inputMode := ""
-			if inp.Type == "number" {
-				if inp.Step != 0 {
-					if inp.Step >= 1 {
-						inputMode = fmt.Sprintf(" step='%.0f'  ", inp.Step)
-					} else {
-						prec := int(math.Log10(1 / inp.Step))
-						f := fmt.Sprintf(" step='%%.%vf'  ", prec)
-						inputMode = fmt.Sprintf(f, inp.Step)
-					}
+		inputMode := ""
+		if inp.Type == "number" {
+			if inp.Step != 0 {
+				if inp.Step >= 1 {
+					inputMode = fmt.Sprintf(" step='%.0f'  ", inp.Step)
+				} else {
+					prec := int(math.Log10(1 / inp.Step))
+					f := fmt.Sprintf(" step='%%.%vf'  ", prec)
+					inputMode = fmt.Sprintf(f, inp.Step)
 				}
 			}
-			ctrl += fmt.Sprintf(
-				`<input type='%v'  %v  name='%v' id='%v' title='%v %v' 
-				class='%v' style='width:%vrem'  size='%v' maxlength=%v min='%v' max='%v'  %v  value='%v' />
-				`,
-				inp.Type, inputMode,
-				nm, nm, inp.Label.TrSilent(q.LangCode), inp.Desc.TrSilent(q.LangCode),
-				inp.CSSControl, fmt.Sprintf("%.2f", float32(inp.MaxChars)*0.65), inp.MaxChars, inp.MaxChars, inp.Min, inp.Max, checked, val)
 		}
+
+		ctrl += fmt.Sprintf(
+			`<input type='%v'  %v  
+				name='%v' id='%v' title='%v %v' 
+				class='%v' style='%v'  
+				size='%v' maxlength=%v min='%v' max='%v'  %v  value='%v'   autocomplete='off'  />
+			`,
+			inp.Type, inputMode,
+			nm, fmt.Sprintf("%v%v", nm, inp.ValueRadio), inp.Label.TrSilent(q.LangCode), inp.Desc.TrSilent(q.LangCode),
+			inp.CSSControl, width,
+			inp.MaxChars, inp.MaxChars, inp.Min, inp.Max, checked,
+			rspvl,
+		)
 
 		// the checkbox "empty catcher" must follow *after* the actual checkbox input,
 		// since http.Form.Get() fetches the first value.
 		if inp.Type == "checkbox" {
-			ctrl += fmt.Sprintf("<input type='hidden' name='%v' id='%v_hidd' value='0' />\n", nm, nm)
+			ctrl += fmt.Sprintf(
+				"<input type='hidden' name='%v' id='%v_hidd' value='0' />\n", nm, nm)
 		}
-
-		// append suffix
-		ctrl = inp.ShortSuffix(ctrl, q.LangCode)
-
-		// append error message
-		if inp.ErrMsg.Set() {
-			ctrl += fmt.Sprintf("<span class='go-quest-label %v' >%v</span>\n", inp.CSSLabel, inp.ErrMsg.TrSilent(q.LangCode))
-		}
-
-		ctrl = tdDummy(inp.HAlignControl, colWidth(inp.ColSpanControl, gr.Cols), ctrl)
-
-		return ctrl
 
 	case "radiogroup", "checkboxgroup":
-		ctrl := ""
+
 		innerType := "radio"
 		if inp.Type == "checkboxgroup" {
 			innerType = "checkbox"
 		}
 
+		style := ""
+		style += "grid-column: auto / span 1;"
+		style += "justify-self: center;"
+
 		for _, rad := range inp.Radios {
-			one := ""
+			// one := ""
 			checked := ""
 			if inp.Response == rad.Val {
 				checked = "checked=\"checked\""
@@ -308,54 +318,14 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int) string {
 
 			radio := fmt.Sprintf(
 				// 2021-01 - id must be unique
-				"<input type='%v' name='%v' id-disabled='%v' title='%v %v' class='%v' value='%v' %v />\n",
+				"<input type='%v' name='%v' id-disabled='%v' title='%v %v' class='%v' style='%v' value='%v' %v />\n",
 				innerType, nm, nm, inp.Label.TrSilent(q.LangCode), inp.Desc.TrSilent(q.LangCode),
-				inp.CSSControl,
+				inp.CSSControl+" grid-item-lvl-3",
+				style,
 				rad.Val, checked,
 			)
 
-			lbl := ""
-			if rad.Label.Empty() {
-				one = radio
-			} else {
-
-				if rad.HAlign == HLeft {
-					lbl = fmt.Sprintf(
-						"<span class=' vert-correct-left-right' >%v</span>",
-						rad.Label.Tr(q.LangCode),
-					)
-					radio = strings.Trim(radio, "\r\n\t ")
-					one = fmt.Sprintf("%v%v", lbl, radio)
-				}
-
-				if rad.HAlign == HCenter {
-					// no i.CSSLabel to prevent left margins/paddings to uncenter
-					lbl = fmt.Sprintf(
-						"<span class=' vert-correct-center '>%v</span>\n",
-						rad.Label.Tr(q.LangCode),
-					)
-					lbl += vspacer0
-					one = lbl + radio
-				}
-
-				if rad.HAlign == HRight {
-					lbl = fmt.Sprintf(
-						"<span class=' vert-correct-left-right'>%v</span>",
-						rad.Label.Tr(q.LangCode),
-					)
-					radio = strings.Trim(radio, "\r\n\t ")
-					one = fmt.Sprintf("%v%v", radio, lbl)
-				}
-
-			}
-
-			cssNoLeft := inp.CSSLabel
-			if rad.HAlign == HCenter {
-				cssNoLeft = strings.Replace(inp.CSSLabel, "special-input-left-padding", "", -1)
-			}
-			one = fmt.Sprintf("<span class='go-quest-label %v'>%v</span>\n", cssNoLeft, one)
-
-			ctrl += one
+			ctrl += radio
 
 		}
 		// The checkbox "empty catcher" must follow *after* the actual checkbox input,
@@ -369,24 +339,27 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int) string {
 				nm, nm, valEmpty)
 		}
 
-		// append suffix
-		ctrl = inp.ShortSuffix(ctrl, q.LangCode)
-
-		if inp.ErrMsg.Set() {
-			ctrl += fmt.Sprintf("<div class='error errorblock' >%v</div>\n", inp.ErrMsg.TrSilent(q.LangCode)) // ugly layout - but radiogroup and checkboxgroup won't have validation errors anyway
-		}
-
-		return ctrl
-
 	case "dynamic":
-		return fmt.Sprintf("<span class='go-quest-label %v'>%v</span>\n", inp.CSSLabel, inp.Label.Tr(q.LangCode))
+		ctrl = fmt.Sprintf("<span class='go-quest-label %v'>%v</span>\n", inp.CSSLabel, inp.Label.Tr(q.LangCode))
 
 	case "composit", "composit-scalar":
+		// no op
 		// rendered at group level -  rendered by composit
-		return ""
 
 	default:
-		return fmt.Sprintf("input %v: unknown type '%v'  - allowed are %v\n", nm, inp.Type, implementedTypes)
+		ctrl = fmt.Sprintf("input %v: unknown type '%v'  - allowed are %v\n", nm, inp.Type, implementedTypes)
 	}
+
+	//
+	// common
+
+	// append suffix
+	ctrl = inp.ShortSuffix(ctrl, q.LangCode)
+
+	if inp.ErrMsg.Set() {
+		ctrl += fmt.Sprintf("<div class='error error-block >%v</div>\n", inp.ErrMsg.TrSilent(q.LangCode)) // ugly layout - but radiogroup and checkboxgroup won't have validation errors anyway
+	}
+
+	return ctrl
 
 }

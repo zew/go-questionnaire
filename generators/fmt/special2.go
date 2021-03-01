@@ -48,6 +48,7 @@ func addSeasonal2(q *qst.QuestionnaireT) error {
 			inp := gr.AddInput()
 			inp.Type = "number"
 			inp.Name = "p1_y1"
+			inp.ColSpanControl = 1
 			inp.Min = -10
 			inp.Max = +20
 			inp.MaxChars = 3
@@ -67,6 +68,7 @@ func addSeasonal2(q *qst.QuestionnaireT) error {
 			inp := gr.AddInput()
 			inp.Type = "number"
 			inp.Name = "p1_y2"
+			inp.ColSpanControl = 1
 			inp.Min = -10
 			inp.Max = +20
 			inp.MaxChars = 3
@@ -85,6 +87,7 @@ func addSeasonal2(q *qst.QuestionnaireT) error {
 			inp := gr.AddInput()
 			inp.Type = "number"
 			inp.Name = "p1_y3"
+			inp.ColSpanControl = 1
 			inp.Min = -10
 			inp.Max = +20
 			inp.MaxChars = 3
@@ -153,8 +156,8 @@ func addSeasonal2(q *qst.QuestionnaireT) error {
 			"ioi_exch_rates",
 			"ioi_mp_ecb",
 		}
-		gr := page.AddRadioMatrixGroup(labelsStronglyPositiveStronglyNegativeInfluence(),
-			names1stMatrix, labels123Matrix, 2)
+		gr := page.AddRadioMatrixGroupCSSGrid(names1stMatrix, len(labelsStronglyPositiveStronglyNegativeInfluence()), labelsStronglyPositiveStronglyNegativeInfluence(),
+			labels123Matrix, 2)
 		gr.Cols = 8 // necessary, otherwise no vspacers
 		gr.OddRowsColoring = true
 	}

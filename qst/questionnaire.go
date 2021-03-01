@@ -133,9 +133,11 @@ type inputT struct {
 	Validator string `json:"validator,omitempty"` // i.e. any key from validators, i.e. "must;inRange20"
 	ErrMsg    trl.S  `json:"err_msg,omitempty"`
 
-	//  ResponseFloat float64  - floats and integers are stored as strings in Response
+	// ResponseFloat float64  - floats and integers are stored as strings in Response
 	// also contains the Value of options and checkboxes
 	Response string `json:"response,omitempty"`
+
+	ValueRadio string `json:"value_radio,omitempty"` // for type = radio
 
 	/* compositFunc == 'composit' OR dynFunc == 'dynamic'
 	'composit' =>    first arg paramSetIdx, second arg seqIdx */
@@ -210,10 +212,13 @@ func (i inputT) IsLayout() bool {
 	if i.Type == "dynamic" {
 		return true
 	}
+	if i.Type == "composit" {
+		return true
+	}
 	return false
 }
 
-// IsReserved returns whether the input name is reserved the survey engine
+// IsReserved returns whether the input name is reserved by the survey engine
 func (i inputT) IsReserved() bool {
 	if i.Name == "page" {
 		return true

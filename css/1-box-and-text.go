@@ -137,8 +137,8 @@ type TextStyle struct {
 	FontSize   int    `json:"font_size,omitempty"` // percent
 	Color      string `json:"color,omitempty"`
 
-	HorizontalAlign string `json:"horizontal_align,omitempty"` // left, right, center, justify
-	VerticalAlign   string `json:"vertical_align,omitempty"`   // baseline, bottom, top, middle
+	AlignHorizontal string `json:"align_horizontal,omitempty"` // left, right, center, justify
+	AlignVertical   string `json:"align_vertical,omitempty"`   // baseline, bottom, top, middle
 
 	LineHeight    int    `json:"line_height,omitempty"`
 	LetterSpacing string `json:"letter_spacing,omitempty"`
@@ -151,8 +151,8 @@ func textStyleExample1() TextStyle {
 		FontFamily:      "'Segoe UI', Tahoma, Geneva, Verdana",
 		FontSize:        120,
 		Color:           "#CCC",
-		HorizontalAlign: "justify",
-		VerticalAlign:   "middle",
+		AlignHorizontal: "justify",
+		AlignVertical:   "middle",
 		LineHeight:      110,
 		WhiteSpace:      "pre-wrap",
 	}
@@ -162,7 +162,7 @@ func textStyleExample1Want() string {
 	return `	font-family: 'Segoe UI', Tahoma, Geneva, Verdana;
 	font-size: 120%;
 	color: #CCC;
-	align-text: justify;
+	text-align: justify;
 	vertical-align: middle;
 	line-height: 110%;
 	white-space: pre-wrap;
@@ -181,11 +181,11 @@ func (ts TextStyle) CSS() string {
 	if ts.Color != "" {
 		fmt.Fprintf(s, "\tcolor: %v;\n", ts.Color)
 	}
-	if ts.HorizontalAlign != "" {
-		fmt.Fprintf(s, "\talign-text: %v;\n", ts.HorizontalAlign)
+	if ts.AlignHorizontal != "" {
+		fmt.Fprintf(s, "\ttext-align: %v;\n", ts.AlignHorizontal)
 	}
-	if ts.VerticalAlign != "" {
-		fmt.Fprintf(s, "\tvertical-align: %v;\n", ts.VerticalAlign)
+	if ts.AlignVertical != "" {
+		fmt.Fprintf(s, "\tvertical-align: %v;\n", ts.AlignVertical)
 	}
 	if ts.LineHeight != 0 {
 		fmt.Fprintf(s, "\tline-height: %v%%;\n", ts.LineHeight)

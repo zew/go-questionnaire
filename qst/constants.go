@@ -11,6 +11,7 @@ var implementedTypes = map[string]interface{}{
 	"textarea": nil,
 	"dropdown": nil,
 	"checkbox": nil, // A standalone checkbox - as a group, see below
+	"radio":    nil, // new in version 2
 
 	/*
 		checkbox or text inputs have *distinct* names,

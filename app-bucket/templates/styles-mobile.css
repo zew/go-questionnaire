@@ -27,7 +27,7 @@
     label {
         margin-right: 0.01rem;
     }
-    
+
     .postlabel {
         margin-left:  0.01rem;
     }
@@ -43,7 +43,11 @@
 
     nav a.title {
         font-size: 80%;
-    }    
+    }
+
+    ol.progress {
+        display: none;
+    }
 
 	form[name=frmMain] {
 		width:      100%;

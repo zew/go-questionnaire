@@ -60,6 +60,7 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 			inp := gr.AddInput()
 			inp.Type = "number"
 			inp.Name = "xquart1"
+			inp.ColSpanControl = 1
 			inp.Min = 0
 			inp.Max = 20
 			inp.MaxChars = 3
@@ -79,6 +80,7 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 			inp := gr.AddInput()
 			inp.Type = "number"
 			inp.Name = "xquart2"
+			inp.ColSpanControl = 1
 			inp.Min = 0
 			inp.Max = 20
 			inp.MaxChars = 3
@@ -97,6 +99,7 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 			inp := gr.AddInput()
 			inp.Type = "number"
 			inp.Name = "xquart3"
+			inp.ColSpanControl = 1
 			inp.Min = 0
 			inp.Max = 20
 			inp.MaxChars = 3
@@ -128,6 +131,7 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 			inp := gr.AddInput()
 			inp.Type = "number"
 			inp.Name = "xyear1"
+			inp.ColSpanControl = 1
 			inp.Min = 0
 			inp.Max = 20
 			inp.MaxChars = 3
@@ -147,6 +151,7 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 			inp := gr.AddInput()
 			inp.Type = "number"
 			inp.Name = "xyear2"
+			inp.ColSpanControl = 1
 			inp.Min = 0
 			inp.Max = 20
 			inp.MaxChars = 3
@@ -165,6 +170,7 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 			inp := gr.AddInput()
 			inp.Type = "number"
 			inp.Name = "xyear3"
+			inp.ColSpanControl = 1
 			inp.Min = 0
 			inp.Max = 20
 			inp.MaxChars = 3
@@ -243,9 +249,8 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 			"iobc_gvt_form_deu",
 			"iobc_other",
 		}
-		gr := page.AddRadioMatrixGroup(labelsStronglyPositiveStronglyNegativeInfluence(),
-			names1stMatrix, labels123Matrix, 2)
-		gr.Cols = 8 // necessary, otherwise no vspacers
+		gr := page.AddRadioMatrixGroupCSSGrid(names1stMatrix, len(labelsStronglyPositiveStronglyNegativeInfluence()), labelsStronglyPositiveStronglyNegativeInfluence(),
+			labels123Matrix, 2)
 		gr.OddRowsColoring = true
 
 		{

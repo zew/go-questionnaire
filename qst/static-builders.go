@@ -3,6 +3,7 @@ package qst
 import (
 	"fmt"
 
+	"github.com/zew/go-questionnaire/css"
 	"github.com/zew/go-questionnaire/ctr"
 	"github.com/zew/go-questionnaire/trl"
 )
@@ -59,6 +60,7 @@ func (p *pageT) AddRadioGroupVertical(name string, rowLabels []trl.S, cols int) 
 
 // AddRadioMatrixGroup adds several inputs of type radiogroup
 // and prepends a row with labels.
+// len(rowLabels) == 0  => no first column
 func (p *pageT) AddRadioMatrixGroup(headerLabels []trl.S, inpNames []string, rowLabels []trl.S, opt ...int) *groupT {
 
 	gr := p.AddGroup()
@@ -189,4 +191,109 @@ func (gr *groupT) EmptyCells(rowSpan int) {
 	inp.Label = trl.S{"de": " ", "en": " "}
 	inp.Desc = trl.S{"de": " ", "en": " "}
 	inp.ColSpanLabel = rowSpan
+}
+
+//
+//
+// AddRadioMatrixGroupCSSGrid adds several inputs of type radiogroup;
+// labels1stRow => header row
+// labels1stCol => header col
+// spanCol1     => wider first col
+func (p *pageT) AddRadioMatrixGroupCSSGrid(
+	inpNames []string, inpCols int,
+	labels1stRow []trl.S,
+	labels1stCol []trl.S,
+	span1stCol int,
+) *groupT {
+
+	has1stRowLabel := false
+	if len(labels1stRow) > 0 {
+		has1stRowLabel = true
+	}
+
+	// consistence check
+	if has1stRowLabel {
+		if inpCols != len(labels1stRow) {
+			panic("AddRadioMatrixGroup(): if labels for 1st row exist, they should exist for *all* cols")
+		}
+	}
+
+	has1stColLabel := false
+	if len(labels1stCol) > 0 {
+		has1stColLabel = true
+	}
+
+	// consistence check
+	if has1stColLabel {
+		// deliberately inside if condition
+		if len(labels1stCol) != len(inpNames) {
+			panic("AddRadioMatrixGroup(): if labels for 1st col exist, they should exist for *all* rows")
+		}
+		if span1stCol == 0 {
+			span1stCol = 1
+		}
+	} else {
+		span1stCol = 0
+	}
+
+	//
+	gr := p.AddGroup()
+	gr.Cols = span1stCol + inpCols
+	// log.Printf("group cols = %v  -  span1stCol + inpCols  <=> %v  %v", inpCols+span1stCol, span1stCol, inpCols)
+
+	//
+	// Header row - first column
+	// (empty cell in top-left)
+	if has1stRowLabel && has1stColLabel {
+		inp := gr.AddInput()
+		inp.Type = "textblock"
+		inp.Label = trl.S{
+			"de": " &nbsp; ",
+			"en": " &nbsp; ",
+		}
+		inp.ColSpanLabel = span1stCol
+		inp.CSSLabel = CSSLabelHeader // apply even if its empty
+	}
+
+	//
+	// Header row - next columns
+	for _, lbl := range labels1stRow {
+		inp := gr.AddInput()
+		inp.Type = "textblock"
+		inp.Style = css.NewStylesResponsive()
+		inp.Style.Desktop.GridItemStyle.JustifySelf = "center"
+		inp.Style.Desktop.GridItemStyle.AlignSelf = "center"
+		inp.Style.Desktop.TextStyle.AlignHorizontal = "center"
+		inp.StyleLbl = inp.Style
+		inp.Desc = lbl // for instance trl.S{"de": "gut", "en": "good"}
+		inp.CSSLabel = CSSLabelHeader
+	}
+
+	//
+	// Input rows
+	for rowIdx, name := range inpNames {
+
+		if has1stColLabel {
+			inp := gr.AddInput()
+			inp.Type = "textblock"
+			inp.Label = labels1stCol[rowIdx]
+			inp.ColSpanLabel = span1stCol
+		}
+
+		radGroup := gr.AddInput()
+		radGroup.Type = "radiogroup"
+		radGroup.Name = name // "y0_euro"
+		radGroup.ColSpanLabel = 0
+		radGroup.ColSpanControl = inpCols
+		radGroup.Validator = RadioVali
+
+		for inpCol := 0; inpCol < inpCols; inpCol++ {
+			rad := radGroup.AddRadio()
+			rad.HAlign = HCenter
+		}
+
+	}
+
+	return gr
+
 }

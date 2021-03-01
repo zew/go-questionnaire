@@ -129,8 +129,6 @@ func (q *QuestionnaireT) Validate() error {
 
 	navigationalNum := 0
 
-	logEntries := 0
-
 	// Check inputs
 	// Set page and group width to 100
 	// Set values for radiogroups
@@ -168,11 +166,13 @@ func (q *QuestionnaireT) Validate() error {
 			for i3 := 0; i3 < len(q.Pages[i1].Groups[i2].Inputs); i3++ {
 
 				inp := q.Pages[i1].Groups[i2].Inputs[i3]
-				s := fmt.Sprintf("Page %v - Group %v - Input %v - %v: ", i1, i2, i3, inp.Name)
+				s := fmt.Sprintf("Page %v - Group %v - Input %v - %8v: ", i1, i2, i3, inp.Name)
 
 				// textblock  =>  span at least 1
 				if inp.Type == "textblock" {
-					inp.ColSpanControl = 0
+					if inp.ColSpanControl > 0 {
+						return fmt.Errorf("%v: textblock should not have ColSpanControl > 0", s)
+					}
 					if inp.ColSpanLabel == 0 {
 						q.Pages[i1].Groups[i2].Inputs[i3].ColSpanLabel = 1
 					}
@@ -186,12 +186,18 @@ func (q *QuestionnaireT) Validate() error {
 					q.Pages[i1].Groups[i2].Inputs[i3].ColSpanLabel = 1
 				}
 
+				// button has label - but never colspanlabel
+				// we should create a special label for button?
+				if inp.Type == "button" {
+					q.Pages[i1].Groups[i2].Inputs[i3].ColSpanLabel = 0
+				}
+
 				// check input type
 				if _, ok := implementedTypes[inp.Type]; !ok {
 					return fmt.Errorf("%v: Type '%v' is not in %v ", s, inp.Type, implementedTypes)
 				}
 
-				// number inputes
+				// number inputs
 				if inp.Type == "number" {
 					if inp.Max-inp.Min <= 0 {
 						return fmt.Errorf("%v: max - min needs to be positive", s)
@@ -222,14 +228,23 @@ func (q *QuestionnaireT) Validate() error {
 					}
 				}
 
+				if inp.Type == "radio" {
+					if inp.ValueRadio == "" {
+						// missing ValueRadio is caught by non-unique inputs
+					}
+				}
+
+				if !inp.IsLayout() && inp.ColSpanControl == 0 {
+					if inp.Type != "radiogroup" {
+						return fmt.Errorf("%v has no ColSpanControl", s)
+					}
+				}
+
+				// old radio
 				// helper: add values 1...x for radiogroups
 				for i4 := 0; i4 < len(inp.Radios); i4++ {
 					if inp.Radios[i4].Val == "" {
 						inp.Radios[i4].Val = fmt.Sprintf("%v", i4+1)
-						logEntries++
-						if logEntries < 10 {
-							log.Printf(s + fmt.Sprintf("Value for %10v set to '%v'", inp.Radios[i4].Label, i4+1))
-						}
 					}
 				}
 
@@ -263,18 +278,23 @@ func (q *QuestionnaireT) Validate() error {
 			for i3 := 0; i3 < len(q.Pages[i1].Groups[i2].Inputs); i3++ {
 
 				s := fmt.Sprintf("Page %v - Group %v - Input %v: ", i1, i2, i3)
+				inp := q.Pages[i1].Groups[i2].Inputs[i3]
 
 				// grp := q.Pages[i1].Elements[i2].Name
-				nm := q.Pages[i1].Groups[i2].Inputs[i3].Name
+				nm := inp.Name
 
-				if q.Pages[i1].Groups[i2].Inputs[i3].IsLayout() {
+				if inp.IsLayout() {
 					continue
 				}
-				if q.Pages[i1].Groups[i2].Inputs[i3].Type == "composit" {
+				if inp.Type == "composit" {
 					continue
 				}
 
-				if q.Pages[i1].Groups[i2].Inputs[i3].IsReserved() {
+				if inp.Type == "radio" {
+					nm = inp.Name + "__radioval__" + inp.ValueRadio
+				}
+
+				if inp.IsReserved() {
 					return fmt.Errorf(s+"Name '%v' is reserved", nm)
 				}
 

@@ -36,8 +36,8 @@ func NewStylesResponsive() *StylesResponsive {
 	return &StylesResponsive{
 		Desktop: Styles{
 			BoxStyle: BoxStyle{
-				HeightMin: "0", // default auto - stackoverflow.com/questions/43311943/
-				WidthMin:  "0",
+				// HeightMin: "0", // default auto - stackoverflow.com/questions/43311943/
+				// WidthMin:  "0",
 			},
 		},
 		Mobile: Styles{},

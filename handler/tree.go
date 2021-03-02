@@ -239,6 +239,8 @@ func (tr *TreeT) NavHTML(w io.Writer, r *http.Request, isLogin, isAdmin bool, lv
 		fmt.Fprint(w, "\n") // pretty indentations in HTML source
 	}
 
+	preventClick := " onclick='return false;' " // nav items without URL should not be clickable;
+
 	needsLogout := tr.Node.Allow[LoggedOut]
 	if needsLogout && isLogin {
 		return
@@ -259,7 +261,7 @@ func (tr *TreeT) NavHTML(w io.Writer, r *http.Request, isLogin, isAdmin bool, lv
 		key := ""
 		navURL := ""
 		activeClass := "" // style the active nav item
-		preventClck := "" // nav items without URL should not be clickable;
+		onClick := ""
 		accessKey := ""
 
 		if len(tr.Node.Keys) > 0 {
@@ -276,7 +278,11 @@ func (tr *TreeT) NavHTML(w io.Writer, r *http.Request, isLogin, isAdmin bool, lv
 		}
 
 		if navURL == "" {
-			preventClck = " onclick='return false;' "
+			onClick = preventClick
+		}
+
+		if tr.Node.OnClick != "" {
+			onClick = tr.Node.OnClick
 		}
 
 		if tr.Node.ShortCut != "" {
@@ -288,7 +294,7 @@ func (tr *TreeT) NavHTML(w io.Writer, r *http.Request, isLogin, isAdmin bool, lv
 
 			fmt.Fprintf(w, "%v<li id='%v' >\n", htmlIndent, key)
 			fmt.Fprintf(w, "%v  <a href='%v' class='%v'  %v  %v  >%v</a>\n",
-				htmlIndent, navURL, activeClass, preventClck, accessKey, tr.Node.Title,
+				htmlIndent, navURL, activeClass, onClick, accessKey, tr.Node.Title,
 			)
 			fmt.Fprintf(w, "%v</li>\n", htmlIndent)
 
@@ -311,7 +317,7 @@ func (tr *TreeT) NavHTML(w io.Writer, r *http.Request, isLogin, isAdmin bool, lv
 
 			// same as above - without enclosing <li>
 			fmt.Fprintf(w, "%v  <a href='%v' class='%v'  %v  %v  >%v</a>  \n",
-				htmlIndent, navURL, activeClass, preventClck, accessKey, tr.Node.Title,
+				htmlIndent, navURL, activeClass, onClick, accessKey, tr.Node.Title,
 			)
 
 			fmt.Fprintf(w, "%v     <ul class='mnu-3rd-lvl'>\n", htmlIndent)

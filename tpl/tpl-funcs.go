@@ -128,13 +128,18 @@ var fcNav = func(r *http.Request, q *qst.QuestionnaireT, SBookMarkURI string) te
 			title := lpP.Short.Tr(lc)
 			key := "quest-page-" + fmt.Sprint(i)
 			nodeURL := "?&page=" + fmt.Sprint(i)
+			onClick := fmt.Sprintf(
+				`onclick="document.forms.frmMain.page.value='%v';document.forms.frmMain.submit(); return false;"`,
+				i,
+			)
+
 			// log.Printf("url is '%v'", nodeURL)
 			asChild := false // default is sibling
 			if cntr == 1 {
 				asChild = true
 			}
 			ins := insertT{
-				handler.Info{Title: title, Keys: []string{key}, Urls: []string{nodeURL}},
+				handler.Info{Title: title, Keys: []string{key}, Urls: []string{nodeURL}, OnClick: onClick},
 				asChild,
 			}
 			if i == q.CurrPage {

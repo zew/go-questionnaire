@@ -9,6 +9,17 @@ import (
 	"github.com/zew/go-questionnaire/trl"
 )
 
+var radioVals7 = []string{"1", "2", "3", "4", "5", "6", "7"}
+var columnTemplate7 = []int{
+	0, 1,
+	0, 1,
+	0, 1,
+	0, 1,
+	0, 1,
+	0, 1,
+	0, 1,
+}
+
 // Create creates an minimal example questionnaire with a few pages and inputs.
 // It is saved to disk as an example.
 func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
@@ -17,7 +28,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 	// qst.RadioVali = "mustRadioGroup"
 	qst.RadioVali = ""
-	qst.CSSLabelHeader = ""
+	qst.HeaderClass = ""
 	qst.CSSLabelRow = ""
 
 	q := qst.QuestionnaireT{}
@@ -761,18 +772,17 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		page.Short = trl.S{"de": "Eigene Einstellung"}
 		page.Width = 55
 
+		// gr1
 		{
-			gr := page.AddGroup()
-			gr.RandomizationGroup = 1 - 1
-			gr.BottomVSpacers = 0
-			gr.Cols = 1
-			gr.Width = 100
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				// inp.Label = trl.S{"de": "Frage [groupID]<br>"}
-				inp.Desc = trl.S{
-					"de": `
+			gb := qst.NewGridBuilderRadios(
+				columnTemplate7,
+				labelsOneToSeven1,
+				[]string{"q4"},
+				radioVals7,
+				[]trl.S{},
+			)
+			gb.MainLabel = trl.S{
+				"de": `
 				<p>
 				<b>Frage 4.</b> 
 				Wie sehr stimmen Sie der folgenden Aussage zu: 
@@ -782,30 +792,22 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				aus der gesetzlichen Rentenversicherung liegt.</i>“
 				</p>
 				`,
-				}
 			}
-		}
-		{
-			gr := page.AddRadioMatrixGroupNoLabels(labelsOneToSeven1, []string{"q4"})
-			gr.RandomizationGroup = 1 - 1
-			gr.BottomVSpacers = 2
-			gr.Cols = 7
-			gr.Width = 100
+			gr := page.AddGrid(gb)
+			gr.OddRowsColoring = true
 		}
 
-		//
+		// gr2
 		{
-			gr := page.AddGroup()
-			gr.RandomizationGroup = 1 - 1
-			gr.BottomVSpacers = 0
-			gr.Cols = 1
-			gr.Width = 100
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				// inp.Label = trl.S{"de": "Frage [groupID]<br>"}
-				inp.Desc = trl.S{
-					"de": `
+			gb := qst.NewGridBuilderRadios(
+				columnTemplate7,
+				labelsOneToSeven2,
+				[]string{"q5"},
+				radioVals7,
+				[]trl.S{},
+			)
+			gb.MainLabel = trl.S{
+				"de": `
 					<p>
 					<b>Zum Schluss bitten wir Sie drei Fragen über sich selbst zu beantworten:</b>
 
@@ -820,33 +822,22 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 					</p>
 
 				`,
-				}
 			}
-
-		}
-		{
-			gr := page.AddRadioMatrixGroupNoLabels(labelsOneToSeven2, []string{"q5"})
-			gr.RandomizationGroup = 1 - 1
-			gr.BottomVSpacers = 2
-			gr.Cols = 7
-			gr.Width = 100
-
+			gr := page.AddGrid(gb)
+			gr.OddRowsColoring = true
 		}
 
-		//
-		//
+		// gr3
 		{
-			gr := page.AddGroup()
-			gr.RandomizationGroup = 1 - 1
-			gr.BottomVSpacers = 0
-			gr.Cols = 1
-			gr.Width = 100
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				// inp.Label = trl.S{"de": "Frage [groupID]<br>"}
-				inp.Desc = trl.S{
-					"de": `
+			gb := qst.NewGridBuilderRadios(
+				columnTemplate7,
+				labelsOneToSeven3,
+				[]string{"q6"},
+				radioVals7,
+				[]trl.S{},
+			)
+			gb.MainLabel = trl.S{
+				"de": `
 					</p>
 					<b>Frage 6.</b>
 					Wie schätzen Sie sich persönlich ein? 
@@ -855,47 +846,31 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 					</p>
 
 				`,
-				}
 			}
-		}
-		{
-			gr := page.AddRadioMatrixGroupNoLabels(labelsOneToSeven3, []string{"q6"})
-			gr.RandomizationGroup = 1 - 1
-			gr.BottomVSpacers = 2
-			gr.Cols = 7
-			gr.Width = 100
+			gr := page.AddGrid(gb)
+			gr.OddRowsColoring = true
 		}
 
-		//
-		//
+		// gr4
 		{
-			gr := page.AddGroup()
-			gr.RandomizationGroup = 1 - 1
-			gr.BottomVSpacers = 0
-			gr.Cols = 1
-			gr.Width = 100
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				// inp.Label = trl.S{"de": "Frage [groupID]<br>"}
-				inp.Desc = trl.S{
-					"de": `
+			gb := qst.NewGridBuilderRadios(
+				columnTemplate7,
+				labelsOneToSeven2,
+				[]string{"q7"},
+				radioVals7,
+				[]trl.S{},
+			)
+			gb.MainLabel = trl.S{
+				"de": `
 					<p>
 					<b>Frage 7.</b>
 					Wie schätzen Sie Ihre Bereitschaft ein mit anderen zu teilen, 
 					ohne dafür eine Gegenleistung zu erwarten?
 					</p>
 				`,
-				}
 			}
-		}
-		{
-			gr := page.AddRadioMatrixGroupNoLabels(labelsOneToSeven2, []string{"q7"})
-			gr.RandomizationGroup = 1 - 1
-			gr.BottomVSpacers = 2
-			gr.Cols = 7
-			gr.Width = 100
-
+			gr := page.AddGrid(gb)
+			gr.OddRowsColoring = true
 		}
 
 		//

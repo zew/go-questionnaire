@@ -86,8 +86,8 @@ func (inp *inputT) ShortSuffix(ctrl string, langCode string) string {
 
 //
 //
-// GroupHTMLGrid renders a group of inputs to GroupHTMLGrid
-func (q QuestionnaireT) GroupHTMLGrid(pageIdx, grpIdx int) string {
+// GroupHTMLGridBased renders a group of inputs to GroupHTMLGridBased
+func (q QuestionnaireT) GroupHTMLGridBased(pageIdx, grpIdx int) string {
 
 	wCSS := &strings.Builder{}
 	gr := q.Pages[pageIdx].Groups[grpIdx]
@@ -296,47 +296,6 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int) string {
 		if inp.Type == "checkbox" {
 			ctrl += fmt.Sprintf(
 				"<input type='hidden' name='%v' id='%v_hidd' value='0' />\n", nm, nm)
-		}
-
-	case "radiogroup", "checkboxgroup":
-
-		innerType := "radio"
-		if inp.Type == "checkboxgroup" {
-			innerType = "checkbox"
-		}
-
-		style := ""
-		style += "grid-column: auto / span 1;"
-		style += "justify-self: center;"
-
-		for _, rad := range inp.Radios {
-			// one := ""
-			checked := ""
-			if inp.Response == rad.Val {
-				checked = "checked=\"checked\""
-			}
-
-			radio := fmt.Sprintf(
-				// 2021-01 - id must be unique
-				"<input type='%v' name='%v' id-disabled='%v' title='%v %v' class='%v' style='%v' value='%v' %v />\n",
-				innerType, nm, nm, inp.Label.TrSilent(q.LangCode), inp.Desc.TrSilent(q.LangCode),
-				inp.CSSControl+" grid-item-lvl-3",
-				style,
-				rad.Val, checked,
-			)
-
-			ctrl += radio
-
-		}
-		// The checkbox "empty catcher" must follow *after* the actual checkbox input,
-		// since golang http.Form.Get() fetches the *first* value.
-		//
-		// The radio "empty catcher" becomes necessary,
-		// if no radio was selected by the participant;
-		// but a "must..." validation rule is registered
-		if innerType == "radio" || innerType == "checkbox" {
-			ctrl += fmt.Sprintf("<input type='hidden' name='%v' id='%v_hidd' value='%v' />\n",
-				nm, nm, valEmpty)
 		}
 
 	case "dynamic":

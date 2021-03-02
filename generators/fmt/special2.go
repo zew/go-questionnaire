@@ -106,60 +106,50 @@ func addSeasonal2(q *qst.QuestionnaireT) error {
 
 	}
 
-	// gr1
-	{
-		gr := page.AddGroup()
-		gr.Cols = 1
-		gr.BottomVSpacers = 0
+	rowLabelsEconomicAreasShort := []trl.S{
 		{
-			inp := gr.AddInput()
-			inp.Type = "textblock"
-			inp.Desc = trl.S{
-				"de": "<b>2.</b> Haben Entwicklungen in den folgenden Bereichen Sie zu einer Revision Ihrer Inflationsprognosen (ggü. Vormonat) für den Euroraum bewogen und wenn ja in welche Richtung?",
-				"en": "<b>2.</b> Which developments have lead you to change your assessment of the inflation outlook for the Euro are compared to the previous month",
-			}
-		}
+			"de": "Konjunkturdaten Euroraum",
+			"en": "Business cycle data Euro area",
+		},
+		{
+			"de": "Konjunkturdaten global",
+			"en": "Business cycle data globally",
+		},
+		{
+			"de": "Löhne Euroraum",
+			"en": "Wages Euro area",
+		},
+		{
+			"de": "Rohstoffpreise",
+			"en": "Raw material prices",
+		},
+		{
+			"de": "Wechselkurse",
+			"en": "Exchange rates",
+		},
+		{
+			"de": "EZB-Geldpolitik",
+			"en": "ECB monetary policy",
+		},
 	}
+
+	// gr2
+	// ioi => impact on inflation
 	{
-		labels123Matrix := []trl.S{
-			{
-				"de": "Konjunkturdaten Euroraum",
-				"en": "Business cycle data Euro area",
-			},
-			{
-				"de": "Konjunkturdaten global",
-				"en": "Business cycle data globally",
-			},
-			{
-				"de": "Löhne Euroraum",
-				"en": "Wages Euro area",
-			},
-			{
-				"de": "Rohstoffpreise",
-				"en": "Raw material prices",
-			},
-			{
-				"de": "Wechselkurse",
-				"en": "Exchange rates",
-			},
-			{
-				"de": "EZB-Geldpolitik",
-				"en": "ECB monetary policy",
-			},
+		gb := qst.NewGridBuilderRadios(
+			columnTemplate6,
+			labelsStronglyPositiveStronglyNegativeInfluence(),
+			[]string{"ioi_cycle_data_ea", "ioi_cycle_data_gl", "ioi_wages_ea", "ioi_rmp", "ioi_exch_rates", "ioi_mp_ecb"},
+			radioVals6,
+			rowLabelsEconomicAreasShort,
+		)
+		gb.MainLabel = trl.S{
+			"de": "<b>2.</b> Haben Entwicklungen in den folgenden Bereichen Sie zu einer Revision Ihrer Inflationsprognosen (ggü. Vormonat) für den Euroraum bewogen und wenn ja in welche Richtung?",
+			"en": "<b>2.</b> Which developments have lead you to change your assessment of the inflation outlook for the Euro are compared to the previous month",
 		}
-		// ioi => impact on inflation
-		names1stMatrix := []string{
-			"ioi_cycle_data_ea",
-			"ioi_cycle_data_gl",
-			"ioi_wages_ea",
-			"ioi_rmp",
-			"ioi_exch_rates",
-			"ioi_mp_ecb",
-		}
-		gr := page.AddRadioMatrixGroupCSSGrid(names1stMatrix, len(labelsStronglyPositiveStronglyNegativeInfluence()), labelsStronglyPositiveStronglyNegativeInfluence(),
-			labels123Matrix, 2)
-		gr.Cols = 8 // necessary, otherwise no vspacers
+		gr := page.AddGrid(gb)
 		gr.OddRowsColoring = true
+
 	}
 
 	// gr3

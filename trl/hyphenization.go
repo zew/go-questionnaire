@@ -45,6 +45,10 @@ var hyph = []string{
 	"wich&shy;tig",
 	"da&shyfür",
 	"da&shyge&shygen",
+	"ver&shy;än&shy;dern",      // "ver|än|dern",
+	"ver&shy;bes&shy;sern",     // "ver|bes|sern",
+	"ver&shy;schlech&shy;tern", // "ver|schlech|tern",
+
 	// german euref
 	"Öko&shy;no&shy;mie",
 	"Mi&shy;kro&shy;öko&shy;no&shy;mie",

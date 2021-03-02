@@ -189,68 +189,56 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 
 	}
 
-	// gr1
-	{
-		gr := page.AddGroup()
-		gr.Cols = 1
-		gr.BottomVSpacers = 0
+	rowLabelsEconomicAreas := []trl.S{
 		{
-			inp := gr.AddInput()
-			inp.Type = "textblock"
-			inp.Desc = trl.S{
-				"de": "<b>2.</b> Haben Entwicklungen in den folgenden Bereichen Sie zu einer Revision Ihrer Konjunkturprognosen (ggü. Vormonat) für die deutsche Wirtschaft bewogen und wenn ja in welche Richtung?",
-				"en": "<b>2.</b> Which developments have lead you to change your assessment of the business cycle outlook for the German economy compared to the previous month",
-			}
-		}
+			"de": "Konjunkturdaten Deutschland",
+			"en": "Business cycle data Germany",
+		},
+		{
+			"de": "Exportmärkte",
+			"en": "Export markets",
+		},
+		{
+			"de": "Wechselkurse",
+			"en": "Exchange rates",
+		},
+		{
+			"de": "EZB-Geldpolitik",
+			"en": "ECB monetary policy",
+		},
+		{
+			"de": "US-Geldpolitik",
+			"en": "FED monetary policy",
+		},
+		{
+			"de": "Geopol. Ereignisse",
+			"en": "Geopolitical events",
+		},
+		{
+			"de": "Regierungsbildung Deutschland",
+			"en": "Government formation Germany",
+		},
+		{
+			"de": "Sonstige",
+			"en": "Other",
+		},
 	}
+
+	// gr2
+	// iobc => impact on business cycle
 	{
-		labels123Matrix := []trl.S{
-			{
-				"de": "Konjunkturdaten Deutschland",
-				"en": "Business cycle data Germany",
-			},
-			{
-				"de": "Exportmärkte",
-				"en": "Export markets",
-			},
-			{
-				"de": "Wechselkurse",
-				"en": "Exchange rates",
-			},
-			{
-				"de": "EZB-Geldpolitik",
-				"en": "ECB monetary policy",
-			},
-			{
-				"de": "US-Geldpolitik",
-				"en": "FED monetary policy",
-			},
-			{
-				"de": "Geopol. Ereignisse",
-				"en": "Geopolitical events",
-			},
-			{
-				"de": "Regierungsbildung Deutschland",
-				"en": "Government formation Germany",
-			},
-			{
-				"de": "Sonstige",
-				"en": "Other",
-			},
+		gb := qst.NewGridBuilderRadios(
+			columnTemplate6,
+			labelsStronglyPositiveStronglyNegativeInfluence(),
+			[]string{"iobc_cycle_data_deu", "iobc_exp_markets", "iobc_exch_rates", "iobc_mp_ecb", "iobc_mp_fed", "iobc_geopol", "iobc_gvt_form_deu", "iobc_other"},
+			radioVals6,
+			rowLabelsEconomicAreas,
+		)
+		gb.MainLabel = trl.S{
+			"de": "<b>2.</b> Haben Entwicklungen in den folgenden Bereichen Sie zu einer Revision Ihrer Konjunkturprognosen (ggü. Vormonat) für die deutsche Wirtschaft bewogen und wenn ja in welche Richtung?",
+			"en": "<b>2.</b> Which developments have lead you to change your assessment of the business cycle outlook for the German economy compared to the previous month",
 		}
-		// iobc => impact on business cycle
-		names1stMatrix := []string{
-			"iobc_cycle_data_deu",
-			"iobc_exp_markets",
-			"iobc_exch_rates",
-			"iobc_mp_ecb",
-			"iobc_mp_fed",
-			"iobc_geopol",
-			"iobc_gvt_form_deu",
-			"iobc_other",
-		}
-		gr := page.AddRadioMatrixGroupCSSGrid(names1stMatrix, len(labelsStronglyPositiveStronglyNegativeInfluence()), labelsStronglyPositiveStronglyNegativeInfluence(),
-			labels123Matrix, 2)
+		gr := page.AddGrid(gb)
 		gr.OddRowsColoring = true
 
 		{

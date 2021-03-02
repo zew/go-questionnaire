@@ -20,7 +20,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	ctrPages := ctr.New()
 
 	// qst.RadioVali = "mustRadioGroup"
-	qst.CSSLabelHeader = "go-quest-opt-label"
+	qst.HeaderClass = "go-quest-opt-label"
 	qst.CSSLabelRow = ""
 
 	q := qst.QuestionnaireT{}

@@ -11,6 +11,23 @@ import (
 	"github.com/zew/go-questionnaire/trl"
 )
 
+var radioVals4 = []string{"1", "2", "3", "4"}
+var radioVals6 = []string{"1", "2", "3", "4", "5", "6"}
+var columnTemplate4 = []int{
+	2, 1,
+	0, 1,
+	0, 1,
+	1, 1,
+}
+var columnTemplate6 = []int{
+	2, 1,
+	0, 1,
+	0, 1,
+	0, 1,
+	0, 1,
+	1, 1,
+}
+
 // Create creates a JSON file for a financial markets survey
 func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
@@ -18,7 +35,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 	// qst.RadioVali = "mustRadioGroup"
 	qst.RadioVali = ""
-	qst.CSSLabelHeader = ""
+	qst.HeaderClass = ""
 	qst.CSSLabelRow = ""
 
 	q := qst.QuestionnaireT{}
@@ -30,6 +47,25 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	q.Survey.Name = trl.S{"de": "Finanzmarkttest", "en": "Financial Markets Survey"}
 
 	q.Version = 1
+
+	rowLabelsSmallLargeEnterprises := []trl.S{
+		{
+			"de": "Großunternehmen",
+			"en": "Large enterprises",
+		},
+		{
+			"de": "KMU",
+			"en": "Small+medium enterprises",
+		},
+		{
+			"de": "Immobilienkredite",
+			"en": "Real estate credit",
+		},
+		{
+			"de": "Konsumentenkredite",
+			"en": "Consumer credit",
+		},
+	}
 
 	// page 0
 
@@ -142,7 +178,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 		//
 		//
-		labels123Matrix := []trl.S{
+		rowLabelsEuroGerUSGlob := []trl.S{
 			{
 				"de": "Euroraum",
 				"en": "Euro area",
@@ -161,94 +197,57 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			},
 		}
 
-		// gr1a
+		// gr1
 		{
-			gr := page.AddGroup()
-			gr.Cols = 1
-			gr.BottomVSpacers = 0
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.Desc = trl.S{
-					"de": "<b>1.</b> Die gesamtwirtschaftliche Situation beurteilen wir als",
-					"en": "<b>1.</b> We assess the overall economic situation as",
-				}
+			gb := qst.NewGridBuilderRadios(
+				columnTemplate4,
+				labelsGoodBad(),
+				[]string{"y0_ez", "y0_deu", "y0_usa", "y0_glob"},
+				radioVals4,
+				rowLabelsEuroGerUSGlob,
+			)
+			gb.MainLabel = trl.S{
+				"de": "<b>1.</b> Die gesamtwirtschaftliche Situation beurteilen wir als",
+				"en": "<b>1.</b> We assess the overall economic situation as",
 			}
-		}
-		// gr1b
-		{
-			// names1stMatrix := []string{
-			// 	"y0_ez",
-			// 	"y0_deu",
-			// 	"y0_usa",
-			// 	"y0_glob",
-			// }
-			// gr := page.AddRadioMatrixGroupCSSGrid(names1stMatrix, len(labelsGoodBad()), labelsGoodBad(), labels123Matrix, 0)
-			// gr.OddRowsColoring = true
-		}
-
-		//
-		// gr1b--xx
-		{
-			erm := qst.ExampleRadioMatrix()
-			gr := page.AddRadioMatrix2(erm)
+			gr := page.AddGrid(gb)
 			gr.OddRowsColoring = true
-
-			// log.Print(util.IndentedDump(gr))
 		}
 
-		//
 		// gr2a
 		{
-			gr := page.AddGroup()
-			gr.Cols = 1
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.Desc = trl.S{
-					"de": "<b>2a.</b> Die gesamtwirtschaftliche Situation wird sich mittelfristig (<b>6</b>&nbsp;Mo.)",
-					"en": "<b>2a.</b> The overall economic situation medium term (<b>6</b>&nbsp;months) will",
-				}
+			gb := qst.NewGridBuilderRadios(
+				columnTemplate4,
+				labelsImproveDeteriorate(),
+				[]string{"y_ez", "y_deu", "y_usa", "y_glob"},
+				radioVals4,
+				rowLabelsEuroGerUSGlob,
+			)
+			gb.MainLabel = trl.S{
+				"de": "<b>2a.</b> Die gesamtwirtschaftliche Situation wird sich mittelfristig (<b>6</b>&nbsp;Mo.)",
+				"en": "<b>2a.</b> The overall economic situation medium term (<b>6</b>&nbsp;months) will",
 			}
+			gr := page.AddGrid(gb)
+			gr.OddRowsColoring = true
 		}
+
 		// gr2b
 		{
-			names2stMatrix := []string{
-				"y_ez",
-				"y_deu",
-				"y_usa",
-				"y_glob",
+			gb := qst.NewGridBuilderRadios(
+				columnTemplate4,
+				labelsImproveDeteriorate(),
+				[]string{"y24_ez", "y24_deu", "y24_usa", "y24_glob"},
+				radioVals4,
+				rowLabelsEuroGerUSGlob,
+			)
+			gb.MainLabel = trl.S{
+				"de": "<b>2b.</b> Die gesamtwirtschaftliche Situation wird sich langfristig (<b>24</b>&nbsp;Mo.)",
+				"en": "<b>2b.</b> The overall economic situation long term (<b>24</b>&nbsp;months) will",
 			}
-			gr := page.AddRadioMatrixGroupCSSGrid(names2stMatrix, len(labelsImproveDeteriorate()), labelsImproveDeteriorate(), labels123Matrix, 0)
+			gr := page.AddGrid(gb)
 			gr.OddRowsColoring = true
 		}
 
-		//
-		// gr3a
-		{
-			gr := page.AddGroup()
-			gr.Cols = 1
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.Desc = trl.S{
-					"de": "<b>2b.</b> Die gesamtwirtschaftliche Situation wird sich langfristig (<b>24</b>&nbsp;Mo.)",
-					"en": "<b>2b.</b> The overall economic situation long term (<b>24</b>&nbsp;months) will",
-				}
-			}
-		}
-		// gr3b
-		{
-			names3rdMatrix := []string{
-				"y24_ez",
-				"y24_deu",
-				"y24_usa",
-				"y24_glob",
-			}
-
-			gr := page.AddRadioMatrixGroupCSSGrid(names3rdMatrix, len(labelsImproveDeteriorate()), labelsImproveDeteriorate(), labels123Matrix, 0)
-			gr.OddRowsColoring = true
-		}
 	}
 
 	//
@@ -380,41 +379,32 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		page.AestheticCompensation = 5
 		page.Width = 80
 
-		//
-		// gr1a
-		{
-			gr := page.AddGroup()
-			gr.Cols = 1
-			gr.BottomVSpacers = 0
+		rowLabelsEuroGer := []trl.S{
 			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.Desc = trl.S{
-					"de": "<b>4.</b> Die jährl. gesamtwirtschaftl. Inflationsrate wird mittelfristig (<b>6</b>&nbsp;Mo.)",
-					"en": "<b>4.</b> Medium term (<b>6</b>&nbsp;months) yearly overall inflation rate will",
-				}
-			}
+				"de": "Euroraum",
+				"en": "Euro area",
+			},
+			{
+				"de": "Deutschland",
+				"en": "Germany",
+			},
 		}
-		// gr1b
+
+		// gr1
 		{
-			labels1stCol := []trl.S{
-				{
-					"de": "Euroraum",
-					"en": "Euro area",
-				},
-				{
-					"de": "Deutschland",
-					"en": "Germany",
-				},
+			gb := qst.NewGridBuilderRadios(
+				columnTemplate4,
+				labelsIncreaseDecrease(),
+				[]string{"pi_ez", "pi_deu"},
+				radioVals4,
+				rowLabelsEuroGer,
+			)
+			gb.MainLabel = trl.S{
+				"de": "<b>4.</b> Die jährl. gesamtwirtschaftl. Inflationsrate wird mittelfristig (<b>6</b>&nbsp;Mo.)",
+				"en": "<b>4.</b> Medium term (<b>6</b>&nbsp;months) yearly overall inflation rate will",
 			}
-			names1stMatrix := []string{
-				"pi_ez",
-				"pi_deu",
-			}
-			gr := page.AddRadioMatrixGroupCSSGrid(names1stMatrix, len(labelsIncreaseDecrease()),
-				labelsIncreaseDecrease(), labels1stCol, 0)
+			gr := page.AddGrid(gb)
 			gr.OddRowsColoring = true
-			gr.Width = 90
 		}
 
 		//
@@ -587,119 +577,76 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		page.Label = trl.S{"de": "Markt", "en": "Market"}
 		page.Short = trl.S{"de": "Kredit-<br>situation:<br>Markt", "en": "Credit<br>situation:<br>Market"}
 
-		{
-			gr := page.AddGroup()
-			gr.Cols = 1
-			gr.BottomVSpacers = 0
+		rowLabelsCreditDemandSupply := []trl.S{
 			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.Label = trl.S{"de": "6a.", "en": "6a."}
-				inp.Desc = trl.S{
-					"de": "<b>6a.</b> Wie schätzen Sie die Kreditsituation in Deutschland ein?",
-					"en": "<b>6a.</b> How do you assess credit conditions in Germany?",
-				}
-			}
+				"de": "Kreditnachfrage",
+				"en": "Credit demand",
+			},
+			{
+				"de": "Kreditangebot",
+				"en": "Credit supply",
+			},
 		}
-		{
-			names3rdMatrix := []string{
-				"cd_deu",
-				"cs_deu",
-			}
-			labels123Matrix := []trl.S{
-				{
-					"de": "Kreditnachfrage",
-					"en": "Credit demand",
-				},
-				{
-					"de": "Kreditangebot",
-					"en": "Credit supply",
-				},
-			}
 
-			gr := page.AddRadioMatrixGroupCSSGrid(names3rdMatrix, len(labelsVeryHighVeryLow()), labelsVeryHighVeryLow(), labels123Matrix, 0)
+		rowLabelsMediumLongTerm := []trl.S{
+			{
+				"de": "mittelfristig (<b>6</b>&nbsp;Mo.)",
+				"en": "medium term (<b>6</b>&nbsp;months)",
+			},
+			{
+				"de": "langfristig (<b>24</b>&nbsp;Mo.)",
+				"en": "long term (<b>24</b>&nbsp;months)",
+			},
+		}
+
+		// gr1
+		{
+			gb := qst.NewGridBuilderRadios(
+				columnTemplate6,
+				labelsVeryHighVeryLow(),
+				[]string{"cd_deu", "cs_deu"},
+				radioVals6,
+				rowLabelsCreditDemandSupply,
+			)
+			gb.MainLabel = trl.S{
+				"de": "<b>6a.</b> Wie schätzen Sie die Kreditsituation in Deutschland ein?",
+				"en": "<b>6a.</b> How do you assess credit conditions in Germany?",
+			}
+			gr := page.AddGrid(gb)
 			gr.OddRowsColoring = true
 		}
 
-		//
-		//
+		// gr2
 		{
-			gr := page.AddGroup()
-			gr.Cols = 1
-			gr.BottomVSpacers = 0
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.Label = trl.S{"de": "6a.", "en": "6a."}
-				inp.Desc = trl.S{
-					"de": "<b>6b.</b> Das (saisonbereinigte) Gesamtvolumen der Neukreditvergabe in Deutschland wird",
-					"en": "<b>6b.</b> The seasonally adjusted volume of new credit in Germany will",
-				}
+			gb := qst.NewGridBuilderRadios(
+				columnTemplate6,
+				labelsStrongIncreaseStrongDecrease(),
+				[]string{"c0_6", "c0_24"},
+				radioVals6,
+				rowLabelsMediumLongTerm,
+			)
+			gb.MainLabel = trl.S{
+				"de": "<b>6b.</b> Das (saisonbereinigte) Gesamtvolumen der Neukreditvergabe in Deutschland wird",
+				"en": "<b>6b.</b> The seasonally adjusted volume of new credit in Germany will",
 			}
-		}
-		{
-			names3rdMatrix := []string{
-				"c0_6",
-				"c0_24",
-			}
-			labels123Matrix := []trl.S{
-				{
-					"de": "mittelfristig (<b>6</b>&nbsp;Mo.)",
-					"en": "medium term (<b>6</b>&nbsp;months)",
-				},
-				{
-					"de": "langfristig (<b>24</b>&nbsp;Mo.)",
-					"en": "long term (<b>24</b>&nbsp;months)",
-				},
-			}
-
-			gr := page.AddRadioMatrixGroupCSSGrid(names3rdMatrix, len(labelsStrongIncreaseStrongDecrease()), labelsStrongIncreaseStrongDecrease(), labels123Matrix, 0)
+			gr := page.AddGrid(gb)
 			gr.OddRowsColoring = true
 		}
 
-		//
-		//
+		// gr3
 		{
-			gr := page.AddGroup()
-			gr.Cols = 1
-			gr.BottomVSpacers = 0
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.Label = trl.S{"de": "6a.", "en": "6a."}
-				inp.Desc = trl.S{
-					"de": "<b>6c.</b> Die (saisonbereinigte) Kreditnachfrage wird mittelfristig (<b>6</b>&nbsp;Mo.)",
-					"en": "<b>6c.</b> The seasonally adjusted credit demand medium term (<b>6</b>&nbsp;months) will be",
-				}
+			gb := qst.NewGridBuilderRadios(
+				columnTemplate6,
+				labelsStrongIncreaseStrongDecrease(),
+				[]string{"cd_24_le", "cd_24_sme", "cd_24_re", "cd_24_co"},
+				radioVals6,
+				rowLabelsSmallLargeEnterprises,
+			)
+			gb.MainLabel = trl.S{
+				"de": "<b>6c.</b> Die (saisonbereinigte) Kreditnachfrage wird mittelfristig (<b>6</b>&nbsp;Mo.)",
+				"en": "<b>6c.</b> The seasonally adjusted credit demand medium term (<b>6</b>&nbsp;months) will be",
 			}
-		}
-		{
-			names3rdMatrix := []string{
-				"cd_24_le",
-				"cd_24_sme",
-				"cd_24_re",
-				"cd_24_co",
-			}
-			labels123Matrix := []trl.S{
-				{
-					"de": "Großunternehmen",
-					"en": "Large enterprises",
-				},
-				{
-					"de": "KMU",
-					"en": "Small+medium enterprises",
-				},
-				{
-					"de": "Immobilienkredite",
-					"en": "Real estate credit",
-				},
-				{
-					"de": "Konsumentenkredite",
-					"en": "Consumer credit",
-				},
-			}
-
-			gr := page.AddRadioMatrixGroupCSSGrid(names3rdMatrix, len(labelsStrongIncreaseStrongDecrease()), labelsStrongIncreaseStrongDecrease(), labels123Matrix, 0)
+			gr := page.AddGrid(gb)
 			gr.OddRowsColoring = true
 		}
 
@@ -713,103 +660,64 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		page.Label = trl.S{"de": "Einflussfaktoren", "en": "Influence factors"}
 		page.Short = trl.S{"de": "Einfluss-<br>faktoren", "en": "Influence<br>factors"}
 
-		//
-		//
-		{
-			gr := page.AddGroup()
-			gr.Cols = 1
-			gr.BottomVSpacers = 0
+		rowLabelsFinancingFactors := []trl.S{
 			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.Desc = trl.S{
-					"de": "<b>6d.</b> Wie schätzen Sie den Einfluss folgender Faktoren auf die mittelfristige (<b>6</b>&nbsp;Mo.) Veränderung des Kreditangebots ein?",
-					"en": "<b>6d.</b> How do you assess the influence of following factors on the medium term (<b>6</b>&nbsp;months) change of credit supply?",
-				}
-			}
+				"de": "Ausfallrisiken",
+				"en": "Default risk",
+			},
+			{
+				"de": "Risikotragfähigkeit",
+				"en": "Risk profile",
+			},
+			{
+				"de": "Refinanzierung",
+				"en": "Refinancing",
+			},
+			{
+				"de": "Wettbewerbssituation",
+				"en": "Competitive environment",
+			},
+			{
+				"de": "Regulierung",
+				"en": "Regulation",
+			},
+			{
+				"de": "EZB Politik",
+				"en": "ECB policy",
+			},
 		}
-		{
-			names3rdMatrix := []string{
-				"c_inf_6_dr",
-				"c_inf_6_ri",
-				"c_inf_6_re",
-				"c_inf_6_ce",
-				"c_inf_6_rg",
-				"c_inf_6_ep",
-			}
-			labels123Matrix := []trl.S{
-				{
-					"de": "Ausfallrisiken",
-					"en": "Default risk",
-				},
-				{
-					"de": "Risikotragfähigkeit",
-					"en": "Risk profile",
-				},
-				{
-					"de": "Refinanzierung",
-					"en": "Refinancing",
-				},
-				{
-					"de": "Wettbewerbssituation",
-					"en": "Competitive environment",
-				},
-				{
-					"de": "Regulierung",
-					"en": "Regulation",
-				},
-				{
-					"de": "EZB Politik",
-					"en": "ECB policy",
-				},
-			}
 
-			gr := page.AddRadioMatrixGroupCSSGrid(names3rdMatrix, len(labelsVeryPositiveVeryNegative()), labelsVeryPositiveVeryNegative(), labels123Matrix, 0)
+		// gr1
+		{
+			gb := qst.NewGridBuilderRadios(
+				columnTemplate6,
+				labelsVeryPositiveVeryNegative(),
+				[]string{"c_inf_6_dr", "c_inf_6_ri", "c_inf_6_re", "c_inf_6_ce", "c_inf_6_rg", "c_inf_6_ep"},
+				radioVals6,
+				rowLabelsFinancingFactors,
+			)
+			gb.MainLabel = trl.S{
+				"de": "<b>6d.</b> Wie schätzen Sie den Einfluss folgender Faktoren auf die mittelfristige (<b>6</b>&nbsp;Mo.) Veränderung des Kreditangebots ein?",
+				"en": "<b>6d.</b> How do you assess the influence of following factors on the medium term (<b>6</b>&nbsp;months) change of credit supply?",
+			}
+			gr := page.AddGrid(gb)
 			gr.OddRowsColoring = true
 		}
 
-		//
-		//
+		// gr2
 		{
-			gr := page.AddGroup()
-			gr.Cols = 1
-			gr.BottomVSpacers = 0
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.Desc = trl.S{
-					"de": "<b>6e.</b> Die (saisonbereinigte) Kreditstandards für Neukredite werden mittelfristig (<b>6</b>&nbsp;Mo.)",
-					"en": "<b>6e.</b> The seasonally adjusted credit standards medium term (<b>6</b>&nbsp;months) will",
-				}
+			gb := qst.NewGridBuilderRadios(
+				columnTemplate6,
+				labelsStrongIncreaseStrongDecrease(),
+				[]string{"c_std_6_le", "c_std_6_sme", "c_std_6_re", "c_std_6_co"},
+				radioVals6,
+				rowLabelsSmallLargeEnterprises,
+			)
+			gb.MainLabel = trl.S{
+				"de": "<b>6e.</b> Die (saisonbereinigte) Kreditstandards für Neukredite werden mittelfristig (<b>6</b>&nbsp;Mo.)",
+				"en": "<b>6e.</b> The seasonally adjusted credit standards medium term (<b>6</b>&nbsp;months) will",
 			}
-		}
-		{
-			names3rdMatrix := []string{
-				"c_std_6_le",
-				"c_std_6_sme",
-				"c_std_6_re",
-				"c_std_6_co",
-			}
-			labels123Matrix := []trl.S{
-				{
-					"de": "Großunternehmen",
-					"en": "Large enterprises",
-				},
-				{
-					"de": "KMU",
-					"en": "Small+medium enterprises",
-				},
-				{
-					"de": "Immobilienkredite",
-					"en": "Real estate credit",
-				},
-				{
-					"de": "Konsumentenkredite",
-					"en": "Consumer credit",
-				},
-			}
-
-			gr := page.AddRadioMatrixGroupCSSGrid(names3rdMatrix, len(labelsStrongIncreaseStrongDecrease()), labelsStrongIncreaseStrongDecrease(), labels123Matrix, 0)
+			gr := page.AddGrid(gb)
 			gr.OddRowsColoring = true
 		}
 
@@ -822,56 +730,46 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		page.Section = trl.S{"de": "Finanzmärkte", "en": "Financial markets"}
 		page.Label = trl.S{"de": "Preise", "en": "Prices"}
 		page.Short = trl.S{"de": "Finanz-<br>märkte:<br>Preise", "en": "Financial<br>markets:<br>Prices"}
-
 		page.Width = 80
 
-		//
-		//
-		{
-			gr := page.AddGroup()
-			gr.Cols = 1
-			gr.BottomVSpacers = 0
+		rowLabelsUncorrelatedAssets := []trl.S{
 			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.Desc = trl.S{
-					"de": "<b>7a.</b> Die folgenden Aktienindizes / Rohstoffpreise / Wechselkurse werden mittelfristig (<b>6</b>&nbsp;Mo.)",
-					"en": "<b>7a.</b> Following stock indices / raw materials / exchange rates will medium term (<b>6</b>&nbsp;months)",
-				}
-			}
+				"de": "DAX",
+				"en": "German DAX",
+			},
+			{
+				"de": "Rohöl (Nordsee Brent)",
+				"en": "Brent Crude",
+			},
+			{
+				"de": "Gold",
+				"en": "Gold",
+			},
+			{
+				"de": "US-Dollar (ggü. €)",
+				"en": "Dollar / Euro",
+			},
 		}
-		{
-			names3rdMatrix := []string{
-				"sto_dax",
-				"oil",
-				"gold",
-				"fx_usa",
-			}
-			labels123Matrix := []trl.S{
-				{
-					"de": "DAX",
-					"en": "German DAX",
-				},
-				{
-					"de": "Rohöl (Nordsee Brent)",
-					"en": "Brent Crude",
-				},
-				{
-					"de": "Gold",
-					"en": "Gold",
-				},
-				{
-					"de": "US-Dollar (ggü. €)",
-					"en": "Dollar / Euro",
-				},
-			}
 
-			gr := page.AddRadioMatrixGroupCSSGrid(names3rdMatrix, len(labelsIncreaseDecrease()), labelsIncreaseDecrease(), labels123Matrix, 0)
+		// gr1
+		{
+			gb := qst.NewGridBuilderRadios(
+				columnTemplate4,
+				labelsIncreaseDecrease(),
+				[]string{"sto_dax", "oil", "gold", "fx_usa"},
+				radioVals4,
+				rowLabelsUncorrelatedAssets,
+			)
+			gb.MainLabel = trl.S{
+				"de": "<b>7a.</b> Die folgenden Aktienindizes / Rohstoffpreise / Wechselkurse werden mittelfristig (<b>6</b>&nbsp;Mo.)",
+				"en": "<b>7a.</b> Following stock indices / raw materials / exchange rates will medium term (<b>6</b>&nbsp;months)",
+			}
+			gr := page.AddGrid(gb)
 			gr.OddRowsColoring = true
 		}
 
 		//
-		//
+		// gr2
 		{
 			gr := page.AddGroup()
 			gr.Cols = 1

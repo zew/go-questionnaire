@@ -381,9 +381,9 @@ legend {
 	padding: 0.1em 0.3em;
 	margin-left: 0.3em;
 
-	font-size: 95%; /* like label */
-	letter-spacing:	0.03rem;
-	font-weight: 300; /* visibility in mobile browser */
+	font-size:        100%; /* like label */
+	letter-spacing:	   0.03rem;
+	font-weight:     300; /* visibility in mobile browser */
 }
 
 label, .postlabel {
@@ -396,10 +396,10 @@ label, .postlabel {
 	/* padding-bottom:    0.15rem; */	
 	/* margin-right:      0.5rem; */
 
-	font-size:        95%;	/* like legend */
+	font-size:        100%;	/* like legend */
 	line-height:     110%;
 	letter-spacing:	   0.03rem;
-	font-weight:     300; /* visibility in mobile browser */
+	xx-font-weight:     300; /* visibility in mobile browser */
 
 
 	/* 2021-02 - not needed in CSS grid */

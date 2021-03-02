@@ -25,7 +25,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	ctr.Reset()
 
 	qst.RadioVali = "mustRadioGroup"
-	qst.CSSLabelHeader = "special-line-height-higher"
+	qst.HeaderClass = "special-line-height-higher"
 	qst.CSSLabelRow = "special-input-margin-vertical special-line-height-higher"
 
 	q := qst.QuestionnaireT{}

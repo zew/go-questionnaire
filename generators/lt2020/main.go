@@ -1122,7 +1122,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 					gr := p.AddGroup()
 					gr.BottomVSpacers = 0
 					inp := gr.AddInput()
-					inp.Type = "dynamic"
+					inp.Type = "textblock-dyn"
 					inp.DynamicFunc = "HasEuroQuestion"
 				}
 			*/

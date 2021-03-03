@@ -202,17 +202,48 @@ func renderLabelDescription2(i inputT, langCode string, name string, hAlign hori
 }
 
 // IsLayout returns whether the input type is merely ornamental
+// and has no return values
 func (inp inputT) IsLayout() bool {
 	if inp.Type == "textblock" {
 		return true
 	}
+	if inp.Type == "textblock-dyn" {
+		return true
+	}
+	if inp.Type == "dyn-composite" { // inputs are in "dyn-composite-scalar"
+		return true
+	}
+	if inp.Type == "button" { // we dont care
+		return true
+	}
+	return false
+}
+
+// IsControlOnly types having no ctrl part but only a label
+func (inp inputT) IsControlOnly() bool {
 	if inp.Type == "button" {
 		return true
 	}
-	if inp.Type == "dynamic" {
+	return false
+}
+
+// IsLabelOnly types having no ctrl part but only a label
+func (inp inputT) IsLabelOnly() bool {
+	if inp.Type == "textblock" {
 		return true
 	}
-	if inp.Type == "composit" {
+	if inp.Type == "textblock-dyn" {
+		return true
+	}
+	return false
+}
+
+// IsHidden types having neither visible ctrl nor label part
+func (inp inputT) IsHidden() bool {
+	if inp.Type == "hidden" {
+		return true
+	}
+	if inp.Type == "dyn-composite-scalar" {
 		return true
 	}
 	return false
@@ -467,10 +498,10 @@ func (inp inputT) HTML(langCode string, numCols int) string {
 		lbl := renderLabelDescription(inp, langCode, numCols)
 		return lbl + ctrl
 
-	case "dynamic":
+	case "textblock-dyn":
 		return fmt.Sprintf("<span class='go-quest-label %v'>%v</span>\n", inp.CSSLabel, inp.Label.Tr(langCode))
 
-	case "composit", "composit-scalar":
+	case "dyn-composite", "dyn-composite-scalar":
 		// rendered at group level -  rendered by composit
 		return ""
 
@@ -569,14 +600,14 @@ func (gr *groupT) TableOpen(rows int) string {
 func (gr groupT) HasComposit() bool {
 	hasComposit := false
 	for _, inp := range gr.Inputs {
-		if inp.Type == "composit" {
+		if inp.Type == "dyn-composite" {
 			hasComposit = true
 			break
 		}
 	}
 	if hasComposit {
 		for _, inp := range gr.Inputs {
-			if inp.Type != "composit" && inp.Type != "composit-scalar" {
+			if inp.Type != "dyn-composite" && inp.Type != "dyn-composite-scalar" {
 				log.Panicf("group contains a input type 'composit' - but *other* inputs too")
 			}
 		}
@@ -686,10 +717,10 @@ func (q QuestionnaireT) GroupHTMLTableBased(pageIdx, grpIdx int) string {
 	fmt.Fprint(w, gr.TableOpen(rows))
 	for i, inp := range gr.Inputs {
 
-		if inp.Type == "composit-scalar" {
+		if inp.Type == "dyn-composite-scalar" {
 			continue
 		}
-		if inp.Type == "composit" {
+		if inp.Type == "dyn-composite" {
 			continue
 		}
 
@@ -1082,12 +1113,13 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 			if err != nil {
 				b.WriteString(fmt.Sprintf("composite func error %v \n", err))
 			} else {
+				// grpHTML also contains HTML and CSS stuff - which could be hyphenized too
 				grpHTML = trl.HyphenizeText(grpHTML)
 				b.WriteString(grpHTML + "\n")
 			}
 		} else {
 			grpHTML := ""
-			if q.Version > 0 {
+			if q.Version > 1 {
 				grpHTML = q.GroupHTMLGridBased(pageIdx, grpIdx)
 			} else {
 				grpHTML = q.GroupHTMLTableBased(pageIdx, grpIdx)

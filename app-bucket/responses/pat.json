@@ -9,18 +9,21 @@
  		},
  		"year": 2021,
  		"month": 2,
- 		"deadline": "2021-02-28T23:59:00Z",
+ 		"deadline": "2021-03-28T23:59:00Z",
  		"params": [
- 			{},
+ 			{
+ 				"name": "main_refinance_rate_ecb",
+ 				"val": "3"
+ 			},
  			{}
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "0bf550be2576035f3e5c7e5ab96bc05b",
+ 	"md_5": "982d93a5266dfe71e03dcddaf896d55e",
  	"lang_codes": [
  		"de"
  	],
- 	"max_groups": 9,
+ 	"max_groups": 6,
  	"pages": [
  		{
  			"label": {
@@ -51,7 +54,8 @@
  							"col_span_label": 1
  						},
  						{
- 							"type": "dynamic",
+ 							"type": "textblock-dyn",
+ 							"col_span_control": 1,
  							"dynamic_func": "PatLogos"
  						},
  						{
@@ -62,7 +66,7 @@
  							},
  							"accesskey": "n",
  							"horizontal_align_control": 2,
- 							"col_span_label": 1,
+ 							"col_span_control": 1,
  							"response": "1"
  						}
  					]
@@ -104,7 +108,8 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"type": "composit",
+ 							"type": "dyn-composite",
+ 							"col_span_control": 1,
  							"dynamic_func": "PoliticalFoundationsPretext__0__0"
  						}
  					]
@@ -115,24 +120,25 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"type": "composit",
+ 							"type": "dyn-composite",
+ 							"col_span_control": 1,
  							"dynamic_func": "PoliticalFoundations__0__0"
  						},
  						{
  							"name": "q1_seq1_r_page0",
- 							"type": "composit-scalar"
+ 							"type": "dyn-composite-scalar"
  						},
  						{
  							"name": "q1_seq1_r1_page0",
- 							"type": "composit-scalar"
+ 							"type": "dyn-composite-scalar"
  						},
  						{
  							"name": "q1_seq1_r2_page0",
- 							"type": "composit-scalar"
+ 							"type": "dyn-composite-scalar"
  						},
  						{
  							"name": "q1_seq1_r3_page0",
- 							"type": "composit-scalar"
+ 							"type": "dyn-composite-scalar"
  						}
  					]
  				},
@@ -201,24 +207,25 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"type": "composit",
+ 							"type": "dyn-composite",
+ 							"col_span_control": 1,
  							"dynamic_func": "PoliticalFoundations__0__0"
  						},
  						{
  							"name": "q1_seq1_r",
- 							"type": "composit-scalar"
+ 							"type": "dyn-composite-scalar"
  						},
  						{
  							"name": "q1_seq1_r1",
- 							"type": "composit-scalar"
+ 							"type": "dyn-composite-scalar"
  						},
  						{
  							"name": "q1_seq1_r2",
- 							"type": "composit-scalar"
+ 							"type": "dyn-composite-scalar"
  						},
  						{
  							"name": "q1_seq1_r3",
- 							"type": "composit-scalar"
+ 							"type": "dyn-composite-scalar"
  						}
  					]
  				},
@@ -228,24 +235,25 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"type": "composit",
+ 							"type": "dyn-composite",
+ 							"col_span_control": 1,
  							"dynamic_func": "PoliticalFoundations__1__1"
  						},
  						{
  							"name": "q1_seq2_r",
- 							"type": "composit-scalar"
+ 							"type": "dyn-composite-scalar"
  						},
  						{
  							"name": "q1_seq2_r1",
- 							"type": "composit-scalar"
+ 							"type": "dyn-composite-scalar"
  						},
  						{
  							"name": "q1_seq2_r2",
- 							"type": "composit-scalar"
+ 							"type": "dyn-composite-scalar"
  						},
  						{
  							"name": "q1_seq2_r3",
- 							"type": "composit-scalar"
+ 							"type": "dyn-composite-scalar"
  						}
  					]
  				},
@@ -255,24 +263,25 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"type": "composit",
+ 							"type": "dyn-composite",
+ 							"col_span_control": 1,
  							"dynamic_func": "PoliticalFoundations__2__2"
  						},
  						{
  							"name": "q1_seq3_r",
- 							"type": "composit-scalar"
+ 							"type": "dyn-composite-scalar"
  						},
  						{
  							"name": "q1_seq3_r1",
- 							"type": "composit-scalar"
+ 							"type": "dyn-composite-scalar"
  						},
  						{
  							"name": "q1_seq3_r2",
- 							"type": "composit-scalar"
+ 							"type": "dyn-composite-scalar"
  						},
  						{
  							"name": "q1_seq3_r3",
- 							"type": "composit-scalar"
+ 							"type": "dyn-composite-scalar"
  						}
  					]
  				}
@@ -299,24 +308,25 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"type": "composit",
+ 							"type": "dyn-composite",
+ 							"col_span_control": 1,
  							"dynamic_func": "PoliticalFoundations__3__3"
  						},
  						{
  							"name": "q1_seq4_r",
- 							"type": "composit-scalar"
+ 							"type": "dyn-composite-scalar"
  						},
  						{
  							"name": "q1_seq4_r1",
- 							"type": "composit-scalar"
+ 							"type": "dyn-composite-scalar"
  						},
  						{
  							"name": "q1_seq4_r2",
- 							"type": "composit-scalar"
+ 							"type": "dyn-composite-scalar"
  						},
  						{
  							"name": "q1_seq4_r3",
- 							"type": "composit-scalar"
+ 							"type": "dyn-composite-scalar"
  						}
  					]
  				},
@@ -326,24 +336,25 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"type": "composit",
+ 							"type": "dyn-composite",
+ 							"col_span_control": 1,
  							"dynamic_func": "PoliticalFoundations__4__4"
  						},
  						{
  							"name": "q1_seq5_r",
- 							"type": "composit-scalar"
+ 							"type": "dyn-composite-scalar"
  						},
  						{
  							"name": "q1_seq5_r1",
- 							"type": "composit-scalar"
+ 							"type": "dyn-composite-scalar"
  						},
  						{
  							"name": "q1_seq5_r2",
- 							"type": "composit-scalar"
+ 							"type": "dyn-composite-scalar"
  						},
  						{
  							"name": "q1_seq5_r3",
- 							"type": "composit-scalar"
+ 							"type": "dyn-composite-scalar"
  						}
  					]
  				},
@@ -353,24 +364,25 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"type": "composit",
+ 							"type": "dyn-composite",
+ 							"col_span_control": 1,
  							"dynamic_func": "PoliticalFoundations__5__5"
  						},
  						{
  							"name": "q1_seq6_r",
- 							"type": "composit-scalar"
+ 							"type": "dyn-composite-scalar"
  						},
  						{
  							"name": "q1_seq6_r1",
- 							"type": "composit-scalar"
+ 							"type": "dyn-composite-scalar"
  						},
  						{
  							"name": "q1_seq6_r2",
- 							"type": "composit-scalar"
+ 							"type": "dyn-composite-scalar"
  						},
  						{
  							"name": "q1_seq6_r3",
- 							"type": "composit-scalar"
+ 							"type": "dyn-composite-scalar"
  						}
  					]
  				}
@@ -479,32 +491,33 @@
  					"columns": 12,
  					"inputs": [
  						{
- 							"type": "composit",
+ 							"type": "dyn-composite",
+ 							"col_span_control": 1,
  							"dynamic_func": "TimePreferenceSelf__0__0"
  						},
  						{
  							"name": "q2_seq1_row1_rad",
- 							"type": "composit-scalar"
+ 							"type": "dyn-composite-scalar"
  						},
  						{
  							"name": "q2_seq1_row2_rad",
- 							"type": "composit-scalar"
+ 							"type": "dyn-composite-scalar"
  						},
  						{
  							"name": "q2_seq1_row3_rad",
- 							"type": "composit-scalar"
+ 							"type": "dyn-composite-scalar"
  						},
  						{
  							"name": "q2_seq1_row1_chk",
- 							"type": "composit-scalar"
+ 							"type": "dyn-composite-scalar"
  						},
  						{
  							"name": "q2_seq1_row2_chk",
- 							"type": "composit-scalar"
+ 							"type": "dyn-composite-scalar"
  						},
  						{
  							"name": "q2_seq1_row3_chk",
- 							"type": "composit-scalar"
+ 							"type": "dyn-composite-scalar"
  						}
  					]
  				},
@@ -527,32 +540,33 @@
  					"columns": 12,
  					"inputs": [
  						{
- 							"type": "composit",
+ 							"type": "dyn-composite",
+ 							"col_span_control": 1,
  							"dynamic_func": "TimePreferenceSelf__1__1"
  						},
  						{
  							"name": "q2_seq2_row1_rad",
- 							"type": "composit-scalar"
+ 							"type": "dyn-composite-scalar"
  						},
  						{
  							"name": "q2_seq2_row2_rad",
- 							"type": "composit-scalar"
+ 							"type": "dyn-composite-scalar"
  						},
  						{
  							"name": "q2_seq2_row3_rad",
- 							"type": "composit-scalar"
+ 							"type": "dyn-composite-scalar"
  						},
  						{
  							"name": "q2_seq2_row1_chk",
- 							"type": "composit-scalar"
+ 							"type": "dyn-composite-scalar"
  						},
  						{
  							"name": "q2_seq2_row2_chk",
- 							"type": "composit-scalar"
+ 							"type": "dyn-composite-scalar"
  						},
  						{
  							"name": "q2_seq2_row3_chk",
- 							"type": "composit-scalar"
+ 							"type": "dyn-composite-scalar"
  						}
  					]
  				}
@@ -591,7 +605,8 @@
  					"columns": 12,
  					"inputs": [
  						{
- 							"type": "composit",
+ 							"type": "dyn-composite",
+ 							"col_span_control": 12,
  							"dynamic_func": "GroupPreferences__0__0"
  						}
  					]
@@ -666,7 +681,8 @@
  					"columns": 12,
  					"inputs": [
  						{
- 							"type": "composit",
+ 							"type": "dyn-composite",
+ 							"col_span_control": 12,
  							"dynamic_func": "GroupPreferences__1__1"
  						}
  					]
@@ -741,474 +757,1490 @@
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
  				{
- 					"width": 100,
- 					"columns": 1,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"description": {
- 								"de": "\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\u003cb\u003eFrage 4.\u003c/b\u003e \n\t\t\t\tWie sehr stimmen Sie der folgenden Aussage zu: \n\t\t\t\t\u003ci\u003e„Alle Erwerbstätigen in Deutsch\u0026shy;land sollten verpflichtend einen gewissen Teil ihres Arbeitseinkommens \n\t\t\t\tim Rahmen einer privaten Altersvorsorge sparen, \n\t\t\t\tum eine Rentenhöhe zu erreichen, die über dem Rentenanspruch \n\t\t\t\taus der gesetzlichen Rentenversi\u0026shy;cherung liegt.\u003c/i\u003e“\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
- 							},
- 							"col_span_label": 1
- 						}
- 					]
- 				},
- 				{
- 					"bottom_vspacers": 2,
+ 					"bottom_vspacers": 3,
+ 					"odd_rows_coloring": true,
  					"width": 100,
  					"columns": 7,
  					"inputs": [
  						{
  							"type": "textblock",
- 							"description": {
+ 							"label": {
+ 								"de": "\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\u003cb\u003eFrage 4.\u003c/b\u003e \n\t\t\t\tWie sehr stimmen Sie der folgenden Aussage zu: \n\t\t\t\t\u003ci\u003e„Alle Erwerbstätigen in Deutsch\u0026shy;land sollten verpflichtend einen gewissen Teil ihres Arbeitseinkommens \n\t\t\t\tim Rahmen einer privaten Altersvorsorge sparen, \n\t\t\t\tum eine Rentenhöhe zu erreichen, die über dem Rentenanspruch \n\t\t\t\taus der gesetzlichen Rentenversi\u0026shy;cherung liegt.\u003c/i\u003e“\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 							},
+ 							"col_span_label": 7
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
  								"de": "Stimme gar nicht zu"
  							},
- 							"horizontal_align_label": 1,
- 							"css_label": "special-vertical-align-top",
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
- 							"description": {
+ 							"label": {
  								"de": ""
  							},
- 							"horizontal_align_label": 1,
- 							"css_label": "special-vertical-align-top",
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
- 							"description": {
+ 							"label": {
  								"de": ""
  							},
- 							"horizontal_align_label": 1,
- 							"css_label": "special-vertical-align-top",
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
- 							"description": {
+ 							"label": {
  								"de": ""
  							},
- 							"horizontal_align_label": 1,
- 							"css_label": "special-vertical-align-top",
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
- 							"description": {
+ 							"label": {
  								"de": ""
  							},
- 							"horizontal_align_label": 1,
- 							"css_label": "special-vertical-align-top",
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
- 							"description": {
+ 							"label": {
  								"de": ""
  							},
- 							"horizontal_align_label": 1,
- 							"css_label": "special-vertical-align-top",
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
- 							"description": {
+ 							"label": {
  								"de": "Stimme kom\u0026shy;plett zu"
  							},
- 							"horizontal_align_label": 1,
- 							"css_label": "special-vertical-align-top",
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "q4",
- 							"type": "radiogroup",
- 							"col_span_label": 1,
- 							"radios": [
- 								{
- 									"hori_align": 1,
- 									"val": "1"
- 								},
- 								{
- 									"hori_align": 1,
- 									"val": "2"
- 								},
- 								{
- 									"hori_align": 1,
- 									"val": "3"
- 								},
- 								{
- 									"hori_align": 1,
- 									"val": "4"
- 								},
- 								{
- 									"hori_align": 1,
- 									"val": "5"
- 								},
- 								{
- 									"hori_align": 1,
- 									"val": "6"
- 								},
- 								{
- 									"hori_align": 1,
- 									"val": "7"
- 								}
- 							]
- 						}
- 					]
- 				},
- 				{
- 					"width": 100,
- 					"columns": 1,
- 					"inputs": [
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "1"
+ 						},
  						{
- 							"type": "textblock",
- 							"description": {
- 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eZum Schluss bitten wir Sie drei Fragen über sich selbst zu beantworten:\u003c/b\u003e\n\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cb\u003eFrage 5.\u003c/b\u003e\n\t\t\t\t\tSind Sie im Vergleich zu anderen im Allgemeinen bereit, \n\t\t\t\t\theute auf etwas zu verzichten, \n\t\t\t\t\tum in der Zukunft davon zu profitieren, \n\t\t\t\t\toder sind Sie im Vergleich zu anderen dazu nicht bereit? \n\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t"
- 							},
- 							"col_span_label": 1
+ 							"name": "q4",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "q4",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "q4",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "q4",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "q4",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "q4",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "7"
  						}
  					]
  				},
  				{
- 					"bottom_vspacers": 2,
+ 					"bottom_vspacers": 3,
+ 					"odd_rows_coloring": true,
  					"width": 100,
  					"columns": 7,
  					"inputs": [
  						{
  							"type": "textblock",
- 							"description": {
+ 							"label": {
+ 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eZum Schluss bitten wir Sie drei Fragen über sich selbst zu beantworten:\u003c/b\u003e\n\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cb\u003eFrage 5.\u003c/b\u003e\n\t\t\t\t\tSind Sie im Vergleich zu anderen im Allgemeinen bereit, \n\t\t\t\t\theute auf etwas zu verzichten, \n\t\t\t\t\tum in der Zukunft davon zu profitieren, \n\t\t\t\t\toder sind Sie im Vergleich zu anderen dazu nicht bereit? \n\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t"
+ 							},
+ 							"col_span_label": 7
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
  								"de": "Gar nicht bereit"
  							},
- 							"horizontal_align_label": 1,
- 							"css_label": "special-vertical-align-top",
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
- 							"description": {
+ 							"label": {
  								"de": ""
  							},
- 							"horizontal_align_label": 1,
- 							"css_label": "special-vertical-align-top",
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
- 							"description": {
+ 							"label": {
  								"de": ""
  							},
- 							"horizontal_align_label": 1,
- 							"css_label": "special-vertical-align-top",
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
- 							"description": {
+ 							"label": {
  								"de": ""
  							},
- 							"horizontal_align_label": 1,
- 							"css_label": "special-vertical-align-top",
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
- 							"description": {
+ 							"label": {
  								"de": ""
  							},
- 							"horizontal_align_label": 1,
- 							"css_label": "special-vertical-align-top",
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
- 							"description": {
+ 							"label": {
  								"de": ""
  							},
- 							"horizontal_align_label": 1,
- 							"css_label": "special-vertical-align-top",
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
- 							"description": {
+ 							"label": {
  								"de": "Sehr bereit"
  							},
- 							"horizontal_align_label": 1,
- 							"css_label": "special-vertical-align-top",
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "q5",
- 							"type": "radiogroup",
- 							"col_span_label": 1,
- 							"radios": [
- 								{
- 									"hori_align": 1,
- 									"val": "1"
- 								},
- 								{
- 									"hori_align": 1,
- 									"val": "2"
- 								},
- 								{
- 									"hori_align": 1,
- 									"val": "3"
- 								},
- 								{
- 									"hori_align": 1,
- 									"val": "4"
- 								},
- 								{
- 									"hori_align": 1,
- 									"val": "5"
- 								},
- 								{
- 									"hori_align": 1,
- 									"val": "6"
- 								},
- 								{
- 									"hori_align": 1,
- 									"val": "7"
- 								}
- 							]
- 						}
- 					]
- 				},
- 				{
- 					"width": 100,
- 					"columns": 1,
- 					"inputs": [
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "1"
+ 						},
  						{
- 							"type": "textblock",
- 							"description": {
- 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 6.\u003c/b\u003e\n\t\t\t\t\tWie schätzen Sie sich persönlich ein? \n\t\t\t\t\tSind Sie im Allgemeinen ein ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reiter Mensch \n\t\t\t\t\toder versuchen Sie, Risiken zu vermeiden?\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t"
- 							},
- 							"col_span_label": 1
+ 							"name": "q5",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "q5",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "q5",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "q5",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "q5",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "q5",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "7"
  						}
  					]
  				},
  				{
- 					"bottom_vspacers": 2,
+ 					"bottom_vspacers": 3,
+ 					"odd_rows_coloring": true,
  					"width": 100,
  					"columns": 7,
  					"inputs": [
  						{
  							"type": "textblock",
- 							"description": {
+ 							"label": {
+ 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 6.\u003c/b\u003e\n\t\t\t\t\tWie schätzen Sie sich persönlich ein? \n\t\t\t\t\tSind Sie im Allgemeinen ein ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reiter Mensch \n\t\t\t\t\toder versuchen Sie, Risiken zu vermeiden?\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t"
+ 							},
+ 							"col_span_label": 7
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
  								"de": "Gar nicht ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reit"
  							},
- 							"horizontal_align_label": 1,
- 							"css_label": "special-vertical-align-top",
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
- 							"description": {
+ 							"label": {
  								"de": ""
  							},
- 							"horizontal_align_label": 1,
- 							"css_label": "special-vertical-align-top",
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
- 							"description": {
+ 							"label": {
  								"de": ""
  							},
- 							"horizontal_align_label": 1,
- 							"css_label": "special-vertical-align-top",
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
- 							"description": {
+ 							"label": {
  								"de": ""
  							},
- 							"horizontal_align_label": 1,
- 							"css_label": "special-vertical-align-top",
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
- 							"description": {
+ 							"label": {
  								"de": ""
  							},
- 							"horizontal_align_label": 1,
- 							"css_label": "special-vertical-align-top",
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
- 							"description": {
+ 							"label": {
  								"de": ""
  							},
- 							"horizontal_align_label": 1,
- 							"css_label": "special-vertical-align-top",
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
- 							"description": {
+ 							"label": {
  								"de": "Sehr ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reit"
  							},
- 							"horizontal_align_label": 1,
- 							"css_label": "special-vertical-align-top",
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "q6",
- 							"type": "radiogroup",
- 							"col_span_label": 1,
- 							"radios": [
- 								{
- 									"hori_align": 1,
- 									"val": "1"
- 								},
- 								{
- 									"hori_align": 1,
- 									"val": "2"
- 								},
- 								{
- 									"hori_align": 1,
- 									"val": "3"
- 								},
- 								{
- 									"hori_align": 1,
- 									"val": "4"
- 								},
- 								{
- 									"hori_align": 1,
- 									"val": "5"
- 								},
- 								{
- 									"hori_align": 1,
- 									"val": "6"
- 								},
- 								{
- 									"hori_align": 1,
- 									"val": "7"
- 								}
- 							]
- 						}
- 					]
- 				},
- 				{
- 					"width": 100,
- 					"columns": 1,
- 					"inputs": [
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "1"
+ 						},
  						{
- 							"type": "textblock",
- 							"description": {
- 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage 7.\u003c/b\u003e\n\t\t\t\t\tWie schätzen Sie Ihre Bereitschaft ein mit anderen zu teilen, \n\t\t\t\t\tohne dafür eine Gegenleistung zu erwarten?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
- 							},
- 							"col_span_label": 1
+ 							"name": "q6",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "q6",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "q6",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "q6",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "q6",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "q6",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "7"
  						}
  					]
  				},
  				{
- 					"bottom_vspacers": 2,
+ 					"bottom_vspacers": 3,
+ 					"odd_rows_coloring": true,
  					"width": 100,
  					"columns": 7,
  					"inputs": [
  						{
  							"type": "textblock",
- 							"description": {
+ 							"label": {
+ 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage 7.\u003c/b\u003e\n\t\t\t\t\tWie schätzen Sie Ihre Bereitschaft ein mit anderen zu teilen, \n\t\t\t\t\tohne dafür eine Gegenleistung zu erwarten?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 							},
+ 							"col_span_label": 7
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
  								"de": "Gar nicht bereit"
  							},
- 							"horizontal_align_label": 1,
- 							"css_label": "special-vertical-align-top",
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
- 							"description": {
+ 							"label": {
  								"de": ""
  							},
- 							"horizontal_align_label": 1,
- 							"css_label": "special-vertical-align-top",
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
- 							"description": {
+ 							"label": {
  								"de": ""
  							},
- 							"horizontal_align_label": 1,
- 							"css_label": "special-vertical-align-top",
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
- 							"description": {
+ 							"label": {
  								"de": ""
  							},
- 							"horizontal_align_label": 1,
- 							"css_label": "special-vertical-align-top",
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
- 							"description": {
+ 							"label": {
  								"de": ""
  							},
- 							"horizontal_align_label": 1,
- 							"css_label": "special-vertical-align-top",
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
- 							"description": {
+ 							"label": {
  								"de": ""
  							},
- 							"horizontal_align_label": 1,
- 							"css_label": "special-vertical-align-top",
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
- 							"description": {
+ 							"label": {
  								"de": "Sehr bereit"
  							},
- 							"horizontal_align_label": 1,
- 							"css_label": "special-vertical-align-top",
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "q7",
- 							"type": "radiogroup",
- 							"col_span_label": 1,
- 							"radios": [
- 								{
- 									"hori_align": 1,
- 									"val": "1"
- 								},
- 								{
- 									"hori_align": 1,
- 									"val": "2"
- 								},
- 								{
- 									"hori_align": 1,
- 									"val": "3"
- 								},
- 								{
- 									"hori_align": 1,
- 									"val": "4"
- 								},
- 								{
- 									"hori_align": 1,
- 									"val": "5"
- 								},
- 								{
- 									"hori_align": 1,
- 									"val": "6"
- 								},
- 								{
- 									"hori_align": 1,
- 									"val": "7"
- 								}
- 							]
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "1"
+ 						},
+ 						{
+ 							"name": "q7",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "q7",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "q7",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "q7",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "q7",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "q7",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "7"
  						}
  					]
  				},
@@ -1242,7 +2274,6 @@
  							"accesskey": "n",
  							"horizontal_align_control": 2,
  							"css_control": "special-line-height-higher",
- 							"col_span_label": 1,
  							"col_span_control": 1,
  							"response": "7"
  						}
@@ -1304,5 +2335,5 @@
  			]
  		}
  	],
- 	"version": 1
+ 	"version": 2
  }

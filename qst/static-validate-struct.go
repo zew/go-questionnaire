@@ -157,7 +157,7 @@ func (q *QuestionnaireT) Validate() error {
 				return fmt.Errorf("Page %v - Group %v - Number of columns must be greater 0: ", i1, i2)
 			}
 
-			if q.Version > 0 {
+			if q.Version > 1 {
 				if q.Pages[i1].Groups[i2].Label != nil || q.Pages[i1].Groups[i2].Desc != nil {
 					return fmt.Errorf("Page %v - Group %v - No group label or descriptions - use textblock", i1, i2)
 				}
@@ -234,17 +234,9 @@ func (q *QuestionnaireT) Validate() error {
 					}
 				}
 
-				if !inp.IsLayout() && inp.ColSpanControl == 0 {
-					if inp.Type != "radiogroup" {
+				if !inp.IsLabelOnly() && !inp.IsHidden() {
+					if inp.ColSpanControl == 0 {
 						return fmt.Errorf("%v has no ColSpanControl", s)
-					}
-				}
-
-				// old radio
-				// helper: add values 1...x for radiogroups
-				for i4 := 0; i4 < len(inp.Radios); i4++ {
-					if inp.Radios[i4].Val == "" {
-						inp.Radios[i4].Val = fmt.Sprintf("%v", i4+1)
 					}
 				}
 
@@ -286,7 +278,7 @@ func (q *QuestionnaireT) Validate() error {
 				if inp.IsLayout() {
 					continue
 				}
-				if inp.Type == "composit" {
+				if inp.Type == "dyn-composite" {
 					continue
 				}
 
@@ -336,7 +328,7 @@ func (q *QuestionnaireT) ComputeDynamicContent(idx int) error {
 		}
 		for i2 := 0; i2 < len(q.Pages[i1].Groups); i2++ {
 			for i3 := 0; i3 < len(q.Pages[i1].Groups[i2].Inputs); i3++ {
-				if q.Pages[i1].Groups[i2].Inputs[i3].Type == "dynamic" {
+				if q.Pages[i1].Groups[i2].Inputs[i3].Type == "textblock-dyn" {
 					inp := q.Pages[i1].Groups[i2].Inputs[i3]
 					if _, ok := dynFuncs[inp.DynamicFunc]; !ok {
 						return fmt.Errorf("'%v' points to dynamic func '%v()' - which does not exist or is not registered", inp.Name, inp.DynamicFunc)

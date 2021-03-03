@@ -46,7 +46,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	q.Survey.Org = trl.S{"de": "ZEW", "en": "ZEW"}
 	q.Survey.Name = trl.S{"de": "Finanzmarkttest", "en": "Financial Markets Survey"}
 
-	q.Version = 1
+	q.Version = 2
 
 	rowLabelsSmallLargeEnterprises := []trl.S{
 		{
@@ -751,7 +751,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			},
 		}
 
-		// gr1
+		// gr0
 		{
 			gb := qst.NewGridBuilderRadios(
 				columnTemplate4,
@@ -769,7 +769,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		}
 
 		//
-		// gr2
+		// gr1
 		{
 			gr := page.AddGroup()
 			gr.Cols = 1
@@ -783,6 +783,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				}
 			}
 		}
+
+		// gr2
 		{
 			gr := page.AddGroup()
 			gr.Cols = 100
@@ -844,7 +846,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		}
 
 		//
-		//
+		// gr3
 		{
 			gr := page.AddGroup()
 			gr.Cols = 1
@@ -858,6 +860,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				}
 			}
 		}
+
+		// gr4
 		{
 			// gr := p.AddRadioMatrixGroupCSSGrid(labelsOvervaluedFairUndervalued(), names3rdMatrix, labels123Matrix)
 			gr := page.AddGroup()
@@ -867,6 +871,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp := gr.AddInput()
 				inp.Type = "radiogroup"
 				inp.Name = "dax_fund"
+				inp.ColSpanControl = 6
 				inp.CSSLabel = "special-input-left-padding"
 				for i2, val := range labelsOvervaluedFairUndervalued() {
 					rad := inp.AddRadio()
@@ -886,7 +891,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		}
 
 		//
-		//
+		// gr5
 		{
 			gr := page.AddGroup()
 			gr.Cols = 1
@@ -900,6 +905,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				}
 			}
 		}
+
+		// gr6
 		{
 			gr := page.AddGroup()
 			gr.Cols = 100
@@ -1078,19 +1085,22 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			gr.Cols = 1
 			{
 				inp := gr.AddInput()
-				inp.Type = "dynamic"
+				inp.Type = "textblock-dyn"
+				inp.ColSpanControl = 1
 				inp.CSSLabel = "special-line-height-higher"
 				inp.DynamicFunc = "RepsonseStatistics"
 			}
 			{
 				inp := gr.AddInput()
-				inp.Type = "dynamic"
+				inp.Type = "textblock-dyn"
+				inp.ColSpanControl = 1
 				inp.CSSLabel = "special-line-height-higher"
 				inp.DynamicFunc = "PersonalLink"
 			}
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
+				inp.ColSpanLabel = 1
 				inp.CSSLabel = "special-line-height-higher"
 				impr := trl.S{}
 				for _, lc := range q.LangCodes {

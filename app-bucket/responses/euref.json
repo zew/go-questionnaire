@@ -73,7 +73,7 @@
  					"width": 100,
  					"inputs": [
  						{
- 							"type": "dynamic",
+ 							"type": "textblock-dyn",
  							"dynamic_func": "HasEuroQuestion"
  						}
  					]

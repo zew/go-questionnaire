@@ -47,6 +47,10 @@ func (inp inputT) labelDescription(w io.Writer, langCode string) {
 		return
 	}
 
+	if inp.IsHidden() {
+		return
+	}
+
 	if inp.IsLayout() {
 		if !inp.Label.Empty() {
 			fmt.Fprint(w, inp.Label.Tr(langCode))
@@ -112,10 +116,10 @@ func (q QuestionnaireT) GroupHTMLGridBased(pageIdx, grpIdx int) string {
 	wInner := &strings.Builder{} // inside the container
 
 	for inpIdx, inp := range gr.Inputs {
-		if inp.Type == "composit-scalar" {
+		if inp.Type == "dyn-composite-scalar" {
 			continue
 		}
-		if inp.Type == "composit" {
+		if inp.Type == "dyn-composite" {
 			continue
 		}
 
@@ -163,7 +167,10 @@ func (q QuestionnaireT) GroupHTMLGridBased(pageIdx, grpIdx int) string {
 					inp.StyleCtl = css.NewStylesResponsive()
 					inp.StyleCtl.Desktop.GridItemStyle.Col = fmt.Sprintf("auto / span %v", inp.ColSpanControl)
 					inp.StyleCtl.Desktop.GridItemStyle.AlignSelf = "center"
-					inp.StyleCtl.Desktop.TextStyle.WhiteSpace = "nowrap" // prevent suffix from being wrapped
+
+					if !inp.IsLayout() {
+						inp.StyleCtl.Desktop.TextStyle.WhiteSpace = "nowrap" // prevent suffix from being wrapped
+					}
 				}
 				if inp.Type == "radiogroup" || inp.Type == "checkboxgroup" {
 					inp.StyleCtl.Desktop.BoxStyle.Display = "grid"
@@ -298,10 +305,10 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int) string {
 				"<input type='hidden' name='%v' id='%v_hidd' value='0' />\n", nm, nm)
 		}
 
-	case "dynamic":
+	case "textblock-dyn":
 		ctrl = fmt.Sprintf("<span class='go-quest-label %v'>%v</span>\n", inp.CSSLabel, inp.Label.Tr(q.LangCode))
 
-	case "composit", "composit-scalar":
+	case "dyn-composite", "dyn-composite-scalar":
 		// no op
 		// rendered at group level -  rendered by composit
 

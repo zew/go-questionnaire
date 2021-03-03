@@ -5,36 +5,28 @@ import (
 )
 
 var implementedTypes = map[string]interface{}{
-	"hidden":   nil,
 	"text":     nil,
 	"number":   nil,
 	"textarea": nil,
 	"dropdown": nil,
-	"checkbox": nil, // A standalone checkbox - as a group, see below
+	"checkbox": nil, // standalone checkbox
 	"radio":    nil, // new in version 2
 
-	/*
-		checkbox or text inputs have *distinct* names,
-		whereas radio*group* and checkbox*group*
-		have the same name and also a single response value.
+	"button": nil, // only control - no label - part of layout - return value not saved - only indirectly used for state handling
 
-		radio*group* and checkbox*group*
-		  are similar to
-		select       and select[multiple=true]
-	*/
-	// radiogroup and checkboxgroup -  all inputs have the same input name - but different values
-	"radiogroup":    nil, // A standalone radio makes no sense; only a radiogroup.
-	"checkboxgroup": nil, // checkboxgroup has no *sensible* use case. There was an 'amenities' array in another app, with encodings: 4 for bath, 8 for balcony... They should better be designed as independent checkboxes bath and balcony. I cannot think of any useful 'additive flags', and those would have to be added and decoded server side. We keep the type, but untested.
+	// no control / no value
+	// ColSpanLabel counts, ColSpanControl is ignored
+	"textblock": nil,
 
-	// helpers
-	"textblock": nil, // Only name, label and description are rendered - ColSpanLabel counts, ColSpanControl is ignored
-	"button":    nil, // Only name, label and description are rendered
-	"dynamic":   nil, // Executed a http request time, contains no inputs - can be used as dynamic label for following inputs
+	// dyn elements
+	"textblock-dyn": nil, // like textblock, but executed a http request time, contains no inputs - can be used as dynamic label for following inputs
 
 	// fully dynamic composits
-	"composit":        nil, // executed at http request time, free dynamic fragment of text and multiple inputs
-	"composit-scalar": nil, // an input of a composit - rendered by the composit
+	"dyn-composite":        nil, // executed at http request time, free dynamic fragment of text and multiple inputs
+	"dyn-composite-scalar": nil, // an input of a composit - rendered by the composit
 
+	// no rendering
+	"hidden": nil,
 }
 
 const (

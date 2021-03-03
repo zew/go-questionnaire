@@ -26,7 +26,7 @@ func (q *QuestionnaireT) Split() (*QuestionnaireT, error) {
 					continue
 				}
 				inp2 := gr.AddInput()
-				if inp2.Type == "dynamic" {
+				if inp2.Type == "textblock-dyn" {
 					inp2.Label = inp.Label
 					inp2.Desc = inp.Desc
 				}

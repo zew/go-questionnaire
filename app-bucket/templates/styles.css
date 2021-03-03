@@ -703,7 +703,7 @@ input[type=radio] {
 	width:	auto;
 
 	vertical-align: middle;
-	margin: 0.70rem 0.45rem; /* labels far away enough from scaled input; padding is useless here	*/
+	margin: 0.40rem 0.45rem; /* labels far away enough from scaled input; padding is useless here	*/
 
 	/* margin-bottom: 0.45rem; */  /*  2021-02 - height correction removed  */
 

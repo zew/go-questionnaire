@@ -35,7 +35,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	q.Survey = qst.NewSurvey("pat")
 	q.Survey.Params = params
 	q.LangCodes = []string{"de"} // governs default language code
-	q.Version = 1
+	q.Version = 2
 
 	q.Survey.Org = trl.S{"de": "ZEW"}
 	q.Survey.Name = trl.S{"de": "Paternalismus Umfrage"}
@@ -90,11 +90,13 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 		{
 			inp := gr.AddInput()
-			inp.Type = "dynamic"
+			inp.Type = "textblock-dyn"
+			inp.ColSpanControl = 1
 			inp.DynamicFunc = "PatLogos"
 		}
 		{
 			inp := gr.AddInput()
+			inp.ColSpanControl = 1
 			inp.Type = "button"
 			inp.Name = "submitBtn"
 			inp.Response = "1"
@@ -113,6 +115,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		page.Short = trl.S{"de": "Stiftungen 1"}
 		page.Width = 60
 
+		// gr0
 		{
 			gr := page.AddGroup()
 			gr.Cols = 6
@@ -175,10 +178,10 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				</p>
 				
 				`}
-
 			}
 		}
 
+		// gr1
 		{
 			gr := page.AddGroup()
 			gr.Cols = 1
@@ -187,12 +190,13 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			// q1-pretext
 			{
 				inp := gr.AddInput()
-				inp.Type = "composit"
+				inp.Type = "dyn-composite"
+				inp.ColSpanControl = 1
 				inp.DynamicFunc = "PoliticalFoundationsPretext__0__0"
 			}
-
 		}
 
+		// gr2
 		{
 			gr := page.AddGroup()
 			gr.Cols = 1
@@ -202,18 +206,20 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			// q1a
 			{
 				inp := gr.AddInput()
-				inp.Type = "composit"
+				inp.Type = "dyn-composite"
+				inp.ColSpanControl = 1
 				inp.DynamicFunc = "PoliticalFoundations__0__0"
 			}
 			_, inputNames, _ := qst.PoliticalFoundations(nil, 0, 0)
 			for _, inpName := range inputNames {
 				inp := gr.AddInput()
-				inp.Type = "composit-scalar"
+				inp.Type = "dyn-composite-scalar"
 				inp.Name = inpName + "_page0"
 			}
 
 		}
 
+		// gr3
 		{
 			gr := page.AddGroup()
 			gr.Cols = 1
@@ -233,6 +239,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			}
 		}
 
+		// gr4
 		{
 			gr := page.AddGroup()
 			gr.Cols = 1
@@ -250,7 +257,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				`,
 				}
 			}
-
 		}
 
 	}
@@ -262,6 +268,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	page.Short = trl.S{"de": "Stiftungen 2"}
 	page.Width = 60
 
+	// gr0
 	{
 		gr := page.AddGroup()
 		gr.Cols = 2
@@ -292,13 +299,14 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				// q1b
 				{
 					inp := gr.AddInput()
-					inp.Type = "composit"
+					inp.Type = "dyn-composite"
+					inp.ColSpanControl = 1
 					inp.DynamicFunc = fmt.Sprintf("PoliticalFoundations__%v__%v", i, i)
 				}
 				_, inputNames, _ := qst.PoliticalFoundations(nil, i, i)
 				for _, inpName := range inputNames {
 					inp := gr.AddInput()
-					inp.Type = "composit-scalar"
+					inp.Type = "dyn-composite-scalar"
 					inp.Name = inpName
 				}
 			}
@@ -326,13 +334,14 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				// q1b
 				{
 					inp := gr.AddInput()
-					inp.Type = "composit"
+					inp.Type = "dyn-composite"
+					inp.ColSpanControl = 1
 					inp.DynamicFunc = fmt.Sprintf("PoliticalFoundations__%v__%v", i, i)
 				}
 				_, inputNames, _ := qst.PoliticalFoundations(nil, i, i)
 				for _, inpName := range inputNames {
 					inp := gr.AddInput()
-					inp.Type = "composit-scalar"
+					inp.Type = "dyn-composite-scalar"
 					inp.Name = inpName
 				}
 			}
@@ -348,8 +357,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		page.Short = trl.S{"de": "Auswertung"}
 		page.Width = 60
 
+		// gr0
 		{
-
 			gr := page.AddGroup()
 			gr.Cols = 1
 			gr.BottomVSpacers = 0
@@ -376,9 +385,9 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 					`,
 				}
 			}
-
 		}
 
+		// gr1
 		{
 			gr := page.AddGroup()
 			gr.Cols = 15
@@ -433,8 +442,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			}
 		}
 
+		// gr2
 		{
-
 			gr := page.AddGroup()
 			gr.Cols = 1
 			gr.BottomVSpacers = 0
@@ -485,9 +494,9 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 					`,
 				}
 			}
-
 		}
 
+		// gr3
 		{
 			gr := page.AddGroup()
 			gr.Cols = 12
@@ -497,18 +506,19 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			// q3a
 			{
 				inp := gr.AddInput()
-				inp.Type = "composit"
+				inp.Type = "dyn-composite"
+				inp.ColSpanControl = 1
 				inp.DynamicFunc = "TimePreferenceSelf__0__0"
 			}
 			_, inputNames, _ := qst.TimePreferenceSelf(nil, 0, 0)
 			for _, inpName := range inputNames {
 				inp := gr.AddInput()
-				inp.Type = "composit-scalar"
+				inp.Type = "dyn-composite-scalar"
 				inp.Name = inpName
 			}
-
 		}
 
+		// gr4
 		{
 
 			gr := page.AddGroup()
@@ -533,6 +543,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			}
 		}
 
+		// gr5
 		{
 			gr := page.AddGroup()
 			gr.Cols = 12
@@ -542,19 +553,20 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			// q3b
 			{
 				inp := gr.AddInput()
-				inp.Type = "composit"
+				inp.Type = "dyn-composite"
+				inp.ColSpanControl = 1
 				inp.DynamicFunc = "TimePreferenceSelf__1__1"
 			}
 			_, inputNames, _ := qst.TimePreferenceSelf(nil, 1, 1)
 			for _, inpName := range inputNames {
 				inp := gr.AddInput()
-				inp.Type = "composit-scalar"
+				inp.Type = "dyn-composite-scalar"
 				inp.Name = inpName
 			}
-
 		}
 
 	}
+
 	// page 5
 	{
 		page := q.AddPage()
@@ -563,8 +575,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		page.Short = trl.S{"de": "Gruppen-<br>präferenzen"}
 		page.Width = 60
 
+		// gr0
 		{
-
 			gr := page.AddGroup()
 			gr.Cols = 1
 			gr.BottomVSpacers = 0
@@ -583,9 +595,9 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 					`,
 				}
 			}
-
 		}
 
+		// gr1
 		{
 			gr := page.AddGroup()
 			gr.Cols = 12
@@ -595,24 +607,23 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			// q4a
 			{
 				inp := gr.AddInput()
-				inp.Type = "composit"
+				inp.Type = "dyn-composite"
+				inp.ColSpanControl = 12
 				inp.DynamicFunc = "GroupPreferences__0__0"
 			}
 			_, inputNames, _ := qst.GroupPreferences(nil, 0, 0)
 			for _, inpName := range inputNames {
 				inp := gr.AddInput()
-				inp.Type = "composit-scalar"
 				inp.Name = inpName
 			}
-
 		}
 
+		// gr2
 		{
 			gr := page.AddGroup()
 			gr.Cols = 24 - 0
 			gr.Width = 100
 			gr.BottomVSpacers = 2
-
 			// q4a
 			{
 				inp := gr.AddInput()
@@ -663,9 +674,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 		//
 		//
-		//
+		// gr3
 		{
-
 			gr := page.AddGroup()
 			gr.Cols = 1
 			gr.BottomVSpacers = 0
@@ -684,9 +694,9 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 					`,
 				}
 			}
-
 		}
 
+		// gr4
 		{
 			gr := page.AddGroup()
 			gr.Cols = 12
@@ -696,18 +706,19 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			// q4b
 			{
 				inp := gr.AddInput()
-				inp.Type = "composit"
+				inp.Type = "dyn-composite"
+				inp.ColSpanControl = 12
 				inp.DynamicFunc = "GroupPreferences__1__1"
 			}
 			_, inputNames, _ := qst.GroupPreferences(nil, 1, 1)
 			for _, inpName := range inputNames {
 				inp := gr.AddInput()
-				inp.Type = "composit-scalar"
+				inp.Type = "dyn-composite-scalar"
 				inp.Name = inpName
 			}
-
 		}
 
+		// gr5
 		{
 			gr := page.AddGroup()
 			gr.Cols = 24 - 0

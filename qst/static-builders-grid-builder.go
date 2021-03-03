@@ -150,7 +150,7 @@ func (p *pageT) AddGrid(gb *GridBuilder) *groupT {
 				inp2.ColSpanLabel = gb.cols[colIdx].spanControl
 
 				inp2.Centered()
-				inp2.Style.Desktop.BoxStyle.Padding = "0 0.2rem"
+				// inp2.Style.Desktop.BoxStyle.Padding = "0 0.2rem"
 
 			} else {
 				inp := gr.addInputEmpty()
@@ -186,15 +186,23 @@ func NewGridBuilderRadios(
 		log.Panicf("NewGridBuilderRadios(): len(columnTemplate) != len(hdrLabels)*2 - %v != %v", len(columnTemplate), len(hdrLabels)*2)
 	}
 
+	// Setup of columns
 	for i := 0; i < len(columnTemplate); i += 2 {
 		gb.AddCol(hdrLabels[i/2], columnTemplate[i], columnTemplate[i+1])
 	}
 
-	for rowIdx := 0; rowIdx < len(firstColLabels); rowIdx++ {
+	// adding rows
+	// for rowIdx := 0; rowIdx < len(firstColLabels); rowIdx++ {
+	for rowIdx := 0; rowIdx < len(inputNames); rowIdx++ {
 		name := inputNames[rowIdx]
-		lbl := firstColLabels[rowIdx]
+
+		lbl := trl.S{}
 		sparseLbls := map[int]trl.S{}
-		sparseLbls[0] = lbl
+		if rowIdx < len(firstColLabels) {
+			lbl = firstColLabels[rowIdx]
+			sparseLbls[0] = lbl
+		}
+
 		// sparseLbls[3] = trl.S{"de": "--", "en": "--"}
 		gb.AddRadioRow(name, radioVals, sparseLbls)
 	}

@@ -108,6 +108,12 @@ func (q QuestionnaireT) GroupHTMLGridBased(pageIdx, grpIdx int) string {
 	if gr.Style.Desktop.GridContainerStyle.TemplateColumns == "" {
 		gr.Style.Desktop.GridContainerStyle.TemplateColumns = strings.Repeat("1fr ", gr.Cols)
 	}
+	if gr.Style.Desktop.GridContainerStyle.ColumnGap == "" {
+		gr.Style.Desktop.GridContainerStyle.ColumnGap = "0.4rem"
+	}
+	if gr.Style.Desktop.GridContainerStyle.RowGap == "" {
+		gr.Style.Desktop.GridContainerStyle.RowGap = "0.8rem"
+	}
 	gridContainerClass := fmt.Sprintf("pg%02v-grp%02v", pageIdx, grpIdx)
 	fmt.Fprint(wCSS, gr.Style.CSS(gridContainerClass))
 
@@ -133,6 +139,7 @@ func (q QuestionnaireT) GroupHTMLGridBased(pageIdx, grpIdx int) string {
 			inp.Style.Desktop.BoxStyle.Display = "grid"
 			inp.Style.Desktop.GridContainerStyle.AutoFlow = "row"
 			inp.Style.Desktop.GridContainerStyle.TemplateColumns = strings.Repeat("1fr ", inp.ColSpanLabel+inp.ColSpanControl)
+
 		}
 		gridItemClass := fmt.Sprintf("pg%02v-grp%02v-inp%02v", pageIdx, grpIdx, inpIdx)
 		fmt.Fprint(wCSS, inp.Style.CSS(gridItemClass))
@@ -305,8 +312,8 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int) string {
 				"<input type='hidden' name='%v' id='%v_hidd' value='0' />\n", nm, nm)
 		}
 
-	case "textblock-dyn":
-		ctrl = fmt.Sprintf("<span class='go-quest-label %v'>%v</span>\n", inp.CSSLabel, inp.Label.Tr(q.LangCode))
+	case "dyn-textblock":
+		ctrl = fmt.Sprintf("<span class='%v'>%v</span>\n", inp.CSSLabel, inp.Label.Tr(q.LangCode))
 
 	case "dyn-composite", "dyn-composite-scalar":
 		// no op

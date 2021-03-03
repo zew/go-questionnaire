@@ -207,7 +207,7 @@ func (inp inputT) IsLayout() bool {
 	if inp.Type == "textblock" {
 		return true
 	}
-	if inp.Type == "textblock-dyn" {
+	if inp.Type == "dyn-textblock" {
 		return true
 	}
 	if inp.Type == "dyn-composite" { // inputs are in "dyn-composite-scalar"
@@ -232,7 +232,7 @@ func (inp inputT) IsLabelOnly() bool {
 	if inp.Type == "textblock" {
 		return true
 	}
-	if inp.Type == "textblock-dyn" {
+	if inp.Type == "dyn-textblock" {
 		return true
 	}
 	return false
@@ -498,7 +498,7 @@ func (inp inputT) HTML(langCode string, numCols int) string {
 		lbl := renderLabelDescription(inp, langCode, numCols)
 		return lbl + ctrl
 
-	case "textblock-dyn":
+	case "dyn-textblock":
 		return fmt.Sprintf("<span class='go-quest-label %v'>%v</span>\n", inp.CSSLabel, inp.Label.Tr(langCode))
 
 	case "dyn-composite", "dyn-composite-scalar":

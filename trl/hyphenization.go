@@ -16,12 +16,27 @@ import (
 var hyph = []string{
 
 	// german
+	"blei&shy;ben", // blei|ben
 	"kom&shy;plett",
+	"Ein&shy;fluss", // Ein|fluss
 	"schlech&shy;teste",
 	"ver&shy;schlechtern",
 	"An&shy;gabe",
-	"Konjunktur&shy;daten ",
-	"Ausfall&shy;risiken",
+
+	"Da&shy;ten",                           // Da|ten
+	"Kon&shy;junk&shy;tur&shy;da&shy;ten ", // Kon|junk|tur
+
+	"Ex&shy;port&shy;markt",      // "Ex|port|markt
+	"Ex&shy;port&shy;märkte",     // "Ex|port|märkte
+	"Wechsel&shy;kurse",          //
+	"Po&shy;li&shy;tik",          // Po|li|tik
+	"Geld&shy;po&shy;li&shy;tik", //
+
+	"Re&shy;gie&shy;rung",                   // 	"Re|gie|rung",
+	"Bil&shy;dung",                          // 	"Bil|dung",
+	"Re&shy;gie&shy;rungs&shy;bil&shy;dung", // Re|gie|rungs|bil|dung
+
+	"Aus&shy;fall&shy;risiken",
 	"Risiko&shy;trag&shy;fähig&shy;keit",
 	"Re&shy;finanz&shy;ierung",
 	"Wett&shy;be&shy;werbs&shy;sit&shy;uation",
@@ -33,7 +48,13 @@ var hyph = []string{
 	"Kredit&shy;nach&shy;frage",
 	"Kredit&shy;angebot",
 	"mittel&shy;fristig",
+	"nor&shy;mal",  // nor|mal
+	"nied&shy;rig", // nied|rig
 	"lang&shy;fristig",
+	"po&shy;si&shy;tiv", // po|si|tiv
+	"ne&shy;ga&shy;tiv", // ne|ga|tiv
+	"neu&shy;tral",      // neu|tral
+
 	"Deutsch&shy;land",
 	"Welt&shy;wirtschaft",
 	"un&shy;ent&shy;schieden",
@@ -41,6 +62,8 @@ var hyph = []string{
 	"er&shy;stre&shy;bens&shy;wert",
 	"aus&shy;ge&shy;schlos&shy;sen",
 	"si&shy;cher",
+	"stei&shy;gen", // stei|gen
+	"sin&shy;ken",  // sin|ken
 	"un&shy;wich&shy;tig",
 	"wich&shy;tig",
 	"da&shyfür",

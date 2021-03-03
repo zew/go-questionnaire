@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "8c6929efed0f04aeb35384e6653d9662",
+ 	"md_5": "0cfb1700b66476d4f02567b173599ad0",
  	"lang_codes": [
  		"de",
  		"en"
@@ -50,8 +50,8 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\u003cdiv class='markdown'\u003e\n\u003cp\u003e\r\nSehr geehrte Finanzmarktexpertin, sehr geehrter Finanzmarktexperte, herzlich willkommen beim ZEW-Finanzmarkttest. \r\n\r\nDurch klicken auf \u003ccode\u003eWeiter\u003c/code\u003e werden Ihre Antworten gespeichert und Sie gelangen zur jeweils nächsten Seite. \r\n\r\nBei einer Unterbrechung (Schließen des Browsers) bleiben Ihre Antworten erhalten und können später über Ihren persönlichen Link wieder aufgerufen und geändert werden.\r\n\r\nAm Ende der Befragung können Sie den Fragebogen abschließen, so dass keine weiteren Änderungen möglich sind. \r\n\r\n\r\n\r\u003c/p\u003e\n\n\u003ch3\u003eDatenschutz\r\u003c/h3\u003e\n\n\u003cp\u003e\r\nHier finden Sie unsere \u003ca href=\"https://www.zew.de/de/datenschutz/\"\u003eDatenschutz-Grundlagen\u003c/a\u003e.\r\n\r\nIhre An\u0026shy;gaben werden streng vertraulich behandelt. \r\n\r\nDie Auswertung Ihrer Antworten erfolgt als \u003ca href=\"https://de.wikipedia.org/wiki/Paneldaten\"\u003ePanel-Datensatz\u003c/a\u003e in anonymisierter Form.\r\n\r\nIhre Daten werden auf einem geschützten Server im ZEW Hauptgebäude gespeichert, auf den nur Mitglieder des ZEW Teams für den Finanzmarkttest Zugriff haben.\r\n\r\nZusätzlich bitten wir um Ihr Einverständnis, dass wir Ihre Antworten \r\nintern mit Ihrer geschäftlichen Identität verknüpfen. \r\n\r\nIhre geschäftliche Identität besteht aus Ihrem Namen, Ihrer Funktion, geschäftl. Email und Telefonnummer, Arbeitgeber und Teilnahmebeginn.\r\u003c/p\u003e\n\n\t\u003c/div\u003e  \u003c!-- markdown --\u003e\n",
- 								"en": "\n\t\u003cdiv class='markdown'\u003e\n\u003cp\u003eDear expert, welcome to the ZEW financial markets survey .\r\n\r\nBy clicking \u003ccode\u003eNext\u003c/code\u003e your an\u0026shy;swers will be saved and you progress to the next page.\r\n\r\nIn case of an interruption (closing of the web browser) your an\u0026shy;swers remain saved. You can re-use your personal link to continue and change your an\u0026shy;swers.\r\n\r\nAt the end you can finalize the questionnaire preventing further changes.\r\n\r\n\r\u003c/p\u003e\n\n\u003ch3\u003ePrivacy Protection\r\u003c/h3\u003e\n\n\u003cp\u003e\r\n\r\nPlease notice our \u003ca href=\"https://www.zew.de/en/datenschutz/\"\u003eprivacy protection policy\u003c/a\u003e.\r\n\r\nYour data will we treated strictly confidential.\r\n\r\nData processing is done as as \u003ca href=\"https://en.wikipedia.org/wiki/Panel_data\"\u003epanel data set\u003c/a\u003e in anonymized form.\r\n\r\nYour data will be stored on a protected server on the premises of ZEW Ltd. Only members of the financial markets team have access to this server.\r\n\r\nIn addition we ask for permission to internally as\u0026shy;so\u0026shy;ci\u0026shy;ate your an\u0026shy;swers with your busi\u0026shy;ness identity.\r\n\r\nYour busi\u0026shy;ness identity consists of name, role, work phone and email, employer and start of contribution.\r\n\r\n\r\n\r\n\r\u003c/p\u003e\n\n\t\u003c/div\u003e  \u003c!-- markdown --\u003e\n"
+ 								"de": "\n\t\u003cdiv class='markdown'\u003e\n\u003cp\u003e\r\nSehr geehrte Finanzmarktexpertin, sehr geehrter Finanzmarktexperte, herzlich willkommen beim ZEW-Finanzmarkttest. \r\n\r\nDurch klicken auf \u003ccode\u003eWeiter\u003c/code\u003e werden Ihre Antworten gespeichert und Sie gelangen zur jeweils nächsten Seite. \r\n\r\nBei einer Unterbrechung (Schließen des Browsers) blei\u0026shy;ben Ihre Antworten erhalten und können später über Ihren persönlichen Link wieder aufgerufen und geändert werden.\r\n\r\nAm Ende der Befragung können Sie den Fragebogen abschließen, so dass keine weiteren Änderungen möglich sind. \r\n\r\n\r\n\r\u003c/p\u003e\n\n\u003ch3\u003eDa\u0026shy;tenschutz\r\u003c/h3\u003e\n\n\u003cp\u003e\r\nHier finden Sie unsere \u003ca href=\"https://www.zew.de/de/da\u0026shy;tenschutz/\"\u003eDa\u0026shy;tenschutz-Grundlagen\u003c/a\u003e.\r\n\r\nIhre An\u0026shy;gaben werden streng vertraulich behandelt. \r\n\r\nDie Auswertung Ihrer Antworten erfolgt als \u003ca href=\"https://de.wikipedia.org/wiki/Panelda\u0026shy;ten\"\u003ePanel-Da\u0026shy;tensatz\u003c/a\u003e in anonymisierter Form.\r\n\r\nIhre Da\u0026shy;ten werden auf einem geschützten Server im ZEW Hauptgebäude gespeichert, auf den nur Mitglieder des ZEW Teams für den Finanzmarkttest Zugriff haben.\r\n\r\nZusätzlich bitten wir um Ihr Einverständnis, dass wir Ihre Antworten \r\nintern mit Ihrer geschäftlichen Identität verknüpfen. \r\n\r\nIhre geschäftliche Identität besteht aus Ihrem Namen, Ihrer Funktion, geschäftl. Email und Telefonnummer, Arbeitgeber und Teilnahmebeginn.\r\u003c/p\u003e\n\n\t\u003c/div\u003e  \u003c!-- markdown --\u003e\n",
+ 								"en": "\n\t\u003cdiv class='markdown'\u003e\n\u003cp\u003eDear expert, welcome to the ZEW financial markets survey .\r\n\r\nBy clicking \u003ccode\u003eNext\u003c/code\u003e your an\u0026shy;swers will be saved and you progress to the next page.\r\n\r\nIn case of an interruption (closing of the web browser) your an\u0026shy;swers remain saved. You can re-use your personal link to continue and change your an\u0026shy;swers.\r\n\r\nAt the end you can finalize the questionnaire preventing further changes.\r\n\r\n\r\u003c/p\u003e\n\n\u003ch3\u003ePrivacy Protection\r\u003c/h3\u003e\n\n\u003cp\u003e\r\n\r\nPlease notice our \u003ca href=\"https://www.zew.de/en/da\u0026shy;tenschutz/\"\u003eprivacy protection policy\u003c/a\u003e.\r\n\r\nYour data will we treated strictly confidential.\r\n\r\nData processing is done as as \u003ca href=\"https://en.wikipedia.org/wiki/Panel_data\"\u003epanel data set\u003c/a\u003e in anonymized form.\r\n\r\nYour data will be stored on a protected server on the premises of ZEW Ltd. Only members of the financial markets team have access to this server.\r\n\r\nIn addition we ask for permission to internally as\u0026shy;so\u0026shy;ci\u0026shy;ate your an\u0026shy;swers with your busi\u0026shy;ness identity.\r\n\r\nYour busi\u0026shy;ness identity consists of name, role, work phone and email, employer and start of contribution.\r\n\r\n\r\n\r\n\r\u003c/p\u003e\n\n\t\u003c/div\u003e  \u003c!-- markdown --\u003e\n"
  							},
  							"css_label": "special-line-height-higher",
  							"col_span_label": 3
@@ -61,38 +61,37 @@
  				{
  					"bottom_vspacers": 3,
  					"width": 75,
- 					"columns": 3,
+ 					"columns": 2,
  					"inputs": [
  						{
- 							"name": "proxy",
- 							"type": "radiogroup",
+ 							"type": "textblock",
  							"label": {
- 								"de": " ",
- 								"en": " "
- 							},
- 							"description": {
  								"de": "Sind Sie die angeschriebene Person?",
  								"en": "Are you the addressee?"
  							},
- 							"css_label": "special-line-height-higher",
+ 							"col_span_label": 2
+ 						},
+ 						{
+ 							"name": "proxy",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": " \u0026nbsp; \u003cbr\u003eJa, ich bin die angeschriebene Person.",
+ 								"en": "Yes, I am the addressee."
+ 							},
  							"col_span_label": 1,
- 							"col_span_control": 2,
- 							"radios": [
- 								{
- 									"hori_align": 1,
- 									"label": {
- 										"de": " \u0026nbsp; \u003cbr\u003eJa, ich bin die angeschriebene Person.",
- 										"en": "Yes, I am the addressee."
- 									}
- 								},
- 								{
- 									"hori_align": 1,
- 									"label": {
- 										"de": "Nein, ich fülle den Fragebogen in Vertretung der angeschriebenen Person aus.",
- 										"en": "No. I am filling in for the addressee."
- 									}
- 								}
- 							]
+ 							"col_span_control": 1,
+ 							"value_radio": "no"
+ 						},
+ 						{
+ 							"name": "proxy",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Nein, ich fülle den Fragebogen in Vertretung der angeschriebenen Person aus.",
+ 								"en": "No. I am filling in for the addressee."
+ 							},
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "yes"
  						}
  					]
  				},
@@ -227,8 +226,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "normal",
- 								"en": "normal"
+ 								"de": "nor\u0026shy;mal",
+ 								"en": "nor\u0026shy;mal"
  							},
  							"col_span_label": 1,
  							"style": {
@@ -1319,7 +1318,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "steigen",
+ 								"de": "stei\u0026shy;gen",
  								"en": "in\u0026shy;crease"
  							},
  							"col_span_label": 1,
@@ -1365,7 +1364,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "gleich bleiben",
+ 								"de": "gleich blei\u0026shy;ben",
  								"en": "remain un\u0026shy;changed"
  							},
  							"col_span_label": 1,
@@ -1411,7 +1410,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "sinken",
+ 								"de": "sin\u0026shy;ken",
  								"en": "de\u0026shy;crease"
  							},
  							"col_span_label": 1,
@@ -1842,8 +1841,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "normal",
- 								"en": "normal"
+ 								"de": "nor\u0026shy;mal",
+ 								"en": "nor\u0026shy;mal"
  							},
  							"col_span_label": 1,
  							"style": {
@@ -1888,7 +1887,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "niedrig",
+ 								"de": "nied\u0026shy;rig",
  								"en": "low"
  							},
  							"col_span_label": 1,
@@ -1934,7 +1933,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "sehr niedrig",
+ 								"de": "sehr nied\u0026shy;rig",
  								"en": "very low"
  							},
  							"col_span_label": 1,
@@ -2142,7 +2141,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "stark steigen",
+ 								"de": "stark stei\u0026shy;gen",
  								"en": "strong\u0026shy;ly in\u0026shy;crease"
  							},
  							"col_span_label": 1,
@@ -2188,7 +2187,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "steigen",
+ 								"de": "stei\u0026shy;gen",
  								"en": "in\u0026shy;crease"
  							},
  							"col_span_label": 1,
@@ -2234,7 +2233,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "gleich bleiben",
+ 								"de": "gleich blei\u0026shy;ben",
  								"en": "remain un\u0026shy;changed"
  							},
  							"col_span_label": 1,
@@ -2280,7 +2279,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "sinken",
+ 								"de": "sin\u0026shy;ken",
  								"en": "de\u0026shy;crease"
  							},
  							"col_span_label": 1,
@@ -2326,7 +2325,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "stark sinken",
+ 								"de": "stark sin\u0026shy;ken",
  								"en": "strong\u0026shy;ly de\u0026shy;crease"
  							},
  							"col_span_label": 1,
@@ -2534,7 +2533,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "stark steigen",
+ 								"de": "stark stei\u0026shy;gen",
  								"en": "strong\u0026shy;ly in\u0026shy;crease"
  							},
  							"col_span_label": 1,
@@ -2580,7 +2579,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "steigen",
+ 								"de": "stei\u0026shy;gen",
  								"en": "in\u0026shy;crease"
  							},
  							"col_span_label": 1,
@@ -2626,7 +2625,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "gleich bleiben",
+ 								"de": "gleich blei\u0026shy;ben",
  								"en": "remain un\u0026shy;changed"
  							},
  							"col_span_label": 1,
@@ -2672,7 +2671,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "sinken",
+ 								"de": "sin\u0026shy;ken",
  								"en": "de\u0026shy;crease"
  							},
  							"col_span_label": 1,
@@ -2718,7 +2717,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "stark sinken",
+ 								"de": "stark sin\u0026shy;ken",
  								"en": "strong\u0026shy;ly de\u0026shy;crease"
  							},
  							"col_span_label": 1,
@@ -3013,7 +3012,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e6d.\u003c/b\u003e Wie schätzen Sie den Einfluss folgender Faktoren auf die mittel\u0026shy;fristige (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;Mo.) Veränderung des Kredit\u0026shy;angebots ein?",
+ 								"de": "\u003cb\u003e6d.\u003c/b\u003e Wie schätzen Sie den Ein\u0026shy;fluss folgender Faktoren auf die mittel\u0026shy;fristige (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;Mo.) Veränderung des Kredit\u0026shy;angebots ein?",
  								"en": "\u003cb\u003e6d.\u003c/b\u003e How do you assess the in\u0026shy;fluence of following factors on the medium term (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;months) change of credit supply?"
  							},
  							"col_span_label": 9
@@ -3029,7 +3028,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "sehr positiv",
+ 								"de": "sehr po\u0026shy;si\u0026shy;tiv",
  								"en": "very pos\u0026shy;itive"
  							},
  							"col_span_label": 1,
@@ -3075,7 +3074,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "positiv",
+ 								"de": "po\u0026shy;si\u0026shy;tiv",
  								"en": "pos\u0026shy;itive"
  							},
  							"col_span_label": 1,
@@ -3121,8 +3120,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "neutral",
- 								"en": "neutral"
+ 								"de": "neu\u0026shy;tral",
+ 								"en": "neu\u0026shy;tral"
  							},
  							"col_span_label": 1,
  							"style": {
@@ -3167,7 +3166,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "negativ",
+ 								"de": "ne\u0026shy;ga\u0026shy;tiv",
  								"en": "neg\u0026shy;ative"
  							},
  							"col_span_label": 1,
@@ -3213,7 +3212,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "sehr negativ",
+ 								"de": "sehr ne\u0026shy;ga\u0026shy;tiv",
  								"en": "very neg\u0026shy;ative"
  							},
  							"col_span_label": 1,
@@ -3314,7 +3313,7 @@
  							"name": "c_inf_6_dr",
  							"type": "radio",
  							"label": {
- 								"de": "Ausfall\u0026shy;risiken",
+ 								"de": "Aus\u0026shy;fall\u0026shy;risiken",
  								"en": "Default risk"
  							},
  							"col_span_label": 2,
@@ -3589,7 +3588,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "stark steigen",
+ 								"de": "stark stei\u0026shy;gen",
  								"en": "strong\u0026shy;ly in\u0026shy;crease"
  							},
  							"col_span_label": 1,
@@ -3635,7 +3634,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "steigen",
+ 								"de": "stei\u0026shy;gen",
  								"en": "in\u0026shy;crease"
  							},
  							"col_span_label": 1,
@@ -3681,7 +3680,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "gleich bleiben",
+ 								"de": "gleich blei\u0026shy;ben",
  								"en": "remain un\u0026shy;changed"
  							},
  							"col_span_label": 1,
@@ -3727,7 +3726,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "sinken",
+ 								"de": "sin\u0026shy;ken",
  								"en": "de\u0026shy;crease"
  							},
  							"col_span_label": 1,
@@ -3773,7 +3772,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "stark sinken",
+ 								"de": "stark sin\u0026shy;ken",
  								"en": "strong\u0026shy;ly de\u0026shy;crease"
  							},
  							"col_span_label": 1,
@@ -4072,7 +4071,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e7a.\u003c/b\u003e Die folgenden Aktienindizes / Rohstoffpreise / Wechselkurse werden mittel\u0026shy;fristig (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;Mo.)",
+ 								"de": "\u003cb\u003e7a.\u003c/b\u003e Die folgenden Aktienindizes / Rohstoffpreise / Wechsel\u0026shy;kurse werden mittel\u0026shy;fristig (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;Mo.)",
  								"en": "\u003cb\u003e7a.\u003c/b\u003e Following stock indices / raw materials / exchange rates will medium term (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;months)"
  							},
  							"col_span_label": 7
@@ -4088,7 +4087,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "steigen",
+ 								"de": "stei\u0026shy;gen",
  								"en": "in\u0026shy;crease"
  							},
  							"col_span_label": 1,
@@ -4134,7 +4133,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "gleich bleiben",
+ 								"de": "gleich blei\u0026shy;ben",
  								"en": "remain un\u0026shy;changed"
  							},
  							"col_span_label": 1,
@@ -4180,7 +4179,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "sinken",
+ 								"de": "sin\u0026shy;ken",
  								"en": "de\u0026shy;crease"
  							},
  							"col_span_label": 1,
@@ -4473,7 +4472,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\u003cb\u003e7c.\u003c/b\u003e Aus Sicht der Fundamentaldaten der DAX-Unternehmen ist der DAX derzeit",
+ 								"de": "\u003cb\u003e7c.\u003c/b\u003e Aus Sicht der Fundamentalda\u0026shy;ten der DAX-Unternehmen ist der DAX derzeit",
  								"en": "\u003cb\u003e7c.\u003c/b\u003e The fundamentals of the companies comprising the DAX make the DAX currently"
  							},
  							"col_span_label": 1
@@ -4484,44 +4483,40 @@
  					"header_bottom_vspacers": 1,
  					"bottom_vspacers": 3,
  					"width": 100,
- 					"columns": 6,
+ 					"columns": 12,
  					"inputs": [
  						{
  							"name": "dax_fund",
- 							"type": "radiogroup",
- 							"css_label": "special-input-left-padding",
- 							"col_span_control": 6,
- 							"radios": [
- 								{
- 									"label": {
- 										"de": "überbewertet",
- 										"en": "overvalued"
- 									},
- 									"val": "0"
- 								},
- 								{
- 									"label": {
- 										"de": "fair\u0026nbsp;bewertet",
- 										"en": "fair\u0026nbsp;valued"
- 									},
- 									"val": "1"
- 								},
- 								{
- 									"label": {
- 										"de": "unterbewertet",
- 										"en": "undervalued"
- 									},
- 									"val": "2"
- 								}
- 							]
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "überbewertet",
+ 								"en": "overvalued"
+ 							},
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "1"
  						},
  						{
- 							"type": "textblock",
- 							"description": {
- 								"de": " \u0026nbsp; ",
- 								"en": " \u0026nbsp; "
+ 							"name": "dax_fund",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "fair\u0026nbsp;bewertet",
+ 								"en": "fair\u0026nbsp;valued"
  							},
- 							"col_span_label": 2
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "dax_fund",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "unterbewertet",
+ 								"en": "undervalued"
+ 							},
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
  						}
  					]
  				},
@@ -4763,7 +4758,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "stark positiv",
+ 								"de": "stark po\u0026shy;si\u0026shy;tiv",
  								"en": "strong\u0026shy;ly pos\u0026shy;itive"
  							},
  							"col_span_label": 1,
@@ -4809,7 +4804,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "positiv",
+ 								"de": "po\u0026shy;si\u0026shy;tiv",
  								"en": "pos\u0026shy;itive"
  							},
  							"col_span_label": 1,
@@ -4855,7 +4850,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "kein Einfluss",
+ 								"de": "kein Ein\u0026shy;fluss",
  								"en": "no in\u0026shy;fluence"
  							},
  							"col_span_label": 1,
@@ -4901,7 +4896,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "negativ",
+ 								"de": "ne\u0026shy;ga\u0026shy;tiv",
  								"en": "neg\u0026shy;ative"
  							},
  							"col_span_label": 1,
@@ -4947,7 +4942,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "stark negativ",
+ 								"de": "stark ne\u0026shy;ga\u0026shy;tiv",
  								"en": "strong\u0026shy;ly neg\u0026shy;ative"
  							},
  							"col_span_label": 1,
@@ -5048,7 +5043,7 @@
  							"name": "iobc_cycle_data_deu",
  							"type": "radio",
  							"label": {
- 								"de": "Konjunktur\u0026shy;daten Deutsch\u0026shy;land",
+ 								"de": "Kon\u0026shy;junk\u0026shy;tur\u0026shy;da\u0026shy;ten Deutsch\u0026shy;land",
  								"en": "Busi\u0026shy;ness cycle data Germany"
  							},
  							"col_span_label": 2,
@@ -5090,7 +5085,7 @@
  							"name": "iobc_exp_markets",
  							"type": "radio",
  							"label": {
- 								"de": "Exportmärkte",
+ 								"de": "Ex\u0026shy;port\u0026shy;märkte",
  								"en": "Export markets"
  							},
  							"col_span_label": 2,
@@ -5132,7 +5127,7 @@
  							"name": "iobc_exch_rates",
  							"type": "radio",
  							"label": {
- 								"de": "Wechselkurse",
+ 								"de": "Wechsel\u0026shy;kurse",
  								"en": "Exchange rates"
  							},
  							"col_span_label": 2,
@@ -5174,7 +5169,7 @@
  							"name": "iobc_mp_ecb",
  							"type": "radio",
  							"label": {
- 								"de": "EZB-Geldpolitik",
+ 								"de": "EZB-Geld\u0026shy;politik",
  								"en": "ECB monetary policy"
  							},
  							"col_span_label": 2,
@@ -5216,7 +5211,7 @@
  							"name": "iobc_mp_fed",
  							"type": "radio",
  							"label": {
- 								"de": "US-Geldpolitik",
+ 								"de": "US-Geld\u0026shy;politik",
  								"en": "FED monetary policy"
  							},
  							"col_span_label": 2,
@@ -5300,7 +5295,7 @@
  							"name": "iobc_gvt_form_deu",
  							"type": "radio",
  							"label": {
- 								"de": "Regierungs\u0026shy;bildung Deutsch\u0026shy;land",
+ 								"de": "Re\u0026shy;gie\u0026shy;rungs\u0026shy;bil\u0026shy;dung Deutsch\u0026shy;land",
  								"en": "Government formation Germany"
  							},
  							"col_span_label": 2,
@@ -5520,7 +5515,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "stark positiv",
+ 								"de": "stark po\u0026shy;si\u0026shy;tiv",
  								"en": "strong\u0026shy;ly pos\u0026shy;itive"
  							},
  							"col_span_label": 1,
@@ -5566,7 +5561,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "positiv",
+ 								"de": "po\u0026shy;si\u0026shy;tiv",
  								"en": "pos\u0026shy;itive"
  							},
  							"col_span_label": 1,
@@ -5612,7 +5607,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "kein Einfluss",
+ 								"de": "kein Ein\u0026shy;fluss",
  								"en": "no in\u0026shy;fluence"
  							},
  							"col_span_label": 1,
@@ -5658,7 +5653,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "negativ",
+ 								"de": "ne\u0026shy;ga\u0026shy;tiv",
  								"en": "neg\u0026shy;ative"
  							},
  							"col_span_label": 1,
@@ -5704,7 +5699,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "stark negativ",
+ 								"de": "stark ne\u0026shy;ga\u0026shy;tiv",
  								"en": "strong\u0026shy;ly neg\u0026shy;ative"
  							},
  							"col_span_label": 1,
@@ -5805,7 +5800,7 @@
  							"name": "ioi_cycle_data_ea",
  							"type": "radio",
  							"label": {
- 								"de": "Konjunktur\u0026shy;daten Euroraum",
+ 								"de": "Kon\u0026shy;junk\u0026shy;tur\u0026shy;da\u0026shy;ten Euroraum",
  								"en": "Busi\u0026shy;ness cycle data Euro area"
  							},
  							"col_span_label": 2,
@@ -5847,7 +5842,7 @@
  							"name": "ioi_cycle_data_gl",
  							"type": "radio",
  							"label": {
- 								"de": "Konjunktur\u0026shy;daten global",
+ 								"de": "Kon\u0026shy;junk\u0026shy;tur\u0026shy;da\u0026shy;ten global",
  								"en": "Busi\u0026shy;ness cycle data globally"
  							},
  							"col_span_label": 2,
@@ -5973,7 +5968,7 @@
  							"name": "ioi_exch_rates",
  							"type": "radio",
  							"label": {
- 								"de": "Wechselkurse",
+ 								"de": "Wechsel\u0026shy;kurse",
  								"en": "Exchange rates"
  							},
  							"col_span_label": 2,
@@ -6015,7 +6010,7 @@
  							"name": "ioi_mp_ecb",
  							"type": "radio",
  							"label": {
- 								"de": "EZB-Geldpolitik",
+ 								"de": "EZB-Geld\u0026shy;politik",
  								"en": "ECB monetary policy"
  							},
  							"col_span_label": 2,
@@ -6237,27 +6232,25 @@
  					"inputs": [
  						{
  							"name": "finished",
- 							"type": "radiogroup",
- 							"css_label": "special-line-height-higher",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Zugang bleibt bestehen.  Da\u0026shy;ten können in weiteren Sitzungen geändert/ergänzt werden. \u003cbr\u003e\n \u0026nbsp;",
+ 								"en": "Leave questionnaire open. Data  can be changed/completed\u0026nbsp;in later sessions. \u003cbr\u003e\n \u0026nbsp;"
+ 							},
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"radios": [
- 								{
- 									"label": {
- 										"de": "Zugang bleibt bestehen.  Daten können in weiteren Sitzungen geändert/ergänzt werden. \u003cbr\u003e\n \u0026nbsp;",
- 										"en": "Leave questionnaire open. Data  can be changed/completed\u0026nbsp;in later sessions. \u003cbr\u003e\n \u0026nbsp;"
- 									},
- 									"val": "2"
- 								},
- 								{
- 									"label": {
- 										"de": "Fragebogen ist abgeschlossen und kann nicht mehr geöffnet werden. \u003cbr\u003e\n \u0026nbsp;",
- 										"en": "Questionnaire is finished. No more edits. \u003cbr\u003e\n \u0026nbsp;"
- 									},
- 									"val": "1"
- 								}
- 							],
- 							"validator": "mustRadioGroup"
+ 							"value_radio": "no"
+ 						},
+ 						{
+ 							"name": "finished",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Fragebogen ist abgeschlossen und kann nicht mehr geöffnet werden. \u003cbr\u003e\n \u0026nbsp;",
+ 								"en": "Questionnaire is finished. No more edits. \u003cbr\u003e\n \u0026nbsp;"
+ 							},
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "yes"
  						}
  					]
  				},
@@ -6318,13 +6311,13 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"type": "textblock-dyn",
+ 							"type": "dyn-textblock",
  							"css_label": "special-line-height-higher",
  							"col_span_control": 1,
  							"dynamic_func": "RepsonseStatistics"
  						},
  						{
- 							"type": "textblock-dyn",
+ 							"type": "dyn-textblock",
  							"css_label": "special-line-height-higher",
  							"col_span_control": 1,
  							"dynamic_func": "PersonalLink"
@@ -6332,7 +6325,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\u003cdiv class='markdown'\u003e\n\u003ch1\u003eHinweise\u003c/h1\u003e\n\n\u003cul\u003e\n\u003cli\u003e\u003cp\u003eDurch klicken auf \u003ccode\u003eWeiter\u003c/code\u003e werden Ihre Antworten gespeichert und Sie gelangen zur jeweils nächsten Seite.\u003c/p\u003e\u003c/li\u003e\n\n\u003cli\u003e\u003cp\u003eBei einer Unterbrechung (Schließen des Browsers) bleiben Ihre Antworten erhalten und können später über Ihren persönlichen Link wieder aufgerufen und geändert werden.\u003c/p\u003e\u003c/li\u003e\n\n\u003cli\u003e\u003cp\u003eAm Ende der Befragung können Sie den Fragebogen abschließen, so dass keine weiteren Änderungen möglich sind.\u003c/p\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\n\u003ch2\u003eDatenschutz\u003c/h2\u003e\n\n\u003cul\u003e\n\u003cli\u003e\u003cp\u003eHier finden Sie unsere \u003ca href=\"https://www.zew.de/de/datenschutz/\"\u003eDatenschutz-Grundlagen\u003c/a\u003e.\u003c/p\u003e\u003c/li\u003e\n\n\u003cli\u003e\u003cp\u003eIhre An\u0026shy;gaben werden streng vertraulich behandelt.\u003c/p\u003e\u003c/li\u003e\n\n\u003cli\u003e\u003cp\u003eDie Auswertung Ihrer Antworten erfolgt als \u003ca href=\"https://de.wikipedia.org/wiki/Paneldaten\"\u003ePanel-Datensatz\u003c/a\u003e in anonymisierter Form.\u003c/p\u003e\u003c/li\u003e\n\n\u003cli\u003e\u003cp\u003eIhre Daten werden auf einem geschützten Server im ZEW Hauptgebäude gespeichert, auf den nur Mitglieder des ZEW Teams für den Finanzmarkttest Zugriff haben.\u003c/p\u003e\u003c/li\u003e\n\n\u003cli\u003e\u003cp\u003eZusätzlich bitten wir um Ihr Einverständnis, dass wir Ihre Antworten intern mit Ihrer geschäftlichen Identität verknüpfen.\u003c/p\u003e\u003c/li\u003e\n\n\u003cli\u003e\u003cp\u003eIhre geschäftliche Identität besteht aus Ihrem Namen, Ihrer Funktion, geschäftl. Email und Telefonnummer, Arbeitgeber und Teilnahmebeginn.\u003c/p\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\n\t\u003c/div\u003e  \u003c!-- markdown --\u003e\n",
+ 								"de": "\n\t\u003cdiv class='markdown'\u003e\n\u003ch1\u003eHinweise\u003c/h1\u003e\n\n\u003cul\u003e\n\u003cli\u003e\u003cp\u003eDurch klicken auf \u003ccode\u003eWeiter\u003c/code\u003e werden Ihre Antworten gespeichert und Sie gelangen zur jeweils nächsten Seite.\u003c/p\u003e\u003c/li\u003e\n\n\u003cli\u003e\u003cp\u003eBei einer Unterbrechung (Schließen des Browsers) blei\u0026shy;ben Ihre Antworten erhalten und können später über Ihren persönlichen Link wieder aufgerufen und geändert werden.\u003c/p\u003e\u003c/li\u003e\n\n\u003cli\u003e\u003cp\u003eAm Ende der Befragung können Sie den Fragebogen abschließen, so dass keine weiteren Änderungen möglich sind.\u003c/p\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\n\u003ch2\u003eDa\u0026shy;tenschutz\u003c/h2\u003e\n\n\u003cul\u003e\n\u003cli\u003e\u003cp\u003eHier finden Sie unsere \u003ca href=\"https://www.zew.de/de/da\u0026shy;tenschutz/\"\u003eDa\u0026shy;tenschutz-Grundlagen\u003c/a\u003e.\u003c/p\u003e\u003c/li\u003e\n\n\u003cli\u003e\u003cp\u003eIhre An\u0026shy;gaben werden streng vertraulich behandelt.\u003c/p\u003e\u003c/li\u003e\n\n\u003cli\u003e\u003cp\u003eDie Auswertung Ihrer Antworten erfolgt als \u003ca href=\"https://de.wikipedia.org/wiki/Panelda\u0026shy;ten\"\u003ePanel-Da\u0026shy;tensatz\u003c/a\u003e in anonymisierter Form.\u003c/p\u003e\u003c/li\u003e\n\n\u003cli\u003e\u003cp\u003eIhre Da\u0026shy;ten werden auf einem geschützten Server im ZEW Hauptgebäude gespeichert, auf den nur Mitglieder des ZEW Teams für den Finanzmarkttest Zugriff haben.\u003c/p\u003e\u003c/li\u003e\n\n\u003cli\u003e\u003cp\u003eZusätzlich bitten wir um Ihr Einverständnis, dass wir Ihre Antworten intern mit Ihrer geschäftlichen Identität verknüpfen.\u003c/p\u003e\u003c/li\u003e\n\n\u003cli\u003e\u003cp\u003eIhre geschäftliche Identität besteht aus Ihrem Namen, Ihrer Funktion, geschäftl. Email und Telefonnummer, Arbeitgeber und Teilnahmebeginn.\u003c/p\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\n\t\u003c/div\u003e  \u003c!-- markdown --\u003e\n",
  								"en": "\n\t\u003cdiv class='markdown'\u003e\n\u003ch3\u003eContact\u003c/h3\u003e\n\n\u003cp\u003eDr. Michael Schröder\u003c/p\u003e\n\n\u003cp\u003ePhone: 0621/1235-368\u003c/p\u003e\n\n\u003cp\u003eFax: 0621/1235-4223\u003c/p\u003e\n\n\u003cp\u003eEmail: schroeder@zew.de\u003c/p\u003e\n\n\u003ch3\u003eAddress\u003c/h3\u003e\n\n\u003cp\u003eCentre for European Eco\u0026shy;nom\u0026shy;ic Re\u0026shy;search (ZEW) Mannheim\u003c/p\u003e\n\n\u003cp\u003ePostfach 10 34 43\u003c/p\u003e\n\n\u003cp\u003e68034 Mannheim\u003c/p\u003e\n\n\u003cp\u003eGermany\u003c/p\u003e\n\n\u003ch3\u003eTechnical issues\u003c/h3\u003e\n\n\u003cp\u003ePlease report technical issues\u003cbr /\u003e\nwith the online questionnaire to:\u003c/p\u003e\n\n\u003cp\u003ePeter Buchmann (buchmann@zew.de)\u003c/p\u003e\n\n\t\u003c/div\u003e  \u003c!-- markdown --\u003e\n"
  							},
  							"css_label": "special-line-height-higher",
@@ -6343,5 +6336,5 @@
  			]
  		}
  	],
- 	"version": 1
+ 	"version": 2
  }

@@ -68,16 +68,15 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	}
 
 	// page 0
-
 	{
 		page := q.AddPage()
 		page.Label = trl.S{"de": "Begrüßung", "en": "Greeting"}
 		page.NoNavigation = true
 
+		// gr0
 		{
 			gr := page.AddGroup()
 			gr.Cols = 3
-
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
@@ -97,42 +96,55 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				}
 				inp.Desc = impr
 			}
+		}
 
-			gr = page.AddGroup()
-			gr.Cols = 3
+		// gr1
+		{
+			gr := page.AddGroup()
+			gr.Cols = 2
 			gr.Width = 75
 			{
 				inp := gr.AddInput()
-				inp.Type = "radiogroup"
-				inp.Name = "proxy"
-				inp.CSSLabel = "special-line-height-higher"
+				inp.Type = "textblock"
+				inp.Label = trl.S{"de": "Sind Sie die angeschriebene Person?", "en": "Are you the addressee?"}
 
-				inp.Label = trl.S{"de": " ", "en": " "}
-				inp.Desc = trl.S{"de": "Sind Sie die angeschriebene Person?", "en": "Are you the addressee?"}
-
-				inp.ColSpanLabel = 1
-				inp.ColSpanControl = 2
-				{
-					rad := inp.AddRadio()
-					rad.HAlign = qst.HLeft
-					rad.HAlign = qst.HCenter
-					rad.Label = trl.S{
-						"de": " &nbsp; <br>Ja, ich bin die angeschriebene Person.",
-						"en": "Yes, I am the addressee.",
-					}
-				}
-				{
-					rad := inp.AddRadio()
-					rad.HAlign = qst.HLeft
-					rad.HAlign = qst.HCenter
-					rad.Label = trl.S{
-						"de": "Nein, ich fülle den Fragebogen in Vertretung der angeschriebenen Person aus.",
-						"en": "No. I am filling in for the addressee.",
-					}
-				}
+				inp.ColSpanLabel = 2
 			}
 
-			gr = page.AddGroup()
+			{
+				rad := gr.AddInput()
+				rad.Type = "radio"
+				rad.Name = "proxy"
+				rad.ValueRadio = "no"
+				rad.ColSpanLabel = 1
+				rad.ColSpanControl = 1
+				// rad.HAlign = qst.HLeft
+				// rad.HAlign = qst.HCenter
+				rad.Label = trl.S{
+					"de": " &nbsp; <br>Ja, ich bin die angeschriebene Person.",
+					"en": "Yes, I am the addressee.",
+				}
+			}
+			{
+				rad := gr.AddInput()
+				rad.Type = "radio"
+				rad.Name = "proxy"
+				rad.ValueRadio = "yes"
+				rad.ColSpanLabel = 1
+				rad.ColSpanControl = 1
+				// rad.HAlign = qst.HLeft
+				// rad.HAlign = qst.HCenter
+				rad.Label = trl.S{
+					"de": "Nein, ich fülle den Fragebogen in Vertretung der angeschriebenen Person aus.",
+					"en": "No. I am filling in for the addressee.",
+				}
+			}
+		}
+
+		// gr2
+		{
+
+			gr := page.AddGroup()
 			gr.Cols = 3
 			gr.Width = 75
 			{
@@ -147,8 +159,11 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.ColSpanLabel = 1
 				inp.ColSpanControl = 2
 			}
+		}
 
-			gr = page.AddGroup()
+		// gr3
+		{
+			gr := page.AddGroup()
 			gr.Cols = 1
 			gr.Width = 75
 			{
@@ -164,8 +179,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.ColSpanControl = 1
 				inp.HAlignControl = qst.HRight
 			}
-
 		}
+
 	}
 
 	// page 1
@@ -865,27 +880,17 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		{
 			// gr := p.AddRadioMatrixGroupCSSGrid(labelsOvervaluedFairUndervalued(), names3rdMatrix, labels123Matrix)
 			gr := page.AddGroup()
-			gr.Cols = 6 // necessary, otherwise no vspacers
+			gr.Cols = 12 // necessary, otherwise no vspacers
 			gr.HeaderBottomVSpacers = 1
-			{
-				inp := gr.AddInput()
-				inp.Type = "radiogroup"
-				inp.Name = "dax_fund"
-				inp.ColSpanControl = 6
-				inp.CSSLabel = "special-input-left-padding"
-				for i2, val := range labelsOvervaluedFairUndervalued() {
-					rad := inp.AddRadio()
-					rad.Label = val
-					// rad.HAlign = qst.HRight
-					rad.HAlign = qst.HLeft
-					rad.Val = fmt.Sprintf("%v", i2)
-				}
-			}
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.ColSpanLabel = 2
-				inp.Desc = trl.S{"de": " &nbsp; ", "en": " &nbsp; "}
+
+			for i2, lbl := range labelsOvervaluedFairUndervalued() {
+				rad := gr.AddInput()
+				rad.Type = "radio"
+				rad.Name = "dax_fund"
+				rad.ValueRadio = fmt.Sprintf("%v", i2+1)
+				rad.Label = lbl
+				rad.ColSpanLabel = 1
+				rad.ColSpanControl = 1
 			}
 
 		}
@@ -1004,35 +1009,31 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			gr.Width = 100
 			gr.Cols = 2 // necessary, otherwise no vspacers
 
+			// todo
+			// inp.Validator = "mustRadioGroup"
 			{
-				inp := gr.AddInput()
-				inp.Type = "radiogroup"
-				inp.Name = "finished"
-				inp.CSSLabel = "special-line-height-higher"
-				inp.ColSpanLabel = 1
-				inp.ColSpanControl = 1
-				inp.Validator = "mustRadioGroup"
-				{
-					rad := inp.AddRadio()
-					rad.HAlign = qst.HLeft
-					// rad.HAlign = qst.HCenter
-					rad.Label = trl.S{
-						"de": "Zugang bleibt bestehen.  Daten können in weiteren Sitzungen geändert/ergänzt werden. <br>\n &nbsp;",
-						"en": "Leave questionnaire open. Data  can be changed/completed&nbsp;in later sessions. <br>\n &nbsp;",
-					}
-					rad.Val = "2" // any other non null value
+				rad := gr.AddInput()
+				rad.Type = "radio"
+				rad.Name = "finished"
+				rad.ValueRadio = "no"
+				rad.ColSpanLabel = 1
+				rad.ColSpanControl = 1
+				rad.Label = trl.S{
+					"de": "Zugang bleibt bestehen.  Daten können in weiteren Sitzungen geändert/ergänzt werden. <br>\n &nbsp;",
+					"en": "Leave questionnaire open. Data  can be changed/completed&nbsp;in later sessions. <br>\n &nbsp;",
 				}
-				{
-					rad := inp.AddRadio()
-					rad.HAlign = qst.HLeft
-					// rad.HAlign = qst.HCenter
-					rad.Label = trl.S{
-						"de": "Fragebogen ist abgeschlossen und kann nicht mehr geöffnet werden. <br>\n &nbsp;",
-						"en": "Questionnaire is finished. No more edits. <br>\n &nbsp;",
-					}
-					rad.Val = qst.ValSet
+			}
+			{
+				rad := gr.AddInput()
+				rad.Type = "radio"
+				rad.Name = "finished"
+				rad.ValueRadio = "yes"
+				rad.ColSpanLabel = 1
+				rad.ColSpanControl = 1
+				rad.Label = trl.S{
+					"de": "Fragebogen ist abgeschlossen und kann nicht mehr geöffnet werden. <br>\n &nbsp;",
+					"en": "Questionnaire is finished. No more edits. <br>\n &nbsp;",
 				}
-
 			}
 
 		}
@@ -1085,14 +1086,14 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			gr.Cols = 1
 			{
 				inp := gr.AddInput()
-				inp.Type = "textblock-dyn"
+				inp.Type = "dyn-textblock"
 				inp.ColSpanControl = 1
 				inp.CSSLabel = "special-line-height-higher"
 				inp.DynamicFunc = "RepsonseStatistics"
 			}
 			{
 				inp := gr.AddInput()
-				inp.Type = "textblock-dyn"
+				inp.Type = "dyn-textblock"
 				inp.ColSpanControl = 1
 				inp.CSSLabel = "special-line-height-higher"
 				inp.DynamicFunc = "PersonalLink"

@@ -319,6 +319,7 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 				continue
 			}
 			// log.Printf("checking for %v", inp.Name)
+			// amazingly, this works for scattered radio inputs as well
 			ok := sess.EffectiveIsSet(inp.Name)
 			if ok {
 				val := sess.EffectiveStr(inp.Name)

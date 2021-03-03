@@ -5,28 +5,23 @@ import (
 )
 
 var implementedTypes = map[string]interface{}{
-	"text":     nil,
-	"number":   nil,
-	"textarea": nil,
-	"dropdown": nil,
-	"checkbox": nil, // standalone checkbox
-	"radio":    nil, // new in version 2
+	"text":                 nil,
+	"number":               nil,
+	"textarea":             nil,
+	"dropdown":             nil,
+	"checkbox":             nil, // standalone checkbox
+	"radio":                nil, // new in version 2
+	"hidden":               nil, // no rendering
+	"dyn-composite-scalar": nil, // placeholder for an input of a dyn-composite - rendered by the dyn-composite
 
-	"button": nil, // only control - no label - part of layout - return value not saved - only indirectly used for state handling
+	/*
+		layout - no response values
+	*/
+	"button":        nil, // no label - only control - return value not saved - only indirectly used for state handling
+	"textblock":     nil, // no control - ColSpanLabel counts, ColSpanControl is ignored
+	"dyn-textblock": nil, // like textblock, but executed a http request time, contains no inputs - can be used as dynamic label for following inputs
+	"dyn-composite": nil, // executed at http request time, free dynamic fragment of text and multiple inputs
 
-	// no control / no value
-	// ColSpanLabel counts, ColSpanControl is ignored
-	"textblock": nil,
-
-	// dyn elements
-	"textblock-dyn": nil, // like textblock, but executed a http request time, contains no inputs - can be used as dynamic label for following inputs
-
-	// fully dynamic composits
-	"dyn-composite":        nil, // executed at http request time, free dynamic fragment of text and multiple inputs
-	"dyn-composite-scalar": nil, // an input of a composit - rendered by the composit
-
-	// no rendering
-	"hidden": nil,
 }
 
 const (

@@ -1245,7 +1245,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			// gr.Cols = 1
 			// {
 			// 	inp := gr.AddInput()
-			// 	inp.Type = "textblock-dyn"
+			// 	inp.Type = "dyn-textblock"
 			// 	inp.CSSLabel = "special-input-margin-vertical special-line-height-higher"
 			// 	inp.DynamicFunc = "RepsonseStatistics"
 			// }

@@ -224,13 +224,14 @@ func (q *QuestionnaireT) Validate() error {
 				// validator function exists
 				if inp.Validator != "" {
 					if _, ok := validators[inp.Validator]; !ok {
-						return fmt.Errorf(s + fmt.Sprintf("Validator '%v' is not in %v ", inp.Validator, validators))
+						return fmt.Errorf(s + fmt.Sprintf("%v - validator '%v' is not in %v ", s, inp.Validator, validators))
 					}
 				}
 
 				if inp.Type == "radio" {
 					if inp.ValueRadio == "" {
-						// missing ValueRadio is caught by non-unique inputs
+						// missing ValueRadio should be caught by non-unique inputs
+						return fmt.Errorf(s + fmt.Sprintf("%v - must have a distinct ValueRadio", s))
 					}
 				}
 
@@ -328,7 +329,7 @@ func (q *QuestionnaireT) ComputeDynamicContent(idx int) error {
 		}
 		for i2 := 0; i2 < len(q.Pages[i1].Groups); i2++ {
 			for i3 := 0; i3 < len(q.Pages[i1].Groups[i2].Inputs); i3++ {
-				if q.Pages[i1].Groups[i2].Inputs[i3].Type == "textblock-dyn" {
+				if q.Pages[i1].Groups[i2].Inputs[i3].Type == "dyn-textblock" {
 					inp := q.Pages[i1].Groups[i2].Inputs[i3]
 					if _, ok := dynFuncs[inp.DynamicFunc]; !ok {
 						return fmt.Errorf("'%v' points to dynamic func '%v()' - which does not exist or is not registered", inp.Name, inp.DynamicFunc)

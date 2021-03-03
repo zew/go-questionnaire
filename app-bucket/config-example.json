@@ -202,6 +202,20 @@
  			"b": 170
  		},
  		{
+ 			"key": "sec-lgt1",
+ 			"desc": "ligher",
+ 			"r": 236,
+ 			"g": 232,
+ 			"b": 221
+ 		},
+ 		{
+ 			"key": "sec-lgt2",
+ 			"desc": "ligher more",
+ 			"r": 241,
+ 			"g": 239,
+ 			"b": 232
+ 		},
+ 		{
  			"key": "zew2-md",
  			"r": 207,
  			"g": 136,

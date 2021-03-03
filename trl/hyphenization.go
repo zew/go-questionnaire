@@ -35,6 +35,9 @@ var hyph = []string{
 	"Re&shy;gie&shy;rung",                   // 	"Re|gie|rung",
 	"Bil&shy;dung",                          // 	"Bil|dung",
 	"Re&shy;gie&shy;rungs&shy;bil&shy;dung", // Re|gie|rungs|bil|dung
+	"Euro&shy;raum",
+	"Roh&shy;stoff&shy;preise",
+	"Erwartungs&shy;wert",
 
 	"Aus&shy;fall&shy;risiken",
 	"Risiko&shy;trag&shy;fähig&shy;keit",

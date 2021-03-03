@@ -791,8 +791,8 @@ type pageT struct {
 	NoNavigation    bool  `json:"no_navigation,omitempty"` // Page will not show up in progress bar
 	NavigationalNum int   `json:"navi_num"`                // The number in Navigation order; based on NoNavigation; computed by q.Validate
 
-	Width                 int `json:"width,omitempty"`                  // default is 100 percent
-	AestheticCompensation int `json:"aesthetic_compensation,omitempty"` // default is zero percent; if controls do not reach the right border
+	Width int `json:"width,omitempty"` // default is 100 percent
+	// AestheticCompensation int `json:"aesthetic_compensation,omitempty"` // default is zero percent; if controls do not reach the right border
 
 	Finished time.Time `json:"finished,omitempty"` // truncated to second; *not* a marker for finished entirely - for that we use q.FinishedEntirely
 
@@ -1069,10 +1069,7 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 
 	// set width less than 100 percent, for i.e. radios more closely together
 
-	width := fmt.Sprintf(
-		"<div class='page-margins'  style='width: %v%%; margin: 0 auto; padding-left: %v%%' >\n",
-		p.Width, p.AestheticCompensation,
-	)
+	width := fmt.Sprintf("<div class='page-margins' style='margin: 0 auto; width: %v%%'  >\n", p.Width)
 	b.WriteString(width)
 
 	b.WriteString(vspacer8)

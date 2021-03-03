@@ -6,182 +6,182 @@
 /* normalize is partly incorporated; if you need all of it, uncomment... */
 /* @import url("normalize.css"); */
 /*
-	IE <= 9 and IE10/11 need a shock message
-	IE <= 9 is done by conditional comment
-	for IE10/11 see philipnewcomer.net/2014/04/target-internet-explorer-10-11-css
+    IE <= 9 and IE10/11 need a shock message
+    IE <= 9 is done by conditional comment
+    for IE10/11 see philipnewcomer.net/2014/04/target-internet-explorer-10-11-css
 */
 .ie-warning {
-	display: none;
+    display: none;
 }
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-	.ie-warning {
-		display: block;
-	}
+    .ie-warning {
+        display: block;
+    }
 }
 
 /* reset - this is not in normalize.css */
 /* universal operator for properties not inherited by children */
 * {
-	box-sizing: border-box; /* css3 rec */
-	margin:	0;
-	padding: 0;
-	border:	0;	/* also input and button naked */
-	outline: 0;
-	line-height: 1.15;
+    box-sizing: border-box; /* css3 rec */
+    margin:      0;
+    padding:     0;
+    border:      0;    /* also input and button naked */
+    outline:     0;
+    line-height: 1.15;
 
-	/* color: violet; */
-	background-color: transparent;
+    /* color: violet; */
+    background-color: transparent;
 }
 
 /* must be explicitly set */
 *::before, *::after {
-	/* box-sizing: border-box; */
-	box-sizing: inherit;
+    /* box-sizing: border-box; */
+    box-sizing: inherit;
 }
 
 /*
-	root points to HTML or SVG - stackoverflow.com/questions/15899615
+    root points to HTML or SVG - stackoverflow.com/questions/15899615
 */
 :root {
-	/*
+    /*
 
-	 48rem(768px)	1rem(16px)
-			increasing to
-	120rem(1920px) 2rem(32px)
+     48rem(768px)    1rem(16px)
+            increasing to
+    120rem(1920px) 2rem(32px)
 
-	the expression (1vw - .48rem)
-	ranges from 0.00rem to 0.35rem
+    the expression (1vw - .48rem)
+    ranges from 0.00rem to 0.35rem
 
-	the expression calc(1rem + ((1vw - .48rem) * 1.4))
-	ranges from 0.65rem to 1.14rem
+    the expression calc(1rem + ((1vw - .48rem) * 1.4))
+    ranges from 0.65rem to 1.14rem
 
-	<p id="ptest1" style="padding: 1rem 2rem; font-size: calc(1vw - .48rem)">
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br>
-		sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-	</p>
-	<p id="ptest2" style="padding: 1rem 2rem; font-size: calc(1rem + ((1vw - .48rem) * 1.4))">
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br>
-		sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-	</p>
-	<p id="ptest3" style="padding: 1rem 2rem;">
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br>
-		sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-	</p>
-
-
-	<script>
-		function convertRemToPixels(rem) {
-			return rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
-		}
-		{
-			var px = document.getElementById("ptest1");
-			var st = window.getComputedStyle(px);
-			px.innerHTML += "<br> font-size " + st.fontSize + "  - " + parseFloat(st.fontSize)/convertRemToPixels(1.0) + "rem";
-		}
-		{
-			var px = document.getElementById("ptest2");
-			var st = window.getComputedStyle(px);
-			px.innerHTML += "<br> font-size " + st.fontSize + "  - " + parseFloat(st.fontSize)/convertRemToPixels(1.0) + "rem";
-		}
-		{
-			var px = document.getElementById("ptest3");
-			var st = window.getComputedStyle(px);
-			px.innerHTML += "<br> font-size " + st.fontSize + "  - " + parseFloat(st.fontSize)/convertRemToPixels(1.0) + "rem";
-		}
-	</script>
+    <p id="ptest1" style="padding: 1rem 2rem; font-size: calc(1vw - .48rem)">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br>
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    </p>
+    <p id="ptest2" style="padding: 1rem 2rem; font-size: calc(1rem + ((1vw - .48rem) * 1.4))">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br>
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    </p>
+    <p id="ptest3" style="padding: 1rem 2rem;">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br>
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    </p>
 
 
-	*/
-	font-size: clamp(0.75rem, calc(0.8rem + ((1vw - .48rem) * 1.2)), 0.90rem);
+    <script>
+        function convertRemToPixels(rem) {
+            return rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
+        }
+        {
+            var px = document.getElementById("ptest1");
+            var st = window.getComputedStyle(px);
+            px.innerHTML += "<br> font-size " + st.fontSize + "  - " + parseFloat(st.fontSize)/convertRemToPixels(1.0) + "rem";
+        }
+        {
+            var px = document.getElementById("ptest2");
+            var st = window.getComputedStyle(px);
+            px.innerHTML += "<br> font-size " + st.fontSize + "  - " + parseFloat(st.fontSize)/convertRemToPixels(1.0) + "rem";
+        }
+        {
+            var px = document.getElementById("ptest3");
+            var st = window.getComputedStyle(px);
+            px.innerHTML += "<br> font-size " + st.fontSize + "  - " + parseFloat(st.fontSize)/convertRemToPixels(1.0) + "rem";
+        }
+    </script>
 
-	/* color: var(--clr-fg); */
 
-	background: var(--clr-bg);
-	font-weight: 400;
+    */
+    font-size: clamp(0.75rem, calc(0.8rem + ((1vw - .48rem) * 1.2)), 0.90rem);
 
-	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    /* color: var(--clr-fg); */
 
-	/* zew */
-	font-family: "MetaWeb", Verdana, sans-serif;
+    background: var(--clr-bg);
+    font-weight: 400;
 
-	/* welt.de */
-	font-family: 'Helvetica Neue', Helvetica, Arial , sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
-	/* markdown viewer */
-	font-family: -apple-system,BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+    /* zew */
+    font-family: "MetaWeb", Verdana, sans-serif;
+
+    /* welt.de */
+    font-family: 'Helvetica Neue', Helvetica, Arial , sans-serif;
+
+    /* markdown viewer */
+    font-family: -apple-system,BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
 }
 
 
 body {
-	min-height: 0vw;
+    min-height: 0vw;
 }
 
-/* remove firefox focus outline *inside* button	*/
+/* remove firefox focus outline *inside* button    */
 *::-moz-focus-inner {
-	border: 0;
+    border: 0;
 }
 
 /* active, focus and hover stuff - for links, inputs and buttons */
 
 a:active, a:hover {
-	outline: 0;
+    outline: 0;
 }
 
 /* inputs and links - active style
-	 hover for links handled separately
+     hover for links handled separately
 */
 *:focus {
-	/* outline: 4px solid var(--clr-pri-hov); */
+    /* outline: 4px solid var(--clr-pri-hov); */
 
-	/* remove all classic focus rectangles */
-	outline: none;
+    /* remove all classic focus rectangles */
+    outline: none;
 
-	/* like border - but without displacement	*/
-	box-shadow:
-		0 0 0 0.175em var(--clr-sec),
-		0 0 0 0.250em var(--clr-pri-hov);
-	box-shadow:
-		0 0 0 0.075em var(--clr-sec),
-		0 0 0 0.150em var(--clr-pri-hov);
+    /* like border - but without displacement    */
+    box-shadow:
+        0 0 0 0.175em var(--clr-sec),
+        0 0 0 0.250em var(--clr-pri-hov);
+    box-shadow:
+        0 0 0 0.075em var(--clr-sec),
+        0 0 0 0.150em var(--clr-pri-hov);
 }
 
 a {
-	color: var(--clr-pri);
-	text-decoration: none;
+    color: var(--clr-pri);
+    text-decoration: none;
 }
 
 /* unvisited links */
 a:link {
-	color: var(--clr-pri);
+    color: var(--clr-pri);
 }
 
 a:visited {
-	color: var(--clr-pri-vis);
+    color: var(--clr-pri-vis);
 }
 
 /* default hover for links and buttons */
 a:hover, button:hover {
-	/* color: var(--clr-pri-hov); */
-	box-shadow:
-		0 0 0 0.175em var(--clr-sec),
-		0 0 0 0.210em var(--clr-pri-hov);
+    /* color: var(--clr-pri-hov); */
+    box-shadow:
+        0 0 0 0.175em var(--clr-sec),
+        0 0 0 0.210em var(--clr-pri-hov);
 }
 
 nav a[href=""].is-active {
-	color: var(--clr-fg);
-	font-weight: bold;
+    color: var(--clr-fg);
+    font-weight: bold;
 }
 
 /* undoing hyperlink effects */
 nav a[href=""].is-active:hover {
-	color: var(--clr-fg) ;
+    color: var(--clr-fg) ;
 }
 nav a[href=""].is-active:focus {
-	color: var(--clr-fg) ;
+    color: var(--clr-fg) ;
 }
 nav a[href=""].is-active:hover::after {
-	transform: scale(0, 1);
+    transform: scale(0, 1);
 }
 
 nav a.logo,
@@ -193,11 +193,11 @@ nav a.title
 
 /* text after logo */
 nav a.title {
-    margin-left: 1.3rem;
-    padding: 0.3rem 0.1rem;	
-    font-weight: 500;
-    letter-spacing: 0.01rem;
-    border-radius: 0.3rem;
+    padding:       0.3rem 0.3rem;
+	padding-right: 0.6rem;
+    font-weight:    500;
+    letter-spacing:   0.01rem;
+    border-radius:    0.3rem;
 }
 
 /* text after logo - three sub components */
@@ -221,15 +221,15 @@ nav a.title span.survey-wave-id {
 /* for debugging
 
 *:hover {
-	outline: 1px solid var(--clr-pri-hov);
+    outline: 1px solid var(--clr-pri-hov);
 }
 */
 
 
 /* selected text - anywhere */
 ::selection {
-	color:      var(--clr-input-bg);
-	background: var(--clr-input-fg);
+    color:      var(--clr-input-bg);
+    background: var(--clr-input-fg);
 }
 
 
@@ -238,23 +238,23 @@ nav a.title span.survey-wave-id {
 /* common elements stuff */
 
 p, h1, h2, h3, li {
-	padding: 0.26em	0;
+    padding: 0.26em    0;
 }
 
 h2 {
-	font-size: 1.3rem;
+    font-size: 1.3rem;
 }
 h3 {
-	font-size: 1.15rem;
+    font-size: 1.15rem;
 }
 h4 {
-	font-size: 1.05rem;
+    font-size: 1.05rem;
 }
 
 h1, h2, h3, h4, h5, h6, h7 {
-	line-height:   1.6em;
-	margin-top:    1.5em;
-	margin-bottom: 0.1em;
+    line-height:   1.6em;
+    margin-top:    1.5em;
+    margin-bottom: 0.1em;
 }
 
 /* stackoverflow.com/questions/1132366/ */
@@ -263,54 +263,53 @@ h1+h1, h1+h2, h1+h3, h1+h4, h1+h5, h1+h6,
               h3+h3, h3+h4, h3+h5, h3+h6,
                      h4+h4, h4+h5, h4+h6,
 dummy {
-	margin-top: 0.1em;
+    margin-top: 0.1em;
 }
 
 
 p {
-	text-align: justify;
+    text-align: justify;
 }
 
 pre {
-	overflow: auto;
+    overflow: auto;
 
-	background: #eee;
-	font-family: "Courier 10 Pitch", Courier, monospace;
-	font-size: 15px;
-	font-size: .9rem;
-	line-height: 1.6;
-	max-width: 100%;
-	margin:  0.2em 0.95em;
-	padding: 0.5em 0.6em;
+    background: #eee;
+    font-family: "Courier 10 Pitch", Courier, monospace;
+    font-size:     .9rem;
+    line-height:  1.6;
+    max-width: 100%;
+    margin:  0.2em 0.95em;
+    padding: 0.5em 0.60em;
 }
 
 img {
-	height: auto;
-	max-width: 100%;
+    height: auto;
+    max-width: 100%;
 }
 
 svg:not(:root) {
-	overflow: hidden;
+    overflow: hidden;
 }
 
 ol, ul {
-	list-style: none;
+    list-style: none;
 }
 
 .content ul {
-	margin-top:		0.3rem;
-	margin-bottom:	0.5rem;
+    margin-top:       0.3rem;
+    margin-bottom:    0.5rem;
 }
 
 .content li {
-	list-style-type: square;
-	margin-left:     1.1rem;
+    list-style-type: square;
+    margin-left:     1.1rem;
 }
 
 hr {
-	border: 1.5px solid var(--clr-fg);
-	margin-top:	   0.5rem;
-	margin-bottom: 0.6rem;
+    border: 1.5px solid var(--clr-fg);
+    margin-top:      0.5rem;
+    margin-bottom:   0.6rem;
 }
 
 div.separator {
@@ -336,88 +335,88 @@ sup {
 /* table stuff */
 
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
-	width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
 }
 
 td, th {
-	vertical-align: top;
-	padding: 0;
+    vertical-align: top;
+    padding: 0;
 }
 
 th {
-	padding: .4em;
-	text-align: left;
+    padding: .4em;
+    text-align: left;
 }
 
 tr {
-	/* border-bottom: 1px solid #eee; */
+    /* border-bottom: 1px solid #eee; */
 }
 
 td {
-	padding: .4em;
+    padding: .4em;
 }
 
 /* form stuff */
 
 form, .form-alike {
-	width: 100%;
-	/* max-width: clamp(32rem, 96vw, 36rem); */
+    width: 100%;
+    /* max-width: clamp(32rem, 96vw, 36rem); */
 
-	padding: 0.1rem 0.6rem;
-	background-color: var(--clr-sec);
-	border-radius: 0.5rem;
+    padding: 0.1rem 0.6rem;
+    background-color: var(--clr-sec);
+    border-radius: 0.5rem;
 }
 
 form {
-	display: inline-block;
-	margin:  0;
-	padding: 0;
+    display: inline-block;
+    margin:  0;
+    padding: 0;
 }
 
 legend {
-	border: 0;
-	padding: 0.1em 0.3em;
-	margin-left: 0.3em;
+    border: 0;
+    padding: 0.1em 0.3em;
+    margin-left: 0.3em;
 
-	font-size:        100%; /* like label */
-	letter-spacing:	   0.03rem;
-	font-weight:     300; /* visibility in mobile browser */
+    font-size:        100%; /* like label */
+    letter-spacing:   0.03rem;
+    font-weight:      300; /* visibility in mobile browser */
 }
 
 label, .postlabel {
 
-	display:           inline-block;
-	vertical-align:    middle;
-	
-	/* 2021-02 - not needed in CSS grid */
-	/* for vertical alignment */
-	/* padding-bottom:    0.15rem; */	
-	/* margin-right:      0.5rem; */
+    display:           inline-block;
+    vertical-align:    middle;
 
-	font-size:        100%;	/* like legend */
-	line-height:     110%;
-	letter-spacing:	   0.03rem;
-	xx-font-weight:     300; /* visibility in mobile browser */
+    /* 2021-02 - not needed in CSS grid */
+    /* for vertical alignment */
+    /* padding-bottom:    0.15rem; */
+    /* margin-right:      0.5rem; */
+
+    font-size:          100%;    /* like legend */
+    line-height:        110%;
+    letter-spacing:     0.03rem;
+    xx-font-weight:     300; /* visibility in mobile browser */
 
 
-	/* 2021-02 - not needed in CSS grid */
-	xx-white-space: nowrap;	/* explicit wrapping using -<br> */
-	/* like pre but lines too long are broken
-		not stretching the container
-		extends to 100% of container
-		thus container [max]-width should be specified
+    /* 2021-02 - not needed in CSS grid */
+    xx-white-space: nowrap;    /* explicit wrapping using -<br> */
+    /* like pre but lines too long are broken
+        not stretching the container
+        extends to 100% of container
+        thus container [max]-width should be specified
 
-		pre-wrap => preserve white space
-		pre-line => collapse white space
-	*/
-	xx-white-space: pre-wrap; /* see also .postlabel, .plain-text-broken and .error */
+        pre-wrap => preserve white space
+        pre-line => collapse white space
+    */
+    xx-white-space: pre-wrap; /* see also .postlabel, .plain-text-broken and .error */
 
-	text-align: right;
+    text-align: right;
 
-	/* make flexible with media query if needed */
-	min-width:  2rem;  /* attention: overflow in multicolumn */
+    /* make flexible with media query if needed */
+    min-width:  2rem;  /* attention: overflow in multicolumn */
 }
 
 
@@ -429,126 +428,127 @@ dummy {
 
 
 label.top {
-	top: 0.15rem;
+    top: 0.15rem;
 }
 
 label.bottom {
-	top: inherit;
-	bottom: 0.00rem;
+    top: inherit;
+    bottom: 0.00rem;
 }
 
 .postlabel {
-	/* font-size: 0.78rem; */
-	text-align:    left;
-	/* margin-left:   0.35rem;
-	margin-right:  0.01rem; */
+    /* font-size: 0.78rem; */
+    text-align:    left;
+    /* 
+	margin-left:   0.35rem;
+    margin-right:  0.01rem; */
 
-	min-width:     inherit;  /* reset from label */
+    min-width:     inherit;  /* reset from label */
 }
 
 /*
-	fieldset flex horizontal does not work in chrome.
-	stackoverflow.com/questions/28078681
-	Use this instead
+    fieldset flex horizontal does not work in chrome.
+    stackoverflow.com/questions/28078681
+    Use this instead
 
-	<fieldset class="border">
-		<legend>...
-			<div class="flex-horizonal">
+    <fieldset class="border">
+        <legend>...
+            <div class="flex-horizonal">
 
 */
 
 fieldset {
-	margin: 0.65em -0.2em;
-	margin: 0.65em	0.0em;
-	border: none;
+    margin: 0.65em -0.2em;
+    margin: 0.65em  0.0em;
+    border: none;
 }
 
 fieldset.border {
-	padding: 0.55em 0.6em;
-	border:	0.150em solid var(--clr-sec-drk2);
-	border-radius: 0.5rem;
+    padding:   0.550em 0.6em;
+    border:    0.150em solid var(--clr-sec-drk2);
+    border-radius: 0.5rem;
 }
 
 /* normalize form elements - start */
 
 button, input, optgroup, select, textarea {
-	color: inherit;
-	font:	inherit;
-	margin: 0;
+    color:  inherit;
+    font:   inherit;
+    margin: 0;
 }
 
 textarea {
-	overflow: auto;
+    overflow: auto;
 }
 
 button {
-	overflow: visible;
+    overflow: visible;
 }
 
 button, select {
-	text-transform: none;
+    text-transform: none;
 }
 
 button, html input[type="button"], input[type="reset"], input[type="submit"] {
-	-webkit-appearance: button;
-	cursor: pointer;
+    -webkit-appearance: button;
+    cursor: pointer;
 }
 
 button[disabled], html input[disabled] {
-	cursor: default;
+    cursor: default;
 }
 
 button::-moz-focus-inner, input::-moz-focus-inner {
-	border: 0;
-	padding: 0;
+    border: 0;
+    padding: 0;
 }
 
 input {
-	line-height: normal;
+    line-height: normal;
 }
 
 input[type="checkbox"], input[type="radio"] {
-	-webkit-box-sizing: border-box;
-			box-sizing: border-box;
-	padding: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 0;
 }
 
 input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
-	height: auto;
+    height: auto;
 }
 
 /* normalize form elements - end */
 
 input, select, button, textarea, a.button {
-	padding: 0.2em 0.1em;
-	margin:	 0.2em 0;
-	margin:  0.2em 0.3em; /* 2021-02 - horizontal padding for label pre and post */
-	border-radius: 0.15em;
-	font-size: 0.9rem;
-	font-weight: 300;
-	line-height: 1.2;
+    padding:        0.2em 0.1em;
+    margin:         0.2em 0;
+    margin:         0.2em 0.3em; /* 2021-02 - horizontal padding for label pre and post */
+    border-radius:  0.15em;
+    font-size:      0.9rem;
+    font-weight:  300;
+    line-height:    1.2;
 
-	/* width: calc(100% - 1rem); */
-	/*width: 120px;*/	/*prevents the size attribute from working*/
-	/* width: 100%; */
+    /* width: calc(100% - 1rem); */
+    /*width: 120px;*/    /*prevents the size attribute from working*/
+    /* width: 100%; */
 
-	color: var(--clr-input-fg);
-	background-color: var(--clr-input-bg);
+    color: var(--clr-input-fg);
+    background-color: var(--clr-input-bg);
 
 
-	border: 1px solid #888;	/* chrome defaults to 2 pixel shadow */
+    border: 1px solid #888;    /* chrome defaults to 2 pixel shadow */
 }
 
 /* make the placeholder lighter */
 ::placeholder {
-	color: #000;
-	opacity: 0.20;
+    color: #000;
+    opacity: 0.20;
 }
 
 /*
-	valid style only for non empty inputs would be
-		 input:not([value=""]):focus:valid
-	but its impossible with CSS: stackoverflow.com/questions/16952526/
+    valid style only for non empty inputs would be
+         input:not([value=""]):focus:valid
+    but its impossible with CSS: stackoverflow.com/questions/16952526/
 */
 input:focus:valid {
 }
@@ -557,11 +557,11 @@ input:not([type=submit]):valid {
 }
 
 input:not([type=submit]):focus:valid {
-	background-color: var(--clr-valid);
+    background-color: var(--clr-valid);
 }
 
 input:disabled, select:disabled {
-	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIklEQVQIW2NkQAKrVq36zwjjgzhhYWGMYAEYB8RmROaABADeOQ8CXl/xfgAAAABJRU5ErkJggg==) repeat;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIklEQVQIW2NkQAKrVq36zwjjgzhhYWGMYAEYB8RmROaABADeOQ8CXl/xfgAAAABJRU5ErkJggg==) repeat;
 }
 
 /* Hide HTML5 Up and Down arrows. */
@@ -577,89 +577,89 @@ input[type="number"] {
 }
 
 a.button {
-	display: inline-block;
-	text-align: center;
+    display: inline-block;
+    text-align: center;
 }
 
 button, input[type="submit"], input[type="reset"], a.button {
-	padding:         0.5em  0.9em;
-	padding-bottom:  0.6em;
-	background-color: var(--clr-pri);
-	color: var(--clr-fg);
-	color: var(--clr-sec);
-	font-weight: 500;
+    padding:         0.5em  0.9em;
+    padding-bottom:  0.6em;
+    background-color: var(--clr-pri);
+    color: var(--clr-fg);
+    color: var(--clr-sec);
+    font-weight: 500;
 }
 
 /* suppressing default arrow icon from dropdown */
 select::-ms-expand {
-	display: none;
+    display: none;
 }
 
 select {
-	/* -moz-appearance: none;
-	-webkit-appearance: none;
-	appearance: none; */
-	text-indent: 1px;
-	text-overflow: '';
-	border: none;
+    /* -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none; */
+    text-indent: 1px;
+    text-overflow: '';
+    border: none;
 
-	/* suppressing light blue background from options - does not work */
-	outline: none;
+    /* suppressing light blue background from options - does not work */
+    outline: none;
 }
 
 option {
-	padding: 0.4em;
-	color: #000;
-	background-color: transparent;
-	border: none;
+    padding: 0.4em;
+    color: #000;
+    background-color: transparent;
+    border: none;
 }
 
 select:-moz-focusring {
-	color:	transparent;
-	text-shadow: 0 0 0 #000;
+    color:    transparent;
+    text-shadow: 0 0 0 #000;
 }
 
 /*
-	select-inputs with long labels should not stretch their container
-	stackoverflow.com/questions/2591796
+    select-inputs with long labels should not stretch their container
+    stackoverflow.com/questions/2591796
 
-	2021-02:
-	all it takes to preven long options from stretching the select:
+    2021-02:
+    all it takes to preven long options from stretching the select:
         max-width: 80px;
 
 */
 select {
-	max-width: 99%      !important;
-	/*overflow:  hidden !important; */
+    max-width: 99%      !important;
+    /*overflow:  hidden !important; */
 }
 option {
-	max-width: 99%      !important;
-	/*overflow:  hidden !important; */
+    max-width: 99%      !important;
+    /*overflow:  hidden !important; */
 }
 
 
 /*
-	artificial arrow icon for select/dropdown
-	by wrapping a div around each select ;
-	looks more stylish;
-	the arrow is creatd by the ::after pseudo tag;
-	requires the dropdown button itself to be suppressed;
+    artificial arrow icon for select/dropdown
+    by wrapping a div around each select ;
+    looks more stylish;
+    the arrow is creatd by the ::after pseudo tag;
+    requires the dropdown button itself to be suppressed;
 
-	even when the pseudo class is disabled, this style must be set;
+    even when the pseudo class is disabled, this style must be set;
 
-	also created by struc2frm
+    also created by struc2frm
 */
 .select-arrow {
-	position: relative;
-	display: inline-block;
+    position: relative;
+    display: inline-block;
     margin: 0;
     padding: 0;
 }
 
 div.wildcardselect {
     display: inline-block;
-	margin-top: 0.2rem;
-	vertical-align: top;
+    margin-top: 0.2rem;
+    vertical-align: top;
 }
 div.wildcardselect input {
     font-size: 80%;
@@ -670,125 +670,125 @@ div.wildcardselect input {
 
 .DISABLED-select-arrow::after {
 
-	/* display:	inline-block; */
-	position: absolute;
-	right:		 1.5rem;
-	top:		 1.3rem;
-	/* z-index: 103; */
+    /* display:    inline-block; */
+    position:    absolute;
+    right:       1.5rem;
+    top:         1.3rem;
+    /* z-index: 103; */
 
-	pointer-events: none;
+    pointer-events: none;
 
-	content: " ";
-	width:	0.6em;
-	height: 0.6em;
+    content: " ";
+    width:    0.6em;
+    height: 0.6em;
 
-	transform-origin: center;
-	transform: rotate(-45deg);
-	/* background-color: blueviolet; */
-	background: transparent;
-	color: var(--clr-pri);
-	border-left:	 2px solid var(--clr-pri);
-	border-bottom: 2px solid var(--clr-pri);
+    transform-origin: center;
+    transform: rotate(-45deg);
+    /* background-color: blueviolet; */
+    background: transparent;
+    color: var(--clr-pri);
+    border-left:     2px solid var(--clr-pri);
+    border-bottom: 2px solid var(--clr-pri);
 }
 
 input[type=checkbox],
 input[type=radio] {
 
-	display: inline-block;
-	/* inline-block needs some width;
-		firefox takes it as base for scale(2) below;
-	*/
-	width:	1.2em;
-	/* even better: no bloated focus rectangle */
-	width:	auto;
+    display: inline-block;
+    /* inline-block needs some width;
+        firefox takes it as base for scale(2) below;
+    */
+    width:    1.2em;
+    /* even better: no bloated focus rectangle */
+    width:    auto;
 
-	vertical-align: middle;
-	margin: 0.40rem 0.45rem; /* labels far away enough from scaled input; padding is useless here	*/
+    vertical-align: middle;
+    margin: 0.40rem 0.45rem; /* labels far away enough from scaled input; padding is useless here    */
 
-	/* margin-bottom: 0.45rem; */  /*  2021-02 - height correction removed  */
+    /* margin-bottom: 0.45rem; */  /*  2021-02 - height correction removed  */
 
-	/*
-		zoom:	 2.0;
-		height: 2.0em;
+    /*
+        zoom:     2.0;
+        height: 2.0em;
 
-		both no worki on firefox -	though in chrome
-		therefore we resort to scale:
-	*/
-	transform: scale(2.25);
-	transform: scale(1.75);
+        both no worki on firefox -    though in chrome
+        therefore we resort to scale:
+    */
+    transform: scale(2.25);
+    transform: scale(1.75);
 
-	/*
-	all these are ignored:
-		color: crimson;
-		background-color: bisque;
-		border: 1px solid red !important;
-	*/
+    /*
+    all these are ignored:
+        color: crimson;
+        background-color: bisque;
+        border: 1px solid red !important;
+    */
 
 }
 
 /*
-	firefox and chrome need different scaling
-	stackoverflow.com/questions/952861
+    firefox and chrome need different scaling
+    stackoverflow.com/questions/952861
 
 */
 @supports (-moz-appearance:none) {
-	/* p { color:red; }	*/
-	input[type=checkbox],
-	input[type=radio] {
-		transform: scale(2);
-	}
+    /* p { color:red; }    */
+    input[type=checkbox],
+    input[type=radio] {
+        transform: scale(2);
+    }
 }
 input[type=checkbox]:focus,
-input[type=radio]:focus		 {
-	 /* scale(2) also scales the focus rectangle :( */
-	box-shadow:
-		0 0 0 0.020em var(--clr-sec),
-		0 0 0 0.060em var(--clr-pri-hov);
+input[type=radio]:focus         {
+     /* scale(2) also scales the focus rectangle :( */
+    box-shadow:
+        0 0 0 0.020em var(--clr-sec),
+        0 0 0 0.060em var(--clr-pri-hov);
 }
 
 
 .error-block, .error {
-	color: var(--clr-err);
+    color: var(--clr-err);
 }
 
 .error{
-	line-height:1.6em;
-	/* like pre but lines too long are broken
-		not stretching the container
-		extends to 100% of container
-		thus container [max]-width should be specified
+    line-height:1.6em;
+    /* like pre but lines too long are broken
+        not stretching the container
+        extends to 100% of container
+        thus container [max]-width should be specified
 
-		pre-wrap => preserve white space
-		pre-line => collapse white space
-	*/
-	white-space: pre-line; /* see also .postlabel, .plain-text-broken and .error */
-	max-width: 620px;
+        pre-wrap => preserve white space
+        pre-line => collapse white space
+    */
+    white-space: pre-line; /* see also .postlabel, .plain-text-broken and .error */
+    max-width: 620px;
 }
 
 #console-log {
-	color: black;
-	background-color: white;
-	/* like pre but lines too long are broken
-		not stretching the container
-		extends to 100% of container
-		thus container [max]-width should be specified
+    color: black;
+    background-color: white;
+    /* like pre but lines too long are broken
+        not stretching the container
+        extends to 100% of container
+        thus container [max]-width should be specified
 
-		pre-wrap => preserve white space
-		pre-line => collapse white space
-	*/
-	white-space: pre-wrap; /* see also .postlabel, .plain-text-broken and .error */
-	line-height: 120%;
-	background-color:#eee;
-	margin: 8px 0;
-	margin-left: 46px;
-	display: none;
+        pre-wrap => preserve white space
+        pre-line => collapse white space
+    */
+    white-space:     pre-wrap; /* see also .postlabel, .plain-text-broken and .error */
+    line-height:     120%;
+    background-color:#eee;
+    margin:          8px 0;
+    margin-left:     46px;
+    display:         none;
 }
 
 /* text helpers */
 
 
 .bold {
-	font-weight: bold;
+    font-weight: bold;
 }
 
 /*
@@ -802,27 +802,27 @@ input[type=radio]:focus		 {
 
 .suffix-inner {
 
-	display: inline-block;
-	/* width: 75%; */  /* 2021-02 - disabled */
-	
+    display: inline-block;
+    /* width: 75%; */  /* 2021-02 - disabled */
+
     /* vertical-align: top; */
     white-space: normal !important;  /* overriding outer element setting */
 
-	font-size: 95%; /* like label and suffix */
-	letter-spacing:	0.03rem;
+    font-size:         95%;           /* like label and suffix */
+    letter-spacing:    0.03rem;
 
 }
 
 .plain-text-broken {
-	/* like pre but lines too long are broken
-		not stretching the container
-		extends to 100% of container
-		thus container [max]-width should be specified
-	*/
-	white-space: pre-wrap; /* see also .postlabel, .plain-text-broken and .error */
+    /* like pre but lines too long are broken
+        not stretching the container
+        extends to 100% of container
+        thus container [max]-width should be specified
+    */
+    white-space:  pre-wrap; /* see also .postlabel, .plain-text-broken and .error */
 
-	display: inline-block;
-	font-family: 'Courier New', Courier;
+    display:      inline-block;
+    font-family: 'Courier New', Courier;
 
 }
 
@@ -830,84 +830,84 @@ input[type=radio]:focus		 {
 
 
 
-/* ================= flex grid stuff - start	================= */
+/* ================= flex grid stuff - start    ================= */
 
 /* flexbox container */
 .flex-horizonal {
-	display: flex;
-	flex-direction: row;
+    display: flex;
+    flex-direction: row;
 
-	justify-content: space-around;  /* axis-1: [start, end, baseline, space-between] */
-	align-content:	 space-around;  /*          justify-content of the whole multi-lined compound  */
+    justify-content: space-around;  /* axis-1: [start, end, baseline, space-between] */
+    align-content:   space-around;  /*          justify-content of the whole multi-lined compound  */
 
-	align-items:		   center;	/* axis-2 */
-	/* counterpart to align-self on flex-item */
-	/* [stretch | flex-end | flex-start] */
+    align-items:     center;    /* axis-2 */
+    /* counterpart to align-self on flex-item */
+    /* [stretch | flex-end | flex-start] */
 
-	flex-wrap: nowrap;
+    flex-wrap: nowrap;
 
-	/* gap is supported by firefx + chrome  */
-	/* gap: 0.1em; */
+    /* gap is supported by firefx + chrome  */
+    /* gap: 0.1em; */
 }
 
 /* instead of center */
 .flex-horizonal-top {
-	align-items:		 start   ;
-	align-items:		 baseline;
+    align-items:         start   ;
+    align-items:         baseline;
 }
 
 /* flexbox container 2 */
 .flex-vertical {
-	display: flex;
-	flex-direction:	column;
+    display:         flex;
+    flex-direction:  column;
 
-	justify-content: space-around;
-	align-content:	 space-around;
+    justify-content: space-around;
+    align-content:   space-around;
 
-	align-items:		 center;
+    align-items:     center;
 
-	flex-wrap: nowrap;
+    flex-wrap:       nowrap;
 }
 
 .wrap {
-	flex-wrap: wrap;
+    flex-wrap: wrap;
 }
 
 .flex-item {
-	flex-grow:   1;  /* extra space is allocated  1 / (sum of all flex-grow)  */
-	flex-shrink: 1;
-	flex-basis: inherit;  /* multiplier for flex-shrink and -grow */
-	align-self: inherit;  /* counterpart to container-align-items*/
+    flex-grow:   1;  /* extra space is allocated  1 / (sum of all flex-grow)  */
+    flex-shrink: 1;
+    flex-basis:  inherit;  /* multiplier for flex-shrink and -grow */
+    align-self:  inherit;  /* counterpart to container-align-items*/
 
-	/* order: 1; */  /* overrides the HTML order - screen reader and tab order get messed up */
+    /* order: 1; */  /* overrides the HTML order - screen reader and tab order get messed up */
 }
 
 .flex-item-horizontal {
-	border: none;
-	border: 0.2em solid #252;
-	border: 0.2em solid transparent;
-	border-left:  0.1em solid transparent;
-	border-right: 0.5em solid transparent;
+    border:          none;
+    border:          0.2em solid #252;
+    border:          0.2em solid transparent;
+    border-left:     0.1em solid transparent;
+    border-right:    0.5em solid transparent;
 }
 
 .flex-item-vertical {
-	border-bottom:  0.75em solid transparent;
-	border-top:		0.75em solid transparent;
+    border-bottom:  0.75em solid transparent;
+    border-top:     0.75em solid transparent;
 }
 
 .flex-item-center {
-	text-align: center;
+    text-align: center;
 }
 
 .flex-item-horizontal,
 .flex-item-vertical {
-	/* background-color: blueviolet; */
+    /* background-color: blueviolet; */
 }
 
 /* for javascript trigggered testing */
 .directionColumn {
-	max-height: 20rem;
-	flex-direction: column;
+    max-height: 20rem;
+    flex-direction: column;
 }
 /* ================= flex grid stuff - end ================= */
 
@@ -918,84 +918,84 @@ input[type=radio]:focus		 {
 /*
 mobile case
 
-	nav
-		logo
-		1st level - consisting of invisible toggle and visible label 'burger'
-			2nd level menu
-				3rd level menu
+    nav
+        logo
+        1st level - consisting of invisible toggle and visible label 'burger'
+            2nd level menu
+                3rd level menu
 
 desktop case
 
-	nav
-		logo
-		2nd level menu
-			3rd level menu
+    nav
+        logo
+        2nd level menu
+            3rd level menu
 
 */
 nav {
-	position: var(--nav-bar-position);
-	z-index: 103; /* over content*/
-	width: 100%;
-	min-height:			 var(--nav-height);
-	display: grid;
-	grid-template-columns: 4fr 4fr 3.0em [col-menu] 2em 0.15fr;
-	grid-template-columns: [col-img] 6fr [col-title] 4fr [col-menu] 1fr;
+    position: var(--nav-bar-position);
+    z-index: 103; /* over content*/
+    width: 100%;
+    min-height:             var(--nav-height);
+    display: grid;
+    grid-template-columns: 4fr 4fr 3.0em [col-menu] 2em 0.15fr;
+    grid-template-columns: [col-img] 6fr [col-title] 4fr [col-menu] 1.3fr;
 
-	/* main axis */
-	/*
-	css-tricks.com/snippets/css/a-guide-to-flexbox/
-	css-tricks.com/wp-content/uploads/2018/10/justify-content.svg
-			justify-content: center plus using up all width: space-around
-	*/
-	justify-content:	right;
-	/* justify-items: center;	/* not ignored - as some sources say */
-	/* justify-self	below */
-	/* no justify-items and no justify-self?	stackoverflow.com/questions/32551291/	*/
-	/* cross axis */
-	/* css-tricks.com/wp-content/uploads/2018/10/align-items.svg */
-	align-content:	 space-around;
-	align-items:		 center;
+    /* main axis */
+    /*
+    css-tricks.com/snippets/css/a-guide-to-flexbox/
+    css-tricks.com/wp-content/uploads/2018/10/justify-content.svg
+            justify-content: center plus using up all width: space-around
+    */
+    justify-content:    right;
+    /* justify-items: center;    /* not ignored - as some sources say */
+    /* justify-self    below */
+    /* no justify-items and no justify-self?    stackoverflow.com/questions/32551291/    */
+    /* cross axis */
+    /* css-tricks.com/wp-content/uploads/2018/10/align-items.svg */
+    align-content:     space-around;
+    align-items:         center;
 
-	background-color: var(--clr-sec);
+    background-color: var(--clr-sec);
 
 }
 
 nav a.logo,
 nav a.title
 {
-	display:        inline-block;
+    display:        inline-block;
     vertical-align: middle;
 
-	position:       relative;
+    position:       relative;
 
-	color:          var(--clr-pri);
+    color:          var(--clr-pri);
 
-	font-size:      unset;
-	line-height:    unset;
-	letter-spacing: 0.10rem;
-	/* white-space: nowrap; */
+    font-size:      unset;
+    line-height:    unset;
+    letter-spacing: 0.10rem;
+    /* white-space: nowrap; */
 }
 
 /* placeholder for img insertion */
 nav a.logo img {
-	display:        inline-block;  /* activates margins */
+    display:        inline-block;  /* activates margins */
     vertical-align: middle;
 
-	position: relative;
-	top:		 0.15rem;
-	left:		-0.10rem;
+    position:       relative;
+    top:            0.15rem;
+    left:          -0.10rem;
 
-	height: calc(var(--nav-height) - 0.8rem);
+    height: calc(var(--nav-height) - 0.8rem);
 
-	margin-right: 0.2rem;
+    margin-right: 0.2rem;
 
-	/* requires display, width and height being set */
-	/* content: var(--img-logo-icon); */
+    /* requires display, width and height being set */
+    /* content: var(--img-logo-icon); */
 
-	/* not working in firefox
-	   https://css-tricks.com/replace-the-image-in-an-img-with-css/ 
-	   does not work for unknown sizes
-	*/
+    /* not working in firefox
+       https://css-tricks.com/replace-the-image-in-an-img-with-css/
+       does not work for unknown sizes
+    */
 }
 
 
@@ -1003,461 +1003,463 @@ nav a.logo .logo-img-desktop {
 }
 
 nav a.logo .logo-img-mobile {
-	display: none;
+    display: none;
 }
 
 
 /* dont color logo as 'visited' */
 .logo:visited {
-	color: var(--clr-pri);
+    color: var(--clr-pri);
 }
 
 .login-icon {
-	grid-column: col-menu/span 1;
-	justify-self: center;
+    grid-column: col-menu/span 1;
+    justify-self: center;
 }
 
 img.logged-in {
-	display:	inline-block;
-	position: relative;
-	top:		 0.20rem;
-	width:	 1.6rem;
-	height:	1.4rem;
-	/* requires diplay, width and height being set */
-	content: var(--img-loggedin-icon);
+    display:     inline-block;
+    position:    relative;
+    top:         0.20rem;
+    width:       1.6rem;
+    height:      1.4rem;
+    /* requires diplay, width and height being set */
+    content: var(--img-loggedin-icon);
 }
 /*
-	checkbox;
-	out of sight; but not invisible;
-	=> can receive fo-cus, keeping it tabbable, showing a pseudo fo-cus on its label
+    checkbox;
+    out of sight; but not invisible;
+    => can receive fo-cus, keeping it tabbable, showing a pseudo fo-cus on its label
 */
 .mnu-1st-lvl-toggler {
-	position: absolute !important;
-	top:			 -9999px !important;
-	left:			-9999px !important;
+    position: absolute !important;
+    top:             -9999px !important;
+    left:            -9999px !important;
 }
-/* burger is the label for mnu-1st-lvl-toggler	*/
+/* burger is the label for mnu-1st-lvl-toggler    */
 /* only non-systematic name; instead of mnu-1st-lvl-label */
 .burger {
-	cursor: pointer;
+    cursor: pointer;
     grid-column: col-menu/span 1;
 
-	width: 1.32em;
-	font-size: 1.0rem;
+    /* width:       1.32em; */
+    font-size:   1.0rem;
 
-	white-space: normal; /* undo label */
+    white-space: normal; /* undo label */
+
+	justify-self:  center;
+	align-self:    center;
+
 }
 
 /* burger label contents */
 .burger div{
-	width: 25px;
-	height: 3px;
-	background-color: var(--clr-pri);
-	margin: 5px 0;
+    width:   25px;
+    height:   3px;
+    background-color: var(--clr-pri);
+    margin: 5px 0;
 }
 
 /*
-	labels dont have a focus - only the referenced input has;
-	which is out of sight;
-	=> *simulate* focus on burger / label
+    labels dont have a focus - only the referenced input has;
+    which is out of sight;
+    => *simulate* focus on burger / label
 */
 .mnu-1st-lvl-toggler:focus ~ .burger {
-	box-shadow:
-		0 0 0 0.175em var(--clr-sec),
-		0 0 0 0.250em var(--clr-pri-hov);
+    box-shadow:
+        0 0 0 0.175em var(--clr-sec),
+        0 0 0 0.250em var(--clr-pri-hov);
 }
 
 /* burger animation */
-.mnu-1st-lvl-toggler:checked ~	.burger .line1 {
-	transform:	rotate(-45deg) translate(-5px, 6px);
-	transition: transform 67ms ease-in;
+.mnu-1st-lvl-toggler:checked ~    .burger .line1 {
+    transform:    rotate(-45deg) translate(-5px, 6px);
+    transition:   transform 67ms ease-in;
 }
-.mnu-1st-lvl-toggler:checked ~	.burger .line2 {
-	opacity: 0;
-	transition: opacity 14ms ease-in-out;
+.mnu-1st-lvl-toggler:checked ~    .burger .line2 {
+    opacity:      0;
+    transition:   opacity 14ms ease-in-out;
 }
-.mnu-1st-lvl-toggler:checked ~	.burger .line3 {
-	transform:	rotate(45deg) translate(-5px, -6px);
-	transition: transform 67ms ease-in;
+.mnu-1st-lvl-toggler:checked ~    .burger .line3 {
+    transform:    rotate(45deg) translate(-5px, -6px);
+    transition:   transform 67ms ease-in;
 }
 
 /* 2nd level menu - inside nav */
 ul.mnu-2nd-lvl {
 
-	position: absolute;
-	z-index: 199;
-	right:		0;
-	top:		var(--nav-height);
+    position:   absolute;
+    z-index:    199;
+    right:        0;
+    top:        var(--nav-height);
 
-	background-color: var(--clr-sec);
-	/* background-color: red; */
+    background-color: var(--clr-sec);
 
-	display: flex;
-	flex-direction: column;
-	/* vertical align; interacts with margins on ul.mnu-2nd-lvl a */
-	align-items: center;
-	width:	 60%;
-	width:	 66%;
-	height: auto;
-	/* height: var(--nav-rest-height); */
+    display:         flex;
+    flex-direction:  column;
+    /* vertical align; interacts with margins on ul.mnu-2nd-lvl a */
+    align-items:     center;
+    width:           60%;
+    width:           66%;
+    height:          auto;
+    /* height: var(--nav-rest-height); */
 
-	padding-bottom: 0.4em;
-	border-left:	 6px solid var(--clr-sec-drk2);
-	border-bottom: 6px solid var(--clr-sec-drk2);
+    padding-bottom:  0.4em;
+    border-left:     6px solid var(--clr-sec-drk2);
+    border-bottom:   6px solid var(--clr-sec-drk2);
 
 
-	/*
-		css-tricks.com/snippets/css/a-guide-to-flexbox/
-		css-tricks.com/wp-content/uploads/2018/10/justify-content.svg
-		justify-content: center plus using up all width: space-around
-	*/
-	justify-content: space-around;
+    /*
+        css-tricks.com/snippets/css/a-guide-to-flexbox/
+        css-tricks.com/wp-content/uploads/2018/10/justify-content.svg
+        justify-content: center plus using up all width: space-around
+    */
+    justify-content: space-around;
 
-	/* multi line flex */
-	/*	flex-wrap: wrap;
-			align-content: stretch;
-			align-content: flex-end;
-	*/
-	transform-origin: top;
+    /* multi line flex */
+    /*    flex-wrap: wrap;
+            align-content: stretch;
+            align-content: flex-end;
+    */
+    transform-origin: top;
 
 }
 /* second level menu item */
 ul.mnu-2nd-lvl li {
-	width: 100%;
+    width: 100%;
 }
 
 /* second level menu item - with a 3rd level child node */
 ul.mnu-2nd-lvl li.nde-2nd-lvl {
-	/* relative positioning - a fix point for third level dropdown */
-	position: relative;
-	/* reserve room for the pseudo element icon */
-	/* padding-right: 2em; */
+    /* relative positioning - a fix point for third level dropdown */
+    position: relative;
+    /* reserve room for the pseudo element icon */
+    /* padding-right: 2em; */
 }
 
 /* second level item - icon to open third level */
 ul.mnu-2nd-lvl li.nde-2nd-lvl::before {
 
-	position: absolute;
-	z-index:	105;
-	display:	block;
+    position:  absolute;
+    z-index:   105;
+    display:   block;
 
-	content: ' ';
+    content:   ' ';
 
-	width:	0.7em;
-	height: 0.7em;
+    width:    0.7em;
+    height:   0.7em;
 
-	pointer-events: none;
+    pointer-events: none;
 
-	right: 1.7em;
-	top:	 1.16em;
+    right:    1.7em;
+    top:      1.16em;
 
-	background-color: blueviolet;
-	background: transparent;
+    background-color: blueviolet;
+    background: transparent;
 
-	transform-origin: center;
-	transform: rotate(-45deg);
+    transform-origin: center;
+    transform: rotate(-45deg);
 
-	color: var(--clr-pri);
-	border-left:	 2px solid var(--clr-pri);
-	border-bottom: 2px solid var(--clr-pri);
+    color: var(--clr-pri);
+    border-left:     2px solid var(--clr-pri);
+    border-bottom:   2px solid var(--clr-pri);
 
 }
 /* static styling of all the links inside menu */
 ul.mnu-2nd-lvl a {
-	display: inline-block;
-	width:	 auto;
+    display: inline-block;
+    width:     auto;
 
-	padding: 0.12em	0.8em; /* padding here - for focus rectangle distance */
-	margin:	0.75em	1.0em;
+    padding:   0.12em    0.8em; /* padding here - for focus rectangle distance */
+    margin:    0.75em    1.0em;
 
-	border-radius: 0.35em;
+    border-radius: 0.35em;
 
-	color: var(--clr-pri);
-	font-size: 1.02rem;
-	text-decoration: none;
-	letter-spacing: 0.10em;
+    color: var(--clr-pri);
+    font-size: 1.02rem;
+    text-decoration: none;
+    letter-spacing: 0.10em;
 }
 ul.mnu-2nd-lvl a:hover,
 ul.mnu-2nd-lvl a:focus
 {
-	color: var(--clr-pri-hov);
+    color: var(--clr-pri-hov);
 }
 /* animations from checkbox switching 2st level menu on and off... */
 
 /* contract menu by unchecking */
 ul.mnu-2nd-lvl {
-	transition: transform	130ms ease-in-out;
-	transform: scaleY(0);
+    transition: transform    130ms ease-in-out;
+    transform: scaleY(0);
 }
 
-/* expand	 menu by	checking */
+/* expand     menu by    checking */
 .mnu-1st-lvl-toggler:checked ~ ul.mnu-2nd-lvl {
-	transition: transform 240ms ease-in-out;
-	transform: scaleY(1);
+    transition: transform 240ms ease-in-out;
+    transform: scaleY(1);
 }
 
-/* hide links by	 unchecking */
+/* hide links by     unchecking */
 ul.mnu-2nd-lvl a {
-	visibility: hidden;	/* => no tabbing */
-	opacity: 0;
-	transition: opacity 190ms ease-in-out;
+    visibility: hidden;    /* => no tabbing */
+    opacity: 0;
+    transition: opacity 190ms ease-in-out;
 }
 
-/* show links by		 checking - with delay */
+/* show links by         checking - with delay */
 .mnu-1st-lvl-toggler:checked ~ ul.mnu-2nd-lvl a {
-	visibility: visible;
-	opacity: 1;
-	transition: opacity 190ms ease-in-out 250ms;
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 190ms ease-in-out 250ms;
 }
 /* static menu third level - 3rd level */
 ul.mnu-3rd-lvl {
 
-	display:	block;
-	position: relative;	/* vertically embed - for horizontal breakout: absolutes */
+    display:     block;
+    position:    relative;    /* vertically embed - for horizontal breakout: absolutes */
 
-	top:		 50%;
-	left:		1.2em; /* reset */
-	right:	 inherit;
+    top:         50%;
+    left:        1.2em; /* reset */
+    right:       inherit;
 
-	width: calc(100% - 1.2em);
-	/* z-index: 120; */
-	background-color: var(--clr-sec);
-	/* background-color: var(--clr-zew2-md); */
-	/* box-shadow: 0 0 0.1em 0.4em darkorchid; */
+    width:        calc(100% - 1.2em);
+    /* z-index: 120; */
+    background-color: var(--clr-sec);
+    /* background-color: var(--clr-zew2-md); */
+    /* box-shadow: 0 0 0.1em 0.4em darkorchid; */
 
-	transform-origin: top;
+    transform-origin: top;
 }
 
 /*
-	show hide 3rd level
-	state closed - default
+    show hide 3rd level
+    state closed - default
 */
 ul.mnu-3rd-lvl {
 
-	/*
-	visibility hidden does not free the space of the 3rd level menu.
-	display:none does, but also removes the links inside from tab order.
-	=> we can only move the menu out of layout flow using position: absolute;
-	then combining position relative, transform and opacity
-	to animate it into existence
-	*/
-	position:	absolute;
-	transform: scaleY(0.0);
-	opacity:	 0.0;
+    /*
+    visibility hidden does not free the space of the 3rd level menu.
+    display:none does, but also removes the links inside from tab order.
+    => we can only move the menu out of layout flow using position: absolute;
+    then combining position relative, transform and opacity
+    to animate it into existence
+    */
+    position:    absolute;
+    transform:   scaleY(0.0);
+    opacity:     0.0;
 
-	transition:
-		transform 180ms ease-in-out,
-		opacity	 180ms ease-in-out
-	;
+    transition:
+        transform 180ms ease-in-out,
+        opacity     180ms ease-in-out
+    ;
 
 }
 /*
-	state opened - by focus/hover over parent .nde-2nd-lvl or focus on itself + its children
+    state opened - by focus/hover over parent .nde-2nd-lvl or focus on itself + its children
 
-				show		3rd level menu on mouse hover
-				show		3rd level menu on parent focus
-	keep	showing 3rd level menu, once focus is inside
+                show        3rd level menu on mouse hover
+                show        3rd level menu on parent focus
+    keep    showing 3rd level menu, once focus is inside
 
-	css-tricks.com/keeping-parent-visible-child-focus/
+    css-tricks.com/keeping-parent-visible-child-focus/
 */
-.nde-2nd-lvl:hover		ul.mnu-3rd-lvl,
-.nde-2nd-lvl a:focus ~	ul.mnu-3rd-lvl,
-						ul.mnu-3rd-lvl:focus-within,
+.nde-2nd-lvl:hover        ul.mnu-3rd-lvl,
+.nde-2nd-lvl a:focus ~    ul.mnu-3rd-lvl,
+                        ul.mnu-3rd-lvl:focus-within,
 oh-god-this-works-1 {
-	position:	relative;
-	opacity:	 1;
-	transform: scaleY(1);
+    position:    relative;
+    opacity:     1;
+    transform:   scaleY(1);
 }
 
 /* helper class, to hide mnu-3rd-lvl
-		attached / detached by only via javascript
-		similar to mnu-3rd-lvl - but stronger because !important
+        attached / detached by only via javascript
+        similar to mnu-3rd-lvl - but stronger because !important
 
-		we would love to change li.nde-2nd-lvl::before
-		into an upward arrow, but pseudo elements
-		cannot be styled via javascript
+        we would love to change li.nde-2nd-lvl::before
+        into an upward arrow, but pseudo elements
+        cannot be styled via javascript
 */
 .mnu-3rd-lvl-pull-up{
-	position:	absolute		!important;
-	opacity:	 0.0				 !important;
-	transform: scaleY(0.0) !important;
+    position:    absolute     !important;
+    opacity:     0.0          !important;
+    transform:   scaleY(0.0)  !important;
 }
 
 ul.mnu-3rd-lvl li {
-	font-size: 0.95rem;
-	background-color: var(--clr-sec-drk1);
-	/* background-image: linear-gradient(	 -25deg,	var(--clr-sec), var(--clr-sec), var(--clr-sec), var(--clr-sec), var(--clr-sec-drk2)); */
+    font-size: 0.95rem;
+    background-color: var(--clr-sec-drk1);
+    /* background-image: linear-gradient(     -25deg,    var(--clr-sec), var(--clr-sec), var(--clr-sec), var(--clr-sec), var(--clr-sec-drk2)); */
 
-	border-bottom: 0.08em solid var(--clr-sec-drk2);
+    border-bottom: 0.08em solid var(--clr-sec-drk2);
 }
 
 ul.mnu-3rd-lvl li a:hover,
 ul.mnu-3rd-lvl li a:focus {
-	box-shadow:
-		0 0 0 0.175em var(--clr-sec-drk1),
-		0 0 0 0.250em var(--clr-pri-hov)
-		;
+    box-shadow:
+        0 0 0 0.175em var(--clr-sec-drk1),
+        0 0 0 0.250em var(--clr-pri-hov)
+        ;
 }
 
 ul.mnu-3rd-lvl li:last-child {
-	border-bottom: none;
+    border-bottom: none;
 }
 /* nav mobile end */
 
 /* nav desktop start */
 @media screen and (min-width: 800px) {
 
-	nav {
-		/* unsupported with IE */
-		all: unset;
+    nav {
+        /* unsupported with IE */
+        all: unset;
 
 
 
-		position: var(--nav-bar-position);
-		z-index: 103; /* over content*/
+        position: var(--nav-bar-position);
+        z-index: 103; /* over content*/
 
-		width: 100%;
-		min-height:			 var(--nav-height);
-		background-color: var(--clr-sec);
+        width: 100%;
+        min-height:       var(--nav-height);
+        background-color: var(--clr-sec);
 
-		display: grid;
-		grid-template-columns: 4fr 4fr 0.7fr 2fr [col-menu] 1fr;
-	    grid-template-columns: [col-img] 6fr [col-title] 4fr [col-menu] 1fr ;
+        display: grid;
+        grid-template-columns: 4fr 4fr 0.7fr 2fr [col-menu] 1fr;
+        grid-template-columns: [col-img] 6fr [col-title] 4fr [col-menu] 1fr ;
 
 
-		justify-content: right;
+        justify-content: right;
 
-		align-content: space-around;
-		align-items: center;
+        align-content: space-around;
+        align-items:   center;
 
-	}
+    }
 
-	.login-icon {
-		width: 1.4rem;
-		grid-column: col-menu/span 1;
-		justify-self: center;
-	}
+    .login-icon {
+        width: 1.4rem;
+        grid-column: col-menu/span 1;
+        justify-self: center;
+    }
 
-	.burger {
-		display: none;
-	}
+    .burger {
+        display: none;
+    }
 
-	ul.mnu-2nd-lvl	{
+    ul.mnu-2nd-lvl    {
 
-		/* all: unset; */
-		visibility: visible;
+        /* all: unset; */
+        visibility: visible;
 
-		transform:	translateX(0);
-		transition: none;
+        transform:    translateX(0);
+        transition: none;
 
-		grid-column: col-menu/span 1;
+        grid-column: col-menu/span 1;
 
-		width: 100%;
+        width: 100%;
 
-		position: relative;
-		top:	 0;
-		right: 0;
+        position: relative;
+        top:      0;
+        right:    0;
 
-		display: flex;
-		flex-direction: row;
+        display:        flex;
+        flex-direction: row;
 
-		/*
-			css-tricks.com/snippets/css/a-guide-to-flexbox/
-			css-tricks.com/wp-content/uploads/2018/10/justify-content.svg
-			justify-content: center plus using up all width: space-around
-		*/
-		justify-content: space-between;
-		align-content:	 space-around;
-		align-items:		 center;
-		/* justify-items: center;	this property is ignored */
-		padding-bottom:	 0;
-		border-left:	 none;
-		border-bottom: none;
-	}
+        /*
+            css-tricks.com/snippets/css/a-guide-to-flexbox/
+            css-tricks.com/wp-content/uploads/2018/10/justify-content.svg
+            justify-content: center plus using up all width: space-around
+        */
+        justify-content:   space-between;
+        align-content:     space-around;
+        align-items:       center;
+        /* justify-items: center;    this property is ignored */
+        padding-bottom:    0;
+        border-left:       none;
+        border-bottom:     none;
+    }
 
-	li.nde-2nd-lvl::before {
-		content: none !important;
-	}
+    li.nde-2nd-lvl::before {
+        content: none !important;
+    }
 
-	ul.mnu-3rd-lvl {
+    ul.mnu-3rd-lvl {
 
-		position: absolute !important;	/* otherwise selector is not strong enough*/
+        position: absolute !important;    /* otherwise selector is not strong enough*/
 
-		top:			100%;
-		left:			 0%;
-		right: inherit;	/* reset */
+        top:            100%;
+        left:             0%;
+        right: inherit;    /* reset */
 
-		/* needs being wider than the 2nd lvl menu item => align right last child	*/
-		width: 160%;
-	}
+        /* needs being wider than the 2nd lvl menu item => align right last child    */
+        width: 160%;
+    }
 
-	ul.mnu-2nd-lvl li:last-child	ul.mnu-3rd-lvl {
-		width: 140%;
-		left:	inherit;
-		/* => align right last child */
-		right:			 -1.4em;
-		/* background-color: red;	*/
-	}
+    ul.mnu-2nd-lvl li:last-child    ul.mnu-3rd-lvl {
+        width: 140%;
+        left:    inherit;
+        /* => align right last child */
+        right:             -1.4em;
+        /* background-color: red;    */
+    }
 
-	ul.mnu-2nd-lvl a {
-		visibility: visible;
-		opacity: 1;
+    ul.mnu-2nd-lvl a {
+        visibility: visible;
+        opacity: 1;
 
-		padding: 0.2em 0.4em;
-		top:		 0.05em; /* compensate for focus ::after */
+        padding: 0.2em 0.4em;
+        top:           0.05em; /* compensate for focus ::after */
 
-		box-shadow: none; /* for focus instead animated ::after underline*/
+        box-shadow: none; /* for focus instead animated ::after underline*/
 
-	}
+    }
 
-	/* hover for links 1: animated underline for the links */
-	ul.mnu-2nd-lvl a::after {
-		content: '';
-		display: block;
-		background-color: var(--clr-pri-hov);
+    /* hover for links 1: animated underline for the links */
+    ul.mnu-2nd-lvl a::after {
+        content: '';
+        display: block;
+        background-color: var(--clr-pri-hov);
 
-		/* position: absolute; */
-		position: relative;
-		left:	 0;
-		right:   0;
+        /* position: absolute; */
+        position: relative;
+        left:     0;
+        right:    0;
 
-		height:	 0.1em;
-		bottom: -0.11em;
+        height:     0.1em;
+        bottom:    -0.11em;
 
-		transform: scale(0, 1);
-		transition: transform ease-in-out 110ms;
-	}
-	/* hover for links 2 */
-	ul.mnu-2nd-lvl a:hover::after {
-		transform: scale(1,1);
-	}
-	ul.mnu-2nd-lvl a:focus::after {
-		transform: scale(1,1);
-		/* focus gets a stronger bar */
-		box-shadow: 0 0 0 0.02em var(--clr-pri-hov) ;
-	}
-	li.nde-2nd-lvl {
-		/* restore reserved space for pseudo element icon */
-		padding-right: 0.0em;
-	}
+        transform:  scale(0, 1);
+        transition: transform ease-in-out 110ms;
+    }
+    /* hover for links 2 */
+    ul.mnu-2nd-lvl a:hover::after {
+        transform: scale(1,1);
+    }
+    ul.mnu-2nd-lvl a:focus::after {
+        transform: scale(1,1);
+        /* focus gets a stronger bar */
+        box-shadow: 0 0 0 0.02em var(--clr-pri-hov) ;
+    }
+    li.nde-2nd-lvl {
+        /* restore reserved space for pseudo element icon */
+        padding-right: 0.0em;
+    }
 
-	ul.mnu-3rd-lvl li {
-		background-color: var(--clr-sec);
+    ul.mnu-3rd-lvl li {
+        background-color: var(--clr-sec);
+        padding-bottom:   0.4em;
+        border-right:     0.15rem solid var(--clr-sec-drk2);
+        border-left:      0.15rem solid var(--clr-sec-drk2);
 
-		padding-bottom: 0.4em;
-		border-right:	0.15rem solid var(--clr-sec-drk2);
-		border-left:	 0.15rem solid var(--clr-sec-drk2);
+    }
 
-	}
+    ul.mnu-3rd-lvl li:last-child {
+        border-bottom: 0.15rem solid var(--clr-sec-drk2);
+    }
 
-	ul.mnu-3rd-lvl li:last-child {
-		border-bottom: 0.15rem solid var(--clr-sec-drk2);
-	}
-
-	ul.mnu-3rd-lvl li a:hover,
-	ul.mnu-3rd-lvl li a:focus {
-		box-shadow: none;
-	}
+    ul.mnu-3rd-lvl li a:hover,
+    ul.mnu-3rd-lvl li a:focus {
+        box-shadow: none;
+    }
 }
 
 /* nav desktop end */
@@ -1465,81 +1467,81 @@ ul.mnu-3rd-lvl li:last-child {
 /* child of body - sibling of nav - parent of hori-center-me */
 .content {
 
-	position:   relative;
-	top:	    var(--content-top);
-	width:	    100%;
-	min-height: 91.6vh;  /* to test scrolling: min-height: 120vh; */
-	margin:	    0 auto;
-	padding:    0;
+    position:     relative;
+    top:          var(--content-top);
+    width:        100%;
+    min-height:    91.6vh;  /* to test scrolling: min-height: 120vh; */
+    margin:         0 auto;
+    padding:        0;
 
 
-	display:        flex;
-	flex-direction: column;
+    display:        flex;
+    flex-direction: column;
 
-	/* justify-content: center /* makes the content twitch on loading */
-	justify-items: center;		 /* not ignored - as some sources say */
-	/* justify-self on item level */
+    /* justify-content: center /* makes the content twitch on loading */
+    justify-items: center;         /* not ignored - as some sources say */
+    /* justify-self on item level */
 
-	align-items:	 center;
-	/* place-items: center start; */
+    align-items:   center;
+    /* place-items: center start; */
 
 
-	/* todo: this needs to be put into config */
-	background-color: var(--clr-sec);
-	background-color: var(--clr-sec-drk1);
-	background-blend-mode: multiply;
-	background-size: cover;
+    background-color: var(--clr-sec-drk1);
+    background-color: var(--clr-sec);
+    background-color: var(--clr-sec-lgt2);
+    background-blend-mode: multiply;
+    background-size: cover;
 
 }
 
 
-/* 	for global padding
-	 children can have padding:0; width=100%
-	 previously hori-center-me
+/*     for global padding
+     children can have padding:0; width=100%
+     previously hori-center-me
  */
 form[name=frmMain] {
 
-	display: flex;
-	flex-direction: column;
+    display: flex;
+    flex-direction: column;
 
-	width:       70%;
-	min-width:  960px;
+    width:       70%;
+    min-width:  960px;
 
-	margin:  0 auto;
-	padding: 0;
-	/* padding-top:20px; => causes vert scroll bar; use body.padding to adjust  */
-	/* padding-left:6%;  => aesthetic compensation moved to page rendering */
-	padding-right:  0px;
-	padding-bottom: 0px;
+    margin:  0 auto;
+    padding: 0;
+    /* padding-top:20px; => causes vert scroll bar; use body.padding to adjust  */
+    /* padding-left:6%;  => aesthetic compensation moved to page rendering */
+    padding-right:  0px;
+    padding-bottom: 0px;
 
-	border: none;
-	background-color: transparent ;   /* important for progress bar */
+    border: none;
+    background-color: transparent ;   /* important for progress bar */
 
 }
 
 .content form[name=frmMain] .content-quest {
-	display:         flex;
-	min-height:      40px;
-	border-top:      1.4rem solid transparent;
+    display:         flex;
+    min-height:      40px;
+    border-top:      1.4rem solid transparent;
 }
 
 .content form[name=frmMain] .content-footer {
-	width:           95%;
-	margin:          0 auto;
-	margin-top:      1rem;
-	margin-bottom:   1rem;
+    width:           95%;
+    margin:          0 auto;
+    margin-top:      1rem;
+    margin-bottom:   1rem;
 
-	display:         flex;
-	flex-direction:  row;
-	flex-wrap:       nowrap;
+    display:         flex;
+    flex-direction:  row;
+    flex-wrap:       nowrap;
 
-	/* main axis */
-	justify-content: space-around;
-	justify-content: space-between;
+    /* main axis */
+    justify-content: space-around;
+    justify-content: space-between;
 
-	/* cross axis */
-	align-items:     center;
-	align-items:     flex-start;
+    /* cross axis */
+    align-items:     center;
+    align-items:     flex-start;
 }
 
 
@@ -1552,58 +1554,58 @@ form[name=frmMain] {
 .vspacer-16,
 dummy
 {
-	margin: 0;
-	clear: both;
+    margin: 0;
+    clear: both;
 }
 
 .vspacer-0,.vspacer-00 {
-	height: 0px;
+    height: 0px;
 }
 
 .vspacer-2,.vspacer-02 {
-	height: 2px;
+    height: 2px;
 }
 
 .vspacer-8,.vspacer-08 {
-	height: 8px;
+    height: 8px;
 }
 
 .vspacer-16 {
-	height:16px;
+    height:16px;
 }
 
 .vspacer-24 {
-	height:24px;
+    height:24px;
 }
 
 .ib {
-	display:inline-block;
-	vertical-align: middle;
-	/* 	width:150px;	no width; leave it dynamic*/
-	white-space:nowrap; /* forced to div to stretch as wide as it's contents */
+    display:inline-block;
+    vertical-align: middle;
+    /*     width:150px;    no width; leave it dynamic*/
+    white-space:nowrap; /* forced to div to stretch as wide as it's contents */
 }
 
 .ib-030, .ib-060, .ib-090, .ib-120, .ib-150, .ib-200, .ib-250, .ib-300 {
-	display:inline-block;
-	vertical-align: middle;
-	white-space:nowrap;
+    display:inline-block;
+    vertical-align: middle;
+    white-space:nowrap;
 }
 
-.ib-030 { 	min-width:030px;	}
-.ib-060 { 	min-width:060px;	}
-.ib-090 { 	min-width:090px;	}
-.ib-120 { 	min-width:120px;	}
-.ib-150 { 	min-width:150px;	}
-.ib-200 { 	min-width:200px;	}
-.ib-250 { 	min-width:250px;	}
-.ib-300 { 	min-width:300px;	}
+.ib-030 {     min-width:030px;    }
+.ib-060 {     min-width:060px;    }
+.ib-090 {     min-width:090px;    }
+.ib-120 {     min-width:120px;    }
+.ib-150 {     min-width:150px;    }
+.ib-200 {     min-width:200px;    }
+.ib-250 {     min-width:250px;    }
+.ib-300 {     min-width:300px;    }
 
-input.ib-060 { 	width:060px;	}
-input.ib-090 { 	width:090px;	}
-input.ib-120 { 	width:120px;	}
-input.ib-150 { 	width:150px;	}
-input.ib-200 { 	width:200px;	}
-input.ib-250 { 	width:250px;	}
-input.ib-300 { 	width:300px;	}
+input.ib-060 {     width:060px;    }
+input.ib-090 {     width:090px;    }
+input.ib-120 {     width:120px;    }
+input.ib-150 {     width:150px;    }
+input.ib-200 {     width:200px;    }
+input.ib-250 {     width:250px;    }
+input.ib-300 {     width:300px;    }
 
 

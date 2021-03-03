@@ -20,16 +20,16 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 	page.Section = trl.S{"de": "Sonderfrage", "en": "Special"}
 	page.Label = trl.S{"de": "Prognosetreiber Wachstum", "en": "Growth drivers"}
 	page.Short = trl.S{"de": "Sonderfrage:<br>Wachstums-<br>treiber", "en": "Special:<br>Growth<br>drivers"}
-	page.Width = 80
+	page.Width = 60
 
 	{
 		gr := page.AddGroup()
-		gr.Cols = 9
+		gr.Cols = 6
 
 		{
 			inp := gr.AddInput()
 			inp.Type = "textblock"
-			inp.ColSpanLabel = 9
+			inp.ColSpanLabel = 6
 			inp.Desc = trl.S{
 				"de": "<b>1.</b> Punktprognose der Wachstumsrate des deutschen BIP",
 				"en": "<b>1.</b> Forecast growth rate German GDP",
@@ -54,6 +54,7 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 				"en": "Forecast <b>quarterly</b> GDP growth <br>\n(real, seasonally adjusted, non annualized)",
 			}
 			inp.ColSpanLabel = 3
+			inp.ColSpanLabel = 6
 			inp.CSSLabel = "special-input-margin-vertical"
 		}
 		{
@@ -123,7 +124,7 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 				"de": "Prognose Wachstum des BIP aufs&nbsp;<b>Jahr</b> <br>\n(real, saisonbereinigt)",
 				"en": "Forecast GDP growth per&nbsp;<b>year</b> <br>\n(real, seasonally adjusted)",
 			}
-			inp.ColSpanLabel = 3
+			inp.ColSpanLabel = 6
 
 		}
 
@@ -189,6 +190,8 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 
 	}
 
+	//
+	//
 	rowLabelsEconomicAreas := []trl.S{
 		{
 			"de": "Konjunkturdaten Deutschland",
@@ -249,7 +252,7 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 				"de": "Wenn sonstige - welche?",
 				"en": "If other - which?",
 			}
-			inp.MaxChars = 30
+			inp.MaxChars = 28 // otherwise overflow in mobile
 			inp.ColSpanLabel = 2
 			inp.ColSpanControl = 6
 			inp.CSSControl = "special-input-textblock-smaller"

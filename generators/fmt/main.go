@@ -28,6 +28,25 @@ var columnTemplate6 = []int{
 	1, 1,
 }
 
+var rowLabelsSmallLargeEnterprises = []trl.S{
+	{
+		"de": "Großunternehmen",
+		"en": "Large enterprises",
+	},
+	{
+		"de": "KMU",
+		"en": "Small+medium enterprises",
+	},
+	{
+		"de": "Immobilienkredite",
+		"en": "Real estate credit",
+	},
+	{
+		"de": "Konsumentenkredite",
+		"en": "Consumer credit",
+	},
+}
+
 // Create creates a JSON file for a financial markets survey
 func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
@@ -48,30 +67,12 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 	q.Version = 2
 
-	rowLabelsSmallLargeEnterprises := []trl.S{
-		{
-			"de": "Großunternehmen",
-			"en": "Large enterprises",
-		},
-		{
-			"de": "KMU",
-			"en": "Small+medium enterprises",
-		},
-		{
-			"de": "Immobilienkredite",
-			"en": "Real estate credit",
-		},
-		{
-			"de": "Konsumentenkredite",
-			"en": "Consumer credit",
-		},
-	}
-
 	// page 0
 	{
 		page := q.AddPage()
 		page.Label = trl.S{"de": "Begrüßung", "en": "Greeting"}
 		page.NoNavigation = true
+		page.Width = 60
 
 		// gr0
 		{
@@ -101,14 +102,14 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		// gr1
 		{
 			gr := page.AddGroup()
-			gr.Cols = 2
-			gr.Width = 75
+			gr.Cols = 4
+			// gr.Width = 75  // squeeze on mobile
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
 				inp.Label = trl.S{"de": "Sind Sie die angeschriebene Person?", "en": "Are you the addressee?"}
 
-				inp.ColSpanLabel = 2
+				inp.ColSpanLabel = 3
 			}
 
 			{
@@ -116,12 +117,12 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				rad.Type = "radio"
 				rad.Name = "proxy"
 				rad.ValueRadio = "no"
-				rad.ColSpanLabel = 1
+				rad.ColSpanLabel = 3
 				rad.ColSpanControl = 1
 				// rad.HAlign = qst.HLeft
 				// rad.HAlign = qst.HCenter
 				rad.Label = trl.S{
-					"de": " &nbsp; <br>Ja, ich bin die angeschriebene Person.",
+					"de": " Ja, ich bin die angeschriebene Person.",
 					"en": "Yes, I am the addressee.",
 				}
 			}
@@ -130,7 +131,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				rad.Type = "radio"
 				rad.Name = "proxy"
 				rad.ValueRadio = "yes"
-				rad.ColSpanLabel = 1
+				rad.ColSpanLabel = 3
 				rad.ColSpanControl = 1
 				// rad.HAlign = qst.HLeft
 				// rad.HAlign = qst.HCenter
@@ -143,21 +144,24 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 		// gr2
 		{
-
 			gr := page.AddGroup()
 			gr.Cols = 3
-			gr.Width = 75
+			// gr.Width = 75
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{
+					"de": "Meine Adresse hat sich geändert",
+					"en": "My address has changed",
+				}
+				inp.ColSpanLabel = 3
+			}
 			{
 				inp := gr.AddInput()
 				inp.Type = "textarea"
 				inp.Name = "address_change"
-				inp.Desc = trl.S{
-					"de": "Meine Adresse hat sich geändert",
-					"en": "My address has changed",
-				}
 				inp.MaxChars = 150
-				inp.ColSpanLabel = 1
-				inp.ColSpanControl = 2
+				inp.ColSpanControl = 3
 			}
 		}
 
@@ -188,8 +192,9 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		page := q.AddPage()
 		page.Section = trl.S{"de": "Konjunktur", "en": "Business cycle"}
 		page.Label = trl.S{"de": "Status und Ausblick", "en": "Status and outlook"}
-		page.Short = trl.S{"de": "Konjunktur:<br>Status,<br>Ausblick", "en": "Business cycle:<br>Status,<br>Outlook"}
-		page.Width = 70
+		page.Short = trl.S{"de": "Konjunktur:<br/>Status,<br/>Ausblick", "en": "Business cycle:<br/>Status,<br/>Outlook"}
+		page.Short = trl.S{"de": "Konjunktur", "en": "Business cycle"}
+		page.Width = 60
 
 		//
 		//
@@ -270,8 +275,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	{
 		page := q.AddPage()
 		page.Label = trl.S{"de": "Wachstum", "en": "Growth"}
-		page.AestheticCompensation = 8
-		page.Width = 90
+		page.Short = trl.S{"de": "Wachstum", "en": "Growth"}
+		page.Width = 60
 
 		{
 			gr := page.AddGroup()
@@ -298,8 +303,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 				inp.ColSpanLabel = 4
 				inp.Desc = trl.S{
-					"de": fmt.Sprintf("Unsere Prognose für das <b>deutsche</b> BIP Wachstum in %v (real, saisonbereinigt, nicht annualisiert):", nextQ()),
-					"en": fmt.Sprintf("Our estimate for the <b>German</b> GDP growth in %v (real, seasonally adjusted, non annualized):", nextQ()),
+					"de": fmt.Sprintf("Unsere Prognose für das <b>deutsche</b> BIP Wachstum in %v <xxbr/>\n(real, saisonbereinigt, nicht annualisiert)", nextQ()),
+					"en": fmt.Sprintf("Our estimate for the <b>German</b> GDP growth in %v        <xxbr/>\n(real, seasonally adjusted, non annualized)", nextQ()),
 				}
 				inp.Suffix = trl.S{"de": "%", "en": "pct"}
 				inp.HAlignLabel = qst.HLeft
@@ -318,8 +323,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 				inp.ColSpanLabel = 4
 				inp.Desc = trl.S{
-					"de": fmt.Sprintf("Unsere Prognose für das BIP Wachstum für das Jahr %v (real, saisonbereinigt):", nextY()),
-					"en": fmt.Sprintf("Our estimate for the GDP growth in %v (real, seasonally adjusted):", nextY()),
+					"de": fmt.Sprintf("Unsere Prognose für das BIP Wachstum für das Jahr %v <xxbr/>\n(real, saisonbereinigt)", nextY()),
+					"en": fmt.Sprintf("Our estimate for the GDP growth in %v                <xxbr/>\n(real, seasonally adjusted)", nextY()),
 				}
 				inp.Suffix = trl.S{"de": "%", "en": "pct"}
 				inp.HAlignLabel = qst.HLeft
@@ -352,8 +357,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 				inp.ColSpanLabel = 4
 				inp.Desc = trl.S{
-					"de": fmt.Sprintf("Die Wahrscheinlichkeit eines negativen Wachstums des <b>deutschen</b> BIP in %v liegt bei:", nextQ()),
-					"en": fmt.Sprintf("The probability of negative growth for the <b>German</b> GDP in %v is:", nextQ()),
+					"de": fmt.Sprintf("Die Wahrscheinlichkeit eines negativen Wachstums des <b>deutschen</b> BIP in %v liegt bei", nextQ()),
+					"en": fmt.Sprintf("The probability of negative growth for the <b>German</b> GDP in %v is", nextQ()),
 				}
 				inp.Suffix = trl.S{"de": "%", "en": "pct"}
 				inp.HAlignLabel = qst.HLeft
@@ -372,8 +377,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 				inp.ColSpanLabel = 4
 				inp.Desc = trl.S{
-					"de": fmt.Sprintf("Die Wahrscheinlichkeit einer Rezession in Deutschland (mind. 2&nbsp;Quartale neg. Wachstum) bis Q4 %v liegt bei:", nextY()),
-					"en": fmt.Sprintf("The probability of a recession in Germany (at least 2&nbsp;quarters neg. growth) until Q4 %v is:", nextY()),
+					"de": fmt.Sprintf("Die Wahrscheinlichkeit einer Rezession in Deutschland <xxbr/>\n(mind. 2&nbsp;Quartale neg. Wachstum) bis Q4 %v liegt bei", nextY()),
+					"en": fmt.Sprintf("The probability of a recession in Germany             <xxbr/>\n(at least 2&nbsp;quarters neg. growth) until Q4 %v is", nextY()),
 				}
 				inp.Suffix = trl.S{"de": "%", "en": "pct"}
 				inp.HAlignLabel = qst.HLeft
@@ -390,9 +395,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	{
 		page := q.AddPage()
 		page.Label = trl.S{"de": "Inflation und Zinsen", "en": "Inflation and rates"}
-		page.Short = trl.S{"de": "Inflation,<br>Zinsen", "en": "Inflation,<br>Rates"}
-		page.AestheticCompensation = 5
-		page.Width = 80
+		page.Short = trl.S{"de": "Inflation,<br/>Zinsen", "en": "Inflation,<br/>Rates"}
+		page.Width = 60
 
 		rowLabelsEuroGer := []trl.S{
 			{
@@ -426,13 +430,13 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		// gr2
 		{
 			gr := page.AddGroup()
-			gr.Cols = 100 // necessary, otherwise no vspacers
+			gr.Cols = 9 // necessary, otherwise no vspacers
 			gr.HeaderBottomVSpacers = 1
 
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				inp.ColSpanLabel = 100
+				inp.ColSpanLabel = 9
 				inp.Desc = trl.S{
 					"de": "<b>5a.</b> Die <b>kurzfristigen</b> Zinsen (3-Mo.-Interbanksätze) im <b>Euroraum</b> erwarten wir auf Sicht von 6&nbsp;Monaten",
 					"en": "<b>5a.</b> We expect <b>short term</b> interest rates (3 months interbank) in the <b>euro area</b>",
@@ -444,12 +448,11 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Name = "i_ez_low"
 				inp.Min = 0
 				inp.Max = 20
-				inp.MaxChars = 3
+				inp.MaxChars = 4
 				// inp.Validator = "inRange20"
 
-				inp.ColSpanLabel = 10
-				// inp.CSSLabel = "special-line-height-higher"
-				inp.ColSpanControl = 12
+				inp.ColSpanLabel = 2
+				inp.ColSpanControl = 2
 				inp.Desc = trl.S{
 					"de": "zwischen&nbsp;",
 					"en": "between&nbsp;",
@@ -465,14 +468,14 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Name = "i_ez_high"
 				inp.Min = 0
 				inp.Max = 20
-				inp.MaxChars = 3
+				inp.MaxChars = 4
 				// inp.Validator = "inRange20"
 
-				inp.ColSpanLabel = 4
-				inp.ColSpanControl = 74
+				inp.ColSpanLabel = 2
+				inp.ColSpanControl = 3
 				inp.Desc = trl.S{
-					"de": "und",
-					"en": "and",
+					"de": "und&nbsp;&nbsp;&nbsp;&nbsp;",
+					"en": "and&nbsp;&nbsp;&nbsp;&nbsp;",
 				}
 				inp.Suffix = trl.S{"de": "%", "en": "pct"}
 				inp.HAlignLabel = qst.HLeft
@@ -483,7 +486,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				inp.ColSpanLabel = 11
+				inp.ColSpanLabel = 2
 				inp.Desc = trl.S{
 					"de": " &nbsp;",
 					"en": " &nbsp;",
@@ -492,7 +495,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				inp.ColSpanLabel = 89
+				inp.ColSpanLabel = 7
 				inp.Desc = trl.S{
 					"de": " [zentrales 90% Konfidenzintervall]",
 					"en": " [central 90&nbsp;pct confidence interval]",
@@ -505,13 +508,13 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		// gr3
 		{
 			gr := page.AddGroup()
-			gr.Cols = 100 // necessary, otherwise no vspacers
+			gr.Cols = 9 // necessary, otherwise no vspacers
 			gr.HeaderBottomVSpacers = 1
 
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				inp.ColSpanLabel = 100
+				inp.ColSpanLabel = 9
 				inp.Desc = trl.S{
 					"de": "<b>5b.</b> Die <b>langfristigen</b> Zinsen (Renditen 10jg. Staatsanleihen) in <b>Deutschland</b> erwarten wir auf Sicht von 6&nbsp;Monaten",
 					"en": "<b>5b.</b> We expect <b>long term</b> interest rates in <b>Germany</b> in 6&nbsp;months",
@@ -527,9 +530,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.MaxChars = 4
 				// inp.Validator = "inRange100"
 
-				inp.ColSpanLabel = 10
-				// inp.CSSLabel = "special-line-height-higher"
-				inp.ColSpanControl = 12
+				inp.ColSpanLabel = 2
+				inp.ColSpanControl = 2
 				inp.Desc = trl.S{
 					"de": "zwischen&nbsp;",
 					"en": "between&nbsp;",
@@ -548,11 +550,11 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.MaxChars = 4
 				// inp.Validator = "inRange100"
 
-				inp.ColSpanLabel = 4
-				inp.ColSpanControl = 74
+				inp.ColSpanLabel = 2
+				inp.ColSpanControl = 3
 				inp.Desc = trl.S{
-					"de": "und",
-					"en": "and",
+					"de": "und&nbsp;&nbsp;&nbsp;&nbsp;",
+					"en": "and&nbsp;&nbsp;&nbsp;&nbsp;",
 				}
 				inp.Suffix = trl.S{"de": "%", "en": "pct"}
 				inp.HAlignLabel = qst.HLeft
@@ -563,7 +565,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				inp.ColSpanLabel = 11
+				inp.ColSpanLabel = 2
 				inp.Desc = trl.S{
 					"de": " &nbsp;",
 					"en": " &nbsp;",
@@ -572,7 +574,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				inp.ColSpanLabel = 89
+				inp.ColSpanLabel = 7
 				inp.Desc = trl.S{
 					"de": " [zentrales 90% Konfidenzintervall]",
 					"en": " [central 90&nbsp;pct confidence interval]",
@@ -590,7 +592,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		page := q.AddPage()
 		page.Section = trl.S{"de": "Kreditsituation", "en": "Credit situation"}
 		page.Label = trl.S{"de": "Markt", "en": "Market"}
-		page.Short = trl.S{"de": "Kredit-<br>situation:<br>Markt", "en": "Credit<br>situation:<br>Market"}
+		page.Short = trl.S{"de": "Kredit-<br/>situation:<br/>Markt", "en": "Credit<br/>situation:<br/>Market"}
 
 		rowLabelsCreditDemandSupply := []trl.S{
 			{
@@ -673,7 +675,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		page := q.AddPage()
 		// page.Section = trl.S{"de": "Kreditsituation", "en": "Credit situation"}
 		page.Label = trl.S{"de": "Einflussfaktoren", "en": "Influence factors"}
-		page.Short = trl.S{"de": "Einfluss-<br>faktoren", "en": "Influence<br>factors"}
+		page.Short = trl.S{"de": "Einfluss-<br/>faktoren", "en": "Influence<br/>factors"}
 
 		rowLabelsFinancingFactors := []trl.S{
 			{
@@ -744,7 +746,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		page := q.AddPage()
 		page.Section = trl.S{"de": "Finanzmärkte", "en": "Financial markets"}
 		page.Label = trl.S{"de": "Preise", "en": "Prices"}
-		page.Short = trl.S{"de": "Finanz-<br>märkte:<br>Preise", "en": "Financial<br>markets:<br>Prices"}
+		page.Short = trl.S{"de": "Finanz-<br/>märkte:<br/>Preise", "en": "Financial<br/>markets:<br/>Prices"}
 		page.Width = 80
 
 		rowLabelsUncorrelatedAssets := []trl.S{
@@ -999,7 +1001,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Type = "textarea"
 				inp.Name = "remark"
 				inp.MaxChars = 300
-				inp.ColSpanLabel = 1
+				inp.ColSpanLabel = 0
 				inp.ColSpanControl = 1
 			}
 		}
@@ -1019,8 +1021,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				rad.ColSpanLabel = 1
 				rad.ColSpanControl = 1
 				rad.Label = trl.S{
-					"de": "Zugang bleibt bestehen.  Daten können in weiteren Sitzungen geändert/ergänzt werden. <br>\n &nbsp;",
-					"en": "Leave questionnaire open. Data  can be changed/completed&nbsp;in later sessions. <br>\n &nbsp;",
+					"de": "Zugang bleibt bestehen.  Daten können in weiteren Sitzungen geändert/ergänzt werden. <br/>\n &nbsp;",
+					"en": "Leave questionnaire open. Data  can be changed/completed&nbsp;in later sessions.     <br/>\n &nbsp;",
 				}
 			}
 			{
@@ -1031,8 +1033,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				rad.ColSpanLabel = 1
 				rad.ColSpanControl = 1
 				rad.Label = trl.S{
-					"de": "Fragebogen ist abgeschlossen und kann nicht mehr geöffnet werden. <br>\n &nbsp;",
-					"en": "Questionnaire is finished. No more edits. <br>\n &nbsp;",
+					"de": "Fragebogen ist abgeschlossen und kann nicht mehr geöffnet werden. <br/>\n &nbsp;",
+					"en": "Questionnaire is finished. No more edits.                         <br/>\n &nbsp;",
 				}
 			}
 

@@ -60,6 +60,7 @@ ol.progress {
   /* alpha value is ignored */
   background-image: linear-gradient(to right,  var(--clr-sec),      var(--clr-sec),      var(--clr-sec),      var(--clr-zew4-md));
   background-image: linear-gradient(to right,  var(--clr-sec-drk1), var(--clr-sec-drk1), var(--clr-sec-drk1), var(--clr-zew4-md));
+  background-image: linear-gradient(to right,  var(--clr-sec-lgt2), var(--clr-sec-lgt2), var(--clr-sec) );
   
 
   /* border:  2px solid  rgba(255, 165, 0, 0.43); */

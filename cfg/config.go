@@ -306,6 +306,9 @@ func Example() *ConfigT {
 			{Key: "sec", R: 228, G: 223, B: 206, Desc: "secondary color - for backgrounds"},
 			{Key: "sec-drk1", R: 219, G: 216, B: 194, Desc: "darker, for menu 3"},
 			{Key: "sec-drk2", R: 190, G: 187, B: 170, Desc: "darker, for borders"},
+			{Key: "sec-lgt1", R: 236, G: 232, B: 221, Desc: "ligher"},
+			{Key: "sec-lgt2", R: 241, G: 239, B: 232, Desc: "ligher more"},
+
 			{Key: "zew2-md", R: 207, G: 136, B: 135},
 			{Key: "zew2-dk", R: 177, G: 29, B: 28},
 			{Key: "zew3-md", R: 138, G: 187, B: 206},

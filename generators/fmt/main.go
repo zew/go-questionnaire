@@ -133,8 +133,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				rad.ValueRadio = "yes"
 				rad.ColSpanLabel = 3
 				rad.ColSpanControl = 1
-				// rad.HAlign = qst.HLeft
-				// rad.HAlign = qst.HCenter
 				rad.Label = trl.S{
 					"de": "Nein, ich fülle den Fragebogen in Vertretung der angeschriebenen Person aus.",
 					"en": "No. I am filling in for the addressee.",
@@ -592,7 +590,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		page := q.AddPage()
 		page.Section = trl.S{"de": "Kreditsituation", "en": "Credit situation"}
 		page.Label = trl.S{"de": "Markt", "en": "Market"}
-		page.Short = trl.S{"de": "Kredit-<br/>situation:<br/>Markt", "en": "Credit<br/>situation:<br/>Market"}
+		page.Short = trl.S{"de": "Kredit-<br/>markt", "en": "Credit<br/>Markets"}
+		page.Width = 70
 
 		rowLabelsCreditDemandSupply := []trl.S{
 			{
@@ -674,8 +673,9 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	{
 		page := q.AddPage()
 		// page.Section = trl.S{"de": "Kreditsituation", "en": "Credit situation"}
-		page.Label = trl.S{"de": "Einflussfaktoren", "en": "Influence factors"}
-		page.Short = trl.S{"de": "Einfluss-<br/>faktoren", "en": "Influence<br/>factors"}
+		page.Label = trl.S{"de": "Einflussfaktoren", "en": "Influence Factors"}
+		page.Short = trl.S{"de": "Kredit-<br/>faktoren", "en": "Credit<br/>Influencers"}
+		page.Width = 70
 
 		rowLabelsFinancingFactors := []trl.S{
 			{
@@ -746,8 +746,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		page := q.AddPage()
 		page.Section = trl.S{"de": "Finanzmärkte", "en": "Financial markets"}
 		page.Label = trl.S{"de": "Preise", "en": "Prices"}
-		page.Short = trl.S{"de": "Finanz-<br/>märkte:<br/>Preise", "en": "Financial<br/>markets:<br/>Prices"}
-		page.Width = 80
+		page.Short = trl.S{"de": "Finanz-<br/>märkte", "en": "Financial<br/>Markets"}
+		page.Width = 70
 
 		rowLabelsUncorrelatedAssets := []trl.S{
 			{

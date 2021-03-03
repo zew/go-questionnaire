@@ -5,6 +5,7 @@ import (
 	"log"
 	"strings"
 
+	"github.com/zew/go-questionnaire/css"
 	"github.com/zew/go-questionnaire/trl"
 )
 
@@ -76,10 +77,12 @@ func (gb *GridBuilder) AddRadioRow(name string, vals []string, sparseLabels map[
 			rad.Type = "radio"
 			rad.Name = name // "y_euro"
 			rad.ValueRadio = vals[colIdx]
+
 		}
 
 		if _, ok := sparseLabels[colIdx]; ok {
 			rad.Label = sparseLabels[colIdx]
+			rad.StyleLbl = css.ItemStart(rad.StyleLbl)
 		}
 
 		rad.ColSpanLabel = gb.cols[colIdx].spanLabel
@@ -103,6 +106,8 @@ func (gb *GridBuilder) dumpCols() {
 	log.Printf("\n%v  total %v", w.String(), cntr)
 }
 
+// AddGrid creates static entries to the page;
+// being prepared using AddCol() and AddRadioRow()
 func (p *pageT) AddGrid(gb *GridBuilder) *groupT {
 
 	// gb.dumpCols()
@@ -148,8 +153,9 @@ func (p *pageT) AddGrid(gb *GridBuilder) *groupT {
 				inp2 := gr.addInputEmpty()
 				inp2.Label = gb.cols[colIdx].header
 				inp2.ColSpanLabel = gb.cols[colIdx].spanControl
-
-				inp2.Centered()
+				inp2.Style = css.ItemCentered(inp2.Style)
+				inp2.Style.Desktop.GridItemStyle.AlignSelf = "end"
+				inp2.Style.Desktop.GridItemStyle.AlignSelf = "start"
 				// inp2.Style.Desktop.BoxStyle.Padding = "0 0.2rem"
 
 			} else {

@@ -29,6 +29,8 @@ type StylesResponsive struct {
 	Desktop Styles `json:"desktop,omitempty"`
 	Mobile  Styles `json:"mobile,omitempty"`
 	// Classes []string `json:"classes,omitempty"` // static CSS classes
+	A, B string
+	C    int
 }
 
 // NewStylesResponsive returns style struct
@@ -46,13 +48,17 @@ func NewStylesResponsive() *StylesResponsive {
 
 // stylesResponsiveExample to test
 func stylesResponsiveExample() *StylesResponsive {
-	grSt := NewStylesResponsive()
+	sr := NewStylesResponsive()
 
-	grSt.Desktop.GridContainerStyle.AutoFlow = "row"
-	grSt.Desktop.GridContainerStyle.TemplateColumns = "minmax(4rem, 2fr) minmax(4rem, 2fr) minmax(4rem, 2fr)"
+	sr.Desktop.GridContainerStyle.AutoFlow = "row"
+	sr.Desktop.GridContainerStyle.TemplateColumns = "minmax(4rem, 2fr) minmax(4rem, 2fr) minmax(4rem, 2fr)"
 
-	grSt.Mobile.GridContainerStyle.AutoFlow = "col"
-	return grSt
+	sr.Mobile.GridContainerStyle.AutoFlow = "col"
+
+	sr.A = "prop a"
+	sr.B = "prop b"
+	sr.C = 17
+	return sr
 }
 
 func stylesResponsiveExampleWant(className string) string {
@@ -90,23 +96,23 @@ func StyleTag(content string) string {
 }
 
 // CSS renders styles
-func (gcr StylesResponsive) CSS(className string) string {
+func (sr StylesResponsive) CSS(className string) string {
 	w := &strings.Builder{}
 
 	// desktop
 	fmt.Fprintf(w, ".%v {\n", className)
-	fmt.Fprint(w, notEmpty("\t/* box-style */\n", gcr.Desktop.BoxStyle.CSS(), "\n"))
-	fmt.Fprint(w, notEmpty("\t/* grid-container */\n", gcr.Desktop.GridContainerStyle.CSS(), "\n"))
-	fmt.Fprint(w, notEmpty("\t/* grid-item */\n", gcr.Desktop.GridItemStyle.CSS(), "\n"))
-	fmt.Fprint(w, notEmpty("\t/* text-style */\n", gcr.Desktop.TextStyle.CSS(), "\n"))
+	fmt.Fprint(w, notEmpty("\t/* box-style */\n", sr.Desktop.BoxStyle.CSS(), "\n"))
+	fmt.Fprint(w, notEmpty("\t/* grid-container */\n", sr.Desktop.GridContainerStyle.CSS(), "\n"))
+	fmt.Fprint(w, notEmpty("\t/* grid-item */\n", sr.Desktop.GridItemStyle.CSS(), "\n"))
+	fmt.Fprint(w, notEmpty("\t/* text-style */\n", sr.Desktop.TextStyle.CSS(), "\n"))
 	fmt.Fprint(w, "}\n")
 
 	// mobile
 	wMob := &strings.Builder{}
-	fmt.Fprint(wMob, notEmpty("\t/* box-style */\n", gcr.Mobile.BoxStyle.CSS(), "\n"))
-	fmt.Fprint(wMob, notEmpty("\t/* grid-container */\n", gcr.Mobile.GridContainerStyle.CSS(), "\n"))
-	fmt.Fprint(wMob, notEmpty("\t/* grid-item */\n", gcr.Mobile.GridItemStyle.CSS(), "\n"))
-	fmt.Fprint(wMob, notEmpty("\t/* text-style */\n", gcr.Mobile.TextStyle.CSS(), "\n"))
+	fmt.Fprint(wMob, notEmpty("\t/* box-style */\n", sr.Mobile.BoxStyle.CSS(), "\n"))
+	fmt.Fprint(wMob, notEmpty("\t/* grid-container */\n", sr.Mobile.GridContainerStyle.CSS(), "\n"))
+	fmt.Fprint(wMob, notEmpty("\t/* grid-item */\n", sr.Mobile.GridItemStyle.CSS(), "\n"))
+	fmt.Fprint(wMob, notEmpty("\t/* text-style */\n", sr.Mobile.TextStyle.CSS(), "\n"))
 	if wMob.Len() > 0 {
 		fmt.Fprint(w, "@media screen and (max-width: 800px) {\n")
 		fmt.Fprintf(w, ".%v {\n", className)
@@ -118,4 +124,49 @@ func (gcr StylesResponsive) CSS(className string) string {
 	fmt.Fprint(w, "\n")
 
 	return w.String()
+}
+
+// Combine copies b over sr - if sr has no value
+func (sr *StylesResponsive) Combine(b StylesResponsive) {
+	sr.Desktop.GridContainerStyle.Combine(b.Desktop.GridContainerStyle)
+	sr.Desktop.BoxStyle.Combine(b.Desktop.BoxStyle)
+	sr.Desktop.GridItemStyle.Combine(b.Desktop.GridItemStyle)
+	sr.Desktop.TextStyle.Combine(b.Desktop.TextStyle)
+
+	sr.Mobile.GridContainerStyle.Combine(b.Mobile.GridContainerStyle)
+	sr.Mobile.BoxStyle.Combine(b.Mobile.BoxStyle)
+	sr.Mobile.GridItemStyle.Combine(b.Mobile.GridItemStyle)
+	sr.Mobile.TextStyle.Combine(b.Mobile.TextStyle)
+}
+
+// // Alloc makes sure, sr is not nil
+// func (sr *StylesResponsive) Alloc() *StylesResponsive {
+// 	if sr == nil {
+// 		return NewStylesResponsive()
+// 	}
+// 	return sr
+// }
+
+// ItemCentered makes the input vertically and horizontally centered
+func ItemCentered(sr *StylesResponsive) *StylesResponsive {
+
+	if sr == nil {
+		sr = NewStylesResponsive()
+	}
+	sr.Desktop.GridItemStyle.JustifySelf = "center"
+	sr.Desktop.GridItemStyle.AlignSelf = "center"
+	sr.Desktop.TextStyle.AlignHorizontal = "center"
+	return sr
+}
+
+// ItemStart makes the input vertically and horizontally centered
+func ItemStart(sr *StylesResponsive) *StylesResponsive {
+
+	if sr == nil {
+		sr = NewStylesResponsive()
+	}
+
+	// sr.Desktop.GridItemStyle.JustifySelf = "start"
+	sr.Desktop.TextStyle.AlignHorizontal = "left"
+	return sr
 }

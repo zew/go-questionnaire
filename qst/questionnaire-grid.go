@@ -131,16 +131,16 @@ func (q QuestionnaireT) GroupHTMLGridBased(pageIdx, grpIdx int) string {
 
 		if inp.Style == nil {
 			inp.Style = css.NewStylesResponsive()
-
-			// input wrapper is item      to group
-			inp.Style.Desktop.GridItemStyle.Col = fmt.Sprintf("auto / span %v", inp.ColSpanLabel+inp.ColSpanControl)
-
-			// input wrapper is container to label and control
-			inp.Style.Desktop.BoxStyle.Display = "grid"
-			inp.Style.Desktop.GridContainerStyle.AutoFlow = "row"
-			inp.Style.Desktop.GridContainerStyle.TemplateColumns = strings.Repeat("1fr ", inp.ColSpanLabel+inp.ColSpanControl)
-
 		}
+
+		// input div is item      to group
+		inp.Style.Desktop.GridItemStyle.Col = fmt.Sprintf("auto / span %v", inp.ColSpanLabel+inp.ColSpanControl)
+
+		// input div is container to label and control
+		inp.Style.Desktop.BoxStyle.Display = "grid"
+		inp.Style.Desktop.GridContainerStyle.AutoFlow = "row"
+		inp.Style.Desktop.GridContainerStyle.TemplateColumns = strings.Repeat("1fr ", inp.ColSpanLabel+inp.ColSpanControl)
+
 		gridItemClass := fmt.Sprintf("pg%02v-grp%02v-inp%02v", pageIdx, grpIdx, inpIdx)
 		fmt.Fprint(wCSS, inp.Style.CSS(gridItemClass))
 
@@ -150,12 +150,25 @@ func (q QuestionnaireT) GroupHTMLGridBased(pageIdx, grpIdx int) string {
 
 			if inp.ColSpanLabel > 0 {
 				wLbl := &strings.Builder{}
+
 				if inp.StyleLbl == nil {
 					inp.StyleLbl = css.NewStylesResponsive()
-					inp.StyleLbl.Desktop.GridItemStyle.Col = fmt.Sprintf("auto / span %v", inp.ColSpanLabel)
-					inp.StyleLbl.Desktop.GridItemStyle.AlignSelf = "center"
-					// inp.StyleLbl.Desktop.GridItemStyle.Order = 2  // label post control
 				}
+
+				overlay := css.NewStylesResponsive()
+				overlay.Desktop.GridItemStyle.Col = fmt.Sprintf("auto / span %v", inp.ColSpanLabel)
+				overlay.Desktop.GridItemStyle.AlignSelf = "center"
+				// styleLbl.Desktop.GridItemStyle.Order = 2  // label post control
+				inp.StyleLbl.Combine(*overlay)
+
+				/*
+					if inp.StyleLbl == nil {
+						inp.StyleLbl = css.NewStylesResponsive()
+						inp.StyleLbl.Desktop.GridItemStyle.Col = fmt.Sprintf("auto / span %v", inp.ColSpanLabel)
+						inp.StyleLbl.Desktop.GridItemStyle.AlignSelf = "center"
+						// inp.StyleLbl.Desktop.GridItemStyle.Order = 2  // label post control
+					}
+				*/
 
 				lblClass := fmt.Sprintf("pg%02v-grp%02v-inp%02v-lbl", pageIdx, grpIdx, inpIdx)
 				fmt.Fprint(wCSS, inp.StyleLbl.CSS(lblClass))
@@ -179,15 +192,8 @@ func (q QuestionnaireT) GroupHTMLGridBased(pageIdx, grpIdx int) string {
 						inp.StyleCtl.Desktop.TextStyle.WhiteSpace = "nowrap" // prevent suffix from being wrapped
 					}
 				}
-				if inp.Type == "radiogroup" || inp.Type == "checkboxgroup" {
-					inp.StyleCtl.Desktop.BoxStyle.Display = "grid"
-					inp.StyleCtl.Desktop.GridContainerStyle.AutoFlow = "row"
-					inp.StyleCtl.Desktop.GridContainerStyle.TemplateColumns = strings.Repeat("1fr ", len(inp.Radios))
-				}
 				if inp.Type == "radio" || inp.Type == "checkbox" {
-					inp.StyleCtl.Desktop.GridItemStyle.JustifySelf = "center"
-					inp.StyleCtl.Desktop.GridItemStyle.AlignSelf = "center"
-					inp.StyleCtl.Desktop.TextStyle.AlignHorizontal = "center"
+					inp.StyleCtl = css.ItemCentered(inp.StyleCtl)
 				}
 
 				ctlClass := fmt.Sprintf("pg%02v-grp%02v-inp%02v-ctl", pageIdx, grpIdx, inpIdx)

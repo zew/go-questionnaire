@@ -260,17 +260,6 @@ func (inp inputT) IsReserved() bool {
 	return false
 }
 
-// Center makes the input vertically and horizontally centered
-func (inp *inputT) Centered() {
-
-	inp.Style = css.NewStylesResponsive()
-	inp.Style.Desktop.GridItemStyle.JustifySelf = "center"
-	inp.Style.Desktop.GridItemStyle.AlignSelf = "center"
-	inp.Style.Desktop.TextStyle.AlignHorizontal = "center"
-	inp.StyleLbl = inp.Style
-
-}
-
 // Rendering one input to HTML
 // func (inp inputT) HTML(langCode string, namePrefix string) string {
 func (inp inputT) HTML(langCode string, numCols int) string {

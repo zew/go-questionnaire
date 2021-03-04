@@ -208,6 +208,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		page.Short = trl.S{"de": "Konjunktur", "en": "Business cycle"}
 		page.Width = 60
 
+		page.ValidationFuncName = "fmtPage1"
+
 		//
 		//
 		rowLabelsEuroGerUSGlob := []trl.S{

@@ -75,22 +75,9 @@ func (q *QuestionnaireT) TranslationCompleteness() error {
 			log.Print(err)
 			return err
 		}
-
 		for i2 := 0; i2 < len(q.Pages[i1].Groups); i2++ {
-			if err := plausibleTranslation(fmt.Sprintf("page%v_grp%v_lbl", i1, i2), q.Pages[i1].Groups[i2].Label, q.LangCodes); err != nil {
-				log.Print(err)
-				return err
-			}
-			if err := plausibleTranslation(fmt.Sprintf("page%v_grp%v_desc", i1, i2), q.Pages[i1].Groups[i2].Desc, q.LangCodes); err != nil {
-				log.Print(err)
-				return err
-			}
 			for i3 := 0; i3 < len(q.Pages[i1].Groups[i2].Inputs); i3++ {
 				if err := plausibleTranslation(fmt.Sprintf("page%v_grp%v_inp%v_lbl", i1, i2, i3), q.Pages[i1].Groups[i2].Inputs[i3].Label, q.LangCodes); err != nil {
-					log.Print(err)
-					return err
-				}
-				if err := plausibleTranslation(fmt.Sprintf("page%v_grp%v_inp%v_desc", i1, i2, i3), q.Pages[i1].Groups[i2].Inputs[i3].Desc, q.LangCodes); err != nil {
 					log.Print(err)
 					return err
 				}
@@ -150,12 +137,6 @@ func (q *QuestionnaireT) Validate() error {
 			// a number of columns per group must be set
 			if q.Pages[i1].Groups[i2].Cols < 1 {
 				return fmt.Errorf("Page %v - Group %v - Number of columns must be greater 0: ", i1, i2)
-			}
-
-			if q.Version > 1 {
-				if q.Pages[i1].Groups[i2].Label != nil || q.Pages[i1].Groups[i2].Desc != nil {
-					return fmt.Errorf("Page %v - Group %v - No group label or descriptions - use textblock", i1, i2)
-				}
 			}
 
 			for i3 := 0; i3 < len(q.Pages[i1].Groups[i2].Inputs); i3++ {

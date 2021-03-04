@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "b5ac573f16f70899755ecba48772d5aa",
+ 	"md_5": "2922496a7e2ed43c5e307ffd10be0700",
  	"lang_codes": [
  		"de",
  		"en"
@@ -241,8 +241,8 @@
  			"groups": [
  				{
  					"bottom_vspacers": 3,
- 					"odd_rows_coloring": true,
  					"columns": 7,
+ 					"odd_rows_coloring": true,
  					"inputs": [
  						{
  							"type": "textblock",
@@ -605,8 +605,8 @@
  				},
  				{
  					"bottom_vspacers": 3,
- 					"odd_rows_coloring": true,
  					"columns": 7,
+ 					"odd_rows_coloring": true,
  					"inputs": [
  						{
  							"type": "textblock",
@@ -1174,7 +1174,8 @@
  						"C": 0
  					}
  				}
- 			]
+ 			],
+ 			"validation_func_name": "fmtPage1"
  		},
  		{
  			"label": {
@@ -1306,8 +1307,8 @@
  			"groups": [
  				{
  					"bottom_vspacers": 3,
- 					"odd_rows_coloring": true,
  					"columns": 7,
+ 					"odd_rows_coloring": true,
  					"inputs": [
  						{
  							"type": "textblock",
@@ -1725,8 +1726,8 @@
  			"groups": [
  				{
  					"bottom_vspacers": 3,
- 					"odd_rows_coloring": true,
  					"columns": 9,
+ 					"odd_rows_coloring": true,
  					"inputs": [
  						{
  							"type": "textblock",
@@ -2075,8 +2076,8 @@
  				},
  				{
  					"bottom_vspacers": 3,
- 					"odd_rows_coloring": true,
  					"columns": 9,
+ 					"odd_rows_coloring": true,
  					"inputs": [
  						{
  							"type": "textblock",
@@ -2425,8 +2426,8 @@
  				},
  				{
  					"bottom_vspacers": 3,
- 					"odd_rows_coloring": true,
  					"columns": 9,
+ 					"odd_rows_coloring": true,
  					"inputs": [
  						{
  							"type": "textblock",
@@ -2916,8 +2917,8 @@
  			"groups": [
  				{
  					"bottom_vspacers": 3,
- 					"odd_rows_coloring": true,
  					"columns": 9,
+ 					"odd_rows_coloring": true,
  					"inputs": [
  						{
  							"type": "textblock",
@@ -3510,8 +3511,8 @@
  				},
  				{
  					"bottom_vspacers": 3,
- 					"odd_rows_coloring": true,
  					"columns": 9,
+ 					"odd_rows_coloring": true,
  					"inputs": [
  						{
  							"type": "textblock",
@@ -4005,8 +4006,8 @@
  			"groups": [
  				{
  					"bottom_vspacers": 3,
- 					"odd_rows_coloring": true,
  					"columns": 7,
+ 					"odd_rows_coloring": true,
  					"inputs": [
  						{
  							"type": "textblock",
@@ -4697,8 +4698,8 @@
  				},
  				{
  					"bottom_vspacers": 3,
- 					"odd_rows_coloring": true,
  					"columns": 9,
+ 					"odd_rows_coloring": true,
  					"inputs": [
  						{
  							"type": "textblock",
@@ -5525,8 +5526,8 @@
  				},
  				{
  					"bottom_vspacers": 3,
- 					"odd_rows_coloring": true,
  					"columns": 9,
+ 					"odd_rows_coloring": true,
  					"inputs": [
  						{
  							"type": "textblock",

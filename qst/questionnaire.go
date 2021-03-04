@@ -267,26 +267,18 @@ func (inp inputT) HTML(langCode string, numCols float32) string {
 // it contains no response information;
 // a group is a layout unit with a configurable number of columns.
 type groupT struct {
-	// Name  string
-	Label trl.S `json:"label,omitempty"`
-	Desc  trl.S `json:"description,omitempty"`
-
 	// Vertical space control:
 	HeaderBottomVSpacers int `json:"header_bottom_vspacers,omitempty"` // number of half rows below the group header
 	BottomVSpacers       int `json:"bottom_vspacers,omitempty"`        // number of rows below the group, addGroup() initializes to 3
 
-	Vertical bool `json:"vertical,omitempty"` // groups vertically, not horizontally
-
-	OddRowsColoring bool `json:"odd_rows_coloring,omitempty"` // color odd rows
-
 	// Number of vertical columns;
 	// for horizontal *and* (not yet implemented) vertical layouts;
 	//
-	// Each label (if set) and each input occupy one columns.
-	// inputT.ColSpanLabel and inputT.ColSpanControl may set this to more than 1.
-	//
-	// Cols determines the 'slot' width for these above settings using colWidth(colsElement, colsTotal)
-	Cols float32 `json:"columns,omitempty"`
+	// Each label (if set) and each input occupy columns according to
+	// inputT.ColSpanLabel and inputT.ColSpanControl.
+	Cols            float32 `json:"columns,omitempty"`
+	Vertical        bool    `json:"vertical,omitempty"`          // groups vertically, not horizontally
+	OddRowsColoring bool    `json:"odd_rows_coloring,omitempty"` // color odd rows
 
 	Inputs             []*inputT `json:"inputs,omitempty"`
 	RandomizationGroup int       `json:"randomization_group,omitempty"` // > 0 => group can be repositioned for randomization
@@ -430,7 +422,6 @@ type pageT struct {
 	Groups []*groupT `json:"groups,omitempty"`
 
 	ValidationFuncName string `json:"validation_func_name,omitempty"` // javascript validation func name
-	ValidationFunc     string `json:"validation_func,omitempty"`      // javascript validation func implementation
 }
 
 // AddGroup creates a new group
@@ -771,6 +762,18 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 	}
 
 	fmt.Fprint(w, "</div> <!-- width -->")
+
+	if p.ValidationFuncName != "" {
+		fmt.Fprintf(w, `
+			<script>
+				var frm = document.forms.frmMain;
+				if (frm) {
+					frm.addEventListener('submit', %v);    
+				}
+			</script>
+		`, p.ValidationFuncName)
+
+	}
 
 	ret := w.String()
 

@@ -53,7 +53,6 @@ ol.progress {
   /* line-height: 3.05em; */ /* => progress-bar-label */
   text-align:  left;
 
-  background-color:   rgba(255, 165, 0, 0.23);
   background-color:   rgba(var(--clr-pri), 0.23);
 
   /* background-color: linear-gradient(direction, color-stop1, color-stop2, ...); */
@@ -111,7 +110,7 @@ ol.progress {
   margin-bottom: 0.25em;
   border-radius: 100%;
 
-  background-color: var(--clr-sec-drk2);
+  background-color: var(--clr-sec-drk1);
 
   content: attr(data-step);
 
@@ -155,7 +154,7 @@ ol.progress {
 .progress > li.is-active:before {
   color: #FFF;
   background: #0069B4;
-  background: #555;
+  background: #888;
 }
 
 /* Needed for IE8 */

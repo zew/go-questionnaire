@@ -64,7 +64,8 @@ func (inp inputT) labelDescription(w io.Writer, langCode string) {
 	// classes are only for font-size, font-weight
 	// inline-block styles are applied in outer wrapper
 	if !inp.Label.Empty() {
-		fmt.Fprintf(w, " <span class='input-label-text'       >%v</span>", inp.Label.Tr(langCode))
+		// fmt.Fprintf(w, " <span class='input-label-text'       >%v</span>", inp.Label.Tr(langCode))
+		fmt.Fprintf(w, "%v", inp.Label.Tr(langCode))
 	}
 	if !inp.Desc.Empty() {
 		fmt.Fprintf(w, " <span class='input-description-text' >%v</span>", inp.Desc.Tr(langCode))
@@ -100,13 +101,15 @@ func (q QuestionnaireT) GroupHTMLGridBased(pageIdx, grpIdx int) string {
 	//
 	if gr.Style == nil {
 		gr.Style = css.NewStylesResponsive()
+	} else {
+		// log.Printf("page%v group%v: gr.Style already present", pageIdx, grpIdx)
 	}
 	gr.Style.Desktop.BoxStyle.Display = "grid"
 	if gr.Style.Desktop.GridContainerStyle.AutoFlow == "" {
 		gr.Style.Desktop.GridContainerStyle.AutoFlow = "row"
 	}
 	if gr.Style.Desktop.GridContainerStyle.TemplateColumns == "" {
-		gr.Style.Desktop.GridContainerStyle.TemplateColumns = strings.Repeat("1fr ", gr.Cols)
+		gr.Style.Desktop.GridContainerStyle.TemplateColumns = strings.Repeat("1fr ", int(gr.Cols))
 	}
 	if gr.Style.Desktop.GridContainerStyle.ColumnGap == "" {
 		gr.Style.Desktop.GridContainerStyle.ColumnGap = "0.4rem"
@@ -139,7 +142,7 @@ func (q QuestionnaireT) GroupHTMLGridBased(pageIdx, grpIdx int) string {
 		// input div is container to label and control
 		inp.Style.Desktop.BoxStyle.Display = "grid"
 		inp.Style.Desktop.GridContainerStyle.AutoFlow = "row"
-		inp.Style.Desktop.GridContainerStyle.TemplateColumns = strings.Repeat("1fr ", inp.ColSpanLabel+inp.ColSpanControl)
+		inp.Style.Desktop.GridContainerStyle.TemplateColumns = strings.Repeat("1fr ", int(inp.ColSpanLabel+inp.ColSpanControl))
 
 		gridItemClass := fmt.Sprintf("pg%02v-grp%02v-inp%02v", pageIdx, grpIdx, inpIdx)
 		fmt.Fprint(wCSS, inp.Style.CSS(gridItemClass))

@@ -5,6 +5,7 @@ import (
 	"log"
 	"strings"
 
+	"github.com/zew/go-questionnaire/css"
 	"github.com/zew/go-questionnaire/ctr"
 	"github.com/zew/go-questionnaire/qst"
 	"github.com/zew/go-questionnaire/tpl"
@@ -13,13 +14,13 @@ import (
 
 var radioVals4 = []string{"1", "2", "3", "4"}
 var radioVals6 = []string{"1", "2", "3", "4", "5", "6"}
-var columnTemplate4 = []int{
+var columnTemplate4 = []float32{
 	2, 1,
 	0, 1,
 	0, 1,
 	1, 1,
 }
-var columnTemplate6 = []int{
+var columnTemplate6 = []float32{
 	2, 1,
 	0, 1,
 	0, 1,
@@ -101,42 +102,55 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 		// gr1
 		{
+
 			gr := page.AddGroup()
-			gr.Cols = 4
-			// gr.Width = 75  // squeeze on mobile
+			gr.Cols = 6
+
+			grpStyle := css.NewStylesResponsive()
+			grpStyle.Desktop.BoxStyle.WidthMax = "26rem"
+			grpStyle.Mobile.BoxStyle.WidthMax = "none"
+			gr.Style = grpStyle
+
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
 				inp.Label = trl.S{"de": "Sind Sie die angeschriebene Person?", "en": "Are you the addressee?"}
 
-				inp.ColSpanLabel = 3
+				inp.ColSpanLabel = 6
 			}
+
+			lblStyle := css.NewStylesResponsive()
+			lblStyle.Desktop.TextStyle.AlignHorizontal = "left"
+			lblStyle.Desktop.BoxStyle.Padding = "0 0 0 1rem"
+			lblStyle.Mobile.BoxStyle.Padding = "0 0 0 2rem"
 
 			{
 				rad := gr.AddInput()
 				rad.Type = "radio"
 				rad.Name = "proxy"
 				rad.ValueRadio = "no"
-				rad.ColSpanLabel = 3
+				rad.ColSpanLabel = 5
 				rad.ColSpanControl = 1
 				// rad.HAlign = qst.HLeft
 				// rad.HAlign = qst.HCenter
 				rad.Label = trl.S{
-					"de": " Ja, ich bin die angeschriebene Person.",
+					"de": "Ja, ich bin die angeschriebene Person.",
 					"en": "Yes, I am the addressee.",
 				}
+				rad.StyleLbl = lblStyle
 			}
 			{
 				rad := gr.AddInput()
 				rad.Type = "radio"
 				rad.Name = "proxy"
 				rad.ValueRadio = "yes"
-				rad.ColSpanLabel = 3
+				rad.ColSpanLabel = 5
 				rad.ColSpanControl = 1
 				rad.Label = trl.S{
 					"de": "Nein, ich fülle den Fragebogen in Vertretung der angeschriebenen Person aus.",
 					"en": "No. I am filling in for the addressee.",
 				}
+				rad.StyleLbl = lblStyle
 			}
 		}
 
@@ -167,7 +181,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		{
 			gr := page.AddGroup()
 			gr.Cols = 1
-			gr.Width = 75
 			{
 				inp := gr.AddInput()
 				inp.Type = "button"
@@ -1008,7 +1021,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 		{
 			gr := page.AddGroup()
-			gr.Width = 100
 			gr.Cols = 2 // necessary, otherwise no vspacers
 
 			// todo

@@ -10,7 +10,7 @@ import (
 )
 
 var radioVals7 = []string{"1", "2", "3", "4", "5", "6", "7"}
-var columnTemplate7 = []int{
+var columnTemplate7 = []float32{
 	0, 1,
 	0, 1,
 	0, 1,
@@ -128,7 +128,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				// inp.Label = trl.S{"de": "input label"}
 				inp.Desc = trl.S{"de": `
 				<p><b>
-				Im Folgenden geht es um eine Spende von 30 €, die <i>eine</i> dieser drei Stiftungen erhalten soll:
+				Im Folgenden geht es um eine Spende von 30&nbsp;€, die <i>eine</i> dieser drei Stiftungen erhalten soll:
 				</b></p>
 
 				<br>
@@ -231,7 +231,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				<p>
 				Die Stiftungen wurden anonymisiert und in eine zufällige Reihenfolge gebracht, so dass Sie nicht wissen, 
 				um welche Stiftung es sich bei den Stiftungen A, B und C handelt. 
-				Sie entscheiden also nicht darüber, welche Stiftung die 30 € erhält. 
+				Sie entscheiden also nicht darüber, welche Stiftung die 30&nbsp;€ erhält. 
 				Stattdessen entscheiden Sie, wie die Präferenzen der Gruppenmitglieder in <i>eine</i> Entscheidung zusammengefasst werden 
 				und ob Sie beispielsweise eher eine Kompromisslösung oder eher eine Mehrheitslösung für Ihre Gruppe bevorzugen.
 				</p>
@@ -371,8 +371,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 					"de": `
 
 					<p>
-					<b>Frage 1.</b> Schätzen Sie bitte: Was wäre eine zufällig ausgewählte Person aus unserer Vorstudie maximal bereit zu zahlen, damit eine Spende von 30 € an die Stiftung überwiesen wird, die diese Person als am besten/mittel/am schlechtesten erachtet?
-					<i>(Wenn Sie meinen, die Person würde dafür bezahlen, dass die Stiftung die 30 € nicht erhält, schreiben Sie bitte ein Minuszeichen vor den jeweiligen Betrag.)</i>
+					<b>Frage 1.</b> Schätzen Sie bitte: Was wäre eine zufällig ausgewählte Person aus unserer Vorstudie maximal bereit zu zahlen, damit eine Spende von 30&nbsp;€ an die Stiftung überwiesen wird, die diese Person als am besten/mittel/am schlechtesten erachtet?
+					<i>(Wenn Sie meinen, die Person würde dafür bezahlen, dass die Stiftung die 30&nbsp;€ nicht erhält, schreiben Sie bitte ein Minuszeichen vor den jeweiligen Betrag.)</i>
 					</p>
 
 					<p>
@@ -391,7 +391,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		{
 			gr := page.AddGroup()
 			gr.Cols = 15
-			gr.Width = 100
 			gr.BottomVSpacers = 2
 
 			// q2
@@ -500,7 +499,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		{
 			gr := page.AddGroup()
 			gr.Cols = 12
-			gr.Width = 100
 			gr.BottomVSpacers = 2
 
 			// q3a
@@ -547,7 +545,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		{
 			gr := page.AddGroup()
 			gr.Cols = 12
-			gr.Width = 100
 			gr.BottomVSpacers = 2
 
 			// q3b
@@ -601,7 +598,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		{
 			gr := page.AddGroup()
 			gr.Cols = 12
-			gr.Width = 100
 			gr.BottomVSpacers = 0
 
 			// q4a
@@ -622,7 +618,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		{
 			gr := page.AddGroup()
 			gr.Cols = 24 - 0
-			gr.Width = 100
 			gr.BottomVSpacers = 2
 			// q4a
 			{
@@ -700,7 +695,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		{
 			gr := page.AddGroup()
 			gr.Cols = 12
-			gr.Width = 100
 			gr.BottomVSpacers = 0
 
 			// q4b
@@ -722,7 +716,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		{
 			gr := page.AddGroup()
 			gr.Cols = 24 - 0
-			gr.Width = 100
 			gr.BottomVSpacers = 2
 
 			// q4b
@@ -890,7 +883,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			gr := page.AddGroup()
 			gr.BottomVSpacers = 2
 			gr.Cols = 2
-			gr.Width = 100
 
 			{
 				inp := gr.AddInput()

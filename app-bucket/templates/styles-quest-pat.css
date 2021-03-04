@@ -16,7 +16,7 @@ nav a.title {
 
 @media screen and (min-width: 800px) {
     nav a.title {
-        background-color: var(--clr-sec-drk1);
+        /* background-color: var(--clr-sec-drk1); */
     }
 }
 

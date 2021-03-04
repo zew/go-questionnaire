@@ -31,8 +31,8 @@ var CSSLabelRow = ""
 // optional header content
 type gbCol struct {
 	header      trl.S // first row / header - horizontally over input
-	spanLabel   int
-	spanControl int
+	spanLabel   float32
+	spanControl float32
 	cells       []inputT // filled programmatically by addRadioRow...
 }
 
@@ -47,7 +47,7 @@ type GridBuilder struct {
 
 // AddCol adds a column;
 // to the grid builder template
-func (gb *GridBuilder) AddCol(headerCell trl.S, spanLabel, spanControl int) {
+func (gb *GridBuilder) AddCol(headerCell trl.S, spanLabel, spanControl float32) {
 	col := gbCol{}
 	col.header = headerCell
 	col.spanLabel = spanLabel
@@ -97,7 +97,7 @@ func (gb *GridBuilder) AddRadioRow(name string, vals []string, sparseLabels map[
 // AddRadioRow adds radio inputs - empty columns are filled with empty text
 func (gb *GridBuilder) dumpCols() {
 	w := &strings.Builder{}
-	cntr := 0
+	cntr := float32(0.0)
 	for colIdx, col := range gb.cols {
 		fmt.Fprintf(w, "%v - %v %v \n", colIdx, col.spanLabel, col.spanControl)
 		cntr += col.spanLabel
@@ -119,6 +119,18 @@ func (p *pageT) AddGrid(gb *GridBuilder) *groupT {
 		gr.Cols += gb.cols[colIdx].spanLabel
 		gr.Cols += gb.cols[colIdx].spanControl
 	}
+
+	gr.Style = css.NewStylesResponsive()
+	stl := ""
+	for colIdx := 0; colIdx < len(gb.cols); colIdx++ {
+		if gb.cols[colIdx].spanLabel != 0 {
+			stl = fmt.Sprintf("%v   %vfr ", stl, gb.cols[colIdx].spanLabel)
+		}
+		if gb.cols[colIdx].spanControl != 0 {
+			stl = fmt.Sprintf("%v   %vfr ", stl, gb.cols[colIdx].spanControl)
+		}
+	}
+	// gr.Style.Desktop.GridContainerStyle.TemplateColumns = stl
 
 	// first row - main label
 	if gb.MainLabel != nil {
@@ -179,7 +191,7 @@ func (p *pageT) AddGrid(gb *GridBuilder) *groupT {
 
 // NewGridBuilderRadios for FMT questionnaire
 func NewGridBuilderRadios(
-	columnTemplate []int,
+	columnTemplate []float32,
 	hdrLabels []trl.S,
 	inputNames []string,
 	radioVals []string,

@@ -74,7 +74,7 @@ func (h horizontalAlignment) String() string {
 // On colsTotal == 0  division by zero case:
 // We return no CSS.
 // 		=> No width restriction - elements grow horizontally as much as needed
-func colWidth(colsElement, colsTotal int) string {
+func colWidth(colsElement float32, colsTotal float32) string {
 	css := ""
 	if colsTotal < 1 { // Prevent any division by zero
 		return css

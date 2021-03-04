@@ -11,10 +11,8 @@ import (
 	"fmt"
 	"io"
 	"log"
-	"math"
 	"net/http"
 	"path"
-	"sort"
 	"strconv"
 	"strings"
 	"time"
@@ -83,8 +81,8 @@ type radioT struct {
 	HAlign horizontalAlignment `json:"hori_align,omitempty"` // label and description left/center/right of input, default left, similar setting for radioT but not for group
 	Label  trl.S               `json:"label,omitempty"`
 	Val    string              `json:"val,omitempty"`     // Val is allowed to be nil; it then gets initialized to 1...n by Validate(). 0 indicates 'no entry'.
-	Col    int                 `json:"column,omitempty"`  // col x of cols
-	Cols   int                 `json:"columns,omitempty"` //
+	Col    float32             `json:"column,omitempty"`  // col x of cols
+	Cols   float32             `json:"columns,omitempty"` //
 	// field 'response' is absent, it is added dynamically;
 }
 
@@ -124,8 +122,8 @@ type inputT struct {
 	// The number adds up against group.Cols - determining newlines.
 	// The number is used to compute the relative width (percentage).
 	// If zero, a column width of one is assumend.
-	ColSpanLabel   int `json:"col_span_label,omitempty"`
-	ColSpanControl int `json:"col_span_control,omitempty"`
+	ColSpanLabel   float32 `json:"col_span_label,omitempty"`
+	ColSpanControl float32 `json:"col_span_control,omitempty"`
 
 	Radios []*radioT  `json:"radios,omitempty"`    // This slice implements the radiogroup - and the senseless checkboxgroup
 	DD     *DropdownT `json:"drop_down,omitempty"` // As pointer to prevent JSON cluttering
@@ -160,7 +158,7 @@ func NewInput() inputT {
 	return t
 }
 
-func renderLabelDescription(i inputT, langCode string, numCols int) string {
+func renderLabelDescription(i inputT, langCode string, numCols float32) string {
 	return renderLabelDescription2(i, langCode, i.Name, i.HAlignLabel,
 		i.Label, i.Desc, i.CSSLabel, i.ColSpanLabel, numCols)
 }
@@ -170,7 +168,7 @@ func renderLabelDescription(i inputT, langCode string, numCols int) string {
 // Argument numCols is the total number of cols per row.
 // It is used to compute the precise width in percent
 func renderLabelDescription2(i inputT, langCode string, name string, hAlign horizontalAlignment,
-	lbl, desc trl.S, css string, colsLabel, numCols int) string {
+	lbl, desc trl.S, css string, colsLabel float32, numCols float32) string {
 	ret := ""
 	if lbl == nil && desc == nil {
 		return ret
@@ -262,242 +260,8 @@ func (inp inputT) IsReserved() bool {
 
 // Rendering one input to HTML
 // func (inp inputT) HTML(langCode string, namePrefix string) string {
-func (inp inputT) HTML(langCode string, numCols int) string {
-
-	nm := inp.Name
-
-	switch inp.Type {
-
-	case "textblock":
-		lbl := renderLabelDescription(inp, langCode, numCols)
-		return lbl
-
-	case "button":
-		lbl := fmt.Sprintf("<button type='submit' name='%v' value='%v' class='%v' accesskey='%v'><b>%v</b> %v</button>\n",
-			inp.Name, inp.Response, inp.CSSControl, inp.AccessKey,
-			inp.Label.TrSilent(langCode), inp.Desc.TrSilent(langCode),
-		)
-		lbl = td(inp.HAlignControl, colWidth(inp.ColSpanControl, numCols), lbl)
-		return lbl
-
-	case "text", "number", "hidden", "textarea", "checkbox", "dropdown":
-
-		ctrl := ""
-		val := inp.Response
-
-		checked := ""
-		if inp.Type == "checkbox" {
-			if val == ValSet {
-				checked = "checked=\"checked\""
-			}
-			val = ValSet
-		}
-
-		if inp.Type == "textarea" {
-			width := ""
-			colsRows := fmt.Sprintf(" cols='%v' rows='1' ", inp.MaxChars+1)
-			if inp.MaxChars > 80 {
-				colsRows = fmt.Sprintf(" cols='80' rows='%v' ", inp.MaxChars/80+1)
-				// width = fmt.Sprintf("width: %vem;", int(float64(80)*1.05))
-				width = "width: 98%;"
-			}
-			ctrl += fmt.Sprintf("<textarea        name='%v' id='%v' title='%v %v' class='%v' style='%v' MAXLENGTH='%v' %v>%v</textarea>\n",
-				nm, nm, inp.Label.TrSilent(langCode), inp.Desc.TrSilent(langCode), inp.CSSControl, width, inp.MaxChars, colsRows, val)
-
-		} else if inp.Type == "dropdown" {
-
-			// i.DD = &DropdownT{}
-			inp.DD.SetName(inp.Name)
-			inp.DD.LC = langCode
-			inp.DD.SetTitle(inp.Label.TrSilent(langCode) + " " + inp.Desc.TrSilent(langCode))
-			inp.DD.Select(inp.Response)
-			inp.DD.SetAttr("class", inp.CSSControl)
-
-			sort.Sort(inp.DD)
-
-			ctrl += inp.DD.RenderStr()
-
-		} else {
-			// input
-			inputMode := ""
-			if inp.Type == "number" {
-				if inp.Step != 0 {
-					if inp.Step >= 1 {
-						inputMode = fmt.Sprintf(" step='%.0f'  ", inp.Step)
-					} else {
-						prec := int(math.Log10(1 / inp.Step))
-						f := fmt.Sprintf(" step='%%.%vf'  ", prec)
-						inputMode = fmt.Sprintf(f, inp.Step)
-					}
-				}
-			}
-			ctrl += fmt.Sprintf(
-				`<input type='%v'  %v  name='%v' id='%v' title='%v %v' 
-				class='%v' style='width:%vrem'  SIZE='%v' MAXLENGTH=%v MIN='%v' MAX='%v'  %v  value='%v' />
-				`,
-				inp.Type, inputMode,
-				nm, nm, inp.Label.TrSilent(langCode), inp.Desc.TrSilent(langCode),
-				inp.CSSControl, fmt.Sprintf("%.2f", float32(inp.MaxChars)*0.65), inp.MaxChars, inp.MaxChars, inp.Min, inp.Max, checked, val)
-		}
-
-		// The checkbox "empty catcher" must follow *after* the actual checkbox input,
-		// since http.Form.Get() fetches the first value.
-		if inp.Type == "checkbox" {
-			ctrl += fmt.Sprintf("<input type='hidden' name='%v' id='%v_hidd' value='0' />\n", nm, nm)
-		}
-
-		// Append suffix
-		ctrl = appendSuffix(ctrl, &inp, langCode)
-
-		// Append error message
-		if inp.ErrMsg.Set() {
-			ctrl += fmt.Sprintf("<span class='go-quest-label %v' >%v</span>\n", inp.CSSLabel, inp.ErrMsg.TrSilent(langCode))
-		}
-
-		ctrl = td(inp.HAlignControl, colWidth(inp.ColSpanControl, numCols), ctrl)
-
-		lbl := renderLabelDescription(inp, langCode, numCols)
-		return lbl + ctrl
-
-	case "radiogroup", "checkboxgroup":
-		ctrl := ""
-		innerType := "radio"
-		if inp.Type == "checkboxgroup" {
-			innerType = "checkbox"
-		}
-
-		for radIdx, rad := range inp.Radios {
-			one := ""
-			checked := ""
-			if inp.Response == rad.Val {
-				checked = "checked=\"checked\""
-			}
-
-			radio := fmt.Sprintf(
-				// 2021-01 - id must be unique
-				"<input type='%v' name='%v' id-disabled='%v' title='%v %v' class='%v' value='%v' %v />\n",
-				innerType, nm, nm, inp.Label.TrSilent(langCode), inp.Desc.TrSilent(langCode),
-				inp.CSSControl,
-				rad.Val, checked,
-			)
-
-			lbl := ""
-			if !rad.Label.Set() {
-				one = radio
-			} else {
-				if rad.HAlign == HLeft {
-					lbl = fmt.Sprintf(
-						"<span class=' vert-correct-left-right' >%v</span>\n",
-						rad.Label.Tr(langCode),
-					)
-					one = nobreakGlue(lbl, "&nbsp;", radio)
-				}
-				if rad.HAlign == HCenter {
-					// no i.CSSLabel to prevent left margins/paddings to uncenter
-					lbl = fmt.Sprintf(
-						"<span class=' vert-correct-center '>%v</span>\n",
-						rad.Label.Tr(langCode),
-					)
-					lbl += vspacer0
-					one = lbl + radio
-				}
-
-				if rad.HAlign == HRight {
-					lbl = fmt.Sprintf(
-						"<span class=' vert-correct-left-right'>%v</span>\n",
-						rad.Label.Tr(langCode),
-					)
-					one = nobreakGlue(radio, "&nbsp;", lbl)
-				}
-			}
-
-			cssNoLeft := inp.CSSLabel
-			if rad.HAlign == HCenter {
-				cssNoLeft = strings.Replace(inp.CSSLabel, "special-input-left-padding", "", -1)
-			}
-			one = fmt.Sprintf("<span class='go-quest-label %v'>%v</span>\n", cssNoLeft, one)
-
-			cellAlign := rad.HAlign
-			if rad.HAlign == HRight {
-				cellAlign = HLeft
-			}
-
-			if rad.Cols == 0 {
-				one = td(cellAlign, colWidth(1, numCols), one)
-				ctrl += one
-			} else {
-
-				/* Explanation by example:
-				   Cols = 3, Col = [0, 1, 2, 3, 4, 5, 6], Col%Cols = [0, 1, 2, 0, 1, 2, 0]
-				   closing/opening should happen  after      Col%Cols == Cols-1 == 2
-				           opening should happen *before*    Col == 0
-				   closing         should happen  after      Col == len(Cols)-1
-
-
-					Cols = 2, Col = [0, 1, 2, 3, 4, 5, 6], Col%Cols = [0, 1, 0, 1, 0, 1, 0]
-
-				*/
-
-				if rad.Col == 0 {
-					tOpen := tableOpen
-					width := fmt.Sprintf(" style='width: %v%%;' >", 100) // table width 100 percent - better would be group.Width
-					tOpen = strings.Replace(tOpen, ">", width, -1)
-					ctrl += tOpen
-				}
-
-				one = td(cellAlign, colWidth(1, rad.Cols), one)
-				ctrl += one
-
-				if (rad.Col+0)%rad.Cols == rad.Cols-1 || radIdx == len(inp.Radios)-1 {
-
-					ctrl += tableClose
-				}
-				if (rad.Col+0)%rad.Cols == rad.Cols-1 && radIdx < len(inp.Radios)-1 {
-					tOpen := tableOpen
-					width := fmt.Sprintf(" style='width: %v%%;' >", 100) // table width 100 percent - better would be group.Width
-					tOpen = strings.Replace(tOpen, ">", width, -1)
-					ctrl += tOpen
-				}
-
-			}
-
-		}
-		// The checkbox "empty catcher" must follow *after* the actual checkbox input,
-		// since golang http.Form.Get() fetches the *first* value.
-		//
-		// The radio "empty catcher" becomes necessary,
-		// if no radio was selected by the participant;
-		// but a "must..." validation rule is registered
-		if innerType == "radio" || innerType == "checkbox" {
-			ctrl += fmt.Sprintf("<input type='hidden' name='%v' id='%v_hidd' value='%v' />\n",
-				nm, nm, valEmpty)
-		}
-
-		// Append suffix
-		if !inp.Suffix.Empty() {
-			// compare appendSuffix() forcing no wrap for ordinary inputs
-			// ctrl += fmt.Sprintf("<span class='go-quest-label %v' >%v</span>\n", i.CSSLabel, i.Suffix.TrSilent(langCode))
-			ctrl += fmt.Sprintf("<span class='postlabel %v' >%v</span>\n", inp.CSSLabel, inp.Suffix.TrSilent(langCode))
-		}
-
-		if inp.ErrMsg.Set() {
-			ctrl += fmt.Sprintf("<span class='go-quest-label %v' >%v</span>\n", inp.CSSLabel, inp.ErrMsg.TrSilent(langCode)) // ugly layout  - but radiogroup and checkboxgroup won't have validation errors anyway
-		}
-
-		lbl := renderLabelDescription(inp, langCode, numCols)
-		return lbl + ctrl
-
-	case "dyn-textblock":
-		return fmt.Sprintf("<span class='go-quest-label %v'>%v</span>\n", inp.CSSLabel, inp.Label.Tr(langCode))
-
-	case "dyn-composite", "dyn-composite-scalar":
-		// rendered at group level -  rendered by composit
-		return ""
-
-	default:
-		return fmt.Sprintf("input %v: unknown type '%v'  - allowed are %v\n", nm, inp.Type, implementedTypes)
-	}
-
+func (inp inputT) HTML(langCode string, numCols float32) string {
+	return "Version < 2 no longer implemented"
 }
 
 // A group consists of several input controls;
@@ -515,7 +279,6 @@ type groupT struct {
 	Vertical bool `json:"vertical,omitempty"` // groups vertically, not horizontally
 
 	OddRowsColoring bool `json:"odd_rows_coloring,omitempty"` // color odd rows
-	Width           int  `json:"width,omitempty"`             // default is 100 percent
 
 	// Number of vertical columns;
 	// for horizontal *and* (not yet implemented) vertical layouts;
@@ -524,7 +287,7 @@ type groupT struct {
 	// inputT.ColSpanLabel and inputT.ColSpanControl may set this to more than 1.
 	//
 	// Cols determines the 'slot' width for these above settings using colWidth(colsElement, colsTotal)
-	Cols int `json:"columns,omitempty"`
+	Cols float32 `json:"columns,omitempty"`
 
 	Inputs             []*inputT `json:"inputs,omitempty"`
 	RandomizationGroup int       `json:"randomization_group,omitempty"` // > 0 => group can be repositioned for randomization
@@ -565,24 +328,6 @@ func (gr *groupT) addInputEmpty() *inputT {
 	gr.Inputs = append(gr.Inputs, inp)
 	ret := gr.Inputs[len(gr.Inputs)-1]
 	return ret
-}
-
-// TableOpen creates a table markup with various CSS parameters
-func (gr *groupT) TableOpen(rows int) string {
-	to := tableOpen
-
-	if gr.OddRowsColoring {
-		to = strings.Replace(to, "class='main-table' ", "class='main-table bordered'  ", -1) // enable bordering as a whole
-	}
-	if rows%2 == 1 && gr.OddRowsColoring {
-		to = strings.Replace(to, "bordered", "bordered alternate-row-color", -1) // grew background for odd row
-	}
-
-	// set width less than 100 percent, for i.e. radios more closely together
-	width := fmt.Sprintf(" style='width: %v%%;' >", gr.Width)
-	to = strings.Replace(to, ">", width, -1)
-
-	return to
 }
 
 // HasComposit - group contains composit element?
@@ -666,109 +411,7 @@ func validateComposite(
 
 // GroupHTMLTableBased renders a group of inputs to GroupHTMLTableBased
 func (q QuestionnaireT) GroupHTMLTableBased(pageIdx, grpIdx int) string {
-
-	w := &strings.Builder{}
-	gr := q.Pages[pageIdx].Groups[grpIdx]
-
-	if gr.Width == 0 {
-		gr.Width = 100
-	}
-	fmt.Fprint(
-		w,
-		fmt.Sprintf(
-			"<div class='go-quest-group' style='width:%v%%;'  cols='%v'>\n",
-			gr.Width, gr.Cols, // cols is just for debugging
-		),
-	)
-	i := inputT{Type: "textblock"}
-	i.HAlignLabel = HLeft
-	i.Label = gr.Label
-	i.Desc = gr.Desc
-	i.CSSLabel = "go-quest-group-header"
-	i.ColSpanLabel = gr.Cols
-	lbl := renderLabelDescription(i, q.LangCode, gr.Cols)
-	// lbl := renderLabelDescription(inputT{Type: "textblock"},	langCode, "", HLeft, gr.Label, gr.Desc, "go-quest-group-header", gr.Cols, gr.Cols)
-
-	fmt.Fprintf(w, lbl)
-	fmt.Fprintf(w, vspacer0)
-
-	fmt.Fprintf(w, "</div>\n")
-
-	for i := 0; i < gr.HeaderBottomVSpacers; i++ {
-		fmt.Fprintf(w, vspacer8)
-	}
-
-	// Rendering inputs
-	// Adding up columns
-	// Find out when a new row starts
-	cols := 0 // cols counter
-	rows := 0
-	fmt.Fprint(w, gr.TableOpen(rows))
-	for i, inp := range gr.Inputs {
-
-		if inp.Type == "dyn-composite-scalar" {
-			continue
-		}
-		if inp.Type == "dyn-composite" {
-			continue
-		}
-
-		fmt.Fprint(w, "<td>")
-		fmt.Fprint(w, inp.HTML(q.LangCode, gr.Cols)) // rendering markup
-		fmt.Fprint(w, "</td>")
-
-		if gr.Cols > 0 {
-
-			// incrementing label columns
-			if inp.Type != "button" { // button has label *inside of it*
-				if inp.ColSpanLabel > 1 {
-					cols += inp.ColSpanLabel // wider labels
-				} else {
-					// nothing specified
-					if inp.Label != nil || inp.Desc != nil {
-						// if a label is set, it occupies one column
-						cols++
-					}
-				}
-			}
-
-			// incrementing control columns
-			if inp.Type != "textblock" { // textblock has no control part
-				if inp.ColSpanControl > 1 {
-					cols += inp.ColSpanControl // larger input controls
-				} else if len(inp.Radios) > 0 {
-					if inp.Radios[0].Cols > 0 {
-						cols += inp.Radios[0].Cols
-					} else {
-						cols += len(inp.Radios) // radiogroups, if no ColSpan is set
-					}
-
-				} else {
-					// nothing specified => input control occupies one column
-					cols++
-				}
-			}
-
-			// log.Printf("%12v %2v %2v %2v => %3v %2v", inp.Type,
-			// 	inp.ColSpanLabel, inp.ColSpanControl, inp.ColSpanLabel+inp.ColSpanControl,
-			// 	cols, cols%gr.Cols,
-			// ) // dump columns filled so far
-
-			// end of row  - or end of group
-			if (cols+0)%gr.Cols == 0 || i == len(gr.Inputs)-1 {
-				fmt.Fprintf(w, tableClose)
-			}
-			if (cols+0)%gr.Cols == 0 && i < len(gr.Inputs)-1 {
-				rows++
-				fmt.Fprint(w, gr.TableOpen(rows))
-			}
-		}
-	}
-
-	// b.WriteString(tableClose) // this was double of code above
-
-	return w.String()
-
+	return "GroupHTMLTableBased no longer implemented"
 }
 
 // Type page contains groups with inputs

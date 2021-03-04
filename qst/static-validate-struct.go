@@ -147,11 +147,6 @@ func (q *QuestionnaireT) Validate() error {
 
 		for i2 := 0; i2 < len(q.Pages[i1].Groups); i2++ {
 
-			// group default width is 100 - like page
-			if q.Pages[i1].Groups[i2].Width == 0 {
-				q.Pages[i1].Groups[i2].Width = 100
-			}
-
 			// a number of columns per group must be set
 			if q.Pages[i1].Groups[i2].Cols < 1 {
 				return fmt.Errorf("Page %v - Group %v - Number of columns must be greater 0: ", i1, i2)

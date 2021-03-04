@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "066563004eac11e73f186db46a69a093",
+ 	"md_5": "bd1432decf407451e570e0ad6fca1008",
  	"lang_codes": [
  		"de",
  		"en"
@@ -44,7 +44,6 @@
  			"groups": [
  				{
  					"bottom_vspacers": 3,
- 					"width": 100,
  					"columns": 3,
  					"inputs": [
  						{
@@ -60,8 +59,7 @@
  				},
  				{
  					"bottom_vspacers": 3,
- 					"width": 100,
- 					"columns": 4,
+ 					"columns": 6,
  					"inputs": [
  						{
  							"type": "textblock",
@@ -69,18 +67,41 @@
  								"de": "Sind Sie die angeschriebene Person?",
  								"en": "Are you the addressee?"
  							},
- 							"col_span_label": 3
+ 							"col_span_label": 6
  						},
  						{
  							"name": "proxy",
  							"type": "radio",
  							"label": {
- 								"de": " Ja, ich bin die angeschriebene Person.",
+ 								"de": "Ja, ich bin die angeschriebene Person.",
  								"en": "Yes, I am the addressee."
  							},
- 							"col_span_label": 3,
+ 							"col_span_label": 5,
  							"col_span_control": 1,
- 							"value_radio": "no"
+ 							"value_radio": "no",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0 0 1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0 0 2rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"A": "",
+ 								"B": "",
+ 								"C": 0
+ 							}
  						},
  						{
  							"name": "proxy",
@@ -89,15 +110,58 @@
  								"de": "Nein, ich fülle den Fragebogen in Vertretung der angeschriebenen Person aus.",
  								"en": "No. I am filling in for the addressee."
  							},
- 							"col_span_label": 3,
+ 							"col_span_label": 5,
  							"col_span_control": 1,
- 							"value_radio": "yes"
+ 							"value_radio": "yes",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0 0 1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0 0 2rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"A": "",
+ 								"B": "",
+ 								"C": 0
+ 							}
  						}
- 					]
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width_max": "26rem"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width_max": "none"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"A": "",
+ 						"B": "",
+ 						"C": 0
+ 					}
  				},
  				{
  					"bottom_vspacers": 3,
- 					"width": 100,
  					"columns": 3,
  					"inputs": [
  						{
@@ -118,7 +182,6 @@
  				},
  				{
  					"bottom_vspacers": 3,
- 					"width": 75,
  					"columns": 1,
  					"inputs": [
  						{
@@ -161,7 +224,6 @@
  				{
  					"bottom_vspacers": 3,
  					"odd_rows_coloring": true,
- 					"width": 100,
  					"columns": 7,
  					"inputs": [
  						{
@@ -504,12 +566,28 @@
  							"col_span_control": 1,
  							"value_radio": "4"
  						}
- 					]
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"A": "",
+ 						"B": "",
+ 						"C": 0
+ 					}
  				},
  				{
  					"bottom_vspacers": 3,
  					"odd_rows_coloring": true,
- 					"width": 100,
  					"columns": 7,
  					"inputs": [
  						{
@@ -852,12 +930,28 @@
  							"col_span_control": 1,
  							"value_radio": "4"
  						}
- 					]
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"A": "",
+ 						"B": "",
+ 						"C": 0
+ 					}
  				},
  				{
  					"bottom_vspacers": 3,
  					"odd_rows_coloring": true,
- 					"width": 100,
  					"columns": 7,
  					"inputs": [
  						{
@@ -1200,7 +1294,24 @@
  							"col_span_control": 1,
  							"value_radio": "4"
  						}
- 					]
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"A": "",
+ 						"B": "",
+ 						"C": 0
+ 					}
  				}
  			]
  		},
@@ -1223,7 +1334,6 @@
  			"groups": [
  				{
  					"bottom_vspacers": 3,
- 					"width": 100,
  					"columns": 5,
  					"inputs": [
  						{
@@ -1270,7 +1380,6 @@
  				},
  				{
  					"bottom_vspacers": 3,
- 					"width": 100,
  					"columns": 5,
  					"inputs": [
  						{
@@ -1337,7 +1446,6 @@
  				{
  					"bottom_vspacers": 3,
  					"odd_rows_coloring": true,
- 					"width": 100,
  					"columns": 7,
  					"inputs": [
  						{
@@ -1582,12 +1690,28 @@
  							"col_span_control": 1,
  							"value_radio": "4"
  						}
- 					]
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"A": "",
+ 						"B": "",
+ 						"C": 0
+ 					}
  				},
  				{
  					"header_bottom_vspacers": 1,
  					"bottom_vspacers": 3,
- 					"width": 100,
  					"columns": 9,
  					"inputs": [
  						{
@@ -1653,7 +1777,6 @@
  				{
  					"header_bottom_vspacers": 1,
  					"bottom_vspacers": 3,
- 					"width": 100,
  					"columns": 9,
  					"inputs": [
  						{
@@ -1742,7 +1865,6 @@
  				{
  					"bottom_vspacers": 3,
  					"odd_rows_coloring": true,
- 					"width": 100,
  					"columns": 9,
  					"inputs": [
  						{
@@ -2071,12 +2193,28 @@
  							"col_span_control": 1,
  							"value_radio": "6"
  						}
- 					]
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"A": "",
+ 						"B": "",
+ 						"C": 0
+ 					}
  				},
  				{
  					"bottom_vspacers": 3,
  					"odd_rows_coloring": true,
- 					"width": 100,
  					"columns": 9,
  					"inputs": [
  						{
@@ -2405,12 +2543,28 @@
  							"col_span_control": 1,
  							"value_radio": "6"
  						}
- 					]
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"A": "",
+ 						"B": "",
+ 						"C": 0
+ 					}
  				},
  				{
  					"bottom_vspacers": 3,
  					"odd_rows_coloring": true,
- 					"width": 100,
  					"columns": 9,
  					"inputs": [
  						{
@@ -2861,7 +3015,24 @@
  							"col_span_control": 1,
  							"value_radio": "6"
  						}
- 					]
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"A": "",
+ 						"B": "",
+ 						"C": 0
+ 					}
  				}
  			]
  		},
@@ -2885,7 +3056,6 @@
  				{
  					"bottom_vspacers": 3,
  					"odd_rows_coloring": true,
- 					"width": 100,
  					"columns": 9,
  					"inputs": [
  						{
@@ -3458,12 +3628,28 @@
  							"col_span_control": 1,
  							"value_radio": "6"
  						}
- 					]
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"A": "",
+ 						"B": "",
+ 						"C": 0
+ 					}
  				},
  				{
  					"bottom_vspacers": 3,
  					"odd_rows_coloring": true,
- 					"width": 100,
  					"columns": 9,
  					"inputs": [
  						{
@@ -3914,7 +4100,24 @@
  							"col_span_control": 1,
  							"value_radio": "6"
  						}
- 					]
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"A": "",
+ 						"B": "",
+ 						"C": 0
+ 					}
  				}
  			]
  		},
@@ -3942,7 +4145,6 @@
  				{
  					"bottom_vspacers": 3,
  					"odd_rows_coloring": true,
- 					"width": 100,
  					"columns": 7,
  					"inputs": [
  						{
@@ -4285,10 +4487,26 @@
  							"col_span_control": 1,
  							"value_radio": "4"
  						}
- 					]
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"A": "",
+ 						"B": "",
+ 						"C": 0
+ 					}
  				},
  				{
- 					"width": 100,
  					"columns": 1,
  					"inputs": [
  						{
@@ -4303,7 +4521,6 @@
  				},
  				{
  					"bottom_vspacers": 3,
- 					"width": 100,
  					"columns": 100,
  					"inputs": [
  						{
@@ -4355,7 +4572,6 @@
  					]
  				},
  				{
- 					"width": 100,
  					"columns": 1,
  					"inputs": [
  						{
@@ -4371,7 +4587,6 @@
  				{
  					"header_bottom_vspacers": 1,
  					"bottom_vspacers": 3,
- 					"width": 100,
  					"columns": 12,
  					"inputs": [
  						{
@@ -4410,7 +4625,6 @@
  					]
  				},
  				{
- 					"width": 100,
  					"columns": 1,
  					"inputs": [
  						{
@@ -4426,7 +4640,6 @@
  				{
  					"header_bottom_vspacers": 1,
  					"bottom_vspacers": 3,
- 					"width": 100,
  					"columns": 100,
  					"inputs": [
  						{
@@ -4490,7 +4703,6 @@
  			"groups": [
  				{
  					"bottom_vspacers": 3,
- 					"width": 100,
  					"columns": 6,
  					"inputs": [
  						{
@@ -4625,7 +4837,6 @@
  				{
  					"bottom_vspacers": 3,
  					"odd_rows_coloring": true,
- 					"width": 100,
  					"columns": 9,
  					"inputs": [
  						{
@@ -5332,7 +5543,24 @@
  							"col_span_label": 2,
  							"col_span_control": 6
  						}
- 					]
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"A": "",
+ 						"B": "",
+ 						"C": 0
+ 					}
  				}
  			]
  		},
@@ -5360,7 +5588,6 @@
  				{
  					"header_bottom_vspacers": 1,
  					"bottom_vspacers": 3,
- 					"width": 100,
  					"columns": 9,
  					"inputs": [
  						{
@@ -5438,7 +5665,6 @@
  				{
  					"bottom_vspacers": 3,
  					"odd_rows_coloring": true,
- 					"width": 100,
  					"columns": 9,
  					"inputs": [
  						{
@@ -6011,12 +6237,28 @@
  							"col_span_control": 1,
  							"value_radio": "6"
  						}
- 					]
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"A": "",
+ 						"B": "",
+ 						"C": 0
+ 					}
  				},
  				{
  					"header_bottom_vspacers": 1,
  					"bottom_vspacers": 3,
- 					"width": 100,
  					"columns": 100,
  					"inputs": [
  						{
@@ -6164,7 +6406,6 @@
  			"groups": [
  				{
  					"bottom_vspacers": 3,
- 					"width": 100,
  					"columns": 1,
  					"inputs": [
  						{
@@ -6189,7 +6430,6 @@
  				},
  				{
  					"bottom_vspacers": 3,
- 					"width": 100,
  					"columns": 2,
  					"inputs": [
  						{
@@ -6218,7 +6458,6 @@
  				},
  				{
  					"bottom_vspacers": 3,
- 					"width": 100,
  					"columns": 2,
  					"inputs": [
  						{
@@ -6269,7 +6508,6 @@
  			"groups": [
  				{
  					"bottom_vspacers": 3,
- 					"width": 100,
  					"columns": 1,
  					"inputs": [
  						{

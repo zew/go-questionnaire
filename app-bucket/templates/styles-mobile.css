@@ -19,6 +19,10 @@
     :root {
     	font-size: clamp(0.95rem, calc(0.8rem + ((1vw - .48rem) * 1.2)), 1.05rem);
     }
+    
+    * {
+        line-height: 1.3; /* instead of 1.15 */
+    }
 
     label, .postlabel {
         min-width: unset;

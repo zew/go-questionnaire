@@ -16,64 +16,64 @@ import (
 var hyph = []string{
 
 	// german
-	"blei&shy;ben", // blei|ben
-	"kom&shy;plett",
-	"Ein&shy;fluss", // Ein|fluss
-	"schlech&shy;teste",
-	"ver&shy;schlechtern",
 	"An&shy;gabe",
-
-	"Da&shy;ten",                           // Da|ten
-	"Kon&shy;junk&shy;tur&shy;da&shy;ten ", // Kon|junk|tur
-
-	"Ex&shy;port&shy;markt",      // "Ex|port|markt
-	"Ex&shy;port&shy;märkte",     // "Ex|port|märkte
-	"Wechsel&shy;kurse",          //
-	"Po&shy;li&shy;tik",          // Po|li|tik
-	"Geld&shy;po&shy;li&shy;tik", //
-
-	"Re&shy;gie&shy;rung",                   // 	"Re|gie|rung",
-	"Bil&shy;dung",                          // 	"Bil|dung",
-	"Re&shy;gie&shy;rungs&shy;bil&shy;dung", // Re|gie|rungs|bil|dung
-	"Euro&shy;raum",
-	"Roh&shy;stoff&shy;preise",
-	"Erwartungs&shy;wert",
-
 	"Aus&shy;fall&shy;risiken",
-	"Risiko&shy;trag&shy;fähig&shy;keit",
-	"Re&shy;finanz&shy;ierung",
-	"Wett&shy;be&shy;werbs&shy;sit&shy;uation",
-	"Regu&shy;lierung",
-	"Groß&shy;unter&shy;nehmen",
-	"Immob&shy;ilien&shy;kredite",
-	"Kon&shy;sum&shy;enten&shy;kredite",
-	"Regierungs&shy;bildung",
-	"Kredit&shy;nach&shy;frage",
-	"Kredit&shy;angebot",
-	"mittel&shy;fristig",
-	"nor&shy;mal",  // nor|mal
-	"nied&shy;rig", // nied|rig
-	"lang&shy;fristig",
-	"po&shy;si&shy;tiv", // po|si|tiv
-	"ne&shy;ga&shy;tiv", // ne|ga|tiv
-	"neu&shy;tral",      // neu|tral
-
-	"Deutsch&shy;land",
-	"Welt&shy;wirtschaft",
-	"un&shy;ent&shy;schieden",
-	"über&shy;haupt",
-	"er&shy;stre&shy;bens&shy;wert",
 	"aus&shy;ge&shy;schlos&shy;sen",
-	"si&shy;cher",
-	"stei&shy;gen", // stei|gen
-	"sin&shy;ken",  // sin|ken
-	"un&shy;wich&shy;tig",
-	"wich&shy;tig",
+	"Bil&shy;dung", // 	"Bil|dung",
+	"blei&shy;ben", // blei|ben
+	"Da&shy;ten",   // Da|ten
 	"da&shyfür",
 	"da&shyge&shygen",
+	"Deutsch&shy;land",
+	"Ein&shy;fluss", // Ein|fluss
+	"er&shy;stre&shy;bens&shy;wert",
+	"Erwartungs&shy;wert",
+	"Euro&shy;raum",
+	"Ex&shy;port&shy;markt",      // "Ex|port|markt
+	"Ex&shy;port&shy;märkte",     // "Ex|port|märkte
+	"Geld&shy;po&shy;li&shy;tik", //
+	"ge&shy;samt",                // ge|samt
+	"Groß&shy;unter&shy;nehmen",
+	"Immob&shy;ilien&shy;kredite",
+	"kom&shy;plett",
+	"Kon&shy;junk&shy;tur&shy;da&shy;ten ", // Kon|junk|tur
+	"Kon&shy;sum&shy;enten&shy;kredite",
+	"Kredit&shy;angebot",
+	"Kredit&shy;nach&shy;frage",
+	"lang&shy;fristig",
+	"mittel&shy;fristig", // mit|tel|fris|tig - reduced
+	"ne&shy;ga&shy;tiv",  // ne|ga|tiv
+	"neu&shy;tral",       // neu|tral
+	"nied&shy;rig",       // nied|rig
+	"nor&shy;mal",        // nor|mal
+	"Po&shy;li&shy;tik",  // Po|li|tik
+	"po&shy;si&shy;tiv",  // po|si|tiv
+	"Re&shy;finanz&shy;ierung",
+	"Re&shy;gie&shy;rung",                   // 	"Re|gie|rung",
+	"Re&shy;gie&shy;rungs&shy;bil&shy;dung", // Re|gie|rungs|bil|dung
+	"Regierungs&shy;bildung",
+	"Regu&shy;lierung",
+	"Risiko&shy;trag&shy;fähig&shy;keit",
+	"Roh&shy;stoff&shy;preise",
+	"schlech&shy;teste",
+	"si&shy;cher",
+	"sin&shy;ken",  // sin|ken
+	"stei&shy;gen", // stei|gen
+	"über&shy;haupt",
+	"un&shy;ent&shy;schieden",
+	"un&shy;wich&shy;tig",
 	"ver&shy;än&shy;dern",      // "ver|än|dern",
 	"ver&shy;bes&shy;sern",     // "ver|bes|sern",
 	"ver&shy;schlech&shy;tern", // "ver|schlech|tern",
+	"ver&shy;schlechtern",
+	"Ver&shy;bes&shy;se&shy;rung",     // Ver|bes|se|rung
+	"Ver&shy;schlech&shy;te&shy;rung", // Ver|schlech|te|rung
+	"Wechsel&shy;kurse",               //
+	"wirt&shy;schaft&shy;lich",        // wirt|schaft|lich
+	"wirt&shy;schaft",                 // wirt|schaft
+	"Welt&shy;wirt&shy;schaft",
+	"Wett&shy;be&shy;werbs&shy;sit&shy;uation",
+	"wich&shy;tig",
 
 	// german euref
 	"Öko&shy;no&shy;mie",
@@ -91,6 +91,7 @@ var hyph = []string{
 	"as&shy;so&shy;zi&shy;ie&shy;rt",
 	"Do&shy;zen&shy;tIn",
 	"Dok&shy;to&shy;ran&shy;din",
+
 	// english
 	"Small+&shy;medium",
 	"enter&shy;prises",

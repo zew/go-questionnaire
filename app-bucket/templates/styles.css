@@ -27,7 +27,7 @@
     padding:     0;
     border:      0;    /* also input and button naked */
     outline:     0;
-    line-height: 1.15;
+    line-height: 1.2;
 
     /* color: violet; */
     background-color: transparent;
@@ -521,8 +521,8 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
 
 input, select, button, textarea, a.button {
     padding:        0.2em 0.1em;
-    margin:         0.2em 0;
-    margin:         0.2em 0.3em; /* 2021-02 - horizontal padding for label pre and post */
+    margin:         0.2em 0; /* 2021-02 - horizontal padding for label post - pre is handled by grid-column-gap  */
+    margin-right:   0.3rem;
     border-radius:  0.15em;
     font-size:      0.9rem;
     font-weight:  300;

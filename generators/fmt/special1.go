@@ -30,7 +30,7 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 			inp := gr.AddInput()
 			inp.Type = "textblock"
 			inp.ColSpanLabel = 6
-			inp.Desc = trl.S{
+			inp.Label = trl.S{
 				"de": "<b>1.</b> Punktprognose der Wachstumsrate des deutschen BIP",
 				"en": "<b>1.</b> Forecast growth rate German GDP",
 			}
@@ -49,7 +49,7 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 		{
 			inp := gr.AddInput()
 			inp.Type = "textblock"
-			inp.Desc = trl.S{
+			inp.Label = trl.S{
 				"de": "Prognose Wachstum des BIP je <b>Quartal</b> <br>\n (real, saisonbereinigt, nicht annualisiert)",
 				"en": "Forecast <b>quarterly</b> GDP growth <br>\n(real, seasonally adjusted, non annualized)",
 			}
@@ -66,7 +66,7 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 			inp.Max = 20
 			inp.MaxChars = 3
 			// inp.Validator = "inRange20"
-			inp.Desc = trl.S{
+			inp.Label = trl.S{
 				"de": nextQ(-1),
 				"en": nextQ(-1),
 			}
@@ -86,7 +86,7 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 			inp.Max = 20
 			inp.MaxChars = 3
 			// inp.Validator = "inRange20"
-			inp.Desc = trl.S{
+			inp.Label = trl.S{
 				"de": nextQ(0),
 				"en": nextQ(0),
 			}
@@ -105,7 +105,7 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 			inp.Max = 20
 			inp.MaxChars = 3
 			// inp.Validator = "inRange20"
-			inp.Desc = trl.S{
+			inp.Label = trl.S{
 				"de": nextQ(),
 				"en": nextQ(),
 			}
@@ -120,7 +120,7 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 		{
 			inp := gr.AddInput()
 			inp.Type = "textblock"
-			inp.Desc = trl.S{
+			inp.Label = trl.S{
 				"de": "Prognose Wachstum des BIP aufs&nbsp;<b>Jahr</b> <br>\n(real, saisonbereinigt)",
 				"en": "Forecast GDP growth per&nbsp;<b>year</b> <br>\n(real, seasonally adjusted)",
 			}
@@ -137,7 +137,7 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 			inp.Max = 20
 			inp.MaxChars = 3
 			// inp.Validator = "inRange20"
-			inp.Desc = trl.S{
+			inp.Label = trl.S{
 				"de": nextY(0),
 				"en": nextY(0),
 			}
@@ -157,7 +157,7 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 			inp.Max = 20
 			inp.MaxChars = 3
 			// inp.Validator = "inRange20"
-			inp.Desc = trl.S{
+			inp.Label = trl.S{
 				"de": nextY(1),
 				"en": nextY(1),
 			}
@@ -176,7 +176,7 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 			inp.Max = 20
 			inp.MaxChars = 3
 			// inp.Validator = "inRange20"
-			inp.Desc = trl.S{
+			inp.Label = trl.S{
 				"de": nextY(2),
 				"en": nextY(2),
 			}
@@ -248,7 +248,7 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 			inp := gr.AddInput()
 			inp.Type = "text"
 			inp.Name = "other_cycle_infl"
-			inp.Desc = trl.S{
+			inp.Label = trl.S{
 				"de": "Wenn sonstige - welche?",
 				"en": "If other - which?",
 			}

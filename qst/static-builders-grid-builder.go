@@ -82,7 +82,7 @@ func (gb *GridBuilder) AddRadioRow(name string, vals []string, sparseLabels map[
 
 		if _, ok := sparseLabels[colIdx]; ok {
 			rad.Label = sparseLabels[colIdx]
-			rad.StyleLbl = css.ItemStart(rad.StyleLbl)
+			rad.StyleLbl = css.TextStart(rad.StyleLbl)
 		}
 
 		rad.ColSpanLabel = gb.cols[colIdx].spanLabel
@@ -165,7 +165,7 @@ func (p *pageT) AddGrid(gb *GridBuilder) *groupT {
 				inp2 := gr.addInputEmpty()
 				inp2.Label = gb.cols[colIdx].header
 				inp2.ColSpanLabel = gb.cols[colIdx].spanControl
-				inp2.Style = css.ItemCentered(inp2.Style)
+				inp2.Style = css.ItemCenteredMCA(inp2.Style)
 				inp2.Style.Desktop.GridItemStyle.AlignSelf = "end"
 				inp2.Style.Desktop.GridItemStyle.AlignSelf = "start"
 				// inp2.Style.Desktop.BoxStyle.Padding = "0 0.2rem"

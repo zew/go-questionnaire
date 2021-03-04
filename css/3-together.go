@@ -147,9 +147,8 @@ func (sr *StylesResponsive) Combine(b StylesResponsive) {
 // 	return sr
 // }
 
-// ItemCentered makes the input vertically and horizontally centered
-func ItemCentered(sr *StylesResponsive) *StylesResponsive {
-
+// ItemCenteredMCA makes the input centered on main and cross axis (MCA)
+func ItemCenteredMCA(sr *StylesResponsive) *StylesResponsive {
 	if sr == nil {
 		sr = NewStylesResponsive()
 	}
@@ -159,14 +158,30 @@ func ItemCentered(sr *StylesResponsive) *StylesResponsive {
 	return sr
 }
 
-// ItemStart makes the input vertically and horizontally centered
-func ItemStart(sr *StylesResponsive) *StylesResponsive {
-
+// ItemStartCA aligns the item at the start on the cross-axis
+func ItemStartCA(sr *StylesResponsive) *StylesResponsive {
 	if sr == nil {
 		sr = NewStylesResponsive()
 	}
+	sr.Desktop.GridItemStyle.AlignSelf = "start"
+	return sr
+}
 
-	// sr.Desktop.GridItemStyle.JustifySelf = "start"
+// ItemEndMA aligns the item at the end on the main-axis
+func ItemEndMA(sr *StylesResponsive) *StylesResponsive {
+	if sr == nil {
+		sr = NewStylesResponsive()
+	}
+	sr.Desktop.GridItemStyle.JustifySelf = "end"
+	return sr
+}
+
+// TextStart makes the text content left aligned
+func TextStart(sr *StylesResponsive) *StylesResponsive {
+	if sr == nil {
+		sr = NewStylesResponsive()
+	}
+	// sr.Desktop.GridItemStyle.JustifySelf = "start"  // fails on multi line text
 	sr.Desktop.TextStyle.AlignHorizontal = "left"
 	return sr
 }

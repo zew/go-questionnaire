@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "bd1432decf407451e570e0ad6fca1008",
+ 	"md_5": "b5ac573f16f70899755ecba48772d5aa",
  	"lang_codes": [
  		"de",
  		"en"
@@ -48,7 +48,7 @@
  					"inputs": [
  						{
  							"type": "textblock",
- 							"description": {
+ 							"label": {
  								"de": "\n\t\u003cdiv class='markdown'\u003e\n\u003cp\u003e\r\nSehr geehrte Finanzmarktexpertin, sehr geehrter Finanzmarktexperte, herzlich willkommen beim ZEW-Finanzmarkttest. \r\n\r\nDurch klicken auf \u003ccode\u003eWeiter\u003c/code\u003e werden Ihre Antworten gespeichert und Sie gelangen zur jeweils nächsten Seite. \r\n\r\nBei einer Unterbrechung (Schließen des Browsers) blei\u0026shy;ben Ihre Antworten erhalten und können später über Ihren persönlichen Link wieder aufgerufen und geändert werden.\r\n\r\nAm Ende der Befragung können Sie den Fragebogen abschließen, so dass keine weiteren Änderungen möglich sind. \r\n\r\n\r\n\r\u003c/p\u003e\n\n\u003ch3\u003eDa\u0026shy;tenschutz\r\u003c/h3\u003e\n\n\u003cp\u003e\r\nHier finden Sie unsere \u003ca href=\"https://www.zew.de/de/da\u0026shy;tenschutz/\"\u003eDa\u0026shy;tenschutz-Grundlagen\u003c/a\u003e.\r\n\r\nIhre An\u0026shy;gaben werden streng vertraulich behandelt. \r\n\r\nDie Auswertung Ihrer Antworten erfolgt als \u003ca href=\"https://de.wikipedia.org/wiki/Panelda\u0026shy;ten\"\u003ePanel-Da\u0026shy;tensatz\u003c/a\u003e in anonymisierter Form.\r\n\r\nIhre Da\u0026shy;ten werden auf einem geschützten Server im ZEW Hauptgebäude gespeichert, auf den nur Mitglieder des ZEW Teams für den Finanzmarkttest Zugriff haben.\r\n\r\nZusätzlich bitten wir um Ihr Einverständnis, dass wir Ihre Antworten \r\nintern mit Ihrer geschäftlichen Identität verknüpfen. \r\n\r\nIhre geschäftliche Identität besteht aus Ihrem Namen, Ihrer Funktion, geschäftl. Email und Telefonnummer, Arbeitgeber und Teilnahmebeginn.\r\u003c/p\u003e\n\n\t\u003c/div\u003e  \u003c!-- markdown --\u003e\n",
  								"en": "\n\t\u003cdiv class='markdown'\u003e\n\u003cp\u003eDear expert, welcome to the ZEW financial markets survey .\r\n\r\nBy clicking \u003ccode\u003eNext\u003c/code\u003e your an\u0026shy;swers will be saved and you progress to the next page.\r\n\r\nIn case of an interruption (closing of the web browser) your an\u0026shy;swers remain saved. You can re-use your personal link to continue and change your an\u0026shy;swers.\r\n\r\nAt the end you can finalize the questionnaire preventing further changes.\r\n\r\n\r\u003c/p\u003e\n\n\u003ch3\u003ePrivacy Protection\r\u003c/h3\u003e\n\n\u003cp\u003e\r\n\r\nPlease notice our \u003ca href=\"https://www.zew.de/en/da\u0026shy;tenschutz/\"\u003eprivacy protection policy\u003c/a\u003e.\r\n\r\nYour data will we treated strictly confidential.\r\n\r\nData processing is done as as \u003ca href=\"https://en.wikipedia.org/wiki/Panel_data\"\u003epanel data set\u003c/a\u003e in anonymized form.\r\n\r\nYour data will be stored on a protected server on the premises of ZEW Ltd. Only members of the financial markets team have access to this server.\r\n\r\nIn addition we ask for permission to internally as\u0026shy;so\u0026shy;ci\u0026shy;ate your an\u0026shy;swers with your busi\u0026shy;ness identity.\r\n\r\nYour busi\u0026shy;ness identity consists of name, role, work phone and email, employer and start of contribution.\r\n\r\n\r\n\r\n\r\u003c/p\u003e\n\n\t\u003c/div\u003e  \u003c!-- markdown --\u003e\n"
  							},
@@ -192,9 +192,27 @@
  								"en": "Next"
  							},
  							"accesskey": "n",
- 							"horizontal_align_control": 2,
  							"col_span_control": 1,
- 							"response": "1"
+ 							"response": "1",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "end"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"A": "",
+ 								"B": "",
+ 								"C": 0
+ 							}
  						}
  					]
  				}
@@ -229,7 +247,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e1.\u003c/b\u003e Die gesamtwirtschaftliche Situation beurteilen wir als",
+ 								"de": "\u003cb\u003e1.\u003c/b\u003e Die ge\u0026shy;samtwirt\u0026shy;schaft\u0026shy;liche Situation beurteilen wir als",
  								"en": "\u003cb\u003e1.\u003c/b\u003e We assess the overall eco\u0026shy;nom\u0026shy;ic situation as"
  							},
  							"col_span_label": 7
@@ -518,11 +536,11 @@
  							"value_radio": "4"
  						},
  						{
- 							"name": "y0_glob",
+ 							"name": "y0_chn",
  							"type": "radio",
  							"label": {
- 								"de": "Welt\u0026shy;wirtschaft",
- 								"en": "Global econ\u0026shy;o\u0026shy;my"
+ 								"de": "China",
+ 								"en": "China"
  							},
  							"col_span_label": 2,
  							"col_span_control": 1,
@@ -548,19 +566,19 @@
  							}
  						},
  						{
- 							"name": "y0_glob",
+ 							"name": "y0_chn",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "y0_glob",
+ 							"name": "y0_chn",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "y0_glob",
+ 							"name": "y0_chn",
  							"type": "radio",
  							"col_span_label": 1,
  							"col_span_control": 1,
@@ -593,7 +611,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e2a.\u003c/b\u003e Die gesamtwirtschaftliche Situation wird sich mittel\u0026shy;fristig (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;Mo.)",
+ 								"de": "\u003cb\u003e2a.\u003c/b\u003e Die ge\u0026shy;samtwirt\u0026shy;schaft\u0026shy;liche Situation wird sich mittel\u0026shy;fristig (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;Mo.)",
  								"en": "\u003cb\u003e2a.\u003c/b\u003e The overall eco\u0026shy;nom\u0026shy;ic situation medium term (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;months) will"
  							},
  							"col_span_label": 7
@@ -669,7 +687,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "ver\u0026shy;schlech\u0026shy;tern",
+ 								"de": "ver\u0026shy;schlechtern",
  								"en": "deteriorate"
  							},
  							"col_span_label": 1,
@@ -882,11 +900,11 @@
  							"value_radio": "4"
  						},
  						{
- 							"name": "y_glob",
+ 							"name": "y_chn",
  							"type": "radio",
  							"label": {
- 								"de": "Welt\u0026shy;wirtschaft",
- 								"en": "Global econ\u0026shy;o\u0026shy;my"
+ 								"de": "China",
+ 								"en": "China"
  							},
  							"col_span_label": 2,
  							"col_span_control": 1,
@@ -912,19 +930,19 @@
  							}
  						},
  						{
- 							"name": "y_glob",
+ 							"name": "y_chn",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "y_glob",
+ 							"name": "y_chn",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "y_glob",
+ 							"name": "y_chn",
  							"type": "radio",
  							"col_span_label": 1,
  							"col_span_control": 1,
@@ -951,30 +969,102 @@
  				},
  				{
  					"bottom_vspacers": 3,
- 					"odd_rows_coloring": true,
- 					"columns": 7,
+ 					"columns": 10,
  					"inputs": [
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e2b.\u003c/b\u003e Die gesamtwirtschaftliche Situation wird sich lang\u0026shy;fristig (\u003cb\u003e24\u003c/b\u003e\u0026nbsp;Mo.)",
- 								"en": "\u003cb\u003e2b.\u003c/b\u003e The overall eco\u0026shy;nom\u0026shy;ic situation long term (\u003cb\u003e24\u003c/b\u003e\u0026nbsp;months) will"
+ 								"de": "\u003cb\u003e2b.\u003c/b\u003e Für wie wahrscheinlich halten Sie die folgenden mittel\u0026shy;fristigen (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;Mo.) Entwicklungen der ge\u0026shy;samtwirt\u0026shy;schaft\u0026shy;lichen Situation in Deutsch\u0026shy;land?",
+ 								"en": "\u003cb\u003e2b.\u003c/b\u003e How likely are the following medium term (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;months) de\u0026shy;vel\u0026shy;op\u0026shy;ments of the general eco\u0026shy;nom\u0026shy;ic situation in Germany?"
  							},
- 							"col_span_label": 7
+ 							"col_span_label": 10
  						},
  						{
  							"type": "textblock",
  							"label": {
- 								"de": " \u0026nbsp; ",
- 								"en": " \u0026nbsp; "
+ 								"de": "Ver\u0026shy;bes\u0026shy;se\u0026shy;rung",
+ 								"en": "Improvement"
  							},
- 							"col_span_label": 2
+ 							"col_span_label": 3,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"A": "",
+ 								"B": "",
+ 								"C": 0
+ 							}
  						},
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "ver\u0026shy;bes\u0026shy;sern",
- 								"en": "improve"
+ 								"de": "Gleich blei\u0026shy;ben",
+ 								"en": "Remain the same"
+ 							},
+ 							"col_span_label": 3,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"A": "",
+ 								"B": "",
+ 								"C": 0
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Ver\u0026shy;schlech\u0026shy;te\u0026shy;rung",
+ 								"en": "Deterioration"
+ 							},
+ 							"col_span_label": 3,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"A": "",
+ 								"B": "",
+ 								"C": 0
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u0026#931;",
+ 								"en": "\u0026#931;"
  							},
  							"col_span_label": 1,
  							"style": {
@@ -1001,10 +1091,43 @@
  							}
  						},
  						{
+ 							"name": "y_probgood",
+ 							"type": "number",
+ 							"max_chars": 4,
+ 							"max": 100,
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span_control": 3
+ 						},
+ 						{
+ 							"name": "y_probnormal",
+ 							"type": "number",
+ 							"max_chars": 4,
+ 							"max": 100,
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span_control": 3
+ 						},
+ 						{
+ 							"name": "y_probbad",
+ 							"type": "number",
+ 							"max_chars": 4,
+ 							"max": 100,
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span_control": 3
+ 						},
+ 						{
  							"type": "textblock",
  							"label": {
- 								"de": "nicht ver\u0026shy;än\u0026shy;dern",
- 								"en": "not change"
+ 								"de": "100\u0026nbsp;%",
+ 								"en": "100\u0026nbsp;%"
  							},
  							"col_span_label": 1,
  							"style": {
@@ -1013,7 +1136,7 @@
  									"box_style": {},
  									"grid_item_style": {
  										"justify_self": "center",
- 										"align_self": "start"
+ 										"align_self": "center"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -1029,270 +1152,6 @@
  								"B": "",
  								"C": 0
  							}
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "ver\u0026shy;schlech\u0026shy;tern",
- 								"en": "deteriorate"
- 							},
- 							"col_span_label": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "start"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"A": "",
- 								"B": "",
- 								"C": 0
- 							}
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": " \u0026nbsp; ",
- 								"en": " \u0026nbsp; "
- 							},
- 							"col_span_label": 1
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "keine\u003cbr\u003eAn\u0026shy;gabe",
- 								"en": "no an\u0026shy;swer"
- 							},
- 							"col_span_label": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "start"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"A": "",
- 								"B": "",
- 								"C": 0
- 							}
- 						},
- 						{
- 							"name": "y24_ez",
- 							"type": "radio",
- 							"label": {
- 								"de": "Euro\u0026shy;raum",
- 								"en": "Euro area"
- 							},
- 							"col_span_label": 2,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"A": "",
- 								"B": "",
- 								"C": 0
- 							}
- 						},
- 						{
- 							"name": "y24_ez",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "y24_ez",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "y24_ez",
- 							"type": "radio",
- 							"col_span_label": 1,
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "y24_deu",
- 							"type": "radio",
- 							"label": {
- 								"de": "Deutsch\u0026shy;land",
- 								"en": "Germany"
- 							},
- 							"col_span_label": 2,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"A": "",
- 								"B": "",
- 								"C": 0
- 							}
- 						},
- 						{
- 							"name": "y24_deu",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "y24_deu",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "y24_deu",
- 							"type": "radio",
- 							"col_span_label": 1,
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "y24_usa",
- 							"type": "radio",
- 							"label": {
- 								"de": "USA",
- 								"en": "US"
- 							},
- 							"col_span_label": 2,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"A": "",
- 								"B": "",
- 								"C": 0
- 							}
- 						},
- 						{
- 							"name": "y24_usa",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "y24_usa",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "y24_usa",
- 							"type": "radio",
- 							"col_span_label": 1,
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "y24_glob",
- 							"type": "radio",
- 							"label": {
- 								"de": "Welt\u0026shy;wirtschaft",
- 								"en": "Global econ\u0026shy;o\u0026shy;my"
- 							},
- 							"col_span_label": 2,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"A": "",
- 								"B": "",
- 								"C": 0
- 							}
- 						},
- 						{
- 							"name": "y24_glob",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "y24_glob",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "y24_glob",
- 							"type": "radio",
- 							"col_span_label": 1,
- 							"col_span_control": 1,
- 							"value_radio": "4"
  						}
  					],
  					"style": {
@@ -1303,7 +1162,9 @@
  							"text_style": {}
  						},
  						"mobile": {
- 							"grid_container_style": {},
+ 							"grid_container_style": {
+ 								"row_gap": "0.6rem"
+ 							},
  							"box_style": {},
  							"grid_item_style": {},
  							"text_style": {}
@@ -1338,7 +1199,7 @@
  					"inputs": [
  						{
  							"type": "textblock",
- 							"description": {
+ 							"label": {
  								"de": "\u003cb\u003e3a.\u003c/b\u003e ",
  								"en": "\u003cb\u003e3a.\u003c/b\u003e "
  							},
@@ -1349,7 +1210,7 @@
  							"type": "number",
  							"max_chars": 3,
  							"max": 20,
- 							"description": {
+ 							"label": {
  								"de": "Unsere Prognose für das \u003cb\u003edeutsche\u003c/b\u003e BIP Wachstum in Q2 2021 \u003cxxbr/\u003e\n(real, saisonbereinigt, nicht annualisiert)",
  								"en": "Our estimate for the \u003cb\u003eGerman\u003c/b\u003e GDP growth in Q2 2021        \u003cxxbr/\u003e\n(real, seasonally adjusted, non annualized)"
  							},
@@ -1365,7 +1226,7 @@
  							"type": "number",
  							"max_chars": 3,
  							"max": 50,
- 							"description": {
+ 							"label": {
  								"de": "Unsere Prognose für das BIP Wachstum für das Jahr 2022 \u003cxxbr/\u003e\n(real, saisonbereinigt)",
  								"en": "Our estimate for the GDP growth in 2022                \u003cxxbr/\u003e\n(real, seasonally adjusted)"
  							},
@@ -1384,7 +1245,7 @@
  					"inputs": [
  						{
  							"type": "textblock",
- 							"description": {
+ 							"label": {
  								"de": "\u003cb\u003e3b.\u003c/b\u003e ",
  								"en": "\u003cb\u003e3b.\u003c/b\u003e "
  							},
@@ -1395,7 +1256,7 @@
  							"type": "number",
  							"max_chars": 4,
  							"max": 100,
- 							"description": {
+ 							"label": {
  								"de": "Die Wahrscheinlichkeit eines neg\u0026shy;ativen Wachstums des \u003cb\u003edeutschen\u003c/b\u003e BIP in Q2 2021 liegt bei",
  								"en": "The probability of neg\u0026shy;ative growth for the \u003cb\u003eGerman\u003c/b\u003e GDP in Q2 2021 is"
  							},
@@ -1411,7 +1272,7 @@
  							"type": "number",
  							"max_chars": 4,
  							"max": 100,
- 							"description": {
+ 							"label": {
  								"de": "Die Wahrscheinlichkeit einer Rezession in Deutsch\u0026shy;land \u003cxxbr/\u003e\n(mind. 2\u0026nbsp;Quartale neg. Wachstum) bis Q4 2022 liegt bei",
  								"en": "The probability of a recession in Germany             \u003cxxbr/\u003e\n(at least 2\u0026nbsp;quarters neg. growth) until Q4 2022 is"
  							},
@@ -1451,7 +1312,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e4.\u003c/b\u003e Die jährl. gesamtwirtschaftl. Inflationsrate wird mittel\u0026shy;fristig (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;Mo.)",
+ 								"de": "\u003cb\u003e4.\u003c/b\u003e Die jährl. ge\u0026shy;samtwirt\u0026shy;schaftl. Inflationsrate wird mittel\u0026shy;fristig (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;Mo.)",
  								"en": "\u003cb\u003e4.\u003c/b\u003e Medium term (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;months) yearly overall inflation rate will"
  							},
  							"col_span_label": 7
@@ -1716,7 +1577,7 @@
  					"inputs": [
  						{
  							"type": "textblock",
- 							"description": {
+ 							"label": {
  								"de": "\u003cb\u003e5a.\u003c/b\u003e Die \u003cb\u003ekurzfristigen\u003c/b\u003e Zinsen (3-Mo.-Interbanksätze) im \u003cb\u003eEuro\u0026shy;raum\u003c/b\u003e erwarten wir auf Sicht von 6\u0026nbsp;Monaten",
  								"en": "\u003cb\u003e5a.\u003c/b\u003e We expect \u003cb\u003eshort term\u003c/b\u003e interest rates (3 months interbank) in the \u003cb\u003eeuro area\u003c/b\u003e"
  							},
@@ -1727,7 +1588,7 @@
  							"type": "number",
  							"max_chars": 4,
  							"max": 20,
- 							"description": {
+ 							"label": {
  								"de": "zwischen\u0026nbsp;",
  								"en": "between\u0026nbsp;"
  							},
@@ -1744,7 +1605,7 @@
  							"type": "number",
  							"max_chars": 4,
  							"max": 20,
- 							"description": {
+ 							"label": {
  								"de": "und\u0026nbsp;\u0026nbsp;\u0026nbsp;\u0026nbsp;",
  								"en": "and\u0026nbsp;\u0026nbsp;\u0026nbsp;\u0026nbsp;"
  							},
@@ -1757,7 +1618,7 @@
  						},
  						{
  							"type": "textblock",
- 							"description": {
+ 							"label": {
  								"de": " \u0026nbsp;",
  								"en": " \u0026nbsp;"
  							},
@@ -1765,7 +1626,7 @@
  						},
  						{
  							"type": "textblock",
- 							"description": {
+ 							"label": {
  								"de": " [zentrales 90% Konfidenzintervall]",
  								"en": " [central 90\u0026nbsp;pct confidence interval]"
  							},
@@ -1781,7 +1642,7 @@
  					"inputs": [
  						{
  							"type": "textblock",
- 							"description": {
+ 							"label": {
  								"de": "\u003cb\u003e5b.\u003c/b\u003e Die \u003cb\u003elang\u0026shy;fristigen\u003c/b\u003e Zinsen (Renditen 10jg. Staatsanleihen) in \u003cb\u003eDeutsch\u0026shy;land\u003c/b\u003e erwarten wir auf Sicht von 6\u0026nbsp;Monaten",
  								"en": "\u003cb\u003e5b.\u003c/b\u003e We expect \u003cb\u003elong term\u003c/b\u003e interest rates in \u003cb\u003eGermany\u003c/b\u003e in 6\u0026nbsp;months"
  							},
@@ -1792,7 +1653,7 @@
  							"type": "number",
  							"max_chars": 4,
  							"max": 100,
- 							"description": {
+ 							"label": {
  								"de": "zwischen\u0026nbsp;",
  								"en": "between\u0026nbsp;"
  							},
@@ -1809,7 +1670,7 @@
  							"type": "number",
  							"max_chars": 4,
  							"max": 100,
- 							"description": {
+ 							"label": {
  								"de": "und\u0026nbsp;\u0026nbsp;\u0026nbsp;\u0026nbsp;",
  								"en": "and\u0026nbsp;\u0026nbsp;\u0026nbsp;\u0026nbsp;"
  							},
@@ -1822,7 +1683,7 @@
  						},
  						{
  							"type": "textblock",
- 							"description": {
+ 							"label": {
  								"de": " \u0026nbsp;",
  								"en": " \u0026nbsp;"
  							},
@@ -1830,7 +1691,7 @@
  						},
  						{
  							"type": "textblock",
- 							"description": {
+ 							"label": {
  								"de": " [zentrales 90% Konfidenzintervall]",
  								"en": " [central 90\u0026nbsp;pct confidence interval]"
  							},
@@ -2220,7 +2081,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e6b.\u003c/b\u003e Das (saisonbereinigte) Gesamtvolumen der Neukreditvergabe in Deutsch\u0026shy;land wird",
+ 								"de": "\u003cb\u003e6b.\u003c/b\u003e Das (saisonbereinigte) Ge\u0026shy;samtvolumen der Neukreditvergabe in Deutsch\u0026shy;land wird",
  								"en": "\u003cb\u003e6b.\u003c/b\u003e The seasonally adjusted volume of new credit in Germany will"
  							},
  							"col_span_label": 9
@@ -4511,7 +4372,7 @@
  					"inputs": [
  						{
  							"type": "textblock",
- 							"description": {
+ 							"label": {
  								"de": "\u003cb\u003e7b.\u003c/b\u003e",
  								"en": "\u003cb\u003e7b.\u003c/b\u003e"
  							},
@@ -4529,7 +4390,7 @@
  							"max_chars": 6,
  							"min": 1000,
  							"max": 50000,
- 							"description": {
+ 							"label": {
  								"de": "Den DAX erwarten wir in 6\u0026nbsp;Monaten bei ",
  								"en": "We expect the German DAX in 6\u0026nbsp;month at"
  							},
@@ -4546,7 +4407,7 @@
  							"max_chars": 6,
  							"min": 1000,
  							"max": 50000,
- 							"description": {
+ 							"label": {
  								"de": "Mit einer Wahrscheinlichkeit von 90\u0026nbsp;Prozent wird der DAX dann zwischen ",
  								"en": "With 90\u0026nbsp;percent probability, the DAX will then be between"
  							},
@@ -4576,7 +4437,7 @@
  					"inputs": [
  						{
  							"type": "textblock",
- 							"description": {
+ 							"label": {
  								"de": "\u003cb\u003e7c.\u003c/b\u003e Aus Sicht der Fundamentalda\u0026shy;ten der DAX-Unternehmen ist der DAX derzeit",
  								"en": "\u003cb\u003e7c.\u003c/b\u003e The fundamentals of the companies comprising the DAX make the DAX currently"
  							},
@@ -4629,7 +4490,7 @@
  					"inputs": [
  						{
  							"type": "textblock",
- 							"description": {
+ 							"label": {
  								"de": "\u003cb\u003e8.\u003c/b\u003e Die Wahrscheinlichkeit für ein Extremereignis im deutschen Finanzmarkt liegt",
  								"en": "\u003cb\u003e8.\u003c/b\u003e The probability for an extreme event in the German financial markets is"
  							},
@@ -4647,7 +4508,7 @@
  							"type": "number",
  							"max_chars": 4,
  							"max": 100,
- 							"description": {
+ 							"label": {
  								"de": " mittel\u0026shy;fristig (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;Mo.) bei  ",
  								"en": " medium term (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;months) at "
  							},
@@ -4664,7 +4525,7 @@
  							"type": "number",
  							"max_chars": 4,
  							"max": 100,
- 							"description": {
+ 							"label": {
  								"de": "und lang\u0026shy;fristig (\u003cb\u003e24\u003c/b\u003e\u0026nbsp;Mo.) bei ",
  								"en": "and long term (\u003cb\u003e24\u003c/b\u003e\u0026nbsp;months) at "
  							},
@@ -4707,7 +4568,7 @@
  					"inputs": [
  						{
  							"type": "textblock",
- 							"description": {
+ 							"label": {
  								"de": "\u003cb\u003e1.\u003c/b\u003e Punktprognose der Wachstumsrate des deutschen BIP",
  								"en": "\u003cb\u003e1.\u003c/b\u003e Forecast growth rate German GDP"
  							},
@@ -4715,7 +4576,7 @@
  						},
  						{
  							"type": "textblock",
- 							"description": {
+ 							"label": {
  								"de": "Prognose Wachstum des BIP je \u003cb\u003eQuartal\u003c/b\u003e \u003cbr\u003e\n (real, saisonbereinigt, nicht annualisiert)",
  								"en": "Forecast \u003cb\u003equarterly\u003c/b\u003e GDP growth \u003cbr\u003e\n(real, seasonally adjusted, non annualized)"
  							},
@@ -4727,7 +4588,7 @@
  							"type": "number",
  							"max_chars": 3,
  							"max": 20,
- 							"description": {
+ 							"label": {
  								"de": "Q4 2020",
  								"en": "Q4 2020"
  							},
@@ -4744,7 +4605,7 @@
  							"type": "number",
  							"max_chars": 3,
  							"max": 20,
- 							"description": {
+ 							"label": {
  								"de": "Q1 2021",
  								"en": "Q1 2021"
  							},
@@ -4761,7 +4622,7 @@
  							"type": "number",
  							"max_chars": 3,
  							"max": 20,
- 							"description": {
+ 							"label": {
  								"de": "Q2 2021",
  								"en": "Q2 2021"
  							},
@@ -4775,7 +4636,7 @@
  						},
  						{
  							"type": "textblock",
- 							"description": {
+ 							"label": {
  								"de": "Prognose Wachstum des BIP aufs\u0026nbsp;\u003cb\u003eJahr\u003c/b\u003e \u003cbr\u003e\n(real, saisonbereinigt)",
  								"en": "Forecast GDP growth per\u0026nbsp;\u003cb\u003eyear\u003c/b\u003e \u003cbr\u003e\n(real, seasonally adjusted)"
  							},
@@ -4786,7 +4647,7 @@
  							"type": "number",
  							"max_chars": 3,
  							"max": 20,
- 							"description": {
+ 							"label": {
  								"de": "2021",
  								"en": "2021"
  							},
@@ -4803,7 +4664,7 @@
  							"type": "number",
  							"max_chars": 3,
  							"max": 20,
- 							"description": {
+ 							"label": {
  								"de": "2022",
  								"en": "2022"
  							},
@@ -4820,7 +4681,7 @@
  							"type": "number",
  							"max_chars": 3,
  							"max": 20,
- 							"description": {
+ 							"label": {
  								"de": "2023",
  								"en": "2023"
  							},
@@ -4842,7 +4703,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e2.\u003c/b\u003e Haben Entwicklungen in den folgenden Bereichen Sie zu einer Revision Ihrer Konjunkturprognosen (ggü. Vormonat) für die deutsche Wirtschaft bewogen und wenn ja in welche Richtung?",
+ 								"de": "\u003cb\u003e2.\u003c/b\u003e Haben Entwicklungen in den folgenden Bereichen Sie zu einer Revision Ihrer Konjunkturprognosen (ggü. Vormonat) für die deutsche Wirt\u0026shy;schaft bewogen und wenn ja in welche Richtung?",
  								"en": "\u003cb\u003e2.\u003c/b\u003e Which de\u0026shy;vel\u0026shy;op\u0026shy;ments have lead you to change your assessment of the busi\u0026shy;ness cycle outlook for the German econ\u0026shy;o\u0026shy;my compared to the previous month"
  							},
  							"col_span_label": 9
@@ -5535,7 +5396,7 @@
  							"name": "other_cycle_infl",
  							"type": "text",
  							"max_chars": 28,
- 							"description": {
+ 							"label": {
  								"de": "Wenn sonstige - welche?",
  								"en": "If other - which?"
  							},
@@ -5592,7 +5453,7 @@
  					"inputs": [
  						{
  							"type": "textblock",
- 							"description": {
+ 							"label": {
  								"de": "\u003cb\u003e1.\u003c/b\u003e Punktprognose der jährlichen Inflationsrate im Euro\u0026shy;raum",
  								"en": "\u003cb\u003e1.\u003c/b\u003e Forecast yearly inflation rate in the Euro area"
  							},
@@ -5600,7 +5461,7 @@
  						},
  						{
  							"type": "textblock",
- 							"description": {
+ 							"label": {
  								"de": "Anstieg des HICP von Jan bis Dez; Erwartungs\u0026shy;wert",
  								"en": "HICP  in\u0026shy;crease from Jan to Dec; expected value"
  							},
@@ -5612,7 +5473,7 @@
  							"max_chars": 3,
  							"min": -10,
  							"max": 20,
- 							"description": {
+ 							"label": {
  								"de": "2021",
  								"en": "2021"
  							},
@@ -5630,7 +5491,7 @@
  							"max_chars": 3,
  							"min": -10,
  							"max": 20,
- 							"description": {
+ 							"label": {
  								"de": "2022",
  								"en": "2022"
  							},
@@ -5648,7 +5509,7 @@
  							"max_chars": 3,
  							"min": -10,
  							"max": 20,
- 							"description": {
+ 							"label": {
  								"de": "2023",
  								"en": "2023"
  							},
@@ -6263,7 +6124,7 @@
  					"inputs": [
  						{
  							"type": "textblock",
- 							"description": {
+ 							"label": {
  								"de": "\u003cb\u003e3.\u003c/b\u003e Den Hauptre\u0026shy;finanz\u0026shy;ierungssatz der EZB (am 3) erwarte ich auf Sicht von",
  								"en": "\u003cb\u003e3.\u003c/b\u003e I expect the main refinance rate of the ECB (3) in"
  							},
@@ -6271,7 +6132,7 @@
  						},
  						{
  							"type": "textblock",
- 							"description": {
+ 							"label": {
  								"de": "6\u0026nbsp;Monaten",
  								"en": "6\u0026nbsp;months"
  							},
@@ -6285,7 +6146,7 @@
  							"max_chars": 3,
  							"min": -10,
  							"max": 20,
- 							"description": {
+ 							"label": {
  								"de": "zwischen\u0026nbsp;",
  								"en": "between\u0026nbsp;"
  							},
@@ -6304,7 +6165,7 @@
  							"max_chars": 3,
  							"min": -10,
  							"max": 20,
- 							"description": {
+ 							"label": {
  								"de": "und",
  								"en": "and"
  							},
@@ -6317,7 +6178,7 @@
  						},
  						{
  							"type": "textblock",
- 							"description": {
+ 							"label": {
  								"de": " 24\u0026nbsp;Monaten",
  								"en": " 24\u0026nbsp;months"
  							},
@@ -6331,7 +6192,7 @@
  							"max_chars": 3,
  							"min": -10,
  							"max": 20,
- 							"description": {
+ 							"label": {
  								"de": "zwischen\u0026nbsp;",
  								"en": "between\u0026nbsp;"
  							},
@@ -6350,7 +6211,7 @@
  							"max_chars": 3,
  							"min": -10,
  							"max": 20,
- 							"description": {
+ 							"label": {
  								"de": "und",
  								"en": "and"
  							},
@@ -6363,7 +6224,7 @@
  						},
  						{
  							"type": "textblock",
- 							"description": {
+ 							"label": {
  								"de": " \u0026nbsp;",
  								"en": " \u0026nbsp;"
  							},
@@ -6372,7 +6233,7 @@
  						},
  						{
  							"type": "textblock",
- 							"description": {
+ 							"label": {
  								"de": "\u0026nbsp; [zentrales 90% Konfidenzintervall]",
  								"en": "\u0026nbsp; [central 90\u0026nbsp;pct confidence interval]"
  							},
@@ -6411,10 +6272,6 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Kommentar zur Umfrage: ",
- 								"en": "Comment on the survey: "
- 							},
- 							"description": {
  								"de": "Wollen Sie uns noch etwas mitteilen?",
  								"en": "Any remarks or advice for us?"
  							},
@@ -6463,10 +6320,6 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "",
- 								"en": ""
- 							},
- 							"description": {
  								"de": "Durch Klicken auf 'OK' erhalten Sie eine Zusammenfassung Ihrer Antworten",
  								"en": "By Clicking 'OK' you receive a summary of your an\u0026shy;swers"
  							},
@@ -6477,10 +6330,6 @@
  							"name": "submitBtn",
  							"type": "button",
  							"label": {
- 								"de": "",
- 								"en": ""
- 							},
- 							"description": {
  								"de": "OK",
  								"en": "OK"
  							},
@@ -6524,7 +6373,7 @@
  						},
  						{
  							"type": "textblock",
- 							"description": {
+ 							"label": {
  								"de": "\n\t\u003cdiv class='markdown'\u003e\n\u003ch1\u003eHinweise\u003c/h1\u003e\n\n\u003cul\u003e\n\u003cli\u003e\u003cp\u003eDurch klicken auf \u003ccode\u003eWeiter\u003c/code\u003e werden Ihre Antworten gespeichert und Sie gelangen zur jeweils nächsten Seite.\u003c/p\u003e\u003c/li\u003e\n\n\u003cli\u003e\u003cp\u003eBei einer Unterbrechung (Schließen des Browsers) blei\u0026shy;ben Ihre Antworten erhalten und können später über Ihren persönlichen Link wieder aufgerufen und geändert werden.\u003c/p\u003e\u003c/li\u003e\n\n\u003cli\u003e\u003cp\u003eAm Ende der Befragung können Sie den Fragebogen abschließen, so dass keine weiteren Änderungen möglich sind.\u003c/p\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\n\u003ch2\u003eDa\u0026shy;tenschutz\u003c/h2\u003e\n\n\u003cul\u003e\n\u003cli\u003e\u003cp\u003eHier finden Sie unsere \u003ca href=\"https://www.zew.de/de/da\u0026shy;tenschutz/\"\u003eDa\u0026shy;tenschutz-Grundlagen\u003c/a\u003e.\u003c/p\u003e\u003c/li\u003e\n\n\u003cli\u003e\u003cp\u003eIhre An\u0026shy;gaben werden streng vertraulich behandelt.\u003c/p\u003e\u003c/li\u003e\n\n\u003cli\u003e\u003cp\u003eDie Auswertung Ihrer Antworten erfolgt als \u003ca href=\"https://de.wikipedia.org/wiki/Panelda\u0026shy;ten\"\u003ePanel-Da\u0026shy;tensatz\u003c/a\u003e in anonymisierter Form.\u003c/p\u003e\u003c/li\u003e\n\n\u003cli\u003e\u003cp\u003eIhre Da\u0026shy;ten werden auf einem geschützten Server im ZEW Hauptgebäude gespeichert, auf den nur Mitglieder des ZEW Teams für den Finanzmarkttest Zugriff haben.\u003c/p\u003e\u003c/li\u003e\n\n\u003cli\u003e\u003cp\u003eZusätzlich bitten wir um Ihr Einverständnis, dass wir Ihre Antworten intern mit Ihrer geschäftlichen Identität verknüpfen.\u003c/p\u003e\u003c/li\u003e\n\n\u003cli\u003e\u003cp\u003eIhre geschäftliche Identität besteht aus Ihrem Namen, Ihrer Funktion, geschäftl. Email und Telefonnummer, Arbeitgeber und Teilnahmebeginn.\u003c/p\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\n\t\u003c/div\u003e  \u003c!-- markdown --\u003e\n",
  								"en": "\n\t\u003cdiv class='markdown'\u003e\n\u003ch3\u003eContact\u003c/h3\u003e\n\n\u003cp\u003eDr. Michael Schröder\u003c/p\u003e\n\n\u003cp\u003ePhone: 0621/1235-368\u003c/p\u003e\n\n\u003cp\u003eFax: 0621/1235-4223\u003c/p\u003e\n\n\u003cp\u003eEmail: schroeder@zew.de\u003c/p\u003e\n\n\u003ch3\u003eAddress\u003c/h3\u003e\n\n\u003cp\u003eCentre for European Eco\u0026shy;nom\u0026shy;ic Re\u0026shy;search (ZEW) Mannheim\u003c/p\u003e\n\n\u003cp\u003ePostfach 10 34 43\u003c/p\u003e\n\n\u003cp\u003e68034 Mannheim\u003c/p\u003e\n\n\u003cp\u003eGermany\u003c/p\u003e\n\n\u003ch3\u003eTechnical issues\u003c/h3\u003e\n\n\u003cp\u003ePlease report technical issues\u003cbr /\u003e\nwith the online questionnaire to:\u003c/p\u003e\n\n\u003cp\u003ePeter Buchmann (buchmann@zew.de)\u003c/p\u003e\n\n\t\u003c/div\u003e  \u003c!-- markdown --\u003e\n"
  							},

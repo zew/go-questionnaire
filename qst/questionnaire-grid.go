@@ -196,7 +196,7 @@ func (q QuestionnaireT) GroupHTMLGridBased(pageIdx, grpIdx int) string {
 					}
 				}
 				if inp.Type == "radio" || inp.Type == "checkbox" {
-					inp.StyleCtl = css.ItemCentered(inp.StyleCtl)
+					inp.StyleCtl = css.ItemCenteredMCA(inp.StyleCtl)
 				}
 
 				ctlClass := fmt.Sprintf("pg%02v-grp%02v-inp%02v-ctl", pageIdx, grpIdx, inpIdx)

@@ -6,7 +6,6 @@
 package qst
 
 import (
-	"bytes"
 	"encoding/gob"
 	"fmt"
 	"io"
@@ -429,6 +428,9 @@ type pageT struct {
 	Finished time.Time `json:"finished,omitempty"` // truncated to second; *not* a marker for finished entirely - for that we use q.FinishedEntirely
 
 	Groups []*groupT `json:"groups,omitempty"`
+
+	ValidationFuncName string `json:"validation_func_name,omitempty"` // javascript validation func name
+	ValidationFunc     string `json:"validation_func,omitempty"`      // javascript validation func implementation
 }
 
 // AddGroup creates a new group
@@ -697,37 +699,34 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 		return s, fmt.Errorf(s)
 	}
 
-	b := bytes.Buffer{}
+	w := &strings.Builder{}
 
-	// set width less than 100 percent, for i.e. radios more closely together
-
-	width := fmt.Sprintf("<div class='page-margins' style='margin: 0 auto; width: %v%%'  >\n", p.Width)
-	b.WriteString(width)
-
-	b.WriteString(vspacer8)
+	// i.e. smaller - for i.e. radios more closely together
+	// todo: change to Style
+	width := fmt.Sprintf("<div class='page-margins' style='margin: 0 auto; margin-top: 0.6rem; width: %v%%'  >\n", p.Width)
+	fmt.Fprint(w, width)
 
 	hasHeader := false
 
 	if p.Section != nil {
-		b.WriteString(
-			fmt.Sprintf("<span class='go-quest-page-section' >%v</span>", p.Section.Tr(q.LangCode)))
+		fmt.Fprintf(w, "<span class='go-quest-page-section' >%v</span>", p.Section.Tr(q.LangCode))
 		if p.Label.Tr(q.LangCode) != "" {
-			b.WriteString("<span class='go-quest-page-desc'> &nbsp; - &nbsp; </span>")
+			fmt.Fprint(w, "<span class='go-quest-page-desc'> &nbsp; - &nbsp; </span>")
 		}
 		hasHeader = true
 	}
 	if p.Label.Tr(q.LangCode) != "" {
-		b.WriteString(fmt.Sprintf("<span class='go-quest-page-header' >%v</span>", p.Label.Tr(q.LangCode)))
+		fmt.Fprintf(w, "<span class='go-quest-page-header' >%v</span>", p.Label.Tr(q.LangCode))
 		hasHeader = true
 	}
 	if p.Desc.Tr(q.LangCode) != "" {
-		b.WriteString(vspacer0)
-		b.WriteString(fmt.Sprintf("<p  class='go-quest-page-desc'>%v</p>", p.Desc.Tr(q.LangCode)))
+		fmt.Fprint(w, vspacer0)
+		fmt.Fprintf(w, "<p  class='go-quest-page-desc'>%v</p>", p.Desc.Tr(q.LangCode))
 		hasHeader = true
 	}
 
 	if hasHeader {
-		b.WriteString(vspacer16)
+		fmt.Fprint(w, vspacer16)
 	}
 
 	grpOrder := q.RandomizeOrder(pageIdx)
@@ -740,11 +739,11 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 			cF, seqIdx, paramSetIdx := validateComposite(pageIdx, grpIdx, compFuncNameWithParamSet)
 			grpHTML, _, err := cF(q, seqIdx, paramSetIdx)
 			if err != nil {
-				b.WriteString(fmt.Sprintf("composite func error %v \n", err))
+				fmt.Fprintf(w, "composite func error %v \n", err)
 			} else {
 				// grpHTML also contains HTML and CSS stuff - which could be hyphenized too
 				grpHTML = trl.HyphenizeText(grpHTML)
-				b.WriteString(grpHTML + "\n")
+				fmt.Fprint(w, grpHTML+"\n")
 			}
 		} else {
 			grpHTML := ""
@@ -758,22 +757,22 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 				nonCompositCntr++
 				grpHTML = strings.Replace(grpHTML, "[groupID]", fmt.Sprintf("%v", nonCompositCntr+1), -1)
 			}
-			b.WriteString(grpHTML + "\n")
+			fmt.Fprint(w, grpHTML+"\n")
 		}
 
 		// vertical distance at the end of groups
 		if loopIdx < len(p.Groups)-1 {
 			for i2 := 0; i2 < p.Groups[grpIdx].BottomVSpacers; i2++ {
-				b.WriteString(vspacer16)
+				fmt.Fprint(w, vspacer16)
 			}
 		} else {
-			b.WriteString(vspacer16)
+			fmt.Fprint(w, vspacer16)
 		}
 	}
 
-	b.WriteString("</div> <!-- width -->")
+	fmt.Fprint(w, "</div> <!-- width -->")
 
-	ret := b.String()
+	ret := w.String()
 
 	// inject user data into HTML text
 	// i.e. [attr-country] => Latvia

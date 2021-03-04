@@ -28,7 +28,7 @@ func addSeasonal2(q *qst.QuestionnaireT) error {
 			inp := gr.AddInput()
 			inp.Type = "textblock"
 			inp.ColSpanLabel = 9
-			inp.Desc = trl.S{
+			inp.Label = trl.S{
 				"de": "<b>1.</b> Punktprognose der jährlichen Inflationsrate im Euroraum",
 				"en": "<b>1.</b> Forecast yearly inflation rate in the Euro area",
 			}
@@ -37,7 +37,7 @@ func addSeasonal2(q *qst.QuestionnaireT) error {
 		{
 			inp := gr.AddInput()
 			inp.Type = "textblock"
-			inp.Desc = trl.S{
+			inp.Label = trl.S{
 				"de": "Anstieg des HICP von Jan bis Dez; Erwartungswert",
 				"en": "HICP  increase from Jan to Dec; expected value",
 			}
@@ -53,7 +53,7 @@ func addSeasonal2(q *qst.QuestionnaireT) error {
 			inp.Max = +20
 			inp.MaxChars = 3
 			// inp.Validator = "inRange20"
-			inp.Desc = trl.S{
+			inp.Label = trl.S{
 				"de": nextY(0),
 				"en": nextY(0),
 			}
@@ -73,7 +73,7 @@ func addSeasonal2(q *qst.QuestionnaireT) error {
 			inp.Max = +20
 			inp.MaxChars = 3
 			// inp.Validator = "inRange20"
-			inp.Desc = trl.S{
+			inp.Label = trl.S{
 				"de": nextY(1),
 				"en": nextY(1),
 			}
@@ -92,7 +92,7 @@ func addSeasonal2(q *qst.QuestionnaireT) error {
 			inp.Max = +20
 			inp.MaxChars = 3
 			// inp.Validator = "inRange20"
-			inp.Desc = trl.S{
+			inp.Label = trl.S{
 				"de": nextY(2),
 				"en": nextY(2),
 			}
@@ -166,7 +166,7 @@ func addSeasonal2(q *qst.QuestionnaireT) error {
 			inp := gr.AddInput()
 			inp.Type = "textblock"
 			inp.ColSpanLabel = 100
-			inp.Desc = trl.S{
+			inp.Label = trl.S{
 				"de": fmt.Sprintf("<b>3.</b> Den Hauptrefinanzierungssatz der EZB (am %v) erwarte ich auf Sicht von", val),
 				"en": fmt.Sprintf("<b>3.</b> I expect the main refinance rate of the ECB (%v) in", val),
 			}
@@ -176,7 +176,7 @@ func addSeasonal2(q *qst.QuestionnaireT) error {
 			inp := gr.AddInput()
 			inp.Type = "textblock"
 			inp.ColSpanLabel = 8
-			inp.Desc = trl.S{
+			inp.Label = trl.S{
 				"de": "6&nbsp;Monaten",
 				"en": "6&nbsp;months",
 			}
@@ -197,7 +197,7 @@ func addSeasonal2(q *qst.QuestionnaireT) error {
 			inp.ColSpanLabel = 7
 			inp.CSSLabel = "special-line-height-higher"
 			inp.ColSpanControl = 9
-			inp.Desc = trl.S{
+			inp.Label = trl.S{
 				"de": "zwischen&nbsp;",
 				"en": "between&nbsp;",
 			}
@@ -217,7 +217,7 @@ func addSeasonal2(q *qst.QuestionnaireT) error {
 
 			inp.ColSpanLabel = 3
 			inp.ColSpanControl = 73
-			inp.Desc = trl.S{
+			inp.Label = trl.S{
 				"de": "und",
 				"en": "and",
 			}
@@ -230,7 +230,7 @@ func addSeasonal2(q *qst.QuestionnaireT) error {
 			inp := gr.AddInput()
 			inp.Type = "textblock"
 			inp.ColSpanLabel = 8
-			inp.Desc = trl.S{
+			inp.Label = trl.S{
 				"de": " 24&nbsp;Monaten",
 				"en": " 24&nbsp;months",
 			}
@@ -252,7 +252,7 @@ func addSeasonal2(q *qst.QuestionnaireT) error {
 			inp.ColSpanLabel = 7
 			inp.CSSLabel = "special-line-height-higher"
 			inp.ColSpanControl = 9
-			inp.Desc = trl.S{
+			inp.Label = trl.S{
 				"de": "zwischen&nbsp;",
 				"en": "between&nbsp;",
 			}
@@ -272,7 +272,7 @@ func addSeasonal2(q *qst.QuestionnaireT) error {
 
 			inp.ColSpanLabel = 3
 			inp.ColSpanControl = 73
-			inp.Desc = trl.S{
+			inp.Label = trl.S{
 				"de": "und",
 				"en": "and",
 			}
@@ -285,7 +285,7 @@ func addSeasonal2(q *qst.QuestionnaireT) error {
 			inp := gr.AddInput()
 			inp.Type = "textblock"
 			inp.ColSpanLabel = 15
-			inp.Desc = trl.S{
+			inp.Label = trl.S{
 				"de": " &nbsp;",
 				"en": " &nbsp;",
 			}
@@ -295,7 +295,7 @@ func addSeasonal2(q *qst.QuestionnaireT) error {
 			inp := gr.AddInput()
 			inp.Type = "textblock"
 			inp.ColSpanLabel = 85
-			inp.Desc = trl.S{
+			inp.Label = trl.S{
 				"de": "&nbsp; [zentrales 90% Konfidenzintervall]",
 				"en": "&nbsp; [central 90&nbsp;pct confidence interval]",
 			}

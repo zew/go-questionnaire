@@ -36,7 +36,6 @@ func TemplatesPreparse(w http.ResponseWriter, req *http.Request) {
 		fmt.Fprintf(w, "cannot read directory 'templates': %v \n", err)
 		return
 	}
-	reqDummy, _ := http.NewRequest("GET", "dummy", nil) // helper for below
 	for _, o := range *lo {
 
 		if o.IsDir {
@@ -52,7 +51,7 @@ func TemplatesPreparse(w http.ResponseWriter, req *http.Request) {
 			continue
 		}
 
-		t, err := tpl(reqDummy, tName)
+		t, err := Get(tName)
 		if err != nil {
 			fmt.Fprintf(w, "preparse failure template %-30v: %v\n", tName, err)
 			continue

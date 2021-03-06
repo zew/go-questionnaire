@@ -22,7 +22,6 @@ func addSeasonal2(q *qst.QuestionnaireT) error {
 	{
 		gr := page.AddGroup()
 		gr.Cols = 9
-		gr.HeaderBottomVSpacers = 1
 
 		{
 			inp := gr.AddInput()
@@ -156,7 +155,6 @@ func addSeasonal2(q *qst.QuestionnaireT) error {
 	{
 		gr := page.AddGroup()
 		gr.Cols = 100
-		gr.HeaderBottomVSpacers = 1
 		val, err := q.Survey.Param("main_refinance_rate_ecb") // 01.02.2018: 0,0
 		if err != nil {
 			return fmt.Errorf("Set field 'main_refinance_rate_ecb' to `01.02.2018: 3.2%%` as in `main refinance rate of the ECB (01.02.2018: 3.2%%)`; error was %v", err)

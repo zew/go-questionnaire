@@ -2,7 +2,7 @@ package qst
 
 import (
 	"bytes"
-	"crypto/md5"
+	"crypto/sha256"
 	"encoding/hex"
 	"encoding/json"
 	"fmt"
@@ -106,7 +106,7 @@ func (q *QuestionnaireT) Save1(fn string) error {
 
 // Md5Str computes the md5 hash of a byte slice.
 func md5Str(buf []byte) string {
-	hasher := md5.New()
+	hasher := sha256.New()
 	hasher.Write(buf)
 	hash := hasher.Sum(nil)
 	return hex.EncodeToString(hash)

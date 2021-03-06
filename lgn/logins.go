@@ -447,10 +447,13 @@ func Md5Str(buf []byte) string {
 		log.Printf("lgn.Md5Str() could not write %v: %v", buf, err)
 	}
 	hshBytes := hasher.Sum(nil)
-	// ret := hex.EncodeToString(hshBytes)
+	// return hex.EncodeToString(hshBytes)  // old
+
+	// Convert 3x 8bit source bytes into 4 bytes
+	// Changes must be harmonized with individualbericht_ergebnis.php
 	// return base64.RawURLEncoding.EncodeToString(hshBytes)[:5] // direct login
-	// return base64.URLEncoding.EncodeToString(hshBytes) //    trailing equal signs
-	return base64.RawURLEncoding.EncodeToString(hshBytes) // no trailing equal signs
+	// return base64.URLEncoding.EncodeToString(hshBytes) //        trailing equal signs
+	return base64.RawURLEncoding.EncodeToString(hshBytes) //     no trailing equal signs
 }
 
 // Example writes a single login to file, to be extended or adapted

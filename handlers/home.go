@@ -1,7 +1,6 @@
 package handlers
 
 import (
-	"bytes"
 	"fmt"
 	"html"
 	"log"
@@ -388,7 +387,7 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
 
-	w1 := &bytes.Buffer{}
+	w1 := &strings.Builder{}
 	tpl.Exec(w1, r, mp, "quest.html")
 
 	mp["Content"] = w1.String()

@@ -24,10 +24,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 	ctr.Reset()
 
-	qst.RadioVali = "mustRadioGroup"
-	qst.HeaderClass = "special-line-height-higher"
-	qst.CSSLabelRow = "special-input-margin-vertical special-line-height-higher"
-
 	q := qst.QuestionnaireT{}
 	q.Survey = qst.NewSurvey("flit")
 	q.Survey.Params = params

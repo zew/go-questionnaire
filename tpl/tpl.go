@@ -98,11 +98,11 @@ func bundle(base *template.Template, extend string) error {
 func obsoleteAddDynamicFuncs(t *template.Template, r *http.Request) {
 }
 
-// tpl returns a parsed bundle of templates by name
+// Get returns a parsed bundle of templates by name
 // either pre-parsed from cache, or freshly parsed;
 // called for every template at app *init* time;
 // thus no sync mutex is required
-func tpl(r *http.Request, tName string) (*template.Template, error) {
+func Get(tName string) (*template.Template, error) {
 
 	tDerived, ok := cache[tName] // template from cache...
 	if !ok || !cfg.Get().IsProduction {
@@ -143,7 +143,7 @@ func tpl(r *http.Request, tName string) (*template.Template, error) {
 	}
 
 	// funcs can only be added *before* parsing
-	obsoleteAddDynamicFuncs(tDerived, r)
+	// obsoleteAddDynamicFuncs(tDerived, r)
 
 	return tDerived, nil
 }
@@ -171,7 +171,7 @@ Keys expected to be supplied by caller
 */
 func Exec(w io.Writer, r *http.Request, mp map[string]interface{}, tName string) {
 
-	t, err := tpl(r, tName)
+	t, err := Get(tName)
 	if err != nil {
 		log.Printf("parsing template %q error: %v", tName, err)
 		fmt.Fprintf(w, "parsing template %q error: %v", tName, err)

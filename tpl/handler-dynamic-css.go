@@ -35,7 +35,7 @@ func ServeDynCSS(w http.ResponseWriter, r *http.Request) {
 	siteName := path.Base(dir)  //  /css/site-1/            => site-1
 
 	cssFileName := path.Base(r.URL.Path) //  /css/site-1/design.css  => design.css
-	t, err := tpl(r, cssFileName)
+	t, err := Get(cssFileName)
 	if err != nil {
 		log.Printf("Error compiling CSS template %v site %q: %v", cssFileName, siteName, err)
 	}

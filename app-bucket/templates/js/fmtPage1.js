@@ -1,12 +1,3 @@
-/*
-
-var frm = document.forms.frmMain;
-if (frm) {
-    frm.addEventListener('submit', fmtPage1);
-}
-
-*/
-
 function demo(event) {
     if (confirm("Press a button!")) {
         txt = "You pressed OK!";
@@ -47,7 +38,7 @@ function fmtPage1(event) {
 
     if (sum > 0) {        
         if (sum != 100 ) {
-            alert("Summiert sich nicht zu 100.")
+            alert("{{.msg}}");
             event.preventDefault(); // not only return false - but also preventDefault()
             return false;            
         }
@@ -57,3 +48,8 @@ function fmtPage1(event) {
 
 }
 
+
+var frm = document.forms.frmMain;
+if (frm) {
+    frm.addEventListener('submit', fmtPage1);    
+}

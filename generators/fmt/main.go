@@ -29,6 +29,25 @@ var columnTemplate6 = []float32{
 	1, 1,
 }
 
+var rowLabelsEuroGerUSGlob = []trl.S{
+	{
+		"de": "Euroraum",
+		"en": "Euro area",
+	},
+	{
+		"de": "Deutschland",
+		"en": "Germany",
+	},
+	{
+		"de": "USA",
+		"en": "US",
+	},
+	{
+		"de": "China",
+		"en": "China",
+	},
+}
+
 var rowLabelsSmallLargeEnterprises = []trl.S{
 	{
 		"de": "Großunternehmen",
@@ -52,11 +71,6 @@ var rowLabelsSmallLargeEnterprises = []trl.S{
 func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 	ctr.Reset()
-
-	// qst.RadioVali = "mustRadioGroup"
-	qst.RadioVali = ""
-	qst.HeaderClass = ""
-	qst.CSSLabelRow = ""
 
 	q := qst.QuestionnaireT{}
 	q.Survey = qst.NewSurvey("fmt")
@@ -106,10 +120,9 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			gr := page.AddGroup()
 			gr.Cols = 6
 
-			grpStyle := css.NewStylesResponsive()
-			grpStyle.Desktop.BoxStyle.WidthMax = "26rem"
-			grpStyle.Mobile.BoxStyle.WidthMax = "none"
-			gr.Style = grpStyle
+			gr.Style = css.NewStylesResponsive(gr.Style)
+			gr.Style.Desktop.BoxStyle.WidthMax = "26rem"
+			gr.Style.Mobile.BoxStyle.WidthMax = "none"
 
 			{
 				inp := gr.AddInput()
@@ -119,7 +132,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.ColSpanLabel = 6
 			}
 
-			lblStyle := css.NewStylesResponsive()
+			lblStyle := css.NewStylesResponsive(nil)
 			lblStyle.Desktop.TextStyle.AlignHorizontal = "left"
 			lblStyle.Desktop.BoxStyle.Padding = "0 0 0 1rem"
 			lblStyle.Mobile.BoxStyle.Padding = "0 0 0 2rem"
@@ -158,7 +171,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		{
 			gr := page.AddGroup()
 			gr.Cols = 3
-			// gr.Width = 75
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
@@ -202,36 +214,18 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	// page 1
 	{
 		page := q.AddPage()
-		page.Section = trl.S{"de": "Konjunktur", "en": "Business cycle"}
-		page.Label = trl.S{"de": "Status und Ausblick", "en": "Status and outlook"}
-		page.Short = trl.S{"de": "Konjunktur:<br/>Status,<br/>Ausblick", "en": "Business cycle:<br/>Status,<br/>Outlook"}
+		// pge.Section = trl.S{"de": "Konjunktur", "en": "Business cycle"}
+		page.Label = trl.S{"de": "Konjunktur", "en": "Business cycle"}
 		page.Short = trl.S{"de": "Konjunktur", "en": "Business cycle"}
 		page.Width = 60
 
 		page.ValidationFuncName = "fmtPage1"
-
-		//
-		//
-		rowLabelsEuroGerUSGlob := []trl.S{
-			{
-				"de": "Euroraum",
-				"en": "Euro area",
-			},
-			{
-				"de": "Deutschland",
-				"en": "Germany",
-			},
-			{
-				"de": "USA",
-				"en": "US",
-			},
-			{
-				"de": "China",
-				"en": "China",
-			},
+		page.ValidationFuncMsg = trl.S{
+			"de": "Summiert sich nicht zu 100",
+			"en": "Does not add up",
 		}
 
-		// gr1
+		// gr0
 		{
 			gb := qst.NewGridBuilderRadios(
 				columnTemplate4,
@@ -248,7 +242,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			gr.OddRowsColoring = true
 		}
 
-		// gr2a
+		// gr1
 		{
 			gb := qst.NewGridBuilderRadios(
 				columnTemplate4,
@@ -265,7 +259,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			gr.OddRowsColoring = true
 		}
 
-		// gr2b
 		/*
 			{
 				gb := qst.NewGridBuilderRadios(
@@ -285,11 +278,12 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 		*/
 
+		// gr2
 		{
 			gr := page.AddGroup()
 			gr.Cols = 10
-			gr.Style = css.NewStylesResponsive()
-			gr.Style.Mobile.GridContainerStyle.RowGap = "0.6rem"
+			gr.Style = css.NewStylesResponsive(gr.Style)
+			gr.Style.Mobile.GridContainerStyle.RowGap = "0.02rem"
 
 			{
 				inp := gr.AddInput()
@@ -299,6 +293,10 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 					"de": "<b>2b.</b> Für wie wahrscheinlich halten Sie die folgenden mittelfristigen (<b>6</b>&nbsp;Mo.) Entwicklungen der gesamtwirtschaftlichen Situation in Deutschland?",
 					"en": "<b>2b.</b> How likely are the following medium term (<b>6</b>&nbsp;months) developments of the general economic situation in Germany?",
 				}
+
+				inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
+				inp.StyleLbl.Mobile.BoxStyle.Padding = "0 0 0.8rem 0"
+
 			}
 			{
 				inp := gr.AddInput()
@@ -387,13 +385,354 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	}
 
 	//
-	// page 2
+	// page 2 - inflation + zinsen
+	{
+		page := q.AddPage()
+		page.Label = trl.S{"de": "Inflation und Zinsen", "en": "Inflation and Interest Rates"}
+		page.Short = trl.S{"de": "Inflation,<br/>Zinsen", "en": "Inflation,<br/>Inter. Rates"}
+		page.Width = 60
+
+		// gr0
+		{
+			gb := qst.NewGridBuilderRadios(
+				columnTemplate4,
+				labelsIncreaseDecrease(),
+				[]string{"pi_ez", "pi_deu", "pi_usa", "pi_chn"},
+				radioVals4,
+				rowLabelsEuroGerUSGlob,
+			)
+			gb.MainLabel = trl.S{
+				"de": "<b>3.</b> Die jährliche gesamtwirtschaftliche Inflationsrate wird mittelfristig (<b>6</b>&nbsp;Mo.)",
+				"en": "<b>3.</b> Yearly overall inflation rate in the medium term (<b>6</b>&nbsp;months)  will",
+			}
+			gr := page.AddGrid(gb)
+			gr.OddRowsColoring = true
+		}
+
+		// gr1
+		{
+			var rowLabelsEuroGerUSGlob = []trl.S{
+				{
+					"de": "Euroraum",
+					"en": "Euro area",
+				},
+
+				{
+					"de": "USA",
+					"en": "US",
+				},
+				{
+					"de": "China",
+					"en": "China",
+				},
+			}
+			gb := qst.NewGridBuilderRadios(
+				columnTemplate4,
+				labelsIncreaseDecrease(),
+				// []string{"i_ez", "i_deu", "i_usa", "i_chn"},
+				[]string{"i_ez", "i_usa", "i_chn"},
+				radioVals4,
+				rowLabelsEuroGerUSGlob,
+			)
+			gb.MainLabel = trl.S{
+				"de": "<b>4.</b> Die <b>kurzfristigen</b> Zinsen (3-Mo.-Interbanksätze) werden mittelfristig (<b>6</b>&nbsp;Mo.)",
+				"en": "<b>4.</b> <b>Short term</b> interest rates (3&nbsp;months interbank) in the medium term (<b>6</b>&nbsp;months) will",
+			}
+			gr := page.AddGrid(gb)
+			gr.OddRowsColoring = true
+		}
+
+		//
+		// gr2
+		{
+			var rowLabelsEuroGerUSGlob = []trl.S{
+				{
+					"de": "Deutschland",
+					"en": "Germany",
+				},
+				{
+					"de": "USA",
+					"en": "US",
+				},
+				{
+					"de": "China",
+					"en": "China",
+				},
+			}
+
+			gb := qst.NewGridBuilderRadios(
+				columnTemplate4,
+				labelsIncreaseDecrease(),
+				// []string{"r_ez", "r_deu", "r_usa", "r_chn"},
+				[]string{"r_deu", "r_usa", "r_chn"},
+				radioVals4,
+				rowLabelsEuroGerUSGlob,
+			)
+			gb.MainLabel = trl.S{
+				"de": "<b>5.</b> Die <b>langfristigen</b> Zinsen (Renditen 10jg. Staatsanleihen) werden mittelfristig (<b>6</b>&nbsp;Mo.)",
+				"en": "<b>5.</b> <b>Long term</b> interest rates (10-year govt. bonds) in the medium term (6&nbsp;months) will",
+			}
+			gr := page.AddGrid(gb)
+			gr.OddRowsColoring = true
+		}
+
+	}
+
+	//
+	// page 3 - financial markets
+	{
+		page := q.AddPage()
+		// page.Section = trl.S{"de": "Finanzmärkte", "en": "Financial markets"}
+		page.Label = trl.S{"de": "Aktienmärkte", "en": "Stock Markets"}
+		page.Short = trl.S{"de": "Aktien-<br>märkte", "en": "Stock<br>Markets"}
+		page.Width = 60
+
+		rowLabelsUncorrelatedAssets := []trl.S{
+			{
+				"de": "EURO STOXX 50",
+				"en": "EURO STOXX 50",
+			},
+			{
+				"de": "DAX",
+				"en": "German DAX",
+			},
+			{
+				"de": "Dow Jones (USA)",
+				"en": "Dow Jones (USA)",
+			},
+			{
+				"de": "SSE Composite (China)",
+				"en": "SSE Composite (China)",
+			},
+		}
+
+		// gr0
+		{
+			gb := qst.NewGridBuilderRadios(
+				columnTemplate4,
+				labelsIncreaseDecrease(),
+				[]string{"euro_stoxx50", "sto_dax", "dow_jones", "sse_comp_chn"},
+				radioVals4,
+				rowLabelsUncorrelatedAssets,
+			)
+			gb.MainLabel = trl.S{
+				"de": "<b>6a.</b> Die folgenden Aktienindizes werden mittelfristig (<b>6</b>&nbsp;Mo.)",
+				"en": "<b>6a.</b> Following stock indices in the medium term (<b>6</b>&nbsp;months) will",
+			}
+			gr := page.AddGrid(gb)
+			gr.OddRowsColoring = true
+		}
+
+		// gr1
+		{
+			gr := page.AddGroup()
+			gr.Cols = 6
+			gr.Style = css.NewStylesResponsive(gr.Style)
+			gr.Style.Desktop.GridContainerStyle.ColumnGap = "0rem"
+			gr.Style.Desktop.GridContainerStyle.RowGap = "0rem"
+			{
+				inp := gr.AddInput()
+				inp.Type = "number"
+				inp.Name = "dax_6"
+				inp.Min = 1000
+				inp.Max = 50000
+				inp.MaxChars = 6
+
+				inp.ColSpanLabel = 4
+				inp.ColSpanControl = 2
+				inp.Label = trl.S{
+					"de": "<b>6b.</b> Den DAX erwarte ich in 6&nbsp;Monaten bei ",
+					"en": "<b>6b.</b> We expect the German DAX in 6&nbsp;month at",
+				}
+				inp.Suffix = trl.S{"de": "Punkten", "en": "points"}
+			}
+			// second row
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.ColSpanLabel = 6
+				inp.Label = trl.S{
+					"de": " <br>Mit einer Wahrscheinlichkeit von 90&nbsp;Prozent wird der DAX dann zwischen ",
+					"en": " <br>With 90&nbsp;percent probability, the DAX will then be between",
+				}
+			}
+			// third row
+			{
+				inp := gr.AddInput()
+				inp.Type = "number"
+				inp.Name = "dax_6_low"
+				inp.Min = 1000
+				inp.Max = 50000
+				inp.MaxChars = 6
+				inp.ColSpanLabel = 1
+				inp.ColSpanControl = 2
+
+				inp.Label = trl.S{
+					"de": " &nbsp; ",
+					"en": " &nbsp; ",
+				}
+				inp.Suffix = trl.S{
+					"de": "Punkten ",
+					"en": "points",
+				}
+
+			}
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.ColSpanLabel = 1
+				inp.Label = trl.S{
+					"de": " und &nbsp; ",
+					"en": " and &nbsp; ",
+				}
+				inp.StyleLbl = css.TextEnd(inp.StyleLbl)
+			}
+			{
+				inp := gr.AddInput()
+				inp.Type = "number"
+				inp.Name = "dax_6_high"
+				inp.Min = 1000
+				inp.Max = 50000
+				inp.MaxChars = 6
+
+				inp.ColSpanControl = 2
+				inp.Suffix = trl.S{}
+				inp.Suffix = trl.S{
+					"de": "Punkten",
+					"en": "points",
+				}
+			}
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.ColSpanLabel = 6
+				inp.Label = trl.S{
+					"de": " liegen.",
+					"en": " &nbsp; ",
+				}
+				inp.Style = css.NewStylesResponsive(inp.Style)
+				inp.Style.Desktop.BoxStyle.Position = "relative"
+				inp.Style.Desktop.BoxStyle.Top = "-0.4rem"
+			}
+
+		}
+
+		//
+		// gr3
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 0
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{
+					"de": "<b>6c.</b> Aus Sicht der Fundamentaldaten der DAX-Unternehmen ist der DAX derzeit",
+					"en": "<b>6c.</b> The fundamentals of the companies comprising the DAX make the DAX currently",
+				}
+			}
+		}
+
+		// gr4
+		{
+			// gr := p.AddRadioMatrixGroupCSSGrid(labelsOvervaluedFairUndervalued(), names3rdMatrix, labels123Matrix)
+			gr := page.AddGroup()
+			gr.Cols = 12 // necessary, otherwise no vspacers
+
+			for i2, lbl := range labelsOvervaluedFairUndervalued() {
+				rad := gr.AddInput()
+				rad.Type = "radio"
+				rad.Name = "dax_fund"
+				rad.ValueRadio = fmt.Sprintf("%v", i2+1)
+				rad.Label = lbl
+				rad.ColSpanLabel = 1
+				rad.ColSpanControl = 1
+			}
+		}
+
+		/*
+			{
+				gr := page.AddGroup()
+				gr.Cols = 1
+				gr.BottomVSpacers = 0
+				{
+					inp := gr.AddInput()
+					inp.Type = "textblock"
+					inp.Label = trl.S{
+						"de": "<b>8.</b> Die Wahrscheinlichkeit für ein Extremereignis im deutschen Finanzmarkt liegt",
+						"en": "<b>8.</b> The probability for an extreme event in the German financial markets is",
+					}
+				}
+			}
+
+			{
+				gr := page.AddGroup()
+				gr.Cols = 100
+				gr.HeaderBottomVSpacers = 1
+				{
+					inp := gr.AddInput()
+					inp.Type = "number"
+					inp.Name = "crash_low"
+					inp.Min = 0
+					inp.Max = 100
+					inp.MaxChars = 4
+					// inp.Validator = "inRange100"
+
+					inp.ColSpanLabel = 22
+					inp.ColSpanControl = 12
+					inp.Label = trl.S{
+						"de": " mittelfristig (<b>6</b>&nbsp;Mo.) bei  ",
+						"en": " medium term (<b>6</b>&nbsp;months) at ",
+					}
+					inp.Suffix = trl.S{"de": "%", "en": "pct"}
+					inp.HAlignLabel = qst.HRight
+					inp.HAlignControl = qst.HLeft
+				}
+
+				{
+					inp := gr.AddInput()
+					inp.Type = "number"
+					inp.Name = "crash_high"
+					inp.Min = 0
+					inp.Max = 100
+					inp.MaxChars = 4
+					// inp.Validator = "inRange100"
+
+					inp.ColSpanLabel = 26
+					inp.ColSpanControl = 40
+					inp.Label = trl.S{
+						"de": "und langfristig (<b>24</b>&nbsp;Mo.) bei ",
+						"en": "and long term (<b>24</b>&nbsp;months) at ",
+					}
+
+					inp.Suffix = trl.S{"de": "%", "en": "pct"}
+					inp.HAlignLabel = qst.HRight
+					inp.HAlignControl = qst.HLeft
+				}
+			}
+		*/
+
+	}
+
+	//
+	// page 4
+	{
+		page := q.AddPage()
+		page.Label = trl.S{"de": "Währungen", "en": "Currencies"}
+		page.Short = trl.S{"de": "Währungen", "en": "Currencies"}
+		page.Width = 60
+	}
+
+	//
+	// page 4
 	{
 		page := q.AddPage()
 		page.Label = trl.S{"de": "Wachstum", "en": "Growth"}
 		page.Short = trl.S{"de": "Wachstum", "en": "Growth"}
 		page.Width = 60
 
+		// gr0
 		{
 			gr := page.AddGroup()
 			gr.Cols = 5 // necessary, otherwise no vspacers
@@ -449,6 +788,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			}
 		}
 
+		// gr1
 		{
 			gr := page.AddGroup()
 			gr.Cols = 5 // necessary, otherwise no vspacers
@@ -501,209 +841,12 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.HAlignControl = qst.HLeft
 				inp.ColSpanControl = 1
 			}
-
 		}
 
 	}
 
 	//
-	// page 3 - inflation
-	{
-		page := q.AddPage()
-		page.Label = trl.S{"de": "Inflation und Zinsen", "en": "Inflation and rates"}
-		page.Short = trl.S{"de": "Inflation,<br/>Zinsen", "en": "Inflation,<br/>Rates"}
-		page.Width = 60
-
-		rowLabelsEuroGer := []trl.S{
-			{
-				"de": "Euroraum",
-				"en": "Euro area",
-			},
-			{
-				"de": "Deutschland",
-				"en": "Germany",
-			},
-		}
-
-		// gr1
-		{
-			gb := qst.NewGridBuilderRadios(
-				columnTemplate4,
-				labelsIncreaseDecrease(),
-				[]string{"pi_ez", "pi_deu"},
-				radioVals4,
-				rowLabelsEuroGer,
-			)
-			gb.MainLabel = trl.S{
-				"de": "<b>4.</b> Die jährl. gesamtwirtschaftl. Inflationsrate wird mittelfristig (<b>6</b>&nbsp;Mo.)",
-				"en": "<b>4.</b> Medium term (<b>6</b>&nbsp;months) yearly overall inflation rate will",
-			}
-			gr := page.AddGrid(gb)
-			gr.OddRowsColoring = true
-		}
-
-		//
-		// gr2
-		{
-			gr := page.AddGroup()
-			gr.Cols = 9 // necessary, otherwise no vspacers
-			gr.HeaderBottomVSpacers = 1
-
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.ColSpanLabel = 9
-				inp.Label = trl.S{
-					"de": "<b>5a.</b> Die <b>kurzfristigen</b> Zinsen (3-Mo.-Interbanksätze) im <b>Euroraum</b> erwarten wir auf Sicht von 6&nbsp;Monaten",
-					"en": "<b>5a.</b> We expect <b>short term</b> interest rates (3 months interbank) in the <b>euro area</b>",
-				}
-			}
-			{
-				inp := gr.AddInput()
-				inp.Type = "number"
-				inp.Name = "i_ez_low"
-				inp.Min = 0
-				inp.Max = 20
-				inp.MaxChars = 4
-				// inp.Validator = "inRange20"
-
-				inp.ColSpanLabel = 2
-				inp.ColSpanControl = 2
-				inp.Label = trl.S{
-					"de": "zwischen&nbsp;",
-					"en": "between&nbsp;",
-				}
-				inp.Suffix = trl.S{"de": "%", "en": "pct"}
-				inp.HAlignLabel = qst.HRight
-				inp.HAlignControl = qst.HLeft
-			}
-
-			{
-				inp := gr.AddInput()
-				inp.Type = "number"
-				inp.Name = "i_ez_high"
-				inp.Min = 0
-				inp.Max = 20
-				inp.MaxChars = 4
-				// inp.Validator = "inRange20"
-
-				inp.ColSpanLabel = 2
-				inp.ColSpanControl = 3
-				inp.Label = trl.S{
-					"de": "und&nbsp;&nbsp;&nbsp;&nbsp;",
-					"en": "and&nbsp;&nbsp;&nbsp;&nbsp;",
-				}
-				inp.Suffix = trl.S{"de": "%", "en": "pct"}
-				inp.HAlignLabel = qst.HLeft
-				inp.HAlignControl = qst.HLeft
-			}
-
-			// row below
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.ColSpanLabel = 2
-				inp.Label = trl.S{
-					"de": " &nbsp;",
-					"en": " &nbsp;",
-				}
-			}
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.ColSpanLabel = 7
-				inp.Label = trl.S{
-					"de": " [zentrales 90% Konfidenzintervall]",
-					"en": " [central 90&nbsp;pct confidence interval]",
-				}
-				inp.CSSLabel = "special-input-textblock-smaller"
-			}
-
-		}
-
-		// gr3
-		{
-			gr := page.AddGroup()
-			gr.Cols = 9 // necessary, otherwise no vspacers
-			gr.HeaderBottomVSpacers = 1
-
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.ColSpanLabel = 9
-				inp.Label = trl.S{
-					"de": "<b>5b.</b> Die <b>langfristigen</b> Zinsen (Renditen 10jg. Staatsanleihen) in <b>Deutschland</b> erwarten wir auf Sicht von 6&nbsp;Monaten",
-					"en": "<b>5b.</b> We expect <b>long term</b> interest rates in <b>Germany</b> in 6&nbsp;months",
-				}
-			}
-
-			{
-				inp := gr.AddInput()
-				inp.Type = "number"
-				inp.Name = "r_deu_low"
-				inp.Min = 0
-				inp.Max = 100
-				inp.MaxChars = 4
-				// inp.Validator = "inRange100"
-
-				inp.ColSpanLabel = 2
-				inp.ColSpanControl = 2
-				inp.Label = trl.S{
-					"de": "zwischen&nbsp;",
-					"en": "between&nbsp;",
-				}
-				inp.Suffix = trl.S{"de": "%", "en": "pct"}
-				inp.HAlignLabel = qst.HRight
-				inp.HAlignControl = qst.HLeft
-			}
-
-			{
-				inp := gr.AddInput()
-				inp.Type = "number"
-				inp.Name = "r_deu_high"
-				inp.Min = 0
-				inp.Max = 100
-				inp.MaxChars = 4
-				// inp.Validator = "inRange100"
-
-				inp.ColSpanLabel = 2
-				inp.ColSpanControl = 3
-				inp.Label = trl.S{
-					"de": "und&nbsp;&nbsp;&nbsp;&nbsp;",
-					"en": "and&nbsp;&nbsp;&nbsp;&nbsp;",
-				}
-				inp.Suffix = trl.S{"de": "%", "en": "pct"}
-				inp.HAlignLabel = qst.HLeft
-				inp.HAlignControl = qst.HLeft
-			}
-
-			// row below
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.ColSpanLabel = 2
-				inp.Label = trl.S{
-					"de": " &nbsp;",
-					"en": " &nbsp;",
-				}
-			}
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.ColSpanLabel = 7
-				inp.Label = trl.S{
-					"de": " [zentrales 90% Konfidenzintervall]",
-					"en": " [central 90&nbsp;pct confidence interval]",
-				}
-				inp.CSSLabel = "special-input-textblock-smaller"
-			}
-
-		}
-
-	}
-
-	//
-	// page 4 - Credit situation
+	// page 5 - Credit situation
 	{
 		page := q.AddPage()
 		page.Section = trl.S{"de": "Kreditsituation", "en": "Credit situation"}
@@ -787,10 +930,10 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	}
 
 	//
-	// page 5 - Credit influence factors
+	// page 6 - Credit influence factors
 	{
 		page := q.AddPage()
-		// page.Section = trl.S{"de": "Kreditsituation", "en": "Credit situation"}
+		// pge.Section = trl.S{"de": "Kreditsituation", "en": "Credit situation"}
 		page.Label = trl.S{"de": "Einflussfaktoren", "en": "Influence Factors"}
 		page.Short = trl.S{"de": "Kredit-<br/>faktoren", "en": "Credit<br/>Influencers"}
 		page.Width = 70
@@ -854,228 +997,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			}
 			gr := page.AddGrid(gb)
 			gr.OddRowsColoring = true
-		}
-
-	}
-
-	//
-	// page 6 - Financial markets
-	{
-		page := q.AddPage()
-		page.Section = trl.S{"de": "Finanzmärkte", "en": "Financial markets"}
-		page.Label = trl.S{"de": "Preise", "en": "Prices"}
-		page.Short = trl.S{"de": "Finanz-<br/>märkte", "en": "Financial<br/>Markets"}
-		page.Width = 70
-
-		rowLabelsUncorrelatedAssets := []trl.S{
-			{
-				"de": "DAX",
-				"en": "German DAX",
-			},
-			{
-				"de": "Rohöl (Nordsee Brent)",
-				"en": "Brent Crude",
-			},
-			{
-				"de": "Gold",
-				"en": "Gold",
-			},
-			{
-				"de": "US-Dollar (ggü. €)",
-				"en": "Dollar / Euro",
-			},
-		}
-
-		// gr0
-		{
-			gb := qst.NewGridBuilderRadios(
-				columnTemplate4,
-				labelsIncreaseDecrease(),
-				[]string{"sto_dax", "oil", "gold", "fx_usa"},
-				radioVals4,
-				rowLabelsUncorrelatedAssets,
-			)
-			gb.MainLabel = trl.S{
-				"de": "<b>7a.</b> Die folgenden Aktienindizes / Rohstoffpreise / Wechselkurse werden mittelfristig (<b>6</b>&nbsp;Mo.)",
-				"en": "<b>7a.</b> Following stock indices / raw materials / exchange rates will medium term (<b>6</b>&nbsp;months)",
-			}
-			gr := page.AddGrid(gb)
-			gr.OddRowsColoring = true
-		}
-
-		//
-		// gr1
-		{
-			gr := page.AddGroup()
-			gr.Cols = 1
-			gr.BottomVSpacers = 0
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.Label = trl.S{
-					"de": "<b>7b.</b>",
-					"en": "<b>7b.</b>",
-				}
-			}
-		}
-
-		// gr2
-		{
-			gr := page.AddGroup()
-			gr.Cols = 100
-			{
-				inp := gr.AddInput()
-				inp.Type = "number"
-				inp.Name = "dax_6"
-				inp.Min = 1000
-				inp.Max = 50000
-				inp.MaxChars = 6
-				// inp.Validator = "inRange50000"
-
-				inp.ColSpanLabel = 55
-				// inp.CSSLabel = "special-line-height-higher"
-				inp.ColSpanControl = 45
-				inp.Label = trl.S{
-					"de": `Den DAX erwarten wir in 6&nbsp;Monaten bei `,
-					"en": "We expect the German DAX in 6&nbsp;month at",
-				}
-				inp.Suffix = trl.S{"de": "Punkten", "en": "points"}
-				inp.HAlignLabel = qst.HLeft
-				inp.HAlignControl = qst.HLeft
-			}
-
-			{
-				inp := gr.AddInput()
-				inp.Type = "number"
-				inp.Name = "dax_6_low"
-				inp.Min = 1000
-				inp.Max = 50000
-				inp.MaxChars = 6
-				// inp.Validator = "inRange50000"
-
-				inp.ColSpanLabel = 55
-				inp.ColSpanControl = 21
-				inp.Label = trl.S{
-					"de": `Mit einer Wahrscheinlichkeit von 90&nbsp;Prozent wird der DAX dann zwischen `,
-					"en": "With 90&nbsp;percent probability, the DAX will then be between",
-				}
-				inp.Suffix = trl.S{"de": "Punkten  &nbsp; und ", "en": "points &nbsp; and "}
-				inp.HAlignLabel = qst.HLeft
-				inp.HAlignControl = qst.HLeft
-			}
-
-			{
-				inp := gr.AddInput()
-				inp.Type = "number"
-				inp.Name = "dax_6_high"
-				inp.Min = 1000
-				inp.Max = 50000
-				inp.MaxChars = 6
-				// inp.Validator = "inRange50000"
-
-				inp.ColSpanControl = 24
-				inp.Suffix = trl.S{"de": "Punkten liegen.", "en": "points"}
-				inp.HAlignLabel = qst.HLeft
-				inp.HAlignControl = qst.HLeft
-			}
-		}
-
-		//
-		// gr3
-		{
-			gr := page.AddGroup()
-			gr.Cols = 1
-			gr.BottomVSpacers = 0
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.Label = trl.S{
-					"de": "<b>7c.</b> Aus Sicht der Fundamentaldaten der DAX-Unternehmen ist der DAX derzeit",
-					"en": "<b>7c.</b> The fundamentals of the companies comprising the DAX make the DAX currently",
-				}
-			}
-		}
-
-		// gr4
-		{
-			// gr := p.AddRadioMatrixGroupCSSGrid(labelsOvervaluedFairUndervalued(), names3rdMatrix, labels123Matrix)
-			gr := page.AddGroup()
-			gr.Cols = 12 // necessary, otherwise no vspacers
-			gr.HeaderBottomVSpacers = 1
-
-			for i2, lbl := range labelsOvervaluedFairUndervalued() {
-				rad := gr.AddInput()
-				rad.Type = "radio"
-				rad.Name = "dax_fund"
-				rad.ValueRadio = fmt.Sprintf("%v", i2+1)
-				rad.Label = lbl
-				rad.ColSpanLabel = 1
-				rad.ColSpanControl = 1
-			}
-
-		}
-
-		//
-		// gr5
-		{
-			gr := page.AddGroup()
-			gr.Cols = 1
-			gr.BottomVSpacers = 0
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.Label = trl.S{
-					"de": "<b>8.</b> Die Wahrscheinlichkeit für ein Extremereignis im deutschen Finanzmarkt liegt",
-					"en": "<b>8.</b> The probability for an extreme event in the German financial markets is",
-				}
-			}
-		}
-
-		// gr6
-		{
-			gr := page.AddGroup()
-			gr.Cols = 100
-			gr.HeaderBottomVSpacers = 1
-			{
-				inp := gr.AddInput()
-				inp.Type = "number"
-				inp.Name = "crash_low"
-				inp.Min = 0
-				inp.Max = 100
-				inp.MaxChars = 4
-				// inp.Validator = "inRange100"
-
-				inp.ColSpanLabel = 22
-				inp.ColSpanControl = 12
-				inp.Label = trl.S{
-					"de": " mittelfristig (<b>6</b>&nbsp;Mo.) bei  ",
-					"en": " medium term (<b>6</b>&nbsp;months) at ",
-				}
-				inp.Suffix = trl.S{"de": "%", "en": "pct"}
-				inp.HAlignLabel = qst.HRight
-				inp.HAlignControl = qst.HLeft
-			}
-
-			{
-				inp := gr.AddInput()
-				inp.Type = "number"
-				inp.Name = "crash_high"
-				inp.Min = 0
-				inp.Max = 100
-				inp.MaxChars = 4
-				// inp.Validator = "inRange100"
-
-				inp.ColSpanLabel = 26
-				inp.ColSpanControl = 40
-				inp.Label = trl.S{
-					"de": "und langfristig (<b>24</b>&nbsp;Mo.) bei ",
-					"en": "and long term (<b>24</b>&nbsp;months) at ",
-				}
-
-				inp.Suffix = trl.S{"de": "%", "en": "pct"}
-				inp.HAlignLabel = qst.HRight
-				inp.HAlignControl = qst.HLeft
-			}
 		}
 
 	}
@@ -1190,7 +1111,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			}
 		}
 
-		// page.ExampleSixColumnsLabelRight()
+		// pge.ExampleSixColumnsLabelRight()
 
 	}
 

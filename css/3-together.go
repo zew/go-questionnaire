@@ -34,7 +34,11 @@ type StylesResponsive struct {
 }
 
 // NewStylesResponsive returns style struct
-func NewStylesResponsive() *StylesResponsive {
+// if the arg is nil
+func NewStylesResponsive(sr *StylesResponsive) *StylesResponsive {
+	if sr != nil {
+		return sr
+	}
 	return &StylesResponsive{
 		Desktop: Styles{
 			BoxStyle: BoxStyle{
@@ -48,7 +52,7 @@ func NewStylesResponsive() *StylesResponsive {
 
 // stylesResponsiveExample to test
 func stylesResponsiveExample() *StylesResponsive {
-	sr := NewStylesResponsive()
+	sr := NewStylesResponsive(nil)
 
 	sr.Desktop.GridContainerStyle.AutoFlow = "row"
 	sr.Desktop.GridContainerStyle.TemplateColumns = "minmax(4rem, 2fr) minmax(4rem, 2fr) minmax(4rem, 2fr)"
@@ -149,9 +153,7 @@ func (sr *StylesResponsive) Combine(b StylesResponsive) {
 
 // ItemCenteredMCA makes the input centered on main and cross axis (MCA)
 func ItemCenteredMCA(sr *StylesResponsive) *StylesResponsive {
-	if sr == nil {
-		sr = NewStylesResponsive()
-	}
+	sr = NewStylesResponsive(sr)
 	sr.Desktop.GridItemStyle.JustifySelf = "center"
 	sr.Desktop.GridItemStyle.AlignSelf = "center"
 	sr.Desktop.TextStyle.AlignHorizontal = "center"
@@ -160,28 +162,30 @@ func ItemCenteredMCA(sr *StylesResponsive) *StylesResponsive {
 
 // ItemStartCA aligns the item at the start on the cross-axis
 func ItemStartCA(sr *StylesResponsive) *StylesResponsive {
-	if sr == nil {
-		sr = NewStylesResponsive()
-	}
+	sr = NewStylesResponsive(sr)
 	sr.Desktop.GridItemStyle.AlignSelf = "start"
 	return sr
 }
 
 // ItemEndMA aligns the item at the end on the main-axis
 func ItemEndMA(sr *StylesResponsive) *StylesResponsive {
-	if sr == nil {
-		sr = NewStylesResponsive()
-	}
+	sr = NewStylesResponsive(sr)
 	sr.Desktop.GridItemStyle.JustifySelf = "end"
 	return sr
 }
 
 // TextStart makes the text content left aligned
 func TextStart(sr *StylesResponsive) *StylesResponsive {
-	if sr == nil {
-		sr = NewStylesResponsive()
-	}
+	sr = NewStylesResponsive(sr)
 	// sr.Desktop.GridItemStyle.JustifySelf = "start"  // fails on multi line text
 	sr.Desktop.TextStyle.AlignHorizontal = "left"
+	return sr
+}
+
+// TextEnd makes the text content right aligned
+func TextEnd(sr *StylesResponsive) *StylesResponsive {
+	sr = NewStylesResponsive(sr)
+	// sr.Desktop.GridItemStyle.JustifySelf = "start"  // fails on multi line text
+	sr.Desktop.TextStyle.AlignHorizontal = "right"
 	return sr
 }

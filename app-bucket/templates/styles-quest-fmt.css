@@ -1,21 +1,32 @@
 label, .postlabel {
     text-align: left;
-
 }
+
+nav {
+    grid-template-columns: [col-img] 2fr [col-title] 8fr [col-menu] 1.3fr;
+}
+
+nav a.logo {
+    position: relative;
+    top: -0.15rem;
+}
+
+
+nav a.title {
+    font-size: 130%;
+}
+nav a.title span.survey-wave-id {
+    display: inline-block;
+    font-size: 110%;
+}
+
+
 
 @media screen and (max-width: 800px) {
     nav {
         grid-template-columns: [col-img] 2fr [col-title] 8fr [col-menu] 1.3fr;
     }
 
-    nav a.title {
-        font-size: 85%;
-        font-size: 95%;
-    }
-    nav a.title span.survey-wave-id {
-        display: inline-block;
-        font-size: 95%;
-    }
     nav a.logo {
         justify-self: center;
         justify-self: start;
@@ -24,6 +35,13 @@ label, .postlabel {
 
         position: relative;
         top: -0.15rem;
+    }
+    nav a.title {
+        font-size: 95%;
+    }
+    nav a.title span.survey-wave-id {
+        display: inline-block;
+        font-size: 95%;
     }
 }
 

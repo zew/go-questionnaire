@@ -8,6 +8,7 @@ package qst
 import (
 	"encoding/gob"
 	"fmt"
+	"html/template"
 	"io"
 	"log"
 	"net/http"
@@ -16,6 +17,8 @@ import (
 	"strings"
 	"time"
 
+	"github.com/pkg/errors"
+	"github.com/zew/go-questionnaire/cloudio"
 	"github.com/zew/go-questionnaire/css"
 	"github.com/zew/go-questionnaire/lgn/shuffler"
 	"github.com/zew/go-questionnaire/sessx"
@@ -267,9 +270,7 @@ func (inp inputT) HTML(langCode string, numCols float32) string {
 // it contains no response information;
 // a group is a layout unit with a configurable number of columns.
 type groupT struct {
-	// Vertical space control:
-	HeaderBottomVSpacers int `json:"header_bottom_vspacers,omitempty"` // number of half rows below the group header
-	BottomVSpacers       int `json:"bottom_vspacers,omitempty"`        // number of rows below the group, addGroup() initializes to 3
+	BottomVSpacers int `json:"bottom_vspacers,omitempty"` // number of rows below the group, addGroup() initializes to 3
 
 	// Number of vertical columns;
 	// for horizontal *and* (not yet implemented) vertical layouts;
@@ -422,6 +423,7 @@ type pageT struct {
 	Groups []*groupT `json:"groups,omitempty"`
 
 	ValidationFuncName string `json:"validation_func_name,omitempty"` // javascript validation func name
+	ValidationFuncMsg  trl.S  `json:"validation_func_msg,omitempty"`
 }
 
 // AddGroup creates a new group
@@ -486,6 +488,7 @@ func FromSession(w io.Writer, r *http.Request) (*QuestionnaireT, bool, error) {
 }
 
 // BasePath gives the 'root' for loading and saving questionnaire JSON files.
+// Duplicate of lgn.basePath - cyclic dependencies
 func BasePath() string {
 	return path.Join(".", "responses")
 }
@@ -761,17 +764,27 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 		}
 	}
 
-	fmt.Fprint(w, "</div> <!-- width -->")
+	fmt.Fprint(w, "</div> <!-- /page-margins -->\n\n")
 
 	if p.ValidationFuncName != "" {
-		fmt.Fprintf(w, `
-			<script>
-				var frm = document.forms.frmMain;
-				if (frm) {
-					frm.addEventListener('submit', %v);    
-				}
-			</script>
-		`, p.ValidationFuncName)
+
+		tplFile := p.ValidationFuncName + ".js"
+
+		mp := map[string]string{}
+		mp["msg"] = p.ValidationFuncMsg.Tr(q.LangCode)
+		t, err := tplHelper(tplFile)
+
+		if err != nil {
+			log.Printf("Error parsing tpl %v: %v", tplFile, err)
+		} else {
+			fmt.Fprintf(w, "<script>\n")
+			err := t.Execute(w, mp)
+			if err != nil {
+				log.Printf("Error executing tpl %v: %v", tplFile, err)
+			}
+			fmt.Fprintf(w, "console.log('JS tpl %v successfully added')", tplFile)
+			fmt.Fprintf(w, "</script>\n")
+		}
 
 	}
 
@@ -974,4 +987,23 @@ func (q *QuestionnaireT) ByName(n string) *inputT {
 		}
 	}
 	return nil
+}
+
+func tplHelper(tName string) (*template.Template, error) {
+
+	pth := path.Join(".", "templates", "js", tName) // not filepath; cloudio always has forward slash
+	cnts, err := cloudio.ReadFile(pth)
+	if err != nil {
+		msg := fmt.Sprintf("cannot open template %v: %v", pth, err)
+		return nil, errors.Wrap(err, msg)
+	}
+
+	base := template.New(tName)
+	tDerived, err := base.Parse(string(cnts))
+	if err != nil {
+		msg := fmt.Sprintf("parsing failed for %v: %v", pth, err)
+		return nil, errors.Wrap(err, msg)
+	}
+
+	return tDerived, nil
 }

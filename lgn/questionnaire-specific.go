@@ -13,7 +13,6 @@ import (
 	"github.com/zew/go-questionnaire/cfg"
 	"github.com/zew/go-questionnaire/cloudio"
 	"github.com/zew/go-questionnaire/ctr"
-	"github.com/zew/go-questionnaire/qst"
 	"github.com/zew/go-questionnaire/sessx"
 )
 
@@ -332,6 +331,12 @@ func ReloadH(w http.ResponseWriter, r *http.Request) {
 
 }
 
+// basePath gives the 'root' for loading and saving questionnaire JSON files.
+// Duplicate of qst.basePath - cyclic dependencies
+func basePath() string {
+	return path.Join(".", "responses")
+}
+
 // QuestPath returns the path to the JSON questionnaire,
 // Similar to qst.QuestionnaireT.FilePath1()
 // See also userAttrs{}
@@ -352,7 +357,7 @@ func (l *LoginT) QuestPath() string {
 		log.Printf("Error constructing path for user questionnaire file; userSurveyType or userWaveID is empty: %v - %v", userSurveyType, userWaveID)
 	}
 
-	pth := path.Join(".", qst.BasePath(), userSurveyType, userWaveID, l.User) + ".json"
+	pth := path.Join(".", basePath(), userSurveyType, userWaveID, l.User) + ".json"
 	return pth
 }
 
@@ -375,10 +380,10 @@ func (l *LoginT) DeleteFiles() {
 		return
 	}
 
-	// pth1 := path.Join(".", qst.BasePath(), userSurveyType, userWaveID, l.User) + "_joined.json"
-	// pth2 := path.Join(".", qst.BasePath(), userSurveyType, userWaveID, l.User) + "_split.json"
-	pth3 := path.Join(".", qst.BasePath(), userSurveyType, userWaveID, l.User) + ".json"
-	// pth4 := path.Join(".", qst.BasePath(), userSurveyType, userWaveID, l.User) + ".json.attrs"
+	// pth1 := path.Join(".", BasePath(), userSurveyType, userWaveID, l.User) + "_joined.json"
+	// pth2 := path.Join(".", BasePath(), userSurveyType, userWaveID, l.User) + "_split.json"
+	pth3 := path.Join(".", basePath(), userSurveyType, userWaveID, l.User) + ".json"
+	// pth4 := path.Join(".", BasePath(), userSurveyType, userWaveID, l.User) + ".json.attrs"
 
 	pths := []string{pth3}
 

@@ -99,11 +99,7 @@ func (q QuestionnaireT) GroupHTMLGridBased(pageIdx, grpIdx int) string {
 
 	//
 	//
-	if gr.Style == nil {
-		gr.Style = css.NewStylesResponsive()
-	} else {
-		// log.Printf("page%v group%v: gr.Style already present", pageIdx, grpIdx)
-	}
+	gr.Style = css.NewStylesResponsive(gr.Style)
 	gr.Style.Desktop.BoxStyle.Display = "grid"
 	if gr.Style.Desktop.GridContainerStyle.AutoFlow == "" {
 		gr.Style.Desktop.GridContainerStyle.AutoFlow = "row"
@@ -132,9 +128,7 @@ func (q QuestionnaireT) GroupHTMLGridBased(pageIdx, grpIdx int) string {
 			continue
 		}
 
-		if inp.Style == nil {
-			inp.Style = css.NewStylesResponsive()
-		}
+		inp.Style = css.NewStylesResponsive(inp.Style)
 
 		// input div is item      to group
 		inp.Style.Desktop.GridItemStyle.Col = fmt.Sprintf("auto / span %v", inp.ColSpanLabel+inp.ColSpanControl)
@@ -154,11 +148,9 @@ func (q QuestionnaireT) GroupHTMLGridBased(pageIdx, grpIdx int) string {
 			if inp.ColSpanLabel > 0 {
 				wLbl := &strings.Builder{}
 
-				if inp.StyleLbl == nil {
-					inp.StyleLbl = css.NewStylesResponsive()
-				}
+				inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
 
-				overlay := css.NewStylesResponsive()
+				overlay := css.NewStylesResponsive(nil)
 				overlay.Desktop.GridItemStyle.Col = fmt.Sprintf("auto / span %v", inp.ColSpanLabel)
 				overlay.Desktop.GridItemStyle.AlignSelf = "center"
 				// styleLbl.Desktop.GridItemStyle.Order = 2  // label post control
@@ -187,7 +179,7 @@ func (q QuestionnaireT) GroupHTMLGridBased(pageIdx, grpIdx int) string {
 			if inp.ColSpanControl > 0 {
 				wCtl := &strings.Builder{}
 				if inp.StyleCtl == nil {
-					inp.StyleCtl = css.NewStylesResponsive()
+					inp.StyleCtl = css.NewStylesResponsive(inp.StyleCtl)
 					inp.StyleCtl.Desktop.GridItemStyle.Col = fmt.Sprintf("auto / span %v", inp.ColSpanControl)
 					inp.StyleCtl.Desktop.GridItemStyle.AlignSelf = "center"
 

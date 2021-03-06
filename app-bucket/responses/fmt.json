@@ -21,12 +21,12 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "2922496a7e2ed43c5e307ffd10be0700",
+ 	"md_5": "6f22a7d962fb01120975eefbe4dfb7bbbc909958052d3e2f2bfac0d648805b85",
  	"lang_codes": [
  		"de",
  		"en"
  	],
- 	"max_groups": 7,
+ 	"max_groups": 4,
  	"pages": [
  		{
  			"label": {
@@ -219,13 +219,9 @@
  			]
  		},
  		{
- 			"section": {
+ 			"label": {
  				"de": "Konjunktur",
  				"en": "Business cycle"
- 			},
- 			"label": {
- 				"de": "Status und Ausblick",
- 				"en": "Status and outlook"
  			},
  			"description": {
  				"de": "",
@@ -977,7 +973,26 @@
  								"de": "\u003cb\u003e2b.\u003c/b\u003e Für wie wahrscheinlich halten Sie die folgenden mittel\u0026shy;fristigen (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;Mo.) Entwicklungen der ge\u0026shy;samtwirt\u0026shy;schaft\u0026shy;lichen Situation in Deutsch\u0026shy;land?",
  								"en": "\u003cb\u003e2b.\u003c/b\u003e How likely are the following medium term (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;months) de\u0026shy;vel\u0026shy;op\u0026shy;ments of the general eco\u0026shy;nom\u0026shy;ic situation in Germany?"
  							},
- 							"col_span_label": 10
+ 							"col_span_label": 10,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0 0.8rem 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"A": "",
+ 								"B": "",
+ 								"C": 0
+ 							}
  						},
  						{
  							"type": "textblock",
@@ -1163,7 +1178,7 @@
  						},
  						"mobile": {
  							"grid_container_style": {
- 								"row_gap": "0.6rem"
+ 								"row_gap": "0.02rem"
  							},
  							"box_style": {},
  							"grid_item_style": {},
@@ -1175,123 +1190,16 @@
  					}
  				}
  			],
- 			"validation_func_name": "fmtPage1"
- 		},
- 		{
- 			"label": {
- 				"de": "Wachstum",
- 				"en": "Growth"
- 			},
- 			"description": {
- 				"de": "",
- 				"en": ""
- 			},
- 			"short": {
- 				"de": "Wachstum",
- 				"en": "Growth"
- 			},
- 			"navi_num": 2,
- 			"width": 60,
- 			"finished": "0001-01-01T00:00:00Z",
- 			"groups": [
- 				{
- 					"bottom_vspacers": 3,
- 					"columns": 5,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "\u003cb\u003e3a.\u003c/b\u003e ",
- 								"en": "\u003cb\u003e3a.\u003c/b\u003e "
- 							},
- 							"col_span_label": 5
- 						},
- 						{
- 							"name": "y_q_deu",
- 							"type": "number",
- 							"max_chars": 3,
- 							"max": 20,
- 							"label": {
- 								"de": "Unsere Prognose für das \u003cb\u003edeutsche\u003c/b\u003e BIP Wachstum in Q2 2021 \u003cxxbr/\u003e\n(real, saisonbereinigt, nicht annualisiert)",
- 								"en": "Our estimate for the \u003cb\u003eGerman\u003c/b\u003e GDP growth in Q2 2021        \u003cxxbr/\u003e\n(real, seasonally adjusted, non annualized)"
- 							},
- 							"suffix": {
- 								"de": "%",
- 								"en": "pct"
- 							},
- 							"col_span_label": 4,
- 							"col_span_control": 1
- 						},
- 						{
- 							"name": "y_y_deu",
- 							"type": "number",
- 							"max_chars": 3,
- 							"max": 50,
- 							"label": {
- 								"de": "Unsere Prognose für das BIP Wachstum für das Jahr 2022 \u003cxxbr/\u003e\n(real, saisonbereinigt)",
- 								"en": "Our estimate for the GDP growth in 2022                \u003cxxbr/\u003e\n(real, seasonally adjusted)"
- 							},
- 							"suffix": {
- 								"de": "%",
- 								"en": "pct"
- 							},
- 							"col_span_label": 4,
- 							"col_span_control": 1
- 						}
- 					]
- 				},
- 				{
- 					"bottom_vspacers": 3,
- 					"columns": 5,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "\u003cb\u003e3b.\u003c/b\u003e ",
- 								"en": "\u003cb\u003e3b.\u003c/b\u003e "
- 							},
- 							"col_span_label": 5
- 						},
- 						{
- 							"name": "yshr_q_deu",
- 							"type": "number",
- 							"max_chars": 4,
- 							"max": 100,
- 							"label": {
- 								"de": "Die Wahrscheinlichkeit eines neg\u0026shy;ativen Wachstums des \u003cb\u003edeutschen\u003c/b\u003e BIP in Q2 2021 liegt bei",
- 								"en": "The probability of neg\u0026shy;ative growth for the \u003cb\u003eGerman\u003c/b\u003e GDP in Q2 2021 is"
- 							},
- 							"suffix": {
- 								"de": "%",
- 								"en": "pct"
- 							},
- 							"col_span_label": 4,
- 							"col_span_control": 1
- 						},
- 						{
- 							"name": "yshr_y_deu",
- 							"type": "number",
- 							"max_chars": 4,
- 							"max": 100,
- 							"label": {
- 								"de": "Die Wahrscheinlichkeit einer Rezession in Deutsch\u0026shy;land \u003cxxbr/\u003e\n(mind. 2\u0026nbsp;Quartale neg. Wachstum) bis Q4 2022 liegt bei",
- 								"en": "The probability of a recession in Germany             \u003cxxbr/\u003e\n(at least 2\u0026nbsp;quarters neg. growth) until Q4 2022 is"
- 							},
- 							"suffix": {
- 								"de": "%",
- 								"en": "pct"
- 							},
- 							"col_span_label": 4,
- 							"col_span_control": 1
- 						}
- 					]
- 				}
- 			]
+ 			"validation_func_name": "fmtPage1",
+ 			"validation_func_msg": {
+ 				"de": "Summiert sich nicht zu 100",
+ 				"en": "Does not add up"
+ 			}
  		},
  		{
  			"label": {
  				"de": "Inflation und Zinsen",
- 				"en": "Inflation and rates"
+ 				"en": "Inflation and Interest Rates"
  			},
  			"description": {
  				"de": "",
@@ -1299,9 +1207,9 @@
  			},
  			"short": {
  				"de": "Inflation,\u003cbr/\u003eZinsen",
- 				"en": "Inflation,\u003cbr/\u003eRates"
+ 				"en": "Inflation,\u003cbr/\u003eInter. Rates"
  			},
- 			"navi_num": 3,
+ 			"navi_num": 2,
  			"width": 60,
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
@@ -1313,8 +1221,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e4.\u003c/b\u003e Die jährl. ge\u0026shy;samtwirt\u0026shy;schaftl. Inflationsrate wird mittel\u0026shy;fristig (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;Mo.)",
- 								"en": "\u003cb\u003e4.\u003c/b\u003e Medium term (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;months) yearly overall inflation rate will"
+ 								"de": "\u003cb\u003e3.\u003c/b\u003e Die jährliche ge\u0026shy;samtwirt\u0026shy;schaft\u0026shy;liche Inflationsrate wird mittel\u0026shy;fristig (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;Mo.)",
+ 								"en": "\u003cb\u003e3.\u003c/b\u003e Yearly overall inflation rate in the medium term (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;months)  will"
  							},
  							"col_span_label": 7
  						},
@@ -1551,6 +1459,104 @@
  							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "pi_usa",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "USA",
+ 								"en": "US"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"A": "",
+ 								"B": "",
+ 								"C": 0
+ 							}
+ 						},
+ 						{
+ 							"name": "pi_usa",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "pi_usa",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "pi_usa",
+ 							"type": "radio",
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "pi_chn",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "China",
+ 								"en": "China"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"A": "",
+ 								"B": "",
+ 								"C": 0
+ 							}
+ 						},
+ 						{
+ 							"name": "pi_chn",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "pi_chn",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "pi_chn",
+ 							"type": "radio",
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
  						}
  					],
  					"style": {
@@ -1572,132 +1578,1330 @@
  					}
  				},
  				{
- 					"header_bottom_vspacers": 1,
  					"bottom_vspacers": 3,
- 					"columns": 9,
+ 					"columns": 7,
+ 					"odd_rows_coloring": true,
  					"inputs": [
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e5a.\u003c/b\u003e Die \u003cb\u003ekurzfristigen\u003c/b\u003e Zinsen (3-Mo.-Interbanksätze) im \u003cb\u003eEuro\u0026shy;raum\u003c/b\u003e erwarten wir auf Sicht von 6\u0026nbsp;Monaten",
- 								"en": "\u003cb\u003e5a.\u003c/b\u003e We expect \u003cb\u003eshort term\u003c/b\u003e interest rates (3 months interbank) in the \u003cb\u003eeuro area\u003c/b\u003e"
+ 								"de": "\u003cb\u003e4.\u003c/b\u003e Die \u003cb\u003ekurzfristigen\u003c/b\u003e Zinsen (3-Mo.-Interbanksätze) werden mittel\u0026shy;fristig (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;Mo.)",
+ 								"en": "\u003cb\u003e4.\u003c/b\u003e \u003cb\u003eShort term\u003c/b\u003e interest rates (3\u0026nbsp;months interbank) in the medium term (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;months) will"
  							},
- 							"col_span_label": 9
- 						},
- 						{
- 							"name": "i_ez_low",
- 							"type": "number",
- 							"max_chars": 4,
- 							"max": 20,
- 							"label": {
- 								"de": "zwischen\u0026nbsp;",
- 								"en": "between\u0026nbsp;"
- 							},
- 							"suffix": {
- 								"de": "%",
- 								"en": "pct"
- 							},
- 							"horizontal_align_label": 2,
- 							"col_span_label": 2,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "i_ez_high",
- 							"type": "number",
- 							"max_chars": 4,
- 							"max": 20,
- 							"label": {
- 								"de": "und\u0026nbsp;\u0026nbsp;\u0026nbsp;\u0026nbsp;",
- 								"en": "and\u0026nbsp;\u0026nbsp;\u0026nbsp;\u0026nbsp;"
- 							},
- 							"suffix": {
- 								"de": "%",
- 								"en": "pct"
- 							},
- 							"col_span_label": 2,
- 							"col_span_control": 3
+ 							"col_span_label": 7
  						},
  						{
  							"type": "textblock",
  							"label": {
- 								"de": " \u0026nbsp;",
- 								"en": " \u0026nbsp;"
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
  							},
  							"col_span_label": 2
  						},
  						{
  							"type": "textblock",
  							"label": {
- 								"de": " [zentrales 90% Konfidenzintervall]",
- 								"en": " [central 90\u0026nbsp;pct confidence interval]"
+ 								"de": "stei\u0026shy;gen",
+ 								"en": "in\u0026shy;crease"
  							},
- 							"css_label": "special-input-textblock-smaller",
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"A": "",
+ 								"B": "",
+ 								"C": 0
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "gleich blei\u0026shy;ben",
+ 								"en": "remain un\u0026shy;changed"
+ 							},
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"A": "",
+ 								"B": "",
+ 								"C": 0
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "sin\u0026shy;ken",
+ 								"en": "de\u0026shy;crease"
+ 							},
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"A": "",
+ 								"B": "",
+ 								"C": 0
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "keine\u003cbr\u003eAn\u0026shy;gabe",
+ 								"en": "no an\u0026shy;swer"
+ 							},
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"A": "",
+ 								"B": "",
+ 								"C": 0
+ 							}
+ 						},
+ 						{
+ 							"name": "i_ez",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Euro\u0026shy;raum",
+ 								"en": "Euro area"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"A": "",
+ 								"B": "",
+ 								"C": 0
+ 							}
+ 						},
+ 						{
+ 							"name": "i_ez",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "i_ez",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "i_ez",
+ 							"type": "radio",
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "i_usa",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "USA",
+ 								"en": "US"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"A": "",
+ 								"B": "",
+ 								"C": 0
+ 							}
+ 						},
+ 						{
+ 							"name": "i_usa",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "i_usa",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "i_usa",
+ 							"type": "radio",
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "i_chn",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "China",
+ 								"en": "China"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"A": "",
+ 								"B": "",
+ 								"C": 0
+ 							}
+ 						},
+ 						{
+ 							"name": "i_chn",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "i_chn",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "i_chn",
+ 							"type": "radio",
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"A": "",
+ 						"B": "",
+ 						"C": 0
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 7,
+ 					"odd_rows_coloring": true,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003e5.\u003c/b\u003e Die \u003cb\u003elang\u0026shy;fristigen\u003c/b\u003e Zinsen (Renditen 10jg. Staatsanleihen) werden mittel\u0026shy;fristig (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;Mo.)",
+ 								"en": "\u003cb\u003e5.\u003c/b\u003e \u003cb\u003eLong term\u003c/b\u003e interest rates (10-year govt. bonds) in the medium term (6\u0026nbsp;months) will"
+ 							},
  							"col_span_label": 7
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_label": 2
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "stei\u0026shy;gen",
+ 								"en": "in\u0026shy;crease"
+ 							},
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"A": "",
+ 								"B": "",
+ 								"C": 0
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "gleich blei\u0026shy;ben",
+ 								"en": "remain un\u0026shy;changed"
+ 							},
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"A": "",
+ 								"B": "",
+ 								"C": 0
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "sin\u0026shy;ken",
+ 								"en": "de\u0026shy;crease"
+ 							},
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"A": "",
+ 								"B": "",
+ 								"C": 0
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "keine\u003cbr\u003eAn\u0026shy;gabe",
+ 								"en": "no an\u0026shy;swer"
+ 							},
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"A": "",
+ 								"B": "",
+ 								"C": 0
+ 							}
+ 						},
+ 						{
+ 							"name": "r_deu",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Deutsch\u0026shy;land",
+ 								"en": "Germany"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"A": "",
+ 								"B": "",
+ 								"C": 0
+ 							}
+ 						},
+ 						{
+ 							"name": "r_deu",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "r_deu",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "r_deu",
+ 							"type": "radio",
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "r_usa",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "USA",
+ 								"en": "US"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"A": "",
+ 								"B": "",
+ 								"C": 0
+ 							}
+ 						},
+ 						{
+ 							"name": "r_usa",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "r_usa",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "r_usa",
+ 							"type": "radio",
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "r_chn",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "China",
+ 								"en": "China"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"A": "",
+ 								"B": "",
+ 								"C": 0
+ 							}
+ 						},
+ 						{
+ 							"name": "r_chn",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "r_chn",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "r_chn",
+ 							"type": "radio",
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"A": "",
+ 						"B": "",
+ 						"C": 0
+ 					}
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "Aktienmärkte",
+ 				"en": "Stock Markets"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"short": {
+ 				"de": "Aktien-\u003cbr\u003emärkte",
+ 				"en": "Stock\u003cbr\u003eMarkets"
+ 			},
+ 			"navi_num": 3,
+ 			"width": 60,
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 7,
+ 					"odd_rows_coloring": true,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003e6a.\u003c/b\u003e Die folgenden Aktienindizes werden mittel\u0026shy;fristig (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;Mo.)",
+ 								"en": "\u003cb\u003e6a.\u003c/b\u003e Following stock indices in the medium term (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;months) will"
+ 							},
+ 							"col_span_label": 7
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_label": 2
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "stei\u0026shy;gen",
+ 								"en": "in\u0026shy;crease"
+ 							},
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"A": "",
+ 								"B": "",
+ 								"C": 0
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "gleich blei\u0026shy;ben",
+ 								"en": "remain un\u0026shy;changed"
+ 							},
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"A": "",
+ 								"B": "",
+ 								"C": 0
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "sin\u0026shy;ken",
+ 								"en": "de\u0026shy;crease"
+ 							},
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"A": "",
+ 								"B": "",
+ 								"C": 0
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "keine\u003cbr\u003eAn\u0026shy;gabe",
+ 								"en": "no an\u0026shy;swer"
+ 							},
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"A": "",
+ 								"B": "",
+ 								"C": 0
+ 							}
+ 						},
+ 						{
+ 							"name": "euro_stoxx50",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "EURO STOXX 50",
+ 								"en": "EURO STOXX 50"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"A": "",
+ 								"B": "",
+ 								"C": 0
+ 							}
+ 						},
+ 						{
+ 							"name": "euro_stoxx50",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "euro_stoxx50",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "euro_stoxx50",
+ 							"type": "radio",
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "sto_dax",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "DAX",
+ 								"en": "German DAX"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"A": "",
+ 								"B": "",
+ 								"C": 0
+ 							}
+ 						},
+ 						{
+ 							"name": "sto_dax",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "sto_dax",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "sto_dax",
+ 							"type": "radio",
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "dow_jones",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Dow Jones (USA)",
+ 								"en": "Dow Jones (USA)"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"A": "",
+ 								"B": "",
+ 								"C": 0
+ 							}
+ 						},
+ 						{
+ 							"name": "dow_jones",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "dow_jones",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "dow_jones",
+ 							"type": "radio",
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "sse_comp_chn",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "SSE Composite (China)",
+ 								"en": "SSE Composite (China)"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"A": "",
+ 								"B": "",
+ 								"C": 0
+ 							}
+ 						},
+ 						{
+ 							"name": "sse_comp_chn",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "sse_comp_chn",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "sse_comp_chn",
+ 							"type": "radio",
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"A": "",
+ 						"B": "",
+ 						"C": 0
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 6,
+ 					"inputs": [
+ 						{
+ 							"name": "dax_6",
+ 							"type": "number",
+ 							"max_chars": 6,
+ 							"min": 1000,
+ 							"max": 50000,
+ 							"label": {
+ 								"de": "\u003cb\u003e6b.\u003c/b\u003e Den DAX erwarte ich in 6\u0026nbsp;Monaten bei ",
+ 								"en": "\u003cb\u003e6b.\u003c/b\u003e We expect the German DAX in 6\u0026nbsp;month at"
+ 							},
+ 							"suffix": {
+ 								"de": "Punkten",
+ 								"en": "points"
+ 							},
+ 							"col_span_label": 4,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": " \u003cbr\u003eMit einer Wahrscheinlichkeit von 90\u0026nbsp;Prozent wird der DAX dann zwischen ",
+ 								"en": " \u003cbr\u003eWith 90\u0026nbsp;percent probability, the DAX will then be between"
+ 							},
+ 							"col_span_label": 6
+ 						},
+ 						{
+ 							"name": "dax_6_low",
+ 							"type": "number",
+ 							"max_chars": 6,
+ 							"min": 1000,
+ 							"max": 50000,
+ 							"label": {
+ 								"de": " \u0026nbsp; ",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"suffix": {
+ 								"de": "Punkten ",
+ 								"en": "points"
+ 							},
+ 							"col_span_label": 1,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": " und \u0026nbsp; ",
+ 								"en": " and \u0026nbsp; "
+ 							},
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"A": "",
+ 								"B": "",
+ 								"C": 0
+ 							}
+ 						},
+ 						{
+ 							"name": "dax_6_high",
+ 							"type": "number",
+ 							"max_chars": 6,
+ 							"min": 1000,
+ 							"max": 50000,
+ 							"suffix": {
+ 								"de": "Punkten",
+ 								"en": "points"
+ 							},
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": " liegen.",
+ 								"en": " \u0026nbsp; "
+ 							},
+ 							"col_span_label": 6,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"top": "-0.4rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"A": "",
+ 								"B": "",
+ 								"C": 0
+ 							}
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"column_gap": "0rem",
+ 								"row_gap": "0rem"
+ 							},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"A": "",
+ 						"B": "",
+ 						"C": 0
+ 					}
+ 				},
+ 				{
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003e6c.\u003c/b\u003e Aus Sicht der Fundamentalda\u0026shy;ten der DAX-Un\u0026shy;ter\u0026shy;neh\u0026shy;men ist der DAX derzeit",
+ 								"en": "\u003cb\u003e6c.\u003c/b\u003e The fundamentals of the companies comprising the DAX make the DAX currently"
+ 							},
+ 							"col_span_label": 1
  						}
  					]
  				},
  				{
- 					"header_bottom_vspacers": 1,
  					"bottom_vspacers": 3,
- 					"columns": 9,
+ 					"columns": 12,
+ 					"inputs": [
+ 						{
+ 							"name": "dax_fund",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "überbewertet",
+ 								"en": "overvalued"
+ 							},
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "1"
+ 						},
+ 						{
+ 							"name": "dax_fund",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "fair\u0026nbsp;bewertet",
+ 								"en": "fair\u0026nbsp;valued"
+ 							},
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "dax_fund",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "unterbewertet",
+ 								"en": "undervalued"
+ 							},
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						}
+ 					]
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "Währungen",
+ 				"en": "Currencies"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"short": {
+ 				"de": "Währungen",
+ 				"en": "Currencies"
+ 			},
+ 			"navi_num": 4,
+ 			"width": 60,
+ 			"finished": "0001-01-01T00:00:00Z"
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "Wachstum",
+ 				"en": "Growth"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"short": {
+ 				"de": "Wachstum",
+ 				"en": "Growth"
+ 			},
+ 			"navi_num": 5,
+ 			"width": 60,
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 5,
  					"inputs": [
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e5b.\u003c/b\u003e Die \u003cb\u003elang\u0026shy;fristigen\u003c/b\u003e Zinsen (Renditen 10jg. Staatsanleihen) in \u003cb\u003eDeutsch\u0026shy;land\u003c/b\u003e erwarten wir auf Sicht von 6\u0026nbsp;Monaten",
- 								"en": "\u003cb\u003e5b.\u003c/b\u003e We expect \u003cb\u003elong term\u003c/b\u003e interest rates in \u003cb\u003eGermany\u003c/b\u003e in 6\u0026nbsp;months"
+ 								"de": "\u003cb\u003e3a.\u003c/b\u003e ",
+ 								"en": "\u003cb\u003e3a.\u003c/b\u003e "
  							},
- 							"col_span_label": 9
+ 							"col_span_label": 5
  						},
  						{
- 							"name": "r_deu_low",
+ 							"name": "y_q_deu",
  							"type": "number",
- 							"max_chars": 4,
- 							"max": 100,
+ 							"max_chars": 3,
+ 							"max": 20,
  							"label": {
- 								"de": "zwischen\u0026nbsp;",
- 								"en": "between\u0026nbsp;"
+ 								"de": "Unsere Prognose für das \u003cb\u003edeutsche\u003c/b\u003e BIP Wachstum in Q2 2021 \u003cxxbr/\u003e\n(real, saisonbereinigt, nicht annualisiert)",
+ 								"en": "Our estimate for the \u003cb\u003eGerman\u003c/b\u003e GDP growth in Q2 2021        \u003cxxbr/\u003e\n(real, seasonally adjusted, non annualized)"
  							},
  							"suffix": {
  								"de": "%",
  								"en": "pct"
  							},
- 							"horizontal_align_label": 2,
- 							"col_span_label": 2,
- 							"col_span_control": 2
+ 							"col_span_label": 4,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "r_deu_high",
+ 							"name": "y_y_deu",
  							"type": "number",
- 							"max_chars": 4,
- 							"max": 100,
+ 							"max_chars": 3,
+ 							"max": 50,
  							"label": {
- 								"de": "und\u0026nbsp;\u0026nbsp;\u0026nbsp;\u0026nbsp;",
- 								"en": "and\u0026nbsp;\u0026nbsp;\u0026nbsp;\u0026nbsp;"
+ 								"de": "Unsere Prognose für das BIP Wachstum für das Jahr 2022 \u003cxxbr/\u003e\n(real, saisonbereinigt)",
+ 								"en": "Our estimate for the GDP growth in 2022                \u003cxxbr/\u003e\n(real, seasonally adjusted)"
  							},
  							"suffix": {
  								"de": "%",
  								"en": "pct"
  							},
- 							"col_span_label": 2,
- 							"col_span_control": 3
- 						},
+ 							"col_span_label": 4,
+ 							"col_span_control": 1
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 5,
+ 					"inputs": [
  						{
  							"type": "textblock",
  							"label": {
- 								"de": " \u0026nbsp;",
- 								"en": " \u0026nbsp;"
+ 								"de": "\u003cb\u003e3b.\u003c/b\u003e ",
+ 								"en": "\u003cb\u003e3b.\u003c/b\u003e "
  							},
- 							"col_span_label": 2
+ 							"col_span_label": 5
  						},
  						{
- 							"type": "textblock",
+ 							"name": "yshr_q_deu",
+ 							"type": "number",
+ 							"max_chars": 4,
+ 							"max": 100,
  							"label": {
- 								"de": " [zentrales 90% Konfidenzintervall]",
- 								"en": " [central 90\u0026nbsp;pct confidence interval]"
+ 								"de": "Die Wahrscheinlichkeit eines neg\u0026shy;ativen Wachstums des \u003cb\u003edeutschen\u003c/b\u003e BIP in Q2 2021 liegt bei",
+ 								"en": "The probability of neg\u0026shy;ative growth for the \u003cb\u003eGerman\u003c/b\u003e GDP in Q2 2021 is"
  							},
- 							"css_label": "special-input-textblock-smaller",
- 							"col_span_label": 7
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "pct"
+ 							},
+ 							"col_span_label": 4,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "yshr_y_deu",
+ 							"type": "number",
+ 							"max_chars": 4,
+ 							"max": 100,
+ 							"label": {
+ 								"de": "Die Wahrscheinlichkeit einer Rezession in Deutsch\u0026shy;land \u003cxxbr/\u003e\n(mind. 2\u0026nbsp;Quartale neg. Wachstum) bis Q4 2022 liegt bei",
+ 								"en": "The probability of a recession in Germany             \u003cxxbr/\u003e\n(at least 2\u0026nbsp;quarters neg. growth) until Q4 2022 is"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "pct"
+ 							},
+ 							"col_span_label": 4,
+ 							"col_span_control": 1
  						}
  					]
  				}
@@ -1720,7 +2924,7 @@
  				"de": "Kredit-\u003cbr/\u003emarkt",
  				"en": "Credit\u003cbr/\u003eMarkets"
  			},
- 			"navi_num": 4,
+ 			"navi_num": 6,
  			"width": 70,
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
@@ -2911,7 +4115,7 @@
  				"de": "Kredit-\u003cbr/\u003efaktoren",
  				"en": "Credit\u003cbr/\u003eInfluencers"
  			},
- 			"navi_num": 5,
+ 			"navi_num": 7,
  			"width": 70,
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
@@ -3985,565 +5189,6 @@
  		},
  		{
  			"section": {
- 				"de": "Finanzmärkte",
- 				"en": "Financial markets"
- 			},
- 			"label": {
- 				"de": "Preise",
- 				"en": "Prices"
- 			},
- 			"description": {
- 				"de": "",
- 				"en": ""
- 			},
- 			"short": {
- 				"de": "Finanz-\u003cbr/\u003emärkte",
- 				"en": "Financial\u003cbr/\u003eMarkets"
- 			},
- 			"navi_num": 6,
- 			"width": 70,
- 			"finished": "0001-01-01T00:00:00Z",
- 			"groups": [
- 				{
- 					"bottom_vspacers": 3,
- 					"columns": 7,
- 					"odd_rows_coloring": true,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "\u003cb\u003e7a.\u003c/b\u003e Die folgenden Aktienindizes / Roh\u0026shy;stoff\u0026shy;preise / Wechsel\u0026shy;kurse werden mittel\u0026shy;fristig (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;Mo.)",
- 								"en": "\u003cb\u003e7a.\u003c/b\u003e Following stock indices / raw materials / exchange rates will medium term (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;months)"
- 							},
- 							"col_span_label": 7
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": " \u0026nbsp; ",
- 								"en": " \u0026nbsp; "
- 							},
- 							"col_span_label": 2
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "stei\u0026shy;gen",
- 								"en": "in\u0026shy;crease"
- 							},
- 							"col_span_label": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "start"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"A": "",
- 								"B": "",
- 								"C": 0
- 							}
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "gleich blei\u0026shy;ben",
- 								"en": "remain un\u0026shy;changed"
- 							},
- 							"col_span_label": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "start"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"A": "",
- 								"B": "",
- 								"C": 0
- 							}
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "sin\u0026shy;ken",
- 								"en": "de\u0026shy;crease"
- 							},
- 							"col_span_label": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "start"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"A": "",
- 								"B": "",
- 								"C": 0
- 							}
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": " \u0026nbsp; ",
- 								"en": " \u0026nbsp; "
- 							},
- 							"col_span_label": 1
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "keine\u003cbr\u003eAn\u0026shy;gabe",
- 								"en": "no an\u0026shy;swer"
- 							},
- 							"col_span_label": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "start"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"A": "",
- 								"B": "",
- 								"C": 0
- 							}
- 						},
- 						{
- 							"name": "sto_dax",
- 							"type": "radio",
- 							"label": {
- 								"de": "DAX",
- 								"en": "German DAX"
- 							},
- 							"col_span_label": 2,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"A": "",
- 								"B": "",
- 								"C": 0
- 							}
- 						},
- 						{
- 							"name": "sto_dax",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "sto_dax",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "sto_dax",
- 							"type": "radio",
- 							"col_span_label": 1,
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "oil",
- 							"type": "radio",
- 							"label": {
- 								"de": "Rohöl (Nordsee Brent)",
- 								"en": "Brent Crude"
- 							},
- 							"col_span_label": 2,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"A": "",
- 								"B": "",
- 								"C": 0
- 							}
- 						},
- 						{
- 							"name": "oil",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "oil",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "oil",
- 							"type": "radio",
- 							"col_span_label": 1,
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "gold",
- 							"type": "radio",
- 							"label": {
- 								"de": "Gold",
- 								"en": "Gold"
- 							},
- 							"col_span_label": 2,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"A": "",
- 								"B": "",
- 								"C": 0
- 							}
- 						},
- 						{
- 							"name": "gold",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "gold",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "gold",
- 							"type": "radio",
- 							"col_span_label": 1,
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "fx_usa",
- 							"type": "radio",
- 							"label": {
- 								"de": "US-Dollar (ggü. €)",
- 								"en": "Dollar / Euro"
- 							},
- 							"col_span_label": 2,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"A": "",
- 								"B": "",
- 								"C": 0
- 							}
- 						},
- 						{
- 							"name": "fx_usa",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "fx_usa",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "fx_usa",
- 							"type": "radio",
- 							"col_span_label": 1,
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						}
- 					],
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"A": "",
- 						"B": "",
- 						"C": 0
- 					}
- 				},
- 				{
- 					"columns": 1,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "\u003cb\u003e7b.\u003c/b\u003e",
- 								"en": "\u003cb\u003e7b.\u003c/b\u003e"
- 							},
- 							"col_span_label": 1
- 						}
- 					]
- 				},
- 				{
- 					"bottom_vspacers": 3,
- 					"columns": 100,
- 					"inputs": [
- 						{
- 							"name": "dax_6",
- 							"type": "number",
- 							"max_chars": 6,
- 							"min": 1000,
- 							"max": 50000,
- 							"label": {
- 								"de": "Den DAX erwarten wir in 6\u0026nbsp;Monaten bei ",
- 								"en": "We expect the German DAX in 6\u0026nbsp;month at"
- 							},
- 							"suffix": {
- 								"de": "Punkten",
- 								"en": "points"
- 							},
- 							"col_span_label": 55,
- 							"col_span_control": 45
- 						},
- 						{
- 							"name": "dax_6_low",
- 							"type": "number",
- 							"max_chars": 6,
- 							"min": 1000,
- 							"max": 50000,
- 							"label": {
- 								"de": "Mit einer Wahrscheinlichkeit von 90\u0026nbsp;Prozent wird der DAX dann zwischen ",
- 								"en": "With 90\u0026nbsp;percent probability, the DAX will then be between"
- 							},
- 							"suffix": {
- 								"de": "Punkten  \u0026nbsp; und ",
- 								"en": "points \u0026nbsp; and "
- 							},
- 							"col_span_label": 55,
- 							"col_span_control": 21
- 						},
- 						{
- 							"name": "dax_6_high",
- 							"type": "number",
- 							"max_chars": 6,
- 							"min": 1000,
- 							"max": 50000,
- 							"suffix": {
- 								"de": "Punkten liegen.",
- 								"en": "points"
- 							},
- 							"col_span_control": 24
- 						}
- 					]
- 				},
- 				{
- 					"columns": 1,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "\u003cb\u003e7c.\u003c/b\u003e Aus Sicht der Fundamentalda\u0026shy;ten der DAX-Unternehmen ist der DAX derzeit",
- 								"en": "\u003cb\u003e7c.\u003c/b\u003e The fundamentals of the companies comprising the DAX make the DAX currently"
- 							},
- 							"col_span_label": 1
- 						}
- 					]
- 				},
- 				{
- 					"header_bottom_vspacers": 1,
- 					"bottom_vspacers": 3,
- 					"columns": 12,
- 					"inputs": [
- 						{
- 							"name": "dax_fund",
- 							"type": "radio",
- 							"label": {
- 								"de": "überbewertet",
- 								"en": "overvalued"
- 							},
- 							"col_span_label": 1,
- 							"col_span_control": 1,
- 							"value_radio": "1"
- 						},
- 						{
- 							"name": "dax_fund",
- 							"type": "radio",
- 							"label": {
- 								"de": "fair\u0026nbsp;bewertet",
- 								"en": "fair\u0026nbsp;valued"
- 							},
- 							"col_span_label": 1,
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "dax_fund",
- 							"type": "radio",
- 							"label": {
- 								"de": "unterbewertet",
- 								"en": "undervalued"
- 							},
- 							"col_span_label": 1,
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						}
- 					]
- 				},
- 				{
- 					"columns": 1,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "\u003cb\u003e8.\u003c/b\u003e Die Wahrscheinlichkeit für ein Extremereignis im deutschen Finanzmarkt liegt",
- 								"en": "\u003cb\u003e8.\u003c/b\u003e The probability for an extreme event in the German financial markets is"
- 							},
- 							"col_span_label": 1
- 						}
- 					]
- 				},
- 				{
- 					"header_bottom_vspacers": 1,
- 					"bottom_vspacers": 3,
- 					"columns": 100,
- 					"inputs": [
- 						{
- 							"name": "crash_low",
- 							"type": "number",
- 							"max_chars": 4,
- 							"max": 100,
- 							"label": {
- 								"de": " mittel\u0026shy;fristig (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;Mo.) bei  ",
- 								"en": " medium term (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;months) at "
- 							},
- 							"suffix": {
- 								"de": "%",
- 								"en": "pct"
- 							},
- 							"horizontal_align_label": 2,
- 							"col_span_label": 22,
- 							"col_span_control": 12
- 						},
- 						{
- 							"name": "crash_high",
- 							"type": "number",
- 							"max_chars": 4,
- 							"max": 100,
- 							"label": {
- 								"de": "und lang\u0026shy;fristig (\u003cb\u003e24\u003c/b\u003e\u0026nbsp;Mo.) bei ",
- 								"en": "and long term (\u003cb\u003e24\u003c/b\u003e\u0026nbsp;months) at "
- 							},
- 							"suffix": {
- 								"de": "%",
- 								"en": "pct"
- 							},
- 							"horizontal_align_label": 2,
- 							"col_span_label": 26,
- 							"col_span_control": 40
- 						}
- 					]
- 				}
- 			]
- 		},
- 		{
- 			"section": {
  				"de": "Sonderfrage",
  				"en": "Special"
  			},
@@ -4559,7 +5204,7 @@
  				"de": "Sonderfrage:\u003cbr\u003eWachstums-\u003cbr\u003etreiber",
  				"en": "Special:\u003cbr\u003eGrowth\u003cbr\u003edrivers"
  			},
- 			"navi_num": 7,
+ 			"navi_num": 8,
  			"width": 60,
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
@@ -5443,12 +6088,11 @@
  				"de": "Sonderfrage:\u003cbr\u003eInflation,\u003cbr\u003eGeldpolitik",
  				"en": "Special:\u003cbr\u003eInflation,\u003cbr\u003eMon. Policy"
  			},
- 			"navi_num": 8,
+ 			"navi_num": 9,
  			"width": 90,
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
  				{
- 					"header_bottom_vspacers": 1,
  					"bottom_vspacers": 3,
  					"columns": 9,
  					"inputs": [
@@ -6119,7 +6763,6 @@
  					}
  				},
  				{
- 					"header_bottom_vspacers": 1,
  					"bottom_vspacers": 3,
  					"columns": 100,
  					"inputs": [
@@ -6262,7 +6905,7 @@
  				"de": "Abschluss",
  				"en": "Finish"
  			},
- 			"navi_num": 9,
+ 			"navi_num": 10,
  			"width": 65,
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
@@ -6336,7 +6979,7 @@
  							},
  							"accesskey": "n",
  							"col_span_control": 1,
- 							"response": "10"
+ 							"response": "11"
  						}
  					]
  				}

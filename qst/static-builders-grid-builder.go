@@ -9,23 +9,6 @@ import (
 	"github.com/zew/go-questionnaire/trl"
 )
 
-// RadioVali - name of validation func for radio in composite funcs
-var RadioVali = ""
-
-// HeaderClass -  CSS class for first row with labels
-var HeaderClass = ""
-
-// CSSLabelRow -  CSS class radio input in rows
-var CSSLabelRow = ""
-
-/* AddRadioGroupVertical prints options vertically
-
-   Green   x
-   Red     x
-   Black   x
-
-*/
-
 // gbCol - a grid builder column;
 // element of grid-column-template;
 // optional header content
@@ -55,7 +38,7 @@ func (gb *GridBuilder) AddCol(headerCell trl.S, spanLabel, spanControl float32) 
 	gb.cols = append(gb.cols, col)
 }
 
-// AddRadioRow adds radio inputs - empty columns are filled with empty text
+// AddRadioRow adds a row radio inputs - empty columns are filled with empty text
 func (gb *GridBuilder) AddRadioRow(name string, vals []string, sparseLabels map[int]trl.S) {
 
 	if len(gb.cols) < 1 {
@@ -94,7 +77,6 @@ func (gb *GridBuilder) AddRadioRow(name string, vals []string, sparseLabels map[
 
 }
 
-// AddRadioRow adds radio inputs - empty columns are filled with empty text
 func (gb *GridBuilder) dumpCols() {
 	w := &strings.Builder{}
 	cntr := float32(0.0)
@@ -120,17 +102,19 @@ func (p *pageT) AddGrid(gb *GridBuilder) *groupT {
 		gr.Cols += gb.cols[colIdx].spanControl
 	}
 
-	gr.Style = css.NewStylesResponsive()
-	stl := ""
-	for colIdx := 0; colIdx < len(gb.cols); colIdx++ {
-		if gb.cols[colIdx].spanLabel != 0 {
-			stl = fmt.Sprintf("%v   %vfr ", stl, gb.cols[colIdx].spanLabel)
+	gr.Style = css.NewStylesResponsive(gr.Style)
+	if gr.Style.Desktop.GridContainerStyle.TemplateColumns == "" {
+		stl := ""
+		for colIdx := 0; colIdx < len(gb.cols); colIdx++ {
+			if gb.cols[colIdx].spanLabel != 0 {
+				stl = fmt.Sprintf("%v   %vfr ", stl, gb.cols[colIdx].spanLabel)
+			}
+			if gb.cols[colIdx].spanControl != 0 {
+				stl = fmt.Sprintf("%v   %vfr ", stl, gb.cols[colIdx].spanControl)
+			}
 		}
-		if gb.cols[colIdx].spanControl != 0 {
-			stl = fmt.Sprintf("%v   %vfr ", stl, gb.cols[colIdx].spanControl)
-		}
+		// gr.Style.Desktop.GridContainerStyle.TemplateColumns = stl
 	}
-	// gr.Style.Desktop.GridContainerStyle.TemplateColumns = stl
 
 	// first row - main label
 	if gb.MainLabel != nil {

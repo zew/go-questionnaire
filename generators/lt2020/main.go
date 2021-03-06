@@ -19,10 +19,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	ctr.Reset()
 	ctrPages := ctr.New()
 
-	// qst.RadioVali = "mustRadioGroup"
-	qst.HeaderClass = "go-quest-opt-label"
-	qst.CSSLabelRow = ""
-
 	q := qst.QuestionnaireT{}
 	q.Survey = qst.NewSurvey("lt2020")
 	q.Survey.Params = params

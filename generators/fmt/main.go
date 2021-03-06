@@ -240,6 +240,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			}
 			gr := page.AddGrid(gb)
 			gr.OddRowsColoring = true
+			// gr.Style.Desktop.GridContainerStyle.TemplateColumns = "1fr 1fr 1fr 1fr 1fr 0.4fr 1fr"
+			// gr.Style.Desktop.GridContainerStyle.ColumnGap = "0.1rem"
 		}
 
 		// gr1
@@ -283,7 +285,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			gr := page.AddGroup()
 			gr.Cols = 10
 			gr.Style = css.NewStylesResponsive(gr.Style)
-			gr.Style.Mobile.GridContainerStyle.RowGap = "0.02rem"
+			gr.Style.Mobile.GridContainerStyle.GapRow = "0.02rem"
 
 			{
 				inp := gr.AddInput()
@@ -528,8 +530,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			gr := page.AddGroup()
 			gr.Cols = 6
 			gr.Style = css.NewStylesResponsive(gr.Style)
-			gr.Style.Desktop.GridContainerStyle.ColumnGap = "0rem"
-			gr.Style.Desktop.GridContainerStyle.RowGap = "0rem"
+			gr.Style.Desktop.GridContainerStyle.GapColumn = "0rem"
+			gr.Style.Desktop.GridContainerStyle.GapRow = "0rem"
 			{
 				inp := gr.AddInput()
 				inp.Type = "number"
@@ -552,7 +554,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Type = "textblock"
 				inp.ColSpanLabel = 6
 				inp.Label = trl.S{
-					"de": " <br>Mit einer Wahrscheinlichkeit von 90&nbsp;Prozent wird der DAX dann zwischen ",
+					"de": " <br>Mit einer Wahrscheinlichkeit von 90&nbsp;Prozent liegt der DAX dann zwischen ",
 					"en": " <br>With 90&nbsp;percent probability, the DAX will then be between",
 				}
 			}
@@ -603,7 +605,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				}
 			}
 
-			{
+			/* 	{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
 				inp.ColSpanLabel = 6
@@ -614,11 +616,10 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Style = css.NewStylesResponsive(inp.Style)
 				inp.Style.Desktop.BoxStyle.Position = "relative"
 				inp.Style.Desktop.BoxStyle.Top = "-0.4rem"
-			}
+			} */
 
 		}
 
-		//
 		// gr3
 		{
 			gr := page.AddGroup()
@@ -632,23 +633,35 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 					"en": "<b>6c.</b> The fundamentals of the companies comprising the DAX make the DAX currently",
 				}
 			}
+			gr.Style = css.NewStylesResponsive(gr.Style)
+			gr.Style.Desktop.BoxStyle.Padding = "0 0 0.5rem  0"
 		}
 
 		// gr4
 		{
-			// gr := p.AddRadioMatrixGroupCSSGrid(labelsOvervaluedFairUndervalued(), names3rdMatrix, labels123Matrix)
-			gr := page.AddGroup()
-			gr.Cols = 12 // necessary, otherwise no vspacers
+			gb := qst.NewGridBuilderRadios(
+				[]float32{
+					0, 1,
+					0, 1,
+					0, 1,
+				},
+				labelsOvervaluedFairUndervalued(),
+				[]string{"dax_fund"},
+				[]string{"1", "2", "3"},
+				nil,
+			)
+			// gb.MainLabel = trl.S{
+			// }
+			gr := page.AddGrid(gb)
+			gr.Style.Desktop.GridContainerStyle.GapColumn = "0"
+			gr.Style.Desktop.GridContainerStyle.GapRow = "0.5rem"
+			gr.Style.Desktop.BoxStyle.WidthMax = "30rem"
+			gr.Style.Mobile.BoxStyle.WidthMax = "none"
 
-			for i2, lbl := range labelsOvervaluedFairUndervalued() {
-				rad := gr.AddInput()
-				rad.Type = "radio"
-				rad.Name = "dax_fund"
-				rad.ValueRadio = fmt.Sprintf("%v", i2+1)
-				rad.Label = lbl
-				rad.ColSpanLabel = 1
-				rad.ColSpanControl = 1
-			}
+			gr.Style.Desktop.BoxStyle.Position = "relative"
+			gr.Style.Desktop.BoxStyle.Left = "-1.1rem"
+			gr.Style.Mobile.BoxStyle.Left = "0"
+			gr.OddRowsColoring = true
 		}
 
 		/*

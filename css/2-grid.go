@@ -18,8 +18,8 @@ type GridContainerStyle struct {
 	AlignContent    string `json:"align_content,omitempty"`   // second axis - all items inside container - space-around | space-between
 	AlignItems      string `json:"align_items,omitempty"`     // second axis - item inside its 'cell' - stretch | baseline | center | start | end
 
-	ColumnGap string `json:"column_gap,omitempty"`
-	RowGap    string `json:"row_gap,omitempty"`
+	GapColumn string `json:"column_gap,omitempty"`
+	GapRow    string `json:"row_gap,omitempty"`
 }
 
 func gridContainerStyleExample1() GridContainerStyle {
@@ -79,11 +79,11 @@ func (gcs GridContainerStyle) CSS() string {
 	if gcs.AlignItems != "" {
 		fmt.Fprintf(s, "\talign-items: %v;\n", gcs.AlignItems)
 	}
-	if gcs.ColumnGap != "" {
-		fmt.Fprintf(s, "\tgrid-column-gap: %v;\n", gcs.ColumnGap)
+	if gcs.GapColumn != "" {
+		fmt.Fprintf(s, "\tgrid-column-gap: %v;\n", gcs.GapColumn)
 	}
-	if gcs.RowGap != "" {
-		fmt.Fprintf(s, "\tgrid-row-gap: %v;\n", gcs.RowGap)
+	if gcs.GapRow != "" {
+		fmt.Fprintf(s, "\tgrid-row-gap: %v;\n", gcs.GapRow)
 	}
 	return s.String()
 }

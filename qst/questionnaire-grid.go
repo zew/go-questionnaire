@@ -107,11 +107,11 @@ func (q QuestionnaireT) GroupHTMLGridBased(pageIdx, grpIdx int) string {
 	if gr.Style.Desktop.GridContainerStyle.TemplateColumns == "" {
 		gr.Style.Desktop.GridContainerStyle.TemplateColumns = strings.Repeat("1fr ", int(gr.Cols))
 	}
-	if gr.Style.Desktop.GridContainerStyle.ColumnGap == "" {
-		gr.Style.Desktop.GridContainerStyle.ColumnGap = "0.4rem"
+	if gr.Style.Desktop.GridContainerStyle.GapColumn == "" {
+		gr.Style.Desktop.GridContainerStyle.GapColumn = "0.4rem"
 	}
-	if gr.Style.Desktop.GridContainerStyle.RowGap == "" {
-		gr.Style.Desktop.GridContainerStyle.RowGap = "0.8rem"
+	if gr.Style.Desktop.GridContainerStyle.GapRow == "" {
+		gr.Style.Desktop.GridContainerStyle.GapRow = "0.8rem"
 	}
 	gridContainerClass := fmt.Sprintf("pg%02v-grp%02v", pageIdx, grpIdx)
 	fmt.Fprint(wCSS, gr.Style.CSS(gridContainerClass))

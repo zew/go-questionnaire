@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "6f22a7d962fb01120975eefbe4dfb7bbbc909958052d3e2f2bfac0d648805b85",
+ 	"md_5": "82b850ab55fd65a0dd11208b6a6585b43d9465cbb3f53c0f94c4b73796d0117c",
  	"lang_codes": [
  		"de",
  		"en"
@@ -2614,7 +2614,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": " \u003cbr\u003eMit einer Wahrscheinlichkeit von 90\u0026nbsp;Prozent wird der DAX dann zwischen ",
+ 								"de": " \u003cbr\u003eMit einer Wahrscheinlichkeit von 90\u0026nbsp;Prozent liegt der DAX dann zwischen ",
  								"en": " \u003cbr\u003eWith 90\u0026nbsp;percent probability, the DAX will then be between"
  							},
  							"col_span_label": 6
@@ -2674,34 +2674,6 @@
  								"en": "points"
  							},
  							"col_span_control": 2
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": " liegen.",
- 								"en": " \u0026nbsp; "
- 							},
- 							"col_span_label": 6,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"position": "relative",
- 										"top": "-0.4rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"A": "",
- 								"B": "",
- 								"C": 0
- 							}
  						}
  					],
  					"style": {
@@ -2736,46 +2708,168 @@
  							},
  							"col_span_label": 1
  						}
- 					]
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"padding": "0 0 0.5rem  0"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"A": "",
+ 						"B": "",
+ 						"C": 0
+ 					}
  				},
  				{
  					"bottom_vspacers": 3,
- 					"columns": 12,
+ 					"columns": 3,
+ 					"odd_rows_coloring": true,
  					"inputs": [
  						{
- 							"name": "dax_fund",
- 							"type": "radio",
+ 							"type": "textblock",
  							"label": {
  								"de": "überbewertet",
  								"en": "overvalued"
  							},
  							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"A": "",
+ 								"B": "",
+ 								"C": 0
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "fair\u0026nbsp;bewertet",
+ 								"en": "fair\u0026nbsp;valued"
+ 							},
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"A": "",
+ 								"B": "",
+ 								"C": 0
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "unterbewertet",
+ 								"en": "undervalued"
+ 							},
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"A": "",
+ 								"B": "",
+ 								"C": 0
+ 							}
+ 						},
+ 						{
+ 							"name": "dax_fund",
+ 							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "1"
  						},
  						{
  							"name": "dax_fund",
  							"type": "radio",
- 							"label": {
- 								"de": "fair\u0026nbsp;bewertet",
- 								"en": "fair\u0026nbsp;valued"
- 							},
- 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
  							"name": "dax_fund",
  							"type": "radio",
- 							"label": {
- 								"de": "unterbewertet",
- 								"en": "undervalued"
- 							},
- 							"col_span_label": 1,
  							"col_span_control": 1,
  							"value_radio": "3"
  						}
- 					]
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"column_gap": "0",
+ 								"row_gap": "0.5rem"
+ 							},
+ 							"box_style": {
+ 								"position": "relative",
+ 								"left": "-1.1rem",
+ 								"width_max": "30rem"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"left": "0",
+ 								"width_max": "none"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"A": "",
+ 						"B": "",
+ 						"C": 0
+ 					}
  				}
  			]
  		},

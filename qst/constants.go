@@ -17,10 +17,11 @@ var implementedTypes = map[string]interface{}{
 	/*
 		layout - no response values
 	*/
-	"button":        nil, // no label - only control - return value not saved - only indirectly used for state handling
-	"textblock":     nil, // no control - ColSpanLabel counts, ColSpanControl is ignored
-	"dyn-textblock": nil, // like textblock, but executed a http request time, contains no inputs - can be used as dynamic label for following inputs
-	"dyn-composite": nil, // executed at http request time, free dynamic fragment of text and multiple inputs
+	"textblock":      nil, // no control - ColSpanLabel counts, ColSpanControl is ignored
+	"button":         nil, // no label - only control - return value not saved - only indirectly used for state handling
+	"label-as-input": nil, // ColspanLabel is empty - ColspanControl has the label text
+	"dyn-textblock":  nil, // like textblock, but executed a http request time, contains no inputs - can be used as dynamic label for following inputs
+	"dyn-composite":  nil, // executed at http request time, free dynamic fragment of text and multiple inputs
 
 }
 

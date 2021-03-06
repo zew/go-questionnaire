@@ -19,7 +19,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "dde4e6a10540d8e52339f9acb6e9e7a6",
+ 	"md_5": "d46e71374a2155b131b31b936b73afd9bb1357041190d07701257837ed6f6e11",
  	"lang_codes": [
  		"de"
  	],
@@ -48,7 +48,7 @@
  								"de": "HERZLICH WILLKOMMEN UND VIELEN DANK FÜR IHRE TEILNAHME!\u003cbr\u003e\u003cbr\u003e"
  							},
  							"description": {
- 								"de": "\n\t\t\t\t\u003cp\u003eDies ist eine Studie des Zentrums für Europäische Wirtschaftsforschung (ZEW) in Mannheim \n\t\t\t\tsowie der Universitäten in Köln, Mannheim, Münster und Zürich. \n\t\t\t\tIhre Teilnahme wird nur wenige Minuten in Anspruch nehmen \n\t\t\t\tund Sie unterstützen damit die Forschung zu Ent\u0026shy;schei\u0026shy;dungs\u0026shy;pro\u0026shy;zessen in der Po\u0026shy;li\u0026shy;tik.\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp\u003eIn dieser Studie treffen Sie acht Entscheidungen und beantworten sieben Fragen. \n\t\t\t\tNach der Erhebung werden 10 % aller Teilnehmer zufällig ausgewählt. \n\t\t\t\tVon jedem ausgewählten Teilnehmer wird eine der acht Entscheidungen zufällig bestimmt \n\t\t\t\tund genau wie im Folgenden beschrieben umgesetzt \n\t\t\t\t(alle erwähnten Personen existieren wirklich und alle Auszahlungen werden wie beschrieben getätigt).\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp\u003eIn dieser Umfrage gibt es keine richtigen oder falschen Antworten. \n\t\t\t\tBitte entscheiden Sie daher immer gemäß Ihren persönlichen Ansichten. \n\t\t\t\tSie werden dabei vollständig anonym blei\u0026shy;ben.\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\u003cp\u003eDies ist eine Studie des Zentrums für Europäische Wirt\u0026shy;schaftsforschung (ZEW) in Mannheim \n\t\t\t\tsowie der Universitäten in Köln, Mannheim, Münster und Zürich. \n\t\t\t\tIhre Teilnahme wird nur wenige Minuten in Anspruch nehmen \n\t\t\t\tund Sie unterstützen damit die Forschung zu Ent\u0026shy;schei\u0026shy;dungs\u0026shy;pro\u0026shy;zessen in der Po\u0026shy;li\u0026shy;tik.\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp\u003eIn dieser Studie treffen Sie acht Entscheidungen und beantworten sieben Fragen. \n\t\t\t\tNach der Erhebung werden 10 % aller Teilnehmer zufällig ausgewählt. \n\t\t\t\tVon jedem ausgewählten Teilnehmer wird eine der acht Entscheidungen zufällig bestimmt \n\t\t\t\tund genau wie im Folgenden beschrieben umgesetzt \n\t\t\t\t(alle erwähnten Personen existieren wirklich und alle Auszahlungen werden wie beschrieben getätigt).\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp\u003eIn dieser Umfrage gibt es keine richtigen oder falschen Antworten. \n\t\t\t\tBitte entscheiden Sie daher immer gemäß Ihren persönlichen Ansichten. \n\t\t\t\tSie werden dabei vollständig anonym blei\u0026shy;ben.\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t"
  							},
  							"col_span_label": 1
  						},
@@ -733,29 +733,46 @@
  			"groups": [
  				{
  					"bottom_vspacers": 3,
- 					"odd_rows_coloring": true,
  					"columns": 7,
+ 					"odd_rows_coloring": true,
  					"inputs": [
  						{
  							"type": "textblock",
  							"label": {
  								"de": "\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\u003cb\u003eFrage 4.\u003c/b\u003e \n\t\t\t\tWie sehr stimmen Sie der folgenden Aussage zu: \n\t\t\t\t\u003ci\u003e„Alle Erwerbstätigen in Deutsch\u0026shy;land sollten verpflichtend einen gewissen Teil ihres Arbeitseinkommens \n\t\t\t\tim Rahmen einer privaten Altersvorsorge sparen, \n\t\t\t\tum eine Rentenhöhe zu erreichen, die über dem Rentenanspruch \n\t\t\t\taus der gesetzlichen Rentenversi\u0026shy;cherung liegt.\u003c/i\u003e“\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
- 							"col_span_label": 7
+ 							"col_span": 7,
+ 							"col_span_label": 1
  						},
  						{
- 							"type": "textblock",
+ 							"type": "label-as-input",
  							"label": {
  								"de": "Stimme gar nicht zu"
  							},
- 							"col_span_label": 1,
+ 							"col_span_control": 1,
  							"style": {
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "start"
+ 										"justify_self": "end",
+ 										"align_self": "center"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -766,25 +783,38 @@
  									"box_style": {},
  									"grid_item_style": {},
  									"text_style": {}
- 								},
- 								"A": "",
- 								"B": "",
- 								"C": 0
+ 								}
  							}
  						},
  						{
- 							"type": "textblock",
+ 							"type": "label-as-input",
  							"label": {
  								"de": ""
  							},
- 							"col_span_label": 1,
+ 							"col_span_control": 1,
  							"style": {
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "start"
+ 										"justify_self": "end",
+ 										"align_self": "center"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -795,25 +825,38 @@
  									"box_style": {},
  									"grid_item_style": {},
  									"text_style": {}
- 								},
- 								"A": "",
- 								"B": "",
- 								"C": 0
+ 								}
  							}
  						},
  						{
- 							"type": "textblock",
+ 							"type": "label-as-input",
  							"label": {
  								"de": ""
  							},
- 							"col_span_label": 1,
+ 							"col_span_control": 1,
  							"style": {
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "start"
+ 										"justify_self": "end",
+ 										"align_self": "center"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -824,25 +867,38 @@
  									"box_style": {},
  									"grid_item_style": {},
  									"text_style": {}
- 								},
- 								"A": "",
- 								"B": "",
- 								"C": 0
+ 								}
  							}
  						},
  						{
- 							"type": "textblock",
+ 							"type": "label-as-input",
  							"label": {
  								"de": ""
  							},
- 							"col_span_label": 1,
+ 							"col_span_control": 1,
  							"style": {
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "start"
+ 										"justify_self": "end",
+ 										"align_self": "center"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -853,25 +909,38 @@
  									"box_style": {},
  									"grid_item_style": {},
  									"text_style": {}
- 								},
- 								"A": "",
- 								"B": "",
- 								"C": 0
+ 								}
  							}
  						},
  						{
- 							"type": "textblock",
+ 							"type": "label-as-input",
  							"label": {
  								"de": ""
  							},
- 							"col_span_label": 1,
+ 							"col_span_control": 1,
  							"style": {
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "start"
+ 										"justify_self": "end",
+ 										"align_self": "center"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -882,25 +951,38 @@
  									"box_style": {},
  									"grid_item_style": {},
  									"text_style": {}
- 								},
- 								"A": "",
- 								"B": "",
- 								"C": 0
+ 								}
  							}
  						},
  						{
- 							"type": "textblock",
+ 							"type": "label-as-input",
  							"label": {
  								"de": ""
  							},
- 							"col_span_label": 1,
+ 							"col_span_control": 1,
  							"style": {
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "start"
+ 										"justify_self": "end",
+ 										"align_self": "center"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -911,25 +993,38 @@
  									"box_style": {},
  									"grid_item_style": {},
  									"text_style": {}
- 								},
- 								"A": "",
- 								"B": "",
- 								"C": 0
+ 								}
  							}
  						},
  						{
- 							"type": "textblock",
+ 							"type": "label-as-input",
  							"label": {
  								"de": "Stimme kom\u0026shy;plett zu"
  							},
- 							"col_span_label": 1,
+ 							"col_span_control": 1,
  							"style": {
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "start"
+ 										"justify_self": "end",
+ 										"align_self": "center"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -940,10 +1035,7 @@
  									"box_style": {},
  									"grid_item_style": {},
  									"text_style": {}
- 								},
- 								"A": "",
- 								"B": "",
- 								"C": 0
+ 								}
  							}
  						},
  						{
@@ -991,7 +1083,9 @@
  					],
  					"style": {
  						"desktop": {
- 							"grid_container_style": {},
+ 							"grid_container_style": {
+ 								"template_columns": "   1fr    1fr    1fr    1fr    1fr    1fr    1fr "
+ 							},
  							"box_style": {},
  							"grid_item_style": {},
  							"text_style": {}
@@ -1001,37 +1095,51 @@
  							"box_style": {},
  							"grid_item_style": {},
  							"text_style": {}
- 						},
- 						"A": "",
- 						"B": "",
- 						"C": 0
+ 						}
  					}
  				},
  				{
  					"bottom_vspacers": 3,
- 					"odd_rows_coloring": true,
  					"columns": 7,
+ 					"odd_rows_coloring": true,
  					"inputs": [
  						{
  							"type": "textblock",
  							"label": {
  								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eZum Schluss bitten wir Sie drei Fragen über sich selbst zu beantworten:\u003c/b\u003e\n\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cb\u003eFrage 5.\u003c/b\u003e\n\t\t\t\t\tSind Sie im Vergleich zu anderen im Allgemeinen bereit, \n\t\t\t\t\theute auf etwas zu verzichten, \n\t\t\t\t\tum in der Zukunft davon zu profitieren, \n\t\t\t\t\toder sind Sie im Vergleich zu anderen dazu nicht bereit? \n\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t"
  							},
- 							"col_span_label": 7
+ 							"col_span": 7,
+ 							"col_span_label": 1
  						},
  						{
- 							"type": "textblock",
+ 							"type": "label-as-input",
  							"label": {
  								"de": "Gar nicht bereit"
  							},
- 							"col_span_label": 1,
+ 							"col_span_control": 1,
  							"style": {
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "start"
+ 										"justify_self": "end",
+ 										"align_self": "center"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -1042,25 +1150,38 @@
  									"box_style": {},
  									"grid_item_style": {},
  									"text_style": {}
- 								},
- 								"A": "",
- 								"B": "",
- 								"C": 0
+ 								}
  							}
  						},
  						{
- 							"type": "textblock",
+ 							"type": "label-as-input",
  							"label": {
  								"de": ""
  							},
- 							"col_span_label": 1,
+ 							"col_span_control": 1,
  							"style": {
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "start"
+ 										"justify_self": "end",
+ 										"align_self": "center"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -1071,25 +1192,38 @@
  									"box_style": {},
  									"grid_item_style": {},
  									"text_style": {}
- 								},
- 								"A": "",
- 								"B": "",
- 								"C": 0
+ 								}
  							}
  						},
  						{
- 							"type": "textblock",
+ 							"type": "label-as-input",
  							"label": {
  								"de": ""
  							},
- 							"col_span_label": 1,
+ 							"col_span_control": 1,
  							"style": {
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "start"
+ 										"justify_self": "end",
+ 										"align_self": "center"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -1100,25 +1234,38 @@
  									"box_style": {},
  									"grid_item_style": {},
  									"text_style": {}
- 								},
- 								"A": "",
- 								"B": "",
- 								"C": 0
+ 								}
  							}
  						},
  						{
- 							"type": "textblock",
+ 							"type": "label-as-input",
  							"label": {
  								"de": ""
  							},
- 							"col_span_label": 1,
+ 							"col_span_control": 1,
  							"style": {
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "start"
+ 										"justify_self": "end",
+ 										"align_self": "center"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -1129,25 +1276,38 @@
  									"box_style": {},
  									"grid_item_style": {},
  									"text_style": {}
- 								},
- 								"A": "",
- 								"B": "",
- 								"C": 0
+ 								}
  							}
  						},
  						{
- 							"type": "textblock",
+ 							"type": "label-as-input",
  							"label": {
  								"de": ""
  							},
- 							"col_span_label": 1,
+ 							"col_span_control": 1,
  							"style": {
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "start"
+ 										"justify_self": "end",
+ 										"align_self": "center"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -1158,25 +1318,38 @@
  									"box_style": {},
  									"grid_item_style": {},
  									"text_style": {}
- 								},
- 								"A": "",
- 								"B": "",
- 								"C": 0
+ 								}
  							}
  						},
  						{
- 							"type": "textblock",
+ 							"type": "label-as-input",
  							"label": {
  								"de": ""
  							},
- 							"col_span_label": 1,
+ 							"col_span_control": 1,
  							"style": {
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "start"
+ 										"justify_self": "end",
+ 										"align_self": "center"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -1187,25 +1360,38 @@
  									"box_style": {},
  									"grid_item_style": {},
  									"text_style": {}
- 								},
- 								"A": "",
- 								"B": "",
- 								"C": 0
+ 								}
  							}
  						},
  						{
- 							"type": "textblock",
+ 							"type": "label-as-input",
  							"label": {
  								"de": "Sehr bereit"
  							},
- 							"col_span_label": 1,
+ 							"col_span_control": 1,
  							"style": {
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "start"
+ 										"justify_self": "end",
+ 										"align_self": "center"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -1216,10 +1402,7 @@
  									"box_style": {},
  									"grid_item_style": {},
  									"text_style": {}
- 								},
- 								"A": "",
- 								"B": "",
- 								"C": 0
+ 								}
  							}
  						},
  						{
@@ -1267,7 +1450,9 @@
  					],
  					"style": {
  						"desktop": {
- 							"grid_container_style": {},
+ 							"grid_container_style": {
+ 								"template_columns": "   1fr    1fr    1fr    1fr    1fr    1fr    1fr "
+ 							},
  							"box_style": {},
  							"grid_item_style": {},
  							"text_style": {}
@@ -1277,37 +1462,51 @@
  							"box_style": {},
  							"grid_item_style": {},
  							"text_style": {}
- 						},
- 						"A": "",
- 						"B": "",
- 						"C": 0
+ 						}
  					}
  				},
  				{
  					"bottom_vspacers": 3,
- 					"odd_rows_coloring": true,
  					"columns": 7,
+ 					"odd_rows_coloring": true,
  					"inputs": [
  						{
  							"type": "textblock",
  							"label": {
  								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 6.\u003c/b\u003e\n\t\t\t\t\tWie schätzen Sie sich persönlich ein? \n\t\t\t\t\tSind Sie im Allgemeinen ein ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reiter Mensch \n\t\t\t\t\toder versuchen Sie, Risiken zu vermeiden?\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t"
  							},
- 							"col_span_label": 7
+ 							"col_span": 7,
+ 							"col_span_label": 1
  						},
  						{
- 							"type": "textblock",
+ 							"type": "label-as-input",
  							"label": {
  								"de": "Gar nicht ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reit"
  							},
- 							"col_span_label": 1,
+ 							"col_span_control": 1,
  							"style": {
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "start"
+ 										"justify_self": "end",
+ 										"align_self": "center"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -1318,25 +1517,38 @@
  									"box_style": {},
  									"grid_item_style": {},
  									"text_style": {}
- 								},
- 								"A": "",
- 								"B": "",
- 								"C": 0
+ 								}
  							}
  						},
  						{
- 							"type": "textblock",
+ 							"type": "label-as-input",
  							"label": {
  								"de": ""
  							},
- 							"col_span_label": 1,
+ 							"col_span_control": 1,
  							"style": {
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "start"
+ 										"justify_self": "end",
+ 										"align_self": "center"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -1347,25 +1559,38 @@
  									"box_style": {},
  									"grid_item_style": {},
  									"text_style": {}
- 								},
- 								"A": "",
- 								"B": "",
- 								"C": 0
+ 								}
  							}
  						},
  						{
- 							"type": "textblock",
+ 							"type": "label-as-input",
  							"label": {
  								"de": ""
  							},
- 							"col_span_label": 1,
+ 							"col_span_control": 1,
  							"style": {
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "start"
+ 										"justify_self": "end",
+ 										"align_self": "center"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -1376,25 +1601,38 @@
  									"box_style": {},
  									"grid_item_style": {},
  									"text_style": {}
- 								},
- 								"A": "",
- 								"B": "",
- 								"C": 0
+ 								}
  							}
  						},
  						{
- 							"type": "textblock",
+ 							"type": "label-as-input",
  							"label": {
  								"de": ""
  							},
- 							"col_span_label": 1,
+ 							"col_span_control": 1,
  							"style": {
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "start"
+ 										"justify_self": "end",
+ 										"align_self": "center"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -1405,25 +1643,38 @@
  									"box_style": {},
  									"grid_item_style": {},
  									"text_style": {}
- 								},
- 								"A": "",
- 								"B": "",
- 								"C": 0
+ 								}
  							}
  						},
  						{
- 							"type": "textblock",
+ 							"type": "label-as-input",
  							"label": {
  								"de": ""
  							},
- 							"col_span_label": 1,
+ 							"col_span_control": 1,
  							"style": {
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "start"
+ 										"justify_self": "end",
+ 										"align_self": "center"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -1434,25 +1685,38 @@
  									"box_style": {},
  									"grid_item_style": {},
  									"text_style": {}
- 								},
- 								"A": "",
- 								"B": "",
- 								"C": 0
+ 								}
  							}
  						},
  						{
- 							"type": "textblock",
+ 							"type": "label-as-input",
  							"label": {
  								"de": ""
  							},
- 							"col_span_label": 1,
+ 							"col_span_control": 1,
  							"style": {
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "start"
+ 										"justify_self": "end",
+ 										"align_self": "center"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -1463,25 +1727,38 @@
  									"box_style": {},
  									"grid_item_style": {},
  									"text_style": {}
- 								},
- 								"A": "",
- 								"B": "",
- 								"C": 0
+ 								}
  							}
  						},
  						{
- 							"type": "textblock",
+ 							"type": "label-as-input",
  							"label": {
  								"de": "Sehr ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reit"
  							},
- 							"col_span_label": 1,
+ 							"col_span_control": 1,
  							"style": {
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "start"
+ 										"justify_self": "end",
+ 										"align_self": "center"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -1492,10 +1769,7 @@
  									"box_style": {},
  									"grid_item_style": {},
  									"text_style": {}
- 								},
- 								"A": "",
- 								"B": "",
- 								"C": 0
+ 								}
  							}
  						},
  						{
@@ -1543,7 +1817,9 @@
  					],
  					"style": {
  						"desktop": {
- 							"grid_container_style": {},
+ 							"grid_container_style": {
+ 								"template_columns": "   1fr    1fr    1fr    1fr    1fr    1fr    1fr "
+ 							},
  							"box_style": {},
  							"grid_item_style": {},
  							"text_style": {}
@@ -1553,37 +1829,51 @@
  							"box_style": {},
  							"grid_item_style": {},
  							"text_style": {}
- 						},
- 						"A": "",
- 						"B": "",
- 						"C": 0
+ 						}
  					}
  				},
  				{
  					"bottom_vspacers": 3,
- 					"odd_rows_coloring": true,
  					"columns": 7,
+ 					"odd_rows_coloring": true,
  					"inputs": [
  						{
  							"type": "textblock",
  							"label": {
  								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage 7.\u003c/b\u003e\n\t\t\t\t\tWie schätzen Sie Ihre Bereitschaft ein mit anderen zu teilen, \n\t\t\t\t\tohne dafür eine Gegenleistung zu erwarten?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
- 							"col_span_label": 7
+ 							"col_span": 7,
+ 							"col_span_label": 1
  						},
  						{
- 							"type": "textblock",
+ 							"type": "label-as-input",
  							"label": {
  								"de": "Gar nicht bereit"
  							},
- 							"col_span_label": 1,
+ 							"col_span_control": 1,
  							"style": {
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "start"
+ 										"justify_self": "end",
+ 										"align_self": "center"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -1594,25 +1884,38 @@
  									"box_style": {},
  									"grid_item_style": {},
  									"text_style": {}
- 								},
- 								"A": "",
- 								"B": "",
- 								"C": 0
+ 								}
  							}
  						},
  						{
- 							"type": "textblock",
+ 							"type": "label-as-input",
  							"label": {
  								"de": ""
  							},
- 							"col_span_label": 1,
+ 							"col_span_control": 1,
  							"style": {
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "start"
+ 										"justify_self": "end",
+ 										"align_self": "center"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -1623,25 +1926,38 @@
  									"box_style": {},
  									"grid_item_style": {},
  									"text_style": {}
- 								},
- 								"A": "",
- 								"B": "",
- 								"C": 0
+ 								}
  							}
  						},
  						{
- 							"type": "textblock",
+ 							"type": "label-as-input",
  							"label": {
  								"de": ""
  							},
- 							"col_span_label": 1,
+ 							"col_span_control": 1,
  							"style": {
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "start"
+ 										"justify_self": "end",
+ 										"align_self": "center"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -1652,25 +1968,38 @@
  									"box_style": {},
  									"grid_item_style": {},
  									"text_style": {}
- 								},
- 								"A": "",
- 								"B": "",
- 								"C": 0
+ 								}
  							}
  						},
  						{
- 							"type": "textblock",
+ 							"type": "label-as-input",
  							"label": {
  								"de": ""
  							},
- 							"col_span_label": 1,
+ 							"col_span_control": 1,
  							"style": {
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "start"
+ 										"justify_self": "end",
+ 										"align_self": "center"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -1681,25 +2010,38 @@
  									"box_style": {},
  									"grid_item_style": {},
  									"text_style": {}
- 								},
- 								"A": "",
- 								"B": "",
- 								"C": 0
+ 								}
  							}
  						},
  						{
- 							"type": "textblock",
+ 							"type": "label-as-input",
  							"label": {
  								"de": ""
  							},
- 							"col_span_label": 1,
+ 							"col_span_control": 1,
  							"style": {
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "start"
+ 										"justify_self": "end",
+ 										"align_self": "center"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -1710,25 +2052,38 @@
  									"box_style": {},
  									"grid_item_style": {},
  									"text_style": {}
- 								},
- 								"A": "",
- 								"B": "",
- 								"C": 0
+ 								}
  							}
  						},
  						{
- 							"type": "textblock",
+ 							"type": "label-as-input",
  							"label": {
  								"de": ""
  							},
- 							"col_span_label": 1,
+ 							"col_span_control": 1,
  							"style": {
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "start"
+ 										"justify_self": "end",
+ 										"align_self": "center"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -1739,25 +2094,38 @@
  									"box_style": {},
  									"grid_item_style": {},
  									"text_style": {}
- 								},
- 								"A": "",
- 								"B": "",
- 								"C": 0
+ 								}
  							}
  						},
  						{
- 							"type": "textblock",
+ 							"type": "label-as-input",
  							"label": {
  								"de": "Sehr bereit"
  							},
- 							"col_span_label": 1,
+ 							"col_span_control": 1,
  							"style": {
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "start"
+ 										"justify_self": "end",
+ 										"align_self": "center"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -1768,10 +2136,7 @@
  									"box_style": {},
  									"grid_item_style": {},
  									"text_style": {}
- 								},
- 								"A": "",
- 								"B": "",
- 								"C": 0
+ 								}
  							}
  						},
  						{
@@ -1819,7 +2184,9 @@
  					],
  					"style": {
  						"desktop": {
- 							"grid_container_style": {},
+ 							"grid_container_style": {
+ 								"template_columns": "   1fr    1fr    1fr    1fr    1fr    1fr    1fr "
+ 							},
  							"box_style": {},
  							"grid_item_style": {},
  							"text_style": {}
@@ -1829,10 +2196,7 @@
  							"box_style": {},
  							"grid_item_style": {},
  							"text_style": {}
- 						},
- 						"A": "",
- 						"B": "",
- 						"C": 0
+ 						}
  					}
  				},
  				{

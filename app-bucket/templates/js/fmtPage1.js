@@ -38,7 +38,11 @@ function fmtPage1(event) {
 
     if (sum > 0) {        
         if (sum != 100 ) {
-            alert("{{.msg}}");
+            // alert("{{.msg}}");
+            var doContinue = window.confirm("{{.msg}}");
+            if (doContinue) {
+                return true;
+            }
             event.preventDefault(); // not only return false - but also preventDefault()
             return false;            
         }

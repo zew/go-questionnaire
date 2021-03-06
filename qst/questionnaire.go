@@ -120,10 +120,15 @@ type inputT struct {
 	CSSLabel   string `json:"css_label,omitempty"`   // vertical margins, line-height, indent - usually for the entire label+input
 	CSSControl string `json:"css_control,omitempty"` // usually only for the input element's inner style
 
-	// How many column slots of the overall layout should the control occupy?
-	// The number adds up against group.Cols - determining newlines.
-	// The number is used to compute the relative width (percentage).
-	// If zero, a column width of one is assumend.
+	/*Colspan determines, how many column slots of the group column layout
+	the input occupies.
+	Default value is assumed to be 1.
+	Increase it manually in the generator function.
+	ColSpanLabel and ColSpanControl do *not* influence Colspan.
+	*/
+	ColSpan float32 `json:"col_span,omitempty"`
+
+	// ColSpanLabel/-Control work only as proportion of Colspan
 	ColSpanLabel   float32 `json:"col_span_label,omitempty"`
 	ColSpanControl float32 `json:"col_span_control,omitempty"`
 
@@ -160,51 +165,16 @@ func NewInput() inputT {
 	return t
 }
 
-func renderLabelDescription(i inputT, langCode string, numCols float32) string {
-	return renderLabelDescription2(i, langCode, i.Name, i.HAlignLabel,
-		i.Label, i.Desc, i.CSSLabel, i.ColSpanLabel, numCols)
-}
-
-// renderLabelDescription wraps lbl+desc into a <span> of class 'go-quest-cell' or td-cell.
-// A percent width is dynamically computed from colsLabel / numCols.
-// Argument numCols is the total number of cols per row.
-// It is used to compute the precise width in percent
-func renderLabelDescription2(i inputT, langCode string, name string, hAlign horizontalAlignment,
-	lbl, desc trl.S, css string, colsLabel float32, numCols float32) string {
-	ret := ""
-	if lbl == nil && desc == nil {
-		return ret
-	}
-	e1 := lbl.Tr(langCode)
-	if lbl == nil {
-		e1 = "" // suppress "Translation map not initialized." here
-	}
-	e2 := desc.Tr(langCode)
-	if desc == nil {
-		e2 = "" // suppress "Translation map not initialized." here
-	}
-
-	// pure text or layout
-	ret = fmt.Sprintf(
-		"<span class='%v'><b>%v</b> %v </span>\n",
-		css, e1, e2,
-	)
-
-	if name != "" && !i.IsLayout() {
-		ret = fmt.Sprintf(
-			"<label for='%v' class='%v' ><b>%v</b> %v </label>\n",
-			name, css, e1, e2,
-		)
-	}
-
-	ret = td(hAlign, colWidth(colsLabel, numCols), ret)
-	return ret
-}
-
 // IsLayout returns whether the input type is merely ornamental
 // and has no return values
 func (inp inputT) IsLayout() bool {
 	if inp.Type == "textblock" {
+		return true
+	}
+	if inp.Type == "button" { // we dont care
+		return true
+	}
+	if inp.Type == "label-as-input" {
 		return true
 	}
 	if inp.Type == "dyn-textblock" {
@@ -213,9 +183,7 @@ func (inp inputT) IsLayout() bool {
 	if inp.Type == "dyn-composite" { // inputs are in "dyn-composite-scalar"
 		return true
 	}
-	if inp.Type == "button" { // we dont care
-		return true
-	}
+
 	return false
 }
 
@@ -301,9 +269,9 @@ func (gr *groupT) addInputArg(inp *inputT) {
 	gr.Inputs = append(gr.Inputs, inp)
 }
 
-// InputEmpty creates a new input;
+// emptyTextblock creates a new input;
 // an empty input *is* rendered a empty cell
-func InputEmpty() *inputT {
+func emptyTextblock() *inputT {
 	inp := &inputT{}
 	inp.Type = "textblock"
 	inp.Label = trl.S{
@@ -313,10 +281,10 @@ func InputEmpty() *inputT {
 	return inp
 }
 
-// addInputEmpty creates a new input
+// addEmptyTextblock creates a new input
 // and adds this input to the group's inputs
-func (gr *groupT) addInputEmpty() *inputT {
-	inp := InputEmpty()
+func (gr *groupT) addEmptyTextblock() *inputT {
+	inp := emptyTextblock()
 	gr.Inputs = append(gr.Inputs, inp)
 	ret := gr.Inputs[len(gr.Inputs)-1]
 	return ret

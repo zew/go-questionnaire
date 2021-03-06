@@ -62,11 +62,10 @@ var hyph = []string{
 	"über&shy;haupt",
 	"un&shy;ent&shy;schieden",
 	"un&shy;wich&shy;tig",
-	"Un&shy;ter&shy;neh&shy;men", // Un|ter|neh|men
-	"ver&shy;än&shy;dern",        // "ver|än|dern",
-	"ver&shy;bes&shy;sern",       // "ver|bes|sern",
-	"ver&shy;schlech&shy;tern",   // "ver|schlech|tern",
-	"ver&shy;schlechtern",
+	"Un&shy;ter&shy;neh&shy;men",      // Un|ter|neh|men
+	"ver&shy;än&shy;dern",             // "ver|än|dern",
+	"ver&shy;bes&shy;sern",            // "ver|bes|sern",
+	"ver&shy;schlech&shy;tern",        // "ver|schlech|tern",
 	"Ver&shy;bes&shy;se&shy;rung",     // Ver|bes|se|rung
 	"Ver&shy;schlech&shy;te&shy;rung", // Ver|schlech|te|rung
 	"Wechsel&shy;kurse",               //

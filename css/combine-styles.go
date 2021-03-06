@@ -20,7 +20,7 @@ import (
 */
 
 // Combine adds a to sr
-func (sr *GridContainerStyle) Combine(b GridContainerStyle) {
+func (sr *StyleGridContainer) Combine(b StyleGridContainer) {
 
 	valOfA := reflect.ValueOf(sr)
 	valOfA = valOfA.Elem() // dereference
@@ -81,7 +81,7 @@ func (sr *GridContainerStyle) Combine(b GridContainerStyle) {
 }
 
 // Combine adds a to sr
-func (sr *BoxStyle) Combine(b BoxStyle) {
+func (sr *StyleBox) Combine(b StyleBox) {
 
 	valOfA := reflect.ValueOf(sr)
 	valOfA = valOfA.Elem() // dereference
@@ -142,7 +142,7 @@ func (sr *BoxStyle) Combine(b BoxStyle) {
 }
 
 // Combine adds a to sr
-func (sr *GridItemStyle) Combine(b GridItemStyle) {
+func (sr *StyleGridItem) Combine(b StyleGridItem) {
 
 	valOfA := reflect.ValueOf(sr)
 	valOfA = valOfA.Elem() // dereference
@@ -203,7 +203,7 @@ func (sr *GridItemStyle) Combine(b GridItemStyle) {
 }
 
 // Combine adds a to sr
-func (sr *TextStyle) Combine(b TextStyle) {
+func (sr *StyleText) Combine(b StyleText) {
 
 	valOfA := reflect.ValueOf(sr)
 	valOfA = valOfA.Elem() // dereference

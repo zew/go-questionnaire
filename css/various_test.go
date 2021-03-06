@@ -66,14 +66,14 @@ func Test_Combine(t *testing.T) {
 
 	tests := []struct {
 		name  string
-		sr, b *GridContainerStyle
-		want  *GridContainerStyle
+		sr, b *StyleGridContainer
+		want  *StyleGridContainer
 	}{
 		{
 			name: "test-1",
-			sr:   &GridContainerStyle{AutoColumns: "aa", JustifyContent: "dd"},
-			b:    &GridContainerStyle{AutoFlow: "bb", TemplateRows: "cc", JustifyContent: "ee"},
-			want: &GridContainerStyle{AutoColumns: "aa", AutoFlow: "bb", TemplateRows: "cc", JustifyContent: "dd"},
+			sr:   &StyleGridContainer{AutoColumns: "aa", JustifyContent: "dd"},
+			b:    &StyleGridContainer{AutoFlow: "bb", TemplateRows: "cc", JustifyContent: "ee"},
+			want: &StyleGridContainer{AutoColumns: "aa", AutoFlow: "bb", TemplateRows: "cc", JustifyContent: "dd"},
 		},
 	}
 	for _, tt := range tests {
@@ -99,9 +99,9 @@ func Test_CombineAll(t *testing.T) {
 	}{
 		{
 			name: "test-1",
-			sr:   &StylesResponsive{Desktop: Styles{GridContainerStyle: GridContainerStyle{AutoColumns: "aa"}}},
-			b:    &StylesResponsive{Desktop: Styles{GridContainerStyle: GridContainerStyle{AutoFlow: "bb", TemplateColumns: "cc"}}},
-			want: &StylesResponsive{Desktop: Styles{GridContainerStyle: GridContainerStyle{AutoColumns: "aa", AutoFlow: "bb", TemplateColumns: "cc"}}},
+			sr:   &StylesResponsive{Desktop: Styles{StyleGridContainer: StyleGridContainer{AutoColumns: "aa"}}},
+			b:    &StylesResponsive{Desktop: Styles{StyleGridContainer: StyleGridContainer{AutoFlow: "bb", TemplateColumns: "cc"}}},
+			want: &StylesResponsive{Desktop: Styles{StyleGridContainer: StyleGridContainer{AutoColumns: "aa", AutoFlow: "bb", TemplateColumns: "cc"}}},
 		},
 	}
 	for _, tt := range tests {

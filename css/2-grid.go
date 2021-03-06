@@ -5,7 +5,7 @@ import (
 	"strings"
 )
 
-type GridContainerStyle struct {
+type StyleGridContainer struct {
 	AutoFlow string `json:"auto_flow,omitempty"` // column | row | dense | dense column | dense row
 
 	AutoColumns string `json:"auto_columns,omitempty"` // default beyond TemplateColumns
@@ -22,8 +22,8 @@ type GridContainerStyle struct {
 	GapRow    string `json:"row_gap,omitempty"`
 }
 
-func gridContainerStyleExample1() GridContainerStyle {
-	return GridContainerStyle{
+func gridContainerStyleExample1() StyleGridContainer {
+	return StyleGridContainer{
 		AutoFlow:        "column",
 		AutoColumns:     "minmax(auto,  300px)",
 		AutoRows:        "minmax(100px, auto)",
@@ -50,7 +50,7 @@ func gridContainerStyleExample1Want() string {
 }
 
 // CSS renders styles
-func (gcs GridContainerStyle) CSS() string {
+func (gcs StyleGridContainer) CSS() string {
 	s := &strings.Builder{}
 	if gcs.AutoFlow != "" {
 		fmt.Fprintf(s, "\tgrid-auto-flow: %v;\n", gcs.AutoFlow)
@@ -88,7 +88,7 @@ func (gcs GridContainerStyle) CSS() string {
 	return s.String()
 }
 
-type GridItemStyle struct {
+type StyleGridItem struct {
 	JustifySelf string `json:"justify_self,omitempty"` // main axis   - item inside its 'cell' - stretch | baseline | center | start | end
 	AlignSelf   string `json:"align_self,omitempty"`   // second axis - item inside its 'cell' - stretch | baseline | center | start | end
 	Col         string `json:"col,omitempty"`
@@ -96,8 +96,8 @@ type GridItemStyle struct {
 	Order       int    `json:"order,omitempty"`
 }
 
-func gridItemStyleExample1() GridItemStyle {
-	return GridItemStyle{
+func gridItemStyleExample1() StyleGridItem {
+	return StyleGridItem{
 		JustifySelf: "start",
 		AlignSelf:   "stretch",
 		Col:         "col-menu/span 1",
@@ -116,7 +116,7 @@ func gridItemStyleExample1Want() string {
 }
 
 // CSS renders styles
-func (gis GridItemStyle) CSS() string {
+func (gis StyleGridItem) CSS() string {
 	s := &strings.Builder{}
 	if gis.JustifySelf != "" {
 		fmt.Fprintf(s, "\tjustify-self: %v;\n", gis.JustifySelf)

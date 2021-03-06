@@ -6,7 +6,7 @@ import (
 )
 
 // SetIf sets a property only if it was null value ("", 0)
-func (gcs *GridContainerStyle) SetIf(fn string, v reflect.Value) {
+func (gcs *StyleGridContainer) SetIf(fn string, v reflect.Value) {
 
 	valOfA := reflect.ValueOf(gcs)
 	valOfA = valOfA.Elem() // dereference

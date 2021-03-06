@@ -160,6 +160,9 @@ func (q *QuestionnaireT) Validate() error {
 				// input label or desc not empty  =>  span > 0
 				if (!inp.Label.Empty() || !inp.Desc.Empty()) && inp.ColSpanLabel == 0 {
 					q.Pages[i1].Groups[i2].Inputs[i3].ColSpanLabel = 1
+					if inp.Type == "label-as-input" || inp.Type == "button" {
+						q.Pages[i1].Groups[i2].Inputs[i3].ColSpanLabel = 0
+					}
 				}
 
 				// button has label - but never colspanlabel
@@ -253,9 +256,6 @@ func (q *QuestionnaireT) Validate() error {
 				nm := inp.Name
 
 				if inp.IsLayout() {
-					continue
-				}
-				if inp.Type == "dyn-composite" {
 					continue
 				}
 

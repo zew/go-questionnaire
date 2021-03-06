@@ -18,7 +18,7 @@ var columnTemplate4 = []float32{
 	2, 1,
 	0, 1,
 	0, 1,
-	1, 1,
+	0.4, 1, // no answer slightly apart
 }
 var columnTemplate6 = []float32{
 	2, 1,
@@ -92,12 +92,13 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		// gr0
 		{
 			gr := page.AddGroup()
-			gr.Cols = 3
+			gr.Cols = 1
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
 				inp.CSSLabel = "special-line-height-higher"
-				inp.ColSpanLabel = 3
+				inp.ColSpan = 1
+				inp.ColSpanLabel = 1
 				impr := trl.S{}
 				for _, lc := range q.LangCodes {
 					w1 := &strings.Builder{}
@@ -119,33 +120,30 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 			gr := page.AddGroup()
 			gr.Cols = 6
-
 			gr.Style = css.NewStylesResponsive(gr.Style)
-			gr.Style.Desktop.BoxStyle.WidthMax = "26rem"
-			gr.Style.Mobile.BoxStyle.WidthMax = "none"
+			gr.Style.Desktop.StyleBox.WidthMax = "26rem"
+			gr.Style.Mobile.StyleBox.WidthMax = "none"
 
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
 				inp.Label = trl.S{"de": "Sind Sie die angeschriebene Person?", "en": "Are you the addressee?"}
-
+				inp.ColSpan = 6
 				inp.ColSpanLabel = 6
 			}
 
 			lblStyle := css.NewStylesResponsive(nil)
-			lblStyle.Desktop.TextStyle.AlignHorizontal = "left"
-			lblStyle.Desktop.BoxStyle.Padding = "0 0 0 1rem"
-			lblStyle.Mobile.BoxStyle.Padding = "0 0 0 2rem"
-
+			lblStyle.Desktop.StyleText.AlignHorizontal = "left"
+			lblStyle.Desktop.StyleBox.Padding = "0 0 0 1rem"
+			lblStyle.Mobile.StyleBox.Padding = "0 0 0 2rem"
 			{
 				rad := gr.AddInput()
 				rad.Type = "radio"
 				rad.Name = "proxy"
 				rad.ValueRadio = "no"
+				rad.ColSpan = 6
 				rad.ColSpanLabel = 5
 				rad.ColSpanControl = 1
-				// rad.HAlign = qst.HLeft
-				// rad.HAlign = qst.HCenter
 				rad.Label = trl.S{
 					"de": "Ja, ich bin die angeschriebene Person.",
 					"en": "Yes, I am the addressee.",
@@ -157,6 +155,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				rad.Type = "radio"
 				rad.Name = "proxy"
 				rad.ValueRadio = "yes"
+				rad.ColSpan = 6
 				rad.ColSpanLabel = 5
 				rad.ColSpanControl = 1
 				rad.Label = trl.S{
@@ -170,7 +169,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		// gr2
 		{
 			gr := page.AddGroup()
-			gr.Cols = 3
+			gr.Cols = 1
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
@@ -178,14 +177,13 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 					"de": "Meine Adresse hat sich geändert",
 					"en": "My address has changed",
 				}
-				inp.ColSpanLabel = 3
 			}
 			{
 				inp := gr.AddInput()
 				inp.Type = "textarea"
 				inp.Name = "address_change"
 				inp.MaxChars = 150
-				inp.ColSpanControl = 3
+				inp.ColSpanControl = 1
 			}
 		}
 
@@ -204,7 +202,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				}
 				inp.AccessKey = "n"
 				inp.ColSpanControl = 1
-
 				inp.StyleCtl = css.ItemEndMA(inp.StyleCtl)
 			}
 		}
@@ -221,8 +218,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 		page.ValidationFuncName = "fmtPage1"
 		page.ValidationFuncMsg = trl.S{
-			"de": "Summiert sich nicht zu 100",
-			"en": "Does not add up",
+			"de": "Summiert sich nicht zu 100. Wirklich weiter?",
+			"en": "Does not add up. Really continue?",
 		}
 
 		// gr0
@@ -285,25 +282,27 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			gr := page.AddGroup()
 			gr.Cols = 10
 			gr.Style = css.NewStylesResponsive(gr.Style)
-			gr.Style.Mobile.GridContainerStyle.GapRow = "0.02rem"
+			gr.Style.Mobile.StyleGridContainer.GapRow = "0.02rem"
 
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				inp.ColSpanLabel = 10
+				inp.ColSpan = 10
+				// inp.ColSpanLabel = 10
 				inp.Label = trl.S{
 					"de": "<b>2b.</b> Für wie wahrscheinlich halten Sie die folgenden mittelfristigen (<b>6</b>&nbsp;Mo.) Entwicklungen der gesamtwirtschaftlichen Situation in Deutschland?",
 					"en": "<b>2b.</b> How likely are the following medium term (<b>6</b>&nbsp;months) developments of the general economic situation in Germany?",
 				}
 
 				inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
-				inp.StyleLbl.Mobile.BoxStyle.Padding = "0 0 0.8rem 0"
+				inp.StyleLbl.Mobile.StyleBox.Padding = "0 0 0.8rem 0"
 
 			}
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				inp.ColSpanLabel = 3
+				inp.ColSpan = 3
+				// inp.ColSpanLabel = 3
 				inp.Label = trl.S{
 					"de": "Verbesserung",
 					"en": "Improvement",
@@ -313,7 +312,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				inp.ColSpanLabel = 3
+				inp.ColSpan = 3
+				// inp.ColSpanLabel = 3
 				inp.Label = trl.S{
 					"de": "Gleich bleiben",
 					"en": "Remain the same",
@@ -323,7 +323,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				inp.ColSpanLabel = 3
+				inp.ColSpan = 3
+				// inp.ColSpanLabel = 3
 				inp.Label = trl.S{
 					"de": "Verschlechterung",
 					"en": "Deterioration",
@@ -333,7 +334,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				inp.ColSpanLabel = 1
+				// inp.ColSpanLabel = 1
 				inp.Label = trl.S{
 					"de": "&#931;",
 					"en": "&#931;",
@@ -347,6 +348,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Type = "number"
 				inp.Name = "y_probgood"
 				inp.Suffix = trl.S{"de": "%", "en": "%"}
+				inp.ColSpan = 3
 				inp.ColSpanControl = 3
 				inp.Min = 0
 				inp.Max = 100
@@ -357,6 +359,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Type = "number"
 				inp.Name = "y_probnormal"
 				inp.Suffix = trl.S{"de": "%", "en": "%"}
+				inp.ColSpan = 3
 				inp.ColSpanControl = 3
 				inp.Min = 0
 				inp.Max = 100
@@ -367,6 +370,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Type = "number"
 				inp.Name = "y_probbad"
 				inp.Suffix = trl.S{"de": "%", "en": "%"}
+				inp.ColSpan = 3
 				inp.ColSpanControl = 3
 				inp.Min = 0
 				inp.Max = 100
@@ -375,7 +379,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				inp.ColSpanLabel = 1
+				inp.ColSpan = 1
+				// inp.ColSpanLabel = 1
 				inp.Label = trl.S{
 					"de": "100&nbsp;%",
 					"en": "100&nbsp;%",
@@ -476,6 +481,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			}
 			gr := page.AddGrid(gb)
 			gr.OddRowsColoring = true
+			gr.BottomVSpacers = 4
 		}
 
 	}
@@ -530,8 +536,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			gr := page.AddGroup()
 			gr.Cols = 6
 			gr.Style = css.NewStylesResponsive(gr.Style)
-			gr.Style.Desktop.GridContainerStyle.GapColumn = "0rem"
-			gr.Style.Desktop.GridContainerStyle.GapRow = "0rem"
+			gr.Style.Desktop.StyleGridContainer.GapColumn = "0rem"
+			gr.Style.Desktop.StyleGridContainer.GapRow = "0rem"
 			{
 				inp := gr.AddInput()
 				inp.Type = "number"
@@ -540,6 +546,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Max = 50000
 				inp.MaxChars = 6
 
+				inp.ColSpan = 6
 				inp.ColSpanLabel = 4
 				inp.ColSpanControl = 2
 				inp.Label = trl.S{
@@ -552,6 +559,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
+				inp.ColSpan = 6
 				inp.ColSpanLabel = 6
 				inp.Label = trl.S{
 					"de": " <br>Mit einer Wahrscheinlichkeit von 90&nbsp;Prozent liegt der DAX dann zwischen ",
@@ -566,9 +574,9 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Min = 1000
 				inp.Max = 50000
 				inp.MaxChars = 6
+				inp.ColSpan = 3
 				inp.ColSpanLabel = 1
 				inp.ColSpanControl = 2
-
 				inp.Label = trl.S{
 					"de": " &nbsp; ",
 					"en": " &nbsp; ",
@@ -577,7 +585,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 					"de": "Punkten ",
 					"en": "points",
 				}
-
 			}
 			{
 				inp := gr.AddInput()
@@ -596,7 +603,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Min = 1000
 				inp.Max = 50000
 				inp.MaxChars = 6
-
+				inp.ColSpan = 2
 				inp.ColSpanControl = 2
 				inp.Suffix = trl.S{}
 				inp.Suffix = trl.S{
@@ -634,7 +641,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				}
 			}
 			gr.Style = css.NewStylesResponsive(gr.Style)
-			gr.Style.Desktop.BoxStyle.Padding = "0 0 0.5rem  0"
+			gr.Style.Desktop.StyleBox.Padding = "0 0 0.5rem  0"
 		}
 
 		// gr4
@@ -653,14 +660,14 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			// gb.MainLabel = trl.S{
 			// }
 			gr := page.AddGrid(gb)
-			gr.Style.Desktop.GridContainerStyle.GapColumn = "0"
-			gr.Style.Desktop.GridContainerStyle.GapRow = "0.5rem"
-			gr.Style.Desktop.BoxStyle.WidthMax = "30rem"
-			gr.Style.Mobile.BoxStyle.WidthMax = "none"
+			gr.Style.Desktop.StyleGridContainer.GapColumn = "0"
+			gr.Style.Desktop.StyleGridContainer.GapRow = "0.5rem"
+			gr.Style.Desktop.StyleBox.WidthMax = "30rem"
+			gr.Style.Mobile.StyleBox.WidthMax = "none"
 
-			gr.Style.Desktop.BoxStyle.Position = "relative"
-			gr.Style.Desktop.BoxStyle.Left = "-1.1rem"
-			gr.Style.Mobile.BoxStyle.Left = "0"
+			gr.Style.Desktop.StyleBox.Position = "relative"
+			gr.Style.Desktop.StyleBox.Left = "-1.1rem"
+			gr.Style.Mobile.StyleBox.Left = "0"
 			gr.OddRowsColoring = true
 		}
 

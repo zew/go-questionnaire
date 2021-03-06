@@ -53,9 +53,9 @@ func (gb *GridBuilder) AddRadioRow(name string, vals []string, sparseLabels map[
 
 	for colIdx := 0; colIdx < len(gb.cols); colIdx++ {
 
-		rad := InputEmpty()
+		rad := emptyTextblock()
 		if colIdx < len(vals) {
-			rad = InputEmpty()
+			rad = emptyTextblock()
 			rad.Label = nil
 			rad.Type = "radio"
 			rad.Name = name // "y_euro"
@@ -81,7 +81,7 @@ func (gb *GridBuilder) dumpCols() {
 	w := &strings.Builder{}
 	cntr := float32(0.0)
 	for colIdx, col := range gb.cols {
-		fmt.Fprintf(w, "%v - %v %v \n", colIdx, col.spanLabel, col.spanControl)
+		fmt.Fprintf(w, "%v - %4.1f %4.1f \n", colIdx, col.spanLabel, col.spanControl)
 		cntr += col.spanLabel
 		cntr += col.spanControl
 	}
@@ -92,36 +92,33 @@ func (gb *GridBuilder) dumpCols() {
 // being prepared using AddCol() and AddRadioRow()
 func (p *pageT) AddGrid(gb *GridBuilder) *groupT {
 
-	// gb.dumpCols()
-
 	gr := p.AddGroup()
 
-	gr.Cols = 0
-	for colIdx := 0; colIdx < len(gb.cols); colIdx++ {
-		gr.Cols += gb.cols[colIdx].spanLabel
-		gr.Cols += gb.cols[colIdx].spanControl
-	}
+	gr.Cols = float32(len(gb.cols))
 
 	gr.Style = css.NewStylesResponsive(gr.Style)
-	if gr.Style.Desktop.GridContainerStyle.TemplateColumns == "" {
+	if gr.Style.Desktop.StyleGridContainer.TemplateColumns == "" {
 		stl := ""
 		for colIdx := 0; colIdx < len(gb.cols); colIdx++ {
-			if gb.cols[colIdx].spanLabel != 0 {
-				stl = fmt.Sprintf("%v   %vfr ", stl, gb.cols[colIdx].spanLabel)
-			}
-			if gb.cols[colIdx].spanControl != 0 {
-				stl = fmt.Sprintf("%v   %vfr ", stl, gb.cols[colIdx].spanControl)
-			}
+			stl = fmt.Sprintf(
+				"%v   %vfr ",
+				stl,
+				gb.cols[colIdx].spanLabel+gb.cols[colIdx].spanControl,
+			)
 		}
-		// gr.Style.Desktop.GridContainerStyle.TemplateColumns = stl
+		gr.Style.Desktop.StyleGridContainer.TemplateColumns = stl
 	}
+
+	// gb.dumpCols()
+	// log.Printf("gr.Cols %v  ", gr.Cols)
+	// log.Printf("gr.Style.GridContainerStyle %v  ", util.IndentedDump(gr.Style.Desktop.GridContainerStyle))
 
 	// first row - main label
 	if gb.MainLabel != nil {
 		inp := gr.AddInput()
 		inp.Type = "textblock"
 		inp.Label = gb.MainLabel
-		inp.ColSpanLabel = gr.Cols
+		inp.ColSpan = gr.Cols
 	}
 
 	// second row - headers - preflight
@@ -135,29 +132,28 @@ func (p *pageT) AddGrid(gb *GridBuilder) *groupT {
 	// second row - headers - execution
 	if headersExist {
 		for colIdx := 0; colIdx < len(gb.cols); colIdx++ {
-			if gb.cols[colIdx].header != nil {
 
-				// space cell - horizontally over labels
-				if gb.cols[colIdx].spanLabel > 0 {
-					inp2 := gr.addInputEmpty()
-					// s := fmt.Sprintf("col%v", colIdx)
-					// inp2.Label = trl.S{"de": s, "en": s}
-					inp2.ColSpanLabel = gb.cols[colIdx].spanLabel
-				}
+			inp := gr.addEmptyTextblock()
 
-				// label cell - horizontally over controls
-				inp2 := gr.addInputEmpty()
-				inp2.Label = gb.cols[colIdx].header
-				inp2.ColSpanLabel = gb.cols[colIdx].spanControl
-				inp2.Style = css.ItemCenteredMCA(inp2.Style)
-				inp2.Style.Desktop.GridItemStyle.AlignSelf = "end"
-				inp2.Style.Desktop.GridItemStyle.AlignSelf = "start"
-				// inp2.Style.Desktop.BoxStyle.Padding = "0 0.2rem"
-
-			} else {
-				inp := gr.addInputEmpty()
+			if gb.cols[colIdx].header == nil {
+				// inp.Label = trl.S{"de": "---", "en": "---"}
 				inp.ColSpanLabel = gb.cols[colIdx].spanLabel + gb.cols[colIdx].spanControl
+			} else {
+				inp.Type = "label-as-input"
+				inp.Label = gb.cols[colIdx].header
+				inp.ColSpanLabel = gb.cols[colIdx].spanLabel
+				inp.ColSpanControl = gb.cols[colIdx].spanControl
+				inp.StyleCtl = css.ItemCenteredCA(inp.StyleCtl)
+				inp.StyleCtl = css.ItemStartCA(inp.StyleCtl)
+
+				inp.Style = css.NewStylesResponsive(inp.Style)
+				// inp.Style.Desktop.GridContainerStyle.GapColumn is distorting cell widths..
+				inp.Style.Mobile.StyleBox.Padding = "0 0.1rem"
+				inp.Style.Mobile.StyleText.FontSize = 90
 			}
+
+			// log.Printf("colIdx %v  -  lbl/ctl  %v  %v ", colIdx, inp.ColSpanLabel, inp.ColSpanControl)
+
 		}
 	}
 
@@ -192,6 +188,8 @@ func NewGridBuilderRadios(
 	for i := 0; i < len(columnTemplate); i += 2 {
 		gb.AddCol(hdrLabels[i/2], columnTemplate[i], columnTemplate[i+1])
 	}
+
+	// gb.dumpCols()
 
 	// adding rows
 	// for rowIdx := 0; rowIdx < len(firstColLabels); rowIdx++ {

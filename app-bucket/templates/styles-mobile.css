@@ -58,10 +58,6 @@
 		min-width:  unset;
 	}
 
-    .page-margins {
-        width: calc(100% - 1.2rem) !important;
-    }
-
     .content form[name=frmMain] .content-quest {
         border-top:      none;
     }

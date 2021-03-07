@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "03fd75c66a96348cca5defbff877cbbc6e4bd94266852d32c31e1de056c5eea6",
+ 	"md_5": "0bf608375f2d4dac0bad23cdc0a20950948e096dc603dce5623f347763650556",
  	"lang_codes": [
  		"de",
  		"en"
@@ -51,7 +51,7 @@
  				"mobile": {
  					"grid_container_style": {},
  					"box_style": {
- 						"width_max": "none"
+ 						"width_max": "calc(100% - 1.2rem)"
  					},
  					"grid_item_style": {},
  					"text_style": {}
@@ -69,7 +69,6 @@
  								"de": "\n\t\u003cdiv class='markdown'\u003e\n\u003cp\u003e\r\nSehr geehrte Finanzmarktexpertin, sehr geehrter Finanzmarktexperte, herzlich willkommen beim ZEW-Finanzmarkttest. \r\n\r\nDurch klicken auf \u003ccode\u003eWeiter\u003c/code\u003e werden Ihre Antworten gespeichert und Sie gelangen zur jeweils nächsten Seite. \r\n\r\nBei einer Unterbrechung (Schließen des Browsers) blei\u0026shy;ben Ihre Antworten erhalten und können später über Ihren persönlichen Link wieder aufgerufen und geändert werden.\r\n\r\nAm Ende der Befragung können Sie den Fragebogen abschließen, so dass keine weiteren Änderungen möglich sind. \r\n\r\n\r\n\r\u003c/p\u003e\n\n\u003ch3\u003eDa\u0026shy;tenschutz\r\u003c/h3\u003e\n\n\u003cp\u003e\r\nHier finden Sie unsere \u003ca href=\"https://www.zew.de/de/da\u0026shy;tenschutz/\"\u003eDa\u0026shy;tenschutz-Grundlagen\u003c/a\u003e.\r\n\r\nIhre An\u0026shy;gaben werden streng vertraulich behandelt. \r\n\r\nDie Auswertung Ihrer Antworten erfolgt als \u003ca href=\"https://de.wikipedia.org/wiki/Panelda\u0026shy;ten\"\u003ePanel-Da\u0026shy;tensatz\u003c/a\u003e in anonymisierter Form.\r\n\r\nIhre Da\u0026shy;ten werden auf einem geschützten Server im ZEW Hauptgebäude gespeichert, auf den nur Mitglieder des ZEW Teams für den Finanzmarkttest Zugriff haben.\r\n\r\nZusätzlich bitten wir um Ihr Einverständnis, dass wir Ihre Antworten \r\nintern mit Ihrer geschäftlichen Identität verknüpfen. \r\n\r\nIhre geschäftliche Identität besteht aus Ihrem Namen, Ihrer Funktion, geschäftl. Email und Telefonnummer, Arbeitgeber und Teilnahmebeginn.\r\u003c/p\u003e\n\n\t\u003c/div\u003e  \u003c!-- markdown --\u003e\n",
  								"en": "\n\t\u003cdiv class='markdown'\u003e\n\u003cp\u003eDear expert, welcome to the ZEW financial markets survey .\r\n\r\nBy clicking \u003ccode\u003eNext\u003c/code\u003e your an\u0026shy;swers will be saved and you progress to the next page.\r\n\r\nIn case of an interruption (closing of the web browser) your an\u0026shy;swers remain saved. You can re-use your personal link to continue and change your an\u0026shy;swers.\r\n\r\nAt the end you can finalize the questionnaire preventing further changes.\r\n\r\n\r\u003c/p\u003e\n\n\u003ch3\u003ePrivacy Protection\r\u003c/h3\u003e\n\n\u003cp\u003e\r\n\r\nPlease notice our \u003ca href=\"https://www.zew.de/en/da\u0026shy;tenschutz/\"\u003eprivacy protection policy\u003c/a\u003e.\r\n\r\nYour data will we treated strictly confidential.\r\n\r\nData processing is done as as \u003ca href=\"https://en.wikipedia.org/wiki/Panel_data\"\u003epanel data set\u003c/a\u003e in anonymized form.\r\n\r\nYour data will be stored on a protected server on the premises of ZEW Ltd. Only members of the financial markets team have access to this server.\r\n\r\nIn addition we ask for permission to internally as\u0026shy;so\u0026shy;ci\u0026shy;ate your an\u0026shy;swers with your busi\u0026shy;ness identity.\r\n\r\nYour busi\u0026shy;ness identity consists of name, role, work phone and email, employer and start of contribution.\r\n\r\n\r\n\r\n\r\u003c/p\u003e\n\n\t\u003c/div\u003e  \u003c!-- markdown --\u003e\n"
  							},
- 							"css_label": "special-line-height-higher",
  							"col_span": 1,
  							"col_span_label": 1
  						}
@@ -165,7 +164,7 @@
  						"mobile": {
  							"grid_container_style": {},
  							"box_style": {
- 								"width_max": "none"
+ 								"width_max": "calc(100% - 1.2rem)"
  							},
  							"grid_item_style": {},
  							"text_style": {}
@@ -253,7 +252,7 @@
  				"mobile": {
  					"grid_container_style": {},
  					"box_style": {
- 						"width_max": "none"
+ 						"width_max": "calc(100% - 1.2rem)"
  					},
  					"grid_item_style": {},
  					"text_style": {}
@@ -1295,7 +1294,7 @@
  				"mobile": {
  					"grid_container_style": {},
  					"box_style": {
- 						"width_max": "none"
+ 						"width_max": "calc(100% - 1.2rem)"
  					},
  					"grid_item_style": {},
  					"text_style": {}
@@ -2421,7 +2420,7 @@
  				"mobile": {
  					"grid_container_style": {},
  					"box_style": {
- 						"width_max": "none"
+ 						"width_max": "calc(100% - 1.2rem)"
  					},
  					"grid_item_style": {},
  					"text_style": {}
@@ -3132,7 +3131,7 @@
  							"grid_container_style": {},
  							"box_style": {
  								"left": "0",
- 								"width_max": "none"
+ 								"width_max": "calc(100% - 1.2rem)"
  							},
  							"grid_item_style": {},
  							"text_style": {}
@@ -3167,7 +3166,7 @@
  				"mobile": {
  					"grid_container_style": {},
  					"box_style": {
- 						"width_max": "none"
+ 						"width_max": "calc(100% - 1.2rem)"
  					},
  					"grid_item_style": {},
  					"text_style": {}
@@ -3505,7 +3504,7 @@
  				"mobile": {
  					"grid_container_style": {},
  					"box_style": {
- 						"width_max": "none"
+ 						"width_max": "calc(100% - 1.2rem)"
  					},
  					"grid_item_style": {},
  					"text_style": {}
@@ -4215,7 +4214,7 @@
  							"name": "sec_telec",
  							"type": "radio",
  							"label": {
- 								"de": "Telekommunikation",
+ 								"de": "Te\u0026shy;le\u0026shy;kom\u0026shy;mu\u0026shy;ni\u0026shy;ka\u0026shy;ti\u0026shy;on",
  								"en": "Telco"
  							},
  							"col_span_label": 2,
@@ -4349,7 +4348,7 @@
  				"mobile": {
  					"grid_container_style": {},
  					"box_style": {
- 						"width_max": "none"
+ 						"width_max": "calc(100% - 1.2rem)"
  					},
  					"grid_item_style": {},
  					"text_style": {}
@@ -4409,28 +4408,24 @@
  			]
  		},
  		{
- 			"section": {
- 				"de": "Sonderfrage",
- 				"en": "Special"
- 			},
  			"label": {
- 				"de": "Prognosetreiber Wachstum",
- 				"en": "Growth drivers"
+ 				"de": "Sonderfrage: Kurz- und mittelfristiges Wirtschaftswachstum",
+ 				"en": "Special: Short and Medium Term Economic Growth"
  			},
  			"description": {
  				"de": "",
  				"en": ""
  			},
  			"short": {
- 				"de": "Sonderfrage:\u003cbr\u003eWachstums-\u003cbr\u003etreiber",
- 				"en": "Special:\u003cbr\u003eGrowth\u003cbr\u003edrivers"
+ 				"de": "Wachstum",
+ 				"en": "Growth"
  			},
  			"navi_num": 7,
  			"style": {
  				"desktop": {
  					"grid_container_style": {},
  					"box_style": {
- 						"width_max": "36rem"
+ 						"width_max": "42rem"
  					},
  					"grid_item_style": {},
  					"text_style": {}
@@ -4438,7 +4433,7 @@
  				"mobile": {
  					"grid_container_style": {},
  					"box_style": {
- 						"width_max": "none"
+ 						"width_max": "calc(100% - 1.2rem)"
  					},
  					"grid_item_style": {},
  					"text_style": {}
@@ -4456,6 +4451,7 @@
  								"de": "\u003cb\u003e1.\u003c/b\u003e Punktprognose der Wachstumsrate des deutschen BIP",
  								"en": "\u003cb\u003e1.\u003c/b\u003e Forecast growth rate German GDP"
  							},
+ 							"col_span": 6,
  							"col_span_label": 6
  						},
  						{
@@ -4464,7 +4460,7 @@
  								"de": "Prognose Wachstum des BIP je \u003cb\u003eQuartal\u003c/b\u003e \u003cbr\u003e\n (real, saisonbereinigt, nicht annualisiert)",
  								"en": "Forecast \u003cb\u003equarterly\u003c/b\u003e GDP growth \u003cbr\u003e\n(real, seasonally adjusted, non annualized)"
  							},
- 							"css_label": "special-input-margin-vertical",
+ 							"col_span": 6,
  							"col_span_label": 6
  						},
  						{
@@ -4480,9 +4476,27 @@
  								"de": "%",
  								"en": "pct"
  							},
- 							"horizontal_align_label": 2,
+ 							"col_span": 2,
  							"col_span_label": 1,
- 							"col_span_control": 1
+ 							"col_span_control": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.6rem 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"justify_self": "end"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "xquart2",
@@ -4497,9 +4511,27 @@
  								"de": "%",
  								"en": "pct"
  							},
- 							"horizontal_align_label": 2,
+ 							"col_span": 2,
  							"col_span_label": 1,
- 							"col_span_control": 1
+ 							"col_span_control": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.6rem 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"justify_self": "end"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "xquart3",
@@ -4514,9 +4546,27 @@
  								"de": "%",
  								"en": "pct"
  							},
- 							"horizontal_align_label": 2,
+ 							"col_span": 2,
  							"col_span_label": 1,
- 							"col_span_control": 1
+ 							"col_span_control": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.6rem 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"justify_self": "end"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"type": "textblock",
@@ -4524,6 +4574,7 @@
  								"de": "Prognose Wachstum des BIP aufs\u0026nbsp;\u003cb\u003eJahr\u003c/b\u003e \u003cbr\u003e\n(real, saisonbereinigt)",
  								"en": "Forecast GDP growth per\u0026nbsp;\u003cb\u003eyear\u003c/b\u003e \u003cbr\u003e\n(real, seasonally adjusted)"
  							},
+ 							"col_span": 6,
  							"col_span_label": 6
  						},
  						{
@@ -4539,9 +4590,27 @@
  								"de": "%",
  								"en": "pct"
  							},
- 							"horizontal_align_label": 2,
+ 							"col_span": 2,
  							"col_span_label": 1,
- 							"col_span_control": 1
+ 							"col_span_control": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.6rem 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"justify_self": "end"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "xyear2",
@@ -4556,9 +4625,27 @@
  								"de": "%",
  								"en": "pct"
  							},
- 							"horizontal_align_label": 2,
+ 							"col_span": 2,
  							"col_span_label": 1,
- 							"col_span_control": 1
+ 							"col_span_control": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.6rem 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"justify_self": "end"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "xyear3",
@@ -4573,9 +4660,27 @@
  								"de": "%",
  								"en": "pct"
  							},
- 							"horizontal_align_label": 2,
+ 							"col_span": 2,
  							"col_span_label": 1,
- 							"col_span_control": 1
+ 							"col_span_control": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.6rem 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"justify_self": "end"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						}
  					]
  				},
@@ -5331,7 +5436,7 @@
  								"de": "Wenn sonstige - welche?",
  								"en": "If other - which?"
  							},
- 							"css_control": "special-input-textblock-smaller",
+ 							"col_span": 4,
  							"col_span_label": 2,
  							"col_span_control": 6
  						}
@@ -5357,908 +5462,22 @@
  		},
  		{
  			"section": {
- 				"de": "Sonderfrage",
- 				"en": "Special"
+ 				"de": "Abschluss",
+ 				"en": "Finish"
  			},
  			"label": {
- 				"de": "Prognosetreiber Inflation und Geldpolitik",
- 				"en": "Inflation and monetary policy drivers"
+ 				"de": "",
+ 				"en": ""
  			},
  			"description": {
  				"de": "",
  				"en": ""
  			},
  			"short": {
- 				"de": "Sonderfrage:\u003cbr\u003eInflation,\u003cbr\u003eGeldpolitik",
- 				"en": "Special:\u003cbr\u003eInflation,\u003cbr\u003eMon. Policy"
+ 				"de": "Abschluss",
+ 				"en": "Finish"
  			},
  			"navi_num": 8,
- 			"style": {
- 				"desktop": {
- 					"grid_container_style": {},
- 					"box_style": {
- 						"width_max": "60rem"
- 					},
- 					"grid_item_style": {},
- 					"text_style": {}
- 				},
- 				"mobile": {
- 					"grid_container_style": {},
- 					"box_style": {
- 						"width_max": "none"
- 					},
- 					"grid_item_style": {},
- 					"text_style": {}
- 				}
- 			},
- 			"finished": "0001-01-01T00:00:00Z",
- 			"groups": [
- 				{
- 					"bottom_vspacers": 3,
- 					"columns": 9,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "\u003cb\u003e1.\u003c/b\u003e Punktprognose der jährlichen Inflationsrate im Euro\u0026shy;raum",
- 								"en": "\u003cb\u003e1.\u003c/b\u003e Forecast yearly inflation rate in the Euro area"
- 							},
- 							"col_span_label": 9
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "Anstieg des HICP von Jan bis Dez; Erwartungs\u0026shy;wert",
- 								"en": "HICP  in\u0026shy;crease from Jan to Dec; expected value"
- 							},
- 							"col_span_label": 3
- 						},
- 						{
- 							"name": "p1_y1",
- 							"type": "number",
- 							"max_chars": 3,
- 							"min": -10,
- 							"max": 20,
- 							"label": {
- 								"de": "2021",
- 								"en": "2021"
- 							},
- 							"suffix": {
- 								"de": "%",
- 								"en": "pct"
- 							},
- 							"horizontal_align_label": 2,
- 							"col_span_label": 1,
- 							"col_span_control": 1
- 						},
- 						{
- 							"name": "p1_y2",
- 							"type": "number",
- 							"max_chars": 3,
- 							"min": -10,
- 							"max": 20,
- 							"label": {
- 								"de": "2022",
- 								"en": "2022"
- 							},
- 							"suffix": {
- 								"de": "%",
- 								"en": "pct"
- 							},
- 							"horizontal_align_label": 2,
- 							"col_span_label": 1,
- 							"col_span_control": 1
- 						},
- 						{
- 							"name": "p1_y3",
- 							"type": "number",
- 							"max_chars": 3,
- 							"min": -10,
- 							"max": 20,
- 							"label": {
- 								"de": "2023",
- 								"en": "2023"
- 							},
- 							"suffix": {
- 								"de": "%",
- 								"en": "pct"
- 							},
- 							"horizontal_align_label": 2,
- 							"col_span_label": 1,
- 							"col_span_control": 1
- 						}
- 					]
- 				},
- 				{
- 					"bottom_vspacers": 3,
- 					"columns": 6,
- 					"odd_rows_coloring": true,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "\u003cb\u003e2.\u003c/b\u003e Haben Entwicklungen in den folgenden Bereichen Sie zu einer Revision Ihrer Inflationsprognosen (ggü. Vormonat) für den Euro\u0026shy;raum bewogen und wenn ja in welche Richtung?",
- 								"en": "\u003cb\u003e2.\u003c/b\u003e Which de\u0026shy;vel\u0026shy;op\u0026shy;ments have lead you to change your assessment of the inflation outlook for the Euro are compared to the previous month"
- 							},
- 							"col_span": 6,
- 							"col_span_label": 1
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "stark po\u0026shy;si\u0026shy;tiv",
- 								"en": "strong\u0026shy;ly pos\u0026shy;itive"
- 							},
- 							"col_span_label": 2,
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "po\u0026shy;si\u0026shy;tiv",
- 								"en": "pos\u0026shy;itive"
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "kein Ein\u0026shy;fluss",
- 								"en": "no in\u0026shy;fluence"
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "ne\u0026shy;ga\u0026shy;tiv",
- 								"en": "neg\u0026shy;ative"
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "stark ne\u0026shy;ga\u0026shy;tiv",
- 								"en": "strong\u0026shy;ly neg\u0026shy;ative"
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "keine\u003cbr\u003eAn\u0026shy;gabe",
- 								"en": "no an\u0026shy;swer"
- 							},
- 							"col_span_label": 1,
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "ioi_cycle_data_ea",
- 							"type": "radio",
- 							"label": {
- 								"de": "Kon\u0026shy;junk\u0026shy;tur\u0026shy;da\u0026shy;ten Euro\u0026shy;raum",
- 								"en": "Busi\u0026shy;ness cycle data Euro area"
- 							},
- 							"col_span_label": 2,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "ioi_cycle_data_ea",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "ioi_cycle_data_ea",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "ioi_cycle_data_ea",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "ioi_cycle_data_ea",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "ioi_cycle_data_ea",
- 							"type": "radio",
- 							"col_span_label": 1,
- 							"col_span_control": 1,
- 							"value_radio": "6"
- 						},
- 						{
- 							"name": "ioi_cycle_data_gl",
- 							"type": "radio",
- 							"label": {
- 								"de": "Kon\u0026shy;junk\u0026shy;tur\u0026shy;da\u0026shy;ten global",
- 								"en": "Busi\u0026shy;ness cycle data globally"
- 							},
- 							"col_span_label": 2,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "ioi_cycle_data_gl",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "ioi_cycle_data_gl",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "ioi_cycle_data_gl",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "ioi_cycle_data_gl",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "ioi_cycle_data_gl",
- 							"type": "radio",
- 							"col_span_label": 1,
- 							"col_span_control": 1,
- 							"value_radio": "6"
- 						},
- 						{
- 							"name": "ioi_wages_ea",
- 							"type": "radio",
- 							"label": {
- 								"de": "Löhne Euro\u0026shy;raum",
- 								"en": "Wages Euro area"
- 							},
- 							"col_span_label": 2,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "ioi_wages_ea",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "ioi_wages_ea",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "ioi_wages_ea",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "ioi_wages_ea",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "ioi_wages_ea",
- 							"type": "radio",
- 							"col_span_label": 1,
- 							"col_span_control": 1,
- 							"value_radio": "6"
- 						},
- 						{
- 							"name": "ioi_rmp",
- 							"type": "radio",
- 							"label": {
- 								"de": "Roh\u0026shy;stoff\u0026shy;preise",
- 								"en": "Raw material prices"
- 							},
- 							"col_span_label": 2,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "ioi_rmp",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "ioi_rmp",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "ioi_rmp",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "ioi_rmp",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "ioi_rmp",
- 							"type": "radio",
- 							"col_span_label": 1,
- 							"col_span_control": 1,
- 							"value_radio": "6"
- 						},
- 						{
- 							"name": "ioi_exch_rates",
- 							"type": "radio",
- 							"label": {
- 								"de": "Wechsel\u0026shy;kurse",
- 								"en": "Exchange rates"
- 							},
- 							"col_span_label": 2,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "ioi_exch_rates",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "ioi_exch_rates",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "ioi_exch_rates",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "ioi_exch_rates",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "ioi_exch_rates",
- 							"type": "radio",
- 							"col_span_label": 1,
- 							"col_span_control": 1,
- 							"value_radio": "6"
- 						},
- 						{
- 							"name": "ioi_mp_ecb",
- 							"type": "radio",
- 							"label": {
- 								"de": "EZB-Geld\u0026shy;po\u0026shy;li\u0026shy;tik",
- 								"en": "ECB monetary policy"
- 							},
- 							"col_span_label": 2,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "ioi_mp_ecb",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "ioi_mp_ecb",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "ioi_mp_ecb",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "ioi_mp_ecb",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "ioi_mp_ecb",
- 							"type": "radio",
- 							"col_span_label": 1,
- 							"col_span_control": 1,
- 							"value_radio": "6"
- 						}
- 					],
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {
- 								"template_columns": "   3fr    1fr    1fr    1fr    1fr    2fr "
- 							},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
- 				},
- 				{
- 					"bottom_vspacers": 3,
- 					"columns": 100,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "\u003cb\u003e3.\u003c/b\u003e Den Hauptre\u0026shy;finanz\u0026shy;ierungssatz der EZB (am 3) erwarte ich auf Sicht von",
- 								"en": "\u003cb\u003e3.\u003c/b\u003e I expect the main refinance rate of the ECB (3) in"
- 							},
- 							"col_span_label": 100
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "6\u0026nbsp;Monaten",
- 								"en": "6\u0026nbsp;months"
- 							},
- 							"horizontal_align_label": 2,
- 							"css_label": "special-min-width-85",
- 							"col_span_label": 8
- 						},
- 						{
- 							"name": "i_ez_06_low",
- 							"type": "number",
- 							"max_chars": 3,
- 							"min": -10,
- 							"max": 20,
- 							"label": {
- 								"de": "zwischen\u0026nbsp;",
- 								"en": "between\u0026nbsp;"
- 							},
- 							"suffix": {
- 								"de": "%",
- 								"en": "pct"
- 							},
- 							"horizontal_align_label": 2,
- 							"css_label": "special-line-height-higher",
- 							"col_span_label": 7,
- 							"col_span_control": 9
- 						},
- 						{
- 							"name": "i_ez_06_high",
- 							"type": "number",
- 							"max_chars": 3,
- 							"min": -10,
- 							"max": 20,
- 							"label": {
- 								"de": "und",
- 								"en": "and"
- 							},
- 							"suffix": {
- 								"de": "%",
- 								"en": "pct"
- 							},
- 							"col_span_label": 3,
- 							"col_span_control": 73
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": " 24\u0026nbsp;Monaten",
- 								"en": " 24\u0026nbsp;months"
- 							},
- 							"horizontal_align_label": 2,
- 							"css_label": "mobile-wider",
- 							"col_span_label": 8
- 						},
- 						{
- 							"name": "i_ez_24_low",
- 							"type": "number",
- 							"max_chars": 3,
- 							"min": -10,
- 							"max": 20,
- 							"label": {
- 								"de": "zwischen\u0026nbsp;",
- 								"en": "between\u0026nbsp;"
- 							},
- 							"suffix": {
- 								"de": "%",
- 								"en": "pct"
- 							},
- 							"horizontal_align_label": 2,
- 							"css_label": "special-line-height-higher",
- 							"col_span_label": 7,
- 							"col_span_control": 9
- 						},
- 						{
- 							"name": "i_ez_24_high",
- 							"type": "number",
- 							"max_chars": 3,
- 							"min": -10,
- 							"max": 20,
- 							"label": {
- 								"de": "und",
- 								"en": "and"
- 							},
- 							"suffix": {
- 								"de": "%",
- 								"en": "pct"
- 							},
- 							"col_span_label": 3,
- 							"col_span_control": 73
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": " \u0026nbsp;",
- 								"en": " \u0026nbsp;"
- 							},
- 							"css_label": "mobile-wider",
- 							"col_span_label": 15
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "\u0026nbsp; [zentrales 90% Konfidenzintervall]",
- 								"en": "\u0026nbsp; [central 90\u0026nbsp;pct confidence interval]"
- 							},
- 							"css_label": "special-input-textblock-smaller",
- 							"col_span_label": 85
- 						}
- 					]
- 				}
- 			]
- 		},
- 		{
- 			"section": {
- 				"de": "Abschluss",
- 				"en": "Finish"
- 			},
- 			"label": {
- 				"de": "",
- 				"en": ""
- 			},
- 			"description": {
- 				"de": "",
- 				"en": ""
- 			},
- 			"short": {
- 				"de": "Abschluss",
- 				"en": "Finish"
- 			},
- 			"navi_num": 9,
  			"style": {
  				"desktop": {
  					"grid_container_style": {},
@@ -6271,7 +5490,7 @@
  				"mobile": {
  					"grid_container_style": {},
  					"box_style": {
- 						"width_max": "none"
+ 						"width_max": "calc(100% - 1.2rem)"
  					},
  					"grid_item_style": {},
  					"text_style": {}
@@ -6337,7 +5556,6 @@
  								"de": "Durch Klicken auf 'OK' erhalten Sie eine Zusammenfassung Ihrer Antworten",
  								"en": "By Clicking 'OK' you receive a summary of your an\u0026shy;swers"
  							},
- 							"css_label": "special-line-height-higher",
  							"col_span_label": 1
  						},
  						{
@@ -6349,7 +5567,7 @@
  							},
  							"accesskey": "n",
  							"col_span_control": 1,
- 							"response": "10"
+ 							"response": "9"
  						}
  					]
  				}
@@ -6374,13 +5592,11 @@
  					"inputs": [
  						{
  							"type": "dyn-textblock",
- 							"css_label": "special-line-height-higher",
  							"col_span_control": 1,
  							"dynamic_func": "RepsonseStatistics"
  						},
  						{
  							"type": "dyn-textblock",
- 							"css_label": "special-line-height-higher",
  							"col_span_control": 1,
  							"dynamic_func": "PersonalLink"
  						},
@@ -6390,7 +5606,6 @@
  								"de": "\n\t\u003cdiv class='markdown'\u003e\n\u003ch1\u003eHinweise\u003c/h1\u003e\n\n\u003cul\u003e\n\u003cli\u003e\u003cp\u003eDurch klicken auf \u003ccode\u003eWeiter\u003c/code\u003e werden Ihre Antworten gespeichert und Sie gelangen zur jeweils nächsten Seite.\u003c/p\u003e\u003c/li\u003e\n\n\u003cli\u003e\u003cp\u003eBei einer Unterbrechung (Schließen des Browsers) blei\u0026shy;ben Ihre Antworten erhalten und können später über Ihren persönlichen Link wieder aufgerufen und geändert werden.\u003c/p\u003e\u003c/li\u003e\n\n\u003cli\u003e\u003cp\u003eAm Ende der Befragung können Sie den Fragebogen abschließen, so dass keine weiteren Änderungen möglich sind.\u003c/p\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\n\u003ch2\u003eDa\u0026shy;tenschutz\u003c/h2\u003e\n\n\u003cul\u003e\n\u003cli\u003e\u003cp\u003eHier finden Sie unsere \u003ca href=\"https://www.zew.de/de/da\u0026shy;tenschutz/\"\u003eDa\u0026shy;tenschutz-Grundlagen\u003c/a\u003e.\u003c/p\u003e\u003c/li\u003e\n\n\u003cli\u003e\u003cp\u003eIhre An\u0026shy;gaben werden streng vertraulich behandelt.\u003c/p\u003e\u003c/li\u003e\n\n\u003cli\u003e\u003cp\u003eDie Auswertung Ihrer Antworten erfolgt als \u003ca href=\"https://de.wikipedia.org/wiki/Panelda\u0026shy;ten\"\u003ePanel-Da\u0026shy;tensatz\u003c/a\u003e in anonymisierter Form.\u003c/p\u003e\u003c/li\u003e\n\n\u003cli\u003e\u003cp\u003eIhre Da\u0026shy;ten werden auf einem geschützten Server im ZEW Hauptgebäude gespeichert, auf den nur Mitglieder des ZEW Teams für den Finanzmarkttest Zugriff haben.\u003c/p\u003e\u003c/li\u003e\n\n\u003cli\u003e\u003cp\u003eZusätzlich bitten wir um Ihr Einverständnis, dass wir Ihre Antworten intern mit Ihrer geschäftlichen Identität verknüpfen.\u003c/p\u003e\u003c/li\u003e\n\n\u003cli\u003e\u003cp\u003eIhre geschäftliche Identität besteht aus Ihrem Namen, Ihrer Funktion, geschäftl. Email und Telefonnummer, Arbeitgeber und Teilnahmebeginn.\u003c/p\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\n\t\u003c/div\u003e  \u003c!-- markdown --\u003e\n",
  								"en": "\n\t\u003cdiv class='markdown'\u003e\n\u003ch3\u003eContact\u003c/h3\u003e\n\n\u003cp\u003eDr. Michael Schröder\u003c/p\u003e\n\n\u003cp\u003ePhone: 0621/1235-368\u003c/p\u003e\n\n\u003cp\u003eFax: 0621/1235-4223\u003c/p\u003e\n\n\u003cp\u003eEmail: schroeder@zew.de\u003c/p\u003e\n\n\u003ch3\u003eAddress\u003c/h3\u003e\n\n\u003cp\u003eCentre for European Eco\u0026shy;nom\u0026shy;ic Re\u0026shy;search (ZEW) Mannheim\u003c/p\u003e\n\n\u003cp\u003ePostfach 10 34 43\u003c/p\u003e\n\n\u003cp\u003e68034 Mannheim\u003c/p\u003e\n\n\u003cp\u003eGermany\u003c/p\u003e\n\n\u003ch3\u003eTechnical issues\u003c/h3\u003e\n\n\u003cp\u003ePlease report technical issues\u003cbr /\u003e\nwith the online questionnaire to:\u003c/p\u003e\n\n\u003cp\u003ePeter Buchmann (buchmann@zew.de)\u003c/p\u003e\n\n\t\u003c/div\u003e  \u003c!-- markdown --\u003e\n"
  							},
- 							"css_label": "special-line-height-higher",
  							"col_span_label": 1
  						}
  					]

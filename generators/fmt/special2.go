@@ -61,7 +61,6 @@ func addSeasonal2(q *qst.QuestionnaireT) error {
 				"de": "%",
 				"en": "pct",
 			}
-			inp.HAlignLabel = qst.HRight
 
 		}
 		{
@@ -81,7 +80,6 @@ func addSeasonal2(q *qst.QuestionnaireT) error {
 				"de": "%",
 				"en": "pct",
 			}
-			inp.HAlignLabel = qst.HRight
 		}
 		{
 			inp := gr.AddInput()
@@ -100,7 +98,6 @@ func addSeasonal2(q *qst.QuestionnaireT) error {
 				"de": "%",
 				"en": "pct",
 			}
-			inp.HAlignLabel = qst.HRight
 
 		}
 
@@ -179,8 +176,6 @@ func addSeasonal2(q *qst.QuestionnaireT) error {
 				"de": "6&nbsp;Monaten",
 				"en": "6&nbsp;months",
 			}
-			inp.HAlignLabel = qst.HRight
-			inp.CSSLabel = "special-min-width-85"
 		}
 
 		{
@@ -194,15 +189,12 @@ func addSeasonal2(q *qst.QuestionnaireT) error {
 			// inp.Validator = "inRange20"
 
 			inp.ColSpanLabel = 7
-			inp.CSSLabel = "special-line-height-higher"
 			inp.ColSpanControl = 9
 			inp.Label = trl.S{
 				"de": "zwischen&nbsp;",
 				"en": "between&nbsp;",
 			}
 			inp.Suffix = trl.S{"de": "%", "en": "pct"}
-			inp.HAlignLabel = qst.HRight
-			inp.HAlignControl = qst.HLeft
 		}
 
 		{
@@ -221,8 +213,6 @@ func addSeasonal2(q *qst.QuestionnaireT) error {
 				"en": "and",
 			}
 			inp.Suffix = trl.S{"de": "%", "en": "pct"}
-			inp.HAlignLabel = qst.HLeft
-			inp.HAlignControl = qst.HLeft
 		}
 
 		{
@@ -233,8 +223,6 @@ func addSeasonal2(q *qst.QuestionnaireT) error {
 				"de": " 24&nbsp;Monaten",
 				"en": " 24&nbsp;months",
 			}
-			inp.HAlignLabel = qst.HRight
-			inp.CSSLabel = "mobile-wider"
 
 		}
 
@@ -249,15 +237,12 @@ func addSeasonal2(q *qst.QuestionnaireT) error {
 			// inp.Validator = "inRange20"
 
 			inp.ColSpanLabel = 7
-			inp.CSSLabel = "special-line-height-higher"
 			inp.ColSpanControl = 9
 			inp.Label = trl.S{
 				"de": "zwischen&nbsp;",
 				"en": "between&nbsp;",
 			}
 			inp.Suffix = trl.S{"de": "%", "en": "pct"}
-			inp.HAlignLabel = qst.HRight
-			inp.HAlignControl = qst.HLeft
 		}
 
 		{
@@ -276,8 +261,6 @@ func addSeasonal2(q *qst.QuestionnaireT) error {
 				"en": "and",
 			}
 			inp.Suffix = trl.S{"de": "%", "en": "pct"}
-			inp.HAlignLabel = qst.HLeft
-			inp.HAlignControl = qst.HLeft
 		}
 
 		{
@@ -288,7 +271,6 @@ func addSeasonal2(q *qst.QuestionnaireT) error {
 				"de": " &nbsp;",
 				"en": " &nbsp;",
 			}
-			inp.CSSLabel = "mobile-wider"
 		}
 		{
 			inp := gr.AddInput()
@@ -298,7 +280,6 @@ func addSeasonal2(q *qst.QuestionnaireT) error {
 				"de": "&nbsp; [zentrales 90% Konfidenzintervall]",
 				"en": "&nbsp; [central 90&nbsp;pct confidence interval]",
 			}
-			inp.CSSLabel = "special-input-textblock-smaller"
 
 		}
 

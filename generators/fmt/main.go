@@ -96,7 +96,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				inp.CSSLabel = "special-line-height-higher"
 				inp.ColSpan = 1
 				inp.ColSpanLabel = 1
 				impr := trl.S{}
@@ -704,8 +703,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 						"en": " medium term (<b>6</b>&nbsp;months) at ",
 					}
 					inp.Suffix = trl.S{"de": "%", "en": "pct"}
-					inp.HAlignLabel = qst.HRight
-					inp.HAlignControl = qst.HLeft
 				}
 
 				{
@@ -725,8 +722,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 					}
 
 					inp.Suffix = trl.S{"de": "%", "en": "pct"}
-					inp.HAlignLabel = qst.HRight
-					inp.HAlignControl = qst.HLeft
 				}
 			}
 		*/
@@ -893,8 +888,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.ColSpanLabel = 4
 				inp.ColSpanControl = 1
 				inp.Suffix = trl.S{"de": "%", "en": "pct"}
-				inp.HAlignLabel = qst.HLeft
-				inp.HAlignControl = qst.HLeft
 			}
 
 			{
@@ -913,8 +906,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.ColSpanLabel = 4
 				inp.ColSpanControl = 1
 				inp.Suffix = trl.S{"de": "%", "en": "pct"}
-				inp.HAlignLabel = qst.HLeft
-				inp.HAlignControl = qst.HLeft
 			}
 		}
 
@@ -956,8 +947,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 						"en": fmt.Sprintf("Our estimate for the <b>German</b> GDP growth in %v        <xxbr/>\n(real, seasonally adjusted, non annualized)", nextQ()),
 					}
 					inp.Suffix = trl.S{"de": "%", "en": "pct"}
-					inp.HAlignLabel = qst.HLeft
-					inp.HAlignControl = qst.HLeft
 					inp.ColSpanControl = 1
 				}
 
@@ -976,8 +965,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 						"en": fmt.Sprintf("Our estimate for the GDP growth in %v                <xxbr/>\n(real, seasonally adjusted)", nextY()),
 					}
 					inp.Suffix = trl.S{"de": "%", "en": "pct"}
-					inp.HAlignLabel = qst.HLeft
-					inp.HAlignControl = qst.HLeft
 					inp.ColSpanControl = 1
 				}
 			}
@@ -996,46 +983,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 						"en": "<b>3b.</b> ",
 					}
 				}
-				{
-					inp := gr.AddInput()
-					inp.Type = "number"
-					inp.Name = "yshr_q_deu"
-					inp.Min = 0
-					inp.Max = 100
-					inp.MaxChars = 4
-					// inp.Validator = "inRange100"
-
-					inp.ColSpanLabel = 4
-					inp.Label = trl.S{
-						"de": fmt.Sprintf("Die Wahrscheinlichkeit eines negativen Wachstums des <b>deutschen</b> BIP in %v liegt bei", nextQ()),
-						"en": fmt.Sprintf("The probability of negative growth for the <b>German</b> GDP in %v is", nextQ()),
-					}
-					inp.Suffix = trl.S{"de": "%", "en": "pct"}
-					inp.HAlignLabel = qst.HLeft
-					inp.HAlignControl = qst.HLeft
-					inp.ColSpanControl = 1
-				}
-
-				{
-					inp := gr.AddInput()
-					inp.Type = "number"
-					inp.Name = "yshr_y_deu"
-					inp.Min = 0
-					inp.Max = 100
-					inp.MaxChars = 4
-					// inp.Validator = "inRange100"
-
-					inp.ColSpanLabel = 4
-					inp.Label = trl.S{
-						"de": fmt.Sprintf("Die Wahrscheinlichkeit einer Rezession in Deutschland <xxbr/>\n(mind. 2&nbsp;Quartale neg. Wachstum) bis Q4 %v liegt bei", nextY()),
-						"en": fmt.Sprintf("The probability of a recession in Germany             <xxbr/>\n(at least 2&nbsp;quarters neg. growth) until Q4 %v is", nextY()),
-					}
-					inp.Suffix = trl.S{"de": "%", "en": "pct"}
-					inp.HAlignLabel = qst.HLeft
-					inp.HAlignControl = qst.HLeft
-					inp.ColSpanControl = 1
-				}
-			}
 
 		}
 	*/
@@ -1202,11 +1149,12 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	if err != nil {
 		return nil, fmt.Errorf("Error adding seasonal1: %v", err)
 	}
-
-	err = addSeasonal2(&q)
-	if err != nil {
-		return nil, fmt.Errorf("Error adding seasonal2: %v", err)
-	}
+	/*
+		err = addSeasonal2(&q)
+		if err != nil {
+			return nil, fmt.Errorf("Error adding seasonal2: %v", err)
+		}
+	*/
 
 	//
 	// page 7 - after seasonal
@@ -1289,7 +1237,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 					"en": "By Clicking 'OK' you receive a summary of your answers",
 				}
 				inp.ColSpanLabel = 1
-				inp.CSSLabel = "special-line-height-higher"
 			}
 			{
 				inp := gr.AddInput()
@@ -1303,8 +1250,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				}
 				inp.ColSpanControl = 1
 				inp.AccessKey = "n"
-				inp.HAlignControl = qst.HCenter
-				inp.HAlignControl = qst.HLeft
 			}
 		}
 
@@ -1325,21 +1270,18 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp := gr.AddInput()
 				inp.Type = "dyn-textblock"
 				inp.ColSpanControl = 1
-				inp.CSSLabel = "special-line-height-higher"
 				inp.DynamicFunc = "RepsonseStatistics"
 			}
 			{
 				inp := gr.AddInput()
 				inp.Type = "dyn-textblock"
 				inp.ColSpanControl = 1
-				inp.CSSLabel = "special-line-height-higher"
 				inp.DynamicFunc = "PersonalLink"
 			}
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
 				inp.ColSpanLabel = 1
-				inp.CSSLabel = "special-line-height-higher"
 				impr := trl.S{}
 				for _, lc := range q.LangCodes {
 					w1 := &strings.Builder{}

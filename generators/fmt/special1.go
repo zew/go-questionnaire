@@ -18,10 +18,13 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 	}
 
 	page := q.AddPage()
-	page.Section = trl.S{"de": "Sonderfrage", "en": "Special"}
-	page.Label = trl.S{"de": "Prognosetreiber Wachstum", "en": "Growth drivers"}
-	page.Short = trl.S{"de": "Sonderfrage:<br>Wachstums-<br>treiber", "en": "Special:<br>Growth<br>drivers"}
-	page.Style = css.DesktopWidthMax(page.Style, "36rem") // 60
+	// pge.Section = trl.S{"de": "Sonderfrage", "en": "Special"}
+	page.Label = trl.S{
+		"de": "Sonderfrage: Kurz- und mittelfristiges Wirtschaftswachstum",
+		"en": "Special: Short and Medium Term Economic Growth",
+	}
+	page.Short = trl.S{"de": "Wachstum", "en": "Growth"}
+	page.Style = css.DesktopWidthMax(page.Style, "42rem")
 
 	{
 		gr := page.AddGroup()
@@ -30,12 +33,19 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 		{
 			inp := gr.AddInput()
 			inp.Type = "textblock"
+			inp.ColSpan = 6
 			inp.ColSpanLabel = 6
 			inp.Label = trl.S{
 				"de": "<b>1.</b> Punktprognose der Wachstumsrate des deutschen BIP",
 				"en": "<b>1.</b> Forecast growth rate German GDP",
 			}
 		}
+
+		sLbl := css.NewStylesResponsive(nil)
+		// inp.StyleLbl.Desktop.StyleGridItem.AlignSelf = "start"
+		sLbl.Desktop.StyleGridItem.JustifySelf = "start"
+		sLbl.Desktop.StyleGridItem.JustifySelf = "end"
+		sLbl.Desktop.StyleBox.Padding = "0 0.6rem 0 0"
 
 		/*
 			Quarterly estimates.
@@ -54,14 +64,15 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 				"de": "Prognose Wachstum des BIP je <b>Quartal</b> <br>\n (real, saisonbereinigt, nicht annualisiert)",
 				"en": "Forecast <b>quarterly</b> GDP growth <br>\n(real, seasonally adjusted, non annualized)",
 			}
-			inp.ColSpanLabel = 3
+			inp.ColSpan = 6
 			inp.ColSpanLabel = 6
-			inp.CSSLabel = "special-input-margin-vertical"
 		}
 		{
 			inp := gr.AddInput()
 			inp.Type = "number"
 			inp.Name = "xquart1"
+			inp.ColSpan = 2
+			inp.ColSpanLabel = 1
 			inp.ColSpanControl = 1
 			inp.Min = 0
 			inp.Max = 20
@@ -75,13 +86,14 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 				"de": "%",
 				"en": "pct",
 			}
-			inp.HAlignLabel = qst.HRight
-
+			inp.StyleLbl = sLbl
 		}
 		{
 			inp := gr.AddInput()
 			inp.Type = "number"
 			inp.Name = "xquart2"
+			inp.ColSpan = 2
+			inp.ColSpanLabel = 1
 			inp.ColSpanControl = 1
 			inp.Min = 0
 			inp.Max = 20
@@ -95,12 +107,14 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 				"de": "%",
 				"en": "pct",
 			}
-			inp.HAlignLabel = qst.HRight
+			inp.StyleLbl = sLbl
 		}
 		{
 			inp := gr.AddInput()
 			inp.Type = "number"
 			inp.Name = "xquart3"
+			inp.ColSpan = 2
+			inp.ColSpanLabel = 1
 			inp.ColSpanControl = 1
 			inp.Min = 0
 			inp.Max = 20
@@ -114,9 +128,12 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 				"de": "%",
 				"en": "pct",
 			}
-			inp.HAlignLabel = qst.HRight
-
+			inp.StyleLbl = sLbl
 		}
+
+		//
+		// row 1
+		//
 
 		{
 			inp := gr.AddInput()
@@ -125,14 +142,15 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 				"de": "Prognose Wachstum des BIP aufs&nbsp;<b>Jahr</b> <br>\n(real, saisonbereinigt)",
 				"en": "Forecast GDP growth per&nbsp;<b>year</b> <br>\n(real, seasonally adjusted)",
 			}
+			inp.ColSpan = 6
 			inp.ColSpanLabel = 6
-
 		}
-
 		{
 			inp := gr.AddInput()
 			inp.Type = "number"
 			inp.Name = "xyear1"
+			inp.ColSpan = 2
+			inp.ColSpanLabel = 1
 			inp.ColSpanControl = 1
 			inp.Min = 0
 			inp.Max = 20
@@ -146,13 +164,14 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 				"de": "%",
 				"en": "pct",
 			}
-			inp.HAlignLabel = qst.HRight
-
+			inp.StyleLbl = sLbl
 		}
 		{
 			inp := gr.AddInput()
 			inp.Type = "number"
 			inp.Name = "xyear2"
+			inp.ColSpan = 2
+			inp.ColSpanLabel = 1
 			inp.ColSpanControl = 1
 			inp.Min = 0
 			inp.Max = 20
@@ -166,12 +185,14 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 				"de": "%",
 				"en": "pct",
 			}
-			inp.HAlignLabel = qst.HRight
+			inp.StyleLbl = sLbl
 		}
 		{
 			inp := gr.AddInput()
 			inp.Type = "number"
 			inp.Name = "xyear3"
+			inp.ColSpan = 2
+			inp.ColSpanLabel = 1
 			inp.ColSpanControl = 1
 			inp.Min = 0
 			inp.Max = 20
@@ -185,10 +206,8 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 				"de": "%",
 				"en": "pct",
 			}
-			inp.HAlignLabel = qst.HRight
-
+			inp.StyleLbl = sLbl
 		}
-
 	}
 
 	//
@@ -254,9 +273,10 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 				"en": "If other - which?",
 			}
 			inp.MaxChars = 28 // otherwise overflow in mobile
+
+			inp.ColSpan = 4
 			inp.ColSpanLabel = 2
 			inp.ColSpanControl = 6
-			inp.CSSControl = "special-input-textblock-smaller"
 		}
 
 	}

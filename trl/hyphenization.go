@@ -59,6 +59,7 @@ var hyph = []string{
 	"si&shy;cher",
 	"sin&shy;ken",  // sin|ken
 	"stei&shy;gen", // stei|gen
+	"Te&shy;le&shy;kom&shy;mu&shy;ni&shy;ka&shy;ti&shy;on", // Te|le|kom|mu|ni|ka|ti|on
 	"über&shy;haupt",
 	"un&shy;ent&shy;schieden",
 	"un&shy;wich&shy;tig",

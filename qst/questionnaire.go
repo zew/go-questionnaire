@@ -61,23 +61,6 @@ func nobreakGlue(el1, glue, el2 string) string {
 	return ret
 }
 
-// no wrap between input and suffix
-func appendSuffix(ctrl string, inp *inputT, langCode string) string {
-
-	if inp.Suffix.Empty() {
-		return ctrl
-	}
-
-	ctrl = strings.TrimSuffix(ctrl, "\n")
-	// We want to prevent line-break between input and suffix with '%' or '€'.
-	// inputs must be inline-block, for whitespace nowrap to work.
-	// At the same time: suffix-inner enables wrapping for the suffix itself
-	sfx := fmt.Sprintf("<span class=' %v  postlabel suffix-inner' >%v</span>\n", inp.CSSLabel, inp.Suffix.TrSilent(langCode))
-	ctrl = fmt.Sprintf("<span class='suffix-nowrap' >%v%v</span>\n", ctrl, sfx)
-
-	return ctrl
-}
-
 // Special subtype of inputT; used for radiogroup
 type radioT struct {
 	HAlign horizontalAlignment `json:"hori_align,omitempty"` // label and description left/center/right of input, default left, similar setting for radioT but not for group
@@ -113,12 +96,16 @@ type inputT struct {
 	Suffix    trl.S  `json:"suffix,omitempty"` // only for short units - such as € or % - for longer text use label.Style...Order = 2
 	AccessKey string `json:"accesskey,omitempty"`
 
-	HAlignLabel   horizontalAlignment `json:"horizontal_align_label,omitempty"`   // description left/center/right of input, default left, similar setting for radioT but not for group
-	HAlignControl horizontalAlignment `json:"horizontal_align_control,omitempty"` // label       left/center/right of input, default left, similar setting for radioT but not for group
+	/*
 
-	// extra styling - a CSS class must exist
-	CSSLabel   string `json:"css_label,omitempty"`   // vertical margins, line-height, indent - usually for the entire label+input
-	CSSControl string `json:"css_control,omitempty"` // usually only for the input element's inner style
+		HAlignLabel   horizontalAlignment `json:"horizontal_align_label,omitempty"`   // description left/center/right of input, default left, similar setting for radioT but not for group
+		HAlignControl horizontalAlignment `json:"horizontal_align_control,omitempty"` // label       left/center/right of input, default left, similar setting for radioT but not for group
+
+
+		// extra styling - a CSS class must exist
+		CSSLabel   string `json:"css_label,omitempty"`   // vertical margins, line-height, indent - usually for the entire label+input
+		CSSControl string `json:"css_control,omitempty"` // usually only for the input element's inner style
+	*/
 
 	/*Colspan determines, how many column slots of the group column layout
 	the input occupies.

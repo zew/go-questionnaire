@@ -241,8 +241,8 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int) string {
 
 	case "button":
 		ctrl = fmt.Sprintf(
-			"<button type='submit' name='%v' value='%v' class='%v' accesskey='%v'><b>%v</b> %v</button>\n",
-			inp.Name, inp.Response, inp.CSSControl, inp.AccessKey,
+			"<button type='submit' name='%v' value='%v' accesskey='%v'><b>%v</b> %v</button>\n",
+			inp.Name, inp.Response, inp.AccessKey,
 			inp.Label.TrSilent(q.LangCode), inp.Desc.TrSilent(q.LangCode),
 		)
 
@@ -254,8 +254,8 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int) string {
 			// width = fmt.Sprintf("width: %vem;", int(float64(80)*1.05))
 			width = "width: 98%;"
 		}
-		ctrl += fmt.Sprintf("<textarea        name='%v' id='%v' title='%v %v' class='%v' style='%v' maxlength='%v' %v  autocomplete='off' >%v</textarea>\n",
-			nm, nm, inp.Label.TrSilent(q.LangCode), inp.Desc.TrSilent(q.LangCode), inp.CSSControl, width, inp.MaxChars, colsRows, inp.Response)
+		ctrl += fmt.Sprintf("<textarea        name='%v' id='%v' title='%v %v' style='%v' maxlength='%v' %v  autocomplete='off' >%v</textarea>\n",
+			nm, nm, inp.Label.TrSilent(q.LangCode), inp.Desc.TrSilent(q.LangCode), width, inp.MaxChars, colsRows, inp.Response)
 
 	case "dropdown":
 		// i.DD = &DropdownT{}
@@ -263,7 +263,7 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int) string {
 		inp.DD.LC = q.LangCode
 		inp.DD.SetTitle(inp.Label.TrSilent(q.LangCode) + " " + inp.Desc.TrSilent(q.LangCode))
 		inp.DD.Select(inp.Response)
-		inp.DD.SetAttr("class", inp.CSSControl)
+		// inp.DD.SetAttr("class", inp.CSSControl)
 		sort.Sort(inp.DD)
 
 		ctrl += inp.DD.RenderStr()
@@ -311,12 +311,12 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int) string {
 		ctrl += fmt.Sprintf(
 			`<input type='%v'  %v  
 				name='%v' id='%v' title='%v %v' 
-				class='%v' style='%v'  
+				style='%v'  
 				size='%v' maxlength=%v min='%v' max='%v'  %v  value='%v'   autocomplete='off'  />
 			`,
 			inp.Type, inputMode,
 			nm, fmt.Sprintf("%v%v", nm, inp.ValueRadio), inp.Label.TrSilent(q.LangCode), inp.Desc.TrSilent(q.LangCode),
-			inp.CSSControl, width,
+			width,
 			inp.MaxChars, inp.MaxChars, inp.Min, inp.Max, checked,
 			rspvl,
 		)
@@ -329,7 +329,7 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int) string {
 		}
 
 	case "dyn-textblock":
-		ctrl = fmt.Sprintf("<span class='%v'>%v</span>\n", inp.CSSLabel, inp.Label.Tr(q.LangCode))
+		ctrl = fmt.Sprintf("<span>%v</span>\n", inp.Label.Tr(q.LangCode))
 
 	case "dyn-composite", "dyn-composite-scalar":
 		// no op

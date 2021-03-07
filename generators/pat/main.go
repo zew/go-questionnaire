@@ -97,7 +97,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			inp.Name = "submitBtn"
 			inp.Response = "1"
 			inp.Label = trl.S{"de": "Weiter"}
-			inp.HAlignControl = qst.HRight
 			inp.AccessKey = "n"
 		}
 
@@ -399,8 +398,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Max = 999
 				inp.ColSpanLabel = 3
 				inp.ColSpanControl = 2
-				inp.HAlignLabel = qst.HLeft
-				inp.HAlignLabel = qst.HRight
 				inp.Desc = trl.S{"de": "Beste Stiftung"}
 				inp.Suffix = trl.S{"de": "€"}
 				inp.Validator = "inRange1000"
@@ -414,8 +411,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Max = 999
 				inp.ColSpanLabel = 3
 				inp.ColSpanControl = 2
-				inp.HAlignLabel = qst.HRight
-				inp.HAlignLabel = qst.HLeft
 				inp.Desc = trl.S{"de": "Mittlere Stiftung"}
 				inp.Suffix = trl.S{"de": "€"}
 				inp.Validator = "inRange1000"
@@ -429,8 +424,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Max = 999
 				inp.ColSpanLabel = 3
 				inp.ColSpanControl = 2
-				inp.HAlignLabel = qst.HRight
-				inp.HAlignLabel = qst.HLeft
 				inp.Desc = trl.S{"de": "Schlechteste Stiftung"}
 				inp.Suffix = trl.S{"de": "€"}
 				inp.Validator = "inRange1000"
@@ -628,7 +621,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Desc = trl.S{"de": "Wie viele wählen Option A? Ihre Antwort:"}
 				inp.Desc = trl.S{"de": " "}
 				inp.Suffix = trl.S{"de": "von 10<br>wählen<br>Option A"}
-				inp.HAlignLabel = qst.HLeft
 				inp.Validator = "inRange10"
 			}
 			{
@@ -643,7 +635,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Desc = trl.S{"de": "Wie viele wählen Option B? Ihre Antwort:"}
 				inp.Desc = trl.S{"de": " "}
 				inp.Suffix = trl.S{"de": "von 10<br>wählen<br>Option B"}
-				inp.HAlignLabel = qst.HLeft
 				inp.Validator = "inRange10"
 			}
 			{
@@ -658,7 +649,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Desc = trl.S{"de": "Wie viele wählen Option C? Ihre Antwort:"}
 				inp.Desc = trl.S{"de": " "}
 				inp.Suffix = trl.S{"de": "von 10<br>wählen<br>Option C"}
-				inp.HAlignLabel = qst.HLeft
 				inp.Validator = "inRange10"
 			}
 		}
@@ -727,7 +717,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Desc = trl.S{"de": "Wie viele wählen Option A? Ihre Antwort:"}
 				inp.Desc = trl.S{"de": " "}
 				inp.Suffix = trl.S{"de": "von 10<br>wählen<br>Option A"}
-				inp.HAlignLabel = qst.HLeft
 				inp.Validator = "inRange10"
 			}
 			{
@@ -742,7 +731,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Desc = trl.S{"de": "Wie viele wählen Option B? Ihre Antwort:"}
 				inp.Desc = trl.S{"de": " "}
 				inp.Suffix = trl.S{"de": "von 10<br>wählen<br>Option B"}
-				inp.HAlignLabel = qst.HLeft
 				inp.Validator = "inRange10"
 			}
 			{
@@ -757,7 +745,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Desc = trl.S{"de": "Wie viele wählen Option C? Ihre Antwort:"}
 				inp.Desc = trl.S{"de": " "}
 				inp.Suffix = trl.S{"de": "von 10<br>wählen<br>Option C"}
-				inp.HAlignLabel = qst.HLeft
 				inp.Validator = "inRange10"
 			}
 		}
@@ -893,16 +880,12 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Type = "button"
 				inp.Name = "finished"
 				inp.Name = "submitBtn"
-				inp.CSSControl = "special-line-height-higher"
 				inp.Response = fmt.Sprintf("%v", len(q.Pages)-1+1) // +1 since one page is appended below
 				inp.Label = trl.S{"de": "", "en": ""}
 				inp.Desc = cfg.Get().Mp["end"]
 				inp.Desc = cfg.Get().Mp["finish_questionnaire"]
 				inp.ColSpanControl = 1
 				inp.AccessKey = "n"
-				inp.HAlignControl = qst.HCenter
-				inp.HAlignControl = qst.HLeft
-				inp.HAlignControl = qst.HRight
 			}
 		}
 
@@ -926,13 +909,11 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				inp.CSSLabel = "special-line-height-higher"
 				inp.Desc = cfg.Get().Mp["thanks_for_participation"]
 			}
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				inp.CSSLabel = "special-line-height-higher"
 				inp.Desc = cfg.Get().Mp["entries_saved"]
 			}
 		}

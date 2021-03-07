@@ -383,8 +383,7 @@ type pageT struct {
 	NoNavigation    bool  `json:"no_navigation,omitempty"` // Page will not show up in progress bar
 	NavigationalNum int   `json:"navi_num"`                // The number in Navigation order; based on NoNavigation; computed by q.Validate
 
-	Width int `json:"width,omitempty"` // default is 100 percent
-	// AestheticCompensation int `json:"aesthetic_compensation,omitempty"` // default is zero percent; if controls do not reach the right border
+	Style *css.StylesResponsive `json:"style,omitempty"`
 
 	Finished time.Time `json:"finished,omitempty"` // truncated to second; *not* a marker for finished entirely - for that we use q.FinishedEntirely
 
@@ -646,7 +645,7 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 		return s, fmt.Errorf(s)
 	}
 
-	p := q.Pages[pageIdx]
+	page := q.Pages[pageIdx]
 
 	found := false
 	for _, lc := range q.LangCodes {
@@ -663,27 +662,31 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 
 	w := &strings.Builder{}
 
+	page.Style = css.NewStylesResponsive(page.Style)
+	page.Style.Desktop.StyleBox.Margin = "0.6rem auto 0 auto"
+	pageClass := fmt.Sprintf("pg%02v", pageIdx)
+	fmt.Fprint(w, css.StyleTag(page.Style.CSS(pageClass)))
+
 	// i.e. smaller - for i.e. radios more closely together
-	// todo: change to Style
-	width := fmt.Sprintf("<div class='page-margins' style='margin: 0 auto; margin-top: 0.6rem; width: %v%%'  >\n", p.Width)
+	width := fmt.Sprintf("<div class='%v' >\n", pageClass)
 	fmt.Fprint(w, width)
 
 	hasHeader := false
 
-	if p.Section != nil {
-		fmt.Fprintf(w, "<span class='go-quest-page-section' >%v</span>", p.Section.Tr(q.LangCode))
-		if p.Label.Tr(q.LangCode) != "" {
+	if page.Section != nil {
+		fmt.Fprintf(w, "<span class='go-quest-page-section' >%v</span>", page.Section.Tr(q.LangCode))
+		if page.Label.Tr(q.LangCode) != "" {
 			fmt.Fprint(w, "<span class='go-quest-page-desc'> &nbsp; - &nbsp; </span>")
 		}
 		hasHeader = true
 	}
-	if p.Label.Tr(q.LangCode) != "" {
-		fmt.Fprintf(w, "<span class='go-quest-page-header' >%v</span>", p.Label.Tr(q.LangCode))
+	if page.Label.Tr(q.LangCode) != "" {
+		fmt.Fprintf(w, "<span class='go-quest-page-header' >%v</span>", page.Label.Tr(q.LangCode))
 		hasHeader = true
 	}
-	if p.Desc.Tr(q.LangCode) != "" {
+	if page.Desc.Tr(q.LangCode) != "" {
 		fmt.Fprint(w, vspacer0)
-		fmt.Fprintf(w, "<p  class='go-quest-page-desc'>%v</p>", p.Desc.Tr(q.LangCode))
+		fmt.Fprintf(w, "<p  class='go-quest-page-desc'>%v</p>", page.Desc.Tr(q.LangCode))
 		hasHeader = true
 	}
 
@@ -695,9 +698,9 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 	compositCntr := -1
 	nonCompositCntr := -1
 	for loopIdx, grpIdx := range grpOrder {
-		if p.Groups[grpIdx].HasComposit() {
+		if page.Groups[grpIdx].HasComposit() {
 			compositCntr++
-			compFuncNameWithParamSet := p.Groups[grpIdx].Inputs[0].DynamicFunc
+			compFuncNameWithParamSet := page.Groups[grpIdx].Inputs[0].DynamicFunc
 			cF, seqIdx, paramSetIdx := validateComposite(pageIdx, grpIdx, compFuncNameWithParamSet)
 			grpHTML, _, err := cF(q, seqIdx, paramSetIdx)
 			if err != nil {
@@ -723,8 +726,8 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 		}
 
 		// vertical distance at the end of groups
-		if loopIdx < len(p.Groups)-1 {
-			for i2 := 0; i2 < p.Groups[grpIdx].BottomVSpacers; i2++ {
+		if loopIdx < len(page.Groups)-1 {
+			for i2 := 0; i2 < page.Groups[grpIdx].BottomVSpacers; i2++ {
 				fmt.Fprint(w, vspacer16)
 			}
 		} else {
@@ -732,14 +735,14 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 		}
 	}
 
-	fmt.Fprint(w, "</div> <!-- /page-margins -->\n\n")
+	fmt.Fprintf(w, "</div> <!-- /%v -->\n\n", pageClass)
 
-	if p.ValidationFuncName != "" {
+	if page.ValidationFuncName != "" {
 
-		tplFile := p.ValidationFuncName + ".js"
+		tplFile := page.ValidationFuncName + ".js"
 
 		mp := map[string]string{}
-		mp["msg"] = p.ValidationFuncMsg.Tr(q.LangCode)
+		mp["msg"] = page.ValidationFuncMsg.Tr(q.LangCode)
 		t, err := tplHelper(tplFile)
 
 		if err != nil {

@@ -108,6 +108,31 @@ func labelsImproveDeteriorate() []trl.S {
 
 }
 
+func labelsImproveDeteriorateSectoral() []trl.S {
+
+	tm := []trl.S{
+		{
+			"de": "besser",
+			"en": "improve",
+		},
+		{
+			"de": "gleich bleiben",
+			"en": "not change",
+		},
+		{
+			"de": "schlechter",
+			"en": "deteriorate",
+		},
+		{
+			"de": "keine<br>Angabe",
+			"en": "no answer",
+		},
+	}
+
+	return tm
+
+}
+
 func labelsIncreaseDecrease() []trl.S {
 
 	tm := []trl.S{

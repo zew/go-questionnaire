@@ -193,3 +193,12 @@ func TextEnd(sr *StylesResponsive) *StylesResponsive {
 	sr.Desktop.StyleText.AlignHorizontal = "right"
 	return sr
 }
+
+// DesktopWidthMax limits width in desktop view
+// for instance to 30rem
+func DesktopWidthMax(sr *StylesResponsive, s string) *StylesResponsive {
+	sr = NewStylesResponsive(sr)
+	sr.Desktop.StyleBox.WidthMax = s
+	sr.Mobile.StyleBox.WidthMax = "none"
+	return sr
+}

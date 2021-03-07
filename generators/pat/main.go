@@ -4,6 +4,7 @@ import (
 	"fmt"
 
 	"github.com/zew/go-questionnaire/cfg"
+	"github.com/zew/go-questionnaire/css"
 	"github.com/zew/go-questionnaire/ctr"
 	"github.com/zew/go-questionnaire/qst"
 	"github.com/zew/go-questionnaire/trl"
@@ -43,9 +44,9 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	// page 0
 	{
 		page := q.AddPage()
-		page.Width = 60
 		page.Label = trl.S{"de": ""}
 		page.NoNavigation = true
+		page.Style = css.DesktopWidthMax(page.Style, "36rem") // 60
 
 		//
 		gr := page.AddGroup()
@@ -108,7 +109,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		// page.Label = trl.S{"de": "Stiftungen 1"}
 		page.Label = trl.S{"de": ""}
 		page.Short = trl.S{"de": "Stiftungen 1"}
-		page.Width = 60
+		page.Style = css.DesktopWidthMax(page.Style, "36rem") // 60
 
 		// gr0
 		{
@@ -261,7 +262,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	// page.Label = trl.S{"de": "Stiftungen 2"}
 	page.Label = trl.S{"de": ""}
 	page.Short = trl.S{"de": "Stiftungen 2"}
-	page.Width = 60
+	page.Style = css.DesktopWidthMax(page.Style, "36rem") // 60
 
 	// gr0
 	{
@@ -316,7 +317,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		// page.Label = trl.S{"de": "Stiftungen 2"}
 		page.Label = trl.S{"de": ""}
 		page.Short = trl.S{"de": "Stiftungen 3"}
-		page.Width = 60
+		page.Style = css.DesktopWidthMax(page.Style, "36rem") // 60
 
 		// loop over matrix questions
 		for i := 3; i < 6; i++ {
@@ -350,7 +351,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		// page.Label = trl.S{"de": "Auswertung"}
 		page.Label = trl.S{"de": ""}
 		page.Short = trl.S{"de": "Auswertung"}
-		page.Width = 60
+		page.Style = css.DesktopWidthMax(page.Style, "36rem") // 60
 
 		// gr0
 		{
@@ -565,7 +566,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		// page.Label = trl.S{"de": "Gruppenpräferenzen"}
 		page.Label = trl.S{"de": ""}
 		page.Short = trl.S{"de": "Gruppen-<br>präferenzen"}
-		page.Width = 60
+		page.Style = css.DesktopWidthMax(page.Style, "36rem") // 60
 
 		// gr0
 		{
@@ -769,7 +770,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		// page.Label = trl.S{"de": "Eigene Einstellung"}
 		page.Label = trl.S{"de": ""}
 		page.Short = trl.S{"de": "Eigene Einstellung"}
-		page.Width = 55
+		page.Style = css.DesktopWidthMax(page.Style, "42rem") // 55
 
 		// gr1
 		{

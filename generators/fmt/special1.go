@@ -1,6 +1,7 @@
 package fmt
 
 import (
+	"github.com/zew/go-questionnaire/css"
 	"github.com/zew/go-questionnaire/qst"
 	"github.com/zew/go-questionnaire/trl"
 )
@@ -20,7 +21,7 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 	page.Section = trl.S{"de": "Sonderfrage", "en": "Special"}
 	page.Label = trl.S{"de": "Prognosetreiber Wachstum", "en": "Growth drivers"}
 	page.Short = trl.S{"de": "Sonderfrage:<br>Wachstums-<br>treiber", "en": "Special:<br>Growth<br>drivers"}
-	page.Width = 60
+	page.Style = css.DesktopWidthMax(page.Style, "36rem") // 60
 
 	{
 		gr := page.AddGroup()

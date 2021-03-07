@@ -122,11 +122,6 @@ func (q *QuestionnaireT) Validate() error {
 	// Enumerate pages being in navigation sequence
 	for i1 := 0; i1 < len(q.Pages); i1++ {
 
-		// page default width is 100 - like group
-		if q.Pages[i1].Width == 0 {
-			q.Pages[i1].Width = 100
-		}
-
 		if !q.Pages[i1].NoNavigation {
 			navigationalNum++
 			q.Pages[i1].NavigationalNum = navigationalNum

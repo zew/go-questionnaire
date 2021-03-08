@@ -162,6 +162,14 @@ var coreTranslations = Map{
 		"it": "Inizia",
 		"pl": "Uruchomić",
 	},
+	"previous": {
+		"en": "Previous",
+		"de": "Zurück",
+		"es": "Previa",
+		"fr": "Précédente",
+		"it": "Precedente",
+		"pl": "Poprzedni",
+	},
 	"next": {
 		"en": "Next",
 		"de": "Weiter",

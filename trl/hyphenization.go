@@ -34,6 +34,7 @@ var hyph = []string{
 	"Geld&shy;po&shy;li&shy;tik", //
 	"ge&shy;samt",                // ge|samt
 	"Groß&shy;unter&shy;nehmen",
+	"Handels&shy;konflikte", //
 	"Immob&shy;ilien&shy;kredite",
 	"kom&shy;plett",
 	"Kon&shy;junk&shy;tur&shy;da&shy;ten ", // Kon|junk|tur

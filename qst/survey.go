@@ -199,9 +199,15 @@ func (s *surveyT) HTMLForm(questTypes []string, errStr string) string {
 	}
 	for i := 0; i < nP; i++ {
 		kv += fmt.Sprintf(
-			`            Param%v   <input type="text" name="Params[%v].Name" placeholder="name%v"  value="%v" /> <input type="text" name="Params[%v].Val"  placeholder="val%v"   value="%v" /><br>`,
+			"\t\tParam%v ",
 			i,
+		)
+		kv += fmt.Sprintf(
+			"<input type='text' name='param_keys[%v]' placeholder='name%v'  value='%v' />",
 			i, i, s.Params[i].Name,
+		)
+		kv += fmt.Sprintf(
+			"<input type='text' name='param_vals[%v]' placeholder='val%v'   value='%v' /><br>",
 			i, i, s.Params[i].Val,
 		)
 	}
@@ -211,7 +217,7 @@ func (s *surveyT) HTMLForm(questTypes []string, errStr string) string {
 		cfg.Pref(), s.Type, s.WaveID(), "1",
 	)
 	link2 := fmt.Sprintf(
-		"<a href='%v/generate-hash-ids?start=1000&stop=1020' target='_blank' >Generate hash IDs for direct login</a> - ultra short login URL - requires matching DirectLoginRanges in config<br>",
+		"<a href='%v/generate-hash-ids?start=10000&stop=10020&host=https://survey2.zew.de' target='_blank' >Generate hash IDs for direct login</a> - ultra short login URL - requires matching DirectLoginRanges in config<br>",
 		cfg.Pref(),
 	)
 	link3 := fmt.Sprintf(

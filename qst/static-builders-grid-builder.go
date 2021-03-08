@@ -192,7 +192,6 @@ func NewGridBuilderRadios(
 	// gb.dumpCols()
 
 	// adding rows
-	// for rowIdx := 0; rowIdx < len(firstColLabels); rowIdx++ {
 	for rowIdx := 0; rowIdx < len(inputNames); rowIdx++ {
 		name := inputNames[rowIdx]
 

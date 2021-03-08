@@ -53,13 +53,5 @@
         display: none;
     }
 
-	form[name=frmMain] {
-		width:      100%;
-		min-width:  unset;
-	}
-
-    .content form[name=frmMain] .content-quest {
-        border-top:      none;
-    }
 
 }

@@ -12,7 +12,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/monoculum/formam"
+	"github.com/go-playground/form"
 	"github.com/zew/go-questionnaire/cfg"
 	"github.com/zew/go-questionnaire/cloudio"
 	"github.com/zew/go-questionnaire/generators/fmt"
@@ -49,12 +49,14 @@ func get() []string {
 }
 
 type frmT struct {
-	Type     string       `json:"type"`
-	Year     int          `json:"year"`
-	Month    int          `json:"month"`
-	Deadline string       `json:"deadline"`
-	Params   []qst.ParamT `json:"params"`
-	Submit   string       `json:"submit"`
+	Type     string `json:"type"`
+	Year     int    `json:"year"`
+	Month    int    `json:"month"`
+	Deadline string `json:"deadline"`
+	// Params    []qst.ParamT `json:"params"`
+	ParamKeys []string `json:"param_keys,omitempty"`
+	ParamVals []string `json:"param_vals,omitempty"`
+	Submit    string   `json:"submit,omitempty"`
 }
 
 // GenerateQuestionnaireTemplates generates a questionnaire for a bespoke survey
@@ -67,12 +69,15 @@ func GenerateQuestionnaireTemplates(w http.ResponseWriter, r *http.Request) {
 	if r.Method == "POST" {
 		// myfmt.Fprint(w, "is POST<br>\n")
 		frm := frmT{}
-		dec := formam.NewDecoder(&formam.DecoderOptions{TagName: "json"})
-		err := dec.Decode(r.Form, &frm)
+		dec := form.NewDecoder()
+		dec.SetTagName("json") // recognizes and ignores ,omitempty
+		err := dec.Decode(&frm, r.Form)
 		if err != nil {
 			errStr += myfmt.Sprint(err.Error() + "<br>\n")
 		}
+
 		// myfmt.Fprint(w, "<pre>"+util.IndentedDump(frm)+"</pre><br>\n")
+
 		s.Type = frm.Type
 		s.Year = frm.Year
 		s.Month = time.Month(frm.Month)
@@ -87,7 +92,15 @@ func GenerateQuestionnaireTemplates(w http.ResponseWriter, r *http.Request) {
 		}
 
 		s.Deadline = t
-		s.Params = frm.Params
+
+		newParams := []qst.ParamT{}
+		for i := 0; i < len(frm.ParamKeys); i++ {
+			p := qst.ParamT{}
+			p.Name = frm.ParamKeys[i]
+			p.Val = frm.ParamVals[i]
+			newParams = append(newParams, p)
+		}
+		s.Params = newParams
 		// myfmt.Fprint(w, "<pre>"+util.IndentedDump(s)+"</pre><br>\n")
 
 	}

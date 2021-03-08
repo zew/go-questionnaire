@@ -74,7 +74,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		{
 			// greeting
 			gr := p.AddGroup()
-			gr.Cols = 2 // necessary, otherwise no vspacers
+			gr.Cols = 2
 			gr.OddRowsColoring = false
 			gr.Label = trl.S{
 				"de": "",
@@ -158,7 +158,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			emptyRowLabels := []trl.S{}
 			// ausge&shy;schlossen  - manual override of hyphenization
 			gr := p.AddRadioMatrixGroup(labels9("ausge&shy;schlossen", "", "sicher"), names1stMatrix, emptyRowLabels, 1)
-			gr.Cols = 9 // necessary, otherwise no vspacers
+			gr.Cols = 9
 			gr.OddRowsColoring = false
 			gr.Label = trl.S{
 				"de": fmt.Sprintf("Frage %v: <br>", ctrPages.Increment()), // Frage 1
@@ -197,7 +197,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		{
 			// p1q2a
 			gr := p.AddGroup()
-			gr.Cols = 2 // necessary, otherwise no vspacers
+			gr.Cols = 2
 			gr.OddRowsColoring = false
 			gr.Label = trl.S{
 				"de": fmt.Sprintf("Frage %v: <br>", ctrPages.Increment()), // Frage 2
@@ -233,7 +233,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			names1stMatrix := []string{"bundesland_wachstum_2020"}
 			emptyRowLabels := []trl.S{}
 			gr := p.AddRadioMatrixGroup(labelsFiverPercentages(), names1stMatrix, emptyRowLabels, 1)
-			gr.Cols = 5 // necessary, otherwise no vspacers
+			gr.Cols = 5
 			gr.OddRowsColoring = false
 			gr.Desc = trl.S{
 				"de": fmt.Sprintf(`<b>b)</b> Welches wirtschaftliche Wachstum (BIP) 
@@ -246,7 +246,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			names1stMatrix := []string{"balanced_budget"}
 			emptyRowLabels := []trl.S{}
 			gr := p.AddRadioMatrixGroup(labels9("überhaupt nicht erstrebenswert", "", "sehr erstrebenswert"), names1stMatrix, emptyRowLabels, 1)
-			gr.Cols = 9 // necessary, otherwise no vspacers
+			gr.Cols = 9
 			gr.OddRowsColoring = false
 			gr.Label = trl.S{
 				"de": fmt.Sprintf("Frage %v: <br>", ctrPages.Increment()), // Frage 3
@@ -283,7 +283,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		// group1
 		{
 			gr := p.AddGroup()
-			gr.Cols = 5 // necessary, otherwise no vspacers
+			gr.Cols = 5
 			gr.OddRowsColoring = false
 			gr.Label = trl.S{
 				"de": fmt.Sprintf("Frage %v: <br>", ctrPages.Increment()), // Frage 4
@@ -432,7 +432,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		// group2
 		{
 			gr := p.AddGroup()
-			gr.Cols = 5 // necessary, otherwise no vspacers
+			gr.Cols = 5
 			gr.OddRowsColoring = false
 			gr.Label = trl.S{
 				"de": fmt.Sprintf("Frage %v: <br>", ctrPages.Increment()), // Frage 5
@@ -605,7 +605,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			names1stMatrix := []string{"leistung_vergleichbarkeit"}
 			emptyRowLabels := []trl.S{}
 			gr := p.AddRadioMatrixGroup(labelsFiverWichtig(), names1stMatrix, emptyRowLabels, 1)
-			gr.Cols = 5 // necessary, otherwise no vspacers
+			gr.Cols = 5
 			gr.OddRowsColoring = false
 			gr.Label = trl.S{
 				"de": fmt.Sprintf("Frage %v: <br>", ctrPages.Increment()), // Frage 6
@@ -619,7 +619,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		if !varianten[0] {
 			{
 				gr := p.AddGroup()
-				gr.Cols = 2 // necessary, otherwise no vspacers
+				gr.Cols = 2
 				gr.OddRowsColoring = false
 
 				gr.Label = trl.S{
@@ -673,7 +673,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 		{
 			gr := p.AddGroup()
-			gr.Cols = 4 // necessary, otherwise no vspacers
+			gr.Cols = 4
 			gr.OddRowsColoring = false
 			gr.BottomVSpacers = 1
 			gr.Label = trl.S{
@@ -812,7 +812,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 		{
 			gr := p.AddGroup()
-			gr.Cols = 4 // necessary, otherwise no vspacers
+			gr.Cols = 4
 			gr.OddRowsColoring = false
 			gr.BottomVSpacers = 1
 			gr.Label = trl.S{
@@ -938,7 +938,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 		{
 			gr := p.AddGroup()
-			gr.Cols = 4 // necessary, otherwise no vspacers
+			gr.Cols = 4
 			gr.BottomVSpacers = 1
 			gr.OddRowsColoring = false
 
@@ -972,7 +972,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 		{
 			gr := p.AddGroup()
-			gr.Cols = 4 // necessary, otherwise no vspacers
+			gr.Cols = 4
 			gr.BottomVSpacers = 1
 			gr.OddRowsColoring = false
 
@@ -1030,7 +1030,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			names1stMatrix := []string{"schuelervergleichstest"}
 			emptyRowLabels := []trl.S{}
 			gr := p.AddRadioMatrixGroup(labelsFiverDafuerDagegen(), names1stMatrix, emptyRowLabels, 1)
-			gr.Cols = 5 // necessary, otherwise no vspacers
+			gr.Cols = 5
 			gr.OddRowsColoring = false
 			// gr.BottomVSpacers = 1
 			gr.Label = trl.S{
@@ -1052,7 +1052,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 		{
 			gr := p.AddGroup()
-			gr.Cols = 2 // necessary, otherwise no vspacers
+			gr.Cols = 2
 			gr.OddRowsColoring = false
 			// p3q7
 			gr.Label = trl.S{
@@ -1105,7 +1105,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			names1stMatrix := []string{"vergleichstest_regelmaessig"}
 			emptyRowLabels := []trl.S{}
 			gr := p.AddRadioMatrixGroup(labelsFiverDafuerDagegen(), names1stMatrix, emptyRowLabels, 1)
-			gr.Cols = 5 // necessary, otherwise no vspacers
+			gr.Cols = 5
 			gr.OddRowsColoring = false
 			gr.BottomVSpacers = 1
 			gr.Label = trl.S{
@@ -1203,7 +1203,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			}
 
 			gr := p.AddRadioGroupVertical("info_ueber_andere", rowLabels, 1)
-			gr.Cols = 1 // necessary, otherwise no vspacers
+			gr.Cols = 1
 			gr.OddRowsColoring = false
 			gr.BottomVSpacers = 1
 			gr.Label = trl.S{

@@ -3,47 +3,21 @@
 {{end}}
 
 
-<div class="content-quest">
 
-        {{if .Q.HasErrors}}
-            <p class="error" id="error" style="font-size:16px;margin: 20px 0px; "
-            >{{ cfg.Tr .Q.LangCode "correct_errors" }}</p>
-            <script>
-                $("#error").css("display","none");
-                $("#error").fadeIn("slow", function () {
-                    console.log("fade in complete");
-                });
-            </script>
-        {{end}}
-
-        <input type="hidden" name="token" value="{{formToken}}" />
-        {{toHTML (.Q.CurrentPageHTML) }}
-
-</div><!-- /content-quest -->
-
-
-
-{{if .Q.CurrPageInNavigation}}
-    <div class="content-footer">
-
-        <!-- display order reversed for tabbing -->
-
-        <div style="order: 2;">
-            {{if .Q.HasNext}}
-            <!-- name="submit" conflicts with JS form.submit() -->
-            <button type="submit" name="submitBtn" value="next" accesskey="n" style='padding: 0.4rem 1.8rem; padding-bottom: 0.6rem'>
-                {{ cfg.Tr .Q.LangCode "page" }} {{.Q.NextNaviNum}} >>
-            </button>
-            {{end}}
-        </div>
-
-        <div style="order: 1;">
-            {{if .Q.HasPrev}}
-            <!-- name="submit" conflicts with JS form.submit() -->
-            <button type="submit" name="submitBtn" value="prev" accesskey="p" style='font-size:70%;'>
-                << {{ cfg.Tr .Q.LangCode "page" }} {{.Q.PrevNaviNum}} </button>
-            {{end}}
-        </div>
-
-    </div><!-- /content-footer -->
+{{if .Q.HasErrors}}
+    <p class="error" id="error" style="font-size:16px;margin: 20px 0px; "
+    >{{ cfg.Tr .Q.LangCode "correct_errors" }}</p>
+    <script>
+        $("#error").css("display","none");
+        $("#error").fadeIn("slow", function () {
+            console.log("fade in complete");
+        });
+    </script>
 {{end}}
+
+<input type="hidden" name="token" value="{{formToken}}" />
+{{toHTML (.Q.CurrentPageHTML) }}
+
+
+
+

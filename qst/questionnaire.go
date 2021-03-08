@@ -18,6 +18,7 @@ import (
 	"time"
 
 	"github.com/pkg/errors"
+	"github.com/zew/go-questionnaire/cfg"
 	"github.com/zew/go-questionnaire/cloudio"
 	"github.com/zew/go-questionnaire/css"
 	"github.com/zew/go-questionnaire/lgn/shuffler"
@@ -225,7 +226,8 @@ func (inp inputT) HTML(langCode string, numCols float32) string {
 // it contains no response information;
 // a group is a layout unit with a configurable number of columns.
 type groupT struct {
-	BottomVSpacers int `json:"bottom_vspacers,omitempty"` // number of rows below the group, addGroup() initializes to 3
+	ID             string `json:"-"`                         // is only a helper, but must be exported in order to be stored in session
+	BottomVSpacers int    `json:"bottom_vspacers,omitempty"` // number of rows below the group, addGroup() initializes to 3
 
 	// Number of vertical columns;
 	// for horizontal *and* (not yet implemented) vertical layouts;
@@ -647,10 +649,68 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 		return s, fmt.Errorf(s)
 	}
 
+	if !page.NoNavigation {
+
+		var footer *groupT
+
+		if len(page.Groups) == 0 { // stupid edge case
+			footer = page.AddGroup()
+			footer.ID = "footer"
+			footer.BottomVSpacers = 0
+		}
+		if page.Groups[len(page.Groups)-1].ID == "footer" {
+			footer = page.Groups[len(page.Groups)-1]
+			footer.Inputs = nil
+		} else {
+			footer = page.AddGroup()
+			footer.ID = "footer"
+			footer.BottomVSpacers = 0
+		}
+		footer.Cols = 2
+
+		lblNext := cfg.Get().Mp["page"]
+		cloneNext := trl.S{}
+		for k, v := range lblNext {
+			cloneNext[k] = fmt.Sprintf("%v %v", v, q.NextNaviNum())
+		}
+		lblPrev := cfg.Get().Mp["previous"]
+
+		if q.HasNext() {
+			inp := footer.AddInput()
+			inp.Type = "button"
+			inp.Name = "submitBtn"
+			inp.Response = "next"
+			inp.Label = cloneNext
+			inp.AccessKey = "n"
+			inp.ColSpanControl = 1
+			inp.Style = css.NewStylesResponsive(nil)
+			inp.Style.Desktop.StyleGridItem.Order = 2
+			inp.StyleCtl = css.ItemEndMA(inp.StyleCtl)
+		} else {
+			inp := footer.addEmptyTextblock()
+			inp.Style = css.NewStylesResponsive(nil)
+			inp.Style.Desktop.StyleGridItem.Order = 2
+		}
+
+		if q.HasPrev() {
+			inp := footer.AddInput()
+			inp.Type = "button"
+			inp.Name = "submitBtn"
+			inp.Response = "prev"
+			inp.Label = lblPrev
+			inp.AccessKey = "p"
+			inp.ColSpanControl = 1
+			// inp.StyleCtl = css.ItemEndMA(inp.StyleCtl)
+		} else {
+			footer.addEmptyTextblock()
+		}
+	}
+
 	w := &strings.Builder{}
 
 	page.Style = css.NewStylesResponsive(page.Style)
-	page.Style.Desktop.StyleBox.Margin = "0.6rem auto 0 auto"
+	page.Style.Desktop.StyleBox.Margin = "1.2rem auto 0 auto"
+	page.Style.Mobile.StyleBox.Margin = "0.8rem auto 0 auto"
 	pageClass := fmt.Sprintf("pg%02v", pageIdx)
 	fmt.Fprint(w, css.StyleTag(page.Style.CSS(pageClass)))
 
@@ -720,10 +780,13 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 		} else {
 			fmt.Fprint(w, vspacer16)
 		}
+
 	}
 
 	fmt.Fprintf(w, "</div> <!-- /%v -->\n\n", pageClass)
 
+	//
+	//
 	if page.ValidationFuncName != "" {
 
 		tplFile := page.ValidationFuncName + ".js"

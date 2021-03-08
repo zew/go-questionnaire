@@ -539,7 +539,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp := gr.AddInput()
 				inp.Type = "number"
 				inp.Name = "dax_6"
-				inp.Min = 1000
+				inp.Min = 2000
 				inp.Max = 50000
 				inp.MaxChars = 6
 
@@ -568,7 +568,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp := gr.AddInput()
 				inp.Type = "number"
 				inp.Name = "dax_6_low"
-				inp.Min = 1000
+				inp.Min = 2000
 				inp.Max = 50000
 				inp.MaxChars = 6
 				inp.ColSpan = 3
@@ -597,7 +597,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp := gr.AddInput()
 				inp.Type = "number"
 				inp.Name = "dax_6_high"
-				inp.Min = 1000
+				inp.Min = 2000
 				inp.Max = 50000
 				inp.MaxChars = 6
 				inp.ColSpan = 2
@@ -787,8 +787,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				"en": "Automotive",
 			},
 			{
-				"de": "Chemie/Pharma",
-				"en": "Chem./Pharmac.",
+				"de": "Chemie, Pharma",
+				"en": "Chem. Pharmac.",
 			},
 			{
 				"de": "Stahl/NE-Metalle",
@@ -799,12 +799,12 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				"en": "Electrical Engineering",
 			},
 			{
-				"de": "Maschinenbau",
+				"de": "Maschinen&shy;bau",
 				"en": "Mechanical Engineering",
 			},
 			// row 2
 			{
-				"de": "Konsum/Handel",
+				"de": "Konsum, Handel",
 				"en": "Retail",
 			},
 			{
@@ -889,7 +889,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.ColSpanControl = 1
 				inp.Suffix = trl.S{"de": "%", "en": "pct"}
 			}
-
 			{
 				inp := gr.AddInput()
 				inp.Label = trl.S{
@@ -920,7 +919,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			// gr0
 			{
 				gr := page.AddGroup()
-				gr.Cols = 5 // necessary, otherwise no vspacers
+				gr.Cols = 5
 
 				{
 					inp := gr.AddInput()
@@ -972,7 +971,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			// gr1
 			{
 				gr := page.AddGroup()
-				gr.Cols = 5 // necessary, otherwise no vspacers
+				gr.Cols = 5
 
 				{
 					inp := gr.AddInput()
@@ -1166,10 +1165,11 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		page.Short = trl.S{"de": "Abschluss", "en": "Finish"}
 		page.Style = css.DesktopWidthMax(page.Style, "36rem") // 60
 
+		// gr1
 		{
 			gr := page.AddGroup()
-			gr.Cols = 1 // necessary, otherwise no vspacers
-
+			gr.Cols = 1
+			gr.BottomVSpacers = 2
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
@@ -1190,10 +1190,10 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			}
 		}
 
+		// gr2
 		{
 			gr := page.AddGroup()
-			gr.Cols = 2 // necessary, otherwise no vspacers
-
+			gr.Cols = 1
 			// todo
 			// inp.Validator = "mustRadioGroup"
 			{
@@ -1201,7 +1201,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				rad.Type = "radio"
 				rad.Name = "finished"
 				rad.ValueRadio = "no"
-				rad.ColSpanLabel = 1
+				rad.ColSpan = 1
+				rad.ColSpanLabel = 6
 				rad.ColSpanControl = 1
 				rad.Label = trl.S{
 					"de": "Zugang bleibt bestehen.  Daten können in weiteren Sitzungen geändert/ergänzt werden. <br/>\n &nbsp;",
@@ -1213,19 +1214,22 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				rad.Type = "radio"
 				rad.Name = "finished"
 				rad.ValueRadio = "yes"
-				rad.ColSpanLabel = 1
+				rad.ColSpan = 1
+				rad.ColSpanLabel = 6
 				rad.ColSpanControl = 1
 				rad.Label = trl.S{
 					"de": "Fragebogen ist abgeschlossen und kann nicht mehr geöffnet werden. <br/>\n &nbsp;",
 					"en": "Questionnaire is finished. No more edits.                         <br/>\n &nbsp;",
 				}
 			}
-
 		}
 
+		// gr3
 		{
 			gr := page.AddGroup()
-			gr.Cols = 2 // necessary, otherwise no vspacers
+			gr.Style = css.NewStylesResponsive(gr.Style)
+			gr.Cols = 2
+			gr.Style.Desktop.StyleGridContainer.TemplateColumns = "3fr 1fr"
 			// gr.Width = 80
 
 			{
@@ -1236,6 +1240,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 					"de": "Durch Klicken auf 'OK' erhalten Sie eine Zusammenfassung Ihrer Antworten",
 					"en": "By Clicking 'OK' you receive a summary of your answers",
 				}
+				inp.ColSpan = 1
 				inp.ColSpanLabel = 1
 			}
 			{
@@ -1245,11 +1250,14 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Response = fmt.Sprintf("%v", len(q.Pages)-1+1) // +1 since one page is appended below
 				inp.Label = trl.S{"de": "", "en": ""}
 				inp.Label = trl.S{
-					"de": "OK",
-					"en": "OK",
+					"de": "  &nbsp; &nbsp; OK  &nbsp;  &nbsp; ",
+					"en": "  &nbsp; &nbsp; OK  &nbsp;  &nbsp; ",
 				}
+				inp.ColSpan = 1
 				inp.ColSpanControl = 1
 				inp.AccessKey = "n"
+				inp.StyleCtl = css.NewStylesResponsive(inp.StyleCtl)
+				inp.StyleCtl.Desktop.StyleGridItem.JustifySelf = "end"
 			}
 		}
 

@@ -6,7 +6,7 @@ import (
 )
 
 type StyleGridContainer struct {
-	AutoFlow string `json:"auto_flow,omitempty"` // column | row | dense | dense column | dense row
+	AutoFlow string `json:"auto_flow,omitempty"` // column | row | dense | dense column | dense row;  there is no row-reverse as in CSS flex
 
 	AutoColumns string `json:"auto_columns,omitempty"` // default beyond TemplateColumns
 	AutoRows    string `json:"auto_rows,omitempty"`    // default beyond TemplateRows

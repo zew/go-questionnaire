@@ -521,11 +521,14 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
 
 input, select, button, textarea, a.button {
     padding:        0.2em 0.1em;
+    padding-top:    0.15em; /* moving the baseline upwards */
+    padding-bottom: 0.25em; 
+
     margin:         0.2em 0; /* 2021-02 - horizontal padding for label post - pre is handled by grid-column-gap  */
     margin-right:   0.3rem;
     border-radius:  0.15em;
-    font-size:      0.9rem;
-    font-weight:  300;
+    /* font-size:      0.9rem; */
+    font-weight:  400;
     line-height:    1.2;
 
     /* width: calc(100% - 1rem); */
@@ -1500,32 +1503,23 @@ ul.mnu-3rd-lvl li:last-child {
      previously hori-center-me
  */
 form[name=frmMain] {
-
-    display: flex;
-    flex-direction: column;
-
-    /* width:       70%;
-    min-width:  960px; */
-
-    margin:  0 auto;
-    padding: 0;
-    /* padding-top:20px; => causes vert scroll bar; use body.padding to adjust  */
-    /* padding-left:6%;  => aesthetic compensation moved to page rendering */
-    padding-right:  0px;
-    padding-bottom: 0px;
-
-    border: none;
-    background-color: transparent ;   /* important for progress bar */
-
+    /*  
+        width: 100%;
+        margin:  0;
+        padding: 0;
+        border: none;
+    */
+     background-color: transparent ;   /* important for progress bar */
 }
 
-.content form[name=frmMain] .content-quest {
+
+.XXXcontent form[name=frmMain] .content-quest {
     display:         flex;
     min-height:      40px;
     border-top:      1.4rem solid transparent;
 }
 
-.content form[name=frmMain] .content-footer {
+.XXXcontent form[name=frmMain] .content-footer {
     width:           95%;
     margin:          0 auto;
     margin-top:      1rem;

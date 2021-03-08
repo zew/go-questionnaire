@@ -147,7 +147,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			names1stMatrix := []string{"ecb"}
 			emptyRowLabels := []trl.S{}
 			gr := p.AddRadioMatrixGroup(labelsGoodBad19(), names1stMatrix, emptyRowLabels, 1)
-			gr.Cols = 9 // necessary, otherwise no vspacers
+			gr.Cols = 9
 			gr.OddRowsColoring = true
 			gr.Label = trl.S{
 				"en": fmt.Sprintf("%v. Appropriate monetary policy stance – European Central Bank<br>", groupOrdinal),
@@ -162,7 +162,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			names1stMatrix := []string{"fed"}
 			emptyRowLabels := []trl.S{}
 			gr := p.AddRadioMatrixGroup(labelsGoodBad19(), names1stMatrix, emptyRowLabels, 1)
-			gr.Cols = 9 // necessary, otherwise no vspacers
+			gr.Cols = 9
 			gr.OddRowsColoring = true
 			gr.Label = trl.S{
 				"en": fmt.Sprintf("%v. Appropriate monetary policy stance – US Federal Reserve<br>", groupOrdinal),
@@ -178,7 +178,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			names1stMatrix := []string{"fiscal"}
 			emptyRowLabels := []trl.S{}
 			gr := p.AddRadioMatrixGroup(labelsGoodBad19(), names1stMatrix, emptyRowLabels, 1)
-			gr.Cols = 9 // necessary, otherwise no vspacers
+			gr.Cols = 9
 			gr.OddRowsColoring = true
 			gr.Label = trl.S{
 				"en": fmt.Sprintf("%v. Appropriate fiscal policy stance<br>", groupOrdinal),
@@ -193,7 +193,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			names1stMatrix := []string{"privatization"}
 			emptyRowLabels := []trl.S{}
 			gr := p.AddRadioMatrixGroup(labelsGoodBad19(), names1stMatrix, emptyRowLabels, 1)
-			gr.Cols = 9 // necessary, otherwise no vspacers
+			gr.Cols = 9
 			gr.OddRowsColoring = true
 			gr.Label = trl.S{
 				"en": fmt.Sprintf("%v. Need for privatization<br>", groupOrdinal),
@@ -208,7 +208,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			names1stMatrix := []string{"labor"}
 			emptyRowLabels := []trl.S{}
 			gr := p.AddRadioMatrixGroup(labelsGoodBad19(), names1stMatrix, emptyRowLabels, 1)
-			gr.Cols = 9 // necessary, otherwise no vspacers
+			gr.Cols = 9
 			gr.OddRowsColoring = true
 			gr.Label = trl.S{
 				"en": fmt.Sprintf("%v. Extent of labor market regulation<br>", groupOrdinal),
@@ -223,7 +223,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			names1stMatrix := []string{"redistribution"}
 			emptyRowLabels := []trl.S{}
 			gr := p.AddRadioMatrixGroup(labelsGoodBad19(), names1stMatrix, emptyRowLabels, 1)
-			gr.Cols = 9 // necessary, otherwise no vspacers
+			gr.Cols = 9
 			gr.OddRowsColoring = true
 			gr.Label = trl.S{
 				"en": fmt.Sprintf("%v. Redistribution<br>", groupOrdinal),
@@ -238,7 +238,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			names1stMatrix := []string{"rules"}
 			emptyRowLabels := []trl.S{}
 			gr := p.AddRadioMatrixGroup(labelsGoodBad19(), names1stMatrix, emptyRowLabels, 1)
-			gr.Cols = 9 // necessary, otherwise no vspacers
+			gr.Cols = 9
 			gr.OddRowsColoring = true
 			gr.Label = trl.S{
 				"en": fmt.Sprintf("%v. Fiscal Rules<br>", groupOrdinal),

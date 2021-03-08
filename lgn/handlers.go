@@ -271,7 +271,9 @@ func GenerateHashesH(w http.ResponseWriter, r *http.Request) {
 <form method="post" action="{{.SelfURL}}"  style='white-space:pre' >
     <b>Create hash logins</b>
 		<input name="token"       type="hidden"   value="{{.Token}}" />
-        Survey
+        Host            <input name="host"        type="text"     value="{{.Host}}"><br>
+        
+		Survey
             Survey ID   <input name="survey_id"   type="text"     value="{{.SurveyID}}"><br>
             Wave ID     <input name="wave_id"     type="text"     value="{{.WaveID}}" ><br>
 
@@ -297,6 +299,8 @@ func GenerateHashesH(w http.ResponseWriter, r *http.Request) {
 		Token   string `json:"token"`
 
 		ErrMsg string `json:"err_msg"`
+
+		Host string `json:"host,omitempty"`
 
 		SurveyID string `json:"survey_id"`
 		WaveID   string `json:"wave_id"`
@@ -342,11 +346,11 @@ func GenerateHashesH(w http.ResponseWriter, r *http.Request) {
 	}
 
 	if fe.Start == 0 {
-		fe.Start = 1000
+		fe.Start = 10000
 	}
 
 	if fe.Stop == 0 {
-		fe.Stop = 1020
+		fe.Stop = 10020
 	}
 
 	b1 := &bytes.Buffer{}
@@ -363,14 +367,14 @@ func GenerateHashesH(w http.ResponseWriter, r *http.Request) {
 			}
 		}
 
-		url := fmt.Sprintf("%v?%v", cfg.PrefTS(), queryString)
+		url := fmt.Sprintf("%v?%v", fe.Host+cfg.PrefTS(), queryString)
 
 		fmt.Fprintf(b1, "<a href='%v'  target='_blank' >login as user %4v<a> ", url, i)
 		fmt.Fprintf(b2, "%4v\t\t%v\n", i, url)
 
 		fmt.Fprint(b1, " &nbsp; &nbsp; &nbsp; &nbsp; ")
 
-		url2 := fmt.Sprintf("%v?&%v", cfg.PrefTS("reload-from-questionnaire-template"), queryString)
+		url2 := fmt.Sprintf("%v?&%v", fe.Host+cfg.PrefTS("reload-from-questionnaire-template"), queryString)
 
 		fmt.Fprintf(b1, "<a href='%v'  target='_blank' >reload from template<a>", url2)
 		fmt.Fprint(b1, "<br>")

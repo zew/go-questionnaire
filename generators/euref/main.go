@@ -308,7 +308,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			names1stMatrix := []string{"benefit"}
 			emptyRowLabels := []trl.S{}
 			gr2 := p.AddRadioMatrixGroup(labelsGoodBad19(), names1stMatrix, emptyRowLabels, 1)
-			gr2.Cols = 9 // necessary, otherwise no vspacers
+			gr2.Cols = 9
 			gr2.OddRowsColoring = true
 
 		}
@@ -318,7 +318,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			names1stMatrix := []string{"supply"}
 			emptyRowLabels := []trl.S{}
 			gr := p.AddRadioMatrixGroup(labelsGoodBad19(), names1stMatrix, emptyRowLabels, 1)
-			gr.Cols = 9 // necessary, otherwise no vspacers
+			gr.Cols = 9
 			gr.OddRowsColoring = true
 			gr.Label = trl.S{
 				"de": "Nachfrage- vs. angebotsbezogene Politikmaßnahmen<br>",
@@ -381,7 +381,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			names1stMatrix := []string{"tax"}
 			emptyRowLabels := []trl.S{}
 			gr := p.AddRadioMatrixGroup(labelsGoodBad19(), names1stMatrix, emptyRowLabels, 1)
-			gr.Cols = 9 // necessary, otherwise no vspacers
+			gr.Cols = 9
 			gr.OddRowsColoring = true
 			gr.Label = trl.S{
 				"de": "Steuerpolitik<br>",
@@ -402,7 +402,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			names1stMatrix := []string{"redist"}
 			emptyRowLabels := []trl.S{}
 			gr := p.AddRadioMatrixGroup(labelsGoodBad19(), names1stMatrix, emptyRowLabels, 1)
-			gr.Cols = 9 // necessary, otherwise no vspacers
+			gr.Cols = 9
 			gr.OddRowsColoring = true
 			gr.Label = trl.S{
 				"de": "Umverteilung<br>",
@@ -423,7 +423,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			names1stMatrix := []string{"immig"}
 			emptyRowLabels := []trl.S{}
 			gr := p.AddRadioMatrixGroup(labelsGoodBad19(), names1stMatrix, emptyRowLabels, 1)
-			gr.Cols = 9 // necessary, otherwise no vspacers
+			gr.Cols = 9
 			gr.OddRowsColoring = true
 			gr.Label = trl.S{
 				"de": "Einwanderungspolitik<br>",
@@ -444,7 +444,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			names1stMatrix := []string{"defense"}
 			emptyRowLabels := []trl.S{}
 			gr := p.AddRadioMatrixGroup(labelsGoodBad19(), names1stMatrix, emptyRowLabels, 1)
-			gr.Cols = 9 // necessary, otherwise no vspacers
+			gr.Cols = 9
 			gr.OddRowsColoring = true
 			gr.Label = trl.S{
 				"de": "Verteidigungspolitik<br>",
@@ -478,7 +478,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			names1stMatrix := []string{"insure"}
 			emptyRowLabels := []trl.S{}
 			gr := p.AddRadioMatrixGroup(labelsGoodBad19(), names1stMatrix, emptyRowLabels, 1)
-			gr.Cols = 9 // necessary, otherwise no vspacers
+			gr.Cols = 9
 			gr.OddRowsColoring = true
 			gr.Label = trl.S{
 				"de": "Europäische Arbeitslosenversicherung<br>",
@@ -499,7 +499,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			names1stMatrix := []string{"eurobonds"}
 			emptyRowLabels := []trl.S{}
 			gr := p.AddRadioMatrixGroup(labelsGoodBad19(), names1stMatrix, emptyRowLabels, 1)
-			gr.Cols = 9 // necessary, otherwise no vspacers
+			gr.Cols = 9
 			gr.OddRowsColoring = true
 			gr.Label = trl.S{
 				"de": "Eurobonds<br>",
@@ -520,7 +520,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			names1stMatrix := []string{"stability"}
 			emptyRowLabels := []trl.S{}
 			gr := p.AddRadioMatrixGroup(labelsGoodBad19(), names1stMatrix, emptyRowLabels, 1)
-			gr.Cols = 9 // necessary, otherwise no vspacers
+			gr.Cols = 9
 			gr.OddRowsColoring = true
 			gr.Label = trl.S{
 				"de": "Stabilitäts- und Wachstumspakt (SWP)<br>",
@@ -543,7 +543,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			names1stMatrix := []string{"bankruptcy"}
 			emptyRowLabels := []trl.S{}
 			gr := p.AddRadioMatrixGroup(labelsGoodBad19(), names1stMatrix, emptyRowLabels, 1)
-			gr.Cols = 9 // necessary, otherwise no vspacers
+			gr.Cols = 9
 			gr.OddRowsColoring = true
 			gr.Label = trl.S{
 				"de": "Insolvenzverfahren für Eurostaaten<br>",
@@ -564,7 +564,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			names1stMatrix := []string{"purchase"}
 			emptyRowLabels := []trl.S{}
 			gr := p.AddRadioMatrixGroup(labelsGoodBad19(), names1stMatrix, emptyRowLabels, 1)
-			gr.Cols = 9 // necessary, otherwise no vspacers
+			gr.Cols = 9
 			gr.OddRowsColoring = true
 			gr.Label = trl.S{
 				"de": "Wertpapierkaufprogramm der EZB<br>",
@@ -585,7 +585,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			names1stMatrix := []string{"bankunion"}
 			emptyRowLabels := []trl.S{}
 			gr := p.AddRadioMatrixGroup(labelsGoodBad19(), names1stMatrix, emptyRowLabels, 1)
-			gr.Cols = 9 // necessary, otherwise no vspacers
+			gr.Cols = 9
 			gr.OddRowsColoring = true
 			gr.Label = trl.S{
 				"de": "Vollendung der Bankenunion<br>",
@@ -906,7 +906,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			names1stMatrix := []string{"qualified"}
 			emptyRowLabels := []trl.S{}
 			gr := p.AddRadioMatrixGroup(labelsGoodBad19(), names1stMatrix, emptyRowLabels, 1)
-			gr.Cols = 9 // necessary, otherwise no vspacers
+			gr.Cols = 9
 			gr.Width = 75
 			gr.OddRowsColoring = true
 			gr.Label = trl.S{

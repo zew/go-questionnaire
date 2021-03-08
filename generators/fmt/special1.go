@@ -28,16 +28,32 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 
 	{
 		gr := page.AddGroup()
-		gr.Cols = 6
+		gr.Cols = 12
 
 		{
 			inp := gr.AddInput()
 			inp.Type = "textblock"
-			inp.ColSpan = 6
-			inp.ColSpanLabel = 6
+			inp.ColSpan = 12
+			// inp.ColSpanLabel = 6
 			inp.Label = trl.S{
-				"de": "<b>1.</b> Punktprognose der Wachstumsrate des deutschen BIP",
-				"en": "<b>1.</b> Forecast growth rate German GDP",
+				"de": `<b>1.</b> 
+				Punktprognose der Wachstumsrate des deutschen BIP: <br>
+				<div class='vspacer-08' ></div>
+				<p style='font-size: 90%'>
+				Bei den Quartalwerten bitte nicht-annualisiertes Quartalswachstum 
+						des realen & saisonbereinigten BIP angeben. 
+				Bei den Jahreswerten die Jahreswachstumsrate des realen BIP.
+				</p>
+				`,
+				"en": `<b>1.</b> 
+				German GDP growth rate - point forecate: <br>
+				<div class='vspacer-08' ></div>
+				<p style='font-size: 90%'>
+				For the quarterly values, please quote the non-annualized quarterly growth
+						of the real & seasonal adjusted GDP.
+				For the yearly values, please quote the yearly growth rate of the real GDP.
+				</p>
+				`,
 			}
 		}
 
@@ -45,7 +61,11 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 		// inp.StyleLbl.Desktop.StyleGridItem.AlignSelf = "start"
 		sLbl.Desktop.StyleGridItem.JustifySelf = "start"
 		sLbl.Desktop.StyleGridItem.JustifySelf = "end"
-		sLbl.Desktop.StyleBox.Padding = "0 0.6rem 0 0"
+		sLbl.Desktop.StyleText.AlignHorizontal = "right"
+		sLbl.Desktop.StyleText.FontSize = 85
+
+		sLbl.Desktop.StyleBox.Padding = "0 0.4rem 0 0"
+		sLbl.Mobile.StyleBox.Padding = "0 0.1rem 0 0"
 
 		/*
 			Quarterly estimates.
@@ -64,35 +84,18 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 				"de": "Prognose Wachstum des BIP je <b>Quartal</b> <br>\n (real, saisonbereinigt, nicht annualisiert)",
 				"en": "Forecast <b>quarterly</b> GDP growth <br>\n(real, seasonally adjusted, non annualized)",
 			}
-			inp.ColSpan = 6
-			inp.ColSpanLabel = 6
+			inp.Label = trl.S{
+				"de": "Prognose <b>Quartal</b>",
+				"en": "Forecast per <b>quarterly</b>",
+			}
+			inp.ColSpan = 12
+			// inp.ColSpanLabel = 6
 		}
 		{
 			inp := gr.AddInput()
 			inp.Type = "number"
 			inp.Name = "xquart1"
-			inp.ColSpan = 2
-			inp.ColSpanLabel = 1
-			inp.ColSpanControl = 1
-			inp.Min = 0
-			inp.Max = 20
-			inp.MaxChars = 3
-			// inp.Validator = "inRange20"
-			inp.Label = trl.S{
-				"de": nextQ(-1),
-				"en": nextQ(-1),
-			}
-			inp.Suffix = trl.S{
-				"de": "%",
-				"en": "pct",
-			}
-			inp.StyleLbl = sLbl
-		}
-		{
-			inp := gr.AddInput()
-			inp.Type = "number"
-			inp.Name = "xquart2"
-			inp.ColSpan = 2
+			inp.ColSpan = 3
 			inp.ColSpanLabel = 1
 			inp.ColSpanControl = 1
 			inp.Min = 0
@@ -112,8 +115,8 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 		{
 			inp := gr.AddInput()
 			inp.Type = "number"
-			inp.Name = "xquart3"
-			inp.ColSpan = 2
+			inp.Name = "xquart2"
+			inp.ColSpan = 3
 			inp.ColSpanLabel = 1
 			inp.ColSpanControl = 1
 			inp.Min = 0
@@ -121,8 +124,50 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 			inp.MaxChars = 3
 			// inp.Validator = "inRange20"
 			inp.Label = trl.S{
-				"de": nextQ(),
-				"en": nextQ(),
+				"de": nextQ(1),
+				"en": nextQ(1),
+			}
+			inp.Suffix = trl.S{
+				"de": "%",
+				"en": "pct",
+			}
+			inp.StyleLbl = sLbl
+		}
+		{
+			inp := gr.AddInput()
+			inp.Type = "number"
+			inp.Name = "xquart3"
+			inp.ColSpan = 3
+			inp.ColSpanLabel = 1
+			inp.ColSpanControl = 1
+			inp.Min = 0
+			inp.Max = 20
+			inp.MaxChars = 3
+			// inp.Validator = "inRange20"
+			inp.Label = trl.S{
+				"de": nextQ(2),
+				"en": nextQ(2),
+			}
+			inp.Suffix = trl.S{
+				"de": "%",
+				"en": "pct",
+			}
+			inp.StyleLbl = sLbl
+		}
+		{
+			inp := gr.AddInput()
+			inp.Type = "number"
+			inp.Name = "xquart4"
+			inp.ColSpan = 3
+			inp.ColSpanLabel = 1
+			inp.ColSpanControl = 1
+			inp.Min = 0
+			inp.Max = 20
+			inp.MaxChars = 3
+			// inp.Validator = "inRange20"
+			inp.Label = trl.S{
+				"de": nextQ(3),
+				"en": nextQ(3),
 			}
 			inp.Suffix = trl.S{
 				"de": "%",
@@ -142,14 +187,18 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 				"de": "Prognose Wachstum des BIP aufs&nbsp;<b>Jahr</b> <br>\n(real, saisonbereinigt)",
 				"en": "Forecast GDP growth per&nbsp;<b>year</b> <br>\n(real, seasonally adjusted)",
 			}
-			inp.ColSpan = 6
-			inp.ColSpanLabel = 6
+			inp.Label = trl.S{
+				"de": "Prognose  <b>Jahr</b>",
+				"en": "Forecast  <b>Year</b>",
+			}
+			inp.ColSpan = 12
+			// inp.ColSpanLabel = 6
 		}
 		{
 			inp := gr.AddInput()
 			inp.Type = "number"
 			inp.Name = "xyear1"
-			inp.ColSpan = 2
+			inp.ColSpan = 4 - 1
 			inp.ColSpanLabel = 1
 			inp.ColSpanControl = 1
 			inp.Min = 0
@@ -170,7 +219,7 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 			inp := gr.AddInput()
 			inp.Type = "number"
 			inp.Name = "xyear2"
-			inp.ColSpan = 2
+			inp.ColSpan = 4 - 1
 			inp.ColSpanLabel = 1
 			inp.ColSpanControl = 1
 			inp.Min = 0
@@ -191,7 +240,7 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 			inp := gr.AddInput()
 			inp.Type = "number"
 			inp.Name = "xyear3"
-			inp.ColSpan = 2
+			inp.ColSpan = 4 - 1
 			inp.ColSpanLabel = 1
 			inp.ColSpanControl = 1
 			inp.Min = 0
@@ -226,6 +275,10 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 			"en": "Exchange rates",
 		},
 		{
+			"de": "Int. Handelskonflikte",
+			"en": "Intl. trade conflicts",
+		},
+		{
 			"de": "EZB-Geldpolitik",
 			"en": "ECB monetary policy",
 		},
@@ -234,17 +287,18 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 			"en": "FED monetary policy",
 		},
 		{
-			"de": "Geopol. Ereignisse",
-			"en": "Geopolitical events",
+			"de": "Brexit",
+			"en": "Brexit",
 		},
 		{
-			"de": "Regierungsbildung Deutschland",
-			"en": "Government formation Germany",
+			"de": "Corona Pandemie",
+			"en": "Corona pandemic",
 		},
-		{
-			"de": "Sonstige",
-			"en": "Other",
-		},
+		// {
+		// 	// dummy for 'iobc_free' be replaced
+		// 	"de": " &nbsp; ",
+		// 	"en": " &nbsp; ",
+		// },
 	}
 
 	// gr2
@@ -253,16 +307,48 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 		gb := qst.NewGridBuilderRadios(
 			columnTemplate6,
 			labelsStronglyPositiveStronglyNegativeInfluence(),
-			[]string{"iobc_cycle_data_deu", "iobc_exp_markets", "iobc_exch_rates", "iobc_mp_ecb", "iobc_mp_fed", "iobc_geopol", "iobc_gvt_form_deu", "iobc_other"},
+			[]string{"iobc_cycle_data_deu", "iobc_exp_markets", "iobc_exch_rates",
+				"iobc_trade_conflicts",
+				"iobc_mp_ecb", "iobc_mp_fed", "iobc_brexit", "iobc_corona",
+				// "iobc_free",
+			},
 			radioVals6,
 			rowLabelsEconomicAreas,
 		)
 		gb.MainLabel = trl.S{
-			"de": "<b>2.</b> Haben Entwicklungen in den folgenden Bereichen Sie zu einer Revision Ihrer Konjunkturprognosen (ggü. Vormonat) für die deutsche Wirtschaft bewogen und wenn ja in welche Richtung?",
-			"en": "<b>2.</b> Which developments have lead you to change your assessment of the business cycle outlook for the German economy compared to the previous month",
+			"de": "<b>2.</b> Haben Entwicklungen in den folgenden Bereichen Sie zu einer Revision Ihrer Konjunkturprognosen für die deutsche Wirtschaft bewogen?",
+			"en": "<b>2.</b> Which developments have lead you to change your assessment of the business cycle outlook for the German economy?",
 		}
 		gr := page.AddGrid(gb)
 		gr.OddRowsColoring = true
+		gr.BottomVSpacers = 1
+
+		{
+			inp := gr.AddInput()
+			inp.Type = "text"
+			inp.Name = "iobc_free_label"
+			inp.MaxChars = 30
+			inp.ColSpan = 1
+			inp.ColSpanControl = 1
+			inp.Label = nil
+		}
+		for i := 0; i < len(radioVals6); i++ {
+			inp := gr.AddInput()
+			inp.Type = "radio"
+			inp.Name = "iobc_free"
+			inp.ValueRadio = radioVals6[i]
+			inp.ColSpan = 1
+			inp.ColSpanControl = 1
+			inp.Label = nil
+
+		}
+
+	}
+
+	// gr3
+	{
+		gr := page.AddGroup()
+		gr.Cols = 12
 
 		{
 			inp := gr.AddInput()
@@ -274,9 +360,12 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 			}
 			inp.MaxChars = 28 // otherwise overflow in mobile
 
-			inp.ColSpan = 4
-			inp.ColSpanLabel = 2
-			inp.ColSpanControl = 6
+			inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
+			inp.StyleLbl.Desktop.StyleBox.Padding = "0 0.9rem 0 0"
+
+			inp.ColSpan = 17
+			inp.ColSpanLabel = 6
+			inp.ColSpanControl = 11
 		}
 
 	}

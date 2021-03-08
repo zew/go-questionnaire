@@ -76,8 +76,9 @@ But keep an eye on the application log.
 	fmt.Fprint(w, msg)
 
 	type formEntryT struct {
-		Start int `json:"start"`
-		Stop  int `json:"stop"`
+		Host  string `json:"host,omitempty"`
+		Start int    `json:"start"`
+		Stop  int    `json:"stop"`
 	}
 	fe := formEntryT{}
 	dec := form.NewDecoder()
@@ -90,8 +91,8 @@ But keep an eye on the application log.
 	}
 
 	if fe.Start == 0 || fe.Stop == 0 {
-		fe.Start = 1000 + 0
-		fe.Stop = 1000 + 10
+		fe.Start = 10000 + 0
+		fe.Stop = 10000 + 10
 	}
 
 	for i := fe.Start + 0; i < fe.Stop; i++ {
@@ -112,7 +113,10 @@ But keep an eye on the application log.
 			fmt.Fprintf(w, "%v - %v\n", i, encodedLong)
 		}
 
-		fmt.Fprintf(w, "%v\t%v\t<a href='%v' target=_blank>%v</a>   <br>\n", i, HashIDDecodeFirst(encoded), cfg.Pref("d/"+encoded), encoded)
+		fmt.Fprintf(w,
+			"%v\t%v\t<a href='%v' target=_blank>%v</a>   <br>\n",
+			i, HashIDDecodeFirst(encoded), fe.Host+cfg.Pref("d/"+encoded), encoded,
+		)
 	}
 
 	fmt.Fprint(w, "</span>")

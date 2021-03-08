@@ -528,7 +528,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			gr.Cols = 6
 			gr.Style = css.NewStylesResponsive(gr.Style)
 			gr.Style.Desktop.StyleGridContainer.GapColumn = "0rem"
-			gr.Style.Desktop.StyleGridContainer.GapRow = "0rem"
+			gr.Style.Desktop.StyleGridContainer.GapRow = "0.4rem"
 			{
 				inp := gr.AddInput()
 				inp.Type = "number"
@@ -810,8 +810,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Label = trl.S{
-					"de": fmt.Sprintf("aktuelles Quartal"),
-					"en": fmt.Sprintf("current quarter"),
+					"de": fmt.Sprintf("Aktuelles Quartal"),
+					"en": fmt.Sprintf("Current quarter"),
 				}
 				inp.Type = "number"
 				inp.Name = "yshr_deu_q0"
@@ -827,8 +827,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Label = trl.S{
-					"de": fmt.Sprintf("folgendes Quartal"),
-					"en": fmt.Sprintf("next quarter"),
+					"de": fmt.Sprintf("Folgendes Quartal"),
+					"en": fmt.Sprintf("Next quarter"),
 				}
 				inp.Type = "number"
 				inp.Name = "yshr_deu_q1"

@@ -87,7 +87,7 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 			}
 			inp.Label = trl.S{
 				"de": "Prognose <b>Quartal</b>",
-				"en": "Forecast per <b>quarterly</b>",
+				"en": "<b>Quarterly</b> forecast ",
 			}
 			inp.ColSpan = 12
 			// inp.ColSpanLabel = 6
@@ -335,7 +335,7 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 			inp := gr.AddInput()
 			inp.Type = "text"
 			inp.Name = "iobc_free_label"
-			inp.MaxChars = 13 // more would break the col width
+			inp.MaxChars = 13 // more would break the col widthcase
 			inp.ColSpan = 1
 			inp.ColSpanControl = 1
 			inp.Label = nil

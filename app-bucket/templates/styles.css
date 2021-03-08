@@ -112,10 +112,50 @@
     font-family: -apple-system,BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
 }
 
-
+/* body base settings */
 body {
-    min-height: 0vw;
+    margin:   0;
+    padding:  0; 
 }
+
+
+
+/* 
+    ==========================================
+      four styles to make .content fill
+      the remaining height
+      without vertical scroll bar
+
+      stackoverflow.com/questions/90178
+    ==========================================
+*/
+
+html { 
+    /* body height 100% is not sufficient */
+    height: 100%; 
+}
+body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;  /* nav and .content */
+}
+  
+nav {
+    /* flex-grow 0 => take up no  free height */
+    flex: 0 1 auto;
+}
+
+.content {
+    /* flex-grow 1 => take up all free height */
+    flex: 1 1 auto;
+}
+
+/* 
+    ==========================================
+*/
+
+
+
 
 /* remove firefox focus outline *inside* button    */
 *::-moz-focus-inner {
@@ -1470,25 +1510,17 @@ ul.mnu-3rd-lvl li:last-child {
 /* child of body - sibling of nav - parent of hori-center-me */
 .content {
 
-    position:     relative;
-    top:          var(--content-top);
     width:        100%;
-    min-height:    91.6vh;  /* to test scrolling: min-height: 120vh; */
-    min-height:    calc(100vh - var(--nav-height));  
+
     margin:         0 auto;
     padding:        0;
 
+    position:     relative;
+    top:          var(--content-top);
 
-    display:        flex;
-    flex-direction: column;
-
-    /* justify-content: center /* makes the content twitch on loading */
-    justify-items: center;         /* not ignored - as some sources say */
-    /* justify-self on item level */
-
-    align-items:   center;
-    /* place-items: center start; */
-
+    /* to test scrolling: min-height: 120vh; */
+    /* min-height:    91.6vh;   */
+    /* min-height:    calc(100vh - var(--nav-height));   */
 
     background-color: var(--clr-sec-drk1);
     background-color: var(--clr-sec);

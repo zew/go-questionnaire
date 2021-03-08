@@ -62,7 +62,8 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 		sLbl.Desktop.StyleGridItem.JustifySelf = "start"
 		sLbl.Desktop.StyleGridItem.JustifySelf = "end"
 		sLbl.Desktop.StyleText.AlignHorizontal = "right"
-		sLbl.Desktop.StyleText.FontSize = 85
+
+		sLbl.Mobile.StyleText.FontSize = 85
 
 		sLbl.Desktop.StyleBox.Padding = "0 0.4rem 0 0"
 		sLbl.Mobile.StyleBox.Padding = "0 0.1rem 0 0"
@@ -322,17 +323,30 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 		gr := page.AddGrid(gb)
 		gr.OddRowsColoring = true
 		gr.BottomVSpacers = 1
-
+	}
+	// gr3
+	{
+		gr := page.AddGroup()
+		gr.Cols = 8
+		gr.Style = css.NewStylesResponsive(gr.Style)
+		gr.Style.Desktop.StyleGridContainer.TemplateColumns =
+			"1.92fr 1fr  1fr  1fr  1fr  1fr  0.35fr 1fr"
 		{
 			inp := gr.AddInput()
 			inp.Type = "text"
 			inp.Name = "iobc_free_label"
-			inp.MaxChars = 30
+			inp.MaxChars = 13 // more would break the col width
 			inp.ColSpan = 1
 			inp.ColSpanControl = 1
 			inp.Label = nil
 		}
 		for i := 0; i < len(radioVals6); i++ {
+
+			if i == 5 {
+				txt := gr.AddInput()
+				txt.Type = "textblock"
+			}
+
 			inp := gr.AddInput()
 			inp.Type = "radio"
 			inp.Name = "iobc_free"
@@ -340,34 +354,7 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 			inp.ColSpan = 1
 			inp.ColSpanControl = 1
 			inp.Label = nil
-
 		}
-
-	}
-
-	// gr3
-	{
-		gr := page.AddGroup()
-		gr.Cols = 12
-
-		{
-			inp := gr.AddInput()
-			inp.Type = "text"
-			inp.Name = "other_cycle_infl"
-			inp.Label = trl.S{
-				"de": "Wenn sonstige - welche?",
-				"en": "If other - which?",
-			}
-			inp.MaxChars = 28 // otherwise overflow in mobile
-
-			inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
-			inp.StyleLbl.Desktop.StyleBox.Padding = "0 0.9rem 0 0"
-
-			inp.ColSpan = 17
-			inp.ColSpanLabel = 6
-			inp.ColSpanControl = 11
-		}
-
 	}
 
 	return nil

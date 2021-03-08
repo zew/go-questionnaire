@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "61384db659b4f82d616f84c628a14404003bf6d3ec55568f8f205344bb214681",
+ 	"md_5": "c42123e997d26e5ac496c61d59c26eb56e25e21e82a23ba79f406dd23adeafe5",
  	"lang_codes": [
  		"de",
  		"en"
@@ -4489,7 +4489,6 @@
  										"justify_self": "end"
  									},
  									"text_style": {
- 										"font_size": 85,
  										"align_horizontal": "right"
  									}
  								},
@@ -4499,7 +4498,9 @@
  										"padding": "0 0.1rem 0 0"
  									},
  									"grid_item_style": {},
- 									"text_style": {}
+ 									"text_style": {
+ 										"font_size": 85
+ 									}
  								}
  							}
  						},
@@ -4529,7 +4530,6 @@
  										"justify_self": "end"
  									},
  									"text_style": {
- 										"font_size": 85,
  										"align_horizontal": "right"
  									}
  								},
@@ -4539,7 +4539,9 @@
  										"padding": "0 0.1rem 0 0"
  									},
  									"grid_item_style": {},
- 									"text_style": {}
+ 									"text_style": {
+ 										"font_size": 85
+ 									}
  								}
  							}
  						},
@@ -4569,7 +4571,6 @@
  										"justify_self": "end"
  									},
  									"text_style": {
- 										"font_size": 85,
  										"align_horizontal": "right"
  									}
  								},
@@ -4579,7 +4580,9 @@
  										"padding": "0 0.1rem 0 0"
  									},
  									"grid_item_style": {},
- 									"text_style": {}
+ 									"text_style": {
+ 										"font_size": 85
+ 									}
  								}
  							}
  						},
@@ -4609,7 +4612,6 @@
  										"justify_self": "end"
  									},
  									"text_style": {
- 										"font_size": 85,
  										"align_horizontal": "right"
  									}
  								},
@@ -4619,7 +4621,9 @@
  										"padding": "0 0.1rem 0 0"
  									},
  									"grid_item_style": {},
- 									"text_style": {}
+ 									"text_style": {
+ 										"font_size": 85
+ 									}
  								}
  							}
  						},
@@ -4658,7 +4662,6 @@
  										"justify_self": "end"
  									},
  									"text_style": {
- 										"font_size": 85,
  										"align_horizontal": "right"
  									}
  								},
@@ -4668,7 +4671,9 @@
  										"padding": "0 0.1rem 0 0"
  									},
  									"grid_item_style": {},
- 									"text_style": {}
+ 									"text_style": {
+ 										"font_size": 85
+ 									}
  								}
  							}
  						},
@@ -4698,7 +4703,6 @@
  										"justify_self": "end"
  									},
  									"text_style": {
- 										"font_size": 85,
  										"align_horizontal": "right"
  									}
  								},
@@ -4708,7 +4712,9 @@
  										"padding": "0 0.1rem 0 0"
  									},
  									"grid_item_style": {},
- 									"text_style": {}
+ 									"text_style": {
+ 										"font_size": 85
+ 									}
  								}
  							}
  						},
@@ -4738,7 +4744,6 @@
  										"justify_self": "end"
  									},
  									"text_style": {
- 										"font_size": 85,
  										"align_horizontal": "right"
  									}
  								},
@@ -4748,7 +4753,9 @@
  										"padding": "0 0.1rem 0 0"
  									},
  									"grid_item_style": {},
- 									"text_style": {}
+ 									"text_style": {
+ 										"font_size": 85
+ 									}
  								}
  							}
  						}
@@ -4995,7 +5002,7 @@
  								"de": "keine\u003cbr\u003eAn\u0026shy;gabe",
  								"en": "no an\u0026shy;swer"
  							},
- 							"col_span_label": 1,
+ 							"col_span_label": 0.4,
  							"col_span_control": 1,
  							"style": {
  								"desktop": {
@@ -5088,7 +5095,7 @@
  						{
  							"name": "iobc_cycle_data_deu",
  							"type": "radio",
- 							"col_span_label": 1,
+ 							"col_span_label": 0.4,
  							"col_span_control": 1,
  							"value_radio": "6"
  						},
@@ -5146,7 +5153,7 @@
  						{
  							"name": "iobc_exp_markets",
  							"type": "radio",
- 							"col_span_label": 1,
+ 							"col_span_label": 0.4,
  							"col_span_control": 1,
  							"value_radio": "6"
  						},
@@ -5204,7 +5211,7 @@
  						{
  							"name": "iobc_exch_rates",
  							"type": "radio",
- 							"col_span_label": 1,
+ 							"col_span_label": 0.4,
  							"col_span_control": 1,
  							"value_radio": "6"
  						},
@@ -5262,7 +5269,7 @@
  						{
  							"name": "iobc_trade_conflicts",
  							"type": "radio",
- 							"col_span_label": 1,
+ 							"col_span_label": 0.4,
  							"col_span_control": 1,
  							"value_radio": "6"
  						},
@@ -5320,7 +5327,7 @@
  						{
  							"name": "iobc_mp_ecb",
  							"type": "radio",
- 							"col_span_label": 1,
+ 							"col_span_label": 0.4,
  							"col_span_control": 1,
  							"value_radio": "6"
  						},
@@ -5378,7 +5385,7 @@
  						{
  							"name": "iobc_mp_fed",
  							"type": "radio",
- 							"col_span_label": 1,
+ 							"col_span_label": 0.4,
  							"col_span_control": 1,
  							"value_radio": "6"
  						},
@@ -5436,7 +5443,7 @@
  						{
  							"name": "iobc_brexit",
  							"type": "radio",
- 							"col_span_label": 1,
+ 							"col_span_label": 0.4,
  							"col_span_control": 1,
  							"value_radio": "6"
  						},
@@ -5494,14 +5501,36 @@
  						{
  							"name": "iobc_corona",
  							"type": "radio",
- 							"col_span_label": 1,
+ 							"col_span_label": 0.4,
  							"col_span_control": 1,
  							"value_radio": "6"
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"template_columns": "   3fr    1fr    1fr    1fr    1fr    1.4fr "
+ 							},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
  						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 8,
+ 					"inputs": [
  						{
  							"name": "iobc_free_label",
  							"type": "text",
- 							"max_chars": 30,
+ 							"max_chars": 13,
  							"col_span": 1,
  							"col_span_control": 1
  						},
@@ -5541,6 +5570,10 @@
  							"value_radio": "5"
  						},
  						{
+ 							"type": "textblock",
+ 							"col_span_label": 1
+ 						},
+ 						{
  							"name": "iobc_free",
  							"type": "radio",
  							"col_span": 1,
@@ -5551,7 +5584,7 @@
  					"style": {
  						"desktop": {
  							"grid_container_style": {
- 								"template_columns": "   3fr    1fr    1fr    1fr    1fr    2fr "
+ 								"template_columns": "1.92fr 1fr  1fr  1fr  1fr  1fr  0.35fr 1fr"
  							},
  							"box_style": {},
  							"grid_item_style": {},
@@ -5564,40 +5597,6 @@
  							"text_style": {}
  						}
  					}
- 				},
- 				{
- 					"bottom_vspacers": 3,
- 					"columns": 12,
- 					"inputs": [
- 						{
- 							"name": "other_cycle_infl",
- 							"type": "text",
- 							"max_chars": 28,
- 							"label": {
- 								"de": "Wenn sonstige - welche?",
- 								"en": "If other - which?"
- 							},
- 							"col_span": 17,
- 							"col_span_label": 6,
- 							"col_span_control": 11,
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.9rem 0 0"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						}
- 					]
  				}
  			]
  		},
@@ -5706,8 +5705,8 @@
  							"name": "submitBtn",
  							"type": "button",
  							"label": {
- 								"de": "  \u0026nbsp; \u0026nbsp; OK  \u0026nbsp;  \u0026nbsp; ",
- 								"en": "  \u0026nbsp; \u0026nbsp; OK  \u0026nbsp;  \u0026nbsp; "
+ 								"de": "\u0026nbsp;\u0026nbsp;\u0026nbsp;\u0026nbsp;\u0026nbsp;OK\u0026nbsp;\u0026nbsp;\u0026nbsp;\u0026nbsp;",
+ 								"en": "\u0026nbsp;\u0026nbsp;\u0026nbsp;\u0026nbsp;\u0026nbsp;OK\u0026nbsp;\u0026nbsp;\u0026nbsp;\u0026nbsp;"
  							},
  							"accesskey": "n",
  							"col_span": 1,
@@ -5761,6 +5760,24 @@
  			},
  			"no_navigation": true,
  			"navi_num": 0,
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
  				{

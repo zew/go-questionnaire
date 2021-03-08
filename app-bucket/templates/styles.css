@@ -1474,6 +1474,7 @@ ul.mnu-3rd-lvl li:last-child {
     top:          var(--content-top);
     width:        100%;
     min-height:    91.6vh;  /* to test scrolling: min-height: 120vh; */
+    min-height:    calc(100vh - var(--nav-height));  
     margin:         0 auto;
     padding:        0;
 
@@ -1498,10 +1499,6 @@ ul.mnu-3rd-lvl li:last-child {
 }
 
 
-/*     for global padding
-     children can have padding:0; width=100%
-     previously hori-center-me
- */
 form[name=frmMain] {
     /*  
         width: 100%;
@@ -1509,34 +1506,8 @@ form[name=frmMain] {
         padding: 0;
         border: none;
     */
-     background-color: transparent ;   /* important for progress bar */
 }
 
-
-.XXXcontent form[name=frmMain] .content-quest {
-    display:         flex;
-    min-height:      40px;
-    border-top:      1.4rem solid transparent;
-}
-
-.XXXcontent form[name=frmMain] .content-footer {
-    width:           95%;
-    margin:          0 auto;
-    margin-top:      1rem;
-    margin-bottom:   1rem;
-
-    display:         flex;
-    flex-direction:  row;
-    flex-wrap:       nowrap;
-
-    /* main axis */
-    justify-content: space-around;
-    justify-content: space-between;
-
-    /* cross axis */
-    align-items:     center;
-    align-items:     flex-start;
-}
 
 
 

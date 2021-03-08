@@ -26,7 +26,7 @@ var columnTemplate6 = []float32{
 	0, 1,
 	0, 1,
 	0, 1,
-	1, 1,
+	0.4, 1,
 }
 
 var rowLabelsEuroGerUSGlob = []trl.S{
@@ -286,7 +286,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp := gr.AddInput()
 				inp.Type = "textblock"
 				inp.ColSpan = 10
-				// inp.ColSpanLabel = 10
 				inp.Label = trl.S{
 					"de": "<b>2b.</b> Für wie wahrscheinlich halten Sie die folgenden mittelfristigen (<b>6</b>&nbsp;Mo.) Entwicklungen der gesamtwirtschaftlichen Situation in Deutschland?",
 					"en": "<b>2b.</b> How likely are the following medium term (<b>6</b>&nbsp;months) developments of the general economic situation in Germany?",
@@ -300,7 +299,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp := gr.AddInput()
 				inp.Type = "textblock"
 				inp.ColSpan = 3
-				// inp.ColSpanLabel = 3
 				inp.Label = trl.S{
 					"de": "Verbesserung",
 					"en": "Improvement",
@@ -311,7 +309,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp := gr.AddInput()
 				inp.Type = "textblock"
 				inp.ColSpan = 3
-				// inp.ColSpanLabel = 3
 				inp.Label = trl.S{
 					"de": "Gleich bleiben",
 					"en": "Remain the same",
@@ -322,7 +319,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp := gr.AddInput()
 				inp.Type = "textblock"
 				inp.ColSpan = 3
-				// inp.ColSpanLabel = 3
 				inp.Label = trl.S{
 					"de": "Verschlechterung",
 					"en": "Deterioration",
@@ -332,7 +328,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				// inp.ColSpanLabel = 1
 				inp.Label = trl.S{
 					"de": "&#931;",
 					"en": "&#931;",
@@ -378,7 +373,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp := gr.AddInput()
 				inp.Type = "textblock"
 				inp.ColSpan = 1
-				// inp.ColSpanLabel = 1
 				inp.Label = trl.S{
 					"de": "100&nbsp;%",
 					"en": "100&nbsp;%",
@@ -667,65 +661,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			gr.Style.Mobile.StyleBox.Left = "0"
 			gr.OddRowsColoring = true
 		}
-
-		/*
-			{
-				gr := page.AddGroup()
-				gr.Cols = 1
-				gr.BottomVSpacers = 0
-				{
-					inp := gr.AddInput()
-					inp.Type = "textblock"
-					inp.Label = trl.S{
-						"de": "<b>8.</b> Die Wahrscheinlichkeit für ein Extremereignis im deutschen Finanzmarkt liegt",
-						"en": "<b>8.</b> The probability for an extreme event in the German financial markets is",
-					}
-				}
-			}
-
-			{
-				gr := page.AddGroup()
-				gr.Cols = 100
-				gr.HeaderBottomVSpacers = 1
-				{
-					inp := gr.AddInput()
-					inp.Type = "number"
-					inp.Name = "crash_low"
-					inp.Min = 0
-					inp.Max = 100
-					inp.MaxChars = 4
-					// inp.Validator = "inRange100"
-
-					inp.ColSpanLabel = 22
-					inp.ColSpanControl = 12
-					inp.Label = trl.S{
-						"de": " mittelfristig (<b>6</b>&nbsp;Mo.) bei  ",
-						"en": " medium term (<b>6</b>&nbsp;months) at ",
-					}
-					inp.Suffix = trl.S{"de": "%", "en": "pct"}
-				}
-
-				{
-					inp := gr.AddInput()
-					inp.Type = "number"
-					inp.Name = "crash_high"
-					inp.Min = 0
-					inp.Max = 100
-					inp.MaxChars = 4
-					// inp.Validator = "inRange100"
-
-					inp.ColSpanLabel = 26
-					inp.ColSpanControl = 40
-					inp.Label = trl.S{
-						"de": "und langfristig (<b>24</b>&nbsp;Mo.) bei ",
-						"en": "and long term (<b>24</b>&nbsp;months) at ",
-					}
-
-					inp.Suffix = trl.S{"de": "%", "en": "pct"}
-				}
-			}
-		*/
-
 	}
 
 	//
@@ -909,240 +844,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		}
 
 	}
-	/*
-		{
-			page := q.AddPage()
-			page.Label = trl.S{"de": "Wachstum", "en": "Growth"}
-			page.Short = trl.S{"de": "Wachstum", "en": "Growth"}
-			page.Style = css.DesktopWidthMax(page.Style, "36rem") // 60
-
-			// gr0
-			{
-				gr := page.AddGroup()
-				gr.Cols = 5
-
-				{
-					inp := gr.AddInput()
-					inp.Type = "textblock"
-					inp.ColSpanLabel = 5
-					inp.Label = trl.S{
-						"de": "<b>3a.</b> ",
-						"en": "<b>3a.</b> ",
-					}
-				}
-				{
-					inp := gr.AddInput()
-					inp.Type = "number"
-					inp.Name = "y_q_deu"
-					inp.Min = 0
-					inp.Max = 20
-					inp.MaxChars = 2
-					inp.MaxChars = 3
-					// inp.Validator = "inRange20"
-
-					inp.ColSpanLabel = 4
-					inp.Label = trl.S{
-						"de": fmt.Sprintf("Unsere Prognose für das <b>deutsche</b> BIP Wachstum in %v <xxbr/>\n(real, saisonbereinigt, nicht annualisiert)", nextQ()),
-						"en": fmt.Sprintf("Our estimate for the <b>German</b> GDP growth in %v        <xxbr/>\n(real, seasonally adjusted, non annualized)", nextQ()),
-					}
-					inp.Suffix = trl.S{"de": "%", "en": "pct"}
-					inp.ColSpanControl = 1
-				}
-
-				{
-					inp := gr.AddInput()
-					inp.Type = "number"
-					inp.Name = "y_y_deu"
-					inp.Min = 0
-					inp.Max = 50
-					inp.MaxChars = 3
-					// inp.Validator = "inRange20"
-
-					inp.ColSpanLabel = 4
-					inp.Label = trl.S{
-						"de": fmt.Sprintf("Unsere Prognose für das BIP Wachstum für das Jahr %v <xxbr/>\n(real, saisonbereinigt)", nextY()),
-						"en": fmt.Sprintf("Our estimate for the GDP growth in %v                <xxbr/>\n(real, seasonally adjusted)", nextY()),
-					}
-					inp.Suffix = trl.S{"de": "%", "en": "pct"}
-					inp.ColSpanControl = 1
-				}
-			}
-
-			// gr1
-			{
-				gr := page.AddGroup()
-				gr.Cols = 5
-
-				{
-					inp := gr.AddInput()
-					inp.Type = "textblock"
-					inp.ColSpanLabel = 5
-					inp.Label = trl.S{
-						"de": "<b>3b.</b> ",
-						"en": "<b>3b.</b> ",
-					}
-				}
-
-		}
-	*/
-
-	/*
-		{
-			page := q.AddPage()
-			page.Section = trl.S{"de": "Kreditsituation", "en": "Credit situation"}
-			page.Label = trl.S{"de": "Markt", "en": "Market"}
-			page.Short = trl.S{"de": "Kredit-<br/>markt", "en": "Credit<br/>Markets"}
-			page.Style = css.DesktopWidthMax(page.Style, "50rem") // 70
-
-			rowLabelsCreditDemandSupply := []trl.S{
-				{
-					"de": "Kreditnachfrage",
-					"en": "Credit demand",
-				},
-				{
-					"de": "Kreditangebot",
-					"en": "Credit supply",
-				},
-			}
-
-			rowLabelsMediumLongTerm := []trl.S{
-				{
-					"de": "mittelfristig (<b>6</b>&nbsp;Mo.)",
-					"en": "medium term (<b>6</b>&nbsp;months)",
-				},
-				{
-					"de": "langfristig (<b>24</b>&nbsp;Mo.)",
-					"en": "long term (<b>24</b>&nbsp;months)",
-				},
-			}
-
-			// gr1
-			{
-				gb := qst.NewGridBuilderRadios(
-					columnTemplate6,
-					labelsVeryHighVeryLow(),
-					[]string{"cd_deu", "cs_deu"},
-					radioVals6,
-					rowLabelsCreditDemandSupply,
-				)
-				gb.MainLabel = trl.S{
-					"de": "<b>6a.</b> Wie schätzen Sie die Kreditsituation in Deutschland ein?",
-					"en": "<b>6a.</b> How do you assess credit conditions in Germany?",
-				}
-				gr := page.AddGrid(gb)
-				gr.OddRowsColoring = true
-			}
-
-			// gr2
-			{
-				gb := qst.NewGridBuilderRadios(
-					columnTemplate6,
-					labelsStrongIncreaseStrongDecrease(),
-					[]string{"c0_6", "c0_24"},
-					radioVals6,
-					rowLabelsMediumLongTerm,
-				)
-				gb.MainLabel = trl.S{
-					"de": "<b>6b.</b> Das (saisonbereinigte) Gesamtvolumen der Neukreditvergabe in Deutschland wird",
-					"en": "<b>6b.</b> The seasonally adjusted volume of new credit in Germany will",
-				}
-				gr := page.AddGrid(gb)
-				gr.OddRowsColoring = true
-			}
-
-			// gr3
-			{
-				gb := qst.NewGridBuilderRadios(
-					columnTemplate6,
-					labelsStrongIncreaseStrongDecrease(),
-					[]string{"cd_24_le", "cd_24_sme", "cd_24_re", "cd_24_co"},
-					radioVals6,
-					rowLabelsSmallLargeEnterprises,
-				)
-				gb.MainLabel = trl.S{
-					"de": "<b>6c.</b> Die (saisonbereinigte) Kreditnachfrage wird mittelfristig (<b>6</b>&nbsp;Mo.)",
-					"en": "<b>6c.</b> The seasonally adjusted credit demand medium term (<b>6</b>&nbsp;months) will be",
-				}
-				gr := page.AddGrid(gb)
-				gr.OddRowsColoring = true
-			}
-
-		}
-
-	*/
-
-	/*
-		{
-			page := q.AddPage()
-			// pge.Section = trl.S{"de": "Kreditsituation", "en": "Credit situation"}
-			page.Label = trl.S{"de": "Einflussfaktoren", "en": "Influence Factors"}
-			page.Short = trl.S{"de": "Kredit-<br/>faktoren", "en": "Credit<br/>Influencers"}
-			page.Style = css.DesktopWidthMax(page.Style, "50rem") // 70
-
-			rowLabelsFinancingFactors := []trl.S{
-				{
-					"de": "Ausfallrisiken",
-					"en": "Default risk",
-				},
-				{
-					"de": "Risikotragfähigkeit",
-					"en": "Risk profile",
-				},
-				{
-					"de": "Refinanzierung",
-					"en": "Refinancing",
-				},
-				{
-					"de": "Wettbewerbssituation",
-					"en": "Competitive environment",
-				},
-				{
-					"de": "Regulierung",
-					"en": "Regulation",
-				},
-				{
-					"de": "EZB Politik",
-					"en": "ECB policy",
-				},
-			}
-
-			// gr1
-			{
-				gb := qst.NewGridBuilderRadios(
-					columnTemplate6,
-					labelsVeryPositiveVeryNegative(),
-					[]string{"c_inf_6_dr", "c_inf_6_ri", "c_inf_6_re", "c_inf_6_ce", "c_inf_6_rg", "c_inf_6_ep"},
-					radioVals6,
-					rowLabelsFinancingFactors,
-				)
-				gb.MainLabel = trl.S{
-					"de": "<b>6d.</b> Wie schätzen Sie den Einfluss folgender Faktoren auf die mittelfristige (<b>6</b>&nbsp;Mo.) Veränderung des Kreditangebots ein?",
-					"en": "<b>6d.</b> How do you assess the influence of following factors on the medium term (<b>6</b>&nbsp;months) change of credit supply?",
-				}
-				gr := page.AddGrid(gb)
-				gr.OddRowsColoring = true
-			}
-
-			// gr2
-			{
-				gb := qst.NewGridBuilderRadios(
-					columnTemplate6,
-					labelsStrongIncreaseStrongDecrease(),
-					[]string{"c_std_6_le", "c_std_6_sme", "c_std_6_re", "c_std_6_co"},
-					radioVals6,
-					rowLabelsSmallLargeEnterprises,
-				)
-				gb.MainLabel = trl.S{
-					"de": "<b>6e.</b> Die (saisonbereinigte) Kreditstandards für Neukredite werden mittelfristig (<b>6</b>&nbsp;Mo.)",
-					"en": "<b>6e.</b> The seasonally adjusted credit standards medium term (<b>6</b>&nbsp;months) will",
-				}
-				gr := page.AddGrid(gb)
-				gr.OddRowsColoring = true
-			}
-
-		}
-
-	*/
 
 	err := addSeasonal1(&q)
 	if err != nil {
@@ -1250,14 +951,15 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Response = fmt.Sprintf("%v", len(q.Pages)-1+1) // +1 since one page is appended below
 				inp.Label = trl.S{"de": "", "en": ""}
 				inp.Label = trl.S{
-					"de": "  &nbsp; &nbsp; OK  &nbsp;  &nbsp; ",
-					"en": "  &nbsp; &nbsp; OK  &nbsp;  &nbsp; ",
+					"de": "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OK&nbsp;&nbsp;&nbsp;&nbsp;",
+					"en": "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OK&nbsp;&nbsp;&nbsp;&nbsp;",
 				}
 				inp.ColSpan = 1
 				inp.ColSpanControl = 1
 				inp.AccessKey = "n"
 				inp.StyleCtl = css.NewStylesResponsive(inp.StyleCtl)
 				inp.StyleCtl.Desktop.StyleGridItem.JustifySelf = "end"
+				// inp.StyleCtl.Desktop.StyleBox.WidthMin = "8rem" // does not help with button
 			}
 		}
 
@@ -1268,11 +970,12 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	// page 8 - after seasonal
 	// Report of results
 	{
-		p := q.AddPage()
-		p.Label = trl.S{"de": "Ihre Eingaben", "en": "Summary of results"}
-		p.NoNavigation = true
+		page := q.AddPage()
+		page.Label = trl.S{"de": "Ihre Eingaben", "en": "Summary of results"}
+		page.NoNavigation = true
+		page.Style = css.DesktopWidthMax(page.Style, "calc(100% - 1.2rem)") // 60
 		{
-			gr := p.AddGroup()
+			gr := page.AddGroup()
 			gr.Cols = 1
 			{
 				inp := gr.AddInput()

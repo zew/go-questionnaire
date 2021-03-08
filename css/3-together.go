@@ -199,7 +199,7 @@ func TextEnd(sr *StylesResponsive) *StylesResponsive {
 func DesktopWidthMax(sr *StylesResponsive, s string) *StylesResponsive {
 	sr = NewStylesResponsive(sr)
 	sr.Desktop.StyleBox.WidthMax = s
-	sr.Mobile.StyleBox.WidthMax = "none"
+	// sr.Mobile.StyleBox.WidthMax = "none"
 	sr.Mobile.StyleBox.WidthMax = "calc(100% - 1.2rem)"
 	return sr
 }

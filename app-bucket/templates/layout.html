@@ -82,18 +82,15 @@
 
 
 <span class='content-separator'></span> <!-- split out content - outside because div.content is CSS grid -->
-<div class="content">
+<!-- content equals frmMain -->
+<form class="content" name="frmMain" method="POST" action="{{cfg.Pref ""}}" >
 
-	<form method="POST" action="{{cfg.Pref ""}}" name='frmMain'>
+	{{if not .Content}}
+		<p>Warning: Key '.Content' not set</p>
+	{{end}}
+	{{ .Content }}
 
-		{{if not .Content}}
-			<p>Warning: Key '.Content' not set</p>
-		{{end}}
-		{{ .Content }}
-
-	</form>
-
-</div><!-- /content -->
+</form><!-- /content -->
 <span class='content-separator'></span> <!-- split out content - outside because div.content is CSS grid -->
 
 

@@ -11,8 +11,9 @@ ol.progress {
 
   position: relative;
   width: 100%;
+  width: calc(100% - 4rem);
 
-  margin:  0;
+  margin:  0 auto;
   padding: 0;
   padding: 0.4em 0;
 

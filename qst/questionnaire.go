@@ -671,7 +671,7 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 		lblNext := cfg.Get().Mp["page"]
 		cloneNext := trl.S{}
 		for k, v := range lblNext {
-			cloneNext[k] = fmt.Sprintf("%v %v", v, q.NextNaviNum())
+			cloneNext[k] = fmt.Sprintf(" &nbsp; &nbsp; %v %v &nbsp; &nbsp; ", v, q.NextNaviNum())
 		}
 		lblPrev := cfg.Get().Mp["previous"]
 

@@ -271,7 +271,7 @@ func ReloadH(w http.ResponseWriter, r *http.Request) {
             User profile #   <input type="text"   name="p"                   value="%v"   /> country name, currency etc.<br>
             Hash             <input type="text"   name="h"    size=40        value="%v"   /> <br>
             Lang code        <input type="text"   name="lang_code"  size=6   value="%v"   /> 'en', 'de' ...<br>
-            Page             <input type="text"   name="page"                value="%v"   /> zero-indexed <br>
+            Page             <input type="number" name="page"                value="%v"  min=0 max=88 /> zero-indexed <br>
             Mobile           <input type="text"   name="mobile"              value="%v"   /> 0-auto, 1-mobile, 2-desktop <br>
             Skip validation  <input type="text"   name="skip_validation"     value="%v"   /> <br>
             %v

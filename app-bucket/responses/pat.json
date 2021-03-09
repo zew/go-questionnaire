@@ -8,8 +8,8 @@
  			"de": "Entscheidungsprozesse in der Politik"
  		},
  		"year": 2021,
- 		"month": 2,
- 		"deadline": "2021-03-28T23:59:00Z",
+ 		"month": 3,
+ 		"deadline": "2021-03-27T23:59:00Z",
  		"params": [
  			{
  				"name": "main_refinance_rate_ecb",
@@ -19,7 +19,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "d46e71374a2155b131b31b936b73afd9bb1357041190d07701257837ed6f6e11",
+ 	"md_5": "6eeaacdeef7d092bb2804ef6ccf73cae0b82261af79cc114be2e6008009b9cd3",
  	"lang_codes": [
  		"de"
  	],
@@ -35,7 +35,24 @@
  			},
  			"no_navigation": true,
  			"navi_num": 0,
- 			"width": 60,
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "36rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
  				{
@@ -48,7 +65,7 @@
  								"de": "HERZLICH WILLKOMMEN UND VIELEN DANK FÜR IHRE TEILNAHME!\u003cbr\u003e\u003cbr\u003e"
  							},
  							"description": {
- 								"de": "\n\t\t\t\t\u003cp\u003eDies ist eine Studie des Zentrums für Europäische Wirt\u0026shy;schaftsforschung (ZEW) in Mannheim \n\t\t\t\tsowie der Universitäten in Köln, Mannheim, Münster und Zürich. \n\t\t\t\tIhre Teilnahme wird nur wenige Minuten in Anspruch nehmen \n\t\t\t\tund Sie unterstützen damit die Forschung zu Ent\u0026shy;schei\u0026shy;dungs\u0026shy;pro\u0026shy;zessen in der Po\u0026shy;li\u0026shy;tik.\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp\u003eIn dieser Studie treffen Sie acht Entscheidungen und beantworten sieben Fragen. \n\t\t\t\tNach der Erhebung werden 10 % aller Teilnehmer zufällig ausgewählt. \n\t\t\t\tVon jedem ausgewählten Teilnehmer wird eine der acht Entscheidungen zufällig bestimmt \n\t\t\t\tund genau wie im Folgenden beschrieben umgesetzt \n\t\t\t\t(alle erwähnten Personen existieren wirklich und alle Auszahlungen werden wie beschrieben getätigt).\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp\u003eIn dieser Umfrage gibt es keine richtigen oder falschen Antworten. \n\t\t\t\tBitte entscheiden Sie daher immer gemäß Ihren persönlichen Ansichten. \n\t\t\t\tSie werden dabei vollständig anonym blei\u0026shy;ben.\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\u003cp\u003eDies ist eine Studie des Zentrums für Europäische Wirt\u0026shy;schaftsforschung (ZEW) in Mannheim \n\t\t\t\tsowie der Universitäten in Köln, Mannheim, Münster und Zürich. \n\t\t\t\tIhre Teilnahme wird nur wenige Minuten in Anspruch nehmen \n\t\t\t\tund Sie unterstützen damit die Forschung zu Ent\u0026shy;schei\u0026shy;dungs\u0026shy;pro\u0026shy;zessen in der Po\u0026shy;li\u0026shy;tik.\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp\u003eIn dieser Studie treffen Sie acht Entscheidungen und beantworten sieben Fragen. \n\t\t\t\tNach der Erhebung werden 10\u0026nbsp;% aller Teilnehmer zufällig ausgewählt. \n\t\t\t\tVon jedem ausgewählten Teilnehmer wird eine der acht Entscheidungen zufällig bestimmt \n\t\t\t\tund genau wie im Folgenden beschrieben umgesetzt \n\t\t\t\t(alle erwähnten Personen existieren wirklich und alle Auszahlungen werden wie beschrieben getätigt).\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp\u003eIn dieser Umfrage gibt es keine richtigen oder falschen Antworten. \n\t\t\t\tBitte entscheiden Sie daher immer gemäß Ihren persönlichen Ansichten. \n\t\t\t\tSie werden dabei vollständig anonym blei\u0026shy;ben.\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t"
  							},
  							"col_span_label": 1
  						},
@@ -64,9 +81,24 @@
  								"de": "Weiter"
  							},
  							"accesskey": "n",
- 							"horizontal_align_control": 2,
  							"col_span_control": 1,
- 							"response": "1"
+ 							"response": "1",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "end"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						}
  					]
  				}
@@ -84,7 +116,24 @@
  				"de": "Stiftungen 1"
  			},
  			"navi_num": 1,
- 			"width": 60,
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "36rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
  				{
@@ -96,6 +145,7 @@
  							"description": {
  								"de": "\n\t\t\t\t\u003cp\u003e\u003cb\u003e\n\t\t\t\tIm Folgenden geht es um eine Spende von 30\u0026nbsp;€, die \u003ci\u003eeine\u003c/i\u003e dieser drei Stif\u0026shy;tungen erhalten soll:\n\t\t\t\t\u003c/b\u003e\u003c/p\u003e\n\n\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\u003c!-- beware of hyphenization of css class names  --\u003e\n\t\t\t\t\u003cstyle\u003e\n\t\t\t\t\ttable.xxx01 td {\n\t\t\t\t\t\ttext-align: center;\n\t\t\t\t\t\ttext-align: center;\n\t\t\t\t\t}\n\t\t\t\t\u003c/style\u003e\n\n\t\t\t\t\u003ctable class=\"xxx01\"\u003e\n\t\t\t\t\u003ctr\u003e\n\t\t\t\t\t\u003ctd style=\"width: 33.2%\"\u003ePolitisch links\u003c/td\u003e\n\t\t\t\t\t\u003ctd style=\"width: 33.2%\"\u003ePolitische Mitte\u003c/td\u003e\n\t\t\t\t\t\u003ctd style=\"width: 33.2%\"\u003ePolitisch konservativ\u003c/td\u003e\n\t\t\t\t\u003ctr\u003e\n\t\t\t\t\u003ctr\u003e\n\t\t\t\t\t\u003ctd style=\"vertical-align: top;\" \u003e\u003cb\u003eHans-Böckler-Stif\u0026shy;tung\u003c/b\u003e\u003c/td\u003e\n\t\t\t\t\t\u003ctd style=\"vertical-align: top;\" \u003e\u003cb\u003eBund der Steuerzahler Deutsch\u0026shy;land e.V.\u003c/b\u003e\u003c/td\u003e\n\t\t\t\t\t\u003ctd style=\"vertical-align: top;\" \u003e\u003cb\u003eLudwig-Erhard-Stif\u0026shy;tung\u003c/b\u003e\u003c/td\u003e\n\t\t\t\t\u003ctr\u003e\n\t\t\t\t\u003c/table\u003e\n\n\t\t\t\t\u003cdiv class='vspacer-08'\u003e \u0026nbsp; \u003c/div\u003e\n\n\t\t\t\t\u003cp\u003e\n\t\t\t\tFür jede Ihrer ersten sechs Entscheidungen zeigen wir Ihnen die Präferenzen fünf deutscher Staatsangehöriger darüber, \n\t\t\t\twelche der drei Stif\u0026shy;tungen die Spende erhalten soll. \n\t\t\t\tSie entscheiden, wie die Präferenzen der fünf Personen in \u003ci\u003eeine\u003c/i\u003e gemeinsame Entscheidung zusammengefasst werden.\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp\u003e\n\t\t\t\tDie Präferenzen stammen von fünf Personen, die an einer Vorstudie teilgenommen haben\u003csup\u003e1)\u003c/sup\u003e. \n\t\t\t\tDiese fünf Personen wurden aus einer Stichprobe gezogen, in der sich gleich viele Personen politisch links, \n\t\t\t\tin der Mitte oder als konservativ einordnen. \n\t\t\t\tJede Person wurde einzeln befragt, welche der drei Stif\u0026shy;tungen sie als am besten, mittel, und am schlech\u0026shy;testen erachtet. \n\t\t\t\t\u003c/p\u003e\n\t\t\t\t\n\t\t\t\t\u003cp\u003e\n\t\t\t\tDen Personen wurde mitgeteilt, dass ihre Präferenzen \n\t\t\t\tzusammen mit den Präferenzen von vier anderen Personen \n\t\t\t\tan einen zukünftigen Teilnehmer der Studie gegeben werden, \n\t\t\t\tder die Präferenzen in eine Entscheidung zusammenfasst. \n\t\t\t\t\u003cb\u003eDieser zukünftige Teilnehmer sind Sie.\u003c/b\u003e\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t\n\t\t\t\t"
  							},
+ 							"col_span": 6,
  							"col_span_label": 6
  						}
  					]
@@ -164,7 +214,11 @@
  						}
  					]
  				}
- 			]
+ 			],
+ 			"validation_func_name": "patPage1",
+ 			"validation_func_msg": {
+ 				"de": "no message"
+ 			}
  		},
  		{
  			"label": {
@@ -178,7 +232,24 @@
  				"de": "Stiftungen 2"
  			},
  			"navi_num": 2,
- 			"width": 60,
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "36rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
  				{
@@ -190,6 +261,7 @@
  							"description": {
  								"de": "\n\t\t\t\u003cp\u003e\n\t\t\tEntscheiden Sie im Folgenden, an welche Stif\u0026shy;tung das Geld gehen soll. \n\t\t\t\u003cb\u003eSetzen Sie dazu bei der entsprechenden Stif\u0026shy;tung ein Kreuz in der Spalte „Auswahl“.\u003c/b\u003e\n\t\t\tFalls Sie eine zweite oder dritte Alternative als genauso gut empfinden, \n\t\t\tsetzen Sie ein Kreuz in der Spalte „Gleich gut“. \n\t\t\tBerücksichtigen Sie die dargestellten Präferenzen der Gruppen\u0026shy;mitglieder.\n\t\t\t\u003c/p\u003e\n\t\t\t"
  							},
+ 							"col_span": 2,
  							"col_span_label": 2
  						}
  					]
@@ -275,7 +347,11 @@
  						}
  					]
  				}
- 			]
+ 			],
+ 			"validation_func_name": "patPage2",
+ 			"validation_func_msg": {
+ 				"de": "Sie haben nicht alle drei Entscheidungen bewertet. Wirklich weiter?"
+ 			}
  		},
  		{
  			"label": {
@@ -289,7 +365,24 @@
  				"de": "Stiftungen 3"
  			},
  			"navi_num": 3,
- 			"width": 60,
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "36rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
  				{
@@ -373,7 +466,11 @@
  						}
  					]
  				}
- 			]
+ 			],
+ 			"validation_func_name": "patPage3",
+ 			"validation_func_msg": {
+ 				"de": "Sie haben nicht alle drei Entscheidungen bewertet. Wirklich weiter?"
+ 			}
  		},
  		{
  			"label": {
@@ -387,7 +484,24 @@
  				"de": "Auswertung"
  			},
  			"navi_num": 4,
- 			"width": 60,
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "36rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
  				{
@@ -418,7 +532,7 @@
  							"suffix": {
  								"de": "€"
  							},
- 							"horizontal_align_label": 2,
+ 							"col_span": 5,
  							"col_span_label": 3,
  							"col_span_control": 2,
  							"validator": "inRange1000"
@@ -435,6 +549,7 @@
  							"suffix": {
  								"de": "€"
  							},
+ 							"col_span": 5,
  							"col_span_label": 3,
  							"col_span_control": 2,
  							"validator": "inRange1000"
@@ -451,6 +566,7 @@
  							"suffix": {
  								"de": "€"
  							},
+ 							"col_span": 5,
  							"col_span_label": 3,
  							"col_span_control": 2,
  							"validator": "inRange1000"
@@ -565,7 +681,24 @@
  				"de": "Gruppen-\u003cbr\u003epräferenzen"
  			},
  			"navi_num": 5,
- 			"width": 60,
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "36rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
  				{
@@ -603,10 +736,11 @@
  								"de": " "
  							},
  							"suffix": {
- 								"de": "von 10\u003cbr\u003ewählen\u003cbr\u003eOption A"
+ 								"de": "von 10\u003cbr\u003ewählen Option A"
  							},
+ 							"col_span": 8,
  							"col_span_label": 1,
- 							"col_span_control": 7,
+ 							"col_span_control": 9,
  							"validator": "inRange10"
  						},
  						{
@@ -618,10 +752,11 @@
  								"de": " "
  							},
  							"suffix": {
- 								"de": "von 10\u003cbr\u003ewählen\u003cbr\u003eOption B"
+ 								"de": "von 10\u003cbr\u003ewählen Option B"
  							},
+ 							"col_span": 8,
  							"col_span_label": 1,
- 							"col_span_control": 7,
+ 							"col_span_control": 9,
  							"validator": "inRange10"
  						},
  						{
@@ -633,10 +768,11 @@
  								"de": " "
  							},
  							"suffix": {
- 								"de": "von 10\u003cbr\u003ewählen\u003cbr\u003eOption C"
+ 								"de": "von 10\u003cbr\u003ewählen Option C"
  							},
+ 							"col_span": 8,
  							"col_span_label": 1,
- 							"col_span_control": 7,
+ 							"col_span_control": 9,
  							"validator": "inRange10"
  						}
  					]
@@ -676,10 +812,11 @@
  								"de": " "
  							},
  							"suffix": {
- 								"de": "von 10\u003cbr\u003ewählen\u003cbr\u003eOption A"
+ 								"de": "von 10\u003cbr\u003ewählen Option A"
  							},
+ 							"col_span": 8,
  							"col_span_label": 1,
- 							"col_span_control": 7,
+ 							"col_span_control": 9,
  							"validator": "inRange10"
  						},
  						{
@@ -691,10 +828,11 @@
  								"de": " "
  							},
  							"suffix": {
- 								"de": "von 10\u003cbr\u003ewählen\u003cbr\u003eOption B"
+ 								"de": "von 10\u003cbr\u003ewählen Option B"
  							},
+ 							"col_span": 8,
  							"col_span_label": 1,
- 							"col_span_control": 7,
+ 							"col_span_control": 9,
  							"validator": "inRange10"
  						},
  						{
@@ -706,10 +844,11 @@
  								"de": " "
  							},
  							"suffix": {
- 								"de": "von 10\u003cbr\u003ewählen\u003cbr\u003eOption C"
+ 								"de": "von 10\u003cbr\u003ewählen Option C"
  							},
+ 							"col_span": 8,
  							"col_span_label": 1,
- 							"col_span_control": 7,
+ 							"col_span_control": 9,
  							"validator": "inRange10"
  						}
  					]
@@ -728,7 +867,24 @@
  				"de": "Eigene Einstellung"
  			},
  			"navi_num": 6,
- 			"width": 55,
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "30rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
  				{
@@ -763,7 +919,9 @@
  										"padding": "0 0.1rem"
  									},
  									"grid_item_style": {},
- 									"text_style": {}
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
  								}
  							},
  							"style_control": {
@@ -771,8 +929,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"justify_self": "end",
- 										"align_self": "center"
+ 										"align_self": "start"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -805,7 +962,9 @@
  										"padding": "0 0.1rem"
  									},
  									"grid_item_style": {},
- 									"text_style": {}
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
  								}
  							},
  							"style_control": {
@@ -813,8 +972,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"justify_self": "end",
- 										"align_self": "center"
+ 										"align_self": "start"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -847,7 +1005,9 @@
  										"padding": "0 0.1rem"
  									},
  									"grid_item_style": {},
- 									"text_style": {}
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
  								}
  							},
  							"style_control": {
@@ -855,8 +1015,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"justify_self": "end",
- 										"align_self": "center"
+ 										"align_self": "start"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -889,7 +1048,9 @@
  										"padding": "0 0.1rem"
  									},
  									"grid_item_style": {},
- 									"text_style": {}
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
  								}
  							},
  							"style_control": {
@@ -897,8 +1058,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"justify_self": "end",
- 										"align_self": "center"
+ 										"align_self": "start"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -931,7 +1091,9 @@
  										"padding": "0 0.1rem"
  									},
  									"grid_item_style": {},
- 									"text_style": {}
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
  								}
  							},
  							"style_control": {
@@ -939,8 +1101,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"justify_self": "end",
- 										"align_self": "center"
+ 										"align_self": "start"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -973,7 +1134,9 @@
  										"padding": "0 0.1rem"
  									},
  									"grid_item_style": {},
- 									"text_style": {}
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
  								}
  							},
  							"style_control": {
@@ -981,8 +1144,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"justify_self": "end",
- 										"align_self": "center"
+ 										"align_self": "start"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -1015,7 +1177,9 @@
  										"padding": "0 0.1rem"
  									},
  									"grid_item_style": {},
- 									"text_style": {}
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
  								}
  							},
  							"style_control": {
@@ -1023,8 +1187,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"justify_self": "end",
- 										"align_self": "center"
+ 										"align_self": "start"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -1130,7 +1293,9 @@
  										"padding": "0 0.1rem"
  									},
  									"grid_item_style": {},
- 									"text_style": {}
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
  								}
  							},
  							"style_control": {
@@ -1138,8 +1303,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"justify_self": "end",
- 										"align_self": "center"
+ 										"align_self": "start"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -1172,7 +1336,9 @@
  										"padding": "0 0.1rem"
  									},
  									"grid_item_style": {},
- 									"text_style": {}
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
  								}
  							},
  							"style_control": {
@@ -1180,8 +1346,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"justify_self": "end",
- 										"align_self": "center"
+ 										"align_self": "start"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -1214,7 +1379,9 @@
  										"padding": "0 0.1rem"
  									},
  									"grid_item_style": {},
- 									"text_style": {}
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
  								}
  							},
  							"style_control": {
@@ -1222,8 +1389,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"justify_self": "end",
- 										"align_self": "center"
+ 										"align_self": "start"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -1256,7 +1422,9 @@
  										"padding": "0 0.1rem"
  									},
  									"grid_item_style": {},
- 									"text_style": {}
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
  								}
  							},
  							"style_control": {
@@ -1264,8 +1432,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"justify_self": "end",
- 										"align_self": "center"
+ 										"align_self": "start"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -1298,7 +1465,9 @@
  										"padding": "0 0.1rem"
  									},
  									"grid_item_style": {},
- 									"text_style": {}
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
  								}
  							},
  							"style_control": {
@@ -1306,8 +1475,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"justify_self": "end",
- 										"align_self": "center"
+ 										"align_self": "start"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -1340,7 +1508,9 @@
  										"padding": "0 0.1rem"
  									},
  									"grid_item_style": {},
- 									"text_style": {}
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
  								}
  							},
  							"style_control": {
@@ -1348,8 +1518,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"justify_self": "end",
- 										"align_self": "center"
+ 										"align_self": "start"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -1382,7 +1551,9 @@
  										"padding": "0 0.1rem"
  									},
  									"grid_item_style": {},
- 									"text_style": {}
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
  								}
  							},
  							"style_control": {
@@ -1390,8 +1561,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"justify_self": "end",
- 										"align_self": "center"
+ 										"align_self": "start"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -1497,7 +1667,9 @@
  										"padding": "0 0.1rem"
  									},
  									"grid_item_style": {},
- 									"text_style": {}
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
  								}
  							},
  							"style_control": {
@@ -1505,8 +1677,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"justify_self": "end",
- 										"align_self": "center"
+ 										"align_self": "start"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -1539,7 +1710,9 @@
  										"padding": "0 0.1rem"
  									},
  									"grid_item_style": {},
- 									"text_style": {}
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
  								}
  							},
  							"style_control": {
@@ -1547,8 +1720,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"justify_self": "end",
- 										"align_self": "center"
+ 										"align_self": "start"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -1581,7 +1753,9 @@
  										"padding": "0 0.1rem"
  									},
  									"grid_item_style": {},
- 									"text_style": {}
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
  								}
  							},
  							"style_control": {
@@ -1589,8 +1763,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"justify_self": "end",
- 										"align_self": "center"
+ 										"align_self": "start"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -1623,7 +1796,9 @@
  										"padding": "0 0.1rem"
  									},
  									"grid_item_style": {},
- 									"text_style": {}
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
  								}
  							},
  							"style_control": {
@@ -1631,8 +1806,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"justify_self": "end",
- 										"align_self": "center"
+ 										"align_self": "start"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -1665,7 +1839,9 @@
  										"padding": "0 0.1rem"
  									},
  									"grid_item_style": {},
- 									"text_style": {}
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
  								}
  							},
  							"style_control": {
@@ -1673,8 +1849,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"justify_self": "end",
- 										"align_self": "center"
+ 										"align_self": "start"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -1707,7 +1882,9 @@
  										"padding": "0 0.1rem"
  									},
  									"grid_item_style": {},
- 									"text_style": {}
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
  								}
  							},
  							"style_control": {
@@ -1715,8 +1892,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"justify_self": "end",
- 										"align_self": "center"
+ 										"align_self": "start"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -1749,7 +1925,9 @@
  										"padding": "0 0.1rem"
  									},
  									"grid_item_style": {},
- 									"text_style": {}
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
  								}
  							},
  							"style_control": {
@@ -1757,8 +1935,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"justify_self": "end",
- 										"align_self": "center"
+ 										"align_self": "start"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -1864,7 +2041,9 @@
  										"padding": "0 0.1rem"
  									},
  									"grid_item_style": {},
- 									"text_style": {}
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
  								}
  							},
  							"style_control": {
@@ -1872,8 +2051,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"justify_self": "end",
- 										"align_self": "center"
+ 										"align_self": "start"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -1906,7 +2084,9 @@
  										"padding": "0 0.1rem"
  									},
  									"grid_item_style": {},
- 									"text_style": {}
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
  								}
  							},
  							"style_control": {
@@ -1914,8 +2094,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"justify_self": "end",
- 										"align_self": "center"
+ 										"align_self": "start"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -1948,7 +2127,9 @@
  										"padding": "0 0.1rem"
  									},
  									"grid_item_style": {},
- 									"text_style": {}
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
  								}
  							},
  							"style_control": {
@@ -1956,8 +2137,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"justify_self": "end",
- 										"align_self": "center"
+ 										"align_self": "start"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -1990,7 +2170,9 @@
  										"padding": "0 0.1rem"
  									},
  									"grid_item_style": {},
- 									"text_style": {}
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
  								}
  							},
  							"style_control": {
@@ -1998,8 +2180,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"justify_self": "end",
- 										"align_self": "center"
+ 										"align_self": "start"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -2032,7 +2213,9 @@
  										"padding": "0 0.1rem"
  									},
  									"grid_item_style": {},
- 									"text_style": {}
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
  								}
  							},
  							"style_control": {
@@ -2040,8 +2223,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"justify_self": "end",
- 										"align_self": "center"
+ 										"align_self": "start"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -2074,7 +2256,9 @@
  										"padding": "0 0.1rem"
  									},
  									"grid_item_style": {},
- 									"text_style": {}
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
  								}
  							},
  							"style_control": {
@@ -2082,8 +2266,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"justify_self": "end",
- 										"align_self": "center"
+ 										"align_self": "start"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -2116,7 +2299,9 @@
  										"padding": "0 0.1rem"
  									},
  									"grid_item_style": {},
- 									"text_style": {}
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
  								}
  							},
  							"style_control": {
@@ -2124,8 +2309,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"justify_self": "end",
- 										"align_self": "center"
+ 										"align_self": "start"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -2214,10 +2398,6 @@
  							"name": "submitBtn",
  							"type": "button",
  							"label": {
- 								"de": "",
- 								"en": ""
- 							},
- 							"description": {
  								"de": "Fragebogen abschließen",
  								"en": "Finish this survey",
  								"es": "Terminé esta encuesta",
@@ -2226,10 +2406,24 @@
  								"pl": "Zakończyłem tę ankietę"
  							},
  							"accesskey": "n",
- 							"horizontal_align_control": 2,
- 							"css_control": "special-line-height-higher",
  							"col_span_control": 1,
- 							"response": "7"
+ 							"response": "7",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "end"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						}
  					]
  				}
@@ -2250,7 +2444,24 @@
  			},
  			"no_navigation": true,
  			"navi_num": 0,
- 			"width": 100,
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "30rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
  				{
@@ -2267,7 +2478,6 @@
  								"it": "Grazie per aver risposto al nostro questionario.",
  								"pl": "Dziękujemy za uczestnictwo w ankiecie."
  							},
- 							"css_label": "special-line-height-higher",
  							"col_span_label": 1
  						},
  						{
@@ -2280,7 +2490,6 @@
  								"it": "Le Sue risposte sono state salvate.",
  								"pl": "Twoje wpisy zostały zapisane."
  							},
- 							"css_label": "special-line-height-higher",
  							"col_span_label": 1
  						}
  					]

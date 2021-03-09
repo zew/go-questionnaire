@@ -793,18 +793,14 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 
 		mp := map[string]string{}
 		mp["msg"] = page.ValidationFuncMsg.Tr(q.LangCode)
-		t, err := tplHelper(tplFile)
-
+		t, err := ParseJavaScript(tplFile)
 		if err != nil {
 			log.Printf("Error parsing tpl %v: %v", tplFile, err)
 		} else {
-			fmt.Fprintf(w, "<script>\n")
 			err := t.Execute(w, mp)
 			if err != nil {
 				log.Printf("Error executing tpl %v: %v", tplFile, err)
 			}
-			fmt.Fprintf(w, "console.log('JS tpl %v successfully added')", tplFile)
-			fmt.Fprintf(w, "</script>\n")
 		}
 
 	}
@@ -1010,7 +1006,12 @@ func (q *QuestionnaireT) ByName(n string) *inputT {
 	return nil
 }
 
-func tplHelper(tName string) (*template.Template, error) {
+// ParseJavaScript loads js file
+// and embeds its contents into a <script> tag;
+// so that parsing the template does not do harmful escaping;
+//
+// would better belong into package tpl - but circular dependencies;
+func ParseJavaScript(tName string) (*template.Template, error) {
 
 	pth := path.Join(".", "templates", "js", tName) // not filepath; cloudio always has forward slash
 	cnts, err := cloudio.ReadFile(pth)
@@ -1019,8 +1020,14 @@ func tplHelper(tName string) (*template.Template, error) {
 		return nil, errors.Wrap(err, msg)
 	}
 
+	w := &strings.Builder{}
+	fmt.Fprintf(w, "<script>\n")
+	fmt.Fprintf(w, string(cnts))
+	fmt.Fprintf(w, "console.log('JS tpl %v successfully added')", pth)
+	fmt.Fprintf(w, "</script>\n")
+
 	base := template.New(tName)
-	tDerived, err := base.Parse(string(cnts))
+	tDerived, err := base.Parse(w.String())
 	if err != nil {
 		msg := fmt.Sprintf("parsing failed for %v: %v", pth, err)
 		return nil, errors.Wrap(err, msg)

@@ -11,7 +11,7 @@ function demo(event) {
     }
 }
 
-function fmtPage1(event) {
+function validateForm(event) {
 
     var inp1 = document.forms.frmMain.y_probgood.value;
     var inp2 = document.forms.frmMain.y_probnormal.value;
@@ -55,5 +55,5 @@ function fmtPage1(event) {
 
 var frm = document.forms.frmMain;
 if (frm) {
-    frm.addEventListener('submit', fmtPage1);    
+    frm.addEventListener('submit', validateForm);    
 }

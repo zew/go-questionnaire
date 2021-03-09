@@ -67,7 +67,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				</p>
 
 				<p>In dieser Studie treffen Sie acht Entscheidungen und beantworten sieben Fragen. 
-				Nach der Erhebung werden 10 % aller Teilnehmer zufällig ausgewählt. 
+				Nach der Erhebung werden 10&nbsp;% aller Teilnehmer zufällig ausgewählt. 
 				Von jedem ausgewählten Teilnehmer wird eine der acht Entscheidungen zufällig bestimmt 
 				und genau wie im Folgenden beschrieben umgesetzt 
 				(alle erwähnten Personen existieren wirklich und alle Auszahlungen werden wie beschrieben getätigt).
@@ -97,7 +97,9 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			inp.Name = "submitBtn"
 			inp.Response = "1"
 			inp.Label = trl.S{"de": "Weiter"}
+			inp.StyleCtl = css.ItemEndMA(inp.StyleCtl)
 			inp.AccessKey = "n"
+
 		}
 
 	}
@@ -105,10 +107,15 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	// page 1
 	{
 		page := q.AddPage()
-		// page.Label = trl.S{"de": "Stiftungen 1"}
 		page.Label = trl.S{"de": ""}
 		page.Short = trl.S{"de": "Stiftungen 1"}
 		page.Style = css.DesktopWidthMax(page.Style, "36rem") // 60
+
+		page.ValidationFuncName = "patPage1"
+		page.ValidationFuncMsg = trl.S{
+			"de": "no message",
+			// "en": "Does not add up. Really continue?",
+		}
 
 		// gr0
 		{
@@ -119,6 +126,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
+				inp.ColSpan = 6
 				inp.ColSpanLabel = 6
 				// inp.Label = trl.S{"de": "input label"}
 				inp.Desc = trl.S{"de": `
@@ -258,10 +266,15 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 	// page 2
 	page := q.AddPage()
-	// page.Label = trl.S{"de": "Stiftungen 2"}
 	page.Label = trl.S{"de": ""}
 	page.Short = trl.S{"de": "Stiftungen 2"}
 	page.Style = css.DesktopWidthMax(page.Style, "36rem") // 60
+
+	page.ValidationFuncName = "patPage2"
+	page.ValidationFuncMsg = trl.S{
+		"de": "Sie haben nicht alle drei Entscheidungen bewertet. Wirklich weiter?",
+		// "en": "Does not add up. Really continue?",
+	}
 
 	// gr0
 	{
@@ -270,6 +283,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		gr.BottomVSpacers = 1
 		{
 			inp := gr.AddInput()
+			inp.ColSpan = 2
 			inp.ColSpanLabel = 2
 			inp.Type = "textblock"
 			inp.Desc = trl.S{"de": `
@@ -309,14 +323,19 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 	}
 
-	// page 2
+	// page 3
 	{
 
 		page := q.AddPage()
-		// page.Label = trl.S{"de": "Stiftungen 2"}
 		page.Label = trl.S{"de": ""}
 		page.Short = trl.S{"de": "Stiftungen 3"}
 		page.Style = css.DesktopWidthMax(page.Style, "36rem") // 60
+
+		page.ValidationFuncName = "patPage3"
+		page.ValidationFuncMsg = trl.S{
+			"de": "Sie haben nicht alle drei Entscheidungen bewertet. Wirklich weiter?",
+			// "en": "Does not add up. Really continue?",
+		}
 
 		// loop over matrix questions
 		for i := 3; i < 6; i++ {
@@ -347,7 +366,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	// page 4
 	{
 		page := q.AddPage()
-		// page.Label = trl.S{"de": "Auswertung"}
 		page.Label = trl.S{"de": ""}
 		page.Short = trl.S{"de": "Auswertung"}
 		page.Style = css.DesktopWidthMax(page.Style, "36rem") // 60
@@ -396,6 +414,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.MaxChars = 3
 				inp.Min = -999
 				inp.Max = 999
+				inp.ColSpan = 5
 				inp.ColSpanLabel = 3
 				inp.ColSpanControl = 2
 				inp.Desc = trl.S{"de": "Beste Stiftung"}
@@ -409,6 +428,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.MaxChars = 3
 				inp.Min = -999
 				inp.Max = 999
+				inp.ColSpan = 5
 				inp.ColSpanLabel = 3
 				inp.ColSpanControl = 2
 				inp.Desc = trl.S{"de": "Mittlere Stiftung"}
@@ -422,6 +442,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.MaxChars = 3
 				inp.Min = -999
 				inp.Max = 999
+				inp.ColSpan = 5
 				inp.ColSpanLabel = 3
 				inp.ColSpanControl = 2
 				inp.Desc = trl.S{"de": "Schlechteste Stiftung"}
@@ -556,7 +577,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	// page 5
 	{
 		page := q.AddPage()
-		// page.Label = trl.S{"de": "Gruppenpräferenzen"}
 		page.Label = trl.S{"de": ""}
 		page.Short = trl.S{"de": "Gruppen-<br>präferenzen"}
 		page.Style = css.DesktopWidthMax(page.Style, "36rem") // 60
@@ -616,11 +636,12 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.MaxChars = 2
 				inp.Min = 0
 				inp.Max = 10
+				inp.ColSpan = 8
 				inp.ColSpanLabel = 3 - 2
-				inp.ColSpanControl = 7
+				inp.ColSpanControl = 9
 				inp.Desc = trl.S{"de": "Wie viele wählen Option A? Ihre Antwort:"}
 				inp.Desc = trl.S{"de": " "}
-				inp.Suffix = trl.S{"de": "von 10<br>wählen<br>Option A"}
+				inp.Suffix = trl.S{"de": "von 10<br>wählen Option A"}
 				inp.Validator = "inRange10"
 			}
 			{
@@ -630,11 +651,12 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.MaxChars = 2
 				inp.Min = 0
 				inp.Max = 10
+				inp.ColSpan = 8
 				inp.ColSpanLabel = 3 - 2
-				inp.ColSpanControl = 7
+				inp.ColSpanControl = 9
 				inp.Desc = trl.S{"de": "Wie viele wählen Option B? Ihre Antwort:"}
 				inp.Desc = trl.S{"de": " "}
-				inp.Suffix = trl.S{"de": "von 10<br>wählen<br>Option B"}
+				inp.Suffix = trl.S{"de": "von 10<br>wählen Option B"}
 				inp.Validator = "inRange10"
 			}
 			{
@@ -644,11 +666,12 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.MaxChars = 2
 				inp.Min = 0
 				inp.Max = 10
+				inp.ColSpan = 8
 				inp.ColSpanLabel = 3 - 2
-				inp.ColSpanControl = 7
+				inp.ColSpanControl = 9
 				inp.Desc = trl.S{"de": "Wie viele wählen Option C? Ihre Antwort:"}
 				inp.Desc = trl.S{"de": " "}
-				inp.Suffix = trl.S{"de": "von 10<br>wählen<br>Option C"}
+				inp.Suffix = trl.S{"de": "von 10<br>wählen Option C"}
 				inp.Validator = "inRange10"
 			}
 		}
@@ -712,11 +735,12 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.MaxChars = 2
 				inp.Min = 0
 				inp.Max = 10
+				inp.ColSpan = 8
 				inp.ColSpanLabel = 3 - 2
-				inp.ColSpanControl = 7
+				inp.ColSpanControl = 9
 				inp.Desc = trl.S{"de": "Wie viele wählen Option A? Ihre Antwort:"}
 				inp.Desc = trl.S{"de": " "}
-				inp.Suffix = trl.S{"de": "von 10<br>wählen<br>Option A"}
+				inp.Suffix = trl.S{"de": "von 10<br>wählen Option A"}
 				inp.Validator = "inRange10"
 			}
 			{
@@ -726,11 +750,12 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.MaxChars = 2
 				inp.Min = 0
 				inp.Max = 10
+				inp.ColSpan = 8
 				inp.ColSpanLabel = 3 - 2
-				inp.ColSpanControl = 7
+				inp.ColSpanControl = 9
 				inp.Desc = trl.S{"de": "Wie viele wählen Option B? Ihre Antwort:"}
 				inp.Desc = trl.S{"de": " "}
-				inp.Suffix = trl.S{"de": "von 10<br>wählen<br>Option B"}
+				inp.Suffix = trl.S{"de": "von 10<br>wählen Option B"}
 				inp.Validator = "inRange10"
 			}
 			{
@@ -740,11 +765,12 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.MaxChars = 2
 				inp.Min = 0
 				inp.Max = 10
+				inp.ColSpan = 8
 				inp.ColSpanLabel = 3 - 2
-				inp.ColSpanControl = 7
+				inp.ColSpanControl = 9
 				inp.Desc = trl.S{"de": "Wie viele wählen Option C? Ihre Antwort:"}
 				inp.Desc = trl.S{"de": " "}
-				inp.Suffix = trl.S{"de": "von 10<br>wählen<br>Option C"}
+				inp.Suffix = trl.S{"de": "von 10<br>wählen Option C"}
 				inp.Validator = "inRange10"
 			}
 		}
@@ -754,10 +780,9 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	// page 6
 	{
 		page := q.AddPage()
-		// page.Label = trl.S{"de": "Eigene Einstellung"}
 		page.Label = trl.S{"de": ""}
 		page.Short = trl.S{"de": "Eigene Einstellung"}
-		page.Style = css.DesktopWidthMax(page.Style, "42rem") // 55
+		page.Style = css.DesktopWidthMax(page.Style, "30rem")
 
 		// gr1
 		{
@@ -881,11 +906,13 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Name = "finished"
 				inp.Name = "submitBtn"
 				inp.Response = fmt.Sprintf("%v", len(q.Pages)-1+1) // +1 since one page is appended below
-				inp.Label = trl.S{"de": "", "en": ""}
-				inp.Desc = cfg.Get().Mp["end"]
-				inp.Desc = cfg.Get().Mp["finish_questionnaire"]
+				inp.Label = cfg.Get().Mp["end"]
+				inp.Label = cfg.Get().Mp["finish_questionnaire"]
 				inp.ColSpanControl = 1
 				inp.AccessKey = "n"
+
+				inp.StyleCtl = css.NewStylesResponsive(inp.StyleCtl)
+				inp.StyleCtl.Desktop.StyleGridItem.JustifySelf = "end"
 			}
 		}
 
@@ -901,6 +928,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		page := q.AddPage()
 		page.Label = cfg.Get().Mp["end"]
 		page.NoNavigation = true
+		page.Style = css.DesktopWidthMax(page.Style, "30rem")
+
 		{
 			// Only one group => shuffling is no problem
 			gr := page.AddGroup()

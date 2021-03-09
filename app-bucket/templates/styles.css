@@ -293,11 +293,12 @@ h4 {
 
 h1, h2, h3, h4, h5, h6, h7 {
     line-height:   1.6em;
-    margin-top:    1.5em;
+    margin-top:    1.4em;
     margin-bottom: 0.1em;
 }
 
 /* stackoverflow.com/questions/1132366/ */
+div.markdown>h1,
 h1+h1, h1+h2, h1+h3, h1+h4, h1+h5, h1+h6,
        h2+h2, h2+h3, h2+h4, h2+h5, h2+h6,
               h3+h3, h3+h4, h3+h5, h3+h6,
@@ -453,7 +454,7 @@ label, .postlabel {
     */
     xx-white-space: pre-wrap; /* see also .postlabel, .plain-text-broken and .error */
 
-    text-align: right;
+    /* text-align: right; */
 
     /* make flexible with media query if needed */
     min-width:  2rem;  /* attention: overflow in multicolumn */
@@ -580,6 +581,11 @@ input, select, button, textarea, a.button {
 
 
     border: 1px solid #888;    /* chrome defaults to 2 pixel shadow */
+}
+
+input[type="number"] {
+    text-align: right;
+    padding-right: 0.2rem;
 }
 
 /* make the placeholder lighter */
@@ -1538,6 +1544,11 @@ form[name=frmMain] {
         padding: 0;
         border: none;
     */
+}
+
+.page-static {
+    max-width: 50rem;
+    margin: 0 auto 
 }
 
 

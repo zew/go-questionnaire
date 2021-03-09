@@ -5,6 +5,7 @@ import (
 	"log"
 	"strings"
 
+	"github.com/zew/go-questionnaire/cfg"
 	"github.com/zew/go-questionnaire/css"
 	"github.com/zew/go-questionnaire/ctr"
 	"github.com/zew/go-questionnaire/qst"
@@ -87,7 +88,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		page := q.AddPage()
 		page.Label = trl.S{"de": "Begrüßung", "en": "Greeting"}
 		page.NoNavigation = true
-		page.Style = css.DesktopWidthMax(page.Style, "36rem") // 60
+		page.Style = css.DesktopWidthMax(page.Style, "36rem")
 
 		// gr0
 		{
@@ -98,11 +99,21 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Type = "textblock"
 				inp.ColSpan = 1
 				inp.ColSpanLabel = 1
+				inp.Label = trl.S{
+					"de": "Sehr geehrte Finanzmarktexpertin, sehr geehrter Finanzmarktexperte, herzlich willkommen beim ZEW-Finanzmarkttest.",
+					"en": "Dear expert, welcome to the ZEW financial markets survey.",
+				}
+			}
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.ColSpan = 1
+				inp.ColSpanLabel = 1
 				impr := trl.S{}
 				for _, lc := range q.LangCodes {
 					w1 := &strings.Builder{}
 					err := tpl.RenderStaticContent(
-						w1, "data-protection.md", q.Survey.Type, lc,
+						w1, "page-0-data-protection.md", q.Survey.Type, lc,
 					)
 					if err != nil {
 						log.Print(err)
@@ -389,7 +400,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		page := q.AddPage()
 		page.Label = trl.S{"de": "Inflation und Zinsen", "en": "Inflation and Interest Rates"}
 		page.Short = trl.S{"de": "Inflation,<br/>Zinsen", "en": "Inflation,<br/>Inter. Rates"}
-		page.Style = css.DesktopWidthMax(page.Style, "36rem") // 60
+		page.Style = css.DesktopWidthMax(page.Style, "36rem")
 
 		// gr0
 		{
@@ -484,7 +495,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		page := q.AddPage()
 		page.Label = trl.S{"de": "Aktienmärkte", "en": "Stock Markets"}
 		page.Short = trl.S{"de": "Aktien-<br>märkte", "en": "Stock<br>Markets"}
-		page.Style = css.DesktopWidthMax(page.Style, "36rem") // 60
+		page.Style = css.DesktopWidthMax(page.Style, "36rem")
 
 		rowLabelsUncorrelatedAssets := []trl.S{
 			{
@@ -669,7 +680,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		page := q.AddPage()
 		page.Label = trl.S{"de": "Währungen", "en": "Currencies"}
 		page.Short = trl.S{"de": "Währungen", "en": "Currencies"}
-		page.Style = css.DesktopWidthMax(page.Style, "36rem") // 60
+		page.Style = css.DesktopWidthMax(page.Style, "36rem")
 
 		rowLabelsCurrencies := []trl.S{
 			{
@@ -706,7 +717,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		page := q.AddPage()
 		page.Label = trl.S{"de": "Sektoren", "en": "Sectors"}
 		page.Short = trl.S{"de": "Sektoren", "en": "Sectors"}
-		page.Style = css.DesktopWidthMax(page.Style, "36rem") // 60
+		page.Style = css.DesktopWidthMax(page.Style, "36rem")
 
 		rowLabelsCurrencies := []trl.S{
 			{
@@ -790,7 +801,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		page := q.AddPage()
 		page.Label = trl.S{"de": "Rezession", "en": "Recession"}
 		page.Short = trl.S{"de": "Rezession", "en": "Recession"}
-		page.Style = css.DesktopWidthMax(page.Style, "36rem") // 60
+		page.Style = css.DesktopWidthMax(page.Style, "36rem")
 
 		// gr0
 		{
@@ -861,10 +872,9 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	// Finish questionnaire?  - one before last page
 	{
 		page := q.AddPage()
-		page.Section = trl.S{"de": "Abschluss", "en": "Finish"}
-		page.Label = trl.S{"de": "", "en": ""}
+		page.Label = trl.S{"de": "Abschluss", "en": "Finish"}
 		page.Short = trl.S{"de": "Abschluss", "en": "Finish"}
-		page.Style = css.DesktopWidthMax(page.Style, "36rem") // 60
+		page.Style = css.DesktopWidthMax(page.Style, "36rem")
 
 		// gr1
 		{
@@ -949,11 +959,13 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Type = "button"
 				inp.Name = "submitBtn"
 				inp.Response = fmt.Sprintf("%v", len(q.Pages)-1+1) // +1 since one page is appended below
-				inp.Label = trl.S{"de": "", "en": ""}
-				inp.Label = trl.S{
-					"de": "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OK&nbsp;&nbsp;&nbsp;&nbsp;",
-					"en": "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OK&nbsp;&nbsp;&nbsp;&nbsp;",
-				}
+				// inp.Label = trl.S{"de": "", "en": ""}
+				// inp.Label = trl.S{
+				// 	"de": "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OK&nbsp;&nbsp;&nbsp;&nbsp;",
+				// 	"en": "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OK&nbsp;&nbsp;&nbsp;&nbsp;",
+				// }
+				inp.Label = cfg.Get().Mp["end"]
+				inp.Label = cfg.Get().Mp["finish_questionnaire"]
 				inp.ColSpan = 1
 				inp.ColSpanControl = 1
 				inp.AccessKey = "n"
@@ -973,7 +985,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		page := q.AddPage()
 		page.Label = trl.S{"de": "Ihre Eingaben", "en": "Summary of results"}
 		page.NoNavigation = true
-		page.Style = css.DesktopWidthMax(page.Style, "calc(100% - 1.2rem)") // 60
+		page.Style = css.DesktopWidthMax(page.Style, "calc(100% - 1.2rem)")
+		page.Style = css.DesktopWidthMax(page.Style, "40rem")
 		{
 			gr := page.AddGroup()
 			gr.Cols = 1

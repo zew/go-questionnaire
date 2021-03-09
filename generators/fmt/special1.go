@@ -1,6 +1,8 @@
 package fmt
 
 import (
+	"fmt"
+
 	"github.com/zew/go-questionnaire/css"
 	"github.com/zew/go-questionnaire/qst"
 	"github.com/zew/go-questionnaire/trl"
@@ -34,7 +36,6 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 			inp := gr.AddInput()
 			inp.Type = "textblock"
 			inp.ColSpan = 12
-			// inp.ColSpanLabel = 6
 			inp.Label = trl.S{
 				"de": `<b>1.</b> 
 				Punktprognose der Wachstumsrate des deutschen BIP: <br>
@@ -78,6 +79,7 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 			Thus: Previous quarter, current, next ...
 
 		*/
+		// row 1 - four quarters - label
 		{
 			inp := gr.AddInput()
 			inp.Type = "textblock"
@@ -90,97 +92,31 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 				"en": "<b>Quarterly</b> forecast ",
 			}
 			inp.ColSpan = 12
-			// inp.ColSpanLabel = 6
 		}
-		{
-			inp := gr.AddInput()
-			inp.Type = "number"
-			inp.Name = "xquart1"
-			inp.ColSpan = 3
-			inp.ColSpanLabel = 1
-			inp.ColSpanControl = 1
-			inp.Min = 0
-			inp.Max = 20
-			inp.MaxChars = 3
-			// inp.Validator = "inRange20"
-			inp.Label = trl.S{
-				"de": nextQ(0),
-				"en": nextQ(0),
+		// row 2 - four quarters - inputs
+		for i := 0; i < 4; i++ {
+			{
+				inp := gr.AddInput()
+				inp.Type = "number"
+				inp.Name = fmt.Sprintf("xquart%v", i+1)
+				inp.ColSpan = 3
+				inp.ColSpanLabel = 1
+				inp.ColSpanControl = 1
+				inp.Min = 0
+				inp.Max = 20
+				inp.MaxChars = 3
+				inp.Label = trl.S{
+					"de": nextQ(i),
+					"en": nextQ(i),
+				}
+				inp.Suffix = trl.S{
+					"de": "%",
+					"en": "pct",
+				}
+				inp.StyleLbl = sLbl
 			}
-			inp.Suffix = trl.S{
-				"de": "%",
-				"en": "pct",
-			}
-			inp.StyleLbl = sLbl
 		}
-		{
-			inp := gr.AddInput()
-			inp.Type = "number"
-			inp.Name = "xquart2"
-			inp.ColSpan = 3
-			inp.ColSpanLabel = 1
-			inp.ColSpanControl = 1
-			inp.Min = 0
-			inp.Max = 20
-			inp.MaxChars = 3
-			// inp.Validator = "inRange20"
-			inp.Label = trl.S{
-				"de": nextQ(1),
-				"en": nextQ(1),
-			}
-			inp.Suffix = trl.S{
-				"de": "%",
-				"en": "pct",
-			}
-			inp.StyleLbl = sLbl
-		}
-		{
-			inp := gr.AddInput()
-			inp.Type = "number"
-			inp.Name = "xquart3"
-			inp.ColSpan = 3
-			inp.ColSpanLabel = 1
-			inp.ColSpanControl = 1
-			inp.Min = 0
-			inp.Max = 20
-			inp.MaxChars = 3
-			// inp.Validator = "inRange20"
-			inp.Label = trl.S{
-				"de": nextQ(2),
-				"en": nextQ(2),
-			}
-			inp.Suffix = trl.S{
-				"de": "%",
-				"en": "pct",
-			}
-			inp.StyleLbl = sLbl
-		}
-		{
-			inp := gr.AddInput()
-			inp.Type = "number"
-			inp.Name = "xquart4"
-			inp.ColSpan = 3
-			inp.ColSpanLabel = 1
-			inp.ColSpanControl = 1
-			inp.Min = 0
-			inp.Max = 20
-			inp.MaxChars = 3
-			// inp.Validator = "inRange20"
-			inp.Label = trl.S{
-				"de": nextQ(3),
-				"en": nextQ(3),
-			}
-			inp.Suffix = trl.S{
-				"de": "%",
-				"en": "pct",
-			}
-			inp.StyleLbl = sLbl
-		}
-
-		//
-		// row 1
-		//
-
+		// row 3 - three years - label
 		{
 			inp := gr.AddInput()
 			inp.Type = "textblock"
@@ -193,22 +129,21 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 				"en": "Forecast  <b>Year</b>",
 			}
 			inp.ColSpan = 12
-			// inp.ColSpanLabel = 6
 		}
-		{
+		// row 4 - three years - inputs
+		for i := 0; i < 3; i++ {
 			inp := gr.AddInput()
 			inp.Type = "number"
-			inp.Name = "xyear1"
+			inp.Name = fmt.Sprintf("xyear%v", i+1)
 			inp.ColSpan = 4 - 1
 			inp.ColSpanLabel = 1
 			inp.ColSpanControl = 1
 			inp.Min = 0
 			inp.Max = 20
 			inp.MaxChars = 3
-			// inp.Validator = "inRange20"
 			inp.Label = trl.S{
-				"de": nextY(0),
-				"en": nextY(0),
+				"de": nextY(i),
+				"en": nextY(i),
 			}
 			inp.Suffix = trl.S{
 				"de": "%",
@@ -216,48 +151,7 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 			}
 			inp.StyleLbl = sLbl
 		}
-		{
-			inp := gr.AddInput()
-			inp.Type = "number"
-			inp.Name = "xyear2"
-			inp.ColSpan = 4 - 1
-			inp.ColSpanLabel = 1
-			inp.ColSpanControl = 1
-			inp.Min = 0
-			inp.Max = 20
-			inp.MaxChars = 3
-			// inp.Validator = "inRange20"
-			inp.Label = trl.S{
-				"de": nextY(1),
-				"en": nextY(1),
-			}
-			inp.Suffix = trl.S{
-				"de": "%",
-				"en": "pct",
-			}
-			inp.StyleLbl = sLbl
-		}
-		{
-			inp := gr.AddInput()
-			inp.Type = "number"
-			inp.Name = "xyear3"
-			inp.ColSpan = 4 - 1
-			inp.ColSpanLabel = 1
-			inp.ColSpanControl = 1
-			inp.Min = 0
-			inp.Max = 20
-			inp.MaxChars = 3
-			// inp.Validator = "inRange20"
-			inp.Label = trl.S{
-				"de": nextY(2),
-				"en": nextY(2),
-			}
-			inp.Suffix = trl.S{
-				"de": "%",
-				"en": "pct",
-			}
-			inp.StyleLbl = sLbl
-		}
+
 	}
 
 	//

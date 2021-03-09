@@ -203,3 +203,12 @@ func DesktopWidthMax(sr *StylesResponsive, s string) *StylesResponsive {
 	sr.Mobile.StyleBox.WidthMax = "calc(100% - 1.2rem)"
 	return sr
 }
+
+// MobileVertical makes an input rendering vertically in mobile view
+func MobileVertical(sr *StylesResponsive) *StylesResponsive {
+	sr = NewStylesResponsive(sr)
+	sr.Mobile.StyleGridContainer.AutoFlow = "column"
+	sr.Mobile.StyleGridContainer.TemplateColumns = "none "  // reset
+	sr.Mobile.StyleGridContainer.TemplateRows = "0.9fr 1fr" // must be more than one
+	return sr
+}

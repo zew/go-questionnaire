@@ -64,10 +64,11 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 		sLbl.Desktop.StyleGridItem.JustifySelf = "end"
 		sLbl.Desktop.StyleText.AlignHorizontal = "right"
 
-		sLbl.Mobile.StyleText.FontSize = 85
+		// sLbl.Mobile.StyleText.FontSize = 85
 
 		sLbl.Desktop.StyleBox.Padding = "0 0.4rem 0 0"
-		sLbl.Mobile.StyleBox.Padding = "0 0.1rem 0 0"
+		sLbl.Mobile.StyleBox.Padding = "0 0 0.2rem 0"
+		sLbl.Mobile.StyleBox.Padding = "0"
 
 		/*
 			Quarterly estimates.
@@ -92,6 +93,11 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 				"en": "<b>Quarterly</b> forecast ",
 			}
 			inp.ColSpan = 12
+
+			inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
+			inp.StyleLbl.Mobile.StyleBox.Position = "relative"
+			inp.StyleLbl.Mobile.StyleBox.Top = "0.4rem"
+
 		}
 		// row 2 - four quarters - inputs
 		for i := 0; i < 4; i++ {
@@ -114,6 +120,10 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 					"en": "pct",
 				}
 				inp.StyleLbl = sLbl
+
+				inp.Style = css.MobileVertical(inp.Style)
+				inp.StyleLbl.Mobile.StyleGridItem.JustifySelf = "start"
+				// inp.StyleLbl.Mobile.StyleGridItem.AlignSelf = "end"
 			}
 		}
 		// row 3 - three years - label
@@ -129,6 +139,10 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 				"en": "Forecast  <b>Year</b>",
 			}
 			inp.ColSpan = 12
+
+			inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
+			inp.StyleLbl.Mobile.StyleBox.Position = "relative"
+			inp.StyleLbl.Mobile.StyleBox.Top = "0.4rem"
 		}
 		// row 4 - three years - inputs
 		for i := 0; i < 3; i++ {
@@ -150,6 +164,11 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 				"en": "pct",
 			}
 			inp.StyleLbl = sLbl
+
+			inp.Style = css.MobileVertical(inp.Style)
+			inp.StyleLbl.Mobile.StyleGridItem.JustifySelf = "start"
+			// inp.StyleLbl.Mobile.StyleGridItem.AlignSelf = "end"
+
 		}
 
 	}

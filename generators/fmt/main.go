@@ -948,8 +948,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Type = "textblock"
 				inp.Label = trl.S{"de": "", "en": ""}
 				inp.Label = trl.S{
-					"de": "Durch Klicken auf 'OK' erhalten Sie eine Zusammenfassung Ihrer Antworten",
-					"en": "By Clicking 'OK' you receive a summary of your answers",
+					"de": "Durch Klicken erhalten Sie eine Zusammenfassung Ihrer Antworten",
+					"en": "By clicking you receive a summary of your answers",
 				}
 				inp.ColSpan = 1
 				inp.ColSpanLabel = 1

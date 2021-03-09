@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "bdb7ea29e06d4ad8cd02314467b4c4d36247940dec4787f12e3596bcd8033043",
+ 	"md_5": "601c6d2364e56c55da40e7d4356b1692cd876a72d9a9b0d9cd002255ff475da6",
  	"lang_codes": [
  		"de",
  		"en"
@@ -4470,7 +4470,24 @@
  								"en": "\u003cb\u003eQuarterly\u003c/b\u003e forecast "
  							},
  							"col_span": 12,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"top": "0.4rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "xquart1",
@@ -4488,6 +4505,24 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": "none ",
+ 										"template_rows": "0.9fr 1fr"
+ 									},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -4504,12 +4539,12 @@
  								"mobile": {
  									"grid_container_style": {},
  									"box_style": {
- 										"padding": "0 0.1rem 0 0"
+ 										"padding": "0"
  									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 85
- 									}
+ 									"grid_item_style": {
+ 										"justify_self": "start"
+ 									},
+ 									"text_style": {}
  								}
  							}
  						},
@@ -4529,6 +4564,24 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": "none ",
+ 										"template_rows": "0.9fr 1fr"
+ 									},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -4545,12 +4598,12 @@
  								"mobile": {
  									"grid_container_style": {},
  									"box_style": {
- 										"padding": "0 0.1rem 0 0"
+ 										"padding": "0"
  									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 85
- 									}
+ 									"grid_item_style": {
+ 										"justify_self": "start"
+ 									},
+ 									"text_style": {}
  								}
  							}
  						},
@@ -4570,6 +4623,24 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": "none ",
+ 										"template_rows": "0.9fr 1fr"
+ 									},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -4586,12 +4657,12 @@
  								"mobile": {
  									"grid_container_style": {},
  									"box_style": {
- 										"padding": "0 0.1rem 0 0"
+ 										"padding": "0"
  									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 85
- 									}
+ 									"grid_item_style": {
+ 										"justify_self": "start"
+ 									},
+ 									"text_style": {}
  								}
  							}
  						},
@@ -4611,6 +4682,24 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": "none ",
+ 										"template_rows": "0.9fr 1fr"
+ 									},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -4627,12 +4716,12 @@
  								"mobile": {
  									"grid_container_style": {},
  									"box_style": {
- 										"padding": "0 0.1rem 0 0"
+ 										"padding": "0"
  									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 85
- 									}
+ 									"grid_item_style": {
+ 										"justify_self": "start"
+ 									},
+ 									"text_style": {}
  								}
  							}
  						},
@@ -4643,7 +4732,24 @@
  								"en": "Forecast  \u003cb\u003eYear\u003c/b\u003e"
  							},
  							"col_span": 12,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"top": "0.4rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "xyear1",
@@ -4661,6 +4767,24 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": "none ",
+ 										"template_rows": "0.9fr 1fr"
+ 									},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -4677,12 +4801,12 @@
  								"mobile": {
  									"grid_container_style": {},
  									"box_style": {
- 										"padding": "0 0.1rem 0 0"
+ 										"padding": "0"
  									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 85
- 									}
+ 									"grid_item_style": {
+ 										"justify_self": "start"
+ 									},
+ 									"text_style": {}
  								}
  							}
  						},
@@ -4702,6 +4826,24 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": "none ",
+ 										"template_rows": "0.9fr 1fr"
+ 									},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -4718,12 +4860,12 @@
  								"mobile": {
  									"grid_container_style": {},
  									"box_style": {
- 										"padding": "0 0.1rem 0 0"
+ 										"padding": "0"
  									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 85
- 									}
+ 									"grid_item_style": {
+ 										"justify_self": "start"
+ 									},
+ 									"text_style": {}
  								}
  							}
  						},
@@ -4743,6 +4885,24 @@
  							"col_span": 3,
  							"col_span_label": 1,
  							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": "none ",
+ 										"template_rows": "0.9fr 1fr"
+ 									},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -4759,12 +4919,12 @@
  								"mobile": {
  									"grid_container_style": {},
  									"box_style": {
- 										"padding": "0 0.1rem 0 0"
+ 										"padding": "0"
  									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 85
- 									}
+ 									"grid_item_style": {
+ 										"justify_self": "start"
+ 									},
+ 									"text_style": {}
  								}
  							}
  						}
@@ -5700,8 +5860,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Durch Klicken auf 'OK' erhalten Sie eine Zusammenfassung Ihrer Antworten",
- 								"en": "By Clicking 'OK' you receive a summary of your an\u0026shy;swers"
+ 								"de": "Durch Klicken erhalten Sie eine Zusammenfassung Ihrer Antworten",
+ 								"en": "By clicking you receive a summary of your an\u0026shy;swers"
  							},
  							"col_span": 1,
  							"col_span_label": 1

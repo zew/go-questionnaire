@@ -158,6 +158,31 @@ func labelsIncreaseDecrease() []trl.S {
 
 }
 
+func labelsIncreaseDecreaseCurrency() []trl.S {
+
+	tm := []trl.S{
+		{
+			"de": "aufwerten",
+			"en": "appreciate",
+		},
+		{
+			"de": "gleich bleiben",
+			"en": "remain unchanged",
+		},
+		{
+			"de": "abwerten",
+			"en": "depreciate",
+		},
+		{
+			"de": "keine<br>Angabe",
+			"en": "no answer",
+		},
+	}
+
+	return tm
+
+}
+
 func labelsVeryHighVeryLow() []trl.S {
 
 	tm := []trl.S{

@@ -507,7 +507,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			gb := qst.NewGridBuilderRadios(
 				columnTemplate4,
 				labelsIncreaseDecrease(),
-				[]string{"euro_stoxx50", "sto_dax", "dow_jones", "sse_comp_chn"},
+				// []string{"euro_stoxx50", "sto_dax", "dow_jones", "sto_sse_comp_chn"},
+				[]string{"sto_ez", "sto_dax", "dow_usa", "sto_sse_comp_chn"},
 				radioVals4,
 				rowLabelsUncorrelatedAssets,
 			)
@@ -529,7 +530,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "number"
-				inp.Name = "dax_6"
+				inp.Name = "dax_erw"
 				inp.Min = 2000
 				inp.Max = 50000
 				inp.MaxChars = 6
@@ -558,7 +559,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "number"
-				inp.Name = "dax_6_low"
+				inp.Name = "dax_min"
 				inp.Min = 2000
 				inp.Max = 50000
 				inp.MaxChars = 6
@@ -587,7 +588,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "number"
-				inp.Name = "dax_6_high"
+				inp.Name = "dax_max"
 				inp.Min = 2000
 				inp.Max = 50000
 				inp.MaxChars = 6
@@ -683,7 +684,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		{
 			gb := qst.NewGridBuilderRadios(
 				columnTemplate4,
-				labelsIncreaseDecrease(),
+				labelsIncreaseDecreaseCurrency(),
 				[]string{"fx_usa", "fx_chn"},
 				radioVals4,
 				rowLabelsCurrencies,
@@ -811,7 +812,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 					"en": fmt.Sprintf("Current quarter"),
 				}
 				inp.Type = "number"
-				inp.Name = "yshr_deu_q0"
+				inp.Name = "y_recession_q0"
 				inp.Min = 0
 				inp.Max = 100
 				inp.MaxChars = 4
@@ -828,7 +829,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 					"en": fmt.Sprintf("Next quarter"),
 				}
 				inp.Type = "number"
-				inp.Name = "yshr_deu_q1"
+				inp.Name = "y_recession_q1"
 				inp.Min = 0
 				inp.Max = 100
 				inp.MaxChars = 4

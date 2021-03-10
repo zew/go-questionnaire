@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "c0468864422fdfc72e4bb9fa8bf76095e6df06a1f067de532e908ed67102cf21",
+ 	"md_5": "4d1e8b58985bd4e0ae75beb9acaa06a9ed99498c5fca694bd6bf1848af05e9dd",
  	"lang_codes": [
  		"de",
  		"en"
@@ -2646,7 +2646,7 @@
  							}
  						},
  						{
- 							"name": "euro_stoxx50",
+ 							"name": "sto_ez",
  							"type": "radio",
  							"label": {
  								"de": "EURO STOXX 50",
@@ -2673,19 +2673,19 @@
  							}
  						},
  						{
- 							"name": "euro_stoxx50",
+ 							"name": "sto_ez",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "euro_stoxx50",
+ 							"name": "sto_ez",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "euro_stoxx50",
+ 							"name": "sto_ez",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
@@ -2738,7 +2738,7 @@
  							"value_radio": "4"
  						},
  						{
- 							"name": "dow_jones",
+ 							"name": "dow_usa",
  							"type": "radio",
  							"label": {
  								"de": "Dow Jones (USA)",
@@ -2765,19 +2765,19 @@
  							}
  						},
  						{
- 							"name": "dow_jones",
+ 							"name": "dow_usa",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "dow_jones",
+ 							"name": "dow_usa",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "dow_jones",
+ 							"name": "dow_usa",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
@@ -2852,7 +2852,7 @@
  					"columns": 6,
  					"inputs": [
  						{
- 							"name": "dax_6",
+ 							"name": "dax_erw",
  							"type": "number",
  							"max_chars": 6,
  							"min": 2000,
@@ -2879,7 +2879,7 @@
  							"col_span_label": 6
  						},
  						{
- 							"name": "dax_6_low",
+ 							"name": "dax_min",
  							"type": "number",
  							"max_chars": 6,
  							"min": 2000,
@@ -2921,7 +2921,7 @@
  							}
  						},
  						{
- 							"name": "dax_6_high",
+ 							"name": "dax_max",
  							"type": "number",
  							"max_chars": 6,
  							"min": 2000,
@@ -3216,8 +3216,8 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "stei\u0026shy;gen",
- 								"en": "in\u0026shy;crease"
+ 								"de": "auf\u0026shy;wer\u0026shy;ten",
+ 								"en": "appreciate"
  							},
  							"col_span_label": 2,
  							"col_span_control": 1,
@@ -3305,8 +3305,8 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "sin\u0026shy;ken",
- 								"en": "de\u0026shy;crease"
+ 								"de": "ab\u0026shy;wer\u0026shy;ten",
+ 								"en": "depreciate"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -4395,7 +4395,7 @@
  							"col_span_label": 5
  						},
  						{
- 							"name": "yshr_deu_q0",
+ 							"name": "y_recession_q0",
  							"type": "number",
  							"max_chars": 4,
  							"max": 100,
@@ -4412,7 +4412,7 @@
  							"col_span_control": 1
  						},
  						{
- 							"name": "yshr_deu_q1",
+ 							"name": "y_recession_q1",
  							"type": "number",
  							"max_chars": 4,
  							"max": 100,

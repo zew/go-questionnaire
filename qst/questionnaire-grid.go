@@ -319,17 +319,23 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 			placeHolder = fmt.Sprintf("placeholder='%v'", inp.Placeholder.TrSilent(langCode))
 		}
 
+		autocomplete := ""
+		if inp.Type == "text" {
+			autocomplete = "autocomplete='off'"
+		}
+
 		ctrl += fmt.Sprintf(
 			`<input type='%v'  %v  
 				name='%v' id='%v' title='%v %v' 
 				style='%v'  
-				size='%v' maxlength=%v min='%v' max='%v'  %v  value='%v' %v  autocomplete='off'  />
+				size='%v' maxlength=%v min='%v' max='%v' %v %v value='%v' %v />
 			`,
 			inp.Type, inputMode,
 			nm, fmt.Sprintf("%v%v", nm, inp.ValueRadio), inp.Label.TrSilent(q.LangCode), inp.Desc.TrSilent(q.LangCode),
 			width,
-			inp.MaxChars, inp.MaxChars, inp.Min, inp.Max, checked,
-			rspvl, placeHolder,
+			inp.MaxChars, inp.MaxChars, inp.Min, inp.Max,
+			placeHolder, autocomplete,
+			rspvl, checked,
 		)
 
 		// the checkbox "empty catcher" must follow *after* the actual checkbox input,

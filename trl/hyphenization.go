@@ -21,9 +21,11 @@ var hyph = []string{
 	"as&shy;so&shy;zi&shy;ie&shy;rt",
 	"Aus&shy;fall&shy;risiken",
 	"aus&shy;ge&shy;schlos&shy;sen",
-	"Bil&shy;dung", // 	"Bil|dung",
-	"blei&shy;ben", // blei|ben
-	"Da&shy;ten",   // Da|ten
+	"ab&shy;wer&shy;ten",  // ab|wer|ten
+	"auf&shy;wer&shy;ten", // auf|wer|ten
+	"Bil&shy;dung",        // 	"Bil|dung",
+	"blei&shy;ben",        // blei|ben
+	"Da&shy;ten",          // Da|ten
 	"da&shyfür",
 	"da&shyge&shygen",
 	"Deutsch&shy;land",
@@ -103,6 +105,7 @@ var hyph = []string{
 	"ad&shy;min&shy;is&shy;tra&shy;tion",
 	"an&shy;swer",
 	"ap&shy;pli&shy;ca&shy;ble",
+	"ap&shy;​pre&shy;​ci&shy;​ate", // ap·​pre·​ci·​ate
 	"as&shy;sis&shy;tant",
 	"as&shy;so&shy;ci&shy;ate",
 	"av&shy;er&shy;age",
@@ -112,6 +115,7 @@ var hyph = []string{
 	"Comp&shy;etitive",
 	"Cons&shy;umer",
 	"de&shy;crease",
+	"de&shy;​pre&shy;​ci&shy;​ate", // de·​pre·​ci·​ate
 	"de&shy;te&shy;ri&shy;o&shy;rate",
 	"de&shy;vel&shy;op&shy;ment",
 	"Dis&shy;agree",

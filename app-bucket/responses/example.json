@@ -9,9 +9,9 @@
  			"de": "Beispielumfrage",
  			"en": "Example survey"
  		},
- 		"year": 2019,
- 		"month": 9,
- 		"deadline": "2030-01-01T00:00:00Z",
+ 		"year": 2021,
+ 		"month": 3,
+ 		"deadline": "2021-03-27T23:59:00Z",
  		"params": [
  			{
  				"name": "main_refinance_rate_ecb",
@@ -21,12 +21,8 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "74dbcd3f2174d6d20efd09de5d0567c3",
- 	"lang_codes": {
- 		"de": "Deutsch",
- 		"en": "English"
- 	},
- 	"lang_codes_order": [
+ 	"md_5": "e056606908fe44e4953f029310061d3ff3912d81b35ff4b98474ef41521a760c",
+ 	"lang_codes": [
  		"en",
  		"de"
  	],
@@ -42,12 +38,10 @@
  				"en": ""
  			},
  			"navi_num": 1,
- 			"width": 100,
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
  				{
  					"bottom_vspacers": 3,
- 					"width": 100,
  					"columns": 3,
  					"inputs": [
  						{
@@ -57,7 +51,9 @@
  							"label": {
  								"de": "Vorname",
  								"en": "first name"
- 							}
+ 							},
+ 							"col_span_label": 1,
+ 							"col_span_control": 1
  						}
  					]
  				}
@@ -73,12 +69,10 @@
  				"en": ""
  			},
  			"navi_num": 2,
- 			"width": 100,
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
  				{
  					"bottom_vspacers": 3,
- 					"width": 100,
  					"columns": 3,
  					"inputs": [
  						{
@@ -88,7 +82,9 @@
  							"label": {
  								"de": "Vorname",
  								"en": "first name"
- 							}
+ 							},
+ 							"col_span_label": 1,
+ 							"col_span_control": 1
  						}
  					]
  				}
@@ -104,12 +100,10 @@
  				"en": ""
  			},
  			"navi_num": 3,
- 			"width": 100,
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
  				{
  					"bottom_vspacers": 3,
- 					"width": 100,
  					"columns": 3,
  					"inputs": [
  						{
@@ -119,7 +113,9 @@
  							"label": {
  								"de": "Vorname",
  								"en": "first name"
- 							}
+ 							},
+ 							"col_span_label": 1,
+ 							"col_span_control": 1
  						}
  					]
  				}

@@ -8,6 +8,6 @@ package systemtest
 // to avoid
 // "no buildable Go source files"
 // on travis
-func main() {
+func main_2021_03_disabled() {
 
 }

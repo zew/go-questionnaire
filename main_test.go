@@ -127,7 +127,7 @@ func TestSystem(t *testing.T) {
 			continue
 		}
 
-		systemtest.SimulateLoad(t, q, loginURL, "0")
+		// systemtest.SimulateLoad(t, q, loginURL, "0")
 		systemtest.SimulateLoad(t, q, loginURL, "1")
 
 		// if surveyID == "peu2018" {

@@ -104,7 +104,7 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 			{
 				inp := gr.AddInput()
 				inp.Type = "number"
-				inp.Name = fmt.Sprintf("xquart%v", i+1)
+				inp.Name = fmt.Sprintf("pprwbipq%v", i+1)
 				inp.ColSpan = 3
 				inp.ColSpanLabel = 1
 				inp.ColSpanControl = 1
@@ -148,7 +148,7 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 		for i := 0; i < 3; i++ {
 			inp := gr.AddInput()
 			inp.Type = "number"
-			inp.Name = fmt.Sprintf("xyear%v", i+1)
+			inp.Name = fmt.Sprintf("pprwbipj%v", i+1)
 			inp.ColSpan = 4 - 1
 			inp.ColSpanLabel = 1
 			inp.ColSpanControl = 1
@@ -208,23 +208,19 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 			"de": "Corona Pandemie",
 			"en": "Corona pandemic",
 		},
-		// {
-		// 	// dummy for 'iobc_free' be replaced
-		// 	"de": " &nbsp; ",
-		// 	"en": " &nbsp; ",
-		// },
 	}
 
 	// gr2
-	// iobc => impact on business cycle
+	// 2020-04: mcor => measures corona
+	// igf => impact on growth forecast
 	{
 		gb := qst.NewGridBuilderRadios(
 			columnTemplate6,
 			labelsStronglyPositiveStronglyNegativeInfluence(),
-			[]string{"iobc_cycle_data_deu", "iobc_exp_markets", "iobc_exch_rates",
-				"iobc_trade_conflicts",
-				"iobc_mp_ecb", "iobc_mp_fed", "iobc_brexit", "iobc_corona",
-				// "iobc_free",
+			[]string{"rev_bus_cycle_ger", "rev_exp_markets", "rev_exch_rates",
+				"rev_trade_conflicts",
+				"rev_mp_ecb", "rev_mp_fed", "rev_brexit", "rev_corona",
+				// "rev_free",
 			},
 			radioVals6,
 			rowLabelsEconomicAreas,
@@ -247,7 +243,7 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 		{
 			inp := gr.AddInput()
 			inp.Type = "text"
-			inp.Name = "iobc_free_label"
+			inp.Name = "rev_free_label"
 			inp.MaxChars = 26
 			inp.ColSpan = 1
 			inp.ColSpanControl = 1
@@ -257,12 +253,11 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 	}
 
 	// gr4
-	// iobc => impact on business cycle
 	{
 		gb := qst.NewGridBuilderRadios(
 			columnTemplate6,
 			nil,
-			[]string{"iobc_free"},
+			[]string{"rev_free"},
 			radioVals6,
 			[]trl.S{
 				{

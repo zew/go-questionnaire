@@ -29,6 +29,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		inp := gr.AddInput()
 		inp.Name = fmt.Sprintf("name%v", i1)
 		inp.Type = "text"
+		inp.ColSpanControl = 1
 		inp.Label = trl.S{"de": "Vorname", "en": "first name"}
 		inp.MaxChars = 10
 	}

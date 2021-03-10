@@ -103,11 +103,15 @@ func FillQuestAndComparesServerResult(t *testing.T, qSrc *qst.QuestionnaireT, ur
 	pthBase := path.Join(qst.BasePath(), qSrc.Survey.Type+".json")
 
 	// creating client quest from scratch
-	clQ, err = qst.Load1(pthBase)
+	aBase, err := qst.Load1(pthBase)
 	if err != nil {
-		t.Fatalf("Client questionnaire loading from file failed: %v", err)
+		t.Fatalf("base questionnaire loading from file failed: %v", err)
 	}
-	clQ, err = clQ.Split()
+	err = aBase.Validate()
+	if err != nil {
+		t.Fatalf("base questionnaire validation caused error: %v", err)
+	}
+	clQ, err = aBase.Split()
 	if err != nil {
 		t.Fatalf("Client questionnaire splitting failed: %v", err)
 	}
@@ -118,10 +122,12 @@ func FillQuestAndComparesServerResult(t *testing.T, qSrc *qst.QuestionnaireT, ur
 	clQ.UserID = "systemtest"
 	clQ.RemoteIP = "127.0.0.1:12345"
 	clQ.CurrPage = 777 // hopeless to mimic every server side setting
-	err = clQ.Validate()
-	if err != nil {
-		t.Fatalf("Client questionnaire validation caused error: %v", err)
-	}
+	/*
+		err = clQ.Validate()
+		if err != nil {
+			t.Fatalf("Client questionnaire validation caused error: %v", err)
+		}
+	*/
 	t.Logf("Client questionnaire loaded from file; %v pages", len(clQ.Pages))
 
 	// After UserID have been set => deletion possible
@@ -159,8 +165,7 @@ func FillQuestAndComparesServerResult(t *testing.T, qSrc *qst.QuestionnaireT, ur
 
 // SimulateLoad logs in as 'systemtest'
 // and performs some requests.
-func SimulateLoad(t *testing.T, qSrc *qst.QuestionnaireT,
-	loginURI, mobile string) {
+func SimulateLoad(t *testing.T, qSrc *qst.QuestionnaireT, loginURI, mobile string) {
 
 	port := cfg.Get().BindSocket
 	host := fmt.Sprintf("http://localhost:%v", port)

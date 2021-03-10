@@ -97,12 +97,12 @@ func main() {
 			log.Printf("%3v: questionnaire %v saved", i, pth)
 		}
 
-		search := q.Pages[1].Groups[8].Desc["fr"]
+		search := q.Pages[1].Groups[8].Inputs[0].Label["fr"]
 		old := "con-trainte"
 		new := "contrainte"
 		if strings.Contains(search, old) {
 			replaced := strings.Replace(search, old, new, -1)
-			q.Pages[1].Groups[8].Desc["fr"] = replaced
+			q.Pages[1].Groups[8].Inputs[0].Label["fr"] = replaced
 			err := q.Save1(pth)
 			if err != nil {
 				log.Printf("%3v: Error saving %v: %v", i, pth, err)

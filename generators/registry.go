@@ -15,6 +15,7 @@ import (
 	"github.com/go-playground/form"
 	"github.com/zew/go-questionnaire/cfg"
 	"github.com/zew/go-questionnaire/cloudio"
+	"github.com/zew/go-questionnaire/generators/example"
 	"github.com/zew/go-questionnaire/generators/fmt"
 	"github.com/zew/go-questionnaire/generators/pat"
 	"github.com/zew/go-questionnaire/qst"
@@ -24,10 +25,10 @@ import (
 type genT func(params []qst.ParamT) (*qst.QuestionnaireT, error)
 
 var gens = map[string]genT{
-	"fmt": fmt.Create,
-	"pat": pat.Create,
+	"example": example.Create,
+	"fmt":     fmt.Create,
+	"pat":     pat.Create,
 	// "flit":    flit.Create,
-	// "example": example.Create,
 	// "peu2018": peu2018.Create,
 	// "mul":     mul.Create,
 	// "euref":   euref.Create,

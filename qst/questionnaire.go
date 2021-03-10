@@ -87,10 +87,11 @@ type inputT struct {
 	Name string `json:"name,omitempty"`
 	Type string `json:"type,omitempty"` // see implementedTypes
 
-	MaxChars int     `json:"max_chars,omitempty"` // input chars; => SIZE for input, MAXLENGTH for textarea, text; also used for width
-	Step     float64 `json:"step,omitempty"`      // for number input:  stepping interval
-	Min      float64 `json:"min,omitempty"`       //      ~
-	Max      float64 `json:"max,omitempty"`       //      ~
+	MaxChars    int     `json:"max_chars,omitempty"` // input chars; => SIZE for input, MAXLENGTH for textarea, text; also used for width
+	Step        float64 `json:"step,omitempty"`      // for number input:  stepping interval
+	Min         float64 `json:"min,omitempty"`       //      ~
+	Max         float64 `json:"max,omitempty"`       //      ~
+	Placeholder trl.S   `json:"placeholder,omitempty"`
 
 	Label     trl.S  `json:"label,omitempty"`
 	Desc      trl.S  `json:"description,omitempty"`

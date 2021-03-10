@@ -6,8 +6,8 @@
  			"en": "ZEW"
  		},
  		"name": {
- 			"de": "Finanzmarkttest",
- 			"en": "Financial Markets Survey"
+ 			"de": "Index / Finanzmarkttest",
+ 			"en": "Indicator of Economic Sentiment"
  		},
  		"year": 2021,
  		"month": 3,
@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "601c6d2364e56c55da40e7d4356b1692cd876a72d9a9b0d9cd002255ff475da6",
+ 	"md_5": "c0468864422fdfc72e4bb9fa8bf76095e6df06a1f067de532e908ed67102cf21",
  	"lang_codes": [
  		"de",
  		"en"
@@ -60,7 +60,7 @@
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
  				{
- 					"bottom_vspacers": 3,
+ 					"bottom_vspacers": 1,
  					"columns": 1,
  					"inputs": [
  						{
@@ -84,7 +84,7 @@
  					]
  				},
  				{
- 					"bottom_vspacers": 3,
+ 					"bottom_vspacers": 2,
  					"columns": 6,
  					"inputs": [
  						{
@@ -97,7 +97,7 @@
  							"col_span_label": 6
  						},
  						{
- 							"name": "proxy",
+ 							"name": "selbst",
  							"type": "radio",
  							"label": {
  								"de": "Ja, ich bin die angeschriebene Person.",
@@ -106,7 +106,7 @@
  							"col_span": 6,
  							"col_span_label": 5,
  							"col_span_control": 1,
- 							"value_radio": "no",
+ 							"value_radio": "1",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -129,7 +129,7 @@
  							}
  						},
  						{
- 							"name": "proxy",
+ 							"name": "selbst",
  							"type": "radio",
  							"label": {
  								"de": "Nein, ich fülle den Fragebogen in Vertretung der angeschriebenen Person aus.",
@@ -138,7 +138,7 @@
  							"col_span": 6,
  							"col_span_label": 5,
  							"col_span_control": 1,
- 							"value_radio": "yes",
+ 							"value_radio": "2",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -181,7 +181,7 @@
  					}
  				},
  				{
- 					"bottom_vspacers": 3,
+ 					"bottom_vspacers": 2,
  					"columns": 1,
  					"inputs": [
  						{
@@ -193,12 +193,28 @@
  							"col_span_label": 1
  						},
  						{
- 							"name": "address_change",
+ 							"name": "contact",
  							"type": "textarea",
  							"max_chars": 150,
  							"col_span_control": 1
  						}
- 					]
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"row_gap": "0.2rem"
+ 							},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
  				},
  				{
  					"bottom_vspacers": 3,
@@ -671,8 +687,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e2a.\u003c/b\u003e Die ge\u0026shy;samtwirt\u0026shy;schaft\u0026shy;liche Situation wird sich mittel\u0026shy;fristig (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;Mo.)",
- 								"en": "\u003cb\u003e2a.\u003c/b\u003e The overall eco\u0026shy;nom\u0026shy;ic situation medium term (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;months) will"
+ 								"de": "\u003cb\u003e2a.\u003c/b\u003e Die ge\u0026shy;samtwirt\u0026shy;schaft\u0026shy;liche Situation wird sich mittel\u0026shy;fristig (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;Mo.)",
+ 								"en": "\u003cb\u003e2a.\u003c/b\u003e The overall eco\u0026shy;nom\u0026shy;ic situation medium term (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;months) will"
  							},
  							"col_span": 4,
  							"col_span_label": 1
@@ -1064,8 +1080,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e2b.\u003c/b\u003e Für wie wahrscheinlich halten Sie die folgenden mittel\u0026shy;fristigen (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;Mo.) Entwicklungen der ge\u0026shy;samtwirt\u0026shy;schaft\u0026shy;lichen Situation in Deutsch\u0026shy;land?",
- 								"en": "\u003cb\u003e2b.\u003c/b\u003e How likely are the following medium term (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;months) de\u0026shy;vel\u0026shy;op\u0026shy;ments of the general eco\u0026shy;nom\u0026shy;ic situation in Germany?"
+ 								"de": "\u003cb\u003e2b.\u003c/b\u003e Für wie wahrscheinlich halten Sie die folgenden mittel\u0026shy;fristigen (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;Mo.) Entwicklungen der ge\u0026shy;samtwirt\u0026shy;schaft\u0026shy;lichen Situation in Deutsch\u0026shy;land?",
+ 								"en": "\u003cb\u003e2b.\u003c/b\u003e How likely are the following medium term (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;months) de\u0026shy;vel\u0026shy;op\u0026shy;ments of the general eco\u0026shy;nom\u0026shy;ic situation in Germany?"
  							},
  							"col_span": 10,
  							"col_span_label": 1,
@@ -1319,8 +1335,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e3.\u003c/b\u003e Die jährliche ge\u0026shy;samtwirt\u0026shy;schaft\u0026shy;liche Inflationsrate wird mittel\u0026shy;fristig (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;Mo.)",
- 								"en": "\u003cb\u003e3.\u003c/b\u003e Yearly overall inflation rate in the medium term (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;months)  will"
+ 								"de": "\u003cb\u003e3.\u003c/b\u003e Die jährliche ge\u0026shy;samtwirt\u0026shy;schaft\u0026shy;liche Inflationsrate wird mittel\u0026shy;fristig (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;Mo.)",
+ 								"en": "\u003cb\u003e3.\u003c/b\u003e Yearly overall inflation rate in the medium term (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;months)  will"
  							},
  							"col_span": 4,
  							"col_span_label": 1
@@ -1713,8 +1729,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e4.\u003c/b\u003e Die \u003cb\u003ekurzfristigen\u003c/b\u003e Zinsen (3-Mo.-Interbanksätze) werden mittel\u0026shy;fristig (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;Mo.)",
- 								"en": "\u003cb\u003e4.\u003c/b\u003e \u003cb\u003eShort term\u003c/b\u003e interest rates (3\u0026nbsp;months interbank) in the medium term (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;months) will"
+ 								"de": "\u003cb\u003e4.\u003c/b\u003e Die \u003ci\u003ekurzfristigen\u003c/i\u003e Zinsen (3-Mo.-Interbanksätze) werden mittel\u0026shy;fristig (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;Mo.)",
+ 								"en": "\u003cb\u003e4.\u003c/b\u003e \u003ci\u003eShort term\u003c/i\u003e interest rates (3\u0026nbsp;months interbank) in the medium term (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;months) will"
  							},
  							"col_span": 4,
  							"col_span_label": 1
@@ -2061,8 +2077,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e5.\u003c/b\u003e Die \u003cb\u003elang\u0026shy;fristigen\u003c/b\u003e Zinsen (Renditen 10jg. Staatsanleihen) werden mittel\u0026shy;fristig (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;Mo.)",
- 								"en": "\u003cb\u003e5.\u003c/b\u003e \u003cb\u003eLong term\u003c/b\u003e interest rates (10-year govt. bonds) in the medium term (6\u0026nbsp;months) will"
+ 								"de": "\u003cb\u003e5.\u003c/b\u003e Die \u003ci\u003elang\u0026shy;fristigen\u003c/i\u003e Zinsen (zehnjähriger Staatsanleihen) werden mittel\u0026shy;fristig (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;Mo.)",
+ 								"en": "\u003cb\u003e5.\u003c/b\u003e \u003ci\u003eLong term\u003c/i\u003e interest rates (10-year govt. bonds) in the medium term (6\u0026nbsp;months) will"
  							},
  							"col_span": 4,
  							"col_span_label": 1
@@ -2445,8 +2461,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e6a.\u003c/b\u003e Die folgenden Aktienindizes werden mittel\u0026shy;fristig (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;Mo.)",
- 								"en": "\u003cb\u003e6a.\u003c/b\u003e Following stock indices in the medium term (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;months) will"
+ 								"de": "\u003cb\u003e6a.\u003c/b\u003e Die folgenden Aktienindizes werden mittel\u0026shy;fristig (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;Mo.)",
+ 								"en": "\u003cb\u003e6a.\u003c/b\u003e Following stock indices in the medium term (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;months) will"
  							},
  							"col_span": 4,
  							"col_span_label": 1
@@ -3191,8 +3207,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e7.\u003c/b\u003e Folgende Währungen werden gegenüber dem Euro mittel\u0026shy;fristig (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;Mo.)",
- 								"en": "\u003cb\u003e7.\u003c/b\u003e In the medium term (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;months), following currencies will against the Euro"
+ 								"de": "\u003cb\u003e7.\u003c/b\u003e Folgende Währungen werden gegenüber dem Euro mittel\u0026shy;fristig (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;Mo.)",
+ 								"en": "\u003cb\u003e7.\u003c/b\u003e In the medium term (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;months), following currencies will against the Euro"
  							},
  							"col_span": 4,
  							"col_span_label": 1
@@ -3529,8 +3545,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e8.\u003c/b\u003e Die Ertragslage der Un\u0026shy;ter\u0026shy;neh\u0026shy;men in Deutsch\u0026shy;land wird mittel\u0026shy;fristig (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;Mo.) in den folgenden Branchen ",
- 								"en": "\u003cb\u003e8.\u003c/b\u003e Revenues of German enterprise will medium term (\u003cb\u003e6\u003c/b\u003e\u0026nbsp;months)"
+ 								"de": "\u003cb\u003e8.\u003c/b\u003e Die Ertragslage der Un\u0026shy;ter\u0026shy;neh\u0026shy;men in Deutsch\u0026shy;land wird mittel\u0026shy;fristig (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;Mo.) in den folgenden Branchen ",
+ 								"en": "\u003cb\u003e8.\u003c/b\u003e Revenues of German enterprise will medium term (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;months)"
  							},
  							"col_span": 4,
  							"col_span_label": 1
@@ -4373,7 +4389,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\u003cb\u003e9.\u003c/b\u003e Die Wahrscheinlichkeit eines neg\u0026shy;ativen BIP-Wachstums in Deutsch\u0026shy;land (Wachstum des realen \u0026 saisonbereinigten BIP zum Vorquartal) liegt bei",
- 								"en": "\u003cb\u003e9.\u003c/b\u003e The probability of neg\u0026shy;ative GDP growth in Germany (Growth of real \u0026 seasonal adjusted GDP against previous quarter) is"
+ 								"en": "\u003cb\u003e9.\u003c/b\u003e The probability of neg\u0026shy;ative GDP growth in Germany (growth of real \u0026 seasonal adjusted GDP against previous quarter) is"
  							},
  							"col_span": 5,
  							"col_span_label": 5
@@ -4457,8 +4473,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e1.\u003c/b\u003e \n\t\t\t\tPunktprognose der Wachstumsrate des deutschen BIP: \u003cbr\u003e\n\t\t\t\t\u003cdiv class='vspacer-08' \u003e\u003c/div\u003e\n\t\t\t\t\u003cp style='font-size: 90%'\u003e\n\t\t\t\tBei den Quartalwerten bitte nicht-annualisiertes Quartalswachstum \n\t\t\t\t\t\tdes realen \u0026 saisonbereinigten BIP angeben. \n\t\t\t\tBei den Jahreswerten die Jahreswachstumsrate des realen BIP.\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t",
- 								"en": "\u003cb\u003e1.\u003c/b\u003e \n\t\t\t\tGerman GDP growth rate - point forecate: \u003cbr\u003e\n\t\t\t\t\u003cdiv class='vspacer-08' \u003e\u003c/div\u003e\n\t\t\t\t\u003cp style='font-size: 90%'\u003e\n\t\t\t\tFor the quarterly values, please quote the non-annualized quarterly growth\n\t\t\t\t\t\tof the real \u0026 seasonal adjusted GDP.\n\t\t\t\tFor the yearly values, please quote the yearly growth rate of the real GDP.\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\u003cb\u003e1.\u003c/b\u003e \n\t\t\t\tPunktprognose der Wachstumsrate des deutschen BIP \u003cbr\u003e\n\t\t\t\t\u003cdiv class='vspacer-08' \u003e\u003c/div\u003e\n\t\t\t\t\u003cp style='font-size: 90%'\u003e\n\t\t\t\tBei den Quartalwerten bitte nicht-annualisiertes Quartalswachstum \n\t\t\t\t\t\tdes realen \u0026 saisonbereinigten BIP angeben. \n\t\t\t\tBei den Jahreswerten die Jahreswachstumsrate des realen BIP.\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t",
+ 								"en": "\u003cb\u003e1.\u003c/b\u003e \n\t\t\t\tGerman GDP growth rate - point forecast \u003cbr\u003e\n\t\t\t\t\u003cdiv class='vspacer-08' \u003e\u003c/div\u003e\n\t\t\t\t\u003cp style='font-size: 90%'\u003e\n\t\t\t\tFor the quarterly values, please quote the non-annualized quarterly growth\n\t\t\t\t\t\tof the real \u0026 seasonal adjusted GDP.\n\t\t\t\tFor the yearly values, please quote the yearly growth rate of the real GDP.\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 12,
  							"col_span_label": 1
@@ -4466,8 +4482,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Prognose \u003cb\u003eQuartal\u003c/b\u003e",
- 								"en": "\u003cb\u003eQuarterly\u003c/b\u003e forecast "
+ 								"de": "Prognose \u003cbx\u003eQuartal\u003c/bx\u003e",
+ 								"en": "Forecast \u003cbx\u003eQuarter\u003c/bx\u003e"
  							},
  							"col_span": 12,
  							"col_span_label": 1,
@@ -4482,7 +4498,7 @@
  									"grid_container_style": {},
  									"box_style": {
  										"position": "relative",
- 										"top": "0.4rem"
+ 										"top": "0.6rem"
  									},
  									"grid_item_style": {},
  									"text_style": {}
@@ -4728,8 +4744,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Prognose  \u003cb\u003eJahr\u003c/b\u003e",
- 								"en": "Forecast  \u003cb\u003eYear\u003c/b\u003e"
+ 								"de": "Prognose  \u003cbx\u003eJahr\u003c/bx\u003e",
+ 								"en": "Forecast  \u003cbx\u003eYear\u003c/bx\u003e"
  							},
  							"col_span": 12,
  							"col_span_label": 1,
@@ -4744,7 +4760,7 @@
  									"grid_container_style": {},
  									"box_style": {
  										"position": "relative",
- 										"top": "0.4rem"
+ 										"top": "0.6rem"
  									},
  									"grid_item_style": {},
  									"text_style": {}
@@ -5693,59 +5709,81 @@
  					}
  				},
  				{
- 					"bottom_vspacers": 3,
- 					"columns": 8,
+ 					"columns": 1,
  					"inputs": [
  						{
  							"name": "iobc_free_label",
  							"type": "text",
- 							"max_chars": 13,
+ 							"max_chars": 26,
+ 							"placeholder": {
+ 								"de": "Sonstige",
+ 								"en": "Other"
+ 							},
  							"col_span": 1,
  							"col_span_control": 1
- 						},
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 6,
+ 					"odd_rows_coloring": true,
+ 					"inputs": [
  						{
  							"name": "iobc_free",
  							"type": "radio",
- 							"col_span": 1,
+ 							"label": {
+ 								"de": " \u0026nbsp;  ",
+ 								"en": " \u0026nbsp;  "
+ 							},
+ 							"col_span_label": 2,
  							"col_span_control": 1,
- 							"value_radio": "1"
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "iobc_free",
  							"type": "radio",
- 							"col_span": 1,
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
  							"name": "iobc_free",
  							"type": "radio",
- 							"col_span": 1,
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
  							"name": "iobc_free",
  							"type": "radio",
- 							"col_span": 1,
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
  							"name": "iobc_free",
  							"type": "radio",
- 							"col_span": 1,
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"type": "textblock",
- 							"col_span_label": 1
- 						},
- 						{
  							"name": "iobc_free",
  							"type": "radio",
- 							"col_span": 1,
+ 							"col_span_label": 0.4,
  							"col_span_control": 1,
  							"value_radio": "6"
  						}
@@ -5753,7 +5791,7 @@
  					"style": {
  						"desktop": {
  							"grid_container_style": {
- 								"template_columns": "1.92fr 1fr  1fr  1fr  1fr  1fr  0.35fr 1fr"
+ 								"template_columns": "   3fr    1fr    1fr    1fr    1fr    1.4fr "
  							},
  							"box_style": {},
  							"grid_item_style": {},
@@ -5821,7 +5859,23 @@
  							"max_chars": 300,
  							"col_span_control": 1
  						}
- 					]
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"row_gap": "0.2rem"
+ 							},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
  				},
  				{
  					"bottom_vspacers": 3,
@@ -5831,8 +5885,8 @@
  							"name": "finished",
  							"type": "radio",
  							"label": {
- 								"de": "Zugang bleibt bestehen.  Da\u0026shy;ten können in weiteren Sitzungen geändert/ergänzt werden. \u003cbr/\u003e\n \u0026nbsp;",
- 								"en": "Leave questionnaire open. Data  can be changed/completed\u0026nbsp;in later sessions.     \u003cbr/\u003e\n \u0026nbsp;"
+ 								"de": "Zugang bleibt bestehen.  Da\u0026shy;ten können in weiteren Sitzungen geändert/ergänzt werden. ",
+ 								"en": "Leave questionnaire open. Data  can be changed/completed\u0026nbsp;in later sessions.     "
  							},
  							"col_span": 1,
  							"col_span_label": 6,
@@ -5843,8 +5897,8 @@
  							"name": "finished",
  							"type": "radio",
  							"label": {
- 								"de": "Fragebogen ist abgeschlossen und kann nicht mehr geöffnet werden. \u003cbr/\u003e\n \u0026nbsp;",
- 								"en": "Questionnaire is finished. No more edits.                         \u003cbr/\u003e\n \u0026nbsp;"
+ 								"de": "Fragebogen ist abgeschlossen und kann nicht mehr geöffnet werden. ",
+ 								"en": "Questionnaire is finished. No more edits.                         "
  							},
  							"col_span": 1,
  							"col_span_label": 6,

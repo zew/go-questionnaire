@@ -79,7 +79,10 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	q.LangCodes = []string{"de", "en"} // governs default language code
 
 	q.Survey.Org = trl.S{"de": "ZEW", "en": "ZEW"}
-	q.Survey.Name = trl.S{"de": "Finanzmarkttest", "en": "Financial Markets Survey"}
+	q.Survey.Name = trl.S{
+		"de": "Index / Finanzmarkttest",
+		"en": "Indicator of Economic Sentiment",
+	}
 
 	q.Version = 2
 
@@ -94,6 +97,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		{
 			gr := page.AddGroup()
 			gr.Cols = 1
+			gr.BottomVSpacers = 1
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
@@ -132,6 +136,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			gr.Cols = 6
 			gr.Style = css.NewStylesResponsive(gr.Style)
 			gr.Style = css.DesktopWidthMax(gr.Style, "26rem")
+			gr.BottomVSpacers = 2
 
 			{
 				inp := gr.AddInput()
@@ -148,8 +153,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			{
 				rad := gr.AddInput()
 				rad.Type = "radio"
-				rad.Name = "proxy"
-				rad.ValueRadio = "no"
+				rad.Name = "selbst"
+				rad.ValueRadio = "1"
 				rad.ColSpan = 6
 				rad.ColSpanLabel = 5
 				rad.ColSpanControl = 1
@@ -162,8 +167,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			{
 				rad := gr.AddInput()
 				rad.Type = "radio"
-				rad.Name = "proxy"
-				rad.ValueRadio = "yes"
+				rad.Name = "selbst"
+				rad.ValueRadio = "2"
 				rad.ColSpan = 6
 				rad.ColSpanLabel = 5
 				rad.ColSpanControl = 1
@@ -179,6 +184,9 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		{
 			gr := page.AddGroup()
 			gr.Cols = 1
+			gr.BottomVSpacers = 2
+			gr.Style = css.NewStylesResponsive(gr.Style)
+			gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
@@ -190,7 +198,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "textarea"
-				inp.Name = "address_change"
+				inp.Name = "contact"
 				inp.MaxChars = 150
 				inp.ColSpanControl = 1
 			}
@@ -246,8 +254,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			}
 			gr := page.AddGrid(gb)
 			gr.OddRowsColoring = true
-			// gr.Style.Desktop.GridContainerStyle.TemplateColumns = "1fr 1fr 1fr 1fr 1fr 0.4fr 1fr"
-			// gr.Style.Desktop.GridContainerStyle.ColumnGap = "0.1rem"
 		}
 
 		// gr1
@@ -260,31 +266,12 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				rowLabelsEuroGerUSGlob,
 			)
 			gb.MainLabel = trl.S{
-				"de": "<b>2a.</b> Die gesamtwirtschaftliche Situation wird sich mittelfristig (<b>6</b>&nbsp;Mo.)",
-				"en": "<b>2a.</b> The overall economic situation medium term (<b>6</b>&nbsp;months) will",
+				"de": "<b>2a.</b> Die gesamtwirtschaftliche Situation wird sich mittelfristig (<bx>6</bx>&nbsp;Mo.)",
+				"en": "<b>2a.</b> The overall economic situation medium term (<bx>6</bx>&nbsp;months) will",
 			}
 			gr := page.AddGrid(gb)
 			gr.OddRowsColoring = true
 		}
-
-		/*
-			{
-				gb := qst.NewGridBuilderRadios(
-					columnTemplate4,
-					labelsImproveDeteriorate(),
-					[]string{"y24_ez", "y24_deu", "y24_usa", "y24_chn"},
-					radioVals4,
-					rowLabelsEuroGerUSGlob,
-				)
-				gb.MainLabel = trl.S{
-					"de": "<b>2b.</b> Die gesamtwirtschaftliche Situation wird sich langfristig (<b>24</b>&nbsp;Mo.)",
-					"en": "<b>2b.</b> The overall economic situation long term (<b>24</b>&nbsp;months) will",
-				}
-				gr := page.AddGrid(gb)
-				gr.OddRowsColoring = true
-			}
-
-		*/
 
 		// gr2
 		{
@@ -298,8 +285,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Type = "textblock"
 				inp.ColSpan = 10
 				inp.Label = trl.S{
-					"de": "<b>2b.</b> Für wie wahrscheinlich halten Sie die folgenden mittelfristigen (<b>6</b>&nbsp;Mo.) Entwicklungen der gesamtwirtschaftlichen Situation in Deutschland?",
-					"en": "<b>2b.</b> How likely are the following medium term (<b>6</b>&nbsp;months) developments of the general economic situation in Germany?",
+					"de": "<b>2b.</b> Für wie wahrscheinlich halten Sie die folgenden mittelfristigen (<bx>6</bx>&nbsp;Mo.) Entwicklungen der gesamtwirtschaftlichen Situation in Deutschland?",
+					"en": "<b>2b.</b> How likely are the following medium term (<bx>6</bx>&nbsp;months) developments of the general economic situation in Germany?",
 				}
 
 				inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
@@ -412,8 +399,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				rowLabelsEuroGerUSGlob,
 			)
 			gb.MainLabel = trl.S{
-				"de": "<b>3.</b> Die jährliche gesamtwirtschaftliche Inflationsrate wird mittelfristig (<b>6</b>&nbsp;Mo.)",
-				"en": "<b>3.</b> Yearly overall inflation rate in the medium term (<b>6</b>&nbsp;months)  will",
+				"de": "<b>3.</b> Die jährliche gesamtwirtschaftliche Inflationsrate wird mittelfristig (<bx>6</bx>&nbsp;Mo.)",
+				"en": "<b>3.</b> Yearly overall inflation rate in the medium term (<bx>6</bx>&nbsp;months)  will",
 			}
 			gr := page.AddGrid(gb)
 			gr.OddRowsColoring = true
@@ -426,7 +413,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 					"de": "Euroraum",
 					"en": "Euro area",
 				},
-
 				{
 					"de": "USA",
 					"en": "US",
@@ -445,8 +431,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				rowLabelsEuroGerUSGlob,
 			)
 			gb.MainLabel = trl.S{
-				"de": "<b>4.</b> Die <b>kurzfristigen</b> Zinsen (3-Mo.-Interbanksätze) werden mittelfristig (<b>6</b>&nbsp;Mo.)",
-				"en": "<b>4.</b> <b>Short term</b> interest rates (3&nbsp;months interbank) in the medium term (<b>6</b>&nbsp;months) will",
+				"de": "<b>4.</b> Die <i>kurzfristigen</i> Zinsen (3-Mo.-Interbanksätze) werden mittelfristig (<bx>6</bx>&nbsp;Mo.)",
+				"en": "<b>4.</b> <i>Short term</i> interest rates (3&nbsp;months interbank) in the medium term (<bx>6</bx>&nbsp;months) will",
 			}
 			gr := page.AddGrid(gb)
 			gr.OddRowsColoring = true
@@ -479,8 +465,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				rowLabelsEuroGerUSGlob,
 			)
 			gb.MainLabel = trl.S{
-				"de": "<b>5.</b> Die <b>langfristigen</b> Zinsen (Renditen 10jg. Staatsanleihen) werden mittelfristig (<b>6</b>&nbsp;Mo.)",
-				"en": "<b>5.</b> <b>Long term</b> interest rates (10-year govt. bonds) in the medium term (6&nbsp;months) will",
+				"de": "<b>5.</b> Die <i>langfristigen</i> Zinsen (zehnjähriger Staatsanleihen) werden mittelfristig (<bx>6</bx>&nbsp;Mo.)",
+				"en": "<b>5.</b> <i>Long term</i> interest rates (10-year govt. bonds) in the medium term (6&nbsp;months) will",
 			}
 			gr := page.AddGrid(gb)
 			gr.OddRowsColoring = true
@@ -526,8 +512,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				rowLabelsUncorrelatedAssets,
 			)
 			gb.MainLabel = trl.S{
-				"de": "<b>6a.</b> Die folgenden Aktienindizes werden mittelfristig (<b>6</b>&nbsp;Mo.)",
-				"en": "<b>6a.</b> Following stock indices in the medium term (<b>6</b>&nbsp;months) will",
+				"de": "<b>6a.</b> Die folgenden Aktienindizes werden mittelfristig (<bx>6</bx>&nbsp;Mo.)",
+				"en": "<b>6a.</b> Following stock indices in the medium term (<bx>6</bx>&nbsp;months) will",
 			}
 			gr := page.AddGrid(gb)
 			gr.OddRowsColoring = true
@@ -703,8 +689,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				rowLabelsCurrencies,
 			)
 			gb.MainLabel = trl.S{
-				"de": "<b>7.</b> Folgende Währungen werden gegenüber dem Euro mittelfristig (<b>6</b>&nbsp;Mo.)",
-				"en": "<b>7.</b> In the medium term (<b>6</b>&nbsp;months), following currencies will against the Euro",
+				"de": "<b>7.</b> Folgende Währungen werden gegenüber dem Euro mittelfristig (<bx>6</bx>&nbsp;Mo.)",
+				"en": "<b>7.</b> In the medium term (<bx>6</bx>&nbsp;months), following currencies will against the Euro",
 			}
 			gr := page.AddGrid(gb)
 			gr.OddRowsColoring = true
@@ -788,8 +774,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				rowLabelsCurrencies,
 			)
 			gb.MainLabel = trl.S{
-				"de": "<b>8.</b> Die Ertragslage der Unternehmen in Deutschland wird mittelfristig (<b>6</b>&nbsp;Mo.) in den folgenden Branchen ",
-				"en": "<b>8.</b> Revenues of German enterprise will medium term (<b>6</b>&nbsp;months)",
+				"de": "<b>8.</b> Die Ertragslage der Unternehmen in Deutschland wird mittelfristig (<bx>6</bx>&nbsp;Mo.) in den folgenden Branchen ",
+				"en": "<b>8.</b> Revenues of German enterprise will medium term (<bx>6</bx>&nbsp;months)",
 			}
 			gr := page.AddGrid(gb)
 			gr.OddRowsColoring = true
@@ -815,7 +801,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.ColSpanLabel = 5
 				inp.Label = trl.S{
 					"de": fmt.Sprintf("<b>9.</b> Die Wahrscheinlichkeit eines negativen BIP-Wachstums in Deutschland (Wachstum des realen & saisonbereinigten BIP zum Vorquartal) liegt bei"), //nextQ()
-					"en": fmt.Sprintf("<b>9.</b> The probability of negative GDP growth in Germany (Growth of real & seasonal adjusted GDP against previous quarter) is"),                     // nextQ()
+					"en": fmt.Sprintf("<b>9.</b> The probability of negative GDP growth in Germany (growth of real & seasonal adjusted GDP against previous quarter) is"),                     // nextQ()
 				}
 			}
 			{
@@ -881,6 +867,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			gr := page.AddGroup()
 			gr.Cols = 1
 			gr.BottomVSpacers = 2
+			gr.Style = css.NewStylesResponsive(gr.Style)
+			gr.Style.Desktop.StyleGridContainer.GapRow = "0.2rem"
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
@@ -916,8 +904,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				rad.ColSpanLabel = 6
 				rad.ColSpanControl = 1
 				rad.Label = trl.S{
-					"de": "Zugang bleibt bestehen.  Daten können in weiteren Sitzungen geändert/ergänzt werden. <br/>\n &nbsp;",
-					"en": "Leave questionnaire open. Data  can be changed/completed&nbsp;in later sessions.     <br/>\n &nbsp;",
+					"de": "Zugang bleibt bestehen.  Daten können in weiteren Sitzungen geändert/ergänzt werden. ",
+					"en": "Leave questionnaire open. Data  can be changed/completed&nbsp;in later sessions.     ",
 				}
 			}
 			{
@@ -929,8 +917,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				rad.ColSpanLabel = 6
 				rad.ColSpanControl = 1
 				rad.Label = trl.S{
-					"de": "Fragebogen ist abgeschlossen und kann nicht mehr geöffnet werden. <br/>\n &nbsp;",
-					"en": "Questionnaire is finished. No more edits.                         <br/>\n &nbsp;",
+					"de": "Fragebogen ist abgeschlossen und kann nicht mehr geöffnet werden. ",
+					"en": "Questionnaire is finished. No more edits.                         ",
 				}
 			}
 		}

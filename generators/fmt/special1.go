@@ -38,7 +38,7 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 			inp.ColSpan = 12
 			inp.Label = trl.S{
 				"de": `<b>1.</b> 
-				Punktprognose der Wachstumsrate des deutschen BIP: <br>
+				Punktprognose der Wachstumsrate des deutschen BIP <br>
 				<div class='vspacer-08' ></div>
 				<p style='font-size: 90%'>
 				Bei den Quartalwerten bitte nicht-annualisiertes Quartalswachstum 
@@ -47,7 +47,7 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 				</p>
 				`,
 				"en": `<b>1.</b> 
-				German GDP growth rate - point forecate: <br>
+				German GDP growth rate - point forecast <br>
 				<div class='vspacer-08' ></div>
 				<p style='font-size: 90%'>
 				For the quarterly values, please quote the non-annualized quarterly growth
@@ -89,14 +89,14 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 				"en": "Forecast <b>quarterly</b> GDP growth <br>\n(real, seasonally adjusted, non annualized)",
 			}
 			inp.Label = trl.S{
-				"de": "Prognose <b>Quartal</b>",
-				"en": "<b>Quarterly</b> forecast ",
+				"de": "Prognose <bx>Quartal</bx>",
+				"en": "Forecast <bx>Quarter</bx>",
 			}
 			inp.ColSpan = 12
 
 			inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
 			inp.StyleLbl.Mobile.StyleBox.Position = "relative"
-			inp.StyleLbl.Mobile.StyleBox.Top = "0.4rem"
+			inp.StyleLbl.Mobile.StyleBox.Top = "0.6rem"
 
 		}
 		// row 2 - four quarters - inputs
@@ -131,18 +131,18 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 			inp := gr.AddInput()
 			inp.Type = "textblock"
 			inp.Label = trl.S{
-				"de": "Prognose Wachstum des BIP aufs&nbsp;<b>Jahr</b> <br>\n(real, saisonbereinigt)",
-				"en": "Forecast GDP growth per&nbsp;<b>year</b> <br>\n(real, seasonally adjusted)",
+				"de": "Prognose Wachstum des BIP aufs&nbsp;<bx>Jahr</bx> <br>\n(real, saisonbereinigt)",
+				"en": "Forecast GDP growth per&nbsp;<bx>year</bx> <br>\n(real, seasonally adjusted)",
 			}
 			inp.Label = trl.S{
-				"de": "Prognose  <b>Jahr</b>",
-				"en": "Forecast  <b>Year</b>",
+				"de": "Prognose  <bx>Jahr</bx>",
+				"en": "Forecast  <bx>Year</bx>",
 			}
 			inp.ColSpan = 12
 
 			inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
 			inp.StyleLbl.Mobile.StyleBox.Position = "relative"
-			inp.StyleLbl.Mobile.StyleBox.Top = "0.4rem"
+			inp.StyleLbl.Mobile.StyleBox.Top = "0.6rem"
 		}
 		// row 4 - three years - inputs
 		for i := 0; i < 3; i++ {
@@ -237,37 +237,43 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 		gr.OddRowsColoring = true
 		gr.BottomVSpacers = 1
 	}
+
 	// gr3
 	{
 		gr := page.AddGroup()
-		gr.Cols = 8
-		gr.Style = css.NewStylesResponsive(gr.Style)
-		gr.Style.Desktop.StyleGridContainer.TemplateColumns =
-			"1.92fr 1fr  1fr  1fr  1fr  1fr  0.35fr 1fr"
+		gr.Cols = 1
+		gr.BottomVSpacers = 1
+		gr.BottomVSpacers = 0
 		{
 			inp := gr.AddInput()
 			inp.Type = "text"
 			inp.Name = "iobc_free_label"
-			inp.MaxChars = 13 // more would break the col widthcase
+			inp.MaxChars = 26
 			inp.ColSpan = 1
 			inp.ColSpanControl = 1
 			inp.Label = nil
+			inp.Placeholder = trl.S{"de": "Sonstige", "en": "Other"}
 		}
-		for i := 0; i < len(radioVals6); i++ {
+	}
 
-			if i == 5 {
-				txt := gr.AddInput()
-				txt.Type = "textblock"
-			}
-
-			inp := gr.AddInput()
-			inp.Type = "radio"
-			inp.Name = "iobc_free"
-			inp.ValueRadio = radioVals6[i]
-			inp.ColSpan = 1
-			inp.ColSpanControl = 1
-			inp.Label = nil
-		}
+	// gr4
+	// iobc => impact on business cycle
+	{
+		gb := qst.NewGridBuilderRadios(
+			columnTemplate6,
+			nil,
+			[]string{"iobc_free"},
+			radioVals6,
+			[]trl.S{
+				{
+					"de": " &nbsp;  ", // -
+					"en": " &nbsp;  ", // -
+				},
+			},
+		)
+		gb.MainLabel = nil
+		gr := page.AddGrid(gb)
+		gr.OddRowsColoring = true
 	}
 
 	return nil

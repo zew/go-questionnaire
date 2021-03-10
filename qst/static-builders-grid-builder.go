@@ -180,13 +180,20 @@ func NewGridBuilderRadios(
 
 	gb := &GridBuilder{}
 
-	if len(columnTemplate) != len(hdrLabels)*2 {
-		log.Panicf("NewGridBuilderRadios(): len(columnTemplate) != len(hdrLabels)*2 - %v != %v", len(columnTemplate), len(hdrLabels)*2)
-	}
+	if len(hdrLabels) > 0 {
+		if len(columnTemplate) != len(hdrLabels)*2 {
+			log.Panicf("NewGridBuilderRadios(): len(columnTemplate) != len(hdrLabels)*2 - %v != %v", len(columnTemplate), len(hdrLabels)*2)
+		}
 
-	// Setup of columns
-	for i := 0; i < len(columnTemplate); i += 2 {
-		gb.AddCol(hdrLabels[i/2], columnTemplate[i], columnTemplate[i+1])
+		// Setup of columns with header labels
+		for i := 0; i < len(columnTemplate); i += 2 {
+			gb.AddCol(hdrLabels[i/2], columnTemplate[i], columnTemplate[i+1])
+		}
+	} else {
+		// Setup of columns without
+		for i := 0; i < len(columnTemplate); i += 2 {
+			gb.AddCol(nil, columnTemplate[i], columnTemplate[i+1])
+		}
 	}
 
 	// gb.dumpCols()

@@ -210,7 +210,7 @@ func (q QuestionnaireT) GroupHTMLGridBased(pageIdx, grpIdx int) string {
 				ctlClass := fmt.Sprintf("pg%02v-grp%02v-inp%02v-ctl", pageIdx, grpIdx, inpIdx)
 				fmt.Fprint(wCSS, inp.StyleCtl.CSS(ctlClass))
 
-				fmt.Fprint(wCtl, q.InputHTMLGrid(pageIdx, grpIdx, inpIdx))
+				fmt.Fprint(wCtl, q.InputHTMLGrid(pageIdx, grpIdx, inpIdx, q.LangCode))
 				divWrap(wInp, ctlClass+" grid-item-lvl-2", "", wCtl.String())
 			}
 
@@ -233,7 +233,7 @@ func (q QuestionnaireT) GroupHTMLGridBased(pageIdx, grpIdx int) string {
 }
 
 // InputHTMLGrid renders an input to HTML
-func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int) string {
+func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode string) string {
 
 	// gr := q.Pages[pageIdx].Groups[grpIdx]
 	inp := *q.Pages[pageIdx].Groups[grpIdx].Inputs[inpIdx]
@@ -314,17 +314,22 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int) string {
 			}
 		}
 
+		placeHolder := ""
+		if inp.Placeholder.TrSilent(langCode) != "" {
+			placeHolder = fmt.Sprintf("placeholder='%v'", inp.Placeholder.TrSilent(langCode))
+		}
+
 		ctrl += fmt.Sprintf(
 			`<input type='%v'  %v  
 				name='%v' id='%v' title='%v %v' 
 				style='%v'  
-				size='%v' maxlength=%v min='%v' max='%v'  %v  value='%v'   autocomplete='off'  />
+				size='%v' maxlength=%v min='%v' max='%v'  %v  value='%v' %v  autocomplete='off'  />
 			`,
 			inp.Type, inputMode,
 			nm, fmt.Sprintf("%v%v", nm, inp.ValueRadio), inp.Label.TrSilent(q.LangCode), inp.Desc.TrSilent(q.LangCode),
 			width,
 			inp.MaxChars, inp.MaxChars, inp.Min, inp.Max, checked,
-			rspvl,
+			rspvl, placeHolder,
 		)
 
 		// the checkbox "empty catcher" must follow *after* the actual checkbox input,

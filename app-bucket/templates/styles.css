@@ -27,7 +27,7 @@
     padding:     0;
     border:      0;    /* also input and button naked */
     outline:     0;
-    line-height: 1.2;
+    line-height: 135%;
 
     /* color: violet; */
     background-color: transparent;
@@ -437,7 +437,7 @@ label, .postlabel {
     /* margin-right:      0.5rem; */
 
     font-size:          100%;    /* like legend */
-    line-height:        110%;
+    line-height:        120%;
     letter-spacing:     0.03rem;
     xx-font-weight:     300; /* visibility in mobile browser */
 

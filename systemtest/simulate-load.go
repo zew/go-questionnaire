@@ -155,7 +155,10 @@ func FillQuestAndComparesServerResult(t *testing.T, qSrc *qst.QuestionnaireT, ur
 
 	equal, err := clQ.Compare(srvQ, false)
 	if !equal {
-		t.Fatalf("%22s - questionnaires are unequal: %v \n\t%v\n\t%v", clQ.Survey.String(), err, clQ.FilePath1(), srvQ.FilePath1())
+		t.Fatalf(
+			"%22s - questionnaires are unequal: %v \n\t%v\n\t%v",
+			clQ.Survey.String(), err, clQ.FilePath1(), srvQ.FilePath1(),
+		)
 	} else {
 		t.Logf("==================================================")
 		t.Logf("clientQst and srvQst are EQUAL for %v", clQ.Survey.String())
@@ -219,7 +222,6 @@ func SimulateLoad(t *testing.T, qSrc *qst.QuestionnaireT, loginURI, mobile strin
 		} else {
 			t.Logf("Webpage reports: Login successful")
 		}
-
 	}
 
 	ctr.Reset()

@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "4d1e8b58985bd4e0ae75beb9acaa06a9ed99498c5fca694bd6bf1848af05e9dd",
+ 	"md_5": "7079c69c780194584e2c9900e898c57428250fd345b3ad292a2a5c6314da275c",
  	"lang_codes": [
  		"de",
  		"en"
@@ -2784,7 +2784,7 @@
  							"value_radio": "4"
  						},
  						{
- 							"name": "sse_comp_chn",
+ 							"name": "sto_sse_comp_chn",
  							"type": "radio",
  							"label": {
  								"de": "SSE Composite (China)",
@@ -2811,19 +2811,19 @@
  							}
  						},
  						{
- 							"name": "sse_comp_chn",
+ 							"name": "sto_sse_comp_chn",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "sse_comp_chn",
+ 							"name": "sto_sse_comp_chn",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "sse_comp_chn",
+ 							"name": "sto_sse_comp_chn",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
@@ -4506,7 +4506,7 @@
  							}
  						},
  						{
- 							"name": "xquart1",
+ 							"name": "pprwbipq1",
  							"type": "number",
  							"max_chars": 3,
  							"max": 20,
@@ -4565,7 +4565,7 @@
  							}
  						},
  						{
- 							"name": "xquart2",
+ 							"name": "pprwbipq2",
  							"type": "number",
  							"max_chars": 3,
  							"max": 20,
@@ -4624,7 +4624,7 @@
  							}
  						},
  						{
- 							"name": "xquart3",
+ 							"name": "pprwbipq3",
  							"type": "number",
  							"max_chars": 3,
  							"max": 20,
@@ -4683,7 +4683,7 @@
  							}
  						},
  						{
- 							"name": "xquart4",
+ 							"name": "pprwbipq4",
  							"type": "number",
  							"max_chars": 3,
  							"max": 20,
@@ -4768,7 +4768,7 @@
  							}
  						},
  						{
- 							"name": "xyear1",
+ 							"name": "pprwbipj1",
  							"type": "number",
  							"max_chars": 3,
  							"max": 20,
@@ -4827,7 +4827,7 @@
  							}
  						},
  						{
- 							"name": "xyear2",
+ 							"name": "pprwbipj2",
  							"type": "number",
  							"max_chars": 3,
  							"max": 20,
@@ -4886,7 +4886,7 @@
  							}
  						},
  						{
- 							"name": "xyear3",
+ 							"name": "pprwbipj3",
  							"type": "number",
  							"max_chars": 3,
  							"max": 20,
@@ -5227,7 +5227,7 @@
  							}
  						},
  						{
- 							"name": "iobc_cycle_data_deu",
+ 							"name": "rev_bus_cycle_ger",
  							"type": "radio",
  							"label": {
  								"de": "Kon\u0026shy;junk\u0026shy;tur\u0026shy;da\u0026shy;ten Deutsch\u0026shy;land",
@@ -5254,38 +5254,38 @@
  							}
  						},
  						{
- 							"name": "iobc_cycle_data_deu",
+ 							"name": "rev_bus_cycle_ger",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "iobc_cycle_data_deu",
+ 							"name": "rev_bus_cycle_ger",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "iobc_cycle_data_deu",
+ 							"name": "rev_bus_cycle_ger",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "iobc_cycle_data_deu",
+ 							"name": "rev_bus_cycle_ger",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "iobc_cycle_data_deu",
+ 							"name": "rev_bus_cycle_ger",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
  							"value_radio": "6"
  						},
  						{
- 							"name": "iobc_exp_markets",
+ 							"name": "rev_exp_markets",
  							"type": "radio",
  							"label": {
  								"de": "Ex\u0026shy;port\u0026shy;märkte",
@@ -5312,38 +5312,38 @@
  							}
  						},
  						{
- 							"name": "iobc_exp_markets",
+ 							"name": "rev_exp_markets",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "iobc_exp_markets",
+ 							"name": "rev_exp_markets",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "iobc_exp_markets",
+ 							"name": "rev_exp_markets",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "iobc_exp_markets",
+ 							"name": "rev_exp_markets",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "iobc_exp_markets",
+ 							"name": "rev_exp_markets",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
  							"value_radio": "6"
  						},
  						{
- 							"name": "iobc_exch_rates",
+ 							"name": "rev_exch_rates",
  							"type": "radio",
  							"label": {
  								"de": "Wechsel\u0026shy;kurse",
@@ -5370,38 +5370,38 @@
  							}
  						},
  						{
- 							"name": "iobc_exch_rates",
+ 							"name": "rev_exch_rates",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "iobc_exch_rates",
+ 							"name": "rev_exch_rates",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "iobc_exch_rates",
+ 							"name": "rev_exch_rates",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "iobc_exch_rates",
+ 							"name": "rev_exch_rates",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "iobc_exch_rates",
+ 							"name": "rev_exch_rates",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
  							"value_radio": "6"
  						},
  						{
- 							"name": "iobc_trade_conflicts",
+ 							"name": "rev_trade_conflicts",
  							"type": "radio",
  							"label": {
  								"de": "Int. Handels\u0026shy;konflikte",
@@ -5428,38 +5428,38 @@
  							}
  						},
  						{
- 							"name": "iobc_trade_conflicts",
+ 							"name": "rev_trade_conflicts",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "iobc_trade_conflicts",
+ 							"name": "rev_trade_conflicts",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "iobc_trade_conflicts",
+ 							"name": "rev_trade_conflicts",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "iobc_trade_conflicts",
+ 							"name": "rev_trade_conflicts",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "iobc_trade_conflicts",
+ 							"name": "rev_trade_conflicts",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
  							"value_radio": "6"
  						},
  						{
- 							"name": "iobc_mp_ecb",
+ 							"name": "rev_mp_ecb",
  							"type": "radio",
  							"label": {
  								"de": "EZB-Geld\u0026shy;po\u0026shy;li\u0026shy;tik",
@@ -5486,38 +5486,38 @@
  							}
  						},
  						{
- 							"name": "iobc_mp_ecb",
+ 							"name": "rev_mp_ecb",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "iobc_mp_ecb",
+ 							"name": "rev_mp_ecb",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "iobc_mp_ecb",
+ 							"name": "rev_mp_ecb",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "iobc_mp_ecb",
+ 							"name": "rev_mp_ecb",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "iobc_mp_ecb",
+ 							"name": "rev_mp_ecb",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
  							"value_radio": "6"
  						},
  						{
- 							"name": "iobc_mp_fed",
+ 							"name": "rev_mp_fed",
  							"type": "radio",
  							"label": {
  								"de": "US-Geld\u0026shy;po\u0026shy;li\u0026shy;tik",
@@ -5544,38 +5544,38 @@
  							}
  						},
  						{
- 							"name": "iobc_mp_fed",
+ 							"name": "rev_mp_fed",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "iobc_mp_fed",
+ 							"name": "rev_mp_fed",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "iobc_mp_fed",
+ 							"name": "rev_mp_fed",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "iobc_mp_fed",
+ 							"name": "rev_mp_fed",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "iobc_mp_fed",
+ 							"name": "rev_mp_fed",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
  							"value_radio": "6"
  						},
  						{
- 							"name": "iobc_brexit",
+ 							"name": "rev_brexit",
  							"type": "radio",
  							"label": {
  								"de": "Brexit",
@@ -5602,38 +5602,38 @@
  							}
  						},
  						{
- 							"name": "iobc_brexit",
+ 							"name": "rev_brexit",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "iobc_brexit",
+ 							"name": "rev_brexit",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "iobc_brexit",
+ 							"name": "rev_brexit",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "iobc_brexit",
+ 							"name": "rev_brexit",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "iobc_brexit",
+ 							"name": "rev_brexit",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
  							"value_radio": "6"
  						},
  						{
- 							"name": "iobc_corona",
+ 							"name": "rev_corona",
  							"type": "radio",
  							"label": {
  								"de": "Corona Pandemie",
@@ -5660,31 +5660,31 @@
  							}
  						},
  						{
- 							"name": "iobc_corona",
+ 							"name": "rev_corona",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "iobc_corona",
+ 							"name": "rev_corona",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "iobc_corona",
+ 							"name": "rev_corona",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "iobc_corona",
+ 							"name": "rev_corona",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "iobc_corona",
+ 							"name": "rev_corona",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
@@ -5712,7 +5712,7 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "iobc_free_label",
+ 							"name": "rev_free_label",
  							"type": "text",
  							"max_chars": 26,
  							"placeholder": {
@@ -5730,7 +5730,7 @@
  					"odd_rows_coloring": true,
  					"inputs": [
  						{
- 							"name": "iobc_free",
+ 							"name": "rev_free",
  							"type": "radio",
  							"label": {
  								"de": " \u0026nbsp;  ",
@@ -5757,31 +5757,31 @@
  							}
  						},
  						{
- 							"name": "iobc_free",
+ 							"name": "rev_free",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "iobc_free",
+ 							"name": "rev_free",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "iobc_free",
+ 							"name": "rev_free",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "iobc_free",
+ 							"name": "rev_free",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "iobc_free",
+ 							"name": "rev_free",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,

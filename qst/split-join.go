@@ -12,23 +12,24 @@ func (q *QuestionnaireT) Split() (*QuestionnaireT, error) {
 	for i1 := 0; i1 < len(q.Pages); i1++ {
 		p2 := q2.AddPage()
 		p2.Finished = q.Pages[i1].Finished
-		p2.Label = nil
-		p2.Desc = nil
+		p2.Label = q.Pages[i1].Label // for debugging
 		for i2 := 0; i2 < len(q.Pages[i1].Groups); i2++ {
+			if q.Pages[i1].Groups[i2].ID == "footer" {
+				continue
+			}
 			gr := p2.AddGroup()
 			for i3 := 0; i3 < len(q.Pages[i1].Groups[i2].Inputs); i3++ {
 				// log.Printf("Added p%02v  gr%02v  inp%02v", i1, i2, i3)
 				inp := q.Pages[i1].Groups[i2].Inputs[i3]
+				inp2 := gr.AddInput()
 				if inp.IsLayout() {
-					inp2 := gr.AddInput()
 					inp2.Name = inp.Name
 					inp2.Type = inp.Type
+					// for debugging
+					if inp2.Type == "dyn-textblock" || inp2.Type == "dyn-composite" {
+						inp2.Label = inp.Label.Left(40)
+					}
 					continue
-				}
-				inp2 := gr.AddInput()
-				if inp2.Type == "dyn-textblock" {
-					inp2.Label = inp.Label
-					inp2.Desc = inp.Desc
 				}
 				inp2.ErrMsg = inp.ErrMsg
 				inp2.Name = inp.Name
@@ -43,25 +44,25 @@ func (q *QuestionnaireT) Split() (*QuestionnaireT, error) {
 // Join adds user input from q2 onto q
 func (q *QuestionnaireT) Join(q2 *QuestionnaireT) error {
 	if len(q.Pages) != len(q2.Pages) {
-		return fmt.Errorf("q has %v pages - q2 %v", len(q.Pages), len(q2.Pages))
+		return fmt.Errorf("qBase has %v pages - q2 %v", len(q.Pages), len(q2.Pages))
 	}
 	for i1 := 0; i1 < len(q.Pages); i1++ {
 		for i2 := 0; i2 < len(q.Pages[i1].Groups); i2++ {
 			if len(q.Pages[i1].Groups) != len(q2.Pages[i1].Groups) {
-				return fmt.Errorf("q page %v has %v groups - q2 %v", i1, len(q.Pages[i1].Groups), len(q2.Pages[i1].Groups))
+				return fmt.Errorf("qBase page %v has %v groups - q2 %v", i1, len(q.Pages[i1].Groups), len(q2.Pages[i1].Groups))
 			}
 			for i3 := 0; i3 < len(q.Pages[i1].Groups[i2].Inputs); i3++ {
 				// log.Printf("adding p%02v  gr%02v  inp%02v", i1, i2, i3)
 				if len(q.Pages[i1].Groups[i2].Inputs) != len(q2.Pages[i1].Groups[i2].Inputs) {
-					return fmt.Errorf("q page %v group %v has %v inputs - q2 %v", i1, i2, len(q.Pages[i1].Groups[i2].Inputs), len(q2.Pages[i1].Groups[i2].Inputs))
+					return fmt.Errorf("qBase page %v group %v has %v inputs - q2 %v", i1, i2, len(q.Pages[i1].Groups[i2].Inputs), len(q2.Pages[i1].Groups[i2].Inputs))
 				}
 				inp := q.Pages[i1].Groups[i2].Inputs[i3]
 				inp2 := q2.Pages[i1].Groups[i2].Inputs[i3]
 				if inp.Name != inp2.Name {
-					return fmt.Errorf("q page %v group %v inp %v has name %v - q2 %v", i1, i2, i3, inp.Name, inp2.Name)
+					return fmt.Errorf("qBase page %v group %v inp %v has name %v - q2 %v", i1, i2, i3, inp.Name, inp2.Name)
 				}
 				if inp.Type != inp2.Type {
-					return fmt.Errorf("q page %v group %v inp %v has type %v - q2 %v", i1, i2, i3, inp.Type, inp2.Type)
+					return fmt.Errorf("qBase page %v group %v inp %v has type %v - q2 %v", i1, i2, i3, inp.Type, inp2.Type)
 				}
 			}
 		}

@@ -98,17 +98,6 @@ type inputT struct {
 	Suffix    trl.S  `json:"suffix,omitempty"` // only for short units - such as € or % - for longer text use label.Style...Order = 2
 	AccessKey string `json:"accesskey,omitempty"`
 
-	/*
-
-		HAlignLabel   horizontalAlignment `json:"horizontal_align_label,omitempty"`   // description left/center/right of input, default left, similar setting for radioT but not for group
-		HAlignControl horizontalAlignment `json:"horizontal_align_control,omitempty"` // label       left/center/right of input, default left, similar setting for radioT but not for group
-
-
-		// extra styling - a CSS class must exist
-		CSSLabel   string `json:"css_label,omitempty"`   // vertical margins, line-height, indent - usually for the entire label+input
-		CSSControl string `json:"css_control,omitempty"` // usually only for the input element's inner style
-	*/
-
 	/*Colspan determines, how many column slots of the group column layout
 	the input occupies.
 	Default value is assumed to be 1.

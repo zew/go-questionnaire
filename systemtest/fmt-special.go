@@ -51,7 +51,7 @@ func fmtSpecialTest(t *testing.T, urlMain string, sessCook *http.Cookie) {
 		// character distance -
 		// must be large - since `name='y0_deu'` is found for val='1' ... val='2'
 		// but only the second/third radio has value='2' checked="checked"
-		scope := 340
+		scope := 400
 		{
 			needle1 := `name='y0_ez'`
 			needle2 := `value='1' checked="checked"`
@@ -61,6 +61,7 @@ func fmtSpecialTest(t *testing.T, urlMain string, sessCook *http.Cookie) {
 				needle1, needle2, pos1, pos2, pos2-pos1,
 			)
 			if pos1 < 1 || pos2 < 1 || (pos2-pos1) > scope {
+				// ioutil.WriteFile("tmp-response-test.html", resp, 0777)
 				t.Fatalf("Failed: %v %v  %v", pos1, pos2, pos2-pos1)
 			}
 		}

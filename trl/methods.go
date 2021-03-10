@@ -90,3 +90,16 @@ func (s S) Empty() bool {
 	}
 	return true
 }
+
+// Left trims
+func (s S) Left(max int) S {
+	ret := S{}
+	for key, val := range s {
+		if len(val) <= max {
+			ret[key] = val
+			continue
+		}
+		ret[key] = val[0:max]
+	}
+	return ret
+}

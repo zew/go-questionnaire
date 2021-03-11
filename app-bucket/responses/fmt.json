@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "7079c69c780194584e2c9900e898c57428250fd345b3ad292a2a5c6314da275c",
+ 	"md_5": "a30d16597976cca96fba501cb132dec360d9ec8e9649a049c6368324da2619f0",
  	"lang_codes": [
  		"de",
  		"en"
@@ -75,8 +75,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\u003cdiv class='markdown'\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cp\u003eDurch Klicken auf \u003ccode\u003eSeite…\u003c/code\u003e werden Ihre Antworten gespeichert und Sie gelangen zur jeweils nächsten Seite.\u003c/p\u003e\u003c/li\u003e\n\n\u003cli\u003e\u003cp\u003eBei einer Unterbrechung (Schließen des Browsers) blei\u0026shy;ben Ihre Antworten erhalten und können später über Ihren persönlichen Link wieder aufgerufen und geändert werden.\u003c/p\u003e\u003c/li\u003e\n\n\u003cli\u003e\u003cp\u003eAm Ende der Befragung können Sie den Fragebogen abschließen, so dass keine weiteren Änderungen möglich sind.\u003c/p\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\n\t\u003c/div\u003e  \u003c!-- markdown --\u003e\n",
- 								"en": "\n\t\u003cdiv class='markdown'\u003e\n\u003cp\u003eBy clicking \u003ccode\u003ePage…\u003c/code\u003e your an\u0026shy;swers will be saved and you progress to the next page.\u003c/p\u003e\n\n\u003cp\u003eIn case of an interruption (closing of the web browser) your an\u0026shy;swers re\u0026shy;main saved. You can re-use your personal link to continue and change your an\u0026shy;swers.\u003c/p\u003e\n\n\u003cp\u003eAt the end you can finalize the questionnaire preventing further changes.\u003c/p\u003e\n\n\t\u003c/div\u003e  \u003c!-- markdown --\u003e\n"
+ 								"de": "\n\t\u003cdiv class='markdown'\u003e\n\u003cul\u003e\n\u003cli\u003eDurch Klicken auf \u003ccode\u003eSeite…\u003c/code\u003e werden Ihre Antworten gespeichert und Sie gelangen zur jeweils nächsten Seite.\r\n\r\u003c/li\u003e\n\u003cli\u003eBei einer Unterbrechung (Schließen des Browsers) blei\u0026shy;ben Ihre Antworten erhalten und können später über Ihren persönlichen Link wieder aufgerufen und geändert werden.\r\n\r\u003c/li\u003e\n\u003cli\u003eAm Ende der Befragung können Sie den Fragebogen abschließen, so dass keine weiteren Änderungen möglich sind.\r\u003c/li\u003e\n\u003c/ul\u003e\n\n\t\u003c/div\u003e  \u003c!-- markdown --\u003e\n",
+ 								"en": "\n\t\u003cdiv class='markdown'\u003e\n\u003cp\u003eBy clicking \u003ccode\u003ePage…\u003c/code\u003e your an\u0026shy;swers will be saved and you progress to the next page.\r\n\r\nIn case of an interruption (closing of the web browser) your an\u0026shy;swers re\u0026shy;main saved. You can re-use your personal link to continue and change your an\u0026shy;swers.\r\n\r\nAt the end you can finalize the questionnaire preventing further changes.\r\u003c/p\u003e\n\n\t\u003c/div\u003e  \u003c!-- markdown --\u003e\n"
  							},
  							"col_span": 1,
  							"col_span_label": 1

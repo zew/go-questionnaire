@@ -25,14 +25,19 @@ var dynFuncs = map[string]dynFuncT{
 // It is helper to RepsonseStatistics().
 func (q *QuestionnaireT) Statistics() (int, int, float64) {
 	responses := 0
-	inputs := 0
+	counter := 0
+	radioDoubles := map[string]int{}
 	for _, p := range q.Pages {
 		for _, gr := range p.Groups {
 			for _, i := range gr.Inputs {
 				if i.IsLayout() {
 					continue
 				}
-				inputs++
+				if radioDoubles[i.Name] > 0 {
+					continue
+				}
+				radioDoubles[i.Name]++
+				counter++
 				if i.Response != "" && i.Response != "0" {
 					responses++
 				}
@@ -40,7 +45,7 @@ func (q *QuestionnaireT) Statistics() (int, int, float64) {
 		}
 
 	}
-	return responses, inputs, 100 * float64(responses) / float64(inputs)
+	return responses, counter, 100 * float64(responses) / float64(counter)
 }
 
 // RepsonseStatistics returns the percentage of

@@ -39,7 +39,7 @@ install:
   - chmod 777 app-bucket
   - mv app-bucket/config-example.json  app-bucket/config.json
   - mv app-bucket/logins-example.json  app-bucket/logins.json
-  - touch ./templates/site.css
+  # - touch ./templates/site.css
 
 before_script:
   # - mysql -e 'create database exceldb_test;'

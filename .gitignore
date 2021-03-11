@@ -21,6 +21,7 @@ setenv*.bat
 *.json.attrs
 !config-example.json
 !logins-example.json
+!bundles.json
 # exclude everything under responses - but include direct children *.json
 app-bucket/responses/**
 app-bucket/transferrer/**

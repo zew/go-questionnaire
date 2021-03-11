@@ -1,0 +1,10 @@
+{
+	"layout.html": [
+		"nav-css-2020.html",
+		"layout-js-login.html",
+		"documentation.html"
+	],
+	"last-entry.html": [
+		"nav-css-2020.html"
+	]
+}

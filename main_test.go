@@ -82,6 +82,7 @@ func TestSystem(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
+	t.Logf("iterating *.json files in ... /%v ", tplDir)
 	for _, f := range *files {
 
 		t.Logf("\n\n\n")
@@ -127,12 +128,11 @@ func TestSystem(t *testing.T) {
 			continue
 		}
 
-		// systemtest.SimulateLoad(t, q, loginURL, "0")
+		// call with last arg "0" was for http user agend based differentiation of mobile or desktop rendering
 		systemtest.SimulateLoad(t, q, loginURL, "1")
 
-		// if surveyID == "peu2018" {
-		// 	systemtest.SimulateLoad(t, q, loginURL)
-		// }
+		if surveyID == "peu2018-or-special-survey-name" {
+		}
 	}
 
 }

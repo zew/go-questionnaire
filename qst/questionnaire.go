@@ -962,6 +962,11 @@ func (q *QuestionnaireT) KeysValues() (finishes, keys, vals []string) {
 
 // UserIDInt retrieves the userID as int
 func (q *QuestionnaireT) UserIDInt() int {
+
+	if q.UserID == "systemtest" {
+		return -10
+	}
+
 	userID, err := strconv.Atoi(q.UserID)
 	if err != nil {
 		if q.UserID == "" {

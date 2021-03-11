@@ -1,8 +1,16 @@
+// Package systemtest fires up
+// an instance of the app,
+// imports json files,
+// and checks the sums in the database;
+//
 // Package systemtest contains system tests;
 // ../main_test.go contains a detailed coverage test.
-// However, test is run from the app dir one above.
+//
+// Test is executed from the *app* dir one above.
+//
 // Working dir will be initially /go-questionnaire/systemtest,
-// but we will step up one dir in the code below.
+// but will be stepped up one dir in code below.
+//
 package systemtest
 
 import (
@@ -27,28 +35,48 @@ import (
 
 // We need this file and this empty func to avoid
 // "no buildable Go source files" on travis
+// Keep this empty func to avoid
+// "no buildable Go source files" on travis
 func main() {
 
 }
 
-func removeSystemtestJSON(t *testing.T, qSrc *qst.QuestionnaireT) {
-
-	clientPth := strings.Replace(qSrc.FilePath1(), "systemtest.json", "systemtest_src.json", -1)
-
-	t.Logf("Deleting %v and 'systemtest_src.json' ", qSrc.FilePath1())
-
-	err := cloudio.Delete(clientPth)
+func copyHelper(t *testing.T, pth string) {
+	bts, err := cloudio.ReadFile(pth)
 	if err != nil && !cloudio.IsNotExist(err) {
-		t.Logf("Could not delete %v: %v", clientPth, err)
+		t.Logf("copyHelper: Could not read file %v: %v", pth, err)
 	}
-	err = cloudio.Delete(qSrc.FilePath1())
+	pth += ".inspection"
+	rdr := bytes.NewReader(bts)
+	err = cloudio.WriteFile(pth, rdr, 0777)
 	if err != nil && !cloudio.IsNotExist(err) {
-		t.Logf("Could not delete %v: %v", qSrc.FilePath1(), err)
+		t.Logf("copyHelper: Could not write file %v: %v", pth, err)
 	}
-
+}
+func deleteHelper(t *testing.T, pth string) {
+	err := cloudio.Delete(pth)
+	if err != nil && !cloudio.IsNotExist(err) {
+		t.Logf("deleteHelper: Could not delete %v: %v", pth, err)
+	}
 }
 
-func clientPageToServer(t *testing.T, clQ *qst.QuestionnaireT, idxPage int, urlMain string, sessCook *http.Cookie) {
+// copy files for inspection
+func copySystemtestJSON(t *testing.T, q *qst.QuestionnaireT) {
+	clientPth := strings.Replace(q.FilePath1(), "systemtest.json", "systemtest_src.json", -1)
+	copyHelper(t, clientPth)
+	copyHelper(t, q.FilePath1())
+}
+
+// delete answers of user systemtest
+func removeSystemtestJSON(t *testing.T, q *qst.QuestionnaireT) {
+	clientPth := strings.Replace(q.FilePath1(), "systemtest.json", "systemtest_src.json", -1)
+	t.Logf("Deleting %v and 'systemtest_src.json' ", q.FilePath1())
+	deleteHelper(t, clientPth)
+	deleteHelper(t, q.FilePath1())
+}
+
+func clientPageToServer(t *testing.T, clQ *qst.QuestionnaireT, idxPage int,
+	urlMain string, sessCook *http.Cookie) {
 
 	ctr.Reset()
 
@@ -62,14 +90,28 @@ func clientPageToServer(t *testing.T, clQ *qst.QuestionnaireT, idxPage int, urlM
 		}
 		vals.Set("token", lgn.FormToken())
 		vals.Set("submitBtn", "next")
+
+		// condense radio inputs
+		// map distinct for weeding out multiple radios with same name
+		radioVal := map[string]string{}
 		for i2, grp := range p.Groups {
 			for i3, inp := range grp.Inputs {
 				if inp.IsLayout() {
 					continue
 				}
-				vals.Set(inp.Name, ctr.IncrementStr())
-				clQ.Pages[i1].Groups[i2].Inputs[i3].Response = ctr.GetLastStr()
-				log.Printf("Input %12v set to value %2v ", inp.Name, ctr.GetLastStr())
+				val := ""
+				if _, visitedBefore := radioVal[inp.Name]; visitedBefore {
+					val = radioVal[inp.Name]
+				} else {
+					val = ctr.IncrementStr()
+					radioVal[inp.Name] = val
+				}
+
+				radioVal[inp.Name] = val
+				vals.Set(inp.Name, val)
+				clQ.Pages[i1].Groups[i2].Inputs[i3].Response = val
+				log.Printf("Input %12v set to value %2v ", inp.Name, val)
+				// }
 			}
 		}
 	}
@@ -96,6 +138,10 @@ func clientPageToServer(t *testing.T, clQ *qst.QuestionnaireT, idxPage int, urlM
 // It then fills the questionnaire page by page.
 // It then compares the local copy of the questionnaire data
 // with the "server" version.
+//
+// qSrc is the basic survey template file for iterating pages and inputs
+// clQ  is a fake  user response file - recording the data requested to the test server
+//
 func FillQuestAndComparesServerResult(t *testing.T, qSrc *qst.QuestionnaireT, urlMain string, sessCook *http.Cookie) {
 
 	var clQ = &qst.QuestionnaireT{}
@@ -119,10 +165,18 @@ func FillQuestAndComparesServerResult(t *testing.T, qSrc *qst.QuestionnaireT, ur
 	for i := 0; i < len(clQ.Pages); i++ {
 		clQ.Pages[i].Finished = time.Now()
 	}
+	clQ.Attrs = map[string]string{}
+	clQ.Attrs["user-attribute-1"] = "user-val-1"
+	// qSrc.Attrs are empty...
+	for k, v := range qSrc.Attrs {
+		clQ.Attrs[k] = v // qSrc.Attrs is empty
+	}
 	clQ.UserID = "systemtest"
 	clQ.RemoteIP = "127.0.0.1:12345"
-	clQ.CurrPage = 777 // hopeless to mimic every server side setting
+	clQ.UserAgent = "golang client"
+	clQ.LangCode = qSrc.LangCodes[0]
 	/*
+		//
 		err = clQ.Validate()
 		if err != nil {
 			t.Fatalf("Client questionnaire validation caused error: %v", err)
@@ -133,12 +187,15 @@ func FillQuestAndComparesServerResult(t *testing.T, qSrc *qst.QuestionnaireT, ur
 	// After UserID have been set => deletion possible
 	removeSystemtestJSON(t, clQ)
 	defer removeSystemtestJSON(t, clQ)
+	defer copySystemtestJSON(t, clQ) // resolved inversely
 
 	//
 	// Doing load
 	for idx := range clQ.Pages {
 		clientPageToServer(t, clQ, idx, urlMain, sessCook)
 	}
+	clQ.CurrPage = len(clQ.Pages) - 2                  // last page does not get requested
+	clQ.Pages[len(clQ.Pages)-1].Finished = time.Time{} // last page finishing time is zero value
 
 	clientPth := strings.Replace(clQ.FilePath1(), "systemtest.json", "systemtest_src.json", -1)
 
@@ -168,7 +225,7 @@ func FillQuestAndComparesServerResult(t *testing.T, qSrc *qst.QuestionnaireT, ur
 
 // SimulateLoad logs in as 'systemtest'
 // and performs some requests.
-func SimulateLoad(t *testing.T, qSrc *qst.QuestionnaireT, loginURI, mobile string) {
+func SimulateLoad(t *testing.T, q *qst.QuestionnaireT, loginURI, mobile string) {
 
 	port := cfg.Get().BindSocket
 	host := fmt.Sprintf("http://localhost:%v", port)
@@ -183,7 +240,7 @@ func SimulateLoad(t *testing.T, qSrc *qst.QuestionnaireT, loginURI, mobile strin
 	// Login and save session cookie
 	var sessCook *http.Cookie
 	{
-		t.Logf("\nGetting cookie for %v mobile %v", qSrc.Survey.String(), mobile)
+		t.Logf("\nGetting cookie for %v mobile %v", q.Survey.String(), mobile)
 		t.Logf("================================")
 		urlReq := urlLogin
 
@@ -226,10 +283,10 @@ func SimulateLoad(t *testing.T, qSrc *qst.QuestionnaireT, loginURI, mobile strin
 
 	ctr.Reset()
 
-	if qSrc.Survey.Type == "fmt" {
+	if q.Survey.Type == "fmt" {
 		fmtSpecialTest(t, urlMain, sessCook)
 	}
 
-	FillQuestAndComparesServerResult(t, qSrc, urlMain, sessCook)
+	FillQuestAndComparesServerResult(t, q, urlMain, sessCook)
 
 }

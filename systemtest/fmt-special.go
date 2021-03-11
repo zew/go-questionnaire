@@ -62,7 +62,7 @@ func fmtSpecialTest(t *testing.T, urlMain string, sessCook *http.Cookie) {
 			)
 			if pos1 < 1 || pos2 < 1 || (pos2-pos1) > scope {
 				// ioutil.WriteFile("tmp-response-test.html", resp, 0777)
-				t.Fatalf("Failed: %v %v  %v", pos1, pos2, pos2-pos1)
+				t.Fatalf("fmt response contains 1 fail: %v %v  %v", pos1, pos2, pos2-pos1)
 			}
 		}
 		{
@@ -75,7 +75,7 @@ func fmtSpecialTest(t *testing.T, urlMain string, sessCook *http.Cookie) {
 				needle1, needle2, pos1, pos2, pos2-pos1,
 			)
 			if pos1 < 1 || pos2 < 1 || (pos2-pos1) > scope {
-				t.Fatal("Failed")
+				t.Fatalf("fmt response contains 2 fail: %v %v  %v", pos1, pos2, pos2-pos1)
 			}
 		}
 

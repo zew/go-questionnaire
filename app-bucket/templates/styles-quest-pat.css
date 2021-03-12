@@ -1,3 +1,100 @@
+/* 
+
+@font-face{
+    font-family:"MetaWeb";          
+    src:url(https://www.zew.de/typo3conf/ext/zew_sitepackage/Resources/Public/Frontend/Fonts/meta-pro/MetaWeb-Normal.woff);
+    font-stretch: normal;
+}
+@font-face{
+    font-family:"MetaWebItalic";    
+    src:url(https://www.zew.de/typo3conf/ext/zew_sitepackage/Resources/Public/Frontend/Fonts/meta-pro/MetaWeb-NormalIta.woff);
+    font-stretch: normal;
+}
+@font-face{
+    font-family:"MetaWebBold";      
+    src:url(https://www.zew.de/typo3conf/ext/zew_sitepackage/Resources/Public/Frontend/Fonts/meta-pro/MetaWeb-Bold.woff);
+    font-stretch: normal;
+}
+@font-face{
+    font-family:"MetaWebBoldItalic";
+    src:url(https://www.zew.de/typo3conf/ext/zew_sitepackage/Resources/Public/Frontend/Fonts/meta-pro/MetaWeb-BoldIta.woff);
+    font-stretch: normal;
+}
+@font-face{
+    font-family:"PlayfairDisplay";  
+    src:url(https://www.zew.de/typo3conf/ext/zew_sitepackage/Resources/Public/Frontend/Fonts/playfair-display/playfair-display-v13-latin-regular.woff);
+    font-stretch: normal;
+}
+@font-face{
+    font-family:"OpenSans";         
+    src:url(https://www.zew.de/typo3conf/ext/zew_sitepackage/Resources/Public/Frontend/Fonts/open-sans/open-sans_latin.woff2);
+    font-stretch: normal;
+}
+@font-face{
+    font-family:"TheSansPlain";     
+    src:url(https://www.zew.de/typo3conf/ext/zew_sitepackage/Resources/Public/Frontend/Fonts/meta-pro/TheSans_TT5_.woff);
+    font-stretch: normal;
+}
+
+*/
+
+
+/* 
+    from https://fonts.adobe.com/fonts/pt-serif
+
+    <link rel="stylesheet" href="https://use.typekit.net/pzg6bnl.css">
+
+    PT Serif Regular
+    font-family: pt-serif, serif;
+
+    PT Serif Italic
+    font-family: pt-serif, serif; font-style: italic;
+
+    PT Serif Bold
+    font-family: pt-serif, serif; font-weight: 700;
+
+    PT Serif Bold Italic
+    font-family: pt-serif, serif; font-weight: 700; font-style: italic;
+
+    PT Serif Caption Regular
+    font-family: pt-serif-caption, serif;
+
+    PT Serif Caption Italic
+    font-family: pt-serif-caption, serif; font-style: italic;
+*/
+
+
+@import url("https://use.typekit.net/pzg6bnl.css");
+
+:root {
+	font-family: "PT Serif",-apple-system,BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+	font-family: "PT Serif";
+    font-size: 110%;
+}
+
+@media screen and (max-width: 800px) {
+
+    :root {
+        font-size: clamp(0.95rem, calc(0.8rem + ((1vw - .48rem) * 1.2)), 1.05rem);
+        font-size: clamp(1.15rem, calc(0.8rem + ((1vw - .48rem) * 1.2)), 1.25rem);
+    }
+
+    nav a.title {
+        /* margin-left: 0.7rem; */
+        margin-left:  0.02rem;
+        margin-right: 0.02rem;
+        padding-left:  0.02rem;
+        padding-right: 0.02rem;
+        font-size:      70%;
+        line-height:   140%;
+        top:   0.2rem;
+        left:  0.3rem;
+    }
+
+}
+
+
+
 /* disable link in header - header invisible */
 nav a.logo,
 nav a.title
@@ -12,24 +109,6 @@ nav a.title
 /* dont show as link */
 nav a.title {
     color: var(--clr-fg);
-}
-
-@media screen and (min-width: 800px) {
-    nav a.title {
-        /* background-color: var(--clr-sec-drk1); */
-    }
-}
-
-@media screen and (max-width: 800px) {
-    nav a.title {
-        /* margin-left: 0.7rem; */
-        margin-left:  0.02rem;
-        margin-right: 0.2rem;
-        font-size: 75%;
-        font-size: 85%;
-        top:   0.2rem;
-        left:  0.3rem;
-    }
 }
 
 /* text after logo - three sub components */
@@ -51,7 +130,7 @@ nav a.title span.survey-wave-id {
 
 /* remove position correction for small default image */
 nav a.logo img {
-    top:  0;
+    top:  0.01rem;
     left: 0;
 }
 
@@ -205,12 +284,14 @@ ol.progress {
 
 
 @media screen and (max-width: 800px) {
+
     #t01 td {
         padding: 0.25rem 0.1rem;
         /* font-size:     90%;
         padding-left:   0.05rem;
         padding-right:  0.01rem; */
     }
+
     #t01  tr:nth-child(3) td:nth-child(1),
     #t01  tr:nth-child(5) td:nth-child(1),
     #t01  tr:nth-child(7) td:nth-child(1),
@@ -226,6 +307,22 @@ ol.progress {
     SECOND table CSS
 ==============================
 */
+
+@media screen and (max-width: 800px) {
+
+    #t02 table, #t02 th, #t02 td {
+        font-size: 85%;
+    }
+
+    .pg04-grp01-inp00-lbl,
+    .pg04-grp01-inp01-lbl,
+    .pg04-grp01-inp02-lbl,
+    dummy{
+        padding-left: 0.2rem;
+        font-size: 85%;
+    }
+
+}
 
 #t02 table, #t02 th, #t02 td {
     border-collapse: collapse;
@@ -308,6 +405,7 @@ dummmy {
         padding-left:   0.05rem;
         padding-right:  0.01rem;
     }
+
     #t02  tr:nth-child(3) td:nth-child(1),
     #t02  tr:nth-child(4) td:nth-child(1),
     #t02  tr:nth-child(5) td:nth-child(1),
@@ -326,6 +424,15 @@ dummmy {
     THIRD table CSS
 ==============================
 */
+
+
+@media screen and (max-width: 800px) {
+
+    #t03  {
+        font-size: 90%;
+    }
+
+}
 
 
 
@@ -439,86 +546,4 @@ university logos
 .logo-imgs-in-content img:nth-child(4)
 {
     margin-bottom: 5rem;
-}
-
-/* 
-
-@font-face{
-    font-family:"MetaWeb";          
-    src:url(https://www.zew.de/typo3conf/ext/zew_sitepackage/Resources/Public/Frontend/Fonts/meta-pro/MetaWeb-Normal.woff);
-    font-stretch: normal;
-}
-@font-face{
-    font-family:"MetaWebItalic";    
-    src:url(https://www.zew.de/typo3conf/ext/zew_sitepackage/Resources/Public/Frontend/Fonts/meta-pro/MetaWeb-NormalIta.woff);
-    font-stretch: normal;
-}
-@font-face{
-    font-family:"MetaWebBold";      
-    src:url(https://www.zew.de/typo3conf/ext/zew_sitepackage/Resources/Public/Frontend/Fonts/meta-pro/MetaWeb-Bold.woff);
-    font-stretch: normal;
-}
-@font-face{
-    font-family:"MetaWebBoldItalic";
-    src:url(https://www.zew.de/typo3conf/ext/zew_sitepackage/Resources/Public/Frontend/Fonts/meta-pro/MetaWeb-BoldIta.woff);
-    font-stretch: normal;
-}
-@font-face{
-    font-family:"PlayfairDisplay";  
-    src:url(https://www.zew.de/typo3conf/ext/zew_sitepackage/Resources/Public/Frontend/Fonts/playfair-display/playfair-display-v13-latin-regular.woff);
-    font-stretch: normal;
-}
-@font-face{
-    font-family:"OpenSans";         
-    src:url(https://www.zew.de/typo3conf/ext/zew_sitepackage/Resources/Public/Frontend/Fonts/open-sans/open-sans_latin.woff2);
-    font-stretch: normal;
-}
-@font-face{
-    font-family:"TheSansPlain";     
-    src:url(https://www.zew.de/typo3conf/ext/zew_sitepackage/Resources/Public/Frontend/Fonts/meta-pro/TheSans_TT5_.woff);
-    font-stretch: normal;
-}
-
-*/
-
-
-/* 
-    from https://fonts.adobe.com/fonts/pt-serif
-
-    <link rel="stylesheet" href="https://use.typekit.net/pzg6bnl.css">
-
-    PT Serif Regular
-    font-family: pt-serif, serif;
-
-    PT Serif Italic
-    font-family: pt-serif, serif; font-style: italic;
-
-    PT Serif Bold
-    font-family: pt-serif, serif; font-weight: 700;
-
-    PT Serif Bold Italic
-    font-family: pt-serif, serif; font-weight: 700; font-style: italic;
-
-    PT Serif Caption Regular
-    font-family: pt-serif-caption, serif;
-
-    PT Serif Caption Italic
-    font-family: pt-serif-caption, serif; font-style: italic;
-*/
-
-
-@import url("https://use.typekit.net/pzg6bnl.css");
-
-:root {
-	font-family: "PT Serif",-apple-system,BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
-	font-family: "PT Serif";
-    font-size: 110%;
-}
-
-@media screen and (max-width: 800px) {
-
-    :root {
-    	font-size: clamp(0.95rem, calc(0.8rem + ((1vw - .48rem) * 1.2)), 1.05rem);
-    }
-
 }

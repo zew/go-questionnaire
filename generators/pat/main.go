@@ -55,11 +55,10 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		{
 			inp := gr.AddInput()
 			inp.Type = "textblock"
-			inp.Label = trl.S{
-				"de": "HERZLICH WILLKOMMEN UND VIELEN DANK FÜR IHRE TEILNAHME!<br><br>",
-			}
 			inp.Desc = trl.S{
 				"de": `
+				HERZLICH WILLKOMMEN UND VIELEN DANK FÜR IHRE TEILNAHME!<br><br>
+
 				<p>Dies ist eine Studie des Zentrums für Europäische Wirtschaftsforschung (ZEW) in Mannheim 
 				sowie der Universitäten in Köln, Mannheim, Münster und Zürich. 
 				Ihre Teilnahme wird nur wenige Minuten in Anspruch nehmen 
@@ -128,7 +127,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Type = "textblock"
 				inp.ColSpan = 6
 				inp.ColSpanLabel = 6
-				// inp.Label = trl.S{"de": "input label"}
 				inp.Desc = trl.S{"de": `
 				<p><b>
 				Im Folgenden geht es um eine Spende von 30&nbsp;€, die <i>eine</i> dieser drei Stiftungen erhalten soll:
@@ -176,7 +174,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				Den Personen wurde mitgeteilt, dass ihre Präferenzen 
 				zusammen mit den Präferenzen von vier anderen Personen 
 				an einen zukünftigen Teilnehmer der Studie gegeben werden, 
-				der die Präferenzen in eine Entscheidung zusammenfasst. 
+				der die Präferenzen in <i>eine</i> Entscheidung zusammenfasst. 
 				<b>Dieser zukünftige Teilnehmer sind Sie.</b>
 				</p>
 				
@@ -249,7 +247,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				// inp.Label = trl.S{"de": "Dummy<br>"}
 				inp.Desc = trl.S{
 					"de": `
 				<span style="display: inline-block; font-size:87%; line-height: 120%;">
@@ -272,7 +269,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 	page.ValidationFuncName = "patPage2"
 	page.ValidationFuncMsg = trl.S{
-		"de": "Sie haben nicht alle drei Entscheidungen bewertet. Wirklich weiter?",
+		"de": "Wollen Sie wirklich weitergehen oder wollen Sie Ihre bisherigen Antworten vervollständigen?",
 		// "en": "Does not add up. Really continue?",
 	}
 
@@ -280,7 +277,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	{
 		gr := page.AddGroup()
 		gr.Cols = 2
-		gr.BottomVSpacers = 1
+		gr.BottomVSpacers = 2
 		{
 			inp := gr.AddInput()
 			inp.ColSpan = 2
@@ -292,7 +289,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			<b>Setzen Sie dazu bei der entsprechenden Stiftung ein Kreuz in der Spalte „Auswahl“.</b>
 			Falls Sie eine zweite oder dritte Alternative als genauso gut empfinden, 
 			setzen Sie ein Kreuz in der Spalte „Gleich gut“. 
-			Berücksichtigen Sie die dargestellten Präferenzen der Gruppen&shy;mitglieder.
+			Berücksichtigen Sie dabei bitte die dargestellten Präferenzen der Gruppenmitglieder.
 			</p>
 			`}
 		}
@@ -302,7 +299,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			{
 				gr := page.AddGroup()
 				gr.Cols = 1
-				gr.BottomVSpacers = 2
+				gr.BottomVSpacers = 3
 				gr.RandomizationGroup = 1 - 1
 
 				// q1b
@@ -333,7 +330,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 		page.ValidationFuncName = "patPage3"
 		page.ValidationFuncMsg = trl.S{
-			"de": "Sie haben nicht alle drei Entscheidungen bewertet. Wirklich weiter?",
+			"de": "Wollen Sie wirklich weitergehen oder wollen Sie Ihre bisherigen Antworten vervollständigen?",
 			// "en": "Does not add up. Really continue?",
 		}
 
@@ -342,7 +339,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			{
 				gr := page.AddGroup()
 				gr.Cols = 1
-				gr.BottomVSpacers = 2
+				gr.BottomVSpacers = 3
 				gr.RandomizationGroup = 1 - 1
 
 				// q1b
@@ -379,13 +376,17 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				// inp.Label = trl.S{"de": "Frage 3<br>"}
 				inp.Desc = trl.S{
 					"de": `
 
 					<p>
-					<b>Frage 1.</b> Schätzen Sie bitte: Was wäre eine zufällig ausgewählte Person aus unserer Vorstudie maximal bereit zu zahlen, damit eine Spende von 30&nbsp;€ an die Stiftung überwiesen wird, die diese Person als am besten/mittel/am schlechtesten erachtet?
-					<i>(Wenn Sie meinen, die Person würde dafür bezahlen, dass die Stiftung die 30&nbsp;€ nicht erhält, schreiben Sie bitte ein Minuszeichen vor den jeweiligen Betrag.)</i>
+					<b>Frage 1.</b> Schätzen Sie bitte: Was wäre eine zufällig ausgewählte Person 
+					aus unserer Vorstudie maximal bereit zu zahlen, 
+					damit eine Spende von 30&nbsp;€ an die Stiftung überwiesen wird, 
+					die diese Person als am besten/mittel/am schlechtesten erachtet?
+					<i>(Wenn Sie meinen, die Person würde dafür bezahlen, 
+						dass die Stiftung die 30&nbsp;€ <i>nicht</i> erhält, 
+						schreiben Sie bitte ein Minuszeichen vor den jeweiligen Betrag.)</i>
 					</p>
 
 					<p>
@@ -417,7 +418,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.ColSpan = 5
 				inp.ColSpanLabel = 3
 				inp.ColSpanControl = 2
-				inp.Desc = trl.S{"de": "Beste Stiftung"}
+				inp.Label = trl.S{"de": "Beste Stiftung"}
 				inp.Suffix = trl.S{"de": "€"}
 				inp.Validator = "inRange1000"
 			}
@@ -431,7 +432,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.ColSpan = 5
 				inp.ColSpanLabel = 3
 				inp.ColSpanControl = 2
-				inp.Desc = trl.S{"de": "Mittlere Stiftung"}
+				inp.Label = trl.S{"de": "Mittlere Stiftung"}
 				inp.Suffix = trl.S{"de": "€"}
 				inp.Validator = "inRange1000"
 			}
@@ -445,7 +446,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.ColSpan = 5
 				inp.ColSpanLabel = 3
 				inp.ColSpanControl = 2
-				inp.Desc = trl.S{"de": "Schlechteste Stiftung"}
+				inp.Label = trl.S{"de": "Schlechteste Stiftung"}
 				inp.Suffix = trl.S{"de": "€"}
 				inp.Validator = "inRange1000"
 			}
@@ -460,7 +461,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				// inp.Label = trl.S{"de": "Frage 3<br>"}
 				inp.Desc = trl.S{
 					"de": `
 					<p>
@@ -471,7 +471,9 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 					<p>
 					<b>Entscheidung 7.</b><br>
-					Sie sind einem deutschen Staatsangehörigen zugeordnet, der an einer zukünftigen Studie teilnehmen wird 
+
+					Sie sind einem deutschen Staatsangehörigen zugeordnet, 
+					der an einer zukünftigen Studie teilnehmen wird 
 					und verschiedene Optionen für Geldauszahlungen an unterschiedlichen Zeitpunkten hat.
 					
 					<b>Er erhält in dieser Studie genau eine der unten beschriebenen Optionen, 
@@ -488,17 +490,30 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 
 					<p>
-					Sie können nun entscheiden, welche der drei Optionen der Person (nicht) zur Verfügung stehen sollen, 
-					indem Sie in jeder Zeile ein Kreuz entweder bei „Verfügbar” oder bei „Nicht verfügbar” setzen. 
+					Sie können nun entscheiden, welche der drei Optionen der Person (nicht) 
+					<b>als Auswahloptionen</b>
+					zur Verfügung stehen sollen, 
+					indem Sie in jeder Zeile ein Kreuz entweder bei „Verfügbar” oder 
+					bei „Nicht verfügbar” setzen. 
 					<b>Es muss am Ende mindestens eine Option „Verfügbar“ sein.</b> 
-					Folgen Sie dabei einfach Ihren Vorstellungen – es gibt keine richtigen oder falschen Antworten. 
+					
 					Die nicht verfügbaren Optionen werden der Person nicht als Auswahloptionen angezeigt. 
-					Falls mehr als eine Option verfügbar ist, kann die die Person aus diesen Optionen wählen.
+					Falls mehr als eine Option verfügbar ist, kann die Person aus diesen Optionen wählen.
 					</p>
 
 					<p>
-					Bei verfügbar gemachten Optionen können Sie zusätzlich „Von dieser Option abraten“ ankreuzen. In diesem Fall erhält die Person die Botschaft: „Ein früherer Teilnehmer dieser Studie rät Ihnen davon ab, diese Option zu wählen”.
+					Bei verfügbar gemachten Optionen können Sie zusätzlich 
+					„Von dieser Option abraten“ ankreuzen. 
+					In diesem Fall erhält die Person die Botschaft: 
+					„Ein früherer Teilnehmer dieser Studie rät Ihnen davon ab, 
+					diese Option zu wählen”.
 					</p>
+
+					<p>
+					Welche Optionen sollen der Person (nicht) zur Verfügung stehen, 
+					falls die Optionen wie folgt lauten?
+					</p>
+
 
 					`,
 				}
@@ -536,7 +551,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				// inp.Label = trl.S{"de": "Frage 3<br>"}
 				inp.Desc = trl.S{
 					"de": `
 
@@ -590,12 +604,17 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				// inp.Label = trl.S{"de": "Frage 2<br>"}
 				inp.Desc = trl.S{
 					"de": `
 					<p>
 					<b>Frage 2. </b>
-					Schätzen Sie bitte: Wie viele Mitglieder einer Gruppe von 10 zufällig ausgewählten Personen wählen jeweils die folgenden Optionen A, B und C.
+					Schätzen Sie bitte: Wie viele Mitglieder einer Gruppe von 10 zufällig 
+					ausgewählten Personen wählen jeweils die folgenden Optionen A, B und C,
+					<b>
+					wenn sie sich jeweils für genau eine der drei Optionen entscheiden müssen?					
+					</b>
+
+					<br>
 					<i>(Ihre Antworten müssen sich auf 10 summieren.)</i>
 					</p>
 					`,
@@ -623,11 +642,14 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			}
 		}
 
+		inpSt1 := css.NewStylesResponsive(nil)
+		inpSt1.Desktop.StyleGridItem.Order = 2
+
 		// gr2
 		{
 			gr := page.AddGroup()
 			gr.Cols = 24 - 0
-			gr.BottomVSpacers = 2
+			gr.BottomVSpacers = 3
 			// q4a
 			{
 				inp := gr.AddInput()
@@ -639,10 +661,11 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.ColSpan = 8
 				inp.ColSpanLabel = 3 - 2
 				inp.ColSpanControl = 9
-				inp.Desc = trl.S{"de": "Wie viele wählen Option A? Ihre Antwort:"}
-				inp.Desc = trl.S{"de": " "}
-				inp.Suffix = trl.S{"de": "von 10<br>wählen Option A"}
+				inp.Label = trl.S{"de": "von 10 wählen Option&nbsp;A"}
+				// inp.Label = trl.S{"de": " "}
+				// inp.Suffix = trl.S{"de": "von 10<br>wählen Option&nbsp;A"}
 				inp.Validator = "inRange10"
+				inp.StyleLbl = inpSt1
 			}
 			{
 				inp := gr.AddInput()
@@ -654,10 +677,11 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.ColSpan = 8
 				inp.ColSpanLabel = 3 - 2
 				inp.ColSpanControl = 9
-				inp.Desc = trl.S{"de": "Wie viele wählen Option B? Ihre Antwort:"}
-				inp.Desc = trl.S{"de": " "}
-				inp.Suffix = trl.S{"de": "von 10<br>wählen Option B"}
+				inp.Label = trl.S{"de": "von 10 wählen Option&nbsp;B"}
+				// inp.Label = trl.S{"de": " "}
+				// inp.Suffix = trl.S{"de": "von 10<br>wählen Option&nbsp;B"}
 				inp.Validator = "inRange10"
+				inp.StyleLbl = inpSt1
 			}
 			{
 				inp := gr.AddInput()
@@ -669,10 +693,11 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.ColSpan = 8
 				inp.ColSpanLabel = 3 - 2
 				inp.ColSpanControl = 9
-				inp.Desc = trl.S{"de": "Wie viele wählen Option C? Ihre Antwort:"}
-				inp.Desc = trl.S{"de": " "}
-				inp.Suffix = trl.S{"de": "von 10<br>wählen Option C"}
+				inp.Label = trl.S{"de": "von 10 wählen Option&nbsp;C"}
+				// inp.Label = trl.S{"de": " "}
+				// inp.Suffix = trl.S{"de": "von 10<br>wählen Option&nbsp;C"}
 				inp.Validator = "inRange10"
+				inp.StyleLbl = inpSt1
 			}
 		}
 
@@ -687,13 +712,20 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				// inp.Label = trl.S{"de": "Frage 3<br>"}
 				inp.Desc = trl.S{
 					"de": `
 					<p>
 					<b>Frage 3. </b>
 					Und wie lautet Ihre Schätzung für die folgenden drei Optionen?
-					<i>(Ihre Antworten müssen sich auf 10 summieren. Die Zeitpunkte und Beträge sind anders als in Frage 2.)</i>
+					<br>
+					<i>(Ihre Antworten müssen sich auf 10 summieren. 
+						Die Zeitpunkte und Beträge sind anders als in Frage 2.)
+					</i>
+					<br>
+					<i>
+						Bitte beachten Sie, dass die Zeitpunkte und Beträge anders sind als in Frage 2.
+					</i>
+
 					</p>
 					`,
 				}
@@ -725,7 +757,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		{
 			gr := page.AddGroup()
 			gr.Cols = 24 - 0
-			gr.BottomVSpacers = 2
+			gr.BottomVSpacers = 3
 
 			// q4b
 			{
@@ -738,10 +770,11 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.ColSpan = 8
 				inp.ColSpanLabel = 3 - 2
 				inp.ColSpanControl = 9
-				inp.Desc = trl.S{"de": "Wie viele wählen Option A? Ihre Antwort:"}
-				inp.Desc = trl.S{"de": " "}
-				inp.Suffix = trl.S{"de": "von 10<br>wählen Option A"}
+				inp.Label = trl.S{"de": "von 10 wählen Option&nbsp;A"}
+				// inp.Label = trl.S{"de": " "}
+				// inp.Suffix = trl.S{"de": "von 10<br>wählen Option&nbsp;A"}
 				inp.Validator = "inRange10"
+				inp.StyleLbl = inpSt1
 			}
 			{
 				inp := gr.AddInput()
@@ -753,10 +786,11 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.ColSpan = 8
 				inp.ColSpanLabel = 3 - 2
 				inp.ColSpanControl = 9
-				inp.Desc = trl.S{"de": "Wie viele wählen Option B? Ihre Antwort:"}
-				inp.Desc = trl.S{"de": " "}
-				inp.Suffix = trl.S{"de": "von 10<br>wählen Option B"}
+				inp.Label = trl.S{"de": "von 10 wählen Option&nbsp;B"}
+				// inp.Label = trl.S{"de": " "}
+				// inp.Suffix = trl.S{"de": "von 10<br>wählen Option&nbsp;B"}
 				inp.Validator = "inRange10"
+				inp.StyleLbl = inpSt1
 			}
 			{
 				inp := gr.AddInput()
@@ -768,10 +802,11 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.ColSpan = 8
 				inp.ColSpanLabel = 3 - 2
 				inp.ColSpanControl = 9
-				inp.Desc = trl.S{"de": "Wie viele wählen Option C? Ihre Antwort:"}
-				inp.Desc = trl.S{"de": " "}
-				inp.Suffix = trl.S{"de": "von 10<br>wählen Option C"}
+				inp.Label = trl.S{"de": "von 10 wählen Option&nbsp;C"}
+				// inp.Label = trl.S{"de": " "}
+				// inp.Suffix = trl.S{"de": "von 10<br>wählen Option&nbsp;C"}
 				inp.Validator = "inRange10"
+				inp.StyleLbl = inpSt1
 			}
 		}
 
@@ -783,6 +818,10 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		page.Label = trl.S{"de": ""}
 		page.Short = trl.S{"de": "Eigene Einstellung"}
 		page.Style = css.DesktopWidthMax(page.Style, "30rem")
+
+		grSt := css.NewStylesResponsive(nil)
+		grSt.Desktop.StyleGridContainer.GapRow = "0.1rem"
+		grSt.Desktop.StyleGridContainer.GapColumn = "0.01rem"
 
 		// gr1
 		{
@@ -798,7 +837,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				<p>
 				<b>Frage 4.</b> 
 				Wie sehr stimmen Sie der folgenden Aussage zu: 
-				<i>„Alle Erwerbstätigen in Deutschland sollten verpflichtend einen gewissen Teil ihres Arbeitseinkommens 
+				<i>„Alle Erwerbstätigen in Deutschland sollten verpflichtend 
+				einen gewissen Teil ihres Arbeitseinkommens 
 				im Rahmen einer privaten Altersvorsorge sparen, 
 				um eine Rentenhöhe zu erreichen, die über dem Rentenanspruch 
 				aus der gesetzlichen Rentenversicherung liegt.</i>“
@@ -807,6 +847,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			}
 			gr := page.AddGrid(gb)
 			gr.OddRowsColoring = true
+			gr.Style = grSt
+			gr.BottomVSpacers = 4
 		}
 
 		// gr2
@@ -837,6 +879,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			}
 			gr := page.AddGrid(gb)
 			gr.OddRowsColoring = true
+			gr.Style = grSt
 		}
 
 		// gr3
@@ -861,6 +904,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			}
 			gr := page.AddGrid(gb)
 			gr.OddRowsColoring = true
+			gr.Style = grSt
 		}
 
 		// gr4
@@ -883,6 +927,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			}
 			gr := page.AddGrid(gb)
 			gr.OddRowsColoring = true
+			gr.Style = grSt
+			gr.BottomVSpacers = 4
 		}
 
 		//
@@ -895,9 +941,9 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				// inp.CSSControl = "special-line-height-higher"
+				inp.ColSpan = 2
+				// inp.ColSpanLabel = 2
 				inp.Desc = trl.S{"de": "Vielen Dank für das Ausfüllen dieser Umfrage! "}
-				inp.Desc = trl.S{"de": "  "} // next page
 			}
 
 			{
@@ -908,6 +954,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Response = fmt.Sprintf("%v", len(q.Pages)-1+1) // +1 since one page is appended below
 				inp.Label = cfg.Get().Mp["end"]
 				inp.Label = cfg.Get().Mp["finish_questionnaire"]
+				inp.ColSpan = 2
+				inp.ColSpanLabel = 1
 				inp.ColSpanControl = 1
 				inp.AccessKey = "n"
 
@@ -935,11 +983,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			gr := page.AddGroup()
 			gr.Cols = 1
 
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.Desc = cfg.Get().Mp["thanks_for_participation"]
-			}
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"

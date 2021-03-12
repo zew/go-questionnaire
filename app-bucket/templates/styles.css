@@ -407,7 +407,6 @@ form, .form-alike {
 
     padding: 0.1rem 0.6rem;
     background-color: var(--clr-sec);
-    border-radius: 0.5rem;
 }
 
 form {
@@ -985,7 +984,7 @@ nav {
     position: var(--nav-bar-position);
     z-index: 103; /* over content*/
     width: 100%;
-    min-height:             var(--nav-height);
+    /* min-height:             var(--nav-height); */  /* mobile view horizontal  */
     display: grid;
     grid-template-columns: 4fr 4fr 3.0em [col-menu] 2em 0.15fr;
     grid-template-columns: [col-img] 6fr [col-title] 4fr [col-menu] 1.3fr;
@@ -1034,7 +1033,7 @@ nav a.logo img {
     top:            0.15rem;
     left:          -0.10rem;
 
-    height: calc(var(--nav-height) - 0.8rem);
+    /* height: calc(var(--nav-height) - 0.8rem); */  /* mobile view horizontal  */
 
     margin-right: 0.2rem;
 
@@ -1369,7 +1368,7 @@ ul.mnu-3rd-lvl li:last-child {
         z-index: 103; /* over content*/
 
         width: 100%;
-        min-height:       var(--nav-height);
+        /* min-height:       var(--nav-height); */  /* mobile view horizontal  */
         background-color: var(--clr-sec);
 
         display: grid;

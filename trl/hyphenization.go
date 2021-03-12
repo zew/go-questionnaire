@@ -100,6 +100,9 @@ var hyph = []string{
 	"wirt&shy;schaft&shy;lich", // wirt|schaft|lich
 	"Wirt&shy;schafts&shy;politik",
 
+	"Kompromiss&shy;lösung",
+	"Mehrheits&shy;lösung",
+
 	// english
 	"ac&shy;counts",
 	"ad&shy;min&shy;is&shy;tra&shy;tion",

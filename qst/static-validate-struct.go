@@ -159,6 +159,14 @@ func (q *QuestionnaireT) Validate() error {
 						q.Pages[i1].Groups[i2].Inputs[i3].ColSpanLabel = 0
 					}
 				}
+				/* 				// same for colspan
+				   				if (!inp.Label.Empty() || !inp.Desc.Empty()) && inp.ColSpan == 0 {
+				   					q.Pages[i1].Groups[i2].Inputs[i3].ColSpan = 1
+				   					if inp.Type == "label-as-input" || inp.Type == "button" {
+				   						q.Pages[i1].Groups[i2].Inputs[i3].ColSpan = 0
+				   					}
+				   				}
+				*/
 
 				// button has label - but never colspanlabel
 				// we should create a special label for button?

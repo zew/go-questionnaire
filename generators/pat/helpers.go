@@ -26,17 +26,20 @@ var q2Names = []string{
 	"q2_4_06_7",
 }
 
+/*
 var q1Labels = []trl.S{
-	{"de": "<b>1</b> Euro sofort und <b>15</b>&nbsp;Euro in <b>6</b>&nbsp;Monaten"},
-	{"de": "<b>3</b> Euro sofort und &nbsp;<b>7</b>&nbsp;Euro in <b>6</b>&nbsp;Monaten"},
-	{"de": "<b>4</b> Euro sofort und &nbsp;<b>1</b>&nbsp;Euro in <b>6</b>&nbsp;Monaten"},
+	{"de": "<b>1</b> Euro sofort und       <b>15</b>&nbsp;Euro  in <b>6</b>&nbsp;Monaten"},
+	{"de": "<b>3</b> Euro sofort und &nbsp;<b>7</b>&nbsp;Euro   in <b>6</b>&nbsp;Monaten"},
+	{"de": "<b>4</b> Euro sofort und &nbsp;<b>1</b>&nbsp;Euro   in <b>6</b>&nbsp;Monaten"},
 }
 
 var q2Labels = []trl.S{
-	{"de": "<b>1</b> Euro sofort und <b>15</b>&nbsp;Euro in <b>7</b>&nbsp;Monaten"},
-	{"de": "<b>3</b> Euro sofort und &nbsp;<b>7</b>&nbsp;Euro in <b>7</b>&nbsp;Monaten"},
-	{"de": "<b>4</b> Euro sofort und &nbsp;<b>1</b>&nbsp;Euro in <b>7</b>&nbsp;Monaten"},
+	{"de": "<b>1</b> Euro sofort und       <b>15</b>&nbsp;Euro  in <b>7</b>&nbsp;Monaten"},
+	{"de": "<b>3</b> Euro sofort und &nbsp;<b>7</b>&nbsp;Euro   in <b>7</b>&nbsp;Monaten"},
+	{"de": "<b>4</b> Euro sofort und &nbsp;<b>1</b>&nbsp;Euro   in <b>7</b>&nbsp;Monaten"},
 }
+
+*/
 
 var q4Labels = []trl.S{
 	{"de": "Es sollte keine solche Verpflichtung geben"},

@@ -86,6 +86,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 	q.Version = 2
 
+	recessionAtTheEnd := false
+
 	// page 0
 	{
 		page := q.AddPage()
@@ -377,8 +379,71 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				}
 				inp.Style = css.ItemCenteredMCA(inp.Style)
 			}
-
 		}
+
+		if !recessionAtTheEnd {
+
+			// gr3a
+			{
+				gr := page.AddGroup()
+				gr.Cols = 5
+				gr.BottomVSpacers = 1
+				{
+					inp := gr.AddInput()
+					inp.Type = "textblock"
+					inp.ColSpan = 5
+					inp.ColSpanLabel = 5
+					inp.Label = trl.S{
+						"de": fmt.Sprintf("<b>2c.</b> Die Wahrscheinlichkeit eines negativen BIP-Wachstums in Deutschland (Wachstum des realen & saisonbereinigten BIP zum Vorquartal) liegt bei"), //nextQ()
+						"en": fmt.Sprintf("<b>2c.</b> The probability of negative GDP growth in Germany (growth of real & seasonal adjusted GDP against previous quarter) is"),                     // nextQ()
+					}
+				}
+			}
+			// gr3b
+			{
+				gr := page.AddGroup()
+				gr.Cols = 4
+				gr.Style = css.NewStylesResponsive(gr.Style)
+				gr.Style = css.DesktopWidthMax(gr.Style, "16rem")
+
+				{
+					inp := gr.AddInput()
+					inp.Label = trl.S{
+						"de": fmt.Sprintf("Aktuelles Quartal"),
+						"en": fmt.Sprintf("Current quarter"),
+					}
+					inp.Type = "number"
+					inp.Name = "y_recession_q0"
+					inp.Min = 0
+					inp.Max = 100
+					inp.MaxChars = 4
+
+					inp.ColSpan = 4
+					inp.ColSpanLabel = 3
+					inp.ColSpanControl = 1
+					inp.Suffix = trl.S{"de": "%", "en": "pct"}
+				}
+				{
+					inp := gr.AddInput()
+					inp.Label = trl.S{
+						"de": fmt.Sprintf("Folgendes Quartal"),
+						"en": fmt.Sprintf("Next quarter"),
+					}
+					inp.Type = "number"
+					inp.Name = "y_recession_q1"
+					inp.Min = 0
+					inp.Max = 100
+					inp.MaxChars = 4
+
+					inp.ColSpan = 4
+					inp.ColSpanLabel = 3
+					inp.ColSpanControl = 1
+					inp.Suffix = trl.S{"de": "%", "en": "pct"}
+				}
+			}
+		}
+		// !recessionAtTheEnd
+
 	}
 
 	//
@@ -783,64 +848,66 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		}
 	}
 
-	// page 6
-	{
-		page := q.AddPage()
-		page.Label = trl.S{"de": "Rezession", "en": "Recession"}
-		page.Short = trl.S{"de": "Rezession", "en": "Recession"}
-		page.Style = css.DesktopWidthMax(page.Style, "36rem")
-
-		// gr0
+	if recessionAtTheEnd {
+		// page 6
 		{
-			gr := page.AddGroup()
-			gr.Cols = 5
+			page := q.AddPage()
+			page.Label = trl.S{"de": "Rezession", "en": "Recession"}
+			page.Short = trl.S{"de": "Rezession", "en": "Recession"}
+			page.Style = css.DesktopWidthMax(page.Style, "36rem")
 
+			// gr0
 			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.ColSpan = 5
-				inp.ColSpanLabel = 5
-				inp.Label = trl.S{
-					"de": fmt.Sprintf("<b>9.</b> Die Wahrscheinlichkeit eines negativen BIP-Wachstums in Deutschland (Wachstum des realen & saisonbereinigten BIP zum Vorquartal) liegt bei"), //nextQ()
-					"en": fmt.Sprintf("<b>9.</b> The probability of negative GDP growth in Germany (growth of real & seasonal adjusted GDP against previous quarter) is"),                     // nextQ()
+				gr := page.AddGroup()
+				gr.Cols = 5
+
+				{
+					inp := gr.AddInput()
+					inp.Type = "textblock"
+					inp.ColSpan = 5
+					inp.ColSpanLabel = 5
+					inp.Label = trl.S{
+						"de": fmt.Sprintf("<b>9.</b> Die Wahrscheinlichkeit eines negativen BIP-Wachstums in Deutschland (Wachstum des realen & saisonbereinigten BIP zum Vorquartal) liegt bei"), //nextQ()
+						"en": fmt.Sprintf("<b>9.</b> The probability of negative GDP growth in Germany (growth of real & seasonal adjusted GDP against previous quarter) is"),                     // nextQ()
+					}
+				}
+				{
+					inp := gr.AddInput()
+					inp.Label = trl.S{
+						"de": fmt.Sprintf("Aktuelles Quartal"),
+						"en": fmt.Sprintf("Current quarter"),
+					}
+					inp.Type = "number"
+					inp.Name = "y_recession_q0"
+					inp.Min = 0
+					inp.Max = 100
+					inp.MaxChars = 4
+
+					inp.ColSpan = 5
+					inp.ColSpanLabel = 4
+					inp.ColSpanControl = 1
+					inp.Suffix = trl.S{"de": "%", "en": "pct"}
+				}
+				{
+					inp := gr.AddInput()
+					inp.Label = trl.S{
+						"de": fmt.Sprintf("Folgendes Quartal"),
+						"en": fmt.Sprintf("Next quarter"),
+					}
+					inp.Type = "number"
+					inp.Name = "y_recession_q1"
+					inp.Min = 0
+					inp.Max = 100
+					inp.MaxChars = 4
+
+					inp.ColSpan = 5
+					inp.ColSpanLabel = 4
+					inp.ColSpanControl = 1
+					inp.Suffix = trl.S{"de": "%", "en": "pct"}
 				}
 			}
-			{
-				inp := gr.AddInput()
-				inp.Label = trl.S{
-					"de": fmt.Sprintf("Aktuelles Quartal"),
-					"en": fmt.Sprintf("Current quarter"),
-				}
-				inp.Type = "number"
-				inp.Name = "y_recession_q0"
-				inp.Min = 0
-				inp.Max = 100
-				inp.MaxChars = 4
 
-				inp.ColSpan = 5
-				inp.ColSpanLabel = 4
-				inp.ColSpanControl = 1
-				inp.Suffix = trl.S{"de": "%", "en": "pct"}
-			}
-			{
-				inp := gr.AddInput()
-				inp.Label = trl.S{
-					"de": fmt.Sprintf("Folgendes Quartal"),
-					"en": fmt.Sprintf("Next quarter"),
-				}
-				inp.Type = "number"
-				inp.Name = "y_recession_q1"
-				inp.Min = 0
-				inp.Max = 100
-				inp.MaxChars = 4
-
-				inp.ColSpan = 5
-				inp.ColSpanLabel = 4
-				inp.ColSpanControl = 1
-				inp.Suffix = trl.S{"de": "%", "en": "pct"}
-			}
 		}
-
 	}
 
 	err := addSeasonal1(&q)
@@ -900,7 +967,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				rad := gr.AddInput()
 				rad.Type = "radio"
 				rad.Name = "finished"
-				rad.ValueRadio = "no"
+				rad.ValueRadio = qst.RemainOpen
 				rad.ColSpan = 1
 				rad.ColSpanLabel = 6
 				rad.ColSpanControl = 1
@@ -913,7 +980,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				rad := gr.AddInput()
 				rad.Type = "radio"
 				rad.Name = "finished"
-				rad.ValueRadio = "yes"
+				rad.ValueRadio = qst.Finished
 				rad.ColSpan = 1
 				rad.ColSpanLabel = 6
 				rad.ColSpanControl = 1

@@ -30,7 +30,11 @@ const (
 	// ValEmpty is returned, if the checkbox was unchecked
 	valEmpty = "0"
 	// ValSet is returned, if the checkbox was checked
-	ValSet    = "1"
+	ValSet = "1"
+
+	RemainOpen = "remain-open"
+	Finished   = "qst-finished"
+
 	vspacer0  = "<div class='vspacer-00'> &nbsp; </div>\n"
 	vspacer8  = "<div class='vspacer-08'> &nbsp; </div>\n"
 	vspacer16 = "<div class='vspacer-16'> &nbsp; </div>\n"

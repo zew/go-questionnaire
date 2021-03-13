@@ -21,12 +21,12 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "067e0eebc6f95499f86aa2589a5cf4f517f83fd6d5f7a9af0df0c2147e75fd7a",
+ 	"md_5": "acc628785fb6467fbb0a1131b40f5270a5eb2d31de6d8676cd747c890f8fc2b7",
  	"lang_codes": [
  		"de",
  		"en"
  	],
- 	"max_groups": 4,
+ 	"max_groups": 5,
  	"pages": [
  		{
  			"label": {
@@ -1281,6 +1281,79 @@
  								"row_gap": "0.02rem"
  							},
  							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 5,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003e2c.\u003c/b\u003e Die Wahrscheinlichkeit eines neg\u0026shy;ativen BIP-Wachstums in Deutsch\u0026shy;land (Wachstum des realen \u0026 saisonbereinigten BIP zum Vorquartal) liegt bei",
+ 								"en": "\u003cb\u003e2c.\u003c/b\u003e The probability of neg\u0026shy;ative GDP growth in Germany (growth of real \u0026 seasonal adjusted GDP against previous quarter) is"
+ 							},
+ 							"col_span": 5,
+ 							"col_span_label": 5
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 4,
+ 					"inputs": [
+ 						{
+ 							"name": "y_recession_q0",
+ 							"type": "number",
+ 							"max_chars": 4,
+ 							"max": 100,
+ 							"label": {
+ 								"de": "Aktuelles Quartal",
+ 								"en": "Current quarter"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "pct"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 3,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "y_recession_q1",
+ 							"type": "number",
+ 							"max_chars": 4,
+ 							"max": 100,
+ 							"label": {
+ 								"de": "Folgendes Quartal",
+ 								"en": "Next quarter"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "pct"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 3,
+ 							"col_span_control": 1
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width_max": "16rem"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width_max": "calc(100% - 1.2rem)"
+ 							},
  							"grid_item_style": {},
  							"text_style": {}
  						}
@@ -4349,91 +4422,6 @@
  		},
  		{
  			"label": {
- 				"de": "Rezession",
- 				"en": "Recession"
- 			},
- 			"description": {
- 				"de": "",
- 				"en": ""
- 			},
- 			"short": {
- 				"de": "Rezession",
- 				"en": "Recession"
- 			},
- 			"navi_num": 6,
- 			"style": {
- 				"desktop": {
- 					"grid_container_style": {},
- 					"box_style": {
- 						"width_max": "36rem"
- 					},
- 					"grid_item_style": {},
- 					"text_style": {}
- 				},
- 				"mobile": {
- 					"grid_container_style": {},
- 					"box_style": {
- 						"width_max": "calc(100% - 1.2rem)"
- 					},
- 					"grid_item_style": {},
- 					"text_style": {}
- 				}
- 			},
- 			"finished": "0001-01-01T00:00:00Z",
- 			"groups": [
- 				{
- 					"bottom_vspacers": 3,
- 					"columns": 5,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "\u003cb\u003e9.\u003c/b\u003e Die Wahrscheinlichkeit eines neg\u0026shy;ativen BIP-Wachstums in Deutsch\u0026shy;land (Wachstum des realen \u0026 saisonbereinigten BIP zum Vorquartal) liegt bei",
- 								"en": "\u003cb\u003e9.\u003c/b\u003e The probability of neg\u0026shy;ative GDP growth in Germany (growth of real \u0026 seasonal adjusted GDP against previous quarter) is"
- 							},
- 							"col_span": 5,
- 							"col_span_label": 5
- 						},
- 						{
- 							"name": "y_recession_q0",
- 							"type": "number",
- 							"max_chars": 4,
- 							"max": 100,
- 							"label": {
- 								"de": "Aktuelles Quartal",
- 								"en": "Current quarter"
- 							},
- 							"suffix": {
- 								"de": "%",
- 								"en": "pct"
- 							},
- 							"col_span": 5,
- 							"col_span_label": 4,
- 							"col_span_control": 1
- 						},
- 						{
- 							"name": "y_recession_q1",
- 							"type": "number",
- 							"max_chars": 4,
- 							"max": 100,
- 							"label": {
- 								"de": "Folgendes Quartal",
- 								"en": "Next quarter"
- 							},
- 							"suffix": {
- 								"de": "%",
- 								"en": "pct"
- 							},
- 							"col_span": 5,
- 							"col_span_label": 4,
- 							"col_span_control": 1
- 						}
- 					]
- 				}
- 			]
- 		},
- 		{
- 			"label": {
  				"de": "Sonderfrage: Kurz- und mittelfristiges Wirtschaftswachstum",
  				"en": "Special: Short and Medium Term Economic Growth"
  			},
@@ -4445,7 +4433,7 @@
  				"de": "Wachstum",
  				"en": "Growth"
  			},
- 			"navi_num": 7,
+ 			"navi_num": 6,
  			"style": {
  				"desktop": {
  					"grid_container_style": {},
@@ -5820,7 +5808,7 @@
  				"de": "Abschluss",
  				"en": "Finish"
  			},
- 			"navi_num": 8,
+ 			"navi_num": 7,
  			"style": {
  				"desktop": {
  					"grid_container_style": {},
@@ -5891,7 +5879,7 @@
  							"col_span": 1,
  							"col_span_label": 6,
  							"col_span_control": 1,
- 							"value_radio": "no"
+ 							"value_radio": "remain-open"
  						},
  						{
  							"name": "finished",
@@ -5903,7 +5891,7 @@
  							"col_span": 1,
  							"col_span_label": 6,
  							"col_span_control": 1,
- 							"value_radio": "yes"
+ 							"value_radio": "qst-finished"
  						}
  					]
  				},
@@ -5934,7 +5922,7 @@
  							"accesskey": "n",
  							"col_span": 1,
  							"col_span_control": 1,
- 							"response": "9",
+ 							"response": "8",
  							"style_control": {
  								"desktop": {
  									"grid_container_style": {},

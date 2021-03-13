@@ -27,6 +27,7 @@ app-bucket/responses/**
 app-bucket/transferrer/**
 app-bucket/dl/**
 app-bucket/**.attrs
+# 2021-03 - we must incluse the questionnaire templates for the travis systemtest
 !app-bucket/responses/*.json
 coverage.html
 tmp/*

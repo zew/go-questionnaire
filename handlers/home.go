@@ -342,7 +342,7 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 	q.UserAgent = r.Header.Get("User-Agent")
 
 	if ok := sess.EffectiveIsSet("finished"); ok {
-		if sess.EffectiveStr("finished") == qst.ValSet {
+		if sess.EffectiveStr("finished") == qst.Finished {
 			q.ClosingTime = time.Now().Truncate(time.Second)
 		}
 	}

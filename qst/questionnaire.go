@@ -447,7 +447,7 @@ func (q *QuestionnaireT) FinishedEntirely() (closed bool) {
 		for _, gr := range p.Groups {
 			for _, inp := range gr.Inputs {
 				if inp.Name == "finished" {
-					if inp.Response == ValSet {
+					if inp.Response == Finished {
 						closed = true
 						return
 					}

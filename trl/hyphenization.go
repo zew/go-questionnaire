@@ -16,59 +16,68 @@ import (
 var hyph = []string{
 
 	// german
+
+	"ab|wer|ten",
 	"An|gabe",
 	"Arbeits|markt|öko|no|mie",
 	"as|so|zi|ie|rt",
+	"auf|wer|ten",
 	"Aus|fall|risiken",
 	"aus|ge|schlos|sen",
-	"ab|wer|ten",  // ab|wer|ten
-	"auf|wer|ten", // auf|wer|ten
-	"Bil|dung",    // 	"Bil|dung",
-	"blei|ben",    // blei|ben
-	"Da|ten",      // Da|ten
+	"Bil|dung",
+	"blei|ben",
 	"da|für",
 	"da|ge|gen",
+	"Da|ten",
 	"Deutsch|land",
 	"Do|zen|tIn",
 	"Dok|to|ran|din",
-	"Ein|fluss", // Ein|fluss
+	"Ein|fluss",
 	"Ent|schei|dungs|pro|zesse",
 	"Ent|wick|lungs|öko|no|mie",
 	"er|stre|bens|wert",
 	"Erwartungs|wert",
 	"Euro|raum",
-	"Ex|port|markt",  // "Ex|port|markt
-	"Ex|port|märkte", // "Ex|port|märkte
+	"Ex|port|markt",
+	"Ex|port|märkte",
 	"Fi|nanz|wis|sen|schaft",
 	"Finanz|wirt|schaft",
-	"ge|samt",        // ge|samt
-	"Geld|po|li|tik", //
+	"ge|samt",
+	"Geld|po|li|tik",
 	"Groß|unter|nehmen",
-	"Handels|konflikte", //
+	"Grup|pe",
+	"Grup|pen",
+	"Grup|pen|mit|glieder",
+	"Handels|konflikte",
 	"Immob|ilien|kredite",
 	"In|dus|trie|öko|no|mie",
 	"Junior|pro|fes|sorIn",
 	"kom|plett",
-	"Kon|junk|tur|da|ten ", // Kon|junk|tur
+	"Kompromiss|lösung",
+	"Kon|junk|tur|da|ten ",
 	"Kon|sum|enten|kredite",
 	"Kredit|angebot",
 	"Kredit|nach|frage",
 	"lang|fristig",
 	"Ma|kro|öko|no|mie",
+	"Mehrheits|lösung",
 	"Mi|kro|öko|no|mie",
-	"mittel|fristig", // mit|tel|fris|tig - reduced
-	"ne|ga|tiv",      // ne|ga|tiv
-	"neu|tral",       // neu|tral
-	"nied|rig",       // nied|rig
-	"nor|mal",        // nor|mal
+	"Mit|glied",
+	"Mit|glieder",
+	"mitt|le|re",
+	"mittel|fristig",
+	"ne|ga|tiv",
+	"neu|tral",
+	"nied|rig",
+	"nor|mal",
 	"Öko|no|mie",
-	"Po|li|tik", // Po|li|tik
-	"po|si|tiv", // po|si|tiv
+	"Po|li|tik",
+	"po|si|tiv",
 	"Prä|ferenz|konstellation",
 	"Pro|fes|sorIn",
 	"Re|finanz|ierung",
-	"Re|gie|rung",           // 	"Re|gie|rung",
-	"Re|gie|rungs|bil|dung", // Re|gie|rungs|bil|dung
+	"Re|gie|rung",
+	"Re|gie|rungs|bil|dung",
 	"Regierungs|bildung",
 	"Regu|lierung",
 	"ri|si|ko|be|reit",
@@ -77,37 +86,28 @@ var hyph = []string{
 	"Roh|stoff|preise",
 	"schlech|teste",
 	"si|cher",
-	"sin|ken",  // sin|ken
-	"stei|gen", // stei|gen
+	"sin|ken",
+	"stei|gen",
 	"Stif|tung",
-	"Te|le|kom|mu|ni|ka|ti|on", // Te|le|kom|mu|ni|ka|ti|on
+	"Te|le|kom|mu|ni|ka|ti|on",
 	"über|haupt",
 	"Um|welt|öko|no|mie",
 	"un|ent|schieden",
-	"Un|ter|neh|men", // Un|ter|neh|men
+	"Un|ter|neh|men",
 	"un|wich|tig",
-	"ver|än|dern",     // "ver|än|dern",
-	"Ver|bes|se|rung", // Ver|bes|se|rung
-	"ver|bes|sern",    // "ver|bes|sern",
+	"ver|än|dern",
+	"Ver|bes|se|rung",
+	"ver|bes|sern",
 	"ver|füg|bar",
-	"Ver|schlech|te|rung", // Ver|schlech|te|rung
-	"ver|schlech|tern",    // "ver|schlech|tern",
-	"Wechsel|kurse",       //
+	"Ver|schlech|te|rung",
+	"ver|schlech|tern",
+	"Wechsel|kurse",
 	"Welt|wirt|schaft",
 	"Wett|be|werbs|sit|uation",
 	"wich|tig",
-	"wirt|schaft",      // wirt|schaft
-	"wirt|schaft|lich", // wirt|schaft|lich
+	"wirt|schaft",
+	"wirt|schaft|lich",
 	"Wirt|schafts|politik",
-
-	"Kompromiss|lösung",
-	"Mehrheits|lösung",
-	"mitt|le|re", // "mittlere"
-	"Grup|pe",
-	"Grup|pen",
-	"Mit|glied",
-	"Mit|glieder",
-	"Grup|pen|mit|glieder", // Gruppenmitglieder
 
 	// english
 	"ac|counts",
@@ -183,6 +183,7 @@ var hyph = []string{
 // hyphm is filled during app initialization from hyph above.
 var hyphm = map[string]string{}
 
+// TODO: Differentiation by language?
 func init() {
 	cntr := -1
 	for _, v := range hyph {

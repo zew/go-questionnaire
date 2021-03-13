@@ -4,9 +4,9 @@
 package handlers
 
 import (
-	"bytes"
 	"log"
 	"net/http"
+	"strings"
 
 	"github.com/zew/go-questionnaire/qst"
 
@@ -23,7 +23,7 @@ func errorH(w http.ResponseWriter, r *http.Request, msg string) {
 
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
 
-	w2 := &bytes.Buffer{}
+	w2 := &strings.Builder{}
 	tpl.ExecContent(w2, r, msg, "error.html")
 
 	mp := map[string]interface{}{
@@ -31,6 +31,7 @@ func errorH(w http.ResponseWriter, r *http.Request, msg string) {
 		"Q":         &qst.QuestionnaireT{LangCode: "en"}, // just the lang code for the outer layout template
 		"Content":   w2.String(),
 	}
-	tpl.Exec(w, r, mp, "layout.html")
+	// tpl.Exec(w, r, mp, "layout.html")
+	tpl.RenderStack(r, w, []string{"layout.html", "documentation.html"}, mp)
 
 }

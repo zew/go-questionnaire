@@ -20,6 +20,15 @@ var dynFuncs = map[string]dynFuncT{
 	"PatLogos":                       PatLogos,
 }
 
+var skipInputNames = map[string]map[string]bool{
+	"fmt": {
+		"selbst":   true,
+		"contact":  true,
+		"remark":   true,
+		"finished": true,
+	},
+}
+
 // Statistics returns the percentage of
 // answers responded to.
 // It is helper to RepsonseStatistics().
@@ -31,6 +40,9 @@ func (q *QuestionnaireT) Statistics() (int, int, float64) {
 		for _, gr := range p.Groups {
 			for _, i := range gr.Inputs {
 				if i.IsLayout() {
+					continue
+				}
+				if skipInputNames[q.Survey.Type][i.Name] {
 					continue
 				}
 				if radioDoubles[i.Name] > 0 {

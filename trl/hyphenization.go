@@ -16,163 +16,167 @@ import (
 var hyph = []string{
 
 	// german
-	"An&shy;gabe",
-	"Arbeits&shy;markt&shy;öko&shy;no&shy;mie",
-	"as&shy;so&shy;zi&shy;ie&shy;rt",
-	"Aus&shy;fall&shy;risiken",
-	"aus&shy;ge&shy;schlos&shy;sen",
-	"ab&shy;wer&shy;ten",  // ab|wer|ten
-	"auf&shy;wer&shy;ten", // auf|wer|ten
-	"Bil&shy;dung",        // 	"Bil|dung",
-	"blei&shy;ben",        // blei|ben
-	"Da&shy;ten",          // Da|ten
-	"da&shyfür",
-	"da&shyge&shygen",
-	"Deutsch&shy;land",
-	"Do&shy;zen&shy;tIn",
-	"Dok&shy;to&shy;ran&shy;din",
-	"Ein&shy;fluss", // Ein|fluss
-	"Ent&shy;schei&shy;dungs&shy;pro&shy;zesse",
-	"Ent&shy;wick&shy;lungs&shy;öko&shy;no&shy;mie",
-	"er&shy;stre&shy;bens&shy;wert",
-	"Erwartungs&shy;wert",
-	"Euro&shy;raum",
-	"Ex&shy;port&shy;markt",  // "Ex|port|markt
-	"Ex&shy;port&shy;märkte", // "Ex|port|märkte
-	"Fi&shy;nanz&shy;wis&shy;sen&shy;schaft",
-	"Finanz&shy;wirt&shy;schaft",
-	"ge&shy;samt",                // ge|samt
-	"Geld&shy;po&shy;li&shy;tik", //
-	"Groß&shy;unter&shy;nehmen",
-	"Handels&shy;konflikte", //
-	"Immob&shy;ilien&shy;kredite",
-	"In&shy;dus&shy;trie&shy;öko&shy;no&shy;mie",
-	"Junior&shy;pro&shy;fes&shy;sorIn",
-	"kom&shy;plett",
-	"Kon&shy;junk&shy;tur&shy;da&shy;ten ", // Kon|junk|tur
-	"Kon&shy;sum&shy;enten&shy;kredite",
-	"Kredit&shy;angebot",
-	"Kredit&shy;nach&shy;frage",
-	"lang&shy;fristig",
-	"Ma&shy;kro&shy;öko&shy;no&shy;mie",
-	"Mi&shy;kro&shy;öko&shy;no&shy;mie",
-	"mittel&shy;fristig", // mit|tel|fris|tig - reduced
-	"ne&shy;ga&shy;tiv",  // ne|ga|tiv
-	"neu&shy;tral",       // neu|tral
-	"nied&shy;rig",       // nied|rig
-	"nor&shy;mal",        // nor|mal
-	"Öko&shy;no&shy;mie",
-	"Po&shy;li&shy;tik", // Po|li|tik
-	"po&shy;si&shy;tiv", // po|si|tiv
-	"Prä&shy;ferenz&shy;konstellation",
-	"Pro&shy;fes&shy;sorIn",
-	"Re&shy;finanz&shy;ierung",
-	"Re&shy;gie&shy;rung",                   // 	"Re|gie|rung",
-	"Re&shy;gie&shy;rungs&shy;bil&shy;dung", // Re|gie|rungs|bil|dung
-	"Regierungs&shy;bildung",
-	"Regu&shy;lierung",
-	"ri&shy;si&shy;ko&shy;be&shy;reit",
-	"Ri&shy;si&shy;ko&shy;ver&shy;mei&shy;den",
-	"Risiko&shy;trag&shy;fähig&shy;keit",
-	"Roh&shy;stoff&shy;preise",
-	"schlech&shy;teste",
-	"si&shy;cher",
-	"sin&shy;ken",  // sin|ken
-	"stei&shy;gen", // stei|gen
-	"Stif&shy;tung",
-	"Te&shy;le&shy;kom&shy;mu&shy;ni&shy;ka&shy;ti&shy;on", // Te|le|kom|mu|ni|ka|ti|on
-	"über&shy;haupt",
-	"Um&shy;welt&shy;öko&shy;no&shy;mie",
-	"un&shy;ent&shy;schieden",
-	"Un&shy;ter&shy;neh&shy;men", // Un|ter|neh|men
-	"un&shy;wich&shy;tig",
-	"ver&shy;än&shy;dern",         // "ver|än|dern",
-	"Ver&shy;bes&shy;se&shy;rung", // Ver|bes|se|rung
-	"ver&shy;bes&shy;sern",        // "ver|bes|sern",
-	"ver&shy;füg&shy;bar",
-	"Ver&shy;schlech&shy;te&shy;rung", // Ver|schlech|te|rung
-	"ver&shy;schlech&shy;tern",        // "ver|schlech|tern",
-	"Wechsel&shy;kurse",               //
-	"Welt&shy;wirt&shy;schaft",
-	"Wett&shy;be&shy;werbs&shy;sit&shy;uation",
-	"wich&shy;tig",
-	"wirt&shy;schaft",          // wirt|schaft
-	"wirt&shy;schaft&shy;lich", // wirt|schaft|lich
-	"Wirt&shy;schafts&shy;politik",
+	"An|gabe",
+	"Arbeits|markt|öko|no|mie",
+	"as|so|zi|ie|rt",
+	"Aus|fall|risiken",
+	"aus|ge|schlos|sen",
+	"ab|wer|ten",  // ab|wer|ten
+	"auf|wer|ten", // auf|wer|ten
+	"Bil|dung",    // 	"Bil|dung",
+	"blei|ben",    // blei|ben
+	"Da|ten",      // Da|ten
+	"da|für",
+	"da|ge|gen",
+	"Deutsch|land",
+	"Do|zen|tIn",
+	"Dok|to|ran|din",
+	"Ein|fluss", // Ein|fluss
+	"Ent|schei|dungs|pro|zesse",
+	"Ent|wick|lungs|öko|no|mie",
+	"er|stre|bens|wert",
+	"Erwartungs|wert",
+	"Euro|raum",
+	"Ex|port|markt",  // "Ex|port|markt
+	"Ex|port|märkte", // "Ex|port|märkte
+	"Fi|nanz|wis|sen|schaft",
+	"Finanz|wirt|schaft",
+	"ge|samt",        // ge|samt
+	"Geld|po|li|tik", //
+	"Groß|unter|nehmen",
+	"Handels|konflikte", //
+	"Immob|ilien|kredite",
+	"In|dus|trie|öko|no|mie",
+	"Junior|pro|fes|sorIn",
+	"kom|plett",
+	"Kon|junk|tur|da|ten ", // Kon|junk|tur
+	"Kon|sum|enten|kredite",
+	"Kredit|angebot",
+	"Kredit|nach|frage",
+	"lang|fristig",
+	"Ma|kro|öko|no|mie",
+	"Mi|kro|öko|no|mie",
+	"mittel|fristig", // mit|tel|fris|tig - reduced
+	"ne|ga|tiv",      // ne|ga|tiv
+	"neu|tral",       // neu|tral
+	"nied|rig",       // nied|rig
+	"nor|mal",        // nor|mal
+	"Öko|no|mie",
+	"Po|li|tik", // Po|li|tik
+	"po|si|tiv", // po|si|tiv
+	"Prä|ferenz|konstellation",
+	"Pro|fes|sorIn",
+	"Re|finanz|ierung",
+	"Re|gie|rung",           // 	"Re|gie|rung",
+	"Re|gie|rungs|bil|dung", // Re|gie|rungs|bil|dung
+	"Regierungs|bildung",
+	"Regu|lierung",
+	"ri|si|ko|be|reit",
+	"Ri|si|ko|ver|mei|den",
+	"Risiko|trag|fähig|keit",
+	"Roh|stoff|preise",
+	"schlech|teste",
+	"si|cher",
+	"sin|ken",  // sin|ken
+	"stei|gen", // stei|gen
+	"Stif|tung",
+	"Te|le|kom|mu|ni|ka|ti|on", // Te|le|kom|mu|ni|ka|ti|on
+	"über|haupt",
+	"Um|welt|öko|no|mie",
+	"un|ent|schieden",
+	"Un|ter|neh|men", // Un|ter|neh|men
+	"un|wich|tig",
+	"ver|än|dern",     // "ver|än|dern",
+	"Ver|bes|se|rung", // Ver|bes|se|rung
+	"ver|bes|sern",    // "ver|bes|sern",
+	"ver|füg|bar",
+	"Ver|schlech|te|rung", // Ver|schlech|te|rung
+	"ver|schlech|tern",    // "ver|schlech|tern",
+	"Wechsel|kurse",       //
+	"Welt|wirt|schaft",
+	"Wett|be|werbs|sit|uation",
+	"wich|tig",
+	"wirt|schaft",      // wirt|schaft
+	"wirt|schaft|lich", // wirt|schaft|lich
+	"Wirt|schafts|politik",
 
-	"Kompromiss&shy;lösung",
-	"Mehrheits&shy;lösung",
+	"Kompromiss|lösung",
+	"Mehrheits|lösung",
+	"mitt|le|re", // "mittlere"
+	"Grup|pe",
+	"Grup|pen",
+	"Mit|glied",
+	"Mit|glieder",
+	"Grup|pen|mit|glieder", // Gruppenmitglieder
 
 	// english
-	"ac&shy;counts",
-	"ad&shy;min&shy;is&shy;tra&shy;tion",
-	"an&shy;swer",
-	"ap&shy;pli&shy;ca&shy;ble",
-	"ap&shy;​pre&shy;​ci&shy;​ate", // ap·​pre·​ci·​ate
-	"as&shy;sis&shy;tant",
-	"as&shy;so&shy;ci&shy;ate",
-	"av&shy;er&shy;age",
-	"busi&shy;ness",
-	"can&shy;di&shy;date",
-	"com&shy;plete&shy;ly",
-	"Comp&shy;etitive",
-	"Cons&shy;umer",
-	"de&shy;crease",
-	"de&shy;​pre&shy;​ci&shy;​ate", // de·​pre·​ci·​ate
-	"de&shy;te&shy;ri&shy;o&shy;rate",
-	"de&shy;vel&shy;op&shy;ment",
-	"Dis&shy;agree",
-	"eco&shy;nom&shy;ic",
-	"eco&shy;nom&shy;ics",
-	"econ&shy;o&shy;my",
-	"en&shy;vi&shy;ron&shy;ment",
-	"en&shy;vi&shy;ron&shy;mental",
-	"enter&shy;prises",
-	"environ&shy;ment",
-	"im&shy;prove",
-	"in&shy;crease",
-	"in&shy;dif&shy;fer&shy;ent",
-	"in&shy;dus&shy;tri&shy;al",
-	"in&shy;flu&shy;ence",
-	"in&shy;sti&shy;tute",
-	"in&shy;sti&shy;tutes",
-	"in&shy;ter&shy;na&shy;tion&shy;al",
-	"in&shy;vest&shy;ment",
-	"mac&shy;ro&shy;eco&shy;nom&shy;ics",
-	"mi&shy;cro&shy;eco&shy;nom&shy;ics",
-	"na&shy;tion&shy;al&shy;i&shy;ty",
-	"neg&shy;ative",
-	"nei&shy;ther",
-	"op&shy;ti&shy;mis&shy;tic",
-	"pes&shy;si&shy;mis&shy;tic",
-	"pos&shy;itive",
-	"pro&shy;fes&shy;sor",
-	"Re&shy;financing",
-	"re&shy;main",
-	"re&shy;search",
-	"Reg&shy;ulation",
-	"sav&shy;ings",
-	"Small+&shy;medium",
-	"strong&shy;ly",
-	"strong&shy;ly",
-	"un&shy;changed",
-	"Un&shy;decided",
-	"will&shy;ing",
+	"ac|counts",
+	"ad|min|is|tra|tion",
+	"an|swer",
+	"ap|pli|ca|ble",
+	"ap|​pre|​ci|​ate", // ap·​pre·​ci·​ate
+	"as|sis|tant",
+	"as|so|ci|ate",
+	"av|er|age",
+	"busi|ness",
+	"can|di|date",
+	"com|plete|ly",
+	"Comp|etitive",
+	"Cons|umer",
+	"de|crease",
+	"de|​pre|​ci|​ate", // de·​pre·​ci·​ate
+	"de|te|ri|o|rate",
+	"de|vel|op|ment",
+	"Dis|agree",
+	"eco|nom|ic",
+	"eco|nom|ics",
+	"econ|o|my",
+	"en|vi|ron|ment",
+	"en|vi|ron|mental",
+	"enter|prises",
+	"environ|ment",
+	"im|prove",
+	"in|crease",
+	"in|dif|fer|ent",
+	"in|dus|tri|al",
+	"in|flu|ence",
+	"in|sti|tute",
+	"in|sti|tutes",
+	"in|ter|na|tion|al",
+	"in|vest|ment",
+	"mac|ro|eco|nom|ics",
+	"mi|cro|eco|nom|ics",
+	"na|tion|al|i|ty",
+	"neg|ative",
+	"nei|ther",
+	"op|ti|mis|tic",
+	"pes|si|mis|tic",
+	"pos|itive",
+	"pro|fes|sor",
+	"Re|financing",
+	"re|main",
+	"re|search",
+	"Reg|ulation",
+	"sav|ings",
+	"Small+|medium",
+	"strong|ly",
+	"strong|ly",
+	"un|changed",
+	"Un|decided",
+	"will|ing",
 
 	// spanish
-	"in­&shy;deciso",
-	"acuer&shy;do",
-	"desa&shy;cuer&shy;do",
+	"in|deciso",
+	"acuer|do",
+	"desa|cuer|do",
 
 	// french
-	"acc&shy;ord",
-	"In&shy;diff&shy;érent",
+	"acc|ord",
+	"In|diff|érent",
 
 	// italian
-	"favo&shy;revole",
-	"Favo&shy;revole",
-	"in&shy;deciso",
-	"In&shy;deciso",
+	"favo|revole",
+	"in|deciso",
 }
 
 // hyphm is a map with words and their hyphenized form as value.
@@ -180,22 +184,40 @@ var hyph = []string{
 var hyphm = map[string]string{}
 
 func init() {
+	cntr := -1
 	for _, v := range hyph {
+		cntr++
 		if len(v) < 1 {
 			continue
 		}
-		// lower case word
-		v1 := strings.ToLower(v)
-		v1a := strings.Replace(v1, "&shy;", "", -1)
-		hyphm[v1a] = v1
-		// capitalize first UTF8 rune
-		v2 := strings.ToUpper(string([]rune(v)[:1]))
-		v2 += string([]rune(v)[1:]) // remainder
-		v2a := strings.Replace(v2, "&shy;", "", -1)
-		hyphm[v2a] = v2
 
-		// logx.Printf("%-20v %v", v1a, v1)
-		// logx.Printf("%-20v %v", v2a, v2)
+		if strings.Contains(v, "­") {
+			log.Fatalf("hyph contains strange char in %v", v)
+		}
+
+		v = strings.Replace(v, "­", "", -1) // strange invisible char - pasted from Duden
+
+		key := strings.Replace(v, "|", "", -1)
+		val := strings.Replace(v, "|", "&shy;", -1)
+
+		keyLow := strings.ToLower(key)
+		valLow := strings.ToLower(val)
+
+		keyHig := strings.ToUpper(string([]rune(key)[:1])) // capitalize first UTF8 rune
+		keyHig += string([]rune(key)[1:])                  // concat remainder
+
+		valHig := strings.ToUpper(string([]rune(val)[:1])) //    ~
+		valHig += string([]rune(val)[1:])                  //    ~
+
+		hyphm[keyLow] = valLow
+		hyphm[keyHig] = valHig
+
+		/*
+			if cntr < 90 && cntr > 80 {
+				log.Printf("hyphm:  %-24v %v", keyLow, valLow)
+				log.Printf("hyphm:  %-24v %v", keyHig, valHig)
+			}
+		*/
 	}
 }
 
@@ -233,20 +255,25 @@ func init() {
 	}
 }
 
-// HyphenizeText replaces "mittelfristig" with "mittel&shy;fristig"
+// HyphenizeText replaces "mittelfristig" with "mittel|fristig"
 // Hyphenization is done _once_ during creation of the questionare JSON template.
 //
 //
 // We replace longer keys first,
 // to prevent erratic results for example from
 //
-// desa&shy;cuer&shy;do
-//         acuer&shy;do
+// desa|cuer|do
+//         acuer|do
 //
 func HyphenizeText(s string) string {
+	s1 := s
+
 	for _, k := range byLen {
 		v := hyphm[k]
 		s = strings.Replace(s, k, v, -1)
+	}
+	if s1 == "Mittlere Stiftung" {
+		log.Printf("hyphenate\n%v\n%v", s1, s)
 	}
 	return s
 }

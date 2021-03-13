@@ -19,7 +19,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "255c57c74e1367031bd818b63dc241ccdbd53f5af5e2a1d8d34d6a7cd3916d64",
+ 	"md_5": "e67456f4e469a38a6d1312cf247b4a934c6010a7efd2de035819e69d8e07d70f",
  	"lang_codes": [
  		"de"
  	],
@@ -192,7 +192,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\u003cp\u003e\n\t\t\t\tDie Stif\u0026shy;tungen wurden anonymisiert und in eine zufällige Reihenfolge gebracht, so dass Sie nicht wissen, \n\t\t\t\tum welche Stif\u0026shy;tung es sich bei den Stif\u0026shy;tungen A, B und C handelt. \n\t\t\t\tSie entscheiden also nicht darüber, welche Stif\u0026shy;tung die 30\u0026nbsp;€ erhält. \n\t\t\t\tStattdessen entscheiden Sie, wie die Präferenzen der Gruppenmitglieder in \u003ci\u003eeine\u003c/i\u003e Entscheidung zusammengefasst werden \n\t\t\t\tund ob Sie beispielsweise eher eine Kompromiss\u0026shy;lösung oder eher eine Mehrheits\u0026shy;lösung für Ihre Gruppe bevorzugen.\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\u003cp\u003e\n\t\t\t\tDie Stif\u0026shy;tungen wurden anonymisiert und in eine zufällige Reihenfolge gebracht, so dass Sie nicht wissen, \n\t\t\t\tum welche Stif\u0026shy;tung es sich bei den Stif\u0026shy;tungen A, B und C handelt. \n\t\t\t\tSie entscheiden also nicht darüber, welche Stif\u0026shy;tung die 30\u0026nbsp;€ erhält. \n\t\t\t\tStattdessen entscheiden Sie, wie die Präferenzen der Grup\u0026shy;pen\u0026shy;mit\u0026shy;glieder in \u003ci\u003eeine\u003c/i\u003e Entscheidung zusammengefasst werden \n\t\t\t\tund ob Sie beispielsweise eher eine Kompromiss\u0026shy;lösung oder eher eine Mehrheits\u0026shy;lösung für Ihre Grup\u0026shy;pe bevorzugen.\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span_label": 1
  						}
@@ -205,7 +205,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\u003cspan style=\"display: inline-block; font-size:87%; line-height: 120%;\"\u003e\n\n\t\t\t\t\u003csup\u003e1)\u003c/sup\u003e\n\t\t\t\tNur in einer der sechs Entscheidungen stammen die Präferenzen von den Personen, die wir befragt haben, und nur diese Entscheidung kann umgesetzt werden. In den anderen Entscheidungen wurden die Präferenzen von uns zusammengestellt. Da Sie nicht wissen, in welcher Entscheidung die Präferenzen von den Befragten stammen, sollten Sie in allen sechs Entscheidungen so entscheiden, als seien die jeweiligen Präferenzen von der echten Gruppe.\n\t\t\t\t\u003c/span\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\u003cspan style=\"display: inline-block; font-size:87%; line-height: 120%;\"\u003e\n\n\t\t\t\t\u003csup\u003e1)\u003c/sup\u003e\n\t\t\t\tNur in einer der sechs Entscheidungen stammen die Präferenzen von den Personen, die wir befragt haben, und nur diese Entscheidung kann umgesetzt werden. In den anderen Entscheidungen wurden die Präferenzen von uns zusammengestellt. Da Sie nicht wissen, in welcher Entscheidung die Präferenzen von den Befragten stammen, sollten Sie in allen sechs Entscheidungen so entscheiden, als seien die jeweiligen Präferenzen von der echten Grup\u0026shy;pe.\n\t\t\t\t\u003c/span\u003e\n\t\t\t\t"
  							},
  							"col_span_label": 1
  						}
@@ -256,7 +256,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\u003cp\u003e\n\t\t\tEntscheiden Sie im Folgenden, an welche Stif\u0026shy;tung das Geld gehen soll. \n\t\t\t\u003cb\u003eSetzen Sie dazu bei der entsprechenden Stif\u0026shy;tung ein Kreuz in der Spalte „Auswahl“.\u003c/b\u003e\n\t\t\tFalls Sie eine zweite oder dritte Alternative als genauso gut empfinden, \n\t\t\tsetzen Sie ein Kreuz in der Spalte „Gleich gut“. \n\t\t\tBerücksichtigen Sie dabei bitte die dargestellten Präferenzen der Gruppenmitglieder.\n\t\t\t\u003c/p\u003e\n\t\t\t"
+ 								"de": "\n\t\t\t\u003cp\u003e\n\t\t\tEntscheiden Sie im Folgenden, an welche Stif\u0026shy;tung das Geld gehen soll. \n\t\t\t\u003cb\u003eSetzen Sie dazu bei der entsprechenden Stif\u0026shy;tung ein Kreuz in der Spalte „Auswahl“.\u003c/b\u003e\n\t\t\tFalls Sie eine zweite oder dritte Alternative als genauso gut empfinden, \n\t\t\tsetzen Sie ein Kreuz in der Spalte „Gleich gut“. \n\t\t\tBerücksichtigen Sie dabei bitte die dargestellten Präferenzen der Grup\u0026shy;pen\u0026shy;mit\u0026shy;glieder.\n\t\t\t\u003c/p\u003e\n\t\t\t"
  							},
  							"col_span": 2,
  							"col_span_label": 2
@@ -507,7 +507,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage 1.\u003c/b\u003e Schätzen Sie bitte: Was wäre eine zufällig ausgewählte Person \n\t\t\t\t\taus unserer Vorstudie maximal bereit zu zahlen, \n\t\t\t\t\tdamit eine Spende von 30\u0026nbsp;€ an die Stif\u0026shy;tung überwiesen wird, \n\t\t\t\t\tdie diese Person als am besten/mittel/am schlech\u0026shy;testen erachtet?\n\t\t\t\t\t\u003ci\u003e(Wenn Sie meinen, die Person würde dafür bezahlen, \n\t\t\t\t\t\tdass die Stif\u0026shy;tung die 30\u0026nbsp;€ \u003ci\u003enicht\u003c/i\u003e erhält, \n\t\t\t\t\t\tschreiben Sie bitte ein Minuszeichen vor den jeweiligen Betrag.)\u003c/i\u003e\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003c!--\n\t\t\t\t\tBeste Stif\u0026shy;tung:_______\tMittlere Stif\u0026shy;tung:_______\tSchlech\u0026shy;teste Stif\u0026shy;tung:_______\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t--\u003e\n\n\n\t\t\t\t\t"
+ 								"de": "\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage 1.\u003c/b\u003e Schätzen Sie bitte: Was wäre eine zufällig ausgewählte Person \n\t\t\t\t\taus unserer Vorstudie maximal bereit zu zahlen, \n\t\t\t\t\tdamit eine Spende von 30\u0026nbsp;€ an die Stif\u0026shy;tung überwiesen wird, \n\t\t\t\t\tdie diese Person als am besten/mittel/am schlech\u0026shy;testen erachtet?\n\t\t\t\t\t\u003ci\u003e(Wenn Sie meinen, die Person würde da\u0026shy;für bezahlen, \n\t\t\t\t\t\tdass die Stif\u0026shy;tung die 30\u0026nbsp;€ \u003ci\u003enicht\u003c/i\u003e erhält, \n\t\t\t\t\t\tschreiben Sie bitte ein Minuszeichen vor den jeweiligen Betrag.)\u003c/i\u003e\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003c!--\n\t\t\t\t\tBeste Stif\u0026shy;tung:_______\tMitt\u0026shy;le\u0026shy;re Stif\u0026shy;tung:_______\tSchlech\u0026shy;teste Stif\u0026shy;tung:_______\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t--\u003e\n\n\n\t\t\t\t\t"
  							},
  							"col_span_label": 1
  						}
@@ -541,7 +541,7 @@
  							"min": -999,
  							"max": 999,
  							"label": {
- 								"de": "Mittlere Stif\u0026shy;tung"
+ 								"de": "Mitt\u0026shy;le\u0026shy;re Stif\u0026shy;tung"
  							},
  							"suffix": {
  								"de": "€"
@@ -704,7 +704,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage 2. \u003c/b\u003e\n\t\t\t\t\tSchätzen Sie bitte: Wie viele Mitglieder einer Gruppe von 10 zufällig \n\t\t\t\t\tausgewählten Personen wählen jeweils die folgenden Optionen A, B und C,\n\t\t\t\t\t\u003cb\u003e\n\t\t\t\t\twenn sie sich jeweils für genau eine der drei Optionen entscheiden müssen?\t\t\t\t\t\n\t\t\t\t\t\u003c/b\u003e\n\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003ci\u003e(Ihre Antworten müssen sich auf 10 summieren.)\u003c/i\u003e\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage 2. \u003c/b\u003e\n\t\t\t\t\tSchätzen Sie bitte: Wie viele Mit\u0026shy;glieder einer Grup\u0026shy;pe von 10 zufällig \n\t\t\t\t\tausgewählten Personen wählen jeweils die folgenden Optionen A, B und C,\n\t\t\t\t\t\u003cb\u003e\n\t\t\t\t\twenn sie sich jeweils für genau eine der drei Optionen entscheiden müssen?\t\t\t\t\t\n\t\t\t\t\t\u003c/b\u003e\n\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003ci\u003e(Ihre Antworten müssen sich auf 10 summieren.)\u003c/i\u003e\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
  							},
  							"col_span_label": 1
  						}
@@ -2095,7 +2095,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage 7.\u003c/b\u003e\n\t\t\t\t\tWie schätzen Sie Ihre Bereitschaft ein mit anderen zu teilen, \n\t\t\t\t\tohne dafür eine Gegenleistung zu erwarten?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage 7.\u003c/b\u003e\n\t\t\t\t\tWie schätzen Sie Ihre Bereitschaft ein mit anderen zu teilen, \n\t\t\t\t\tohne da\u0026shy;für eine Gegenleistung zu erwarten?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 7,
  							"col_span_label": 1

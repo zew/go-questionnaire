@@ -80,7 +80,7 @@ func RepsonseStatistics(q *QuestionnaireT) (string, error) {
 
 // PersonalLink returns the entry link
 func PersonalLink(q *QuestionnaireT) (string, error) {
-	closed := q.FinishedEntirely()
+	closed := !q.ClosingTime.IsZero()
 	ret := ""
 	if closed {
 		ret = cfg.Get().Mp["finished_by_participant"].Tr(q.LangCode)

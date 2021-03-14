@@ -436,7 +436,7 @@ func loginPrimitive(w http.ResponseWriter, r *http.Request, outerHTML bool) {
 	}
 
 	src := `
-		{{if gt (len .Cnt) 0 }} <p style='white-space: pre; color:#E22'>{{.Cnt}}</p>{{end}}
+		{{if gt (len .Content) 0 }} <p style='white-space: pre; color:#E22'>{{.Content}}</p>{{end}}
 		<h3>Application login</h3>
 		<br>
 		<input name="token"    type="hidden"   value="{{.Token}}" />
@@ -514,24 +514,24 @@ func changePasswordPrimitive(w http.ResponseWriter, r *http.Request, outerHTML b
 	}
 
 	src := `
-		{{if gt (len .Cnt) 0 }} <p style='white-space: pre; color:#E22'>{{.Cnt}}</p>{{end}}
+		{{if gt (len .Content) 0 }} <p style='white-space: pre; color:#E22'>{{.Content}}</p>{{end}}
 
 		<h3>Change password</h3>
 		<br>
 		
-		<input name="token"        type="hidden"   value="{{.Token}}" />
+		<input name="token"       type="hidden"   value="{{.Token}}" />
 
-		<label for="username" class="top">Username</label>
-		<input id="username"     name="username"     type="text"     value="{{.L.User}}"><br>
+		<label for="username"     class="top">Username</label>
+		<input id="username"      name="username"     type="text"     value="{{.L.User}}"><br>
 
-		<label for="oldpassword" class="top">Old password</label>
-		<input id="oldpassword"  name="oldpassword"  type="password" value="" /><br>
+		<label for="oldpassword"  class="top">Old password</label>
+		<input id="oldpassword"   name="oldpassword"  type="password" value="" /><br>
 
-		<label for="newpassword" class="top">New password</label>
-		<input id="newpassword"  name="newpassword"  type="password" value="" /><br>
+		<label for="newpassword"  class="top">New password</label>
+		<input id="newpassword"   name="newpassword"  type="password" value="" /><br>
 
 		<label for="newpassword2" class="top">Repeat</label>
-		<input id="newpassword2" name="newpassword2" type="password" value="" /><br>
+		<input id="newpassword2"  name="newpassword2" type="password" value="" /><br>
 
 		<div style="height: 0.6rem"> </div>
 		<button name="btnSubmit" accesskey="t" >Submi<u>t</u></button>

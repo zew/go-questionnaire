@@ -1079,8 +1079,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		}
 	}
 
-	// quest.ClosingTime = time.Now()
-
 	err = q.Validate()
 	if err != nil {
 		return nil, fmt.Errorf("Error validating questionnaire: %v", err)

@@ -193,7 +193,8 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 	q.UserID = l.User
 
 	// Already finished?
-	if !q.ClosingTime.IsZero() {
+	closed := !q.ClosingTime.IsZero()
+	if closed {
 		s := cfg.Get().Mp["finished_by_participant"].All(q.ClosingTime.Format("02.01.2006 15:04"))
 		helper(w, r, nil, s)
 		return

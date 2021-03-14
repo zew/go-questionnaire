@@ -1,5 +1,14 @@
 // Package transferrer fetches completed questionnaires
-// from /transferrer-endpoint as JSON via http request.
+// from /transferrer-endpoint as gzipped JSON via http(s) request;
+// downloads and CSVs are stored to ./app-bucket/responses/downloaded;
+//
+// multiple configs are required in ./app-bucket/transferrer;
+// config-autogen.json      is mostly a dummy to satisfy bootstrap;
+// logins-remote-salt.json  is needed to login remotely;
+// remote-fmt.json or remote-fmt-localhost.json contain
+// 			https POST request data
+// 			destination survey
+// 			login
 package main
 
 import (
@@ -70,7 +79,7 @@ func Example() RemoteConnConfigT {
 	r.WaveID = qst.NewSurvey(r.SurveyType).WaveID()
 	r.WaveID = "2020-05"
 
-	r.DownloadDir = "../../app-bucket/dl"
+	r.DownloadDir = "responses/downloaded"
 
 	return r
 }
@@ -369,7 +378,7 @@ func main() {
 		// Check response status
 		rsc := resp.StatusCode
 		if rsc != http.StatusOK && rsc != http.StatusTemporaryRedirect && rsc != http.StatusSeeOther {
-			log.Printf("bad response %q ", resp.Status)
+			log.Printf("bad response %v - %q ", resp.StatusCode, resp.Status)
 			return
 		}
 
@@ -380,7 +389,11 @@ func main() {
 		dec := json.NewDecoder(rdr1)
 		err = dec.Decode(&qs)
 		if err != nil {
-			log.Printf("Unmarshal %v", err)
+			log.Printf("Unmarshal failed: %v", err)
+			fn := "tmp-transferrer-endpoint-response-error.html"
+			bts, _ := ioutil.ReadAll(rdr1)
+			ioutil.WriteFile(fn, bts, 0777)
+			log.Printf("Response written to %v", fn)
 			return
 		}
 		log.Printf("Unmarshalled %v questionnaires from responese stream", len(qs))
@@ -507,7 +520,8 @@ func main() {
 		if err := csvWtr.Error(); err != nil {
 			log.Printf("error flushing csv to response writer: %v", err)
 		}
-		fn := fmt.Sprintf("/dl/online-responses-%v-%v.csv", c2.SurveyType, c2.WaveID)
+
+		fn := path.Join(c2.DownloadDir, fmt.Sprintf("%v-%v.csv", c2.SurveyType, c2.WaveID))
 		err = cloudio.WriteFile(fn, wtr, 0644)
 		if err != nil {
 			log.Printf("Could not write file %v: %v", fn, err)

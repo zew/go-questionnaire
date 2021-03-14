@@ -7,6 +7,7 @@ import (
 	"log"
 	"net/http"
 	"path"
+	"strings"
 	"time"
 
 	"github.com/zew/go-questionnaire/cloudio"
@@ -16,7 +17,30 @@ import (
 	"github.com/zew/go-questionnaire/sessx"
 )
 
-// TransferrerEndpointH responds with finished questionnaires from the filesystem.
+func logAndRespond(w http.ResponseWriter, r *http.Request, s string, err error) {
+
+	fmt.Fprintf(w, "%v<br>\n", s)
+	if err != nil {
+		fmt.Fprintf(w, "%v<br>\n", err)
+	}
+
+	log.Printf("%v", s)
+	if err != nil {
+		log.Printf("    %v", err)
+	}
+
+	if r != nil && r.Response != nil {
+		r.Response.StatusCode = 401
+		r.Response.Status = fmt.Sprintf("%v %v", s, err)
+	}
+}
+
+// TransferrerEndpointH responds with finished questionnaires from the filesystem in JSON;
+// preventing of huge filesizes, the response is gzipped;
+// you need to be logged in with admin role;
+// survey_id and wave_id must be set as URL params;
+// only finished questionnaires are included (q.ClosingTime != zero);
+// fetch_all=1 includes unfinished questionnaires;
 func TransferrerEndpointH(w http.ResponseWriter, r *http.Request) {
 
 	w.Header().Set("Content-Type", "application/json; charset=utf-8")
@@ -25,22 +49,22 @@ func TransferrerEndpointH(w http.ResponseWriter, r *http.Request) {
 	// w.Header().Set("Content-Length", fmt.Sprintf("%v", len(byts)))  // do not set, if response is gzipped !
 	// w.Write(byts)
 
-	dl, ok := r.Context().Deadline()
-	log.Printf("transferrer-endpoint-start; has deadline %v of %v", ok, dl)
+	deadLine, ok := r.Context().Deadline()
+	log.Printf("transferrer-endpoint-start; has deadline %v of %v", ok, deadLine)
 
 	sess := sessx.New(w, r)
 
 	l, isLoggedIn, err := lgn.LoggedInCheck(w, r)
 	if err != nil {
-		helper(w, r, err, "LoggedInCheck failed.")
+		logAndRespond(w, r, "LoggedInCheck failed.", err)
 		return
 	}
 	if !isLoggedIn {
-		helper(w, r, nil, "You are are not logged in.")
+		logAndRespond(w, r, "You are are not logged in.", nil)
 		return
 	}
 	if !l.HasRole("admin") {
-		helper(w, r, nil, "Login succeeded, but must have role 'admin'")
+		logAndRespond(w, r, "Login succeeded, but must have role 'admin'", nil)
 		return
 	}
 
@@ -48,12 +72,12 @@ func TransferrerEndpointH(w http.ResponseWriter, r *http.Request) {
 
 	surveyID, ok := sess.ReqParam("survey_id")
 	if !ok {
-		helper(w, r, nil, "You need to specify a survey_id parameter.")
+		logAndRespond(w, r, "You need to specify a survey_id parameter.", nil)
 		return
 	}
 	waveID, ok := sess.ReqParam("wave_id")
 	if !ok {
-		helper(w, r, nil, "You need to specify a wave_id parameter.")
+		logAndRespond(w, r, "You need to specify a wave_id parameter.", nil)
 		return
 	}
 	pth := path.Join(qst.BasePath(), surveyID, waveID)
@@ -62,7 +86,7 @@ func TransferrerEndpointH(w http.ResponseWriter, r *http.Request) {
 	infos, err := cloudio.ReadDir(pth)
 	// infos, err := dir.Readdir(-1)
 	if err != nil {
-		helper(w, r, err, "Could not read directory.")
+		logAndRespond(w, r, "Could not read directory.", err)
 		return
 	}
 
@@ -78,18 +102,29 @@ func TransferrerEndpointH(w http.ResponseWriter, r *http.Request) {
 				log.Printf("iter %3v: Name: %v, Size: %v", i, info.Key, info.Size)
 			}
 		}
+
+		if strings.HasSuffix(info.Key, ".inspection") {
+			continue
+		}
+
 		// pth := path.Join(qst.BasePath(), surveyID, waveID, info.Key)
 		pth := info.Key
 		// var q = &qst.QuestionnaireT{}
 		q, err := qst.Load1(pth)
 		if err != nil {
-			helper(w, r, err, fmt.Sprintf("iter %3v: No file %v found.", i, pth))
-		}
-		err = q.Validate()
-		if err != nil {
-			helper(w, r, err, fmt.Sprintf("iter %3v: Questionnaire validation caused error", i))
+			logAndRespond(w, r, fmt.Sprintf("iter %3v: No file %v found.", i, pth), err)
+			return
 		}
 
+		/*
+			this is no longer applicable for the pure data files
+			err = q.Validate()
+			if err != nil {
+				logAndRespond(w, r, fmt.Sprintf("iter %3v: Questionnaire validation caused error", i), nil)
+			}
+		*/
+
+		// user questionnaire unfinished
 		if q.ClosingTime.IsZero() && fetchAll == "" {
 			log.Printf("%v unfinished yet; %v", info.Key, q.ClosingTime)
 			if time.Now().Before(q.Survey.Deadline) {
@@ -101,7 +136,7 @@ func TransferrerEndpointH(w http.ResponseWriter, r *http.Request) {
 		firstColLeftMostPrefix := " "
 		byts, err := json.MarshalIndent(q, firstColLeftMostPrefix, "\t")
 		if err != nil {
-			helper(w, r, fmt.Errorf("marshalling questionnaire failed: %v", err))
+			logAndRespond(w, r, "marshalling questionnaire failed", err)
 			return
 		}
 
@@ -110,7 +145,7 @@ func TransferrerEndpointH(w http.ResponseWriter, r *http.Request) {
 		}
 		gzipBytes, err := gz.Write(byts)
 		if err != nil {
-			helper(w, r, fmt.Errorf("gzipping questionnaire failed: %v", err))
+			logAndRespond(w, r, "gzipping questionnaire failed: %v", err)
 			return
 		}
 		cntr++

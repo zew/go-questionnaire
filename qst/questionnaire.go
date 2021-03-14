@@ -364,7 +364,10 @@ type pageT struct {
 
 	Style *css.StylesResponsive `json:"style,omitempty"`
 
-	Finished time.Time `json:"finished,omitempty"` // truncated to second; *not* a marker for finished entirely - for that we use q.FinishedEntirely
+	// *not* a marker for questionnaire finished entirely;
+	// see q.ClosingTime instead;
+	// truncated to second
+	Finished time.Time `json:"finished,omitempty"`
 
 	Groups []*groupT `json:"groups,omitempty"`
 
@@ -384,14 +387,17 @@ func (p *pageT) AddGroup() *groupT {
 
 // QuestionnaireT contains pages with groups with inputs
 type QuestionnaireT struct {
-	Survey      surveyT           `json:"survey,omitempty"`
-	UserID      string            `json:"user_id,omitempty"`      // participant ID, decimal, but string, i.E. 1011
-	Attrs       map[string]string `json:"user_attrs,omitempty"`   // i.e. user country or euro-member - taken from lgn.LoginT
-	ClosingTime time.Time         `json:"closing_time,omitempty"` // truncated to second
-	RemoteIP    string            `json:"remote_ip,omitempty"`
-	UserAgent   string            `json:"user_agent,omitempty"`
-	Mobile      int               `json:"mobile,omitempty"` // 0 - no preference, 1 - desktop, 2 - mobile
-	MD5         string            `json:"md_5,omitempty"`
+	Survey surveyT           `json:"survey,omitempty"`
+	UserID string            `json:"user_id,omitempty"`    // participant ID, decimal, but string, i.E. 1011
+	Attrs  map[string]string `json:"user_attrs,omitempty"` // i.e. user country or euro-member - taken from lgn.LoginT
+	// if any response key "finished" equals qst.Finished
+	// this is set to time.Now() - truncated to second
+	// it is the marker for preventing any more edits
+	ClosingTime time.Time `json:"closing_time,omitempty"`
+	RemoteIP    string    `json:"remote_ip,omitempty"`
+	UserAgent   string    `json:"user_agent,omitempty"`
+	Mobile      int       `json:"mobile,omitempty"` // 0 - no preference, 1 - desktop, 2 - mobile
+	MD5         string    `json:"md_5,omitempty"`
 
 	LangCodes []string `json:"lang_codes,omitempty"` // default, order and availability - [en, de, ...] or [de, en, ...]
 	LangCode  string   `json:"lang_code,omitempty"`  // current lang code - i.e. 'de' - session key lang_code
@@ -439,10 +445,12 @@ func BasePath() string {
 	return path.Join(".", "responses")
 }
 
-// FinishedEntirely does not go for the
+// unusedFinishedEntirely does not go for the
 // page.Finished timestamps, but for
 // an explicit input called 'finished'
-func (q *QuestionnaireT) FinishedEntirely() (closed bool) {
+//
+// use !q.ClosingTime.IsZero instead
+func (q *QuestionnaireT) unusedFinishedEntirely() (closed bool) {
 	for _, p := range q.Pages {
 		for _, gr := range p.Groups {
 			for _, inp := range gr.Inputs {

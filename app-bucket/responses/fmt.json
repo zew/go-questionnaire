@@ -11,17 +11,14 @@
  		},
  		"year": 2021,
  		"month": 3,
- 		"deadline": "2021-03-27T23:59:00Z",
+ 		"deadline": "2021-03-28T23:59:59+02:00",
  		"params": [
- 			{
- 				"name": "main_refinance_rate_ecb",
- 				"val": "3"
- 			},
+ 			{},
  			{}
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "acc628785fb6467fbb0a1131b40f5270a5eb2d31de6d8676cd747c890f8fc2b7",
+ 	"md_5": "d36acbd44e92f0f26975d200243a718bcee14839c83cbb1931d8237d7df9cfc3",
  	"lang_codes": [
  		"de",
  		"en"

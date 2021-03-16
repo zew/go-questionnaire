@@ -135,9 +135,11 @@ func main() {
 			log.Fatalf("Error opening writer to %v: %v", fileName, err)
 		}
 		defer func() {
-			err := r.Close()
-			if err != nil {
-				log.Printf("Error closing writer to bucket to %v: %v", fileName, err)
+			if r != nil {
+				err := r.Close()
+				if err != nil {
+					log.Printf("Error closing writer to bucket to %v: %v", fileName, err)
+				}
 			}
 		}()
 		defer func() {
@@ -161,9 +163,11 @@ func main() {
 			log.Fatalf("Error opening writer to %v: %v", fileName, err)
 		}
 		defer func() {
-			err := r.Close()
-			if err != nil {
-				log.Printf("Error closing writer to bucket to %v: %v", fileName, err)
+			if r != nil {
+				err := r.Close()
+				if err != nil {
+					log.Printf("Error closing writer to bucket to %v: %v", fileName, err)
+				}
 			}
 		}()
 		defer func() {
@@ -194,7 +198,7 @@ func main() {
 
 	var c2 RemoteConnConfigT
 	c2 = Example()
-	cloudio.MarshalWriteFile(&c2, path.Join("/transferrer", "remote-example.json"))
+	cloudio.MarshalWriteFile(&c2, path.Join("/transferrer", "example-remote.json"))
 
 	{
 		rmt := fl.ByKey("rmt").Val
@@ -269,7 +273,14 @@ func main() {
 		if err != nil {
 			log.Printf("error requesting cookie from %v: %v; %v", urlReq, err, resp)
 		}
+
+		if resp == nil {
+			log.Printf("response is nil - from %v", urlReq)
+			return
+		}
+
 		defer resp.Body.Close()
+
 		for _, v := range resp.Cookies() {
 			if v.Name == "session" {
 				sessCook = v
@@ -397,6 +408,8 @@ func main() {
 			return
 		}
 		log.Printf("Unmarshalled %v questionnaires from responese stream", len(qs))
+		log.Printf("====================================================")
+		log.Printf("  ")
 
 		//
 		//
@@ -438,19 +451,21 @@ func main() {
 			//
 			//
 			// Delete empty questionnaires and save them elsewhere
+			//
+			// previous runs: remove their empty files
 			pthEmpty := path.Join(dirEmpty, q.UserID+".json")
 			err = cloudio.Delete(pthEmpty)
 			if err != nil && !cloudio.IsNotExist(err) {
 				log.Printf("%3v: Error removing previously empty %v - %v", i, pthEmpty, err)
 			}
+			// current run: move empty to dir empty
 			realEntries, _, _ := q.Statistics()
 			if realEntries == 0 {
-				log.Printf("%3v: %v. No answers given, skipping, deleting, moving to %v.", i, pthFull, pthEmpty)
+				log.Printf("%3v: %v. No answers given, skipping, deleting, moving to %v.", i, pthFull, "empty")
 				err = cloudio.Delete(pthFull)
 				if err != nil && !cloudio.IsNotExist(err) {
 					log.Printf("%3v: Error removing empty %v - %v", i, pthFull, err)
 				}
-
 				err := q.Save1(pthEmpty)
 				if err != nil {
 					log.Printf("%3v: Error saving  to empty %v: %v", i, pthEmpty, err)
@@ -459,7 +474,7 @@ func main() {
 			}
 
 			// Prepare columns...
-			finishes, ks, vs := q.KeysValues()
+			finishes, ks, vs := q.KeysValues(true)
 
 			ks = append(staticCols, ks...)
 			allKeys = append(allKeys, ks)
@@ -486,7 +501,12 @@ func main() {
 		valsBySuperset := [][]string{}
 
 		// log.Printf("%v keys superset; %v", len(allKeysSuperset), util.IndentedDump(allKeysSuperset))
-		log.Printf("%v map  keys    ; %v", len(allKeysSSMap), util.IndentedDump(allKeysSSMap))
+		// log.Printf("%v map  keys    ; %v", len(allKeysSSMap), util.IndentedDump(allKeysSSMap))
+
+		for colIdx, colName := range allKeysSuperset {
+			log.Printf("\tcol %2v  %v", colIdx, colName)
+		}
+
 		// log.Printf("%v", util.IndentedDump(allVals))
 
 		// Collect values...

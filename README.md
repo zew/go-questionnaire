@@ -26,7 +26,7 @@
 
 ## Status
 
-Version 1.2
+Version 2.0
 
 Productive use at our research institute.
 
@@ -101,10 +101,13 @@ by using [gocloud blob](https://godoc.org/gocloud.dev/blob) for local file syste
 
 ### Boring properties
 
+* Server side validation.  
+
 * Extensible set of validation functions easily assignable to each field.  
- Server side validation - no client side validation.
 
 * For example `must ; inRange20` or only `inRange100` or only `must`
+
+* Javascript hook for client side validation if preferred.
 
 ### Technical properties
 
@@ -164,14 +167,18 @@ additonal `pages`, `groups` and `inputs`.
 * `textarea`   - multi line text input
 * `dropdown`   - list of fixed choices
 * `checkbox`   - yes/no input
-* `radiogroup`, `checkboxgroup` - fields of choices - helpers for horizontal and vertical display (see flit example)
+* `radio`      - grouped by name - differentiated by ValueRadio
+* `hidden`
+
 * `textblock`  - block of text without input
 * `button`     - submit button
-* `dynamic`    - any input that depends on user properties or wave-specific data
+
+* `dyn-textblock` - descriptions depending on user properties or wave-specific data
+* `dyn-composite` - runtime executed fragment of text and multiple inputs; `dyn-composite-scalar` is a list of inputs contained in `dyn-composite`
 
 Each input can have a multi-language label, -description, a multi-language suffix and a validation function.
 
-Each input has a column span and an alignment for its label and for its input-field.
+Each input has a span. Its label and form element each have a sub-span.
 
 ## Create survey and logins
 
@@ -271,6 +278,9 @@ with automatic `Lets encrypt` certification.
 * `cfg` contains universal multi-language strings.  
  Each `questionnaire` contains specific multi-language strings.  
 
+* `css` contains double sets of CSS styles for `desktop` and `mobile`.  
+`desktop` takes precedence.
+
 * Package cloudio is a convenience wrapper around [Gocloud blob](https://godoc.org/gocloud.dev/blob)  
 The entire persistence layer is moved from ioutil... to cloudio...  
 Thus the application can be hosted by cloud providers with buckets or on classical webservers.
@@ -281,16 +291,6 @@ Thus the application can be hosted by cloud providers with buckets or on classic
 
 * The `updater` subpackage automates in-flight changes to the questionnaire.  
 No need for database "schema" artistry.  
-
-### Design and Layout
-
-* Each row can have a different number of columns.
-
-* Every label and form element has its individual column width (`ColSpanLabel` and `ColSpanControl`)
-
-* Each label or form element can be styled additionally (`CSSLabel` and `CSSControl`)
-
-* Global layout elements can be adapted using `styles-quest-[survey].css``.
 
 #### Page navigation sequence - special pages
 
@@ -315,10 +315,46 @@ but that remains as elusive as it did with XML.
 
 ### Layout concept
 
-#### Accepted solution
+In Version 1.x, we used `fixed table`;  `float-left` and `inline-block` were rejected.
 
-Considering `float-left` or `inline-block`, we chose `fixed table` layout.  
-We need this full-fledged markup, since mere CSS classes such as `<div style='display: table/table-row/table-cell'` do not support colspan or rowspan functionality.
+Since Version 2, layout is based on the `CSS grid` functionality.
+
+CSS grid documentation and concepts are directly applicable.
+
+Responsive CSS styles can be set directly in Go code,  
+or reusably composed of Go functions,  
+but not by editing CSS stylesheets.
+
+Useful defaults and helper classes dramatically reduce CSS styling hell.
+
+Chrome's or Firefox's debugging tools assist in fiddling without recompiling every iota.
+
+#### Basics
+
+* Each group has its number of columns.
+
+* Every input has its span.
+
+* Every label and form element have their span inside the input.
+
+![css-grid-base-concept.png](./app-bucket/content/img/css-grid-base-concept.png)
+
+* Group.Style, Input.Style, Input.StyleLbl and Input.StyleCtl can be used
+to change CSS grid container and -item styles.
+
+* The same properties also contain CSS box and CSS text styles.
+
+* Each style can be set for `desktop` and or `mobile` for responsive design.
+
+* CSS styles and classes are rendered automatically
+
+* Default is CSS grid direction `row` for every group and for every input,  
+as indicated in above picture.
+
+* Also as default, a `grid-template-column` style is rendered,  
+based on the the group.Cols and input.ColSpan, and input.ColSpanLabel and -.ColSpanControl
+
+#### Accepted solution
 
 Each `page.Width` can be adjusted for each page.
 Squeezing or stretching all rows equally.

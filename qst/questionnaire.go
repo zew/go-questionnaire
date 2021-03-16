@@ -13,6 +13,7 @@ import (
 	"log"
 	"net/http"
 	"path"
+	"regexp"
 	"strconv"
 	"strings"
 	"time"
@@ -945,10 +946,53 @@ func (q *QuestionnaireT) Compare(v *QuestionnaireT, lenient bool) (bool, error) 
 	return true, nil
 }
 
+var germanUmlaute = strings.NewReplacer(
+	"ä", "ae",
+	"ö", "oe",
+	"ü", "ue",
+	"Ä", "ae",
+	"Ö", "oe",
+	"Ü", "ue",
+	"ß", "ss",
+)
+
+var separators = strings.NewReplacer(
+	"\r\n", " -  ",
+	"\n", " -  ",
+	":", " -  ",
+	";", " -  ",
+	",", " -  ",
+)
+
+// no comma, no colon, no semicolon - only dot or hyphen
+// no newline
+var englishTextAndNumbersOnly = regexp.MustCompile(`[^a-zA-Z0-9\.\_\- ]+`)
+var severalSpaces = regexp.MustCompile(`[ ]+`)
+
+// EnglishTextAndNumbersOnly replaces all other UTF characters by space
+func EnglishTextAndNumbersOnly(s string) string {
+
+	// sBefore := s
+
+	s = germanUmlaute.Replace(s)
+	s = separators.Replace(s)
+
+	s = englishTextAndNumbersOnly.ReplaceAllString(s, " ")
+	s = severalSpaces.ReplaceAllString(s, " ")
+	s = strings.TrimSpace(s)
+
+	// if sBefore != s {
+	// 	log.Printf("\n%v\n%v", sBefore, s)
+	// }
+
+	return s
+}
+
 // KeysValues returns all pages finish times; keys and values in defined order.
 // Empty values are also returned.
 // Major purpose is CSV export across several questionnaires.
-func (q *QuestionnaireT) KeysValues() (finishes, keys, vals []string) {
+func (q *QuestionnaireT) KeysValues(cleanse bool) (finishes, keys, vals []string) {
+	// log.Printf("Collecting keys+vals for %v", q.UserID)
 	for i1 := 0; i1 < len(q.Pages); i1++ {
 		if q.Pages[i1].Finished.IsZero() {
 			finishes = append(finishes, "not_saved")
@@ -961,10 +1005,16 @@ func (q *QuestionnaireT) KeysValues() (finishes, keys, vals []string) {
 					continue
 				}
 				keys = append(keys, q.Pages[i1].Groups[i2].Inputs[i3].Name)
-				vals = append(vals, q.Pages[i1].Groups[i2].Inputs[i3].Response)
+				val := q.Pages[i1].Groups[i2].Inputs[i3].Response
+				if cleanse {
+					val = EnglishTextAndNumbersOnly(val)
+				}
+				vals = append(vals, val)
 			}
 		}
 	}
+	// log.Printf("%v", keys)
+	// log.Printf("%v", vals)
 	return
 }
 

@@ -422,7 +422,15 @@ func main() {
 
 		allKeys := [][]string{}
 		allVals := [][]string{}
-		staticCols := []string{"user_id", "lang_code"}
+		staticCols := []string{
+			"user_id",
+			"lang_code",
+			"closing_time",
+			"status",
+			"remote_ip",
+			"user_agent",
+			"variations",
+		}
 		for iPg := 0; iPg < maxPages; iPg++ {
 			staticCols = append(staticCols, fmt.Sprintf("page_%v", iPg+1))
 		}
@@ -480,8 +488,31 @@ func main() {
 			ks = append(staticCols, ks...)
 			allKeys = append(allKeys, ks)
 
+			formattedClosingTime := ""
+			status := "0"
+			if qs[i].ClosingTime.IsZero() {
+				for i2 := len(qs[i].Pages) - 1; i2 > -1; i2-- {
+					if !qs[i].Pages[i2].Finished.IsZero() {
+						formattedClosingTime = fmt.Sprintf("%v", qs[i].Pages[i2].Finished.Unix())
+						status = "1"
+						break
+					}
+				}
+			} else {
+				formattedClosingTime = fmt.Sprintf("%v", qs[i].ClosingTime.Unix())
+				status = "2"
+			}
+
 			//
-			prepend := []string{qs[i].UserID, qs[i].LangCode}
+			prepend := []string{
+				qs[i].UserID,         // user_id
+				qs[i].LangCode,       // lang_code
+				formattedClosingTime, // closing_time
+				status,               // status
+				q.RemoteIP,           // remote_ip
+				qst.EnglishTextAndNumbersOnly(q.UserAgent), // user_agent
+				fmt.Sprint(q.Variations),                   // variations
+			}
 			for iPg := 0; iPg < maxPages; iPg++ {
 				if iPg < len(finishes) {
 					prepend = append(prepend, finishes[iPg])

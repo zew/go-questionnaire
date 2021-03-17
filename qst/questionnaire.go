@@ -85,8 +85,9 @@ func (inp *inputT) AddRadio() *radioT {
 // Multiple checkboxes (checkboxgroup) with same name but distinct values are a dubious instrument.
 // See comment to implementedType checkboxgroup.
 type inputT struct {
-	Name string `json:"name,omitempty"`
-	Type string `json:"type,omitempty"` // see implementedTypes
+	Name  string `json:"name,omitempty"`
+	Type  string `json:"type,omitempty"`  // see implementedTypes
+	Param string `json:"param,omitempty"` // for dyn-text - name of parameter set
 
 	MaxChars    int     `json:"max_chars,omitempty"` // input chars; => SIZE for input, MAXLENGTH for textarea, text; also used for width
 	Step        float64 `json:"step,omitempty"`      // for number input:  stepping interval

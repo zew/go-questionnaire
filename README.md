@@ -354,13 +354,31 @@ as indicated in above picture.
 * Also as default, a `grid-template-column` style is rendered,  
 based on the the group.Cols and input.ColSpan, and input.ColSpanLabel and -.ColSpanControl
 
-#### Accepted solution
+#### Style helper funcs
 
-Each `page.Width` can be adjusted for each page.
-Squeezing or stretching all rows equally.
-Page remains horizontally _centered_.
+CSS styles can be configured with every possible complexity.
+
+We can change the Group.Style, Input.Style, Input.StyleLbl and InputStyleCtl.
+
+Styles can be influenced for `grid-container`, `grid-item`, `box` and `text` for `desktop` and or `mobile`.
+
+Certain repeating desigsn are captured in reusable functions.
+
+##### DesktopWidthMax()
+
+Each element can be individually squeezed in width.
+
+For instance, we want a max width for the page in desktop mode.  
+The page should remain horizontally _centered_.  
+Mobile view width should remain at 100%.
+
+```go
+    css.DesktopWidthMax(page.Style, "36rem")
+```
 
 ![Page width](./app-bucket/content/img/page-width.png)
+
+###### Todo
 
 Each `group.Width` can be adjusted.  
 The group can be left-aligned (picture) or right-aligned.

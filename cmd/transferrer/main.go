@@ -409,7 +409,6 @@ func main() {
 		}
 		log.Printf("Unmarshalled %v questionnaires from responese stream", len(qs))
 		log.Printf("====================================================")
-		log.Printf("  ")
 
 		//
 		//
@@ -433,9 +432,11 @@ func main() {
 		// Process questionnaires
 		for i, q := range qs {
 
+			log.Printf("  ")
+
 			serverSideMD5 := q.MD5
 
-			pthFull := path.Join(dirFull, q.UserID)
+			pthFull := path.Join(dirFull, q.UserID+".json")
 			err := q.Save1(pthFull)
 			if err != nil {
 				log.Printf("%3v: Error saving %v: %v", i, pthFull, err)

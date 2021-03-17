@@ -762,7 +762,7 @@ input[type=radio] {
         both no worki on firefox -    though in chrome
         therefore we resort to scale:
     */
-    transform: scale(2.25);
+    /* transform: scale(2.25); */
     transform: scale(1.75);
 
     /*
@@ -777,15 +777,23 @@ input[type=radio] {
 /*
     firefox and chrome need different scaling
     stackoverflow.com/questions/952861
-
 */
 @supports (-moz-appearance:none) {
     /* p { color:red; }    */
     input[type=checkbox],
     input[type=radio] {
-        transform: scale(2);
+        transform: scale(1.50);
     }
 }
+@-moz-document url-prefix() {
+    input[type=checkbox],
+    input[type=radio] {
+        transform: scale(1.50);
+    }
+}
+
+
+
 input[type=checkbox]:focus,
 input[type=radio]:focus         {
      /* scale(2) also scales the focus rectangle :( */

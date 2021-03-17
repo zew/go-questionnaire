@@ -10,15 +10,15 @@
  			"en": "Indicator of Economic Sentiment"
  		},
  		"year": 2021,
- 		"month": 3,
- 		"deadline": "2021-03-28T23:59:00Z",
+ 		"month": 4,
+ 		"deadline": "2021-04-12T17:00:00Z",
  		"params": [
  			{},
  			{}
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "59421bd3ac7a473f88844cd9457107be6b380584441724b1a70fc1191580a8d9",
+ 	"md_5": "d6cd82acce2d3397eae173cdaf5b52b33f5a7b41f366525ac25f77f6a6826ae6",
  	"lang_codes": [
  		"de",
  		"en"
@@ -70,13 +70,11 @@
  							"col_span_label": 1
  						},
  						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "\n\t\u003cdiv class='markdown'\u003e\n\u003cul\u003e\n\u003cli\u003eDurch Klicken auf \u003ccode\u003eSeite…\u003c/code\u003e werden Ihre Antworten gespeichert und Sie gelangen zur jeweils nächsten Seite.\r\n\r\u003c/li\u003e\n\u003cli\u003eBei einer Unterbrechung (Schließen des Browsers) blei\u0026shy;ben Ihre Antworten erhalten und können später über Ihren persönlichen Link wieder aufgerufen und geändert werden.\r\n\r\u003c/li\u003e\n\u003cli\u003eAm Ende der Befragung können Sie den Fragebogen abschließen, so dass keine weiteren Änderungen möglich sind.\r\u003c/li\u003e\n\u003c/ul\u003e\n\n\t\u003c/div\u003e  \u003c!-- markdown --\u003e\n",
- 								"en": "\n\t\u003cdiv class='markdown'\u003e\n\u003cp\u003eBy clicking \u003ccode\u003ePage…\u003c/code\u003e your an\u0026shy;swers will be saved and you progress to the next page.\r\n\r\nIn case of an interruption (closing of the web browser) your an\u0026shy;swers re\u0026shy;main saved. You can re-use your personal link to continue and change your an\u0026shy;swers.\r\n\r\nAt the end you can finalize the questionnaire preventing further changes.\r\u003c/p\u003e\n\n\t\u003c/div\u003e  \u003c!-- markdown --\u003e\n"
- 							},
+ 							"type": "dyn-textblock",
+ 							"param": "page-0-data-protection.md",
  							"col_span": 1,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"dynamic_func": "RenderStaticContent"
  						}
  					]
  				},
@@ -1359,8 +1357,8 @@
  			],
  			"validation_func_name": "fmtPage1",
  			"validation_func_msg": {
- 				"de": "Summiert sich nicht zu 100. Wirklich weiter?",
- 				"en": "Does not add up. Really continue?"
+ 				"de": "Ihre Antworten auf Frage 2b addieren sich nicht zu 100%. Wirklich weiter?",
+ 				"en": "Your answers to question 2b dont add up to 100%. Continue anyway?"
  			}
  		},
  		{
@@ -3233,7 +3231,12 @@
  						}
  					}
  				}
- 			]
+ 			],
+ 			"validation_func_name": "fmtPage3",
+ 			"validation_func_msg": {
+ 				"de": "Ihre Punktprognose für den DAX in sechs Monaten liegt nicht in dem von Ihnen angegebenen Intervall. Wirklich weiter?",
+ 				"en": "Your forcecast for the DAX in six months is not inside your MIN/MAX interval. Continue anyway?"
+ 			}
  		},
  		{
  			"label": {
@@ -4493,7 +4496,8 @@
  						{
  							"name": "pprwbipq1",
  							"type": "number",
- 							"max_chars": 3,
+ 							"max_chars": 4,
+ 							"step": 0.1,
  							"max": 20,
  							"label": {
  								"de": "Q1 2021",
@@ -4552,7 +4556,8 @@
  						{
  							"name": "pprwbipq2",
  							"type": "number",
- 							"max_chars": 3,
+ 							"max_chars": 4,
+ 							"step": 0.1,
  							"max": 20,
  							"label": {
  								"de": "Q2 2021",
@@ -4611,7 +4616,8 @@
  						{
  							"name": "pprwbipq3",
  							"type": "number",
- 							"max_chars": 3,
+ 							"max_chars": 4,
+ 							"step": 0.1,
  							"max": 20,
  							"label": {
  								"de": "Q3 2021",
@@ -4670,7 +4676,8 @@
  						{
  							"name": "pprwbipq4",
  							"type": "number",
- 							"max_chars": 3,
+ 							"max_chars": 4,
+ 							"step": 0.1,
  							"max": 20,
  							"label": {
  								"de": "Q4 2021",
@@ -4755,7 +4762,8 @@
  						{
  							"name": "pprwbipj1",
  							"type": "number",
- 							"max_chars": 3,
+ 							"max_chars": 4,
+ 							"step": 0.1,
  							"max": 20,
  							"label": {
  								"de": "2021",
@@ -4814,7 +4822,8 @@
  						{
  							"name": "pprwbipj2",
  							"type": "number",
- 							"max_chars": 3,
+ 							"max_chars": 4,
+ 							"step": 0.1,
  							"max": 20,
  							"label": {
  								"de": "2022",
@@ -4873,7 +4882,8 @@
  						{
  							"name": "pprwbipj3",
  							"type": "number",
- 							"max_chars": 3,
+ 							"max_chars": 4,
+ 							"step": 0.1,
  							"max": 20,
  							"label": {
  								"de": "2023",
@@ -5839,7 +5849,7 @@
  							"col_span_label": 1
  						},
  						{
- 							"name": "remark",
+ 							"name": "comment",
  							"type": "textarea",
  							"max_chars": 300,
  							"col_span_control": 1
@@ -6003,12 +6013,11 @@
  							"dynamic_func": "PersonalLink"
  						},
  						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "\n\t\u003cdiv class='markdown'\u003e\n\u003ch1\u003eImpressum\u003c/h1\u003e\n\n\u003cp\u003eZentrum für Europäische Wirt\u0026shy;schaftsforschung (ZEW) Mannheim\u003c/p\u003e\n\n\u003cp\u003ePräsident: Prof. Achim Wambach, Ph.D.\u003c/p\u003e\n\n\u003cp\u003eForschungsbereich:\u003cbr /\u003e\nIn\u0026shy;ter\u0026shy;na\u0026shy;tion\u0026shy;ale Finanzmärkte und Finanzmanagement\u003c/p\u003e\n\n\u003cp\u003ePostfach 10 34 43\u003cbr /\u003e\n68034 Mannheim\u003c/p\u003e\n\n\u003cp\u003eTel.:  -148 / -311 / -368\u003c/p\u003e\n\n\u003cp\u003eProjektteam:\u003cbr /\u003e\nFrank Brückbauer, Dr. Jesper Riedler, Dr. Michael Schröder\u003c/p\u003e\n\n\u003ch2\u003eProjektleiter\u003c/h2\u003e\n\n\u003cp\u003e\u003ca href=\"https://www.zew.de/team/msc\"\u003eDr. Michael Schröder\u003c/a\u003e\u003c/p\u003e\n\n\u003cp\u003eTel.: 0621/1235-368\u003c/p\u003e\n\n\u003cp\u003eEmail: michael.schroeder@zew.de\u003c/p\u003e\n\n\u003ch2\u003eTechnischer Ansprechpartner\u003c/h2\u003e\n\n\u003cp\u003e\u003ca href=\"https://www.zew.de/team/pbu\"\u003ePeter Buchmann\u003c/a\u003e\u003c/p\u003e\n\n\u003cp\u003eTel.: 0621/1235-165\u003c/p\u003e\n\n\u003cp\u003eEmail: peter.buchmann@zew.de\u003c/p\u003e\n\n\u003ch2\u003eHinweise\u003c/h2\u003e\n\n\u003cul\u003e\n\u003cli\u003e\u003cp\u003eDurch Klicken auf \u003ccode\u003eSeite…\u003c/code\u003e werden Ihre Antworten gespeichert und Sie gelangen zur jeweils nächsten Seite.\u003c/p\u003e\u003c/li\u003e\n\n\u003cli\u003e\u003cp\u003eBei einer Unterbrechung (Schließen des Browsers) blei\u0026shy;ben Ihre Antworten erhalten und können später über Ihren persönlichen Link wieder aufgerufen und geändert werden.\u003c/p\u003e\u003c/li\u003e\n\n\u003cli\u003e\u003cp\u003eAm Ende der Befragung können Sie den Fragebogen abschließen, so dass keine weiteren Änderungen möglich sind.\u003c/p\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\n\u003ch2\u003eDa\u0026shy;tenschutz\u003c/h2\u003e\n\n\u003cul\u003e\n\u003cli\u003e\u003cp\u003eHier finden Sie unsere \u003ca href=\"https://www.zew.de/da\u0026shy;tenschutz/\"\u003eDa\u0026shy;tenschutz-Grundlagen\u003c/a\u003e.\u003c/p\u003e\u003c/li\u003e\n\n\u003cli\u003e\u003cp\u003eIhre An\u0026shy;gaben werden streng vertraulich behandelt.\u003c/p\u003e\u003c/li\u003e\n\n\u003cli\u003e\u003cp\u003eDie Auswertung Ihrer Antworten erfolgt als \u003ca href=\"https://de.wikipedia.org/wiki/Panelda\u0026shy;ten\"\u003ePanel-Da\u0026shy;tensatz\u003c/a\u003e in anonymisierter Form.\u003c/p\u003e\u003c/li\u003e\n\n\u003cli\u003e\u003cp\u003eIhre Da\u0026shy;ten werden auf einem geschützten Server im ZEW Hauptgebäude gespeichert, auf den nur Mit\u0026shy;glieder des ZEW Teams für den Finanzmarkttest Zugriff haben.\u003c/p\u003e\u003c/li\u003e\n\n\u003cli\u003e\u003cp\u003eZusätzlich bitten wir um Ihr Einverständnis, dass wir Ihre Antworten intern mit Ihrer geschäftlichen Identität verknüpfen.\u003c/p\u003e\u003c/li\u003e\n\n\u003cli\u003e\u003cp\u003eIhre geschäftliche Identität besteht aus Ihrem Namen, Ihrer Funktion, geschäftl. Email und Telefonnummer, Arbeitgeber und Teilnahmebeginn.\u003c/p\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\n\t\u003c/div\u003e  \u003c!-- markdown --\u003e\n",
- 								"en": "\n\t\u003cdiv class='markdown'\u003e\n\u003ch1\u003eImprint\u003c/h1\u003e\n\n\u003cp\u003eCentre for European Eco\u0026shy;nom\u0026shy;ic Re\u0026shy;search (ZEW) Mannheim\u003c/p\u003e\n\n\u003cp\u003ePresident: Prof. Achim Wambach, Ph.D.\u003c/p\u003e\n\n\u003cp\u003eRe\u0026shy;search Department:\u003cbr /\u003e\nIn\u0026shy;ter\u0026shy;na\u0026shy;tion\u0026shy;al Finance and Financial Management\u003c/p\u003e\n\n\u003cp\u003ePost box 10 34 43\u003cbr /\u003e\n68034 Mannheim\u003c/p\u003e\n\n\u003cp\u003eTel.  -148 / -311 / -368\u003c/p\u003e\n\n\u003cp\u003eTeam:\u003cbr /\u003e\nFrank Brückbauer, Dr. Jesper Riedler, Dr. Michael Schröder\u003c/p\u003e\n\n\u003ch2\u003eProject lead\u003c/h2\u003e\n\n\u003cp\u003e\u003ca href=\"https://www.zew.de/en/team/msc\"\u003eDr. Michael Schröder\u003c/a\u003e\u003c/p\u003e\n\n\u003cp\u003eTel.: 0621/1235-368\u003c/p\u003e\n\n\u003cp\u003eEmail: michael.schroeder@zew.de\u003c/p\u003e\n\n\u003ch2\u003eTechnical contact\u003c/h2\u003e\n\n\u003cp\u003e\u003ca href=\"https://www.zew.de/en/team/pbu\"\u003ePeter Buchmann\u003c/a\u003e\u003c/p\u003e\n\n\u003cp\u003eTel.: 0621/1235-165\u003c/p\u003e\n\n\u003cp\u003eEmail: peter.buchmann@zew.de\u003c/p\u003e\n\n\u003ch2\u003eInstructions\u003c/h2\u003e\n\n\u003cul\u003e\n\u003cli\u003e\u003cp\u003eBy clicking \u003ccode\u003ePage…\u003c/code\u003e your an\u0026shy;swers will be saved and you progress to the next page.\u003c/p\u003e\u003c/li\u003e\n\n\u003cli\u003e\u003cp\u003eIn case of an interruption (closing of the web browser) your an\u0026shy;swers re\u0026shy;main saved. You can re-use your personal link to continue and change your an\u0026shy;swers.\u003c/p\u003e\u003c/li\u003e\n\n\u003cli\u003e\u003cp\u003eAt the end you can finalize the questionnaire preventing further changes.\u003c/p\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\n\u003ch3\u003ePrivacy Protection\u003c/h3\u003e\n\n\u003cul\u003e\n\u003cli\u003e\u003cp\u003ePlease notice our \u003ca href=\"https://www.zew.de/en/commitment-to-data-protection\"\u003eprivacy protection policy\u003c/a\u003e.\u003c/p\u003e\u003c/li\u003e\n\n\u003cli\u003e\u003cp\u003eYour data will we treated strictly confidential.\u003c/p\u003e\u003c/li\u003e\n\n\u003cli\u003e\u003cp\u003eData processing is done as as \u003ca href=\"https://en.wikipedia.org/wiki/Panel_data\"\u003epanel data set\u003c/a\u003e in anonymized form.\u003c/p\u003e\u003c/li\u003e\n\n\u003cli\u003e\u003cp\u003eYour data will be stored on a protected server on the premises of ZEW Ltd. Only members of the financial markets team have access to this server.\u003c/p\u003e\u003c/li\u003e\n\n\u003cli\u003e\u003cp\u003eIn addition we ask for permission to internally as\u0026shy;so\u0026shy;ci\u0026shy;ate your an\u0026shy;swers with your busi\u0026shy;ness identity.\u003c/p\u003e\u003c/li\u003e\n\n\u003cli\u003e\u003cp\u003eYour busi\u0026shy;ness identity consists of name, role, work phone and email, employer and start of contribution.\u003c/p\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\n\t\u003c/div\u003e  \u003c!-- markdown --\u003e\n"
- 							},
- 							"col_span_label": 1
+ 							"type": "dyn-textblock",
+ 							"param": "site-imprint.md",
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"dynamic_func": "RenderStaticContent"
  						}
  					]
  				}

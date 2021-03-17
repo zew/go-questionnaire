@@ -2,14 +2,11 @@ package fmt
 
 import (
 	"fmt"
-	"log"
-	"strings"
 
 	"github.com/zew/go-questionnaire/cfg"
 	"github.com/zew/go-questionnaire/css"
 	"github.com/zew/go-questionnaire/ctr"
 	"github.com/zew/go-questionnaire/qst"
-	"github.com/zew/go-questionnaire/tpl"
 	"github.com/zew/go-questionnaire/trl"
 )
 
@@ -112,23 +109,31 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			}
 			{
 				inp := gr.AddInput()
-				inp.Type = "textblock"
+				inp.Type = "dyn-textblock"
+				inp.DynamicFunc = "RenderStaticContent"
+				inp.Param = "page-0-data-protection.md"
 				inp.ColSpan = 1
 				inp.ColSpanLabel = 1
-				impr := trl.S{}
-				for _, lc := range q.LangCodes {
-					w1 := &strings.Builder{}
-					err := tpl.RenderStaticContent(
-						w1, "page-0-data-protection.md", q.Survey.Type, lc,
-					)
-					if err != nil {
-						log.Print(err)
-					}
-					impr[lc] = w1.String()
-
-				}
-				inp.Label = impr
 			}
+			// {
+			// 	inp := gr.AddInput()
+			// 	inp.Type = "textblock"
+			// 	inp.ColSpan = 1
+			// 	inp.ColSpanLabel = 1
+			// 	impr := trl.S{}
+			// 	for _, lc := range q.LangCodes {
+			// 		w1 := &strings.Builder{}
+			// 		err := tpl.RenderStaticContent(
+			// 			w1, "page-0-data-protection.md", q.Survey.Type, lc,
+			// 		)
+			// 		if err != nil {
+			// 			log.Print(err)
+			// 		}
+			// 		impr[lc] = w1.String()
+
+			// 	}
+			// 	inp.Label = impr
+			// }
 		}
 
 		// gr1
@@ -237,8 +242,10 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 		page.ValidationFuncName = "fmtPage1"
 		page.ValidationFuncMsg = trl.S{
-			"de": "Summiert sich nicht zu 100. Wirklich weiter?",
-			"en": "Does not add up. Really continue?",
+			// "de": "Summiert sich nicht zu 100. Wirklich weiter?",
+			// Möchten Sie dies ändern?
+			"de": "Ihre Antworten auf Frage 2b addieren sich nicht zu 100%. Wirklich weiter?",
+			"en": "Your answers to question 2b dont add up to 100%. Continue anyway?",
 		}
 
 		// gr0
@@ -547,6 +554,13 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		page.Label = trl.S{"de": "Aktienmärkte", "en": "Stock Markets"}
 		page.Short = trl.S{"de": "Aktien-<br>märkte", "en": "Stock<br>Markets"}
 		page.Style = css.DesktopWidthMax(page.Style, "36rem")
+
+		page.ValidationFuncName = "fmtPage3"
+		page.ValidationFuncMsg = trl.S{
+			// Möchten Sie dies ändern?
+			"de": "Ihre Punktprognose für den DAX in sechs Monaten liegt nicht in dem von Ihnen angegebenen Intervall. Wirklich weiter?",
+			"en": "Your forcecast for the DAX in six months is not inside your MIN/MAX interval. Continue anyway?",
+		}
 
 		rowLabelsUncorrelatedAssets := []trl.S{
 			{
@@ -950,7 +964,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "textarea"
-				inp.Name = "remark"
+				inp.Name = "comment"
 				inp.MaxChars = 300
 				inp.ColSpanLabel = 0
 				inp.ColSpanControl = 1
@@ -1060,22 +1074,30 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			}
 			{
 				inp := gr.AddInput()
-				inp.Type = "textblock"
+				inp.Type = "dyn-textblock"
+				inp.DynamicFunc = "RenderStaticContent"
+				inp.Param = "site-imprint.md"
+				inp.ColSpan = 1
 				inp.ColSpanLabel = 1
-				impr := trl.S{}
-				for _, lc := range q.LangCodes {
-					w1 := &strings.Builder{}
-					err := tpl.RenderStaticContent(
-						w1, "site-imprint.md", q.Survey.Type, lc,
-					)
-					if err != nil {
-						log.Print(err)
-					}
-					impr[lc] = w1.String()
-
-				}
-				inp.Label = impr
 			}
+			// {
+			// 	inp := gr.AddInput()
+			// 	inp.Type = "textblock"
+			// 	inp.ColSpanLabel = 1
+			// 	impr := trl.S{}
+			// 	for _, lc := range q.LangCodes {
+			// 		w1 := &strings.Builder{}
+			// 		err := tpl.RenderStaticContent(
+			// 			w1, "site-imprint.md", q.Survey.Type, lc,
+			// 		)
+			// 		if err != nil {
+			// 			log.Print(err)
+			// 		}
+			// 		impr[lc] = w1.String()
+
+			// 	}
+			// 	inp.Label = impr
+			// }
 		}
 	}
 

@@ -313,7 +313,7 @@ func (q *QuestionnaireT) ComputeDynamicContent(idx int) error {
 					if _, ok := dynFuncs[inp.DynamicFunc]; !ok {
 						return fmt.Errorf("'%v' points to dynamic func '%v()' - which does not exist or is not registered", inp.Name, inp.DynamicFunc)
 					}
-					str, err := dynFuncs[inp.DynamicFunc](q)
+					str, err := dynFuncs[inp.DynamicFunc](q, inp.Param)
 					if err != nil {
 						return fmt.Errorf("'%v' points to dynamic func '%v()' - which returned error %v", inp.Name, inp.DynamicFunc, err)
 					}

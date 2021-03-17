@@ -410,7 +410,7 @@ func Delete(fileName string) error {
 		log.Printf("Error deleting %v from bucket: %v", fileName, err)
 		return err
 	}
-	log.Printf("File %v successfully deleted from bucket", fileName)
+	// log.Printf("File %v successfully deleted from bucket", fileName)
 	return nil
 }
 

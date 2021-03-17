@@ -110,7 +110,8 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 				inp.ColSpanControl = 1
 				inp.Min = 0
 				inp.Max = 20
-				inp.MaxChars = 3
+				inp.Step = 0.1
+				inp.MaxChars = 4
 				inp.Label = trl.S{
 					"de": nextQ(i),
 					"en": nextQ(i),
@@ -154,7 +155,8 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 			inp.ColSpanControl = 1
 			inp.Min = 0
 			inp.Max = 20
-			inp.MaxChars = 3
+			inp.Step = 0.1
+			inp.MaxChars = 4
 			inp.Label = trl.S{
 				"de": nextY(i),
 				"en": nextY(i),

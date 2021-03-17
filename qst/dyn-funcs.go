@@ -1,16 +1,24 @@
 package qst
 
 import (
+	"bytes"
 	"fmt"
+	"io"
+	"io/ioutil"
 	"log"
+	"os"
+	"path"
 	"strings"
 	"time"
 
+	"github.com/pkg/errors"
+	"github.com/russross/blackfriday"
 	"github.com/zew/go-questionnaire/cfg"
+	"github.com/zew/go-questionnaire/cloudio"
 	"github.com/zew/go-questionnaire/trl"
 )
 
-type dynFuncT func(*QuestionnaireT) (string, error)
+type dynFuncT func(*QuestionnaireT, string) (string, error)
 
 var dynFuncs = map[string]dynFuncT{
 	"RepsonseStatistics":             RepsonseStatistics,
@@ -18,13 +26,14 @@ var dynFuncs = map[string]dynFuncT{
 	"HasEuroQuestion":                ResponseTextHasEuro,
 	"FederalStateAboveOrBelowMedian": FederalStateAboveOrBelowMedian,
 	"PatLogos":                       PatLogos,
+	"RenderStaticContent":            RenderStaticContent,
 }
 
 var skipInputNames = map[string]map[string]bool{
 	"fmt": {
 		"selbst":   true,
 		"contact":  true,
-		"remark":   true,
+		"comment":  true,
 		"finished": true,
 	},
 }
@@ -62,7 +71,7 @@ func (q *QuestionnaireT) Statistics() (int, int, float64) {
 
 // RepsonseStatistics returns the percentage of
 // answers responded to.
-func RepsonseStatistics(q *QuestionnaireT) (string, error) {
+func RepsonseStatistics(q *QuestionnaireT, paramSet string) (string, error) {
 
 	responses, inputs, pct := q.Statistics()
 	ct := q.Survey.Deadline
@@ -79,7 +88,7 @@ func RepsonseStatistics(q *QuestionnaireT) (string, error) {
 }
 
 // PersonalLink returns the entry link
-func PersonalLink(q *QuestionnaireT) (string, error) {
+func PersonalLink(q *QuestionnaireT, paramSet string) (string, error) {
 	closed := !q.ClosingTime.IsZero()
 	ret := ""
 	if closed {
@@ -93,7 +102,7 @@ func PersonalLink(q *QuestionnaireT) (string, error) {
 }
 
 // ResponseTextHasEuro yields texts => want to keep € - want to have €
-func ResponseTextHasEuro(q *QuestionnaireT) (string, error) {
+func ResponseTextHasEuro(q *QuestionnaireT, paramSet string) (string, error) {
 
 	if q.Attrs == nil {
 
@@ -157,7 +166,7 @@ func ResponseTextHasEuro(q *QuestionnaireT) (string, error) {
 
 // FederalStateAboveOrBelowMedian returns "besser" or "schlechter";
 // depending on the user's federal state education ranking
-func FederalStateAboveOrBelowMedian(q *QuestionnaireT) (string, error) {
+func FederalStateAboveOrBelowMedian(q *QuestionnaireT, paramSet string) (string, error) {
 
 	attr1, ok := q.Attrs["aboveOrBelowMedian"]
 
@@ -169,7 +178,7 @@ func FederalStateAboveOrBelowMedian(q *QuestionnaireT) (string, error) {
 }
 
 // PatLogos - only for the img src URLs
-func PatLogos(q *QuestionnaireT) (string, error) {
+func PatLogos(q *QuestionnaireT, paramSet string) (string, error) {
 
 	return fmt.Sprintf(
 		`
@@ -190,5 +199,117 @@ func PatLogos(q *QuestionnaireT) (string, error) {
 		cfg.Pref("/img/pat/uni-zurich.png"),
 		cfg.Pref("/img/pat/zew.png"),
 	), nil
+
+}
+
+// RenderStaticContent - http request time display of a markdown file
+func RenderStaticContent(q *QuestionnaireT, paramSet string) (string, error) {
+
+	w1 := &strings.Builder{}
+	err := RenderStaticContentInner(
+		w1, paramSet, q.Survey.Type, q.LangCode,
+	)
+	if err != nil {
+		log.Print(err)
+	}
+
+	return w1.String(), err
+
+}
+
+type staticPrefixT string                     // significant url path fragment
+var packageDocPrefix = staticPrefixT("/doc/") // application singleton
+
+// this is a damn copy of tpl.RenderStaticContent
+func RenderStaticContentInner(w io.Writer, subPth, site, lang string) error {
+
+	var (
+		bts []byte
+		err error
+	)
+
+	// special file path: README.md is read directly from the app root via classic ioutil
+	if strings.HasSuffix(subPth, "README.md") {
+		bts, err = ioutil.ReadFile("./README.md")
+		if err != nil {
+			s := fmt.Sprintf("MarkdownH: cannot open README.md in app root: %v", err)
+			log.Printf(s)
+			return errors.Wrap(err, s)
+		}
+		// rewrite links in README.MD from app root
+		//    ./app-bucket/content/somedir/my-img.png
+		// to
+		//          /urlprefix/doc/somedir/my-img.png
+		//                    /doc/somedir/my-img.png  (without prefix)
+		{
+			needle := []byte("./app-bucket/content/")
+			subst := []byte(cfg.PrefTS(string(packageDocPrefix)))
+			bts = bytes.Replace(bts, needle, subst, -1)
+		}
+
+	} else {
+		pth := path.Join(".", "content", site, lang, subPth) // not filepath; cloudio always has forward slash
+		bts, err = cloudio.ReadFile(pth)
+		if err != nil {
+			if errors.Is(err, os.ErrNotExist) {
+				bts, err = cloudio.ReadFile(path.Join(".", "content", site, subPth))
+				if errors.Is(err, os.ErrNotExist) {
+					bts, err = cloudio.ReadFile(path.Join(".", "content", subPth))
+				}
+			}
+		}
+		if err != nil {
+			s := fmt.Sprintf("MarkdownH: cannot open markdown %v or upwards: %v", pth, err)
+			log.Printf(s)
+			return errors.Wrap(err, s)
+		}
+
+		{
+			// static and dynamic link back
+			needle1 := []byte("(./../../../../../../README.md")
+			needle2 := []byte("(./../../../../../README.md")
+			needle3 := []byte("(./../../../../README.md")
+			subst := []byte("(" + cfg.Pref("/doc/README.md"))
+			bts = bytes.Replace(bts, needle1, subst, -1)
+			bts = bytes.Replace(bts, needle2, subst, -1)
+			bts = bytes.Replace(bts, needle3, subst, -1)
+		}
+
+		{
+			// relative links between static files dont work, if browser url has no trailing slash;
+			// rewrite
+			//                   ./linux-instructions.md
+			// to
+			//     ./urlprefix/doc/linux-instructions.md
+			needle := []byte("(./")
+			subst := []byte("(" + cfg.PrefTS("/doc/"))
+			bts = bytes.Replace(bts, needle, subst, -1)
+		}
+
+	}
+
+	// rewrite Links from static content to back application:
+	//     {{AppPrefix}}
+	// to
+	//     /urlprefix/
+	bts = bytes.Replace(bts, []byte("/{{AppPrefix}}"), []byte(cfg.Pref()), -1)
+
+	// Since blackfriday version 1.52, bullet lists only work for UNIX line breaks
+	// bts = bytes.ReplaceAll(bts, []byte("\r\n"), []byte("\n"))
+
+	fmt.Fprint(w, "\n\t<div class='markdown'>\n")
+
+	ext := path.Ext(subPth)
+	if ext == ".html" {
+		fmt.Fprint(w, string(bts)) // html direct
+	} else {
+		fmt.Fprint(w, string(blackfriday.Run(bts))) // render markdown
+	}
+
+	fmt.Fprint(w, "\n\t</div>  <!-- markdown -->\n")
+
+	// output += "<br>\n<br>\n<br>\n<p style='font-size: 75%;'>\nRendered by russross/blackfriday</p>\n" // Inconspicuous rendering marker
+
+	return nil
 
 }

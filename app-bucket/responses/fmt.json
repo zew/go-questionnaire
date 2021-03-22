@@ -18,7 +18,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "d6cd82acce2d3397eae173cdaf5b52b33f5a7b41f366525ac25f77f6a6826ae6",
+ 	"md_5": "262f89721e0a816f006958f1fac2e036244f3915aae786ec8068b5c85f475965",
  	"lang_codes": [
  		"de",
  		"en"
@@ -1304,6 +1304,7 @@
  							"name": "y_recession_q0",
  							"type": "number",
  							"max_chars": 4,
+ 							"step": 1,
  							"max": 100,
  							"label": {
  								"de": "Aktuelles Quartal",
@@ -1321,6 +1322,7 @@
  							"name": "y_recession_q1",
  							"type": "number",
  							"max_chars": 4,
+ 							"step": 1,
  							"max": 100,
  							"label": {
  								"de": "Folgendes Quartal",
@@ -2806,7 +2808,7 @@
  							"value_radio": "4"
  						},
  						{
- 							"name": "dow_usa",
+ 							"name": "sto_usa",
  							"type": "radio",
  							"label": {
  								"de": "Dow Jones (USA)",
@@ -2833,19 +2835,19 @@
  							}
  						},
  						{
- 							"name": "dow_usa",
+ 							"name": "sto_usa",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "dow_usa",
+ 							"name": "sto_usa",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "dow_usa",
+ 							"name": "sto_usa",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,

@@ -146,6 +146,14 @@ var coreTranslations = Map{
 		"it": "Pagina",
 		"pl": "Strona",
 	},
+	"continue_to_page_x": {
+		"en": "Continue to page %v",
+		"de": "Weiter zu Seite %v",
+		"es": "Continuar a la pagina %v",
+		"fr": "Continuer à la page %v",
+		"it": "Continua alla pagina %v",
+		"pl": "Przejdź do strony %v",
+	},
 	"pages": {
 		"en": "Pages",
 		"de": "Seiten",
@@ -187,6 +195,14 @@ var coreTranslations = Map{
 		"pl": "Końcu",
 	},
 	// error stuff
+	"valid_entry": {
+		"de": "Bitte geben Sie einen gültigen Wert ein.",
+		"en": "Please enter a valid value",
+		"es": "Por favor ingrese una cifra válida",
+		"fr": "Veuillez entrer une valeur valide",
+		"it": "Per favore inserisci un valore valido",
+		"pl": "Wprowadź prawidłową wartość",
+	},
 	"correct_errors": {
 		"de": "Bitte korrigieren Sie die unten angezeigten Fehler.",
 		"en": "Please correct the errors displayed below.",

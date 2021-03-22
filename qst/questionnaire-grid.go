@@ -7,6 +7,7 @@ import (
 	"sort"
 	"strings"
 
+	"github.com/zew/go-questionnaire/cfg"
 	"github.com/zew/go-questionnaire/css"
 )
 
@@ -319,6 +320,15 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 			placeHolder = fmt.Sprintf("placeholder='%v'", inp.Placeholder.TrSilent(langCode))
 		}
 
+		onInvalid := ""
+		if inp.OnInvalid.TrSilent(langCode) != "" {
+			onInvalid = fmt.Sprintf("oninvalid='setCustomValidity(\"%v\")'", inp.OnInvalid.TrSilent(langCode))
+		} else {
+			if inp.Type == "number" {
+				onInvalid = fmt.Sprintf("oninvalid='setCustomValidity(\"%v\")'", cfg.Get().Mp["valid_entry"].TrSilent(langCode))
+			}
+		}
+
 		autocomplete := ""
 		if inp.Type == "text" {
 			autocomplete = "autocomplete='off'"
@@ -328,13 +338,13 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 			`<input type='%v'  %v  
 				name='%v' id='%v' title='%v %v' 
 				style='%v'  
-				size='%v' maxlength=%v min='%v' max='%v' %v %v value='%v' %v />
+				size='%v' maxlength=%v min='%v' max='%v' %v %v %v value='%v' %v />
 			`,
 			inp.Type, inputMode,
 			nm, fmt.Sprintf("%v%v", nm, inp.ValueRadio), inp.Label.TrSilent(q.LangCode), inp.Desc.TrSilent(q.LangCode),
 			width,
 			inp.MaxChars, inp.MaxChars, inp.Min, inp.Max,
-			placeHolder, autocomplete,
+			placeHolder, onInvalid, autocomplete,
 			rspvl, checked,
 		)
 

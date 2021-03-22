@@ -89,10 +89,11 @@ type inputT struct {
 	Type  string `json:"type,omitempty"`  // see implementedTypes
 	Param string `json:"param,omitempty"` // for dyn-text - name of parameter set
 
-	MaxChars    int     `json:"max_chars,omitempty"` // input chars; => SIZE for input, MAXLENGTH for textarea, text; also used for width
-	Step        float64 `json:"step,omitempty"`      // for number input:  stepping interval
-	Min         float64 `json:"min,omitempty"`       //      ~
-	Max         float64 `json:"max,omitempty"`       //      ~
+	MaxChars    int     `json:"max_chars,omitempty"`  // input chars; => SIZE for input, MAXLENGTH for textarea, text; also used for width
+	Step        float64 `json:"step,omitempty"`       // for number input:  stepping interval
+	Min         float64 `json:"min,omitempty"`        //      ~
+	Max         float64 `json:"max,omitempty"`        //      ~
+	OnInvalid   trl.S   `json:"on_invalid,omitempty"` // message for  oninvalid="this.setCustomValidity('msg')"
 	Placeholder trl.S   `json:"placeholder,omitempty"`
 
 	Label     trl.S  `json:"label,omitempty"`
@@ -669,9 +670,13 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 		footer.Cols = 2
 
 		lblNext := cfg.Get().Mp["page"]
+		lblNext = cfg.Get().Mp["continue_to_page_x"]
 		cloneNext := trl.S{}
 		for k, v := range lblNext {
-			cloneNext[k] = fmt.Sprintf(" &nbsp; &nbsp; %v %v &nbsp; &nbsp; ", v, q.NextNaviNum())
+			cloneNext[k] = fmt.Sprintf(" &nbsp; &nbsp; %v &nbsp; &nbsp; ", v)
+		}
+		for k := range lblNext {
+			cloneNext[k] = fmt.Sprintf(cloneNext[k], q.NextNaviNum())
 		}
 		lblPrev := cfg.Get().Mp["previous"]
 

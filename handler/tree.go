@@ -272,9 +272,34 @@ func (tr *TreeT) NavHTML(w io.Writer, r *http.Request, isLogin, isAdmin bool, lv
 			navURL = cfg.Pref(tr.Node.Urls[0])
 		}
 
+		/*
+			regular case for determining is-active
+
+			notice, that
+			Node.Urls dont have suffix '/'
+			except home page, which is '/'
+		*/
 		if navURL == strings.TrimSuffix(r.URL.Path, "/") || tr.Node.Active {
 			navURL = ""
 			activeClass = " is-active "
+		}
+
+		/*
+			special case for determining is-active
+
+			some parent nodes have *no* Node.Urls,
+			and can never be active
+
+			nodesNoURLs := []string{
+				"loginlougout",
+				"about",
+				"admin",
+				"language",
+				"quest-pages",
+			}
+		*/
+		if len(tr.Node.Urls) == 0 {
+			activeClass = ""
 		}
 
 		if navURL == "" {

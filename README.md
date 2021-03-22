@@ -317,13 +317,22 @@ but that remains as elusive as it did with XML.
 
 In Version 1.x, we used `fixed table`;  `float-left` and `inline-block` were rejected.
 
+Inline block suffers from the disadvantage,
+that the white space between inline block elements subtracts from the total width.
+The column width computation must be based on a compromise slack of i.e. 97.5 percent.
+
+Stacking cells wit `float:left` takes away the nice vertical middle alignment of the cells.
+
+______
+
 Since Version 2, layout is based on the `CSS grid` functionality.
 
 CSS grid documentation and concepts are directly applicable.
 
 Responsive CSS styles can be set directly in Go code,  
-or reusably composed of Go functions,  
-but not by editing CSS stylesheets.
+or can be reusably composed by Go functions.
+
+No more editing CSS classes on global, mobile and questionnaire specific level in tandem with developing rendering logic.
 
 Useful defaults and helper classes dramatically reduce CSS styling hell.
 
@@ -364,7 +373,7 @@ Styles can be influenced for `grid-container`, `grid-item`, `box` and `text` for
 
 Certain repeating desigsn are captured in reusable functions.
 
-##### DesktopWidthMax()
+##### DesktopWidthMax() for pages and groups
 
 Each element can be individually squeezed in width.
 
@@ -374,90 +383,86 @@ Mobile view width should remain at 100%.
 
 ```go
     css.DesktopWidthMax(page.Style, "36rem")
+
+    // with
+    func DesktopWidthMax(sr *StylesResponsive, s string) *StylesResponsive {
+        sr = NewStylesResponsive(sr)
+        sr.Desktop.StyleBox.WidthMax = s
+        sr.Mobile.StyleBox.WidthMax = "calc(100% - 1.2rem)"
+        return sr
+    }
+
 ```
+
+You can use `gst.GridBuilder` to create of matrix of radio controls.
 
 ![Page width](./app-bucket/content/img/page-width.png)
 
-###### Todo
+`group.Width` can be adjusted in similar fashion.  
 
-Each `group.Width` can be adjusted.  
-The group can be left-aligned (picture) or right-aligned.
+```go
+    gr.Style = css.DesktopWidthMax(gr.Style, "16rem")
+```
 
 ![Group width](./app-bucket/content/img/group-width.png)
 
-Each group has flexible number of columns.
-The number of columns is deliberately not standardized on hundred,
-so that odd distributions are possible - i.e. seven columns.
+Default alignment in desktop mode remains for group remains `left`.
+
+Default alignment in desktop mode remains for page  remains `centered`.
+
+The vertical margin below each group can be directly set via `BottomVSpacers`;  
+default is 3, amounting to 1.5 lines.
+
+##### Group grid and styling of inputs within groups
+
+Default group styling is
+
+```CSS
+
+.computed-classname {
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: 3fr 1fr 1fr 1.4fr;   /* based on group.Cols */
+    grid-column-gap: 0.4rem;
+    grid-row-gap: 0.8rem;
+}
+
+```
+
+Style debugging is done via ordinary web browser tools:
+
+![Group width](./app-bucket/content/img/css-grid-browser-debugging.png)
+
 
 ![Group columns](./app-bucket/content/img/group-columns.png)
 
-The inputs are fitted in. Usually an input occupies one column
-for its label and another column for its control part.
-These numbers are customizable, so that any distribution
-of labels and controls on an arbitrary grid is possible.
-
 ![Input width](./app-bucket/content/img/group-with-label-and-input.png)
 
-The layout engine creates new rows, if the inputs have filled up
-the number of columns defined per group.
+* Use `&nbsp;` and `<br>` in labels and suffixes to fine-tune horizontal space.
 
-* `group.Label` and `input.Label` are always in bold font weight;
-`group.Desc` and `input.Desc` are normal weight.
+##### Other styling
 
-* Use `&nbsp;` in labels, descriptions and suffixes to fine-tune horizontal space.
-
-##### Vertical spacing
-
-* Rows of each group are vertically tight.
-
-* Start a new group, to create three lines of vertical spacing;  
-this can be adjusted using `BottomVSpacers`;  
-last group per page automatically gets only 0.5 vertical spacing.
-
-##### Other
-
-Group property `OddRowsColoring` to activate alternating background
+Group property `OddRowsColoring` to activate alternating background has no effect version 2.  
+We are contemplating, whether this styling is still useful.
 
 ![Group width](./app-bucket/content/img/odd-rows-coloring.png)
 
-The table border can be set via ./templates/styles-quest-[survey].css  
-`table.bordered td { myBorderCSS }`
-
-Vertical alignment is baseline for everything outside the input tables.
-Input tables are vertically middled.
-
-We might introduce vertical alignment control in future  
-(InputT.VAlignLabel and InputT.VAlignControl).
-
-#### Rejected solutions
-
-Inline block suffers from the disadvantage, that
-the white space between inline block elements subtracts from the total width.
-The column width computation must be based on a compromise slack of i.e. 97.5 percent.
-
-Stacking cells wit `float:left` takes away the nice vertical middle alignment of the cells.
-
 ### Mobile layout
 
-go-questionnaire has a _separate_ layout for mobile clients.
-Hybrid solutions (_mobile first_) were considered complex and insufficient.
+go-questionnaire Version 1 had a _separate_ set of layout files for mobile clients  
+based `user_agent` header, computed by package `detect`.  
+Version 2 abandons this technique, moving to CSS media queries.
 
-The HTML rendering of groups and inputs remains unchanged.
-Global layout template and CSS files are different.
-Instead of progress bar and footer navigation, mobile clients get a `mobile menu`.
+Each `css.Style` is rendered into classes with two media queries.
 
-The mobile layout is free of any JavaScript.
+`Desktop` styles are default, and are overwritten by `Mobile` styles.
 
-Switching is done based on the user agent string, but can be overridden by URL parameter `mobile`:  
-0 - automatic. 1 - mobile forced. 2 - desktop forced.
-
-Table layout `fixed` must be relinguished, otherwise labels and controls are cropped on devices with very small width.
-
-Soft hyphenization is key to maintaining layout on narrow displays.  
+Soft hyphenization remains crucial to maintaining layout on narrow displays.  
 Package `trl` contains a map `hyph` containing manually hyphenized strings.  
 These are applied to all strings of any questionnaire at JSON creation time.
 
-Mobile layout was tested with `crossbrowsertesting.com`.
+There are JavaScript libraries containing hyphenization libraries.  
+This software still relies on manual adding hyphenization to package `trl`.
 
 ### Randomization for scientific studies - shuffling of input order
 
@@ -472,34 +477,6 @@ Mobile layout was tested with `crossbrowsertesting.com`.
 * `variations` should be set to the maximum number of inputs across pages.
 
 * [Shufflings can be exported for use in related applications](https://dev-domain:port/survey/shufflings-to-csv)
-
-## Optimizations
-
-* Layout: Table data is currently aligned vertically middled.  
- Sometimes it should be configurable to baseline.
-
-* The transferrer could truncate the pages from the online JSON files  
- leaving only user ID, completion time and survey data.
-
-* The generators could be compiled into independent executables.  
- They could then be executed on the command line with the parameters as JSON file.
-
-* Finish page and finish field could be harmonized.  
- Currently one can either generate one's own final page (in the example of the peu2018 survey).  
- Or one can set the "finalized" field and then gets system wide: You finished ... at ...
-
-## Open / todo
-
-* Apply attributes `autocapitalize` and `inputmode` to text inputs
-
-* Should we have a checkbox where the control comes first?
-
-* Document the label / checkbox vertical case
-
-* Why is page width 70% not rendered  
-after switch between mobile=1 and back to mobile=2 ?  
-Because the template is cached in session and  
-permanently changed in mobile view; append `reload=1` to URL
 
 ## Possible enhancements
 
@@ -599,3 +576,19 @@ Markdown | 27 | 485 | 0 | 727
 HTML | 6 | 96 | 31 | 319
 Python | 1 | 31 | 16 | 94
 Bourne | Shell | 3 | 17 | 19 | 76
+
+## Optimizations
+
+* The transferrer could truncate the pages from the online JSON files  
+ leaving only user ID, completion time and survey data.
+
+* The generators could be compiled into independent executables.  
+ They could then be executed on the command line with the parameters as JSON file.
+
+## Open / todo
+
+* Apply attributes `autocapitalize` and `inputmode` to text inputs
+
+* DesktopWidthMax for groups should not introduce horizontal margins in mobile mode
+
+* Height of the menu in level 2 in mobile view is dependent on nav-min-height

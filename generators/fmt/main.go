@@ -352,6 +352,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.ColSpanControl = 3
 				inp.Min = 0
 				inp.Max = 100
+				inp.Step = 0
 				inp.MaxChars = 4
 			}
 			{
@@ -363,6 +364,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.ColSpanControl = 3
 				inp.Min = 0
 				inp.Max = 100
+				inp.Step = 0
 				inp.MaxChars = 4
 			}
 			{
@@ -374,6 +376,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.ColSpanControl = 3
 				inp.Min = 0
 				inp.Max = 100
+				inp.Step = 0
 				inp.MaxChars = 4
 			}
 			{
@@ -423,6 +426,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 					inp.Name = "y_recession_q0"
 					inp.Min = 0
 					inp.Max = 100
+					inp.Step = 1
 					inp.MaxChars = 4
 
 					inp.ColSpan = 4
@@ -440,6 +444,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 					inp.Name = "y_recession_q1"
 					inp.Min = 0
 					inp.Max = 100
+					inp.Step = 1
 					inp.MaxChars = 4
 
 					inp.ColSpan = 4
@@ -587,7 +592,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				columnTemplate4,
 				labelsIncreaseDecrease(),
 				// []string{"euro_stoxx50", "sto_dax", "dow_jones", "sto_sse_comp_chn"},
-				[]string{"sto_ez", "sto_dax", "dow_usa", "sto_sse_comp_chn"},
+				[]string{"sto_ez", "sto_dax", "sto_usa", "sto_sse_comp_chn"},
 				radioVals4,
 				rowLabelsUncorrelatedAssets,
 			)
@@ -612,6 +617,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Name = "dax_erw"
 				inp.Min = 2000
 				inp.Max = 50000
+				inp.Step = 0
 				inp.MaxChars = 6
 
 				inp.ColSpan = 6
@@ -641,6 +647,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Name = "dax_min"
 				inp.Min = 2000
 				inp.Max = 50000
+				inp.Step = 0
 				inp.MaxChars = 6
 				inp.ColSpan = 3
 				inp.ColSpanLabel = 1
@@ -670,6 +677,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Name = "dax_max"
 				inp.Min = 2000
 				inp.Max = 50000
+				inp.Step = 0
 				inp.MaxChars = 6
 				inp.ColSpan = 2
 				inp.ColSpanControl = 2
@@ -895,6 +903,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 					inp.Name = "y_recession_q0"
 					inp.Min = 0
 					inp.Max = 100
+					inp.Step = 1
 					inp.MaxChars = 4
 
 					inp.ColSpan = 5
@@ -912,6 +921,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 					inp.Name = "y_recession_q1"
 					inp.Min = 0
 					inp.Max = 100
+					inp.Step = 1
 					inp.MaxChars = 4
 
 					inp.ColSpan = 5

@@ -18,7 +18,7 @@ func addSeasonal2(q *qst.QuestionnaireT) error {
 	page.Section = trl.S{"de": "Sonderfrage", "en": "Special"}
 	page.Label = trl.S{"de": "Prognosetreiber Inflation und Geldpolitik", "en": "Inflation and monetary policy drivers"}
 	page.Short = trl.S{"de": "Sonderfrage:<br>Inflation,<br>Geldpolitik", "en": "Special:<br>Inflation,<br>Mon. Policy"}
-	page.Style = css.DesktopWidthMax(page.Style, "60rem") // 90
+	page.Style = css.DesktopWidthMaxForPages(page.Style, "60rem") // 90
 
 	{
 		gr := page.AddGroup()

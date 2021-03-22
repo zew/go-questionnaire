@@ -302,15 +302,15 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 			width = ""
 		}
 
-		inputMode := ""
+		stepping := ""
 		if inp.Type == "number" {
 			if inp.Step != 0 {
 				if inp.Step >= 1 {
-					inputMode = fmt.Sprintf(" step='%.0f'  ", inp.Step)
+					stepping = fmt.Sprintf(" step='%.0f'  ", inp.Step)
 				} else {
 					prec := int(math.Log10(1 / inp.Step))
 					f := fmt.Sprintf(" step='%%.%vf'  ", prec)
-					inputMode = fmt.Sprintf(f, inp.Step)
+					stepping = fmt.Sprintf(f, inp.Step)
 				}
 			}
 		}
@@ -320,12 +320,15 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 			placeHolder = fmt.Sprintf("placeholder='%v'", inp.Placeholder.TrSilent(langCode))
 		}
 
+		//
+		// stackoverflow.com/questions/19122886
+		// raise invalid message - clear it
 		onInvalid := ""
 		if inp.OnInvalid.TrSilent(langCode) != "" {
-			onInvalid = fmt.Sprintf("oninvalid='setCustomValidity(\"%v\")'", inp.OnInvalid.TrSilent(langCode))
+			onInvalid = fmt.Sprintf("oninvalid='setCustomValidity(\"%v\")' oninput='setCustomValidity(\"\")'", inp.OnInvalid.TrSilent(langCode))
 		} else {
 			if inp.Type == "number" {
-				onInvalid = fmt.Sprintf("oninvalid='setCustomValidity(\"%v\")'", cfg.Get().Mp["valid_entry"].TrSilent(langCode))
+				onInvalid = fmt.Sprintf("oninvalid='setCustomValidity(\"%v\")' oninput='setCustomValidity(\"\")'", cfg.Get().Mp["valid_entry"].TrSilent(langCode))
 			}
 		}
 
@@ -340,7 +343,7 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 				style='%v'  
 				size='%v' maxlength=%v min='%v' max='%v' %v %v %v value='%v' %v />
 			`,
-			inp.Type, inputMode,
+			inp.Type, stepping,
 			nm, fmt.Sprintf("%v%v", nm, inp.ValueRadio), inp.Label.TrSilent(q.LangCode), inp.Desc.TrSilent(q.LangCode),
 			width,
 			inp.MaxChars, inp.MaxChars, inp.Min, inp.Max,

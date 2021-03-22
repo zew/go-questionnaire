@@ -26,7 +26,7 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 		"en": "Special: Short and Medium Term Economic Growth",
 	}
 	page.Short = trl.S{"de": "Wachstum", "en": "Growth"}
-	page.Style = css.DesktopWidthMax(page.Style, "42rem")
+	page.Style = css.DesktopWidthMaxForPages(page.Style, "42rem")
 
 	{
 		gr := page.AddGroup()

@@ -673,7 +673,8 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 		lblNext = cfg.Get().Mp["continue_to_page_x"]
 		cloneNext := trl.S{}
 		for k, v := range lblNext {
-			cloneNext[k] = fmt.Sprintf(" &nbsp; &nbsp; %v &nbsp; &nbsp; ", v)
+			// cloneNext[k] = fmt.Sprintf(" &nbsp; &nbsp; %v &nbsp; &nbsp; ", v)
+			cloneNext[k] = fmt.Sprintf(" &nbsp; %v &nbsp; ", v)
 		}
 		for k := range lblNext {
 			cloneNext[k] = fmt.Sprintf(cloneNext[k], q.NextNaviNum())
@@ -713,9 +714,7 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 
 	w := &strings.Builder{}
 
-	page.Style = css.NewStylesResponsive(page.Style)
-	page.Style.Desktop.StyleBox.Margin = "1.2rem auto 0 auto"
-	page.Style.Mobile.StyleBox.Margin = "0.8rem auto 0 auto"
+	page.Style = css.PageMarginsAuto(page.Style)
 	pageClass := fmt.Sprintf("pg%02v", pageIdx)
 	fmt.Fprint(w, css.StyleTag(page.Style.CSS(pageClass)))
 

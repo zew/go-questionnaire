@@ -18,7 +18,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "262f89721e0a816f006958f1fac2e036244f3915aae786ec8068b5c85f475965",
+ 	"md_5": "1b1d5cbcd888f8de6134bb67606b55cb2eaaf7ab110e29056e2bf1075aa2cb51",
  	"lang_codes": [
  		"de",
  		"en"
@@ -168,7 +168,7 @@
  						"mobile": {
  							"grid_container_style": {},
  							"box_style": {
- 								"width_max": "calc(100% - 1.2rem)"
+ 								"width_max": "none"
  							},
  							"grid_item_style": {},
  							"text_style": {}
@@ -1349,7 +1349,7 @@
  						"mobile": {
  							"grid_container_style": {},
  							"box_style": {
- 								"width_max": "calc(100% - 1.2rem)"
+ 								"width_max": "none"
  							},
  							"grid_item_style": {},
  							"text_style": {}
@@ -3226,7 +3226,7 @@
  							"grid_container_style": {},
  							"box_style": {
  								"left": "0",
- 								"width_max": "calc(100% - 1.2rem)"
+ 								"width_max": "none"
  							},
  							"grid_item_style": {},
  							"text_style": {}

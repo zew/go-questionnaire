@@ -147,12 +147,12 @@ var coreTranslations = Map{
 		"pl": "Strona",
 	},
 	"continue_to_page_x": {
-		"en": "Continue to page %v",
-		"de": "Weiter zu Seite %v",
-		"es": "Continuar a la pagina %v",
-		"fr": "Continuer à la page %v",
-		"it": "Continua alla pagina %v",
-		"pl": "Przejdź do strony %v",
+		"en": "Continue to page&nbsp;%v",
+		"de": "Weiter zu Seite&nbsp;%v",
+		"es": "Continuar a la pagina&nbsp;%v",
+		"fr": "Continuer à la page&nbsp;%v",
+		"it": "Continua alla pagina&nbsp;%v",
+		"pl": "Przejdź do strony&nbsp;%v",
 	},
 	"pages": {
 		"en": "Pages",

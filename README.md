@@ -373,72 +373,160 @@ Styles can be influenced for `grid-container`, `grid-item`, `box` and `text` for
 
 Certain repeating desigsn are captured in reusable functions.
 
-##### DesktopWidthMax() for pages and groups
-
-Each element can be individually squeezed in width.
-
-For instance, we want a max width for the page in desktop mode.  
-The page should remain horizontally _centered_.  
-Mobile view width should remain at 100%.
-
-```go
-    css.DesktopWidthMax(page.Style, "36rem")
-
-    // with
-    func DesktopWidthMax(sr *StylesResponsive, s string) *StylesResponsive {
-        sr = NewStylesResponsive(sr)
-        sr.Desktop.StyleBox.WidthMax = s
-        sr.Mobile.StyleBox.WidthMax = "calc(100% - 1.2rem)"
-        return sr
-    }
-
-```
-
-You can use `gst.GridBuilder` to create of matrix of radio controls.
+##### DesktopWidthMaxForPages()
 
 ![Page width](./app-bucket/content/img/page-width.png)
 
-`group.Width` can be adjusted in similar fashion.  
+Default alignment for pages is `centered`.
 
 ```go
-    gr.Style = css.DesktopWidthMax(gr.Style, "16rem")
+// PageMarginsAuto is called for every page - setting auto margins
+func PageMarginsAuto(sr *StylesResponsive) *StylesResponsive {
+    sr = NewStylesResponsive(sr)
+    if sr.Desktop.StyleBox.Margin == "" && sr.Mobile.StyleBox.Margin == "" {
+        sr.Desktop.StyleBox.Margin = "1.2rem auto 0 auto"  // horizontally centered via auto
+        sr.Mobile.StyleBox.Margin = "0.8rem auto 0 auto"   //   ~
+    }
+    return sr
+}
 ```
 
-![Group width](./app-bucket/content/img/group-width.png)
+Each page element can be individually capped in width.
 
-Default alignment in desktop mode remains for group remains `left`.
+For instance, we want a max width for the page in desktop view.  
+The page should remain horizontally _centered_.  
+Mobile view width should remain at maximum 100% with 0.6rem hori borders.
 
-Default alignment in desktop mode remains for page  remains `centered`.
+```go
+css.DesktopWidthMaxForPages(page.Style, "36rem")
+
+func DesktopWidthMaxForPages(sr *StylesResponsive, s string) *StylesResponsive {
+    sr = NewStylesResponsive(sr)
+    sr.Desktop.StyleBox.WidthMax = s // your max width
+    sr.Mobile.StyleBox.WidthMax = "calc(100% - 1.2rem)" // 0.6rem margin-left and -right in mobile view
+    return sr
+}
+```
 
 The vertical margin below each group can be directly set via `BottomVSpacers`;  
 default is 3, amounting to 1.5 lines.
 
-##### Group grid and styling of inputs within groups
+##### DesktopWidthMaxForGroups()
 
-Default group styling is
+Default alignment for groups is `left`.
 
-```CSS
+`group.Width` can be adjusted in similar fashion.  
 
-.computed-classname {
-    display: grid;
-    grid-auto-flow: row;
-    grid-template-columns: 3fr 1fr 1fr 1.4fr;   /* based on group.Cols */
-    grid-column-gap: 0.4rem;
-    grid-row-gap: 0.8rem;
+```go
+gr.Style = css.DesktopWidthMaxForGroups(gr.Style, "16rem")
+```
+
+![Group width](./app-bucket/content/img/group-width.png)
+
+Group retains 100% width in mobile view.
+
+##### MobileVertical() for inputs
+
+MobileVertical() makes inputs rendered horizontally in desktop view,  
+but vertically in mobile view.
+
+![alt](./app-bucket/content/img/css-input-vertical-03.png)
+
+```go
+inp.Style = css.MobileVertical(inp.Style)
+
+func MobileVertical(sr *StylesResponsive) *StylesResponsive {
+    sr = NewStylesResponsive(sr)
+    sr.Mobile.StyleGridContainer.AutoFlow = "column"
+    sr.Mobile.StyleGridContainer.TemplateColumns = "none "  // reset
+    sr.Mobile.StyleGridContainer.TemplateRows = "0.9fr 1fr" // must be more than one
+    return sr
 }
 
 ```
 
-Style debugging is done via ordinary web browser tools:
+##### Labels after control
 
-![Group width](./app-bucket/content/img/css-grid-browser-debugging.png)
+Usually the label comes first and the input second.
 
+This can be easily reversed:
+
+```go
+myInput.StyleLbl.Desktop.StyleGridItem.Order = 2 // input first in desktop view
+```
+
+Notice, that desktop styles trickle down to mobile view,  
+unless a mobile style is set
+
+```go
+myInput.StyleLbl.Mobile.StyleGridItem.Order = 1  // label first in mobile view
+```
+
+##### Free use of CSS styling
+
+Set vertical or horizontal alignment distinct from the default `stretch`
+
+```go
+myInput.StyleCtl.Desktop.StyleGridItem.JustifySelf = "end"
+```
+
+Text and box styling
+
+```go
+myInput.StyleLbl.Desktop.StyleText.AlignHorizontal = "left"
+myInput.StyleLbl.Desktop.StyleBox.Padding = "0 0 0 1rem"
+myInput.StyleLbl.Mobile.StyleBox.Padding = "0 0 0 2rem"
+```
+
+#### Combining group and input styling
+
+* `group.Cols` defines the number of columns of the group grid.
+
+* `input.ColSpan` defines the span of each input.
+
+* `input.ColSpanLabel` and `input.ColSpanControl`  
+define the span of each input's component.
 
 ![Group columns](./app-bucket/content/img/group-columns.png)
 
 ![Input width](./app-bucket/content/img/group-with-label-and-input.png)
 
 * Use `&nbsp;` and `<br>` in labels and suffixes to fine-tune horizontal space.
+
+##### qst.GridBuilder
+
+You can use `qst.GridBuilder` to create of matrix of inputs  
+with column and or row "labels" (`textblock`) and any type of
+input in any cell.
+
+See `generators.fmt.main.go` for an example.
+
+##### CSS style debugging
+
+The rendered CSS class for some group may look like the following:
+
+```CSS
+/* styles without comment are defaults */
+.computed-classname-group-1 {
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: 1fr 1fr 1fr 1fr;     /* based on group.Cols = 4 */
+    grid-column-gap: 0.4rem;
+    grid-row-gap: 0.8rem;
+}
+
+.computed-classname-group-2 {
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: 3fr 1fr 1fr 1.4fr;   /* set by group.Style....TemplateColumns */
+    grid-column-gap: 0.4rem;
+    grid-row-gap: 0.8rem;
+}
+```
+
+Style debugging can be done via ordinary web browser tools:
+
+![Group width](./app-bucket/content/img/css-grid-browser-debugging.png)
 
 ##### Other styling
 
@@ -477,26 +565,6 @@ This software still relies on manual adding hyphenization to package `trl`.
 * `variations` should be set to the maximum number of inputs across pages.
 
 * [Shufflings can be exported for use in related applications](https://dev-domain:port/survey/shufflings-to-csv)
-
-## Possible enhancements
-
-* Revolving and compressing logfiles
-
-    import "gopkg.in/natefinch/lumberjack.v2"
-    log.SetOutput(&lumberjack.Logger{
-        Filename:   LOG_FILE_LOCATION,
-        MaxSize:    500, // MB
-        MaxBackups: 3,
-        MaxAge:     28,   //days
-        Compress:   true, // disabled by default
-    })
-
-* The regular login URL was shortened.  
-Direct logins via hash-ids are also supported.  
- [A URL shortening service](https://github.com/zew/urlshort) should not be required
-
-* Hash length for login is hard coded to 5 digits.  
-We could make it configurable per questionnaire, code being cumbersome.
 
 ## About go-app-tpl - extremely technical properties
 
@@ -577,7 +645,7 @@ HTML | 6 | 96 | 31 | 319
 Python | 1 | 31 | 16 | 94
 Bourne | Shell | 3 | 17 | 19 | 76
 
-## Optimizations
+## Low prio features in consideration
 
 * The transferrer could truncate the pages from the online JSON files  
  leaving only user ID, completion time and survey data.
@@ -585,10 +653,19 @@ Bourne | Shell | 3 | 17 | 19 | 76
 * The generators could be compiled into independent executables.  
  They could then be executed on the command line with the parameters as JSON file.
 
+* Make HTML `autocapitalize` and `inputmode` available to inputs
+
+* Revolving and compressing logfiles
+
+    import "gopkg.in/natefinch/lumberjack.v2"
+    log.SetOutput(&lumberjack.Logger{
+        Filename:   LOG_FILE_LOCATION,
+        MaxSize:    500, // MB
+        MaxBackups: 3,
+        MaxAge:     28,   //days
+        Compress:   true, // disabled by default
+    })
+
 ## Open / todo
-
-* Apply attributes `autocapitalize` and `inputmode` to text inputs
-
-* DesktopWidthMax for groups should not introduce horizontal margins in mobile mode
 
 * Height of the menu in level 2 in mobile view is dependent on nav-min-height

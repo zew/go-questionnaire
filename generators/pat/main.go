@@ -46,7 +46,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		page := q.AddPage()
 		page.Label = trl.S{"de": ""}
 		page.NoNavigation = true
-		page.Style = css.DesktopWidthMax(page.Style, "36rem") // 60
+		page.Style = css.DesktopWidthMaxForPages(page.Style, "36rem") // 60
 
 		//
 		gr := page.AddGroup()
@@ -108,7 +108,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		page := q.AddPage()
 		page.Label = trl.S{"de": ""}
 		page.Short = trl.S{"de": "Stiftungen 1"}
-		page.Style = css.DesktopWidthMax(page.Style, "36rem") // 60
+		page.Style = css.DesktopWidthMaxForPages(page.Style, "36rem") // 60
 
 		page.ValidationFuncName = "patPage1"
 		page.ValidationFuncMsg = trl.S{
@@ -265,7 +265,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	page := q.AddPage()
 	page.Label = trl.S{"de": ""}
 	page.Short = trl.S{"de": "Stiftungen 2"}
-	page.Style = css.DesktopWidthMax(page.Style, "36rem") // 60
+	page.Style = css.DesktopWidthMaxForPages(page.Style, "36rem") // 60
 
 	page.ValidationFuncName = "patPage2"
 	page.ValidationFuncMsg = trl.S{
@@ -326,7 +326,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		page := q.AddPage()
 		page.Label = trl.S{"de": ""}
 		page.Short = trl.S{"de": "Stiftungen 3"}
-		page.Style = css.DesktopWidthMax(page.Style, "36rem") // 60
+		page.Style = css.DesktopWidthMaxForPages(page.Style, "36rem") // 60
 
 		page.ValidationFuncName = "patPage3"
 		page.ValidationFuncMsg = trl.S{
@@ -365,7 +365,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		page := q.AddPage()
 		page.Label = trl.S{"de": ""}
 		page.Short = trl.S{"de": "Auswertung"}
-		page.Style = css.DesktopWidthMax(page.Style, "36rem") // 60
+		page.Style = css.DesktopWidthMaxForPages(page.Style, "36rem") // 60
 
 		// gr0
 		{
@@ -593,7 +593,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		page := q.AddPage()
 		page.Label = trl.S{"de": ""}
 		page.Short = trl.S{"de": "Gruppen-<br>präferenzen"}
-		page.Style = css.DesktopWidthMax(page.Style, "36rem") // 60
+		page.Style = css.DesktopWidthMaxForPages(page.Style, "36rem") // 60
 
 		// gr0
 		{
@@ -817,7 +817,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		page := q.AddPage()
 		page.Label = trl.S{"de": ""}
 		page.Short = trl.S{"de": "Eigene Einstellung"}
-		page.Style = css.DesktopWidthMax(page.Style, "30rem")
+		page.Style = css.DesktopWidthMaxForPages(page.Style, "30rem")
 
 		grSt := css.NewStylesResponsive(nil)
 		grSt.Desktop.StyleGridContainer.GapRow = "0.1rem"
@@ -976,7 +976,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		page := q.AddPage()
 		page.Label = cfg.Get().Mp["end"]
 		page.NoNavigation = true
-		page.Style = css.DesktopWidthMax(page.Style, "30rem")
+		page.Style = css.DesktopWidthMaxForPages(page.Style, "30rem")
 
 		{
 			// Only one group => shuffling is no problem

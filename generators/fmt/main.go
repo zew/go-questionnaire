@@ -90,7 +90,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		page := q.AddPage()
 		page.Label = trl.S{"de": "Begrüßung", "en": "Greeting"}
 		page.NoNavigation = true
-		page.Style = css.DesktopWidthMax(page.Style, "36rem")
+		page.Style = css.DesktopWidthMaxForPages(page.Style, "36rem")
 
 		// gr0
 		{
@@ -142,7 +142,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			gr := page.AddGroup()
 			gr.Cols = 6
 			gr.Style = css.NewStylesResponsive(gr.Style)
-			gr.Style = css.DesktopWidthMax(gr.Style, "26rem")
+			gr.Style = css.DesktopWidthMaxForGroups(gr.Style, "26rem")
 			gr.BottomVSpacers = 2
 
 			{
@@ -238,7 +238,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		// pge.Section = trl.S{"de": "Konjunktur", "en": "Business cycle"}
 		page.Label = trl.S{"de": "Konjunktur", "en": "Business cycle"}
 		page.Short = trl.S{"de": "Konjunktur", "en": "Business cycle"}
-		page.Style = css.DesktopWidthMax(page.Style, "34rem") // 55
+		page.Style = css.DesktopWidthMaxForPages(page.Style, "34rem") // 55
 
 		page.ValidationFuncName = "fmtPage1"
 		page.ValidationFuncMsg = trl.S{
@@ -414,7 +414,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				gr := page.AddGroup()
 				gr.Cols = 4
 				gr.Style = css.NewStylesResponsive(gr.Style)
-				gr.Style = css.DesktopWidthMax(gr.Style, "16rem")
+				gr.Style = css.DesktopWidthMaxForGroups(gr.Style, "16rem")
 
 				{
 					inp := gr.AddInput()
@@ -464,7 +464,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		page := q.AddPage()
 		page.Label = trl.S{"de": "Inflation und Zinsen", "en": "Inflation and Interest Rates"}
 		page.Short = trl.S{"de": "Inflation,<br/>Zinsen", "en": "Inflation,<br/>Inter. Rates"}
-		page.Style = css.DesktopWidthMax(page.Style, "36rem")
+		page.Style = css.DesktopWidthMaxForPages(page.Style, "36rem")
 
 		// gr0
 		{
@@ -558,7 +558,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		page := q.AddPage()
 		page.Label = trl.S{"de": "Aktienmärkte", "en": "Stock Markets"}
 		page.Short = trl.S{"de": "Aktien-<br>märkte", "en": "Stock<br>Markets"}
-		page.Style = css.DesktopWidthMax(page.Style, "36rem")
+		page.Style = css.DesktopWidthMaxForPages(page.Style, "36rem")
 
 		page.ValidationFuncName = "fmtPage3"
 		page.ValidationFuncMsg = trl.S{
@@ -736,7 +736,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			// gb.MainLabel = trl.S{
 			// }
 			gr := page.AddGrid(gb)
-			gr.Style = css.DesktopWidthMax(gr.Style, "30rem")
+			gr.Style = css.DesktopWidthMaxForGroups(gr.Style, "30rem")
 
 			gr.Style.Desktop.StyleGridContainer.GapColumn = "0"
 			gr.Style.Desktop.StyleGridContainer.GapRow = "0.5rem"
@@ -754,7 +754,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		page := q.AddPage()
 		page.Label = trl.S{"de": "Währungen", "en": "Currencies"}
 		page.Short = trl.S{"de": "Währungen", "en": "Currencies"}
-		page.Style = css.DesktopWidthMax(page.Style, "36rem")
+		page.Style = css.DesktopWidthMaxForPages(page.Style, "36rem")
 
 		rowLabelsCurrencies := []trl.S{
 			{
@@ -791,7 +791,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		page := q.AddPage()
 		page.Label = trl.S{"de": "Sektoren", "en": "Sectors"}
 		page.Short = trl.S{"de": "Sektoren", "en": "Sectors"}
-		page.Style = css.DesktopWidthMax(page.Style, "36rem")
+		page.Style = css.DesktopWidthMaxForPages(page.Style, "36rem")
 
 		rowLabelsCurrencies := []trl.S{
 			{
@@ -876,7 +876,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			page := q.AddPage()
 			page.Label = trl.S{"de": "Rezession", "en": "Recession"}
 			page.Short = trl.S{"de": "Rezession", "en": "Recession"}
-			page.Style = css.DesktopWidthMax(page.Style, "36rem")
+			page.Style = css.DesktopWidthMaxForPages(page.Style, "36rem")
 
 			// gr0
 			{
@@ -952,7 +952,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		page := q.AddPage()
 		page.Label = trl.S{"de": "Abschluss", "en": "Finish"}
 		page.Short = trl.S{"de": "Abschluss", "en": "Finish"}
-		page.Style = css.DesktopWidthMax(page.Style, "36rem")
+		page.Style = css.DesktopWidthMaxForPages(page.Style, "36rem")
 
 		// gr1
 		{
@@ -1065,8 +1065,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		page := q.AddPage()
 		page.Label = trl.S{"de": "Ihre Eingaben", "en": "Summary of results"}
 		page.NoNavigation = true
-		page.Style = css.DesktopWidthMax(page.Style, "calc(100% - 1.2rem)")
-		page.Style = css.DesktopWidthMax(page.Style, "40rem")
+		page.Style = css.DesktopWidthMaxForPages(page.Style, "calc(100% - 1.2rem)")
+		page.Style = css.DesktopWidthMaxForPages(page.Style, "40rem")
 		{
 			gr := page.AddGroup()
 			gr.Cols = 1

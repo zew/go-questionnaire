@@ -300,12 +300,16 @@ func RenderStaticContentInner(w io.Writer, subPth, site, lang string) error {
 	fmt.Fprint(w, "\n\t<div class='markdown'>\n")
 
 	ext := path.Ext(subPth)
+	w1 := &strings.Builder{}
 	if ext == ".html" {
-		fmt.Fprint(w, string(bts)) // html direct
+		fmt.Fprint(w1, string(bts)) // html direct
 	} else {
-		fmt.Fprint(w, string(blackfriday.Run(bts))) // render markdown
+		fmt.Fprint(w1, string(blackfriday.Run(bts))) // render markdown
 	}
 
+	hp := trl.HyphenizeText(w1.String())
+
+	fmt.Fprint(w, hp)
 	fmt.Fprint(w, "\n\t</div>  <!-- markdown -->\n")
 
 	// output += "<br>\n<br>\n<br>\n<p style='font-size: 75%;'>\nRendered by russross/blackfriday</p>\n" // Inconspicuous rendering marker

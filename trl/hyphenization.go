@@ -42,6 +42,7 @@ var hyph = []string{
 	"Ex|port|märkte",
 	"Fi|nanz|wis|sen|schaft",
 	"Finanz|wirt|schaft",
+	"For|schung",
 	"ge|samt",
 	"Geld|po|li|tik",
 	"Groß|unter|nehmen",
@@ -108,13 +109,14 @@ var hyph = []string{
 	"wirt|schaft",
 	"wirt|schaft|lich",
 	"Wirt|schafts|politik",
+	"Wirt|schafts|for|schung",
 
 	// english
 	"ac|counts",
 	"ad|min|is|tra|tion",
 	"an|swer",
 	"ap|pli|ca|ble",
-	"ap|​pre|​ci|​ate", // ap·​pre·​ci·​ate
+	"ap|pre|ci|ate", // appreciate
 	"as|sis|tant",
 	"as|so|ci|ate",
 	"av|er|age",
@@ -124,7 +126,7 @@ var hyph = []string{
 	"Comp|etitive",
 	"Cons|umer",
 	"de|crease",
-	"de|​pre|​ci|​ate", // de·​pre·​ci·​ate
+	"de|pre|ci|ate", // "depreciate"
 	"de|te|ri|o|rate",
 	"de|vel|op|ment",
 	"Dis|agree",
@@ -144,6 +146,7 @@ var hyph = []string{
 	"in|sti|tutes",
 	"in|ter|na|tion|al",
 	"in|vest|ment",
+	"man|age|ment",
 	"mac|ro|eco|nom|ics",
 	"mi|cro|eco|nom|ics",
 	"na|tion|al|i|ty",
@@ -153,6 +156,7 @@ var hyph = []string{
 	"pes|si|mis|tic",
 	"pos|itive",
 	"pro|fes|sor",
+	"ques|tion|naire ",
 	"Re|financing",
 	"re|main",
 	"re|search",

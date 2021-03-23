@@ -58,17 +58,13 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 			}
 		}
 
-		sLbl := css.NewStylesResponsive(nil)
-		// inp.StyleLbl.Desktop.StyleGridItem.AlignSelf = "start"
-		sLbl.Desktop.StyleGridItem.JustifySelf = "start"
-		sLbl.Desktop.StyleGridItem.JustifySelf = "end"
-		sLbl.Desktop.StyleText.AlignHorizontal = "right"
+		sLbl1 := css.NewStylesResponsive(nil)
+		sLbl1.Desktop.StyleGridItem.JustifySelf = "end"
+		sLbl1.Mobile.StyleBox.Padding = "0 2.7rem 0 0.2rem"
 
-		// sLbl.Mobile.StyleText.FontSize = 85
-
-		sLbl.Desktop.StyleBox.Padding = "0 0.4rem 0 0"
-		sLbl.Mobile.StyleBox.Padding = "0 0 0.2rem 0"
-		sLbl.Mobile.StyleBox.Padding = "0"
+		sLbl2 := *sLbl1
+		sLbl2.Mobile.StyleGridItem.JustifySelf = "start"
+		sLbl2.Mobile.StyleBox.Padding = "0 1.5rem 0 0.2rem"
 
 		/*
 			Quarterly estimates.
@@ -120,13 +116,14 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 					"de": "%",
 					"en": "pct",
 				}
-				inp.StyleLbl = sLbl
+				inp.StyleLbl = sLbl1
 
 				inp.Style = css.MobileVertical(inp.Style)
 				inp.StyleLbl.Mobile.StyleGridItem.JustifySelf = "start"
 				// inp.StyleLbl.Mobile.StyleGridItem.AlignSelf = "end"
 			}
 		}
+
 		// row 3 - three years - label
 		{
 			inp := gr.AddInput()
@@ -165,12 +162,8 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 				"de": "%",
 				"en": "pct",
 			}
-			inp.StyleLbl = sLbl
-
 			inp.Style = css.MobileVertical(inp.Style)
-			inp.StyleLbl.Mobile.StyleGridItem.JustifySelf = "start"
-			// inp.StyleLbl.Mobile.StyleGridItem.AlignSelf = "end"
-
+			inp.StyleLbl = &sLbl2
 		}
 
 	}

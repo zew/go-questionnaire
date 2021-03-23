@@ -18,7 +18,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "1b1d5cbcd888f8de6134bb67606b55cb2eaaf7ab110e29056e2bf1075aa2cb51",
+ 	"md_5": "d6bb24455453af34dc06510ddeae4a83864e4feb1a3cf73e45f64bbd687528c3",
  	"lang_codes": [
  		"de",
  		"en"
@@ -3292,7 +3292,7 @@
  							"type": "label-as-input",
  							"label": {
  								"de": "auf\u0026shy;wer\u0026shy;ten",
- 								"en": "appreciate"
+ 								"en": "ap\u0026shy;pre\u0026shy;ci\u0026shy;ate"
  							},
  							"col_span_label": 2,
  							"col_span_control": 1,
@@ -3381,7 +3381,7 @@
  							"type": "label-as-input",
  							"label": {
  								"de": "ab\u0026shy;wer\u0026shy;ten",
- 								"en": "depreciate"
+ 								"en": "de\u0026shy;pre\u0026shy;ci\u0026shy;ate"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -4533,20 +4533,16 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.4rem 0 0"
- 									},
+ 									"box_style": {},
  									"grid_item_style": {
  										"justify_self": "end"
  									},
- 									"text_style": {
- 										"align_horizontal": "right"
- 									}
+ 									"text_style": {}
  								},
  								"mobile": {
  									"grid_container_style": {},
  									"box_style": {
- 										"padding": "0"
+ 										"padding": "0 2.7rem 0 0.2rem"
  									},
  									"grid_item_style": {
  										"justify_self": "start"
@@ -4593,20 +4589,16 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.4rem 0 0"
- 									},
+ 									"box_style": {},
  									"grid_item_style": {
  										"justify_self": "end"
  									},
- 									"text_style": {
- 										"align_horizontal": "right"
- 									}
+ 									"text_style": {}
  								},
  								"mobile": {
  									"grid_container_style": {},
  									"box_style": {
- 										"padding": "0"
+ 										"padding": "0 2.7rem 0 0.2rem"
  									},
  									"grid_item_style": {
  										"justify_self": "start"
@@ -4653,20 +4645,16 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.4rem 0 0"
- 									},
+ 									"box_style": {},
  									"grid_item_style": {
  										"justify_self": "end"
  									},
- 									"text_style": {
- 										"align_horizontal": "right"
- 									}
+ 									"text_style": {}
  								},
  								"mobile": {
  									"grid_container_style": {},
  									"box_style": {
- 										"padding": "0"
+ 										"padding": "0 2.7rem 0 0.2rem"
  									},
  									"grid_item_style": {
  										"justify_self": "start"
@@ -4713,20 +4701,16 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.4rem 0 0"
- 									},
+ 									"box_style": {},
  									"grid_item_style": {
  										"justify_self": "end"
  									},
- 									"text_style": {
- 										"align_horizontal": "right"
- 									}
+ 									"text_style": {}
  								},
  								"mobile": {
  									"grid_container_style": {},
  									"box_style": {
- 										"padding": "0"
+ 										"padding": "0 2.7rem 0 0.2rem"
  									},
  									"grid_item_style": {
  										"justify_self": "start"
@@ -4799,20 +4783,16 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.4rem 0 0"
- 									},
+ 									"box_style": {},
  									"grid_item_style": {
  										"justify_self": "end"
  									},
- 									"text_style": {
- 										"align_horizontal": "right"
- 									}
+ 									"text_style": {}
  								},
  								"mobile": {
  									"grid_container_style": {},
  									"box_style": {
- 										"padding": "0"
+ 										"padding": "0 1.5rem 0 0.2rem"
  									},
  									"grid_item_style": {
  										"justify_self": "start"
@@ -4859,20 +4839,16 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.4rem 0 0"
- 									},
+ 									"box_style": {},
  									"grid_item_style": {
  										"justify_self": "end"
  									},
- 									"text_style": {
- 										"align_horizontal": "right"
- 									}
+ 									"text_style": {}
  								},
  								"mobile": {
  									"grid_container_style": {},
  									"box_style": {
- 										"padding": "0"
+ 										"padding": "0 1.5rem 0 0.2rem"
  									},
  									"grid_item_style": {
  										"justify_self": "start"
@@ -4919,20 +4895,16 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.4rem 0 0"
- 									},
+ 									"box_style": {},
  									"grid_item_style": {
  										"justify_self": "end"
  									},
- 									"text_style": {
- 										"align_horizontal": "right"
- 									}
+ 									"text_style": {}
  								},
  								"mobile": {
  									"grid_container_style": {},
  									"box_style": {
- 										"padding": "0"
+ 										"padding": "0 1.5rem 0 0.2rem"
  									},
  									"grid_item_style": {
  										"justify_self": "start"
@@ -5883,7 +5855,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Zugang bleibt bestehen.  Da\u0026shy;ten können in weiteren Sitzungen geändert/ergänzt werden. ",
- 								"en": "Leave questionnaire open. Data  can be changed/completed\u0026nbsp;in later sessions.     "
+ 								"en": "Leave ques\u0026shy;tion\u0026shy;naire open. Data  can be changed/completed\u0026nbsp;in later sessions.     "
  							},
  							"col_span": 1,
  							"col_span_label": 6,
@@ -5895,7 +5867,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Fragebogen ist abgeschlossen und kann nicht mehr geöffnet werden. ",
- 								"en": "Questionnaire is finished. No more edits.                         "
+ 								"en": "Ques\u0026shy;tion\u0026shy;naire is finished. No more edits.                         "
  							},
  							"col_span": 1,
  							"col_span_label": 6,

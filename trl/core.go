@@ -293,8 +293,8 @@ var coreTranslations = Map{
 		"pl": "Aktualna Ankieta została zamknięta w %v",
 	},
 	"percentage_answered": {
-		"de": "Sie haben %v von %v Fragen beantwortet: %2.1f Prozent.  <br>\n",
-		"en": "You answered %v out of %v questions: %2.1f percent.  <br>\n",
+		"de": "Sie haben %v von %v Fragen beantwortet: %2.1f&nbsp;Prozent.  <br>\n",
+		"en": "You answered %v out of %v questions: %2.1f&nbsp;percent.  <br>\n",
 		"es": "Usted contestó %v de %v preguntas: %2.1f por ciento. <br>\n",
 		"fr": "Vous avez répondu %v sur %v questions: %2.1f pour cent. <br>\n",
 		"it": "Lei ha risposto a %v domande su %v: %2.1f per cento.  <br>\n",

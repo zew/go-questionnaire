@@ -312,6 +312,7 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 	if q.Pages[prevPage].Finished.IsZero() {
 		q.Pages[prevPage].Finished = time.Now().Truncate(time.Second)
 	}
+	savedFields := map[string]string{} // prevent repetitions for multiple radios with same name
 	for i1 := 0; i1 < len(q.Pages[prevPage].Groups); i1++ {
 		for i2 := range q.Pages[prevPage].Groups[i1].Inputs {
 			inp := q.Pages[prevPage].Groups[i1].Inputs[i2]
@@ -323,11 +324,14 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 			ok := sess.EffectiveIsSet(inp.Name)
 			if ok {
 				val := sess.EffectiveStr(inp.Name)
-				log.Printf("(Page#%2v) Setting %-24q to '%v'", prevPage, inp.Name, val)
+				savedFields[inp.Name] = val
 				val = html.EscapeString(val) // XSS prevention
 				q.Pages[prevPage].Groups[i1].Inputs[i2].Response = val
 			}
 		}
+	}
+	for inpName, val := range savedFields {
+		log.Printf("(Page#%2v) Setting %-24q to '%v'", prevPage, inpName, val)
 	}
 
 	if sess.EffectiveStr("skip_validation") == "" && r.Method == "POST" {

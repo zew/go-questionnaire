@@ -11,14 +11,14 @@
  		},
  		"year": 2021,
  		"month": 4,
- 		"deadline": "2021-04-12T17:00:00Z",
+ 		"deadline": "2021-04-28T23:59:00Z",
  		"params": [
  			{},
  			{}
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "d6bb24455453af34dc06510ddeae4a83864e4feb1a3cf73e45f64bbd687528c3",
+ 	"md_5": "7406105f66336d8a7ceafcfb7ebf64c80b4ebc358e682e6728757f3a7fd32eae",
  	"lang_codes": [
  		"de",
  		"en"
@@ -219,8 +219,12 @@
  							"name": "submitBtn",
  							"type": "button",
  							"label": {
- 								"de": "Weiter",
- 								"en": "Next"
+ 								"de": "\u0026nbsp;\u0026nbsp;\u0026nbsp;Weiter\u0026nbsp;\u0026nbsp;\u0026nbsp;",
+ 								"en": "\u0026nbsp;\u0026nbsp;\u0026nbsp;Next\u0026nbsp;\u0026nbsp;\u0026nbsp;",
+ 								"es": "\u0026nbsp;\u0026nbsp;\u0026nbsp;Continuar\u0026nbsp;\u0026nbsp;\u0026nbsp;",
+ 								"fr": "\u0026nbsp;\u0026nbsp;\u0026nbsp;Continuer\u0026nbsp;\u0026nbsp;\u0026nbsp;",
+ 								"it": "\u0026nbsp;\u0026nbsp;\u0026nbsp;Continuare\u0026nbsp;\u0026nbsp;\u0026nbsp;",
+ 								"pl": "\u0026nbsp;\u0026nbsp;\u0026nbsp;Kontynuować\u0026nbsp;\u0026nbsp;\u0026nbsp;"
  							},
  							"accesskey": "n",
  							"col_span_control": 1,
@@ -1116,7 +1120,9 @@
  								},
  								"mobile": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.8rem 0 0"
+ 									},
  									"grid_item_style": {},
  									"text_style": {}
  								}
@@ -1141,7 +1147,9 @@
  								},
  								"mobile": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.8rem 0 0"
+ 									},
  									"grid_item_style": {},
  									"text_style": {}
  								}
@@ -1303,8 +1311,8 @@
  						{
  							"name": "y_recession_q0",
  							"type": "number",
- 							"max_chars": 4,
- 							"step": 1,
+ 							"max_chars": 5,
+ 							"step": 0.01,
  							"max": 100,
  							"label": {
  								"de": "Aktuelles Quartal",
@@ -1321,8 +1329,8 @@
  						{
  							"name": "y_recession_q1",
  							"type": "number",
- 							"max_chars": 4,
- 							"step": 1,
+ 							"max_chars": 5,
+ 							"step": 0.01,
  							"max": 100,
  							"label": {
  								"de": "Folgendes Quartal",
@@ -3053,13 +3061,13 @@
  				},
  				{
  					"bottom_vspacers": 3,
- 					"columns": 3,
+ 					"columns": 4,
  					"odd_rows_coloring": true,
  					"inputs": [
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "überbewertet",
+ 								"de": "über\u0026shy;bewertet",
  								"en": "overvalued"
  							},
  							"col_span_control": 1,
@@ -3103,8 +3111,8 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "fair\u0026nbsp;bewertet",
- 								"en": "fair\u0026nbsp;valued"
+ 								"de": "fair bewertet",
+ 								"en": "fair valued"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -3147,8 +3155,52 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "unterbewertet",
+ 								"de": "unter\u0026shy;bewertet",
  								"en": "undervalued"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "keine An\u0026shy;gabe",
+ 								"en": "no an\u0026shy;swer"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -3205,25 +3257,33 @@
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "dax_fund",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
  						}
  					],
  					"style": {
  						"desktop": {
  							"grid_container_style": {
- 								"template_columns": "   1fr    1fr    1fr ",
- 								"column_gap": "0",
+ 								"template_columns": "   1fr    1fr    1fr    1fr ",
+ 								"column_gap": "0.2rem",
  								"row_gap": "0.5rem"
  							},
  							"box_style": {
  								"position": "relative",
- 								"left": "-1.1rem",
+ 								"left": "2rem",
  								"width_max": "30rem"
  							},
  							"grid_item_style": {},
  							"text_style": {}
  						},
  						"mobile": {
- 							"grid_container_style": {},
+ 							"grid_container_style": {
+ 								"column_gap": "0.9rem"
+ 							},
  							"box_style": {
  								"left": "0",
  								"width_max": "none"
@@ -4499,7 +4559,7 @@
  							"name": "pprwbipq1",
  							"type": "number",
  							"max_chars": 4,
- 							"step": 0.1,
+ 							"step": 0.01,
  							"max": 20,
  							"label": {
  								"de": "Q1 2021",
@@ -4533,7 +4593,9 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.2rem 0 0"
+ 									},
  									"grid_item_style": {
  										"justify_self": "end"
  									},
@@ -4542,7 +4604,7 @@
  								"mobile": {
  									"grid_container_style": {},
  									"box_style": {
- 										"padding": "0 2.7rem 0 0.2rem"
+ 										"padding": " 0 2.7rem 0 0.2rem"
  									},
  									"grid_item_style": {
  										"justify_self": "start"
@@ -4555,7 +4617,7 @@
  							"name": "pprwbipq2",
  							"type": "number",
  							"max_chars": 4,
- 							"step": 0.1,
+ 							"step": 0.01,
  							"max": 20,
  							"label": {
  								"de": "Q2 2021",
@@ -4589,7 +4651,9 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.2rem 0 0"
+ 									},
  									"grid_item_style": {
  										"justify_self": "end"
  									},
@@ -4598,7 +4662,7 @@
  								"mobile": {
  									"grid_container_style": {},
  									"box_style": {
- 										"padding": "0 2.7rem 0 0.2rem"
+ 										"padding": " 0 2.7rem 0 0.2rem"
  									},
  									"grid_item_style": {
  										"justify_self": "start"
@@ -4611,7 +4675,7 @@
  							"name": "pprwbipq3",
  							"type": "number",
  							"max_chars": 4,
- 							"step": 0.1,
+ 							"step": 0.01,
  							"max": 20,
  							"label": {
  								"de": "Q3 2021",
@@ -4645,7 +4709,9 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.2rem 0 0"
+ 									},
  									"grid_item_style": {
  										"justify_self": "end"
  									},
@@ -4654,7 +4720,7 @@
  								"mobile": {
  									"grid_container_style": {},
  									"box_style": {
- 										"padding": "0 2.7rem 0 0.2rem"
+ 										"padding": " 0 2.7rem 0 0.2rem"
  									},
  									"grid_item_style": {
  										"justify_self": "start"
@@ -4667,7 +4733,7 @@
  							"name": "pprwbipq4",
  							"type": "number",
  							"max_chars": 4,
- 							"step": 0.1,
+ 							"step": 0.01,
  							"max": 20,
  							"label": {
  								"de": "Q4 2021",
@@ -4701,7 +4767,9 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.2rem 0 0"
+ 									},
  									"grid_item_style": {
  										"justify_self": "end"
  									},
@@ -4710,7 +4778,7 @@
  								"mobile": {
  									"grid_container_style": {},
  									"box_style": {
- 										"padding": "0 2.7rem 0 0.2rem"
+ 										"padding": " 0 2.7rem 0 0.2rem"
  									},
  									"grid_item_style": {
  										"justify_self": "start"
@@ -4748,8 +4816,8 @@
  						{
  							"name": "pprwbipj1",
  							"type": "number",
- 							"max_chars": 4,
- 							"step": 0.1,
+ 							"max_chars": 5,
+ 							"step": 0.01,
  							"max": 20,
  							"label": {
  								"de": "2021",
@@ -4783,7 +4851,9 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.2rem 0 0"
+ 									},
  									"grid_item_style": {
  										"justify_self": "end"
  									},
@@ -4792,7 +4862,7 @@
  								"mobile": {
  									"grid_container_style": {},
  									"box_style": {
- 										"padding": "0 1.5rem 0 0.2rem"
+ 										"padding": " 0 1.5rem 0 0.2rem"
  									},
  									"grid_item_style": {
  										"justify_self": "start"
@@ -4804,8 +4874,8 @@
  						{
  							"name": "pprwbipj2",
  							"type": "number",
- 							"max_chars": 4,
- 							"step": 0.1,
+ 							"max_chars": 5,
+ 							"step": 0.01,
  							"max": 20,
  							"label": {
  								"de": "2022",
@@ -4839,7 +4909,9 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.2rem 0 0"
+ 									},
  									"grid_item_style": {
  										"justify_self": "end"
  									},
@@ -4848,7 +4920,7 @@
  								"mobile": {
  									"grid_container_style": {},
  									"box_style": {
- 										"padding": "0 1.5rem 0 0.2rem"
+ 										"padding": " 0 1.5rem 0 0.2rem"
  									},
  									"grid_item_style": {
  										"justify_self": "start"
@@ -4860,8 +4932,8 @@
  						{
  							"name": "pprwbipj3",
  							"type": "number",
- 							"max_chars": 4,
- 							"step": 0.1,
+ 							"max_chars": 5,
+ 							"step": 0.01,
  							"max": 20,
  							"label": {
  								"de": "2023",
@@ -4895,7 +4967,9 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.2rem 0 0"
+ 									},
  									"grid_item_style": {
  										"justify_self": "end"
  									},
@@ -4904,7 +4978,7 @@
  								"mobile": {
  									"grid_container_style": {},
  									"box_style": {
- 										"padding": "0 1.5rem 0 0.2rem"
+ 										"padding": " 0 1.5rem 0 0.2rem"
  									},
  									"grid_item_style": {
  										"justify_self": "start"

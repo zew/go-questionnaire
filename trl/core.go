@@ -82,12 +82,12 @@ var coreTranslations = Map{
 	},
 
 	"language": {
-		"de": "Sprache",
+		"de": "Sprache/<br>Language",
 		"en": "Language",
-		"es": "Idioma",
-		"fr": "Langue",
-		"it": "Linguaggio",
-		"pl": "Język",
+		"es": "Idioma/<br>Language",
+		"fr": "Langue/<br>Language",
+		"it": "Linguaggio/<br>Language",
+		"pl": "Język/<br>Language",
 	},
 	// corresponding to iso code suffix mp["lang_"+lc]:
 	"lang_de": {
@@ -138,6 +138,7 @@ var coreTranslations = Map{
 		"it": "Polacco",
 		"pl": "Polsku",
 	},
+	// navigation stuff
 	"page": {
 		"en": "Page",
 		"de": "Seite",
@@ -153,6 +154,14 @@ var coreTranslations = Map{
 		"fr": "Continuer à la page&nbsp;%v",
 		"it": "Continua alla pagina&nbsp;%v",
 		"pl": "Przejdź do strony&nbsp;%v",
+	},
+	"back_to_page_x": {
+		"en": "Back to page&nbsp;%v",
+		"de": "Zurück zu Seite&nbsp;%v",
+		"es": "Volver a la pagina&nbsp;%v",
+		"fr": "Retour à la page&nbsp;%v",
+		"it": "Torna alla pagina&nbsp;%v",
+		"pl": "Powrót do strony&nbsp;%v",
 	},
 	"pages": {
 		"en": "Pages",

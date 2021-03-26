@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testing input validation</title>
+
+<style>
+    :root {
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+
+    body{
+        zoom: 1.2;
+    }
+
+    .left-pane{
+        display: inline-block;
+        width: 55%;
+        padding-left: 1rem;
+    }
+
+
+    form {
+        display: inline-block;
+        width: 30%;
+        vertical-align: top;
+
+        margin-left: 2rem;
+        padding: 2rem;
+        border: 1px solid lightblue;
+        zoom: 1.4;
+    }
+
+    #myLog{
+        zoom: 0.7;
+        margin-top: 1.5rem;
+        padding: 0.2rem;
+        border: 1px solid lightblue;
+    }
+
+    h3{
+        margin: 0;
+        margin-top: 1.5rem;
+        font-size: 110%;
+    }
+
+    li {
+        line-height: 105%;
+    }
+
+    ul  h3:first-child {
+        margin-top: 0rem;
+    }
+
+    ul ul li {
+        margin:
+         0.5rem 0;
+    }
+    ul ul li + ul ul li {
+        margin-top:
+         1.8rem;
+    }
+
+    .feats {
+        display: inline-block;
+        display: block;
+        font-size: 70%;
+        margin: 0.4rem 0 ;
+    }
+
+
+</style>
+</head>
+<body>
+
+
+<ul class="left-pane">
+
+    <h3>Properties</h3>
+    
+    <ul>
+        <li>
+            <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement">Input element
+                general docs</a> <br>
+        </li>
+    
+        <li>
+            validity (<a href="https://developer.mozilla.org/en-US/docs/Web/API/ValidityState">return object docs</a>)
+        </li>
+        <li>
+            validationMessage (readonly) - could be displayed `oninvalid` in a custom div. <br>
+            But always in browser language (German).
+            Very specific, very mathematical.
+        </li>
+        <li>
+            willValidate (boolean) - false for hidden inputs - otherwise mostly true
+        </li>
+    </ul>
+    <h3>Methods</h3>
+    <ul>
+        <li>
+            checkValidity() - returns true if fine; false if invalid + fires invalid event; <br>
+            returns a compressed expression of `validity` property above
+        </li>
+        <li>
+            reportValidity() - runs checkValidity() <i>plus displays</i> validationMessage ;<br>
+            triggered automatically before form submit ; <br>
+            When to trigger? oninput? onblur?
+        </li>
+        <li>
+            setCustomValidity('my message') - <i>input becomes invalid regardless of contents</i> 
+            - form submit becomes impossible
+        </li>
+        <li>
+            stepDown(), stepUp() - nice to know
+        </li>
+    </ul>
+    
+    <h3>Events</h3>
+    
+    <ul>
+        <li>
+            input &nbsp;&nbsp; | oninput &nbsp;&nbsp; - keys, spinner clicks, mousewheel ...
+        </li>
+        <li>
+            blur &nbsp;&nbsp;&nbsp;&nbsp; | onblur &nbsp;&nbsp;&nbsp;&nbsp; 
+            - input loses focus - does not catch all possibilies
+        </li>
+        <li>
+            invalid | oninvalid - fired when an element does not satisfy its constraints <br>
+            For number inputs: Min/Max/Step.
+        </li>
+    
+    </ul>
+    
+    
+    
+    <h3>
+        Example 
+    </h3> 
+    
+    <ul>
+        <li>
+            Setting a customValidity message to an input element. 
+            <a target="_blank" href="https://stackoverflow.com/questions/10777970/can-i-mark-a-field-invalid-from-javascript"
+            >Source</a>
+        </li>
+        <li>
+            oninvalid => inp.setCustomValidity("my invalid message.")
+            makes the input element <i>unconditionally</i> invalid.
+        </li>
+        <li>
+            oninput   => inp.setCustomValidity("") makes the element valid - 
+            unless it still fails an HTML5 constraint (Min/Max/Step) triggering another `invalid`.
+        </li>
+
+        <li>
+            Setting inp.setCustomValidity("") on input 
+            will always clear the message - 
+            and <i>if + after</i> the new oninvalid event reoccurs
+            flag it again
+        </li>
+    
+    </ul>
+    
+    
+    <h3>CSS pseudo classes</h3>
+    
+    
+    <ul>
+        <li>
+            <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/:invalid"
+            >invalid</a> <br>  and nice to know: 
+            <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/:out-of-range"
+            >out-of-range</a> 
+        </li>
+        <li>
+            <a target="_blank"
+                href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/number#validation">Validation
+                example</a>
+            using pseudo classes and direct sibling:after. <br>
+    
+            This is dependent on the error div <i>immediately</i> succeeding the input. 
+            Needs custom invalid message or icon from external. Instant feedback. No JS.
+    
+        </li>
+    
+    </ul>
+    
+    
+    
+    
+    <br>    
+    <a target="_blank"
+        href="https://blogs.sap.com/2019/01/16/making-number-input-accept-only-numbers-in-edgefirefox/">SAP JS extension</a>
+    </ul>
+
+<form name="frmMain" action="" >
+    <input type="number" name="input1" id="input1"
+        min="-1"
+        max="11"
+        step="2"
+
+        value="-0.5"
+    >
+    <br>
+    <br>
+
+    <input type="submit" name="submit" id="">  <br>
+
+    <a class="feats" href="#" onclick="console.log(i1.validationMessage)">Validation message log</a>
+    <a class="feats" href="#" onclick="console.log(i1.checkValidity()); console.log(i1.validity)">Check validity</a>
+    <a class="feats" href="#" onclick="console.log(i1.reportValidity())">Report validity</a>
+    <a class="feats" href="#" onclick="addCustomMessage()">Validation message custom set</a>
+
+
+
+    <div id="myLog">
+
+    </div>
+
+</form>
+
+
+<script>
+
+    var logFn = console.log;  // save the original log function for later use
+    var myLog = document.getElementById("myLog");
+    console.log = function () {
+        var line = "";
+        for (var i = 0, j = arguments.length; i < j; i++) {
+            if (typeof arguments[i] == "object") {
+                // var argX = arguments[i];
+                // var tp   = typeof argX;
+                // var content = JSON.stringify(argX);
+                // line += " " + tp + " " + content;
+                line += " " + arguments[i];
+                logFn.call(console, arguments[i]);
+            } else {
+                line += " " + arguments[i];
+            }
+        }
+        if (line.length > 0) {
+            myLog.innerHTML += line + "<br>";
+            logFn.call(console, line); // call original function if you want to
+        }
+    };
+
+
+    document.onload = function(){
+        console.log("loaded");
+    }()
+
+    var i1 = document.forms["frmMain"].elements.namedItem("input1");
+    console.log("found input 1; tag", i1.tagName, " val: ", i1.value);
+
+    console.log("validity:", i1.validity);
+
+
+    document.forms["frmMain"].onsubmit = function(){
+        console.log("submission canceled");
+        return false;
+    }()
+
+    function addCustomMessage(){
+        // i1.invalid = setCustomValidity("customized trouble message");
+        i1.setCustomValidity("customized trouble message");
+        i1.oninput = function(){
+            this.setCustomValidity("");
+        }
+        // i1.setCustomValidity("");
+    }
+
+</script>
+
+</body>
+</html>

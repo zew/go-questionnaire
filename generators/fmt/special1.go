@@ -60,11 +60,13 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 
 		sLbl1 := css.NewStylesResponsive(nil)
 		sLbl1.Desktop.StyleGridItem.JustifySelf = "end"
-		sLbl1.Mobile.StyleBox.Padding = "0 2.7rem 0 0.2rem"
+		sLbl1.Desktop.StyleBox.Padding = "0 0.2rem 0 0"
+		sLbl1.Mobile.StyleBox.Padding = " 0 2.7rem 0 0.2rem"
 
 		sLbl2 := *sLbl1
 		sLbl2.Mobile.StyleGridItem.JustifySelf = "start"
-		sLbl2.Mobile.StyleBox.Padding = "0 1.5rem 0 0.2rem"
+		sLbl2.Desktop.StyleBox.Padding = "0 0.2rem 0 0"
+		sLbl2.Mobile.StyleBox.Padding = " 0 1.5rem 0 0.2rem"
 
 		/*
 			Quarterly estimates.
@@ -106,7 +108,7 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 				inp.ColSpanControl = 1
 				inp.Min = 0
 				inp.Max = 20
-				inp.Step = 0.1
+				inp.Step = 0.01
 				inp.MaxChars = 4
 				inp.Label = trl.S{
 					"de": nextQ(i),
@@ -152,8 +154,8 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 			inp.ColSpanControl = 1
 			inp.Min = 0
 			inp.Max = 20
-			inp.Step = 0.1
-			inp.MaxChars = 4
+			inp.Step = 0.01
+			inp.MaxChars = 5
 			inp.Label = trl.S{
 				"de": nextY(i),
 				"en": nextY(i),

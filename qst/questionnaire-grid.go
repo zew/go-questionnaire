@@ -303,14 +303,17 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 		}
 
 		stepping := ""
+		excelFormat := ""
 		if inp.Type == "number" {
 			if inp.Step != 0 {
 				if inp.Step >= 1 {
 					stepping = fmt.Sprintf(" step='%.0f'  ", inp.Step)
+					excelFormat = strings.Repeat("#", int(inp.Step))
 				} else {
 					prec := int(math.Log10(1 / inp.Step))
 					f := fmt.Sprintf(" step='%%.%vf'  ", prec)
 					stepping = fmt.Sprintf(f, inp.Step)
+					excelFormat = "#." + strings.Repeat("0", prec)
 				}
 			}
 		}
@@ -318,6 +321,9 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 		placeHolder := ""
 		if inp.Placeholder.TrSilent(langCode) != "" {
 			placeHolder = fmt.Sprintf("placeholder='%v'", inp.Placeholder.TrSilent(langCode))
+		}
+		if placeHolder == "" && inp.Type == "number" {
+			placeHolder = fmt.Sprintf("placeholder='%v'", excelFormat)
 		}
 
 		//

@@ -103,3 +103,38 @@ func (s S) Left(max int) S {
 	}
 	return ret
 }
+
+// Pad with &nbsp;
+func (s S) Pad(spaces int) S {
+	ret := S{}
+	if spaces < 1 {
+		return s
+	}
+	// cloning
+	for k, v := range s {
+		ret[k] = v
+	}
+	// padding
+	for i := 0; i < spaces; i++ {
+		for k, v := range ret {
+			ret[k] = fmt.Sprintf("&nbsp;%v&nbsp;", v)
+		}
+	}
+	return ret
+}
+
+// Fill fills in the %v placeholders;
+// S is a map - thus always a pointer
+// thus we dont change the receiver,
+// but return a clone
+func (s S) Fill(args ...interface{}) S {
+	ret := S{}
+	// cloning
+	for k, v := range s {
+		ret[k] = v
+	}
+	for k, v := range ret {
+		ret[k] = fmt.Sprintf(v, args...)
+	}
+	return ret
+}

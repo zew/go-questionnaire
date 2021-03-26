@@ -671,15 +671,13 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 
 		lblNext := cfg.Get().Mp["page"]
 		lblNext = cfg.Get().Mp["continue_to_page_x"]
-		cloneNext := trl.S{}
-		for k, v := range lblNext {
-			// cloneNext[k] = fmt.Sprintf(" &nbsp; &nbsp; %v &nbsp; &nbsp; ", v)
-			cloneNext[k] = fmt.Sprintf("&nbsp;&nbsp;%v&nbsp;&nbsp;", v)
-		}
-		for k := range lblNext {
-			cloneNext[k] = fmt.Sprintf(cloneNext[k], q.NextNaviNum())
-		}
+		cloneNext := lblNext.Pad(2)
+		cloneNext = cloneNext.Fill(q.NextNaviNum())
+
 		lblPrev := cfg.Get().Mp["previous"]
+		lblPrev = cfg.Get().Mp["back_to_page_x"]
+		clonePrev := lblPrev.Pad(1)
+		clonePrev = clonePrev.Fill(q.PrevNaviNum())
 
 		if q.HasNext() {
 			inp := footer.AddInput()
@@ -689,12 +687,17 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 			inp.Label = cloneNext
 			inp.AccessKey = "n"
 			inp.ColSpanControl = 1
-			inp.Style = css.NewStylesResponsive(nil)
+
+			inp.Style = css.NewStylesResponsive(inp.Style)
 			inp.Style.Desktop.StyleGridItem.Order = 2
+
 			inp.StyleCtl = css.ItemEndMA(inp.StyleCtl)
+			inp.StyleCtl.Desktop.StyleBox.Position = "relative"
+			inp.StyleCtl.Desktop.StyleBox.Left = "3rem"
+			inp.StyleCtl.Mobile.StyleBox.Left = "0"
 		} else {
 			inp := footer.addEmptyTextblock()
-			inp.Style = css.NewStylesResponsive(nil)
+			inp.Style = css.NewStylesResponsive(inp.Style)
 			inp.Style.Desktop.StyleGridItem.Order = 2
 		}
 
@@ -703,10 +706,20 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 			inp.Type = "button"
 			inp.Name = "submitBtn"
 			inp.Response = "prev"
-			inp.Label = lblPrev
+			inp.Label = clonePrev
 			inp.AccessKey = "p"
 			inp.ColSpanControl = 1
+
+			inp.Style = css.NewStylesResponsive(inp.Style)
+			inp.Style.Desktop.StyleGridItem.AlignSelf = "end" // smaller font-size
+
+			inp.StyleCtl = css.NewStylesResponsive(inp.StyleCtl)
 			// inp.StyleCtl = css.ItemEndMA(inp.StyleCtl)
+			inp.StyleCtl.Desktop.StyleBox.Position = "relative"
+			inp.StyleCtl.Desktop.StyleBox.Left = "-2.5rem"
+			inp.StyleCtl.Mobile.StyleBox.Left = "0"
+			inp.StyleCtl.Mobile.StyleText.FontSize = 85
+
 		} else {
 			footer.addEmptyTextblock()
 		}

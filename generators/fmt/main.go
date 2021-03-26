@@ -83,8 +83,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 	q.Version = 2
 
-	recessionAtTheEnd := false
-
 	// page 0
 	{
 		page := q.AddPage()
@@ -115,25 +113,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.ColSpan = 1
 				inp.ColSpanLabel = 1
 			}
-			// {
-			// 	inp := gr.AddInput()
-			// 	inp.Type = "textblock"
-			// 	inp.ColSpan = 1
-			// 	inp.ColSpanLabel = 1
-			// 	impr := trl.S{}
-			// 	for _, lc := range q.LangCodes {
-			// 		w1 := &strings.Builder{}
-			// 		err := tpl.RenderStaticContent(
-			// 			w1, "page-0-data-protection.md", q.Survey.Type, lc,
-			// 		)
-			// 		if err != nil {
-			// 			log.Print(err)
-			// 		}
-			// 		impr[lc] = w1.String()
-
-			// 	}
-			// 	inp.Label = impr
-			// }
 		}
 
 		// gr1
@@ -220,10 +199,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Type = "button"
 				inp.Name = "submitBtn"
 				inp.Response = "1"
-				inp.Label = trl.S{
-					"de": "Weiter",
-					"en": "Next",
-				}
+				inp.Label = cfg.Get().Mp["next"].Pad(3)
 				inp.AccessKey = "n"
 				inp.ColSpanControl = 1
 				inp.StyleCtl = css.ItemEndMA(inp.StyleCtl)
@@ -311,6 +287,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 					"en": "Improvement",
 				}
 				inp.Style = css.ItemStartCA(inp.Style)
+				inp.Style.Mobile.StyleBox.Padding = "0 0.8rem 0 0"
 			}
 			{
 				inp := gr.AddInput()
@@ -321,6 +298,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 					"en": "Remain the same",
 				}
 				inp.Style = css.ItemStartCA(inp.Style)
+				inp.Style.Mobile.StyleBox.Padding = "0 0.8rem 0 0"
 			}
 			{
 				inp := gr.AddInput()
@@ -391,70 +369,66 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			}
 		}
 
-		if !recessionAtTheEnd {
-
-			// gr3a
+		// gr3a
+		{
+			gr := page.AddGroup()
+			gr.Cols = 5
+			gr.BottomVSpacers = 1
 			{
-				gr := page.AddGroup()
-				gr.Cols = 5
-				gr.BottomVSpacers = 1
-				{
-					inp := gr.AddInput()
-					inp.Type = "textblock"
-					inp.ColSpan = 5
-					inp.ColSpanLabel = 5
-					inp.Label = trl.S{
-						"de": fmt.Sprintf("<b>2c.</b> Die Wahrscheinlichkeit eines negativen BIP-Wachstums in Deutschland (Wachstum des realen & saisonbereinigten BIP zum Vorquartal) liegt bei"), //nextQ()
-						"en": fmt.Sprintf("<b>2c.</b> The probability of negative GDP growth in Germany (growth of real & seasonal adjusted GDP against previous quarter) is"),                     // nextQ()
-					}
-				}
-			}
-			// gr3b
-			{
-				gr := page.AddGroup()
-				gr.Cols = 4
-				gr.Style = css.NewStylesResponsive(gr.Style)
-				gr.Style = css.DesktopWidthMaxForGroups(gr.Style, "16rem")
-
-				{
-					inp := gr.AddInput()
-					inp.Label = trl.S{
-						"de": fmt.Sprintf("Aktuelles Quartal"),
-						"en": fmt.Sprintf("Current quarter"),
-					}
-					inp.Type = "number"
-					inp.Name = "y_recession_q0"
-					inp.Min = 0
-					inp.Max = 100
-					inp.Step = 1
-					inp.MaxChars = 4
-
-					inp.ColSpan = 4
-					inp.ColSpanLabel = 3
-					inp.ColSpanControl = 1
-					inp.Suffix = trl.S{"de": "%", "en": "pct"}
-				}
-				{
-					inp := gr.AddInput()
-					inp.Label = trl.S{
-						"de": fmt.Sprintf("Folgendes Quartal"),
-						"en": fmt.Sprintf("Next quarter"),
-					}
-					inp.Type = "number"
-					inp.Name = "y_recession_q1"
-					inp.Min = 0
-					inp.Max = 100
-					inp.Step = 1
-					inp.MaxChars = 4
-
-					inp.ColSpan = 4
-					inp.ColSpanLabel = 3
-					inp.ColSpanControl = 1
-					inp.Suffix = trl.S{"de": "%", "en": "pct"}
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.ColSpan = 5
+				inp.ColSpanLabel = 5
+				inp.Label = trl.S{
+					"de": fmt.Sprintf("<b>2c.</b> Die Wahrscheinlichkeit eines negativen BIP-Wachstums in Deutschland (Wachstum des realen & saisonbereinigten BIP zum Vorquartal) liegt bei"), //nextQ()
+					"en": fmt.Sprintf("<b>2c.</b> The probability of negative GDP growth in Germany (growth of real & seasonal adjusted GDP against previous quarter) is"),                     // nextQ()
 				}
 			}
 		}
-		// !recessionAtTheEnd
+		// gr3b
+		{
+			gr := page.AddGroup()
+			gr.Cols = 4
+			gr.Style = css.NewStylesResponsive(gr.Style)
+			gr.Style = css.DesktopWidthMaxForGroups(gr.Style, "16rem")
+
+			{
+				inp := gr.AddInput()
+				inp.Label = trl.S{
+					"de": fmt.Sprintf("Aktuelles Quartal"),
+					"en": fmt.Sprintf("Current quarter"),
+				}
+				inp.Type = "number"
+				inp.Name = "y_recession_q0"
+				inp.Min = 0
+				inp.Max = 100
+				inp.Step = 0.01
+				inp.MaxChars = 5
+
+				inp.ColSpan = 4
+				inp.ColSpanLabel = 3
+				inp.ColSpanControl = 1
+				inp.Suffix = trl.S{"de": "%", "en": "pct"}
+			}
+			{
+				inp := gr.AddInput()
+				inp.Label = trl.S{
+					"de": fmt.Sprintf("Folgendes Quartal"),
+					"en": fmt.Sprintf("Next quarter"),
+				}
+				inp.Type = "number"
+				inp.Name = "y_recession_q1"
+				inp.Min = 0
+				inp.Max = 100
+				inp.Step = 0.01
+				inp.MaxChars = 5
+
+				inp.ColSpan = 4
+				inp.ColSpanLabel = 3
+				inp.ColSpanControl = 1
+				inp.Suffix = trl.S{"de": "%", "en": "pct"}
+			}
+		}
 
 	}
 
@@ -727,22 +701,27 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 					0, 1,
 					0, 1,
 					0, 1,
+					0, 1,
 				},
 				labelsOvervaluedFairUndervalued(),
 				[]string{"dax_fund"},
-				[]string{"1", "2", "3"},
+				radioVals4,
 				nil,
 			)
 			// gb.MainLabel = trl.S{
 			// }
 			gr := page.AddGrid(gb)
 			gr.Style = css.DesktopWidthMaxForGroups(gr.Style, "30rem")
+			gr.Style = css.NewStylesResponsive(gr.Style)
 
-			gr.Style.Desktop.StyleGridContainer.GapColumn = "0"
+			gr.Style.Desktop.StyleGridContainer.GapColumn = "0.2rem"
+			gr.Style.Mobile.StyleGridContainer.GapColumn = "0.9rem" // force some wrapping in mobile
+
 			gr.Style.Desktop.StyleGridContainer.GapRow = "0.5rem"
 
 			gr.Style.Desktop.StyleBox.Position = "relative"
 			gr.Style.Desktop.StyleBox.Left = "-1.1rem"
+			gr.Style.Desktop.StyleBox.Left = "2rem"
 			gr.Style.Mobile.StyleBox.Left = "0"
 			gr.OddRowsColoring = true
 		}
@@ -867,70 +846,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			}
 			gr := page.AddGrid(gb)
 			gr.OddRowsColoring = true
-		}
-	}
-
-	if recessionAtTheEnd {
-		// page 6
-		{
-			page := q.AddPage()
-			page.Label = trl.S{"de": "Rezession", "en": "Recession"}
-			page.Short = trl.S{"de": "Rezession", "en": "Recession"}
-			page.Style = css.DesktopWidthMaxForPages(page.Style, "36rem")
-
-			// gr0
-			{
-				gr := page.AddGroup()
-				gr.Cols = 5
-
-				{
-					inp := gr.AddInput()
-					inp.Type = "textblock"
-					inp.ColSpan = 5
-					inp.ColSpanLabel = 5
-					inp.Label = trl.S{
-						"de": fmt.Sprintf("<b>9.</b> Die Wahrscheinlichkeit eines negativen BIP-Wachstums in Deutschland (Wachstum des realen & saisonbereinigten BIP zum Vorquartal) liegt bei"), //nextQ()
-						"en": fmt.Sprintf("<b>9.</b> The probability of negative GDP growth in Germany (growth of real & seasonal adjusted GDP against previous quarter) is"),                     // nextQ()
-					}
-				}
-				{
-					inp := gr.AddInput()
-					inp.Label = trl.S{
-						"de": fmt.Sprintf("Aktuelles Quartal"),
-						"en": fmt.Sprintf("Current quarter"),
-					}
-					inp.Type = "number"
-					inp.Name = "y_recession_q0"
-					inp.Min = 0
-					inp.Max = 100
-					inp.Step = 1
-					inp.MaxChars = 4
-
-					inp.ColSpan = 5
-					inp.ColSpanLabel = 4
-					inp.ColSpanControl = 1
-					inp.Suffix = trl.S{"de": "%", "en": "pct"}
-				}
-				{
-					inp := gr.AddInput()
-					inp.Label = trl.S{
-						"de": fmt.Sprintf("Folgendes Quartal"),
-						"en": fmt.Sprintf("Next quarter"),
-					}
-					inp.Type = "number"
-					inp.Name = "y_recession_q1"
-					inp.Min = 0
-					inp.Max = 100
-					inp.Step = 1
-					inp.MaxChars = 4
-
-					inp.ColSpan = 5
-					inp.ColSpanLabel = 4
-					inp.ColSpanControl = 1
-					inp.Suffix = trl.S{"de": "%", "en": "pct"}
-				}
-			}
-
 		}
 	}
 
@@ -1090,24 +1005,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.ColSpan = 1
 				inp.ColSpanLabel = 1
 			}
-			// {
-			// 	inp := gr.AddInput()
-			// 	inp.Type = "textblock"
-			// 	inp.ColSpanLabel = 1
-			// 	impr := trl.S{}
-			// 	for _, lc := range q.LangCodes {
-			// 		w1 := &strings.Builder{}
-			// 		err := tpl.RenderStaticContent(
-			// 			w1, "site-imprint.md", q.Survey.Type, lc,
-			// 		)
-			// 		if err != nil {
-			// 			log.Print(err)
-			// 		}
-			// 		impr[lc] = w1.String()
-
-			// 	}
-			// 	inp.Label = impr
-			// }
 		}
 	}
 

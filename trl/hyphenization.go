@@ -15,8 +15,12 @@ import (
 // During application initialization we use it to fill hyphm above.
 var hyph = []string{
 
-	// german
+	// reduced hyphenization
+	"unter|bewertet", // 	"be|wer|tet",
+	"über|bewertet",
 
+	//
+	// german
 	"ab|wer|ten",
 	"An|gabe",
 	"Arbeits|markt|öko|no|mie",

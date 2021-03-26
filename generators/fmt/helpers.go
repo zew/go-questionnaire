@@ -323,12 +323,16 @@ func labelsOvervaluedFairUndervalued() []trl.S {
 			"en": "overvalued",
 		},
 		{
-			"de": "fair&nbsp;bewertet",
-			"en": "fair&nbsp;valued",
+			"de": "fair bewertet",
+			"en": "fair valued",
 		},
 		{
 			"de": "unterbewertet",
 			"en": "undervalued",
+		},
+		{
+			"de": "keine Angabe",
+			"en": "no answer",
 		},
 	}
 

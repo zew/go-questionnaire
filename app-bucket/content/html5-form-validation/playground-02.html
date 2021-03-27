@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testing input validation</title>
+
+<style>
+    :root {
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+
+    body{
+        zoom: 1.2;
+    }
+
+    form {
+        display: inline-block;
+        width: 32rem;
+        vertical-align: top;
+
+        margin-left: 2rem;
+        padding: 2rem;
+        border: 1px solid lightblue;
+        zoom: 1.4;
+    }
+
+    #myLog{
+        zoom: 0.7;
+        margin-top: 1.5rem;
+        padding: 0.2rem;
+        border: 1px solid lightblue;
+    }
+
+    h3{
+        margin: 0;
+        margin-top: 1.5rem;
+        font-size: 110%;
+    }
+
+    li {
+        line-height: 105%;
+    }
+
+    ul  h3:first-child {
+        margin-top: 0rem;
+    }
+
+    ul ul li {
+        margin:
+         0.5rem 0;
+    }
+    ul ul li + ul ul li {
+        margin-top:
+         1.8rem;
+    }
+
+    .feats {
+        display: inline-block;
+        display: block;
+        font-size: 70%;
+        margin: 0.6rem 0 ;
+        text-decoration: none;
+    }
+
+    .error-message {
+        display: inline-block;
+        
+        position: relative;
+        vertical-align: middle;
+        width:  2px;
+        height: 2px;
+        aa-border: 1px solid red;
+
+    }
+    .error-message-absolute {
+        
+        position: absolute; 
+        z-index: 12; 
+        
+        width: 14rem; 
+        aa-border: 1px solid blue; 
+        
+        background-color: #fee;
+        color: darkred;
+
+        /* vertically center */
+        top: -0.4rem; 
+        top: 50%;
+        transform: translateY(-50%);        
+
+    }
+
+
+
+
+
+    /* both these have no effect */
+    .style-no-bubbles form input::-webkit-validation-bubble-message,
+    .style-no-bubbles form select::-webkit-validation-bubble-message,
+    .style-no-bubbles form textarea::-webkit-validation-bubble-message {
+        display:none;
+    }
+
+    form input::-webkit-validation-bubble-message,
+    form select::-webkit-validation-bubble-message,
+    form textarea::-webkit-validation-bubble-message {
+        display:none;
+    }
+
+</style>
+</head>
+<body>
+
+
+
+<form name="frmMain" action="" >
+
+    <div>
+
+        <input type="number" name="input1" id="input1"
+            min="-1"
+            max="11"
+            step="2"
+            value="-0.5"
+            data-validation_msg="Please enter number between -1 and 11 - stepping 2"
+        > <span>suffix 1</span>
+    </div>
+    
+    <br>
+
+    <div>
+
+        <input type="number" name="input2" id="input2"
+            min="-1"
+            max="1"
+            step="0.01"
+            value="10"
+            data-validation_msg="Please enter number between -1 and 1 - stepping 0.01"
+        > suffix 2
+    </div>
+    
+    <br>
+
+    <input type="submit"  name="submitBtn1"  value="S1" >
+    <input type="submit"  name="submitBtn2"  value="S2" >
+
+    <button type="submit" name="submitBtn3" value="valS3"  >S3</button>
+    <button type="button" name="submitBtn4" value="valx4"  >S4 type=button</button> <!-- type button is excluded -->
+
+
+    <a class="feats" href="#" 
+        onclick="document.forms['frmMain'].requestSubmit();"
+        accesskey="s"
+    >form.<u>s</u>ubmit()</a>
+
+
+
+    <a class="feats" href="#" 
+        onclick="console.log('i1: ', i1.validationMessage,' <br>i2: ',i2.validationMessage);"
+        >Dump validation messages</a>
+
+        <a class="feats" href="#" 
+        onclick="console.log('i1: ', i1.checkValidity(), 'i2: ', i2.checkValidity(), i1.validity, i2.validity);"
+        >Check validities for inputs</a>
+
+    <a class="feats" href="#"
+        onclick="console.log('i1: ', i1.reportValidity(), 'i2: ', i2.reportValidity());"
+        >Report validities for inputs</a>
+
+ 
+    <a class="feats" href="#" onclick="addCustomMessage()">Set a custom validation message</a>
+
+    <a class="feats" href="#" onclick="suppressBubbleMessages1()"
+        >Suppress bubble-message via CSS - phased out</a>
+
+    
+    <a class="feats" href="#" onclick="noFormValidation1()"
+        >Suppress validation on form level -  change event handler - form.submit() never completes</a>
+    
+    <a class="feats" href="#" onclick="noFormValidation2()"
+        >Suppress validation on form level - form attribute novalidate - form.submit() remains</a>
+
+    <a class="feats" href="#" onclick="configureFormValidation();"
+        >set form attribute novalidate - <br>
+        make form.submit() stall on invalid - <br>
+        change form.submit() to flagging error messages 
+    </a>
+
+
+    <div id="myLog">
+
+    </div>
+
+</form>
+
+
+<script>
+
+
+    var logFn = console.log;  // save the original log function for later use
+    var myLog = document.getElementById("myLog");
+    console.log = function () {
+        var line = "";
+        for (var i = 0, j = arguments.length; i < j; i++) {
+            if (typeof arguments[i] == "object") {
+                // var argX = arguments[i];
+                // var tp   = typeof argX;
+                // var content = JSON.stringify(argX);
+                // line += " " + tp + " " + content;
+                line += " " + arguments[i];
+                logFn.call(console, arguments[i]);
+            } else {
+                line += " " + arguments[i];
+            }
+        }
+        if (line.length > 0) {
+            myLog.innerHTML += line + "<br>";
+            logFn.call(console, line); // call original function if you want to
+        }
+    };
+
+
+
+    window.addEventListener(
+        'load',
+        function () {
+            // console.log("window loaded"); // fired
+        },
+        true
+    );
+
+    // document load is not fired - document.keydown is fired - document.DOMContentLoaded is fired
+    document.onload = function () {
+        console.log("document loaded 2 - fired never");
+    };
+    document.addEventListener(
+        'load',
+        function () {
+            console.log("document loaded 1 - fired sometimes");
+        },
+        true
+    );
+    document.addEventListener(
+        'keydown',
+        function (e) {
+            if (e.key === "Escape") {
+                console.log("ESC pressed");
+            }
+        },
+        true
+    );
+    document.addEventListener(
+        'DOMContentLoaded',
+        function () {
+            // console.log("DOMContentLoaded loaded"); // fired
+        },
+        true
+    );
+
+
+    var i1 = document.forms["frmMain"].elements.namedItem("input1");
+    // console.log("found input 1; tag", i1.tagName, " val: ", i1.value);
+    // console.log("validity:", i1.validity);
+    
+    var i2 = document.forms["frmMain"].elements.namedItem("input2");
+    
+
+    // Setting a function on  submit form
+    document.forms["frmMain"].onsubmit = function(){
+        // console.log("submission canceled");
+        // return false;
+    };
+
+
+    // custom messages turn input permanently into invalid
+    //   even if we clear this on every input event, an input event is needed to clear
+    // messages are mathematical - and cannot be localized
+    function addCustomMessage(){
+        i1.setCustomValidity("customized trouble message");
+        i1.oninput = function(){
+            this.setCustomValidity("");
+        }
+    }
+
+
+    // CSS classes have been phased out
+    // stackoverflow.com/questions/47843199/
+    function suppressBubbleMessages1(){
+        document.forms["frmMain"].classList.toggle('style-no-bubbles');
+        console.log("toggled");
+    }
+
+
+
+    // https://www.telerik.com/blogs/building-html5-form-validation-bubble-replacements
+    // disable input validation
+    // submit() no longer completes after this
+    function noFormValidation1(){
+        document.forms["frmMain"].addEventListener(
+            "invalid",
+            function (e) {
+                e.preventDefault();
+            },
+            true
+        );
+        console.log("added 2");
+    }
+
+
+    // disable input validation
+    // submit() *does* completes after this
+    function noFormValidation2() {
+        document.forms["frmMain"].setAttribute("novalidate", true);
+    }
+
+
+    // removing any previous messages
+    function clearAllMessages() {
+        var errorMessages = form.querySelectorAll(".error-message");
+        for (var i = 0; i < errorMessages.length; i++) {
+            errorMessages[i].parentNode.removeChild(errorMessages[i]);
+        }
+    }
+
+    // clearing and re-creating a message right beside DOM element el 
+    function flagMessage(el,msg) {
+
+        if(msg === undefined){  // typeof msg == "undefined"
+            msg = el.dataset.validation_msg
+            if(msg === undefined) {
+                msg = el.validationMessage // not localized, too mathematical
+            }
+        }
+
+        if (!el) {
+            console.log("flagMessage() el not defined - return ");
+            return;
+        }
+
+        // removing previous message from this element
+        var elErrors = el.parentNode.querySelectorAll(":scope > .error-message");
+        for (var i = 0; i < elErrors.length; i++) {
+            var oldChild  = elErrors[i].parentNode.removeChild(elErrors[i]);
+            console.log(`removed ${i+1} of ${elErrors.length} - ID ${elErrors[i].getAttribute('id')} - old-ID ${oldChild.getAttribute('id')} `);
+        }
+
+        if(!el.checkValidity()){
+            var parent = el.parentNode;
+            // el.validationMessage is mathematical has is always in browser local
+            parent.insertAdjacentHTML(
+                "beforeend",
+                `<div class='error-message'  id='err-${el.getAttribute('name')}' >
+                <div class='error-message-absolute'>
+                   ${msg}
+                </div>
+            </div>`
+            );
+        }
+
+    }
+
+
+
+    function configureFormValidation() {
+
+        // console.log("configureFormValidation() registering handlers - start");
+        form = document.forms['frmMain'];
+
+        var preventInvalid = false;
+
+
+        // suppressing default bubbles - 1
+        // => form.submit() no longer works; only submit buttons clicks still effect a submission
+        form.addEventListener(
+            "invalid", 
+            function (event) {
+                if (preventInvalid){
+                    // event.target is the *source*
+                    console.log("form invalid: ", event.target.getAttribute("name"), " - default prevented");
+                    event.preventDefault();
+                }
+            }, 
+            true
+        );
+
+
+        // suppressing default bubbles - 2
+        // => form.submit() no longer works; only submit buttons clicks still effect a submission
+        var inputs = form.querySelectorAll("input[type=number]");
+        for (var i = 0; i < inputs.length; i++) {
+            inp = inputs[i];
+            var funcInv = function (event) {
+                if (preventInvalid) {
+                    // event.target is the *source*
+                    console.log("input invalid: ", event.target.getAttribute("name"), " - default prevented");
+                    event.preventDefault();
+                }    
+            };
+            inp.addEventListener("invalid", funcInv, true);
+        }
+
+
+        // suppressing default bubbles - 3
+        // instead of suppressing default bubbles - 1/2
+        if(!preventInvalid){
+            // form.submit() still works
+            document.forms["frmMain"].setAttribute("novalidate", true);
+        }
+
+
+        // by default: many browsers dont prevent invalid form submissions
+        form.addEventListener(
+            "submit", 
+            function (event) {
+                if (!this.checkValidity()) {
+                    var name = event.target.getAttribute("name");
+                    console.log(`prevented submitting form ${name}: invalid inputs`);
+                    event.preventDefault();
+                }
+            },
+            true
+        );
+
+
+        function formSubmit(event) {
+
+            if (!form) {
+                if (!form.tagName != "FORM") {
+                    console.log("funcButtonClick() form not defined - return ");
+                    return;
+                }
+            }
+
+            // console.log("configureFormValidation().Submit()", event.target.getAttribute("name"), "-start");
+
+
+            clearAllMessages();
+
+
+            // insert new messages at the end of parent
+            var invalidFields = form.querySelectorAll(":invalid");
+            for (var i = 0; i < invalidFields.length; i++) {
+                flagMessage(invalidFields[i]);
+            }
+
+            // focus first invalid field
+            if (invalidFields.length > 0) {
+                invalidFields[0].focus();
+            }
+
+            // console.log("configureFormValidation().Submit()", event.target.getAttribute("name"), "-stop");
+
+            if (invalidFields.length > 0) {
+                return false;
+            }
+            return true;
+        }
+
+
+        form.addEventListener(
+            "submit", 
+            formSubmit,
+            true
+        );
+        
+
+        console.log("configureFormValidation() registering handlers - stop");
+
+    }
+
+    configureFormValidation();
+
+
+    function configureInputValidation(event) {
+        var inputs = form.querySelectorAll("input[type=number]");
+        for (var i = 0; i < inputs.length; i++) {
+            inp = inputs[i];
+            var funcReport = function (event) {
+                // event.target.reportValidity();
+                flagMessage(event.target);
+                console.log(`blur inp.reportValidity() ${event.target.getAttribute('name')}`);
+            };
+            inp.addEventListener("blur", funcReport);  // blur does not bubble up
+            console.log(`blur added to ${inp.getAttribute('name')}`);
+        }
+    }
+
+     configureInputValidation();
+
+    console.log("js funcs loaded");
+
+
+
+</script>
+
+</body>
+</html>

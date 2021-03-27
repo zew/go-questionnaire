@@ -136,8 +136,13 @@ var closeLevel3 = function () {
 };
 
 
-
-window.onload = function () {
+// window.onload = ...   is *not* cumulative
+// window.onload = function () {
+//     //    
+// };
+// 
+// addEventListener is cumulative
+window.addEventListener("load", function (event) {
 
     document.addEventListener("keydown", keyControls, false);
     console.log("global key listener registered");
@@ -166,6 +171,4 @@ window.onload = function () {
         }
     }
 
-};
-
-
+});

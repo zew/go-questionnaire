@@ -70,6 +70,22 @@
         margin: 0.4rem 0 ;
     }
 
+    .error-message {
+        color: darkred;
+    }
+
+    /* both these have no effect */
+    .no-popup form input::-webkit-validation-bubble-message,
+    .no-popup form select::-webkit-validation-bubble-message,
+    .no-popup form textarea::-webkit-validation-bubble-message {
+        display:none;
+    }
+
+    form input::-webkit-validation-bubble-message,
+    form select::-webkit-validation-bubble-message,
+    form textarea::-webkit-validation-bubble-message {
+        display:none;
+    }
 
 </style>
 </head>
@@ -79,13 +95,13 @@
 <ul class="left-pane">
 
     <h3>Properties</h3>
-    
+
     <ul>
         <li>
             <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement">Input element
                 general docs</a> <br>
         </li>
-    
+
         <li>
             validity (<a href="https://developer.mozilla.org/en-US/docs/Web/API/ValidityState">return object docs</a>)
         </li>
@@ -110,40 +126,40 @@
             When to trigger? oninput? onblur?
         </li>
         <li>
-            setCustomValidity('my message') - <i>input becomes invalid regardless of contents</i> 
+            setCustomValidity('my message') - <i>input becomes invalid regardless of contents</i>
             - form submit becomes impossible
         </li>
         <li>
             stepDown(), stepUp() - nice to know
         </li>
     </ul>
-    
+
     <h3>Events</h3>
-    
+
     <ul>
         <li>
             input &nbsp;&nbsp; | oninput &nbsp;&nbsp; - keys, spinner clicks, mousewheel ...
         </li>
         <li>
-            blur &nbsp;&nbsp;&nbsp;&nbsp; | onblur &nbsp;&nbsp;&nbsp;&nbsp; 
+            blur &nbsp;&nbsp;&nbsp;&nbsp; | onblur &nbsp;&nbsp;&nbsp;&nbsp;
             - input loses focus - does not catch all possibilies
         </li>
         <li>
             invalid | oninvalid - fired when an element does not satisfy its constraints <br>
             For number inputs: Min/Max/Step.
         </li>
-    
+
     </ul>
-    
-    
-    
+
+
+
     <h3>
-        Example 
-    </h3> 
-    
+        Example
+    </h3>
+
     <ul>
         <li>
-            Setting a customValidity message to an input element. 
+            Setting a customValidity message to an input element.
             <a target="_blank" href="https://stackoverflow.com/questions/10777970/can-i-mark-a-field-invalid-from-javascript"
             >Source</a>
         </li>
@@ -152,70 +168,93 @@
             makes the input element <i>unconditionally</i> invalid.
         </li>
         <li>
-            oninput   => inp.setCustomValidity("") makes the element valid - 
+            oninput   => inp.setCustomValidity("") makes the element valid -
             unless it still fails an HTML5 constraint (Min/Max/Step) triggering another `invalid`.
         </li>
 
         <li>
-            Setting inp.setCustomValidity("") on input 
-            will always clear the message - 
+            Setting inp.setCustomValidity("") on input
+            will always clear the message -
             and <i>if + after</i> the new oninvalid event reoccurs
             flag it again
         </li>
-    
+
     </ul>
-    
-    
+
+
     <h3>CSS pseudo classes</h3>
-    
-    
+
+
     <ul>
         <li>
             <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/:invalid"
-            >invalid</a> <br>  and nice to know: 
+            >invalid</a> <br>  and nice to know:
             <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/:out-of-range"
-            >out-of-range</a> 
+            >out-of-range</a>
         </li>
         <li>
             <a target="_blank"
                 href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/number#validation">Validation
                 example</a>
             using pseudo classes and direct sibling:after. <br>
-    
-            This is dependent on the error div <i>immediately</i> succeeding the input. 
+
+            This is dependent on the error div <i>immediately</i> succeeding the input.
             Needs custom invalid message or icon from external. Instant feedback. No JS.
-    
+
         </li>
-    
+
     </ul>
-    
-    
-    
-    
-    <br>    
+
+
+
+
+    <br>
     <a target="_blank"
         href="https://blogs.sap.com/2019/01/16/making-number-input-accept-only-numbers-in-edgefirefox/">SAP JS extension</a>
     </ul>
 
 <form name="frmMain" action="" >
+
+    <div>
+
     <input type="number" name="input1" id="input1"
         min="-1"
         max="11"
         step="2"
-
         value="-0.5"
     >
+    </div>
+
+    <div>
+
+    <input type="number" name="input2" id="input2"
+        min="-1"
+        max="1"
+        step="0.01"
+        value="10"
+    >
+    </div>
     <br>
     <br>
 
-    <input type="submit" name="submit" id="">  <br>
+    <input type="submit"  name="submitBtn1"  value="valS1" >
+    <input type="submit"  name="submitBtn2"  value="valS2" >
+
+    <button type="submit" name="submitBtn3" value="valS3"  >S3</button>
+    <button type="button" name="submitBtn4" value="valx4"  >S4</button> <!-- type button is excluded -->
+    <br>
 
     <a class="feats" href="#" onclick="console.log(i1.validationMessage)">Validation message log</a>
-    <a class="feats" href="#" onclick="console.log(i1.checkValidity()); console.log(i1.validity)">Check validity</a>
-    <a class="feats" href="#" onclick="console.log(i1.reportValidity())">Report validity</a>
+    <a class="feats" href="#" onclick="console.log(i1.checkValidity());  console.log(i1.checkValidity()) ;console.log(i1.validity, i2.validity)">Check validity</a>
+    <a class="feats" href="#" onclick="console.log(i1.reportValidity()); console.log(i2.reportValidity())">Report validity</a>
     <a class="feats" href="#" onclick="addCustomMessage()">Validation message custom set</a>
-
-
+    <a class="feats" href="#" onclick="suppressBubbleMessages1()">Suppress bubble-message via CSS - no workee</a>
+    <!-- <a class="feats" href="#" onclick="suppressBubbleMessages2()">Suppress on doc level - focus inp1</a> -->
+    <a class="feats" href="#" onclick="suppressBubbleMessages3()">Suppress on form level</a>
+    <a class="feats" href="#" onclick="suppressBubbleMessages4()">form.novalidate=true  => allows submit</a>
+    <a class="feats" href="#" onclick="replaceValidationUI(document.forms['frmMain']);">replace UI via input-submit and button</a>
+    <a class="feats" href="#" onclick="addValidateForm2();">replace UI via frm.submit</a>
+    <a class="feats" href="#" onclick="document.forms['frmMain'].requestSubmit(); console.log('tried JS submit')">frm.submit</a>
 
     <div id="myLog">
 
@@ -249,20 +288,61 @@
     };
 
 
-    document.onload = function(){
-        console.log("loaded");
-    }()
+
+    window.addEventListener(
+        'load',
+        function () {
+            // console.log("window loaded"); // fired
+        },
+        true
+    );
+
+    // document load is not fired - document.keydown is fired - document.DOMContentLoaded is fired
+    document.onload = function () {
+        console.log("document loaded 2 - not fired");
+    };
+    document.addEventListener(
+        'load',
+        function () {
+            console.log("document loaded - not fired");
+        },
+        true
+    );
+    document.addEventListener(
+        'keydown',
+        function (e) {
+            if (e.key === "Escape") {
+                console.log("ESC pressed");
+            }
+        },
+        true
+    );
+    document.addEventListener(
+        'DOMContentLoaded',
+        function () {
+            // console.log("DOMContentLoaded loaded"); // fired
+        },
+        true
+    );
+
+
+
 
     var i1 = document.forms["frmMain"].elements.namedItem("input1");
     console.log("found input 1; tag", i1.tagName, " val: ", i1.value);
-
     console.log("validity:", i1.validity);
+    
+    var i2 = document.forms["frmMain"].elements.namedItem("input2");
+    
 
 
     document.forms["frmMain"].onsubmit = function(){
-        console.log("submission canceled");
-        return false;
-    }()
+        // console.log("submission canceled");
+        // return false;
+    };
+
+
+
 
     function addCustomMessage(){
         // i1.invalid = setCustomValidity("customized trouble message");
@@ -272,6 +352,233 @@
         }
         // i1.setCustomValidity("");
     }
+
+    // stackoverflow.com/questions/47843199/
+    function suppressBubbleMessages1(){
+        document.forms["frmMain"].classList.toggle('no-popup');
+        console.log("toggled");
+    }
+
+    // stackoverflow.com/questions/32401437/
+    function suppressBubbleMessages2(){
+        document.addEventListener("invalid",
+            (function () {
+                return function (e) {
+                    e.preventDefault();
+                    document.getElementById("input1").focus();
+                };
+            })(),
+            true
+        );
+        console.log("added 1");
+    }
+
+    // https://www.telerik.com/blogs/building-html5-form-validation-bubble-replacements
+    function suppressBubbleMessages3(){
+        document.forms["frmMain"].addEventListener(
+            "invalid",
+            function (e) {
+                e.preventDefault();
+            },
+            true
+        );
+        console.log("added 2");
+    }
+
+    function suppressBubbleMessages4() {
+        document.forms["frmMain"].setAttribute("novalidate", true);
+    }
+
+
+    function replaceValidationUI(form) {
+
+
+        // suppressing default bubbles
+        form.addEventListener(
+            "invalid",
+            function (event) {
+                // event.target is the *source*
+                console.log("form invalid: ", event.target.getAttribute("name"), " - default prevented");
+                // this prevents form.submit(), only submit buttons click are still working
+                event.preventDefault();
+            },
+            true
+        );
+
+
+        // by default: many browsers dont prevent invalid form submissions
+        form.addEventListener(
+            "submit",
+            function (event) {
+                if (!this.checkValidity()) {
+                    console.log("invalid: submit prevented:", event.target.getAttribute("name"));
+                    event.preventDefault();
+                }
+            },
+            true
+        );
+
+
+        function funcButtonClick(event) {
+
+            if (!form) {
+                if (!form.tagName != "FORM") {
+                    console.log("funcButtonClick() form not defined - return ");
+                    return;
+                }
+            }
+
+            // removing any previous messages
+            var errorMessages = form.querySelectorAll(".error-message");
+            for (var i = 0; i < errorMessages.length; i++) {
+                errorMessages[i].parentNode.removeChild(errorMessages[i]);
+            }
+
+            // insert new messages at the end of parent
+            var invalidFields = form.querySelectorAll(":invalid");
+            var parent;
+            for (var i = 0; i < invalidFields.length; i++) {
+                parent = invalidFields[i].parentNode;
+                parent.insertAdjacentHTML(
+                    "beforeend",
+                    "<div class='error-message'>" + invalidFields[i].validationMessage + "</div>"
+                );
+            }
+
+            // focus first invalid field
+            if (invalidFields.length > 0) {
+                invalidFields[0].focus();
+            }
+
+        }        
+
+        var submitButtons = form.querySelectorAll("button:not([type=button]), input[type=submit]");
+        for (var i = 0; i < submitButtons.length; i++) {
+            submitButton = submitButtons[i];
+            submitButton.addEventListener("click", funcButtonClick);
+            //console.log("funcButtonClick() added to ", submitButton.tagName);
+
+        }
+
+
+        console.log("replaceValidationUI added");
+    }
+
+
+
+
+
+    function addValidateForm2(event) {
+
+        // console.log("addValidateForm2() adding start");
+        form = document.forms['frmMain'];
+
+
+        var preventInvalid = false;
+
+        // suppressing default bubbles - 1
+        // => form.submit() no longer works; only submit buttons clicks still effect a submission
+        form.addEventListener(
+            "invalid", 
+            function (event) {
+                if (preventInvalid){
+                    // event.target is the *source*
+                    console.log("form invalid: ", event.target.getAttribute("name"), " - default prevented");
+                    event.preventDefault();
+                }
+            }, 
+            true
+        );
+
+
+        // suppressing default bubbles - 2
+        // => form.submit() no longer works; only submit buttons clicks still effect a submission
+        var inputs = form.querySelectorAll("input[type=number]");
+        for (var i = 0; i < inputs.length; i++) {
+            inp = inputs[i];
+            var funcInv = function (event) {
+                if (preventInvalid) {
+                    // event.target is the *source*
+                    console.log("input invalid: ", event.target.getAttribute("name"), " - default prevented");
+                    event.preventDefault();
+                }    
+            };
+            inp.addEventListener("invalid", funcInv, true);
+        }
+
+
+        // instead of 
+        if(!preventInvalid){
+            // form.submit() still works
+            document.forms["frmMain"].setAttribute("novalidate", true);
+        }
+
+
+        // by default: many browsers dont prevent invalid form submissions
+        form.addEventListener(
+            "submit", 
+            function (event) {
+                if (!this.checkValidity()) {
+                    console.log("invalid: submit prevented:", event.target.getAttribute("name"));
+                    event.preventDefault();
+                }
+            },
+            true
+        );
+
+
+        form.addEventListener(
+            "submit", 
+            function (event) {
+
+                if (!form) {
+                    if (!form.tagName != "FORM") {
+                        console.log("funcButtonClick() form not defined - return ");
+                        return;
+                    }
+                }
+
+                console.log("addValidateForm2().Submit()", event.target.getAttribute("name"), "-start");
+
+                // removing any previous messages
+                var errorMessages = form.querySelectorAll(".error-message");
+                for (var i = 0; i < errorMessages.length; i++) {
+                    errorMessages[i].parentNode.removeChild(errorMessages[i]);
+                }
+
+                // insert new messages at the end of parent
+                var invalidFields = form.querySelectorAll(":invalid");
+                for (var i = 0; i < invalidFields.length; i++) {
+                    var parent = invalidFields[i].parentNode;
+                    parent.insertAdjacentHTML(
+                        "beforeend",
+                        "<div class='error-message'>" + invalidFields[i].validationMessage + "</div>"
+                    );
+                }
+
+                // focus first invalid field
+                if (invalidFields.length > 0) {
+                    invalidFields[0].focus();
+                }
+
+                console.log("addValidateForm2().Submit()", event.target.getAttribute("name"), "-stop");
+
+                if (invalidFields.length > 0) {
+                    return false;
+                }
+                return true;  
+            },
+            true
+        );
+        
+
+        console.log("addValidateForm2() adding stop");
+
+    }
+
+    console.log("js funcs loaded");
+
+
 
 </script>
 

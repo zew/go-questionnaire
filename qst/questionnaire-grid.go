@@ -334,7 +334,14 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 			onInvalid = fmt.Sprintf("oninvalid='setCustomValidity(\"%v\")' oninput='setCustomValidity(\"\")'", inp.OnInvalid.TrSilent(langCode))
 		} else {
 			if inp.Type == "number" {
-				onInvalid = fmt.Sprintf("oninvalid='setCustomValidity(\"%v\")' oninput='setCustomValidity(\"\")'", cfg.Get().Mp["valid_entry"].TrSilent(langCode))
+				if inp.Min != 0 || inp.Max != 0 {
+					txt := fmt.Sprintf(cfg.Get().Mp["entry_range"].TrSilent(langCode), inp.Min, inp.Max)
+					if inp.Step != 0 && inp.Step != 1 {
+						txt += "; "
+						txt += fmt.Sprintf(cfg.Get().Mp["entry_stepping"].TrSilent(langCode), inp.Step)
+					}
+					onInvalid = fmt.Sprintf("oninvalid='setCustomValidity(\"%v\")' oninput='setCustomValidity(\"\")'", txt)
+				}
 			}
 		}
 

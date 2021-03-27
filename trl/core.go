@@ -212,6 +212,22 @@ var coreTranslations = Map{
 		"it": "Per favore inserisci un valore valido",
 		"pl": "Wprowadź prawidłową wartość",
 	},
+	"entry_range": {
+		"de": "Bitte geben Sie einen Wert zwischen %v und %v ein",
+		"en": "Please enter a value between %v and %v",
+		"es": "Introduzca un valor entre %v y %v",
+		"fr": "Veuillez saisir une valeur comprise entre %v et %v",
+		"it": "Immettere un valore compreso tra %v e %v",
+		"pl": "Wprowadź wartość od %v do %v",
+	},
+	"entry_stepping": {
+		"de": "in %ver Schritten",
+		"en": "in %ver steps",
+		"es": "en %ver pasos",
+		"fr": "en %v étapes",
+		"it": "in passaggi %ver",
+		"pl": "w %ver krokach",
+	},
 	"correct_errors": {
 		"de": "Bitte korrigieren Sie die unten angezeigten Fehler.",
 		"en": "Please correct the errors displayed below.",

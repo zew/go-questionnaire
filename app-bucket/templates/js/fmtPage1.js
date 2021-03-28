@@ -38,13 +38,27 @@ function validateForm(event) {
 
     if (sum > 0) {        
         if (sum != 100 ) {
-            // alert("{{.msg}}");
-            var doContinue = window.confirm("{{.msg}}");
-            if (doContinue) {
-                return true;
+
+            // console.log("event.type", event.type);
+            var doAsk = false;
+            if (event.type=="blur") {
+                if (inp1 != "" && inp2 != "" && inp3 != "") {
+                    // doAsk = true;
+                }
+            } else {
+                // submit
+                doAsk = true;
             }
-            event.preventDefault(); // not only return false - but also preventDefault()
-            return false;            
+
+            if (doAsk) {
+                // alert("{{.msg}}");
+                var doContinue = window.confirm("{{.msg}}");
+                if (doContinue) {
+                    return true;
+                }
+                event.preventDefault(); // not only return false - but also preventDefault()
+                return false;
+            }
         }
     }
 
@@ -57,3 +71,16 @@ var frm = document.forms.frmMain;
 if (frm) {
     frm.addEventListener('submit', validateForm);    
 }
+
+if (document.forms.frmMain.y_probgood) {
+    document.forms.frmMain.y_probgood.addEventListener('blur',validateForm);
+}
+if (document.forms.frmMain.y_probnormal) {
+    document.forms.frmMain.y_probnormal.addEventListener('blur',validateForm);
+}
+if (document.forms.frmMain.y_probbad) {
+    document.forms.frmMain.y_probbad.addEventListener('blur',validateForm);
+}
+
+
+

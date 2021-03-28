@@ -64,37 +64,6 @@
         text-decoration: none;
     }
 
-    .error-message {
-        display: inline-block;
-        
-        position: relative;
-        vertical-align: middle;
-        width:  2px;
-        height: 2px;
-        aa-border: 1px solid red;
-
-    }
-    .error-message-absolute {
-        
-        position: absolute; 
-        z-index: 12; 
-        
-        width: 14rem; 
-        aa-border: 1px solid blue; 
-        
-        background-color: #fee;
-        color: darkred;
-
-        /* vertically center */
-        top: -0.4rem; 
-        top: 50%;
-        transform: translateY(-50%);        
-
-    }
-
-
-
-
 
     /* both these have no effect */
     .style-no-bubbles form input::-webkit-validation-bubble-message,
@@ -109,8 +78,113 @@
         display:none;
     }
 
+
+    .bubble-invalid-anchor {
+
+        display:        inline-block;
+        
+        position:       relative; /* anchor for content */
+        vertical-align: middle;
+
+        width:  0px;
+        height: 0px;
+
+        background-color: darkolivegreen;
+
+    }
+    .bubble-invalid-content {
+        
+        position: absolute; 
+        z-index: 12; 
+        
+        width: 14rem; 
+        border-radius: 0.4rem;
+
+        font-size: calc(1vw/1.5);
+
+        padding: 0.2rem 0.6rem;
+        border: 1px solid darkred; 
+        
+        background-color: #fee;
+        color:            darkred;
+
+        /* vertically centered */
+        top: 50%;
+        transform: translateY(-50%);        
+
+    }
+
+
+
+
+
+
+@media screen and (max-width: 800px) {
+
+    :root {
+        font-size: calc(6vw);
+    }
+    body {
+        zoom: 1;
+        background-color: bisque;
+        margin: 0;
+    }
+    form {
+        display: block;
+        zoom: 1;
+        width: calc(100% - 1.4em);
+        margin: 0.3rem auto;
+
+        padding: 0.4rem;
+        
+        background-color: aquamarine;
+    }
+
+    #myLog{
+        zoom: 1;
+
+        margin-top: 1.5rem;
+        padding: 0.2rem;
+        border: 1px solid lightblue;
+    }
+    .feats {
+        font-size: unset;
+    }
+
+
+
+    .bubble-invalid-anchor {
+    
+        display:        block;
+        
+        position:       relative; /* anchor for content */
+
+
+        width:  100%;
+        height: 0;
+
+    }
+
+    .bubble-invalid-content {
+        
+        font-size: calc(1vw/0.21);
+
+        width: calc(100vw - 3.4rem);
+        width: calc(100% - 1.4rem); /* of anchor width */
+
+        top:   0.02rem;
+        left: -0.2rem;
+        transform: translateY(0%); /* reset desktop */
+
+    }
+
+
+
+}
+
 </style>
 </head>
+
 <body>
 
 
@@ -176,18 +250,33 @@
         >Suppress bubble-message via CSS - phased out</a>
 
     
-    <a class="feats" href="#" onclick="noFormValidation1()"
-        >Suppress validation on form level -  change event handler - form.submit() never completes</a>
-    
-    <a class="feats" href="#" onclick="noFormValidation2()"
-        >Suppress validation on form level - form attribute novalidate - form.submit() remains</a>
+    <span  style="font-size: 80%;">
+
+        <a class="feats" href="#" onclick="noFormValidation1()"
+            >Suppress validation on form level - Version 1 -  change event handler - form.submit() never completes</a>
+        
+        <a class="feats" href="#" onclick="noFormValidation2()"
+            >Suppress validation on form level - Version 2 - form attribute novalidate - form.submit() remains</a>
+
+    </span>
+
+
+    <div style="background-color:lightblue">
 
     <a class="feats" href="#" onclick="configureFormValidation();"
         >set form attribute novalidate - <br>
-        make form.submit() stall on invalid - <br>
-        change form.submit() to flagging error messages 
+        make form.submit() stall on invalid
+    </a>      
+
+
+    <a class="feats" href="#" onclick="flagInvalidOnSubmit();"
+        >Flag invalids on form submit
+    </a>
+    <a class="feats" href="#" onclick="flagInvalidOnblur();"
+        >Flag invalids on blur
     </a>
 
+    </div>
 
     <div id="myLog">
 
@@ -223,43 +312,7 @@
 
 
 
-    window.addEventListener(
-        'load',
-        function () {
-            // console.log("window loaded"); // fired
-        },
-        true
-    );
-
-    // document load is not fired - document.keydown is fired - document.DOMContentLoaded is fired
-    document.onload = function () {
-        console.log("document loaded 2 - fired never");
-    };
-    document.addEventListener(
-        'load',
-        function () {
-            console.log("document loaded 1 - fired sometimes");
-        },
-        true
-    );
-    document.addEventListener(
-        'keydown',
-        function (e) {
-            if (e.key === "Escape") {
-                console.log("ESC pressed");
-            }
-        },
-        true
-    );
-    document.addEventListener(
-        'DOMContentLoaded',
-        function () {
-            // console.log("DOMContentLoaded loaded"); // fired
-        },
-        true
-    );
-
-
+    
     var i1 = document.forms["frmMain"].elements.namedItem("input1");
     // console.log("found input 1; tag", i1.tagName, " val: ", i1.value);
     // console.log("validity:", i1.validity);
@@ -318,14 +371,14 @@
 
     // removing any previous messages
     function clearAllMessages() {
-        var errorMessages = form.querySelectorAll(".error-message");
+        var errorMessages = form.querySelectorAll(".bubble-invalid-anchor");
         for (var i = 0; i < errorMessages.length; i++) {
             errorMessages[i].parentNode.removeChild(errorMessages[i]);
         }
     }
 
     // clearing and re-creating a message right beside DOM element el 
-    function flagMessage(el,msg) {
+    function flagInvalid(el,msg) {
 
         if(msg === undefined){  // typeof msg == "undefined"
             msg = el.dataset.validation_msg
@@ -335,12 +388,12 @@
         }
 
         if (!el) {
-            console.log("flagMessage() el not defined - return ");
+            console.log("flagInvalid() el not defined - return ");
             return;
         }
 
         // removing previous message from this element
-        var elErrors = el.parentNode.querySelectorAll(":scope > .error-message");
+        var elErrors = el.parentNode.querySelectorAll(":scope > .bubble-invalid-anchor");
         for (var i = 0; i < elErrors.length; i++) {
             var oldChild  = elErrors[i].parentNode.removeChild(elErrors[i]);
             console.log(`removed ${i+1} of ${elErrors.length} - ID ${elErrors[i].getAttribute('id')} - old-ID ${oldChild.getAttribute('id')} `);
@@ -351,8 +404,8 @@
             // el.validationMessage is mathematical has is always in browser local
             parent.insertAdjacentHTML(
                 "beforeend",
-                `<div class='error-message'  id='err-${el.getAttribute('name')}' >
-                <div class='error-message-absolute'>
+                `<div class='bubble-invalid-anchor'  id='err-${el.getAttribute('name')}' >
+                <div class='bubble-invalid-content'>
                    ${msg}
                 </div>
             </div>`
@@ -361,135 +414,139 @@
 
     }
 
+    function flagAllInvalidFormInputs(event) {
+
+        clearAllMessages();
+
+        // insert new messages at the end of parent
+        var invalidFields = this.querySelectorAll(":invalid");
+        for (var i = 0; i < invalidFields.length; i++) {
+            flagInvalid(invalidFields[i]);
+        }
+
+        // focus first invalid field
+        if (invalidFields.length > 0) {
+            invalidFields[0].focus();
+        }
+
+        if (invalidFields.length > 0) {
+            return false;
+        }
+        return true;
+    }
+      
+
+
 
 
     function configureFormValidation() {
 
-        // console.log("configureFormValidation() registering handlers - start");
         form = document.forms['frmMain'];
 
         var preventInvalid = false;
 
 
-        // suppressing default bubbles - 1
-        // => form.submit() no longer works; only submit buttons clicks still effect a submission
-        form.addEventListener(
-            "invalid", 
-            function (event) {
-                if (preventInvalid){
-                    // event.target is the *source*
+        if (preventInvalid) {
+            // suppressing default bubbles - 1
+            // => form.submit() no longer works; only submit buttons clicks still effect a submission
+            form.addEventListener(
+                "invalid", 
+                function (event) {
                     console.log("form invalid: ", event.target.getAttribute("name"), " - default prevented");
                     event.preventDefault();
-                }
-            }, 
-            true
-        );
+                }, 
+                true
+            );
+        }
 
 
-        // suppressing default bubbles - 2
-        // => form.submit() no longer works; only submit buttons clicks still effect a submission
-        var inputs = form.querySelectorAll("input[type=number]");
-        for (var i = 0; i < inputs.length; i++) {
-            inp = inputs[i];
-            var funcInv = function (event) {
-                if (preventInvalid) {
-                    // event.target is the *source*
+        if (preventInvalid) {
+            // suppressing default bubbles - 2
+            // => form.submit() no longer works; only submit buttons clicks still effect a submission
+            var inputs = form.querySelectorAll("input[type=number]");
+            for (var i = 0; i < inputs.length; i++) {
+                inp = inputs[i];
+                var funcInv = function (event) {
                     console.log("input invalid: ", event.target.getAttribute("name"), " - default prevented");
                     event.preventDefault();
-                }    
-            };
-            inp.addEventListener("invalid", funcInv, true);
+                };
+                inp.addEventListener("invalid", funcInv, true);
+            }
         }
 
 
         // suppressing default bubbles - 3
         // instead of suppressing default bubbles - 1/2
         if(!preventInvalid){
-            // form.submit() still works
+
             document.forms["frmMain"].setAttribute("novalidate", true);
+            console.log(`configureFormValidation - form.submit(): validation disabled by novalidate=true.`);
+            console.log(` &nbsp; &nbsp; &nbsp;               form.submit() works and goes through.`);
+
+
+            form.addEventListener(
+                "submit", 
+                function (event) {
+                    if (!this.checkValidity()) {
+                        var name = event.target.getAttribute("name");
+                        console.log(`prevented submitting form ${name}: invalid inputs`);
+                        event.preventDefault();  // effectively cancels submit
+                    }
+                },
+                true
+            );
+            console.log(`configureFormValidation - form.submit(): validation re-introduced.`);
+
         }
-
-
-        // by default: many browsers dont prevent invalid form submissions
-        form.addEventListener(
-            "submit", 
-            function (event) {
-                if (!this.checkValidity()) {
-                    var name = event.target.getAttribute("name");
-                    console.log(`prevented submitting form ${name}: invalid inputs`);
-                    event.preventDefault();
-                }
-            },
-            true
-        );
-
-
-        function formSubmit(event) {
-
-            if (!form) {
-                if (!form.tagName != "FORM") {
-                    console.log("funcButtonClick() form not defined - return ");
-                    return;
-                }
-            }
-
-            // console.log("configureFormValidation().Submit()", event.target.getAttribute("name"), "-start");
-
-
-            clearAllMessages();
-
-
-            // insert new messages at the end of parent
-            var invalidFields = form.querySelectorAll(":invalid");
-            for (var i = 0; i < invalidFields.length; i++) {
-                flagMessage(invalidFields[i]);
-            }
-
-            // focus first invalid field
-            if (invalidFields.length > 0) {
-                invalidFields[0].focus();
-            }
-
-            // console.log("configureFormValidation().Submit()", event.target.getAttribute("name"), "-stop");
-
-            if (invalidFields.length > 0) {
-                return false;
-            }
-            return true;
-        }
-
-
-        form.addEventListener(
-            "submit", 
-            formSubmit,
-            true
-        );
-        
-
-        console.log("configureFormValidation() registering handlers - stop");
-
     }
 
-    configureFormValidation();
+
+    function flagInvalidOnSubmit() {
+        document.forms["frmMain"].addEventListener(
+            "submit",
+            flagAllInvalidFormInputs,
+            true
+        );
+        console.log(`flag invalid inputs on form submit.`);
+    }
 
 
-    function configureInputValidation(event) {
+    function flagInvalidOnblur(event) {
         var inputs = form.querySelectorAll("input[type=number]");
         for (var i = 0; i < inputs.length; i++) {
             inp = inputs[i];
             var funcReport = function (event) {
                 // event.target.reportValidity();
-                flagMessage(event.target);
+                flagInvalid(event.target);
                 console.log(`blur inp.reportValidity() ${event.target.getAttribute('name')}`);
             };
             inp.addEventListener("blur", funcReport);  // blur does not bubble up
-            console.log(`blur added to ${inp.getAttribute('name')}`);
+            console.log(` &nbsp;  &nbsp; blur handler added to ${inp.getAttribute('name')}`);
         }
     }
 
-     configureInputValidation();
 
-    console.log("js funcs loaded");
+
+    document.addEventListener(
+
+        'DOMContentLoaded',
+        function () {
+
+
+            configureFormValidation();
+
+            flagInvalidOnSubmit();
+
+            flagInvalidOnblur();
+
+
+            console.log("DOMContentLoaded loaded - form and input validation configured"); 
+        },
+        true
+    );
+
+
+    console.log("end of js func definitions and registrations");
 
 
 

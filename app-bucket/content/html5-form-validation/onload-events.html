@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testing input validation</title>
+
+<style>
+    :root {
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+
+    body{
+        zoom: 1.2;
+    }
+
+    form {
+        display: inline-block;
+        width: 32rem;
+        vertical-align: top;
+
+        margin-left: 2rem;
+        padding: 2rem;
+        border: 1px solid lightblue;
+        zoom: 1.4;
+    }
+
+    #myLog{
+        zoom: 0.7;
+        margin-top: 1.5rem;
+        padding: 0.2rem;
+        border: 1px solid lightblue;
+        line-height: 150%;
+    }
+
+</style>
+</head>
+<body>
+
+
+
+<form name="frmMain" action="">
+
+    window onload <i>after</i> DOMContentLoaded <br>
+
+    document onload largely deceased <br>
+
+    always use addListener() to append to existing handlers
+
+    <div id="myLog">
+
+    </div>
+
+</form>
+
+
+<script>
+
+
+    var logFn = console.log;  // save the original log function for later use
+    var myLog = document.getElementById("myLog");
+    console.log = function () {
+        var line = "";
+        for (var i = 0, j = arguments.length; i < j; i++) {
+            if (typeof arguments[i] == "object") {
+                // var argX = arguments[i];
+                // var tp   = typeof argX;
+                // var content = JSON.stringify(argX);
+                // line += " " + tp + " " + content;
+                line += " " + arguments[i];
+                logFn.call(console, arguments[i]);
+            } else {
+                line += " " + arguments[i];
+            }
+        }
+        if (line.length > 0) {
+            myLog.innerHTML += line + "<br>";
+            logFn.call(console, line); // call original function if you want to
+        }
+    };
+
+
+
+    window.addEventListener(
+        'load',
+        function () {
+            console.log("window loaded - always fired");
+        },
+        true
+    );
+
+    // document load is not fired - document.keydown is fired - document.DOMContentLoaded is fired
+    document.onload = function () {
+        console.log("document loaded 2 - fired never");
+    };
+    document.addEventListener(
+        'load',
+        function () {
+            console.log("document loaded 1 - fired sometimes");
+        },
+        true
+    );
+    document.onload = function () {
+        console.log("document loaded 3 - fired never");
+    };
+    document.addEventListener(
+        'keydown',
+        function (e) {
+            if (e.key === "Escape") {
+                console.log("ESC pressed");
+            }
+        },
+        true
+    );
+    document.addEventListener(
+        'DOMContentLoaded',
+        function () {
+            console.log("DOMContentLoaded loaded -  always fired"); 
+        },
+        true
+    );
+
+
+
+</script>
+
+
+
+
+
+</body>
+</html>

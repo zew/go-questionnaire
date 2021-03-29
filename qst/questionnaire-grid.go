@@ -332,6 +332,7 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 		onInvalid := ""
 		if inp.OnInvalid.TrSilent(langCode) != "" {
 			onInvalid = fmt.Sprintf("oninvalid='setCustomValidity(\"%v\")' oninput='setCustomValidity(\"\")'", inp.OnInvalid.TrSilent(langCode))
+			onInvalid = fmt.Sprintf("data-validation_msg='%v'", inp.OnInvalid.TrSilent(langCode))
 		} else {
 			if inp.Type == "number" {
 				if inp.Min != 0 || inp.Max != 0 {
@@ -341,6 +342,7 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 						txt += fmt.Sprintf(cfg.Get().Mp["entry_stepping"].TrSilent(langCode), inp.Step)
 					}
 					onInvalid = fmt.Sprintf("oninvalid='setCustomValidity(\"%v\")' oninput='setCustomValidity(\"\")'", txt)
+					onInvalid = fmt.Sprintf("data-validation_msg='%v'", txt)
 				}
 			}
 		}

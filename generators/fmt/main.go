@@ -477,7 +477,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				columnTemplate4,
 				labelsIncreaseDecrease(),
 				// []string{"i_ez", "i_deu", "i_usa", "i_chn"},
-				[]string{"i_ez", "i_usa", "i_chn"},
+				// i_ez goes into i_deu
+				[]string{"i_deu", "i_usa", "i_chn"},
 				radioVals4,
 				rowLabelsEuroGerUSGlob,
 			)

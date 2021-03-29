@@ -44,6 +44,7 @@ function validateForm(event) {
             if (event.type=="blur") {
                 if (inp1 != "" && inp2 != "" && inp3 != "") {
                     // doAsk = true;
+                    console.log("show error msg");
                 }
             } else {
                 // submit

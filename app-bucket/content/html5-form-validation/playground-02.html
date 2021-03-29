@@ -57,13 +57,29 @@
     }
 
     .feats {
-        display: inline-block;
         display: block;
+        display: inline-block;
+        max-width: 14rem;
+
         font-size: 70%;
         margin: 0.6rem 0 ;
+        margin-right: 3rem;
+        padding: 0.1rem 0.4rem;
+        border: 1px solid lightseagreen;
         text-decoration: none;
     }
-
+    .feats-narrow {
+        vertical-align: top;
+        max-width: 6rem;
+        max-width: calc(100%/3 - 3rem);
+        margin: 0.6rem 1rem ;
+    }
+    .feats-narrow:first-child {
+        margin-left: 0;
+    }
+    .feats-narrow:last-child {
+        margin-right: 0;
+    }
 
     /* both these have no effect */
     .style-no-bubbles form input::-webkit-validation-bubble-message,
@@ -193,12 +209,12 @@
 
     <div>
 
-        <input type="number" name="input1" id="input1"
+        inp 1 <input type="number" name="input1" id="input1"
             min="-1"
             max="11"
             step="2"
             value="-0.5"
-            data-validation_msg="Please enter number between -1 and 11 - stepping 2"
+            data-validation_msg="Please enter a number between -1 and 11 - stepping 2"
         > <span>suffix 1</span>
     </div>
     
@@ -206,22 +222,23 @@
 
     <div>
 
-        <input type="number" name="input2" id="input2"
+        inp 2 <input type="number" name="input2" id="input2"
             min="-1"
             max="1"
             step="0.01"
             value="10"
-            data-validation_msg="Please enter number between -1 and 1 - stepping 0.01"
+            data-validation_msg="Please enter a number between -1 and 1 - stepping 0.01"
         > suffix 2
     </div>
     
     <br>
 
-    <input type="submit"  name="submitBtn1"  value="S1" >
-    <input type="submit"  name="submitBtn2"  value="S2" >
+    submits
+    <input type="submit"  name="submitBtn1"  value="S1"   title="input[type=submit]">
+    <input type="submit"  name="submitBtn2"  value="S2"   title="input[type=submit]">
 
-    <button type="submit" name="submitBtn3" value="valS3"  >S3</button>
-    <button type="button" name="submitBtn4" value="valx4"  >S4 type=button</button> <!-- type button is excluded -->
+    <button type="submit" name="submitBtn3" value="valS3" title="button" >S3</button>
+    <button type="button" name="submitBtn4" value="valx4" title="should not work"  style="font-size: 40%;">type=button</button> <!-- type button is excluded -->
 
 
     <a class="feats" href="#" 
@@ -229,11 +246,14 @@
         accesskey="s"
     >form.<u>s</u>ubmit()</a>
 
+    <hr>
 
 
     <a class="feats" href="#" 
         onclick="console.log('i1: ', i1.validationMessage,' <br>i2: ',i2.validationMessage);"
         >Dump validation messages</a>
+
+    <a class="feats" href="#" onclick="addCustomMessages()">Custom validation messages</a>
 
         <a class="feats" href="#" 
         onclick="console.log('i1: ', i1.checkValidity(), 'i2: ', i2.checkValidity(), i1.validity, i2.validity);"
@@ -244,36 +264,32 @@
         >Report validities for inputs</a>
 
  
-    <a class="feats" href="#" onclick="addCustomMessage()">Set a custom validation message</a>
 
-    <a class="feats" href="#" onclick="suppressBubbleMessages1()"
-        >Suppress bubble-message via CSS - phased out</a>
 
     
-    <span  style="font-size: 80%;">
+    <div  style="font-size: 80%;">
 
-        <a class="feats" href="#" onclick="noFormValidation1()"
+        <a class="feats feats-narrow" href="#" onclick="suppressBubbleMessages1()"
+            >Suppress bubble-message via CSS</a> 
+
+
+        <a class="feats feats-narrow" href="#" onclick="noFormValidation1()"
             >Suppress validation on form level - Version 1 -  change event handler - form.submit() never completes</a>
         
-        <a class="feats" href="#" onclick="noFormValidation2()"
+        <a class="feats feats-narrow" href="#" onclick="noFormValidation2()"
             >Suppress validation on form level - Version 2 - form attribute novalidate - form.submit() remains</a>
 
-    </span>
+    </div>
 
 
-    <div style="background-color:lightblue">
+    <div style="background-color:lightblue; padding: 0.2rem 1rem;">
 
-    <a class="feats" href="#" onclick="configureFormValidation();"
-        >set form attribute novalidate - <br>
-        make form.submit() stall on invalid
+    <a class="feats" href="#" onclick="validateFormWithCustomBubbles();"
+        >Configure form validation with custom bubbles
     </a>      
 
-
-    <a class="feats" href="#" onclick="flagInvalidOnSubmit();"
-        >Flag invalids on form submit
-    </a>
-    <a class="feats" href="#" onclick="flagInvalidOnblur();"
-        >Flag invalids on blur
+    <a class="feats" href="#" onclick="showBubbleOnBlur();"
+        >Shows bubble popups for invalid inputs already on blur
     </a>
 
     </div>
@@ -320,19 +336,19 @@
     var i2 = document.forms["frmMain"].elements.namedItem("input2");
     
 
-    // Setting a function on  submit form
-    document.forms["frmMain"].onsubmit = function(){
-        // console.log("submission canceled");
-        // return false;
-    };
+  
 
 
     // custom messages turn input permanently into invalid
     //   even if we clear this on every input event, an input event is needed to clear
     // messages are mathematical - and cannot be localized
-    function addCustomMessage(){
-        i1.setCustomValidity("customized trouble message");
+    function addCustomMessages(){
+        i1.setCustomValidity("customized trouble message 1");
         i1.oninput = function(){
+            this.setCustomValidity("");
+        }
+        i2.setCustomValidity("customized trouble message 2");
+        i2.oninput = function(){
             this.setCustomValidity("");
         }
     }
@@ -363,22 +379,22 @@
 
 
     // disable input validation
-    // submit() *does* completes after this
+    // submit() *does* complete after this
     function noFormValidation2() {
         document.forms["frmMain"].setAttribute("novalidate", true);
     }
 
 
-    // removing any previous messages
-    function clearAllMessages() {
+    // removing any previous custom messages
+    function clearAllPreviousBubbles() {
         var errorMessages = form.querySelectorAll(".bubble-invalid-anchor");
         for (var i = 0; i < errorMessages.length; i++) {
             errorMessages[i].parentNode.removeChild(errorMessages[i]);
         }
     }
 
-    // clearing and re-creating a message right beside DOM element el 
-    function flagInvalid(el,msg) {
+    // clearing and re-creating a custom message right beside DOM element el 
+    function showBubblePopup(el,msg) {
 
         if(msg === undefined){  // typeof msg == "undefined"
             msg = el.dataset.validation_msg
@@ -414,14 +430,14 @@
 
     }
 
-    function flagAllInvalidFormInputs(event) {
+    function customBubblesForInvalidInputs(event){
 
-        clearAllMessages();
+        clearAllPreviousBubbles();
 
         // insert new messages at the end of parent
         var invalidFields = this.querySelectorAll(":invalid");
         for (var i = 0; i < invalidFields.length; i++) {
-            flagInvalid(invalidFields[i]);
+            showBubblePopup(invalidFields[i]);
         }
 
         // focus first invalid field
@@ -439,15 +455,13 @@
 
 
 
-    function configureFormValidation() {
+    function validateFormWithCustomBubbles() {
 
         form = document.forms['frmMain'];
 
-        var preventInvalid = false;
+        var suppressBuiltinBubbles = 3;  // internet suggests three modes to accomplish suppression of builtin bubbles
 
-
-        if (preventInvalid) {
-            // suppressing default bubbles - 1
+        if (suppressBuiltinBubbles == 1) {
             // => form.submit() no longer works; only submit buttons clicks still effect a submission
             form.addEventListener(
                 "invalid", 
@@ -460,8 +474,7 @@
         }
 
 
-        if (preventInvalid) {
-            // suppressing default bubbles - 2
+        if (suppressBuiltinBubbles == 2) {
             // => form.submit() no longer works; only submit buttons clicks still effect a submission
             var inputs = form.querySelectorAll("input[type=number]");
             for (var i = 0; i < inputs.length; i++) {
@@ -475,52 +488,68 @@
         }
 
 
-        // suppressing default bubbles - 3
-        // instead of suppressing default bubbles - 1/2
-        if(!preventInvalid){
+        if (suppressBuiltinBubbles == 3) {
 
+            // disable form validation
+            // form.submit() validation disabled
+            // form.submit() works and still goes through
             document.forms["frmMain"].setAttribute("novalidate", true);
-            console.log(`configureFormValidation - form.submit(): validation disabled by novalidate=true.`);
-            console.log(` &nbsp; &nbsp; &nbsp;               form.submit() works and goes through.`);
 
 
+            // "re-enable" validation of inputs using an explicit event handler
             form.addEventListener(
                 "submit", 
                 function (event) {
                     if (!this.checkValidity()) {
                         var name = event.target.getAttribute("name");
                         console.log(`prevented submitting form ${name}: invalid inputs`);
-                        event.preventDefault();  // effectively cancels submit
+                        // emulating cancellation of form.submit() on invalid input
+                        event.preventDefault();  
                     }
                 },
                 true
             );
-            console.log(`configureFormValidation - form.submit(): validation re-introduced.`);
-
+            // form submit now stalls on invalid
+            // but without any bubbles nor any other messages
+            console.log(`suppressBuiltinBubbles complete`);
         }
-    }
 
-
-    function flagInvalidOnSubmit() {
+        // add custom bubbles
         document.forms["frmMain"].addEventListener(
             "submit",
-            flagAllInvalidFormInputs,
+            customBubblesForInvalidInputs,
             true
         );
-        console.log(`flag invalid inputs on form submit.`);
+        console.log(`custom bubbles for invalid inputs attached`);
+
+
     }
 
 
-    function flagInvalidOnblur(event) {
+
+    // showing custom bubbles on form submit is too late?
+    //   => show them on blur
+    function showBubbleOnBlur() {
         var inputs = form.querySelectorAll("input[type=number]");
         for (var i = 0; i < inputs.length; i++) {
             inp = inputs[i];
             var funcReport = function (event) {
                 // event.target.reportValidity();
-                flagInvalid(event.target);
+                showBubblePopup(event.target);
                 console.log(`blur inp.reportValidity() ${event.target.getAttribute('name')}`);
             };
             inp.addEventListener("blur", funcReport);  // blur does not bubble up
+
+            var removeOnEntering = function (event) {
+                var el = event.target;
+                var elErrors = el.parentNode.querySelectorAll(":scope > .bubble-invalid-anchor");
+                for (var i = 0; i < elErrors.length; i++) {
+                    var oldChild = elErrors[i].parentNode.removeChild(elErrors[i]);
+                    console.log(`removed ${i + 1} of ${elErrors.length} - ID ${elErrors[i].getAttribute('id')} - old-ID ${oldChild.getAttribute('id')} `);
+                }
+            };
+            inp.addEventListener("focus", removeOnEntering);    // remove on entering input
+
             console.log(` &nbsp;  &nbsp; blur handler added to ${inp.getAttribute('name')}`);
         }
     }
@@ -533,11 +562,9 @@
         function () {
 
 
-            configureFormValidation();
+            validateFormWithCustomBubbles();
 
-            flagInvalidOnSubmit();
-
-            flagInvalidOnblur();
+            showBubbleOnBlur();
 
 
             console.log("DOMContentLoaded loaded - form and input validation configured"); 

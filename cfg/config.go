@@ -298,8 +298,9 @@ func Example() *ConfigT {
 			   background-color:   rgba(var(--clr-pri), 0.5); */
 			{Key: "has-alpha", R: 240, G: 240, B: 240, Alpha: .9, Desc: "has alpha - but takes away flexibility"},
 
-			{Key: "valid", R: 233, G: 255, B: 233, Desc: "ok, valid"}, // slight hue of input-bg, otherwise too annoying for empty inputs
-			{Key: "err", Colorname: "lightcoral", Desc: "errors and alerts"},
+			{Key: "err", Colorname: "darkred", Desc: "errors and alerts"},                  // foreground - with bg-invalid
+			{Key: "bg-valid", R: 233, G: 255, B: 233, Desc: "ok, valid, input background"}, // slight hue of input-bg, otherwise too annoying for empty inputs
+			{Key: "bg-invalid", R: 255, G: 240, B: 240, Desc: "input background"},          //
 			{Key: "pri", R: 000, G: 105, B: 180, Desc: "primary color - fonts and icons"},
 			{Key: "pri-hov", R: 002, G: 134, B: 228, Desc: "hover   - slightly lighter"},
 			{Key: "pri-vis", R: 000, G: 071, B: 122, Desc: "visited - slightly darker"},

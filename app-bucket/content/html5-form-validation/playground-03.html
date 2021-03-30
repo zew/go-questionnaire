@@ -1,0 +1,329 @@
+<style>
+    :root {
+       xxfont-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+
+    .pseudo-form {
+        margin-top: 2rem;
+        padding: 1rem 0.5rem;
+        background-color:  lightblue;
+        zoom: 1.2;
+    }
+
+
+    #console-log{
+        background-color: bisque;
+        margin: 0;
+        margin-top: 1.5rem;
+
+        position: relative;
+        display: block ;
+    }
+
+    .link-as-button {
+        color: var(--clr-sec) !important;    
+        background-color: var(--clr-pri);
+        
+        display: inline-block;
+        padding: 0.5rem 0.9rem;
+        padding-bottom: 0.6rem;
+        font-weight: bold;
+    }
+
+
+    p {
+        margin-bottom: 0.5rem;
+        line-height: 110%;
+    }
+    
+
+    
+    .block {
+        display: inline-block;
+        border: 1px solid lightcyan;
+
+        position: relative;
+    }
+    label {
+        min-width: 4rem;
+        text-align: right;
+    }
+    .control {
+        display: inline-block; 
+        margin-right: 2rem;    
+    }
+    .control:last-child {
+        margin-right: 0rem;    
+    }
+
+
+</style>
+
+
+<div class="pseudo-form">
+
+    <div class="block">
+        
+        <label for="input1">
+            DAX erw 
+        </label>
+
+        <div class="control">
+            
+            <input type="number" name="input1" id="input1"
+            min="2000"
+            max="25000"
+            step="1"
+            data-validation_msg="Please enter a number between 2.000 and 25.000"
+            value="14.5"
+            > %
+        </div>
+
+    </div>
+
+    <div class="block">
+
+        <label for="input2">
+            Min 
+        </label>
+    
+
+        <div class="control">
+            <input type="number" name="input2" id="input2"
+                min="2000"
+                max="25000"
+                step="1"
+                data-validation_msg="Please enter a number between 2.000 and 25.000"
+            > %
+        </div>
+    </div>
+
+
+    <div class="block">
+
+        <label for="input3">
+            Max
+        </label>
+
+        <div class="control">
+            <input type="number" name="input3" id="input3"
+                min="2000"
+                max="25000"
+                step="1"
+                data-validation_msg="Please enter a number between 2.000 and 25.000"
+            > %
+        </div>
+    </div>
+    
+    <br>
+    <br>
+    <br>
+    
+    <input  type="submit"  name="submitBtn1"  value="Input type submit" title="input[type=submit]">
+
+<!--     
+    submit methods... &nbsp;&nbsp;
+    <a class="link-as-button" 
+        href="#" 
+        onclick="document.forms['frmMain'].requestSubmit();"
+        accesskey="s"
+    >JS&nbsp;form.<u>s</u>ubmit()</a>
+
+    <button type="submit"  name="submitBtn2"  value="valS2"    title="button" >Button type submit</button>
+    
+ -->
+
+</div><!-- /pseudo-form -->
+
+
+    <hr>
+
+
+    <p>
+        Default: popups with nerdy wording and in browser language
+    </p>
+
+   
+    <p>
+        <input type="checkbox" id="validateFormWithCustomBubbles">
+        Custom popups for invalids on <b>form</b> submit
+    </p>
+
+    <p>
+        <input type="checkbox" id="showBubbleOnBlurOrInput">
+        Custom popups for invalids already on blur
+
+        <br>
+
+            &nbsp; &nbsp;   <input type="checkbox" id="checkOnInput" >
+                ... or even on every input
+
+        <br>
+
+            &nbsp; &nbsp;   <input type="checkbox" id="reclaimFocus" >
+                ... and lock focus
+
+    </p>
+
+
+    <a class="link-as-button" 
+        href="#" 
+        onclick="configure();"
+        accesskey="s"
+    >Configure</a>
+
+
+
+
+
+    <div id="console-log"><div style="
+            background-color: whitesmoke; 
+            position: relative; 
+            left: -0.8rem; top: -0.3rem; width: 10rem;" >console log</div></div>
+
+
+
+
+<script>
+
+
+    var logFn = console.log;  // save the original log function for later use
+    var myLog = document.getElementById("console-log");
+    console.log = function () {
+        var line = "";
+        for (var i = 0, j = arguments.length; i < j; i++) {
+            if (typeof arguments[i] == "object") {
+                // var argX = arguments[i];
+                // var tp   = typeof argX;
+                // var content = JSON.stringify(argX);
+                // line += " " + tp + " " + content;
+                line += " " + arguments[i];
+                logFn.call(console, arguments[i]);
+            } else {
+                line += " " + arguments[i];
+            }
+        }
+        if (line.length > 0) {
+            myLog.innerHTML += line + "<br>";
+            logFn.call(console, line); // call original function if you want to
+        }
+    };
+
+
+
+    function resetAllListeners(form){
+
+        form.oninvalid  = null;
+        form.onvalid    = null;
+        form.onsubmit   = null;
+        
+        var inputs = form.querySelectorAll("input[type=number]");
+        for (var i = 0; i < inputs.length; i++) {
+            var inp = inputs[i];
+            inp.onvalid    = null;
+            inp.onblur     = null;
+            inp.onfocus    = null;
+            inp.oninput    = null;
+        }
+
+    }
+
+
+
+    /* ============ UI ================  */
+    
+
+    var myForm = document.forms["frmMain"];
+
+
+    function  validateFormWithCustomBubblesExec() {
+        nameCheck = "validateFormWithCustomBubbles"
+        var checkbox = document.getElementById(nameCheck);
+        if (checkbox.checked) {
+            validateFormWithCustomBubbles(myForm);
+        }
+        // console.log(`checkbox ${nameCheck} executed`)
+    }
+
+    function  showBubbleOnBlurOrInputExec() {
+        nameCheck = "showBubbleOnBlurOrInput"
+        var checkbox = document.getElementById(nameCheck);
+        if (checkbox.checked) {
+            showBubbleOnBlurOrInput(myForm);
+        }
+        // console.log(`checkbox ${nameCheck} executed`)
+    }
+
+        function checkOnInputExec() {
+            nameCheck = "checkOnInput"
+            var checkbox = document.getElementById(nameCheck);
+            if (checkbox.checked) {
+                checkOnInput = true;
+            } else {
+                checkOnInput = false;
+            }
+            // console.log(`checkbox ${nameCheck} executed`)
+        }
+        function reclaimFocusExec() {
+            nameCheck = "reclaimFocus"
+            var checkbox = document.getElementById(nameCheck);
+            if (checkbox.checked) {
+                reclaimFocus = true;
+            } else {
+                reclaimFocus = false;
+            }
+            // console.log(`checkbox ${nameCheck} executed`)
+        }
+    
+
+
+    function configure(){
+        resetAllListeners(myForm);
+
+          checkOnInputExec();
+          reclaimFocusExec();
+        validateFormWithCustomBubblesExec();
+        showBubbleOnBlurOrInputExec();
+
+        myForm.input1.focus();
+
+        console.log("configured");
+    }
+
+    
+    
+
+    document.addEventListener(
+        'DOMContentLoaded', 
+        function () {
+            var checkboxes = document.querySelectorAll('input[type=checkbox][name=gender]');
+            var checkboxes = document.querySelectorAll('input[type=checkbox]');
+            for (var checkbox of checkboxes) {
+                checkbox.addEventListener('change', function (event) {
+                    if (event.target.checked) {
+                    }
+                    configure();
+                });
+            }
+        }, 
+        false
+    );
+
+
+    document.addEventListener(
+        'DOMContentLoaded',
+        function () {
+            myForm.method = "GET";
+            myForm.action = "/{{AppPrefix}}/doc/html5-form-validation/playground-03.html";
+            configure();
+        },
+        true
+    );
+
+
+
+
+</script>
+
+
+

@@ -605,7 +605,13 @@ input:not([type=submit]):valid {
 }
 
 input:not([type=submit]):focus:valid {
-    background-color: var(--clr-valid);
+    background-color: var(--clr-bg-valid);
+}
+
+input:not([type=submit]):invalid,
+input:not([type=submit]):focus:invalid
+{
+    background-color: var(--clr-bg-invalid);
 }
 
 input:disabled, select:disabled {
@@ -837,7 +843,11 @@ input[type=radio]:focus         {
     background-color:#eee;
     margin:          8px 0;
     margin-left:     46px;
+    padding: 0.2rem 0.8rem;
+    border: 1px solid lightblue;
+
     display:         none;
+
 }
 
 /* text helpers */
@@ -1624,3 +1634,113 @@ input.ib-250 {     width:250px;    }
 input.ib-300 {     width:300px;    }
 
 
+/* 
+    validation bubble messages - start
+*/
+
+
+.bubble-invalid-anchor {
+
+
+    width:   0px;
+    height:  0px;
+    margin:  0;
+    padding: 0;
+
+
+    /* anchor for content */
+    /* position:       relative;  */
+    /* we go for parent's parent instead */
+
+    /* right of input */
+    display:        inline-block;    
+    vertical-align: middle;
+
+
+    /* below input */
+    display:        block; /* forcing newline */
+    xxwidth:          100%;
+
+    display: inline;
+
+
+    width:   20px;
+    height:  20px;
+    background-color: #252;
+
+}
+.bubble-invalid-content {
+    
+    position: absolute; 
+    z-index: 212; /* must be greater than nav/menu */ 
+    
+    min-width: 12rem; 
+    width: 200%; /* of input parent */
+
+    border-radius: 0.3rem;
+
+    padding: 0.1rem 0.4rem;
+    padding-top: 0;
+    border: 1px solid var(--clr-err); 
+    border-top: none; 
+    
+    background-color: var(--clr-bg-invalid);
+    color:            var(--clr-err);
+
+    font-size: 90%;
+
+
+    /* vertically centered */
+    top: 50%;
+    transform: translateY(-50%);
+
+
+    /* below input */
+    top:   -0.3rem;
+    left:  -0.3rem;
+    transform: translateY(0%);
+
+
+    /* parent's parent */
+    transform: translateY(100%);
+    width: 100%; 
+    top:   -0.75rem;
+
+}
+
+@media screen and (max-width: 800px) {
+
+ 
+    .bubble-invalid-anchor {
+    }
+
+    .bubble-invalid-content {
+
+        min-width: 120%; 
+        min-width: unset; 
+        min-width: 8rem; 
+        width: unset; /* of input parent */
+        
+
+        /* 
+        width: calc(100vw - 3.4rem);
+        width: calc(100% - 1.4rem); 
+        */
+
+
+        /* 
+        forcing below - if desktop view is right-beside
+        top:   0.02rem;
+        left: -0.2rem;
+        transform: translateY(0%); 
+        */
+
+
+    }
+
+}
+
+
+/* 
+    validation bubble messages - end
+*/

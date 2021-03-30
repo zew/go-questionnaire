@@ -41,7 +41,9 @@ function keyControls(e) {
         }
 
         var el = document.activeElement;
-        if (el.tagName == "INPUT" || el.tagName == "SELECT") {
+
+        // skip for <input type=submit>  and <button>... 
+        if ((el.tagName == "INPUT" && el.type != "submit") || el.tagName == "SELECT") {
 
             e.preventDefault();
             var nextEl = null;
@@ -53,9 +55,9 @@ function keyControls(e) {
                 // then taking current tab index and incrementing it
                 var elements = el.form.elements;
                 var cntr = 1;
-                for (var i = 0, element; element = elements[i++];) {
-                    if (element.type !== "hidden" && element.type !== "fieldset") {
-                        element.tabIndex = cntr;
+                for (var i = 0, lpEl; lpEl = elements[i++];) {
+                    if (lpEl.type !== "hidden" && lpEl.type !== "fieldset") {
+                        lpEl.tabIndex = cntr;
                         cntr++;
                         // console.log("tab index", element.name, " to ", i);
                     } else {
@@ -71,15 +73,15 @@ function keyControls(e) {
             // second method: simply follow the form elements order
             var found = false;
             if (el.form) {
-                for (var i = 0, element; element = el.form.elements[i++];) {
-                    if (element.type !== "hidden" && element.type !== "fieldset") {
+                for (var i = 0, lpEl; lpEl = el.form.elements[i++];) {
+                    if (lpEl.type !== "hidden" && lpEl.type !== "fieldset") {
                         if (found) {
-                            nextEl = element;
-                            console.log("found next	element", element.name, " at ", i);
+                            nextEl = lpEl;
+                            console.log(`found next	   ${lpEl.name} type ${lpEl.type} at `, i);
                             break;
                         }
-                        if (el === element) {
-                            console.log("found current element", element.name, " at ", i);
+                        if (el === lpEl) {
+                            console.log(`found current ${lpEl.name} type ${lpEl.type} at `, i);
                             found = true;
                         }
                         // console.log("iterating form elements", element.name, " to ", i);

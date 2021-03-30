@@ -150,16 +150,23 @@
  			"alpha": 0.9
  		},
  		{
- 			"key": "valid",
- 			"desc": "ok, valid",
+ 			"key": "err",
+ 			"desc": "errors and alerts",
+ 			"color_name": "darkred"
+ 		},
+ 		{
+ 			"key": "bg-valid",
+ 			"desc": "ok, valid, input background",
  			"r": 233,
  			"g": 255,
  			"b": 233
  		},
  		{
- 			"key": "err",
- 			"desc": "errors and alerts",
- 			"color_name": "lightcoral"
+ 			"key": "bg-invalid",
+ 			"desc": "input background",
+ 			"r": 255,
+ 			"g": 240,
+ 			"b": 240
  		},
  		{
  			"key": "pri",

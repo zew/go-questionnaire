@@ -22,7 +22,7 @@ function clearAllPreviousBubbles(form) {
     }
 }
 
-// clearing and re-creating a custom message right-beside or under DOM element el
+// clearing and re-creating a custom message right-beside or -below DOM element el
 function showBubblePopup(el, msg) {
 
     if (msg === undefined) {  // typeof msg == "undefined"
@@ -65,8 +65,8 @@ function showBubblePopup(el, msg) {
 
 }
 
-// for each invalid input element of a form (.this)
-// a bubble message is displayed right-next or right-below
+// for each invalid input element of a form (this)
+// a bubble message is displayed right-next or -below
 function customBubblesForInvalidInputs(event) {
 
     clearAllPreviousBubbles(this);

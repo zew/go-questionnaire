@@ -42,6 +42,7 @@ func ServeDynCSS(w http.ResponseWriter, r *http.Request) {
 
 	if _, ok := cfg.Get().CSSVarsSite[siteName]; !ok {
 		log.Printf("CSS template: %v site %q does not exist in cfg.CSSVarsSite", cssFileName, siteName)
+		return
 	}
 
 	err = t.ExecuteTemplate(w, cssFileName, cfg.Get().CSSVarsSite[siteName])

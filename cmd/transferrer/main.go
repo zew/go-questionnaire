@@ -435,6 +435,9 @@ func main() {
 			staticCols = append(staticCols, fmt.Sprintf("page_%v", iPg+1))
 		}
 
+		nonEmpty := 0
+		empty := 0
+
 		//
 		//
 		// Process questionnaires
@@ -470,7 +473,7 @@ func main() {
 			// current run: move empty to dir empty
 			realEntries, _, _ := q.Statistics()
 			if realEntries == 0 {
-				log.Printf("%3v: %v. No answers given, skipping, deleting, moving to %v.", i, pthFull, "empty")
+				log.Printf("%3v: %v. No answers, moving to %v.", i, pthFull, "empty")
 				err = cloudio.Delete(pthFull)
 				if err != nil && !cloudio.IsNotExist(err) {
 					log.Printf("%3v: Error removing empty %v - %v", i, pthFull, err)
@@ -479,8 +482,11 @@ func main() {
 				if err != nil {
 					log.Printf("%3v: Error saving  to empty %v: %v", i, pthEmpty, err)
 				}
+				empty++
 				continue
 			}
+
+			nonEmpty++
 
 			// Prepare columns...
 			finishes, ks, vs := q.KeysValues(true)
@@ -522,7 +528,8 @@ func main() {
 			}
 			vs = append(prepend, vs...)
 			allVals = append(allVals, vs)
-		}
+
+		} // forr questionnaires
 
 		allKeysSuperset := Superset(allKeys)
 
@@ -578,7 +585,10 @@ func main() {
 		if err != nil {
 			log.Printf("Could not write file %v: %v", fn, err)
 		}
-		log.Printf("Regular finish. %v questionnaire(s) processed. %v", len(qs), fn)
+		log.Printf(
+			"\nRegular finish. %v questionnaire(s) processed\n%v %v \n%v", len(qs),
+			nonEmpty, empty, fn,
+		)
 
 	}
 

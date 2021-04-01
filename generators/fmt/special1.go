@@ -106,7 +106,7 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 				inp.ColSpan = 3
 				inp.ColSpanLabel = 1
 				inp.ColSpanControl = 1
-				inp.Min = 0
+				inp.Min = -20
 				inp.Max = 20
 				inp.Step = 0.01
 				inp.MaxChars = 4
@@ -152,7 +152,7 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 			inp.ColSpan = 4 - 1
 			inp.ColSpanLabel = 1
 			inp.ColSpanControl = 1
-			inp.Min = 0
+			inp.Min = -20
 			inp.Max = 20
 			inp.Step = 0.01
 			inp.MaxChars = 5

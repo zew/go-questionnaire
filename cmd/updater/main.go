@@ -2,6 +2,10 @@
 // can be applied to single origin json - as well as to filled out json files.
 //     updater.exe -dir ../app-bucket/responses/mul.json
 //     updater.exe -dir ../app-bucket/responses/mul/2019-02
+//     updater.exe -dir ../app-bucket/responses/mul/2019-02/23121.json
+//
+// The saving to app-bucked via cloudio might fail
+// and the changes might be saved to app-dir/app-bucket/...
 package main
 
 import (
@@ -10,6 +14,7 @@ import (
 	"log"
 	"math/rand"
 	"os"
+	"path"
 	"path/filepath"
 	"strings"
 	"time"
@@ -29,19 +34,19 @@ func main() {
 		util.FlagT{
 			Long:       "directory",
 			Short:      "dir",
-			DefaultVal: "../app-bucket/responses/mul/2019-02/",
+			DefaultVal: "../../app-bucket/responses/downloaded/fmt/2021-04/11499.json",
 			Desc:       "filename - or directory or to iterate",
 		},
 	)
 	fl.Gen()
-	dir := fl.ByKey("dir").Val
+	dirSrc := fl.ByKey("dir").Val
 
 	//
 	isFile := false
-	files, err := ioutil.ReadDir(dir)
+	files, err := ioutil.ReadDir(dirSrc)
 	if err != nil {
 		log.Printf("Opening as directory failed: %v", err)
-		f, err := os.OpenFile(dir, 0, 0777)
+		f, err := os.OpenFile(dirSrc, 0, 0777)
 		if err != nil {
 			log.Printf("Opening as file      failed: %v", err)
 			return
@@ -51,66 +56,86 @@ func main() {
 			log.Printf("Error obtaining file info: %v", err)
 			return
 		}
-		log.Printf("Opening as file succeeded: %v", dir)
+		log.Printf("Opening as file succeeded: %v", dirSrc)
 		isFile = true
 		files = append(files, fi)
+	}
+
+	for idx, f := range files {
+		log.Printf("found file %3v: %v", idx, f.Name())
 	}
 
 	//
 	cntrChanged := 0
 	for i, f := range files {
 
-		pth := filepath.Join(dir, f.Name())
+		pSrc := path.Join(dirSrc, f.Name())
 		if isFile {
-			pth = filepath.Join(dir)
+			pSrc = filepath.Join(dirSrc)
 		}
-		log.Printf("%3v: opening file  %v", i, pth)
+		log.Printf("%3v: opening file  %v", i, pSrc)
 
-		bts, err := ioutil.ReadFile(pth)
+		pDst := path.Join(path.Dir(dirSrc), "updated", f.Name())
+
+		bts, err := ioutil.ReadFile(pSrc)
 		if err != nil {
-			log.Printf("%3v: Error reading file %v: %v", i, pth, err)
+			log.Printf("%3v: Error reading file %v: %v", i, pSrc, err)
 			return
 		}
 
 		q := qst.QuestionnaireT{}
 		err = json.Unmarshal(bts, &q)
 		if err != nil {
-			log.Printf("%3v: Error unmarshalling file %v: %v", i, pth, err)
+			log.Printf("%3v: Error unmarshalling file %v: %v", i, pSrc, err)
 			return
 		}
-		log.Printf("%3v: questionnaire %v - unmarshalled - %10.3f MB", i, pth, float64(len(bts)/(1<<10))/(1<<10))
+		log.Printf("%3v: questionnaire %v - unmarshalled - %10.3f MB", i, pSrc, float64(len(bts)/(1<<10))/(1<<10))
 
-		// changing and saving the questionnaire; checksum via q.Save()
 		//
-		// loc := time.FixedZone("UTC", 1*3600)
-		// tToBeCorrected := time.Date(2018, 10, 31, 24, 59, 0, 0, loc)  // "deadline": "2018-10-31T23:59:00Z"
-		// if q.Survey.Deadline.Equal(tToBeCorrected) {
-		if false && q.Variations > 0 {
-			log.Printf("%3v: questionnaire %v - correction needed %v", i, pth, q.Survey.Deadline)
-			// q.Survey.Deadline = tInstead
-			q.Variations = 0
-			err := q.Save1(pth)
-			if err != nil {
-				log.Printf("%3v: Error saving %v: %v", i, pth, err)
+		//
+		//
+		// now we might perform various changes to the questionnaire
+		// then saving the questionnaire; checksum via q.Save()
+
+		var t1 time.Time
+		q.ClosingTime = t1
+		err = q.Save1(pDst)
+		if err != nil {
+			log.Printf("%3v: Error saving %v: %v", i, pSrc, err)
+		}
+		cntrChanged++
+
+		if false {
+			if q.Variations > 0 {
+				log.Printf("%3v: questionnaire %v - correction needed %v", i, pSrc, q.Survey.Deadline)
+				// q.Survey.Deadline = tInstead
+				q.Variations = 0
+				err := q.Save1(pDst)
+				if err != nil {
+					log.Printf("%3v: Error saving %v: %v", i, pSrc, err)
+				}
+				cntrChanged++
+				log.Printf("%3v: questionnaire %v saved", i, pSrc)
 			}
-			cntrChanged++
-			log.Printf("%3v: questionnaire %v saved", i, pth)
+
 		}
 
-		search := q.Pages[1].Groups[8].Inputs[0].Label["fr"]
-		old := "con-trainte"
-		new := "contrainte"
-		if strings.Contains(search, old) {
-			replaced := strings.Replace(search, old, new, -1)
-			q.Pages[1].Groups[8].Inputs[0].Label["fr"] = replaced
-			err := q.Save1(pth)
-			if err != nil {
-				log.Printf("%3v: Error saving %v: %v", i, pth, err)
+		if false {
+			search := q.Pages[1].Groups[8].Inputs[0].Label["fr"]
+			old := "con-trainte"
+			new := "contrainte"
+			if strings.Contains(search, old) {
+				replaced := strings.Replace(search, old, new, -1)
+				q.Pages[1].Groups[8].Inputs[0].Label["fr"] = replaced
+				err := q.Save1(pDst)
+				if err != nil {
+					log.Printf("%3v: Error saving %v: %v", i, pSrc, err)
+				}
+				cntrChanged++
+				log.Printf("%3v: questionnaire %v - %v corrected to %v", i, pSrc, old, new)
+			} else {
+				log.Printf("%3v: questionnaire %v - correction not needed %v", i, pSrc, search)
 			}
-			cntrChanged++
-			log.Printf("%3v: questionnaire %v - %v corrected to %v", i, pth, old, new)
-		} else {
-			log.Printf("%3v: questionnaire %v - correction not needed %v", i, pth, search)
 		}
 
 	}

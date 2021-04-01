@@ -18,6 +18,8 @@ func nextWaveID() string {
 // Yields current quarter plus one
 func nextQ(opt ...int) string {
 	t := time.Now()
+	t = t.Add(-time.Duration(10 * 24 * time.Hour))
+
 	m := t.Month() // 1 - january
 	y := t.Year()
 	qNow := int((m-1)/3) + 1 // jan: int(0/3)+1 == 1   feb: int(1/3)+1 == 1    mar: int(2/3)+1 == 1     apr: int(3/3)+1 == 2
@@ -40,6 +42,8 @@ func nextQ(opt ...int) string {
 
 func nextY(opt ...int) string {
 	t := time.Now()
+	t = t.Add(-time.Duration(10 * 24 * time.Hour))
+
 	y := t.Year()
 
 	offset := 1

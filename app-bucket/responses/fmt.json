@@ -18,7 +18,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "9d5d18d3b89d2a52a05af3b9d307b3e0f071083037caaaa074a32984dca9a938",
+ 	"md_5": "5884eb0170d7978a9f56bbd99b83f4545f55d0b30352b1c7dc50eb4c35e432a5",
  	"lang_codes": [
  		"de",
  		"en"
@@ -1313,6 +1313,7 @@
  							"type": "number",
  							"max_chars": 5,
  							"step": 0.01,
+ 							"min": -100,
  							"max": 100,
  							"label": {
  								"de": "Aktuelles Quartal",
@@ -1331,6 +1332,7 @@
  							"type": "number",
  							"max_chars": 5,
  							"step": 0.01,
+ 							"min": -100,
  							"max": 100,
  							"label": {
  								"de": "Folgendes Quartal",
@@ -4560,10 +4562,11 @@
  							"type": "number",
  							"max_chars": 4,
  							"step": 0.01,
+ 							"min": -20,
  							"max": 20,
  							"label": {
- 								"de": "Q2 2021",
- 								"en": "Q2 2021"
+ 								"de": "Q1 2021",
+ 								"en": "Q1 2021"
  							},
  							"suffix": {
  								"de": "%",
@@ -4618,10 +4621,11 @@
  							"type": "number",
  							"max_chars": 4,
  							"step": 0.01,
+ 							"min": -20,
  							"max": 20,
  							"label": {
- 								"de": "Q3 2021",
- 								"en": "Q3 2021"
+ 								"de": "Q2 2021",
+ 								"en": "Q2 2021"
  							},
  							"suffix": {
  								"de": "%",
@@ -4676,10 +4680,11 @@
  							"type": "number",
  							"max_chars": 4,
  							"step": 0.01,
+ 							"min": -20,
  							"max": 20,
  							"label": {
- 								"de": "Q4 2021",
- 								"en": "Q4 2021"
+ 								"de": "Q3 2021",
+ 								"en": "Q3 2021"
  							},
  							"suffix": {
  								"de": "%",
@@ -4734,10 +4739,11 @@
  							"type": "number",
  							"max_chars": 4,
  							"step": 0.01,
+ 							"min": -20,
  							"max": 20,
  							"label": {
- 								"de": "Q1 2022",
- 								"en": "Q1 2022"
+ 								"de": "Q4 2021",
+ 								"en": "Q4 2021"
  							},
  							"suffix": {
  								"de": "%",
@@ -4818,6 +4824,7 @@
  							"type": "number",
  							"max_chars": 5,
  							"step": 0.01,
+ 							"min": -20,
  							"max": 20,
  							"label": {
  								"de": "2021",
@@ -4876,6 +4883,7 @@
  							"type": "number",
  							"max_chars": 5,
  							"step": 0.01,
+ 							"min": -20,
  							"max": 20,
  							"label": {
  								"de": "2022",
@@ -4934,6 +4942,7 @@
  							"type": "number",
  							"max_chars": 5,
  							"step": 0.01,
+ 							"min": -20,
  							"max": 20,
  							"label": {
  								"de": "2023",

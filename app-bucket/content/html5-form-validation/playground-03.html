@@ -1,12 +1,8 @@
 <style>
-    :root {
-       xxfont-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    }
 
     .pseudo-form {
         margin-top: 2rem;
         padding: 1rem 0.5rem;
-        aa-background-color:  lightblue;
         zoom: 1.2;
     }
 
@@ -20,19 +16,9 @@
         display: block ;
     }
 
-    .link-as-button {
-        color: var(--clr-sec) !important;    
-        background-color: var(--clr-pri);
-        
-        display: inline-block;
-        padding: 0.5rem 0.9rem;
-        padding-bottom: 0.6rem;
-        font-weight: bold;
-    }
-
 
     p {
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.3rem;
         line-height: 110%;
     }
     
@@ -40,12 +26,20 @@
     
     .block {
         display: inline-block;
-        border: 1px solid lightcyan;
-
-        position: relative;
+        padding-right: 2rem;
     }
+
+
+    @media screen and (min-width: 800px) {
+    
+        .block:first-child {
+            min-width: 90%;
+        }
+
+    }
+
     label {
-        min-width: 4rem;
+        min-width:  5rem;
         text-align: right;
     }
     .control {
@@ -119,19 +113,8 @@
     <br>
     <br>
     
-    <input  type="submit"  name="submitBtn1"  value="Input type submit" title="input[type=submit]">
+    <input  type="submit"  name="submitBtn1"  value="Input type submit" title="input[type=submit]"  accesskey="s">
 
-<!--     
-    submit methods... &nbsp;&nbsp;
-    <a class="link-as-button" 
-        href="#" 
-        onclick="document.forms['frmMain'].requestSubmit();"
-        accesskey="s"
-    >JS&nbsp;form.<u>s</u>ubmit()</a>
-
-    <button type="submit"  name="submitBtn2"  value="valS2"    title="button" >Button type submit</button>
-    
- -->
 
 </div><!-- /pseudo-form -->
 
@@ -140,37 +123,49 @@
 
 
     <p>
-        Default: popups with nerdy wording and in browser language
+        Default:  &nbsp; Popups with nerdy wording and in browser language
+        on submit
     </p>
 
    
     <p>
-        <input type="checkbox" id="validateFormWithCustomBubbles">
-        Custom popups for invalids on <b>form</b> submit
+        <input type="checkbox" id="validateFormWithCustomBubbles" accesskey="f">
+        Custom popups for invalids on <u>f</u>orm submit
     </p>
 
     <p>
         <input type="checkbox" id="showBubbleOnBlurOrInput">
         Custom popups for invalids already on blur
-
-        <br>
-
-            &nbsp; &nbsp;   <input type="checkbox" id="checkOnInput" >
-                ... or even on every input
-
-        <br>
-
-            &nbsp; &nbsp;   <input type="checkbox" id="reclaimFocus" >
-                ... and lock focus
-
     </p>
 
 
+    <div style="margin-left: 3rem; position: relative; top: -0.5rem;">
+
+        <p>
+             <input type="checkbox" id="checkOnInput">
+            ... or even on every input
+            
+        </p>
+        <p>
+             <input type="checkbox" id="reclaimFocus">
+            ... and lock focus
+            
+        </p>
+    </div>
+
+
+
+
+
+<!-- 
+
+
     <a class="link-as-button" 
-        href="#" 
-        onclick="configure();"
-        accesskey="s"
+    href="#" 
+    onclick="configure();"
+    accesskey="s"
     >Configure</a>
+-->
 
 
 
@@ -229,18 +224,70 @@
     }
 
 
+    function inconsistentTriplet() {
+
+        var inp1 = document.forms.frmMain.dax_erw.value;
+        var inp2 = document.forms.frmMain.dax_min.value;
+        var inp3 = document.forms.frmMain.dax_max.value;
+        // console.log("inp1-3: ", inp1, inp2, inp3);
+
+        var i1 = 0
+        if (inp1 != "") {
+            var i1 = parseInt(inp1, 10);
+        }
+        var i2 = 0
+        if (inp2 != "") {
+            var i2 = parseInt(inp2, 10);
+        }
+        var i3 = 0
+        if (inp3 != "") {
+            var i3 = parseInt(inp3, 10);
+        }
+        // console.log("inp1-3 integer: ", i1, i2, i3);
+
+        var suspicious = false;
+
+        // expectation between extremes?
+        if (i1 != 0) {
+            if (i2 != 0 && i1 < i2) {
+                suspicious = true;
+            }
+
+            if (i3 != 0 && i1 > i3) {
+                suspicious = true;
+            }
+        }
+
+        // min < max?
+        if (i2 != 0 && i3 != 0 && i2 > i3) {
+            suspicious = true;
+        }
+
+        return suspicious;
+
+    }
+
 
     /* ============ UI ================  */
     
 
     var myForm = document.forms["frmMain"];
+    var vd = new Validator(myForm);
+
+    var configControls = [
+        "checkOnInput",
+        "reclaimFocus",
+        "validateFormWithCustomBubbles",
+        "showBubbleOnBlurOrInput",
+    ];
+
 
 
     function  validateFormWithCustomBubblesExec() {
         nameCheck = "validateFormWithCustomBubbles"
         var checkbox = document.getElementById(nameCheck);
         if (checkbox.checked) {
-            validateFormWithCustomBubbles(myForm);
+            vd.validateFormWithCustomBubbles();
         }
         // console.log(`checkbox ${nameCheck} executed`)
     }
@@ -249,18 +296,18 @@
         nameCheck = "showBubbleOnBlurOrInput"
         var checkbox = document.getElementById(nameCheck);
         if (checkbox.checked) {
-            showBubbleOnBlurOrInput(myForm);
+            vd.showBubbleOnBlurOrInput();
+            console.log(`checkbox ${nameCheck} executed`)
         }
-        // console.log(`checkbox ${nameCheck} executed`)
     }
 
         function checkOnInputExec() {
             nameCheck = "checkOnInput"
             var checkbox = document.getElementById(nameCheck);
             if (checkbox.checked) {
-                checkOnInput = true;
+                vd.SetCheckOnInput(true);
             } else {
-                checkOnInput = false;
+                vd.SetCheckOnInput(false);
             }
             // console.log(`checkbox ${nameCheck} executed`)
         }
@@ -268,16 +315,29 @@
             nameCheck = "reclaimFocus"
             var checkbox = document.getElementById(nameCheck);
             if (checkbox.checked) {
-                reclaimFocus = true;
+                vd.SetReclaimFocus(true);
             } else {
-                reclaimFocus = false;
+                vd.SetReclaimFocus(false);
             }
             // console.log(`checkbox ${nameCheck} executed`)
         }
     
 
 
-    function configure(){
+    function configure(initial){
+
+        // load config
+        if (initial !== undefined) {
+            for (let i = 0; i < configControls.length; i++) {
+                var chkName = configControls[i];
+                var wasChecked = window.localStorage.getItem(chkName);
+                if (wasChecked === "true") {
+                    document.getElementById(chkName).checked = wasChecked;
+                }
+            }
+        }
+
+
         resetAllListeners(myForm);
 
           checkOnInputExec();
@@ -285,18 +345,44 @@
         validateFormWithCustomBubblesExec();
         showBubbleOnBlurOrInputExec();
 
-        myForm.dax_erw.focus();
 
-        console.log("configured");
+        // save config
+        for (let i = 0; i < configControls.length; i++) {
+            var chkName = configControls[i];
+            var chk = document.getElementById(chkName);
+            window.localStorage.setItem(chkName, chk.checked);
+        }
+
+        myForm.addEventListener(
+            "submit",
+            function (event) {
+                var yes = inconsistentTriplet();
+                if (yes) {
+                    console.log("inconsistentTriplet()", yes);
+                    var el = document.forms.frmMain.dax_max;
+                    vd.ShowBubblePopup(el, "Please adjust expected DAX between Min and Max",true);
+                    event.preventDefault();
+                }
+            },
+            false
+        );
+
+        console.log("validation configured");
     }
 
     
-    
 
+    // on form load - configure()
+    // then add event listeners to checkbox.change
     document.addEventListener(
-        'DOMContentLoaded', 
+        'DOMContentLoaded',
         function () {
-            var checkboxes = document.querySelectorAll('input[type=checkbox][name=gender]');
+            
+            myForm.method = "GET";
+            myForm.action = "/{{AppPrefix}}/doc/html5-form-validation/playground-03.html";
+            
+            configure(true);
+
             var checkboxes = document.querySelectorAll('input[type=checkbox]');
             for (var checkbox of checkboxes) {
                 checkbox.addEventListener('change', function (event) {
@@ -305,20 +391,11 @@
                     configure();
                 });
             }
-        }, 
+
+        },
         false
     );
 
-
-    document.addEventListener(
-        'DOMContentLoaded',
-        function () {
-            myForm.method = "GET";
-            myForm.action = "/{{AppPrefix}}/doc/html5-form-validation/playground-03.html";
-            configure();
-        },
-        true
-    );
 
 
 

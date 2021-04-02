@@ -77,11 +77,11 @@ function keyControls(e) {
                     if (lpEl.type !== "hidden" && lpEl.type !== "fieldset") {
                         if (found) {
                             nextEl = lpEl;
-                            console.log(`found next	   ${lpEl.name} type ${lpEl.type} at `, i);
+                            // console.log(`found next	   ${lpEl.name} type ${lpEl.type} at `, i);
                             break;
                         }
                         if (el === lpEl) {
-                            console.log(`found current ${lpEl.name} type ${lpEl.type} at `, i);
+                            // console.log(`found current ${lpEl.name} type ${lpEl.type} at `, i);
                             found = true;
                         }
                         // console.log("iterating form elements", element.name, " to ", i);
@@ -166,8 +166,18 @@ window.addEventListener("load", function (event) {
     var elements = document.forms.frmMain.elements;
     for (var i = 0, element; element = elements[i++];) {
         if (element.type !== "hidden") {
-            // pbu 2021-02: dropped - first control is sometimes too far down - init view scrolls down
-            // element.focus();
+            /*  first pages with first element after long text 
+                    => scrolls down
+                preventScroll supported only since 2018
+             */
+            try {
+                element.focus({
+                    preventScroll: true
+                });
+            } catch (error) {
+                // forgo the initial focus
+            }
+            
             // console.log("focus on form main input number", i, element.name);
             break;
         }

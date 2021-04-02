@@ -6,7 +6,7 @@
     .pseudo-form {
         margin-top: 2rem;
         padding: 1rem 0.5rem;
-        background-color:  lightblue;
+        aa-background-color:  lightblue;
         zoom: 1.2;
     }
 
@@ -64,13 +64,13 @@
 
     <div class="block">
         
-        <label for="input1">
+        <label for="dax_erw">
             DAX erw 
         </label>
 
         <div class="control">
             
-            <input type="number" name="input1" id="input1"
+            <input type="number" name="dax_erw" id="dax_erw"
             min="2000"
             max="25000"
             step="1"
@@ -83,13 +83,13 @@
 
     <div class="block">
 
-        <label for="input2">
-            Min 
+        <label for="dax_min">
+            DAX Min 
         </label>
     
 
         <div class="control">
-            <input type="number" name="input2" id="input2"
+            <input type="number" name="dax_min" id="dax_min"
                 min="2000"
                 max="25000"
                 step="1"
@@ -101,12 +101,12 @@
 
     <div class="block">
 
-        <label for="input3">
-            Max
+        <label for="dax_max">
+            DAX Max
         </label>
 
         <div class="control">
-            <input type="number" name="input3" id="input3"
+            <input type="number" name="dax_max" id="dax_max"
                 min="2000"
                 max="25000"
                 step="1"
@@ -285,7 +285,7 @@
         validateFormWithCustomBubblesExec();
         showBubbleOnBlurOrInputExec();
 
-        myForm.input1.focus();
+        myForm.dax_erw.focus();
 
         console.log("configured");
     }

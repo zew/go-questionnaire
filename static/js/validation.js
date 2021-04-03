@@ -42,7 +42,7 @@ function Validator(argForm) {
         var errorMessages = form.querySelectorAll(".bubble-invalid-anchor");
         for (var i = 0; i < errorMessages.length; i++) {
             var oldChild = errorMessages[i].parentNode.removeChild(errorMessages[i]);
-            console.log(`removed-b ${i + 1}of${errorMessages.length} - oldID${oldChild.getAttribute('id')} `);
+            // console.log(`removed-b ${i + 1}of${errorMessages.length} - oldID${oldChild.getAttribute('id')} `);
         }
     }
 
@@ -68,7 +68,7 @@ function Validator(argForm) {
         }
         for (var i = 0; i < elErrors.length; i++) {
             var oldChild = elErrors[i].parentNode.removeChild(elErrors[i]);
-            console.log(`removed-a ${i + 1}of${elErrors.length} - oldID${oldChild.getAttribute('id')} `);
+            // console.log(`removed-a ${i + 1}of${elErrors.length} - oldID${oldChild.getAttribute('id')} `);
         }
 
         if (!el.checkValidity() || overrideCheckValidity === true) {
@@ -201,12 +201,12 @@ function Validator(argForm) {
             if (checkOnInput) {
                 lgMsg = "blur+input";
             }
-            console.log(`${ lgMsg } inp.reportValidity() ${event.target.getAttribute('name')}`);
+            console.log(`  ${ lgMsg } inp.reportValidity() ${event.target.getAttribute('name')}`);
             if (reclaimFocus) {
                 if (event.type == "blur") {
                     if (!event.target.checkValidity()) {
                         event.target.focus();
-                        console.log(`blur focus reclaimed ${event.target.getAttribute('name')}`);
+                        console.log(`  blur focus reclaimed ${event.target.getAttribute('name')}`);
                     }
                 }
             }
@@ -226,7 +226,7 @@ function Validator(argForm) {
                     var elErrors = el.parentNode.querySelectorAll(":scope > .bubble-invalid-anchor");
                     for (var i = 0; i < elErrors.length; i++) {
                         var oldChild = elErrors[i].parentNode.removeChild(elErrors[i]);
-                        console.log(`removed ${i + 1}of${elErrors.length} - oldID${oldChild.getAttribute('id')} `);
+                        // console.log(`removed ${i + 1}of${elErrors.length} - oldID${oldChild.getAttribute('id')} `);
                     }
                 };
                 inp.addEventListener("focus", removeOnEntering);    // remove on entering input

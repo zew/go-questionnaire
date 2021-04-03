@@ -1679,9 +1679,8 @@ input.ib-300 {     width:300px;    }
     font-size: 90%;
 
     /* parent's parent */
-    width:     100%; 
     min-width: 12rem;  /* of smaller, message takes three lines; we want two */ 
-    max-width: 16rem;
+    max-width: 100%;
     top:      -0.25rem;
 
 }

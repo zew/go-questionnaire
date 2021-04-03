@@ -19,3 +19,11 @@ they trigger an instant valdiation error on every keystroke;
 they *can* be used for focus-dependent error feedback;
 they cannot be used for form.submit() validation.
 
+## Positioning
+
+* Dynamic display right or left or below can only be achieved using JavaScript libraries.  
+In order to work on `mobile` and on `desktop` view, only below positioning is feasible.
+
+## Todo
+
+Show only [ the first | one ] validation message

@@ -169,6 +169,11 @@ sudo systemctl start   go-questionnaire.service
 
 ```
 
+## Deploy executable bash script
+
+Bash file `deploy-new-release.sh` contains all the above steps  
+plus some caveats.
+
 ## Manage app with service commands
 
 ```bash

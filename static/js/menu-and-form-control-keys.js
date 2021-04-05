@@ -161,26 +161,47 @@ window.addEventListener("load", function (event) {
     console.log("outsideMenu and closeLevel3 registered");
 
 
-    // focus on first visible input
-    // TODO: first input after p.error-block
-    var elements = document.forms.frmMain.elements;
-    for (var i = 0, element; element = elements[i++];) {
-        if (element.type !== "hidden") {
-            /*  first pages with first element after long text 
-                    => scrolls down
-                preventScroll supported only since 2018
-             */
-            try {
-                element.focus({
-                    preventScroll: true
-                });
-            } catch (error) {
-                // forgo the initial focus
+    var noInvalidInputs = true;
+    var invalidFields = document.querySelectorAll("form :invalid");  // excluding invalid form itself
+    for (var i = 0; i < invalidFields.length; i++) {
+        /*  first pages with first element after long text 
+                => scrolls down
+            preventScroll supported only since 2018
+         */
+        try {
+            invalidFields[i].focus({
+                preventScroll: true
+            });
+        } catch (error) {
+            // forgoing initial focussing
+        }
+        // console.log(`focus on first invalid input ${invalidFields[i].name}`);
+        noInvalidInputs = false;
+        break;
+    }
+
+    if (noInvalidInputs) {
+        // focus on first visible input
+        // TODO: first input after p.error-block
+        var elements = document.forms.frmMain.elements;
+        for (var i = 0, element; element = elements[i++];) {
+            if (element.type !== "hidden") {
+                /*  first pages with first element after long text 
+                        => scrolls down
+                    preventScroll supported only since 2018
+                 */
+                try {
+                    element.focus({
+                        preventScroll: true
+                    });
+                } catch (error) {
+                    // forgoing initial focussing
+                }
+                // console.log(`focus on ${i}th input ${element.name} of form main`);
+                break;
             }
-            
-            // console.log("focus on form main input number", i, element.name);
-            break;
         }
     }
+
 
 });

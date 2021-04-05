@@ -11,7 +11,7 @@ function demo(event) {
     }
 }
 
-function inconsistentTriplet(){
+function daxForecastInbetween(){
 
     var inp1 = document.forms.frmMain.dax_erw.value;
     var inp2 = document.forms.frmMain.dax_min.value;
@@ -57,7 +57,7 @@ function inconsistentTriplet(){
 function validateForm(event) {
 
 
-    if (inconsistentTriplet()) {
+    if (daxForecastInbetween()) {
         // alert("{{.msg}}");
         var doContinue = window.confirm("{{.msg}}");
         if (doContinue) {

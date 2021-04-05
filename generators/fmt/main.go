@@ -561,6 +561,11 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			},
 		}
 
+		ph := trl.S{
+			"de": "0000",
+			"en": "0000",
+		}
+
 		// gr0
 		{
 			gb := qst.NewGridBuilderRadios(
@@ -590,6 +595,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp := gr.AddInput()
 				inp.Type = "number"
 				inp.Name = "dax_erw"
+				inp.Placeholder = ph
 				inp.Min = 2000
 				inp.Max = 50000
 				inp.Step = 0
@@ -620,6 +626,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp := gr.AddInput()
 				inp.Type = "number"
 				inp.Name = "dax_min"
+				inp.Placeholder = ph
 				inp.Min = 2000
 				inp.Max = 50000
 				inp.Step = 0
@@ -650,6 +657,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp := gr.AddInput()
 				inp.Type = "number"
 				inp.Name = "dax_max"
+				inp.Placeholder = ph
 				inp.Min = 2000
 				inp.Max = 50000
 				inp.Step = 0

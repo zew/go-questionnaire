@@ -26,4 +26,8 @@ In order to work on `mobile` and on `desktop` view, only below positioning is fe
 
 ## Todo
 
-Show only [ the first | one ] validation message
+* Show only [ the first | one ] validation message
+
+  * Problem:  What to do on focus to another problematic input
+
+* Compound bubbles - when to clear - when to clear multiple

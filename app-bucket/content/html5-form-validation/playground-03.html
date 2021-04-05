@@ -21,34 +21,40 @@
         margin-bottom: 0.3rem;
         line-height: 110%;
     }
-    
 
-    
+
     .block {
         display: inline-block;
-        padding-right: 2rem;
+        margin: 0.5rem 0;
+        margin-right: 2rem;
+        margin-right: 1rem;
+    }
+
+    label {
+        min-width: 10rem;
+        text-align: right;
+        aaborder: 1px solid greenyellow;
+        display: inline-block;
+    }
+    .control {
+        display: inline-block;
+        margin-right: 2rem;
+    }
+    .control:last-child {
+        margin-right: 0rem;
     }
 
 
     @media screen and (min-width: 800px) {
-    
-        .block:first-child {
+        .block-wide {
             min-width: 90%;
+        }
+        label {
+            min-width:  5rem;
         }
 
     }
 
-    label {
-        min-width:  5rem;
-        text-align: right;
-    }
-    .control {
-        display: inline-block; 
-        margin-right: 2rem;    
-    }
-    .control:last-child {
-        margin-right: 0rem;    
-    }
 
 
 </style>
@@ -56,14 +62,75 @@
 
 <div class="pseudo-form">
 
+
+    <!-- <p>GDP will...</p> -->
+
     <div class="block">
-        
-        <label for="dax_erw">
-            DAX expected 
+
+        <label for="y_probgood">
+            GDP will improve
         </label>
 
         <div class="control">
-            
+
+            <input type="number" name="y_probgood" id="y_probgood"
+            min="0"
+            max="100"
+            step="1"
+            data-validation_msg="Please enter a number between 0 and 100"
+            > %
+        </div>
+
+    </div>
+
+    <div class="block">
+
+        <label for="y_probnormal">
+            remain  <br> same
+        </label>
+
+        <div class="control">
+
+            <input type="number" name="y_probnormal" id="y_probnormal"
+            min="0"
+            max="100"
+            step="1"
+            data-validation_msg="Please enter a number between 0 and 100"
+            > %
+        </div>
+
+    </div>
+
+
+    <div class="block">
+
+        <label for="y_probbad">
+            deteri<br>orate
+        </label>
+
+        <div class="control">
+
+            <input type="number" name="y_probbad" id="y_probbad"
+            min="0"
+            max="100"
+            step="1"
+            data-validation_msg="Please enter a number between 0 and 100"
+            > %
+        </div>
+
+    </div>
+
+    <hr>
+
+
+    <div class="block block-wide">
+
+        <label for="dax_erw">
+            DAX expected
+        </label>
+
+        <div class="control">
+
             <input type="number" name="dax_erw" id="dax_erw"
             min="2000"
             max="25000"
@@ -78,9 +145,9 @@
     <div class="block">
 
         <label for="dax_min">
-            DAX Min 
+            DAX Min
         </label>
-    
+
 
         <div class="control">
             <input type="number" name="dax_min" id="dax_min"
@@ -108,11 +175,11 @@
             > %
         </div>
     </div>
-    
+
     <br>
     <br>
     <br>
-    
+
     <input  type="submit"  name="submitBtn1"  value="Input type submit" title="input[type=submit]"  accesskey="s">
 
 
@@ -127,7 +194,7 @@
         on submit
     </p>
 
-   
+
     <p>
         <input type="checkbox" id="validateFormWithCustomBubbles" accesskey="f">
         Custom popups for invalids on <u>f</u>orm submit
@@ -142,17 +209,22 @@
     <div style="margin-left: 3rem; position: relative; top: -0.5rem;">
 
         <p>
-             <input type="checkbox" id="checkOnInput">
-            ... or even on every input
-            
+             <input type="checkbox" id="onInputRemove">
+            ... or even on every input - remove
+
+        </p>
+        <p>
+             <input type="checkbox" id="onInputShowAndRemove">
+            ... or even on every input - show and remove
+
         </p>
         <p>
              <input type="checkbox" id="reclaimFocus">
             ... and lock focus
-            
+
         </p>
     </div>
-    
+
     <div style="margin-left: 0rem; position: relative; top: -0.5rem;">
 
         <p>
@@ -162,7 +234,7 @@
         <p>
             Todo: Compound validation on on blur
         </p>
-    
+
 
     </div>
 
@@ -170,11 +242,11 @@
 
 
 
-<!-- 
+<!--
 
 
-    <a class="link-as-button" 
-    href="#" 
+    <a class="link-as-button"
+    href="#"
     onclick="configure();"
     accesskey="s"
     >Configure</a>
@@ -185,8 +257,8 @@
 
 
     <div id="console-log"><div style="
-            background-color: whitesmoke; 
-            position: relative; 
+            background-color: whitesmoke;
+            position: relative;
             left: -0.8rem; top: -0.3rem; width: 10rem;" >console log</div></div>
 
 
@@ -224,7 +296,7 @@
         form.oninvalid  = null;
         form.onvalid    = null;
         form.onsubmit   = null;
-        
+
         var inputs = form.querySelectorAll("input[type=number]");
         for (var i = 0; i < inputs.length; i++) {
             var inp = inputs[i];
@@ -237,7 +309,45 @@
     }
 
 
-    function inconsistentTriplet() {
+    function mustAddUp100() {
+
+        var inp1 = document.forms.frmMain.y_probgood.value;
+        var inp2 = document.forms.frmMain.y_probnormal.value;
+        var inp3 = document.forms.frmMain.y_probbad.value;
+        // console.log("inp1-3: ", inp1, inp2, inp3);
+
+        var i1 = 0
+        if (inp1 != "") {
+            var i1 = parseInt(inp1, 10);
+        }
+        var i2 = 0
+        if (inp2 != "") {
+            var i2 = parseInt(inp2, 10);
+        }
+        var i3 = 0
+        if (inp3 != "") {
+            var i3 = parseInt(inp3, 10);
+        }
+        // console.log("inp1-3 integer: ", i1, i2, i3);
+
+        var sum = i1 + i2 + i3;
+        // console.log("sum", sum);
+
+
+        var suspicious = 0;
+
+        if (inp1 != "" && inp2 != "" && inp3 != "") {
+            if (sum != 100) {
+                suspicious = 1;
+            }
+        }
+
+        return suspicious;
+
+    }
+
+
+    function daxForecastInbetween() {
 
         var inp1 = document.forms.frmMain.dax_erw.value;
         var inp2 = document.forms.frmMain.dax_min.value;
@@ -258,22 +368,24 @@
         }
         // console.log("inp1-3 integer: ", i1, i2, i3);
 
-        var suspicious = false;
+        var suspicious = 0;
+
+        // min < max?
+        if (i2 != 0 && i3 != 0 && i2 > i3) {
+            suspicious = 1;
+            return suspicious;
+        }
+
 
         // expectation between extremes?
         if (i1 != 0) {
             if (i2 != 0 && i1 < i2) {
-                suspicious = true;
+                suspicious = 2;
             }
 
             if (i3 != 0 && i1 > i3) {
-                suspicious = true;
+                suspicious = 2;
             }
-        }
-
-        // min < max?
-        if (i2 != 0 && i3 != 0 && i2 > i3) {
-            suspicious = true;
         }
 
         return suspicious;
@@ -282,13 +394,16 @@
 
 
     /* ============ UI ================  */
-    
+
 
     var myForm = document.forms["frmMain"];
     var vd = new Validator(myForm);
 
+
     var configControls = [
-        "checkOnInput",
+    
+        "onInputRemove",
+        "onInputShowAndRemove",
         "reclaimFocus",
         "validateFormWithCustomBubbles",
         "showBubbleOnBlurOrInput",
@@ -296,13 +411,13 @@
 
 
 
+    // change handlers for config checkboxes
     function  validateFormWithCustomBubblesExec() {
         nameCheck = "validateFormWithCustomBubbles"
         var checkbox = document.getElementById(nameCheck);
         if (checkbox.checked) {
             vd.validateFormWithCustomBubbles();
         }
-        // console.log(`checkbox ${nameCheck} executed`)
     }
 
     function  showBubbleOnBlurOrInputExec() {
@@ -314,15 +429,23 @@
         }
     }
 
-        function checkOnInputExec() {
-            nameCheck = "checkOnInput"
+        function onInputRemoveExec() {
+            nameCheck = "onInputRemove"
             var checkbox = document.getElementById(nameCheck);
             if (checkbox.checked) {
-                vd.SetCheckOnInput(true);
+                vd.SetOnInputRemove(true);
             } else {
-                vd.SetCheckOnInput(false);
+                vd.SetOnInputRemove(false);
             }
-            // console.log(`checkbox ${nameCheck} executed`)
+        }
+        function onInputShowAndRemoveExec() {
+            nameCheck = "onInputShowAndRemove"
+            var checkbox = document.getElementById(nameCheck);
+            if (checkbox.checked) {
+                vd.SetOnInputShowAndRemove(true);
+            } else {
+                vd.SetOnInputShowAndRemove(false);
+            }
         }
         function reclaimFocusExec() {
             nameCheck = "reclaimFocus"
@@ -332,9 +455,8 @@
             } else {
                 vd.SetReclaimFocus(false);
             }
-            // console.log(`checkbox ${nameCheck} executed`)
         }
-    
+
 
 
     function configure(initial){
@@ -344,8 +466,13 @@
             for (let i = 0; i < configControls.length; i++) {
                 var chkName = configControls[i];
                 var wasChecked = window.localStorage.getItem(chkName);
+                // console.log(`${chkName} was checked ${wasChecked} type ${typeof wasChecked}`);
                 if (wasChecked === "true") {
                     document.getElementById(chkName).checked = wasChecked;
+                }
+                // default to true
+                if (wasChecked === null && chkName == "showBubbleOnBlurOrInput") {
+                    document.getElementById(chkName).checked = true;
                 }
             }
         }
@@ -353,10 +480,12 @@
 
         resetAllListeners(myForm);
 
-          checkOnInputExec();
+          onInputRemoveExec();
+          onInputShowAndRemoveExec();
           reclaimFocusExec();
         validateFormWithCustomBubblesExec();
         showBubbleOnBlurOrInputExec();
+
 
 
         // save config
@@ -366,34 +495,102 @@
             window.localStorage.setItem(chkName, chk.checked);
         }
 
+
+
+        //
+        // compound validation
+        function mustAddUp100Bubble(event) {
+            var err = mustAddUp100();
+            if (err > 0) {
+                console.log("mustAddUp100()", err);
+                if (err == 1) {
+                    var el = document.forms.frmMain.y_probgood;
+                    var e2 = document.forms.frmMain.y_probnormal;
+                    var e3 = document.forms.frmMain.y_probbad;
+                    vd.ShowBubble(el, "Does not add up to 100", true);
+                    vd.ShowBubble(e2, "Does not add up to 100", true);
+                    vd.ShowBubble(e3, "Does not add up to 100", true);
+                }
+                event.preventDefault();
+            }
+        }
+
+        function daxForecastBubble(event) {
+            var err = daxForecastInbetween();
+            if (err > 0) {
+                console.log("daxForecastInbetween()", err);
+                if (err == 1) {
+                    var el = document.forms.frmMain.dax_min;
+                    var e2 = document.forms.frmMain.dax_max;
+                    vd.ShowBubble(el, "Please adjust Min and Max", true);
+                    vd.ShowBubble(e2, "Please adjust Min and Max", true);
+                }
+                if (err == 2) {
+                    var el = document.forms.frmMain.dax_erw;
+                    vd.ShowBubble(el, "Please adjust expected DAX between Min and Max", true);
+                }
+                event.preventDefault();
+            }
+        }
+
+
         myForm.addEventListener(
             "submit",
-            function (event) {
-                var yes = inconsistentTriplet();
-                if (yes) {
-                    console.log("inconsistentTriplet()", yes);
-                    var el = document.forms.frmMain.dax_max;
-                    vd.ShowBubblePopup(el, "Please adjust expected DAX between Min and Max",true);
-                    event.preventDefault();
-                }
-            },
+            mustAddUp100Bubble,
             false
         );
+
+        var yProbInputs = [
+            "y_probgood",
+            "y_probnormal",
+            "y_probbad",
+        ];
+
+        for (var inp of yProbInputs) {
+            myForm.elements[inp].addEventListener(
+                'blur', 
+                mustAddUp100Bubble,
+                false,
+            );
+        }
+
+
+        
+        myForm.addEventListener(
+            "submit",
+            daxForecastBubble,
+            false
+        );
+
+        var daxInputs = [
+            "dax_erw",
+            "dax_min",
+            "dax_max",
+        ];
+
+        for (var inp of daxInputs) {
+            myForm.elements[inp].addEventListener(
+                'blur',
+                daxForecastBubble,
+                false,
+            );
+        }
+
 
         console.log("validation configured");
     }
 
-    
+
 
     // on form load - configure()
     // then add event listeners to checkbox.change
     document.addEventListener(
         'DOMContentLoaded',
         function () {
-            
+
             myForm.method = "GET";
             myForm.action = "/{{AppPrefix}}/doc/html5-form-validation/playground-03.html";
-            
+
             configure(true);
 
             var checkboxes = document.querySelectorAll('input[type=checkbox]');

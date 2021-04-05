@@ -12,20 +12,37 @@ function Validator(argForm) {
 
     let suppressBuiltinBubbles = 3;  // internet suggests three modes to accomplish suppression of builtin bubbles
     
-    let checkOnInput        = true;
-    let reclaimFocus        = true;
+    let onInputRemove          = true;
+    let onInputShowAndRemove   = false;
+    let reclaimFocus           = false;
+
+
     let removeBubbleOnEntry = false;
+    
+    /* default is showing bubbles for every faulty input
+        onlyOne changes this
+     */
+    let onlyOne = true;
+    onlyOne = true;
+    onlyOne = false;
 
 
     /* bubble messages are positioned relative to parent's parent
         providing us with a reliable width that does not overflow;
-    */    
+     */    
     let attachOuterOuter = true;
 
 
-    this.SetCheckOnInput = function(newVal) {
-        checkOnInput = newVal;
+
+
+    this.SetOnInputRemove = function(newVal) {
+        onInputRemove = newVal;
     }
+
+    this.SetOnInputShowAndRemove = function(newVal) {
+        onInputShowAndRemove = newVal;
+    }
+
 
     this.SetReclaimFocus = function(newVal) {
         reclaimFocus = newVal;
@@ -33,12 +50,38 @@ function Validator(argForm) {
 
     // "exporting" the func
     //  keeping the internal version, because internal callers have another 'this'
-    this.ShowBubblePopup = showBubblePopup;
+    this.ShowBubble = showBubble;
 
+
+
+    function hasBubble(el) {
+        var elErrors = el.parentNode.querySelectorAll(":scope > .bubble-invalid-anchor");
+        if (attachOuterOuter) {
+            elErrors = el.parentNode.parentNode.querySelectorAll(":scope > .bubble-invalid-anchor");
+        }
+        for (var i = 0; i < elErrors.length; i++) {
+            // console.log(`found-a ${i + 1}of${elErrors.length} - oldID${oldChild.getAttribute('id')} `);
+            return true;
+        }
+        return false;
+    }
+
+
+    // removing previous message from element el
+    function clearBubble(el) {
+        var elErrors = el.parentNode.querySelectorAll(":scope > .bubble-invalid-anchor");
+        if (attachOuterOuter) {
+            elErrors = el.parentNode.parentNode.querySelectorAll(":scope > .bubble-invalid-anchor");
+        }
+        for (var i = 0; i < elErrors.length; i++) {
+            var oldChild = elErrors[i].parentNode.removeChild(elErrors[i]);
+            // console.log(`removed-a ${i + 1}of${elErrors.length} - oldID${oldChild.getAttribute('id')} `);
+        }
+    }
 
 
     // removing any previous custom messages
-    function clearAllPreviousBubbles() {
+    function clearAllBubbles() {
         var errorMessages = form.querySelectorAll(".bubble-invalid-anchor");
         for (var i = 0; i < errorMessages.length; i++) {
             var oldChild = errorMessages[i].parentNode.removeChild(errorMessages[i]);
@@ -47,7 +90,7 @@ function Validator(argForm) {
     }
 
     // clearing and re-creating a custom message right-beside or -below DOM element el
-    function showBubblePopup(el, msg, overrideCheckValidity) {
+    function showBubble(el, msg, overrideCheckValidity) {
 
         if (!el) {
             console.log("flagInvalid() el not defined - return ");
@@ -61,14 +104,10 @@ function Validator(argForm) {
             }
         }
 
-        // removing previous message from this element
-        var elErrors = el.parentNode.querySelectorAll(":scope > .bubble-invalid-anchor");
-        if (attachOuterOuter) {
-            elErrors = el.parentNode.parentNode.querySelectorAll(":scope > .bubble-invalid-anchor");
-        }
-        for (var i = 0; i < elErrors.length; i++) {
-            var oldChild = elErrors[i].parentNode.removeChild(elErrors[i]);
-            // console.log(`removed-a ${i + 1}of${elErrors.length} - oldID${oldChild.getAttribute('id')} `);
+        if (onlyOne) {
+            clearAllBubbles();
+        } else {
+            clearBubble(el);
         }
 
         if (!el.checkValidity() || overrideCheckValidity === true) {
@@ -94,12 +133,16 @@ function Validator(argForm) {
     // a bubble message is displayed right-next or -below
     function onSubmitCustomBubblesForInvalids(event) {
 
-        clearAllPreviousBubbles();
+        clearAllBubbles();
 
         // insert new messages at the end of parent
+        // `this` to select descendents of <form> - excluding invalid <form> itself 
         var invalidFields = this.querySelectorAll(":invalid");
         for (var i = 0; i < invalidFields.length; i++) {
-            showBubblePopup(invalidFields[i]);
+            showBubble(invalidFields[i]);
+            if (onlyOne) {
+                break;
+            }
         }
 
         // focus first invalid field
@@ -196,9 +239,15 @@ function Validator(argForm) {
 
         var funcReport = function (event) {
             // event.target.reportValidity();
-            showBubblePopup(event.target);
+            if (onInputRemove && event.type == "input") {
+                if (event.target.checkValidity()) {
+                    clearBubble(event.target);
+                }
+            } else {
+                showBubble(event.target);
+            }
             var lgMsg = "blur";
-            if (checkOnInput) {
+            if (onInputShowAndRemove || onInputRemove) {
                 lgMsg = "blur+input";
             }
             console.log(`  ${ lgMsg } inp.reportValidity() ${event.target.getAttribute('name')}`);
@@ -216,23 +265,26 @@ function Validator(argForm) {
         for (var i = 0; i < inputs.length; i++) {
             var inp = inputs[i];
             inp.addEventListener("blur", funcReport);  // blur does not bubble up
-            if (checkOnInput) {
+            if (onInputShowAndRemove || onInputRemove) {
                 inp.addEventListener("input", funcReport);
             }
 
-            if (removeBubbleOnEntry) {
+            if (removeBubbleOnEntry) { // remove on entering input
                 var removeOnEntering = function (event) {
-                    var el = event.target;
-                    var elErrors = el.parentNode.querySelectorAll(":scope > .bubble-invalid-anchor");
-                    for (var i = 0; i < elErrors.length; i++) {
-                        var oldChild = elErrors[i].parentNode.removeChild(elErrors[i]);
-                        // console.log(`removed ${i + 1}of${elErrors.length} - oldID${oldChild.getAttribute('id')} `);
+                    clearBubble(event.target);
+                };
+                inp.addEventListener("focus", removeOnEntering);    
+            } else {
+                var flagOnEntry = function (event) {
+                    if (!event.target.checkValidity()) {
+                        console.log(`  focus on invalid ${event.target.name}`)
+                        showBubble(event.target);
                     }
                 };
-                inp.addEventListener("focus", removeOnEntering);    // remove on entering input
+                inp.addEventListener("focus", flagOnEntry);
             }
             var lgMsg = "blur";
-            if (checkOnInput) {
+            if (onInputShowAndRemove || onInputRemove) {
                 lgMsg = "blur+input";
             }
             console.log(`     ${lgMsg} handler added to ${inp.getAttribute('name')}`);

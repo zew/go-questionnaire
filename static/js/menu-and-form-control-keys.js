@@ -77,11 +77,11 @@ function keyControls(e) {
                     if (lpEl.type !== "hidden" && lpEl.type !== "fieldset") {
                         if (found) {
                             nextEl = lpEl;
-                            console.log(`found next	   ${lpEl.name} type ${lpEl.type} at `, i);
+                            // console.log(`found next	   ${lpEl.name} type ${lpEl.type} at `, i);
                             break;
                         }
                         if (el === lpEl) {
-                            console.log(`found current ${lpEl.name} type ${lpEl.type} at `, i);
+                            // console.log(`found current ${lpEl.name} type ${lpEl.type} at `, i);
                             found = true;
                         }
                         // console.log("iterating form elements", element.name, " to ", i);
@@ -161,16 +161,47 @@ window.addEventListener("load", function (event) {
     console.log("outsideMenu and closeLevel3 registered");
 
 
-    // focus on first visible input
-    // TODO: first input after p.error-block
-    var elements = document.forms.frmMain.elements;
-    for (var i = 0, element; element = elements[i++];) {
-        if (element.type !== "hidden") {
-            // pbu 2021-02: dropped - first control is sometimes too far down - init view scrolls down
-            // element.focus();
-            // console.log("focus on form main input number", i, element.name);
-            break;
+    var noInvalidInputs = true;
+    var invalidFields = document.querySelectorAll("form :invalid");  // excluding invalid form itself
+    for (var i = 0; i < invalidFields.length; i++) {
+        /*  first pages with first element after long text 
+                => scrolls down
+            preventScroll supported only since 2018
+         */
+        try {
+            invalidFields[i].focus({
+                preventScroll: true
+            });
+        } catch (error) {
+            // forgoing initial focussing
+        }
+        // console.log(`focus on first invalid input ${invalidFields[i].name}`);
+        noInvalidInputs = false;
+        break;
+    }
+
+    if (noInvalidInputs) {
+        // focus on first visible input
+        // TODO: first input after p.error-block
+        var elements = document.forms.frmMain.elements;
+        for (var i = 0, element; element = elements[i++];) {
+            if (element.type !== "hidden") {
+                /*  first pages with first element after long text 
+                        => scrolls down
+                    preventScroll supported only since 2018
+                 */
+                try {
+                    element.focus({
+                        preventScroll: true
+                    });
+                } catch (error) {
+                    // forgoing initial focussing
+                }
+                // console.log(`focus on ${i}th input ${element.name} of form main`);
+                break;
+            }
         }
     }
+
 
 });

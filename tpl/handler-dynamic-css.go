@@ -40,12 +40,17 @@ func ServeDynCSS(w http.ResponseWriter, r *http.Request) {
 		log.Printf("Error compiling CSS template %v site %q: %v", cssFileName, siteName, err)
 	}
 
-	if _, ok := cfg.Get().CSSVarsSite[siteName]; !ok {
-		log.Printf("CSS template: %v site %q does not exist in cfg.CSSVarsSite", cssFileName, siteName)
-		return
+	effectiveSiteVars, ok := cfg.Get().CSSVarsSite[siteName]
+	if !ok {
+		if siteName == cfg.Get().AppMnemonic {
+			// markdown - without any survey being set
+		} else {
+			log.Printf("CSS template: %v site %q does not exist in cfg.CSSVarsSite", cssFileName, siteName)
+		}
+		effectiveSiteVars = cfg.Get().CSSVars // defaults
 	}
 
-	err = t.ExecuteTemplate(w, cssFileName, cfg.Get().CSSVarsSite[siteName])
+	err = t.ExecuteTemplate(w, cssFileName, effectiveSiteVars)
 	if err != nil {
 		log.Printf("Error executing CSS template %v site %q: %v", cssFileName, siteName, err)
 	}

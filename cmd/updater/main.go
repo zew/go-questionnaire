@@ -10,6 +10,7 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"io/ioutil"
 	"log"
 	"math/rand"
@@ -32,9 +33,10 @@ func main() {
 	fl := util.NewFlags()
 	fl.Add(
 		util.FlagT{
-			Long:       "directory",
-			Short:      "dir",
-			DefaultVal: "../../app-bucket/responses/downloaded/fmt/2021-04/11499.json",
+			Long:  "directory",
+			Short: "dir",
+			// DefaultVal: "../../app-bucket/responses/downloaded/fmt/2021-04/11499.json",
+			DefaultVal: "../../app-bucket/responses/downloaded/fmt/2021-04",
 			Desc:       "filename - or directory or to iterate",
 		},
 	)
@@ -61,13 +63,37 @@ func main() {
 		files = append(files, fi)
 	}
 
-	for idx, f := range files {
-		log.Printf("found file %3v: %v", idx, f.Name())
+	//
+	//
+	fCounter := 0
+	w := &strings.Builder{}
+	for _, f := range files {
+		if strings.HasSuffix(f.Name(), ".attrs") {
+			continue
+		}
+		if f.IsDir() {
+			continue // subdirs...
+		}
+		fCounter++
+		fmt.Fprintf(w, "%3v: %v;  ", fCounter, f.Name())
+		if fCounter%5 == 0 && fCounter != 0 {
+			fmt.Fprintf(w, "\n")
+		}
 	}
+	log.Printf("found files\n%v", w.String())
 
+	//
 	//
 	cntrChanged := 0
 	for i, f := range files {
+
+		if f.Name() != "10210.json" && f.Name() != "10035.json" {
+			continue
+		}
+
+		if f.IsDir() {
+			continue // subdirs...
+		}
 
 		pSrc := path.Join(dirSrc, f.Name())
 		if isFile {

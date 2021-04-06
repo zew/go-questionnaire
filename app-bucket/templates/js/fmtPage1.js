@@ -11,7 +11,7 @@ function demo(event) {
     }
 }
 
-function validateForm(event) {
+function mustAddUp100(event) {
 
     var inp1 = document.forms.frmMain.y_probgood.value;
     var inp2 = document.forms.frmMain.y_probnormal.value;
@@ -70,17 +70,17 @@ function validateForm(event) {
 
 var frm = document.forms.frmMain;
 if (frm) {
-    frm.addEventListener('submit', validateForm);    
+    frm.addEventListener('submit', mustAddUp100);    
 }
 
 if (document.forms.frmMain.y_probgood) {
-    document.forms.frmMain.y_probgood.addEventListener('blur',validateForm);
+    document.forms.frmMain.y_probgood.addEventListener('blur',mustAddUp100);
 }
 if (document.forms.frmMain.y_probnormal) {
-    document.forms.frmMain.y_probnormal.addEventListener('blur',validateForm);
+    document.forms.frmMain.y_probnormal.addEventListener('blur',mustAddUp100);
 }
 if (document.forms.frmMain.y_probbad) {
-    document.forms.frmMain.y_probbad.addEventListener('blur',validateForm);
+    document.forms.frmMain.y_probbad.addEventListener('blur',mustAddUp100);
 }
 
 

@@ -586,7 +586,7 @@ func main() {
 			log.Printf("Could not write file %v: %v", fn, err)
 		}
 		log.Printf(
-			"\nRegular finish. %v questionnaire(s) processed\n%v %v \n%v", len(qs),
+			"\n\nRegular finish. %v questionnaire(s) processed\n%v non emtpy - %v empty\nresults in %v\n\n", len(qs),
 			nonEmpty, empty, fn,
 		)
 

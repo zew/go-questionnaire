@@ -11,7 +11,7 @@ function demo(event) {
     }
 }
 
-function validateForm(event) {
+function daxForecastInbetween(){
 
     var inp1 = document.forms.frmMain.dax_erw.value;
     var inp2 = document.forms.frmMain.dax_min.value;
@@ -33,23 +33,31 @@ function validateForm(event) {
     // console.log("inp1-3 integer: ", i1, i2, i3);
 
     var suspicious = false;
+    
+    // expectation between extremes?
     if (i1 != 0) {
         if (i2 != 0 && i1 < i2) {
             suspicious = true;
         }
 
-        if (i3 != 0 && i1 > i3 ) {
+        if (i3 != 0 && i1 > i3) {
             suspicious = true;
         }
     }
 
-    // min > maix
+    // min < max?
     if (i2 != 0 && i3 != 0 && i2 > i3) {
         suspicious = true;
     }
 
+    return suspicious;
 
-    if (suspicious) {
+}
+
+function validateForm(event) {
+
+
+    if (daxForecastInbetween()) {
         // alert("{{.msg}}");
         var doContinue = window.confirm("{{.msg}}");
         if (doContinue) {

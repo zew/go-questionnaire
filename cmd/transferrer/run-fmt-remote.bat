@@ -1,5 +1,13 @@
 @echo off
 
+SET JOBTIME=%date:~6,4%-%date:~3,2%-%date:~0,2%-%time:~0,5%
+SET LOGFILE=import-%date:~6,4%-%date:~3,2%-%date:~0,2%.log
+
+@REM quotes will be in log - but I dont care
+ECHO                  >>%LOGFILE%
+ECHO %JOBTIME%        >>%LOGFILE%
+ECHO "============="  >>%LOGFILE%
+
 REM check admin login at remote host
 REM transferrer-endpoint?survey_id=fmt&wave_id=2021-03&fetch_all=1
 cls
@@ -8,18 +16,18 @@ cls
 setlocal
 
 @REM for execution as scheduled task
-cd c:\xampp\htdocs\go-questionnaire\cmd\transferrer\
+CD c:\xampp\htdocs\go-questionnaire\cmd\transferrer\
 
 rm ./transferrer.exe
 go build
 
-transferrer.exe -rmt=transferrer/fmt-remote.json  >>importer-1.log 2>&1
+transferrer.exe -rmt=transferrer/fmt-remote.json  >>%LOGFILE% 2>&1
 
-copy /Y  C:\xampp\htdocs\go-questionnaire\app-bucket\responses\downloaded\fmt-*.csv C:\xampp\htdocs\fmt\Mikrodaten-ger\
+COPY /Y  C:\xampp\htdocs\go-questionnaire\app-bucket\responses\downloaded\fmt-*.csv C:\xampp\htdocs\fmt\Mikrodaten-ger\
 
 
-cd C:\xampp\htdocs\fmt\
-php import-fmt-from-csv.php  >>c:\xampp\htdocs\go-questionnaire\cmd\transferrer\importer-1.log
+CD C:\xampp\htdocs\fmt\
+php import-fmt-from-csv.php  >>c:\xampp\htdocs\go-questionnaire\cmd\transferrer\%LOGFILE%
 
 
 @REM no pause - dont stall scheduler

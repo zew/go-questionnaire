@@ -10,18 +10,15 @@
  			"en": "Example survey"
  		},
  		"year": 2021,
- 		"month": 3,
- 		"deadline": "2021-03-27T23:59:00Z",
+ 		"month": 4,
+ 		"deadline": "2030-01-01T00:00:00Z",
  		"params": [
- 			{
- 				"name": "main_refinance_rate_ecb",
- 				"val": "3"
- 			},
+ 			{},
  			{}
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "e056606908fe44e4953f029310061d3ff3912d81b35ff4b98474ef41521a760c",
+ 	"md_5": "2df31c1d6fad9dc18889bd49cd54be318af17c41b97066757e5abc23e5ceb09d",
  	"lang_codes": [
  		"en",
  		"de"

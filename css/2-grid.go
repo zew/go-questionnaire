@@ -5,6 +5,7 @@ import (
 	"strings"
 )
 
+// StyleGridContainer groups styles for "div" container
 type StyleGridContainer struct {
 	AutoFlow string `json:"auto_flow,omitempty"` // column | row | dense | dense column | dense row;  there is no row-reverse as in CSS flex
 
@@ -88,6 +89,7 @@ func (gcs StyleGridContainer) CSS() string {
 	return s.String()
 }
 
+// StyleGridItem groups styles applicable to an item of a grid - not the container
 type StyleGridItem struct {
 	JustifySelf string `json:"justify_self,omitempty"` // main axis   - item inside its 'cell' - stretch | baseline | center | start | end
 	AlignSelf   string `json:"align_self,omitempty"`   // second axis - item inside its 'cell' - stretch | baseline | center | start | end

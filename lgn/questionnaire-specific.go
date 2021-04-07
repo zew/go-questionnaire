@@ -80,7 +80,7 @@ func LoginByHash(w http.ResponseWriter, r *http.Request) (bool, error) {
 				for _, dlr := range cfg.Get().DirectLoginRanges {
 					// log.Printf("  Checking dlr %v - %4v <=  %4v <=  %4v", dlr.SurveyID, dlr.Start, userID, dlr.Stop)
 					if (surveyID != "" && surveyID == dlr.SurveyID) || // either non-empty matching survey ID
-						userID >= dlr.Start && userID <= dlr.Stop { // or emtpy survey - but userID in range
+						userID >= dlr.Start && userID <= dlr.Stop { // or empty survey - but userID in range
 						log.Printf("Matching survey %v - or direct login range %v <=  %v <=  %v",
 							dlr.SurveyID, dlr.Start, userID, dlr.Stop)
 						l := LoginT{}

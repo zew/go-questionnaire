@@ -365,7 +365,7 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 	q2, _ := q.Split()
 	err = q2.Save1(l.QuestPath())
 	if err != nil {
-		helper(w, r, err, "Saving splitted repsonses to file caused error")
+		helper(w, r, err, "Saving splitted responses to file caused error")
 		return
 	}
 

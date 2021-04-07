@@ -61,8 +61,8 @@ func ServeFileStream(w http.ResponseWriter, req *http.Request) {
 	pth = strings.TrimPrefix(pth, cfg.Pref())
 	pth = strings.Trim(pth, "/")
 	pth = strings.ReplaceAll(pth, "..", "") // prevent climbing up, such as ./app-bucket/../../../root/passwd
-	fpth := path.Join(".", "app-bucket", pth)
-	fpth = path.Join(".", pth)
+	// fpth := path.Join(".", "app-bucket", pth)
+	fpth := path.Join(".", pth)
 	fpth = strings.Replace(fpth, "download-stream", "download", -1)
 
 	pthCheck := strings.TrimPrefix(pth, "download-stream")

@@ -149,9 +149,8 @@ func GenerateQuestionnaireTemplates(w http.ResponseWriter, r *http.Request) {
 					}
 					myfmt.Fprintf(w, "Done creating template %v<br>\n", pth)
 					return true, nil
-				} else {
-					return false, myfmt.Errorf("Other error while checking for %v: %v <br>\n", pth, err)
 				}
+				return false, myfmt.Errorf("Other error while checking for %v: %v <br>\n", pth, err)
 			}
 			return false, nil
 		}

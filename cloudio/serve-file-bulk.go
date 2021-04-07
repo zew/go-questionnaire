@@ -36,8 +36,8 @@ func ServeFileBulk(w http.ResponseWriter, req *http.Request) {
 	pth = strings.TrimPrefix(pth, cfg.Pref())
 	pth = strings.Trim(pth, "/")
 	pth = strings.ReplaceAll(pth, "..", "") // prevent climbing up, such as ./app-bucket/../../../root/passwd
-	fpth := path.Join(".", "app-bucket", pth)
-	fpth = path.Join(".", pth)
+	// fpth := path.Join(".", "app-bucket", pth)
+	fpth := path.Join(".", pth)
 
 	// log.Printf("cloudio.Stream(): initiating download %v", fpth)
 

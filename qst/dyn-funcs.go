@@ -21,7 +21,7 @@ import (
 type dynFuncT func(*QuestionnaireT, string) (string, error)
 
 var dynFuncs = map[string]dynFuncT{
-	"RepsonseStatistics":             RepsonseStatistics,
+	"ResponseStatistics":             ResponseStatistics,
 	"PersonalLink":                   PersonalLink,
 	"HasEuroQuestion":                ResponseTextHasEuro,
 	"FederalStateAboveOrBelowMedian": FederalStateAboveOrBelowMedian,
@@ -40,7 +40,7 @@ var skipInputNames = map[string]map[string]bool{
 
 // Statistics returns the percentage of
 // answers responded to.
-// It is helper to RepsonseStatistics().
+// It is helper to ResponseStatistics().
 func (q *QuestionnaireT) Statistics() (int, int, float64) {
 	responses := 0
 	counter := 0
@@ -69,9 +69,9 @@ func (q *QuestionnaireT) Statistics() (int, int, float64) {
 	return responses, counter, 100 * float64(responses) / float64(counter)
 }
 
-// RepsonseStatistics returns the percentage of
+// ResponseStatistics returns the percentage of
 // answers responded to.
-func RepsonseStatistics(q *QuestionnaireT, paramSet string) (string, error) {
+func ResponseStatistics(q *QuestionnaireT, paramSet string) (string, error) {
 
 	responses, inputs, pct := q.Statistics()
 	ct := q.Survey.Deadline
@@ -83,7 +83,7 @@ func RepsonseStatistics(q *QuestionnaireT, paramSet string) (string, error) {
 	s1 := fmt.Sprintf(cfg.Get().Mp["percentage_answered"].Tr(q.LangCode), responses, inputs, pct)
 	s2 := fmt.Sprintf(cfg.Get().Mp["survey_ending"].Tr(q.LangCode), cts, nextDayS)
 	ret := s1 + s2
-	// log.Print("RepsonseStatistics: " + ret)
+	// log.Print("ResponseStatistics: " + ret)
 	return ret, nil
 }
 
@@ -220,7 +220,7 @@ func RenderStaticContent(q *QuestionnaireT, paramSet string) (string, error) {
 type staticPrefixT string                     // significant url path fragment
 var packageDocPrefix = staticPrefixT("/doc/") // application singleton
 
-// this is a damn copy of tpl.RenderStaticContent
+// RenderStaticContentInner is a damn copy of tpl.RenderStaticContent
 func RenderStaticContentInner(w io.Writer, subPth, site, lang string) error {
 
 	var (

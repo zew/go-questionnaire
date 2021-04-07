@@ -66,8 +66,8 @@ func PoliticalFoundations(q *QuestionnaireT, seq0to5, paramSetIdx int) (string, 
 
 	// log.Printf(`%v`, fourPermutationsOf6x3x3[oneOfFour][oneOfSix].Ppls)
 
-	questionID := fmt.Sprintf("q1_seq%v__%vof6_%vof4", seq0to5+1, oneOfSix+1, oneOfFour+1)
-	questionID = fmt.Sprintf("q1_seq%v", seq0to5+1)
+	// questionID := fmt.Sprintf("q1_seq%v__%vof6_%vof4", seq0to5+1, oneOfSix+1, oneOfFour+1)
+	questionID := fmt.Sprintf("q1_seq%v", seq0to5+1)
 
 	return politicalFoundations(
 		q,

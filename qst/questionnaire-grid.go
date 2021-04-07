@@ -331,7 +331,7 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 		// raise invalid message - clear it
 		onInvalid := ""
 		if inp.OnInvalid.TrSilent(langCode) != "" {
-			onInvalid = fmt.Sprintf("oninvalid='setCustomValidity(\"%v\")' oninput='setCustomValidity(\"\")'", inp.OnInvalid.TrSilent(langCode))
+			// onInvalid = fmt.Sprintf("oninvalid='setCustomValidity(\"%v\")' oninput='setCustomValidity(\"\")'", inp.OnInvalid.TrSilent(langCode))
 			onInvalid = fmt.Sprintf("data-validation_msg='%v'", inp.OnInvalid.TrSilent(langCode))
 		} else {
 			if inp.Type == "number" {
@@ -341,7 +341,7 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 						txt += "; "
 						txt += fmt.Sprintf(cfg.Get().Mp["entry_stepping"].TrSilent(langCode), inp.Step)
 					}
-					onInvalid = fmt.Sprintf("oninvalid='setCustomValidity(\"%v\")' oninput='setCustomValidity(\"\")'", txt)
+					// onInvalid = fmt.Sprintf("oninvalid='setCustomValidity(\"%v\")' oninput='setCustomValidity(\"\")'", txt)
 					onInvalid = fmt.Sprintf("data-validation_msg='%v'", txt)
 				}
 			}

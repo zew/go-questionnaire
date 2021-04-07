@@ -13,6 +13,7 @@ import (
 	"time"
 
 	"github.com/pbberlin/struc2frm"
+	"github.com/zew/go-questionnaire/cfg"
 	"github.com/zew/util"
 )
 
@@ -204,8 +205,10 @@ func RegistrationFMTH(w http.ResponseWriter, r *http.Request) {
 
 			var failureEmail, failureCSV bool
 
-			to := []string{"finanzmarkttest@zew.de", "peter.buchmann@zew.de"}
-			to = []string{"finanzmarkttest@zew.de"}
+			to := []string{"peter.buchmann@zew.de"}
+			if cfg.Get().IsProduction {
+				to = []string{"finanzmarkttest@zew.de", "peter.buchmann@zew.de"}
+			}
 			mimeHTML := "MIME-version: 1.0;\r\nContent-Type: text/html; charset=\"UTF-8\";\r\n"
 			body := &bytes.Buffer{}
 			// headers

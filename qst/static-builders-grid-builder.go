@@ -202,10 +202,9 @@ func NewGridBuilderRadios(
 	for rowIdx := 0; rowIdx < len(inputNames); rowIdx++ {
 		name := inputNames[rowIdx]
 
-		lbl := trl.S{}
 		sparseLbls := map[int]trl.S{}
 		if rowIdx < len(firstColLabels) {
-			lbl = firstColLabels[rowIdx]
+			lbl := firstColLabels[rowIdx]
 			sparseLbls[0] = lbl
 		}
 

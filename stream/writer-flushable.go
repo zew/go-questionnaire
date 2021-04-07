@@ -70,7 +70,7 @@ Ordinary flushing is prevented from any middleware writer,
 which might be buffered and or does not implement the flusher interface.
 But even then, the flushing would be required inside of io.Copy after each
 chunk;
-hence this repsonse writer implements *auto flushing*;
+hence this response writer implements *auto flushing*;
 incurring the price of hijacking the request and writing
 headers directly
 	fmt.Fprintf(w, "HTTP/1.1 200 OK\n")

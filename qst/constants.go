@@ -32,6 +32,7 @@ const (
 	// ValSet is returned, if the checkbox was checked
 	ValSet = "1"
 
+	// Values for the HTML option inputs
 	RemainOpen = "remain-open"
 	Finished   = "qst-finished"
 

@@ -277,7 +277,7 @@ function Validator(argForm) {
             } else {
                 var flagOnEntry = function (event) {
                     if (!event.target.checkValidity()) {
-                        console.log(`  focus on invalid ${event.target.name}`)
+                        // console.log(`  show bubble on focus -  ${event.target.name}`)
                         showBubble(event.target);
                     }
                 };
@@ -287,7 +287,14 @@ function Validator(argForm) {
             if (onInputShowAndRemove || onInputRemove) {
                 lgMsg = "blur+input";
             }
-            console.log(`     ${lgMsg} handler added to ${inp.getAttribute('name')}`);
+
+            var logLen = 1
+            if (i < logLen || i > (inputs.length - 1 - logLen)) {
+                console.log(`     ${lgMsg} handler added to ${inp.getAttribute('name')}`);
+            }
+            if (i == logLen) {
+                console.log(`          ...`);
+            }
         }
     }
 

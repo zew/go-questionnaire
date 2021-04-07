@@ -6062,7 +6062,7 @@
  						{
  							"type": "dyn-textblock",
  							"col_span_control": 1,
- 							"dynamic_func": "RepsonseStatistics"
+ 							"dynamic_func": "ResponseStatistics"
  						},
  						{
  							"type": "dyn-textblock",

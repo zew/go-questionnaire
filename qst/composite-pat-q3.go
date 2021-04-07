@@ -27,8 +27,8 @@ func GroupPreferences(q *QuestionnaireT, seq0to5, paramSetIdx int) (string, []st
 
 	// log.Printf(`%v`, getQ2Labels(zeroTo15, aOrB))
 
-	questionID := fmt.Sprintf("q2_seq%v__%02vof16", seq0to5+1, zeroTo15+1)
-	questionID = fmt.Sprintf("q2_seq%v", seq0to5+1)
+	// questionID := fmt.Sprintf("q2_seq%v__%02vof16", seq0to5+1, zeroTo15+1)
+	questionID := fmt.Sprintf("q2_seq%v", seq0to5+1)
 
 	return groupPreferences(
 		q,

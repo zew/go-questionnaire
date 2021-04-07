@@ -363,11 +363,15 @@ func main() {
 				}
 				btsRdr := bytes.NewReader(bts)
 				rdr1, err = gzip.NewReader(btsRdr)
+				if err != nil {
+					log.Printf("could not read the response as gzip #1: %v", err)
+					return
+				}
 			}
 
 			rdr1, err = gzip.NewReader(resp.Body)
 			if err != nil {
-				log.Printf("could not read the response as gzip: %v", err)
+				log.Printf("could not read the response as gzip #2: %v", err)
 				return
 			}
 			defer rdr1.Close()
@@ -586,7 +590,7 @@ func main() {
 			log.Printf("Could not write file %v: %v", fn, err)
 		}
 		log.Printf(
-			"\n\nRegular finish. %v questionnaire(s) processed\n%v non emtpy - %v empty\nresults in %v\n\n", len(qs),
+			"\n\nRegular finish. %v questionnaire(s) processed\n%v non empty - %v empty\nresults in %v\n\n", len(qs),
 			nonEmpty, empty, fn,
 		)
 

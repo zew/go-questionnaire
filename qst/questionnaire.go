@@ -41,8 +41,8 @@ func nobreakGlue(el1, glue, el2 string) string {
 		return el1 + el2
 	}
 
-	reduction := 82 // 	el2 is overflowing :(
-	reduction = 95  // 2020-05 - relaxed
+	// reduction := 82 // 	el2 is overflowing :(
+	reduction := 95 // 2020-05 - relaxed
 
 	el1 = strings.TrimSpace(el1) // includes \n
 	el2 = strings.TrimSpace(el2)

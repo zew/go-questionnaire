@@ -30,9 +30,12 @@ func getGen() *hashids.HashIDData {
 func HashIDDecodeFirst(encoded string) int {
 
 	h, err := hashids.NewWithData(getGen())
+	if err != nil {
+		log.Printf("Could not creae HashID from %v; error %v", getGen(), err)
+	}
 	decoded, err := h.DecodeWithError(encoded)
 	if err != nil {
-		log.Printf("Could not decode %v", encoded)
+		log.Printf("Could not decode %v; error %v", encoded, err)
 	}
 	if len(decoded) > 0 {
 		return decoded[0]

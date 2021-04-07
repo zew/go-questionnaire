@@ -12,7 +12,7 @@ import (
 	"github.com/zew/util"
 )
 
-// SlowHijacked *streams* a repsonse using
+// SlowHijacked *streams* a response using
 // an autoflushing response writer
 func SlowHijacked(w http.ResponseWriter, r *http.Request) {
 

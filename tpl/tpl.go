@@ -42,7 +42,7 @@ func fcExecBundledTemplate(tName string, mp map[string]interface{}) (template.HT
 var cache = map[string]*template.Template{}
 
 // bundles of templates
-// overriden in init() / TemplatesPreparse()
+// overridden in init() / TemplatesPreparse()
 // loaded from bundles.json
 var bundles = map[string][]string{
 	"layout.html": {

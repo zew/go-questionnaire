@@ -447,7 +447,7 @@ func main() {
 		// Process questionnaires
 		for i, q := range qs {
 
-			log.Printf("  ")
+			// log.Printf("  ")
 
 			serverSideMD5 := q.MD5
 

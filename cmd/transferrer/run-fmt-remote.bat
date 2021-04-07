@@ -1,13 +1,5 @@
 @echo off
 
-SET JOBTIME=%date:~6,4%-%date:~3,2%-%date:~0,2%-%time:~0,5%
-SET LOGFILE=import-%date:~6,4%-%date:~3,2%-%date:~0,2%.log
-
-@REM quotes will be in log - but I dont care
-ECHO                  >>%LOGFILE%
-ECHO %JOBTIME%        >>%LOGFILE%
-ECHO "============="  >>%LOGFILE%
-
 REM check admin login at remote host
 REM transferrer-endpoint?survey_id=fmt&wave_id=2021-03&fetch_all=1
 cls
@@ -17,6 +9,16 @@ setlocal
 
 @REM for execution as scheduled task
 CD c:\xampp\htdocs\go-questionnaire\cmd\transferrer\
+
+SET JOBTIME=%date:~6,4%-%date:~3,2%-%date:~0,2%-%time:~0,5%
+SET LOGFILE=import-%date:~6,4%-%date:~3,2%-%date:~0,2%.log
+
+
+@REM quotes will be in log - but I dont care
+ECHO "  "             >>%LOGFILE%
+ECHO %JOBTIME%        >>%LOGFILE%
+ECHO "============="  >>%LOGFILE%
+
 
 rm ./transferrer.exe
 go build

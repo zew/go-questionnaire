@@ -378,7 +378,7 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 
 	case "dyn-composite", "dyn-composite-scalar":
 		// no op
-		// rendered at group level -  rendered by composit
+		// rendered at group level -  rendered by composite
 
 	default:
 		ctrl = fmt.Sprintf("input %v: unknown type '%v'  - allowed are %v\n", nm, inp.Type, implementedTypes)

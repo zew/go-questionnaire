@@ -987,6 +987,46 @@ var separators = strings.NewReplacer(
 var englishTextAndNumbersOnly = regexp.MustCompile(`[^a-zA-Z0-9\.\_\- ]+`)
 var severalSpaces = regexp.MustCompile(`[ ]+`)
 
+// DelocalizeNumber removes localized number formatting;
+// HTML5 input type number does not de-localize values;
+// 123,456.78 is allowed - and so is 123.456,78;
+// at least we have at most *one* dot and *one* comma;
+// https://www.ryadel.com/en/html-input-type-number-with-localized-decimal-values-jquery/
+func DelocalizeNumber(s string) string {
+
+	if !strings.Contains(s, ",") {
+		// no comma; all is fine
+		return s
+	}
+
+	// contains comma, but contains no dot
+	if !strings.Contains(s, ".") {
+		// => just comma instead of dot
+		s = strings.ReplaceAll(s, ",", ".")
+		return s
+	}
+
+	// contains comma *and* dot
+	//
+	// 123,456.78
+	if strings.Index(s, ".") > strings.Index(s, ",") {
+		// => remove  the thousands separator - 123456.78
+		s = strings.ReplaceAll(s, ",", "")
+		return s
+	}
+	//
+	// 123.456,78
+	if strings.Index(s, ",") > strings.Index(s, ".") {
+		// => remove  the thousands separator - 123456,78
+		s = strings.ReplaceAll(s, ".", "")
+		// => replace the decimal   separator - 123456.78
+		s = strings.ReplaceAll(s, ",", ".")
+		return s
+	}
+
+	return s
+}
+
 // EnglishTextAndNumbersOnly replaces all other UTF characters by space
 func EnglishTextAndNumbersOnly(s string) string {
 
@@ -1025,6 +1065,9 @@ func (q *QuestionnaireT) KeysValues(cleanse bool) (finishes, keys, vals []string
 				keys = append(keys, q.Pages[i1].Groups[i2].Inputs[i3].Name)
 				val := q.Pages[i1].Groups[i2].Inputs[i3].Response
 				if cleanse {
+					if q.Pages[i1].Groups[i2].Inputs[i3].Type == "number" {
+						val = DelocalizeNumber(val)
+					}
 					val = EnglishTextAndNumbersOnly(val)
 				}
 				vals = append(vals, val)

@@ -240,7 +240,7 @@ func (q *QuestionnaireT) Validate() error {
 				_, _, err := cF(q, seqIdx, paramSetIdx)
 				if err != nil {
 					return fmt.Errorf(
-						`Page %v - Group %v - Composit func %v
+						`Page %v - Group %v - Composite func %v
 						err %v
 						`,
 						i1, i2,

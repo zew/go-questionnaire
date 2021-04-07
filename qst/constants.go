@@ -32,9 +32,10 @@ const (
 	// ValSet is returned, if the checkbox was checked
 	ValSet = "1"
 
-	// Values for the HTML option inputs
+	// RemainOpen is a value for the HTML option input 'finished'
 	RemainOpen = "remain-open"
-	Finished   = "qst-finished"
+	// Finished   is a value for the HTML option input 'finished'
+	Finished = "qst-finished"
 
 	vspacer0  = "<div class='vspacer-00'> &nbsp; </div>\n"
 	vspacer8  = "<div class='vspacer-08'> &nbsp; </div>\n"

@@ -222,10 +222,16 @@ func RegisterHandlers(mux *http.ServeMux) {
 			Keys:    []string{"fmreport-email"},
 		},
 		{
-			Urls:    []string{"/registrationfmt"}, // without hyphen - avoid MS word escaping of URL
-			Title:   "Registration FMT",
-			Handler: RegistrationFMTH,
-			Keys:    []string{"registration-fmt"},
+			Urls:    []string{"/registrationfmtde", "/registrationfmt"}, // without hyphen - avoid MS word escaping of URL
+			Title:   "Registration FMT Deutsch",
+			Handler: RegistrationFMTDeH,
+			Keys:    []string{"registration-fmt-de"},
+		},
+		{
+			Urls:    []string{"/registrationfmten"},
+			Title:   "Registration FMT English",
+			Handler: RegistrationFMTEnH,
+			Keys:    []string{"registration-fmt-en"},
 		},
 		{
 			Urls:    []string{"/doc/site-imprint.md"},

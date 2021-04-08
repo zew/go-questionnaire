@@ -1,3 +1,6 @@
+# sudo apt-get install dos2unix
+# dos2unix   ./deploy-new-release.sh
+#
 # grep 
 #    0  means found
 #    1  means not found

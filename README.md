@@ -2,7 +2,7 @@
 
 <img src="./app-bucket/content/img/mascot/mascot.png" style="float: left; width:8%; min-width: 140px; max-width: 20%; margin-right:5%; margin-bottom: 2%;">
 
-[![GoDoc](http://godoc.org/github.com/zew/go-questionnaire?status.svg)](https://godoc.org/github.com/zew/go-questionnaire)        [![Travis Build](https://travis-ci.org/zew/go-questionnaire.svg?branch=master)](https://travis-ci.org/zew/go-questionnaire)        [![Report Card](https://goreportcard.com/badge/github.com/zew/go-questionnaire)](https://goreportcard.com/report/github.com/zew/go-questionnaire)      [![codecov](https://codecov.io/gh/zew/go-questionnaire/branch/master/graph/badge.svg)](https://codecov.io/gh/zew/go-questionnaire)
+[![GoDoc](http://godoc.org/github.com/zew/go-questionnaire?status.svg)](https://godoc.org/github.com/zew/go-questionnaire)        [![Travis Build](https://travis-ci.com/zew/go-questionnaire.svg?branch=master)](https://travis-ci.com/zew/go-questionnaire)        [![Report Card](https://goreportcard.com/badge/github.com/zew/go-questionnaire)](https://goreportcard.com/report/github.com/zew/go-questionnaire)      [![codecov](https://codecov.io/gh/zew/go-questionnaire/branch/master/graph/badge.svg)](https://codecov.io/gh/zew/go-questionnaire)
 
 
 
@@ -633,6 +633,21 @@ Thus the application can be hosted by cloud providers with buckets *or* on serve
  Clone it and add your handlers.  
  Future updates will be merged.
 
+## Orthogonal sub application: Registration for a survey - FMT
+
+Register in German or English:  
+<https://survey2.zew.de/registrationfmtde>  
+<https://survey2.zew.de/registrationfmten>
+
+Download results:  
+Login:  <https://survey2.zew.de/login-primitive>  
+    fmt-registration-csv-download  
+    secret
+
+Download:  
+<https://survey2.zew.de/registration-fmt-download?lang=de>  
+<https://survey2.zew.de/registration-fmt-download?lang=en>
+
 ## gocloc
 
 Language | files | blank | comment | code
@@ -644,6 +659,8 @@ Markdown | 27 | 485 | 0 | 727
 HTML | 6 | 96 | 31 | 319
 Python | 1 | 31 | 16 | 94
 Bourne | Shell | 3 | 17 | 19 | 76
+
+These numbers are meanwhile shown by github.com
 
 ## Low prio features in consideration
 

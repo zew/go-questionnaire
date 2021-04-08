@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"net/http"
 	"os"
+	"path/filepath"
 	"strings"
 	"sync"
 
@@ -20,6 +21,10 @@ type formRegistrationFMR struct {
 	Lastname    string `json:"nachname"     form:"maxlength='42',size='28',suffix=''"`
 	Affiliation string `json:"affiliation"  form:"maxlength='42',size='28',suffix='',placeholder='Ihre Organisation'"`
 	Terms       bool   `json:"terms"        form:"suffix='replace_me'"`
+}
+
+func (rp *formRegistrationFMR) CSVHeader() string {
+	return fmt.Sprint("email;vorname;nachname;affiliation;terms\n")
 }
 
 func (rp *formRegistrationFMR) CSVLine() string {
@@ -68,15 +73,20 @@ func RegistrationFMRH(w http.ResponseWriter, r *http.Request) {
 			mtxFMR.Lock()
 			defer mtxFMR.Unlock()
 
-			f, err := os.OpenFile("fmr.csv", os.O_APPEND|os.O_WRONLY, 0600)
+			fn := "registration-fmr.csv"
+			fd, size := mustDir(fn)
+			f, err := os.OpenFile(filepath.Join(fd, fn), os.O_APPEND|os.O_WRONLY, 0600)
 			if err != nil {
-				fmt.Fprintf(w, "<p style='color: red; font-size: 115%%;'>fmr.csv konnte nicht geöffnet werden. Informieren Sie peter.buchmann@zew.de.<br>%v</p>", err)
-				return
+				fmt.Fprintf(w, "<p style='color: red; font-size: 115%%;'>%v konnte nicht geöffnet werden. Informieren Sie peter.buchmann@zew.de.<br>%v</p>", fn, err)
 			}
 			defer f.Close()
-
+			if size < 10 {
+				if _, err = f.WriteString(frm.CSVHeader()); err != nil {
+					fmt.Fprintf(w, "<p style='color: red; font-size: 115%%;'>Ihre Daten konnten nicht nach %v gespeichert werde (header row). Informieren Sie peter.buchmann@zew.de.<br>%v</p>", fn, err)
+				}
+			}
 			if _, err = f.WriteString(frm.CSVLine()); err != nil {
-				fmt.Fprintf(w, "<p style='color: red; font-size: 115%%;'>Ihre Daten konnten nicht nach fmr.csv gespeichert werden. Informieren Sie peter.buchmann@zew.de.<br>%v</p>", err)
+				fmt.Fprintf(w, "<p style='color: red; font-size: 115%%;'>Ihre Daten konnten nicht nach %v gespeichert werden. Informieren Sie peter.buchmann@zew.de.<br>%v</p>", fn, err)
 				return
 			}
 			fmt.Fprintf(w, "<p style='color: red; font-size: 115%%;'>Ihre Daten wurden gespeichert</p>")

@@ -219,12 +219,19 @@ func RegistrationFMTDeH(w http.ResponseWriter, r *http.Request) {
 				failureEmail = true
 			}
 			fn := "registration-fmt-de.csv"
-			f, err := os.OpenFile(filepath.Join(mustDir(fn), fn), os.O_APPEND|os.O_WRONLY, 0600)
+			fd, size := mustDir(fn)
+			f, err := os.OpenFile(filepath.Join(fd, fn), os.O_APPEND|os.O_WRONLY, 0600)
 			if err != nil {
 				fmt.Fprintf(w, "<p style='color: red; font-size: 115%%;'>%v konnte nicht geöffnet werden. Informieren Sie peter.buchmann@zew.de.<br>%v</p>", fn, err)
 				failureCSV = true
 			}
 			defer f.Close()
+			if size < 10 {
+				if _, err = f.WriteString(s2f.HeaderRow(frm, ";")); err != nil {
+					fmt.Fprintf(w, "<p style='color: red; font-size: 115%%;'>Ihre Daten konnten nicht nach %v gespeichert werde (header row). Informieren Sie peter.buchmann@zew.de.<br>%v</p>", fn, err)
+					failureCSV = true
+				}
+			}
 			if _, err = f.WriteString(s2f.CSVLine(frm, ";")); err != nil {
 				fmt.Fprintf(w, "<p style='color: red; font-size: 115%%;'>Ihre Daten konnten nicht nach %v gespeichert werden. Informieren Sie peter.buchmann@zew.de.<br>%v</p>", fn, err)
 				failureCSV = true
@@ -259,7 +266,7 @@ func RegistrationFMTDeH(w http.ResponseWriter, r *http.Request) {
 				" 			
 			>
 
-				<label style="text-align: left; font-size: clamp(0.7rem, 0.86vw, 2.8rem); white-space: normal; ">
+				<label style="text-align: left; font-size: clamp(1.0rem, 0.86vw, 2.8rem); white-space: normal; ">
 					Nach ihrer erfolgreichen Anmeldung erhalten Sie monatlich folgende Dokumente per E-Mail:
 
 					<ul>
@@ -277,7 +284,7 @@ func RegistrationFMTDeH(w http.ResponseWriter, r *http.Request) {
 
 				</label> 
 
-				<label style="text-align: left; font-size: clamp(0.7rem, 0.86vw, 2.8rem); ">
+				<label style="text-align: left; font-size: clamp(1.0rem, 0.86vw, 2.8rem); ">
 					Wir würden uns freuen, wenn Sie uns noch zusätzliche Angaben zu Ihrer Person machen könnten. 
 					Diese Informationen werden <u><b>ausschließlich für wissenschaftliche Zwecke</b></u> verwendet. 
 					Alle Informationen, die Sie uns mit dieser Anmeldung geben, bleiben anonym, 

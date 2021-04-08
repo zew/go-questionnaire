@@ -46,7 +46,7 @@ func RegisterHandlers(mux *http.ServeMux) {
 			Handler: lgn.ChangePasswordPrimitiveH,
 			// 	Handler: ChangePasswordPrimitiveSiteH,
 			Keys:  []string{"change-password-primitive"},
-			Allow: map[handler.Privilege]bool{handler.Admin: true},
+			Allow: map[handler.Privilege]bool{handler.LoggedIn: true}, // 2021-04 - non admin user is allowed to change password - behold: init password
 		},
 		{
 			Urls:    []string{"/create-anonymous-id"},
@@ -232,6 +232,12 @@ func RegisterHandlers(mux *http.ServeMux) {
 			Title:   "Registration FMT English",
 			Handler: RegistrationFMTEnH,
 			Keys:    []string{"registration-fmt-en"},
+		},
+		{
+			Urls:    []string{"/registration-fmt-download"},
+			Title:   "Registration FMT English",
+			Handler: RegistrationsFMTDownload,
+			Keys:    []string{"registration-fmt-download"},
 		},
 		{
 			Urls:    []string{"/doc/site-imprint.md"},

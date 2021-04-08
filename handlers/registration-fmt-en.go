@@ -222,12 +222,19 @@ func RegistrationFMTEnH(w http.ResponseWriter, r *http.Request) {
 				failureEmail = true
 			}
 			fn := "registration-fmt-en.csv"
-			f, err := os.OpenFile(filepath.Join(mustDir(fn), fn), os.O_APPEND|os.O_WRONLY, 0600)
+			fd, size := mustDir(fn)
+			f, err := os.OpenFile(filepath.Join(fd, fn), os.O_APPEND|os.O_WRONLY, 0600)
 			if err != nil {
 				fmt.Fprintf(w, "<p style='color: red; font-size: 115%%;'>%v could not be opened. Please inform peter.buchmann@zew.de.<br>%v</p>", fn, err)
 				failureCSV = true
 			}
 			defer f.Close()
+			if size < 10 {
+				if _, err = f.WriteString(s2f.HeaderRow(frm, ";")); err != nil {
+					fmt.Fprintf(w, "<p style='color: red; font-size: 115%%;'>Your data could not be saved to %v (header row). Informieren Sie peter.buchmann@zew.de.<br>%v</p>", fn, err)
+					failureCSV = true
+				}
+			}
 			if _, err = f.WriteString(s2f.CSVLine(frm, ";")); err != nil {
 				fmt.Fprintf(w, "<p style='color: red; font-size: 115%%;'>Your data could not be saved to  %v. Please inform peter.buchmann@zew.de.<br>%v</p>", fn, err)
 				failureCSV = true
@@ -262,7 +269,7 @@ func RegistrationFMTEnH(w http.ResponseWriter, r *http.Request) {
 				" 			
 			>
 
-				<label style="text-align: left; font-size: clamp(0.7rem, 0.86vw, 2.8rem); white-space: normal; ">
+				<label style="text-align: left; font-size: clamp(1.0rem, 0.86vw, 2.8rem); white-space: normal; ">
 					After your registration is complete we will send you every month the following information via email:
 
 					<ul>
@@ -276,7 +283,7 @@ func RegistrationFMTEnH(w http.ResponseWriter, r *http.Request) {
 
 				</label> 
 
-				<label style="text-align: left; font-size: clamp(0.7rem, 0.86vw, 2.8rem); ">
+				<label style="text-align: left; font-size: clamp(1.0rem, 0.86vw, 2.8rem); ">
 					We would greatly appreciate it if you were able to provide additional information about yourself. 
 					Your personal details will remain completely anonymous, 
 					so that it will not be possible to trace this information back to yourself or your company. 

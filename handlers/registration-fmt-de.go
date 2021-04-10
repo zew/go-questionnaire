@@ -153,7 +153,7 @@ func RegistrationFMTDeH(w http.ResponseWriter, r *http.Request) {
 		font-family: BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; 
 	}  `
 	s2f.CSS += ` div.struc2frm span.postlabel { font-size: 80%; } `
-	s2f.SetOptions("geschlecht", []string{"", "male", "female", "diverse"}, []string{"Please choose", "male", "female", "diverse"})
+	s2f.SetOptions("geschlecht", []string{"", "male", "female", "diverse"}, []string{"Bitte auswählen", "Männlich", "Weiblich", "Divers"})
 	s2f.SetOptions("leitung", []string{"0", "<=10", "<=50", "<=100", "<=1000", ">1000"}, []string{"-", "bis 10", "bis 50", "bis 100", "bis 1000", "über 1000"})
 
 	frm := formRegistrationFMTDe{}

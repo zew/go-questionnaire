@@ -45,8 +45,11 @@ func RegisterHandlers(mux *http.ServeMux) {
 			Title:   "Change password",
 			Handler: lgn.ChangePasswordPrimitiveH,
 			// 	Handler: ChangePasswordPrimitiveSiteH,
-			Keys:  []string{"change-password-primitive"},
-			Allow: map[handler.Privilege]bool{handler.LoggedIn: true}, // 2021-04 - non admin user is allowed to change password - behold: init password
+			Keys: []string{"change-password-primitive"},
+			Allow: map[handler.Privilege]bool{
+				handler.LoggedIn:        true,
+				handler.LoggedInViaJSON: true,
+			}, // 2021-04 - non admin user is allowed to change password
 		},
 		{
 			Urls:    []string{"/create-anonymous-id"},

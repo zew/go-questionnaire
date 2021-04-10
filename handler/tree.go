@@ -7,6 +7,7 @@ import (
 	"strings"
 
 	"github.com/zew/go-questionnaire/cfg"
+	"github.com/zew/go-questionnaire/lgn"
 )
 
 // TreeT stores nested handler.Info instances
@@ -225,18 +226,30 @@ being mapped to tpl.fcNav
 
 
 */
-func (tr *TreeT) NavHTML(w io.Writer, r *http.Request, isLogin, isAdmin bool, lvl int) {
+func (tr *TreeT) NavHTML(w io.Writer, r *http.Request, isLogin bool, l *lgn.LoginT, lvl int) {
 
 	// the root node itself is not rendered - we go straight to the children
 	if lvl == 0 {
 		for _, child := range tr.Children {
-			child.NavHTML(w, r, isLogin, isAdmin, lvl+1)
+			child.NavHTML(w, r, isLogin, l, lvl+1)
 		}
 		return
 	}
 
 	if lvl == 1 {
 		fmt.Fprint(w, "\n") // pretty indentations in HTML source
+	}
+
+	isLoginViaJSON := false
+	isAdmin := false
+	if isLogin {
+		isLogin = true
+		if l.HasRole("admin") {
+			isAdmin = true
+		}
+		if l.Provider == "JSON" {
+			isLoginViaJSON = true
+		}
 	}
 
 	preventClick := " onclick='return false;' " // nav items without URL should not be clickable;
@@ -247,6 +260,10 @@ func (tr *TreeT) NavHTML(w io.Writer, r *http.Request, isLogin, isAdmin bool, lv
 	}
 	needsLogin := tr.Node.Allow[LoggedIn]
 	if needsLogin && !isLogin {
+		return
+	}
+	needsLoginViaJSON := tr.Node.Allow[LoggedInViaJSON]
+	if needsLoginViaJSON && !isLoginViaJSON {
 		return
 	}
 	needsAdmin := tr.Node.Allow[Admin]
@@ -347,7 +364,7 @@ func (tr *TreeT) NavHTML(w io.Writer, r *http.Request, isLogin, isAdmin bool, lv
 
 			fmt.Fprintf(w, "%v     <ul class='mnu-3rd-lvl'>\n", htmlIndent)
 			for _, child := range tr.Children {
-				child.NavHTML(w, r, isLogin, isAdmin, lvl+1)
+				child.NavHTML(w, r, isLogin, l, lvl+1)
 			}
 			fmt.Fprintf(w, "%v     </ul>\n", htmlIndent)
 

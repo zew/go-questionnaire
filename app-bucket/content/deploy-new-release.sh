@@ -36,3 +36,4 @@ if test -f "$FILE"; then
 
 fi
 
+echo 'end of script'

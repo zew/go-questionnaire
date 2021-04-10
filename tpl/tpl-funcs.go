@@ -32,12 +32,9 @@ var fcNav = func(r *http.Request, q *qst.QuestionnaireT, SBookMarkURI string) te
 
 	bts := &strings.Builder{}
 
-	w := httptest.NewRecorder()
-	isAdmin := false
-	l, isLogin, err := lgn.LoggedInCheck(w, r, "admin")
-	if isLogin && err == nil {
-		isAdmin = true
-	}
+	dummyWriter := httptest.NewRecorder() // because we have no http.Responsewriter
+
+	l, isLogin, _ := lgn.LoggedInCheck(dummyWriter, r)
 
 	//
 	lc := ""
@@ -48,7 +45,7 @@ var fcNav = func(r *http.Request, q *qst.QuestionnaireT, SBookMarkURI string) te
 			lc = q.LangCodes[0]
 		}
 	} else {
-		sess := sessx.New(w, r)
+		sess := sessx.New(dummyWriter, r)
 		lcSess := sess.EffectiveStr("lang_code")
 		if lcSess != "" {
 			lc = lcSess
@@ -172,7 +169,7 @@ var fcNav = func(r *http.Request, q *qst.QuestionnaireT, SBookMarkURI string) te
 		}
 	}
 
-	root.NavHTML(bts, r, isLogin, isAdmin, 0) // the dynamic part
+	root.NavHTML(bts, r, isLogin, l, 0) // the dynamic part
 	return template.HTML(bts.String())
 }
 

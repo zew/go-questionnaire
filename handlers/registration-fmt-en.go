@@ -156,7 +156,7 @@ func RegistrationFMTEnH(w http.ResponseWriter, r *http.Request) {
 	}  `
 	s2f.CSS += ` div.struc2frm span.postlabel { font-size: 80%; } `
 	s2f.SetOptions("department", []string{"ub", "fm"}, []string{"UB", "FM"})
-	s2f.SetOptions("geschlecht", []string{"", "male", "female", "diverse"}, []string{"Bitte auswählen", "Männlich", "Weiblich", "Divers"})
+	s2f.SetOptions("geschlecht", []string{"", "male", "female", "diverse"}, []string{"Please choose", "male", "female", "diverse"})
 	s2f.SetOptions("leitung", []string{"0", "<=10", "<=50", "<=100", "<=1000", ">1000"}, []string{"-", "up to 10", "up to 50", "up to 100", "up to 1000", "over 1000"})
 
 	frm := formRegistrationFMTEn{}

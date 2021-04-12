@@ -82,7 +82,16 @@ func GenerateQuestionnaireTemplates(w http.ResponseWriter, r *http.Request) {
 		s.Type = frm.Type
 		s.Year = frm.Year
 		s.Month = time.Month(frm.Month)
-		t, err := time.Parse("02.01.2006 15:04", frm.Deadline)
+
+		if false {
+			// time parsing with a locale
+			// inverse of
+			_ = time.Now().In(cfg.Get().Loc)
+			_ = s.Deadline.In(cfg.Get().Loc)
+			_, _ = time.Parse("02.01.2006 15:04 MST", frm.Deadline)
+			_, _ = time.ParseInLocation("02.01.2006 15:04 MST", frm.Deadline, cfg.Get().Loc)
+		}
+		t, err := time.Parse("02.01.2006 15:04 MST", frm.Deadline)
 		if err != nil {
 			errStr += myfmt.Sprint(err.Error() + "<br>\n")
 		}

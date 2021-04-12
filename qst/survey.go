@@ -59,7 +59,8 @@ func NewSurvey(tp string) surveyT {
 	s.Year = t.Year()
 	s.Month = t.Month()
 
-	s.Deadline = time.Date(s.Year, s.Month, 28, 23, 59, 59, 0, cfg.Get().Loc) // This is arbitrary
+	// see GenerateQuestionnaireTemplates() for time parsing with a locale
+	s.Deadline = time.Date(s.Year, s.Month, 28, 23, 59, 59, 0, cfg.Get().Loc).In(cfg.Get().Loc) // This is arbitrary
 
 	s.Params = []ParamT{}
 
@@ -145,6 +146,14 @@ func dropDown(vals []string, selected string) string {
 // for survey data
 func (s *surveyT) HTMLForm(questTypes []string, errStr string) string {
 
+	/*
+		<datalist id="time-entries">
+			<option>01.01.2030 00:00 CEST</option>
+			<option>12.04.2021 17:15 CEST</option>
+		</datalist>
+
+	*/
+
 	ret := `<!DOCTYPE html>
 <html>
 <head>
@@ -168,7 +177,11 @@ func (s *surveyT) HTMLForm(questTypes []string, errStr string) string {
             Type     %v
             Year     <input type="text" name="year"      value="%v"  />
             Month    <input type="text" name="month"     value="%v"  />
-            Deadline <input type="text" name="deadline"  value="%v" placeholder="dd.mm.yyyy hh:mm" /> 01.01.2030 00:00 for indefinite   <br>
+
+                     '01.01.2030 00:00 CEST' for indefinite   
+                     '12.04.2021 17:15 CEST' for concrete     
+            Deadline <input type="text" name="deadline"  value="%v" placeholder="dd.mm.yyyy hh:mm CEST"   xxlist="time-entries" size=30 /> 
+
 %v
                      <input type="submit" name="submit" id="submit"  value="Submit" accesskey="s"  /> <br>
 		</form>
@@ -235,7 +248,7 @@ func (s *surveyT) HTMLForm(questTypes []string, errStr string) string {
 		dd,
 		s.Year,
 		fmt.Sprintf("%02d", int(s.Month)+0), // month
-		s.Deadline.Format("02.01.2006 15:04"),
+		s.Deadline.In(cfg.Get().Loc).Format("02.01.2006 15:04 MST"),
 		kv,
 		link1,
 		link2,

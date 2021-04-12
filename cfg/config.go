@@ -61,7 +61,7 @@ type ConfigT struct {
 	MaxPostSize int64 `json:"max_post_size,omitempty"` // request body size limit, against DOS attacks, limits file uploads
 
 	LocationName   string         `json:"location,omitempty"` // i.e. "Europe/Berlin", see Go\lib\time\zoneinfo.zip
-	Loc            *time.Location `json:"-"`                  // Initialized during load
+	Loc            *time.Location `json:"-"`                  // Initialized during load; seconds east of UTC
 	SessionTimeout int            `json:"session_timeout"`    // hours until the session is lost
 	FormTimeout    int            `json:"form_timeout"`       // hours until a form post is rejected
 

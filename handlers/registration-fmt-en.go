@@ -31,6 +31,7 @@ type formRegistrationFMTEn struct {
 	Strasse string `json:"strasse"            form:"maxlength='120',size='40',label='Postal address',suffix=''"`
 
 	// stackoverflow.com/questions/399078 - inside character classes escape ^-]\
+	// the top level domain can be .info or longer
 	Email   string `json:"email"              form:"maxlength='120',size='40',pattern='[a-zA-Z0-9\\.\\-_%+]+@[a-zA-Z0-9\\.\\-]+\\.[a-zA-Z]{0&comma;6}'"`
 	Telefon string `json:"telefon"            form:"maxlength='120',size='40',label='Telefone'"`
 

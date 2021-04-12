@@ -4,7 +4,7 @@
 @REM schtasks /QUERY /?
 @REM SCHTASKS /create /?
 
-@REM daily - 7:00 to 20:00
+@REM daily - 7:15 to 20:00
 @REM /f  - overwrite if already exists
 @REM /RI - repetition interval in minuutes
 @REM /st - start time
@@ -15,7 +15,7 @@
 
 
 schtasks /delete  /tn "import-fmt-results" /F
-schtasks /create  /tn "import-fmt-results" /tr "c:\xampp\htdocs\go-questionnaire\cmd\transferrer\run-fmt-remote.bat" /f /sc DAILY   /RI 60  /st 07:00  /du 13:00    
+schtasks /create  /tn "import-fmt-results" /tr "c:\xampp\htdocs\go-questionnaire\cmd\transferrer\run-fmt-remote.bat" /f /sc DAILY   /RI 60  /st 07:15  /du 13:00    
 
 
 @REM Above task yields "permission denied"

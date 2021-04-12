@@ -20,25 +20,26 @@ type formRegistrationFMTDe struct {
 	Vorname     string `json:"first_name"     form:"maxlength='40',size='25',label='Vorname',xxnobreak='true'"`
 	Nachname    string `json:"last_name"      form:"maxlength='40',size='30',label='Name'"`
 	Unternehmen string `json:"unternehmen"    form:"maxlength='40',size='40',label='Unternehmen',placeholder='Ihr Unternehmen oder Organisation'"`
-	Abteilung   string `json:"abteilung"      form:"maxlength='40',size='40',label='Abteilung'"`
+	Abteilung   string `json:"abteilung"      form:"maxlength='60',size='40',label='Abteilung'"`
 	Position    string `json:"position"       form:"maxlength='40',size='40',label='Position',suffix='Bezeichnung Ihrer aktuellen Position'"`
 
 	// Separator1 string `json:"separator1"      form:"subtype='separator',label=''"`
 
 	PLZ     string `json:"plz"                form:"maxlength='6',size='6',label='PLZ',xxnobreak='true'"`
-	Ort     string `json:"ort"                form:"maxlength='40',size='40',label='Ort'"`
-	Strasse string `json:"strasse"            form:"maxlength='40',size='40',label='Strasse',suffix='mit Hausnummer'"`
+	Ort     string `json:"ort"                form:"maxlength='120',size='40',label='Ort'"`
+	Strasse string `json:"strasse"            form:"maxlength='120',size='40',label='Strasse',suffix='mit Hausnummer'"`
 	// stackoverflow.com/questions/399078 - inside character classes escape ^-]\
-	Email   string `json:"email"              form:"maxlength='40',size='40',pattern='[a-zA-Z0-9\\.\\-_%+]+@[a-zA-Z0-9\\.\\-]+\\.[a-zA-Z]{0&comma;2}'"`
-	Telefon string `json:"telefon"            form:"maxlength='40',size='40',label='Telefon'"`
+	// the top level domain can be .info or longer
+	Email   string `json:"email"              form:"maxlength='120',size='40',pattern='[a-zA-Z0-9\\.\\-_%+]+@[a-zA-Z0-9\\.\\-]+\\.[a-zA-Z]{0&comma;6}'"`
+	Telefon string `json:"telefon"            form:"maxlength='120',size='40',label='Telefon'"`
 
 	Separator2 string `json:"separator2"      form:"subtype='separator',label='replace_me_2'"`
 
 	Geschlecht  string `json:"geschlecht"     form:"subtype='select'"`
 	Geburtsjahr string `json:"geburtsjahr"    form:"maxlength='5',size='5',label='Geburtsjahr'"`
-	Abschluss   string `json:"abschluss"      form:"maxlength='40',size='40',label='Höchster Abschluss',suffix='z.B. Diplom'"`
-	Studienfach string `json:"studienfach"    form:"maxlength='40',size='40',label='Ggf. Studienfach',suffix='z.B. VWL'"`
-	Hochschule  string `json:"hochschule"     form:"maxlength='40',size='40',label='Ggf. Hochschule',suffix='z.B. Uni Mannheim'"`
+	Abschluss   string `json:"abschluss"      form:"maxlength='120',size='40',label='Höchster Abschluss',suffix='z.B. Diplom'"`
+	Studienfach string `json:"studienfach"    form:"maxlength='120',size='40',label='Ggf. Studienfach',suffix='z.B. VWL'"`
+	Hochschule  string `json:"hochschule"     form:"maxlength='120',size='40',label='Ggf. Hochschule',suffix='z.B. Uni Mannheim'"`
 	Einstieg    string `json:"einstieg"       form:"maxlength='5',size='5',label='Einstieg ins Berufsleben',suffix='(Jahr)'"`
 	Leitung     string `json:"leitung"        form:"subtype='select',size='1',label='Leitungsbefugnis über',suffix='Mitarbeiter'"`
 

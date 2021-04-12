@@ -20,27 +20,27 @@ type formRegistrationFMTEn struct {
 	Vorname     string `json:"first_name"     form:"maxlength='40',size='25',label='Forename',xxnobreak='true'"`
 	Nachname    string `json:"last_name"      form:"maxlength='40',size='30',label='Surname'"`
 	Unternehmen string `json:"unternehmen"    form:"maxlength='40',size='40',label='Company',placeholder='your company or organization'"`
-	Abteilung   string `json:"abteilung"      form:"maxlength='40',size='40',label='Department'"`
+	Abteilung   string `json:"abteilung"      form:"maxlength='60',size='40',label='Department'"`
 	Position    string `json:"position"       form:"maxlength='40',size='40',label='Position',suffix='Your current position'"`
 
 	// Separator1 string `json:"separator1"      form:"subtype='separator',label=''"`
 
-	Land string `json:"land"               form:"maxlength='40',size='40',label='Country'"`
-	// PLZ     string `json:"plz"                form:"maxlength='6',size='6',label='PLZ',xxnobreak='true'"`
-	Ort     string `json:"ort"                form:"maxlength='40',size='40',label='City'"`
-	Strasse string `json:"strasse"            form:"maxlength='40',size='40',label='Postal address',suffix=''"`
+	Land string `json:"land"                  form:"maxlength='40',size='40',label='Country'"`
+	// PLZ     string `json:"plz"             form:"maxlength='6',size='6',label='PLZ',xxnobreak='true'"`
+	Ort     string `json:"ort"                form:"maxlength='120',size='40',label='City'"`
+	Strasse string `json:"strasse"            form:"maxlength='120',size='40',label='Postal address',suffix=''"`
 
 	// stackoverflow.com/questions/399078 - inside character classes escape ^-]\
-	Email   string `json:"email"              form:"maxlength='40',size='40',pattern='[a-zA-Z0-9\\.\\-_%+]+@[a-zA-Z0-9\\.\\-]+\\.[a-zA-Z]{0&comma;2}'"`
-	Telefon string `json:"telefon"            form:"maxlength='40',size='40',label='Telefone'"`
+	Email   string `json:"email"              form:"maxlength='120',size='40',pattern='[a-zA-Z0-9\\.\\-_%+]+@[a-zA-Z0-9\\.\\-]+\\.[a-zA-Z]{0&comma;6}'"`
+	Telefon string `json:"telefon"            form:"maxlength='120',size='40',label='Telefone'"`
 
 	Separator2 string `json:"separator2"      form:"subtype='separator',label='replace_me_2'"`
 
 	// Geschlecht  string `json:"geschlecht"     form:"subtype='select'"`
 	Geburtsjahr string `json:"geburtsjahr"    form:"maxlength='5',size='5',label='Year of birth'"`
-	Abschluss   string `json:"abschluss"      form:"maxlength='40',size='40',label='Highest qualification obtained',suffix='e.g. diploma'"`
-	Studienfach string `json:"studienfach"    form:"maxlength='40',size='40',label='If applicable&comma; area of study',suffix='e.g. economics'"`
-	Hochschule  string `json:"hochschule"     form:"maxlength='40',size='40',label='If applicable&comma; university',suffix='e.g. University of Mannheim'"`
+	Abschluss   string `json:"abschluss"      form:"maxlength='120',size='40',label='Highest qualification obtained',suffix='e.g. diploma'"`
+	Studienfach string `json:"studienfach"    form:"maxlength='120',size='40',label='If applicable&comma; area of study',suffix='e.g. economics'"`
+	Hochschule  string `json:"hochschule"     form:"maxlength='120',size='40',label='If applicable&comma; university',suffix='e.g. University of Mannheim'"`
 	Einstieg    string `json:"einstieg"       form:"maxlength='5',size='5',label='Year of entry into employment  ',suffix='(year)'"`
 	Leitung     string `json:"leitung"        form:"subtype='select',size='1',label='Management authority',suffix='number of co-workers'"`
 

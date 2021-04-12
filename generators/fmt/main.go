@@ -398,6 +398,10 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 					"de": fmt.Sprintf("Aktuelles Quartal"),
 					"en": fmt.Sprintf("Current quarter"),
 				}
+				// inp.Tooltip = trl.S{
+				// 	"de": fmt.Sprintf("Unmittelbar zurückliegendes Quartal"),
+				// 	"en": fmt.Sprintf("Most recent quarter"),
+				// }
 				inp.Type = "number"
 				inp.Name = "y_recession_q0"
 				inp.Min = -100

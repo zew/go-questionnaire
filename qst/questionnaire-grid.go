@@ -94,6 +94,16 @@ func (inp *inputT) ShortSuffix(ctrl string, langCode string) string {
 	return ctrl
 }
 
+// appendTooltip appends an explanation
+func (inp *inputT) appendTooltip(w io.Writer, langCode string) {
+
+	if inp.Tooltip.Empty() {
+		return
+	}
+	fmt.Fprintf(w, "<span class='question-mark-tooltip' title='%v'>&#10068;</span>", inp.Tooltip.TrSilent(langCode))
+
+}
+
 //
 //
 // GroupHTMLGridBased renders a group of inputs to GroupHTMLGridBased
@@ -188,6 +198,8 @@ func (q QuestionnaireT) GroupHTMLGridBased(pageIdx, grpIdx int) string {
 				fmt.Fprint(wCSS, inp.StyleLbl.CSS(lblClass))
 
 				inp.labelDescription(wLbl, q.LangCode)
+				inp.appendTooltip(wLbl, q.LangCode)
+
 				if inp.IsLayout() {
 					divWrap(wInp, lblClass+" grid-item-lvl-2", "", wLbl.String())
 				} else {

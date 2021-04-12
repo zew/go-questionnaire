@@ -99,6 +99,7 @@ type inputT struct {
 	Label     trl.S  `json:"label,omitempty"`
 	Desc      trl.S  `json:"description,omitempty"`
 	Suffix    trl.S  `json:"suffix,omitempty"` // only for short units - such as € or % - for longer text use label.Style...Order = 2
+	Tooltip   trl.S  `json:"tooltip,omitempty"`
 	AccessKey string `json:"accesskey,omitempty"`
 
 	/*Colspan determines, how many column slots of the group column layout
@@ -975,11 +976,11 @@ var germanUmlaute = strings.NewReplacer(
 )
 
 var separators = strings.NewReplacer(
-	"\r\n", " -  ",
-	"\n", " -  ",
-	":", " -  ",
-	";", " -  ",
-	",", " -  ",
+	"\r\n", " - ",
+	"\n", " - ",
+	":", " - ",
+	";", " - ",
+	// ",", " - ",
 )
 
 // no comma, no colon, no semicolon - only dot or hyphen

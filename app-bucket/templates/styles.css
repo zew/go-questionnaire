@@ -879,6 +879,15 @@ input[type=radio]:focus         {
 
 }
 
+.question-mark-tooltip {
+    display:        inline-block;
+    margin-left:    0.6rem;
+    margin-bottom:  0.3rem;
+    font-size:      70%;
+    vertical-align: middle;
+    cursor:         pointer;
+}
+
 .plain-text-broken {
     /* like pre but lines too long are broken
         not stretching the container

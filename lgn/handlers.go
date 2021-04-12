@@ -43,7 +43,8 @@ func LogoutH(w http.ResponseWriter, r *http.Request) error {
 }
 
 // LoggedInCheck checks, whether as user is logged in,
-// and checks whether he has the required roles
+// and checks whether he has the required roles;
+// l is always initialized and never nil
 func LoggedInCheck(w io.Writer, r *http.Request, roles ...string) (l *LoginT, loggedIn bool, err error) {
 
 	l, loggedIn, err = FromSession(w, r)

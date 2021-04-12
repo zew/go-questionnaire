@@ -33,6 +33,7 @@ coverage.html
 tmp/*
 tmp*
 profiles/*
+*/fmt-registrations/*
 # everything site specific
 site*
 site/*

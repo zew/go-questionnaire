@@ -245,6 +245,8 @@ github.com/modern-go/reflect2 v0.0.0-20180701023420-4b7aa43c6742/go.mod h1:bx2lN
 github.com/niemeyer/pretty v0.0.0-20200227124842-a10e7caefd8e/go.mod h1:zD1mROLANZcx1PVRCS0qkT7pwLkGfwJo4zjcN/Tysno=
 github.com/pbberlin/struc2frm v1.2.8 h1:HotdxSAraGPI8ywfcp/+PsyZ+Xq8dGyQwufNceTbIc4=
 github.com/pbberlin/struc2frm v1.2.8/go.mod h1:hsIWVzQqFpVlrgEwfkkpYRF8nP0wPAjs0O8+o+S9/9I=
+github.com/pbberlin/struc2frm v1.2.9 h1:xAyzoBJCIgIXooiLXCyb8eLbirtkg3c3fXdjjERdkUg=
+github.com/pbberlin/struc2frm v1.2.9/go.mod h1:hsIWVzQqFpVlrgEwfkkpYRF8nP0wPAjs0O8+o+S9/9I=
 github.com/pkg/errors v0.9.1 h1:FEBLx1zS214owpjy7qsBeixbURkuhQAwrK5UwLGTwt4=
 github.com/pkg/errors v0.9.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=

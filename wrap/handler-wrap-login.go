@@ -68,7 +68,7 @@ func (wr *mustLogin) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 		}
 		if wr.mustAdmin {
 			if !l.HasRole("admin") {
-				fmt.Fprintf(w, "Login found, but must have role 'admin'\n")
+				fmt.Fprintf(w, "Login found, but must have role 'admin' - and no init password\n")
 				return
 			}
 		}

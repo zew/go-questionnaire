@@ -15,10 +15,16 @@ func nextWaveID() string {
 	return t.Format("2006-01")
 }
 
+/*
+ * start of survey  29. March  => Q2
+ * end   of survey  12. April  => Q2
+**/
+const delta = -time.Duration(15 * 24 * time.Hour)
+
 // Yields current quarter plus one
 func nextQ(opt ...int) string {
 	t := time.Now()
-	t = t.Add(-time.Duration(10 * 24 * time.Hour))
+	t = t.Add(delta)
 
 	m := t.Month() // 1 - january
 	y := t.Year()
@@ -42,7 +48,7 @@ func nextQ(opt ...int) string {
 
 func nextY(opt ...int) string {
 	t := time.Now()
-	t = t.Add(-time.Duration(10 * 24 * time.Hour))
+	t = t.Add(delta)
 
 	y := t.Year()
 

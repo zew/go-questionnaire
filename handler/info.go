@@ -25,6 +25,8 @@ const (
 	LoggedOut
 	// LoggedIn requires login
 	LoggedIn
+	// LoggedInViaJSON - must be logged in - and provider must be JSON
+	LoggedInViaJSON
 	// Admin has all rights
 	Admin
 	// Editor can save values

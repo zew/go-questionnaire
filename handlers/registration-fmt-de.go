@@ -7,9 +7,8 @@ import (
 	"net/http"
 	"net/smtp"
 	"os"
-	"strconv"
+	"path/filepath"
 	"strings"
-	"sync"
 	"time"
 
 	"github.com/pbberlin/struc2frm"
@@ -17,29 +16,30 @@ import (
 	"github.com/zew/util"
 )
 
-type formRegistrationFMT struct {
+type formRegistrationFMTDe struct {
 	Vorname     string `json:"first_name"     form:"maxlength='40',size='25',label='Vorname',xxnobreak='true'"`
 	Nachname    string `json:"last_name"      form:"maxlength='40',size='30',label='Name'"`
-	Unternehmen string `json:"unternehmen"    form:"maxlength='40',size='40',placeholder='Ihr Unternehmen oder Organisation'"`
-	Abteilung   string `json:"abteilung"      form:"maxlength='40',size='40',"`
-	Position    string `json:"position"       form:"maxlength='40',size='40',suffix='Bezeichnung Ihrer aktuellen Position'"`
+	Unternehmen string `json:"unternehmen"    form:"maxlength='40',size='40',label='Unternehmen',placeholder='Ihr Unternehmen oder Organisation'"`
+	Abteilung   string `json:"abteilung"      form:"maxlength='60',size='40',label='Abteilung'"`
+	Position    string `json:"position"       form:"maxlength='40',size='40',label='Position',suffix='Bezeichnung Ihrer aktuellen Position'"`
 
 	// Separator1 string `json:"separator1"      form:"subtype='separator',label=''"`
 
 	PLZ     string `json:"plz"                form:"maxlength='6',size='6',label='PLZ',xxnobreak='true'"`
-	Ort     string `json:"ort"                form:"maxlength='40',size='40'"`
-	Strasse string `json:"strasse"            form:"maxlength='40',size='40',suffix='mit Hausnummer'"`
+	Ort     string `json:"ort"                form:"maxlength='120',size='40',label='Ort'"`
+	Strasse string `json:"strasse"            form:"maxlength='120',size='40',label='Strasse',suffix='mit Hausnummer'"`
 	// stackoverflow.com/questions/399078 - inside character classes escape ^-]\
-	Email   string `json:"email"              form:"maxlength='40',size='40',pattern='[a-zA-Z0-9\\.\\-_%+]+@[a-zA-Z0-9\\.\\-]+\\.[a-zA-Z]{0&comma;2}'"`
-	Telefon string `json:"telefon"            form:"maxlength='40',size='40',label='Telefon'"`
+	// the top level domain can be .info or longer
+	Email   string `json:"email"              form:"maxlength='120',size='40',pattern='[a-zA-Z0-9\\.\\-_%+]+@[a-zA-Z0-9\\.\\-]+\\.[a-zA-Z]{0&comma;6}'"`
+	Telefon string `json:"telefon"            form:"maxlength='120',size='40',label='Telefon'"`
 
 	Separator2 string `json:"separator2"      form:"subtype='separator',label='replace_me_2'"`
 
 	Geschlecht  string `json:"geschlecht"     form:"subtype='select'"`
-	Geburtsjahr string `json:"geburtsjahr"    form:"maxlength='5',size='5'"`
-	Abschluss   string `json:"abschluss"      form:"maxlength='40',size='40',label='Höchster Abschluss',suffix='z.B. Diplom'"`
-	Studienfach string `json:"studienfach"    form:"maxlength='40',size='40',label='Ggf. Studienfach',suffix='z.B. VWL'"`
-	Hochschule  string `json:"hochschule"     form:"maxlength='40',size='40',label='Ggf. Hochschule',suffix='z.B. Uni Mannheim'"`
+	Geburtsjahr string `json:"geburtsjahr"    form:"maxlength='5',size='5',label='Geburtsjahr'"`
+	Abschluss   string `json:"abschluss"      form:"maxlength='120',size='40',label='Höchster Abschluss',suffix='z.B. Diplom'"`
+	Studienfach string `json:"studienfach"    form:"maxlength='120',size='40',label='Ggf. Studienfach',suffix='z.B. VWL'"`
+	Hochschule  string `json:"hochschule"     form:"maxlength='120',size='40',label='Ggf. Hochschule',suffix='z.B. Uni Mannheim'"`
 	Einstieg    string `json:"einstieg"       form:"maxlength='5',size='5',label='Einstieg ins Berufsleben',suffix='(Jahr)'"`
 	Leitung     string `json:"leitung"        form:"subtype='select',size='1',label='Leitungsbefugnis über',suffix='Mitarbeiter'"`
 
@@ -63,31 +63,17 @@ type formRegistrationFMT struct {
 	VermoegensverwaltungManchmal bool   `json:"vermoegensverwaltung_manchmal"   form:"label=' ',label-style='min-width:4.8rem'"`
 	RisikomanagementHaupt        bool   `json:"risikomanagement_haupt"          form:"label='Risikomanagement',label-style='min-width:240px;position: relative; left: -20px;',nobreak='true'"`
 	RisikomanagementManchmal     bool   `json:"risikomanagement_manchmal"       form:"label=' ',label-style='min-width:4.8rem'"`
-	Sonstiges                    string `json:"sonstiges"                       form:"maxlength='40',size='40',label='',label-style='min-width:240px;position: relative; left: -20px;',suffix='sonstige Tätigkeiten'"`
+	Sonstiges                    string `json:"sonstiges"                       form:"maxlength='40',size='40',label='Sonstiges',label-style='min-width:240px;position: relative; left: -20px;',suffix='sonstige Tätigkeiten'"`
 
 	Separator4 string `json:"separator4"   form:"subtype='separator',label=' &nbsp; '"`
 	Terms      bool   `json:"terms"        form:"label='Datenschutz',suffix='replace_me_1'"`
 }
 
-// yearValid - either empty or within 1930 and 2050
-func yearValid(s string) bool {
-	if s == "" {
-		return true // no number is ok
-	}
-	i, err := strconv.Atoi(s)
-	if err != nil {
-		return false // not a number => not ok
-	}
-	if i < 1930 {
-		return false
-	}
-	if i > 2050 {
-		return false
-	}
-	return true
+func (frm formRegistrationFMTDe) Headline() string {
+	return fmt.Sprintf("FMT Registration %v %v\r\n", frm.Vorname, frm.Nachname)
 }
 
-func (frm formRegistrationFMT) Validate() (map[string]string, bool) {
+func (frm formRegistrationFMTDe) Validate() (map[string]string, bool) {
 	errs := map[string]string{}
 	g1 := frm.Vorname != ""
 	if frm.Vorname == "" {
@@ -150,10 +136,8 @@ func (frm formRegistrationFMT) Validate() (map[string]string, bool) {
 	return errs, fields
 }
 
-var mtxFMT = sync.Mutex{}
-
-// RegistrationFMTH shows a registraton form for the FMT
-func RegistrationFMTH(w http.ResponseWriter, r *http.Request) {
+// RegistrationFMTDeH shows a registraton form for the FMT
+func RegistrationFMTDeH(w http.ResponseWriter, r *http.Request) {
 
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
 
@@ -170,11 +154,10 @@ func RegistrationFMTH(w http.ResponseWriter, r *http.Request) {
 		font-family: BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; 
 	}  `
 	s2f.CSS += ` div.struc2frm span.postlabel { font-size: 80%; } `
-	s2f.SetOptions("department", []string{"ub", "fm"}, []string{"UB", "FM"})
 	s2f.SetOptions("geschlecht", []string{"", "male", "female", "diverse"}, []string{"Bitte auswählen", "Männlich", "Weiblich", "Divers"})
 	s2f.SetOptions("leitung", []string{"0", "<=10", "<=50", "<=100", "<=1000", ">1000"}, []string{"-", "bis 10", "bis 50", "bis 100", "bis 1000", "über 1000"})
 
-	frm := formRegistrationFMT{}
+	frm := formRegistrationFMTDe{}
 
 	// pulling in values from http request
 	populated, err := struc2frm.Decode(r, &frm)
@@ -185,9 +168,9 @@ func RegistrationFMTH(w http.ResponseWriter, r *http.Request) {
 
 	// init values - multiple
 	if !populated {
-		if frm.Unternehmen == "" {
-			frm.Unternehmen = ""
-		}
+		// if frm.Unternehmen == "" {
+		// 	frm.Unternehmen = ""
+		// }
 	}
 
 	errs, valid := frm.Validate()
@@ -214,15 +197,18 @@ func RegistrationFMTH(w http.ResponseWriter, r *http.Request) {
 			// headers
 			fmt.Fprintf(body, "To: %v \r\n", strings.Join(to, ", ")) // "To: billy@microsoft.com, stevie@microsoft.com \r\n"
 			fmt.Fprintf(body, mimeHTML)
-			fmt.Fprintf(body, "FMT Registration %v %v\r\n", frm.Vorname, frm.Nachname)
+			fmt.Fprintf(body, frm.Headline())
 			// ending of headers
 			fmt.Fprint(body, "\r\n")
 			s2f.CardViewOptions.SkipEmpty = true
 			fmt.Fprint(body, s2f.Card(frm))
 			fmt.Fprintf(body, "<p>Form sent %v</p>", time.Now().Format(time.RFC850))
+			emailHorst := "hermes.zew-private.de:25" // from intern
+			if cfg.Get().IsProduction {
+				emailHorst = "hermes.zew.de:25" // from DMZ - does not work
+			}
 			err = smtp.SendMail(
-				// "hermes.zew-private.de:25", // from intern
-				"hermes.zew.de:25",                // from DMZ - does not work
+				emailHorst,
 				nil,                               // smtp.Auth interface
 				"Registration-FMT@survey2.zew.de", // from
 				to,                                // twice - once here - and then again inside the body
@@ -233,15 +219,22 @@ func RegistrationFMTH(w http.ResponseWriter, r *http.Request) {
 				log.Print(w, fmt.Sprintf(" Error sending email: %v", err))
 				failureEmail = true
 			}
-
-			f, err := os.OpenFile("registration-fmt.csv", os.O_APPEND|os.O_WRONLY, 0600)
+			fn := "registration-fmt-de.csv"
+			fd, size := mustDir(fn)
+			f, err := os.OpenFile(filepath.Join(fd, fn), os.O_APPEND|os.O_WRONLY, 0600)
 			if err != nil {
-				fmt.Fprintf(w, "<p style='color: red; font-size: 115%%;'>registration-fmt.csv konnte nicht geöffnet werden. Informieren Sie peter.buchmann@zew.de.<br>%v</p>", err)
+				fmt.Fprintf(w, "<p style='color: red; font-size: 115%%;'>%v konnte nicht geöffnet werden. Informieren Sie peter.buchmann@zew.de.<br>%v</p>", fn, err)
 				failureCSV = true
 			}
 			defer f.Close()
+			if size < 10 {
+				if _, err = f.WriteString(s2f.HeaderRow(frm, ";")); err != nil {
+					fmt.Fprintf(w, "<p style='color: red; font-size: 115%%;'>Ihre Daten konnten nicht nach %v gespeichert werde (header row). Informieren Sie peter.buchmann@zew.de.<br>%v</p>", fn, err)
+					failureCSV = true
+				}
+			}
 			if _, err = f.WriteString(s2f.CSVLine(frm, ";")); err != nil {
-				fmt.Fprintf(w, "<p style='color: red; font-size: 115%%;'>Ihre Daten konnten nicht nach registration-fmt.csv gespeichert werden. Informieren Sie peter.buchmann@zew.de.<br>%v</p>", err)
+				fmt.Fprintf(w, "<p style='color: red; font-size: 115%%;'>Ihre Daten konnten nicht nach %v gespeichert werden. Informieren Sie peter.buchmann@zew.de.<br>%v</p>", fn, err)
 				failureCSV = true
 			}
 
@@ -255,10 +248,8 @@ func RegistrationFMTH(w http.ResponseWriter, r *http.Request) {
 
 	if !valid {
 		w1 := &strings.Builder{}
-		// fmt.Fprintf(w1,
-		// 	`<p>REGISTRIERUNG VON FINANZMARKTTEST-TEILNEHMERN
-		// 	</p>`)
 		fmt.Fprint(w1, s2f.Form(frm))
+
 		s2 := strings.ReplaceAll(w1.String(), "replace_me_1",
 			`<div style="aamargin-top: 1.8em; max-width: 18rem; ">
 			Ich erkläre mich mit den <a tabindex='-1' 
@@ -276,7 +267,7 @@ func RegistrationFMTH(w http.ResponseWriter, r *http.Request) {
 				" 			
 			>
 
-				<label style="text-align: left; font-size: clamp(0.7rem, 0.86vw, 2.8rem); white-space: normal; ">
+				<label style="text-align: left; font-size: clamp(1.0rem, 0.86vw, 2.8rem); white-space: normal; ">
 					Nach ihrer erfolgreichen Anmeldung erhalten Sie monatlich folgende Dokumente per E-Mail:
 
 					<ul>
@@ -294,7 +285,7 @@ func RegistrationFMTH(w http.ResponseWriter, r *http.Request) {
 
 				</label> 
 
-				<label style="text-align: left; font-size: clamp(0.7rem, 0.86vw, 2.8rem); ">
+				<label style="text-align: left; font-size: clamp(1.0rem, 0.86vw, 2.8rem); ">
 					Wir würden uns freuen, wenn Sie uns noch zusätzliche Angaben zu Ihrer Person machen könnten. 
 					Diese Informationen werden <u><b>ausschließlich für wissenschaftliche Zwecke</b></u> verwendet. 
 					Alle Informationen, die Sie uns mit dieser Anmeldung geben, bleiben anonym, 
@@ -311,8 +302,7 @@ func RegistrationFMTH(w http.ResponseWriter, r *http.Request) {
 				(Mehrfachantwort möglich)<br>
 				<div style='margin-top: 0.4rem; margin-left: 200px; '>Haupttätigkeit   &nbsp; &nbsp;  Gelegentliche Tätigkeit</div>
 			</div>`)
-		s5 := strings.ReplaceAll(s4, "Form registration fmt", "Registrierung von Finanzmarkttest-Teilnehmern")
-
+		s5 := strings.ReplaceAll(s4, "Form registration fmtde", "Registrierung für Teilnahme am ZEW Index / ZEW Finanzmarkttest")
 		fmt.Fprint(w, s5)
 
 	}

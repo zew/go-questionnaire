@@ -309,11 +309,11 @@ func Open(fileName string) (r io.ReadCloser, bucketClose func() error, err error
 // OpenAny tries Open(fileName) for any subdirs and then the appdir "."
 func OpenAny(fileName string, optSubdirs ...string) (r io.ReadCloser, bucketClose func() error, err error) {
 
-	workDir, err := os.Getwd()
-	if err != nil {
-		return
-	}
-	workDir = "." // same as above
+	// workDir, err := os.Getwd()
+	// if err != nil {
+	// 	return
+	// }
+	workDir := "." // same as above
 
 	log.Printf("work dir: %v, subdirs: %v, fileName: %v", workDir, optSubdirs, fileName)
 

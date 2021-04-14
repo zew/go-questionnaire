@@ -395,8 +395,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Label = trl.S{
-					"de": fmt.Sprintf("Aktuelles Quartal"),
-					"en": fmt.Sprintf("Current quarter"),
+					"de": fmt.Sprintf("Aktuelles Quartal (%v)", q.Survey.Quarter(0)),
+					"en": fmt.Sprintf("Current quarter  (%v)", q.Survey.Quarter(0)),
 				}
 				// inp.Tooltip = trl.S{
 				// 	"de": fmt.Sprintf("Unmittelbar zurückliegendes Quartal"),
@@ -417,8 +417,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Label = trl.S{
-					"de": fmt.Sprintf("Folgendes Quartal"),
-					"en": fmt.Sprintf("Next quarter"),
+					"de": fmt.Sprintf("Folgendes Quartal (%v)", q.Survey.Quarter(1)),
+					"en": fmt.Sprintf("Next quarter  (%v)", q.Survey.Quarter(1)),
 				}
 				inp.Type = "number"
 				inp.Name = "y_recession_q1"

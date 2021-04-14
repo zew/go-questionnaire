@@ -18,7 +18,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "1c28ba036e4cb9a5def463e54d61f0481cdbfd498cea83a0908a75e5f23c27bf",
+ 	"md_5": "3ca3d432435d9db2cb093acf2f88965e5fda63ca892199eb03efd47fb71e8726",
  	"lang_codes": [
  		"de",
  		"en"
@@ -1316,8 +1316,8 @@
  							"min": -100,
  							"max": 100,
  							"label": {
- 								"de": "Aktuelles Quartal",
- 								"en": "Current quarter"
+ 								"de": "Aktuelles Quartal (Q2 2021)",
+ 								"en": "Current quarter  (Q2 2021)"
  							},
  							"suffix": {
  								"de": "%",
@@ -1335,8 +1335,8 @@
  							"min": -100,
  							"max": 100,
  							"label": {
- 								"de": "Folgendes Quartal",
- 								"en": "Next quarter"
+ 								"de": "Folgendes Quartal (Q3 2021)",
+ 								"en": "Next quarter  (Q3 2021)"
  							},
  							"suffix": {
  								"de": "%",
@@ -4577,65 +4577,6 @@
  							"min": -20,
  							"max": 20,
  							"label": {
- 								"de": "Q1 2021",
- 								"en": "Q1 2021"
- 							},
- 							"suffix": {
- 								"de": "%",
- 								"en": "pct"
- 							},
- 							"col_span": 3,
- 							"col_span_label": 1,
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {
- 										"auto_flow": "column",
- 										"template_columns": "none ",
- 										"template_rows": "0.9fr 1fr"
- 									},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.2rem 0 0"
- 									},
- 									"grid_item_style": {
- 										"justify_self": "end"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": " 0 2.7rem 0 0.2rem"
- 									},
- 									"grid_item_style": {
- 										"justify_self": "start"
- 									},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "pprwbipq2",
- 							"type": "number",
- 							"max_chars": 4,
- 							"step": 0.01,
- 							"min": -20,
- 							"max": 20,
- 							"label": {
  								"de": "Q2 2021",
  								"en": "Q2 2021"
  							},
@@ -4688,7 +4629,7 @@
  							}
  						},
  						{
- 							"name": "pprwbipq3",
+ 							"name": "pprwbipq2",
  							"type": "number",
  							"max_chars": 4,
  							"step": 0.01,
@@ -4747,7 +4688,7 @@
  							}
  						},
  						{
- 							"name": "pprwbipq4",
+ 							"name": "pprwbipq3",
  							"type": "number",
  							"max_chars": 4,
  							"step": 0.01,
@@ -4756,6 +4697,65 @@
  							"label": {
  								"de": "Q4 2021",
  								"en": "Q4 2021"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "pct"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": "none ",
+ 										"template_rows": "0.9fr 1fr"
+ 									},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.2rem 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"justify_self": "end"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 2.7rem 0 0.2rem"
+ 									},
+ 									"grid_item_style": {
+ 										"justify_self": "start"
+ 									},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "pprwbipq4",
+ 							"type": "number",
+ 							"max_chars": 4,
+ 							"step": 0.01,
+ 							"min": -20,
+ 							"max": 20,
+ 							"label": {
+ 								"de": "Q1 2022",
+ 								"en": "Q1 2022"
  							},
  							"suffix": {
  								"de": "%",

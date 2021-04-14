@@ -10,7 +10,7 @@ import (
 
 func addSeasonal2(q *qst.QuestionnaireT) error {
 
-	if monthOfQuarter() != 2 && false {
+	if q.Survey.MonthOfQuarter() != 2 && false {
 		return nil
 	}
 
@@ -54,8 +54,8 @@ func addSeasonal2(q *qst.QuestionnaireT) error {
 			inp.MaxChars = 3
 			// inp.Validator = "inRange20"
 			inp.Label = trl.S{
-				"de": nextY(0),
-				"en": nextY(0),
+				"de": q.Survey.YearStr(0),
+				"en": q.Survey.YearStr(0),
 			}
 			inp.Suffix = trl.S{
 				"de": "%",
@@ -73,8 +73,8 @@ func addSeasonal2(q *qst.QuestionnaireT) error {
 			inp.MaxChars = 3
 			// inp.Validator = "inRange20"
 			inp.Label = trl.S{
-				"de": nextY(1),
-				"en": nextY(1),
+				"de": q.Survey.YearStr(1),
+				"en": q.Survey.YearStr(1),
 			}
 			inp.Suffix = trl.S{
 				"de": "%",
@@ -91,8 +91,8 @@ func addSeasonal2(q *qst.QuestionnaireT) error {
 			inp.MaxChars = 3
 			// inp.Validator = "inRange20"
 			inp.Label = trl.S{
-				"de": nextY(2),
-				"en": nextY(2),
+				"de": q.Survey.YearStr(2),
+				"en": q.Survey.YearStr(2),
 			}
 			inp.Suffix = trl.S{
 				"de": "%",

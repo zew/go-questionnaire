@@ -1,72 +1,8 @@
 package fmt
 
 import (
-	"fmt"
-	"time"
-
 	"github.com/zew/go-questionnaire/trl"
 )
-
-func obsolete_nextWaveID() string {
-	t := time.Now()
-	if t.Day() > 20 {
-		t = t.AddDate(0, 1, 0)
-	}
-	return t.Format("2006-01")
-}
-
-/*
- * start of survey  29. March  => Q2
- * end   of survey  12. April  => Q2
-**/
-const delta = -time.Duration(15 * 24 * time.Hour)
-
-// Yields current quarter plus one
-func nextQ(opt ...int) string {
-	t := time.Now()
-	t = t.Add(delta)
-
-	m := t.Month() // 1 - january
-	y := t.Year()
-	qNow := int((m-1)/3) + 1 // jan: int(0/3)+1 == 1   feb: int(1/3)+1 == 1    mar: int(2/3)+1 == 1     apr: int(3/3)+1 == 2
-
-	offset := 1
-	if len(opt) > 0 {
-		offset = opt[0]
-	}
-	qNext := qNow + offset
-	if qNext > 4 {
-		qNext = 1
-		y++
-	}
-	if qNext < 1 {
-		qNext = 4
-		y--
-	}
-	return fmt.Sprintf("Q%v %v", qNext, y)
-}
-
-func nextY(opt ...int) string {
-	t := time.Now()
-	t = t.Add(delta)
-
-	y := t.Year()
-
-	offset := 1
-	if len(opt) > 0 {
-		offset = opt[0]
-	}
-
-	y = y + offset
-	return fmt.Sprintf("%v", y)
-}
-
-func monthOfQuarter() int {
-	t := time.Now().Add(-10 * 24 * time.Hour)
-	m := int(t.Month())   // 1 - january
-	monthOfQuart := m % 3 // 1 => 1; 2 => 2; 3 => 3; 4 => 1; 5 => 1
-	return monthOfQuart
-}
 
 func labelsGoodBad() []trl.S {
 

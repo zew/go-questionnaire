@@ -36,7 +36,7 @@ func yearValid(s string) bool {
 	return true
 }
 
-type ValidatorHeadliner interface {
+type validatorHeadliner interface {
 	Validate() (map[string]string, bool)
 	Headline() string
 }

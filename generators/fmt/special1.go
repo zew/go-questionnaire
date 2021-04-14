@@ -15,7 +15,7 @@ import (
 // 	3 of quarter: Free special questoins:                    March, June, September, December
 func addSeasonal1(q *qst.QuestionnaireT) error {
 
-	if monthOfQuarter() != 1 && false {
+	if q.Survey.MonthOfQuarter() != 1 && false {
 		return nil
 	}
 
@@ -73,7 +73,7 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 			Quarterly results are published by Destatis six weeks after quarter ends. I.e. 15.May for Q1.
 			We dont want estimates, if final results are already published.
 
-			We are in first monthOfQuarter() == 1, i.e. April.
+			We are in first MonthOfQuarter() == 1, i.e. April.
 
 			Thus: Previous quarter, current, next ...
 
@@ -111,8 +111,8 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 				inp.Step = 0.01
 				inp.MaxChars = 4
 				inp.Label = trl.S{
-					"de": nextQ(i),
-					"en": nextQ(i),
+					"de": q.Survey.Quarter(i),
+					"en": q.Survey.Quarter(i),
 				}
 				inp.Suffix = trl.S{
 					"de": "%",
@@ -157,8 +157,8 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 			inp.Step = 0.01
 			inp.MaxChars = 5
 			inp.Label = trl.S{
-				"de": nextY(i),
-				"en": nextY(i),
+				"de": q.Survey.YearStr(i),
+				"en": q.Survey.YearStr(i),
 			}
 			inp.Suffix = trl.S{
 				"de": "%",

@@ -7,7 +7,7 @@ import (
 	"github.com/zew/go-questionnaire/trl"
 )
 
-func nextWaveID() string {
+func obsolete_nextWaveID() string {
 	t := time.Now()
 	if t.Day() > 20 {
 		t = t.AddDate(0, 1, 0)

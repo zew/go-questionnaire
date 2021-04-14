@@ -67,6 +67,87 @@ func NewSurvey(tp string) surveyT {
 	return s
 }
 
+/*
+ * start of survey  29. March  => Q2
+ * end   of survey  12. April  => Q2
+**/
+const delta = -time.Duration(15 * 24 * time.Hour)
+
+// Quarter yields quarter plus year;
+// based on the survey month;
+// offset adds/subtracts to/from quarter;
+// overflowing over 4; underflowing under 1
+/*
+   January  of    0 -                       => Q1 0
+   January  of 2021 -                       => Q1 2021
+   January  of 2021 -    plus 1 Quarter     => Q2 2021
+   January  of 2021 -    plus 3 Quarters    => Q4 2021
+   January  of 2021 -    plus 4 Quarters    => Q1 2022
+   January  of 2021 -    plus 5 Quarters    => Q2 2022
+   March    of    0 -                       => Q1 0
+   March    of 2021 -                       => Q1 2021
+   March    of 2021 -    plus 1 Quarter     => Q2 2021
+   March    of 2021 -    plus 3 Quarters    => Q4 2021
+   March    of 2021 -    plus 4 Quarters    => Q1 2022
+   April    of 2021 -                       => Q2 2021
+   April    of 2021 -    plus 1 Quarter     => Q3 2021
+   April    of 2021 -    plus 3 Quarters    => Q1 2022
+   April    of 2021 -    plus 4 Quarters    => Q2 2022
+   October  of 2021 -                       => Q4 2021
+   October  of 2021 -    plus 1 Quarter     => Q1 2022
+   October  of 2021 -    plus 4 Quarters    => Q4 2022
+   October  of 2021 -    plus 1 Quarter     => Q2 2024
+   December of 2021 -                       => Q4 2021
+   December of 2021 -    plus 1 Quarter     => Q1 2022
+   December of 2021 -    plus 4 Quarters    => Q4 2022
+   December of 2021 -    plus 1 Quarter     => Q2 2024
+   January  of 2021 -    minus 1 Quarter    => Q4 2020
+   March    of 2021 -    minus 1 Quarter    => Q4 2020
+   April    of 2021 -    minus 1 Quarter    => Q1 2021
+   January  of 2021 -    minus 4 Quarters   => Q1 2020
+   January  of 2021 -    minus 5 Quarters   => Q4 2019
+
+*/
+func (s surveyT) Quarter(offs ...int) string {
+	y := s.Year
+	m := int(s.Month) // 1 - january
+	offset := 0
+	if len(offs) > 0 {
+		offset = offs[0]
+	}
+	qNow := int((m-1)/3) + 1 // jan: int(0/3)+1 == 1   feb: int(1/3)+1 == 1    mar: int(2/3)+1 == 1     apr: int(3/3)+1 == 2
+	qRet := qNow + offset
+	for qRet > 4 {
+		qRet -= 4
+		y++
+	}
+	for qRet < 1 {
+		qRet += 4
+		y--
+	}
+	return fmt.Sprintf("Q%v %v", qRet, y)
+}
+
+// YearStr yields the year as string;
+// based on the survey year;
+// offset adds years
+func (s surveyT) YearStr(offs ...int) string {
+	y := s.Year
+	offset := 0
+	if len(offs) > 0 {
+		offset = offs[0]
+	}
+	y = y + offset
+	return fmt.Sprintf("%v", y)
+}
+
+func monthOfQuarter() int {
+	t := time.Now().Add(-10 * 24 * time.Hour)
+	m := int(t.Month())   // 1 - january
+	monthOfQuart := m % 3 // 1 => 1; 2 => 2; 3 => 3; 4 => 1; 5 => 1
+	return monthOfQuart
+}
+
 // String is the default identifier
 func (s surveyT) String() string {
 	return s.Type + "-" + s.WaveID()
@@ -80,7 +161,7 @@ func (s surveyT) WaveID() string {
 	return t.Format("2006-01")
 }
 
-// WaveIDPretty is a pretty identifier
+// WaveIDPretty is empty, if we dont have proper year, otherwise like WaveID()
 func (s surveyT) WaveIDPretty() string {
 	if s.Year == 0 {
 		return ""

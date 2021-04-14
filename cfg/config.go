@@ -6,6 +6,7 @@
 package cfg
 
 import (
+	"bytes"
 	"encoding/json"
 	"io"
 	"log"
@@ -60,10 +61,13 @@ type ConfigT struct {
 
 	MaxPostSize int64 `json:"max_post_size,omitempty"` // request body size limit, against DOS attacks, limits file uploads
 
-	LocationName   string         `json:"location,omitempty"` // i.e. "Europe/Berlin", see Go\lib\time\zoneinfo.zip
-	Loc            *time.Location `json:"-"`                  // Initialized during load; seconds east of UTC
-	SessionTimeout int            `json:"session_timeout"`    // hours until the session is lost
-	FormTimeout    int            `json:"form_timeout"`       // hours until a form post is rejected
+	// LocationName i.e. "Europe/Berlin", see Go\lib\time\zoneinfo.zip;
+	// LocationName only serves for initializing Loc at application start
+	// after that, application should use Loc
+	LocationName   string         `json:"location,omitempty"`
+	Loc            *time.Location `json:"-"`               // Initialized during load; seconds east of UTC
+	SessionTimeout int            `json:"session_timeout"` // hours until the session is lost
+	FormTimeout    int            `json:"form_timeout"`    // hours until a form post is rejected
 
 	AppInstanceID int64    `json:"app_instance_id,omitempty"` // append to URLs of cached static jpg, js and css files - change to trigger reload
 	LangCodes     []string `json:"lang_codes"`                // available language codes for the application, first element is default
@@ -142,7 +146,7 @@ func Load(r io.Reader) {
 
 	tempCfg.Loc, err = time.LoadLocation(tempCfg.LocationName)
 	if err != nil {
-		log.Printf("Your location name must be valid, i.e. 'Europe/Berlin', compare Go\\lib\\time\\zoneinfo.zip: %v", err)
+		log.Printf("Your location name must be valid, i.e. 'Europe/Berlin', \ncompare Go\\lib\\time\\zoneinfo.zip: %v", err)
 		// Under windows, we get errors; see golang.org/pkg/time/#LoadLocation
 		// $GOROOT/lib/time/zoneinfo.zip
 		//
@@ -171,10 +175,26 @@ func Load(r io.Reader) {
 	}
 	{
 		dmp := util.IndentedDump(tempCfg.MpSite)
-		log.Printf("\n%s\n...config loaded", dmp)
+		log.Printf("\ntranslations_site: %s\n...config loaded", dmp)
 	}
 
 	log.Printf("\n%s\n...config loaded", dmp)
+}
+
+// LoadFakeConfigForTests makes bootstrap overhead superfluous
+// by creating a
+func LoadFakeConfigForTests() {
+	adHocConfig := &ConfigT{
+		AppName:     "Fake Config for Tests - App Name",
+		AppMnemonic: "fake-config-for-tests-app-mnemonic",
+		LangCodes:   []string{"en"},
+		Loc:         time.FixedZone("UTC_-2", -2*60*60),
+	}
+	bts, err := json.Marshal(adHocConfig)
+	if err != nil {
+		log.Panicf("Could not create fake config for tests: %v", err)
+	}
+	Load(bytes.NewReader(bts))
 }
 
 // Pref prefixes a URL path with an application dir prefix.

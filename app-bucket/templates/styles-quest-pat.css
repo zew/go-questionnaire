@@ -165,14 +165,6 @@ ol.progress {
 }
 
 
-.q1-pretext-img {
-    display: inline-block;
-    height: 1.0rem;
-    position: relative;
-    top: 0.2rem;
-    left: 0.01rem;
-}
-
 
 /*
 ==============================
@@ -267,13 +259,32 @@ ol.progress {
     margin:  0;
 }
 
-#t01 img {
-    height: 1.6rem;
-    width:  0.8rem;
+
+
+#t01 img,
+.q1-pretext-img,
+dummy
+ {
     display: inline-block;
+    margin: 0 0.06rem;
+
+    position: relative;
+
+    height: 1.15rem;
+    width:  0.8rem;
+
+
     vertical-align: bottom;
+    top: -0.06rem;
+    
 }
 
+.q1-pretext-img {
+    top:     -0.2rem;
+    margin: 0 0.16rem;
+    vertical-align: bottom;
+    zoom: 0.85;
+}
 
 .special-vertical-align-top {
     line-height: 90%;

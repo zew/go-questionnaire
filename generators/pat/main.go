@@ -103,18 +103,14 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 	}
 
+	// erster Teil
+
 	// page 1
 	{
 		page := q.AddPage()
 		page.Label = trl.S{"de": ""}
 		page.Short = trl.S{"de": "Stiftungen 1"}
 		page.Style = css.DesktopWidthMaxForPages(page.Style, "36rem") // 60
-
-		page.ValidationFuncName = "patPage1"
-		page.ValidationFuncMsg = trl.S{
-			"de": "no message",
-			// "en": "Does not add up. Really continue?",
-		}
 
 		// gr0
 		{
@@ -158,148 +154,162 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				<div class='vspacer-08'> &nbsp; </div>
 
 				<p>
-				Für jede Ihrer ersten sechs Entscheidungen zeigen wir Ihnen die Präferenzen fünf deutscher Staatsangehöriger darüber, 
-				welche der drei Stiftungen die Spende erhalten soll. 
-				Sie entscheiden, wie die Präferenzen der fünf Personen in <i>eine</i> gemeinsame Entscheidung zusammengefasst werden.
+					Fünf deutsche Staatsangehörige haben an einer Vorstudie teilgenommen. Jede Person gab an, welche Stiftung sie als am besten, mittel, beziehungsweise am schlechtesten erachtet.
 				</p>
-
 				<p>
-				Die Präferenzen stammen von fünf Personen, die an einer Vorstudie teilgenommen haben<sup>1)</sup>. 
-				Diese fünf Personen wurden aus einer Stichprobe gezogen, in der sich gleich viele Personen politisch links, 
-				in der Mitte oder als konservativ einordnen. 
-				Jede Person wurde einzeln befragt, welche der drei Stiftungen sie als am besten, mittel, und am schlechtesten erachtet. 
+					Wir sind nun daran interessiert, wie Sie die fünf individuellen Präferenzen in eine Gruppenentscheidung zusammenfassen, an welche Stiftung die 30&nbsp;€ gehen sollen. Bevorzugen Sie beispielsweise eher eine Kompromisslösung oder eher eine Mehrheitslösung? Ihre eigene Meinung über die Stiftungen soll dabei keine Rolle spielen. Deshalb werden wir die Stiftungen als Stiftung A, B und C anonymisieren.
 				</p>
-				
 				<p>
-				Den Personen wurde mitgeteilt, dass ihre Präferenzen 
-				zusammen mit den Präferenzen von vier anderen Personen 
-				an einen zukünftigen Teilnehmer der Studie gegeben werden, 
-				der die Präferenzen in <i>eine</i> Entscheidung zusammenfasst. 
-				<b>Dieser zukünftige Teilnehmer sind Sie.</b>
+					Sie werden sechs solcher Entscheidungen treffen. Eine davon betrifft die echten Präferenzen der Gruppenmitglieder aus der Vorstudie. Da Sie nicht wissen, welche Entscheidung dies ist, bitten wir Sie, in allen Fällen anzunehmen, dass Ihre Entscheidung tatsächlich umgesetzt wird.
 				</p>
 				
 				`}
 			}
 		}
+	}
 
-		// gr1
+	// page 2
+	{
+		page := q.AddPage()
+		page.Label = trl.S{"de": ""}
+		page.Short = trl.S{"de": "Stiftungen 2"}
+		page.Style = css.DesktopWidthMaxForPages(page.Style, "36rem") // 60
+
+		page.ValidationFuncName = "patPage2"
+		page.ValidationFuncMsg = trl.S{
+			"de": "Wollen Sie wirklich weitergehen oder wollen Sie Ihre bisherigen Antworten vervollständigen?",
+			// "en": "Does not add up. Really continue?",
+		}
+
+		// gr-1
 		{
 			gr := page.AddGroup()
 			gr.Cols = 1
 			gr.BottomVSpacers = 1
 			gr.RandomizationGroup = 1 - 1
-			// q1-pretext
-			{
-				inp := gr.AddInput()
-				inp.Type = "dyn-composite"
-				inp.ColSpanControl = 1
-				inp.DynamicFunc = "PoliticalFoundationsPretext__0__0"
-			}
-		}
-
-		// gr2
-		{
-			gr := page.AddGroup()
-			gr.Cols = 1
-			gr.BottomVSpacers = 1
-			gr.RandomizationGroup = 1 - 1
-
-			// q1a
-			{
-				inp := gr.AddInput()
-				inp.Type = "dyn-composite"
-				inp.ColSpanControl = 1
-				inp.DynamicFunc = "PoliticalFoundations__0__0"
-			}
-			_, inputNames, _ := qst.PoliticalFoundations(nil, 0, 0)
-			for _, inpName := range inputNames {
-				inp := gr.AddInput()
-				inp.Type = "dyn-composite-scalar"
-				inp.Name = inpName + "_page0"
-			}
-
-		}
-
-		// gr3
-		{
-			gr := page.AddGroup()
-			gr.Cols = 1
-			gr.BottomVSpacers = 2
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				inp.Desc = trl.S{"de": `
-				<p>
-				Die Stiftungen wurden anonymisiert und in eine zufällige Reihenfolge gebracht, so dass Sie nicht wissen, 
-				um welche Stiftung es sich bei den Stiftungen A, B und C handelt. 
-				Sie entscheiden also nicht darüber, welche Stiftung die 30&nbsp;€ erhält. 
-				Stattdessen entscheiden Sie, wie die Präferenzen der Gruppenmitglieder in <i>eine</i> Entscheidung zusammengefasst werden 
-				und ob Sie beispielsweise eher eine Kompromisslösung oder eher eine Mehrheitslösung für Ihre Gruppe bevorzugen.
-				</p>
-				`}
-			}
-		}
-
-		// gr4
-		{
-			gr := page.AddGroup()
-			gr.Cols = 1
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
+				inp.ColSpan = 1
 				inp.Desc = trl.S{
-					"de": `
-				<span style="display: inline-block; font-size:87%; line-height: 120%;">
-
-				<sup>1)</sup>
-				Nur in einer der sechs Entscheidungen stammen die Präferenzen von den Personen, die wir befragt haben, und nur diese Entscheidung kann umgesetzt werden. In den anderen Entscheidungen wurden die Präferenzen von uns zusammengestellt. Da Sie nicht wissen, in welcher Entscheidung die Präferenzen von den Befragten stammen, sollten Sie in allen sechs Entscheidungen so entscheiden, als seien die jeweiligen Präferenzen von der echten Gruppe.
-				</span>
-				`,
+					"de": `Um zu entscheiden, an welche Stiftung das Geld gehen soll, 
+					<b>setzen Sie bitte bei der entsprechenden Stiftung <i>ein</i> Kreuz 
+					in der Spalte „Auswahl“.</b>
+					 Falls Sie eine zweite oder dritte Alternative als genauso gut empfinden, setzen Sie ein Kreuz in der Spalte „Gleich gut“.`,
 				}
 			}
 		}
 
-	}
+		/*
 
-	// page 2
-	page := q.AddPage()
-	page.Label = trl.S{"de": ""}
-	page.Short = trl.S{"de": "Stiftungen 2"}
-	page.Style = css.DesktopWidthMaxForPages(page.Style, "36rem") // 60
+			// gr1
+			{
+				gr := page.AddGroup()
+				gr.Cols = 1
+				gr.BottomVSpacers = 1
+				gr.RandomizationGroup = 1 - 1
+				// q1-pretext
+				{
+					inp := gr.AddInput()
+					inp.Type = "dyn-composite"
+					inp.ColSpanControl = 1
+					inp.DynamicFunc = "PoliticalFoundationsPretext__0__0"
+				}
+			}
 
-	page.ValidationFuncName = "patPage2"
-	page.ValidationFuncMsg = trl.S{
-		"de": "Wollen Sie wirklich weitergehen oder wollen Sie Ihre bisherigen Antworten vervollständigen?",
-		// "en": "Does not add up. Really continue?",
-	}
+			// gr2
+			{
+				gr := page.AddGroup()
+				gr.Cols = 1
+				gr.BottomVSpacers = 1
+				gr.RandomizationGroup = 1 - 1
 
-	// gr0
-	{
-		gr := page.AddGroup()
-		gr.Cols = 2
-		gr.BottomVSpacers = 2
-		{
-			inp := gr.AddInput()
-			inp.ColSpan = 2
-			inp.ColSpanLabel = 2
-			inp.Type = "textblock"
-			inp.Desc = trl.S{"de": `
-			<p>
-			Entscheiden Sie im Folgenden, an welche Stiftung das Geld gehen soll. 
-			<b>Setzen Sie dazu bei der entsprechenden Stiftung ein Kreuz in der Spalte „Auswahl“.</b>
-			Falls Sie eine zweite oder dritte Alternative als genauso gut empfinden, 
-			setzen Sie ein Kreuz in der Spalte „Gleich gut“. 
-			Berücksichtigen Sie dabei bitte die dargestellten Präferenzen der Gruppenmitglieder.
-			</p>
-			`}
-		}
+				// q1a
+				{
+					inp := gr.AddInput()
+					inp.Type = "dyn-composite"
+					inp.ColSpanControl = 1
+					inp.DynamicFunc = "PoliticalFoundations__0__0"
+				}
+				_, inputNames, _ := qst.PoliticalFoundations(nil, 0, 0)
+				for _, inpName := range inputNames {
+					inp := gr.AddInput()
+					inp.Type = "dyn-composite-scalar"
+					inp.Name = inpName + "_page0"
+				}
 
+			}
+
+			// gr3
+			{
+				gr := page.AddGroup()
+				gr.Cols = 1
+				gr.BottomVSpacers = 2
+				{
+					inp := gr.AddInput()
+					inp.Type = "textblock"
+					inp.Desc = trl.S{"de": `
+					<p>
+					Die Stiftungen wurden anonymisiert und in eine zufällige Reihenfolge gebracht, so dass Sie nicht wissen,
+					um welche Stiftung es sich bei den Stiftungen A, B und C handelt.
+					Sie entscheiden also nicht darüber, welche Stiftung die 30&nbsp;€ erhält.
+					Stattdessen entscheiden Sie, wie die Präferenzen der Gruppenmitglieder in <i>eine</i> Entscheidung zusammengefasst werden
+					und ob Sie beispielsweise eher eine Kompromisslösung oder eher eine Mehrheitslösung für Ihre Gruppe bevorzugen.
+					</p>
+					`}
+				}
+			}
+
+			// gr4
+			{
+				gr := page.AddGroup()
+				gr.Cols = 1
+				{
+					inp := gr.AddInput()
+					inp.Type = "textblock"
+					inp.Desc = trl.S{
+						"de": `
+					<span style="display: inline-block; font-size:87%; line-height: 120%;">
+
+					<sup>1)</sup>
+					Nur in einer der sechs Entscheidungen stammen die Präferenzen von den Personen, die wir befragt haben, und nur diese Entscheidung kann umgesetzt werden. In den anderen Entscheidungen wurden die Präferenzen von uns zusammengestellt. Da Sie nicht wissen, in welcher Entscheidung die Präferenzen von den Befragten stammen, sollten Sie in allen sechs Entscheidungen so entscheiden, als seien die jeweiligen Präferenzen von der echten Gruppe.
+					</span>
+					`,
+					}
+				}
+			}
+		*/
+
+		// gr0
+		/* 			gr := page.AddGroup()
+		   			gr.Cols = 2
+		   			gr.BottomVSpacers = 2
+		   			{
+		   				inp := gr.AddInput()
+		   				inp.ColSpan = 2
+		   				inp.ColSpanLabel = 2
+		   				inp.Type = "textblock"
+		   				inp.Desc = trl.S{"de": `
+		   			<p>
+		   			Entscheiden Sie im Folgenden, an welche Stiftung das Geld gehen soll.
+		   			<b>Setzen Sie dazu bei der entsprechenden Stiftung ein Kreuz in der Spalte „Auswahl“.</b>
+		   			Falls Sie eine zweite oder dritte Alternative als genauso gut empfinden,
+		   			setzen Sie ein Kreuz in der Spalte „Gleich gut“.
+		   			Berücksichtigen Sie dabei bitte die dargestellten Präferenzen der Gruppenmitglieder.
+		   			</p>
+		   			`}
+		   			}
+		*/
 		// loop over matrix questions
 		for i := 0; i < 3; i++ {
 			{
 				gr := page.AddGroup()
 				gr.Cols = 1
-				gr.BottomVSpacers = 3
+				if i == 0 {
+					gr.BottomVSpacers = 1 // because explanation
+				} else {
+					gr.BottomVSpacers = 3
+				}
 				gr.RandomizationGroup = 1 - 1
 
 				// q1b
@@ -315,6 +325,19 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 					inp.Type = "dyn-composite-scalar"
 					inp.Name = inpName
 				}
+
+				if i == 0 {
+					// explanation after first question
+					gr := page.AddGroup()
+					gr.Cols = 1
+					gr.BottomVSpacers = 3
+					gr.RandomizationGroup = 1 - 1
+					inp := gr.AddInput()
+					inp.Type = "dyn-composite"
+					inp.ColSpanControl = 1
+					inp.DynamicFunc = "PoliticalFoundationsPretext__0__0"
+				}
+
 			}
 		}
 
@@ -364,7 +387,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	{
 		page := q.AddPage()
 		page.Label = trl.S{"de": ""}
-		page.Short = trl.S{"de": "Auswertung"}
+		page.Short = trl.S{"de": "Auswertung 1"}
 		page.Style = css.DesktopWidthMaxForPages(page.Style, "36rem") // 60
 
 		// gr0
@@ -386,7 +409,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 					die diese Person als am besten/mittel/am schlechtesten erachtet?
 					<i>(Wenn Sie meinen, die Person würde dafür bezahlen, 
 						dass die Stiftung die 30&nbsp;€ <i>nicht</i> erhält, 
-						schreiben Sie bitte ein Minuszeichen vor den jeweiligen Betrag.)</i>
+						schreiben Sie bitte ein Minuszeichen vor den entsprechenden Betrag.)</i>
 					</p>
 
 					<p>
@@ -452,7 +475,24 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			}
 		}
 
-		// gr2
+	}
+
+	// zweiter Teil
+
+	// page 5
+	{
+		page := q.AddPage()
+		page.Label = trl.S{"de": ""}
+		page.Short = trl.S{"de": "Auswertung 2"}
+		page.Style = css.DesktopWidthMaxForPages(page.Style, "36rem") // 60
+
+		page.ValidationFuncName = "patPage5"
+		page.ValidationFuncMsg = trl.S{
+			"de": "Wollen Sie wirklich weitergehen oder wollen Sie Ihre bisherigen Antworten vervollständigen?",
+			// "en": "Does not add up. Really continue?",
+		}
+
+		// gr1
 		{
 			gr := page.AddGroup()
 			gr.Cols = 1
@@ -464,54 +504,25 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Desc = trl.S{
 					"de": `
 					<p>
-					<b>Im Folgenden legen Sie fest, welche Optionen ein zukünftiger Studienteilnehmer wählen kann:</b>
+						Nun kommen wir zum zweiten Teil unserer Studie. In diesem Teil treffen Sie eine Entscheidung für einen deutschen Staatsangehörigen, der Ihnen zugeordnet ist und der an einer zukünftigen Studie teilnimmt. Diese Person wird sich entscheiden, wie ihm das Entgelt für die Studienteilnahme ausbezahlt wird. Je eher er bereit ist, auf sein Geld zu warten, desto mehr werden wir ihm insgesamt bezahlen.
+						
 					</p>
-
-					<div class="vspacer-16"> &nbsp; </div>
-
 					<p>
-					<b>Entscheidung 7.</b><br>
-
-					Sie sind einem deutschen Staatsangehörigen zugeordnet, 
-					der an einer zukünftigen Studie teilnehmen wird 
-					und verschiedene Optionen für Geldauszahlungen an unterschiedlichen Zeitpunkten hat.
-					
-					<b>Er erhält in dieser Studie genau eine der unten beschriebenen Optionen, 
-					die ihm tatsächlich an den genannten Zeitpunkten ausgezahlt wird.</b>
+						Wir bitten Sie, zu entscheiden, wie geduldig oder wie ungeduldig die Person wählen kann: Für jede von drei Optionen bestimmen Sie, ob sie der Person zur Verfügung stehen soll oder nicht. Falls Sie mehrere Optionen verfügbar machen, kann die Person aus diesen wählen. Mindestens eine Option muss „Verfügbar“ sein. 
 					</p>
 
-					<p>
-					Den Personen wurde mitgeteilt, dass ihre Präferenzen 
-					zusammen mit den Präferenzen von vier anderen Personen 
-					an einen zukünftigen Teilnehmer der Studie gegeben werden, 
-					der die Präferenzen in <i>eine</i> Entscheidung zusammenfasst. 
-					<b>Dieser zukünftige Teilnehmer sind Sie.</b>
+					<p style="font-size: 87%;">
+
+						Details: Die nicht verfügbaren Optionen werden der Person nicht als Auswahloptionen angezeigt. Bei verfügbar gemachten Optionen können Sie zusätzlich „Von dieser Option abraten“ ankreuzen. In diesem Fall erhält die Person die Botschaft: „Ein früherer Teilnehmer dieser Studie rät Ihnen davon ab, diese Option zu wählen”.
+
 					</p>
+					<br>
 
 
 					<p>
-					Sie können nun entscheiden, welche der drei Optionen der Person (nicht) 
-					<b>als Auswahloptionen</b>
-					zur Verfügung stehen sollen, 
-					indem Sie in jeder Zeile ein Kreuz entweder bei „Verfügbar” oder 
-					bei „Nicht verfügbar” setzen. 
-					<b>Es muss am Ende mindestens eine Option „Verfügbar“ sein.</b> 
-					
-					Die nicht verfügbaren Optionen werden der Person nicht als Auswahloptionen angezeigt. 
-					Falls mehr als eine Option verfügbar ist, kann die Person aus diesen Optionen wählen.
-					</p>
+						<b>Entscheidung 7. </b><br>
+						Welche Optionen sollen der Person (nicht) zur Verfügung stehen, falls die Optionen wie folgt lauten?
 
-					<p>
-					Bei verfügbar gemachten Optionen können Sie zusätzlich 
-					„Von dieser Option abraten“ ankreuzen. 
-					In diesem Fall erhält die Person die Botschaft: 
-					„Ein früherer Teilnehmer dieser Studie rät Ihnen davon ab, 
-					diese Option zu wählen”.
-					</p>
-
-					<p>
-					Welche Optionen sollen der Person (nicht) zur Verfügung stehen, 
-					falls die Optionen wie folgt lauten?
 					</p>
 
 
@@ -520,7 +531,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			}
 		}
 
-		// gr3
+		// gr2
 		{
 			gr := page.AddGroup()
 			gr.Cols = 12
@@ -541,7 +552,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			}
 		}
 
-		// gr4
+		// gr3
 		{
 
 			gr := page.AddGroup()
@@ -565,7 +576,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			}
 		}
 
-		// gr5
+		// gr4
 		{
 			gr := page.AddGroup()
 			gr.Cols = 12
@@ -588,7 +599,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 	}
 
-	// page 5
+	// page 6
 	{
 		page := q.AddPage()
 		page.Label = trl.S{"de": ""}
@@ -718,8 +729,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 					<b>Frage 3. </b>
 					Und wie lautet Ihre Schätzung für die folgenden drei Optionen?
 					<br>
-					<i>(Ihre Antworten müssen sich auf 10 summieren. 
-						Die Zeitpunkte und Beträge sind anders als in Frage 2.)
+					<i>(Ihre Antworten müssen sich auf 10 summieren.)
 					</i>
 					<br>
 					<i>
@@ -812,16 +822,16 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 	}
 
-	// page 6
+	grStPage78 := css.NewStylesResponsive(nil)
+	grStPage78.Desktop.StyleGridContainer.GapRow = "0.1rem"
+	grStPage78.Desktop.StyleGridContainer.GapColumn = "0.01rem"
+
+	// page 7
 	{
 		page := q.AddPage()
 		page.Label = trl.S{"de": ""}
-		page.Short = trl.S{"de": "Eigene Einstellung"}
+		page.Short = trl.S{"de": "Eigene Einstellung 1"}
 		page.Style = css.DesktopWidthMaxForPages(page.Style, "30rem")
-
-		grSt := css.NewStylesResponsive(nil)
-		grSt.Desktop.StyleGridContainer.GapRow = "0.1rem"
-		grSt.Desktop.StyleGridContainer.GapColumn = "0.01rem"
 
 		// gr1
 		{
@@ -847,11 +857,20 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			}
 			gr := page.AddGrid(gb)
 			gr.OddRowsColoring = true
-			gr.Style = grSt
+			gr.Style = grStPage78
 			gr.BottomVSpacers = 4
 		}
 
-		// gr2
+	}
+
+	// page 8
+	{
+		page := q.AddPage()
+		page.Label = trl.S{"de": ""}
+		page.Short = trl.S{"de": "Eigene Einstellung 2"}
+		page.Style = css.DesktopWidthMaxForPages(page.Style, "30rem")
+
+		// gr1
 		{
 			gb := qst.NewGridBuilderRadios(
 				columnTemplate7,
@@ -879,10 +898,10 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			}
 			gr := page.AddGrid(gb)
 			gr.OddRowsColoring = true
-			gr.Style = grSt
+			gr.Style = grStPage78
 		}
 
-		// gr3
+		// gr2
 		{
 			gb := qst.NewGridBuilderRadios(
 				columnTemplate7,
@@ -904,10 +923,10 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			}
 			gr := page.AddGrid(gb)
 			gr.OddRowsColoring = true
-			gr.Style = grSt
+			gr.Style = grStPage78
 		}
 
-		// gr4
+		// gr3
 		{
 			gb := qst.NewGridBuilderRadios(
 				columnTemplate7,
@@ -927,7 +946,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			}
 			gr := page.AddGrid(gb)
 			gr.OddRowsColoring = true
-			gr.Style = grSt
+			gr.Style = grStPage78
 			gr.BottomVSpacers = 4
 		}
 

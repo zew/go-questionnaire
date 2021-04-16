@@ -142,7 +142,7 @@ func politicalFoundations(q *QuestionnaireT, seq0to5 int, questionID string, ppl
 </p>
 
 <p>
-	Welche Stiftung soll die 30 € bei folgender Präferenzkonstellation erhalten?<br>
+	Welche Stiftung soll die 30&nbsp;€ bei folgender Präferenzkonstellation erhalten?<br>
 
 	<span style="font-size: 88%%;">
 		(Bitte ein Kreuz in der Spalte „Auswahl“, 

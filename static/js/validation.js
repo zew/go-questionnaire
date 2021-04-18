@@ -10,29 +10,25 @@ function Validator(argForm) {
 
     let form = argForm;
 
-    let suppressBuiltinBubbles = 3;  // internet suggests three modes to accomplish suppression of builtin bubbles
+    // internet suggests three modes to accomplish suppression of builtin bubbles
+    // see if() branches below
+    let suppressBuiltinBubbles = 3;  
     
+    let onFocusRemove          = false; // unexported parameter
     let onInputRemove          = true;
     let onInputShowAndRemove   = false;
-    let reclaimFocus           = false;
+    let lockFocus              = false;
 
 
-    let removeBubbleOnEntry = false;
-    
-    /* default is showing bubbles for every faulty input
-        onlyOne changes this
-     */
+    // default is showing bubbles for every faulty input
+    // onlyOne changes this
     let onlyOne = true;
-    onlyOne = true;
-    onlyOne = false;
 
 
-    /* bubble messages are positioned relative to parent's parent
-        providing us with a reliable width that does not overflow;
-     */    
+    // bubble messages are positioned relative to parent's parent
+    // providing us with a reliable width that does not overflow;
+    // unexported parameter
     let attachOuterOuter = true;
-
-
 
 
     this.SetOnInputRemove = function(newVal) {
@@ -43,15 +39,17 @@ function Validator(argForm) {
         onInputShowAndRemove = newVal;
     }
 
+    this.SetLockFocus = function(newVal) {
+        lockFocus = newVal;
+    }
 
-    this.SetReclaimFocus = function(newVal) {
-        reclaimFocus = newVal;
+    this.SetOnlyOneBubble = function(newVal) {
+        onlyOne = newVal;
     }
 
     // "exporting" the func
     //  keeping the internal version, because internal callers have another 'this'
     this.ShowBubble = showBubble;
-
 
 
     function hasBubble(el) {
@@ -251,7 +249,7 @@ function Validator(argForm) {
                 lgMsg = "blur+input";
             }
             console.log(`  ${ lgMsg } inp.reportValidity() ${event.target.getAttribute('name')}`);
-            if (reclaimFocus) {
+            if (lockFocus) {
                 if (event.type == "blur") {
                     if (!event.target.checkValidity()) {
                         event.target.focus();
@@ -269,7 +267,7 @@ function Validator(argForm) {
                 inp.addEventListener("input", funcReport);
             }
 
-            if (removeBubbleOnEntry) { // remove on entering input
+            if (onFocusRemove) { // remove on entering input
                 var removeOnEntering = function (event) {
                     clearBubble(event.target);
                 };

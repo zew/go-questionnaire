@@ -136,7 +136,7 @@
             step="1"
             data-validation_msg="Please enter a number between 2.000 and 25.000"
             value="14.5"
-            > %
+            >
         </div>
 
     </div>
@@ -154,7 +154,7 @@
                 max="25000"
                 step="1"
                 data-validation_msg="Please enter a number between 2.000 and 25.000"
-            > %
+            >
         </div>
     </div>
 
@@ -171,7 +171,7 @@
                 max="25000"
                 step="1"
                 data-validation_msg="Please enter a number between 2.000 and 25.000"
-            > %
+            >
         </div>
     </div>
 
@@ -206,33 +206,48 @@
 
 
     <div style="margin-left: 3rem; position: relative; top: -0.5rem;">
-
-        <p>
-             <input type="checkbox" id="onInputRemove">
-            ... or even on every input - remove
-
-        </p>
-        <p>
-             <input type="checkbox" id="onInputShowAndRemove">
-            ... or even on every input - show and remove
-
-        </p>
-        <p>
-             <input type="checkbox" id="reclaimFocus">
-            ... and lock focus
-
-        </p>
     </div>
+
+    <p>
+        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+        Custom popups even on every input
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <input type="radio"  name="onInput"  value="neither"        >
+        neither
+
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <input type="radio"  name="onInput"  value="onInputRemove"        >
+        on remove
+
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <input type="radio"  name="onInput"  value="onInputShowAndRemove" >
+        on show + remove
+
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+        <input type="checkbox" id="lockFocus">
+        lock
+    
+    </p>
+
+
+    <p>
+        <input type="checkbox" id="onlyOneBubble">
+        Only a single bubble at a time - focus induced
+    </p>
+
 
     <div style="margin-left: 0rem; position: relative; top: -0.5rem;">
 
         <p>
-            Compound validation on submit
+            Compound validation on submit and on blur <br>
         </p>
 
-        <p>
-            Todo: Compound validation on on blur
-        </p>
 
 
     </div>
@@ -399,20 +414,20 @@
     var vd = new Validator(myForm);
 
 
-    var configControls = [
-    
-        "onInputRemove",
-        "onInputShowAndRemove",
-        "reclaimFocus",
+    var configControls = [ 
+        "onInput",
+        // "onInputShowAndRemove",
+        "lockFocus",
         "validateFormWithCustomBubbles",
         "showBubbleOnBlurOrInput",
+        "onlyOneBubble",
     ];
 
 
 
     // change handlers for config checkboxes
     function  validateFormWithCustomBubblesExec() {
-        nameCheck = "validateFormWithCustomBubbles"
+        let nameCheck = "validateFormWithCustomBubbles"
         var checkbox = document.getElementById(nameCheck);
         if (checkbox.checked) {
             vd.validateFormWithCustomBubbles();
@@ -420,7 +435,7 @@
     }
 
     function  showBubbleOnBlurOrInputExec() {
-        nameCheck = "showBubbleOnBlurOrInput"
+        let nameCheck = "showBubbleOnBlurOrInput"
         var checkbox = document.getElementById(nameCheck);
         if (checkbox.checked) {
             vd.showBubbleOnBlurOrInput();
@@ -428,33 +443,49 @@
         }
     }
 
-        function onInputRemoveExec() {
-            nameCheck = "onInputRemove"
+        function onInputExec() {
+            let inpName = "onInput"
+            let options = document.getElementsByName(inpName);
+            for (let i = 0; i < options.length; i++) {
+                let radio = options[i];
+
+                if (radio.checked) {
+                    if (radio.value == "onInputRemove") {
+                        vd.SetOnInputRemove(true);
+                        vd.SetOnInputShowAndRemove(false);
+                    } else if (radio.value == "onInputShowAndRemove") {
+                        vd.SetOnInputRemove(false);
+                        vd.SetOnInputShowAndRemove(true);
+                    } else if (radio.value == "neither") {
+                        vd.SetOnInputRemove(false);
+                        vd.SetOnInputShowAndRemove(false);
+                    }
+                }
+
+
+            }
+
+        }
+        function lockFocusExec() {
+            let nameCheck = "lockFocus"
             var checkbox = document.getElementById(nameCheck);
             if (checkbox.checked) {
-                vd.SetOnInputRemove(true);
+                vd.SetLockFocus(true);
             } else {
-                vd.SetOnInputRemove(false);
+                vd.SetLockFocus(false);
             }
         }
-        function onInputShowAndRemoveExec() {
-            nameCheck = "onInputShowAndRemove"
-            var checkbox = document.getElementById(nameCheck);
-            if (checkbox.checked) {
-                vd.SetOnInputShowAndRemove(true);
-            } else {
-                vd.SetOnInputShowAndRemove(false);
-            }
+
+    function  onlyOneBubbleExec() {
+        let nameCheck = "onlyOneBubble"
+        var checkbox = document.getElementById(nameCheck);
+        if (checkbox.checked) {
+            vd.SetOnlyOneBubble(true);
+        } else {
+            vd.SetOnlyOneBubble(false);
         }
-        function reclaimFocusExec() {
-            nameCheck = "reclaimFocus"
-            var checkbox = document.getElementById(nameCheck);
-            if (checkbox.checked) {
-                vd.SetReclaimFocus(true);
-            } else {
-                vd.SetReclaimFocus(false);
-            }
-        }
+    }
+
 
 
 
@@ -463,15 +494,35 @@
         // load config
         if (initial !== undefined) {
             for (let i = 0; i < configControls.length; i++) {
-                var chkName = configControls[i];
-                var wasChecked = window.localStorage.getItem(chkName);
-                // console.log(`${chkName} was checked ${wasChecked} type ${typeof wasChecked}`);
-                if (wasChecked === "true") {
-                    document.getElementById(chkName).checked = wasChecked;
+                let inpName = configControls[i];
+                var storedVal = window.localStorage.getItem(inpName);
+
+                if(inpName == "onInput") {
+                    if (storedVal === null) {
+                        storedVal = "neither"
+                    }
+                    let options = document.getElementsByName(inpName);
+                    for (let i = 0; i < options.length; i++) {
+                        let radio = options[i];
+                        if(radio.value == storedVal){
+                            radio.checked = true;
+                        }
+                    }
+                    continue;
                 }
-                // default to true
-                if (wasChecked === null && chkName == "showBubbleOnBlurOrInput") {
-                    document.getElementById(chkName).checked = true;
+
+                // console.log(`${chkName} was checked ${wasChecked} type ${typeof wasChecked}`);
+                if (storedVal === "true") {
+                    document.getElementById(inpName).checked = storedVal;
+                }
+
+                // default
+                if (storedVal === null) {
+                    // to true
+                    if(inpName == "showBubbleOnBlurOrInput") {
+                        document.getElementById(inpName).checked = true;
+                    }
+
                 }
             }
         }
@@ -479,19 +530,31 @@
 
         resetAllListeners(myForm);
 
-          onInputRemoveExec();
-          onInputShowAndRemoveExec();
-          reclaimFocusExec();
+          onInputExec();
+          lockFocusExec();
         validateFormWithCustomBubblesExec();
         showBubbleOnBlurOrInputExec();
+        onlyOneBubbleExec();
 
 
 
         // save config
         for (let i = 0; i < configControls.length; i++) {
-            var chkName = configControls[i];
-            var chk = document.getElementById(chkName);
-            window.localStorage.setItem(chkName, chk.checked);
+            let inpName = configControls[i];
+
+            if (inpName == "onInput") {
+                let options = document.getElementsByName(inpName);
+                for (let i = 0; i < options.length; i++) {
+                    let radio = options[i];
+                    if (radio.checked) {
+                        window.localStorage.setItem(inpName, radio.value);
+                    }
+                }
+                continue
+            }
+
+            var chk = document.getElementById(inpName);
+            window.localStorage.setItem(inpName, chk.checked);
         }
 
 
@@ -598,6 +661,15 @@
                     if (event.target.checked) {
                     }
                     configure();
+                });
+            }
+
+            var radios = document.querySelectorAll('input[type=radio]');
+            for (var radio of radios) {
+                radio.addEventListener('change', function (event) {
+                    if (event.target.checked) {
+                        configure();
+                    }
                 });
             }
 

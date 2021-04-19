@@ -19,6 +19,10 @@
     p {
         margin-bottom: 0.3rem;
         line-height: 110%;
+
+        padding: 0.6rem 0;
+
+
     }
 
 
@@ -95,6 +99,7 @@
             max="100"
             step="1"
             data-validation_msg="Please enter a number between 0 and 100"
+            value="-2"
             > %
         </div>
 
@@ -176,10 +181,9 @@
     </div>
 
     <br>
-    <br>
-    <br>
 
     <input  type="submit"  name="submitBtn1"  value="Input type submit" title="input[type=submit]"  accesskey="s">
+    <input  type="reset"   name="resetBtn1"   value="Reset" >
 
 
 </div><!-- /pseudo-form -->
@@ -187,6 +191,7 @@
 
     <hr>
 
+    <h3>Validation options</h3>
 
     <p>
         Default:  &nbsp; Popups with nerdy wording and in browser language
@@ -205,27 +210,25 @@
     </p>
 
 
-    <div style="margin-left: 3rem; position: relative; top: -0.5rem;">
-    </div>
 
-    <p>
-        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+    <p style="margin-left: 2rem; margin-top: 0.2rem">
+        
         Custom popups even on every input
         <br>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
         <input type="radio"  name="onInput"  value="neither"        >
-        neither
+        none
 
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
         <input type="radio"  name="onInput"  value="onInputRemove"        >
-        on remove
+        remove
 
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
         <input type="radio"  name="onInput"  value="onInputShowAndRemove" >
-        on show + remove
+        raise + remove
 
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
@@ -242,15 +245,21 @@
     </p>
 
 
-    <div style="margin-left: 0rem; position: relative; top: -0.5rem;">
 
-        <p>
-            Compound validation on submit and on blur <br>
-        </p>
+    <p style="margin-left: 2rem; margin-top: 0.2rem">
+        Compound validation  
+
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <input type="checkbox" id="compoundOnSubmit"> on submit
+
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <input type="checkbox" id="compoundOnBlur"> on blur
+    </p>
 
 
 
-    </div>
 
 
 
@@ -385,19 +394,19 @@
         var suspicious = 0;
 
         // min < max?
-        if (i2 != 0 && i3 != 0 && i2 > i3) {
+        if (inp2 != "" && inp3 != "" && i2 > i3) {
             suspicious = 1;
             return suspicious;
         }
 
 
         // expectation between extremes?
-        if (i1 != 0) {
-            if (i2 != 0 && i1 < i2) {
+        if (inp1 != "" && inp2 != "" && inp3 != "") {
+            if (inp2 != "" && i1 < i2) {
                 suspicious = 2;
             }
 
-            if (i3 != 0 && i1 > i3) {
+            if (inp3 != "" && i1 > i3) {
                 suspicious = 2;
             }
         }
@@ -421,6 +430,8 @@
         "validateFormWithCustomBubbles",
         "showBubbleOnBlurOrInput",
         "onlyOneBubble",
+        "compoundOnSubmit",
+        "compoundOnBlur",
     ];
 
 
@@ -487,6 +498,32 @@
     }
 
 
+    
+    function  compoundOnSubmitExec() {
+        let nameCheck = "compoundOnSubmit"
+        var checkbox = document.getElementById(nameCheck);
+        if (checkbox.checked) {
+            compoundOnSubmit = true;
+        } else {
+            compoundOnSubmit = false;
+        }
+    }
+
+    
+    function  compoundOnBlurExec() {
+        let nameCheck = "compoundOnBlur"
+        var checkbox = document.getElementById(nameCheck);
+        if (checkbox.checked) {
+            compoundOnBlur = true;
+        } else {
+            compoundOnBlur = false;
+        }
+    }
+
+
+
+
+
 
 
     function configure(initial){
@@ -522,6 +559,9 @@
                     if(inpName == "showBubbleOnBlurOrInput") {
                         document.getElementById(inpName).checked = true;
                     }
+                    if(inpName == "onlyOneBubble") {
+                        document.getElementById(inpName).checked = true;
+                    }
 
                 }
             }
@@ -535,7 +575,6 @@
         validateFormWithCustomBubblesExec();
         showBubbleOnBlurOrInputExec();
         onlyOneBubbleExec();
-
 
 
         // save config
@@ -558,9 +597,10 @@
         }
 
 
-
+        
         //
         // compound validation
+
         function mustAddUp100Bubble(event) {
             var err = mustAddUp100();
             if (err > 0) {
@@ -595,49 +635,50 @@
             }
         }
 
-
-        myForm.addEventListener(
-            "submit",
-            mustAddUp100Bubble,
-            false
-        );
-
-        var yProbInputs = [
-            "y_probgood",
-            "y_probnormal",
-            "y_probbad",
-        ];
-
-        for (var inp of yProbInputs) {
-            myForm.elements[inp].addEventListener(
-                'blur', 
+        if(compoundOnSubmit){
+            myForm.addEventListener(
+                "submit",
                 mustAddUp100Bubble,
-                false,
+                false
             );
-        }
 
-
-        
-        myForm.addEventListener(
-            "submit",
-            daxForecastBubble,
-            false
-        );
-
-        var daxInputs = [
-            "dax_erw",
-            "dax_min",
-            "dax_max",
-        ];
-
-        for (var inp of daxInputs) {
-            myForm.elements[inp].addEventListener(
-                'blur',
+            myForm.addEventListener(
+                "submit",
                 daxForecastBubble,
-                false,
+                false
             );
         }
 
+        if(compoundOnBlur){
+            var daxInputs = [
+                "dax_erw",
+                "dax_min",
+                "dax_max",
+            ];
+
+            for (var inp of daxInputs) {
+                myForm.elements[inp].addEventListener(
+                    'blur',
+                    daxForecastBubble,
+                    false,
+                );
+            }
+
+            var yProbInputs = [
+                "y_probgood",
+                "y_probnormal",
+                "y_probbad",
+            ];
+
+            for (var inp of yProbInputs) {
+                myForm.elements[inp].addEventListener(
+                    'blur',
+                    mustAddUp100Bubble,
+                    false,
+                );
+            }
+
+        }
 
         console.log("validation configured");
     }

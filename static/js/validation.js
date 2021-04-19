@@ -25,8 +25,10 @@ function Validator(argForm) {
     let onlyOne = true;
 
 
-    // bubble messages are positioned relative to parent's parent
-    // providing us with a reliable width that does not overflow;
+    // bubble messages are sized and positioned relative 
+    // to the input's parent or grandparent.
+    // Parent or grandparent provide us with a reliable width 
+    // that does not overflow the screen width;
     // unexported parameter
     let attachOuterOuter = true;
 

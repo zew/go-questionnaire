@@ -57,6 +57,7 @@ func Tree(lc string) *TreeT {
 				Allow: map[Privilege]bool{Admin: true},
 			},
 				Children: []TreeT{
+					{Node: infos.ByKey("generate-questionnaire-templates")},
 					{Node: infos.ByKey("logins-reload")},
 					{Node: infos.ByKey("config-reload")},
 					{Node: infos.ByKey("templates-reload")},

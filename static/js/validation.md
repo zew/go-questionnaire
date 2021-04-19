@@ -1,33 +1,118 @@
 # HTML5 Validation
 
-* Error messages are displayed in the language, configured in the browser software.  
-Chrome: Setting - Language - [List of installed languages] - Display Google Chrome in this language - [restart] will affect the messages
+## Default validation
 
-* The error messages are pretty mathematical anyway
- "Value must be greate or equal to ..."
+HTML5 provides some practical features for input validation. Let's discuss them.
 
-* The method setCustomValidity('my message'), puts the input into invalid state, regardless of its content.
+* Positioning and sizing of the bubble messages do not overflow the page contents.  
+This is a big advantage.  
+![no-overflow](validation-01.jpg)  
 
-* We can disable the build-in bubbles in various ways.  
-By far the best way is to set  
-`<form novalidate=true>`.  
-However we can still use validity and checkValidity().  
-We could also call reportValidity(), to re-establish the previous behavior.
+* Visual appearance of the bubble messages cannot be influenced at all.
 
-* We have the :valid and :invalid CSS pseudo classes;  
-they trigger an instant valdiation error on every keystroke;  
-they *can* be used for focus-dependent error feedback;
-they cannot be used for form.submit() validation.
+* Error messages are displayed in the language, configured in the web browser.  
+In Chrome for instance
 
-## Positioning
+  * Settings
+  * Language
+  * [List of installed languages]
+  * Display Google Chrome in this language
+  * [restart]
+  
+&nbsp; &nbsp; ...will affect the language of the messages
 
-* Dynamic display right or left or below can only be achieved using JavaScript libraries.  
-In order to work on `mobile` and on `desktop` view, only below positioning is feasible.
+* The error messages are pretty mathematical  
+ `Value must be greate or equal to ...`
 
-## Todo
+* We can change the error messages using the method `setCustomValidity('my message')`  
+but this puts the input element into the `invalid` state,  
+regardless of its content.  
+This creates a serious source of errors in higher-up logic.  
+In the worst case, the user gets trapped on the HTML page with an unreasonable error message.
 
-* Show only [ the first | one ] validation message
+### On `input`, on `blur` and on `form submit`
 
-  * Problem:  What to do on focus to another problematic input
+1. We might want validation feedback on every key stroke;  
+this is called `on input` validation.
 
-* Compound bubbles - when to clear - when to clear multiple
+2. Or we might want feedback before the user moves on  
+to the next input element; technically called `on blur` or `on focusout` validation.
+
+3. Finally we might want validation on `form submission`.  
+One or all bubble messages should be shown to the user.  
+And we may or may not want to block submission of an invalid form.
+
+Built-in HTML5 validation gives us limited control over 1.)
+and equally limited control over 3.)
+
+### Compound validation
+
+* We might want to enforce rules over several input elements.
+
+![compound validation](validation-02.jpg)
+
+* Our demonstration contains two real world examples of compound validation:  
+  * Three input elements that should add up to 100%
+
+  * Three input elements, asking for a stock index forecast,  
+  where the first value should be in between the last two values,  
+  and the second value should be smaller than the third.  
+
+  * All forecast values should be between 2000 and 25.000.  
+  We use HTML5 `number` elements to enforce some of our restrictions.
+
+* There is no way to enforce such rules across several input elements with HTML5 alone.
+
+## Custom validation
+
+If you have concluded, that built-in HTML5 validation is insufficient for you,  
+then you want to develop a _custom_ validation.  
+Lets lay the foundation for this.
+
+* We dont want jQuery anymore;  
+in fact we dont want any Javascript libraries.
+
+* We have to disable the built-in bubbles.  
+The best achieved setting `<form novalidate=true>`.  
+We can still use `validity` and `checkValidity()` to obtain the input element's  
+overall state or its details (for instance `uppper bound overflow == true ?` ).  
+We could also call `reportValidity()`, to re-establish the previous behavior,  
+but our objective is to improve on default functionality,  
+not merely re-institute it.
+
+* We have to create our own visual elements.  
+We call these `custom popups`.  
+As opposed to the _built-in_ bubble messages discussed above.  
+
+* We have the `:valid` and `:invalid` `CSS` `pseudo classes`;  
+they can trigger an instant validation feedback on every keystroke.  
+They are useful to effect color changes or for displaying check ticks.  
+But creating and displaying fully fledged `custom popups` based on CSS pseudo classes  
+relies on an intricate HTML structure and a _specific_  _sequence_ of HTML elements.  
+This is not a robust solution.  
+This means, we have to use `parent.insertAdjacentHTML([bubbleHTML])`  
+to create our custom popups. `insertAdjacentHTML` does not destroy existing
+event handler registrations.
+
+### Positioning of custom popups
+
+* Dynamic display right _or_ left depending on screen position can only be achieved using JavaScript.  
+We dont want this added complexity.  
+We therefore settle on positioning our custom popups _below_ the input element.
+keeping in mind, that our solution needs to work on narrow `mobile` screens as well.
+
+* The width of the custom popups constitutes the next problem.  
+It cannot be as narrow as the input element, which might be just one or two digits wide.
+But it must be prevented from overflowing the screen width.
+
+* Our solution is to make the width 100% of the  _parent_ or _grandparent_ of the input element.  
+Usage of  _parent_ or _grandparent_ can be configured using the `attachOuterOuter` parameter.
+
+## Questions
+
+* When showing only the first validation message;
+  what to do on focus to another problematic input
+
+* Compound validation messages  
+can supersede the input based validation messages;  
+registration of compound event handlers _before_ basic handlers.

@@ -119,6 +119,12 @@ func GenerateQuestionnaireTemplates(w http.ResponseWriter, r *http.Request) {
 	myfmt.Fprintf(w, html)
 	myfmt.Fprintf(w, "<br>")
 	//
+
+	if r.Method != "POST" {
+		myfmt.Fprintf(w, "Not a POST request. Won't generate any questionnaire<br>\n")
+		return
+	}
+
 	for key, fnc := range Get() {
 
 		if key != s.Type {

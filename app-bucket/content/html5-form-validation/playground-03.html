@@ -7,12 +7,23 @@
     }
 
 
+    #console-log-header{
+        background-color: whitesmoke;
+        border: 4px solid bisque;
+        border-bottom: none;
+        width: 18rem;
+        margin-top: 1.1rem;
+        padding: 0.2rem 0.4rem;
+    }
     #console-log{
         background-color: bisque;
         margin: 1.5rem 0;
+        margin-top: 0;
 
         position: relative;
         display: block ;
+
+        border: none;
     }
 
 
@@ -31,6 +42,11 @@
         margin: 0.5rem 0;
         margin-right: 2rem;
         margin-right: 1rem;
+    }
+
+    .tab {
+        display: inline-block;
+        width: 4rem;
     }
 
     label {
@@ -159,6 +175,7 @@
                 max="25000"
                 step="1"
                 data-validation_msg="Please enter a number between 2.000 and 25.000"
+                xxvalue=16000
             >
         </div>
     </div>
@@ -176,6 +193,7 @@
                 max="25000"
                 step="1"
                 data-validation_msg="Please enter a number between 2.000 and 25.000"
+                xxvalue=12000
             >
         </div>
     </div>
@@ -212,30 +230,30 @@
 
 
     <p style="margin-left: 2rem; margin-top: 0.2rem">
-        
-        Custom popups even on every input
+
+        Custom popups even on each keyboard input
         <br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span class="tab"></span>
 
         <input type="radio"  name="onInput"  value="neither"        >
         none
 
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span class="tab"></span>
 
         <input type="radio"  name="onInput"  value="onInputRemove"        >
         remove
 
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span class="tab"></span>
 
         <input type="radio"  name="onInput"  value="onInputShowAndRemove" >
-        raise + remove
+        raise & remove
 
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span class="tab"></span>
 
 
         <input type="checkbox" id="lockFocus">
         lock
-    
+
     </p>
 
 
@@ -247,13 +265,13 @@
 
 
     <p style="margin-left: 2rem; margin-top: 0.2rem">
-        Compound validation  
+        Compound validation
 
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span class="tab"></span>
 
         <input type="checkbox" id="compoundOnSubmit"> on submit
 
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span class="tab"></span>
 
         <input type="checkbox" id="compoundOnBlur"> on blur
     </p>
@@ -278,11 +296,8 @@
 
 
 
-
-    <div id="console-log"><div style="
-            background-color: whitesmoke;
-            position: relative;
-            left: -0.8rem; top: -0.3rem; width: 10rem;" >console log</div></div>
+    <div id=console-log-header>console log - inversely ordered</div>
+    <div id="console-log"></div>
 
 
 
@@ -307,14 +322,79 @@
             }
         }
         if (line.length > 0) {
-            myLog.innerHTML += line + "<br>";
+            myLog.innerHTML = line + "<br>" + myLog.innerHTML ;
             logFn.call(console, line); // call original function if you want to
         }
     };
 
 
+    // load config from local browser storage 
+    // setting the UI elements
+    function loadConfigIntoUI(){
+        for (let i = 0; i < configControls.length; i++) {
+            let inpName = configControls[i];
+            var storedVal = window.localStorage.getItem(inpName);
 
-    function resetAllListeners(form){
+            if (inpName == "onInput") {
+                if (storedVal === null) {
+                    storedVal = "neither"
+                }
+                let options = document.getElementsByName(inpName);
+                for (let i = 0; i < options.length; i++) {
+                    let radio = options[i];
+                    if (radio.value == storedVal) {
+                        radio.checked = true;
+                    }
+                }
+                continue;
+            }
+
+            // console.log(`${chkName} was checked ${wasChecked} type ${typeof wasChecked}`);
+            if (storedVal === "true") {
+                document.getElementById(inpName).checked = storedVal;
+            }
+
+            // default
+            if (storedVal === null) {
+                // to true
+                if (inpName == "showBubbleOnBlurOrInput") {
+                    document.getElementById(inpName).checked = true;
+                }
+                if (inpName == "onlyOneBubble") {
+                    document.getElementById(inpName).checked = true;
+                }
+
+            }
+        }
+
+    }
+
+    // save config to local browser storage 
+    function saveConfig(){
+        for (let i = 0; i < configControls.length; i++) {
+            let inpName = configControls[i];
+
+            if (inpName == "onInput") {
+                let options = document.getElementsByName(inpName);
+                for (let i = 0; i < options.length; i++) {
+                    let radio = options[i];
+                    if (radio.checked) {
+                        window.localStorage.setItem(inpName, radio.value);
+                    }
+                }
+                continue
+            }
+
+            var chk = document.getElementById(inpName);
+            window.localStorage.setItem(inpName, chk.checked);
+        }
+    }
+
+
+
+    // reset form and input[type=number]
+    // not resetting the config UI handlers
+    function resetNonConfigUIListeners(form){
 
         form.oninvalid  = null;
         form.onvalid    = null;
@@ -332,6 +412,10 @@
     }
 
 
+    //
+    // compound validity computation 
+    // without any user interface
+    
     function mustAddUp100() {
 
         var inp1 = document.forms.frmMain.y_probgood.value;
@@ -415,17 +499,64 @@
 
     }
 
+    //
+    // compound validation
+    // event handlers
+    // showing custom popups
 
-    /* ============ UI ================  */
+    function mustAddUp100Bubble(event) {
+        var err = mustAddUp100();
+        if (err > 0) {
+            console.log("mustAddUp100()", err);
+            if (err == 1) {
+                var e1 = document.forms.frmMain.y_probgood;
+                var e2 = document.forms.frmMain.y_probnormal;
+                var e3 = document.forms.frmMain.y_probbad;
+                vd.ShowBubble(e1, "Does not add up to 100", true);
+                vd.ShowBubble(e2, "Does not add up to 100", true);
+                vd.ShowBubble(e3, "Does not add up to 100", true);
+            }
+            if (event.type == "submit") {
+                // e1.focus();
+            }
+            event.preventDefault();
+        }
+    }
+
+    function daxForecastBubble(event) {
+        var err = daxForecastInbetween();
+        if (err > 0) {
+            console.log("daxForecastInbetween()", err);
+            if (err == 1) {
+                var e1 = document.forms.frmMain.dax_min;
+                var e2 = document.forms.frmMain.dax_max;
+                vd.ShowBubble(e1, "Please adjust Min and Max", true);
+                vd.ShowBubble(e2, "Please adjust Min and Max", true);
+                if (event.type == "submit") {
+                    // e2.focus();
+                }
+            }
+            if (err == 2) {
+                var e1 = document.forms.frmMain.dax_erw;
+                vd.ShowBubble(e1, "Please adjust expected DAX between Min and Max", true);
+                if (event.type == "submit") {
+                    // e1.focus();
+                }
+            }
+            event.preventDefault();
+        }
+    }
+
+
+    /* ============ UI for config ================  */
 
 
     var myForm = document.forms["frmMain"];
     var vd = new Validator(myForm);
 
 
-    var configControls = [ 
+    var configControls = [
         "onInput",
-        // "onInputShowAndRemove",
         "lockFocus",
         "validateFormWithCustomBubbles",
         "showBubbleOnBlurOrInput",
@@ -435,11 +566,10 @@
     ];
 
 
-
     // change handlers for config checkboxes
     function  validateFormWithCustomBubblesExec() {
         let nameCheck = "validateFormWithCustomBubbles"
-        var checkbox = document.getElementById(nameCheck);
+        let checkbox = document.getElementById(nameCheck);
         if (checkbox.checked) {
             vd.validateFormWithCustomBubbles();
         }
@@ -447,49 +577,46 @@
 
     function  showBubbleOnBlurOrInputExec() {
         let nameCheck = "showBubbleOnBlurOrInput"
-        var checkbox = document.getElementById(nameCheck);
+        let checkbox = document.getElementById(nameCheck);
         if (checkbox.checked) {
             vd.showBubbleOnBlurOrInput();
             // console.log(`checkbox ${nameCheck} executed`)
         }
     }
 
-        function onInputExec() {
-            let inpName = "onInput"
-            let options = document.getElementsByName(inpName);
-            for (let i = 0; i < options.length; i++) {
-                let radio = options[i];
-
-                if (radio.checked) {
-                    if (radio.value == "onInputRemove") {
-                        vd.SetOnInputRemove(true);
-                        vd.SetOnInputShowAndRemove(false);
-                    } else if (radio.value == "onInputShowAndRemove") {
-                        vd.SetOnInputRemove(false);
-                        vd.SetOnInputShowAndRemove(true);
-                    } else if (radio.value == "neither") {
-                        vd.SetOnInputRemove(false);
-                        vd.SetOnInputShowAndRemove(false);
-                    }
+    function onInputExec() {
+        let inpName = "onInput"
+        let options = document.getElementsByName(inpName);
+        for (let i = 0; i < options.length; i++) {
+            let radio = options[i];
+            if (radio.checked) {
+                if (radio.value == "onInputRemove") {
+                    vd.SetOnInputRemove(true);
+                    vd.SetOnInputShowAndRemove(false);
+                } else if (radio.value == "onInputShowAndRemove") {
+                    vd.SetOnInputRemove(false);
+                    vd.SetOnInputShowAndRemove(true);
+                } else if (radio.value == "neither") {
+                    vd.SetOnInputRemove(false);
+                    vd.SetOnInputShowAndRemove(false);
                 }
-
-
-            }
-
-        }
-        function lockFocusExec() {
-            let nameCheck = "lockFocus"
-            var checkbox = document.getElementById(nameCheck);
-            if (checkbox.checked) {
-                vd.SetLockFocus(true);
-            } else {
-                vd.SetLockFocus(false);
             }
         }
+    }
+
+    function lockFocusExec() {
+        let nameCheck = "lockFocus"
+        let checkbox = document.getElementById(nameCheck);
+        if (checkbox.checked) {
+            vd.SetLockFocus(true);
+        } else {
+            vd.SetLockFocus(false);
+        }
+    }
 
     function  onlyOneBubbleExec() {
         let nameCheck = "onlyOneBubble"
-        var checkbox = document.getElementById(nameCheck);
+        let checkbox = document.getElementById(nameCheck);
         if (checkbox.checked) {
             vd.SetOnlyOneBubble(true);
         } else {
@@ -497,11 +624,12 @@
         }
     }
 
+    // configure compound validation
 
-    
+    var compoundOnSubmit = false;
     function  compoundOnSubmitExec() {
         let nameCheck = "compoundOnSubmit"
-        var checkbox = document.getElementById(nameCheck);
+        let checkbox = document.getElementById(nameCheck);
         if (checkbox.checked) {
             compoundOnSubmit = true;
         } else {
@@ -509,10 +637,10 @@
         }
     }
 
-    
+    var compoundOnBlur = false;
     function  compoundOnBlurExec() {
         let nameCheck = "compoundOnBlur"
-        var checkbox = document.getElementById(nameCheck);
+        let checkbox = document.getElementById(nameCheck);
         if (checkbox.checked) {
             compoundOnBlur = true;
         } else {
@@ -525,50 +653,18 @@
 
 
 
-
+    // function configure resets all event handlers
+    // it re-registers all event handlers,
+    // according to config UI parameters
     function configure(initial){
 
-        // load config
         if (initial !== undefined) {
-            for (let i = 0; i < configControls.length; i++) {
-                let inpName = configControls[i];
-                var storedVal = window.localStorage.getItem(inpName);
-
-                if(inpName == "onInput") {
-                    if (storedVal === null) {
-                        storedVal = "neither"
-                    }
-                    let options = document.getElementsByName(inpName);
-                    for (let i = 0; i < options.length; i++) {
-                        let radio = options[i];
-                        if(radio.value == storedVal){
-                            radio.checked = true;
-                        }
-                    }
-                    continue;
-                }
-
-                // console.log(`${chkName} was checked ${wasChecked} type ${typeof wasChecked}`);
-                if (storedVal === "true") {
-                    document.getElementById(inpName).checked = storedVal;
-                }
-
-                // default
-                if (storedVal === null) {
-                    // to true
-                    if(inpName == "showBubbleOnBlurOrInput") {
-                        document.getElementById(inpName).checked = true;
-                    }
-                    if(inpName == "onlyOneBubble") {
-                        document.getElementById(inpName).checked = true;
-                    }
-
-                }
-            }
+            loadConfigIntoUI();            
         }
 
+        resetNonConfigUIListeners(myForm);
 
-        resetAllListeners(myForm);
+        // configure validator according to UI settings
 
           onInputExec();
           lockFocusExec();
@@ -576,66 +672,16 @@
         showBubbleOnBlurOrInputExec();
         onlyOneBubbleExec();
 
-
-        // save config
-        for (let i = 0; i < configControls.length; i++) {
-            let inpName = configControls[i];
-
-            if (inpName == "onInput") {
-                let options = document.getElementsByName(inpName);
-                for (let i = 0; i < options.length; i++) {
-                    let radio = options[i];
-                    if (radio.checked) {
-                        window.localStorage.setItem(inpName, radio.value);
-                    }
-                }
-                continue
-            }
-
-            var chk = document.getElementById(inpName);
-            window.localStorage.setItem(inpName, chk.checked);
-        }
+        compoundOnSubmitExec();
+        compoundOnBlurExec();
 
 
+        saveConfig();
         
-        //
-        // compound validation
-
-        function mustAddUp100Bubble(event) {
-            var err = mustAddUp100();
-            if (err > 0) {
-                console.log("mustAddUp100()", err);
-                if (err == 1) {
-                    var el = document.forms.frmMain.y_probgood;
-                    var e2 = document.forms.frmMain.y_probnormal;
-                    var e3 = document.forms.frmMain.y_probbad;
-                    vd.ShowBubble(el, "Does not add up to 100", true);
-                    vd.ShowBubble(e2, "Does not add up to 100", true);
-                    vd.ShowBubble(e3, "Does not add up to 100", true);
-                }
-                event.preventDefault();
-            }
-        }
-
-        function daxForecastBubble(event) {
-            var err = daxForecastInbetween();
-            if (err > 0) {
-                console.log("daxForecastInbetween()", err);
-                if (err == 1) {
-                    var el = document.forms.frmMain.dax_min;
-                    var e2 = document.forms.frmMain.dax_max;
-                    vd.ShowBubble(el, "Please adjust Min and Max", true);
-                    vd.ShowBubble(e2, "Please adjust Min and Max", true);
-                }
-                if (err == 2) {
-                    var el = document.forms.frmMain.dax_erw;
-                    vd.ShowBubble(el, "Please adjust expected DAX between Min and Max", true);
-                }
-                event.preventDefault();
-            }
-        }
-
-        if(compoundOnSubmit){
+        // re-register event handlers
+        // for compound validation
+        // depending on UI config settings
+        if (compoundOnSubmit) {
             myForm.addEventListener(
                 "submit",
                 mustAddUp100Bubble,
@@ -647,9 +693,12 @@
                 daxForecastBubble,
                 false
             );
+            // console.log("compound validation on submit: true");
+        } else {
+            // console.log("compound validation on submit: false");
         }
 
-        if(compoundOnBlur){
+        if (compoundOnBlur) {
             var daxInputs = [
                 "dax_erw",
                 "dax_min",
@@ -678,15 +727,21 @@
                 );
             }
 
+            // console.log("compound validation on blur: true");
+        } else {
+            // console.log("compound validation on blur: false");
         }
 
+        
         console.log("validation configured");
     }
 
 
 
-    // on form load - configure()
-    // then add event listeners to checkbox.change
+    // on form load
+    // initial configure()
+    // assigning event handlers to config UI controls
+    //   those are exempt from resetNonConfigUIListeners()
     document.addEventListener(
         'DOMContentLoaded',
         function () {
@@ -713,6 +768,7 @@
                     }
                 });
             }
+
 
         },
         false

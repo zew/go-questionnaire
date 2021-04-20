@@ -2,11 +2,18 @@
 
 ## Default validation
 
-HTML5 provides some practical features for input validation. Let's discuss them.
+HTML5 provides some practical features for input validation. 
 
-* Positioning and sizing of the bubble messages do not overflow the page contents.  
-This is a big advantage.  
+These features are highly idiosyncratic.  
+Let's discuss them.
+
+Following image shows a default validation error;  
+a bubble message appears in German, saying  
+`Value must be greater or equal 2000`.
+
 ![no-overflow](validation-01.jpg)  
+
+<div style='page-break-before:always;'></div>
 
 * Visual appearance of the bubble messages cannot be influenced at all.
 
@@ -30,6 +37,11 @@ regardless of its content.
 This creates a serious source of errors in higher-up logic.  
 In the worst case, the user gets trapped on the HTML page with an unreasonable error message.
 
+* Positioning and sizing of the bubble messages do not overflow the page contents.  
+This is a big advantage.  
+
+<div style='page-break-before:always;'></div>
+
 ### On `input`, on `blur` and on `form submit`
 
 1. We might want validation feedback on every key stroke;  
@@ -44,6 +56,8 @@ And we may or may not want to block submission of an invalid form.
 
 Built-in HTML5 validation gives us limited control over 1.)
 and equally limited control over 3.)
+
+<div style='page-break-before:always;'></div>
 
 ### Compound validation
 
@@ -63,6 +77,8 @@ and equally limited control over 3.)
 
 * There is no way to enforce such rules across several input elements with HTML5 alone.
 
+<div style='page-break-before:always;'></div>
+
 ## Custom validation
 
 If you have concluded, that built-in HTML5 validation is insufficient for you,  
@@ -70,12 +86,13 @@ then you want to develop a _custom_ validation.
 Lets lay the foundation for this.
 
 * We dont want jQuery anymore;  
-in fact we dont want any Javascript libraries.
+we dont want _any_ Javascript libraries.
 
 * We have to disable the built-in bubbles.  
-The best achieved setting `<form novalidate=true>`.  
-We can still use `validity` and `checkValidity()` to obtain the input element's  
-overall state or its details (for instance `uppper bound overflow == true ?` ).  
+Three possibilities are documented in the code under `suppressBuiltinBubbles`.
+The best solution is by setting `<form novalidate=true>`.  
+We can still use `validity` and `checkValidity()` on input elements,  
+obtaining it overall validity (`[true|false]`) or its details (i.e. `uppperBoundOverflow`).  
 We could also call `reportValidity()`, to re-establish the previous behavior,  
 but our objective is to improve on default functionality,  
 not merely re-institute it.
@@ -88,9 +105,9 @@ As opposed to the _built-in_ bubble messages discussed above.
 they can trigger an instant validation feedback on every keystroke.  
 They are useful to effect color changes or for displaying check ticks.  
 But creating and displaying fully fledged `custom popups` based on CSS pseudo classes  
-relies on an intricate HTML structure and a _specific_  _sequence_ of HTML elements.  
+relies on a _specific_  _sequence_ of HTML elements.  
 This is not a robust solution.  
-This means, we have to use `parent.insertAdjacentHTML([bubbleHTML])`  
+Consequently, we have to use `parent.insertAdjacentHTML([popupHTML])`  
 to create our custom popups. `insertAdjacentHTML` does not destroy existing
 event handler registrations.
 
@@ -106,7 +123,15 @@ It cannot be as narrow as the input element, which might be just one or two digi
 But it must be prevented from overflowing the screen width.
 
 * Our solution is to make the width 100% of the  _parent_ or _grandparent_ of the input element.  
-Usage of  _parent_ or _grandparent_ can be configured using the `attachOuterOuter` parameter.
+Usage of  _parent_ or _grandparent_ can be configured using the `attachGrandparent` parameter.
+
+<div style='page-break-before:always;'></div>
+
+### Live demo
+
+&nbsp;
+
+<div style='page-break-before:always;'></div>
 
 ## Questions
 
@@ -116,3 +141,7 @@ Usage of  _parent_ or _grandparent_ can be configured using the `attachOuterOute
 * Compound validation messages  
 can supersede the input based validation messages;  
 registration of compound event handlers _before_ basic handlers.
+
+* The CSS invalid is not raised for compound invalidations.
+
+* Compound invalidation: focus() conflicts with setfocus to first erroneous input

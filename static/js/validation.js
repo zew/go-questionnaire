@@ -30,7 +30,7 @@ function Validator(argForm) {
     // Parent or grandparent provide us with a reliable width 
     // that does not overflow the screen width;
     // unexported parameter
-    let attachOuterOuter = true;
+    let attachGrandparent = true;
 
 
     this.SetOnInputRemove = function(newVal) {
@@ -56,7 +56,7 @@ function Validator(argForm) {
 
     function hasBubble(el) {
         var elErrors = el.parentNode.querySelectorAll(":scope > .bubble-invalid-anchor");
-        if (attachOuterOuter) {
+        if (attachGrandparent) {
             elErrors = el.parentNode.parentNode.querySelectorAll(":scope > .bubble-invalid-anchor");
         }
         for (var i = 0; i < elErrors.length; i++) {
@@ -70,7 +70,7 @@ function Validator(argForm) {
     // removing previous message from element el
     function clearBubble(el) {
         var elErrors = el.parentNode.querySelectorAll(":scope > .bubble-invalid-anchor");
-        if (attachOuterOuter) {
+        if (attachGrandparent) {
             elErrors = el.parentNode.parentNode.querySelectorAll(":scope > .bubble-invalid-anchor");
         }
         for (var i = 0; i < elErrors.length; i++) {
@@ -112,7 +112,7 @@ function Validator(argForm) {
 
         if (!el.checkValidity() || overrideCheckValidity === true) {
             var parent = el.parentNode;
-            if (attachOuterOuter) {
+            if (attachGrandparent) {
                 parent = el.parentNode.parentNode;
             }
             // el.validationMessage is mathematical has is always in browser local
@@ -250,7 +250,7 @@ function Validator(argForm) {
             if (onInputShowAndRemove || onInputRemove) {
                 lgMsg = "blur+input";
             }
-            console.log(`  ${ lgMsg } inp.reportValidity() ${event.target.getAttribute('name')}`);
+            console.log(`  ${ lgMsg } inp.reportValidity() ${event.target.getAttribute('name')} ${event.target.checkValidity()}`);
             if (lockFocus) {
                 if (event.type == "blur") {
                     if (!event.target.checkValidity()) {

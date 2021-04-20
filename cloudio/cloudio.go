@@ -69,7 +69,7 @@ func CreateNotExist(err error) error {
 func prepareLocalDir() error {
 	bucketDir := filepath.Join(".", "app-bucket")
 	if err := os.MkdirAll(filepath.Join(".", bucketDir), 0750); err != nil {
-		return err // MkdirAll does not report "already exists" as error
+		return err // path error - "already exists" is not reported
 	}
 	return nil
 }

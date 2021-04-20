@@ -2,9 +2,7 @@
 
 ## Default validation
 
-HTML5 provides some practical features for input validation. 
-
-These features are highly idiosyncratic.  
+HTML5 provides - highly idiosyncratic - built-in validation features.  
 Let's discuss them.
 
 Following image shows a default validation error;  
@@ -37,7 +35,7 @@ In Chrome for instance
 &nbsp; &nbsp; ...will affect the language of the messages
 
 * The error messages are pretty mathematical  
- `Value must be greate or equal to ...`
+ `Value must be greater or equal to ...`
 
 * We can change the error messages using the method `setCustomValidity('my message')`  
 but this puts the input element into the `invalid` state,  
@@ -87,7 +85,7 @@ and equally limited control over 3.)
 
 <div style="page-break-before: always;"></div>
 
-## Custom validation
+## Custom validation - I
 
 If you have concluded, that built-in HTML5 validation is insufficient for you,  
 then you want to develop a _custom_ validation.  
@@ -100,10 +98,10 @@ we dont want Javascript libraries.
 cascading of events, Javascript `promises`.
 
 * We have to disable the built-in bubbles.  
-Three possibilities are documented in the code under `suppressBuiltinBubbles`.
+Three possibilities are documented in the code under `suppressBuiltinBubbles`.  
 The best solution is by setting `<form novalidate=true>`.  
 We can still use `validity` and `checkValidity()` on input elements,  
-obtaining it overall validity (`[true|false]`) or its details (i.e. `uppperBoundOverflow`).  
+obtaining its overall validity (`[true|false]`) or its details (i.e. `uppperBoundOverflow`).  
 We could also call `reportValidity()`, to re-establish the previous behavior,  
 but our objective is to improve on default functionality,  
 not merely re-institute it.
@@ -112,6 +110,10 @@ not merely re-institute it.
 We call these `custom popups`.  
 As opposed to the _built-in_ bubble messages discussed above.  
 
+<div style="page-break-before: always;"></div>
+
+## Custom validation - II
+
 * We have the `:valid` and `:invalid` `CSS` `pseudo classes`;  
 they can trigger an instant validation feedback on every keystroke.  
 They are useful to effect color changes or for displaying check ticks.  
@@ -119,18 +121,21 @@ But creating and displaying fully fledged `custom popups` based on CSS pseudo cl
 relies on a _specific_  _sequence_ of HTML elements.  
 This is not a robust solution.  
 Consequently, we have to use `parent.insertAdjacentHTML([popupHTML])`  
-to create our custom popups. `insertAdjacentHTML` does not destroy existing
-event handler registrations.
+to create our custom popups.  `insertAdjacentHTML`  
+does not destroy existing event handler registrations.
+
+<div style="page-break-before: always;"></div>
 
 ### Positioning of custom popups
 
-* Dynamic display right _or_ left depending on screen position can only be achieved using JavaScript.  
+* Dynamic display right _or_ left depending on screen position  
+can only be achieved using JavaScript.  
 We dont want this added complexity.  
-We therefore settle on positioning our custom popups _below_ the input element.
+We therefore settle on positioning our custom popups _below_  the input element;  
 keeping in mind, that our solution needs to work on narrow `mobile` screens as well.
 
 * The width of the custom popups constitutes the next problem.  
-It cannot be as narrow as the input element, which might be just one or two digits wide.
+It cannot be as narrow as the input element, which might be just one or two digits wide.  
 But it must be prevented from overflowing the screen width.
 
 * Our solution is to make the width 100% of the  _parent_ or _grandparent_ of the input element.  
@@ -140,14 +145,17 @@ Usage of  _parent_ or _grandparent_ can be configured using the `attachGrandpare
 
 ### Live demo
 
-&nbsp;
+* This is the real-life example mentioned above
+
+* Technically, its a `form` containing a bunch of HTML5 number inputs
+
+* Custom error messages have been put into `data-validation_msg` attribute
 
 ### Notes
 
 * Compound validation messages must be prevented  
 from interfering with/superseding input based validation messages;  
 `IsCleanForm(event)` checks for this.
-
 
 <div style="page-break-before: always;"></div>
 

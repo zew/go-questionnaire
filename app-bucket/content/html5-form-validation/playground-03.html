@@ -28,14 +28,13 @@
 
 
     p {
-        margin-bottom: 0.3rem;
         line-height: 110%;
-
         padding: 0.6rem 0;
-
-
     }
 
+    .sep {
+        border-top: 1px solid darkgray;
+    }
 
     .block {
         display: inline-block;
@@ -50,10 +49,11 @@
     }
 
     label {
-        min-width: 10rem;
+        min-width: 12rem;
         text-align: right;
-        aaborder: 1px solid greenyellow;
+        xxborder: 1px solid greenyellow;
         display: inline-block;
+        margin-right: 0.15rem;
     }
     .control {
         display: inline-block;
@@ -63,6 +63,15 @@
         margin-right: 0rem;
     }
 
+    button, input[type="submit"], input[type="reset"], a.button {
+        margin-right: 2.9em;
+    }
+
+    .validation-ui {
+        margin-top: 1rem;
+        background-color: bisque;
+        padding: 0rem 1.2rem;
+    }
 
     @media screen and (min-width: 800px) {
         .block-wide {
@@ -82,12 +91,11 @@
 <div class="pseudo-form">
 
 
-    <!-- <p>GDP will...</p> -->
 
     <div class="block">
 
         <label for="y_probgood">
-            GDP will improve
+            GDP will <br> improve
         </label>
 
         <div class="control">
@@ -115,7 +123,7 @@
             max="100"
             step="1"
             data-validation_msg="Please enter a number between 0 and 100"
-            value="-2"
+            aavalue="-2"
             > %
         </div>
 
@@ -125,7 +133,7 @@
     <div class="block">
 
         <label for="y_probbad">
-            deteri<br>orate
+            deteri-<br>orate
         </label>
 
         <div class="control">
@@ -140,13 +148,13 @@
 
     </div>
 
-    <hr>
+    <div class="sep"></div>
 
 
     <div class="block block-wide">
 
         <label for="dax_erw">
-            DAX expected
+            DAX <br> expected
         </label>
 
         <div class="control">
@@ -156,7 +164,6 @@
             max="25000"
             step="1"
             data-validation_msg="Please enter a number between 2.000 and 25.000"
-            value="14.5"
             >
         </div>
 
@@ -199,23 +206,26 @@
     </div>
 
     <br>
+    <br>
 
-    <input  type="submit"  name="submitBtn1"  value="Input type submit" title="input[type=submit]"  accesskey="s">
-    <input  type="reset"   name="resetBtn1"   value="Reset" >
+    <input  type="submit"  name="submitBtn1"  value="Submit" title="input[type=submit]"  accesskey="s">
+
+    <!-- <input  type="reset"   name="resetBtn1"   value="Reset" > -->
+
+    <a href="#" onclick="enterInvalids();return false;" class="button">Enter invalid values</a>
 
 
 </div><!-- /pseudo-form -->
 
 
-    <hr>
+<div class="validation-ui" >
 
-    <h3>Validation options</h3>
-
-    <p>
-        Default:  &nbsp; Popups with nerdy wording and in browser language
+    <p> <b>Validation options</b> 
+        <br>
+    
+        Default: &nbsp; Popups with nerdy wording and in browser language
         on submit
     </p>
-
 
     <p>
         <input type="checkbox" id="ValidateFormWithCustomPopups" accesskey="f">
@@ -276,13 +286,6 @@
         <input type="checkbox" id="compoundOnBlur"> on blur
     </p>
 
-
-
-
-
-
-
-
 <!--
 
 
@@ -292,6 +295,15 @@
     accesskey="s"
     >Configure</a>
 -->
+
+
+</div><!-- /validation-ui -->
+
+
+
+
+
+
 
 
 
@@ -326,6 +338,11 @@
             logFn.call(console, line); // call original function if you want to
         }
     };
+
+    function enterInvalids() {
+        document.forms.frmMain.dax_erw.value = "14.5";
+        document.forms.frmMain.y_probnormal.value = "-2";
+    }
 
 
     // load config from local browser storage 

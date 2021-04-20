@@ -13,7 +13,15 @@ a bubble message appears in German, saying
 
 ![no-overflow](validation-01.jpg)  
 
-<div style='page-break-before:always;'></div>
+<style>
+  /* this is removed */
+  .page-breaker {
+      page-break-before: always;
+      display: inline;
+  }
+</style>
+
+<div style="page-break-before: always;"></div>
 
 * Visual appearance of the bubble messages cannot be influenced at all.
 
@@ -40,7 +48,7 @@ In the worst case, the user gets trapped on the HTML page with an unreasonable e
 * Positioning and sizing of the bubble messages do not overflow the page contents.  
 This is a big advantage.  
 
-<div style='page-break-before:always;'></div>
+<div style="page-break-before: always;"></div>
 
 ### On `input`, on `blur` and on `form submit`
 
@@ -57,7 +65,7 @@ And we may or may not want to block submission of an invalid form.
 Built-in HTML5 validation gives us limited control over 1.)
 and equally limited control over 3.)
 
-<div style='page-break-before:always;'></div>
+<div style="page-break-before: always;"></div>
 
 ### Compound validation
 
@@ -77,7 +85,7 @@ and equally limited control over 3.)
 
 * There is no way to enforce such rules across several input elements with HTML5 alone.
 
-<div style='page-break-before:always;'></div>
+<div style="page-break-before: always;"></div>
 
 ## Custom validation
 
@@ -86,7 +94,10 @@ then you want to develop a _custom_ validation.
 Lets lay the foundation for this.
 
 * We dont want jQuery anymore;  
-we dont want _any_ Javascript libraries.
+we dont want Javascript libraries.
+
+* We want to minimize asynchroneous functionality,  
+cascading of events, Javascript `promises`.
 
 * We have to disable the built-in bubbles.  
 Three possibilities are documented in the code under `suppressBuiltinBubbles`.
@@ -125,23 +136,21 @@ But it must be prevented from overflowing the screen width.
 * Our solution is to make the width 100% of the  _parent_ or _grandparent_ of the input element.  
 Usage of  _parent_ or _grandparent_ can be configured using the `attachGrandparent` parameter.
 
-<div style='page-break-before:always;'></div>
+<div style="page-break-before: always;"></div>
 
 ### Live demo
 
 &nbsp;
 
-<div style='page-break-before:always;'></div>
+### Notes
+
+* Compound validation messages must be prevented  
+from interfering with/superseding input based validation messages;  
+`IsCleanForm(event)` checks for this.
+
+
+<div style="page-break-before: always;"></div>
 
 ## Questions
 
-* When showing only the first validation message;
-  what to do on focus to another problematic input
-
-* Compound validation messages  
-can supersede the input based validation messages;  
-registration of compound event handlers _before_ basic handlers.
-
-* The CSS invalid is not raised for compound invalidations.
-
-* Compound invalidation: focus() conflicts with setfocus to first erroneous input
+* The CSS `:invalid` class is not triggered for compound invalidations.

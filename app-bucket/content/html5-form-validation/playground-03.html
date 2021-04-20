@@ -218,12 +218,12 @@
 
 
     <p>
-        <input type="checkbox" id="validateFormWithCustomBubbles" accesskey="f">
+        <input type="checkbox" id="ValidateFormWithCustomPopups" accesskey="f">
         Custom popups for invalids on <u>f</u>orm submit
     </p>
 
     <p>
-        <input type="checkbox" id="showBubbleOnBlurOrInput">
+        <input type="checkbox" id="showPopupOnBlurOrInput">
         Custom popups for invalids already on blur
     </p>
 
@@ -258,8 +258,8 @@
 
 
     <p>
-        <input type="checkbox" id="onlyOneBubble">
-        Only a single bubble at a time - focus induced
+        <input type="checkbox" id="onlySingleCustomPopup">
+        Only a single custom popuo at a time - focus induced
     </p>
 
 
@@ -357,10 +357,10 @@
             // default
             if (storedVal === null) {
                 // to true
-                if (inpName == "showBubbleOnBlurOrInput") {
+                if (inpName == "showPopupOnBlurOrInput") {
                     document.getElementById(inpName).checked = true;
                 }
-                if (inpName == "onlyOneBubble") {
+                if (inpName == "onlySingleCustomPopup") {
                     document.getElementById(inpName).checked = true;
                 }
 
@@ -393,7 +393,9 @@
 
 
     // reset form and input[type=number]
-    // not resetting the config UI handlers
+    // not resetting the config UI handlers.
+    // This is of course not suited for production;
+    // only for demonstration quick changes
     function resetNonConfigUIListeners(form){
 
         form.oninvalid  = null;
@@ -503,8 +505,13 @@
     // compound validation
     // event handlers
     // showing custom popups
-
     function mustAddUp100Bubble(event) {
+
+        if (!vd.IsCleanForm(event)) {
+            // logFn("mustAddUp100Bubble() canceled")
+            return;
+        }
+
         var err = mustAddUp100();
         if (err > 0) {
             console.log("mustAddUp100()", err);
@@ -512,35 +519,43 @@
                 var e1 = document.forms.frmMain.y_probgood;
                 var e2 = document.forms.frmMain.y_probnormal;
                 var e3 = document.forms.frmMain.y_probbad;
-                vd.ShowBubble(e1, "Does not add up to 100", true);
-                vd.ShowBubble(e2, "Does not add up to 100", true);
-                vd.ShowBubble(e3, "Does not add up to 100", true);
+                // inverse order - if only single popup
+                vd.ShowCustomPopup(e3, "Does not add up to 100", true);
+                vd.ShowCustomPopup(e2, "Does not add up to 100", true);
+                vd.ShowCustomPopup(e1, "Does not add up to 100", true);
             }
             if (event.type == "submit") {
-                // e1.focus();
+                e1.focus();
             }
             event.preventDefault();
         }
     }
 
     function daxForecastBubble(event) {
+
+        if (!vd.IsCleanForm(event)) {
+            // logFn("daxForecastBubble() canceled")
+            return;
+        }
+        
         var err = daxForecastInbetween();
         if (err > 0) {
             console.log("daxForecastInbetween()", err);
             if (err == 1) {
-                var e1 = document.forms.frmMain.dax_min;
-                var e2 = document.forms.frmMain.dax_max;
-                vd.ShowBubble(e1, "Please adjust Min and Max", true);
-                vd.ShowBubble(e2, "Please adjust Min and Max", true);
+                var e2 = document.forms.frmMain.dax_min;
+                var e3 = document.forms.frmMain.dax_max;
+                // inverse order - if only single popup
+                vd.ShowCustomPopup(e3, "Please adjust Min and Max", true);
+                vd.ShowCustomPopup(e2, "Please adjust Min and Max", true);
                 if (event.type == "submit") {
-                    // e2.focus();
+                    e2.focus();
                 }
             }
             if (err == 2) {
-                var e1 = document.forms.frmMain.dax_erw;
-                vd.ShowBubble(e1, "Please adjust expected DAX between Min and Max", true);
+                var e2 = document.forms.frmMain.dax_erw;
+                vd.ShowCustomPopup(e2, "Please adjust expected DAX between Min and Max", true);
                 if (event.type == "submit") {
-                    // e1.focus();
+                    e2.focus();
                 }
             }
             event.preventDefault();
@@ -558,28 +573,28 @@
     var configControls = [
         "onInput",
         "lockFocus",
-        "validateFormWithCustomBubbles",
-        "showBubbleOnBlurOrInput",
-        "onlyOneBubble",
+        "ValidateFormWithCustomPopups",
+        "showPopupOnBlurOrInput",
+        "onlySingleCustomPopup",
         "compoundOnSubmit",
         "compoundOnBlur",
     ];
 
 
     // change handlers for config checkboxes
-    function  validateFormWithCustomBubblesExec() {
-        let nameCheck = "validateFormWithCustomBubbles"
+    function  ValidateFormWithCustomPopupsExec() {
+        let nameCheck = "ValidateFormWithCustomPopups"
         let checkbox = document.getElementById(nameCheck);
         if (checkbox.checked) {
-            vd.validateFormWithCustomBubbles();
+            vd.ValidateFormWithCustomPopups();
         }
     }
 
-    function  showBubbleOnBlurOrInputExec() {
-        let nameCheck = "showBubbleOnBlurOrInput"
+    function  showPopupOnBlurOrInputExec() {
+        let nameCheck = "showPopupOnBlurOrInput"
         let checkbox = document.getElementById(nameCheck);
         if (checkbox.checked) {
-            vd.showBubbleOnBlurOrInput();
+            vd.ShowPopupOnBlurOrInput();
             // console.log(`checkbox ${nameCheck} executed`)
         }
     }
@@ -614,18 +629,18 @@
         }
     }
 
-    function  onlyOneBubbleExec() {
-        let nameCheck = "onlyOneBubble"
+    function  onlySingleCustomPopupExec() {
+        let nameCheck = "onlySingleCustomPopup"
         let checkbox = document.getElementById(nameCheck);
         if (checkbox.checked) {
-            vd.SetOnlyOneBubble(true);
+            vd.SetOnlySingleCustomPopup(true);
         } else {
-            vd.SetOnlyOneBubble(false);
+            vd.SetOnlySingleCustomPopup(false);
         }
     }
 
-    // configure compound validation
 
+    // configure compound validation
     var compoundOnSubmit = false;
     function  compoundOnSubmitExec() {
         let nameCheck = "compoundOnSubmit"
@@ -662,21 +677,21 @@
             loadConfigIntoUI();            
         }
 
+        saveConfig();
+
         resetNonConfigUIListeners(myForm);
 
         // configure validator according to UI settings
-
           onInputExec();
           lockFocusExec();
-        validateFormWithCustomBubblesExec();
-        showBubbleOnBlurOrInputExec();
-        onlyOneBubbleExec();
+        ValidateFormWithCustomPopupsExec();
+        showPopupOnBlurOrInputExec();
+        onlySingleCustomPopupExec();
 
+
+        // configure two more variables according to UI settings
         compoundOnSubmitExec();
         compoundOnBlurExec();
-
-
-        saveConfig();
         
         // re-register event handlers
         // for compound validation

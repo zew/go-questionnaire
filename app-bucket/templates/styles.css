@@ -1648,7 +1648,7 @@ input.ib-300 {     width:300px;    }
 */
 
 
-.bubble-invalid-anchor {
+.popup-invalid-anchor {
     width:   0px;
     height:  0px;
     margin:  0;
@@ -1670,7 +1670,7 @@ input.ib-300 {     width:300px;    }
     background-color: #252;
  */
 }
-.bubble-invalid-content {
+.popup-invalid-content {
     
     position: absolute; 
     z-index: 212; /* must be greater than nav/menu */ 
@@ -1695,10 +1695,10 @@ input.ib-300 {     width:300px;    }
 
 @media screen and (max-width: 800px) {
  
-    .bubble-invalid-anchor {
+    .popup-invalid-anchor {
     }
 
-    .bubble-invalid-content {
+    .popup-invalid-content {
     }
 
 }

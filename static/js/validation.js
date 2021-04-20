@@ -6,7 +6,7 @@
 */
 function Validator(argForm) {
 
-    this.publicVar = "we dont want public vars"
+    this.PublicVar = "we dont want public vars"
 
     let form = argForm;
 
@@ -20,12 +20,12 @@ function Validator(argForm) {
     let lockFocus              = false;
 
 
-    // default is showing bubbles for every faulty input
+    // default is showing custom popups for every faulty input
     // onlyOne changes this
     let onlyOne = true;
 
 
-    // bubble messages are sized and positioned relative 
+    // custom popups are sized and positioned relative 
     // to the input's parent or grandparent.
     // Parent or grandparent provide us with a reliable width 
     // that does not overflow the screen width;
@@ -45,19 +45,41 @@ function Validator(argForm) {
         lockFocus = newVal;
     }
 
-    this.SetOnlyOneBubble = function(newVal) {
+    this.SetOnlySingleCustomPopup = function(newVal) {
         onlyOne = newVal;
     }
 
     // "exporting" the func
     //  keeping the internal version, because internal callers have another 'this'
-    this.ShowBubble = showBubble;
+    this.ShowCustomPopup = showPopup;
 
 
-    function hasBubble(el) {
-        var elErrors = el.parentNode.querySelectorAll(":scope > .bubble-invalid-anchor");
+    // if any input elements are not clean yet 
+    //   => dont show any compound errors
+    this.IsCleanForm = function(event) {
+
+        let frmLoc = null;
+        if (event.target.tagName == "FORM") {
+            frmLoc = event.target;
+        } else {
+            frmLoc = event.target.form;
+        }
+
+        try {
+            if (!frmLoc.checkValidity()) {
+                return false;
+            }
+        } catch (error) {
+            logFn("Exception: isCleanForm() was fired for non-form-element; event.target: ", event.target.tagName)
+        }
+        return true;
+    }
+
+
+    function hasPopup(el) {
+        var elErrors = el.parentNode.querySelectorAll(":scope > .popup-invalid-anchor");
         if (attachGrandparent) {
-            elErrors = el.parentNode.parentNode.querySelectorAll(":scope > .bubble-invalid-anchor");
+            elErrors = el.parentNode.parentNode.querySelectorAll(":scope > .popup-invalid-anchor");
         }
         for (var i = 0; i < elErrors.length; i++) {
             // console.log(`found-a ${i + 1}of${elErrors.length} - oldID${oldChild.getAttribute('id')} `);
@@ -68,10 +90,10 @@ function Validator(argForm) {
 
 
     // removing previous message from element el
-    function clearBubble(el) {
-        var elErrors = el.parentNode.querySelectorAll(":scope > .bubble-invalid-anchor");
+    function clearPopup(el) {
+        var elErrors = el.parentNode.querySelectorAll(":scope > .popup-invalid-anchor");
         if (attachGrandparent) {
-            elErrors = el.parentNode.parentNode.querySelectorAll(":scope > .bubble-invalid-anchor");
+            elErrors = el.parentNode.parentNode.querySelectorAll(":scope > .popup-invalid-anchor");
         }
         for (var i = 0; i < elErrors.length; i++) {
             var oldChild = elErrors[i].parentNode.removeChild(elErrors[i]);
@@ -81,16 +103,17 @@ function Validator(argForm) {
 
 
     // removing any previous custom messages
-    function clearAllBubbles() {
-        var errorMessages = form.querySelectorAll(".bubble-invalid-anchor");
+    function clearAllPopups() {
+        var errorMessages = form.querySelectorAll(".popup-invalid-anchor");
         for (var i = 0; i < errorMessages.length; i++) {
             var oldChild = errorMessages[i].parentNode.removeChild(errorMessages[i]);
             // console.log(`removed-b ${i + 1}of${errorMessages.length} - oldID${oldChild.getAttribute('id')} `);
         }
     }
 
-    // clearing and re-creating a custom message right-beside or -below DOM element el
-    function showBubble(el, msg, overrideCheckValidity) {
+    // clearing and re-creating a custom message 
+    // right-beside or -below DOM element el
+    function showPopup(el, msg, overrideCheckValidity) {
 
         if (!el) {
             console.log("flagInvalid() el not defined - return ");
@@ -105,9 +128,9 @@ function Validator(argForm) {
         }
 
         if (onlyOne) {
-            clearAllBubbles();
+            clearAllPopups();
         } else {
-            clearBubble(el);
+            clearPopup(el);
         }
 
         if (!el.checkValidity() || overrideCheckValidity === true) {
@@ -118,8 +141,8 @@ function Validator(argForm) {
             // el.validationMessage is mathematical has is always in browser local
             parent.insertAdjacentHTML(
                 "beforeend",
-                `<div class='bubble-invalid-anchor'  id='err-${el.getAttribute('name')}' >
-                    <div class='bubble-invalid-content'>
+                `<div class='popup-invalid-anchor'  id='err-${el.getAttribute('name')}' >
+                    <div class='popup-invalid-content'>
                     ${msg}
                     </div>
                 </div>`
@@ -130,16 +153,16 @@ function Validator(argForm) {
 
     // for onsubmit
     // for each invalid input element of a form
-    // a bubble message is displayed right-next or -below
-    function onSubmitCustomBubblesForInvalids(event) {
+    // a custom popup message is displayed right-next or -below
+    function onSubmitCustomPopupsForInvalids(event) {
 
-        clearAllBubbles();
+        clearAllPopups();
 
         // insert new messages at the end of parent
         // `this` to select descendents of <form> - excluding invalid <form> itself 
         var invalidFields = this.querySelectorAll(":invalid");
         for (var i = 0; i < invalidFields.length; i++) {
-            showBubble(invalidFields[i]);
+            showPopup(invalidFields[i]);
             if (onlyOne) {
                 break;
             }
@@ -160,7 +183,7 @@ function Validator(argForm) {
 
 
 
-    this.validateFormWithCustomBubbles = function() {
+    this.ValidateFormWithCustomPopups = function() {
 
 
         if (suppressBuiltinBubbles == 1) {
@@ -216,24 +239,24 @@ function Validator(argForm) {
             console.log(`suppressBuiltinBubbles complete`);
         }
 
-        // add custom bubbles
+        // add custom popups
         form.addEventListener(
             "submit",
-            onSubmitCustomBubblesForInvalids,
+            onSubmitCustomPopupsForInvalids,
             true
         );
-        console.log(`on submit: custom bubbles for invalids attached`);
+        console.log(`on submit: custom popups for invalids attached`);
 
 
     }
 
 
 
-    // showing custom bubbles on form submit is too late?
+    // showing custom popups on form submit is too late?
     //   => show them on blur
-    this.showBubbleOnBlurOrInput = function() {
+    this.ShowPopupOnBlurOrInput = function() {
 
-        // if we dont apply validateFormWithCustomBubbles(),
+        // if we dont apply ValidateFormWithCustomPopups(),
         // then we still need this for standalone functionality
         form.setAttribute("novalidate", true);
 
@@ -241,16 +264,16 @@ function Validator(argForm) {
             // event.target.reportValidity();
             if (onInputRemove && event.type == "input") {
                 if (event.target.checkValidity()) {
-                    clearBubble(event.target);
+                    clearPopup(event.target);
                 }
             } else {
-                showBubble(event.target);
+                showPopup(event.target);
             }
             var lgMsg = "blur";
             if (onInputShowAndRemove || onInputRemove) {
                 lgMsg = "blur+input";
             }
-            console.log(`  ${ lgMsg } inp.reportValidity() ${event.target.getAttribute('name')} ${event.target.checkValidity()}`);
+            console.log(`  ${lgMsg} inp.reportValidity() ${event.target.getAttribute('name')} ${event.target.checkValidity()}`);
             if (lockFocus) {
                 if (event.type == "blur") {
                     if (!event.target.checkValidity()) {
@@ -271,14 +294,14 @@ function Validator(argForm) {
 
             if (onFocusRemove) { // remove on entering input
                 var removeOnEntering = function (event) {
-                    clearBubble(event.target);
+                    clearPopup(event.target);
                 };
                 inp.addEventListener("focus", removeOnEntering);    
             } else {
                 var flagOnEntry = function (event) {
                     if (!event.target.checkValidity()) {
-                        // console.log(`  show bubble on focus -  ${event.target.name}`)
-                        showBubble(event.target);
+                        // console.log(`  show popup on focus -  ${event.target.name}`)
+                        showPopup(event.target);
                     }
                 };
                 inp.addEventListener("focus", flagOnEntry);

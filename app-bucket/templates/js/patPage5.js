@@ -15,7 +15,7 @@ function validateForm(event) {
 
 
     for (var i1 = 0, lenght1 = nameInputs.length; i1 < lenght1; i1++) {
-        var radioName = nameInputs[i1]; 
+        var radioName = nameInputs[i1];
         var radios1 = document.getElementsByName(radioName);
         for (var i2 = 0, lenght2 = radios1.length; i2 < lenght2; i2++) {
             if (radios1[i2].checked) {
@@ -31,13 +31,13 @@ function validateForm(event) {
     console.log(strInputs);
     console.log(intInputs);
     // event.preventDefault(); // not only return false - but also preventDefault()
-    // return false;             
+    // return false;
 
-  
+
     var sum = intInputs[0] + intInputs[1] + intInputs[2] + intInputs[3] + intInputs[4] + intInputs[5];
     console.log("sum",sum);
 
-    if (sum > 0) {        
+    if (sum > 0) {
         if (intInputs[0] == 0 || intInputs[1] == 0 || intInputs[3] == 0 || intInputs[3] == 0 || intInputs[4] == 0 || intInputs[5] == 0 ) {
             // alert("{{.msg}}");
             var doContinue = window.confirm("{{.msg}}");
@@ -45,8 +45,18 @@ function validateForm(event) {
                 return true;
             }
             event.preventDefault(); // not only return false - but also preventDefault()
-            return false;            
+            return false;
         }
+    }
+
+    if (sum == 12) {
+        // alert("{{.msg}}");
+        var doContinue = window.confirm("Wollen Sie wirklich alle Optionen auf 'nicht verfübar setzen' oder wollen Sie Ihre Antworten noch verändern?");
+        if (doContinue) {
+            return true;
+        }
+        event.preventDefault(); // not only return false - but also preventDefault()
+        return false;
     }
 
     return true;
@@ -56,5 +66,5 @@ function validateForm(event) {
 
 var frm = document.forms.frmMain;
 if (frm) {
-    frm.addEventListener('submit', validateForm);    
+    frm.addEventListener('submit', validateForm);
 }

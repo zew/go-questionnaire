@@ -134,6 +134,11 @@ func politicalFoundations(q *QuestionnaireT, seq0to5 int, questionID string, ppl
 		img + img + img + img + img + img,
 	}
 
+	explain := ""
+	if seq0to5 == 0 {
+		explain, _, _ = PoliticalFoundationsPretext(q, seq0to5, 0)
+	}
+
 	s := fmt.Sprintf(`
 
 	
@@ -150,8 +155,10 @@ func politicalFoundations(q *QuestionnaireT, seq0to5 int, questionID string, ppl
 	</span>
 </p>
 
+%v
 <div class="vspacer-08"> &nbsp; </div>
 <div class="vspacer-08"> &nbsp; </div>
+
 
 <div id="t01">
 
@@ -230,6 +237,7 @@ func politicalFoundations(q *QuestionnaireT, seq0to5 int, questionID string, ppl
 </div>
 	`,
 		seq0to5+1,
+		explain,
 		imgs[ppls[0][0]], imgs[ppls[0][1]], imgs[ppls[0][2]],
 		inputValsOptiongroup[0], inputValsCheckbox[0],
 

@@ -74,7 +74,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 				<p>In dieser Umfrage gibt es keine richtigen oder falschen Antworten. 
 				Bitte entscheiden Sie daher immer gemäß Ihren persönlichen Ansichten. 
-				Sie werden dabei vollständig anonym bleiben.
+				Selbstverständlich sichern wir Ihnen dabei eine streng vertrauliche Behandlung Ihrer Antworten zu.
 				</p>
 
 				<br>
@@ -154,13 +154,13 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				<div class='vspacer-08'> &nbsp; </div>
 
 				<p>
-					Fünf deutsche Staatsangehörige haben an einer Vorstudie teilgenommen. Jede Person gab an, welche Stiftung sie als am besten, mittel, beziehungsweise am schlechtesten erachtet.
+					Fünf deutsche Staatsangehörige haben an einer Vorstudie teilgenommen. Jede dieser fünf Personen hat in der Vorstudie angegeben, welche Stiftung sie als am besten, mittel, beziehungsweise am schlechtesten erachtet.
 				</p>
 				<p>
-					Wir sind nun daran interessiert, wie Sie die fünf individuellen Präferenzen in eine Gruppenentscheidung zusammenfassen, an welche Stiftung die 30&nbsp;€ gehen sollen. Bevorzugen Sie beispielsweise eher eine Kompromisslösung oder eher eine Mehrheitslösung? Ihre eigene Meinung über die Stiftungen soll dabei keine Rolle spielen. Deshalb werden wir die Stiftungen als Stiftung A, B und C anonymisieren.
+					Wir sind nun daran interessiert, wie Sie die fünf individuellen Präferenzen in eine Gruppenentscheidung zusammenfassen, an welche Stiftung die 30&nbsp;€ gehen sollen. Bevorzugen Sie beispielsweise eher eine Kompromisslösung oder eher eine Mehrheitslösung? Ihre eigene Meinung über die Stiftungen soll dabei keine Rolle spielen. Deshalb sind die Stiftungen im Folgenden als Stiftung A, B und C anonymisiert.
 				</p>
 				<p>
-					Sie werden sechs solcher Entscheidungen treffen. Eine davon betrifft die echten Präferenzen der Gruppenmitglieder aus der Vorstudie. Da Sie nicht wissen, welche Entscheidung dies ist, bitten wir Sie, in allen Fällen anzunehmen, dass Ihre Entscheidung tatsächlich umgesetzt wird.
+					Sie werden insgesamt sechs Entscheidungen treffen, wie die Präferenzen der Gruppe zusammengefasst werden sollen. Eine der sechs Entscheidungen stellt die echten Präferenzen der Gruppenmitglieder aus der Vorstudie dar und kann daher zufällig ausgewählt und tatsächlich umgesetzt werden. Da Sie nicht wissen, welche Entscheidung die echten Präferenzen darstellt, bitten wir Sie, in allen Fällen anzunehmen, dass die jeweilige Entscheidung tatsächlich umgesetzt wird.
 				</p>
 				
 				`}
@@ -200,113 +200,27 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			}
 		}
 
-		/*
-
-			// gr1
-			{
-				gr := page.AddGroup()
-				gr.Cols = 1
-				gr.BottomVSpacers = 1
-				gr.RandomizationGroup = 1 - 1
-				// q1-pretext
-				{
-					inp := gr.AddInput()
-					inp.Type = "dyn-composite"
-					inp.ColSpanControl = 1
-					inp.DynamicFunc = "PoliticalFoundationsPretext__0__0"
-				}
-			}
-
-			// gr2
-			{
-				gr := page.AddGroup()
-				gr.Cols = 1
-				gr.BottomVSpacers = 1
-				gr.RandomizationGroup = 1 - 1
-
-				// q1a
-				{
-					inp := gr.AddInput()
-					inp.Type = "dyn-composite"
-					inp.ColSpanControl = 1
-					inp.DynamicFunc = "PoliticalFoundations__0__0"
-				}
-				_, inputNames, _ := qst.PoliticalFoundations(nil, 0, 0)
-				for _, inpName := range inputNames {
-					inp := gr.AddInput()
-					inp.Type = "dyn-composite-scalar"
-					inp.Name = inpName + "_page0"
-				}
-
-			}
-
-			// gr3
-			{
-				gr := page.AddGroup()
-				gr.Cols = 1
-				gr.BottomVSpacers = 2
-				{
-					inp := gr.AddInput()
-					inp.Type = "textblock"
-					inp.Desc = trl.S{"de": `
-					<p>
-					Die Stiftungen wurden anonymisiert und in eine zufällige Reihenfolge gebracht, so dass Sie nicht wissen,
-					um welche Stiftung es sich bei den Stiftungen A, B und C handelt.
-					Sie entscheiden also nicht darüber, welche Stiftung die 30&nbsp;€ erhält.
-					Stattdessen entscheiden Sie, wie die Präferenzen der Gruppenmitglieder in <i>eine</i> Entscheidung zusammengefasst werden
-					und ob Sie beispielsweise eher eine Kompromisslösung oder eher eine Mehrheitslösung für Ihre Gruppe bevorzugen.
-					</p>
-					`}
-				}
-			}
-
-			// gr4
-			{
-				gr := page.AddGroup()
-				gr.Cols = 1
-				{
-					inp := gr.AddInput()
-					inp.Type = "textblock"
-					inp.Desc = trl.S{
-						"de": `
-					<span style="display: inline-block; font-size:87%; line-height: 120%;">
-
-					<sup>1)</sup>
-					Nur in einer der sechs Entscheidungen stammen die Präferenzen von den Personen, die wir befragt haben, und nur diese Entscheidung kann umgesetzt werden. In den anderen Entscheidungen wurden die Präferenzen von uns zusammengestellt. Da Sie nicht wissen, in welcher Entscheidung die Präferenzen von den Befragten stammen, sollten Sie in allen sechs Entscheidungen so entscheiden, als seien die jeweiligen Präferenzen von der echten Gruppe.
-					</span>
-					`,
-					}
-				}
-			}
-		*/
-
-		// gr0
-		/* 			gr := page.AddGroup()
-		   			gr.Cols = 2
-		   			gr.BottomVSpacers = 2
-		   			{
-		   				inp := gr.AddInput()
-		   				inp.ColSpan = 2
-		   				inp.ColSpanLabel = 2
-		   				inp.Type = "textblock"
-		   				inp.Desc = trl.S{"de": `
-		   			<p>
-		   			Entscheiden Sie im Folgenden, an welche Stiftung das Geld gehen soll.
-		   			<b>Setzen Sie dazu bei der entsprechenden Stiftung ein Kreuz in der Spalte „Auswahl“.</b>
-		   			Falls Sie eine zweite oder dritte Alternative als genauso gut empfinden,
-		   			setzen Sie ein Kreuz in der Spalte „Gleich gut“.
-		   			Berücksichtigen Sie dabei bitte die dargestellten Präferenzen der Gruppenmitglieder.
-		   			</p>
-		   			`}
-		   			}
-		*/
 		// loop over matrix questions
 		for i := 0; i < 3; i++ {
+
+			// if i == 0 {
+			// 	// explanation after first question
+			// 	gr := page.AddGroup()
+			// 	gr.Cols = 1
+			// 	gr.BottomVSpacers = 3
+			// 	gr.RandomizationGroup = 1 - 1
+			// 	inp := gr.AddInput()
+			// 	inp.Type = "dyn-composite"
+			// 	inp.ColSpanControl = 1
+			// 	inp.DynamicFunc = "PoliticalFoundationsPretext__0__0"
+			// }
+
 			{
 				gr := page.AddGroup()
 				gr.Cols = 1
 				if i == 0 {
 					gr.BottomVSpacers = 1 // because explanation
+					gr.BottomVSpacers = 3
 				} else {
 					gr.BottomVSpacers = 3
 				}
@@ -324,18 +238,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 					inp := gr.AddInput()
 					inp.Type = "dyn-composite-scalar"
 					inp.Name = inpName
-				}
-
-				if i == 0 {
-					// explanation after first question
-					gr := page.AddGroup()
-					gr.Cols = 1
-					gr.BottomVSpacers = 3
-					gr.RandomizationGroup = 1 - 1
-					inp := gr.AddInput()
-					inp.Type = "dyn-composite"
-					inp.ColSpanControl = 1
-					inp.DynamicFunc = "PoliticalFoundationsPretext__0__0"
 				}
 
 			}
@@ -504,17 +406,15 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Desc = trl.S{
 					"de": `
 					<p>
-						Nun kommen wir zum zweiten Teil unserer Studie. In diesem Teil treffen Sie eine Entscheidung für einen deutschen Staatsangehörigen, der Ihnen zugeordnet ist und der an einer zukünftigen Studie teilnimmt. Diese Person wird sich entscheiden, wie ihm das Entgelt für die Studienteilnahme ausbezahlt wird. Je eher er bereit ist, auf sein Geld zu warten, desto mehr werden wir ihm insgesamt bezahlen.
-						
+						Nun kommen wir zum zweiten Teil unserer Studie. 
+						In diesem Teil treffen Sie eine Entscheidung für einen deutschen Staatsangehörigen, der Ihnen zugeordnet ist und der an einer zukünftigen Studie teilnimmt. Diese Person wird in der Studie entscheiden, wie ihr das Entgelt für die Studienteilnahme ausbezahlt wird. Je eher diese Person bereit ist, auf ihr Geld zu warten, desto mehr Geld wird ihr insgesamt bezahlt.						
 					</p>
 					<p>
-						Wir bitten Sie, zu entscheiden, wie geduldig oder wie ungeduldig die Person wählen kann: Für jede von drei Optionen bestimmen Sie, ob sie der Person zur Verfügung stehen soll oder nicht. Falls Sie mehrere Optionen verfügbar machen, kann die Person aus diesen wählen. Mindestens eine Option muss „Verfügbar“ sein. 
+						Wir bitten Sie, zu entscheiden, wie geduldig oder wie ungeduldig die Person wählen kann. Dazu bestimmen Sie für jede von drei Optionen, ob sie der Person zur Verfügung stehen soll oder nicht. Falls Sie mehrere Optionen verfügbar machen, kann die Person aus diesen wählen. Mindestens eine Option muss „Verfügbar“ sein.
 					</p>
 
 					<p style="font-size: 87%;">
-
 						Details: Die nicht verfügbaren Optionen werden der Person nicht als Auswahloptionen angezeigt. Bei verfügbar gemachten Optionen können Sie zusätzlich „Von dieser Option abraten“ ankreuzen. In diesem Fall erhält die Person die Botschaft: „Ein früherer Teilnehmer dieser Studie rät Ihnen davon ab, diese Option zu wählen”.
-
 					</p>
 					<br>
 
@@ -606,6 +506,9 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		page.Short = trl.S{"de": "Gruppen-<br>präferenzen"}
 		page.Style = css.DesktopWidthMaxForPages(page.Style, "36rem") // 60
 
+		page.ValidationFuncName = "patPage6"
+		page.ValidationFuncMsg = trl.S{"de": "Wollen Sie wirklich weiterfahren, ohne dass sich Ihre Eintraege auf 10 summieren?"}
+
 		// gr0
 		{
 			gr := page.AddGroup()
@@ -619,10 +522,9 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 					"de": `
 					<p>
 					<b>Frage 2. </b>
-					Schätzen Sie bitte: Wie viele Mitglieder einer Gruppe von 10 zufällig 
-					ausgewählten Personen wählen jeweils die folgenden Optionen A, B und C,
+						Schätzen Sie bitte: Wie viele Mitglieder einer Gruppe von 10 zufällig ausgewählten Personen, die an einer solchen Studie teilnehmen, wählen jeweils die folgenden Optionen A, B und C, 
 					<b>
-					wenn sie sich jeweils für genau eine der drei Optionen entscheiden müssen?					
+						wenn sie sich jeweils für genau eine der drei Optionen entscheiden müssen?					
 					</b>
 
 					<br>
@@ -959,14 +861,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 			{
 				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.ColSpan = 2
-				// inp.ColSpanLabel = 2
-				inp.Desc = trl.S{"de": "Vielen Dank für das Ausfüllen dieser Umfrage! "}
-			}
-
-			{
-				inp := gr.AddInput()
 				inp.Type = "button"
 				inp.Name = "finished"
 				inp.Name = "submitBtn"
@@ -1001,12 +895,20 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			// Only one group => shuffling is no problem
 			gr := page.AddGroup()
 			gr.Cols = 1
-
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
 				inp.Desc = cfg.Get().Mp["entries_saved"]
 			}
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.ColSpan = 1
+				// inp.ColSpanLabel = 2
+				inp.Desc = trl.S{"de": "Vielen Dank für das Ausfüllen dieser Umfrage! "}
+			}
+
 		}
 
 	}

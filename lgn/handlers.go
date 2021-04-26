@@ -370,7 +370,7 @@ func GenerateHashesH(w http.ResponseWriter, r *http.Request) {
 
 		url := fmt.Sprintf("%v?%v", fe.Host+cfg.PrefTS(), queryString)
 
-		fmt.Fprintf(b1, "<a href='%v'  target='_blank' >login as user %4v<a> ", url, i)
+		fmt.Fprintf(b1, "<a href='%v'  target='_blank' >login as user %4v<a> \t ", url, i)
 		fmt.Fprintf(b2, "%4v\t\t%v\n", i, url)
 
 		fmt.Fprint(b1, " &nbsp; &nbsp; &nbsp; &nbsp; ")

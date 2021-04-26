@@ -10,15 +10,15 @@
  			"en": "Indicator of Economic Sentiment"
  		},
  		"year": 2021,
- 		"month": 4,
- 		"deadline": "2021-04-12T17:15:00+02:00",
+ 		"month": 5,
+ 		"deadline": "2021-05-17T17:15:00+02:00",
  		"params": [
  			{},
  			{}
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "3ca3d432435d9db2cb093acf2f88965e5fda63ca892199eb03efd47fb71e8726",
+ 	"md_5": "5ce8fe7bdf09444fe7dbb13dc3041c2c97fde12763c4db289578e7df51878c9f",
  	"lang_codes": [
  		"de",
  		"en"
@@ -4498,23 +4498,23 @@
  		},
  		{
  			"label": {
- 				"de": "Sonderfrage: Kurz- und mittelfristiges Wirtschaftswachstum",
- 				"en": "Special: Short and Medium Term Economic Growth"
+ 				"de": "Sonderfragen zur Einlagensicherung",
+ 				"en": "Special: Deposit insurance"
  			},
  			"description": {
  				"de": "",
  				"en": ""
  			},
  			"short": {
- 				"de": "Wachstum",
- 				"en": "Growth"
+ 				"de": "Sonderfrage:\u003cbr\u003eEinlagensicherung",
+ 				"en": "Special:\u003cbr\u003eDeposit Insurance"
  			},
  			"navi_num": 6,
  			"style": {
  				"desktop": {
  					"grid_container_style": {},
  					"box_style": {
- 						"width_max": "42rem"
+ 						"width_max": "46rem"
  					},
  					"grid_item_style": {},
  					"text_style": {}
@@ -4537,8 +4537,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e1.\u003c/b\u003e \n\t\t\t\tPunktprognose der Wachstumsrate des deutschen BIP \u003cbr\u003e\n\t\t\t\t\u003cdiv class='vspacer-08' \u003e\u003c/div\u003e\n\t\t\t\t\u003cp style='font-size: 90%'\u003e\n\t\t\t\tBei den Quartalwerten bitte nicht-annualisiertes Quartalswachstum \n\t\t\t\t\t\tdes realen \u0026 saisonbereinigten BIP angeben. \n\t\t\t\tBei den Jahreswerten die Jahreswachstumsrate des realen BIP.\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t",
- 								"en": "\u003cb\u003e1.\u003c/b\u003e \n\t\t\t\tGerman GDP growth rate - point forecast \u003cbr\u003e\n\t\t\t\t\u003cdiv class='vspacer-08' \u003e\u003c/div\u003e\n\t\t\t\t\u003cp style='font-size: 90%'\u003e\n\t\t\t\tFor the quarterly values, please quote the non-annualized quarterly growth\n\t\t\t\t\t\tof the real \u0026 seasonal adjusted GDP.\n\t\t\t\tFor the yearly values, please quote the yearly growth rate of the real GDP.\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\tDer Entschädigungs\u0026shy;fall der Bremer Greensill Bank, \n\t\t\t\t\tder die gesetzlichen und freiwilligen Si\u0026shy;cherungssysteme \n\t\t\t\t\tdes privaten Bankenverbands 3,1\u0026nbsp;Milliarden Euro gekostet hat, \n\t\t\t\t\that das Thema Einlagensi\u0026shy;cherung wieder ins Bewusstsein gerufen.\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t",
+ 								"en": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\tDer Entschädigungs\u0026shy;fall der Bremer Greensill Bank, \n\t\t\t\t\tder die gesetzlichen und freiwilligen Si\u0026shy;cherungssysteme \n\t\t\t\t\tdes privaten Bankenverbands 3,1\u0026nbsp;Milliarden Euro gekostet hat, \n\t\t\t\t\that das Thema Einlagensi\u0026shy;cherung wieder ins Bewusstsein gerufen.\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 12,
  							"col_span_label": 1
@@ -4546,464 +4546,72 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Prognose \u003cbx\u003eQuartal\u003c/bx\u003e",
- 								"en": "Forecast \u003cbx\u003eQuarter\u003c/bx\u003e"
+ 								"de": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003cb\u003e1.\u003c/b\u003e \n\t\t\t\t\tAuch öffentliche Gläubiger der Greensill Bank wurden entschädigt, unter anderem der Kölner Stadtwerke-Konzern sowie die Rundfunkanstalten NDR und Südwestrundfunk. Sollten die deutschen Einlagen\u0026shy;si\u0026shy;cherungs\u0026shy;fonds zukünftig nur private Anleger entschädigen dürfen?\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t",
+ 								"en": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003cb\u003e1.\u003c/b\u003e \n\t\t\t\t\tAuch öffentliche Gläubiger der Greensill Bank wurden entschädigt, unter anderem der Kölner Stadtwerke-Konzern sowie die Rundfunkanstalten NDR und Südwestrundfunk. Sollten die deutschen Einlagen\u0026shy;si\u0026shy;cherungs\u0026shy;fonds zukünftig nur private Anleger entschädigen dürfen?\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 12,
- 							"col_span_label": 1,
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"position": "relative",
- 										"top": "0.6rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"col_span_label": 1
  						},
  						{
- 							"name": "pprwbipq1",
- 							"type": "number",
- 							"max_chars": 4,
- 							"step": 0.01,
- 							"min": -20,
- 							"max": 20,
+ 							"name": "di_private_investors_only",
+ 							"type": "radio",
  							"label": {
- 								"de": "Q2 2021",
- 								"en": "Q2 2021"
+ 								"de": "Ja",
+ 								"en": "Yes"
  							},
- 							"suffix": {
- 								"de": "%",
- 								"en": "pct"
- 							},
- 							"col_span": 3,
- 							"col_span_label": 1,
+ 							"col_span": 4,
+ 							"col_span_label": 4,
  							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {
- 										"auto_flow": "column",
- 										"template_columns": "none ",
- 										"template_rows": "0.9fr 1fr"
- 									},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
+ 							"value_radio": "yes",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {
- 										"padding": "0 0.2rem 0 0"
+ 										"padding": "0 1.0rem 0 0"
  									},
- 									"grid_item_style": {
- 										"justify_self": "end"
- 									},
- 									"text_style": {}
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
  								},
  								"mobile": {
  									"grid_container_style": {},
  									"box_style": {
- 										"padding": " 0 2.7rem 0 0.2rem"
+ 										"padding": " 0 0.5rem 0 0"
  									},
- 									"grid_item_style": {
- 										"justify_self": "start"
- 									},
+ 									"grid_item_style": {},
  									"text_style": {}
  								}
  							}
  						},
  						{
- 							"name": "pprwbipq2",
- 							"type": "number",
- 							"max_chars": 4,
- 							"step": 0.01,
- 							"min": -20,
- 							"max": 20,
+ 							"name": "di_private_investors_only",
+ 							"type": "radio",
  							"label": {
- 								"de": "Q3 2021",
- 								"en": "Q3 2021"
+ 								"de": "Nein",
+ 								"en": "No"
  							},
- 							"suffix": {
- 								"de": "%",
- 								"en": "pct"
- 							},
- 							"col_span": 3,
- 							"col_span_label": 1,
+ 							"col_span": 4,
+ 							"col_span_label": 4,
  							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {
- 										"auto_flow": "column",
- 										"template_columns": "none ",
- 										"template_rows": "0.9fr 1fr"
- 									},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
+ 							"value_radio": "no",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {
- 										"padding": "0 0.2rem 0 0"
+ 										"padding": "0 1.0rem 0 0"
  									},
- 									"grid_item_style": {
- 										"justify_self": "end"
- 									},
- 									"text_style": {}
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
  								},
  								"mobile": {
  									"grid_container_style": {},
  									"box_style": {
- 										"padding": " 0 2.7rem 0 0.2rem"
- 									},
- 									"grid_item_style": {
- 										"justify_self": "start"
- 									},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "pprwbipq3",
- 							"type": "number",
- 							"max_chars": 4,
- 							"step": 0.01,
- 							"min": -20,
- 							"max": 20,
- 							"label": {
- 								"de": "Q4 2021",
- 								"en": "Q4 2021"
- 							},
- 							"suffix": {
- 								"de": "%",
- 								"en": "pct"
- 							},
- 							"col_span": 3,
- 							"col_span_label": 1,
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {
- 										"auto_flow": "column",
- 										"template_columns": "none ",
- 										"template_rows": "0.9fr 1fr"
- 									},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.2rem 0 0"
- 									},
- 									"grid_item_style": {
- 										"justify_self": "end"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": " 0 2.7rem 0 0.2rem"
- 									},
- 									"grid_item_style": {
- 										"justify_self": "start"
- 									},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "pprwbipq4",
- 							"type": "number",
- 							"max_chars": 4,
- 							"step": 0.01,
- 							"min": -20,
- 							"max": 20,
- 							"label": {
- 								"de": "Q1 2022",
- 								"en": "Q1 2022"
- 							},
- 							"suffix": {
- 								"de": "%",
- 								"en": "pct"
- 							},
- 							"col_span": 3,
- 							"col_span_label": 1,
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {
- 										"auto_flow": "column",
- 										"template_columns": "none ",
- 										"template_rows": "0.9fr 1fr"
- 									},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.2rem 0 0"
- 									},
- 									"grid_item_style": {
- 										"justify_self": "end"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": " 0 2.7rem 0 0.2rem"
- 									},
- 									"grid_item_style": {
- 										"justify_self": "start"
- 									},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "Prognose  \u003cbx\u003eJahr\u003c/bx\u003e",
- 								"en": "Forecast  \u003cbx\u003eYear\u003c/bx\u003e"
- 							},
- 							"col_span": 12,
- 							"col_span_label": 1,
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"position": "relative",
- 										"top": "0.6rem"
+ 										"padding": " 0 0.5rem 0 0"
  									},
  									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "pprwbipj1",
- 							"type": "number",
- 							"max_chars": 5,
- 							"step": 0.01,
- 							"min": -20,
- 							"max": 20,
- 							"label": {
- 								"de": "2021",
- 								"en": "2021"
- 							},
- 							"suffix": {
- 								"de": "%",
- 								"en": "pct"
- 							},
- 							"col_span": 3,
- 							"col_span_label": 1,
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {
- 										"auto_flow": "column",
- 										"template_columns": "none ",
- 										"template_rows": "0.9fr 1fr"
- 									},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.2rem 0 0"
- 									},
- 									"grid_item_style": {
- 										"justify_self": "end"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": " 0 1.5rem 0 0.2rem"
- 									},
- 									"grid_item_style": {
- 										"justify_self": "start"
- 									},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "pprwbipj2",
- 							"type": "number",
- 							"max_chars": 5,
- 							"step": 0.01,
- 							"min": -20,
- 							"max": 20,
- 							"label": {
- 								"de": "2022",
- 								"en": "2022"
- 							},
- 							"suffix": {
- 								"de": "%",
- 								"en": "pct"
- 							},
- 							"col_span": 3,
- 							"col_span_label": 1,
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {
- 										"auto_flow": "column",
- 										"template_columns": "none ",
- 										"template_rows": "0.9fr 1fr"
- 									},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.2rem 0 0"
- 									},
- 									"grid_item_style": {
- 										"justify_self": "end"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": " 0 1.5rem 0 0.2rem"
- 									},
- 									"grid_item_style": {
- 										"justify_self": "start"
- 									},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "pprwbipj3",
- 							"type": "number",
- 							"max_chars": 5,
- 							"step": 0.01,
- 							"min": -20,
- 							"max": 20,
- 							"label": {
- 								"de": "2023",
- 								"en": "2023"
- 							},
- 							"suffix": {
- 								"de": "%",
- 								"en": "pct"
- 							},
- 							"col_span": 3,
- 							"col_span_label": 1,
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {
- 										"auto_flow": "column",
- 										"template_columns": "none ",
- 										"template_rows": "0.9fr 1fr"
- 									},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.2rem 0 0"
- 									},
- 									"grid_item_style": {
- 										"justify_self": "end"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": " 0 1.5rem 0 0.2rem"
- 									},
- 									"grid_item_style": {
- 										"justify_self": "start"
- 									},
  									"text_style": {}
  								}
  							}
@@ -5011,15 +4619,15 @@
  					]
  				},
  				{
- 					"bottom_vspacers": 1,
+ 					"bottom_vspacers": 3,
  					"columns": 6,
  					"odd_rows_coloring": true,
  					"inputs": [
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e2.\u003c/b\u003e Haben Entwicklungen in den folgenden Bereichen Sie zu einer Revision Ihrer Konjunkturprognosen für die deutsche Wirt\u0026shy;schaft bewogen?",
- 								"en": "\u003cb\u003e2.\u003c/b\u003e Which de\u0026shy;vel\u0026shy;op\u0026shy;ments have lead you to change your assessment of the busi\u0026shy;ness cycle outlook for the German econ\u0026shy;o\u0026shy;my?"
+ 								"de": "\u003cb\u003e2.\u003c/b\u003e \n\t\t\t\t\tWelche Reformen sind ge\u0026shy;eig\u0026shy;net, um das Schadensfallrisiko im Falle einer Bankeninsolvenz zu mindern bzw. die Schadensfallsumme für die Einlagensi\u0026shy;cherung einzugrenzen? \n\n\t\t\t\t\t",
+ 								"en": "\u003cb\u003e2.\u003c/b\u003e \n\t\t\t\t\tWelche Reformen sind ge\u0026shy;eig\u0026shy;net, um das Schadensfallrisiko im Falle einer Bankeninsolvenz zu mindern bzw. die Schadensfallsumme für die Einlagensi\u0026shy;cherung einzugrenzen? \n\n\t\t\t\t\t"
  							},
  							"col_span": 6,
  							"col_span_label": 1
@@ -5027,10 +4635,10 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "stark po\u0026shy;si\u0026shy;tiv",
- 								"en": "strong\u0026shy;ly pos\u0026shy;itive"
+ 								"de": "sehr ge\u0026shy;eig\u0026shy;net",
+ 								"en": "sehr ge\u0026shy;eig\u0026shy;net"
  							},
- 							"col_span_label": 2,
+ 							"col_span_label": 4,
  							"col_span_control": 1,
  							"style": {
  								"desktop": {
@@ -5072,52 +4680,8 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "po\u0026shy;si\u0026shy;tiv",
- 								"en": "pos\u0026shy;itive"
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "kein Ein\u0026shy;fluss",
- 								"en": "no in\u0026shy;flu\u0026shy;ence"
+ 								"de": "ge\u0026shy;eig\u0026shy;net",
+ 								"en": "ge\u0026shy;eig\u0026shy;net"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -5160,8 +4724,8 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "ne\u0026shy;ga\u0026shy;tiv",
- 								"en": "neg\u0026shy;ative"
+ 								"de": "neu\u0026shy;tral",
+ 								"en": "neu\u0026shy;tral"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -5204,8 +4768,52 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "stark ne\u0026shy;ga\u0026shy;tiv",
- 								"en": "strong\u0026shy;ly neg\u0026shy;ative"
+ 								"de": "wenig ge\u0026shy;eig\u0026shy;net",
+ 								"en": "wenig ge\u0026shy;eig\u0026shy;net"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "über\u0026shy;haupt nicht ge\u0026shy;eig\u0026shy;net",
+ 								"en": "über\u0026shy;haupt nicht ge\u0026shy;eig\u0026shy;net"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -5291,13 +4899,13 @@
  							}
  						},
  						{
- 							"name": "rev_bus_cycle_ger",
+ 							"name": "di_liability_investor",
  							"type": "radio",
  							"label": {
- 								"de": "Kon\u0026shy;junk\u0026shy;tur\u0026shy;da\u0026shy;ten Deutsch\u0026shy;land",
- 								"en": "Busi\u0026shy;ness cycle data Germany"
+ 								"de": "Anleger tragen im Entschädigungs\u0026shy;fall einen kleinen Selbstanteil (z.B.\u0026nbsp;5-15%)",
+ 								"en": "Anleger tragen im Entschädigungs\u0026shy;fall einen kleinen Selbstanteil (z.B.\u0026nbsp;5-15%)"
  							},
- 							"col_span_label": 2,
+ 							"col_span_label": 4,
  							"col_span_control": 1,
  							"value_radio": "1",
  							"style_label": {
@@ -5318,44 +4926,44 @@
  							}
  						},
  						{
- 							"name": "rev_bus_cycle_ger",
+ 							"name": "di_liability_investor",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "rev_bus_cycle_ger",
+ 							"name": "di_liability_investor",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "rev_bus_cycle_ger",
+ 							"name": "di_liability_investor",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "rev_bus_cycle_ger",
+ 							"name": "di_liability_investor",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "rev_bus_cycle_ger",
+ 							"name": "di_liability_investor",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
  							"value_radio": "6"
  						},
  						{
- 							"name": "rev_exp_markets",
+ 							"name": "di_self_regulation",
  							"type": "radio",
  							"label": {
- 								"de": "Ex\u0026shy;port\u0026shy;märkte",
- 								"en": "Export markets"
+ 								"de": "Schärfere Prüfung und Über\u0026shy;wa\u0026shy;chung der In\u0026shy;sti\u0026shy;tute durch den Prüfungsverband der deutschen Banken",
+ 								"en": "Schärfere Prüfung und Über\u0026shy;wa\u0026shy;chung der In\u0026shy;sti\u0026shy;tute durch den Prüfungsverband der deutschen Banken"
  							},
- 							"col_span_label": 2,
+ 							"col_span_label": 4,
  							"col_span_control": 1,
  							"value_radio": "1",
  							"style_label": {
@@ -5376,44 +4984,44 @@
  							}
  						},
  						{
- 							"name": "rev_exp_markets",
+ 							"name": "di_self_regulation",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "rev_exp_markets",
+ 							"name": "di_self_regulation",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "rev_exp_markets",
+ 							"name": "di_self_regulation",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "rev_exp_markets",
+ 							"name": "di_self_regulation",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "rev_exp_markets",
+ 							"name": "di_self_regulation",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
  							"value_radio": "6"
  						},
  						{
- 							"name": "rev_exch_rates",
+ 							"name": "di_govt_regulation",
  							"type": "radio",
  							"label": {
- 								"de": "Wechsel\u0026shy;kurse",
- 								"en": "Exchange rates"
+ 								"de": "Schärfere Prüfung und Über\u0026shy;wa\u0026shy;chung der In\u0026shy;sti\u0026shy;tute durch die Bafin",
+ 								"en": "Schärfere Prüfung und Über\u0026shy;wa\u0026shy;chung der In\u0026shy;sti\u0026shy;tute durch die Bafin"
  							},
- 							"col_span_label": 2,
+ 							"col_span_label": 4,
  							"col_span_control": 1,
  							"value_radio": "1",
  							"style_label": {
@@ -5434,44 +5042,44 @@
  							}
  						},
  						{
- 							"name": "rev_exch_rates",
+ 							"name": "di_govt_regulation",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "rev_exch_rates",
+ 							"name": "di_govt_regulation",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "rev_exch_rates",
+ 							"name": "di_govt_regulation",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "rev_exch_rates",
+ 							"name": "di_govt_regulation",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "rev_exch_rates",
+ 							"name": "di_govt_regulation",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
  							"value_radio": "6"
  						},
  						{
- 							"name": "rev_trade_conflicts",
+ 							"name": "di_collateral",
  							"type": "radio",
  							"label": {
- 								"de": "Int. Handels\u0026shy;konflikte",
- 								"en": "Intl. trade conflicts"
+ 								"de": "Ausgeprägtere Risikogewichtung der Beitrags\u0026shy;prämien von Banken zum Einlagen\u0026shy;si\u0026shy;cherungs\u0026shy;fonds",
+ 								"en": "Ausgeprägtere Risikogewichtung der Beitrags\u0026shy;prämien von Banken zum Einlagen\u0026shy;si\u0026shy;cherungs\u0026shy;fonds"
  							},
- 							"col_span_label": 2,
+ 							"col_span_label": 4,
  							"col_span_control": 1,
  							"value_radio": "1",
  							"style_label": {
@@ -5492,263 +5100,31 @@
  							}
  						},
  						{
- 							"name": "rev_trade_conflicts",
+ 							"name": "di_collateral",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "rev_trade_conflicts",
+ 							"name": "di_collateral",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "rev_trade_conflicts",
+ 							"name": "di_collateral",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "rev_trade_conflicts",
+ 							"name": "di_collateral",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "rev_trade_conflicts",
- 							"type": "radio",
- 							"col_span_label": 0.4,
- 							"col_span_control": 1,
- 							"value_radio": "6"
- 						},
- 						{
- 							"name": "rev_mp_ecb",
- 							"type": "radio",
- 							"label": {
- 								"de": "EZB-Geld\u0026shy;po\u0026shy;li\u0026shy;tik",
- 								"en": "ECB monetary policy"
- 							},
- 							"col_span_label": 2,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "rev_mp_ecb",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "rev_mp_ecb",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "rev_mp_ecb",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "rev_mp_ecb",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "rev_mp_ecb",
- 							"type": "radio",
- 							"col_span_label": 0.4,
- 							"col_span_control": 1,
- 							"value_radio": "6"
- 						},
- 						{
- 							"name": "rev_mp_fed",
- 							"type": "radio",
- 							"label": {
- 								"de": "US-Geld\u0026shy;po\u0026shy;li\u0026shy;tik",
- 								"en": "FED monetary policy"
- 							},
- 							"col_span_label": 2,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "rev_mp_fed",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "rev_mp_fed",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "rev_mp_fed",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "rev_mp_fed",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "rev_mp_fed",
- 							"type": "radio",
- 							"col_span_label": 0.4,
- 							"col_span_control": 1,
- 							"value_radio": "6"
- 						},
- 						{
- 							"name": "rev_brexit",
- 							"type": "radio",
- 							"label": {
- 								"de": "Brexit",
- 								"en": "Brexit"
- 							},
- 							"col_span_label": 2,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "rev_brexit",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "rev_brexit",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "rev_brexit",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "rev_brexit",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "rev_brexit",
- 							"type": "radio",
- 							"col_span_label": 0.4,
- 							"col_span_control": 1,
- 							"value_radio": "6"
- 						},
- 						{
- 							"name": "rev_corona",
- 							"type": "radio",
- 							"label": {
- 								"de": "Corona Pandemie",
- 								"en": "Corona pandemic"
- 							},
- 							"col_span_label": 2,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "rev_corona",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "rev_corona",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "rev_corona",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "rev_corona",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "rev_corona",
+ 							"name": "di_collateral",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
@@ -5758,7 +5134,7 @@
  					"style": {
  						"desktop": {
  							"grid_container_style": {
- 								"template_columns": "   3fr    1fr    1fr    1fr    1fr    1.4fr "
+ 								"template_columns": "   5fr    1fr    1fr    1fr    1fr    1.4fr "
  							},
  							"box_style": {},
  							"grid_item_style": {},
@@ -5773,34 +5149,272 @@
  					}
  				},
  				{
- 					"columns": 1,
+ 					"bottom_vspacers": 3,
+ 					"columns": 12,
  					"inputs": [
  						{
- 							"name": "rev_free_label",
- 							"type": "text",
- 							"max_chars": 26,
- 							"placeholder": {
- 								"de": "Sonstige",
- 								"en": "Other"
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003cb\u003e3.\u003c/b\u003e \n\t\t\t\t\tAuch einige Kommunen haben Geld bei der Greensill Bank angelegt, um von den höheren Zinsen zu profitieren. Da sie von der Einlagensi\u0026shy;cherung seit 2017 ausgenommen sind, werden sie keine Entschädigung er\u0026shy;hal\u0026shy;ten. Besteht hier Handlungsbedarf?\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t",
+ 								"en": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003cb\u003e3.\u003c/b\u003e \n\t\t\t\t\tAuch einige Kommunen haben Geld bei der Greensill Bank angelegt, um von den höheren Zinsen zu profitieren. Da sie von der Einlagensi\u0026shy;cherung seit 2017 ausgenommen sind, werden sie keine Entschädigung er\u0026shy;hal\u0026shy;ten. Besteht hier Handlungsbedarf?\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
- 							"col_span": 1,
- 							"col_span_control": 1
+ 							"col_span": 12,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "di_municipalities",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Ja, die Anlagemöglichkeiten öffentlicher Haushalte sollten gesetzlich eingeschränkt werden.",
+ 								"en": "Ja, die Anlagemöglichkeiten öffentlicher Haushalte sollten gesetzlich eingeschränkt werden."
+ 							},
+ 							"col_span": 12,
+ 							"col_span_label": 11,
+ 							"col_span_control": 1,
+ 							"value_radio": "yes_prohibit",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0 0 1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0 0 2rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "di_municipalities",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Ja, die öffentlichen Haushalte sollten zu mehr Transparenz bei ihren Geldanlagen verpflichtet werden.",
+ 								"en": "Ja, die öffentlichen Haushalte sollten zu mehr Transparenz bei ihren Geldanlagen verpflichtet werden."
+ 							},
+ 							"col_span": 12,
+ 							"col_span_label": 11,
+ 							"col_span_control": 1,
+ 							"value_radio": "yes_transparent",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0 0 1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0 0 2rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "di_municipalities",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Nein, es ist ausreichend, dass die öffentlichen Haushalte durch die Wähler sanktioniert werden können.",
+ 								"en": "Nein, es ist ausreichend, dass die öffentlichen Haushalte durch die Wähler sanktioniert werden können."
+ 							},
+ 							"col_span": 12,
+ 							"col_span_label": 11,
+ 							"col_span_control": 1,
+ 							"value_radio": "no",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0 0 1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0 0 2rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						}
  					]
  				},
  				{
  					"bottom_vspacers": 3,
- 					"columns": 6,
+ 					"columns": 3,
  					"odd_rows_coloring": true,
  					"inputs": [
  						{
- 							"name": "rev_free",
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003e4.\u003c/b\u003e \n\t\t\t\tZinsplattformen, die Einlagen an der Einlagensi\u0026shy;cherung unterliegende Banken vermitteln, \n\n\t\t\t\t\t",
+ 								"en": "\u003cb\u003e4.\u003c/b\u003e \n\t\t\t\tZinsplattformen, die Einlagen an der Einlagensi\u0026shy;cherung unterliegende Banken vermitteln, \n\n\t\t\t\t\t"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "stimme zu",
+ 								"en": "stimme zu"
+ 							},
+ 							"col_span_label": 6,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "stimme nicht zu",
+ 								"en": "stimme nicht zu"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "keine\u003cbr\u003eAn\u0026shy;gabe",
+ 								"en": "no an\u0026shy;swer"
+ 							},
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "di_plattform_education",
  							"type": "radio",
  							"label": {
- 								"de": " \u0026nbsp;  ",
- 								"en": " \u0026nbsp;  "
+ 								"de": "… sollten zu mehr Risikoaufklärung gegenüber ihren Kunden verpflichtet werden.",
+ 								"en": "… sollten zu mehr Risikoaufklärung gegenüber ihren Kunden verpflichtet werden."
  							},
- 							"col_span_label": 2,
+ 							"col_span_label": 6,
  							"col_span_control": 1,
  							"value_radio": "1",
  							"style_label": {
@@ -5821,41 +5435,183 @@
  							}
  						},
  						{
- 							"name": "rev_free",
+ 							"name": "di_plattform_education",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "rev_free",
+ 							"name": "di_plattform_education",
  							"type": "radio",
+ 							"col_span_label": 0.4,
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "rev_free",
+ 							"name": "di_plattform_surveillance",
  							"type": "radio",
+ 							"label": {
+ 								"de": "… sollten dazu verpflichtet werden, das Risiko der Anbieterbanken zu überwachen und ggf.  Banken von der Plattform auszuschließen.",
+ 								"en": "… sollten dazu verpflichtet werden, das Risiko der Anbieterbanken zu überwachen und ggf.  Banken von der Plattform auszuschließen."
+ 							},
+ 							"col_span_label": 6,
  							"col_span_control": 1,
- 							"value_radio": "4"
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
- 							"name": "rev_free",
+ 							"name": "di_plattform_surveillance",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "5"
+ 							"value_radio": "2"
  						},
  						{
- 							"name": "rev_free",
+ 							"name": "di_plattform_surveillance",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "6"
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "di_plattform_liability",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "… sollten im Entschädigungs\u0026shy;fall einen Teil der vermittelten Einlagen ersetzen müssen.",
+ 								"en": "… sollten im Entschädigungs\u0026shy;fall einen Teil der vermittelten Einlagen ersetzen müssen."
+ 							},
+ 							"col_span_label": 6,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "di_plattform_liability",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "di_plattform_liability",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "di_plattform_laissez_faire",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "… sollten nicht weiter reguliert werden, da es die Aufgabe der Privatanleger ist, zu prüfen ob ihre Einlagen bei den Banken si\u0026shy;cher sind.",
+ 								"en": "… sollten nicht weiter reguliert werden, da es die Aufgabe der Privatanleger ist, zu prüfen ob ihre Einlagen bei den Banken si\u0026shy;cher sind."
+ 							},
+ 							"col_span_label": 6,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "di_plattform_laissez_faire",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "di_plattform_laissez_faire",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "di_plattform_incentive",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "… sollten nicht weiter reguliert werden, weil sie aus eigenem Interesse da\u0026shy;für sorgen, dass Banken mit übermäßig riskanten Geschäftsmodellen nicht auf ihrer Plattform Anbieter sind.",
+ 								"en": "… sollten nicht weiter reguliert werden, weil sie aus eigenem Interesse da\u0026shy;für sorgen, dass Banken mit übermäßig riskanten Geschäftsmodellen nicht auf ihrer Plattform Anbieter sind."
+ 							},
+ 							"col_span_label": 6,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "di_plattform_incentive",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "di_plattform_incentive",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
  						}
  					],
  					"style": {
  						"desktop": {
  							"grid_container_style": {
- 								"template_columns": "   3fr    1fr    1fr    1fr    1fr    1.4fr "
+ 								"template_columns": "   7fr    1fr    1.4fr "
  							},
  							"box_style": {},
  							"grid_item_style": {},
@@ -5978,7 +5734,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Durch Klicken erhalten Sie eine Zusammenfassung Ihrer Antworten",
+ 								"de": "Durch Klicken er\u0026shy;hal\u0026shy;ten Sie eine Zusammenfassung Ihrer Antworten",
  								"en": "By clicking you receive a summary of your an\u0026shy;swers"
  							},
  							"col_span": 1,

@@ -15,7 +15,7 @@ import (
 // 	3 of quarter: Free special questoins:                    March, June, September, December
 func addSeasonal1(q *qst.QuestionnaireT) error {
 
-	if q.Survey.MonthOfQuarter() != 1 && false {
+	if q.Survey.MonthOfQuarter() != 1 {
 		return nil
 	}
 

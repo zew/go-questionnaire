@@ -866,6 +866,10 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	if err != nil {
 		return nil, fmt.Errorf("Error adding seasonal1: %v", err)
 	}
+	err = addSeasonal202105(&q)
+	if err != nil {
+		return nil, fmt.Errorf("Error adding seasonal1: %v", err)
+	}
 	/*
 		err = addSeasonal2(&q)
 		if err != nil {

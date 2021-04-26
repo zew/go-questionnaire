@@ -18,6 +18,11 @@ var hyph = []string{
 	// reduced hyphenization
 	"unter|bewertet", // 	"be|wer|tet",
 	"über|bewertet",
+	// "Über|wachung",
+	"Über|wa|chung",
+	"Beitrags|prämien",
+	"Einlagen|sicherungs|fonds",
+	"Entschädigungs|fall ",
 
 	//
 	// german
@@ -50,6 +55,7 @@ var hyph = []string{
 	"Finanz|wirt|schaft",
 	"For|schung",
 	"ge|samt",
+	"ge|eig|net",
 	"Geld|po|li|tik",
 	"Groß|unter|nehmen",
 	"Grup|pe",

@@ -285,3 +285,36 @@ func labelsOvervaluedFairUndervalued() []trl.S {
 	return tm
 
 }
+
+func labelsConducive1to5() []trl.S {
+
+	tm := []trl.S{
+		{
+			"de": "sehr geeignet",
+			"en": "sehr geeignet",
+		},
+		{
+			"de": "geeignet",
+			"en": "geeignet",
+		},
+		{
+			"de": "neutral",
+			"en": "neutral",
+		},
+		{
+			"de": "wenig geeignet",
+			"en": "wenig geeignet",
+		},
+		{
+			"de": "überhaupt nicht geeignet",
+			"en": "überhaupt nicht geeignet",
+		},
+		{
+			"de": "keine<br>Angabe",
+			"en": "no answer",
+		},
+	}
+
+	return tm
+
+}

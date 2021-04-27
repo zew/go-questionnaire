@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "8579662010d858c73b519b7ac3cdc3abf0193a146680097d34e5b41b3a7e90d3",
+ 	"md_5": "ee17f77a1bacbba48e6d3f973ee797d7ba0b4e9c75b282a234c0f70caad817b7",
  	"lang_codes": [
  		"de",
  		"en"
@@ -5841,7 +5841,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\tDer Entschädigungs\u0026shy;fall der Bremer Greensill Bank, \n\t\t\t\t\tder die gesetzlichen und freiwilligen Si\u0026shy;cherungssysteme \n\t\t\t\t\tdes privaten Bankenverbands 3,1\u0026nbsp;Milliarden Euro gekostet hat, \n\t\t\t\t\that das Thema Einlagensi\u0026shy;cherung wieder ins Bewusstsein gerufen.\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t",
- 								"en": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\tDer Entschädigungs\u0026shy;fall der Bremer Greensill Bank, \n\t\t\t\t\tder die gesetzlichen und freiwilligen Si\u0026shy;cherungssysteme \n\t\t\t\t\tdes privaten Bankenverbands 3,1\u0026nbsp;Milliarden Euro gekostet hat, \n\t\t\t\t\that das Thema Einlagensi\u0026shy;cherung wieder ins Bewusstsein gerufen.\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"en": "\n\t\t\t\t\u003cp style=''\u003e\n\n\t\t\t\t\tThe loss at Bremen Greensill Bank, \n\t\t\t\t\tcost public and private insurers 3,1\u0026nbsp;Billion Euro.  \n\t\t\t\t\tThis has put the issue of deposit insurance back into the spotlight.\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 12,
  							"col_span_label": 1
@@ -5850,7 +5850,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003cb\u003e1.\u003c/b\u003e \n\t\t\t\t\tAuch öffentliche Gläubiger der Greensill Bank wurden entschädigt, unter anderem der Kölner Stadtwerke-Konzern sowie die Rundfunkanstalten NDR und Südwestrundfunk. Sollten die deutschen Einlagen\u0026shy;si\u0026shy;cherungs\u0026shy;fonds zukünftig nur private Anleger entschädigen dürfen?\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t",
- 								"en": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003cb\u003e1.\u003c/b\u003e \n\t\t\t\t\tAuch öffentliche Gläubiger der Greensill Bank wurden entschädigt, unter anderem der Kölner Stadtwerke-Konzern sowie die Rundfunkanstalten NDR und Südwestrundfunk. Sollten die deutschen Einlagen\u0026shy;si\u0026shy;cherungs\u0026shy;fonds zukünftig nur private Anleger entschädigen dürfen?\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"en": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003cb\u003e1.\u003c/b\u003e\n\t\t\t\t\tPublic creditors of the Greensill back were compensated.\n\t\t\t\t\tAmong others the utilities of the city of Cologne as well as North German Broadcasting Corporation. \n\t\t\t\t\t\n\t\t\t\t\tShould German deposit insurance be allowed to compensate only private investors in future?\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 12,
  							"col_span_label": 1
@@ -5930,7 +5930,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\u003cb\u003e2.\u003c/b\u003e \n\t\t\t\t\tWelche Reformen sind ge\u0026shy;eig\u0026shy;net, um das Schadensfallrisiko im Falle einer Bankeninsolvenz zu mindern bzw. die Schadensfallsumme für die Einlagensi\u0026shy;cherung einzugrenzen? \n\n\t\t\t\t\t",
- 								"en": "\u003cb\u003e2.\u003c/b\u003e \n\t\t\t\t\tWelche Reformen sind ge\u0026shy;eig\u0026shy;net, um das Schadensfallrisiko im Falle einer Bankeninsolvenz zu mindern bzw. die Schadensfallsumme für die Einlagensi\u0026shy;cherung einzugrenzen? \n\n\t\t\t\t\t"
+ 								"en": "\u003cb\u003e2.\u003c/b\u003e \n\t\t\t\t\tWhich reforms are suited, to reduce the risk of bankruptcies? \n\t\t\t\t\tWhich reforms are suited to limit the exposure of the deposit insurance? \n\n\t\t\t\t\t"
  							},
  							"col_span": 6,
  							"col_span_label": 1
@@ -5939,7 +5939,7 @@
  							"type": "label-as-input",
  							"label": {
  								"de": "sehr ge\u0026shy;eig\u0026shy;net",
- 								"en": "sehr ge\u0026shy;eig\u0026shy;net"
+ 								"en": "well suited"
  							},
  							"col_span_label": 4,
  							"col_span_control": 1,
@@ -5984,7 +5984,7 @@
  							"type": "label-as-input",
  							"label": {
  								"de": "ge\u0026shy;eig\u0026shy;net",
- 								"en": "ge\u0026shy;eig\u0026shy;net"
+ 								"en": "suited"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -6072,7 +6072,7 @@
  							"type": "label-as-input",
  							"label": {
  								"de": "wenig ge\u0026shy;eig\u0026shy;net",
- 								"en": "wenig ge\u0026shy;eig\u0026shy;net"
+ 								"en": "not suited"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -6116,7 +6116,7 @@
  							"type": "label-as-input",
  							"label": {
  								"de": "über\u0026shy;haupt nicht ge\u0026shy;eig\u0026shy;net",
- 								"en": "über\u0026shy;haupt nicht ge\u0026shy;eig\u0026shy;net"
+ 								"en": "not at all suited"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -6206,7 +6206,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Anleger tragen im Entschädigungs\u0026shy;fall einen kleinen Selbstanteil (z.B.\u0026nbsp;5-15%)",
- 								"en": "Anleger tragen im Entschädigungs\u0026shy;fall einen kleinen Selbstanteil (z.B.\u0026nbsp;5-15%)"
+ 								"en": "Investors pay a small co-payment in the event of a loss (i.e.\u0026nbsp;5-15%)"
  							},
  							"col_span_label": 4,
  							"col_span_control": 1,
@@ -6264,7 +6264,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Schärfere Prüfung und Über\u0026shy;wa\u0026shy;chung der In\u0026shy;sti\u0026shy;tute durch den Prüfungsverband der deutschen Banken",
- 								"en": "Schärfere Prüfung und Über\u0026shy;wa\u0026shy;chung der In\u0026shy;sti\u0026shy;tute durch den Prüfungsverband der deutschen Banken"
+ 								"en": "Stricter oversight of the banks by the oversight board of the German banking industry"
  							},
  							"col_span_label": 4,
  							"col_span_control": 1,
@@ -6322,7 +6322,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Schärfere Prüfung und Über\u0026shy;wa\u0026shy;chung der In\u0026shy;sti\u0026shy;tute durch die Bafin",
- 								"en": "Schärfere Prüfung und Über\u0026shy;wa\u0026shy;chung der In\u0026shy;sti\u0026shy;tute durch die Bafin"
+ 								"en": "Stricter oversight of the banks by the state regulator Bafin"
  							},
  							"col_span_label": 4,
  							"col_span_control": 1,
@@ -6380,7 +6380,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Ausgeprägtere Risikogewichtung der Beitrags\u0026shy;prämien von Banken zum Einlagen\u0026shy;si\u0026shy;cherungs\u0026shy;fonds",
- 								"en": "Ausgeprägtere Risikogewichtung der Beitrags\u0026shy;prämien von Banken zum Einlagen\u0026shy;si\u0026shy;cherungs\u0026shy;fonds"
+ 								"en": "More risk-weighted premiums of banks for the deposit insurance"
  							},
  							"col_span_label": 4,
  							"col_span_control": 1,
@@ -6459,7 +6459,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003cb\u003e3.\u003c/b\u003e \n\t\t\t\t\tAuch einige Kommunen haben Geld bei der Greensill Bank angelegt, um von den höheren Zinsen zu profitieren. Da sie von der Einlagensi\u0026shy;cherung seit 2017 ausgenommen sind, werden sie keine Entschädigung er\u0026shy;hal\u0026shy;ten. Besteht hier Handlungsbedarf?\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t",
- 								"en": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003cb\u003e3.\u003c/b\u003e \n\t\t\t\t\tAuch einige Kommunen haben Geld bei der Greensill Bank angelegt, um von den höheren Zinsen zu profitieren. Da sie von der Einlagensi\u0026shy;cherung seit 2017 ausgenommen sind, werden sie keine Entschädigung er\u0026shy;hal\u0026shy;ten. Besteht hier Handlungsbedarf?\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"en": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003cb\u003e3.\u003c/b\u003e \n\t\t\t\t\tSome municipal governments deposited money with the Greensill Bank, to benefit from\n\t\t\t\t\thigher interest rates. \n\t\t\t\t\tThey will not be compensated, since they are excluded from deposit insurance.\n\t\t\t\t\tDo you agree?\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 12,
  							"col_span_label": 1
@@ -6469,7 +6469,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Ja, die Anlagemöglichkeiten öffentlicher Haushalte sollten gesetzlich eingeschränkt werden.",
- 								"en": "Ja, die Anlagemöglichkeiten öffentlicher Haushalte sollten gesetzlich eingeschränkt werden."
+ 								"en": "Yes, in\u0026shy;vest\u0026shy;ment choices of public households should by restricted by law."
  							},
  							"col_span": 12,
  							"col_span_label": 11,
@@ -6501,7 +6501,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Ja, die öffentlichen Haushalte sollten zu mehr Transparenz bei ihren Geldanlagen verpflichtet werden.",
- 								"en": "Ja, die öffentlichen Haushalte sollten zu mehr Transparenz bei ihren Geldanlagen verpflichtet werden."
+ 								"en": "Yes, in\u0026shy;vest\u0026shy;ment choices of public households should be made more transparent by reg\u0026shy;ulation."
  							},
  							"col_span": 12,
  							"col_span_label": 11,
@@ -6533,7 +6533,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Nein, es ist ausreichend, dass die öffentlichen Haushalte durch die Wähler sanktioniert werden können.",
- 								"en": "Nein, es ist ausreichend, dass die öffentlichen Haushalte durch die Wähler sanktioniert werden können."
+ 								"en": "No, voter punishments of local governments are sufficient."
  							},
  							"col_span": 12,
  							"col_span_label": 11,
@@ -6571,7 +6571,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\u003cb\u003e4.\u003c/b\u003e \n\t\t\t\tZinsplattformen, die Einlagen an der Einlagensi\u0026shy;cherung unterliegende Banken vermitteln, \n\n\t\t\t\t\t",
- 								"en": "\u003cb\u003e4.\u003c/b\u003e \n\t\t\t\tZinsplattformen, die Einlagen an der Einlagensi\u0026shy;cherung unterliegende Banken vermitteln, \n\n\t\t\t\t\t"
+ 								"en": "\u003cb\u003e4.\u003c/b\u003e \n\t\t\t\tLoan platforms, intermediating deposits to banks, subject to deposit insurance. \n\n\t\t\t\t\t"
  							},
  							"col_span": 3,
  							"col_span_label": 1
@@ -6580,7 +6580,7 @@
  							"type": "label-as-input",
  							"label": {
  								"de": "stimme zu",
- 								"en": "stimme zu"
+ 								"en": "agree"
  							},
  							"col_span_label": 6,
  							"col_span_control": 1,
@@ -6625,7 +6625,7 @@
  							"type": "label-as-input",
  							"label": {
  								"de": "stimme nicht zu",
- 								"en": "stimme nicht zu"
+ 								"en": "dont agree"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -6715,7 +6715,7 @@
  							"type": "radio",
  							"label": {
  								"de": "… sollten zu mehr Risikoaufklärung gegenüber ihren Kunden verpflichtet werden.",
- 								"en": "… sollten zu mehr Risikoaufklärung gegenüber ihren Kunden verpflichtet werden."
+ 								"en": "… should be obliged to educate their customers more about risks."
  							},
  							"col_span_label": 6,
  							"col_span_control": 1,
@@ -6755,7 +6755,7 @@
  							"type": "radio",
  							"label": {
  								"de": "… sollten dazu verpflichtet werden, das Risiko der Anbieterbanken zu überwachen und ggf.  Banken von der Plattform auszuschließen.",
- 								"en": "… sollten dazu verpflichtet werden, das Risiko der Anbieterbanken zu überwachen und ggf.  Banken von der Plattform auszuschließen."
+ 								"en": "… should be obliged to supervise the risk of the banks and if necessary exclude banks from their platform"
  							},
  							"col_span_label": 6,
  							"col_span_control": 1,
@@ -6795,7 +6795,7 @@
  							"type": "radio",
  							"label": {
  								"de": "… sollten im Entschädigungs\u0026shy;fall einen Teil der vermittelten Einlagen ersetzen müssen.",
- 								"en": "… sollten im Entschädigungs\u0026shy;fall einen Teil der vermittelten Einlagen ersetzen müssen."
+ 								"en": "… should have to refund the losses partially, in the event of a loss."
  							},
  							"col_span_label": 6,
  							"col_span_control": 1,
@@ -6835,7 +6835,7 @@
  							"type": "radio",
  							"label": {
  								"de": "… sollten nicht weiter reguliert werden, da es die Aufgabe der Privatanleger ist, zu prüfen ob ihre Einlagen bei den Banken si\u0026shy;cher sind.",
- 								"en": "… sollten nicht weiter reguliert werden, da es die Aufgabe der Privatanleger ist, zu prüfen ob ihre Einlagen bei den Banken si\u0026shy;cher sind."
+ 								"en": "… should not be regulated any further, since it is the responsibility of the private investor to do due diligence."
  							},
  							"col_span_label": 6,
  							"col_span_control": 1,
@@ -6875,7 +6875,7 @@
  							"type": "radio",
  							"label": {
  								"de": "… sollten nicht weiter reguliert werden, weil sie aus eigenem Interesse da\u0026shy;für sorgen, dass Banken mit übermäßig riskanten Geschäftsmodellen nicht auf ihrer Plattform Anbieter sind.",
- 								"en": "… sollten nicht weiter reguliert werden, weil sie aus eigenem Interesse da\u0026shy;für sorgen, dass Banken mit übermäßig riskanten Geschäftsmodellen nicht auf ihrer Plattform Anbieter sind."
+ 								"en": "… should not be regulated any further, since they have an incentive to exclude banks with outsized risky busi\u0026shy;ness models from their platforms."
  							},
  							"col_span_label": 6,
  							"col_span_control": 1,

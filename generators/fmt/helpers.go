@@ -291,11 +291,11 @@ func labelsConducive1to5() []trl.S {
 	tm := []trl.S{
 		{
 			"de": "sehr geeignet",
-			"en": "sehr geeignet",
+			"en": "well suited",
 		},
 		{
 			"de": "geeignet",
-			"en": "geeignet",
+			"en": "suited",
 		},
 		{
 			"de": "neutral",
@@ -303,11 +303,11 @@ func labelsConducive1to5() []trl.S {
 		},
 		{
 			"de": "wenig geeignet",
-			"en": "wenig geeignet",
+			"en": "not suited",
 		},
 		{
 			"de": "überhaupt nicht geeignet",
-			"en": "überhaupt nicht geeignet",
+			"en": "not at all suited",
 		},
 		{
 			"de": "keine<br>Angabe",

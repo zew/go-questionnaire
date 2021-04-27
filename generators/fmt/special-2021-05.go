@@ -53,10 +53,10 @@ func special202105(q *qst.QuestionnaireT) error {
 				`,
 				"en": `
 				<p style=''>
-					Der Entschädigungsfall der Bremer Greensill Bank, 
-					der die gesetzlichen und freiwilligen Sicherungssysteme 
-					des privaten Bankenverbands 3,1&nbsp;Milliarden Euro gekostet hat, 
-					hat das Thema Einlagensicherung wieder ins Bewusstsein gerufen.
+
+					The loss at Bremen Greensill Bank, 
+					cost public and private insurers 3,1&nbsp;Billion Euro.  
+					This has put the issue of deposit insurance back into the spotlight.
 				</p>
 				`,
 			}
@@ -75,8 +75,11 @@ func special202105(q *qst.QuestionnaireT) error {
 				`,
 				"en": `
 				<p style=''>
-					<b>1.</b> 
-					Auch öffentliche Gläubiger der Greensill Bank wurden entschädigt, unter anderem der Kölner Stadtwerke-Konzern sowie die Rundfunkanstalten NDR und Südwestrundfunk. Sollten die deutschen Einlagensicherungsfonds zukünftig nur private Anleger entschädigen dürfen?
+					<b>1.</b>
+					Public creditors of the Greensill back were compensated.
+					Among others the utilities of the city of Cologne as well as North German Broadcasting Corporation. 
+					
+					Should German deposit insurance be allowed to compensate only private investors in future?
 				</p>
 				`,
 			}
@@ -128,19 +131,19 @@ func special202105(q *qst.QuestionnaireT) error {
 		rowLabelsDefaultRisk := []trl.S{
 			{
 				"de": "Anleger tragen im Entschädigungsfall einen kleinen Selbstanteil (z.B.&nbsp;5-15%)",
-				"en": "Anleger tragen im Entschädigungsfall einen kleinen Selbstanteil (z.B.&nbsp;5-15%)",
+				"en": "Investors pay a small co-payment in the event of a loss (i.e.&nbsp;5-15%)",
 			},
 			{
 				"de": "Schärfere Prüfung und Überwachung der Institute durch den Prüfungsverband der deutschen Banken",
-				"en": "Schärfere Prüfung und Überwachung der Institute durch den Prüfungsverband der deutschen Banken",
+				"en": "Stricter oversight of the banks by the oversight board of the German banking industry",
 			},
 			{
 				"de": "Schärfere Prüfung und Überwachung der Institute durch die Bafin",
-				"en": "Schärfere Prüfung und Überwachung der Institute durch die Bafin",
+				"en": "Stricter oversight of the banks by the state regulator Bafin",
 			},
 			{
 				"de": "Ausgeprägtere Risikogewichtung der Beitragsprämien von Banken zum Einlagensicherungsfonds",
-				"en": "Ausgeprägtere Risikogewichtung der Beitragsprämien von Banken zum Einlagensicherungsfonds",
+				"en": "More risk-weighted premiums of banks for the deposit insurance",
 			},
 		}
 
@@ -157,7 +160,8 @@ func special202105(q *qst.QuestionnaireT) error {
 
 					`,
 			"en": `<b>2.</b> 
-					Welche Reformen sind geeignet, um das Schadensfallrisiko im Falle einer Bankeninsolvenz zu mindern bzw. die Schadensfallsumme für die Einlagensicherung einzugrenzen? 
+					Which reforms are suited, to reduce the risk of bankruptcies? 
+					Which reforms are suited to limit the exposure of the deposit insurance? 
 
 					`,
 		}
@@ -184,7 +188,10 @@ func special202105(q *qst.QuestionnaireT) error {
 				"en": `
 				<p style=''>
 					<b>3.</b> 
-					Auch einige Kommunen haben Geld bei der Greensill Bank angelegt, um von den höheren Zinsen zu profitieren. Da sie von der Einlagensicherung seit 2017 ausgenommen sind, werden sie keine Entschädigung erhalten. Besteht hier Handlungsbedarf?
+					Some municipal governments deposited money with the Greensill Bank, to benefit from
+					higher interest rates. 
+					They will not be compensated, since they are excluded from deposit insurance.
+					Do you agree?
 				</p>
 				`,
 			}
@@ -199,7 +206,7 @@ func special202105(q *qst.QuestionnaireT) error {
 			rad.ColSpanControl = 1
 			rad.Label = trl.S{
 				"de": "Ja, die Anlagemöglichkeiten öffentlicher Haushalte sollten gesetzlich eingeschränkt werden.",
-				"en": "Ja, die Anlagemöglichkeiten öffentlicher Haushalte sollten gesetzlich eingeschränkt werden.",
+				"en": "Yes, investment choices of public households should by restricted by law.",
 			}
 			rad.StyleLbl = lblStyleLeft
 		}
@@ -213,7 +220,7 @@ func special202105(q *qst.QuestionnaireT) error {
 			rad.ColSpanControl = 1
 			rad.Label = trl.S{
 				"de": "Ja, die öffentlichen Haushalte sollten zu mehr Transparenz bei ihren Geldanlagen verpflichtet werden.",
-				"en": "Ja, die öffentlichen Haushalte sollten zu mehr Transparenz bei ihren Geldanlagen verpflichtet werden.",
+				"en": "Yes, investment choices of public households should be made more transparent by regulation.",
 			}
 			rad.StyleLbl = lblStyleLeft
 		}
@@ -227,7 +234,7 @@ func special202105(q *qst.QuestionnaireT) error {
 			rad.ColSpanControl = 1
 			rad.Label = trl.S{
 				"de": "Nein, es ist ausreichend, dass die öffentlichen Haushalte durch die Wähler sanktioniert werden können.",
-				"en": "Nein, es ist ausreichend, dass die öffentlichen Haushalte durch die Wähler sanktioniert werden können.",
+				"en": "No, voter punishments of local governments are sufficient.",
 			}
 			rad.StyleLbl = lblStyleLeft
 		}
@@ -248,11 +255,11 @@ func special202105(q *qst.QuestionnaireT) error {
 		headerLabelsLocal := []trl.S{
 			{
 				"de": "stimme zu",
-				"en": "stimme zu",
+				"en": "agree",
 			},
 			{
 				"de": "stimme nicht zu",
-				"en": "stimme nicht zu",
+				"en": "dont agree",
 			},
 			{
 				"de": "keine<br>Angabe",
@@ -263,23 +270,23 @@ func special202105(q *qst.QuestionnaireT) error {
 		rowLabelsReforms := []trl.S{
 			{
 				"de": "… sollten zu mehr Risikoaufklärung gegenüber ihren Kunden verpflichtet werden.",
-				"en": "… sollten zu mehr Risikoaufklärung gegenüber ihren Kunden verpflichtet werden.",
+				"en": "… should be obliged to educate their customers more about risks.",
 			},
 			{
 				"de": "… sollten dazu verpflichtet werden, das Risiko der Anbieterbanken zu überwachen und ggf.  Banken von der Plattform auszuschließen.",
-				"en": "… sollten dazu verpflichtet werden, das Risiko der Anbieterbanken zu überwachen und ggf.  Banken von der Plattform auszuschließen.",
+				"en": "… should be obliged to supervise the risk of the banks and if necessary exclude banks from their platform",
 			},
 			{
 				"de": "… sollten im Entschädigungsfall einen Teil der vermittelten Einlagen ersetzen müssen.",
-				"en": "… sollten im Entschädigungsfall einen Teil der vermittelten Einlagen ersetzen müssen.",
+				"en": "… should have to refund the losses partially, in the event of a loss.",
 			},
 			{
 				"de": "… sollten nicht weiter reguliert werden, da es die Aufgabe der Privatanleger ist, zu prüfen ob ihre Einlagen bei den Banken sicher sind.",
-				"en": "… sollten nicht weiter reguliert werden, da es die Aufgabe der Privatanleger ist, zu prüfen ob ihre Einlagen bei den Banken sicher sind.",
+				"en": "… should not be regulated any further, since it is the responsibility of the private investor to do due diligence.",
 			},
 			{
 				"de": "… sollten nicht weiter reguliert werden, weil sie aus eigenem Interesse dafür sorgen, dass Banken mit übermäßig riskanten Geschäftsmodellen nicht auf ihrer Plattform Anbieter sind.",
-				"en": "… sollten nicht weiter reguliert werden, weil sie aus eigenem Interesse dafür sorgen, dass Banken mit übermäßig riskanten Geschäftsmodellen nicht auf ihrer Plattform Anbieter sind.",
+				"en": "… should not be regulated any further, since they have an incentive to exclude banks with outsized risky business models from their platforms.",
 			},
 		}
 
@@ -296,7 +303,7 @@ func special202105(q *qst.QuestionnaireT) error {
 
 					`,
 			"en": `<b>4.</b> 
-				Zinsplattformen, die Einlagen an der Einlagensicherung unterliegende Banken vermitteln, 
+				Loan platforms, intermediating deposits to banks, subject to deposit insurance. 
 
 					`,
 		}

@@ -90,7 +90,7 @@ type inputT struct {
 	Param string `json:"param,omitempty"` // for dyn-text - name of parameter set
 
 	MaxChars    int     `json:"max_chars,omitempty"`  // input chars; => SIZE for input, MAXLENGTH for textarea, text; also used for width
-	Step        float64 `json:"step,omitempty"`       // for number input:  stepping interval
+	Step        float64 `json:"step,omitempty"`       // for number input:  stepping interval, i.e. 2 or 0.1
 	Min         float64 `json:"min,omitempty"`        //      ~
 	Max         float64 `json:"max,omitempty"`        //      ~
 	OnInvalid   trl.S   `json:"on_invalid,omitempty"` // message for  oninvalid="this.setCustomValidity('msg')"

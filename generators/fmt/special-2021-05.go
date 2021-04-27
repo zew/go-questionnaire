@@ -6,7 +6,7 @@ import (
 	"github.com/zew/go-questionnaire/trl"
 )
 
-func addSeasonal202105(q *qst.QuestionnaireT) error {
+func special202105(q *qst.QuestionnaireT) error {
 
 	if q.Survey.Year != 2021 && q.Survey.Month != 5 {
 		return nil

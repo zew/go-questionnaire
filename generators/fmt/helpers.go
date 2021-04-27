@@ -318,3 +318,36 @@ func labelsConducive1to5() []trl.S {
 	return tm
 
 }
+
+func labelsPlusPlusMinusMinus() []trl.S {
+
+	tm := []trl.S{
+		{
+			"de": "++",
+			"en": "++",
+		},
+		{
+			"de": "+",
+			"en": "+",
+		},
+		{
+			"de": "kein Einfluss",
+			"en": "no influence",
+		},
+		{
+			"de": "-",
+			"en": "-",
+		},
+		{
+			"de": "--",
+			"en": "--",
+		},
+		{
+			"de": "keine<br>Angabe",
+			"en": "no answer",
+		},
+	}
+
+	return tm
+
+}

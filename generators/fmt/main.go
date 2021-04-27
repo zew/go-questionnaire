@@ -862,20 +862,19 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		}
 	}
 
-	err := addSeasonal1(&q)
+	var err error
+	err = eachMonth1inQ(&q)
 	if err != nil {
-		return nil, fmt.Errorf("Error adding seasonal1: %v", err)
+		return nil, fmt.Errorf("Error adding month 1 per quarter: %v", err)
 	}
-	err = addSeasonal202105(&q)
+	err = eachMonth2inQ(&q)
 	if err != nil {
-		return nil, fmt.Errorf("Error adding seasonal1: %v", err)
+		return nil, fmt.Errorf("Error adding month 2 per quarter: %v", err)
 	}
-	/*
-		err = addSeasonal2(&q)
-		if err != nil {
-			return nil, fmt.Errorf("Error adding seasonal2: %v", err)
-		}
-	*/
+	err = special202105(&q)
+	if err != nil {
+		return nil, fmt.Errorf("Error adding seasonal202105(): %v", err)
+	}
 
 	//
 	// page 7 - after seasonal
@@ -971,11 +970,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Type = "button"
 				inp.Name = "submitBtn"
 				inp.Response = fmt.Sprintf("%v", len(q.Pages)-1+1) // +1 since one page is appended below
-				// inp.Label = trl.S{"de": "", "en": ""}
-				// inp.Label = trl.S{
-				// 	"de": "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OK&nbsp;&nbsp;&nbsp;&nbsp;",
-				// 	"en": "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OK&nbsp;&nbsp;&nbsp;&nbsp;",
-				// }
 				inp.Label = cfg.Get().Mp["end"]
 				inp.Label = cfg.Get().Mp["finish_questionnaire"]
 				inp.ColSpan = 1

@@ -13,7 +13,7 @@ import (
 // 	1 of quarter: Business cycle & drivers: 		         Januar, April, Juli, October
 // 	2 of quarter: Inflation, drivers, central bank rates:    Februar, May, August, November
 // 	3 of quarter: Free special questoins:                    March, June, September, December
-func addSeasonal1(q *qst.QuestionnaireT) error {
+func eachMonth1inQ(q *qst.QuestionnaireT) error {
 
 	if q.Survey.MonthOfQuarter() != 1 {
 		return nil
@@ -25,7 +25,10 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 		"de": "Sonderfrage: Kurz- und mittelfristiges Wirtschaftswachstum",
 		"en": "Special: Short and Medium Term Economic Growth",
 	}
-	page.Short = trl.S{"de": "Wachstum", "en": "Growth"}
+	page.Short = trl.S{
+		"de": "Wachstum",
+		"en": "Growth",
+	}
 	page.Style = css.DesktopWidthMaxForPages(page.Style, "42rem")
 
 	{
@@ -208,15 +211,21 @@ func addSeasonal1(q *qst.QuestionnaireT) error {
 	}
 
 	// gr2
-	// 2020-04: mcor => measures corona
-	// igf => impact on growth forecast
 	{
 		gb := qst.NewGridBuilderRadios(
 			columnTemplate6,
 			labelsStronglyPositiveStronglyNegativeInfluence(),
-			[]string{"rev_bus_cycle_ger", "rev_exp_markets", "rev_exch_rates",
+			// prefix iogf_ => impact on growth forecast
+			//   but we stick to rev_ => revision
+			[]string{
+				"rev_bus_cycle_ger",
+				"rev_exp_markets",
+				"rev_exch_rates",
 				"rev_trade_conflicts",
-				"rev_mp_ecb", "rev_mp_fed", "rev_brexit", "rev_corona",
+				"rev_mp_ecb",
+				"rev_mp_fed",
+				"rev_brexit",
+				"rev_corona",
 				// "rev_free",
 			},
 			radioVals6,

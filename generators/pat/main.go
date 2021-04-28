@@ -72,9 +72,10 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				(alle erwähnten Personen existieren wirklich und alle Auszahlungen werden wie beschrieben getätigt).
 				</p>
 
-				<p>In dieser Umfrage gibt es keine richtigen oder falschen Antworten. 
-				Bitte entscheiden Sie daher immer gemäß Ihren persönlichen Ansichten. 
-				Selbstverständlich sichern wir Ihnen dabei eine streng vertrauliche Behandlung Ihrer Antworten zu.
+				<p>
+				In dieser Umfrage gibt es keine richtigen oder falschen Antworten. 
+				Bitte entscheiden Sie daher immer gemäß Ihrer persönlichen Ansichten. 
+				Ihre Antworten werden dabei streng vertraulich behandelt.
 				</p>
 
 				<br>
@@ -154,7 +155,9 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				<div class='vspacer-08'> &nbsp; </div>
 
 				<p>
-					Fünf deutsche Staatsangehörige haben an einer Vorstudie teilgenommen. Jede dieser fünf Personen hat in der Vorstudie angegeben, welche Stiftung sie als am besten, mittel, beziehungsweise am schlechtesten erachtet.
+					Fünf deutsche Staatsangehörige haben an einer Vorstudie teilgenommen. 
+					
+					Jede dieser fünf Personen hat in der Vorstudie angegeben, welche der drei Stiftungen sie als am besten, mittel und am schlechtesten erachtet.
 				</p>
 				<p>
 					Wir sind nun daran interessiert, wie Sie die fünf individuellen Präferenzen in eine Gruppenentscheidung zusammenfassen, an welche Stiftung die 30&nbsp;€ gehen sollen. Bevorzugen Sie beispielsweise eher eine Kompromisslösung oder eher eine Mehrheitslösung? Ihre eigene Meinung über die Stiftungen soll dabei keine Rolle spielen. Deshalb sind die Stiftungen im Folgenden als Stiftung A, B und C anonymisiert.
@@ -406,15 +409,19 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				inp.Desc = trl.S{
 					"de": `
 					<p>
+						<b>
 						Nun kommen wir zum zweiten Teil unserer Studie. 
+						</b>
 						In diesem Teil treffen Sie eine Entscheidung für einen deutschen Staatsangehörigen, der Ihnen zugeordnet ist und der an einer zukünftigen Studie teilnimmt. Diese Person wird in der Studie entscheiden, wie ihr das Entgelt für die Studienteilnahme ausbezahlt wird. Je eher diese Person bereit ist, auf ihr Geld zu warten, desto mehr Geld wird ihr insgesamt bezahlt.						
 					</p>
 					<p>
-						Wir bitten Sie, zu entscheiden, wie geduldig oder wie ungeduldig die Person wählen kann. Dazu bestimmen Sie für jede von drei Optionen, ob sie der Person zur Verfügung stehen soll oder nicht. Falls Sie mehrere Optionen verfügbar machen, kann die Person aus diesen wählen. Mindestens eine Option muss „Verfügbar“ sein.
+						Wir bitten Sie zu entscheiden, wie geduldig oder wie ungeduldig die Person wählen kann. Dazu bestimmen Sie für jede von drei Optionen, ob sie der Person zur Verfügung stehen soll oder nicht. Falls Sie mehrere Optionen verfügbar machen, kann die Person aus diesen wählen. Mindestens eine Option muss „Verfügbar“ sein.
 					</p>
 
 					<p style="font-size: 87%;">
+						<i>
 						Details: Die nicht verfügbaren Optionen werden der Person nicht als Auswahloptionen angezeigt. Bei verfügbar gemachten Optionen können Sie zusätzlich „Von dieser Option abraten“ ankreuzen. In diesem Fall erhält die Person die Botschaft: „Ein früherer Teilnehmer dieser Studie rät Ihnen davon ab, diese Option zu wählen”.
+						</i>
 					</p>
 					<br>
 

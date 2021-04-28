@@ -15,13 +15,13 @@
  		"params": [
  			{
  				"name": "main_refinance_rate_ecb",
- 				"val": "01.09.2019: 0.0%"
+ 				"val": "01.09.2019: 0,0% - Stand 03.05.2021"
  			},
  			{}
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "ee17f77a1bacbba48e6d3f973ee797d7ba0b4e9c75b282a234c0f70caad817b7",
+ 	"md_5": "6421c3601f5e1a452b65685b5d4329c815e68e013ae49ad7f5f9d3d499ba1ac6",
  	"lang_codes": [
  		"de",
  		"en"
@@ -5552,8 +5552,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e3.\u003c/b\u003e Den \u003cb\u003eHauptre\u0026shy;finanz\u0026shy;ierungssatz\u003c/b\u003e der EZB (01.09.2019: 0.0%) erwarte ich auf Sicht von",
- 								"en": "\u003cb\u003e3.\u003c/b\u003e I expect the \u003cb\u003emain refinance rate\u003c/b\u003e of the ECB (01.09.2019: 0.0%) in"
+ 								"de": "\u003cb\u003e3.\u003c/b\u003e Den \u003cb\u003eHauptre\u0026shy;finanz\u0026shy;ierungssatz\u003c/b\u003e der EZB (seit 01.09.2019: 0,0% - Stand 03.05.2021) erwarte ich auf Sicht von",
+ 								"en": "\u003cb\u003e3.\u003c/b\u003e I expect the \u003cb\u003emain refinance rate\u003c/b\u003e of the ECB (since 01.09.2019: 0,0% - Stand 03.05.2021) in"
  							},
  							"col_span": 12,
  							"col_span_label": 12
@@ -5801,7 +5801,7 @@
  		},
  		{
  			"label": {
- 				"de": "Sonderfragen zur Einlagensicherung",
+ 				"de": "Sonderfrage: Einlagensicherung",
  				"en": "Special: Deposit insurance"
  			},
  			"description": {
@@ -5809,7 +5809,7 @@
  				"en": ""
  			},
  			"short": {
- 				"de": "Sonderfragen:\u003cbr\u003eEinlagensicherung",
+ 				"de": "Sonderfrage:\u003cbr\u003eEinlagensicherung",
  				"en": "Special:\u003cbr\u003eDeposit Insurance"
  			},
  			"navi_num": 7,

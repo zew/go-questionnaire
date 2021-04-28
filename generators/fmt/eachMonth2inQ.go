@@ -287,8 +287,8 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 			inp.ColSpan = 12
 			inp.ColSpanLabel = 12
 			inp.Label = trl.S{
-				"de": fmt.Sprintf("<b>3.</b> Den <b>Hauptrefinanzierungssatz</b> der EZB (%v) erwarte ich auf Sicht von", latestECBRate),
-				"en": fmt.Sprintf("<b>3.</b> I expect the <b>main refinance rate</b> of the ECB (%v) in", latestECBRate),
+				"de": fmt.Sprintf("<b>3.</b> Den <b>Hauptrefinanzierungssatz</b> der EZB (seit %v) erwarte ich auf Sicht von", latestECBRate),
+				"en": fmt.Sprintf("<b>3.</b> I expect the <b>main refinance rate</b> of the ECB (since %v) in", latestECBRate),
 			}
 		}
 

@@ -116,7 +116,7 @@ func GenerateQuestionnaireTemplates(w http.ResponseWriter, r *http.Request) {
 	}
 
 	html := s.HTMLForm(get(), errStr)
-	myfmt.Fprintf(w, html)
+	myfmt.Fprint(w, html) // not Fprintf
 	myfmt.Fprintf(w, "<br>")
 	//
 

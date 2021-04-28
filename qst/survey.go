@@ -262,6 +262,7 @@ func (s *surveyT) HTMLForm(questTypes []string, errStr string) string {
                      '12.04.2021 17:15 CEST' for concrete     
             Deadline <input type="text" name="deadline"  value="%v" placeholder="dd.mm.yyyy hh:mm CEST"   xxlist="time-entries" size=30 /> 
 
+for FMT eachMonth2inQ() main_refinance_rate_ecb': -since- 01.09.2019: 0,0%% - Stand 03.05.2021
 %v
                      <input type="submit" name="submit" id="submit"  value="Submit" accesskey="s"  /> <br>
 		</form>
@@ -335,6 +336,7 @@ func (s *surveyT) HTMLForm(questTypes []string, errStr string) string {
 		link3,
 		link4,
 	)
+
 	return ret
 
 }

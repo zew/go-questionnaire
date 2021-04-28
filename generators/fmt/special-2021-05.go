@@ -24,11 +24,11 @@ func special202105(q *qst.QuestionnaireT) error {
 
 	page := q.AddPage()
 	page.Label = trl.S{
-		"de": "Sonderfragen zur Einlagensicherung",
+		"de": "Sonderfrage: Einlagensicherung",
 		"en": "Special: Deposit insurance",
 	}
 	page.Short = trl.S{
-		"de": "Sonderfragen:<br>Einlagensicherung",
+		"de": "Sonderfrage:<br>Einlagensicherung",
 		"en": "Special:<br>Deposit Insurance",
 	}
 	page.Style = css.DesktopWidthMaxForPages(page.Style, "46rem")

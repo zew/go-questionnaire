@@ -183,6 +183,7 @@ func special202105(q *qst.QuestionnaireT) error {
 				<p style=''>
 					<b>3.</b> 
 					Auch einige Kommunen haben Geld bei der Greensill Bank angelegt, um von den höheren Zinsen zu profitieren. Da sie von der Einlagensicherung seit 2017 ausgenommen sind, werden sie keine Entschädigung erhalten. Besteht hier Handlungsbedarf?
+					Wählen Sie bitte die Antwortmöglichkeit aus, der Sie am meisten zustimmen.
 				</p>
 				`,
 				"en": `
@@ -191,7 +192,7 @@ func special202105(q *qst.QuestionnaireT) error {
 					Some municipal governments deposited money with the Greensill Bank, to benefit from
 					higher interest rates. 
 					They will not be compensated, since they are excluded from deposit insurance.
-					Do you agree?
+					Please choose the answer most closely to your position.
 				</p>
 				`,
 			}
@@ -235,6 +236,20 @@ func special202105(q *qst.QuestionnaireT) error {
 			rad.Label = trl.S{
 				"de": "Nein, es ist ausreichend, dass die öffentlichen Haushalte durch die Wähler sanktioniert werden können.",
 				"en": "No, voter punishments of local governments are sufficient.",
+			}
+			rad.StyleLbl = lblStyleLeft
+		}
+		{
+			rad := gr.AddInput()
+			rad.Type = "radio"
+			rad.Name = "di_no_answer"
+			rad.ValueRadio = "no_answer"
+			rad.ColSpan = 12
+			rad.ColSpanLabel = 11
+			rad.ColSpanControl = 1
+			rad.Label = trl.S{
+				"de": "Keine Antwort",
+				"en": "No Answer",
 			}
 			rad.StyleLbl = lblStyleLeft
 		}

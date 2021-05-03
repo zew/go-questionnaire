@@ -400,7 +400,6 @@ type QuestionnaireT struct {
 	ClosingTime time.Time `json:"closing_time,omitempty"`
 	RemoteIP    string    `json:"remote_ip,omitempty"`
 	UserAgent   string    `json:"user_agent,omitempty"`
-	Mobile      int       `json:"mobile,omitempty"` // 0 - no preference, 1 - desktop, 2 - mobile
 	MD5         string    `json:"md_5,omitempty"`
 
 	LangCodes []string `json:"lang_codes,omitempty"` // default, order and availability - [en, de, ...] or [de, en, ...]
@@ -409,12 +408,19 @@ type QuestionnaireT struct {
 	CurrPage  int  `json:"curr_page,omitempty"`
 	HasErrors bool `json:"has_errors,omitempty"` // If any response is faulty; set by ValidateReponseData
 
-	Variations int `json:"variations,omitempty"` //  Deterministically shuffle groups based on user id into ... variations.
-	MaxGroups  int `json:"max_groups,omitempty"` //  Max number of groups - computed during initialization.
+	// a primitive permutation mechanism
+	ShufflingsMax int `json:"shufflings_max,omitempty"` //  Deterministically shuffle groups based on user id into ... variations.
+
+	//
+	VersionMax       int    `json:"version_max,omitempty"`    // total number of versions - usually permutations
+	AssignVersion    string `json:"assign_version,omitempty"` // default is UserID modulo - other value is "round-robin"
+	VersionEffective int    `json:"version_effective"`        // result of q.Version()
+
+	MaxGroups int `json:"max_groups,omitempty"` //  Max number of groups - a helper value - computed during questionnaire creation.
 
 	Pages []*pageT `json:"pages,omitempty"`
 
-	Version int `json:"version,omitempty"` // 0 - rendering as HTML table   -   1 - rendering as CSS Grid
+	// Version int `json:"version,omitempty"` // 0 - rendering as HTML table   -   1 - rendering as CSS Grid
 }
 
 // registering all types, being saved into a session
@@ -598,7 +604,7 @@ func (q *QuestionnaireT) RandomizeOrder(pageIdx int) []int {
 				// this must conform with ShufflesToCSV()
 				// q.MaxGroups instead of len(shufflingGroups[sg])
 				// order = order[0:len(shufflingGroups[sg])]
-				sh := shuffler.New(q.UserID, q.Variations, len(shufflingGroups[sg]))
+				sh := shuffler.New(q.UserID, q.ShufflingsMax, len(shufflingGroups[sg]))
 				order := sh.Slice(pageIdx) // cannot add sg to conform to ShufflesToCSV()
 				log.Printf("%v - seq %16s in order %16s - iter %v", sg, fmt.Sprint(shufflingGroups[sg]), fmt.Sprint(order), pageIdx+sg)
 				for i := 0; i < len(shufflingGroups[sg]); i++ {
@@ -776,12 +782,7 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 				fmt.Fprint(w, grpHTML+"\n")
 			}
 		} else {
-			grpHTML := ""
-			if q.Version > 1 {
-				grpHTML = q.GroupHTMLGridBased(pageIdx, grpIdx)
-			} else {
-				grpHTML = q.GroupHTMLTableBased(pageIdx, grpIdx)
-			}
+			grpHTML := q.GroupHTMLGridBased(pageIdx, grpIdx)
 
 			if strings.Contains(grpHTML, "[groupID]") {
 				nonCompositCntr++
@@ -1100,6 +1101,31 @@ func (q *QuestionnaireT) UserIDInt() int {
 		)
 	}
 	return userID
+}
+
+var ctrLogin = ctr.New()
+
+// Version retrieves the questionnaire's version;
+// default - version depends on user ID
+// 'round-robin' - version depends on login order
+func (q *QuestionnaireT) Version() int {
+
+	if q == nil {
+		return 0 // questionnaire creation
+	}
+	if q.UserID == "systemtest" {
+		return -1119
+	}
+
+	if q.AssignVersion == "round-robin" {
+		if q.VersionMax > 0 && q.VersionEffective < 0 {
+			q.VersionEffective = int(ctrLogin.Increment()) % q.VersionMax
+		}
+	} else {
+		q.VersionEffective = q.UserIDInt() % q.VersionMax
+	}
+
+	return q.VersionEffective
 }
 
 // ByName retrieves an input element by name

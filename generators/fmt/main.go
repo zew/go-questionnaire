@@ -81,8 +81,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		"en": "Indicator of Economic Sentiment",
 	}
 
-	q.Version = 2
-
 	// page 0
 	{
 		page := q.AddPage()
@@ -1019,18 +1017,14 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		}
 	}
 
-	err = q.Validate()
-	if err != nil {
-		return nil, fmt.Errorf("Error validating questionnaire: %v", err)
-	}
 	q.Hyphenize()
 	q.ComputeMaxGroups()
-	if err := (&q).TranslationCompleteness(); err != nil {
+	if err := q.TranslationCompleteness(); err != nil {
 		return &q, err
 	}
-	if err := (&q).Validate(); err != nil {
+	if err := q.Validate(); err != nil {
 		return &q, err
 	}
-
 	return &q, nil
+
 }

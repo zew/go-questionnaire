@@ -13,16 +13,19 @@
  		"params": [
  			{
  				"name": "main_refinance_rate_ecb",
- 				"val": "01.09.2019: 0,0% - Stand 03.05.2021"
+ 				"val": "01.09.2019: 0,0% - Stand 29.04.2021"
  			},
  			{}
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "b873733d8d6f13887d2430e899e78ef6454ef7594b1fad0e6d93611eedd79fa3",
+ 	"md_5": "6a92dc22e449ba444ebd5f825316832b3db0099cca907fd6a8241992176f109a",
  	"lang_codes": [
  		"de"
  	],
+ 	"version_max": 16,
+ 	"assign_version": "round-robin",
+ 	"version_effective": -2,
  	"max_groups": 6,
  	"pages": [
  		{
@@ -140,7 +143,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\u003cp\u003e\u003cb\u003e\n\t\t\t\tIm Folgenden geht es um eine Spende von 30\u0026nbsp;€, die \u003ci\u003eeine\u003c/i\u003e dieser drei Stif\u0026shy;tungen er\u0026shy;hal\u0026shy;ten soll:\n\t\t\t\t\u003c/b\u003e\u003c/p\u003e\n\n\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\u003c!-- beware of hyphenization of css class names  --\u003e\n\t\t\t\t\u003cstyle\u003e\n\t\t\t\t\ttable.xxx01 td {\n\t\t\t\t\t\ttext-align: center;\n\t\t\t\t\t\ttext-align: center;\n\t\t\t\t\t}\n\t\t\t\t\u003c/style\u003e\n\n\t\t\t\t\u003ctable class=\"xxx01\"\u003e\n\t\t\t\t\u003ctr\u003e\n\t\t\t\t\t\u003ctd style=\"width: 33.2%\"\u003ePolitisch links\u003c/td\u003e\n\t\t\t\t\t\u003ctd style=\"width: 33.2%\"\u003ePolitische Mitte\u003c/td\u003e\n\t\t\t\t\t\u003ctd style=\"width: 33.2%\"\u003ePolitisch konservativ\u003c/td\u003e\n\t\t\t\t\u003ctr\u003e\n\t\t\t\t\u003ctr\u003e\n\t\t\t\t\t\u003ctd style=\"vertical-align: top;\" \u003e\u003cb\u003eHans-Böckler-Stif\u0026shy;tung\u003c/b\u003e\u003c/td\u003e\n\t\t\t\t\t\u003ctd style=\"vertical-align: top;\" \u003e\u003cb\u003eBund der Steuerzahler Deutsch\u0026shy;land e.V.\u003c/b\u003e\u003c/td\u003e\n\t\t\t\t\t\u003ctd style=\"vertical-align: top;\" \u003e\u003cb\u003eLudwig-Erhard-Stif\u0026shy;tung\u003c/b\u003e\u003c/td\u003e\n\t\t\t\t\u003ctr\u003e\n\t\t\t\t\u003c/table\u003e\n\n\t\t\t\t\u003cdiv class='vspacer-08'\u003e \u0026nbsp; \u003c/div\u003e\n\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tFünf deutsche Staatsangehörige haben an einer Vorstudie teilgenommen. \n\t\t\t\t\t\n\t\t\t\t\tJede dieser fünf Personen hat in der Vorstudie angegeben, welche der drei Stif\u0026shy;tungen sie als am besten, mittel und am schlech\u0026shy;testen erachtet.\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tWir sind nun daran interessiert, wie Sie die fünf individuellen Präferenzen in eine Grup\u0026shy;penentscheidung zusammenfassen, an welche Stif\u0026shy;tung die 30\u0026nbsp;€ gehen sollen. Bevorzugen Sie beispielsweise eher eine Kompromiss\u0026shy;lösung oder eher eine Mehrheits\u0026shy;lösung? Ihre eigene Meinung über die Stif\u0026shy;tungen soll dabei keine Rolle spielen. Deshalb sind die Stif\u0026shy;tungen im Folgenden als Stif\u0026shy;tung A, B und C anonymisiert.\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tSie werden insge\u0026shy;samt sechs Entscheidungen treffen, wie die Präferenzen der Grup\u0026shy;pe zusammengefasst werden sollen. Eine der sechs Entscheidungen stellt die echten Präferenzen der Grup\u0026shy;pen\u0026shy;mit\u0026shy;glieder aus der Vorstudie dar und kann daher zufällig ausgewählt und tatsächlich umgesetzt werden. Da Sie nicht wissen, welche Entscheidung die echten Präferenzen darstellt, bitten wir Sie, in allen Fällen anzunehmen, dass die jeweilige Entscheidung tatsächlich umgesetzt wird.\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\u003cp\u003e\u003cb\u003e\n\t\t\t\tIm Folgenden geht es um eine Spende von 30\u0026nbsp;€, die \u003ci\u003eeine\u003c/i\u003e dieser drei Stif\u0026shy;tungen er\u0026shy;hal\u0026shy;ten soll:\n\t\t\t\t\u003c/b\u003e\u003c/p\u003e\n\n\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\u003c!-- beware of hyphenization of css class names  --\u003e\n\t\t\t\t\u003cstyle\u003e\n\t\t\t\t\ttable.xxx01 td {\n\t\t\t\t\t\ttext-align: center;\n\t\t\t\t\t\ttext-align: center;\n\t\t\t\t\t}\n\t\t\t\t\u003c/style\u003e\n\n\t\t\t\t\u003ctable class=\"xxx01\"\u003e\n\t\t\t\t\u003ctr\u003e\n\t\t\t\t\t\u003ctd style=\"width: 33.2%\"\u003ePolitisch links\u003c/td\u003e\n\t\t\t\t\t\u003ctd style=\"width: 33.2%\"\u003ePolitische Mitte\u003c/td\u003e\n\t\t\t\t\t\u003ctd style=\"width: 33.2%\"\u003ePolitisch konservativ\u003c/td\u003e\n\t\t\t\t\u003ctr\u003e\n\t\t\t\t\u003ctr\u003e\n\t\t\t\t\t\u003ctd style=\"vertical-align: top;\" \u003e\u003cb\u003eHans-Böckler-Stif\u0026shy;tung\u003c/b\u003e\u003c/td\u003e\n\t\t\t\t\t\u003ctd style=\"vertical-align: top;\" \u003e\u003cb\u003eBund der Steuerzahler Deutsch\u0026shy;land e.V.\u003c/b\u003e\u003c/td\u003e\n\t\t\t\t\t\u003ctd style=\"vertical-align: top;\" \u003e\u003cb\u003eLudwig-Erhard-Stif\u0026shy;tung\u003c/b\u003e\u003c/td\u003e\n\t\t\t\t\u003ctr\u003e\n\t\t\t\t\u003c/table\u003e\n\n\t\t\t\t\u003cdiv class='vspacer-08'\u003e \u0026nbsp; \u003c/div\u003e\n\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tFünf deutsche Staatsangehörige haben an einer Vorstudie teilgenommen. \n\t\t\t\t\t\n\t\t\t\t\tJede dieser fünf Personen hat in der Vorstudie angegeben, welche der drei Stif\u0026shy;tungen sie als am besten, mittel und am schlech\u0026shy;testen erachtet.\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tWir sind nun daran interessiert, wie Sie die fünf individuellen Präferenzen in eine Grup\u0026shy;penentscheidung zusammenfassen, an welche Stif\u0026shy;tung die 30\u0026nbsp;€ gehen sollen. Bevorzugen Sie beispielsweise eher eine Kompromiss\u0026shy;lösung oder eher eine Mehrheits\u0026shy;lösung? Ihre eigene Meinung über die Stif\u0026shy;tungen soll dabei keine Rolle spielen. Deshalb sind die Stif\u0026shy;tungen im Folgenden als Stif\u0026shy;tung A, B und C anonymisiert.\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tSie werden insge\u0026shy;samt sechs Entscheidungen treffen, wie die Präferenzen der Grup\u0026shy;pe zusammengefasst werden sollen. Eine der sechs Entscheidungen stellt die echten Präferenzen der Grup\u0026shy;pen\u0026shy;mit\u0026shy;glieder aus der Vorstudie dar und kann daher zufällig ausgewählt und tatsächlich umgesetzt werden. \n\t\t\t\t\t\n\t\t\t\t\tDa Sie nicht wissen, welche Entscheidung die echten Präferenzen darstellt, nehmen Sie bitte in allen Fällen an, dass die jeweilige Entscheidung tatsächlich umgesetzt wird.\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t\n\t\t\t\t"
  							},
  							"col_span": 6,
  							"col_span_label": 6
@@ -542,7 +545,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\t\u003cb\u003e\n\t\t\t\t\t\tNun kommen wir zum zweiten Teil unserer Studie. \n\t\t\t\t\t\t\u003c/b\u003e\n\t\t\t\t\t\tIn diesem Teil treffen Sie eine Entscheidung für einen deutschen Staatsangehörigen, der Ihnen zugeordnet ist und der an einer zukünftigen Studie teilnimmt. Diese Person wird in der Studie entscheiden, wie ihr das Entgelt für die Studienteilnahme ausbezahlt wird. Je eher diese Person bereit ist, auf ihr Geld zu warten, desto mehr Geld wird ihr insge\u0026shy;samt bezahlt.\t\t\t\t\t\t\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tWir bitten Sie zu entscheiden, wie geduldig oder wie ungeduldig die Person wählen kann. Dazu bestimmen Sie für jede von drei Optionen, ob sie der Person zur Verfügung stehen soll oder nicht. Falls Sie mehrere Optionen ver\u0026shy;füg\u0026shy;bar machen, kann die Person aus diesen wählen. Mindestens eine Option muss „Ver\u0026shy;füg\u0026shy;bar“ sein.\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003cp style=\"font-size: 87%;\"\u003e\n\t\t\t\t\t\t\u003ci\u003e\n\t\t\t\t\t\tDetails: Die nicht ver\u0026shy;füg\u0026shy;baren Optionen werden der Person nicht als Auswahloptionen angezeigt. Bei ver\u0026shy;füg\u0026shy;bar gemachten Optionen können Sie zusätzlich „Von dieser Option abraten“ ankreuzen. In diesem Fall erhält die Person die Botschaft: „Ein früherer Teilnehmer dieser Studie rät Ihnen davon ab, diese Option zu wählen”.\n\t\t\t\t\t\t\u003c/i\u003e\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cbr\u003e\n\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\t\u003cb\u003eEntscheidung 7. \u003c/b\u003e\u003cbr\u003e\n\t\t\t\t\t\tWelche Optionen sollen der Person (nicht) zur Verfügung stehen, falls die Optionen wie folgt lauten?\n\n\t\t\t\t\t\u003c/p\u003e\n\n\n\t\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\t\u003cb\u003e\n\t\t\t\t\t\tNun kommen wir zum zweiten Teil unserer Studie. \n\t\t\t\t\t\t\u003c/b\u003e\n\t\t\t\t\t\tIn diesem Teil treffen Sie jeweils Entscheidungen für einen deutschen Staatsangehörigen, der Ihnen zugeordnet ist und der an einer zukünftigen Studie teilnehmen wird. Diese Person wird in der Studie entscheiden, wie ihr das Entgelt für die Studienteilnahme ausbezahlt wird. Je eher diese Person bereit ist, auf ihr Geld zu warten, desto mehr Geld wird ihr insge\u0026shy;samt bezahlt.\t\t\t\t\t\t\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tWir bitten Sie zu entscheiden, wie geduldig oder wie ungeduldig die Person wählen kann. \n\t\t\t\t\t\t\n\t\t\t\t\t\tDazu bestimmen Sie für jede von drei Optionen, ob die jeweilige Option der Person zur Verfügung stehen soll oder nicht. \n\t\t\t\t\t\t\n\t\t\t\t\t\tFalls Sie mehrere Optionen ver\u0026shy;füg\u0026shy;bar machen, kann die Person aus diesen wählen. Mindestens eine Option muss „Ver\u0026shy;füg\u0026shy;bar“ sein.\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003cp style=\"font-size: 87%;\"\u003e\n\t\t\t\t\t\t\u003ci\u003e\n\t\t\t\t\t\tDetails: Die nicht ver\u0026shy;füg\u0026shy;baren Optionen werden der Person nicht als Auswahloptionen angezeigt. Bei ver\u0026shy;füg\u0026shy;bar gemachten Optionen können Sie zusätzlich „Von dieser Option abraten“ ankreuzen. In diesem Fall erhält die Person die Botschaft: „Ein früherer Teilnehmer dieser Studie rät Ihnen davon ab, diese Option zu wählen”.\n\t\t\t\t\t\t\u003c/i\u003e\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cbr\u003e\n\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\t\u003cb\u003eEntscheidung 7. \u003c/b\u003e\u003cbr\u003e\n\t\t\t\t\t\tWelche Optionen sollen der Person (nicht) zur Verfügung stehen, falls die Optionen wie folgt lauten?\n\n\t\t\t\t\t\u003c/p\u003e\n\n\n\t\t\t\t\t"
  							},
  							"col_span_label": 1
  						}
@@ -1353,7 +1356,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eZum Schluss bitten wir Sie drei Fragen über sich selbst zu be\u0026shy;ant\u0026shy;wor\u0026shy;ten:\u003c/b\u003e\n\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cb\u003eFrage 5.\u003c/b\u003e\n\t\t\t\t\tSind Sie im Vergleich zu anderen im Allgemeinen bereit, \n\t\t\t\t\theute auf etwas zu verzichten, \n\t\t\t\t\tum in der Zukunft davon zu profitieren, \n\t\t\t\t\toder sind Sie im Vergleich zu anderen dazu nicht bereit? \n\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eZum Schluss bitten wir Sie, drei Fragen über sich selbst zu be\u0026shy;ant\u0026shy;wor\u0026shy;ten:\u003c/b\u003e\n\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cb\u003eFrage 5.\u003c/b\u003e\n\t\t\t\t\tSind Sie im Vergleich zu anderen im Allgemeinen bereit, \n\t\t\t\t\theute auf etwas zu verzichten, \n\t\t\t\t\tum in der Zukunft davon zu profitieren, \n\t\t\t\t\toder sind Sie im Vergleich zu anderen dazu nicht bereit? \n\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t"
  							},
  							"col_span": 7,
  							"col_span_label": 1
@@ -2103,7 +2106,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage 7.\u003c/b\u003e\n\t\t\t\t\tWie schätzen Sie Ihre Bereitschaft ein mit anderen zu teilen, \n\t\t\t\t\tohne da\u0026shy;für eine Gegenleistung zu erwarten?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage 7.\u003c/b\u003e\n\t\t\t\t\tWie schätzen Sie Ihre Bereitschaft ein, mit anderen zu teilen, \n\t\t\t\t\tohne da\u0026shy;für eine Gegenleistung zu erwarten?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 7,
  							"col_span_label": 1
@@ -2573,6 +2576,5 @@
  				}
  			]
  		}
- 	],
- 	"version": 2
+ 	]
  }

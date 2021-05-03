@@ -31,12 +31,7 @@ var q1Pretext = []string{
 // introductions to PoliticalFoundations question series
 func PoliticalFoundationsPretext(q *QuestionnaireT, seq0to5, paramSetIdx int) (string, []string, error) {
 
-	userID := 0
-	if q != nil {
-		userID = q.UserIDInt()
-	}
-
-	zeroTo15 := userID % 16
+	zeroTo15 := q.Version()
 
 	imgTag := fmt.Sprintf(
 		`<img src='%v' class='q1-pretext-img' >`,

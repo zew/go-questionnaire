@@ -45,12 +45,7 @@ var reshuffle6basedOn16 = [][]int{
 // see composite.go for more.
 func PoliticalFoundations(q *QuestionnaireT, seq0to5, paramSetIdx int) (string, []string, error) {
 
-	userID := 0
-	if q != nil {
-		userID = q.UserIDInt()
-	}
-
-	zeroTo15 := userID % 16
+	zeroTo15 := q.Version()
 
 	oneOfSix := reshuffle6basedOn16[zeroTo15][seq0to5] - 1 // display order => reshuffled questions order
 

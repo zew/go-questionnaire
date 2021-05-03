@@ -412,28 +412,30 @@ func computeMobile(w http.ResponseWriter, r *http.Request, q *qst.QuestionnaireT
 		mobile = true
 	}
 
+	qMobile := 0 // q.Mobile int  -  `json:"mobile,omitempty"` // 0 - no preference, 1 - desktop, 2 - mobile
+
 	// override by explicit url parameter
 	if mP, ok := sess.ReqParam("mobile"); ok {
 		if mP == "0" || mP == "false" {
 			mobile = false
-			q.Mobile = 0 // no user preference
+			qMobile = 0 // no user preference
 		}
 		if mP == "1" || mP == "true" {
 			mobile = true
-			q.Mobile = 1 // explicit mobile
+			qMobile = 1 // explicit mobile
 		}
 		if mP == "2" || mP == "desktop" {
 			mobile = false
-			q.Mobile = 2 // explicit desktop
+			qMobile = 2 // explicit desktop
 		}
 	}
 
-	// log.Printf("Mobile = %v", q.Mobile)
+	// log.Printf("Mobile = %v", qMobile)
 
-	if q.Mobile == 1 {
+	if qMobile == 1 {
 		return true
 	}
-	if q.Mobile == 2 {
+	if qMobile == 2 {
 		return false
 	}
 

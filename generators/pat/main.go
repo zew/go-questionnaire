@@ -31,15 +31,13 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	q.Survey = qst.NewSurvey("pat")
 	q.Survey.Params = params
 	q.LangCodes = []string{"de"} // governs default language code
-	q.Version = 2
 
 	q.Survey.Org = trl.S{"de": "ZEW"}
-	q.Survey.Name = trl.S{"de": "Paternalismus Umfrage"}
 	q.Survey.Name = trl.S{"de": "Entscheidungsprozesse in der Politik"}
-	q.Survey.Name = trl.S{"de": "Politische Entscheidungsprozesse"}
-	q.Survey.Name = trl.S{"de": "Entscheidungsprozesse in der Politik"}
-	q.Variations = 4
-	q.Variations = 0
+
+	q.VersionMax = 16
+	q.AssignVersion = "round-robin"
+	q.VersionEffective = -2 // must be re-set at the end - after validate
 
 	// page 0
 	{
@@ -163,7 +161,9 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 					Wir sind nun daran interessiert, wie Sie die fünf individuellen Präferenzen in eine Gruppenentscheidung zusammenfassen, an welche Stiftung die 30&nbsp;€ gehen sollen. Bevorzugen Sie beispielsweise eher eine Kompromisslösung oder eher eine Mehrheitslösung? Ihre eigene Meinung über die Stiftungen soll dabei keine Rolle spielen. Deshalb sind die Stiftungen im Folgenden als Stiftung A, B und C anonymisiert.
 				</p>
 				<p>
-					Sie werden insgesamt sechs Entscheidungen treffen, wie die Präferenzen der Gruppe zusammengefasst werden sollen. Eine der sechs Entscheidungen stellt die echten Präferenzen der Gruppenmitglieder aus der Vorstudie dar und kann daher zufällig ausgewählt und tatsächlich umgesetzt werden. Da Sie nicht wissen, welche Entscheidung die echten Präferenzen darstellt, bitten wir Sie, in allen Fällen anzunehmen, dass die jeweilige Entscheidung tatsächlich umgesetzt wird.
+					Sie werden insgesamt sechs Entscheidungen treffen, wie die Präferenzen der Gruppe zusammengefasst werden sollen. Eine der sechs Entscheidungen stellt die echten Präferenzen der Gruppenmitglieder aus der Vorstudie dar und kann daher zufällig ausgewählt und tatsächlich umgesetzt werden. 
+					
+					Da Sie nicht wissen, welche Entscheidung die echten Präferenzen darstellt, nehmen Sie bitte in allen Fällen an, dass die jeweilige Entscheidung tatsächlich umgesetzt wird.
 				</p>
 				
 				`}
@@ -412,10 +412,14 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 						<b>
 						Nun kommen wir zum zweiten Teil unserer Studie. 
 						</b>
-						In diesem Teil treffen Sie eine Entscheidung für einen deutschen Staatsangehörigen, der Ihnen zugeordnet ist und der an einer zukünftigen Studie teilnimmt. Diese Person wird in der Studie entscheiden, wie ihr das Entgelt für die Studienteilnahme ausbezahlt wird. Je eher diese Person bereit ist, auf ihr Geld zu warten, desto mehr Geld wird ihr insgesamt bezahlt.						
+						In diesem Teil treffen Sie jeweils Entscheidungen für einen deutschen Staatsangehörigen, der Ihnen zugeordnet ist und der an einer zukünftigen Studie teilnehmen wird. Diese Person wird in der Studie entscheiden, wie ihr das Entgelt für die Studienteilnahme ausbezahlt wird. Je eher diese Person bereit ist, auf ihr Geld zu warten, desto mehr Geld wird ihr insgesamt bezahlt.						
 					</p>
 					<p>
-						Wir bitten Sie zu entscheiden, wie geduldig oder wie ungeduldig die Person wählen kann. Dazu bestimmen Sie für jede von drei Optionen, ob sie der Person zur Verfügung stehen soll oder nicht. Falls Sie mehrere Optionen verfügbar machen, kann die Person aus diesen wählen. Mindestens eine Option muss „Verfügbar“ sein.
+						Wir bitten Sie zu entscheiden, wie geduldig oder wie ungeduldig die Person wählen kann. 
+						
+						Dazu bestimmen Sie für jede von drei Optionen, ob die jeweilige Option der Person zur Verfügung stehen soll oder nicht. 
+						
+						Falls Sie mehrere Optionen verfügbar machen, kann die Person aus diesen wählen. Mindestens eine Option muss „Verfügbar“ sein.
 					</p>
 
 					<p style="font-size: 87%;">
@@ -791,7 +795,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			gb.MainLabel = trl.S{
 				"de": `
 					<p>
-					<b>Zum Schluss bitten wir Sie drei Fragen über sich selbst zu beantworten:</b>
+					<b>Zum Schluss bitten wir Sie, drei Fragen über sich selbst zu beantworten:</b>
 
 					<br>
 					<br>
@@ -848,7 +852,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 				"de": `
 					<p>
 					<b>Frage 7.</b>
-					Wie schätzen Sie Ihre Bereitschaft ein mit anderen zu teilen, 
+					Wie schätzen Sie Ihre Bereitschaft ein, mit anderen zu teilen, 
 					ohne dafür eine Gegenleistung zu erwarten?
 					</p>
 				`,
@@ -920,13 +924,17 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 	}
 
-	(&q).Hyphenize()
-	(&q).ComputeMaxGroups()
-	if err := (&q).TranslationCompleteness(); err != nil {
+	q.Hyphenize()
+	q.ComputeMaxGroups()
+	if err := q.TranslationCompleteness(); err != nil {
 		return &q, err
 	}
-	if err := (&q).Validate(); err != nil {
+	if err := q.Validate(); err != nil {
 		return &q, err
 	}
+
+	q.VersionEffective = -2
+
 	return &q, nil
+
 }

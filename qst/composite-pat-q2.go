@@ -16,12 +16,7 @@ import (
 // see composite.go for more.
 func TimePreferenceSelf(q *QuestionnaireT, seq0to5, paramSetIdx int) (string, []string, error) {
 
-	userID := 0
-	if q != nil {
-		userID = q.UserIDInt()
-	}
-
-	zeroTo15 := userID % 16
+	zeroTo15 := q.Version()
 
 	// 	log.Printf(
 	// 		`TimePreferenceSelf

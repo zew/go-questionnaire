@@ -34,12 +34,12 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		inp.MaxChars = 10
 	}
 
-	(&q).Hyphenize()
-	(&q).ComputeMaxGroups()
-	if err := (&q).TranslationCompleteness(); err != nil {
+	q.Hyphenize()
+	q.ComputeMaxGroups()
+	if err := q.TranslationCompleteness(); err != nil {
 		return &q, err
 	}
-	if err := (&q).Validate(); err != nil {
+	if err := q.Validate(); err != nil {
 		return &q, err
 	}
 	return &q, nil

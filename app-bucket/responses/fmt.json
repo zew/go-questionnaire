@@ -15,17 +15,18 @@
  		"params": [
  			{
  				"name": "main_refinance_rate_ecb",
- 				"val": "01.09.2019: 0,0% - Stand 03.05.2021"
+ 				"val": "01.09.2019: 0,0% - Stand 29.04.2021"
  			},
  			{}
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "6421c3601f5e1a452b65685b5d4329c815e68e013ae49ad7f5f9d3d499ba1ac6",
+ 	"md_5": "0b6bbd26c41f5044e098202dafdee74f8e25cfd6d39194bc6bf515062a7eb018",
  	"lang_codes": [
  		"de",
  		"en"
  	],
+ 	"version_effective": 0,
  	"max_groups": 5,
  	"pages": [
  		{
@@ -5552,8 +5553,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e3.\u003c/b\u003e Den \u003cb\u003eHauptre\u0026shy;finanz\u0026shy;ierungssatz\u003c/b\u003e der EZB (seit 01.09.2019: 0,0% - Stand 03.05.2021) erwarte ich auf Sicht von",
- 								"en": "\u003cb\u003e3.\u003c/b\u003e I expect the \u003cb\u003emain refinance rate\u003c/b\u003e of the ECB (since 01.09.2019: 0,0% - Stand 03.05.2021) in"
+ 								"de": "\u003cb\u003e3.\u003c/b\u003e Den \u003cb\u003eHauptre\u0026shy;finanz\u0026shy;ierungssatz\u003c/b\u003e der EZB (seit 01.09.2019: 0,0% - Stand 29.04.2021) erwarte ich auf Sicht von",
+ 								"en": "\u003cb\u003e3.\u003c/b\u003e I expect the \u003cb\u003emain refinance rate\u003c/b\u003e of the ECB (since 01.09.2019: 0,0% - Stand 29.04.2021) in"
  							},
  							"col_span": 12,
  							"col_span_label": 12
@@ -6458,8 +6459,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003cb\u003e3.\u003c/b\u003e \n\t\t\t\t\tAuch einige Kommunen haben Geld bei der Greensill Bank angelegt, um von den höheren Zinsen zu profitieren. Da sie von der Einlagensi\u0026shy;cherung seit 2017 ausgenommen sind, werden sie keine Entschädigung er\u0026shy;hal\u0026shy;ten. Besteht hier Handlungsbedarf?\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t",
- 								"en": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003cb\u003e3.\u003c/b\u003e \n\t\t\t\t\tSome municipal governments deposited money with the Greensill Bank, to benefit from\n\t\t\t\t\thigher interest rates. \n\t\t\t\t\tThey will not be compensated, since they are excluded from deposit insurance.\n\t\t\t\t\tDo you agree?\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003cb\u003e3.\u003c/b\u003e \n\t\t\t\t\tAuch einige Kommunen haben Geld bei der Greensill Bank angelegt, um von den höheren Zinsen zu profitieren. Da sie von der Einlagensi\u0026shy;cherung seit 2017 ausgenommen sind, werden sie keine Entschädigung er\u0026shy;hal\u0026shy;ten. Besteht hier Handlungsbedarf?\n\t\t\t\t\tWählen Sie bitte die Antwortmöglichkeit aus, der Sie am meisten zustimmen.\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t",
+ 								"en": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003cb\u003e3.\u003c/b\u003e \n\t\t\t\t\tSome municipal governments deposited money with the Greensill Bank, to benefit from\n\t\t\t\t\thigher interest rates. \n\t\t\t\t\tThey will not be compensated, since they are excluded from deposit insurance.\n\t\t\t\t\tPlease choose the an\u0026shy;swer most closely to your position.\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 12,
  							"col_span_label": 1
@@ -6539,6 +6540,38 @@
  							"col_span_label": 11,
  							"col_span_control": 1,
  							"value_radio": "no",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0 0 1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0 0 2rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "di_no_answer",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Keine Antwort",
+ 								"en": "No An\u0026shy;swer"
+ 							},
+ 							"col_span": 12,
+ 							"col_span_label": 11,
+ 							"col_span_control": 1,
+ 							"value_radio": "no_answer",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -7151,6 +7184,5 @@
  				}
  			]
  		}
- 	],
- 	"version": 2
+ 	]
  }

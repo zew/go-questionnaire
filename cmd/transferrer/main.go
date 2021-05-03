@@ -433,7 +433,8 @@ func main() {
 			"status",
 			"remote_ip",
 			"user_agent",
-			"variations",
+			"version",
+			"version_max",
 		}
 		for iPg := 0; iPg < maxPages; iPg++ {
 			staticCols = append(staticCols, fmt.Sprintf("page_%v", iPg+1))
@@ -521,7 +522,8 @@ func main() {
 				status,               // status
 				q.RemoteIP,           // remote_ip
 				qst.EnglishTextAndNumbersOnly(q.UserAgent), // user_agent
-				fmt.Sprint(q.Variations),                   // variations
+				fmt.Sprint(q.VersionEffective),             // version effective
+				fmt.Sprint(q.VersionMax),                   // number of versions
 			}
 			for iPg := 0; iPg < maxPages; iPg++ {
 				if iPg < len(finishes) {

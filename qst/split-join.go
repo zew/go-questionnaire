@@ -68,14 +68,15 @@ func (q *QuestionnaireT) Join(q2 *QuestionnaireT) error {
 		}
 	}
 
-	q.CurrPage = q2.CurrPage
 	q.UserID = q2.UserID
 	q.ClosingTime = q2.ClosingTime
 	q.RemoteIP = q2.RemoteIP
 	q.UserAgent = q2.UserAgent
-	q.Mobile = q2.Mobile
 	q.LangCode = q2.LangCode
+	q.CurrPage = q2.CurrPage
 	q.HasErrors = q2.HasErrors
+	q.VersionEffective = q2.VersionEffective
+
 	attrs := map[string]string{}
 	for k, v := range q2.Attrs {
 		attrs[k] = v

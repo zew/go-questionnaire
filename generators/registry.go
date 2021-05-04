@@ -28,6 +28,7 @@ var gens = map[string]genT{
 	"example": example.Create,
 	"fmt":     fmt.Create,
 	"pat":     pat.Create,
+	// "pat0":    pat0.Create,
 	// "flit":    flit.Create,
 	// "peu2018": peu2018.Create,
 	// "mul":     mul.Create,

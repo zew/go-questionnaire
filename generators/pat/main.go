@@ -36,8 +36,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	q.Survey.Name = trl.S{"de": "Entscheidungsprozesse in der Politik"}
 
 	q.VersionMax = 16
-	q.AssignVersion = "round-robin"
-	q.VersionEffective = -2 // must be re-set at the end - after validate
+	// q.AssignVersion = "round-robin"
 
 	// page 0
 	{
@@ -933,7 +932,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		return &q, err
 	}
 
-	q.VersionEffective = -2
+	q.VersionEffective = -2 // re-set after validate
 
 	return &q, nil
 

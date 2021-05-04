@@ -14,6 +14,7 @@ import (
 )
 
 // Load1 loads a questionnaire from a JSON file.
+// On error returns completely empty Questionnaire
 func Load1(fn string) (*QuestionnaireT, error) {
 
 	q := QuestionnaireT{}

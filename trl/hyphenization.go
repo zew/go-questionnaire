@@ -283,14 +283,14 @@ func init() {
 //         acuer|do
 //
 func HyphenizeText(s string) string {
-	s1 := s
+	// s1 := s
 
 	for _, k := range byLen {
 		v := hyphm[k]
 		s = strings.Replace(s, k, v, -1)
 	}
-	if s1 == "Mittlere Stiftung" {
-		log.Printf("hyphenate\n%v\n%v", s1, s)
-	}
+	// if s1 == "Mittlere Stiftung" {
+	// 	log.Printf("hyphenate\n%v\n%v", s1, s)
+	// }
 	return s
 }

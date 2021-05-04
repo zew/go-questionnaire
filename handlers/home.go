@@ -62,6 +62,8 @@ func loadQuestionnaire(w http.ResponseWriter, r *http.Request, l *lgn.LoginT) (*
 		if !cloudio.IsNotExist(err) {
 			return q, err
 		}
+		// is not exist...
+		qBase.UserID = l.User
 		log.Printf("No previous user questionnaire file %v found. Using base file.", pth)
 	} else {
 		err = qBase.Join(qSplit)
@@ -189,8 +191,6 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 		helper(w, r, err)
 		return
 	}
-
-	q.UserID = l.User
 
 	// Already finished?
 	closed := !q.ClosingTime.IsZero()

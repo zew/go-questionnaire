@@ -416,7 +416,7 @@ type QuestionnaireT struct {
 	AssignVersion    string `json:"assign_version,omitempty"` // default is UserID modulo - other value is "round-robin"
 	VersionEffective int    `json:"version_effective"`        // result of q.Version()
 
-	MaxGroups int `json:"max_groups,omitempty"` //  Max number of groups - a helper value - computed during questionnaire creation.
+	MaxGroups int `json:"max_groups,omitempty"` //  Max number of groups - a helper value - computed during questionnaire creation - previously used for shuffing of groups.
 
 	Pages []*pageT `json:"pages,omitempty"`
 
@@ -1113,16 +1113,17 @@ func (q *QuestionnaireT) Version() int {
 	if q == nil {
 		return 0 // questionnaire creation
 	}
-	if q.UserID == "systemtest" {
-		return -1119
-	}
 
-	if q.AssignVersion == "round-robin" {
-		if q.VersionMax > 0 && q.VersionEffective < 0 {
+	if q.VersionMax > 0 && q.VersionEffective < 0 {
+		if strings.ToLower(q.Survey.Type) == "pat" && q.UserIDInt() > 80000 && q.UserIDInt() < 81000 {
 			q.VersionEffective = int(ctrLogin.Increment()) % q.VersionMax
+			log.Printf("Assign version based on central counter: %v", q.VersionEffective)
+		} else if q.AssignVersion == "round-robin" {
+			q.VersionEffective = int(ctrLogin.Increment()) % q.VersionMax
+		} else {
+			q.VersionEffective = q.UserIDInt() % q.VersionMax
+			log.Printf("Assign version based on user id: %v", q.VersionEffective)
 		}
-	} else {
-		q.VersionEffective = q.UserIDInt() % q.VersionMax
 	}
 
 	return q.VersionEffective

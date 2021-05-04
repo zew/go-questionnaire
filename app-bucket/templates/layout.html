@@ -94,6 +94,12 @@
 </form><!-- /content -->
 <span class='content-separator'></span> <!-- split out content - outside because div.content is CSS grid -->
 
+	{{if exists . "Q"}}
+		{{if ne (.Req.Form.Get "show-version") ""}}
+			version: -{{.Q.Version}}-
+		{{end}}
+	{{end}}
+
 
 </body>
 </html>

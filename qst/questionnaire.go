@@ -1085,7 +1085,7 @@ func (q *QuestionnaireT) KeysValues(cleanse bool) (finishes, keys, vals []string
 func (q *QuestionnaireT) UserIDInt() int {
 
 	if q.UserID == "systemtest" {
-		return -10
+		return -3216
 	}
 
 	userID, err := strconv.Atoi(q.UserID)
@@ -1117,12 +1117,15 @@ func (q *QuestionnaireT) Version() int {
 	if q.VersionMax > 0 && q.VersionEffective < 0 {
 		if strings.ToLower(q.Survey.Type) == "pat" && q.UserIDInt() > 80000 && q.UserIDInt() < 81000 {
 			q.VersionEffective = int(ctrLogin.Increment()) % q.VersionMax
-			log.Printf("Assign version based on central counter: %v", q.VersionEffective)
+			// log.Printf("Assign version based on central counter: %v", q.VersionEffective)
 		} else if q.AssignVersion == "round-robin" {
 			q.VersionEffective = int(ctrLogin.Increment()) % q.VersionMax
 		} else {
 			q.VersionEffective = q.UserIDInt() % q.VersionMax
-			log.Printf("Assign version based on user id: %v", q.VersionEffective)
+			if q.UserIDInt() == -3216 {
+				q.VersionEffective = 0 // damn hack for user systemtest
+			}
+			// log.Printf("Assign version based on user id: %v", q.VersionEffective)
 		}
 	}
 

@@ -15,11 +15,13 @@ import (
 	"log"
 	"net/http"
 	"path"
+	"strings"
 
 	"github.com/pkg/errors"
 	"github.com/zew/go-questionnaire/cfg"
 	"github.com/zew/go-questionnaire/cloudio"
 	"github.com/zew/go-questionnaire/lgn"
+	"github.com/zew/go-questionnaire/qst"
 	"github.com/zew/go-questionnaire/sessx"
 )
 
@@ -96,6 +98,28 @@ func bundle(base *template.Template, extend string) error {
 // we need to add dynamic stuff as params instead;
 // see nav(*http.Request) as example.
 func obsoleteAddDynamicFuncs(t *template.Template, r *http.Request) {
+}
+
+// SiteCore returns only the non-numerical part of the site name;
+// for instance 'pat' from 'pat0';
+// used for sharing the same CSS files and CSS settings among multiple questionnaires
+func SiteCore(site string) (string, string) {
+	firstDigit := false
+	cr := strings.Builder{}
+	vr := strings.Builder{}
+	for _, rn := range site {
+		if !firstDigit &&
+			rn >= 48 &&
+			rn <= 57 {
+			firstDigit = true
+		}
+		if firstDigit {
+			vr.WriteRune(rn)
+		} else {
+			cr.WriteRune(rn)
+		}
+	}
+	return cr.String(), vr.String()
 }
 
 // Get returns a parsed bundle of templates by name
@@ -215,17 +239,31 @@ func Exec(w io.Writer, r *http.Request, mp map[string]interface{}, tName string)
 		mp["LangCode"] = cfg.Get().LangCodes[0]
 	}
 
+	// Site - either explicit - or derived from questionnaire type
 	if _, ok := mp["Site"]; !ok {
-		mp["Site"] = "no-site-specified"
+
+		if qIntf, ok2 := mp["Q"]; ok2 {
+			q, ok3 := qIntf.(*qst.QuestionnaireT)
+			if ok3 && q.Survey.Type != "" {
+				mp["Site"] = q.Survey.Type
+			} else {
+				mp["Site"] = "no-site-specified-a"
+			}
+		} else {
+			mp["Site"] = "no-site-specified-b"
+		}
+
 	}
+
+	site := mp["Site"].(string)
+	core, _ := SiteCore(site)
+	mp["SiteCore"], _ = SiteCore(site)
 
 	// mp["CSSSite"] must be of type cfg.[]cssVar; we only check for existence
 	if _, ok := mp["CSSSite"]; !ok {
-		if site, okSite := mp["Site"]; !okSite {
-			mp["CSSSite"] = cfg.Get().CSSVarsSite[site.(string)]
-		} else {
-			mp["CSSSite"] = cfg.Get().CSSVars
-		}
+		mp["CSSSite"] = cfg.Get().CSSVarsSite[core]
+	} else {
+		mp["CSSSite"] = cfg.Get().CSSVars
 	}
 
 	if _, ok := mp["HTMLTitle"]; !ok {

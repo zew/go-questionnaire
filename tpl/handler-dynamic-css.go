@@ -37,7 +37,9 @@ func ServeDynCSS(w http.ResponseWriter, r *http.Request) {
 	cssFileName := path.Base(r.URL.Path) //  /css/site-1/design.css  => design.css
 	t, err := Get(cssFileName)
 	if err != nil {
-		log.Printf("Error compiling CSS template %v site %q: %v", cssFileName, siteName, err)
+		log.Printf("Error retrieving CSS template %v site %q: %v", cssFileName, siteName, err)
+		log.Printf("\t CSS-referrer %v", r.Referer())
+		return
 	}
 
 	effectiveSiteVars, ok := cfg.Get().CSSVarsSite[siteName]

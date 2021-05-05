@@ -43,14 +43,12 @@
 	}
 	</style>
 	<!-- after CSS variables -->
-	<link href="{{cfg.Pref  (print  "/css/" .Q.Survey.Type "/styles.css")          }}?v={{cfg.AppInstanceID}}"  rel="stylesheet" type="text/css" />
-	<link href="{{cfg.Pref  (print  "/css/" .Q.Survey.Type "/progress-bar-2.css")  }}?v={{cfg.AppInstanceID}}"  rel="stylesheet" type="text/css" />
-	<link href="{{cfg.Pref  (print  "/css/" .Q.Survey.Type "/styles-mobile.css")   }}?v={{cfg.AppInstanceID}}"  rel="stylesheet" type="text/css" />
-	<link href="{{cfg.Pref  (print  "/css/" .Q.Survey.Type "/styles-quest.css")    }}?v={{cfg.AppInstanceID}}"  rel="stylesheet" type="text/css" />
+	<link href="{{cfg.Pref  (print  "/css/" .SiteCore "/styles.css")          }}?v={{cfg.AppInstanceID}}"  rel="stylesheet" type="text/css" />
+	<link href="{{cfg.Pref  (print  "/css/" .SiteCore "/progress-bar-2.css")  }}?v={{cfg.AppInstanceID}}"  rel="stylesheet" type="text/css" />
+	<link href="{{cfg.Pref  (print  "/css/" .SiteCore "/styles-mobile.css")   }}?v={{cfg.AppInstanceID}}"  rel="stylesheet" type="text/css" />
+	<link href="{{cfg.Pref  (print  "/css/" .SiteCore "/styles-quest.css")    }}?v={{cfg.AppInstanceID}}"  rel="stylesheet" type="text/css" />
 	{{if exists . "Q"}}
-		{{if ne .Q.Survey.Type ""}}
-			<link href="{{cfg.Pref  "/css/"}}/{{.Q.Survey.Type}}/styles-quest-{{.Q.Survey.Type}}.css" rel="stylesheet" type="text/css" />
-		{{end}}
+		<link href="{{cfg.Pref  "/css/"}}/{{.SiteCore}}/styles-quest-{{.SiteCore}}.css" rel="stylesheet" type="text/css" />
 	{{end}}
 	<!-- <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script> -->
 	<!-- <link rel="stylesheet" href="styles/debug.css"> -->

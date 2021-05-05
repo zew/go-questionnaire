@@ -185,7 +185,7 @@ func (fragm *staticPrefixT) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	// site name
 	siteName := cfg.Get().AppMnemonic
 	if q, ok, _ := qst.FromSession(w, r); ok {
-		siteName = q.Survey.Type
+		siteName, _ = SiteCore(q.Survey.Type)
 	}
 
 	if isMarkdown {
@@ -216,12 +216,19 @@ func (fragm *staticPrefixT) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 			HTMLTitle = strings.Title(HTMLTitle[0:1]) + HTMLTitle[1:]
 		}
 
+		langCodes := []string{langCode}
+		for _, lc := range []string{"en", "de"} {
+			if lc != langCode {
+				langCodes = append(langCodes, lc)
+			}
+		}
+
 		mp := map[string]interface{}{
 			"HTMLTitle": HTMLTitle,
 			"Content":   w1.String(),
 			"Q": &qst.QuestionnaireT{
 				Survey:    qst.NewSurvey(siteName),
-				LangCodes: []string{"en", "de"},
+				LangCodes: langCodes,
 			},
 		}
 

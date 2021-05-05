@@ -381,7 +381,6 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 	mp := map[string]interface{}{
 		"LangCode":  q.LangCode, // default would be cfg.Get().LangCodes[0]
 		"Site":      q.Survey.Type,
-		"CSSSite":   cfg.Get().CSSVarsSite[q.Survey.Type],
 		"HTMLTitle": htmlTitle,
 		"LogoTitle": q.Survey.TemplateLogoText(q.LangCode),
 		"Q":         q,

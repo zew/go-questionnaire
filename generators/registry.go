@@ -18,6 +18,7 @@ import (
 	"github.com/zew/go-questionnaire/generators/example"
 	"github.com/zew/go-questionnaire/generators/fmt"
 	"github.com/zew/go-questionnaire/generators/pat"
+	"github.com/zew/go-questionnaire/generators/pat0"
 	"github.com/zew/go-questionnaire/qst"
 	"github.com/zew/go-questionnaire/tpl"
 )
@@ -28,7 +29,7 @@ var gens = map[string]genT{
 	"example": example.Create,
 	"fmt":     fmt.Create,
 	"pat":     pat.Create,
-	// "pat0":    pat0.Create,
+	"pat0":    pat0.Create,
 	// "flit":    flit.Create,
 	// "peu2018": peu2018.Create,
 	// "mul":     mul.Create,
@@ -154,7 +155,9 @@ func GenerateQuestionnaireTemplates(w http.ResponseWriter, r *http.Request) {
 		// create empty styles-quest-[surveytype].css"
 		// if it does not yet exist
 		fcCreate := func(desktopOrMobile string) (bool, error) {
-			pth := path.Join(".", "templates", desktopOrMobile+q.Survey.Type+".css")
+			siteCore, _ := tpl.SiteCore(q.Survey.Type)
+			fileNameBody := desktopOrMobile + siteCore
+			pth := path.Join(".", "templates", fileNameBody+".css")
 			_, err := cloudio.ReadFile(pth)
 			if err != nil {
 				if cloudio.IsNotExist(err) {

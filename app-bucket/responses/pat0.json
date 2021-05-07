@@ -19,7 +19,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "48e0d0a18b6018c33e3106884cd77124154daad6bb0799af415038679c133220",
+ 	"md_5": "9c452b3a847614bcd05cb98a887fa63ff67653081b55b3df0739446a50836cbc",
  	"lang_codes": [
  		"de"
  	],
@@ -2106,7 +2106,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage 7.\u003c/b\u003e\n\t\t\t\t\tWie schätzen Sie Ihre Bereitschaft ein, mit anderen zu teilen, \n\t\t\t\t\tohne da\u0026shy;für eine Gegenleistung zu erwarten?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage\u0026nbsp;7.\u003c/b\u003e\n\t\t\t\t\tWie schätzen Sie Ihre Bereitschaft ein, mit anderen zu teilen, \n\t\t\t\t\tohne da\u0026shy;für eine Gegenleistung zu erwarten?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 7,
  							"col_span_label": 1
@@ -2472,6 +2472,1891 @@
  							"text_style": {}
  						}
  					}
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": ""
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"navi_num": 9,
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "36rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 12,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 8.\u003c/b\u003e\n\t\t\t\t\tBitte geben Sie Ihr Geschlecht an:\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
+ 							},
+ 							"col_span": 12,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "q8",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Männlich"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"value_radio": "male",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q8",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Weiblich"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"value_radio": "female",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q8",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Divers"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"value_radio": "diverse",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 12,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 9.\u003c/b\u003e\n\t\t\t\t\tBitte geben Sie Ihr Geburtsjahr an:\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
+ 							},
+ 							"col_span": 8,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "q9",
+ 							"type": "number",
+ 							"max_chars": 5,
+ 							"step": 1,
+ 							"min": 1900,
+ 							"max": 2010,
+ 							"col_span": 4,
+ 							"col_span_control": 1
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 8,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 10.\u003c/b\u003e\n\t\t\t\t\tIn welchem Bundesland befindet sich Ihr Hauptwohnsitz?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
+ 							},
+ 							"col_span": 8,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "q10",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Baden-Württemberg"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"value_radio": "bw",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q10",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Bayern"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"value_radio": "by",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q10",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Berlin"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"value_radio": "be",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q10",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Brandenburg"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"value_radio": "bb",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q10",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Bremen"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"value_radio": "hb",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q10",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Hamburg"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"value_radio": "hh",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q10",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Hessen"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"value_radio": "he",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q10",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Mecklenburg-Vorpommern"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"value_radio": "mv",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q10",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Niedersachsen"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"value_radio": "ni",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q10",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Nordrhein-Westfalen"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"value_radio": "nw",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q10",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Rheinland-Pfalz"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"value_radio": "rp",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q10",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Saarland"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"value_radio": "sl",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q10",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Sachsen"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"value_radio": "sn",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q10",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Sachsen-Anhalt"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"value_radio": "st",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q10",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Schleswig-Holstein"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"value_radio": "sh",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q10",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Thüringen"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"value_radio": "th",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 8,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 11.\u003c/b\u003e\n\t\t\t\t\tWelcher ist Ihr höchster Bil\u0026shy;dungs\u0026shy;abschluss?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
+ 							},
+ 							"col_span": 8,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "q11",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Ohne Abschluss"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"value_radio": "kein_abschluss",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q11",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Hauptschule"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"value_radio": "hauptschule",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q11",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Realschule"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"value_radio": "realschule",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q11",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Abitur"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"value_radio": "abitur",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q11",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Hoch\u0026shy;schul\u0026shy;abschluss"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"value_radio": "hochschule",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": ""
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"navi_num": 10,
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "36rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 12,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 12.\u003c/b\u003e\n\t\t\t\t\tWie ist Ihr Familienstand?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
+ 							},
+ 							"col_span": 12,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "q12",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Alleinstehend"
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"value_radio": "single",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q12",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Partnerschaft ohne Ehe"
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"value_radio": "engaged",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q12",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Verheiratet"
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"value_radio": "married",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 8,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 13.\u003c/b\u003e\n\t\t\t\t\tWie viel Geld verdienen Sie persönlich monatlich \n\t\t\t\t\tnach Abzug von Steuern und Sozialversi\u0026shy;cherungsbeiträgen?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
+ 							},
+ 							"col_span": 8,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "q13",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "0 Euro"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"value_radio": "0",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q13",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "bis unter 500 Euro"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"value_radio": "upto500",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q13",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "500 bis unter 1000 Euro"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"value_radio": "upto1000",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q13",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "1000 bis unter 1500 Euro"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"value_radio": "upto1500",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q13",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "1500 bis unter 2000 Euro"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"value_radio": "upto2000",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q13",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "2000 bis unter 3000 Euro"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"value_radio": "upto3000",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q13",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "3000 bis unter 4000 Euro"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"value_radio": "upto4000",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q13",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "4000 bis unter 5000 Euro"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"value_radio": "upto5000",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q13",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Mehr als 5000 Euro"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"value_radio": "over5000",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 8,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 14.\u003c/b\u003e\n\t\t\t\t\tMit welcher Partei fühlen Sie sich \n\t\t\t\t\taufgrund Ihrer Werte und Überzeugungen am ehesten verbunden?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
+ 							},
+ 							"col_span": 8,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "q14",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "CDU/CSU"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"value_radio": "cducsu",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q14",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Die Linke"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"value_radio": "linke",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q14",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "SPD"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"value_radio": "spd",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q14",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Bündnis 90/Die Grünen"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"value_radio": "gruene",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q14",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "FDP"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"value_radio": "fdp",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q14",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "AfD"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"value_radio": "afd",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q14",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Andere"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"value_radio": "other",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q14other",
+ 							"type": "text",
+ 							"max_chars": 14,
+ 							"col_span": 4,
+ 							"col_span_control": 1
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 4,
+ 					"columns": 7,
+ 					"odd_rows_coloring": true,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage\u0026nbsp;15.\u003c/b\u003e\n\t\t\t\t\tWie stufen Sie sich politisch ein?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 							},
+ 							"col_span": 7,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "Klar links / grün"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": ""
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": ""
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": ""
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": ""
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": ""
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "Klar konservativ / bürgerlich"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q15",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "1"
+ 						},
+ 						{
+ 							"name": "q15",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "q15",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "q15",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "q15",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "q15",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "q15",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "7"
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"column_gap": "0.01rem",
+ 								"row_gap": "0.1rem"
+ 							},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
  				},
  				{
  					"bottom_vspacers": 2,
@@ -2491,7 +4376,7 @@
  							"accesskey": "n",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"response": "9",
+ 							"response": "11",
  							"style_control": {
  								"desktop": {
  									"grid_container_style": {},

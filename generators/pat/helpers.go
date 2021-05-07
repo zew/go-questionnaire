@@ -121,3 +121,13 @@ var labelsOneToSeven3 = []trl.S{
 	{"de": ""},
 	{"de": "Sehr risikobereit"},
 }
+
+var labelsOneToSeven4 = []trl.S{
+	{"de": "Klar links / grün"},
+	{"de": ""},
+	{"de": ""},
+	{"de": ""},
+	{"de": ""},
+	{"de": ""},
+	{"de": "Klar konservativ / bürgerlich"},
+}

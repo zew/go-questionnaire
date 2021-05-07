@@ -850,7 +850,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 			gb.MainLabel = trl.S{
 				"de": `
 					<p>
-					<b>Frage 7.</b>
+					<b>Frage&nbsp;7.</b>
 					Wie schätzen Sie Ihre Bereitschaft ein, mit anderen zu teilen, 
 					ohne dafür eine Gegenleistung zu erwarten?
 					</p>

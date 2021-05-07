@@ -411,7 +411,11 @@ type QuestionnaireT struct {
 	// a primitive permutation mechanism
 	ShufflingsMax int `json:"shufflings_max,omitempty"` //  Deterministically shuffle groups based on user id into ... variations.
 
-	//
+	// Previously we had SurveyT.Variant; now all questionnaire variations
+	// should be captured with a distinct VersionEffective.
+	// Notice the difference to tpl.SiteCore();
+	// tpl.SiteCore() yields a common *style* identifier
+	// for completely different questionnaires
 	VersionMax       int    `json:"version_max,omitempty"`    // total number of versions - usually permutations
 	AssignVersion    string `json:"assign_version,omitempty"` // default is UserID modulo - other value is "round-robin"
 	VersionEffective int    `json:"version_effective"`        // result of q.Version()
@@ -500,6 +504,61 @@ func (q *QuestionnaireT) AddPage() *pageT {
 	q.Pages = append(q.Pages, p)
 	ret := q.Pages[len(q.Pages)-1]
 	return ret
+}
+
+// AddPageAfter creates a new page
+// and adds this page to the questionnaire's pages
+func (q *QuestionnaireT) AddPageAfter(idx int) *pageT {
+
+	if idx < 0 || idx > len(q.Pages)-1 {
+		log.Panicf("AddPageAfter(): %v pages - valid indexes are 0...%v", len(q.Pages), len(q.Pages)-1)
+	}
+
+	cntr := ctr.Increment()
+	p := &pageT{
+		Label: trl.S{"en": fmt.Sprintf("PageLabel_%v", cntr), "de": fmt.Sprintf("Seitentitel_%v", cntr)},
+		Desc:  trl.S{"en": "", "de": ""},
+	}
+
+	q.Pages = append(q.Pages, nil)         // make room
+	copy(q.Pages[idx+2:], q.Pages[idx+1:]) // shift one slot to the right
+	q.Pages[idx+1] = p                     //
+
+	return q.Pages[idx+1]
+}
+
+// EditPage returns page X
+func (q *QuestionnaireT) EditPage(idx int) *pageT {
+	if idx < 0 || idx > len(q.Pages)-1 {
+		log.Panicf("EditPage(): %v pages - valid indexes are 0...%v", len(q.Pages), len(q.Pages)-1)
+	}
+	return q.Pages[idx]
+}
+
+// RemoveGroup from page
+func (q *QuestionnaireT) RemoveGroup(pageIdx, groupIdx int) {
+
+	if pageIdx < 0 || pageIdx > len(q.Pages)-1 {
+		log.Panicf(
+			"AddPageAfter(): %v pages - valid indexes are 0...%v",
+			len(q.Pages), len(q.Pages)-1)
+	}
+
+	if groupIdx < 0 || groupIdx > len(q.Pages[pageIdx].Groups)-1 {
+		log.Panicf(
+			"AddPageAfter(): %v pages - valid indexes are 0...%v",
+			len(q.Pages[pageIdx].Groups),
+			len(q.Pages[pageIdx].Groups)-1,
+		)
+	}
+
+	copy(
+		q.Pages[pageIdx].Groups[groupIdx+0:],
+		q.Pages[pageIdx].Groups[groupIdx+1:],
+	) // shift one slot to the left
+
+	q.Pages[pageIdx].Groups = q.Pages[pageIdx].Groups[:len(q.Pages[pageIdx].Groups)-1]
+
 }
 
 // SetLangCode tries to change the questionnaire langCode if supported by langCodes.

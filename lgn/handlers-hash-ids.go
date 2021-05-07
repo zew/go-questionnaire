@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"path"
 
 	"github.com/go-playground/form"
 	hashids "github.com/speps/go-hashids"
@@ -116,9 +117,17 @@ But keep an eye on the application log.
 			fmt.Fprintf(w, "%v - %v\n", i, encodedLong)
 		}
 
+		pathPrefixed := cfg.Pref("d/" + encoded)
+		if fe.Host == "https://survey2.zew.de" {
+			pathPrefixed = path.Join("/", "d", encoded) // this host hast no prefix
+		}
+
 		fmt.Fprintf(w,
 			"%v\t%v\t<a href='%v' target=_blank>%v</a>   <br>\n",
-			i, HashIDDecodeFirst(encoded), fe.Host+cfg.Pref("d/"+encoded), encoded,
+			i,
+			HashIDDecodeFirst(encoded),
+			fe.Host+pathPrefixed,
+			encoded,
 		)
 	}
 

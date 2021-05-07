@@ -79,10 +79,18 @@ func LoginByHash(w http.ResponseWriter, r *http.Request) (bool, error) {
 				log.Printf("Trying anonymous login - surveyID | hashID | userID - %v | %v | %v", surveyID, h, userID)
 				for _, dlr := range cfg.Get().DirectLoginRanges {
 					// log.Printf("  Checking dlr %v - %4v <=  %4v <=  %4v", dlr.SurveyID, dlr.Start, userID, dlr.Stop)
-					if (surveyID != "" && surveyID == dlr.SurveyID) || // either non-empty matching survey ID
-						userID >= dlr.Start && userID <= dlr.Stop { // or empty survey - but userID in range
-						log.Printf("Matching survey %v - or direct login range %v <=  %v <=  %v",
-							dlr.SurveyID, dlr.Start, userID, dlr.Stop)
+
+					// matching the ranges
+					// ---------------------
+					// either non-empty survey ID matches - regardless of userID
+					// or         empty survey ID - but userID in range
+					if (surveyID != "" && surveyID == dlr.SurveyID) ||
+						userID >= dlr.Start && userID <= dlr.Stop {
+
+						log.Printf(
+							"Matching survey %v - or direct login range %v <=  %v <=  %v",
+							dlr.SurveyID, dlr.Start, userID, dlr.Stop,
+						)
 						l := LoginT{}
 						l.User = strUserID
 						l.Provider = "anonymous/direct"
@@ -92,23 +100,26 @@ func LoginByHash(w http.ResponseWriter, r *http.Request) (bool, error) {
 						l.Attrs["survey_id"] = dlr.SurveyID
 						// todo - attrs from profiles? see below
 
-						if dlr.SurveyID == "lt2020" {
+						/*
+							if dlr.SurveyID == "lt2020" {
 
-							userID2, _ := strconv.Atoi(l.User)
-							userID2Version := userID2 % 4
-							log.Printf("lt2020 userID  %7v => version %2v  (%v)", userID2, userID2Version, userID2Version+1)
+								userID2, _ := strconv.Atoi(l.User)
+								userID2Version := userID2 % 4
+								log.Printf("lt2020 userID  %7v => version %2v  (%v)", userID2, userID2Version, userID2Version+1)
 
-							roundRobin := int(ltCounter.Increment() % 4)
-							log.Printf("  round robin %7v =>         %2v", ltCounter.GetLast(), roundRobin)
+								roundRobin := int(ltCounter.Increment() % 4)
+								log.Printf("  round robin %7v =>         %2v", ltCounter.GetLast(), roundRobin)
 
-							variant := userID2Version*4 + roundRobin
-							if userID2 >= 20*1000 {
-								variant += 16
+								variant := userID2Version*4 + roundRobin
+								if userID2 >= 20*1000 {
+									variant += 16
+								}
+
+								l.Attrs["survey_variant"] = fmt.Sprintf("%02v", variant)
+								log.Printf("logged in for  %-7v - variant %2v   (4*%v + %v)", l.Attrs["survey_id"], variant, userID2Version, roundRobin)
 							}
 
-							l.Attrs["survey_variant"] = fmt.Sprintf("%02v", variant)
-							log.Printf("logged in for  %-7v - variant %2v   (4*%v + %v)", l.Attrs["survey_id"], variant, userID2Version, roundRobin)
-						}
+						*/
 
 						l.Attrs["wave_id"] = dlr.WaveID
 						for pk, pv := range dlr.Profile {
@@ -117,6 +128,7 @@ func LoginByHash(w http.ResponseWriter, r *http.Request) (bool, error) {
 						sess.PutObject("login", l)
 						log.Printf("login saved to session as %T from loginByHash", l)
 						return true, nil
+
 					}
 				}
 			}

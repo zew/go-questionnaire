@@ -234,3 +234,61 @@ func init() {
 	}
 	sort.Strings(CountryISOs)
 }
+
+var FederalStatesGermany = map[string]S{
+	"BW": {"de": "Baden-Württemberg"},
+	"BY": {"de": "Bayern"},
+	"BE": {"de": "Berlin"},
+	"BB": {"de": "Brandenburg"},
+	"HB": {"de": "Bremen"},
+	"HH": {"de": "Hamburg"},
+	"HE": {"de": "Hessen"},
+	"NI": {"de": "Niedersachsen"},
+	"MV": {"de": "Mecklenburg-Vorpommern"},
+	"NW": {"de": "Nordrhein-Westfalen"},
+	"RP": {"de": "Rheinland-Pfalz"},
+	"SL": {"de": "Saarland"},
+	"SN": {"de": "Sachsen"},
+	"ST": {"de": "Sachsen-Anhalt"},
+	"SH": {"de": "Schleswig-Holstein"},
+	"TH": {"de": "Thüringen"},
+}
+
+// stable default sorting
+var FederalStatesGermanyISOs = []string{}
+
+func init() {
+	for k := range FederalStatesGermany {
+		FederalStatesGermanyISOs = append(FederalStatesGermanyISOs, k)
+	}
+	sort.Strings(FederalStatesGermanyISOs)
+}
+
+type sorterDe struct {
+	Key string
+	S   S
+}
+
+type sorterDeSl []sorterDe
+
+func (s sorterDeSl) Len() int {
+	return len(s)
+}
+
+func (s sorterDeSl) Less(i, j int) bool {
+	return s[i].S["de"] < s[j].S["de"]
+}
+
+func (s sorterDeSl) Swap(i, j int) {
+	s[i], s[j] = s[j], s[i]
+}
+
+// stable default sorting
+var FederalStatesGermanyISOs2 = sorterDeSl{}
+
+func init() {
+	for k, v := range FederalStatesGermany {
+		FederalStatesGermanyISOs2 = append(FederalStatesGermanyISOs2, sorterDe{k, v})
+	}
+	sort.Sort(FederalStatesGermanyISOs2)
+}

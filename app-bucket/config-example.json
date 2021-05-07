@@ -422,6 +422,22 @@
  				"lang_code": "en",
  				"main_refinance_rate_ecb": "3.5"
  			}
+ 		},
+ 		{
+ 			"survey_id": "pat1",
+ 			"wave_id": "2021-05",
+ 			"profile": {
+ 				"lang_code": "en",
+ 				"main_refinance_rate_ecb": "3.5"
+ 			}
+ 		},
+ 		{
+ 			"survey_id": "pat2",
+ 			"wave_id": "2021-05",
+ 			"profile": {
+ 				"lang_code": "en",
+ 				"main_refinance_rate_ecb": "3.5"
+ 			}
  		}
  	]
  }

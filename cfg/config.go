@@ -380,6 +380,13 @@ func Example() *ConfigT {
 		},
 		AnonymousSurveyID: "4walls",
 		DirectLoginRanges: []directLoginRangeT{
+			//
+			// user-range  matchings first
+			// survey type matchings second
+			//
+			//
+			// matching by user id within start...stop
+			// if ranges repeat, first match wins
 			{
 				Start:    1000 + 0,
 				Stop:     1000 + 29,
@@ -395,6 +402,30 @@ func Example() *ConfigT {
 				Stop:     1000 + 59,
 				SurveyID: "flit",
 				WaveID:   "2019-09",
+				Profile: map[string]string{
+					"lang_code":               "en",
+					"main_refinance_rate_ecb": "3.5",
+				},
+			},
+			// matching by survey type
+			// unrestricted by user id in any range
+			//
+			// *every* match of SurveyID wins
+			{
+				// Start:    any
+				// Stop:     any
+				SurveyID: "pat1",
+				WaveID:   "2021-05",
+				Profile: map[string]string{
+					"lang_code":               "en",
+					"main_refinance_rate_ecb": "3.5",
+				},
+			},
+			{
+				// Start:    any
+				// Stop:     any
+				SurveyID: "pat2",
+				WaveID:   "2021-05",
 				Profile: map[string]string{
 					"lang_code":               "en",
 					"main_refinance_rate_ecb": "3.5",

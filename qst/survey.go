@@ -30,8 +30,7 @@ func (s *surveyT) Param(name string) (string, error) {
 // surveyT stores the interval components of a questionnaire wave.
 // For quarterly intervals, it needs to be extended
 type surveyT struct {
-	Type    string `json:"type,omitempty"`    // The type identifier, i.e. "fmt" or "cep"
-	Variant string `json:"variant,omitempty"` // A variation
+	Type string `json:"type,omitempty"` // The type identifier, i.e. "fmt" or "cep"
 
 	Org  trl.S `json:"org,omitempty"`  // organization, i.e. Unicef
 	Name trl.S `json:"name,omitempty"` // full name, i.e. programming languages survey

@@ -18,11 +18,12 @@ var hyph = []string{
 	// reduced hyphenization
 	"unter|bewertet", // 	"be|wer|tet",
 	"über|bewertet",
-	// "Über|wachung",
 	"Über|wa|chung",
 	"Beitrags|prämien",
 	"Einlagen|sicherungs|fonds",
 	"Entschädigungs|fall ",
+	"Hoch|schul|abschluss",
+	"Bildungs|abschluss",
 
 	//
 	// german
@@ -280,7 +281,7 @@ func init() {
 // to prevent erratic results for example from
 //
 // desa|cuer|do
-//         acuer|do
+//     acuer|do
 //
 func HyphenizeText(s string) string {
 	// s1 := s
@@ -289,7 +290,7 @@ func HyphenizeText(s string) string {
 		v := hyphm[k]
 		s = strings.Replace(s, k, v, -1)
 	}
-	// if s1 == "Mittlere Stiftung" {
+	// if s1 == "Hochschulabschluss" {
 	// 	log.Printf("hyphenate\n%v\n%v", s1, s)
 	// }
 	return s

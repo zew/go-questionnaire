@@ -535,6 +535,7 @@ func (q *QuestionnaireT) EditPage(idx int) *pageT {
 	return q.Pages[idx]
 }
 
+/*
 // RemoveGroup from page
 func (q *QuestionnaireT) RemoveGroup(pageIdx, groupIdx int) {
 
@@ -558,6 +559,49 @@ func (q *QuestionnaireT) RemoveGroup(pageIdx, groupIdx int) {
 	) // shift one slot to the left
 
 	q.Pages[pageIdx].Groups = q.Pages[pageIdx].Groups[:len(q.Pages[pageIdx].Groups)-1]
+
+}
+*/
+
+// AddFinishButtonNextToLast from page
+//
+// Adding explicit button to finish page, which is outsite navigation.
+// Button is added to the next-to-last page.
+// Call this method at the end of page insertions.
+func (q *QuestionnaireT) AddFinishButtonNextToLast() {
+
+	ln := len(q.Pages)
+
+	if ln < 2 {
+		log.Panicf(
+			"AddFinishButton(): At least 2 pages needed, before we can add a 'finish' button; has %v",
+			len(q.Pages))
+	}
+
+	page := q.Pages[ln-2]
+
+	{
+		gr := page.AddGroup()
+		gr.BottomVSpacers = 2
+		gr.Cols = 2
+
+		{
+			inp := gr.AddInput()
+			inp.Type = "button"
+			inp.Name = "finished"
+			inp.Name = "submitBtn"
+			inp.Response = fmt.Sprintf("%v", len(q.Pages)-1) // we assume, all pages were already added
+			// inp.Label = cfg.Get().Mp["end"]
+			inp.Label = cfg.Get().Mp["finish_questionnaire"]
+			inp.ColSpan = 2
+			inp.ColSpanLabel = 1
+			inp.ColSpanControl = 1
+			inp.AccessKey = "n"
+
+			inp.StyleCtl = css.NewStylesResponsive(inp.StyleCtl)
+			inp.StyleCtl.Desktop.StyleGridItem.JustifySelf = "end"
+		}
+	}
 
 }
 

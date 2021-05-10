@@ -199,7 +199,7 @@ func (q *QuestionnaireT) Validate() error {
 						return errors.Wrap(err, s)
 					}
 					if pgIdx < 0 || pgIdx > len(q.Pages)-1 {
-						return fmt.Errorf("%v points to page index non existent %v", s, inp.Response)
+						return fmt.Errorf("%v points to page index non existent %v out of %v", s, inp.Response, len(q.Pages))
 					}
 				}
 

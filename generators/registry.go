@@ -90,10 +90,10 @@ func GenerateQuestionnaireTemplates(w http.ResponseWriter, r *http.Request) {
 			// inverse of
 			_ = time.Now().In(cfg.Get().Loc)
 			_ = s.Deadline.In(cfg.Get().Loc)
-			_, _ = time.Parse("02.01.2006 15:04 MST", frm.Deadline)
-			_, _ = time.ParseInLocation("02.01.2006 15:04 MST", frm.Deadline, cfg.Get().Loc)
+			_, _ = time.Parse("02.01.2006 15:04 CEST", frm.Deadline)
+			_, _ = time.ParseInLocation("02.01.2006 15:04 CEST", frm.Deadline, cfg.Get().Loc)
 		}
-		t, err := time.Parse("02.01.2006 15:04 MST", frm.Deadline)
+		t, err := time.ParseInLocation("02.01.2006 15:04 CEST", frm.Deadline, cfg.Get().Loc)
 		if err != nil {
 			errStr += myfmt.Sprint(err.Error() + "<br>\n")
 		}

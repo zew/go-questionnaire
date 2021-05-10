@@ -328,7 +328,7 @@ for FMT eachMonth2inQ() main_refinance_rate_ecb': -since- 01.09.2019: 0,0%% - St
 		dd,
 		s.Year,
 		fmt.Sprintf("%02d", int(s.Month)+0), // month
-		s.Deadline.In(cfg.Get().Loc).Format("02.01.2006 15:04 MST"),
+		s.Deadline.In(cfg.Get().Loc).Format("02.01.2006 15:04 CEST"),
 		kv,
 		link1,
 		link2,

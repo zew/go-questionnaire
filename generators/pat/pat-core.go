@@ -9,8 +9,19 @@ import (
 	"github.com/zew/go-questionnaire/trl"
 )
 
-// Core adds the core part of pages and questions
-func Core(q *qst.QuestionnaireT) error {
+var radioVals7 = []string{"1", "2", "3", "4", "5", "6", "7"}
+var columnTemplate7 = []float32{
+	0, 1,
+	0, 1,
+	0, 1,
+	0, 1,
+	0, 1,
+	0, 1,
+	0, 1,
+}
+
+// Title adds title page
+func Title(q *qst.QuestionnaireT) error {
 
 	// page 0
 	{
@@ -74,6 +85,12 @@ func Core(q *qst.QuestionnaireT) error {
 		}
 
 	}
+	return nil
+}
+
+//
+// Part1 renders
+func Part1(q *qst.QuestionnaireT) error {
 
 	// erster Teil
 
@@ -179,18 +196,6 @@ func Core(q *qst.QuestionnaireT) error {
 		// loop over matrix questions
 		for i := 0; i < 3; i++ {
 
-			// if i == 0 {
-			// 	// explanation after first question
-			// 	gr := page.AddGroup()
-			// 	gr.Cols = 1
-			// 	gr.BottomVSpacers = 3
-			// 	gr.RandomizationGroup = 1 - 1
-			// 	inp := gr.AddInput()
-			// 	inp.Type = "dyn-composite"
-			// 	inp.ColSpanControl = 1
-			// 	inp.DynamicFunc = "PoliticalFoundationsPretext__0__0"
-			// }
-
 			{
 				gr := page.AddGroup()
 				gr.Cols = 1
@@ -261,6 +266,12 @@ func Core(q *qst.QuestionnaireT) error {
 
 	}
 
+	return nil
+}
+
+//
+// Part1Frage1 renders
+func Part1Frage1(q *qst.QuestionnaireT) error {
 	// page 4
 	{
 		page := q.AddPage()
@@ -355,6 +366,12 @@ func Core(q *qst.QuestionnaireT) error {
 
 	}
 
+	return nil
+}
+
+//
+// Part2 renders
+func Part2(q *qst.QuestionnaireT) error {
 	// zweiter Teil
 
 	// page 5
@@ -707,6 +724,50 @@ func Core(q *qst.QuestionnaireT) error {
 		}
 
 	}
+	return nil
+}
+
+// End adds last page
+func End(q *qst.QuestionnaireT) error {
+	//
+	//
+	// page end
+	// End page is a copy of page finish
+	// without "End" button
+	// without navigation
+	{
+		page := q.AddPage()
+		page.Label = cfg.Get().Mp["end"]
+		page.NoNavigation = true
+		page.Style = css.DesktopWidthMaxForPages(page.Style, "30rem")
+
+		{
+			// Only one group => shuffling is no problem
+			gr := page.AddGroup()
+			gr.Cols = 1
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Desc = cfg.Get().Mp["entries_saved"]
+			}
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.ColSpan = 1
+				// inp.ColSpanLabel = 2
+				inp.Desc = trl.S{"de": "Vielen Dank für das Ausfüllen dieser Umfrage! "}
+			}
+
+		}
+
+	}
+	return nil
+}
+
+//
+// Part2Frage4 renders
+func Part2Frage4(q *qst.QuestionnaireT) error {
 
 	grStPage78 := css.NewStylesResponsive(nil)
 	grStPage78.Desktop.StyleGridContainer.GapRow = "0.1rem"
@@ -748,128 +809,34 @@ func Core(q *qst.QuestionnaireT) error {
 		}
 
 	}
+	return nil
+}
 
-	// page 8
-	{
-		page := q.AddPage()
-		page.Label = trl.S{"de": ""}
-		page.Short = trl.S{"de": "Eigene Einstellung 2"}
-		page.Style = css.DesktopWidthMaxForPages(page.Style, "30rem")
+//
+// Core adds the core part of pages and questions
+func Core(q *qst.QuestionnaireT) error {
 
-		// gr1
-		{
-			gb := qst.NewGridBuilderRadios(
-				columnTemplate7,
-				labelsOneToSeven2,
-				[]string{"q5"},
-				radioVals7,
-				[]trl.S{},
-			)
-			gb.MainLabel = trl.S{
-				"de": `
-					<p>
-					<b>Zum Schluss bitten wir Sie, drei Fragen über sich selbst zu beantworten:</b>
+	var err error
 
-					<br>
-					<br>
-					<b>Frage 5.</b>
-					Sind Sie im Vergleich zu anderen im Allgemeinen bereit, 
-					heute auf etwas zu verzichten, 
-					um in der Zukunft davon zu profitieren, 
-					oder sind Sie im Vergleich zu anderen dazu nicht bereit? 
-
-					</p>
-
-				`,
-			}
-			gr := page.AddGrid(gb)
-			gr.OddRowsColoring = true
-			gr.Style = grStPage78
-		}
-
-		// gr2
-		{
-			gb := qst.NewGridBuilderRadios(
-				columnTemplate7,
-				labelsOneToSeven3,
-				[]string{"q6"},
-				radioVals7,
-				[]trl.S{},
-			)
-			gb.MainLabel = trl.S{
-				"de": `
-					</p>
-					<b>Frage 6.</b>
-					Wie schätzen Sie sich persönlich ein? 
-					Sind Sie im Allgemeinen ein risikobereiter Mensch 
-					oder versuchen Sie, Risiken zu vermeiden?
-					</p>
-
-				`,
-			}
-			gr := page.AddGrid(gb)
-			gr.OddRowsColoring = true
-			gr.Style = grStPage78
-		}
-
-		// gr3
-		{
-			gb := qst.NewGridBuilderRadios(
-				columnTemplate7,
-				labelsOneToSeven2,
-				[]string{"q7"},
-				radioVals7,
-				[]trl.S{},
-			)
-			gb.MainLabel = trl.S{
-				"de": `
-					<p>
-					<b>Frage&nbsp;7.</b>
-					Wie schätzen Sie Ihre Bereitschaft ein, mit anderen zu teilen, 
-					ohne dafür eine Gegenleistung zu erwarten?
-					</p>
-				`,
-			}
-			gr := page.AddGrid(gb)
-			gr.OddRowsColoring = true
-			gr.Style = grStPage78
-			gr.BottomVSpacers = 4
-		}
-
+	err = Part1(q)
+	if err != nil {
+		return fmt.Errorf("Error adding Part1(): %v", err)
 	}
 
-	//
-	//
-	// page end
-	// End page is a copy of page finish
-	// without "End" button
-	// without navigation
-	{
-		page := q.AddPage()
-		page.Label = cfg.Get().Mp["end"]
-		page.NoNavigation = true
-		page.Style = css.DesktopWidthMaxForPages(page.Style, "30rem")
-
-		{
-			// Only one group => shuffling is no problem
-			gr := page.AddGroup()
-			gr.Cols = 1
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.Desc = cfg.Get().Mp["entries_saved"]
-			}
-
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.ColSpan = 1
-				// inp.ColSpanLabel = 2
-				inp.Desc = trl.S{"de": "Vielen Dank für das Ausfüllen dieser Umfrage! "}
-			}
-
-		}
-
+	err = Part1Frage1(q)
+	if err != nil {
+		return fmt.Errorf("Error adding Part1Frage1(): %v", err)
 	}
+
+	err = Part2(q)
+	if err != nil {
+		return fmt.Errorf("Error adding Part2(): %v", err)
+	}
+
+	err = Part2Frage4(q)
+	if err != nil {
+		return fmt.Errorf("Error adding Part2Frage4(): %v", err)
+	}
+
 	return nil
 }

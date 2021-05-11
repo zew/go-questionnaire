@@ -8,7 +8,7 @@ import (
 	"github.com/zew/go-questionnaire/trl"
 )
 
-func AddPersonalQuestions(q *qst.QuestionnaireT, afterIdx int) error {
+func PersonalQuestions2(q *qst.QuestionnaireT) error {
 
 	lblStyleRight := css.NewStylesResponsive(nil)
 	lblStyleRight.Desktop.StyleText.AlignHorizontal = "right"
@@ -17,7 +17,7 @@ func AddPersonalQuestions(q *qst.QuestionnaireT, afterIdx int) error {
 
 	{
 		// page := q.AddPage()
-		page := q.AddPageAfter(afterIdx)
+		page := q.AddPage()
 		// page.Label = trl.S{"de": "POP page"}
 		// page.Short = trl.S{"de": "Stiftungen 1"}
 		page.Label = trl.S{"de": ""}
@@ -224,7 +224,7 @@ func AddPersonalQuestions(q *qst.QuestionnaireT, afterIdx int) error {
 
 	{
 		// page := q.AddPage()
-		page := q.AddPageAfter(afterIdx + 1)
+		page := q.AddPage()
 		// page.Label = trl.S{"de": "POP page"}
 		// page.Short = trl.S{"de": "Stiftungen 1"}
 		page.Label = trl.S{"de": ""}

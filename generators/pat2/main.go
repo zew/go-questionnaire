@@ -1,4 +1,4 @@
-package pat0
+package pat2
 
 import (
 	"fmt"
@@ -9,13 +9,13 @@ import (
 	"github.com/zew/go-questionnaire/trl"
 )
 
-// Create for PAT but with zentrally distributed versions.
+// Create paternalismus questionnaire with totally diff questions
 func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 	ctr.Reset()
 
 	q := qst.QuestionnaireT{}
-	q.Survey = qst.NewSurvey("pat0")
+	q.Survey = qst.NewSurvey("pat2")
 	q.Survey.Params = params
 	q.LangCodes = []string{"de"} // governs default language code
 
@@ -25,11 +25,43 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	q.VersionMax = 16
 	// q.AssignVersion = "round-robin"
 
-	err := pat.Core(&q)
+	var err error
+
+	err = TitlePat2(&q)
 	if err != nil {
-		return nil, fmt.Errorf("Error adding month 1 per quarter: %v", err)
+		return nil, fmt.Errorf("Error adding title pat2 page: %v", err)
 	}
-	pat.AddPersonalQuestions(&q, 8)
+
+	err = pat.PersonalQuestions2(&q)
+	if err != nil {
+		return nil, fmt.Errorf("Error adding personal questions 2: %v", err)
+	}
+
+	err = pat.PersonalQuestions1(&q)
+	if err != nil {
+		return nil, fmt.Errorf("Error adding personal questions 1: %v", err)
+	}
+
+	err = Part1Intro(&q)
+	if err != nil {
+		return nil, fmt.Errorf("Error adding core pat2: %v", err)
+	}
+
+	err = pat.Part1(&q)
+	if err != nil {
+		return nil, fmt.Errorf("Error adding Part1(): %v", err)
+	}
+
+	err = pat.Part1Frage1(&q)
+	if err != nil {
+		return nil, fmt.Errorf("Error adding Part1Frage1(): %v", err)
+	}
+
+	err = pat.End(&q)
+	if err != nil {
+		return nil, fmt.Errorf("Error adding core pages: %v", err)
+	}
+
 	q.AddFinishButtonNextToLast()
 
 	q.VersionEffective = -2 // must be re-set at the end - after validate

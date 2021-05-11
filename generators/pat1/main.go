@@ -1,20 +1,21 @@
-package pat
+package pat1
 
 import (
 	"fmt"
 
 	"github.com/zew/go-questionnaire/ctr"
+	"github.com/zew/go-questionnaire/generators/pat"
 	"github.com/zew/go-questionnaire/qst"
 	"github.com/zew/go-questionnaire/trl"
 )
 
-// Create paternalismus questionnaire
+// Create paternalismus questionnaire with addtl pers questions
 func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 	ctr.Reset()
 
 	q := qst.QuestionnaireT{}
-	q.Survey = qst.NewSurvey("pat")
+	q.Survey = qst.NewSurvey("pat1")
 	q.Survey.Params = params
 	q.LangCodes = []string{"de"} // governs default language code
 
@@ -26,27 +27,34 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 	var err error
 
-	err = Title(&q)
+	err = pat.Title(&q)
 	if err != nil {
 		return nil, fmt.Errorf("Error adding title page: %v", err)
 	}
 
-	err = Core(&q)
+	err = pat.Core(&q)
 	if err != nil {
 		return nil, fmt.Errorf("Error adding core pages: %v", err)
 	}
 
-	err = PersonalQuestions1(&q)
+	err = pat.PersonalQuestions1(&q)
 	if err != nil {
-		return nil, fmt.Errorf("Error adding core pages: %v", err)
+		return nil, fmt.Errorf("Error adding personal questions 1: %v", err)
 	}
 
-	err = End(&q)
+	err = pat.PersonalQuestions2(&q)
+	if err != nil {
+		return nil, fmt.Errorf("Error adding personal questions 2: %v", err)
+	}
+
+	err = pat.End(&q)
 	if err != nil {
 		return nil, fmt.Errorf("Error adding core pages: %v", err)
 	}
 
 	q.AddFinishButtonNextToLast()
+
+	q.VersionEffective = -2 // must be re-set at the end - after validate
 
 	q.Hyphenize()
 	q.ComputeMaxGroups()

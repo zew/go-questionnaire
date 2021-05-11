@@ -18,7 +18,8 @@ import (
 	"github.com/zew/go-questionnaire/generators/example"
 	"github.com/zew/go-questionnaire/generators/fmt"
 	"github.com/zew/go-questionnaire/generators/pat"
-	"github.com/zew/go-questionnaire/generators/pat0"
+	"github.com/zew/go-questionnaire/generators/pat1"
+	"github.com/zew/go-questionnaire/generators/pat2"
 	"github.com/zew/go-questionnaire/qst"
 	"github.com/zew/go-questionnaire/tpl"
 )
@@ -29,7 +30,8 @@ var gens = map[string]genT{
 	"example": example.Create,
 	"fmt":     fmt.Create,
 	"pat":     pat.Create,
-	"pat0":    pat0.Create,
+	"pat1":    pat1.Create,
+	"pat2":    pat2.Create,
 	// "flit":    flit.Create,
 	// "peu2018": peu2018.Create,
 	// "mul":     mul.Create,

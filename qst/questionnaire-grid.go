@@ -94,6 +94,17 @@ func (inp *inputT) ShortSuffix(ctrl string, langCode string) string {
 	return ctrl
 }
 
+// ControlFirst puts label behind input element - for radio and checkbox inputs
+func (inp *inputT) ControlFirst() {
+
+	inp.StyleLbl = css.ItemEndMA(inp.StyleCtl)
+	inp.StyleLbl.Desktop.StyleGridItem.JustifySelf = "start"
+	inp.StyleLbl.Desktop.StyleGridItem.Order = 2
+
+	inp.ColSpanControl, inp.ColSpanLabel = inp.ColSpanLabel, inp.ColSpanControl
+
+}
+
 // appendTooltip appends an explanation
 func (inp *inputT) appendTooltip(w io.Writer, langCode string) {
 

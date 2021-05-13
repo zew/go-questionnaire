@@ -28,7 +28,8 @@ type CompositFuncT func(*QuestionnaireT, int, int) (string, []string, error)
 // CompositeFuncs is a lookup map
 var CompositeFuncs = map[string]CompositFuncT{
 	"PoliticalFoundationsPretext": PoliticalFoundationsPretext, // belongs to pat
-	"PoliticalFoundations":        PoliticalFoundations,        // belongs to pat
+	"PoliticalFoundations":        PoliticalFoundations,        //   ...
+	"PoliticalFoundationsStatic":  PoliticalFoundationsStatic,  //   ... no input
 	"TimePreferenceSelf":          TimePreferenceSelf,          // belongs to pat
 	"GroupPreferences":            GroupPreferences,            // belongs to pat
 }

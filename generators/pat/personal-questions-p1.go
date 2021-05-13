@@ -1,12 +1,19 @@
 package pat
 
 import (
+	"fmt"
+
 	"github.com/zew/go-questionnaire/css"
 	"github.com/zew/go-questionnaire/qst"
 	"github.com/zew/go-questionnaire/trl"
 )
 
-func PersonalQuestions1(q *qst.QuestionnaireT) error {
+type VariableElements struct {
+	NumberingStart int
+}
+
+// PersonalQuestions1 - numbered 5-7
+func PersonalQuestions1(q *qst.QuestionnaireT, vE VariableElements) error {
 
 	grStPage78 := css.NewStylesResponsive(nil)
 	grStPage78.Desktop.StyleGridContainer.GapRow = "0.1rem"
@@ -29,13 +36,13 @@ func PersonalQuestions1(q *qst.QuestionnaireT) error {
 				[]trl.S{},
 			)
 			gb.MainLabel = trl.S{
-				"de": `
+				"de": fmt.Sprintf(`
 					<p>
 					<b>Zum Schluss bitten wir Sie, drei Fragen über sich selbst zu beantworten:</b>
 
 					<br>
 					<br>
-					<b>Frage 5.</b>
+					<b>Frage %v.</b>
 					Sind Sie im Vergleich zu anderen im Allgemeinen bereit, 
 					heute auf etwas zu verzichten, 
 					um in der Zukunft davon zu profitieren, 
@@ -43,7 +50,7 @@ func PersonalQuestions1(q *qst.QuestionnaireT) error {
 
 					</p>
 
-				`,
+				`, vE.NumberingStart+0),
 			}
 			gr := page.AddGrid(gb)
 			gr.OddRowsColoring = true
@@ -60,15 +67,14 @@ func PersonalQuestions1(q *qst.QuestionnaireT) error {
 				[]trl.S{},
 			)
 			gb.MainLabel = trl.S{
-				"de": `
+				"de": fmt.Sprintf(`
 					</p>
-					<b>Frage 6.</b>
+					<b>Frage %v.</b>
 					Wie schätzen Sie sich persönlich ein? 
 					Sind Sie im Allgemeinen ein risikobereiter Mensch 
 					oder versuchen Sie, Risiken zu vermeiden?
 					</p>
-
-				`,
+				`, vE.NumberingStart+1),
 			}
 			gr := page.AddGrid(gb)
 			gr.OddRowsColoring = true
@@ -85,13 +91,13 @@ func PersonalQuestions1(q *qst.QuestionnaireT) error {
 				[]trl.S{},
 			)
 			gb.MainLabel = trl.S{
-				"de": `
+				"de": fmt.Sprintf(`
 					<p>
-					<b>Frage&nbsp;7.</b>
+					<b>Frage&nbsp;%v.</b>
 					Wie schätzen Sie Ihre Bereitschaft ein, mit anderen zu teilen, 
 					ohne dafür eine Gegenleistung zu erwarten?
 					</p>
-				`,
+				`, vE.NumberingStart+2),
 			}
 			gr := page.AddGrid(gb)
 			gr.OddRowsColoring = true

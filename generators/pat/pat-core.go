@@ -105,7 +105,7 @@ func Part1(q *qst.QuestionnaireT) error {
 		{
 			gr := page.AddGroup()
 			gr.Cols = 6
-			gr.BottomVSpacers = 1
+			gr.BottomVSpacers = 2
 
 			{
 				inp := gr.AddInput()

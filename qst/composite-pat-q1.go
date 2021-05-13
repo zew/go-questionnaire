@@ -3,6 +3,7 @@ package qst
 import (
 	"fmt"
 	"log"
+	"regexp"
 	"strconv"
 	"strings"
 
@@ -165,8 +166,8 @@ func politicalFoundations(q *QuestionnaireT, seq0to5 int, questionID string, ppl
         <td style="width: 20%%;" >Mittel</td>
 		<!-- https://www.wortbedeutung.info/schlecht/  -->
         <td style="width: 20%%;" >Am schlech&shy;tes&shy;ten</td>
-        <td style="width: 11%%;" >Aus&shy;wahl</td>
-        <td style="width: 11%%;" >Gleich gut</td>
+        <td data-ia=1 style="width: 11%%;" >Aus&shy;wahl</td>
+        <td data-ia=1 style="width: 11%%;" >Gleich gut</td>
     </tr>
 
     <tr>
@@ -178,10 +179,10 @@ func politicalFoundations(q *QuestionnaireT, seq0to5 int, questionID string, ppl
         <td> %v </td>
         <td> %v </td>
         <td> %v </td>
-		<td> 
+		<td data-ia=1> 
 			<input type="radio"    name="_r"  value="1" %v > 
 		</td>
-		<td>
+		<td data-ia=1>
 			<input type="checkbox" name="_r1" value="1"  %v > 
 			<input type="hidden"   name="_r1" value="0" >
 		</td>
@@ -196,10 +197,10 @@ func politicalFoundations(q *QuestionnaireT, seq0to5 int, questionID string, ppl
         <td> %v </td>
         <td> %v </td>
         <td> %v </td>
-		<td> 
+		<td data-ia=1> 
 			<input type="radio"    name="_r"  value="2" %v > 
 		</td>
-		<td>  
+		<td data-ia=1>  
 			<input type="checkbox" name="_r2" value="1"  %v > 
 			<input type="hidden"   name="_r2" value="0" >
 		</td>
@@ -214,10 +215,10 @@ func politicalFoundations(q *QuestionnaireT, seq0to5 int, questionID string, ppl
         <td> %v </td>
         <td> %v </td>
         <td> %v </td>
-		<td> 
+		<td data-ia=1> 
 			<input type="radio"    name="_r"  value="3" %v > 
 		</td>
-		<td>
+		<td data-ia=1>
 			<input type="checkbox" name="_r3" value="1" %v  > 
 			<input type="hidden"   name="_r3" value="0" >
 		 </td>
@@ -226,7 +227,7 @@ func politicalFoundations(q *QuestionnaireT, seq0to5 int, questionID string, ppl
 
 </table>
 
-</span> <!-- /go-quest-label -->
+ <!-- </span> /go-quest-label -->
 
 
 </div>
@@ -251,4 +252,48 @@ func politicalFoundations(q *QuestionnaireT, seq0to5 int, questionID string, ppl
 
 	return s, inputNames, nil
 
+}
+
+/*
+	https://www.regextester.com/
+	https://stackoverflow.com/questions/37106834/golang-multiline-regex-not-working
+	https://github.com/google/re2/wiki/Syntax
+
+    (?is)  is setting flags to insensitive and . to matching newlines
+	(.*?)  the question mark is for non greedy
+*/
+var re = regexp.MustCompile(`(?is)<td data-ia=1(.*?)<\/td>`)
+
+var cols6to4 = strings.NewReplacer(
+	`<td colspan="6" class="betw"> &nbsp; </td>`,
+	`<td colspan="4" class="betw"> &nbsp; </td>`,
+)
+
+// PoliticalFoundationsStatic - like PoliticalFoundations() but filtering out
+// the input columns
+func PoliticalFoundationsStatic(q *QuestionnaireT, seq0to5, paramSetIdx int) (string, []string, error) {
+
+	ret, _, err := PoliticalFoundations(q, seq0to5, paramSetIdx)
+
+	completeDeletionOfCols56 := false
+	if completeDeletionOfCols56 {
+		ret = cols6to4.Replace(ret)
+		fillin := ""
+		ret = re.ReplaceAllString(ret, fillin)
+	} else {
+		fillin := "<td>&nbsp;</td>"
+		ret = re.ReplaceAllString(ret, fillin)
+	}
+
+	//
+	sep := `<div id="t01">`
+	rets := strings.Split(ret, sep)
+	if len(rets) != 2 {
+		msg := fmt.Sprintf("Splitting by <pre>%v </pre> failed: Changes in politicalFoundations()?", sep)
+		return msg, nil, fmt.Errorf(msg)
+	}
+
+	rets[1] = sep + rets[1]
+
+	return rets[1], nil, err
 }

@@ -19,13 +19,13 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "856fb5d431eda6e6233c9ee41871d58ca23beea3b8d0ec36f8391053daa9e273",
+ 	"md_5": "316e19f4e692f8d9e64586bab1ce34a8a36a334ea78640602d3e6e80cfbda6fa",
  	"lang_codes": [
  		"de"
  	],
  	"version_max": 16,
  	"version_effective": -2,
- 	"max_groups": 4,
+ 	"max_groups": 8,
  	"pages": [
  		{
  			"label": {
@@ -139,7 +139,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 8.\u003c/b\u003e\n\t\t\t\t\tBitte geben Sie Ihr Geschlecht an:\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 1.\u003c/b\u003e\n\t\t\t\t\tBitte geben Sie Ihr Geschlecht an:\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 12,
  							"col_span_label": 1
@@ -246,7 +246,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 9.\u003c/b\u003e\n\t\t\t\t\tBitte geben Sie Ihr Geburtsjahr an:\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 2.\u003c/b\u003e\n\t\t\t\t\tBitte geben Sie Ihr Geburtsjahr an:\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 8,
  							"col_span_label": 1
@@ -270,7 +270,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 10.\u003c/b\u003e\n\t\t\t\t\tIn welchem Bundesland befindet sich Ihr Hauptwohnsitz?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 3.\u003c/b\u003e\n\t\t\t\t\tIn welchem Bundesland befindet sich Ihr Hauptwohnsitz?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 8,
  							"col_span_label": 1
@@ -780,7 +780,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 11.\u003c/b\u003e\n\t\t\t\t\tWelcher ist Ihr höchster Bil\u0026shy;dungs\u0026shy;abschluss?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 4.\u003c/b\u003e\n\t\t\t\t\tWelcher ist Ihr höchster Bil\u0026shy;dungs\u0026shy;abschluss?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 8,
  							"col_span_label": 1
@@ -980,7 +980,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 12.\u003c/b\u003e\n\t\t\t\t\tWie ist Ihr Familienstand?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 5.\u003c/b\u003e\n\t\t\t\t\tWie ist Ihr Familienstand?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 12,
  							"col_span_label": 1
@@ -1087,7 +1087,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 13.\u003c/b\u003e\n\t\t\t\t\tWie viel Geld verdienen Sie persönlich monatlich \n\t\t\t\t\tnach Abzug von Steuern und Sozialversi\u0026shy;cherungsbeiträgen?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 6.\u003c/b\u003e\n\t\t\t\t\tWie viel Geld verdienen Sie persönlich monatlich \n\t\t\t\t\tnach Abzug von Steuern und Sozialversi\u0026shy;cherungsbeiträgen?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 8,
  							"col_span_label": 1
@@ -1380,7 +1380,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 14.\u003c/b\u003e\n\t\t\t\t\tMit welcher Partei fühlen Sie sich \n\t\t\t\t\taufgrund Ihrer Werte und Überzeugungen am ehesten verbunden?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 7.\u003c/b\u003e\n\t\t\t\t\tMit welcher Partei fühlen Sie sich \n\t\t\t\t\taufgrund Ihrer Werte und Überzeugungen am ehesten verbunden?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 8,
  							"col_span_label": 1
@@ -1619,7 +1619,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage\u0026nbsp;15.\u003c/b\u003e\n\t\t\t\t\tWie stufen Sie sich politisch ein?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage\u0026nbsp;8.\u003c/b\u003e\n\t\t\t\t\tWie stufen Sie sich politisch ein?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 7,
  							"col_span_label": 1
@@ -2028,7 +2028,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eZum Schluss bitten wir Sie, drei Fragen über sich selbst zu be\u0026shy;ant\u0026shy;wor\u0026shy;ten:\u003c/b\u003e\n\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cb\u003eFrage 5.\u003c/b\u003e\n\t\t\t\t\tSind Sie im Vergleich zu anderen im Allgemeinen bereit, \n\t\t\t\t\theute auf etwas zu verzichten, \n\t\t\t\t\tum in der Zukunft davon zu profitieren, \n\t\t\t\t\toder sind Sie im Vergleich zu anderen dazu nicht bereit? \n\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eZum Schluss bitten wir Sie, drei Fragen über sich selbst zu be\u0026shy;ant\u0026shy;wor\u0026shy;ten:\u003c/b\u003e\n\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cb\u003eFrage 9.\u003c/b\u003e\n\t\t\t\t\tSind Sie im Vergleich zu anderen im Allgemeinen bereit, \n\t\t\t\t\theute auf etwas zu verzichten, \n\t\t\t\t\tum in der Zukunft davon zu profitieren, \n\t\t\t\t\toder sind Sie im Vergleich zu anderen dazu nicht bereit? \n\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t"
  							},
  							"col_span": 7,
  							"col_span_label": 1
@@ -2403,7 +2403,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 6.\u003c/b\u003e\n\t\t\t\t\tWie schätzen Sie sich persönlich ein? \n\t\t\t\t\tSind Sie im Allgemeinen ein ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reiter Mensch \n\t\t\t\t\toder versuchen Sie, Risiken zu vermeiden?\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 10.\u003c/b\u003e\n\t\t\t\t\tWie schätzen Sie sich persönlich ein? \n\t\t\t\t\tSind Sie im Allgemeinen ein ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reiter Mensch \n\t\t\t\t\toder versuchen Sie, Risiken zu vermeiden?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 7,
  							"col_span_label": 1
@@ -2778,7 +2778,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage\u0026nbsp;7.\u003c/b\u003e\n\t\t\t\t\tWie schätzen Sie Ihre Bereitschaft ein, mit anderen zu teilen, \n\t\t\t\t\tohne da\u0026shy;für eine Gegenleistung zu erwarten?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage\u0026nbsp;11.\u003c/b\u003e\n\t\t\t\t\tWie schätzen Sie Ihre Bereitschaft ein, mit anderen zu teilen, \n\t\t\t\t\tohne da\u0026shy;für eine Gegenleistung zu erwarten?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 7,
  							"col_span_label": 1
@@ -3188,6 +3188,1009 @@
  							"col_span_label": 1
  						}
  					]
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": ""
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"short": {
+ 				"de": "Stiftungen 1"
+ 			},
+ 			"navi_num": 5,
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "36rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 6,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\n\t\t\t\t\u003cp\u003e\u003cb\u003e\n\t\t\t\tIm Folgenden geht es um eine Spende von 30\u0026nbsp;€, die \u003ci\u003eeine\u003c/i\u003e dieser drei Stif\u0026shy;tungen er\u0026shy;hal\u0026shy;ten soll:\n\t\t\t\t\u003c/b\u003e\u003c/p\u003e\n\n\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\u003c!-- beware of hyphenization of css class names  --\u003e\n\t\t\t\t\u003cstyle\u003e\n\t\t\t\t\ttable.xxx01 td {\n\t\t\t\t\t\ttext-align: center;\n\t\t\t\t\t\ttext-align: center;\n\t\t\t\t\t}\n\t\t\t\t\u003c/style\u003e\n\n\t\t\t\t\u003ctable class=\"xxx01\"\u003e\n\t\t\t\t\u003ctr\u003e\n\t\t\t\t\t\u003ctd style=\"width: 33.2%\"\u003ePolitisch links\u003c/td\u003e\n\t\t\t\t\t\u003ctd style=\"width: 33.2%\"\u003ePolitische Mitte\u003c/td\u003e\n\t\t\t\t\t\u003ctd style=\"width: 33.2%\"\u003ePolitisch konservativ\u003c/td\u003e\n\t\t\t\t\u003ctr\u003e\n\t\t\t\t\u003ctr\u003e\n\t\t\t\t\t\u003ctd style=\"vertical-align: top;\" \u003e\u003cb\u003eHans-Böckler-Stif\u0026shy;tung\u003c/b\u003e\u003c/td\u003e\n\t\t\t\t\t\u003ctd style=\"vertical-align: top;\" \u003e\u003cb\u003eBund der Steuerzahler Deutsch\u0026shy;land e.V.\u003c/b\u003e\u003c/td\u003e\n\t\t\t\t\t\u003ctd style=\"vertical-align: top;\" \u003e\u003cb\u003eLudwig-Erhard-Stif\u0026shy;tung\u003c/b\u003e\u003c/td\u003e\n\t\t\t\t\u003ctr\u003e\n\t\t\t\t\u003c/table\u003e\n\n\t\t\t\t\u003cdiv class='vspacer-08'\u003e \u0026nbsp; \u003c/div\u003e\n\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tFünf deutsche Staatsangehörige haben an einer Vorstudie teilgenommen. \n\t\t\t\t\t\n\t\t\t\t\tJede dieser fünf Personen hat in der Vorstudie angegeben, welche der drei Stif\u0026shy;tungen sie als am besten, mittel und am schlech\u0026shy;testen erachtet.\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tWir sind nun daran interessiert, wie Sie die fünf individuellen Präferenzen in eine Grup\u0026shy;penentscheidung zusammenfassen, an welche Stif\u0026shy;tung die 30\u0026nbsp;€ gehen sollen. Bevorzugen Sie beispielsweise eher eine Kompromiss\u0026shy;lösung oder eher eine Mehrheits\u0026shy;lösung? Ihre eigene Meinung über die Stif\u0026shy;tungen soll dabei keine Rolle spielen. Deshalb sind die Stif\u0026shy;tungen im Folgenden als Stif\u0026shy;tung A, B und C anonymisiert.\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tSie werden insge\u0026shy;samt sechs Entscheidungen treffen, wie die Präferenzen der Grup\u0026shy;pe zusammengefasst werden sollen. Eine der sechs Entscheidungen stellt die echten Präferenzen der Grup\u0026shy;pen\u0026shy;mit\u0026shy;glieder aus der Vorstudie dar und kann daher zufällig ausgewählt und tatsächlich umgesetzt werden. \n\t\t\t\t\t\n\t\t\t\t\tDa Sie nicht wissen, welche Entscheidung die echten Präferenzen darstellt, nehmen Sie bitte in allen Fällen an, dass die jeweilige Entscheidung tatsächlich umgesetzt wird.\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t\n\t\t\t\t"
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 6
+ 						}
+ 					]
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": ""
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"short": {
+ 				"de": "Stiftungen 2"
+ 			},
+ 			"navi_num": 6,
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "36rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "Um zu entscheiden, an welche Stif\u0026shy;tung das Geld gehen soll, \n\t\t\t\t\t\u003cb\u003esetzen Sie bitte bei der entsprechenden Stif\u0026shy;tung \u003ci\u003eein\u003c/i\u003e Kreuz \n\t\t\t\t\tin der Spalte „Auswahl“.\u003c/b\u003e\n\t\t\t\t\t Falls Sie eine zweite oder dritte Alternative als genauso gut empfinden, setzen Sie ein Kreuz in der Spalte „Gleich gut“."
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "dyn-composite",
+ 							"col_span_control": 1,
+ 							"dynamic_func": "PoliticalFoundations__0__0"
+ 						},
+ 						{
+ 							"name": "q1_seq1_r",
+ 							"type": "dyn-composite-scalar"
+ 						},
+ 						{
+ 							"name": "q1_seq1_r1",
+ 							"type": "dyn-composite-scalar"
+ 						},
+ 						{
+ 							"name": "q1_seq1_r2",
+ 							"type": "dyn-composite-scalar"
+ 						},
+ 						{
+ 							"name": "q1_seq1_r3",
+ 							"type": "dyn-composite-scalar"
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "dyn-composite",
+ 							"col_span_control": 1,
+ 							"dynamic_func": "PoliticalFoundations__1__1"
+ 						},
+ 						{
+ 							"name": "q1_seq2_r",
+ 							"type": "dyn-composite-scalar"
+ 						},
+ 						{
+ 							"name": "q1_seq2_r1",
+ 							"type": "dyn-composite-scalar"
+ 						},
+ 						{
+ 							"name": "q1_seq2_r2",
+ 							"type": "dyn-composite-scalar"
+ 						},
+ 						{
+ 							"name": "q1_seq2_r3",
+ 							"type": "dyn-composite-scalar"
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "dyn-composite",
+ 							"col_span_control": 1,
+ 							"dynamic_func": "PoliticalFoundations__2__2"
+ 						},
+ 						{
+ 							"name": "q1_seq3_r",
+ 							"type": "dyn-composite-scalar"
+ 						},
+ 						{
+ 							"name": "q1_seq3_r1",
+ 							"type": "dyn-composite-scalar"
+ 						},
+ 						{
+ 							"name": "q1_seq3_r2",
+ 							"type": "dyn-composite-scalar"
+ 						},
+ 						{
+ 							"name": "q1_seq3_r3",
+ 							"type": "dyn-composite-scalar"
+ 						}
+ 					]
+ 				}
+ 			],
+ 			"validation_func_name": "patPage2",
+ 			"validation_func_msg": {
+ 				"de": "Wollen Sie wirklich weitergehen oder wollen Sie Ihre bisherigen Antworten vervollständigen?"
+ 			}
+ 		},
+ 		{
+ 			"label": {
+ 				"de": ""
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"short": {
+ 				"de": "Stiftungen 3"
+ 			},
+ 			"navi_num": 7,
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "36rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "dyn-composite",
+ 							"col_span_control": 1,
+ 							"dynamic_func": "PoliticalFoundations__3__3"
+ 						},
+ 						{
+ 							"name": "q1_seq4_r",
+ 							"type": "dyn-composite-scalar"
+ 						},
+ 						{
+ 							"name": "q1_seq4_r1",
+ 							"type": "dyn-composite-scalar"
+ 						},
+ 						{
+ 							"name": "q1_seq4_r2",
+ 							"type": "dyn-composite-scalar"
+ 						},
+ 						{
+ 							"name": "q1_seq4_r3",
+ 							"type": "dyn-composite-scalar"
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "dyn-composite",
+ 							"col_span_control": 1,
+ 							"dynamic_func": "PoliticalFoundations__4__4"
+ 						},
+ 						{
+ 							"name": "q1_seq5_r",
+ 							"type": "dyn-composite-scalar"
+ 						},
+ 						{
+ 							"name": "q1_seq5_r1",
+ 							"type": "dyn-composite-scalar"
+ 						},
+ 						{
+ 							"name": "q1_seq5_r2",
+ 							"type": "dyn-composite-scalar"
+ 						},
+ 						{
+ 							"name": "q1_seq5_r3",
+ 							"type": "dyn-composite-scalar"
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "dyn-composite",
+ 							"col_span_control": 1,
+ 							"dynamic_func": "PoliticalFoundations__5__5"
+ 						},
+ 						{
+ 							"name": "q1_seq6_r",
+ 							"type": "dyn-composite-scalar"
+ 						},
+ 						{
+ 							"name": "q1_seq6_r1",
+ 							"type": "dyn-composite-scalar"
+ 						},
+ 						{
+ 							"name": "q1_seq6_r2",
+ 							"type": "dyn-composite-scalar"
+ 						},
+ 						{
+ 							"name": "q1_seq6_r3",
+ 							"type": "dyn-composite-scalar"
+ 						}
+ 					]
+ 				}
+ 			],
+ 			"validation_func_name": "patPage3",
+ 			"validation_func_msg": {
+ 				"de": "Wollen Sie wirklich weitergehen oder wollen Sie Ihre bisherigen Antworten vervollständigen?"
+ 			}
+ 		},
+ 		{
+ 			"label": {
+ 				"de": ""
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"short": {
+ 				"de": "Auswertung 1"
+ 			},
+ 			"navi_num": 8,
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "36rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage 1.\u003c/b\u003e Schätzen Sie bitte: Was wäre eine zufällig ausgewählte Person \n\t\t\t\t\taus unserer Vorstudie maximal bereit zu zahlen, \n\t\t\t\t\tdamit eine Spende von 30\u0026nbsp;€ an die Stif\u0026shy;tung überwiesen wird, \n\t\t\t\t\tdie diese Person als am besten/mittel/am schlech\u0026shy;testen erachtet?\n\t\t\t\t\t\u003ci\u003e(Wenn Sie meinen, die Person würde da\u0026shy;für bezahlen, \n\t\t\t\t\t\tdass die Stif\u0026shy;tung die 30\u0026nbsp;€ \u003ci\u003enicht\u003c/i\u003e erhält, \n\t\t\t\t\t\tschreiben Sie bitte ein Minuszeichen vor den entsprechenden Betrag.)\u003c/i\u003e\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003c!--\n\t\t\t\t\tBeste Stif\u0026shy;tung:_______\tMitt\u0026shy;le\u0026shy;re Stif\u0026shy;tung:_______\tSchlech\u0026shy;teste Stif\u0026shy;tung:_______\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t--\u003e\n\n\n\t\t\t\t\t"
+ 							},
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 15,
+ 					"inputs": [
+ 						{
+ 							"name": "q2_a",
+ 							"type": "number",
+ 							"max_chars": 3,
+ 							"min": -999,
+ 							"max": 999,
+ 							"label": {
+ 								"de": "Beste Stif\u0026shy;tung"
+ 							},
+ 							"suffix": {
+ 								"de": "€"
+ 							},
+ 							"col_span": 5,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2,
+ 							"validator": "inRange1000"
+ 						},
+ 						{
+ 							"name": "q2_b",
+ 							"type": "number",
+ 							"max_chars": 3,
+ 							"min": -999,
+ 							"max": 999,
+ 							"label": {
+ 								"de": "Mitt\u0026shy;le\u0026shy;re Stif\u0026shy;tung"
+ 							},
+ 							"suffix": {
+ 								"de": "€"
+ 							},
+ 							"col_span": 5,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2,
+ 							"validator": "inRange1000"
+ 						},
+ 						{
+ 							"name": "q2_c",
+ 							"type": "number",
+ 							"max_chars": 3,
+ 							"min": -999,
+ 							"max": 999,
+ 							"label": {
+ 								"de": "Schlech\u0026shy;teste Stif\u0026shy;tung"
+ 							},
+ 							"suffix": {
+ 								"de": "€"
+ 							},
+ 							"col_span": 5,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2,
+ 							"validator": "inRange1000"
+ 						}
+ 					]
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": ""
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"navi_num": 9,
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "36rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\n\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tZuletzt haben Sie entschieden, \n\t\t\t\t\twie die Präferenzen von fünf Personen \n\t\t\t\t\tin eine gemeinsame Entscheidung zusammengefasst werden sollen. \n\t\t\t\t\t\n\t\t\t\t\tDadurch haben Sie festgelegt, welche politische Stif\u0026shy;tung \n\t\t\t\t\teine Spende von 30\u0026nbsp;€ erhält. \n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tWir haben drei verschiedenen Grup\u0026shy;pen von Studienteilnehmern \n\t\t\t\t\tdie gleichen Fragen wie Ihnen gestellt. \n\t\t\t\t\tDie drei Grup\u0026shy;pen sind die Folgenden:  \n\t\t\t\t\u003c/p\u003e\n\n\n\t\t\t\t\u003cul\u003e\n\t\t\t\t\u003cli\u003eGrup\u0026shy;pe 1: Eine repräsentative Grup\u0026shy;pe deutscher Bürger.\n\t\t\t\t\u003c/li\u003e\n\n\t\t\t\t\u003cli\u003eGrup\u0026shy;pe 2: Eine repräsentative Grup\u0026shy;pe deutscher Land- und Bundestagspo\u0026shy;li\u0026shy;tiker.\n\t\t\t\t\u003c/li\u003e\n\n\t\t\t\t\u003cli\u003eGrup\u0026shy;pe 3: Eine Grup\u0026shy;pe deutscher Bürger, \n\t\t\t\tdie \u003ci\u003ekeine Po\u0026shy;li\u0026shy;tiker\u003c/i\u003e sind, \n\t\t\t\tdie aber die \u003ci\u003egleichen demographischen Eigenschaften wie Po\u0026shy;li\u0026shy;tiker\u003c/i\u003e haben. \n\t\t\t\tDas heißt, Grup\u0026shy;pe\u0026nbsp;3 besteht z. B. zu 70\u0026nbsp;% aus Männern, \n\t\t\t\tnur 3\u0026nbsp;% der Mit\u0026shy;glieder sind unter 30\u0026nbsp;Jahre alt, \n\t\t\t\t87\u0026nbsp;% der Mit\u0026shy;glieder haben einen Hoch\u0026shy;schul\u0026shy;abschluss \n\t\t\t\tund nur 17\u0026nbsp;% sind alleinstehend.  \n\t\t\t\t\u003c/li\u003e\n\t\t\t\t\u003c/ul\u003e\n\t\t\t\t\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tWir haben aus jeder der drei Grup\u0026shy;pen jeweils eine Person \n\t\t\t\t\tzufällig für Sie ausgewählt. \n\t\t\t\t\tFalls dieser zweite Teil der Studie umgesetzt wird, \n\t\t\t\t\twird nicht Ihre eigene Entscheidung bestimmen, \n\t\t\t\t\twelche Stif\u0026shy;tung die 30\u0026nbsp;€ erhält. \n\t\t\t\t\tStattdessen wird eine Entscheidung \n\t\t\t\t\teines der drei ausgewählten Grup\u0026shy;pen\u0026shy;mit\u0026shy;glieder \n\t\t\t\t\tausschlaggebend da\u0026shy;für sein, welche Stif\u0026shy;tung das Geld erhält.  \n\t\t\t\t\u003c/p\u003e\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tSie können aber entscheiden, welcher \n\t\t\t\t\tGrup\u0026shy;pe (also Grup\u0026shy;pe 1, 2 oder 3) die Person angehören soll, \n\t\t\t\t\tdie die Präferenzen zu einer gemeinsamen \n\t\t\t\t\tEntscheidung zusammenfasst und somit festlegt, \n\t\t\t\t\twelche Stif\u0026shy;tung das Geld erhält.\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t"
+ 							},
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": ""
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"navi_num": 10,
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "36rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\n\t\t\t\t\t\u003cp\u003e\u003cb\u003eEntscheidung 7.\u003c/b\u003e\u003c/p\u003e\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tIn dieser Entscheidung sind die Präferenzen der \n\t\t\t\t\t\tfünf Personen aus der Vorstudie wie folgt:\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "dyn-composite",
+ 							"col_span_control": 1,
+ 							"dynamic_func": "PoliticalFoundationsStatic__0__0"
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tWer soll entscheiden, ob Stif\u0026shy;tung A, B oder C die 30 € erhält? \n\t\t\t\t\u003c/p\u003e\n\t\t\t"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"name": "dec7_q1",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Ein Po\u0026shy;li\u0026shy;tiker aus Grup\u0026shy;pe 1"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 7,
+ 							"value_radio": "pol_gr1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "dec7_q1",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Ein Bürger aus Grup\u0026shy;pe 2"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 7,
+ 							"value_radio": "cit_gr2",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "dec7_q1",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Ein Bürger aus Grup\u0026shy;pe 3 (gleiche demographische Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker)"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 7,
+ 							"value_radio": "cit_gr3",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tWer soll möglichst nicht entscheiden, ob Stif\u0026shy;tung A, B oder C die 30 € erhält? \n\t\t\t\t\u003c/p\u003e\n\t\t\t"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"name": "dec7_q2",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Ein Po\u0026shy;li\u0026shy;tiker aus Grup\u0026shy;pe 1"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 7,
+ 							"value_radio": "pol_gr1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "dec7_q2",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Ein Bürger aus Grup\u0026shy;pe 2"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 7,
+ 							"value_radio": "cit_gr2",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "dec7_q2",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Ein Bürger aus Grup\u0026shy;pe 3 (gleiche demographische Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker)"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 7,
+ 							"value_radio": "cit_gr3",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\n\t\t\t\t\u003cp style=\"font-size:86%\"\u003e\n\t\t\t\t\u003cb\u003eErläuterung:\u003c/b\u003e\n\t\t\t\tFalls dieser Teil umgesetzt wird und somit bestimmt, \n\t\t\t\twelche Stif\u0026shy;tung 30 € erhält, \n\t\t\t\twerden zufällig zwei der drei Grup\u0026shy;pen ausgewählt, \n\t\t\t\tdie tatsächlich festlegen können, \n\t\t\t\twelche Stif\u0026shy;tung das Geld erhält. \n\t\t\t\tDie dritte Grup\u0026shy;pe wird die Entscheidung \n\t\t\t\tdefinitiv nicht treffen. \n\t\t\t\tVon den zwei Grup\u0026shy;pen, die die Entscheidung treffen können, \n\t\t\t\twird jene die Entscheidung treffen, \n\t\t\t\tdie Sie gemäß Ihrer Antworten auf die letzten Fragen \n\t\t\t\tals besser erachten.\n\t\t\t\t\u003c/p\u003e\n\t\t\t"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": ""
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"navi_num": 11,
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "36rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\n\t\t\t\t\t\u003cp\u003e\u003cb\u003eEntscheidung 8.\u003c/b\u003e\u003c/p\u003e\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tNun sind die Präferenzen der fünf Personen aus der Vorstudie wie folgt:\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "dyn-composite",
+ 							"col_span_control": 1,
+ 							"dynamic_func": "PoliticalFoundationsStatic__3__3"
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tWer soll entscheiden, ob Stif\u0026shy;tung A, B oder C die 30 € erhält? \n\t\t\t\t\u003c/p\u003e\n\t\t\t"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"name": "dec8_q1",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Ein Po\u0026shy;li\u0026shy;tiker aus Grup\u0026shy;pe 1"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 7,
+ 							"value_radio": "pol_gr1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "dec8_q1",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Ein Bürger aus Grup\u0026shy;pe 2"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 7,
+ 							"value_radio": "cit_gr2",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "dec8_q1",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Ein Bürger aus Grup\u0026shy;pe 3 (gleiche demographische Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker)"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 7,
+ 							"value_radio": "cit_gr3",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tWer soll möglichst nicht entscheiden, ob Stif\u0026shy;tung A, B oder C die 30 € erhält? \n\t\t\t\t\u003c/p\u003e\n\t\t\t"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"name": "dec8_q2",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Ein Po\u0026shy;li\u0026shy;tiker aus Grup\u0026shy;pe 1"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 7,
+ 							"value_radio": "pol_gr1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "dec8_q2",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Ein Bürger aus Grup\u0026shy;pe 2"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 7,
+ 							"value_radio": "cit_gr2",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "dec8_q2",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Ein Bürger aus Grup\u0026shy;pe 3 (gleiche demographische Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker)"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 7,
+ 							"value_radio": "cit_gr3",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\n\t\t\t\t\u003cp style=\"font-size:86%\"\u003e\n\t\t\t\t\u003cb\u003eErläuterung:\u003c/b\u003e\n\t\t\t\tFalls dieser Teil umgesetzt wird und somit bestimmt, \n\t\t\t\twelche Stif\u0026shy;tung 30 € erhält, \n\t\t\t\twerden zufällig zwei der drei Grup\u0026shy;pen ausgewählt, \n\t\t\t\tdie tatsächlich festlegen können, \n\t\t\t\twelche Stif\u0026shy;tung das Geld erhält. \n\t\t\t\tDie dritte Grup\u0026shy;pe wird die Entscheidung \n\t\t\t\tdefinitiv nicht treffen. \n\t\t\t\tVon den zwei Grup\u0026shy;pen, die die Entscheidung treffen können, \n\t\t\t\twird jene die Entscheidung treffen, \n\t\t\t\tdie Sie gemäß Ihrer Antworten auf die letzten Fragen \n\t\t\t\tals besser erachten.\n\t\t\t\t\u003c/p\u003e\n\t\t\t"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						}
+ 					]
  				},
  				{
  					"bottom_vspacers": 2,
@@ -3207,7 +4210,7 @@
  							"accesskey": "n",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"response": "5",
+ 							"response": "12",
  							"style_control": {
  								"desktop": {
  									"grid_container_style": {},

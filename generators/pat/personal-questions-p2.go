@@ -1,6 +1,7 @@
 package pat
 
 import (
+	"fmt"
 	"strings"
 
 	"github.com/zew/go-questionnaire/css"
@@ -8,7 +9,8 @@ import (
 	"github.com/zew/go-questionnaire/trl"
 )
 
-func PersonalQuestions2(q *qst.QuestionnaireT) error {
+// PersonalQuestions1 - numbered 8-15
+func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 
 	lblStyleRight := css.NewStylesResponsive(nil)
 	lblStyleRight.Desktop.StyleText.AlignHorizontal = "right"
@@ -30,12 +32,13 @@ func PersonalQuestions2(q *qst.QuestionnaireT) error {
 				inp := gr.AddInput()
 				inp.Type = "textblock"
 				inp.ColSpan = 12
-				inp.Desc = trl.S{"de": `
+				inp.Desc = trl.S{
+					"de": fmt.Sprintf(`
 					</p>
-					<b>Frage 8.</b>
+					<b>Frage %v.</b>
 					Bitte geben Sie Ihr Geschlecht an:
 					</p>
-					`,
+				`, vE.NumberingStart+0),
 				}
 			}
 			{
@@ -86,12 +89,13 @@ func PersonalQuestions2(q *qst.QuestionnaireT) error {
 				inp := gr.AddInput()
 				inp.Type = "textblock"
 				inp.ColSpan = 8
-				inp.Desc = trl.S{"de": `
+				inp.Desc = trl.S{
+					"de": fmt.Sprintf(`
 					</p>
-					<b>Frage 9.</b>
+					<b>Frage %v.</b>
 					Bitte geben Sie Ihr Geburtsjahr an:
 					</p>
-					`,
+				`, vE.NumberingStart+1),
 				}
 			}
 			{
@@ -115,12 +119,13 @@ func PersonalQuestions2(q *qst.QuestionnaireT) error {
 				inp := gr.AddInput()
 				inp.Type = "textblock"
 				inp.ColSpan = 8
-				inp.Desc = trl.S{"de": `
+				inp.Desc = trl.S{
+					"de": fmt.Sprintf(`
 					</p>
-					<b>Frage 10.</b>
+					<b>Frage %v.</b>
 					In welchem Bundesland befindet sich Ihr Hauptwohnsitz?
 					</p>
-					`,
+				`, vE.NumberingStart+2),
 				}
 			}
 
@@ -145,12 +150,13 @@ func PersonalQuestions2(q *qst.QuestionnaireT) error {
 				inp := gr.AddInput()
 				inp.Type = "textblock"
 				inp.ColSpan = 8
-				inp.Desc = trl.S{"de": `
+				inp.Desc = trl.S{
+					"de": fmt.Sprintf(`
 					</p>
-					<b>Frage 11.</b>
+					<b>Frage %v.</b>
 					Welcher ist Ihr höchster Bildungsabschluss?
 					</p>
-					`,
+				`, vE.NumberingStart+3),
 				}
 			}
 			{
@@ -223,10 +229,7 @@ func PersonalQuestions2(q *qst.QuestionnaireT) error {
 	}
 
 	{
-		// page := q.AddPage()
 		page := q.AddPage()
-		// page.Label = trl.S{"de": "POP page"}
-		// page.Short = trl.S{"de": "Stiftungen 1"}
 		page.Label = trl.S{"de": ""}
 		page.Style = css.DesktopWidthMaxForPages(page.Style, "36rem") // 60
 
@@ -237,12 +240,13 @@ func PersonalQuestions2(q *qst.QuestionnaireT) error {
 				inp := gr.AddInput()
 				inp.Type = "textblock"
 				inp.ColSpan = 12
-				inp.Desc = trl.S{"de": `
+				inp.Desc = trl.S{
+					"de": fmt.Sprintf(`
 					</p>
-					<b>Frage 12.</b>
+					<b>Frage %v.</b>
 					Wie ist Ihr Familienstand?
 					</p>
-					`,
+				`, vE.NumberingStart+4),
 				}
 			}
 			{
@@ -293,13 +297,14 @@ func PersonalQuestions2(q *qst.QuestionnaireT) error {
 				inp := gr.AddInput()
 				inp.Type = "textblock"
 				inp.ColSpan = 8
-				inp.Desc = trl.S{"de": `
+				inp.Desc = trl.S{
+					"de": fmt.Sprintf(`
 					</p>
-					<b>Frage 13.</b>
+					<b>Frage %v.</b>
 					Wie viel Geld verdienen Sie persönlich monatlich 
 					nach Abzug von Steuern und Sozialversicherungsbeiträgen?
 					</p>
-					`,
+				`, vE.NumberingStart+5),
 				}
 			}
 
@@ -339,13 +344,14 @@ func PersonalQuestions2(q *qst.QuestionnaireT) error {
 				inp := gr.AddInput()
 				inp.Type = "textblock"
 				inp.ColSpan = 8
-				inp.Desc = trl.S{"de": `
+				inp.Desc = trl.S{
+					"de": fmt.Sprintf(`
 					</p>
-					<b>Frage 14.</b>
+					<b>Frage %v.</b>
 					Mit welcher Partei fühlen Sie sich 
 					aufgrund Ihrer Werte und Überzeugungen am ehesten verbunden?
 					</p>
-					`,
+				`, vE.NumberingStart+6),
 				}
 			}
 
@@ -400,12 +406,12 @@ func PersonalQuestions2(q *qst.QuestionnaireT) error {
 				[]trl.S{},
 			)
 			gb.MainLabel = trl.S{
-				"de": `
+				"de": fmt.Sprintf(`
 					<p>
-					<b>Frage&nbsp;15.</b>
+					<b>Frage&nbsp;%v.</b>
 					Wie stufen Sie sich politisch ein?
 					</p>
-				`,
+				`, vE.NumberingStart+7),
 			}
 			gr := page.AddGrid(gb)
 			gr.OddRowsColoring = true

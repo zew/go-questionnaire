@@ -44,14 +44,16 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 	err = Part1Intro(&q)
 	if err != nil {
-		return nil, fmt.Errorf("Error adding core pat2: %v", err)
+		return nil, fmt.Errorf("Error adding Part1Intro(): %v", err)
 	}
 
+	// core
 	err = pat.Part1(&q)
 	if err != nil {
 		return nil, fmt.Errorf("Error adding Part1(): %v", err)
 	}
 
+	// core
 	err = pat.Part1Frage1(&q)
 	if err != nil {
 		return nil, fmt.Errorf("Error adding Part1Frage1(): %v", err)
@@ -60,6 +62,21 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	err = Part1Entscheidung78(&q)
 	if err != nil {
 		return nil, fmt.Errorf("Error adding Part1Entscheidung78(): %v", err)
+	}
+
+	err = Part2Intro(&q)
+	if err != nil {
+		return nil, fmt.Errorf("Error adding Part2Intro(): %v", err)
+	}
+
+	err = Part2Block12(&q, 0)
+	if err != nil {
+		return nil, fmt.Errorf("Error adding Part2Block1(0): %v", err)
+	}
+
+	err = Part2Block12(&q, 3)
+	if err != nil {
+		return nil, fmt.Errorf("Error adding Part2Block1(3): %v", err)
 	}
 
 	err = pat.End(&q)

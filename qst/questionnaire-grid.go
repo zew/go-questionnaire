@@ -101,7 +101,12 @@ func (inp *inputT) ControlFirst() {
 	inp.StyleLbl.Desktop.StyleGridItem.JustifySelf = "start"
 	inp.StyleLbl.Desktop.StyleGridItem.Order = 2
 
-	inp.ColSpanControl, inp.ColSpanLabel = inp.ColSpanLabel, inp.ColSpanControl
+	if inp.ColSpanControl == 0 && inp.ColSpanLabel == 0 {
+		inp.ColSpanControl = 8
+		inp.ColSpanLabel = 1
+	}
+
+	// inp.ColSpanControl, inp.ColSpanLabel = inp.ColSpanLabel, inp.ColSpanControl
 
 }
 

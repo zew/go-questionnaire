@@ -19,13 +19,13 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "316e19f4e692f8d9e64586bab1ce34a8a36a334ea78640602d3e6e80cfbda6fa",
+ 	"md_5": "d4fc8b435cc327bcd41e8c3c98f117de0eee54fde8e2eeaefcee78313b95b4d5",
  	"lang_codes": [
  		"de"
  	],
  	"version_max": 16,
  	"version_effective": -2,
- 	"max_groups": 8,
+ 	"max_groups": 7,
  	"pages": [
  		{
  			"label": {
@@ -3630,7 +3630,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tZuletzt haben Sie entschieden, \n\t\t\t\t\twie die Präferenzen von fünf Personen \n\t\t\t\t\tin eine gemeinsame Entscheidung zusammengefasst werden sollen. \n\t\t\t\t\t\n\t\t\t\t\tDadurch haben Sie festgelegt, welche politische Stif\u0026shy;tung \n\t\t\t\t\teine Spende von 30\u0026nbsp;€ erhält. \n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tWir haben drei verschiedenen Grup\u0026shy;pen von Studienteilnehmern \n\t\t\t\t\tdie gleichen Fragen wie Ihnen gestellt. \n\t\t\t\t\tDie drei Grup\u0026shy;pen sind die Folgenden:  \n\t\t\t\t\u003c/p\u003e\n\n\n\t\t\t\t\u003cul\u003e\n\t\t\t\t\u003cli\u003eGrup\u0026shy;pe 1: Eine repräsentative Grup\u0026shy;pe deutscher Bürger.\n\t\t\t\t\u003c/li\u003e\n\n\t\t\t\t\u003cli\u003eGrup\u0026shy;pe 2: Eine repräsentative Grup\u0026shy;pe deutscher Land- und Bundestagspo\u0026shy;li\u0026shy;tiker.\n\t\t\t\t\u003c/li\u003e\n\n\t\t\t\t\u003cli\u003eGrup\u0026shy;pe 3: Eine Grup\u0026shy;pe deutscher Bürger, \n\t\t\t\tdie \u003ci\u003ekeine Po\u0026shy;li\u0026shy;tiker\u003c/i\u003e sind, \n\t\t\t\tdie aber die \u003ci\u003egleichen demographischen Eigenschaften wie Po\u0026shy;li\u0026shy;tiker\u003c/i\u003e haben. \n\t\t\t\tDas heißt, Grup\u0026shy;pe\u0026nbsp;3 besteht z. B. zu 70\u0026nbsp;% aus Männern, \n\t\t\t\tnur 3\u0026nbsp;% der Mit\u0026shy;glieder sind unter 30\u0026nbsp;Jahre alt, \n\t\t\t\t87\u0026nbsp;% der Mit\u0026shy;glieder haben einen Hoch\u0026shy;schul\u0026shy;abschluss \n\t\t\t\tund nur 17\u0026nbsp;% sind alleinstehend.  \n\t\t\t\t\u003c/li\u003e\n\t\t\t\t\u003c/ul\u003e\n\t\t\t\t\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tWir haben aus jeder der drei Grup\u0026shy;pen jeweils eine Person \n\t\t\t\t\tzufällig für Sie ausgewählt. \n\t\t\t\t\tFalls dieser zweite Teil der Studie umgesetzt wird, \n\t\t\t\t\twird nicht Ihre eigene Entscheidung bestimmen, \n\t\t\t\t\twelche Stif\u0026shy;tung die 30\u0026nbsp;€ erhält. \n\t\t\t\t\tStattdessen wird eine Entscheidung \n\t\t\t\t\teines der drei ausgewählten Grup\u0026shy;pen\u0026shy;mit\u0026shy;glieder \n\t\t\t\t\tausschlaggebend da\u0026shy;für sein, welche Stif\u0026shy;tung das Geld erhält.  \n\t\t\t\t\u003c/p\u003e\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tSie können aber entscheiden, welcher \n\t\t\t\t\tGrup\u0026shy;pe (also Grup\u0026shy;pe 1, 2 oder 3) die Person angehören soll, \n\t\t\t\t\tdie die Präferenzen zu einer gemeinsamen \n\t\t\t\t\tEntscheidung zusammenfasst und somit festlegt, \n\t\t\t\t\twelche Stif\u0026shy;tung das Geld erhält.\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t"
+ 								"de": "\n\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tZuletzt haben Sie entschieden, \n\t\t\t\t\twie die Präferenzen von fünf Personen \n\t\t\t\t\tin eine gemeinsame Entscheidung zusammengefasst werden sollen. \n\t\t\t\t\t\n\t\t\t\t\tDadurch haben Sie festgelegt, welche politische Stif\u0026shy;tung \n\t\t\t\t\teine Spende von 30\u0026nbsp;€ erhält. \n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tWir haben drei verschiedenen Grup\u0026shy;pen von Studienteilnehmern \n\t\t\t\t\tdie gleichen Fragen wie Ihnen gestellt. \n\t\t\t\t\tDie drei Grup\u0026shy;pen sind die Folgenden:  \n\t\t\t\t\u003c/p\u003e\n\n\n\t\t\t\t\u003cul\u003e\n\t\t\t\t\u003cli\u003eGrup\u0026shy;pe 1: Eine repräsentative Grup\u0026shy;pe deutscher Bürger.\n\t\t\t\t\u003c/li\u003e\n\n\t\t\t\t\u003cli\u003eGrup\u0026shy;pe 2: Eine repräsentative Grup\u0026shy;pe deutscher Land- und Bundestagspo\u0026shy;li\u0026shy;tiker.\n\t\t\t\t\u003c/li\u003e\n\n\t\t\t\t\u003cli\u003eGrup\u0026shy;pe 3: Eine Grup\u0026shy;pe deutscher Bürger, \n\t\t\t\tdie \u003ci\u003ekeine Po\u0026shy;li\u0026shy;tiker\u003c/i\u003e sind, \n\t\t\t\tdie aber die \u003ci\u003egleichen de\u0026shy;mo\u0026shy;gra\u0026shy;phischen Eigenschaften wie Po\u0026shy;li\u0026shy;tiker\u003c/i\u003e haben. \n\t\t\t\tDas heißt, Grup\u0026shy;pe\u0026nbsp;3 besteht z. B. zu 70\u0026nbsp;% aus Männern, \n\t\t\t\tnur 3\u0026nbsp;% der Mit\u0026shy;glieder sind unter 30\u0026nbsp;Jahre alt, \n\t\t\t\t87\u0026nbsp;% der Mit\u0026shy;glieder haben einen Hoch\u0026shy;schul\u0026shy;abschluss \n\t\t\t\tund nur 17\u0026nbsp;% sind alleinstehend.  \n\t\t\t\t\u003c/li\u003e\n\t\t\t\t\u003c/ul\u003e\n\t\t\t\t\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tWir haben aus jeder der drei Grup\u0026shy;pen jeweils eine Person \n\t\t\t\t\tzufällig für Sie ausgewählt. \n\t\t\t\t\tFalls dieser zweite Teil der Studie umgesetzt wird, \n\t\t\t\t\twird nicht Ihre eigene Entscheidung bestimmen, \n\t\t\t\t\twelche Stif\u0026shy;tung die 30\u0026nbsp;€ erhält. \n\t\t\t\t\tStattdessen wird eine Entscheidung \n\t\t\t\t\teines der drei ausgewählten Grup\u0026shy;pen\u0026shy;mit\u0026shy;glieder \n\t\t\t\t\tausschlaggebend da\u0026shy;für sein, welche Stif\u0026shy;tung das Geld erhält.  \n\t\t\t\t\u003c/p\u003e\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tSie können aber entscheiden, welcher \n\t\t\t\t\tGrup\u0026shy;pe (also Grup\u0026shy;pe 1, 2 oder 3) die Person angehören soll, \n\t\t\t\t\tdie die Präferenzen zu einer gemeinsamen \n\t\t\t\t\tEntscheidung zusammenfasst und somit festlegt, \n\t\t\t\t\twelche Stif\u0026shy;tung das Geld erhält.\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span_label": 1
  						}
@@ -3718,7 +3718,7 @@
  							},
  							"col_span": 1,
  							"col_span_label": 1,
- 							"col_span_control": 7,
+ 							"col_span_control": 8,
  							"value_radio": "pol_gr1",
  							"style_label": {
  								"desktop": {
@@ -3746,7 +3746,7 @@
  							},
  							"col_span": 1,
  							"col_span_label": 1,
- 							"col_span_control": 7,
+ 							"col_span_control": 8,
  							"value_radio": "cit_gr2",
  							"style_label": {
  								"desktop": {
@@ -3770,11 +3770,11 @@
  							"name": "dec7_q1",
  							"type": "radio",
  							"label": {
- 								"de": "Ein Bürger aus Grup\u0026shy;pe 3 (gleiche demographische Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker)"
+ 								"de": "Ein Bürger aus Grup\u0026shy;pe 3 (gleiche de\u0026shy;mo\u0026shy;gra\u0026shy;phische Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker)"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
- 							"col_span_control": 7,
+ 							"col_span_control": 8,
  							"value_radio": "cit_gr3",
  							"style_label": {
  								"desktop": {
@@ -3822,7 +3822,7 @@
  							},
  							"col_span": 1,
  							"col_span_label": 1,
- 							"col_span_control": 7,
+ 							"col_span_control": 8,
  							"value_radio": "pol_gr1",
  							"style_label": {
  								"desktop": {
@@ -3850,7 +3850,7 @@
  							},
  							"col_span": 1,
  							"col_span_label": 1,
- 							"col_span_control": 7,
+ 							"col_span_control": 8,
  							"value_radio": "cit_gr2",
  							"style_label": {
  								"desktop": {
@@ -3874,11 +3874,11 @@
  							"name": "dec7_q2",
  							"type": "radio",
  							"label": {
- 								"de": "Ein Bürger aus Grup\u0026shy;pe 3 (gleiche demographische Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker)"
+ 								"de": "Ein Bürger aus Grup\u0026shy;pe 3 (gleiche de\u0026shy;mo\u0026shy;gra\u0026shy;phische Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker)"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
- 							"col_span_control": 7,
+ 							"col_span_control": 8,
  							"value_radio": "cit_gr3",
  							"style_label": {
  								"desktop": {
@@ -3996,7 +3996,7 @@
  							},
  							"col_span": 1,
  							"col_span_label": 1,
- 							"col_span_control": 7,
+ 							"col_span_control": 8,
  							"value_radio": "pol_gr1",
  							"style_label": {
  								"desktop": {
@@ -4024,7 +4024,7 @@
  							},
  							"col_span": 1,
  							"col_span_label": 1,
- 							"col_span_control": 7,
+ 							"col_span_control": 8,
  							"value_radio": "cit_gr2",
  							"style_label": {
  								"desktop": {
@@ -4048,11 +4048,11 @@
  							"name": "dec8_q1",
  							"type": "radio",
  							"label": {
- 								"de": "Ein Bürger aus Grup\u0026shy;pe 3 (gleiche demographische Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker)"
+ 								"de": "Ein Bürger aus Grup\u0026shy;pe 3 (gleiche de\u0026shy;mo\u0026shy;gra\u0026shy;phische Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker)"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
- 							"col_span_control": 7,
+ 							"col_span_control": 8,
  							"value_radio": "cit_gr3",
  							"style_label": {
  								"desktop": {
@@ -4100,7 +4100,7 @@
  							},
  							"col_span": 1,
  							"col_span_label": 1,
- 							"col_span_control": 7,
+ 							"col_span_control": 8,
  							"value_radio": "pol_gr1",
  							"style_label": {
  								"desktop": {
@@ -4128,7 +4128,7 @@
  							},
  							"col_span": 1,
  							"col_span_label": 1,
- 							"col_span_control": 7,
+ 							"col_span_control": 8,
  							"value_radio": "cit_gr2",
  							"style_label": {
  								"desktop": {
@@ -4152,11 +4152,11 @@
  							"name": "dec8_q2",
  							"type": "radio",
  							"label": {
- 								"de": "Ein Bürger aus Grup\u0026shy;pe 3 (gleiche demographische Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker)"
+ 								"de": "Ein Bürger aus Grup\u0026shy;pe 3 (gleiche de\u0026shy;mo\u0026shy;gra\u0026shy;phische Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker)"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
- 							"col_span_control": 7,
+ 							"col_span_control": 8,
  							"value_radio": "cit_gr3",
  							"style_label": {
  								"desktop": {
@@ -4191,6 +4191,944 @@
  							"col_span_label": 1
  						}
  					]
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": ""
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"navi_num": 12,
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "36rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\n\t\t\t\t\u003ch3\u003eTeil 2\u003c/h3\u003e\n\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tIn diesem Teil der Studie be\u0026shy;ant\u0026shy;wor\u0026shy;ten Sie sechs Fragen. \n\t\t\t\t\tNach der Erhebung werden 10\u0026nbsp;% aller Teilnehmer zufällig ausgewählt. \n\t\t\t\t\tJeder ausgewählte Teilnehmer wird in Abhängigkeit der Genauigkeit \n\t\t\t\t\tseiner Antworten eine Bonuszahlung von bis zu 50\u0026nbsp;Norstat\u0026nbsp;Coins er\u0026shy;hal\u0026shy;ten (Wert: 5\u0026nbsp;Euro).\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp style='padding-bottom: 0; padding-top: 0.5rem'\u003e\n\t\t\t\t\tEs geht in diesem Teil wieder um die drei Grup\u0026shy;pen aus dem letzten Teil:\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cul\u003e\n\t\t\t\t\t\u003cli\u003e\n\t\t\t\t\t\tGrup\u0026shy;pe 1: Eine repräsentative Grup\u0026shy;pe deutscher Bürger.\n\t\t\t\t\t\u003c/li\u003e\n\t\t\t\t\t\u003cli\u003e\n\t\t\t\t\t\tGrup\u0026shy;pe 2: Eine repräsentative Grup\u0026shy;pe deutscher Land- und Bundestagspo\u0026shy;li\u0026shy;tiker.\n\t\t\t\t\t\u003c/li\u003e\n\t\t\t\t\t\u003cli\u003e\n\t\t\t\t\t\tGrup\u0026shy;pe 3: Eine Grup\u0026shy;pe deutscher Bürger, die \u003ci\u003ekeine Po\u0026shy;li\u0026shy;tiker\u003c/i\u003e sind, \n\t\t\t\t\t\tdie aber die \u003ci\u003egleichen de\u0026shy;mo\u0026shy;gra\u0026shy;phischen Eigenschaften wie Po\u0026shy;li\u0026shy;tiker\u003c/i\u003e haben. \n\t\t\t\t\t\tDas heißt, Grup\u0026shy;pe 3 besteht z. B. zu 70\u0026nbsp;% aus Männern, \n\t\t\t\t\t\tnur 3\u0026nbsp;% der Mit\u0026shy;glieder sind unter 30\u0026nbsp;Jahre alt, \n\t\t\t\t\t\t87\u0026nbsp;% der Mit\u0026shy;glieder haben einen Hoch\u0026shy;schul\u0026shy;abschluss \n\t\t\t\t\t\tund nur 17\u0026nbsp;% sind alleinstehend.\n\t\t\t\t\t\u003c/li\u003e\n\t\t\t\t\u003cul\u003e\n\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tWir bitten Sie zu schätzen, welche Stif\u0026shy;tung die Mit\u0026shy;glieder dieser Grup\u0026shy;pen als \n\t\t\t\t\tEmpfänger der 30\u0026nbsp;€ bestimmt haben, wenn sie bestimmte Präferenzen \n\t\t\t\t\tder Mit\u0026shy;glieder der Vorstudie gesehen haben. \n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tFalls Sie eine Bonuszahlung er\u0026shy;hal\u0026shy;ten, \n\t\t\t\t\twerden wir eine der sechs Fragen zufällig auswählen \n\t\t\t\t\tund Ihre Schätzung mit den echten Entscheidungen der Grup\u0026shy;pen\u0026shy;mit\u0026shy;glieder abgleichen. \n\t\t\t\t\tIhre Bonuszahlung ist umso höher, \n\t\t\t\t\tje genauer Ihre Einschätzung ist. \n\t\t\t\t\tBitte überlegen Sie sich Ihre Antworten daher sehr genau!\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\u003cp style=\"font-size:86%\"\u003e\n\t\t\t\t\t\u003cb\u003e*Erläuterung:\u003c/b\u003e\n\t\t\t\t\tFalls Sie in der ausgewählten Frage eine 100 % richtige Antwort geben, \n\t\t\t\t\twerden Sie 50\u0026nbsp;Norstat\u0026nbsp;coins er\u0026shy;hal\u0026shy;ten. \n\t\t\t\t\tFür jede Person, die Sie bei Ihren folgenden Schätzungen zu viel oder zu wenig angeben, \n\t\t\t\t\twerden Sie 2.5\u0026nbsp;Norstat\u0026nbsp;coins verlieren. \n\t\t\t\t\tFalls beispielsweise alle 10\u0026nbsp;Grup\u0026shy;pen\u0026shy;mit\u0026shy;glieder Stif\u0026shy;tung\u0026nbsp;C wählten, \n\t\t\t\t\tSie aber angeben, dass 5\u0026nbsp;Grup\u0026shy;pen\u0026shy;mit\u0026shy;glieder Stif\u0026shy;tung\u0026nbsp;B wählen, \n\t\t\t\t\tund weitere 5 Stif\u0026shy;tung\u0026nbsp;C wählten, \n\t\t\t\t\tdann haben Sie für Stif\u0026shy;tung\u0026nbsp;C fünf Grup\u0026shy;pen\u0026shy;mit\u0026shy;glieder zu wenig angegeben, \n\t\t\t\t\tund für Stif\u0026shy;tung\u0026nbsp;B fünf zu viel. \n\t\t\t\t\tEntsprechend wird Ihre Bezahlung auf 50-2.5× 5 -2.5× 5=25\u0026nbsp;Norstat\u0026nbsp;coins gesenkt.\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t"
+ 							},
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": ""
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"navi_num": 13,
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "36rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tSchätzen Sie zunächst für die folgende Prä\u0026shy;ferenz\u0026shy;konstellation der fünf Personen:\n\t\t\t\t\u003c/p\u003e\n\t\t\t"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "dyn-composite",
+ 							"col_span_control": 1,
+ 							"dynamic_func": "PoliticalFoundationsStatic__0__0"
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 24,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\t\u003cb\u003e Frage 1\u003c/b\u003e \u003cbr\u003e\n\t\t\t\t\t\tWas glauben Sie, wie haben sich die 10\u0026nbsp;Po\u0026shy;li\u0026shy;tiker aus Grup\u0026shy;pe\u0026nbsp;1 entschieden? \n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
+ 							},
+ 							"col_span": 24,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "part2_q1_q1",
+ 							"type": "number",
+ 							"max_chars": 2,
+ 							"max": 10,
+ 							"label": {
+ 								"de": "von 10 wählten Stif\u0026shy;tung\u0026nbsp;A"
+ 							},
+ 							"col_span": 8,
+ 							"col_span_label": 1,
+ 							"col_span_control": 8,
+ 							"validator": "inRange10",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "part2_q1_q2",
+ 							"type": "number",
+ 							"max_chars": 2,
+ 							"max": 10,
+ 							"label": {
+ 								"de": "von 10 wählten Stif\u0026shy;tung\u0026nbsp;B"
+ 							},
+ 							"col_span": 8,
+ 							"col_span_label": 1,
+ 							"col_span_control": 8,
+ 							"validator": "inRange10",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "part2_q1_q3",
+ 							"type": "number",
+ 							"max_chars": 2,
+ 							"max": 10,
+ 							"label": {
+ 								"de": "von 10 wählten Stif\u0026shy;tung\u0026nbsp;C"
+ 							},
+ 							"col_span": 8,
+ 							"col_span_label": 1,
+ 							"col_span_control": 8,
+ 							"validator": "inRange10",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\n\t\t\t\t\t\u003cp style='font-size:90%'\u003e\n\t\t\t\t\tIhre Antworten müssen sich auf 10 summieren.\t\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
+ 							},
+ 							"col_span": 24,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 24,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\t\u003cb\u003e Frage 2\u003c/b\u003e \u003cbr\u003e\n\t\t\t\t\t\tWas glauben Sie, wie haben sich die 10\u0026nbsp;deutschen Bürger aus Grup\u0026shy;pe\u0026nbsp;2 entschieden? \n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
+ 							},
+ 							"col_span": 24,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "part2_q2_q1",
+ 							"type": "number",
+ 							"max_chars": 2,
+ 							"max": 10,
+ 							"label": {
+ 								"de": "von 10 wählten Stif\u0026shy;tung\u0026nbsp;A"
+ 							},
+ 							"col_span": 8,
+ 							"col_span_label": 1,
+ 							"col_span_control": 8,
+ 							"validator": "inRange10",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "part2_q2_q2",
+ 							"type": "number",
+ 							"max_chars": 2,
+ 							"max": 10,
+ 							"label": {
+ 								"de": "von 10 wählten Stif\u0026shy;tung\u0026nbsp;B"
+ 							},
+ 							"col_span": 8,
+ 							"col_span_label": 1,
+ 							"col_span_control": 8,
+ 							"validator": "inRange10",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "part2_q2_q3",
+ 							"type": "number",
+ 							"max_chars": 2,
+ 							"max": 10,
+ 							"label": {
+ 								"de": "von 10 wählten Stif\u0026shy;tung\u0026nbsp;C"
+ 							},
+ 							"col_span": 8,
+ 							"col_span_label": 1,
+ 							"col_span_control": 8,
+ 							"validator": "inRange10",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\n\t\t\t\t\t\u003cp style='font-size:90%'\u003e\n\t\t\t\t\tIhre Antworten müssen sich auf 10 summieren.\t\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
+ 							},
+ 							"col_span": 24,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 24,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\t\u003cb\u003e Frage 3\u003c/b\u003e \u003cbr\u003e\n\t\t\t\t\t\tWas glauben Sie, wie haben sich die 10\u0026nbsp;deutschen Bürger aus Grup\u0026shy;pe\u0026nbsp;3 entschieden \n\t\t(de\u0026shy;mo\u0026shy;gra\u0026shy;phische Eigenschaften der Po\u0026shy;li\u0026shy;tiker, \n\t\t\talso 70 % Männer, 3 % unter 30 Jahre, halb so oft alleinstehend)?  \n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
+ 							},
+ 							"col_span": 24,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "part2_q3_q1",
+ 							"type": "number",
+ 							"max_chars": 2,
+ 							"max": 10,
+ 							"label": {
+ 								"de": "von 10 wählten Stif\u0026shy;tung\u0026nbsp;A"
+ 							},
+ 							"col_span": 8,
+ 							"col_span_label": 1,
+ 							"col_span_control": 8,
+ 							"validator": "inRange10",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "part2_q3_q2",
+ 							"type": "number",
+ 							"max_chars": 2,
+ 							"max": 10,
+ 							"label": {
+ 								"de": "von 10 wählten Stif\u0026shy;tung\u0026nbsp;B"
+ 							},
+ 							"col_span": 8,
+ 							"col_span_label": 1,
+ 							"col_span_control": 8,
+ 							"validator": "inRange10",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "part2_q3_q3",
+ 							"type": "number",
+ 							"max_chars": 2,
+ 							"max": 10,
+ 							"label": {
+ 								"de": "von 10 wählten Stif\u0026shy;tung\u0026nbsp;C"
+ 							},
+ 							"col_span": 8,
+ 							"col_span_label": 1,
+ 							"col_span_control": 8,
+ 							"validator": "inRange10",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\n\t\t\t\t\t\u003cp style='font-size:90%'\u003e\n\t\t\t\t\tIhre Antworten müssen sich auf 10 summieren.\t\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
+ 							},
+ 							"col_span": 24,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": ""
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"navi_num": 14,
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "36rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tSchätzen Sie als nächstes für die folgende Prä\u0026shy;ferenz\u0026shy;konstellation der fünf Personen:\n\t\t\t\t\u003c/p\u003e\n\t\t\t"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "dyn-composite",
+ 							"col_span_control": 1,
+ 							"dynamic_func": "PoliticalFoundationsStatic__3__3"
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 24,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\t\u003cb\u003e Frage 4\u003c/b\u003e \u003cbr\u003e\n\t\t\t\t\t\tWas glauben Sie, wie haben sich die 10\u0026nbsp;Po\u0026shy;li\u0026shy;tiker aus Grup\u0026shy;pe\u0026nbsp;1 entschieden? \n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
+ 							},
+ 							"col_span": 24,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "part2_q4_q1",
+ 							"type": "number",
+ 							"max_chars": 2,
+ 							"max": 10,
+ 							"label": {
+ 								"de": "von 10 wählten Stif\u0026shy;tung\u0026nbsp;A"
+ 							},
+ 							"col_span": 8,
+ 							"col_span_label": 1,
+ 							"col_span_control": 8,
+ 							"validator": "inRange10",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "part2_q4_q2",
+ 							"type": "number",
+ 							"max_chars": 2,
+ 							"max": 10,
+ 							"label": {
+ 								"de": "von 10 wählten Stif\u0026shy;tung\u0026nbsp;B"
+ 							},
+ 							"col_span": 8,
+ 							"col_span_label": 1,
+ 							"col_span_control": 8,
+ 							"validator": "inRange10",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "part2_q4_q3",
+ 							"type": "number",
+ 							"max_chars": 2,
+ 							"max": 10,
+ 							"label": {
+ 								"de": "von 10 wählten Stif\u0026shy;tung\u0026nbsp;C"
+ 							},
+ 							"col_span": 8,
+ 							"col_span_label": 1,
+ 							"col_span_control": 8,
+ 							"validator": "inRange10",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\n\t\t\t\t\t\u003cp style='font-size:90%'\u003e\n\t\t\t\t\tIhre Antworten müssen sich auf 10 summieren.\t\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
+ 							},
+ 							"col_span": 24,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 24,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\t\u003cb\u003e Frage 5\u003c/b\u003e \u003cbr\u003e\n\t\t\t\t\t\tWas glauben Sie, wie haben sich die 10\u0026nbsp;deutschen Bürger aus Grup\u0026shy;pe\u0026nbsp;2 entschieden? \n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
+ 							},
+ 							"col_span": 24,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "part2_q5_q1",
+ 							"type": "number",
+ 							"max_chars": 2,
+ 							"max": 10,
+ 							"label": {
+ 								"de": "von 10 wählten Stif\u0026shy;tung\u0026nbsp;A"
+ 							},
+ 							"col_span": 8,
+ 							"col_span_label": 1,
+ 							"col_span_control": 8,
+ 							"validator": "inRange10",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "part2_q5_q2",
+ 							"type": "number",
+ 							"max_chars": 2,
+ 							"max": 10,
+ 							"label": {
+ 								"de": "von 10 wählten Stif\u0026shy;tung\u0026nbsp;B"
+ 							},
+ 							"col_span": 8,
+ 							"col_span_label": 1,
+ 							"col_span_control": 8,
+ 							"validator": "inRange10",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "part2_q5_q3",
+ 							"type": "number",
+ 							"max_chars": 2,
+ 							"max": 10,
+ 							"label": {
+ 								"de": "von 10 wählten Stif\u0026shy;tung\u0026nbsp;C"
+ 							},
+ 							"col_span": 8,
+ 							"col_span_label": 1,
+ 							"col_span_control": 8,
+ 							"validator": "inRange10",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\n\t\t\t\t\t\u003cp style='font-size:90%'\u003e\n\t\t\t\t\tIhre Antworten müssen sich auf 10 summieren.\t\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
+ 							},
+ 							"col_span": 24,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 24,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\t\u003cb\u003e Frage 6\u003c/b\u003e \u003cbr\u003e\n\t\t\t\t\t\tWas glauben Sie, wie haben sich die 10\u0026nbsp;deutschen Bürger aus Grup\u0026shy;pe\u0026nbsp;3 entschieden \n\t\t(de\u0026shy;mo\u0026shy;gra\u0026shy;phische Eigenschaften der Po\u0026shy;li\u0026shy;tiker, \n\t\t\talso 70 % Männer, 3 % unter 30 Jahre, halb so oft alleinstehend)?  \n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
+ 							},
+ 							"col_span": 24,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "part2_q6_q1",
+ 							"type": "number",
+ 							"max_chars": 2,
+ 							"max": 10,
+ 							"label": {
+ 								"de": "von 10 wählten Stif\u0026shy;tung\u0026nbsp;A"
+ 							},
+ 							"col_span": 8,
+ 							"col_span_label": 1,
+ 							"col_span_control": 8,
+ 							"validator": "inRange10",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "part2_q6_q2",
+ 							"type": "number",
+ 							"max_chars": 2,
+ 							"max": 10,
+ 							"label": {
+ 								"de": "von 10 wählten Stif\u0026shy;tung\u0026nbsp;B"
+ 							},
+ 							"col_span": 8,
+ 							"col_span_label": 1,
+ 							"col_span_control": 8,
+ 							"validator": "inRange10",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "part2_q6_q3",
+ 							"type": "number",
+ 							"max_chars": 2,
+ 							"max": 10,
+ 							"label": {
+ 								"de": "von 10 wählten Stif\u0026shy;tung\u0026nbsp;C"
+ 							},
+ 							"col_span": 8,
+ 							"col_span_label": 1,
+ 							"col_span_control": 8,
+ 							"validator": "inRange10",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\n\t\t\t\t\t\u003cp style='font-size:90%'\u003e\n\t\t\t\t\tIhre Antworten müssen sich auf 10 summieren.\t\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
+ 							},
+ 							"col_span": 24,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003e\n\t\t\t\t\t\tDies ist das Ende dieser Studie. \n\t\t\t\t\t\tWir bedanken uns ganz herzlich für Ihre Teilnahme. \n\t\t\t\t\t\tFalls Sie zu den zufällig ausgewählten 10% gehören, \n\t\t\t\t\t\twerden Sie Ihre Bonuszahlung wie versprochen in den nächsten Tagen er\u0026shy;hal\u0026shy;ten. \n\t\t\t\t\t\u003c/b\u003e\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						}
+ 					]
  				},
  				{
  					"bottom_vspacers": 2,
@@ -4210,7 +5148,7 @@
  							"accesskey": "n",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"response": "12",
+ 							"response": "15",
  							"style_control": {
  								"desktop": {
  									"grid_container_style": {},

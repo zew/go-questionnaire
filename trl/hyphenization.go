@@ -25,6 +25,9 @@ var hyph = []string{
 	"Hoch|schul|abschluss",
 	"Bildungs|abschluss",
 
+	"de|mo|gra|fisch",
+	"de|mo|gra|phisch",
+
 	//
 	// german
 	"ab|wer|ten",

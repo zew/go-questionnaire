@@ -89,10 +89,7 @@ func Part1Entscheidung78TwoTimesThree(q *qst.QuestionnaireT, pageIdx int, inpNam
 			rad.Name = inpName + "_q1"
 			rad.ValueRadio = key
 			rad.ColSpan = 1
-			rad.ColSpanLabel = 5 + 2
-			rad.ColSpanControl = 1
 			rad.Label = lbl
-
 			rad.ControlFirst()
 		}
 	}
@@ -129,8 +126,6 @@ func Part1Entscheidung78TwoTimesThree(q *qst.QuestionnaireT, pageIdx int, inpNam
 			rad.Name = inpName + "_q2"
 			rad.ValueRadio = key
 			rad.ColSpan = 1
-			rad.ColSpanLabel = 5 + 2
-			rad.ColSpanControl = 1
 			rad.Label = lbl
 
 			rad.ControlFirst()
@@ -234,9 +229,6 @@ func Part1Entscheidung78(q *qst.QuestionnaireT) error {
 					Entscheidung zusammenfasst und somit festlegt, 
 					welche Stiftung das Geld erhält.
 				</p>
-
-				<br>
-				<br>
 				`,
 			}
 		}
@@ -296,6 +288,7 @@ func Part1Entscheidung78(q *qst.QuestionnaireT) error {
 	}
 
 	//
+	// Entscheidung 8
 	{
 		page := q.AddPage()
 		page.Label = trl.S{"de": ""}
@@ -341,6 +334,229 @@ func Part1Entscheidung78(q *qst.QuestionnaireT) error {
 		pageIdx := len(q.Pages) - 1
 		Part1Entscheidung78TwoTimesThree(q, pageIdx, "dec8")
 
+	}
+
+	return nil
+}
+
+// Part2Intro renders
+func Part2Intro(q *qst.QuestionnaireT) error {
+
+	page := q.AddPage()
+	page.Label = trl.S{"de": ""}
+	page.Style = css.DesktopWidthMaxForPages(page.Style, "36rem") // 60
+
+	{
+		gr := page.AddGroup()
+		gr.Cols = 1
+		// gr.BottomVSpacers = 2
+
+		{
+			inp := gr.AddInput()
+			inp.Type = "textblock"
+			inp.Desc = trl.S{
+				"de": `
+				<h3>Teil 2</h3>
+
+				<p>
+					In diesem Teil der Studie beantworten Sie sechs Fragen. 
+					Nach der Erhebung werden 10&nbsp;% aller Teilnehmer zufällig ausgewählt. 
+					Jeder ausgewählte Teilnehmer wird in Abhängigkeit der Genauigkeit 
+					seiner Antworten eine Bonuszahlung von bis zu 50&nbsp;Norstat&nbsp;Coins erhalten (Wert: 5&nbsp;Euro).
+				</p>
+
+				<p style='padding-bottom: 0; padding-top: 0.5rem'>
+					Es geht in diesem Teil wieder um die drei Gruppen aus dem letzten Teil:
+				</p>
+
+				<ul>
+					<li>
+						Gruppe 1: Eine repräsentative Gruppe deutscher Bürger.
+					</li>
+					<li>
+						Gruppe 2: Eine repräsentative Gruppe deutscher Land- und Bundestagspolitiker.
+					</li>
+					<li>
+						Gruppe 3: Eine Gruppe deutscher Bürger, die <i>keine Politiker</i> sind, 
+						die aber die <i>gleichen demographischen Eigenschaften wie Politiker</i> haben. 
+						Das heißt, Gruppe 3 besteht z. B. zu 70&nbsp;% aus Männern, 
+						nur 3&nbsp;% der Mitglieder sind unter 30&nbsp;Jahre alt, 
+						87&nbsp;% der Mitglieder haben einen Hochschulabschluss 
+						und nur 17&nbsp;% sind alleinstehend.
+					</li>
+				<ul>
+
+				<p>
+					Wir bitten Sie zu schätzen, welche Stiftung die Mitglieder dieser Gruppen als 
+					Empfänger der 30&nbsp;€ bestimmt haben, wenn sie bestimmte Präferenzen 
+					der Mitglieder der Vorstudie gesehen haben. 
+				</p>
+
+				<p>
+					Falls Sie eine Bonuszahlung erhalten, 
+					werden wir eine der sechs Fragen zufällig auswählen 
+					und Ihre Schätzung mit den echten Entscheidungen der Gruppenmitglieder abgleichen. 
+					Ihre Bonuszahlung ist umso höher, 
+					je genauer Ihre Einschätzung ist. 
+					Bitte überlegen Sie sich Ihre Antworten daher sehr genau!
+				</p>
+
+				<br>
+
+				<p style="font-size:86%">
+					<b>*Erläuterung:</b>
+					Falls Sie in der ausgewählten Frage eine 100 % richtige Antwort geben, 
+					werden Sie 50&nbsp;Norstat&nbsp;coins erhalten. 
+					Für jede Person, die Sie bei Ihren folgenden Schätzungen zu viel oder zu wenig angeben, 
+					werden Sie 2.5&nbsp;Norstat&nbsp;coins verlieren. 
+					Falls beispielsweise alle 10&nbsp;Gruppenmitglieder Stiftung&nbsp;C wählten, 
+					Sie aber angeben, dass 5&nbsp;Gruppenmitglieder Stiftung&nbsp;B wählen, 
+					und weitere 5 Stiftung&nbsp;C wählten, 
+					dann haben Sie für Stiftung&nbsp;C fünf Gruppenmitglieder zu wenig angegeben, 
+					und für Stiftung&nbsp;B fünf zu viel. 
+					Entsprechend wird Ihre Bezahlung auf 50-2.5× 5 -2.5× 5=25&nbsp;Norstat&nbsp;coins gesenkt.
+				</p>
+
+				`,
+			}
+		}
+
+	}
+	return nil
+
+}
+
+// Part2Block1 renders
+// blockStart is either 0 - or 3
+func Part2Block12(q *qst.QuestionnaireT, blockStart int) error {
+
+	page := q.AddPage()
+	page.Label = trl.S{"de": ""}
+	page.Style = css.DesktopWidthMaxForPages(page.Style, "36rem") // 60
+
+	//
+	//
+	//
+	{
+		gr := page.AddGroup()
+		gr.Cols = 1
+		gr.BottomVSpacers = 1
+
+		{
+			inp := gr.AddInput()
+			inp.Type = "textblock"
+			inp.ColSpan = 1
+			inp.Desc = trl.S{"de": `
+				<p>
+					Schätzen Sie zunächst für die folgende Präferenzkonstellation der fünf Personen:
+				</p>
+			`}
+			if blockStart > 0 {
+				inp.Desc = trl.S{"de": `
+				<p>
+					Schätzen Sie als nächstes für die folgende Präferenzkonstellation der fünf Personen:
+				</p>
+			`}
+			}
+		}
+	}
+
+	// loop over matrix questions
+	// for i := 0; i < 3; i++ {
+	for i := blockStart; i < blockStart+1; i++ {
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 2
+			{
+				inp := gr.AddInput()
+				inp.Type = "dyn-composite"
+				inp.ColSpanControl = 1
+				inp.DynamicFunc = fmt.Sprintf("PoliticalFoundationsStatic__%v__%v", i, i)
+			}
+
+		}
+	}
+
+	questLabels := []string{
+		"Was glauben Sie, wie haben sich die 10&nbsp;Politiker aus Gruppe&nbsp;1 entschieden?",
+		"Was glauben Sie, wie haben sich die 10&nbsp;deutschen Bürger aus Gruppe&nbsp;2 entschieden?",
+		`Was glauben Sie, wie haben sich die 10&nbsp;deutschen Bürger aus Gruppe&nbsp;3 entschieden 
+		(demographische Eigenschaften der Politiker, 
+			also 70 % Männer, 3 % unter 30 Jahre, halb so oft alleinstehend)? `,
+	}
+
+	for i1 := blockStart; i1 < blockStart+3; i1++ {
+
+		gr := page.AddGroup()
+		gr.Cols = 24
+		gr.BottomVSpacers = 3
+		lbls := []string{"A", "B", "C"}
+		{
+			inp := gr.AddInput()
+			inp.Type = "textblock"
+			inp.ColSpan = 24
+			inp.Desc = trl.S{
+				"de": fmt.Sprintf(`
+					<p>
+						<b> Frage %v</b> <br>
+						%v 
+					</p>
+					`, i1+1, questLabels[i1%3]),
+			}
+		}
+		for i2 := 0; i2 < 3; i2++ {
+			inp := gr.AddInput()
+			inp.Type = "number"
+			inp.Name = fmt.Sprintf("part2_q%v_q%v", i1+1, i2+1)
+			inp.MaxChars = 2
+			inp.Min = 0
+			inp.Max = 10
+			inp.ColSpan = 8
+			inp.Label = trl.S{"de": fmt.Sprintf("von 10 wählten Stiftung&nbsp;%v", lbls[i2])}
+			inp.Validator = "inRange10"
+			inp.ControlFirst()
+		}
+		{
+			inp := gr.AddInput()
+			inp.Type = "textblock"
+			inp.ColSpan = 24
+			inp.Desc = trl.S{
+				"de": `
+					<p style='font-size:90%'>
+					Ihre Antworten müssen sich auf 10 summieren.	
+					</p>
+					`,
+			}
+			inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
+			inp.StyleLbl.Desktop.StyleGridItem.JustifySelf = "center"
+		}
+
+	}
+
+	if blockStart > 0 {
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 2
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.ColSpan = 1
+				inp.Desc = trl.S{"de": `
+					<br>
+					<p>
+					<b>
+						Dies ist das Ende dieser Studie. 
+						Wir bedanken uns ganz herzlich für Ihre Teilnahme. 
+						Falls Sie zu den zufällig ausgewählten 10% gehören, 
+						werden Sie Ihre Bonuszahlung wie versprochen in den nächsten Tagen erhalten. 
+					</b>
+					</p>
+				`}
+			}
+		}
 	}
 
 	return nil

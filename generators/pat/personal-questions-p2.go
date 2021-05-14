@@ -384,7 +384,7 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 			{
 				inp := gr.AddInput()
 				inp.Type = "text"
-				inp.Name = "q14other"
+				inp.Name = "q14_other_text"
 				inp.ColSpan = 4
 				inp.ColSpanControl = 1
 				inp.MaxChars = 14

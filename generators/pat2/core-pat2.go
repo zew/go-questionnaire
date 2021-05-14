@@ -434,6 +434,9 @@ func Part2Block12(q *qst.QuestionnaireT, blockStart int) error {
 	page.Label = trl.S{"de": ""}
 	page.Style = css.DesktopWidthMaxForPages(page.Style, "36rem") // 60
 
+	page.ValidationFuncName = "pat2-add-to-10"
+	page.ValidationFuncMsg = trl.S{"de": "Wollen Sie wirklich weiterfahren, ohne dass sich Ihre Eintraege auf 10 summieren?"}
+
 	//
 	//
 	//

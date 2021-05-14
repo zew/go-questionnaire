@@ -759,6 +759,24 @@ func End(q *qst.QuestionnaireT) error {
 				inp.Desc = trl.S{"de": "Vielen Dank für das Ausfüllen dieser Umfrage! "}
 			}
 
+			if q.Survey.Type != "pat" {
+				{
+					inp := gr.AddInput()
+					inp.Type = "textblock"
+					inp.ColSpan = 1
+					// inp.ColSpanLabel = 2
+					inp.Desc = trl.S{"de": `
+						<br>
+						<p style='font-size: 110%'> Bitte klicken Sie auf den Link zu <br>
+						<a href='https://webs.norstatsurveys.com/z/Complete'>Norstatpanel</a>, <br>
+						damit Ihre Teilnahme angerechnet wird.
+
+						</p> 
+						`}
+				}
+
+			}
+
 		}
 
 	}

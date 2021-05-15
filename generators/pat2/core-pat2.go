@@ -264,7 +264,6 @@ func Part1Entscheidung78(q *qst.QuestionnaireT) error {
 		}
 
 		// loop over matrix questions
-		// for i := 0; i < 3; i++ {
 		for i := 0; i < 1; i++ {
 
 			{
@@ -313,8 +312,7 @@ func Part1Entscheidung78(q *qst.QuestionnaireT) error {
 		}
 
 		// loop over matrix questions
-		// for i := 0; i < 3; i++ {
-		for i := 3; i < 4; i++ {
+		for i := 1; i < 2; i++ {
 
 			{
 				gr := page.AddGroup()
@@ -465,8 +463,9 @@ func Part2Block12(q *qst.QuestionnaireT, blockStart int) error {
 	}
 
 	// loop over matrix questions
-	// for i := 0; i < 3; i++ {
-	for i := blockStart; i < blockStart+1; i++ {
+	// blockStart is either 0 or 3
+	zeroOrOne := blockStart / 3
+	for i := zeroOrOne; i < zeroOrOne+1; i++ {
 		{
 			gr := page.AddGroup()
 			gr.Cols = 1

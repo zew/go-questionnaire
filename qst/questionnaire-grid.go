@@ -94,10 +94,12 @@ func (inp *inputT) ShortSuffix(ctrl string, langCode string) string {
 	return ctrl
 }
 
-// ControlFirst puts label behind input element - for radio and checkbox inputs
+// ControlFirst puts label behind input element;
+// for radio and checkbox inputs;
+// using CSS grid styles
 func (inp *inputT) ControlFirst() {
 
-	inp.StyleLbl = css.ItemEndMA(inp.StyleCtl)
+	inp.StyleLbl = css.ItemEndMA(inp.StyleLbl)
 	inp.StyleLbl.Desktop.StyleGridItem.JustifySelf = "start"
 	inp.StyleLbl.Desktop.StyleGridItem.Order = 2
 

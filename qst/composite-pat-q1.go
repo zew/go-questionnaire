@@ -39,6 +39,29 @@ var reshuffle6basedOn16 = [][]int{
 	{3, 4, 2, 5, 1, 6}, // Version 16
 }
 
+// population - three pairs
+var populationByVersion = [][]int{
+	{1, 4},
+	{1, 4},
+	{1, 4},
+	{1, 4},
+
+	{2, 6},
+	{2, 6},
+	{2, 6},
+	{2, 6},
+
+	{2, 5},
+	{2, 5},
+	{2, 5},
+	{2, 5},
+
+	{2, 5},
+	{2, 5},
+	{2, 5},
+	{2, 5},
+}
+
 // PoliticalFoundations creates
 // a HTML table with three option and three checkbox inputs;
 // seq0to5 is the numbering;
@@ -70,6 +93,22 @@ func PoliticalFoundations(q *QuestionnaireT, seq0to5, paramSetIdx int) (string, 
 		seq0to5, // visible question seq 1...6 on the questionnaire
 		questionID,
 		fourPermutationsOf6x3x3[oneOfFour][oneOfSix].Ppls,
+	)
+}
+
+func PoliticalFoundationsStaticSub(q *QuestionnaireT, seq0to1, paramSetIdx int) (string, []string, error) {
+
+	zeroTo15 := q.Version()
+	threeDistinctPairs := populationByVersion[zeroTo15][seq0to1] - 1
+
+	oneOfFour := zeroTo15 % 4 // table rows permutation
+	oneOfFour = 0
+
+	return politicalFoundations(
+		q,
+		seq0to1, // visible question seq 1...6 on the questionnaire
+		"not-applicable",
+		fourPermutationsOf6x3x3[oneOfFour][threeDistinctPairs].Ppls,
 	)
 }
 
@@ -273,7 +312,7 @@ var cols6to4 = strings.NewReplacer(
 // the input columns
 func PoliticalFoundationsStatic(q *QuestionnaireT, seq0to5, paramSetIdx int) (string, []string, error) {
 
-	ret, _, err := PoliticalFoundations(q, seq0to5, paramSetIdx)
+	ret, _, err := PoliticalFoundationsStaticSub(q, seq0to5, paramSetIdx)
 
 	completeDeletionOfCols56 := false
 	if completeDeletionOfCols56 {

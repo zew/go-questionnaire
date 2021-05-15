@@ -115,6 +115,7 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 		{
 			gr := page.AddGroup()
 			gr.Cols = 8
+			gr.Vertical(8)
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"

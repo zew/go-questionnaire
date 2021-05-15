@@ -229,7 +229,6 @@ type groupT struct {
 	// Each label (if set) and each input occupy columns according to
 	// inputT.ColSpanLabel and inputT.ColSpanControl.
 	Cols            float32 `json:"columns,omitempty"`
-	Vertical        bool    `json:"vertical,omitempty"`          // groups vertically, not horizontally
 	OddRowsColoring bool    `json:"odd_rows_coloring,omitempty"` // color odd rows
 
 	Inputs             []*inputT `json:"inputs,omitempty"`
@@ -271,6 +270,25 @@ func (gr *groupT) addEmptyTextblock() *inputT {
 	gr.Inputs = append(gr.Inputs, inp)
 	ret := gr.Inputs[len(gr.Inputs)-1]
 	return ret
+}
+
+// Vertical changes CSS grid style to vertical
+func (gr *groupT) Vertical(argRows ...int) {
+
+	rows := 1
+	if len(argRows) > 0 {
+		rows = argRows[0]
+	}
+
+	gr.Style = css.NewStylesResponsive(gr.Style)
+	gr.Style.Desktop.StyleBox.Display = "grid"
+	gr.Style.Desktop.StyleGridContainer.AutoFlow = "column"
+	gr.Style.Desktop.StyleGridContainer.TemplateColumns = " " // empty string
+	gr.Style.Desktop.StyleGridContainer.TemplateRows = strings.Repeat("1fr ", rows)
+
+	// gr.Style.Desktop.StyleGridContainer.GapColumn = "0.4rem"
+	// gr.Style.Desktop.StyleGridContainer.GapRow = "0.8rem"
+
 }
 
 // HasComposit - group contains composit element?

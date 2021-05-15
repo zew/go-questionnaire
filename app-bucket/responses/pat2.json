@@ -19,7 +19,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "cca08938815c8d66513382fe95407f2d66caceeb683bd1c756c66ebf46b4e726",
+ 	"md_5": "d5de43fb1b2e1256328b13879c155b7e0bfc8a5cf11d0ceb61cd5d0621989b55",
  	"lang_codes": [
  		"de"
  	],
@@ -771,7 +771,27 @@
  								}
  							}
  						}
- 					]
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"auto_flow": "column",
+ 								"template_columns": " ",
+ 								"template_rows": "1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr "
+ 							},
+ 							"box_style": {
+ 								"display": "grid"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
  				},
  				{
  					"bottom_vspacers": 3,
@@ -3966,7 +3986,7 @@
  						{
  							"type": "dyn-composite",
  							"col_span_control": 1,
- 							"dynamic_func": "PoliticalFoundationsStatic__3__3"
+ 							"dynamic_func": "PoliticalFoundationsStatic__1__1"
  						}
  					]
  				},
@@ -4732,7 +4752,7 @@
  						{
  							"type": "dyn-composite",
  							"col_span_control": 1,
- 							"dynamic_func": "PoliticalFoundationsStatic__3__3"
+ 							"dynamic_func": "PoliticalFoundationsStatic__1__1"
  						}
  					]
  				},

@@ -23,7 +23,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	q.Survey.Name = trl.S{"de": "Entscheidungsprozesse in der Politik"}
 
 	q.VersionMax = 16
-	// q.AssignVersion = "round-robin"
+	q.AssignVersion = "round-robin"
 
 	var err error
 

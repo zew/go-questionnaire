@@ -19,11 +19,12 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "595239c7a2d1a29bea039ad88e56f07115873a634fa583b5250b82fd28e77dd5",
+ 	"md_5": "4facf5c1ba35bb055ce6f65ec6ecf84f1090e49b83e5e9f80d098a80b01472ca",
  	"lang_codes": [
  		"de"
  	],
  	"version_max": 16,
+ 	"assign_version": "round-robin",
  	"version_effective": -2,
  	"max_groups": 6,
  	"pages": [
@@ -2635,24 +2636,30 @@
  					]
  				},
  				{
- 					"bottom_vspacers": 3,
- 					"columns": 8,
+ 					"bottom_vspacers": 1,
+ 					"columns": 1,
  					"inputs": [
  						{
  							"type": "textblock",
  							"description": {
  								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 10.\u003c/b\u003e\n\t\t\t\t\tIn welchem Bundesland befindet sich Ihr Hauptwohnsitz?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
- 							"col_span": 8,
+ 							"col_span": 1,
  							"col_span_label": 1
- 						},
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 8,
+ 					"inputs": [
  						{
  							"name": "q10",
  							"type": "radio",
  							"label": {
  								"de": "Baden-Württemberg"
  							},
- 							"col_span": 4,
+ 							"col_span": 1,
  							"col_span_label": 4,
  							"col_span_control": 1,
  							"value_radio": "bw",
@@ -2683,7 +2690,7 @@
  							"label": {
  								"de": "Bayern"
  							},
- 							"col_span": 4,
+ 							"col_span": 1,
  							"col_span_label": 4,
  							"col_span_control": 1,
  							"value_radio": "by",
@@ -2714,7 +2721,7 @@
  							"label": {
  								"de": "Berlin"
  							},
- 							"col_span": 4,
+ 							"col_span": 1,
  							"col_span_label": 4,
  							"col_span_control": 1,
  							"value_radio": "be",
@@ -2745,7 +2752,7 @@
  							"label": {
  								"de": "Brandenburg"
  							},
- 							"col_span": 4,
+ 							"col_span": 1,
  							"col_span_label": 4,
  							"col_span_control": 1,
  							"value_radio": "bb",
@@ -2776,7 +2783,7 @@
  							"label": {
  								"de": "Bremen"
  							},
- 							"col_span": 4,
+ 							"col_span": 1,
  							"col_span_label": 4,
  							"col_span_control": 1,
  							"value_radio": "hb",
@@ -2807,7 +2814,7 @@
  							"label": {
  								"de": "Hamburg"
  							},
- 							"col_span": 4,
+ 							"col_span": 1,
  							"col_span_label": 4,
  							"col_span_control": 1,
  							"value_radio": "hh",
@@ -2838,7 +2845,7 @@
  							"label": {
  								"de": "Hessen"
  							},
- 							"col_span": 4,
+ 							"col_span": 1,
  							"col_span_label": 4,
  							"col_span_control": 1,
  							"value_radio": "he",
@@ -2869,7 +2876,7 @@
  							"label": {
  								"de": "Mecklenburg-Vorpommern"
  							},
- 							"col_span": 4,
+ 							"col_span": 1,
  							"col_span_label": 4,
  							"col_span_control": 1,
  							"value_radio": "mv",
@@ -2900,7 +2907,7 @@
  							"label": {
  								"de": "Niedersachsen"
  							},
- 							"col_span": 4,
+ 							"col_span": 1,
  							"col_span_label": 4,
  							"col_span_control": 1,
  							"value_radio": "ni",
@@ -2931,7 +2938,7 @@
  							"label": {
  								"de": "Nordrhein-Westfalen"
  							},
- 							"col_span": 4,
+ 							"col_span": 1,
  							"col_span_label": 4,
  							"col_span_control": 1,
  							"value_radio": "nw",
@@ -2962,7 +2969,7 @@
  							"label": {
  								"de": "Rheinland-Pfalz"
  							},
- 							"col_span": 4,
+ 							"col_span": 1,
  							"col_span_label": 4,
  							"col_span_control": 1,
  							"value_radio": "rp",
@@ -2993,7 +3000,7 @@
  							"label": {
  								"de": "Saarland"
  							},
- 							"col_span": 4,
+ 							"col_span": 1,
  							"col_span_label": 4,
  							"col_span_control": 1,
  							"value_radio": "sl",
@@ -3024,7 +3031,7 @@
  							"label": {
  								"de": "Sachsen"
  							},
- 							"col_span": 4,
+ 							"col_span": 1,
  							"col_span_label": 4,
  							"col_span_control": 1,
  							"value_radio": "sn",
@@ -3055,7 +3062,7 @@
  							"label": {
  								"de": "Sachsen-Anhalt"
  							},
- 							"col_span": 4,
+ 							"col_span": 1,
  							"col_span_label": 4,
  							"col_span_control": 1,
  							"value_radio": "st",
@@ -3086,7 +3093,7 @@
  							"label": {
  								"de": "Schleswig-Holstein"
  							},
- 							"col_span": 4,
+ 							"col_span": 1,
  							"col_span_label": 4,
  							"col_span_control": 1,
  							"value_radio": "sh",
@@ -3117,7 +3124,7 @@
  							"label": {
  								"de": "Thüringen"
  							},
- 							"col_span": 4,
+ 							"col_span": 1,
  							"col_span_label": 4,
  							"col_span_control": 1,
  							"value_radio": "th",
@@ -3142,7 +3149,26 @@
  								}
  							}
  						}
- 					]
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"auto_flow": "column",
+ 								"template_rows": "1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr "
+ 							},
+ 							"box_style": {
+ 								"display": "grid"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
  				},
  				{
  					"bottom_vspacers": 3,
@@ -3974,7 +4000,7 @@
  							}
  						},
  						{
- 							"name": "q14other",
+ 							"name": "q14_other_text",
  							"type": "text",
  							"max_chars": 14,
  							"col_span": 4,
@@ -4452,6 +4478,14 @@
  							"type": "textblock",
  							"description": {
  								"de": "Vielen Dank für das Ausfüllen dieser Umfrage! "
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cp style='font-size: 110%'\u003e Bitte klicken Sie auf den Link zu \u003cbr\u003e\n\t\t\t\t\t\t\u003ca href='https://webs.norstatsurveys.com/z/Complete'\u003eNorstatpanel\u003c/a\u003e, \u003cbr\u003e\n\t\t\t\t\t\tdamit Ihre Teilnahme angerechnet wird.\n\n\t\t\t\t\t\t\u003c/p\u003e \n\t\t\t\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1

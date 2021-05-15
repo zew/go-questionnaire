@@ -283,11 +283,8 @@ func (gr *groupT) Vertical(argRows ...int) {
 	gr.Style = css.NewStylesResponsive(gr.Style)
 	gr.Style.Desktop.StyleBox.Display = "grid"
 	gr.Style.Desktop.StyleGridContainer.AutoFlow = "column"
-	gr.Style.Desktop.StyleGridContainer.TemplateColumns = " " // empty string
+	// gr.Style.Desktop.StyleGridContainer.TemplateColumns = " " // empty string
 	gr.Style.Desktop.StyleGridContainer.TemplateRows = strings.Repeat("1fr ", rows)
-
-	// gr.Style.Desktop.StyleGridContainer.GapColumn = "0.4rem"
-	// gr.Style.Desktop.StyleGridContainer.GapRow = "0.8rem"
 
 }
 

@@ -129,6 +129,7 @@ by using [gocloud blob](https://godoc.org/gocloud.dev/blob) for local file syste
 
 Install and setup [golang](https://golang.org/doc/install)
 
+```bash
     cd $HOME/go/src/github.com/zew
     go get -u github.com/zew/go-questionnaire
     cd go-questionnaire
@@ -137,6 +138,7 @@ Install and setup [golang](https://golang.org/doc/install)
     touch ./templates/styles-quest-[survey].css # put your site's styles here
     go build
     ./go-questionnaire                   # under windows: go-questionnaire.exe
+```
 
 More info in [deploy on linux/unix](./app-bucket/content/linux-instructions.md)
 
@@ -195,8 +197,8 @@ If you have created your survey `myquest` you need to restart the application.
    i.e.  <https://dev-domain:port/survey/generate-hashes?wave_id=2018-07&survey_id=fmt>  
   yielding
   
-      /survey?u=99000&sid=fmt&wid=2018-07&h=57I7UVp6
-      ...
+    /survey?u=99000&sid=fmt&wid=2018-07&h=57I7UVp6
+    ...
 
 ### Participant login and reset
 
@@ -217,18 +219,24 @@ If you have created your survey `myquest` you need to restart the application.
 
 #### Deploy
 
+```bash
     gcloud config set project "financial-literacy-test"
     gcloud app deploy
     Y
     # 
+```
 
 Read the logs
 
+```bash
     gcloud app logs tail -s default
+```
 
 Open in browser
 
+```bash
     gcloud app browse
+```
 
 #### URLs
 
@@ -238,13 +246,17 @@ Open in browser
 
 #### Creation of signed URLs via cloud.google.com/go/storage
 
+```bash
     SET   GOOGLE_APPLICATION_CREDENTIALS=c:\Users\pbu\.ssh\google-cloud-rentomat-creds.json
     ECHO %GOOGLE_APPLICATION_CREDENTIALS%
+```
 
 ### Local
 
+```bash
     dev_appserver.py app.yaml
     "c:\Program Files (x86)\Google\Cloud SDK\google-cloud-sdk\platform\bundledpython\python.exe" "c:\Program Files (x86)\Google\Cloud SDK\google-cloud-sdk\bin\dev_appserver.py" app.yaml
+```
 
 ### Packages
 
@@ -445,7 +457,7 @@ func MobileVertical(sr *StylesResponsive) *StylesResponsive {
 
 ```
 
-##### Labels after control
+##### (inp *inputT).ControlFirst() - Labels after control
 
 Usually the label comes first and the input second.
 
@@ -461,6 +473,10 @@ unless a mobile style is set
 ```go
 myInput.StyleLbl.Mobile.StyleGridItem.Order = 1  // label first in mobile view
 ```
+
+##### (gr *groupT) Vertical()
+
+Vertical flow, instead of default - horizontal flow.
 
 ##### Free use of CSS styling
 

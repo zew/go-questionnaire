@@ -132,14 +132,14 @@ func (q QuestionnaireT) GroupHTMLGridBased(pageIdx, grpIdx int) string {
 
 	//
 	//
+	// compare (gr *groupT) Vertical
 	gr.Style = css.NewStylesResponsive(gr.Style)
-	gr.Style.Desktop.StyleBox.Display = "grid"
-	if gr.Style.Desktop.StyleGridContainer.AutoFlow == "" {
+	if gr.Style.Desktop.StyleBox.Display == "" {
+		gr.Style.Desktop.StyleBox.Display = "grid"
 		gr.Style.Desktop.StyleGridContainer.AutoFlow = "row"
-	}
-	if gr.Style.Desktop.StyleGridContainer.TemplateColumns == "" {
 		gr.Style.Desktop.StyleGridContainer.TemplateColumns = strings.Repeat("1fr ", int(gr.Cols))
 	}
+
 	if gr.Style.Desktop.StyleGridContainer.GapColumn == "" {
 		gr.Style.Desktop.StyleGridContainer.GapColumn = "0.4rem"
 	}

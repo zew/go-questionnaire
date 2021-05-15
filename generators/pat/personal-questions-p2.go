@@ -82,6 +82,8 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 			}
 		}
 
+		//
+		//
 		{
 			gr := page.AddGroup()
 			gr.Cols = 12
@@ -112,14 +114,15 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 			}
 		}
 
+		// separate header - since the states are vertically shown
 		{
 			gr := page.AddGroup()
-			gr.Cols = 8
-			gr.Vertical(8)
+			gr.Cols = 1
+			gr.BottomVSpacers = 1
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				inp.ColSpan = 8
+				inp.ColSpan = 1
 				inp.Desc = trl.S{
 					"de": fmt.Sprintf(`
 					</p>
@@ -128,8 +131,14 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 					</p>
 				`, vE.NumberingStart+2),
 				}
-			}
 
+			}
+		}
+
+		{
+			gr := page.AddGroup()
+			gr.Cols = 8
+			gr.Vertical(8)
 			for _, stt := range trl.FederalStatesGermanyISOs2 {
 				lbl := stt.S
 				rad := gr.AddInput()
@@ -137,6 +146,7 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 				rad.Name = "q10"
 				rad.ValueRadio = strings.ToLower(stt.Key)
 				rad.ColSpan = 4
+				rad.ColSpan = 1 // for vertical
 				rad.ColSpanLabel = 4
 				rad.ColSpanControl = 1
 				rad.Label = lbl

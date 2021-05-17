@@ -161,7 +161,7 @@ window.addEventListener("load", function (event) {
     console.log("outsideMenu and closeLevel3 registered");
 
 
-    var noInvalidInputs = true;
+    var invalidInputs = false;
     var invalidFields = document.querySelectorAll("form :invalid");  // excluding invalid form itself
     for (var i = 0; i < invalidFields.length; i++) {
         /*  first pages with first element after long text 
@@ -176,30 +176,45 @@ window.addEventListener("load", function (event) {
             // forgoing initial focussing
         }
         // console.log(`focus on first invalid input ${invalidFields[i].name}`);
-        noInvalidInputs = false;
+        invalidInputs = true;
         break;
     }
 
-    if (noInvalidInputs) {
+    var invalidServerFields = document.querySelectorAll(".error-block-input");
+    var topPosOfErr = 0;
+    if (invalidServerFields.length > 0) {
+        topPosOfErr = invalidServerFields[0].getBoundingClientRect().y
+        // console.log(`.error-block-input found at ${topPosOfErr}`);
+    }
+
+
+    if (!invalidInputs) {
         // focus on first visible input
-        // TODO: first input after p.error-block
         var elements = document.forms.frmMain.elements;
         for (var i = 0, element; element = elements[i++];) {
-            if (element.type !== "hidden") {
-                /*  first pages with first element after long text 
-                        => scrolls down
-                    preventScroll supported only since 2018
-                 */
-                try {
-                    element.focus({
-                        preventScroll: true
-                    });
-                } catch (error) {
-                    // forgoing initial focussing
-                }
-                // console.log(`focus on ${i}th input ${element.name} of form main`);
-                break;
+            if (element.type === "hidden") {
+                continue;
             }
+
+            if (element.getBoundingClientRect().y < topPosOfErr) {
+                // console.log(`.error-block-input found ${element.getBoundingClientRect().y} < ${topPosOfErr}`);
+                continue;
+            }
+
+            /*  first pages with first element after long text 
+                    => scrolls down
+                preventScroll supported only since 2018
+                */
+            try {
+                element.focus({
+                    preventScroll: true
+                });
+            } catch (error) {
+                // forgoing initial focussing
+            }
+            // console.log(`focus on ${i}th input ${element.name} of form main`);
+            break;
+
         }
     }
 

@@ -26,7 +26,7 @@ type gbCol struct {
 type GridBuilder struct {
 	MainLabel trl.S // first row - before column headers - as wide as the group
 	cols      []gbCol
-	Validator string
+	validator string
 }
 
 // AddCol adds a column;
@@ -60,7 +60,7 @@ func (gb *GridBuilder) AddRadioRow(name string, vals []string, sparseLabels map[
 			rad.Label = nil
 			rad.Type = "radio"
 			rad.Name = name // "y_euro"
-			rad.Validator = gb.Validator
+			rad.Validator = gb.validator
 			rad.ValueRadio = vals[colIdx]
 		}
 
@@ -170,7 +170,7 @@ func (p *pageT) AddGrid(gb *GridBuilder) *groupT {
 
 }
 
-// NewGridBuilderRadios for FMT questionnaire
+// NewGridBuilderRadios for a matrix of inputs
 func NewGridBuilderRadios(
 	columnTemplate []float32,
 	hdrLabels []trl.S,
@@ -179,7 +179,31 @@ func NewGridBuilderRadios(
 	firstColLabels []trl.S,
 ) *GridBuilder {
 
+	return NewGridBuilderRadiosWithValidator(
+		columnTemplate,
+		hdrLabels,
+		inputNames,
+		radioVals,
+		firstColLabels,
+		"",
+	)
+
+}
+
+// NewGridBuilderRadiosWithValidator like NewGridBuilderRadios
+// but with validator func
+func NewGridBuilderRadiosWithValidator(
+	columnTemplate []float32,
+	hdrLabels []trl.S,
+	inputNames []string,
+	radioVals []string,
+	firstColLabels []trl.S,
+	Validator string,
+) *GridBuilder {
+
 	gb := &GridBuilder{}
+
+	gb.validator = Validator
 
 	if len(hdrLabels) > 0 {
 		if len(columnTemplate) != len(hdrLabels)*2 {

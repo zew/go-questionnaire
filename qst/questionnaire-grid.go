@@ -201,7 +201,7 @@ func (q QuestionnaireT) GroupHTMLGridBased(pageIdx, grpIdx int) string {
 
 		if inp.ErrMsg != "" {
 			stl := fmt.Sprintf("grid-column: auto / span %v", inp.ColSpan)
-			divWrap(wInp, " error error-block", stl, inp.ErrMsg)
+			divWrap(wInp, " error error-block-input", stl, inp.ErrMsg)
 		}
 
 		{
@@ -426,14 +426,7 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 	// append suffix
 	ctrl = inp.ShortSuffix(ctrl, q.LangCode)
 
-	if false { // moved to GroupHTMLGridBased
-		if inp.ErrMsg != "" {
-			ctrl += fmt.Sprintf(
-				"<div class='error error-block' >%v</div>\n",
-				inp.ErrMsg,
-			)
-		}
-	}
+	// error rendering moved to GroupHTMLGridBased
 
 	return ctrl
 

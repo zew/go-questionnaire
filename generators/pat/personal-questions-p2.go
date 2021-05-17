@@ -375,7 +375,7 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 			grStPage78.Desktop.StyleGridContainer.GapRow = "0.1rem"
 			grStPage78.Desktop.StyleGridContainer.GapColumn = "0.01rem"
 
-			gb := qst.NewGridBuilderRadios(
+			gb := qst.NewGridBuilderRadiosWithValidator(
 				[]float32{
 					0, 1,
 					0, 1,
@@ -394,6 +394,7 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 				[]string{"q15"},
 				[]string{"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "weiss_nicht"},
 				[]trl.S{},
+				validatorRadio,
 			)
 			gb.MainLabel = trl.S{
 				"de": fmt.Sprintf(`
@@ -408,7 +409,6 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 					<br>
 				`, vE.NumberingStart+7),
 			}
-			gb.Validator = validatorRadio
 			gr := page.AddGrid(gb)
 			gr.OddRowsColoring = true
 			gr.Style = grStPage78

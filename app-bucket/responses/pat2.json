@@ -19,7 +19,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "0e6267e03c305af0f63a29420562e471031c07c2c4ce0a2ea0b8fc75325a9409",
+ 	"md_5": "d43695f71959ed0eff95a2ca58b871ca6a7067fd5582e1485b3f177b6234a133",
  	"lang_codes": [
  		"de"
  	],
@@ -2283,66 +2283,77 @@
  							"name": "q15",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "1"
  						},
  						{
  							"name": "q15",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "2"
  						},
  						{
  							"name": "q15",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "3"
  						},
  						{
  							"name": "q15",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "4"
  						},
  						{
  							"name": "q15",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "5"
  						},
  						{
  							"name": "q15",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "6"
  						},
  						{
  							"name": "q15",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "7"
  						},
  						{
  							"name": "q15",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "8"
  						},
  						{
  							"name": "q15",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "9"
  						},
  						{
  							"name": "q15",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "10"
  						},
  						{
  							"name": "q15",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "11"
  						},
  						{
@@ -2350,6 +2361,7 @@
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "weiss_nicht"
  						}
  					],

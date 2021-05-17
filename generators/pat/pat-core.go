@@ -43,13 +43,13 @@ func Title(q *qst.QuestionnaireT) error {
 
 				<p>Dies ist eine Studie des Zentrums für Europäische Wirtschaftsforschung (ZEW) in Mannheim 
 				sowie der Universitäten in Köln, Mannheim, Münster und Zürich. 
-				Ihre Teilnahme wird nur wenige Minuten in Anspruch nehmen 
+				Ihre Teilnahme wird ca. 15nbsp;Minuten in Anspruch nehmen 
 				und Sie unterstützen damit die Forschung zu Entscheidungsprozessen in der Politik.
 				</p>
 
 				<p>In dieser Studie treffen Sie acht Entscheidungen und beantworten sieben Fragen. 
-				Nach der Erhebung werden 10&nbsp;% aller Teilnehmer zufällig ausgewählt. 
-				Von jedem ausgewählten Teilnehmer wird eine der acht Entscheidungen zufällig bestimmt 
+				Nach der Erhebung werden 10&nbsp;% aller Teilnehmer*innen zufällig ausgewählt. 
+				Von jedem*r ausgewählten Teilnehmer*in wird eine der acht Entscheidungen zufällig bestimmt 
 				und genau wie im Folgenden beschrieben umgesetzt 
 				(alle erwähnten Personen existieren wirklich und alle Auszahlungen werden wie beschrieben getätigt).
 				</p>
@@ -179,7 +179,6 @@ func Part1(q *qst.QuestionnaireT) error {
 			gr := page.AddGroup()
 			gr.Cols = 1
 			gr.BottomVSpacers = 1
-			gr.RandomizationGroup = 1 - 1
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
@@ -205,7 +204,6 @@ func Part1(q *qst.QuestionnaireT) error {
 				} else {
 					gr.BottomVSpacers = 3
 				}
-				gr.RandomizationGroup = 1 - 1
 
 				// q1b
 				{
@@ -246,7 +244,6 @@ func Part1(q *qst.QuestionnaireT) error {
 				gr := page.AddGroup()
 				gr.Cols = 1
 				gr.BottomVSpacers = 3
-				gr.RandomizationGroup = 1 - 1
 
 				// q1b
 				{
@@ -278,6 +275,9 @@ func Part1Frage1(q *qst.QuestionnaireT) error {
 		page.Label = trl.S{"de": ""}
 		page.Short = trl.S{"de": "Auswertung 1"}
 		page.Style = css.DesktopWidthMaxForPages(page.Style, "36rem") // 60
+
+		page.ValidationFuncName = "pat-best-gt-worst"
+		page.ValidationFuncMsg = trl.S{"de": "Bitte beste Stifung > mittlere > schlechteste. Wirklich fortfahren?"}
 
 		// gr0
 		{
@@ -402,7 +402,10 @@ func Part2(q *qst.QuestionnaireT) error {
 						<b>
 						Nun kommen wir zum zweiten Teil unserer Studie. 
 						</b>
-						In diesem Teil treffen Sie jeweils Entscheidungen für einen deutschen Staatsangehörigen, der Ihnen zugeordnet ist und der an einer zukünftigen Studie teilnehmen wird. Diese Person wird in der Studie entscheiden, wie ihr das Entgelt für die Studienteilnahme ausbezahlt wird. Je eher diese Person bereit ist, auf ihr Geld zu warten, desto mehr Geld wird ihr insgesamt bezahlt.						
+						In diesem Teil treffen Sie jeweils Entscheidungen 
+						für eine*n deutsche*n Staatsangehörige*n, 
+						der*die Ihnen zugeordnet ist 
+						und der*die an einer zukünftigen Studie teilnehmen wird. Diese Person wird in der Studie entscheiden, wie ihr das Entgelt für die Studienteilnahme ausbezahlt wird. Je eher diese Person bereit ist, auf ihr Geld zu warten, desto mehr Geld wird ihr insgesamt bezahlt.						
 					</p>
 					<p>
 						Wir bitten Sie zu entscheiden, wie geduldig oder wie ungeduldig die Person wählen kann. 

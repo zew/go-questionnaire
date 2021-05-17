@@ -22,13 +22,13 @@ type WriterFlushable struct {
 
 // WriteHeader implements the http.ResponseWriter interface
 func (w WriterFlushable) WriteHeader(statuscode int) {
-	log.Printf("headers in hijacked reponses must be written directly via bufio.ReadWriter")
+	log.Printf("headers in hijacked responses must be written directly via bufio.ReadWriter")
 	w.respWr.WriteHeader(statuscode)
 }
 
 // Header implements the http.ResponseWriter interface
 func (w WriterFlushable) Header() http.Header {
-	log.Printf("headers in hijacked reponses must be written directly via bufio.ReadWriter. This returns an empty map.")
+	log.Printf("headers in hijacked responses must be written directly via bufio.ReadWriter. This returns an empty map.")
 	return w.respWr.Header()
 }
 

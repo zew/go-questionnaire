@@ -130,14 +130,14 @@ by using [gocloud blob](https://godoc.org/gocloud.dev/blob) for local file syste
 Install and setup [golang](https://golang.org/doc/install)
 
 ```bash
-    cd $HOME/go/src/github.com/zew
-    go get -u github.com/zew/go-questionnaire
-    cd go-questionnaire
-    mv config-example.json  config.json  # adapt to your purposes
-    mv logins-example.json  logins.json  # dito
-    touch ./templates/styles-quest-[survey].css # put your site's styles here
-    go build
-    ./go-questionnaire                   # under windows: go-questionnaire.exe
+cd $HOME/go/src/github.com/zew
+go get -u github.com/zew/go-questionnaire
+cd go-questionnaire
+mv config-example.json  config.json  # adapt to your purposes
+mv logins-example.json  logins.json  # dito
+touch ./templates/styles-quest-[survey].css # put your site's styles here
+go build
+./go-questionnaire                   # under windows: go-questionnaire.exe
 ```
 
 More info in [deploy on linux/unix](./app-bucket/content/linux-instructions.md)
@@ -220,22 +220,22 @@ If you have created your survey `myquest` you need to restart the application.
 #### Deploy
 
 ```bash
-    gcloud config set project "financial-literacy-test"
-    gcloud app deploy
-    Y
-    # 
+gcloud config set project "financial-literacy-test"
+gcloud app deploy
+Y
+# 
 ```
 
 Read the logs
 
 ```bash
-    gcloud app logs tail -s default
+gcloud app logs tail -s default
 ```
 
 Open in browser
 
 ```bash
-    gcloud app browse
+gcloud app browse
 ```
 
 #### URLs
@@ -247,15 +247,15 @@ Open in browser
 #### Creation of signed URLs via cloud.google.com/go/storage
 
 ```bash
-    SET   GOOGLE_APPLICATION_CREDENTIALS=c:\Users\pbu\.ssh\google-cloud-rentomat-creds.json
-    ECHO %GOOGLE_APPLICATION_CREDENTIALS%
+SET   GOOGLE_APPLICATION_CREDENTIALS=c:\Users\pbu\.ssh\google-cloud-rentomat-creds.json
+ECHO %GOOGLE_APPLICATION_CREDENTIALS%
 ```
 
 ### Local
 
 ```bash
-    dev_appserver.py app.yaml
-    "c:\Program Files (x86)\Google\Cloud SDK\google-cloud-sdk\platform\bundledpython\python.exe" "c:\Program Files (x86)\Google\Cloud SDK\google-cloud-sdk\bin\dev_appserver.py" app.yaml
+dev_appserver.py app.yaml
+"c:\Program Files (x86)\Google\Cloud SDK\google-cloud-sdk\platform\bundledpython\python.exe" "c:\Program Files (x86)\Google\Cloud SDK\google-cloud-sdk\bin\dev_appserver.py" app.yaml
 ```
 
 ### Packages
@@ -688,16 +688,22 @@ These numbers are meanwhile shown by github.com
 
 * Make HTML `autocapitalize` and `inputmode` available to inputs
 
-* Revolving and compressing logfiles
+### Revolving and compressing logfiles
 
-    import "gopkg.in/natefinch/lumberjack.v2"
-    log.SetOutput(&lumberjack.Logger{
-        Filename:   LOG_FILE_LOCATION,
-        MaxSize:    500, // MB
-        MaxBackups: 3,
-        MaxAge:     28,   //days
-        Compress:   true, // disabled by default
-    })
+```golang
+// possible solution
+import "gopkg.in/natefinch/lumberjack.v2"
+
+log.SetOutput(&lumberjack.Logger{
+    Filename:   LOG_FILE_LOCATION,
+    MaxSize:    500,  // MB
+    MaxBackups: 3,
+    MaxAge:     28,   //days
+    Compress:   true, // disabled by default
+})
+```
+
+We are relucatant to incorporate logging logic into the application, since `systemd` provides good integration with linux journal.
 
 ## Open / todo
 

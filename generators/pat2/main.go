@@ -25,6 +25,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	q.VersionMax = 16
 	q.AssignVersion = "round-robin"
 
+	q.ShufflingsMax = 8 // for party affiliation and "Entscheidung 7/8"
+
 	var err error
 
 	err = TitlePat2(&q)
@@ -32,7 +34,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		return nil, fmt.Errorf("Error adding title pat2 page: %v", err)
 	}
 
-	err = pat.PersonalQuestions2(&q, pat.VariableElements{NumberingStart: 1})
+	err = pat.PersonalQuestions2(&q, pat.VariableElements{NumberingStart: 1, AllMandatory: true})
 	if err != nil {
 		return nil, fmt.Errorf("Error adding personal questions 2: %v", err)
 	}

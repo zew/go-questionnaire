@@ -10,6 +10,7 @@ import (
 
 type VariableElements struct {
 	NumberingStart int
+	AllMandatory   bool
 }
 
 // PersonalQuestions1 - numbered 5-7
@@ -38,7 +39,7 @@ func PersonalQuestions1(q *qst.QuestionnaireT, vE VariableElements) error {
 			gb.MainLabel = trl.S{
 				"de": fmt.Sprintf(`
 					<p>
-					<b>Zum Schluss bitten wir Sie, drei Fragen über sich selbst zu beantworten:</b>
+					<b>Nun bitten wir Sie, einige Fragen über sich selbst zu beantworten:</b>
 
 					<br>
 					<br>

@@ -809,22 +809,13 @@ input[type=radio]:focus         {
 }
 
 
-.error-block, .error {
+.error{
     color: var(--clr-err);
+    line-height:1.6em;
 }
 
-.error{
-    line-height:1.6em;
-    /* like pre but lines too long are broken
-        not stretching the container
-        extends to 100% of container
-        thus container [max]-width should be specified
-
-        pre-wrap => preserve white space
-        pre-line => collapse white space
-    */
-    white-space: pre-line; /* see also .postlabel, .plain-text-broken and .error */
-    max-width: 620px;
+.error-block{
+    
 }
 
 #console-log {

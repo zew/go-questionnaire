@@ -199,6 +199,11 @@ func (q QuestionnaireT) GroupHTMLGridBased(pageIdx, grpIdx int) string {
 
 		wInp := &strings.Builder{} // label and control of input
 
+		if inp.ErrMsg != "" {
+			stl := fmt.Sprintf("grid-column: auto / span %v", inp.ColSpan)
+			divWrap(wInp, " error error-block", stl, inp.ErrMsg)
+		}
+
 		{
 
 			if inp.ColSpanLabel > 0.2 {
@@ -243,6 +248,7 @@ func (q QuestionnaireT) GroupHTMLGridBased(pageIdx, grpIdx int) string {
 
 				fmt.Fprint(wCtl, q.InputHTMLGrid(pageIdx, grpIdx, inpIdx, q.LangCode))
 				divWrap(wInp, ctlClass+" grid-item-lvl-2", "", wCtl.String())
+
 			}
 
 		}
@@ -420,8 +426,13 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 	// append suffix
 	ctrl = inp.ShortSuffix(ctrl, q.LangCode)
 
-	if inp.ErrMsg.Set() {
-		ctrl += fmt.Sprintf("<div class='error error-block >%v</div>\n", inp.ErrMsg.TrSilent(q.LangCode)) // ugly layout - but radiogroup and checkboxgroup won't have validation errors anyway
+	if false { // moved to GroupHTMLGridBased
+		if inp.ErrMsg != "" {
+			ctrl += fmt.Sprintf(
+				"<div class='error error-block' >%v</div>\n",
+				inp.ErrMsg,
+			)
+		}
 	}
 
 	return ctrl

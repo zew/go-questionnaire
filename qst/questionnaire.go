@@ -118,7 +118,7 @@ type inputT struct {
 	DD     *DropdownT `json:"drop_down,omitempty"` // As pointer to prevent JSON cluttering
 
 	Validator string `json:"validator,omitempty"` // i.e. any key from validators, i.e. "must;inRange20"
-	ErrMsg    trl.S  `json:"err_msg,omitempty"`
+	ErrMsg    string `json:"err_msg,omitempty"`   // a key for coreTranslations
 
 	// ResponseFloat float64  - floats and integers are stored as strings in Response
 	// also contains the Value of options and checkboxes
@@ -272,7 +272,8 @@ func (gr *groupT) addEmptyTextblock() *inputT {
 	return ret
 }
 
-// Vertical changes CSS grid style to vertical
+// Vertical changes CSS grid style to vertical;
+// compare default case GroupHTMLGridBased()
 func (gr *groupT) Vertical(argRows ...int) {
 
 	rows := 1
@@ -664,8 +665,8 @@ func (sg shufflingGroupsT) String() string {
 	return fmt.Sprintf("orig %02v -> shuff %02v - G%v strt%v seq%v", sg.Orig, sg.Shuffled, sg.Group, sg.Start, sg.Idx)
 }
 
-// RandomizeOrder creates a shuffled ordering of groups marked by .RandomizationGroup ;
-// static groups with RandomizationGroup==0 remain on fixed order position ;
+// RandomizeOrder creates a shuffled ordering of groups marked by .RandomizationGroup;
+// static groups with RandomizationGroup==0 remain on fixed order position;
 // others get a randomized position
 func (q *QuestionnaireT) RandomizeOrder(pageIdx int) []int {
 
@@ -730,9 +731,7 @@ func (q *QuestionnaireT) RandomizeOrder(pageIdx int) []int {
 					i2 := order[i]
 					sgs[offset].Shuffled = shufflingGroups[sg][i2]
 				}
-
 			}
-
 		}
 	}
 	for i := 0; i < len(sgs); i++ {
@@ -860,6 +859,13 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 	width := fmt.Sprintf("<div class='%v' >\n", pageClass)
 	fmt.Fprint(w, width)
 
+	if q.HasErrors {
+		fmt.Fprintf(w,
+			`<p class="error" id="page-error" >%v</p>`,
+			cfg.Get().Mp["correct_errors"].Tr(q.LangCode),
+		)
+	}
+
 	hasHeader := false
 
 	if page.Section != nil {
@@ -884,6 +890,9 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 	}
 
 	grpOrder := q.RandomizeOrder(pageIdx)
+
+	page.ConsolidateRadioErrors(grpOrder)
+
 	compositCntr := -1
 	nonCompositCntr := -1
 	for loopIdx, grpIdx := range grpOrder {

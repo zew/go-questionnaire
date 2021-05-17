@@ -268,6 +268,14 @@ var coreTranslations = Map{
 		"it": "Si prega di selezionare una opzione",
 		"pl": "Proszę wybrać jedną z opcji",
 	},
+	"must_not_empty": {
+		"de": "Eingabe erforderlich",
+		"en": "Entry necessary",
+		"es": "Entrada necesaria",
+		"fr": "Entrée nécessaire",
+		"it": "Ingresso necessario",
+		"pl": "Wejście jest konieczne",
+	},
 	// system messages
 	"login_by_hash_failed": {
 		"de": "Anmeldung via Hash gescheitert.\nBitte nutzen Sie den übermittelten Link um sich anzumelden.\nWenn der Link in zwei Zeilen geteilt wurde, verbinden Sie die Zeilen wieder.",

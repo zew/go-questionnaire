@@ -31,8 +31,12 @@ func Part1Intro(q *qst.QuestionnaireT) error {
 				<p>
 				In diesem Teil der Studie treffen Sie acht Entscheidungen 
 				(und beantworten einige Fragen). 
-				Nach der Erhebung werden 10&nbsp;% aller Teilnehmer 
-				zufällig ausgewählt. Von jedem ausgewählten Teilnehmer wird eine der acht Entscheidungen zufällig bestimmt und genau wie unten beschrieben umgesetzt (alle unten erwähnten Personen existieren wirklich und alle Auszahlungen werden wie beschrieben getätigt).				
+				Nach der Erhebung werden 10&nbsp;% aller Teilnehmer*innen 
+				zufällig ausgewählt. 
+				Von jedem ausgewählten Teilnehmer wird eine der acht Entscheidungen zufällig bestimmt 
+				und genau wie unten beschrieben umgesetzt 
+				(alle unten erwähnten Personen existieren wirklich und alle Auszahlungen 
+					werden wie beschrieben getätigt).				
 				</p>
 
 				<br>
@@ -49,9 +53,9 @@ func Part1Intro(q *qst.QuestionnaireT) error {
 func Part1Entscheidung78TwoTimesThree(q *qst.QuestionnaireT, pageIdx int, inpName string) error {
 
 	keyVals := []string{
-		"pol_gr1:Ein Politiker aus Gruppe 1",
-		"cit_gr2:Ein Bürger aus Gruppe 2",
-		"cit_gr3:Ein Bürger aus Gruppe 3 (gleiche demographische Eigenschaften wie die Politiker)",
+		"pol_gr1:Ein Politiker aus Gruppe 1 <br>(deutsche Land- und Bundestagspolitiker)",
+		"cit_gr2:Ein Bürger aus Gruppe 2    <br>(repräsentativer deutscher Bürger)",
+		"cit_gr3:Ein Bürger aus Gruppe 3    <br>(deutsche Bürger mit gleichen demographischen Eigenschaften wie die Politiker)",
 	}
 
 	page := q.EditPage(pageIdx)
@@ -68,17 +72,19 @@ func Part1Entscheidung78TwoTimesThree(q *qst.QuestionnaireT, pageIdx int, inpNam
 			inp.Desc = trl.S{"de": `
 				<br>
 				<p>
+					Wenn die Präferenzen der fünf Personen wie oben gegeben sind: <br>
 					Wer soll entscheiden, ob Stiftung A, B oder C die 30 € erhält? 
 				</p>
 			`}
 		}
 	}
 
-	{
-		gr := page.AddGroup()
-		gr.Cols = 1
-		gr.BottomVSpacers = 2
-		for _, kv := range keyVals {
+	for _, kv := range keyVals {
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 1
+			gr.RandomizationGroup = 1
 			sp := strings.Split(kv, ":")
 			key := sp[0]
 			val := sp[1]
@@ -104,18 +110,20 @@ func Part1Entscheidung78TwoTimesThree(q *qst.QuestionnaireT, pageIdx int, inpNam
 			inp.ColSpan = 1
 			inp.Desc = trl.S{"de": `
 				<p>
-					Wer soll möglichst nicht entscheiden, ob Stiftung A, B oder C die 30 € erhält? 
+					Wenn die Präferenzen der fünf Personen wie oben gegeben sind: <br>
+					Wer soll möglichst <i>nicht</i> entscheiden, ob Stiftung A, B oder C die 30 € erhält? 
 				</p>
 			`}
 		}
 
 	}
 
-	{
-		gr := page.AddGroup()
-		gr.Cols = 1
-		gr.BottomVSpacers = 2
-		for _, kv := range keyVals {
+	for _, kv := range keyVals {
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 1
+			gr.RandomizationGroup = 2
 			sp := strings.Split(kv, ":")
 			key := sp[0]
 			val := sp[1]
@@ -481,11 +489,20 @@ func Part2Block12(q *qst.QuestionnaireT, blockStart int) error {
 	}
 
 	questLabels := []string{
-		"Was glauben Sie, wie haben sich die 10&nbsp;Politiker aus Gruppe&nbsp;1 entschieden?",
-		"Was glauben Sie, wie haben sich die 10&nbsp;deutschen Bürger aus Gruppe&nbsp;2 entschieden?",
-		`Was glauben Sie, wie haben sich die 10&nbsp;deutschen Bürger aus Gruppe&nbsp;3 entschieden 
-		(demographische Eigenschaften der Politiker, 
-			also 70 % Männer, 3 % unter 30 Jahre, halb so oft alleinstehend)? `,
+		`
+		Als die Präferenzen wie oben gegeben waren: <br>
+		Was glauben Sie, wie haben sich die 10&nbsp;deutschen Land- und Bundestagspolitiker aus Gruppe&nbsp;1 entschieden?`,
+
+		`
+		Als die Präferenzen wie oben gegeben waren: <br>
+		Was glauben Sie, wie haben sich die 10&nbsp;repräsentativen deutschen Bürger aus Gruppe&nbsp;2 entschieden?`,
+
+		`
+		Als die Präferenzen wie oben gegeben waren: <br>
+		Was glauben Sie, wie haben sich die 10&nbsp;deutschen Bürger aus Gruppe&nbsp;3 entschieden 
+
+		<br>(deutsche Bürger mit gleichen demographischen Eigenschaften wie die Politiker;
+		<br>also 70 % Männer, 3 % unter 30 Jahre, halb so oft alleinstehend)? `,
 	}
 
 	for i1 := blockStart; i1 < blockStart+3; i1++ {
@@ -493,6 +510,7 @@ func Part2Block12(q *qst.QuestionnaireT, blockStart int) error {
 		gr := page.AddGroup()
 		gr.Cols = 24
 		gr.BottomVSpacers = 3
+		// gr.RandomizationGroup = 1
 		lbls := []string{"A", "B", "C"}
 		{
 			inp := gr.AddInput()

@@ -17,6 +17,13 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 	lblStyleRight.Desktop.StyleBox.Padding = "0 1.0rem 0 0"
 	lblStyleRight.Mobile.StyleBox.Padding = " 0 0.3rem 0 0"
 
+	validatorInput := ""
+	validatorRadio := ""
+	if vE.AllMandatory {
+		validatorInput = "must"
+		validatorRadio = "mustRadioGroup"
+	}
+
 	{
 		// page := q.AddPage()
 		page := q.AddPage()
@@ -41,43 +48,26 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 				`, vE.NumberingStart+0),
 				}
 			}
-			{
-				rad := gr.AddInput()
-				rad.Type = "radio"
-				rad.Name = "q8"
-				rad.ValueRadio = "male"
-				rad.ColSpan = 4
-				rad.ColSpanLabel = 4
-				rad.ColSpanControl = 1
-				rad.Label = trl.S{
-					"de": "Männlich",
-				}
-				rad.StyleLbl = lblStyleRight
+			keyVals := []string{
+				"male:Männlich",
+				"female:Weiblich",
+				"diverse:Divers",
 			}
-			{
+
+			for _, kv := range keyVals {
+				sp := strings.Split(kv, ":")
+				key := sp[0]
+				val := sp[1]
+				lbl := trl.S{"de": val}
 				rad := gr.AddInput()
 				rad.Type = "radio"
 				rad.Name = "q8"
-				rad.ValueRadio = "female"
+				rad.Validator = validatorRadio
+				rad.ValueRadio = key
 				rad.ColSpan = 4
 				rad.ColSpanLabel = 4
 				rad.ColSpanControl = 1
-				rad.Label = trl.S{
-					"de": "Weiblich",
-				}
-				rad.StyleLbl = lblStyleRight
-			}
-			{
-				rad := gr.AddInput()
-				rad.Type = "radio"
-				rad.Name = "q8"
-				rad.ValueRadio = "diverse"
-				rad.ColSpan = 4
-				rad.ColSpanLabel = 4
-				rad.ColSpanControl = 1
-				rad.Label = trl.S{
-					"de": "Divers",
-				}
+				rad.Label = lbl
 				rad.StyleLbl = lblStyleRight
 			}
 		}
@@ -104,6 +94,7 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 				inp := gr.AddInput()
 				inp.Type = "number"
 				inp.Name = "q9"
+				inp.Validator = validatorInput
 				inp.ColSpan = 4
 				inp.ColSpanControl = 1
 
@@ -138,15 +129,16 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 		{
 			gr := page.AddGroup()
 			gr.Cols = 8
-			gr.Vertical(8)
+			// gr.Vertical(8)
 			for _, stt := range trl.FederalStatesGermanyISOs2 {
 				lbl := stt.S
 				rad := gr.AddInput()
 				rad.Type = "radio"
 				rad.Name = "q10"
+				rad.Validator = validatorRadio
 				rad.ValueRadio = strings.ToLower(stt.Key)
-				rad.ColSpan = 4
 				rad.ColSpan = 1 // for vertical
+				rad.ColSpan = 4 // horizontal
 				rad.ColSpanLabel = 4
 				rad.ColSpanControl = 1
 				rad.Label = lbl
@@ -170,71 +162,33 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 				`, vE.NumberingStart+3),
 				}
 			}
-			{
+
+			keyVals := []string{
+				"kein_abschluss:Kein Abschluss",
+				"hauptschule:Haupt&shy;schul&shy;abschluss",
+				"mittlere_reife:Mittlere Reife",
+				"abitur:Abitur, (Fach-)Hoch&shy;schul&shy;reife",
+				"hochschule:Universitäts- oder FH-Abschluss (Bachelor, Diplom, Master)",
+				"promotion:Promotion",
+			}
+
+			for _, kv := range keyVals {
+				sp := strings.Split(kv, ":")
+				key := sp[0]
+				val := sp[1]
+				lbl := trl.S{"de": val}
 				rad := gr.AddInput()
 				rad.Type = "radio"
 				rad.Name = "q11"
-				rad.ValueRadio = "kein_abschluss"
+				rad.Validator = validatorRadio
+				rad.ValueRadio = key
 				rad.ColSpan = 4
 				rad.ColSpanLabel = 4
 				rad.ColSpanControl = 1
-				rad.Label = trl.S{
-					"de": "Ohne Abschluss",
-				}
+				rad.Label = lbl
 				rad.StyleLbl = lblStyleRight
 			}
-			{
-				rad := gr.AddInput()
-				rad.Type = "radio"
-				rad.Name = "q11"
-				rad.ValueRadio = "hauptschule"
-				rad.ColSpan = 4
-				rad.ColSpanLabel = 4
-				rad.ColSpanControl = 1
-				rad.Label = trl.S{
-					"de": "Hauptschule",
-				}
-				rad.StyleLbl = lblStyleRight
-			}
-			{
-				rad := gr.AddInput()
-				rad.Type = "radio"
-				rad.Name = "q11"
-				rad.ValueRadio = "realschule"
-				rad.ColSpan = 4
-				rad.ColSpanLabel = 4
-				rad.ColSpanControl = 1
-				rad.Label = trl.S{
-					"de": "Realschule",
-				}
-				rad.StyleLbl = lblStyleRight
-			}
-			{
-				rad := gr.AddInput()
-				rad.Type = "radio"
-				rad.Name = "q11"
-				rad.ValueRadio = "abitur"
-				rad.ColSpan = 4
-				rad.ColSpanLabel = 4
-				rad.ColSpanControl = 1
-				rad.Label = trl.S{
-					"de": "Abitur",
-				}
-				rad.StyleLbl = lblStyleRight
-			}
-			{
-				rad := gr.AddInput()
-				rad.Type = "radio"
-				rad.Name = "q11"
-				rad.ValueRadio = "hochschule"
-				rad.ColSpan = 4
-				rad.ColSpanLabel = 4
-				rad.ColSpanControl = 1
-				rad.Label = trl.S{
-					"de": "Hochschulabschluss",
-				}
-				rad.StyleLbl = lblStyleRight
-			}
+
 		}
 
 	}
@@ -260,43 +214,27 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 				`, vE.NumberingStart+4),
 				}
 			}
-			{
-				rad := gr.AddInput()
-				rad.Type = "radio"
-				rad.Name = "q12"
-				rad.ValueRadio = "single"
-				rad.ColSpan = 6
-				rad.ColSpanLabel = 4
-				rad.ColSpanControl = 1
-				rad.Label = trl.S{
-					"de": "Alleinstehend",
-				}
-				rad.StyleLbl = lblStyleRight
+
+			keyVals := []string{
+				"single:Alleinstehend",
+				"engaged:Partnerschaft ohne Ehe",
+				"married:Verheiratet",
 			}
-			{
+
+			for _, kv := range keyVals {
+				sp := strings.Split(kv, ":")
+				key := sp[0]
+				val := sp[1]
+				lbl := trl.S{"de": val}
 				rad := gr.AddInput()
 				rad.Type = "radio"
 				rad.Name = "q12"
-				rad.ValueRadio = "engaged"
+				rad.Validator = validatorRadio
+				rad.ValueRadio = key
 				rad.ColSpan = 6
 				rad.ColSpanLabel = 4
 				rad.ColSpanControl = 1
-				rad.Label = trl.S{
-					"de": "Partnerschaft ohne Ehe",
-				}
-				rad.StyleLbl = lblStyleRight
-			}
-			{
-				rad := gr.AddInput()
-				rad.Type = "radio"
-				rad.Name = "q12"
-				rad.ValueRadio = "married"
-				rad.ColSpan = 6
-				rad.ColSpanLabel = 4
-				rad.ColSpanControl = 1
-				rad.Label = trl.S{
-					"de": "Verheiratet",
-				}
+				rad.Label = lbl
 				rad.StyleLbl = lblStyleRight
 			}
 		}
@@ -320,7 +258,7 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 			}
 
 			keyVals := []string{
-				"0:0 Euro",
+				"null_euro:0 Euro", // '0' would be empty
 				"upto500:bis unter 500 Euro",
 				"upto1000:500 bis unter 1000 Euro",
 				"upto1500:1000 bis unter 1500 Euro",
@@ -339,6 +277,7 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 				rad := gr.AddInput()
 				rad.Type = "radio"
 				rad.Name = "q13"
+				rad.Validator = validatorRadio
 				rad.ValueRadio = key
 				rad.ColSpan = 4
 				rad.ColSpanLabel = 4
@@ -350,57 +289,84 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 
 		{
 			gr := page.AddGroup()
-			gr.Cols = 8
+			gr.Cols = 1
+			gr.BottomVSpacers = 0
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				inp.ColSpan = 8
+				inp.ColSpan = 1
 				inp.Desc = trl.S{
 					"de": fmt.Sprintf(`
 					</p>
 					<b>Frage %v.</b>
 					Mit welcher Partei fühlen Sie sich 
-					aufgrund Ihrer Werte und Überzeugungen am ehesten verbunden?
+					aufgrund Ihrer Werte und Überzeugungen am ehesten verbunden? 
+					<br>
+					<i>Bitte beachten Sie, dass nur eine Antwort zulässig ist.</i>
 					</p>
 				`, vE.NumberingStart+6),
 				}
 			}
+		}
+		keyVals := []string{
+			"cducsu:CDU/CSU",
+			"linke:Die Linke",
+			"spd:SPD",
+			"gruene:Bündnis 90/Die Grünen",
+			"fdp:FDP",
+			"afd:AfD",
+			"other:Andere",
+		}
+		{
+			for idx, kv := range keyVals {
+				gr := page.AddGroup()
+				gr.Cols = 8
+				// gr.Cols = 4
+				gr.RandomizationGroup = 1
+				gr.BottomVSpacers = 0
+				{
+					sp := strings.Split(kv, ":")
+					key := sp[0]
+					val := sp[1]
+					lbl := trl.S{"de": val}
+					rad := gr.AddInput()
+					rad.Type = "radio"
+					rad.Name = "q14"
+					rad.Validator = validatorRadio
+					rad.ValueRadio = key
+					rad.ColSpan = 4
+					rad.ColSpanLabel = 4
+					rad.ColSpanControl = 1
+					rad.Label = lbl
+					rad.StyleLbl = lblStyleRight
+				}
 
-			keyVals := []string{
-				"cducsu:CDU/CSU",
-				"linke:Die Linke",
-				"spd:SPD",
-				"gruene:Bündnis 90/Die Grünen",
-				"fdp:FDP",
-				"afd:AfD",
-				"other:Andere",
+				if idx == len(keyVals)-1 {
+					inp := gr.AddInput()
+					inp.Type = "text"
+					inp.Name = "q14_other_text"
+					inp.ColSpan = 4
+					inp.ColSpanControl = 1
+					inp.MaxChars = 14
+				}
 			}
 
-			for _, kv := range keyVals {
-				sp := strings.Split(kv, ":")
-				key := sp[0]
-				val := sp[1]
-				lbl := trl.S{"de": val}
-				rad := gr.AddInput()
-				rad.Type = "radio"
-				rad.Name = "q14"
-				rad.ValueRadio = key
-				rad.ColSpan = 4
-				rad.ColSpanLabel = 4
-				rad.ColSpanControl = 1
-				rad.Label = lbl
-				rad.StyleLbl = lblStyleRight
-			}
+		}
 
+		//
+		//
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 0
 			{
 				inp := gr.AddInput()
-				inp.Type = "text"
-				inp.Name = "q14_other_text"
-				inp.ColSpan = 4
-				inp.ColSpanControl = 1
-				inp.MaxChars = 14
+				inp.Type = "textblock"
+				inp.Label = trl.S{
+					"en": " &nbsp; ",
+					"de": " &nbsp; ",
+				}
 			}
-
 		}
 
 		//
@@ -410,23 +376,43 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 			grStPage78.Desktop.StyleGridContainer.GapColumn = "0.01rem"
 
 			gb := qst.NewGridBuilderRadios(
-				columnTemplate7,
+				[]float32{
+					0, 1,
+					0, 1,
+					0, 1, // 3
+					0, 1,
+					0, 1, // 5
+					0, 1,
+					0, 1, // 7
+					0, 1,
+					0, 1, // 9
+					0, 1,
+					0, 1, // 11
+					0.4, 1, // weiss nicht
+				},
 				labelsOneToSeven4,
 				[]string{"q15"},
-				radioVals7,
+				[]string{"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "weiss_nicht"},
 				[]trl.S{},
 			)
 			gb.MainLabel = trl.S{
 				"de": fmt.Sprintf(`
 					<p>
 					<b>Frage&nbsp;%v.</b>
-					Wie stufen Sie sich politisch ein?
+					In der Politik reden die Leute häufig von "links" und "rechts". 
+					Wenn Sie die Skala hier benutzen, 
+					wo würden Sie sich selbst einordnen, 
+					wenn 1 "links" und 11 "rechts" ist? <br>
+					Bitte geben Sie den Wert an, der auf Sie persönlich zutrifft.
 					</p>
+					<br>
 				`, vE.NumberingStart+7),
 			}
+			gb.Validator = validatorRadio
 			gr := page.AddGrid(gb)
 			gr.OddRowsColoring = true
 			gr.Style = grStPage78
+			gr.Style.Desktop.StyleGridContainer.GapColumn = "0"
 			gr.BottomVSpacers = 4
 		}
 

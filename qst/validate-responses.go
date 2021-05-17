@@ -7,7 +7,6 @@ import (
 	"strings"
 
 	"github.com/zew/go-questionnaire/cfg"
-	"github.com/zew/go-questionnaire/trl"
 )
 
 type validatorT func(string, string) error
@@ -83,6 +82,29 @@ func init() {
 
 }
 
+// ConsolidateRadioErrors removes repeating error messages from radio inputs
+func (page *pageT) ConsolidateRadioErrors(grpOrder []int) {
+
+	wasRadio := ""
+
+	for _, grpIdx := range grpOrder {
+		// for i2 := 0; i2 < len(page.Groups); i2++ {
+		for i3 := 0; i3 < len(page.Groups[grpIdx].Inputs); i3++ {
+			name := page.Groups[grpIdx].Inputs[i3].Name
+			isRadio := page.Groups[grpIdx].Inputs[i3].Type == "radio"
+			hasMsg := page.Groups[grpIdx].Inputs[i3].ErrMsg != ""
+			if isRadio && hasMsg {
+				if wasRadio == "" || (wasRadio != "" && wasRadio != name) {
+					wasRadio = name
+				} else {
+					page.Groups[grpIdx].Inputs[i3].ErrMsg = ""
+				}
+			}
+		}
+	}
+
+}
+
 // ValidateResponseData applies all input validation rules on the responses.
 // Restricted by page, since validation errors are handled page-wise.
 func (q *QuestionnaireT) ValidateResponseData(pageNum int, langCode string) (last error) {
@@ -103,32 +125,34 @@ func (q *QuestionnaireT) ValidateResponseData(pageNum int, langCode string) (las
 				if inp.Validator != "" {
 					valiKeys := strings.Split(inp.Validator, ";")
 					for _, valiKey := range valiKeys {
-						if vd, ok := validators[strings.TrimSpace(valiKey)]; ok {
-							err := vd(langCode, inp.Response)
+						if valiFunc, ok := validators[strings.TrimSpace(valiKey)]; ok {
+							err := valiFunc(langCode, inp.Response)
 							// log.Printf("Validating %22s  -%s-  %v", inp.Name, inp.Response, err)
 							if err != nil {
 								last = err
-								str := err.Error()
-								str = fmt.Sprintf("<span class='error'>&nbsp; %v</span>", str)
-								// log.Printf("inp error msg is now %v", str)
-								q.Pages[i1].Groups[i2].Inputs[i3].ErrMsg = trl.S{"de": str, "en": str} // TODO: multi-lingo here :(
+								q.Pages[i1].Groups[i2].Inputs[i3].ErrMsg = err.Error()
 							} else {
 								// Reset previous errors
-								q.Pages[i1].Groups[i2].Inputs[i3].ErrMsg = nil
+								q.Pages[i1].Groups[i2].Inputs[i3].ErrMsg = ""
 							}
 						}
 					}
-
 				}
 
 			}
 		}
+
+		// grpOrder := q.RandomizeOrder(pageNum)
+		// q.Pages[i1].ConsolidateRadioErrors(grpOrder)
+
 	}
+
 	if last != nil {
 		q.HasErrors = true
 	} else {
 		q.HasErrors = false
 	}
+
 	return
 }
 
@@ -138,8 +162,8 @@ func (q *QuestionnaireT) DumpErrors() {
 		for i2 := 0; i2 < len(q.Pages[i1].Groups); i2++ {
 			for i3 := 0; i3 < len(q.Pages[i1].Groups[i2].Inputs); i3++ {
 				inp := q.Pages[i1].Groups[i2].Inputs[i3]
-				if inp.ErrMsg != nil {
-					log.Print(inp.ErrMsg.TrSilent("en"))
+				if inp.ErrMsg != "" {
+					log.Print(inp.ErrMsg)
 				}
 			}
 		}

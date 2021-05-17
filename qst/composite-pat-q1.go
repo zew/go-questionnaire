@@ -102,7 +102,6 @@ func PoliticalFoundationsStaticSub(q *QuestionnaireT, seq0to1, paramSetIdx int) 
 	threeDistinctPairs := populationByVersion[zeroTo15][seq0to1] - 1
 
 	oneOfFour := zeroTo15 % 4 // table rows permutation
-	oneOfFour = 0
 
 	return politicalFoundations(
 		q,
@@ -314,7 +313,7 @@ func PoliticalFoundationsStatic(q *QuestionnaireT, seq0to5, paramSetIdx int) (st
 
 	ret, _, err := PoliticalFoundationsStaticSub(q, seq0to5, paramSetIdx)
 
-	completeDeletionOfCols56 := false
+	completeDeletionOfCols56 := true
 	if completeDeletionOfCols56 {
 		ret = cols6to4.Replace(ret)
 		fillin := ""

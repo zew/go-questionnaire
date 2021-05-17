@@ -26,6 +26,7 @@ type gbCol struct {
 type GridBuilder struct {
 	MainLabel trl.S // first row - before column headers - as wide as the group
 	cols      []gbCol
+	Validator string
 }
 
 // AddCol adds a column;
@@ -59,8 +60,8 @@ func (gb *GridBuilder) AddRadioRow(name string, vals []string, sparseLabels map[
 			rad.Label = nil
 			rad.Type = "radio"
 			rad.Name = name // "y_euro"
+			rad.Validator = gb.Validator
 			rad.ValueRadio = vals[colIdx]
-
 		}
 
 		if _, ok := sparseLabels[colIdx]; ok {

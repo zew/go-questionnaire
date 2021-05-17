@@ -43,7 +43,7 @@ func SlowBuffered(w http.ResponseWriter, r *http.Request) {
 	log.Printf("preliminary delay ... %2d secs", frm.Delay)
 
 	//
-	// first reponse writes
+	// first response writes
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
 
 	//

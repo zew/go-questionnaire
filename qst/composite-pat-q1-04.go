@@ -40,11 +40,11 @@ func init() {
 			},
 		},
 		{
-			ID: 5, // Frage 5
+			ID: 5, // Frage 5 - rows permutation 4
 			Ppls: [][]int{
-				{2, 1, 2},
-				{3, 0, 2},
-				{0, 4, 1},
+				{2, 1, 2}, // 2021-05-17 sandro; unchanged
+				{1, 4, 0}, // 2021-05-17 sandro; previously {3, 0, 2}
+				{2, 0, 3}, // 2021-05-17 sandro; previously {0, 4, 1}
 			},
 		},
 		{

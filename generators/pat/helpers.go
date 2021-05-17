@@ -123,11 +123,16 @@ var labelsOneToSeven3 = []trl.S{
 }
 
 var labelsOneToSeven4 = []trl.S{
-	{"de": "Klar links / grün"},
+	{"de": "Li&shy;nk&shy;s"}, // 1
 	{"de": ""},
+	{"de": ""}, // 3
 	{"de": ""},
+	{"de": ""}, // 5
 	{"de": ""},
+	{"de": ""}, // 7
 	{"de": ""},
+	{"de": ""}, // 9
 	{"de": ""},
-	{"de": "Klar konservativ / bürgerlich"},
+	{"de": "Re&shy;cht&shy;s"}, // 11
+	{"de": "We&shy;iß ni&shy;cht"},
 }

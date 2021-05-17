@@ -50,7 +50,7 @@ func SlowHijacked(w http.ResponseWriter, r *http.Request) {
 	log.Printf("preliminary delay ... %2d secs", frm.Delay)
 
 	//
-	// first reponse writes
+	// first response writes
 	fmt.Fprintf(w, "HTTP/1.1 200 OK\n")
 	fmt.Fprintf(w, "Content-Type: text/html; charset=utf-8\n") // sending headers via w - instead of w.Header().Set("Content-Type", "text/html; charset=utf-8")
 	fmt.Fprintf(w, "\n")                                       // end of response headers

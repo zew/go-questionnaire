@@ -558,3 +558,12 @@ university logos
 {
     margin-bottom: 5rem;
 }
+
+
+@media screen and (min-width: 800px) {
+    #q15weiss_nicht {
+        position: relative;
+        left: -0.42rem;
+    }
+}
+

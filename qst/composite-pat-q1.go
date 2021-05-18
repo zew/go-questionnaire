@@ -105,8 +105,8 @@ func PoliticalFoundationsStaticSub(q *QuestionnaireT, seq0to1, paramSetIdx int) 
 
 	return politicalFoundations(
 		q,
-		seq0to1, // visible question seq 1...6 on the questionnaire
-		"not-applicable",
+		seq0to1,        // visible question seq 1...6 on the questionnaire
+		"noQuestIDinQ", // not an input field in q
 		fourPermutationsOf6x3x3[oneOfFour][threeDistinctPairs].Ppls,
 	)
 }

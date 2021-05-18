@@ -9,7 +9,7 @@ import (
 	"github.com/zew/go-questionnaire/trl"
 )
 
-// PersonalQuestions1 - numbered 8-15
+// PersonalQuestions2 - numbered 8-15
 func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 
 	lblStyleRight := css.NewStylesResponsive(nil)
@@ -45,7 +45,7 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 					<b>Frage %v.</b>
 					Bitte geben Sie Ihr Geschlecht an:
 					</p>
-				`, vE.NumberingStart+0),
+				`, vE.NumberingQuestions+0),
 				}
 			}
 			keyVals := []string{
@@ -87,7 +87,7 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 					<b>Frage %v.</b>
 					Bitte geben Sie Ihr Geburtsjahr an:
 					</p>
-				`, vE.NumberingStart+1),
+				`, vE.NumberingQuestions+1),
 				}
 			}
 			{
@@ -120,7 +120,7 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 					<b>Frage %v.</b>
 					In welchem Bundesland befindet sich Ihr Hauptwohnsitz?
 					</p>
-				`, vE.NumberingStart+2),
+				`, vE.NumberingQuestions+2),
 				}
 
 			}
@@ -159,7 +159,7 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 					<b>Frage %v.</b>
 					Welcher ist Ihr höchster Bildungsabschluss?
 					</p>
-				`, vE.NumberingStart+3),
+				`, vE.NumberingQuestions+3),
 				}
 			}
 
@@ -211,7 +211,7 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 					<b>Frage %v.</b>
 					Wie ist Ihr Familienstand?
 					</p>
-				`, vE.NumberingStart+4),
+				`, vE.NumberingQuestions+4),
 				}
 			}
 
@@ -253,7 +253,7 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 					Wie viel Geld verdienen Sie persönlich monatlich 
 					nach Abzug von Steuern und Sozialversicherungsbeiträgen?
 					</p>
-				`, vE.NumberingStart+5),
+				`, vE.NumberingQuestions+5),
 				}
 			}
 
@@ -304,7 +304,7 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 					<br>
 					<i>Bitte beachten Sie, dass nur eine Antwort zulässig ist.</i>
 					</p>
-				`, vE.NumberingStart+6),
+				`, vE.NumberingQuestions+6),
 				}
 			}
 		}
@@ -407,7 +407,7 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 					Bitte geben Sie den Wert an, der auf Sie persönlich zutrifft.
 					</p>
 					<br>
-				`, vE.NumberingStart+7),
+				`, vE.NumberingQuestions+7),
 			}
 			gr := page.AddGrid(gb)
 			gr.OddRowsColoring = true

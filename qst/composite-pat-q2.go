@@ -44,6 +44,22 @@ func TimePreferenceSelf(q *QuestionnaireT, seq0to5, paramSetIdx int) (string, []
 	)
 }
 
+// TimePreferenceSelfStatic similar to TimePreferenceSelf;
+// but inputs are disabled
+func TimePreferenceSelfStatic(q *QuestionnaireT, seq0to5, paramSetIdx int) (string, []string, error) {
+
+	s, inputs, err := TimePreferenceSelf(
+		q,
+		seq0to5, // visible question seq 1...6 on the questionnaire
+		paramSetIdx,
+	)
+
+	s = strings.ReplaceAll(s, "<input ", "<input disabled ")
+	s = strings.ReplaceAll(s, `checked='checked'`, " ")
+
+	return s, inputs, err
+}
+
 func timePreferenceSelf(q *QuestionnaireT, seq0to0 int, questionID string, rowLabels []string) (string, []string, error) {
 
 	//

@@ -161,7 +161,7 @@ window.addEventListener("load", function (event) {
     console.log("outsideMenu and closeLevel3 registered");
 
 
-    var invalidInputs = false;
+    var invalidInputs = false; // invalid by HTML5
     var invalidFields = document.querySelectorAll("form :invalid");  // excluding invalid form itself
     for (var i = 0; i < invalidFields.length; i++) {
         /*  first pages with first element after long text 
@@ -180,10 +180,10 @@ window.addEventListener("load", function (event) {
         break;
     }
 
-    var invalidServerFields = document.querySelectorAll(".error-block-input");
-    var topPosOfErr = 0;
+    var invalidServerFields = document.querySelectorAll(".error-block-input"); // invalid by server rules
+    var firstErrMsgTop = 0;
     if (invalidServerFields.length > 0) {
-        topPosOfErr = invalidServerFields[0].getBoundingClientRect().y
+        firstErrMsgTop = invalidServerFields[0].getBoundingClientRect().y
         // console.log(`.error-block-input found at ${topPosOfErr}`);
     }
 
@@ -196,7 +196,7 @@ window.addEventListener("load", function (event) {
                 continue;
             }
 
-            if (element.getBoundingClientRect().y < topPosOfErr) {
+            if (firstErrMsgTop > 0 && element.getBoundingClientRect().y < firstErrMsgTop) {
                 // console.log(`.error-block-input found ${element.getBoundingClientRect().y} < ${topPosOfErr}`);
                 continue;
             }

@@ -21,7 +21,12 @@ var columnTemplate7 = []float32{
 }
 
 // Title adds title page
-func Title(q *qst.QuestionnaireT) error {
+func Title(q *qst.QuestionnaireT, isPOP bool) error {
+
+	takes := "Ihre Teilnahme wird nur wenige Minuten in Anspruch nehmen "
+	if isPOP {
+		takes = "Ihre Teilnahme wird ca. 15&nbsp;Minuten in Anspruch nehmen  "
+	}
 
 	// page 0
 	{
@@ -38,17 +43,18 @@ func Title(q *qst.QuestionnaireT) error {
 			inp := gr.AddInput()
 			inp.Type = "textblock"
 			inp.Desc = trl.S{
-				"de": `
+				"de": fmt.Sprintf(`
+				
 				HERZLICH WILLKOMMEN UND VIELEN DANK FÜR IHRE TEILNAHME!<br><br>
 
 				<p>Dies ist eine Studie des Zentrums für Europäische Wirtschaftsforschung (ZEW) in Mannheim 
 				sowie der Universitäten in Köln, Mannheim, Münster und Zürich. 
-				Ihre Teilnahme wird ca. 15nbsp;Minuten in Anspruch nehmen 
+				%v 
 				und Sie unterstützen damit die Forschung zu Entscheidungsprozessen in der Politik.
 				</p>
 
 				<p>In dieser Studie treffen Sie acht Entscheidungen und beantworten sieben Fragen. 
-				Nach der Erhebung werden 10&nbsp;% aller Teilnehmer*innen zufällig ausgewählt. 
+				Nach der Erhebung werden 10&nbsp;%% aller Teilnehmer*innen zufällig ausgewählt. 
 				Von jedem*r ausgewählten Teilnehmer*in wird eine der acht Entscheidungen zufällig bestimmt 
 				und genau wie im Folgenden beschrieben umgesetzt 
 				(alle erwähnten Personen existieren wirklich und alle Auszahlungen werden wie beschrieben getätigt).
@@ -62,7 +68,7 @@ func Title(q *qst.QuestionnaireT) error {
 
 				<br>
 				<br>
-				`,
+				`, takes),
 			}
 		}
 
@@ -371,7 +377,7 @@ func Part1Frage1(q *qst.QuestionnaireT) error {
 
 //
 // Part2 renders
-func Part2(q *qst.QuestionnaireT) error {
+func Part2(q *qst.QuestionnaireT, vE VariableElements) error {
 	// zweiter Teil
 
 	// page 5
@@ -397,10 +403,10 @@ func Part2(q *qst.QuestionnaireT) error {
 				inp := gr.AddInput()
 				inp.Type = "textblock"
 				inp.Desc = trl.S{
-					"de": `
+					"de": fmt.Sprintf(`
 					<p>
 						<b>
-						Nun kommen wir zum zweiten Teil unserer Studie. 
+						Nun kommen wir zum %v Teil unserer Studie. 
 						</b>
 						In diesem Teil treffen Sie jeweils Entscheidungen 
 						für eine*n deutsche*n Staatsangehörige*n, 
@@ -415,7 +421,7 @@ func Part2(q *qst.QuestionnaireT) error {
 						Falls Sie mehrere Optionen verfügbar machen, kann die Person aus diesen wählen. Mindestens eine Option muss „Verfügbar“ sein.
 					</p>
 
-					<p style="font-size: 87%;">
+					<p style="font-size: 87%%;">
 						<i>
 						Details: Die nicht verfügbaren Optionen werden der Person nicht als Auswahloptionen angezeigt. Bei verfügbar gemachten Optionen können Sie zusätzlich „Von dieser Option abraten“ ankreuzen. In diesem Fall erhält die Person die Botschaft: „Ein früherer Teilnehmer dieser Studie rät Ihnen davon ab, diese Option zu wählen”.
 						</i>
@@ -424,13 +430,13 @@ func Part2(q *qst.QuestionnaireT) error {
 
 
 					<p>
-						<b>Entscheidung 7. </b><br>
+						<b>Entscheidung %v. </b><br>
 						Welche Optionen sollen der Person (nicht) zur Verfügung stehen, falls die Optionen wie folgt lauten?
 
 					</p>
 
 
-					`,
+					`, vE.ZumXtenTeil, vE.NumberingSections+0),
 				}
 			}
 		}
@@ -467,15 +473,15 @@ func Part2(q *qst.QuestionnaireT) error {
 				inp := gr.AddInput()
 				inp.Type = "textblock"
 				inp.Desc = trl.S{
-					"de": `
+					"de": fmt.Sprintf(`
 
 					<p>
-					<b>Entscheidung 8. </b><br>
+					<b>Entscheidung %v. </b><br>
 					Welche Optionen sollen der Person (nicht) zur Verfügung stehen, falls die Optionen wie folgt lauten?
 					<i>(Beachten Sie: Sowohl die Zeitpunkte der Auszahlung als auch die Beträge sind anders als in der vorherigen Entscheidung.)</i>
 					</p>
 
-					`,
+					`, vE.NumberingSections+1),
 				}
 			}
 		}
@@ -523,9 +529,9 @@ func Part2(q *qst.QuestionnaireT) error {
 				inp := gr.AddInput()
 				inp.Type = "textblock"
 				inp.Desc = trl.S{
-					"de": `
+					"de": fmt.Sprintf(`
 					<p>
-					<b>Frage 2. </b>
+					<b>Frage %v. </b>
 						Schätzen Sie bitte: Wie viele Mitglieder einer Gruppe von 10 zufällig ausgewählten Personen, die an einer solchen Studie teilnehmen, wählen jeweils die folgenden Optionen A, B und C, 
 					<b>
 						wenn sie sich jeweils für genau eine der drei Optionen entscheiden müssen?					
@@ -534,7 +540,7 @@ func Part2(q *qst.QuestionnaireT) error {
 					<br>
 					<i>(Ihre Antworten müssen sich auf 10 summieren.)</i>
 					</p>
-					`,
+					`, vE.NumberingQuestions+0),
 				}
 			}
 		}
@@ -630,9 +636,9 @@ func Part2(q *qst.QuestionnaireT) error {
 				inp := gr.AddInput()
 				inp.Type = "textblock"
 				inp.Desc = trl.S{
-					"de": `
+					"de": fmt.Sprintf(`
 					<p>
-					<b>Frage 3. </b>
+					<b>Frage %v. </b>
 					Und wie lautet Ihre Schätzung für die folgenden drei Optionen?
 					<br>
 					<i>(Ihre Antworten müssen sich auf 10 summieren.)
@@ -643,7 +649,7 @@ func Part2(q *qst.QuestionnaireT) error {
 					</i>
 
 					</p>
-					`,
+					`, vE.NumberingQuestions+1),
 				}
 			}
 		}
@@ -788,7 +794,7 @@ func End(q *qst.QuestionnaireT) error {
 
 //
 // Part2Frage4 renders
-func Part2Frage4(q *qst.QuestionnaireT) error {
+func Part2Frage4(q *qst.QuestionnaireT, vE VariableElements) error {
 
 	grStPage78 := css.NewStylesResponsive(nil)
 	grStPage78.Desktop.StyleGridContainer.GapRow = "0.1rem"
@@ -811,9 +817,9 @@ func Part2Frage4(q *qst.QuestionnaireT) error {
 				[]trl.S{},
 			)
 			gb.MainLabel = trl.S{
-				"de": `
+				"de": fmt.Sprintf(`
 				<p>
-				<b>Frage 4.</b> 
+				<b>Frage %v.</b> 
 				Wie sehr stimmen Sie der folgenden Aussage zu: 
 				<i>„Alle Erwerbstätigen in Deutschland sollten verpflichtend 
 				einen gewissen Teil ihres Arbeitseinkommens 
@@ -821,7 +827,7 @@ func Part2Frage4(q *qst.QuestionnaireT) error {
 				um eine Rentenhöhe zu erreichen, die über dem Rentenanspruch 
 				aus der gesetzlichen Rentenversicherung liegt.</i>“
 				</p>
-				`,
+				`, vE.NumberingQuestions+0),
 			}
 			gr := page.AddGrid(gb)
 			gr.OddRowsColoring = true
@@ -849,12 +855,12 @@ func Core(q *qst.QuestionnaireT) error {
 		return fmt.Errorf("Error adding Part1Frage1(): %v", err)
 	}
 
-	err = Part2(q)
+	err = Part2(q, VariableElements{ZumXtenTeil: "zweiten", NumberingSections: 7, NumberingQuestions: 2})
 	if err != nil {
 		return fmt.Errorf("Error adding Part2(): %v", err)
 	}
 
-	err = Part2Frage4(q)
+	err = Part2Frage4(q, VariableElements{NumberingQuestions: 4})
 	if err != nil {
 		return fmt.Errorf("Error adding Part2Frage4(): %v", err)
 	}

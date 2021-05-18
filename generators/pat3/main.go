@@ -1,10 +1,11 @@
-package pat2
+package pat3
 
 import (
 	"fmt"
 
 	"github.com/zew/go-questionnaire/ctr"
 	"github.com/zew/go-questionnaire/generators/pat"
+	"github.com/zew/go-questionnaire/generators/pat2"
 	"github.com/zew/go-questionnaire/qst"
 	"github.com/zew/go-questionnaire/trl"
 )
@@ -15,7 +16,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	ctr.Reset()
 
 	q := qst.QuestionnaireT{}
-	q.Survey = qst.NewSurvey("pat2")
+	q.Survey = qst.NewSurvey("pat3")
 	q.Survey.Params = params
 	q.LangCodes = []string{"de"} // governs default language code
 
@@ -29,9 +30,9 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 	var err error
 
-	err = TitlePat23(&q)
+	err = pat2.TitlePat23(&q)
 	if err != nil {
-		return nil, fmt.Errorf("Error adding title pat2 page: %v", err)
+		return nil, fmt.Errorf("Error adding TitlePat23(): %v", err)
 	}
 
 	err = pat.PersonalQuestions2(&q, pat.VariableElements{NumberingQuestions: 1, AllMandatory: true})
@@ -44,41 +45,48 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		return nil, fmt.Errorf("Error adding personal questions 1: %v", err)
 	}
 
-	err = Part1Intro(&q)
+	// core
+	err = pat.Part2(&q, pat.VariableElements{ZumXtenTeil: "ersten", NumberingSections: 1, NumberingQuestions: 1})
 	if err != nil {
-		return nil, fmt.Errorf("Error adding Part1Intro(): %v", err)
+		return nil, fmt.Errorf("Error adding Part2(): %v", err)
 	}
 
 	// core
-	err = pat.Part1(&q)
+	err = pat.Part2Frage4(&q, pat.VariableElements{NumberingQuestions: 3})
 	if err != nil {
-		return nil, fmt.Errorf("Error adding Part1(): %v", err)
+		return nil, fmt.Errorf("Error adding Part2Frage4(): %v", err)
 	}
 
-	// core
-	err = pat.Part1Frage1(&q)
+	//
+	//
+	err = POP3Part1Intro(&q)
 	if err != nil {
-		return nil, fmt.Errorf("Error adding Part1Frage1(): %v", err)
+		return nil, fmt.Errorf("Error adding POP3Part1Intro(): %v", err)
 	}
 
-	err = Part1Entscheidung78(&q)
+	err = POP3Part1Decision34(&q, 3, "dec3")
 	if err != nil {
-		return nil, fmt.Errorf("Error adding Part1Entscheidung78(): %v", err)
+		return nil, fmt.Errorf("Error adding POP3Part1Decision34(3): %v", err)
 	}
 
-	err = Part2Intro(&q)
+	err = POP3Part1Decision34(&q, 4, "dec4")
 	if err != nil {
-		return nil, fmt.Errorf("Error adding Part2Intro(): %v", err)
+		return nil, fmt.Errorf("Error adding POP3Part1Decision34(4): %v", err)
 	}
 
-	err = Part2Block12(&q, 0)
+	err = POP3Part2Intro(&q)
 	if err != nil {
-		return nil, fmt.Errorf("Error adding Part2Block1(0): %v", err)
+		return nil, fmt.Errorf("Error adding POP3Part2Intro(): %v", err)
 	}
 
-	err = Part2Block12(&q, 3)
+	err = POP3Part2Questions123and456(&q, 1)
 	if err != nil {
-		return nil, fmt.Errorf("Error adding Part2Block1(3): %v", err)
+		return nil, fmt.Errorf("Error adding POP3Part2Questions123and456(): %v", err)
+	}
+
+	err = POP3Part2Questions123and456(&q, 4)
+	if err != nil {
+		return nil, fmt.Errorf("Error adding POP3Part2Questions123and456(): %v", err)
 	}
 
 	err = pat.End(&q)

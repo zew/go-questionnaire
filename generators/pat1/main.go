@@ -27,7 +27,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 	var err error
 
-	err = pat.Title(&q)
+	err = pat.Title(&q, true)
 	if err != nil {
 		return nil, fmt.Errorf("Error adding title page: %v", err)
 	}
@@ -37,12 +37,12 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		return nil, fmt.Errorf("Error adding core pages: %v", err)
 	}
 
-	err = pat.PersonalQuestions1(&q, pat.VariableElements{NumberingStart: 5})
+	err = pat.PersonalQuestions1(&q, pat.VariableElements{NumberingQuestions: 5, ZumSchlussOrNun: true})
 	if err != nil {
 		return nil, fmt.Errorf("Error adding personal questions 1: %v", err)
 	}
 
-	err = pat.PersonalQuestions2(&q, pat.VariableElements{NumberingStart: 8})
+	err = pat.PersonalQuestions2(&q, pat.VariableElements{NumberingQuestions: 8})
 	if err != nil {
 		return nil, fmt.Errorf("Error adding personal questions 2: %v", err)
 	}

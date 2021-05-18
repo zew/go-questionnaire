@@ -107,9 +107,14 @@ func (inp *inputT) ControlFirst() {
 		inp.ColSpanControl = 8
 		inp.ColSpanLabel = 1
 	}
-
 	// inp.ColSpanControl, inp.ColSpanLabel = inp.ColSpanLabel, inp.ColSpanControl
+}
 
+// ControlTop puts the control vertically on top;
+// default would be vertically centered
+func (inp *inputT) ControlTop() {
+	inp.StyleCtl = css.NewStylesResponsive(inp.StyleCtl)
+	inp.StyleCtl.Desktop.StyleGridItem.AlignSelf = "start"
 }
 
 // appendTooltip appends an explanation

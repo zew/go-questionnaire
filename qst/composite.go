@@ -31,5 +31,6 @@ var CompositeFuncs = map[string]CompositFuncT{
 	"PoliticalFoundations":        PoliticalFoundations,        //   ...
 	"PoliticalFoundationsStatic":  PoliticalFoundationsStatic,  //   ... no input
 	"TimePreferenceSelf":          TimePreferenceSelf,          // belongs to pat
+	"TimePreferenceSelfStatic":    TimePreferenceSelfStatic,    //   ... disabled
 	"GroupPreferences":            GroupPreferences,            // belongs to pat
 }

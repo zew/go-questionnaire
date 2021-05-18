@@ -19,7 +19,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "cf273394c946bd50b176ad58859f3b50205fbdc6e55e81f4ddfab9248e0daba9",
+ 	"md_5": "3ae75a6c79596fe537dfa2d2b084e6972e6c34909cb56d05da69a52654ac5e1d",
  	"lang_codes": [
  		"de"
  	],
@@ -64,7 +64,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\tHERZLICH WILLKOMMEN UND VIELEN DANK FÜR IHRE TEILNAHME!\u003cbr\u003e\u003cbr\u003e\n\n\t\t\t\t\u003cp\u003eDies ist eine Studie des Zentrums für Europäische Wirt\u0026shy;schafts\u0026shy;for\u0026shy;schung (ZEW) in Mannheim \n\t\t\t\tsowie der Universitäten in Köln, Mannheim, Münster und Zürich. \n\t\t\t\tIhre Teilnahme wird ca. 15nbsp;Minuten in Anspruch nehmen \n\t\t\t\tund Sie unterstützen damit die For\u0026shy;schung zu Ent\u0026shy;schei\u0026shy;dungs\u0026shy;pro\u0026shy;zessen in der Po\u0026shy;li\u0026shy;tik.\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp\u003eIn dieser Studie treffen Sie acht Entscheidungen und be\u0026shy;ant\u0026shy;wor\u0026shy;ten sieben Fragen. \n\t\t\t\tNach der Erhebung werden 10\u0026nbsp;% aller Teilnehmer*innen zufällig ausgewählt. \n\t\t\t\tVon jedem*r ausgewählten Teilnehmer*in wird eine der acht Entscheidungen zufällig bestimmt \n\t\t\t\tund genau wie im Folgenden beschrieben umgesetzt \n\t\t\t\t(alle erwähnten Personen existieren wirklich und alle Auszahlungen werden wie beschrieben getätigt).\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp\u003e\n\t\t\t\tIn dieser Umfrage gibt es keine richtigen oder falschen Antworten. \n\t\t\t\tBitte entscheiden Sie daher immer gemäß Ihrer persönlichen Ansichten. \n\t\t\t\tIhre Antworten werden dabei streng vertraulich behandelt.\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\n\t\t\t\tHERZLICH WILLKOMMEN UND VIELEN DANK FÜR IHRE TEILNAHME!\u003cbr\u003e\u003cbr\u003e\n\n\t\t\t\t\u003cp\u003eDies ist eine Studie des Zentrums für Europäische Wirt\u0026shy;schafts\u0026shy;for\u0026shy;schung (ZEW) in Mannheim \n\t\t\t\tsowie der Universitäten in Köln, Mannheim, Münster und Zürich. \n\t\t\t\tIhre Teilnahme wird nur wenige Minuten in Anspruch nehmen  \n\t\t\t\tund Sie unterstützen damit die For\u0026shy;schung zu Ent\u0026shy;schei\u0026shy;dungs\u0026shy;pro\u0026shy;zessen in der Po\u0026shy;li\u0026shy;tik.\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp\u003eIn dieser Studie treffen Sie acht Entscheidungen und be\u0026shy;ant\u0026shy;wor\u0026shy;ten sieben Fragen. \n\t\t\t\tNach der Erhebung werden 10\u0026nbsp;% aller Teilnehmer*innen zufällig ausgewählt. \n\t\t\t\tVon jedem*r ausgewählten Teilnehmer*in wird eine der acht Entscheidungen zufällig bestimmt \n\t\t\t\tund genau wie im Folgenden beschrieben umgesetzt \n\t\t\t\t(alle erwähnten Personen existieren wirklich und alle Auszahlungen werden wie beschrieben getätigt).\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp\u003e\n\t\t\t\tIn dieser Umfrage gibt es keine richtigen oder falschen Antworten. \n\t\t\t\tBitte entscheiden Sie daher immer gemäß Ihrer persönlichen Ansichten. \n\t\t\t\tIhre Antworten werden dabei streng vertraulich behandelt.\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t"
  							},
  							"col_span_label": 1
  						},
@@ -1359,7 +1359,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eNun bitten wir Sie, einige Fragen über sich selbst zu be\u0026shy;ant\u0026shy;wor\u0026shy;ten:\u003c/b\u003e\n\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cb\u003eFrage 5.\u003c/b\u003e\n\t\t\t\t\tSind Sie im Vergleich zu anderen im Allgemeinen bereit, \n\t\t\t\t\theute auf etwas zu verzichten, \n\t\t\t\t\tum in der Zukunft davon zu profitieren, \n\t\t\t\t\toder sind Sie im Vergleich zu anderen dazu nicht bereit? \n\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eZum Schluss bitten wir Sie, drei Fragen über sich selbst zu be\u0026shy;ant\u0026shy;wor\u0026shy;ten: \u003c/b\u003e\n\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cb\u003eFrage 5.\u003c/b\u003e\n\t\t\t\t\tSind Sie im Vergleich zu anderen im Allgemeinen bereit, \n\t\t\t\t\theute auf etwas zu verzichten, \n\t\t\t\t\tum in der Zukunft davon zu profitieren, \n\t\t\t\t\toder sind Sie im Vergleich zu anderen dazu nicht bereit? \n\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t"
  							},
  							"col_span": 7,
  							"col_span_label": 1

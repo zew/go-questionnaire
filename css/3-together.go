@@ -151,15 +151,19 @@ func (sr *StylesResponsive) Combine(b StylesResponsive) {
 func ItemCenteredMCA(sr *StylesResponsive) *StylesResponsive {
 	sr = NewStylesResponsive(sr)
 	sr.Desktop.StyleGridItem.JustifySelf = "center"
-	sr.Desktop.StyleGridItem.AlignSelf = "center"
+	if sr.Desktop.StyleGridItem.AlignSelf == "" {
+		sr.Desktop.StyleGridItem.AlignSelf = "center"
+	}
 	sr.Desktop.StyleText.AlignHorizontal = "center"
 	return sr
 }
 
-// ItemCenteredCA makes the input centered on main and cross axis (MCA)
+// ItemCenteredCA makes the input centered on cross axis (CA)
 func ItemCenteredCA(sr *StylesResponsive) *StylesResponsive {
 	sr = NewStylesResponsive(sr)
-	sr.Desktop.StyleGridItem.AlignSelf = "center"
+	if sr.Desktop.StyleGridItem.AlignSelf == "" {
+		sr.Desktop.StyleGridItem.AlignSelf = "center"
+	}
 	sr.Desktop.StyleText.AlignHorizontal = "center"
 	return sr
 }

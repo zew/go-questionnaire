@@ -26,7 +26,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 	var err error
 
-	err = Title(&q)
+	err = Title(&q, false)
 	if err != nil {
 		return nil, fmt.Errorf("Error adding title page: %v", err)
 	}
@@ -36,7 +36,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		return nil, fmt.Errorf("Error adding core pages: %v", err)
 	}
 
-	err = PersonalQuestions1(&q, VariableElements{NumberingStart: 5})
+	err = PersonalQuestions1(&q, VariableElements{NumberingQuestions: 5, ZumSchlussOrNun: false})
 	if err != nil {
 		return nil, fmt.Errorf("Error adding core pages: %v", err)
 	}

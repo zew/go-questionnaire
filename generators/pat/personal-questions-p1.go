@@ -9,8 +9,15 @@ import (
 )
 
 type VariableElements struct {
-	NumberingStart int
-	AllMandatory   bool
+	// Part 1 and 2
+	NumberingQuestions int
+	NumberingSections  int
+
+	AllMandatory    bool
+	ZumSchlussOrNun bool
+
+	// Part 2
+	ZumXtenTeil string
 }
 
 // PersonalQuestions1 - numbered 5-7
@@ -19,6 +26,16 @@ func PersonalQuestions1(q *qst.QuestionnaireT, vE VariableElements) error {
 	grStPage78 := css.NewStylesResponsive(nil)
 	grStPage78.Desktop.StyleGridContainer.GapRow = "0.1rem"
 	grStPage78.Desktop.StyleGridContainer.GapColumn = "0.01rem"
+
+	validatorRadio := ""
+	if vE.AllMandatory {
+		validatorRadio = "mustRadioGroup"
+	}
+
+	zumSchlussOrNun := "Zum Schluss bitten wir Sie, drei Fragen über sich selbst zu beantworten: "
+	if vE.ZumSchlussOrNun {
+		zumSchlussOrNun = "Nun bitten wir Sie, einige Fragen über sich selbst zu beantworten: "
+	}
 
 	// page 8
 	{
@@ -29,17 +46,18 @@ func PersonalQuestions1(q *qst.QuestionnaireT, vE VariableElements) error {
 
 		// gr1
 		{
-			gb := qst.NewGridBuilderRadios(
+			gb := qst.NewGridBuilderRadiosWithValidator(
 				columnTemplate7,
 				labelsOneToSeven2,
 				[]string{"q5"},
 				radioVals7,
 				[]trl.S{},
+				validatorRadio,
 			)
 			gb.MainLabel = trl.S{
 				"de": fmt.Sprintf(`
 					<p>
-					<b>Nun bitten wir Sie, einige Fragen über sich selbst zu beantworten:</b>
+					<b>%v</b>
 
 					<br>
 					<br>
@@ -51,7 +69,9 @@ func PersonalQuestions1(q *qst.QuestionnaireT, vE VariableElements) error {
 
 					</p>
 
-				`, vE.NumberingStart+0),
+				`, zumSchlussOrNun,
+					vE.NumberingQuestions+0,
+				),
 			}
 			gr := page.AddGrid(gb)
 			gr.OddRowsColoring = true
@@ -60,12 +80,13 @@ func PersonalQuestions1(q *qst.QuestionnaireT, vE VariableElements) error {
 
 		// gr2
 		{
-			gb := qst.NewGridBuilderRadios(
+			gb := qst.NewGridBuilderRadiosWithValidator(
 				columnTemplate7,
 				labelsOneToSeven3,
 				[]string{"q6"},
 				radioVals7,
 				[]trl.S{},
+				validatorRadio,
 			)
 			gb.MainLabel = trl.S{
 				"de": fmt.Sprintf(`
@@ -75,7 +96,7 @@ func PersonalQuestions1(q *qst.QuestionnaireT, vE VariableElements) error {
 					Sind Sie im Allgemeinen ein risikobereiter Mensch 
 					oder versuchen Sie, Risiken zu vermeiden?
 					</p>
-				`, vE.NumberingStart+1),
+				`, vE.NumberingQuestions+1),
 			}
 			gr := page.AddGrid(gb)
 			gr.OddRowsColoring = true
@@ -84,12 +105,13 @@ func PersonalQuestions1(q *qst.QuestionnaireT, vE VariableElements) error {
 
 		// gr3
 		{
-			gb := qst.NewGridBuilderRadios(
+			gb := qst.NewGridBuilderRadiosWithValidator(
 				columnTemplate7,
 				labelsOneToSeven2,
 				[]string{"q7"},
 				radioVals7,
 				[]trl.S{},
+				validatorRadio,
 			)
 			gb.MainLabel = trl.S{
 				"de": fmt.Sprintf(`
@@ -98,7 +120,7 @@ func PersonalQuestions1(q *qst.QuestionnaireT, vE VariableElements) error {
 					Wie schätzen Sie Ihre Bereitschaft ein, mit anderen zu teilen, 
 					ohne dafür eine Gegenleistung zu erwarten?
 					</p>
-				`, vE.NumberingStart+2),
+				`, vE.NumberingQuestions+2),
 			}
 			gr := page.AddGrid(gb)
 			gr.OddRowsColoring = true

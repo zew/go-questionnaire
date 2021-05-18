@@ -78,7 +78,6 @@ func Part1Entscheidung78TwoTimesThree(q *qst.QuestionnaireT, pageIdx int, inpNam
 			`}
 		}
 	}
-
 	for _, kv := range keyVals {
 		{
 			gr := page.AddGroup()
@@ -97,9 +96,12 @@ func Part1Entscheidung78TwoTimesThree(q *qst.QuestionnaireT, pageIdx int, inpNam
 			rad.ColSpan = 1
 			rad.Label = lbl
 			rad.ControlFirst()
+			rad.ControlTop()
 		}
 	}
 
+	//
+	//
 	{
 		gr := page.AddGroup()
 		gr.Cols = 1
@@ -115,9 +117,7 @@ func Part1Entscheidung78TwoTimesThree(q *qst.QuestionnaireT, pageIdx int, inpNam
 				</p>
 			`}
 		}
-
 	}
-
 	for _, kv := range keyVals {
 		{
 			gr := page.AddGroup()
@@ -137,9 +137,12 @@ func Part1Entscheidung78TwoTimesThree(q *qst.QuestionnaireT, pageIdx int, inpNam
 			rad.Label = lbl
 
 			rad.ControlFirst()
+			rad.ControlTop()
 		}
 	}
 
+	//
+	//
 	{
 		gr := page.AddGroup()
 		gr.Cols = 1
@@ -410,7 +413,7 @@ func Part2Intro(q *qst.QuestionnaireT) error {
 				<br>
 
 				<p style="font-size:86%">
-					<b>*Erläuterung:</b>
+					<b>Erläuterung:</b>
 					Falls Sie in der ausgewählten Frage eine 100 % richtige Antwort geben, 
 					werden Sie 50&nbsp;Norstat&nbsp;coins erhalten. 
 					Für jede Person, die Sie bei Ihren folgenden Schätzungen zu viel oder zu wenig angeben, 

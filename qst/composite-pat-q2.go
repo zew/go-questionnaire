@@ -18,22 +18,11 @@ func TimePreferenceSelf(q *QuestionnaireT, seq0to5, paramSetIdx int) (string, []
 
 	zeroTo15 := q.Version()
 
-	// 	log.Printf(
-	// 		`TimePreferenceSelf
-	// userID  %5v - zeroTo15  %2v
-	// paramSetIdx %v - seq0to0 %4v`,
-	// 		userID, zeroTo15,
-	// 		paramSetIdx, seq0to5,
-	// 	)
-
 	aOrB := "a"
 	if paramSetIdx > 0 {
 		aOrB = "b"
 	}
 
-	// log.Printf(`%v`, getQ2Labels(zeroTo15, aOrB))
-
-	// questionID := fmt.Sprintf("q2_seq%v__%02vof16", seq0to5+1, zeroTo15+1)
 	questionID := fmt.Sprintf("q2_seq%v", seq0to5+1)
 
 	return timePreferenceSelf(

@@ -33,6 +33,26 @@ func GroupPreferences(q *QuestionnaireT, seq0to5, paramSetIdx int) (string, []st
 	)
 }
 
+// GroupPreferencesPOP3 - yields TimePreference - getQ2Labels() - not getQ3Labels
+func GroupPreferencesPOP3(q *QuestionnaireT, seq0to5, paramSetIdx int) (string, []string, error) {
+
+	zeroTo15 := q.Version()
+
+	aOrB := "a"
+	if paramSetIdx > 0 {
+		aOrB = "b"
+	}
+
+	questionID := fmt.Sprintf("q2_seq%v", seq0to5+1)
+
+	return groupPreferences(
+		q,
+		seq0to5, // visible question seq 1...6 on the questionnaire
+		questionID,
+		getQ2Labels(zeroTo15, aOrB),
+	)
+}
+
 func groupPreferences(q *QuestionnaireT, seq0to0 int, questionID string, rowLabels []string) (string, []string, error) {
 
 	//
@@ -78,6 +98,7 @@ func groupPreferences(q *QuestionnaireT, seq0to0 int, questionID string, rowLabe
 	)
 
 	// prefix name=" with questionID
+	// is this even necessary here?
 	rep := fmt.Sprintf(`name="%v`, questionID)
 	s = strings.ReplaceAll(s, `name="`, rep)
 

@@ -231,8 +231,11 @@ type groupT struct {
 	Cols            float32 `json:"columns,omitempty"`
 	OddRowsColoring bool    `json:"odd_rows_coloring,omitempty"` // color odd rows
 
-	Inputs             []*inputT `json:"inputs,omitempty"`
-	RandomizationGroup int       `json:"randomization_group,omitempty"` // > 0 => group can be repositioned for randomization
+	Inputs []*inputT `json:"inputs,omitempty"`
+
+	// > 0 => group belongs to a set of groups,
+	// reordering / re-shuffled according to questionnaireT.ShufflingsMax
+	RandomizationGroup int `json:"randomization_group,omitempty"`
 
 	Style *css.StylesResponsive `json:"style,omitempty"` // pointer, to avoid empty JSON blocks
 }
@@ -424,8 +427,13 @@ type QuestionnaireT struct {
 	CurrPage  int  `json:"curr_page,omitempty"`
 	HasErrors bool `json:"has_errors,omitempty"` // If any response is faulty; set by ValidateReponseData
 
-	// a primitive permutation mechanism
-	ShufflingsMax int `json:"shufflings_max,omitempty"` //  Deterministically shuffle groups based on user id into ... variations.
+	// primitive permutation mechanism
+	// deterministically reordering / reshuffling a set of groups
+	// based on
+	//      * user id
+	// 		* page idx
+	// 		* groupT.RandomizationGroup
+	ShufflingsMax int `json:"shufflings_max,omitempty"`
 
 	// Previously we had SurveyT.Variant; now all questionnaire variations
 	// should be captured with a distinct VersionEffective.

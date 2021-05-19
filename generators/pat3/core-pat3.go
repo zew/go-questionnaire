@@ -146,10 +146,10 @@ func POP3Part1Decision34(q *qst.QuestionnaireT, decisionNumber int, inpName stri
 			inp.Type = "dyn-composite"
 			inp.ColSpanControl = 12
 			if decisionNumber == 3 {
-				inp.DynamicFunc = "GroupPreferences__0__0"
+				inp.DynamicFunc = "GroupPreferencesPOP3__0__0"
 			}
 			if decisionNumber == 4 {
-				inp.DynamicFunc = "GroupPreferences__1__1"
+				inp.DynamicFunc = "GroupPreferencesPOP3__1__1"
 			}
 		}
 	}
@@ -525,25 +525,26 @@ func part2ThreeQuestions(q *qst.QuestionnaireT, blockStart int) error {
 		{
 			gr := page.AddGroup()
 			gr.Cols = 1
-			gr.BottomVSpacers = 1
+			gr.BottomVSpacers = 0
 			{
 				inp := gr.AddInput()
 				inp.Type = "dyn-composite"
 				inp.ColSpanControl = 1
 				if blockStart == 1 {
-					inp.DynamicFunc = "GroupPreferences__0__0"
+					inp.DynamicFunc = "GroupPreferencesPOP3__0__0"
 				}
 				if blockStart == 4 {
-					inp.DynamicFunc = "GroupPreferences__1__1"
+					inp.DynamicFunc = "GroupPreferencesPOP3__1__1"
 				}
 			}
 		}
 
-		{
+		for idx2, kv := range keyVals2 {
 			gr := page.AddGroup()
 			gr.Cols = 1
-			gr.BottomVSpacers = 2
-			for idx2, kv := range keyVals2 {
+			gr.BottomVSpacers = 1
+			gr.RandomizationGroup = 1
+			{
 				lbl := fmt.Sprintf(kv, keyVals1a[idx1])
 				inp := gr.AddInput()
 				inp.Type = "number"
@@ -560,7 +561,12 @@ func part2ThreeQuestions(q *qst.QuestionnaireT, blockStart int) error {
 				inp.ControlFirst()
 				inp.ControlTop()
 			}
+		}
 
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 2
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"

@@ -33,4 +33,5 @@ var CompositeFuncs = map[string]CompositFuncT{
 	"TimePreferenceSelf":          TimePreferenceSelf,          // belongs to pat
 	"TimePreferenceSelfStatic":    TimePreferenceSelfStatic,    //   ... disabled
 	"GroupPreferences":            GroupPreferences,            // belongs to pat
+	"GroupPreferencesPOP3":        GroupPreferencesPOP3,        //
 }

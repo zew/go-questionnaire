@@ -96,7 +96,7 @@ func PoliticalFoundations(q *QuestionnaireT, seq0to5, paramSetIdx int) (string, 
 	)
 }
 
-func PoliticalFoundationsStaticSub(q *QuestionnaireT, seq0to1, paramSetIdx int) (string, []string, error) {
+func politicalFoundationsStaticSub(q *QuestionnaireT, seq0to1, paramSetIdx int) (string, []string, error) {
 
 	zeroTo15 := q.Version()
 	threeDistinctPairs := populationByVersion[zeroTo15][seq0to1] - 1
@@ -311,7 +311,7 @@ var cols6to4 = strings.NewReplacer(
 // the input columns
 func PoliticalFoundationsStatic(q *QuestionnaireT, seq0to5, paramSetIdx int) (string, []string, error) {
 
-	ret, _, err := PoliticalFoundationsStaticSub(q, seq0to5, paramSetIdx)
+	ret, _, err := politicalFoundationsStaticSub(q, seq0to5, paramSetIdx)
 
 	completeDeletionOfCols56 := true
 	if completeDeletionOfCols56 {

@@ -65,7 +65,8 @@ function validateForm(event) {
     var sum5 = intInputs[16] + intInputs[17] + intInputs[18] + intInputs[19];
     var sum6 = intInputs[20] + intInputs[21] + intInputs[22] + intInputs[23];
 
-    console.log("sum1", sum1, "sum2", sum2);
+    console.log(`sum1 ${sum1} - sum2 ${sum2}  - sum3 ${sum3} `);
+    console.log(`sum4 ${sum4} - sum5 ${sum5}  - sum6 ${sum6} `);
 
     var cond1 = sum1 > 0 && sum1 != 10;
     var cond2 = sum2 > 0 && sum2 != 10;

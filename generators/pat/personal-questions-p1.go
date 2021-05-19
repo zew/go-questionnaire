@@ -8,6 +8,7 @@ import (
 	"github.com/zew/go-questionnaire/trl"
 )
 
+// VariableElements is bag of options to questionnaire modules
 type VariableElements struct {
 	// Part 1 and 2
 	NumberingQuestions int

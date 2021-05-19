@@ -235,6 +235,7 @@ func init() {
 	sort.Strings(CountryISOs)
 }
 
+// FederalStatesGermany for multiple questionnaires
 var FederalStatesGermany = map[string]S{
 	"BW": {"de": "Baden-Württemberg"},
 	"BY": {"de": "Bayern"},
@@ -254,7 +255,7 @@ var FederalStatesGermany = map[string]S{
 	"TH": {"de": "Thüringen"},
 }
 
-// stable default sorting
+// FederalStatesGermanyISOs - sorted by ISO code
 var FederalStatesGermanyISOs = []string{}
 
 func init() {
@@ -283,7 +284,7 @@ func (s sorterDeSl) Swap(i, j int) {
 	s[i], s[j] = s[j], s[i]
 }
 
-// stable default sorting
+// FederalStatesGermanyISOs2 - sorted by German label
 var FederalStatesGermanyISOs2 = sorterDeSl{}
 
 func init() {

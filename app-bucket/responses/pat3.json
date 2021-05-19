@@ -19,7 +19,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "03b299e61c9913bd5747d422484fad19db1a86a220df654a4797fc342efde175",
+ 	"md_5": "37d37ada445aec645f9c65049a31292e35a84002021224c4637ac44410b7e329",
  	"lang_codes": [
  		"de"
  	],
@@ -5657,7 +5657,7 @@
  							}
  						}
  					],
- 					"randomization_group": 1
+ 					"randomization_group": 2
  				},
  				{
  					"bottom_vspacers": 1,
@@ -5710,7 +5710,7 @@
  							}
  						}
  					],
- 					"randomization_group": 1
+ 					"randomization_group": 2
  				},
  				{
  					"bottom_vspacers": 1,
@@ -5763,7 +5763,7 @@
  							}
  						}
  					],
- 					"randomization_group": 1
+ 					"randomization_group": 2
  				},
  				{
  					"bottom_vspacers": 1,
@@ -5816,7 +5816,7 @@
  							}
  						}
  					],
- 					"randomization_group": 1
+ 					"randomization_group": 2
  				},
  				{
  					"bottom_vspacers": 2,
@@ -5922,7 +5922,7 @@
  							}
  						}
  					],
- 					"randomization_group": 1
+ 					"randomization_group": 3
  				},
  				{
  					"bottom_vspacers": 1,
@@ -5975,7 +5975,7 @@
  							}
  						}
  					],
- 					"randomization_group": 1
+ 					"randomization_group": 3
  				},
  				{
  					"bottom_vspacers": 1,
@@ -6028,7 +6028,7 @@
  							}
  						}
  					],
- 					"randomization_group": 1
+ 					"randomization_group": 3
  				},
  				{
  					"bottom_vspacers": 1,
@@ -6081,7 +6081,7 @@
  							}
  						}
  					],
- 					"randomization_group": 1
+ 					"randomization_group": 3
  				},
  				{
  					"bottom_vspacers": 2,
@@ -6510,7 +6510,7 @@
  							}
  						}
  					],
- 					"randomization_group": 1
+ 					"randomization_group": 2
  				},
  				{
  					"bottom_vspacers": 1,
@@ -6563,7 +6563,7 @@
  							}
  						}
  					],
- 					"randomization_group": 1
+ 					"randomization_group": 2
  				},
  				{
  					"bottom_vspacers": 1,
@@ -6616,7 +6616,7 @@
  							}
  						}
  					],
- 					"randomization_group": 1
+ 					"randomization_group": 2
  				},
  				{
  					"bottom_vspacers": 1,
@@ -6669,7 +6669,7 @@
  							}
  						}
  					],
- 					"randomization_group": 1
+ 					"randomization_group": 2
  				},
  				{
  					"bottom_vspacers": 2,
@@ -6775,7 +6775,7 @@
  							}
  						}
  					],
- 					"randomization_group": 1
+ 					"randomization_group": 3
  				},
  				{
  					"bottom_vspacers": 1,
@@ -6828,7 +6828,7 @@
  							}
  						}
  					],
- 					"randomization_group": 1
+ 					"randomization_group": 3
  				},
  				{
  					"bottom_vspacers": 1,
@@ -6881,7 +6881,7 @@
  							}
  						}
  					],
- 					"randomization_group": 1
+ 					"randomization_group": 3
  				},
  				{
  					"bottom_vspacers": 1,
@@ -6934,7 +6934,7 @@
  							}
  						}
  					],
- 					"randomization_group": 1
+ 					"randomization_group": 3
  				},
  				{
  					"bottom_vspacers": 2,

@@ -6,7 +6,7 @@ import (
 	"github.com/zew/go-questionnaire/trl"
 )
 
-// Title adds title page
+// TitlePat23 adds title page
 func TitlePat23(q *qst.QuestionnaireT) error {
 
 	// page 0

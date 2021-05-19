@@ -105,6 +105,10 @@ func clientPageToServer(t *testing.T, clQ *qst.QuestionnaireT, idxPage int,
 				} else {
 					val = ctr.IncrementStr()
 					radioVal[inp.Name] = val
+
+					if val == "9" { // preventing inRange10
+						ctr.Reset()
+					}
 				}
 
 				radioVal[inp.Name] = val

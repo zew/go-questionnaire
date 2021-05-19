@@ -673,6 +673,8 @@ func (sg shufflingGroupsT) String() string {
 	return fmt.Sprintf("orig %02v -> shuff %02v - G%v strt%v seq%v", sg.Orig, sg.Shuffled, sg.Group, sg.Start, sg.Idx)
 }
 
+var debugShuffling = false
+
 // RandomizeOrder creates a shuffled ordering of groups marked by .RandomizationGroup;
 // static groups with RandomizationGroup==0 remain on fixed order position;
 // others get a randomized position
@@ -700,17 +702,18 @@ func (q *QuestionnaireT) RandomizeOrder(pageIdx int) []int {
 		shufflingGroupsCntr[sg] = 0
 	}
 
-	log.Printf(
-		"max sg idx %v \nshufflingGroups %v",
-		maxSg,
-		util.IndentedDump(shufflingGroups),
-	)
+	if debugShuffling {
+		log.Printf(
+			"max sg idx %v \nshufflingGroups %v",
+			maxSg,
+			util.IndentedDump(shufflingGroups),
+		)
+	}
 
 	//
 	// compute the main array
 	sgs := make([]shufflingGroupsT, len(p.Groups))
 	for i := 0; i < len(p.Groups); i++ {
-
 		sg := p.Groups[i].RandomizationGroup
 		sgs[i].Orig = i
 		sgs[i].Group = sg
@@ -729,11 +732,13 @@ func (q *QuestionnaireT) RandomizeOrder(pageIdx int) []int {
 			if sgs[i].Idx == 0 {
 				sg := sgs[i].Group
 				// this must conform with ShufflesToCSV()
-				// q.MaxGroups instead of len(shufflingGroups[sg])
+				// q.ShufflingsMax instead of len(shufflingGroups[sg])
 				// order = order[0:len(shufflingGroups[sg])]
 				sh := shuffler.New(q.UserID, q.ShufflingsMax, len(shufflingGroups[sg]))
 				order := sh.Slice(pageIdx) // cannot add sg to conform to ShufflesToCSV()
-				log.Printf("%v - seq %16s in order %16s - iter %v", sg, fmt.Sprint(shufflingGroups[sg]), fmt.Sprint(order), pageIdx+sg)
+				if debugShuffling {
+					log.Printf("%v - seq %16s in order %16s - iter %v", sg, fmt.Sprint(shufflingGroups[sg]), fmt.Sprint(order), pageIdx+sg)
+				}
 				for i := 0; i < len(shufflingGroups[sg]); i++ {
 					offset := shufflingGroups[sg][i] // i.e. [1, 9]
 					i2 := order[i]
@@ -742,8 +747,11 @@ func (q *QuestionnaireT) RandomizeOrder(pageIdx int) []int {
 			}
 		}
 	}
-	for i := 0; i < len(sgs); i++ {
-		log.Printf("lp%02v  %v", i, sgs[i])
+
+	if debugShuffling {
+		for i := 0; i < len(sgs); i++ {
+			log.Printf("lp%02v  %v", i, sgs[i])
+		}
 	}
 
 	// extract the new order - with randomized elements
@@ -752,7 +760,9 @@ func (q *QuestionnaireT) RandomizeOrder(pageIdx int) []int {
 		shuffled[i] = sgs[i].Shuffled
 	}
 
-	log.Printf("=> shuffled %v", shuffled)
+	if debugShuffling {
+		log.Printf("=> shuffled %v", shuffled)
+	}
 
 	return shuffled
 

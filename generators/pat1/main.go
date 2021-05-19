@@ -25,6 +25,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	q.VersionMax = 16
 	q.AssignVersion = "round-robin"
 
+	q.ShufflingsMax = 8 // for party affiliation and "Entscheidung 7/8"
+
 	var err error
 
 	err = pat.Title(&q, true)

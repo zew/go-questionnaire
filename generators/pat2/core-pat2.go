@@ -50,6 +50,7 @@ func Part1Intro(q *qst.QuestionnaireT) error {
 	return nil
 }
 
+// Part1Entscheidung78TwoTimesThree - helper to Part1Entscheidung78()
 func Part1Entscheidung78TwoTimesThree(q *qst.QuestionnaireT, pageIdx int, inpName string) error {
 
 	keyVals := []string{
@@ -173,6 +174,7 @@ func Part1Entscheidung78TwoTimesThree(q *qst.QuestionnaireT, pageIdx int, inpNam
 	return nil
 }
 
+// Part1Entscheidung78 module - calls Part1Entscheidung78TwoTimesThree
 func Part1Entscheidung78(q *qst.QuestionnaireT) error {
 
 	{
@@ -435,7 +437,7 @@ func Part2Intro(q *qst.QuestionnaireT) error {
 
 }
 
-// Part2Block1 renders
+// Part2Block12 renders
 // blockStart is either 0 - or 3
 func Part2Block12(q *qst.QuestionnaireT, blockStart int) error {
 

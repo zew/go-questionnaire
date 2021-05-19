@@ -84,6 +84,7 @@ func POP3Part1Intro(q *qst.QuestionnaireT) error {
 
 }
 
+// POP3Part1Decision34 - part 1 of 2
 func POP3Part1Decision34(q *qst.QuestionnaireT, decisionNumber int, inpName string) error {
 
 	keyVals := []string{
@@ -370,6 +371,7 @@ func POP3Part2Intro(q *qst.QuestionnaireT) error {
 
 }
 
+// POP3Part2Questions123and456 - part 2 of 2
 func POP3Part2Questions123and456(q *qst.QuestionnaireT, start int) error {
 
 	page := q.AddPage()
@@ -543,7 +545,7 @@ func part2ThreeQuestions(q *qst.QuestionnaireT, blockStart int) error {
 			gr := page.AddGroup()
 			gr.Cols = 1
 			gr.BottomVSpacers = 1
-			gr.RandomizationGroup = 1
+			gr.RandomizationGroup = 1 + idx1
 			{
 				lbl := fmt.Sprintf(kv, keyVals1a[idx1])
 				inp := gr.AddInput()

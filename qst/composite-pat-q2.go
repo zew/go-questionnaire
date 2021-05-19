@@ -46,6 +46,18 @@ func TimePreferenceSelfStatic(q *QuestionnaireT, seq0to5, paramSetIdx int) (stri
 	s = strings.ReplaceAll(s, "<input ", "<input disabled ")
 	s = strings.ReplaceAll(s, `checked='checked'`, " ")
 
+	/*
+		https://www.regextester.com/
+		https://stackoverflow.com/questions/37106834/golang-multiline-regex-not-working
+		https://github.com/google/re2/wiki/Syntax
+
+		(?is)  is setting flags to insensitive and . to matching newlines
+		(.*?)  the question mark is for non greedy
+
+		var re = regexp.MustCompile(`(?is)<input(.*?)>`)
+		s = re.ReplaceAllString(s, "<!-- input replaced -->")
+	*/
+
 	return s, inputs, err
 }
 

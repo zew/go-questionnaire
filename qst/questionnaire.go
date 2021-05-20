@@ -93,7 +93,7 @@ type inputT struct {
 	Step        float64 `json:"step,omitempty"`       // for number input:  stepping interval, i.e. 2 or 0.1
 	Min         float64 `json:"min,omitempty"`        //      ~
 	Max         float64 `json:"max,omitempty"`        //      ~
-	OnInvalid   trl.S   `json:"on_invalid,omitempty"` // message for  oninvalid="this.setCustomValidity('msg')"
+	OnInvalid   trl.S   `json:"on_invalid,omitempty"` // message for javascript error messages on HTML5 invalid state - compare ErrMsg
 	Placeholder trl.S   `json:"placeholder,omitempty"`
 
 	Label     trl.S  `json:"label,omitempty"`
@@ -117,8 +117,8 @@ type inputT struct {
 	Radios []*radioT  `json:"radios,omitempty"`    // This slice implements the radiogroup - and the senseless checkboxgroup
 	DD     *DropdownT `json:"drop_down,omitempty"` // As pointer to prevent JSON cluttering
 
-	Validator string `json:"validator,omitempty"` // i.e. any key from validators, i.e. "must;inRange20"
-	ErrMsg    string `json:"err_msg,omitempty"`   // a key for coreTranslations
+	Validator string `json:"validator,omitempty"` // i.e. any key from map of validators, i.e. "must;inRange20"
+	ErrMsg    string `json:"err_msg,omitempty"`   // a key for coreTranslations, compare OnInvalid
 
 	// ResponseFloat float64  - floats and integers are stored as strings in Response
 	// also contains the Value of options and checkboxes
@@ -313,7 +313,7 @@ func (gr groupT) HasComposit() bool {
 
 // returns the func, the sequence idx, the param set idx
 func validateComposite(
-	pageIdx, grpIdx int, compFuncNameWithParamSet string) (CompositFuncT, int, int) {
+	pageIdx, grpIdx int, compFuncNameWithParamSet string) (CompositeFuncT, int, int) {
 
 	splt := strings.Split(compFuncNameWithParamSet, "__")
 	if len(splt) != 3 {

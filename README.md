@@ -101,13 +101,11 @@ by using [gocloud blob](https://godoc.org/gocloud.dev/blob) for local file syste
 
 ### Boring properties
 
-* Server side validation.  
-
-* Extensible set of validation functions easily assignable to each field.  
+* Server side validation
 
 * For example `must ; inRange20` or only `inRange100` or only `must`
 
-* Javascript hook for client side validation if preferred.
+* Client side validation; free `JavaScript` funcs
 
 ### Technical properties
 
@@ -175,8 +173,8 @@ additonal `pages`, `groups` and `inputs`.
 * `textblock`  - block of text without input
 * `button`     - submit button
 
-* `dyn-textblock` - descriptions depending on user properties or wave-specific data
-* `dyn-composite` - runtime executed fragment of text and multiple inputs; `dyn-composite-scalar` is a list of inputs contained in `dyn-composite`
+* `dyn-textblock` - `DynamicFunc="ResponseStatistics..."` dynamic text blocks
+* `dyn-composite` - runtime executed, dynamic fragment multiple inputs and text; `dyn-composite-scalar` is a list of inputs contained in `dyn-composite`
 
 Each input can have a multi-language label, -description, a multi-language suffix and a validation function.
 
@@ -568,19 +566,32 @@ These are applied to all strings of any questionnaire at JSON creation time.
 There are JavaScript libraries containing hyphenization libraries.  
 This software still relies on manual adding hyphenization to package `trl`.
 
-### Randomization for scientific studies - shuffling of input order
+### Randomization for scientific studies I - `RandomizationGroup`
 
-* The order of inputs on pages can be randomized (shuffled).
+* The order of groups on pages can be randomized (shuffled).
+
+* Only groups with `groupT.RandomizationGroup` > 0 are shuffled.
 
 * Shuffling is random, but deterministically reproducible for user ID and page number.
 
-* Questionnaire property `variations` sets the number of different classes of shufflings.  
- For example, if `variations==2`, even and odd user IDs get the same  
- ordering when on same page.  
+* Questionnaire property `ShufflingsMax` sets the number of distinct shufflings.  
+ For example, if `ShufflingsMax==2`, even and odd user IDs get the same  
+ ordering when on same page.
 
-* `variations` should be set to the maximum number of inputs across pages.
+* `ShufflingsMax` must be greater one, otherwise shuffling does not take place.  
+`ShufflingsMax` should be set to the maximum number of inputs across pages.
 
 * [Shufflings can be exported for use in related applications](https://dev-domain:port/survey/shufflings-to-csv)
+
+### Randomization for scientific studies II - `VersionEffective`
+
+* `VersionMax`, `AssignVersion`, `VersionEffective` provide a second orthogonal randomization function.
+
+* Randomization by `VersionEffective` can be used in  
+`dynFuncT`, `CompositeFuncT`, `validatorT`, in custom code.
+
+* `VersionEffective` can be configured to be derived form UserID or
+from global application counter upon initial login.
 
 ## About go-app-tpl - extremely technical properties
 

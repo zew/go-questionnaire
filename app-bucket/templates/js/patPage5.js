@@ -34,8 +34,10 @@ function validateForm(event) {
     // return false;
 
 
-    var sum = intInputs[0] + intInputs[1] + intInputs[2] + intInputs[3] + intInputs[4] + intInputs[5];
-    console.log("sum",sum);
+    var sum =  intInputs[0] + intInputs[1] + intInputs[2] + intInputs[3] + intInputs[4] + intInputs[5];
+    var sum1 = intInputs[0] + intInputs[1] + intInputs[2] ;
+    var sum2 = intInputs[3] + intInputs[4] + intInputs[5];
+    console.log(`sum ${sum} - sum1 ${sum1} - sum2 ${sum2}`,);
 
     if (sum > 0) {
         if (intInputs[0] == 0 || intInputs[1] == 0 || intInputs[3] == 0 || intInputs[3] == 0 || intInputs[4] == 0 || intInputs[5] == 0 ) {
@@ -49,9 +51,9 @@ function validateForm(event) {
         }
     }
 
-    if (sum == 12) {
+    if (sum1 == 6 || sum2 == 6) {
         // alert("{{.msg}}");
-        var doContinue = window.confirm("Wollen Sie wirklich alle Optionen auf 'nicht verfübar setzen' oder wollen Sie Ihre Antworten noch verändern?");
+        var doContinue = window.confirm("Wollen Sie wirklich alle Optionen auf 'nicht verfügbar setzen' oder wollen Sie Ihre Antworten noch verändern?");
         if (doContinue) {
             return true;
         }

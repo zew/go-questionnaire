@@ -19,7 +19,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "3ab2d6b3532e3627b91066b4c20dac4ffb5a9da7215723e3647abef3fd6846bb",
+ 	"md_5": "fcecbf3ce95da69b13d9d76af65b34768786d97dca81c1aff55e5c95f6949199",
  	"lang_codes": [
  		"de"
  	],
@@ -1757,7 +1757,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage\u0026nbsp;8.\u003c/b\u003e\n\t\t\t\t\tIn der Po\u0026shy;li\u0026shy;tik reden die Leute häufig von \"links\" und \"rechts\". \n\t\t\t\t\tWenn Sie die Skala hier benutzen, \n\t\t\t\t\two würden Sie sich selbst einordnen, \n\t\t\t\t\twenn 1 \"links\" und 11 \"rechts\" ist? \u003cbr\u003e\n\t\t\t\t\tBitte geben Sie den Wert an, der auf Sie persönlich zutrifft.\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage\u0026nbsp;8.\u003c/b\u003e\n\t\t\t\t\tIn der Po\u0026shy;li\u0026shy;tik reden die Leute häufig von \"links\" und \"rechts\". \n\t\t\t\t\tWenn Sie die Skala hier benutzen, \n\t\t\t\t\two würden Sie sich selbst einordnen, \n\t\t\t\t\twenn 1 \"links\" und 11 \"rechts\" ist? \n\t\t\t\t\tBitte geben Sie den Wert an, der auf Sie persönlich zutrifft.\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t"
  							},
  							"col_span": 12,
  							"col_span_label": 1
@@ -4013,7 +4013,7 @@
  			],
  			"validation_func_name": "pat-best-gt-worst",
  			"validation_func_msg": {
- 				"de": "Bitte beste Stifung \u003e mittlere \u003e schlechteste. Wirklich fortfahren?"
+ 				"de": "Denken Sie nicht, dass die Zahlungsbereitschaft bei besseren Stiftungen höher sein sollte, also beste Stiftung \u003e mittlere \u003e schlechteste? Wirklich so fortfahren?"
  			}
  		},
  		{

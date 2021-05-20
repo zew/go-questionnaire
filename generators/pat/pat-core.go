@@ -283,7 +283,7 @@ func Part1Frage1(q *qst.QuestionnaireT) error {
 		page.Style = css.DesktopWidthMaxForPages(page.Style, "36rem") // 60
 
 		page.ValidationFuncName = "pat-best-gt-worst"
-		page.ValidationFuncMsg = trl.S{"de": "Bitte beste Stifung > mittlere > schlechteste. Wirklich fortfahren?"}
+		page.ValidationFuncMsg = trl.S{"de": "Denken Sie nicht, dass die Zahlungsbereitschaft bei besseren Stiftungen höher sein sollte, also beste Stiftung > mittlere > schlechteste? Wirklich so fortfahren?"}
 
 		// gr0
 		{

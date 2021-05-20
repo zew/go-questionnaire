@@ -19,7 +19,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "3ae75a6c79596fe537dfa2d2b084e6972e6c34909cb56d05da69a52654ac5e1d",
+ 	"md_5": "459fbed5285ffcb2e316144551efc9b24cb3922a76774151124e048ec89f52f8",
  	"lang_codes": [
  		"de"
  	],
@@ -507,7 +507,7 @@
  			],
  			"validation_func_name": "pat-best-gt-worst",
  			"validation_func_msg": {
- 				"de": "Bitte beste Stifung \u003e mittlere \u003e schlechteste. Wirklich fortfahren?"
+ 				"de": "Denken Sie nicht, dass die Zahlungsbereitschaft bei besseren Stiftungen höher sein sollte, also beste Stiftung \u003e mittlere \u003e schlechteste? Wirklich so fortfahren?"
  			}
  		},
  		{

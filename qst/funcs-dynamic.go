@@ -18,6 +18,9 @@ import (
 	"github.com/zew/go-questionnaire/trl"
 )
 
+// dynamic funcs return a dynamic piece of content
+//
+// compare CompositeFuncT, validatorT
 type dynFuncT func(*QuestionnaireT, string) (string, error)
 
 var dynFuncs = map[string]dynFuncT{

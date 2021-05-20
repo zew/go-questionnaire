@@ -348,6 +348,7 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 					inp.ColSpan = 4
 					inp.ColSpanControl = 1
 					inp.MaxChars = 14
+					inp.Validator = "otherParty"
 				}
 			}
 
@@ -403,7 +404,7 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 					In der Politik reden die Leute häufig von "links" und "rechts". 
 					Wenn Sie die Skala hier benutzen, 
 					wo würden Sie sich selbst einordnen, 
-					wenn 1 "links" und 11 "rechts" ist? <br>
+					wenn 1 "links" und 11 "rechts" ist? 
 					Bitte geben Sie den Wert an, der auf Sie persönlich zutrifft.
 					</p>
 					<br>

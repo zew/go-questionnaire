@@ -233,9 +233,12 @@ type groupT struct {
 
 	Inputs []*inputT `json:"inputs,omitempty"`
 
-	// > 0 => group belongs to a set of groups,
 	// reordering / re-shuffled according to questionnaireT.ShufflingsMax
+	// > 0 => group belongs to a set of groups,
+	// there can be multiple groups on one page
 	RandomizationGroup int `json:"randomization_group,omitempty"`
+	// but all have the same shuffling
+	RandomizationSeed int `json:"randomization_seed,omitempty"`
 
 	Style *css.StylesResponsive `json:"style,omitempty"` // pointer, to avoid empty JSON blocks
 }
@@ -433,6 +436,7 @@ type QuestionnaireT struct {
 	//      * user id
 	// 		* page idx
 	// 		* groupT.RandomizationGroup
+	// 		* groupT.RandomizationID
 	ShufflingsMax int `json:"shufflings_max,omitempty"`
 
 	// Previously we had SurveyT.Variant; now all questionnaire variations
@@ -659,7 +663,8 @@ type shufflingGroupsT struct {
 	Orig     int // orig pos
 	Shuffled int // shuffled pos - new pos
 
-	Group int // shuffling group
+	GroupID           int // shuffling group
+	RandomizationSeed int
 
 	Start int // shuffling group start idx    - across gaps
 	Idx   int // sequence in shuffling group  - across gaps - dense 0,1...6,7
@@ -670,19 +675,22 @@ type shufflingGroupsT struct {
 
 // String representation for dump
 func (sg shufflingGroupsT) String() string {
-	return fmt.Sprintf("orig %02v -> shuff %02v - G%v strt%v seq%v", sg.Orig, sg.Shuffled, sg.Group, sg.Start, sg.Idx)
+	return fmt.Sprintf("orig %02v -> shuff %02v - G%v Sd%v strt%v seq%v", sg.Orig, sg.Shuffled, sg.GroupID, sg.RandomizationSeed, sg.Start, sg.Idx)
 }
 
 var debugShuffling = false
 
-// RandomizeOrder creates a shuffled ordering of groups marked by .RandomizationGroup;
-// static groups with RandomizationGroup==0 remain on fixed order position;
+// RandomizeOrder creates a shuffled ordering of groups
+// determined by UserID and .RandomizationGroup;
+// groups with RandomizationGroup==0 retain their position
+//  on fixed order position;
 // others get a randomized position
 func (q *QuestionnaireT) RandomizeOrder(pageIdx int) []int {
 
 	p := q.Pages[pageIdx]
 
-	// helper - separating groups by their RandomizationGroup value - with positional indexes
+	// helper - separating groups by their RandomizationGroup value -
+	// with positional indexes
 	shufflingGroups := map[int][]int{}
 	maxSg := 0
 	for i := 0; i < len(p.Groups); i++ {
@@ -716,8 +724,8 @@ func (q *QuestionnaireT) RandomizeOrder(pageIdx int) []int {
 	for i := 0; i < len(p.Groups); i++ {
 		sg := p.Groups[i].RandomizationGroup
 		sgs[i].Orig = i
-		sgs[i].Group = sg
-
+		sgs[i].GroupID = sg
+		sgs[i].RandomizationSeed = p.Groups[i].RandomizationSeed
 		sgs[i].Start = shufflingGroups[sg][0]
 		sgs[i].Idx = shufflingGroupsCntr[sg]
 		shufflingGroupsCntr[sg]++
@@ -726,22 +734,24 @@ func (q *QuestionnaireT) RandomizeOrder(pageIdx int) []int {
 	//
 	// randomize
 	for i := 0; i < len(sgs); i++ {
-		if sgs[i].Group == 0 {
+		if sgs[i].GroupID == 0 {
 			sgs[i].Shuffled = sgs[i].Orig
 		} else {
 			if sgs[i].Idx == 0 {
-				sg := sgs[i].Group
+				sg := sgs[i].GroupID
 				// this must conform with ShufflesToCSV()
 				// q.ShufflingsMax instead of len(shufflingGroups[sg])
 				// order = order[0:len(shufflingGroups[sg])]
-				sh := shuffler.New(q.UserID, q.ShufflingsMax, len(shufflingGroups[sg]))
-				order := sh.Slice(pageIdx) // cannot add sg to conform to ShufflesToCSV()
+				seed := q.UserIDInt() + sgs[i].RandomizationSeed
+				numberOfSufflings := q.UserIDInt() + sgs[i].RandomizationSeed
+				sh := shuffler.New(seed, q.ShufflingsMax, len(shufflingGroups[sg]))
+				newOrder := sh.Slice(numberOfSufflings) // adding sg breaks compatibility to  ShufflesToCSV()
 				if debugShuffling {
-					log.Printf("%v - seq %16s in order %16s - iter %v", sg, fmt.Sprint(shufflingGroups[sg]), fmt.Sprint(order), pageIdx+sg)
+					log.Printf("%v - seq %16s in order %16s - iter %v", sg, fmt.Sprint(shufflingGroups[sg]), fmt.Sprint(newOrder), pageIdx+sg)
 				}
 				for i := 0; i < len(shufflingGroups[sg]); i++ {
 					offset := shufflingGroups[sg][i] // i.e. [1, 9]
-					i2 := order[i]
+					i2 := newOrder[i]
 					sgs[offset].Shuffled = shufflingGroups[sg][i2]
 				}
 			}

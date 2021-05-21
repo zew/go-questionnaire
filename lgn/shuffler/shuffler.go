@@ -7,7 +7,6 @@ package shuffler
 import (
 	"log"
 	"math/rand"
-	"strconv"
 )
 
 type shufflerT struct {
@@ -23,17 +22,18 @@ type shufflerT struct {
 // ID is the seed for the randomizer.
 // Variations is the number of classes.
 // MaxElements is the slice length.
-func New(ID string, variatons int, maxNumberOfElements int) *shufflerT {
+func New(ID int, variatons int, maxNumberOfElements int) *shufflerT {
 	s := shufflerT{}
 	s.Variations = variatons
 
 	s.MaxElements = maxNumberOfElements
-	s.ID, _ = strconv.Atoi(ID)
+	s.ID = ID
 	return &s
 }
 
 // Slice generates a shuffled slice.
-// Param iter gives the number of shufflings; typically the page number
+// Param iter gives the number of shufflings;
+// iter is reduced to its modulo 7 - performance
 func (s *shufflerT) Slice(iter int) []int {
 
 	order := make([]int, s.MaxElements)

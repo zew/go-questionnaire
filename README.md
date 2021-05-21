@@ -101,9 +101,8 @@ by using [gocloud blob](https://godoc.org/gocloud.dev/blob) for local file syste
 
 ### Boring properties
 
-* Server side validation
-
-* For example `must ; inRange20` or only `inRange100` or only `must`
+* Server side validation  
+For example `must ; inRange20` or only `inRange100` or only `must`
 
 * Client side validation; free `JavaScript` funcs
 
@@ -179,6 +178,11 @@ additonal `pages`, `groups` and `inputs`.
 Each input can have a multi-language label, -description, a multi-language suffix and a validation function.
 
 Each input has a span. Its label and form element each have a sub-span.
+
+## Dynamic content
+
+`dynFuncT` and `CompositeFuncT` can be used to render real timy dynamic content
+and question blocks.
 
 ## Create survey and logins
 

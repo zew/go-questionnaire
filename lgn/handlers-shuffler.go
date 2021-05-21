@@ -34,6 +34,11 @@ func ShufflesToCSV(w http.ResponseWriter, r *http.Request) {
     <title>Shufflings</title>
 </head>
 <body>
+
+	This needs work
+
+	Instead of pages - we want the shuffling group
+
 	<form method="post" action="{{.SelfURL}}"  style="margin: 50px;"  >
 		
 		{{if gt (len .ErrMsg) 0 }} <p style='white-space: pre; color:#E22'>{{.ErrMsg}}</p>{{end}}
@@ -67,7 +72,7 @@ func ShufflesToCSV(w http.ResponseWriter, r *http.Request) {
 </body>
 </html>
 `
-	pages := 5
+	page := 5
 
 	type formEntryT struct {
 		Token string `json:"token"`
@@ -95,7 +100,7 @@ func ShufflesToCSV(w http.ResponseWriter, r *http.Request) {
 	}
 
 	defaultV := 2
-	for len(fe.GroupsOnPage) < pages {
+	for len(fe.GroupsOnPage) < page {
 		fe.GroupsOnPage = append(fe.GroupsOnPage, defaultV)
 		defaultV++
 	}
@@ -109,11 +114,17 @@ func ShufflesToCSV(w http.ResponseWriter, r *http.Request) {
 
 	list := ""
 
+	/*
+		this needs to be made conform with
+		(q *QuestionnaireT) RandomizeOrder
+	*/
 	for i1 := fe.Start; i1 <= fe.Stop; i1++ {
-		for i2 := 0; i2 < pages; i2++ {
+		for i2 := 0; i2 < page; i2++ {
 			grOP := fe.GroupsOnPage[i2]
-			sh := shuffler.New(fmt.Sprintf("%v", i1), fe.Variations, grOP)
-			order := sh.Slice(i2)
+			// change to userID + shufflingGroup
+			seedAndNumberOfSufflings := i1 + i2
+			sh := shuffler.New(seedAndNumberOfSufflings, fe.Variations, grOP)
+			order := sh.Slice(seedAndNumberOfSufflings)
 			list += fmt.Sprintf("%5v\t%v\t%v\t%v\n", i1, i2, grOP, order)
 		}
 	}

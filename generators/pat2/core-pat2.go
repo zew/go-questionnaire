@@ -85,6 +85,7 @@ func Part1Entscheidung78TwoTimesThree(q *qst.QuestionnaireT, pageIdx int, inpNam
 			gr.Cols = 1
 			gr.BottomVSpacers = 1
 			gr.RandomizationGroup = 1
+			gr.RandomizationSeed = 1
 			sp := strings.Split(kv, ":")
 			key := sp[0]
 			val := sp[1]
@@ -125,6 +126,7 @@ func Part1Entscheidung78TwoTimesThree(q *qst.QuestionnaireT, pageIdx int, inpNam
 			gr.Cols = 1
 			gr.BottomVSpacers = 1
 			gr.RandomizationGroup = 2
+			gr.RandomizationSeed = 1
 			sp := strings.Split(kv, ":")
 			key := sp[0]
 			val := sp[1]
@@ -174,8 +176,8 @@ func Part1Entscheidung78TwoTimesThree(q *qst.QuestionnaireT, pageIdx int, inpNam
 	return nil
 }
 
-// Part1Entscheidung78 module - calls Part1Entscheidung78TwoTimesThree
-func Part1Entscheidung78(q *qst.QuestionnaireT) error {
+// Part1IntroUndEntscheidung78 module - calls Part1Entscheidung78TwoTimesThree
+func Part1IntroUndEntscheidung78(q *qst.QuestionnaireT) error {
 
 	{
 		page := q.AddPage()
@@ -196,28 +198,38 @@ func Part1Entscheidung78(q *qst.QuestionnaireT) error {
 					Zuletzt haben Sie entschieden, 
 					wie die Präferenzen von fünf Personen 
 					in eine gemeinsame Entscheidung zusammengefasst werden sollen. 
-					
+
 					Dadurch haben Sie festgelegt, welche politische Stiftung 
 					eine Spende von 30&nbsp;€ erhält. 
 				</p>
 
 				<p>
-					Wir haben drei verschiedenen Gruppen von Studienteilnehmern 
-					die gleichen Fragen wie Ihnen gestellt. 
-					Die drei Gruppen sind die Folgenden:  
+					Nun entscheiden Sie, 
+					an wen Sie diese Entscheidung delegieren möchten. 
+					Die Person welche Sie auswählen 
+					wird dann die Präferenzen der 
+					deutschen Staatsangehörigen sehen, 
+					und darauf basierend entscheiden, 
+					welche Stiftung die 30&nbsp;€ erhalten wird. 
+					
+				</p>
+
+				<p>
+					Sie können an Personen aus den folgenden drei Gruppen delegieren:
 				</p>
 
 
 				<ul>
-				<li>Gruppe 1: Eine repräsentative Gruppe deutscher Bürger.
+				<li>Eine repräsentative Gruppe deutscher Bürger (Gruppe 1).
 				</li>
 
-				<li>Gruppe 2: Eine repräsentative Gruppe deutscher Land- und Bundestagspolitiker.
+				<li>Eine repräsentative Gruppe deutscher Land- und Bundestagspolitiker (Gruppe 2).
 				</li>
 
-				<li>Gruppe 3: Eine Gruppe deutscher Bürger, 
+				<li>Eine Gruppe deutscher Bürger, 
 				die <i>keine Politiker</i> sind, 
-				die aber die <i>gleichen demographischen Eigenschaften wie Politiker</i> haben. 
+				die aber die <i>gleichen demographischen Eigenschaften wie Politiker</i> haben 
+				(Gruppe 3). 
 				Das heißt, Gruppe&nbsp;3 besteht z. B. zu 70&nbsp;% aus Männern, 
 				nur 3&nbsp;% der Mitglieder sind unter 30&nbsp;Jahre alt, 
 				87&nbsp;% der Mitglieder haben einen Hochschulabschluss 
@@ -226,21 +238,14 @@ func Part1Entscheidung78(q *qst.QuestionnaireT) error {
 				</ul>
 				
 				<p>
-					Wir haben aus jeder der drei Gruppen jeweils eine Person 
-					zufällig für Sie ausgewählt. 
+					Erläuterung: Die Mitglieder jeder der 
+					drei Gruppen haben ihre Entscheidungen 
+					bereits gefällt. 
+					Wir haben aus jeder der drei Grup¬pen 
+					jeweils eine Person zufällig für Sie ausgewählt. 
 					Falls dieser zweite Teil der Studie umgesetzt wird, 
-					wird nicht Ihre eigene Entscheidung bestimmen, 
-					welche Stiftung die 30&nbsp;€ erhält. 
-					Stattdessen wird eine Entscheidung 
-					eines der drei ausgewählten Gruppenmitglieder 
-					ausschlaggebend dafür sein, welche Stiftung das Geld erhält.  
-				</p>
-				<p>
-					Sie können aber entscheiden, welcher 
-					Gruppe (also Gruppe 1, 2 oder 3) die Person angehören soll, 
-					die die Präferenzen zu einer gemeinsamen 
-					Entscheidung zusammenfasst und somit festlegt, 
-					welche Stiftung das Geld erhält.
+					wird die Entscheidung dieser Person bestimmen, 
+					welche Stiftung die 30&nbsp;€ erhalten wird.
 				</p>
 				`,
 			}
@@ -515,7 +520,6 @@ func Part2Block12(q *qst.QuestionnaireT, blockStart int) error {
 		gr := page.AddGroup()
 		gr.Cols = 24
 		gr.BottomVSpacers = 3
-		// gr.RandomizationGroup = 1
 		lbls := []string{"A", "B", "C"}
 		{
 			inp := gr.AddInput()

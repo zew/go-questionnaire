@@ -19,7 +19,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "fcecbf3ce95da69b13d9d76af65b34768786d97dca81c1aff55e5c95f6949199",
+ 	"md_5": "743b743db7973df7b285b0c3839373466e396e1ee016226c8b37f8dad33c4695",
  	"lang_codes": [
  		"de"
  	],
@@ -1731,7 +1731,8 @@
  							"type": "text",
  							"max_chars": 14,
  							"col_span": 4,
- 							"col_span_control": 1
+ 							"col_span_control": 1,
+ 							"validator": "otherParty"
  						}
  					],
  					"randomization_group": 1
@@ -4052,7 +4053,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tZuletzt haben Sie entschieden, \n\t\t\t\t\twie die Präferenzen von fünf Personen \n\t\t\t\t\tin eine gemeinsame Entscheidung zusammengefasst werden sollen. \n\t\t\t\t\t\n\t\t\t\t\tDadurch haben Sie festgelegt, welche politische Stif\u0026shy;tung \n\t\t\t\t\teine Spende von 30\u0026nbsp;€ erhält. \n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tWir haben drei verschiedenen Grup\u0026shy;pen von Studienteilnehmern \n\t\t\t\t\tdie gleichen Fragen wie Ihnen gestellt. \n\t\t\t\t\tDie drei Grup\u0026shy;pen sind die Folgenden:  \n\t\t\t\t\u003c/p\u003e\n\n\n\t\t\t\t\u003cul\u003e\n\t\t\t\t\u003cli\u003eGrup\u0026shy;pe 1: Eine repräsentative Grup\u0026shy;pe deutscher Bürger.\n\t\t\t\t\u003c/li\u003e\n\n\t\t\t\t\u003cli\u003eGrup\u0026shy;pe 2: Eine repräsentative Grup\u0026shy;pe deutscher Land- und Bundestagspo\u0026shy;li\u0026shy;tiker.\n\t\t\t\t\u003c/li\u003e\n\n\t\t\t\t\u003cli\u003eGrup\u0026shy;pe 3: Eine Grup\u0026shy;pe deutscher Bürger, \n\t\t\t\tdie \u003ci\u003ekeine Po\u0026shy;li\u0026shy;tiker\u003c/i\u003e sind, \n\t\t\t\tdie aber die \u003ci\u003egleichen de\u0026shy;mo\u0026shy;gra\u0026shy;phischen Eigenschaften wie Po\u0026shy;li\u0026shy;tiker\u003c/i\u003e haben. \n\t\t\t\tDas heißt, Grup\u0026shy;pe\u0026nbsp;3 besteht z. B. zu 70\u0026nbsp;% aus Männern, \n\t\t\t\tnur 3\u0026nbsp;% der Mit\u0026shy;glieder sind unter 30\u0026nbsp;Jahre alt, \n\t\t\t\t87\u0026nbsp;% der Mit\u0026shy;glieder haben einen Hoch\u0026shy;schul\u0026shy;abschluss \n\t\t\t\tund nur 17\u0026nbsp;% sind alleinstehend.  \n\t\t\t\t\u003c/li\u003e\n\t\t\t\t\u003c/ul\u003e\n\t\t\t\t\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tWir haben aus jeder der drei Grup\u0026shy;pen jeweils eine Person \n\t\t\t\t\tzufällig für Sie ausgewählt. \n\t\t\t\t\tFalls dieser zweite Teil der Studie umgesetzt wird, \n\t\t\t\t\twird nicht Ihre eigene Entscheidung bestimmen, \n\t\t\t\t\twelche Stif\u0026shy;tung die 30\u0026nbsp;€ erhält. \n\t\t\t\t\tStattdessen wird eine Entscheidung \n\t\t\t\t\teines der drei ausgewählten Grup\u0026shy;pen\u0026shy;mit\u0026shy;glieder \n\t\t\t\t\tausschlaggebend da\u0026shy;für sein, welche Stif\u0026shy;tung das Geld erhält.  \n\t\t\t\t\u003c/p\u003e\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tSie können aber entscheiden, welcher \n\t\t\t\t\tGrup\u0026shy;pe (also Grup\u0026shy;pe 1, 2 oder 3) die Person angehören soll, \n\t\t\t\t\tdie die Präferenzen zu einer gemeinsamen \n\t\t\t\t\tEntscheidung zusammenfasst und somit festlegt, \n\t\t\t\t\twelche Stif\u0026shy;tung das Geld erhält.\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tZuletzt haben Sie entschieden, \n\t\t\t\t\twie die Präferenzen von fünf Personen \n\t\t\t\t\tin eine gemeinsame Entscheidung zusammengefasst werden sollen. \n\n\t\t\t\t\tDadurch haben Sie festgelegt, welche politische Stif\u0026shy;tung \n\t\t\t\t\teine Spende von 30\u0026nbsp;€ erhält. \n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tNun entscheiden Sie, \n\t\t\t\t\tan wen Sie diese Entscheidung delegieren möchten. \n\t\t\t\t\tDie Person welche Sie auswählen \n\t\t\t\t\twird dann die Präferenzen der \n\t\t\t\t\tdeutschen Staatsangehörigen sehen, \n\t\t\t\t\tund darauf basierend entscheiden, \n\t\t\t\t\twelche Stif\u0026shy;tung die 30\u0026nbsp;€ er\u0026shy;hal\u0026shy;ten wird. \n\t\t\t\t\t\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tSie können an Personen aus den folgenden drei Grup\u0026shy;pen delegieren:\n\t\t\t\t\u003c/p\u003e\n\n\n\t\t\t\t\u003cul\u003e\n\t\t\t\t\u003cli\u003eEine repräsentative Grup\u0026shy;pe deutscher Bürger (Grup\u0026shy;pe 1).\n\t\t\t\t\u003c/li\u003e\n\n\t\t\t\t\u003cli\u003eEine repräsentative Grup\u0026shy;pe deutscher Land- und Bundestagspo\u0026shy;li\u0026shy;tiker (Grup\u0026shy;pe 2).\n\t\t\t\t\u003c/li\u003e\n\n\t\t\t\t\u003cli\u003eEine Grup\u0026shy;pe deutscher Bürger, \n\t\t\t\tdie \u003ci\u003ekeine Po\u0026shy;li\u0026shy;tiker\u003c/i\u003e sind, \n\t\t\t\tdie aber die \u003ci\u003egleichen de\u0026shy;mo\u0026shy;gra\u0026shy;phischen Eigenschaften wie Po\u0026shy;li\u0026shy;tiker\u003c/i\u003e haben \n\t\t\t\t(Grup\u0026shy;pe 3). \n\t\t\t\tDas heißt, Grup\u0026shy;pe\u0026nbsp;3 besteht z. B. zu 70\u0026nbsp;% aus Männern, \n\t\t\t\tnur 3\u0026nbsp;% der Mit\u0026shy;glieder sind unter 30\u0026nbsp;Jahre alt, \n\t\t\t\t87\u0026nbsp;% der Mit\u0026shy;glieder haben einen Hoch\u0026shy;schul\u0026shy;abschluss \n\t\t\t\tund nur 17\u0026nbsp;% sind alleinstehend.  \n\t\t\t\t\u003c/li\u003e\n\t\t\t\t\u003c/ul\u003e\n\t\t\t\t\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tErläuterung: Die Mit\u0026shy;glieder jeder der \n\t\t\t\t\tdrei Grup\u0026shy;pen haben ihre Entscheidungen \n\t\t\t\t\tbereits gefällt. \n\t\t\t\t\tWir haben aus jeder der drei Grup¬pen \n\t\t\t\t\tjeweils eine Person zufällig für Sie ausgewählt. \n\t\t\t\t\tFalls dieser zweite Teil der Studie umgesetzt wird, \n\t\t\t\t\twird die Entscheidung dieser Person bestimmen, \n\t\t\t\t\twelche Stif\u0026shy;tung die 30\u0026nbsp;€ er\u0026shy;hal\u0026shy;ten wird.\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span_label": 1
  						}
@@ -4177,7 +4178,8 @@
  							}
  						}
  					],
- 					"randomization_group": 1
+ 					"randomization_group": 1,
+ 					"randomization_seed": 1
  				},
  				{
  					"bottom_vspacers": 1,
@@ -4228,7 +4230,8 @@
  							}
  						}
  					],
- 					"randomization_group": 1
+ 					"randomization_group": 1,
+ 					"randomization_seed": 1
  				},
  				{
  					"bottom_vspacers": 1,
@@ -4279,7 +4282,8 @@
  							}
  						}
  					],
- 					"randomization_group": 1
+ 					"randomization_group": 1,
+ 					"randomization_seed": 1
  				},
  				{
  					"bottom_vspacers": 1,
@@ -4344,7 +4348,8 @@
  							}
  						}
  					],
- 					"randomization_group": 2
+ 					"randomization_group": 2,
+ 					"randomization_seed": 1
  				},
  				{
  					"bottom_vspacers": 1,
@@ -4395,7 +4400,8 @@
  							}
  						}
  					],
- 					"randomization_group": 2
+ 					"randomization_group": 2,
+ 					"randomization_seed": 1
  				},
  				{
  					"bottom_vspacers": 1,
@@ -4446,7 +4452,8 @@
  							}
  						}
  					],
- 					"randomization_group": 2
+ 					"randomization_group": 2,
+ 					"randomization_seed": 1
  				},
  				{
  					"bottom_vspacers": 2,
@@ -4581,7 +4588,8 @@
  							}
  						}
  					],
- 					"randomization_group": 1
+ 					"randomization_group": 1,
+ 					"randomization_seed": 1
  				},
  				{
  					"bottom_vspacers": 1,
@@ -4632,7 +4640,8 @@
  							}
  						}
  					],
- 					"randomization_group": 1
+ 					"randomization_group": 1,
+ 					"randomization_seed": 1
  				},
  				{
  					"bottom_vspacers": 1,
@@ -4683,7 +4692,8 @@
  							}
  						}
  					],
- 					"randomization_group": 1
+ 					"randomization_group": 1,
+ 					"randomization_seed": 1
  				},
  				{
  					"bottom_vspacers": 1,
@@ -4748,7 +4758,8 @@
  							}
  						}
  					],
- 					"randomization_group": 2
+ 					"randomization_group": 2,
+ 					"randomization_seed": 1
  				},
  				{
  					"bottom_vspacers": 1,
@@ -4799,7 +4810,8 @@
  							}
  						}
  					],
- 					"randomization_group": 2
+ 					"randomization_group": 2,
+ 					"randomization_seed": 1
  				},
  				{
  					"bottom_vspacers": 1,
@@ -4850,7 +4862,8 @@
  							}
  						}
  					],
- 					"randomization_group": 2
+ 					"randomization_group": 2,
+ 					"randomization_seed": 1
  				},
  				{
  					"bottom_vspacers": 2,

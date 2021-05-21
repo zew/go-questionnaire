@@ -29,7 +29,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 
 	var err error
 
-	err = pat.Title(&q, true)
+	// err = pat.Title(&q, true)
+	err = pat.Title(&q, false)
 	if err != nil {
 		return nil, fmt.Errorf("Error adding title page: %v", err)
 	}

@@ -173,7 +173,7 @@ additonal `pages`, `groups` and `inputs`.
 * `button`     - submit button
 
 * `dyn-textblock` - `DynamicFunc="ResponseStatistics..."` dynamic text blocks
-* `dyn-composite` - runtime executed, dynamic fragment multiple inputs and text; `dyn-composite-scalar` is a list of inputs contained in `dyn-composite`
+* `dyn-composite` - runtime executed, dynamic fragment,   multiple inputs and text; `dyn-composite-scalar` is a list of inputs contained in `dyn-composite`
 
 Each input can have a multi-language label, -description, a multi-language suffix and a validation function.
 

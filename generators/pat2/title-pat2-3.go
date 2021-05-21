@@ -30,7 +30,7 @@ func TitlePat23(q *qst.QuestionnaireT) error {
 				<p>Dies ist eine Studie des Zentrums für Europäische Wirtschaftsforschung (ZEW) 
 				in Mannheim sowie der Universitäten in Köln, Mannheim, Münster und Zürich. 
 				
-				Ihre Teilnahme ca. 15&nbsp;Minuten in Anspruch nehmen 
+				Ihre Teilnahme wird ca. 15&nbsp;Minuten in Anspruch nehmen 
 				und Sie unterstützen damit die Forschung.
 				</p>
 

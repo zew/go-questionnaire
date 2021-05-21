@@ -9,6 +9,33 @@ import (
 	"github.com/zew/go-questionnaire/trl"
 )
 
+var groupsLong = []string{
+	"Eine repräsentative Gruppe deutscher Bürger (Gruppe %v).",
+	"Eine repräsentative Gruppe deutscher Land- und Bundestagspolitiker (Gruppe %v).",
+	`Eine Gruppe deutscher Bürger, 
+				die <i>keine Politiker</i> sind, 
+				die aber die <i>gleichen demographischen Eigenschaften wie Politiker</i> haben 
+				(Gruppe %v). 
+				Das heißt, diese Gruppe besteht z. B. zu 70&nbsp;%% aus Männern, 
+				3&nbsp;%% der Mitglieder sind unter 30&nbsp;Jahre alt, 
+				87&nbsp;%% der Mitglieder haben einen Hochschulabschluss 
+				und 17&nbsp;%% sind alleinstehend.`,
+}
+
+var groupsShort = []string{
+	"pol_gr1:Ein Politiker aus Gruppe %v <br>(deutsche Land- und Bundestagspolitiker)",
+	"cit_gr2:Ein Bürger aus Gruppe %v    <br>(repräsentativer deutscher Bürger)",
+	"cit_gr3:Ein Bürger aus Gruppe %v    <br>(deutsche Bürger mit gleichen demographischen Eigenschaften wie die Politiker)",
+}
+
+// https://cloford.com/resources/charcodes/utf-8_geometric.htm
+var groupIDs = []string{
+	// "◈",
+	"▣",
+	"◉",
+	"◬",
+}
+
 // Part1Intro renders
 func Part1Intro(q *qst.QuestionnaireT) error {
 
@@ -53,12 +80,6 @@ func Part1Intro(q *qst.QuestionnaireT) error {
 // Part1Entscheidung78TwoTimesThree - helper to Part1Entscheidung78()
 func Part1Entscheidung78TwoTimesThree(q *qst.QuestionnaireT, pageIdx int, inpName string) error {
 
-	keyVals := []string{
-		"pol_gr1:Ein Politiker aus Gruppe 1 <br>(deutsche Land- und Bundestagspolitiker)",
-		"cit_gr2:Ein Bürger aus Gruppe 2    <br>(repräsentativer deutscher Bürger)",
-		"cit_gr3:Ein Bürger aus Gruppe 3    <br>(deutsche Bürger mit gleichen demographischen Eigenschaften wie die Politiker)",
-	}
-
 	page := q.EditPage(pageIdx)
 
 	{
@@ -79,7 +100,7 @@ func Part1Entscheidung78TwoTimesThree(q *qst.QuestionnaireT, pageIdx int, inpNam
 			`}
 		}
 	}
-	for _, kv := range keyVals {
+	for idx, kv := range groupsShort {
 		{
 			gr := page.AddGroup()
 			gr.Cols = 1
@@ -89,6 +110,8 @@ func Part1Entscheidung78TwoTimesThree(q *qst.QuestionnaireT, pageIdx int, inpNam
 			sp := strings.Split(kv, ":")
 			key := sp[0]
 			val := sp[1]
+			val = fmt.Sprintf(val, groupIDs[idx])
+
 			lbl := trl.S{"de": val}
 
 			rad := gr.AddInput()
@@ -120,7 +143,7 @@ func Part1Entscheidung78TwoTimesThree(q *qst.QuestionnaireT, pageIdx int, inpNam
 			`}
 		}
 	}
-	for _, kv := range keyVals {
+	for idx, kv := range groupsShort {
 		{
 			gr := page.AddGroup()
 			gr.Cols = 1
@@ -130,6 +153,8 @@ func Part1Entscheidung78TwoTimesThree(q *qst.QuestionnaireT, pageIdx int, inpNam
 			sp := strings.Split(kv, ":")
 			key := sp[0]
 			val := sp[1]
+			val = fmt.Sprintf(val, groupIDs[idx])
+
 			lbl := trl.S{"de": val}
 
 			rad := gr.AddInput()
@@ -177,6 +202,92 @@ func Part1Entscheidung78TwoTimesThree(q *qst.QuestionnaireT, pageIdx int, inpNam
 }
 
 // Part1IntroUndEntscheidung78 module - calls Part1Entscheidung78TwoTimesThree
+func ComprehensionCheck(q *qst.QuestionnaireT) error {
+
+	{
+		page := q.AddPage()
+		page.Label = trl.S{"de": ""}
+		page.Style = css.DesktopWidthMaxForPages(page.Style, "36rem") // 60
+
+		// loop over matrix questions
+
+		//
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Desc = trl.S{
+					"de": `
+				<p>
+					<b>Frage</b>: <br>
+					Nehmen Sie an, die Praeferenzen der Gruppenmitglieder 
+					sind wie folgt gegeben:
+				</p>
+				`,
+				}
+			}
+		}
+
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 2
+			{
+				inp := gr.AddInput()
+				inp.Type = "dyn-composite"
+				inp.ColSpanControl = 1
+				inp.DynamicFunc = fmt.Sprintf("PoliticalFoundationsComprehensionCheck__0__0")
+			}
+
+		}
+
+		// gr1
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 2
+
+			// q2
+			{
+				inp := gr.AddInput()
+				inp.Type = "number"
+				inp.Name = "q_comp_a"
+				inp.MaxChars = 3
+				inp.Min = 0
+				inp.Max = 5
+				inp.ColSpan = 1
+				inp.ColSpanLabel = 5
+				inp.ColSpanControl = 2
+				// inp.Placeholder = trl.S{"de": "0-5"}
+				inp.Label = trl.S{"de": "<b>1.</b> Wieviele Leute stufen Stiftung A als mittel ein? "}
+				inp.Suffix = trl.S{"de": "[0, 1, 2, 3, 4, 5]"}
+				inp.Validator = "inRange10"
+			}
+			{
+				inp := gr.AddInput()
+				inp.Type = "text"
+				inp.Name = "q_comp_b"
+				inp.MaxChars = 3
+				inp.ColSpan = 1
+				inp.ColSpanLabel = 5
+				inp.ColSpanControl = 2
+				// inp.Placeholder = trl.S{"de": "A,B oder C"}
+				inp.Label = trl.S{"de": "<b>2.</b> Welche Stiftung wird von drei Leuten als am besten eingestuft? "}
+				inp.Suffix = trl.S{"de": "[A, B, C]"}
+				// inp.Validator = "inRange1000"
+			}
+		}
+
+		// pageIdx := len(q.Pages) - 1
+		// Part1Entscheidung78TwoTimesThree(q, pageIdx, "dec7")
+	}
+
+	return nil
+}
+
+// Part1IntroUndEntscheidung78 module - calls Part1Entscheidung78TwoTimesThree
 func Part1IntroUndEntscheidung78(q *qst.QuestionnaireT) error {
 
 	{
@@ -185,14 +296,15 @@ func Part1IntroUndEntscheidung78(q *qst.QuestionnaireT) error {
 		page.Style = css.DesktopWidthMaxForPages(page.Style, "36rem") // 60
 
 		//
-		gr := page.AddGroup()
-		gr.Cols = 1
-
 		{
-			inp := gr.AddInput()
-			inp.Type = "textblock"
-			inp.Desc = trl.S{
-				"de": `
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 1
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Desc = trl.S{
+					"de": `
 
 				<p>
 					Zuletzt haben Sie entschieden, 
@@ -206,7 +318,8 @@ func Part1IntroUndEntscheidung78(q *qst.QuestionnaireT) error {
 				<p>
 					Nun entscheiden Sie, 
 					an wen Sie diese Entscheidung delegieren möchten. 
-					Die Person welche Sie auswählen 
+					
+					Die von Ihnen ausgewählte Person 
 					wird dann die Präferenzen der 
 					deutschen Staatsangehörigen sehen, 
 					und darauf basierend entscheiden, 
@@ -215,40 +328,65 @@ func Part1IntroUndEntscheidung78(q *qst.QuestionnaireT) error {
 				</p>
 
 				<p>
-					Sie können an Personen aus den folgenden drei Gruppen delegieren:
+					Sie können Ihre Entscheidung an Personen aus den folgenden drei Gruppen delegieren:
 				</p>
 
 
+				`,
+				}
+			}
+
+		}
+
+		for idx, txt := range groupsLong {
+			gr := page.AddGroup()
+			gr.RandomizationGroup = 1
+			gr.RandomizationSeed = 1
+			gr.BottomVSpacers = 0
+
+			gr.Cols = 1
+			{
+				txt = fmt.Sprintf(txt, groupIDs[idx])
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Desc = trl.S{
+					"de": fmt.Sprintf(`
 				<ul>
-				<li>Eine repräsentative Gruppe deutscher Bürger (Gruppe 1).
-				</li>
-
-				<li>Eine repräsentative Gruppe deutscher Land- und Bundestagspolitiker (Gruppe 2).
-				</li>
-
-				<li>Eine Gruppe deutscher Bürger, 
-				die <i>keine Politiker</i> sind, 
-				die aber die <i>gleichen demographischen Eigenschaften wie Politiker</i> haben 
-				(Gruppe 3). 
-				Das heißt, Gruppe&nbsp;3 besteht z. B. zu 70&nbsp;% aus Männern, 
-				nur 3&nbsp;% der Mitglieder sind unter 30&nbsp;Jahre alt, 
-				87&nbsp;% der Mitglieder haben einen Hochschulabschluss 
-				und nur 17&nbsp;% sind alleinstehend.  
+				<li>
+				%v
 				</li>
 				</ul>
 				
+				`, txt),
+				}
+			}
+		}
+
+		//
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Desc = trl.S{
+					"de": `
 				<p>
-					Erläuterung: Die Mitglieder jeder der 
-					drei Gruppen haben ihre Entscheidungen 
+					Erläuterung: Wir haben den Mitgliedern dieser 
+					drei Gruppen 
+					die gleichen Fragen wie Ihnen gestellt
+					und sie haben ihre Entscheidungen 
 					bereits gefällt. 
-					Wir haben aus jeder der drei Grup¬pen 
+					Wir haben aus jeder der drei Gruppen 
 					jeweils eine Person zufällig für Sie ausgewählt. 
-					Falls dieser zweite Teil der Studie umgesetzt wird, 
+					Falls dieser Teil der Studie umgesetzt wird, 
 					wird die Entscheidung dieser Person bestimmen, 
 					welche Stiftung die 30&nbsp;€ erhalten wird.
 				</p>
 				`,
+				}
 			}
+
 		}
 
 	}

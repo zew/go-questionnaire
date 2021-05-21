@@ -260,13 +260,14 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 			keyVals := []string{
 				"null_euro:0 Euro", // '0' would be empty
 				"upto500:bis unter 500 Euro",
-				"upto1000:500 bis unter 1000 Euro",
-				"upto1500:1000 bis unter 1500 Euro",
-				"upto2000:1500 bis unter 2000 Euro",
-				"upto3000:2000 bis unter 3000 Euro",
-				"upto4000:3000 bis unter 4000 Euro",
-				"upto5000:4000 bis unter 5000 Euro",
-				"over5000:Mehr als 5000 Euro",
+				"upto1000:500 bis unter 1.000 Euro",
+				"upto1500:1.000 bis unter 1.500 Euro",
+				"upto2000:1.500 bis unter 2.000 Euro",
+				"upto3000:2.000 bis unter 3.000 Euro",
+				"upto4000:3.000 bis unter 4.000 Euro",
+				"upto5000:4.000 bis unter 5.000 Euro",
+				"upto10000:5.000 bis unter 10.000 Euro",
+				"over10000:Mehr als 10.000 Euro",
 			}
 
 			for _, kv := range keyVals {
@@ -315,10 +316,10 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 			"gruene:Bündnis 90/Die Grünen",
 			"fdp:FDP",
 			"afd:AfD",
-			"other:Andere",
+			// "other:Andere",
 		}
 		{
-			for idx, kv := range keyVals {
+			for _, kv := range keyVals {
 				gr := page.AddGroup()
 				gr.Cols = 8
 				// gr.Cols = 4
@@ -341,7 +342,31 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 					rad.StyleLbl = lblStyleRight
 				}
 
-				if idx == len(keyVals)-1 {
+			}
+
+		}
+
+		{
+			gr := page.AddGroup()
+			gr.Cols = 8
+			gr.BottomVSpacers = 0
+			{
+				key := "other"
+				val := "Andere"
+				lbl := trl.S{"de": val}
+
+				rad := gr.AddInput()
+				rad.Type = "radio"
+				rad.Name = "q14"
+				rad.Validator = validatorRadio
+				rad.ValueRadio = key
+				rad.ColSpan = 4
+				rad.ColSpanLabel = 4
+				rad.ColSpanControl = 1
+				rad.Label = lbl
+				rad.StyleLbl = lblStyleRight
+
+				{
 					inp := gr.AddInput()
 					inp.Type = "text"
 					inp.Name = "q14_other_text"
@@ -350,6 +375,7 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 					inp.MaxChars = 14
 					inp.Validator = "otherParty"
 				}
+
 			}
 
 		}
@@ -389,7 +415,7 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 					0, 1, // 9
 					0, 1,
 					0, 1, // 11
-					0.4, 1, // weiss nicht
+					1.2, 1, // weiss nicht
 				},
 				labelsOneToSeven4,
 				[]string{"q15"},

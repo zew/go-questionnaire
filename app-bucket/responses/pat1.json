@@ -19,7 +19,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "7676895e0ba592e5403cdc239cffdd31a19597e3c56388c8f76f51c8e54dc9c7",
+ 	"md_5": "3079720d7031aced53b0c69202f878d31941be35f68a8178a1bc4b45fe5af498",
  	"lang_codes": [
  		"de"
  	],
@@ -3572,7 +3572,7 @@
  							"name": "q13",
  							"type": "radio",
  							"label": {
- 								"de": "500 bis unter 1000 Euro"
+ 								"de": "500 bis unter 1.000 Euro"
  							},
  							"col_span": 4,
  							"col_span_label": 4,
@@ -3603,7 +3603,7 @@
  							"name": "q13",
  							"type": "radio",
  							"label": {
- 								"de": "1000 bis unter 1500 Euro"
+ 								"de": "1.000 bis unter 1.500 Euro"
  							},
  							"col_span": 4,
  							"col_span_label": 4,
@@ -3634,7 +3634,7 @@
  							"name": "q13",
  							"type": "radio",
  							"label": {
- 								"de": "1500 bis unter 2000 Euro"
+ 								"de": "1.500 bis unter 2.000 Euro"
  							},
  							"col_span": 4,
  							"col_span_label": 4,
@@ -3665,7 +3665,7 @@
  							"name": "q13",
  							"type": "radio",
  							"label": {
- 								"de": "2000 bis unter 3000 Euro"
+ 								"de": "2.000 bis unter 3.000 Euro"
  							},
  							"col_span": 4,
  							"col_span_label": 4,
@@ -3696,7 +3696,7 @@
  							"name": "q13",
  							"type": "radio",
  							"label": {
- 								"de": "3000 bis unter 4000 Euro"
+ 								"de": "3.000 bis unter 4.000 Euro"
  							},
  							"col_span": 4,
  							"col_span_label": 4,
@@ -3727,7 +3727,7 @@
  							"name": "q13",
  							"type": "radio",
  							"label": {
- 								"de": "4000 bis unter 5000 Euro"
+ 								"de": "4.000 bis unter 5.000 Euro"
  							},
  							"col_span": 4,
  							"col_span_label": 4,
@@ -3758,12 +3758,43 @@
  							"name": "q13",
  							"type": "radio",
  							"label": {
- 								"de": "Mehr als 5000 Euro"
+ 								"de": "5.000 bis unter 10.000 Euro"
  							},
  							"col_span": 4,
  							"col_span_label": 4,
  							"col_span_control": 1,
- 							"value_radio": "over5000",
+ 							"value_radio": "upto10000",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q13",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Mehr als 10.000 Euro"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"value_radio": "over10000",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -4061,10 +4092,10 @@
  							"type": "text",
  							"max_chars": 14,
  							"col_span": 4,
- 							"col_span_control": 1
+ 							"col_span_control": 1,
+ 							"validator": "otherParty"
  						}
- 					],
- 					"randomization_group": 1
+ 					]
  				},
  				{
  					"columns": 1,
@@ -4570,7 +4601,7 @@
  							"label": {
  								"de": "We\u0026shy;iß ni\u0026shy;cht"
  							},
- 							"col_span_label": 0.4,
+ 							"col_span_label": 1.2,
  							"col_span_control": 1,
  							"style": {
  								"desktop": {
@@ -4678,7 +4709,7 @@
  						{
  							"name": "q15",
  							"type": "radio",
- 							"col_span_label": 0.4,
+ 							"col_span_label": 1.2,
  							"col_span_control": 1,
  							"value_radio": "weiss_nicht"
  						}

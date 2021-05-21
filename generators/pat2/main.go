@@ -66,6 +66,11 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		return nil, fmt.Errorf("Error adding Part1Entscheidung78(): %v", err)
 	}
 
+	err = ComprehensionCheck(&q)
+	if err != nil {
+		return nil, fmt.Errorf("Error adding ComprehensionCheck(): %v", err)
+	}
+
 	err = Part2Intro(&q)
 	if err != nil {
 		return nil, fmt.Errorf("Error adding Part2Intro(): %v", err)

@@ -335,3 +335,44 @@ func PoliticalFoundationsStatic(q *QuestionnaireT, seq0to5, paramSetIdx int) (st
 
 	return rets[1], nil, err
 }
+
+var preferencesComprehensionCheck = []preferences3x3T{
+	{
+		ID: 1, // Frage 1
+		Ppls: [][]int{
+			{1, 2, 2},
+			{1, 3, 1},
+			{3, 0, 2},
+		},
+	},
+}
+
+// PoliticalFoundationsComprehensionCheck - like PoliticalFoundations() but filtering out
+// the input columns
+func PoliticalFoundationsComprehensionCheck(q *QuestionnaireT, seq0to5, paramSetIdx int) (string, []string, error) {
+
+	// ret, _, err := politicalFoundationsStaticSub(q, seq0to5, paramSetIdx)
+	ret, _, err := politicalFoundations(q, seq0to5, "q_comprehension", preferencesComprehensionCheck[0].Ppls)
+
+	completeDeletionOfCols56 := true
+	if completeDeletionOfCols56 {
+		ret = cols6to4.Replace(ret)
+		fillin := ""
+		ret = re.ReplaceAllString(ret, fillin)
+	} else {
+		fillin := "<td>&nbsp;</td>"
+		ret = re.ReplaceAllString(ret, fillin)
+	}
+
+	//
+	sep := `<div id="t01">`
+	rets := strings.Split(ret, sep)
+	if len(rets) != 2 {
+		msg := fmt.Sprintf("Splitting by <pre>%v </pre> failed: Changes in politicalFoundations()?", sep)
+		return msg, nil, fmt.Errorf(msg)
+	}
+
+	rets[1] = sep + rets[1]
+
+	return rets[1], nil, err
+}

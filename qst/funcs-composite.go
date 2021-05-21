@@ -29,11 +29,12 @@ type CompositeFuncT func(*QuestionnaireT, int, int) (string, []string, error)
 
 // CompositeFuncs is a lookup map
 var CompositeFuncs = map[string]CompositeFuncT{
-	"PoliticalFoundationsPretext": PoliticalFoundationsPretext, // belongs to pat
-	"PoliticalFoundations":        PoliticalFoundations,        //   ...
-	"PoliticalFoundationsStatic":  PoliticalFoundationsStatic,  //   ... no input
-	"TimePreferenceSelf":          TimePreferenceSelf,          // belongs to pat
-	"TimePreferenceSelfStatic":    TimePreferenceSelfStatic,    //   ... disabled
-	"GroupPreferences":            GroupPreferences,            // belongs to pat
-	"GroupPreferencesPOP3":        GroupPreferencesPOP3,        //
+	"PoliticalFoundationsPretext":            PoliticalFoundationsPretext,            // belongs to pat
+	"PoliticalFoundations":                   PoliticalFoundations,                   //   ...
+	"PoliticalFoundationsStatic":             PoliticalFoundationsStatic,             //   ... no input
+	"PoliticalFoundationsComprehensionCheck": PoliticalFoundationsComprehensionCheck, //   ... no input
+	"TimePreferenceSelf":                     TimePreferenceSelf,                     // belongs to pat
+	"TimePreferenceSelfStatic":               TimePreferenceSelfStatic,               //   ... disabled
+	"GroupPreferences":                       GroupPreferences,                       // belongs to pat
+	"GroupPreferencesPOP3":                   GroupPreferencesPOP3,                   //
 }

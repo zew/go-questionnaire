@@ -1306,6 +1306,15 @@ func (q *QuestionnaireT) ByName(n string) *inputT {
 	return nil
 }
 
+// ResponseByName implements qstif.Q
+func (q *QuestionnaireT) ResponseByName(n string) (string, error) {
+	inp := q.ByName(n)
+	if inp == nil {
+		return "input-name-not-found", fmt.Errorf("input named %v not fount", n)
+	}
+	return inp.Response, nil
+}
+
 // ParseJavaScript loads js file
 // and embeds its contents into a <script> tag;
 // so that parsing the template does not do harmful escaping;

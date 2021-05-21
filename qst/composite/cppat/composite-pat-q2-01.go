@@ -1,4 +1,4 @@
-package qst
+package cppat
 
 import (
 	"fmt"

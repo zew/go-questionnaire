@@ -1,13 +1,13 @@
-package qst
+package cppat
 
 import (
 	"fmt"
-	"log"
 	"regexp"
 	"strconv"
 	"strings"
 
 	"github.com/zew/go-questionnaire/cfg"
+	qstif "github.com/zew/go-questionnaire/qst/compositeif"
 )
 
 type preferences3x3T struct {
@@ -67,7 +67,7 @@ var populationByVersion = [][]int{
 // seq0to5 is the numbering;
 // based on userIDInt() - 4 versions / 4 permutations - via fourPermutationsOf6x3x3 + reshuffle6basedOn16;
 // see composite.go for more.
-func PoliticalFoundations(q *QuestionnaireT, seq0to5, paramSetIdx int) (string, []string, error) {
+func PoliticalFoundations(q qstif.Q, seq0to5, paramSetIdx int) (string, []string, error) {
 
 	zeroTo15 := q.Version()
 
@@ -96,7 +96,7 @@ func PoliticalFoundations(q *QuestionnaireT, seq0to5, paramSetIdx int) (string, 
 	)
 }
 
-func politicalFoundationsStaticSub(q *QuestionnaireT, seq0to1, paramSetIdx int) (string, []string, error) {
+func politicalFoundationsStaticSub(q qstif.Q, seq0to1, paramSetIdx int) (string, []string, error) {
 
 	zeroTo15 := q.Version()
 	threeDistinctPairs := populationByVersion[zeroTo15][seq0to1] - 1
@@ -111,7 +111,7 @@ func politicalFoundationsStaticSub(q *QuestionnaireT, seq0to1, paramSetIdx int) 
 	)
 }
 
-func politicalFoundations(q *QuestionnaireT, seq0to5 int, questionID string, ppls [][]int) (string, []string, error) {
+func politicalFoundations(q qstif.Q, seq0to5 int, questionID string, ppls [][]int) (string, []string, error) {
 
 	//
 	inputNames := []string{}
@@ -122,35 +122,36 @@ func politicalFoundations(q *QuestionnaireT, seq0to5 int, questionID string, ppl
 		inputNames = append(inputNames, name)
 	}
 
-	if q == nil {
-		// we are at static build time
-		return "", inputNames, nil
-	}
-
 	//
 	//
 	inputValsOptiongroup := make([]string, 3)
-	inp := q.ByName(inputNames[0])
-	if inp != nil {
-		if inp.Response != "" && inp.Response != "0" {
-			idx, _ := strconv.Atoi(inp.Response)
+	resp, err := q.ResponseByName(inputNames[0])
+	if err != nil {
+		// generators.Create() and qst.Load() for new user
+		//  are calling qst.Validate()
+		//   => dynamic fields do not exist yet
+	} else {
+		if resp != "" && resp != "0" {
+			idx, _ := strconv.Atoi(resp)
 			idx--
 			// log.Printf(" sequenceID %v - inputNames[0] %v - inp.Response %v - idx %v", questionID, inputNames[0], inp.Response, idx)
 			inputValsOptiongroup[idx] = " checked='checked' "
 		}
-	} else {
-		log.Printf("poliFoundations: did not find radio input %v", inputNames[0])
 	}
 
+	//
+	//
 	inputValsCheckbox := make([]string, 3)
 	for i := 1; i < len(inputNames); i++ {
-		inp := q.ByName(inputNames[i])
-		if inp != nil {
-			if inp.Response != "" && inp.Response != "0" {
+		resp, err := q.ResponseByName(inputNames[i])
+		if err != nil {
+			// generators.Create() and qst.Load() for new user
+			//  are calling qst.Validate()
+			//   => dynamic fields do not exist yet
+		} else {
+			if resp != "" && resp != "0" {
 				inputValsCheckbox[i-1] = " checked='checked' "
 			}
-		} else {
-			log.Printf("poliFoundations: did not find checkbox %v", inputNames[i])
 		}
 	}
 
@@ -309,7 +310,7 @@ var cols6to4 = strings.NewReplacer(
 
 // PoliticalFoundationsStatic - like PoliticalFoundations() but filtering out
 // the input columns
-func PoliticalFoundationsStatic(q *QuestionnaireT, seq0to5, paramSetIdx int) (string, []string, error) {
+func PoliticalFoundationsStatic(q qstif.Q, seq0to5, paramSetIdx int) (string, []string, error) {
 
 	ret, _, err := politicalFoundationsStaticSub(q, seq0to5, paramSetIdx)
 
@@ -349,7 +350,7 @@ var preferencesComprehensionCheck = []preferences3x3T{
 
 // PoliticalFoundationsComprehensionCheck - like PoliticalFoundations() but filtering out
 // the input columns
-func PoliticalFoundationsComprehensionCheck(q *QuestionnaireT, seq0to5, paramSetIdx int) (string, []string, error) {
+func PoliticalFoundationsComprehensionCheck(q qstif.Q, seq0to5, paramSetIdx int) (string, []string, error) {
 
 	// ret, _, err := politicalFoundationsStaticSub(q, seq0to5, paramSetIdx)
 	ret, _, err := politicalFoundations(q, seq0to5, "q_comprehension", preferencesComprehensionCheck[0].Ppls)

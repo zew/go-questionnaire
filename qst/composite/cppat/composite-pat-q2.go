@@ -1,12 +1,12 @@
-package qst
+package cppat
 
 import (
 	"fmt"
-	"log"
 	"strconv"
 	"strings"
 
 	"github.com/zew/go-questionnaire/cfg"
+	qstif "github.com/zew/go-questionnaire/qst/compositeif"
 )
 
 // TimePreferenceSelf creates
@@ -14,7 +14,7 @@ import (
 // based on userIDInt() - 8 versions - via paramSetIdx + dataQ2;
 // seq0to5 is the numbering;
 // see composite.go for more.
-func TimePreferenceSelf(q *QuestionnaireT, seq0to5, paramSetIdx int) (string, []string, error) {
+func TimePreferenceSelf(q qstif.Q, seq0to5, paramSetIdx int) (string, []string, error) {
 
 	zeroTo15 := q.Version()
 
@@ -35,7 +35,7 @@ func TimePreferenceSelf(q *QuestionnaireT, seq0to5, paramSetIdx int) (string, []
 
 // TimePreferenceSelfStatic similar to TimePreferenceSelf;
 // but inputs are disabled
-func TimePreferenceSelfStatic(q *QuestionnaireT, seq0to5, paramSetIdx int) (string, []string, error) {
+func TimePreferenceSelfStatic(q qstif.Q, seq0to5, paramSetIdx int) (string, []string, error) {
 
 	s, inputs, err := TimePreferenceSelf(
 		q,
@@ -61,7 +61,7 @@ func TimePreferenceSelfStatic(q *QuestionnaireT, seq0to5, paramSetIdx int) (stri
 	return s, inputs, err
 }
 
-func timePreferenceSelf(q *QuestionnaireT, seq0to0 int, questionID string, rowLabels []string) (string, []string, error) {
+func timePreferenceSelf(q qstif.Q, seq0to0 int, questionID string, rowLabels []string) (string, []string, error) {
 
 	//
 	inputNames := []string{}
@@ -74,42 +74,41 @@ func timePreferenceSelf(q *QuestionnaireT, seq0to0 int, questionID string, rowLa
 		inputNames = append(inputNames, name)
 	}
 
-	if q == nil {
-		// we are at static build time
-		return "", inputNames, nil
-	}
-
 	//
 	//
 	inputValsOptiongroup := make([]string, 6)
 	for row := 0; row < 3; row++ {
-		inp := q.ByName(inputNames[row])
-		if inp != nil {
-			if inp.Response != "" && inp.Response != "0" {
-				val, _ := strconv.Atoi(inp.Response) // can be 1 or 2
+		resp, err := q.ResponseByName(inputNames[row])
+		if err != nil {
+			// generators.Create() and qst.Load() for new user
+			//  are calling qst.Validate()
+			//   => dynamic fields do not exist yet
+		} else {
+			if resp != "" && resp != "0" {
+				val, _ := strconv.Atoi(resp) // can be 1 or 2
 				inputValsOptiongroup[2*row+val-1] = " checked='checked' "
 			}
-		} else {
-			log.Printf("timePref: did not find radio input %v", inputNames[row])
 		}
 	}
 
+	//
 	//
 	inputValsCheckbox := make([]string, 3)
 	for row := 0; row < 3; row++ {
-		inp := q.ByName(inputNames[row+3])
-		if inp != nil {
-			if inp.Response != "" && inp.Response != "0" {
+		resp, err := q.ResponseByName(inputNames[row+3])
+		if err != nil {
+			// generators.Create() and qst.Load() for new user
+			//  are calling qst.Validate()
+			//   => dynamic fields do not exist yet
+		} else {
+			if resp != "" && resp != "0" {
 				inputValsCheckbox[row] = " checked='checked' "
 			}
-		} else {
-			log.Printf("timePref: did not find checkbox %v", inputNames[row])
 		}
 	}
 
 	//
 	//
-
 	s := fmt.Sprintf(`
 
 

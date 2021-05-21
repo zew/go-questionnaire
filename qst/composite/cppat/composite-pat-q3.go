@@ -1,17 +1,18 @@
-package qst
+package cppat
 
 import (
 	"fmt"
 	"strings"
 
 	"github.com/zew/go-questionnaire/cfg"
+	qstif "github.com/zew/go-questionnaire/qst/compositeif"
 )
 
 // GroupPreferences creates a HTML table with three columns
 // based on userIDInt() - 8 versions - via paramSetIdx + dataQ3;
 // seq0to5 is the numbering;
 // see composite.go for more.
-func GroupPreferences(q *QuestionnaireT, seq0to5, paramSetIdx int) (string, []string, error) {
+func GroupPreferences(q qstif.Q, seq0to5, paramSetIdx int) (string, []string, error) {
 
 	zeroTo15 := q.Version()
 
@@ -34,7 +35,7 @@ func GroupPreferences(q *QuestionnaireT, seq0to5, paramSetIdx int) (string, []st
 }
 
 // GroupPreferencesPOP3 - yields TimePreference - getQ2Labels() - not getQ3Labels
-func GroupPreferencesPOP3(q *QuestionnaireT, seq0to5, paramSetIdx int) (string, []string, error) {
+func GroupPreferencesPOP3(q qstif.Q, seq0to5, paramSetIdx int) (string, []string, error) {
 
 	zeroTo15 := q.Version()
 
@@ -53,7 +54,7 @@ func GroupPreferencesPOP3(q *QuestionnaireT, seq0to5, paramSetIdx int) (string, 
 	)
 }
 
-func groupPreferences(q *QuestionnaireT, seq0to0 int, questionID string, rowLabels []string) (string, []string, error) {
+func groupPreferences(q qstif.Q, seq0to0 int, questionID string, rowLabels []string) (string, []string, error) {
 
 	//
 	inputNames := []string{}

@@ -1,5 +1,10 @@
 package qst
 
+import (
+	"github.com/zew/go-questionnaire/qst/composite/cppat"
+	"github.com/zew/go-questionnaire/qst/compositeif"
+)
+
 // CompositeFuncT inputs combine challenging HTML and
 // multiple inputs in complicated ways
 //
@@ -25,16 +30,16 @@ package qst
 //   slice of input names
 //   error
 //
-type CompositeFuncT func(*QuestionnaireT, int, int) (string, []string, error)
+type CompositeFuncT func(compositeif.Q, int, int) (string, []string, error)
 
 // CompositeFuncs is a lookup map
 var CompositeFuncs = map[string]CompositeFuncT{
-	"PoliticalFoundationsPretext":            PoliticalFoundationsPretext,            // belongs to pat
-	"PoliticalFoundations":                   PoliticalFoundations,                   //   ...
-	"PoliticalFoundationsStatic":             PoliticalFoundationsStatic,             //   ... no input
-	"PoliticalFoundationsComprehensionCheck": PoliticalFoundationsComprehensionCheck, //   ... no input
-	"TimePreferenceSelf":                     TimePreferenceSelf,                     // belongs to pat
-	"TimePreferenceSelfStatic":               TimePreferenceSelfStatic,               //   ... disabled
-	"GroupPreferences":                       GroupPreferences,                       // belongs to pat
-	"GroupPreferencesPOP3":                   GroupPreferencesPOP3,                   //
+	"PoliticalFoundationsPretext":            cppat.PoliticalFoundationsPretext,            // belongs to pat
+	"PoliticalFoundations":                   cppat.PoliticalFoundations,                   //   ...
+	"PoliticalFoundationsStatic":             cppat.PoliticalFoundationsStatic,             //   ... no input
+	"PoliticalFoundationsComprehensionCheck": cppat.PoliticalFoundationsComprehensionCheck, //   ... no input
+	"TimePreferenceSelf":                     cppat.TimePreferenceSelf,                     // belongs to pat
+	"TimePreferenceSelfStatic":               cppat.TimePreferenceSelfStatic,               //   ... disabled
+	"GroupPreferences":                       cppat.GroupPreferences,                       // belongs to pat
+	"GroupPreferencesPOP3":                   cppat.GroupPreferencesPOP3,                   //
 }

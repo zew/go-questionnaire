@@ -1,9 +1,10 @@
-package qst
+package cppat
 
 import (
 	"fmt"
 
 	"github.com/zew/go-questionnaire/cfg"
+	qstif "github.com/zew/go-questionnaire/qst/compositeif"
 )
 
 var q1Pretext = []string{
@@ -29,7 +30,7 @@ var q1Pretext = []string{
 
 // PoliticalFoundationsPretext returns one of 16
 // introductions to PoliticalFoundations question series
-func PoliticalFoundationsPretext(q *QuestionnaireT, seq0to5, paramSetIdx int) (string, []string, error) {
+func PoliticalFoundationsPretext(q qstif.Q, seq0to5, paramSetIdx int) (string, []string, error) {
 
 	zeroTo15 := q.Version()
 

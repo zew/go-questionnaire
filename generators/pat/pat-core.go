@@ -6,6 +6,7 @@ import (
 	"github.com/zew/go-questionnaire/cfg"
 	"github.com/zew/go-questionnaire/css"
 	"github.com/zew/go-questionnaire/qst"
+	"github.com/zew/go-questionnaire/qst/composite/cppat"
 	"github.com/zew/go-questionnaire/trl"
 )
 
@@ -218,7 +219,7 @@ func Part1(q *qst.QuestionnaireT) error {
 					inp.ColSpanControl = 1
 					inp.DynamicFunc = fmt.Sprintf("PoliticalFoundations__%v__%v", i, i)
 				}
-				_, inputNames, _ := qst.PoliticalFoundations(nil, i, i)
+				_, inputNames, _ := cppat.PoliticalFoundations(q, i, i)
 				for _, inpName := range inputNames {
 					inp := gr.AddInput()
 					inp.Type = "dyn-composite-scalar"
@@ -258,7 +259,7 @@ func Part1(q *qst.QuestionnaireT) error {
 					inp.ColSpanControl = 1
 					inp.DynamicFunc = fmt.Sprintf("PoliticalFoundations__%v__%v", i, i)
 				}
-				_, inputNames, _ := qst.PoliticalFoundations(nil, i, i)
+				_, inputNames, _ := cppat.PoliticalFoundations(q, i, i)
 				for _, inpName := range inputNames {
 					inp := gr.AddInput()
 					inp.Type = "dyn-composite-scalar"
@@ -454,7 +455,7 @@ func Part2(q *qst.QuestionnaireT, vE VariableElements) error {
 				inp.ColSpanControl = 1
 				inp.DynamicFunc = "TimePreferenceSelf__0__0"
 			}
-			_, inputNames, _ := qst.TimePreferenceSelf(nil, 0, 0)
+			_, inputNames, _ := cppat.TimePreferenceSelf(q, 0, 0)
 			for _, inpName := range inputNames {
 				inp := gr.AddInput()
 				inp.Type = "dyn-composite-scalar"
@@ -499,7 +500,7 @@ func Part2(q *qst.QuestionnaireT, vE VariableElements) error {
 				inp.ColSpanControl = 1
 				inp.DynamicFunc = "TimePreferenceSelf__1__1"
 			}
-			_, inputNames, _ := qst.TimePreferenceSelf(nil, 1, 1)
+			_, inputNames, _ := cppat.TimePreferenceSelf(q, 1, 1)
 			for _, inpName := range inputNames {
 				inp := gr.AddInput()
 				inp.Type = "dyn-composite-scalar"
@@ -558,7 +559,7 @@ func Part2(q *qst.QuestionnaireT, vE VariableElements) error {
 				inp.ColSpanControl = 12
 				inp.DynamicFunc = "GroupPreferences__0__0"
 			}
-			_, inputNames, _ := qst.GroupPreferences(nil, 0, 0)
+			_, inputNames, _ := cppat.GroupPreferences(q, 0, 0)
 			for _, inpName := range inputNames {
 				inp := gr.AddInput()
 				inp.Name = inpName
@@ -667,7 +668,7 @@ func Part2(q *qst.QuestionnaireT, vE VariableElements) error {
 				inp.ColSpanControl = 12
 				inp.DynamicFunc = "GroupPreferences__1__1"
 			}
-			_, inputNames, _ := qst.GroupPreferences(nil, 1, 1)
+			_, inputNames, _ := cppat.GroupPreferences(q, 1, 1)
 			for _, inpName := range inputNames {
 				inp := gr.AddInput()
 				inp.Type = "dyn-composite-scalar"

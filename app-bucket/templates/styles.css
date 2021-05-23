@@ -1654,7 +1654,6 @@ input.ib-300 {     width:300px;    }
     display:        block; /* forcing newline */
     width:          100%;
 
-    display: block;
 
 /* 
     width:   20px;
@@ -1662,6 +1661,7 @@ input.ib-300 {     width:300px;    }
     background-color: #252;
  */
 }
+
 .popup-invalid-content {
     
     position: absolute; 
@@ -1682,6 +1682,37 @@ input.ib-300 {     width:300px;    }
     min-width: 12rem;  /* of smaller, message takes three lines; we want two */ 
     max-width: 100%;
     top:      -0.25rem;
+
+}
+
+/*  */
+.popup-invalid-anchor-grid-item {
+    width:  0;
+    height: 0;
+    grid-column-start:    1;
+    grid-column-end:     -1;
+    /* border: 2px solid red; */
+
+    position: relative;  /* so top/left... do work */
+}
+
+.popup-invalid-content-grid-item {
+
+    position: absolute; 
+    z-index: 212;
+    min-width: 12rem;
+
+    background-color: var(--clr-sec-lgt2);
+    /* border: 2px solid blue; */
+
+    font-size:   88%;
+    line-height: 90%;
+    padding: 0;
+    padding-top: 0.4rem;
+    margin:  0;
+
+    bottom: -0.105rem;
+    left:    0;
 
 }
 

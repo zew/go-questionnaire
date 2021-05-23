@@ -118,12 +118,10 @@ type inputT struct {
 	DD     *DropdownT `json:"drop_down,omitempty"` // As pointer to prevent JSON cluttering
 
 	Validator string `json:"validator,omitempty"` // i.e. any key from map of validators, i.e. "must;inRange20"
-	ErrMsg    string `json:"err_msg,omitempty"`   // a key for coreTranslations, compare OnInvalid
+	ErrMsg    string `json:"err_msg,omitempty"`   // key to coreTranslations, content comes from Validator(Response), compare OnInvalid
 
-	// ResponseFloat float64  - floats and integers are stored as strings in Response
-	// also contains the Value of options and checkboxes
-	Response string `json:"response,omitempty"`
-
+	// Response - input.value - numbers are stored as strings too - also contains the value of options and checkboxes
+	Response   string `json:"response,omitempty"`
 	ValueRadio string `json:"value_radio,omitempty"` // for type = radio
 
 	/* compositFunc == 'composit' OR dynFunc == 'dynamic'

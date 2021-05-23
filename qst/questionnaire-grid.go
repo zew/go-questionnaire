@@ -155,9 +155,7 @@ func (q QuestionnaireT) GroupHTMLGridBased(pageIdx, grpIdx int) string {
 	fmt.Fprint(wCSS, gr.Style.CSS(gridContainerClass))
 
 	//
-	//
-	wInner := &strings.Builder{} // inside the container
-
+	wInner := &strings.Builder{} // inside the group grid container
 	for inpIdx, inp := range gr.Inputs {
 		if inp.Type == "dyn-composite-scalar" {
 			continue
@@ -205,12 +203,18 @@ func (q QuestionnaireT) GroupHTMLGridBased(pageIdx, grpIdx int) string {
 		wInp := &strings.Builder{} // label and control of input
 
 		if inp.ErrMsg != "" {
-			stl := fmt.Sprintf("grid-column: auto / span %v", inp.ColSpan)
-			divWrap(wInp, " error error-block-input", stl, inp.ErrMsg)
+			oldStyle := false
+			if oldStyle {
+				stl := fmt.Sprintf("grid-column: auto / span %v", inp.ColSpan)
+				divWrap(wInp, " error error-block-input", stl, inp.ErrMsg)
+			} else {
+				wErr := &strings.Builder{}
+				divWrap(wErr, " popup-invalid-content-grid-item   error   error-block-input ", "", inp.ErrMsg)
+				divWrap(wInp, " popup-invalid-anchor-grid-item", "", wErr.String())
+			}
 		}
 
 		{
-
 			if inp.ColSpanLabel > 0.2 {
 				wLbl := &strings.Builder{}
 

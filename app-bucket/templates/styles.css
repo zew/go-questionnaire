@@ -1714,6 +1714,20 @@ input.ib-300 {     width:300px;    }
     bottom: -0.105rem;
     left:    0;
 
+
+    border-radius: 0.3rem;
+    padding: 0.1rem 0.4rem;
+    padding: 0.21rem 0.4rem;
+    border: 1px solid var(--clr-err); 
+    outline-color: var(--clr-err);
+    outline-color: var(--clr-sec-lgt2);
+    outline-style: solid;
+    outline-width: 0.2rem;
+    outline-offset: 0;
+    /* background-color: var(--clr-bg-invalid); */
+    bottom: 0.2rem;
+
+
 }
 
 @media screen and (max-width: 800px) {

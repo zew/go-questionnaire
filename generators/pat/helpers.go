@@ -134,5 +134,6 @@ var labelsOneToSeven4 = []trl.S{
 	{"de": ""}, // 9
 	{"de": ""},
 	{"de": "Re&shy;cht&shy;s"}, // 11
-	{"de": "We&shy;iß ni&shy;cht"},
+	// {"de": "We&shy;iß ni&shy;cht"},
+	{"de": "Weiß<br>nicht"},
 }

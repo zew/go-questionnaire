@@ -19,7 +19,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "efa91c25f698887866b573d7a85e102b34f6182dd9715b1427e021c81a7cc128",
+ 	"md_5": "05c33d99f3a3605d00ac5b69f2947aba5649e27ed2e1e89c6d28ff993b191870",
  	"lang_codes": [
  		"de"
  	],
@@ -2270,7 +2270,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "We\u0026shy;iß ni\u0026shy;cht"
+ 								"de": "Weiß\u003cbr\u003enicht"
  							},
  							"col_span_label": 1.2,
  							"col_span_control": 1,

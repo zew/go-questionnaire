@@ -567,3 +567,25 @@ university logos
     }
 }
 
+
+.pg02-grp11-inp12-ctl  span{
+    text-orientation: mixed;
+    /* text-orientation: upright; */
+    writing-mode: vertical-rl;
+
+    position: relative;
+    line-height: 80%;
+    left:       -0.22rem;
+    font-size:   90%;
+}
+@media screen and (max-width: 800px) {
+.pg02-grp11-inp12-ctl  span{
+    left: 0.12rem;
+    top:  0.6rem;
+}
+}
+
+span:contains("contains was deprecated") {
+    
+}
+

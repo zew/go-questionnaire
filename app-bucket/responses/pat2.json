@@ -19,7 +19,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "8fa8704c7d65675685a7f905ee43331d45ec8bd3de4dd984893b4cc8793f09b3",
+ 	"md_5": "4110a064d0409e2739a4e4e29ab0de88260744d3cef7e85a6c3285bbc63e9ce4",
  	"lang_codes": [
  		"de"
  	],
@@ -4312,6 +4312,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 8,
+ 							"validator": "must",
  							"value_radio": "pol_gr1",
  							"style_label": {
  								"desktop": {
@@ -4364,6 +4365,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 8,
+ 							"validator": "must",
  							"value_radio": "cit_gr2",
  							"style_label": {
  								"desktop": {
@@ -4416,6 +4418,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 8,
+ 							"validator": "must",
  							"value_radio": "cit_gr3",
  							"style_label": {
  								"desktop": {
@@ -4482,6 +4485,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 8,
+ 							"validator": "must",
  							"value_radio": "pol_gr1",
  							"style_label": {
  								"desktop": {
@@ -4534,6 +4538,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 8,
+ 							"validator": "must",
  							"value_radio": "cit_gr2",
  							"style_label": {
  								"desktop": {
@@ -4586,6 +4591,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 8,
+ 							"validator": "must",
  							"value_radio": "cit_gr3",
  							"style_label": {
  								"desktop": {
@@ -4726,6 +4732,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 8,
+ 							"validator": "must",
  							"value_radio": "pol_gr1",
  							"style_label": {
  								"desktop": {
@@ -4778,6 +4785,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 8,
+ 							"validator": "must",
  							"value_radio": "cit_gr2",
  							"style_label": {
  								"desktop": {
@@ -4830,6 +4838,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 8,
+ 							"validator": "must",
  							"value_radio": "cit_gr3",
  							"style_label": {
  								"desktop": {
@@ -4896,6 +4905,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 8,
+ 							"validator": "must",
  							"value_radio": "pol_gr1",
  							"style_label": {
  								"desktop": {
@@ -4948,6 +4958,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 8,
+ 							"validator": "must",
  							"value_radio": "cit_gr2",
  							"style_label": {
  								"desktop": {
@@ -5000,6 +5011,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 8,
+ 							"validator": "must",
  							"value_radio": "cit_gr3",
  							"style_label": {
  								"desktop": {
@@ -5327,7 +5339,7 @@
  							"col_span": 8,
  							"col_span_label": 1,
  							"col_span_control": 8,
- 							"validator": "inRange10",
+ 							"validator": "part2_qx_q123",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -5457,7 +5469,7 @@
  							"col_span": 8,
  							"col_span_label": 1,
  							"col_span_control": 8,
- 							"validator": "inRange10",
+ 							"validator": "part2_qx_q123",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -5587,7 +5599,7 @@
  							"col_span": 8,
  							"col_span_label": 1,
  							"col_span_control": 8,
- 							"validator": "inRange10",
+ 							"validator": "part2_qx_q123",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -5694,11 +5706,7 @@
  					"randomization_group": 1,
  					"randomization_seed": 1
  				}
- 			],
- 			"validation_func_name": "pat2-add-to-10",
- 			"validation_func_msg": {
- 				"de": "Wollen Sie wirklich weiterfahren, ohne dass sich Ihre Eintraege auf 10 summieren?"
- 			}
+ 			]
  		},
  		{
  			"label": {
@@ -5777,7 +5785,7 @@
  							"col_span": 8,
  							"col_span_label": 1,
  							"col_span_control": 8,
- 							"validator": "inRange10",
+ 							"validator": "part2_qx_q123",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -5907,7 +5915,7 @@
  							"col_span": 8,
  							"col_span_label": 1,
  							"col_span_control": 8,
- 							"validator": "inRange10",
+ 							"validator": "part2_qx_q123",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -6037,7 +6045,7 @@
  							"col_span": 8,
  							"col_span_label": 1,
  							"col_span_control": 8,
- 							"validator": "inRange10",
+ 							"validator": "part2_qx_q123",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -6196,11 +6204,7 @@
  						}
  					]
  				}
- 			],
- 			"validation_func_name": "pat2-add-to-10",
- 			"validation_func_msg": {
- 				"de": "Wollen Sie wirklich weiterfahren, ohne dass sich Ihre Eintraege auf 10 summieren?"
- 			}
+ 			]
  		},
  		{
  			"label": {

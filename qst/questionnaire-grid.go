@@ -3,7 +3,6 @@ package qst
 import (
 	"fmt"
 	"io"
-	"log"
 	"math"
 	"sort"
 	"strings"
@@ -204,7 +203,7 @@ func (q QuestionnaireT) GroupHTMLGridBased(pageIdx, grpIdx int) string {
 		wInp := &strings.Builder{} // label and control of input
 
 		if inp.ErrMsg != "" {
-			log.Printf("Input %v with value %v has server validation error %v", inp.Name, inp.Response, inp.ErrMsg)
+			// log.Printf("Input %v with value %v has server validation error %v", inp.Name, inp.Response, inp.ErrMsg)
 			oldStyle := false
 			if oldStyle {
 				stl := fmt.Sprintf("grid-column: auto / span %v", inp.ColSpan)

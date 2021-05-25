@@ -165,6 +165,7 @@ func part2Entscheidung78TwoTimesThree(q *qst.QuestionnaireT, pageIdx int, inpNam
 			rad.Label = lbl
 			rad.ControlFirst()
 			rad.ControlTop()
+			rad.Validator = "must"
 		}
 	}
 
@@ -209,6 +210,7 @@ func part2Entscheidung78TwoTimesThree(q *qst.QuestionnaireT, pageIdx int, inpNam
 
 			rad.ControlFirst()
 			rad.ControlTop()
+			rad.Validator = "must"
 		}
 	}
 
@@ -676,8 +678,8 @@ func Part3Block12(q *qst.QuestionnaireT, blockStart int) error {
 	page.Label = trl.S{"de": ""}
 	page.Style = css.DesktopWidthMaxForPages(page.Style, "36rem") // 60
 
-	page.ValidationFuncName = "pat2-add-to-10"
-	page.ValidationFuncMsg = trl.S{"de": "Wollen Sie wirklich weiterfahren, ohne dass sich Ihre Eintraege auf 10 summieren?"}
+	// page.ValidationFuncName = "pat2-add-to-10"
+	// page.ValidationFuncMsg = trl.S{"de": "Wollen Sie wirklich weiterfahren, ohne dass sich Ihre Eintraege auf 10 summieren?"}
 
 	//
 	//
@@ -760,6 +762,10 @@ func Part3Block12(q *qst.QuestionnaireT, blockStart int) error {
 			inp.Label = trl.S{"de": fmt.Sprintf("von 10 wählten Stiftung&nbsp;%v", lbls[i2])}
 			inp.Validator = "inRange10"
 			inp.ControlFirst()
+
+			if i2 == 0 {
+				inp.Validator = "part2_qx_q123"
+			}
 		}
 		{
 			inp := gr.AddInput()

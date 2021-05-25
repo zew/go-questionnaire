@@ -12,15 +12,15 @@ import (
 // server side validation for an inputT
 //
 // Compare CompositeFuncT, dynFuncT
-type validatorT func(*QuestionnaireT, string) error
+type validatorT func(*QuestionnaireT, *inputT) error
 
 var validators = map[string]validatorT{}
 
 func init() {
 
-	functionBase := func(q *QuestionnaireT, arg string, limit float64) error {
+	functionBase := func(q *QuestionnaireT, inp *inputT, limit float64) error {
 
-		arg = strings.TrimSpace(arg)
+		arg := strings.TrimSpace(inp.Response)
 
 		// non-empty is in separate validator 'must'
 		if arg == "" {
@@ -62,35 +62,66 @@ func init() {
 		return nil
 	}
 
-	validators["inRange10"] = func(q *QuestionnaireT, arg string) error { return functionBase(q, arg, 10) }
-	validators["inRange20"] = func(q *QuestionnaireT, arg string) error { return functionBase(q, arg, 20) }
-	validators["inRange100"] = func(q *QuestionnaireT, arg string) error { return functionBase(q, arg, 100) }
-	validators["inRange1000"] = func(q *QuestionnaireT, arg string) error { return functionBase(q, arg, 1000) }
-	validators["inRange10000"] = func(q *QuestionnaireT, arg string) error { return functionBase(q, arg, 10*1000) }
-	validators["inRange50000"] = func(q *QuestionnaireT, arg string) error { return functionBase(q, arg, 50*1000) }
-	validators["inRange1Mio"] = func(q *QuestionnaireT, arg string) error { return functionBase(q, arg, 1*1000*1000) }
+	validators["inRange10"] = func(q *QuestionnaireT, inp *inputT) error { return functionBase(q, inp, 10) }
+	validators["inRange20"] = func(q *QuestionnaireT, inp *inputT) error { return functionBase(q, inp, 20) }
+	validators["inRange100"] = func(q *QuestionnaireT, inp *inputT) error { return functionBase(q, inp, 100) }
+	validators["inRange1000"] = func(q *QuestionnaireT, inp *inputT) error { return functionBase(q, inp, 1000) }
+	validators["inRange10000"] = func(q *QuestionnaireT, inp *inputT) error { return functionBase(q, inp, 10*1000) }
+	validators["inRange50000"] = func(q *QuestionnaireT, inp *inputT) error { return functionBase(q, inp, 50*1000) }
+	validators["inRange1Mio"] = func(q *QuestionnaireT, inp *inputT) error { return functionBase(q, inp, 1*1000*1000) }
 
-	validators["mustRadioGroup"] = func(q *QuestionnaireT, arg string) error {
+	validators["mustRadioGroup"] = func(q *QuestionnaireT, inp *inputT) error {
+		arg := strings.TrimSpace(inp.Response)
 		if arg == "0" || arg == "" {
 			return fmt.Errorf(cfg.Get().Mp["must_one_option"].Tr(q.LangCode))
 		}
 		return nil
 	}
-	validators["must"] = func(q *QuestionnaireT, arg string) error {
-		if strings.TrimSpace(arg) == "" {
+	validators["must"] = func(q *QuestionnaireT, inp *inputT) error {
+		arg := strings.TrimSpace(inp.Response)
+		if arg == "" {
 			return fmt.Errorf(cfg.Get().Mp["must_not_empty"].Tr(q.LangCode))
 		}
 		return nil
 	}
-	validators["otherParty"] = func(q *QuestionnaireT, arg string) error {
-		inp := q.ByName("q14")
-		if inp == nil {
+	validators["otherParty"] = func(q *QuestionnaireT, inp *inputT) error {
+
+		arg := strings.TrimSpace(inp.Response)
+
+		inpMaster := q.ByName("q14")
+		if inpMaster == nil {
 			return nil
 		}
+
 		// q14 == "other"?
-		if inp.Response == "other" && arg == "" {
+		if inpMaster.Response == "other" && arg == "" {
 			return fmt.Errorf("Bitte andere Partei eintragen.")
 		}
+		return nil
+	}
+
+	validators["part2_qx_q123"] = func(q *QuestionnaireT, inp *inputT) error {
+
+		core := strings.TrimPrefix(inp.Name, "part2_q")
+		core = core[0:1]
+
+		neighbors := []string{}
+		for i := 1; i < 4; i++ {
+			neighbors = append(neighbors, fmt.Sprintf("part2_q%v_q%v", core, i))
+		}
+
+		sum := 0
+
+		for _, neighbor := range neighbors {
+			nb := q.ByName(neighbor)
+			summand, _ := strconv.Atoi(nb.Response)
+			sum += summand
+		}
+
+		if sum != 10 {
+			return fmt.Errorf("Summe muss 10 ergeben.")
+		}
+
 		return nil
 	}
 
@@ -144,8 +175,8 @@ func (q *QuestionnaireT) ValidateResponseData(pageNum int, langCode string) (las
 					valiKeys := strings.Split(inp.Validator, ";")
 					for _, valiKey := range valiKeys {
 						if valiFunc, ok := validators[strings.TrimSpace(valiKey)]; ok {
-							err := valiFunc(q, inp.Response)
-							log.Printf("Validating %22s  -%s-  %v", inp.Name, inp.Response, err)
+							err := valiFunc(q, inp)
+							// log.Printf("Validating %22s  -%s-  %v", inp.Name, inp.Response, err)
 							if err != nil {
 								last = err
 								q.Pages[i1].Groups[i2].Inputs[i3].ErrMsg = err.Error()

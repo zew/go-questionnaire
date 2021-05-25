@@ -137,17 +137,19 @@ func (q *QuestionnaireT) ValidateResponseData(pageNum int, langCode string) (las
 
 				// Validator function exists
 				if inp.Validator != "" {
+
+					// Reset previous errors
+					q.Pages[i1].Groups[i2].Inputs[i3].ErrMsg = ""
+
 					valiKeys := strings.Split(inp.Validator, ";")
 					for _, valiKey := range valiKeys {
 						if valiFunc, ok := validators[strings.TrimSpace(valiKey)]; ok {
 							err := valiFunc(q, inp.Response)
-							// log.Printf("Validating %22s  -%s-  %v", inp.Name, inp.Response, err)
+							log.Printf("Validating %22s  -%s-  %v", inp.Name, inp.Response, err)
 							if err != nil {
 								last = err
 								q.Pages[i1].Groups[i2].Inputs[i3].ErrMsg = err.Error()
-							} else {
-								// Reset previous errors
-								q.Pages[i1].Groups[i2].Inputs[i3].ErrMsg = ""
+								// } else {
 							}
 						}
 					}

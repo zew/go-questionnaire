@@ -97,9 +97,14 @@ func Title(q *qst.QuestionnaireT, isPOP bool) error {
 
 //
 // Part1Entscheidung1bis6 renders
-func Part1Entscheidung1bis6(q *qst.QuestionnaireT) error {
+func Part1Entscheidung1bis6(q *qst.QuestionnaireT, vE VariableElements) error {
 
 	// erster Teil
+
+	validator := ""
+	if vE.AllMandatory {
+		validator = "must"
+	}
 
 	// page 1
 	{
@@ -224,6 +229,7 @@ func Part1Entscheidung1bis6(q *qst.QuestionnaireT) error {
 					inp := gr.AddInput()
 					inp.Type = "dyn-composite-scalar"
 					inp.Name = inpName
+					inp.Validator = validator
 				}
 
 			}
@@ -264,6 +270,7 @@ func Part1Entscheidung1bis6(q *qst.QuestionnaireT) error {
 					inp := gr.AddInput()
 					inp.Type = "dyn-composite-scalar"
 					inp.Name = inpName
+					inp.Validator = validator
 				}
 			}
 		}
@@ -285,6 +292,11 @@ func Part1Frage1(q *qst.QuestionnaireT, vE VariableElements) error {
 
 		page.ValidationFuncName = "pat-best-gt-worst"
 		page.ValidationFuncMsg = trl.S{"de": "Denken Sie nicht, dass die Zahlungsbereitschaft bei besseren Stiftungen höher sein sollte, also beste Stiftung > mittlere > schlechteste? Wirklich so fortfahren?"}
+
+		addtlValidator := ""
+		if vE.AllMandatory {
+			addtlValidator = ";must"
+		}
 
 		frage := "<b>Frage:</b>"
 		if vE.NumberingQuestions == 1 {
@@ -344,7 +356,7 @@ func Part1Frage1(q *qst.QuestionnaireT, vE VariableElements) error {
 				inp.ColSpanControl = 2
 				inp.Label = trl.S{"de": "Beste Stiftung"}
 				inp.Suffix = trl.S{"de": "€"}
-				inp.Validator = "inRange1000"
+				inp.Validator = "inRange1000" + addtlValidator
 			}
 			{
 				inp := gr.AddInput()
@@ -358,7 +370,7 @@ func Part1Frage1(q *qst.QuestionnaireT, vE VariableElements) error {
 				inp.ColSpanControl = 2
 				inp.Label = trl.S{"de": "Mittlere Stiftung"}
 				inp.Suffix = trl.S{"de": "€"}
-				inp.Validator = "inRange1000"
+				inp.Validator = "inRange1000" + addtlValidator
 			}
 			{
 				inp := gr.AddInput()
@@ -372,7 +384,7 @@ func Part1Frage1(q *qst.QuestionnaireT, vE VariableElements) error {
 				inp.ColSpanControl = 2
 				inp.Label = trl.S{"de": "Schlechteste Stiftung"}
 				inp.Suffix = trl.S{"de": "€"}
-				inp.Validator = "inRange1000"
+				inp.Validator = "inRange1000" + addtlValidator
 			}
 		}
 
@@ -384,7 +396,13 @@ func Part1Frage1(q *qst.QuestionnaireT, vE VariableElements) error {
 //
 // Part2 renders
 func Part2(q *qst.QuestionnaireT, vE VariableElements) error {
+
 	// zweiter Teil
+
+	validator := ""
+	if vE.AllMandatory {
+		validator = "must"
+	}
 
 	// page 5
 	{
@@ -465,6 +483,7 @@ func Part2(q *qst.QuestionnaireT, vE VariableElements) error {
 				inp := gr.AddInput()
 				inp.Type = "dyn-composite-scalar"
 				inp.Name = inpName
+				inp.Validator = validator
 			}
 		}
 
@@ -510,6 +529,7 @@ func Part2(q *qst.QuestionnaireT, vE VariableElements) error {
 				inp := gr.AddInput()
 				inp.Type = "dyn-composite-scalar"
 				inp.Name = inpName
+				inp.Validator = validator
 			}
 		}
 
@@ -851,7 +871,7 @@ func Core(q *qst.QuestionnaireT) error {
 
 	var err error
 
-	err = Part1Entscheidung1bis6(q)
+	err = Part1Entscheidung1bis6(q, VariableElements{})
 	if err != nil {
 		return fmt.Errorf("Error adding Part1(): %v", err)
 	}

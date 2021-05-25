@@ -107,6 +107,18 @@ func timePreferenceSelf(q qstif.Q, seq0to0 int, questionID string, rowLabels []s
 		}
 	}
 
+	consolidatedErrMsg := ""
+	for _, inpName := range inputNames {
+		em, err := q.ErrByName(inpName)
+		if err == nil && em != "" {
+			consolidatedErrMsg = fmt.Sprintf(`
+			<div class="    error   error-block-input " style="">
+			  %v
+			</div>
+			`, em)
+		}
+	}
+
 	//
 	//
 	s := fmt.Sprintf(`
@@ -115,6 +127,8 @@ func timePreferenceSelf(q qstif.Q, seq0to0 int, questionID string, rowLabels []s
 <div id="t02">
 
 <div class="vspacer-08"> &nbsp; </div>
+
+%v
 
 <table>
     <tr>
@@ -173,6 +187,7 @@ func timePreferenceSelf(q qstif.Q, seq0to0 int, questionID string, rowLabels []s
 
 	`,
 		// seq0to0+1,
+		consolidatedErrMsg,
 		rowLabels[0],
 		inputValsOptiongroup[0], inputValsOptiongroup[1], inputValsCheckbox[0],
 		rowLabels[1],

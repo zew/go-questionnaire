@@ -51,13 +51,13 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	}
 
 	// core
-	err = pat.Part1Entscheidung1bis6(&q)
+	err = pat.Part1Entscheidung1bis6(&q, pat.VariableElements{AllMandatory: true})
 	if err != nil {
 		return nil, fmt.Errorf("Error adding Part1(): %v", err)
 	}
 
 	// core
-	err = pat.Part1Frage1(&q, pat.VariableElements{NumberingQuestions: 0})
+	err = pat.Part1Frage1(&q, pat.VariableElements{NumberingQuestions: 0, AllMandatory: true})
 	if err != nil {
 		return nil, fmt.Errorf("Error adding Part1Frage1(): %v", err)
 	}

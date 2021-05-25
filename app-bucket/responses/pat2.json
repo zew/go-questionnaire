@@ -19,7 +19,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "0289f994817e47890ed7335e8d216ee1cf3c15a9e58a836a5601de713efc5cc0",
+ 	"md_5": "8fa8704c7d65675685a7f905ee43331d45ec8bd3de4dd984893b4cc8793f09b3",
  	"lang_codes": [
  		"de"
  	],
@@ -3806,19 +3806,23 @@
  						},
  						{
  							"name": "q1_seq1_r",
- 							"type": "dyn-composite-scalar"
+ 							"type": "dyn-composite-scalar",
+ 							"validator": "must"
  						},
  						{
  							"name": "q1_seq1_r1",
- 							"type": "dyn-composite-scalar"
+ 							"type": "dyn-composite-scalar",
+ 							"validator": "must"
  						},
  						{
  							"name": "q1_seq1_r2",
- 							"type": "dyn-composite-scalar"
+ 							"type": "dyn-composite-scalar",
+ 							"validator": "must"
  						},
  						{
  							"name": "q1_seq1_r3",
- 							"type": "dyn-composite-scalar"
+ 							"type": "dyn-composite-scalar",
+ 							"validator": "must"
  						}
  					]
  				},
@@ -3833,19 +3837,23 @@
  						},
  						{
  							"name": "q1_seq2_r",
- 							"type": "dyn-composite-scalar"
+ 							"type": "dyn-composite-scalar",
+ 							"validator": "must"
  						},
  						{
  							"name": "q1_seq2_r1",
- 							"type": "dyn-composite-scalar"
+ 							"type": "dyn-composite-scalar",
+ 							"validator": "must"
  						},
  						{
  							"name": "q1_seq2_r2",
- 							"type": "dyn-composite-scalar"
+ 							"type": "dyn-composite-scalar",
+ 							"validator": "must"
  						},
  						{
  							"name": "q1_seq2_r3",
- 							"type": "dyn-composite-scalar"
+ 							"type": "dyn-composite-scalar",
+ 							"validator": "must"
  						}
  					]
  				},
@@ -3860,19 +3868,23 @@
  						},
  						{
  							"name": "q1_seq3_r",
- 							"type": "dyn-composite-scalar"
+ 							"type": "dyn-composite-scalar",
+ 							"validator": "must"
  						},
  						{
  							"name": "q1_seq3_r1",
- 							"type": "dyn-composite-scalar"
+ 							"type": "dyn-composite-scalar",
+ 							"validator": "must"
  						},
  						{
  							"name": "q1_seq3_r2",
- 							"type": "dyn-composite-scalar"
+ 							"type": "dyn-composite-scalar",
+ 							"validator": "must"
  						},
  						{
  							"name": "q1_seq3_r3",
- 							"type": "dyn-composite-scalar"
+ 							"type": "dyn-composite-scalar",
+ 							"validator": "must"
  						}
  					]
  				}
@@ -3925,19 +3937,23 @@
  						},
  						{
  							"name": "q1_seq4_r",
- 							"type": "dyn-composite-scalar"
+ 							"type": "dyn-composite-scalar",
+ 							"validator": "must"
  						},
  						{
  							"name": "q1_seq4_r1",
- 							"type": "dyn-composite-scalar"
+ 							"type": "dyn-composite-scalar",
+ 							"validator": "must"
  						},
  						{
  							"name": "q1_seq4_r2",
- 							"type": "dyn-composite-scalar"
+ 							"type": "dyn-composite-scalar",
+ 							"validator": "must"
  						},
  						{
  							"name": "q1_seq4_r3",
- 							"type": "dyn-composite-scalar"
+ 							"type": "dyn-composite-scalar",
+ 							"validator": "must"
  						}
  					]
  				},
@@ -3952,19 +3968,23 @@
  						},
  						{
  							"name": "q1_seq5_r",
- 							"type": "dyn-composite-scalar"
+ 							"type": "dyn-composite-scalar",
+ 							"validator": "must"
  						},
  						{
  							"name": "q1_seq5_r1",
- 							"type": "dyn-composite-scalar"
+ 							"type": "dyn-composite-scalar",
+ 							"validator": "must"
  						},
  						{
  							"name": "q1_seq5_r2",
- 							"type": "dyn-composite-scalar"
+ 							"type": "dyn-composite-scalar",
+ 							"validator": "must"
  						},
  						{
  							"name": "q1_seq5_r3",
- 							"type": "dyn-composite-scalar"
+ 							"type": "dyn-composite-scalar",
+ 							"validator": "must"
  						}
  					]
  				},
@@ -3979,19 +3999,23 @@
  						},
  						{
  							"name": "q1_seq6_r",
- 							"type": "dyn-composite-scalar"
+ 							"type": "dyn-composite-scalar",
+ 							"validator": "must"
  						},
  						{
  							"name": "q1_seq6_r1",
- 							"type": "dyn-composite-scalar"
+ 							"type": "dyn-composite-scalar",
+ 							"validator": "must"
  						},
  						{
  							"name": "q1_seq6_r2",
- 							"type": "dyn-composite-scalar"
+ 							"type": "dyn-composite-scalar",
+ 							"validator": "must"
  						},
  						{
  							"name": "q1_seq6_r3",
- 							"type": "dyn-composite-scalar"
+ 							"type": "dyn-composite-scalar",
+ 							"validator": "must"
  						}
  					]
  				}
@@ -4064,7 +4088,7 @@
  							"col_span": 5,
  							"col_span_label": 3,
  							"col_span_control": 2,
- 							"validator": "inRange1000"
+ 							"validator": "inRange1000;must"
  						},
  						{
  							"name": "q2_b",
@@ -4081,7 +4105,7 @@
  							"col_span": 5,
  							"col_span_label": 3,
  							"col_span_control": 2,
- 							"validator": "inRange1000"
+ 							"validator": "inRange1000;must"
  						},
  						{
  							"name": "q2_c",
@@ -4098,7 +4122,7 @@
  							"col_span": 5,
  							"col_span_label": 3,
  							"col_span_control": 2,
- 							"validator": "inRange1000"
+ 							"validator": "inRange1000;must"
  						}
  					]
  				}

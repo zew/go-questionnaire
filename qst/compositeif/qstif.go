@@ -8,4 +8,5 @@ type Q interface {
 	UserIDInt() int
 	Version() int
 	ResponseByName(n string) (string, error)
+	ErrByName(n string) (string, error)
 }

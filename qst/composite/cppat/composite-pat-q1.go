@@ -174,12 +174,26 @@ func politicalFoundations(q qstif.Q, seq0to5 int, questionID string, ppls [][]in
 		explain, _, _ = PoliticalFoundationsPretext(q, seq0to5, 0)
 	}
 
+	consolidatedErrMsg := ""
+	for _, inpName := range inputNames {
+		em, err := q.ErrByName(inpName)
+		if err == nil && em != "" {
+			consolidatedErrMsg = fmt.Sprintf(`
+			<div class="    error   error-block-input " style="">
+			  %v
+			</div>
+			`, em)
+		}
+	}
+
 	s := fmt.Sprintf(`
 
 	
 <p>
 	<b>Entscheidung %v.</b>
 </p>
+
+%v
 
 <p>
 	Welche Stiftung soll die 30&nbsp;€ bei folgender Präferenzkonstellation erhalten?<br>
@@ -272,6 +286,7 @@ func politicalFoundations(q qstif.Q, seq0to5 int, questionID string, ppls [][]in
 </div>
 	`,
 		seq0to5+1,
+		consolidatedErrMsg,
 		explain,
 		imgs[ppls[0][0]], imgs[ppls[0][1]], imgs[ppls[0][2]],
 		inputValsOptiongroup[0], inputValsCheckbox[0],

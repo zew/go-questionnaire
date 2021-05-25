@@ -437,6 +437,12 @@ type QuestionnaireT struct {
 	// 		* groupT.RandomizationID
 	ShufflingsMax int `json:"shufflings_max,omitempty"`
 
+	// PreventSkipForward - skipping back always possible,
+	// skipping forward is preventable
+	PreventSkipForward bool `json:"allow_skip_forward"`
+	// PostponeNavigationButtons - how many seconds delay, before the navigation appears
+	PostponeNavigationButtons int `json:"postpone_navigation_buttons,omitempty"`
+
 	// Previously we had SurveyT.Variant; now all questionnaire variations
 	// should be captured with a distinct VersionEffective.
 	// Notice the difference to tpl.SiteCore();
@@ -876,6 +882,24 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 	}
 
 	w := &strings.Builder{}
+
+	//
+	//
+	if q.PostponeNavigationButtons > 0 {
+
+		s := `
+		<style>
+			button[type="submit"], 
+			button[accesskey="n"] 
+			{
+				animation:  %vms ease-in-out 1ms 1 nameAppear;
+			}
+		</style>
+		`
+
+		fmt.Fprintf(w, s, 1000*q.PostponeNavigationButtons)
+
+	}
 
 	page.Style = css.PageMarginsAuto(page.Style)
 	pageClass := fmt.Sprintf("pg%02v", pageIdx)

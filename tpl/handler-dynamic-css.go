@@ -52,7 +52,12 @@ func ServeDynCSS(w http.ResponseWriter, r *http.Request) {
 		effectiveSiteVars = cfg.Get().CSSVars // defaults
 	}
 
-	err = t.ExecuteTemplate(w, cssFileName, effectiveSiteVars)
+	data := map[string]interface{}{}
+	// data["cfg"] = cfg.Get()
+	data["CSSSite"] = effectiveSiteVars // unused; CSS vars are set in layout.html
+	data["SiteName"] = siteName         // pat1-4 => pat
+
+	err = t.ExecuteTemplate(w, cssFileName, data)
 	if err != nil {
 		log.Printf("Error executing CSS template %v site %q: %v", cssFileName, siteName, err)
 	}

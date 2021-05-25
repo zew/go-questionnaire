@@ -81,7 +81,6 @@ type ConfigT struct {
 	CSSVars     cssVars            `json:"css_vars"`      // global CSS variables - no localization
 	CSSVarsSite map[string]cssVars `json:"css_vars_site"` // [site|Survey.Type] specific CSS - overwrites/appends global css_vars - no localization
 
-	AllowSkipForward  bool                         `json:"allow_skip_forward"`            // AllowSkipForward- skipping back always allowed, skipping forward is configurable
 	AnonymousSurveyID string                       `json:"anonymous_survey_id,omitempty"` // AnonymousSurveyID - anonymous login - redirect / forward url
 	Profiles          map[string]map[string]string `json:"profiles"`                      // Profiles are sets of attributes, selected by the `p` parameter at login, containing key-values which are copied into the logged in user's attributes
 	DirectLoginRanges []directLoginRangeT          `json:"direct_login_ranges,omitempty"` // DirectLoginRanges - user id to language preselection for direct login

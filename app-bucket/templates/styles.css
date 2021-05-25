@@ -1316,7 +1316,7 @@ ul.mnu-3rd-lvl {
     opacity:     0.0;
 
     transition:
-        transform 180ms ease-in-out,
+        transform   180ms ease-in-out,
         opacity     180ms ease-in-out
     ;
 
@@ -1685,7 +1685,9 @@ input.ib-300 {     width:300px;    }
 
 }
 
-/*  */
+/*
+    server side validation styles
+*/
 .popup-invalid-anchor-grid-item {
     width:  0;
     height: 0;
@@ -1699,34 +1701,29 @@ input.ib-300 {     width:300px;    }
 .popup-invalid-content-grid-item {
 
     position: absolute; 
-    z-index: 212;
+    z-index:   212;
     min-width: 12rem;
 
+    /* background-color: var(--clr-bg-invalid); */
     background-color: var(--clr-sec-lgt2);
-    /* border: 2px solid blue; */
 
-    font-size:   88%;
-    line-height: 90%;
-    padding: 0;
-    padding-top: 0.4rem;
-    margin:  0;
-
-    bottom: -0.105rem;
+    bottom:  0.2rem;
     left:    0;
 
-
-    border-radius: 0.3rem;
-    padding: 0.1rem 0.4rem;
+    margin:  0;
     padding: 0.21rem 0.4rem;
     border: 1px solid var(--clr-err); 
+    border-radius: 0.3rem;
+
     outline-color: var(--clr-err);
     outline-color: var(--clr-sec-lgt2);
     outline-style: solid;
     outline-width: 0.2rem;
     outline-offset: 0;
-    /* background-color: var(--clr-bg-invalid); */
-    bottom: 0.2rem;
 
+
+    font-size:   88%;
+    line-height: 90%;
 
 }
 

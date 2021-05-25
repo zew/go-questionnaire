@@ -3,8 +3,6 @@ package qst
 import (
 	"fmt"
 	"strings"
-
-	"github.com/zew/go-questionnaire/cfg"
 )
 
 const (
@@ -70,7 +68,7 @@ func (q *QuestionnaireT) ProgressBar() string {
 		*/
 		onclick := fmt.Sprintf(` onclick="document.forms.frmMain.page.value='%v';document.forms.frmMain.submit();" `, idx)
 		pointr := " style='cursor:pointer' "
-		if cfg.Get().AllowSkipForward == false && idx > q.CurrPage {
+		if q.PreventSkipForward && idx > q.CurrPage {
 			onclick = ""
 			pointr = ""
 		}

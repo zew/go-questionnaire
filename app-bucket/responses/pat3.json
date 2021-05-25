@@ -19,11 +19,13 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "4f1abf3636a6afdc745ab523d55ab06a04f5af28d7e103d1d36085a27528dcee",
+ 	"md_5": "6b0bdb34120894bf13ba5c84a511cd4eee4f8a6c58fbe6cca598f5de3b76f773",
  	"lang_codes": [
  		"de"
  	],
  	"shufflings_max": 8,
+ 	"allow_skip_forward": false,
+ 	"postpone_navigation_buttons": 6,
  	"version_max": 16,
  	"assign_version": "round-robin",
  	"version_effective": -2,
@@ -2270,7 +2272,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "We\u0026shy;iß ni\u0026shy;cht"
+ 								"de": "Weiß\u003cbr\u003enicht"
  							},
  							"col_span_label": 1.2,
  							"col_span_control": 1,

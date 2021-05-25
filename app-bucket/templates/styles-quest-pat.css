@@ -589,3 +589,61 @@ span:contains("contains was deprecated") {
     
 }
 
+
+
+/* appearing next button */
+
+/* 
+
+this transitions property changes triggered externally;
+to make the button appear, we lack the starting stage 
+
+button[type="submit"]
+{
+    transform:    scaleY(1.05) rotate(0deg) translate(0px, 2px);
+    opacity:      1;
+ 
+    transition:
+        transform   2180ms ease-in-out,
+        opacity     2180ms ease-in-out
+} 
+*/
+
+
+
+@keyframes nameAppear {
+      0%{
+        transform:    scaleY(1.00) rotate(0deg) translate(0px, 0px);
+        opacity:      0.00;
+    }
+     70%{
+        opacity:      0.00;
+    }
+     80%{
+        opacity:      0.05;
+    }
+    100%{
+        transform:    scaleY(1.05) rotate(0deg) translate(0px, 0px);
+        opacity:      1;
+    }
+}
+
+
+
+{{if false}}
+/* false */
+/* 
+    this is dynamically CSS injected depending on
+    q.PostponeNavigationButtons > 0
+*/
+
+button[type="submit"], 
+button[accesskey="n"] 
+{
+    animation:  6222ms ease-in-out 1ms 1 nameAppear;
+}
+{{end}}
+
+/*  
+{{  .SiteName}}
+*/

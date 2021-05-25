@@ -19,10 +19,11 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "459fbed5285ffcb2e316144551efc9b24cb3922a76774151124e048ec89f52f8",
+ 	"md_5": "4023282cf8a77c433862e60d700af9aec45979ff9e8cc86c9ae7153075edc44a",
  	"lang_codes": [
  		"de"
  	],
+ 	"allow_skip_forward": false,
  	"version_max": 16,
  	"version_effective": -2,
  	"max_groups": 6,

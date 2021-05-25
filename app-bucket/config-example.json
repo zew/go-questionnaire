@@ -390,7 +390,6 @@
  			}
  		]
  	},
- 	"allow_skip_forward": false,
  	"anonymous_survey_id": "4walls",
  	"profiles": {
  		"fmt1": {

@@ -9,9 +9,9 @@ import (
 	"github.com/zew/go-questionnaire/trl"
 )
 
-var groupsLong = []string{
-	"Eine repräsentative Gruppe deutscher Bürger (Gruppe %v).",
+var partIGroupsLong = []string{
 	"Eine repräsentative Gruppe deutscher Land- und Bundestagspolitiker (Gruppe %v).",
+	"Eine repräsentative Gruppe deutscher Bürger (Gruppe %v).",
 	`Eine Gruppe deutscher Bürger, 
 				die <i>keine Politiker</i> sind, 
 				die aber die <i>gleichen demographischen Eigenschaften wie Politiker</i> haben 
@@ -22,10 +22,53 @@ var groupsLong = []string{
 				und 17&nbsp;%% sind alleinstehend.`,
 }
 
-var groupsShort = []string{
+var partIGroupsShort = []string{
 	"pol_gr1:Ein Politiker aus Gruppe %v <br>(deutsche Land- und Bundestagspolitiker)",
 	"cit_gr2:Ein Bürger aus Gruppe %v    <br>(repräsentativer deutscher Bürger)",
 	"cit_gr3:Ein Bürger aus Gruppe %v    <br>(deutsche Bürger mit gleichen demographischen Eigenschaften wie die Politiker)",
+}
+
+/*
+	<ul>
+		<li>
+			Gruppe 1: Eine repräsentative Gruppe deutscher Bürger.
+		</li>
+		<li>
+			Gruppe 2: Eine repräsentative Gruppe deutscher Land- und Bundestagspolitiker.
+		</li>
+		<li>
+			Gruppe 3: Eine Gruppe deutscher Bürger, die <i>keine Politiker</i> sind,
+			die aber die <i>gleichen demographischen Eigenschaften wie Politiker</i> haben.
+
+			Das heißt, Gruppe 3 besteht z. B. zu 70&nbsp;% aus Männern,
+			nur 3&nbsp;% der Mitglieder sind unter 30&nbsp;Jahre alt,
+			87&nbsp;% der Mitglieder haben einen Hochschulabschluss
+			und nur 17&nbsp;% sind alleinstehend.
+		</li>
+	<ul>
+
+*/
+var partIIQuestLabels = []string{
+	`
+	Als die Präferenzen wie oben gegeben waren: <br>
+	Was glauben Sie, wie haben sich die 10&nbsp;deutschen Land- und Bundestagspolitiker 
+	(Gruppe&nbsp;%v) entschieden?
+	`,
+
+	`
+	Als die Präferenzen wie oben gegeben waren: <br>
+	Was glauben Sie, wie haben sich die 10&nbsp;repräsentativen deutschen Bürger  
+	(Gruppe&nbsp;%v) entschieden?
+	`,
+
+	`
+	Als die Präferenzen wie oben gegeben waren: <br>
+	Was glauben Sie, wie haben sich die 10&nbsp;deutschen Bürger  
+	(Gruppe&nbsp;%v) entschieden 
+
+	<br>(deutsche Bürger mit gleichen demographischen Eigenschaften wie die Politiker;
+	<br>also 70&nbsp;%% Männer, 3&nbsp;%% unter 30 Jahre, halb so oft alleinstehend)? 
+	`,
 }
 
 // https://cloford.com/resources/charcodes/utf-8_geometric.htm
@@ -60,7 +103,7 @@ func Part1Intro(q *qst.QuestionnaireT) error {
 				(und beantworten einige Fragen). 
 				Nach der Erhebung werden 10&nbsp;% aller Teilnehmer*innen 
 				zufällig ausgewählt. 
-				Von jedem ausgewählten Teilnehmer wird eine der acht Entscheidungen zufällig bestimmt 
+				Von jedem*r ausgewählten Teilnehmer*in wird eine der acht Entscheidungen zufällig bestimmt 
 				und genau wie unten beschrieben umgesetzt 
 				(alle unten erwähnten Personen existieren wirklich und alle Auszahlungen 
 					werden wie beschrieben getätigt).				
@@ -77,8 +120,8 @@ func Part1Intro(q *qst.QuestionnaireT) error {
 	return nil
 }
 
-// Part1Entscheidung78TwoTimesThree - helper to Part1Entscheidung78()
-func Part1Entscheidung78TwoTimesThree(q *qst.QuestionnaireT, pageIdx int, inpName string) error {
+// part2Entscheidung78TwoTimesThree - helper to Part1Entscheidung78()
+func part2Entscheidung78TwoTimesThree(q *qst.QuestionnaireT, pageIdx int, inpName string) error {
 
 	page := q.EditPage(pageIdx)
 
@@ -100,7 +143,7 @@ func Part1Entscheidung78TwoTimesThree(q *qst.QuestionnaireT, pageIdx int, inpNam
 			`}
 		}
 	}
-	for idx, kv := range groupsShort {
+	for idx, kv := range partIGroupsShort {
 		{
 			gr := page.AddGroup()
 			gr.Cols = 1
@@ -143,7 +186,7 @@ func Part1Entscheidung78TwoTimesThree(q *qst.QuestionnaireT, pageIdx int, inpNam
 			`}
 		}
 	}
-	for idx, kv := range groupsShort {
+	for idx, kv := range partIGroupsShort {
 		{
 			gr := page.AddGroup()
 			gr.Cols = 1
@@ -182,17 +225,19 @@ func Part1Entscheidung78TwoTimesThree(q *qst.QuestionnaireT, pageIdx int, inpNam
 			inp.Desc = trl.S{"de": `
 				<p style="font-size:86%">
 				<b>Erläuterung:</b>
+
+
 				Falls dieser Teil umgesetzt wird und somit bestimmt, 
-				welche Stiftung 30 € erhält, 
+				welche Stiftung 30&nbsp;€ erhält, 
 				werden zufällig zwei der drei Gruppen ausgewählt, 
-				die tatsächlich festlegen können, 
-				welche Stiftung das Geld erhält. 
-				Die dritte Gruppe wird die Entscheidung 
-				definitiv nicht treffen. 
+				die tatsächlich festlegen können, welche Stiftung das Geld erhält. 
+				
+				Die dritte Gruppe wird die Entscheidung definitiv nicht treffen. 
+				
 				Von den zwei Gruppen, die die Entscheidung treffen können, 
 				wird jene die Entscheidung treffen, 
-				die Sie gemäß Ihrer Antworten auf die letzten Fragen 
-				als besser erachten.
+				die Sie gemäß Ihrer Antworten auf die letzten 
+				beiden Fragen als besser erachten.	
 				</p>
 			`}
 		}
@@ -201,7 +246,7 @@ func Part1Entscheidung78TwoTimesThree(q *qst.QuestionnaireT, pageIdx int, inpNam
 	return nil
 }
 
-// Part1IntroUndEntscheidung78 module - calls Part1Entscheidung78TwoTimesThree
+// ComprehensionCheck - single question
 func ComprehensionCheck(q *qst.QuestionnaireT) error {
 
 	{
@@ -263,8 +308,10 @@ func ComprehensionCheck(q *qst.QuestionnaireT) error {
 				// inp.Placeholder = trl.S{"de": "0-5"}
 				inp.Label = trl.S{"de": "<b>1.</b> Wieviele Leute stufen Stiftung A als mittel ein? "}
 				inp.Suffix = trl.S{"de": "[0, 1, 2, 3, 4, 5]"}
-				inp.Validator = "inRange10"
+				// inp.Validator = "must"
+				inp.Validator = "must;inRange10"
 			}
+
 			{
 				inp := gr.AddInput()
 				inp.Type = "text"
@@ -277,18 +324,17 @@ func ComprehensionCheck(q *qst.QuestionnaireT) error {
 				inp.Label = trl.S{"de": "<b>2.</b> Welche Stiftung wird von drei Leuten als am besten eingestuft? "}
 				inp.Suffix = trl.S{"de": "[A, B, C]"}
 				// inp.Validator = "inRange1000"
+				inp.Validator = "must"
 			}
 		}
 
-		// pageIdx := len(q.Pages) - 1
-		// Part1Entscheidung78TwoTimesThree(q, pageIdx, "dec7")
 	}
 
 	return nil
 }
 
-// Part1IntroUndEntscheidung78 module - calls Part1Entscheidung78TwoTimesThree
-func Part1IntroUndEntscheidung78(q *qst.QuestionnaireT) error {
+// Part2IntroUndEntscheidung78 module - calls Part1Entscheidung78TwoTimesThree
+func Part2IntroUndEntscheidung78(q *qst.QuestionnaireT) error {
 
 	{
 		page := q.AddPage()
@@ -306,6 +352,11 @@ func Part1IntroUndEntscheidung78(q *qst.QuestionnaireT) error {
 				inp.Desc = trl.S{
 					"de": `
 
+					<!-- Delegation  -->
+				<p>
+					<b>Teil 2</b>
+				</p>
+
 				<p>
 					Zuletzt haben Sie entschieden, 
 					wie die Präferenzen von fünf Personen 
@@ -316,19 +367,19 @@ func Part1IntroUndEntscheidung78(q *qst.QuestionnaireT) error {
 				</p>
 
 				<p>
-					Nun entscheiden Sie, 
-					an wen Sie diese Entscheidung delegieren möchten. 
+					Im Folgenden entscheiden Sie, 
+					an wen Sie diese Entscheidung delegieren möchten 
+					statt selber zu entscheiden. 
 					
-					Die von Ihnen ausgewählte Person 
-					wird dann die Präferenzen der 
-					deutschen Staatsangehörigen sehen, 
-					und darauf basierend entscheiden, 
-					welche Stiftung die 30&nbsp;€ erhalten wird. 
-					
+					Die von Ihnen ausgewählte Person sieht dabei ebenfalls 
+					die Präferenzkonstellation der fünf deutschen Staatsangehörigen 
+					aus der Vorstudie und entscheidet darauf basierend, 
+					welche Stiftung die 30&nbsp;€ erhalten soll.					
 				</p>
 
 				<p>
-					Sie können Ihre Entscheidung an Personen aus den folgenden drei Gruppen delegieren:
+					Sie können die Entscheidung an eine zufällig ausgewählte Person 
+					aus einer der folgenden drei Gruppen delegieren: 
 				</p>
 
 
@@ -338,7 +389,7 @@ func Part1IntroUndEntscheidung78(q *qst.QuestionnaireT) error {
 
 		}
 
-		for idx, txt := range groupsLong {
+		for idx, txt := range partIGroupsLong {
 			gr := page.AddGroup()
 			gr.RandomizationGroup = 1
 			gr.RandomizationSeed = 1
@@ -372,16 +423,23 @@ func Part1IntroUndEntscheidung78(q *qst.QuestionnaireT) error {
 				inp.Desc = trl.S{
 					"de": `
 				<p>
-					Erläuterung: Wir haben den Mitgliedern dieser 
-					drei Gruppen 
-					die gleichen Fragen wie Ihnen gestellt
-					und sie haben ihre Entscheidungen 
-					bereits gefällt. 
-					Wir haben aus jeder der drei Gruppen 
-					jeweils eine Person zufällig für Sie ausgewählt. 
-					Falls dieser Teil der Studie umgesetzt wird, 
-					wird die Entscheidung dieser Person bestimmen, 
-					welche Stiftung die 30&nbsp;€ erhalten wird.
+					<b>Erläuterung</b>: 
+					
+					Wir haben Mitgliedern dieser drei Gruppen die gleichen Fragen gestellt
+					 wie Ihnen im letzten Teil. 
+					 
+					 Auch die Mitglieder der drei Gruppen haben Präferenzkonstellationen 
+					 von Teilnehmer*innen aus der Vorstudie gesehen 
+					 und entschieden welche Organisation das Geld 
+					 gegeben der Präferenzkonstellation erhalten soll. 
+					 
+					 Wir haben aus jeder dieser drei Gruppen jeweils ein Mitglied 
+					 zufällig für Sie ausgewählt. 
+					 
+					 Falls dieser Teil der Studie umgesetzt wird, 
+					 wird die Entscheidung der für Sie zufällig ausgewählten 
+					 Personen aus der von Ihnen gewählten Gruppe bestimmen, 
+					 welche Stiftung die 30&nbsp;€ erhält.
 				</p>
 				`,
 				}
@@ -399,6 +457,8 @@ func Part1IntroUndEntscheidung78(q *qst.QuestionnaireT) error {
 		page := q.AddPage()
 		page.Label = trl.S{"de": ""}
 		page.Style = css.DesktopWidthMaxForPages(page.Style, "36rem") // 60
+		page.ValidationFuncMsg = trl.S{"de": "Erste und zweite Antwort schließen sich aus. Wirklich fortfahren?"}
+		page.ValidationFuncName = "pat2-part1-q7-8"
 
 		{
 			gr := page.AddGroup()
@@ -438,7 +498,7 @@ func Part1IntroUndEntscheidung78(q *qst.QuestionnaireT) error {
 		}
 
 		pageIdx := len(q.Pages) - 1
-		Part1Entscheidung78TwoTimesThree(q, pageIdx, "dec7")
+		part2Entscheidung78TwoTimesThree(q, pageIdx, "dec7")
 
 	}
 
@@ -448,6 +508,8 @@ func Part1IntroUndEntscheidung78(q *qst.QuestionnaireT) error {
 		page := q.AddPage()
 		page.Label = trl.S{"de": ""}
 		page.Style = css.DesktopWidthMaxForPages(page.Style, "36rem") // 60
+		page.ValidationFuncMsg = trl.S{"de": "Erste und zweite Antwort schließen sich aus. Wirklich fortfahren?"}
+		page.ValidationFuncName = "pat2-part1-q7-8"
 
 		{
 			gr := page.AddGroup()
@@ -486,15 +548,15 @@ func Part1IntroUndEntscheidung78(q *qst.QuestionnaireT) error {
 		}
 
 		pageIdx := len(q.Pages) - 1
-		Part1Entscheidung78TwoTimesThree(q, pageIdx, "dec8")
+		part2Entscheidung78TwoTimesThree(q, pageIdx, "dec8")
 
 	}
 
 	return nil
 }
 
-// Part2Intro renders
-func Part2Intro(q *qst.QuestionnaireT) error {
+// Part3Intro renders
+func Part3Intro(q *qst.QuestionnaireT) error {
 
 	page := q.AddPage()
 	page.Label = trl.S{"de": ""}
@@ -503,19 +565,22 @@ func Part2Intro(q *qst.QuestionnaireT) error {
 	{
 		gr := page.AddGroup()
 		gr.Cols = 1
-		// gr.BottomVSpacers = 2
+		gr.BottomVSpacers = 1
 
 		{
 			inp := gr.AddInput()
 			inp.Type = "textblock"
 			inp.Desc = trl.S{
 				"de": `
-				<h3>Teil 2</h3>
+				<p>
+					<!-- beliefs -->
+					<b>Teil 3</b>
+				</p> 
 
 				<p>
 					In diesem Teil der Studie beantworten Sie sechs Fragen. 
-					Nach der Erhebung werden 10&nbsp;% aller Teilnehmer zufällig ausgewählt. 
-					Jeder ausgewählte Teilnehmer wird in Abhängigkeit der Genauigkeit 
+					Nach der Erhebung werden 10&nbsp;% aller Teilnehmer*innen zufällig ausgewählt. 
+					Jede*r ausgewählte Teilnehmer*in wird in Abhängigkeit der Genauigkeit 
 					seiner Antworten eine Bonuszahlung von bis zu 50&nbsp;Norstat&nbsp;Coins erhalten (Wert: 5&nbsp;Euro).
 				</p>
 
@@ -523,35 +588,58 @@ func Part2Intro(q *qst.QuestionnaireT) error {
 					Es geht in diesem Teil wieder um die drei Gruppen aus dem letzten Teil:
 				</p>
 
-				<ul>
-					<li>
-						Gruppe 1: Eine repräsentative Gruppe deutscher Bürger.
-					</li>
-					<li>
-						Gruppe 2: Eine repräsentative Gruppe deutscher Land- und Bundestagspolitiker.
-					</li>
-					<li>
-						Gruppe 3: Eine Gruppe deutscher Bürger, die <i>keine Politiker</i> sind, 
-						die aber die <i>gleichen demographischen Eigenschaften wie Politiker</i> haben. 
-						Das heißt, Gruppe 3 besteht z. B. zu 70&nbsp;% aus Männern, 
-						nur 3&nbsp;% der Mitglieder sind unter 30&nbsp;Jahre alt, 
-						87&nbsp;% der Mitglieder haben einen Hochschulabschluss 
-						und nur 17&nbsp;% sind alleinstehend.
-					</li>
-				<ul>
+				`,
+			}
+		}
+	}
+	for idx, txt := range partIGroupsLong {
+		gr := page.AddGroup()
+		gr.RandomizationGroup = 1
+		gr.RandomizationSeed = 1
+		gr.BottomVSpacers = 0
 
+		gr.Cols = 1
+		{
+			txt = fmt.Sprintf(txt, groupIDs[idx])
+			inp := gr.AddInput()
+			inp.Type = "textblock"
+			inp.Desc = trl.S{
+				"de": fmt.Sprintf(`
+				<ul>
+				<li>
+				%v
+				</li>
+				</ul>
+				
+				`, txt),
+			}
+		}
+	}
+
+	{
+		gr := page.AddGroup()
+		gr.Cols = 1
+
+		{
+			inp := gr.AddInput()
+			inp.Type = "textblock"
+			inp.Desc = trl.S{
+				"de": `
+				<br>
 				<p>
-					Wir bitten Sie zu schätzen, welche Stiftung die Mitglieder dieser Gruppen als 
-					Empfänger der 30&nbsp;€ bestimmt haben, wenn sie bestimmte Präferenzen 
-					der Mitglieder der Vorstudie gesehen haben. 
+					Wir bitten Sie zu schätzen, welche Stiftung 10 zufällig ausgewählte Mitglieder
+					 dieser Gruppen als Empfänger der 30&nbsp;€ bestimmt haben, 
+					 wenn sie bestimmte Präferenzkonstellationen aus der Vorstudie gesehen haben.
+
 				</p>
 
 				<p>
-					Falls Sie eine Bonuszahlung erhalten, 
-					werden wir eine der sechs Fragen zufällig auswählen 
-					und Ihre Schätzung mit den echten Entscheidungen der Gruppenmitglieder abgleichen. 
-					Ihre Bonuszahlung ist umso höher, 
-					je genauer Ihre Einschätzung ist. 
+					Falls Sie für die Bonuszahlung ausgewählt werden, 
+					werden wir eine der sechs folgenden Fragen zufällig auswählen 
+					und Ihre Schätzung bei dieser Frage mit den echten Entscheidungen 
+					der Gruppenmitglieder bei der jeweiligen Präferenzkonstellation abgleichen. 
+					
+					Ihre Bonuszahlung ist umso höher, je genauer Ihre Schätzung ist. 
 					Bitte überlegen Sie sich Ihre Antworten daher sehr genau!
 				</p>
 
@@ -580,9 +668,9 @@ func Part2Intro(q *qst.QuestionnaireT) error {
 
 }
 
-// Part2Block12 renders
+// Part3Block12 renders
 // blockStart is either 0 - or 3
-func Part2Block12(q *qst.QuestionnaireT, blockStart int) error {
+func Part3Block12(q *qst.QuestionnaireT, blockStart int) error {
 
 	page := q.AddPage()
 	page.Label = trl.S{"de": ""}
@@ -636,28 +724,13 @@ func Part2Block12(q *qst.QuestionnaireT, blockStart int) error {
 		}
 	}
 
-	questLabels := []string{
-		`
-		Als die Präferenzen wie oben gegeben waren: <br>
-		Was glauben Sie, wie haben sich die 10&nbsp;deutschen Land- und Bundestagspolitiker aus Gruppe&nbsp;1 entschieden?`,
-
-		`
-		Als die Präferenzen wie oben gegeben waren: <br>
-		Was glauben Sie, wie haben sich die 10&nbsp;repräsentativen deutschen Bürger aus Gruppe&nbsp;2 entschieden?`,
-
-		`
-		Als die Präferenzen wie oben gegeben waren: <br>
-		Was glauben Sie, wie haben sich die 10&nbsp;deutschen Bürger aus Gruppe&nbsp;3 entschieden 
-
-		<br>(deutsche Bürger mit gleichen demographischen Eigenschaften wie die Politiker;
-		<br>also 70 % Männer, 3 % unter 30 Jahre, halb so oft alleinstehend)? `,
-	}
-
 	for i1 := blockStart; i1 < blockStart+3; i1++ {
 
 		gr := page.AddGroup()
 		gr.Cols = 24
 		gr.BottomVSpacers = 3
+		gr.RandomizationGroup = 1
+		gr.RandomizationSeed = 1
 		lbls := []string{"A", "B", "C"}
 		{
 			inp := gr.AddInput()
@@ -665,11 +738,15 @@ func Part2Block12(q *qst.QuestionnaireT, blockStart int) error {
 			inp.ColSpan = 24
 			inp.Desc = trl.S{
 				"de": fmt.Sprintf(`
-					<p>
-						<b> Frage %v</b> <br>
+					<p style='padding: 0;position: relative; top: 0.2rem;'>
+						<!-- %v -->
+						<!-- <b> Frage [groupID].</b> <br> -->
+						<!-- <b> Frage:</b> <br> -->
 						%v 
 					</p>
-					`, i1+1, questLabels[i1%3]),
+					`, i1+1,
+					fmt.Sprintf(partIIQuestLabels[i1%3], groupIDs[i1%3]),
+				),
 			}
 		}
 		for i2 := 0; i2 < 3; i2++ {

@@ -27,15 +27,24 @@ func TitlePat23(q *qst.QuestionnaireT) error {
 				"de": `
 				HERZLICH WILLKOMMEN UND VIELEN DANK FÜR IHRE TEILNAHME!<br><br>
 
-				<p>Dies ist eine Studie des Zentrums für Europäische Wirtschaftsforschung (ZEW) 
-				in Mannheim sowie der Universitäten in Köln, Mannheim, Münster und Zürich. 
+				<p>
+				Dies ist eine Studie des Zentrums für Europäische Wirtschaftsforschung (ZEW) 
+				in Mannheim sowie der Universitäten Köln, Mannheim, Münster und Zürich. 
+
+				<br>
+				<br>
 				
 				Ihre Teilnahme wird ca. 15&nbsp;Minuten in Anspruch nehmen 
-				und Sie unterstützen damit die Forschung.
+				und Sie unterstützen damit die Forschung 
+				zu Entscheidungsprozessen in der Politik.
 				</p>
 
-				<p> <b> Sie werden vollständig anonym bleiben. </b>
+				<p> 
+				In dieser Umfrage gibt es keine richtigen oder falschen Antworten. 
+				Bitte entscheiden Sie daher immer gemäß Ihrer persönlichen Ansichten. 
+				Ihre Antworten werden dabei streng vertraulich behandelt.
 				</p>
+
 
 				<br>
 				<br>

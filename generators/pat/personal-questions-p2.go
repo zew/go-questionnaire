@@ -191,6 +191,48 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 
 		}
 
+		{
+			gr := page.AddGroup()
+			gr.Cols = 8
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.ColSpan = 8
+				inp.Desc = trl.S{
+					"de": fmt.Sprintf(`
+					</p>
+					<b>Frage %v.</b>
+					Sind Sie Politiker?
+					</p>
+				`, vE.NumberingQuestions+4),
+				}
+			}
+
+			keyVals := []string{
+				"ehrenamt:Ja, im Ehrenamt",
+				"hauptberuf:Ja, im Hauptberuf",
+				"nein:Nein",
+			}
+
+			for _, kv := range keyVals {
+				sp := strings.Split(kv, ":")
+				key := sp[0]
+				val := sp[1]
+				lbl := trl.S{"de": val}
+				rad := gr.AddInput()
+				rad.Type = "radio"
+				rad.Name = "q16"
+				rad.Validator = validatorRadio
+				rad.ValueRadio = key
+				rad.ColSpan = 4
+				rad.ColSpanLabel = 4
+				rad.ColSpanControl = 1
+				rad.Label = lbl
+				rad.StyleLbl = lblStyleRight
+			}
+
+		}
+
 	}
 
 	{
@@ -211,7 +253,7 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 					<b>Frage %v.</b>
 					Wie ist Ihr Familienstand?
 					</p>
-				`, vE.NumberingQuestions+4),
+				`, vE.NumberingQuestions+5),
 				}
 			}
 
@@ -253,7 +295,7 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 					Wie viel Geld verdienen Sie persönlich monatlich 
 					nach Abzug von Steuern und Sozialversicherungsbeiträgen?
 					</p>
-				`, vE.NumberingQuestions+5),
+				`, vE.NumberingQuestions+6),
 				}
 			}
 
@@ -303,9 +345,11 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 					Mit welcher Partei fühlen Sie sich 
 					aufgrund Ihrer Werte und Überzeugungen am ehesten verbunden? 
 					<br>
+					<!--
 					<i>Bitte beachten Sie, dass nur eine Antwort zulässig ist.</i>
+					-->
 					</p>
-				`, vE.NumberingQuestions+6),
+				`, vE.NumberingQuestions+7),
 				}
 			}
 		}
@@ -415,11 +459,12 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 					0, 1, // 9
 					0, 1,
 					0, 1, // 11
-					1.2, 1, // weiss nicht
+					// 1.2, 1, // weiss nicht
 				},
 				labelsOneToSeven4,
 				[]string{"q15"},
-				[]string{"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "weiss_nicht"},
+				// []string{"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "weiss_nicht"},
+				[]string{"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"},
 				[]trl.S{},
 				validatorRadio,
 			)
@@ -434,7 +479,7 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 					Bitte geben Sie den Wert an, der auf Sie persönlich zutrifft.
 					</p>
 					<br>
-				`, vE.NumberingQuestions+7),
+				`, vE.NumberingQuestions+8),
 			}
 			gr := page.AddGrid(gb)
 			gr.OddRowsColoring = true

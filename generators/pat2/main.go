@@ -40,7 +40,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		return nil, fmt.Errorf("Error adding personal questions 2: %v", err)
 	}
 
-	err = pat.PersonalQuestions1(&q, pat.VariableElements{NumberingQuestions: 9, AllMandatory: true, ZumSchlussOrNun: true})
+	err = pat.PersonalQuestions1(&q, pat.VariableElements{NumberingQuestions: 10, AllMandatory: true, ZumSchlussOrNun: true})
 	if err != nil {
 		return nil, fmt.Errorf("Error adding personal questions 1: %v", err)
 	}
@@ -51,18 +51,18 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	}
 
 	// core
-	err = pat.Part1(&q)
+	err = pat.Part1Entscheidung1bis6(&q)
 	if err != nil {
 		return nil, fmt.Errorf("Error adding Part1(): %v", err)
 	}
 
 	// core
-	err = pat.Part1Frage1(&q)
+	err = pat.Part1Frage1(&q, pat.VariableElements{NumberingQuestions: 0})
 	if err != nil {
 		return nil, fmt.Errorf("Error adding Part1Frage1(): %v", err)
 	}
 
-	err = Part1IntroUndEntscheidung78(&q)
+	err = Part2IntroUndEntscheidung78(&q)
 	if err != nil {
 		return nil, fmt.Errorf("Error adding Part1Entscheidung78(): %v", err)
 	}
@@ -72,17 +72,17 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		return nil, fmt.Errorf("Error adding ComprehensionCheck(): %v", err)
 	}
 
-	err = Part2Intro(&q)
+	err = Part3Intro(&q)
 	if err != nil {
 		return nil, fmt.Errorf("Error adding Part2Intro(): %v", err)
 	}
 
-	err = Part2Block12(&q, 0)
+	err = Part3Block12(&q, 0)
 	if err != nil {
 		return nil, fmt.Errorf("Error adding Part2Block1(0): %v", err)
 	}
 
-	err = Part2Block12(&q, 3)
+	err = Part3Block12(&q, 3)
 	if err != nil {
 		return nil, fmt.Errorf("Error adding Part2Block1(3): %v", err)
 	}

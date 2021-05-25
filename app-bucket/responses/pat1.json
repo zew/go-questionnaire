@@ -19,7 +19,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "640af8e710e4a17ed37ebaf0b858f3f60337e1233594f2e3b15febf6687d4d29",
+ 	"md_5": "08bbf7ce38861c6cd939172f7300d43ac36a985e026ab3c505eb01e0a8f7aa2e",
  	"lang_codes": [
  		"de"
  	],
@@ -444,7 +444,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage 1.\u003c/b\u003e Schätzen Sie bitte: Was wäre eine zufällig ausgewählte Person \n\t\t\t\t\taus unserer Vorstudie maximal bereit zu zahlen, \n\t\t\t\t\tdamit eine Spende von 30\u0026nbsp;€ an die Stif\u0026shy;tung überwiesen wird, \n\t\t\t\t\tdie diese Person als am besten/mittel/am schlech\u0026shy;testen erachtet?\n\t\t\t\t\t\u003ci\u003e(Wenn Sie meinen, die Person würde da\u0026shy;für bezahlen, \n\t\t\t\t\t\tdass die Stif\u0026shy;tung die 30\u0026nbsp;€ \u003ci\u003enicht\u003c/i\u003e erhält, \n\t\t\t\t\t\tschreiben Sie bitte ein Minuszeichen vor den entsprechenden Betrag.)\u003c/i\u003e\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003c!--\n\t\t\t\t\tBeste Stif\u0026shy;tung:_______\tMitt\u0026shy;le\u0026shy;re Stif\u0026shy;tung:_______\tSchlech\u0026shy;teste Stif\u0026shy;tung:_______\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t--\u003e\n\n\n\t\t\t\t\t"
+ 								"de": "\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage 1.\u003c/b\u003e\u003cbr\u003e Schätzen Sie bitte: Was wäre eine zufällig ausgewählte Person \n\t\t\t\t\taus unserer Vorstudie maximal bereit zu zahlen, \n\t\t\t\t\tdamit eine Spende von 30\u0026nbsp;€ an die Stif\u0026shy;tung überwiesen wird, \n\t\t\t\t\tdie diese Person als am besten/mittel/am schlech\u0026shy;testen erachtet?\n\t\t\t\t\t\u003ci\u003e(Wenn Sie meinen, die Person würde da\u0026shy;für bezahlen, \n\t\t\t\t\t\tdass die Stif\u0026shy;tung die 30\u0026nbsp;€ \u003ci\u003enicht\u003c/i\u003e erhält, \n\t\t\t\t\t\tschreiben Sie bitte ein Minuszeichen vor den entsprechenden Betrag.)\u003c/i\u003e\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003c!--\n\t\t\t\t\tBeste Stif\u0026shy;tung:_______\tMitt\u0026shy;le\u0026shy;re Stif\u0026shy;tung:_______\tSchlech\u0026shy;teste Stif\u0026shy;tung:_______\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t--\u003e\n\n\n\t\t\t\t\t"
  							},
  							"col_span_label": 1
  						}
@@ -3356,6 +3356,113 @@
  							}
  						}
  					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 8,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 12.\u003c/b\u003e\n\t\t\t\t\tSind Sie Po\u0026shy;li\u0026shy;tiker?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 							},
+ 							"col_span": 8,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "q16",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Ja, im Ehrenamt"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"value_radio": "ehrenamt",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q16",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Ja, im Hauptberuf"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"value_radio": "hauptberuf",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q16",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Nein"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"value_radio": "nein",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
  				}
  			]
  		},
@@ -3395,7 +3502,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 12.\u003c/b\u003e\n\t\t\t\t\tWie ist Ihr Familienstand?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 13.\u003c/b\u003e\n\t\t\t\t\tWie ist Ihr Familienstand?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 12,
  							"col_span_label": 1
@@ -3502,7 +3609,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 13.\u003c/b\u003e\n\t\t\t\t\tWie viel Geld verdienen Sie persönlich monatlich \n\t\t\t\t\tnach Abzug von Steuern und Sozialversi\u0026shy;cherungsbeiträgen?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 14.\u003c/b\u003e\n\t\t\t\t\tWie viel Geld verdienen Sie persönlich monatlich \n\t\t\t\t\tnach Abzug von Steuern und Sozialversi\u0026shy;cherungsbeiträgen?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 8,
  							"col_span_label": 1
@@ -3825,7 +3932,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 14.\u003c/b\u003e\n\t\t\t\t\tMit welcher Partei fühlen Sie sich \n\t\t\t\t\taufgrund Ihrer Werte und Überzeugungen am ehesten verbunden? \n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003ci\u003eBitte beachten Sie, dass nur eine Antwort zulässig ist.\u003c/i\u003e\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 15.\u003c/b\u003e\n\t\t\t\t\tMit welcher Partei fühlen Sie sich \n\t\t\t\t\taufgrund Ihrer Werte und Überzeugungen am ehesten verbunden? \n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003c!--\n\t\t\t\t\t\u003ci\u003eBitte beachten Sie, dass nur eine Antwort zulässig ist.\u003c/i\u003e\n\t\t\t\t\t--\u003e\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -4113,15 +4220,15 @@
  				},
  				{
  					"bottom_vspacers": 4,
- 					"columns": 12,
+ 					"columns": 11,
  					"odd_rows_coloring": true,
  					"inputs": [
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage\u0026nbsp;15.\u003c/b\u003e\n\t\t\t\t\tIn der Po\u0026shy;li\u0026shy;tik reden die Leute häufig von \"links\" und \"rechts\". \n\t\t\t\t\tWenn Sie die Skala hier benutzen, \n\t\t\t\t\two würden Sie sich selbst einordnen, \n\t\t\t\t\twenn 1 \"links\" und 11 \"rechts\" ist? \n\t\t\t\t\tBitte geben Sie den Wert an, der auf Sie persönlich zutrifft.\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage\u0026nbsp;16.\u003c/b\u003e\n\t\t\t\t\tIn der Po\u0026shy;li\u0026shy;tik reden die Leute häufig von \"links\" und \"rechts\". \n\t\t\t\t\tWenn Sie die Skala hier benutzen, \n\t\t\t\t\two würden Sie sich selbst einordnen, \n\t\t\t\t\twenn 1 \"links\" und 11 \"rechts\" ist? \n\t\t\t\t\tBitte geben Sie den Wert an, der auf Sie persönlich zutrifft.\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t"
  							},
- 							"col_span": 12,
+ 							"col_span": 11,
  							"col_span_label": 1
  						},
  						{
@@ -4598,50 +4705,6 @@
  							}
  						},
  						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "Weiß\u003cbr\u003enicht"
- 							},
- 							"col_span_label": 1.2,
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
  							"name": "q15",
  							"type": "radio",
  							"col_span_control": 1,
@@ -4706,13 +4769,6 @@
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "11"
- 						},
- 						{
- 							"name": "q15",
- 							"type": "radio",
- 							"col_span_label": 1.2,
- 							"col_span_control": 1,
- 							"value_radio": "weiss_nicht"
  						}
  					],
  					"style": {

@@ -96,8 +96,8 @@ func Title(q *qst.QuestionnaireT, isPOP bool) error {
 }
 
 //
-// Part1 renders
-func Part1(q *qst.QuestionnaireT) error {
+// Part1Entscheidung1bis6 renders
+func Part1Entscheidung1bis6(q *qst.QuestionnaireT) error {
 
 	// erster Teil
 
@@ -275,7 +275,7 @@ func Part1(q *qst.QuestionnaireT) error {
 
 //
 // Part1Frage1 renders
-func Part1Frage1(q *qst.QuestionnaireT) error {
+func Part1Frage1(q *qst.QuestionnaireT, vE VariableElements) error {
 	// page 4
 	{
 		page := q.AddPage()
@@ -285,6 +285,11 @@ func Part1Frage1(q *qst.QuestionnaireT) error {
 
 		page.ValidationFuncName = "pat-best-gt-worst"
 		page.ValidationFuncMsg = trl.S{"de": "Denken Sie nicht, dass die Zahlungsbereitschaft bei besseren Stiftungen höher sein sollte, also beste Stiftung > mittlere > schlechteste? Wirklich so fortfahren?"}
+
+		frage := "<b>Frage:</b>"
+		if vE.NumberingQuestions == 1 {
+			frage = "<b>Frage 1.</b>"
+		}
 
 		// gr0
 		{
@@ -296,10 +301,10 @@ func Part1Frage1(q *qst.QuestionnaireT) error {
 				inp := gr.AddInput()
 				inp.Type = "textblock"
 				inp.Desc = trl.S{
-					"de": `
+					"de": fmt.Sprintf(`
 
 					<p>
-					<b>Frage 1.</b> Schätzen Sie bitte: Was wäre eine zufällig ausgewählte Person 
+					%v<br> Schätzen Sie bitte: Was wäre eine zufällig ausgewählte Person 
 					aus unserer Vorstudie maximal bereit zu zahlen, 
 					damit eine Spende von 30&nbsp;€ an die Stiftung überwiesen wird, 
 					die diese Person als am besten/mittel/am schlechtesten erachtet?
@@ -315,7 +320,7 @@ func Part1Frage1(q *qst.QuestionnaireT) error {
 					-->
 
 
-					`,
+					`, frage),
 				}
 			}
 		}
@@ -846,12 +851,12 @@ func Core(q *qst.QuestionnaireT) error {
 
 	var err error
 
-	err = Part1(q)
+	err = Part1Entscheidung1bis6(q)
 	if err != nil {
 		return fmt.Errorf("Error adding Part1(): %v", err)
 	}
 
-	err = Part1Frage1(q)
+	err = Part1Frage1(q, VariableElements{NumberingQuestions: 1})
 	if err != nil {
 		return fmt.Errorf("Error adding Part1Frage1(): %v", err)
 	}

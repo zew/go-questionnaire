@@ -205,8 +205,12 @@ func (q *QuestionnaireT) Validate() error {
 
 				// validator function exists
 				if inp.Validator != "" {
-					if _, ok := validators[inp.Validator]; !ok {
-						return fmt.Errorf(s + fmt.Sprintf("%v - validator '%v' is not in %v ", s, inp.Validator, validators))
+					valiKeys := strings.Split(inp.Validator, ";")
+					for _, valiKey := range valiKeys {
+						valiKey = strings.TrimSpace(valiKey)
+						if _, ok := validators[valiKey]; !ok {
+							return fmt.Errorf(s + fmt.Sprintf("%v - validator '%v' is not in %v ", s, valiKey, validators))
+						}
 					}
 				}
 

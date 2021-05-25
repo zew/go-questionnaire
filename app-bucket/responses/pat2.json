@@ -19,7 +19,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "6467e637760212aba93de1fb77572f97c633ff4a201bf73d5e17650db14185ad",
+ 	"md_5": "0289f994817e47890ed7335e8d216ee1cf3c15a9e58a836a5601de713efc5cc0",
  	"lang_codes": [
  		"de"
  	],
@@ -68,7 +68,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\tHERZLICH WILLKOMMEN UND VIELEN DANK FÜR IHRE TEILNAHME!\u003cbr\u003e\u003cbr\u003e\n\n\t\t\t\t\u003cp\u003eDies ist eine Studie des Zentrums für Europäische Wirt\u0026shy;schafts\u0026shy;for\u0026shy;schung (ZEW) \n\t\t\t\tin Mannheim sowie der Universitäten in Köln, Mannheim, Münster und Zürich. \n\t\t\t\t\n\t\t\t\tIhre Teilnahme wird ca. 15\u0026nbsp;Minuten in Anspruch nehmen \n\t\t\t\tund Sie unterstützen damit die For\u0026shy;schung.\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp\u003e \u003cb\u003e Sie werden vollständig anonym blei\u0026shy;ben. \u003c/b\u003e\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\tHERZLICH WILLKOMMEN UND VIELEN DANK FÜR IHRE TEILNAHME!\u003cbr\u003e\u003cbr\u003e\n\n\t\t\t\t\u003cp\u003e\n\t\t\t\tDies ist eine Studie des Zentrums für Europäische Wirt\u0026shy;schafts\u0026shy;for\u0026shy;schung (ZEW) \n\t\t\t\tin Mannheim sowie der Universitäten Köln, Mannheim, Münster und Zürich. \n\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\n\t\t\t\tIhre Teilnahme wird ca. 15\u0026nbsp;Minuten in Anspruch nehmen \n\t\t\t\tund Sie unterstützen damit die For\u0026shy;schung \n\t\t\t\tzu Ent\u0026shy;schei\u0026shy;dungs\u0026shy;pro\u0026shy;zessen in der Po\u0026shy;li\u0026shy;tik.\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp\u003e \n\t\t\t\tIn dieser Umfrage gibt es keine richtigen oder falschen Antworten. \n\t\t\t\tBitte entscheiden Sie daher immer gemäß Ihrer persönlichen Ansichten. \n\t\t\t\tIhre Antworten werden dabei streng vertraulich behandelt.\n\t\t\t\t\u003c/p\u003e\n\n\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t"
  							},
  							"col_span_label": 1
  						},
@@ -1008,6 +1008,116 @@
  							}
  						}
  					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 8,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 5.\u003c/b\u003e\n\t\t\t\t\tSind Sie Po\u0026shy;li\u0026shy;tiker?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 							},
+ 							"col_span": 8,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "q16",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Ja, im Ehrenamt"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "ehrenamt",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q16",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Ja, im Hauptberuf"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "hauptberuf",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q16",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Nein"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "nein",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
  				}
  			]
  		},
@@ -1047,7 +1157,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 5.\u003c/b\u003e\n\t\t\t\t\tWie ist Ihr Familienstand?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 6.\u003c/b\u003e\n\t\t\t\t\tWie ist Ihr Familienstand?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 12,
  							"col_span_label": 1
@@ -1157,7 +1267,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 6.\u003c/b\u003e\n\t\t\t\t\tWie viel Geld verdienen Sie persönlich monatlich \n\t\t\t\t\tnach Abzug von Steuern und Sozialversi\u0026shy;cherungsbeiträgen?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 7.\u003c/b\u003e\n\t\t\t\t\tWie viel Geld verdienen Sie persönlich monatlich \n\t\t\t\t\tnach Abzug von Steuern und Sozialversi\u0026shy;cherungsbeiträgen?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 8,
  							"col_span_label": 1
@@ -1490,7 +1600,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 7.\u003c/b\u003e\n\t\t\t\t\tMit welcher Partei fühlen Sie sich \n\t\t\t\t\taufgrund Ihrer Werte und Überzeugungen am ehesten verbunden? \n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003ci\u003eBitte beachten Sie, dass nur eine Antwort zulässig ist.\u003c/i\u003e\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 8.\u003c/b\u003e\n\t\t\t\t\tMit welcher Partei fühlen Sie sich \n\t\t\t\t\taufgrund Ihrer Werte und Überzeugungen am ehesten verbunden? \n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003c!--\n\t\t\t\t\t\u003ci\u003eBitte beachten Sie, dass nur eine Antwort zulässig ist.\u003c/i\u003e\n\t\t\t\t\t--\u003e\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -1785,15 +1895,15 @@
  				},
  				{
  					"bottom_vspacers": 4,
- 					"columns": 12,
+ 					"columns": 11,
  					"odd_rows_coloring": true,
  					"inputs": [
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage\u0026nbsp;8.\u003c/b\u003e\n\t\t\t\t\tIn der Po\u0026shy;li\u0026shy;tik reden die Leute häufig von \"links\" und \"rechts\". \n\t\t\t\t\tWenn Sie die Skala hier benutzen, \n\t\t\t\t\two würden Sie sich selbst einordnen, \n\t\t\t\t\twenn 1 \"links\" und 11 \"rechts\" ist? \n\t\t\t\t\tBitte geben Sie den Wert an, der auf Sie persönlich zutrifft.\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage\u0026nbsp;9.\u003c/b\u003e\n\t\t\t\t\tIn der Po\u0026shy;li\u0026shy;tik reden die Leute häufig von \"links\" und \"rechts\". \n\t\t\t\t\tWenn Sie die Skala hier benutzen, \n\t\t\t\t\two würden Sie sich selbst einordnen, \n\t\t\t\t\twenn 1 \"links\" und 11 \"rechts\" ist? \n\t\t\t\t\tBitte geben Sie den Wert an, der auf Sie persönlich zutrifft.\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t"
  							},
- 							"col_span": 12,
+ 							"col_span": 11,
  							"col_span_label": 1
  						},
  						{
@@ -2270,50 +2380,6 @@
  							}
  						},
  						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "Weiß\u003cbr\u003enicht"
- 							},
- 							"col_span_label": 1.2,
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
  							"name": "q15",
  							"type": "radio",
  							"col_span_control": 1,
@@ -2389,14 +2455,6 @@
  							"col_span_control": 1,
  							"validator": "mustRadioGroup",
  							"value_radio": "11"
- 						},
- 						{
- 							"name": "q15",
- 							"type": "radio",
- 							"col_span_label": 1.2,
- 							"col_span_control": 1,
- 							"validator": "mustRadioGroup",
- 							"value_radio": "weiss_nicht"
  						}
  					],
  					"style": {
@@ -2459,7 +2517,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eNun bitten wir Sie, einige Fragen über sich selbst zu be\u0026shy;ant\u0026shy;wor\u0026shy;ten: \u003c/b\u003e\n\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cb\u003eFrage 9.\u003c/b\u003e\n\t\t\t\t\tSind Sie im Vergleich zu anderen im Allgemeinen bereit, \n\t\t\t\t\theute auf etwas zu verzichten, \n\t\t\t\t\tum in der Zukunft davon zu profitieren, \n\t\t\t\t\toder sind Sie im Vergleich zu anderen dazu nicht bereit? \n\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eNun bitten wir Sie, einige Fragen über sich selbst zu be\u0026shy;ant\u0026shy;wor\u0026shy;ten: \u003c/b\u003e\n\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cb\u003eFrage 10.\u003c/b\u003e\n\t\t\t\t\tSind Sie im Vergleich zu anderen im Allgemeinen bereit, \n\t\t\t\t\theute auf etwas zu verzichten, \n\t\t\t\t\tum in der Zukunft davon zu profitieren, \n\t\t\t\t\toder sind Sie im Vergleich zu anderen dazu nicht bereit? \n\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t"
  							},
  							"col_span": 7,
  							"col_span_label": 1
@@ -2841,7 +2899,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 10.\u003c/b\u003e\n\t\t\t\t\tWie schätzen Sie sich persönlich ein? \n\t\t\t\t\tSind Sie im Allgemeinen ein ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reiter Mensch \n\t\t\t\t\toder versuchen Sie, Risiken zu vermeiden?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 11.\u003c/b\u003e\n\t\t\t\t\tWie schätzen Sie sich persönlich ein? \n\t\t\t\t\tSind Sie im Allgemeinen ein ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reiter Mensch \n\t\t\t\t\toder versuchen Sie, Risiken zu vermeiden?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 7,
  							"col_span_label": 1
@@ -3223,7 +3281,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage\u0026nbsp;11.\u003c/b\u003e\n\t\t\t\t\tWie schätzen Sie Ihre Bereitschaft ein, mit anderen zu teilen, \n\t\t\t\t\tohne da\u0026shy;für eine Gegenleistung zu erwarten?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage\u0026nbsp;12.\u003c/b\u003e\n\t\t\t\t\tWie schätzen Sie Ihre Bereitschaft ein, mit anderen zu teilen, \n\t\t\t\t\tohne da\u0026shy;für eine Gegenleistung zu erwarten?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 7,
  							"col_span_label": 1
@@ -3635,7 +3693,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\u003ch3\u003eTeil 1\u003c/h3\u003e\n\n\t\t\t\t\u003cp\u003e\n\t\t\t\tIn diesem Teil der Studie treffen Sie acht Entscheidungen \n\t\t\t\t(und be\u0026shy;ant\u0026shy;wor\u0026shy;ten einige Fragen). \n\t\t\t\tNach der Erhebung werden 10\u0026nbsp;% aller Teilnehmer*innen \n\t\t\t\tzufällig ausgewählt. \n\t\t\t\tVon jedem ausgewählten Teilnehmer wird eine der acht Entscheidungen zufällig bestimmt \n\t\t\t\tund genau wie unten beschrieben umgesetzt \n\t\t\t\t(alle unten erwähnten Personen existieren wirklich und alle Auszahlungen \n\t\t\t\t\twerden wie beschrieben getätigt).\t\t\t\t\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\u003ch3\u003eTeil 1\u003c/h3\u003e\n\n\t\t\t\t\u003cp\u003e\n\t\t\t\tIn diesem Teil der Studie treffen Sie acht Entscheidungen \n\t\t\t\t(und be\u0026shy;ant\u0026shy;wor\u0026shy;ten einige Fragen). \n\t\t\t\tNach der Erhebung werden 10\u0026nbsp;% aller Teilnehmer*innen \n\t\t\t\tzufällig ausgewählt. \n\t\t\t\tVon jedem*r ausgewählten Teilnehmer*in wird eine der acht Entscheidungen zufällig bestimmt \n\t\t\t\tund genau wie unten beschrieben umgesetzt \n\t\t\t\t(alle unten erwähnten Personen existieren wirklich und alle Auszahlungen \n\t\t\t\t\twerden wie beschrieben getätigt).\t\t\t\t\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t"
  							},
  							"col_span_label": 1
  						}
@@ -3981,7 +4039,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage 1.\u003c/b\u003e Schätzen Sie bitte: Was wäre eine zufällig ausgewählte Person \n\t\t\t\t\taus unserer Vorstudie maximal bereit zu zahlen, \n\t\t\t\t\tdamit eine Spende von 30\u0026nbsp;€ an die Stif\u0026shy;tung überwiesen wird, \n\t\t\t\t\tdie diese Person als am besten/mittel/am schlech\u0026shy;testen erachtet?\n\t\t\t\t\t\u003ci\u003e(Wenn Sie meinen, die Person würde da\u0026shy;für bezahlen, \n\t\t\t\t\t\tdass die Stif\u0026shy;tung die 30\u0026nbsp;€ \u003ci\u003enicht\u003c/i\u003e erhält, \n\t\t\t\t\t\tschreiben Sie bitte ein Minuszeichen vor den entsprechenden Betrag.)\u003c/i\u003e\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003c!--\n\t\t\t\t\tBeste Stif\u0026shy;tung:_______\tMitt\u0026shy;le\u0026shy;re Stif\u0026shy;tung:_______\tSchlech\u0026shy;teste Stif\u0026shy;tung:_______\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t--\u003e\n\n\n\t\t\t\t\t"
+ 								"de": "\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage:\u003c/b\u003e\u003cbr\u003e Schätzen Sie bitte: Was wäre eine zufällig ausgewählte Person \n\t\t\t\t\taus unserer Vorstudie maximal bereit zu zahlen, \n\t\t\t\t\tdamit eine Spende von 30\u0026nbsp;€ an die Stif\u0026shy;tung überwiesen wird, \n\t\t\t\t\tdie diese Person als am besten/mittel/am schlech\u0026shy;testen erachtet?\n\t\t\t\t\t\u003ci\u003e(Wenn Sie meinen, die Person würde da\u0026shy;für bezahlen, \n\t\t\t\t\t\tdass die Stif\u0026shy;tung die 30\u0026nbsp;€ \u003ci\u003enicht\u003c/i\u003e erhält, \n\t\t\t\t\t\tschreiben Sie bitte ein Minuszeichen vor den entsprechenden Betrag.)\u003c/i\u003e\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003c!--\n\t\t\t\t\tBeste Stif\u0026shy;tung:_______\tMitt\u0026shy;le\u0026shy;re Stif\u0026shy;tung:_______\tSchlech\u0026shy;teste Stif\u0026shy;tung:_______\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t--\u003e\n\n\n\t\t\t\t\t"
  							},
  							"col_span_label": 1
  						}
@@ -4086,7 +4144,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tZuletzt haben Sie entschieden, \n\t\t\t\t\twie die Präferenzen von fünf Personen \n\t\t\t\t\tin eine gemeinsame Entscheidung zusammengefasst werden sollen. \n\n\t\t\t\t\tDadurch haben Sie festgelegt, welche politische Stif\u0026shy;tung \n\t\t\t\t\teine Spende von 30\u0026nbsp;€ erhält. \n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tNun entscheiden Sie, \n\t\t\t\t\tan wen Sie diese Entscheidung delegieren möchten. \n\t\t\t\t\t\n\t\t\t\t\tDie von Ihnen ausgewählte Person \n\t\t\t\t\twird dann die Präferenzen der \n\t\t\t\t\tdeutschen Staatsangehörigen sehen, \n\t\t\t\t\tund darauf basierend entscheiden, \n\t\t\t\t\twelche Stif\u0026shy;tung die 30\u0026nbsp;€ er\u0026shy;hal\u0026shy;ten wird. \n\t\t\t\t\t\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tSie können Ihre Entscheidung an Personen aus den folgenden drei Grup\u0026shy;pen delegieren:\n\t\t\t\t\u003c/p\u003e\n\n\n\t\t\t\t"
+ 								"de": "\n\n\t\t\t\t\t\u003c!-- Delegation  --\u003e\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eTeil 2\u003c/b\u003e\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tZuletzt haben Sie entschieden, \n\t\t\t\t\twie die Präferenzen von fünf Personen \n\t\t\t\t\tin eine gemeinsame Entscheidung zusammengefasst werden sollen. \n\n\t\t\t\t\tDadurch haben Sie festgelegt, welche politische Stif\u0026shy;tung \n\t\t\t\t\teine Spende von 30\u0026nbsp;€ erhält. \n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tIm Folgenden entscheiden Sie, \n\t\t\t\t\tan wen Sie diese Entscheidung delegieren möchten \n\t\t\t\t\tstatt selber zu entscheiden. \n\t\t\t\t\t\n\t\t\t\t\tDie von Ihnen ausgewählte Person sieht dabei ebenfalls \n\t\t\t\t\tdie Prä\u0026shy;ferenz\u0026shy;konstellation der fünf deutschen Staatsangehörigen \n\t\t\t\t\taus der Vorstudie und entscheidet darauf basierend, \n\t\t\t\t\twelche Stif\u0026shy;tung die 30\u0026nbsp;€ er\u0026shy;hal\u0026shy;ten soll.\t\t\t\t\t\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tSie können die Entscheidung an eine zufällig ausgewählte Person \n\t\t\t\t\taus einer der folgenden drei Grup\u0026shy;pen delegieren: \n\t\t\t\t\u003c/p\u003e\n\n\n\t\t\t\t"
  							},
  							"col_span_label": 1
  						}
@@ -4098,7 +4156,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\u003cul\u003e\n\t\t\t\t\u003cli\u003e\n\t\t\t\tEine repräsentative Grup\u0026shy;pe deutscher Bürger (Grup\u0026shy;pe ▣).\n\t\t\t\t\u003c/li\u003e\n\t\t\t\t\u003c/ul\u003e\n\t\t\t\t\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\u003cul\u003e\n\t\t\t\t\u003cli\u003e\n\t\t\t\tEine repräsentative Grup\u0026shy;pe deutscher Land- und Bundestagspo\u0026shy;li\u0026shy;tiker (Grup\u0026shy;pe ▣).\n\t\t\t\t\u003c/li\u003e\n\t\t\t\t\u003c/ul\u003e\n\t\t\t\t\n\t\t\t\t"
  							},
  							"col_span_label": 1
  						}
@@ -4112,7 +4170,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\u003cul\u003e\n\t\t\t\t\u003cli\u003e\n\t\t\t\tEine repräsentative Grup\u0026shy;pe deutscher Land- und Bundestagspo\u0026shy;li\u0026shy;tiker (Grup\u0026shy;pe ◉).\n\t\t\t\t\u003c/li\u003e\n\t\t\t\t\u003c/ul\u003e\n\t\t\t\t\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\u003cul\u003e\n\t\t\t\t\u003cli\u003e\n\t\t\t\tEine repräsentative Grup\u0026shy;pe deutscher Bürger (Grup\u0026shy;pe ◉).\n\t\t\t\t\u003c/li\u003e\n\t\t\t\t\u003c/ul\u003e\n\t\t\t\t\n\t\t\t\t"
  							},
  							"col_span_label": 1
  						}
@@ -4141,7 +4199,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tErläuterung: Wir haben den Mit\u0026shy;gliedern dieser \n\t\t\t\t\tdrei Grup\u0026shy;pen \n\t\t\t\t\tdie gleichen Fragen wie Ihnen gestellt\n\t\t\t\t\tund sie haben ihre Entscheidungen \n\t\t\t\t\tbereits gefällt. \n\t\t\t\t\tWir haben aus jeder der drei Grup\u0026shy;pen \n\t\t\t\t\tjeweils eine Person zufällig für Sie ausgewählt. \n\t\t\t\t\tFalls dieser Teil der Studie umgesetzt wird, \n\t\t\t\t\twird die Entscheidung dieser Person bestimmen, \n\t\t\t\t\twelche Stif\u0026shy;tung die 30\u0026nbsp;€ er\u0026shy;hal\u0026shy;ten wird.\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eErläuterung\u003c/b\u003e: \n\t\t\t\t\t\n\t\t\t\t\tWir haben Mit\u0026shy;gliedern dieser drei Grup\u0026shy;pen die gleichen Fragen gestellt\n\t\t\t\t\t wie Ihnen im letzten Teil. \n\t\t\t\t\t \n\t\t\t\t\t Auch die Mit\u0026shy;glieder der drei Grup\u0026shy;pen haben Prä\u0026shy;ferenz\u0026shy;konstellationen \n\t\t\t\t\t von Teilnehmer*innen aus der Vorstudie gesehen \n\t\t\t\t\t und entschieden welche Organisation das Geld \n\t\t\t\t\t gegeben der Prä\u0026shy;ferenz\u0026shy;konstellation er\u0026shy;hal\u0026shy;ten soll. \n\t\t\t\t\t \n\t\t\t\t\t Wir haben aus jeder dieser drei Grup\u0026shy;pen jeweils ein Mit\u0026shy;glied \n\t\t\t\t\t zufällig für Sie ausgewählt. \n\t\t\t\t\t \n\t\t\t\t\t Falls dieser Teil der Studie umgesetzt wird, \n\t\t\t\t\t wird die Entscheidung der für Sie zufällig ausgewählten \n\t\t\t\t\t Personen aus der von Ihnen gewählten Grup\u0026shy;pe bestimmen, \n\t\t\t\t\t welche Stif\u0026shy;tung die 30\u0026nbsp;€ erhält.\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span_label": 1
  						}
@@ -4550,14 +4608,18 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\u003cp style=\"font-size:86%\"\u003e\n\t\t\t\t\u003cb\u003eErläuterung:\u003c/b\u003e\n\t\t\t\tFalls dieser Teil umgesetzt wird und somit bestimmt, \n\t\t\t\twelche Stif\u0026shy;tung 30 € erhält, \n\t\t\t\twerden zufällig zwei der drei Grup\u0026shy;pen ausgewählt, \n\t\t\t\tdie tatsächlich festlegen können, \n\t\t\t\twelche Stif\u0026shy;tung das Geld erhält. \n\t\t\t\tDie dritte Grup\u0026shy;pe wird die Entscheidung \n\t\t\t\tdefinitiv nicht treffen. \n\t\t\t\tVon den zwei Grup\u0026shy;pen, die die Entscheidung treffen können, \n\t\t\t\twird jene die Entscheidung treffen, \n\t\t\t\tdie Sie gemäß Ihrer Antworten auf die letzten Fragen \n\t\t\t\tals besser erachten.\n\t\t\t\t\u003c/p\u003e\n\t\t\t"
+ 								"de": "\n\t\t\t\t\u003cp style=\"font-size:86%\"\u003e\n\t\t\t\t\u003cb\u003eErläuterung:\u003c/b\u003e\n\n\n\t\t\t\tFalls dieser Teil umgesetzt wird und somit bestimmt, \n\t\t\t\twelche Stif\u0026shy;tung 30\u0026nbsp;€ erhält, \n\t\t\t\twerden zufällig zwei der drei Grup\u0026shy;pen ausgewählt, \n\t\t\t\tdie tatsächlich festlegen können, welche Stif\u0026shy;tung das Geld erhält. \n\t\t\t\t\n\t\t\t\tDie dritte Grup\u0026shy;pe wird die Entscheidung definitiv nicht treffen. \n\t\t\t\t\n\t\t\t\tVon den zwei Grup\u0026shy;pen, die die Entscheidung treffen können, \n\t\t\t\twird jene die Entscheidung treffen, \n\t\t\t\tdie Sie gemäß Ihrer Antworten auf die letzten \n\t\t\t\tbeiden Fragen als besser erachten.\t\n\t\t\t\t\u003c/p\u003e\n\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
  						}
  					]
  				}
- 			]
+ 			],
+ 			"validation_func_name": "pat2-part1-q7-8",
+ 			"validation_func_msg": {
+ 				"de": "Erste und zweite Antwort schließen sich aus. Wirklich fortfahren?"
+ 			}
  		},
  		{
  			"label": {
@@ -4960,14 +5022,18 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\u003cp style=\"font-size:86%\"\u003e\n\t\t\t\t\u003cb\u003eErläuterung:\u003c/b\u003e\n\t\t\t\tFalls dieser Teil umgesetzt wird und somit bestimmt, \n\t\t\t\twelche Stif\u0026shy;tung 30 € erhält, \n\t\t\t\twerden zufällig zwei der drei Grup\u0026shy;pen ausgewählt, \n\t\t\t\tdie tatsächlich festlegen können, \n\t\t\t\twelche Stif\u0026shy;tung das Geld erhält. \n\t\t\t\tDie dritte Grup\u0026shy;pe wird die Entscheidung \n\t\t\t\tdefinitiv nicht treffen. \n\t\t\t\tVon den zwei Grup\u0026shy;pen, die die Entscheidung treffen können, \n\t\t\t\twird jene die Entscheidung treffen, \n\t\t\t\tdie Sie gemäß Ihrer Antworten auf die letzten Fragen \n\t\t\t\tals besser erachten.\n\t\t\t\t\u003c/p\u003e\n\t\t\t"
+ 								"de": "\n\t\t\t\t\u003cp style=\"font-size:86%\"\u003e\n\t\t\t\t\u003cb\u003eErläuterung:\u003c/b\u003e\n\n\n\t\t\t\tFalls dieser Teil umgesetzt wird und somit bestimmt, \n\t\t\t\twelche Stif\u0026shy;tung 30\u0026nbsp;€ erhält, \n\t\t\t\twerden zufällig zwei der drei Grup\u0026shy;pen ausgewählt, \n\t\t\t\tdie tatsächlich festlegen können, welche Stif\u0026shy;tung das Geld erhält. \n\t\t\t\t\n\t\t\t\tDie dritte Grup\u0026shy;pe wird die Entscheidung definitiv nicht treffen. \n\t\t\t\t\n\t\t\t\tVon den zwei Grup\u0026shy;pen, die die Entscheidung treffen können, \n\t\t\t\twird jene die Entscheidung treffen, \n\t\t\t\tdie Sie gemäß Ihrer Antworten auf die letzten \n\t\t\t\tbeiden Fragen als besser erachten.\t\n\t\t\t\t\u003c/p\u003e\n\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
  						}
  					]
  				}
- 			]
+ 			],
+ 			"validation_func_name": "pat2-part1-q7-8",
+ 			"validation_func_msg": {
+ 				"de": "Erste und zweite Antwort schließen sich aus. Wirklich fortfahren?"
+ 			}
  		},
  		{
  			"label": {
@@ -5040,7 +5106,7 @@
  							"col_span": 1,
  							"col_span_label": 5,
  							"col_span_control": 2,
- 							"validator": "inRange10"
+ 							"validator": "must;inRange10"
  						},
  						{
  							"name": "q_comp_b",
@@ -5054,7 +5120,8 @@
  							},
  							"col_span": 1,
  							"col_span_label": 5,
- 							"col_span_control": 2
+ 							"col_span_control": 2,
+ 							"validator": "must"
  						}
  					]
  				}
@@ -5090,13 +5157,68 @@
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
  				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003c!-- beliefs --\u003e\n\t\t\t\t\t\u003cb\u003eTeil 3\u003c/b\u003e\n\t\t\t\t\u003c/p\u003e \n\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tIn diesem Teil der Studie be\u0026shy;ant\u0026shy;wor\u0026shy;ten Sie sechs Fragen. \n\t\t\t\t\tNach der Erhebung werden 10\u0026nbsp;% aller Teilnehmer*innen zufällig ausgewählt. \n\t\t\t\t\tJede*r ausgewählte Teilnehmer*in wird in Abhängigkeit der Genauigkeit \n\t\t\t\t\tseiner Antworten eine Bonuszahlung von bis zu 50\u0026nbsp;Norstat\u0026nbsp;Coins er\u0026shy;hal\u0026shy;ten (Wert: 5\u0026nbsp;Euro).\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp style='padding-bottom: 0; padding-top: 0.5rem'\u003e\n\t\t\t\t\tEs geht in diesem Teil wieder um die drei Grup\u0026shy;pen aus dem letzten Teil:\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t"
+ 							},
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\n\t\t\t\t\u003cul\u003e\n\t\t\t\t\u003cli\u003e\n\t\t\t\tEine repräsentative Grup\u0026shy;pe deutscher Land- und Bundestagspo\u0026shy;li\u0026shy;tiker (Grup\u0026shy;pe ▣).\n\t\t\t\t\u003c/li\u003e\n\t\t\t\t\u003c/ul\u003e\n\t\t\t\t\n\t\t\t\t"
+ 							},
+ 							"col_span_label": 1
+ 						}
+ 					],
+ 					"randomization_group": 1,
+ 					"randomization_seed": 1
+ 				},
+ 				{
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\n\t\t\t\t\u003cul\u003e\n\t\t\t\t\u003cli\u003e\n\t\t\t\tEine repräsentative Grup\u0026shy;pe deutscher Bürger (Grup\u0026shy;pe ◉).\n\t\t\t\t\u003c/li\u003e\n\t\t\t\t\u003c/ul\u003e\n\t\t\t\t\n\t\t\t\t"
+ 							},
+ 							"col_span_label": 1
+ 						}
+ 					],
+ 					"randomization_group": 1,
+ 					"randomization_seed": 1
+ 				},
+ 				{
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\n\t\t\t\t\u003cul\u003e\n\t\t\t\t\u003cli\u003e\n\t\t\t\tEine Grup\u0026shy;pe deutscher Bürger, \n\t\t\t\tdie \u003ci\u003ekeine Po\u0026shy;li\u0026shy;tiker\u003c/i\u003e sind, \n\t\t\t\tdie aber die \u003ci\u003egleichen de\u0026shy;mo\u0026shy;gra\u0026shy;phischen Eigenschaften wie Po\u0026shy;li\u0026shy;tiker\u003c/i\u003e haben \n\t\t\t\t(Grup\u0026shy;pe ◬). \n\t\t\t\tDas heißt, diese Grup\u0026shy;pe besteht z. B. zu 70\u0026nbsp;% aus Männern, \n\t\t\t\t3\u0026nbsp;% der Mit\u0026shy;glieder sind unter 30\u0026nbsp;Jahre alt, \n\t\t\t\t87\u0026nbsp;% der Mit\u0026shy;glieder haben einen Hoch\u0026shy;schul\u0026shy;abschluss \n\t\t\t\tund 17\u0026nbsp;% sind alleinstehend.\n\t\t\t\t\u003c/li\u003e\n\t\t\t\t\u003c/ul\u003e\n\t\t\t\t\n\t\t\t\t"
+ 							},
+ 							"col_span_label": 1
+ 						}
+ 					],
+ 					"randomization_group": 1,
+ 					"randomization_seed": 1
+ 				},
+ 				{
  					"bottom_vspacers": 3,
  					"columns": 1,
  					"inputs": [
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\u003ch3\u003eTeil 2\u003c/h3\u003e\n\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tIn diesem Teil der Studie be\u0026shy;ant\u0026shy;wor\u0026shy;ten Sie sechs Fragen. \n\t\t\t\t\tNach der Erhebung werden 10\u0026nbsp;% aller Teilnehmer zufällig ausgewählt. \n\t\t\t\t\tJeder ausgewählte Teilnehmer wird in Abhängigkeit der Genauigkeit \n\t\t\t\t\tseiner Antworten eine Bonuszahlung von bis zu 50\u0026nbsp;Norstat\u0026nbsp;Coins er\u0026shy;hal\u0026shy;ten (Wert: 5\u0026nbsp;Euro).\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp style='padding-bottom: 0; padding-top: 0.5rem'\u003e\n\t\t\t\t\tEs geht in diesem Teil wieder um die drei Grup\u0026shy;pen aus dem letzten Teil:\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cul\u003e\n\t\t\t\t\t\u003cli\u003e\n\t\t\t\t\t\tGrup\u0026shy;pe 1: Eine repräsentative Grup\u0026shy;pe deutscher Bürger.\n\t\t\t\t\t\u003c/li\u003e\n\t\t\t\t\t\u003cli\u003e\n\t\t\t\t\t\tGrup\u0026shy;pe 2: Eine repräsentative Grup\u0026shy;pe deutscher Land- und Bundestagspo\u0026shy;li\u0026shy;tiker.\n\t\t\t\t\t\u003c/li\u003e\n\t\t\t\t\t\u003cli\u003e\n\t\t\t\t\t\tGrup\u0026shy;pe 3: Eine Grup\u0026shy;pe deutscher Bürger, die \u003ci\u003ekeine Po\u0026shy;li\u0026shy;tiker\u003c/i\u003e sind, \n\t\t\t\t\t\tdie aber die \u003ci\u003egleichen de\u0026shy;mo\u0026shy;gra\u0026shy;phischen Eigenschaften wie Po\u0026shy;li\u0026shy;tiker\u003c/i\u003e haben. \n\t\t\t\t\t\tDas heißt, Grup\u0026shy;pe 3 besteht z. B. zu 70\u0026nbsp;% aus Männern, \n\t\t\t\t\t\tnur 3\u0026nbsp;% der Mit\u0026shy;glieder sind unter 30\u0026nbsp;Jahre alt, \n\t\t\t\t\t\t87\u0026nbsp;% der Mit\u0026shy;glieder haben einen Hoch\u0026shy;schul\u0026shy;abschluss \n\t\t\t\t\t\tund nur 17\u0026nbsp;% sind alleinstehend.\n\t\t\t\t\t\u003c/li\u003e\n\t\t\t\t\u003cul\u003e\n\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tWir bitten Sie zu schätzen, welche Stif\u0026shy;tung die Mit\u0026shy;glieder dieser Grup\u0026shy;pen als \n\t\t\t\t\tEmpfänger der 30\u0026nbsp;€ bestimmt haben, wenn sie bestimmte Präferenzen \n\t\t\t\t\tder Mit\u0026shy;glieder der Vorstudie gesehen haben. \n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tFalls Sie eine Bonuszahlung er\u0026shy;hal\u0026shy;ten, \n\t\t\t\t\twerden wir eine der sechs Fragen zufällig auswählen \n\t\t\t\t\tund Ihre Schätzung mit den echten Entscheidungen der Grup\u0026shy;pen\u0026shy;mit\u0026shy;glieder abgleichen. \n\t\t\t\t\tIhre Bonuszahlung ist umso höher, \n\t\t\t\t\tje genauer Ihre Einschätzung ist. \n\t\t\t\t\tBitte überlegen Sie sich Ihre Antworten daher sehr genau!\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\u003cp style=\"font-size:86%\"\u003e\n\t\t\t\t\t\u003cb\u003eErläuterung:\u003c/b\u003e\n\t\t\t\t\tFalls Sie in der ausgewählten Frage eine 100 % richtige Antwort geben, \n\t\t\t\t\twerden Sie 50\u0026nbsp;Norstat\u0026nbsp;coins er\u0026shy;hal\u0026shy;ten. \n\t\t\t\t\tFür jede Person, die Sie bei Ihren folgenden Schätzungen zu viel oder zu wenig angeben, \n\t\t\t\t\twerden Sie 2.5\u0026nbsp;Norstat\u0026nbsp;coins verlieren. \n\t\t\t\t\tFalls beispielsweise alle 10\u0026nbsp;Grup\u0026shy;pen\u0026shy;mit\u0026shy;glieder Stif\u0026shy;tung\u0026nbsp;C wählten, \n\t\t\t\t\tSie aber angeben, dass 5\u0026nbsp;Grup\u0026shy;pen\u0026shy;mit\u0026shy;glieder Stif\u0026shy;tung\u0026nbsp;B wählen, \n\t\t\t\t\tund weitere 5 Stif\u0026shy;tung\u0026nbsp;C wählten, \n\t\t\t\t\tdann haben Sie für Stif\u0026shy;tung\u0026nbsp;C fünf Grup\u0026shy;pen\u0026shy;mit\u0026shy;glieder zu wenig angegeben, \n\t\t\t\t\tund für Stif\u0026shy;tung\u0026nbsp;B fünf zu viel. \n\t\t\t\t\tEntsprechend wird Ihre Bezahlung auf 50-2.5× 5 -2.5× 5=25\u0026nbsp;Norstat\u0026nbsp;coins gesenkt.\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tWir bitten Sie zu schätzen, welche Stif\u0026shy;tung 10 zufällig ausgewählte Mit\u0026shy;glieder\n\t\t\t\t\t dieser Grup\u0026shy;pen als Empfänger der 30\u0026nbsp;€ bestimmt haben, \n\t\t\t\t\t wenn sie bestimmte Prä\u0026shy;ferenz\u0026shy;konstellationen aus der Vorstudie gesehen haben.\n\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tFalls Sie für die Bonuszahlung ausgewählt werden, \n\t\t\t\t\twerden wir eine der sechs folgenden Fragen zufällig auswählen \n\t\t\t\t\tund Ihre Schätzung bei dieser Frage mit den echten Entscheidungen \n\t\t\t\t\tder Grup\u0026shy;pen\u0026shy;mit\u0026shy;glieder bei der jeweiligen Prä\u0026shy;ferenz\u0026shy;konstellation abgleichen. \n\t\t\t\t\t\n\t\t\t\t\tIhre Bonuszahlung ist umso höher, je genauer Ihre Schätzung ist. \n\t\t\t\t\tBitte überlegen Sie sich Ihre Antworten daher sehr genau!\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\u003cp style=\"font-size:86%\"\u003e\n\t\t\t\t\t\u003cb\u003eErläuterung:\u003c/b\u003e\n\t\t\t\t\tFalls Sie in der ausgewählten Frage eine 100 % richtige Antwort geben, \n\t\t\t\t\twerden Sie 50\u0026nbsp;Norstat\u0026nbsp;coins er\u0026shy;hal\u0026shy;ten. \n\t\t\t\t\tFür jede Person, die Sie bei Ihren folgenden Schätzungen zu viel oder zu wenig angeben, \n\t\t\t\t\twerden Sie 2.5\u0026nbsp;Norstat\u0026nbsp;coins verlieren. \n\t\t\t\t\tFalls beispielsweise alle 10\u0026nbsp;Grup\u0026shy;pen\u0026shy;mit\u0026shy;glieder Stif\u0026shy;tung\u0026nbsp;C wählten, \n\t\t\t\t\tSie aber angeben, dass 5\u0026nbsp;Grup\u0026shy;pen\u0026shy;mit\u0026shy;glieder Stif\u0026shy;tung\u0026nbsp;B wählen, \n\t\t\t\t\tund weitere 5 Stif\u0026shy;tung\u0026nbsp;C wählten, \n\t\t\t\t\tdann haben Sie für Stif\u0026shy;tung\u0026nbsp;C fünf Grup\u0026shy;pen\u0026shy;mit\u0026shy;glieder zu wenig angegeben, \n\t\t\t\t\tund für Stif\u0026shy;tung\u0026nbsp;B fünf zu viel. \n\t\t\t\t\tEntsprechend wird Ihre Bezahlung auf 50-2.5× 5 -2.5× 5=25\u0026nbsp;Norstat\u0026nbsp;coins gesenkt.\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t"
  							},
  							"col_span_label": 1
  						}
@@ -5165,7 +5287,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\t\u003cb\u003e Frage 1\u003c/b\u003e \u003cbr\u003e\n\t\t\t\t\t\t\n\t\tAls die Präferenzen wie oben gegeben waren: \u003cbr\u003e\n\t\tWas glauben Sie, wie haben sich die 10\u0026nbsp;deutschen Land- und Bundestagspo\u0026shy;li\u0026shy;tiker aus Grup\u0026shy;pe\u0026nbsp;1 entschieden? \n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp style='padding: 0;position: relative; top: 0.2rem;'\u003e\n\t\t\t\t\t\t\u003c!-- 1 --\u003e\n\t\t\t\t\t\t\u003c!-- \u003cb\u003e Frage [groupID].\u003c/b\u003e \u003cbr\u003e --\u003e\n\t\t\t\t\t\t\u003c!-- \u003cb\u003e Frage:\u003c/b\u003e \u003cbr\u003e --\u003e\n\t\t\t\t\t\t\n\tAls die Präferenzen wie oben gegeben waren: \u003cbr\u003e\n\tWas glauben Sie, wie haben sich die 10\u0026nbsp;deutschen Land- und Bundestagspo\u0026shy;li\u0026shy;tiker \n\t(Grup\u0026shy;pe\u0026nbsp;▣) entschieden?\n\t \n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
  							},
  							"col_span": 24,
  							"col_span_label": 1
@@ -5284,7 +5406,9 @@
  								}
  							}
  						}
- 					]
+ 					],
+ 					"randomization_group": 1,
+ 					"randomization_seed": 1
  				},
  				{
  					"bottom_vspacers": 3,
@@ -5293,7 +5417,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\t\u003cb\u003e Frage 2\u003c/b\u003e \u003cbr\u003e\n\t\t\t\t\t\t\n\t\tAls die Präferenzen wie oben gegeben waren: \u003cbr\u003e\n\t\tWas glauben Sie, wie haben sich die 10\u0026nbsp;repräsentativen deutschen Bürger aus Grup\u0026shy;pe\u0026nbsp;2 entschieden? \n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp style='padding: 0;position: relative; top: 0.2rem;'\u003e\n\t\t\t\t\t\t\u003c!-- 2 --\u003e\n\t\t\t\t\t\t\u003c!-- \u003cb\u003e Frage [groupID].\u003c/b\u003e \u003cbr\u003e --\u003e\n\t\t\t\t\t\t\u003c!-- \u003cb\u003e Frage:\u003c/b\u003e \u003cbr\u003e --\u003e\n\t\t\t\t\t\t\n\tAls die Präferenzen wie oben gegeben waren: \u003cbr\u003e\n\tWas glauben Sie, wie haben sich die 10\u0026nbsp;repräsentativen deutschen Bürger  \n\t(Grup\u0026shy;pe\u0026nbsp;◉) entschieden?\n\t \n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
  							},
  							"col_span": 24,
  							"col_span_label": 1
@@ -5412,7 +5536,9 @@
  								}
  							}
  						}
- 					]
+ 					],
+ 					"randomization_group": 1,
+ 					"randomization_seed": 1
  				},
  				{
  					"bottom_vspacers": 3,
@@ -5421,7 +5547,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\t\u003cb\u003e Frage 3\u003c/b\u003e \u003cbr\u003e\n\t\t\t\t\t\t\n\t\tAls die Präferenzen wie oben gegeben waren: \u003cbr\u003e\n\t\tWas glauben Sie, wie haben sich die 10\u0026nbsp;deutschen Bürger aus Grup\u0026shy;pe\u0026nbsp;3 entschieden \n\n\t\t\u003cbr\u003e(deutsche Bürger mit gleichen de\u0026shy;mo\u0026shy;gra\u0026shy;phischen Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker;\n\t\t\u003cbr\u003ealso 70 % Männer, 3 % unter 30 Jahre, halb so oft alleinstehend)?  \n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp style='padding: 0;position: relative; top: 0.2rem;'\u003e\n\t\t\t\t\t\t\u003c!-- 3 --\u003e\n\t\t\t\t\t\t\u003c!-- \u003cb\u003e Frage [groupID].\u003c/b\u003e \u003cbr\u003e --\u003e\n\t\t\t\t\t\t\u003c!-- \u003cb\u003e Frage:\u003c/b\u003e \u003cbr\u003e --\u003e\n\t\t\t\t\t\t\n\tAls die Präferenzen wie oben gegeben waren: \u003cbr\u003e\n\tWas glauben Sie, wie haben sich die 10\u0026nbsp;deutschen Bürger  \n\t(Grup\u0026shy;pe\u0026nbsp;◬) entschieden \n\n\t\u003cbr\u003e(deutsche Bürger mit gleichen de\u0026shy;mo\u0026shy;gra\u0026shy;phischen Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker;\n\t\u003cbr\u003ealso 70\u0026nbsp;% Männer, 3\u0026nbsp;% unter 30 Jahre, halb so oft alleinstehend)? \n\t \n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
  							},
  							"col_span": 24,
  							"col_span_label": 1
@@ -5540,7 +5666,9 @@
  								}
  							}
  						}
- 					]
+ 					],
+ 					"randomization_group": 1,
+ 					"randomization_seed": 1
  				}
  			],
  			"validation_func_name": "pat2-add-to-10",
@@ -5609,7 +5737,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\t\u003cb\u003e Frage 4\u003c/b\u003e \u003cbr\u003e\n\t\t\t\t\t\t\n\t\tAls die Präferenzen wie oben gegeben waren: \u003cbr\u003e\n\t\tWas glauben Sie, wie haben sich die 10\u0026nbsp;deutschen Land- und Bundestagspo\u0026shy;li\u0026shy;tiker aus Grup\u0026shy;pe\u0026nbsp;1 entschieden? \n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp style='padding: 0;position: relative; top: 0.2rem;'\u003e\n\t\t\t\t\t\t\u003c!-- 4 --\u003e\n\t\t\t\t\t\t\u003c!-- \u003cb\u003e Frage [groupID].\u003c/b\u003e \u003cbr\u003e --\u003e\n\t\t\t\t\t\t\u003c!-- \u003cb\u003e Frage:\u003c/b\u003e \u003cbr\u003e --\u003e\n\t\t\t\t\t\t\n\tAls die Präferenzen wie oben gegeben waren: \u003cbr\u003e\n\tWas glauben Sie, wie haben sich die 10\u0026nbsp;deutschen Land- und Bundestagspo\u0026shy;li\u0026shy;tiker \n\t(Grup\u0026shy;pe\u0026nbsp;▣) entschieden?\n\t \n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
  							},
  							"col_span": 24,
  							"col_span_label": 1
@@ -5728,7 +5856,9 @@
  								}
  							}
  						}
- 					]
+ 					],
+ 					"randomization_group": 1,
+ 					"randomization_seed": 1
  				},
  				{
  					"bottom_vspacers": 3,
@@ -5737,7 +5867,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\t\u003cb\u003e Frage 5\u003c/b\u003e \u003cbr\u003e\n\t\t\t\t\t\t\n\t\tAls die Präferenzen wie oben gegeben waren: \u003cbr\u003e\n\t\tWas glauben Sie, wie haben sich die 10\u0026nbsp;repräsentativen deutschen Bürger aus Grup\u0026shy;pe\u0026nbsp;2 entschieden? \n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp style='padding: 0;position: relative; top: 0.2rem;'\u003e\n\t\t\t\t\t\t\u003c!-- 5 --\u003e\n\t\t\t\t\t\t\u003c!-- \u003cb\u003e Frage [groupID].\u003c/b\u003e \u003cbr\u003e --\u003e\n\t\t\t\t\t\t\u003c!-- \u003cb\u003e Frage:\u003c/b\u003e \u003cbr\u003e --\u003e\n\t\t\t\t\t\t\n\tAls die Präferenzen wie oben gegeben waren: \u003cbr\u003e\n\tWas glauben Sie, wie haben sich die 10\u0026nbsp;repräsentativen deutschen Bürger  \n\t(Grup\u0026shy;pe\u0026nbsp;◉) entschieden?\n\t \n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
  							},
  							"col_span": 24,
  							"col_span_label": 1
@@ -5856,7 +5986,9 @@
  								}
  							}
  						}
- 					]
+ 					],
+ 					"randomization_group": 1,
+ 					"randomization_seed": 1
  				},
  				{
  					"bottom_vspacers": 3,
@@ -5865,7 +5997,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\t\u003cb\u003e Frage 6\u003c/b\u003e \u003cbr\u003e\n\t\t\t\t\t\t\n\t\tAls die Präferenzen wie oben gegeben waren: \u003cbr\u003e\n\t\tWas glauben Sie, wie haben sich die 10\u0026nbsp;deutschen Bürger aus Grup\u0026shy;pe\u0026nbsp;3 entschieden \n\n\t\t\u003cbr\u003e(deutsche Bürger mit gleichen de\u0026shy;mo\u0026shy;gra\u0026shy;phischen Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker;\n\t\t\u003cbr\u003ealso 70 % Männer, 3 % unter 30 Jahre, halb so oft alleinstehend)?  \n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp style='padding: 0;position: relative; top: 0.2rem;'\u003e\n\t\t\t\t\t\t\u003c!-- 6 --\u003e\n\t\t\t\t\t\t\u003c!-- \u003cb\u003e Frage [groupID].\u003c/b\u003e \u003cbr\u003e --\u003e\n\t\t\t\t\t\t\u003c!-- \u003cb\u003e Frage:\u003c/b\u003e \u003cbr\u003e --\u003e\n\t\t\t\t\t\t\n\tAls die Präferenzen wie oben gegeben waren: \u003cbr\u003e\n\tWas glauben Sie, wie haben sich die 10\u0026nbsp;deutschen Bürger  \n\t(Grup\u0026shy;pe\u0026nbsp;◬) entschieden \n\n\t\u003cbr\u003e(deutsche Bürger mit gleichen de\u0026shy;mo\u0026shy;gra\u0026shy;phischen Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker;\n\t\u003cbr\u003ealso 70\u0026nbsp;% Männer, 3\u0026nbsp;% unter 30 Jahre, halb so oft alleinstehend)? \n\t \n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
  							},
  							"col_span": 24,
  							"col_span_label": 1
@@ -5984,7 +6116,9 @@
  								}
  							}
  						}
- 					]
+ 					],
+ 					"randomization_group": 1,
+ 					"randomization_seed": 1
  				},
  				{
  					"bottom_vspacers": 2,

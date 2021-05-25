@@ -19,7 +19,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "4023282cf8a77c433862e60d700af9aec45979ff9e8cc86c9ae7153075edc44a",
+ 	"md_5": "35105ae1c22064f1a36efb67062271eff7593d1174d26c6cedae318afb5bc9a0",
  	"lang_codes": [
  		"de"
  	],
@@ -442,7 +442,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage 1.\u003c/b\u003e Schätzen Sie bitte: Was wäre eine zufällig ausgewählte Person \n\t\t\t\t\taus unserer Vorstudie maximal bereit zu zahlen, \n\t\t\t\t\tdamit eine Spende von 30\u0026nbsp;€ an die Stif\u0026shy;tung überwiesen wird, \n\t\t\t\t\tdie diese Person als am besten/mittel/am schlech\u0026shy;testen erachtet?\n\t\t\t\t\t\u003ci\u003e(Wenn Sie meinen, die Person würde da\u0026shy;für bezahlen, \n\t\t\t\t\t\tdass die Stif\u0026shy;tung die 30\u0026nbsp;€ \u003ci\u003enicht\u003c/i\u003e erhält, \n\t\t\t\t\t\tschreiben Sie bitte ein Minuszeichen vor den entsprechenden Betrag.)\u003c/i\u003e\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003c!--\n\t\t\t\t\tBeste Stif\u0026shy;tung:_______\tMitt\u0026shy;le\u0026shy;re Stif\u0026shy;tung:_______\tSchlech\u0026shy;teste Stif\u0026shy;tung:_______\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t--\u003e\n\n\n\t\t\t\t\t"
+ 								"de": "\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage 1.\u003c/b\u003e\u003cbr\u003e Schätzen Sie bitte: Was wäre eine zufällig ausgewählte Person \n\t\t\t\t\taus unserer Vorstudie maximal bereit zu zahlen, \n\t\t\t\t\tdamit eine Spende von 30\u0026nbsp;€ an die Stif\u0026shy;tung überwiesen wird, \n\t\t\t\t\tdie diese Person als am besten/mittel/am schlech\u0026shy;testen erachtet?\n\t\t\t\t\t\u003ci\u003e(Wenn Sie meinen, die Person würde da\u0026shy;für bezahlen, \n\t\t\t\t\t\tdass die Stif\u0026shy;tung die 30\u0026nbsp;€ \u003ci\u003enicht\u003c/i\u003e erhält, \n\t\t\t\t\t\tschreiben Sie bitte ein Minuszeichen vor den entsprechenden Betrag.)\u003c/i\u003e\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003c!--\n\t\t\t\t\tBeste Stif\u0026shy;tung:_______\tMitt\u0026shy;le\u0026shy;re Stif\u0026shy;tung:_______\tSchlech\u0026shy;teste Stif\u0026shy;tung:_______\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t--\u003e\n\n\n\t\t\t\t\t"
  							},
  							"col_span_label": 1
  						}

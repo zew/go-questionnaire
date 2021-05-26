@@ -106,6 +106,25 @@ func clientPageToServer(t *testing.T, clQ *qst.QuestionnaireT, idxPage int,
 					val = ctr.IncrementStr()
 					radioVal[inp.Name] = val
 
+					//
+					//
+					if clQ.Survey.Type == "pat2" {
+						if i1 == 14 || i1 == 15 {
+							if strings.HasPrefix(inp.Name, "part2_q") {
+								p1 := inp.Name[7:8]
+								p2 := inp.Name[len(inp.Name)-1:]
+								t.Logf("p1 %v - p2 %v", p1, p2)
+								if p2 == "1" {
+									val = "3"
+								} else if p2 == "2" {
+									val = "3"
+								} else if p2 == "3" {
+									val = "4"
+								}
+							}
+						}
+					}
+
 					if val == "9" { // preventing inRange10
 						ctr.Reset()
 					}
@@ -119,6 +138,7 @@ func clientPageToServer(t *testing.T, clQ *qst.QuestionnaireT, idxPage int,
 			}
 		}
 	}
+
 	tmp := strings.Replace(vals.Encode(), "submitBtn=next&token="+lgn.FormToken(), "...", -1)
 	t.Logf("POST requesting %v?%v", urlMain, util.UpTo(tmp, 60))
 	t1 := time.Now()

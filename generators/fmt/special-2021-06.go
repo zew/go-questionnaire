@@ -108,7 +108,7 @@ func special202106(q *qst.QuestionnaireT) error {
 					How do you assess the risk return characteristics of following asset classes,
 					in the next six months?
 					
-					Base your consideration on broadly diversified <b><i>globalen</i></b> indices (across all countries).
+					Base your consideration on broadly diversified <b><i>global</i></b> indices (across all countries).
 				</p>
 				<p style=''>
 					I assess the risk return characteristics as …
@@ -168,7 +168,7 @@ func special202106(q *qst.QuestionnaireT) error {
 					asset classes
 					changed since beginning of 2021?
 					
-					Base your consideration on broadly diversified <b><i>globalen</i></b> indices (across all countries).
+					Base your consideration on broadly diversified <b><i>global</i></b> indices (across all countries).
 				</p>
 				<p style=''>
 					My assessment of the risk return characteristics has …

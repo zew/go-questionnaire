@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "272a5973c37ff550799ba573fef60e205be50f896dce7f629079f00b0b04db8d",
+ 	"md_5": "06886ce4a62846f3b29e0eebeaa7f4837ca11958644a93418cedd0d4b416af38",
  	"lang_codes": [
  		"de",
  		"en"
@@ -4570,7 +4570,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003cb\u003e1.\u003c/b\u003e \u0026nbsp;\n\t\t\t\t\tMit Blick auf die nächsten sechs Monate, \n\t\t\t\t\twie beurteilen Sie das Rendite-Risko-Profil der folgenden Anlage-Klassen? \n\t\t\t\t\t\n\t\t\t\t\tOrientieren Sie sich an breit gestreuten, \u003cb\u003e\u003ci\u003eglobalen\u003c/i\u003e\u003c/b\u003e (alle Länder) Indizes.\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\tDas Rendite-Risiko-Profil beurteile ich …\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t",
- 								"en": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003cb\u003e1.\u003c/b\u003e \u0026nbsp;\n\t\t\t\t\tHow do you assess the risk return characteristics of following asset classes,\n\t\t\t\t\tin the next six months?\n\t\t\t\t\t\n\t\t\t\t\tBase your consideration on broadly diversified \u003cb\u003e\u003ci\u003eglobalen\u003c/i\u003e\u003c/b\u003e indices (across all countries).\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\tI assess the risk return characteristics as …\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"en": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003cb\u003e1.\u003c/b\u003e \u0026nbsp;\n\t\t\t\t\tHow do you assess the risk return characteristics of following asset classes,\n\t\t\t\t\tin the next six months?\n\t\t\t\t\t\n\t\t\t\t\tBase your consideration on broadly diversified \u003cb\u003e\u003ci\u003eglobal\u003c/i\u003e\u003c/b\u003e indices (across all countries).\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\tI assess the risk return characteristics as …\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 5,
  							"col_span_label": 1
@@ -5243,7 +5243,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003cb\u003e2.\u003c/b\u003e \u0026nbsp;\n\t\t\t\t\tWie hat sich Ihre Einschätzung zum Rendite-Risko-Profil \n\t\t\t\t\tder folgenden Anlage-Klassen im Vergleich zu Anfang 2021 ver\u0026shy;än\u0026shy;dert?\n\t\t\t\t\t\n\t\t\t\t\tOrientieren Sie sich an breit gestreuten, \u003cb\u003e\u003ci\u003eglobalen\u003c/i\u003e\u003c/b\u003e (alle Länder) Indizes.\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\tMeine Einschätzung zum Rendite-Risiko-Profil hat sich …\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t",
- 								"en": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003cb\u003e2.\u003c/b\u003e \u0026nbsp;\n\t\t\t\t\tHow has your assessment the risk return characteristics of following \n\t\t\t\t\tasset classes\n\t\t\t\t\tchanged since beginning of 2021?\n\t\t\t\t\t\n\t\t\t\t\tBase your consideration on broadly diversified \u003cb\u003e\u003ci\u003eglobalen\u003c/i\u003e\u003c/b\u003e indices (across all countries).\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\tMy assessment of the risk return characteristics has …\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"en": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003cb\u003e2.\u003c/b\u003e \u0026nbsp;\n\t\t\t\t\tHow has your assessment the risk return characteristics of following \n\t\t\t\t\tasset classes\n\t\t\t\t\tchanged since beginning of 2021?\n\t\t\t\t\t\n\t\t\t\t\tBase your consideration on broadly diversified \u003cb\u003e\u003ci\u003eglobal\u003c/i\u003e\u003c/b\u003e indices (across all countries).\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\tMy assessment of the risk return characteristics has …\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 6,
  							"col_span_label": 1

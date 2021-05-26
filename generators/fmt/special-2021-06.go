@@ -8,7 +8,7 @@ import (
 	"github.com/zew/go-questionnaire/trl"
 )
 
-var rowLabelsAssetClasses = []trl.S{
+var rowLabelsAssetClasses1 = []trl.S{
 	{
 		"de": "Aktien",
 		"en": "Stocks",
@@ -40,6 +40,33 @@ var rowLabelsAssetClasses = []trl.S{
 	{
 		"de": "Krypto&shy;währungen",
 		"en": "Crypto currencies",
+	},
+}
+
+var rowLabelsAssetClasses2 = []trl.S{
+	{
+		"de": "Aktien",
+		"en": "Stocks",
+	},
+	{
+		"de": "Staats&shy;anleihen",
+		"en": "Govt. bonds",
+	},
+	{
+		"de": "Inflations&shy;indexierte Staats&shy;anleihen",
+		"en": "Inflation adjusted govt. bonds",
+	},
+	{
+		"de": "Unter&shy;nehmens&shy;anleihen",
+		"en": "Corporate bonds",
+	},
+	{
+		"de": "Grüne Anleihen (Staats- und Unter&shy;nehmens&shy;anleihen)",
+		"en": "Green bonds (govt. or corporate",
+	},
+	{
+		"de": "Immobilien",
+		"en": "Real estate",
 	},
 }
 
@@ -85,7 +112,7 @@ func special202106(q *qst.QuestionnaireT) error {
 					"ass_glob_crypto",
 				},
 				radioVals6,
-				rowLabelsAssetClasses,
+				rowLabelsAssetClasses1,
 			)
 
 			gb.MainLabel = trl.S{
@@ -93,7 +120,7 @@ func special202106(q *qst.QuestionnaireT) error {
 				<p style=''>
 					<b>1.</b> &nbsp;
 					Mit Blick auf die nächsten sechs Monate, 
-					wie beurteilen Sie das Rendite-Risko-Profil der folgenden Anlage-Klassen? 
+					wie beurteilen Sie das Rendite-Risko-Profil der folgenden Anlageklassen? 
 					
 					Orientieren Sie sich an breit gestreuten, <b><i>globalen</i></b> (alle Länder) Indizes.
 				</p>
@@ -145,7 +172,7 @@ func special202106(q *qst.QuestionnaireT) error {
 					"chg_glob_crypto",
 				},
 				radioVals6,
-				rowLabelsAssetClasses,
+				rowLabelsAssetClasses1,
 			)
 
 			gb.MainLabel = trl.S{
@@ -153,7 +180,7 @@ func special202106(q *qst.QuestionnaireT) error {
 				<p style=''>
 					<b>2.</b> &nbsp;
 					Wie hat sich Ihre Einschätzung zum Rendite-Risko-Profil 
-					der folgenden Anlage-Klassen im Vergleich zu Anfang 2021 verändert?
+					der folgenden Anlageklassen im Vergleich zu Anfang 2021 verändert?
 					
 					Orientieren Sie sich an breit gestreuten, <b><i>globalen</i></b> (alle Länder) Indizes.
 				</p>
@@ -218,12 +245,10 @@ func special202106(q *qst.QuestionnaireT) error {
 					"ass_euro_bonds_tips",
 					"ass_euro_bonds_corp",
 					"ass_euro_bonds_green",
-					"ass_euro_comm",
 					"ass_euro_re",
-					"ass_euro_crypto",
 				},
 				radioVals6,
-				rowLabelsAssetClasses,
+				rowLabelsAssetClasses2,
 			)
 
 			gb.MainLabel = trl.S{
@@ -231,10 +256,10 @@ func special202106(q *qst.QuestionnaireT) error {
 				<p style=''>
 					<b>3.</b> &nbsp;
 					Mit Blick auf die nächsten sechs Monate, 
-					wie beurteilen Sie das Rendite-Risko-Profil der folgenden Anlage-Klassen? 
+					wie beurteilen Sie das Rendite-Risko-Profil der folgenden Anlageklassen? 
 					
-					Orientieren Sie sich an breit gestreuten Indizes.
-					für das <b><i>Eurogebiet</i></b>
+					Orientieren Sie sich an breit gestreuten Indizes
+					für das <b><i>Eurogebiet</i></b>.
 				</p>
 
 				<p style=''>
@@ -280,12 +305,10 @@ func special202106(q *qst.QuestionnaireT) error {
 					"chg_euro_bonds_tips",
 					"chg_euro_bonds_corp",
 					"chg_euro_bonds_green",
-					"chg_euro_comm",
 					"chg_euro_re",
-					"chg_euro_crypto",
 				},
 				radioVals6,
-				rowLabelsAssetClasses,
+				rowLabelsAssetClasses2,
 			)
 
 			gb.MainLabel = trl.S{
@@ -293,10 +316,10 @@ func special202106(q *qst.QuestionnaireT) error {
 				<p style=''>
 					<b>4.</b> &nbsp;
 					Wie hat sich Ihre Einschätzung zum Rendite-Risko-Profil 
-					der folgenden Anlage-Klassen im Vergleich zu Anfang 2021 verändert?
+					der folgenden Anlageklassen im Vergleich zu Anfang 2021 verändert?
 					
-					Orientieren Sie sich an breit gestreuten Indizes.
-					für das <b><i>Eurogebiet</i></b>
+					Orientieren Sie sich an breit gestreuten Indizes
+					für das <b><i>Eurogebiet</i></b>.
 				</p>
 				<p style=''>
 					Meine Einschätzung zum Rendite-Risiko-Profil hat sich …
@@ -358,17 +381,10 @@ func special202106(q *qst.QuestionnaireT) error {
 				}
 
 				partIGroupsShort := []string{
-					"dax_reversion_a:a. überbewertet:a. overvalued",
-					"dax_reversion_b:b. fair bewertet:b. fairly valued",
-					"dax_reversion_c:c. unterbewertet:c. undervalued",
-					"dax_reversion_d:d. Keine Angabe:d. No answer",
-				}
-
-				partIGroupsShort = []string{
-					"dax_reversion_a:überbewertet&nbsp;:overvalued",
-					"dax_reversion_b:fair bewertet&nbsp;:fairly valued",
-					"dax_reversion_c:unterbewertet&nbsp;:undervalued",
-					"dax_reversion_d:Keine Angabe&nbsp;:No answer",
+					"1:überbewertet&nbsp;:overvalued",
+					"2:fair bewertet&nbsp;:fairly valued",
+					"3:unterbewertet&nbsp;:undervalued",
+					"4:keine Angabe&nbsp;:no answer",
 				}
 
 				for _, kv := range partIGroupsShort {

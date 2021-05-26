@@ -39,7 +39,8 @@ func (gb *GridBuilder) AddCol(headerCell trl.S, spanLabel, spanControl float32) 
 	gb.cols = append(gb.cols, col)
 }
 
-// AddRadioRow adds a row radio inputs - empty columns are filled with empty text
+// AddRadioRow adds a row radio inputs - empty columns are filled with empty text;
+// sparse labels allows to set labels for selected columns only; often only the first columns has a label
 func (gb *GridBuilder) AddRadioRow(name string, vals []string, sparseLabels map[int]trl.S) {
 
 	if len(gb.cols) < 1 {
@@ -89,8 +90,85 @@ func (gb *GridBuilder) dumpCols() {
 	log.Printf("\n%v  total %v", w.String(), cntr)
 }
 
-// AddGrid creates static entries to the page;
-// being prepared using AddCol() and AddRadioRow()
+// -----------------------------------------------------------------
+
+// NewGridBuilderRadios - see NewGridBuilderRadiosWithValidator
+func NewGridBuilderRadios(
+	columnTemplate []float32,
+	hdrLabels []trl.S,
+	inputNames []string,
+	radioVals []string,
+	firstColLabels []trl.S,
+) *GridBuilder {
+
+	return NewGridBuilderRadiosWithValidator(
+		columnTemplate,
+		hdrLabels,
+		inputNames,
+		radioVals,
+		firstColLabels,
+		"",
+	)
+
+}
+
+// NewGridBuilderRadiosWithValidator
+// uses GridBuilder.AddCol() and GridBuilder.AddRadioRow()
+// to compile a matrix of cells;
+// basically, each cell can contain input names, input values and input labels
+func NewGridBuilderRadiosWithValidator(
+	columnTemplate []float32,
+	hdrLabels []trl.S,
+	inputNames []string,
+	radioVals []string,
+	firstColLabels []trl.S,
+	Validator string,
+) *GridBuilder {
+
+	gb := &GridBuilder{}
+
+	gb.validator = Validator
+
+	if len(hdrLabels) > 0 {
+		if len(columnTemplate) != len(hdrLabels)*2 {
+			log.Panicf("NewGridBuilderRadios(): len(columnTemplate) != len(hdrLabels)*2 - %v != %v", len(columnTemplate), len(hdrLabels)*2)
+		}
+		// Setup of columns with header labels
+		for i := 0; i < len(columnTemplate); i += 2 {
+			gb.AddCol(hdrLabels[i/2], columnTemplate[i], columnTemplate[i+1])
+		}
+	} else {
+		// Setup of columns without
+		for i := 0; i < len(columnTemplate); i += 2 {
+			gb.AddCol(nil, columnTemplate[i], columnTemplate[i+1])
+		}
+	}
+
+	// gb.dumpCols()
+
+	// adding rows
+	for rowIdx := 0; rowIdx < len(inputNames); rowIdx++ {
+		name := inputNames[rowIdx]
+
+		sparseLbls := map[int]trl.S{}
+		if rowIdx < len(firstColLabels) {
+			lbl := firstColLabels[rowIdx]
+			sparseLbls[0] = lbl
+		}
+
+		// sparseLbls[3] = trl.S{"de": "--", "en": "--"}
+		gb.AddRadioRow(name, radioVals, sparseLbls)
+	}
+
+	return gb
+
+}
+
+// -----------------------------------------------------------------
+
+// AddGrid statically adds inputs to the page;
+// these inputs are based on the preconfigured
+// GridBuilder's cells
 func (p *pageT) AddGrid(gb *GridBuilder) *groupT {
 
 	gr := p.AddGroup()
@@ -98,16 +176,21 @@ func (p *pageT) AddGrid(gb *GridBuilder) *groupT {
 	gr.Cols = float32(len(gb.cols))
 
 	gr.Style = css.NewStylesResponsive(gr.Style)
+	gr.Style.Desktop.StyleBox.Display = "grid"           // prevent defaults being set while rendering
+	gr.Style.Desktop.StyleGridContainer.AutoFlow = "row" // prevent defaults being set while rendering
+	stl := ""
+	for colIdx := 0; colIdx < len(gb.cols); colIdx++ {
+		stl = fmt.Sprintf(
+			"%v   %vfr ",
+			stl,
+			gb.cols[colIdx].spanLabel+gb.cols[colIdx].spanControl,
+		)
+	}
 	if gr.Style.Desktop.StyleGridContainer.TemplateColumns == "" {
-		stl := ""
-		for colIdx := 0; colIdx < len(gb.cols); colIdx++ {
-			stl = fmt.Sprintf(
-				"%v   %vfr ",
-				stl,
-				gb.cols[colIdx].spanLabel+gb.cols[colIdx].spanControl,
-			)
-		}
 		gr.Style.Desktop.StyleGridContainer.TemplateColumns = stl
+		// log.Printf("GridBuilder.AddGrid() - %v", stl)
+	} else {
+		log.Printf("GridBuilder.AddGrid() - another TemplateColumns already present.\nwnt%v\ngot%v", stl, gr.Style.Desktop.StyleGridContainer.TemplateColumns)
 	}
 
 	// gb.dumpCols()
@@ -167,76 +250,5 @@ func (p *pageT) AddGrid(gb *GridBuilder) *groupT {
 	}
 
 	return gr
-
-}
-
-// NewGridBuilderRadios for a matrix of inputs
-func NewGridBuilderRadios(
-	columnTemplate []float32,
-	hdrLabels []trl.S,
-	inputNames []string,
-	radioVals []string,
-	firstColLabels []trl.S,
-) *GridBuilder {
-
-	return NewGridBuilderRadiosWithValidator(
-		columnTemplate,
-		hdrLabels,
-		inputNames,
-		radioVals,
-		firstColLabels,
-		"",
-	)
-
-}
-
-// NewGridBuilderRadiosWithValidator like NewGridBuilderRadios
-// but with validator func
-func NewGridBuilderRadiosWithValidator(
-	columnTemplate []float32,
-	hdrLabels []trl.S,
-	inputNames []string,
-	radioVals []string,
-	firstColLabels []trl.S,
-	Validator string,
-) *GridBuilder {
-
-	gb := &GridBuilder{}
-
-	gb.validator = Validator
-
-	if len(hdrLabels) > 0 {
-		if len(columnTemplate) != len(hdrLabels)*2 {
-			log.Panicf("NewGridBuilderRadios(): len(columnTemplate) != len(hdrLabels)*2 - %v != %v", len(columnTemplate), len(hdrLabels)*2)
-		}
-
-		// Setup of columns with header labels
-		for i := 0; i < len(columnTemplate); i += 2 {
-			gb.AddCol(hdrLabels[i/2], columnTemplate[i], columnTemplate[i+1])
-		}
-	} else {
-		// Setup of columns without
-		for i := 0; i < len(columnTemplate); i += 2 {
-			gb.AddCol(nil, columnTemplate[i], columnTemplate[i+1])
-		}
-	}
-
-	// gb.dumpCols()
-
-	// adding rows
-	for rowIdx := 0; rowIdx < len(inputNames); rowIdx++ {
-		name := inputNames[rowIdx]
-
-		sparseLbls := map[int]trl.S{}
-		if rowIdx < len(firstColLabels) {
-			lbl := firstColLabels[rowIdx]
-			sparseLbls[0] = lbl
-		}
-
-		// sparseLbls[3] = trl.S{"de": "--", "en": "--"}
-		gb.AddRadioRow(name, radioVals, sparseLbls)
-	}
-
-	return gb
 
 }

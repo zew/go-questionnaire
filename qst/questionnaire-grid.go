@@ -117,6 +117,14 @@ func (inp *inputT) ControlTop() {
 	inp.StyleCtl.Desktop.StyleGridItem.AlignSelf = "start"
 }
 
+// LabelRight aligns the label right;
+// but also the text right
+func (inp *inputT) LabelRight() {
+	inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
+	inp.StyleLbl.Desktop.StyleGridItem.JustifySelf = "end"
+	inp.StyleLbl.Desktop.StyleText.AlignHorizontal = "right"
+}
+
 // appendTooltip appends an explanation
 func (inp *inputT) appendTooltip(w io.Writer, langCode string) {
 

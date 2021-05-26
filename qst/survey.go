@@ -124,7 +124,7 @@ func (s surveyT) Quarter(offs ...int) string {
 		qRet += 4
 		y--
 	}
-	return fmt.Sprintf("Q%v %v", qRet, y)
+	return fmt.Sprintf("Q%v&nbsp;%v", qRet, y)
 }
 
 // YearStr yields the year as string;

@@ -351,3 +351,67 @@ func labelsPlusPlusMinusMinus() []trl.S {
 	return tm
 
 }
+
+func positiveNegative5() []trl.S {
+
+	tm := []trl.S{
+		{
+			"de": "stark positiv",
+			"en": "strongly positive",
+		},
+		{
+			"de": "leicht positiv",
+			"en": "slightly positive",
+		},
+		{
+			"de": "leicht negativ",
+			"en": "slightly negative",
+		},
+		{
+			"de": "stark negativ",
+			"en": "strongly negative",
+		},
+		{
+			"de": "keine<br>Angabe",
+			"en": "no answer",
+		},
+	}
+
+	return tm
+
+}
+func improvedDeteriorated6() []trl.S {
+
+	tm := []trl.S{
+		{
+			"de": "stark verbessert",
+			"en": "strongly improved",
+		},
+		{
+			"de": "leicht verbessert",
+			"en": "slightly improved",
+		},
+		{
+			"de": "nicht verändert",
+			"en": "unchanged",
+		},
+		{
+			// extra aggressive hyphenization
+			"de": "leicht ver&shy;schl&shy;ech&shy;tert",
+			"en": "slightly deteriorated",
+		},
+		{
+			// extra aggressive hyphenization
+			"de": "stark ver&shy;schl&shy;ech&shy;tert",
+			"en": "strongly deteriorated",
+		},
+
+		{
+			"de": "keine<br>Angabe",
+			"en": "no answer",
+		},
+	}
+
+	return tm
+
+}

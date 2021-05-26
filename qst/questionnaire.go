@@ -250,7 +250,7 @@ func (gr *groupT) AddInput() *inputT {
 	return ret
 }
 
-// addInputArg adds arg to group
+// addInputArg adds an existing input to the group
 func (gr *groupT) addInputArg(inp *inputT) {
 	gr.Inputs = append(gr.Inputs, inp)
 }

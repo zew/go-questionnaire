@@ -17,6 +17,9 @@ type VariableElements struct {
 	AllMandatory    bool
 	ZumSchlussOrNun bool
 
+	//
+	ZumErstenTeilAsNumber bool
+
 	// Part 2
 	ZumXtenTeil string
 }

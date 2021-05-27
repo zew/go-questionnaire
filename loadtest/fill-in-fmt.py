@@ -9,10 +9,10 @@ import sys
 baseURL = "https://survey2.zew.de/"
 
 loginQueries = [
-    "?u=10000&sid=fmt&wid=2021-05&p=1&h=5y60OnjnS7oTrM6G9qhuz8Nv6R7oFecvJ_srMNqL8rg",
-    "?u=10001&sid=fmt&wid=2021-05&p=1&h=6ddRSTs0PSYCy_7SqMXybjadhhVawsV1YQnJrbK-iCU",
-    "?u=10002&sid=fmt&wid=2021-05&p=1&h=EO50-rRdu8aA8Xw-FxiUEPAgDrfiJi-esb3v9MwcMTg",
-    "?u=10003&sid=fmt&wid=2021-05&p=1&h=9nHtDfUXv-HJwb2nGAJAq9jSh4qx-Dd7tgiUjUCrmSs",
+    "?u=10000&sid=fmt&wid=2021-06&p=1&h=Oza9shyDqnwDDyAanp88PwPa04gIWZKWdfFzSdCiLZQ",
+    "?u=10001&sid=fmt&wid=2021-06&p=1&h=TiX--XE5ymazvawR6_fcoH33bzx8x-vb9OZhy1RQbtI",
+    "?u=10002&sid=fmt&wid=2021-06&p=1&h=Os8MW-bFaMF6S1HmAFoA0oAOYxbk8Ny603_dRuMC3fg",
+    "?u=10003&sid=fmt&wid=2021-06&p=1&h=CiVSmxbaJeCmABZhaFGNP1lBDEEi9Pk8tUYnVrxWKgA",
 ]
 
 

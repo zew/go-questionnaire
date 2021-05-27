@@ -27,7 +27,7 @@ var rowLabelsAssetClasses1 = []trl.S{
 	},
 	{
 		"de": "Grüne Anleihen (Staats- und Unter&shy;nehmens&shy;anleihen)",
-		"en": "Green bonds (govt. or corporate",
+		"en": "Green bonds (govt. or corporate)",
 	},
 	{
 		"de": "Rohstoffe",

@@ -9,7 +9,7 @@ import (
 	"github.com/zew/go-questionnaire/trl"
 )
 
-var partIGroupsLong = []string{
+var PartIGroupsLong = []string{
 	"Eine repräsentative Gruppe deutscher Land- und Bundestagspolitiker (Gruppe %v).",
 	"Eine repräsentative Gruppe deutscher Bürger (Gruppe %v).",
 	`Eine Gruppe deutscher Bürger, 
@@ -22,10 +22,17 @@ var partIGroupsLong = []string{
 				und 17&nbsp;%% sind alleinstehend.`,
 }
 
-var partIGroupsShort = []string{
+var PartIGroupsShortOLD = []string{
 	"pol_gr1:Ein Politiker aus Gruppe %v <br>(deutsche Land- und Bundestagspolitiker)",
 	"cit_gr2:Ein Bürger aus Gruppe %v    <br>(repräsentativer deutscher Bürger)",
 	"cit_gr3:Ein Bürger aus Gruppe %v    <br>(deutsche Bürger mit gleichen demographischen Eigenschaften wie die Politiker)",
+}
+
+// changed for pop3
+var PartIGroupsShort = []string{
+	"pol_gr1:Ein deutscher Land- oder Bundestagspolitiker (Gruppe %v)",
+	"cit_gr2:Ein repräsentativer deutscher Bürger (Gruppe %v)",
+	"cit_gr3:Ein deutscher Bürger mit gleichen demographischen Eigenschaften wie die Politiker (Gruppe %v)",
 }
 
 /*
@@ -71,8 +78,15 @@ var partIIQuestLabels = []string{
 	`,
 }
 
+//
+var Pat3Part2 = []string{
+	"Politikern aus Gruppe %v",
+	"Bürgern aus Gruppe %v",
+	"Bürgern aus Gruppe %v (gleiche demographische Eigenschaften wie die Politiker)",
+}
+
 // https://cloford.com/resources/charcodes/utf-8_geometric.htm
-var groupIDs = []string{
+var GroupIDs = []string{
 	// "◈",
 	"▣",
 	"◉",
@@ -143,7 +157,7 @@ func part2Entscheidung78TwoTimesThree(q *qst.QuestionnaireT, pageIdx int, inpNam
 			`}
 		}
 	}
-	for idx, kv := range partIGroupsShort {
+	for idx, kv := range PartIGroupsShort {
 		{
 			gr := page.AddGroup()
 			gr.Cols = 1
@@ -153,7 +167,7 @@ func part2Entscheidung78TwoTimesThree(q *qst.QuestionnaireT, pageIdx int, inpNam
 			sp := strings.Split(kv, ":")
 			key := sp[0]
 			val := sp[1]
-			val = fmt.Sprintf(val, groupIDs[idx])
+			val = fmt.Sprintf(val, GroupIDs[idx])
 
 			lbl := trl.S{"de": val}
 
@@ -187,7 +201,7 @@ func part2Entscheidung78TwoTimesThree(q *qst.QuestionnaireT, pageIdx int, inpNam
 			`}
 		}
 	}
-	for idx, kv := range partIGroupsShort {
+	for idx, kv := range PartIGroupsShort {
 		{
 			gr := page.AddGroup()
 			gr.Cols = 1
@@ -197,7 +211,7 @@ func part2Entscheidung78TwoTimesThree(q *qst.QuestionnaireT, pageIdx int, inpNam
 			sp := strings.Split(kv, ":")
 			key := sp[0]
 			val := sp[1]
-			val = fmt.Sprintf(val, groupIDs[idx])
+			val = fmt.Sprintf(val, GroupIDs[idx])
 
 			lbl := trl.S{"de": val}
 
@@ -268,7 +282,7 @@ func ComprehensionCheck(q *qst.QuestionnaireT) error {
 				inp.Desc = trl.S{
 					"de": `
 				<p>
-					<b>Frage</b>: <br>
+					<b>Frage:</b> <br>
 					Nehmen Sie an, die Praeferenzen der Gruppenmitglieder 
 					sind wie folgt gegeben:
 				</p>
@@ -391,7 +405,7 @@ func Part2IntroUndEntscheidung78(q *qst.QuestionnaireT) error {
 
 		}
 
-		for idx, txt := range partIGroupsLong {
+		for idx, txt := range PartIGroupsLong {
 			gr := page.AddGroup()
 			gr.RandomizationGroup = 1
 			gr.RandomizationSeed = 1
@@ -399,7 +413,7 @@ func Part2IntroUndEntscheidung78(q *qst.QuestionnaireT) error {
 
 			gr.Cols = 1
 			{
-				txt = fmt.Sprintf(txt, groupIDs[idx])
+				txt = fmt.Sprintf(txt, GroupIDs[idx])
 				inp := gr.AddInput()
 				inp.Type = "textblock"
 				inp.Desc = trl.S{
@@ -594,7 +608,7 @@ func Part3Intro(q *qst.QuestionnaireT) error {
 			}
 		}
 	}
-	for idx, txt := range partIGroupsLong {
+	for idx, txt := range PartIGroupsLong {
 		gr := page.AddGroup()
 		gr.RandomizationGroup = 1
 		gr.RandomizationSeed = 1
@@ -602,7 +616,7 @@ func Part3Intro(q *qst.QuestionnaireT) error {
 
 		gr.Cols = 1
 		{
-			txt = fmt.Sprintf(txt, groupIDs[idx])
+			txt = fmt.Sprintf(txt, GroupIDs[idx])
 			inp := gr.AddInput()
 			inp.Type = "textblock"
 			inp.Desc = trl.S{
@@ -747,7 +761,7 @@ func Part3Block12(q *qst.QuestionnaireT, blockStart int) error {
 						%v 
 					</p>
 					`, i1+1,
-					fmt.Sprintf(partIIQuestLabels[i1%3], groupIDs[i1%3]),
+					fmt.Sprintf(partIIQuestLabels[i1%3], GroupIDs[i1%3]),
 				),
 			}
 		}

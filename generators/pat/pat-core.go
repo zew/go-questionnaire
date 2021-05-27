@@ -400,8 +400,10 @@ func Part2(q *qst.QuestionnaireT, vE VariableElements) error {
 	// zweiter Teil
 
 	validator := ""
+	validatorMust10 := ""
 	if vE.AllMandatory {
 		validator = "must"
+		validatorMust10 = ";pat3_q4ab_opt123"
 	}
 
 	// page 5
@@ -417,6 +419,20 @@ func Part2(q *qst.QuestionnaireT, vE VariableElements) error {
 			// "en": "Does not add up. Really continue?",
 		}
 
+		zeT := fmt.Sprintf(`
+			<b>
+				Nun kommen wir zum %v Teil unserer Studie. 
+			</b>
+		`, vE.ZumXtenTeil)
+
+		if vE.ZumErstenTeilAsNumber {
+			zeT = fmt.Sprintf(`
+			<b style='font-size: 110%%'>
+				Teil %v
+			</b> <br>
+		`, vE.ZumXtenTeil)
+		}
+
 		// gr1
 		{
 			gr := page.AddGroup()
@@ -429,9 +445,8 @@ func Part2(q *qst.QuestionnaireT, vE VariableElements) error {
 				inp.Desc = trl.S{
 					"de": fmt.Sprintf(`
 					<p>
-						<b>
-						Nun kommen wir zum %v Teil unserer Studie. 
-						</b>
+						%v
+
 						In diesem Teil treffen Sie jeweils Entscheidungen 
 						für eine*n deutsche*n Staatsangehörige*n, 
 						der*die Ihnen zugeordnet ist 
@@ -460,7 +475,7 @@ func Part2(q *qst.QuestionnaireT, vE VariableElements) error {
 					</p>
 
 
-					`, vE.ZumXtenTeil, vE.NumberingSections+0),
+					`, zeT, vE.NumberingSections+0),
 				}
 			}
 		}
@@ -542,8 +557,10 @@ func Part2(q *qst.QuestionnaireT, vE VariableElements) error {
 		page.Short = trl.S{"de": "Gruppen-<br>präferenzen"}
 		page.Style = css.DesktopWidthMaxForPages(page.Style, "36rem") // 60
 
-		page.ValidationFuncName = "patPage6"
-		page.ValidationFuncMsg = trl.S{"de": "Wollen Sie wirklich weiterfahren, ohne dass sich Ihre Eintraege auf 10 summieren?"}
+		if !vE.AllMandatory {
+			page.ValidationFuncName = "patPage6"
+			page.ValidationFuncMsg = trl.S{"de": "Wollen Sie wirklich weiterfahren, ohne dass sich Ihre Eintraege auf 10 summieren?"}
+		}
 
 		// gr0
 		{
@@ -613,8 +630,9 @@ func Part2(q *qst.QuestionnaireT, vE VariableElements) error {
 				inp.Label = trl.S{"de": "von 10 wählen Option&nbsp;A"}
 				// inp.Label = trl.S{"de": " "}
 				// inp.Suffix = trl.S{"de": "von 10<br>wählen Option&nbsp;A"}
-				inp.Validator = "inRange10"
+				inp.Validator = "inRange10" + validatorMust10
 				inp.StyleLbl = inpSt1
+
 			}
 			{
 				inp := gr.AddInput()
@@ -721,7 +739,7 @@ func Part2(q *qst.QuestionnaireT, vE VariableElements) error {
 				inp.Label = trl.S{"de": "von 10 wählen Option&nbsp;A"}
 				// inp.Label = trl.S{"de": " "}
 				// inp.Suffix = trl.S{"de": "von 10<br>wählen Option&nbsp;A"}
-				inp.Validator = "inRange10"
+				inp.Validator = "inRange10" + validatorMust10
 				inp.StyleLbl = inpSt1
 			}
 			{
@@ -826,6 +844,11 @@ func Part2Frage4(q *qst.QuestionnaireT, vE VariableElements) error {
 	grStPage78.Desktop.StyleGridContainer.GapRow = "0.1rem"
 	grStPage78.Desktop.StyleGridContainer.GapColumn = "0.01rem"
 
+	validator := ""
+	if vE.AllMandatory {
+		validator = "must"
+	}
+
 	// page 7
 	{
 		page := q.AddPage()
@@ -835,12 +858,13 @@ func Part2Frage4(q *qst.QuestionnaireT, vE VariableElements) error {
 
 		// gr1
 		{
-			gb := qst.NewGridBuilderRadios(
+			gb := qst.NewGridBuilderRadiosWithValidator(
 				columnTemplate7,
 				labelsOneToSeven1,
 				[]string{"q4"},
 				radioVals7,
 				[]trl.S{},
+				validator,
 			)
 			gb.MainLabel = trl.S{
 				"de": fmt.Sprintf(`

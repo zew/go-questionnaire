@@ -647,3 +647,14 @@ button[accesskey="n"]
 /*  
 {{  .SiteName}}
 */
+
+
+
+.popup-invalid-anchor-grid-item {
+    height: 0.8rem;
+}
+
+.popup-invalid-content-grid-item {
+
+    
+}

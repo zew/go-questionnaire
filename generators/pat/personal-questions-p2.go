@@ -251,16 +251,19 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 					"de": fmt.Sprintf(`
 					</p>
 					<b>Frage %v.</b>
-					Wie ist Ihr Familienstand?
+					Was ist Ihr Familienstand?
 					</p>
 				`, vE.NumberingQuestions+5),
 				}
 			}
 
 			keyVals := []string{
+				"married_together:Verheiratet und leben mit Ihrem/Ihrer Ehepartner/-in zusammen",
+				"married_separated:Verheiratet und leben getrennt",
+				"widowed:Verwitwet",
+				"divorced:Geschieden",
+				"engaged:In Partnerschaft ohne Ehe",
 				"single:Alleinstehend",
-				"engaged:Partnerschaft ohne Ehe",
-				"married:Verheiratet",
 			}
 
 			for _, kv := range keyVals {
@@ -292,8 +295,11 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 					"de": fmt.Sprintf(`
 					</p>
 					<b>Frage %v.</b>
-					Wie viel Geld verdienen Sie persönlich monatlich 
-					nach Abzug von Steuern und Sozialversicherungsbeiträgen?
+					Wie viel Geld verdienen Sie im Durchschnitt persönlich monatlich 
+					nach Abzug von Steuern und Sozialversicherungsbeiträgen? 
+					Unter durchschnittlichem Verdienst ist die Summe zu verstehen, 
+					die sich aus Lohn, Gehalt, Einkommen aus selbstständiger Tätigkeit, 
+					Rente oder Pension sowie Sozialleistungen ergibt.
 					</p>
 				`, vE.NumberingQuestions+6),
 				}
@@ -308,7 +314,13 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 				"upto3000:2.000 bis unter 3.000 Euro",
 				"upto4000:3.000 bis unter 4.000 Euro",
 				"upto5000:4.000 bis unter 5.000 Euro",
-				"upto10000:5.000 bis unter 10.000 Euro",
+
+				"upto6000:5.000 bis unter 6.000 Euro",
+				"upto7000:6.000 bis unter 7.000 Euro",
+				"upto8000:7.000 bis unter 8.000 Euro",
+				"upto9000:8.000 bis unter 9.000 Euro",
+				"upto10000:9.000 bis unter 10.000 Euro",
+
 				"over10000:Mehr als 10.000 Euro",
 			}
 

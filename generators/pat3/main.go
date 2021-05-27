@@ -41,19 +41,32 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		return nil, fmt.Errorf("Error adding personal questions 2: %v", err)
 	}
 
-	err = pat.PersonalQuestions1(&q, pat.VariableElements{NumberingQuestions: 9, AllMandatory: true, ZumSchlussOrNun: true})
+	err = pat.PersonalQuestions1(&q, pat.VariableElements{NumberingQuestions: 10, AllMandatory: true, ZumSchlussOrNun: true})
 	if err != nil {
 		return nil, fmt.Errorf("Error adding personal questions 1: %v", err)
 	}
 
 	// core
-	err = pat.Part2(&q, pat.VariableElements{ZumXtenTeil: "ersten", NumberingSections: 1, NumberingQuestions: 1})
+	err = pat.Part2(&q,
+		pat.VariableElements{
+			NumberingSections:     1,
+			NumberingQuestions:    1,
+			AllMandatory:          true,
+			ZumXtenTeil:           "1",
+			ZumErstenTeilAsNumber: true,
+		},
+	)
 	if err != nil {
 		return nil, fmt.Errorf("Error adding Part2(): %v", err)
 	}
 
+	err = pat2.ComprehensionCheck(&q)
+	if err != nil {
+		return nil, fmt.Errorf("Error adding ComprehensionCheck(): %v", err)
+	}
+
 	// core
-	err = pat.Part2Frage4(&q, pat.VariableElements{NumberingQuestions: 3})
+	err = pat.Part2Frage4(&q, pat.VariableElements{NumberingQuestions: 3, AllMandatory: true})
 	if err != nil {
 		return nil, fmt.Errorf("Error adding Part2Frage4(): %v", err)
 	}
@@ -88,6 +101,11 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	err = POP3Part2Questions123and456(&q, 4)
 	if err != nil {
 		return nil, fmt.Errorf("Error adding POP3Part2Questions123and456(): %v", err)
+	}
+
+	err = POP3Part2Questions78(&q)
+	if err != nil {
+		return nil, fmt.Errorf("Error adding POP3Part2Questions78(): %v", err)
 	}
 
 	err = pat.End(&q)

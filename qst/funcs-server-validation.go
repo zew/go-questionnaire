@@ -70,13 +70,6 @@ func init() {
 	validators["inRange50000"] = func(q *QuestionnaireT, inp *inputT) error { return functionBase(q, inp, 50*1000) }
 	validators["inRange1Mio"] = func(q *QuestionnaireT, inp *inputT) error { return functionBase(q, inp, 1*1000*1000) }
 
-	validators["mustRadioGroup"] = func(q *QuestionnaireT, inp *inputT) error {
-		arg := strings.TrimSpace(inp.Response)
-		if arg == "0" || arg == "" {
-			return fmt.Errorf(cfg.Get().Mp["must_one_option"].Tr(q.LangCode))
-		}
-		return nil
-	}
 	validators["must"] = func(q *QuestionnaireT, inp *inputT) error {
 		arg := strings.TrimSpace(inp.Response)
 		if arg == "" {
@@ -84,6 +77,17 @@ func init() {
 		}
 		return nil
 	}
+
+	//
+	validators["mustRadioGroup"] = func(q *QuestionnaireT, inp *inputT) error {
+		arg := strings.TrimSpace(inp.Response)
+		if arg == "0" || arg == "" {
+			return fmt.Errorf(cfg.Get().Mp["must_one_option"].Tr(q.LangCode))
+		}
+		return nil
+	}
+
+	// party affiliation - pat1-4
 	validators["otherParty"] = func(q *QuestionnaireT, inp *inputT) error {
 
 		arg := strings.TrimSpace(inp.Response)
@@ -109,6 +113,59 @@ func init() {
 		for i := 1; i < 4; i++ {
 			neighbors = append(neighbors, fmt.Sprintf("part2_q%v_q%v", core, i))
 		}
+
+		sum := 0
+
+		for _, neighbor := range neighbors {
+			nb := q.ByName(neighbor)
+			summand, _ := strconv.Atoi(nb.Response)
+			sum += summand
+		}
+
+		if sum != 10 {
+			return fmt.Errorf("Summe muss 10 ergeben.")
+		}
+
+		return nil
+	}
+	validators["pat3_q4ab_opt123"] = func(q *QuestionnaireT, inp *inputT) error {
+
+		core := strings.TrimPrefix(inp.Name, "q4")
+		core = core[0:1]
+
+		neighbors := []string{}
+		for i := 1; i < 4; i++ {
+			neighbors = append(neighbors, fmt.Sprintf("q4%v_opt%v", core, i))
+		}
+
+		// log.Printf("all three neigbors: %v", neighbors)
+
+		sum := 0
+
+		for _, neighbor := range neighbors {
+			nb := q.ByName(neighbor)
+			summand, _ := strconv.Atoi(nb.Response)
+			sum += summand
+		}
+
+		if sum != 10 {
+			return fmt.Errorf("Summe muss 10 ergeben.")
+		}
+
+		return nil
+	}
+	// pop3_part2_q6_3
+	validators["pop3_part2_q123456_1234"] = func(q *QuestionnaireT, inp *inputT) error {
+
+		core := strings.TrimPrefix(inp.Name, "pop3_part2_q")
+		core = core[0:1]
+
+		neighbors := []string{}
+		for i := 1; i < 5; i++ {
+			neighbors = append(neighbors, fmt.Sprintf("pop3_part2_q%v_%v", core, i))
+		}
+
+		// log.Printf("all three neigbors: %v", neighbors)
 
 		sum := 0
 

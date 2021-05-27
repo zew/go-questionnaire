@@ -1691,6 +1691,8 @@ input.ib-300 {     width:300px;    }
 .popup-invalid-anchor-grid-item {
     width:  0;
     height: 0;
+    height: 0.8rem;  /* heightens the page - but better than blanking out question texts */
+
     grid-column-start:    1;
     grid-column-end:     -1;
     /* border: 2px solid red; */

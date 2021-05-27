@@ -1691,7 +1691,12 @@ input.ib-300 {     width:300px;    }
 .popup-invalid-anchor-grid-item {
     width:  0;
     height: 0;
-    height: 0.8rem;  /* heightens the page - but better than blanking out question texts */
+    
+    /* want 0.8rem here - heightens the page - 
+       but better than blanking out question texts - 
+       problem is grid-builder: it pushes the first radio down
+     */
+    height: 0.004rem;  
 
     grid-column-start:    1;
     grid-column-end:     -1;

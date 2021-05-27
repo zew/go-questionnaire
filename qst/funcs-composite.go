@@ -40,6 +40,7 @@ var CompositeFuncs = map[string]CompositeFuncT{
 	"PoliticalFoundationsComprehensionCheck": cppat.PoliticalFoundationsComprehensionCheck, //   ... no input
 	"TimePreferenceSelf":                     cppat.TimePreferenceSelf,                     // belongs to pat
 	"TimePreferenceSelfStatic":               cppat.TimePreferenceSelfStatic,               //   ... disabled
+	"TimePreferenceSelfComprehensionCheck":   cppat.TimePreferenceSelfComprehensionCheck,   //   ... disabled
 	"GroupPreferences":                       cppat.GroupPreferences,                       // belongs to pat
 	"GroupPreferencesPOP3":                   cppat.GroupPreferencesPOP3,                   //
 }

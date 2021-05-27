@@ -60,9 +60,9 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		return nil, fmt.Errorf("Error adding Part2(): %v", err)
 	}
 
-	err = pat2.ComprehensionCheck(&q)
+	err = ComprehensionCheckPop3(&q)
 	if err != nil {
-		return nil, fmt.Errorf("Error adding ComprehensionCheck(): %v", err)
+		return nil, fmt.Errorf("Error adding ComprehensionCheckPop3(): %v", err)
 	}
 
 	// core

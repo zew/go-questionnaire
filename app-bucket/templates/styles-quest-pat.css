@@ -651,10 +651,14 @@ button[accesskey="n"]
 
 
 .popup-invalid-anchor-grid-item {
-    height: 0.8rem;
+    height: 0.02rem;
 }
 
 .popup-invalid-content-grid-item {
 
     
+}
+
+input[type="radio"][disabled="disabled"] {
+    /* not stylable in Chrome */
 }

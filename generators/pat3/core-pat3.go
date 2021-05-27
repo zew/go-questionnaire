@@ -524,7 +524,13 @@ func part2ThreeQuestions(q *qst.QuestionnaireT, blockStart int) error {
 	// page.ValidationFuncName = "pat3-add-to-10"
 	// page.ValidationFuncMsg = trl.S{"de": "Wollen Sie wirklich weiterfahren, ohne dass sich Ihre Eintraege auf 10 summieren?"}
 
-	variousOptionsMadeAvailable := []string{
+	variousOptionsMadeAvailablePerm1 := []string{
+		"von 10&nbsp;%v haben <b>nur Option A verfügbar</b> gemacht",
+		"von 10&nbsp;%v haben <b>nur Optionen A und B verfügbar</b> gemacht",
+		"von 10&nbsp;%v haben <b>alle Optionen verfügbar</b> gemacht",
+		"von 10&nbsp;%v haben <b>andere Optionen verfügbar</b> gemacht <br>(z. B. nur Option B oder nur Option C)",
+	}
+	variousOptionsMadeAvailablePerm2 := []string{
 		"von 10&nbsp;%v haben <b>alle Optionen verfügbar</b> gemacht",
 		"von 10&nbsp;%v haben <b>nur Optionen A und B verfügbar</b> gemacht",
 		"von 10&nbsp;%v haben <b>nur Option A verfügbar</b> gemacht",
@@ -550,10 +556,11 @@ func part2ThreeQuestions(q *qst.QuestionnaireT, blockStart int) error {
 
 				inp.Desc = trl.S{"de": fmt.Sprintf(
 					`
-				<p><b>Frage %v.</b></p>
+				<p><b>Frage %v:</b>  &nbsp; %v </p>
 				<p>%v</p>
 				`,
 					blockStart+idx1,
+					pat2.PartIGroupsShortNominativ[idx1],
 					lbl,
 				)}
 			}
@@ -576,11 +583,19 @@ func part2ThreeQuestions(q *qst.QuestionnaireT, blockStart int) error {
 			}
 		}
 
-		for idx2, avaiilable := range variousOptionsMadeAvailable {
+		for idx2 := 0; idx2 < len(variousOptionsMadeAvailablePerm1); idx2++ {
+			// for idx2, avaiilable := range variousOptionsMadeAvailablePerm1 {
+
+			avaiilable := variousOptionsMadeAvailablePerm1[idx2]
+			if idx2 == 1 || idx2 == 3 {
+				avaiilable = variousOptionsMadeAvailablePerm2[idx2]
+			}
+
 			gr := page.AddGroup()
 			gr.Cols = 1
 			gr.BottomVSpacers = 1
-			gr.RandomizationGroup = 1 + idx1
+			// gr.RandomizationSeed = 1
+			// gr.RandomizationGroup = 1 + idx1
 			{
 
 				// groupName := pat2.Pat3Part2[idx1]
@@ -782,5 +797,100 @@ func POP3Part2Questions78(q *qst.QuestionnaireT) error {
 			`}
 		}
 	}
+	return nil
+}
+
+// ComprehensionCheckPop3 - single question
+func ComprehensionCheckPop3(q *qst.QuestionnaireT) error {
+
+	{
+		page := q.AddPage()
+		page.Label = trl.S{"de": ""}
+		page.Style = css.DesktopWidthMaxForPages(page.Style, "36rem") // 60
+
+		// loop over matrix questions
+
+		//
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 1
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Desc = trl.S{
+					"de": `
+				<p>
+					<b>Verständnistest:</b> <br>
+					Nehmen Sie an, jemand habe sich wie folgt entschieden:
+				</p>
+				`,
+				}
+			}
+		}
+
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 2
+			{
+				inp := gr.AddInput()
+				inp.Type = "dyn-composite"
+				inp.ColSpanControl = 1
+				inp.DynamicFunc = fmt.Sprintf("TimePreferenceSelfComprehensionCheck__0__0")
+			}
+
+		}
+
+		// gr1
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 2
+
+			// q2
+			{
+				inp := gr.AddInput()
+				inp.Type = "number"
+				inp.Name = "q_tpref_compr_a"
+				inp.MaxChars = 3
+				inp.Min = 0
+				inp.Max = 100
+				inp.ColSpan = 1
+				inp.ColSpanLabel = 5
+				inp.ColSpanControl = 2
+				// inp.Placeholder = trl.S{"de": "0-5"}
+				inp.Label = trl.S{"de": "<b>1.</b> Was ist der höchste Betrag, den der*die zukünftige Teilnehmer*in per sofort erhalten kann? "}
+				inp.Suffix = trl.S{"de": "€"}
+				// inp.Validator = "must"
+				inp.Validator = "must"
+			}
+		}
+
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 3
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "number"
+				inp.Name = "q_tpref_compr_b"
+				inp.MaxChars = 3
+				inp.Min = 0
+				inp.Max = 100
+				inp.ColSpan = 1
+				inp.ColSpanLabel = 5
+				inp.ColSpanControl = 2
+				// inp.Placeholder = trl.S{"de": "A,B oder C"}
+				inp.Label = trl.S{"de": "<b>2.</b> Wenn der*die zukünftige Teilnehmer*in sich entscheidet, 3&nbsp;€ sofort zu erhalten, wieviel wird er*sie in 6&nbsp;Monaten erhalten? "}
+				inp.Suffix = trl.S{"de": "€"}
+				// inp.Validator = "inRange1000"
+				inp.Validator = "must"
+			}
+		}
+
+	}
+
 	return nil
 }

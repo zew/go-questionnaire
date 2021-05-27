@@ -34,6 +34,11 @@ var PartIGroupsShort = []string{
 	"cit_gr2:Ein repräsentativer deutscher Bürger (Gruppe %v)",
 	"cit_gr3:Ein deutscher Bürger mit gleichen demographischen Eigenschaften wie die Politiker (Gruppe %v)",
 }
+var PartIGroupsShortNominativ = []string{
+	"Deutsche Land- oder Bundestagspolitiker",
+	"Repräsentativer deutscher Bürger",
+	"Deutsche Bürger mit demographischen Eigenschaften wie die Politiker",
+}
 
 /*
 	<ul>
@@ -262,8 +267,8 @@ func part2Entscheidung78TwoTimesThree(q *qst.QuestionnaireT, pageIdx int, inpNam
 	return nil
 }
 
-// ComprehensionCheck - single question
-func ComprehensionCheck(q *qst.QuestionnaireT) error {
+// ComprehensionCheckPop2 - single question
+func ComprehensionCheckPop2(q *qst.QuestionnaireT) error {
 
 	{
 		page := q.AddPage()
@@ -276,6 +281,7 @@ func ComprehensionCheck(q *qst.QuestionnaireT) error {
 		{
 			gr := page.AddGroup()
 			gr.Cols = 1
+			gr.BottomVSpacers = 1
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
@@ -283,7 +289,7 @@ func ComprehensionCheck(q *qst.QuestionnaireT) error {
 					"de": `
 				<p>
 					<b>Frage:</b> <br>
-					Nehmen Sie an, die Praeferenzen der Gruppenmitglieder 
+					Nehmen Sie an, die Präferenzen der Gruppenmitglieder 
 					sind wie folgt gegeben:
 				</p>
 				`,
@@ -314,7 +320,7 @@ func ComprehensionCheck(q *qst.QuestionnaireT) error {
 			{
 				inp := gr.AddInput()
 				inp.Type = "number"
-				inp.Name = "q_comp_a"
+				inp.Name = "q_found_compr_a"
 				inp.MaxChars = 3
 				inp.Min = 0
 				inp.Max = 5
@@ -331,7 +337,7 @@ func ComprehensionCheck(q *qst.QuestionnaireT) error {
 			{
 				inp := gr.AddInput()
 				inp.Type = "text"
-				inp.Name = "q_comp_b"
+				inp.Name = "q_found_compr_b"
 				inp.MaxChars = 3
 				inp.ColSpan = 1
 				inp.ColSpanLabel = 5

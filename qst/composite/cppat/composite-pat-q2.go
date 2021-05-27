@@ -2,6 +2,7 @@ package cppat
 
 import (
 	"fmt"
+	"regexp"
 	"strconv"
 	"strings"
 
@@ -43,8 +44,8 @@ func TimePreferenceSelfStatic(q qstif.Q, seq0to5, paramSetIdx int) (string, []st
 		paramSetIdx,
 	)
 
-	s = strings.ReplaceAll(s, "<input ", "<input disabled ")
-	s = strings.ReplaceAll(s, `checked='checked'`, " ")
+	s = strings.ReplaceAll(s, `Bitte jeweils EIN Kreuz setzen`, " &nbsp; ")
+	s = strings.ReplaceAll(s, `Von dieser Option abraten`, " ")
 
 	/*
 		https://www.regextester.com/
@@ -54,9 +55,45 @@ func TimePreferenceSelfStatic(q qstif.Q, seq0to5, paramSetIdx int) (string, []st
 		(?is)  is setting flags to insensitive and . to matching newlines
 		(.*?)  the question mark is for non greedy
 
-		var re = regexp.MustCompile(`(?is)<input(.*?)>`)
-		s = re.ReplaceAllString(s, "<!-- input replaced -->")
 	*/
+	re := regexp.MustCompile(`(?is)<input type="checkbox"(.*?)>`)
+	s = re.ReplaceAllString(s, "<!-- input replaced -->")
+
+	s = strings.ReplaceAll(s, "<input ", "<input disabled ")
+	s = strings.ReplaceAll(s, `checked='checked'`, " ")
+
+	return s, inputs, err
+}
+
+// TimePreferenceSelfComprehensionCheck - xx
+func TimePreferenceSelfComprehensionCheck(q qstif.Q, seq0to5, paramSetIdx int) (string, []string, error) {
+
+	questionID := "dummy"
+
+	labelsCompr := []string{
+		"<b> 1&nbsp;€ sofort</b> und<br><b>15&nbsp;€</b> in <b>6&nbsp;Monaten</b>",
+		"<b> 3&nbsp;€ sofort</b> und<br> <b>7&nbsp;€</b> in <b>6&nbsp;Monaten</b>",
+		"<b> 4&nbsp;€ sofort</b> und<br> <b>1&nbsp;€</b> in <b>6&nbsp;Monaten</b>",
+	}
+
+	s, inputs, err := timePreferenceSelf(
+		q,
+		seq0to5, // visible question seq 1...6 on the questionnaire
+		questionID,
+		labelsCompr,
+	)
+
+	s = strings.ReplaceAll(s, `Von dieser Option abraten`, " ")
+	s = strings.ReplaceAll(s, `Bitte jeweils EIN Kreuz setzen`, " &nbsp; ")
+
+	re := regexp.MustCompile(`(?is)<input type="checkbox"(.*?)>`)
+	s = re.ReplaceAllString(s, "<!-- input replaced -->")
+
+	s = strings.ReplaceAll(s, `dummy_row1_rad" value="1" `, `dummy_row1_rad" value="1"  checked`)
+	s = strings.ReplaceAll(s, `dummy_row2_rad" value="1" `, `dummy_row2_rad" value="1"  checked`)
+	s = strings.ReplaceAll(s, `dummy_row3_rad" value="2" `, `dummy_row3_rad" value="2"  checked`)
+
+	s = strings.ReplaceAll(s, "<input ", `<input disabled="disabled" `)
 
 	return s, inputs, err
 }

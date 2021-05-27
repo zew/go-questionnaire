@@ -19,7 +19,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "08bbf7ce38861c6cd939172f7300d43ac36a985e026ab3c505eb01e0a8f7aa2e",
+ 	"md_5": "0898216b2385b526cc8044d31842314724fc930c092a351aff96c206842d2acb",
  	"lang_codes": [
  		"de"
  	],
@@ -551,7 +551,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\t\u003cb\u003e\n\t\t\t\t\t\tNun kommen wir zum zweiten Teil unserer Studie. \n\t\t\t\t\t\t\u003c/b\u003e\n\t\t\t\t\t\tIn diesem Teil treffen Sie jeweils Entscheidungen \n\t\t\t\t\t\tfür eine*n deutsche*n Staatsangehörige*n, \n\t\t\t\t\t\tder*die Ihnen zugeordnet ist \n\t\t\t\t\t\tund der*die an einer zukünftigen Studie teilnehmen wird. Diese Person wird in der Studie entscheiden, wie ihr das Entgelt für die Studienteilnahme ausbezahlt wird. Je eher diese Person bereit ist, auf ihr Geld zu warten, desto mehr Geld wird ihr insge\u0026shy;samt bezahlt.\t\t\t\t\t\t\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tWir bitten Sie zu entscheiden, wie geduldig oder wie ungeduldig die Person wählen kann. \n\t\t\t\t\t\t\n\t\t\t\t\t\tDazu bestimmen Sie für jede von drei Optionen, ob die jeweilige Option der Person zur Verfügung stehen soll oder nicht. \n\t\t\t\t\t\t\n\t\t\t\t\t\tFalls Sie mehrere Optionen ver\u0026shy;füg\u0026shy;bar machen, kann die Person aus diesen wählen. Mindestens eine Option muss „Ver\u0026shy;füg\u0026shy;bar“ sein.\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003cp style=\"font-size: 87%;\"\u003e\n\t\t\t\t\t\t\u003ci\u003e\n\t\t\t\t\t\tDetails: Die nicht ver\u0026shy;füg\u0026shy;baren Optionen werden der Person nicht als Auswahloptionen angezeigt. Bei ver\u0026shy;füg\u0026shy;bar gemachten Optionen können Sie zusätzlich „Von dieser Option abraten“ ankreuzen. In diesem Fall erhält die Person die Botschaft: „Ein früherer Teilnehmer dieser Studie rät Ihnen davon ab, diese Option zu wählen”.\n\t\t\t\t\t\t\u003c/i\u003e\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cbr\u003e\n\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\t\u003cb\u003eEntscheidung 7. \u003c/b\u003e\u003cbr\u003e\n\t\t\t\t\t\tWelche Optionen sollen der Person (nicht) zur Verfügung stehen, falls die Optionen wie folgt lauten?\n\n\t\t\t\t\t\u003c/p\u003e\n\n\n\t\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\t\n\t\t\t\u003cb\u003e\n\t\t\t\tNun kommen wir zum zweiten Teil unserer Studie. \n\t\t\t\u003c/b\u003e\n\t\t\n\n\t\t\t\t\t\tIn diesem Teil treffen Sie jeweils Entscheidungen \n\t\t\t\t\t\tfür eine*n deutsche*n Staatsangehörige*n, \n\t\t\t\t\t\tder*die Ihnen zugeordnet ist \n\t\t\t\t\t\tund der*die an einer zukünftigen Studie teilnehmen wird. Diese Person wird in der Studie entscheiden, wie ihr das Entgelt für die Studienteilnahme ausbezahlt wird. Je eher diese Person bereit ist, auf ihr Geld zu warten, desto mehr Geld wird ihr insge\u0026shy;samt bezahlt.\t\t\t\t\t\t\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tWir bitten Sie zu entscheiden, wie geduldig oder wie ungeduldig die Person wählen kann. \n\t\t\t\t\t\t\n\t\t\t\t\t\tDazu bestimmen Sie für jede von drei Optionen, ob die jeweilige Option der Person zur Verfügung stehen soll oder nicht. \n\t\t\t\t\t\t\n\t\t\t\t\t\tFalls Sie mehrere Optionen ver\u0026shy;füg\u0026shy;bar machen, kann die Person aus diesen wählen. Mindestens eine Option muss „Ver\u0026shy;füg\u0026shy;bar“ sein.\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003cp style=\"font-size: 87%;\"\u003e\n\t\t\t\t\t\t\u003ci\u003e\n\t\t\t\t\t\tDetails: Die nicht ver\u0026shy;füg\u0026shy;baren Optionen werden der Person nicht als Auswahloptionen angezeigt. Bei ver\u0026shy;füg\u0026shy;bar gemachten Optionen können Sie zusätzlich „Von dieser Option abraten“ ankreuzen. In diesem Fall erhält die Person die Botschaft: „Ein früherer Teilnehmer dieser Studie rät Ihnen davon ab, diese Option zu wählen”.\n\t\t\t\t\t\t\u003c/i\u003e\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cbr\u003e\n\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\t\u003cb\u003eEntscheidung 7. \u003c/b\u003e\u003cbr\u003e\n\t\t\t\t\t\tWelche Optionen sollen der Person (nicht) zur Verfügung stehen, falls die Optionen wie folgt lauten?\n\n\t\t\t\t\t\u003c/p\u003e\n\n\n\t\t\t\t\t"
  							},
  							"col_span_label": 1
  						}
@@ -3502,10 +3502,165 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 13.\u003c/b\u003e\n\t\t\t\t\tWie ist Ihr Familienstand?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 13.\u003c/b\u003e\n\t\t\t\t\tWas ist Ihr Familienstand?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 12,
  							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "q12",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Verheiratet und leben mit Ihrem/Ihrer Ehepartner/-in zusammen"
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"value_radio": "married_together",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q12",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Verheiratet und leben getrennt"
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"value_radio": "married_separated",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q12",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Verwitwet"
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"value_radio": "widowed",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q12",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Geschieden"
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"value_radio": "divorced",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q12",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "In Partnerschaft ohne Ehe"
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"value_radio": "engaged",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "q12",
@@ -3537,68 +3692,6 @@
  									"text_style": {}
  								}
  							}
- 						},
- 						{
- 							"name": "q12",
- 							"type": "radio",
- 							"label": {
- 								"de": "Partnerschaft ohne Ehe"
- 							},
- 							"col_span": 6,
- 							"col_span_label": 4,
- 							"col_span_control": 1,
- 							"value_radio": "engaged",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 1.0rem 0 0"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "right"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": " 0 0.3rem 0 0"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q12",
- 							"type": "radio",
- 							"label": {
- 								"de": "Verheiratet"
- 							},
- 							"col_span": 6,
- 							"col_span_label": 4,
- 							"col_span_control": 1,
- 							"value_radio": "married",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 1.0rem 0 0"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "right"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": " 0 0.3rem 0 0"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
  						}
  					]
  				},
@@ -3609,7 +3702,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 14.\u003c/b\u003e\n\t\t\t\t\tWie viel Geld verdienen Sie persönlich monatlich \n\t\t\t\t\tnach Abzug von Steuern und Sozialversi\u0026shy;cherungsbeiträgen?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 14.\u003c/b\u003e\n\t\t\t\t\tWie viel Geld verdienen Sie im Durchschnitt persönlich monatlich \n\t\t\t\t\tnach Abzug von Steuern und Sozialversi\u0026shy;cherungsbeiträgen? \n\t\t\t\t\tUnter durchschnittlichem Verdienst ist die Summe zu verstehen, \n\t\t\t\t\tdie sich aus Lohn, Gehalt, Einkommen aus selbstständiger Tätigkeit, \n\t\t\t\t\tRente oder Pension sowie Sozialleistungen ergibt.\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 8,
  							"col_span_label": 1
@@ -3866,7 +3959,131 @@
  							"name": "q13",
  							"type": "radio",
  							"label": {
- 								"de": "5.000 bis unter 10.000 Euro"
+ 								"de": "5.000 bis unter 6.000 Euro"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"value_radio": "upto6000",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q13",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "6.000 bis unter 7.000 Euro"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"value_radio": "upto7000",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q13",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "7.000 bis unter 8.000 Euro"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"value_radio": "upto8000",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q13",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "8.000 bis unter 9.000 Euro"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"value_radio": "upto9000",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q13",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "9.000 bis unter 10.000 Euro"
  							},
  							"col_span": 4,
  							"col_span_label": 4,

@@ -93,37 +93,37 @@ var labelsOneToTen3 = []trl.S{
 /*
 	2021-02 - doch keine Ziffern
 */
-var labelsOneToSeven1 = []trl.S{
-	{"de": "Stimme gar nicht zu"},
+var labelsBereitGarNicht = []trl.S{
+	{"de": "Gar nicht bereit <div class='vspacer-24'> &nbsp; </div>"},
 	{"de": ""},
 	{"de": ""},
 	{"de": ""},
 	{"de": ""},
 	{"de": ""},
-	{"de": "Stimme komplett zu"},
+	{"de": "Sehr bereit <div class='vspacer-24'> &nbsp; </div>"},
 }
-var labelsOneToSeven2 = []trl.S{
-	{"de": "Gar nicht bereit"},
+var labelsRiskobereit = []trl.S{
+	{"de": "Gar nicht risikobereit <div class='vspacer-24'> &nbsp; </div>"},
 	{"de": ""},
 	{"de": ""},
 	{"de": ""},
 	{"de": ""},
 	{"de": ""},
-	{"de": "Sehr bereit"},
-}
-
-var labelsOneToSeven3 = []trl.S{
-	{"de": "Gar nicht risikobereit"},
-	{"de": ""},
-	{"de": ""},
-	{"de": ""},
-	{"de": ""},
-	{"de": ""},
-	{"de": "Sehr risikobereit"},
+	{"de": "Sehr risikobereit <div class='vspacer-24'> &nbsp; </div>"},
 }
 
-var labelsOneToSeven4 = []trl.S{
-	{"de": "Li&shy;nk&shy;s"}, // 1
+var labelsZustimmung = []trl.S{
+	{"de": "&nbsp;<br>Stimme gar nicht zu <div class='vspacer-24'> &nbsp; </div>"},
+	{"de": ""},
+	{"de": ""},
+	{"de": ""},
+	{"de": ""},
+	{"de": ""},
+	{"de": "&nbsp;<br>Stimme komplett zu <div class='vspacer-24'> &nbsp; </div>"},
+}
+
+var labelsLeftRight = []trl.S{
+	{"de": "Li&shy;nk&shy;s <div class='vspacer-24'> &nbsp; </div> "}, // 1
 	{"de": ""},
 	{"de": ""}, // 3
 	{"de": ""},
@@ -133,7 +133,7 @@ var labelsOneToSeven4 = []trl.S{
 	{"de": ""},
 	{"de": ""}, // 9
 	{"de": ""},
-	{"de": "Re&shy;cht&shy;s"}, // 11
+	{"de": "Re&shy;cht&shy;s <div class='vspacer-24'> &nbsp; </div> "}, // 11
 	// {"de": "We&shy;iß ni&shy;cht"},
 	// {"de": "Weiß<br>nicht"},
 }

@@ -125,6 +125,13 @@ func (inp *inputT) LabelRight() {
 	inp.StyleLbl.Desktop.StyleText.AlignHorizontal = "right"
 }
 
+// LabelPadRight puts a padding right on the label
+// to prevent touching of the control
+func (inp *inputT) LabelPadRight() {
+	inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
+	inp.StyleLbl.Desktop.StyleBox.Padding = "0 1.0rem 0 0"
+}
+
 // appendTooltip appends an explanation
 func (inp *inputT) appendTooltip(w io.Writer, langCode string) {
 

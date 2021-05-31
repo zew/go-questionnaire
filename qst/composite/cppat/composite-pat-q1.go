@@ -179,7 +179,7 @@ func politicalFoundations(q qstif.Q, seq0to5 int, questionID string, ppls [][]in
 		em, err := q.ErrByName(inpName)
 		if err == nil && em != "" {
 			consolidatedErrMsg = fmt.Sprintf(`
-			<div class="    error   error-block-input " style="">
+			<div class="    error   error-block-input error-aura " style="">
 			  %v
 			</div>
 			`, em)

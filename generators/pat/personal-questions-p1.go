@@ -14,14 +14,16 @@ type VariableElements struct {
 	NumberingQuestions int
 	NumberingSections  int
 
-	AllMandatory    bool
-	ZumSchlussOrNun bool
+	AllMandatory             bool
+	ZumSchlussOrNunOrNothing int
 
 	//
 	ZumErstenTeilAsNumber bool
 
 	// Part 2
 	ZumXtenTeil string
+
+	Pop2FinishParagraph bool
 }
 
 // PersonalQuestions1 - numbered 5-7
@@ -37,8 +39,11 @@ func PersonalQuestions1(q *qst.QuestionnaireT, vE VariableElements) error {
 	}
 
 	zumSchlussOrNun := "Zum Schluss bitten wir Sie, drei Fragen über sich selbst zu beantworten: "
-	if vE.ZumSchlussOrNun {
+	if vE.ZumSchlussOrNunOrNothing == 2 {
 		zumSchlussOrNun = "Nun bitten wir Sie, einige Fragen über sich selbst zu beantworten: "
+	}
+	if vE.ZumSchlussOrNunOrNothing == 3 {
+		zumSchlussOrNun = ""
 	}
 
 	// page 8
@@ -52,7 +57,7 @@ func PersonalQuestions1(q *qst.QuestionnaireT, vE VariableElements) error {
 		{
 			gb := qst.NewGridBuilderRadiosWithValidator(
 				columnTemplate7,
-				labelsOneToSeven2,
+				labelsBereitGarNicht,
 				[]string{"q5"},
 				radioVals7,
 				[]trl.S{},
@@ -60,7 +65,7 @@ func PersonalQuestions1(q *qst.QuestionnaireT, vE VariableElements) error {
 			)
 			gb.MainLabel = trl.S{
 				"de": fmt.Sprintf(`
-					<p>
+					<p style="margin-bottom: 0.5rem">
 					<b>%v</b>
 
 					<br>
@@ -86,7 +91,7 @@ func PersonalQuestions1(q *qst.QuestionnaireT, vE VariableElements) error {
 		{
 			gb := qst.NewGridBuilderRadiosWithValidator(
 				columnTemplate7,
-				labelsOneToSeven3,
+				labelsRiskobereit,
 				[]string{"q6"},
 				radioVals7,
 				[]trl.S{},
@@ -94,7 +99,7 @@ func PersonalQuestions1(q *qst.QuestionnaireT, vE VariableElements) error {
 			)
 			gb.MainLabel = trl.S{
 				"de": fmt.Sprintf(`
-					</p>
+					<p style="margin-bottom: 0.5rem">
 					<b>Frage %v.</b>
 					Wie schätzen Sie sich persönlich ein? 
 					Sind Sie im Allgemeinen ein risikobereiter Mensch 
@@ -111,7 +116,7 @@ func PersonalQuestions1(q *qst.QuestionnaireT, vE VariableElements) error {
 		{
 			gb := qst.NewGridBuilderRadiosWithValidator(
 				columnTemplate7,
-				labelsOneToSeven2,
+				labelsBereitGarNicht,
 				[]string{"q7"},
 				radioVals7,
 				[]trl.S{},
@@ -119,7 +124,7 @@ func PersonalQuestions1(q *qst.QuestionnaireT, vE VariableElements) error {
 			)
 			gb.MainLabel = trl.S{
 				"de": fmt.Sprintf(`
-					<p>
+					<p style="margin-bottom: 0.5rem">
 					<b>Frage&nbsp;%v.</b>
 					Wie schätzen Sie Ihre Bereitschaft ein, mit anderen zu teilen, 
 					ohne dafür eine Gegenleistung zu erwarten?

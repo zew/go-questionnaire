@@ -63,23 +63,6 @@ func nobreakGlue(el1, glue, el2 string) string {
 	return ret
 }
 
-// Special subtype of inputT; used for radiogroup
-type radioT struct {
-	HAlign horizontalAlignment `json:"hori_align,omitempty"` // label and description left/center/right of input, default left, similar setting for radioT but not for group
-	Label  trl.S               `json:"label,omitempty"`
-	Val    string              `json:"val,omitempty"`     // Val is allowed to be nil; it then gets initialized to 1...n by Validate(). 0 indicates 'no entry'.
-	Col    float32             `json:"column,omitempty"`  // col x of cols
-	Cols   float32             `json:"columns,omitempty"` //
-	// field 'response' is absent, it is added dynamically;
-}
-
-func (inp *inputT) AddRadio() *radioT {
-	rad := &radioT{}
-	inp.Radios = append(inp.Radios, rad)
-	ret := inp.Radios[len(inp.Radios)-1]
-	return ret
-}
-
 // Input represents a single form input element.
 // There is one exception for multiple radios (radiogroup) with the same name but distinct values.
 // Multiple checkboxes (checkboxgroup) with same name but distinct values are a dubious instrument.
@@ -114,8 +97,8 @@ type inputT struct {
 	ColSpanLabel   float32 `json:"col_span_label,omitempty"`
 	ColSpanControl float32 `json:"col_span_control,omitempty"`
 
-	Radios []*radioT  `json:"radios,omitempty"`    // This slice implements the radiogroup - and the senseless checkboxgroup
-	DD     *DropdownT `json:"drop_down,omitempty"` // As pointer to prevent JSON cluttering
+	// Radios []*radioT  `json:"radios,omitempty"`    // This slice implements the radiogroup - and the senseless checkboxgroup
+	DD *DropdownT `json:"drop_down,omitempty"` // As pointer to prevent JSON cluttering
 
 	Validator string `json:"validator,omitempty"` // i.e. any key from map of validators, i.e. "must;inRange20"
 	ErrMsg    string `json:"err_msg,omitempty"`   // key to coreTranslations, content comes from Validator(Response), compare OnInvalid

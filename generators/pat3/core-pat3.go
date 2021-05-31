@@ -184,7 +184,7 @@ func POP3Part1Decision34(q *qst.QuestionnaireT, decisionNumber int, inpName stri
 		inp.Type = "textblock"
 		inp.ColSpan = 1
 		inp.Desc = trl.S{"de": `
-			<p>
+			<p style="margin-bottom: 1.05rem">
 				Wer soll entscheiden,
 				welche Optionen dem zukünftigen Teilnehmer 
 				zur Verfügung stehen werden?
@@ -235,10 +235,10 @@ func POP3Part1Decision34(q *qst.QuestionnaireT, decisionNumber int, inpName stri
 			inp.Type = "textblock"
 			inp.ColSpan = 1
 			inp.Desc = trl.S{"de": `
-			<p>
+			<p style="margin-bottom: 1.05rem">
 				<br>
 				Wer soll die verfügbaren Optionen 
-				für den zukünftigen Teilnehmer möglichst <i>nicht</i> festlegen? 
+				für den zukünftigen Teilnehmer möglichst <i><b>nicht</b></i> festlegen? 
 			</p>
 			`}
 		}
@@ -331,8 +331,9 @@ func POP3Part2Intro(q *qst.QuestionnaireT) error {
 
 				In diesem Teil der Studie beantworten Sie sechs Fragen. 
 				Nach der Erhebung werden 10&nbsp;% aller Teilnehmer zufällig ausgewählt. 
-				Jeder ausgewählte Teilnehmer 
-				wird in Abhängigkeit der Genauigkeit seiner Antworten 
+				Jede*r ausgewählte Teilnehmer*in 
+				wird in Abhängigkeit der Genauigkeit 
+				seiner*ihrer Antworten 
 				eine Bonuszahlung von bis zu 50&nbsp;Norstat Coins erhalten (Wert: 5&nbsp;Euro).
 
 				<br>
@@ -406,21 +407,23 @@ func POP3Part2Intro(q *qst.QuestionnaireT) error {
 				<br>
 				<b>Erläuterung:</b>
 				Falls Sie in der ausgewählten Frage eine 100&nbsp;% richtige 
-				Antwort geben, werden Sie 50&nbsp;Norstat&nbsp;coins erhalten. 
+				Antwort geben, 
+				erhalten Sie 50&nbsp;Norstat&nbsp;coins. 
 				
-				Für jede Person, die Sie bei Ihren folgenden Schätzungen z
-				u viel oder zu wenig angeben, werden Sie 2.5&nbsp;Norstat&nbsp;coins 
-				verlieren. 
+				Für jede Person, die Sie bei Ihren Schätzungen 
+				zu viel oder zu wenig angeben, 
+				verlieren Sie 2,5&nbsp;Norstat&nbsp;coins. 
 				
-				Falls beispielsweise alle 10&nbsp;Gruppenmitglieder Stiftung&nbsp;C 
-				wählten, Sie aber angeben, 
-				dass 5&nbsp;Gruppenmitglieder Stiftung&nbsp;B wählen, 
-				und weitere 5 Stiftung&nbsp;C wählten, 
+				Falls beispielsweise alle 10 Gruppenmitglieder Stiftung&nbsp;C 
+				gewählt haben, Sie aber angeben, 
+				dass 5 Gruppenmitglieder Stiftung&nbsp;B wählen, 
+				und weitere 5 Stiftung&nbsp;C wählen, 
 				dann haben Sie für Stiftung&nbsp;C fünf Gruppenmitglieder 
 				zu wenig angegeben, 
 				und für Stiftung&nbsp;B fünf zu viel. 
-				Entsprechend wird Ihre Bezahlung 
-				auf 50-2.5× 5 -2.5× 5=25 Norstat&nbsp;coins gesenkt.
+				
+				Entsprechend wird Ihre Bezahlung auf 
+				50 - 2,5*5 -2,5*5 = 25&nbsp;Norstat&nbsp;coins gesenkt.
 			</p>
 
 
@@ -525,16 +528,16 @@ func part2ThreeQuestions(q *qst.QuestionnaireT, blockStart int) error {
 	// page.ValidationFuncMsg = trl.S{"de": "Wollen Sie wirklich weiterfahren, ohne dass sich Ihre Eintraege auf 10 summieren?"}
 
 	variousOptionsMadeAvailablePerm1 := []string{
-		"von 10&nbsp;%v haben <b>nur Option A verfügbar</b> gemacht",
-		"von 10&nbsp;%v haben <b>nur Optionen A und B verfügbar</b> gemacht",
-		"von 10&nbsp;%v haben <b>alle Optionen verfügbar</b> gemacht",
-		"von 10&nbsp;%v haben <b>andere Optionen verfügbar</b> gemacht <br>(z. B. nur Option B oder nur Option C)",
+		"1;;von 10&nbsp;%v haben <b>nur Option A         verfügbar</b> gemacht",
+		"2;;von 10&nbsp;%v haben <b>nur Optionen A und B verfügbar</b> gemacht",
+		"3;;von 10&nbsp;%v haben <b>alle Optionen        verfügbar</b> gemacht",
+		"4;;von 10&nbsp;%v haben <b>andere Optionen      verfügbar</b> gemacht <br>(z. B. nur Option B oder nur Option C)",
 	}
 	variousOptionsMadeAvailablePerm2 := []string{
-		"von 10&nbsp;%v haben <b>alle Optionen verfügbar</b> gemacht",
-		"von 10&nbsp;%v haben <b>nur Optionen A und B verfügbar</b> gemacht",
-		"von 10&nbsp;%v haben <b>nur Option A verfügbar</b> gemacht",
-		"von 10&nbsp;%v haben <b>andere Optionen verfügbar</b> gemacht <br>(z. B. nur Option B oder nur Option C)",
+		"3;;von 10&nbsp;%v haben <b>alle Optionen        verfügbar</b> gemacht",
+		"2;;von 10&nbsp;%v haben <b>nur Optionen A und B verfügbar</b> gemacht",
+		"1;;von 10&nbsp;%v haben <b>nur Option A         verfügbar</b> gemacht",
+		"4;;von 10&nbsp;%v haben <b>andere Optionen      verfügbar</b> gemacht <br>(z. B. nur Option B oder nur Option C)",
 	}
 
 	inpName := "pop3_part2"
@@ -552,7 +555,10 @@ func part2ThreeQuestions(q *qst.QuestionnaireT, blockStart int) error {
 				inp.Type = "textblock"
 				inp.ColSpan = 1
 
-				lbl := fmt.Sprintf("Wie viele von 10 zufällig ausgewählten %v haben jeweils die Optionen A, B oder C verfügbar gemacht?", groupName)
+				lbl := fmt.Sprintf(`
+					Wie viele von 10 zufällig ausgewählten %v 
+					haben jeweils die Optionen A, B oder C verfügbar gemacht?
+				`, groupName)
 
 				inp.Desc = trl.S{"de": fmt.Sprintf(
 					`
@@ -569,7 +575,7 @@ func part2ThreeQuestions(q *qst.QuestionnaireT, blockStart int) error {
 		{
 			gr := page.AddGroup()
 			gr.Cols = 1
-			gr.BottomVSpacers = 0
+			gr.BottomVSpacers = 1
 			{
 				inp := gr.AddInput()
 				inp.Type = "dyn-composite"
@@ -591,6 +597,8 @@ func part2ThreeQuestions(q *qst.QuestionnaireT, blockStart int) error {
 				avaiilable = variousOptionsMadeAvailablePerm2[idx2]
 			}
 
+			avaiilableSl := strings.Split(avaiilable, ";;")
+
 			gr := page.AddGroup()
 			gr.Cols = 1
 			gr.BottomVSpacers = 1
@@ -599,10 +607,11 @@ func part2ThreeQuestions(q *qst.QuestionnaireT, blockStart int) error {
 			{
 
 				// groupName := pat2.Pat3Part2[idx1]
-				lbl := fmt.Sprintf(avaiilable, groupName)
+				lbl := fmt.Sprintf(avaiilableSl[1], groupName)
+				// lbl = avaiilableSl[1] + groupName
 				inp := gr.AddInput()
 				inp.Type = "number"
-				inp.Name = inpName + fmt.Sprintf("_q%v_%v", blockStart+idx1, idx2+1)
+				inp.Name = inpName + fmt.Sprintf("_q%v_%v", blockStart+idx1, avaiilableSl[0])
 				inp.MaxChars = 3
 				inp.Min = 0
 				inp.Max = 10
@@ -688,8 +697,8 @@ func POP3Part2Questions78(q *qst.QuestionnaireT) error {
 			inp.ColSpan = 12
 			inp.Label = trl.S{
 				"de": `
-				<p style=''>
-					Ich möchte einen zusätzliche Pauschalbetrag von 0.50&nbsp;€ 
+				<p style="margin-bottom: 0.55rem">
+					Ich möchte einen zusätzlichen Pauschalbetrag von 0.50&nbsp;€ 
 					zur der Auszahlung der Person hinzufügen
 				</p>
 				`,
@@ -737,7 +746,7 @@ func POP3Part2Questions78(q *qst.QuestionnaireT) error {
 			inp.ColSpan = 12
 			inp.Label = trl.S{
 				"de": `
-				<p style=''>
+				<p style="margin-bottom: 0.7rem">
 					Ich möchte den Pauschalbetrag in der Höhe von 0.50&nbsp;€  
 					von der Auszahlung der Person abziehen
 				</p>

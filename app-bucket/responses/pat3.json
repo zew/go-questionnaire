@@ -19,7 +19,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "1f0a76b4bb363f81ee78ee8d41f4d39a97944ff4f4868938cf3c3a58dddbc46b",
+ 	"md_5": "ffec92ad22d774b6fcae52afeebf9ca5c1b54fb78fc73091e32474a202a145c3",
  	"lang_codes": [
  		"de"
  	],
@@ -272,13 +272,91 @@
  					]
  				},
  				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 12,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 3.\u003c/b\u003e\n\t\t\t\t\tBesitzen Sie die deutsche Staatsbürgerschaft?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 							},
+ 							"col_span": 12,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "q17",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "ja"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "citizenshipyes",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q17",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "nein"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "citizenshipno",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
+ 				},
+ 				{
  					"bottom_vspacers": 1,
  					"columns": 1,
  					"inputs": [
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 3.\u003c/b\u003e\n\t\t\t\t\tIn welchem Bundesland befindet sich Ihr Hauptwohnsitz?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 4.\u003c/b\u003e\n\t\t\t\t\tIn welchem Bundesland befindet sich Ihr Hauptwohnsitz?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -810,7 +888,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 4.\u003c/b\u003e\n\t\t\t\t\tWelcher ist Ihr höchster Bil\u0026shy;dungs\u0026shy;abschluss?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 5.\u003c/b\u003e\n\t\t\t\t\tWelcher ist Ihr höchster Bil\u0026shy;dungs\u0026shy;abschluss?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 8,
  							"col_span_label": 1
@@ -1011,12 +1089,554 @@
  				},
  				{
  					"bottom_vspacers": 3,
+ 					"columns": 12,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 6.\u003c/b\u003e\n\t\t\t\t\tSind Sie Mit\u0026shy;glied einer politischen Partei?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 							},
+ 							"col_span": 12,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "q18",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "ja"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "partmemberyes",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q18",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "nein"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "partmemberno",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 7.\u003c/b\u003e\n\t\t\t\t\tMit welcher im deutschen Bundestag vertretenen Partei identifizieren Sie sich am ehesten? \n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"columns": 8,
+ 					"inputs": [
+ 						{
+ 							"name": "q19",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "CDU/CSU"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "cducsu",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					],
+ 					"randomization_group": 1,
+ 					"randomization_seed": 1
+ 				},
+ 				{
+ 					"columns": 8,
+ 					"inputs": [
+ 						{
+ 							"name": "q19",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Die Linke"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "linke",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					],
+ 					"randomization_group": 1,
+ 					"randomization_seed": 1
+ 				},
+ 				{
+ 					"columns": 8,
+ 					"inputs": [
+ 						{
+ 							"name": "q19",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "SPD"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "spd",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					],
+ 					"randomization_group": 1,
+ 					"randomization_seed": 1
+ 				},
+ 				{
+ 					"columns": 8,
+ 					"inputs": [
+ 						{
+ 							"name": "q19",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Bündnis 90/Die Grünen"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "gruene",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					],
+ 					"randomization_group": 1,
+ 					"randomization_seed": 1
+ 				},
+ 				{
+ 					"columns": 8,
+ 					"inputs": [
+ 						{
+ 							"name": "q19",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "FDP"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "fdp",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					],
+ 					"randomization_group": 1,
+ 					"randomization_seed": 1
+ 				},
+ 				{
+ 					"columns": 8,
+ 					"inputs": [
+ 						{
+ 							"name": "q19",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "AfD"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "afd",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					],
+ 					"randomization_group": 1,
+ 					"randomization_seed": 1
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 8.\u003c/b\u003e\n\t\t\t\t\tInwieweit sind Sie politisch aktiv (falls über\u0026shy;haupt)? \n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "q20",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Ich bin nicht politisch aktiv"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 1,
+ 							"col_span_control": 8,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "inactive",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q20",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Ich wähle manchmal"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 1,
+ 							"col_span_control": 8,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "votesometimes",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q20",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Ich wähle regelmäßig"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 1,
+ 							"col_span_control": 8,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "voteregular",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q20",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Ich engagiere mich aktiv für politische Themen (z.B. Stimmen sammeln/ bzw. Stimmabgabe für Petitionen)"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 1,
+ 							"col_span_control": 8,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "petitions",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q20",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Ich bin Mit\u0026shy;glied eines Parlaments oder einer Exekutive auf der Kommunalebene"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 1,
+ 							"col_span_control": 8,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "communal",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q20",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Ich bin Mit\u0026shy;glied eines Parlaments oder einer Exekutive auf der Landesebene"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 1,
+ 							"col_span_control": 8,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "state",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q20",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Ich bin Mit\u0026shy;glied eines Parlaments oder einer Exekutive auf der Bundesebene"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 1,
+ 							"col_span_control": 8,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "federal",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
  					"columns": 8,
  					"inputs": [
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 5.\u003c/b\u003e\n\t\t\t\t\tSind Sie Po\u0026shy;li\u0026shy;tiker?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 9.\u003c/b\u003e\n\t\t\t\t\tSind Sie Po\u0026shy;li\u0026shy;tiker?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 8,
  							"col_span_label": 1
@@ -1157,7 +1777,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 6.\u003c/b\u003e\n\t\t\t\t\tWas ist Ihr Familienstand?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 10.\u003c/b\u003e\n\t\t\t\t\tWas ist Ihr Familienstand?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 12,
  							"col_span_label": 1
@@ -1363,7 +1983,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 7.\u003c/b\u003e\n\t\t\t\t\tWie viel Geld verdienen Sie im Durchschnitt persönlich monatlich \n\t\t\t\t\tnach Abzug von Steuern und Sozialversi\u0026shy;cherungsbeiträgen? \n\t\t\t\t\tUnter durchschnittlichem Verdienst ist die Summe zu verstehen, \n\t\t\t\t\tdie sich aus Lohn, Gehalt, Einkommen aus selbstständiger Tätigkeit, \n\t\t\t\t\tRente oder Pension sowie Sozialleistungen ergibt.\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 11.\u003c/b\u003e\n\t\t\t\t\tWie viel Geld verdienen Sie im Durchschnitt persönlich monatlich \n\t\t\t\t\tnach Abzug von Steuern und Sozialversi\u0026shy;cherungsbeiträgen? \n\t\t\t\t\tUnter durchschnittlichem Verdienst ist die Summe zu verstehen, \n\t\t\t\t\tdie sich aus Lohn, Gehalt, Einkommen aus selbstständiger Tätigkeit, \n\t\t\t\t\tRente oder Pension sowie Sozialleistungen ergibt.\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 8,
  							"col_span_label": 1
@@ -1824,7 +2444,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 8.\u003c/b\u003e\n\t\t\t\t\tMit welcher Partei fühlen Sie sich \n\t\t\t\t\taufgrund Ihrer Werte und Überzeugungen am ehesten verbunden? \n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003c!--\n\t\t\t\t\t\u003ci\u003eBitte beachten Sie, dass nur eine Antwort zulässig ist.\u003c/i\u003e\n\t\t\t\t\t--\u003e\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 12.\u003c/b\u003e\n\t\t\t\t\tMit welcher Partei fühlen Sie sich \n\t\t\t\t\taufgrund Ihrer Werte und Überzeugungen am ehesten verbunden? \n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003c!--\n\t\t\t\t\t\u003ci\u003eBitte beachten Sie, dass nur eine Antwort zulässig ist.\u003c/i\u003e\n\t\t\t\t\t--\u003e\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -1867,7 +2487,8 @@
  							}
  						}
  					],
- 					"randomization_group": 1
+ 					"randomization_group": 2,
+ 					"randomization_seed": 2
  				},
  				{
  					"columns": 8,
@@ -1905,7 +2526,8 @@
  							}
  						}
  					],
- 					"randomization_group": 1
+ 					"randomization_group": 2,
+ 					"randomization_seed": 2
  				},
  				{
  					"columns": 8,
@@ -1943,7 +2565,8 @@
  							}
  						}
  					],
- 					"randomization_group": 1
+ 					"randomization_group": 2,
+ 					"randomization_seed": 2
  				},
  				{
  					"columns": 8,
@@ -1981,7 +2604,8 @@
  							}
  						}
  					],
- 					"randomization_group": 1
+ 					"randomization_group": 2,
+ 					"randomization_seed": 2
  				},
  				{
  					"columns": 8,
@@ -2019,7 +2643,8 @@
  							}
  						}
  					],
- 					"randomization_group": 1
+ 					"randomization_group": 2,
+ 					"randomization_seed": 2
  				},
  				{
  					"columns": 8,
@@ -2057,7 +2682,8 @@
  							}
  						}
  					],
- 					"randomization_group": 1
+ 					"randomization_group": 2,
+ 					"randomization_seed": 2
  				},
  				{
  					"columns": 8,
@@ -2125,7 +2751,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage\u0026nbsp;9.\u003c/b\u003e\n\t\t\t\t\tIn der Po\u0026shy;li\u0026shy;tik reden die Leute häufig von \"links\" und \"rechts\". \n\t\t\t\t\tWenn Sie die Skala hier benutzen, \n\t\t\t\t\two würden Sie sich selbst einordnen, \n\t\t\t\t\twenn 1 \"links\" und 11 \"rechts\" ist? \n\t\t\t\t\tBitte geben Sie den Wert an, der auf Sie persönlich zutrifft.\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage\u0026nbsp;13.\u003c/b\u003e\n\t\t\t\t\tIn der Po\u0026shy;li\u0026shy;tik reden die Leute häufig von \"links\" und \"rechts\". \n\t\t\t\t\tWenn Sie die Skala hier benutzen, \n\t\t\t\t\two würden Sie sich selbst einordnen, \n\t\t\t\t\twenn 1 \"links\" und 11 \"rechts\" ist? \n\t\t\t\t\tBitte geben Sie den Wert an, der auf Sie persönlich zutrifft.\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t"
  							},
  							"col_span": 11,
  							"col_span_label": 1
@@ -2133,7 +2759,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "Li\u0026shy;nk\u0026shy;s"
+ 								"de": "Li\u0026shy;nk\u0026shy;s \u003cdiv class='vspacer-24'\u003e \u0026nbsp; \u003c/div\u003e "
  							},
  							"col_span_control": 1,
  							"style": {
@@ -2563,7 +3189,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "Re\u0026shy;cht\u0026shy;s"
+ 								"de": "Re\u0026shy;cht\u0026shy;s \u003cdiv class='vspacer-24'\u003e \u0026nbsp; \u003c/div\u003e "
  							},
  							"col_span_control": 1,
  							"style": {
@@ -2741,7 +3367,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eNun bitten wir Sie, einige Fragen über sich selbst zu be\u0026shy;ant\u0026shy;wor\u0026shy;ten: \u003c/b\u003e\n\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cb\u003eFrage 10.\u003c/b\u003e\n\t\t\t\t\tSind Sie im Vergleich zu anderen im Allgemeinen bereit, \n\t\t\t\t\theute auf etwas zu verzichten, \n\t\t\t\t\tum in der Zukunft davon zu profitieren, \n\t\t\t\t\toder sind Sie im Vergleich zu anderen dazu nicht bereit? \n\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp style=\"margin-bottom: 0.5rem\"\u003e\n\t\t\t\t\t\u003cb\u003e\u003c/b\u003e\n\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cb\u003eFrage 14.\u003c/b\u003e\n\t\t\t\t\tSind Sie im Vergleich zu anderen im Allgemeinen bereit, \n\t\t\t\t\theute auf etwas zu verzichten, \n\t\t\t\t\tum in der Zukunft davon zu profitieren, \n\t\t\t\t\toder sind Sie im Vergleich zu anderen dazu nicht bereit? \n\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t"
  							},
  							"col_span": 7,
  							"col_span_label": 1
@@ -2749,7 +3375,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "Gar nicht bereit"
+ 								"de": "Gar nicht bereit \u003cdiv class='vspacer-24'\u003e \u0026nbsp; \u003c/div\u003e"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -3007,7 +3633,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "Sehr bereit"
+ 								"de": "Sehr bereit \u003cdiv class='vspacer-24'\u003e \u0026nbsp; \u003c/div\u003e"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -3123,7 +3749,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 11.\u003c/b\u003e\n\t\t\t\t\tWie schätzen Sie sich persönlich ein? \n\t\t\t\t\tSind Sie im Allgemeinen ein ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reiter Mensch \n\t\t\t\t\toder versuchen Sie, Risiken zu vermeiden?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp style=\"margin-bottom: 0.5rem\"\u003e\n\t\t\t\t\t\u003cb\u003eFrage 15.\u003c/b\u003e\n\t\t\t\t\tWie schätzen Sie sich persönlich ein? \n\t\t\t\t\tSind Sie im Allgemeinen ein ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reiter Mensch \n\t\t\t\t\toder versuchen Sie, Risiken zu vermeiden?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 7,
  							"col_span_label": 1
@@ -3131,7 +3757,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "Gar nicht ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reit"
+ 								"de": "Gar nicht ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reit \u003cdiv class='vspacer-24'\u003e \u0026nbsp; \u003c/div\u003e"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -3389,7 +4015,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "Sehr ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reit"
+ 								"de": "Sehr ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reit \u003cdiv class='vspacer-24'\u003e \u0026nbsp; \u003c/div\u003e"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -3505,7 +4131,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage\u0026nbsp;12.\u003c/b\u003e\n\t\t\t\t\tWie schätzen Sie Ihre Bereitschaft ein, mit anderen zu teilen, \n\t\t\t\t\tohne da\u0026shy;für eine Gegenleistung zu erwarten?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp style=\"margin-bottom: 0.5rem\"\u003e\n\t\t\t\t\t\u003cb\u003eFrage\u0026nbsp;16.\u003c/b\u003e\n\t\t\t\t\tWie schätzen Sie Ihre Bereitschaft ein, mit anderen zu teilen, \n\t\t\t\t\tohne da\u0026shy;für eine Gegenleistung zu erwarten?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 7,
  							"col_span_label": 1
@@ -3513,7 +4139,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "Gar nicht bereit"
+ 								"de": "Gar nicht bereit \u003cdiv class='vspacer-24'\u003e \u0026nbsp; \u003c/div\u003e"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -3771,7 +4397,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "Sehr bereit"
+ 								"de": "Sehr bereit \u003cdiv class='vspacer-24'\u003e \u0026nbsp; \u003c/div\u003e"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -4063,7 +4689,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage 1. \u003c/b\u003e\n\t\t\t\t\t\tSchätzen Sie bitte: Wie viele Mit\u0026shy;glieder einer Grup\u0026shy;pe von 10 zufällig ausgewählten Personen, die an einer solchen Studie teilnehmen, wählen jeweils die folgenden Optionen A, B und C, \n\t\t\t\t\t\u003cb\u003e\n\t\t\t\t\t\twenn sie sich jeweils für genau eine der drei Optionen entscheiden müssen?\t\t\t\t\t\n\t\t\t\t\t\u003c/b\u003e\n\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003ci\u003e(Ihre Antworten müssen sich auf 10 summieren.)\u003c/i\u003e\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp \u003e\n\t\t\t\t\t\u003cb\u003eFrage 1. \u003c/b\u003e\n\t\t\t\t\t\tSchätzen Sie bitte: Wie viele Mit\u0026shy;glieder einer Grup\u0026shy;pe von 10 zufällig ausgewählten Personen, die an einer solchen Studie teilnehmen, wählen jeweils die folgenden Optionen A, B und C, \n\t\t\t\t\t\u003cb\u003e\n\t\t\t\t\t\twenn sie sich jeweils für genau eine der drei Optionen entscheiden müssen?\t\t\t\t\t\n\t\t\t\t\t\u003c/b\u003e\n\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003ci\u003e(Ihre Antworten müssen sich auf 10 summieren.)\u003c/i\u003e\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
  							},
  							"col_span_label": 1
  						}
@@ -4095,6 +4721,22 @@
  							"col_span_label": 1,
  							"col_span_control": 9,
  							"validator": "inRange10;pat3_q4ab_opt123",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.45rem 0 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -4124,6 +4766,22 @@
  							"col_span_label": 1,
  							"col_span_control": 9,
  							"validator": "inRange10",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.45rem 0 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -4153,6 +4811,22 @@
  							"col_span_label": 1,
  							"col_span_control": 9,
  							"validator": "inRange10",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.45rem 0 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -4210,6 +4884,22 @@
  							"col_span_label": 1,
  							"col_span_control": 9,
  							"validator": "inRange10;pat3_q4ab_opt123",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.45rem 0 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -4239,6 +4929,22 @@
  							"col_span_label": 1,
  							"col_span_control": 9,
  							"validator": "inRange10",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.45rem 0 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -4268,6 +4974,22 @@
  							"col_span_label": 1,
  							"col_span_control": 9,
  							"validator": "inRange10",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.45rem 0 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -4436,7 +5158,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "Stimme gar nicht zu"
+ 								"de": "\u0026nbsp;\u003cbr\u003eStimme gar nicht zu \u003cdiv class='vspacer-24'\u003e \u0026nbsp; \u003c/div\u003e"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -4694,7 +5416,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "Stimme kom\u0026shy;plett zu"
+ 								"de": "\u0026nbsp;\u003cbr\u003eStimme kom\u0026shy;plett zu \u003cdiv class='vspacer-24'\u003e \u0026nbsp; \u003c/div\u003e"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -4962,7 +5684,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\u003cp\u003e\n\t\t\t\tWer soll entscheiden,\n\t\t\t\twelche Optionen dem zukünftigen Teilnehmer \n\t\t\t\tzur Verfügung stehen werden?\n\t\t\t\u003c/p\u003e\n\t\t\t"
+ 								"de": "\n\t\t\t\u003cp style=\"margin-bottom: 1.05rem\"\u003e\n\t\t\t\tWer soll entscheiden,\n\t\t\t\twelche Optionen dem zukünftigen Teilnehmer \n\t\t\t\tzur Verfügung stehen werden?\n\t\t\t\u003c/p\u003e\n\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -5132,7 +5854,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\u003cp\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\tWer soll die ver\u0026shy;füg\u0026shy;baren Optionen \n\t\t\t\tfür den zukünftigen Teilnehmer möglichst \u003ci\u003enicht\u003c/i\u003e festlegen? \n\t\t\t\u003c/p\u003e\n\t\t\t"
+ 								"de": "\n\t\t\t\u003cp style=\"margin-bottom: 1.05rem\"\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\tWer soll die ver\u0026shy;füg\u0026shy;baren Optionen \n\t\t\t\tfür den zukünftigen Teilnehmer möglichst \u003ci\u003enicht\u003c/i\u003e festlegen? \n\t\t\t\u003c/p\u003e\n\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -5372,7 +6094,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\u003cp\u003e\n\t\t\t\tWer soll entscheiden,\n\t\t\t\twelche Optionen dem zukünftigen Teilnehmer \n\t\t\t\tzur Verfügung stehen werden?\n\t\t\t\u003c/p\u003e\n\t\t\t"
+ 								"de": "\n\t\t\t\u003cp style=\"margin-bottom: 1.05rem\"\u003e\n\t\t\t\tWer soll entscheiden,\n\t\t\t\twelche Optionen dem zukünftigen Teilnehmer \n\t\t\t\tzur Verfügung stehen werden?\n\t\t\t\u003c/p\u003e\n\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -5542,7 +6264,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\u003cp\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\tWer soll die ver\u0026shy;füg\u0026shy;baren Optionen \n\t\t\t\tfür den zukünftigen Teilnehmer möglichst \u003ci\u003enicht\u003c/i\u003e festlegen? \n\t\t\t\u003c/p\u003e\n\t\t\t"
+ 								"de": "\n\t\t\t\u003cp style=\"margin-bottom: 1.05rem\"\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\tWer soll die ver\u0026shy;füg\u0026shy;baren Optionen \n\t\t\t\tfür den zukünftigen Teilnehmer möglichst \u003ci\u003enicht\u003c/i\u003e festlegen? \n\t\t\t\u003c/p\u003e\n\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -5873,7 +6595,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\u003cp\u003e\u003cb\u003eFrage 1:\u003c/b\u003e  \u0026nbsp; Deutsche Land- oder Bundestagspo\u0026shy;li\u0026shy;tiker \u003c/p\u003e\n\t\t\t\t\u003cp\u003eWie viele von 10 zufällig ausgewählten Po\u0026shy;li\u0026shy;tikern aus Grup\u0026shy;pe ▣ haben jeweils die Optionen A, B oder C ver\u0026shy;füg\u0026shy;bar gemacht?\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\u003cp\u003e\u003cb\u003eFrage 1:\u003c/b\u003e  \u0026nbsp; Deutsche Land- oder Bundestagspo\u0026shy;li\u0026shy;tiker \u003c/p\u003e\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tWie viele von 10 zufällig ausgewählten Po\u0026shy;li\u0026shy;tikern aus Grup\u0026shy;pe ▣ \n\t\t\t\t\thaben jeweils die Optionen A, B oder C ver\u0026shy;füg\u0026shy;bar gemacht?\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -5881,6 +6603,7 @@
  					]
  				},
  				{
+ 					"bottom_vspacers": 1,
  					"columns": 1,
  					"inputs": [
  						{
@@ -5900,7 +6623,7 @@
  							"max_chars": 3,
  							"max": 10,
  							"label": {
- 								"de": "von 10\u0026nbsp;Po\u0026shy;li\u0026shy;tikern aus Grup\u0026shy;pe ▣ haben \u003cb\u003enur Option A ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht"
+ 								"de": "von 10\u0026nbsp;Po\u0026shy;li\u0026shy;tikern aus Grup\u0026shy;pe ▣ haben \u003cb\u003enur Option A         ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -6004,7 +6727,7 @@
  							"max_chars": 3,
  							"max": 10,
  							"label": {
- 								"de": "von 10\u0026nbsp;Po\u0026shy;li\u0026shy;tikern aus Grup\u0026shy;pe ▣ haben \u003cb\u003ealle Optionen ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht"
+ 								"de": "von 10\u0026nbsp;Po\u0026shy;li\u0026shy;tikern aus Grup\u0026shy;pe ▣ haben \u003cb\u003ealle Optionen        ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -6056,7 +6779,7 @@
  							"max_chars": 3,
  							"max": 10,
  							"label": {
- 								"de": "von 10\u0026nbsp;Po\u0026shy;li\u0026shy;tikern aus Grup\u0026shy;pe ▣ haben \u003cb\u003eandere Optionen ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht \u003cbr\u003e(z. B. nur Option B oder nur Option C)"
+ 								"de": "von 10\u0026nbsp;Po\u0026shy;li\u0026shy;tikern aus Grup\u0026shy;pe ▣ haben \u003cb\u003eandere Optionen      ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht \u003cbr\u003e(z. B. nur Option B oder nur Option C)"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -6134,7 +6857,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\u003cp\u003e\u003cb\u003eFrage 2:\u003c/b\u003e  \u0026nbsp; Repräsentativer deutscher Bürger \u003c/p\u003e\n\t\t\t\t\u003cp\u003eWie viele von 10 zufällig ausgewählten Bürgern aus Grup\u0026shy;pe ◉ haben jeweils die Optionen A, B oder C ver\u0026shy;füg\u0026shy;bar gemacht?\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\u003cp\u003e\u003cb\u003eFrage 2:\u003c/b\u003e  \u0026nbsp; Repräsentativer deutscher Bürger \u003c/p\u003e\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tWie viele von 10 zufällig ausgewählten Bürgern aus Grup\u0026shy;pe ◉ \n\t\t\t\t\thaben jeweils die Optionen A, B oder C ver\u0026shy;füg\u0026shy;bar gemacht?\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -6142,6 +6865,7 @@
  					]
  				},
  				{
+ 					"bottom_vspacers": 1,
  					"columns": 1,
  					"inputs": [
  						{
@@ -6161,7 +6885,7 @@
  							"max_chars": 3,
  							"max": 10,
  							"label": {
- 								"de": "von 10\u0026nbsp;Bürgern aus Grup\u0026shy;pe ◉ haben \u003cb\u003enur Option A ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht"
+ 								"de": "von 10\u0026nbsp;Bürgern aus Grup\u0026shy;pe ◉ haben \u003cb\u003enur Option A         ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -6265,7 +6989,7 @@
  							"max_chars": 3,
  							"max": 10,
  							"label": {
- 								"de": "von 10\u0026nbsp;Bürgern aus Grup\u0026shy;pe ◉ haben \u003cb\u003ealle Optionen ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht"
+ 								"de": "von 10\u0026nbsp;Bürgern aus Grup\u0026shy;pe ◉ haben \u003cb\u003ealle Optionen        ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -6317,7 +7041,7 @@
  							"max_chars": 3,
  							"max": 10,
  							"label": {
- 								"de": "von 10\u0026nbsp;Bürgern aus Grup\u0026shy;pe ◉ haben \u003cb\u003eandere Optionen ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht \u003cbr\u003e(z. B. nur Option B oder nur Option C)"
+ 								"de": "von 10\u0026nbsp;Bürgern aus Grup\u0026shy;pe ◉ haben \u003cb\u003eandere Optionen      ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht \u003cbr\u003e(z. B. nur Option B oder nur Option C)"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -6395,7 +7119,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\u003cp\u003e\u003cb\u003eFrage 3:\u003c/b\u003e  \u0026nbsp; Deutsche Bürger mit de\u0026shy;mo\u0026shy;gra\u0026shy;phischen Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker \u003c/p\u003e\n\t\t\t\t\u003cp\u003eWie viele von 10 zufällig ausgewählten Bürgern aus Grup\u0026shy;pe ◬ (gleiche de\u0026shy;mo\u0026shy;gra\u0026shy;phische Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker) haben jeweils die Optionen A, B oder C ver\u0026shy;füg\u0026shy;bar gemacht?\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\u003cp\u003e\u003cb\u003eFrage 3:\u003c/b\u003e  \u0026nbsp; Deutsche Bürger mit de\u0026shy;mo\u0026shy;gra\u0026shy;phischen Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker \u003c/p\u003e\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tWie viele von 10 zufällig ausgewählten Bürgern aus Grup\u0026shy;pe ◬ (gleiche de\u0026shy;mo\u0026shy;gra\u0026shy;phische Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker) \n\t\t\t\t\thaben jeweils die Optionen A, B oder C ver\u0026shy;füg\u0026shy;bar gemacht?\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -6403,6 +7127,7 @@
  					]
  				},
  				{
+ 					"bottom_vspacers": 1,
  					"columns": 1,
  					"inputs": [
  						{
@@ -6422,7 +7147,7 @@
  							"max_chars": 3,
  							"max": 10,
  							"label": {
- 								"de": "von 10\u0026nbsp;Bürgern aus Grup\u0026shy;pe ◬ (gleiche de\u0026shy;mo\u0026shy;gra\u0026shy;phische Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker) haben \u003cb\u003enur Option A ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht"
+ 								"de": "von 10\u0026nbsp;Bürgern aus Grup\u0026shy;pe ◬ (gleiche de\u0026shy;mo\u0026shy;gra\u0026shy;phische Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker) haben \u003cb\u003enur Option A         ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -6526,7 +7251,7 @@
  							"max_chars": 3,
  							"max": 10,
  							"label": {
- 								"de": "von 10\u0026nbsp;Bürgern aus Grup\u0026shy;pe ◬ (gleiche de\u0026shy;mo\u0026shy;gra\u0026shy;phische Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker) haben \u003cb\u003ealle Optionen ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht"
+ 								"de": "von 10\u0026nbsp;Bürgern aus Grup\u0026shy;pe ◬ (gleiche de\u0026shy;mo\u0026shy;gra\u0026shy;phische Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker) haben \u003cb\u003ealle Optionen        ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -6578,7 +7303,7 @@
  							"max_chars": 3,
  							"max": 10,
  							"label": {
- 								"de": "von 10\u0026nbsp;Bürgern aus Grup\u0026shy;pe ◬ (gleiche de\u0026shy;mo\u0026shy;gra\u0026shy;phische Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker) haben \u003cb\u003eandere Optionen ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht \u003cbr\u003e(z. B. nur Option B oder nur Option C)"
+ 								"de": "von 10\u0026nbsp;Bürgern aus Grup\u0026shy;pe ◬ (gleiche de\u0026shy;mo\u0026shy;gra\u0026shy;phische Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker) haben \u003cb\u003eandere Optionen      ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht \u003cbr\u003e(z. B. nur Option B oder nur Option C)"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -6710,7 +7435,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\u003cp\u003e\u003cb\u003eFrage 4:\u003c/b\u003e  \u0026nbsp; Deutsche Land- oder Bundestagspo\u0026shy;li\u0026shy;tiker \u003c/p\u003e\n\t\t\t\t\u003cp\u003eWie viele von 10 zufällig ausgewählten Po\u0026shy;li\u0026shy;tikern aus Grup\u0026shy;pe ▣ haben jeweils die Optionen A, B oder C ver\u0026shy;füg\u0026shy;bar gemacht?\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\u003cp\u003e\u003cb\u003eFrage 4:\u003c/b\u003e  \u0026nbsp; Deutsche Land- oder Bundestagspo\u0026shy;li\u0026shy;tiker \u003c/p\u003e\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tWie viele von 10 zufällig ausgewählten Po\u0026shy;li\u0026shy;tikern aus Grup\u0026shy;pe ▣ \n\t\t\t\t\thaben jeweils die Optionen A, B oder C ver\u0026shy;füg\u0026shy;bar gemacht?\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -6718,6 +7443,7 @@
  					]
  				},
  				{
+ 					"bottom_vspacers": 1,
  					"columns": 1,
  					"inputs": [
  						{
@@ -6737,7 +7463,7 @@
  							"max_chars": 3,
  							"max": 10,
  							"label": {
- 								"de": "von 10\u0026nbsp;Po\u0026shy;li\u0026shy;tikern aus Grup\u0026shy;pe ▣ haben \u003cb\u003enur Option A ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht"
+ 								"de": "von 10\u0026nbsp;Po\u0026shy;li\u0026shy;tikern aus Grup\u0026shy;pe ▣ haben \u003cb\u003enur Option A         ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -6841,7 +7567,7 @@
  							"max_chars": 3,
  							"max": 10,
  							"label": {
- 								"de": "von 10\u0026nbsp;Po\u0026shy;li\u0026shy;tikern aus Grup\u0026shy;pe ▣ haben \u003cb\u003ealle Optionen ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht"
+ 								"de": "von 10\u0026nbsp;Po\u0026shy;li\u0026shy;tikern aus Grup\u0026shy;pe ▣ haben \u003cb\u003ealle Optionen        ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -6893,7 +7619,7 @@
  							"max_chars": 3,
  							"max": 10,
  							"label": {
- 								"de": "von 10\u0026nbsp;Po\u0026shy;li\u0026shy;tikern aus Grup\u0026shy;pe ▣ haben \u003cb\u003eandere Optionen ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht \u003cbr\u003e(z. B. nur Option B oder nur Option C)"
+ 								"de": "von 10\u0026nbsp;Po\u0026shy;li\u0026shy;tikern aus Grup\u0026shy;pe ▣ haben \u003cb\u003eandere Optionen      ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht \u003cbr\u003e(z. B. nur Option B oder nur Option C)"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -6971,7 +7697,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\u003cp\u003e\u003cb\u003eFrage 5:\u003c/b\u003e  \u0026nbsp; Repräsentativer deutscher Bürger \u003c/p\u003e\n\t\t\t\t\u003cp\u003eWie viele von 10 zufällig ausgewählten Bürgern aus Grup\u0026shy;pe ◉ haben jeweils die Optionen A, B oder C ver\u0026shy;füg\u0026shy;bar gemacht?\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\u003cp\u003e\u003cb\u003eFrage 5:\u003c/b\u003e  \u0026nbsp; Repräsentativer deutscher Bürger \u003c/p\u003e\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tWie viele von 10 zufällig ausgewählten Bürgern aus Grup\u0026shy;pe ◉ \n\t\t\t\t\thaben jeweils die Optionen A, B oder C ver\u0026shy;füg\u0026shy;bar gemacht?\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -6979,6 +7705,7 @@
  					]
  				},
  				{
+ 					"bottom_vspacers": 1,
  					"columns": 1,
  					"inputs": [
  						{
@@ -6998,7 +7725,7 @@
  							"max_chars": 3,
  							"max": 10,
  							"label": {
- 								"de": "von 10\u0026nbsp;Bürgern aus Grup\u0026shy;pe ◉ haben \u003cb\u003enur Option A ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht"
+ 								"de": "von 10\u0026nbsp;Bürgern aus Grup\u0026shy;pe ◉ haben \u003cb\u003enur Option A         ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -7102,7 +7829,7 @@
  							"max_chars": 3,
  							"max": 10,
  							"label": {
- 								"de": "von 10\u0026nbsp;Bürgern aus Grup\u0026shy;pe ◉ haben \u003cb\u003ealle Optionen ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht"
+ 								"de": "von 10\u0026nbsp;Bürgern aus Grup\u0026shy;pe ◉ haben \u003cb\u003ealle Optionen        ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -7154,7 +7881,7 @@
  							"max_chars": 3,
  							"max": 10,
  							"label": {
- 								"de": "von 10\u0026nbsp;Bürgern aus Grup\u0026shy;pe ◉ haben \u003cb\u003eandere Optionen ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht \u003cbr\u003e(z. B. nur Option B oder nur Option C)"
+ 								"de": "von 10\u0026nbsp;Bürgern aus Grup\u0026shy;pe ◉ haben \u003cb\u003eandere Optionen      ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht \u003cbr\u003e(z. B. nur Option B oder nur Option C)"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -7232,7 +7959,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\u003cp\u003e\u003cb\u003eFrage 6:\u003c/b\u003e  \u0026nbsp; Deutsche Bürger mit de\u0026shy;mo\u0026shy;gra\u0026shy;phischen Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker \u003c/p\u003e\n\t\t\t\t\u003cp\u003eWie viele von 10 zufällig ausgewählten Bürgern aus Grup\u0026shy;pe ◬ (gleiche de\u0026shy;mo\u0026shy;gra\u0026shy;phische Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker) haben jeweils die Optionen A, B oder C ver\u0026shy;füg\u0026shy;bar gemacht?\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\u003cp\u003e\u003cb\u003eFrage 6:\u003c/b\u003e  \u0026nbsp; Deutsche Bürger mit de\u0026shy;mo\u0026shy;gra\u0026shy;phischen Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker \u003c/p\u003e\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tWie viele von 10 zufällig ausgewählten Bürgern aus Grup\u0026shy;pe ◬ (gleiche de\u0026shy;mo\u0026shy;gra\u0026shy;phische Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker) \n\t\t\t\t\thaben jeweils die Optionen A, B oder C ver\u0026shy;füg\u0026shy;bar gemacht?\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -7240,6 +7967,7 @@
  					]
  				},
  				{
+ 					"bottom_vspacers": 1,
  					"columns": 1,
  					"inputs": [
  						{
@@ -7259,7 +7987,7 @@
  							"max_chars": 3,
  							"max": 10,
  							"label": {
- 								"de": "von 10\u0026nbsp;Bürgern aus Grup\u0026shy;pe ◬ (gleiche de\u0026shy;mo\u0026shy;gra\u0026shy;phische Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker) haben \u003cb\u003enur Option A ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht"
+ 								"de": "von 10\u0026nbsp;Bürgern aus Grup\u0026shy;pe ◬ (gleiche de\u0026shy;mo\u0026shy;gra\u0026shy;phische Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker) haben \u003cb\u003enur Option A         ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -7363,7 +8091,7 @@
  							"max_chars": 3,
  							"max": 10,
  							"label": {
- 								"de": "von 10\u0026nbsp;Bürgern aus Grup\u0026shy;pe ◬ (gleiche de\u0026shy;mo\u0026shy;gra\u0026shy;phische Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker) haben \u003cb\u003ealle Optionen ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht"
+ 								"de": "von 10\u0026nbsp;Bürgern aus Grup\u0026shy;pe ◬ (gleiche de\u0026shy;mo\u0026shy;gra\u0026shy;phische Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker) haben \u003cb\u003ealle Optionen        ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -7415,7 +8143,7 @@
  							"max_chars": 3,
  							"max": 10,
  							"label": {
- 								"de": "von 10\u0026nbsp;Bürgern aus Grup\u0026shy;pe ◬ (gleiche de\u0026shy;mo\u0026shy;gra\u0026shy;phische Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker) haben \u003cb\u003eandere Optionen ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht \u003cbr\u003e(z. B. nur Option B oder nur Option C)"
+ 								"de": "von 10\u0026nbsp;Bürgern aus Grup\u0026shy;pe ◬ (gleiche de\u0026shy;mo\u0026shy;gra\u0026shy;phische Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker) haben \u003cb\u003eandere Optionen      ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht \u003cbr\u003e(z. B. nur Option B oder nur Option C)"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -7539,7 +8267,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\tIch möchte einen zusätzliche Pauschalbetrag von 0.50\u0026nbsp;€ \n\t\t\t\t\tzur der Auszahlung der Person hinzufügen\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\u003cp style=\"margin-bottom: 0.55rem\"\u003e\n\t\t\t\t\tIch möchte einen zusätzlichen Pauschalbetrag von 0.50\u0026nbsp;€ \n\t\t\t\t\tzur der Auszahlung der Person hinzufügen\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 12,
  							"col_span_label": 1
@@ -7614,7 +8342,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\tIch möchte den Pauschalbetrag in der Höhe von 0.50\u0026nbsp;€  \n\t\t\t\t\tvon der Auszahlung der Person abziehen\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\u003cp style=\"margin-bottom: 0.7rem\"\u003e\n\t\t\t\t\tIch möchte den Pauschalbetrag in der Höhe von 0.50\u0026nbsp;€  \n\t\t\t\t\tvon der Auszahlung der Person abziehen\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 12,
  							"col_span_label": 1

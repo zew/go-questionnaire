@@ -19,7 +19,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "0898216b2385b526cc8044d31842314724fc930c092a351aff96c206842d2acb",
+ 	"md_5": "5cbfc8767913ece9489a8fc57cfff840759d580df7c737a2ed7e211fdac47033",
  	"lang_codes": [
  		"de"
  	],
@@ -28,7 +28,7 @@
  	"version_max": 16,
  	"assign_version": "round-robin",
  	"version_effective": -2,
- 	"max_groups": 13,
+ 	"max_groups": 16,
  	"pages": [
  		{
  			"label": {
@@ -683,7 +683,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage 2. \u003c/b\u003e\n\t\t\t\t\t\tSchätzen Sie bitte: Wie viele Mit\u0026shy;glieder einer Grup\u0026shy;pe von 10 zufällig ausgewählten Personen, die an einer solchen Studie teilnehmen, wählen jeweils die folgenden Optionen A, B und C, \n\t\t\t\t\t\u003cb\u003e\n\t\t\t\t\t\twenn sie sich jeweils für genau eine der drei Optionen entscheiden müssen?\t\t\t\t\t\n\t\t\t\t\t\u003c/b\u003e\n\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003ci\u003e(Ihre Antworten müssen sich auf 10 summieren.)\u003c/i\u003e\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp \u003e\n\t\t\t\t\t\u003cb\u003eFrage 2. \u003c/b\u003e\n\t\t\t\t\t\tSchätzen Sie bitte: Wie viele Mit\u0026shy;glieder einer Grup\u0026shy;pe von 10 zufällig ausgewählten Personen, die an einer solchen Studie teilnehmen, wählen jeweils die folgenden Optionen A, B und C, \n\t\t\t\t\t\u003cb\u003e\n\t\t\t\t\t\twenn sie sich jeweils für genau eine der drei Optionen entscheiden müssen?\t\t\t\t\t\n\t\t\t\t\t\u003c/b\u003e\n\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003ci\u003e(Ihre Antworten müssen sich auf 10 summieren.)\u003c/i\u003e\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
  							},
  							"col_span_label": 1
  						}
@@ -715,6 +715,22 @@
  							"col_span_label": 1,
  							"col_span_control": 9,
  							"validator": "inRange10",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.45rem 0 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -744,6 +760,22 @@
  							"col_span_label": 1,
  							"col_span_control": 9,
  							"validator": "inRange10",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.45rem 0 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -773,6 +805,22 @@
  							"col_span_label": 1,
  							"col_span_control": 9,
  							"validator": "inRange10",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.45rem 0 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -830,6 +878,22 @@
  							"col_span_label": 1,
  							"col_span_control": 9,
  							"validator": "inRange10",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.45rem 0 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -859,6 +923,22 @@
  							"col_span_label": 1,
  							"col_span_control": 9,
  							"validator": "inRange10",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.45rem 0 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -888,6 +968,22 @@
  							"col_span_label": 1,
  							"col_span_control": 9,
  							"validator": "inRange10",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.45rem 0 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -961,7 +1057,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "Stimme gar nicht zu"
+ 								"de": "\u0026nbsp;\u003cbr\u003eStimme gar nicht zu \u003cdiv class='vspacer-24'\u003e \u0026nbsp; \u003c/div\u003e"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -1219,7 +1315,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "Stimme kom\u0026shy;plett zu"
+ 								"de": "\u0026nbsp;\u003cbr\u003eStimme kom\u0026shy;plett zu \u003cdiv class='vspacer-24'\u003e \u0026nbsp; \u003c/div\u003e"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -1362,7 +1458,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eNun bitten wir Sie, einige Fragen über sich selbst zu be\u0026shy;ant\u0026shy;wor\u0026shy;ten: \u003c/b\u003e\n\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cb\u003eFrage 5.\u003c/b\u003e\n\t\t\t\t\tSind Sie im Vergleich zu anderen im Allgemeinen bereit, \n\t\t\t\t\theute auf etwas zu verzichten, \n\t\t\t\t\tum in der Zukunft davon zu profitieren, \n\t\t\t\t\toder sind Sie im Vergleich zu anderen dazu nicht bereit? \n\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp style=\"margin-bottom: 0.5rem\"\u003e\n\t\t\t\t\t\u003cb\u003eNun bitten wir Sie, einige Fragen über sich selbst zu be\u0026shy;ant\u0026shy;wor\u0026shy;ten: \u003c/b\u003e\n\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cb\u003eFrage 5.\u003c/b\u003e\n\t\t\t\t\tSind Sie im Vergleich zu anderen im Allgemeinen bereit, \n\t\t\t\t\theute auf etwas zu verzichten, \n\t\t\t\t\tum in der Zukunft davon zu profitieren, \n\t\t\t\t\toder sind Sie im Vergleich zu anderen dazu nicht bereit? \n\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t"
  							},
  							"col_span": 7,
  							"col_span_label": 1
@@ -1370,7 +1466,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "Gar nicht bereit"
+ 								"de": "Gar nicht bereit \u003cdiv class='vspacer-24'\u003e \u0026nbsp; \u003c/div\u003e"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -1628,7 +1724,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "Sehr bereit"
+ 								"de": "Sehr bereit \u003cdiv class='vspacer-24'\u003e \u0026nbsp; \u003c/div\u003e"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -1672,42 +1768,49 @@
  							"name": "q5",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "1"
  						},
  						{
  							"name": "q5",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "2"
  						},
  						{
  							"name": "q5",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "3"
  						},
  						{
  							"name": "q5",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "4"
  						},
  						{
  							"name": "q5",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "5"
  						},
  						{
  							"name": "q5",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "6"
  						},
  						{
  							"name": "q5",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "7"
  						}
  					],
@@ -1737,7 +1840,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 6.\u003c/b\u003e\n\t\t\t\t\tWie schätzen Sie sich persönlich ein? \n\t\t\t\t\tSind Sie im Allgemeinen ein ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reiter Mensch \n\t\t\t\t\toder versuchen Sie, Risiken zu vermeiden?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp style=\"margin-bottom: 0.5rem\"\u003e\n\t\t\t\t\t\u003cb\u003eFrage 6.\u003c/b\u003e\n\t\t\t\t\tWie schätzen Sie sich persönlich ein? \n\t\t\t\t\tSind Sie im Allgemeinen ein ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reiter Mensch \n\t\t\t\t\toder versuchen Sie, Risiken zu vermeiden?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 7,
  							"col_span_label": 1
@@ -1745,7 +1848,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "Gar nicht ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reit"
+ 								"de": "Gar nicht ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reit \u003cdiv class='vspacer-24'\u003e \u0026nbsp; \u003c/div\u003e"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -2003,7 +2106,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "Sehr ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reit"
+ 								"de": "Sehr ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reit \u003cdiv class='vspacer-24'\u003e \u0026nbsp; \u003c/div\u003e"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -2047,42 +2150,49 @@
  							"name": "q6",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "1"
  						},
  						{
  							"name": "q6",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "2"
  						},
  						{
  							"name": "q6",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "3"
  						},
  						{
  							"name": "q6",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "4"
  						},
  						{
  							"name": "q6",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "5"
  						},
  						{
  							"name": "q6",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "6"
  						},
  						{
  							"name": "q6",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "7"
  						}
  					],
@@ -2112,7 +2222,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage\u0026nbsp;7.\u003c/b\u003e\n\t\t\t\t\tWie schätzen Sie Ihre Bereitschaft ein, mit anderen zu teilen, \n\t\t\t\t\tohne da\u0026shy;für eine Gegenleistung zu erwarten?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp style=\"margin-bottom: 0.5rem\"\u003e\n\t\t\t\t\t\u003cb\u003eFrage\u0026nbsp;7.\u003c/b\u003e\n\t\t\t\t\tWie schätzen Sie Ihre Bereitschaft ein, mit anderen zu teilen, \n\t\t\t\t\tohne da\u0026shy;für eine Gegenleistung zu erwarten?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 7,
  							"col_span_label": 1
@@ -2120,7 +2230,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "Gar nicht bereit"
+ 								"de": "Gar nicht bereit \u003cdiv class='vspacer-24'\u003e \u0026nbsp; \u003c/div\u003e"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -2378,7 +2488,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "Sehr bereit"
+ 								"de": "Sehr bereit \u003cdiv class='vspacer-24'\u003e \u0026nbsp; \u003c/div\u003e"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -2422,42 +2532,49 @@
  							"name": "q7",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "1"
  						},
  						{
  							"name": "q7",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "2"
  						},
  						{
  							"name": "q7",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "3"
  						},
  						{
  							"name": "q7",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "4"
  						},
  						{
  							"name": "q7",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "5"
  						},
  						{
  							"name": "q7",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "6"
  						},
  						{
  							"name": "q7",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "7"
  						}
  					],
@@ -2531,6 +2648,7 @@
  							"col_span": 4,
  							"col_span_label": 4,
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "male",
  							"style_label": {
  								"desktop": {
@@ -2562,6 +2680,7 @@
  							"col_span": 4,
  							"col_span_label": 4,
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "female",
  							"style_label": {
  								"desktop": {
@@ -2593,6 +2712,7 @@
  							"col_span": 4,
  							"col_span_label": 4,
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "diverse",
  							"style_label": {
  								"desktop": {
@@ -2637,7 +2757,86 @@
  							"min": 1900,
  							"max": 2010,
  							"col_span": 4,
- 							"col_span_control": 1
+ 							"col_span_control": 1,
+ 							"validator": "must"
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 12,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 10.\u003c/b\u003e\n\t\t\t\t\tBesitzen Sie die deutsche Staatsbürgerschaft?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 							},
+ 							"col_span": 12,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "q17",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "ja"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "citizenshipyes",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q17",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "nein"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "citizenshipno",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						}
  					]
  				},
@@ -2648,7 +2847,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 10.\u003c/b\u003e\n\t\t\t\t\tIn welchem Bundesland befindet sich Ihr Hauptwohnsitz?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 11.\u003c/b\u003e\n\t\t\t\t\tIn welchem Bundesland befindet sich Ihr Hauptwohnsitz?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -2668,6 +2867,7 @@
  							"col_span": 4,
  							"col_span_label": 4,
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "bw",
  							"style_label": {
  								"desktop": {
@@ -2699,6 +2899,7 @@
  							"col_span": 4,
  							"col_span_label": 4,
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "by",
  							"style_label": {
  								"desktop": {
@@ -2730,6 +2931,7 @@
  							"col_span": 4,
  							"col_span_label": 4,
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "be",
  							"style_label": {
  								"desktop": {
@@ -2761,6 +2963,7 @@
  							"col_span": 4,
  							"col_span_label": 4,
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "bb",
  							"style_label": {
  								"desktop": {
@@ -2792,6 +2995,7 @@
  							"col_span": 4,
  							"col_span_label": 4,
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "hb",
  							"style_label": {
  								"desktop": {
@@ -2823,6 +3027,7 @@
  							"col_span": 4,
  							"col_span_label": 4,
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "hh",
  							"style_label": {
  								"desktop": {
@@ -2854,6 +3059,7 @@
  							"col_span": 4,
  							"col_span_label": 4,
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "he",
  							"style_label": {
  								"desktop": {
@@ -2885,6 +3091,7 @@
  							"col_span": 4,
  							"col_span_label": 4,
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "mv",
  							"style_label": {
  								"desktop": {
@@ -2916,6 +3123,7 @@
  							"col_span": 4,
  							"col_span_label": 4,
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "ni",
  							"style_label": {
  								"desktop": {
@@ -2947,6 +3155,7 @@
  							"col_span": 4,
  							"col_span_label": 4,
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "nw",
  							"style_label": {
  								"desktop": {
@@ -2978,6 +3187,7 @@
  							"col_span": 4,
  							"col_span_label": 4,
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "rp",
  							"style_label": {
  								"desktop": {
@@ -3009,6 +3219,7 @@
  							"col_span": 4,
  							"col_span_label": 4,
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "sl",
  							"style_label": {
  								"desktop": {
@@ -3040,6 +3251,7 @@
  							"col_span": 4,
  							"col_span_label": 4,
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "sn",
  							"style_label": {
  								"desktop": {
@@ -3071,6 +3283,7 @@
  							"col_span": 4,
  							"col_span_label": 4,
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "st",
  							"style_label": {
  								"desktop": {
@@ -3102,6 +3315,7 @@
  							"col_span": 4,
  							"col_span_label": 4,
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "sh",
  							"style_label": {
  								"desktop": {
@@ -3133,6 +3347,7 @@
  							"col_span": 4,
  							"col_span_label": 4,
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "th",
  							"style_label": {
  								"desktop": {
@@ -3164,7 +3379,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 11.\u003c/b\u003e\n\t\t\t\t\tWelcher ist Ihr höchster Bil\u0026shy;dungs\u0026shy;abschluss?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 12.\u003c/b\u003e\n\t\t\t\t\tWelcher ist Ihr höchster Bil\u0026shy;dungs\u0026shy;abschluss?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 8,
  							"col_span_label": 1
@@ -3178,6 +3393,7 @@
  							"col_span": 4,
  							"col_span_label": 4,
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "kein_abschluss",
  							"style_label": {
  								"desktop": {
@@ -3209,6 +3425,7 @@
  							"col_span": 4,
  							"col_span_label": 4,
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "hauptschule",
  							"style_label": {
  								"desktop": {
@@ -3240,6 +3457,7 @@
  							"col_span": 4,
  							"col_span_label": 4,
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "mittlere_reife",
  							"style_label": {
  								"desktop": {
@@ -3271,6 +3489,7 @@
  							"col_span": 4,
  							"col_span_label": 4,
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "abitur",
  							"style_label": {
  								"desktop": {
@@ -3302,6 +3521,7 @@
  							"col_span": 4,
  							"col_span_label": 4,
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "hochschule",
  							"style_label": {
  								"desktop": {
@@ -3333,6 +3553,7 @@
  							"col_span": 4,
  							"col_span_label": 4,
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "promotion",
  							"style_label": {
  								"desktop": {
@@ -3359,12 +3580,554 @@
  				},
  				{
  					"bottom_vspacers": 3,
+ 					"columns": 12,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 13.\u003c/b\u003e\n\t\t\t\t\tSind Sie Mit\u0026shy;glied einer politischen Partei?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 							},
+ 							"col_span": 12,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "q18",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "ja"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "partmemberyes",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q18",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "nein"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "partmemberno",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 14.\u003c/b\u003e\n\t\t\t\t\tMit welcher im deutschen Bundestag vertretenen Partei identifizieren Sie sich am ehesten? \n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"columns": 8,
+ 					"inputs": [
+ 						{
+ 							"name": "q19",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "CDU/CSU"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "cducsu",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					],
+ 					"randomization_group": 1,
+ 					"randomization_seed": 1
+ 				},
+ 				{
+ 					"columns": 8,
+ 					"inputs": [
+ 						{
+ 							"name": "q19",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Die Linke"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "linke",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					],
+ 					"randomization_group": 1,
+ 					"randomization_seed": 1
+ 				},
+ 				{
+ 					"columns": 8,
+ 					"inputs": [
+ 						{
+ 							"name": "q19",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "SPD"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "spd",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					],
+ 					"randomization_group": 1,
+ 					"randomization_seed": 1
+ 				},
+ 				{
+ 					"columns": 8,
+ 					"inputs": [
+ 						{
+ 							"name": "q19",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Bündnis 90/Die Grünen"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "gruene",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					],
+ 					"randomization_group": 1,
+ 					"randomization_seed": 1
+ 				},
+ 				{
+ 					"columns": 8,
+ 					"inputs": [
+ 						{
+ 							"name": "q19",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "FDP"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "fdp",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					],
+ 					"randomization_group": 1,
+ 					"randomization_seed": 1
+ 				},
+ 				{
+ 					"columns": 8,
+ 					"inputs": [
+ 						{
+ 							"name": "q19",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "AfD"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "afd",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					],
+ 					"randomization_group": 1,
+ 					"randomization_seed": 1
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 15.\u003c/b\u003e\n\t\t\t\t\tInwieweit sind Sie politisch aktiv (falls über\u0026shy;haupt)? \n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "q20",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Ich bin nicht politisch aktiv"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 1,
+ 							"col_span_control": 8,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "inactive",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q20",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Ich wähle manchmal"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 1,
+ 							"col_span_control": 8,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "votesometimes",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q20",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Ich wähle regelmäßig"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 1,
+ 							"col_span_control": 8,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "voteregular",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q20",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Ich engagiere mich aktiv für politische Themen (z.B. Stimmen sammeln/ bzw. Stimmabgabe für Petitionen)"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 1,
+ 							"col_span_control": 8,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "petitions",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q20",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Ich bin Mit\u0026shy;glied eines Parlaments oder einer Exekutive auf der Kommunalebene"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 1,
+ 							"col_span_control": 8,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "communal",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q20",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Ich bin Mit\u0026shy;glied eines Parlaments oder einer Exekutive auf der Landesebene"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 1,
+ 							"col_span_control": 8,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "state",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q20",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Ich bin Mit\u0026shy;glied eines Parlaments oder einer Exekutive auf der Bundesebene"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 1,
+ 							"col_span_control": 8,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "federal",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
  					"columns": 8,
  					"inputs": [
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 12.\u003c/b\u003e\n\t\t\t\t\tSind Sie Po\u0026shy;li\u0026shy;tiker?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 16.\u003c/b\u003e\n\t\t\t\t\tSind Sie Po\u0026shy;li\u0026shy;tiker?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 8,
  							"col_span_label": 1
@@ -3378,6 +4141,7 @@
  							"col_span": 4,
  							"col_span_label": 4,
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "ehrenamt",
  							"style_label": {
  								"desktop": {
@@ -3409,6 +4173,7 @@
  							"col_span": 4,
  							"col_span_label": 4,
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "hauptberuf",
  							"style_label": {
  								"desktop": {
@@ -3440,6 +4205,7 @@
  							"col_span": 4,
  							"col_span_label": 4,
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "nein",
  							"style_label": {
  								"desktop": {
@@ -3502,7 +4268,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 13.\u003c/b\u003e\n\t\t\t\t\tWas ist Ihr Familienstand?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 17.\u003c/b\u003e\n\t\t\t\t\tWas ist Ihr Familienstand?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 12,
  							"col_span_label": 1
@@ -3516,6 +4282,7 @@
  							"col_span": 6,
  							"col_span_label": 4,
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "married_together",
  							"style_label": {
  								"desktop": {
@@ -3547,6 +4314,7 @@
  							"col_span": 6,
  							"col_span_label": 4,
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "married_separated",
  							"style_label": {
  								"desktop": {
@@ -3578,6 +4346,7 @@
  							"col_span": 6,
  							"col_span_label": 4,
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "widowed",
  							"style_label": {
  								"desktop": {
@@ -3609,6 +4378,7 @@
  							"col_span": 6,
  							"col_span_label": 4,
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "divorced",
  							"style_label": {
  								"desktop": {
@@ -3640,6 +4410,7 @@
  							"col_span": 6,
  							"col_span_label": 4,
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "engaged",
  							"style_label": {
  								"desktop": {
@@ -3671,6 +4442,7 @@
  							"col_span": 6,
  							"col_span_label": 4,
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "single",
  							"style_label": {
  								"desktop": {
@@ -3702,7 +4474,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 14.\u003c/b\u003e\n\t\t\t\t\tWie viel Geld verdienen Sie im Durchschnitt persönlich monatlich \n\t\t\t\t\tnach Abzug von Steuern und Sozialversi\u0026shy;cherungsbeiträgen? \n\t\t\t\t\tUnter durchschnittlichem Verdienst ist die Summe zu verstehen, \n\t\t\t\t\tdie sich aus Lohn, Gehalt, Einkommen aus selbstständiger Tätigkeit, \n\t\t\t\t\tRente oder Pension sowie Sozialleistungen ergibt.\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 18.\u003c/b\u003e\n\t\t\t\t\tWie viel Geld verdienen Sie im Durchschnitt persönlich monatlich \n\t\t\t\t\tnach Abzug von Steuern und Sozialversi\u0026shy;cherungsbeiträgen? \n\t\t\t\t\tUnter durchschnittlichem Verdienst ist die Summe zu verstehen, \n\t\t\t\t\tdie sich aus Lohn, Gehalt, Einkommen aus selbstständiger Tätigkeit, \n\t\t\t\t\tRente oder Pension sowie Sozialleistungen ergibt.\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 8,
  							"col_span_label": 1
@@ -3716,6 +4488,7 @@
  							"col_span": 4,
  							"col_span_label": 4,
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "null_euro",
  							"style_label": {
  								"desktop": {
@@ -3747,6 +4520,7 @@
  							"col_span": 4,
  							"col_span_label": 4,
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "upto500",
  							"style_label": {
  								"desktop": {
@@ -3778,6 +4552,7 @@
  							"col_span": 4,
  							"col_span_label": 4,
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "upto1000",
  							"style_label": {
  								"desktop": {
@@ -3809,6 +4584,7 @@
  							"col_span": 4,
  							"col_span_label": 4,
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "upto1500",
  							"style_label": {
  								"desktop": {
@@ -3840,6 +4616,7 @@
  							"col_span": 4,
  							"col_span_label": 4,
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "upto2000",
  							"style_label": {
  								"desktop": {
@@ -3871,6 +4648,7 @@
  							"col_span": 4,
  							"col_span_label": 4,
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "upto3000",
  							"style_label": {
  								"desktop": {
@@ -3902,6 +4680,7 @@
  							"col_span": 4,
  							"col_span_label": 4,
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "upto4000",
  							"style_label": {
  								"desktop": {
@@ -3933,6 +4712,7 @@
  							"col_span": 4,
  							"col_span_label": 4,
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "upto5000",
  							"style_label": {
  								"desktop": {
@@ -3964,6 +4744,7 @@
  							"col_span": 4,
  							"col_span_label": 4,
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "upto6000",
  							"style_label": {
  								"desktop": {
@@ -3995,6 +4776,7 @@
  							"col_span": 4,
  							"col_span_label": 4,
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "upto7000",
  							"style_label": {
  								"desktop": {
@@ -4026,6 +4808,7 @@
  							"col_span": 4,
  							"col_span_label": 4,
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "upto8000",
  							"style_label": {
  								"desktop": {
@@ -4057,6 +4840,7 @@
  							"col_span": 4,
  							"col_span_label": 4,
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "upto9000",
  							"style_label": {
  								"desktop": {
@@ -4088,6 +4872,7 @@
  							"col_span": 4,
  							"col_span_label": 4,
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "upto10000",
  							"style_label": {
  								"desktop": {
@@ -4119,6 +4904,7 @@
  							"col_span": 4,
  							"col_span_label": 4,
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "over10000",
  							"style_label": {
  								"desktop": {
@@ -4149,7 +4935,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 15.\u003c/b\u003e\n\t\t\t\t\tMit welcher Partei fühlen Sie sich \n\t\t\t\t\taufgrund Ihrer Werte und Überzeugungen am ehesten verbunden? \n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003c!--\n\t\t\t\t\t\u003ci\u003eBitte beachten Sie, dass nur eine Antwort zulässig ist.\u003c/i\u003e\n\t\t\t\t\t--\u003e\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 19.\u003c/b\u003e\n\t\t\t\t\tMit welcher Partei fühlen Sie sich \n\t\t\t\t\taufgrund Ihrer Werte und Überzeugungen am ehesten verbunden? \n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003c!--\n\t\t\t\t\t\u003ci\u003eBitte beachten Sie, dass nur eine Antwort zulässig ist.\u003c/i\u003e\n\t\t\t\t\t--\u003e\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -4168,6 +4954,7 @@
  							"col_span": 4,
  							"col_span_label": 4,
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "cducsu",
  							"style_label": {
  								"desktop": {
@@ -4191,7 +4978,8 @@
  							}
  						}
  					],
- 					"randomization_group": 1
+ 					"randomization_group": 2,
+ 					"randomization_seed": 2
  				},
  				{
  					"columns": 8,
@@ -4205,6 +4993,7 @@
  							"col_span": 4,
  							"col_span_label": 4,
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "linke",
  							"style_label": {
  								"desktop": {
@@ -4228,7 +5017,8 @@
  							}
  						}
  					],
- 					"randomization_group": 1
+ 					"randomization_group": 2,
+ 					"randomization_seed": 2
  				},
  				{
  					"columns": 8,
@@ -4242,6 +5032,7 @@
  							"col_span": 4,
  							"col_span_label": 4,
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "spd",
  							"style_label": {
  								"desktop": {
@@ -4265,7 +5056,8 @@
  							}
  						}
  					],
- 					"randomization_group": 1
+ 					"randomization_group": 2,
+ 					"randomization_seed": 2
  				},
  				{
  					"columns": 8,
@@ -4279,6 +5071,7 @@
  							"col_span": 4,
  							"col_span_label": 4,
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "gruene",
  							"style_label": {
  								"desktop": {
@@ -4302,7 +5095,8 @@
  							}
  						}
  					],
- 					"randomization_group": 1
+ 					"randomization_group": 2,
+ 					"randomization_seed": 2
  				},
  				{
  					"columns": 8,
@@ -4316,6 +5110,7 @@
  							"col_span": 4,
  							"col_span_label": 4,
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "fdp",
  							"style_label": {
  								"desktop": {
@@ -4339,7 +5134,8 @@
  							}
  						}
  					],
- 					"randomization_group": 1
+ 					"randomization_group": 2,
+ 					"randomization_seed": 2
  				},
  				{
  					"columns": 8,
@@ -4353,6 +5149,7 @@
  							"col_span": 4,
  							"col_span_label": 4,
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "afd",
  							"style_label": {
  								"desktop": {
@@ -4376,7 +5173,8 @@
  							}
  						}
  					],
- 					"randomization_group": 1
+ 					"randomization_group": 2,
+ 					"randomization_seed": 2
  				},
  				{
  					"columns": 8,
@@ -4390,6 +5188,7 @@
  							"col_span": 4,
  							"col_span_label": 4,
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "other",
  							"style_label": {
  								"desktop": {
@@ -4443,7 +5242,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage\u0026nbsp;16.\u003c/b\u003e\n\t\t\t\t\tIn der Po\u0026shy;li\u0026shy;tik reden die Leute häufig von \"links\" und \"rechts\". \n\t\t\t\t\tWenn Sie die Skala hier benutzen, \n\t\t\t\t\two würden Sie sich selbst einordnen, \n\t\t\t\t\twenn 1 \"links\" und 11 \"rechts\" ist? \n\t\t\t\t\tBitte geben Sie den Wert an, der auf Sie persönlich zutrifft.\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage\u0026nbsp;20.\u003c/b\u003e\n\t\t\t\t\tIn der Po\u0026shy;li\u0026shy;tik reden die Leute häufig von \"links\" und \"rechts\". \n\t\t\t\t\tWenn Sie die Skala hier benutzen, \n\t\t\t\t\two würden Sie sich selbst einordnen, \n\t\t\t\t\twenn 1 \"links\" und 11 \"rechts\" ist? \n\t\t\t\t\tBitte geben Sie den Wert an, der auf Sie persönlich zutrifft.\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t"
  							},
  							"col_span": 11,
  							"col_span_label": 1
@@ -4451,7 +5250,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "Li\u0026shy;nk\u0026shy;s"
+ 								"de": "Li\u0026shy;nk\u0026shy;s \u003cdiv class='vspacer-24'\u003e \u0026nbsp; \u003c/div\u003e "
  							},
  							"col_span_control": 1,
  							"style": {
@@ -4881,7 +5680,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "Re\u0026shy;cht\u0026shy;s"
+ 								"de": "Re\u0026shy;cht\u0026shy;s \u003cdiv class='vspacer-24'\u003e \u0026nbsp; \u003c/div\u003e "
  							},
  							"col_span_control": 1,
  							"style": {
@@ -4925,66 +5724,77 @@
  							"name": "q15",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "1"
  						},
  						{
  							"name": "q15",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "2"
  						},
  						{
  							"name": "q15",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "3"
  						},
  						{
  							"name": "q15",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "4"
  						},
  						{
  							"name": "q15",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "5"
  						},
  						{
  							"name": "q15",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "6"
  						},
  						{
  							"name": "q15",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "7"
  						},
  						{
  							"name": "q15",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "8"
  						},
  						{
  							"name": "q15",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "9"
  						},
  						{
  							"name": "q15",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "10"
  						},
  						{
  							"name": "q15",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "mustRadioGroup",
  							"value_radio": "11"
  						}
  					],

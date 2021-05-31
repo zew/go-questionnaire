@@ -819,6 +819,22 @@ input[type=radio]:focus         {
     
 }
 
+/*  
+   subset of 
+    .popup-invalid-content-grid-item
+
+    reproduces the auro
+*/
+.error-aura {
+    background-color: var(--clr-sec-lgt2);
+    padding: 0.21rem 0.4rem;
+    border: 1px solid var(--clr-err);
+    border-radius: 0.3rem;
+    font-size: 88%;
+    line-height: 90%;
+}
+
+
 #console-log {
     color: black;
     background-color: white;
@@ -1637,15 +1653,13 @@ input.ib-300 {     width:300px;    }
 
 /* 
     validation bubble messages - start
+    validation playground
 */
-
-
 .popup-invalid-anchor {
     width:   0px;
     height:  0px;
     margin:  0;
     padding: 0;
-
 
     /* anchor for content */
     position:       relative; 
@@ -1653,20 +1667,12 @@ input.ib-300 {     width:300px;    }
     /* below input */
     display:        block; /* forcing newline */
     width:          100%;
-
-
-/* 
-    width:   20px;
-    height:  20px;
-    background-color: #252;
- */
 }
 
 .popup-invalid-content {
     
     position: absolute; 
     z-index: 212; /* must be greater than nav/menu */ 
-    
 
     border-radius: 0.3rem;
     padding: 0.1rem 0.4rem;
@@ -1682,8 +1688,10 @@ input.ib-300 {     width:300px;    }
     min-width: 12rem;  /* of smaller, message takes three lines; we want two */ 
     max-width: 100%;
     top:      -0.25rem;
-
 }
+
+
+
 
 /*
     server side validation styles
@@ -1705,6 +1713,7 @@ input.ib-300 {     width:300px;    }
     position: relative;  /* so top/left... do work */
 }
 
+/* superset of .error-aura */
 .popup-invalid-content-grid-item {
 
     position: absolute; 
@@ -1733,6 +1742,8 @@ input.ib-300 {     width:300px;    }
     line-height: 90%;
 
 }
+
+
 
 @media screen and (max-width: 800px) {
  

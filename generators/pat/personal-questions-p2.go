@@ -105,6 +105,48 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 			}
 		}
 
+		//
+		//
+		{
+			gr := page.AddGroup()
+			gr.Cols = 12
+			gr.BottomVSpacers = 2
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.ColSpan = 12
+				inp.Desc = trl.S{
+					"de": fmt.Sprintf(`
+					</p>
+					<b>Frage %v.</b>
+					Besitzen Sie die deutsche Staatsbürgerschaft?
+					</p>
+				`, vE.NumberingQuestions+2),
+				}
+			}
+			keyVals := []string{
+				"citizenshipyes:ja",
+				"citizenshipno:nein",
+			}
+
+			for _, kv := range keyVals {
+				sp := strings.Split(kv, ":")
+				key := sp[0]
+				val := sp[1]
+				lbl := trl.S{"de": val}
+				rad := gr.AddInput()
+				rad.Type = "radio"
+				rad.Name = "q17"
+				rad.Validator = validatorRadio
+				rad.ValueRadio = key
+				rad.ColSpan = 4
+				rad.ColSpanLabel = 4
+				rad.ColSpanControl = 1
+				rad.Label = lbl
+				rad.StyleLbl = lblStyleRight
+			}
+		}
+
 		// separate header - since the states are vertically shown
 		{
 			gr := page.AddGroup()
@@ -120,7 +162,7 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 					<b>Frage %v.</b>
 					In welchem Bundesland befindet sich Ihr Hauptwohnsitz?
 					</p>
-				`, vE.NumberingQuestions+2),
+				`, vE.NumberingQuestions+3),
 				}
 
 			}
@@ -159,7 +201,7 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 					<b>Frage %v.</b>
 					Welcher ist Ihr höchster Bildungsabschluss?
 					</p>
-				`, vE.NumberingQuestions+3),
+				`, vE.NumberingQuestions+4),
 				}
 			}
 
@@ -191,6 +233,156 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 
 		}
 
+		//
+		//
+		{
+			gr := page.AddGroup()
+			gr.Cols = 12
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.ColSpan = 12
+				inp.Desc = trl.S{
+					"de": fmt.Sprintf(`
+					</p>
+					<b>Frage %v.</b>
+					Sind Sie Mitglied einer politischen Partei?
+					</p>
+				`, vE.NumberingQuestions+5),
+				}
+			}
+			keyVals := []string{
+				"partmemberyes:ja",
+				"partmemberno:nein",
+			}
+
+			for _, kv := range keyVals {
+				sp := strings.Split(kv, ":")
+				key := sp[0]
+				val := sp[1]
+				lbl := trl.S{"de": val}
+				rad := gr.AddInput()
+				rad.Type = "radio"
+				rad.Name = "q18"
+				rad.Validator = validatorRadio
+				rad.ValueRadio = key
+				rad.ColSpan = 4
+				rad.ColSpanLabel = 4
+				rad.ColSpanControl = 1
+				rad.Label = lbl
+				rad.StyleLbl = lblStyleRight
+			}
+		}
+
+		//
+		//
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 0
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.ColSpan = 1
+				inp.Desc = trl.S{
+					"de": fmt.Sprintf(`
+					</p>
+					<b>Frage %v.</b>
+					Mit welcher im deutschen Bundestag vertretenen Partei identifizieren Sie sich am ehesten? 
+					</p>
+				`, vE.NumberingQuestions+6),
+				}
+			}
+		}
+		keyVals := []string{
+			"cducsu:CDU/CSU",
+			"linke:Die Linke",
+			"spd:SPD",
+			"gruene:Bündnis 90/Die Grünen",
+			"fdp:FDP",
+			"afd:AfD",
+		}
+		{
+			for _, kv := range keyVals {
+				gr := page.AddGroup()
+				gr.Cols = 8
+				// gr.Cols = 4
+				gr.RandomizationGroup = 1
+				gr.RandomizationSeed = 1
+				gr.BottomVSpacers = 0
+				{
+					sp := strings.Split(kv, ":")
+					key := sp[0]
+					val := sp[1]
+					lbl := trl.S{"de": val}
+					rad := gr.AddInput()
+					rad.Type = "radio"
+					rad.Name = "q19"
+					rad.Validator = validatorRadio
+					rad.ValueRadio = key
+					rad.ColSpan = 4
+					rad.ColSpanLabel = 4
+					rad.ColSpanControl = 1
+					rad.Label = lbl
+					rad.StyleLbl = lblStyleRight
+				}
+
+			}
+
+		}
+
+		//
+		//
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 2
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.ColSpan = 1
+				inp.Desc = trl.S{
+					"de": fmt.Sprintf(`
+					<br>
+					</p>
+					<b>Frage %v.</b>
+					Inwieweit sind Sie politisch aktiv (falls überhaupt)? 
+					</p>
+				`, vE.NumberingQuestions+7),
+				}
+			}
+			keyVals := []string{
+				"inactive;;Ich bin nicht politisch aktiv",
+				"votesometimes;;Ich wähle manchmal",
+				"voteregular;;Ich wähle regelmäßig",
+				"petitions;;Ich engagiere mich aktiv für politische Themen (z.B. Stimmen sammeln/ bzw. Stimmabgabe für Petitionen)",
+				"communal;;Ich bin Mitglied eines Parlaments oder einer Exekutive auf der Kommunalebene",
+				"state;;Ich bin Mitglied eines Parlaments oder einer Exekutive auf der Landesebene",
+				"federal;;Ich bin Mitglied eines Parlaments oder einer Exekutive auf der Bundesebene",
+			}
+			for _, kv := range keyVals {
+				sp := strings.Split(kv, ";;")
+				key := sp[0]
+				val := sp[1]
+				lbl := trl.S{"de": val}
+				rad := gr.AddInput()
+				rad.Type = "radio"
+				rad.Name = "q20"
+				rad.Validator = validatorRadio
+				rad.ValueRadio = key
+				rad.ColSpan = 4
+				// rad.ColSpanLabel = 4
+				// rad.ColSpanControl = 1
+				rad.Label = lbl
+				rad.ControlFirst()
+				// rad.StyleLbl = lblStyleRight
+
+			}
+
+		}
+
+		//
+		//
 		{
 			gr := page.AddGroup()
 			gr.Cols = 8
@@ -204,7 +396,7 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 					<b>Frage %v.</b>
 					Sind Sie Politiker?
 					</p>
-				`, vE.NumberingQuestions+4),
+				`, vE.NumberingQuestions+8),
 				}
 			}
 
@@ -253,7 +445,7 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 					<b>Frage %v.</b>
 					Was ist Ihr Familienstand?
 					</p>
-				`, vE.NumberingQuestions+5),
+				`, vE.NumberingQuestions+9),
 				}
 			}
 
@@ -301,7 +493,7 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 					die sich aus Lohn, Gehalt, Einkommen aus selbstständiger Tätigkeit, 
 					Rente oder Pension sowie Sozialleistungen ergibt.
 					</p>
-				`, vE.NumberingQuestions+6),
+				`, vE.NumberingQuestions+10),
 				}
 			}
 
@@ -361,7 +553,7 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 					<i>Bitte beachten Sie, dass nur eine Antwort zulässig ist.</i>
 					-->
 					</p>
-				`, vE.NumberingQuestions+7),
+				`, vE.NumberingQuestions+11),
 				}
 			}
 		}
@@ -379,7 +571,8 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 				gr := page.AddGroup()
 				gr.Cols = 8
 				// gr.Cols = 4
-				gr.RandomizationGroup = 1
+				gr.RandomizationGroup = 2
+				gr.RandomizationSeed = 2
 				gr.BottomVSpacers = 0
 				{
 					sp := strings.Split(kv, ":")
@@ -473,7 +666,7 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 					0, 1, // 11
 					// 1.2, 1, // weiss nicht
 				},
-				labelsOneToSeven4,
+				labelsLeftRight,
 				[]string{"q15"},
 				// []string{"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "weiss_nicht"},
 				[]string{"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"},
@@ -491,7 +684,7 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 					Bitte geben Sie den Wert an, der auf Sie persönlich zutrifft.
 					</p>
 					<br>
-				`, vE.NumberingQuestions+8),
+				`, vE.NumberingQuestions+12),
 			}
 			gr := page.AddGrid(gb)
 			gr.OddRowsColoring = true

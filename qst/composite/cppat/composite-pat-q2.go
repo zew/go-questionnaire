@@ -149,7 +149,7 @@ func timePreferenceSelf(q qstif.Q, seq0to0 int, questionID string, rowLabels []s
 		em, err := q.ErrByName(inpName)
 		if err == nil && em != "" {
 			consolidatedErrMsg = fmt.Sprintf(`
-			<div class="    error   error-block-input " style="">
+			<div class="    error   error-block-input error-aura " style="">
 			  %v
 			</div>
 			`, em)

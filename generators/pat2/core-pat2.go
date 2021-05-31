@@ -10,23 +10,25 @@ import (
 )
 
 var PartIGroupsLong = []string{
-	"Eine repräsentative Gruppe deutscher Land- und Bundestagspolitiker (Gruppe %v).",
-	"Eine repräsentative Gruppe deutscher Bürger (Gruppe %v).",
+	"Eine repräsentative Gruppe deutscher Land- und Bundestagspolitiker<br>(Gruppe %v).",
+	"Eine repräsentative Gruppe deutscher Bürger<br>(Gruppe %v).",
 	`Eine Gruppe deutscher Bürger, 
 				die <i>keine Politiker</i> sind, 
-				die aber die <i>gleichen demographischen Eigenschaften wie Politiker</i> haben 
-				(Gruppe %v). 
+				die aber die <i>gleichen demographischen Eigenschaften wie Politiker</i> haben. 
 				Das heißt, diese Gruppe besteht z. B. zu 70&nbsp;%% aus Männern, 
 				3&nbsp;%% der Mitglieder sind unter 30&nbsp;Jahre alt, 
 				87&nbsp;%% der Mitglieder haben einen Hochschulabschluss 
-				und 17&nbsp;%% sind alleinstehend.`,
+				und 17&nbsp;%% sind alleinstehend<br>
+				(Gruppe %v).`,
 }
 
+/*
 var PartIGroupsShortOLD = []string{
 	"pol_gr1:Ein Politiker aus Gruppe %v <br>(deutsche Land- und Bundestagspolitiker)",
-	"cit_gr2:Ein Bürger aus Gruppe %v    <br>(repräsentativer deutscher Bürger)",
-	"cit_gr3:Ein Bürger aus Gruppe %v    <br>(deutsche Bürger mit gleichen demographischen Eigenschaften wie die Politiker)",
+	"cit_gr2:Ein Bürger    aus Gruppe %v <br>(repräsentativer deutscher Bürger)",
+	"cit_gr3:Ein Bürger    aus Gruppe %v <br>(deutsche Bürger mit gleichen demographischen Eigenschaften wie die Politiker)",
 }
+*/
 
 // changed for pop3
 var PartIGroupsShort = []string{
@@ -40,46 +42,24 @@ var PartIGroupsShortNominativ = []string{
 	"Deutsche Bürger mit demographischen Eigenschaften wie die Politiker",
 }
 
-/*
-	<ul>
-		<li>
-			Gruppe 1: Eine repräsentative Gruppe deutscher Bürger.
-		</li>
-		<li>
-			Gruppe 2: Eine repräsentative Gruppe deutscher Land- und Bundestagspolitiker.
-		</li>
-		<li>
-			Gruppe 3: Eine Gruppe deutscher Bürger, die <i>keine Politiker</i> sind,
-			die aber die <i>gleichen demographischen Eigenschaften wie Politiker</i> haben.
-
-			Das heißt, Gruppe 3 besteht z. B. zu 70&nbsp;% aus Männern,
-			nur 3&nbsp;% der Mitglieder sind unter 30&nbsp;Jahre alt,
-			87&nbsp;% der Mitglieder haben einen Hochschulabschluss
-			und nur 17&nbsp;% sind alleinstehend.
-		</li>
-	<ul>
-
-*/
 var partIIQuestLabels = []string{
 	`
-	Als die Präferenzen wie oben gegeben waren: <br>
-	Was glauben Sie, wie haben sich die 10&nbsp;deutschen Land- und Bundestagspolitiker 
-	(Gruppe&nbsp;%v) entschieden?
+	Wenn die Präferenzen der fünf Personen wie oben gegeben sind: <br>
+	Was glauben Sie, wie haben sich die 10 zufällig ausgewählten
+	    deutschen Politiker aus Gruppe&nbsp;%v entschieden (deutsche Land- und Bundestagspolitiker)?
 	`,
 
 	`
-	Als die Präferenzen wie oben gegeben waren: <br>
-	Was glauben Sie, wie haben sich die 10&nbsp;repräsentativen deutschen Bürger  
-	(Gruppe&nbsp;%v) entschieden?
+	Wenn die Präferenzen der fünf Personen wie oben gegeben sind: <br>
+	Was glauben Sie, wie haben sich die 10 zufällig ausgewählten
+	    deutschen Bürger Gruppe&nbsp;%v entschieden (repräsentative deutsche Bürger)?
 	`,
 
 	`
-	Als die Präferenzen wie oben gegeben waren: <br>
-	Was glauben Sie, wie haben sich die 10&nbsp;deutschen Bürger  
-	(Gruppe&nbsp;%v) entschieden 
-
-	<br>(deutsche Bürger mit gleichen demographischen Eigenschaften wie die Politiker;
-	<br>also 70&nbsp;%% Männer, 3&nbsp;%% unter 30 Jahre, halb so oft alleinstehend)? 
+	Wenn die Präferenzen der fünf Personen wie oben gegeben sind: <br>
+	Was glauben Sie, wie haben sich die 10 zufällig ausgewählten
+	    deutschen Bürger aus Gruppe&nbsp;%v entschieden 
+		(deutsche Bürger mit gleichen demographischen Eigenschaften wie die Politiker)?
 	`,
 }
 
@@ -93,9 +73,10 @@ var Pat3Part2 = []string{
 // https://cloford.com/resources/charcodes/utf-8_geometric.htm
 var GroupIDs = []string{
 	// "◈",
-	"▣",
-	"◉",
-	"◬",
+	`<span style="color:MediumVioletRed">▣</span>`,
+	`<span style="color:ForestGreen">◉</span>`,
+	// `◬`,
+	`<span style="color:DarkOrange">▲</span>`,
 }
 
 // Part1Intro renders
@@ -116,6 +97,10 @@ func Part1Intro(q *qst.QuestionnaireT) error {
 			inp.Desc = trl.S{
 				"de": `
 				<h3>Teil 1</h3>
+
+				<p>
+				Der Rest der Studie besteht aus drei Teilen.
+				</p>
 
 				<p>
 				In diesem Teil der Studie treffen Sie acht Entscheidungen 
@@ -155,7 +140,7 @@ func part2Entscheidung78TwoTimesThree(q *qst.QuestionnaireT, pageIdx int, inpNam
 			inp.ColSpan = 1
 			inp.Desc = trl.S{"de": `
 				<br>
-				<p>
+				<p style="margin-bottom: 0.5rem">
 					Wenn die Präferenzen der fünf Personen wie oben gegeben sind: <br>
 					Wer soll entscheiden, ob Stiftung A, B oder C die 30 € erhält? 
 				</p>
@@ -199,9 +184,9 @@ func part2Entscheidung78TwoTimesThree(q *qst.QuestionnaireT, pageIdx int, inpNam
 			inp.Type = "textblock"
 			inp.ColSpan = 1
 			inp.Desc = trl.S{"de": `
-				<p>
+				<p style="margin-bottom: 0.5rem">
 					Wenn die Präferenzen der fünf Personen wie oben gegeben sind: <br>
-					Wer soll möglichst <i>nicht</i> entscheiden, ob Stiftung A, B oder C die 30 € erhält? 
+					Wer soll möglichst <i><b>nicht</b></i> entscheiden, ob Stiftung A, B oder C die 30 € erhält? 
 				</p>
 			`}
 		}
@@ -313,25 +298,51 @@ func ComprehensionCheckPop2(q *qst.QuestionnaireT) error {
 		// gr1
 		{
 			gr := page.AddGroup()
-			gr.Cols = 1
-			gr.BottomVSpacers = 2
+			gr.Cols = 8
+			gr.BottomVSpacers = 3
 
-			// q2
 			{
 				inp := gr.AddInput()
-				inp.Type = "number"
-				inp.Name = "q_found_compr_a"
-				inp.MaxChars = 3
-				inp.Min = 0
-				inp.Max = 5
-				inp.ColSpan = 1
-				inp.ColSpanLabel = 5
-				inp.ColSpanControl = 2
-				// inp.Placeholder = trl.S{"de": "0-5"}
-				inp.Label = trl.S{"de": "<b>1.</b> Wieviele Leute stufen Stiftung A als mittel ein? "}
-				inp.Suffix = trl.S{"de": "[0, 1, 2, 3, 4, 5]"}
-				// inp.Validator = "must"
-				inp.Validator = "must;inRange10"
+				inp.Type = "textblock"
+				inp.ColSpan = 10
+				inp.Desc = trl.S{
+					"de": `
+					<p style="margin-bottom: 0.5rem">
+						<b>1.</b> &nbsp; 
+						Wieviele Leute stufen Stiftung A als mittel ein? 
+					</p>
+					`,
+				}
+			}
+
+			partIGroupsShort := []string{
+				"est0:0",
+				"est1:1",
+				"est2:2",
+				"est3:3",
+				"est4:4",
+				"est5:5",
+			}
+
+			for idx, kv := range partIGroupsShort {
+				sp := strings.Split(kv, ":")
+				radVal := sp[0]
+				lbl := trl.S{"de": "&nbsp;&nbsp;" + sp[1]}
+
+				rad := gr.AddInput()
+				rad.Type = "radio"
+				rad.Name = "q_found_compr_a"
+				rad.ValueRadio = radVal
+				rad.ColSpan = 1
+				rad.ColSpanLabel = 1
+				rad.ColSpanControl = 1
+				rad.Label = lbl
+				// rad.ControlFirst()
+				rad.LabelRight()
+
+				if idx == 0 {
+					rad.Validator = "must"
+				}
 			}
 
 			{
@@ -339,14 +350,23 @@ func ComprehensionCheckPop2(q *qst.QuestionnaireT) error {
 				inp.Type = "text"
 				inp.Name = "q_found_compr_b"
 				inp.MaxChars = 3
-				inp.ColSpan = 1
+				inp.ColSpan = 6
 				inp.ColSpanLabel = 5
 				inp.ColSpanControl = 2
 				// inp.Placeholder = trl.S{"de": "A,B oder C"}
-				inp.Label = trl.S{"de": "<b>2.</b> Welche Stiftung wird von drei Leuten als am besten eingestuft? "}
+				inp.Label = trl.S{
+					"de": `
+					<p>
+					<b>2.</b>  
+					Welche Stiftung wird von drei Leuten als am besten eingestuft? 
+					</p>
+				`}
 				inp.Suffix = trl.S{"de": "[A, B, C]"}
+				inp.LabelPadRight()
 				// inp.Validator = "inRange1000"
 				inp.Validator = "must"
+				inp.Style = css.NewStylesResponsive(inp.Style)
+				inp.Style.Desktop.StyleBox.Margin = "1.6rem 0 0 0"
 			}
 		}
 
@@ -355,8 +375,8 @@ func ComprehensionCheckPop2(q *qst.QuestionnaireT) error {
 	return nil
 }
 
-// Part2IntroUndEntscheidung78 module - calls Part1Entscheidung78TwoTimesThree
-func Part2IntroUndEntscheidung78(q *qst.QuestionnaireT) error {
+// Part2IntroA renders
+func Part2IntroA(q *qst.QuestionnaireT) error {
 
 	{
 		page := q.AddPage()
@@ -393,12 +413,42 @@ func Part2IntroUndEntscheidung78(q *qst.QuestionnaireT) error {
 					an wen Sie diese Entscheidung delegieren möchten 
 					statt selber zu entscheiden. 
 					
-					Die von Ihnen ausgewählte Person sieht dabei ebenfalls 
-					die Präferenzkonstellation der fünf deutschen Staatsangehörigen 
-					aus der Vorstudie und entscheidet darauf basierend, 
-					welche Stiftung die 30&nbsp;€ erhalten soll.					
+					Die von Ihnen ausgewählte Person hat ebenfalls 
+					die Präferenzkonstellation von fünf deutschen Staatsangehörigen 
+					aus der Vorstudie gesehen und darauf basierend entschieden, 
+					welche Stiftung die 30&nbsp;€ erhalten soll.
 				</p>
 
+
+				`,
+				}
+			}
+
+		}
+	}
+	return nil
+}
+
+// Part2IntroBUndEntscheidung78 module - calls Part1Entscheidung78TwoTimesThree
+func Part2IntroBUndEntscheidung78(q *qst.QuestionnaireT) error {
+
+	{
+		page := q.AddPage()
+		page.Label = trl.S{"de": ""}
+		page.Style = css.DesktopWidthMaxForPages(page.Style, "36rem") // 60
+
+		//
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 1
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Desc = trl.S{
+					"de": `
+
+					<!-- Delegation  -->
 				<p>
 					Sie können die Entscheidung an eine zufällig ausgewählte Person 
 					aus einer der folgenden drei Gruppen delegieren: 
@@ -444,7 +494,10 @@ func Part2IntroUndEntscheidung78(q *qst.QuestionnaireT) error {
 				inp.Type = "textblock"
 				inp.Desc = trl.S{
 					"de": `
-				<p>
+
+				<div class='vspacer-08'> &nbsp; </div>
+				<p style="font-size:86%">
+
 					<b>Erläuterung</b>: 
 					
 					Wir haben Mitgliedern dieser drei Gruppen die gleichen Fragen gestellt
@@ -494,8 +547,14 @@ func Part2IntroUndEntscheidung78(q *qst.QuestionnaireT) error {
 				inp.Desc = trl.S{"de": `
 					<p><b>Entscheidung 7.</b></p>
 					<p>
+						<!--
 						In dieser Entscheidung sind die Präferenzen der 
 						fünf Personen aus der Vorstudie wie folgt:
+						-->
+						
+						An wen möchten Sie die Entscheidung delegieren,
+						wenn die Präferenzen der 
+						fünf Personen wie folgt gegeben sind?
 					</p>
 				`}
 			}
@@ -545,7 +604,13 @@ func Part2IntroUndEntscheidung78(q *qst.QuestionnaireT) error {
 				inp.Desc = trl.S{"de": `
 					<p><b>Entscheidung 8.</b></p>
 					<p>
-						Nun sind die Präferenzen der fünf Personen aus der Vorstudie wie folgt:
+						<!-- 
+						 Nun sind die Präferenzen der fünf Personen aus der Vorstudie wie folgt:
+						 -->
+						Möchten Sie an die gleiche oder an eine andere Gruppe 
+						delegieren, 
+						wenn die Präferenzen der Bürger*innen 
+						stattdessen wie folgt gegeben sind?
 					</p>
 				`}
 			}
@@ -602,8 +667,10 @@ func Part3Intro(q *qst.QuestionnaireT) error {
 				<p>
 					In diesem Teil der Studie beantworten Sie sechs Fragen. 
 					Nach der Erhebung werden 10&nbsp;% aller Teilnehmer*innen zufällig ausgewählt. 
-					Jede*r ausgewählte Teilnehmer*in wird in Abhängigkeit der Genauigkeit 
-					seiner Antworten eine Bonuszahlung von bis zu 50&nbsp;Norstat&nbsp;Coins erhalten (Wert: 5&nbsp;Euro).
+					Jede*r ausgewählte Teilnehmer*in 
+					wird in Abhängigkeit der Genauigkeit 
+					seiner*ihrer Antworten 
+					eine Bonuszahlung von bis zu 50&nbsp;Norstat&nbsp;Coins erhalten (Wert: 5&nbsp;Euro).
 				</p>
 
 				<p style='padding-bottom: 0; padding-top: 0.5rem'>
@@ -669,16 +736,28 @@ func Part3Intro(q *qst.QuestionnaireT) error {
 
 				<p style="font-size:86%">
 					<b>Erläuterung:</b>
-					Falls Sie in der ausgewählten Frage eine 100 % richtige Antwort geben, 
-					werden Sie 50&nbsp;Norstat&nbsp;coins erhalten. 
-					Für jede Person, die Sie bei Ihren folgenden Schätzungen zu viel oder zu wenig angeben, 
-					werden Sie 2.5&nbsp;Norstat&nbsp;coins verlieren. 
-					Falls beispielsweise alle 10&nbsp;Gruppenmitglieder Stiftung&nbsp;C wählten, 
-					Sie aber angeben, dass 5&nbsp;Gruppenmitglieder Stiftung&nbsp;B wählen, 
-					und weitere 5 Stiftung&nbsp;C wählten, 
-					dann haben Sie für Stiftung&nbsp;C fünf Gruppenmitglieder zu wenig angegeben, 
-					und für Stiftung&nbsp;B fünf zu viel. 
-					Entsprechend wird Ihre Bezahlung auf 50-2.5× 5 -2.5× 5=25&nbsp;Norstat&nbsp;coins gesenkt.
+					
+				<b>Erläuterung:</b>
+
+				Falls Sie in der ausgewählten Frage eine 100&nbsp;% richtige 
+				Antwort geben, 
+				erhalten Sie 50&nbsp;Norstat&nbsp;coins. 
+				
+				Für jede Person, die Sie bei Ihren Schätzungen 
+				zu viel oder zu wenig angeben, 
+				verlieren Sie 2,5&nbsp;Norstat&nbsp;coins. 
+				
+				Falls beispielsweise alle 10 Gruppenmitglieder Stiftung&nbsp;C 
+				gewählt haben, Sie aber angeben, 
+				dass 5 Gruppenmitglieder Stiftung&nbsp;B wählen, 
+				und weitere 5 Stiftung&nbsp;C wählen, 
+				dann haben Sie für Stiftung&nbsp;C fünf Gruppenmitglieder 
+				zu wenig angegeben, 
+				und für Stiftung&nbsp;B fünf zu viel. 
+				
+				Entsprechend wird Ihre Bezahlung auf 
+				50 - 2,5*5 -2,5*5 = 25&nbsp;Norstat&nbsp;coins gesenkt.
+
 				</p>
 
 				`,
@@ -760,7 +839,7 @@ func Part3Block12(q *qst.QuestionnaireT, blockStart int) error {
 			inp.ColSpan = 24
 			inp.Desc = trl.S{
 				"de": fmt.Sprintf(`
-					<p style='padding: 0;position: relative; top: 0.2rem;'>
+					<p style='padding: 0;margin-top: 0.25rem;margin-bottom: 0.6rem;'>
 						<!-- %v -->
 						<!-- <b> Frage [groupID].</b> <br> -->
 						<!-- <b> Frage:</b> <br> -->
@@ -805,28 +884,7 @@ func Part3Block12(q *qst.QuestionnaireT, blockStart int) error {
 	}
 
 	if blockStart > 0 {
-		{
-			gr := page.AddGroup()
-			gr.Cols = 1
-			gr.BottomVSpacers = 2
-
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.ColSpan = 1
-				inp.Desc = trl.S{"de": `
-					<br>
-					<p>
-					<b>
-						Dies ist das Ende dieser Studie. 
-						Wir bedanken uns ganz herzlich für Ihre Teilnahme. 
-						Falls Sie zu den zufällig ausgewählten 10% gehören, 
-						werden Sie Ihre Bonuszahlung wie versprochen in den nächsten Tagen erhalten. 
-					</b>
-					</p>
-				`}
-			}
-		}
+		// finish message moved to extra page
 	}
 
 	return nil

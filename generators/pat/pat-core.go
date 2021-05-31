@@ -185,6 +185,9 @@ func Part1Entscheidung1bis6(q *qst.QuestionnaireT, vE VariableElements) error {
 			"de": "Wollen Sie wirklich weitergehen oder wollen Sie Ihre bisherigen Antworten vervollständigen?",
 			// "en": "Does not add up. Really continue?",
 		}
+		if vE.AllMandatory {
+			page.ValidationFuncName = "" // redundant
+		}
 
 		// gr-1
 		{
@@ -249,6 +252,9 @@ func Part1Entscheidung1bis6(q *qst.QuestionnaireT, vE VariableElements) error {
 		page.ValidationFuncMsg = trl.S{
 			"de": "Wollen Sie wirklich weitergehen oder wollen Sie Ihre bisherigen Antworten vervollständigen?",
 			// "en": "Does not add up. Really continue?",
+		}
+		if vE.AllMandatory {
+			page.ValidationFuncName = "" // redundant
 		}
 
 		// loop over matrix questions
@@ -321,7 +327,7 @@ func Part1Frage1(q *qst.QuestionnaireT, vE VariableElements) error {
 					damit eine Spende von 30&nbsp;€ an die Stiftung überwiesen wird, 
 					die diese Person als am besten/mittel/am schlechtesten erachtet?
 					<i>(Wenn Sie meinen, die Person würde dafür bezahlen, 
-						dass die Stiftung die 30&nbsp;€ <i>nicht</i> erhält, 
+						dass die Stiftung die 30&nbsp;€ <i><b>nicht</b></i> erhält, 
 						schreiben Sie bitte ein Minuszeichen vor den entsprechenden Betrag.)</i>
 					</p>
 
@@ -573,7 +579,7 @@ func Part2(q *qst.QuestionnaireT, vE VariableElements) error {
 				inp.Type = "textblock"
 				inp.Desc = trl.S{
 					"de": fmt.Sprintf(`
-					<p>
+					<p >
 					<b>Frage %v. </b>
 						Schätzen Sie bitte: Wie viele Mitglieder einer Gruppe von 10 zufällig ausgewählten Personen, die an einer solchen Studie teilnehmen, wählen jeweils die folgenden Optionen A, B und C, 
 					<b>
@@ -608,8 +614,11 @@ func Part2(q *qst.QuestionnaireT, vE VariableElements) error {
 			}
 		}
 
-		inpSt1 := css.NewStylesResponsive(nil)
-		inpSt1.Desktop.StyleGridItem.Order = 2
+		inpStlLbl := css.NewStylesResponsive(nil)
+		inpStlLbl.Desktop.StyleGridItem.Order = 2
+
+		inpStl := css.NewStylesResponsive(nil)
+		inpStl.Desktop.StyleBox.Margin = "0.45rem 0 0 0" // room for error msgs
 
 		// gr2
 		{
@@ -631,8 +640,8 @@ func Part2(q *qst.QuestionnaireT, vE VariableElements) error {
 				// inp.Label = trl.S{"de": " "}
 				// inp.Suffix = trl.S{"de": "von 10<br>wählen Option&nbsp;A"}
 				inp.Validator = "inRange10" + validatorMust10
-				inp.StyleLbl = inpSt1
-
+				inp.StyleLbl = inpStlLbl
+				inp.Style = inpStl
 			}
 			{
 				inp := gr.AddInput()
@@ -648,7 +657,8 @@ func Part2(q *qst.QuestionnaireT, vE VariableElements) error {
 				// inp.Label = trl.S{"de": " "}
 				// inp.Suffix = trl.S{"de": "von 10<br>wählen Option&nbsp;B"}
 				inp.Validator = "inRange10"
-				inp.StyleLbl = inpSt1
+				inp.StyleLbl = inpStlLbl
+				inp.Style = inpStl
 			}
 			{
 				inp := gr.AddInput()
@@ -664,7 +674,8 @@ func Part2(q *qst.QuestionnaireT, vE VariableElements) error {
 				// inp.Label = trl.S{"de": " "}
 				// inp.Suffix = trl.S{"de": "von 10<br>wählen Option&nbsp;C"}
 				inp.Validator = "inRange10"
-				inp.StyleLbl = inpSt1
+				inp.StyleLbl = inpStlLbl
+				inp.Style = inpStl
 			}
 		}
 
@@ -740,7 +751,8 @@ func Part2(q *qst.QuestionnaireT, vE VariableElements) error {
 				// inp.Label = trl.S{"de": " "}
 				// inp.Suffix = trl.S{"de": "von 10<br>wählen Option&nbsp;A"}
 				inp.Validator = "inRange10" + validatorMust10
-				inp.StyleLbl = inpSt1
+				inp.StyleLbl = inpStlLbl
+				inp.Style = inpStl
 			}
 			{
 				inp := gr.AddInput()
@@ -756,7 +768,8 @@ func Part2(q *qst.QuestionnaireT, vE VariableElements) error {
 				// inp.Label = trl.S{"de": " "}
 				// inp.Suffix = trl.S{"de": "von 10<br>wählen Option&nbsp;B"}
 				inp.Validator = "inRange10"
-				inp.StyleLbl = inpSt1
+				inp.StyleLbl = inpStlLbl
+				inp.Style = inpStl
 			}
 			{
 				inp := gr.AddInput()
@@ -772,7 +785,8 @@ func Part2(q *qst.QuestionnaireT, vE VariableElements) error {
 				// inp.Label = trl.S{"de": " "}
 				// inp.Suffix = trl.S{"de": "von 10<br>wählen Option&nbsp;C"}
 				inp.Validator = "inRange10"
-				inp.StyleLbl = inpSt1
+				inp.StyleLbl = inpStlLbl
+				inp.Style = inpStl
 			}
 		}
 
@@ -781,7 +795,7 @@ func Part2(q *qst.QuestionnaireT, vE VariableElements) error {
 }
 
 // End adds last page
-func End(q *qst.QuestionnaireT) error {
+func End(q *qst.QuestionnaireT, vE VariableElements) error {
 	//
 	//
 	// page end
@@ -804,12 +818,28 @@ func End(q *qst.QuestionnaireT) error {
 				inp.Desc = cfg.Get().Mp["entries_saved"]
 			}
 
-			{
+			if !vE.Pop2FinishParagraph {
+
 				inp := gr.AddInput()
 				inp.Type = "textblock"
 				inp.ColSpan = 1
 				// inp.ColSpanLabel = 2
 				inp.Desc = trl.S{"de": "Vielen Dank für das Ausfüllen dieser Umfrage! "}
+
+			} else {
+
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.ColSpan = 1
+				inp.Desc = trl.S{"de": `
+					<br>
+					<p>
+					Dies ist das Ende dieser Studie. 
+					Wir bedanken uns ganz herzlich für Ihre Teilnahme. 
+					Falls Sie zu den zufällig ausgewählten 10% gehören, 
+					werden Sie Ihre Bonuszahlung wie versprochen in den nächsten Tagen erhalten. 
+					</p>
+				`}
 			}
 
 			if q.Survey.Type != "pat" {
@@ -860,7 +890,7 @@ func Part2Frage4(q *qst.QuestionnaireT, vE VariableElements) error {
 		{
 			gb := qst.NewGridBuilderRadiosWithValidator(
 				columnTemplate7,
-				labelsOneToSeven1,
+				labelsZustimmung,
 				[]string{"q4"},
 				radioVals7,
 				[]trl.S{},

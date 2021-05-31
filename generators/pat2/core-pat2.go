@@ -72,7 +72,6 @@ var Pat3Part2 = []string{
 
 // https://cloford.com/resources/charcodes/utf-8_geometric.htm
 var GroupIDs = []string{
-	// "◈",
 	`<span style="color:MediumVioletRed">▣</span>`,
 	`<span style="color:ForestGreen">◉</span>`,
 	// `◬`,

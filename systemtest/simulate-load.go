@@ -41,6 +41,94 @@ func main() {
 
 }
 
+//                 type    page    inpName  value
+var presets = map[string]map[int]map[string]string{
+	"pat2": {
+		15: {
+			"part2_q1_q1": "3",
+			"part2_q1_q2": "3",
+			"part2_q1_q3": "4",
+
+			"part2_q2_q1": "3",
+			"part2_q2_q2": "3",
+			"part2_q2_q3": "4",
+
+			"part2_q3_q1": "3",
+			"part2_q3_q2": "3",
+			"part2_q3_q3": "4",
+		},
+		16: {
+			"part2_q4_q1": "3",
+			"part2_q4_q2": "3",
+			"part2_q4_q3": "4",
+
+			"part2_q5_q1": "3",
+			"part2_q5_q2": "3",
+			"part2_q5_q3": "4",
+
+			"part2_q6_q1": "3",
+			"part2_q6_q2": "3",
+			"part2_q6_q3": "4",
+		},
+	},
+
+	"pat3": {
+		5: {
+			"q4a_opt1": "3",
+			"q4a_opt2": "3",
+			"q4a_opt3": "4",
+
+			"q4b_opt1": "3",
+			"q4b_opt2": "3",
+			"q4b_opt3": "4",
+		},
+		12: {
+			"pop3_part2_q1_1": "7",
+			"pop3_part2_q1_2": "1",
+			"pop3_part2_q1_3": "1",
+			"pop3_part2_q1_4": "1",
+
+			"pop3_part2_q2_1": "0",
+			"pop3_part2_q2_2": "9",
+			"pop3_part2_q2_3": "1",
+			"pop3_part2_q2_4": "0",
+
+			"pop3_part2_q3_1": "0",
+			"pop3_part2_q3_2": "9",
+			"pop3_part2_q3_3": "1",
+			"pop3_part2_q3_4": "0",
+		},
+
+		13: {
+			"pop3_part2_q4_1": "7",
+			"pop3_part2_q4_2": "1",
+			"pop3_part2_q4_3": "1",
+			"pop3_part2_q4_4": "1",
+
+			"pop3_part2_q5_1": "0",
+			"pop3_part2_q5_2": "9",
+			"pop3_part2_q5_3": "1",
+			"pop3_part2_q5_4": "0",
+
+			"pop3_part2_q6_1": "0",
+			"pop3_part2_q6_2": "9",
+			"pop3_part2_q6_3": "1",
+			"pop3_part2_q6_4": "0",
+		},
+	},
+}
+
+func getPreset(qType string, pageIdx int, inpName string) (string, bool) {
+	if _, ok1 := presets[qType]; ok1 {
+		if _, ok2 := presets[qType][pageIdx]; ok2 {
+			if vl, ok3 := presets[qType][pageIdx][inpName]; ok3 {
+				return vl, true
+			}
+		}
+	}
+	return "", false
+}
+
 func copyHelper(t *testing.T, pth string) {
 	bts, err := cloudio.ReadFile(pth)
 	if err != nil && !cloudio.IsNotExist(err) {
@@ -93,44 +181,28 @@ func clientPageToServer(t *testing.T, clQ *qst.QuestionnaireT, idxPage int,
 
 		// condense radio inputs
 		// map distinct for weeding out multiple radios with same name
-		radioVal := map[string]string{}
+		condensed := map[string]string{}
+
 		for i2, grp := range p.Groups {
 			for i3, inp := range grp.Inputs {
 				if inp.IsLayout() {
 					continue
 				}
-				val := ""
-				if _, visitedBefore := radioVal[inp.Name]; visitedBefore {
-					val = radioVal[inp.Name]
+				val, ok := "", false
+				if _, visitedBefore := condensed[inp.Name]; visitedBefore {
+					val = condensed[inp.Name]
 				} else {
-					val = ctr.IncrementStr()
-					radioVal[inp.Name] = val
-
-					//
-					//
-					if clQ.Survey.Type == "pat2" {
-						if i1 == 14 || i1 == 15 {
-							if strings.HasPrefix(inp.Name, "part2_q") {
-								p1 := inp.Name[7:8]
-								p2 := inp.Name[len(inp.Name)-1:]
-								t.Logf("p1 %v - p2 %v", p1, p2)
-								if p2 == "1" {
-									val = "3"
-								} else if p2 == "2" {
-									val = "3"
-								} else if p2 == "3" {
-									val = "4"
-								}
-							}
+					val, ok = getPreset(clQ.Survey.Type, i1, inp.Name)
+					if !ok {
+						val = ctr.IncrementStr()
+						if val == "9" { // preventing inRange10
+							ctr.Reset()
 						}
 					}
-
-					if val == "9" { // preventing inRange10
-						ctr.Reset()
-					}
+					condensed[inp.Name] = val
 				}
 
-				radioVal[inp.Name] = val
+				// condensed[inp.Name] = val
 				vals.Set(inp.Name, val)
 				clQ.Pages[i1].Groups[i2].Inputs[i3].Response = val
 				log.Printf("Input %12v set to value %2v ", inp.Name, val)

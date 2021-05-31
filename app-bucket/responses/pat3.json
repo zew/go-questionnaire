@@ -19,7 +19,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "ffec92ad22d774b6fcae52afeebf9ca5c1b54fb78fc73091e32474a202a145c3",
+ 	"md_5": "9ca0f317bf4970894cb668d16c9b8742cafbf41803899524f0e17880850fbe84",
  	"lang_codes": [
  		"de"
  	],
@@ -5573,7 +5573,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\u003cul\u003e\n\t\t\t\t\u003cli\u003e\n\t\t\t\tEine repräsentative Grup\u0026shy;pe deutscher Land- und Bundestagspo\u0026shy;li\u0026shy;tiker (Grup\u0026shy;pe ▣).\n\t\t\t\t\u003c/li\u003e\n\t\t\t\t\u003c/ul\u003e\n\t\t\t\t\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\u003cul\u003e\n\t\t\t\t\u003cli\u003e\n\t\t\t\tEine repräsentative Grup\u0026shy;pe deutscher Land- und Bundestagspo\u0026shy;li\u0026shy;tiker\u003cbr\u003e(Grup\u0026shy;pe \u003cspan style=\"color:MediumVioletRed\"\u003e▣\u003c/span\u003e).\n\t\t\t\t\u003c/li\u003e\n\t\t\t\t\u003c/ul\u003e\n\t\t\t\t\n\t\t\t\t"
  							},
  							"col_span_label": 1
  						}
@@ -5587,7 +5587,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\u003cul\u003e\n\t\t\t\t\u003cli\u003e\n\t\t\t\tEine repräsentative Grup\u0026shy;pe deutscher Bürger (Grup\u0026shy;pe ◉).\n\t\t\t\t\u003c/li\u003e\n\t\t\t\t\u003c/ul\u003e\n\t\t\t\t\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\u003cul\u003e\n\t\t\t\t\u003cli\u003e\n\t\t\t\tEine repräsentative Grup\u0026shy;pe deutscher Bürger\u003cbr\u003e(Grup\u0026shy;pe \u003cspan style=\"color:ForestGreen\"\u003e◉\u003c/span\u003e).\n\t\t\t\t\u003c/li\u003e\n\t\t\t\t\u003c/ul\u003e\n\t\t\t\t\n\t\t\t\t"
  							},
  							"col_span_label": 1
  						}
@@ -5601,7 +5601,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\u003cul\u003e\n\t\t\t\t\u003cli\u003e\n\t\t\t\tEine Grup\u0026shy;pe deutscher Bürger, \n\t\t\t\tdie \u003ci\u003ekeine Po\u0026shy;li\u0026shy;tiker\u003c/i\u003e sind, \n\t\t\t\tdie aber die \u003ci\u003egleichen de\u0026shy;mo\u0026shy;gra\u0026shy;phischen Eigenschaften wie Po\u0026shy;li\u0026shy;tiker\u003c/i\u003e haben \n\t\t\t\t(Grup\u0026shy;pe ◬). \n\t\t\t\tDas heißt, diese Grup\u0026shy;pe besteht z. B. zu 70\u0026nbsp;% aus Männern, \n\t\t\t\t3\u0026nbsp;% der Mit\u0026shy;glieder sind unter 30\u0026nbsp;Jahre alt, \n\t\t\t\t87\u0026nbsp;% der Mit\u0026shy;glieder haben einen Hoch\u0026shy;schul\u0026shy;abschluss \n\t\t\t\tund 17\u0026nbsp;% sind alleinstehend.\n\t\t\t\t\u003c/li\u003e\n\t\t\t\t\u003c/ul\u003e\n\t\t\t\t\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\u003cul\u003e\n\t\t\t\t\u003cli\u003e\n\t\t\t\tEine Grup\u0026shy;pe deutscher Bürger, \n\t\t\t\tdie \u003ci\u003ekeine Po\u0026shy;li\u0026shy;tiker\u003c/i\u003e sind, \n\t\t\t\tdie aber die \u003ci\u003egleichen de\u0026shy;mo\u0026shy;gra\u0026shy;phischen Eigenschaften wie Po\u0026shy;li\u0026shy;tiker\u003c/i\u003e haben. \n\t\t\t\tDas heißt, diese Grup\u0026shy;pe besteht z. B. zu 70\u0026nbsp;% aus Männern, \n\t\t\t\t3\u0026nbsp;% der Mit\u0026shy;glieder sind unter 30\u0026nbsp;Jahre alt, \n\t\t\t\t87\u0026nbsp;% der Mit\u0026shy;glieder haben einen Hoch\u0026shy;schul\u0026shy;abschluss \n\t\t\t\tund 17\u0026nbsp;% sind alleinstehend\u003cbr\u003e\n\t\t\t\t(Grup\u0026shy;pe \u003cspan style=\"color:DarkOrange\"\u003e▲\u003c/span\u003e).\n\t\t\t\t\u003c/li\u003e\n\t\t\t\t\u003c/ul\u003e\n\t\t\t\t\n\t\t\t\t"
  							},
  							"col_span_label": 1
  						}
@@ -5699,7 +5699,7 @@
  							"name": "dec3_q1",
  							"type": "radio",
  							"label": {
- 								"de": "Ein deutscher Land- oder Bundestagspo\u0026shy;li\u0026shy;tiker (Grup\u0026shy;pe ▣)"
+ 								"de": "Ein deutscher Land- oder Bundestagspo\u0026shy;li\u0026shy;tiker (Grup\u0026shy;pe \u003cspan style=\"color:MediumVioletRed\"\u003e▣\u003c/span\u003e)"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -5752,7 +5752,7 @@
  							"name": "dec3_q1",
  							"type": "radio",
  							"label": {
- 								"de": "Ein repräsentativer deutscher Bürger (Grup\u0026shy;pe ◉)"
+ 								"de": "Ein repräsentativer deutscher Bürger (Grup\u0026shy;pe \u003cspan style=\"color:ForestGreen\"\u003e◉\u003c/span\u003e)"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -5804,7 +5804,7 @@
  							"name": "dec3_q1",
  							"type": "radio",
  							"label": {
- 								"de": "Ein deutscher Bürger mit gleichen de\u0026shy;mo\u0026shy;gra\u0026shy;phischen Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker (Grup\u0026shy;pe ◬)"
+ 								"de": "Ein deutscher Bürger mit gleichen de\u0026shy;mo\u0026shy;gra\u0026shy;phischen Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker (Grup\u0026shy;pe \u003cspan style=\"color:DarkOrange\"\u003e▲\u003c/span\u003e)"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -5854,7 +5854,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\u003cp style=\"margin-bottom: 1.05rem\"\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\tWer soll die ver\u0026shy;füg\u0026shy;baren Optionen \n\t\t\t\tfür den zukünftigen Teilnehmer möglichst \u003ci\u003enicht\u003c/i\u003e festlegen? \n\t\t\t\u003c/p\u003e\n\t\t\t"
+ 								"de": "\n\t\t\t\u003cp style=\"margin-bottom: 1.05rem\"\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\tWer soll die ver\u0026shy;füg\u0026shy;baren Optionen \n\t\t\t\tfür den zukünftigen Teilnehmer möglichst \u003ci\u003e\u003cb\u003enicht\u003c/b\u003e\u003c/i\u003e festlegen? \n\t\t\t\u003c/p\u003e\n\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -5869,7 +5869,7 @@
  							"name": "dec3_q2",
  							"type": "radio",
  							"label": {
- 								"de": "Ein deutscher Land- oder Bundestagspo\u0026shy;li\u0026shy;tiker (Grup\u0026shy;pe ▣)"
+ 								"de": "Ein deutscher Land- oder Bundestagspo\u0026shy;li\u0026shy;tiker (Grup\u0026shy;pe \u003cspan style=\"color:MediumVioletRed\"\u003e▣\u003c/span\u003e)"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -5922,7 +5922,7 @@
  							"name": "dec3_q2",
  							"type": "radio",
  							"label": {
- 								"de": "Ein repräsentativer deutscher Bürger (Grup\u0026shy;pe ◉)"
+ 								"de": "Ein repräsentativer deutscher Bürger (Grup\u0026shy;pe \u003cspan style=\"color:ForestGreen\"\u003e◉\u003c/span\u003e)"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -5974,7 +5974,7 @@
  							"name": "dec3_q2",
  							"type": "radio",
  							"label": {
- 								"de": "Ein deutscher Bürger mit gleichen de\u0026shy;mo\u0026shy;gra\u0026shy;phischen Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker (Grup\u0026shy;pe ◬)"
+ 								"de": "Ein deutscher Bürger mit gleichen de\u0026shy;mo\u0026shy;gra\u0026shy;phischen Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker (Grup\u0026shy;pe \u003cspan style=\"color:DarkOrange\"\u003e▲\u003c/span\u003e)"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -6109,7 +6109,7 @@
  							"name": "dec4_q1",
  							"type": "radio",
  							"label": {
- 								"de": "Ein deutscher Land- oder Bundestagspo\u0026shy;li\u0026shy;tiker (Grup\u0026shy;pe ▣)"
+ 								"de": "Ein deutscher Land- oder Bundestagspo\u0026shy;li\u0026shy;tiker (Grup\u0026shy;pe \u003cspan style=\"color:MediumVioletRed\"\u003e▣\u003c/span\u003e)"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -6162,7 +6162,7 @@
  							"name": "dec4_q1",
  							"type": "radio",
  							"label": {
- 								"de": "Ein repräsentativer deutscher Bürger (Grup\u0026shy;pe ◉)"
+ 								"de": "Ein repräsentativer deutscher Bürger (Grup\u0026shy;pe \u003cspan style=\"color:ForestGreen\"\u003e◉\u003c/span\u003e)"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -6214,7 +6214,7 @@
  							"name": "dec4_q1",
  							"type": "radio",
  							"label": {
- 								"de": "Ein deutscher Bürger mit gleichen de\u0026shy;mo\u0026shy;gra\u0026shy;phischen Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker (Grup\u0026shy;pe ◬)"
+ 								"de": "Ein deutscher Bürger mit gleichen de\u0026shy;mo\u0026shy;gra\u0026shy;phischen Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker (Grup\u0026shy;pe \u003cspan style=\"color:DarkOrange\"\u003e▲\u003c/span\u003e)"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -6264,7 +6264,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\u003cp style=\"margin-bottom: 1.05rem\"\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\tWer soll die ver\u0026shy;füg\u0026shy;baren Optionen \n\t\t\t\tfür den zukünftigen Teilnehmer möglichst \u003ci\u003enicht\u003c/i\u003e festlegen? \n\t\t\t\u003c/p\u003e\n\t\t\t"
+ 								"de": "\n\t\t\t\u003cp style=\"margin-bottom: 1.05rem\"\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\tWer soll die ver\u0026shy;füg\u0026shy;baren Optionen \n\t\t\t\tfür den zukünftigen Teilnehmer möglichst \u003ci\u003e\u003cb\u003enicht\u003c/b\u003e\u003c/i\u003e festlegen? \n\t\t\t\u003c/p\u003e\n\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -6279,7 +6279,7 @@
  							"name": "dec4_q2",
  							"type": "radio",
  							"label": {
- 								"de": "Ein deutscher Land- oder Bundestagspo\u0026shy;li\u0026shy;tiker (Grup\u0026shy;pe ▣)"
+ 								"de": "Ein deutscher Land- oder Bundestagspo\u0026shy;li\u0026shy;tiker (Grup\u0026shy;pe \u003cspan style=\"color:MediumVioletRed\"\u003e▣\u003c/span\u003e)"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -6332,7 +6332,7 @@
  							"name": "dec4_q2",
  							"type": "radio",
  							"label": {
- 								"de": "Ein repräsentativer deutscher Bürger (Grup\u0026shy;pe ◉)"
+ 								"de": "Ein repräsentativer deutscher Bürger (Grup\u0026shy;pe \u003cspan style=\"color:ForestGreen\"\u003e◉\u003c/span\u003e)"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -6384,7 +6384,7 @@
  							"name": "dec4_q2",
  							"type": "radio",
  							"label": {
- 								"de": "Ein deutscher Bürger mit gleichen de\u0026shy;mo\u0026shy;gra\u0026shy;phischen Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker (Grup\u0026shy;pe ◬)"
+ 								"de": "Ein deutscher Bürger mit gleichen de\u0026shy;mo\u0026shy;gra\u0026shy;phischen Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker (Grup\u0026shy;pe \u003cspan style=\"color:DarkOrange\"\u003e▲\u003c/span\u003e)"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -6480,7 +6480,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\u003cp\u003e\n\n\t\t\t\t\u003cb style='font-size: 110%'\u003e Teil 3 \u003c/b\u003e \u003cbr\u003e\n\n\t\t\t\tIn diesem Teil der Studie be\u0026shy;ant\u0026shy;wor\u0026shy;ten Sie sechs Fragen. \n\t\t\t\tNach der Erhebung werden 10\u0026nbsp;% aller Teilnehmer zufällig ausgewählt. \n\t\t\t\tJeder ausgewählte Teilnehmer \n\t\t\t\twird in Abhängigkeit der Genauigkeit seiner Antworten \n\t\t\t\teine Bonuszahlung von bis zu 50\u0026nbsp;Norstat Coins er\u0026shy;hal\u0026shy;ten (Wert: 5\u0026nbsp;Euro).\n\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\n\t\t\t\tEs geht in diesem Teil wieder um die drei Grup\u0026shy;pen,\n\t\t\t\tan welche Sie im vorherigen Teil Ihre Entscheidung delegieren konnten:\n\t\t\t\u003c/p\u003e\n\n\n\n\t\t\t"
+ 								"de": "\n\t\t\t\u003cp\u003e\n\n\t\t\t\t\u003cb style='font-size: 110%'\u003e Teil 3 \u003c/b\u003e \u003cbr\u003e\n\n\t\t\t\tIn diesem Teil der Studie be\u0026shy;ant\u0026shy;wor\u0026shy;ten Sie sechs Fragen. \n\t\t\t\tNach der Erhebung werden 10\u0026nbsp;% aller Teilnehmer zufällig ausgewählt. \n\t\t\t\tJede*r ausgewählte Teilnehmer*in \n\t\t\t\twird in Abhängigkeit der Genauigkeit \n\t\t\t\tseiner*ihrer Antworten \n\t\t\t\teine Bonuszahlung von bis zu 50\u0026nbsp;Norstat Coins er\u0026shy;hal\u0026shy;ten (Wert: 5\u0026nbsp;Euro).\n\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\n\t\t\t\tEs geht in diesem Teil wieder um die drei Grup\u0026shy;pen,\n\t\t\t\tan welche Sie im vorherigen Teil Ihre Entscheidung delegieren konnten:\n\t\t\t\u003c/p\u003e\n\n\n\n\t\t\t"
  							},
  							"col_span_label": 1
  						}
@@ -6492,7 +6492,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\u003cul\u003e\n\t\t\t\t\u003cli\u003e\n\t\t\t\tEine repräsentative Grup\u0026shy;pe deutscher Land- und Bundestagspo\u0026shy;li\u0026shy;tiker (Grup\u0026shy;pe ▣).\n\t\t\t\t\u003c/li\u003e\n\t\t\t\t\u003c/ul\u003e\n\t\t\t\t\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\u003cul\u003e\n\t\t\t\t\u003cli\u003e\n\t\t\t\tEine repräsentative Grup\u0026shy;pe deutscher Land- und Bundestagspo\u0026shy;li\u0026shy;tiker\u003cbr\u003e(Grup\u0026shy;pe \u003cspan style=\"color:MediumVioletRed\"\u003e▣\u003c/span\u003e).\n\t\t\t\t\u003c/li\u003e\n\t\t\t\t\u003c/ul\u003e\n\t\t\t\t\n\t\t\t\t"
  							},
  							"col_span_label": 1
  						}
@@ -6504,7 +6504,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\u003cul\u003e\n\t\t\t\t\u003cli\u003e\n\t\t\t\tEine repräsentative Grup\u0026shy;pe deutscher Bürger (Grup\u0026shy;pe ◉).\n\t\t\t\t\u003c/li\u003e\n\t\t\t\t\u003c/ul\u003e\n\t\t\t\t\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\u003cul\u003e\n\t\t\t\t\u003cli\u003e\n\t\t\t\tEine repräsentative Grup\u0026shy;pe deutscher Bürger\u003cbr\u003e(Grup\u0026shy;pe \u003cspan style=\"color:ForestGreen\"\u003e◉\u003c/span\u003e).\n\t\t\t\t\u003c/li\u003e\n\t\t\t\t\u003c/ul\u003e\n\t\t\t\t\n\t\t\t\t"
  							},
  							"col_span_label": 1
  						}
@@ -6516,7 +6516,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\u003cul\u003e\n\t\t\t\t\u003cli\u003e\n\t\t\t\tEine Grup\u0026shy;pe deutscher Bürger, \n\t\t\t\tdie \u003ci\u003ekeine Po\u0026shy;li\u0026shy;tiker\u003c/i\u003e sind, \n\t\t\t\tdie aber die \u003ci\u003egleichen de\u0026shy;mo\u0026shy;gra\u0026shy;phischen Eigenschaften wie Po\u0026shy;li\u0026shy;tiker\u003c/i\u003e haben \n\t\t\t\t(Grup\u0026shy;pe ◬). \n\t\t\t\tDas heißt, diese Grup\u0026shy;pe besteht z. B. zu 70\u0026nbsp;% aus Männern, \n\t\t\t\t3\u0026nbsp;% der Mit\u0026shy;glieder sind unter 30\u0026nbsp;Jahre alt, \n\t\t\t\t87\u0026nbsp;% der Mit\u0026shy;glieder haben einen Hoch\u0026shy;schul\u0026shy;abschluss \n\t\t\t\tund 17\u0026nbsp;% sind alleinstehend.\n\t\t\t\t\u003c/li\u003e\n\t\t\t\t\u003c/ul\u003e\n\t\t\t\t\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\u003cul\u003e\n\t\t\t\t\u003cli\u003e\n\t\t\t\tEine Grup\u0026shy;pe deutscher Bürger, \n\t\t\t\tdie \u003ci\u003ekeine Po\u0026shy;li\u0026shy;tiker\u003c/i\u003e sind, \n\t\t\t\tdie aber die \u003ci\u003egleichen de\u0026shy;mo\u0026shy;gra\u0026shy;phischen Eigenschaften wie Po\u0026shy;li\u0026shy;tiker\u003c/i\u003e haben. \n\t\t\t\tDas heißt, diese Grup\u0026shy;pe besteht z. B. zu 70\u0026nbsp;% aus Männern, \n\t\t\t\t3\u0026nbsp;% der Mit\u0026shy;glieder sind unter 30\u0026nbsp;Jahre alt, \n\t\t\t\t87\u0026nbsp;% der Mit\u0026shy;glieder haben einen Hoch\u0026shy;schul\u0026shy;abschluss \n\t\t\t\tund 17\u0026nbsp;% sind alleinstehend\u003cbr\u003e\n\t\t\t\t(Grup\u0026shy;pe \u003cspan style=\"color:DarkOrange\"\u003e▲\u003c/span\u003e).\n\t\t\t\t\u003c/li\u003e\n\t\t\t\t\u003c/ul\u003e\n\t\t\t\t\n\t\t\t\t"
  							},
  							"col_span_label": 1
  						}
@@ -6529,7 +6529,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\n\t\t\t\u003cbr\u003e\n\t\t\t\u003cp\u003e\n\t\t\t\tWir bitten Sie zu schätzen, \n\t\t\t\twelche Optionen die Mit\u0026shy;glieder dieser Grup\u0026shy;pen (nicht) ver\u0026shy;füg\u0026shy;bar gemacht haben. \n\t\t\t\u003c/p\u003e\n\n\n\t\t\t\u003cp\u003e\n\t\t\t\tFalls Sie eine Bonuszahlung er\u0026shy;hal\u0026shy;ten, \n\t\t\t\twerden wir eine der sechs Fragen zufällig auswählen \n\t\t\t\tund Ihre Schätzung mit den echten Entscheidungen \n\t\t\t\tder Grup\u0026shy;pen\u0026shy;mit\u0026shy;glieder abgleichen. \n\t\t\t\tIhre Bonuszahlung ist umso höher, \n\t\t\t\tje genauer Ihre Einschätzung ist. \n\t\t\t\tBitte überlegen Sie sich Ihre Antworten daher sehr genau!\n\t\t\t\u003c/p\u003e\n\n\n\t\t\t\u003cp style=\"font-size:86%\"\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cb\u003eErläuterung:\u003c/b\u003e\n\t\t\t\tFalls Sie in der ausgewählten Frage eine 100\u0026nbsp;% richtige \n\t\t\t\tAntwort geben, werden Sie 50\u0026nbsp;Norstat\u0026nbsp;coins er\u0026shy;hal\u0026shy;ten. \n\t\t\t\t\n\t\t\t\tFür jede Person, die Sie bei Ihren folgenden Schätzungen z\n\t\t\t\tu viel oder zu wenig angeben, werden Sie 2.5\u0026nbsp;Norstat\u0026nbsp;coins \n\t\t\t\tverlieren. \n\t\t\t\t\n\t\t\t\tFalls beispielsweise alle 10\u0026nbsp;Grup\u0026shy;pen\u0026shy;mit\u0026shy;glieder Stif\u0026shy;tung\u0026nbsp;C \n\t\t\t\twählten, Sie aber angeben, \n\t\t\t\tdass 5\u0026nbsp;Grup\u0026shy;pen\u0026shy;mit\u0026shy;glieder Stif\u0026shy;tung\u0026nbsp;B wählen, \n\t\t\t\tund weitere 5 Stif\u0026shy;tung\u0026nbsp;C wählten, \n\t\t\t\tdann haben Sie für Stif\u0026shy;tung\u0026nbsp;C fünf Grup\u0026shy;pen\u0026shy;mit\u0026shy;glieder \n\t\t\t\tzu wenig angegeben, \n\t\t\t\tund für Stif\u0026shy;tung\u0026nbsp;B fünf zu viel. \n\t\t\t\tEntsprechend wird Ihre Bezahlung \n\t\t\t\tauf 50-2.5× 5 -2.5× 5=25 Norstat\u0026nbsp;coins gesenkt.\n\t\t\t\u003c/p\u003e\n\n\n\n\n\t\t\t"
+ 								"de": "\n\n\t\t\t\u003cbr\u003e\n\t\t\t\u003cp\u003e\n\t\t\t\tWir bitten Sie zu schätzen, \n\t\t\t\twelche Optionen die Mit\u0026shy;glieder dieser Grup\u0026shy;pen (nicht) ver\u0026shy;füg\u0026shy;bar gemacht haben. \n\t\t\t\u003c/p\u003e\n\n\n\t\t\t\u003cp\u003e\n\t\t\t\tFalls Sie eine Bonuszahlung er\u0026shy;hal\u0026shy;ten, \n\t\t\t\twerden wir eine der sechs Fragen zufällig auswählen \n\t\t\t\tund Ihre Schätzung mit den echten Entscheidungen \n\t\t\t\tder Grup\u0026shy;pen\u0026shy;mit\u0026shy;glieder abgleichen. \n\t\t\t\tIhre Bonuszahlung ist umso höher, \n\t\t\t\tje genauer Ihre Einschätzung ist. \n\t\t\t\tBitte überlegen Sie sich Ihre Antworten daher sehr genau!\n\t\t\t\u003c/p\u003e\n\n\n\t\t\t\u003cp style=\"font-size:86%\"\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cb\u003eErläuterung:\u003c/b\u003e\n\t\t\t\tFalls Sie in der ausgewählten Frage eine 100\u0026nbsp;% richtige \n\t\t\t\tAntwort geben, \n\t\t\t\ter\u0026shy;hal\u0026shy;ten Sie 50\u0026nbsp;Norstat\u0026nbsp;coins. \n\t\t\t\t\n\t\t\t\tFür jede Person, die Sie bei Ihren Schätzungen \n\t\t\t\tzu viel oder zu wenig angeben, \n\t\t\t\tverlieren Sie 2,5\u0026nbsp;Norstat\u0026nbsp;coins. \n\t\t\t\t\n\t\t\t\tFalls beispielsweise alle 10 Grup\u0026shy;pen\u0026shy;mit\u0026shy;glieder Stif\u0026shy;tung\u0026nbsp;C \n\t\t\t\tgewählt haben, Sie aber angeben, \n\t\t\t\tdass 5 Grup\u0026shy;pen\u0026shy;mit\u0026shy;glieder Stif\u0026shy;tung\u0026nbsp;B wählen, \n\t\t\t\tund weitere 5 Stif\u0026shy;tung\u0026nbsp;C wählen, \n\t\t\t\tdann haben Sie für Stif\u0026shy;tung\u0026nbsp;C fünf Grup\u0026shy;pen\u0026shy;mit\u0026shy;glieder \n\t\t\t\tzu wenig angegeben, \n\t\t\t\tund für Stif\u0026shy;tung\u0026nbsp;B fünf zu viel. \n\t\t\t\t\n\t\t\t\tEntsprechend wird Ihre Bezahlung auf \n\t\t\t\t50 - 2,5*5 -2,5*5 = 25\u0026nbsp;Norstat\u0026nbsp;coins gesenkt.\n\t\t\t\u003c/p\u003e\n\n\n\n\n\t\t\t"
  							},
  							"col_span_label": 1
  						}
@@ -6595,7 +6595,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\u003cp\u003e\u003cb\u003eFrage 1:\u003c/b\u003e  \u0026nbsp; Deutsche Land- oder Bundestagspo\u0026shy;li\u0026shy;tiker \u003c/p\u003e\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tWie viele von 10 zufällig ausgewählten Po\u0026shy;li\u0026shy;tikern aus Grup\u0026shy;pe ▣ \n\t\t\t\t\thaben jeweils die Optionen A, B oder C ver\u0026shy;füg\u0026shy;bar gemacht?\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\u003cp\u003e\u003cb\u003eFrage 1:\u003c/b\u003e  \u0026nbsp; Deutsche Land- oder Bundestagspo\u0026shy;li\u0026shy;tiker \u003c/p\u003e\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tWie viele von 10 zufällig ausgewählten Po\u0026shy;li\u0026shy;tikern aus Grup\u0026shy;pe \u003cspan style=\"color:MediumVioletRed\"\u003e▣\u003c/span\u003e \n\t\t\t\t\thaben jeweils die Optionen A, B oder C ver\u0026shy;füg\u0026shy;bar gemacht?\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -6623,7 +6623,7 @@
  							"max_chars": 3,
  							"max": 10,
  							"label": {
- 								"de": "von 10\u0026nbsp;Po\u0026shy;li\u0026shy;tikern aus Grup\u0026shy;pe ▣ haben \u003cb\u003enur Option A         ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht"
+ 								"de": "von 10\u0026nbsp;Po\u0026shy;li\u0026shy;tikern aus Grup\u0026shy;pe \u003cspan style=\"color:MediumVioletRed\"\u003e▣\u003c/span\u003e haben \u003cb\u003enur Option A         ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -6675,7 +6675,7 @@
  							"max_chars": 3,
  							"max": 10,
  							"label": {
- 								"de": "von 10\u0026nbsp;Po\u0026shy;li\u0026shy;tikern aus Grup\u0026shy;pe ▣ haben \u003cb\u003enur Optionen A und B ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht"
+ 								"de": "von 10\u0026nbsp;Po\u0026shy;li\u0026shy;tikern aus Grup\u0026shy;pe \u003cspan style=\"color:MediumVioletRed\"\u003e▣\u003c/span\u003e haben \u003cb\u003enur Optionen A und B ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -6727,7 +6727,7 @@
  							"max_chars": 3,
  							"max": 10,
  							"label": {
- 								"de": "von 10\u0026nbsp;Po\u0026shy;li\u0026shy;tikern aus Grup\u0026shy;pe ▣ haben \u003cb\u003ealle Optionen        ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht"
+ 								"de": "von 10\u0026nbsp;Po\u0026shy;li\u0026shy;tikern aus Grup\u0026shy;pe \u003cspan style=\"color:MediumVioletRed\"\u003e▣\u003c/span\u003e haben \u003cb\u003ealle Optionen        ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -6779,7 +6779,7 @@
  							"max_chars": 3,
  							"max": 10,
  							"label": {
- 								"de": "von 10\u0026nbsp;Po\u0026shy;li\u0026shy;tikern aus Grup\u0026shy;pe ▣ haben \u003cb\u003eandere Optionen      ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht \u003cbr\u003e(z. B. nur Option B oder nur Option C)"
+ 								"de": "von 10\u0026nbsp;Po\u0026shy;li\u0026shy;tikern aus Grup\u0026shy;pe \u003cspan style=\"color:MediumVioletRed\"\u003e▣\u003c/span\u003e haben \u003cb\u003eandere Optionen      ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht \u003cbr\u003e(z. B. nur Option B oder nur Option C)"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -6857,7 +6857,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\u003cp\u003e\u003cb\u003eFrage 2:\u003c/b\u003e  \u0026nbsp; Repräsentativer deutscher Bürger \u003c/p\u003e\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tWie viele von 10 zufällig ausgewählten Bürgern aus Grup\u0026shy;pe ◉ \n\t\t\t\t\thaben jeweils die Optionen A, B oder C ver\u0026shy;füg\u0026shy;bar gemacht?\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\u003cp\u003e\u003cb\u003eFrage 2:\u003c/b\u003e  \u0026nbsp; Repräsentativer deutscher Bürger \u003c/p\u003e\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tWie viele von 10 zufällig ausgewählten Bürgern aus Grup\u0026shy;pe \u003cspan style=\"color:ForestGreen\"\u003e◉\u003c/span\u003e \n\t\t\t\t\thaben jeweils die Optionen A, B oder C ver\u0026shy;füg\u0026shy;bar gemacht?\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -6885,7 +6885,7 @@
  							"max_chars": 3,
  							"max": 10,
  							"label": {
- 								"de": "von 10\u0026nbsp;Bürgern aus Grup\u0026shy;pe ◉ haben \u003cb\u003enur Option A         ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht"
+ 								"de": "von 10\u0026nbsp;Bürgern aus Grup\u0026shy;pe \u003cspan style=\"color:ForestGreen\"\u003e◉\u003c/span\u003e haben \u003cb\u003enur Option A         ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -6937,7 +6937,7 @@
  							"max_chars": 3,
  							"max": 10,
  							"label": {
- 								"de": "von 10\u0026nbsp;Bürgern aus Grup\u0026shy;pe ◉ haben \u003cb\u003enur Optionen A und B ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht"
+ 								"de": "von 10\u0026nbsp;Bürgern aus Grup\u0026shy;pe \u003cspan style=\"color:ForestGreen\"\u003e◉\u003c/span\u003e haben \u003cb\u003enur Optionen A und B ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -6989,7 +6989,7 @@
  							"max_chars": 3,
  							"max": 10,
  							"label": {
- 								"de": "von 10\u0026nbsp;Bürgern aus Grup\u0026shy;pe ◉ haben \u003cb\u003ealle Optionen        ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht"
+ 								"de": "von 10\u0026nbsp;Bürgern aus Grup\u0026shy;pe \u003cspan style=\"color:ForestGreen\"\u003e◉\u003c/span\u003e haben \u003cb\u003ealle Optionen        ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -7041,7 +7041,7 @@
  							"max_chars": 3,
  							"max": 10,
  							"label": {
- 								"de": "von 10\u0026nbsp;Bürgern aus Grup\u0026shy;pe ◉ haben \u003cb\u003eandere Optionen      ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht \u003cbr\u003e(z. B. nur Option B oder nur Option C)"
+ 								"de": "von 10\u0026nbsp;Bürgern aus Grup\u0026shy;pe \u003cspan style=\"color:ForestGreen\"\u003e◉\u003c/span\u003e haben \u003cb\u003eandere Optionen      ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht \u003cbr\u003e(z. B. nur Option B oder nur Option C)"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -7119,7 +7119,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\u003cp\u003e\u003cb\u003eFrage 3:\u003c/b\u003e  \u0026nbsp; Deutsche Bürger mit de\u0026shy;mo\u0026shy;gra\u0026shy;phischen Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker \u003c/p\u003e\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tWie viele von 10 zufällig ausgewählten Bürgern aus Grup\u0026shy;pe ◬ (gleiche de\u0026shy;mo\u0026shy;gra\u0026shy;phische Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker) \n\t\t\t\t\thaben jeweils die Optionen A, B oder C ver\u0026shy;füg\u0026shy;bar gemacht?\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\u003cp\u003e\u003cb\u003eFrage 3:\u003c/b\u003e  \u0026nbsp; Deutsche Bürger mit de\u0026shy;mo\u0026shy;gra\u0026shy;phischen Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker \u003c/p\u003e\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tWie viele von 10 zufällig ausgewählten Bürgern aus Grup\u0026shy;pe \u003cspan style=\"color:DarkOrange\"\u003e▲\u003c/span\u003e (gleiche de\u0026shy;mo\u0026shy;gra\u0026shy;phische Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker) \n\t\t\t\t\thaben jeweils die Optionen A, B oder C ver\u0026shy;füg\u0026shy;bar gemacht?\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -7147,7 +7147,7 @@
  							"max_chars": 3,
  							"max": 10,
  							"label": {
- 								"de": "von 10\u0026nbsp;Bürgern aus Grup\u0026shy;pe ◬ (gleiche de\u0026shy;mo\u0026shy;gra\u0026shy;phische Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker) haben \u003cb\u003enur Option A         ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht"
+ 								"de": "von 10\u0026nbsp;Bürgern aus Grup\u0026shy;pe \u003cspan style=\"color:DarkOrange\"\u003e▲\u003c/span\u003e (gleiche de\u0026shy;mo\u0026shy;gra\u0026shy;phische Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker) haben \u003cb\u003enur Option A         ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -7199,7 +7199,7 @@
  							"max_chars": 3,
  							"max": 10,
  							"label": {
- 								"de": "von 10\u0026nbsp;Bürgern aus Grup\u0026shy;pe ◬ (gleiche de\u0026shy;mo\u0026shy;gra\u0026shy;phische Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker) haben \u003cb\u003enur Optionen A und B ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht"
+ 								"de": "von 10\u0026nbsp;Bürgern aus Grup\u0026shy;pe \u003cspan style=\"color:DarkOrange\"\u003e▲\u003c/span\u003e (gleiche de\u0026shy;mo\u0026shy;gra\u0026shy;phische Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker) haben \u003cb\u003enur Optionen A und B ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -7251,7 +7251,7 @@
  							"max_chars": 3,
  							"max": 10,
  							"label": {
- 								"de": "von 10\u0026nbsp;Bürgern aus Grup\u0026shy;pe ◬ (gleiche de\u0026shy;mo\u0026shy;gra\u0026shy;phische Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker) haben \u003cb\u003ealle Optionen        ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht"
+ 								"de": "von 10\u0026nbsp;Bürgern aus Grup\u0026shy;pe \u003cspan style=\"color:DarkOrange\"\u003e▲\u003c/span\u003e (gleiche de\u0026shy;mo\u0026shy;gra\u0026shy;phische Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker) haben \u003cb\u003ealle Optionen        ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -7303,7 +7303,7 @@
  							"max_chars": 3,
  							"max": 10,
  							"label": {
- 								"de": "von 10\u0026nbsp;Bürgern aus Grup\u0026shy;pe ◬ (gleiche de\u0026shy;mo\u0026shy;gra\u0026shy;phische Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker) haben \u003cb\u003eandere Optionen      ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht \u003cbr\u003e(z. B. nur Option B oder nur Option C)"
+ 								"de": "von 10\u0026nbsp;Bürgern aus Grup\u0026shy;pe \u003cspan style=\"color:DarkOrange\"\u003e▲\u003c/span\u003e (gleiche de\u0026shy;mo\u0026shy;gra\u0026shy;phische Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker) haben \u003cb\u003eandere Optionen      ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht \u003cbr\u003e(z. B. nur Option B oder nur Option C)"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -7435,7 +7435,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\u003cp\u003e\u003cb\u003eFrage 4:\u003c/b\u003e  \u0026nbsp; Deutsche Land- oder Bundestagspo\u0026shy;li\u0026shy;tiker \u003c/p\u003e\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tWie viele von 10 zufällig ausgewählten Po\u0026shy;li\u0026shy;tikern aus Grup\u0026shy;pe ▣ \n\t\t\t\t\thaben jeweils die Optionen A, B oder C ver\u0026shy;füg\u0026shy;bar gemacht?\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\u003cp\u003e\u003cb\u003eFrage 4:\u003c/b\u003e  \u0026nbsp; Deutsche Land- oder Bundestagspo\u0026shy;li\u0026shy;tiker \u003c/p\u003e\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tWie viele von 10 zufällig ausgewählten Po\u0026shy;li\u0026shy;tikern aus Grup\u0026shy;pe \u003cspan style=\"color:MediumVioletRed\"\u003e▣\u003c/span\u003e \n\t\t\t\t\thaben jeweils die Optionen A, B oder C ver\u0026shy;füg\u0026shy;bar gemacht?\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -7463,7 +7463,7 @@
  							"max_chars": 3,
  							"max": 10,
  							"label": {
- 								"de": "von 10\u0026nbsp;Po\u0026shy;li\u0026shy;tikern aus Grup\u0026shy;pe ▣ haben \u003cb\u003enur Option A         ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht"
+ 								"de": "von 10\u0026nbsp;Po\u0026shy;li\u0026shy;tikern aus Grup\u0026shy;pe \u003cspan style=\"color:MediumVioletRed\"\u003e▣\u003c/span\u003e haben \u003cb\u003enur Option A         ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -7515,7 +7515,7 @@
  							"max_chars": 3,
  							"max": 10,
  							"label": {
- 								"de": "von 10\u0026nbsp;Po\u0026shy;li\u0026shy;tikern aus Grup\u0026shy;pe ▣ haben \u003cb\u003enur Optionen A und B ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht"
+ 								"de": "von 10\u0026nbsp;Po\u0026shy;li\u0026shy;tikern aus Grup\u0026shy;pe \u003cspan style=\"color:MediumVioletRed\"\u003e▣\u003c/span\u003e haben \u003cb\u003enur Optionen A und B ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -7567,7 +7567,7 @@
  							"max_chars": 3,
  							"max": 10,
  							"label": {
- 								"de": "von 10\u0026nbsp;Po\u0026shy;li\u0026shy;tikern aus Grup\u0026shy;pe ▣ haben \u003cb\u003ealle Optionen        ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht"
+ 								"de": "von 10\u0026nbsp;Po\u0026shy;li\u0026shy;tikern aus Grup\u0026shy;pe \u003cspan style=\"color:MediumVioletRed\"\u003e▣\u003c/span\u003e haben \u003cb\u003ealle Optionen        ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -7619,7 +7619,7 @@
  							"max_chars": 3,
  							"max": 10,
  							"label": {
- 								"de": "von 10\u0026nbsp;Po\u0026shy;li\u0026shy;tikern aus Grup\u0026shy;pe ▣ haben \u003cb\u003eandere Optionen      ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht \u003cbr\u003e(z. B. nur Option B oder nur Option C)"
+ 								"de": "von 10\u0026nbsp;Po\u0026shy;li\u0026shy;tikern aus Grup\u0026shy;pe \u003cspan style=\"color:MediumVioletRed\"\u003e▣\u003c/span\u003e haben \u003cb\u003eandere Optionen      ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht \u003cbr\u003e(z. B. nur Option B oder nur Option C)"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -7697,7 +7697,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\u003cp\u003e\u003cb\u003eFrage 5:\u003c/b\u003e  \u0026nbsp; Repräsentativer deutscher Bürger \u003c/p\u003e\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tWie viele von 10 zufällig ausgewählten Bürgern aus Grup\u0026shy;pe ◉ \n\t\t\t\t\thaben jeweils die Optionen A, B oder C ver\u0026shy;füg\u0026shy;bar gemacht?\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\u003cp\u003e\u003cb\u003eFrage 5:\u003c/b\u003e  \u0026nbsp; Repräsentativer deutscher Bürger \u003c/p\u003e\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tWie viele von 10 zufällig ausgewählten Bürgern aus Grup\u0026shy;pe \u003cspan style=\"color:ForestGreen\"\u003e◉\u003c/span\u003e \n\t\t\t\t\thaben jeweils die Optionen A, B oder C ver\u0026shy;füg\u0026shy;bar gemacht?\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -7725,7 +7725,7 @@
  							"max_chars": 3,
  							"max": 10,
  							"label": {
- 								"de": "von 10\u0026nbsp;Bürgern aus Grup\u0026shy;pe ◉ haben \u003cb\u003enur Option A         ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht"
+ 								"de": "von 10\u0026nbsp;Bürgern aus Grup\u0026shy;pe \u003cspan style=\"color:ForestGreen\"\u003e◉\u003c/span\u003e haben \u003cb\u003enur Option A         ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -7777,7 +7777,7 @@
  							"max_chars": 3,
  							"max": 10,
  							"label": {
- 								"de": "von 10\u0026nbsp;Bürgern aus Grup\u0026shy;pe ◉ haben \u003cb\u003enur Optionen A und B ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht"
+ 								"de": "von 10\u0026nbsp;Bürgern aus Grup\u0026shy;pe \u003cspan style=\"color:ForestGreen\"\u003e◉\u003c/span\u003e haben \u003cb\u003enur Optionen A und B ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -7829,7 +7829,7 @@
  							"max_chars": 3,
  							"max": 10,
  							"label": {
- 								"de": "von 10\u0026nbsp;Bürgern aus Grup\u0026shy;pe ◉ haben \u003cb\u003ealle Optionen        ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht"
+ 								"de": "von 10\u0026nbsp;Bürgern aus Grup\u0026shy;pe \u003cspan style=\"color:ForestGreen\"\u003e◉\u003c/span\u003e haben \u003cb\u003ealle Optionen        ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -7881,7 +7881,7 @@
  							"max_chars": 3,
  							"max": 10,
  							"label": {
- 								"de": "von 10\u0026nbsp;Bürgern aus Grup\u0026shy;pe ◉ haben \u003cb\u003eandere Optionen      ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht \u003cbr\u003e(z. B. nur Option B oder nur Option C)"
+ 								"de": "von 10\u0026nbsp;Bürgern aus Grup\u0026shy;pe \u003cspan style=\"color:ForestGreen\"\u003e◉\u003c/span\u003e haben \u003cb\u003eandere Optionen      ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht \u003cbr\u003e(z. B. nur Option B oder nur Option C)"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -7959,7 +7959,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\u003cp\u003e\u003cb\u003eFrage 6:\u003c/b\u003e  \u0026nbsp; Deutsche Bürger mit de\u0026shy;mo\u0026shy;gra\u0026shy;phischen Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker \u003c/p\u003e\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tWie viele von 10 zufällig ausgewählten Bürgern aus Grup\u0026shy;pe ◬ (gleiche de\u0026shy;mo\u0026shy;gra\u0026shy;phische Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker) \n\t\t\t\t\thaben jeweils die Optionen A, B oder C ver\u0026shy;füg\u0026shy;bar gemacht?\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\u003cp\u003e\u003cb\u003eFrage 6:\u003c/b\u003e  \u0026nbsp; Deutsche Bürger mit de\u0026shy;mo\u0026shy;gra\u0026shy;phischen Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker \u003c/p\u003e\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tWie viele von 10 zufällig ausgewählten Bürgern aus Grup\u0026shy;pe \u003cspan style=\"color:DarkOrange\"\u003e▲\u003c/span\u003e (gleiche de\u0026shy;mo\u0026shy;gra\u0026shy;phische Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker) \n\t\t\t\t\thaben jeweils die Optionen A, B oder C ver\u0026shy;füg\u0026shy;bar gemacht?\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -7987,7 +7987,7 @@
  							"max_chars": 3,
  							"max": 10,
  							"label": {
- 								"de": "von 10\u0026nbsp;Bürgern aus Grup\u0026shy;pe ◬ (gleiche de\u0026shy;mo\u0026shy;gra\u0026shy;phische Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker) haben \u003cb\u003enur Option A         ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht"
+ 								"de": "von 10\u0026nbsp;Bürgern aus Grup\u0026shy;pe \u003cspan style=\"color:DarkOrange\"\u003e▲\u003c/span\u003e (gleiche de\u0026shy;mo\u0026shy;gra\u0026shy;phische Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker) haben \u003cb\u003enur Option A         ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -8039,7 +8039,7 @@
  							"max_chars": 3,
  							"max": 10,
  							"label": {
- 								"de": "von 10\u0026nbsp;Bürgern aus Grup\u0026shy;pe ◬ (gleiche de\u0026shy;mo\u0026shy;gra\u0026shy;phische Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker) haben \u003cb\u003enur Optionen A und B ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht"
+ 								"de": "von 10\u0026nbsp;Bürgern aus Grup\u0026shy;pe \u003cspan style=\"color:DarkOrange\"\u003e▲\u003c/span\u003e (gleiche de\u0026shy;mo\u0026shy;gra\u0026shy;phische Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker) haben \u003cb\u003enur Optionen A und B ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -8091,7 +8091,7 @@
  							"max_chars": 3,
  							"max": 10,
  							"label": {
- 								"de": "von 10\u0026nbsp;Bürgern aus Grup\u0026shy;pe ◬ (gleiche de\u0026shy;mo\u0026shy;gra\u0026shy;phische Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker) haben \u003cb\u003ealle Optionen        ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht"
+ 								"de": "von 10\u0026nbsp;Bürgern aus Grup\u0026shy;pe \u003cspan style=\"color:DarkOrange\"\u003e▲\u003c/span\u003e (gleiche de\u0026shy;mo\u0026shy;gra\u0026shy;phische Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker) haben \u003cb\u003ealle Optionen        ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -8143,7 +8143,7 @@
  							"max_chars": 3,
  							"max": 10,
  							"label": {
- 								"de": "von 10\u0026nbsp;Bürgern aus Grup\u0026shy;pe ◬ (gleiche de\u0026shy;mo\u0026shy;gra\u0026shy;phische Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker) haben \u003cb\u003eandere Optionen      ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht \u003cbr\u003e(z. B. nur Option B oder nur Option C)"
+ 								"de": "von 10\u0026nbsp;Bürgern aus Grup\u0026shy;pe \u003cspan style=\"color:DarkOrange\"\u003e▲\u003c/span\u003e (gleiche de\u0026shy;mo\u0026shy;gra\u0026shy;phische Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker) haben \u003cb\u003eandere Optionen      ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e gemacht \u003cbr\u003e(z. B. nur Option B oder nur Option C)"
  							},
  							"col_span": 1,
  							"col_span_label": 1,

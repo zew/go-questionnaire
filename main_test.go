@@ -128,11 +128,15 @@ func TestSystem(t *testing.T) {
 			continue
 		}
 
+		if surveyID == "peu2018-or-special-survey-name" {
+		}
+		// if surveyID != "fmt" {
+		// 	continue
+		// }
+
 		// call with last arg "0" was for http user agend based differentiation of mobile or desktop rendering
 		systemtest.SimulateLoad(t, q, loginURL, "1")
 
-		if surveyID == "peu2018-or-special-survey-name" {
-		}
 	}
 
 }

@@ -88,34 +88,6 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		return nil, fmt.Errorf("Error adding Part2Block1(3): %v", err)
 	}
 
-	// {
-	// 	page := q.AddPage()
-	// 	page.Label = trl.S{"de": ""}
-	// 	page.Style = css.DesktopWidthMaxForPages(page.Style, "36rem")
-	// 	{
-	// 		gr := page.AddGroup()
-	// 		gr.Cols = 1
-	// 		gr.BottomVSpacers = 2
-
-	// 		{
-	// 			inp := gr.AddInput()
-	// 			inp.Type = "textblock"
-	// 			inp.ColSpan = 1
-	// 			inp.Desc = trl.S{"de": `
-	// 				<br>
-	// 				<p>
-	// 				<b>
-	// 					Dies ist das Ende dieser Studie.
-	// 					Wir bedanken uns ganz herzlich für Ihre Teilnahme.
-	// 					Falls Sie zu den zufällig ausgewählten 10% gehören,
-	// 					werden Sie Ihre Bonuszahlung wie versprochen in den nächsten Tagen erhalten.
-	// 				</b>
-	// 				</p>
-	// 			`}
-	// 		}
-	// 	}
-	// }
-
 	err = pat.End(&q, pat.VariableElements{Pop2FinishParagraph: true})
 	if err != nil {
 		return nil, fmt.Errorf("Error adding core pages: %v", err)

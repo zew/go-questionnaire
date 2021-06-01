@@ -6,6 +6,7 @@ import (
 	"strconv"
 	"strings"
 
+	"github.com/pkg/errors"
 	"github.com/zew/go-questionnaire/cfg"
 )
 
@@ -231,6 +232,18 @@ func init() {
 		return nil
 	}
 
+	// q17
+	validators["citizenshipyes"] = func(q *QuestionnaireT, inp *inputT) error {
+
+		if inp.Response != "" && inp.Response != "citizenshipyes" {
+			err1 := ErrorForward{markDownPath: "must-german-citizen.md"}
+			err := errors.Wrap(err1, "Dt. Staatsbürger erforderl")
+			return err
+		}
+
+		return nil
+	}
+
 }
 
 // ConsolidateRadioErrors removes repeating error messages from radio inputs
@@ -258,7 +271,9 @@ func (page *pageT) ConsolidateRadioErrors(grpOrder []int) {
 
 // ValidateResponseData applies all input validation rules on the responses.
 // Restricted by page, since validation errors are handled page-wise.
-func (q *QuestionnaireT) ValidateResponseData(pageNum int, langCode string) (last error) {
+func (q *QuestionnaireT) ValidateResponseData(pageNum int, langCode string) (last error, forward *ErrorForward) {
+
+	log.Printf("ValidateResponseData - start")
 
 	for i1 := 0; i1 < len(q.Pages); i1++ {
 		if i1 != pageNum {
@@ -282,11 +297,16 @@ func (q *QuestionnaireT) ValidateResponseData(pageNum int, langCode string) (las
 					for _, valiKey := range valiKeys {
 						if valiFunc, ok := validators[strings.TrimSpace(valiKey)]; ok {
 							err := valiFunc(q, inp)
-							// log.Printf("Validating %22s  -%s-  %v", inp.Name, inp.Response, err)
+							// log.Printf("%-10v %-20s  %-12s  %v", inp.Name, valiKey, inp.Response, err)
 							if err != nil {
 								last = err
 								q.Pages[i1].Groups[i2].Inputs[i3].ErrMsg = err.Error()
-								// } else {
+
+								checkForSpecialErr := &ErrorForward{}
+								// log.Printf("\t\terr as *ErrorForward %v", errors.As(err, checkForSpecialErr))
+								if errors.As(err, checkForSpecialErr) {
+									forward = checkForSpecialErr
+								}
 							}
 						}
 					}
@@ -306,6 +326,8 @@ func (q *QuestionnaireT) ValidateResponseData(pageNum int, langCode string) (las
 		q.HasErrors = false
 	}
 
+	log.Printf("ValidateResponseData - stop")
+
 	return
 }
 
@@ -321,4 +343,19 @@ func (q *QuestionnaireT) DumpErrors() {
 			}
 		}
 	}
+}
+
+// ErrorForward contains a markdown page or page id
+// to jump to
+type ErrorForward struct {
+	markDownPath string
+	// pageIdx int
+}
+
+func (ef ErrorForward) Error() string {
+	return ""
+}
+
+func (ef ErrorForward) MarkDownPath() string {
+	return ef.markDownPath
 }

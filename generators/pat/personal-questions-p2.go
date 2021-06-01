@@ -137,7 +137,7 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 				rad := gr.AddInput()
 				rad.Type = "radio"
 				rad.Name = "q17"
-				rad.Validator = validatorRadio
+				rad.Validator = validatorRadio + ";citizenshipyes"
 				rad.ValueRadio = key
 				rad.ColSpan = 4
 				rad.ColSpanLabel = 4
@@ -394,7 +394,7 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 					"de": fmt.Sprintf(`
 					</p>
 					<b>Frage %v.</b>
-					Sind Sie Politiker?
+					Sind Sie Politiker*in?
 					</p>
 				`, vE.NumberingQuestions+8),
 				}

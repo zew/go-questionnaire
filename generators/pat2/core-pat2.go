@@ -10,11 +10,11 @@ import (
 )
 
 var PartIGroupsLong = []string{
-	"Eine repräsentative Gruppe deutscher Land- und Bundestagspolitiker<br>(Gruppe %v).",
-	"Eine repräsentative Gruppe deutscher Bürger<br>(Gruppe %v).",
-	`Eine Gruppe deutscher Bürger, 
-				die <i>keine Politiker</i> sind, 
-				die aber die <i>gleichen demographischen Eigenschaften wie Politiker</i> haben. 
+	"Eine repräsentative Gruppe deutscher Land- und Bundestagspolitiker*innen<br>(Gruppe %v).",
+	"Eine repräsentative Gruppe deutscher Bürger*innen<br>(Gruppe %v).",
+	`Eine Gruppe deutscher Bürger*innen, 
+				die <i>keine Politiker*innen</i> sind, 
+				die aber die <i>gleichen demographischen Eigenschaften wie Politiker*innen</i> haben. 
 				Das heißt, diese Gruppe besteht z. B. zu 70&nbsp;%% aus Männern, 
 				3&nbsp;%% der Mitglieder sind unter 30&nbsp;Jahre alt, 
 				87&nbsp;%% der Mitglieder haben einen Hochschulabschluss 
@@ -22,58 +22,51 @@ var PartIGroupsLong = []string{
 				(Gruppe %v).`,
 }
 
-/*
-var PartIGroupsShortOLD = []string{
-	"pol_gr1:Ein Politiker aus Gruppe %v <br>(deutsche Land- und Bundestagspolitiker)",
-	"cit_gr2:Ein Bürger    aus Gruppe %v <br>(repräsentativer deutscher Bürger)",
-	"cit_gr3:Ein Bürger    aus Gruppe %v <br>(deutsche Bürger mit gleichen demographischen Eigenschaften wie die Politiker)",
-}
-*/
-
 // changed for pop3
 var PartIGroupsShort = []string{
-	"pol_gr1:Ein deutscher Land- oder Bundestagspolitiker (Gruppe %v)",
-	"cit_gr2:Ein repräsentativer deutscher Bürger (Gruppe %v)",
-	"cit_gr3:Ein deutscher Bürger mit gleichen demographischen Eigenschaften wie die Politiker (Gruppe %v)",
+	"pol_gr1:Ein deutscher Land- oder Bundestagspolitiker*innen (Gruppe %v)",
+	"cit_gr2:Ein repräsentativer deutscher Bürger*innen (Gruppe %v)",
+	"cit_gr3:Ein deutscher Bürger*innen mit gleichen demographischen Eigenschaften wie die Politiker*innen (Gruppe %v)",
 }
 var PartIGroupsShortNominativ = []string{
-	"Deutsche Land- oder Bundestagspolitiker",
-	"Repräsentativer deutscher Bürger",
-	"Deutsche Bürger mit demographischen Eigenschaften wie die Politiker",
+	"Deutsche Land- oder Bundestagspolitiker*innen",
+	"Repräsentative*r deutsche*r Bürger*in",
+	"Deutsche*r Bürger*in mit demographischen Eigenschaften wie die Politiker*innen",
 }
 
 var partIIQuestLabels = []string{
 	`
 	Wenn die Präferenzen der fünf Personen wie oben gegeben sind: <br>
 	Was glauben Sie, wie haben sich die 10 zufällig ausgewählten
-	    deutschen Politiker aus Gruppe&nbsp;%v entschieden (deutsche Land- und Bundestagspolitiker)?
+	    deutschen Politiker*innen aus Gruppe&nbsp;%v entschieden (deutsche Land- und Bundestagspolitiker*innen)?
 	`,
 
 	`
 	Wenn die Präferenzen der fünf Personen wie oben gegeben sind: <br>
 	Was glauben Sie, wie haben sich die 10 zufällig ausgewählten
-	    deutschen Bürger Gruppe&nbsp;%v entschieden (repräsentative deutsche Bürger)?
+	    deutschen Bürger*innen Gruppe&nbsp;%v entschieden (repräsentative deutsche Bürger*innen)?
 	`,
 
 	`
 	Wenn die Präferenzen der fünf Personen wie oben gegeben sind: <br>
 	Was glauben Sie, wie haben sich die 10 zufällig ausgewählten
-	    deutschen Bürger aus Gruppe&nbsp;%v entschieden 
-		(deutsche Bürger mit gleichen demographischen Eigenschaften wie die Politiker)?
+	    deutschen Bürger*innen aus Gruppe&nbsp;%v entschieden 
+		(deutsche Bürger*innen mit gleichen demographischen Eigenschaften wie die Politiker*innen)?
 	`,
 }
 
 //
 var Pat3Part2 = []string{
-	"Politikern aus Gruppe %v",
-	"Bürgern aus Gruppe %v",
-	"Bürgern aus Gruppe %v (gleiche demographische Eigenschaften wie die Politiker)",
+	"Politikern*innen aus Gruppe %v",
+	"Bürgern*innen aus Gruppe %v",
+	"Bürgern*innen aus Gruppe %v (gleiche demographische Eigenschaften wie die Politiker*innen)",
 }
 
 // https://cloford.com/resources/charcodes/utf-8_geometric.htm
 var GroupIDs = []string{
 	`<span style="color:MediumVioletRed">▣</span>`,
-	`<span style="color:ForestGreen">◉</span>`,
+	`<span style="color:DarkOrchid">◉</span>`,
+	// `<span style="color:ForestGreen">◉</span>`,
 	// `◬`,
 	`<span style="color:DarkOrange">▲</span>`,
 }

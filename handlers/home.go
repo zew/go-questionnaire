@@ -335,13 +335,20 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 	}
 
 	if sess.EffectiveStr("skip_validation") == "" && r.Method == "POST" {
-		err = q.ValidateResponseData(prevPage, q.LangCode)
+		var forward *qst.ErrorForward
+		err, forward = q.ValidateResponseData(prevPage, q.LangCode)
 		if err != nil {
 			if submit != "prev" { // effectively allow going back - but not going forth
 				q.CurrPage = prevPage // Prevent changing page, keep participant on page with errors
 			} else {
 				q.HasErrors = false
 			}
+		}
+
+		if forward != nil {
+			core, _ := tpl.SiteCore(q.Survey.Type)
+			tpl.RenderStaticContent(w, forward.MarkDownPath(), core, q.LangCode)
+			return
 		}
 	}
 

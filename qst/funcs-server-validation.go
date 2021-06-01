@@ -273,8 +273,6 @@ func (page *pageT) ConsolidateRadioErrors(grpOrder []int) {
 // Restricted by page, since validation errors are handled page-wise.
 func (q *QuestionnaireT) ValidateResponseData(pageNum int, langCode string) (last error, forward *ErrorForward) {
 
-	log.Printf("ValidateResponseData - start")
-
 	for i1 := 0; i1 < len(q.Pages); i1++ {
 		if i1 != pageNum {
 			continue
@@ -325,8 +323,6 @@ func (q *QuestionnaireT) ValidateResponseData(pageNum int, langCode string) (las
 	} else {
 		q.HasErrors = false
 	}
-
-	log.Printf("ValidateResponseData - stop")
 
 	return
 }

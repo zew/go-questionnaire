@@ -73,6 +73,18 @@ var presets = map[string]map[int]map[string]string{
 	},
 
 	"pat3": {
+		1: {
+			"q17": "citizenshipyes",
+		},
+		4: {
+			"q2_seq1_row1_rad": "1",
+			"q2_seq1_row2_rad": "1",
+			"q2_seq1_row3_rad": "1",
+
+			"q2_seq2_row1_rad": "1",
+			"q2_seq2_row2_rad": "2",
+			"q2_seq2_row3_rad": "2",
+		},
 		5: {
 			"q4a_opt1": "3",
 			"q4a_opt2": "3",

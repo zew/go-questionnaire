@@ -95,6 +95,57 @@ func TimePreferenceSelfComprehensionCheck(q qstif.Q, seq0to5, paramSetIdx int) (
 
 	s = strings.ReplaceAll(s, "<input ", `<input disabled="disabled" `)
 
+	// distappear rightmost column
+	if false {
+
+		s = strings.ReplaceAll(s, `<td style="width: 15%"  rowspan=2 > </td>`, ``)
+		s = strings.ReplaceAll(s,
+			`<td colspan="4" class="betw"> &nbsp; </td>`,
+			`<td colspan="3" class="betw"> &nbsp; </td>`,
+		)
+
+		s = strings.ReplaceAll(s,
+			`		<td>
+			<!-- input replaced --> 
+			<input disabled="disabled" type="hidden"   name="dummy_row1_chk" value="0"    >
+		</td>`,
+			``,
+		)
+
+		s = strings.ReplaceAll(s,
+			`		<td>
+			<!-- input replaced --> 
+			<input disabled="disabled" type="hidden"   name="dummy_row2_chk" value="0"    >
+		</td>`,
+			``,
+		)
+
+		s = strings.ReplaceAll(s,
+			`		<td>
+			<!-- input replaced --> 
+			<input disabled="disabled" type="hidden"   name="dummy_row3_chk" value="0"    >
+		</td>`,
+			``,
+		)
+
+	} else {
+		s += `
+		<style>
+
+		#t02 td:last-child,
+		#t02 tr:first-child td:last-child
+		{
+			background-color: green;
+			display: none;
+			visibility: hidden;
+		}	
+
+		</style>
+		
+		`
+
+	}
+
 	return s, inputs, err
 }
 

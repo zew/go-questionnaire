@@ -154,6 +154,7 @@ func init() {
 
 		return nil
 	}
+
 	// pop3_part2_q6_3
 	validators["pop3_part2_q123456_1234"] = func(q *QuestionnaireT, inp *inputT) error {
 
@@ -177,6 +178,54 @@ func init() {
 
 		if sum != 10 {
 			return fmt.Errorf("Summe muss 10 ergeben.")
+		}
+
+		return nil
+	}
+
+	// pat - for pop3
+	validators["patMustOneAvailabe"] = func(q *QuestionnaireT, inp *inputT) error {
+
+		/*
+		   q2_seq1_row1_rad - vals 1 or 2
+		   q2_seq1_row2_rad - vals 1 or 2
+		   q2_seq1_row3_rad - vals 1 or 2
+
+		   q2_seq2_row1_rad
+		   q2_seq2_row2_rad
+		   q2_seq2_row3_rad
+
+		*/
+
+		core := strings.TrimPrefix(inp.Name, "q2_seq")
+		core = core[0:1]
+
+		neighbors := []string{}
+		for i := 1; i < 4; i++ {
+			neighbors = append(neighbors, fmt.Sprintf("q2_seq%v_row%v_rad", core, i))
+		}
+
+		allSet := true
+
+		for _, neighbor := range neighbors {
+			nb := q.ByName(neighbor)
+			// summand, _ := strconv.Atoi(nb.Response)
+			if nb.Response != "1" && nb.Response != "2" {
+				allSet = false
+			}
+		}
+		if !allSet {
+			return fmt.Errorf("Bitte für alle drei Zeilen eine Option setzen.")
+		}
+
+		allUnavailable := 0
+		for _, neighbor := range neighbors {
+			nb := q.ByName(neighbor)
+			summand, _ := strconv.Atoi(nb.Response)
+			allUnavailable += summand
+		}
+		if allUnavailable > 5 {
+			return fmt.Errorf("Mindestens eine Option muss verfügbar sein.")
 		}
 
 		return nil

@@ -125,8 +125,8 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 				}
 			}
 			keyVals := []string{
-				"citizenshipyes:ja",
-				"citizenshipno:nein",
+				"citizenshipyes:Ja",
+				"citizenshipno:Nein",
 			}
 
 			for _, kv := range keyVals {
@@ -252,8 +252,8 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 				}
 			}
 			keyVals := []string{
-				"partmemberyes:ja",
-				"partmemberno:nein",
+				"partmemberyes:Ja",
+				"partmemberno:Nein",
 			}
 
 			for _, kv := range keyVals {
@@ -450,7 +450,7 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 			}
 
 			keyVals := []string{
-				"married_together:Verheiratet und leben mit Ihrem/Ihrer Ehepartner/-in zusammen",
+				"married_together:Verheiratet und leben mit Ihrem*rer Ehepartner*in zusammen",
 				"married_separated:Verheiratet und leben getrennt",
 				"widowed:Verwitwet",
 				"divorced:Geschieden",
@@ -507,11 +507,12 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 				"upto4000:3.000 bis unter 4.000 Euro",
 				"upto5000:4.000 bis unter 5.000 Euro",
 
-				"upto6000:5.000 bis unter 6.000 Euro",
-				"upto7000:6.000 bis unter 7.000 Euro",
-				"upto8000:7.000 bis unter 8.000 Euro",
-				"upto9000:8.000 bis unter 9.000 Euro",
-				"upto10000:9.000 bis unter 10.000 Euro",
+				// "upto6000:5.000 bis unter 6.000 Euro",
+				// "upto7000:6.000 bis unter 7.000 Euro",
+				// "upto8000:7.000 bis unter 8.000 Euro",
+				// "upto9000:8.000 bis unter 9.000 Euro",
+				// "upto10000:9.000 bis unter 10.000 Euro",
+				"upto10000:5.000 bis unter 10.000 Euro",
 
 				"over10000:Mehr als 10.000 Euro",
 			}
@@ -534,51 +535,78 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 			}
 		}
 
-		{
-			gr := page.AddGroup()
-			gr.Cols = 1
-			gr.BottomVSpacers = 0
+		/*
+
 			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.ColSpan = 1
-				inp.Desc = trl.S{
-					"de": fmt.Sprintf(`
-					</p>
-					<b>Frage %v.</b>
-					Mit welcher Partei fühlen Sie sich 
-					aufgrund Ihrer Werte und Überzeugungen am ehesten verbunden? 
-					<br>
-					<!--
-					<i>Bitte beachten Sie, dass nur eine Antwort zulässig ist.</i>
-					-->
-					</p>
-				`, vE.NumberingQuestions+11),
-				}
-			}
-		}
-		keyVals := []string{
-			"cducsu:CDU/CSU",
-			"linke:Die Linke",
-			"spd:SPD",
-			"gruene:Bündnis 90/Die Grünen",
-			"fdp:FDP",
-			"afd:AfD",
-			// "other:Andere",
-		}
-		{
-			for _, kv := range keyVals {
 				gr := page.AddGroup()
-				gr.Cols = 8
-				// gr.Cols = 4
-				gr.RandomizationGroup = 2
-				gr.RandomizationSeed = 2
+				gr.Cols = 1
 				gr.BottomVSpacers = 0
 				{
-					sp := strings.Split(kv, ":")
-					key := sp[0]
-					val := sp[1]
+					inp := gr.AddInput()
+					inp.Type = "textblock"
+					inp.ColSpan = 1
+					inp.Desc = trl.S{
+						"de": fmt.Sprintf(`
+						</p>
+						<b>Frage %v.</b>
+						Mit welcher Partei fühlen Sie sich
+						aufgrund Ihrer Werte und Überzeugungen am ehesten verbunden?
+						<br>
+						<!--
+						<i>Bitte beachten Sie, dass nur eine Antwort zulässig ist.</i>
+						-->
+						</p>
+					`, vE.NumberingQuestions+11),
+					}
+				}
+			}
+			keyVals := []string{
+				"cducsu:CDU/CSU",
+				"linke:Die Linke",
+				"spd:SPD",
+				"gruene:Bündnis 90/Die Grünen",
+				"fdp:FDP",
+				"afd:AfD",
+				// "other:Andere",
+			}
+			{
+				for _, kv := range keyVals {
+					gr := page.AddGroup()
+					gr.Cols = 8
+					// gr.Cols = 4
+					gr.RandomizationGroup = 2
+					gr.RandomizationSeed = 2
+					gr.BottomVSpacers = 0
+					{
+						sp := strings.Split(kv, ":")
+						key := sp[0]
+						val := sp[1]
+						lbl := trl.S{"de": val}
+						rad := gr.AddInput()
+						rad.Type = "radio"
+						rad.Name = "q14"
+						rad.Validator = validatorRadio
+						rad.ValueRadio = key
+						rad.ColSpan = 4
+						rad.ColSpanLabel = 4
+						rad.ColSpanControl = 1
+						rad.Label = lbl
+						rad.StyleLbl = lblStyleRight
+					}
+
+				}
+
+			}
+
+			{
+				gr := page.AddGroup()
+				gr.Cols = 8
+				gr.BottomVSpacers = 0
+				{
+					key := "other"
+					val := "Andere"
 					lbl := trl.S{"de": val}
+
 					rad := gr.AddInput()
 					rad.Type = "radio"
 					rad.Name = "q14"
@@ -589,61 +617,40 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 					rad.ColSpanControl = 1
 					rad.Label = lbl
 					rad.StyleLbl = lblStyleRight
+
+					{
+						inp := gr.AddInput()
+						inp.Type = "text"
+						inp.Name = "q14_other_text"
+						inp.ColSpan = 4
+						inp.ColSpanControl = 1
+						inp.MaxChars = 14
+						inp.Validator = "otherParty"
+					}
+
 				}
 
 			}
 
-		}
 
-		{
-			gr := page.AddGroup()
-			gr.Cols = 8
-			gr.BottomVSpacers = 0
+			//
+			//
 			{
-				key := "other"
-				val := "Andere"
-				lbl := trl.S{"de": val}
-
-				rad := gr.AddInput()
-				rad.Type = "radio"
-				rad.Name = "q14"
-				rad.Validator = validatorRadio
-				rad.ValueRadio = key
-				rad.ColSpan = 4
-				rad.ColSpanLabel = 4
-				rad.ColSpanControl = 1
-				rad.Label = lbl
-				rad.StyleLbl = lblStyleRight
-
+				gr := page.AddGroup()
+				gr.Cols = 1
+				gr.BottomVSpacers = 0
 				{
 					inp := gr.AddInput()
-					inp.Type = "text"
-					inp.Name = "q14_other_text"
-					inp.ColSpan = 4
-					inp.ColSpanControl = 1
-					inp.MaxChars = 14
-					inp.Validator = "otherParty"
-				}
-
-			}
-
-		}
-
-		//
-		//
-		{
-			gr := page.AddGroup()
-			gr.Cols = 1
-			gr.BottomVSpacers = 0
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.Label = trl.S{
-					"en": " &nbsp; ",
-					"de": " &nbsp; ",
+					inp.Type = "textblock"
+					inp.Label = trl.S{
+						"en": " &nbsp; ",
+						"de": " &nbsp; ",
+					}
 				}
 			}
-		}
+
+
+		*/
 
 		//
 		{
@@ -684,7 +691,7 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 					Bitte geben Sie den Wert an, der auf Sie persönlich zutrifft.
 					</p>
 					<br>
-				`, vE.NumberingQuestions+12),
+				`, vE.NumberingQuestions+11),
 			}
 			gr := page.AddGrid(gb)
 			gr.OddRowsColoring = true

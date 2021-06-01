@@ -405,10 +405,11 @@ func Part2(q *qst.QuestionnaireT, vE VariableElements) error {
 
 	// zweiter Teil
 
-	validator := ""
+	validatorCompound := ""
 	validatorMust10 := ""
 	if vE.AllMandatory {
-		validator = "must"
+		// validatorCompound = "must;patMustOneAvailabe"
+		validatorCompound = "patMustOneAvailabe"
 		validatorMust10 = ";pat3_q4ab_opt123"
 	}
 
@@ -423,6 +424,9 @@ func Part2(q *qst.QuestionnaireT, vE VariableElements) error {
 		page.ValidationFuncMsg = trl.S{
 			"de": "Wollen Sie wirklich weitergehen oder wollen Sie Ihre bisherigen Antworten vervollständigen?",
 			// "en": "Does not add up. Really continue?",
+		}
+		if vE.AllMandatory {
+			page.ValidationFuncName = ""
 		}
 
 		zeT := fmt.Sprintf(`
@@ -456,19 +460,40 @@ func Part2(q *qst.QuestionnaireT, vE VariableElements) error {
 						In diesem Teil treffen Sie jeweils Entscheidungen 
 						für eine*n deutsche*n Staatsangehörige*n, 
 						der*die Ihnen zugeordnet ist 
-						und der*die an einer zukünftigen Studie teilnehmen wird. Diese Person wird in der Studie entscheiden, wie ihr das Entgelt für die Studienteilnahme ausbezahlt wird. Je eher diese Person bereit ist, auf ihr Geld zu warten, desto mehr Geld wird ihr insgesamt bezahlt.						
+						und der*die an einer zukünftigen Studie teilnehmen wird. 
+						
+						Diese Person wird in der Studie entscheiden, 
+						wie ihr das Entgelt für die Studienteilnahme ausbezahlt wird. 
+						
+						Je eher diese Person bereit ist, 
+						auf ihr Geld zu warten, 
+						desto mehr Geld wird ihr insgesamt bezahlt.						
 					</p>
 					<p>
-						Wir bitten Sie zu entscheiden, wie geduldig oder wie ungeduldig die Person wählen kann. 
+						Wir bitten Sie zu entscheiden, 
+						wie geduldig oder wie ungeduldig die Person wählen kann. 
 						
-						Dazu bestimmen Sie für jede von drei Optionen, ob die jeweilige Option der Person zur Verfügung stehen soll oder nicht. 
+						Dazu bestimmen Sie für jede von drei Optionen, 
+						ob die jeweilige Option der Person zur Verfügung stehen soll oder nicht. 
 						
-						Falls Sie mehrere Optionen verfügbar machen, kann die Person aus diesen wählen. Mindestens eine Option muss „Verfügbar“ sein.
+						Falls Sie mehrere Optionen verfügbar machen, 
+						kann die Person aus diesen wählen. 
+						
+						Mindestens eine Option muss „Verfügbar“ sein.
 					</p>
 
 					<p style="font-size: 87%%;">
 						<i>
-						Details: Die nicht verfügbaren Optionen werden der Person nicht als Auswahloptionen angezeigt. Bei verfügbar gemachten Optionen können Sie zusätzlich „Von dieser Option abraten“ ankreuzen. In diesem Fall erhält die Person die Botschaft: „Ein früherer Teilnehmer dieser Studie rät Ihnen davon ab, diese Option zu wählen”.
+						Details: 
+						Die nicht verfügbaren Optionen werden der Person 
+						nicht als Auswahloptionen angezeigt. 
+						
+						Bei verfügbar gemachten Optionen können Sie zusätzlich 
+						„Von dieser Option abraten“ ankreuzen. 
+						
+						In diesem Fall erhält die Person die Botschaft: 
+						„Ein früherer Teilnehmer dieser Studie 
+						rät Ihnen davon ab, diese Option zu wählen”.
 						</i>
 					</p>
 					<br>
@@ -476,8 +501,8 @@ func Part2(q *qst.QuestionnaireT, vE VariableElements) error {
 
 					<p>
 						<b>Entscheidung %v. </b><br>
-						Welche Optionen sollen der Person (nicht) zur Verfügung stehen, falls die Optionen wie folgt lauten?
-
+						Welche Optionen sollen der Person (nicht) zur 
+						Verfügung stehen, falls die Optionen wie folgt lauten?
 					</p>
 
 
@@ -504,7 +529,7 @@ func Part2(q *qst.QuestionnaireT, vE VariableElements) error {
 				inp := gr.AddInput()
 				inp.Type = "dyn-composite-scalar"
 				inp.Name = inpName
-				inp.Validator = validator
+				inp.Validator = validatorCompound
 			}
 		}
 
@@ -550,7 +575,7 @@ func Part2(q *qst.QuestionnaireT, vE VariableElements) error {
 				inp := gr.AddInput()
 				inp.Type = "dyn-composite-scalar"
 				inp.Name = inpName
-				inp.Validator = validator
+				inp.Validator = validatorCompound
 			}
 		}
 

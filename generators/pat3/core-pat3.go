@@ -83,9 +83,10 @@ func POP3Part1Intro(q *qst.QuestionnaireT) error {
 			inp.Desc = trl.S{
 				"de": `
 				<br>
-				<p>
+				<p style="font-size:86%">
 				<b>Erläuterung</b>: 
 				
+				<i>
 				Wir haben den Mitgliedern dieser drei Gruppen 
 				die gleichen Fragen wie Ihnen gestellt 
 				und sie haben ihre Entscheidungen bereits gefällt. 
@@ -95,7 +96,11 @@ func POP3Part1Intro(q *qst.QuestionnaireT) error {
 				
 				Falls dieser Teil der Studie umgesetzt wird, 
 				wird die Entscheidung dieser Person bestimmen, 
-				welche Optionen deutschen Staatsangehörigen zur Verfügung stehen werden. 				
+				welche Optionen deutschen Staatsangehörigen 
+				zur Verfügung stehen werden. 				
+				</i>
+
+
 				</p>
 
 				
@@ -129,8 +134,12 @@ func POP3Part1Decision34(q *qst.QuestionnaireT, decisionNumber int, inpName stri
 			inp.Desc = trl.S{"de": fmt.Sprintf(`
 			<p><b> Entscheidung %v </b> </p>
 			<p style='padding-bottom:0'>
+				<!--
 				In dieser Entscheidung kann das Gruppenmitglied 
 				folgende Optionen verfügbar machen:
+				-->
+				An wen möchten Sie die Entscheidung delegieren,
+				wenn die Optionen wie folgt gegeben sind?
 			</p>
 			`, decisionNumber)}
 		}
@@ -148,11 +157,19 @@ func POP3Part1Decision34(q *qst.QuestionnaireT, decisionNumber int, inpName stri
 			inp.Desc = trl.S{"de": fmt.Sprintf(`
 			<p><b> Entscheidung %v </b> </p>
 			<p style='padding-bottom:0'>
+
+			<!--
 				An wen möchten Sie die Entscheidung delegieren, 
 				falls die Optionen stattdessen wie folgt lauten? 
+			-->
+				Möchten Sie an die gleiche 
+				oder an eine andere Gruppe delegieren,
+				falls die Optionen stattdessen wie folgt lauten?
+
 				(Sowohl die Zeitpunkte der Auszahlung 
 				als auch die Beträge sind anders als in der vorherigen Entscheidung.)
-			</p>
+			
+				</p>
 			`, decisionNumber)}
 		}
 	}
@@ -186,7 +203,8 @@ func POP3Part1Decision34(q *qst.QuestionnaireT, decisionNumber int, inpName stri
 		inp.Desc = trl.S{"de": `
 			<p style="margin-bottom: 1.05rem">
 				Wer soll entscheiden,
-				welche Optionen dem zukünftigen Teilnehmer 
+				welche Optionen 
+				 dem*der zukünftigen Teilnehmer*in 
 				zur Verfügung stehen werden?
 			</p>
 			`}
@@ -330,11 +348,13 @@ func POP3Part2Intro(q *qst.QuestionnaireT) error {
 				<b style='font-size: 110%'> Teil 3 </b> <br>
 
 				In diesem Teil der Studie beantworten Sie sechs Fragen. 
-				Nach der Erhebung werden 10&nbsp;% aller Teilnehmer zufällig ausgewählt. 
+				Nach der Erhebung werden 10&nbsp;% aller Teilnehmer*innen zufällig ausgewählt. 
+
 				Jede*r ausgewählte Teilnehmer*in 
 				wird in Abhängigkeit der Genauigkeit 
 				seiner*ihrer Antworten 
-				eine Bonuszahlung von bis zu 50&nbsp;Norstat Coins erhalten (Wert: 5&nbsp;Euro).
+				eine Bonuszahlung von bis zu 50&nbsp;Norstat Coins erhalten 
+				(Wert: 5&nbsp;Euro).
 
 				<br>
 				<br>
@@ -531,13 +551,13 @@ func part2ThreeQuestions(q *qst.QuestionnaireT, blockStart int) error {
 		"1;;von 10&nbsp;%v haben <b>nur Option A         verfügbar</b> gemacht",
 		"2;;von 10&nbsp;%v haben <b>nur Optionen A und B verfügbar</b> gemacht",
 		"3;;von 10&nbsp;%v haben <b>alle Optionen        verfügbar</b> gemacht",
-		"4;;von 10&nbsp;%v haben <b>andere Optionen      verfügbar</b> gemacht <br>(z. B. nur Option B oder nur Option C)",
+		"4;;von 10&nbsp;%v haben <b>andere Optionen      verfügbar</b> gemacht (z. B. nur Option B oder nur Option C)",
 	}
 	variousOptionsMadeAvailablePerm2 := []string{
 		"3;;von 10&nbsp;%v haben <b>alle Optionen        verfügbar</b> gemacht",
 		"2;;von 10&nbsp;%v haben <b>nur Optionen A und B verfügbar</b> gemacht",
 		"1;;von 10&nbsp;%v haben <b>nur Option A         verfügbar</b> gemacht",
-		"4;;von 10&nbsp;%v haben <b>andere Optionen      verfügbar</b> gemacht <br>(z. B. nur Option B oder nur Option C)",
+		"4;;von 10&nbsp;%v haben <b>andere Optionen      verfügbar</b> gemacht (z. B. nur Option B oder nur Option C)",
 	}
 
 	inpName := "pop3_part2"
@@ -869,10 +889,11 @@ func ComprehensionCheckPop3(q *qst.QuestionnaireT) error {
 				inp.ColSpanLabel = 5
 				inp.ColSpanControl = 2
 				// inp.Placeholder = trl.S{"de": "0-5"}
-				inp.Label = trl.S{"de": "<b>1.</b> Was ist der höchste Betrag, den der*die zukünftige Teilnehmer*in per sofort erhalten kann? "}
+				inp.Label = trl.S{"de": "<b>1.</b> Was ist der höchste Betrag, den der*die zukünftige Teilnehmer*in sofort erhalten kann? "}
 				inp.Suffix = trl.S{"de": "€"}
 				// inp.Validator = "must"
 				inp.Validator = "must"
+				inp.LabelPadRight()
 			}
 		}
 
@@ -896,6 +917,7 @@ func ComprehensionCheckPop3(q *qst.QuestionnaireT) error {
 				inp.Suffix = trl.S{"de": "€"}
 				// inp.Validator = "inRange1000"
 				inp.Validator = "must"
+				inp.LabelPadRight()
 			}
 		}
 

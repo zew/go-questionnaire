@@ -398,6 +398,7 @@ dummy {
     text-align:  left;
 }
 
+/* first columns of non-header rows */
 #t02  tr:nth-child(3) td:nth-child(1),
 #t02  tr:nth-child(4) td:nth-child(1),
 #t02  tr:nth-child(5) td:nth-child(1),

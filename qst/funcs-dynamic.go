@@ -21,7 +21,7 @@ import (
 // dynamic funcs return a dynamic piece of content
 //
 // compare CompositeFuncT, validatorT
-type dynFuncT func(*QuestionnaireT, string) (string, error)
+type dynFuncT func(*QuestionnaireT, *inputT, string) (string, error)
 
 var dynFuncs = map[string]dynFuncT{
 	"ResponseStatistics":             ResponseStatistics,
@@ -30,6 +30,7 @@ var dynFuncs = map[string]dynFuncT{
 	"FederalStateAboveOrBelowMedian": FederalStateAboveOrBelowMedian,
 	"PatLogos":                       PatLogos,
 	"RenderStaticContent":            RenderStaticContent,
+	"ErrorProxy":                     ErrorProxy,
 }
 
 var skipInputNames = map[string]map[string]bool{
@@ -74,7 +75,7 @@ func (q *QuestionnaireT) Statistics() (int, int, float64) {
 
 // ResponseStatistics returns the percentage of
 // answers responded to.
-func ResponseStatistics(q *QuestionnaireT, paramSet string) (string, error) {
+func ResponseStatistics(q *QuestionnaireT, inp *inputT, paramSet string) (string, error) {
 
 	responses, inputs, pct := q.Statistics()
 	ct := q.Survey.Deadline
@@ -91,7 +92,7 @@ func ResponseStatistics(q *QuestionnaireT, paramSet string) (string, error) {
 }
 
 // PersonalLink returns the entry link
-func PersonalLink(q *QuestionnaireT, paramSet string) (string, error) {
+func PersonalLink(q *QuestionnaireT, inp *inputT, paramSet string) (string, error) {
 	closed := !q.ClosingTime.IsZero()
 	ret := ""
 	if closed {
@@ -105,7 +106,7 @@ func PersonalLink(q *QuestionnaireT, paramSet string) (string, error) {
 }
 
 // ResponseTextHasEuro yields texts => want to keep € - want to have €
-func ResponseTextHasEuro(q *QuestionnaireT, paramSet string) (string, error) {
+func ResponseTextHasEuro(q *QuestionnaireT, inp *inputT, paramSet string) (string, error) {
 
 	if q.Attrs == nil {
 
@@ -169,7 +170,7 @@ func ResponseTextHasEuro(q *QuestionnaireT, paramSet string) (string, error) {
 
 // FederalStateAboveOrBelowMedian returns "besser" or "schlechter";
 // depending on the user's federal state education ranking
-func FederalStateAboveOrBelowMedian(q *QuestionnaireT, paramSet string) (string, error) {
+func FederalStateAboveOrBelowMedian(q *QuestionnaireT, inp *inputT, paramSet string) (string, error) {
 
 	attr1, ok := q.Attrs["aboveOrBelowMedian"]
 
@@ -181,7 +182,7 @@ func FederalStateAboveOrBelowMedian(q *QuestionnaireT, paramSet string) (string,
 }
 
 // PatLogos - only for the img src URLs
-func PatLogos(q *QuestionnaireT, paramSet string) (string, error) {
+func PatLogos(q *QuestionnaireT, inp *inputT, paramSet string) (string, error) {
 
 	return fmt.Sprintf(
 		`
@@ -206,7 +207,7 @@ func PatLogos(q *QuestionnaireT, paramSet string) (string, error) {
 }
 
 // RenderStaticContent - http request time display of a markdown file
-func RenderStaticContent(q *QuestionnaireT, paramSet string) (string, error) {
+func RenderStaticContent(q *QuestionnaireT, inp *inputT, paramSet string) (string, error) {
 
 	w1 := &strings.Builder{}
 	err := RenderStaticContentInner(
@@ -319,4 +320,10 @@ func RenderStaticContentInner(w io.Writer, subPth, site, lang string) error {
 
 	return nil
 
+}
+
+// ErrorProxy - shows errors for inputs named like paramSet
+//
+func ErrorProxy(q *QuestionnaireT, inp *inputT, paramSet string) (string, error) {
+	return "", nil
 }

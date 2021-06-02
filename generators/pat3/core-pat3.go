@@ -193,22 +193,33 @@ func POP3Part1Decision34(q *qst.QuestionnaireT, decisionNumber int, inpName stri
 
 	//
 	//
-	gr := page.AddGroup()
-	gr.Cols = 1
-	gr.BottomVSpacers = 0
 	{
-		inp := gr.AddInput()
-		inp.Type = "textblock"
-		inp.ColSpan = 1
-		inp.Desc = trl.S{"de": `
-			<p style="margin-bottom: 1.05rem">
+		gr := page.AddGroup()
+		gr.Cols = 1
+		gr.BottomVSpacers = 0
+		{
+			inp := gr.AddInput()
+			inp.Type = "textblock"
+			inp.ColSpan = 1
+			inp.Desc = trl.S{"de": `
+			<p style="margin-bottom: 0.45rem">
 				Wer soll entscheiden,
 				welche Optionen 
 				 dem*der zukünftigen Teilnehmer*in 
 				zur Verfügung stehen werden?
 			</p>
 			`}
+		}
+
+		{
+			inp := gr.AddInput()
+			inp.Type = "dyn-textblock"
+			inp.ColSpanControl = 1
+			inp.DynamicFunc = "ErrorProxy"
+			inp.Param = inpName + "_q1"
+		}
 	}
+
 	for idx, kv := range pat2.PartIGroupsShort {
 		{
 			gr := page.AddGroup()
@@ -253,14 +264,24 @@ func POP3Part1Decision34(q *qst.QuestionnaireT, decisionNumber int, inpName stri
 			inp.Type = "textblock"
 			inp.ColSpan = 1
 			inp.Desc = trl.S{"de": `
-			<p style="margin-bottom: 1.05rem">
+			<p style="margin-bottom: 0.45rem">
 				<br>
 				Wer soll die verfügbaren Optionen 
-				für den zukünftigen Teilnehmer möglichst <i><b>nicht</b></i> festlegen? 
+				für den*die zukünftige*n Teilnehmer*in 
+				möglichst <i><b>nicht</b></i> festlegen? 
 			</p>
 			`}
 		}
+
+		{
+			inp := gr.AddInput()
+			inp.Type = "dyn-textblock"
+			inp.ColSpanControl = 1
+			inp.DynamicFunc = "ErrorProxy"
+			inp.Param = inpName + "_q2"
+		}
 	}
+
 	for idx, kv := range pat2.PartIGroupsShort {
 		{
 			gr := page.AddGroup()
@@ -532,14 +553,14 @@ func POP3Part2Questions123and456(q *qst.QuestionnaireT, start int) error {
 			}
 		}
 
-		part2ThreeQuestions(q, start)
+		part3ThreeQuestions(q, start)
 
 	}
 
 	return nil
 }
 
-func part2ThreeQuestions(q *qst.QuestionnaireT, blockStart int) error {
+func part3ThreeQuestions(q *qst.QuestionnaireT, blockStart int) error {
 
 	pageIdx := len(q.Pages) - 1
 	page := q.EditPage(pageIdx)

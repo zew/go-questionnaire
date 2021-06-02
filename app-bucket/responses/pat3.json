@@ -19,7 +19,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "2adbff6408ba429afcf13fcce1cf44aeb50e43e18c3545ec9c9c2ffdca60577a",
+ 	"md_5": "4f4d67331bcbad5df663beb4eb8883152eb6fdbf7af1638754ac8efeb8bda36c",
  	"lang_codes": [
  		"de"
  	],
@@ -5282,10 +5282,16 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\u003cp style=\"margin-bottom: 1.05rem\"\u003e\n\t\t\t\tWer soll entscheiden,\n\t\t\t\twelche Optionen \n\t\t\t\t dem*der zukünftigen Teilnehmer*in \n\t\t\t\tzur Verfügung stehen werden?\n\t\t\t\u003c/p\u003e\n\t\t\t"
+ 								"de": "\n\t\t\t\u003cp style=\"margin-bottom: 0.45rem\"\u003e\n\t\t\t\tWer soll entscheiden,\n\t\t\t\twelche Optionen \n\t\t\t\t dem*der zukünftigen Teilnehmer*in \n\t\t\t\tzur Verfügung stehen werden?\n\t\t\t\u003c/p\u003e\n\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "dyn-textblock",
+ 							"param": "dec3_q1",
+ 							"col_span_control": 1,
+ 							"dynamic_func": "ErrorProxy"
  						}
  					]
  				},
@@ -5452,10 +5458,16 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\u003cp style=\"margin-bottom: 1.05rem\"\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\tWer soll die ver\u0026shy;füg\u0026shy;baren Optionen \n\t\t\t\tfür den zukünftigen Teilnehmer möglichst \u003ci\u003e\u003cb\u003enicht\u003c/b\u003e\u003c/i\u003e festlegen? \n\t\t\t\u003c/p\u003e\n\t\t\t"
+ 								"de": "\n\t\t\t\u003cp style=\"margin-bottom: 0.45rem\"\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\tWer soll die ver\u0026shy;füg\u0026shy;baren Optionen \n\t\t\t\tfür den*die zukünftige*n Teilnehmer*in \n\t\t\t\tmöglichst \u003ci\u003e\u003cb\u003enicht\u003c/b\u003e\u003c/i\u003e festlegen? \n\t\t\t\u003c/p\u003e\n\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "dyn-textblock",
+ 							"param": "dec3_q2",
+ 							"col_span_control": 1,
+ 							"dynamic_func": "ErrorProxy"
  						}
  					]
  				},
@@ -5692,10 +5704,16 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\u003cp style=\"margin-bottom: 1.05rem\"\u003e\n\t\t\t\tWer soll entscheiden,\n\t\t\t\twelche Optionen \n\t\t\t\t dem*der zukünftigen Teilnehmer*in \n\t\t\t\tzur Verfügung stehen werden?\n\t\t\t\u003c/p\u003e\n\t\t\t"
+ 								"de": "\n\t\t\t\u003cp style=\"margin-bottom: 0.45rem\"\u003e\n\t\t\t\tWer soll entscheiden,\n\t\t\t\twelche Optionen \n\t\t\t\t dem*der zukünftigen Teilnehmer*in \n\t\t\t\tzur Verfügung stehen werden?\n\t\t\t\u003c/p\u003e\n\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "dyn-textblock",
+ 							"param": "dec4_q1",
+ 							"col_span_control": 1,
+ 							"dynamic_func": "ErrorProxy"
  						}
  					]
  				},
@@ -5862,10 +5880,16 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\u003cp style=\"margin-bottom: 1.05rem\"\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\tWer soll die ver\u0026shy;füg\u0026shy;baren Optionen \n\t\t\t\tfür den zukünftigen Teilnehmer möglichst \u003ci\u003e\u003cb\u003enicht\u003c/b\u003e\u003c/i\u003e festlegen? \n\t\t\t\u003c/p\u003e\n\t\t\t"
+ 								"de": "\n\t\t\t\u003cp style=\"margin-bottom: 0.45rem\"\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\tWer soll die ver\u0026shy;füg\u0026shy;baren Optionen \n\t\t\t\tfür den*die zukünftige*n Teilnehmer*in \n\t\t\t\tmöglichst \u003ci\u003e\u003cb\u003enicht\u003c/b\u003e\u003c/i\u003e festlegen? \n\t\t\t\u003c/p\u003e\n\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "dyn-textblock",
+ 							"param": "dec4_q2",
+ 							"col_span_control": 1,
+ 							"dynamic_func": "ErrorProxy"
  						}
  					]
  				},

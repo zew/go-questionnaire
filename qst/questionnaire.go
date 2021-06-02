@@ -1320,7 +1320,8 @@ func (q *QuestionnaireT) ResponseByName(n string) (string, error) {
 	return inp.Response, nil
 }
 
-// ErrByName implements qstif.Q
+// ErrByName returns the error for an input name;
+// implements qstif.Q
 func (q *QuestionnaireT) ErrByName(n string) (string, error) {
 	inp := q.ByName(n)
 	if inp == nil {

@@ -815,15 +815,20 @@ input[type=radio]:focus         {
 }
 
 
+/* 
+    this is a mere marker for javascript 
+    document.querySelectorAll(".error-block-input")
+    to put focus on
+*/   
 .error-block-input{
-    
+
 }
 
 /*  
    subset of 
     .popup-invalid-content-grid-item
 
-    reproduces the auro
+    reproduces the aura
 */
 .error-aura {
     background-color: var(--clr-sec-lgt2);

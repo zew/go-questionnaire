@@ -275,12 +275,29 @@ func (q *QuestionnaireT) ValidateResponseData(pageNum int, langCode string) (las
 		if i1 != pageNum {
 			continue
 		}
+
+		// pre process error proxies
+		//   collect a list of error proxies
+		//   (re-) set their error messages to ""
+		errorProxies := map[string]*inputT{} // per page, not global
+		for i2 := 0; i2 < len(q.Pages[i1].Groups); i2++ {
+			for i3 := 0; i3 < len(q.Pages[i1].Groups[i2].Inputs); i3++ {
+				inp := q.Pages[i1].Groups[i2].Inputs[i3]
+				if inp.Type == "dyn-textblock" && inp.DynamicFunc == "ErrorProxy" {
+					q.Pages[i1].Groups[i2].Inputs[i3].ErrMsg = ""
+					errorProxies[inp.Param] = inp
+				}
+			}
+		}
+
+		//
+		// main run
+		//    executing validator funcs
+		//    storing results in inp.ErrMsg
 		for i2 := 0; i2 < len(q.Pages[i1].Groups); i2++ {
 			for i3 := 0; i3 < len(q.Pages[i1].Groups[i2].Inputs); i3++ {
 
 				// s := fmt.Sprintf("Page %v - Group %v - Input %v: ", i1, i2, i3)
-
-				// Check input type
 				inp := q.Pages[i1].Groups[i2].Inputs[i3]
 
 				// Validator function exists
@@ -308,6 +325,28 @@ func (q *QuestionnaireT) ValidateResponseData(pageNum int, langCode string) (las
 					}
 				}
 
+			}
+		}
+
+		// post process error proxies
+		//    for all inputs having an error message
+		//      for those having an error proxy
+		// 		  error proxy takes the error message; input error message gets deleted
+		if len(errorProxies) > 0 {
+			// msgs := map[string]string{}
+			for i2 := 0; i2 < len(q.Pages[i1].Groups); i2++ {
+				for i3 := 0; i3 < len(q.Pages[i1].Groups[i2].Inputs); i3++ {
+					inp := q.Pages[i1].Groups[i2].Inputs[i3]
+					if inp.ErrMsg != "" {
+						if inp.Type != "dyn-textblock" && inp.DynamicFunc != "ErrorProxy" {
+							// we might want to introduce startsWith in future
+							if errProx, ok := errorProxies[inp.Name]; ok {
+								errProx.ErrMsg = inp.ErrMsg
+								q.Pages[i1].Groups[i2].Inputs[i3].ErrMsg = ""
+							}
+						}
+					}
+				}
 			}
 		}
 

@@ -296,7 +296,7 @@ func ComprehensionCheckPop2(q *qst.QuestionnaireT) error {
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				inp.ColSpan = 10
+				inp.ColSpan = 8
 				inp.Desc = trl.S{
 					"de": `
 					<p style="margin-bottom: 0.5rem">
@@ -307,16 +307,16 @@ func ComprehensionCheckPop2(q *qst.QuestionnaireT) error {
 				}
 			}
 
-			partIGroupsShort := []string{
-				"est0:0",
-				"est1:1",
-				"est2:2",
-				"est3:3",
-				"est4:4",
-				"est5:5",
+			comprehA := []string{
+				"est_0:0",
+				"est_1:1",
+				"est_2:2",
+				"est_3:3",
+				"est_4:4",
+				"est_5:5",
 			}
 
-			for idx, kv := range partIGroupsShort {
+			for idx, kv := range comprehA {
 				sp := strings.Split(kv, ":")
 				radVal := sp[0]
 				lbl := trl.S{"de": "&nbsp;&nbsp;" + sp[1]}
@@ -337,29 +337,73 @@ func ComprehensionCheckPop2(q *qst.QuestionnaireT) error {
 				}
 			}
 
+			/*
+				{
+					inp := gr.AddInput()
+					inp.Type = "text"
+					inp.Name = "q_found_compr_b"
+					inp.MaxChars = 3
+					inp.ColSpan = 6
+					inp.ColSpanLabel = 5
+					inp.ColSpanControl = 2
+					// inp.Placeholder = trl.S{"de": "A,B oder C"}
+					inp.Label = trl.S{
+						"de": `
+						<p>
+						<b>2.</b>
+						Welche Stiftung wird von drei Leuten als am besten eingestuft?
+						</p>
+					`}
+					inp.Suffix = trl.S{"de": "[A, B, C]"}
+					inp.LabelPadRight()
+					// inp.Validator = "inRange1000"
+					inp.Validator = "must"
+					inp.Style = css.NewStylesResponsive(inp.Style)
+					inp.Style.Desktop.StyleBox.Margin = "1.6rem 0 0 0"
+				}
+			*/
+
 			{
 				inp := gr.AddInput()
-				inp.Type = "text"
-				inp.Name = "q_found_compr_b"
-				inp.MaxChars = 3
-				inp.ColSpan = 6
-				inp.ColSpanLabel = 5
-				inp.ColSpanControl = 2
-				// inp.Placeholder = trl.S{"de": "A,B oder C"}
-				inp.Label = trl.S{
+				inp.Type = "textblock"
+				inp.ColSpan = 8
+				inp.Desc = trl.S{
 					"de": `
-					<p>
-					<b>2.</b>  
-					Welche Stiftung wird von drei Leuten als am besten eingestuft? 
+					<p style="margin-bottom: 0.5rem">
+						<b>2.</b>
+						Welche Stiftung wird von drei Leuten als am besten eingestuft?
 					</p>
-				`}
-				inp.Suffix = trl.S{"de": "[A, B, C]"}
-				inp.LabelPadRight()
-				// inp.Validator = "inRange1000"
-				inp.Validator = "must"
-				inp.Style = css.NewStylesResponsive(inp.Style)
-				inp.Style.Desktop.StyleBox.Margin = "1.6rem 0 0 0"
+					`,
+				}
 			}
+
+			comprehB := []string{
+				"est_a:A",
+				"est_b:B",
+				"est_c:C",
+			}
+
+			for idx, kv := range comprehB {
+				sp := strings.Split(kv, ":")
+				radVal := sp[0]
+				lbl := trl.S{"de": "&nbsp;&nbsp;" + sp[1]}
+
+				rad := gr.AddInput()
+				rad.Type = "radio"
+				rad.Name = "q_found_compr_b"
+				rad.ValueRadio = radVal
+				rad.ColSpan = 1
+				rad.ColSpanLabel = 1
+				rad.ColSpanControl = 1
+				rad.Label = lbl
+				// rad.ControlFirst()
+				rad.LabelRight()
+
+				if idx == 0 {
+					rad.Validator = "must"
+				}
+			}
+
 		}
 
 	}

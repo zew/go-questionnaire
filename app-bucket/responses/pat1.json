@@ -19,7 +19,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "b31c7fddc99a1a8b23000d3a17d8fff85f5d3ec2c5715844aaa3baf1766c69ae",
+ 	"md_5": "797885f4f83dd80d649afdbae6aabae02c3dbf8d9be52787dca72a618c2271ca",
  	"lang_codes": [
  		"de"
  	],
@@ -444,7 +444,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage 1.\u003c/b\u003e\u003cbr\u003e Schätzen Sie bitte: Was wäre eine zufällig ausgewählte Person \n\t\t\t\t\taus unserer Vorstudie maximal bereit zu zahlen, \n\t\t\t\t\tdamit eine Spende von 30\u0026nbsp;€ an die Stif\u0026shy;tung überwiesen wird, \n\t\t\t\t\tdie diese Person als am besten/mittel/am schlech\u0026shy;testen erachtet?\n\t\t\t\t\t\u003ci\u003e(Wenn Sie meinen, die Person würde da\u0026shy;für bezahlen, \n\t\t\t\t\t\tdass die Stif\u0026shy;tung die 30\u0026nbsp;€ \u003ci\u003e\u003cb\u003enicht\u003c/b\u003e\u003c/i\u003e erhält, \n\t\t\t\t\t\tschreiben Sie bitte ein Minuszeichen vor den entsprechenden Betrag.)\u003c/i\u003e\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003c!--\n\t\t\t\t\tBeste Stif\u0026shy;tung:_______\tMitt\u0026shy;le\u0026shy;re Stif\u0026shy;tung:_______\tSchlech\u0026shy;teste Stif\u0026shy;tung:_______\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t--\u003e\n\n\n\t\t\t\t\t"
+ 								"de": "\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage 1.\u003c/b\u003e\u003cbr\u003e Schätzen Sie bitte: Was wäre eine zufällig ausgewählte Person \n\t\t\t\t\taus unserer Vorstudie maximal bereit zu zahlen, \n\t\t\t\t\tdamit eine Spende von 30\u0026nbsp;€ an die Stif\u0026shy;tung überwiesen wird, \n\t\t\t\t\tdie diese Person als am besten/mittel/am schlech\u0026shy;testen erachtet?\n\t\t\t\t\t\u003ci\u003e(Wenn Sie meinen, die Person würde da\u0026shy;für bezahlen, \n\t\t\t\t\t\tdass die Stif\u0026shy;tung die 30\u0026nbsp;€ \u003ci\u003e\u003cb\u003enicht\u003c/b\u003e\u003c/i\u003e erhält, \n\t\t\t\t\t\tschreiben Sie bitte ein Minuszeichen vor den entsprechenden Betrag.)\u003c/i\u003e\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003c!--\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\tBeste Stif\u0026shy;tung:_______\tMitt\u0026shy;le\u0026shy;re Stif\u0026shy;tung:_______\tSchlech\u0026shy;teste Stif\u0026shy;tung:_______\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t--\u003e\n\n\t\t\t\t\t\u003cbr\u003e\n\n\n\t\t\t\t\t"
  							},
  							"col_span_label": 1
  						}
@@ -551,7 +551,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\t\n\t\t\t\u003cb\u003e\n\t\t\t\tNun kommen wir zum zweiten Teil unserer Studie. \n\t\t\t\u003c/b\u003e\n\t\t\n\n\t\t\t\t\t\tIn diesem Teil treffen Sie jeweils Entscheidungen \n\t\t\t\t\t\tfür eine*n deutsche*n Staatsangehörige*n, \n\t\t\t\t\t\tder*die Ihnen zugeordnet ist \n\t\t\t\t\t\tund der*die an einer zukünftigen Studie teilnehmen wird. Diese Person wird in der Studie entscheiden, wie ihr das Entgelt für die Studienteilnahme ausbezahlt wird. Je eher diese Person bereit ist, auf ihr Geld zu warten, desto mehr Geld wird ihr insge\u0026shy;samt bezahlt.\t\t\t\t\t\t\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tWir bitten Sie zu entscheiden, wie geduldig oder wie ungeduldig die Person wählen kann. \n\t\t\t\t\t\t\n\t\t\t\t\t\tDazu bestimmen Sie für jede von drei Optionen, ob die jeweilige Option der Person zur Verfügung stehen soll oder nicht. \n\t\t\t\t\t\t\n\t\t\t\t\t\tFalls Sie mehrere Optionen ver\u0026shy;füg\u0026shy;bar machen, kann die Person aus diesen wählen. Mindestens eine Option muss „Ver\u0026shy;füg\u0026shy;bar“ sein.\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003cp style=\"font-size: 87%;\"\u003e\n\t\t\t\t\t\t\u003ci\u003e\n\t\t\t\t\t\tDetails: Die nicht ver\u0026shy;füg\u0026shy;baren Optionen werden der Person nicht als Auswahloptionen angezeigt. Bei ver\u0026shy;füg\u0026shy;bar gemachten Optionen können Sie zusätzlich „Von dieser Option abraten“ ankreuzen. In diesem Fall erhält die Person die Botschaft: „Ein früherer Teilnehmer dieser Studie rät Ihnen davon ab, diese Option zu wählen”.\n\t\t\t\t\t\t\u003c/i\u003e\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cbr\u003e\n\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\t\u003cb\u003eEntscheidung 7. \u003c/b\u003e\u003cbr\u003e\n\t\t\t\t\t\tWelche Optionen sollen der Person (nicht) zur Verfügung stehen, falls die Optionen wie folgt lauten?\n\n\t\t\t\t\t\u003c/p\u003e\n\n\n\t\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\t\n\t\t\t\u003cb\u003e\n\t\t\t\tNun kommen wir zum zweiten Teil unserer Studie. \n\t\t\t\u003c/b\u003e\n\t\t\n\n\t\t\t\t\t\tIn diesem Teil treffen Sie jeweils Entscheidungen \n\t\t\t\t\t\tfür eine*n deutsche*n Staatsangehörige*n, \n\t\t\t\t\t\tder*die Ihnen zugeordnet ist \n\t\t\t\t\t\tund der*die an einer zukünftigen Studie teilnehmen wird. \n\t\t\t\t\t\t\n\t\t\t\t\t\tDiese Person wird in der Studie entscheiden, \n\t\t\t\t\t\twie ihr das Entgelt für die Studienteilnahme ausbezahlt wird. \n\t\t\t\t\t\t\n\t\t\t\t\t\tJe eher diese Person bereit ist, \n\t\t\t\t\t\tauf ihr Geld zu warten, \n\t\t\t\t\t\tdesto mehr Geld wird ihr insge\u0026shy;samt bezahlt.\t\t\t\t\t\t\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tWir bitten Sie zu entscheiden, \n\t\t\t\t\t\twie geduldig oder wie ungeduldig die Person wählen kann. \n\t\t\t\t\t\t\n\t\t\t\t\t\tDazu bestimmen Sie für jede von drei Optionen, \n\t\t\t\t\t\tob die jeweilige Option der Person zur Verfügung stehen soll oder nicht. \n\t\t\t\t\t\t\n\t\t\t\t\t\tFalls Sie mehrere Optionen ver\u0026shy;füg\u0026shy;bar machen, \n\t\t\t\t\t\tkann die Person aus diesen wählen. \n\t\t\t\t\t\t\n\t\t\t\t\t\tMindestens eine Option muss „Ver\u0026shy;füg\u0026shy;bar“ sein.\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003cp style=\"font-size: 87%;\"\u003e\n\t\t\t\t\t\t\u003ci\u003e\n\t\t\t\t\t\tDetails: \n\t\t\t\t\t\tDie nicht ver\u0026shy;füg\u0026shy;baren Optionen werden der Person \n\t\t\t\t\t\tnicht als Auswahloptionen angezeigt. \n\t\t\t\t\t\t\n\t\t\t\t\t\tBei ver\u0026shy;füg\u0026shy;bar gemachten Optionen können Sie zusätzlich \n\t\t\t\t\t\t„Von dieser Option abraten“ ankreuzen. \n\t\t\t\t\t\t\n\t\t\t\t\t\tIn diesem Fall erhält die Person die Botschaft: \n\t\t\t\t\t\t„Ein früherer Teilnehmer dieser Studie \n\t\t\t\t\t\trät Ihnen davon ab, diese Option zu wählen”.\n\t\t\t\t\t\t\u003c/i\u003e\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cbr\u003e\n\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\t\u003cb\u003eEntscheidung 7. \u003c/b\u003e\u003cbr\u003e\n\t\t\t\t\t\tWelche Optionen sollen der Person (nicht) zur \n\t\t\t\t\t\tVerfügung stehen, falls die Optionen wie folgt lauten?\n\t\t\t\t\t\u003c/p\u003e\n\n\n\t\t\t\t\t"
  							},
  							"col_span_label": 1
  						}
@@ -2778,12 +2778,12 @@
  							"name": "q17",
  							"type": "radio",
  							"label": {
- 								"de": "ja"
+ 								"de": "Ja"
  							},
  							"col_span": 4,
  							"col_span_label": 4,
  							"col_span_control": 1,
- 							"validator": "mustRadioGroup",
+ 							"validator": "mustRadioGroup;citizenshipyes",
  							"value_radio": "citizenshipyes",
  							"style_label": {
  								"desktop": {
@@ -2810,12 +2810,12 @@
  							"name": "q17",
  							"type": "radio",
  							"label": {
- 								"de": "nein"
+ 								"de": "Nein"
  							},
  							"col_span": 4,
  							"col_span_label": 4,
  							"col_span_control": 1,
- 							"validator": "mustRadioGroup",
+ 							"validator": "mustRadioGroup;citizenshipyes",
  							"value_radio": "citizenshipno",
  							"style_label": {
  								"desktop": {
@@ -3594,7 +3594,7 @@
  							"name": "q18",
  							"type": "radio",
  							"label": {
- 								"de": "ja"
+ 								"de": "Ja"
  							},
  							"col_span": 4,
  							"col_span_label": 4,
@@ -3626,7 +3626,7 @@
  							"name": "q18",
  							"type": "radio",
  							"label": {
- 								"de": "nein"
+ 								"de": "Nein"
  							},
  							"col_span": 4,
  							"col_span_label": 4,
@@ -3662,7 +3662,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 14.\u003c/b\u003e\n\t\t\t\t\tMit welcher im deutschen Bundestag vertretenen Partei identifizieren Sie sich am ehesten? \n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp style=\"margin-bottom: 1.05rem\"\u003e\n\t\t\t\t\t\t\u003cb\u003eFrage 14.\u003c/b\u003e\n\t\t\t\t\t\tMit welcher im deutschen Bundestag vertretenen Partei identifizieren Sie sich am ehesten? \n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -4127,7 +4127,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 16.\u003c/b\u003e\n\t\t\t\t\tSind Sie Po\u0026shy;li\u0026shy;tiker?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 16.\u003c/b\u003e\n\t\t\t\t\tSind Sie Po\u0026shy;li\u0026shy;tiker*in?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 8,
  							"col_span_label": 1
@@ -4277,7 +4277,7 @@
  							"name": "q12",
  							"type": "radio",
  							"label": {
- 								"de": "Verheiratet und leben mit Ihrem/Ihrer Ehepartner/-in zusammen"
+ 								"de": "Verheiratet und leben mit Ihrem*rer Ehepartner*in zusammen"
  							},
  							"col_span": 6,
  							"col_span_label": 4,
@@ -4739,135 +4739,7 @@
  							"name": "q13",
  							"type": "radio",
  							"label": {
- 								"de": "5.000 bis unter 6.000 Euro"
- 							},
- 							"col_span": 4,
- 							"col_span_label": 4,
- 							"col_span_control": 1,
- 							"validator": "mustRadioGroup",
- 							"value_radio": "upto6000",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 1.0rem 0 0"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "right"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": " 0 0.3rem 0 0"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q13",
- 							"type": "radio",
- 							"label": {
- 								"de": "6.000 bis unter 7.000 Euro"
- 							},
- 							"col_span": 4,
- 							"col_span_label": 4,
- 							"col_span_control": 1,
- 							"validator": "mustRadioGroup",
- 							"value_radio": "upto7000",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 1.0rem 0 0"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "right"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": " 0 0.3rem 0 0"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q13",
- 							"type": "radio",
- 							"label": {
- 								"de": "7.000 bis unter 8.000 Euro"
- 							},
- 							"col_span": 4,
- 							"col_span_label": 4,
- 							"col_span_control": 1,
- 							"validator": "mustRadioGroup",
- 							"value_radio": "upto8000",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 1.0rem 0 0"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "right"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": " 0 0.3rem 0 0"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q13",
- 							"type": "radio",
- 							"label": {
- 								"de": "8.000 bis unter 9.000 Euro"
- 							},
- 							"col_span": 4,
- 							"col_span_label": 4,
- 							"col_span_control": 1,
- 							"validator": "mustRadioGroup",
- 							"value_radio": "upto9000",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 1.0rem 0 0"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "right"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": " 0 0.3rem 0 0"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q13",
- 							"type": "radio",
- 							"label": {
- 								"de": "9.000 bis unter 10.000 Euro"
+ 								"de": "5.000 bis unter 10.000 Euro"
  							},
  							"col_span": 4,
  							"col_span_label": 4,
@@ -4930,311 +4802,6 @@
  					]
  				},
  				{
- 					"columns": 1,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"description": {
- 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 19.\u003c/b\u003e\n\t\t\t\t\tMit welcher Partei fühlen Sie sich \n\t\t\t\t\taufgrund Ihrer Werte und Überzeugungen am ehesten verbunden? \n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003c!--\n\t\t\t\t\t\u003ci\u003eBitte beachten Sie, dass nur eine Antwort zulässig ist.\u003c/i\u003e\n\t\t\t\t\t--\u003e\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1
- 						}
- 					]
- 				},
- 				{
- 					"columns": 8,
- 					"inputs": [
- 						{
- 							"name": "q14",
- 							"type": "radio",
- 							"label": {
- 								"de": "CDU/CSU"
- 							},
- 							"col_span": 4,
- 							"col_span_label": 4,
- 							"col_span_control": 1,
- 							"validator": "mustRadioGroup",
- 							"value_radio": "cducsu",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 1.0rem 0 0"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "right"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": " 0 0.3rem 0 0"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						}
- 					],
- 					"randomization_group": 2,
- 					"randomization_seed": 2
- 				},
- 				{
- 					"columns": 8,
- 					"inputs": [
- 						{
- 							"name": "q14",
- 							"type": "radio",
- 							"label": {
- 								"de": "Die Linke"
- 							},
- 							"col_span": 4,
- 							"col_span_label": 4,
- 							"col_span_control": 1,
- 							"validator": "mustRadioGroup",
- 							"value_radio": "linke",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 1.0rem 0 0"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "right"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": " 0 0.3rem 0 0"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						}
- 					],
- 					"randomization_group": 2,
- 					"randomization_seed": 2
- 				},
- 				{
- 					"columns": 8,
- 					"inputs": [
- 						{
- 							"name": "q14",
- 							"type": "radio",
- 							"label": {
- 								"de": "SPD"
- 							},
- 							"col_span": 4,
- 							"col_span_label": 4,
- 							"col_span_control": 1,
- 							"validator": "mustRadioGroup",
- 							"value_radio": "spd",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 1.0rem 0 0"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "right"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": " 0 0.3rem 0 0"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						}
- 					],
- 					"randomization_group": 2,
- 					"randomization_seed": 2
- 				},
- 				{
- 					"columns": 8,
- 					"inputs": [
- 						{
- 							"name": "q14",
- 							"type": "radio",
- 							"label": {
- 								"de": "Bündnis 90/Die Grünen"
- 							},
- 							"col_span": 4,
- 							"col_span_label": 4,
- 							"col_span_control": 1,
- 							"validator": "mustRadioGroup",
- 							"value_radio": "gruene",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 1.0rem 0 0"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "right"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": " 0 0.3rem 0 0"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						}
- 					],
- 					"randomization_group": 2,
- 					"randomization_seed": 2
- 				},
- 				{
- 					"columns": 8,
- 					"inputs": [
- 						{
- 							"name": "q14",
- 							"type": "radio",
- 							"label": {
- 								"de": "FDP"
- 							},
- 							"col_span": 4,
- 							"col_span_label": 4,
- 							"col_span_control": 1,
- 							"validator": "mustRadioGroup",
- 							"value_radio": "fdp",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 1.0rem 0 0"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "right"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": " 0 0.3rem 0 0"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						}
- 					],
- 					"randomization_group": 2,
- 					"randomization_seed": 2
- 				},
- 				{
- 					"columns": 8,
- 					"inputs": [
- 						{
- 							"name": "q14",
- 							"type": "radio",
- 							"label": {
- 								"de": "AfD"
- 							},
- 							"col_span": 4,
- 							"col_span_label": 4,
- 							"col_span_control": 1,
- 							"validator": "mustRadioGroup",
- 							"value_radio": "afd",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 1.0rem 0 0"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "right"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": " 0 0.3rem 0 0"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						}
- 					],
- 					"randomization_group": 2,
- 					"randomization_seed": 2
- 				},
- 				{
- 					"columns": 8,
- 					"inputs": [
- 						{
- 							"name": "q14",
- 							"type": "radio",
- 							"label": {
- 								"de": "Andere"
- 							},
- 							"col_span": 4,
- 							"col_span_label": 4,
- 							"col_span_control": 1,
- 							"validator": "mustRadioGroup",
- 							"value_radio": "other",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 1.0rem 0 0"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "right"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": " 0 0.3rem 0 0"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q14_other_text",
- 							"type": "text",
- 							"max_chars": 14,
- 							"col_span": 4,
- 							"col_span_control": 1,
- 							"validator": "otherParty"
- 						}
- 					]
- 				},
- 				{
- 					"columns": 1,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": " \u0026nbsp; ",
- 								"en": " \u0026nbsp; "
- 							},
- 							"col_span_label": 1
- 						}
- 					]
- 				},
- 				{
  					"bottom_vspacers": 4,
  					"columns": 11,
  					"odd_rows_coloring": true,
@@ -5242,7 +4809,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage\u0026nbsp;20.\u003c/b\u003e\n\t\t\t\t\tIn der Po\u0026shy;li\u0026shy;tik reden die Leute häufig von \"links\" und \"rechts\". \n\t\t\t\t\tWenn Sie die Skala hier benutzen, \n\t\t\t\t\two würden Sie sich selbst einordnen, \n\t\t\t\t\twenn 1 \"links\" und 11 \"rechts\" ist? \n\t\t\t\t\tBitte geben Sie den Wert an, der auf Sie persönlich zutrifft.\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage\u0026nbsp;19.\u003c/b\u003e\n\t\t\t\t\tIn der Po\u0026shy;li\u0026shy;tik reden die Leute häufig von \"links\" und \"rechts\". \n\t\t\t\t\tWenn Sie die Skala hier benutzen, \n\t\t\t\t\two würden Sie sich selbst einordnen, \n\t\t\t\t\twenn 1 \"links\" und 11 \"rechts\" ist? \n\t\t\t\t\tBitte geben Sie den Wert an, der auf Sie persönlich zutrifft.\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t"
  							},
  							"col_span": 11,
  							"col_span_label": 1

@@ -331,11 +331,13 @@ func Part1Frage1(q *qst.QuestionnaireT, vE VariableElements) error {
 						schreiben Sie bitte ein Minuszeichen vor den entsprechenden Betrag.)</i>
 					</p>
 
-					<p>
 					<!--
+					<p>
 					Beste Stiftung:_______	Mittlere Stiftung:_______	Schlechteste Stiftung:_______
 					</p>
 					-->
+
+					<br>
 
 
 					`, frage),

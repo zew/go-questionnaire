@@ -347,7 +347,11 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 
 		if forward != nil {
 			core, _ := tpl.SiteCore(q.Survey.Type)
-			tpl.RenderStaticContent(w, forward.MarkDownPath(), core, q.LangCode)
+			relURL := path.Join("/doc/", core, q.LangCode, forward.MarkDownPath())
+			relURL = cfg.Pref(relURL)
+			http.Redirect(w, r, relURL, http.StatusTemporaryRedirect)
+			log.Printf("Redirected to %v", relURL)
+			// tpl.RenderStaticContent(w, forward.MarkDownPath(), core, q.LangCode)
 			return
 		}
 	}

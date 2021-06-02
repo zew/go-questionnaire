@@ -19,7 +19,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "19f6e149c62f031b4c3c03a2b61cc652b0d21410f6a4ccab78854337bcff77b7",
+ 	"md_5": "0f979bb482a3d249e377b6960de67414414870d8207022b820cd4891dcd4dafc",
  	"lang_codes": [
  		"de"
  	],
@@ -287,12 +287,12 @@
  							"name": "q17",
  							"type": "radio",
  							"label": {
- 								"de": "ja"
+ 								"de": "Ja"
  							},
  							"col_span": 4,
  							"col_span_label": 4,
  							"col_span_control": 1,
- 							"validator": "mustRadioGroup",
+ 							"validator": "mustRadioGroup;citizenshipyes",
  							"value_radio": "citizenshipyes",
  							"style_label": {
  								"desktop": {
@@ -319,12 +319,12 @@
  							"name": "q17",
  							"type": "radio",
  							"label": {
- 								"de": "nein"
+ 								"de": "Nein"
  							},
  							"col_span": 4,
  							"col_span_label": 4,
  							"col_span_control": 1,
- 							"validator": "mustRadioGroup",
+ 							"validator": "mustRadioGroup;citizenshipyes",
  							"value_radio": "citizenshipno",
  							"style_label": {
  								"desktop": {
@@ -1103,7 +1103,7 @@
  							"name": "q18",
  							"type": "radio",
  							"label": {
- 								"de": "ja"
+ 								"de": "Ja"
  							},
  							"col_span": 4,
  							"col_span_label": 4,
@@ -1135,7 +1135,7 @@
  							"name": "q18",
  							"type": "radio",
  							"label": {
- 								"de": "nein"
+ 								"de": "Nein"
  							},
  							"col_span": 4,
  							"col_span_label": 4,
@@ -1636,7 +1636,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 9.\u003c/b\u003e\n\t\t\t\t\tSind Sie Po\u0026shy;li\u0026shy;tiker?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 9.\u003c/b\u003e\n\t\t\t\t\tSind Sie Po\u0026shy;li\u0026shy;tiker*in?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 8,
  							"col_span_label": 1
@@ -1786,7 +1786,7 @@
  							"name": "q12",
  							"type": "radio",
  							"label": {
- 								"de": "Verheiratet und leben mit Ihrem/Ihrer Ehepartner/-in zusammen"
+ 								"de": "Verheiratet und leben mit Ihrem*rer Ehepartner*in zusammen"
  							},
  							"col_span": 6,
  							"col_span_label": 4,
@@ -2248,135 +2248,7 @@
  							"name": "q13",
  							"type": "radio",
  							"label": {
- 								"de": "5.000 bis unter 6.000 Euro"
- 							},
- 							"col_span": 4,
- 							"col_span_label": 4,
- 							"col_span_control": 1,
- 							"validator": "mustRadioGroup",
- 							"value_radio": "upto6000",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 1.0rem 0 0"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "right"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": " 0 0.3rem 0 0"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q13",
- 							"type": "radio",
- 							"label": {
- 								"de": "6.000 bis unter 7.000 Euro"
- 							},
- 							"col_span": 4,
- 							"col_span_label": 4,
- 							"col_span_control": 1,
- 							"validator": "mustRadioGroup",
- 							"value_radio": "upto7000",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 1.0rem 0 0"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "right"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": " 0 0.3rem 0 0"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q13",
- 							"type": "radio",
- 							"label": {
- 								"de": "7.000 bis unter 8.000 Euro"
- 							},
- 							"col_span": 4,
- 							"col_span_label": 4,
- 							"col_span_control": 1,
- 							"validator": "mustRadioGroup",
- 							"value_radio": "upto8000",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 1.0rem 0 0"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "right"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": " 0 0.3rem 0 0"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q13",
- 							"type": "radio",
- 							"label": {
- 								"de": "8.000 bis unter 9.000 Euro"
- 							},
- 							"col_span": 4,
- 							"col_span_label": 4,
- 							"col_span_control": 1,
- 							"validator": "mustRadioGroup",
- 							"value_radio": "upto9000",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 1.0rem 0 0"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "right"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": " 0 0.3rem 0 0"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q13",
- 							"type": "radio",
- 							"label": {
- 								"de": "9.000 bis unter 10.000 Euro"
+ 								"de": "5.000 bis unter 10.000 Euro"
  							},
  							"col_span": 4,
  							"col_span_label": 4,
@@ -2439,311 +2311,6 @@
  					]
  				},
  				{
- 					"columns": 1,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"description": {
- 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 12.\u003c/b\u003e\n\t\t\t\t\tMit welcher Partei fühlen Sie sich \n\t\t\t\t\taufgrund Ihrer Werte und Überzeugungen am ehesten verbunden? \n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003c!--\n\t\t\t\t\t\u003ci\u003eBitte beachten Sie, dass nur eine Antwort zulässig ist.\u003c/i\u003e\n\t\t\t\t\t--\u003e\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1
- 						}
- 					]
- 				},
- 				{
- 					"columns": 8,
- 					"inputs": [
- 						{
- 							"name": "q14",
- 							"type": "radio",
- 							"label": {
- 								"de": "CDU/CSU"
- 							},
- 							"col_span": 4,
- 							"col_span_label": 4,
- 							"col_span_control": 1,
- 							"validator": "mustRadioGroup",
- 							"value_radio": "cducsu",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 1.0rem 0 0"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "right"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": " 0 0.3rem 0 0"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						}
- 					],
- 					"randomization_group": 2,
- 					"randomization_seed": 2
- 				},
- 				{
- 					"columns": 8,
- 					"inputs": [
- 						{
- 							"name": "q14",
- 							"type": "radio",
- 							"label": {
- 								"de": "Die Linke"
- 							},
- 							"col_span": 4,
- 							"col_span_label": 4,
- 							"col_span_control": 1,
- 							"validator": "mustRadioGroup",
- 							"value_radio": "linke",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 1.0rem 0 0"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "right"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": " 0 0.3rem 0 0"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						}
- 					],
- 					"randomization_group": 2,
- 					"randomization_seed": 2
- 				},
- 				{
- 					"columns": 8,
- 					"inputs": [
- 						{
- 							"name": "q14",
- 							"type": "radio",
- 							"label": {
- 								"de": "SPD"
- 							},
- 							"col_span": 4,
- 							"col_span_label": 4,
- 							"col_span_control": 1,
- 							"validator": "mustRadioGroup",
- 							"value_radio": "spd",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 1.0rem 0 0"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "right"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": " 0 0.3rem 0 0"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						}
- 					],
- 					"randomization_group": 2,
- 					"randomization_seed": 2
- 				},
- 				{
- 					"columns": 8,
- 					"inputs": [
- 						{
- 							"name": "q14",
- 							"type": "radio",
- 							"label": {
- 								"de": "Bündnis 90/Die Grünen"
- 							},
- 							"col_span": 4,
- 							"col_span_label": 4,
- 							"col_span_control": 1,
- 							"validator": "mustRadioGroup",
- 							"value_radio": "gruene",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 1.0rem 0 0"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "right"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": " 0 0.3rem 0 0"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						}
- 					],
- 					"randomization_group": 2,
- 					"randomization_seed": 2
- 				},
- 				{
- 					"columns": 8,
- 					"inputs": [
- 						{
- 							"name": "q14",
- 							"type": "radio",
- 							"label": {
- 								"de": "FDP"
- 							},
- 							"col_span": 4,
- 							"col_span_label": 4,
- 							"col_span_control": 1,
- 							"validator": "mustRadioGroup",
- 							"value_radio": "fdp",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 1.0rem 0 0"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "right"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": " 0 0.3rem 0 0"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						}
- 					],
- 					"randomization_group": 2,
- 					"randomization_seed": 2
- 				},
- 				{
- 					"columns": 8,
- 					"inputs": [
- 						{
- 							"name": "q14",
- 							"type": "radio",
- 							"label": {
- 								"de": "AfD"
- 							},
- 							"col_span": 4,
- 							"col_span_label": 4,
- 							"col_span_control": 1,
- 							"validator": "mustRadioGroup",
- 							"value_radio": "afd",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 1.0rem 0 0"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "right"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": " 0 0.3rem 0 0"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						}
- 					],
- 					"randomization_group": 2,
- 					"randomization_seed": 2
- 				},
- 				{
- 					"columns": 8,
- 					"inputs": [
- 						{
- 							"name": "q14",
- 							"type": "radio",
- 							"label": {
- 								"de": "Andere"
- 							},
- 							"col_span": 4,
- 							"col_span_label": 4,
- 							"col_span_control": 1,
- 							"validator": "mustRadioGroup",
- 							"value_radio": "other",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 1.0rem 0 0"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "right"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": " 0 0.3rem 0 0"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q14_other_text",
- 							"type": "text",
- 							"max_chars": 14,
- 							"col_span": 4,
- 							"col_span_control": 1,
- 							"validator": "otherParty"
- 						}
- 					]
- 				},
- 				{
- 					"columns": 1,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": " \u0026nbsp; ",
- 								"en": " \u0026nbsp; "
- 							},
- 							"col_span_label": 1
- 						}
- 					]
- 				},
- 				{
  					"bottom_vspacers": 4,
  					"columns": 11,
  					"odd_rows_coloring": true,
@@ -2751,7 +2318,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage\u0026nbsp;13.\u003c/b\u003e\n\t\t\t\t\tIn der Po\u0026shy;li\u0026shy;tik reden die Leute häufig von \"links\" und \"rechts\". \n\t\t\t\t\tWenn Sie die Skala hier benutzen, \n\t\t\t\t\two würden Sie sich selbst einordnen, \n\t\t\t\t\twenn 1 \"links\" und 11 \"rechts\" ist? \n\t\t\t\t\tBitte geben Sie den Wert an, der auf Sie persönlich zutrifft.\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage\u0026nbsp;12.\u003c/b\u003e\n\t\t\t\t\tIn der Po\u0026shy;li\u0026shy;tik reden die Leute häufig von \"links\" und \"rechts\". \n\t\t\t\t\tWenn Sie die Skala hier benutzen, \n\t\t\t\t\two würden Sie sich selbst einordnen, \n\t\t\t\t\twenn 1 \"links\" und 11 \"rechts\" ist? \n\t\t\t\t\tBitte geben Sie den Wert an, der auf Sie persönlich zutrifft.\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t"
  							},
  							"col_span": 11,
  							"col_span_label": 1
@@ -3367,7 +2934,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\u003cp style=\"margin-bottom: 0.5rem\"\u003e\n\t\t\t\t\t\u003cb\u003e\u003c/b\u003e\n\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cb\u003eFrage 14.\u003c/b\u003e\n\t\t\t\t\tSind Sie im Vergleich zu anderen im Allgemeinen bereit, \n\t\t\t\t\theute auf etwas zu verzichten, \n\t\t\t\t\tum in der Zukunft davon zu profitieren, \n\t\t\t\t\toder sind Sie im Vergleich zu anderen dazu nicht bereit? \n\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp style=\"margin-bottom: 0.5rem\"\u003e\n\t\t\t\t\t\u003cb\u003e\u003c/b\u003e\n\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cb\u003eFrage 13.\u003c/b\u003e\n\t\t\t\t\tSind Sie im Vergleich zu anderen im Allgemeinen bereit, \n\t\t\t\t\theute auf etwas zu verzichten, \n\t\t\t\t\tum in der Zukunft davon zu profitieren, \n\t\t\t\t\toder sind Sie im Vergleich zu anderen dazu nicht bereit? \n\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t"
  							},
  							"col_span": 7,
  							"col_span_label": 1
@@ -3749,7 +3316,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\u003cp style=\"margin-bottom: 0.5rem\"\u003e\n\t\t\t\t\t\u003cb\u003eFrage 15.\u003c/b\u003e\n\t\t\t\t\tWie schätzen Sie sich persönlich ein? \n\t\t\t\t\tSind Sie im Allgemeinen ein ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reiter Mensch \n\t\t\t\t\toder versuchen Sie, Risiken zu vermeiden?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp style=\"margin-bottom: 0.5rem\"\u003e\n\t\t\t\t\t\u003cb\u003eFrage 14.\u003c/b\u003e\n\t\t\t\t\tWie schätzen Sie sich persönlich ein? \n\t\t\t\t\tSind Sie im Allgemeinen ein ri\u0026shy;si\u0026shy;ko\u0026shy;be\u0026shy;reiter Mensch \n\t\t\t\t\toder versuchen Sie, Risiken zu vermeiden?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 7,
  							"col_span_label": 1
@@ -4131,7 +3698,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\u003cp style=\"margin-bottom: 0.5rem\"\u003e\n\t\t\t\t\t\u003cb\u003eFrage\u0026nbsp;16.\u003c/b\u003e\n\t\t\t\t\tWie schätzen Sie Ihre Bereitschaft ein, mit anderen zu teilen, \n\t\t\t\t\tohne da\u0026shy;für eine Gegenleistung zu erwarten?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp style=\"margin-bottom: 0.5rem\"\u003e\n\t\t\t\t\t\u003cb\u003eFrage\u0026nbsp;15.\u003c/b\u003e\n\t\t\t\t\tWie schätzen Sie Ihre Bereitschaft ein, mit anderen zu teilen, \n\t\t\t\t\tohne da\u0026shy;für eine Gegenleistung zu erwarten?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 7,
  							"col_span_label": 1
@@ -4911,7 +4478,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage:\u003c/b\u003e\u003cbr\u003e Schätzen Sie bitte: Was wäre eine zufällig ausgewählte Person \n\t\t\t\t\taus unserer Vorstudie maximal bereit zu zahlen, \n\t\t\t\t\tdamit eine Spende von 30\u0026nbsp;€ an die Stif\u0026shy;tung überwiesen wird, \n\t\t\t\t\tdie diese Person als am besten/mittel/am schlech\u0026shy;testen erachtet?\n\t\t\t\t\t\u003ci\u003e(Wenn Sie meinen, die Person würde da\u0026shy;für bezahlen, \n\t\t\t\t\t\tdass die Stif\u0026shy;tung die 30\u0026nbsp;€ \u003ci\u003e\u003cb\u003enicht\u003c/b\u003e\u003c/i\u003e erhält, \n\t\t\t\t\t\tschreiben Sie bitte ein Minuszeichen vor den entsprechenden Betrag.)\u003c/i\u003e\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003c!--\n\t\t\t\t\tBeste Stif\u0026shy;tung:_______\tMitt\u0026shy;le\u0026shy;re Stif\u0026shy;tung:_______\tSchlech\u0026shy;teste Stif\u0026shy;tung:_______\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t--\u003e\n\n\n\t\t\t\t\t"
+ 								"de": "\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage:\u003c/b\u003e\u003cbr\u003e Schätzen Sie bitte: Was wäre eine zufällig ausgewählte Person \n\t\t\t\t\taus unserer Vorstudie maximal bereit zu zahlen, \n\t\t\t\t\tdamit eine Spende von 30\u0026nbsp;€ an die Stif\u0026shy;tung überwiesen wird, \n\t\t\t\t\tdie diese Person als am besten/mittel/am schlech\u0026shy;testen erachtet?\n\t\t\t\t\t\u003ci\u003e(Wenn Sie meinen, die Person würde da\u0026shy;für bezahlen, \n\t\t\t\t\t\tdass die Stif\u0026shy;tung die 30\u0026nbsp;€ \u003ci\u003e\u003cb\u003enicht\u003c/b\u003e\u003c/i\u003e erhält, \n\t\t\t\t\t\tschreiben Sie bitte ein Minuszeichen vor den entsprechenden Betrag.)\u003c/i\u003e\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003c!--\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\tBeste Stif\u0026shy;tung:_______\tMitt\u0026shy;le\u0026shy;re Stif\u0026shy;tung:_______\tSchlech\u0026shy;teste Stif\u0026shy;tung:_______\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t--\u003e\n\n\t\t\t\t\t\u003cbr\u003e\n\n\n\t\t\t\t\t"
  							},
  							"col_span_label": 1
  						}
@@ -5072,7 +4639,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\u003cul\u003e\n\t\t\t\t\u003cli\u003e\n\t\t\t\tEine repräsentative Grup\u0026shy;pe deutscher Land- und Bundestagspo\u0026shy;li\u0026shy;tiker\u003cbr\u003e(Grup\u0026shy;pe \u003cspan style=\"color:MediumVioletRed\"\u003e▣\u003c/span\u003e).\n\t\t\t\t\u003c/li\u003e\n\t\t\t\t\u003c/ul\u003e\n\t\t\t\t\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\u003cul\u003e\n\t\t\t\t\u003cli\u003e\n\t\t\t\tEine repräsentative Grup\u0026shy;pe deutscher Land- und Bundestagspo\u0026shy;li\u0026shy;tiker*innen\u003cbr\u003e(Grup\u0026shy;pe \u003cspan style=\"color:MediumVioletRed\"\u003e▣\u003c/span\u003e).\n\t\t\t\t\u003c/li\u003e\n\t\t\t\t\u003c/ul\u003e\n\t\t\t\t\n\t\t\t\t"
  							},
  							"col_span_label": 1
  						}
@@ -5086,7 +4653,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\u003cul\u003e\n\t\t\t\t\u003cli\u003e\n\t\t\t\tEine repräsentative Grup\u0026shy;pe deutscher Bürger\u003cbr\u003e(Grup\u0026shy;pe \u003cspan style=\"color:ForestGreen\"\u003e◉\u003c/span\u003e).\n\t\t\t\t\u003c/li\u003e\n\t\t\t\t\u003c/ul\u003e\n\t\t\t\t\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\u003cul\u003e\n\t\t\t\t\u003cli\u003e\n\t\t\t\tEine repräsentative Grup\u0026shy;pe deutscher Bürger*innen\u003cbr\u003e(Grup\u0026shy;pe \u003cspan style=\"color:DarkOrchid\"\u003e◉\u003c/span\u003e).\n\t\t\t\t\u003c/li\u003e\n\t\t\t\t\u003c/ul\u003e\n\t\t\t\t\n\t\t\t\t"
  							},
  							"col_span_label": 1
  						}
@@ -5100,7 +4667,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\u003cul\u003e\n\t\t\t\t\u003cli\u003e\n\t\t\t\tEine Grup\u0026shy;pe deutscher Bürger, \n\t\t\t\tdie \u003ci\u003ekeine Po\u0026shy;li\u0026shy;tiker\u003c/i\u003e sind, \n\t\t\t\tdie aber die \u003ci\u003egleichen de\u0026shy;mo\u0026shy;gra\u0026shy;phischen Eigenschaften wie Po\u0026shy;li\u0026shy;tiker\u003c/i\u003e haben. \n\t\t\t\tDas heißt, diese Grup\u0026shy;pe besteht z. B. zu 70\u0026nbsp;% aus Männern, \n\t\t\t\t3\u0026nbsp;% der Mit\u0026shy;glieder sind unter 30\u0026nbsp;Jahre alt, \n\t\t\t\t87\u0026nbsp;% der Mit\u0026shy;glieder haben einen Hoch\u0026shy;schul\u0026shy;abschluss \n\t\t\t\tund 17\u0026nbsp;% sind alleinstehend\u003cbr\u003e\n\t\t\t\t(Grup\u0026shy;pe \u003cspan style=\"color:DarkOrange\"\u003e▲\u003c/span\u003e).\n\t\t\t\t\u003c/li\u003e\n\t\t\t\t\u003c/ul\u003e\n\t\t\t\t\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\u003cul\u003e\n\t\t\t\t\u003cli\u003e\n\t\t\t\tEine Grup\u0026shy;pe deutscher Bürger*innen, \n\t\t\t\tdie \u003ci\u003ekeine Po\u0026shy;li\u0026shy;tiker*innen\u003c/i\u003e sind, \n\t\t\t\tdie aber die \u003ci\u003egleichen de\u0026shy;mo\u0026shy;gra\u0026shy;phischen Eigenschaften wie Po\u0026shy;li\u0026shy;tiker*innen\u003c/i\u003e haben. \n\t\t\t\tDas heißt, diese Grup\u0026shy;pe besteht z. B. zu 70\u0026nbsp;% aus Männern, \n\t\t\t\t3\u0026nbsp;% der Mit\u0026shy;glieder sind unter 30\u0026nbsp;Jahre alt, \n\t\t\t\t87\u0026nbsp;% der Mit\u0026shy;glieder haben einen Hoch\u0026shy;schul\u0026shy;abschluss \n\t\t\t\tund 17\u0026nbsp;% sind alleinstehend\u003cbr\u003e\n\t\t\t\t(Grup\u0026shy;pe \u003cspan style=\"color:DarkOrange\"\u003e▲\u003c/span\u003e).\n\t\t\t\t\u003c/li\u003e\n\t\t\t\t\u003c/ul\u003e\n\t\t\t\t\n\t\t\t\t"
  							},
  							"col_span_label": 1
  						}
@@ -5199,7 +4766,7 @@
  							"name": "dec7_q1",
  							"type": "radio",
  							"label": {
- 								"de": "Ein deutscher Land- oder Bundestagspo\u0026shy;li\u0026shy;tiker (Grup\u0026shy;pe \u003cspan style=\"color:MediumVioletRed\"\u003e▣\u003c/span\u003e)"
+ 								"de": "Ein deutscher Land- oder Bundestagspo\u0026shy;li\u0026shy;tiker*innen (Grup\u0026shy;pe \u003cspan style=\"color:MediumVioletRed\"\u003e▣\u003c/span\u003e)"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -5252,7 +4819,7 @@
  							"name": "dec7_q1",
  							"type": "radio",
  							"label": {
- 								"de": "Ein repräsentativer deutscher Bürger (Grup\u0026shy;pe \u003cspan style=\"color:ForestGreen\"\u003e◉\u003c/span\u003e)"
+ 								"de": "Ein repräsentativer deutscher Bürger*innen (Grup\u0026shy;pe \u003cspan style=\"color:DarkOrchid\"\u003e◉\u003c/span\u003e)"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -5305,7 +4872,7 @@
  							"name": "dec7_q1",
  							"type": "radio",
  							"label": {
- 								"de": "Ein deutscher Bürger mit gleichen de\u0026shy;mo\u0026shy;gra\u0026shy;phischen Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker (Grup\u0026shy;pe \u003cspan style=\"color:DarkOrange\"\u003e▲\u003c/span\u003e)"
+ 								"de": "Ein deutscher Bürger*innen mit gleichen de\u0026shy;mo\u0026shy;gra\u0026shy;phischen Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker*innen (Grup\u0026shy;pe \u003cspan style=\"color:DarkOrange\"\u003e▲\u003c/span\u003e)"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -5372,7 +4939,7 @@
  							"name": "dec7_q2",
  							"type": "radio",
  							"label": {
- 								"de": "Ein deutscher Land- oder Bundestagspo\u0026shy;li\u0026shy;tiker (Grup\u0026shy;pe \u003cspan style=\"color:MediumVioletRed\"\u003e▣\u003c/span\u003e)"
+ 								"de": "Ein deutscher Land- oder Bundestagspo\u0026shy;li\u0026shy;tiker*innen (Grup\u0026shy;pe \u003cspan style=\"color:MediumVioletRed\"\u003e▣\u003c/span\u003e)"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -5425,7 +4992,7 @@
  							"name": "dec7_q2",
  							"type": "radio",
  							"label": {
- 								"de": "Ein repräsentativer deutscher Bürger (Grup\u0026shy;pe \u003cspan style=\"color:ForestGreen\"\u003e◉\u003c/span\u003e)"
+ 								"de": "Ein repräsentativer deutscher Bürger*innen (Grup\u0026shy;pe \u003cspan style=\"color:DarkOrchid\"\u003e◉\u003c/span\u003e)"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -5478,7 +5045,7 @@
  							"name": "dec7_q2",
  							"type": "radio",
  							"label": {
- 								"de": "Ein deutscher Bürger mit gleichen de\u0026shy;mo\u0026shy;gra\u0026shy;phischen Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker (Grup\u0026shy;pe \u003cspan style=\"color:DarkOrange\"\u003e▲\u003c/span\u003e)"
+ 								"de": "Ein deutscher Bürger*innen mit gleichen de\u0026shy;mo\u0026shy;gra\u0026shy;phischen Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker*innen (Grup\u0026shy;pe \u003cspan style=\"color:DarkOrange\"\u003e▲\u003c/span\u003e)"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -5619,7 +5186,7 @@
  							"name": "dec8_q1",
  							"type": "radio",
  							"label": {
- 								"de": "Ein deutscher Land- oder Bundestagspo\u0026shy;li\u0026shy;tiker (Grup\u0026shy;pe \u003cspan style=\"color:MediumVioletRed\"\u003e▣\u003c/span\u003e)"
+ 								"de": "Ein deutscher Land- oder Bundestagspo\u0026shy;li\u0026shy;tiker*innen (Grup\u0026shy;pe \u003cspan style=\"color:MediumVioletRed\"\u003e▣\u003c/span\u003e)"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -5672,7 +5239,7 @@
  							"name": "dec8_q1",
  							"type": "radio",
  							"label": {
- 								"de": "Ein repräsentativer deutscher Bürger (Grup\u0026shy;pe \u003cspan style=\"color:ForestGreen\"\u003e◉\u003c/span\u003e)"
+ 								"de": "Ein repräsentativer deutscher Bürger*innen (Grup\u0026shy;pe \u003cspan style=\"color:DarkOrchid\"\u003e◉\u003c/span\u003e)"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -5725,7 +5292,7 @@
  							"name": "dec8_q1",
  							"type": "radio",
  							"label": {
- 								"de": "Ein deutscher Bürger mit gleichen de\u0026shy;mo\u0026shy;gra\u0026shy;phischen Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker (Grup\u0026shy;pe \u003cspan style=\"color:DarkOrange\"\u003e▲\u003c/span\u003e)"
+ 								"de": "Ein deutscher Bürger*innen mit gleichen de\u0026shy;mo\u0026shy;gra\u0026shy;phischen Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker*innen (Grup\u0026shy;pe \u003cspan style=\"color:DarkOrange\"\u003e▲\u003c/span\u003e)"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -5792,7 +5359,7 @@
  							"name": "dec8_q2",
  							"type": "radio",
  							"label": {
- 								"de": "Ein deutscher Land- oder Bundestagspo\u0026shy;li\u0026shy;tiker (Grup\u0026shy;pe \u003cspan style=\"color:MediumVioletRed\"\u003e▣\u003c/span\u003e)"
+ 								"de": "Ein deutscher Land- oder Bundestagspo\u0026shy;li\u0026shy;tiker*innen (Grup\u0026shy;pe \u003cspan style=\"color:MediumVioletRed\"\u003e▣\u003c/span\u003e)"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -5845,7 +5412,7 @@
  							"name": "dec8_q2",
  							"type": "radio",
  							"label": {
- 								"de": "Ein repräsentativer deutscher Bürger (Grup\u0026shy;pe \u003cspan style=\"color:ForestGreen\"\u003e◉\u003c/span\u003e)"
+ 								"de": "Ein repräsentativer deutscher Bürger*innen (Grup\u0026shy;pe \u003cspan style=\"color:DarkOrchid\"\u003e◉\u003c/span\u003e)"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -5898,7 +5465,7 @@
  							"name": "dec8_q2",
  							"type": "radio",
  							"label": {
- 								"de": "Ein deutscher Bürger mit gleichen de\u0026shy;mo\u0026shy;gra\u0026shy;phischen Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker (Grup\u0026shy;pe \u003cspan style=\"color:DarkOrange\"\u003e▲\u003c/span\u003e)"
+ 								"de": "Ein deutscher Bürger*innen mit gleichen de\u0026shy;mo\u0026shy;gra\u0026shy;phischen Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker*innen (Grup\u0026shy;pe \u003cspan style=\"color:DarkOrange\"\u003e▲\u003c/span\u003e)"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -6025,7 +5592,7 @@
  							"description": {
  								"de": "\n\t\t\t\t\t\u003cp style=\"margin-bottom: 0.5rem\"\u003e\n\t\t\t\t\t\t\u003cb\u003e1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tWieviele Leute stufen Stif\u0026shy;tung A als mittel ein? \n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
  							},
- 							"col_span": 10,
+ 							"col_span": 8,
  							"col_span_label": 1
  						},
  						{
@@ -6038,7 +5605,7 @@
  							"col_span_label": 1,
  							"col_span_control": 1,
  							"validator": "must",
- 							"value_radio": "est0",
+ 							"value_radio": "est_0",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -6067,7 +5634,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"value_radio": "est1",
+ 							"value_radio": "est_1",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -6096,7 +5663,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"value_radio": "est2",
+ 							"value_radio": "est_2",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -6125,7 +5692,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"value_radio": "est3",
+ 							"value_radio": "est_3",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -6154,7 +5721,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"value_radio": "est4",
+ 							"value_radio": "est_4",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -6183,7 +5750,45 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"value_radio": "est5",
+ 							"value_radio": "est_5",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\n\t\t\t\t\t\u003cp style=\"margin-bottom: 0.5rem\"\u003e\n\t\t\t\t\t\t\u003cb\u003e2.\u003c/b\u003e\n\t\t\t\t\t\tWelche Stif\u0026shy;tung wird von drei Leuten als am besten eingestuft?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
+ 							},
+ 							"col_span": 8,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "q_found_compr_b",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "\u0026nbsp;\u0026nbsp;A"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"validator": "must",
+ 							"value_radio": "est_a",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -6205,26 +5810,24 @@
  						},
  						{
  							"name": "q_found_compr_b",
- 							"type": "text",
- 							"max_chars": 3,
+ 							"type": "radio",
  							"label": {
- 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003e2.\u003c/b\u003e  \n\t\t\t\t\tWelche Stif\u0026shy;tung wird von drei Leuten als am besten eingestuft? \n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\u0026nbsp;\u0026nbsp;B"
  							},
- 							"suffix": {
- 								"de": "[A, B, C]"
- 							},
- 							"col_span": 6,
- 							"col_span_label": 5,
- 							"col_span_control": 2,
- 							"validator": "must",
- 							"style": {
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "est_b",
+ 							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "1.6rem 0 0 0"
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "end"
  									},
- 									"grid_item_style": {},
- 									"text_style": {}
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
  								},
  								"mobile": {
  									"grid_container_style": {},
@@ -6232,15 +5835,28 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q_found_compr_b",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "\u0026nbsp;\u0026nbsp;C"
  							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "est_c",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 1.0rem 0 0"
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "end"
  									},
- 									"grid_item_style": {},
- 									"text_style": {}
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
  								},
  								"mobile": {
  									"grid_container_style": {},
@@ -6302,7 +5918,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\u003cul\u003e\n\t\t\t\t\u003cli\u003e\n\t\t\t\tEine repräsentative Grup\u0026shy;pe deutscher Land- und Bundestagspo\u0026shy;li\u0026shy;tiker\u003cbr\u003e(Grup\u0026shy;pe \u003cspan style=\"color:MediumVioletRed\"\u003e▣\u003c/span\u003e).\n\t\t\t\t\u003c/li\u003e\n\t\t\t\t\u003c/ul\u003e\n\t\t\t\t\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\u003cul\u003e\n\t\t\t\t\u003cli\u003e\n\t\t\t\tEine repräsentative Grup\u0026shy;pe deutscher Land- und Bundestagspo\u0026shy;li\u0026shy;tiker*innen\u003cbr\u003e(Grup\u0026shy;pe \u003cspan style=\"color:MediumVioletRed\"\u003e▣\u003c/span\u003e).\n\t\t\t\t\u003c/li\u003e\n\t\t\t\t\u003c/ul\u003e\n\t\t\t\t\n\t\t\t\t"
  							},
  							"col_span_label": 1
  						}
@@ -6316,7 +5932,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\u003cul\u003e\n\t\t\t\t\u003cli\u003e\n\t\t\t\tEine repräsentative Grup\u0026shy;pe deutscher Bürger\u003cbr\u003e(Grup\u0026shy;pe \u003cspan style=\"color:ForestGreen\"\u003e◉\u003c/span\u003e).\n\t\t\t\t\u003c/li\u003e\n\t\t\t\t\u003c/ul\u003e\n\t\t\t\t\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\u003cul\u003e\n\t\t\t\t\u003cli\u003e\n\t\t\t\tEine repräsentative Grup\u0026shy;pe deutscher Bürger*innen\u003cbr\u003e(Grup\u0026shy;pe \u003cspan style=\"color:DarkOrchid\"\u003e◉\u003c/span\u003e).\n\t\t\t\t\u003c/li\u003e\n\t\t\t\t\u003c/ul\u003e\n\t\t\t\t\n\t\t\t\t"
  							},
  							"col_span_label": 1
  						}
@@ -6330,7 +5946,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\u003cul\u003e\n\t\t\t\t\u003cli\u003e\n\t\t\t\tEine Grup\u0026shy;pe deutscher Bürger, \n\t\t\t\tdie \u003ci\u003ekeine Po\u0026shy;li\u0026shy;tiker\u003c/i\u003e sind, \n\t\t\t\tdie aber die \u003ci\u003egleichen de\u0026shy;mo\u0026shy;gra\u0026shy;phischen Eigenschaften wie Po\u0026shy;li\u0026shy;tiker\u003c/i\u003e haben. \n\t\t\t\tDas heißt, diese Grup\u0026shy;pe besteht z. B. zu 70\u0026nbsp;% aus Männern, \n\t\t\t\t3\u0026nbsp;% der Mit\u0026shy;glieder sind unter 30\u0026nbsp;Jahre alt, \n\t\t\t\t87\u0026nbsp;% der Mit\u0026shy;glieder haben einen Hoch\u0026shy;schul\u0026shy;abschluss \n\t\t\t\tund 17\u0026nbsp;% sind alleinstehend\u003cbr\u003e\n\t\t\t\t(Grup\u0026shy;pe \u003cspan style=\"color:DarkOrange\"\u003e▲\u003c/span\u003e).\n\t\t\t\t\u003c/li\u003e\n\t\t\t\t\u003c/ul\u003e\n\t\t\t\t\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\u003cul\u003e\n\t\t\t\t\u003cli\u003e\n\t\t\t\tEine Grup\u0026shy;pe deutscher Bürger*innen, \n\t\t\t\tdie \u003ci\u003ekeine Po\u0026shy;li\u0026shy;tiker*innen\u003c/i\u003e sind, \n\t\t\t\tdie aber die \u003ci\u003egleichen de\u0026shy;mo\u0026shy;gra\u0026shy;phischen Eigenschaften wie Po\u0026shy;li\u0026shy;tiker*innen\u003c/i\u003e haben. \n\t\t\t\tDas heißt, diese Grup\u0026shy;pe besteht z. B. zu 70\u0026nbsp;% aus Männern, \n\t\t\t\t3\u0026nbsp;% der Mit\u0026shy;glieder sind unter 30\u0026nbsp;Jahre alt, \n\t\t\t\t87\u0026nbsp;% der Mit\u0026shy;glieder haben einen Hoch\u0026shy;schul\u0026shy;abschluss \n\t\t\t\tund 17\u0026nbsp;% sind alleinstehend\u003cbr\u003e\n\t\t\t\t(Grup\u0026shy;pe \u003cspan style=\"color:DarkOrange\"\u003e▲\u003c/span\u003e).\n\t\t\t\t\u003c/li\u003e\n\t\t\t\t\u003c/ul\u003e\n\t\t\t\t\n\t\t\t\t"
  							},
  							"col_span_label": 1
  						}
@@ -6414,7 +6030,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\t\u003cp style='padding: 0;margin-top: 0.25rem;margin-bottom: 0.6rem;'\u003e\n\t\t\t\t\t\t\u003c!-- 1 --\u003e\n\t\t\t\t\t\t\u003c!-- \u003cb\u003e Frage [groupID].\u003c/b\u003e \u003cbr\u003e --\u003e\n\t\t\t\t\t\t\u003c!-- \u003cb\u003e Frage:\u003c/b\u003e \u003cbr\u003e --\u003e\n\t\t\t\t\t\t\n\tWenn die Präferenzen der fünf Personen wie oben gegeben sind: \u003cbr\u003e\n\tWas glauben Sie, wie haben sich die 10 zufällig ausgewählten\n\t    deutschen Po\u0026shy;li\u0026shy;tiker aus Grup\u0026shy;pe\u0026nbsp;\u003cspan style=\"color:MediumVioletRed\"\u003e▣\u003c/span\u003e entschieden (deutsche Land- und Bundestagspo\u0026shy;li\u0026shy;tiker)?\n\t \n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp style='padding: 0;margin-top: 0.25rem;margin-bottom: 0.6rem;'\u003e\n\t\t\t\t\t\t\u003c!-- 1 --\u003e\n\t\t\t\t\t\t\u003c!-- \u003cb\u003e Frage [groupID].\u003c/b\u003e \u003cbr\u003e --\u003e\n\t\t\t\t\t\t\u003c!-- \u003cb\u003e Frage:\u003c/b\u003e \u003cbr\u003e --\u003e\n\t\t\t\t\t\t\n\tWenn die Präferenzen der fünf Personen wie oben gegeben sind: \u003cbr\u003e\n\tWas glauben Sie, wie haben sich die 10 zufällig ausgewählten\n\t    deutschen Po\u0026shy;li\u0026shy;tiker*innen aus Grup\u0026shy;pe\u0026nbsp;\u003cspan style=\"color:MediumVioletRed\"\u003e▣\u003c/span\u003e entschieden (deutsche Land- und Bundestagspo\u0026shy;li\u0026shy;tiker*innen)?\n\t \n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
  							},
  							"col_span": 24,
  							"col_span_label": 1
@@ -6544,7 +6160,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\t\u003cp style='padding: 0;margin-top: 0.25rem;margin-bottom: 0.6rem;'\u003e\n\t\t\t\t\t\t\u003c!-- 2 --\u003e\n\t\t\t\t\t\t\u003c!-- \u003cb\u003e Frage [groupID].\u003c/b\u003e \u003cbr\u003e --\u003e\n\t\t\t\t\t\t\u003c!-- \u003cb\u003e Frage:\u003c/b\u003e \u003cbr\u003e --\u003e\n\t\t\t\t\t\t\n\tWenn die Präferenzen der fünf Personen wie oben gegeben sind: \u003cbr\u003e\n\tWas glauben Sie, wie haben sich die 10 zufällig ausgewählten\n\t    deutschen Bürger Grup\u0026shy;pe\u0026nbsp;\u003cspan style=\"color:ForestGreen\"\u003e◉\u003c/span\u003e entschieden (repräsentative deutsche Bürger)?\n\t \n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp style='padding: 0;margin-top: 0.25rem;margin-bottom: 0.6rem;'\u003e\n\t\t\t\t\t\t\u003c!-- 2 --\u003e\n\t\t\t\t\t\t\u003c!-- \u003cb\u003e Frage [groupID].\u003c/b\u003e \u003cbr\u003e --\u003e\n\t\t\t\t\t\t\u003c!-- \u003cb\u003e Frage:\u003c/b\u003e \u003cbr\u003e --\u003e\n\t\t\t\t\t\t\n\tWenn die Präferenzen der fünf Personen wie oben gegeben sind: \u003cbr\u003e\n\tWas glauben Sie, wie haben sich die 10 zufällig ausgewählten\n\t    deutschen Bürger*innen Grup\u0026shy;pe\u0026nbsp;\u003cspan style=\"color:DarkOrchid\"\u003e◉\u003c/span\u003e entschieden (repräsentative deutsche Bürger*innen)?\n\t \n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
  							},
  							"col_span": 24,
  							"col_span_label": 1
@@ -6674,7 +6290,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\t\u003cp style='padding: 0;margin-top: 0.25rem;margin-bottom: 0.6rem;'\u003e\n\t\t\t\t\t\t\u003c!-- 3 --\u003e\n\t\t\t\t\t\t\u003c!-- \u003cb\u003e Frage [groupID].\u003c/b\u003e \u003cbr\u003e --\u003e\n\t\t\t\t\t\t\u003c!-- \u003cb\u003e Frage:\u003c/b\u003e \u003cbr\u003e --\u003e\n\t\t\t\t\t\t\n\tWenn die Präferenzen der fünf Personen wie oben gegeben sind: \u003cbr\u003e\n\tWas glauben Sie, wie haben sich die 10 zufällig ausgewählten\n\t    deutschen Bürger aus Grup\u0026shy;pe\u0026nbsp;\u003cspan style=\"color:DarkOrange\"\u003e▲\u003c/span\u003e entschieden \n\t\t(deutsche Bürger mit gleichen de\u0026shy;mo\u0026shy;gra\u0026shy;phischen Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker)?\n\t \n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp style='padding: 0;margin-top: 0.25rem;margin-bottom: 0.6rem;'\u003e\n\t\t\t\t\t\t\u003c!-- 3 --\u003e\n\t\t\t\t\t\t\u003c!-- \u003cb\u003e Frage [groupID].\u003c/b\u003e \u003cbr\u003e --\u003e\n\t\t\t\t\t\t\u003c!-- \u003cb\u003e Frage:\u003c/b\u003e \u003cbr\u003e --\u003e\n\t\t\t\t\t\t\n\tWenn die Präferenzen der fünf Personen wie oben gegeben sind: \u003cbr\u003e\n\tWas glauben Sie, wie haben sich die 10 zufällig ausgewählten\n\t    deutschen Bürger*innen aus Grup\u0026shy;pe\u0026nbsp;\u003cspan style=\"color:DarkOrange\"\u003e▲\u003c/span\u003e entschieden \n\t\t(deutsche Bürger*innen mit gleichen de\u0026shy;mo\u0026shy;gra\u0026shy;phischen Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker*innen)?\n\t \n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
  							},
  							"col_span": 24,
  							"col_span_label": 1
@@ -6860,7 +6476,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\t\u003cp style='padding: 0;margin-top: 0.25rem;margin-bottom: 0.6rem;'\u003e\n\t\t\t\t\t\t\u003c!-- 4 --\u003e\n\t\t\t\t\t\t\u003c!-- \u003cb\u003e Frage [groupID].\u003c/b\u003e \u003cbr\u003e --\u003e\n\t\t\t\t\t\t\u003c!-- \u003cb\u003e Frage:\u003c/b\u003e \u003cbr\u003e --\u003e\n\t\t\t\t\t\t\n\tWenn die Präferenzen der fünf Personen wie oben gegeben sind: \u003cbr\u003e\n\tWas glauben Sie, wie haben sich die 10 zufällig ausgewählten\n\t    deutschen Po\u0026shy;li\u0026shy;tiker aus Grup\u0026shy;pe\u0026nbsp;\u003cspan style=\"color:MediumVioletRed\"\u003e▣\u003c/span\u003e entschieden (deutsche Land- und Bundestagspo\u0026shy;li\u0026shy;tiker)?\n\t \n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp style='padding: 0;margin-top: 0.25rem;margin-bottom: 0.6rem;'\u003e\n\t\t\t\t\t\t\u003c!-- 4 --\u003e\n\t\t\t\t\t\t\u003c!-- \u003cb\u003e Frage [groupID].\u003c/b\u003e \u003cbr\u003e --\u003e\n\t\t\t\t\t\t\u003c!-- \u003cb\u003e Frage:\u003c/b\u003e \u003cbr\u003e --\u003e\n\t\t\t\t\t\t\n\tWenn die Präferenzen der fünf Personen wie oben gegeben sind: \u003cbr\u003e\n\tWas glauben Sie, wie haben sich die 10 zufällig ausgewählten\n\t    deutschen Po\u0026shy;li\u0026shy;tiker*innen aus Grup\u0026shy;pe\u0026nbsp;\u003cspan style=\"color:MediumVioletRed\"\u003e▣\u003c/span\u003e entschieden (deutsche Land- und Bundestagspo\u0026shy;li\u0026shy;tiker*innen)?\n\t \n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
  							},
  							"col_span": 24,
  							"col_span_label": 1
@@ -6990,7 +6606,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\t\u003cp style='padding: 0;margin-top: 0.25rem;margin-bottom: 0.6rem;'\u003e\n\t\t\t\t\t\t\u003c!-- 5 --\u003e\n\t\t\t\t\t\t\u003c!-- \u003cb\u003e Frage [groupID].\u003c/b\u003e \u003cbr\u003e --\u003e\n\t\t\t\t\t\t\u003c!-- \u003cb\u003e Frage:\u003c/b\u003e \u003cbr\u003e --\u003e\n\t\t\t\t\t\t\n\tWenn die Präferenzen der fünf Personen wie oben gegeben sind: \u003cbr\u003e\n\tWas glauben Sie, wie haben sich die 10 zufällig ausgewählten\n\t    deutschen Bürger Grup\u0026shy;pe\u0026nbsp;\u003cspan style=\"color:ForestGreen\"\u003e◉\u003c/span\u003e entschieden (repräsentative deutsche Bürger)?\n\t \n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp style='padding: 0;margin-top: 0.25rem;margin-bottom: 0.6rem;'\u003e\n\t\t\t\t\t\t\u003c!-- 5 --\u003e\n\t\t\t\t\t\t\u003c!-- \u003cb\u003e Frage [groupID].\u003c/b\u003e \u003cbr\u003e --\u003e\n\t\t\t\t\t\t\u003c!-- \u003cb\u003e Frage:\u003c/b\u003e \u003cbr\u003e --\u003e\n\t\t\t\t\t\t\n\tWenn die Präferenzen der fünf Personen wie oben gegeben sind: \u003cbr\u003e\n\tWas glauben Sie, wie haben sich die 10 zufällig ausgewählten\n\t    deutschen Bürger*innen Grup\u0026shy;pe\u0026nbsp;\u003cspan style=\"color:DarkOrchid\"\u003e◉\u003c/span\u003e entschieden (repräsentative deutsche Bürger*innen)?\n\t \n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
  							},
  							"col_span": 24,
  							"col_span_label": 1
@@ -7120,7 +6736,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\t\u003cp style='padding: 0;margin-top: 0.25rem;margin-bottom: 0.6rem;'\u003e\n\t\t\t\t\t\t\u003c!-- 6 --\u003e\n\t\t\t\t\t\t\u003c!-- \u003cb\u003e Frage [groupID].\u003c/b\u003e \u003cbr\u003e --\u003e\n\t\t\t\t\t\t\u003c!-- \u003cb\u003e Frage:\u003c/b\u003e \u003cbr\u003e --\u003e\n\t\t\t\t\t\t\n\tWenn die Präferenzen der fünf Personen wie oben gegeben sind: \u003cbr\u003e\n\tWas glauben Sie, wie haben sich die 10 zufällig ausgewählten\n\t    deutschen Bürger aus Grup\u0026shy;pe\u0026nbsp;\u003cspan style=\"color:DarkOrange\"\u003e▲\u003c/span\u003e entschieden \n\t\t(deutsche Bürger mit gleichen de\u0026shy;mo\u0026shy;gra\u0026shy;phischen Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker)?\n\t \n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp style='padding: 0;margin-top: 0.25rem;margin-bottom: 0.6rem;'\u003e\n\t\t\t\t\t\t\u003c!-- 6 --\u003e\n\t\t\t\t\t\t\u003c!-- \u003cb\u003e Frage [groupID].\u003c/b\u003e \u003cbr\u003e --\u003e\n\t\t\t\t\t\t\u003c!-- \u003cb\u003e Frage:\u003c/b\u003e \u003cbr\u003e --\u003e\n\t\t\t\t\t\t\n\tWenn die Präferenzen der fünf Personen wie oben gegeben sind: \u003cbr\u003e\n\tWas glauben Sie, wie haben sich die 10 zufällig ausgewählten\n\t    deutschen Bürger*innen aus Grup\u0026shy;pe\u0026nbsp;\u003cspan style=\"color:DarkOrange\"\u003e▲\u003c/span\u003e entschieden \n\t\t(deutsche Bürger*innen mit gleichen de\u0026shy;mo\u0026shy;gra\u0026shy;phischen Eigenschaften wie die Po\u0026shy;li\u0026shy;tiker*innen)?\n\t \n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
  							},
  							"col_span": 24,
  							"col_span_label": 1

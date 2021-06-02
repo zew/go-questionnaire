@@ -43,7 +43,15 @@ func main() {
 
 //                 type    page    inpName  value
 var presets = map[string]map[int]map[string]string{
+	"pat1": {
+		9: {
+			"q17": "citizenshipyes",
+		},
+	},
 	"pat2": {
+		1: {
+			"q17": "citizenshipyes",
+		},
 		15: {
 			"part2_q1_q1": "3",
 			"part2_q1_q2": "3",

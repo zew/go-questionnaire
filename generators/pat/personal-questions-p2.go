@@ -286,9 +286,9 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 				inp.ColSpan = 1
 				inp.Desc = trl.S{
 					"de": fmt.Sprintf(`
-					</p>
-					<b>Frage %v.</b>
-					Mit welcher im deutschen Bundestag vertretenen Partei identifizieren Sie sich am ehesten? 
+					<p style="margin-bottom: 1.05rem">
+						<b>Frage %v.</b>
+						Mit welcher im deutschen Bundestag vertretenen Partei identifizieren Sie sich am ehesten? 
 					</p>
 				`, vE.NumberingQuestions+6),
 				}

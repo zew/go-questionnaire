@@ -19,7 +19,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "5d5c729e209e70edc8e12c2dbee9668ae35690b4a4c2b2484fa64b1800696755",
+ 	"md_5": "2adbff6408ba429afcf13fcce1cf44aeb50e43e18c3545ec9c9c2ffdca60577a",
  	"lang_codes": [
  		"de"
  	],
@@ -1171,7 +1171,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 7.\u003c/b\u003e\n\t\t\t\t\tMit welcher im deutschen Bundestag vertretenen Partei identifizieren Sie sich am ehesten? \n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp style=\"margin-bottom: 1.05rem\"\u003e\n\t\t\t\t\t\t\u003cb\u003eFrage 7.\u003c/b\u003e\n\t\t\t\t\t\tMit welcher im deutschen Bundestag vertretenen Partei identifizieren Sie sich am ehesten? \n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1

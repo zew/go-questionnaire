@@ -234,13 +234,11 @@ func init() {
 
 	// q17
 	validators["citizenshipyes"] = func(q *QuestionnaireT, inp *inputT) error {
-
 		if inp.Response != "" && inp.Response != "citizenshipyes" {
 			err1 := ErrorForward{markDownPath: "must-german-citizen.md"}
 			err := errors.Wrap(err1, "Dt. Staatsbürger erforderl")
 			return err
 		}
-
 		return nil
 	}
 

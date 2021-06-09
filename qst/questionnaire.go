@@ -214,7 +214,7 @@ type groupT struct {
 
 	Inputs []*inputT `json:"inputs,omitempty"`
 
-	// reordering / re-shuffled according to questionnaireT.ShufflingsMax
+	// reordering / re-shuffled according to questionnaireT.ShufflingVariations
 	// > 0 => group belongs to a set of groups,
 	// there can be multiple groups on one page
 	RandomizationGroup int `json:"randomization_group,omitempty"`
@@ -411,14 +411,17 @@ type QuestionnaireT struct {
 	CurrPage  int  `json:"curr_page,omitempty"`
 	HasErrors bool `json:"has_errors,omitempty"` // If any response is faulty; set by ValidateReponseData
 
-	// primitive permutation mechanism
+	// ShufflingVariations indicated how many different reshufflings occur;
+	// until repetition; primitive permutation mechanism;
 	// deterministically reordering / reshuffling a set of groups
 	// based on
 	//      * user id
-	// 		* page idx
-	// 		* groupT.RandomizationGroup
-	// 		* groupT.RandomizationID
-	ShufflingsMax int `json:"shufflings_max,omitempty"`
+	// 		* groupT.RandomizationSeed
+	//
+	// 	page idx is no longer relevant
+	//  groupT.RandomizationGroup is only to distinguish multiple groups per page
+	ShufflingVariations  int `json:"shuffling_variations,omitempty"`
+	ShufflingRepetitions int `json:"shuffling_repetitions,omitempty"` // if equals 0, then defaults to three; usually you dont have to touch this value
 
 	// PreventSkipForward - skipping back always possible,
 	// skipping forward is preventable
@@ -727,12 +730,9 @@ func (q *QuestionnaireT) RandomizeOrder(pageIdx int) []int {
 			if sgs[i].Idx == 0 {
 				sg := sgs[i].GroupID
 				// this must conform with ShufflesToCSV()
-				// q.ShufflingsMax instead of len(shufflingGroups[sg])
-				// order = order[0:len(shufflingGroups[sg])]
-				seed := q.UserIDInt() + sgs[i].RandomizationSeed
-				numberOfSufflings := q.UserIDInt() + sgs[i].RandomizationSeed
-				sh := shuffler.New(seed, q.ShufflingsMax, len(shufflingGroups[sg]))
-				newOrder := sh.Slice(numberOfSufflings) // adding sg breaks compatibility to  ShufflesToCSV()
+				seedShufflngs := q.UserIDInt() + sgs[i].RandomizationSeed
+				sh := shuffler.New(seedShufflngs, q.ShufflingVariations, len(shufflingGroups[sg]))
+				newOrder := sh.Slice(q.ShufflingRepetitions) // adding sg breaks compatibility to ShufflesToCSV()
 				if debugShuffling {
 					log.Printf("%v - seq %16s in order %16s - iter %v", sg, fmt.Sprint(shufflingGroups[sg]), fmt.Sprint(newOrder), pageIdx+sg)
 				}

@@ -2,158 +2,101 @@ package lgn
 
 import (
 	"fmt"
-	"html/template"
 	"log"
 	"net/http"
 
-	"github.com/go-playground/form"
+	"github.com/pbberlin/struc2frm"
 	"github.com/zew/go-questionnaire/lgn/shuffler"
 	"github.com/zew/util"
 )
 
-// ShufflesToCSV computes random but deterministic shufflings for usage outside the app
-func ShufflesToCSV(w http.ResponseWriter, r *http.Request) {
+type entryForm struct {
+	Group01     string `json:"group01,omitempty"    form:"subtype='fieldset',label='Range of User IDs'"`
+	UserIDStart int    `json:"start"`
+	UserIDStop  int    `json:"stop"`
 
-	errMsg := ""
+	Group02              string `json:"group02,omitempty"    form:"subtype='fieldset',label='Global settings'"`
+	ShufflingVariations  int    `json:"variations"           form:"label='Number distinct sufflings before repeat'" `                    // q.ShufflingVariations
+	ShufflingRepetitions int    `json:"repetitions"          form:"label='Number of shuffling operations',suffix='just keep default 3'"` // q.ShufflingRepetitions
 
-	_, ok := r.PostForm["token"]
-	if ok {
-		err := ValidateFormToken(r.PostForm.Get("token"))
-		if err != nil {
-			errMsg += fmt.Sprintf("Invalid request token: %v\n", err)
-		}
-	} else if !ok && r.Method == "POST" {
-		errMsg += fmt.Sprintf("Missing request token\n")
+	Group03           string `json:"group03,omitempty"       form:"subtype='fieldset',label='Randomization group'"`
+	RandomizationSeed int    `json:"randomization_seed"      form:"suffix='>0 - distinguish multiple shufflings on same page'"`
+	MaxElements       int    `json:"max_elements"            form:"suffix='number of elements to shuffle / randomize'" `
+}
+
+func (frm entryForm) Validate() (map[string]string, bool) {
+	errs := map[string]string{}
+	g1 := frm.UserIDStart == 0
+	if !g1 {
+		errs["Start"] = "Missing Start"
 	}
+	return errs, g1
+}
+
+// ShufflesToCSV computes random but deterministic shufflings for usage outside the app
+func ShufflesToCSV(w http.ResponseWriter, req *http.Request) {
 
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
-	src := `<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title>Shufflings</title>
-</head>
-<body>
 
-	This needs work
+	fmt.Fprintf(w, "<h3>Builtin shufflings aka randomization of groups on pages</h3>")
 
-	Instead of pages - we want the shuffling group
+	// getting a converter
+	s2f := struc2frm.New()   // or clone existing one
+	s2f.ShowHeadline = false // set options
+	s2f.Indent = 280
+	s2f.SetOptions("department", []string{"ub", "fm"}, []string{"UB", "FM"})
 
-	<form method="post" action="{{.SelfURL}}"  style="margin: 50px;"  >
-		
-		{{if gt (len .ErrMsg) 0 }} <p style='white-space: pre; color:#E22'>{{.ErrMsg}}</p>{{end}}
-		
-		Create Shufflings<br>
+	// init values - non-multiple
+	frm := entryForm{
+		UserIDStart: 10000,
+		UserIDStop:  10100,
 
-		                <input name="token"       type="hidden"   value="{{.Token}}" />
+		ShufflingVariations:  8,
+		ShufflingRepetitions: 3,
 
-		Variations:     <input name="variations"  type="text"     value="{{.DL.Variations}}"  placeholder="8" ><br>
-
-		<br>
-		Groups on page  (questions on page):  <br> 
-			Page 0 		<input name="grop[0]"      type="text"     value="{{index .DL.GroupsOnPage 0}}"   ><br>
-			Page 1 		<input name="grop[1]"      type="text"     value="{{index .DL.GroupsOnPage 1}}"   ><br>
-			Page 2 		<input name="grop[2]"      type="text"     value="{{index .DL.GroupsOnPage 2}}"   ><br>
-			Page 3 		<input name="grop[3]"      type="text"     value="{{index .DL.GroupsOnPage 3}}"   ><br>
-			Page 4 		<input name="grop[4]"      type="text"     value="{{index .DL.GroupsOnPage 4}}"   ><br>
-
-		<br>
-		User ID:<br>
-			Start 	    <input name="start"       type="text"     value="{{.DL.Start}}"><br>
-			Stop 	    <input name="stop"        type="text"     value="{{.DL.Stop}}" ><br>
-
-		<input type="submit"   name="submitclassic" accesskey="s"><br>
-
-		{{if  gt (len .List   ) 0 }} <p style='white-space: pre; color:#444'>{{.List   }}</p>{{end}}
-
-
-	</form>
-
-</body>
-</html>
-`
-	page := 5
-
-	type formEntryT struct {
-		Token string `json:"token"`
-
-		Variations    int    `json:"variations"`
-		GroupsOnPage  []int  `json:"grop"`
-		Start         int    `json:"start"`
-		Stop          int    `json:"stop"`
-		SubmitClassic string `json:"submitclassic"`
-	}
-	fe := formEntryT{}
-
-	//
-	// dec := for--mam.NewDecoder(&for--mam.DecoderOptions{TagName: "json"})
-	dec := form.NewDecoder()
-	dec.SetTagName("json") // recognizes and ignores ,omitempty
-	err := dec.Decode(&fe, r.Form)
-	if err != nil {
-		errMsg += fmt.Sprintf("Decoding error: %v\n", err)
-	}
-	log.Printf(util.IndentedDump(fe))
-
-	if fe.Variations == 0 {
-		fe.Variations = 6
+		RandomizationSeed: 1,
+		MaxElements:       3,
 	}
 
-	defaultV := 2
-	for len(fe.GroupsOnPage) < page {
-		fe.GroupsOnPage = append(fe.GroupsOnPage, defaultV)
-		defaultV++
+	// pulling in values from http request
+	populated, err := struc2frm.Decode(req, &frm)
+	if populated && err != nil {
+		s2f.AddError("global", fmt.Sprintf("cannot decode form: %v<br>\n <pre>%v</pre>", err, util.IndentedDump(req.Form)))
+		log.Printf("cannot decode form: %v<br>\n <pre>%v</pre>", err, util.IndentedDump(req.Form))
 	}
 
-	if fe.Start == 0 {
-		fe.Start = 1000
-	}
-	if fe.Stop == 0 {
-		fe.Stop = 1020
+	// init values - multiple
+	if !populated {
+		// n.a.
 	}
 
-	list := ""
+	errs, valid := frm.Validate()
 
-	/*
-		this needs to be made conform with
-		(q *QuestionnaireT) RandomizeOrder
-	*/
-	for i1 := fe.Start; i1 <= fe.Stop; i1++ {
-		for i2 := 0; i2 < page; i2++ {
-			grOP := fe.GroupsOnPage[i2]
-			// change to userID + shufflingGroup
-			seedAndNumberOfSufflings := i1 + i2
-			sh := shuffler.New(seedAndNumberOfSufflings, fe.Variations, grOP)
-			order := sh.Slice(seedAndNumberOfSufflings)
-			list += fmt.Sprintf("%5v\t%v\t%v\t%v\n", i1, i2, grOP, order)
+	if populated {
+		if !valid {
+			s2f.AddErrors(errs) // add errors only for a populated form
+		} else {
+			// further processing with valid form data
 		}
 	}
 
-	type dataT struct {
-		SelfURL string
-		Token   string
-
-		ErrMsg string
-		DL     formEntryT
-		List   string
-	}
-	data := dataT{
-		SelfURL: r.URL.Path,
-		Token:   FormToken(),
-		ErrMsg:  errMsg,
-		DL:      fe,
-		List:    list,
+	if !valid {
+		// render to HTML for user input / error correction
+		fmt.Fprint(w, s2f.Form(frm))
 	}
 
-	tpl := template.New("anyname.html")
-	tpl, err = tpl.Parse(src)
-	if err != nil {
-		fmt.Fprintf(w, "Error parsing inline template: %v", err)
+	//
+	// Keep this conform with
+	// (q *QuestionnaireT) RandomizeOrder()
+	fmt.Fprintf(w, "<pre>")
+	fmt.Fprintf(w, "%5v\t%v\t%v\n", "userID", "class", "[...]")
+	for userID := frm.UserIDStart; userID <= frm.UserIDStop; userID++ {
+		seedSufflngs := userID + frm.RandomizationSeed
+		sh := shuffler.New(seedSufflngs, frm.ShufflingVariations, frm.MaxElements)
+		order := sh.Slice(frm.ShufflingRepetitions)
+		class := seedSufflngs % frm.ShufflingVariations
+		fmt.Fprintf(w, "%5v\t%v\t%v\n", userID, class, order)
 	}
-
-	err = tpl.Execute(w, data)
-	if err != nil {
-		fmt.Fprintf(w, "Error executing inline template: %v", err)
-	}
+	fmt.Fprintf(w, "</pre>")
 
 }

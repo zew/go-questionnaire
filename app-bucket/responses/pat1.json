@@ -19,11 +19,11 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "797885f4f83dd80d649afdbae6aabae02c3dbf8d9be52787dca72a618c2271ca",
+ 	"md_5": "26e35cab700fca9146008d114c7772209a4cd2a6ac5b488979d551de9ff310a1",
  	"lang_codes": [
  		"de"
  	],
- 	"shufflings_max": 8,
+ 	"shuffling_variations": 8,
  	"allow_skip_forward": false,
  	"version_max": 16,
  	"assign_version": "round-robin",
@@ -3905,26 +3905,34 @@
  				},
  				{
  					"bottom_vspacers": 2,
- 					"columns": 1,
+ 					"columns": 4,
  					"inputs": [
  						{
  							"type": "textblock",
  							"description": {
  								"de": "\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 15.\u003c/b\u003e\n\t\t\t\t\tInwieweit sind Sie politisch aktiv (falls über\u0026shy;haupt)? \n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
- 							"col_span": 1,
+ 							"col_span": 4,
  							"col_span_label": 1
  						},
  						{
- 							"name": "q20",
- 							"type": "radio",
+ 							"type": "dyn-textblock",
+ 							"param": "q20",
+ 							"col_span": 4,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"dynamic_func": "ErrorProxy"
+ 						},
+ 						{
+ 							"name": "q20_inactive",
+ 							"type": "checkbox",
  							"label": {
  								"de": "Ich bin nicht politisch aktiv"
  							},
  							"col_span": 4,
  							"col_span_label": 1,
  							"col_span_control": 8,
- 							"validator": "mustRadioGroup",
+ 							"validator": "oneOfPrefixQ20",
  							"value_radio": "inactive",
  							"style_label": {
  								"desktop": {
@@ -3945,15 +3953,15 @@
  							}
  						},
  						{
- 							"name": "q20",
- 							"type": "radio",
+ 							"name": "q20_votesometimes",
+ 							"type": "checkbox",
  							"label": {
  								"de": "Ich wähle manchmal"
  							},
  							"col_span": 4,
  							"col_span_label": 1,
  							"col_span_control": 8,
- 							"validator": "mustRadioGroup",
+ 							"validator": "oneOfPrefixQ20",
  							"value_radio": "votesometimes",
  							"style_label": {
  								"desktop": {
@@ -3974,15 +3982,15 @@
  							}
  						},
  						{
- 							"name": "q20",
- 							"type": "radio",
+ 							"name": "q20_voteregular",
+ 							"type": "checkbox",
  							"label": {
  								"de": "Ich wähle regelmäßig"
  							},
  							"col_span": 4,
  							"col_span_label": 1,
  							"col_span_control": 8,
- 							"validator": "mustRadioGroup",
+ 							"validator": "oneOfPrefixQ20",
  							"value_radio": "voteregular",
  							"style_label": {
  								"desktop": {
@@ -4003,15 +4011,15 @@
  							}
  						},
  						{
- 							"name": "q20",
- 							"type": "radio",
+ 							"name": "q20_petitions",
+ 							"type": "checkbox",
  							"label": {
  								"de": "Ich engagiere mich aktiv für politische Themen (z.B. Stimmen sammeln/ bzw. Stimmabgabe für Petitionen)"
  							},
  							"col_span": 4,
  							"col_span_label": 1,
  							"col_span_control": 8,
- 							"validator": "mustRadioGroup",
+ 							"validator": "oneOfPrefixQ20",
  							"value_radio": "petitions",
  							"style_label": {
  								"desktop": {
@@ -4032,15 +4040,15 @@
  							}
  						},
  						{
- 							"name": "q20",
- 							"type": "radio",
+ 							"name": "q20_communal",
+ 							"type": "checkbox",
  							"label": {
  								"de": "Ich bin Mit\u0026shy;glied eines Parlaments oder einer Exekutive auf der Kommunalebene"
  							},
  							"col_span": 4,
  							"col_span_label": 1,
  							"col_span_control": 8,
- 							"validator": "mustRadioGroup",
+ 							"validator": "oneOfPrefixQ20",
  							"value_radio": "communal",
  							"style_label": {
  								"desktop": {
@@ -4061,15 +4069,15 @@
  							}
  						},
  						{
- 							"name": "q20",
- 							"type": "radio",
+ 							"name": "q20_state",
+ 							"type": "checkbox",
  							"label": {
  								"de": "Ich bin Mit\u0026shy;glied eines Parlaments oder einer Exekutive auf der Landesebene"
  							},
  							"col_span": 4,
  							"col_span_label": 1,
  							"col_span_control": 8,
- 							"validator": "mustRadioGroup",
+ 							"validator": "oneOfPrefixQ20",
  							"value_radio": "state",
  							"style_label": {
  								"desktop": {
@@ -4090,15 +4098,15 @@
  							}
  						},
  						{
- 							"name": "q20",
- 							"type": "radio",
+ 							"name": "q20_federal",
+ 							"type": "checkbox",
  							"label": {
  								"de": "Ich bin Mit\u0026shy;glied eines Parlaments oder einer Exekutive auf der Bundesebene"
  							},
  							"col_span": 4,
  							"col_span_label": 1,
  							"col_span_control": 8,
- 							"validator": "mustRadioGroup",
+ 							"validator": "oneOfPrefixQ20",
  							"value_radio": "federal",
  							"style_label": {
  								"desktop": {
@@ -4474,7 +4482,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 18.\u003c/b\u003e\n\t\t\t\t\tWie viel Geld verdienen Sie im Durchschnitt persönlich monatlich \n\t\t\t\t\tnach Abzug von Steuern und Sozialversi\u0026shy;cherungsbeiträgen? \n\t\t\t\t\tUnter durchschnittlichem Verdienst ist die Summe zu verstehen, \n\t\t\t\t\tdie sich aus Lohn, Gehalt, Einkommen aus selbstständiger Tätigkeit, \n\t\t\t\t\tRente oder Pension sowie Sozialleistungen ergibt.\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cb\u003eFrage 18.\u003c/b\u003e\n\n\t\t\t\t\t\u003c!--\n\t\t\t\t\tWie viel Geld verdienen Sie im Durchschnitt persönlich monatlich \n\t\t\t\t\tnach Abzug von Steuern und Sozialversi\u0026shy;cherungsbeiträgen? \n\t\t\t\t\tUnter durchschnittlichem Verdienst ist die Summe zu verstehen, \n\t\t\t\t\tdie sich aus Lohn, Gehalt, Einkommen aus selbstständiger Tätigkeit, \n\t\t\t\t\tRente oder Pension sowie Sozialleistungen ergibt.\n\t\t\t\t\t--\u003e\n\n\t\t\t\t\tWie hoch ist das monatliche Nettoeinkommen Ihres Haushalts insge\u0026shy;samt? \n\t\t\t\t\tDamit ist die Summe gemeint, \n\t\t\t\t\tdie sich aus Lohn, Gehalt, Einkommen aus selbständiger Tätigkeit, \n\t\t\t\t\tRente oder Pension jeweils \n\t\t\t\t\tnach Abzug der Steuern und Sozialversi\u0026shy;cherungsbeiträge ergibt. \n\t\t\t\t\t\n\t\t\t\t\tRechnen Sie bitte auch die Einkünfte \n\t\t\t\t\taus öffentlichen Beihilfen, \n\t\t\t\t\tEinkommen aus Vermietung, Verpachtung, \n\t\t\t\t\tWohngeld, Kindergeld und sonstige Einkünfte hinzu.\t\t\t\t\t\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 8,
  							"col_span_label": 1
@@ -4483,103 +4491,7 @@
  							"name": "q13",
  							"type": "radio",
  							"label": {
- 								"de": "0 Euro"
- 							},
- 							"col_span": 4,
- 							"col_span_label": 4,
- 							"col_span_control": 1,
- 							"validator": "mustRadioGroup",
- 							"value_radio": "null_euro",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 1.0rem 0 0"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "right"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": " 0 0.3rem 0 0"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q13",
- 							"type": "radio",
- 							"label": {
- 								"de": "bis unter 500 Euro"
- 							},
- 							"col_span": 4,
- 							"col_span_label": 4,
- 							"col_span_control": 1,
- 							"validator": "mustRadioGroup",
- 							"value_radio": "upto500",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 1.0rem 0 0"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "right"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": " 0 0.3rem 0 0"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q13",
- 							"type": "radio",
- 							"label": {
- 								"de": "500 bis unter 1.000 Euro"
- 							},
- 							"col_span": 4,
- 							"col_span_label": 4,
- 							"col_span_control": 1,
- 							"validator": "mustRadioGroup",
- 							"value_radio": "upto1000",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 1.0rem 0 0"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "right"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": " 0 0.3rem 0 0"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q13",
- 							"type": "radio",
- 							"label": {
- 								"de": "1.000 bis unter 1.500 Euro"
+ 								"de": "bis 1.500 Euro"
  							},
  							"col_span": 4,
  							"col_span_label": 4,
@@ -4611,39 +4523,7 @@
  							"name": "q13",
  							"type": "radio",
  							"label": {
- 								"de": "1.500 bis unter 2.000 Euro"
- 							},
- 							"col_span": 4,
- 							"col_span_label": 4,
- 							"col_span_control": 1,
- 							"validator": "mustRadioGroup",
- 							"value_radio": "upto2000",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 1.0rem 0 0"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "right"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": " 0 0.3rem 0 0"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q13",
- 							"type": "radio",
- 							"label": {
- 								"de": "2.000 bis unter 3.000 Euro"
+ 								"de": "1.500 bis unter 3.000 Euro"
  							},
  							"col_span": 4,
  							"col_span_label": 4,
@@ -4675,13 +4555,13 @@
  							"name": "q13",
  							"type": "radio",
  							"label": {
- 								"de": "3.000 bis unter 4.000 Euro"
+ 								"de": "3.000 bis unter 4.500 Euro"
  							},
  							"col_span": 4,
  							"col_span_label": 4,
  							"col_span_control": 1,
  							"validator": "mustRadioGroup",
- 							"value_radio": "upto4000",
+ 							"value_radio": "upto4500",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -4707,13 +4587,13 @@
  							"name": "q13",
  							"type": "radio",
  							"label": {
- 								"de": "4.000 bis unter 5.000 Euro"
+ 								"de": "4.500 bis unter 6.000 Euro"
  							},
  							"col_span": 4,
  							"col_span_label": 4,
  							"col_span_control": 1,
  							"validator": "mustRadioGroup",
- 							"value_radio": "upto5000",
+ 							"value_radio": "upto6000",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -4739,13 +4619,13 @@
  							"name": "q13",
  							"type": "radio",
  							"label": {
- 								"de": "5.000 bis unter 10.000 Euro"
+ 								"de": "6.000 bis unter 7.500 Euro"
  							},
  							"col_span": 4,
  							"col_span_label": 4,
  							"col_span_control": 1,
  							"validator": "mustRadioGroup",
- 							"value_radio": "upto10000",
+ 							"value_radio": "upto7500",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -4771,13 +4651,13 @@
  							"name": "q13",
  							"type": "radio",
  							"label": {
- 								"de": "Mehr als 10.000 Euro"
+ 								"de": "Mehr als 7.500 Euro"
  							},
  							"col_span": 4,
  							"col_span_label": 4,
  							"col_span_control": 1,
  							"validator": "mustRadioGroup",
- 							"value_radio": "over10000",
+ 							"value_radio": "over7500",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},

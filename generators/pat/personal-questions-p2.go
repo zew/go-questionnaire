@@ -19,9 +19,11 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 
 	validatorInput := ""
 	validatorRadio := ""
+	validatorActivity := ""
 	if vE.AllMandatory {
 		validatorInput = "must"
 		validatorRadio = "mustRadioGroup"
+		validatorActivity = "oneOfPrefixQ20"
 	}
 
 	{
@@ -326,7 +328,6 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 					rad.Label = lbl
 					rad.StyleLbl = lblStyleRight
 				}
-
 			}
 
 		}
@@ -335,12 +336,12 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 		//
 		{
 			gr := page.AddGroup()
-			gr.Cols = 1
+			gr.Cols = 4
 			gr.BottomVSpacers = 2
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				inp.ColSpan = 1
+				inp.ColSpan = 4
 				inp.Desc = trl.S{
 					"de": fmt.Sprintf(`
 					<br>
@@ -350,6 +351,15 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 					</p>
 				`, vE.NumberingQuestions+7),
 				}
+			}
+			{
+				inp := gr.AddInput()
+				inp.Type = "dyn-textblock"
+				inp.ColSpan = 4
+				inp.ColSpanControl = 1
+				inp.ColSpanLabel = 1
+				inp.DynamicFunc = "ErrorProxy"
+				inp.Param = "q20"
 			}
 			keyVals := []string{
 				"inactive;;Ich bin nicht politisch aktiv",
@@ -366,9 +376,9 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 				val := sp[1]
 				lbl := trl.S{"de": val}
 				rad := gr.AddInput()
-				rad.Type = "radio"
-				rad.Name = "q20"
-				rad.Validator = validatorRadio
+				rad.Type = "checkbox"
+				rad.Name = "q20_" + key
+				rad.Validator = validatorActivity
 				rad.ValueRadio = key
 				rad.ColSpan = 4
 				// rad.ColSpanLabel = 4
@@ -376,7 +386,6 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 				rad.Label = lbl
 				rad.ControlFirst()
 				// rad.StyleLbl = lblStyleRight
-
 			}
 
 		}
@@ -487,34 +496,39 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 					"de": fmt.Sprintf(`
 					</p>
 					<b>Frage %v.</b>
+
+					<!--
 					Wie viel Geld verdienen Sie im Durchschnitt persönlich monatlich 
 					nach Abzug von Steuern und Sozialversicherungsbeiträgen? 
 					Unter durchschnittlichem Verdienst ist die Summe zu verstehen, 
 					die sich aus Lohn, Gehalt, Einkommen aus selbstständiger Tätigkeit, 
 					Rente oder Pension sowie Sozialleistungen ergibt.
+					-->
+
+					Wie hoch ist das monatliche Nettoeinkommen Ihres Haushalts insgesamt? 
+					Damit ist die Summe gemeint, 
+					die sich aus Lohn, Gehalt, Einkommen aus selbständiger Tätigkeit, 
+					Rente oder Pension jeweils 
+					nach Abzug der Steuern und Sozialversicherungsbeiträge ergibt. 
+					
+					Rechnen Sie bitte auch die Einkünfte 
+					aus öffentlichen Beihilfen, 
+					Einkommen aus Vermietung, Verpachtung, 
+					Wohngeld, Kindergeld und sonstige Einkünfte hinzu.					
 					</p>
 				`, vE.NumberingQuestions+10),
 				}
 			}
 
 			keyVals := []string{
-				"null_euro:0 Euro", // '0' would be empty
-				"upto500:bis unter 500 Euro",
-				"upto1000:500 bis unter 1.000 Euro",
-				"upto1500:1.000 bis unter 1.500 Euro",
-				"upto2000:1.500 bis unter 2.000 Euro",
-				"upto3000:2.000 bis unter 3.000 Euro",
-				"upto4000:3.000 bis unter 4.000 Euro",
-				"upto5000:4.000 bis unter 5.000 Euro",
+				// "null_euro:0 Euro", // '0' would be empty
+				"upto1500:bis 1.500 Euro",
+				"upto3000:1.500 bis unter 3.000 Euro",
+				"upto4500:3.000 bis unter 4.500 Euro",
+				"upto6000:4.500 bis unter 6.000 Euro",
+				"upto7500:6.000 bis unter 7.500 Euro",
 
-				// "upto6000:5.000 bis unter 6.000 Euro",
-				// "upto7000:6.000 bis unter 7.000 Euro",
-				// "upto8000:7.000 bis unter 8.000 Euro",
-				// "upto9000:8.000 bis unter 9.000 Euro",
-				// "upto10000:9.000 bis unter 10.000 Euro",
-				"upto10000:5.000 bis unter 10.000 Euro",
-
-				"over10000:Mehr als 10.000 Euro",
+				"over7500:Mehr als 7.500 Euro",
 			}
 
 			for _, kv := range keyVals {
@@ -535,124 +549,6 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 			}
 		}
 
-		/*
-
-			{
-				gr := page.AddGroup()
-				gr.Cols = 1
-				gr.BottomVSpacers = 0
-				{
-					inp := gr.AddInput()
-					inp.Type = "textblock"
-					inp.ColSpan = 1
-					inp.Desc = trl.S{
-						"de": fmt.Sprintf(`
-						</p>
-						<b>Frage %v.</b>
-						Mit welcher Partei fühlen Sie sich
-						aufgrund Ihrer Werte und Überzeugungen am ehesten verbunden?
-						<br>
-						<!--
-						<i>Bitte beachten Sie, dass nur eine Antwort zulässig ist.</i>
-						-->
-						</p>
-					`, vE.NumberingQuestions+11),
-					}
-				}
-			}
-			keyVals := []string{
-				"cducsu:CDU/CSU",
-				"linke:Die Linke",
-				"spd:SPD",
-				"gruene:Bündnis 90/Die Grünen",
-				"fdp:FDP",
-				"afd:AfD",
-				// "other:Andere",
-			}
-			{
-				for _, kv := range keyVals {
-					gr := page.AddGroup()
-					gr.Cols = 8
-					// gr.Cols = 4
-					gr.RandomizationGroup = 2
-					gr.RandomizationSeed = 2
-					gr.BottomVSpacers = 0
-					{
-						sp := strings.Split(kv, ":")
-						key := sp[0]
-						val := sp[1]
-						lbl := trl.S{"de": val}
-						rad := gr.AddInput()
-						rad.Type = "radio"
-						rad.Name = "q14"
-						rad.Validator = validatorRadio
-						rad.ValueRadio = key
-						rad.ColSpan = 4
-						rad.ColSpanLabel = 4
-						rad.ColSpanControl = 1
-						rad.Label = lbl
-						rad.StyleLbl = lblStyleRight
-					}
-
-				}
-
-			}
-
-			{
-				gr := page.AddGroup()
-				gr.Cols = 8
-				gr.BottomVSpacers = 0
-				{
-					key := "other"
-					val := "Andere"
-					lbl := trl.S{"de": val}
-
-					rad := gr.AddInput()
-					rad.Type = "radio"
-					rad.Name = "q14"
-					rad.Validator = validatorRadio
-					rad.ValueRadio = key
-					rad.ColSpan = 4
-					rad.ColSpanLabel = 4
-					rad.ColSpanControl = 1
-					rad.Label = lbl
-					rad.StyleLbl = lblStyleRight
-
-					{
-						inp := gr.AddInput()
-						inp.Type = "text"
-						inp.Name = "q14_other_text"
-						inp.ColSpan = 4
-						inp.ColSpanControl = 1
-						inp.MaxChars = 14
-						inp.Validator = "otherParty"
-					}
-
-				}
-
-			}
-
-
-			//
-			//
-			{
-				gr := page.AddGroup()
-				gr.Cols = 1
-				gr.BottomVSpacers = 0
-				{
-					inp := gr.AddInput()
-					inp.Type = "textblock"
-					inp.Label = trl.S{
-						"en": " &nbsp; ",
-						"de": " &nbsp; ",
-					}
-				}
-			}
-
-
-		*/
-
-		//
 		{
 			grStPage78 := css.NewStylesResponsive(nil)
 			grStPage78.Desktop.StyleGridContainer.GapRow = "0.1rem"
@@ -684,11 +580,13 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 				"de": fmt.Sprintf(`
 					<p>
 					<b>Frage&nbsp;%v.</b>
+
 					In der Politik reden die Leute häufig von "links" und "rechts". 
-					Wenn Sie die Skala hier benutzen, 
-					wo würden Sie sich selbst einordnen, 
-					wenn 1 "links" und 11 "rechts" ist? 
+					
+					Wenn Sie die Skala hier benutzen, wo ordnen Sie sich selbst ein? 
+					
 					Bitte geben Sie den Wert an, der auf Sie persönlich zutrifft.
+					
 					</p>
 					<br>
 				`, vE.NumberingQuestions+11),

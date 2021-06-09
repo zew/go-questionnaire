@@ -248,7 +248,7 @@ func POP3Part1Decision34(q *qst.QuestionnaireT, decisionNumber int, inpName stri
 			rad.ControlTop()
 
 			if idx == 0 {
-				rad.Validator = "mustRadioGroup"
+				rad.Validator = "mustRadioGroup;preventInversion"
 			}
 		}
 	}
@@ -307,7 +307,7 @@ func POP3Part1Decision34(q *qst.QuestionnaireT, decisionNumber int, inpName stri
 			rad.ControlTop()
 
 			if idx == 0 {
-				rad.Validator = "mustRadioGroup"
+				rad.Validator = "mustRadioGroup;preventInversion"
 			}
 		}
 	}
@@ -634,7 +634,7 @@ func part3ThreeQuestions(q *qst.QuestionnaireT, blockStart int) error {
 			// for idx2, avaiilable := range variousOptionsMadeAvailablePerm1 {
 
 			avaiilable := variousOptionsMadeAvailablePerm1[idx2]
-			if idx2 == 1 || idx2 == 3 {
+			if idx1 == 1 || idx2 == 1 {
 				avaiilable = variousOptionsMadeAvailablePerm2[idx2]
 			}
 
@@ -714,11 +714,12 @@ func POP3Part2Questions78(q *qst.QuestionnaireT) error {
 			inp.Desc = trl.S{"de": `
 			<p>
 			Unabhängig von Ihren bisherigen Entscheidungen 
-			können Sie nun entscheiden, 
-			ob der/die zukünftige*n Studienteilnehmer*in, 
-			der/die Ihnen zugeordnet ist, 
-			einen zusätzlichen Bonus erhalten oder ob ihm/ihr Geld 
-			von seinem/ihrem Entgelt abgezogen werden soll. 
+			können Sie abschließend entscheiden, 
+			ob der*die zukünftige*n Studienteilnehmer*in, 
+			der*die Ihnen zugeordnet ist, 
+			einen zusätzlichen Bonus für seine*ihre Studienteilnahme erhält 
+			oder ob ihm*ihr Geld von seinem*ihrem Entgelt 
+			für die Teilnahme abgezogen wird.
 			
 			Sie entscheiden, ob wir die entsprechende Bonuszahlung 
 			oder den Abzug in der zukünftigen Studie umsetzen.					
@@ -872,7 +873,10 @@ func ComprehensionCheckPop3(q *qst.QuestionnaireT) error {
 					"de": `
 				<p>
 					<b>Verständnistest:</b> <br>
-					Nehmen Sie an, jemand habe sich wie folgt entschieden:
+					<!-- Nehmen Sie an, jemand habe sich wie folgt entschieden: -->
+					Nehmen Sie an, ein*e Teilnehmer*in wie Sie 
+					habe die Optionen wie 
+					folgt verfügbar und nicht verfügbar gemacht
 				</p>
 				`,
 				}
@@ -910,7 +914,7 @@ func ComprehensionCheckPop3(q *qst.QuestionnaireT) error {
 				inp.ColSpanLabel = 5
 				inp.ColSpanControl = 2
 				// inp.Placeholder = trl.S{"de": "0-5"}
-				inp.Label = trl.S{"de": "<b>1.</b> Was ist der höchste Betrag, den der*die zukünftige Teilnehmer*in sofort erhalten kann? "}
+				inp.Label = trl.S{"de": "<b>1.</b> Was ist der höchste Betrag, den der*die zukünftige Teilnehmer*in durch seine/ihre Auswahl bei den verfügbaren Optionen sofort erhalten kann?“ "}
 				inp.Suffix = trl.S{"de": "€"}
 				// inp.Validator = "must"
 				inp.Validator = "must"
@@ -934,7 +938,7 @@ func ComprehensionCheckPop3(q *qst.QuestionnaireT) error {
 				inp.ColSpanLabel = 5
 				inp.ColSpanControl = 2
 				// inp.Placeholder = trl.S{"de": "A,B oder C"}
-				inp.Label = trl.S{"de": "<b>2.</b> Wenn der*die zukünftige Teilnehmer*in sich entscheidet, 3&nbsp;€ sofort zu erhalten, wieviel wird er*sie in 6&nbsp;Monaten erhalten? "}
+				inp.Label = trl.S{"de": "<b>2.</b> Wenn der*die zukünftige Teilnehmer*in sich entscheidet, 3 € sofort zu erhalten, wieviel wird er*sie in 6 Monaten erhalten? "}
 				inp.Suffix = trl.S{"de": "€"}
 				// inp.Validator = "inRange1000"
 				inp.Validator = "must"

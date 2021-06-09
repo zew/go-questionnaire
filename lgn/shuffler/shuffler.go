@@ -10,8 +10,8 @@ import (
 )
 
 type shufflerT struct {
-	ID         int // Seed for shuffling; typically the user ID
-	Variations int // ID modulo Variations is the actual seed. Determines how many different shuffled sets are derived from various IDs
+	Seed       int // Seed for shuffling; typically the user ID
+	Variations int // Seed modulo Variations is the actual seed. Determines how many different shuffled sets are derived from various seeds, before patterns repeat
 
 	MaxElements int // The number of elements to shuffle; typically the largest number of input groups across all pages of a questionnaire.
 }
@@ -19,22 +19,22 @@ type shufflerT struct {
 // New creates a Shuffler for creating deterministic variations
 // of a slice []int{1,2,3...,MaxElements}
 //
-// ID is the seed for the randomizer.
+// seed is the seed for the randomizer.
 // Variations is the number of classes.
 // MaxElements is the slice length.
-func New(ID int, variatons int, maxNumberOfElements int) *shufflerT {
+func New(seed int, variations int, maxNumberOfElements int) *shufflerT {
 	s := shufflerT{}
-	s.Variations = variatons
+	s.Variations = variations
 
 	s.MaxElements = maxNumberOfElements
-	s.ID = ID
+	s.Seed = seed
 	return &s
 }
 
 // Slice generates a shuffled slice.
 // Param iter gives the number of shufflings;
 // iter is reduced to its modulo 7 - performance
-func (s *shufflerT) Slice(iter int) []int {
+func (s *shufflerT) Slice(shufflingRepetitions int) []int {
 
 	order := make([]int, s.MaxElements)
 	for i := 0; i < len(order); i++ {
@@ -44,25 +44,30 @@ func (s *shufflerT) Slice(iter int) []int {
 		// keep the slice
 		// log.Printf("shuffler: variations == 0  ->  no shufflings")
 	} else {
-		class := int64(s.ID % s.Variations) // user 12; variations 5 => class 2
-		src := rand.NewSource(class)        // not ...UTC().UnixNano(), but constant init
-		gen := rand.New(src)                // generator seeded with the class of the user ID
+		class := int64(s.Seed % s.Variations) // user 12; variations 5 => class 2
+		src := rand.NewSource(class)          // not ...UTC().UnixNano(), but constant init
+		gen := rand.New(src)                  // generator seeded with the class of the user ID
 
 		// This does not cover all elements equally
 		if false {
 			for i := 0; i < len(order); i++ {
 				order[i] = gen.Int() % s.MaxElements // gen.Int 19; max elements 4 =>
-				log.Printf("%2v: User %v is class %v => of %v", i, s.ID, class, order[i])
+				log.Printf("%2v: User %v is class %v => of %v", i, s.Seed, class, order[i])
 			}
 		}
 
 		swapFct := func(i, j int) {
 			order[i], order[j] = order[j], order[i]
 		}
-		iter = iter % 7
-		for i := 0; i <= iter; i++ {
+
+		//
+		if shufflingRepetitions == 0 {
+			shufflingRepetitions = 3 // one repetition would be sufficient as well; just not zero
+		}
+		shufflingRepetitions = shufflingRepetitions % 7
+		for i := 0; i <= shufflingRepetitions; i++ {
 			gen.Shuffle(s.MaxElements, swapFct)
-			log.Printf("%2v: User %v is class %v => %+v", i, s.ID, class, order)
+			// log.Printf("%2v: User %v is class %v => %+v", i, s.Seed, class, order)
 		}
 	}
 

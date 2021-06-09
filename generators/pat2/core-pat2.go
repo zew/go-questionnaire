@@ -9,6 +9,33 @@ import (
 	"github.com/zew/go-questionnaire/trl"
 )
 
+var PartIGroupsShort = []string{
+	"pol_gr1:Ein*e deutsche*r Land- oder Bundestagspolitiker*in (Gruppe %v)",
+	"cit_gr2:Ein*e repräsentative*r deutsche*r Bürger*in (Gruppe %v)",
+	"cit_gr3:Ein*e deutsche*r Bürger*in aus der Gruppe mit den gleichen demographischen Eigenschaften wie die Politiker*innen (Gruppe %v)",
+}
+
+// group ID icons, always 1:1 with as PartIGroupsShort
+// https://cloford.com/resources/charcodes/utf-8_geometric.htm
+var GroupIDs = []string{
+	`<span style="color:MediumVioletRed">▣</span>`,
+	`<span style="color:DarkOrchid">◉</span>`,
+	`<span style="color:DarkOrange">▲</span>`,
+}
+
+//
+var Pat3Part2 = []string{
+	"Politikern*innen aus Gruppe %v",
+	"Bürgern*innen aus Gruppe %v",
+	"Bürgern*innen aus Gruppe %v (gleiche demographische Eigenschaften wie die Politiker*innen)",
+}
+
+var PartIGroupsShortNominativ = []string{
+	"Deutsche Land- oder Bundestagspolitiker*innen",
+	"Repräsentative*r deutsche*r Bürger*in",
+	"Deutsche*r Bürger*in mit demographischen Eigenschaften wie die Politiker*innen",
+}
+
 var PartIGroupsLong = []string{
 	"Eine repräsentative Gruppe deutscher Land- und Bundestagspolitiker*innen<br>(Gruppe %v).",
 	"Eine repräsentative Gruppe deutscher Bürger*innen<br>(Gruppe %v).",
@@ -22,18 +49,6 @@ var PartIGroupsLong = []string{
 				(Gruppe %v).`,
 }
 
-// changed for pop3
-var PartIGroupsShort = []string{
-	"pol_gr1:Ein deutscher Land- oder Bundestagspolitiker*innen (Gruppe %v)",
-	"cit_gr2:Ein repräsentativer deutscher Bürger*innen (Gruppe %v)",
-	"cit_gr3:Ein deutscher Bürger*innen mit gleichen demographischen Eigenschaften wie die Politiker*innen (Gruppe %v)",
-}
-var PartIGroupsShortNominativ = []string{
-	"Deutsche Land- oder Bundestagspolitiker*innen",
-	"Repräsentative*r deutsche*r Bürger*in",
-	"Deutsche*r Bürger*in mit demographischen Eigenschaften wie die Politiker*innen",
-}
-
 var partIIQuestLabels = []string{
 	`
 	Wenn die Präferenzen der fünf Personen wie oben gegeben sind: <br>
@@ -44,7 +59,7 @@ var partIIQuestLabels = []string{
 	`
 	Wenn die Präferenzen der fünf Personen wie oben gegeben sind: <br>
 	Was glauben Sie, wie haben sich die 10 zufällig ausgewählten
-	    deutschen Bürger*innen Gruppe&nbsp;%v entschieden (repräsentative deutsche Bürger*innen)?
+	    deutschen Bürger*innen aus Gruppe&nbsp;%v entschieden (repräsentative deutsche Bürger*innen)?
 	`,
 
 	`
@@ -53,22 +68,6 @@ var partIIQuestLabels = []string{
 	    deutschen Bürger*innen aus Gruppe&nbsp;%v entschieden 
 		(deutsche Bürger*innen mit gleichen demographischen Eigenschaften wie die Politiker*innen)?
 	`,
-}
-
-//
-var Pat3Part2 = []string{
-	"Politikern*innen aus Gruppe %v",
-	"Bürgern*innen aus Gruppe %v",
-	"Bürgern*innen aus Gruppe %v (gleiche demographische Eigenschaften wie die Politiker*innen)",
-}
-
-// https://cloford.com/resources/charcodes/utf-8_geometric.htm
-var GroupIDs = []string{
-	`<span style="color:MediumVioletRed">▣</span>`,
-	`<span style="color:DarkOrchid">◉</span>`,
-	// `<span style="color:ForestGreen">◉</span>`,
-	// `◬`,
-	`<span style="color:DarkOrange">▲</span>`,
 }
 
 // Part1Intro renders
@@ -117,7 +116,13 @@ func Part1Intro(q *qst.QuestionnaireT) error {
 }
 
 // part2Entscheidung78TwoTimesThree - helper to Part1Entscheidung78()
-func part2Entscheidung78TwoTimesThree(q *qst.QuestionnaireT, pageIdx int, inpName string) error {
+func part2Entscheidung78TwoTimesThree(
+	q *qst.QuestionnaireT,
+	pageIdx int,
+	inpName string,
+) error {
+
+	preventInversion := ";preventInversion"
 
 	page := q.EditPage(pageIdx)
 
@@ -161,7 +166,7 @@ func part2Entscheidung78TwoTimesThree(q *qst.QuestionnaireT, pageIdx int, inpNam
 			rad.Label = lbl
 			rad.ControlFirst()
 			rad.ControlTop()
-			rad.Validator = "must"
+			rad.Validator = "must" + preventInversion
 		}
 	}
 
@@ -206,7 +211,7 @@ func part2Entscheidung78TwoTimesThree(q *qst.QuestionnaireT, pageIdx int, inpNam
 
 			rad.ControlFirst()
 			rad.ControlTop()
-			rad.Validator = "must"
+			rad.Validator = "must" + preventInversion
 		}
 	}
 
@@ -568,8 +573,8 @@ func Part2IntroBUndEntscheidung78(q *qst.QuestionnaireT) error {
 		page := q.AddPage()
 		page.Label = trl.S{"de": ""}
 		page.Style = css.DesktopWidthMaxForPages(page.Style, "36rem") // 60
-		page.ValidationFuncMsg = trl.S{"de": "Erste und zweite Antwort schließen sich aus. Wirklich fortfahren?"}
-		page.ValidationFuncName = "pat2-part1-q7-8"
+		// page.ValidationFuncMsg = trl.S{"de": "Erste und zweite Antwort schließen sich aus. Wirklich fortfahren?"}
+		// page.ValidationFuncName = "pat2-part1-q7-8"
 
 		{
 			gr := page.AddGroup()
@@ -625,8 +630,8 @@ func Part2IntroBUndEntscheidung78(q *qst.QuestionnaireT) error {
 		page := q.AddPage()
 		page.Label = trl.S{"de": ""}
 		page.Style = css.DesktopWidthMaxForPages(page.Style, "36rem") // 60
-		page.ValidationFuncMsg = trl.S{"de": "Erste und zweite Antwort schließen sich aus. Wirklich fortfahren?"}
-		page.ValidationFuncName = "pat2-part1-q7-8"
+		// page.ValidationFuncMsg = trl.S{"de": "Erste und zweite Antwort schließen sich aus. Wirklich fortfahren?"}
+		// page.ValidationFuncName = "pat2-part1-q7-8"
 
 		{
 			gr := page.AddGroup()
@@ -771,8 +776,6 @@ func Part3Intro(q *qst.QuestionnaireT) error {
 				<br>
 
 				<p style="font-size:86%">
-					<b>Erläuterung:</b>
-					
 				<b>Erläuterung:</b>
 
 				Falls Sie in der ausgewählten Frage eine 100&nbsp;% richtige 

@@ -156,6 +156,82 @@ func init() {
 		return nil
 	}
 
+	// pop2_part2 - IntroBUndEntscheidung78
+	//
+	// also
+	// pop3_part2
+	validators["preventInversion"] = func(q *QuestionnaireT, inp *inputT) error {
+
+		// dec7_q1, dec7_q2
+		// dec8_q1, dec8_q2
+		//
+		// dec3_q2, dec3_q2
+		// dec4_q2, dec4_q2
+		core := strings.TrimPrefix(inp.Name, "dec")
+		core = core[0:1]
+
+		neighbors := []string{}
+		for i := 1; i < 3; i++ {
+			neighbors = append(neighbors, fmt.Sprintf("dec%v_q%v", core, i))
+		}
+		// log.Printf("all three neigbors: %v", neighbors)
+
+		val := "init"
+		equal := false
+
+		for _, neighbor := range neighbors {
+			nb := q.ByName(neighbor)
+			if val != "init" && nb.Response != "" && nb.Response == val {
+				equal = true
+				// log.Printf("neigbors: %v - value %v -  val %v - equal %v", nb.Name, nb.Response, val, equal)
+			}
+			if nb.Response != "" {
+				val = nb.Response
+			}
+		}
+
+		if equal {
+			return fmt.Errorf("Schliesst sich aus.")
+		}
+
+		return nil
+	}
+
+	// pop3_part3
+	validators["preventInversion2"] = func(q *QuestionnaireT, inp *inputT) error {
+
+		// dec3_q1pol_gr1
+		// dec3_q1
+		core := strings.TrimPrefix(inp.Name, "dec")
+		core = core[0:1]
+
+		neighbors := []string{}
+		for i := 1; i < 3; i++ {
+			neighbors = append(neighbors, fmt.Sprintf("dec%v_q%v", core, i))
+		}
+		// log.Printf("all three neigbors: %v", neighbors)
+
+		val := "init"
+		equal := false
+
+		for _, neighbor := range neighbors {
+			nb := q.ByName(neighbor)
+			if val != "init" && nb.Response != "" && nb.Response == val {
+				equal = true
+				// log.Printf("neigbors: %v - value %v -  val %v - equal %v", nb.Name, nb.Response, val, equal)
+			}
+			if nb.Response != "" {
+				val = nb.Response
+			}
+		}
+
+		if equal {
+			return fmt.Errorf("Schliesst sich aus.")
+		}
+
+		return nil
+	}
+
 	// pop3_part2_q6_3
 	validators["pop3_part2_q123456_1234"] = func(q *QuestionnaireT, inp *inputT) error {
 
@@ -182,6 +258,35 @@ func init() {
 		}
 
 		return nil
+	}
+
+	// pat - for pop1-3
+	validators["oneOfPrefixQ20"] = func(q *QuestionnaireT, inp *inputT) error {
+
+		fields := []string{
+			"q20_inactive",
+			"q20_votesometimes",
+			"q20_voteregular",
+			"q20_petitions",
+			"q20_communal",
+			"q20_state",
+			"q20_federal",
+		}
+		atLeastOne := false
+
+		for _, fld := range fields {
+			fd := q.ByName(fld)
+			if fd.Response == "1" {
+				atLeastOne = true
+			}
+		}
+
+		if !atLeastOne {
+			return fmt.Errorf("Wenigstens eine Angabe.")
+		}
+
+		return nil
+
 	}
 
 	// pat - for pop3
@@ -277,7 +382,7 @@ func (q *QuestionnaireT) ValidateResponseData(pageNum int, langCode string) (las
 		}
 
 		// pre process error proxies
-		//   collect a list of error proxies
+		//   collect a list of error proxies accessible by Param
 		//   (re-) set their error messages to ""
 		errorProxies := map[string]*inputT{} // per page, not global
 		for i2 := 0; i2 < len(q.Pages[i1].Groups); i2++ {
@@ -333,17 +438,20 @@ func (q *QuestionnaireT) ValidateResponseData(pageNum int, langCode string) (las
 		//      for those having an error proxy
 		// 		  error proxy takes the error message; input error message gets deleted
 		if len(errorProxies) > 0 {
-			// msgs := map[string]string{}
 			for i2 := 0; i2 < len(q.Pages[i1].Groups); i2++ {
 				for i3 := 0; i3 < len(q.Pages[i1].Groups[i2].Inputs); i3++ {
 					inp := q.Pages[i1].Groups[i2].Inputs[i3]
 					if inp.ErrMsg != "" {
 						if inp.Type != "dyn-textblock" && inp.DynamicFunc != "ErrorProxy" {
-							// we might want to introduce startsWith in future
-							if errProx, ok := errorProxies[inp.Name]; ok {
-								errProx.ErrMsg = inp.ErrMsg
-								q.Pages[i1].Groups[i2].Inputs[i3].ErrMsg = ""
+
+							for startsWith, errProx := range errorProxies {
+								if strings.HasPrefix(inp.Name, startsWith) {
+									errProx.ErrMsg = inp.ErrMsg
+									q.Pages[i1].Groups[i2].Inputs[i3].ErrMsg = ""
+								}
 							}
+							// if errProx, ok := errorProxies[inp.Name]; ok {
+							// }
 						}
 					}
 				}

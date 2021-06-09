@@ -342,7 +342,7 @@ var coreTranslations = Map{
 		"pl": "Ankieta zakończy się w %v.\nPublikacja będzie %v. <br>\n",
 	},
 	"review_by_personal_link": {
-		"de": "Sie können ihre Daten jederzeit über Ihren persönlichen Link prüfen/ändern. <br>\n<a href='/?submitBtn=prev'>Zurück</a><br>\n",
+		"de": "Sie können Ihre Daten jederzeit über Ihren persönlichen Link prüfen/ändern. <br>\n<a href='/?submitBtn=prev'>Zurück</a><br>\n",
 		"en": "You may review or change your data using your personal link. <br>\n<a href='/?submitBtn=prev'>Back</a><br>\n",
 		"es": "Usted puede revisar o cambiar sus datos usando su enlace personal.<br>\n<a href='/?submitBtn=prev'>Atrás</a><br>\n",
 		"fr": "Vous pouvez consulter ou modifier vos données à l'aide de votre lien personnel.<br>\n<a href='/?submitBtn=prev'>Précédent</a><br>\n",

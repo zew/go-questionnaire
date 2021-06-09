@@ -132,10 +132,10 @@ func main() {
 		cntrChanged++
 
 		if false {
-			if q.ShufflingsMax > 0 {
+			if q.ShufflingVariations > 0 {
 				log.Printf("%3v: questionnaire %v - correction needed %v", i, pSrc, q.Survey.Deadline)
 				// q.Survey.Deadline = tInstead
-				q.ShufflingsMax = 0
+				q.ShufflingVariations = 0
 				err := q.Save1(pDst)
 				if err != nil {
 					log.Printf("%3v: Error saving %v: %v", i, pSrc, err)

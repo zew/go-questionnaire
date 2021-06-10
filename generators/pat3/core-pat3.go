@@ -138,8 +138,15 @@ func POP3Part1Decision34(q *qst.QuestionnaireT, decisionNumber int, inpName stri
 				In dieser Entscheidung kann das Gruppenmitglied 
 				folgende Optionen verfügbar machen:
 				-->
+
+				<!--
 				An wen möchten Sie die Entscheidung delegieren,
 				wenn die Optionen wie folgt gegeben sind?
+				-->
+
+				Möchten Sie an die gleiche oder an eine andere Gruppe delegieren, 
+				wenn die Präferenzen der Bürger*innen stattdessen wie folgt gegeben sind?
+
 			</p>
 			`, decisionNumber)}
 		}
@@ -158,18 +165,23 @@ func POP3Part1Decision34(q *qst.QuestionnaireT, decisionNumber int, inpName stri
 			<p><b> Entscheidung %v </b> </p>
 			<p style='padding-bottom:0'>
 
-			<!--
+				<!--
 				An wen möchten Sie die Entscheidung delegieren, 
 				falls die Optionen stattdessen wie folgt lauten? 
-			-->
-				Möchten Sie an die gleiche 
-				oder an eine andere Gruppe delegieren,
+				-->
+
+				<!--
+				Möchten Sie an die gleiche oder an eine andere Gruppe delegieren,
 				falls die Optionen stattdessen wie folgt lauten?
+				-->
+
+				Möchten Sie an die gleiche oder an eine andere Gruppe delegieren, 
+				wenn die Präferenzen der Bürger*innen stattdessen wie folgt gegeben sind?
 
 				(Sowohl die Zeitpunkte der Auszahlung 
 				als auch die Beträge sind anders als in der vorherigen Entscheidung.)
 			
-				</p>
+			</p>
 			`, decisionNumber)}
 		}
 	}

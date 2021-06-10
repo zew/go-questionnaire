@@ -41,7 +41,7 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		return nil, fmt.Errorf("Error adding personal questions 2: %v", err)
 	}
 
-	err = pat.PersonalQuestions1(&q, pat.VariableElements{NumberingQuestions: 13, AllMandatory: true, ZumSchlussOrNunOrNothing: 3})
+	err = pat.PersonalQuestions1(&q, pat.VariableElements{NumberingQuestions: 14, AllMandatory: true, ZumSchlussOrNunOrNothing: 3})
 	if err != nil {
 		return nil, fmt.Errorf("Error adding personal questions 1: %v", err)
 	}

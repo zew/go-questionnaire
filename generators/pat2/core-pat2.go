@@ -593,9 +593,14 @@ func Part2IntroBUndEntscheidung78(q *qst.QuestionnaireT) error {
 						fünf Personen aus der Vorstudie wie folgt:
 						-->
 						
+						<!--
 						An wen möchten Sie die Entscheidung delegieren,
 						wenn die Präferenzen der 
 						fünf Personen wie folgt gegeben sind?
+						-->
+
+						Möchten Sie an die gleiche oder an eine andere Gruppe delegieren, 
+						wenn die Präferenzen der Bürger*innen stattdessen wie folgt gegeben sind?
 					</p>
 				`}
 			}

@@ -670,4 +670,18 @@ input[type=radio]:focus         {
      box-shadow:
         0 0 0 0.090em var(--clr-sec-lgt2),
         0 0 0 0.120em lightgray;
-  }
+}
+
+
+#t01 input[type=checkbox]:focus ,
+#t01 input[type=radio]:focus    ,
+#t02 input[type=checkbox]:focus ,
+#t02 input[type=radio]:focus    ,
+#t03 input[type=checkbox]:focus ,
+#t03 input[type=radio]:focus    ,
+dummy
+ {
+     box-shadow:
+        0 0 0 0.090em lightgray,
+        0 0 0 0.120em gray;
+}

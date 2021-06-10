@@ -43,7 +43,7 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 				inp.ColSpan = 12
 				inp.Desc = trl.S{
 					"de": fmt.Sprintf(`
-					</p>
+					<p>
 					<b>Frage %v.</b>
 					Bitte geben Sie Ihr Geschlecht an:
 					</p>
@@ -85,7 +85,7 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 				inp.ColSpan = 8
 				inp.Desc = trl.S{
 					"de": fmt.Sprintf(`
-					</p>
+					<p>
 					<b>Frage %v.</b>
 					Bitte geben Sie Ihr Geburtsjahr an:
 					</p>
@@ -119,7 +119,7 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 				inp.ColSpan = 12
 				inp.Desc = trl.S{
 					"de": fmt.Sprintf(`
-					</p>
+					<p>
 					<b>Frage %v.</b>
 					Besitzen Sie die deutsche Staatsbürgerschaft?
 					</p>
@@ -160,7 +160,7 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 				inp.ColSpan = 1
 				inp.Desc = trl.S{
 					"de": fmt.Sprintf(`
-					</p>
+					<p>
 					<b>Frage %v.</b>
 					In welchem Bundesland befindet sich Ihr Hauptwohnsitz?
 					</p>
@@ -199,7 +199,7 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 				inp.ColSpan = 8
 				inp.Desc = trl.S{
 					"de": fmt.Sprintf(`
-					</p>
+					<p>
 					<b>Frage %v.</b>
 					Welcher ist Ihr höchster Bildungsabschluss?
 					</p>
@@ -246,7 +246,7 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 				inp.ColSpan = 12
 				inp.Desc = trl.S{
 					"de": fmt.Sprintf(`
-					</p>
+					<p>
 					<b>Frage %v.</b>
 					Sind Sie Mitglied einer politischen Partei?
 					</p>
@@ -345,7 +345,7 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 				inp.Desc = trl.S{
 					"de": fmt.Sprintf(`
 					<br>
-					</p>
+					<p>
 					<b>Frage %v.</b>
 					Inwieweit sind Sie politisch aktiv (falls überhaupt)? 
 					</p>
@@ -401,7 +401,7 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 				inp.ColSpan = 8
 				inp.Desc = trl.S{
 					"de": fmt.Sprintf(`
-					</p>
+					<p>
 					<b>Frage %v.</b>
 					Sind Sie Politiker*in?
 					</p>
@@ -450,7 +450,7 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 				inp.ColSpan = 12
 				inp.Desc = trl.S{
 					"de": fmt.Sprintf(`
-					</p>
+					<p>
 					<b>Frage %v.</b>
 					Was ist Ihr Familienstand?
 					</p>
@@ -494,7 +494,7 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 				inp.ColSpan = 8
 				inp.Desc = trl.S{
 					"de": fmt.Sprintf(`
-					</p>
+					<p>
 					<b>Frage %v.</b>
 
 					<!--
@@ -505,7 +505,7 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 					Rente oder Pension sowie Sozialleistungen ergibt.
 					-->
 
-					Wie hoch ist das monatliche Nettoeinkommen Ihres Haushalts insgesamt? 
+					Wie hoch ist das monatliche Nettoeinkommen Ihres <i>Haushalts</i> insgesamt? 
 					Damit ist die Summe gemeint, 
 					die sich aus Lohn, Gehalt, Einkommen aus selbständiger Tätigkeit, 
 					Rente oder Pension jeweils 
@@ -550,6 +550,40 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 		}
 
 		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			{
+				inp := gr.AddInput()
+				inp.Type = "number"
+				inp.Name = "q21"
+				inp.Min = 0
+				inp.Max = 20 * 1000 * 1000
+				inp.MaxChars = 6
+				inp.ColSpan = 1
+				inp.ColSpanLabel = 7
+				inp.ColSpanControl = 1
+				inp.Desc = trl.S{
+					"de": fmt.Sprintf(`
+					<p>
+					<b>Frage %v.</b>
+
+					Wie hoch ist Ihr <i>eigenes</i> monatliches Nettoeinkommen?
+					</p>
+
+
+					<p style="font-size: 87%%">
+					Bestimmung wie in vorheriger Frage: Summe aus Lohn, Gehalt... 
+					Abzug von Steuern, SV-Beiträgen ...
+					</p>
+				`, vE.NumberingQuestions+11),
+				}
+				inp.Validator = validatorInput
+				inp.LabelPadRight()
+			}
+
+		}
+
+		{
 			grStPage78 := css.NewStylesResponsive(nil)
 			grStPage78.Desktop.StyleGridContainer.GapRow = "0.1rem"
 			grStPage78.Desktop.StyleGridContainer.GapColumn = "0.01rem"
@@ -589,7 +623,7 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 					
 					</p>
 					<br>
-				`, vE.NumberingQuestions+11),
+				`, vE.NumberingQuestions+12),
 			}
 			gr := page.AddGrid(gb)
 			gr.OddRowsColoring = true

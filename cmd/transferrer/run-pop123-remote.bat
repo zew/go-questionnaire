@@ -20,11 +20,15 @@ ECHO %JOBTIME%        >>%LOGFILE%
 ECHO "============="  >>%LOGFILE%
 
 
-rm ./transferrer.exe
-go build
-
+transferrer.exe -rmt=transferrer/pat1-remote.json  >>%LOGFILE% 2>&1
 transferrer.exe -rmt=transferrer/pat2-remote.json  >>%LOGFILE% 2>&1
 transferrer.exe -rmt=transferrer/pat3-remote.json  >>%LOGFILE% 2>&1
+
+
+copy ..\..\app-bucket\responses\downloaded\pat1-2021-05.csv  .
+copy ..\..\app-bucket\responses\downloaded\pat2-2021-05.csv  .
+copy ..\..\app-bucket\responses\downloaded\pat3-2021-05.csv  .
+
 
 pause
 

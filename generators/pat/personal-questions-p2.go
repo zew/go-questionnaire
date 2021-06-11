@@ -43,7 +43,7 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 				inp.ColSpan = 12
 				inp.Desc = trl.S{
 					"de": fmt.Sprintf(`
-					<p>
+					<p style="margin-bottom: 0.45rem">
 					<b>Frage %v.</b>
 					Bitte geben Sie Ihr Geschlecht an:
 					</p>
@@ -119,7 +119,7 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 				inp.ColSpan = 12
 				inp.Desc = trl.S{
 					"de": fmt.Sprintf(`
-					<p>
+					<p style="margin-bottom: 0.45rem">
 					<b>Frage %v.</b>
 					Besitzen Sie die deutsche Staatsbürgerschaft?
 					</p>
@@ -199,7 +199,7 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 				inp.ColSpan = 8
 				inp.Desc = trl.S{
 					"de": fmt.Sprintf(`
-					<p>
+					<p style="margin-bottom: 0.45rem">
 					<b>Frage %v.</b>
 					Welcher ist Ihr höchster Bildungsabschluss?
 					</p>
@@ -246,7 +246,7 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 				inp.ColSpan = 12
 				inp.Desc = trl.S{
 					"de": fmt.Sprintf(`
-					<p>
+					<p style="margin-bottom: 0.35rem">
 					<b>Frage %v.</b>
 					Sind Sie Mitglied einer politischen Partei?
 					</p>
@@ -345,7 +345,7 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 				inp.Desc = trl.S{
 					"de": fmt.Sprintf(`
 					<br>
-					<p>
+					<p style="margin-bottom: 0.45rem">
 					<b>Frage %v.</b>
 					Inwieweit sind Sie politisch aktiv (falls überhaupt)? 
 					</p>
@@ -401,7 +401,7 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 				inp.ColSpan = 8
 				inp.Desc = trl.S{
 					"de": fmt.Sprintf(`
-					<p>
+					<p style="margin-bottom: 0.45rem">
 					<b>Frage %v.</b>
 					Sind Sie Politiker*in?
 					</p>
@@ -450,7 +450,7 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 				inp.ColSpan = 12
 				inp.Desc = trl.S{
 					"de": fmt.Sprintf(`
-					<p>
+					<p style="margin-bottom: 0.45rem">
 					<b>Frage %v.</b>
 					Was ist Ihr Familienstand?
 					</p>
@@ -494,7 +494,7 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 				inp.ColSpan = 8
 				inp.Desc = trl.S{
 					"de": fmt.Sprintf(`
-					<p>
+					<p style="margin-bottom: 0.45rem">
 					<b>Frage %v.</b>
 
 					<!--
@@ -558,7 +558,7 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 				inp.Name = "q21"
 				inp.Min = 0
 				inp.Max = 20 * 1000 * 1000
-				inp.MaxChars = 6
+				inp.MaxChars = 7
 				inp.ColSpan = 1
 				inp.ColSpanLabel = 7
 				inp.ColSpanControl = 1
@@ -573,11 +573,12 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 
 					<p style="font-size: 87%%">
 					Bestimmung wie in vorheriger Frage: Summe aus Lohn, Gehalt... 
-					Abzug von Steuern, SV-Beiträgen ...
+					Abzug von Steuern, SV-Beiträgen...
 					</p>
 				`, vE.NumberingQuestions+11),
 				}
 				inp.Validator = validatorInput
+				inp.Suffix = trl.S{"de": "€"}
 				inp.LabelPadRight()
 			}
 

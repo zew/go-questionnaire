@@ -19,7 +19,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "06110da4b35ebba8b639afd8b337869010b8503c1c8fd3b16773cc0fbc26548b",
+ 	"md_5": "a967dbf6063dddfc07c104b8810ca4065c8ff25b67db1c76cb8636237fda4e58",
  	"lang_codes": [
  		"de"
  	],
@@ -2634,7 +2634,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage 8.\u003c/b\u003e\n\t\t\t\t\tBitte geben Sie Ihr Geschlecht an:\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp style=\"margin-bottom: 0.45rem\"\u003e\n\t\t\t\t\t\u003cb\u003eFrage 8.\u003c/b\u003e\n\t\t\t\t\tBitte geben Sie Ihr Geschlecht an:\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 12,
  							"col_span_label": 1
@@ -2769,7 +2769,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage 10.\u003c/b\u003e\n\t\t\t\t\tBesitzen Sie die deutsche Staatsbürgerschaft?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp style=\"margin-bottom: 0.45rem\"\u003e\n\t\t\t\t\t\u003cb\u003eFrage 10.\u003c/b\u003e\n\t\t\t\t\tBesitzen Sie die deutsche Staatsbürgerschaft?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 12,
  							"col_span_label": 1
@@ -3379,7 +3379,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage 12.\u003c/b\u003e\n\t\t\t\t\tWelcher ist Ihr höchster Bil\u0026shy;dungs\u0026shy;abschluss?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp style=\"margin-bottom: 0.45rem\"\u003e\n\t\t\t\t\t\u003cb\u003eFrage 12.\u003c/b\u003e\n\t\t\t\t\tWelcher ist Ihr höchster Bil\u0026shy;dungs\u0026shy;abschluss?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 8,
  							"col_span_label": 1
@@ -3585,7 +3585,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage 13.\u003c/b\u003e\n\t\t\t\t\tSind Sie Mit\u0026shy;glied einer politischen Partei?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp style=\"margin-bottom: 0.35rem\"\u003e\n\t\t\t\t\t\u003cb\u003eFrage 13.\u003c/b\u003e\n\t\t\t\t\tSind Sie Mit\u0026shy;glied einer politischen Partei?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 12,
  							"col_span_label": 1
@@ -3910,7 +3910,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage 15.\u003c/b\u003e\n\t\t\t\t\tInwieweit sind Sie politisch aktiv (falls über\u0026shy;haupt)? \n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cp style=\"margin-bottom: 0.45rem\"\u003e\n\t\t\t\t\t\u003cb\u003eFrage 15.\u003c/b\u003e\n\t\t\t\t\tInwieweit sind Sie politisch aktiv (falls über\u0026shy;haupt)? \n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 4,
  							"col_span_label": 1
@@ -4135,7 +4135,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage 16.\u003c/b\u003e\n\t\t\t\t\tSind Sie Po\u0026shy;li\u0026shy;tiker*in?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp style=\"margin-bottom: 0.45rem\"\u003e\n\t\t\t\t\t\u003cb\u003eFrage 16.\u003c/b\u003e\n\t\t\t\t\tSind Sie Po\u0026shy;li\u0026shy;tiker*in?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 8,
  							"col_span_label": 1
@@ -4276,7 +4276,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage 17.\u003c/b\u003e\n\t\t\t\t\tWas ist Ihr Familienstand?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp style=\"margin-bottom: 0.45rem\"\u003e\n\t\t\t\t\t\u003cb\u003eFrage 17.\u003c/b\u003e\n\t\t\t\t\tWas ist Ihr Familienstand?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 12,
  							"col_span_label": 1
@@ -4482,7 +4482,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage 18.\u003c/b\u003e\n\n\t\t\t\t\t\u003c!--\n\t\t\t\t\tWie viel Geld verdienen Sie im Durchschnitt persönlich monatlich \n\t\t\t\t\tnach Abzug von Steuern und Sozialversi\u0026shy;cherungsbeiträgen? \n\t\t\t\t\tUnter durchschnittlichem Verdienst ist die Summe zu verstehen, \n\t\t\t\t\tdie sich aus Lohn, Gehalt, Einkommen aus selbstständiger Tätigkeit, \n\t\t\t\t\tRente oder Pension sowie Sozialleistungen ergibt.\n\t\t\t\t\t--\u003e\n\n\t\t\t\t\tWie hoch ist das monatliche Nettoeinkommen Ihres \u003ci\u003eHaushalts\u003c/i\u003e insge\u0026shy;samt? \n\t\t\t\t\tDamit ist die Summe gemeint, \n\t\t\t\t\tdie sich aus Lohn, Gehalt, Einkommen aus selbständiger Tätigkeit, \n\t\t\t\t\tRente oder Pension jeweils \n\t\t\t\t\tnach Abzug der Steuern und Sozialversi\u0026shy;cherungsbeiträge ergibt. \n\t\t\t\t\t\n\t\t\t\t\tRechnen Sie bitte auch die Einkünfte \n\t\t\t\t\taus öffentlichen Beihilfen, \n\t\t\t\t\tEinkommen aus Vermietung, Verpachtung, \n\t\t\t\t\tWohngeld, Kindergeld und sonstige Einkünfte hinzu.\t\t\t\t\t\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp style=\"margin-bottom: 0.45rem\"\u003e\n\t\t\t\t\t\u003cb\u003eFrage 18.\u003c/b\u003e\n\n\t\t\t\t\t\u003c!--\n\t\t\t\t\tWie viel Geld verdienen Sie im Durchschnitt persönlich monatlich \n\t\t\t\t\tnach Abzug von Steuern und Sozialversi\u0026shy;cherungsbeiträgen? \n\t\t\t\t\tUnter durchschnittlichem Verdienst ist die Summe zu verstehen, \n\t\t\t\t\tdie sich aus Lohn, Gehalt, Einkommen aus selbstständiger Tätigkeit, \n\t\t\t\t\tRente oder Pension sowie Sozialleistungen ergibt.\n\t\t\t\t\t--\u003e\n\n\t\t\t\t\tWie hoch ist das monatliche Nettoeinkommen Ihres \u003ci\u003eHaushalts\u003c/i\u003e insge\u0026shy;samt? \n\t\t\t\t\tDamit ist die Summe gemeint, \n\t\t\t\t\tdie sich aus Lohn, Gehalt, Einkommen aus selbständiger Tätigkeit, \n\t\t\t\t\tRente oder Pension jeweils \n\t\t\t\t\tnach Abzug der Steuern und Sozialversi\u0026shy;cherungsbeiträge ergibt. \n\t\t\t\t\t\n\t\t\t\t\tRechnen Sie bitte auch die Einkünfte \n\t\t\t\t\taus öffentlichen Beihilfen, \n\t\t\t\t\tEinkommen aus Vermietung, Verpachtung, \n\t\t\t\t\tWohngeld, Kindergeld und sonstige Einkünfte hinzu.\t\t\t\t\t\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 8,
  							"col_span_label": 1
@@ -4688,10 +4688,13 @@
  						{
  							"name": "q21",
  							"type": "number",
- 							"max_chars": 6,
+ 							"max_chars": 7,
  							"max": 20000000,
  							"description": {
- 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage 19.\u003c/b\u003e\n\n\t\t\t\t\tWie hoch ist Ihr \u003ci\u003eeigenes\u003c/i\u003e monatliches Nettoeinkommen?\n\t\t\t\t\t\u003c/p\u003e\n\n\n\t\t\t\t\t\u003cp style=\"font-size: 87%\"\u003e\n\t\t\t\t\tBestimmung wie in vorheriger Frage: Summe aus Lohn, Gehalt... \n\t\t\t\t\tAbzug von Steuern, SV-Beiträgen ...\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage 19.\u003c/b\u003e\n\n\t\t\t\t\tWie hoch ist Ihr \u003ci\u003eeigenes\u003c/i\u003e monatliches Nettoeinkommen?\n\t\t\t\t\t\u003c/p\u003e\n\n\n\t\t\t\t\t\u003cp style=\"font-size: 87%\"\u003e\n\t\t\t\t\tBestimmung wie in vorheriger Frage: Summe aus Lohn, Gehalt... \n\t\t\t\t\tAbzug von Steuern, SV-Beiträgen...\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 							},
+ 							"suffix": {
+ 								"de": "€"
  							},
  							"col_span": 1,
  							"col_span_label": 7,

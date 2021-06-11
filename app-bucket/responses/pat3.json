@@ -19,7 +19,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "90ca8e02c2130cbd09d09f1c6edd8652c481548ba30cc0498c86b2ba050bdbe7",
+ 	"md_5": "72c152435912a2b4d9e68eb00fe5d1ee4fdf24f2dc86827099c3d0deabf3f100",
  	"lang_codes": [
  		"de"
  	],
@@ -143,7 +143,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage 1.\u003c/b\u003e\n\t\t\t\t\tBitte geben Sie Ihr Geschlecht an:\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp style=\"margin-bottom: 0.45rem\"\u003e\n\t\t\t\t\t\u003cb\u003eFrage 1.\u003c/b\u003e\n\t\t\t\t\tBitte geben Sie Ihr Geschlecht an:\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 12,
  							"col_span_label": 1
@@ -278,7 +278,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage 3.\u003c/b\u003e\n\t\t\t\t\tBesitzen Sie die deutsche Staatsbürgerschaft?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp style=\"margin-bottom: 0.45rem\"\u003e\n\t\t\t\t\t\u003cb\u003eFrage 3.\u003c/b\u003e\n\t\t\t\t\tBesitzen Sie die deutsche Staatsbürgerschaft?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 12,
  							"col_span_label": 1
@@ -888,7 +888,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage 5.\u003c/b\u003e\n\t\t\t\t\tWelcher ist Ihr höchster Bil\u0026shy;dungs\u0026shy;abschluss?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp style=\"margin-bottom: 0.45rem\"\u003e\n\t\t\t\t\t\u003cb\u003eFrage 5.\u003c/b\u003e\n\t\t\t\t\tWelcher ist Ihr höchster Bil\u0026shy;dungs\u0026shy;abschluss?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 8,
  							"col_span_label": 1
@@ -1094,7 +1094,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage 6.\u003c/b\u003e\n\t\t\t\t\tSind Sie Mit\u0026shy;glied einer politischen Partei?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp style=\"margin-bottom: 0.35rem\"\u003e\n\t\t\t\t\t\u003cb\u003eFrage 6.\u003c/b\u003e\n\t\t\t\t\tSind Sie Mit\u0026shy;glied einer politischen Partei?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 12,
  							"col_span_label": 1
@@ -1419,7 +1419,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage 8.\u003c/b\u003e\n\t\t\t\t\tInwieweit sind Sie politisch aktiv (falls über\u0026shy;haupt)? \n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cp style=\"margin-bottom: 0.45rem\"\u003e\n\t\t\t\t\t\u003cb\u003eFrage 8.\u003c/b\u003e\n\t\t\t\t\tInwieweit sind Sie politisch aktiv (falls über\u0026shy;haupt)? \n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 4,
  							"col_span_label": 1
@@ -1644,7 +1644,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage 9.\u003c/b\u003e\n\t\t\t\t\tSind Sie Po\u0026shy;li\u0026shy;tiker*in?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp style=\"margin-bottom: 0.45rem\"\u003e\n\t\t\t\t\t\u003cb\u003eFrage 9.\u003c/b\u003e\n\t\t\t\t\tSind Sie Po\u0026shy;li\u0026shy;tiker*in?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 8,
  							"col_span_label": 1
@@ -1785,7 +1785,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage 10.\u003c/b\u003e\n\t\t\t\t\tWas ist Ihr Familienstand?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp style=\"margin-bottom: 0.45rem\"\u003e\n\t\t\t\t\t\u003cb\u003eFrage 10.\u003c/b\u003e\n\t\t\t\t\tWas ist Ihr Familienstand?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 12,
  							"col_span_label": 1
@@ -1991,7 +1991,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage 11.\u003c/b\u003e\n\n\t\t\t\t\t\u003c!--\n\t\t\t\t\tWie viel Geld verdienen Sie im Durchschnitt persönlich monatlich \n\t\t\t\t\tnach Abzug von Steuern und Sozialversi\u0026shy;cherungsbeiträgen? \n\t\t\t\t\tUnter durchschnittlichem Verdienst ist die Summe zu verstehen, \n\t\t\t\t\tdie sich aus Lohn, Gehalt, Einkommen aus selbstständiger Tätigkeit, \n\t\t\t\t\tRente oder Pension sowie Sozialleistungen ergibt.\n\t\t\t\t\t--\u003e\n\n\t\t\t\t\tWie hoch ist das monatliche Nettoeinkommen Ihres \u003ci\u003eHaushalts\u003c/i\u003e insge\u0026shy;samt? \n\t\t\t\t\tDamit ist die Summe gemeint, \n\t\t\t\t\tdie sich aus Lohn, Gehalt, Einkommen aus selbständiger Tätigkeit, \n\t\t\t\t\tRente oder Pension jeweils \n\t\t\t\t\tnach Abzug der Steuern und Sozialversi\u0026shy;cherungsbeiträge ergibt. \n\t\t\t\t\t\n\t\t\t\t\tRechnen Sie bitte auch die Einkünfte \n\t\t\t\t\taus öffentlichen Beihilfen, \n\t\t\t\t\tEinkommen aus Vermietung, Verpachtung, \n\t\t\t\t\tWohngeld, Kindergeld und sonstige Einkünfte hinzu.\t\t\t\t\t\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp style=\"margin-bottom: 0.45rem\"\u003e\n\t\t\t\t\t\u003cb\u003eFrage 11.\u003c/b\u003e\n\n\t\t\t\t\t\u003c!--\n\t\t\t\t\tWie viel Geld verdienen Sie im Durchschnitt persönlich monatlich \n\t\t\t\t\tnach Abzug von Steuern und Sozialversi\u0026shy;cherungsbeiträgen? \n\t\t\t\t\tUnter durchschnittlichem Verdienst ist die Summe zu verstehen, \n\t\t\t\t\tdie sich aus Lohn, Gehalt, Einkommen aus selbstständiger Tätigkeit, \n\t\t\t\t\tRente oder Pension sowie Sozialleistungen ergibt.\n\t\t\t\t\t--\u003e\n\n\t\t\t\t\tWie hoch ist das monatliche Nettoeinkommen Ihres \u003ci\u003eHaushalts\u003c/i\u003e insge\u0026shy;samt? \n\t\t\t\t\tDamit ist die Summe gemeint, \n\t\t\t\t\tdie sich aus Lohn, Gehalt, Einkommen aus selbständiger Tätigkeit, \n\t\t\t\t\tRente oder Pension jeweils \n\t\t\t\t\tnach Abzug der Steuern und Sozialversi\u0026shy;cherungsbeiträge ergibt. \n\t\t\t\t\t\n\t\t\t\t\tRechnen Sie bitte auch die Einkünfte \n\t\t\t\t\taus öffentlichen Beihilfen, \n\t\t\t\t\tEinkommen aus Vermietung, Verpachtung, \n\t\t\t\t\tWohngeld, Kindergeld und sonstige Einkünfte hinzu.\t\t\t\t\t\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 8,
  							"col_span_label": 1
@@ -2197,10 +2197,13 @@
  						{
  							"name": "q21",
  							"type": "number",
- 							"max_chars": 6,
+ 							"max_chars": 7,
  							"max": 20000000,
  							"description": {
- 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage 12.\u003c/b\u003e\n\n\t\t\t\t\tWie hoch ist Ihr \u003ci\u003eeigenes\u003c/i\u003e monatliches Nettoeinkommen?\n\t\t\t\t\t\u003c/p\u003e\n\n\n\t\t\t\t\t\u003cp style=\"font-size: 87%\"\u003e\n\t\t\t\t\tBestimmung wie in vorheriger Frage: Summe aus Lohn, Gehalt... \n\t\t\t\t\tAbzug von Steuern, SV-Beiträgen ...\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage 12.\u003c/b\u003e\n\n\t\t\t\t\tWie hoch ist Ihr \u003ci\u003eeigenes\u003c/i\u003e monatliches Nettoeinkommen?\n\t\t\t\t\t\u003c/p\u003e\n\n\n\t\t\t\t\t\u003cp style=\"font-size: 87%\"\u003e\n\t\t\t\t\tBestimmung wie in vorheriger Frage: Summe aus Lohn, Gehalt... \n\t\t\t\t\tAbzug von Steuern, SV-Beiträgen...\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 							},
+ 							"suffix": {
+ 								"de": "€"
  							},
  							"col_span": 1,
  							"col_span_label": 7,
@@ -4528,7 +4531,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eVerständnistest:\u003c/b\u003e \u003cbr\u003e\n\t\t\t\t\t\u003c!-- Nehmen Sie an, jemand habe sich wie folgt entschieden: --\u003e\n\t\t\t\t\tNehmen Sie an, ein*e Teilnehmer*in wie Sie \n\t\t\t\t\thabe die Optionen wie \n\t\t\t\t\tfolgt ver\u0026shy;füg\u0026shy;bar und nicht ver\u0026shy;füg\u0026shy;bar gemacht\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eVerständnistest:\u003c/b\u003e \u003cbr\u003e\n\t\t\t\t\t\u003c!-- Nehmen Sie an, jemand habe sich wie folgt entschieden: --\u003e\n\t\t\t\t\tNehmen Sie an, ein*e Teilnehmer*in wie Sie \n\t\t\t\t\thabe die Optionen wie \n\t\t\t\t\tfolgt ver\u0026shy;füg\u0026shy;bar und nicht ver\u0026shy;füg\u0026shy;bar gemacht.\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span_label": 1
  						}
@@ -4555,7 +4558,7 @@
  							"max_chars": 3,
  							"max": 100,
  							"label": {
- 								"de": "\u003cb\u003e1.\u003c/b\u003e Was ist der höchste Betrag, den der*die zukünftige Teilnehmer*in durch seine/ihre Auswahl bei den ver\u0026shy;füg\u0026shy;baren Optionen sofort er\u0026shy;hal\u0026shy;ten kann?“ "
+ 								"de": "\u003cb\u003e1.\u003c/b\u003e Was ist der höchste Betrag, den der*die zukünftige Teilnehmer*in durch seine*ihre Auswahl bei den ver\u0026shy;füg\u0026shy;baren Optionen sofort er\u0026shy;hal\u0026shy;ten kann?"
  							},
  							"suffix": {
  								"de": "€"
@@ -5173,7 +5176,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\u003cp\u003e\u003cb\u003e Entscheidung 3 \u003c/b\u003e \u003c/p\u003e\n\t\t\t\u003cp style='padding-bottom:0'\u003e\n\t\t\t\t\u003c!--\n\t\t\t\tIn dieser Entscheidung kann das Grup\u0026shy;penmit\u0026shy;glied \n\t\t\t\tfolgende Optionen ver\u0026shy;füg\u0026shy;bar machen:\n\t\t\t\t--\u003e\n\n\t\t\t\t\u003c!--\n\t\t\t\tAn wen möchten Sie die Entscheidung delegieren,\n\t\t\t\twenn die Optionen wie folgt gegeben sind?\n\t\t\t\t--\u003e\n\n\t\t\t\tMöchten Sie an die gleiche oder an eine andere Grup\u0026shy;pe delegieren, \n\t\t\t\twenn die Präferenzen der Bürger*innen stattdessen wie folgt gegeben sind?\n\n\t\t\t\u003c/p\u003e\n\t\t\t"
+ 								"de": "\n\t\t\t\u003cp\u003e\u003cb\u003e Entscheidung 3 \u003c/b\u003e \u003c/p\u003e\n\t\t\t\u003cp style='padding-bottom:0'\u003e\n\n\t\t\t\tAn wen möchten Sie die Entscheidung delegieren, \n\t\t\t\twenn die drei Optionen wie folgt gegeben sind?\n\n\n\n\t\t\t\u003c/p\u003e\n\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -5595,7 +5598,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\u003cp\u003e\u003cb\u003e Entscheidung 4 \u003c/b\u003e \u003c/p\u003e\n\t\t\t\u003cp style='padding-bottom:0'\u003e\n\n\t\t\t\t\u003c!--\n\t\t\t\tAn wen möchten Sie die Entscheidung delegieren, \n\t\t\t\tfalls die Optionen stattdessen wie folgt lauten? \n\t\t\t\t--\u003e\n\n\t\t\t\t\u003c!--\n\t\t\t\tMöchten Sie an die gleiche oder an eine andere Grup\u0026shy;pe delegieren,\n\t\t\t\tfalls die Optionen stattdessen wie folgt lauten?\n\t\t\t\t--\u003e\n\n\t\t\t\tMöchten Sie an die gleiche oder an eine andere Grup\u0026shy;pe delegieren, \n\t\t\t\twenn die Präferenzen der Bürger*innen stattdessen wie folgt gegeben sind?\n\n\t\t\t\t(Sowohl die Zeitpunkte der Auszahlung \n\t\t\t\tals auch die Beträge sind anders als in der vorherigen Entscheidung.)\n\t\t\t\n\t\t\t\u003c/p\u003e\n\t\t\t"
+ 								"de": "\n\t\t\t\u003cp\u003e\u003cb\u003e Entscheidung 4 \u003c/b\u003e \u003c/p\u003e\n\t\t\t\u003cp style='padding-bottom:0'\u003e\n\n\t\t\t\tAn wen möchten Sie die Entscheidung delegieren, \n\t\t\t\twenn die drei Optionen wie folgt gegeben sind?\n\n\t\t\t\t(Sowohl die Zeitpunkte der Auszahlung \n\t\t\t\tals auch die Beträge sind anders als in der vorherigen Entscheidung.)\n\t\t\t\n\t\t\t\u003c/p\u003e\n\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -7790,7 +7793,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\u003cp\u003e\n\t\t\tUnabhängig von Ihren bisherigen Entscheidungen \n\t\t\tkönnen Sie abschließend entscheiden, \n\t\t\tob der*die zukünftige*n Studienteilnehmer*in, \n\t\t\tder*die Ihnen zugeordnet ist, \n\t\t\teinen zusätzlichen Bonus für seine*ihre Studienteilnahme erhält \n\t\t\toder ob ihm*ihr Geld von seinem*ihrem Entgelt \n\t\t\tfür die Teilnahme abgezogen wird.\n\t\t\t\n\t\t\tSie entscheiden, ob wir die entsprechende Bonuszahlung \n\t\t\toder den Abzug in der zukünftigen Studie umsetzen.\t\t\t\t\t\n\t\t\t\u003c/p\u003e\n\t\t\t"
+ 								"de": "\n\t\t\t\u003cp\u003e\n\t\t\tUnabhängig von Ihren bisherigen Entscheidungen \n\t\t\tkönnen Sie abschließend entscheiden, \n\t\t\tob der*die zukünftige*n Studienteilnehmer*in, \n\t\t\tder*die Ihnen zugeordnet ist, \n\t\t\teinen zusätzlichen Bonus für seine*ihre \n\t\t\tStudienteilnahme erhält \n\t\t\toder ob ihm*ihr Geld von seinem*ihrem Entgelt \n\t\t\tfür die Teilnahme abgezogen wird. \n\t\t\t\n\t\t\tSie entscheiden, ob wir die entsprechende \n\t\t\tBonuszahlung oder den Abzug \n\t\t\tin der zukünftigen Studie umsetzen. \n\t\t\t\n\t\t\tEine der nächsten zwei Entscheidungen \n\t\t\twird zufällig ausgewählt und umgesetzt.\n\t\t\t\n\t\t\t\u003c/p\u003e\n\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -7804,7 +7807,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\u003cp style=\"margin-bottom: 0.55rem\"\u003e\n\t\t\t\t\tIch möchte einen zusätzlichen Pauschalbetrag von 0.50\u0026nbsp;€ \n\t\t\t\t\tzur der Auszahlung der Person hinzufügen\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\u003cp style=\"margin-bottom: 0.55rem\"\u003e\n\t\t\t\t\tIch möchte, dass der zusätzliche Pauschalbetrag \n\t\t\t\t\tvon 0.50\u0026nbsp;€ \n\t\t\t\t\tzum Entgelt der Person hinzugefügt wird.\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 12,
  							"col_span_label": 1
@@ -7879,7 +7882,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\u003cp style=\"margin-bottom: 0.7rem\"\u003e\n\t\t\t\t\tIch möchte den Pauschalbetrag in der Höhe von 0.50\u0026nbsp;€  \n\t\t\t\t\tvon der Auszahlung der Person abziehen\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\u003cp style=\"margin-bottom: 0.7rem\"\u003e\n\t\t\t\t\tIch möchte, dass der Pauschalbetrag \n\t\t\t\t\tvon 0.50\u0026nbsp;€ \n\t\t\t\t\tvom Entgelt der Person abgezogen wird.\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 12,
  							"col_span_label": 1

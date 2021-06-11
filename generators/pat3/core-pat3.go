@@ -134,18 +134,11 @@ func POP3Part1Decision34(q *qst.QuestionnaireT, decisionNumber int, inpName stri
 			inp.Desc = trl.S{"de": fmt.Sprintf(`
 			<p><b> Entscheidung %v </b> </p>
 			<p style='padding-bottom:0'>
-				<!--
-				In dieser Entscheidung kann das Gruppenmitglied 
-				folgende Optionen verfügbar machen:
-				-->
 
-				<!--
-				An wen möchten Sie die Entscheidung delegieren,
-				wenn die Optionen wie folgt gegeben sind?
-				-->
+				An wen möchten Sie die Entscheidung delegieren, 
+				wenn die drei Optionen wie folgt gegeben sind?
 
-				Möchten Sie an die gleiche oder an eine andere Gruppe delegieren, 
-				wenn die Präferenzen der Bürger*innen stattdessen wie folgt gegeben sind?
+
 
 			</p>
 			`, decisionNumber)}
@@ -165,18 +158,8 @@ func POP3Part1Decision34(q *qst.QuestionnaireT, decisionNumber int, inpName stri
 			<p><b> Entscheidung %v </b> </p>
 			<p style='padding-bottom:0'>
 
-				<!--
 				An wen möchten Sie die Entscheidung delegieren, 
-				falls die Optionen stattdessen wie folgt lauten? 
-				-->
-
-				<!--
-				Möchten Sie an die gleiche oder an eine andere Gruppe delegieren,
-				falls die Optionen stattdessen wie folgt lauten?
-				-->
-
-				Möchten Sie an die gleiche oder an eine andere Gruppe delegieren, 
-				wenn die Präferenzen der Bürger*innen stattdessen wie folgt gegeben sind?
+				wenn die drei Optionen wie folgt gegeben sind?
 
 				(Sowohl die Zeitpunkte der Auszahlung 
 				als auch die Beträge sind anders als in der vorherigen Entscheidung.)
@@ -729,12 +712,18 @@ func POP3Part2Questions78(q *qst.QuestionnaireT) error {
 			können Sie abschließend entscheiden, 
 			ob der*die zukünftige*n Studienteilnehmer*in, 
 			der*die Ihnen zugeordnet ist, 
-			einen zusätzlichen Bonus für seine*ihre Studienteilnahme erhält 
+			einen zusätzlichen Bonus für seine*ihre 
+			Studienteilnahme erhält 
 			oder ob ihm*ihr Geld von seinem*ihrem Entgelt 
-			für die Teilnahme abgezogen wird.
+			für die Teilnahme abgezogen wird. 
 			
-			Sie entscheiden, ob wir die entsprechende Bonuszahlung 
-			oder den Abzug in der zukünftigen Studie umsetzen.					
+			Sie entscheiden, ob wir die entsprechende 
+			Bonuszahlung oder den Abzug 
+			in der zukünftigen Studie umsetzen. 
+			
+			Eine der nächsten zwei Entscheidungen 
+			wird zufällig ausgewählt und umgesetzt.
+			
 			</p>
 			`}
 		}
@@ -752,8 +741,9 @@ func POP3Part2Questions78(q *qst.QuestionnaireT) error {
 			inp.Label = trl.S{
 				"de": `
 				<p style="margin-bottom: 0.55rem">
-					Ich möchte einen zusätzlichen Pauschalbetrag von 0.50&nbsp;€ 
-					zur der Auszahlung der Person hinzufügen
+					Ich möchte, dass der zusätzliche Pauschalbetrag 
+					von 0.50&nbsp;€ 
+					zum Entgelt der Person hinzugefügt wird.
 				</p>
 				`,
 			}
@@ -801,8 +791,9 @@ func POP3Part2Questions78(q *qst.QuestionnaireT) error {
 			inp.Label = trl.S{
 				"de": `
 				<p style="margin-bottom: 0.7rem">
-					Ich möchte den Pauschalbetrag in der Höhe von 0.50&nbsp;€  
-					von der Auszahlung der Person abziehen
+					Ich möchte, dass der Pauschalbetrag 
+					von 0.50&nbsp;€ 
+					vom Entgelt der Person abgezogen wird.
 				</p>
 				`,
 			}
@@ -888,7 +879,7 @@ func ComprehensionCheckPop3(q *qst.QuestionnaireT) error {
 					<!-- Nehmen Sie an, jemand habe sich wie folgt entschieden: -->
 					Nehmen Sie an, ein*e Teilnehmer*in wie Sie 
 					habe die Optionen wie 
-					folgt verfügbar und nicht verfügbar gemacht
+					folgt verfügbar und nicht verfügbar gemacht.
 				</p>
 				`,
 				}
@@ -926,7 +917,7 @@ func ComprehensionCheckPop3(q *qst.QuestionnaireT) error {
 				inp.ColSpanLabel = 5
 				inp.ColSpanControl = 2
 				// inp.Placeholder = trl.S{"de": "0-5"}
-				inp.Label = trl.S{"de": "<b>1.</b> Was ist der höchste Betrag, den der*die zukünftige Teilnehmer*in durch seine/ihre Auswahl bei den verfügbaren Optionen sofort erhalten kann?“ "}
+				inp.Label = trl.S{"de": "<b>1.</b> Was ist der höchste Betrag, den der*die zukünftige Teilnehmer*in durch seine*ihre Auswahl bei den verfügbaren Optionen sofort erhalten kann?"}
 				inp.Suffix = trl.S{"de": "€"}
 				// inp.Validator = "must"
 				inp.Validator = "must"

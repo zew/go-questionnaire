@@ -450,13 +450,15 @@ func POP3Part2Intro(q *qst.QuestionnaireT) error {
 				zu viel oder zu wenig angeben, 
 				verlieren Sie 2,5&nbsp;Norstat&nbsp;coins. 
 				
-				Falls beispielsweise alle 10 Gruppenmitglieder Stiftung&nbsp;C 
-				gewählt haben, Sie aber angeben, 
-				dass 5 Gruppenmitglieder Stiftung&nbsp;B wählen, 
-				und weitere 5 Stiftung&nbsp;C wählen, 
-				dann haben Sie für Stiftung&nbsp;C fünf Gruppenmitglieder 
-				zu wenig angegeben, 
-				und für Stiftung&nbsp;B fünf zu viel. 
+				Falls beispielsweise alle 10 Gruppenmitglieder 
+				nur Option&nbsp;A verfügbar gemacht haben, 
+				Sie aber angeben, dass 5 Gruppenmitglieder 
+				nur Option&nbsp;A verfügbar gemacht haben, 
+				und weitere 5 alle Optionen verfügbar gemacht haben, 
+				dann haben Sie für den Fall des Verfügbarmachens 
+				aller Optionen fünf Gruppenmitglieder zu wenig angegeben, 
+				und für den Fall des Verfügbarmachens von 
+				Option&nbsp;A (alleine) fünf zu viel. 
 				
 				Entsprechend wird Ihre Bezahlung auf 
 				50 - 2,5*5 -2,5*5 = 25&nbsp;Norstat&nbsp;coins gesenkt.

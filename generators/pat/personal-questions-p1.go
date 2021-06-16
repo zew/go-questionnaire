@@ -15,6 +15,7 @@ type VariableElements struct {
 	NumberingSections  int
 
 	AllMandatory             bool
+	NonGermansOut            bool
 	ZumSchlussOrNunOrNothing int
 
 	//

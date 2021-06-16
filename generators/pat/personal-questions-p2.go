@@ -26,6 +26,11 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 		validatorActivity = "oneOfPrefixQ20"
 	}
 
+	valiNonGermansOut := ""
+	if vE.NonGermansOut {
+		valiNonGermansOut = ";citizenshipyes"
+	}
+
 	{
 		// page := q.AddPage()
 		page := q.AddPage()
@@ -139,7 +144,7 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 				rad := gr.AddInput()
 				rad.Type = "radio"
 				rad.Name = "q17"
-				rad.Validator = validatorRadio + ";citizenshipyes"
+				rad.Validator = validatorRadio + valiNonGermansOut
 				rad.ValueRadio = key
 				rad.ColSpan = 4
 				rad.ColSpanLabel = 4

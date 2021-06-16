@@ -11,13 +11,13 @@ import (
 )
 
 // Create paternalismus questionnaire with totally diff questions
-func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
+func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 	ctr.Reset()
 
 	q := qst.QuestionnaireT{}
 	q.Survey = qst.NewSurvey("pat3")
-	q.Survey.Params = params
+	q.Survey = s
 	q.LangCodes = []string{"de"} // governs default language code
 
 	q.Survey.Org = trl.S{"de": "ZEW"}

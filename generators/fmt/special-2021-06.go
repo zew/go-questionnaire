@@ -72,7 +72,7 @@ var rowLabelsAssetClasses2 = []trl.S{
 
 func special202106(q *qst.QuestionnaireT) error {
 
-	if q.Survey.Year != 2021 && q.Survey.Month != 6 {
+	if q.Survey.Year != 2021 || q.Survey.Month != 6 {
 		return nil
 	}
 

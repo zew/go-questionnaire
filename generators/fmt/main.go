@@ -66,13 +66,12 @@ var rowLabelsSmallLargeEnterprises = []trl.S{
 }
 
 // Create creates a JSON file for a financial markets survey
-func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
+func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 	ctr.Reset()
 
 	q := qst.QuestionnaireT{}
-	q.Survey = qst.NewSurvey("fmt")
-	q.Survey.Params = params
+	q.Survey = s
 	q.LangCodes = []string{"de", "en"} // governs default language code
 
 	q.Survey.Org = trl.S{"de": "ZEW", "en": "ZEW"}
@@ -872,11 +871,9 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		return nil, fmt.Errorf("Error adding month 2 per quarter: %v", err)
 	}
 
-	if false {
-		err = special202106(&q)
-		if err != nil {
-			return nil, fmt.Errorf("Error adding seasonal202106(): %v", err)
-		}
+	err = special202106(&q)
+	if err != nil {
+		return nil, fmt.Errorf("Error adding seasonal202106(): %v", err)
 	}
 
 	//

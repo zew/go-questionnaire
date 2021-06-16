@@ -10,13 +10,13 @@ import (
 
 // Create creates an minimal example questionnaire with a few pages and inputs.
 // It is saved to disk as an example.
-func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
+func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 	ctr.Reset()
 
 	q := qst.QuestionnaireT{}
 	q.Survey = qst.NewSurvey("example")
-	q.Survey.Params = params
+	q.Survey = s
 	q.LangCodes = []string{"en", "de"} // governs default language code
 
 	q.Survey.Org = trl.S{"de": "ZEW", "en": "ZEW"}

@@ -25,7 +25,7 @@ import (
 	"github.com/zew/go-questionnaire/tpl"
 )
 
-type genT func(params []qst.ParamT) (*qst.QuestionnaireT, error)
+type genT func(s qst.SurveyT) (*qst.QuestionnaireT, error)
 
 var gens = map[string]genT{
 	"example": example.Create,
@@ -71,7 +71,7 @@ func GenerateQuestionnaireTemplates(w http.ResponseWriter, r *http.Request) {
 
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
 
-	s := qst.NewSurvey("fmt") // type is modified later
+	s := qst.NewSurvey("placeholder") // type is modified later
 	errStr := ""
 	if r.Method == "POST" {
 		// myfmt.Fprint(w, "is POST<br>\n")
@@ -98,7 +98,6 @@ func GenerateQuestionnaireTemplates(w http.ResponseWriter, r *http.Request) {
 			t.Sub(wavePeriod) < -(10*24)*time.Hour {
 			errStr += myfmt.Sprint("Should the deadline not be close to the Year-Month?<br>\n")
 		}
-
 		s.Deadline = t
 
 		newParams := []qst.ParamT{}
@@ -129,15 +128,11 @@ func GenerateQuestionnaireTemplates(w http.ResponseWriter, r *http.Request) {
 			continue
 		}
 
-		q, err := fnc(s.Params)
+		q, err := fnc(s)
 		if err != nil {
 			myfmt.Fprintf(w, "Error creating %v: %v<br>\n", key, err)
 			return
 		}
-
-		tr1, tr2 := q.Survey.Org, q.Survey.Name // save orig values
-		q.Survey = s
-		q.Survey.Org, q.Survey.Name = tr1, tr2
 
 		fn := path.Join(qst.BasePath(), key+".json")
 		err = q.Save1(fn)

@@ -18,7 +18,7 @@ type ParamT struct {
 }
 
 // Param returns the value of a questionnaire param
-func (s *surveyT) Param(name string) (string, error) {
+func (s *SurveyT) Param(name string) (string, error) {
 	for _, p := range s.Params {
 		if p.Name == name {
 			return p.Val, nil
@@ -27,9 +27,10 @@ func (s *surveyT) Param(name string) (string, error) {
 	return "?", fmt.Errorf("Param %q not found", name)
 }
 
-// surveyT stores the interval components of a questionnaire wave.
+// SurveyT stores the interval components of a questionnaire wave.
 // For quarterly intervals, it needs to be extended
-type surveyT struct {
+//
+type SurveyT struct {
 	Type string `json:"type,omitempty"` // The type identifier, i.e. "fmt" or "cep"
 
 	Org  trl.S `json:"org,omitempty"`  // organization, i.e. Unicef
@@ -44,12 +45,12 @@ type surveyT struct {
 }
 
 // NewSurvey returns a survey based on current time
-func NewSurvey(tp string) surveyT {
+func NewSurvey(tp string) SurveyT {
 
 	if tp == "" {
 		panic("survey must have a type")
 	}
-	s := surveyT{Type: tp}
+	s := SurveyT{Type: tp}
 
 	t := time.Now()
 	if t.Day() > 20 {
@@ -107,7 +108,7 @@ const delta = -time.Duration(15 * 24 * time.Hour)
    January  of 2021 -    minus 5 Quarters   => Q4 2019
 
 */
-func (s surveyT) Quarter(offs ...int) string {
+func (s SurveyT) Quarter(offs ...int) string {
 	y := s.Year
 	m := int(s.Month) // 1 - january
 	offset := 0
@@ -130,7 +131,7 @@ func (s surveyT) Quarter(offs ...int) string {
 // YearStr yields the year as string;
 // based on the survey year;
 // offset adds years
-func (s surveyT) YearStr(offs ...int) string {
+func (s SurveyT) YearStr(offs ...int) string {
 	y := s.Year
 	offset := 0
 	if len(offs) > 0 {
@@ -141,19 +142,19 @@ func (s surveyT) YearStr(offs ...int) string {
 }
 
 // MonthOfQuarter returns 1 for Jan, 2 for Feb, 3 for March; 1 for April
-func (s surveyT) MonthOfQuarter() int {
+func (s SurveyT) MonthOfQuarter() int {
 	m := int(s.Month) - 1   // 1 - january => 0
 	monthOfQuart := m%3 + 1 // 1 => 1; 2 => 2; 3 => 3; 4 => 1; 5 => 1
 	return monthOfQuart
 }
 
 // String is the default identifier
-func (s surveyT) String() string {
+func (s SurveyT) String() string {
 	return s.Type + "-" + s.WaveID()
 }
 
 // WaveID returns the year-month in standard format yyyy-mm
-func (s surveyT) WaveID() string {
+func (s SurveyT) WaveID() string {
 	// Notice the month +1
 	// It is necessary, even though the spec says 'January = 1'
 	t := time.Date(s.Year, s.Month+1, 0, 0, 0, 0, 0, cfg.Get().Loc)
@@ -161,7 +162,7 @@ func (s surveyT) WaveID() string {
 }
 
 // WaveIDPretty is empty, if we dont have proper year, otherwise like WaveID()
-func (s surveyT) WaveIDPretty() string {
+func (s SurveyT) WaveIDPretty() string {
 	if s.Year == 0 {
 		return ""
 	}
@@ -173,7 +174,7 @@ func (s surveyT) WaveIDPretty() string {
 }
 
 // TemplateLogoText for display in HTML
-func (s surveyT) TemplateLogoText(langCode string) template.HTML {
+func (s SurveyT) TemplateLogoText(langCode string) template.HTML {
 
 	ret := ""
 
@@ -224,7 +225,7 @@ func dropDown(vals []string, selected string) string {
 
 // HTMLForm renders an HTML edit form
 // for survey data
-func (s *surveyT) HTMLForm(questTypes []string, errStr string) string {
+func (s *SurveyT) HTMLForm(questTypes []string, errStr string) string {
 
 	/*
 		<datalist id="time-entries">

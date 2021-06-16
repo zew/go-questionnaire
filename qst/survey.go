@@ -140,9 +140,10 @@ func (s surveyT) YearStr(offs ...int) string {
 	return fmt.Sprintf("%v", y)
 }
 
+// MonthOfQuarter returns 1 for Jan, 2 for Feb, 3 for March; 1 for April
 func (s surveyT) MonthOfQuarter() int {
-	m := int(s.Month)     // 1 - january
-	monthOfQuart := m % 3 // 1 => 1; 2 => 2; 3 => 3; 4 => 1; 5 => 1
+	m := int(s.Month) - 1   // 1 - january => 0
+	monthOfQuart := m%3 + 1 // 1 => 1; 2 => 2; 3 => 3; 4 => 1; 5 => 1
 	return monthOfQuart
 }
 

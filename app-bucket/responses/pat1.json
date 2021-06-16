@@ -19,7 +19,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "a967dbf6063dddfc07c104b8810ca4065c8ff25b67db1c76cb8636237fda4e58",
+ 	"md_5": "eab46214ff4fe14eabf2312a0be253025def25f0b055378d58d614a62fcb3cc5",
  	"lang_codes": [
  		"de"
  	],
@@ -2783,7 +2783,7 @@
  							"col_span": 4,
  							"col_span_label": 4,
  							"col_span_control": 1,
- 							"validator": "mustRadioGroup;citizenshipyes",
+ 							"validator": "mustRadioGroup",
  							"value_radio": "citizenshipyes",
  							"style_label": {
  								"desktop": {
@@ -2815,7 +2815,7 @@
  							"col_span": 4,
  							"col_span_label": 4,
  							"col_span_control": 1,
- 							"validator": "mustRadioGroup;citizenshipyes",
+ 							"validator": "mustRadioGroup",
  							"value_radio": "citizenshipno",
  							"style_label": {
  								"desktop": {

@@ -860,6 +860,8 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 		}
 	}
 
+	// log.Printf("q.Survey.MonthOfQuarter() is %v  (from %v - %v)", q.Survey.MonthOfQuarter(), q.Survey.Year, q.Survey.Month)
+
 	var err error
 	err = eachMonth1inQ(&q)
 	if err != nil {
@@ -869,9 +871,12 @@ func Create(params []qst.ParamT) (*qst.QuestionnaireT, error) {
 	if err != nil {
 		return nil, fmt.Errorf("Error adding month 2 per quarter: %v", err)
 	}
-	err = special202106(&q)
-	if err != nil {
-		return nil, fmt.Errorf("Error adding seasonal202106(): %v", err)
+
+	if false {
+		err = special202106(&q)
+		if err != nil {
+			return nil, fmt.Errorf("Error adding seasonal202106(): %v", err)
+		}
 	}
 
 	//

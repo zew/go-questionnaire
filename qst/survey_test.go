@@ -112,3 +112,34 @@ func Test_surveyT_Quarter(t *testing.T) {
 		})
 	}
 }
+
+func Test_surveyT_MonthOfQuarter(t *testing.T) {
+	type args struct {
+		offs []int
+	}
+	tests := []struct {
+		name string
+		s    surveyT
+		want int
+	}{
+		// start of quarter - January
+		{"t1", surveyT{Year: 2021, Month: 1}, 1},
+		{"t2", surveyT{Year: 2021, Month: 2}, 2},
+		{"t3", surveyT{Year: 2021, Month: 3}, 3},
+		{"t4", surveyT{Year: 2021, Month: 4}, 1},
+		{"t5", surveyT{Year: 2021, Month: 5}, 2},
+		{"t6", surveyT{Year: 2021, Month: 6}, 3},
+		{"t7", surveyT{Year: 2021, Month: 7}, 1},
+
+		{"t10", surveyT{Year: 2021, Month: 10}, 1},
+		{"t11", surveyT{Year: 2021, Month: 11}, 2},
+		{"t12", surveyT{Year: 2021, Month: 12}, 3},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := tt.s.MonthOfQuarter(); got != tt.want {
+				t.Errorf("surveyT.MonthOfQuarter() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}

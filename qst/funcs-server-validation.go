@@ -347,6 +347,63 @@ func init() {
 		return nil
 	}
 
+	validators["comprehensionPOP2"] = func(q *QuestionnaireT, inp *inputT) error {
+
+		erroneous := false
+		empty := false
+		neighbors := map[string]string{"q_found_compr_a": "est_5", "q_found_compr_b": "est_c"}
+		for neighbor, solution := range neighbors {
+			nb := q.ByName(neighbor)
+			// summand, _ := strconv.Atoi(nb.Response)
+			if nb.Response != "" && nb.Response != solution {
+				erroneous = true
+			}
+			if nb.Response == "" {
+				empty = true
+			}
+		}
+
+		if empty {
+			err := errors.New("Bitte beide Fragen beantworten.")
+			return err
+		}
+
+		if erroneous {
+			vlStr, _ := q.Attrs["comprehensionPOP2"]
+			vl, _ := strconv.Atoi(vlStr)
+			vl++
+			q.Attrs["comprehensionPOP2"] = fmt.Sprint(vl)
+
+			if vl%2 == 1 {
+				err := fmt.Errorf(`
+					<div  class='comprehension-error'>
+						Sie haben eine falsche Antwort gegeben. 
+						Bitte lesen Sie die Anleitung und Fragen genau durch. 
+						<br>
+						<span  style='font-size: 110%%;'>Versuch %v von 3  </span>
+					</div>`,
+					vl/2+1,
+				)
+
+				if vl > 3 {
+					err1 := ErrorForward{
+						// Quality-Redirect
+						// ... ErrorForward{markDownPath: "must-german-citizen.md"}
+						markDownPath: "https://webs.norstatsurveys.com/z/Quality",
+					}
+					err = errors.Wrap(err1, err.Error())
+				}
+
+				return err
+			}
+
+		} else {
+			q.Attrs["comprehensionPOP2"] = "0" // reset
+		}
+
+		return nil
+	}
+
 }
 
 // ConsolidateRadioErrors removes repeating error messages from radio inputs
@@ -448,10 +505,10 @@ func (q *QuestionnaireT) ValidateResponseData(pageNum int, langCode string) (las
 								if strings.HasPrefix(inp.Name, startsWith) {
 									errProx.ErrMsg = inp.ErrMsg
 									q.Pages[i1].Groups[i2].Inputs[i3].ErrMsg = ""
+									// log.Printf("Re-assigning ErrMsg from %v to ErrorProxy: %v", inp.Name, errProx.ErrMsg)
 								}
 							}
-							// if errProx, ok := errorProxies[inp.Name]; ok {
-							// }
+
 						}
 					}
 				}
@@ -493,10 +550,13 @@ type ErrorForward struct {
 	// pageIdx int
 }
 
+// Error implements the errors.Error interface
 func (ef ErrorForward) Error() string {
 	return ""
 }
 
+// MarkDownPath returns the path to redirect to;
+//   it should be renamed - since it might also contain absolute URLs
 func (ef ErrorForward) MarkDownPath() string {
 	return ef.markDownPath
 }

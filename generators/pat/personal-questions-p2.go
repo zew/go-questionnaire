@@ -361,8 +361,6 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 				inp := gr.AddInput()
 				inp.Type = "dyn-textblock"
 				inp.ColSpan = 4
-				inp.ColSpanControl = 1
-				inp.ColSpanLabel = 1
 				inp.DynamicFunc = "ErrorProxy"
 				inp.Param = "q20"
 			}

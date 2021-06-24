@@ -685,3 +685,19 @@ dummy
         0 0 0 0.090em lightgray,
         0 0 0 0.120em gray;
 }
+
+
+
+
+
+.comprehension-error {
+    min-width: 35rem;
+    position: relative;
+    /* top: 0.5rem; */
+}
+
+@media screen and (max-width: 800px) {
+    .comprehension-error {
+        min-width: 18rem;
+    }
+}

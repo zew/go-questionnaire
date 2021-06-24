@@ -300,11 +300,30 @@ func ComprehensionCheckPop2(q *qst.QuestionnaireT) error {
 
 			{
 				inp := gr.AddInput()
+				inp.Type = "dyn-textblock"
+				inp.ColSpan = 8
+				inp.DynamicFunc = "ErrorProxy"
+				inp.Param = "q_found_compr_"
+
+				inp.Style = css.NewStylesResponsive(inp.Style)
+				inp.Style.Desktop.StyleBox.Position = "relative"
+				inp.Style.Desktop.StyleBox.Top = "1.38rem"
+				// inp.Style.Desktop.StyleBox.Border = "1px solid green"
+				inp.Style.Desktop.StyleBox.HeightMin = "0.3rem"
+
+				inp.Style.Mobile.StyleBox.HeightMin = "1.3rem"
+				inp.Style.Mobile.StyleBox.Top = "2.51rem"
+
+			}
+
+			{
+
+				inp := gr.AddInput()
 				inp.Type = "textblock"
 				inp.ColSpan = 8
 				inp.Desc = trl.S{
 					"de": `
-					<p style="margin-bottom: 0.5rem">
+					<p style="margin-bottom: 0.05rem">
 						<b>1.</b> &nbsp; 
 						Wieviele Leute stufen Stiftung A als mittel ein? 
 					</p>
@@ -338,35 +357,10 @@ func ComprehensionCheckPop2(q *qst.QuestionnaireT) error {
 				rad.LabelRight()
 
 				if idx == 0 {
-					rad.Validator = "must"
+					// rad.Validator = "must;comprehensionPOP2"
+					rad.Validator = "comprehensionPOP2"
 				}
 			}
-
-			/*
-				{
-					inp := gr.AddInput()
-					inp.Type = "text"
-					inp.Name = "q_found_compr_b"
-					inp.MaxChars = 3
-					inp.ColSpan = 6
-					inp.ColSpanLabel = 5
-					inp.ColSpanControl = 2
-					// inp.Placeholder = trl.S{"de": "A,B oder C"}
-					inp.Label = trl.S{
-						"de": `
-						<p>
-						<b>2.</b>
-						Welche Stiftung wird von drei Leuten als am besten eingestuft?
-						</p>
-					`}
-					inp.Suffix = trl.S{"de": "[A, B, C]"}
-					inp.LabelPadRight()
-					// inp.Validator = "inRange1000"
-					inp.Validator = "must"
-					inp.Style = css.NewStylesResponsive(inp.Style)
-					inp.Style.Desktop.StyleBox.Margin = "1.6rem 0 0 0"
-				}
-			*/
 
 			{
 				inp := gr.AddInput()
@@ -374,7 +368,7 @@ func ComprehensionCheckPop2(q *qst.QuestionnaireT) error {
 				inp.ColSpan = 8
 				inp.Desc = trl.S{
 					"de": `
-					<p style="margin-bottom: 0.5rem">
+					<p style="margin-bottom: 0.05rem">
 						<b>2.</b>
 						Welche Stiftung wird von drei Leuten als am besten eingestuft?
 					</p>
@@ -405,7 +399,8 @@ func ComprehensionCheckPop2(q *qst.QuestionnaireT) error {
 				rad.LabelRight()
 
 				if idx == 0 {
-					rad.Validator = "must"
+					// rad.Validator = "must;comprehensionPOP2"
+					rad.Validator = "comprehensionPOP2"
 				}
 			}
 

@@ -394,9 +394,21 @@ func (p *pageT) AddGroup() *groupT {
 
 // QuestionnaireT contains pages with groups with inputs
 type QuestionnaireT struct {
-	Survey SurveyT           `json:"survey,omitempty"`
-	UserID string            `json:"user_id,omitempty"`    // participant ID, decimal, but string, i.E. 1011
-	Attrs  map[string]string `json:"user_attrs,omitempty"` // i.e. user country or euro-member - taken from lgn.LoginT
+	Survey SurveyT `json:"survey,omitempty"`
+	UserID string  `json:"user_id,omitempty"` // participant ID, decimal, but string, i.E. 1011
+
+	// Attrs are user specific key-value pairs -
+	//    i.e. user country or euro-member
+	// 		whereas surveyT.Params are specific to the survey + wave
+	// Attrs survey ID and wave ID and lang code come from login;
+	// additional Attrs come from cfg.Profiles - mediated by login `p` parameter
+	//
+	//    key 'survey_variant' loads distinct questionnaire templates
+	//
+	//  Attrs are dynamically replaced
+	//    attr-country
+	Attrs map[string]string `json:"user_attrs,omitempty"`
+
 	// if any response key "finished" equals qst.Finished
 	// this is set to time.Now() - truncated to second
 	// it is the marker for preventing any more edits

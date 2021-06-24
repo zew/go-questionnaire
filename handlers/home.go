@@ -263,8 +263,14 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 
-	// Login attributes => questionaire attributes
-	q.Attrs = l.Attrs
+	// Add login attributes to questionaire attributes
+	//    q.Attrs might already contain other values
+	if q.Attrs == nil {
+		q.Attrs = map[string]string{}
+	}
+	for k, v := range l.Attrs {
+		q.Attrs[k] = v
+	}
 
 	//
 	// Page logic
@@ -346,12 +352,17 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 		}
 
 		if forward != nil {
-			core, _ := tpl.SiteCore(q.Survey.Type)
-			relURL := path.Join("/doc/", core, q.LangCode, forward.MarkDownPath())
-			relURL = cfg.Pref(relURL)
-			http.Redirect(w, r, relURL, http.StatusTemporaryRedirect)
-			log.Printf("Redirected to %v", relURL)
-			// tpl.RenderStaticContent(w, forward.MarkDownPath(), core, q.LangCode)
+			if strings.HasPrefix(forward.MarkDownPath(), "https://") {
+				http.Redirect(w, r, forward.MarkDownPath(), http.StatusTemporaryRedirect)
+				log.Printf("Redirected to %v", forward.MarkDownPath())
+			} else {
+				core, _ := tpl.SiteCore(q.Survey.Type)
+				relURL := path.Join("/doc/", core, q.LangCode, forward.MarkDownPath())
+				relURL = cfg.Pref(relURL)
+				http.Redirect(w, r, relURL, http.StatusTemporaryRedirect)
+				log.Printf("Redirected to %v", relURL)
+				// tpl.RenderStaticContent(w, forward.MarkDownPath(), core, q.LangCode)
+			}
 			return
 		}
 	}

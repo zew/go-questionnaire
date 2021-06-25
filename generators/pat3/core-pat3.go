@@ -907,6 +907,23 @@ func ComprehensionCheckPop3(q *qst.QuestionnaireT) error {
 			gr.Cols = 1
 			gr.BottomVSpacers = 2
 
+			{
+				inp := gr.AddInput()
+				inp.Type = "dyn-textblock"
+				inp.ColSpan = 1
+				inp.DynamicFunc = "ErrorProxy"
+				inp.Param = "q_tpref_compr"
+
+				inp.Style = css.NewStylesResponsive(inp.Style)
+				inp.Style.Desktop.StyleBox.Position = "relative"
+				inp.Style.Desktop.StyleBox.Top = "1.28rem"
+				// inp.Style.Desktop.StyleBox.Border = "1px solid green"
+				inp.Style.Desktop.StyleBox.HeightMin = "0.3rem"
+
+				inp.Style.Mobile.StyleBox.HeightMin = "1.3rem"
+				inp.Style.Mobile.StyleBox.Top = "2.38rem"
+			}
+
 			// q2
 			{
 				inp := gr.AddInput()
@@ -922,15 +939,9 @@ func ComprehensionCheckPop3(q *qst.QuestionnaireT) error {
 				inp.Label = trl.S{"de": "<b>1.</b> Was ist der höchste Betrag, den der*die zukünftige Teilnehmer*in durch seine*ihre Auswahl bei den verfügbaren Optionen sofort erhalten kann?"}
 				inp.Suffix = trl.S{"de": "€"}
 				// inp.Validator = "must"
-				inp.Validator = "must"
+				inp.Validator = "comprehensionPOP3"
 				inp.LabelPadRight()
 			}
-		}
-
-		{
-			gr := page.AddGroup()
-			gr.Cols = 1
-			gr.BottomVSpacers = 3
 
 			{
 				inp := gr.AddInput()
@@ -946,7 +957,8 @@ func ComprehensionCheckPop3(q *qst.QuestionnaireT) error {
 				inp.Label = trl.S{"de": "<b>2.</b> Wenn der*die zukünftige Teilnehmer*in sich entscheidet, 3 € sofort zu erhalten, wieviel wird er*sie in 6 Monaten erhalten? "}
 				inp.Suffix = trl.S{"de": "€"}
 				// inp.Validator = "inRange1000"
-				inp.Validator = "must"
+				// inp.Validator = "must"
+				inp.Validator = "comprehensionPOP3"
 				inp.LabelPadRight()
 			}
 		}

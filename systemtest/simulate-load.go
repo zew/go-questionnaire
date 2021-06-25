@@ -52,6 +52,10 @@ var presets = map[string]map[int]map[string]string{
 		1: {
 			"q17": "citizenshipyes",
 		},
+		13: {
+			"q_found_compr_a": "est_2",
+			"q_found_compr_b": "est_c",
+		},
 		15: {
 			"part2_q1_q1": "3",
 			"part2_q1_q2": "3",
@@ -101,6 +105,10 @@ var presets = map[string]map[int]map[string]string{
 			"q4b_opt1": "3",
 			"q4b_opt2": "3",
 			"q4b_opt3": "4",
+		},
+		6: {
+			"q_tpref_compr_a": "3",
+			"q_tpref_compr_b": "7",
 		},
 		12: {
 			"pop3_part2_q1_1": "7",

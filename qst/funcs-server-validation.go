@@ -351,7 +351,10 @@ func init() {
 
 		erroneous := false
 		empty := false
-		neighbors := map[string]string{"q_found_compr_a": "est_5", "q_found_compr_b": "est_c"}
+		neighbors := map[string]string{
+			"q_found_compr_a": "est_2",
+			"q_found_compr_b": "est_c",
+		}
 		for neighbor, solution := range neighbors {
 			nb := q.ByName(neighbor)
 			// summand, _ := strconv.Atoi(nb.Response)
@@ -377,8 +380,8 @@ func init() {
 			if vl%2 == 1 {
 				err := fmt.Errorf(`
 					<div  class='comprehension-error'>
-						Sie haben eine falsche Antwort gegeben. 
-						Bitte lesen Sie die Anleitung und Fragen genau durch. 
+						Mindestens eine Ihrer beiden Antworten ist falsch.
+						Lesen Sie genau Anleitung und Fragen. 
 						<br>
 						<span  style='font-size: 110%%;'>Versuch %v von 3  </span>
 					</div>`,
@@ -399,6 +402,69 @@ func init() {
 
 		} else {
 			q.Attrs["comprehensionPOP2"] = "0" // reset
+		}
+
+		return nil
+	}
+
+	//
+	//
+	//
+	validators["comprehensionPOP3"] = func(q *QuestionnaireT, inp *inputT) error {
+
+		erroneous := false
+		empty := false
+		neighbors := map[string]string{
+			"q_tpref_compr_a": "3",
+			"q_tpref_compr_b": "7",
+		}
+		for neighbor, solution := range neighbors {
+			nb := q.ByName(neighbor)
+			// summand, _ := strconv.Atoi(nb.Response)
+			if nb.Response != "" && nb.Response != solution {
+				erroneous = true
+			}
+			if nb.Response == "" {
+				empty = true
+			}
+		}
+
+		if empty {
+			err := errors.New("Bitte beide Fragen beantworten.")
+			return err
+		}
+
+		if erroneous {
+			vlStr, _ := q.Attrs["comprehensionPOP3"]
+			vl, _ := strconv.Atoi(vlStr)
+			vl++
+			q.Attrs["comprehensionPOP3"] = fmt.Sprint(vl)
+
+			if vl%2 == 1 {
+				err := fmt.Errorf(`
+					<div  class='comprehension-error'>
+						Mindestens eine Ihrer beiden Antworten ist falsch.
+						Lesen Sie genau Anleitung und Fragen. 
+						<br>
+						<span  style='font-size: 110%%;'>Versuch %v von 3  </span>
+					</div>`,
+					vl/2+1,
+				)
+
+				if vl > 3 {
+					err1 := ErrorForward{
+						// Quality-Redirect
+						// ... ErrorForward{markDownPath: "must-german-citizen.md"}
+						markDownPath: "https://webs.norstatsurveys.com/z/Quality",
+					}
+					err = errors.Wrap(err1, err.Error())
+				}
+
+				return err
+			}
+
+		} else {
+			q.Attrs["comprehensionPOP3"] = "0" // reset
 		}
 
 		return nil

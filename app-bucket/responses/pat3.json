@@ -19,7 +19,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "b1989e8432301707089a3f1296abb5c88013f84806dff7c8731d4ed2c7b7bdbe",
+ 	"md_5": "fa15b527de5ae12e30e127806c8caa7024a9aa9cc72c16bc0b5a505ff190dfcf",
  	"lang_codes": [
  		"de"
  	],
@@ -1428,8 +1428,6 @@
  							"type": "dyn-textblock",
  							"param": "q20",
  							"col_span": 4,
- 							"col_span_label": 1,
- 							"col_span_control": 1,
  							"dynamic_func": "ErrorProxy"
  						},
  						{
@@ -4553,6 +4551,33 @@
  					"columns": 1,
  					"inputs": [
  						{
+ 							"type": "dyn-textblock",
+ 							"param": "q_tpref_compr",
+ 							"col_span": 1,
+ 							"dynamic_func": "ErrorProxy",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"top": "1.28rem",
+ 										"height_min": "0.3rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"top": "2.38rem",
+ 										"height_min": "1.3rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
  							"name": "q_tpref_compr_a",
  							"type": "number",
  							"max_chars": 3,
@@ -4566,7 +4591,7 @@
  							"col_span": 1,
  							"col_span_label": 5,
  							"col_span_control": 2,
- 							"validator": "must",
+ 							"validator": "comprehensionPOP3",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -4583,13 +4608,7 @@
  									"text_style": {}
  								}
  							}
- 						}
- 					]
- 				},
- 				{
- 					"bottom_vspacers": 3,
- 					"columns": 1,
- 					"inputs": [
+ 						},
  						{
  							"name": "q_tpref_compr_b",
  							"type": "number",
@@ -4604,7 +4623,7 @@
  							"col_span": 1,
  							"col_span_label": 5,
  							"col_span_control": 2,
- 							"validator": "must",
+ 							"validator": "comprehensionPOP3",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},

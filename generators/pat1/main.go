@@ -9,6 +9,33 @@ import (
 	"github.com/zew/go-questionnaire/trl"
 )
 
+func CorePatMust(q *qst.QuestionnaireT) error {
+
+	var err error
+
+	err = pat.Part1Entscheidung1bis6(q, pat.VariableElements{AllMandatory: true})
+	if err != nil {
+		return fmt.Errorf("Error adding Part1(): %v", err)
+	}
+
+	err = pat.Part1Frage1(q, pat.VariableElements{NumberingQuestions: 1, AllMandatory: true})
+	if err != nil {
+		return fmt.Errorf("Error adding Part1Frage1(): %v", err)
+	}
+
+	err = pat.Part2(q, pat.VariableElements{ZumXtenTeil: "zweiten", NumberingSections: 7, NumberingQuestions: 2, AllMandatory: true})
+	if err != nil {
+		return fmt.Errorf("Error adding Part2(): %v", err)
+	}
+
+	err = pat.Part2Frage4(q, pat.VariableElements{NumberingQuestions: 4, AllMandatory: true})
+	if err != nil {
+		return fmt.Errorf("Error adding Part2Frage4(): %v", err)
+	}
+
+	return nil
+}
+
 // Create paternalismus questionnaire with addtl pers questions
 func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
@@ -35,7 +62,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		return nil, fmt.Errorf("Error adding title page: %v", err)
 	}
 
-	err = pat.Core(&q)
+	err = CorePatMust(&q)
 	if err != nil {
 		return nil, fmt.Errorf("Error adding core pages: %v", err)
 	}

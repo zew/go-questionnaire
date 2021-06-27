@@ -19,7 +19,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "eab46214ff4fe14eabf2312a0be253025def25f0b055378d58d614a62fcb3cc5",
+ 	"md_5": "dae4b85d54df5cfa4c87544820af61c451a53ff0de5200e7c496a82bfab54980",
  	"lang_codes": [
  		"de"
  	],
@@ -211,19 +211,23 @@
  						},
  						{
  							"name": "q1_seq1_r",
- 							"type": "dyn-composite-scalar"
+ 							"type": "dyn-composite-scalar",
+ 							"validator": "must"
  						},
  						{
  							"name": "q1_seq1_r1",
- 							"type": "dyn-composite-scalar"
+ 							"type": "dyn-composite-scalar",
+ 							"validator": "must"
  						},
  						{
  							"name": "q1_seq1_r2",
- 							"type": "dyn-composite-scalar"
+ 							"type": "dyn-composite-scalar",
+ 							"validator": "must"
  						},
  						{
  							"name": "q1_seq1_r3",
- 							"type": "dyn-composite-scalar"
+ 							"type": "dyn-composite-scalar",
+ 							"validator": "must"
  						}
  					]
  				},
@@ -238,19 +242,23 @@
  						},
  						{
  							"name": "q1_seq2_r",
- 							"type": "dyn-composite-scalar"
+ 							"type": "dyn-composite-scalar",
+ 							"validator": "must"
  						},
  						{
  							"name": "q1_seq2_r1",
- 							"type": "dyn-composite-scalar"
+ 							"type": "dyn-composite-scalar",
+ 							"validator": "must"
  						},
  						{
  							"name": "q1_seq2_r2",
- 							"type": "dyn-composite-scalar"
+ 							"type": "dyn-composite-scalar",
+ 							"validator": "must"
  						},
  						{
  							"name": "q1_seq2_r3",
- 							"type": "dyn-composite-scalar"
+ 							"type": "dyn-composite-scalar",
+ 							"validator": "must"
  						}
  					]
  				},
@@ -265,24 +273,27 @@
  						},
  						{
  							"name": "q1_seq3_r",
- 							"type": "dyn-composite-scalar"
+ 							"type": "dyn-composite-scalar",
+ 							"validator": "must"
  						},
  						{
  							"name": "q1_seq3_r1",
- 							"type": "dyn-composite-scalar"
+ 							"type": "dyn-composite-scalar",
+ 							"validator": "must"
  						},
  						{
  							"name": "q1_seq3_r2",
- 							"type": "dyn-composite-scalar"
+ 							"type": "dyn-composite-scalar",
+ 							"validator": "must"
  						},
  						{
  							"name": "q1_seq3_r3",
- 							"type": "dyn-composite-scalar"
+ 							"type": "dyn-composite-scalar",
+ 							"validator": "must"
  						}
  					]
  				}
  			],
- 			"validation_func_name": "patPage2",
  			"validation_func_msg": {
  				"de": "Wollen Sie wirklich weitergehen oder wollen Sie Ihre bisherigen Antworten vervollständigen?"
  			}
@@ -330,19 +341,23 @@
  						},
  						{
  							"name": "q1_seq4_r",
- 							"type": "dyn-composite-scalar"
+ 							"type": "dyn-composite-scalar",
+ 							"validator": "must"
  						},
  						{
  							"name": "q1_seq4_r1",
- 							"type": "dyn-composite-scalar"
+ 							"type": "dyn-composite-scalar",
+ 							"validator": "must"
  						},
  						{
  							"name": "q1_seq4_r2",
- 							"type": "dyn-composite-scalar"
+ 							"type": "dyn-composite-scalar",
+ 							"validator": "must"
  						},
  						{
  							"name": "q1_seq4_r3",
- 							"type": "dyn-composite-scalar"
+ 							"type": "dyn-composite-scalar",
+ 							"validator": "must"
  						}
  					]
  				},
@@ -357,19 +372,23 @@
  						},
  						{
  							"name": "q1_seq5_r",
- 							"type": "dyn-composite-scalar"
+ 							"type": "dyn-composite-scalar",
+ 							"validator": "must"
  						},
  						{
  							"name": "q1_seq5_r1",
- 							"type": "dyn-composite-scalar"
+ 							"type": "dyn-composite-scalar",
+ 							"validator": "must"
  						},
  						{
  							"name": "q1_seq5_r2",
- 							"type": "dyn-composite-scalar"
+ 							"type": "dyn-composite-scalar",
+ 							"validator": "must"
  						},
  						{
  							"name": "q1_seq5_r3",
- 							"type": "dyn-composite-scalar"
+ 							"type": "dyn-composite-scalar",
+ 							"validator": "must"
  						}
  					]
  				},
@@ -384,24 +403,27 @@
  						},
  						{
  							"name": "q1_seq6_r",
- 							"type": "dyn-composite-scalar"
+ 							"type": "dyn-composite-scalar",
+ 							"validator": "must"
  						},
  						{
  							"name": "q1_seq6_r1",
- 							"type": "dyn-composite-scalar"
+ 							"type": "dyn-composite-scalar",
+ 							"validator": "must"
  						},
  						{
  							"name": "q1_seq6_r2",
- 							"type": "dyn-composite-scalar"
+ 							"type": "dyn-composite-scalar",
+ 							"validator": "must"
  						},
  						{
  							"name": "q1_seq6_r3",
- 							"type": "dyn-composite-scalar"
+ 							"type": "dyn-composite-scalar",
+ 							"validator": "must"
  						}
  					]
  				}
  			],
- 			"validation_func_name": "patPage3",
  			"validation_func_msg": {
  				"de": "Wollen Sie wirklich weitergehen oder wollen Sie Ihre bisherigen Antworten vervollständigen?"
  			}
@@ -469,7 +491,7 @@
  							"col_span": 5,
  							"col_span_label": 3,
  							"col_span_control": 2,
- 							"validator": "inRange1000"
+ 							"validator": "inRange1000;must"
  						},
  						{
  							"name": "q2_b",
@@ -486,7 +508,7 @@
  							"col_span": 5,
  							"col_span_label": 3,
  							"col_span_control": 2,
- 							"validator": "inRange1000"
+ 							"validator": "inRange1000;must"
  						},
  						{
  							"name": "q2_c",
@@ -503,7 +525,7 @@
  							"col_span": 5,
  							"col_span_label": 3,
  							"col_span_control": 2,
- 							"validator": "inRange1000"
+ 							"validator": "inRange1000;must"
  						}
  					]
  				}
@@ -568,27 +590,33 @@
  						},
  						{
  							"name": "q2_seq1_row1_rad",
- 							"type": "dyn-composite-scalar"
+ 							"type": "dyn-composite-scalar",
+ 							"validator": "patMustOneAvailabe"
  						},
  						{
  							"name": "q2_seq1_row2_rad",
- 							"type": "dyn-composite-scalar"
+ 							"type": "dyn-composite-scalar",
+ 							"validator": "patMustOneAvailabe"
  						},
  						{
  							"name": "q2_seq1_row3_rad",
- 							"type": "dyn-composite-scalar"
+ 							"type": "dyn-composite-scalar",
+ 							"validator": "patMustOneAvailabe"
  						},
  						{
  							"name": "q2_seq1_row1_chk",
- 							"type": "dyn-composite-scalar"
+ 							"type": "dyn-composite-scalar",
+ 							"validator": "patMustOneAvailabe"
  						},
  						{
  							"name": "q2_seq1_row2_chk",
- 							"type": "dyn-composite-scalar"
+ 							"type": "dyn-composite-scalar",
+ 							"validator": "patMustOneAvailabe"
  						},
  						{
  							"name": "q2_seq1_row3_chk",
- 							"type": "dyn-composite-scalar"
+ 							"type": "dyn-composite-scalar",
+ 							"validator": "patMustOneAvailabe"
  						}
  					]
  				},
@@ -615,32 +643,37 @@
  						},
  						{
  							"name": "q2_seq2_row1_rad",
- 							"type": "dyn-composite-scalar"
+ 							"type": "dyn-composite-scalar",
+ 							"validator": "patMustOneAvailabe"
  						},
  						{
  							"name": "q2_seq2_row2_rad",
- 							"type": "dyn-composite-scalar"
+ 							"type": "dyn-composite-scalar",
+ 							"validator": "patMustOneAvailabe"
  						},
  						{
  							"name": "q2_seq2_row3_rad",
- 							"type": "dyn-composite-scalar"
+ 							"type": "dyn-composite-scalar",
+ 							"validator": "patMustOneAvailabe"
  						},
  						{
  							"name": "q2_seq2_row1_chk",
- 							"type": "dyn-composite-scalar"
+ 							"type": "dyn-composite-scalar",
+ 							"validator": "patMustOneAvailabe"
  						},
  						{
  							"name": "q2_seq2_row2_chk",
- 							"type": "dyn-composite-scalar"
+ 							"type": "dyn-composite-scalar",
+ 							"validator": "patMustOneAvailabe"
  						},
  						{
  							"name": "q2_seq2_row3_chk",
- 							"type": "dyn-composite-scalar"
+ 							"type": "dyn-composite-scalar",
+ 							"validator": "patMustOneAvailabe"
  						}
  					]
  				}
  			],
- 			"validation_func_name": "patPage5",
  			"validation_func_msg": {
  				"de": "Wollen Sie wirklich weitergehen oder wollen Sie Ihre bisherigen Antworten vervollständigen?"
  			}
@@ -714,7 +747,7 @@
  							"col_span": 8,
  							"col_span_label": 1,
  							"col_span_control": 9,
- 							"validator": "inRange10",
+ 							"validator": "inRange10;pat3_q4ab_opt123",
  							"style": {
  								"desktop": {
  									"grid_container_style": {},
@@ -877,7 +910,7 @@
  							"col_span": 8,
  							"col_span_label": 1,
  							"col_span_control": 9,
- 							"validator": "inRange10",
+ 							"validator": "inRange10;pat3_q4ab_opt123",
  							"style": {
  								"desktop": {
  									"grid_container_style": {},
@@ -1003,11 +1036,7 @@
  						}
  					]
  				}
- 			],
- 			"validation_func_name": "patPage6",
- 			"validation_func_msg": {
- 				"de": "Wollen Sie wirklich weiterfahren, ohne dass sich Ihre Eintraege auf 10 summieren?"
- 			}
+ 			]
  		},
  		{
  			"label": {
@@ -1359,42 +1388,49 @@
  							"name": "q4",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "must",
  							"value_radio": "1"
  						},
  						{
  							"name": "q4",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "must",
  							"value_radio": "2"
  						},
  						{
  							"name": "q4",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "must",
  							"value_radio": "3"
  						},
  						{
  							"name": "q4",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "must",
  							"value_radio": "4"
  						},
  						{
  							"name": "q4",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "must",
  							"value_radio": "5"
  						},
  						{
  							"name": "q4",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "must",
  							"value_radio": "6"
  						},
  						{
  							"name": "q4",
  							"type": "radio",
  							"col_span_control": 1,
+ 							"validator": "must",
  							"value_radio": "7"
  						}
  					],
@@ -3919,8 +3955,6 @@
  							"type": "dyn-textblock",
  							"param": "q20",
  							"col_span": 4,
- 							"col_span_label": 1,
- 							"col_span_control": 1,
  							"dynamic_func": "ErrorProxy"
  						},
  						{

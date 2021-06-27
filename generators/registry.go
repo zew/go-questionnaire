@@ -9,6 +9,7 @@ import (
 	"net/http/httptest"
 	"net/url"
 	"path"
+	"sort"
 	"strings"
 	"time"
 
@@ -41,17 +42,12 @@ var gens = map[string]genT{
 	// "lt2020":  lt2020.Create,
 }
 
-// Get returns all questionnaire generators
-func Get() map[string]genT {
-	return gens
-}
-
-func get() []string {
+func sortedKeys() []string {
 	ret := []string{}
-	gens := Get()
 	for key := range gens {
 		ret = append(ret, key)
 	}
+	sort.Strings(ret)
 	return ret
 }
 
@@ -112,7 +108,7 @@ func GenerateQuestionnaireTemplates(w http.ResponseWriter, r *http.Request) {
 
 	}
 
-	html := s.HTMLForm(get(), errStr)
+	html := s.HTMLForm(sortedKeys(), errStr)
 	myfmt.Fprint(w, html) // not Fprintf
 	myfmt.Fprintf(w, "<br>")
 	//
@@ -122,7 +118,10 @@ func GenerateQuestionnaireTemplates(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	for key, fnc := range Get() {
+	// for key, fnc := range get() {
+	for _, key := range sortedKeys() {
+
+		fnc := gens[key]
 
 		if key != s.Type {
 			continue

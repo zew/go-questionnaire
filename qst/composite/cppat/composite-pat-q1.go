@@ -356,9 +356,23 @@ var preferencesComprehensionCheck = []preferences3x3T{
 	{
 		ID: 1, // Frage 1
 		Ppls: [][]int{
+			// {1, 2, 2},
+			// {1, 3, 1},
+			// {3, 0, 2},
+			{1, 4, 0},
+			{0, 1, 4},
+			{4, 0, 1},
+		},
+	},
+	{
+		ID: 1, // Frage 1
+		Ppls: [][]int{
 			{1, 2, 2},
 			{1, 3, 1},
 			{3, 0, 2},
+			// {1, 4, 0},
+			// {0, 1, 4},
+			// {4, 0, 1},
 		},
 	},
 }
@@ -368,7 +382,7 @@ var preferencesComprehensionCheck = []preferences3x3T{
 func PoliticalFoundationsComprehensionCheck(q qstif.Q, seq0to5, paramSetIdx int) (string, []string, error) {
 
 	// ret, _, err := politicalFoundationsStaticSub(q, seq0to5, paramSetIdx)
-	ret, _, err := politicalFoundations(q, seq0to5, "q_comprehension", preferencesComprehensionCheck[0].Ppls)
+	ret, _, err := politicalFoundations(q, seq0to5, "q_comprehension", preferencesComprehensionCheck[paramSetIdx].Ppls)
 
 	completeDeletionOfCols56 := true
 	if completeDeletionOfCols56 {

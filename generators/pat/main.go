@@ -26,7 +26,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 	var err error
 
-	err = Title(&q, false)
+	err = Title(&q, false, false)
 	if err != nil {
 		return nil, fmt.Errorf("Error adding title page: %v", err)
 	}

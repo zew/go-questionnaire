@@ -13,7 +13,7 @@ func CorePatMust(q *qst.QuestionnaireT) error {
 
 	var err error
 
-	err = pat.Part1Entscheidung1bis6(q, pat.VariableElements{AllMandatory: true})
+	err = pat.Part1Entscheidung1bis6(q, pat.VariableElements{AllMandatory: true, ComprehensionCheck1: true})
 	if err != nil {
 		return fmt.Errorf("Error adding Part1(): %v", err)
 	}
@@ -23,7 +23,7 @@ func CorePatMust(q *qst.QuestionnaireT) error {
 		return fmt.Errorf("Error adding Part1Frage1(): %v", err)
 	}
 
-	err = pat.Part2(q, pat.VariableElements{ZumXtenTeil: "zweiten", NumberingSections: 7, NumberingQuestions: 2, AllMandatory: true})
+	err = pat.Part2(q, pat.VariableElements{ZumXtenTeil: "zweiten", NumberingSections: 7, NumberingQuestions: 2, AllMandatory: true, ComprehensionCheck2: true})
 	if err != nil {
 		return fmt.Errorf("Error adding Part2(): %v", err)
 	}
@@ -56,8 +56,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 	var err error
 
-	// err = pat.Title(&q, true)
-	err = pat.Title(&q, false)
+	err = pat.Title(&q, false, true)
 	if err != nil {
 		return nil, fmt.Errorf("Error adding title page: %v", err)
 	}

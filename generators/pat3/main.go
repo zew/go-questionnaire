@@ -54,16 +54,17 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			AllMandatory:          true,
 			ZumXtenTeil:           "1",
 			ZumErstenTeilAsNumber: true,
+			ComprehensionCheck2:   true,
 		},
 	)
 	if err != nil {
 		return nil, fmt.Errorf("Error adding Part2(): %v", err)
 	}
 
-	err = ComprehensionCheckPop3(&q)
-	if err != nil {
-		return nil, fmt.Errorf("Error adding ComprehensionCheckPop3(): %v", err)
-	}
+	// err = ComprehensionCheckPop3(&q)
+	// if err != nil {
+	// 	return nil, fmt.Errorf("Error adding ComprehensionCheckPop3(): %v", err)
+	// }
 
 	// core
 	err = pat.Part2Frage4(&q, pat.VariableElements{NumberingQuestions: 3, AllMandatory: true})

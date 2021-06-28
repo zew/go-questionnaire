@@ -39,6 +39,10 @@ func TitlePat23(q *qst.QuestionnaireT) error {
 				zu Entscheidungsprozessen in der Politik.
 				</p>
 
+				<p>
+				Sie werden diese Umfrage nur abschliessen können, wenn Sie einen Verständnistest richtig beantworten. Bei mehrmaligen falschen Antworten wird die Umfrage automatisch terminiert. Bitte lesen Sie die Anleitungen daher sehr genau. 
+				</p>
+
 				<p> 
 				In dieser Umfrage gibt es keine richtigen oder falschen Antworten. 
 				Bitte entscheiden Sie daher immer gemäß Ihrer persönlichen Ansichten. 

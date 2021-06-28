@@ -22,11 +22,20 @@ var columnTemplate7 = []float32{
 }
 
 // Title adds title page
-func Title(q *qst.QuestionnaireT, isPOP bool) error {
+func Title(q *qst.QuestionnaireT, isPOP bool, comprehendWarning bool) error {
 
 	takes := "Ihre Teilnahme wird nur wenige Minuten in Anspruch nehmen "
+	comprehension := ""
 	if isPOP {
 		takes = "Ihre Teilnahme wird ca. 15&nbsp;Minuten in Anspruch nehmen  "
+	}
+
+	if comprehendWarning {
+		comprehension = `
+			<p>
+Sie werden diese Umfrage nur abschliessen können, wenn Sie einen Verständnistest richtig beantworten. Bei mehrmaligen falschen Antworten wird die Umfrage automatisch terminiert. Bitte lesen Sie die Anleitungen daher sehr genau. 			
+			</p>
+		`
 	}
 
 	// page 0
@@ -61,6 +70,8 @@ func Title(q *qst.QuestionnaireT, isPOP bool) error {
 				(alle erwähnten Personen existieren wirklich und alle Auszahlungen werden wie beschrieben getätigt).
 				</p>
 
+				%v
+
 				<p>
 				In dieser Umfrage gibt es keine richtigen oder falschen Antworten. 
 				Bitte entscheiden Sie daher immer gemäß Ihrer persönlichen Ansichten. 
@@ -69,7 +80,7 @@ func Title(q *qst.QuestionnaireT, isPOP bool) error {
 
 				<br>
 				<br>
-				`, takes),
+				`, takes, comprehension),
 			}
 		}
 
@@ -171,6 +182,15 @@ func Part1Entscheidung1bis6(q *qst.QuestionnaireT, vE VariableElements) error {
 				`}
 			}
 		}
+	}
+
+	if vE.ComprehensionCheck1 {
+
+		err := ComprehensionCheck1(q)
+		if err != nil {
+			return fmt.Errorf("Error adding ComprehensionCheck1(): %v", err)
+		}
+
 	}
 
 	// page 2
@@ -415,6 +435,14 @@ func Part2(q *qst.QuestionnaireT, vE VariableElements) error {
 		validatorMust10 = ";pat3_q4ab_opt123"
 	}
 
+	comprehensionExample := "."
+	if vE.ComprehensionCheck2 {
+		comprehensionExample = ", wie in folgendem Beispiel:"
+		add, _, _ := cppat.TimePreferenceSelfComprehensionCheck(q, 0, 0)
+		comprehensionExample += add
+		comprehensionExample += "<div style='height: 0.7rem;'> &nbsp; </div>"
+	}
+
 	// page 5
 	{
 		page := q.AddPage()
@@ -422,19 +450,10 @@ func Part2(q *qst.QuestionnaireT, vE VariableElements) error {
 		page.Short = trl.S{"de": "Auswertung 2"}
 		page.Style = css.DesktopWidthMaxForPages(page.Style, "36rem") // 60
 
-		page.ValidationFuncName = "patPage5"
-		page.ValidationFuncMsg = trl.S{
-			"de": "Wollen Sie wirklich weitergehen oder wollen Sie Ihre bisherigen Antworten vervollständigen?",
-			// "en": "Does not add up. Really continue?",
-		}
-		if vE.AllMandatory {
-			page.ValidationFuncName = ""
-		}
-
 		zeT := fmt.Sprintf(`
 			<b>
 				Nun kommen wir zum %v Teil unserer Studie. 
-			</b>
+			</b> <br>
 		`, vE.ZumXtenTeil)
 
 		if vE.ZumErstenTeilAsNumber {
@@ -449,7 +468,7 @@ func Part2(q *qst.QuestionnaireT, vE VariableElements) error {
 		{
 			gr := page.AddGroup()
 			gr.Cols = 1
-			gr.BottomVSpacers = 0
+			// gr.BottomVSpacers = 0
 
 			{
 				inp := gr.AddInput()
@@ -476,7 +495,8 @@ func Part2(q *qst.QuestionnaireT, vE VariableElements) error {
 						wie geduldig oder wie ungeduldig die Person wählen kann. 
 						
 						Dazu bestimmen Sie für jede von drei Optionen, 
-						ob die jeweilige Option der Person zur Verfügung stehen soll oder nicht. 
+						ob die jeweilige Option der Person zur Verfügung stehen 
+						soll oder nicht %v
 						
 						Falls Sie mehrere Optionen verfügbar machen, 
 						kann die Person aus diesen wählen. 
@@ -500,19 +520,62 @@ func Part2(q *qst.QuestionnaireT, vE VariableElements) error {
 					</p>
 					<br>
 
+					`,
+						zeT,
+						comprehensionExample,
+					),
+				}
+			}
+		}
+	}
 
+	// next page
+	if vE.ComprehensionCheck2 {
+
+		err := ComprehensionCheck2(q)
+		if err != nil {
+			return fmt.Errorf("Error adding ComprehensionCheck2(): %v", err)
+		}
+
+	}
+
+	// next page
+	{
+		page := q.AddPage()
+		page.Label = trl.S{"de": ""}
+		page.Short = trl.S{"de": "Auswertung 2"}
+		page.Style = css.DesktopWidthMaxForPages(page.Style, "36rem") // 60
+
+		page.ValidationFuncName = "patPage5"
+		page.ValidationFuncMsg = trl.S{
+			"de": "Wollen Sie wirklich weitergehen oder wollen Sie Ihre bisherigen Antworten vervollständigen?",
+			// "en": "Does not add up. Really continue?",
+		}
+		if vE.AllMandatory {
+			page.ValidationFuncName = ""
+		}
+
+		// gr1
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 0
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Desc = trl.S{
+					"de": fmt.Sprintf(`
 					<p>
 						<b>Entscheidung %v. </b><br>
 						Welche Optionen sollen der Person (nicht) zur 
 						Verfügung stehen, falls die Optionen wie folgt lauten?
 					</p>
-
-
-					`, zeT, vE.NumberingSections+0),
+					`,
+						vE.NumberingSections+0,
+					),
 				}
 			}
 		}
-
 		// gr2
 		{
 			gr := page.AddGroup()

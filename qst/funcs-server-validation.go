@@ -358,7 +358,7 @@ func init() {
 		for neighbor, solution := range neighbors {
 			nb := q.ByName(neighbor)
 			// summand, _ := strconv.Atoi(nb.Response)
-			if nb.Response != "" && nb.Response != solution {
+			if nb.Response != "" && strings.TrimSpace(nb.Response) != solution {
 				erroneous = true
 			}
 			if nb.Response == "" {
@@ -421,7 +421,7 @@ func init() {
 		for neighbor, solution := range neighbors {
 			nb := q.ByName(neighbor)
 			// summand, _ := strconv.Atoi(nb.Response)
-			if nb.Response != "" && nb.Response != solution {
+			if nb.Response != "" && strings.TrimSpace(nb.Response) != solution {
 				erroneous = true
 			}
 			if nb.Response == "" {

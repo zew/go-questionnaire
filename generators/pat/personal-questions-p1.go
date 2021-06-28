@@ -25,6 +25,9 @@ type VariableElements struct {
 	ZumXtenTeil string
 
 	Pop2FinishParagraph bool
+
+	ComprehensionCheck1 bool
+	ComprehensionCheck2 bool
 }
 
 // PersonalQuestions1 - numbered 5-7

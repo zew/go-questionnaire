@@ -44,7 +44,33 @@ func main() {
 //                 type    page    inpName  value
 var presets = map[string]map[int]map[string]string{
 	"pat1": {
+		3: {
+			"q_found_compr_a": "est_2",
+			"q_found_compr_b": "est_c",
+		},
+		8: {
+			"q_tpref_compr_a": "3",
+			"q_tpref_compr_b": "7",
+		},
 		9: {
+			"q2_seq1_row1_rad": "1",
+			"q2_seq1_row2_rad": "1",
+			"q2_seq1_row3_rad": "1",
+
+			"q2_seq2_row1_rad": "1",
+			"q2_seq2_row2_rad": "2",
+			"q2_seq2_row3_rad": "2",
+		},
+		10: {
+			"q4a_opt1": "3",
+			"q4a_opt2": "3",
+			"q4a_opt3": "4",
+
+			"q4b_opt1": "3",
+			"q4b_opt2": "3",
+			"q4b_opt3": "4",
+		},
+		13: {
 			"q17": "citizenshipyes",
 		},
 	},
@@ -52,11 +78,11 @@ var presets = map[string]map[int]map[string]string{
 		1: {
 			"q17": "citizenshipyes",
 		},
-		13: {
+		7: {
 			"q_found_compr_a": "est_2",
 			"q_found_compr_b": "est_c",
 		},
-		15: {
+		16: {
 			"part2_q1_q1": "3",
 			"part2_q1_q2": "3",
 			"part2_q1_q3": "4",
@@ -69,7 +95,7 @@ var presets = map[string]map[int]map[string]string{
 			"part2_q3_q2": "3",
 			"part2_q3_q3": "4",
 		},
-		16: {
+		17: {
 			"part2_q4_q1": "3",
 			"part2_q4_q2": "3",
 			"part2_q4_q3": "4",
@@ -88,7 +114,11 @@ var presets = map[string]map[int]map[string]string{
 		1: {
 			"q17": "citizenshipyes",
 		},
-		4: {
+		5: {
+			"q_tpref_compr_a": "3",
+			"q_tpref_compr_b": "7",
+		},
+		6: {
 			"q2_seq1_row1_rad": "1",
 			"q2_seq1_row2_rad": "1",
 			"q2_seq1_row3_rad": "1",
@@ -97,7 +127,7 @@ var presets = map[string]map[int]map[string]string{
 			"q2_seq2_row2_rad": "2",
 			"q2_seq2_row3_rad": "2",
 		},
-		5: {
+		7: {
 			"q4a_opt1": "3",
 			"q4a_opt2": "3",
 			"q4a_opt3": "4",
@@ -106,11 +136,7 @@ var presets = map[string]map[int]map[string]string{
 			"q4b_opt2": "3",
 			"q4b_opt3": "4",
 		},
-		6: {
-			"q_tpref_compr_a": "3",
-			"q_tpref_compr_b": "7",
-		},
-		12: {
+		13: {
 			"pop3_part2_q1_1": "7",
 			"pop3_part2_q1_2": "1",
 			"pop3_part2_q1_3": "1",
@@ -127,7 +153,7 @@ var presets = map[string]map[int]map[string]string{
 			"pop3_part2_q3_4": "0",
 		},
 
-		13: {
+		14: {
 			"pop3_part2_q4_1": "7",
 			"pop3_part2_q4_2": "1",
 			"pop3_part2_q4_3": "1",

@@ -19,7 +19,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "f76ec93929fb2bccfb633bda4be06f215aa58d6379e60e9a9c01fd956ef7d8e9",
+ 	"md_5": "86e843512a85c4b36cd647c7a4ad9839e75c14159cf63836c0674e9f2ba2cb00",
  	"lang_codes": [
  		"de"
  	],
@@ -68,7 +68,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\tHERZLICH WILLKOMMEN UND VIELEN DANK FÜR IHRE TEILNAHME!\u003cbr\u003e\u003cbr\u003e\n\n\t\t\t\t\u003cp\u003e\n\t\t\t\tDies ist eine Studie des Zentrums für Europäische Wirt\u0026shy;schafts\u0026shy;for\u0026shy;schung (ZEW) \n\t\t\t\tin Mannheim sowie der Universitäten Köln, Mannheim, Münster und Zürich. \n\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\n\t\t\t\tIhre Teilnahme wird ca. 15\u0026nbsp;Minuten in Anspruch nehmen \n\t\t\t\tund Sie unterstützen damit die For\u0026shy;schung \n\t\t\t\tzu Ent\u0026shy;schei\u0026shy;dungs\u0026shy;pro\u0026shy;zessen in der Po\u0026shy;li\u0026shy;tik.\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp\u003e \n\t\t\t\tIn dieser Umfrage gibt es keine richtigen oder falschen Antworten. \n\t\t\t\tBitte entscheiden Sie daher immer gemäß Ihrer persönlichen Ansichten. \n\t\t\t\tIhre Antworten werden dabei streng vertraulich behandelt.\n\t\t\t\t\u003c/p\u003e\n\n\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\tHERZLICH WILLKOMMEN UND VIELEN DANK FÜR IHRE TEILNAHME!\u003cbr\u003e\u003cbr\u003e\n\n\t\t\t\t\u003cp\u003e\n\t\t\t\tDies ist eine Studie des Zentrums für Europäische Wirt\u0026shy;schafts\u0026shy;for\u0026shy;schung (ZEW) \n\t\t\t\tin Mannheim sowie der Universitäten Köln, Mannheim, Münster und Zürich. \n\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\n\t\t\t\tIhre Teilnahme wird ca. 15\u0026nbsp;Minuten in Anspruch nehmen \n\t\t\t\tund Sie unterstützen damit die For\u0026shy;schung \n\t\t\t\tzu Ent\u0026shy;schei\u0026shy;dungs\u0026shy;pro\u0026shy;zessen in der Po\u0026shy;li\u0026shy;tik.\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp\u003e\n\t\t\t\tSie werden diese Umfrage nur abschliessen können, wenn Sie einen Verständnistest richtig be\u0026shy;ant\u0026shy;wor\u0026shy;ten. Bei mehrmaligen falschen Antworten wird die Umfrage automatisch terminiert. Bitte lesen Sie die Anleitungen daher sehr genau. \n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp\u003e \n\t\t\t\tIn dieser Umfrage gibt es keine richtigen oder falschen Antworten. \n\t\t\t\tBitte entscheiden Sie daher immer gemäß Ihrer persönlichen Ansichten. \n\t\t\t\tIhre Antworten werden dabei streng vertraulich behandelt.\n\t\t\t\t\u003c/p\u003e\n\n\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t"
  							},
  							"col_span_label": 1
  						},
@@ -4090,10 +4090,453 @@
  				"de": "",
  				"en": ""
  			},
+ 			"navi_num": 6,
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "36rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003c!--  \u003cb\u003eFrage:\u003c/b\u003e \u003cbr\u003e  --\u003e\n\t\t\t\t\tDie Präferenzen der Grup\u0026shy;pen\u0026shy;mit\u0026shy;glieder*innen sind wie folgt dargestellt:\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 							},
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "dyn-composite",
+ 							"col_span_control": 1,
+ 							"dynamic_func": "PoliticalFoundationsComprehensionCheck__0__0"
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tIn diesem Beispiel wird Stif­tung A von \n\t\t\t\t\teiner Person (\u003cimg src='/survey/img/pat/person.png' class='q1-pretext-img' \u003e) am besten eingestuft \n\t\t\t\t\tund von vier weiteren mittel. \n\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tStif­tung B wird von einer Person mittel eingestuft \n\t\t\t\t\tund von vier weiteren am schlech­testen. \n\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tStif\u0026shy;tung C wird von vier Personen am besten eingestuft \n\t\t\t\t\tund von einer am schlech\u0026shy;testen. \n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 							},
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": ""
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"navi_num": 7,
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "36rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eVerständnistest:\u003c/b\u003e \u003cbr\u003e\n\t\t\t\t\tNehmen Sie an, \n\t\t\t\t\tdie Präferenzen der Grup\u0026shy;pen\u0026shy;mit\u0026shy;glieder \n\t\t\t\t\tsind wie folgt gegeben \n\t\t\t\t\t(dies sind andere Präferenzen als auf der vorherigen Seite):\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 							},
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "dyn-composite",
+ 							"col_span_control": 1,
+ 							"dynamic_func": "PoliticalFoundationsComprehensionCheck__0__1"
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 8,
+ 					"inputs": [
+ 						{
+ 							"type": "dyn-textblock",
+ 							"param": "q_found_compr_",
+ 							"col_span": 8,
+ 							"dynamic_func": "ErrorProxy",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"top": "1.38rem",
+ 										"height_min": "0.3rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"top": "2.51rem",
+ 										"height_min": "1.3rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\n\t\t\t\t\t\u003cp style=\"margin-bottom: 0.05rem\"\u003e\n\t\t\t\t\t\t\u003cb\u003e1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tWieviele Leute stufen Stif\u0026shy;tung A als mittel ein? \n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
+ 							},
+ 							"col_span": 8,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "q_found_compr_a",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "\u0026nbsp;\u0026nbsp;0"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"validator": "comprehensionPOP2",
+ 							"value_radio": "est_0",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q_found_compr_a",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "\u0026nbsp;\u0026nbsp;1"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "est_1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q_found_compr_a",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "\u0026nbsp;\u0026nbsp;2"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "est_2",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q_found_compr_a",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "\u0026nbsp;\u0026nbsp;3"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "est_3",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q_found_compr_a",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "\u0026nbsp;\u0026nbsp;4"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "est_4",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q_found_compr_a",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "\u0026nbsp;\u0026nbsp;5"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "est_5",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\n\t\t\t\t\t\u003cp style=\"margin-bottom: 0.05rem\"\u003e\n\t\t\t\t\t\t\u003cb\u003e2.\u003c/b\u003e\n\t\t\t\t\t\tWelche Stif\u0026shy;tung wird von drei Leuten als am besten eingestuft?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
+ 							},
+ 							"col_span": 8,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "q_found_compr_b",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "\u0026nbsp;\u0026nbsp;A"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"validator": "comprehensionPOP2",
+ 							"value_radio": "est_a",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q_found_compr_b",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "\u0026nbsp;\u0026nbsp;B"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "est_b",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q_found_compr_b",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "\u0026nbsp;\u0026nbsp;C"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "est_c",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\n\t\t\t\t\t\u003cp style=\"margin-top: 0.35rem\"\u003e\n\t\t\t\t\t\tSie haben drei Versuche. Nach dem dritten Fehlversuch wird die Umfrage automatisch beendet. Falls Sie denken, \n\t\t\t\t\t\tdass sie die Anleitung verstanden haben, \n\t\t\t\t\t\taber trotzdem nicht weiterkommen, \n\t\t\t\t\t\tsenden Sie bitte eine \n\t\t\t\t\t\t\u003ca href=\"mailto:po\u0026shy;li\u0026shy;tik-umfrage@uni-koeln.de\"\u003eEmail\u003c/a\u003e.\n\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
+ 							},
+ 							"col_span": 8,
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": ""
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
  			"short": {
  				"de": "Stiftungen 2"
  			},
- 			"navi_num": 6,
+ 			"navi_num": 8,
  			"style": {
  				"desktop": {
  					"grid_container_style": {},
@@ -4237,7 +4680,7 @@
  			"short": {
  				"de": "Stiftungen 3"
  			},
- 			"navi_num": 7,
+ 			"navi_num": 9,
  			"style": {
  				"desktop": {
  					"grid_container_style": {},
@@ -4367,7 +4810,7 @@
  			"short": {
  				"de": "Auswertung 1"
  			},
- 			"navi_num": 8,
+ 			"navi_num": 10,
  			"style": {
  				"desktop": {
  					"grid_container_style": {},
@@ -4471,7 +4914,7 @@
  				"de": "",
  				"en": ""
  			},
- 			"navi_num": 9,
+ 			"navi_num": 11,
  			"style": {
  				"desktop": {
  					"grid_container_style": {},
@@ -4515,7 +4958,7 @@
  				"de": "",
  				"en": ""
  			},
- 			"navi_num": 10,
+ 			"navi_num": 12,
  			"style": {
  				"desktop": {
  					"grid_container_style": {},
@@ -4614,7 +5057,7 @@
  				"de": "",
  				"en": ""
  			},
- 			"navi_num": 11,
+ 			"navi_num": 13,
  			"style": {
  				"desktop": {
  					"grid_container_style": {},
@@ -5030,7 +5473,7 @@
  				"de": "",
  				"en": ""
  			},
- 			"navi_num": 12,
+ 			"navi_num": 14,
  			"style": {
  				"desktop": {
  					"grid_container_style": {},
@@ -5446,374 +5889,7 @@
  				"de": "",
  				"en": ""
  			},
- 			"navi_num": 13,
- 			"style": {
- 				"desktop": {
- 					"grid_container_style": {},
- 					"box_style": {
- 						"width_max": "36rem"
- 					},
- 					"grid_item_style": {},
- 					"text_style": {}
- 				},
- 				"mobile": {
- 					"grid_container_style": {},
- 					"box_style": {
- 						"width_max": "calc(100% - 1.2rem)"
- 					},
- 					"grid_item_style": {},
- 					"text_style": {}
- 				}
- 			},
- 			"finished": "0001-01-01T00:00:00Z",
- 			"groups": [
- 				{
- 					"bottom_vspacers": 1,
- 					"columns": 1,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"description": {
- 								"de": "\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eFrage:\u003c/b\u003e \u003cbr\u003e\n\t\t\t\t\tNehmen Sie an, die Präferenzen der Grup\u0026shy;pen\u0026shy;mit\u0026shy;glieder \n\t\t\t\t\tsind wie folgt gegeben:\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
- 							},
- 							"col_span_label": 1
- 						}
- 					]
- 				},
- 				{
- 					"bottom_vspacers": 2,
- 					"columns": 1,
- 					"inputs": [
- 						{
- 							"type": "dyn-composite",
- 							"col_span_control": 1,
- 							"dynamic_func": "PoliticalFoundationsComprehensionCheck__0__0"
- 						}
- 					]
- 				},
- 				{
- 					"bottom_vspacers": 3,
- 					"columns": 8,
- 					"inputs": [
- 						{
- 							"type": "dyn-textblock",
- 							"param": "q_found_compr_",
- 							"col_span": 8,
- 							"dynamic_func": "ErrorProxy",
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"position": "relative",
- 										"top": "1.38rem",
- 										"height_min": "0.3rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"top": "2.51rem",
- 										"height_min": "1.3rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "textblock",
- 							"description": {
- 								"de": "\n\t\t\t\t\t\u003cp style=\"margin-bottom: 0.05rem\"\u003e\n\t\t\t\t\t\t\u003cb\u003e1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tWieviele Leute stufen Stif\u0026shy;tung A als mittel ein? \n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
- 							},
- 							"col_span": 8,
- 							"col_span_label": 1
- 						},
- 						{
- 							"name": "q_found_compr_a",
- 							"type": "radio",
- 							"label": {
- 								"de": "\u0026nbsp;\u0026nbsp;0"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1,
- 							"col_span_control": 1,
- 							"validator": "comprehensionPOP2",
- 							"value_radio": "est_0",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "right"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q_found_compr_a",
- 							"type": "radio",
- 							"label": {
- 								"de": "\u0026nbsp;\u0026nbsp;1"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1,
- 							"col_span_control": 1,
- 							"value_radio": "est_1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "right"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q_found_compr_a",
- 							"type": "radio",
- 							"label": {
- 								"de": "\u0026nbsp;\u0026nbsp;2"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1,
- 							"col_span_control": 1,
- 							"value_radio": "est_2",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "right"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q_found_compr_a",
- 							"type": "radio",
- 							"label": {
- 								"de": "\u0026nbsp;\u0026nbsp;3"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1,
- 							"col_span_control": 1,
- 							"value_radio": "est_3",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "right"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q_found_compr_a",
- 							"type": "radio",
- 							"label": {
- 								"de": "\u0026nbsp;\u0026nbsp;4"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1,
- 							"col_span_control": 1,
- 							"value_radio": "est_4",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "right"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q_found_compr_a",
- 							"type": "radio",
- 							"label": {
- 								"de": "\u0026nbsp;\u0026nbsp;5"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1,
- 							"col_span_control": 1,
- 							"value_radio": "est_5",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "right"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "textblock",
- 							"description": {
- 								"de": "\n\t\t\t\t\t\u003cp style=\"margin-bottom: 0.05rem\"\u003e\n\t\t\t\t\t\t\u003cb\u003e2.\u003c/b\u003e\n\t\t\t\t\t\tWelche Stif\u0026shy;tung wird von drei Leuten als am besten eingestuft?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
- 							},
- 							"col_span": 8,
- 							"col_span_label": 1
- 						},
- 						{
- 							"name": "q_found_compr_b",
- 							"type": "radio",
- 							"label": {
- 								"de": "\u0026nbsp;\u0026nbsp;A"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1,
- 							"col_span_control": 1,
- 							"validator": "comprehensionPOP2",
- 							"value_radio": "est_a",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "right"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q_found_compr_b",
- 							"type": "radio",
- 							"label": {
- 								"de": "\u0026nbsp;\u0026nbsp;B"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1,
- 							"col_span_control": 1,
- 							"value_radio": "est_b",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "right"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q_found_compr_b",
- 							"type": "radio",
- 							"label": {
- 								"de": "\u0026nbsp;\u0026nbsp;C"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1,
- 							"col_span_control": 1,
- 							"value_radio": "est_c",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "right"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						}
- 					]
- 				}
- 			]
- 		},
- 		{
- 			"label": {
- 				"de": ""
- 			},
- 			"description": {
- 				"de": "",
- 				"en": ""
- 			},
- 			"navi_num": 14,
+ 			"navi_num": 15,
  			"style": {
  				"desktop": {
  					"grid_container_style": {},
@@ -5912,7 +5988,7 @@
  				"de": "",
  				"en": ""
  			},
- 			"navi_num": 15,
+ 			"navi_num": 16,
  			"style": {
  				"desktop": {
  					"grid_container_style": {},
@@ -6358,7 +6434,7 @@
  				"de": "",
  				"en": ""
  			},
- 			"navi_num": 16,
+ 			"navi_num": 17,
  			"style": {
  				"desktop": {
  					"grid_container_style": {},
@@ -6812,7 +6888,7 @@
  							"accesskey": "n",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"response": "17",
+ 							"response": "18",
  							"style_control": {
  								"desktop": {
  									"grid_container_style": {},

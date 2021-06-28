@@ -19,7 +19,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "dae4b85d54df5cfa4c87544820af61c451a53ff0de5200e7c496a82bfab54980",
+ 	"md_5": "422f3a68454a45efb6477a83fcc82684cc4c49d5b50fe7524717b008ac0c6bc3",
  	"lang_codes": [
  		"de"
  	],
@@ -67,7 +67,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\n\t\t\t\tHERZLICH WILLKOMMEN UND VIELEN DANK FÜR IHRE TEILNAHME!\u003cbr\u003e\u003cbr\u003e\n\n\t\t\t\t\u003cp\u003eDies ist eine Studie des Zentrums für Europäische Wirt\u0026shy;schafts\u0026shy;for\u0026shy;schung (ZEW) in Mannheim \n\t\t\t\tsowie der Universitäten in Köln, Mannheim, Münster und Zürich. \n\t\t\t\tIhre Teilnahme wird nur wenige Minuten in Anspruch nehmen  \n\t\t\t\tund Sie unterstützen damit die For\u0026shy;schung zu Ent\u0026shy;schei\u0026shy;dungs\u0026shy;pro\u0026shy;zessen in der Po\u0026shy;li\u0026shy;tik.\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp\u003eIn dieser Studie treffen Sie acht Entscheidungen und be\u0026shy;ant\u0026shy;wor\u0026shy;ten sieben Fragen. \n\t\t\t\tNach der Erhebung werden 10\u0026nbsp;% aller Teilnehmer*innen zufällig ausgewählt. \n\t\t\t\tVon jedem*r ausgewählten Teilnehmer*in wird eine der acht Entscheidungen zufällig bestimmt \n\t\t\t\tund genau wie im Folgenden beschrieben umgesetzt \n\t\t\t\t(alle erwähnten Personen existieren wirklich und alle Auszahlungen werden wie beschrieben getätigt).\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp\u003e\n\t\t\t\tIn dieser Umfrage gibt es keine richtigen oder falschen Antworten. \n\t\t\t\tBitte entscheiden Sie daher immer gemäß Ihrer persönlichen Ansichten. \n\t\t\t\tIhre Antworten werden dabei streng vertraulich behandelt.\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\n\t\t\t\tHERZLICH WILLKOMMEN UND VIELEN DANK FÜR IHRE TEILNAHME!\u003cbr\u003e\u003cbr\u003e\n\n\t\t\t\t\u003cp\u003eDies ist eine Studie des Zentrums für Europäische Wirt\u0026shy;schafts\u0026shy;for\u0026shy;schung (ZEW) in Mannheim \n\t\t\t\tsowie der Universitäten in Köln, Mannheim, Münster und Zürich. \n\t\t\t\tIhre Teilnahme wird nur wenige Minuten in Anspruch nehmen  \n\t\t\t\tund Sie unterstützen damit die For\u0026shy;schung zu Ent\u0026shy;schei\u0026shy;dungs\u0026shy;pro\u0026shy;zessen in der Po\u0026shy;li\u0026shy;tik.\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp\u003eIn dieser Studie treffen Sie acht Entscheidungen und be\u0026shy;ant\u0026shy;wor\u0026shy;ten sieben Fragen. \n\t\t\t\tNach der Erhebung werden 10\u0026nbsp;% aller Teilnehmer*innen zufällig ausgewählt. \n\t\t\t\tVon jedem*r ausgewählten Teilnehmer*in wird eine der acht Entscheidungen zufällig bestimmt \n\t\t\t\tund genau wie im Folgenden beschrieben umgesetzt \n\t\t\t\t(alle erwähnten Personen existieren wirklich und alle Auszahlungen werden wie beschrieben getätigt).\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\n\t\t\t\u003cp\u003e\nSie werden diese Umfrage nur abschliessen können, wenn Sie einen Verständnistest richtig be\u0026shy;ant\u0026shy;wor\u0026shy;ten. Bei mehrmaligen falschen Antworten wird die Umfrage automatisch terminiert. Bitte lesen Sie die Anleitungen daher sehr genau. \t\t\t\n\t\t\t\u003c/p\u003e\n\t\t\n\n\t\t\t\t\u003cp\u003e\n\t\t\t\tIn dieser Umfrage gibt es keine richtigen oder falschen Antworten. \n\t\t\t\tBitte entscheiden Sie daher immer gemäß Ihrer persönlichen Ansichten. \n\t\t\t\tIhre Antworten werden dabei streng vertraulich behandelt.\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t"
  							},
  							"col_span_label": 1
  						},
@@ -162,10 +162,453 @@
  				"de": "",
  				"en": ""
  			},
+ 			"navi_num": 2,
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "36rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003c!--  \u003cb\u003eFrage:\u003c/b\u003e \u003cbr\u003e  --\u003e\n\t\t\t\t\tDie Präferenzen der Grup\u0026shy;pen\u0026shy;mit\u0026shy;glieder*innen sind wie folgt dargestellt:\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 							},
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "dyn-composite",
+ 							"col_span_control": 1,
+ 							"dynamic_func": "PoliticalFoundationsComprehensionCheck__0__0"
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tIn diesem Beispiel wird Stif­tung A von \n\t\t\t\t\teiner Person (\u003cimg src='/survey/img/pat/person.png' class='q1-pretext-img' \u003e) am besten eingestuft \n\t\t\t\t\tund von vier weiteren mittel. \n\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tStif­tung B wird von einer Person mittel eingestuft \n\t\t\t\t\tund von vier weiteren am schlech­testen. \n\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\tStif\u0026shy;tung C wird von vier Personen am besten eingestuft \n\t\t\t\t\tund von einer am schlech\u0026shy;testen. \n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 							},
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": ""
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"navi_num": 3,
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "36rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eVerständnistest:\u003c/b\u003e \u003cbr\u003e\n\t\t\t\t\tNehmen Sie an, \n\t\t\t\t\tdie Präferenzen der Grup\u0026shy;pen\u0026shy;mit\u0026shy;glieder \n\t\t\t\t\tsind wie folgt gegeben \n\t\t\t\t\t(dies sind andere Präferenzen als auf der vorherigen Seite):\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 							},
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "dyn-composite",
+ 							"col_span_control": 1,
+ 							"dynamic_func": "PoliticalFoundationsComprehensionCheck__0__1"
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 8,
+ 					"inputs": [
+ 						{
+ 							"type": "dyn-textblock",
+ 							"param": "q_found_compr_",
+ 							"col_span": 8,
+ 							"dynamic_func": "ErrorProxy",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"top": "1.38rem",
+ 										"height_min": "0.3rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"top": "2.51rem",
+ 										"height_min": "1.3rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\n\t\t\t\t\t\u003cp style=\"margin-bottom: 0.05rem\"\u003e\n\t\t\t\t\t\t\u003cb\u003e1.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tWieviele Leute stufen Stif\u0026shy;tung A als mittel ein? \n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
+ 							},
+ 							"col_span": 8,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "q_found_compr_a",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "\u0026nbsp;\u0026nbsp;0"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"validator": "comprehensionPOP2",
+ 							"value_radio": "est_0",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q_found_compr_a",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "\u0026nbsp;\u0026nbsp;1"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "est_1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q_found_compr_a",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "\u0026nbsp;\u0026nbsp;2"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "est_2",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q_found_compr_a",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "\u0026nbsp;\u0026nbsp;3"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "est_3",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q_found_compr_a",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "\u0026nbsp;\u0026nbsp;4"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "est_4",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q_found_compr_a",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "\u0026nbsp;\u0026nbsp;5"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "est_5",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\n\t\t\t\t\t\u003cp style=\"margin-bottom: 0.05rem\"\u003e\n\t\t\t\t\t\t\u003cb\u003e2.\u003c/b\u003e\n\t\t\t\t\t\tWelche Stif\u0026shy;tung wird von drei Leuten als am besten eingestuft?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
+ 							},
+ 							"col_span": 8,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "q_found_compr_b",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "\u0026nbsp;\u0026nbsp;A"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"validator": "comprehensionPOP2",
+ 							"value_radio": "est_a",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q_found_compr_b",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "\u0026nbsp;\u0026nbsp;B"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "est_b",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q_found_compr_b",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "\u0026nbsp;\u0026nbsp;C"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "est_c",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\n\t\t\t\t\t\u003cp style=\"margin-top: 0.35rem\"\u003e\n\t\t\t\t\t\tSie haben drei Versuche. Nach dem dritten Fehlversuch wird die Umfrage automatisch beendet. Falls Sie denken, \n\t\t\t\t\t\tdass sie die Anleitung verstanden haben, \n\t\t\t\t\t\taber trotzdem nicht weiterkommen, \n\t\t\t\t\t\tsenden Sie bitte eine \n\t\t\t\t\t\t\u003ca href=\"mailto:po\u0026shy;li\u0026shy;tik-umfrage@uni-koeln.de\"\u003eEmail\u003c/a\u003e.\n\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
+ 							},
+ 							"col_span": 8,
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": ""
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
  			"short": {
  				"de": "Stiftungen 2"
  			},
- 			"navi_num": 2,
+ 			"navi_num": 4,
  			"style": {
  				"desktop": {
  					"grid_container_style": {},
@@ -309,7 +752,7 @@
  			"short": {
  				"de": "Stiftungen 3"
  			},
- 			"navi_num": 3,
+ 			"navi_num": 5,
  			"style": {
  				"desktop": {
  					"grid_container_style": {},
@@ -439,7 +882,7 @@
  			"short": {
  				"de": "Auswertung 1"
  			},
- 			"navi_num": 4,
+ 			"navi_num": 6,
  			"style": {
  				"desktop": {
  					"grid_container_style": {},
@@ -546,7 +989,206 @@
  			"short": {
  				"de": "Auswertung 2"
  			},
- 			"navi_num": 5,
+ 			"navi_num": 7,
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "36rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\t\n\t\t\t\u003cb\u003e\n\t\t\t\tNun kommen wir zum zweiten Teil unserer Studie. \n\t\t\t\u003c/b\u003e \u003cbr\u003e\n\t\t\n\n\t\t\t\t\t\tIn diesem Teil treffen Sie jeweils Entscheidungen \n\t\t\t\t\t\tfür eine*n deutsche*n Staatsangehörige*n, \n\t\t\t\t\t\tder*die Ihnen zugeordnet ist \n\t\t\t\t\t\tund der*die an einer zukünftigen Studie teilnehmen wird. \n\t\t\t\t\t\t\n\t\t\t\t\t\tDiese Person wird in der Studie entscheiden, \n\t\t\t\t\t\twie ihr das Entgelt für die Studienteilnahme ausbezahlt wird. \n\t\t\t\t\t\t\n\t\t\t\t\t\tJe eher diese Person bereit ist, \n\t\t\t\t\t\tauf ihr Geld zu warten, \n\t\t\t\t\t\tdesto mehr Geld wird ihr insge\u0026shy;samt bezahlt.\t\t\t\t\t\t\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tWir bitten Sie zu entscheiden, \n\t\t\t\t\t\twie geduldig oder wie ungeduldig die Person wählen kann. \n\t\t\t\t\t\t\n\t\t\t\t\t\tDazu bestimmen Sie für jede von drei Optionen, \n\t\t\t\t\t\tob die jeweilige Option der Person zur Verfügung stehen \n\t\t\t\t\t\tsoll oder nicht , wie in folgendem Beispiel:\n\n\n\u003cdiv id=\"t02\"\u003e\n\n\u003cdiv class=\"vspacer-08\"\u003e \u0026nbsp; \u003c/div\u003e\n\n\n\n\u003ctable\u003e\n    \u003ctr\u003e\n        \u003ctd style=\"width: 37%\"  rowspan=2 \u003eOptionen\u003c/td\u003e\n        \u003ctd style=\"width: 18%\"            \u003e\u003cb\u003eVer\u0026shy;füg\u0026shy;bar\u003c/b\u003e\u003c/td\u003e\n        \u003ctd style=\"width: 18%\"            \u003e\u003cb\u003eNicht ver\u0026shy;füg\u0026shy;bar\u003c/b\u003e\u003c/td\u003e\n        \u003ctd style=\"width: 15%\"  rowspan=2 \u003e \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n        \u003ctd  colspan=\"2\" \u003e \u003ci\u003e \u0026nbsp; \u003c/i\u003e \u003c/td\u003e\n    \u003c/tr\u003e\n\n    \u003ctr\u003e\n        \u003ctd colspan=\"4\" class=\"betw\"\u003e \u0026nbsp; \u003c/td\u003e\n    \u003c/tr\u003e\n\n    \u003ctr\u003e\n\t\t\u003ctd\u003e\u003cb\u003e 1\u0026nbsp;€ sofort\u003c/b\u003e und\u003cbr\u003e\u003cb\u003e15\u0026nbsp;€\u003c/b\u003e in \u003cb\u003e6\u0026nbsp;Monaten\u003c/b\u003e\u003c/td\u003e\n\t\t\u003ctd colspan=\"2\"\u003e\n\t\t\t\u003cinput disabled=\"disabled\" type=\"radio\"    name=\"dummy_row1_rad\" value=\"1\"  checked \u003e   \u0026nbsp;\u0026nbsp;\u0026nbsp;\u0026nbsp;\u0026nbsp;oder\u0026nbsp;\u0026nbsp;\u0026nbsp;\u0026nbsp;\u0026nbsp;\n\t\t\t\u003cinput disabled=\"disabled\" type=\"radio\"    name=\"dummy_row1_rad\" value=\"2\"  \u003e \n\t\t\u003c/td\u003e\n\t\t\u003ctd\u003e\n\t\t\t\u003c!-- input replaced --\u003e \n\t\t\t\u003cinput disabled=\"disabled\" type=\"hidden\"   name=\"dummy_row1_chk\" value=\"0\"    \u003e\n\t\t\u003c/td\u003e\n    \u003c/tr\u003e\n\n    \u003ctr\u003e\n\t\t\u003ctd\u003e\u003cb\u003e 3\u0026nbsp;€ sofort\u003c/b\u003e und\u003cbr\u003e \u003cb\u003e7\u0026nbsp;€\u003c/b\u003e in \u003cb\u003e6\u0026nbsp;Monaten\u003c/b\u003e\u003c/td\u003e\n\t\t\u003ctd colspan=\"2\"\u003e\n\t\t\t\u003cinput disabled=\"disabled\" type=\"radio\"    name=\"dummy_row2_rad\" value=\"1\"  checked \u003e   \u0026nbsp;\u0026nbsp;\u0026nbsp;\u0026nbsp;\u0026nbsp;oder\u0026nbsp;\u0026nbsp;\u0026nbsp;\u0026nbsp;\u0026nbsp;\n\t\t\t\u003cinput disabled=\"disabled\" type=\"radio\"    name=\"dummy_row2_rad\" value=\"2\"  \u003e \n\t\t\u003c/td\u003e\n\t\t\u003ctd\u003e\n\t\t\t\u003c!-- input replaced --\u003e \n\t\t\t\u003cinput disabled=\"disabled\" type=\"hidden\"   name=\"dummy_row2_chk\" value=\"0\"    \u003e\n\t\t\u003c/td\u003e\n    \u003c/tr\u003e\n\n    \u003ctr\u003e\n\t\t\u003ctd\u003e\u003cb\u003e 4\u0026nbsp;€ sofort\u003c/b\u003e und\u003cbr\u003e \u003cb\u003e1\u0026nbsp;€\u003c/b\u003e in \u003cb\u003e6\u0026nbsp;Monaten\u003c/b\u003e\u003c/td\u003e\n\t\t\u003ctd colspan=\"2\"\u003e\n\t\t\t\u003cinput disabled=\"disabled\" type=\"radio\"    name=\"dummy_row3_rad\" value=\"1\"  \u003e   \u0026nbsp;\u0026nbsp;\u0026nbsp;\u0026nbsp;\u0026nbsp;oder\u0026nbsp;\u0026nbsp;\u0026nbsp;\u0026nbsp;\u0026nbsp;\n\t\t\t\u003cinput disabled=\"disabled\" type=\"radio\"    name=\"dummy_row3_rad\" value=\"2\"  checked \u003e \n\t\t\u003c/td\u003e\n\t\t\u003ctd\u003e\n\t\t\t\u003c!-- input replaced --\u003e \n\t\t\t\u003cinput disabled=\"disabled\" type=\"hidden\"   name=\"dummy_row3_chk\" value=\"0\"    \u003e\n\t\t\u003c/td\u003e\n    \u003c/tr\u003e\n\n\u003c/table\u003e\n\n\u003c/div\u003e\n\n\t\n\t\t\u003cstyle\u003e\n\n\t\t#t02 td:last-child,\n\t\t#t02 tr:first-child td:last-child\n\t\t{\n\t\t\tbackground-color: green;\n\t\t\tdisplay: none;\n\t\t\tvisibility: hidden;\n\t\t}\t\n\n\t\t\u003c/style\u003e\n\t\t\n\t\t\u003cdiv style='height: 0.7rem;'\u003e \u0026nbsp; \u003c/div\u003e\n\t\t\t\t\t\t\n\t\t\t\t\t\tFalls Sie mehrere Optionen ver\u0026shy;füg\u0026shy;bar machen, \n\t\t\t\t\t\tkann die Person aus diesen wählen. \n\t\t\t\t\t\t\n\t\t\t\t\t\tMindestens eine Option muss „Ver\u0026shy;füg\u0026shy;bar“ sein.\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003cp style=\"font-size: 87%;\"\u003e\n\t\t\t\t\t\t\u003ci\u003e\n\t\t\t\t\t\tDetails: \n\t\t\t\t\t\tDie nicht ver\u0026shy;füg\u0026shy;baren Optionen werden der Person \n\t\t\t\t\t\tnicht als Auswahloptionen angezeigt. \n\t\t\t\t\t\t\n\t\t\t\t\t\tBei ver\u0026shy;füg\u0026shy;bar gemachten Optionen können Sie zusätzlich \n\t\t\t\t\t\t„Von dieser Option abraten“ ankreuzen. \n\t\t\t\t\t\t\n\t\t\t\t\t\tIn diesem Fall erhält die Person die Botschaft: \n\t\t\t\t\t\t„Ein früherer Teilnehmer dieser Studie \n\t\t\t\t\t\trät Ihnen davon ab, diese Option zu wählen”.\n\t\t\t\t\t\t\u003c/i\u003e\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\t"
+ 							},
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": ""
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"navi_num": 8,
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "36rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\u003cb\u003eVerständnistest:\u003c/b\u003e \u003cbr\u003e\n\t\t\t\t\t\u003c!-- Nehmen Sie an, jemand habe sich wie folgt entschieden: --\u003e\n\t\t\t\t\tNehmen Sie an, ein*e Teilnehmer*in wie Sie \n\t\t\t\t\thabe die Optionen wie \n\t\t\t\t\tfolgt ver\u0026shy;füg\u0026shy;bar und nicht ver\u0026shy;füg\u0026shy;bar gemacht.\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 							},
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "dyn-composite",
+ 							"col_span_control": 1,
+ 							"dynamic_func": "TimePreferenceSelfComprehensionCheck__0__0"
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "dyn-textblock",
+ 							"param": "q_tpref_compr",
+ 							"col_span": 1,
+ 							"dynamic_func": "ErrorProxy",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"top": "1.28rem",
+ 										"height_min": "0.3rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"top": "2.38rem",
+ 										"height_min": "1.3rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q_tpref_compr_a",
+ 							"type": "number",
+ 							"max_chars": 3,
+ 							"max": 100,
+ 							"label": {
+ 								"de": "\u003cb\u003e1.\u003c/b\u003e Was ist der höchste Betrag, den der*die zukünftige Teilnehmer*in durch seine*ihre Auswahl bei den ver\u0026shy;füg\u0026shy;baren Optionen sofort er\u0026shy;hal\u0026shy;ten kann?"
+ 							},
+ 							"suffix": {
+ 								"de": "€"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 5,
+ 							"col_span_control": 2,
+ 							"validator": "comprehensionPOP3",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q_tpref_compr_b",
+ 							"type": "number",
+ 							"max_chars": 3,
+ 							"max": 100,
+ 							"label": {
+ 								"de": "\u003cb\u003e2.\u003c/b\u003e Wenn der*die zukünftige Teilnehmer*in sich entscheidet, 3 € sofort zu er\u0026shy;hal\u0026shy;ten, wieviel wird er*sie in 6 Monaten er\u0026shy;hal\u0026shy;ten? "
+ 							},
+ 							"suffix": {
+ 								"de": "€"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 5,
+ 							"col_span_control": 2,
+ 							"validator": "comprehensionPOP3",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": ""
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"short": {
+ 				"de": "Auswertung 2"
+ 			},
+ 			"navi_num": 9,
  			"style": {
  				"desktop": {
  					"grid_container_style": {},
@@ -573,7 +1215,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\t\n\t\t\t\u003cb\u003e\n\t\t\t\tNun kommen wir zum zweiten Teil unserer Studie. \n\t\t\t\u003c/b\u003e\n\t\t\n\n\t\t\t\t\t\tIn diesem Teil treffen Sie jeweils Entscheidungen \n\t\t\t\t\t\tfür eine*n deutsche*n Staatsangehörige*n, \n\t\t\t\t\t\tder*die Ihnen zugeordnet ist \n\t\t\t\t\t\tund der*die an einer zukünftigen Studie teilnehmen wird. \n\t\t\t\t\t\t\n\t\t\t\t\t\tDiese Person wird in der Studie entscheiden, \n\t\t\t\t\t\twie ihr das Entgelt für die Studienteilnahme ausbezahlt wird. \n\t\t\t\t\t\t\n\t\t\t\t\t\tJe eher diese Person bereit ist, \n\t\t\t\t\t\tauf ihr Geld zu warten, \n\t\t\t\t\t\tdesto mehr Geld wird ihr insge\u0026shy;samt bezahlt.\t\t\t\t\t\t\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tWir bitten Sie zu entscheiden, \n\t\t\t\t\t\twie geduldig oder wie ungeduldig die Person wählen kann. \n\t\t\t\t\t\t\n\t\t\t\t\t\tDazu bestimmen Sie für jede von drei Optionen, \n\t\t\t\t\t\tob die jeweilige Option der Person zur Verfügung stehen soll oder nicht. \n\t\t\t\t\t\t\n\t\t\t\t\t\tFalls Sie mehrere Optionen ver\u0026shy;füg\u0026shy;bar machen, \n\t\t\t\t\t\tkann die Person aus diesen wählen. \n\t\t\t\t\t\t\n\t\t\t\t\t\tMindestens eine Option muss „Ver\u0026shy;füg\u0026shy;bar“ sein.\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003cp style=\"font-size: 87%;\"\u003e\n\t\t\t\t\t\t\u003ci\u003e\n\t\t\t\t\t\tDetails: \n\t\t\t\t\t\tDie nicht ver\u0026shy;füg\u0026shy;baren Optionen werden der Person \n\t\t\t\t\t\tnicht als Auswahloptionen angezeigt. \n\t\t\t\t\t\t\n\t\t\t\t\t\tBei ver\u0026shy;füg\u0026shy;bar gemachten Optionen können Sie zusätzlich \n\t\t\t\t\t\t„Von dieser Option abraten“ ankreuzen. \n\t\t\t\t\t\t\n\t\t\t\t\t\tIn diesem Fall erhält die Person die Botschaft: \n\t\t\t\t\t\t„Ein früherer Teilnehmer dieser Studie \n\t\t\t\t\t\trät Ihnen davon ab, diese Option zu wählen”.\n\t\t\t\t\t\t\u003c/i\u003e\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cbr\u003e\n\n\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\t\u003cb\u003eEntscheidung 7. \u003c/b\u003e\u003cbr\u003e\n\t\t\t\t\t\tWelche Optionen sollen der Person (nicht) zur \n\t\t\t\t\t\tVerfügung stehen, falls die Optionen wie folgt lauten?\n\t\t\t\t\t\u003c/p\u003e\n\n\n\t\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\t\u003cb\u003eEntscheidung 7. \u003c/b\u003e\u003cbr\u003e\n\t\t\t\t\t\tWelche Optionen sollen der Person (nicht) zur \n\t\t\t\t\t\tVerfügung stehen, falls die Optionen wie folgt lauten?\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
  							},
  							"col_span_label": 1
  						}
@@ -689,7 +1331,7 @@
  			"short": {
  				"de": "Gruppen-\u003cbr\u003epräferenzen"
  			},
- 			"navi_num": 6,
+ 			"navi_num": 10,
  			"style": {
  				"desktop": {
  					"grid_container_style": {},
@@ -1049,7 +1691,7 @@
  			"short": {
  				"de": "Eigene Einstellung 1"
  			},
- 			"navi_num": 7,
+ 			"navi_num": 11,
  			"style": {
  				"desktop": {
  					"grid_container_style": {},
@@ -1465,7 +2107,7 @@
  			"short": {
  				"de": "Eigene Einstellung 2"
  			},
- 			"navi_num": 8,
+ 			"navi_num": 12,
  			"style": {
  				"desktop": {
  					"grid_container_style": {},
@@ -2642,7 +3284,7 @@
  				"de": "",
  				"en": ""
  			},
- 			"navi_num": 9,
+ 			"navi_num": 13,
  			"style": {
  				"desktop": {
  					"grid_container_style": {},
@@ -4282,7 +4924,7 @@
  				"de": "",
  				"en": ""
  			},
- 			"navi_num": 10,
+ 			"navi_num": 14,
  			"style": {
  				"desktop": {
  					"grid_container_style": {},
@@ -5353,7 +5995,7 @@
  							"accesskey": "n",
  							"col_span": 2,
  							"col_span_control": 1,
- 							"response": "11",
+ 							"response": "15",
  							"style_control": {
  								"desktop": {
  									"grid_container_style": {},

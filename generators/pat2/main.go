@@ -51,7 +51,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	}
 
 	// core
-	err = pat.Part1Entscheidung1bis6(&q, pat.VariableElements{AllMandatory: true})
+	err = pat.Part1Entscheidung1bis6(&q, pat.VariableElements{AllMandatory: true, ComprehensionCheck1: true})
 	if err != nil {
 		return nil, fmt.Errorf("Error adding Part1(): %v", err)
 	}
@@ -66,11 +66,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	err = Part2IntroBUndEntscheidung78(&q)
 	if err != nil {
 		return nil, fmt.Errorf("Error adding Part1Entscheidung78(): %v", err)
-	}
-
-	err = ComprehensionCheckPop2(&q)
-	if err != nil {
-		return nil, fmt.Errorf("Error adding ComprehensionCheckPop2(): %v", err)
 	}
 
 	err = Part3Intro(&q)

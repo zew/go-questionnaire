@@ -33,7 +33,15 @@ func Title(q *qst.QuestionnaireT, isPOP bool, comprehendWarning bool) error {
 	if comprehendWarning {
 		comprehension = `
 			<p>
-Sie werden diese Umfrage nur abschliessen können, wenn Sie einen Verständnistest richtig beantworten. Bei mehrmaligen falschen Antworten wird die Umfrage automatisch terminiert. Bitte lesen Sie die Anleitungen daher sehr genau. 			
+				<b>
+				Sie werden diese Umfrage nur abschliessen können, 
+				wenn Sie zwei Verständnistests richtig beantworten. 
+				</b>
+				
+				Bei mehrmaligen falschen Antworten 
+				wird die Umfrage automatisch terminiert. 
+				
+				Bitte lesen Sie die Anleitungen daher sehr genau. 			
 			</p>
 		`
 	}
@@ -73,7 +81,7 @@ Sie werden diese Umfrage nur abschliessen können, wenn Sie einen Verständniste
 				%v
 
 				<p>
-				In dieser Umfrage gibt es keine richtigen oder falschen Antworten. 
+				In allen anderen Fragen und Entscheidungen gibt es keine richtigen oder falschen Antworten. 
 				Bitte entscheiden Sie daher immer gemäß Ihrer persönlichen Ansichten. 
 				Ihre Antworten werden dabei streng vertraulich behandelt.
 				</p>

@@ -381,7 +381,7 @@ func init() {
 				err := fmt.Errorf(`
 					<div  class='comprehension-error'>
 						Mindestens eine Ihrer beiden Antworten ist falsch.
-						Lesen Sie genau Anleitung und Fragen. 
+						Lesen Sie genau Anleitung u Fragen. 
 						<br>
 						<span  style='font-size: 110%%;'>Versuch %v von 3  </span>
 					</div>`,
@@ -444,7 +444,7 @@ func init() {
 				err := fmt.Errorf(`
 					<div  class='comprehension-error'>
 						Mindestens eine Ihrer beiden Antworten ist falsch.
-						Lesen Sie genau Anleitung und Fragen. 
+						Lesen Sie genau Anleitung u Fragen. 
 						<br>
 						<span  style='font-size: 110%%;'>Versuch %v von 3  </span>
 					</div>`,

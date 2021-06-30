@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/zew/go-questionnaire/cfg"
 	"github.com/zew/go-questionnaire/css"
 	"github.com/zew/go-questionnaire/qst"
 	"github.com/zew/go-questionnaire/trl"
@@ -56,8 +55,8 @@ func ComprehensionCheck1(q *qst.QuestionnaireT) error {
 
 		imgTag := fmt.Sprintf(
 			`<img src='%v' class='q1-pretext-img' >`,
-			// since fully dynamic - this works across localhost and survey2.zew.de
-			cfg.Pref("/img/pat/person.png"),
+			// cfg.Pref("/img/pat/person.png"),
+			"/img/pat/person.png", // hack - works only online
 		)
 
 		{
@@ -284,7 +283,7 @@ func ComprehensionCheck2(q *qst.QuestionnaireT) error {
 		{
 			gr := page.AddGroup()
 			gr.Cols = 1
-			gr.BottomVSpacers = 1
+			gr.BottomVSpacers = 0
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
@@ -312,7 +311,6 @@ func ComprehensionCheck2(q *qst.QuestionnaireT) error {
 				inp.ColSpanControl = 1
 				inp.DynamicFunc = fmt.Sprintf("TimePreferenceSelfComprehensionCheck__0__0")
 			}
-
 		}
 
 		// gr1
@@ -379,7 +377,7 @@ func ComprehensionCheck2(q *qst.QuestionnaireT) error {
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				inp.ColSpan = 8
+				inp.ColSpan = 1
 				inp.Desc = trl.S{
 					"de": `
 					<p style="margin-top: 0.35rem">

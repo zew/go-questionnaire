@@ -19,7 +19,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "5c6939cfde8152791a838effaecaf3ce5582df1d4e5427cdc4db2c32683afb51",
+ 	"md_5": "368ba20857fb4e5e4b2cc7171c57e074caa5cd6716bf1a50bb9c6937f9c8519d",
  	"lang_codes": [
  		"de"
  	],
@@ -68,7 +68,7 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\t\t\t\tHERZLICH WILLKOMMEN UND VIELEN DANK FÜR IHRE TEILNAHME!\u003cbr\u003e\u003cbr\u003e\n\n\t\t\t\t\u003cp\u003e\n\t\t\t\tDies ist eine Studie des Zentrums für Europäische Wirt\u0026shy;schafts\u0026shy;for\u0026shy;schung (ZEW) \n\t\t\t\tin Mannheim sowie der Universitäten Köln, Mannheim, Münster und Zürich. \n\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\n\t\t\t\tIhre Teilnahme wird ca. 15\u0026nbsp;Minuten in Anspruch nehmen \n\t\t\t\tund Sie unterstützen damit die For\u0026shy;schung \n\t\t\t\tzu Ent\u0026shy;schei\u0026shy;dungs\u0026shy;pro\u0026shy;zessen in der Po\u0026shy;li\u0026shy;tik.\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp\u003e\n\t\t\t\tSie werden diese Umfrage nur abschliessen können, wenn Sie einen Verständnistest richtig be\u0026shy;ant\u0026shy;wor\u0026shy;ten. Bei mehrmaligen falschen Antworten wird die Umfrage automatisch terminiert. Bitte lesen Sie die Anleitungen daher sehr genau. \n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp\u003e \n\t\t\t\tIn dieser Umfrage gibt es keine richtigen oder falschen Antworten. \n\t\t\t\tBitte entscheiden Sie daher immer gemäß Ihrer persönlichen Ansichten. \n\t\t\t\tIhre Antworten werden dabei streng vertraulich behandelt.\n\t\t\t\t\u003c/p\u003e\n\n\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\tHERZLICH WILLKOMMEN UND VIELEN DANK FÜR IHRE TEILNAHME!\u003cbr\u003e\u003cbr\u003e\n\n\t\t\t\t\u003cp\u003e\n\t\t\t\tDies ist eine Studie des Zentrums für Europäische Wirt\u0026shy;schafts\u0026shy;for\u0026shy;schung (ZEW) \n\t\t\t\tin Mannheim sowie der Universitäten Köln, Mannheim, Münster und Zürich. \n\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\n\t\t\t\tIhre Teilnahme wird ca. 15\u0026nbsp;Minuten in Anspruch nehmen \n\t\t\t\tund Sie unterstützen damit die For\u0026shy;schung \n\t\t\t\tzu Ent\u0026shy;schei\u0026shy;dungs\u0026shy;pro\u0026shy;zessen in der Po\u0026shy;li\u0026shy;tik.\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp\u003e\n\t\t\t\t\u003cb\u003e\n\t\t\t\tSie werden diese Umfrage nur abschliessen können, \n\t\t\t\twenn Sie zwei Verständnistests richtig be\u0026shy;ant\u0026shy;wor\u0026shy;ten. \n\t\t\t\t\u003c/b\u003e\n\t\t\t\t\n\t\t\t\tBei mehrmaligen falschen Antworten \n\t\t\t\twird die Umfrage automatisch terminiert. \n\t\t\t\t\n\t\t\t\tBitte lesen Sie die Anleitungen daher sehr genau. \t\t\t\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp\u003e \n\t\t\t\tIn allen anderen Fragen und Entscheidungen gibt es keine richtigen oder falschen Antworten. \n\t\t\t\tBitte entscheiden Sie daher immer gemäß Ihrer persönlichen Ansichten. \n\t\t\t\tIhre Antworten werden dabei streng vertraulich behandelt.\n\t\t\t\t\u003c/p\u003e\n\n\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t"
  							},
  							"col_span_label": 1
  						},
@@ -4067,7 +4067,6 @@
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
  				{
- 					"bottom_vspacers": 1,
  					"columns": 1,
  					"inputs": [
  						{
@@ -4184,6 +4183,14 @@
  									"text_style": {}
  								}
  							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"description": {
+ 								"de": "\n\t\t\t\t\t\u003cp style=\"margin-top: 0.35rem\"\u003e\n\t\t\t\t\t\tSie haben drei Versuche. Nach dem dritten Fehlversuch wird die Umfrage automatisch beendet. Falls Sie denken, \n\t\t\t\t\t\tdass sie die Anleitung verstanden haben, \n\t\t\t\t\t\taber trotzdem nicht weiterkommen, \n\t\t\t\t\t\tsenden Sie bitte eine \n\t\t\t\t\t\t\u003ca href=\"mailto:po\u0026shy;li\u0026shy;tik-umfrage@uni-koeln.de\"\u003eEmail\u003c/a\u003e.\n\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
  						}
  					]
  				}

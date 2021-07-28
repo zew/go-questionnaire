@@ -415,3 +415,115 @@ func improvedDeteriorated6() []trl.S {
 	return tm
 
 }
+
+func raiseDecrease6() []trl.S {
+
+	tm := []trl.S{
+		{
+			"de": "deutlich<br>erhöhen",
+			"en": "strongly<br>increase",
+		},
+		{
+			"de": "leicht<br>erhöhen",
+			"en": "slightly<br>increase",
+		},
+		{
+			"de": "nicht<br>verändern",
+			"en": "unchanged",
+		},
+		{
+			"de": "leicht<br>senken",
+			"en": "slightly<br>decrease",
+		},
+		{
+			"de": "stark<br>senken",
+			"en": "strongly<br>decrease",
+		},
+
+		{
+			"de": "keine<br>Angabe",
+			"en": "no answer",
+		},
+	}
+
+	return tm
+
+}
+
+func special202108A() []trl.S {
+
+	tm := []trl.S{
+		{
+			"de": "erleichtern",
+			"en": "alleviate",
+		},
+		{
+			"de": "unverändert lassen",
+			"en": "keep unchanged",
+		},
+		{
+			"de": "erschweren",
+			"en": "make harder",
+		},
+
+		{
+			"de": "keine Angabe",
+			"en": "no answer",
+		},
+	}
+
+	return tm
+
+}
+
+func special202108B() []trl.S {
+
+	tm := []trl.S{
+		{
+			"de": "erhöhen ",
+			"en": "increase",
+		},
+		{
+			"de": "unverändert lassen",
+			"en": "keep unchanged",
+		},
+		{
+			"de": "senken",
+			"en": "decrease",
+		},
+
+		{
+			"de": "keine Angabe",
+			"en": "no answer",
+		},
+	}
+
+	return tm
+
+}
+
+func special202108C() []trl.S {
+
+	tm := []trl.S{
+		{
+			"de": "fördern  ",
+			"en": "enhance",
+		},
+		{
+			"de": "unverändert lassen",
+			"en": "keep unchanged",
+		},
+		{
+			"de": "erschweren",
+			"en": "make harder",
+		},
+
+		{
+			"de": "keine Angabe",
+			"en": "no answer",
+		},
+	}
+
+	return tm
+
+}

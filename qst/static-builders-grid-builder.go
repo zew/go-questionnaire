@@ -116,6 +116,8 @@ func NewGridBuilderRadios(
 // uses GridBuilder.AddCol() and GridBuilder.AddRadioRow()
 // to compile a matrix of cells;
 // basically, each cell can contain input names, input values and input labels
+//
+// firstColLabels can be nil
 func NewGridBuilderRadiosWithValidator(
 	columnTemplate []float32,
 	hdrLabels []trl.S,

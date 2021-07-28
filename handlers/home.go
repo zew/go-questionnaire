@@ -353,14 +353,18 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 
 		if forward != nil {
 			if strings.HasPrefix(forward.MarkDownPath(), "https://") {
-				http.Redirect(w, r, forward.MarkDownPath(), http.StatusTemporaryRedirect)
-				log.Printf("Redirected to %v", forward.MarkDownPath())
+				// previously http.StatusTemporaryRedirect - caused rejection from norstat
+				http.Redirect(w, r, forward.MarkDownPath(), http.StatusFound)
+				log.Printf("Redirected to external %v", forward.MarkDownPath())
+				// for hdrKey, hdrVal := range w.Header() {
+				// 	log.Printf("\t%v\t%v", hdrKey, hdrVal)
+				// }
 			} else {
 				core, _ := tpl.SiteCore(q.Survey.Type)
 				relURL := path.Join("/doc/", core, q.LangCode, forward.MarkDownPath())
 				relURL = cfg.Pref(relURL)
 				http.Redirect(w, r, relURL, http.StatusTemporaryRedirect)
-				log.Printf("Redirected to %v", relURL)
+				log.Printf("Redirected to markdown %v", relURL)
 				// tpl.RenderStaticContent(w, forward.MarkDownPath(), core, q.LangCode)
 			}
 			return

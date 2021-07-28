@@ -3,6 +3,7 @@ package qst
 import (
 	"fmt"
 	"html/template"
+	"strconv"
 	"strings"
 	"time"
 
@@ -73,12 +74,28 @@ func NewSurvey(tp string) SurveyT {
 **/
 const delta = -time.Duration(15 * 24 * time.Hour)
 
-// Quarter yields quarter plus year;
-// based on the survey month;
-// offset adds/subtracts to/from quarter;
-// overflowing over 4; underflowing under 1
 /*
-   January  of    0 -                       => Q1 0
+General rule:
+Ask for the forecast for the *current* quarter.
+
+Exception:
+If previous quarter growth numbers were not yet published by Statistisches Bundesamt,
+then ask for previous quarter.
+
+You find out by calling
+<https://www.destatis.de/SiteGlobals/Forms/Suche/Termine/DE/Terminsuche_Formular.html?startDate_dt=2021-06-30T22%3A00%3A00Z&cl2Taxonomies_Themen_0=volkswirtschaftliche_gesamtrechnungen_inlandsprodukt>
+
+This exception usually applies in the first month of the current quarter.
+=> set questionnaire survey parameter offsetDESTATIS to -1
+
+
+
+Quarter yields quarter plus year;
+based on the survey month;
+offset adds/subtracts to/from quarter;
+overflowing over 4; underflowing under 1
+
+January  of    0 -                       => Q1 0
    January  of 2021 -                       => Q1 2021
    January  of 2021 -    plus 1 Quarter     => Q2 2021
    January  of 2021 -    plus 3 Quarters    => Q4 2021
@@ -115,6 +132,13 @@ func (s SurveyT) Quarter(offs ...int) string {
 	if len(offs) > 0 {
 		offset = offs[0]
 	}
+
+	offsetDESTATIS := 0
+	if osd, err := s.Param("destatis"); err == nil {
+		offsetDESTATIS, _ = strconv.Atoi(osd)
+		offset += offsetDESTATIS
+	}
+
 	qNow := int((m-1)/3) + 1 // jan: int(0/3)+1 == 1   feb: int(1/3)+1 == 1    mar: int(2/3)+1 == 1     apr: int(3/3)+1 == 2
 	qRet := qNow + offset
 	for qRet > 4 {

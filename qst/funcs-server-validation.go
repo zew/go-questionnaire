@@ -392,7 +392,7 @@ func init() {
 					err1 := ErrorForward{
 						// Quality-Redirect
 						// ... ErrorForward{markDownPath: "must-german-citizen.md"}
-						markDownPath: "https://webs.norstatsurveys.com/z/Quality",
+						markDownPath: "https://webs.norstatsurveys.com/z/Screened",
 					}
 					err = errors.Wrap(err1, err.Error())
 				}
@@ -455,7 +455,7 @@ func init() {
 					err1 := ErrorForward{
 						// Quality-Redirect
 						// ... ErrorForward{markDownPath: "must-german-citizen.md"}
-						markDownPath: "https://webs.norstatsurveys.com/z/Quality",
+						markDownPath: "https://webs.norstatsurveys.com/z/Screened",
 					}
 					err = errors.Wrap(err1, err.Error())
 				}

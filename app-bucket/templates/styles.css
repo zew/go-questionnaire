@@ -343,8 +343,15 @@ ol, ul {
 }
 
 .content li {
-    list-style-type: square;
     margin-left:     1.1rem;
+}
+
+.content ul li {
+    list-style-type: square;
+}
+
+.content ol li {
+    list-style-type: decimal;
 }
 
 hr {

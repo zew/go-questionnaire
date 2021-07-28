@@ -14,6 +14,10 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 		return nil
 	}
 
+	if q.Survey.Year == 2021 || q.Survey.Month == 8 {
+		return nil
+	}
+
 	lblStyleRight := css.NewStylesResponsive(nil)
 	lblStyleRight.Desktop.StyleText.AlignHorizontal = "right"
 	lblStyleRight.Desktop.StyleBox.Padding = "0 1.0rem 0 0"
@@ -74,78 +78,19 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 			}
 		}
 
-		/*
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.Label = trl.S{
-					"de": "Anstieg des HICP von Jan bis Dez; Erwartungswert",
-					"en": "HICP  increase from Jan to Dec; expected value",
-				}
-				inp.ColSpan = 3
-				inp.ColSpanLabel = 3
-			}
-		*/
-		{
+		for idx := range []int{0, 1, 2} {
+
 			inp := gr.AddInput()
 			inp.Type = "number"
-			inp.Name = "ppjinf_jp0" //"p1_y1"
+			inp.Name = fmt.Sprintf("ppjinf_jp%v", idx) //"p1_y1"
 			inp.Min = -10
 			inp.Max = +20
 			inp.Validator = "inRange20"
 			inp.MaxChars = 5
 			inp.Step = 0.01
 			inp.Label = trl.S{
-				"de": q.Survey.YearStr(0),
-				"en": q.Survey.YearStr(0),
-			}
-			inp.Suffix = trl.S{
-				"de": "%",
-				"en": "pct",
-			}
-
-			inp.ColSpan = 3
-			inp.ColSpanLabel = 2
-			inp.ColSpanControl = 2
-
-			inp.StyleLbl = lblStyleRight
-		}
-		{
-			inp := gr.AddInput()
-			inp.Type = "number"
-			inp.Name = "ppjinf_jp1" // "p1_y2"
-			inp.Min = -10
-			inp.Max = +20
-			inp.Validator = "inRange20"
-			inp.MaxChars = 5
-			inp.Step = 0.01
-			inp.Label = trl.S{
-				"de": q.Survey.YearStr(1),
-				"en": q.Survey.YearStr(1),
-			}
-			inp.Suffix = trl.S{
-				"de": "%",
-				"en": "pct",
-			}
-
-			inp.ColSpan = 3
-			inp.ColSpanLabel = 2
-			inp.ColSpanControl = 2
-
-			inp.StyleLbl = lblStyleRight
-		}
-		{
-			inp := gr.AddInput()
-			inp.Type = "number"
-			inp.Name = "ppjinf_jp2" //"p1_y3"
-			inp.Min = -10
-			inp.Max = +20
-			inp.Validator = "inRange20"
-			inp.MaxChars = 5
-			inp.Step = 0.01
-			inp.Label = trl.S{
-				"de": q.Survey.YearStr(2),
-				"en": q.Survey.YearStr(2),
+				"de": q.Survey.YearStr(idx),
+				"en": q.Survey.YearStr(idx),
 			}
 			inp.Suffix = trl.S{
 				"de": "%",

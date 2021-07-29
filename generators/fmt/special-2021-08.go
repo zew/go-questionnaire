@@ -31,12 +31,12 @@ func special202108(q *qst.QuestionnaireT) error {
 	{
 		page := q.AddPage()
 		page.Label = trl.S{
-			"de": "Sonderfragen Inflation, Geldpolitik, Prognosetreiber und zur neuen geldpolitischen Strategie der Europäischen Zentralbank (EZB) - Teil 1",
-			"en": "todo",
+			"de": "Sonderfragen zu Inflation, Geldpolitik, Prognosetreiber und zur neuen geldpolitischen Strategie der Europäischen Zentralbank (EZB) - Teil 1",
+			"en": "FMT Special Questions on Inflation, Monetary Policy, and the new Strategy of the European Central Bank (ECB) - Part 1",
 		}
 		page.Short = trl.S{
 			"de": "Sonderfrage:<br>EZB 1",
-			"en": "todo",
+			"en": "Special Questions&nbsp;1 - ECB",
 		}
 		page.Style = css.DesktopWidthMaxForPages(page.Style, "48rem")
 
@@ -46,6 +46,9 @@ func special202108(q *qst.QuestionnaireT) error {
 			gr := page.AddGroup()
 			gr.Cols = 2
 			gr.BottomVSpacers = 1
+			gr.Style = css.NewStylesResponsive(gr.Style)
+			gr.Style.Desktop.StyleBox.Width = "70%"
+			gr.Style.Mobile.StyleBox.Width = "100%"
 
 			{
 				inp := gr.AddInput()
@@ -54,33 +57,32 @@ func special202108(q *qst.QuestionnaireT) error {
 				inp.Desc = trl.S{
 					"de": `
 
-<p>
+<p style='font-weight: bold'>
     Am 8. Juli 2021 hat die EZB ihre neue geldpolitische Strategie veröffentlicht.
     Am 22. Juli 2021 hat die EZB zum ersten Mal geldpolitische Beschlüsse
     auf Basis der neuen Strategie gefasst.
 </p>
 
 <p>
-
     Die neue Strategie der EZB enthält folgende zentrale Elemente:
-
-    <ol>
-        <li>
-        das Inflationsziel von mittelfristig 2&nbsp;Prozent wird symmetrisch definiert. Negative Abweichungen vom Zielwert
-        sind nun genauso unerwünscht wie positive,
-        </li>
-
-        <li>
-        der HVPI (Harmonisierter Verbraucherpreisindex)
-        soll schrittweise um selbst genutztes Wohneigentum erweitert werden,
-        </li>
-
-        <li>
-        Klimaschutzaspekte sollen bei der Geldpolitik stärker berücksichtigt werden.
-        </li>
-
-    </ol>
 </p>
+
+<ol>
+	<li>
+	das Inflationsziel von mittelfristig 2&nbsp;Prozent wird symmetrisch definiert. Negative Abweichungen vom Zielwert
+	sind nun genauso unerwünscht wie positive,
+	</li>
+
+	<li>
+	der HVPI (Harmonisierter Verbraucherpreisindex)
+	soll schrittweise um selbst genutztes Wohneigentum erweitert werden,
+	</li>
+
+	<li>
+	Klimaschutzaspekte sollen bei der Geldpolitik stärker berücksichtigt werden.
+	</li>
+
+</ol>
 
 <p>
     Im Folgenden würden wir gerne von Ihnen erfahren, 
@@ -89,7 +91,36 @@ func special202108(q *qst.QuestionnaireT) error {
 
 					`,
 					"en": `
-					todo
+<p style='font-weight: bold'>
+	On July 8, 2021, the ECB informed the public of its new monetary policy strategy. 
+	On July 22, 2021, the ECB released 
+	its first monetary policy decision based on this new strategy.
+</p>
+
+<p>
+	The new strategy of the ECB, consists of three main elements. 
+</p>
+
+<ol>
+	<li>
+	The inflation target of 2 percent is now defined symmetrically. This means that negative deviations from the target value are equally undesirable as positive ones.
+	</li>
+
+	<li>
+	The Harmonized Consumer Price Index (HCPI) will be augmented by owner-occupied housing. 
+	</li>
+
+	<li>
+	Climate-policy aspects will have an increased weight in future in monetary policy decisions. 
+	</li>
+
+</ol>
+
+<p>
+	In the following, we would like to know how the new strategy of the ECB has affected your expectations of future interest rates and inflation. 
+</p>
+
+
 					`,
 				}
 			}
@@ -110,9 +141,13 @@ func special202108(q *qst.QuestionnaireT) error {
 				inp.ColSpan = 9
 				// inp.ColSpanLabel = 12
 				inp.Label = trl.S{
-					"de": `<b>1.</b> Punktprognose der <b>jährlichen Inflationsrate im Euroraum</b>
-				<br>
-				Anstieg des HICP von Jan bis Dez; Erwartungswert
+					"de": `<b>1.</b> 
+					
+					Welche jährlichen Inflationsraten erwarten Sie für den Euroraum 
+					in den Jahren 2021, 2022 und 2023 
+					(Punktprognose, prozentualer Anstieg des HVPI von Jan. bis Dez.; Erwartungswert)
+
+					
 				`,
 					"en": `<b>1.</b> Forecast <b>yearly inflation rate in the Euro area</b>
 				<br>
@@ -170,11 +205,11 @@ func special202108(q *qst.QuestionnaireT) error {
 				},
 				{
 					"de": "EZB-Geldpolitik insgesamt",
-					"en": "ECB monetary policy as a whole",
+					"en": "ECB´s monetary policy as a whole",
 				},
 				{
 					"de": "Wechsel der EZB zu einer neuen geldpol. Strategie seit 08.07.2021",
-					"en": "Changed strategy of ECB monetary policy since 08.07.2021",
+					"en": "ECB´s change to a new monetary strategy since July 8, 2021",
 				},
 				{
 					"de": "Internat. Handelskonflikte",
@@ -210,7 +245,7 @@ func special202108(q *qst.QuestionnaireT) error {
 				rowLabelsEconomicAreasShort,
 			)
 			gb.MainLabel = trl.S{
-				"de": "<b>2.</b> Haben Entwicklungen in den folgenden Bereichen Sie zu einer Revision Ihrer Inflationsprognosen (ggü. Vormonat) für den Euroraum bewogen und wenn ja in welche Richtung?",
+				"de": "<b>2.</b> Haben Entwicklungen in den folgenden Bereichen Sie zu einer Revision Ihrer Inflationsprognosen (ggü. Mai 2021) für den Euroraum bewogen und wenn ja in welche Richtung?",
 				"en": "<b>2.</b> Which developments have lead you to change your assessment of the inflation outlook for the Euro are compared to the previous month",
 			}
 			gr := page.AddGrid(gb)
@@ -250,7 +285,18 @@ func special202108(q *qst.QuestionnaireT) error {
     der Entscheidung der EZB am 08.&nbsp;Juli&nbsp;2021
 </p>
 					`,
-					"en": "<b>3.</b> todo",
+					"en": `
+<p>
+	<b>3.</b>
+	
+	The change in the ECB´s strategy to a symmetric 2&nbsp;percent inflation target made me change my inflation forecasts
+</p>
+
+<p>
+	How did your inflation forecast (special question 1) change after the ECB´s publication of a new strategy (i.e. after 8 July 2021)?
+</p>
+					
+					`,
 				}
 
 			}
@@ -304,7 +350,7 @@ func special202108(q *qst.QuestionnaireT) error {
 					inp.Name = fmt.Sprintf("ezb_inflation_chg_dk_%v", q.Survey.YearStr(idx))
 					inp.Label = trl.S{
 						"de": "Weiß<br>nicht",
-						"en": "Dont<br>know",
+						"en": "dont<br>know",
 					}
 					inp.ColSpan = 3
 					inp.ColSpanLabel = 1
@@ -322,7 +368,7 @@ func special202108(q *qst.QuestionnaireT) error {
 					inp.Name = fmt.Sprintf("ezb_inflation_chg_na_%v", q.Survey.YearStr(idx))
 					inp.Label = trl.S{
 						"de": "Keine<br>Antwort",
-						"en": "No<br>answer",
+						"en": "no<br>answer",
 					}
 					inp.ColSpan = 3
 					inp.ColSpanLabel = 1
@@ -341,12 +387,12 @@ func special202108(q *qst.QuestionnaireT) error {
 	{
 		page := q.AddPage()
 		page.Label = trl.S{
-			"de": "Sonderfragen Inflation, Geldpolitik, Prognosetreiber und zur neuen geldpolitischen Strategie der Europäischen Zentralbank (EZB) - Teil 2",
-			"en": "todo",
+			"de": "Sonderfragen zu Inflation, Geldpolitik, Prognosetreiber und zur neuen geldpolitischen Strategie der Europäischen Zentralbank (EZB) - Teil 2",
+			"en": "FMT Special Questions on Inflation, Monetary Policy, and the new Strategy of the European Central Bank (ECB) - Part 2",
 		}
 		page.Short = trl.S{
 			"de": "Sonderfrage:<br>EZB 2",
-			"en": "todo",
+			"en": "Special Questions&nbsp;2 - ECB",
 		}
 		page.Style = css.DesktopWidthMaxForPages(page.Style, "48rem")
 
@@ -520,7 +566,10 @@ func special202108(q *qst.QuestionnaireT) error {
 			}
 		}
 
-		lblsGr2and3 := []string{"Prognosehorizont<br>in 6&nbsp;Monaten", "Prognosehorizont<br>in 24&nbsp;Monaten"}
+		lblsGr2and3 := []trl.S{
+			{"de": "Prognosehorizont<br>in  6&nbsp;Monaten", "en": "Forecast horizon:<br>  6&nbsp;months"},
+			{"de": "Prognosehorizont<br>in 24&nbsp;Monaten", "en": "Forecast horizon:<br> 24&nbsp;months"},
+		}
 
 		inpsGr2and3 := []string{"6m", "24mn"}
 
@@ -551,7 +600,18 @@ func special202108(q *qst.QuestionnaireT) error {
 	Veränderung der <b>Untergrenze</b> des zentralen 90%&nbsp;Konfidenzintervalls (Sonderfrage 4) gegenüber der Prognose vor der Entscheidung der EZB am 08.Juli 2021
 </p>
 					`,
-					"en": "<b>5.</b> todo",
+					"en": `
+<p>
+	<b>5.</b>
+
+	The change in the ECB´s strategy to a symmetric 2&nbsp;percent inflation target made me change my forecasts of the ECB´s main refinancing operations rate:
+</p>
+
+<p>
+	How much did you change the <b>lower bound</b> of the central 90&nbsp;percent confidence interval (special question 4) after the ECB´s publication of a new strategy (i.e. after 8 July 2021)?
+</p>
+					
+					`,
 				}
 
 			}
@@ -560,8 +620,8 @@ func special202108(q *qst.QuestionnaireT) error {
 				inp := gr.AddInput()
 				inp.Type = "textblock"
 				inp.Label = trl.S{
-					"de": lbl,
-					"en": lbl,
+					"de": lbl.Tr("de"),
+					"en": lbl.Tr("en"),
 				}
 				inp.ColSpan = 3
 			}
@@ -589,7 +649,7 @@ func special202108(q *qst.QuestionnaireT) error {
 				inp.Name = fmt.Sprintf("ezb_rate_chg_lb_dk_%v", inpName)
 				inp.Label = trl.S{
 					"de": "Weiß<br>nicht",
-					"en": "Dont<br>know",
+					"en": "dont<br>know",
 				}
 				inp.ColSpan = 3
 				inp.ColSpanLabel = 1
@@ -604,7 +664,7 @@ func special202108(q *qst.QuestionnaireT) error {
 				inp.Name = fmt.Sprintf("ezb_rate_chg_lb_na_%v", inpName)
 				inp.Label = trl.S{
 					"de": "Keine<br>Antwort",
-					"en": "No<br>answer",
+					"en": "no<br>answer",
 				}
 				inp.ColSpan = 3
 				inp.ColSpanLabel = 1
@@ -637,7 +697,12 @@ func special202108(q *qst.QuestionnaireT) error {
 	Veränderung der <b>Obergrenze</b> des zentralen 90%&nbsp;Konfidenzintervalls (Sonderfrage 4) gegenüber der Prognose vor der Entscheidung der EZB am 08.Juli 2021
 </p>
 					`,
-					"en": "<b>5.</b> todo",
+					"en": `
+<p>
+	How much did you change the <b>upper bound</b> of the central 90&nbsp;percent confidence interval (special question 4) after the ECB´s publication of a new strategy (i.e. after 8 July 2021)?
+</p>
+
+					`,
 				}
 
 			}
@@ -646,8 +711,8 @@ func special202108(q *qst.QuestionnaireT) error {
 				inp := gr.AddInput()
 				inp.Type = "textblock"
 				inp.Label = trl.S{
-					"de": lbl,
-					"en": lbl,
+					"de": lbl.Tr("de"),
+					"en": lbl.Tr("en"),
 				}
 				inp.ColSpan = 3
 			}
@@ -675,7 +740,7 @@ func special202108(q *qst.QuestionnaireT) error {
 				inp.Name = fmt.Sprintf("ezb_rate_chg_ub_dk_%v", inpName)
 				inp.Label = trl.S{
 					"de": "Weiß<br>nicht",
-					"en": "Dont<br>know",
+					"en": "dont<br>know",
 				}
 				inp.ColSpan = 3
 				inp.ColSpanLabel = 1
@@ -690,7 +755,7 @@ func special202108(q *qst.QuestionnaireT) error {
 				inp.Name = fmt.Sprintf("ezb_rate_chg_ub_na_%v", inpName)
 				inp.Label = trl.S{
 					"de": "Keine<br>Antwort",
-					"en": "No<br>answer",
+					"en": "no<br>answer",
 				}
 				inp.ColSpan = 3
 				inp.ColSpanLabel = 1
@@ -731,7 +796,7 @@ func special202108(q *qst.QuestionnaireT) error {
 
 					`,
 				"en": `<b>6.</b> 
-						todo
+						The HCPI will be augmented by <b>owner-owned housing</b>. Which effect do you expect for inflation in the coming years 2021-2023?
 					`,
 			}
 			gr := page.AddGrid(gb)
@@ -772,8 +837,16 @@ func special202108(q *qst.QuestionnaireT) error {
 
 
 					`,
-				"en": `<b>7.</b> 
-						todo
+				"en": `
+				<p>
+					<b>7.</b> 
+					The increased weight of <b>climate policy aspects</b> in the ECB´s monetary policy …  
+				</p>
+
+				<p>
+					&nbsp;&nbsp; <b>a)</b>	will make the implementation of monetary policy with regard to the symmetric 2 percent target … 
+				</p>
+				
 					`,
 			}
 			gr := page.AddGrid(gb)
@@ -804,7 +877,9 @@ func special202108(q *qst.QuestionnaireT) error {
 
 					`,
 				"en": ` 
-						todo
+				<p>
+					&nbsp;&nbsp; <b>b)</b>	will make the transparency of ECB´s monetary policy communication …
+				</p>
 					`,
 			}
 			gr := page.AddGrid(gb)
@@ -835,7 +910,9 @@ func special202108(q *qst.QuestionnaireT) error {
 
 					`,
 				"en": ` 
-						todo
+				<p>
+					&nbsp;&nbsp; <b>c)</b>	will make reaching the climate goals of the EU …  
+				</p>
 					`,
 			}
 			gr := page.AddGrid(gb)

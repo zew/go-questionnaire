@@ -421,23 +421,23 @@ func raiseDecrease6() []trl.S {
 	tm := []trl.S{
 		{
 			"de": "deutlich<br>erhöhen",
-			"en": "strongly<br>increase",
+			"en": "strong<br>increase",
 		},
 		{
 			"de": "leicht<br>erhöhen",
-			"en": "slightly<br>increase",
+			"en": "slight<br>increase",
 		},
 		{
 			"de": "nicht<br>verändern",
-			"en": "unchanged",
+			"en": "no change",
 		},
 		{
 			"de": "leicht<br>senken",
-			"en": "slightly<br>decrease",
+			"en": "slight<br>decrease",
 		},
 		{
 			"de": "stark<br>senken",
-			"en": "strongly<br>decrease",
+			"en": "strong<br>decrease",
 		},
 
 		{
@@ -455,15 +455,15 @@ func special202108A() []trl.S {
 	tm := []trl.S{
 		{
 			"de": "erleichtern",
-			"en": "alleviate",
+			"en": "easier",
 		},
 		{
 			"de": "unverändert lassen",
-			"en": "keep unchanged",
+			"en": "equal to before July&nbsp;8",
 		},
 		{
 			"de": "erschweren",
-			"en": "make harder",
+			"en": "more complicated",
 		},
 
 		{
@@ -481,15 +481,15 @@ func special202108B() []trl.S {
 	tm := []trl.S{
 		{
 			"de": "erhöhen ",
-			"en": "increase",
+			"en": "better",
 		},
 		{
 			"de": "unverändert lassen",
-			"en": "keep unchanged",
+			"en": "equal to before July&nbsp;8",
 		},
 		{
 			"de": "senken",
-			"en": "decrease",
+			"en": "worse",
 		},
 
 		{
@@ -507,15 +507,15 @@ func special202108C() []trl.S {
 	tm := []trl.S{
 		{
 			"de": "fördern  ",
-			"en": "enhance",
+			"en": "easier",
 		},
 		{
 			"de": "unverändert lassen",
-			"en": "keep unchanged",
+			"en": "equal to before July&nbsp;8",
 		},
 		{
 			"de": "erschweren",
-			"en": "make harder",
+			"en": "more difficult",
 		},
 
 		{

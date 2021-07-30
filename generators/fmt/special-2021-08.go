@@ -31,7 +31,7 @@ func special202108(q *qst.QuestionnaireT) error {
 	{
 		page := q.AddPage()
 		page.Label = trl.S{
-			"de": "Sonderfragen zu Inflation, Geldpolitik, Prognosetreiber und zur neuen geldpolitischen Strategie der Europäischen Zentralbank (EZB) - Teil 1",
+			"de": "Sonderfragen zu Inflation, Geldpolitik, Prognosetreiber und zur neuen geldpolitischen Strategie der Europäischen Zentralbank (EZB) - Teil&nbsp;1",
 			"en": "FMT Special Questions on Inflation, Monetary Policy, and the new Strategy of the European Central Bank (ECB) - Part 1",
 		}
 		page.Short = trl.S{
@@ -47,8 +47,8 @@ func special202108(q *qst.QuestionnaireT) error {
 			gr.Cols = 2
 			gr.BottomVSpacers = 1
 			gr.Style = css.NewStylesResponsive(gr.Style)
-			gr.Style.Desktop.StyleBox.Width = "70%"
-			gr.Style.Mobile.StyleBox.Width = "100%"
+			// gr.Style.Desktop.StyleBox.Width = "70%"
+			// gr.Style.Mobile.StyleBox.Width = "100%"
 
 			{
 				inp := gr.AddInput()
@@ -56,6 +56,8 @@ func special202108(q *qst.QuestionnaireT) error {
 				inp.ColSpan = 2
 				inp.Desc = trl.S{
 					"de": `
+
+<div style='max-width: 36rem; margin-left: 1rem; margin-bottom: 0.7rem'>
 
 <p style='font-weight: bold'>
     Am 8. Juli 2021 hat die EZB ihre neue geldpolitische Strategie veröffentlicht.
@@ -89,8 +91,14 @@ func special202108(q *qst.QuestionnaireT) error {
     welche Auswirkungen Sie von der neuen Strategie der EZB für Zinsen und Inflationsentwicklung erwarten.
 </p>
 
+</div>
 					`,
+
 					"en": `
+
+<div style='max-width: 36rem; margin-left: 1rem; margin-bottom: 0.7rem'>
+
+
 <p style='font-weight: bold'>
 	On July 8, 2021, the ECB informed the public of its new monetary policy strategy. 
 	On July 22, 2021, the ECB released 
@@ -120,6 +128,7 @@ func special202108(q *qst.QuestionnaireT) error {
 	In the following, we would like to know how the new strategy of the ECB has affected your expectations of future interest rates and inflation. 
 </p>
 
+</div>
 
 					`,
 				}
@@ -132,8 +141,8 @@ func special202108(q *qst.QuestionnaireT) error {
 			gr := page.AddGroup()
 			gr.Cols = 9
 			gr.Style = css.NewStylesResponsive(gr.Style)
-			gr.Style.Desktop.StyleBox.Width = "70%"
-			gr.Style.Mobile.StyleBox.Width = "100%"
+			// gr.Style.Desktop.StyleBox.Width = "70%"
+			// gr.Style.Mobile.StyleBox.Width = "100%"
 
 			{
 				inp := gr.AddInput()
@@ -261,8 +270,8 @@ func special202108(q *qst.QuestionnaireT) error {
 			gr.BottomVSpacers = 4
 			gr.Cols = 9
 			gr.Style = css.NewStylesResponsive(gr.Style)
-			gr.Style.Desktop.StyleBox.Width = "70%"
-			gr.Style.Mobile.StyleBox.Width = "100%"
+			// gr.Style.Desktop.StyleBox.Width = "70%"
+			// gr.Style.Mobile.StyleBox.Width = "100%"
 
 			{
 				inp := gr.AddInput()
@@ -331,8 +340,8 @@ func special202108(q *qst.QuestionnaireT) error {
 					// 	"en": q.Survey.YearStr(idx),
 					// }
 					inp.Suffix = trl.S{
-						"de": "%",
-						"en": "pct",
+						"de": "Prozent&shy;punkte",
+						"en": "percentage pts",
 					}
 
 					inp.ColSpan = 3
@@ -349,7 +358,7 @@ func special202108(q *qst.QuestionnaireT) error {
 					inp.Type = "checkbox"
 					inp.Name = fmt.Sprintf("ezb_inflation_chg_dk_%v", q.Survey.YearStr(idx))
 					inp.Label = trl.S{
-						"de": "Weiß<br>nicht",
+						"de": "weiß<br>nicht",
 						"en": "dont<br>know",
 					}
 					inp.ColSpan = 3
@@ -367,7 +376,7 @@ func special202108(q *qst.QuestionnaireT) error {
 					inp.Type = "checkbox"
 					inp.Name = fmt.Sprintf("ezb_inflation_chg_na_%v", q.Survey.YearStr(idx))
 					inp.Label = trl.S{
-						"de": "Keine<br>Antwort",
+						"de": "keine<br>Antwort",
 						"en": "no<br>answer",
 					}
 					inp.ColSpan = 3
@@ -387,7 +396,7 @@ func special202108(q *qst.QuestionnaireT) error {
 	{
 		page := q.AddPage()
 		page.Label = trl.S{
-			"de": "Sonderfragen zu Inflation, Geldpolitik, Prognosetreiber und zur neuen geldpolitischen Strategie der Europäischen Zentralbank (EZB) - Teil 2",
+			"de": "Sonderfragen zu Inflation, Geldpolitik, Prognosetreiber und zur neuen geldpolitischen Strategie der Europäischen Zentralbank (EZB) - Teil&nbsp;2",
 			"en": "FMT Special Questions on Inflation, Monetary Policy, and the new Strategy of the European Central Bank (ECB) - Part 2",
 		}
 		page.Short = trl.S{
@@ -411,8 +420,8 @@ func special202108(q *qst.QuestionnaireT) error {
 			gr.Cols = 12
 
 			gr.Style = css.NewStylesResponsive(gr.Style)
-			gr.Style.Desktop.StyleBox.Width = "70%"
-			gr.Style.Mobile.StyleBox.Width = "100%"
+			// gr.Style.Desktop.StyleBox.Width = "70%"
+			// gr.Style.Mobile.StyleBox.Width = "100%"
 
 			// row-1
 			{
@@ -579,8 +588,8 @@ func special202108(q *qst.QuestionnaireT) error {
 			gr.BottomVSpacers = 2
 			gr.Cols = 6
 			gr.Style = css.NewStylesResponsive(gr.Style)
-			gr.Style.Desktop.StyleBox.Width = "70%"
-			gr.Style.Mobile.StyleBox.Width = "100%"
+			// gr.Style.Desktop.StyleBox.Width = "70%"
+			// gr.Style.Mobile.StyleBox.Width = "100%"
 
 			{
 				inp := gr.AddInput()
@@ -636,8 +645,8 @@ func special202108(q *qst.QuestionnaireT) error {
 				inp.MaxChars = 5
 				inp.Step = 0.01
 				inp.Suffix = trl.S{
-					"de": "%",
-					"en": "pct",
+					"de": "Prozent&shy;punkte",
+					"en": "percentage pts",
 				}
 				inp.ColSpan = 3
 				inp.ColSpanControl = 2
@@ -648,7 +657,7 @@ func special202108(q *qst.QuestionnaireT) error {
 				inp.Type = "checkbox"
 				inp.Name = fmt.Sprintf("ezb_rate_chg_lb_dk_%v", inpName)
 				inp.Label = trl.S{
-					"de": "Weiß<br>nicht",
+					"de": "weiß<br>nicht",
 					"en": "dont<br>know",
 				}
 				inp.ColSpan = 3
@@ -663,7 +672,7 @@ func special202108(q *qst.QuestionnaireT) error {
 				inp.Type = "checkbox"
 				inp.Name = fmt.Sprintf("ezb_rate_chg_lb_na_%v", inpName)
 				inp.Label = trl.S{
-					"de": "Keine<br>Antwort",
+					"de": "keine<br>Antwort",
 					"en": "no<br>answer",
 				}
 				inp.ColSpan = 3
@@ -681,8 +690,8 @@ func special202108(q *qst.QuestionnaireT) error {
 			gr.BottomVSpacers = 3
 			gr.Cols = 6
 			gr.Style = css.NewStylesResponsive(gr.Style)
-			gr.Style.Desktop.StyleBox.Width = "70%"
-			gr.Style.Mobile.StyleBox.Width = "100%"
+			// gr.Style.Desktop.StyleBox.Width = "70%"
+			// gr.Style.Mobile.StyleBox.Width = "100%"
 
 			{
 				inp := gr.AddInput()
@@ -727,8 +736,8 @@ func special202108(q *qst.QuestionnaireT) error {
 				inp.MaxChars = 5
 				inp.Step = 0.01
 				inp.Suffix = trl.S{
-					"de": "%",
-					"en": "pct",
+					"de": "Prozent&shy;punkte",
+					"en": "percentage pts",
 				}
 				inp.ColSpan = 3
 				inp.ColSpanControl = 2
@@ -739,7 +748,7 @@ func special202108(q *qst.QuestionnaireT) error {
 				inp.Type = "checkbox"
 				inp.Name = fmt.Sprintf("ezb_rate_chg_ub_dk_%v", inpName)
 				inp.Label = trl.S{
-					"de": "Weiß<br>nicht",
+					"de": "weiß<br>nicht",
 					"en": "dont<br>know",
 				}
 				inp.ColSpan = 3
@@ -754,7 +763,7 @@ func special202108(q *qst.QuestionnaireT) error {
 				inp.Type = "checkbox"
 				inp.Name = fmt.Sprintf("ezb_rate_chg_ub_na_%v", inpName)
 				inp.Label = trl.S{
-					"de": "Keine<br>Antwort",
+					"de": "keine<br>Antwort",
 					"en": "no<br>answer",
 				}
 				inp.ColSpan = 3

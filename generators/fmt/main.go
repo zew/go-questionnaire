@@ -401,7 +401,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				// }
 				inp.Type = "number"
 				inp.Name = "y_recession_q0"
-				inp.Min = -100
+				inp.Min = 0
 				inp.Max = 100
 				inp.Step = 0.01
 				inp.MaxChars = 5
@@ -419,7 +419,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				}
 				inp.Type = "number"
 				inp.Name = "y_recession_q1"
-				inp.Min = -100
+				inp.Min = 0
 				inp.Max = 100
 				inp.Step = 0.01
 				inp.MaxChars = 5

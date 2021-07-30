@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "da6fd79609491523d2ce44c66c35e5094328302b4f86dc04b0f968fa6a31ac68",
+ 	"md_5": "cf96d559edc50a2be786f2935162c1e4ecdd8068f559d7cc4c6e81d331e95ae7",
  	"lang_codes": [
  		"de",
  		"en"
@@ -1324,7 +1324,6 @@
  							"type": "number",
  							"max_chars": 5,
  							"step": 0.01,
- 							"min": -100,
  							"max": 100,
  							"label": {
  								"de": "Aktuelles Quartal (Q3\u0026nbsp;2021)",
@@ -1343,7 +1342,6 @@
  							"type": "number",
  							"max_chars": 5,
  							"step": 0.01,
- 							"min": -100,
  							"max": 100,
  							"label": {
  								"de": "Folgendes Quartal (Q4\u0026nbsp;2021)",
@@ -4529,7 +4527,7 @@
  		},
  		{
  			"label": {
- 				"de": "Sonderfragen zu Inflation, Geldpolitik, Prognosetreiber und zur neuen geldpolitischen Strategie der Europäischen Zentralbank (EZB) - Teil 1",
+ 				"de": "Sonderfragen zu Inflation, Geldpolitik, Prognosetreiber und zur neuen geldpolitischen Strategie der Europäischen Zentralbank (EZB) - Teil\u0026nbsp;1",
  				"en": "FMT Special Questions on Inflation, Monetary Policy, and the new Strategy of the European Central Bank (ECB) - Part 1"
  			},
  			"description": {
@@ -4568,8 +4566,8 @@
  						{
  							"type": "textblock",
  							"description": {
- 								"de": "\n\n\u003cp style='font-weight: bold'\u003e\n    Am 8. Juli 2021 hat die EZB ihre neue geldpolitische Strategie veröffentlicht.\n    Am 22. Juli 2021 hat die EZB zum ersten Mal geldpolitische Beschlüsse\n    auf Basis der neuen Strategie gefasst.\n\u003c/p\u003e\n\n\u003cp\u003e\n    Die neue Strategie der EZB enthält folgende zentrale Elemente:\n\u003c/p\u003e\n\n\u003col\u003e\n\t\u003cli\u003e\n\tdas Inflationsziel von mittel\u0026shy;fristig 2\u0026nbsp;Prozent wird symmetrisch definiert. Neg\u0026shy;ative Abweichungen vom Zielwert\n\tsind nun genauso unerwünscht wie pos\u0026shy;itive,\n\t\u003c/li\u003e\n\n\t\u003cli\u003e\n\tder HVPI (Harmonisierter Verbraucherpreisindex)\n\tsoll schrittweise um selbst genutztes Wohneigentum erweitert werden,\n\t\u003c/li\u003e\n\n\t\u003cli\u003e\n\tKlimaschutzaspekte sollen bei der Geld\u0026shy;po\u0026shy;li\u0026shy;tik stärker berücksichtigt werden.\n\t\u003c/li\u003e\n\n\u003c/ol\u003e\n\n\u003cp\u003e\n    Im Folgenden würden wir gerne von Ihnen erfahren, \n    welche Auswirkungen Sie von der neuen Strategie der EZB für Zinsen und Inflationsentwicklung erwarten.\n\u003c/p\u003e\n\n\t\t\t\t\t",
- 								"en": "\n\u003cp style='font-weight: bold'\u003e\n\tOn July 8, 2021, the ECB informed the public of its new monetary policy strategy. \n\tOn July 22, 2021, the ECB released \n\tits first monetary policy decision based on this new strategy.\n\u003c/p\u003e\n\n\u003cp\u003e\n\tThe new strategy of the ECB, consists of three main elements. \n\u003c/p\u003e\n\n\u003col\u003e\n\t\u003cli\u003e\n\tThe inflation target of 2 percent is now defined symmetrically. This means that neg\u0026shy;ative deviations from the target value are equally undesirable as pos\u0026shy;itive ones.\n\t\u003c/li\u003e\n\n\t\u003cli\u003e\n\tThe Harmonized Cons\u0026shy;umer Price Index (HCPI) will be augmented by owner-occupied housing. \n\t\u003c/li\u003e\n\n\t\u003cli\u003e\n\tClimate-policy aspects will have an in\u0026shy;creased weight in future in monetary policy decisions. \n\t\u003c/li\u003e\n\n\u003c/ol\u003e\n\n\u003cp\u003e\n\tIn the following, we would like to know how the new strategy of the ECB has affected your expectations of future interest rates and inflation. \n\u003c/p\u003e\n\n\n\t\t\t\t\t"
+ 								"de": "\n\n\u003cdiv style='max-width: 36rem; margin-left: 1rem; margin-bottom: 0.7rem'\u003e\n\n\u003cp style='font-weight: bold'\u003e\n    Am 8. Juli 2021 hat die EZB ihre neue geldpolitische Strategie veröffentlicht.\n    Am 22. Juli 2021 hat die EZB zum ersten Mal geldpolitische Beschlüsse\n    auf Basis der neuen Strategie gefasst.\n\u003c/p\u003e\n\n\u003cp\u003e\n    Die neue Strategie der EZB enthält folgende zentrale Elemente:\n\u003c/p\u003e\n\n\u003col\u003e\n\t\u003cli\u003e\n\tdas Inflationsziel von mittel\u0026shy;fristig 2\u0026nbsp;Prozent wird symmetrisch definiert. Neg\u0026shy;ative Abweichungen vom Zielwert\n\tsind nun genauso unerwünscht wie pos\u0026shy;itive,\n\t\u003c/li\u003e\n\n\t\u003cli\u003e\n\tder HVPI (Harmonisierter Verbraucherpreisindex)\n\tsoll schrittweise um selbst genutztes Wohneigentum erweitert werden,\n\t\u003c/li\u003e\n\n\t\u003cli\u003e\n\tKlimaschutzaspekte sollen bei der Geld\u0026shy;po\u0026shy;li\u0026shy;tik stärker berücksichtigt werden.\n\t\u003c/li\u003e\n\n\u003c/ol\u003e\n\n\u003cp\u003e\n    Im Folgenden würden wir gerne von Ihnen erfahren, \n    welche Auswirkungen Sie von der neuen Strategie der EZB für Zinsen und Inflationsentwicklung erwarten.\n\u003c/p\u003e\n\n\u003c/div\u003e\n\t\t\t\t\t",
+ 								"en": "\n\n\u003cdiv style='max-width: 36rem; margin-left: 1rem; margin-bottom: 0.7rem'\u003e\n\n\n\u003cp style='font-weight: bold'\u003e\n\tOn July 8, 2021, the ECB informed the public of its new monetary policy strategy. \n\tOn July 22, 2021, the ECB released \n\tits first monetary policy decision based on this new strategy.\n\u003c/p\u003e\n\n\u003cp\u003e\n\tThe new strategy of the ECB, consists of three main elements. \n\u003c/p\u003e\n\n\u003col\u003e\n\t\u003cli\u003e\n\tThe inflation target of 2 percent is now defined symmetrically. This means that neg\u0026shy;ative deviations from the target value are equally undesirable as pos\u0026shy;itive ones.\n\t\u003c/li\u003e\n\n\t\u003cli\u003e\n\tThe Harmonized Cons\u0026shy;umer Price Index (HCPI) will be augmented by owner-occupied housing. \n\t\u003c/li\u003e\n\n\t\u003cli\u003e\n\tClimate-policy aspects will have an in\u0026shy;creased weight in future in monetary policy decisions. \n\t\u003c/li\u003e\n\n\u003c/ol\u003e\n\n\u003cp\u003e\n\tIn the following, we would like to know how the new strategy of the ECB has affected your expectations of future interest rates and inflation. \n\u003c/p\u003e\n\n\u003c/div\u003e\n\n\t\t\t\t\t"
  							},
  							"col_span": 2,
  							"col_span_label": 1
@@ -4578,17 +4576,13 @@
  					"style": {
  						"desktop": {
  							"grid_container_style": {},
- 							"box_style": {
- 								"width": "70%"
- 							},
+ 							"box_style": {},
  							"grid_item_style": {},
  							"text_style": {}
  						},
  						"mobile": {
  							"grid_container_style": {},
- 							"box_style": {
- 								"width": "100%"
- 							},
+ 							"box_style": {},
  							"grid_item_style": {},
  							"text_style": {}
  						}
@@ -4731,17 +4725,13 @@
  					"style": {
  						"desktop": {
  							"grid_container_style": {},
- 							"box_style": {
- 								"width": "70%"
- 							},
+ 							"box_style": {},
  							"grid_item_style": {},
  							"text_style": {}
  						},
  						"mobile": {
  							"grid_container_style": {},
- 							"box_style": {
- 								"width": "100%"
- 							},
+ 							"box_style": {},
  							"grid_item_style": {},
  							"text_style": {}
  						}
@@ -5618,8 +5608,8 @@
  							"min": -10,
  							"max": 20,
  							"suffix": {
- 								"de": "%",
- 								"en": "pct"
+ 								"de": "Prozent\u0026shy;punkte",
+ 								"en": "percentage pts"
  							},
  							"col_span": 3,
  							"col_span_control": 2,
@@ -5633,8 +5623,8 @@
  							"min": -10,
  							"max": 20,
  							"suffix": {
- 								"de": "%",
- 								"en": "pct"
+ 								"de": "Prozent\u0026shy;punkte",
+ 								"en": "percentage pts"
  							},
  							"col_span": 3,
  							"col_span_control": 2,
@@ -5648,8 +5638,8 @@
  							"min": -10,
  							"max": 20,
  							"suffix": {
- 								"de": "%",
- 								"en": "pct"
+ 								"de": "Prozent\u0026shy;punkte",
+ 								"en": "percentage pts"
  							},
  							"col_span": 3,
  							"col_span_control": 2,
@@ -5659,7 +5649,7 @@
  							"name": "ezb_inflation_chg_dk_2021",
  							"type": "checkbox",
  							"label": {
- 								"de": "Weiß\u003cbr\u003enicht",
+ 								"de": "weiß\u003cbr\u003enicht",
  								"en": "dont\u003cbr\u003eknow"
  							},
  							"col_span": 3,
@@ -5689,7 +5679,7 @@
  							"name": "ezb_inflation_chg_dk_2022",
  							"type": "checkbox",
  							"label": {
- 								"de": "Weiß\u003cbr\u003enicht",
+ 								"de": "weiß\u003cbr\u003enicht",
  								"en": "dont\u003cbr\u003eknow"
  							},
  							"col_span": 3,
@@ -5719,7 +5709,7 @@
  							"name": "ezb_inflation_chg_dk_2023",
  							"type": "checkbox",
  							"label": {
- 								"de": "Weiß\u003cbr\u003enicht",
+ 								"de": "weiß\u003cbr\u003enicht",
  								"en": "dont\u003cbr\u003eknow"
  							},
  							"col_span": 3,
@@ -5749,7 +5739,7 @@
  							"name": "ezb_inflation_chg_na_2021",
  							"type": "checkbox",
  							"label": {
- 								"de": "Keine\u003cbr\u003eAntwort",
+ 								"de": "keine\u003cbr\u003eAntwort",
  								"en": "no\u003cbr\u003ean\u0026shy;swer"
  							},
  							"col_span": 3,
@@ -5779,7 +5769,7 @@
  							"name": "ezb_inflation_chg_na_2022",
  							"type": "checkbox",
  							"label": {
- 								"de": "Keine\u003cbr\u003eAntwort",
+ 								"de": "keine\u003cbr\u003eAntwort",
  								"en": "no\u003cbr\u003ean\u0026shy;swer"
  							},
  							"col_span": 3,
@@ -5809,7 +5799,7 @@
  							"name": "ezb_inflation_chg_na_2023",
  							"type": "checkbox",
  							"label": {
- 								"de": "Keine\u003cbr\u003eAntwort",
+ 								"de": "keine\u003cbr\u003eAntwort",
  								"en": "no\u003cbr\u003ean\u0026shy;swer"
  							},
  							"col_span": 3,
@@ -5839,17 +5829,13 @@
  					"style": {
  						"desktop": {
  							"grid_container_style": {},
- 							"box_style": {
- 								"width": "70%"
- 							},
+ 							"box_style": {},
  							"grid_item_style": {},
  							"text_style": {}
  						},
  						"mobile": {
  							"grid_container_style": {},
- 							"box_style": {
- 								"width": "100%"
- 							},
+ 							"box_style": {},
  							"grid_item_style": {},
  							"text_style": {}
  						}
@@ -5859,7 +5845,7 @@
  		},
  		{
  			"label": {
- 				"de": "Sonderfragen zu Inflation, Geldpolitik, Prognosetreiber und zur neuen geldpolitischen Strategie der Europäischen Zentralbank (EZB) - Teil 2",
+ 				"de": "Sonderfragen zu Inflation, Geldpolitik, Prognosetreiber und zur neuen geldpolitischen Strategie der Europäischen Zentralbank (EZB) - Teil\u0026nbsp;2",
  				"en": "FMT Special Questions on Inflation, Monetary Policy, and the new Strategy of the European Central Bank (ECB) - Part 2"
  			},
  			"description": {
@@ -6127,17 +6113,13 @@
  					"style": {
  						"desktop": {
  							"grid_container_style": {},
- 							"box_style": {
- 								"width": "70%"
- 							},
+ 							"box_style": {},
  							"grid_item_style": {},
  							"text_style": {}
  						},
  						"mobile": {
  							"grid_container_style": {},
- 							"box_style": {
- 								"width": "100%"
- 							},
+ 							"box_style": {},
  							"grid_item_style": {},
  							"text_style": {}
  						}
@@ -6182,8 +6164,8 @@
  							"min": -10,
  							"max": 20,
  							"suffix": {
- 								"de": "%",
- 								"en": "pct"
+ 								"de": "Prozent\u0026shy;punkte",
+ 								"en": "percentage pts"
  							},
  							"col_span": 3,
  							"col_span_control": 2,
@@ -6197,8 +6179,8 @@
  							"min": -10,
  							"max": 20,
  							"suffix": {
- 								"de": "%",
- 								"en": "pct"
+ 								"de": "Prozent\u0026shy;punkte",
+ 								"en": "percentage pts"
  							},
  							"col_span": 3,
  							"col_span_control": 2,
@@ -6208,7 +6190,7 @@
  							"name": "ezb_rate_chg_lb_dk_6m",
  							"type": "checkbox",
  							"label": {
- 								"de": "Weiß\u003cbr\u003enicht",
+ 								"de": "weiß\u003cbr\u003enicht",
  								"en": "dont\u003cbr\u003eknow"
  							},
  							"col_span": 3,
@@ -6238,7 +6220,7 @@
  							"name": "ezb_rate_chg_lb_dk_24mn",
  							"type": "checkbox",
  							"label": {
- 								"de": "Weiß\u003cbr\u003enicht",
+ 								"de": "weiß\u003cbr\u003enicht",
  								"en": "dont\u003cbr\u003eknow"
  							},
  							"col_span": 3,
@@ -6268,7 +6250,7 @@
  							"name": "ezb_rate_chg_lb_na_6m",
  							"type": "checkbox",
  							"label": {
- 								"de": "Keine\u003cbr\u003eAntwort",
+ 								"de": "keine\u003cbr\u003eAntwort",
  								"en": "no\u003cbr\u003ean\u0026shy;swer"
  							},
  							"col_span": 3,
@@ -6298,7 +6280,7 @@
  							"name": "ezb_rate_chg_lb_na_24mn",
  							"type": "checkbox",
  							"label": {
- 								"de": "Keine\u003cbr\u003eAntwort",
+ 								"de": "keine\u003cbr\u003eAntwort",
  								"en": "no\u003cbr\u003ean\u0026shy;swer"
  							},
  							"col_span": 3,
@@ -6328,17 +6310,13 @@
  					"style": {
  						"desktop": {
  							"grid_container_style": {},
- 							"box_style": {
- 								"width": "70%"
- 							},
+ 							"box_style": {},
  							"grid_item_style": {},
  							"text_style": {}
  						},
  						"mobile": {
  							"grid_container_style": {},
- 							"box_style": {
- 								"width": "100%"
- 							},
+ 							"box_style": {},
  							"grid_item_style": {},
  							"text_style": {}
  						}
@@ -6383,8 +6361,8 @@
  							"min": -10,
  							"max": 20,
  							"suffix": {
- 								"de": "%",
- 								"en": "pct"
+ 								"de": "Prozent\u0026shy;punkte",
+ 								"en": "percentage pts"
  							},
  							"col_span": 3,
  							"col_span_control": 2,
@@ -6398,8 +6376,8 @@
  							"min": -10,
  							"max": 20,
  							"suffix": {
- 								"de": "%",
- 								"en": "pct"
+ 								"de": "Prozent\u0026shy;punkte",
+ 								"en": "percentage pts"
  							},
  							"col_span": 3,
  							"col_span_control": 2,
@@ -6409,7 +6387,7 @@
  							"name": "ezb_rate_chg_ub_dk_6m",
  							"type": "checkbox",
  							"label": {
- 								"de": "Weiß\u003cbr\u003enicht",
+ 								"de": "weiß\u003cbr\u003enicht",
  								"en": "dont\u003cbr\u003eknow"
  							},
  							"col_span": 3,
@@ -6439,7 +6417,7 @@
  							"name": "ezb_rate_chg_ub_dk_24mn",
  							"type": "checkbox",
  							"label": {
- 								"de": "Weiß\u003cbr\u003enicht",
+ 								"de": "weiß\u003cbr\u003enicht",
  								"en": "dont\u003cbr\u003eknow"
  							},
  							"col_span": 3,
@@ -6469,7 +6447,7 @@
  							"name": "ezb_rate_chg_ub_na_6m",
  							"type": "checkbox",
  							"label": {
- 								"de": "Keine\u003cbr\u003eAntwort",
+ 								"de": "keine\u003cbr\u003eAntwort",
  								"en": "no\u003cbr\u003ean\u0026shy;swer"
  							},
  							"col_span": 3,
@@ -6499,7 +6477,7 @@
  							"name": "ezb_rate_chg_ub_na_24mn",
  							"type": "checkbox",
  							"label": {
- 								"de": "Keine\u003cbr\u003eAntwort",
+ 								"de": "keine\u003cbr\u003eAntwort",
  								"en": "no\u003cbr\u003ean\u0026shy;swer"
  							},
  							"col_span": 3,
@@ -6529,17 +6507,13 @@
  					"style": {
  						"desktop": {
  							"grid_container_style": {},
- 							"box_style": {
- 								"width": "70%"
- 							},
+ 							"box_style": {},
  							"grid_item_style": {},
  							"text_style": {}
  						},
  						"mobile": {
  							"grid_container_style": {},
- 							"box_style": {
- 								"width": "100%"
- 							},
+ 							"box_style": {},
  							"grid_item_style": {},
  							"text_style": {}
  						}

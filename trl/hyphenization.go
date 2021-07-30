@@ -24,6 +24,7 @@ var hyph = []string{
 	"Entschädigungs|fall ",
 	"Hoch|schul|abschluss",
 	"Bildungs|abschluss",
+	"Prozent|punkt",
 
 	"de|mo|gra|fisch",
 	"de|mo|gra|phisch",

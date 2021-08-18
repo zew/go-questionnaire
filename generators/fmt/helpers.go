@@ -527,3 +527,37 @@ func special202108C() []trl.S {
 	return tm
 
 }
+
+func improvedDeterioratedPlusMinus6() []trl.S {
+
+	tm := []trl.S{
+		{
+			"de": "++",
+			"en": "++",
+		},
+		{
+			"de": "+",
+			"en": "+",
+		},
+		{
+			"de": "0",
+			"en": "0",
+		},
+		{
+			"de": "-",
+			"en": "-",
+		},
+		{
+			"de": "--",
+			"en": "--",
+		},
+
+		{
+			"de": "keine<br>Angabe",
+			"en": "no answer",
+		},
+	}
+
+	return tm
+
+}

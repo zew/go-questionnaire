@@ -44,6 +44,3 @@ Backup_of*.CDR
 # updater
 updater/updater
 updater/updater.exe
-
-#templates before cloudio
-templates/**

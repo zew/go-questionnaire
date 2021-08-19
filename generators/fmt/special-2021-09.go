@@ -55,11 +55,11 @@ var labelsInputVariables202109 = []trl.S{
 		"en": "Inflation outlook",
 	},
 	{
-		"de": "Politische Rahmenbedingungen",
+		"de": "Politische Rahmen&shy;bedingungen",
 		"en": "Political framework",
 	},
 	{
-		"de": "Aktuelle Marktbewertung",
+		"de": "Aktuelle Markt&shy;bewertung",
 		"en": "Current market valuation",
 	},
 	{
@@ -199,7 +199,7 @@ func special202109(q *qst.QuestionnaireT) error {
 		//
 		//
 		//
-		// gr3 ... gr7
+		// gr3 ... gr10
 		var columnTemplateLocal = []float32{
 			3.6, 1,
 			0.0, 1,
@@ -251,10 +251,29 @@ func special202109(q *qst.QuestionnaireT) error {
 
 			gr := page.AddGrid(gb)
 			gr.OddRowsColoring = true
-
 			gr.BottomVSpacers = 2
-			if idx == 3 {
-				gr.BottomVSpacers = 4
+			gr.BottomVSpacers = 1
+
+			// freetext
+			{
+				gr := page.AddGroup()
+				gr.Cols = 7 + 10
+				{
+					inp := gr.AddInput()
+					inp.Type = "text"
+					inp.Name = assCl + "__free"
+					inp.MaxChars = 26
+					inp.ColSpan = 17
+					inp.ColSpanLabel = 6
+					inp.ColSpanControl = 10
+					inp.Label = trl.S{"de": "&nbsp;", "en": "&nbsp;"}
+					inp.Placeholder = trl.S{"de": "Andere: Welche?", "en": "Other: Which?"}
+				}
+
+				gr.BottomVSpacers = 2
+				if idx == 3 {
+					gr.BottomVSpacers = 4
+				}
 			}
 
 		}

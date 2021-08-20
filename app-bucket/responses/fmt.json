@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "0a3dc418aba3cbaf9f220de3cbcd21ff653a61070f39321c3e65fba821529bba",
+ 	"md_5": "f64e07aad02e73b9b3c3b824b2967426db96f178a8989c825795a1e1abb170e4",
  	"lang_codes": [
  		"de",
  		"en"
@@ -5059,13 +5059,12 @@
  				{
  					"bottom_vspacers": 1,
  					"columns": 6,
- 					"odd_rows_coloring": true,
  					"inputs": [
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\u003cp style='position: relative; top: 0.8rem'\u003e\n\t\t\t\t\t\u003cspan\u003e2.1.\u003c/span\u003e \u0026nbsp;\n\t\t\t\t\tAktien\n\t\t\t\t\t \u0026nbsp; - \u0026nbsp;  Eurogebiet\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t",
- 								"en": "\n\t\t\t\t\u003cp style='position: relative; top: 0.8rem'\u003e\n\t\t\t\t\t\u003cspan\u003e2.1.\u003c/span\u003e \u0026nbsp;\n\n\t\t\t\t\tStocks\n\t\t\t\t\t \u0026nbsp; - \u0026nbsp;  euro area\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp style='position: relative; top: 0.8rem'\u003e\n\t\t\t\t\t\t\u003cspan\u003e2.1.\u003c/span\u003e \u0026nbsp;\n\t\t\t\t\t\tAktien\n\t\t\t\t\t\t\u0026nbsp; - \u0026nbsp;  Eurogebiet\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t",
+ 								"en": "\n\t\t\t\t\t\u003cp style='position: relative; top: 0.8rem'\u003e\n\t\t\t\t\t\t\u003cspan\u003e2.1.\u003c/span\u003e \u0026nbsp;\n\n\t\t\t\t\t\tStocks\n\t\t\t\t\t\t\u0026nbsp; - \u0026nbsp;  euro area\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
  							},
  							"col_span": 6,
  							"col_span_label": 1
@@ -5453,6 +5452,64 @@
  							"value_radio": "6"
  						},
  						{
+ 							"name": "chg_euro_stocks__fed",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Geld\u0026shy;po\u0026shy;li\u0026shy;tik der Fed",
+ 								"en": "Fed monetary policy"
+ 							},
+ 							"col_span_label": 3.6,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "chg_euro_stocks__fed",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "chg_euro_stocks__fed",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "chg_euro_stocks__fed",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "chg_euro_stocks__fed",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "chg_euro_stocks__fed",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
  							"name": "chg_euro_stocks__inflation",
  							"type": "radio",
  							"label": {
@@ -5511,11 +5568,11 @@
  							"value_radio": "6"
  						},
  						{
- 							"name": "chg_euro_stocks__politics",
+ 							"name": "chg_euro_stocks__politics_euro",
  							"type": "radio",
  							"label": {
- 								"de": "Politische Rahmen\u0026shy;bedingungen",
- 								"en": "Political framework"
+ 								"de": "Politische Rahmen\u0026shy;bedingungen Eurogebiet",
+ 								"en": "Political framework euro area"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -5538,31 +5595,89 @@
  							}
  						},
  						{
- 							"name": "chg_euro_stocks__politics",
+ 							"name": "chg_euro_stocks__politics_euro",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "chg_euro_stocks__politics",
+ 							"name": "chg_euro_stocks__politics_euro",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "chg_euro_stocks__politics",
+ 							"name": "chg_euro_stocks__politics_euro",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "chg_euro_stocks__politics",
+ 							"name": "chg_euro_stocks__politics_euro",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "chg_euro_stocks__politics",
+ 							"name": "chg_euro_stocks__politics_euro",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "chg_euro_stocks__politics_global",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Geopolitische Rahmen\u0026shy;bedingungen",
+ 								"en": "Geopolitical framework"
+ 							},
+ 							"col_span_label": 3.6,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "chg_euro_stocks__politics_global",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "chg_euro_stocks__politics_global",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "chg_euro_stocks__politics_global",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "chg_euro_stocks__politics_global",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "chg_euro_stocks__politics_global",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
@@ -5625,64 +5740,6 @@
  							"col_span_label": 0.4,
  							"col_span_control": 1,
  							"value_radio": "6"
- 						},
- 						{
- 							"name": "chg_euro_stocks__other",
- 							"type": "radio",
- 							"label": {
- 								"de": "Andere",
- 								"en": "Other"
- 							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "chg_euro_stocks__other",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "chg_euro_stocks__other",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "chg_euro_stocks__other",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "chg_euro_stocks__other",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "chg_euro_stocks__other",
- 							"type": "radio",
- 							"col_span_label": 0.4,
- 							"col_span_control": 1,
- 							"value_radio": "6"
  						}
  					],
  					"style": {
@@ -5707,36 +5764,92 @@
  				},
  				{
  					"bottom_vspacers": 2,
- 					"columns": 17,
+ 					"columns": 7,
  					"inputs": [
+ 						{
+ 							"name": "chg_euro_stocks__other_label",
+ 							"type": "text",
+ 							"max_chars": 17,
+ 							"label": {
+ 								"de": "Andere",
+ 								"en": "Other"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 2.4,
+ 							"col_span_control": 4
+ 						},
  						{
  							"name": "chg_euro_stocks__free",
- 							"type": "text",
- 							"max_chars": 26,
- 							"placeholder": {
- 								"de": "Andere: Welche",
- 								"en": "Other: Which?"
- 							},
- 							"label": {
- 								"de": "\u0026nbsp;",
- 								"en": "\u0026nbsp;"
- 							},
- 							"col_span": 17,
- 							"col_span_label": 6,
- 							"col_span_control": 10
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "1"
+ 						},
+ 						{
+ 							"name": "chg_euro_stocks__free",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "chg_euro_stocks__free",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "chg_euro_stocks__free",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "chg_euro_stocks__free",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "chg_euro_stocks__free",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1.4,
+ 							"value_radio": "6"
  						}
- 					]
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"template_columns": "   3.48fr    1fr    1fr    1fr    1fr    1fr    1.4fr "
+ 							},
+ 							"box_style": {
+ 								"display": "grid"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
  				},
  				{
  					"bottom_vspacers": 1,
  					"columns": 6,
- 					"odd_rows_coloring": true,
  					"inputs": [
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\u003cp style='position: relative; top: 0.8rem'\u003e\n\t\t\t\t\t\u003cspan\u003e2.2.\u003c/span\u003e \u0026nbsp;\n\t\t\t\t\tStaats\u0026shy;anleihen\n\t\t\t\t\t \u0026nbsp; - \u0026nbsp;  Eurogebiet\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t",
- 								"en": "\n\t\t\t\t\u003cp style='position: relative; top: 0.8rem'\u003e\n\t\t\t\t\t\u003cspan\u003e2.2.\u003c/span\u003e \u0026nbsp;\n\n\t\t\t\t\tGovt. bonds\n\t\t\t\t\t \u0026nbsp; - \u0026nbsp;  euro area\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp style='position: relative; top: 0.8rem'\u003e\n\t\t\t\t\t\t\u003cspan\u003e2.2.\u003c/span\u003e \u0026nbsp;\n\t\t\t\t\t\tStaats\u0026shy;anleihen\n\t\t\t\t\t\t\u0026nbsp; - \u0026nbsp;  Eurogebiet\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t",
+ 								"en": "\n\t\t\t\t\t\u003cp style='position: relative; top: 0.8rem'\u003e\n\t\t\t\t\t\t\u003cspan\u003e2.2.\u003c/span\u003e \u0026nbsp;\n\n\t\t\t\t\t\tGovt. bonds\n\t\t\t\t\t\t\u0026nbsp; - \u0026nbsp;  euro area\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
  							},
  							"col_span": 6,
  							"col_span_label": 1
@@ -6124,6 +6237,64 @@
  							"value_radio": "6"
  						},
  						{
+ 							"name": "chg_euro_bonds_govt__fed",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Geld\u0026shy;po\u0026shy;li\u0026shy;tik der Fed",
+ 								"en": "Fed monetary policy"
+ 							},
+ 							"col_span_label": 3.6,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_govt__fed",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_govt__fed",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_govt__fed",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_govt__fed",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_govt__fed",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
  							"name": "chg_euro_bonds_govt__inflation",
  							"type": "radio",
  							"label": {
@@ -6182,11 +6353,11 @@
  							"value_radio": "6"
  						},
  						{
- 							"name": "chg_euro_bonds_govt__politics",
+ 							"name": "chg_euro_bonds_govt__politics_euro",
  							"type": "radio",
  							"label": {
- 								"de": "Politische Rahmen\u0026shy;bedingungen",
- 								"en": "Political framework"
+ 								"de": "Politische Rahmen\u0026shy;bedingungen Eurogebiet",
+ 								"en": "Political framework euro area"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -6209,31 +6380,89 @@
  							}
  						},
  						{
- 							"name": "chg_euro_bonds_govt__politics",
+ 							"name": "chg_euro_bonds_govt__politics_euro",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "chg_euro_bonds_govt__politics",
+ 							"name": "chg_euro_bonds_govt__politics_euro",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "chg_euro_bonds_govt__politics",
+ 							"name": "chg_euro_bonds_govt__politics_euro",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "chg_euro_bonds_govt__politics",
+ 							"name": "chg_euro_bonds_govt__politics_euro",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "chg_euro_bonds_govt__politics",
+ 							"name": "chg_euro_bonds_govt__politics_euro",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_govt__politics_global",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Geopolitische Rahmen\u0026shy;bedingungen",
+ 								"en": "Geopolitical framework"
+ 							},
+ 							"col_span_label": 3.6,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_govt__politics_global",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_govt__politics_global",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_govt__politics_global",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_govt__politics_global",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_govt__politics_global",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
@@ -6296,64 +6525,6 @@
  							"col_span_label": 0.4,
  							"col_span_control": 1,
  							"value_radio": "6"
- 						},
- 						{
- 							"name": "chg_euro_bonds_govt__other",
- 							"type": "radio",
- 							"label": {
- 								"de": "Andere",
- 								"en": "Other"
- 							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "chg_euro_bonds_govt__other",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "chg_euro_bonds_govt__other",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "chg_euro_bonds_govt__other",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "chg_euro_bonds_govt__other",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "chg_euro_bonds_govt__other",
- 							"type": "radio",
- 							"col_span_label": 0.4,
- 							"col_span_control": 1,
- 							"value_radio": "6"
  						}
  					],
  					"style": {
@@ -6378,36 +6549,92 @@
  				},
  				{
  					"bottom_vspacers": 2,
- 					"columns": 17,
+ 					"columns": 7,
  					"inputs": [
+ 						{
+ 							"name": "chg_euro_bonds_govt__other_label",
+ 							"type": "text",
+ 							"max_chars": 17,
+ 							"label": {
+ 								"de": "Andere",
+ 								"en": "Other"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 2.4,
+ 							"col_span_control": 4
+ 						},
  						{
  							"name": "chg_euro_bonds_govt__free",
- 							"type": "text",
- 							"max_chars": 26,
- 							"placeholder": {
- 								"de": "Andere: Welche",
- 								"en": "Other: Which?"
- 							},
- 							"label": {
- 								"de": "\u0026nbsp;",
- 								"en": "\u0026nbsp;"
- 							},
- 							"col_span": 17,
- 							"col_span_label": 6,
- 							"col_span_control": 10
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "1"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_govt__free",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_govt__free",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_govt__free",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_govt__free",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_govt__free",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1.4,
+ 							"value_radio": "6"
  						}
- 					]
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"template_columns": "   3.48fr    1fr    1fr    1fr    1fr    1fr    1.4fr "
+ 							},
+ 							"box_style": {
+ 								"display": "grid"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
  				},
  				{
  					"bottom_vspacers": 1,
  					"columns": 6,
- 					"odd_rows_coloring": true,
  					"inputs": [
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\u003cp style='position: relative; top: 0.8rem'\u003e\n\t\t\t\t\t\u003cspan\u003e2.3.\u003c/span\u003e \u0026nbsp;\n\t\t\t\t\tUnter\u0026shy;nehmens\u0026shy;anleihen\n\t\t\t\t\t \u0026nbsp; - \u0026nbsp;  Eurogebiet\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t",
- 								"en": "\n\t\t\t\t\u003cp style='position: relative; top: 0.8rem'\u003e\n\t\t\t\t\t\u003cspan\u003e2.3.\u003c/span\u003e \u0026nbsp;\n\n\t\t\t\t\tCorporate bonds\n\t\t\t\t\t \u0026nbsp; - \u0026nbsp;  euro area\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp style='position: relative; top: 0.8rem'\u003e\n\t\t\t\t\t\t\u003cspan\u003e2.3.\u003c/span\u003e \u0026nbsp;\n\t\t\t\t\t\tUnter\u0026shy;nehmens\u0026shy;anleihen\n\t\t\t\t\t\t\u0026nbsp; - \u0026nbsp;  Eurogebiet\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t",
+ 								"en": "\n\t\t\t\t\t\u003cp style='position: relative; top: 0.8rem'\u003e\n\t\t\t\t\t\t\u003cspan\u003e2.3.\u003c/span\u003e \u0026nbsp;\n\n\t\t\t\t\t\tCorporate bonds\n\t\t\t\t\t\t\u0026nbsp; - \u0026nbsp;  euro area\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
  							},
  							"col_span": 6,
  							"col_span_label": 1
@@ -6795,6 +7022,64 @@
  							"value_radio": "6"
  						},
  						{
+ 							"name": "chg_euro_bonds_corp__fed",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Geld\u0026shy;po\u0026shy;li\u0026shy;tik der Fed",
+ 								"en": "Fed monetary policy"
+ 							},
+ 							"col_span_label": 3.6,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__fed",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__fed",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__fed",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__fed",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__fed",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
  							"name": "chg_euro_bonds_corp__inflation",
  							"type": "radio",
  							"label": {
@@ -6853,11 +7138,11 @@
  							"value_radio": "6"
  						},
  						{
- 							"name": "chg_euro_bonds_corp__politics",
+ 							"name": "chg_euro_bonds_corp__politics_euro",
  							"type": "radio",
  							"label": {
- 								"de": "Politische Rahmen\u0026shy;bedingungen",
- 								"en": "Political framework"
+ 								"de": "Politische Rahmen\u0026shy;bedingungen Eurogebiet",
+ 								"en": "Political framework euro area"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -6880,31 +7165,89 @@
  							}
  						},
  						{
- 							"name": "chg_euro_bonds_corp__politics",
+ 							"name": "chg_euro_bonds_corp__politics_euro",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "chg_euro_bonds_corp__politics",
+ 							"name": "chg_euro_bonds_corp__politics_euro",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "chg_euro_bonds_corp__politics",
+ 							"name": "chg_euro_bonds_corp__politics_euro",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "chg_euro_bonds_corp__politics",
+ 							"name": "chg_euro_bonds_corp__politics_euro",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "chg_euro_bonds_corp__politics",
+ 							"name": "chg_euro_bonds_corp__politics_euro",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__politics_global",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Geopolitische Rahmen\u0026shy;bedingungen",
+ 								"en": "Geopolitical framework"
+ 							},
+ 							"col_span_label": 3.6,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__politics_global",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__politics_global",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__politics_global",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__politics_global",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__politics_global",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
@@ -6963,64 +7306,6 @@
  						},
  						{
  							"name": "chg_euro_bonds_corp__valuation",
- 							"type": "radio",
- 							"col_span_label": 0.4,
- 							"col_span_control": 1,
- 							"value_radio": "6"
- 						},
- 						{
- 							"name": "chg_euro_bonds_corp__other",
- 							"type": "radio",
- 							"label": {
- 								"de": "Andere",
- 								"en": "Other"
- 							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "chg_euro_bonds_corp__other",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "chg_euro_bonds_corp__other",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "chg_euro_bonds_corp__other",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "chg_euro_bonds_corp__other",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "chg_euro_bonds_corp__other",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
@@ -7049,36 +7334,92 @@
  				},
  				{
  					"bottom_vspacers": 2,
- 					"columns": 17,
+ 					"columns": 7,
  					"inputs": [
  						{
- 							"name": "chg_euro_bonds_corp__free",
+ 							"name": "chg_euro_bonds_corp__other_label",
  							"type": "text",
- 							"max_chars": 26,
- 							"placeholder": {
- 								"de": "Andere: Welche",
- 								"en": "Other: Which?"
- 							},
+ 							"max_chars": 17,
  							"label": {
- 								"de": "\u0026nbsp;",
- 								"en": "\u0026nbsp;"
+ 								"de": "Andere",
+ 								"en": "Other"
  							},
- 							"col_span": 17,
- 							"col_span_label": 6,
- 							"col_span_control": 10
+ 							"col_span": 1,
+ 							"col_span_label": 2.4,
+ 							"col_span_control": 4
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__free",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "1"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__free",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__free",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__free",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__free",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "chg_euro_bonds_corp__free",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1.4,
+ 							"value_radio": "6"
  						}
- 					]
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"template_columns": "   3.48fr    1fr    1fr    1fr    1fr    1fr    1.4fr "
+ 							},
+ 							"box_style": {
+ 								"display": "grid"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
  				},
  				{
  					"bottom_vspacers": 1,
  					"columns": 6,
- 					"odd_rows_coloring": true,
  					"inputs": [
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\u003cp style='position: relative; top: 0.8rem'\u003e\n\t\t\t\t\t\u003cspan\u003e2.4.\u003c/span\u003e \u0026nbsp;\n\t\t\t\t\tImmobilien\n\t\t\t\t\t \u0026nbsp; - \u0026nbsp;  Eurogebiet\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t",
- 								"en": "\n\t\t\t\t\u003cp style='position: relative; top: 0.8rem'\u003e\n\t\t\t\t\t\u003cspan\u003e2.4.\u003c/span\u003e \u0026nbsp;\n\n\t\t\t\t\tReal estate\n\t\t\t\t\t \u0026nbsp; - \u0026nbsp;  euro area\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp style='position: relative; top: 0.8rem'\u003e\n\t\t\t\t\t\t\u003cspan\u003e2.4.\u003c/span\u003e \u0026nbsp;\n\t\t\t\t\t\tImmobilien\n\t\t\t\t\t\t\u0026nbsp; - \u0026nbsp;  Eurogebiet\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t",
+ 								"en": "\n\t\t\t\t\t\u003cp style='position: relative; top: 0.8rem'\u003e\n\t\t\t\t\t\t\u003cspan\u003e2.4.\u003c/span\u003e \u0026nbsp;\n\n\t\t\t\t\t\tReal estate\n\t\t\t\t\t\t\u0026nbsp; - \u0026nbsp;  euro area\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
  							},
  							"col_span": 6,
  							"col_span_label": 1
@@ -7466,6 +7807,64 @@
  							"value_radio": "6"
  						},
  						{
+ 							"name": "chg_euro_re__fed",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Geld\u0026shy;po\u0026shy;li\u0026shy;tik der Fed",
+ 								"en": "Fed monetary policy"
+ 							},
+ 							"col_span_label": 3.6,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "chg_euro_re__fed",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "chg_euro_re__fed",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "chg_euro_re__fed",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "chg_euro_re__fed",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "chg_euro_re__fed",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
  							"name": "chg_euro_re__inflation",
  							"type": "radio",
  							"label": {
@@ -7524,11 +7923,11 @@
  							"value_radio": "6"
  						},
  						{
- 							"name": "chg_euro_re__politics",
+ 							"name": "chg_euro_re__politics_euro",
  							"type": "radio",
  							"label": {
- 								"de": "Politische Rahmen\u0026shy;bedingungen",
- 								"en": "Political framework"
+ 								"de": "Politische Rahmen\u0026shy;bedingungen Eurogebiet",
+ 								"en": "Political framework euro area"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -7551,31 +7950,89 @@
  							}
  						},
  						{
- 							"name": "chg_euro_re__politics",
+ 							"name": "chg_euro_re__politics_euro",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "chg_euro_re__politics",
+ 							"name": "chg_euro_re__politics_euro",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "chg_euro_re__politics",
+ 							"name": "chg_euro_re__politics_euro",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "chg_euro_re__politics",
+ 							"name": "chg_euro_re__politics_euro",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "chg_euro_re__politics",
+ 							"name": "chg_euro_re__politics_euro",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "chg_euro_re__politics_global",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Geopolitische Rahmen\u0026shy;bedingungen",
+ 								"en": "Geopolitical framework"
+ 							},
+ 							"col_span_label": 3.6,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "chg_euro_re__politics_global",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "chg_euro_re__politics_global",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "chg_euro_re__politics_global",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "chg_euro_re__politics_global",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "chg_euro_re__politics_global",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
@@ -7634,64 +8091,6 @@
  						},
  						{
  							"name": "chg_euro_re__valuation",
- 							"type": "radio",
- 							"col_span_label": 0.4,
- 							"col_span_control": 1,
- 							"value_radio": "6"
- 						},
- 						{
- 							"name": "chg_euro_re__other",
- 							"type": "radio",
- 							"label": {
- 								"de": "Andere",
- 								"en": "Other"
- 							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "chg_euro_re__other",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "chg_euro_re__other",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "chg_euro_re__other",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "chg_euro_re__other",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "chg_euro_re__other",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
@@ -7720,25 +8119,82 @@
  				},
  				{
  					"bottom_vspacers": 4,
- 					"columns": 17,
+ 					"columns": 7,
  					"inputs": [
  						{
- 							"name": "chg_euro_re__free",
+ 							"name": "chg_euro_re__other_label",
  							"type": "text",
- 							"max_chars": 26,
- 							"placeholder": {
- 								"de": "Andere: Welche",
- 								"en": "Other: Which?"
- 							},
+ 							"max_chars": 17,
  							"label": {
- 								"de": "\u0026nbsp;",
- 								"en": "\u0026nbsp;"
+ 								"de": "Andere",
+ 								"en": "Other"
  							},
- 							"col_span": 17,
- 							"col_span_label": 6,
- 							"col_span_control": 10
+ 							"col_span": 1,
+ 							"col_span_label": 2.4,
+ 							"col_span_control": 4
+ 						},
+ 						{
+ 							"name": "chg_euro_re__free",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "1"
+ 						},
+ 						{
+ 							"name": "chg_euro_re__free",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "chg_euro_re__free",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "chg_euro_re__free",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "chg_euro_re__free",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "chg_euro_re__free",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1.4,
+ 							"value_radio": "6"
  						}
- 					]
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"template_columns": "   3.48fr    1fr    1fr    1fr    1fr    1fr    1.4fr "
+ 							},
+ 							"box_style": {
+ 								"display": "grid"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
  				}
  			]
  		},

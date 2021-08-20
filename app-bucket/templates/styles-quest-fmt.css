@@ -50,4 +50,15 @@ nav a.title span.survey-wave-id {
 }
 
 
-
+/* special 202109 */
+.pg06 input[type="text"] {
+    margin-right: 0;
+}
+@media screen and (max-width: 800px) {
+    /* special 202109 */
+    .pg06 input[type="text"] {
+        max-width:   3.5rem;
+        margin-left: 0.3rem;
+        margin-right: 0;
+    }
+}

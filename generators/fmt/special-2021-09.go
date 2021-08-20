@@ -2,6 +2,7 @@ package fmt
 
 import (
 	"fmt"
+	"log"
 
 	"github.com/zew/go-questionnaire/css"
 	"github.com/zew/go-questionnaire/qst"
@@ -41,7 +42,7 @@ var inputNamesAssetClassesChange202109 = []string{
 	"chg_euro_re",
 }
 
-var labelsInputVariables202109 = []trl.S{
+var influenceFactorLabels202109 = []trl.S{
 	{
 		"de": "Gesamtwirtschaftlicher Ausblick",
 		"en": "Economic outlook",
@@ -51,30 +52,40 @@ var labelsInputVariables202109 = []trl.S{
 		"en": "ECB monetary policy",
 	},
 	{
+		"de": "Geldpolitik der Fed",
+		"en": "Fed monetary policy",
+	},
+	{
 		"de": "Ausblick Inflation",
 		"en": "Inflation outlook",
 	},
 	{
-		"de": "Politische Rahmen&shy;bedingungen",
-		"en": "Political framework",
+		"de": "Politische Rahmen&shy;bedingungen Eurogebiet",
+		"en": "Political framework euro area",
+	},
+	{
+		"de": "Geopolitische Rahmen&shy;bedingungen",
+		"en": "Geopolitical framework",
 	},
 	{
 		"de": "Aktuelle Markt&shy;bewertung",
 		"en": "Current market valuation",
 	},
-	{
-		"de": "Andere",
-		"en": "Other",
-	},
+	// {
+	// 	"de": "Andere",
+	// 	"en": "Other",
+	// },
 }
 
-var namesInputVariables202109 = []string{
-	"economy",   // overall economic outlook
-	"ecb",       // monetary policy ecb
-	"inflation", // outlook inflation
-	"politics",  // political framework
-	"valuation", // market valuation
-	"other",     // other
+var influenceFactorNames202109 = []string{
+	"economy",         // overall economic outlook
+	"ecb",             // monetary policy ecb
+	"fed",             // monetary policy fed
+	"inflation",       // outlook inflation
+	"politics_euro",   // political framework euro area
+	"politics_global", // political framework global
+	"valuation",       // market valuation
+	// "other",     // other
 }
 
 func special202109(q *qst.QuestionnaireT) error {
@@ -208,72 +219,135 @@ func special202109(q *qst.QuestionnaireT) error {
 			0.0, 1,
 			0.4, 1,
 		}
+		// additional row below each block
+		colsBelow1 := append([]float32{1.0}, columnTemplateLocal...)
+		colsBelow1 = []float32{
+			// 1.4, 2.2, //   3.0, 1,  |  4.6 separated to two cols
+			1.38, 2.1, //   3.0, 1,  |  4.6 separated to two cols
+			0.0, 1, //     3.0, 1,  |  4.6 separated to two cols
+			0.0, 1,
+			0.0, 1,
+			0.0, 1,
+			0.0, 1,
+			0.4, 1,
+		}
+		colsBelow2 := []float32{}
+		for i := 0; i < len(colsBelow1); i += 2 {
+			colsBelow2 = append(colsBelow2, colsBelow1[i]+colsBelow1[i+1])
+		}
+		// log.Printf("colsBelow1 %+v", colsBelow1)
+		// log.Printf("colsBelow2 %+v", colsBelow2)
+
 		for idx, assCl := range inputNamesAssetClassesChange202109 {
 
 			names := []string{}
-			for _, nm := range namesInputVariables202109 {
+			for _, nm := range influenceFactorNames202109 {
 				names = append(names, assCl+"__"+nm)
 			}
 
 			lbl := rowLabelsAssetClasses202109[idx]
 
-			gb := qst.NewGridBuilderRadios(
-				columnTemplateLocal,
-				improvedDeterioratedPlusMinus6(),
-				names,
-				radioVals6,
-				labelsInputVariables202109,
-			)
-
-			gb.MainLabel = trl.S{
-				"de": fmt.Sprintf(`
-				<p style='position: relative; top: 0.8rem'>
-					<span>2.%v.</span> &nbsp;
-					%v
-					 &nbsp; - &nbsp;  Eurogebiet
-				</p>
-				`,
-					idx+1,
-					lbl.Tr("de"),
-				),
-				"en": fmt.Sprintf(`
-				<p style='position: relative; top: 0.8rem'>
-					<span>2.%v.</span> &nbsp;
-
-					%v
-					 &nbsp; - &nbsp;  euro area
-				</p>
-				`,
-					idx+1,
-					lbl.Tr("en"),
-				),
-			}
-
-			gr := page.AddGrid(gb)
-			gr.OddRowsColoring = true
-			gr.BottomVSpacers = 2
-			gr.BottomVSpacers = 1
-
-			// freetext
 			{
-				gr := page.AddGroup()
-				gr.Cols = 7 + 10
-				{
-					inp := gr.AddInput()
-					inp.Type = "text"
-					inp.Name = assCl + "__free"
-					inp.MaxChars = 26
-					inp.ColSpan = 17
-					inp.ColSpanLabel = 6
-					inp.ColSpanControl = 10
-					inp.Label = trl.S{"de": "&nbsp;", "en": "&nbsp;"}
-					inp.Placeholder = trl.S{"de": "Andere: Welche?", "en": "Other: Which?"}
+				gb := qst.NewGridBuilderRadios(
+					columnTemplateLocal,
+					improvedDeterioratedPlusMinus6(),
+					names,
+					radioVals6,
+					influenceFactorLabels202109,
+				)
+
+				gb.MainLabel = trl.S{
+					"de": fmt.Sprintf(`
+					<p style='position: relative; top: 0.8rem'>
+						<span>2.%v.</span> &nbsp;
+						%v
+						&nbsp; - &nbsp;  Eurogebiet
+					</p>
+					`,
+						idx+1,
+						lbl.Tr("de"),
+					),
+					"en": fmt.Sprintf(`
+					<p style='position: relative; top: 0.8rem'>
+						<span>2.%v.</span> &nbsp;
+
+						%v
+						&nbsp; - &nbsp;  euro area
+					</p>
+					`,
+						idx+1,
+						lbl.Tr("en"),
+					),
 				}
 
+				gr := page.AddGrid(gb)
+				gr.BottomVSpacers = 1
+			}
+
+			{
+
+				gr := page.AddGroup()
+				gr.Cols = 7
 				gr.BottomVSpacers = 2
 				if idx == 3 {
 					gr.BottomVSpacers = 4
 				}
+				stl := ""
+				for colIdx := 0; colIdx < len(colsBelow2); colIdx++ {
+					stl = fmt.Sprintf(
+						"%v   %vfr ",
+						stl,
+						colsBelow2[colIdx],
+					)
+				}
+				gr.Style = css.NewStylesResponsive(gr.Style)
+				if gr.Style.Desktop.StyleGridContainer.TemplateColumns == "" {
+					gr.Style.Desktop.StyleBox.Display = "grid"
+					gr.Style.Desktop.StyleGridContainer.TemplateColumns = stl
+					// log.Printf("fmt special 2021-09: grid template - %v", stl)
+				} else {
+					log.Printf("GridBuilder.AddGrid() - another TemplateColumns already present.\nwnt%v\ngot%v", stl, gr.Style.Desktop.StyleGridContainer.TemplateColumns)
+				}
+
+				{
+					inp := gr.AddInput()
+					inp.Type = "text"
+					inp.Name = assCl + "__other_label"
+					inp.MaxChars = 17
+					inp.ColSpan = 1
+					inp.ColSpanLabel = 2.4
+					inp.ColSpanControl = 4
+					// inp.Placeholder = trl.S{"de": "Andere: Welche?", "en": "Other: Which?"}
+					inp.Label = trl.S{
+						"de": "Andere",
+						"en": "Other",
+					}
+
+					// inp.StyleCtl = css.NewStylesResponsive(inp.StyleCtl)
+					// inp.StyleCtl.Desktop.StyleBox.WidthMax = "14.0rem"
+					// inp.StyleCtl.Mobile.StyleBox.WidthMax = "4.0rem"
+
+				}
+
+				//
+				for idx := 0; idx < len(improvedDeterioratedPlusMinus6()); idx++ {
+					rad := gr.AddInput()
+					rad.Type = "radio"
+
+					rad.Name = assCl + "__free"
+					rad.ValueRadio = fmt.Sprint(idx + 1)
+
+					rad.ColSpan = 1
+					rad.ColSpanLabel = colsBelow1[2*(idx+1)]
+					rad.ColSpanControl = colsBelow1[2*(idx+1)] + 1
+
+					// rad.Label = lbl
+					// rad.ControlFirst()
+					// rad.LabelRight()
+
+					// 	rad.Validator = "must;comprehensionPOP2"
+				}
+
 			}
 
 		}

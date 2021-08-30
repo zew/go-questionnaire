@@ -51,7 +51,7 @@ func TemplatesPreparse(w http.ResponseWriter, req *http.Request) {
 			continue
 		}
 
-		t, err := Get(tName)
+		t, err := Get(tName, true)
 		if err != nil {
 			fmt.Fprintf(w, "preparse failure template %-30v: %v\n", tName, err)
 			continue

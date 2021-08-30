@@ -29,7 +29,7 @@ function keyControls(e) {
     // We find the next element and focus() it.
     //
     // TEXTAREA: SHIFT+ENTER mode is impossible on mobile - 
-    // thus we cannot inlude TEXTAREA into the func	 
+    // thus we cannot include TEXTAREA into the func	 
     // 
     //	optionally restrict to certain user agens: && /Android/.test(navigator.userAgent)
     if (e.key === "Enter") {

@@ -104,7 +104,12 @@ by using [gocloud blob](https://godoc.org/gocloud.dev/blob) for local file syste
 * Server side validation  
 For example `must ; inRange20` or only `inRange100` or only `must`
 
-* Client side validation; free `JavaScript` funcs
+* Server side validation  
+complex rules via custom validation funcs  
+which can access the entire questionnaire
+
+* If the researcher needs instant feedback  
+on user input, inclusion of page-wise `JavaScript` files possible
 
 ### Technical properties
 
@@ -567,7 +572,7 @@ Soft hyphenization remains crucial to maintaining layout on narrow displays.
 Package `trl` contains a map `hyph` containing manually hyphenized strings.  
 These are applied to all strings of any questionnaire at JSON creation time.
 
-There are JavaScript libraries containing hyphenization libraries.  
+There are `JavaScript` libraries containing hyphenization libraries.  
 This software still relies on manual adding hyphenization to package `trl`.
 
 ### Randomization for scientific studies I - `RandomizationGroup`
@@ -629,17 +634,49 @@ It features
 
 * Handlers for login, changing password, login by hash ID
 
-* CSRF and XSS defence
+* Package [https://github.com/pbberlin/struc2frm](struct2form) is used  
+to generate HTML forms alone from structs with comments;  
+all admin forms are created using `struc2frm`.  
+Also standardizes server side parsing and validation.
 
-* Site layout template with jQuery from CDN cache; fallback to localhost
+* CSRF and XSS defence via `struc2frm`
 
-* Templates having access to session and request
+* Server side HTML and CSS templates  
+having access to session and request
 
 * Stack of dynamic subtemplate calls
 
-* Template pre-parsing (`bootstrap`), configurable for development or production
+* Template pre-parsing (`bootstrap`),  
+configurable for development or production
 
-* Shell script to control application under Linux
+* `jQuery` from CDN cache with fallback to localhost.  
+All `jQuery` was _deprecated_ in 2019 - retaining only generic `JavaScript`
+
+* `JavaScript` is used as little as possible;  
+logic should be kept on _one_ environment only  
+either server side or client side;  
+this is a server side framework
+
+* `JavaScript` is used for some menu effects wizardry  
+for some convenience keyboard helpers  
+and for focussing.
+
+* `JavaScript` per page custom funcs have been used  
+for validation in the `pat` and `fmt` survey;  
+sources under /app-bucket/templates/js/
+
+* `validation.js` contains code for  
+sophisticated client side JS validation.  
+[/js/validation.md](Docs)  
+[html5-form-validation/playground-03.html](Showcase).  
+This is developed to provide instant feedback on complicated  
+compound form validation rules.  
+It is not production tested.
+
+* `systemd` config file to control application under Linux
+
+* Up until 2018, the included `init.d`  
+shell script was used
 
 * [Dockerfile](https://en.wikipedia.org/wiki/Docker_%28software%29) to deploy on modern cloud servers
 
@@ -651,8 +688,6 @@ Thus the application can be hosted by cloud providers with buckets *or* on serve
 * Package `stream` serves huge files without memory consumption in a protected way.
 
 * Package `detect` discovers mobile clients
-
-* Package `struct2form` generates HTML forms alone from structs with comments
 
 * Package `graph` creates interactive SVG graphs
 
@@ -723,3 +758,7 @@ We are relucatant to incorporate logging logic into the application, since `syst
 ## Open / todo
 
 * Height of the menu in level 2 in mobile view is dependent on nav-min-height
+
+* config.json and logins.json  
+might be loaded from a configuration service.  
+Or at least from another GC/S3 bucket.

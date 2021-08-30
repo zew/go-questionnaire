@@ -125,11 +125,14 @@ func SiteCore(site string) (string, string) {
 // Get returns a parsed bundle of templates by name
 // either pre-parsed from cache, or freshly parsed;
 // called for every template at app *init* time;
-// thus no sync mutex is required
-func Get(tName string) (*template.Template, error) {
+// thus no sync mutex is required;
+// TemplatesPreparse() calls this func with param forceFreshParsing true
+// Exec()              calls this func with param forceFreshParsing false
+//
+func Get(tName string, forceFreshParsing bool) (*template.Template, error) {
 
 	tDerived, ok := cache[tName] // template from cache...
-	if !ok || !cfg.Get().IsProduction {
+	if !ok || !cfg.Get().IsProduction || forceFreshParsing {
 
 		// or parse it anew
 		pth := path.Join(".", "templates", tName) // not filepath; cloudio always has forward slash
@@ -195,7 +198,7 @@ Keys expected to be supplied by caller
 */
 func Exec(w io.Writer, r *http.Request, mp map[string]interface{}, tName string) {
 
-	t, err := Get(tName)
+	t, err := Get(tName, false)
 	if err != nil {
 		log.Printf("parsing template %q error: %v", tName, err)
 		fmt.Fprintf(w, "parsing template %q error: %v", tName, err)

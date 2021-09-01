@@ -667,8 +667,10 @@ sources under /app-bucket/templates/js/
 
 * `validation.js` contains code for  
 sophisticated client side JS validation.  
-[/js/validation.md](Docs)  
-[html5-form-validation/playground-03.html](Showcase).  
+[Docs](./app-bucket/content/html5-form-validation/validation.md)  
+[Playground (local)](./app-bucket/content/html5-form-validation/playground-03.html)  
+[Playground (live)](https://survey2.zew.de/doc/html5-form-validation/playground-03.html)  
+[Presentation (in German)](https://youtu.be/BaV0ebrcepY)  
 This is developed to provide instant feedback on complicated  
 compound form validation rules.  
 It is not production tested.

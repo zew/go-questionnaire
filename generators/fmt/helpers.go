@@ -88,7 +88,7 @@ func labelsIncreaseDecrease() []trl.S {
 		},
 		{
 			"de": "gleich bleiben",
-			"en": "remain unchanged",
+			"en": "not change",
 		},
 		{
 			"de": "sinken",
@@ -113,7 +113,7 @@ func labelsIncreaseDecreaseCurrency() []trl.S {
 		},
 		{
 			"de": "gleich bleiben",
-			"en": "remain unchanged",
+			"en": "not change",
 		},
 		{
 			"de": "abwerten",
@@ -175,7 +175,7 @@ func labelsStrongIncreaseStrongDecrease() []trl.S {
 		},
 		{
 			"de": "gleich bleiben",
-			"en": "remain unchanged",
+			"en": "not change",
 		},
 		{
 			"de": "sinken",

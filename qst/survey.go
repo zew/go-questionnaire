@@ -18,7 +18,7 @@ type ParamT struct {
 	// Challenge string `json:"challenge,omitempty"` // i.e.  Set field 'main_refinance_rate_ecb' to `01.02.2018: 3.2%` as in `main refinance rate of the ECB (01.02.2018: 3.2%)`"
 }
 
-// Param returns the value of a questionnaire param
+// Param returns the value of a surveys param
 func (s *SurveyT) Param(name string) (string, error) {
 	for _, p := range s.Params {
 		if p.Name == name {
@@ -79,11 +79,14 @@ General rule:
 Ask for the forecast for the *current* quarter.
 
 Exception:
-If previous quarter growth numbers were not yet published by Statistisches Bundesamt,
+If previous quarter growth numbers were
+not yet published by Statistisches Bundesamt,
 then ask for previous quarter.
 
 You find out by calling
 <https://www.destatis.de/SiteGlobals/Forms/Suche/Termine/DE/Terminsuche_Formular.html?startDate_dt=2021-06-30T22%3A00%3A00Z&cl2Taxonomies_Themen_0=volkswirtschaftliche_gesamtrechnungen_inlandsprodukt>
+or searching for "volkswirtschaftliche gesamtrechnungen inlandsprodukt"
+Also <https://www.finanzen.net/konjunktur/bruttoinlandsprodukt>
 
 This exception usually applies in the first month of the current quarter.
 => set questionnaire survey parameter offsetDESTATIS to -1

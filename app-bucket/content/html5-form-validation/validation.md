@@ -1,5 +1,9 @@
 # HTML5 Validation
 
+[Presentation on youtube - in German](https://youtu.be/BaV0ebrcepY)  
+use `caption (auto-generated)` and then `auto translate ... English`  
+to view English subtitling
+
 ## Default validation
 
 HTML5 provides - highly idiosyncratic - built-in validation features.  
@@ -145,7 +149,6 @@ Usage of  _parent_ or _grandparent_ can be configured using the `attachGrandpare
 
 ### Live demo
 
-[Presentation](https://youtu.be/BaV0ebrcepY)  
 [Live demo](https://survey2.zew.de/doc/html5-form-validation/playground-03.html)
 
 * This is the real-life example mentioned above

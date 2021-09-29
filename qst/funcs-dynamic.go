@@ -39,6 +39,9 @@ var skipInputNames = map[string]map[string]bool{
 		"contact":  true,
 		"comment":  true,
 		"finished": true,
+
+		"rev_free":       true,
+		"rev_free_label": true,
 	},
 }
 

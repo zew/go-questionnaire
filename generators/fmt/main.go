@@ -883,6 +883,10 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	if err != nil {
 		return nil, fmt.Errorf("Error adding special202109(): %v", err)
 	}
+	err = special202110(&q)
+	if err != nil {
+		return nil, fmt.Errorf("Error adding special202110(): %v", err)
+	}
 
 	//
 	// page 7 - after seasonal

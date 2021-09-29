@@ -89,9 +89,7 @@ or searching for "volkswirtschaftliche gesamtrechnungen inlandsprodukt"
 Also <https://www.finanzen.net/konjunktur/bruttoinlandsprodukt>
 
 This exception usually applies in the first month of the current quarter.
-=> set questionnaire survey parameter offsetDESTATIS to -1
-
-
+=> set questionnaire survey parameter destatis to -1
 
 Quarter yields quarter plus year;
 based on the survey month;
@@ -131,19 +129,19 @@ January  of    0 -                       => Q1 0
 func (s SurveyT) Quarter(offs ...int) string {
 	y := s.Year
 	m := int(s.Month) // 1 - january
-	offset := 0
+	qOffset := 0      // its the *quarterly* offset
 	if len(offs) > 0 {
-		offset = offs[0]
+		qOffset = offs[0]
 	}
 
-	offsetDESTATIS := 0
+	offsetDestatis := 0 // next quarter
 	if osd, err := s.Param("destatis"); err == nil {
-		offsetDESTATIS, _ = strconv.Atoi(osd)
-		offset += offsetDESTATIS
+		offsetDestatis, _ = strconv.Atoi(osd)
+		qOffset += offsetDestatis
 	}
 
 	qNow := int((m-1)/3) + 1 // jan: int(0/3)+1 == 1   feb: int(1/3)+1 == 1    mar: int(2/3)+1 == 1     apr: int(3/3)+1 == 2
-	qRet := qNow + offset
+	qRet := qNow + qOffset
 	for qRet > 4 {
 		qRet -= 4
 		y++

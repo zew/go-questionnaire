@@ -416,6 +416,40 @@ func improvedDeteriorated6() []trl.S {
 
 }
 
+func improvedDeteriorated6b() []trl.S {
+
+	tm := []trl.S{
+		{
+			"de": "deutlich besser",
+			"en": "signif. better",
+		},
+		{
+			"de": "leicht besser",
+			"en": "slightly better",
+		},
+		{
+			"de": "gleich",
+			"en": "unchanged",
+		},
+		{
+			"de": "leicht schlechter",
+			"en": "slightly worse",
+		},
+		{
+			"de": "deutlich schlechter",
+			"en": "strongly worse",
+		},
+
+		{
+			"de": "keine<br>Angabe",
+			"en": "no answer",
+		},
+	}
+
+	return tm
+
+}
+
 func raiseDecrease6() []trl.S {
 
 	tm := []trl.S{
@@ -438,6 +472,40 @@ func raiseDecrease6() []trl.S {
 		{
 			"de": "stark<br>senken",
 			"en": "strong<br>decrease",
+		},
+
+		{
+			"de": "keine<br>Angabe",
+			"en": "no answer",
+		},
+	}
+
+	return tm
+
+}
+
+func raiseDecrease6b() []trl.S {
+
+	tm := []trl.S{
+		{
+			"de": "stark<br>erhöht",
+			"en": "strongly<br>increased",
+		},
+		{
+			"de": "erhöht",
+			"en": "increased",
+		},
+		{
+			"de": "nicht<br>verändert",
+			"en": "not changed",
+		},
+		{
+			"de": "reduziert",
+			"en": "reduced",
+		},
+		{
+			"de": "stark<br>reduziert",
+			"en": "strongly<br>reduced",
 		},
 
 		{

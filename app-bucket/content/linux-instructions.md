@@ -143,6 +143,9 @@ sudo journalctl -u go-questionnaire.service --since "2020-04-08 13:46:00"
 sudo journalctl -u go-questionnaire.service --since today
 sudo journalctl -u go-questionnaire.service --since -2m
 
+# grep and exclude - using  ... | grep  --invert-match  -e "exclude this"
+sudo journalctl -u go-questionnaire.service --since -14d | grep  "trying login1"  | grep   --invert-match   -e "impossible string"   -e vendor.twosigma.com
+
 sudo systemctl daemon-reload
 
 sudo systemctl restart  go-questionnaire.service

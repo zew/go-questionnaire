@@ -201,12 +201,12 @@ func eachMonth1inQ(q *qst.QuestionnaireT) error {
 			"en": "FED monetary policy",
 		},
 		{
-			"de": "Brexit",
-			"en": "Brexit",
-		},
-		{
 			"de": "Corona Pandemie",
 			"en": "Corona pandemic",
+		},
+		{
+			"de": "Internationale Lieferengpässe",
+			"en": "Supply chain disruptions",
 		},
 	}
 
@@ -224,8 +224,8 @@ func eachMonth1inQ(q *qst.QuestionnaireT) error {
 				"rev_trade_conflicts",
 				"rev_mp_ecb",
 				"rev_mp_fed",
-				"rev_brexit",
 				"rev_corona",
+				"rev_supply_disrupt",
 				// "rev_free",
 			},
 			radioVals6,
@@ -237,44 +237,48 @@ func eachMonth1inQ(q *qst.QuestionnaireT) error {
 		}
 		gr := page.AddGrid(gb)
 		gr.OddRowsColoring = true
-		gr.BottomVSpacers = 1
+		gr.BottomVSpacers = 3
 	}
 
-	// gr3
-	{
-		gr := page.AddGroup()
-		gr.Cols = 1
-		gr.BottomVSpacers = 1
-		gr.BottomVSpacers = 0
+	//
+	// brueckbauer believes in 'sonstige'
+	if false {
+		// gr3
 		{
-			inp := gr.AddInput()
-			inp.Type = "text"
-			inp.Name = "rev_free_label"
-			inp.MaxChars = 26
-			inp.ColSpan = 1
-			inp.ColSpanControl = 1
-			inp.Label = nil
-			inp.Placeholder = trl.S{"de": "Sonstige", "en": "Other"}
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 1
+			gr.BottomVSpacers = 0
+			{
+				inp := gr.AddInput()
+				inp.Type = "text"
+				inp.Name = "rev_free_label"
+				inp.MaxChars = 26
+				inp.ColSpan = 1
+				inp.ColSpanControl = 1
+				inp.Label = nil
+				inp.Placeholder = trl.S{"de": "Sonstige", "en": "Other"}
+			}
 		}
-	}
 
-	// gr4
-	{
-		gb := qst.NewGridBuilderRadios(
-			columnTemplate6,
-			nil,
-			[]string{"rev_free"},
-			radioVals6,
-			[]trl.S{
-				{
-					"de": " &nbsp;  ", // -
-					"en": " &nbsp;  ", // -
+		// gr4
+		{
+			gb := qst.NewGridBuilderRadios(
+				columnTemplate6,
+				nil,
+				[]string{"rev_free"},
+				radioVals6,
+				[]trl.S{
+					{
+						"de": " &nbsp;  ", // -
+						"en": " &nbsp;  ", // -
+					},
 				},
-			},
-		)
-		gb.MainLabel = nil
-		gr := page.AddGrid(gb)
-		gr.OddRowsColoring = true
+			)
+			gb.MainLabel = nil
+			gr := page.AddGrid(gb)
+			gr.OddRowsColoring = true
+		}
 	}
 
 	return nil

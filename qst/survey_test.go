@@ -88,6 +88,13 @@ func Test_surveyT_Quarter(t *testing.T) {
 		{"tUf3", SurveyT{Year: 2021, Month: 4}, args{offs: []int{-1}}, "Q1&nbsp;2021"},
 		{"tUf4", SurveyT{Year: 2021, Month: 1}, args{offs: []int{-4}}, "Q1&nbsp;2020"},
 		{"tUf5", SurveyT{Year: 2021, Month: 1}, args{offs: []int{-5}}, "Q4&nbsp;2019"},
+
+		// destatis parameter - quarter offset
+		{"tDest1", SurveyT{Year: 2021, Month: 1, Params: []ParamT{{"destatis", "-1"}}}, args{offs: []int{0}}, "Q4&nbsp;2020"},
+		{"tDest2", SurveyT{Year: 2021, Month: 3, Params: []ParamT{{"destatis", "-1"}}}, args{offs: []int{0}}, "Q4&nbsp;2020"},
+		{"tDest3", SurveyT{Year: 2021, Month: 4, Params: []ParamT{{"destatis", "-1"}}}, args{offs: []int{0}}, "Q1&nbsp;2021"},
+		{"tDest4", SurveyT{Year: 2021, Month: 10, Params: []ParamT{{"destatis", "-1"}}}, args{offs: []int{0}}, "Q3&nbsp;2021"},
+		{"tDest5", SurveyT{Year: 2021, Month: 6, Params: []ParamT{{"destatis", "2"}}}, args{offs: []int{0}}, "Q4&nbsp;2021"},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

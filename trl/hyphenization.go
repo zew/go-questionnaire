@@ -193,6 +193,8 @@ var hyph = []string{
 	"re|search",
 	"Reg|ulation",
 	"sav|ings",
+	"sig|nif|i|cant",
+	"sig|nif|i|cant|ly",
 	"Small+|medium",
 	"strong|ly",
 	"strong|ly",

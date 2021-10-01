@@ -40,11 +40,11 @@ var inputNamesDAXrestruct202110 = []string{
 var rowLabelsDAXrestruct202110 = []trl.S{
 	{
 		"de": "Auf Sicht von 6&nbsp;Monaten",
-		"en": "For the next 6&nbsp;months",
+		"en": "Over the next 6&nbsp;months",
 	},
 	{
 		"de": "Auf Sicht von 5&nbsp;Jahren",
-		"en": "For the next 5&nbsp;years",
+		"en": "Over the next 5&nbsp;years",
 	},
 }
 
@@ -163,16 +163,16 @@ func special202110(q *qst.QuestionnaireT) error {
 				</p>
 
 				<p style=''>
-					Since September 20th the DAX stock index
-					has a new composition.
-					It now contains 40 instead of 
-					30 most capitalized stocks.
-					How does the increased scope affect your
-					assessment of the future DAX development?
+					Since September 20, 2021, the DAX stock index 
+					has a new composition. 
+					
+					It now consists of 40 instead of 30 stocks. 
+					
 					<br>
 					<br>
-					Compared to the DAX30, the DAX40
-					will develop as follows:
+					How does this change affect your assessment 
+					of the DAX's future development?
+
 				</p>
 
 				`,

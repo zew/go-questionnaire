@@ -24,7 +24,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "d966699a8f3882fec81d03dd395531954c91d8cecc4ef33271c7f39196310f49",
+ 	"md_5": "76505d55ee8e633152dbf0751593e30f73e1e86b3a9271c821febbb568d44d9a",
  	"lang_codes": [
  		"de",
  		"en"
@@ -301,7 +301,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\u003cb\u003e1.\u003c/b\u003e Die ge\u0026shy;samtwirt\u0026shy;schaft\u0026shy;liche Situation beurteilen wir als",
- 								"en": "\u003cb\u003e1.\u003c/b\u003e We assess the overall eco\u0026shy;nom\u0026shy;ic situation as"
+ 								"en": "\u003cb\u003e1.\u003c/b\u003e We estimate the current overall macroeco\u0026shy;nom\u0026shy;ic situation as being"
  							},
  							"col_span": 4,
  							"col_span_label": 1
@@ -443,7 +443,7 @@
  							"type": "label-as-input",
  							"label": {
  								"de": "keine\u003cbr\u003eAn\u0026shy;gabe",
- 								"en": "no an\u0026shy;swer"
+ 								"en": "no estimate"
  							},
  							"col_span_label": 0.4,
  							"col_span_control": 1,
@@ -698,7 +698,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\u003cb\u003e2a.\u003c/b\u003e Die ge\u0026shy;samtwirt\u0026shy;schaft\u0026shy;liche Situation wird sich mittel\u0026shy;fristig (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;Mo.)",
- 								"en": "\u003cb\u003e2a.\u003c/b\u003e The overall eco\u0026shy;nom\u0026shy;ic situation medium term (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;months) will"
+ 								"en": "\u003cb\u003e2a.\u003c/b\u003e In the medium-term (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;months) the overall macro-eco\u0026shy;nom\u0026shy;ic situation will"
  							},
  							"col_span": 4,
  							"col_span_label": 1
@@ -796,7 +796,7 @@
  							"type": "label-as-input",
  							"label": {
  								"de": "ver\u0026shy;schlech\u0026shy;tern",
- 								"en": "de\u0026shy;te\u0026shy;ri\u0026shy;o\u0026shy;rate"
+ 								"en": "worsen"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -840,7 +840,7 @@
  							"type": "label-as-input",
  							"label": {
  								"de": "keine\u003cbr\u003eAn\u0026shy;gabe",
- 								"en": "no an\u0026shy;swer"
+ 								"en": "no estimate"
  							},
  							"col_span_label": 0.4,
  							"col_span_control": 1,
@@ -1094,7 +1094,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\u003cb\u003e2b.\u003c/b\u003e Für wie wahrscheinlich halten Sie die folgenden mittel\u0026shy;fristigen (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;Mo.) Entwicklungen der ge\u0026shy;samtwirt\u0026shy;schaft\u0026shy;lichen Situation in Deutsch\u0026shy;land?",
- 								"en": "\u003cb\u003e2b.\u003c/b\u003e How likely are the following medium term (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;months) de\u0026shy;vel\u0026shy;op\u0026shy;ments of the general eco\u0026shy;nom\u0026shy;ic situation in Germany?"
+ 								"en": "\u003cb\u003e2b.\u003c/b\u003e Please assess the probability of the following medium-term (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;months) de\u0026shy;vel\u0026shy;op\u0026shy;ments of the overall macroeco\u0026shy;nom\u0026shy;ic situation in Germany (in per cent)."
  							},
  							"col_span": 10,
  							"col_span_label": 1,
@@ -1146,7 +1146,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "Gleich blei\u0026shy;ben",
- 								"en": "Re\u0026shy;main the same"
+ 								"en": "No change"
  							},
  							"col_span": 3,
  							"col_span_label": 1,
@@ -1173,7 +1173,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "Ver\u0026shy;schlech\u0026shy;te\u0026shy;rung",
- 								"en": "Deterioration"
+ 								"en": "Worsening"
  							},
  							"col_span": 3,
  							"col_span_label": 1,
@@ -1311,7 +1311,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\u003cb\u003e2c.\u003c/b\u003e Die Wahrscheinlichkeit eines neg\u0026shy;ativen BIP-Wachstums in Deutsch\u0026shy;land (Wachstum des realen \u0026 saisonbereinigten BIP zum Vorquartal) liegt bei",
- 								"en": "\u003cb\u003e2c.\u003c/b\u003e The probability of neg\u0026shy;ative GDP growth in Germany (growth of real \u0026 seasonal adjusted GDP against previous quarter) is"
+ 								"en": "\u003cb\u003e2c.\u003c/b\u003e The probability of a neg\u0026shy;ative GDP growth in Germany (quarterly growth of the seasonally adjusted real GDP) will be"
  							},
  							"col_span": 5,
  							"col_span_label": 5
@@ -1428,7 +1428,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\u003cb\u003e3.\u003c/b\u003e Die jährliche ge\u0026shy;samtwirt\u0026shy;schaft\u0026shy;liche Inflationsrate wird mittel\u0026shy;fristig (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;Mo.)",
- 								"en": "\u003cb\u003e3.\u003c/b\u003e Yearly overall inflation rate in the medium term (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;months)  will"
+ 								"en": "\u003cb\u003e3.\u003c/b\u003e In the medium-term (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;months) the macroeco\u0026shy;nom\u0026shy;ic annual inflation rate will"
  							},
  							"col_span": 4,
  							"col_span_label": 1
@@ -1570,7 +1570,7 @@
  							"type": "label-as-input",
  							"label": {
  								"de": "keine\u003cbr\u003eAn\u0026shy;gabe",
- 								"en": "no an\u0026shy;swer"
+ 								"en": "no estimate"
  							},
  							"col_span_label": 0.4,
  							"col_span_control": 1,
@@ -1825,7 +1825,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\u003cb\u003e4.\u003c/b\u003e Die \u003ci\u003ekurzfristigen\u003c/i\u003e Zinsen (3-Mo.-Interbanksätze) werden mittel\u0026shy;fristig (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;Mo.)",
- 								"en": "\u003cb\u003e4.\u003c/b\u003e \u003ci\u003eShort term\u003c/i\u003e interest rates (3\u0026nbsp;months interbank) in the medium term (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;months) will"
+ 								"en": "\u003cb\u003e4.\u003c/b\u003e In the medium-term (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;months) \u003ci\u003eshort-term\u003c/i\u003e interest rates (3-month interbank rates) will"
  							},
  							"col_span": 4,
  							"col_span_label": 1
@@ -1967,7 +1967,7 @@
  							"type": "label-as-input",
  							"label": {
  								"de": "keine\u003cbr\u003eAn\u0026shy;gabe",
- 								"en": "no an\u0026shy;swer"
+ 								"en": "no estimate"
  							},
  							"col_span_label": 0.4,
  							"col_span_control": 1,
@@ -2176,7 +2176,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\u003cb\u003e5.\u003c/b\u003e Die \u003ci\u003elang\u0026shy;fristigen\u003c/i\u003e Zinsen (zehnjähriger Staatsanleihen) werden mittel\u0026shy;fristig (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;Mo.)",
- 								"en": "\u003cb\u003e5.\u003c/b\u003e \u003ci\u003eLong term\u003c/i\u003e interest rates (10-year govt. bonds) in the medium term (6\u0026nbsp;months) will"
+ 								"en": "\u003cb\u003e5.\u003c/b\u003e In the medium-term \u003ci\u003elong-term\u003c/i\u003e interest rates (yields on 10-year bonds) will"
  							},
  							"col_span": 4,
  							"col_span_label": 1
@@ -2318,7 +2318,7 @@
  							"type": "label-as-input",
  							"label": {
  								"de": "keine\u003cbr\u003eAn\u0026shy;gabe",
- 								"en": "no an\u0026shy;swer"
+ 								"en": "no estimate"
  							},
  							"col_span_label": 0.4,
  							"col_span_control": 1,
@@ -2563,7 +2563,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\u003cb\u003e6a.\u003c/b\u003e Die folgenden Aktienindizes werden mittel\u0026shy;fristig (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;Mo.)",
- 								"en": "\u003cb\u003e6a.\u003c/b\u003e Following stock indices in the medium term (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;months) will"
+ 								"en": "\u003cb\u003e6a.\u003c/b\u003e In the medium-term (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;months) the following stock market indices will"
  							},
  							"col_span": 4,
  							"col_span_label": 1
@@ -2705,7 +2705,7 @@
  							"type": "label-as-input",
  							"label": {
  								"de": "keine\u003cbr\u003eAn\u0026shy;gabe",
- 								"en": "no an\u0026shy;swer"
+ 								"en": "no estimate"
  							},
  							"col_span_label": 0.4,
  							"col_span_control": 1,
@@ -2797,7 +2797,7 @@
  							"type": "radio",
  							"label": {
  								"de": "DAX",
- 								"en": "German DAX"
+ 								"en": "DAX (Germany)"
  							},
  							"col_span_label": 2,
  							"col_span_control": 1,
@@ -2967,7 +2967,7 @@
  							},
  							"label": {
  								"de": "\u003cb\u003e6b.\u003c/b\u003e Den DAX erwarte ich in 6\u0026nbsp;Monaten bei ",
- 								"en": "\u003cb\u003e6b.\u003c/b\u003e We expect the German DAX in 6\u0026nbsp;month at"
+ 								"en": "\u003cb\u003e6b.\u003c/b\u003e Six\u0026nbsp;months ahead, I expect the DAX to stand at"
  							},
  							"suffix": {
  								"de": "Punkten",
@@ -2981,7 +2981,7 @@
  							"type": "textblock",
  							"label": {
  								"de": " \u003cbr\u003eMit einer Wahrscheinlichkeit von 90\u0026nbsp;Prozent liegt der DAX dann zwischen ",
- 								"en": " \u003cbr\u003eWith 90\u0026nbsp;percent probability, the DAX will then be between"
+ 								"en": " \u003cbr\u003eWith a probability of 90\u0026nbsp;per\u0026nbsp;cent the DAX will then range between"
  							},
  							"col_span": 6,
  							"col_span_label": 6
@@ -3075,7 +3075,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\u003cb\u003e6c.\u003c/b\u003e Aus Sicht der Fundamentalda\u0026shy;ten der DAX-Un\u0026shy;ter\u0026shy;neh\u0026shy;men ist der DAX derzeit",
- 								"en": "\u003cb\u003e6c.\u003c/b\u003e The fundamentals of the companies comprising the DAX make the DAX currently"
+ 								"en": "\u003cb\u003e6c.\u003c/b\u003e In view of the fundamentals of the DAX companies, the DAX is currently"
  							},
  							"col_span_label": 1
  						}
@@ -3106,7 +3106,7 @@
  							"type": "label-as-input",
  							"label": {
  								"de": "über\u0026shy;be\u0026shy;wer\u0026shy;tet",
- 								"en": "overvalued"
+ 								"en": "over-priced"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -3150,7 +3150,7 @@
  							"type": "label-as-input",
  							"label": {
  								"de": "fair be\u0026shy;wer\u0026shy;tet",
- 								"en": "fair valued"
+ 								"en": "fairly priced"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -3194,7 +3194,7 @@
  							"type": "label-as-input",
  							"label": {
  								"de": "unter\u0026shy;be\u0026shy;wer\u0026shy;tet",
- 								"en": "undervalued"
+ 								"en": "under-priced"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -3238,7 +3238,7 @@
  							"type": "label-as-input",
  							"label": {
  								"de": "keine An\u0026shy;gabe",
- 								"en": "no an\u0026shy;swer"
+ 								"en": "no estimate"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -3383,7 +3383,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\u003cb\u003e7.\u003c/b\u003e Folgende Währungen werden gegenüber dem Euro mittel\u0026shy;fristig (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;Mo.)",
- 								"en": "\u003cb\u003e7.\u003c/b\u003e In the medium term (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;months), following currencies will against the Euro"
+ 								"en": "\u003cb\u003e7.\u003c/b\u003e In the medium-term (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;months) the following currencies compared to the Euro will"
  							},
  							"col_span": 4,
  							"col_span_label": 1
@@ -3437,7 +3437,7 @@
  							"type": "label-as-input",
  							"label": {
  								"de": "gleich blei\u0026shy;ben",
- 								"en": "not change"
+ 								"en": "stay constant"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -3525,7 +3525,7 @@
  							"type": "label-as-input",
  							"label": {
  								"de": "keine\u003cbr\u003eAn\u0026shy;gabe",
- 								"en": "no an\u0026shy;swer"
+ 								"en": "no estimate"
  							},
  							"col_span_label": 0.4,
  							"col_span_control": 1,
@@ -3724,7 +3724,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\u003cb\u003e8.\u003c/b\u003e Die Ertragslage der Un\u0026shy;ter\u0026shy;neh\u0026shy;men in Deutsch\u0026shy;land wird mittel\u0026shy;fristig (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;Mo.) in den folgenden Branchen ",
- 								"en": "\u003cb\u003e8.\u003c/b\u003e Revenues of German enterprise will medium term (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;months)"
+ 								"en": "\u003cb\u003e8.\u003c/b\u003e In the medium-term (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;months) the profit situation of German companies in the following sectors will"
  							},
  							"col_span": 4,
  							"col_span_label": 1
@@ -3822,7 +3822,7 @@
  							"type": "label-as-input",
  							"label": {
  								"de": "schlech\u0026shy;ter",
- 								"en": "de\u0026shy;te\u0026shy;ri\u0026shy;o\u0026shy;rate"
+ 								"en": "worsen"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -3866,7 +3866,7 @@
  							"type": "label-as-input",
  							"label": {
  								"de": "keine\u003cbr\u003eAn\u0026shy;gabe",
- 								"en": "no an\u0026shy;swer"
+ 								"en": "no estimate"
  							},
  							"col_span_label": 0.4,
  							"col_span_control": 1,
@@ -3912,7 +3912,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Banken",
- 								"en": "Banking"
+ 								"en": "Banks"
  							},
  							"col_span_label": 2,
  							"col_span_control": 1,
@@ -4050,7 +4050,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Chemie, Pharma",
- 								"en": "Chem. Pharmac."
+ 								"en": "Chemical, Pharmaceutical"
  							},
  							"col_span_label": 2,
  							"col_span_control": 1,
@@ -4141,8 +4141,8 @@
  							"name": "sec_elect",
  							"type": "radio",
  							"label": {
- 								"de": "Elektro",
- 								"en": "Electrical Engineering"
+ 								"de": "Elektronik",
+ 								"en": "Electronics"
  							},
  							"col_span_label": 2,
  							"col_span_control": 1,
@@ -4372,7 +4372,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Dienstleister",
- 								"en": "Service Sect."
+ 								"en": "Services"
  							},
  							"col_span_label": 2,
  							"col_span_control": 1,
@@ -4531,7 +4531,7 @@
  		{
  			"label": {
  				"de": "Sonderfrage: Kurz- und mittelfristiges Wirtschaftswachstum",
- 				"en": "Special: Short and Medium Term Economic Growth"
+ 				"en": "Special: Short- and Medium-Term Economic Growth"
  			},
  			"description": {
  				"de": "",
@@ -5051,7 +5051,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\u003cb\u003e2.\u003c/b\u003e Haben Entwicklungen in den folgenden Bereichen Sie zu einer Revision Ihrer Konjunkturprognosen für die deutsche Wirt\u0026shy;schaft bewogen?",
- 								"en": "\u003cb\u003e2.\u003c/b\u003e Which de\u0026shy;vel\u0026shy;op\u0026shy;ments have lead you to change your assessment of the busi\u0026shy;ness cycle outlook for the German econ\u0026shy;o\u0026shy;my?"
+ 								"en": "\u003cb\u003e2.\u003c/b\u003e Which de\u0026shy;vel\u0026shy;op\u0026shy;ments have led you to change your assessment of the busi\u0026shy;ness cycle outlook for the German econ\u0026shy;o\u0026shy;my?"
  							},
  							"col_span": 6,
  							"col_span_label": 1
@@ -6385,7 +6385,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\n\t\t\t\t\u003cp style='' class='go-quest-page-header'\u003e\n\t\t\t\t\tSonderfrage 2 zur neuen Struktur des DAX\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\tSeit dem 20. September 2021 gilt die neue \n\t\t\t\t\tZusammensetzung des DAX mit jetzt 40 statt \n\t\t\t\t\tzuvor 30 Aktien. \n\t\t\t\t\tWie wirkt sich die Aufstockung \n\t\t\t\t\tvon 30 auf 40 Titeln auf Ihre Einschätzung \n\t\t\t\t\tder zukünftigen Entwicklung des DAX aus? \n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\tGegenüber dem DAX30 wird sich der DAX40 \n\t\t\t\t\tfolgendermaßen entwickeln: \n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t",
- 								"en": "\n\n\t\t\t\t\u003cp style='' class='go-quest-page-header'\u003e\n\t\t\t\t\tSpecial question 2: New structure of DAX stock index\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\tSince September 20th the DAX stock index\n\t\t\t\t\thas a new composition.\n\t\t\t\t\tIt now contains 40 instead of \n\t\t\t\t\t30 most capitalized stocks.\n\t\t\t\t\tHow does the in\u0026shy;creased scope affect your\n\t\t\t\t\tassessment of the future DAX de\u0026shy;vel\u0026shy;op\u0026shy;ment?\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\tCompared to the DAX30, the DAX40\n\t\t\t\t\twill develop as follows:\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t"
+ 								"en": "\n\n\t\t\t\t\u003cp style='' class='go-quest-page-header'\u003e\n\t\t\t\t\tSpecial question 2: New structure of DAX stock index\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\tSince September 20, 2021, the DAX stock index \n\t\t\t\t\thas a new composition. \n\t\t\t\t\t\n\t\t\t\t\tIt now consists of 40 instead of 30 stocks. \n\t\t\t\t\t\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\tHow does this change affect your assessment \n\t\t\t\t\tof the DAX's future de\u0026shy;vel\u0026shy;op\u0026shy;ment?\n\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t"
  							},
  							"col_span": 6,
  							"col_span_label": 1
@@ -6394,7 +6394,7 @@
  							"type": "label-as-input",
  							"label": {
  								"de": "deut\u0026shy;lich besser",
- 								"en": "signif. better"
+ 								"en": "sig\u0026shy;nif\u0026shy;i\u0026shy;cant\u0026shy;ly better"
  							},
  							"col_span_label": 3,
  							"col_span_control": 1,
@@ -6483,7 +6483,7 @@
  							"type": "label-as-input",
  							"label": {
  								"de": "gleich",
- 								"en": "un\u0026shy;changed"
+ 								"en": "the same"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -6571,7 +6571,7 @@
  							"type": "label-as-input",
  							"label": {
  								"de": "deut\u0026shy;lich schlech\u0026shy;ter",
- 								"en": "strong\u0026shy;ly worse"
+ 								"en": "sig\u0026shy;nif\u0026shy;i\u0026shy;cant\u0026shy;ly worse"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -6661,7 +6661,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Auf Sicht von 6\u0026nbsp;Monaten",
- 								"en": "For the next 6\u0026nbsp;months"
+ 								"en": "Over the next 6\u0026nbsp;months"
  							},
  							"col_span_label": 3,
  							"col_span_control": 1,
@@ -6719,7 +6719,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Auf Sicht von 5\u0026nbsp;Jahren",
- 								"en": "For the next 5\u0026nbsp;years"
+ 								"en": "Over the next 5\u0026nbsp;years"
  							},
  							"col_span_label": 3,
  							"col_span_control": 1,

@@ -21,7 +21,7 @@ func labelsGoodBad() []trl.S {
 		},
 		{
 			"de": "keine<br>Angabe",
-			"en": "no answer",
+			"en": "no estimate",
 		},
 	}
 
@@ -42,11 +42,11 @@ func labelsImproveDeteriorate() []trl.S {
 		},
 		{
 			"de": "verschlechtern",
-			"en": "deteriorate",
+			"en": "worsen",
 		},
 		{
 			"de": "keine<br>Angabe",
-			"en": "no answer",
+			"en": "no estimate",
 		},
 	}
 
@@ -67,11 +67,11 @@ func labelsImproveDeteriorateSectoral() []trl.S {
 		},
 		{
 			"de": "schlechter",
-			"en": "deteriorate",
+			"en": "worsen",
 		},
 		{
 			"de": "keine<br>Angabe",
-			"en": "no answer",
+			"en": "no estimate",
 		},
 	}
 
@@ -96,7 +96,7 @@ func labelsIncreaseDecrease() []trl.S {
 		},
 		{
 			"de": "keine<br>Angabe",
-			"en": "no answer",
+			"en": "no estimate",
 		},
 	}
 
@@ -113,7 +113,7 @@ func labelsIncreaseDecreaseCurrency() []trl.S {
 		},
 		{
 			"de": "gleich bleiben",
-			"en": "not change",
+			"en": "stay constant",
 		},
 		{
 			"de": "abwerten",
@@ -121,7 +121,7 @@ func labelsIncreaseDecreaseCurrency() []trl.S {
 		},
 		{
 			"de": "keine<br>Angabe",
-			"en": "no answer",
+			"en": "no estimate",
 		},
 	}
 
@@ -266,19 +266,19 @@ func labelsOvervaluedFairUndervalued() []trl.S {
 	tm := []trl.S{
 		{
 			"de": "überbewertet",
-			"en": "overvalued",
+			"en": "over-priced",
 		},
 		{
 			"de": "fair bewertet",
-			"en": "fair valued",
+			"en": "fairly priced",
 		},
 		{
 			"de": "unterbewertet",
-			"en": "undervalued",
+			"en": "under-priced",
 		},
 		{
 			"de": "keine Angabe",
-			"en": "no answer",
+			"en": "no estimate",
 		},
 	}
 
@@ -421,7 +421,7 @@ func improvedDeteriorated6b() []trl.S {
 	tm := []trl.S{
 		{
 			"de": "deutlich besser",
-			"en": "signif. better",
+			"en": "significantly better",
 		},
 		{
 			"de": "leicht besser",
@@ -429,7 +429,7 @@ func improvedDeteriorated6b() []trl.S {
 		},
 		{
 			"de": "gleich",
-			"en": "unchanged",
+			"en": "the same",
 		},
 		{
 			"de": "leicht schlechter",
@@ -437,7 +437,7 @@ func improvedDeteriorated6b() []trl.S {
 		},
 		{
 			"de": "deutlich schlechter",
-			"en": "strongly worse",
+			"en": "significantly worse",
 		},
 
 		{

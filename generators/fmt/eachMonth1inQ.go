@@ -23,7 +23,7 @@ func eachMonth1inQ(q *qst.QuestionnaireT) error {
 	// pge.Section = trl.S{"de": "Sonderfrage", "en": "Special"}
 	page.Label = trl.S{
 		"de": "Sonderfrage: Kurz- und mittelfristiges Wirtschaftswachstum",
-		"en": "Special: Short and Medium Term Economic Growth",
+		"en": "Special: Short- and Medium-Term Economic Growth",
 	}
 	page.Short = trl.S{
 		"de": "Wachstum",
@@ -233,7 +233,7 @@ func eachMonth1inQ(q *qst.QuestionnaireT) error {
 		)
 		gb.MainLabel = trl.S{
 			"de": "<b>2.</b> Haben Entwicklungen in den folgenden Bereichen Sie zu einer Revision Ihrer Konjunkturprognosen für die deutsche Wirtschaft bewogen?",
-			"en": "<b>2.</b> Which developments have lead you to change your assessment of the business cycle outlook for the German economy?",
+			"en": "<b>2.</b> Which developments have led you to change your assessment of the business cycle outlook for the German economy?",
 		}
 		gr := page.AddGrid(gb)
 		gr.OddRowsColoring = true

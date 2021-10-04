@@ -183,6 +183,7 @@ var hyph = []string{
 	"nei|ther",
 	"op|ti|mis|tic",
 	"pes|si|mis|tic",
+	"phar|ma|ceu|ti|cal",
 	"pos|itive",
 	"pro|fes|sor",
 	"ques|tion|naire ",
@@ -200,6 +201,7 @@ var hyph = []string{
 	"strong|ly",
 	"un|changed",
 	"Un|decided",
+	"wors|en ",
 	"will|ing",
 
 	// spanish

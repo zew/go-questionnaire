@@ -172,6 +172,9 @@ func special202110(q *qst.QuestionnaireT) error {
 					<br>
 					How does this change affect your assessment 
 					of the DAX's future development?
+					<br>
+					Compared to the (counter-factual) development of the DAX30, 
+					the performance of the DAX40 will be 
 
 				</p>
 

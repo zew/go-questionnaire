@@ -24,7 +24,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "76505d55ee8e633152dbf0751593e30f73e1e86b3a9271c821febbb568d44d9a",
+ 	"md_5": "71de5b6d52155bc18b0dcd7b0a48fe5278a2cb428c3ef0ac66ba67a92227724a",
  	"lang_codes": [
  		"de",
  		"en"
@@ -136,7 +136,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Nein, ich fülle den Fragebogen in Vertretung der angeschriebenen Person aus.",
- 								"en": "No. I am filling in for the addressee."
+ 								"en": "No, I am filling in for the addressee."
  							},
  							"col_span": 6,
  							"col_span_label": 5,
@@ -698,7 +698,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\u003cb\u003e2a.\u003c/b\u003e Die ge\u0026shy;samtwirt\u0026shy;schaft\u0026shy;liche Situation wird sich mittel\u0026shy;fristig (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;Mo.)",
- 								"en": "\u003cb\u003e2a.\u003c/b\u003e In the medium-term (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;months) the overall macro-eco\u0026shy;nom\u0026shy;ic situation will"
+ 								"en": "\u003cb\u003e2a.\u003c/b\u003e In the medium-term (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;months), the overall macro-eco\u0026shy;nom\u0026shy;ic situation will"
  							},
  							"col_span": 4,
  							"col_span_label": 1
@@ -1428,7 +1428,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\u003cb\u003e3.\u003c/b\u003e Die jährliche ge\u0026shy;samtwirt\u0026shy;schaft\u0026shy;liche Inflationsrate wird mittel\u0026shy;fristig (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;Mo.)",
- 								"en": "\u003cb\u003e3.\u003c/b\u003e In the medium-term (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;months) the macroeco\u0026shy;nom\u0026shy;ic annual inflation rate will"
+ 								"en": "\u003cb\u003e3.\u003c/b\u003e In the medium-term (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;months), the macroeco\u0026shy;nom\u0026shy;ic annual inflation rate will"
  							},
  							"col_span": 4,
  							"col_span_label": 1
@@ -1825,7 +1825,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\u003cb\u003e4.\u003c/b\u003e Die \u003ci\u003ekurzfristigen\u003c/i\u003e Zinsen (3-Mo.-Interbanksätze) werden mittel\u0026shy;fristig (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;Mo.)",
- 								"en": "\u003cb\u003e4.\u003c/b\u003e In the medium-term (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;months) \u003ci\u003eshort-term\u003c/i\u003e interest rates (3-month interbank rates) will"
+ 								"en": "\u003cb\u003e4.\u003c/b\u003e In the medium-term (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;months), \u003ci\u003eshort-term\u003c/i\u003e interest rates (3-month interbank rates) will"
  							},
  							"col_span": 4,
  							"col_span_label": 1
@@ -2176,7 +2176,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\u003cb\u003e5.\u003c/b\u003e Die \u003ci\u003elang\u0026shy;fristigen\u003c/i\u003e Zinsen (zehnjähriger Staatsanleihen) werden mittel\u0026shy;fristig (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;Mo.)",
- 								"en": "\u003cb\u003e5.\u003c/b\u003e In the medium-term \u003ci\u003elong-term\u003c/i\u003e interest rates (yields on 10-year bonds) will"
+ 								"en": "\u003cb\u003e5.\u003c/b\u003e In the medium-term, \u003ci\u003elong-term\u003c/i\u003e interest rates (yields on 10-year bonds) will"
  							},
  							"col_span": 4,
  							"col_span_label": 1
@@ -2563,7 +2563,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\u003cb\u003e6a.\u003c/b\u003e Die folgenden Aktienindizes werden mittel\u0026shy;fristig (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;Mo.)",
- 								"en": "\u003cb\u003e6a.\u003c/b\u003e In the medium-term (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;months) the following stock market indices will"
+ 								"en": "\u003cb\u003e6a.\u003c/b\u003e In the medium-term (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;months), the following stock market indices will"
  							},
  							"col_span": 4,
  							"col_span_label": 1
@@ -3383,7 +3383,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\u003cb\u003e7.\u003c/b\u003e Folgende Währungen werden gegenüber dem Euro mittel\u0026shy;fristig (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;Mo.)",
- 								"en": "\u003cb\u003e7.\u003c/b\u003e In the medium-term (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;months) the following currencies compared to the Euro will"
+ 								"en": "\u003cb\u003e7.\u003c/b\u003e In the medium-term (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;months), the following currencies compared to the Euro will"
  							},
  							"col_span": 4,
  							"col_span_label": 1
@@ -3724,7 +3724,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\u003cb\u003e8.\u003c/b\u003e Die Ertragslage der Un\u0026shy;ter\u0026shy;neh\u0026shy;men in Deutsch\u0026shy;land wird mittel\u0026shy;fristig (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;Mo.) in den folgenden Branchen ",
- 								"en": "\u003cb\u003e8.\u003c/b\u003e In the medium-term (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;months) the profit situation of German companies in the following sectors will"
+ 								"en": "\u003cb\u003e8.\u003c/b\u003e In the medium-term (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;months), the profit situation of German companies in the following sectors will"
  							},
  							"col_span": 4,
  							"col_span_label": 1
@@ -6385,7 +6385,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\n\t\t\t\t\u003cp style='' class='go-quest-page-header'\u003e\n\t\t\t\t\tSonderfrage 2 zur neuen Struktur des DAX\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\tSeit dem 20. September 2021 gilt die neue \n\t\t\t\t\tZusammensetzung des DAX mit jetzt 40 statt \n\t\t\t\t\tzuvor 30 Aktien. \n\t\t\t\t\tWie wirkt sich die Aufstockung \n\t\t\t\t\tvon 30 auf 40 Titeln auf Ihre Einschätzung \n\t\t\t\t\tder zukünftigen Entwicklung des DAX aus? \n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\tGegenüber dem DAX30 wird sich der DAX40 \n\t\t\t\t\tfolgendermaßen entwickeln: \n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t",
- 								"en": "\n\n\t\t\t\t\u003cp style='' class='go-quest-page-header'\u003e\n\t\t\t\t\tSpecial question 2: New structure of DAX stock index\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\tSince September 20, 2021, the DAX stock index \n\t\t\t\t\thas a new composition. \n\t\t\t\t\t\n\t\t\t\t\tIt now consists of 40 instead of 30 stocks. \n\t\t\t\t\t\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\tHow does this change affect your assessment \n\t\t\t\t\tof the DAX's future de\u0026shy;vel\u0026shy;op\u0026shy;ment?\n\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t"
+ 								"en": "\n\n\t\t\t\t\u003cp style='' class='go-quest-page-header'\u003e\n\t\t\t\t\tSpecial question 2: New structure of DAX stock index\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\tSince September 20, 2021, the DAX stock index \n\t\t\t\t\thas a new composition. \n\t\t\t\t\t\n\t\t\t\t\tIt now consists of 40 instead of 30 stocks. \n\t\t\t\t\t\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\tHow does this change affect your assessment \n\t\t\t\t\tof the DAX's future de\u0026shy;vel\u0026shy;op\u0026shy;ment?\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\tCompared to the (counter-factual) de\u0026shy;vel\u0026shy;op\u0026shy;ment of the DAX30, \n\t\t\t\t\tthe performance of the DAX40 will be \n\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t"
  							},
  							"col_span": 6,
  							"col_span_label": 1

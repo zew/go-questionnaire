@@ -106,7 +106,8 @@ For example `must ; inRange20` or only `inRange100` or only `must`
 
 * Server side validation  
 complex rules via custom validation funcs  
-which can access the entire questionnaire
+which can access the entire questionnaire;  
+i.e. `comprehensionPOP2`
 
 * If the researcher needs instant feedback  
 on user input, inclusion of page-wise `JavaScript` files possible
@@ -115,7 +116,8 @@ on user input, inclusion of page-wise `JavaScript` files possible
 
 * `loadtest` performs 60 concurrent requests 1.41 seconds - on 2018 Lenovo Notebook.
 
-* Server self test on `travis-ci`; see build logs for details.
+* Server self test on `travis-ci`; see build logs for details.  
+Since 2021, `travis-ci` is not working anymore.
 
 * The `transferrer` pulls in the responses from an internet server. Once inside your organization, the results are fed into any CSV or JSON reading application.
 

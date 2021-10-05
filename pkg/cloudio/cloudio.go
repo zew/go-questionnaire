@@ -41,6 +41,11 @@ import (
 
 var appsID string // Google app engine ID
 
+// if executable is run in ./cmd/server
+// var exeToAppRoot = path.Join("..", "..")
+// if executable is in app root then
+var exeToAppRoot = "."
+
 func init() {
 	appsID = os.Getenv("GAE_APPLICATION")
 	if len(appsID) > 2 {
@@ -67,7 +72,8 @@ func CreateNotExist(err error) error {
 }
 
 func prepareLocalDir() error {
-	bucketDir := filepath.Join(".", "app-bucket")
+	// bucketDir := filepath.Join(".", "app-bucket")
+	bucketDir := filepath.Join(exeToAppRoot, "app-bucket")
 	if err := os.MkdirAll(filepath.Join(".", bucketDir), 0750); err != nil {
 		return err // path error - "already exists" is not reported
 	}
@@ -85,7 +91,7 @@ func bucketLocal() (*blob.Bucket, error) {
 	if err != nil {
 		return nil, err
 	}
-	storageDriverURL := fmt.Sprintf("file:///%s", filepath.Join(wd, "app-bucket")+"/") // relative directory not working on travis - but on appengine and windows
+	storageDriverURL := fmt.Sprintf("file:///%s", filepath.Join(wd, exeToAppRoot, "app-bucket")+"/") // relative directory not working on travis - but on appengine and windows
 	// storageDriverURL := cfg.Get().StorageDriverURL
 	bucket, err := blob.OpenBucket(ctx, storageDriverURL)
 	if err != nil {

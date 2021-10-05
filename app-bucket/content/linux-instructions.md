@@ -365,6 +365,31 @@ openssl x509 -noout -modulus -in server.pem
 openssl rsa -check -noout -modulus -in server.key
 ```
 
+### Tell windows OS about your certificate
+
+certutil –addstore -enterprise –f "Root" ..\server.pem
+
+<https://superuser.com/questions/1031444/importing-pem-certificates-on-windows-7-on-the-command-line>
+
+```bash
+certutil.exe
+certutil –addstore -enterprise –f “Root” <pathtocertificatefile>
+
+# execute Microsoft management console
+mmc
+#  snap-in-hinzufügen - Zertifikate
+#     lokaler computer
+#       dieser computer
+```
+
+### Force chrome browser to accept it
+
+<http://stackoverflow.com/questions/7580508/getting-chrome-to-accept-self-signed-localhost-certificate>
+   chrome://flags/#allow-insecure-localhost
+
+<http://stackoverflow.com/questions/25692084/force-chrome-to-accept-any-ssl-certificate-regardless-of-who-it-was-signed-by>
+    chrome  --ignore-certificate-errors
+
 ### Use apache to run multiple instances under port 80
 
 #### We must allow apache to use the network in order to proxy requests

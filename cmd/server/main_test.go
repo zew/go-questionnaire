@@ -87,6 +87,11 @@ func TestSystem(t *testing.T) {
 
 	os.Setenv("GO_TEST_MODE", "true")
 	defer os.Setenv("GO_TEST_MODE", "false")
+
+	// for ./app-bucket and ./static relative paths to work,
+	// working dir is ./cmd/server - changing to .
+	os.Chdir(path.Join("..", ".."))
+
 	go func() {
 		main()
 	}()

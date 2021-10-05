@@ -8,6 +8,7 @@ import (
 	"math/rand"
 	"net/http"
 	"os"
+	"path"
 	"time"
 
 	"github.com/zew/go-questionnaire/pkg/bootstrap"
@@ -181,7 +182,9 @@ func main() {
 		if cfg.Get().LetsEncrypt {
 			log.Fatal(srv.ListenAndServeTLS("", "")) // "", "" => empty key and cert files; key+cert come from Let's Encrypt
 		} else {
-			log.Fatal(srv.ListenAndServeTLS("server.pem", "server.key"))
+			pthPem := path.Join("static", "certs", "server.pem")
+			pthKey := path.Join("static", "certs", "server.key")
+			log.Fatal(srv.ListenAndServeTLS(pthPem, pthKey))
 		}
 	} else {
 		log.Fatal(http.ListenAndServe(IPPort, mux4))

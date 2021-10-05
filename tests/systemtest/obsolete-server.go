@@ -6,6 +6,7 @@ import (
 	"math/rand"
 	"net/http"
 	"os"
+	"path"
 	"testing"
 	"time"
 
@@ -30,10 +31,10 @@ import (
 // See app root main_test for more details.
 func StartTestServer(t *testing.T, doChDirUp bool) {
 
-	// For database files, static files and templates relative paths to work,
-	// as if running from main app dir:
+	// for ./app-bucket and ./static relative paths to work,
+	// working dir is ./cmd/server - changing to .
 	if doChDirUp {
-		os.Chdir("..")
+		os.Chdir(path.Join("..", ".."))
 	}
 
 	wd, _ := os.Getwd()

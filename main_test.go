@@ -5,42 +5,62 @@ package main
 These tests replaces the calling of sys_test.go
 in package systemtest.
 
-Start the test from application root (i.e. /go-questionnaire) with
-	go test ./...    -v
-	go test .        -v
+## Run tests
 
-For a particular package, start
+  Start the test from application root (i.e. /go-questionnaire)
+	go test -v         .
+	go test -v         ./...
+	go test -v  -race  ./...
+
+
+  For a particular package, start
 	go test ./mypackage/... -test.v
 	go test ./mypackage/...
 
 
 ## Coverage tests
 
-Lots of hoops, if we want coverage tests, i.e. at gocover.io
-An introduction is at www.elastic.co/blog/code-coverage-for-your-golang-system-tests
+<www.elastic.co/blog/code-coverage-for-your-golang-system-tests>
+<https://www.alexedwards.net/blog/an-overview-of-go-tooling>
 
-Note: This file is necessary for go-questionnaire.test.exe binary to be generated.
+-covermode=count    => coverage records exact number, each statement is executed during tests.
+-covermode=atomic   => same as avove, when t.Parallel() is used in any test
+
+1.) Direct
+
+  All main and all packages
+	go test -v  ./...  -coverprofile=tmp-coverage.log -covermode=atomic
+    go tool  cover  -html=tmp-coverage.log
+
+  Note: "0% of statements" is for the last package;
+	to see the coverage for main package,
+	   scroll up,
+	or omit -v,
+	or replace ./... with .
+
+  Restrict to pkg
+  	go test  -v  ./...  -coverprofile=tmp-coverage.log -covermode=atomic  github.com/zew/go-questionnaire
+  	go test  -v  ./...  -coverprofile=tmp-coverage.log -covermode=atomic  github.com/zew/util
+	go tool  cover  -html=./tmp-coverage.log -o ./tmp-coverage.html
 
 
-1.) This leads to coverage: 0% of statements.
-    go test ./... -coverprofile=coverage.log
+2.) With test executable
 
-
-2a.) We have to run the compiled test executable. Create it:
+  a.) Create a compiled test executable 'go-questionnaire.exe'
 	go test -c -cover -covermode=count -coverpkg ./...
 
-2b.) We could create a specific executable:
-	go test -c -cover -covermode=count -coverpkg ./...  -o go-questionnaire1.test.exe
+  b.) We could create a _specific_ test executable:
+	go test -c -cover -covermode=count -coverpkg ./...  -o go-questionnaire.test.exe
 
-2c.) We could restrict by sub package:
-	go test -c -cover -covermode=count -coverpkg  "github.com/zew/go-questionnaire/qst"
+  c.) We could restrict by sub package:
+	go test -c -cover -covermode=count -coverpkg  "github.com/zew/go-questionnaire/pkg/qst"
 	go test -c -cover -covermode=count -coverpkg  "github.com/zew/go-questionnaire/systemtest"
 
 3.) Now we can collect coverage info.
-	go-questionnaire.test.exe  -test.v -test.coverprofile coverage.log
+	go-questionnaire.test.exe  -test.v  -test.coverprofile tmp-coverage.log
 
 4.) Convert to HTML
-	go tool cover -html=./coverage.log -o ./coverage.html
+	go tool cover -html=./tmp-coverage.log -o ./tmp-coverage.html
 
 
 */
@@ -51,11 +71,11 @@ import (
 	"testing"
 	"time"
 
-	"github.com/zew/go-questionnaire/cfg"
-	"github.com/zew/go-questionnaire/cloudio"
-	"github.com/zew/go-questionnaire/lgn"
-	"github.com/zew/go-questionnaire/qst"
-	"github.com/zew/go-questionnaire/systemtest"
+	"github.com/zew/go-questionnaire/pkg/cfg"
+	"github.com/zew/go-questionnaire/pkg/cloudio"
+	"github.com/zew/go-questionnaire/pkg/lgn"
+	"github.com/zew/go-questionnaire/pkg/qst"
+	"github.com/zew/go-questionnaire/tests/systemtest"
 )
 
 // Coverage is only started, when the test binary is run.

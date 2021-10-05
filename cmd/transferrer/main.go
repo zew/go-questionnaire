@@ -28,10 +28,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/zew/go-questionnaire/cfg"
-	"github.com/zew/go-questionnaire/cloudio"
-	"github.com/zew/go-questionnaire/lgn"
-	"github.com/zew/go-questionnaire/qst"
+	"github.com/zew/go-questionnaire/pkg/cfg"
+	"github.com/zew/go-questionnaire/pkg/cloudio"
+	"github.com/zew/go-questionnaire/pkg/lgn"
+	"github.com/zew/go-questionnaire/pkg/qst"
 	"github.com/zew/util"
 )
 

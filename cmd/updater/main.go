@@ -20,7 +20,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/zew/go-questionnaire/qst"
+	"github.com/zew/go-questionnaire/pkg/qst"
 	"github.com/zew/util"
 )
 

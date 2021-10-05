@@ -10,12 +10,12 @@ import (
 	"os"
 	"time"
 
-	"github.com/zew/go-questionnaire/bootstrap"
-	"github.com/zew/go-questionnaire/cfg"
-	"github.com/zew/go-questionnaire/handlers"
-	"github.com/zew/go-questionnaire/sessx"
-	"github.com/zew/go-questionnaire/tpl"
-	"github.com/zew/go-questionnaire/wrap"
+	"github.com/zew/go-questionnaire/pkg/bootstrap"
+	"github.com/zew/go-questionnaire/pkg/cfg"
+	"github.com/zew/go-questionnaire/pkg/handlers"
+	"github.com/zew/go-questionnaire/pkg/sessx"
+	"github.com/zew/go-questionnaire/pkg/tpl"
+	"github.com/zew/go-questionnaire/pkg/wrap"
 	"golang.org/x/crypto/acme/autocert"
 )
 

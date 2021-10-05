@@ -11,7 +11,7 @@
  		},
  		"year": 2021,
  		"month": 10,
- 		"deadline": "2021-10-28T23:59:00+02:00",
+ 		"deadline": "2021-10-11T17:15:00+02:00",
  		"params": [
  			{
  				"name": "main_refinance_rate_ecb",
@@ -24,7 +24,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "71de5b6d52155bc18b0dcd7b0a48fe5278a2cb428c3ef0ac66ba67a92227724a",
+ 	"md_5": "1cfd73e5c7f527d2c6ddbb07d112670530d46c4c4bc431ec89dce58aeb94e6b8",
  	"lang_codes": [
  		"de",
  		"en"
@@ -796,7 +796,7 @@
  							"type": "label-as-input",
  							"label": {
  								"de": "ver\u0026shy;schlech\u0026shy;tern",
- 								"en": "worsen"
+ 								"en": "wors\u0026shy;en"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -1173,7 +1173,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "Ver\u0026shy;schlech\u0026shy;te\u0026shy;rung",
- 								"en": "Worsening"
+ 								"en": "Wors\u0026shy;ening"
  							},
  							"col_span": 3,
  							"col_span_label": 1,
@@ -3822,7 +3822,7 @@
  							"type": "label-as-input",
  							"label": {
  								"de": "schlech\u0026shy;ter",
- 								"en": "worsen"
+ 								"en": "wors\u0026shy;en"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -4050,7 +4050,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Chemie, Pharma",
- 								"en": "Chemical, Pharmaceutical"
+ 								"en": "Chemical, Phar\u0026shy;ma\u0026shy;ceu\u0026shy;ti\u0026shy;cal"
  							},
  							"col_span_label": 2,
  							"col_span_control": 1,

@@ -118,73 +118,72 @@ func GenerateQuestionnaireTemplates(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// for key, fnc := range get() {
+	// previously generating all questionnaires
 	for _, key := range sortedKeys() {
-
-		fnc := gens[key]
-
 		if key != s.Type {
 			continue
 		}
-
-		q, err := fnc(s)
-		if err != nil {
-			myfmt.Fprintf(w, "Error creating %v: %v<br>\n", key, err)
-			return
-		}
-
-		fn := path.Join(qst.BasePath(), key+".json")
-		err = q.Save1(fn)
-		if err != nil {
-			myfmt.Fprintf(w, "Error saving %v: %v<br>\n", fn, err)
-			return
-		}
-		myfmt.Fprintf(w, "%v generated<br>\n", key)
-
-		//
-		// create empty styles-quest-[surveytype].css"
-		// if it does not yet exist
-		fcCreate := func(desktopOrMobile string) (bool, error) {
-			siteCore, _ := tpl.SiteCore(q.Survey.Type)
-			fileNameBody := desktopOrMobile + siteCore
-			pth := path.Join(".", "templates", fileNameBody+".css")
-			_, err := cloudio.ReadFile(pth)
-			if err != nil {
-				if cloudio.IsNotExist(err) {
-					rdr := &bytes.Buffer{}
-					err := cloudio.WriteFile(pth, rdr, 0755)
-					if err != nil {
-						return false, myfmt.Errorf("Could not create %v: %v <br>\n", pth, err)
-					}
-					myfmt.Fprintf(w, "Done creating template %v<br>\n", pth)
-					return true, nil
-				}
-				return false, myfmt.Errorf("Other error while checking for %v: %v <br>\n", pth, err)
-			}
-			return false, nil
-		}
-
-		// add to parsed templates
-		for _, bt := range []string{"styles-quest-"} {
-			ok, err := fcCreate(bt)
-			if err != nil {
-				myfmt.Fprintf(w, "Could not generate template %v for %v<br>\n", bt, err)
-				continue
-			}
-			if ok {
-				// parse new and previous templates
-				dummyReq, err := http.NewRequest("GET", "", nil)
-				if err != nil {
-					log.Fatalf("failed to create request for pre-loading assets %v", err)
-				}
-				respRec := httptest.NewRecorder()
-				tpl.TemplatesPreparse(respRec, dummyReq)
-				log.Printf("\n%v", respRec.Body.String())
-
-			}
-		}
-
 	}
+
+	fnc := gens[s.Type]
+	q, err := fnc(s)
+	if err != nil {
+		myfmt.Fprintf(w, "Error creating %v: %v<br>\n", s.Type, err)
+		return
+	}
+
+	fn := path.Join(qst.BasePath(), s.Filename()+".json")
+	err = q.Save1(fn)
+	if err != nil {
+		myfmt.Fprintf(w, "Error saving %v: %v<br>\n", fn, err)
+		return
+	}
+	myfmt.Fprintf(w, "%v generated<br>\n", fn)
+
+	//
+	// create empty styles-quest-[surveytype].css"
+	// if it does not yet exist
+	fcCreate := func(desktopOrMobile string) (bool, error) {
+		siteCore, _ := tpl.SiteCore(q.Survey.Type)
+		fileNameBody := desktopOrMobile + siteCore
+		pth := path.Join(".", "templates", fileNameBody+".css")
+		_, err := cloudio.ReadFile(pth)
+		if err != nil {
+			if cloudio.IsNotExist(err) {
+				rdr := &bytes.Buffer{}
+				err := cloudio.WriteFile(pth, rdr, 0755)
+				if err != nil {
+					return false, myfmt.Errorf("Could not create %v: %v <br>\n", pth, err)
+				}
+				myfmt.Fprintf(w, "Done creating template %v<br>\n", pth)
+				return true, nil
+			}
+			return false, myfmt.Errorf("Other error while checking for %v: %v <br>\n", pth, err)
+		}
+		return false, nil
+	}
+
+	// add to parsed templates
+	for _, bt := range []string{"styles-quest-"} {
+		ok, err := fcCreate(bt)
+		if err != nil {
+			myfmt.Fprintf(w, "Could not generate template %v for %v<br>\n", bt, err)
+			continue
+		}
+		if ok {
+			// parse new and previous templates
+			dummyReq, err := http.NewRequest("GET", "", nil)
+			if err != nil {
+				log.Fatalf("failed to create request for pre-loading assets %v", err)
+			}
+			respRec := httptest.NewRecorder()
+			tpl.TemplatesPreparse(respRec, dummyReq)
+			log.Printf("\n%v", respRec.Body.String())
+
+		}
+	}
+
+	//
 }
 
 // GenerateLandtagsVariations creates 16 questionnaire templates

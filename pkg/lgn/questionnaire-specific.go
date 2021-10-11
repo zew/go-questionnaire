@@ -349,7 +349,7 @@ func basePath() string {
 	return path.Join(".", "responses")
 }
 
-// QuestPath returns the path to the JSON questionnaire,
+// QuestPath returns the path to the JSON *user* questionnaire,
 // Similar to qst.QuestionnaireT.FilePath1()
 // See also userAttrs{}
 func (l *LoginT) QuestPath() string {

@@ -68,6 +68,11 @@ func NewSurvey(tp string) SurveyT {
 	return s
 }
 
+// Filename returns the filename for the base file
+func (s SurveyT) Filename() string {
+	return fmt.Sprintf("%s-%4d-%02d", s.Type, s.Year, s.Month)
+}
+
 /*
  * start of survey  29. March  => Q2
  * end   of survey  12. April  => Q2

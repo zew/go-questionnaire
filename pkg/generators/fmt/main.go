@@ -75,9 +75,14 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	q.LangCodes = []string{"de", "en"} // governs default language code
 
 	q.Survey.Org = trl.S{"de": "ZEW", "en": "ZEW"}
+
+	// Number of exact google hits
+	// 55.000 - ZEW Index
+	//  7.000 - ZEW Indicator of Economic Sentiment
+	//  4.000 - ZEW Financial market survey
 	q.Survey.Name = trl.S{
 		"de": "Index / Finanzmarkttest",
-		"en": "Indicator of Economic Sentiment",
+		"en": "Index / Indicator of Econ. Sentiment",
 	}
 
 	// page 0

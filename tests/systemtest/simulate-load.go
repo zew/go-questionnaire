@@ -296,7 +296,8 @@ func FillQuestAndComparesServerResult(t *testing.T, qSrc *qst.QuestionnaireT, ur
 
 	var clQ = &qst.QuestionnaireT{}
 	var err error
-	pthBase := path.Join(qst.BasePath(), qSrc.Survey.Type+".json")
+
+	pthBase := path.Join(qst.BasePath(), qSrc.Survey.Filename()+".json")
 
 	// creating client quest from scratch
 	aBase, err := qst.Load1(pthBase)

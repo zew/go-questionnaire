@@ -45,9 +45,10 @@ func loadQuestionnaire(w http.ResponseWriter, r *http.Request, l *lgn.LoginT) (*
 
 	// from file
 	log.Printf("Deriving from login: survey_id %v, wave_id %v, variant %v, user_id %v", l.Attrs["survey_id"], l.Attrs["survey_variant"], l.Attrs["wave_id"], l.User)
-	pthBase := path.Join(qst.BasePath(), l.Attrs["survey_id"]+".json")
+	fnCore := l.Attrs["survey_id"] + "-" + l.Attrs["wave_id"]
+	pthBase := path.Join(qst.BasePath(), fnCore+".json")
 	if l.Attrs["survey_variant"] != "" {
-		pthBase = path.Join(qst.BasePath(), l.Attrs["survey_id"]+"-"+l.Attrs["survey_variant"]+".json")
+		pthBase = path.Join(qst.BasePath(), fnCore+"-"+l.Attrs["survey_variant"]+".json")
 	}
 	qBase, err := qst.Load1(pthBase)
 	if err != nil {

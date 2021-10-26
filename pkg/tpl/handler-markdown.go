@@ -13,7 +13,7 @@ import (
 	"strings"
 
 	"github.com/pkg/errors"
-	"github.com/russross/blackfriday"
+	"github.com/russross/blackfriday/v2"
 	"github.com/zew/go-questionnaire/pkg/cfg"
 	"github.com/zew/go-questionnaire/pkg/cloudio"
 	"github.com/zew/go-questionnaire/pkg/lgn"

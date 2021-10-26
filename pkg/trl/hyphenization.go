@@ -167,6 +167,7 @@ var hyph = []string{
 	"enter|prises",
 	"environ|ment",
 	"im|prove",
+	"im|prove|ment",
 	"in|crease",
 	"in|dif|fer|ent",
 	"in|dus|tri|al",

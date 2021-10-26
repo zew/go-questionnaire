@@ -280,6 +280,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.StyleLbl.Mobile.StyleBox.Padding = "0 0 0.8rem 0"
 
 			}
+			// first row: labels
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
@@ -322,7 +323,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.Style = css.ItemCenteredMCA(inp.Style)
 				inp.Style = css.ItemStartCA(inp.Style)
 			}
-			// second row
+			// second row: inputs
 			{
 				inp := gr.AddInput()
 				inp.Type = "number"

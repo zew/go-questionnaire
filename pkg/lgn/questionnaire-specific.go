@@ -42,6 +42,13 @@ func LoginByHash(w http.ResponseWriter, r *http.Request) (bool, error) {
 
 	sess := sessx.New(w, r)
 
+	// extra treatments for FMS participants who escape the & in the URL query string
+	if strings.Contains(r.URL.RawQuery, "&amp;") {
+		r.URL.RawQuery = strings.ReplaceAll(r.URL.RawQuery, "&amp;", "&") // potentially activating ampersands within parameters and values
+		log.Printf("Query string cleansed from &amp; %v", r.URL.RawQuery)
+		r.Form = nil // as it has already been parsed using the broken query string
+	}
+
 	err := r.ParseForm()
 	if err != nil {
 		return false, err

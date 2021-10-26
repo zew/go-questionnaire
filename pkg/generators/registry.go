@@ -179,7 +179,6 @@ func GenerateQuestionnaireTemplates(w http.ResponseWriter, r *http.Request) {
 			respRec := httptest.NewRecorder()
 			tpl.TemplatesPreparse(respRec, dummyReq)
 			log.Printf("\n%v", respRec.Body.String())
-
 		}
 	}
 

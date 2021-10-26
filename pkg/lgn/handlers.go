@@ -348,10 +348,12 @@ func GenerateHashesH(w http.ResponseWriter, r *http.Request) {
 
 	if fe.Start == 0 {
 		fe.Start = 10000
+		fe.Start = 9990 // 10000 are real FMS users
 	}
 
 	if fe.Stop == 0 {
 		fe.Stop = 10020
+		fe.Stop = 10000
 	}
 
 	b1 := &bytes.Buffer{}

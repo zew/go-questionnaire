@@ -301,7 +301,15 @@ func RegistrationFMTEnH(w http.ResponseWriter, r *http.Request) {
 				(multiple answers possible)<br>
 				<div style='margin-top: 0.4rem; margin-left: 200px; '> &nbsp; &nbsp; &nbsp; Mainly     &nbsp;  &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  Occasionally </div>
 			</div>`)
-		s5 := strings.ReplaceAll(s4, "Form registration fmten", "Registration for Participation <br>in ZEW Financial Markets Survey <br> - ZEW Indicator of Economic Sentiment")
+		s5 := strings.ReplaceAll(
+			s4,
+			"<h3>Form registration fmten</h3>",
+			fmt.Sprintf(`<h3>Registration for ZEW Financial Markets Survey <br>
+			    - ZEW Indicator of Economic Sentiment  <br>
+				&nbsp; <a href='%v' style='font-size: 70%%; font-weight: normal;' >German version</a>
+			</h3>
+			 `, cfg.Pref("/registrationfmtde")),
+		)
 		fmt.Fprint(w, s5)
 
 	}

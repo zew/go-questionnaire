@@ -10,21 +10,18 @@
  			"en": "Index / Indicator of Econ. Sentiment"
  		},
  		"year": 2021,
- 		"month": 10,
- 		"deadline": "2021-10-11T17:15:00+02:00",
+ 		"month": 11,
+ 		"deadline": "2021-11-08T17:15:00+01:00",
  		"params": [
  			{
  				"name": "main_refinance_rate_ecb",
- 				"val": "04.10.2019: 0,0%"
+ 				"val": "01.09.2019: 0,0%"
  			},
- 			{
- 				"name": "destatis",
- 				"val": "-1"
- 			}
+ 			{}
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "0b12b09a5d87acd9b4d59a49588936875560c5552bbcc4e2f895ed5065496b3d",
+ 	"md_5": "4a717563a4287935619336495330960754d6e307aa7b17645289437b605e0ed0",
  	"lang_codes": [
  		"de",
  		"en"
@@ -1329,8 +1326,8 @@
  							"step": 0.01,
  							"max": 100,
  							"label": {
- 								"de": "Aktuelles Quartal (Q3\u0026nbsp;2021)",
- 								"en": "Current quarter  (Q3\u0026nbsp;2021)"
+ 								"de": "Aktuelles Quartal (Q4\u0026nbsp;2021)",
+ 								"en": "Current quarter  (Q4\u0026nbsp;2021)"
  							},
  							"suffix": {
  								"de": "%",
@@ -1347,8 +1344,8 @@
  							"step": 0.01,
  							"max": 100,
  							"label": {
- 								"de": "Folgendes Quartal (Q4\u0026nbsp;2021)",
- 								"en": "Next quarter  (Q4\u0026nbsp;2021)"
+ 								"de": "Folgendes Quartal (Q1\u0026nbsp;2022)",
+ 								"en": "Next quarter  (Q1\u0026nbsp;2022)"
  							},
  							"suffix": {
  								"de": "%",
@@ -4530,23 +4527,23 @@
  		},
  		{
  			"label": {
- 				"de": "Sonderfrage: Kurz- und mittelfristiges Wirtschaftswachstum",
- 				"en": "Special: Short- and Medium-Term Economic Growth"
+ 				"de": "Sonderfrage: Inflation und Geldpolitik",
+ 				"en": "Special: Inflation and monetary policy"
  			},
  			"description": {
  				"de": "",
  				"en": ""
  			},
  			"short": {
- 				"de": "Wachstum",
- 				"en": "Growth"
+ 				"de": "Inflation,\u003cbr\u003eGeldpolitik",
+ 				"en": "Inflation,\u003cbr\u003eMon. Policy"
  			},
  			"navi_num": 6,
  			"style": {
  				"desktop": {
  					"grid_container_style": {},
  					"box_style": {
- 						"width_max": "42rem"
+ 						"width_max": "48rem"
  					},
  					"grid_item_style": {},
  					"text_style": {}
@@ -4564,311 +4561,32 @@
  			"groups": [
  				{
  					"bottom_vspacers": 3,
- 					"columns": 12,
+ 					"columns": 9,
  					"inputs": [
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e1.\u003c/b\u003e \n\t\t\t\tPunktprognose der Wachstumsrate des deutschen BIP \u003cbr\u003e\n\t\t\t\t\u003cdiv class='vspacer-08' \u003e\u003c/div\u003e\n\t\t\t\t\u003cp style='font-size: 90%'\u003e\n\t\t\t\tBei den Quartalwerten bitte nicht-annualisiertes Quartalswachstum \n\t\t\t\t\t\tdes realen \u0026 saisonbereinigten BIP angeben. \n\t\t\t\tBei den Jahreswerten die Jahreswachstumsrate des realen BIP.\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t",
- 								"en": "\u003cb\u003e1.\u003c/b\u003e \n\t\t\t\tGerman GDP growth rate - point forecast \u003cbr\u003e\n\t\t\t\t\u003cdiv class='vspacer-08' \u003e\u003c/div\u003e\n\t\t\t\t\u003cp style='font-size: 90%'\u003e\n\t\t\t\tFor the quarterly values, please quote the non-annualized quarterly growth\n\t\t\t\t\t\tof the real \u0026 seasonal adjusted GDP.\n\t\t\t\tFor the yearly values, please quote the yearly growth rate of the real GDP.\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tAngesichts der Inflationsentwicklung der letzten\n\t\t\t\t\t\t Monate möchten wir Ihre Einschätzungen \n\t\t\t\t\t\t zu den Ursachen und der weiteren Entwicklung \n\t\t\t\t\t\t der Inflation im Eurogebiet noch detaillierter \n\t\t\t\t\t\t als üblicherweise erfragen\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t",
+ 								"en": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\ttodo english\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
- 							"col_span": 12,
+ 							"col_span": 9,
  							"col_span_label": 1
  						},
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Prognose \u003cbx\u003eQuartal\u003c/bx\u003e",
- 								"en": "Forecast \u003cbx\u003eQuarter\u003c/bx\u003e"
+ 								"de": "\u003cb\u003e1.\u003c/b\u003e Punktprognose der \u003cb\u003ejährlichen Inflationsrate im Euro\u0026shy;raum\u003c/b\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\tAnstieg des HICP von Jan bis Dez; Erwartungs\u0026shy;wert\n\t\t\t\t",
+ 								"en": "\u003cb\u003e1.\u003c/b\u003e Forecast \u003cb\u003eyearly inflation rate in the Euro area\u003c/b\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\tHICP  in\u0026shy;crease from Jan to Dec; expected value\n\t\t\t\t"
  							},
- 							"col_span": 12,
- 							"col_span_label": 1,
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"position": "relative",
- 										"top": "0.6rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"col_span": 9,
+ 							"col_span_label": 1
  						},
  						{
- 							"name": "pprwbipq1",
- 							"type": "number",
- 							"max_chars": 4,
- 							"step": 0.01,
- 							"min": -20,
- 							"max": 20,
- 							"label": {
- 								"de": "Q3\u0026nbsp;2021",
- 								"en": "Q3\u0026nbsp;2021"
- 							},
- 							"suffix": {
- 								"de": "%",
- 								"en": "pct"
- 							},
- 							"col_span": 3,
- 							"col_span_label": 1,
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {
- 										"auto_flow": "column",
- 										"template_columns": "none ",
- 										"template_rows": "0.9fr 1fr"
- 									},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.2rem 0 0"
- 									},
- 									"grid_item_style": {
- 										"justify_self": "end"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": " 0 2.7rem 0 0.2rem"
- 									},
- 									"grid_item_style": {
- 										"justify_self": "start"
- 									},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "pprwbipq2",
- 							"type": "number",
- 							"max_chars": 4,
- 							"step": 0.01,
- 							"min": -20,
- 							"max": 20,
- 							"label": {
- 								"de": "Q4\u0026nbsp;2021",
- 								"en": "Q4\u0026nbsp;2021"
- 							},
- 							"suffix": {
- 								"de": "%",
- 								"en": "pct"
- 							},
- 							"col_span": 3,
- 							"col_span_label": 1,
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {
- 										"auto_flow": "column",
- 										"template_columns": "none ",
- 										"template_rows": "0.9fr 1fr"
- 									},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.2rem 0 0"
- 									},
- 									"grid_item_style": {
- 										"justify_self": "end"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": " 0 2.7rem 0 0.2rem"
- 									},
- 									"grid_item_style": {
- 										"justify_self": "start"
- 									},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "pprwbipq3",
- 							"type": "number",
- 							"max_chars": 4,
- 							"step": 0.01,
- 							"min": -20,
- 							"max": 20,
- 							"label": {
- 								"de": "Q1\u0026nbsp;2022",
- 								"en": "Q1\u0026nbsp;2022"
- 							},
- 							"suffix": {
- 								"de": "%",
- 								"en": "pct"
- 							},
- 							"col_span": 3,
- 							"col_span_label": 1,
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {
- 										"auto_flow": "column",
- 										"template_columns": "none ",
- 										"template_rows": "0.9fr 1fr"
- 									},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.2rem 0 0"
- 									},
- 									"grid_item_style": {
- 										"justify_self": "end"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": " 0 2.7rem 0 0.2rem"
- 									},
- 									"grid_item_style": {
- 										"justify_self": "start"
- 									},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "pprwbipq4",
- 							"type": "number",
- 							"max_chars": 4,
- 							"step": 0.01,
- 							"min": -20,
- 							"max": 20,
- 							"label": {
- 								"de": "Q2\u0026nbsp;2022",
- 								"en": "Q2\u0026nbsp;2022"
- 							},
- 							"suffix": {
- 								"de": "%",
- 								"en": "pct"
- 							},
- 							"col_span": 3,
- 							"col_span_label": 1,
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {
- 										"auto_flow": "column",
- 										"template_columns": "none ",
- 										"template_rows": "0.9fr 1fr"
- 									},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.2rem 0 0"
- 									},
- 									"grid_item_style": {
- 										"justify_self": "end"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": " 0 2.7rem 0 0.2rem"
- 									},
- 									"grid_item_style": {
- 										"justify_self": "start"
- 									},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "Prognose  \u003cbx\u003eJahr\u003c/bx\u003e",
- 								"en": "Forecast  \u003cbx\u003eYear\u003c/bx\u003e"
- 							},
- 							"col_span": 12,
- 							"col_span_label": 1,
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"position": "relative",
- 										"top": "0.6rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "pprwbipj1",
+ 							"name": "ppjinf_jp0",
  							"type": "number",
  							"max_chars": 5,
  							"step": 0.01,
- 							"min": -20,
+ 							"min": -10,
  							"max": 20,
  							"label": {
  								"de": "2021",
@@ -4879,55 +4597,36 @@
  								"en": "pct"
  							},
  							"col_span": 3,
- 							"col_span_label": 1,
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {
- 										"auto_flow": "column",
- 										"template_columns": "none ",
- 										"template_rows": "0.9fr 1fr"
- 									},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 2,
+ 							"validator": "inRange20",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {
- 										"padding": "0 0.2rem 0 0"
+ 										"padding": "0 1.0rem 0 0"
  									},
- 									"grid_item_style": {
- 										"justify_self": "end"
- 									},
- 									"text_style": {}
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
  								},
  								"mobile": {
  									"grid_container_style": {},
  									"box_style": {
- 										"padding": " 0 1.5rem 0 0.2rem"
+ 										"padding": " 0 0.2rem 0 0"
  									},
- 									"grid_item_style": {
- 										"justify_self": "start"
- 									},
+ 									"grid_item_style": {},
  									"text_style": {}
  								}
  							}
  						},
  						{
- 							"name": "pprwbipj2",
+ 							"name": "ppjinf_jp1",
  							"type": "number",
  							"max_chars": 5,
  							"step": 0.01,
- 							"min": -20,
+ 							"min": -10,
  							"max": 20,
  							"label": {
  								"de": "2022",
@@ -4938,55 +4637,36 @@
  								"en": "pct"
  							},
  							"col_span": 3,
- 							"col_span_label": 1,
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {
- 										"auto_flow": "column",
- 										"template_columns": "none ",
- 										"template_rows": "0.9fr 1fr"
- 									},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 2,
+ 							"validator": "inRange20",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {
- 										"padding": "0 0.2rem 0 0"
+ 										"padding": "0 1.0rem 0 0"
  									},
- 									"grid_item_style": {
- 										"justify_self": "end"
- 									},
- 									"text_style": {}
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
  								},
  								"mobile": {
  									"grid_container_style": {},
  									"box_style": {
- 										"padding": " 0 1.5rem 0 0.2rem"
+ 										"padding": " 0 0.2rem 0 0"
  									},
- 									"grid_item_style": {
- 										"justify_self": "start"
- 									},
+ 									"grid_item_style": {},
  									"text_style": {}
  								}
  							}
  						},
  						{
- 							"name": "pprwbipj3",
+ 							"name": "ppjinf_jp2",
  							"type": "number",
  							"max_chars": 5,
  							"step": 0.01,
- 							"min": -20,
+ 							"min": -10,
  							"max": 20,
  							"label": {
  								"de": "2023",
@@ -4997,811 +4677,45 @@
  								"en": "pct"
  							},
  							"col_span": 3,
- 							"col_span_label": 1,
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {
- 										"auto_flow": "column",
- 										"template_columns": "none ",
- 										"template_rows": "0.9fr 1fr"
- 									},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 2,
+ 							"validator": "inRange20",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {
- 										"padding": "0 0.2rem 0 0"
+ 										"padding": "0 1.0rem 0 0"
  									},
- 									"grid_item_style": {
- 										"justify_self": "end"
- 									},
- 									"text_style": {}
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
  								},
  								"mobile": {
  									"grid_container_style": {},
  									"box_style": {
- 										"padding": " 0 1.5rem 0 0.2rem"
- 									},
- 									"grid_item_style": {
- 										"justify_self": "start"
- 									},
- 									"text_style": {}
- 								}
- 							}
- 						}
- 					]
- 				},
- 				{
- 					"bottom_vspacers": 3,
- 					"columns": 6,
- 					"odd_rows_coloring": true,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "\u003cb\u003e2.\u003c/b\u003e Haben Entwicklungen in den folgenden Bereichen Sie zu einer Revision Ihrer Konjunkturprognosen für die deutsche Wirt\u0026shy;schaft bewogen?",
- 								"en": "\u003cb\u003e2.\u003c/b\u003e Which de\u0026shy;vel\u0026shy;op\u0026shy;ments have led you to change your assessment of the busi\u0026shy;ness cycle outlook for the German econ\u0026shy;o\u0026shy;my?"
- 							},
- 							"col_span": 6,
- 							"col_span_label": 1
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "stark po\u0026shy;si\u0026shy;tiv",
- 								"en": "strong\u0026shy;ly pos\u0026shy;itive"
- 							},
- 							"col_span_label": 2,
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
+ 										"padding": " 0 0.2rem 0 0"
  									},
  									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
  									"text_style": {}
  								}
  							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "po\u0026shy;si\u0026shy;tiv",
- 								"en": "pos\u0026shy;itive"
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "kein Ein\u0026shy;fluss",
- 								"en": "no in\u0026shy;flu\u0026shy;ence"
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "ne\u0026shy;ga\u0026shy;tiv",
- 								"en": "neg\u0026shy;ative"
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "stark ne\u0026shy;ga\u0026shy;tiv",
- 								"en": "strong\u0026shy;ly neg\u0026shy;ative"
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "keine\u003cbr\u003eAn\u0026shy;gabe",
- 								"en": "no an\u0026shy;swer"
- 							},
- 							"col_span_label": 0.4,
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "rev_bus_cycle_ger",
- 							"type": "radio",
- 							"label": {
- 								"de": "Kon\u0026shy;junk\u0026shy;tur\u0026shy;da\u0026shy;ten Deutsch\u0026shy;land",
- 								"en": "Busi\u0026shy;ness cycle data Germany"
- 							},
- 							"col_span_label": 2,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "rev_bus_cycle_ger",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "rev_bus_cycle_ger",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "rev_bus_cycle_ger",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "rev_bus_cycle_ger",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "rev_bus_cycle_ger",
- 							"type": "radio",
- 							"col_span_label": 0.4,
- 							"col_span_control": 1,
- 							"value_radio": "6"
- 						},
- 						{
- 							"name": "rev_exp_markets",
- 							"type": "radio",
- 							"label": {
- 								"de": "Ex\u0026shy;port\u0026shy;märkte",
- 								"en": "Export markets"
- 							},
- 							"col_span_label": 2,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "rev_exp_markets",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "rev_exp_markets",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "rev_exp_markets",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "rev_exp_markets",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "rev_exp_markets",
- 							"type": "radio",
- 							"col_span_label": 0.4,
- 							"col_span_control": 1,
- 							"value_radio": "6"
- 						},
- 						{
- 							"name": "rev_exch_rates",
- 							"type": "radio",
- 							"label": {
- 								"de": "Wechsel\u0026shy;kurse",
- 								"en": "Exchange rates"
- 							},
- 							"col_span_label": 2,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "rev_exch_rates",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "rev_exch_rates",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "rev_exch_rates",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "rev_exch_rates",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "rev_exch_rates",
- 							"type": "radio",
- 							"col_span_label": 0.4,
- 							"col_span_control": 1,
- 							"value_radio": "6"
- 						},
- 						{
- 							"name": "rev_trade_conflicts",
- 							"type": "radio",
- 							"label": {
- 								"de": "Int. Handels\u0026shy;konflikte",
- 								"en": "Intl. trade conflicts"
- 							},
- 							"col_span_label": 2,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "rev_trade_conflicts",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "rev_trade_conflicts",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "rev_trade_conflicts",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "rev_trade_conflicts",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "rev_trade_conflicts",
- 							"type": "radio",
- 							"col_span_label": 0.4,
- 							"col_span_control": 1,
- 							"value_radio": "6"
- 						},
- 						{
- 							"name": "rev_mp_ecb",
- 							"type": "radio",
- 							"label": {
- 								"de": "EZB-Geld\u0026shy;po\u0026shy;li\u0026shy;tik",
- 								"en": "ECB monetary policy"
- 							},
- 							"col_span_label": 2,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "rev_mp_ecb",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "rev_mp_ecb",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "rev_mp_ecb",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "rev_mp_ecb",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "rev_mp_ecb",
- 							"type": "radio",
- 							"col_span_label": 0.4,
- 							"col_span_control": 1,
- 							"value_radio": "6"
- 						},
- 						{
- 							"name": "rev_mp_fed",
- 							"type": "radio",
- 							"label": {
- 								"de": "US-Geld\u0026shy;po\u0026shy;li\u0026shy;tik",
- 								"en": "FED monetary policy"
- 							},
- 							"col_span_label": 2,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "rev_mp_fed",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "rev_mp_fed",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "rev_mp_fed",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "rev_mp_fed",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "rev_mp_fed",
- 							"type": "radio",
- 							"col_span_label": 0.4,
- 							"col_span_control": 1,
- 							"value_radio": "6"
- 						},
- 						{
- 							"name": "rev_corona",
- 							"type": "radio",
- 							"label": {
- 								"de": "Corona Pandemie",
- 								"en": "Corona pandemic"
- 							},
- 							"col_span_label": 2,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "rev_corona",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "rev_corona",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "rev_corona",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "rev_corona",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "rev_corona",
- 							"type": "radio",
- 							"col_span_label": 0.4,
- 							"col_span_control": 1,
- 							"value_radio": "6"
- 						},
- 						{
- 							"name": "rev_supply_disrupt",
- 							"type": "radio",
- 							"label": {
- 								"de": "In\u0026shy;ter\u0026shy;na\u0026shy;tion\u0026shy;ale Lieferengpässe",
- 								"en": "Supply chain disruptions"
- 							},
- 							"col_span_label": 2,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "rev_supply_disrupt",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "rev_supply_disrupt",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "rev_supply_disrupt",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "rev_supply_disrupt",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "rev_supply_disrupt",
- 							"type": "radio",
- 							"col_span_label": 0.4,
- 							"col_span_control": 1,
- 							"value_radio": "6"
  						}
  					],
  					"style": {
  						"desktop": {
- 							"grid_container_style": {
- 								"auto_flow": "row",
- 								"template_columns": "   3fr    1fr    1fr    1fr    1fr    1.4fr "
- 							},
+ 							"grid_container_style": {},
  							"box_style": {
- 								"display": "grid"
+ 								"width": "70%"
  							},
  							"grid_item_style": {},
  							"text_style": {}
  						},
  						"mobile": {
  							"grid_container_style": {},
- 							"box_style": {},
+ 							"box_style": {
+ 								"width": "100%"
+ 							},
  							"grid_item_style": {},
  							"text_style": {}
  						}
@@ -5811,1004 +4725,18 @@
  		},
  		{
  			"label": {
- 				"de": "Sonderfrage 1 zum Ausgang der Bundestagswahl",
- 				"en": "Special question 1: Elections in Germany"
+ 				"de": "Abschluss",
+ 				"en": "Finish"
  			},
  			"description": {
  				"de": "",
  				"en": ""
  			},
  			"short": {
- 				"de": "Sonderfragen",
- 				"en": "Specials"
+ 				"de": "Abschluss",
+ 				"en": "Finish"
  			},
  			"navi_num": 7,
- 			"style": {
- 				"desktop": {
- 					"grid_container_style": {},
- 					"box_style": {
- 						"width_max": "46rem"
- 					},
- 					"grid_item_style": {},
- 					"text_style": {}
- 				},
- 				"mobile": {
- 					"grid_container_style": {},
- 					"box_style": {
- 						"width_max": "calc(100% - 1.2rem)"
- 					},
- 					"grid_item_style": {},
- 					"text_style": {}
- 				}
- 			},
- 			"finished": "0001-01-01T00:00:00Z",
- 			"groups": [
- 				{
- 					"bottom_vspacers": 3,
- 					"columns": 6,
- 					"odd_rows_coloring": true,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\tDer Ausgang der Bundestagswahl hat sich \n\t\t\t\t\tfolgendermaßen auf meine kurz- und mittel\u0026shy;fristigen \n\t\t\t\t\tPrognosen des realen Bruttoinlandsproduktes (BIP) \n\t\t\t\t\tausgewirkt:\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t",
- 								"en": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\tThe results of the German federal elections\n\t\t\t\t\thave in\u0026shy;flu\u0026shy;enced my short to midterm outlook\n\t\t\t\t\tfor the real GDP as follows:\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
- 							},
- 							"col_span": 6,
- 							"col_span_label": 1
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "stark\u003cbr\u003eer\u0026shy;höht",
- 								"en": "strong\u0026shy;ly\u003cbr\u003ein\u0026shy;creased"
- 							},
- 							"col_span_label": 3,
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "er\u0026shy;höht",
- 								"en": "in\u0026shy;creased"
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "nicht\u003cbr\u003ever\u0026shy;än\u0026shy;dert",
- 								"en": "not changed"
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "re\u0026shy;du\u0026shy;ziert",
- 								"en": "re\u0026shy;duced"
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "stark\u003cbr\u003ere\u0026shy;du\u0026shy;ziert",
- 								"en": "strong\u0026shy;ly\u003cbr\u003ere\u0026shy;duced"
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "keine\u003cbr\u003eAn\u0026shy;gabe",
- 								"en": "no an\u0026shy;swer"
- 							},
- 							"col_span_label": 0.5,
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "gdp_6m",
- 							"type": "radio",
- 							"label": {
- 								"de": "Erwartetes BIP-Wachstum auf Sicht von 6\u0026nbsp;Monaten",
- 								"en": "Expected GDP growth for next 6\u0026nbsp;months"
- 							},
- 							"col_span_label": 3,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "gdp_6m",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "gdp_6m",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "gdp_6m",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "gdp_6m",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "gdp_6m",
- 							"type": "radio",
- 							"col_span_label": 0.5,
- 							"col_span_control": 1,
- 							"value_radio": "6"
- 						},
- 						{
- 							"name": "gdp_2022",
- 							"type": "radio",
- 							"label": {
- 								"de": "Erwartetes BIP-Wachstum für\u0026nbsp;2022",
- 								"en": "Expected GDP growth for\u0026nbsp;2022"
- 							},
- 							"col_span_label": 3,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "gdp_2022",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "gdp_2022",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "gdp_2022",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "gdp_2022",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "gdp_2022",
- 							"type": "radio",
- 							"col_span_label": 0.5,
- 							"col_span_control": 1,
- 							"value_radio": "6"
- 						},
- 						{
- 							"name": "gdp_2023",
- 							"type": "radio",
- 							"label": {
- 								"de": "Erwartetes BIP-Wachstum für\u0026nbsp;2023",
- 								"en": "Expected GDP growth for\u0026nbsp;2023"
- 							},
- 							"col_span_label": 3,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "gdp_2023",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "gdp_2023",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "gdp_2023",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "gdp_2023",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "gdp_2023",
- 							"type": "radio",
- 							"col_span_label": 0.5,
- 							"col_span_control": 1,
- 							"value_radio": "6"
- 						},
- 						{
- 							"name": "gdp_5yrs",
- 							"type": "radio",
- 							"label": {
- 								"de": "Erwartetes BIP-Wachstum für die nächsten 5\u0026nbsp;Jahre",
- 								"en": "Expected GDP growth for the next 5\u0026nbsp;years"
- 							},
- 							"col_span_label": 3,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "gdp_5yrs",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "gdp_5yrs",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "gdp_5yrs",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "gdp_5yrs",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "gdp_5yrs",
- 							"type": "radio",
- 							"col_span_label": 0.5,
- 							"col_span_control": 1,
- 							"value_radio": "6"
- 						}
- 					],
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {
- 								"auto_flow": "row",
- 								"template_columns": "   4fr    1fr    1fr    1fr    1fr    1.5fr "
- 							},
- 							"box_style": {
- 								"display": "grid"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
- 				},
- 				{
- 					"bottom_vspacers": 3,
- 					"columns": 6,
- 					"odd_rows_coloring": true,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "\n\t\t\t\t\u003cp style='' class='go-quest-page-header'\u003e\n\t\t\t\t\tSonderfrage 2 zur neuen Struktur des DAX\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\tSeit dem 20. September 2021 gilt die neue \n\t\t\t\t\tZusammensetzung des DAX mit jetzt 40 statt \n\t\t\t\t\tzuvor 30 Aktien. \n\t\t\t\t\tWie wirkt sich die Aufstockung \n\t\t\t\t\tvon 30 auf 40 Titeln auf Ihre Einschätzung \n\t\t\t\t\tder zukünftigen Entwicklung des DAX aus? \n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\tGegenüber dem DAX30 wird sich der DAX40 \n\t\t\t\t\tfolgendermaßen entwickeln: \n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t",
- 								"en": "\n\n\t\t\t\t\u003cp style='' class='go-quest-page-header'\u003e\n\t\t\t\t\tSpecial question 2: New structure of DAX stock index\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\tSince September 20, 2021, the DAX stock index \n\t\t\t\t\thas a new composition. \n\t\t\t\t\t\n\t\t\t\t\tIt now consists of 40 instead of 30 stocks. \n\t\t\t\t\t\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\tHow does this change affect your assessment \n\t\t\t\t\tof the DAX's future de\u0026shy;vel\u0026shy;op\u0026shy;ment?\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\tCompared to the (counter-factual) de\u0026shy;vel\u0026shy;op\u0026shy;ment of the DAX30, \n\t\t\t\t\tthe performance of the DAX40 will be \n\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t"
- 							},
- 							"col_span": 6,
- 							"col_span_label": 1
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "deut\u0026shy;lich besser",
- 								"en": "sig\u0026shy;nif\u0026shy;i\u0026shy;cant\u0026shy;ly better"
- 							},
- 							"col_span_label": 3,
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "leicht besser",
- 								"en": "slightly better"
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "gleich",
- 								"en": "the same"
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "leicht schlech\u0026shy;ter",
- 								"en": "slightly worse"
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "deut\u0026shy;lich schlech\u0026shy;ter",
- 								"en": "sig\u0026shy;nif\u0026shy;i\u0026shy;cant\u0026shy;ly worse"
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "keine\u003cbr\u003eAn\u0026shy;gabe",
- 								"en": "no an\u0026shy;swer"
- 							},
- 							"col_span_label": 0.5,
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "dax_restruct_6m",
- 							"type": "radio",
- 							"label": {
- 								"de": "Auf Sicht von 6\u0026nbsp;Monaten",
- 								"en": "Over the next 6\u0026nbsp;months"
- 							},
- 							"col_span_label": 3,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "dax_restruct_6m",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "dax_restruct_6m",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "dax_restruct_6m",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "dax_restruct_6m",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "dax_restruct_6m",
- 							"type": "radio",
- 							"col_span_label": 0.5,
- 							"col_span_control": 1,
- 							"value_radio": "6"
- 						},
- 						{
- 							"name": "dax_restruct_5yrs",
- 							"type": "radio",
- 							"label": {
- 								"de": "Auf Sicht von 5\u0026nbsp;Jahren",
- 								"en": "Over the next 5\u0026nbsp;years"
- 							},
- 							"col_span_label": 3,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "dax_restruct_5yrs",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "dax_restruct_5yrs",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "dax_restruct_5yrs",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "dax_restruct_5yrs",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "dax_restruct_5yrs",
- 							"type": "radio",
- 							"col_span_label": 0.5,
- 							"col_span_control": 1,
- 							"value_radio": "6"
- 						}
- 					],
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {
- 								"auto_flow": "row",
- 								"template_columns": "   4fr    1fr    1fr    1fr    1fr    1.5fr "
- 							},
- 							"box_style": {
- 								"display": "grid"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
- 				}
- 			]
- 		},
- 		{
- 			"label": {
- 				"de": "Abschluss",
- 				"en": "Finish"
- 			},
- 			"description": {
- 				"de": "",
- 				"en": ""
- 			},
- 			"short": {
- 				"de": "Abschluss",
- 				"en": "Finish"
- 			},
- 			"navi_num": 8,
  			"style": {
  				"desktop": {
  					"grid_container_style": {},
@@ -6922,7 +4850,7 @@
  							"accesskey": "n",
  							"col_span": 1,
  							"col_span_control": 1,
- 							"response": "9",
+ 							"response": "8",
  							"style_control": {
  								"desktop": {
  									"grid_container_style": {},

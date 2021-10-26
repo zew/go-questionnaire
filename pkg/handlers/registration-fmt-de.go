@@ -302,7 +302,15 @@ func RegistrationFMTDeH(w http.ResponseWriter, r *http.Request) {
 				(Mehrfachantwort möglich)<br>
 				<div style='margin-top: 0.4rem; margin-left: 200px; '>Haupttätigkeit   &nbsp; &nbsp;  Gelegentliche Tätigkeit</div>
 			</div>`)
-		s5 := strings.ReplaceAll(s4, "Form registration fmtde", "Registrierung für Teilnahme am ZEW Index / ZEW Finanzmarkttest")
+		s5 := strings.ReplaceAll(
+			s4,
+			"<h3>Form registration fmtde</h3>",
+			fmt.Sprintf(`<h3>Registrierung für Teilnahme am ZEW Index / 
+				ZEW Finanzmarkttest <br>
+				&nbsp; <a href='%v' style='font-size: 70%%; font-weight: normal;' >Englische Version</a>
+			</h3>
+			 `, cfg.Pref("/registrationfmten")),
+		)
 		fmt.Fprint(w, s5)
 
 	}

@@ -81,6 +81,8 @@ func loadQuestionnaire(w http.ResponseWriter, r *http.Request, l *lgn.LoginT) (*
 		return q, err
 	}
 
+	// since 2021-10 the base file contains the wave id;
+	// thus following two checks are much less important
 	if q.Survey.Type != l.Attrs["survey_id"] {
 		err = fmt.Errorf("Logged in for survey %v - but template is for %v", l.Attrs["survey_id"], q.Survey.Type)
 		return q, err

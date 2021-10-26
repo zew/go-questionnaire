@@ -14,7 +14,11 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 		return nil
 	}
 
-	if q.Survey.Year == 2021 || q.Survey.Month == 8 {
+	if q.Survey.Year == 2021 && q.Survey.Month == 8 {
+		return nil
+	}
+
+	if q.Survey.Year == 2021 && q.Survey.Month == 11 {
 		return nil
 	}
 

@@ -97,7 +97,6 @@ type inputT struct {
 	ColSpanLabel   float32 `json:"col_span_label,omitempty"`
 	ColSpanControl float32 `json:"col_span_control,omitempty"`
 
-	// Radios []*radioT  `json:"radios,omitempty"`    // This slice implements the radiogroup - and the senseless checkboxgroup
 	DD *DropdownT `json:"drop_down,omitempty"` // As pointer to prevent JSON cluttering
 
 	Validator string `json:"validator,omitempty"` // i.e. any key from map of validators, i.e. "must;inRange20"

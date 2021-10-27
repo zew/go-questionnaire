@@ -243,7 +243,8 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 	lcReq, okReq := sess.ReqParam("lang_code")
 	if okReq {
 		// ... dominates session
-		lcSess := sess.EffectiveStr("lang_code")
+		// lcSess := sess.EffectiveStr("lang_code")
+		lcSess := sess.GetString(r.Context(), "lang_code") // EffectiveStr is dominated by the URL GET value
 		if lcReq != lcSess {
 			sess.PutString("lang_code", lcReq)
 			log.Printf("REQ lang_code '%v' synced back to session", lcReq)

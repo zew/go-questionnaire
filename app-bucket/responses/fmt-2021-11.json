@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "6d2710fee8720bdbae3ef7a6515dd3f47f1600ba29513727cf7821d36c943616",
+ 	"md_5": "94023e632edf00b72b4fa84ac0b98baa4712d7b9c59a88c3f0dedfced80360d4",
  	"lang_codes": [
  		"de",
  		"en"
@@ -4543,7 +4543,7 @@
  				"desktop": {
  					"grid_container_style": {},
  					"box_style": {
- 						"width_max": "48rem"
+ 						"width_max": "30rem"
  					},
  					"grid_item_style": {},
  					"text_style": {}
@@ -4701,25 +4701,7 @@
  								}
  							}
  						}
- 					],
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {},
- 							"box_style": {
- 								"width": "70%"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {},
- 							"box_style": {
- 								"width": "100%"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
+ 					]
  				},
  				{
  					"bottom_vspacers": 3,
@@ -8137,8 +8119,8 @@
  				"en": ""
  			},
  			"short": {
- 				"de": "Finanzmarkt\u003cbr\u003ereport",
- 				"en": "Finanzmarkt\u003cbr\u003ereport"
+ 				"de": "Finanzmarkt-\u003cbr\u003ereport",
+ 				"en": "Finanzmarkt-\u003cbr\u003ereport"
  			},
  			"navi_num": 9,
  			"style": {
@@ -8840,6 +8822,15 @@
  						{
  							"type": "textblock",
  							"label": {
+ 								"de": "\n\t\t\t\t\t\u003cb\u003e3.\u003c/b\u003e\n\t\t\t\t\tZu den Umfrageergebnissen, die aktuell nicht oder nur knapp im ZEW-Finanzmarktreport behandelt werden, \n\t\t\t\t\twünsche ich mir \n\t\t\t\t",
+ 								"en": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\ttodo english\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
  								"de": " \u0026nbsp;",
  								"en": " \u0026nbsp;"
  							},
@@ -9010,7 +9001,23 @@
  								"en": "todo"
  							},
  							"col_span": 1,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "fmr_inflation_nomore",
@@ -9022,6 +9029,26 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0.2rem 0 0 0.4rem"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0.55rem 0 0 0.4rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -9155,8 +9182,8 @@
  							"name": "fmr_graphics_inflation",
  							"type": "radio",
  							"label": {
- 								"de": "Halbjrl.",
- 								"en": "Biyearly"
+ 								"de": "Halbjährl.",
+ 								"en": "Biannual"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -9377,8 +9404,8 @@
  							"name": "fmr_grandtxt_inflation",
  							"type": "radio",
  							"label": {
- 								"de": "Halbjrl.",
- 								"en": "Biyearly"
+ 								"de": "Halbjährl.",
+ 								"en": "Biannual"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -9491,7 +9518,23 @@
  								"en": "todo"
  							},
  							"col_span": 1,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "fmr_rates_nomore",
@@ -9503,6 +9546,26 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0.2rem 0 0 0.4rem"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0.55rem 0 0 0.4rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -9636,8 +9699,8 @@
  							"name": "fmr_graphics_rates",
  							"type": "radio",
  							"label": {
- 								"de": "Halbjrl.",
- 								"en": "Biyearly"
+ 								"de": "Halbjährl.",
+ 								"en": "Biannual"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -9858,8 +9921,8 @@
  							"name": "fmr_grandtxt_rates",
  							"type": "radio",
  							"label": {
- 								"de": "Halbjrl.",
- 								"en": "Biyearly"
+ 								"de": "Halbjährl.",
+ 								"en": "Biannual"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -9972,7 +10035,23 @@
  								"en": "todo"
  							},
  							"col_span": 1,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "fmr_stocks_nomore",
@@ -9984,6 +10063,26 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0.2rem 0 0 0.4rem"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0.55rem 0 0 0.4rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -10117,8 +10216,8 @@
  							"name": "fmr_graphics_stocks",
  							"type": "radio",
  							"label": {
- 								"de": "Halbjrl.",
- 								"en": "Biyearly"
+ 								"de": "Halbjährl.",
+ 								"en": "Biannual"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -10339,8 +10438,8 @@
  							"name": "fmr_grandtxt_stocks",
  							"type": "radio",
  							"label": {
- 								"de": "Halbjrl.",
- 								"en": "Biyearly"
+ 								"de": "Halbjährl.",
+ 								"en": "Biannual"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -10453,7 +10552,23 @@
  								"en": "todo"
  							},
  							"col_span": 1,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "fmr_exchanger_nomore",
@@ -10465,6 +10580,26 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0.2rem 0 0 0.4rem"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0.55rem 0 0 0.4rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -10598,8 +10733,8 @@
  							"name": "fmr_graphics_exchanger",
  							"type": "radio",
  							"label": {
- 								"de": "Halbjrl.",
- 								"en": "Biyearly"
+ 								"de": "Halbjährl.",
+ 								"en": "Biannual"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -10820,8 +10955,8 @@
  							"name": "fmr_grandtxt_exchanger",
  							"type": "radio",
  							"label": {
- 								"de": "Halbjrl.",
- 								"en": "Biyearly"
+ 								"de": "Halbjährl.",
+ 								"en": "Biannual"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -10934,7 +11069,23 @@
  								"en": "todo"
  							},
  							"col_span": 1,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "fmr_sectors_nomore",
@@ -10946,6 +11097,26 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0.2rem 0 0 0.4rem"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0.55rem 0 0 0.4rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -11079,8 +11250,8 @@
  							"name": "fmr_graphics_sectors",
  							"type": "radio",
  							"label": {
- 								"de": "Halbjrl.",
- 								"en": "Biyearly"
+ 								"de": "Halbjährl.",
+ 								"en": "Biannual"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -11301,8 +11472,8 @@
  							"name": "fmr_grandtxt_sectors",
  							"type": "radio",
  							"label": {
- 								"de": "Halbjrl.",
- 								"en": "Biyearly"
+ 								"de": "Halbjährl.",
+ 								"en": "Biannual"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -11415,7 +11586,23 @@
  								"en": "todo"
  							},
  							"col_span": 1,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "fmr_specials_nomore",
@@ -11427,6 +11614,26 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0.2rem 0 0 0.4rem"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0.55rem 0 0 0.4rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -11560,8 +11767,8 @@
  							"name": "fmr_graphics_specials",
  							"type": "radio",
  							"label": {
- 								"de": "Halbjrl.",
- 								"en": "Biyearly"
+ 								"de": "Halbjährl.",
+ 								"en": "Biannual"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -11782,8 +11989,8 @@
  							"name": "fmr_grandtxt_specials",
  							"type": "radio",
  							"label": {
- 								"de": "Halbjrl.",
- 								"en": "Biyearly"
+ 								"de": "Halbjährl.",
+ 								"en": "Biannual"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -11908,6 +12115,43 @@
  								"template_columns": " 1.5fr 1.3fr  3fr 3fr",
  								"column_gap": "0"
  							},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\n\t\t\t\t\t\u003cb\u003e4.\u003c/b\u003e\n\t\t\t\t\tWas möchten Sie uns zum ZEW-Finanzmarktreport mitteilen? \n\t\t\t\t",
+ 								"en": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\ttodo english\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "fmr_comment",
+ 							"type": "textarea",
+ 							"max_chars": 300,
+ 							"col_span_control": 1
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"row_gap": "0"
+ 							},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
  							"box_style": {},
  							"grid_item_style": {},
  							"text_style": {}

@@ -22,8 +22,8 @@ func special202111c(q *qst.QuestionnaireT) error {
 			"en": "Special:     Finanzmarktreport",
 		}
 		page.Short = trl.S{
-			"de": "Finanzmarkt<br>report",
-			"en": "Finanzmarkt<br>report",
+			"de": "Finanzmarkt-<br>report",
+			"en": "Finanzmarkt-<br>report",
 		}
 		page.Style = css.DesktopWidthMaxForPages(page.Style, "48rem")
 
@@ -157,6 +157,7 @@ func special202111c(q *qst.QuestionnaireT) error {
 		//
 		//
 		//
+		//
 		// gr3
 		gr := page.AddGroup()
 		colWidths := []float32{4, 3, 3, 3}
@@ -178,6 +179,24 @@ func special202111c(q *qst.QuestionnaireT) error {
 		gr.Style.Mobile.StyleGridContainer.GapColumn = "0"
 
 		// gr.BottomVSpacers = 02
+
+		{
+			inp := gr.AddInput()
+			inp.Type = "textblock"
+			inp.ColSpan = 4
+			inp.Label = trl.S{
+				"de": `
+					<b>3.</b>
+					Zu den Umfrageergebnissen, die aktuell nicht oder nur knapp im ZEW-Finanzmarktreport behandelt werden, 
+					wünsche ich mir 
+				`,
+				"en": `
+					<p>
+						todo english
+					</p>
+				`,
+			}
+		}
 
 		// header row
 		colHeaders := []trl.S{
@@ -271,8 +290,8 @@ func special202111c(q *qst.QuestionnaireT) error {
 				"en": "Quartrly",
 			},
 			{
-				"de": "Halbjrl.",
-				"en": "Biyearly",
+				"de": "Halbjährl.",
+				"en": "Biannual",
 			},
 			{
 				"de": "Jährlich",
@@ -338,6 +357,8 @@ func special202111c(q *qst.QuestionnaireT) error {
 				inp.Label = rowLabelChapters[rowIdx]
 				inp.ColSpan = colWidths[0]
 				inp.ColSpanLabel = 1
+				inp.Style = css.NewStylesResponsive(inp.Style)
+				inp.Style.Desktop.AlignSelf = "start"
 
 			}
 			{
@@ -353,13 +374,52 @@ func special202111c(q *qst.QuestionnaireT) error {
 				inp.ColSpanControl = 1
 
 				inp.ControlFirst()
-				// inp.Style = css.ItemStartCA(inp.Style)
-				// inp.Style.Desktop.StyleBox.Padding = "0 0.2rem 0 0"
+				inp.Style = css.NewStylesResponsive(inp.Style)
+				inp.Style.Desktop.AlignSelf = "start"
+				inp.Style.Desktop.Padding = "0.2rem 0 0 0.4rem"
+				inp.Style.Mobile.Padding = "0.55rem 0 0 0.4rem"
 
 			}
 			addRowClosure("graphics", inpName)
 			addRowClosure("grandtxt", inpName)
 
+		}
+
+		//
+		// gr4
+		{
+
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.Style = css.NewStylesResponsive(gr.Style)
+			gr.Style.Desktop.StyleGridContainer.GapRow = "0"
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.ColSpan = 4
+				inp.Label = trl.S{
+					"de": `
+					<b>4.</b>
+					Was möchten Sie uns zum ZEW-Finanzmarktreport mitteilen? 
+				`,
+					"en": `
+					<p>
+						todo english
+					</p>
+				`,
+				}
+
+			}
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "textarea"
+				inp.Name = "fmr_comment"
+				inp.MaxChars = 300
+				inp.ColSpanLabel = 0
+				inp.ColSpanControl = 1
+			}
 		}
 
 	} // special page 4

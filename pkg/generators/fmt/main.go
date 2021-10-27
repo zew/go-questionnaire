@@ -879,9 +879,17 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	if err != nil {
 		return nil, fmt.Errorf("Error adding special202110(): %v", err)
 	}
-	err = special202111(&q)
+	err = special202111a(&q)
 	if err != nil {
-		return nil, fmt.Errorf("Error adding special202111(): %v", err)
+		return nil, fmt.Errorf("Error adding special202111a(): %v", err)
+	}
+	err = special202111b(&q)
+	if err != nil {
+		return nil, fmt.Errorf("Error adding special202111b(): %v", err)
+	}
+	err = special202111c(&q)
+	if err != nil {
+		return nil, fmt.Errorf("Error adding special202111c(): %v", err)
 	}
 
 	//
@@ -924,8 +932,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		{
 			gr := page.AddGroup()
 			gr.Cols = 1
-			// todo
-			// inp.Validator = "mustRadioGroup"
 			{
 				rad := gr.AddInput()
 				rad.Type = "radio"

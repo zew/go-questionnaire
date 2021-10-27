@@ -766,3 +766,6 @@ We are relucatant to incorporate logging logic into the application, since `syst
 * config.json and logins.json  
 might be loaded from a configuration service.  
 Or at least from another GC/S3 bucket.
+
+* CSS funcs are dispersed. Generic funcs are in CSS package.  
+groups and inputs have specialized methods.

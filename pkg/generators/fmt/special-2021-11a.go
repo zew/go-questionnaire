@@ -24,7 +24,7 @@ var inflationFactorNames = []string{
 
 var inflationFactorLabels = []trl.S{
 	{
-		"de": "Konjunkturentwicklung im Eurogebiet",
+		"de": "Konjunktur&shy;ent&shy;wicklung im Eurogebiet",
 		"en": "todo",
 	},
 	{
@@ -65,7 +65,7 @@ var inflationFactorLabels = []trl.S{
 	// },
 }
 
-func special202111(q *qst.QuestionnaireT) error {
+func special202111a(q *qst.QuestionnaireT) error {
 
 	if q.Survey.Year != 2021 || q.Survey.Month != 11 {
 		return nil
@@ -126,11 +126,11 @@ func special202111(q *qst.QuestionnaireT) error {
 				inp.ColSpan = 9
 				// inp.ColSpanLabel = 12
 				inp.Label = trl.S{
-					"de": `<b>1.</b> Punktprognose der <b>jährlichen Inflationsrate im Euroraum</b>
+					"de": `<b>1.</b> &nbsp; Punktprognose der <b>jährlichen Inflationsrate im Euroraum</b>
 				<br>
 				Anstieg des HICP von Jan bis Dez; Erwartungswert
 				`,
-					"en": `<b>1.</b> Forecast <b>yearly inflation rate in the Euro area</b>
+					"en": `<b>1.</b> &nbsp; Forecast <b>yearly inflation rate in the Euro area</b>
 				<br>
 				HICP  increase from Jan to Dec; expected value
 				`,
@@ -176,11 +176,11 @@ func special202111(q *qst.QuestionnaireT) error {
 				inp.Type = "textblock"
 				inp.ColSpan = 10
 				inp.Label = trl.S{
-					"de": `<b>2.</b> Wir möchten gerne von Ihnen erfahren, 
+					"de": `<b>2.</b> &nbsp; Wir möchten gerne von Ihnen erfahren, 
 						für wie wahrscheinlich Sie bestimmte Ausprägungen 
 						der durchschnittlichen jährlichen Inflationsrate 
 						in den Jahren 2021 bis 2023 halten.`,
-					"en": "<b>2.</b> todo",
+					"en": "<b>2.</b> &nbsp; todo",
 				}
 
 				inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
@@ -292,7 +292,7 @@ func special202111(q *qst.QuestionnaireT) error {
 		// page.Section = trl.S{"de": "Sonderfrage", "en": "Special"}
 		page.Label = trl.S{
 			"de": "Sonderfrage: Inflation, Prognosetreiber und Geldpolitik 2",
-			"en": "Special: Inflation, forecast drivers and monetary policy 1",
+			"en": "Special: Inflation, forecast drivers and monetary policy 2",
 		}
 		page.Short = trl.S{
 			"de": "Inflation,<br>Geldpolitik 2",

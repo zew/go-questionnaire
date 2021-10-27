@@ -62,3 +62,17 @@ nav a.title span.survey-wave-id {
         margin-right: 0;
     }
 }
+
+
+/* special 202111 */
+.pg07 input[type="text"] {
+    margin-right: 0;
+}
+@media screen and (max-width: 800px) {
+    /* special 202111 */
+    .pg07 input[type="text"] {
+        max-width:   3.5rem;
+        margin-left: 0.3rem;
+        margin-right: 0;
+    }
+}

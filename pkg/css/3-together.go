@@ -190,6 +190,13 @@ func TextStart(sr *StylesResponsive) *StylesResponsive {
 	return sr
 }
 
+// TextCenter makes the text content centered
+func TextCenter(sr *StylesResponsive) *StylesResponsive {
+	sr = NewStylesResponsive(sr)
+	sr.Desktop.StyleText.AlignHorizontal = "center"
+	return sr
+}
+
 // TextEnd makes the text content right aligned
 func TextEnd(sr *StylesResponsive) *StylesResponsive {
 	sr = NewStylesResponsive(sr)

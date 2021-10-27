@@ -261,6 +261,39 @@ func labelsStronglyPositiveStronglyNegativeInfluence() []trl.S {
 
 }
 
+func labelsPositiveNeutralNegative() []trl.S {
+
+	tm := []trl.S{
+		{
+			"de": "Stark<br>positiv",
+			"en": "Strongly<br>positive",
+		},
+		{
+			"de": "Leicht<br>positiv",
+			"en": "Slightly<br>positive",
+		},
+		{
+			"de": "Neutral",
+			"en": "Neutral",
+		},
+		{
+			"de": "Leicht<br>negativ",
+			"en": "Slightly<br>negative",
+		},
+		{
+			"de": "Stark<br>negativ",
+			"en": "Strongly<br>negative",
+		},
+		{
+			"de": "Keine<br>Angabe",
+			"en": "No answer",
+		},
+	}
+
+	return tm
+
+}
+
 func labelsOvervaluedFairUndervalued() []trl.S {
 
 	tm := []trl.S{

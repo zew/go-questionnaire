@@ -25,39 +25,39 @@ var inflationFactorNames = []string{
 var inflationFactorLabels = []trl.S{
 	{
 		"de": "Konjunktur&shy;ent&shy;wicklung im Eurogebiet",
-		"en": "todo",
+		"en": "Eurozone economic growth",
 	},
 	{
 		"de": "Entwicklung der Löhne im Eurogebiet",
-		"en": "todo",
+		"en": "Eurozone wages",
 	},
 	{
 		"de": "Entwicklung der Energiepreise",
-		"en": "todo",
+		"en": "Energy prices",
 	},
 	{
 		"de": "Entwicklung der Rohstoffpreise (ohne Energiepreise)",
-		"en": "todo",
+		"en": "Commodity prices (excluding energy)",
 	},
 	{
 		"de": "Veränderung der Wechselkurse (relativ zum Euro)",
-		"en": "todo",
+		"en": "Exchange rates (relative to the Euro)",
 	},
 	{
 		"de": "Geldpolitik der EZB",
-		"en": "todo",
+		"en": "ECB monetary policy",
 	},
 	{
 		"de": "Internationale Handelskonflikte",
-		"en": "todo",
+		"en": "International trade disputes",
 	},
 	{
 		"de": "Internationale Lieferengpässe",
-		"en": "todo",
+		"en": "International supply chain bottlenecks",
 	},
 	{
 		"de": "Corona-Pandemie",
-		"en": "todo",
+		"en": "Corona pandemic",
 	},
 	// {
 	// 	"de": "Andere",
@@ -111,11 +111,8 @@ func special202111a(q *qst.QuestionnaireT) error {
 						 als üblicherweise erfragen
 					</p>
 				`,
-					"en": `
-					<p>
-						todo english
-					</p>
-				`,
+					// deliberately empty
+					"en": ` &nbsp; `,
 				}
 			}
 
@@ -125,13 +122,12 @@ func special202111a(q *qst.QuestionnaireT) error {
 				inp.ColSpan = 9
 				// inp.ColSpanLabel = 12
 				inp.Label = trl.S{
-					"de": `<b>1.</b> &nbsp; Punktprognose der <b>jährlichen Inflationsrate im Euroraum</b>
-				<br>
-				Anstieg des HICP von Jan bis Dez; Erwartungswert
+					"de": `<b>1.</b> &nbsp; Punktprognose der <b>jährlichen Inflationsrate im Euroraum</b><br>
+					Anstieg des HICP von Jan bis Dez; Erwartungswert
 				`,
-					"en": `<b>1.</b> &nbsp; Forecast <b>annual inflation rate in the Euro area</b>
-				<br>
-				HICP  increase from Jan to Dec; expected value
+					"en": `<b>1.</b> &nbsp;	
+					Forecast of <b>annual inflation rate in the Euro area</b><br>
+					Avg. percentage change in HICP from Jan to Dec
 				`,
 				}
 			}
@@ -180,7 +176,9 @@ func special202111a(q *qst.QuestionnaireT) error {
 						für wie wahrscheinlich Sie bestimmte Ausprägungen 
 						der durchschnittlichen jährlichen Inflationsrate 
 						in den Jahren 2021 bis 2023 halten.`,
-					"en": "<b>2.</b> &nbsp; todo",
+					"en": `<b>2.</b> &nbsp; Please assess the probabilities 
+						of the following realizations 
+						of the avg. annual inflation for 2021 to 2023.`,
 				}
 
 				inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
@@ -204,7 +202,7 @@ func special202111a(q *qst.QuestionnaireT) error {
 				inp.ColSpan = 3
 				inp.Label = trl.S{
 					"de": "kleiner oder gleich 2&nbsp;Prozent",
-					"en": "todo",
+					"en": "Smaller or equal 2 percent",
 				}
 				inp.Style = css.ItemStartCA(inp.Style)
 				inp.Style.Mobile.StyleBox.Padding = "0 0.8rem 0 0"
@@ -215,7 +213,7 @@ func special202111a(q *qst.QuestionnaireT) error {
 				inp.ColSpan = 3
 				inp.Label = trl.S{
 					"de": "zwischen 2 und 3&nbsp;Prozent",
-					"en": "todo",
+					"en": "Between 2 and 3 percent",
 				}
 				inp.Style = css.ItemStartCA(inp.Style)
 				inp.Style.Mobile.StyleBox.Padding = "0 0.8rem 0 0"
@@ -226,7 +224,7 @@ func special202111a(q *qst.QuestionnaireT) error {
 				inp.ColSpan = 3
 				inp.Label = trl.S{
 					"de": "größer als 3&nbsp;Prozent",
-					"en": "todo",
+					"en": "Above 3 percent",
 				}
 				inp.Style = css.ItemStartCA(inp.Style)
 			}
@@ -344,7 +342,10 @@ func special202111a(q *qst.QuestionnaireT) error {
 
 					"en": `
 					<b>3.</b>  &nbsp;
-						todo
+						Did developments in the following areas make you to change your inflation forecasts 
+						for the Eurozone (relative to August 2021)? 
+						
+						If yes, did you revise them up (+) or down (-)? 
 					
 					`,
 				}

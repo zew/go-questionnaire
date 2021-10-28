@@ -71,13 +71,13 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 			inp.ColSpan = 9
 			// inp.ColSpanLabel = 12
 			inp.Label = trl.S{
-				"de": `<b>1.</b> Punktprognose der <b>jährlichen Inflationsrate im Euroraum</b>
-				<br>
-				Anstieg des HICP von Jan bis Dez; Erwartungswert
+				"de": `
+					<b>1.</b> Punktprognose der <b>jährlichen Inflationsrate im Euroraum</b><br>
+					Anstieg des HICP von Jan bis Dez; Erwartungswert
 				`,
-				"en": `<b>1.</b> Forecast <b>annual inflation rate in the Euro area</b>
-				<br>
-				HICP  increase from Jan to Dec; expected value
+				"en": `
+					Forecast of <b>annual inflation rate in the Euro area</b><br>
+					Avg. percentage change in HICP from Jan to Dec;
 				`,
 			}
 		}

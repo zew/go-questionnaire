@@ -43,9 +43,14 @@ var skipInputNames = map[string]map[string]bool{
 		"rev_free":       true,
 		"rev_free_label": true,
 
+		// 2021-11
 		"inff_2021__other_label": true,
 		"inff_2022__other_label": true,
 		"inff_2023__other_label": true,
+		"inff_2021__free":        true,
+		"inff_2022__free":        true,
+		"inff_2023__free":        true,
+		"fmr_comment":            true,
 	},
 }
 

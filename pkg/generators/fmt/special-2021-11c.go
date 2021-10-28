@@ -43,7 +43,12 @@ func special202111c(q *qst.QuestionnaireT) error {
 						wie Sie den ZEW-Finanzmarktreport nutzen 
 						und was wir Ihrer Meinung nach verbessern können.</p>
 					`,
-					"en": `todo`,
+					"en": `Some of the following questions on the ZEW-Finanzmarktreport 
+						are only applicable to German participants. 
+						Please skip them, if you are not fluent in German.  
+						<br>
+						<br>
+					`,
 				}
 				inp.ColSpanLabel = 1
 			}
@@ -63,7 +68,8 @@ func special202111c(q *qst.QuestionnaireT) error {
 				inp.Label = trl.S{
 					"de": `<p><b>1.</b> 
 						Lesen Sie den ZEW-Finanzmarktreport? </p>`,
-					"en": `todo`,
+					"en": `<p><b>1.</b> 
+						Lesen Sie den ZEW-Finanzmarktreport? </p>`,
 				}
 				inp.ColSpanLabel = 1
 			}
@@ -78,7 +84,7 @@ func special202111c(q *qst.QuestionnaireT) error {
 				rad.ColSpanControl = 1
 				rad.Label = trl.S{
 					"de": "&nbsp; &nbsp; &nbsp;	<b>a.</b> &nbsp; Nein, nie",
-					"en": "&nbsp; &nbsp; &nbsp;	<b>a.</b> &nbsp; todo",
+					"en": "&nbsp; &nbsp; &nbsp;	<b>a.</b> &nbsp; No, never",
 				}
 			}
 			{
@@ -91,7 +97,7 @@ func special202111c(q *qst.QuestionnaireT) error {
 				rad.ColSpanControl = 1
 				rad.Label = trl.S{
 					"de": "&nbsp; &nbsp; &nbsp;	<b>b.</b> &nbsp; Ja, unregelmäßig",
-					"en": "&nbsp; &nbsp; &nbsp;	<b>b.</b> &nbsp; todo",
+					"en": "&nbsp; &nbsp; &nbsp;	<b>b.</b> &nbsp; Yes, from time to time",
 				}
 			}
 			{
@@ -104,7 +110,7 @@ func special202111c(q *qst.QuestionnaireT) error {
 				rad.ColSpanControl = 1
 				rad.Label = trl.S{
 					"de": "&nbsp; &nbsp; &nbsp;	<b>c.</b> &nbsp; Ja, regelmäßig",
-					"en": "&nbsp; &nbsp; &nbsp;	<b>c.</b> &nbsp; todo",
+					"en": "&nbsp; &nbsp; &nbsp;	<b>c.</b> &nbsp; Yes, regularly",
 				}
 			}
 
@@ -146,7 +152,7 @@ func special202111c(q *qst.QuestionnaireT) error {
 				)
 				gb.MainLabel = trl.S{
 					"de": "<b>2.</b> Wie beurteilen Sie die einzelnen Themenblöcke, die im ZEW-Finanzmarktreport behandelt werden?",
-					"en": "<b>2.</b> todo",
+					"en": "<b>2.</b> Wie beurteilen Sie die einzelnen Themenblöcke, die im ZEW-Finanzmarktreport behandelt werden?",
 				}
 				gr := page.AddGrid(gb)
 				gr.OddRowsColoring = true
@@ -191,11 +197,10 @@ func special202111c(q *qst.QuestionnaireT) error {
 					wünsche ich mir 
 				`,
 				"en": `
-					<p>
-						todo english
-					</p>
-				`,
-			}
+					<b>3.</b>
+					Zu den Umfrageergebnissen, die aktuell nicht oder nur knapp im ZEW-Finanzmarktreport behandelt werden, 
+					wünsche ich mir 
+				`}
 		}
 
 		// header row
@@ -206,15 +211,15 @@ func special202111c(q *qst.QuestionnaireT) error {
 			},
 			{
 				"de": "Keine zu&shy;sätz&shy;lich&shy;en In&shy;for&shy;ma&shy;tion&shy;en",
-				"en": "todo",
+				"en": "No additional information",
 			},
 			{
 				"de": "Eine Grafik",
-				"en": "todo",
+				"en": "A chart",
 			},
 			{
 				"de": "Eine Grafik und mehr Text",
-				"en": "todo",
+				"en": "A chart and more text",
 			},
 		}
 		for col, colHeader := range colHeaders {
@@ -250,27 +255,27 @@ func special202111c(q *qst.QuestionnaireT) error {
 		rowLabelChapters := []trl.S{
 			{
 				"de": "Inflation (Frage&nbsp;3)",
-				"en": "todo",
+				"en": "Inflation (question&nbsp;3)",
 			},
 			{
 				"de": "Kurz- und langfristige Zinsen (Fragen 4 und 5)",
-				"en": "todo",
+				"en": "Short-term and long-term interest rates (questions&nbsp;4+5)",
 			},
 			{
 				"de": "Aktien&shy;märkte (Fragen 6a-6c)",
-				"en": "todo",
+				"en": "Stock markets (questions&nbsp;6a-6c)",
 			},
 			{
 				"de": "Wechselkurse (Frage&nbsp;7)",
-				"en": "todo",
+				"en": "Exchange rates (question&nbsp;7)",
 			},
 			{
 				"de": "Ertrags&shy;lage deutscher Unternehmen nach Branche (Frage&nbsp;8)",
-				"en": "todo",
+				"en": "Revenue of German companies by sector (question&nbsp;8)",
 			},
 			{
 				"de": "Sonder&shy;frage",
-				"en": "todo",
+				"en": "Special questions",
 			},
 		}
 
@@ -402,12 +407,11 @@ func special202111c(q *qst.QuestionnaireT) error {
 					"de": `
 					<b>4.</b>
 					Was möchten Sie uns zum ZEW-Finanzmarktreport mitteilen? 
-				`,
+					`,
 					"en": `
-					<p>
-						todo english
-					</p>
-				`,
+					<b>4.</b>
+					What else do you want to tell us about the ZEW-Finanzmarktreport? 
+					`,
 				}
 
 			}

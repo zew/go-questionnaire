@@ -33,6 +33,13 @@ func special202111b(q *qst.QuestionnaireT) error {
 		page.Style = css.DesktopWidthMaxForPages(page.Style, "48rem")
 
 		// gr1
+
+		/*
+			todo
+			the “central 90 percent confidence interval”
+			directly under the Forecast of the ECB’s main refinancing rate
+
+		*/
 		{
 			// 2019	18 Sep. 0.00
 			latestECBRate, err := q.Survey.Param("main_refinance_rate_ecb")
@@ -56,8 +63,14 @@ func special202111b(q *qst.QuestionnaireT) error {
 				inp.ColSpan = 12
 				inp.ColSpanLabel = 12
 				inp.Label = trl.S{
-					"de": fmt.Sprintf("<b>4.</b> &nbsp; Den <b>Hauptrefinanzierungssatz</b> der EZB (seit %v) erwarte ich auf Sicht von", latestECBRate),
-					"en": fmt.Sprintf("<b>4.</b> &nbsp; I expect the <b>main refinancing operations rate</b> of the ECB (since %v) in", latestECBRate),
+					"de": fmt.Sprintf(`
+						<b>4.</b> &nbsp; 
+							Den <b>Hauptrefinanzierungssatz</b> der EZB (seit %v) erwarte ich auf Sicht von`,
+						latestECBRate),
+					"en": fmt.Sprintf(`
+						<b>4.</b> &nbsp; 
+							Forecast of the ECB's main refinancing rate (since %v) `,
+						latestECBRate),
 				}
 			}
 
@@ -68,7 +81,7 @@ func special202111b(q *qst.QuestionnaireT) error {
 				inp.ColSpan = 3
 				inp.Label = trl.S{
 					"de": "6&nbsp;Monaten",
-					"en": "6&nbsp;months",
+					"en": "in&nbsp;6&nbsp;months",
 				}
 				inp.StyleLbl = lblStyleRight
 			}
@@ -122,7 +135,7 @@ func special202111b(q *qst.QuestionnaireT) error {
 				inp.ColSpan = 3
 				inp.Label = trl.S{
 					"de": " 24&nbsp;Monaten",
-					"en": " 24&nbsp;months",
+					"en": " in&nbsp;24&nbsp;months",
 				}
 				inp.StyleLbl = lblStyleRight
 			}

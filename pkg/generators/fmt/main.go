@@ -254,7 +254,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			)
 			gb.MainLabel = trl.S{
 				"de": "<b>2a.</b> Die gesamtwirtschaftliche Situation wird sich mittelfristig (<bx>6</bx>&nbsp;Mo.)",
-				"en": "<b>2a.</b> In the medium-term (<bx>6</bx>&nbsp;months), the overall macro-economic situation will",
+				"en": "<b>2a.</b> In the medium-term (<bx>6</bx>&nbsp;months), the overall macroeconomic situation will",
 			}
 			gr := page.AddGrid(gb)
 			gr.OddRowsColoring = true
@@ -273,7 +273,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.ColSpan = 10
 				inp.Label = trl.S{
 					"de": "<b>2b.</b> Für wie wahrscheinlich halten Sie die folgenden mittelfristigen (<bx>6</bx>&nbsp;Mo.) Entwicklungen der gesamtwirtschaftlichen Situation in Deutschland?",
-					"en": "<b>2b.</b> Please assess the probability of the following medium-term (<bx>6</bx>&nbsp;months) developments of the overall macroeconomic situation in Germany (in per cent).",
+					"en": "<b>2b.</b> Please assess the probability of the following medium-term (<bx>6</bx>&nbsp;months) developments of the overall macroeconomic situation in Germany (in percent).",
 				}
 
 				inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
@@ -458,7 +458,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			)
 			gb.MainLabel = trl.S{
 				"de": "<b>3.</b> Die jährliche gesamtwirtschaftliche Inflationsrate wird mittelfristig (<bx>6</bx>&nbsp;Mo.)",
-				"en": "<b>3.</b> In the medium-term (<bx>6</bx>&nbsp;months), the macroeconomic annual inflation rate will",
+				"en": "<b>3.</b> In the medium-term (<bx>6</bx>&nbsp;months), the annual inflation rate will",
 			}
 			gr := page.AddGrid(gb)
 			gr.OddRowsColoring = true

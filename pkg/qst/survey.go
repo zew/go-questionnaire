@@ -15,7 +15,7 @@ import (
 type ParamT struct {
 	Name string `json:"name,omitempty"` // i.e. main_refinance_rate_ecb
 	Val  string `json:"val,omitempty"`  // i.e. "01.02.2018: 3.2%"
-	// Challenge string `json:"challenge,omitempty"` // i.e.  Set field 'main_refinance_rate_ecb' to `01.02.2018: 3.2%` as in `main refinance rate of the ECB (01.02.2018: 3.2%)`"
+	// Challenge string `json:"challenge,omitempty"` // i.e.  Set field 'main_refinance_rate_ecb' to `01.02.2018: 3.2%` as in `main refinancing operations rate of the ECB (01.02.2018: 3.2%)`"
 }
 
 // Param returns the value of a surveys param

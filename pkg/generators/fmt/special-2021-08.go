@@ -158,7 +158,7 @@ func special202108(q *qst.QuestionnaireT) error {
 
 					
 				`,
-					"en": `<b>1.</b> Forecast <b>yearly inflation rate in the Euro area</b>
+					"en": `<b>1.</b> Forecast <b>annual inflation rate in the Euro area</b>
 				<br>
 				HICP  increase from Jan to Dec; expected value
 				`,
@@ -410,7 +410,7 @@ func special202108(q *qst.QuestionnaireT) error {
 			// 2019	18 Sep. 0.00
 			latestECBRate, err := q.Survey.Param("main_refinance_rate_ecb")
 			if err != nil {
-				return fmt.Errorf("Set field 'main_refinance_rate_ecb' to `01.02.2018: 3.2%%` as in `main refinance rate of the ECB (01.02.2018: 3.2%%)`; error was %v", err)
+				return fmt.Errorf("Set field 'main_refinance_rate_ecb' to `01.02.2018: 3.2%%` as in `main refinancing operations rate of the ECB (01.02.2018: 3.2%%)`; error was %v", err)
 			}
 
 			//
@@ -431,7 +431,7 @@ func special202108(q *qst.QuestionnaireT) error {
 				inp.ColSpanLabel = 12
 				inp.Label = trl.S{
 					"de": fmt.Sprintf("<b>4.</b> Den <b>Hauptrefinanzierungssatz</b> der EZB (seit %v) erwarte ich auf Sicht von", latestECBRate),
-					"en": fmt.Sprintf("<b>4.</b> I expect the <b>main refinance rate</b> of the ECB (since %v) in", latestECBRate),
+					"en": fmt.Sprintf("<b>4.</b> I expect the <b>main refinancing operations rate</b> of the ECB (since %v) in", latestECBRate),
 				}
 			}
 

@@ -62,6 +62,15 @@ func (q *QuestionnaireT) Statistics() (int, int, float64) {
 				if i.IsLayout() {
 					continue
 				}
+				if i.Type == "hidden" {
+					continue
+				}
+				if i.Type == "checkbox" { // I am not sure
+					continue
+				}
+				// if i.Type == "textarea" { // textarea is always optional
+				// 	continue
+				// }
 				if skipInputNames[q.Survey.Type][i.Name] {
 					continue
 				}
@@ -77,7 +86,13 @@ func (q *QuestionnaireT) Statistics() (int, int, float64) {
 		}
 
 	}
-	return responses, counter, 100 * float64(responses) / float64(counter)
+
+	pct := 100 * float64(responses) / float64(counter)
+	if pct > 100 {
+		pct = 100
+	}
+
+	return responses, counter, pct
 }
 
 // ResponseStatistics returns the percentage of

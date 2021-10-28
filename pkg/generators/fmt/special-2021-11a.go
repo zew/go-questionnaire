@@ -129,7 +129,7 @@ func special202111a(q *qst.QuestionnaireT) error {
 				<br>
 				Anstieg des HICP von Jan bis Dez; Erwartungswert
 				`,
-					"en": `<b>1.</b> &nbsp; Forecast <b>yearly inflation rate in the Euro area</b>
+					"en": `<b>1.</b> &nbsp; Forecast <b>annual inflation rate in the Euro area</b>
 				<br>
 				HICP  increase from Jan to Dec; expected value
 				`,
@@ -174,7 +174,7 @@ func special202111a(q *qst.QuestionnaireT) error {
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				inp.ColSpan = 10
+				inp.ColSpan = 12
 				inp.Label = trl.S{
 					"de": `<b>2.</b> &nbsp; Wir möchten gerne von Ihnen erfahren, 
 						für wie wahrscheinlich Sie bestimmte Ausprägungen 
@@ -188,6 +188,16 @@ func special202111a(q *qst.QuestionnaireT) error {
 
 			}
 			// first row: labels
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.ColSpan = 2
+				inp.Label = trl.S{
+					"de": "&nbsp;",
+					"en": "&nbsp;",
+				}
+			}
+
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
@@ -235,8 +245,18 @@ func special202111a(q *qst.QuestionnaireT) error {
 
 				{
 					inp := gr.AddInput()
+					inp.Type = "textblock"
+					inp.ColSpan = 2
+					inp.Label = trl.S{
+						"de": fmt.Sprint(i),
+						"en": fmt.Sprint(i),
+					}
+				}
+
+				{
+					inp := gr.AddInput()
 					inp.Type = "number"
-					inp.Name = fmt.Sprintf("i%v_probgood", i)
+					inp.Name = fmt.Sprintf("inf%v_probgood", i-2020)
 					inp.Suffix = trl.S{"de": "%", "en": "%"}
 					inp.ColSpan = 3
 					inp.ColSpanControl = 3
@@ -248,7 +268,7 @@ func special202111a(q *qst.QuestionnaireT) error {
 				{
 					inp := gr.AddInput()
 					inp.Type = "number"
-					inp.Name = fmt.Sprintf("i%v_probnormal", i)
+					inp.Name = fmt.Sprintf("inf%v_probnormal", i-2020)
 					inp.Suffix = trl.S{"de": "%", "en": "%"}
 					inp.ColSpan = 3
 					inp.ColSpanControl = 3
@@ -260,7 +280,7 @@ func special202111a(q *qst.QuestionnaireT) error {
 				{
 					inp := gr.AddInput()
 					inp.Type = "number"
-					inp.Name = fmt.Sprintf("i%v_probbad", i)
+					inp.Name = fmt.Sprintf("inf%v_probbad", i-2020)
 					inp.Suffix = trl.S{"de": "%", "en": "%"}
 					inp.ColSpan = 3
 					inp.ColSpanControl = 3

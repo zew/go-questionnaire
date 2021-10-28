@@ -767,5 +767,5 @@ We are relucatant to incorporate logging logic into the application, since `syst
 might be loaded from a configuration service.  
 Or at least from another GC/S3 bucket.
 
-* CSS funcs are dispersed. Generic funcs are in CSS package.  
-groups and inputs have specialized methods.
+* CSS funcs are dispersed. Generic funcs are in the `css` package.  
+`groupT` and `inputT` have specialized methods.

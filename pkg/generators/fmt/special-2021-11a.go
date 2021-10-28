@@ -193,7 +193,7 @@ func special202111a(q *qst.QuestionnaireT) error {
 				inp.Type = "textblock"
 				inp.ColSpan = 3
 				inp.Label = trl.S{
-					"de": "Kleiner oder gleich 2&nbsp;Prozent",
+					"de": "kleiner oder gleich 2&nbsp;Prozent",
 					"en": "todo",
 				}
 				inp.Style = css.ItemStartCA(inp.Style)
@@ -204,7 +204,7 @@ func special202111a(q *qst.QuestionnaireT) error {
 				inp.Type = "textblock"
 				inp.ColSpan = 3
 				inp.Label = trl.S{
-					"de": "Zwischen 2 und 3&nbsp;Prozent",
+					"de": "zwischen 2 und 3&nbsp;Prozent",
 					"en": "todo",
 				}
 				inp.Style = css.ItemStartCA(inp.Style)
@@ -215,7 +215,7 @@ func special202111a(q *qst.QuestionnaireT) error {
 				inp.Type = "textblock"
 				inp.ColSpan = 3
 				inp.Label = trl.S{
-					"de": "Größer als 3&nbsp;Prozent",
+					"de": "größer als 3&nbsp;Prozent",
 					"en": "todo",
 				}
 				inp.Style = css.ItemStartCA(inp.Style)

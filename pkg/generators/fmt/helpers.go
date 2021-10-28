@@ -265,28 +265,28 @@ func labelsPositiveNeutralNegative() []trl.S {
 
 	tm := []trl.S{
 		{
-			"de": "Stark<br>positiv",
-			"en": "Strongly<br>positive",
+			"de": "stark<br>positiv",
+			"en": "strongly<br>positive",
 		},
 		{
-			"de": "Leicht<br>positiv",
-			"en": "Slightly<br>positive",
+			"de": "leicht<br>positiv",
+			"en": "slightly<br>positive",
 		},
 		{
-			"de": "Neutral",
-			"en": "Neutral",
+			"de": "neutral",
+			"en": "neutral",
 		},
 		{
-			"de": "Leicht<br>negativ",
-			"en": "Slightly<br>negative",
+			"de": "leicht<br>negativ",
+			"en": "slightly<br>negative",
 		},
 		{
-			"de": "Stark<br>negativ",
-			"en": "Strongly<br>negative",
+			"de": "stark<br>negativ",
+			"en": "strongly<br>negative",
 		},
 		{
-			"de": "Keine<br>Angabe",
-			"en": "No answer",
+			"de": "keine<br>Angabe",
+			"en": "no answer",
 		},
 	}
 

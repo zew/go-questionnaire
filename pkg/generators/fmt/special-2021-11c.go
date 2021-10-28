@@ -282,20 +282,20 @@ func special202111c(q *qst.QuestionnaireT) error {
 		}
 		frequencyLabels := []trl.S{
 			{
-				"de": "Monatl.",
-				"en": "Monthly",
+				"de": "monatlich",
+				"en": "monthly",
 			},
 			{
-				"de": "Quartal",
-				"en": "Quartrly",
+				"de": "quartal",
+				"en": "quartrly",
 			},
 			{
-				"de": "Halbjährl.",
-				"en": "Biannual",
+				"de": "halbjährl.",
+				"en": "biannual",
 			},
 			{
-				"de": "Jährlich",
-				"en": "Yearly",
+				"de": "jährlich",
+				"en": "yearly",
 			},
 		}
 

@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "94023e632edf00b72b4fa84ac0b98baa4712d7b9c59a88c3f0dedfced80360d4",
+ 	"md_5": "3f28f08d3ebc32b590d3b23f5cac9eda36664db832c66f5e670d3f5449fdca68",
  	"lang_codes": [
  		"de",
  		"en"
@@ -532,7 +532,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Deutsch\u0026shy;land",
- 								"en": "Germany"
+ 								"en": "Ger\u0026shy;ma\u0026shy;ny"
  							},
  							"col_span_label": 2,
  							"col_span_control": 1,
@@ -929,7 +929,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Deutsch\u0026shy;land",
- 								"en": "Germany"
+ 								"en": "Ger\u0026shy;ma\u0026shy;ny"
  							},
  							"col_span_label": 2,
  							"col_span_control": 1,
@@ -1091,7 +1091,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\u003cb\u003e2b.\u003c/b\u003e Für wie wahrscheinlich halten Sie die folgenden mittel\u0026shy;fristigen (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;Mo.) Entwicklungen der ge\u0026shy;samtwirt\u0026shy;schaft\u0026shy;lichen Situation in Deutsch\u0026shy;land?",
- 								"en": "\u003cb\u003e2b.\u003c/b\u003e Please assess the probability of the following medium-term (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;months) de\u0026shy;vel\u0026shy;op\u0026shy;ments of the overall macroeco\u0026shy;nom\u0026shy;ic situation in Germany (in per cent)."
+ 								"en": "\u003cb\u003e2b.\u003c/b\u003e Please assess the probability of the following medium-term (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;months) de\u0026shy;vel\u0026shy;op\u0026shy;ments of the overall macroeco\u0026shy;nom\u0026shy;ic situation in Ger\u0026shy;ma\u0026shy;ny (in per cent)."
  							},
  							"col_span": 10,
  							"col_span_label": 1,
@@ -1308,7 +1308,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\u003cb\u003e2c.\u003c/b\u003e Die Wahrscheinlichkeit eines neg\u0026shy;ativen BIP-Wachstums in Deutsch\u0026shy;land (Wachstum des realen \u0026 saisonbereinigten BIP zum Vorquartal) liegt bei",
- 								"en": "\u003cb\u003e2c.\u003c/b\u003e The probability of a neg\u0026shy;ative GDP growth in Germany (quarterly growth of the seasonally adjusted real GDP) will be"
+ 								"en": "\u003cb\u003e2c.\u003c/b\u003e The probability of a neg\u0026shy;ative GDP growth in Ger\u0026shy;ma\u0026shy;ny (quarterly growth of the seasonally adjusted real GDP) will be"
  							},
  							"col_span": 5,
  							"col_span_label": 5
@@ -1659,7 +1659,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Deutsch\u0026shy;land",
- 								"en": "Germany"
+ 								"en": "Ger\u0026shy;ma\u0026shy;ny"
  							},
  							"col_span_label": 2,
  							"col_span_control": 1,
@@ -2361,7 +2361,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Deutsch\u0026shy;land",
- 								"en": "Germany"
+ 								"en": "Ger\u0026shy;ma\u0026shy;ny"
  							},
  							"col_span_label": 2,
  							"col_span_control": 1,
@@ -2794,7 +2794,7 @@
  							"type": "radio",
  							"label": {
  								"de": "DAX",
- 								"en": "DAX (Germany)"
+ 								"en": "DAX (Ger\u0026shy;ma\u0026shy;ny)"
  							},
  							"col_span_label": 2,
  							"col_span_control": 1,
@@ -4566,7 +4566,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tAngesichts der Inflationsentwicklung der letzten\n\t\t\t\t\t\t Monate möchten wir Ihre Einschätzungen \n\t\t\t\t\t\t zu den Ursachen und der weiteren Entwicklung \n\t\t\t\t\t\t der Inflation im Eurogebiet noch detaillierter \n\t\t\t\t\t\t als üblicherweise erfragen\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t",
+ 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tAngesichts der Inflationsentwicklung der letzten\n\t\t\t\t\t\t Monate möchten wir Ihre Einschätzungen \n\t\t\t\t\t\t zu den Ursachen und der weiteren Entwicklung \n\t\t\t\t\t\t der Inflation im Euro\u0026shy;gebiet noch detaillierter \n\t\t\t\t\t\t als üblicherweise erfragen\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t",
  								"en": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\ttodo english\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 9,
@@ -4735,7 +4735,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Kleiner oder gleich 2\u0026nbsp;Prozent",
+ 								"de": "kleiner oder gleich 2\u0026nbsp;Prozent",
  								"en": "todo"
  							},
  							"col_span": 3,
@@ -4762,7 +4762,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Zwischen 2 und 3\u0026nbsp;Prozent",
+ 								"de": "zwischen 2 und 3\u0026nbsp;Prozent",
  								"en": "todo"
  							},
  							"col_span": 3,
@@ -4789,7 +4789,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Größer als 3\u0026nbsp;Prozent",
+ 								"de": "größer als 3\u0026nbsp;Prozent",
  								"en": "todo"
  							},
  							"col_span": 3,
@@ -5399,7 +5399,7 @@
  							"name": "inff_2021__business_cycle",
  							"type": "radio",
  							"label": {
- 								"de": "Konjunktur\u0026shy;ent\u0026shy;wicklung im Eurogebiet",
+ 								"de": "Konjunktur\u0026shy;ent\u0026shy;wicklung im Euro\u0026shy;gebiet",
  								"en": "todo"
  							},
  							"col_span_label": 3.6,
@@ -5457,7 +5457,7 @@
  							"name": "inff_2021__wages",
  							"type": "radio",
  							"label": {
- 								"de": "Entwicklung der Löhne im Eurogebiet",
+ 								"de": "Entwicklung der Löhne im Euro\u0026shy;gebiet",
  								"en": "todo"
  							},
  							"col_span_label": 3.6,
@@ -6300,7 +6300,7 @@
  							"name": "inff_2022__business_cycle",
  							"type": "radio",
  							"label": {
- 								"de": "Konjunktur\u0026shy;ent\u0026shy;wicklung im Eurogebiet",
+ 								"de": "Konjunktur\u0026shy;ent\u0026shy;wicklung im Euro\u0026shy;gebiet",
  								"en": "todo"
  							},
  							"col_span_label": 3.6,
@@ -6358,7 +6358,7 @@
  							"name": "inff_2022__wages",
  							"type": "radio",
  							"label": {
- 								"de": "Entwicklung der Löhne im Eurogebiet",
+ 								"de": "Entwicklung der Löhne im Euro\u0026shy;gebiet",
  								"en": "todo"
  							},
  							"col_span_label": 3.6,
@@ -7201,7 +7201,7 @@
  							"name": "inff_2023__business_cycle",
  							"type": "radio",
  							"label": {
- 								"de": "Konjunktur\u0026shy;ent\u0026shy;wicklung im Eurogebiet",
+ 								"de": "Konjunktur\u0026shy;ent\u0026shy;wicklung im Euro\u0026shy;gebiet",
  								"en": "todo"
  							},
  							"col_span_label": 3.6,
@@ -7259,7 +7259,7 @@
  							"name": "inff_2023__wages",
  							"type": "radio",
  							"label": {
- 								"de": "Entwicklung der Löhne im Eurogebiet",
+ 								"de": "Entwicklung der Löhne im Euro\u0026shy;gebiet",
  								"en": "todo"
  							},
  							"col_span_label": 3.6,
@@ -8241,8 +8241,8 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "Stark\u003cbr\u003epo\u0026shy;si\u0026shy;tiv",
- 								"en": "Strong\u0026shy;ly\u003cbr\u003epos\u0026shy;itive"
+ 								"de": "stark\u003cbr\u003epo\u0026shy;si\u0026shy;tiv",
+ 								"en": "strong\u0026shy;ly\u003cbr\u003epos\u0026shy;itive"
  							},
  							"col_span_label": 2,
  							"col_span_control": 1,
@@ -8286,8 +8286,8 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "Leicht\u003cbr\u003epo\u0026shy;si\u0026shy;tiv",
- 								"en": "Slightly\u003cbr\u003epos\u0026shy;itive"
+ 								"de": "leicht\u003cbr\u003epo\u0026shy;si\u0026shy;tiv",
+ 								"en": "slightly\u003cbr\u003epos\u0026shy;itive"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -8330,8 +8330,8 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "Neu\u0026shy;tral",
- 								"en": "Neu\u0026shy;tral"
+ 								"de": "neu\u0026shy;tral",
+ 								"en": "neu\u0026shy;tral"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -8374,8 +8374,8 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "Leicht\u003cbr\u003ene\u0026shy;ga\u0026shy;tiv",
- 								"en": "Slightly\u003cbr\u003eneg\u0026shy;ative"
+ 								"de": "leicht\u003cbr\u003ene\u0026shy;ga\u0026shy;tiv",
+ 								"en": "slightly\u003cbr\u003eneg\u0026shy;ative"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -8418,8 +8418,8 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "Stark\u003cbr\u003ene\u0026shy;ga\u0026shy;tiv",
- 								"en": "Strong\u0026shy;ly\u003cbr\u003eneg\u0026shy;ative"
+ 								"de": "stark\u003cbr\u003ene\u0026shy;ga\u0026shy;tiv",
+ 								"en": "strong\u0026shy;ly\u003cbr\u003eneg\u0026shy;ative"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -8462,8 +8462,8 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "Keine\u003cbr\u003eAn\u0026shy;gabe",
- 								"en": "No an\u0026shy;swer"
+ 								"de": "keine\u003cbr\u003eAn\u0026shy;gabe",
+ 								"en": "no an\u0026shy;swer"
  							},
  							"col_span_label": 0.4,
  							"col_span_control": 1,
@@ -8509,7 +8509,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Deutsch\u0026shy;land",
- 								"en": "Germany"
+ 								"en": "Ger\u0026shy;ma\u0026shy;ny"
  							},
  							"col_span_label": 2,
  							"col_span_control": 1,
@@ -8566,7 +8566,7 @@
  							"name": "fmr_euroarea",
  							"type": "radio",
  							"label": {
- 								"de": "Eurogebiet",
+ 								"de": "Euro\u0026shy;gebiet",
  								"en": "Euro area"
  							},
  							"col_span_label": 2,
@@ -9080,8 +9080,8 @@
  							"name": "fmr_graphics_inflation",
  							"type": "radio",
  							"label": {
- 								"de": "Monatl.",
- 								"en": "Monthly"
+ 								"de": "monatlich",
+ 								"en": "monthly"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -9131,8 +9131,8 @@
  							"name": "fmr_graphics_inflation",
  							"type": "radio",
  							"label": {
- 								"de": "Quartal",
- 								"en": "Quartrly"
+ 								"de": "quartal",
+ 								"en": "quartrly"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -9182,8 +9182,8 @@
  							"name": "fmr_graphics_inflation",
  							"type": "radio",
  							"label": {
- 								"de": "Halbjährl.",
- 								"en": "Biannual"
+ 								"de": "halbjährl.",
+ 								"en": "biannual"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -9233,8 +9233,8 @@
  							"name": "fmr_graphics_inflation",
  							"type": "radio",
  							"label": {
- 								"de": "Jährlich",
- 								"en": "Yearly"
+ 								"de": "jährlich",
+ 								"en": "yearly"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -9302,8 +9302,8 @@
  							"name": "fmr_grandtxt_inflation",
  							"type": "radio",
  							"label": {
- 								"de": "Monatl.",
- 								"en": "Monthly"
+ 								"de": "monatlich",
+ 								"en": "monthly"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -9353,8 +9353,8 @@
  							"name": "fmr_grandtxt_inflation",
  							"type": "radio",
  							"label": {
- 								"de": "Quartal",
- 								"en": "Quartrly"
+ 								"de": "quartal",
+ 								"en": "quartrly"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -9404,8 +9404,8 @@
  							"name": "fmr_grandtxt_inflation",
  							"type": "radio",
  							"label": {
- 								"de": "Halbjährl.",
- 								"en": "Biannual"
+ 								"de": "halbjährl.",
+ 								"en": "biannual"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -9455,8 +9455,8 @@
  							"name": "fmr_grandtxt_inflation",
  							"type": "radio",
  							"label": {
- 								"de": "Jährlich",
- 								"en": "Yearly"
+ 								"de": "jährlich",
+ 								"en": "yearly"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -9597,8 +9597,8 @@
  							"name": "fmr_graphics_rates",
  							"type": "radio",
  							"label": {
- 								"de": "Monatl.",
- 								"en": "Monthly"
+ 								"de": "monatlich",
+ 								"en": "monthly"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -9648,8 +9648,8 @@
  							"name": "fmr_graphics_rates",
  							"type": "radio",
  							"label": {
- 								"de": "Quartal",
- 								"en": "Quartrly"
+ 								"de": "quartal",
+ 								"en": "quartrly"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -9699,8 +9699,8 @@
  							"name": "fmr_graphics_rates",
  							"type": "radio",
  							"label": {
- 								"de": "Halbjährl.",
- 								"en": "Biannual"
+ 								"de": "halbjährl.",
+ 								"en": "biannual"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -9750,8 +9750,8 @@
  							"name": "fmr_graphics_rates",
  							"type": "radio",
  							"label": {
- 								"de": "Jährlich",
- 								"en": "Yearly"
+ 								"de": "jährlich",
+ 								"en": "yearly"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -9819,8 +9819,8 @@
  							"name": "fmr_grandtxt_rates",
  							"type": "radio",
  							"label": {
- 								"de": "Monatl.",
- 								"en": "Monthly"
+ 								"de": "monatlich",
+ 								"en": "monthly"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -9870,8 +9870,8 @@
  							"name": "fmr_grandtxt_rates",
  							"type": "radio",
  							"label": {
- 								"de": "Quartal",
- 								"en": "Quartrly"
+ 								"de": "quartal",
+ 								"en": "quartrly"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -9921,8 +9921,8 @@
  							"name": "fmr_grandtxt_rates",
  							"type": "radio",
  							"label": {
- 								"de": "Halbjährl.",
- 								"en": "Biannual"
+ 								"de": "halbjährl.",
+ 								"en": "biannual"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -9972,8 +9972,8 @@
  							"name": "fmr_grandtxt_rates",
  							"type": "radio",
  							"label": {
- 								"de": "Jährlich",
- 								"en": "Yearly"
+ 								"de": "jährlich",
+ 								"en": "yearly"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -10114,8 +10114,8 @@
  							"name": "fmr_graphics_stocks",
  							"type": "radio",
  							"label": {
- 								"de": "Monatl.",
- 								"en": "Monthly"
+ 								"de": "monatlich",
+ 								"en": "monthly"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -10165,8 +10165,8 @@
  							"name": "fmr_graphics_stocks",
  							"type": "radio",
  							"label": {
- 								"de": "Quartal",
- 								"en": "Quartrly"
+ 								"de": "quartal",
+ 								"en": "quartrly"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -10216,8 +10216,8 @@
  							"name": "fmr_graphics_stocks",
  							"type": "radio",
  							"label": {
- 								"de": "Halbjährl.",
- 								"en": "Biannual"
+ 								"de": "halbjährl.",
+ 								"en": "biannual"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -10267,8 +10267,8 @@
  							"name": "fmr_graphics_stocks",
  							"type": "radio",
  							"label": {
- 								"de": "Jährlich",
- 								"en": "Yearly"
+ 								"de": "jährlich",
+ 								"en": "yearly"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -10336,8 +10336,8 @@
  							"name": "fmr_grandtxt_stocks",
  							"type": "radio",
  							"label": {
- 								"de": "Monatl.",
- 								"en": "Monthly"
+ 								"de": "monatlich",
+ 								"en": "monthly"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -10387,8 +10387,8 @@
  							"name": "fmr_grandtxt_stocks",
  							"type": "radio",
  							"label": {
- 								"de": "Quartal",
- 								"en": "Quartrly"
+ 								"de": "quartal",
+ 								"en": "quartrly"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -10438,8 +10438,8 @@
  							"name": "fmr_grandtxt_stocks",
  							"type": "radio",
  							"label": {
- 								"de": "Halbjährl.",
- 								"en": "Biannual"
+ 								"de": "halbjährl.",
+ 								"en": "biannual"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -10489,8 +10489,8 @@
  							"name": "fmr_grandtxt_stocks",
  							"type": "radio",
  							"label": {
- 								"de": "Jährlich",
- 								"en": "Yearly"
+ 								"de": "jährlich",
+ 								"en": "yearly"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -10631,8 +10631,8 @@
  							"name": "fmr_graphics_exchanger",
  							"type": "radio",
  							"label": {
- 								"de": "Monatl.",
- 								"en": "Monthly"
+ 								"de": "monatlich",
+ 								"en": "monthly"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -10682,8 +10682,8 @@
  							"name": "fmr_graphics_exchanger",
  							"type": "radio",
  							"label": {
- 								"de": "Quartal",
- 								"en": "Quartrly"
+ 								"de": "quartal",
+ 								"en": "quartrly"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -10733,8 +10733,8 @@
  							"name": "fmr_graphics_exchanger",
  							"type": "radio",
  							"label": {
- 								"de": "Halbjährl.",
- 								"en": "Biannual"
+ 								"de": "halbjährl.",
+ 								"en": "biannual"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -10784,8 +10784,8 @@
  							"name": "fmr_graphics_exchanger",
  							"type": "radio",
  							"label": {
- 								"de": "Jährlich",
- 								"en": "Yearly"
+ 								"de": "jährlich",
+ 								"en": "yearly"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -10853,8 +10853,8 @@
  							"name": "fmr_grandtxt_exchanger",
  							"type": "radio",
  							"label": {
- 								"de": "Monatl.",
- 								"en": "Monthly"
+ 								"de": "monatlich",
+ 								"en": "monthly"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -10904,8 +10904,8 @@
  							"name": "fmr_grandtxt_exchanger",
  							"type": "radio",
  							"label": {
- 								"de": "Quartal",
- 								"en": "Quartrly"
+ 								"de": "quartal",
+ 								"en": "quartrly"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -10955,8 +10955,8 @@
  							"name": "fmr_grandtxt_exchanger",
  							"type": "radio",
  							"label": {
- 								"de": "Halbjährl.",
- 								"en": "Biannual"
+ 								"de": "halbjährl.",
+ 								"en": "biannual"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -11006,8 +11006,8 @@
  							"name": "fmr_grandtxt_exchanger",
  							"type": "radio",
  							"label": {
- 								"de": "Jährlich",
- 								"en": "Yearly"
+ 								"de": "jährlich",
+ 								"en": "yearly"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -11148,8 +11148,8 @@
  							"name": "fmr_graphics_sectors",
  							"type": "radio",
  							"label": {
- 								"de": "Monatl.",
- 								"en": "Monthly"
+ 								"de": "monatlich",
+ 								"en": "monthly"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -11199,8 +11199,8 @@
  							"name": "fmr_graphics_sectors",
  							"type": "radio",
  							"label": {
- 								"de": "Quartal",
- 								"en": "Quartrly"
+ 								"de": "quartal",
+ 								"en": "quartrly"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -11250,8 +11250,8 @@
  							"name": "fmr_graphics_sectors",
  							"type": "radio",
  							"label": {
- 								"de": "Halbjährl.",
- 								"en": "Biannual"
+ 								"de": "halbjährl.",
+ 								"en": "biannual"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -11301,8 +11301,8 @@
  							"name": "fmr_graphics_sectors",
  							"type": "radio",
  							"label": {
- 								"de": "Jährlich",
- 								"en": "Yearly"
+ 								"de": "jährlich",
+ 								"en": "yearly"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -11370,8 +11370,8 @@
  							"name": "fmr_grandtxt_sectors",
  							"type": "radio",
  							"label": {
- 								"de": "Monatl.",
- 								"en": "Monthly"
+ 								"de": "monatlich",
+ 								"en": "monthly"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -11421,8 +11421,8 @@
  							"name": "fmr_grandtxt_sectors",
  							"type": "radio",
  							"label": {
- 								"de": "Quartal",
- 								"en": "Quartrly"
+ 								"de": "quartal",
+ 								"en": "quartrly"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -11472,8 +11472,8 @@
  							"name": "fmr_grandtxt_sectors",
  							"type": "radio",
  							"label": {
- 								"de": "Halbjährl.",
- 								"en": "Biannual"
+ 								"de": "halbjährl.",
+ 								"en": "biannual"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -11523,8 +11523,8 @@
  							"name": "fmr_grandtxt_sectors",
  							"type": "radio",
  							"label": {
- 								"de": "Jährlich",
- 								"en": "Yearly"
+ 								"de": "jährlich",
+ 								"en": "yearly"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -11665,8 +11665,8 @@
  							"name": "fmr_graphics_specials",
  							"type": "radio",
  							"label": {
- 								"de": "Monatl.",
- 								"en": "Monthly"
+ 								"de": "monatlich",
+ 								"en": "monthly"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -11716,8 +11716,8 @@
  							"name": "fmr_graphics_specials",
  							"type": "radio",
  							"label": {
- 								"de": "Quartal",
- 								"en": "Quartrly"
+ 								"de": "quartal",
+ 								"en": "quartrly"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -11767,8 +11767,8 @@
  							"name": "fmr_graphics_specials",
  							"type": "radio",
  							"label": {
- 								"de": "Halbjährl.",
- 								"en": "Biannual"
+ 								"de": "halbjährl.",
+ 								"en": "biannual"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -11818,8 +11818,8 @@
  							"name": "fmr_graphics_specials",
  							"type": "radio",
  							"label": {
- 								"de": "Jährlich",
- 								"en": "Yearly"
+ 								"de": "jährlich",
+ 								"en": "yearly"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -11887,8 +11887,8 @@
  							"name": "fmr_grandtxt_specials",
  							"type": "radio",
  							"label": {
- 								"de": "Monatl.",
- 								"en": "Monthly"
+ 								"de": "monatlich",
+ 								"en": "monthly"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -11938,8 +11938,8 @@
  							"name": "fmr_grandtxt_specials",
  							"type": "radio",
  							"label": {
- 								"de": "Quartal",
- 								"en": "Quartrly"
+ 								"de": "quartal",
+ 								"en": "quartrly"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -11989,8 +11989,8 @@
  							"name": "fmr_grandtxt_specials",
  							"type": "radio",
  							"label": {
- 								"de": "Halbjährl.",
- 								"en": "Biannual"
+ 								"de": "halbjährl.",
+ 								"en": "biannual"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -12040,8 +12040,8 @@
  							"name": "fmr_grandtxt_specials",
  							"type": "radio",
  							"label": {
- 								"de": "Jährlich",
- 								"en": "Yearly"
+ 								"de": "jährlich",
+ 								"en": "yearly"
  							},
  							"col_span": 1,
  							"col_span_label": 1,

@@ -76,10 +76,12 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 	q.Survey.Org = trl.S{"de": "ZEW", "en": "ZEW"}
 
-	// Number of exact google hits
-	// 55.000 - ZEW Index
+	// Number of approx google hits
+	// 55.000 - ZEW Index - and wikipedia entry
+	// 32.000 - ZEW Konjunkturerwartungen
 	//  7.000 - ZEW Indicator of Economic Sentiment
 	//  4.000 - ZEW Financial market survey
+	//  2.500 - ZEW Finanzmarkttest
 	q.Survey.Name = trl.S{
 		"de": "Index / Finanzmarkttest",
 		"en": "Index / Indicator of Econ. Sentiment",

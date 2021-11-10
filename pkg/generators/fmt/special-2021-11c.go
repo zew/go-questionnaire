@@ -16,6 +16,7 @@ func special202111c(q *qst.QuestionnaireT) error {
 
 	{
 		page := q.AddPage()
+		page.Condition = "GermanOnly"
 		// page.Section = trl.S{"de": "Sonderfrage", "en": "Special"}
 		page.Label = trl.S{
 			"de": "Sonderfrage: Finanzmarktreport",

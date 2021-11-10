@@ -361,12 +361,13 @@ func (q QuestionnaireT) GroupHTMLTableBased(pageIdx, grpIdx int) string {
 
 // Type page contains groups with inputs
 type pageT struct {
-	Section         trl.S `json:"section,omitempty"`       // extra strong before label in content - summary headline for multiple pages
-	Label           trl.S `json:"label,omitempty"`         // headline, set to "" to prevent rendering
-	Desc            trl.S `json:"description,omitempty"`   // abstract
-	Short           trl.S `json:"short,omitempty"`         // sort version of section/label/description - in progress bar and navigation menu
-	NoNavigation    bool  `json:"no_navigation,omitempty"` // Page will not show up in progress bar
-	NavigationalNum int   `json:"navi_num"`                // The number in Navigation order; based on NoNavigation; computed by q.Validate
+	Section         trl.S  `json:"section,omitempty"`       // extra strong before label in content - summary headline for multiple pages
+	Label           trl.S  `json:"label,omitempty"`         // headline, set to "" to prevent rendering
+	Desc            trl.S  `json:"description,omitempty"`   // abstract
+	Short           trl.S  `json:"short,omitempty"`         // sort version of section/label/description - in progress bar and navigation menu
+	NoNavigation    bool   `json:"no_navigation,omitempty"` // Page will not show up in progress bar
+	NavigationalNum int    `json:"navi_num"`                // The number in Navigation order; based on NoNavigation; computed by q.Validate
+	Condition       string `json:"condition,omitempty"`
 
 	Style *css.StylesResponsive `json:"style,omitempty"`
 
@@ -1012,17 +1013,35 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 	return ret, nil
 }
 
+// isNavigation checks whether pageIdx is suitable as next or previous page
+func (q *QuestionnaireT) isNavigation(pageIdx int) bool {
+
+	if pageIdx < 0 || pageIdx > len(q.Pages)-1 {
+		return false
+	}
+
+	if q.Pages[pageIdx].NoNavigation {
+		return false
+	}
+
+	if fc, ok := naviFuncs[q.Pages[pageIdx].Condition]; ok {
+		return fc(q, pageIdx)
+	}
+
+	return true
+}
+
 // next page to be shown in navigation
 func (q *QuestionnaireT) nextInNavi() (int, bool) {
 	// Find next page in navigation
 	for i := q.CurrPage + 1; i < len(q.Pages); i++ {
-		if !q.Pages[i].NoNavigation {
+		if q.isNavigation(i) {
 			return i, true
 		}
 	}
 	// Fallback: Last page in navigation
 	for i := len(q.Pages) - 1; i >= 0; i-- {
-		if !q.Pages[i].NoNavigation {
+		if q.isNavigation(i) {
 			return i, false
 		}
 	}
@@ -1033,13 +1052,13 @@ func (q *QuestionnaireT) nextInNavi() (int, bool) {
 func (q *QuestionnaireT) prevInNavi() (int, bool) {
 	// Find prev page in navigation
 	for i := q.CurrPage - 1; i >= 0; i-- {
-		if !q.Pages[i].NoNavigation {
+		if q.isNavigation(i) {
 			return i, true
 		}
 	}
 	// Fallback: First page in navigation
 	for i := 0; i < len(q.Pages); i++ {
-		if !q.Pages[i].NoNavigation {
+		if q.isNavigation(i) {
 			return i, false
 		}
 	}

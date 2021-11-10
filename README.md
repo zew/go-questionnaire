@@ -15,9 +15,10 @@
 <div style="position: static">
     <div style="position: relative; left: 25px;">
         <ul>
+            <li>LimeSurvey for Go lovers</li>
             <li>Creating and serving questionnaires</li>
             <li>Precise layout - no HTML fumble</li>
-            <li>Automatic mobile version</li>
+            <li>Support for mobile devices</li>
         </ul>
     </div>
 </div>

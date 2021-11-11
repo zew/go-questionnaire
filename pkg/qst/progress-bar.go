@@ -84,7 +84,7 @@ func (q *QuestionnaireT) ProgressBar() string {
 					</li> 
 				`,
 				onclick, pointr,
-				completeOrActive, p.NavigationalNum,
+				completeOrActive, p.navigationSequenceNum,
 				eff,
 			),
 		)

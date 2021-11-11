@@ -114,17 +114,18 @@ func (q *QuestionnaireT) Validate() error {
 		}
 	}
 
-	navigationalNum := 0
-
 	// Check inputs
 	// Set page and group width to 100
 	// Set values for radiogroups
 	// Enumerate pages being in navigation sequence
 	for i1 := 0; i1 < len(q.Pages); i1++ {
 
-		if !q.Pages[i1].NoNavigation {
-			navigationalNum++
-			q.Pages[i1].NavigationalNum = navigationalNum
+		// navigation function exists?
+		naviKey := q.Pages[i1].NavigationCondition
+		if naviKey != "" {
+			if _, ok := naviFuncs[naviKey]; !ok {
+				return fmt.Errorf("navigator func '%v' is not in %v ", naviKey, naviFuncs)
+			}
 		}
 
 		for i2 := 0; i2 < len(q.Pages[i1].Groups); i2++ {

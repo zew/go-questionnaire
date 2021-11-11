@@ -11,7 +11,7 @@
  		},
  		"year": 2021,
  		"month": 11,
- 		"deadline": "2021-11-08T17:15:00+01:00",
+ 		"deadline": "2030-01-01T00:00:00+01:00",
  		"params": [
  			{
  				"name": "main_refinance_rate_ecb",
@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "79bd62cc0179f49bd3e36b02676a5ad425edba41fdb3333b02b0f54baae2c92a",
+ 	"md_5": "e5e9b17524e3fa014abd781f5661ee231cc18912b2da10cb6940773cfb9a478b",
  	"lang_codes": [
  		"de",
  		"en"
@@ -40,7 +40,6 @@
  				"en": ""
  			},
  			"no_navigation": true,
- 			"navi_num": 0,
  			"style": {
  				"desktop": {
  					"grid_container_style": {},
@@ -268,7 +267,6 @@
  				"de": "Konjunktur",
  				"en": "Business cycle"
  			},
- 			"navi_num": 1,
  			"style": {
  				"desktop": {
  					"grid_container_style": {},
@@ -1395,7 +1393,6 @@
  				"de": "Inflation,\u003cbr/\u003eZinsen",
  				"en": "Inflation,\u003cbr/\u003eInter. Rates"
  			},
- 			"navi_num": 2,
  			"style": {
  				"desktop": {
  					"grid_container_style": {},
@@ -2530,7 +2527,6 @@
  				"de": "Aktien-\u003cbr\u003emärkte",
  				"en": "Stock\u003cbr\u003eMarkets"
  			},
- 			"navi_num": 3,
  			"style": {
  				"desktop": {
  					"grid_container_style": {},
@@ -3350,7 +3346,6 @@
  				"de": "Währungen",
  				"en": "Currencies"
  			},
- 			"navi_num": 4,
  			"style": {
  				"desktop": {
  					"grid_container_style": {},
@@ -3691,7 +3686,6 @@
  				"de": "Sektoren",
  				"en": "Sectors"
  			},
- 			"navi_num": 5,
  			"style": {
  				"desktop": {
  					"grid_container_style": {},
@@ -4538,7 +4532,6 @@
  				"de": "Inflation,\u003cbr\u003eGeldpolitik",
  				"en": "Inflation,\u003cbr\u003eMon. Policy"
  			},
- 			"navi_num": 6,
  			"style": {
  				"desktop": {
  					"grid_container_style": {},
@@ -5099,7 +5092,6 @@
  				"de": "Inflation,\u003cbr\u003eGeldpolitik 2",
  				"en": "Inflation,\u003cbr\u003eMon. Policy 2"
  			},
- 			"navi_num": 7,
  			"style": {
  				"desktop": {
  					"grid_container_style": {},
@@ -7870,7 +7862,6 @@
  				"de": "Inflation,\u003cbr\u003eGeldpolitik 3",
  				"en": "Inflation,\u003cbr\u003eMon. Policy 3"
  			},
- 			"navi_num": 8,
  			"style": {
  				"desktop": {
  					"grid_container_style": {},
@@ -8158,7 +8149,7 @@
  				"de": "Finanzmarkt-\u003cbr\u003ereport",
  				"en": "Finanzmarkt-\u003cbr\u003ereport"
  			},
- 			"navi_num": 9,
+ 			"navigation_condition": "GermanOnly",
  			"style": {
  				"desktop": {
  					"grid_container_style": {},
@@ -12209,7 +12200,6 @@
  				"de": "Abschluss",
  				"en": "Finish"
  			},
- 			"navi_num": 10,
  			"style": {
  				"desktop": {
  					"grid_container_style": {},
@@ -12371,7 +12361,6 @@
  				"en": ""
  			},
  			"no_navigation": true,
- 			"navi_num": 0,
  			"style": {
  				"desktop": {
  					"grid_container_style": {},

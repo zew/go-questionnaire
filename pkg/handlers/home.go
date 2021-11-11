@@ -386,6 +386,8 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 
+	q.EnumeratePages()
+
 	err = q.ComputeDynamicContent(q.CurrPage)
 	if err != nil {
 		log.Printf("ComputeDynamicContent computation for page %v caused error %v", prevPage, err)

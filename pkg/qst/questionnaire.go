@@ -361,13 +361,14 @@ func (q QuestionnaireT) GroupHTMLTableBased(pageIdx, grpIdx int) string {
 
 // Type page contains groups with inputs
 type pageT struct {
-	Section         trl.S  `json:"section,omitempty"`       // extra strong before label in content - summary headline for multiple pages
-	Label           trl.S  `json:"label,omitempty"`         // headline, set to "" to prevent rendering
-	Desc            trl.S  `json:"description,omitempty"`   // abstract
-	Short           trl.S  `json:"short,omitempty"`         // sort version of section/label/description - in progress bar and navigation menu
-	NoNavigation    bool   `json:"no_navigation,omitempty"` // Page will not show up in progress bar
-	NavigationalNum int    `json:"navi_num"`                // The number in Navigation order; based on NoNavigation; computed by q.Validate
-	Condition       string `json:"condition,omitempty"`
+	Section             trl.S  `json:"section,omitempty"`              // extra strong before label in content - summary headline for multiple pages
+	Label               trl.S  `json:"label,omitempty"`                // headline, set to "" to prevent rendering
+	Desc                trl.S  `json:"description,omitempty"`          // abstract
+	Short               trl.S  `json:"short,omitempty"`                // sort version of section/label/description - in progress bar and navigation menu
+	NoNavigation        bool   `json:"no_navigation,omitempty"`        // page will not show up in progress bar
+	NavigationCondition string `json:"navigation_condition,omitempty"` // free func whether showing a page in navigation
+
+	navigationSequenceNum int // number in navigation order; dynamically computed in MainH()
 
 	Style *css.StylesResponsive `json:"style,omitempty"`
 
@@ -1013,7 +1014,8 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 	return ret, nil
 }
 
-// isNavigation checks whether pageIdx is suitable as next or previous page
+// isNavigation checks whether pageIdx is suitable
+// as next or previous page
 func (q *QuestionnaireT) isNavigation(pageIdx int) bool {
 
 	if pageIdx < 0 || pageIdx > len(q.Pages)-1 {
@@ -1024,11 +1026,23 @@ func (q *QuestionnaireT) isNavigation(pageIdx int) bool {
 		return false
 	}
 
-	if fc, ok := naviFuncs[q.Pages[pageIdx].Condition]; ok {
+	if fc, ok := naviFuncs[q.Pages[pageIdx].NavigationCondition]; ok {
 		return fc(q, pageIdx)
 	}
 
 	return true
+}
+
+// EnumeratePages allocates a sequence number
+// based on isNavigation()
+func (q *QuestionnaireT) EnumeratePages() {
+	navigationalNum := 0
+	for i1 := 0; i1 < len(q.Pages); i1++ {
+		if q.isNavigation(i1) {
+			navigationalNum++
+			q.Pages[i1].navigationSequenceNum = navigationalNum
+		}
+	}
 }
 
 // next page to be shown in navigation
@@ -1080,7 +1094,7 @@ func (q *QuestionnaireT) Prev() int {
 // PrevNaviNum returns navigational number of the prev page
 func (q *QuestionnaireT) PrevNaviNum() string {
 	pg, _ := q.prevInNavi()
-	return fmt.Sprintf("%v", q.Pages[pg].NavigationalNum)
+	return fmt.Sprintf("%v", q.Pages[pg].navigationSequenceNum)
 }
 
 // HasNext if a next page exists
@@ -1098,7 +1112,7 @@ func (q *QuestionnaireT) Next() int {
 // NextNaviNum returns navigational number of the next page
 func (q *QuestionnaireT) NextNaviNum() string {
 	pg, _ := q.nextInNavi()
-	return fmt.Sprintf("%v", q.Pages[pg].NavigationalNum)
+	return fmt.Sprintf("%v", q.Pages[pg].navigationSequenceNum)
 }
 
 // CurrPageInNavigation - is the current page

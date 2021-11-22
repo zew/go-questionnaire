@@ -249,6 +249,8 @@ github.com/pbberlin/struc2frm v1.2.9 h1:xAyzoBJCIgIXooiLXCyb8eLbirtkg3c3fXdjjERd
 github.com/pbberlin/struc2frm v1.2.9/go.mod h1:hsIWVzQqFpVlrgEwfkkpYRF8nP0wPAjs0O8+o+S9/9I=
 github.com/pbberlin/struc2frm v1.2.10 h1:yHCsJNbQUIEEa8Xh2FTefWJEcOXzcw4LTqnJnIFeX/8=
 github.com/pbberlin/struc2frm v1.2.10/go.mod h1:hsIWVzQqFpVlrgEwfkkpYRF8nP0wPAjs0O8+o+S9/9I=
+github.com/pbberlin/struc2frm v1.2.11 h1:7grBZPSwNEgVikO6tzNGtmdFhg6m+hqNN0mSMHv7QrM=
+github.com/pbberlin/struc2frm v1.2.11/go.mod h1:hsIWVzQqFpVlrgEwfkkpYRF8nP0wPAjs0O8+o+S9/9I=
 github.com/pkg/errors v0.9.1 h1:FEBLx1zS214owpjy7qsBeixbURkuhQAwrK5UwLGTwt4=
 github.com/pkg/errors v0.9.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=

@@ -8,7 +8,7 @@ require (
 	github.com/alexedwards/scs/v2 v2.4.0
 	github.com/go-playground/form v3.1.4+incompatible
 	github.com/gomodule/redigo v1.8.4
-	github.com/pbberlin/struc2frm v1.2.10
+	github.com/pbberlin/struc2frm v1.2.11
 	github.com/pkg/errors v0.9.1
 	// github.com/russross/blackfriday v1.6.0
 	github.com/russross/blackfriday/v2 v2.1.0

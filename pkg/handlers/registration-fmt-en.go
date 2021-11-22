@@ -46,26 +46,28 @@ type formRegistrationFMTEn struct {
 	Leitung     string `json:"leitung"        form:"subtype='select',size='1',label='Management authority',suffix='number of co-workers'"`
 
 	// Taetigkeiten
-	Separator3                   string `json:"separator3"                      form:"subtype='separator',label='replace_me_3'"`
-	VWLAnalyseHaupt              bool   `json:"vwl_analyse_haupt"               form:"label='Economic analysis',label-style='min-width:240px;position: relative; left: -20px;',nobreak='true'"`
-	VWLAnalyseManchmal           bool   `json:"vwl_analyse_manchmal"            form:"label=' ',label-style='min-width:4.8rem'"`
-	WertpapierhandelHaupt        bool   `json:"wertpapierhandel_haupt"          form:"label='Securities trading',label-style='min-width:240px;position: relative; left: -20px;',nobreak='true'"`
-	WertpapierhandelManchmal     bool   `json:"wertpapierhandel_manchmal"       form:"label=' ',label-style='min-width:4.8rem'"`
-	FinanzierungHaupt            bool   `json:"finanzierung_haupt"              form:"label='Corporate finance',label-style='min-width:240px;position: relative; left: -20px;',nobreak='true'"`
-	FinanzierungManchmal         bool   `json:"finanzierung_manchmal"           form:"label=' ',label-style='min-width:4.8rem'"`
-	ManagementHaupt              bool   `json:"management_haupt"                form:"label='Management',label-style='min-width:240px;position: relative; left: -20px;',nobreak='true'"`
-	ManagementManchmal           bool   `json:"management_manchmal"             form:"label=' ',label-style='min-width:4.8rem'"`
-	WertpapieranalyseHaupt       bool   `json:"wertpapieranalyse_haupt"         form:"label='Securities analysis',label-style='min-width:240px;position: relative; left: -20px;',nobreak='true'"`
-	WertpapieranalyseManchmal    bool   `json:"wertpapieranalyse_manchmal"      form:"label=' ',label-style='min-width:4.8rem'"`
-	PortfoliomanagementHaupt     bool   `json:"portfoliomanagement_haupt"       form:"label='Portfolio management',label-style='min-width:240px;position: relative; left: -20px;',nobreak='true'"`
-	PortfoliomanagementManchmal  bool   `json:"portfoliomanagement_manchmal"    form:"label=' ',label-style='min-width:4.8rem'"`
-	AnlageberatungHaupt          bool   `json:"anlageberatung_haupt"            form:"label='Investment advisory services',label-style='min-width:240px;position: relative; left: -20px;',nobreak='true'"`
-	AnlageberatungManchmal       bool   `json:"anlageberatung_manchmal"         form:"label=' ',label-style='min-width:4.8rem'"`
-	VermoegensverwaltungHaupt    bool   `json:"vermoegensverwaltung_haupt"      form:"label='Wealth management',label-style='min-width:240px;position: relative; left: -20px;',nobreak='true'"`
-	VermoegensverwaltungManchmal bool   `json:"vermoegensverwaltung_manchmal"   form:"label=' ',label-style='min-width:4.8rem'"`
-	RisikomanagementHaupt        bool   `json:"risikomanagement_haupt"          form:"label='Risk management',label-style='min-width:240px;position: relative; left: -20px;',nobreak='true'"`
-	RisikomanagementManchmal     bool   `json:"risikomanagement_manchmal"       form:"label=' ',label-style='min-width:4.8rem'"`
-	Sonstiges                    string `json:"Other activities"                form:"maxlength='40',size='40',label='Other activities',label-style='min-width:240px;position: relative; left: -20px;',suffix='other activities'"`
+	Separator3           string `json:"separator3"                      form:"subtype='separator',label='replace_me_3'"`
+	VWLAnalyse           string `json:"vwl_analyse"              form:"subtype='radiogroup',label='Economic analysis',label-style='min-width:240px;position: relative; left: -20px;'"`
+	Wertpapierhandel     string `json:"wertpapierhandel"         form:"subtype='radiogroup',label='Securities trading',label-style='min-width:240px;position: relative; left: -20px;'"`
+	Finanzierung         string `json:"finanzierung"             form:"subtype='radiogroup',label='Corporate finance',label-style='min-width:240px;position: relative; left: -20px;'"`
+	Management           string `json:"management"               form:"subtype='radiogroup',label='Management',label-style='min-width:240px;position: relative; left: -20px;'"`
+	Wertpapieranalyse    string `json:"wertpapieranalyse"        form:"subtype='radiogroup',label='Securities analysis',label-style='min-width:240px;position: relative; left: -20px;'"`
+	Portfoliomanagement  string `json:"portfoliomanagement"      form:"subtype='radiogroup',label='Portfolio management',label-style='min-width:240px;position: relative; left: -20px;'"`
+	Anlageberatung       string `json:"anlageberatung"           form:"subtype='radiogroup',label='Investment advisory services',label-style='min-width:240px;position: relative; left: -20px;'"`
+	Vermoegensverwaltung string `json:"vermoegensverwaltung"     form:"subtype='radiogroup',label='Wealth management',label-style='min-width:240px;position: relative; left: -20px;'"`
+	Risikomanagement     string `json:"risikomanagement"         form:"subtype='radiogroup',label='Risk management',label-style='min-width:240px;position: relative; left: -20px;'"`
+	Sonstiges            string `json:"sonstiges"                form:"maxlength='40',size='40',label='Sonstiges',label-style='min-width:240px;position: relative; left: -20px;',suffix='sonstige Tätigkeiten'"`
+
+	// VWLAnalyseHaupt           bool   `json:"vwl_analyse_haupt"               form:"label='Economic analysis',label-style='min-width:240px;position: relative; left: -20px;',nobreak='true'"`
+	// WertpapierhandelHaupt     bool   `json:"wertpapierhandel_haupt"          form:"label='Securities trading',label-style='min-width:240px;position: relative; left: -20px;',nobreak='true'"`
+	// FinanzierungHaupt         bool   `json:"finanzierung_haupt"              form:"label='Corporate finance',label-style='min-width:240px;position: relative; left: -20px;',nobreak='true'"`
+	// ManagementHaupt           bool   `json:"management_haupt"                form:"label='Management',label-style='min-width:240px;position: relative; left: -20px;',nobreak='true'"`
+	// WertpapieranalyseHaupt    bool   `json:"wertpapieranalyse_haupt"         form:"label='Securities analysis',label-style='min-width:240px;position: relative; left: -20px;',nobreak='true'"`
+	// PortfoliomanagementHaupt  bool   `json:"portfoliomanagement_haupt"       form:"label='Portfolio management',label-style='min-width:240px;position: relative; left: -20px;',nobreak='true'"`
+	// AnlageberatungHaupt       bool   `json:"anlageberatung_haupt"            form:"label='Investment advisory services',label-style='min-width:240px;position: relative; left: -20px;',nobreak='true'"`
+	// VermoegensverwaltungHaupt bool   `json:"vermoegensverwaltung_haupt"      form:"label='Wealth management',label-style='min-width:240px;position: relative; left: -20px;',nobreak='true'"`
+	// RisikomanagementHaupt     bool   `json:"risikomanagement_haupt"          form:"label='Risk management',label-style='min-width:240px;position: relative; left: -20px;',nobreak='true'"`
+	// Sonstiges                 string `json:"Other activities"                form:"maxlength='40',size='40',label='Other activities',label-style='min-width:240px;position: relative; left: -20px;',suffix='other activities'"`
 
 	Separator4 string `json:"separator4"   form:"subtype='separator',label=' &nbsp; '"`
 	Terms      bool   `json:"terms"        form:"label='Data protection',suffix='replace_me_1'"`
@@ -156,9 +158,25 @@ func RegistrationFMTEnH(w http.ResponseWriter, r *http.Request) {
 		font-family: BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; 
 	}  `
 	s2f.CSS += ` div.struc2frm span.postlabel { font-size: 80%; } `
+	s2f.CSS += ` div.struc2frm input[type=radio] { margin-left: 0.8rem ; margin-right: 4.8rem } `
 	s2f.SetOptions("department", []string{"ub", "fm"}, []string{"UB", "FM"})
 	s2f.SetOptions("geschlecht", []string{"", "male", "female", "diverse"}, []string{"Please choose", "male", "female", "diverse"})
 	s2f.SetOptions("leitung", []string{"0", "<=10", "<=50", "<=100", "<=1000", ">1000"}, []string{"-", "up to 10", "up to 50", "up to 100", "up to 1000", "over 1000"})
+
+	depth := []string{
+		"vwl_analyse",
+		"wertpapierhandel",
+		"finanzierung",
+		"management",
+		"wertpapieranalyse",
+		"portfoliomanagement",
+		"anlageberatung",
+		"vermoegensverwaltung",
+		"risikomanagement",
+	}
+	for _, s := range depth {
+		s2f.SetOptions(s, []string{"primary", "secondary"}, []string{"", ""})
+	}
 
 	frm := formRegistrationFMTEn{}
 

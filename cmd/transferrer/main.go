@@ -424,9 +424,11 @@ func main() {
 			}
 		}
 
-		allKeys := [][]string{}
-		allVals := [][]string{}
-		staticCols := []string{
+		keysByQ := [][]string{} // per questionnaire
+		valsByQ := [][]string{} // per questionnaire
+
+		// CSV header stuff:
+		staticCols := []string{ // across all questionnaires
 			"user_id",
 			"lang_code",
 			"closing_time",
@@ -497,7 +499,7 @@ func main() {
 			finishes, ks, vs := q.KeysValues(true)
 
 			ks = append(staticCols, ks...)
-			allKeys = append(allKeys, ks)
+			keysByQ = append(keysByQ, ks)
 
 			formattedClosingTime := ""
 			status := "0"
@@ -514,7 +516,7 @@ func main() {
 				status = "2"
 			}
 
-			//
+			// equivalent staticCols...
 			prepend := []string{
 				qs[i].UserID,         // user_id
 				qs[i].LangCode,       // lang_code
@@ -533,11 +535,11 @@ func main() {
 				}
 			}
 			vs = append(prepend, vs...)
-			allVals = append(allVals, vs)
+			valsByQ = append(valsByQ, vs)
 
 		} // forr questionnaires
 
-		allKeysSuperset := Superset(allKeys)
+		allKeysSuperset := Superset(keysByQ)
 
 		allKeysSSMap := map[string]int{}
 		for idx, v := range allKeysSuperset {
@@ -555,9 +557,9 @@ func main() {
 		// log.Printf("%v", util.IndentedDump(allVals))
 
 		// Collect values...
-		for i1 := 0; i1 < len(allVals); i1++ {
-			keys := allKeys[i1]
-			vals := allVals[i1]
+		for i1 := 0; i1 < len(valsByQ); i1++ {
+			keys := keysByQ[i1]
+			vals := valsByQ[i1]
 			valsBySuperset = append(valsBySuperset, make([]string, len(allKeysSuperset)))
 			for i2 := 0; i2 < len(keys); i2++ {
 				v := vals[i2]
@@ -591,6 +593,30 @@ func main() {
 		if err != nil {
 			log.Printf("Could not write file %v: %v", fn, err)
 		}
+
+		//
+		// Labels
+		staticLabels := []string{}
+		if len(qs) > 0 {
+			fnCore := c2.SurveyType + "-" + c2.WaveID
+			pthBase := path.Join(qst.BasePath(), fnCore+".json")
+			qBase, err := qst.Load1(pthBase)
+			if err != nil {
+				log.Printf("Loading base questionnaire error %v", err)
+			}
+			// copy(staticLabels, staticCols)
+			lbk := qBase.LabelsByKeys()
+			for _, key := range allKeysSuperset {
+				if lbl, ok := lbk[key]; ok {
+					staticLabels = append(staticLabels, lbl)
+				} else {
+					staticLabels = append(staticLabels, key)
+				}
+			}
+			fnLabels := strings.ReplaceAll(fn, ".csv", "-labels.csv")
+			err = cloudio.WriteFile(fnLabels, strings.NewReader(strings.Join(staticLabels, ";")), 0644)
+		}
+
 		log.Printf(
 			"\n\nRegular finish. %v questionnaire(s) processed\n%v non empty - %v empty\nresults in %v\n\n", len(qs),
 			nonEmpty, empty, fn,

@@ -23,6 +23,7 @@ ECHO "============="  >>%LOGFILE%
 rm ./transferrer.exe
 go build
 
+@REM standalone execution...
 transferrer.exe -rmt=transferrer/fmt-remote.json  >>%LOGFILE% 2>&1
 
 COPY /Y  C:\xampp\htdocs\go-questionnaire\app-bucket\responses\downloaded\fmt-*.csv C:\xampp\htdocs\fmt\Mikrodaten-ger\

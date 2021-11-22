@@ -58,10 +58,17 @@ var skipInputNames = map[string]map[string]bool{
 // answers responded to.
 // It is helper to ResponseStatistics().
 func (q *QuestionnaireT) Statistics() (int, int, float64) {
+
 	responses := 0
 	counter := 0
 	radioDoubles := map[string]int{}
-	for _, p := range q.Pages {
+
+	for pageIdx, p := range q.Pages {
+
+		if !q.isNavigation(pageIdx) {
+			continue
+		}
+
 		for _, gr := range p.Groups {
 			for _, i := range gr.Inputs {
 				if i.IsLayout() {
@@ -70,21 +77,25 @@ func (q *QuestionnaireT) Statistics() (int, int, float64) {
 				if i.Type == "hidden" {
 					continue
 				}
-				if i.Type == "checkbox" { // I am not sure
-					continue
-				}
-				// if i.Type == "textarea" { // textarea is always optional
-				// 	continue
-				// }
+
+				// checkboxes on submit are set to
+				// "<input type='hidden' value='0'...
+
+				// textareas are considered mandatory
+				// unless configured in skipInputNames[]
+
 				if skipInputNames[q.Survey.Type][i.Name] {
 					continue
 				}
+
 				if radioDoubles[i.Name] > 0 {
 					continue
 				}
 				radioDoubles[i.Name]++
+
 				counter++
-				if i.Response != "" && i.Response != "0" {
+
+				if i.Response != "" {
 					responses++
 				}
 			}

@@ -392,7 +392,6 @@ func special202106(q *qst.QuestionnaireT) error {
 					radVal := sp[0]
 					trlDe := sp[1]
 					trlEn := sp[2]
-					// val = fmt.Sprintf(val, groupIDs[idx])
 					lbl := trl.S{"de": trlDe, "en": trlEn}
 
 					rad := gr.AddInput()

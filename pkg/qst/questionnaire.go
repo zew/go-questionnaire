@@ -568,7 +568,7 @@ func (q *QuestionnaireT) EditPage(idx int) *pageT {
 
 /*
 // RemoveGroup from page
-func (q *QuestionnaireT) RemoveGroup(pageIdx, groupIdx int) {
+func (q *QuestionnaireT) RemoveGroup(pageIdx, grpIdx int) {
 
 	if pageIdx < 0 || pageIdx > len(q.Pages)-1 {
 		log.Panicf(
@@ -576,7 +576,7 @@ func (q *QuestionnaireT) RemoveGroup(pageIdx, groupIdx int) {
 			len(q.Pages), len(q.Pages)-1)
 	}
 
-	if groupIdx < 0 || groupIdx > len(q.Pages[pageIdx].Groups)-1 {
+	if grpIdx < 0 || grpIdx > len(q.Pages[pageIdx].Groups)-1 {
 		log.Panicf(
 			"AddPageAfter(): %v pages - valid indexes are 0...%v",
 			len(q.Pages[pageIdx].Groups),
@@ -585,8 +585,8 @@ func (q *QuestionnaireT) RemoveGroup(pageIdx, groupIdx int) {
 	}
 
 	copy(
-		q.Pages[pageIdx].Groups[groupIdx+0:],
-		q.Pages[pageIdx].Groups[groupIdx+1:],
+		q.Pages[pageIdx].Groups[grpIdx+0:],
+		q.Pages[pageIdx].Groups[grpIdx+1:],
 	) // shift one slot to the left
 
 	q.Pages[pageIdx].Groups = q.Pages[pageIdx].Groups[:len(q.Pages[pageIdx].Groups)-1]
@@ -939,8 +939,8 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 
 	page.ConsolidateRadioErrors(grpOrder)
 
-	compositCntr := -1
-	nonCompositCntr := -1
+	compositCntr := -1    // group counter - per page
+	nonCompositCntr := -1 // group counter - per page
 	for loopIdx, grpIdx := range grpOrder {
 		if page.Groups[grpIdx].HasComposit() {
 			compositCntr++
@@ -957,10 +957,15 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 		} else {
 			grpHTML := q.GroupHTMLGridBased(pageIdx, grpIdx)
 
+			// dynamic numbering - based on group sequence per page after shuffling
 			if strings.Contains(grpHTML, "[groupID]") {
 				nonCompositCntr++
 				grpHTML = strings.Replace(grpHTML, "[groupID]", fmt.Sprintf("%v", nonCompositCntr+1), -1)
 			}
+
+			// dynamic question numbering - based on isNavigation()
+			// todo
+
 			fmt.Fprint(w, grpHTML+"\n")
 		}
 
@@ -1250,6 +1255,114 @@ func EnglishTextAndNumbersOnly(s string) string {
 	// }
 
 	return s
+}
+
+// LabelCleanse removes HTML stuff;
+// argument q is not yet used
+func (q *QuestionnaireT) LabelCleanse(s string) string {
+	s = strings.ReplaceAll(s, "&#931;", " sum ") // Σ - greek sum symbol
+	s = strings.ReplaceAll(s, "&shy;", "")
+	s = strings.ReplaceAll(s, "&nbsp;", " ")
+	s = strings.ReplaceAll(s, "<br>", " ")
+	s = strings.ReplaceAll(s, "<b>", " ")
+	s = strings.ReplaceAll(s, "</b>", " ")
+	s = EnglishTextAndNumbersOnly(s)
+	return s
+}
+
+// LabelEmpty checks if labels have real 'content'
+func (q *QuestionnaireT) LabelEmpty(s string) bool {
+	return s == "" || s == "&nbsp;" || s == `&#931;`
+
+	/*
+
+		   	if a label starts with
+		   	<b>1.)
+			<b>2b.
+			<b>3
+
+			then it is final
+	*/
+}
+
+// LabelsByKeys all possible labels
+func (q *QuestionnaireT) LabelsByKeys() map[string]string {
+
+	labelsByKeys := map[string]string{}
+	labelsPerRadio := map[string][]string{}
+
+	for i1 := 0; i1 < len(q.Pages); i1++ {
+		for i2 := 0; i2 < len(q.Pages[i1].Groups); i2++ {
+			for i3 := 0; i3 < len(q.Pages[i1].Groups[i2].Inputs); i3++ {
+
+				inp := q.Pages[i1].Groups[i2].Inputs[i3]
+
+				if inp.IsLayout() {
+					continue
+				}
+
+				// going back until we have found a label
+				lbl := ""
+				// nameForLog := fmt.Sprintf("%10v.%v", inp.Name, inp.ValueRadio)
+				// if inp.ValueRadio == "" {
+				// 	nameForLog = inp.Name
+				// }
+				// log.Printf("inp %-10v  - gr%v.i%v", nameForLog, i2, i3)
+			lp1:
+				for grUp := i2; grUp > -1; grUp-- {
+
+					countDownFrom := i3
+					if grUp != i2 {
+						countDownFrom = len(q.Pages[i1].Groups[grUp].Inputs)
+					}
+
+					for inpUp := countDownFrom; inpUp > -1; inpUp-- {
+						lbl = q.Pages[i1].Groups[grUp].Inputs[inpUp].Label.TrSilent("en")
+						lbl = strings.TrimSpace(lbl)
+						if !q.LabelEmpty(lbl) {
+							// log.Printf("\t\t\tfound lbl at gr%02v.inp%02v: '%v'", grUp, inpUp, q.LabelCleanse(lbl))
+							break lp1
+						}
+						// log.Printf("\t\tstepping up gr %v", inpUp)
+					}
+					// log.Printf("\tstepping up gr %v", grUp)
+
+				}
+
+				lbl = q.LabelCleanse(lbl) // cleanse for usage down down
+				labelsByKeys[inp.Name] = lbl
+
+				// special treatment for radio inputs - who occur several times
+				if inp.Type == "radio" {
+
+					if lbl != "" {
+						if labelsPerRadio[inp.Name] == nil {
+							labelsPerRadio[inp.Name] = []string{}
+						}
+						labelsPerRadio[inp.Name] = append(labelsPerRadio[inp.Name], lbl)
+					}
+
+					// exclude doublettes
+					repeats := map[string]int{}
+					uniqueRadioLabels := ""
+					for _, lblLp := range labelsPerRadio[inp.Name] {
+						repeats[lblLp]++
+						if repeats[lblLp] == 1 {
+							notFirst := uniqueRadioLabels != ""
+							if notFirst {
+								uniqueRadioLabels += " -- "
+							}
+							uniqueRadioLabels += lblLp
+						}
+					}
+
+					labelsByKeys[inp.Name] = uniqueRadioLabels
+				}
+
+			}
+		}
+	}
+	return labelsByKeys
 }
 
 // KeysValues returns all pages finish times; keys and values in defined order.

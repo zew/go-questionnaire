@@ -44,32 +44,36 @@ var inputNamesAssetClassesChange202109 = []string{
 
 var influenceFactorLabels202109 = []trl.S{
 	{
-		"de": "Gesamtwirtschaftlicher Ausblick",
-		"en": "Economic outlook",
+		"de": "Gesamtwirtschaftlicher Ausblick in der Eurozone",
+		"en": "Economic outlook for the Eurozone",
 	},
 	{
 		"de": "Geldpolitik der EZB",
 		"en": "ECB monetary policy",
 	},
 	{
-		"de": "Geldpolitik der Fed",
-		"en": "Fed monetary policy",
+		"de": "Geldpolitik der US-Notenbank",
+		"en": "US Federal Reserve monetary policy",
 	},
 	{
-		"de": "Ausblick Inflation",
-		"en": "Inflation outlook",
+		"de": "Ausblick Inflation in der Eurozone",
+		"en": "Inflation outlook for the Eurozone",
 	},
 	{
-		"de": "Politische Rahmen&shy;bedingungen Eurogebiet",
-		"en": "Political framework euro area",
+		"de": "Politische Rahmen&shy;bedingungen in der Eurozone",
+		"en": "Political framework in the Eurozone",
 	},
-	{
-		"de": "Geopolitische Rahmen&shy;bedingungen",
-		"en": "Geopolitical framework",
-	},
+	// {
+	// 	"de": "Politische Rahmen&shy;bedingungen Eurogebiet",
+	// 	"en": "Political framework euro area",
+	// },
+	// {
+	// 	"de": "Geopolitische Rahmen&shy;bedingungen",
+	// 	"en": "Geopolitical framework",
+	// },
 	{
 		"de": "Aktuelle Markt&shy;bewertung",
-		"en": "Current market valuation",
+		"en": "Current valuation multiples",
 	},
 	// {
 	// 	"de": "Andere",
@@ -78,19 +82,20 @@ var influenceFactorLabels202109 = []trl.S{
 }
 
 var influenceFactorNames202109 = []string{
-	"economy",         // overall economic outlook
-	"ecb",             // monetary policy ecb
-	"fed",             // monetary policy fed
-	"inflation",       // outlook inflation
-	"politics_euro",   // political framework euro area
-	"politics_global", // political framework global
-	"valuation",       // market valuation
+	"economy",   // overall economic outlook
+	"ecb",       // monetary policy ecb
+	"fed",       // monetary policy fed
+	"inflation", // outlook inflation
+	"politics",  // political framework
+	// "politics_euro",   // political framework euro area
+	// "politics_global", // political framework global
+	"valuation", // market valuation
 	// "other",     // other
 }
 
 func special202109(q *qst.QuestionnaireT) error {
 
-	if q.Survey.Year != 2021 || q.Survey.Month != 9 {
+	if q.Survey.Year != 2021 || (q.Survey.Month != 9 && q.Survey.Month != 12) {
 		return nil
 	}
 
@@ -103,7 +108,8 @@ func special202109(q *qst.QuestionnaireT) error {
 		page := q.AddPage()
 		page.Label = trl.S{
 			"de": "Sonderfrage: Anlageklassen im Eurogebiet",
-			"en": "Special: Asset Classes in the Euro Area",
+			// "en": "Special: Asset Classes in the Euro Area",
+			"en": "Additional questions on the attractiveness of different asset classes",
 		}
 		page.Short = trl.S{
 			"de": "Sonderfrage:<br>Anlageklassen",
@@ -147,14 +153,14 @@ func special202109(q *qst.QuestionnaireT) error {
 				"en": `
 				<p style=''>
 					<b>1.</b> &nbsp;
-					How do you assess the risk return characteristics of following asset classes,
-					in the next six months?
-					
-					Base your consideration on broadly diversified indices 
-					in the <b><i>euro area</i></b>.
+					What is your assessment of the risk-return-profile 
+					of the following asset classes
+ 					over the coming six months?
+					 
+					Think about diversified investments in assets from the Eurozone
 				</p>
 				<p style=''>
-					I assess the risk return characteristics as …
+					My assessment of the risk return profile is …
 				</p>
 				`,
 			}
@@ -178,27 +184,35 @@ func special202109(q *qst.QuestionnaireT) error {
 				inp.Label = trl.S{"de": "Kommentar zur Umfrage: ", "en": "Comment on the survey: "}
 				inp.Label = trl.S{
 					"de": `
+				<p style=''>
 					<b>2.</b>  &nbsp;
 					Haben Entwicklungen der folgenden Faktoren 
 					Sie zu einer Revision Ihrer Einschätzungen 
 					zum Rendite-Risiko-Profil der einzelnen Assetklassen 
-					gegenüber Juni 2021 bewogen?
-					<br>
+					gegenüber September 2021 bewogen?
+
+				</p>
+
+				<p style=''>
 					Wenn ja, 
-					nach oben (+) oder unten (-)?
+					nach oben (+) oder unten (-) ?
+				</p>
+
 					`,
 
 					"en": `
+				<p style=''>
 					<b>2.</b>  &nbsp;
-					Has your assessment of the risk return characteristics of following 
-					asset classes
-					been influenced by any of the
-					following factors 
-					since June of 2021?
+					Did developments in the following areas lead you to 
+					change your assessment of the risk-return-profiles 
+					of the following four asset classes
+					(relative to September 2021)?
+				</p>
+
+				<p style=''>
+					If yes, did you revise them up (+) or down (-) ?
+				</p>
 					
-					<br>
-					If so, 
-					upwards (+) or downwards (-)?
 
 					`,
 				}
@@ -272,7 +286,7 @@ func special202109(q *qst.QuestionnaireT) error {
 						<span>2.%v.</span> &nbsp;
 
 						%v
-						&nbsp; - &nbsp;  euro area
+						<!-- &nbsp; - &nbsp;  euro area -->
 					</p>
 					`,
 						idx+1,

@@ -627,7 +627,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.ColSpanLabel = 6
 				inp.Label = trl.S{
 					"de": " <br>Mit einer Wahrscheinlichkeit von 90&nbsp;Prozent liegt der DAX dann zwischen ",
-					"en": " <br>With a probability of 90&nbsp;per&nbsp;cent the DAX will then range between",
+					"en": " <br>With a probability of 90&nbsp;per&nbsp;cent, the DAX will then range between",
 				}
 			}
 			// third row
@@ -945,7 +945,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				rad.ColSpanControl = 1
 				rad.Label = trl.S{
 					"de": "Zugang bleibt bestehen.  Daten können in weiteren Sitzungen geändert/ergänzt werden. ",
-					"en": "Leave questionnaire open. Data  can be changed/completed&nbsp;in later sessions.     ",
+					"en": "Leave the questionnaire open. Data  can be changed/completed&nbsp;in later sessions.     ",
 				}
 			}
 			{
@@ -958,7 +958,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				rad.ColSpanControl = 1
 				rad.Label = trl.S{
 					"de": "Fragebogen ist abgeschlossen und kann nicht mehr geöffnet werden. ",
-					"en": "Questionnaire is finished. No more edits.                         ",
+					"en": "The questionnaire is finished. No more edits.                         ",
 				}
 			}
 		}
@@ -977,7 +977,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.Label = trl.S{"de": "", "en": ""}
 				inp.Label = trl.S{
 					"de": "Durch Klicken erhalten Sie eine Zusammenfassung Ihrer Antworten",
-					"en": "By clicking you receive a summary of your answers",
+					"en": "By clicking, you will receive a summary of your answers.",
 				}
 				inp.ColSpan = 1
 				inp.ColSpanLabel = 1

@@ -595,7 +595,7 @@ func main() {
 		}
 
 		//
-		// Labels
+		// Labels into separate CSV file
 		staticLabels := []string{}
 		if len(qs) > 0 {
 			fnCore := c2.SurveyType + "-" + c2.WaveID

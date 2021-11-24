@@ -25,11 +25,11 @@ var inflationFactorNames = []string{
 var inflationFactorLabels = []trl.S{
 	{
 		"de": "Konjunktur&shy;ent&shy;wicklung im Eurogebiet",
-		"en": "Eurozone economic growth",
+		"en": "Euro area economic growth",
 	},
 	{
 		"de": "Entwicklung der Löhne im Eurogebiet",
-		"en": "Eurozone wages",
+		"en": "Euro area wages",
 	},
 	{
 		"de": "Entwicklung der Energiepreise",
@@ -343,7 +343,7 @@ func special202111a(q *qst.QuestionnaireT) error {
 					"en": `
 					<b>3.</b>  &nbsp;
 						Did developments in the following areas make you to change your inflation forecasts 
-						for the Eurozone (relative to August 2021)? 
+						for the euro area (relative to August 2021)? 
 						
 						If yes, did you revise them up (+) or down (-)? 
 					

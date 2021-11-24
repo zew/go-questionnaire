@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "f4f23cae7bb7697fac8c52e107c719cd584407b3bfce7f4e062082d53f006d1f",
+ 	"md_5": "46a5571c2f65608adb539cbf40d6b7c2311e4c9f3cd97d01299f726d7688053e",
  	"lang_codes": [
  		"de",
  		"en"
@@ -2974,7 +2974,7 @@
  							"type": "textblock",
  							"label": {
  								"de": " \u003cbr\u003eMit einer Wahrscheinlichkeit von 90\u0026nbsp;Prozent liegt der DAX dann zwischen ",
- 								"en": " \u003cbr\u003eWith a probability of 90\u0026nbsp;per\u0026nbsp;cent the DAX will then range between"
+ 								"en": " \u003cbr\u003eWith a probability of 90\u0026nbsp;per\u0026nbsp;cent, the DAX will then range between"
  							},
  							"col_span": 6,
  							"col_span_label": 6
@@ -4561,7 +4561,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003cb\u003e1.\u003c/b\u003e \u0026nbsp;\n\t\t\t\t\tMit Blick auf die nächsten sechs Monate, \n\t\t\t\t\twie beurteilen Sie das Rendite-Risko-Profil der folgenden Anlageklassen? \n\t\t\t\t\t\n\t\t\t\t\tOrientieren Sie sich an breit gestreuten Indizes\n\t\t\t\t\tfür das \u003cb\u003e\u003ci\u003eEuro\u0026shy;gebiet\u003c/i\u003e\u003c/b\u003e.\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\tDas Rendite-Risiko-Profil beurteile ich …\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t",
- 								"en": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003cb\u003e1.\u003c/b\u003e \u0026nbsp;\n\t\t\t\t\tWhat is your assessment of the risk-return-profile \n\t\t\t\t\tof the following asset classes\n \t\t\t\t\tover the coming six months?\n\t\t\t\t\t \n\t\t\t\t\tThink about diversified in\u0026shy;vest\u0026shy;ments in assets from the Eurozone\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\tMy assessment of the risk return profile is …\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"en": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003cb\u003e1.\u003c/b\u003e \u0026nbsp;\n\t\t\t\t\tWhat is your assessment of the risk return profile \n\t\t\t\t\tof the following asset classes\n \t\t\t\t\tover the coming six months?\n\t\t\t\t\t \n\t\t\t\t\tThink about diversified in\u0026shy;vest\u0026shy;ments in assets from the \u003cb\u003eEurozone\u003c/b\u003e\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\tMy assessment of the risk return profile is …\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 5,
  							"col_span_label": 1
@@ -5025,7 +5025,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003cb\u003e2.\u003c/b\u003e  \u0026nbsp;\n\t\t\t\t\tHaben Entwicklungen der folgenden Faktoren \n\t\t\t\t\tSie zu einer Revision Ihrer Einschätzungen \n\t\t\t\t\tzum Rendite-Risiko-Profil der einzelnen Assetklassen \n\t\t\t\t\tgegenüber September 2021 bewogen?\n\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\tWenn ja, \n\t\t\t\t\tnach oben (+) oder unten (-) ?\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t",
- 								"en": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003cb\u003e2.\u003c/b\u003e  \u0026nbsp;\n\t\t\t\t\tDid de\u0026shy;vel\u0026shy;op\u0026shy;ments in the following areas lead you to \n\t\t\t\t\tchange your assessment of the risk-return-profiles \n\t\t\t\t\tof the following four asset classes\n\t\t\t\t\t(relative to September 2021)?\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\tIf yes, did you revise them up (+) or down (-) ?\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\n\n\t\t\t\t\t"
+ 								"en": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003cb\u003e2.\u003c/b\u003e  \u0026nbsp;\n\t\t\t\t\tDid de\u0026shy;vel\u0026shy;op\u0026shy;ments in the following areas lead you to \n\t\t\t\t\tchange your assessment of the risk return profiles \n\t\t\t\t\tof the following four asset classes\n\t\t\t\t\t(relative to September 2021)?\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\tIf yes, did you revise them up (+) or down (-) ?\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\n\n\t\t\t\t\t"
  							},
  							"col_span_label": 1
  						}
@@ -5332,8 +5332,8 @@
  							"name": "chg_euro_stocks__economy",
  							"type": "radio",
  							"label": {
- 								"de": "Ge\u0026shy;samtwirt\u0026shy;schaft\u0026shy;licher Ausblick in der Eurozone",
- 								"en": "Eco\u0026shy;nom\u0026shy;ic outlook for the Eurozone"
+ 								"de": "Ge\u0026shy;samtwirt\u0026shy;schaft\u0026shy;licher Ausblick im Euro\u0026shy;gebiet",
+ 								"en": "Eco\u0026shy;nom\u0026shy;ic outlook for the euro area"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -5506,8 +5506,8 @@
  							"name": "chg_euro_stocks__inflation",
  							"type": "radio",
  							"label": {
- 								"de": "Ausblick Inflation in der Eurozone",
- 								"en": "Inflation outlook for the Eurozone"
+ 								"de": "Ausblick Inflation im Euro\u0026shy;gebiet",
+ 								"en": "Inflation outlook for the euro area"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -6059,8 +6059,8 @@
  							"name": "chg_euro_bonds_govt__economy",
  							"type": "radio",
  							"label": {
- 								"de": "Ge\u0026shy;samtwirt\u0026shy;schaft\u0026shy;licher Ausblick in der Eurozone",
- 								"en": "Eco\u0026shy;nom\u0026shy;ic outlook for the Eurozone"
+ 								"de": "Ge\u0026shy;samtwirt\u0026shy;schaft\u0026shy;licher Ausblick im Euro\u0026shy;gebiet",
+ 								"en": "Eco\u0026shy;nom\u0026shy;ic outlook for the euro area"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -6233,8 +6233,8 @@
  							"name": "chg_euro_bonds_govt__inflation",
  							"type": "radio",
  							"label": {
- 								"de": "Ausblick Inflation in der Eurozone",
- 								"en": "Inflation outlook for the Eurozone"
+ 								"de": "Ausblick Inflation im Euro\u0026shy;gebiet",
+ 								"en": "Inflation outlook for the euro area"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -6786,8 +6786,8 @@
  							"name": "chg_euro_bonds_corp__economy",
  							"type": "radio",
  							"label": {
- 								"de": "Ge\u0026shy;samtwirt\u0026shy;schaft\u0026shy;licher Ausblick in der Eurozone",
- 								"en": "Eco\u0026shy;nom\u0026shy;ic outlook for the Eurozone"
+ 								"de": "Ge\u0026shy;samtwirt\u0026shy;schaft\u0026shy;licher Ausblick im Euro\u0026shy;gebiet",
+ 								"en": "Eco\u0026shy;nom\u0026shy;ic outlook for the euro area"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -6960,8 +6960,8 @@
  							"name": "chg_euro_bonds_corp__inflation",
  							"type": "radio",
  							"label": {
- 								"de": "Ausblick Inflation in der Eurozone",
- 								"en": "Inflation outlook for the Eurozone"
+ 								"de": "Ausblick Inflation im Euro\u0026shy;gebiet",
+ 								"en": "Inflation outlook for the euro area"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -7513,8 +7513,8 @@
  							"name": "chg_euro_re__economy",
  							"type": "radio",
  							"label": {
- 								"de": "Ge\u0026shy;samtwirt\u0026shy;schaft\u0026shy;licher Ausblick in der Eurozone",
- 								"en": "Eco\u0026shy;nom\u0026shy;ic outlook for the Eurozone"
+ 								"de": "Ge\u0026shy;samtwirt\u0026shy;schaft\u0026shy;licher Ausblick im Euro\u0026shy;gebiet",
+ 								"en": "Eco\u0026shy;nom\u0026shy;ic outlook for the euro area"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -7687,8 +7687,8 @@
  							"name": "chg_euro_re__inflation",
  							"type": "radio",
  							"label": {
- 								"de": "Ausblick Inflation in der Eurozone",
- 								"en": "Inflation outlook for the Eurozone"
+ 								"de": "Ausblick Inflation im Euro\u0026shy;gebiet",
+ 								"en": "Inflation outlook for the euro area"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -8037,7 +8037,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Zugang bleibt bestehen.  Da\u0026shy;ten können in weiteren Sitzungen geändert/ergänzt werden. ",
- 								"en": "Leave ques\u0026shy;tion\u0026shy;naire open. Data  can be changed/completed\u0026nbsp;in later sessions.     "
+ 								"en": "Leave the ques\u0026shy;tion\u0026shy;naire open. Data  can be changed/completed\u0026nbsp;in later sessions.     "
  							},
  							"col_span": 1,
  							"col_span_label": 6,
@@ -8049,7 +8049,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Fragebogen ist abgeschlossen und kann nicht mehr geöffnet werden. ",
- 								"en": "Ques\u0026shy;tion\u0026shy;naire is finished. No more edits.                         "
+ 								"en": "The ques\u0026shy;tion\u0026shy;naire is finished. No more edits.                         "
  							},
  							"col_span": 1,
  							"col_span_label": 6,
@@ -8066,7 +8066,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "Durch Klicken er\u0026shy;hal\u0026shy;ten Sie eine Zusammenfassung Ihrer Antworten",
- 								"en": "By clicking you receive a summary of your an\u0026shy;swers"
+ 								"en": "By clicking, you will receive a summary of your an\u0026shy;swers."
  							},
  							"col_span": 1,
  							"col_span_label": 1

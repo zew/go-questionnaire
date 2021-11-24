@@ -1175,29 +1175,6 @@ func (q *QuestionnaireT) Compare(v *QuestionnaireT, lenient bool) (bool, error) 
 	return true, nil
 }
 
-var germanUmlaute = strings.NewReplacer(
-	"ä", "ae",
-	"ö", "oe",
-	"ü", "ue",
-	"Ä", "ae",
-	"Ö", "oe",
-	"Ü", "ue",
-	"ß", "ss",
-)
-
-var separators = strings.NewReplacer(
-	"\r\n", " - ",
-	"\n", " - ",
-	":", " - ",
-	";", " - ",
-	// ",", " - ",
-)
-
-// no comma, no colon, no semicolon - only dot or hyphen
-// no newline
-var englishTextAndNumbersOnly = regexp.MustCompile(`[^a-zA-Z0-9\.\_\- ]+`)
-var severalSpaces = regexp.MustCompile(`[ ]+`)
-
 // DelocalizeNumber removes localized number formatting;
 // HTML5 input type number does not de-localize values;
 // 123,456.78 is allowed - and so is 123.456,78;
@@ -1238,6 +1215,29 @@ func DelocalizeNumber(s string) string {
 	return s
 }
 
+var germanUmlaute = strings.NewReplacer(
+	"ä", "ae",
+	"ö", "oe",
+	"ü", "ue",
+	"Ä", "ae",
+	"Ö", "oe",
+	"Ü", "ue",
+	"ß", "ss",
+)
+
+var separators = strings.NewReplacer(
+	"\r\n", " - ",
+	"\n", " - ",
+	":", " - ",
+	";", " - ",
+	// ",", " - ",
+)
+
+// no comma, no colon, no semicolon - only dot or hyphen
+// no newline
+var englishTextAndNumbersOnly = regexp.MustCompile(`[^a-zA-Z0-9\.\_\- ]+`)
+var severalSpaces = regexp.MustCompile(`[ ]+`)
+
 // EnglishTextAndNumbersOnly replaces all other UTF characters by space
 func EnglishTextAndNumbersOnly(s string) string {
 
@@ -1257,7 +1257,7 @@ func EnglishTextAndNumbersOnly(s string) string {
 	return s
 }
 
-// LabelCleanse removes HTML stuff;
+// LabelCleanse removes some common HTML stuff;
 // argument q is not yet used
 func (q *QuestionnaireT) LabelCleanse(s string) string {
 	s = strings.ReplaceAll(s, "&#931;", " sum ") // Σ - greek sum symbol
@@ -1270,19 +1270,14 @@ func (q *QuestionnaireT) LabelCleanse(s string) string {
 	return s
 }
 
-// LabelEmpty checks if labels have real 'content'
-func (q *QuestionnaireT) LabelEmpty(s string) bool {
-	return s == "" || s == "&nbsp;" || s == `&#931;`
+// see unit test for LabelIsOutline()
+var outlineNumbering1 = regexp.MustCompile(`^[0-9]+[a-z\.)]*[\s]+`)
+var outlineNumbering2 = regexp.MustCompile(`^[a-zA-Z][\.)]*[\s]+`)
 
-	/*
-
-		   	if a label starts with
-		   	<b>1.)
-			<b>2b.
-			<b>3
-
-			then it is final
-	*/
+// LabelIsOutline - if s starts with some outline
+// see unit test
+func (q *QuestionnaireT) LabelIsOutline(s string) bool {
+	return outlineNumbering1.MatchString(s) || outlineNumbering2.MatchString(s)
 }
 
 // LabelsByKeys all possible labels
@@ -1318,8 +1313,8 @@ func (q *QuestionnaireT) LabelsByKeys() map[string]string {
 
 					for inpUp := countDownFrom; inpUp > -1; inpUp-- {
 						lbl = q.Pages[i1].Groups[grUp].Inputs[inpUp].Label.TrSilent("en")
-						lbl = strings.TrimSpace(lbl)
-						if !q.LabelEmpty(lbl) {
+						lbl = q.LabelCleanse(lbl)
+						if !q.LabelIsOutline(lbl) {
 							// log.Printf("\t\t\tfound lbl at gr%02v.inp%02v: '%v'", grUp, inpUp, q.LabelCleanse(lbl))
 							break lp1
 						}

@@ -44,8 +44,8 @@ var inputNamesAssetClassesChange202109 = []string{
 
 var influenceFactorLabels202109 = []trl.S{
 	{
-		"de": "Gesamtwirtschaftlicher Ausblick in der Eurozone",
-		"en": "Economic outlook for the Eurozone",
+		"de": "Gesamtwirtschaftlicher Ausblick im Eurogebiet",
+		"en": "Economic outlook for the euro area",
 	},
 	{
 		"de": "Geldpolitik der EZB",
@@ -56,8 +56,8 @@ var influenceFactorLabels202109 = []trl.S{
 		"en": "US Federal Reserve monetary policy",
 	},
 	{
-		"de": "Ausblick Inflation in der Eurozone",
-		"en": "Inflation outlook for the Eurozone",
+		"de": "Ausblick Inflation im Eurogebiet",
+		"en": "Inflation outlook for the euro area",
 	},
 	{
 		"de": "Politische Rahmen&shy;bedingungen in der Eurozone",
@@ -153,11 +153,11 @@ func special202109(q *qst.QuestionnaireT) error {
 				"en": `
 				<p style=''>
 					<b>1.</b> &nbsp;
-					What is your assessment of the risk-return-profile 
+					What is your assessment of the risk return profile 
 					of the following asset classes
  					over the coming six months?
 					 
-					Think about diversified investments in assets from the Eurozone
+					Think about diversified investments in assets from the <b>Eurozone</b>
 				</p>
 				<p style=''>
 					My assessment of the risk return profile is …
@@ -204,7 +204,7 @@ func special202109(q *qst.QuestionnaireT) error {
 				<p style=''>
 					<b>2.</b>  &nbsp;
 					Did developments in the following areas lead you to 
-					change your assessment of the risk-return-profiles 
+					change your assessment of the risk return profiles 
 					of the following four asset classes
 					(relative to September 2021)?
 				</p>

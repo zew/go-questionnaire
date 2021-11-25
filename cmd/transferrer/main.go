@@ -605,9 +605,12 @@ func main() {
 				log.Printf("Loading base questionnaire error %v", err)
 			}
 			// copy(staticLabels, staticCols)
-			lbk := qBase.LabelsByKeys()
+			lbls := qBase.LabelsByKeys()
 			for _, key := range allKeysSuperset {
-				if lbl, ok := lbk[key]; ok {
+				if lbl, ok := lbls[key]; ok {
+					// enclosing every cell value in double quotes allows to include newlines
+					// string(rune(int32(10))) is the inside cell newlince character for Excel under Windows
+					lbl = "\"" + strings.ReplaceAll(lbl, " -- ", string(rune(int32(10)))) + "\""
 					staticLabels = append(staticLabels, lbl)
 				} else {
 					staticLabels = append(staticLabels, key)

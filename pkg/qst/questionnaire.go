@@ -1226,8 +1226,8 @@ var germanUmlaute = strings.NewReplacer(
 )
 
 var separators = strings.NewReplacer(
-	"\r\n", " - ",
-	"\n", " - ",
+	"\r\n", " -- ",
+	"\n", " -- ",
 	":", " - ",
 	";", " - ",
 	// ",", " - ",
@@ -1243,11 +1243,13 @@ func EnglishTextAndNumbersOnly(s string) string {
 
 	// sBefore := s
 
-	s = germanUmlaute.Replace(s)
+	s = strings.TrimSpace(s)
 	s = separators.Replace(s)
 
+	s = germanUmlaute.Replace(s)
 	s = englishTextAndNumbersOnly.ReplaceAllString(s, " ")
 	s = severalSpaces.ReplaceAllString(s, " ")
+
 	s = strings.TrimSpace(s)
 
 	// if sBefore != s {
@@ -1260,13 +1262,19 @@ func EnglishTextAndNumbersOnly(s string) string {
 // LabelCleanse removes some common HTML stuff;
 // argument q is not yet used
 func (q *QuestionnaireT) LabelCleanse(s string) string {
+
 	s = strings.ReplaceAll(s, "&#931;", " sum ") // Σ - greek sum symbol
 	s = strings.ReplaceAll(s, "&shy;", "")
 	s = strings.ReplaceAll(s, "&nbsp;", " ")
 	s = strings.ReplaceAll(s, "<br>", " ")
+
 	s = strings.ReplaceAll(s, "<b>", " ")
 	s = strings.ReplaceAll(s, "</b>", " ")
+	s = strings.ReplaceAll(s, "<bx>", " ")
+	s = strings.ReplaceAll(s, "</bx>", " ")
+
 	s = EnglishTextAndNumbersOnly(s)
+
 	return s
 }
 
@@ -1280,7 +1288,42 @@ func (q *QuestionnaireT) LabelIsOutline(s string) bool {
 	return outlineNumbering1.MatchString(s) || outlineNumbering2.MatchString(s)
 }
 
-// LabelsByKeys all possible labels
+func cleanseDoubles(ss []string) []string {
+
+	// doubles := map[string]int{}
+	// for _, s := range ss {
+	// 	doubles[s]++
+	// }
+
+	counted := map[string]int{}
+	ret := []string{}
+	for _, s := range ss {
+		counted[s]++
+		if counted[s] < 2 {
+			ret = append(ret, s)
+		}
+	}
+
+	return ret
+
+}
+
+// LabelsByKeys extracts the label texts for each input;
+// since there is a lot of summarized labeling for multiple
+// inputs, we have clear relationship;
+// for each input, we traverse up on the page
+// collecting all text until we hit a piece of text
+// which is an outline number.
+//
+// If no limiting outline number is found, text is collected
+// all the way up to the start of the page.
+//
+// Multiple radios for the same input name are condensed; i.e.
+// 		Your growth estimate? Ger O O O  US O O O
+// yields three times "Your growth estimate? Ger"     and
+//        three times "Your growth estimate? Ger US"
+//
+// 		Your growth estimate? Ger good O bad O na O  US good O bad O na O
 func (q *QuestionnaireT) LabelsByKeys() map[string]string {
 
 	labelsByKeys := map[string]string{}
@@ -1296,67 +1339,59 @@ func (q *QuestionnaireT) LabelsByKeys() map[string]string {
 					continue
 				}
 
-				// going back until we have found a label
+				// going up/back until we have found a label
 				lbl := ""
-				// nameForLog := fmt.Sprintf("%10v.%v", inp.Name, inp.ValueRadio)
-				// if inp.ValueRadio == "" {
-				// 	nameForLog = inp.Name
-				// }
-				// log.Printf("inp %-10v  - gr%v.i%v", nameForLog, i2, i3)
-			lp1:
+			nestedLoop:
 				for grUp := i2; grUp > -1; grUp-- {
 
-					countDownFrom := i3
+					countDownInputsFrom := i3
 					if grUp != i2 {
-						countDownFrom = len(q.Pages[i1].Groups[grUp].Inputs)
+						countDownInputsFrom = len(q.Pages[i1].Groups[grUp].Inputs) - 1
 					}
 
-					for inpUp := countDownFrom; inpUp > -1; inpUp-- {
-						lbl = q.Pages[i1].Groups[grUp].Inputs[inpUp].Label.TrSilent("en")
-						lbl = q.LabelCleanse(lbl)
-						if !q.LabelIsOutline(lbl) {
-							// log.Printf("\t\t\tfound lbl at gr%02v.inp%02v: '%v'", grUp, inpUp, q.LabelCleanse(lbl))
-							break lp1
+					for inpUp := countDownInputsFrom; inpUp > -1; inpUp-- {
+						lb := q.Pages[i1].Groups[grUp].Inputs[inpUp].Label.TrSilent("en")
+						lb = q.LabelCleanse(lb)
+						if lb != "" {
+							if lbl != "" {
+								// slow, create a string buffer someday:
+								lbl = lb + " -- " + lbl
+							} else {
+								lbl = lb
+							}
 						}
-						// log.Printf("\t\tstepping up gr %v", inpUp)
+						if q.LabelIsOutline(lb) {
+							// log.Printf("\t\t\tfound lb at gr%02v.inp%02v: '%v'", grUp, inpUp, q.LabelCleanse(lb))
+							break nestedLoop
+						}
 					}
-					// log.Printf("\tstepping up gr %v", grUp)
-
 				}
 
-				lbl = q.LabelCleanse(lbl) // cleanse for usage down down
 				labelsByKeys[inp.Name] = lbl
 
-				// special treatment for radio inputs - who occur several times
+				// special treatment for radio inputs - who occur several times:
+				//   collect their labels
 				if inp.Type == "radio" {
-
 					if lbl != "" {
 						if labelsPerRadio[inp.Name] == nil {
 							labelsPerRadio[inp.Name] = []string{}
 						}
 						labelsPerRadio[inp.Name] = append(labelsPerRadio[inp.Name], lbl)
 					}
-
-					// exclude doublettes
-					repeats := map[string]int{}
-					uniqueRadioLabels := ""
-					for _, lblLp := range labelsPerRadio[inp.Name] {
-						repeats[lblLp]++
-						if repeats[lblLp] == 1 {
-							notFirst := uniqueRadioLabels != ""
-							if notFirst {
-								uniqueRadioLabels += " -- "
-							}
-							uniqueRadioLabels += lblLp
-						}
-					}
-
-					labelsByKeys[inp.Name] = uniqueRadioLabels
 				}
 
 			}
 		}
 	}
+
+	// cleanse repeating radios
+	for inpName := range labelsByKeys {
+		if lbls, ok := labelsPerRadio[inpName]; ok {
+			lbls = cleanseDoubles(lbls)
+			labelsByKeys[inpName] = strings.Join(lbls, " -- ")
+		}
+	}
+
 	return labelsByKeys
 }
 

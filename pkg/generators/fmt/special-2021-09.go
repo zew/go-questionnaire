@@ -153,14 +153,14 @@ func special202109(q *qst.QuestionnaireT) error {
 				"en": `
 				<p style=''>
 					<b>1.</b> &nbsp;
-					What is your assessment of the risk return profile 
+					What is your assessment of the risk-return profile 
 					of the following asset classes
  					over the coming six months?
 					 
 					Think about diversified investments in assets from the <b>Eurozone</b>
 				</p>
 				<p style=''>
-					My assessment of the risk return profile is …
+					My assessment of the risk-return profile is …
 				</p>
 				`,
 			}
@@ -204,7 +204,7 @@ func special202109(q *qst.QuestionnaireT) error {
 				<p style=''>
 					<b>2.</b>  &nbsp;
 					Did developments in the following areas lead you to 
-					change your assessment of the risk return profiles 
+					change your assessment of the risk-return profiles 
 					of the following four asset classes
 					(relative to September 2021)?
 				</p>

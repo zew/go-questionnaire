@@ -1288,12 +1288,20 @@ func (q *QuestionnaireT) LabelIsOutline(s string) bool {
 	return outlineNumbering1.MatchString(s) || outlineNumbering2.MatchString(s)
 }
 
-func cleanseDoubles(ss []string) []string {
-
-	// doubles := map[string]int{}
-	// for _, s := range ss {
-	// 	doubles[s]++
-	// }
+// cleanseIdentical takes the labeling for multiple radio inputs;
+// radio input labels are concatenated from bottom to top;
+// resulting in multiple identical labels;
+// i.e. three times
+// 		Your growth estimate? Ger        O  O  O
+// and three more times
+// 		Your growth estimate? Ger   US   O  O  O
+//
+// or they might differ only in a suffix
+// 		Are you Alice?        Yes O   No O
+//
+// use cleanseIdentical for the first case
+// use cleansePrefixes for the second case
+func cleanseIdentical(ss []string) []string {
 
 	counted := map[string]int{}
 	ret := []string{}
@@ -1308,25 +1316,53 @@ func cleanseDoubles(ss []string) []string {
 
 }
 
+// cleansePrefixes - see cleanseIdentical()
+// for documentation
+func cleansePrefixes(ss []string) []string {
+
+	ret := []string{}
+	for _, s := range ss {
+		stripped := ""
+		for i := len(ss) - 1; i > -1; i-- { // reversely
+			pref := ss[i]
+			if s != pref && strings.HasPrefix(s, pref) {
+				stripped = strings.TrimPrefix(s, pref)
+				stripped = strings.TrimSpace(stripped)
+				// log.Printf("stripped off\n\t%q  \n\t%q  \n\t%q", s, pref, stripped)
+				break
+			}
+		}
+		if stripped == "" {
+			ret = append(ret, s)
+		} else {
+			ret = append(ret, stripped)
+		}
+	}
+
+	return ret
+
+}
+
 // LabelsByKeys extracts the label texts for each input;
+// starting from the input to the top;
 // since there is a lot of summarized labeling for multiple
-// inputs, we have clear relationship;
+// inputs, we have no clear relationship;
 // for each input, we traverse up on the page
 // collecting all text until we hit a piece of text
 // which is an outline number.
 //
-// If no limiting outline number is found, text is collected
+// If no limiting outline number is found, text is concatenated
 // all the way up to the start of the page.
 //
-// Multiple radios for the same input name are condensed; i.e.
-// 		Your growth estimate? Ger O O O  US O O O
-// yields three times "Your growth estimate? Ger"     and
-//        three times "Your growth estimate? Ger US"
-//
-// 		Your growth estimate? Ger good O bad O na O  US good O bad O na O
-func (q *QuestionnaireT) LabelsByKeys() map[string]string {
+// functions cleanseIdentical(...) and cleansePrefixes(...)
+// are used to clear out redundancies; see documentation.
+func (q *QuestionnaireT) LabelsByKeys() (lblsByKeys map[string]string, keys, lbls []string) {
 
-	labelsByKeys := map[string]string{}
+	lblsByKeys = map[string]string{}
+
+	// helpers
+	keysByPage := make([][]string, len(q.Pages))
+	lblsByPage := make([][]string, len(q.Pages))
 	labelsPerRadio := map[string][]string{}
 
 	for i1 := 0; i1 < len(q.Pages); i1++ {
@@ -1367,7 +1403,8 @@ func (q *QuestionnaireT) LabelsByKeys() map[string]string {
 					}
 				}
 
-				labelsByKeys[inp.Name] = lbl
+				lblsByPage[i1] = append(lblsByPage[i1], lbl)
+				keysByPage[i1] = append(keysByPage[i1], inp.Name)
 
 				// special treatment for radio inputs - who occur several times:
 				//   collect their labels
@@ -1382,17 +1419,34 @@ func (q *QuestionnaireT) LabelsByKeys() map[string]string {
 
 			}
 		}
+
 	}
 
 	// cleanse repeating radios
-	for inpName := range labelsByKeys {
-		if lbls, ok := labelsPerRadio[inpName]; ok {
-			lbls = cleanseDoubles(lbls)
-			labelsByKeys[inpName] = strings.Join(lbls, " -- ")
+	for pageIdx := 0; pageIdx < len(keysByPage); pageIdx++ {
+		for inpIdx, inpName := range keysByPage[pageIdx] {
+			if lbls, ok := labelsPerRadio[inpName]; ok {
+				lbls = cleanseIdentical(lbls)
+				lbls = cleansePrefixes(lbls)
+				lblsByPage[pageIdx][inpIdx] = strings.Join(lbls, " -- ")
+			}
 		}
 	}
 
-	return labelsByKeys
+	// cleanse repeating prefixes
+	for pageIdx := 0; pageIdx < len(lblsByPage); pageIdx++ {
+		lblsByPage[pageIdx] = cleansePrefixes(lblsByPage[pageIdx])
+	}
+
+	for pageIdx := 0; pageIdx < len(keysByPage); pageIdx++ {
+		for inpIdx, inpName := range keysByPage[pageIdx] {
+			keys = append(keys, inpName)
+			lbls = append(keys, lblsByPage[pageIdx][inpIdx])
+			lblsByKeys[inpName] = lblsByPage[pageIdx][inpIdx]
+		}
+	}
+
+	return
 }
 
 // KeysValues returns all pages finish times; keys and values in defined order.

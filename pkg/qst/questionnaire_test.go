@@ -1,6 +1,7 @@
 package qst
 
 import (
+	"strings"
 	"testing"
 )
 
@@ -56,6 +57,61 @@ func TestQuestionnaireT_LabelIsOutline(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			if got := tt.q.LabelIsOutline(tt.args.s); got != tt.want {
 				t.Errorf("QuestionnaireT.LabelIsOutline() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
+
+func Test_cleansePrefixes(t *testing.T) {
+
+	// log.SetFlags(log.Lshortfile)
+
+	type args struct {
+		ss []string
+	}
+	tests := []struct {
+		name string
+		args args
+		want []string
+	}{
+		{
+			"t1",
+			args{[]string{
+				"Your growth estimate? Ger",
+				"Your growth estimate? Ger",
+				"Your growth estimate? Ger   US",
+				"Your growth estimate? Ger   US",
+				"Your growth estimate? Ger   US   China",
+				"Your growth estimate? Ger   US   China",
+			}}, []string{
+				"Your growth estimate? Ger",
+				"Your growth estimate? Ger",
+				"US",
+				"US",
+				"China",
+				"China",
+			},
+		},
+		{
+			"t2",
+			args{[]string{
+				"Are you Alice?        Yes",
+				"Are you Alice?        Yes   No",
+				"Are you Alice?        Yes   No   Perhaps",
+			}}, []string{
+				"Are you Alice?        Yes",
+				"No",
+				"Perhaps",
+			},
+		},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			got := cleansePrefixes(tt.args.ss)
+			gots := strings.Join(got, "|")
+			wnts := strings.Join(tt.want, "|")
+			if gots != wnts {
+				t.Errorf("cleansePrefixes()\n\tgot: %v  \n\twnt: %v", gots, wnts)
 			}
 		})
 	}

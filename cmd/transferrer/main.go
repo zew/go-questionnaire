@@ -596,29 +596,49 @@ func main() {
 
 		//
 		// Labels into separate CSV file
-		staticLabels := []string{}
 		if len(qs) > 0 {
+
+			nams := []string{} // input names
+			lbls := []string{} // input labels
+
 			fnCore := c2.SurveyType + "-" + c2.WaveID
 			pthBase := path.Join(qst.BasePath(), fnCore+".json")
 			qBase, err := qst.Load1(pthBase)
 			if err != nil {
 				log.Printf("Loading base questionnaire error %v", err)
 			}
+
+			// enclosing every cell value in double quotes allows to include newlines
+			// excelWindowsNewline is the inside cell newlince character for Excel under Windows
+			// excel newline for windows - inside cells
+			const excelNL = string(rune(int32(10)))
+
 			// copy(staticLabels, staticCols)
-			lbls, _, _ := qBase.LabelsByKeys()
-			for _, key := range allKeysSuperset {
-				if lbl, ok := lbls[key]; ok {
-					// enclosing every cell value in double quotes allows to include newlines
-					// string(rune(int32(10))) is the inside cell newlince character for Excel under Windows
-					lbl = strings.TrimPrefix(lbl, "-- ")
-					lbl = "\"" + strings.ReplaceAll(lbl, " -- ", string(rune(int32(10)))) + "\""
-					staticLabels = append(staticLabels, lbl)
+			byNames, _, _ := qBase.LabelsByInputNames()
+			for _, name := range allKeysSuperset {
+				nams = append(nams, name)
+				if lbl, ok := byNames[name]; ok {
+					if !strings.HasPrefix(lbl, excelNL) {
+						lbl += excelNL
+					}
+					lbl = "\"" + strings.ReplaceAll(lbl, " -- ", excelNL) + "\""
+					lbls = append(lbls, lbl)
 				} else {
-					staticLabels = append(staticLabels, key)
+					lbls = append(lbls, name)
 				}
 			}
+
+			buf := &bytes.Buffer{}
+			buf.WriteString(strings.Join(nams, ";"))
+			buf.WriteString("\n")
+			buf.WriteString(strings.Join(lbls, ";"))
+
 			fnLabels := strings.ReplaceAll(fn, ".csv", "-labels.csv")
-			err = cloudio.WriteFile(fnLabels, strings.NewReader(strings.Join(staticLabels, ";")), 0644)
+			err = cloudio.WriteFile(fnLabels, buf, 0644)
+			if err != nil {
+				log.Printf("writing file failed: %v - error %v", fnLabels, err)
+			}
+
 		}
 
 		log.Printf(

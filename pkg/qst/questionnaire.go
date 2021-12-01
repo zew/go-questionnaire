@@ -1235,7 +1235,7 @@ var separators = strings.NewReplacer(
 
 // no comma, no colon, no semicolon - only dot or hyphen
 // no newline
-var englishTextAndNumbersOnly = regexp.MustCompile(`[^a-zA-Z0-9\.\_\- ]+`)
+var englishTextAndNumbersOnly = regexp.MustCompile(`[^a-zA-Z0-9\.\_\-\+ ]+`)
 var severalSpaces = regexp.MustCompile(`[ ]+`)
 
 // EnglishTextAndNumbersOnly replaces all other UTF characters by space
@@ -1259,9 +1259,17 @@ func EnglishTextAndNumbersOnly(s string) string {
 	return s
 }
 
+var openingDiv = regexp.MustCompile(`<div.*?>`)
+var openingP = regexp.MustCompile(`<p.*?>`)
+
 // LabelCleanse removes some common HTML stuff;
 // argument q is not yet used
 func (q *QuestionnaireT) LabelCleanse(s string) string {
+
+	s = openingDiv.ReplaceAllString(s, " ")
+	s = openingP.ReplaceAllString(s, " ")
+	s = strings.ReplaceAll(s, "</div>", " ")
+	s = strings.ReplaceAll(s, "</p>", " ")
 
 	s = strings.ReplaceAll(s, "&#931;", " sum ") // Σ - greek sum symbol
 	s = strings.ReplaceAll(s, "&shy;", "")
@@ -1274,6 +1282,9 @@ func (q *QuestionnaireT) LabelCleanse(s string) string {
 	s = strings.ReplaceAll(s, "</bx>", " ")
 
 	s = EnglishTextAndNumbersOnly(s)
+
+	s = strings.TrimPrefix(s, "-- ")
+	s = strings.TrimSuffix(s, " --")
 
 	return s
 }
@@ -1326,8 +1337,13 @@ func cleansePrefixes(ss []string) []string {
 		for i := len(ss) - 1; i > -1; i-- { // reversely
 			pref := ss[i]
 			if s != pref && strings.HasPrefix(s, pref) {
+
 				stripped = strings.TrimPrefix(s, pref)
+
 				stripped = strings.TrimSpace(stripped)
+				stripped = strings.TrimPrefix(stripped, "-- ")
+				stripped = strings.TrimSuffix(stripped, " --")
+
 				// log.Printf("stripped off\n\t%q  \n\t%q  \n\t%q", s, pref, stripped)
 				break
 			}
@@ -1343,7 +1359,7 @@ func cleansePrefixes(ss []string) []string {
 
 }
 
-// LabelsByKeys extracts the label texts for each input;
+// LabelsByInputNames extracts the label texts for each input;
 // starting from the input to the top;
 // since there is a lot of summarized labeling for multiple
 // inputs, we have no clear relationship;
@@ -1356,9 +1372,9 @@ func cleansePrefixes(ss []string) []string {
 //
 // functions cleanseIdentical(...) and cleansePrefixes(...)
 // are used to clear out redundancies; see documentation.
-func (q *QuestionnaireT) LabelsByKeys() (lblsByKeys map[string]string, keys, lbls []string) {
+func (q *QuestionnaireT) LabelsByInputNames() (lblsByNames map[string]string, keys, lbls []string) {
 
-	lblsByKeys = map[string]string{}
+	lblsByNames = map[string]string{} // init return
 
 	// helpers
 	keysByPage := make([][]string, len(q.Pages))
@@ -1442,7 +1458,7 @@ func (q *QuestionnaireT) LabelsByKeys() (lblsByKeys map[string]string, keys, lbl
 		for inpIdx, inpName := range keysByPage[pageIdx] {
 			keys = append(keys, inpName)
 			lbls = append(keys, lblsByPage[pageIdx][inpIdx])
-			lblsByKeys[inpName] = lblsByPage[pageIdx][inpIdx]
+			lblsByNames[inpName] = lblsByPage[pageIdx][inpIdx]
 		}
 	}
 

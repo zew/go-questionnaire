@@ -120,6 +120,7 @@ var hyph = []string{
 	"Um|welt|öko|no|mie",
 	"un|ent|schieden",
 	"Un|ter|neh|men",
+	"un|ver|än|dert",
 	"un|wich|tig",
 	"ver|än|dern",
 	"ver|än|dert",

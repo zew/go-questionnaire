@@ -776,7 +776,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		page.Short = trl.S{"de": "Sektoren", "en": "Sectors"}
 		page.Style = css.DesktopWidthMaxForPages(page.Style, "36rem")
 
-		rowLabelsCurrencies := []trl.S{
+		rowLabelsSectors := []trl.S{
 			{
 				"de": "Banken",
 				"en": "Banks",
@@ -842,7 +842,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					// "sec_c",
 					"sec_consu", "sec_const", "sec_utili", "sec_servi", "sec_telec", "sec_infor"},
 				radioVals4,
-				rowLabelsCurrencies,
+				rowLabelsSectors,
 			)
 			gb.MainLabel = trl.S{
 				"de": "<b>8.</b> Die Ertragslage der Unternehmen in Deutschland wird mittelfristig (<bx>6</bx>&nbsp;Mo.) in den folgenden Branchen ",
@@ -893,6 +893,10 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	err = special202111c(&q)
 	if err != nil {
 		return nil, fmt.Errorf("Error adding special202111c(): %v", err)
+	}
+	err = special_2022_01(&q)
+	if err != nil {
+		return nil, fmt.Errorf("Error adding special_2022_01(): %v", err)
 	}
 
 	//

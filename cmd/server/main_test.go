@@ -140,17 +140,20 @@ func TestSystem(t *testing.T) {
 		waveID := q.Survey.WaveID()
 
 		loginURL := lgn.LoginURL(userName, surveyID, waveID, "")
+		loginURL += "&override_closure=true"
 		t.Logf("\tLoginURL: %v", loginURL)
 
-		// Deadline exceeded?
-		if time.Now().After(q.Survey.Deadline) {
-			s := cfg.Get().Mp["deadline_exceeded"].All(q.Survey.Deadline.Format("02.01.2006 15:04"))
-			if len(s) > 100 {
-				s = s[:100]
+		if false {
+			// Deadline exceeded?
+			if time.Now().After(q.Survey.Deadline) {
+				s := cfg.Get().Mp["deadline_exceeded"].All(q.Survey.Deadline.Format("02.01.2006 15:04"))
+				if len(s) > 100 {
+					s = s[:100]
+				}
+				t.Logf("%v", s)
+				t.Logf("Cannot test questionnaire that which are already closed: %v\n\n", q.Survey.Type)
+				continue
 			}
-			t.Logf("%v", s)
-			t.Logf("Cannot test questionnaire that which are already closed: %v\n\n", q.Survey.Type)
-			continue
 		}
 
 		if surveyID == "peu2018-or-special-survey-name" {

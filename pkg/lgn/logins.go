@@ -42,7 +42,10 @@ var exempted = map[string]interface{}{
 	// the hash itself
 	"h": nil,
 	// "attrs": nil, // user attributes at login time - must be hashed to prevent tampering
-	"skip_validation": nil,
+
+	"skip_validation":  nil, // saved to session only in LoadH(), used in home()
+	"override_closure": nil, // saved to session only in LoginByHash(), used in home() and systemtest
+	// we dont use wrap.paramPersister, because its too broad
 }
 
 // userAttrs contains URL params going into LoginT.Attrs

@@ -457,11 +457,13 @@ func improvedDeteriorated6b() []trl.S {
 			"en": "significantly better",
 		},
 		{
-			"de": "leicht besser",
+			"de": "leicht<br>besser",
 			"en": "slightly better",
 		},
 		{
-			"de": "gleich",
+
+			// "de": "unverändert",
+			"de": "un&shy;ver-<br>än&shy;dert",
 			"en": "the same",
 		},
 		{

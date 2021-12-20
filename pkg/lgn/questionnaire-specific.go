@@ -62,7 +62,7 @@ func LoginByHash(w http.ResponseWriter, r *http.Request) (bool, error) {
 		return false, nil
 	}
 
-	// First - try direct login
+	// First - try case direct login
 	if _, isSet := r.Form["u"]; !isSet { // Note: r.Form[key] contains GET *and* POST values
 		if _, isSet := r.Form["h"]; isSet {
 			// => userId is not set - but hash is set
@@ -132,6 +132,11 @@ func LoginByHash(w http.ResponseWriter, r *http.Request) (bool, error) {
 						for pk, pv := range dlr.Profile {
 							l.Attrs[pk] = pv
 						}
+
+						if sess.EffectiveStr("override_closure") == "true" {
+							sess.PutString("override_closure", "true")
+						}
+
 						sess.PutObject("login", l)
 						log.Printf("login saved to session as %T from loginByHash", l)
 						return true, nil
@@ -143,7 +148,7 @@ func LoginByHash(w http.ResponseWriter, r *http.Request) (bool, error) {
 		return false, nil
 	}
 
-	// Second - try login from user database
+	// Second - try login user by param u and hash h
 
 	l := LoginT{}
 	l.User = u
@@ -196,6 +201,10 @@ func LoginByHash(w http.ResponseWriter, r *http.Request) (bool, error) {
 				l.Attrs[val] = r.Form.Get(key)
 			}
 		}
+	}
+
+	if sess.EffectiveStr("override_closure") == "true" {
+		sess.PutString("override_closure", "true")
 	}
 
 	log.Printf("logging in as %v with attrs %v type %T", u, l.Attrs, l)

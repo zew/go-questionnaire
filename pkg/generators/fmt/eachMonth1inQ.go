@@ -200,14 +200,14 @@ func eachMonth1inQ(q *qst.QuestionnaireT) error {
 			"de": "US-Geldpolitik",
 			"en": "FED monetary policy",
 		},
-		{
-			"de": "Corona Pandemie",
-			"en": "Corona pandemic",
-		},
-		{
-			"de": "Internationale Lieferengpässe",
-			"en": "Supply chain disruptions",
-		},
+		// {
+		// 	"de": "Corona Pandemie",
+		// 	"en": "Corona pandemic",
+		// },
+		// {
+		// 	"de": "Internationale Lieferengpässe",
+		// 	"en": "Supply chain disruptions",
+		// },
 	}
 
 	// gr2
@@ -224,8 +224,8 @@ func eachMonth1inQ(q *qst.QuestionnaireT) error {
 				"rev_trade_conflicts",
 				"rev_mp_ecb",
 				"rev_mp_fed",
-				"rev_corona",
-				"rev_supply_disrupt",
+				// "rev_corona",
+				// "rev_supply_disrupt",
 				// "rev_free",
 			},
 			radioVals6,

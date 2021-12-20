@@ -2,6 +2,8 @@ package fmt
 
 import (
 	"fmt"
+	"strconv"
+	"strings"
 
 	"github.com/zew/go-questionnaire/pkg/css"
 	"github.com/zew/go-questionnaire/pkg/qst"
@@ -129,6 +131,14 @@ func eachMonth1inQ(q *qst.QuestionnaireT) error {
 			}
 		}
 
+		// destatis correction for the year
+		yrQuarterAndYearCorrected := strings.Split(q.Survey.Quarter(0), "&nbsp;")
+		yearCorrectedS := yrQuarterAndYearCorrected[1]
+		yearCorrected, err := strconv.Atoi(yearCorrectedS)
+		if err != nil {
+			return err
+		}
+
 		// row 3 - three years - label
 		{
 			inp := gr.AddInput()
@@ -160,8 +170,10 @@ func eachMonth1inQ(q *qst.QuestionnaireT) error {
 			inp.Step = 0.01
 			inp.MaxChars = 5
 			inp.Label = trl.S{
-				"de": q.Survey.YearStr(i),
-				"en": q.Survey.YearStr(i),
+				// "de": q.Survey.YearStr(i),
+				// "en": q.Survey.YearStr(i),
+				"de": fmt.Sprint(yearCorrected + i),
+				"en": fmt.Sprint(yearCorrected + i),
 			}
 			inp.Suffix = trl.S{
 				"de": "%",
@@ -174,7 +186,7 @@ func eachMonth1inQ(q *qst.QuestionnaireT) error {
 	}
 
 	//
-	//
+	// gr2
 	rowLabelsEconomicAreas := []trl.S{
 		{
 			"de": "Konjunkturdaten Deutschland",
@@ -200,20 +212,21 @@ func eachMonth1inQ(q *qst.QuestionnaireT) error {
 			"de": "US-Geldpolitik",
 			"en": "FED monetary policy",
 		},
-		// {
-		// 	"de": "Corona Pandemie",
-		// 	"en": "Corona pandemic",
-		// },
-		// {
-		// 	"de": "Internationale Lieferengpässe",
-		// 	"en": "Supply chain disruptions",
-		// },
+		{
+			"de": "Corona Pandemie",
+			"en": "Corona pandemic",
+		},
+		{
+			"de": "Internationale Lieferengpässe",
+			"en": "Supply chain disruptions",
+		},
 	}
 
-	// gr2
+	colTemplate, colsRowFree, styleRowFree := colTemplateWithFreeRow()
+
 	{
 		gb := qst.NewGridBuilderRadios(
-			columnTemplate6,
+			colTemplate,
 			labelsStronglyPositiveStronglyNegativeInfluence(),
 			// prefix iogf_ => impact on growth forecast
 			//   but we stick to rev_ => revision
@@ -224,8 +237,8 @@ func eachMonth1inQ(q *qst.QuestionnaireT) error {
 				"rev_trade_conflicts",
 				"rev_mp_ecb",
 				"rev_mp_fed",
-				// "rev_corona",
-				// "rev_supply_disrupt",
+				"rev_corona",
+				"rev_supply_disrupt",
 				// "rev_free",
 			},
 			radioVals6,
@@ -237,48 +250,54 @@ func eachMonth1inQ(q *qst.QuestionnaireT) error {
 		}
 		gr := page.AddGrid(gb)
 		gr.OddRowsColoring = true
-		gr.BottomVSpacers = 3
+		gr.BottomVSpacers = 1
 	}
 
-	//
-	// brueckbauer believes in 'sonstige'
-	if false {
-		// gr3
+	{
+
+		//
+		// row free input
+		gr := page.AddGroup()
+		gr.Cols = float32(len(labelsStronglyPositiveStronglyNegativeInfluence()) + 1)
+		gr.Cols = 7
+
+		gr.Style = css.NewStylesResponsive(gr.Style)
+		if gr.Style.Desktop.StyleGridContainer.TemplateColumns == "" {
+			gr.Style.Desktop.StyleBox.Display = "grid"
+			gr.Style.Desktop.StyleGridContainer.TemplateColumns = styleRowFree
+			// log.Printf("fmt special 2021-09: grid template - %v", stl)
+		} else {
+			return fmt.Errorf("GridBuilder.AddGrid() - another TemplateColumns already present.\nwnt%v\ngot%v", styleRowFree, gr.Style.Desktop.StyleGridContainer.TemplateColumns)
+		}
+
+		gr.BottomVSpacers = 4
+
 		{
-			gr := page.AddGroup()
-			gr.Cols = 1
-			gr.BottomVSpacers = 1
-			gr.BottomVSpacers = 0
-			{
-				inp := gr.AddInput()
-				inp.Type = "text"
-				inp.Name = "rev_free_label"
-				inp.MaxChars = 26
-				inp.ColSpan = 1
-				inp.ColSpanControl = 1
-				inp.Label = nil
-				inp.Placeholder = trl.S{"de": "Sonstige", "en": "Other"}
+			inp := gr.AddInput()
+			inp.Type = "text"
+			inp.Name = "rev_free_label"
+			// inp.MaxChars = 17
+			inp.MaxChars = 15
+			inp.ColSpan = 1
+			inp.ColSpanLabel = 2.4
+			inp.ColSpanControl = 4
+			inp.Label = trl.S{
+				"de": "Andere",
+				"en": "Other",
 			}
 		}
 
-		// gr4
-		{
-			gb := qst.NewGridBuilderRadios(
-				columnTemplate6,
-				nil,
-				[]string{"rev_free"},
-				radioVals6,
-				[]trl.S{
-					{
-						"de": " &nbsp;  ", // -
-						"en": " &nbsp;  ", // -
-					},
-				},
-			)
-			gb.MainLabel = nil
-			gr := page.AddGrid(gb)
-			gr.OddRowsColoring = true
+		//
+		for idx := 0; idx < len(labelsStronglyPositiveStronglyNegativeInfluence()); idx++ {
+			rad := gr.AddInput()
+			rad.Type = "radio"
+			rad.Name = "rev_growth_free"
+			rad.ValueRadio = fmt.Sprint(idx + 1)
+			rad.ColSpan = 1
+			rad.ColSpanLabel = colsRowFree[2*(idx+1)]
+			rad.ColSpanControl = colsRowFree[2*(idx+1)] + 1
 		}
+
 	}
 
 	return nil

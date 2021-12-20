@@ -1,8 +1,49 @@
 package fmt
 
 import (
+	"fmt"
+
 	"github.com/zew/go-questionnaire/pkg/trl"
 )
+
+func colTemplateWithFreeRow() ([]float32, []float32, string) {
+
+	var columnTemplateLocal = []float32{
+		3.6, 1,
+		0.0, 1,
+		0.0, 1,
+		0.0, 1,
+		0.0, 1,
+		0.4, 1,
+	}
+	// additional row below each block
+	colsBelow1 := append([]float32{1.0}, columnTemplateLocal...)
+	colsBelow1 = []float32{
+		// 1.4, 2.2, //   3.0, 1,  |  4.6 separated to two cols
+		1.38, 2.1, //   3.0, 1,  |  4.6 separated to two cols
+		0.0, 1, //     3.0, 1,  |  4.6 separated to two cols
+		0.0, 1,
+		0.0, 1,
+		0.0, 1,
+		0.0, 1,
+		0.4, 1,
+	}
+	colsBelow2 := []float32{}
+	for i := 0; i < len(colsBelow1); i += 2 {
+		colsBelow2 = append(colsBelow2, colsBelow1[i]+colsBelow1[i+1])
+	}
+	stl := ""
+	for colIdx := 0; colIdx < len(colsBelow2); colIdx++ {
+		stl = fmt.Sprintf(
+			"%v   %vfr ",
+			stl,
+			colsBelow2[colIdx],
+		)
+	}
+
+	return columnTemplateLocal, colsBelow1, stl
+
+}
 
 func labelsGoodBad() []trl.S {
 

@@ -24,7 +24,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "9ad4edb0e0262f0afba84b9fa73f37f5a92473b72cabc058aa1463540182da23",
+ 	"md_5": "78e6757a67e0784118bee1e5760a3ee6d061f97701507671c918669d99824e09",
  	"lang_codes": [
  		"de",
  		"en"
@@ -4864,8 +4864,8 @@
  							"min": -20,
  							"max": 20,
  							"label": {
- 								"de": "2022",
- 								"en": "2022"
+ 								"de": "2021",
+ 								"en": "2021"
  							},
  							"suffix": {
  								"de": "%",
@@ -4923,8 +4923,8 @@
  							"min": -20,
  							"max": 20,
  							"label": {
- 								"de": "2023",
- 								"en": "2023"
+ 								"de": "2022",
+ 								"en": "2022"
  							},
  							"suffix": {
  								"de": "%",
@@ -4982,8 +4982,8 @@
  							"min": -20,
  							"max": 20,
  							"label": {
- 								"de": "2024",
- 								"en": "2024"
+ 								"de": "2023",
+ 								"en": "2023"
  							},
  							"suffix": {
  								"de": "%",
@@ -5036,7 +5036,7 @@
  					]
  				},
  				{
- 					"bottom_vspacers": 3,
+ 					"bottom_vspacers": 1,
  					"columns": 6,
  					"odd_rows_coloring": true,
  					"inputs": [
@@ -5055,7 +5055,7 @@
  								"de": "stark po\u0026shy;si\u0026shy;tiv",
  								"en": "strong\u0026shy;ly pos\u0026shy;itive"
  							},
- 							"col_span_label": 2,
+ 							"col_span_label": 3.6,
  							"col_span_control": 1,
  							"style": {
  								"desktop": {
@@ -5322,7 +5322,7 @@
  								"de": "Kon\u0026shy;junk\u0026shy;tur\u0026shy;da\u0026shy;ten Deutsch\u0026shy;land",
  								"en": "Busi\u0026shy;ness cycle data Ger\u0026shy;ma\u0026shy;ny"
  							},
- 							"col_span_label": 2,
+ 							"col_span_label": 3.6,
  							"col_span_control": 1,
  							"value_radio": "1",
  							"style_label": {
@@ -5380,7 +5380,7 @@
  								"de": "Ex\u0026shy;port\u0026shy;märkte",
  								"en": "Export markets"
  							},
- 							"col_span_label": 2,
+ 							"col_span_label": 3.6,
  							"col_span_control": 1,
  							"value_radio": "1",
  							"style_label": {
@@ -5438,7 +5438,7 @@
  								"de": "Wechsel\u0026shy;kurse",
  								"en": "Exchange rates"
  							},
- 							"col_span_label": 2,
+ 							"col_span_label": 3.6,
  							"col_span_control": 1,
  							"value_radio": "1",
  							"style_label": {
@@ -5496,7 +5496,7 @@
  								"de": "Int. Handels\u0026shy;konflikte",
  								"en": "Intl. trade conflicts"
  							},
- 							"col_span_label": 2,
+ 							"col_span_label": 3.6,
  							"col_span_control": 1,
  							"value_radio": "1",
  							"style_label": {
@@ -5554,7 +5554,7 @@
  								"de": "EZB-Geld\u0026shy;po\u0026shy;li\u0026shy;tik",
  								"en": "ECB monetary policy"
  							},
- 							"col_span_label": 2,
+ 							"col_span_label": 3.6,
  							"col_span_control": 1,
  							"value_radio": "1",
  							"style_label": {
@@ -5612,7 +5612,7 @@
  								"de": "US-Geld\u0026shy;po\u0026shy;li\u0026shy;tik",
  								"en": "FED monetary policy"
  							},
- 							"col_span_label": 2,
+ 							"col_span_label": 3.6,
  							"col_span_control": 1,
  							"value_radio": "1",
  							"style_label": {
@@ -5662,13 +5662,208 @@
  							"col_span_label": 0.4,
  							"col_span_control": 1,
  							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "rev_corona",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Corona Pandemie",
+ 								"en": "Corona pandemic"
+ 							},
+ 							"col_span_label": 3.6,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "rev_corona",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "rev_corona",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "rev_corona",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "rev_corona",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "rev_corona",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "rev_supply_disrupt",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "In\u0026shy;ter\u0026shy;na\u0026shy;tion\u0026shy;ale Lieferengpässe",
+ 								"en": "Supply chain disruptions"
+ 							},
+ 							"col_span_label": 3.6,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "rev_supply_disrupt",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "rev_supply_disrupt",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "rev_supply_disrupt",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "rev_supply_disrupt",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "rev_supply_disrupt",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
  						}
  					],
  					"style": {
  						"desktop": {
  							"grid_container_style": {
  								"auto_flow": "row",
- 								"template_columns": "   3fr    1fr    1fr    1fr    1fr    1.4fr "
+ 								"template_columns": "   4.6fr    1fr    1fr    1fr    1fr    1.4fr "
+ 							},
+ 							"box_style": {
+ 								"display": "grid"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 4,
+ 					"columns": 7,
+ 					"inputs": [
+ 						{
+ 							"name": "rev_free_label",
+ 							"type": "text",
+ 							"max_chars": 15,
+ 							"label": {
+ 								"de": "Andere",
+ 								"en": "Other"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 2.4,
+ 							"col_span_control": 4
+ 						},
+ 						{
+ 							"name": "rev_growth_free",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "1"
+ 						},
+ 						{
+ 							"name": "rev_growth_free",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "rev_growth_free",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "rev_growth_free",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "rev_growth_free",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "rev_growth_free",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1.4,
+ 							"value_radio": "6"
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"template_columns": "   3.48fr    1fr    1fr    1fr    1fr    1fr    1.4fr "
  							},
  							"box_style": {
  								"display": "grid"
@@ -7001,7 +7196,7 @@
  							"name": "govt_sec_const",
  							"type": "radio",
  							"label": {
- 								"de": "Baugewerbe",
+ 								"de": "Bau\u0026shy;gewerbe",
  								"en": "Construction"
  							},
  							"col_span_label": 2,

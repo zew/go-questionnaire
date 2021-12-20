@@ -198,8 +198,7 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 	// Already finished?
 	closed := !q.ClosingTime.IsZero()
 	if closed {
-		openAnyway, ok := sess.ReqParam("override_closure")
-		if ok && openAnyway == "true" {
+		if sess.EffectiveStr("override_closure") == "true" {
 			//
 		} else {
 			s := cfg.Get().Mp["finished_by_participant"].All(q.ClosingTime.Format("02.01.2006 15:04"))
@@ -210,8 +209,7 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 
 	// Deadline exceeded?
 	if time.Now().After(q.Survey.Deadline) {
-		openAnyway, ok := sess.ReqParam("override_closure")
-		if ok && openAnyway == "true" {
+		if sess.EffectiveStr("override_closure") == "true" {
 			//
 		} else {
 			s := cfg.Get().Mp["deadline_exceeded"].All(q.Survey.Deadline.Format("02.01.2006 15:04"))

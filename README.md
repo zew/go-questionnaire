@@ -1,6 +1,8 @@
 # Go-Questionnaire
 
-<img src="./app-bucket/content/img/mascot/mascot.png" style="float: left; width:8%; min-width: 140px; max-width: 20%; margin-right:5%; margin-bottom: 2%;">
+<!-- github.com suppresses float, min-width, margin-* -->
+<!-- github.com overrides max-width to 100% -->
+<img src="./app-bucket/content/img/mascot/mascot.png" style="float: left; width:20%; min-width: 140px; max-width: 20%; margin-right:5%; margin-bottom: 2%;">
 
 [![GoDoc](http://godoc.org/github.com/zew/go-questionnaire?status.svg)](https://godoc.org/github.com/zew/go-questionnaire)        [![Travis Build](https://travis-ci.com/zew/go-questionnaire.svg?branch=master)](https://travis-ci.com/zew/go-questionnaire)        [![Report Card](https://goreportcard.com/badge/github.com/zew/go-questionnaire)](https://goreportcard.com/report/github.com/zew/go-questionnaire)      [![codecov](https://codecov.io/gh/zew/go-questionnaire/branch/master/graph/badge.svg)](https://codecov.io/gh/zew/go-questionnaire)
 
@@ -217,6 +219,18 @@ If you have created your survey `myquest` you need to restart the application.
 * Once logged in, they can [re-access the questionnaire](https://dev-domain:port/survey)
 
 * For testing purposes, you may [reset the questionnaire](https://dev-domain:port/survey/reload-from-questionnaire-template?u=98991&survey_id=fmt&wave_id=2018-07&h=4059d765e4a4f211658373c07c5affb9)
+
+### URL parameters for testing
+
+* `page`=[0-9] - jump to page x
+
+* `show-version=true` - show q.Version
+
+Persisted to session:
+
+* `skip_validation=true` - switch off mandatory validation
+
+* `override_closure=true` - ignore questionnaire deadline and closure by user
 
 ## Deploy to appengine
 

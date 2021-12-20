@@ -14,8 +14,11 @@ in package systemtest.
 
 
   For a particular package, start
-	go test ./mypackage/... -test.v
-	go test ./mypackage/...
+	go test -v ./mypackage/... -test.v
+	go test -v ./mypackage/...
+
+  I.e.
+	go test -v ./cmd/server/...
 
 
 ## Coverage tests
@@ -158,6 +161,11 @@ func TestSystem(t *testing.T) {
 
 		if surveyID == "peu2018-or-special-survey-name" {
 		}
+
+		// if q.Survey.String() != "fmt-2021-08" {
+		// 	continue
+		// }
+
 		// if surveyID != "fmt" {
 		// 	continue
 		// }

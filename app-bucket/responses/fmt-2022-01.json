@@ -24,7 +24,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "78e6757a67e0784118bee1e5760a3ee6d061f97701507671c918669d99824e09",
+ 	"md_5": "0ea9d6920b97dc7c30b0991f2698f0da9da6ddf01b805c743fd787234e42149d",
  	"lang_codes": [
  		"de",
  		"en"
@@ -2173,7 +2173,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\u003cb\u003e5.\u003c/b\u003e Die \u003ci\u003elang\u0026shy;fristigen\u003c/i\u003e Zinsen (zehnjähriger Staatsanleihen) werden mittel\u0026shy;fristig (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;Mo.)",
- 								"en": "\u003cb\u003e5.\u003c/b\u003e In the medium-term, \u003ci\u003elong-term\u003c/i\u003e interest rates (yields on 10-year bonds) will"
+ 								"en": "\u003cb\u003e5.\u003c/b\u003e In the medium-term, \u003ci\u003elong-term\u003c/i\u003e interest rates (yields on 10-year sovereign bonds) will"
  							},
  							"col_span": 4,
  							"col_span_label": 1
@@ -5884,7 +5884,7 @@
  		{
  			"label": {
  				"de": "Sonderfrage zum Regierungsprogramm der neuen Bundesregierung",
- 				"en": "Special:     todo"
+ 				"en": "Special: Program of the new German federal government:"
  			},
  			"description": {
  				"de": "",
@@ -5892,9 +5892,8 @@
  			},
  			"short": {
  				"de": "Regierungs-\u003cbr\u003eprogramm",
- 				"en": "todo"
+ 				"en": "New govt. program"
  			},
- 			"navigation_condition": "GermanOnly",
  			"style": {
  				"desktop": {
  					"grid_container_style": {},
@@ -5924,7 +5923,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\n\t\t\t\t\u003cb\u003e1.\u003c/b\u003e\n\t\t\t\tDas Re\u0026shy;gie\u0026shy;rungsprogramm der neuen Bundesre\u0026shy;gie\u0026shy;rung \n\t\t\t\that sich folgendermaßen auf meine  \n\t\t\t\tPrognosen des realen Bruttoinlandsproduktes (BIP) ausgewirkt:\n\t\t\t",
- 								"en": "\n\t\t\t\t\u003cb\u003e1.\u003c/b\u003e\n\t\t\t\ttodo\n\t\t\t"
+ 								"en": "\n\t\t\t\t\u003cb\u003e1.\u003c/b\u003e\n\t\t\t\tThe program of the new federal government had the following \n\t\t\t\teffects on my forecasts of real gross domestic product (GDP):\n\t\t\t"
  							},
  							"col_span": 6,
  							"col_span_label": 1
@@ -6066,7 +6065,7 @@
  							"type": "label-as-input",
  							"label": {
  								"de": "re\u0026shy;du\u0026shy;ziert",
- 								"en": "re\u0026shy;duced"
+ 								"en": "de\u0026shy;creased"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -6110,7 +6109,7 @@
  							"type": "label-as-input",
  							"label": {
  								"de": "stark\u003cbr\u003ere\u0026shy;du\u0026shy;ziert",
- 								"en": "strong\u0026shy;ly\u003cbr\u003ere\u0026shy;duced"
+ 								"en": "strong\u0026shy;ly\u003cbr\u003ede\u0026shy;creased"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -6200,7 +6199,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Auf Sicht von 6\u0026nbsp;Monaten",
- 								"en": "todo"
+ 								"en": "In the next 6 months"
  							},
  							"col_span_label": 2,
  							"col_span_control": 1,
@@ -6258,7 +6257,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Für 2022",
- 								"en": "todo"
+ 								"en": "For 2022"
  							},
  							"col_span_label": 2,
  							"col_span_control": 1,
@@ -6316,7 +6315,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Für 2023",
- 								"en": "todo"
+ 								"en": "For 2023"
  							},
  							"col_span_label": 2,
  							"col_span_control": 1,
@@ -6374,7 +6373,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Auf Sicht von 5\u0026nbsp;Jahren",
- 								"en": "todo"
+ 								"en": "In the next 5 years"
  							},
  							"col_span_label": 2,
  							"col_span_control": 1,
@@ -6457,7 +6456,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\u003cb\u003e2.\u003c/b\u003e Auf Sicht von 5 Jahren hat sich das Re\u0026shy;gie\u0026shy;rungsprogramm der neuen Bundesre\u0026shy;gie\u0026shy;rung folgendermaßen auf meine Prognosen der Ertragslage deutscher Un\u0026shy;ter\u0026shy;neh\u0026shy;men in den folgenden Branchen ausgewirkt:",
- 								"en": "\u003cb\u003e2.\u003c/b\u003e todo"
+ 								"en": "\u003cb\u003e2.\u003c/b\u003e Over the next 5 years, the program of the new federal government had the following effects on my forecasts of the profit situation of German companies in the following industries:"
  							},
  							"col_span": 6,
  							"col_span_label": 1
@@ -7512,7 +7511,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\n\t\t\t\t\u003cb\u003e3.\u003c/b\u003e\n\t\t\t\tDas Re\u0026shy;gie\u0026shy;rungsprogramm der neuen Bundesre\u0026shy;gie\u0026shy;rung \n\t\t\t\that sich folgendermaßen auf meine Prognosen\n\t\t\t\t der Zinsen auf 10-jährigen Bundesanleihen ausgewirkt:\n\n\t\t\t",
- 								"en": "\n\t\t\t\t\u003cb\u003e3.\u003c/b\u003e\n\t\t\t\ttodo\n\t\t\t"
+ 								"en": "\n\t\t\t\t\u003cb\u003e3.\u003c/b\u003e\n\t\t\t\tThe program of the new federal government had the following effects on my forecasts of interest rates on the 10-year German Bund:\n\t\t\t"
  							},
  							"col_span": 6,
  							"col_span_label": 1
@@ -7654,7 +7653,7 @@
  							"type": "label-as-input",
  							"label": {
  								"de": "re\u0026shy;du\u0026shy;ziert",
- 								"en": "re\u0026shy;duced"
+ 								"en": "de\u0026shy;creased"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -7698,7 +7697,7 @@
  							"type": "label-as-input",
  							"label": {
  								"de": "stark\u003cbr\u003ere\u0026shy;du\u0026shy;ziert",
- 								"en": "strong\u0026shy;ly\u003cbr\u003ere\u0026shy;duced"
+ 								"en": "strong\u0026shy;ly\u003cbr\u003ede\u0026shy;creased"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -7788,7 +7787,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Auf Sicht von 6\u0026nbsp;Monaten",
- 								"en": "todo"
+ 								"en": "In the next 6 months"
  							},
  							"col_span_label": 2,
  							"col_span_control": 1,
@@ -7846,7 +7845,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Für 2022",
- 								"en": "todo"
+ 								"en": "For 2022"
  							},
  							"col_span_label": 2,
  							"col_span_control": 1,
@@ -7904,7 +7903,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Für 2023",
- 								"en": "todo"
+ 								"en": "For 2023"
  							},
  							"col_span_label": 2,
  							"col_span_control": 1,
@@ -7962,7 +7961,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Auf Sicht von 5\u0026nbsp;Jahren",
- 								"en": "todo"
+ 								"en": "In the next 5 years"
  							},
  							"col_span_label": 2,
  							"col_span_control": 1,

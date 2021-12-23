@@ -14,15 +14,15 @@ func special_2022_01(q *qst.QuestionnaireT) error {
 
 	{
 		page := q.AddPage()
-		page.NavigationCondition = "GermanOnly"
+		// page.NavigationCondition = "GermanOnly"
 		// page.Section = trl.S{"de": "Sonderfrage", "en": "Special"}
 		page.Label = trl.S{
 			"de": "Sonderfrage zum Regierungsprogramm der neuen Bundesregierung",
-			"en": "Special:     todo",
+			"en": "Special: Program of the new German federal government:",
 		}
 		page.Short = trl.S{
 			"de": "Regierungs-<br>programm",
-			"en": "todo",
+			"en": "New govt. program",
 		}
 		page.Style = css.DesktopWidthMaxForPages(page.Style, "48rem")
 
@@ -30,19 +30,19 @@ func special_2022_01(q *qst.QuestionnaireT) error {
 		rowLabelsTimeHorizon := []trl.S{
 			{
 				"de": "Auf Sicht von 6&nbsp;Monaten",
-				"en": "todo",
+				"en": "In the next 6 months",
 			},
 			{
 				"de": "Für 2022",
-				"en": "todo",
+				"en": "For 2022",
 			},
 			{
 				"de": "Für 2023",
-				"en": "todo",
+				"en": "For 2023",
 			},
 			{
 				"de": "Auf Sicht von 5&nbsp;Jahren",
-				"en": "todo",
+				"en": "In the next 5 years",
 			},
 		}
 
@@ -66,7 +66,8 @@ func special_2022_01(q *qst.QuestionnaireT) error {
 			`,
 				"en": `
 				<b>1.</b>
-				todo
+				The program of the new federal government had the following 
+				effects on my forecasts of real gross domestic product (GDP):
 			`}
 
 			gr := page.AddGrid(gb)
@@ -155,7 +156,7 @@ func special_2022_01(q *qst.QuestionnaireT) error {
 			)
 			gb.MainLabel = trl.S{
 				"de": "<b>2.</b> Auf Sicht von 5 Jahren hat sich das Regierungsprogramm der neuen Bundesregierung folgendermaßen auf meine Prognosen der Ertragslage deutscher Unternehmen in den folgenden Branchen ausgewirkt:",
-				"en": "<b>2.</b> todo",
+				"en": "<b>2.</b> Over the next 5 years, the program of the new federal government had the following effects on my forecasts of the profit situation of German companies in the following industries:",
 			}
 			gr := page.AddGrid(gb)
 			gr.OddRowsColoring = true
@@ -184,7 +185,7 @@ func special_2022_01(q *qst.QuestionnaireT) error {
 			`,
 				"en": `
 				<b>3.</b>
-				todo
+				The program of the new federal government had the following effects on my forecasts of interest rates on the 10-year German Bund:
 			`}
 
 			gr := page.AddGrid(gb)

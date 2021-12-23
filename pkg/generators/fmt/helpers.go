@@ -577,11 +577,11 @@ func raiseDecrease6b() []trl.S {
 		},
 		{
 			"de": "reduziert",
-			"en": "reduced",
+			"en": "decreased",
 		},
 		{
 			"de": "stark<br>reduziert",
-			"en": "strongly<br>reduced",
+			"en": "strongly<br>decreased",
 		},
 
 		{

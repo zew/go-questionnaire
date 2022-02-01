@@ -147,64 +147,6 @@ func (sr *StylesResponsive) Combine(b StylesResponsive) {
 // 	return sr
 // }
 
-// ItemCenteredMCA makes the input centered on main and cross axis (MCA)
-func ItemCenteredMCA(sr *StylesResponsive) *StylesResponsive {
-	sr = NewStylesResponsive(sr)
-	sr.Desktop.StyleGridItem.JustifySelf = "center"
-	if sr.Desktop.StyleGridItem.AlignSelf == "" {
-		sr.Desktop.StyleGridItem.AlignSelf = "center"
-	}
-	sr.Desktop.StyleText.AlignHorizontal = "center"
-	return sr
-}
-
-// ItemCenteredCA makes the input centered on cross axis (CA)
-func ItemCenteredCA(sr *StylesResponsive) *StylesResponsive {
-	sr = NewStylesResponsive(sr)
-	if sr.Desktop.StyleGridItem.AlignSelf == "" {
-		sr.Desktop.StyleGridItem.AlignSelf = "center"
-	}
-	sr.Desktop.StyleText.AlignHorizontal = "center"
-	return sr
-}
-
-// ItemStartCA aligns the item at the start on the cross-axis
-func ItemStartCA(sr *StylesResponsive) *StylesResponsive {
-	sr = NewStylesResponsive(sr)
-	sr.Desktop.StyleGridItem.AlignSelf = "start"
-	return sr
-}
-
-// ItemEndMA aligns the item at the end on the main-axis
-func ItemEndMA(sr *StylesResponsive) *StylesResponsive {
-	sr = NewStylesResponsive(sr)
-	sr.Desktop.StyleGridItem.JustifySelf = "end"
-	return sr
-}
-
-// TextStart makes the text content left aligned
-func TextStart(sr *StylesResponsive) *StylesResponsive {
-	sr = NewStylesResponsive(sr)
-	// sr.Desktop.GridItemStyle.JustifySelf = "start"  // fails on multi line text
-	sr.Desktop.StyleText.AlignHorizontal = "left"
-	return sr
-}
-
-// TextCenter makes the text content centered
-func TextCenter(sr *StylesResponsive) *StylesResponsive {
-	sr = NewStylesResponsive(sr)
-	sr.Desktop.StyleText.AlignHorizontal = "center"
-	return sr
-}
-
-// TextEnd makes the text content right aligned
-func TextEnd(sr *StylesResponsive) *StylesResponsive {
-	sr = NewStylesResponsive(sr)
-	// sr.Desktop.GridItemStyle.JustifySelf = "start"  // fails on multi line text
-	sr.Desktop.StyleText.AlignHorizontal = "right"
-	return sr
-}
-
 // PageMarginsAuto is called for every page - setting auto margins
 func PageMarginsAuto(sr *StylesResponsive) *StylesResponsive {
 	sr = NewStylesResponsive(sr)
@@ -242,5 +184,95 @@ func MobileVertical(sr *StylesResponsive) *StylesResponsive {
 	sr.Mobile.StyleGridContainer.AutoFlow = "column"
 	sr.Mobile.StyleGridContainer.TemplateColumns = "none "  // reset
 	sr.Mobile.StyleGridContainer.TemplateRows = "0.9fr 1fr" // must be more than one
+	return sr
+}
+
+//
+// grid item styles
+//
+
+// ItemCenteredMCA makes the input centered on main and cross axis (MCA)
+func ItemCenteredMCA(sr *StylesResponsive) *StylesResponsive {
+	sr = NewStylesResponsive(sr)
+	sr.Desktop.StyleGridItem.JustifySelf = "center"
+	if sr.Desktop.StyleGridItem.AlignSelf == "" {
+		sr.Desktop.StyleGridItem.AlignSelf = "center"
+	}
+
+	// text styles; inherited by descendants
+	sr.Desktop.StyleText.AlignHorizontal = "center"
+	// sr.Desktop.StyleText.AlignVertical = "middle" // usually covered by AlignSelf=center
+	return sr
+}
+
+// ItemCenteredCA makes the input centered on cross axis (CA)
+func ItemCenteredCA(sr *StylesResponsive) *StylesResponsive {
+	sr = NewStylesResponsive(sr)
+	if sr.Desktop.StyleGridItem.AlignSelf == "" {
+		sr.Desktop.StyleGridItem.AlignSelf = "center"
+	}
+	sr.Desktop.StyleText.AlignHorizontal = "center"
+	return sr
+}
+
+// ItemStartCA aligns the item at the start on the cross-axis
+func ItemStartCA(sr *StylesResponsive) *StylesResponsive {
+	sr = NewStylesResponsive(sr)
+	sr.Desktop.StyleGridItem.AlignSelf = "start"
+	return sr
+}
+
+// ItemStartMA aligns the item at the start on the main-axis
+func ItemStartMA(sr *StylesResponsive) *StylesResponsive {
+	sr = NewStylesResponsive(sr)
+	sr.Desktop.StyleGridItem.JustifySelf = "start"
+	return sr
+}
+
+// ItemEndMA aligns the item at the end on the main-axis
+func ItemEndMA(sr *StylesResponsive) *StylesResponsive {
+	sr = NewStylesResponsive(sr)
+	sr.Desktop.StyleGridItem.JustifySelf = "end"
+	return sr
+}
+
+//
+// text styling
+//
+//     apply these styles to input.StyleLabel
+//        even though input.Style bequeathes its styles to descendants
+//
+//
+
+// TextStart makes the text content left aligned
+func TextStart(sr *StylesResponsive) *StylesResponsive {
+	sr = NewStylesResponsive(sr)
+	// sr.Desktop.GridItemStyle.JustifySelf = "start"  // fails on multi line text
+	sr.Desktop.StyleText.AlignHorizontal = "left"
+	return sr
+}
+
+// TextCenter makes the text content centered
+func TextCenter(sr *StylesResponsive) *StylesResponsive {
+	sr = NewStylesResponsive(sr)
+	sr.Desktop.StyleText.AlignHorizontal = "center"
+	return sr
+}
+
+// TextEnd makes the text content right aligned
+func TextEnd(sr *StylesResponsive) *StylesResponsive {
+	sr = NewStylesResponsive(sr)
+	// sr.Desktop.GridItemStyle.JustifySelf = "start"  // fails on multi line text
+	sr.Desktop.StyleText.AlignHorizontal = "right"
+	return sr
+}
+
+// TextCACenter makes the text content centered on the cross axis
+//     cross axis of text stuff can only take effect,
+// 		if some text has less height than the bounding box;
+//      for instance due to one extra large word
+func TextCACenter(sr *StylesResponsive) *StylesResponsive {
+	sr = NewStylesResponsive(sr)
+	sr.Desktop.StyleText.AlignVertical = "middle"
 	return sr
 }

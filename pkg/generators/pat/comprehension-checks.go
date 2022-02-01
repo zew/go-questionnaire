@@ -17,7 +17,7 @@ func ComprehensionCheck1(q *qst.QuestionnaireT) error {
 	{
 		page := q.AddPage()
 		page.Label = trl.S{"de": ""}
-		page.Style = css.DesktopWidthMaxForPages(page.Style, "36rem") // 60
+		page.WidthMax("36rem") // 60
 
 		// loop over matrix questions
 
@@ -93,7 +93,7 @@ func ComprehensionCheck1(q *qst.QuestionnaireT) error {
 	{
 		page := q.AddPage()
 		page.Label = trl.S{"de": ""}
-		page.Style = css.DesktopWidthMaxForPages(page.Style, "36rem") // 60
+		page.WidthMax("36rem") // 60
 
 		//
 		//
@@ -275,7 +275,7 @@ func ComprehensionCheck2(q *qst.QuestionnaireT) error {
 	{
 		page := q.AddPage()
 		page.Label = trl.S{"de": ""}
-		page.Style = css.DesktopWidthMaxForPages(page.Style, "36rem") // 60
+		page.WidthMax("36rem") // 60
 
 		// loop over matrix questions
 

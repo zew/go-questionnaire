@@ -1,7 +1,6 @@
 package fmt
 
 import (
-	"github.com/zew/go-questionnaire/pkg/css"
 	"github.com/zew/go-questionnaire/pkg/qst"
 	"github.com/zew/go-questionnaire/pkg/trl"
 )
@@ -73,7 +72,7 @@ func special202110(q *qst.QuestionnaireT) error {
 			"de": "Sonderfragen",
 			"en": "Specials",
 		}
-		page.Style = css.DesktopWidthMaxForPages(page.Style, "46rem")
+		page.WidthMax("46rem")
 
 		//
 		// gr1

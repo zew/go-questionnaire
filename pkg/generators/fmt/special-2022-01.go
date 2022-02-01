@@ -1,7 +1,6 @@
 package fmt
 
 import (
-	"github.com/zew/go-questionnaire/pkg/css"
 	"github.com/zew/go-questionnaire/pkg/qst"
 	"github.com/zew/go-questionnaire/pkg/trl"
 )
@@ -24,7 +23,7 @@ func special_2022_01(q *qst.QuestionnaireT) error {
 			"de": "Regierungs-<br>programm",
 			"en": "New govt. program",
 		}
-		page.Style = css.DesktopWidthMaxForPages(page.Style, "48rem")
+		page.WidthMax("48rem")
 
 		// gr1
 		rowLabelsTimeHorizon := []trl.S{

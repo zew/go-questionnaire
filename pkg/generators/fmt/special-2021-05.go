@@ -31,7 +31,7 @@ func special202105(q *qst.QuestionnaireT) error {
 		"de": "Sonderfrage:<br>Einlagensicherung",
 		"en": "Special:<br>Deposit Insurance",
 	}
-	page.Style = css.DesktopWidthMaxForPages(page.Style, "46rem")
+	page.WidthMax("46rem")
 
 	// gr1 with intro
 	{

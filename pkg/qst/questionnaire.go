@@ -275,6 +275,27 @@ func (gr *groupT) Vertical(argRows ...int) {
 
 }
 
+// WidthMax limits width in desktop view
+// for instance to 30rem;
+// mobile view: no limitation
+// // compare page.WidthMax
+func (gr *groupT) WidthMax(s string) {
+	gr.Style = css.NewStylesResponsive(gr.Style)
+	gr.Style.Desktop.StyleBox.WidthMax = s
+	gr.Style.Mobile.StyleBox.WidthMax = "none" // => 100% of page - page has margins; replaced desktop max-width
+}
+
+// ColWidth custom col width - not equal for each
+func (gr *groupT) ColWidths(colWidths string) {
+
+	gr.Style = css.NewStylesResponsive(gr.Style)
+	gr.Style.Desktop.StyleBox.Display = "grid"
+	gr.Style.Desktop.StyleGridContainer.AutoFlow = "row"
+	// gr.Style.Desktop.StyleGridContainer.TemplateColumns = "1.6fr    2.7fr 3.1fr 3.1fr 2.4fr    2.4fr  1.4fr"
+	gr.Style.Desktop.StyleGridContainer.TemplateColumns = colWidths
+
+}
+
 // HasComposit - group contains composit element?
 func (gr groupT) HasComposit() bool {
 	hasComposit := false
@@ -391,6 +412,26 @@ func (p *pageT) AddGroup() *groupT {
 	p.Groups = append(p.Groups, g)
 	ret := p.Groups[len(p.Groups)-1]
 	return ret
+}
+
+// WidthMax limits width in desktop view;
+// horizontal centering by default via WidthDefault();
+// for instance to 30rem;
+// mobile view: no limitation
+// compare groupT.WidthMax
+func (p *pageT) WidthMax(s string) {
+	p.Style = css.NewStylesResponsive(p.Style)
+	p.Style.Desktop.StyleBox.WidthMax = s
+	p.Style.Mobile.StyleBox.WidthMax = "calc(100% - 1.2rem)" // 0.6rem margin-left and -right in mobile view
+}
+
+// WidthDefault is called for every page - setting auto margins
+func (p *pageT) WidthDefault() {
+	p.Style = css.NewStylesResponsive(p.Style)
+	if p.Style.Desktop.StyleBox.Margin == "" && p.Style.Mobile.StyleBox.Margin == "" {
+		p.Style.Desktop.StyleBox.Margin = "1.2rem auto 0 auto"
+		p.Style.Mobile.StyleBox.Margin = "0.8rem auto 0 auto"
+	}
 }
 
 // QuestionnaireT contains pages with groups with inputs
@@ -897,7 +938,7 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 
 	}
 
-	page.Style = css.PageMarginsAuto(page.Style)
+	page.WidthDefault()
 	pageClass := fmt.Sprintf("pg%02v", pageIdx)
 	fmt.Fprint(w, css.StyleTag(page.Style.CSS(pageClass)))
 

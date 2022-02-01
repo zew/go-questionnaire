@@ -26,7 +26,7 @@ func special202111c(q *qst.QuestionnaireT) error {
 			"de": "Finanzmarkt-<br>report",
 			"en": "Finanzmarkt-<br>report",
 		}
-		page.Style = css.DesktopWidthMaxForPages(page.Style, "48rem")
+		page.WidthMax("48rem")
 
 		// gr0
 		{
@@ -61,7 +61,7 @@ func special202111c(q *qst.QuestionnaireT) error {
 			gr.Cols = 1
 
 			gr.Style = css.NewStylesResponsive(gr.Style)
-			gr.Style = css.DesktopWidthMaxForGroups(gr.Style, "26rem")
+			gr.WidthMax("26rem")
 
 			{
 				inp := gr.AddInput()

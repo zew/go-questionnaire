@@ -3,7 +3,6 @@ package fmt
 import (
 	"strings"
 
-	"github.com/zew/go-questionnaire/pkg/css"
 	"github.com/zew/go-questionnaire/pkg/qst"
 	"github.com/zew/go-questionnaire/pkg/trl"
 )
@@ -86,7 +85,7 @@ func special202106(q *qst.QuestionnaireT) error {
 			"de": "Sonderfrage:<br>Anlageklassen 1",
 			"en": "Special:<br>Asset classes 1",
 		}
-		page.Style = css.DesktopWidthMaxForPages(page.Style, "46rem")
+		page.WidthMax("46rem")
 
 		//
 		// gr1
@@ -224,7 +223,7 @@ func special202106(q *qst.QuestionnaireT) error {
 			"de": "Sonderfrage:<br>Anlageklassen 2",
 			"en": "Special:<br>Asset classes 2",
 		}
-		page.Style = css.DesktopWidthMaxForPages(page.Style, "46rem")
+		page.WidthMax("46rem")
 
 		//
 		// gr1

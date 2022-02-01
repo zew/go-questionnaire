@@ -15,7 +15,7 @@ func POP3Part1Intro(q *qst.QuestionnaireT) error {
 
 	page := q.AddPage()
 	page.Label = trl.S{"de": ""}
-	page.Style = css.DesktopWidthMaxForPages(page.Style, "36rem") // 60
+	page.WidthMax("36rem") // 60
 
 	{
 		gr := page.AddGroup()
@@ -119,7 +119,7 @@ func POP3Part1Decision34(q *qst.QuestionnaireT, decisionNumber int, inpName stri
 
 	page := q.AddPage()
 	page.Label = trl.S{"de": ""}
-	page.Style = css.DesktopWidthMaxForPages(page.Style, "36rem") // 60
+	page.WidthMax("36rem") // 60
 
 	//
 	if decisionNumber == 3 {
@@ -347,7 +347,7 @@ func POP3Part2Intro(q *qst.QuestionnaireT) error {
 
 	page := q.AddPage()
 	page.Label = trl.S{"de": ""}
-	page.Style = css.DesktopWidthMaxForPages(page.Style, "36rem") // 60
+	page.WidthMax("36rem") // 60
 
 	{
 		gr := page.AddGroup()
@@ -481,7 +481,7 @@ func POP3Part2Questions123and456(q *qst.QuestionnaireT, start int) error {
 
 	page := q.AddPage()
 	page.Label = trl.S{"de": ""}
-	page.Style = css.DesktopWidthMaxForPages(page.Style, "36rem") // 60
+	page.WidthMax("36rem") // 60
 
 	{
 		gr := page.AddGroup()
@@ -697,7 +697,7 @@ func POP3Part2Questions78(q *qst.QuestionnaireT) error {
 
 	page := q.AddPage()
 	page.Label = trl.S{"de": ""}
-	page.Style = css.DesktopWidthMaxForPages(page.Style, "36rem") // 60
+	page.WidthMax("36rem") // 60
 
 	{
 		gr := page.AddGroup()

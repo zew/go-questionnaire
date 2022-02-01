@@ -147,36 +147,11 @@ func (sr *StylesResponsive) Combine(b StylesResponsive) {
 // 	return sr
 // }
 
-// PageMarginsAuto is called for every page - setting auto margins
-func PageMarginsAuto(sr *StylesResponsive) *StylesResponsive {
-	sr = NewStylesResponsive(sr)
-	if sr.Desktop.StyleBox.Margin == "" && sr.Mobile.StyleBox.Margin == "" {
-		sr.Desktop.StyleBox.Margin = "1.2rem auto 0 auto"
-		sr.Mobile.StyleBox.Margin = "0.8rem auto 0 auto"
-	}
-	return sr
-}
-
-// DesktopWidthMaxForPages limits width in desktop view;
-// horizontal centering by default via PageMarginsAuto();
-// for instance to 30rem;
-// mobile view: no limitation
-func DesktopWidthMaxForPages(sr *StylesResponsive, s string) *StylesResponsive {
-	sr = NewStylesResponsive(sr)
-	sr.Desktop.StyleBox.WidthMax = s
-	sr.Mobile.StyleBox.WidthMax = "calc(100% - 1.2rem)" // 0.6rem margin-left and -right in mobile view
-	return sr
-}
-
-// DesktopWidthMaxForGroups limits width in desktop view
-// for instance to 30rem;
-// mobile view: no limitation
-func DesktopWidthMaxForGroups(sr *StylesResponsive, s string) *StylesResponsive {
-	sr = NewStylesResponsive(sr)
-	sr.Desktop.StyleBox.WidthMax = s
-	sr.Mobile.StyleBox.WidthMax = "none" // => 100% of page - page has margins; replaced desktop max-width
-	return sr
-}
+//
+//
+// grid item styles
+//    some are already attached as methods to inputT
+//
 
 // MobileVertical makes an input rendering vertically in mobile view
 func MobileVertical(sr *StylesResponsive) *StylesResponsive {
@@ -186,10 +161,6 @@ func MobileVertical(sr *StylesResponsive) *StylesResponsive {
 	sr.Mobile.StyleGridContainer.TemplateRows = "0.9fr 1fr" // must be more than one
 	return sr
 }
-
-//
-// grid item styles
-//
 
 // ItemCenteredMCA makes the input centered on main and cross axis (MCA)
 func ItemCenteredMCA(sr *StylesResponsive) *StylesResponsive {

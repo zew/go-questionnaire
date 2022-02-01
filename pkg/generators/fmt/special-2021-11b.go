@@ -30,7 +30,7 @@ func special202111b(q *qst.QuestionnaireT) error {
 			"de": "Inflation,<br>Geldpolitik 3",
 			"en": "Inflation,<br>Mon. Policy 3",
 		}
-		page.Style = css.DesktopWidthMaxForPages(page.Style, "48rem")
+		page.WidthMax("48rem")
 
 		// gr1
 

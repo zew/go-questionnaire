@@ -37,7 +37,7 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 		// page.Label = trl.S{"de": "POP page"}
 		// page.Short = trl.S{"de": "Stiftungen 1"}
 		page.Label = trl.S{"de": ""}
-		page.Style = css.DesktopWidthMaxForPages(page.Style, "36rem") // 60
+		page.WidthMax("36rem") // 60
 
 		{
 			gr := page.AddGroup()
@@ -442,7 +442,7 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 	{
 		page := q.AddPage()
 		page.Label = trl.S{"de": ""}
-		page.Style = css.DesktopWidthMaxForPages(page.Style, "36rem") // 60
+		page.WidthMax("36rem") // 60
 
 		{
 			gr := page.AddGroup()

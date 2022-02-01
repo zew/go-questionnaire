@@ -14,7 +14,7 @@ func TitlePat23(q *qst.QuestionnaireT) error {
 		page := q.AddPage()
 		page.Label = trl.S{"de": ""}
 		page.NoNavigation = true
-		page.Style = css.DesktopWidthMaxForPages(page.Style, "36rem") // 60
+		page.WidthMax("36rem") // 60
 
 		//
 		gr := page.AddGroup()

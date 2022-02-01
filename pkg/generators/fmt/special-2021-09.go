@@ -115,7 +115,7 @@ func special202109(q *qst.QuestionnaireT) error {
 			"de": "Sonderfrage:<br>Anlageklassen",
 			"en": "Special:<br>Asset classes",
 		}
-		page.Style = css.DesktopWidthMaxForPages(page.Style, "46rem")
+		page.WidthMax("46rem")
 
 		//
 		// gr1

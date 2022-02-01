@@ -416,14 +416,13 @@ Certain repeating desigsn are captured in reusable functions.
 Default alignment for pages is `centered`.
 
 ```go
-// PageMarginsAuto is called for every page - setting auto margins
-func PageMarginsAuto(sr *StylesResponsive) *StylesResponsive {
-    sr = NewStylesResponsive(sr)
-    if sr.Desktop.StyleBox.Margin == "" && sr.Mobile.StyleBox.Margin == "" {
-        sr.Desktop.StyleBox.Margin = "1.2rem auto 0 auto"  // horizontally centered via auto
-        sr.Mobile.StyleBox.Margin = "0.8rem auto 0 auto"   //   ~
+// WidthDefault is called for every page - setting auto margins
+func (p *pageT) WidthDefault() {
+    p.Style = css.NewStylesResponsive(p.Style)
+    if p.Style.Desktop.StyleBox.Margin == "" && p.Style.Mobile.StyleBox.Margin == "" {
+        p.Style.Desktop.StyleBox.Margin = "1.2rem auto 0 auto"
+        p.Style.Mobile.StyleBox.Margin = "0.8rem auto 0 auto"
     }
-    return sr
 }
 ```
 
@@ -447,14 +446,14 @@ func DesktopWidthMaxForPages(sr *StylesResponsive, s string) *StylesResponsive {
 The vertical margin below each group can be directly set via `BottomVSpacers`;  
 default is 3, amounting to 1.5 lines.
 
-##### DesktopWidthMaxForGroups()
+##### WidthMax()
 
 Default alignment for groups is `left`.
 
 `group.Width` can be adjusted in similar fashion.  
 
 ```go
-gr.Style = css.DesktopWidthMaxForGroups(gr.Style, "16rem")
+gr.WidthMax("16rem")
 ```
 
 ![Group width](./app-bucket/content/img/group-width.png)

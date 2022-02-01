@@ -38,7 +38,7 @@ func special202108(q *qst.QuestionnaireT) error {
 			"de": "Sonderfrage:<br>EZB 1",
 			"en": "Special Questions&nbsp;1 - ECB",
 		}
-		page.Style = css.DesktopWidthMaxForPages(page.Style, "48rem")
+		page.WidthMax("48rem")
 
 		//
 		// gr 0 - einleitung
@@ -403,7 +403,7 @@ func special202108(q *qst.QuestionnaireT) error {
 			"de": "Sonderfrage:<br>EZB 2",
 			"en": "Special Questions&nbsp;2 - ECB",
 		}
-		page.Style = css.DesktopWidthMaxForPages(page.Style, "48rem")
+		page.WidthMax("48rem")
 
 		// gr1
 		{

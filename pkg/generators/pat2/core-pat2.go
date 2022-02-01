@@ -76,7 +76,7 @@ func Part1Intro(q *qst.QuestionnaireT) error {
 	{
 		page := q.AddPage()
 		page.Label = trl.S{"de": ""}
-		page.Style = css.DesktopWidthMaxForPages(page.Style, "36rem") // 60
+		page.WidthMax("36rem") // 60
 
 		//
 		gr := page.AddGroup()
@@ -255,7 +255,7 @@ func Part2IntroA(q *qst.QuestionnaireT) error {
 	{
 		page := q.AddPage()
 		page.Label = trl.S{"de": ""}
-		page.Style = css.DesktopWidthMaxForPages(page.Style, "36rem") // 60
+		page.WidthMax("36rem") // 60
 
 		//
 		{
@@ -309,7 +309,7 @@ func Part2IntroBUndEntscheidung78(q *qst.QuestionnaireT) error {
 	{
 		page := q.AddPage()
 		page.Label = trl.S{"de": ""}
-		page.Style = css.DesktopWidthMaxForPages(page.Style, "36rem") // 60
+		page.WidthMax("36rem") // 60
 
 		//
 		{
@@ -405,7 +405,7 @@ func Part2IntroBUndEntscheidung78(q *qst.QuestionnaireT) error {
 	{
 		page := q.AddPage()
 		page.Label = trl.S{"de": ""}
-		page.Style = css.DesktopWidthMaxForPages(page.Style, "36rem") // 60
+		page.WidthMax("36rem") // 60
 		// page.ValidationFuncMsg = trl.S{"de": "Erste und zweite Antwort schließen sich aus. Wirklich fortfahren?"}
 		// page.ValidationFuncName = "pat2-part1-q7-8"
 
@@ -463,7 +463,7 @@ func Part2IntroBUndEntscheidung78(q *qst.QuestionnaireT) error {
 	{
 		page := q.AddPage()
 		page.Label = trl.S{"de": ""}
-		page.Style = css.DesktopWidthMaxForPages(page.Style, "36rem") // 60
+		page.WidthMax("36rem") // 60
 		// page.ValidationFuncMsg = trl.S{"de": "Erste und zweite Antwort schließen sich aus. Wirklich fortfahren?"}
 		// page.ValidationFuncName = "pat2-part1-q7-8"
 
@@ -519,7 +519,7 @@ func Part3Intro(q *qst.QuestionnaireT) error {
 
 	page := q.AddPage()
 	page.Label = trl.S{"de": ""}
-	page.Style = css.DesktopWidthMaxForPages(page.Style, "36rem") // 60
+	page.WidthMax("36rem") // 60
 
 	{
 		gr := page.AddGroup()
@@ -645,7 +645,7 @@ func Part3Block12(q *qst.QuestionnaireT, blockStart int) error {
 
 	page := q.AddPage()
 	page.Label = trl.S{"de": ""}
-	page.Style = css.DesktopWidthMaxForPages(page.Style, "36rem") // 60
+	page.WidthMax("36rem") // 60
 
 	// page.ValidationFuncName = "pat2-add-to-10"
 	// page.ValidationFuncMsg = trl.S{"de": "Wollen Sie wirklich weiterfahren, ohne dass sich Ihre Eintraege auf 10 summieren?"}

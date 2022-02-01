@@ -92,13 +92,13 @@ func special202202a(q *qst.QuestionnaireT) error {
 			"de": "Inflation,<br>Geldpolitik",
 			"en": "Inflation,<br>Mon. Policy",
 		}
-		page.Style = css.DesktopWidthMaxForPages(page.Style, "42rem")
+		page.WidthMax("42rem")
 
 		//
 		{
 			gr := page.AddGroup()
 			gr.Cols = 9
-			gr.Style = css.DesktopWidthMaxForGroups(gr.Style, "30rem")
+			gr.WidthMax("30rem")
 
 			{
 				inp := gr.AddInput()
@@ -173,11 +173,8 @@ func special202202a(q *qst.QuestionnaireT) error {
 			gr.Cols = 6
 			gr.Style = css.NewStylesResponsive(gr.Style)
 			gr.Style.Mobile.StyleGridContainer.GapRow = "0.02rem"
-
-			// gr.Style = css.DesktopWidthMaxForGroups(gr.Style, "30rem")
-			gr.Style.Desktop.StyleBox.Display = "grid"
-			gr.Style.Desktop.StyleGridContainer.AutoFlow = "row"
-			gr.Style.Desktop.StyleGridContainer.TemplateColumns = "1.6fr    2.7fr 3.1fr 3.1fr 2.4fr    2.4fr  1.4fr"
+			// gr.WidthMax("30rem")
+			gr.ColWidths("1.6fr    2.7fr 3.1fr 3.1fr 2.4fr    2.4fr  1.4fr")
 
 			{
 				inp := gr.AddInput()
@@ -328,7 +325,7 @@ func special202202a(q *qst.QuestionnaireT) error {
 						"de": "100&nbsp;%",
 						"en": "100&nbsp;%",
 					}
-					inp.Style = css.ItemCenteredMCA(inp.Style)
+					// inp.Style = css.ItemCenteredMCA(inp.Style)
 					inp.Style = css.ItemStartMA(inp.Style)
 					inp.Style = css.ItemStartCA(inp.Style)
 					inp.Style = css.TextStart(inp.Style)
@@ -340,7 +337,7 @@ func special202202a(q *qst.QuestionnaireT) error {
 					inp.ColSpan = 1
 					inp.Name = fmt.Sprintf("inf%v_noanswer", i-2020)
 					inp.ColSpanControl = 1
-					inp.Style = css.ItemCenteredMCA(inp.Style)
+					// inp.Style = css.ItemCenteredMCA(inp.Style)
 					inp.Style = css.ItemStartMA(inp.Style)
 					inp.Style = css.ItemStartCA(inp.Style)
 
@@ -364,7 +361,7 @@ func special202202a(q *qst.QuestionnaireT) error {
 			"de": "Inflation,<br>Geldpolitik 2",
 			"en": "Inflation,<br>Mon. Policy 2",
 		}
-		page.Style = css.DesktopWidthMaxForPages(page.Style, "48rem")
+		page.WidthMax("48rem")
 
 		//
 		// gr2

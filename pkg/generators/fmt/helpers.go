@@ -236,6 +236,39 @@ func labelsStrongIncreaseStrongDecrease() []trl.S {
 
 }
 
+func labelsStrongIncreaseStrongDecrease2() []trl.S {
+
+	tm := []trl.S{
+		{
+			"de": "stark steigen",
+			"en": "strongly increase",
+		},
+		{
+			"de": "leicht steigen",
+			"en": "slightly increase",
+		},
+		{
+			"de": "unverändert bleiben",
+			"en": "not change",
+		},
+		{
+			"de": "leicht fallen",
+			"en": "slightly decrease",
+		},
+		{
+			"de": "stark fallen",
+			"en": "strongly decrease",
+		},
+		{
+			"de": "keine<br>Angabe",
+			"en": "no answer",
+		},
+	}
+
+	return tm
+
+}
+
 func labelsVeryPositiveVeryNegative() []trl.S {
 
 	tm := []trl.S{

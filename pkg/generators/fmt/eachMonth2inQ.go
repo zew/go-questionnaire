@@ -60,7 +60,7 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 		"de": "Inflation,<br>Geldpolitik",
 		"en": "Inflation,<br>Mon. Policy",
 	}
-	page.Style = css.DesktopWidthMaxForPages(page.Style, "48rem")
+	page.WidthMax("48rem")
 
 	{
 		gr := page.AddGroup()

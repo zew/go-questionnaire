@@ -31,7 +31,7 @@ func eachMonth1inQ(q *qst.QuestionnaireT) error {
 		"de": "Wachstum",
 		"en": "Growth",
 	}
-	page.Style = css.DesktopWidthMaxForPages(page.Style, "42rem")
+	page.WidthMax("42rem")
 
 	{
 		gr := page.AddGroup()

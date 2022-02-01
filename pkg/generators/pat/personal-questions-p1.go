@@ -55,7 +55,7 @@ func PersonalQuestions1(q *qst.QuestionnaireT, vE VariableElements) error {
 		page := q.AddPage()
 		page.Label = trl.S{"de": ""}
 		page.Short = trl.S{"de": "Eigene Einstellung 2"}
-		page.Style = css.DesktopWidthMaxForPages(page.Style, "30rem")
+		page.WidthMax("30rem")
 
 		// gr1
 		{

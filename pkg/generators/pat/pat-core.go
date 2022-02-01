@@ -51,7 +51,7 @@ func Title(q *qst.QuestionnaireT, isPOP bool, comprehendWarning bool) error {
 		page := q.AddPage()
 		page.Label = trl.S{"de": ""}
 		page.NoNavigation = true
-		page.Style = css.DesktopWidthMaxForPages(page.Style, "36rem") // 60
+		page.WidthMax("36rem") // 60
 
 		//
 		gr := page.AddGroup()
@@ -130,7 +130,7 @@ func Part1Entscheidung1bis6(q *qst.QuestionnaireT, vE VariableElements) error {
 		page := q.AddPage()
 		page.Label = trl.S{"de": ""}
 		page.Short = trl.S{"de": "Stiftungen 1"}
-		page.Style = css.DesktopWidthMaxForPages(page.Style, "36rem") // 60
+		page.WidthMax("36rem") // 60
 
 		// gr0
 		{
@@ -206,7 +206,7 @@ func Part1Entscheidung1bis6(q *qst.QuestionnaireT, vE VariableElements) error {
 		page := q.AddPage()
 		page.Label = trl.S{"de": ""}
 		page.Short = trl.S{"de": "Stiftungen 2"}
-		page.Style = css.DesktopWidthMaxForPages(page.Style, "36rem") // 60
+		page.WidthMax("36rem") // 60
 
 		page.ValidationFuncName = "patPage2"
 		page.ValidationFuncMsg = trl.S{
@@ -274,7 +274,7 @@ func Part1Entscheidung1bis6(q *qst.QuestionnaireT, vE VariableElements) error {
 		page := q.AddPage()
 		page.Label = trl.S{"de": ""}
 		page.Short = trl.S{"de": "Stiftungen 3"}
-		page.Style = css.DesktopWidthMaxForPages(page.Style, "36rem") // 60
+		page.WidthMax("36rem") // 60
 
 		page.ValidationFuncName = "patPage3"
 		page.ValidationFuncMsg = trl.S{
@@ -322,7 +322,7 @@ func Part1Frage1(q *qst.QuestionnaireT, vE VariableElements) error {
 		page := q.AddPage()
 		page.Label = trl.S{"de": ""}
 		page.Short = trl.S{"de": "Auswertung 1"}
-		page.Style = css.DesktopWidthMaxForPages(page.Style, "36rem") // 60
+		page.WidthMax("36rem") // 60
 
 		page.ValidationFuncName = "pat-best-gt-worst"
 		page.ValidationFuncMsg = trl.S{"de": "Denken Sie nicht, dass die Zahlungsbereitschaft bei besseren Stiftungen höher sein sollte, also beste Stiftung > mittlere > schlechteste? Wirklich so fortfahren?"}
@@ -456,7 +456,7 @@ func Part2(q *qst.QuestionnaireT, vE VariableElements) error {
 		page := q.AddPage()
 		page.Label = trl.S{"de": ""}
 		page.Short = trl.S{"de": "Auswertung 2"}
-		page.Style = css.DesktopWidthMaxForPages(page.Style, "36rem") // 60
+		page.WidthMax("36rem") // 60
 
 		zeT := fmt.Sprintf(`
 			<b>
@@ -552,7 +552,7 @@ func Part2(q *qst.QuestionnaireT, vE VariableElements) error {
 		page := q.AddPage()
 		page.Label = trl.S{"de": ""}
 		page.Short = trl.S{"de": "Auswertung 2"}
-		page.Style = css.DesktopWidthMaxForPages(page.Style, "36rem") // 60
+		page.WidthMax("36rem") // 60
 
 		page.ValidationFuncName = "patPage5"
 		page.ValidationFuncMsg = trl.S{
@@ -659,7 +659,7 @@ func Part2(q *qst.QuestionnaireT, vE VariableElements) error {
 		page := q.AddPage()
 		page.Label = trl.S{"de": ""}
 		page.Short = trl.S{"de": "Gruppen-<br>präferenzen"}
-		page.Style = css.DesktopWidthMaxForPages(page.Style, "36rem") // 60
+		page.WidthMax("36rem") // 60
 
 		if !vE.AllMandatory {
 			page.ValidationFuncName = "patPage6"
@@ -904,7 +904,7 @@ func End(q *qst.QuestionnaireT, vE VariableElements) error {
 		page := q.AddPage()
 		page.Label = cfg.Get().Mp["end"]
 		page.NoNavigation = true
-		page.Style = css.DesktopWidthMaxForPages(page.Style, "30rem")
+		page.WidthMax("30rem")
 
 		{
 			// Only one group => shuffling is no problem
@@ -982,7 +982,7 @@ func Part2Frage4(q *qst.QuestionnaireT, vE VariableElements) error {
 		page := q.AddPage()
 		page.Label = trl.S{"de": ""}
 		page.Short = trl.S{"de": "Eigene Einstellung 1"}
-		page.Style = css.DesktopWidthMaxForPages(page.Style, "30rem")
+		page.WidthMax("30rem")
 
 		// gr1
 		{

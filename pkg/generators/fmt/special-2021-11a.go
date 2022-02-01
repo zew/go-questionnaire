@@ -87,14 +87,14 @@ func special202111a(q *qst.QuestionnaireT) error {
 			"de": "Inflation,<br>Geldpolitik",
 			"en": "Inflation,<br>Mon. Policy",
 		}
-		page.Style = css.DesktopWidthMaxForPages(page.Style, "31rem")
-		page.Style = css.DesktopWidthMaxForPages(page.Style, "30rem")
+		page.WidthMax("31rem")
+		page.WidthMax("30rem")
 
 		//
 		{
 			gr := page.AddGroup()
 			gr.Cols = 9
-			// gr.Style = css.DesktopWidthMaxForGroups(gr.Style, "30rem")
+			// gr.WidthMax("30rem")
 
 			{
 				inp := gr.AddInput()
@@ -165,7 +165,7 @@ func special202111a(q *qst.QuestionnaireT) error {
 			gr.Cols = 10
 			gr.Style = css.NewStylesResponsive(gr.Style)
 			gr.Style.Mobile.StyleGridContainer.GapRow = "0.02rem"
-			// gr.Style = css.DesktopWidthMaxForGroups(gr.Style, "30rem")
+			// gr.WidthMax("30rem")
 
 			{
 				inp := gr.AddInput()
@@ -316,7 +316,7 @@ func special202111a(q *qst.QuestionnaireT) error {
 			"de": "Inflation,<br>Geldpolitik 2",
 			"en": "Inflation,<br>Mon. Policy 2",
 		}
-		page.Style = css.DesktopWidthMaxForPages(page.Style, "48rem")
+		page.WidthMax("48rem")
 
 		//
 		// gr2

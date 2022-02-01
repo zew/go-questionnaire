@@ -431,7 +431,7 @@ func special202202a(q *qst.QuestionnaireT) error {
 		// log.Printf("colsBelow2 %+v", colsBelow2)
 
 		{
-			year := 2022
+			year := "22_24"
 			idx := 2
 
 			// lbl := rowLabelsAssetClasses202111[idx]

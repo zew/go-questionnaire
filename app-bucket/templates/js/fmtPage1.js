@@ -68,11 +68,6 @@ function mustAddUp100(event) {
 }
 
 
-var frm = document.forms.frmMain;
-if (frm) {
-    frm.addEventListener('submit', mustAddUp100);    
-}
-
 if (document.forms.frmMain.y_probgood) {
     document.forms.frmMain.y_probgood.addEventListener('blur',mustAddUp100);
 }
@@ -83,5 +78,7 @@ if (document.forms.frmMain.y_probbad) {
     document.forms.frmMain.y_probbad.addEventListener('blur',mustAddUp100);
 }
 
-
-
+var frm = document.forms.frmMain;
+if (frm) {
+    frm.addEventListener('submit', mustAddUp100);
+}

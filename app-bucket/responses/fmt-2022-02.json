@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "6642b4013872bbb882c301d5f2ec1a156a46c45d1e6b2f1a8b871bfa0510d02c",
+ 	"md_5": "cda997876b530641208c8496d5500a063a2190c4303e82f7df5bd21e0be2961c",
  	"lang_codes": [
  		"de",
  		"en"
@@ -5008,7 +5008,7 @@
  							"col_span_label": 1
  						},
  						{
- 							"name": "inf2_under1",
+ 							"name": "inf2022_under1",
  							"type": "number",
  							"max_chars": 3,
  							"max": 100,
@@ -5020,7 +5020,7 @@
  							"col_span_control": 3
  						},
  						{
- 							"name": "inf2_between1and2",
+ 							"name": "inf2022_between1and2",
  							"type": "number",
  							"max_chars": 3,
  							"max": 100,
@@ -5032,7 +5032,7 @@
  							"col_span_control": 3
  						},
  						{
- 							"name": "inf2_between2and3",
+ 							"name": "inf2022_between2and3",
  							"type": "number",
  							"max_chars": 3,
  							"max": 100,
@@ -5044,7 +5044,7 @@
  							"col_span_control": 3
  						},
  						{
- 							"name": "inf2_above3",
+ 							"name": "inf2022_above3",
  							"type": "number",
  							"max_chars": 3,
  							"max": 100,
@@ -5116,7 +5116,7 @@
  							"col_span_label": 1
  						},
  						{
- 							"name": "inf3_under1",
+ 							"name": "inf2023_under1",
  							"type": "number",
  							"max_chars": 3,
  							"max": 100,
@@ -5128,7 +5128,7 @@
  							"col_span_control": 3
  						},
  						{
- 							"name": "inf3_between1and2",
+ 							"name": "inf2023_between1and2",
  							"type": "number",
  							"max_chars": 3,
  							"max": 100,
@@ -5140,7 +5140,7 @@
  							"col_span_control": 3
  						},
  						{
- 							"name": "inf3_between2and3",
+ 							"name": "inf2023_between2and3",
  							"type": "number",
  							"max_chars": 3,
  							"max": 100,
@@ -5152,7 +5152,7 @@
  							"col_span_control": 3
  						},
  						{
- 							"name": "inf3_above3",
+ 							"name": "inf2023_above3",
  							"type": "number",
  							"max_chars": 3,
  							"max": 100,
@@ -5224,7 +5224,7 @@
  							"col_span_label": 1
  						},
  						{
- 							"name": "inf4_under1",
+ 							"name": "inf2024_under1",
  							"type": "number",
  							"max_chars": 3,
  							"max": 100,
@@ -5236,7 +5236,7 @@
  							"col_span_control": 3
  						},
  						{
- 							"name": "inf4_between1and2",
+ 							"name": "inf2024_between1and2",
  							"type": "number",
  							"max_chars": 3,
  							"max": 100,
@@ -5248,7 +5248,7 @@
  							"col_span_control": 3
  						},
  						{
- 							"name": "inf4_between2and3",
+ 							"name": "inf2024_between2and3",
  							"type": "number",
  							"max_chars": 3,
  							"max": 100,
@@ -5260,7 +5260,7 @@
  							"col_span_control": 3
  						},
  						{
- 							"name": "inf4_above3",
+ 							"name": "inf2024_above3",
  							"type": "number",
  							"max_chars": 3,
  							"max": 100,
@@ -5345,7 +5345,12 @@
  						}
  					}
  				}
- 			]
+ 			],
+ 			"validation_func_name": "fmt-m2-p6",
+ 			"validation_func_msg": {
+ 				"de": "Ihre Antworten auf Frage 2b addieren sich nicht zu 100%. Wirklich weiter?",
+ 				"en": "Your answers to question 2b dont add up to 100%. Continue anyway?"
+ 			}
  		},
  		{
  			"label": {
@@ -5692,7 +5697,7 @@
  							}
  						},
  						{
- 							"name": "inff_2022__business_cycle",
+ 							"name": "inff_22_24__business_cycle",
  							"type": "radio",
  							"label": {
  								"de": "Konjunktur\u0026shy;ent\u0026shy;wicklung im Euro\u0026shy;gebiet",
@@ -5719,38 +5724,38 @@
  							}
  						},
  						{
- 							"name": "inff_2022__business_cycle",
+ 							"name": "inff_22_24__business_cycle",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "inff_2022__business_cycle",
+ 							"name": "inff_22_24__business_cycle",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "inff_2022__business_cycle",
+ 							"name": "inff_22_24__business_cycle",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "inff_2022__business_cycle",
+ 							"name": "inff_22_24__business_cycle",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "inff_2022__business_cycle",
+ 							"name": "inff_22_24__business_cycle",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
  							"value_radio": "6"
  						},
  						{
- 							"name": "inff_2022__wages",
+ 							"name": "inff_22_24__wages",
  							"type": "radio",
  							"label": {
  								"de": "Entwicklung der Löhne im Euro\u0026shy;gebiet",
@@ -5777,38 +5782,38 @@
  							}
  						},
  						{
- 							"name": "inff_2022__wages",
+ 							"name": "inff_22_24__wages",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "inff_2022__wages",
+ 							"name": "inff_22_24__wages",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "inff_2022__wages",
+ 							"name": "inff_22_24__wages",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "inff_2022__wages",
+ 							"name": "inff_22_24__wages",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "inff_2022__wages",
+ 							"name": "inff_22_24__wages",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
  							"value_radio": "6"
  						},
  						{
- 							"name": "inff_2022__energy",
+ 							"name": "inff_22_24__energy",
  							"type": "radio",
  							"label": {
  								"de": "Entwicklung der Energiepreise",
@@ -5835,38 +5840,38 @@
  							}
  						},
  						{
- 							"name": "inff_2022__energy",
+ 							"name": "inff_22_24__energy",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "inff_2022__energy",
+ 							"name": "inff_22_24__energy",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "inff_2022__energy",
+ 							"name": "inff_22_24__energy",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "inff_2022__energy",
+ 							"name": "inff_22_24__energy",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "inff_2022__energy",
+ 							"name": "inff_22_24__energy",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
  							"value_radio": "6"
  						},
  						{
- 							"name": "inff_2022__raw_materials",
+ 							"name": "inff_22_24__raw_materials",
  							"type": "radio",
  							"label": {
  								"de": "Entwicklung der Roh\u0026shy;stoff\u0026shy;preise (ohne Energiepreise)",
@@ -5893,38 +5898,38 @@
  							}
  						},
  						{
- 							"name": "inff_2022__raw_materials",
+ 							"name": "inff_22_24__raw_materials",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "inff_2022__raw_materials",
+ 							"name": "inff_22_24__raw_materials",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "inff_2022__raw_materials",
+ 							"name": "inff_22_24__raw_materials",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "inff_2022__raw_materials",
+ 							"name": "inff_22_24__raw_materials",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "inff_2022__raw_materials",
+ 							"name": "inff_22_24__raw_materials",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
  							"value_radio": "6"
  						},
  						{
- 							"name": "inff_2022__exchange_rates",
+ 							"name": "inff_22_24__exchange_rates",
  							"type": "radio",
  							"label": {
  								"de": "Veränderung der Wechsel\u0026shy;kurse (relativ zum Euro)",
@@ -5951,38 +5956,38 @@
  							}
  						},
  						{
- 							"name": "inff_2022__exchange_rates",
+ 							"name": "inff_22_24__exchange_rates",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "inff_2022__exchange_rates",
+ 							"name": "inff_22_24__exchange_rates",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "inff_2022__exchange_rates",
+ 							"name": "inff_22_24__exchange_rates",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "inff_2022__exchange_rates",
+ 							"name": "inff_22_24__exchange_rates",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "inff_2022__exchange_rates",
+ 							"name": "inff_22_24__exchange_rates",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
  							"value_radio": "6"
  						},
  						{
- 							"name": "inff_2022__ecb_money_policy",
+ 							"name": "inff_22_24__ecb_money_policy",
  							"type": "radio",
  							"label": {
  								"de": "Geld\u0026shy;po\u0026shy;li\u0026shy;tik der EZB",
@@ -6009,38 +6014,38 @@
  							}
  						},
  						{
- 							"name": "inff_2022__ecb_money_policy",
+ 							"name": "inff_22_24__ecb_money_policy",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "inff_2022__ecb_money_policy",
+ 							"name": "inff_22_24__ecb_money_policy",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "inff_2022__ecb_money_policy",
+ 							"name": "inff_22_24__ecb_money_policy",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "inff_2022__ecb_money_policy",
+ 							"name": "inff_22_24__ecb_money_policy",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "inff_2022__ecb_money_policy",
+ 							"name": "inff_22_24__ecb_money_policy",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
  							"value_radio": "6"
  						},
  						{
- 							"name": "inff_2022__trade_war",
+ 							"name": "inff_22_24__trade_war",
  							"type": "radio",
  							"label": {
  								"de": "In\u0026shy;ter\u0026shy;na\u0026shy;tion\u0026shy;ale Handels\u0026shy;konflikte",
@@ -6067,38 +6072,38 @@
  							}
  						},
  						{
- 							"name": "inff_2022__trade_war",
+ 							"name": "inff_22_24__trade_war",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "inff_2022__trade_war",
+ 							"name": "inff_22_24__trade_war",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "inff_2022__trade_war",
+ 							"name": "inff_22_24__trade_war",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "inff_2022__trade_war",
+ 							"name": "inff_22_24__trade_war",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "inff_2022__trade_war",
+ 							"name": "inff_22_24__trade_war",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
  							"value_radio": "6"
  						},
  						{
- 							"name": "inff_2022__supply_chain",
+ 							"name": "inff_22_24__supply_chain",
  							"type": "radio",
  							"label": {
  								"de": "In\u0026shy;ter\u0026shy;na\u0026shy;tion\u0026shy;ale Lieferengpässe",
@@ -6125,38 +6130,38 @@
  							}
  						},
  						{
- 							"name": "inff_2022__supply_chain",
+ 							"name": "inff_22_24__supply_chain",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "inff_2022__supply_chain",
+ 							"name": "inff_22_24__supply_chain",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "inff_2022__supply_chain",
+ 							"name": "inff_22_24__supply_chain",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "inff_2022__supply_chain",
+ 							"name": "inff_22_24__supply_chain",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "inff_2022__supply_chain",
+ 							"name": "inff_22_24__supply_chain",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
  							"value_radio": "6"
  						},
  						{
- 							"name": "inff_2022__corona",
+ 							"name": "inff_22_24__corona",
  							"type": "radio",
  							"label": {
  								"de": "Corona-Pandemie",
@@ -6183,38 +6188,38 @@
  							}
  						},
  						{
- 							"name": "inff_2022__corona",
+ 							"name": "inff_22_24__corona",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "inff_2022__corona",
+ 							"name": "inff_22_24__corona",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "inff_2022__corona",
+ 							"name": "inff_22_24__corona",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "inff_2022__corona",
+ 							"name": "inff_22_24__corona",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "inff_2022__corona",
+ 							"name": "inff_22_24__corona",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
  							"value_radio": "6"
  						},
  						{
- 							"name": "inff_2022__green_transform",
+ 							"name": "inff_22_24__green_transform",
  							"type": "radio",
  							"label": {
  								"de": "Grüne Transformation",
@@ -6241,31 +6246,31 @@
  							}
  						},
  						{
- 							"name": "inff_2022__green_transform",
+ 							"name": "inff_22_24__green_transform",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "inff_2022__green_transform",
+ 							"name": "inff_22_24__green_transform",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "inff_2022__green_transform",
+ 							"name": "inff_22_24__green_transform",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "inff_2022__green_transform",
+ 							"name": "inff_22_24__green_transform",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "inff_2022__green_transform",
+ 							"name": "inff_22_24__green_transform",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
@@ -6297,7 +6302,7 @@
  					"columns": 7,
  					"inputs": [
  						{
- 							"name": "inff_2022__other_label",
+ 							"name": "inff_22_24__other_label",
  							"type": "text",
  							"max_chars": 17,
  							"label": {
@@ -6309,42 +6314,42 @@
  							"col_span_control": 4
  						},
  						{
- 							"name": "inff_2022__free",
+ 							"name": "inff_22_24__free",
  							"type": "radio",
  							"col_span": 1,
  							"col_span_control": 1,
  							"value_radio": "1"
  						},
  						{
- 							"name": "inff_2022__free",
+ 							"name": "inff_22_24__free",
  							"type": "radio",
  							"col_span": 1,
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "inff_2022__free",
+ 							"name": "inff_22_24__free",
  							"type": "radio",
  							"col_span": 1,
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "inff_2022__free",
+ 							"name": "inff_22_24__free",
  							"type": "radio",
  							"col_span": 1,
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "inff_2022__free",
+ 							"name": "inff_22_24__free",
  							"type": "radio",
  							"col_span": 1,
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "inff_2022__free",
+ 							"name": "inff_22_24__free",
  							"type": "radio",
  							"col_span": 1,
  							"col_span_label": 0.4,
@@ -7834,7 +7839,7 @@
  							}
  						},
  						{
- 							"name": "ecb_rate_infl__growth_euro_area",
+ 							"name": "ecb_rate__growth_euro_area",
  							"type": "radio",
  							"label": {
  								"de": "Wirt\u0026shy;schaftswachstum im Euro\u0026shy;raum",
@@ -7861,38 +7866,38 @@
  							}
  						},
  						{
- 							"name": "ecb_rate_infl__growth_euro_area",
+ 							"name": "ecb_rate__growth_euro_area",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "ecb_rate_infl__growth_euro_area",
+ 							"name": "ecb_rate__growth_euro_area",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "ecb_rate_infl__growth_euro_area",
+ 							"name": "ecb_rate__growth_euro_area",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "ecb_rate_infl__growth_euro_area",
+ 							"name": "ecb_rate__growth_euro_area",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "ecb_rate_infl__growth_euro_area",
+ 							"name": "ecb_rate__growth_euro_area",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
  							"value_radio": "6"
  						},
  						{
- 							"name": "ecb_rate_infl__demographics",
+ 							"name": "ecb_rate__demographics",
  							"type": "radio",
  							"label": {
  								"de": "De\u0026shy;mo\u0026shy;gra\u0026shy;phische Entwicklungen",
@@ -7919,38 +7924,38 @@
  							}
  						},
  						{
- 							"name": "ecb_rate_infl__demographics",
+ 							"name": "ecb_rate__demographics",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "ecb_rate_infl__demographics",
+ 							"name": "ecb_rate__demographics",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "ecb_rate_infl__demographics",
+ 							"name": "ecb_rate__demographics",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "ecb_rate_infl__demographics",
+ 							"name": "ecb_rate__demographics",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "ecb_rate_infl__demographics",
+ 							"name": "ecb_rate__demographics",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
  							"value_radio": "6"
  						},
  						{
- 							"name": "ecb_rate_infl__green_transform",
+ 							"name": "ecb_rate__green_transform",
  							"type": "radio",
  							"label": {
  								"de": "Grüne Transformation",
@@ -7977,38 +7982,38 @@
  							}
  						},
  						{
- 							"name": "ecb_rate_infl__green_transform",
+ 							"name": "ecb_rate__green_transform",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "ecb_rate_infl__green_transform",
+ 							"name": "ecb_rate__green_transform",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "ecb_rate_infl__green_transform",
+ 							"name": "ecb_rate__green_transform",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "ecb_rate_infl__green_transform",
+ 							"name": "ecb_rate__green_transform",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "ecb_rate_infl__green_transform",
+ 							"name": "ecb_rate__green_transform",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
  							"value_radio": "6"
  						},
  						{
- 							"name": "ecb_rate_infl__globalization",
+ 							"name": "ecb_rate__globalization",
  							"type": "radio",
  							"label": {
  								"de": "Entwicklung der Globalisierung",
@@ -8035,38 +8040,38 @@
  							}
  						},
  						{
- 							"name": "ecb_rate_infl__globalization",
+ 							"name": "ecb_rate__globalization",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "ecb_rate_infl__globalization",
+ 							"name": "ecb_rate__globalization",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "ecb_rate_infl__globalization",
+ 							"name": "ecb_rate__globalization",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "ecb_rate_infl__globalization",
+ 							"name": "ecb_rate__globalization",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "ecb_rate_infl__globalization",
+ 							"name": "ecb_rate__globalization",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
  							"value_radio": "6"
  						},
  						{
- 							"name": "ecb_rate_infl__govt_debt",
+ 							"name": "ecb_rate__govt_debt",
  							"type": "radio",
  							"label": {
  								"de": "Staatsverschuldung im Euro\u0026shy;gebiet",
@@ -8093,31 +8098,31 @@
  							}
  						},
  						{
- 							"name": "ecb_rate_infl__govt_debt",
+ 							"name": "ecb_rate__govt_debt",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "ecb_rate_infl__govt_debt",
+ 							"name": "ecb_rate__govt_debt",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "ecb_rate_infl__govt_debt",
+ 							"name": "ecb_rate__govt_debt",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "ecb_rate_infl__govt_debt",
+ 							"name": "ecb_rate__govt_debt",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "ecb_rate_infl__govt_debt",
+ 							"name": "ecb_rate__govt_debt",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
@@ -8149,7 +8154,7 @@
  					"columns": 7,
  					"inputs": [
  						{
- 							"name": "ecb_rate_infl__other_label",
+ 							"name": "ecb_rate__other_label",
  							"type": "text",
  							"max_chars": 17,
  							"label": {
@@ -8161,42 +8166,42 @@
  							"col_span_control": 4
  						},
  						{
- 							"name": "ecb_rate_infl__free",
+ 							"name": "ecb_rate__free",
  							"type": "radio",
  							"col_span": 1,
  							"col_span_control": 1,
  							"value_radio": "1"
  						},
  						{
- 							"name": "ecb_rate_infl__free",
+ 							"name": "ecb_rate__free",
  							"type": "radio",
  							"col_span": 1,
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "ecb_rate_infl__free",
+ 							"name": "ecb_rate__free",
  							"type": "radio",
  							"col_span": 1,
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "ecb_rate_infl__free",
+ 							"name": "ecb_rate__free",
  							"type": "radio",
  							"col_span": 1,
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "ecb_rate_infl__free",
+ 							"name": "ecb_rate__free",
  							"type": "radio",
  							"col_span": 1,
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "ecb_rate_infl__free",
+ 							"name": "ecb_rate__free",
  							"type": "radio",
  							"col_span": 1,
  							"col_span_label": 0.4,

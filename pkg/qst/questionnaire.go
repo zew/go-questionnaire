@@ -400,7 +400,7 @@ type pageT struct {
 
 	Groups []*groupT `json:"groups,omitempty"`
 
-	ValidationFuncName string `json:"validation_func_name,omitempty"` // javascript validation func name
+	ValidationFuncName string `json:"validation_func_name,omitempty"` // file name containing javascript validation func template
 	ValidationFuncMsg  trl.S  `json:"validation_func_msg,omitempty"`
 }
 

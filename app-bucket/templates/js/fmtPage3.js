@@ -1,16 +1,3 @@
-function demo(event) {
-    if (confirm("Press a button!")) {
-        txt = "You pressed OK!";
-        console.log(txt);
-        return true;
-    } else {
-        txt = "You pressed Cancel!";
-        console.log(txt);
-        event.preventDefault(); // not only return false - but also preventDefault()
-        return false;
-    }
-}
-
 function daxForecastInbetween(){
 
     var inp1 = document.forms.frmMain.dax_erw.value;

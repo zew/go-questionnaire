@@ -94,6 +94,12 @@ func special202202a(q *qst.QuestionnaireT) error {
 		}
 		page.WidthMax("42rem")
 
+		page.ValidationFuncName = "fmt-m2-p6"
+		page.ValidationFuncMsg = trl.S{
+			"de": "Ihre Antworten auf Frage 2b addieren sich nicht zu 100%. Wirklich weiter?",
+			"en": "Your answers to question 2b dont add up to 100%. Continue anyway?",
+		}
+
 		//
 		{
 			gr := page.AddGroup()
@@ -305,7 +311,7 @@ func special202202a(q *qst.QuestionnaireT) error {
 				for _, inpname := range inpNames {
 					inp := gr.AddInput()
 					inp.Type = "number"
-					inp.Name = fmt.Sprintf("inf%v_%v", i-2020, inpname)
+					inp.Name = fmt.Sprintf("inf%v_%v", i, inpname)
 					inp.Suffix = trl.S{"de": "%", "en": "%"}
 					// inp.Suffix = trl.S{"de": "%", "en": "pct"}
 					inp.ColSpan = 1

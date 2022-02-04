@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "cda997876b530641208c8496d5500a063a2190c4303e82f7df5bd21e0be2961c",
+ 	"md_5": "358733d005ac87fad9a814bb333d406af92a454af647d0de1488210c507652fa",
  	"lang_codes": [
  		"de",
  		"en"
@@ -1358,7 +1358,7 @@
  						"desktop": {
  							"grid_container_style": {},
  							"box_style": {
- 								"width_max": "16rem"
+ 								"width_max": "15rem"
  							},
  							"grid_item_style": {},
  							"text_style": {}
@@ -4522,15 +4522,15 @@
  		{
  			"label": {
  				"de": "Sonderfrage: Inflation, Prognosetreiber und Geldpolitik",
- 				"en": "Special: Inflation, forecast drivers and monetary policy"
+ 				"en": "Special Questions: Inflation, its causes, and monetary policy"
  			},
  			"description": {
  				"de": "",
  				"en": ""
  			},
  			"short": {
- 				"de": "Inflation,\u003cbr\u003eGeldpolitik",
- 				"en": "Inflation,\u003cbr\u003eMon. Policy"
+ 				"de": "Inflation,\u003cbr\u003eGeldpolitik 1",
+ 				"en": "Inflation,\u003cbr\u003eMon. Policy 1"
  			},
  			"style": {
  				"desktop": {
@@ -4559,8 +4559,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tAngesichts der In\u0026shy;fla\u0026shy;ti\u0026shy;onsentwicklung der letzten\n\t\t\t\t\t\t Monate möchten wir Ihre Einschätzungen \n\t\t\t\t\t\t zu den Ursachen und der weiteren Entwicklung \n\t\t\t\t\t\t der In\u0026shy;fla\u0026shy;ti\u0026shy;on im Euro\u0026shy;gebiet noch detaillierter \n\t\t\t\t\t\t als üblicherweise erfragen\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t",
- 								"en": " \u0026nbsp; "
+ 								"de": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tAngesichts der In\u0026shy;fla\u0026shy;ti\u0026shy;onsentwicklung der letzten\n\t\t\t\t\t\t Monate möchten wir Ihre Einschätzungen \n\t\t\t\t\t\t zu den Ursachen und der weiteren Entwicklung \n\t\t\t\t\t\t der In\u0026shy;fla\u0026shy;ti\u0026shy;on im Euro\u0026shy;gebiet noch detaillierter \n\t\t\t\t\t\t als üblicherweise erfragen.\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t",
+ 								"en": "\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tAgainst the background of the current in\u0026shy;fla\u0026shy;ti\u0026shy;on environ\u0026shy;ment, \n\t\t\t\t\t\twe would like to ask for your assessments \n\t\t\t\t\t\tof the causes and the further de\u0026shy;vel\u0026shy;op\u0026shy;ment \n\t\t\t\t\t\tof in\u0026shy;fla\u0026shy;ti\u0026shy;on in the euro area in more detail.\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 9,
  							"col_span_label": 1
@@ -4568,8 +4568,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e1a.\u003c/b\u003e \u0026nbsp; Punktpro\u0026shy;gno\u0026shy;se der \u003cb\u003ejährlichen In\u0026shy;fla\u0026shy;ti\u0026shy;onsrate im Euro\u0026shy;raum\u003c/b\u003e\u003cbr\u003e\n\t\t\t\t\tAnstieg des HICP von Jan bis Dez; Erwartungs\u0026shy;wert\n\t\t\t\t",
- 								"en": "\u003cb\u003e1a.\u003c/b\u003e \u0026nbsp;\t\n\t\t\t\t\tForecast of \u003cb\u003eannual in\u0026shy;fla\u0026shy;ti\u0026shy;on rate in the Euro area\u003c/b\u003e\u003cbr\u003e\n\t\t\t\t\tAvg. per\u0026shy;centage change in HICP from Jan to Dec\n\t\t\t\t"
+ 								"de": "\u003cb\u003e1a.\u003c/b\u003e \u0026nbsp; Punktpro\u0026shy;gno\u0026shy;se der \u003cb\u003ejährlichen In\u0026shy;fla\u0026shy;ti\u0026shy;onsrate im Euro\u0026shy;raum\u003c/b\u003e\u003cbr\u003e\n\t\t\t\t\t(durchschnittliche jährliche Veränderung des HICP in Pro\u0026shy;zent):  \n\t\t\t\t",
+ 								"en": "\u003cb\u003e1a.\u003c/b\u003e \u0026nbsp;\t\n\t\t\t\t\tPoint forecast of the \u003cb\u003eannual in\u0026shy;fla\u0026shy;ti\u0026shy;on rate in the euro area\u003c/b\u003e\u003cbr\u003e\n\t\t\t\t\t(av\u0026shy;er\u0026shy;age annual change of the HICP, in per\u0026shy;cent):\n\t\t\t\t"
  							},
  							"col_span": 9,
  							"col_span_label": 1
@@ -4722,7 +4722,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\u003cb\u003e1b.\u003c/b\u003e \u0026nbsp; Wir möchten gerne von Ihnen erfahren, \n\t\t\t\t\t\tfür wie wahrscheinlich Sie bestimmte Ausprägungen \n\t\t\t\t\t\tder durchschnittlichen jährlichen In\u0026shy;fla\u0026shy;ti\u0026shy;onsrate \n\t\t\t\t\t\tin den folgenden Jahren halten.\n\t\t\t\t\t\t\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003ci\u003e\n\t\t\t\t\t\tBitte stellen Sie si\u0026shy;cher, \n\t\t\t\t\t\tdass die Summen der Wahrscheinlichkeiten \n\t\t\t\t\t\tin den Zeilen jeweils 100% ergeben.\n\t\t\t\t\t\t\u003c/i\u003e\n\n\t\t\t\t\t\t\n\t\t\t\t\t\t",
- 								"en": "\u003cb\u003e1b.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\ttodo"
+ 								"en": "\u003cb\u003e1b.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tPlease assess the probabilities of the following \n\t\t\t\t\t\trealizations of the av\u0026shy;er\u0026shy;age annual in\u0026shy;fla\u0026shy;ti\u0026shy;on \n\t\t\t\t\t\tfrom 2022 to 2024 in the euro area \n\t\t\t\t\t\t\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003ci\u003e\n\t\t\t\t\t\tPlease ensure that the probabilities \n\t\t\t\t\t\tin every line add up to 100%.\n\t\t\t\t\t\t\u003c/i\u003e\n\t\t\t\t\t\t"
  							},
  							"col_span": 7,
  							"col_span_label": 1,
@@ -5084,7 +5084,7 @@
  							}
  						},
  						{
- 							"name": "inf2_noanswer",
+ 							"name": "inf2022__noanswer",
  							"type": "checkbox",
  							"col_span": 1,
  							"col_span_control": 1,
@@ -5192,7 +5192,7 @@
  							}
  						},
  						{
- 							"name": "inf3_noanswer",
+ 							"name": "inf2023__noanswer",
  							"type": "checkbox",
  							"col_span": 1,
  							"col_span_control": 1,
@@ -5300,7 +5300,7 @@
  							}
  						},
  						{
- 							"name": "inf4_noanswer",
+ 							"name": "inf2024__noanswer",
  							"type": "checkbox",
  							"col_span": 1,
  							"col_span_control": 1,
@@ -5348,14 +5348,14 @@
  			],
  			"validation_func_name": "fmt-m2-p6",
  			"validation_func_msg": {
- 				"de": "Ihre Antworten auf Frage 2b addieren sich nicht zu 100%. Wirklich weiter?",
- 				"en": "Your answers to question 2b dont add up to 100%. Continue anyway?"
+ 				"de": "Ihre Antworten auf Frage 1b addieren sich nicht zu 100%. Wirklich weiter?",
+ 				"en": "Your answers to question 1b dont add up to 100%. Continue anyway?"
  			}
  		},
  		{
  			"label": {
  				"de": "Sonderfrage: Inflation, Prognosetreiber und Geldpolitik 2",
- 				"en": "Special: Inflation, forecast drivers and monetary policy 2"
+ 				"en": "Special Questions: Inflation, its causes, and monetary policy 2"
  			},
  			"description": {
  				"de": "",
@@ -5393,7 +5393,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\n\t\t\t\t\t\u003cb\u003e2.\u003c/b\u003e  \u0026nbsp;\n\t\t\t\t\t\tHaben Entwicklungen in den folgenden Bereichen\n\t\t\t\t\t\t Sie zu einer Revision Ihrer \u003cb\u003eIn\u0026shy;fla\u0026shy;ti\u0026shy;onspro\u0026shy;gno\u0026shy;sen\u003c/b\u003e für den Euro\u0026shy;raum\n\t\t\t\t\t\t (ggü. November 2021) bewogen \n\t\t\t\t\t\t und wenn ja, nach oben (+) oder unten (-)?\n\t\t\t\t\t",
- 								"en": "\n\t\t\t\t\t\u003cb\u003e2.\u003c/b\u003e  \u0026nbsp;\n\t\t\t\t\t\tDid de\u0026shy;vel\u0026shy;op\u0026shy;ments in the following areas make you to change your in\u0026shy;fla\u0026shy;ti\u0026shy;on forecasts \n\t\t\t\t\t\tfor the euro area (relative to August 2021)? \n\t\t\t\t\t\t\n\t\t\t\t\t\tIf yes, did you revise them up (+) or down (-)? \n\t\t\t\t\t\n\t\t\t\t\t"
+ 								"en": "\n\t\t\t\t\t\u003cb\u003e2.\u003c/b\u003e  \u0026nbsp;\n\t\t\t\t\t\tDid de\u0026shy;vel\u0026shy;op\u0026shy;ments in the following areas make you change \n\t\t\t\t\t\tyour in\u0026shy;fla\u0026shy;ti\u0026shy;on forecasts for the euro area  \n\t\t\t\t\t\t(relative to November 2021)? \n\t\t\t\t\t\t\n\t\t\t\t\t\tIf yes, did you revise them up or down?\n\n\t\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\t\t(response categories: \n\t\t\t\t\t\t\tstrong\u0026shy;ly pos\u0026shy;itive (++), pos\u0026shy;itive (+), \n\t\t\t\t\t\t\tno in\u0026shy;flu\u0026shy;ence (0), \n\t\t\t\t\t\t\tneg\u0026shy;ative (-), strong\u0026shy;ly neg\u0026shy;ative (--)) \n\t\t\t\t\t\n\t\t\t\t\t"
  							},
  							"col_span_label": 1
  						}
@@ -5701,7 +5701,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Konjunktur\u0026shy;ent\u0026shy;wicklung im Euro\u0026shy;gebiet",
- 								"en": "Euro area eco\u0026shy;nom\u0026shy;ic growth"
+ 								"en": "De\u0026shy;vel\u0026shy;op\u0026shy;ment of GDP in the euro area"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -5759,7 +5759,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Entwicklung der Löhne im Euro\u0026shy;gebiet",
- 								"en": "Euro area wages"
+ 								"en": "De\u0026shy;vel\u0026shy;op\u0026shy;ment of wages in the euro area"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -5817,7 +5817,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Entwicklung der Energiepreise",
- 								"en": "Energy prices"
+ 								"en": "De\u0026shy;vel\u0026shy;op\u0026shy;ment of energy prices"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -5875,7 +5875,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Entwicklung der Roh\u0026shy;stoff\u0026shy;preise (ohne Energiepreise)",
- 								"en": "Commodity prices (excluding energy)"
+ 								"en": "De\u0026shy;vel\u0026shy;op\u0026shy;ment of prices for raw materials (except energy)"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -5933,7 +5933,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Veränderung der Wechsel\u0026shy;kurse (relativ zum Euro)",
- 								"en": "Exchange rates (relative to the Euro)"
+ 								"en": "Changes in exchange rates (relative to the euro)"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -5991,7 +5991,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Geld\u0026shy;po\u0026shy;li\u0026shy;tik der EZB",
- 								"en": "ECB monetary policy"
+ 								"en": "Monetary policy of the ECB"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -6049,7 +6049,7 @@
  							"type": "radio",
  							"label": {
  								"de": "In\u0026shy;ter\u0026shy;na\u0026shy;tion\u0026shy;ale Handels\u0026shy;konflikte",
- 								"en": "In\u0026shy;ter\u0026shy;na\u0026shy;tion\u0026shy;al trade disputes"
+ 								"en": "In\u0026shy;ter\u0026shy;na\u0026shy;tion\u0026shy;al trade conflicts"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -6107,7 +6107,7 @@
  							"type": "radio",
  							"label": {
  								"de": "In\u0026shy;ter\u0026shy;na\u0026shy;tion\u0026shy;ale Lieferengpässe",
- 								"en": "In\u0026shy;ter\u0026shy;na\u0026shy;tion\u0026shy;al supply chain bottlenecks"
+ 								"en": "In\u0026shy;ter\u0026shy;na\u0026shy;tion\u0026shy;al supply bottlenecks"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -6165,7 +6165,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Corona-Pandemie",
- 								"en": "Corona pandemic"
+ 								"en": "Covid-19 pandemic"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -6314,42 +6314,42 @@
  							"col_span_control": 4
  						},
  						{
- 							"name": "inff_22_24__free",
+ 							"name": "inff_22_24__other",
  							"type": "radio",
  							"col_span": 1,
  							"col_span_control": 1,
  							"value_radio": "1"
  						},
  						{
- 							"name": "inff_22_24__free",
+ 							"name": "inff_22_24__other",
  							"type": "radio",
  							"col_span": 1,
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "inff_22_24__free",
+ 							"name": "inff_22_24__other",
  							"type": "radio",
  							"col_span": 1,
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "inff_22_24__free",
+ 							"name": "inff_22_24__other",
  							"type": "radio",
  							"col_span": 1,
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "inff_22_24__free",
+ 							"name": "inff_22_24__other",
  							"type": "radio",
  							"col_span": 1,
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "inff_22_24__free",
+ 							"name": "inff_22_24__other",
  							"type": "radio",
  							"col_span": 1,
  							"col_span_label": 0.4,
@@ -6383,8 +6383,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\t\u003cb\u003e3.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\t\tDen \u003cb\u003eHauptre\u0026shy;finanz\u0026shy;ierungssatz\u003c/b\u003e der EZB (derzeit 0,0%) erwarte ich auf Sicht von",
- 								"en": "\n\t\t\t\t\t\t\u003cb\u003e3.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\t\tForecast of the ECB's main re\u0026shy;financing rate (currently 0,0%) "
+ 								"de": "\n\t\t\t\t\t\t\u003cb\u003e3.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\t\tDen Hauptre\u0026shy;finanz\u0026shy;ierungssatz der EZB (derzeit 0,0%) erwarte ich\n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\t [zentrales 90% Konfidenzintervall]:\t\n\t\t\t\t\t\t",
+ 								"en": "\n\t\t\t\t\t\t\u003cb\u003e3.\u003c/b\u003e \u0026nbsp;\n\t\t\t\t\t\t\t I expect the main re\u0026shy;financing facility rate of the ECB (currently at 0,0%) \n\t\t\t\t\t\t\t to lie \n\t\t\t\t\t\t\t \u003cbr\u003e\n\t\t\t\t\t\t\t [central 90%  confidence interval]\n\t\t\t\t\t\t\t"
  							},
  							"col_span": 12,
  							"col_span_label": 12
@@ -6392,7 +6392,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "6\u0026nbsp;Monaten",
+ 								"de": "in 6\u0026nbsp;Monaten",
  								"en": "in\u0026nbsp;6\u0026nbsp;months"
  							},
  							"col_span": 3,
@@ -6744,47 +6744,6 @@
  							"col_span_label": 2,
  							"col_span_control": 2,
  							"validator": "inRange20"
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": " \u0026nbsp;",
- 								"en": " \u0026nbsp;"
- 							},
- 							"col_span": 5,
- 							"col_span_label": 1
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "[zentrales 90% Konfidenzintervall]",
- 								"en": "[central 90\u0026nbsp;pct confidence interval]"
- 							},
- 							"col_span": 7,
- 							"col_span_label": 1,
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"position": "relative",
- 										"left": "2rem",
- 										"top": "-0.2rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"left": "0",
- 										"top": "0"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
  						}
  					],
  					"style": {
@@ -6811,7 +6770,7 @@
  		{
  			"label": {
  				"de": "Sonderfrage: Inflation, Prognosetreiber und Geldpolitik 3",
- 				"en": "Special: Inflation, forecast drivers and monetary policy 3"
+ 				"en": "Special Questions: Inflation, its causes, and monetary policy 3"
  			},
  			"description": {
  				"de": "",
@@ -6849,7 +6808,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\n\t\t\t\t\t\u003cb\u003e4.\u003c/b\u003e  \u0026nbsp;\n\t\t\t\t\t\tGegenüber dem Zeitraum 2022-2024 wird die durchschnittliche In\u0026shy;fla\u0026shy;ti\u0026shy;onsrate im Euro\u0026shy;raum im \n\t\t\t\t\t\t\u003cb\u003eZeitraum 2025-2030\u003c/b\u003e\n\t\t\t\t\t\t\n\t\t\t\t\t",
- 								"en": "\n\t\t\t\t\t\u003cb\u003e4.\u003c/b\u003e  \u0026nbsp;\n\t\t\t\t\t\n\t\t\t\t\t"
+ 								"en": "\n\t\t\t\t\t\u003cb\u003e4.\u003c/b\u003e  \u0026nbsp;\n\t\t\t\t\t\tCompared to the period 2022-2024, the \u003cb\u003eav\u0026shy;er\u0026shy;age in\u0026shy;fla\u0026shy;ti\u0026shy;on rate \n\t\t\t\t\t\tin the euro area\u003c/b\u003e in the \u003cb\u003eperiod 2025-2030\u003c/b\u003e will\t\t\t\t\t\n\t\t\t\t\t"
  							},
  							"col_span": 6,
  							"col_span_label": 1
@@ -6858,7 +6817,7 @@
  							"type": "label-as-input",
  							"label": {
  								"de": "stark stei\u0026shy;gen",
- 								"en": "strong\u0026shy;ly in\u0026shy;crease"
+ 								"en": "in\u0026shy;crease strong\u0026shy;ly"
  							},
  							"col_span_label": 0.2,
  							"col_span_control": 1,
@@ -6903,7 +6862,7 @@
  							"type": "label-as-input",
  							"label": {
  								"de": "leicht stei\u0026shy;gen",
- 								"en": "slightly in\u0026shy;crease"
+ 								"en": "in\u0026shy;crease slightly"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -6947,7 +6906,7 @@
  							"type": "label-as-input",
  							"label": {
  								"de": "un\u0026shy;ver\u0026shy;än\u0026shy;dert blei\u0026shy;ben",
- 								"en": "not change"
+ 								"en": "stay the same"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -6991,7 +6950,7 @@
  							"type": "label-as-input",
  							"label": {
  								"de": "leicht fallen",
- 								"en": "slightly de\u0026shy;crease"
+ 								"en": "de\u0026shy;crease slightly"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -7035,7 +6994,7 @@
  							"type": "label-as-input",
  							"label": {
  								"de": "stark fallen",
- 								"en": "strong\u0026shy;ly de\u0026shy;crease"
+ 								"en": "de\u0026shy;crease strong\u0026shy;ly"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -7079,7 +7038,7 @@
  							"type": "label-as-input",
  							"label": {
  								"de": "keine\u003cbr\u003eAn\u0026shy;gabe",
- 								"en": "no an\u0026shy;swer"
+ 								"en": "don't know"
  							},
  							"col_span_label": 0.4,
  							"col_span_control": 1,
@@ -7207,8 +7166,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\u003cb\u003e5.\u003c/b\u003e  \u0026nbsp;\n\t\t\t\t\t\tGegenüber dem Zeitraum 2022-2024 wird der durchschnittliche Hauptre\u0026shy;finanz\u0026shy;ierungssatz der EZB im \n\t\t\t\t\t\t\u003cb\u003eZeitraum 2025-2030\u003c/b\u003e\n\t\t\t\t\t\t\n\t\t\t\t\t",
- 								"en": "\n\t\t\t\t\t\u003cb\u003e5.\u003c/b\u003e  \u0026nbsp;\n\t\t\t\t\t\n\t\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cb\u003e5.\u003c/b\u003e  \u0026nbsp;\n\t\t\t\t\t\tGegenüber dem Zeitraum 2022-2024 wird der durchschnittliche Hauptre\u0026shy;finanz\u0026shy;ierungssatz der EZB im \n\t\t\t\t\t\t\u003cb\u003eZeitraum 2025-2030\u003c/b\u003e\t\t\t\t\t\t\n\t\t\t\t\t",
+ 								"en": "\n\t\t\t\t\t\u003cb\u003e5.\u003c/b\u003e  \u0026nbsp;\n\t\t\t\t\tCompared to the period 2022-2024, the \n\t\t\t\t\t\u003cb\u003emain re\u0026shy;financing facility rate of the ECB\u003c/b\u003e in the \n\t\t\t\t\t\u003cb\u003eperiod 2025-2030\u003c/b\u003e will\n\t\t\t\t\t\n\t\t\t\t\t"
  							},
  							"col_span": 6,
  							"col_span_label": 1
@@ -7217,7 +7176,7 @@
  							"type": "label-as-input",
  							"label": {
  								"de": "stark stei\u0026shy;gen",
- 								"en": "strong\u0026shy;ly in\u0026shy;crease"
+ 								"en": "in\u0026shy;crease strong\u0026shy;ly"
  							},
  							"col_span_label": 0.2,
  							"col_span_control": 1,
@@ -7262,7 +7221,7 @@
  							"type": "label-as-input",
  							"label": {
  								"de": "leicht stei\u0026shy;gen",
- 								"en": "slightly in\u0026shy;crease"
+ 								"en": "in\u0026shy;crease slightly"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -7306,7 +7265,7 @@
  							"type": "label-as-input",
  							"label": {
  								"de": "un\u0026shy;ver\u0026shy;än\u0026shy;dert blei\u0026shy;ben",
- 								"en": "not change"
+ 								"en": "stay the same"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -7350,7 +7309,7 @@
  							"type": "label-as-input",
  							"label": {
  								"de": "leicht fallen",
- 								"en": "slightly de\u0026shy;crease"
+ 								"en": "de\u0026shy;crease slightly"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -7394,7 +7353,7 @@
  							"type": "label-as-input",
  							"label": {
  								"de": "stark fallen",
- 								"en": "strong\u0026shy;ly de\u0026shy;crease"
+ 								"en": "de\u0026shy;crease strong\u0026shy;ly"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -7438,7 +7397,7 @@
  							"type": "label-as-input",
  							"label": {
  								"de": "keine\u003cbr\u003eAn\u0026shy;gabe",
- 								"en": "no an\u0026shy;swer"
+ 								"en": "don't know"
  							},
  							"col_span_label": 0.4,
  							"col_span_control": 1,
@@ -7566,8 +7525,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\u003cb\u003e6.\u003c/b\u003e  \u0026nbsp;\n\t\t\t\t\t\tWie beurteilen Sie den Ein\u0026shy;fluss der folgenden Faktoren auf den \u003cb\u003eHauptre\u0026shy;finanz\u0026shy;ierungssatz\u003c/b\u003e der EZB im \n\t\t\t\t\t\t\u003cb\u003eZeitraum 2025-2030\u003c/b\u003e\n\t\t\t\t\t\t\n\t\t\t\t\t",
- 								"en": "\n\t\t\t\t\t\u003cb\u003e6.\u003c/b\u003e  \u0026nbsp;\n\t\t\t\t\t\n\t\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cb\u003e6.\u003c/b\u003e  \u0026nbsp;\n\t\t\t\t\t\tWie beurteilen Sie den Ein\u0026shy;fluss der folgenden Faktoren auf den \u003cb\u003eHauptre\u0026shy;finanz\u0026shy;ierungssatz\u003c/b\u003e der EZB im \n\t\t\t\t\t\t\u003cb\u003eZeitraum 2025-2030\u003c/b\u003e\n\t\t\t\t\t",
+ 								"en": "\n\t\t\t\t\t\u003cb\u003e6.\u003c/b\u003e  \u0026nbsp;\n\t\t\t\t\t\tHow will the following factors in\u0026shy;flu\u0026shy;ence the main re\u0026shy;financing facility rate of the ECB in \n\t\t\t\t\t\tthe \u003cb\u003eperiod 2025-2030\u003c/b\u003e?\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t(response categories: strong\u0026shy;ly pos\u0026shy;itive (++), pos\u0026shy;itive (+), no in\u0026shy;flu\u0026shy;ence (0), neg\u0026shy;ative (-), strong\u0026shy;ly neg\u0026shy;ative (--))\n\t\t\t\t\t"
  							},
  							"col_span": 6,
  							"col_span_label": 1
@@ -7843,7 +7802,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Wirt\u0026shy;schaftswachstum im Euro\u0026shy;raum",
- 								"en": "Euro area eco\u0026shy;nom\u0026shy;ic growth"
+ 								"en": "Eco\u0026shy;nom\u0026shy;ic growth in the euro area"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -7901,7 +7860,7 @@
  							"type": "radio",
  							"label": {
  								"de": "De\u0026shy;mo\u0026shy;gra\u0026shy;phische Entwicklungen",
- 								"en": "Demographic trends"
+ 								"en": "Demographic de\u0026shy;vel\u0026shy;op\u0026shy;ments"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -8017,7 +7976,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Entwicklung der Globalisierung",
- 								"en": "Globalisation trends"
+ 								"en": "Changes in globalisation"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -8075,7 +8034,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Staatsverschuldung im Euro\u0026shy;gebiet",
- 								"en": "Government debt of Euro area"
+ 								"en": "Sovereign debt levels in the euro area"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -8166,42 +8125,42 @@
  							"col_span_control": 4
  						},
  						{
- 							"name": "ecb_rate__free",
+ 							"name": "ecb_rate__other",
  							"type": "radio",
  							"col_span": 1,
  							"col_span_control": 1,
  							"value_radio": "1"
  						},
  						{
- 							"name": "ecb_rate__free",
+ 							"name": "ecb_rate__other",
  							"type": "radio",
  							"col_span": 1,
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "ecb_rate__free",
+ 							"name": "ecb_rate__other",
  							"type": "radio",
  							"col_span": 1,
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "ecb_rate__free",
+ 							"name": "ecb_rate__other",
  							"type": "radio",
  							"col_span": 1,
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "ecb_rate__free",
+ 							"name": "ecb_rate__other",
  							"type": "radio",
  							"col_span": 1,
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "ecb_rate__free",
+ 							"name": "ecb_rate__other",
  							"type": "radio",
  							"col_span": 1,
  							"col_span_label": 0.4,

@@ -33,6 +33,19 @@ var dynFuncs = map[string]dynFuncT{
 	"ErrorProxy":                     ErrorProxy,
 }
 
+func isOther(inpName string) bool {
+
+	if strings.HasSuffix(inpName, "__other") {
+		return true
+	}
+
+	if strings.HasSuffix(inpName, "__other_label") {
+		return true
+	}
+
+	return false
+}
+
 var skipInputNames = map[string]map[string]bool{
 	"fmt": {
 		"selbst":   true,
@@ -44,13 +57,7 @@ var skipInputNames = map[string]map[string]bool{
 		"rev_free_label": true,
 
 		// 2021-11
-		"inff_2021__other_label": true,
-		"inff_2022__other_label": true,
-		"inff_2023__other_label": true,
-		"inff_2021__free":        true,
-		"inff_2022__free":        true,
-		"inff_2023__free":        true,
-		"fmr_comment":            true,
+		"fmr_comment": true,
 	},
 }
 
@@ -75,6 +82,10 @@ func (q *QuestionnaireT) Statistics() (int, int, float64) {
 					continue
 				}
 				if i.Type == "hidden" {
+					continue
+				}
+
+				if isOther(i.Name) {
 					continue
 				}
 

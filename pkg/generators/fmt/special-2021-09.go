@@ -348,7 +348,7 @@ func special202109(q *qst.QuestionnaireT) error {
 					rad := gr.AddInput()
 					rad.Type = "radio"
 
-					rad.Name = assCl + "__free"
+					rad.Name = assCl + "__other"
 					rad.ValueRadio = fmt.Sprint(idx + 1)
 
 					rad.ColSpan = 1

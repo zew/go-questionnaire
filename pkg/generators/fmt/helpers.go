@@ -241,27 +241,27 @@ func labelsStrongIncreaseStrongDecrease2() []trl.S {
 	tm := []trl.S{
 		{
 			"de": "stark steigen",
-			"en": "strongly increase",
+			"en": "increase strongly",
 		},
 		{
 			"de": "leicht steigen",
-			"en": "slightly increase",
+			"en": "increase slightly",
 		},
 		{
 			"de": "unverändert bleiben",
-			"en": "not change",
+			"en": "stay the same",
 		},
 		{
 			"de": "leicht fallen",
-			"en": "slightly decrease",
+			"en": "decrease slightly",
 		},
 		{
 			"de": "stark fallen",
-			"en": "strongly decrease",
+			"en": "decrease strongly",
 		},
 		{
 			"de": "keine<br>Angabe",
-			"en": "no answer",
+			"en": "don't know",
 		},
 	}
 

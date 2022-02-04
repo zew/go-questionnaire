@@ -26,39 +26,39 @@ var inflationFactorNames02 = []string{
 var inflationFactorLabel02s = []trl.S{
 	{
 		"de": "Konjunktur&shy;ent&shy;wicklung im Eurogebiet",
-		"en": "Euro area economic growth",
+		"en": "Development of GDP in the euro area",
 	},
 	{
 		"de": "Entwicklung der Löhne im Eurogebiet",
-		"en": "Euro area wages",
+		"en": "Development of wages in the euro area",
 	},
 	{
 		"de": "Entwicklung der Energiepreise",
-		"en": "Energy prices",
+		"en": "Development of energy prices",
 	},
 	{
 		"de": "Entwicklung der Rohstoffpreise (ohne Energiepreise)",
-		"en": "Commodity prices (excluding energy)",
+		"en": "Development of prices for raw materials (except energy)",
 	},
 	{
 		"de": "Veränderung der Wechselkurse (relativ zum Euro)",
-		"en": "Exchange rates (relative to the Euro)",
+		"en": "Changes in exchange rates (relative to the euro)",
 	},
 	{
 		"de": "Geldpolitik der EZB",
-		"en": "ECB monetary policy",
+		"en": "Monetary policy of the ECB",
 	},
 	{
 		"de": "Internationale Handelskonflikte",
-		"en": "International trade disputes",
+		"en": "International trade conflicts",
 	},
 	{
 		"de": "Internationale Lieferengpässe",
-		"en": "International supply chain bottlenecks",
+		"en": "International supply bottlenecks",
 	},
 	{
 		"de": "Corona-Pandemie",
-		"en": "Corona pandemic",
+		"en": "Covid-19 pandemic",
 	},
 	{
 		"de": "Grüne Transformation",
@@ -86,18 +86,19 @@ func special202202a(q *qst.QuestionnaireT) error {
 		// page.Section = trl.S{"de": "Sonderfrage", "en": "Special"}
 		page.Label = trl.S{
 			"de": "Sonderfrage: Inflation, Prognosetreiber und Geldpolitik",
-			"en": "Special: Inflation, forecast drivers and monetary policy",
+			"en": "Special Questions: Inflation, its causes, and monetary policy",
 		}
+
 		page.Short = trl.S{
-			"de": "Inflation,<br>Geldpolitik",
-			"en": "Inflation,<br>Mon. Policy",
+			"de": "Inflation,<br>Geldpolitik 1",
+			"en": "Inflation,<br>Mon. Policy 1",
 		}
 		page.WidthMax("42rem")
 
 		page.ValidationFuncName = "fmt-m2-p6"
 		page.ValidationFuncMsg = trl.S{
-			"de": "Ihre Antworten auf Frage 2b addieren sich nicht zu 100%. Wirklich weiter?",
-			"en": "Your answers to question 2b dont add up to 100%. Continue anyway?",
+			"de": "Ihre Antworten auf Frage 1b addieren sich nicht zu 100%. Wirklich weiter?",
+			"en": "Your answers to question 1b dont add up to 100%. Continue anyway?",
 		}
 
 		//
@@ -118,11 +119,17 @@ func special202202a(q *qst.QuestionnaireT) error {
 						 Monate möchten wir Ihre Einschätzungen 
 						 zu den Ursachen und der weiteren Entwicklung 
 						 der Inflation im Eurogebiet noch detaillierter 
-						 als üblicherweise erfragen
+						 als üblicherweise erfragen.
 					</p>
 				`,
-					// deliberately empty
-					"en": ` &nbsp; `,
+					"en": `
+					<p>
+						Against the background of the current inflation environment, 
+						we would like to ask for your assessments 
+						of the causes and the further development 
+						of inflation in the euro area in more detail.
+					</p>
+				`,
 				}
 			}
 
@@ -133,11 +140,11 @@ func special202202a(q *qst.QuestionnaireT) error {
 				// inp.ColSpanLabel = 12
 				inp.Label = trl.S{
 					"de": `<b>1a.</b> &nbsp; Punktprognose der <b>jährlichen Inflationsrate im Euroraum</b><br>
-					Anstieg des HICP von Jan bis Dez; Erwartungswert
+					(durchschnittliche jährliche Veränderung des HICP in Prozent):  
 				`,
 					"en": `<b>1a.</b> &nbsp;	
-					Forecast of <b>annual inflation rate in the Euro area</b><br>
-					Avg. percentage change in HICP from Jan to Dec
+					Point forecast of the <b>annual inflation rate in the euro area</b><br>
+					(average annual change of the HICP, in percent):
 				`,
 				}
 			}
@@ -202,7 +209,16 @@ func special202202a(q *qst.QuestionnaireT) error {
 						
 						`,
 					"en": `<b>1b.</b> &nbsp; 
-					todo`,
+						Please assess the probabilities of the following 
+						realizations of the average annual inflation 
+						from 2022 to 2024 in the euro area 
+						
+						<br>
+						<i>
+						Please ensure that the probabilities 
+						in every line add up to 100%.
+						</i>
+						`,
 				}
 
 				inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
@@ -341,7 +357,7 @@ func special202202a(q *qst.QuestionnaireT) error {
 					inp := gr.AddInput()
 					inp.Type = "checkbox"
 					inp.ColSpan = 1
-					inp.Name = fmt.Sprintf("inf%v_noanswer", i-2020)
+					inp.Name = fmt.Sprintf("inf%v__noanswer", i)
 					inp.ColSpanControl = 1
 					// inp.Style = css.ItemCenteredMCA(inp.Style)
 					inp.Style = css.ItemStartMA(inp.Style)
@@ -361,7 +377,7 @@ func special202202a(q *qst.QuestionnaireT) error {
 		// page.Section = trl.S{"de": "Sonderfrage", "en": "Special"}
 		page.Label = trl.S{
 			"de": "Sonderfrage: Inflation, Prognosetreiber und Geldpolitik 2",
-			"en": "Special: Inflation, forecast drivers and monetary policy 2",
+			"en": "Special Questions: Inflation, its causes, and monetary policy 2",
 		}
 		page.Short = trl.S{
 			"de": "Inflation,<br>Geldpolitik 2",
@@ -393,10 +409,18 @@ func special202202a(q *qst.QuestionnaireT) error {
 
 					"en": `
 					<b>2.</b>  &nbsp;
-						Did developments in the following areas make you to change your inflation forecasts 
-						for the euro area (relative to August 2021)? 
+						Did developments in the following areas make you change 
+						your inflation forecasts for the euro area  
+						(relative to November 2021)? 
 						
-						If yes, did you revise them up (+) or down (-)? 
+						If yes, did you revise them up or down?
+
+						<br>
+
+						(response categories: 
+							strongly positive (++), positive (+), 
+							no influence (0), 
+							negative (-), strongly negative (--)) 
 					
 					`,
 				}
@@ -522,7 +546,7 @@ func special202202a(q *qst.QuestionnaireT) error {
 					rad := gr.AddInput()
 					rad.Type = "radio"
 
-					rad.Name = fmt.Sprintf("inff_%v__free", year)
+					rad.Name = fmt.Sprintf("inff_%v__other", year)
 					rad.ValueRadio = fmt.Sprint(idx + 1)
 
 					rad.ColSpan = 1
@@ -567,11 +591,18 @@ func special202202a(q *qst.QuestionnaireT) error {
 				inp.Label = trl.S{
 					"de": fmt.Sprintf(`
 						<b>3.</b> &nbsp; 
-							Den <b>Hauptrefinanzierungssatz</b> der EZB (derzeit %v) erwarte ich auf Sicht von`,
+							Den Hauptrefinanzierungssatz der EZB (derzeit %v) erwarte ich
+							<br>
+							 [zentrales 90%% Konfidenzintervall]:	
+						`,
 						latestECBRate),
 					"en": fmt.Sprintf(`
-						<b>3.</b> &nbsp; 
-							Forecast of the ECB's main refinancing rate (currently %v) `,
+						<b>3.</b> &nbsp;
+							 I expect the main refinancing facility rate of the ECB (currently at %v) 
+							 to lie 
+							 <br>
+							 [central 90%%  confidence interval]
+							`,
 						latestECBRate),
 				}
 			}
@@ -585,7 +616,7 @@ func special202202a(q *qst.QuestionnaireT) error {
 			rows := []row{
 				{
 					lbl: trl.S{
-						"de": "6&nbsp;Monaten",
+						"de": "in 6&nbsp;Monaten",
 						"en": "in&nbsp;6&nbsp;months",
 					},
 					inp: "ezb6",
@@ -667,36 +698,38 @@ func special202202a(q *qst.QuestionnaireT) error {
 
 			//
 			// row last
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.ColSpan = 5
-				inp.Label = trl.S{
-					"de": " &nbsp;",
-					"en": " &nbsp;",
+			/*
+				{
+					inp := gr.AddInput()
+					inp.Type = "textblock"
+					inp.ColSpan = 5
+					inp.Label = trl.S{
+						"de": " &nbsp;",
+						"en": " &nbsp;",
+					}
 				}
-			}
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.ColSpan = 7
-				inp.Label = trl.S{
-					"de": "[zentrales 90% Konfidenzintervall]",
-					"en": "[central 90&nbsp;pct confidence interval]",
+				{
+					inp := gr.AddInput()
+					inp.Type = "textblock"
+					inp.ColSpan = 7
+					inp.Label = trl.S{
+						"de": "[zentrales 90% Konfidenzintervall]",
+						"en": "[central 90%  confidence interval]",
+					}
+					inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
+
+					inp.StyleLbl.Desktop.StyleBox.Position = "relative"
+
+					inp.StyleLbl.Desktop.StyleBox.Left = "2rem"
+					inp.StyleLbl.Desktop.StyleBox.Top = "-0.2rem"
+					inp.StyleLbl.Mobile.StyleBox.Left = "0"
+					inp.StyleLbl.Mobile.StyleBox.Top = "0"
+
+					inp.StyleLbl.Desktop.StyleText.FontSize = 90
+
 				}
-				inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
 
-				inp.StyleLbl.Desktop.StyleBox.Position = "relative"
-
-				inp.StyleLbl.Desktop.StyleBox.Left = "2rem"
-				inp.StyleLbl.Desktop.StyleBox.Top = "-0.2rem"
-				inp.StyleLbl.Mobile.StyleBox.Left = "0"
-				inp.StyleLbl.Mobile.StyleBox.Top = "0"
-
-				inp.StyleLbl.Desktop.StyleText.FontSize = 90
-
-			}
-
+			*/
 		}
 
 	} // special page 1

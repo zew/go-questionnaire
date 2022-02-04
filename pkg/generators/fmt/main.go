@@ -395,7 +395,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			gr := page.AddGroup()
 			gr.Cols = 4
 			gr.Style = css.NewStylesResponsive(gr.Style)
-			gr.WidthMax("16rem")
+			gr.WidthMax("15rem")
 
 			{
 				inp := gr.AddInput()

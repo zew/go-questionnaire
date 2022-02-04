@@ -20,7 +20,7 @@ func special202202b(q *qst.QuestionnaireT) error {
 		// page.Section = trl.S{"de": "Sonderfrage", "en": "Special"}
 		page.Label = trl.S{
 			"de": "Sonderfrage: Inflation, Prognosetreiber und Geldpolitik 3",
-			"en": "Special: Inflation, forecast drivers and monetary policy 3",
+			"en": "Special Questions: Inflation, its causes, and monetary policy 3",
 		}
 		page.Short = trl.S{
 			"de": "Inflation,<br>Geldpolitik 3",
@@ -65,7 +65,8 @@ func special202202b(q *qst.QuestionnaireT) error {
 
 				"en": `
 					<b>4.</b>  &nbsp;
-					
+						Compared to the period 2022-2024, the <b>average inflation rate 
+						in the euro area</b> in the <b>period 2025-2030</b> will					
 					`,
 			}
 
@@ -92,12 +93,14 @@ func special202202b(q *qst.QuestionnaireT) error {
 				"de": `
 					<b>5.</b>  &nbsp;
 						Gegenüber dem Zeitraum 2022-2024 wird der durchschnittliche Hauptrefinanzierungssatz der EZB im 
-						<b>Zeitraum 2025-2030</b>
-						
+						<b>Zeitraum 2025-2030</b>						
 					`,
 
 				"en": `
 					<b>5.</b>  &nbsp;
+					Compared to the period 2022-2024, the 
+					<b>main refinancing facility rate of the ECB</b> in the 
+					<b>period 2025-2030</b> will
 					
 					`,
 			}
@@ -154,11 +157,11 @@ func special202202b(q *qst.QuestionnaireT) error {
 			var ecbFactorLabels = []trl.S{
 				{
 					"de": "Wirtschaftswachstum im Euroraum",
-					"en": "Euro area economic growth",
+					"en": "Economic growth in the euro area",
 				},
 				{
 					"de": "Demographische Entwicklungen",
-					"en": "Demographic trends",
+					"en": "Demographic developments",
 				},
 				{
 					"de": "Grüne Transformation",
@@ -166,11 +169,11 @@ func special202202b(q *qst.QuestionnaireT) error {
 				},
 				{
 					"de": "Entwicklung der Globalisierung",
-					"en": "Globalisation trends",
+					"en": "Changes in globalisation",
 				},
 				{
 					"de": "Staatsverschuldung im Eurogebiet",
-					"en": "Government debt of Euro area",
+					"en": "Sovereign debt levels in the euro area",
 				},
 			}
 
@@ -195,12 +198,14 @@ func special202202b(q *qst.QuestionnaireT) error {
 					<b>6.</b>  &nbsp;
 						Wie beurteilen Sie den Einfluss der folgenden Faktoren auf den <b>Hauptrefinanzierungssatz</b> der EZB im 
 						<b>Zeitraum 2025-2030</b>
-						
 					`,
 
 					"en": `
 					<b>6.</b>  &nbsp;
-					
+						How will the following factors influence the main refinancing facility rate of the ECB in 
+						the <b>period 2025-2030</b>?
+						<br>
+						(response categories: strongly positive (++), positive (+), no influence (0), negative (-), strongly negative (--))
 					`,
 				}
 
@@ -252,7 +257,7 @@ func special202202b(q *qst.QuestionnaireT) error {
 					rad := gr.AddInput()
 					rad.Type = "radio"
 
-					rad.Name = fmt.Sprintf("ecb_rate__free")
+					rad.Name = fmt.Sprintf("ecb_rate__other")
 					rad.ValueRadio = fmt.Sprint(idx + 1)
 
 					rad.ColSpan = 1

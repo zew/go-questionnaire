@@ -6,7 +6,7 @@
 
 [![GoDoc](http://godoc.org/github.com/zew/go-questionnaire?status.svg)](https://godoc.org/github.com/zew/go-questionnaire)        [![Travis Build](https://travis-ci.com/zew/go-questionnaire.svg?branch=master)](https://travis-ci.com/zew/go-questionnaire)        [![Report Card](https://goreportcard.com/badge/github.com/zew/go-questionnaire)](https://goreportcard.com/report/github.com/zew/go-questionnaire)      [![codecov](https://codecov.io/gh/zew/go-questionnaire/branch/master/graph/badge.svg)](https://codecov.io/gh/zew/go-questionnaire)
 
-
+[![coverage](https://github.com/zew/go-questionnaire/actions/workflows/codecov.yml/badge.svg)](https://github.com/zew/go-questionnaire/actions/workflows/codecov.yml)
 
 <!-- 
 <div >&nbsp;</div>

@@ -225,6 +225,7 @@ func clientPageToServer(t *testing.T, clQ *qst.QuestionnaireT, idxPage int,
 	// values from ctr.IncrementStr() are stored into clQ (client questionnaire)
 	// and POSTed to the server
 
+	lpCntr := 0
 	vals := url.Values{}
 	for i1, p := range clQ.Pages {
 		if i1 != idxPage {
@@ -259,7 +260,10 @@ func clientPageToServer(t *testing.T, clQ *qst.QuestionnaireT, idxPage int,
 				// condensed[inp.Name] = val
 				vals.Set(inp.Name, val)
 				clQ.Pages[i1].Groups[i2].Inputs[i3].Response = val
-				log.Printf("Input %12v set to value %2v ", inp.Name, val)
+				lpCntr++
+				if lpCntr < 3 || lpCntr%10 == 0 {
+					log.Printf("Input %12v set to value %2v ", inp.Name, val)
+				}
 				// }
 			}
 		}

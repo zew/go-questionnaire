@@ -8,7 +8,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/zew/util"
+	"github.com/pbberlin/dbg"
 	adminapi "google.golang.org/api/appengine/v1"
 	// adminapi "google.golang.org/api/appengine/v1beta5"  // empty responses
 )
@@ -46,7 +46,7 @@ func getInfos(ctx context.Context, w io.Writer) {
 		if err != nil {
 			fmt.Fprintf(w, "error obtaining app info for %v: %v\n", appsID, err)
 		}
-		fmt.Fprintf(w, "\napp info:  %v\n\n", util.IndentedDump(app))
+		fmt.Fprintf(w, "\napp info:  %v\n\n", dbg.Dump2String(app))
 	}
 
 	//
@@ -57,7 +57,7 @@ func getInfos(ctx context.Context, w io.Writer) {
 		if err != nil {
 			fmt.Fprintf(w, "error obtaining apps location service for %v: %v\n", appsID, err)
 		}
-		fmt.Fprintf(w, "\napps locations:  %v\n\n", util.IndentedDump(app))
+		fmt.Fprintf(w, "\napps locations:  %v\n\n", dbg.Dump2String(app))
 	}
 
 	//
@@ -68,7 +68,7 @@ func getInfos(ctx context.Context, w io.Writer) {
 		if err != nil {
 			fmt.Fprintf(w, "error obtaining apps service versions instances for %v: %v\n", appsID, err)
 		}
-		fmt.Fprintf(w, "\napps service versions instances:  %v\n\n", util.IndentedDump(app))
+		fmt.Fprintf(w, "\napps service versions instances:  %v\n\n", dbg.Dump2String(app))
 	}
 
 }

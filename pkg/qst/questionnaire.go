@@ -18,6 +18,7 @@ import (
 	"strings"
 	"time"
 
+	"github.com/pbberlin/dbg"
 	"github.com/pkg/errors"
 	"github.com/zew/go-questionnaire/pkg/cfg"
 	"github.com/zew/go-questionnaire/pkg/cloudio"
@@ -25,7 +26,6 @@ import (
 	"github.com/zew/go-questionnaire/pkg/lgn/shuffler"
 	"github.com/zew/go-questionnaire/pkg/sessx"
 	"github.com/zew/go-questionnaire/pkg/trl"
-	"github.com/zew/util"
 
 	"github.com/zew/go-questionnaire/pkg/ctr"
 )
@@ -758,7 +758,7 @@ func (q *QuestionnaireT) RandomizeOrder(pageIdx int) []int {
 		log.Printf(
 			"max sg idx %v \nshufflingGroups %v",
 			maxSg,
-			util.IndentedDump(shufflingGroups),
+			dbg.Dump2String(shufflingGroups),
 		)
 	}
 

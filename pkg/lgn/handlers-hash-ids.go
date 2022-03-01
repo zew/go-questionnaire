@@ -7,9 +7,9 @@ import (
 	"path"
 
 	"github.com/go-playground/form"
+	"github.com/pbberlin/dbg"
 	hashids "github.com/speps/go-hashids"
 	"github.com/zew/go-questionnaire/pkg/cfg"
-	"github.com/zew/util"
 )
 
 var gen *hashids.HashIDData
@@ -90,7 +90,7 @@ But keep an eye on the application log.
 	err := dec.Decode(&fe, r.Form)
 	if err != nil {
 		fmt.Fprintf(w, "%v\n", err)
-		fmt.Fprintf(w, "%v\n", util.IndentedDump(fe))
+		fmt.Fprintf(w, "%v\n", dbg.Dump2String(fe))
 		return
 	}
 

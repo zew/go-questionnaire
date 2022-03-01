@@ -22,10 +22,10 @@ import (
 	"strconv"
 	"strings"
 
+	"github.com/pbberlin/dbg"
 	"github.com/zew/go-questionnaire/pkg/cfg"
 	"github.com/zew/go-questionnaire/pkg/cloudio"
 	"github.com/zew/go-questionnaire/pkg/sessx"
-	"github.com/zew/util"
 )
 
 var errFoundButWrongPassword = fmt.Errorf("User found but wrong password")
@@ -248,7 +248,7 @@ func Load(r io.Reader) {
 		tmpLogins.Logins[i].Provider = "JSON"
 	}
 
-	log.Printf("\n%s", util.IndentedDump(tmpLogins))
+	log.Printf("\n%s", dbg.Dump2String(tmpLogins))
 	lgns = &tmpLogins // replace pointer in one go - should be threadsafe
 }
 
@@ -271,7 +271,7 @@ func (l *loginsT) FindAndCheck(u string, optPw ...string) (LoginT, error) {
 
 	for idx := 0; idx < len(l.Logins); idx++ {
 		if u == strings.ToLower(l.Logins[idx].User) {
-			// log.Printf("found user %v", util.IndentedDump(l.Logins[idx]))
+			// log.Printf("found user %v", dbg.Dump2String(l.Logins[idx]))
 			if checkPassword {
 				pw := l.Logins[idx].PassMd5
 				if passEncr == pw {
@@ -344,7 +344,7 @@ func LoadH(w http.ResponseWriter, req *http.Request) {
 
 	l.PassMd5 = "xxxx"
 	l.PassInitial = "xxxx"
-	str := fmt.Sprintf("Found %v => %v \n", u, util.IndentedDump(l))
+	str := fmt.Sprintf("Found %v => %v \n", u, dbg.Dump2String(l))
 	fmt.Fprint(w, str)
 }
 

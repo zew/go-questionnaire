@@ -4,7 +4,6 @@ import (
 	"bytes"
 	"fmt"
 	"io"
-	"io/ioutil"
 	"log"
 	"mime"
 	"net/http"
@@ -42,7 +41,7 @@ func RenderStaticContent(w io.Writer, subPth, site, lang string) error {
 
 	// special file path: README.md is read directly from the app root via classic ioutil
 	if strings.HasSuffix(subPth, "README.md") {
-		bts, err = ioutil.ReadFile("./README.md")
+		bts, err = os.ReadFile("./README.md")
 		if err != nil {
 			s := fmt.Sprintf("MarkdownH: cannot open README.md in app root: %v", err)
 			log.Printf(s)

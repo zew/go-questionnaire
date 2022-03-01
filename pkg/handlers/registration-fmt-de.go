@@ -11,9 +11,9 @@ import (
 	"strings"
 	"time"
 
+	"github.com/pbberlin/dbg"
 	"github.com/pbberlin/struc2frm"
 	"github.com/zew/go-questionnaire/pkg/cfg"
-	"github.com/zew/util"
 )
 
 type formRegistrationFMTDe struct {
@@ -169,8 +169,8 @@ func RegistrationFMTDeH(w http.ResponseWriter, r *http.Request) {
 	// pulling in values from http request
 	populated, err := struc2frm.Decode(r, &frm)
 	if populated && err != nil {
-		s2f.AddError("global", fmt.Sprintf("cannot decode form: %v<br>\n <pre>%v</pre>", err, util.IndentedDump(r.Form)))
-		log.Printf("cannot decode form: %v<br>\n <pre>%v</pre>", err, util.IndentedDump(r.Form))
+		s2f.AddError("global", fmt.Sprintf("cannot decode form: %v<br>\n <pre>%v</pre>", err, dbg.Dump2String(r.Form)))
+		log.Printf("cannot decode form: %v<br>\n <pre>%v</pre>", err, dbg.Dump2String(r.Form))
 	}
 
 	// init values - multiple

@@ -208,7 +208,7 @@ func (sess *SessT) PutString(key, val string) {
 // Almost identical to PutString.
 // val can be pointer or value.
 func (sess *SessT) PutObject(key string, val interface{}) {
-	// log.Printf("Putobject key %v %T - %v", key, val, util.StackTraceStr(1, 7))
+	// log.Printf("Putobject key %v %T - %v", key, val, dbg.StackTrace(1))
 	sess.SessionManager.Put(sess.ctx, key, val)
 }
 

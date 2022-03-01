@@ -10,8 +10,8 @@ import (
 	"sync"
 
 	"github.com/go-playground/form"
+	"github.com/pbberlin/dbg"
 	"github.com/pbberlin/struc2frm"
-	"github.com/zew/util"
 )
 
 type formRegistrationFMR struct {
@@ -41,7 +41,7 @@ func RegistrationFMRH(w http.ResponseWriter, r *http.Request) {
 	// preprocessing request form
 	err := r.ParseForm()
 	if err != nil {
-		fmt.Fprintf(w, "cannot parse form: %v<br>\n <pre>%v</pre>", err, util.IndentedDump(r.Form))
+		fmt.Fprintf(w, "cannot parse form: %v<br>\n <pre>%v</pre>", err, dbg.Dump2String(r.Form))
 		return
 	}
 	dec := form.NewDecoder()
@@ -49,7 +49,7 @@ func RegistrationFMRH(w http.ResponseWriter, r *http.Request) {
 	frm := &formRegistrationFMR{}
 	err = dec.Decode(frm, r.Form)
 	if err != nil {
-		fmt.Fprintf(w, "cannot decode request into form: %v<br>\n <pre>%v</pre>", err, util.IndentedDump(r.Form))
+		fmt.Fprintf(w, "cannot decode request into form: %v<br>\n <pre>%v</pre>", err, dbg.Dump2String(r.Form))
 		return
 	}
 

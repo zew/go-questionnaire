@@ -103,7 +103,7 @@ func main() {
 
 		pDst := path.Join(path.Dir(dirSrc), "updated", f.Name())
 
-		bts, err := ioutil.ReadFile(pSrc)
+		bts, err := os.ReadFile(pSrc)
 		if err != nil {
 			log.Printf("%3v: Error reading file %v: %v", i, pSrc, err)
 			return

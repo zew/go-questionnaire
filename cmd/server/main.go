@@ -3,7 +3,6 @@ package main
 import (
 	"crypto/tls"
 	"fmt"
-	"io/ioutil"
 	"log"
 	"math/rand"
 	"net/http"
@@ -51,8 +50,8 @@ func main() {
 	tpl.NewDocServer("/doc/")  // before RegisterHandlers() - needs session to differentiate files by language setting and survey name
 	mux1 := http.NewServeMux() // base router
 	handlers.RegisterHandlers(mux1)
-	// log.Print(util.IndentedDump(handler.Tree()))
-	// handler.Tree().HTML(ioutil.Discard)
+	// dbg.Dump(handler.Tree())
+	// handler.Tree().HTML(io.Discard)
 
 	if cfg.Pref() != "" {
 		mux1.HandleFunc("/", handlers.MainH) // also register for document root
@@ -86,7 +85,7 @@ func main() {
 		// andrewlock.net/adding-cache-control-headers-to-static-files-in-asp-net.core/
 		// but does not help
 		w.Header().Set("Cache-Control", fmt.Sprintf("public,max-age=%d", 60*60*24))
-		bts, _ := ioutil.ReadFile("./static/img/ui/favicon.ico")
+		bts, _ := os.ReadFile("./static/img/ui/favicon.ico")
 		fmt.Fprint(w, bts)
 	}
 	mux4.HandleFunc("/favicon.ico", serveIcon)

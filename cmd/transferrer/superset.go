@@ -1,7 +1,7 @@
 package main
 
 import (
-	"io/ioutil"
+	"io"
 	"log"
 	"os"
 )
@@ -9,7 +9,7 @@ import (
 var lgS = log.New(os.Stdout, "", log.Llongfile)
 
 func init() {
-	lgS.SetOutput(ioutil.Discard) // enable/disable logging in this file
+	lgS.SetOutput(io.Discard) // enable/disable logging in this file
 }
 
 // Superset returns the union of all keys;

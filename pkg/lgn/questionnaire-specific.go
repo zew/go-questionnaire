@@ -269,6 +269,12 @@ func ReloadH(w http.ResponseWriter, r *http.Request) {
 		sess.Remove(r.Context(), "skip_validation")
 	}
 
+	if sess.EffectiveStr("override_closure") != "" {
+		sess.PutString("override_closure", "true")
+	} else {
+		sess.Remove(r.Context(), "override_closure")
+	}
+
 	relForm := r.Form // relevant Form
 	if len(r.PostForm) > 5 {
 		relForm = r.PostForm
@@ -302,6 +308,7 @@ func ReloadH(w http.ResponseWriter, r *http.Request) {
             Page             <input type="number" name="page"                value="%v"  min=0 max=88 /> zero-indexed <br>
             Mobile           <input type="text"   name="mobile"              value="%v"   /> 0-auto, 1-mobile, 2-desktop <br>
             Skip validation  <input type="text"   name="skip_validation"     value="%v"   /> <br>
+            Override closure <input type="text"   name="override_closure"     value="%v"   /> <br>
             %v
                              <input type="submit" name="submit" id="submit"  value="Submit" accesskey="s"  /> <br>
 		</form>        
@@ -317,6 +324,7 @@ func ReloadH(w http.ResponseWriter, r *http.Request) {
 		relForm.Get("page"),
 		relForm.Get("mobile"),
 		relForm.Get("skip_validation"),
+		relForm.Get("override_closure"),
 		attrsStr,
 	)
 

@@ -18,7 +18,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
-	"io/ioutil"
 	"log"
 	"math/rand"
 	"net/http"
@@ -286,7 +285,7 @@ func main() {
 				sessCook = v
 			}
 		}
-		respBytes, _ := ioutil.ReadAll(resp.Body)
+		respBytes, _ := io.ReadAll(resp.Body)
 		mustHave := fmt.Sprintf("Logged in as %v", c2.AdminLogin)
 		if !strings.Contains(string(respBytes), mustHave) {
 			log.Fatalf(
@@ -352,7 +351,7 @@ func main() {
 			if false {
 				// a hack - to spy into the response
 				// if the http download does not work...
-				bts, err := ioutil.ReadAll(resp.Body)
+				bts, err := io.ReadAll(resp.Body)
 				if err != nil {
 					log.Printf("could not read all response %v", err)
 					return
@@ -406,8 +405,8 @@ func main() {
 		if err != nil {
 			log.Printf("Unmarshal failed: %v", err)
 			fn := "tmp-transferrer-endpoint-response-error.html"
-			bts, _ := ioutil.ReadAll(rdr1)
-			ioutil.WriteFile(fn, bts, 0777)
+			bts, _ := io.ReadAll(rdr1)
+			os.WriteFile(fn, bts, 0777)
 			log.Printf("Response written to %v", fn)
 			return
 		}
@@ -547,14 +546,9 @@ func main() {
 		}
 		valsBySuperset := [][]string{}
 
-		// log.Printf("%v keys superset; %v", len(allKeysSuperset), util.IndentedDump(allKeysSuperset))
-		// log.Printf("%v map  keys    ; %v", len(allKeysSSMap), util.IndentedDump(allKeysSSMap))
-
 		for colIdx, colName := range allKeysSuperset {
 			log.Printf("\tcol %2v  %v", colIdx, colName)
 		}
-
-		// log.Printf("%v", util.IndentedDump(allVals))
 
 		// Collect values...
 		for i1 := 0; i1 < len(valsByQ); i1++ {

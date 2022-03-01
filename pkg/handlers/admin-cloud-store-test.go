@@ -8,10 +8,10 @@ import (
 	"strings"
 	"time"
 
+	"github.com/pbberlin/dbg"
 	"github.com/zew/go-questionnaire/pkg/cfg"
 	"github.com/zew/go-questionnaire/pkg/cloudio"
 	"github.com/zew/go-questionnaire/pkg/tpl"
-	"github.com/zew/util"
 )
 
 // TestCloudStore checks if the cloud store is readable and writable;
@@ -49,7 +49,7 @@ func TestCloudStore(w1 http.ResponseWriter, r *http.Request) {
 		fmt.Fprintf(w, "Writing to bucket SUCCESS<br>\n")
 	}
 
-	fmt.Fprintf(w, "Config is <pre>%v</pre>", util.IndentedDump(cfg.Get()))
+	fmt.Fprintf(w, "Config is <pre>%v</pre>", dbg.Dump2String(cfg.Get()))
 
 	tpl.ExecContent(w1, r, w.String(), "layout.html")
 

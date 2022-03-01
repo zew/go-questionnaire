@@ -487,6 +487,42 @@ func positiveNegative5() []trl.S {
 	return tm
 
 }
+func zeroToFive() []trl.S {
+
+	tm := []trl.S{
+		{
+			"de": "0",
+			"en": "0",
+		},
+		{
+			"de": "1",
+			"en": "1",
+		},
+		{
+			"de": "2",
+			"en": "2",
+		},
+		{
+			"de": "3",
+			"en": "3",
+		},
+		{
+			"de": "4",
+			"en": "4",
+		},
+		{
+			"de": "5",
+			"en": "5",
+		},
+		{
+			"de": "keine<br>Angabe",
+			"en": "no answer",
+		},
+	}
+
+	return tm
+
+}
 func improvedDeteriorated6() []trl.S {
 
 	tm := []trl.S{

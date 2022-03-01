@@ -1,5 +1,5 @@
 // Package cloudio is a wrapper for godoc.org/gocloud.dev/blob
-// emulating ioutil.WriteFile and ioutil.ReadFile.
+// emulating os.WriteFile and os.ReadFile.
 //
 // It is zero config; either saving to local ./app-bucket/
 // or to appenginge bucket <appID>, depending on environment variables.
@@ -156,7 +156,7 @@ func Attrs(fpth string) (attrs *blob.Attributes, err error) {
 
 }
 
-// WriteFile is the cousin of ioutil.WriteFile.
+// WriteFile is the cousin of os.WriteFile.
 // Permissions of parameter perm are not implemented.
 //
 // No memory allocation. intf is streamed into blob.
@@ -203,7 +203,7 @@ func WriteFile(fileName string, r io.Reader, perm os.FileMode) (err error) {
 	return
 }
 
-// ReadFile is the cousin of ioutil.ReadFile
+// ReadFile is the cousin of os.ReadFile
 // Memory allocation for the file contents.
 //
 // Open() is another version returning a reader
@@ -473,7 +473,7 @@ func init() {
 	}
 }
 
-// ReadDir is similar to osutil.ReadDir but returns ListObjects instead of FileInfos;
+// ReadDir is similar to os.ReadDir but returns ListObjects instead of FileInfos;
 // prefix is the path to search into;
 // returned keys will nevertheless consist of  path . path.Separator . fileName;
 // under windows we might have to

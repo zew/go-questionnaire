@@ -4,7 +4,6 @@ import (
 	"bytes"
 	"fmt"
 	"io"
-	"io/ioutil"
 	"log"
 	"net/http"
 	"os"
@@ -101,7 +100,7 @@ func RegistrationsFMTDownload(w http.ResponseWriter, r *http.Request) {
 	fp := filepath.Join(fd, fn)
 	atfn := fmt.Sprintf("attachment; filename=%v", fn)
 
-	bts, err := ioutil.ReadFile(fp)
+	bts, err := os.ReadFile(fp)
 	if err != nil {
 		fmt.Fprintf(w, "Could not read content of %v; %v\n", fp, err)
 		return

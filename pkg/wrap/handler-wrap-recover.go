@@ -9,9 +9,9 @@ import (
 	"strings"
 	"time"
 
+	"github.com/pbberlin/dbg"
 	"github.com/zew/go-questionnaire/pkg/cfg"
 	"github.com/zew/go-questionnaire/pkg/sessx"
-	"github.com/zew/logx"
 	"github.com/zew/util"
 )
 
@@ -107,10 +107,10 @@ func (m *logAndRecover) ServeHTTP(w http.ResponseWriter, rNew *http.Request) {
 			if rec := recover(); rec != nil {
 				msg1 := fmt.Sprintf("Panic in http handler %v:\n%v\n", shortened, rec)
 				lg.Print(msg1)
-				logx.SPrintStackTrace(1, 10)
-				msg1 += "<span style='font-size:80%;'>If panic not triggered by logx.Fatal:</span>\n"
+				dbg.StackTrace()
+				msg1 += "<span style='font-size:80%;'>If panic not triggered by log-x.Fatal:</span>\n"
 				msg1 += "Direct stacktrace."
-				msg1 += logx.SPrintStackTrace(1, 10)
+				msg1 += dbg.StackTracePre()
 				microErrorPage(w, rNew, msg1)
 			}
 		}()

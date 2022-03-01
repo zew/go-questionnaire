@@ -5,9 +5,9 @@ import (
 	"log"
 	"net/http"
 
+	"github.com/pbberlin/dbg"
 	"github.com/pbberlin/struc2frm"
 	"github.com/zew/go-questionnaire/pkg/lgn/shuffler"
-	"github.com/zew/util"
 )
 
 type entryForm struct {
@@ -61,8 +61,8 @@ func ShufflesToCSV(w http.ResponseWriter, req *http.Request) {
 	// pulling in values from http request
 	populated, err := struc2frm.Decode(req, &frm)
 	if populated && err != nil {
-		s2f.AddError("global", fmt.Sprintf("cannot decode form: %v<br>\n <pre>%v</pre>", err, util.IndentedDump(req.Form)))
-		log.Printf("cannot decode form: %v<br>\n <pre>%v</pre>", err, util.IndentedDump(req.Form))
+		s2f.AddError("global", fmt.Sprintf("cannot decode form: %v<br>\n <pre>%v</pre>", err, dbg.Dump2String(req.Form)))
+		log.Printf("cannot decode form: %v<br>\n <pre>%v</pre>", err, dbg.Dump2String(req.Form))
 	}
 
 	// init values - multiple

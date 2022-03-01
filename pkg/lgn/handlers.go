@@ -11,10 +11,10 @@ import (
 	"time"
 
 	"github.com/go-playground/form"
+	"github.com/pbberlin/dbg"
 	"github.com/zew/go-questionnaire/pkg/cfg"
 	"github.com/zew/go-questionnaire/pkg/cloudio"
 	"github.com/zew/go-questionnaire/pkg/sessx"
-	"github.com/zew/util"
 )
 
 // OuterHTMLPost wraps parameter content into a HTML 5 scaffold
@@ -303,11 +303,12 @@ func GenerateHashesH(w http.ResponseWriter, r *http.Request) {
 
 		Host string `json:"host,omitempty"`
 
-		SurveyID string `json:"survey_id"`
-		WaveID   string `json:"wave_id"`
-		Start    int    `json:"start"`
-		Stop     int    `json:"stop"`
-		Profile  string `json:"p"`
+		SurveyID        string `json:"survey_id"`
+		WaveID          string `json:"wave_id"`
+		Start           int    `json:"start"`
+		Stop            int    `json:"stop"`
+		Profile         string `json:"p"`
+		OverrideClosure string `json:"override"`
 
 		LangCode string   `json:"lang_code"`
 		Attrs    []string `json:"attrs"`
@@ -331,7 +332,7 @@ func GenerateHashesH(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		errMsg += fmt.Sprintf("Decoding error: %v\n", err)
 	}
-	log.Printf(util.IndentedDump(fe))
+	dbg.Dump(fe)
 
 	if fe.SurveyID == "" {
 		fmt.Fprint(w, "survey_id must be set as URL param")
@@ -368,6 +369,9 @@ func GenerateHashesH(w http.ResponseWriter, r *http.Request) {
 			if attr != "" {
 				queryString += "&attrs=" + attr
 			}
+		}
+		if fe.OverrideClosure != "" {
+			queryString += "&override_closure=true"
 		}
 
 		url := fmt.Sprintf("%v?%v", fe.Host+cfg.PrefTS(), queryString)

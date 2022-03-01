@@ -9,6 +9,7 @@ import (
 	"strings"
 	"time"
 
+	"github.com/pbberlin/dbg"
 	"github.com/zew/go-questionnaire/pkg/cfg"
 	"github.com/zew/go-questionnaire/pkg/cloudio"
 	"github.com/zew/go-questionnaire/pkg/detect"
@@ -102,8 +103,6 @@ func loadQuestionnaire(w http.ResponseWriter, r *http.Request, l *lgn.LoginT) (*
 // 1.) an error
 // 2.) an error with string to wrap around
 // 3.) only a string - which is converted into an error
-//
-// Bad idea, because code lines of errors are lost.
 func helper(w http.ResponseWriter, r *http.Request, err error, msgs ...string) {
 	if len(msgs) > 0 {
 		if err == nil {
@@ -113,7 +112,7 @@ func helper(w http.ResponseWriter, r *http.Request, err error, msgs ...string) {
 		}
 	}
 	// log.Print(shorter) errorH does logging
-	errorH(w, r, err.Error())
+	errorH(w, r, err.Error()+" - "+dbg.CallingLine())
 }
 
 // LoginByHashID is an entry point for HashIDs

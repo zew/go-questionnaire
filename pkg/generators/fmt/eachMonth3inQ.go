@@ -9,14 +9,15 @@ import (
 	"github.com/zew/go-questionnaire/pkg/trl"
 )
 
-var rowLabelsAssetClasses202109 = []trl.S{
+// q1
+var rowLabelsAssetClassesEuroZoneQ3 = []trl.S{
 	{
 		"de": "Aktien",
 		"en": "Stocks",
 	},
 	{
 		"de": "Staats&shy;anleihen",
-		"en": "Govt. bonds",
+		"en": "Sovereign bonds",
 	},
 	{
 		"de": "Unter&shy;nehmens&shy;anleihen",
@@ -28,74 +29,132 @@ var rowLabelsAssetClasses202109 = []trl.S{
 	},
 }
 
-var inputNamesAssetClasses202109 = []string{
+var inputNamesAssetClassesEuroZoneQ3 = []string{
 	"ass_euro_stocks",
 	"ass_euro_bonds_govt",
 	"ass_euro_bonds_corp",
 	"ass_euro_re",
 }
 
-var inputNamesAssetClassesChange202109 = []string{
+// q2
+var rowLabelsAssetClassesGlobalQ3 = []trl.S{
+	{
+		"de": "Aktien",
+		"en": "Stocks",
+	},
+	{
+		"de": "Staats&shy;anleihen",
+		"en": "Sovereign bonds",
+	},
+	{
+		"de": "Unter&shy;nehmens&shy;anleihen",
+		"en": "Corporate bonds",
+	},
+	{
+		"de": "Immobilien",
+		"en": "Real estate",
+	},
+	{
+		"de": "Gold",
+		"en": "Gold",
+	},
+	{
+		"de": "Rohstoffe",
+		"en": "Raw materials",
+	},
+	{
+		"de": "Krypto&shy;währungen",
+		"en": "Crypto currencies",
+	},
+}
+
+var inputNamesAssetClassesGlobalQ3 = []string{
+	"ass_global_stocks",
+	"ass_global_bonds_govt",
+	"ass_global_bonds_corp",
+	"ass_global_re",
+	"ass_global_gold",
+	"ass_global_raw_materials",
+	"ass_global_crypto",
+}
+
+// q3
+var inputNamesAssetClassesChangeQ3 = []string{
 	"chg_euro_stocks",
 	"chg_euro_bonds_govt",
 	"chg_euro_bonds_corp",
 	"chg_euro_re",
 }
 
-var influenceFactorLabels202109 = []trl.S{
+var influenceFactorLabelsQ3 = []trl.S{
 	{
 		"de": "Gesamtwirtschaftlicher Ausblick im Eurogebiet",
-		"en": "Economic outlook for the euro area",
+		"en": "Economic outlook",
 	},
 	{
 		"de": "Geldpolitik der EZB",
-		"en": "ECB monetary policy",
+		"en": "Monetary policy of the ECB",
 	},
 	{
 		"de": "Geldpolitik der US-Notenbank",
-		"en": "US Federal Reserve monetary policy",
+		"en": "Monetary policy of the US Fed",
 	},
 	{
 		"de": "Ausblick Inflation im Eurogebiet",
-		"en": "Inflation outlook for the euro area",
+		"en": "Outlook Inflation",
 	},
 	{
-		"de": "Politische Rahmen&shy;bedingungen in der Eurozone",
-		"en": "Political framework in the Eurozone",
+		"de": "Politische Rahmen&shy;bedingungen",
+		"en": "Political situation",
 	},
-	// {
-	// 	"de": "Politische Rahmen&shy;bedingungen Eurogebiet",
-	// 	"en": "Political framework euro area",
-	// },
-	// {
-	// 	"de": "Geopolitische Rahmen&shy;bedingungen",
-	// 	"en": "Geopolitical framework",
-	// },
 	{
-		"de": "Aktuelle Markt&shy;bewertung",
-		"en": "Current valuation multiples",
+		"de": "Markt&shy;bewertung",
+		"en": "Market valuation",
 	},
-	// {
-	// 	"de": "Andere",
-	// 	"en": "Other",
-	// },
+	{
+		"de": "Krieg Russ&shy;land - Ukraine",
+		"en": "Russia's war with Ukraine",
+	},
 }
 
-var influenceFactorNames202109 = []string{
-	"economy",   // overall economic outlook
-	"ecb",       // monetary policy ecb
-	"fed",       // monetary policy fed
-	"inflation", // outlook inflation
-	"politics",  // political framework
-	// "politics_euro",   // political framework euro area
-	// "politics_global", // political framework global
-	"valuation", // market valuation
+var rowLabelsAssetClassesEuroZoneQ3B = []trl.S{
+	{
+		"de": "Aktien (Eurogebiet)",
+		"en": "Stocks (euro area)",
+	},
+	{
+		"de": "Staats&shy;anleihen (Eurogebiet)",
+		"en": "Sovereign bonds (euro area)",
+	},
+	{
+		"de": "Unter&shy;nehmens&shy;anleihen (Eurogebiet)",
+		"en": "Corporate bonds (euro area)",
+	},
+	{
+		"de": "Immobilien (Eurogebiet)",
+		"en": "Real estate (euro area)",
+	},
+}
+
+var influenceFactorNamesQ3 = []string{
+	"economy",    // overall economic outlook
+	"ecb",        // monetary policy ecb
+	"fed",        // monetary policy fed
+	"inflation",  // outlook inflation
+	"politics",   // political framework
+	"valuation",  // market valuation
+	"warukraine", //
 	// "other",     // other
 }
 
-func special202109(q *qst.QuestionnaireT) error {
+func eachMonth3inQ(q *qst.QuestionnaireT) error {
 
-	if q.Survey.Year != 2021 || (q.Survey.Month != 9 && q.Survey.Month != 12) {
+	cond := false
+	cond = cond || q.Survey.Year == 2021 && q.Survey.Month == 9
+	cond = cond || q.Survey.Year == 2021 && q.Survey.Month == 12
+	cond = cond || q.Survey.Year == 2022 && q.Survey.Month == 3
+
+	if !cond {
 		return nil
 	}
 
@@ -130,9 +189,9 @@ func special202109(q *qst.QuestionnaireT) error {
 			gb := qst.NewGridBuilderRadios(
 				columnTemplateLocal,
 				positiveNegative5(),
-				inputNamesAssetClasses202109,
+				inputNamesAssetClassesEuroZoneQ3,
 				radioVals6,
-				rowLabelsAssetClasses202109,
+				rowLabelsAssetClassesEuroZoneQ3,
 			)
 
 			gb.MainLabel = trl.S{
@@ -153,14 +212,15 @@ func special202109(q *qst.QuestionnaireT) error {
 				"en": `
 				<p style=''>
 					<b>1.</b> &nbsp;
-					What is your assessment of the risk-return profile 
-					of the following asset classes
- 					over the coming six months?
-					 
-					Think about diversified investments in assets from the <b>Eurozone</b>
+					How do you assess the return-risk profile of the following asset classes 
+					in the <b><i>euro area</i></b> for the next 6 months? 
+
+					Please consider well-diversified indices.
+					
+					
 				</p>
 				<p style=''>
-					My assessment of the risk-return profile is …
+					My assessment of the return-risk profile is …
 				</p>
 				`,
 			}
@@ -172,6 +232,58 @@ func special202109(q *qst.QuestionnaireT) error {
 		//
 		// gr2
 		{
+			var columnTemplateLocal = []float32{
+				3.0, 1,
+				0.0, 1,
+				0.0, 1,
+				0.0, 1,
+				0.5, 1,
+			}
+			gb := qst.NewGridBuilderRadios(
+				columnTemplateLocal,
+				positiveNegative5(),
+				inputNamesAssetClassesGlobalQ3,
+				radioVals6,
+				rowLabelsAssetClassesGlobalQ3,
+			)
+
+			gb.MainLabel = trl.S{
+				"de": `
+				<p style=''>
+					<b>2.</b> &nbsp;
+					Mit Blick auf die nächsten sechs Monate, 
+					wie beurteilen Sie das Rendite-Risko-Profil der folgenden Anlageklassen? 
+					
+					Orientieren Sie sich an <b><i>globalen</i></b>, breit gestreuten Indizes.
+				</p>
+
+				<p style=''>
+					Das Rendite-Risiko-Profil beurteile ich …
+				</p>
+				`,
+				"en": `
+				<p style=''>
+					<b>2.</b> &nbsp;
+					How do you assess the return-risk profile  
+					of the following <b><i>global</i></b> asset classes for the next 6 months? 
+
+					Please consider well-diversified indices.
+					
+					
+				</p>
+				<p style=''>
+					My assessment of the return-risk profile is …
+				</p>
+				`,
+			}
+
+			gr := page.AddGrid(gb)
+			gr.OddRowsColoring = true
+		}
+
+		//
+		// gr3
+		{
 			gr := page.AddGroup()
 			gr.Cols = 1
 			gr.BottomVSpacers = 1
@@ -181,11 +293,10 @@ func special202109(q *qst.QuestionnaireT) error {
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				inp.Label = trl.S{"de": "Kommentar zur Umfrage: ", "en": "Comment on the survey: "}
 				inp.Label = trl.S{
 					"de": `
 				<p style=''>
-					<b>2.</b>  &nbsp;
+					<b>3.</b>  &nbsp;
 					Haben Entwicklungen der folgenden Faktoren 
 					Sie zu einer Revision Ihrer Einschätzungen 
 					zum Rendite-Risiko-Profil der einzelnen Assetklassen 
@@ -202,15 +313,15 @@ func special202109(q *qst.QuestionnaireT) error {
 
 					"en": `
 				<p style=''>
-					<b>2.</b>  &nbsp;
-					Did developments in the following areas lead you to 
-					change your assessment of the risk-return profiles 
-					of the following four asset classes
-					(relative to September 2021)?
+					<b>3.</b>  &nbsp;
+					Do the following factors motivate you
+					 to change your expectations (compared to December 2021) 
+					 regarding the return-risk-profile of 
+					 asset classes in the euro area?					
 				</p>
 
 				<p style=''>
-					If yes, did you revise them up (+) or down (-) ?
+					(+) = upward change, (-) means = change
 				</p>
 					
 
@@ -224,7 +335,7 @@ func special202109(q *qst.QuestionnaireT) error {
 		//
 		//
 		//
-		// gr3 ... gr10
+		// gr4 ... gr11
 		var columnTemplateLocal = []float32{
 			3.6, 1,
 			0.0, 1,
@@ -252,14 +363,14 @@ func special202109(q *qst.QuestionnaireT) error {
 		// log.Printf("colsBelow1 %+v", colsBelow1)
 		// log.Printf("colsBelow2 %+v", colsBelow2)
 
-		for idx, assCl := range inputNamesAssetClassesChange202109 {
+		for idx, assCl := range inputNamesAssetClassesChangeQ3 {
 
 			names := []string{}
-			for _, nm := range influenceFactorNames202109 {
+			for _, nm := range influenceFactorNamesQ3 {
 				names = append(names, assCl+"__"+nm)
 			}
 
-			lbl := rowLabelsAssetClasses202109[idx]
+			lbl := rowLabelsAssetClassesEuroZoneQ3B[idx]
 
 			{
 				gb := qst.NewGridBuilderRadios(
@@ -267,13 +378,13 @@ func special202109(q *qst.QuestionnaireT) error {
 					improvedDeterioratedPlusMinus6(),
 					names,
 					radioVals6,
-					influenceFactorLabels202109,
+					influenceFactorLabelsQ3,
 				)
 
 				gb.MainLabel = trl.S{
 					"de": fmt.Sprintf(`
 					<p style='position: relative; top: 0.8rem'>
-						<span>2.%v.</span> &nbsp;
+						<span>3.%v.</span> &nbsp;
 						%v
 						&nbsp; - &nbsp;  Eurogebiet
 					</p>
@@ -283,7 +394,7 @@ func special202109(q *qst.QuestionnaireT) error {
 					),
 					"en": fmt.Sprintf(`
 					<p style='position: relative; top: 0.8rem'>
-						<span>2.%v.</span> &nbsp;
+						<span>3.%v.</span> &nbsp;
 
 						%v
 						<!-- &nbsp; - &nbsp;  euro area -->

@@ -16,7 +16,7 @@ package systemtest
 import (
 	"bytes"
 	"fmt"
-	"io/ioutil"
+	"io"
 	"log"
 	"net/http"
 	"net/url"
@@ -427,7 +427,7 @@ func SimulateLoad(t *testing.T, q *qst.QuestionnaireT, loginURI, mobile string) 
 			t.Fatal("we need a session cookie to continue")
 		}
 
-		respBytes, _ := ioutil.ReadAll(resp.Body)
+		respBytes, _ := io.ReadAll(resp.Body)
 		mustNotHave := fmt.Sprintf("Login by hash failed")
 		if strings.Contains(string(respBytes), mustNotHave) {
 			t.Fatalf("Response must not contain '%v' \n\n%v", mustNotHave, string(respBytes))

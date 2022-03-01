@@ -4,9 +4,11 @@
 <!-- github.com overrides max-width to 100% -->
 <img src="./app-bucket/content/img/mascot/mascot.png" style="float: left; width:20%; min-width: 140px; max-width: 20%; margin-right:5%; margin-bottom: 2%;">
 
-[![GoDoc](http://godoc.org/github.com/zew/go-questionnaire?status.svg)](https://godoc.org/github.com/zew/go-questionnaire)        [![Travis Build](https://travis-ci.com/zew/go-questionnaire.svg?branch=master)](https://travis-ci.com/zew/go-questionnaire)        [![Report Card](https://goreportcard.com/badge/github.com/zew/go-questionnaire)](https://goreportcard.com/report/github.com/zew/go-questionnaire)      [![codecov](https://codecov.io/gh/zew/go-questionnaire/branch/master/graph/badge.svg)](https://codecov.io/gh/zew/go-questionnaire)
-
-[![coverage](https://github.com/zew/go-questionnaire/actions/workflows/codecov.yml/badge.svg)](https://github.com/zew/go-questionnaire/actions/workflows/codecov.yml)
+[![GoDoc](http://godoc.org/github.com/zew/go-questionnaire?status.svg)](https://godoc.org/github.com/zew/go-questionnaire)
+  <!-- [![Travis Build](https://travis-ci.com/zew/go-questionnaire.svg?branch=master)](https://travis-ci.com/zew/go-questionnaire)     -->
+  [![Report Card](https://goreportcard.com/badge/github.com/zew/go-questionnaire)](https://goreportcard.com/report/github.com/zew/go-questionnaire)
+  [![codecov](https://codecov.io/gh/zew/go-questionnaire/branch/master/graph/badge.svg)](https://codecov.io/gh/zew/go-questionnaire)
+  [![coverage](https://github.com/zew/go-questionnaire/actions/workflows/codecov.yml/badge.svg)](https://github.com/zew/go-questionnaire/actions/workflows/codecov.yml)
 
 <!-- 
 <div >&nbsp;</div>
@@ -318,7 +320,7 @@ with automatic `Lets encrypt` certification.
 `desktop` takes precedence.
 
 * Package cloudio is a convenience wrapper around [Gocloud blob](https://godoc.org/gocloud.dev/blob)  
-The entire persistence layer is moved from ioutil... to cloudio...  
+The entire persistence layer is moved from io... to cloudio...  
 Thus the application can be hosted by cloud providers with buckets or on classical webservers.
 
 * Survey results are pulled in by the `transferrer`,  

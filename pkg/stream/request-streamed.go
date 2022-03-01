@@ -8,8 +8,8 @@ import (
 	"time"
 
 	"github.com/go-playground/form"
+	"github.com/pbberlin/dbg"
 	"github.com/pbberlin/struc2frm"
-	"github.com/zew/util"
 )
 
 // SlowHijacked *streams* a response using
@@ -31,7 +31,7 @@ func SlowHijacked(w http.ResponseWriter, r *http.Request) {
 	// preprocessing request form
 	err = r.ParseForm()
 	if err != nil {
-		logAndShow("cannot parse form: %v<br>\n <pre>%v</pre>", err, util.IndentedDump(r.Form))
+		logAndShow("cannot parse form: %v<br>\n <pre>%v</pre>", err, dbg.Dump2String(r.Form))
 		return
 	}
 	dec := form.NewDecoder()
@@ -39,7 +39,7 @@ func SlowHijacked(w http.ResponseWriter, r *http.Request) {
 	frm := &slowRequestForm{Repeats: 4}
 	err = dec.Decode(frm, r.Form)
 	if err != nil {
-		logAndShow("cannot decode form: %v<br>\n <pre>%v</pre>", err, util.IndentedDump(r.Form))
+		logAndShow("cannot decode form: %v<br>\n <pre>%v</pre>", err, dbg.Dump2String(r.Form))
 		return
 	}
 

@@ -197,7 +197,7 @@ func (p *pageT) AddGrid(gb *GridBuilder) *groupT {
 
 	// gb.dumpCols()
 	// log.Printf("gr.Cols %v  ", gr.Cols)
-	// log.Printf("gr.Style.GridContainerStyle %v  ", util.IndentedDump(gr.Style.Desktop.GridContainerStyle))
+	// log.Printf("gr.Style.GridContainerStyle %v  ", dbg.Dump2String(gr.Style.Desktop.GridContainerStyle))
 
 	// first row - main label
 	if gb.MainLabel != nil {

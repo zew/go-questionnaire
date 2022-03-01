@@ -3,7 +3,7 @@ package generators
 import (
 	"bytes"
 	myfmt "fmt"
-	"io/ioutil"
+	"io"
 	"log"
 	"net/http"
 	"net/http/httptest"
@@ -79,8 +79,6 @@ func GenerateQuestionnaireTemplates(w http.ResponseWriter, r *http.Request) {
 			errStr += myfmt.Sprint(err.Error() + "<br>\n")
 		}
 
-		// myfmt.Fprint(w, "<pre>"+util.IndentedDump(frm)+"</pre><br>\n")
-
 		s.Type = frm.Type
 		s.Year = frm.Year
 		s.Month = time.Month(frm.Month)
@@ -104,7 +102,6 @@ func GenerateQuestionnaireTemplates(w http.ResponseWriter, r *http.Request) {
 			newParams = append(newParams, p)
 		}
 		s.Params = newParams
-		// myfmt.Fprint(w, "<pre>"+util.IndentedDump(s)+"</pre><br>\n")
 
 	}
 
@@ -208,7 +205,6 @@ func GenerateLandtagsVariations(w http.ResponseWriter, r *http.Request) {
 			form.Add("params[1].val", "schlechteren")
 		}
 		form.Add("Submit", "any")
-		// myfmt.Fprint(w, "<pre>"+util.IndentedDump(form)+"</pre><br>\n")
 
 		var resp *http.Response
 		var err error
@@ -242,7 +238,7 @@ func GenerateLandtagsVariations(w http.ResponseWriter, r *http.Request) {
 		}
 
 		defer resp.Body.Close()
-		respBts, err := ioutil.ReadAll(resp.Body)
+		respBts, err := io.ReadAll(resp.Body)
 		if err != nil {
 			myfmt.Fprintf(w, "Error reading response body %v", err)
 			return

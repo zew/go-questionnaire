@@ -15,7 +15,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/zew/util"
+	"github.com/pbberlin/dbg"
 
 	"github.com/zew/go-questionnaire/pkg/trl"
 )
@@ -168,12 +168,12 @@ func Load(r io.Reader) {
 
 	//
 	cfgS = &tempCfg // replace pointer in one go - should be threadsafe
-	dmp := util.IndentedDump(cfgS)
+	dmp := dbg.Dump2String(cfgS)
 	if len(dmp) > 700 {
 		dmp = dmp[:700]
 	}
 	{
-		dmp := util.IndentedDump(tempCfg.MpSite)
+		dmp := dbg.Dump2String(tempCfg.MpSite)
 		log.Printf("\ntranslations_site: %s\n...config loaded", dmp)
 	}
 

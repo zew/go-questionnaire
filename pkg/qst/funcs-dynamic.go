@@ -10,7 +10,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/pkg/errors"
+	"errors"
+
 	"github.com/russross/blackfriday/v2"
 	"github.com/zew/go-questionnaire/pkg/cfg"
 	"github.com/zew/go-questionnaire/pkg/cloudio"
@@ -284,9 +285,9 @@ func RenderStaticContentInner(w io.Writer, subPth, site, lang string) error {
 	if strings.HasSuffix(subPth, "README.md") {
 		bts, err = os.ReadFile("./README.md")
 		if err != nil {
-			s := fmt.Sprintf("MarkdownH: cannot open README.md in app root: %v", err)
-			log.Printf(s)
-			return errors.Wrap(err, s)
+			errDecorated := fmt.Errorf("MarkdownH: cannot open README.md in app root: %w", err)
+			log.Print(errDecorated)
+			return errDecorated
 		}
 		// rewrite links in README.MD from app root
 		//    ./app-bucket/content/somedir/my-img.png
@@ -311,9 +312,9 @@ func RenderStaticContentInner(w io.Writer, subPth, site, lang string) error {
 			}
 		}
 		if err != nil {
-			s := fmt.Sprintf("MarkdownH: cannot open markdown %v or upwards: %v", pth, err)
-			log.Printf(s)
-			return errors.Wrap(err, s)
+			errDecorated := fmt.Errorf("MarkdownH: cannot open markdown %v or upwards: %w", pth, err)
+			log.Print(errDecorated)
+			return errDecorated
 		}
 
 		{

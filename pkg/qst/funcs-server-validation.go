@@ -6,7 +6,8 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/pkg/errors"
+	"errors"
+
 	"github.com/zew/go-questionnaire/pkg/cfg"
 )
 
@@ -341,7 +342,7 @@ func init() {
 	validators["citizenshipyes"] = func(q *QuestionnaireT, inp *inputT) error {
 		if inp.Response != "" && inp.Response != "citizenshipyes" {
 			err1 := ErrorForward{markDownPath: "must-german-citizen.md"}
-			err := errors.Wrap(err1, "Dt. Staatsbürger erforderl")
+			err := fmt.Errorf("Dt. Staatsbürger erforderl - %w", err1)
 			return err
 		}
 		return nil
@@ -394,7 +395,7 @@ func init() {
 						// ... ErrorForward{markDownPath: "must-german-citizen.md"}
 						markDownPath: "https://webs.norstatsurveys.com/z/Screened",
 					}
-					err = errors.Wrap(err1, err.Error())
+					err = fmt.Errorf("%w", err1)
 				}
 
 				return err
@@ -457,7 +458,7 @@ func init() {
 						// ... ErrorForward{markDownPath: "must-german-citizen.md"}
 						markDownPath: "https://webs.norstatsurveys.com/z/Screened",
 					}
-					err = errors.Wrap(err1, err.Error())
+					err = fmt.Errorf("%w", err1)
 				}
 
 				return err

@@ -12,7 +12,6 @@ import (
 	"strings"
 	"time"
 
-	"github.com/pkg/errors"
 	"github.com/zew/go-questionnaire/pkg/cfg"
 	"gocloud.dev/blob"
 )
@@ -54,7 +53,7 @@ func ServeFileBulk(w http.ResponseWriter, req *http.Request) {
 	defer func() {
 		errSec = buck.Close()
 		if errSec != nil {
-			err = errors.Wrap(err, errSec.Error())
+			err = combiErr{err, errSec}
 			logAndShow("cloudio.ServeFileBulk(): Error closing bucket: %v", errSec)
 		}
 	}()
@@ -72,7 +71,7 @@ func ServeFileBulk(w http.ResponseWriter, req *http.Request) {
 	defer func() {
 		errSec = r.Close()
 		if errSec != nil {
-			err = errors.Wrap(err, errSec.Error())
+			err = combiErr{err, errSec}
 			logAndShow("cloudio.ServeFileBulk(): Error closing writer to bucket: %v", errSec)
 		}
 	}()

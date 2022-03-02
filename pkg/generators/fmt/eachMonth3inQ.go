@@ -315,13 +315,13 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 				<p style=''>
 					<b>3.</b>  &nbsp;
 					Do the following factors motivate you
-					 to change your expectations (compared to December 2021) 
-					 regarding the return-risk-profile of 
-					 asset classes in the euro area?					
+					to change your expectations (compared to December 2021) 
+					regarding the return-risk-profile of 
+					asset classes in the euro area?					
 				</p>
 
 				<p style=''>
-					(+) = upward change, (-) means = change
+					(+) = upward change, (-) = downward change
 				</p>
 					
 

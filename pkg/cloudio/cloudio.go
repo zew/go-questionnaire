@@ -33,7 +33,6 @@ import (
 	"strings"
 
 	"cloud.google.com/go/storage"
-	"github.com/pkg/errors"
 	"gocloud.dev/blob"
 	_ "gocloud.dev/blob/fileblob" // local file system
 	_ "gocloud.dev/blob/gcsblob"
@@ -55,20 +54,6 @@ func init() {
 			appsID = tokens[1]
 		}
 	}
-}
-
-// IsNotExist function for cloudio
-func IsNotExist(err error) bool {
-	if errors.Is(err, os.ErrNotExist) || strings.Contains(err.Error(), "code=NotFound") {
-		return true
-	}
-	return false
-}
-
-// CreateNotExist returns a "not exists" - similar to io package behaviour.
-// Sadly, the original gocloud error can only be retained as string message
-func CreateNotExist(err error) error {
-	return errors.Wrap(os.ErrNotExist, err.Error()) // wrap err not exists; we would like to keep the orig error - but cannot
 }
 
 func prepareLocalDir() error {
@@ -141,7 +126,7 @@ func Attrs(fpth string) (attrs *blob.Attributes, err error) {
 	defer func() {
 		errSec = buck.Close()
 		if errSec != nil {
-			err = errors.Wrap(err, errSec.Error())
+			err = combiErr{err, errSec}
 			log.Printf("cloudio.Stream(): Error closing bucket: %v", errSec)
 		}
 	}()
@@ -175,7 +160,7 @@ func WriteFile(fileName string, r io.Reader, perm os.FileMode) (err error) {
 	defer func() {
 		errSec = buck.Close()
 		if errSec != nil {
-			err = errors.Wrap(err, errSec.Error())
+			err = combiErr{err, errSec}
 			log.Printf("Error closing bucket: %v", errSec)
 		}
 	}()
@@ -189,7 +174,7 @@ func WriteFile(fileName string, r io.Reader, perm os.FileMode) (err error) {
 	defer func() {
 		errSec = w.Close()
 		if errSec != nil {
-			err = errors.Wrap(err, errSec.Error())
+			err = combiErr{err, errSec}
 			log.Printf("Error closing writer to bucket: %v", errSec)
 		}
 	}()
@@ -223,7 +208,7 @@ func ReadFile(fileName string) (bts []byte, err error) {
 	defer func() {
 		errSec = buck.Close()
 		if errSec != nil {
-			err = errors.Wrap(err, errSec.Error())
+			err = combiErr{err, errSec}
 			log.Printf("Error closing bucket: %v", errSec)
 		}
 	}()
@@ -241,7 +226,7 @@ func ReadFile(fileName string) (bts []byte, err error) {
 	defer func() {
 		errSec = r.Close()
 		if errSec != nil {
-			err = errors.Wrap(err, errSec.Error())
+			err = combiErr{err, errSec}
 			log.Printf("Error closing writer to bucket: %v", errSec)
 		}
 	}()
@@ -404,7 +389,7 @@ func Delete(fileName string) error {
 	defer func() {
 		errSec = buck.Close()
 		if errSec != nil {
-			err = errors.Wrap(err, errSec.Error())
+			err = combiErr{err, errSec}
 			log.Printf("Error closing bucket for file deletion: %v", errSec)
 		}
 	}()
@@ -503,7 +488,7 @@ func ReadDir(prefix string) (*[]*blob.ListObject, error) {
 	defer func() {
 		errSec = buck.Close()
 		if errSec != nil {
-			err = errors.Wrap(err, errSec.Error())
+			err = combiErr{err, errSec}
 			log.Printf("Error closing bucket for file deletion: %v", errSec)
 		}
 	}()

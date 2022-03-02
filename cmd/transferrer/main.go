@@ -27,6 +27,7 @@ import (
 	"strings"
 	"time"
 
+	"github.com/pbberlin/flags"
 	"github.com/zew/go-questionnaire/pkg/cfg"
 	"github.com/zew/go-questionnaire/pkg/cloudio"
 	"github.com/zew/go-questionnaire/pkg/lgn"
@@ -184,9 +185,9 @@ func main() {
 
 	//
 	// The actual config for *this* app:
-	fl := util.NewFlags()
+	fl := flags.New()
 	fl.Add(
-		util.FlagT{
+		flags.FlagT{
 			Long:       "remote_file",
 			Short:      "rmt",
 			DefaultVal: path.Join("/transferrer", "remote.json"),

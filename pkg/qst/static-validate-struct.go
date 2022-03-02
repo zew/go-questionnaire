@@ -7,7 +7,6 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/pkg/errors"
 	"github.com/zew/go-questionnaire/pkg/cfg"
 	"github.com/zew/go-questionnaire/pkg/trl"
 )
@@ -197,7 +196,7 @@ func (q *QuestionnaireT) Validate() error {
 				if inp.Type == "button" && inp.Response != "" {
 					pgIdx, err := strconv.Atoi(inp.Response)
 					if err != nil {
-						return errors.Wrap(err, s)
+						return fmt.Errorf(s+" %w", err)
 					}
 					if pgIdx < 0 || pgIdx > len(q.Pages)-1 {
 						return fmt.Errorf("%v points to page index non existent %v out of %v", s, inp.Response, len(q.Pages))

@@ -13,7 +13,6 @@ import (
 	"strings"
 	"time"
 
-	"github.com/pkg/errors"
 	"github.com/zew/go-questionnaire/pkg/cfg"
 	"github.com/zew/go-questionnaire/pkg/stream"
 )
@@ -89,7 +88,7 @@ func ServeFileStream(w http.ResponseWriter, req *http.Request) {
 	defer func() {
 		errSec = buck.Close()
 		if errSec != nil {
-			err = errors.Wrap(err, errSec.Error())
+			err = combiErr{err, errSec}
 			logAndShow("cloudio.ServeFileStream(): Error closing bucket: %v", errSec)
 		}
 	}()
@@ -107,7 +106,7 @@ func ServeFileStream(w http.ResponseWriter, req *http.Request) {
 	defer func() {
 		errSec = r.Close()
 		if errSec != nil {
-			err = errors.Wrap(err, errSec.Error())
+			err = combiErr{err, errSec}
 			logAndShow("cloudio.ServeFileStream(): Error closing writer to bucket: %v", errSec)
 		}
 	}()

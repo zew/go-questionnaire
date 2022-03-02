@@ -20,8 +20,8 @@ import (
 	"strings"
 	"time"
 
+	"github.com/pbberlin/flags"
 	"github.com/zew/go-questionnaire/pkg/qst"
-	"github.com/zew/util"
 )
 
 func main() {
@@ -30,9 +30,9 @@ func main() {
 	log.SetFlags(log.Lshortfile | log.Ldate | log.Ltime)
 
 	// The actual config for *this* app:
-	fl := util.NewFlags()
+	fl := flags.New()
 	fl.Add(
-		util.FlagT{
+		flags.FlagT{
 			Long:  "directory",
 			Short: "dir",
 			// DefaultVal: "../../app-bucket/responses/downloaded/fmt/2021-04/11499.json",

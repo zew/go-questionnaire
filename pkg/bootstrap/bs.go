@@ -10,20 +10,20 @@ import (
 	"net/http/httptest"
 	"time"
 
+	"github.com/pbberlin/flags"
 	"github.com/zew/go-questionnaire/pkg/cfg"
 	"github.com/zew/go-questionnaire/pkg/cloudio"
 	"github.com/zew/go-questionnaire/pkg/lgn"
 	"github.com/zew/go-questionnaire/pkg/sessx"
 	"github.com/zew/go-questionnaire/pkg/tpl"
-	"github.com/zew/util"
 )
 
 // Config loads configuration and logins according to flags or env vars.
 func Config() {
 
-	fl := util.NewFlags()
+	fl := flags.New()
 	fl.Add(
-		util.FlagT{
+		flags.FlagT{
 			Long:       "config_file",
 			Short:      "cfg",
 			DefaultVal: "config.json",
@@ -31,7 +31,7 @@ func Config() {
 		},
 	)
 	fl.Add(
-		util.FlagT{
+		flags.FlagT{
 			Long:       "logins_file",
 			Short:      "lgn",
 			DefaultVal: "logins.json",

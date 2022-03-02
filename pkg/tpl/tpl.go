@@ -17,7 +17,6 @@ import (
 	"path"
 	"strings"
 
-	"github.com/pkg/errors"
 	"github.com/zew/go-questionnaire/pkg/cfg"
 	"github.com/zew/go-questionnaire/pkg/cloudio"
 	"github.com/zew/go-questionnaire/pkg/lgn"
@@ -32,7 +31,7 @@ func fcExecBundledTemplate(tName string, mp map[string]interface{}) (template.HT
 	var err error
 	err = cache[tName].ExecuteTemplate(w, tName, mp)
 	if err != nil {
-		err = errors.Wrap(err, fmt.Sprintf("fcExecBundledTemplate erred: %v", err))
+		err = fmt.Errorf("fcExecBundledTemplate erred: %w", err)
 		log.Print(err)
 		return template.HTML(err.Error()), err
 	}
@@ -65,7 +64,7 @@ func bundle(base *template.Template, extend string) error {
 	bCnt, err := cloudio.ReadFile(pth)
 	if err != nil {
 		msg := fmt.Sprintf("cannot open bundle template %v: %v", pth, err)
-		return errors.Wrap(err, msg)
+		return fmt.Errorf(msg+" %w", err)
 	}
 
 	// either everything with extension - or everything without
@@ -77,7 +76,8 @@ func bundle(base *template.Template, extend string) error {
 	tB2, err := tB.Parse(string(bCnt))
 	if err != nil {
 		msg := fmt.Sprintf("parsing failed for bundle template %v: %v", pth, err)
-		return errors.Wrap(err, msg)
+		return fmt.Errorf(msg+" %w", err)
+
 	}
 
 	// adding the *parsed* template
@@ -85,7 +85,7 @@ func bundle(base *template.Template, extend string) error {
 	base, err = base.AddParseTree(extend, tB2.Tree)
 	if err != nil {
 		msg := fmt.Sprintf("failure adding parse tree of bundle template %v: %v", pth, err)
-		return errors.Wrap(err, msg)
+		return fmt.Errorf(msg+" %w", err)
 	}
 
 	return nil
@@ -139,7 +139,7 @@ func Get(tName string, forceFreshParsing bool) (*template.Template, error) {
 		cnts, err := cloudio.ReadFile(pth)
 		if err != nil {
 			msg := fmt.Sprintf("cannot open template %v: %v", pth, err)
-			return nil, errors.Wrap(err, msg)
+			return nil, fmt.Errorf(msg+" %w", err)
 		}
 		// tDerived, err = base.ParseFiles(pth)
 
@@ -149,7 +149,7 @@ func Get(tName string, forceFreshParsing bool) (*template.Template, error) {
 		tDerived, err = base.Parse(string(cnts))
 		if err != nil {
 			msg := fmt.Sprintf("parsing failed for %v: %v", pth, err)
-			return nil, errors.Wrap(err, msg)
+			return nil, fmt.Errorf(msg+" %w", err)
 		}
 
 		// bundling templates together
@@ -157,7 +157,7 @@ func Get(tName string, forceFreshParsing bool) (*template.Template, error) {
 			err = bundle(tDerived, bdl)
 			if err != nil {
 				msg := fmt.Sprintf("bundling failed for %v:\n %v", bdl, err)
-				return nil, errors.Wrap(err, msg)
+				return nil, fmt.Errorf(msg+" %w", err)
 			}
 			// log.Printf("\ttemplate %v bundled with %v:\n\t%v", tName, bdl, base.DefinedTemplates())
 			// log.Printf("\ttemplate %v bundled with %v", tName, bdl)

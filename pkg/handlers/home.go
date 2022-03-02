@@ -17,8 +17,6 @@ import (
 	"github.com/zew/go-questionnaire/pkg/qst"
 	"github.com/zew/go-questionnaire/pkg/sessx"
 	"github.com/zew/go-questionnaire/pkg/tpl"
-
-	"github.com/pkg/errors"
 )
 
 // Loading questionnaire.
@@ -37,7 +35,7 @@ func loadQuestionnaire(w http.ResponseWriter, r *http.Request, l *lgn.LoginT) (*
 
 	q, ok, err := qst.FromSession(w, r)
 	if err != nil {
-		err = errors.Wrap(err, "Reading questionnaire from session caused error")
+		err = fmt.Errorf("Reading questionnaire from session caused error %w", err)
 		return q, err
 	}
 	if ok {
@@ -53,7 +51,7 @@ func loadQuestionnaire(w http.ResponseWriter, r *http.Request, l *lgn.LoginT) (*
 	}
 	qBase, err := qst.Load1(pthBase)
 	if err != nil {
-		err = errors.Wrap(err, "Loading base questionnaire from template file caused error")
+		err = fmt.Errorf("Loading base questionnaire from template file caused error %w", err)
 		return q, err
 	}
 
@@ -78,7 +76,7 @@ func loadQuestionnaire(w http.ResponseWriter, r *http.Request, l *lgn.LoginT) (*
 	q = qBase
 	err = q.Validate()
 	if err != nil {
-		err = errors.Wrap(err, "Joined questionnaire validation error")
+		err = fmt.Errorf("Joined questionnaire validation error %w", err)
 		return q, err
 	}
 
@@ -108,7 +106,7 @@ func helper(w http.ResponseWriter, r *http.Request, err error, msgs ...string) {
 		if err == nil {
 			err = fmt.Errorf(msgs[0])
 		} else {
-			err = errors.Wrap(err, msgs[0])
+			err = fmt.Errorf(msgs[0]+" w", err)
 		}
 	}
 	// log.Print(shorter) errorH does logging

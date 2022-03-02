@@ -19,7 +19,6 @@ import (
 	"time"
 
 	"github.com/pbberlin/dbg"
-	"github.com/pkg/errors"
 	"github.com/zew/go-questionnaire/pkg/cfg"
 	"github.com/zew/go-questionnaire/pkg/cloudio"
 	"github.com/zew/go-questionnaire/pkg/css"
@@ -1639,7 +1638,7 @@ func ParseJavaScript(tName string) (*template.Template, error) {
 	cnts, err := cloudio.ReadFile(pth)
 	if err != nil {
 		msg := fmt.Sprintf("cannot open template %v: %v", pth, err)
-		return nil, errors.Wrap(err, msg)
+		return nil, fmt.Errorf(msg+" %w", err)
 	}
 
 	w := &strings.Builder{}
@@ -1652,7 +1651,7 @@ func ParseJavaScript(tName string) (*template.Template, error) {
 	tDerived, err := base.Parse(w.String())
 	if err != nil {
 		msg := fmt.Sprintf("parsing failed for %v: %v", pth, err)
-		return nil, errors.Wrap(err, msg)
+		return nil, fmt.Errorf(msg+" %w", err)
 	}
 
 	return tDerived, nil

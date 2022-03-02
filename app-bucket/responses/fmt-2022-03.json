@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "a1790623ca72d83d7e160307506572d1dc8c01b656805f3cf88ae926ddd2795a",
+ 	"md_5": "a82e6ba49a3296edae8ed891263a05b70c1c2e867c90be6594dc5efc5095ef7e",
  	"lang_codes": [
  		"de",
  		"en"
@@ -5646,7 +5646,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003cb\u003e3.\u003c/b\u003e  \u0026nbsp;\n\t\t\t\t\tHaben Entwicklungen der folgenden Faktoren \n\t\t\t\t\tSie zu einer Revision Ihrer Einschätzungen \n\t\t\t\t\tzum Rendite-Risiko-Profil der einzelnen Assetklassen \n\t\t\t\t\tgegenüber September 2021 bewogen?\n\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\tWenn ja, \n\t\t\t\t\tnach oben (+) oder unten (-) ?\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t",
- 								"en": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003cb\u003e3.\u003c/b\u003e  \u0026nbsp;\n\t\t\t\t\tDo the following factors motivate you\n\t\t\t\t\t to change your expectations (compared to December 2021) \n\t\t\t\t\t regarding the return-risk-profile of \n\t\t\t\t\t asset classes in the euro area?\t\t\t\t\t\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t(+) = upward change, (-) means = change\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\n\n\t\t\t\t\t"
+ 								"en": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003cb\u003e3.\u003c/b\u003e  \u0026nbsp;\n\t\t\t\t\tDo the following factors motivate you\n\t\t\t\t\tto change your expectations (compared to December 2021) \n\t\t\t\t\tregarding the return-risk-profile of \n\t\t\t\t\tasset classes in the euro area?\t\t\t\t\t\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t(+) = upward change, (-) = downward change\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\n\n\t\t\t\t\t"
  							},
  							"col_span_label": 1
  						}
@@ -9184,7 +9184,7 @@
  							}
  						},
  						{
- 							"name": "sanction_swift1",
+ 							"name": "sanction_swift_ukraine",
  							"type": "radio",
  							"label": {
  								"de": "todo",
@@ -9211,44 +9211,44 @@
  							}
  						},
  						{
- 							"name": "sanction_swift1",
+ 							"name": "sanction_swift_ukraine",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "sanction_swift1",
+ 							"name": "sanction_swift_ukraine",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "sanction_swift1",
+ 							"name": "sanction_swift_ukraine",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "sanction_swift1",
+ 							"name": "sanction_swift_ukraine",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "sanction_swift1",
+ 							"name": "sanction_swift_ukraine",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "6"
  						},
  						{
- 							"name": "sanction_swift1",
+ 							"name": "sanction_swift_ukraine",
  							"type": "radio",
  							"col_span_label": 0.5,
  							"col_span_control": 1,
  							"value_radio": "7"
  						},
  						{
- 							"name": "sanction_rcb1",
+ 							"name": "sanction_rcb_ukraine",
  							"type": "radio",
  							"label": {
  								"de": "todo",
@@ -9275,44 +9275,44 @@
  							}
  						},
  						{
- 							"name": "sanction_rcb1",
+ 							"name": "sanction_rcb_ukraine",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "sanction_rcb1",
+ 							"name": "sanction_rcb_ukraine",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "sanction_rcb1",
+ 							"name": "sanction_rcb_ukraine",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "sanction_rcb1",
+ 							"name": "sanction_rcb_ukraine",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "sanction_rcb1",
+ 							"name": "sanction_rcb_ukraine",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "6"
  						},
  						{
- 							"name": "sanction_rcb1",
+ 							"name": "sanction_rcb_ukraine",
  							"type": "radio",
  							"col_span_label": 0.5,
  							"col_span_control": 1,
  							"value_radio": "7"
  						},
  						{
- 							"name": "sanction_freezing1",
+ 							"name": "sanction_freezing_ukraine",
  							"type": "radio",
  							"label": {
  								"de": "todo",
@@ -9339,44 +9339,44 @@
  							}
  						},
  						{
- 							"name": "sanction_freezing1",
+ 							"name": "sanction_freezing_ukraine",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "sanction_freezing1",
+ 							"name": "sanction_freezing_ukraine",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "sanction_freezing1",
+ 							"name": "sanction_freezing_ukraine",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "sanction_freezing1",
+ 							"name": "sanction_freezing_ukraine",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "sanction_freezing1",
+ 							"name": "sanction_freezing_ukraine",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "6"
  						},
  						{
- 							"name": "sanction_freezing1",
+ 							"name": "sanction_freezing_ukraine",
  							"type": "radio",
  							"col_span_label": 0.5,
  							"col_span_control": 1,
  							"value_radio": "7"
  						},
  						{
- 							"name": "sanction_trade1",
+ 							"name": "sanction_trade_ukraine",
  							"type": "radio",
  							"label": {
  								"de": "todo",
@@ -9403,37 +9403,37 @@
  							}
  						},
  						{
- 							"name": "sanction_trade1",
+ 							"name": "sanction_trade_ukraine",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "sanction_trade1",
+ 							"name": "sanction_trade_ukraine",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "sanction_trade1",
+ 							"name": "sanction_trade_ukraine",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "sanction_trade1",
+ 							"name": "sanction_trade_ukraine",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "sanction_trade1",
+ 							"name": "sanction_trade_ukraine",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "6"
  						},
  						{
- 							"name": "sanction_trade1",
+ 							"name": "sanction_trade_ukraine",
  							"type": "radio",
  							"col_span_label": 0.5,
  							"col_span_control": 1,
@@ -9461,6 +9461,20 @@
  					}
  				},
  				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\n\t\t\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\t\ttodo\n\t\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t",
+ 								"en": "\n\t\t\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\t\t\u003cb\u003e5.\u003c/b\u003e \u0026nbsp;\n\t\t\t\t\t\t\tHow damaging do you think the following sanctions will be \n\t\t\t\t\t\t\tfor the following economies\n\t\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\t\t(from 0: no damage to 5: high damages):\n\t\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t"
+ 							},
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				},
+ 				{
  					"bottom_vspacers": 3,
  					"columns": 7,
  					"odd_rows_coloring": true,
@@ -9469,7 +9483,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\n\t\t\t\t\u003cp style=''\u003e\n\n\t\t\t\t\ttodo\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t",
- 								"en": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003cb\u003e5.\u003c/b\u003e \u0026nbsp;\n\t\t\t\t\tHow do you think the following sanctions are effective\n\t\t\t\t\tto end the military conflict in Ukraine\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t(from 0: not effective to 5: very effective):\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"en": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003c!-- \u003cb\u003e5.\u003c/b\u003e \u0026nbsp; --\u003e\n\t\t\t\t\tFor the \u003cb\u003eRussian\u003c/b\u003e econ\u0026shy;o\u0026shy;my\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 7,
  							"col_span_label": 1
@@ -9785,7 +9799,7 @@
  							}
  						},
  						{
- 							"name": "sanction_swift2",
+ 							"name": "sanction_swift_russian",
  							"type": "radio",
  							"label": {
  								"de": "todo",
@@ -9812,44 +9826,44 @@
  							}
  						},
  						{
- 							"name": "sanction_swift2",
+ 							"name": "sanction_swift_russian",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "sanction_swift2",
+ 							"name": "sanction_swift_russian",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "sanction_swift2",
+ 							"name": "sanction_swift_russian",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "sanction_swift2",
+ 							"name": "sanction_swift_russian",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "sanction_swift2",
+ 							"name": "sanction_swift_russian",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "6"
  						},
  						{
- 							"name": "sanction_swift2",
+ 							"name": "sanction_swift_russian",
  							"type": "radio",
  							"col_span_label": 0.5,
  							"col_span_control": 1,
  							"value_radio": "7"
  						},
  						{
- 							"name": "sanction_rcb2",
+ 							"name": "sanction_rcb_russian",
  							"type": "radio",
  							"label": {
  								"de": "todo",
@@ -9876,44 +9890,44 @@
  							}
  						},
  						{
- 							"name": "sanction_rcb2",
+ 							"name": "sanction_rcb_russian",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "sanction_rcb2",
+ 							"name": "sanction_rcb_russian",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "sanction_rcb2",
+ 							"name": "sanction_rcb_russian",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "sanction_rcb2",
+ 							"name": "sanction_rcb_russian",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "sanction_rcb2",
+ 							"name": "sanction_rcb_russian",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "6"
  						},
  						{
- 							"name": "sanction_rcb2",
+ 							"name": "sanction_rcb_russian",
  							"type": "radio",
  							"col_span_label": 0.5,
  							"col_span_control": 1,
  							"value_radio": "7"
  						},
  						{
- 							"name": "sanction_freezing2",
+ 							"name": "sanction_freezing_russian",
  							"type": "radio",
  							"label": {
  								"de": "todo",
@@ -9940,44 +9954,44 @@
  							}
  						},
  						{
- 							"name": "sanction_freezing2",
+ 							"name": "sanction_freezing_russian",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "sanction_freezing2",
+ 							"name": "sanction_freezing_russian",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "sanction_freezing2",
+ 							"name": "sanction_freezing_russian",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "sanction_freezing2",
+ 							"name": "sanction_freezing_russian",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "sanction_freezing2",
+ 							"name": "sanction_freezing_russian",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "6"
  						},
  						{
- 							"name": "sanction_freezing2",
+ 							"name": "sanction_freezing_russian",
  							"type": "radio",
  							"col_span_label": 0.5,
  							"col_span_control": 1,
  							"value_radio": "7"
  						},
  						{
- 							"name": "sanction_trade2",
+ 							"name": "sanction_trade_russian",
  							"type": "radio",
  							"label": {
  								"de": "todo",
@@ -10004,37 +10018,37 @@
  							}
  						},
  						{
- 							"name": "sanction_trade2",
+ 							"name": "sanction_trade_russian",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "sanction_trade2",
+ 							"name": "sanction_trade_russian",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "sanction_trade2",
+ 							"name": "sanction_trade_russian",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "sanction_trade2",
+ 							"name": "sanction_trade_russian",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "sanction_trade2",
+ 							"name": "sanction_trade_russian",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "6"
  						},
  						{
- 							"name": "sanction_trade2",
+ 							"name": "sanction_trade_russian",
  							"type": "radio",
  							"col_span_label": 0.5,
  							"col_span_control": 1,
@@ -10070,7 +10084,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\n\t\t\t\t\u003cp style=''\u003e\n\n\t\t\t\t\ttodo\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t",
- 								"en": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003cb\u003e6.\u003c/b\u003e \u0026nbsp;\n\t\t\t\t\tHow do you think the following sanctions are effective\n\t\t\t\t\tto end the military conflict in Ukraine\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t(from 0: not effective to 5: very effective):\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"en": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003c!-- \u003cb\u003e6.\u003c/b\u003e \u0026nbsp; --\u003e\n\t\t\t\t\tFor the \u003cb\u003eGerman\u003c/b\u003e econ\u0026shy;o\u0026shy;my\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 7,
  							"col_span_label": 1
@@ -10386,7 +10400,7 @@
  							}
  						},
  						{
- 							"name": "sanction_swift3",
+ 							"name": "sanction_swift_german",
  							"type": "radio",
  							"label": {
  								"de": "todo",
@@ -10413,44 +10427,44 @@
  							}
  						},
  						{
- 							"name": "sanction_swift3",
+ 							"name": "sanction_swift_german",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "sanction_swift3",
+ 							"name": "sanction_swift_german",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "sanction_swift3",
+ 							"name": "sanction_swift_german",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "sanction_swift3",
+ 							"name": "sanction_swift_german",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "sanction_swift3",
+ 							"name": "sanction_swift_german",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "6"
  						},
  						{
- 							"name": "sanction_swift3",
+ 							"name": "sanction_swift_german",
  							"type": "radio",
  							"col_span_label": 0.5,
  							"col_span_control": 1,
  							"value_radio": "7"
  						},
  						{
- 							"name": "sanction_rcb3",
+ 							"name": "sanction_rcb_german",
  							"type": "radio",
  							"label": {
  								"de": "todo",
@@ -10477,44 +10491,44 @@
  							}
  						},
  						{
- 							"name": "sanction_rcb3",
+ 							"name": "sanction_rcb_german",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "sanction_rcb3",
+ 							"name": "sanction_rcb_german",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "sanction_rcb3",
+ 							"name": "sanction_rcb_german",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "sanction_rcb3",
+ 							"name": "sanction_rcb_german",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "sanction_rcb3",
+ 							"name": "sanction_rcb_german",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "6"
  						},
  						{
- 							"name": "sanction_rcb3",
+ 							"name": "sanction_rcb_german",
  							"type": "radio",
  							"col_span_label": 0.5,
  							"col_span_control": 1,
  							"value_radio": "7"
  						},
  						{
- 							"name": "sanction_freezing3",
+ 							"name": "sanction_freezing_german",
  							"type": "radio",
  							"label": {
  								"de": "todo",
@@ -10541,44 +10555,44 @@
  							}
  						},
  						{
- 							"name": "sanction_freezing3",
+ 							"name": "sanction_freezing_german",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "sanction_freezing3",
+ 							"name": "sanction_freezing_german",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "sanction_freezing3",
+ 							"name": "sanction_freezing_german",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "sanction_freezing3",
+ 							"name": "sanction_freezing_german",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "sanction_freezing3",
+ 							"name": "sanction_freezing_german",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "6"
  						},
  						{
- 							"name": "sanction_freezing3",
+ 							"name": "sanction_freezing_german",
  							"type": "radio",
  							"col_span_label": 0.5,
  							"col_span_control": 1,
  							"value_radio": "7"
  						},
  						{
- 							"name": "sanction_trade3",
+ 							"name": "sanction_trade_german",
  							"type": "radio",
  							"label": {
  								"de": "todo",
@@ -10605,37 +10619,37 @@
  							}
  						},
  						{
- 							"name": "sanction_trade3",
+ 							"name": "sanction_trade_german",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "sanction_trade3",
+ 							"name": "sanction_trade_german",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "sanction_trade3",
+ 							"name": "sanction_trade_german",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "sanction_trade3",
+ 							"name": "sanction_trade_german",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "sanction_trade3",
+ 							"name": "sanction_trade_german",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "6"
  						},
  						{
- 							"name": "sanction_trade3",
+ 							"name": "sanction_trade_german",
  							"type": "radio",
  							"col_span_label": 0.5,
  							"col_span_control": 1,
@@ -10665,22 +10679,623 @@
  				{
  					"bottom_vspacers": 3,
  					"columns": 7,
+ 					"odd_rows_coloring": true,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\n\t\t\t\t\u003cp style=''\u003e\n\n\t\t\t\t\ttodo\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t",
+ 								"en": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003c!-- \u003cb\u003e7.\u003c/b\u003e \u0026nbsp; --\u003e\n\t\t\t\t\tFor the \u003cb\u003eeuro area\u003c/b\u003e econ\u0026shy;o\u0026shy;my\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 							},
+ 							"col_span": 7,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "0",
+ 								"en": "0"
+ 							},
+ 							"col_span_label": 5,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "1",
+ 								"en": "1"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "2",
+ 								"en": "2"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "3",
+ 								"en": "3"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "4",
+ 								"en": "4"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "5",
+ 								"en": "5"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "keine\u003cbr\u003eAn\u0026shy;gabe",
+ 								"en": "no an\u0026shy;swer"
+ 							},
+ 							"col_span_label": 0.5,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "sanction_swift_euro_area",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "todo",
+ 								"en": "SWIFT ban"
+ 							},
+ 							"col_span_label": 5,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "sanction_swift_euro_area",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "sanction_swift_euro_area",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "sanction_swift_euro_area",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "sanction_swift_euro_area",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "sanction_swift_euro_area",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "sanction_swift_euro_area",
+ 							"type": "radio",
+ 							"col_span_label": 0.5,
+ 							"col_span_control": 1,
+ 							"value_radio": "7"
+ 						},
+ 						{
+ 							"name": "sanction_rcb_euro_area",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "todo",
+ 								"en": "Measures against the Russian Central Bank"
+ 							},
+ 							"col_span_label": 5,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "sanction_rcb_euro_area",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "sanction_rcb_euro_area",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "sanction_rcb_euro_area",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "sanction_rcb_euro_area",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "sanction_rcb_euro_area",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "sanction_rcb_euro_area",
+ 							"type": "radio",
+ 							"col_span_label": 0.5,
+ 							"col_span_control": 1,
+ 							"value_radio": "7"
+ 						},
+ 						{
+ 							"name": "sanction_freezing_euro_area",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "todo",
+ 								"en": "Freezing foreign assets of Russian oligarchs"
+ 							},
+ 							"col_span_label": 5,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "sanction_freezing_euro_area",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "sanction_freezing_euro_area",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "sanction_freezing_euro_area",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "sanction_freezing_euro_area",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "sanction_freezing_euro_area",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "sanction_freezing_euro_area",
+ 							"type": "radio",
+ 							"col_span_label": 0.5,
+ 							"col_span_control": 1,
+ 							"value_radio": "7"
+ 						},
+ 						{
+ 							"name": "sanction_trade_euro_area",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "todo",
+ 								"en": "Political pressure on Western companies to end busi\u0026shy;ness relationships with Russian firms"
+ 							},
+ 							"col_span_label": 5,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "sanction_trade_euro_area",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "sanction_trade_euro_area",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "sanction_trade_euro_area",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "sanction_trade_euro_area",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "sanction_trade_euro_area",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "sanction_trade_euro_area",
+ 							"type": "radio",
+ 							"col_span_label": 0.5,
+ 							"col_span_control": 1,
+ 							"value_radio": "7"
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"auto_flow": "row",
+ 								"template_columns": "   6fr    1fr    1fr    1fr    1fr    1fr    1.5fr "
+ 							},
+ 							"box_style": {
+ 								"display": "grid"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 6,
  					"odd_rows_coloring": true,
  					"inputs": [
  						{
  							"type": "textblock",
  							"label": {
  								"de": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\ttodo\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t",
- 								"en": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003cb\u003e7.\u003c/b\u003e \u0026nbsp;\n\t\t\t\t\tHow strong will be the\n\t\t\t\t\t\u003cb\u003etotal effects of all sanctions against Russia\u003c/b\u003e\n\t\t\t\t\tfor financial stability and GDP in Russia, Ger\u0026shy;ma\u0026shy;ny, and the EU:\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t(from 0: no damage to 5: high damages):\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t"
+ 								"en": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003cb\u003e7.\u003c/b\u003e \u0026nbsp;\n\t\t\t\t\tHow strong will be the\n\t\t\t\t\t\u003cb\u003etotal effects of all sanctions against Russia\u003c/b\u003e\n\t\t\t\t\tfor GDP, in\u0026shy;fla\u0026shy;ti\u0026shy;on, and monetary policy in the euro area:\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t(-) means downward change, (+) means upward change:\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t"
  							},
- 							"col_span": 7,
+ 							"col_span": 6,
  							"col_span_label": 1
  						},
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "0",
- 								"en": "0"
+ 								"de": "++",
+ 								"en": "++"
  							},
  							"col_span_label": 5,
  							"col_span_control": 1,
@@ -10724,8 +11339,8 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "1",
- 								"en": "1"
+ 								"de": "+",
+ 								"en": "+"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -10768,8 +11383,8 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "2",
- 								"en": "2"
+ 								"de": "0",
+ 								"en": "0"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -10812,8 +11427,8 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "3",
- 								"en": "3"
+ 								"de": "-",
+ 								"en": "-"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -10856,52 +11471,8 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "4",
- 								"en": "4"
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "5",
- 								"en": "5"
+ 								"de": "--",
+ 								"en": "--"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -10987,11 +11558,11 @@
  							}
  						},
  						{
- 							"name": "effects_financial_russia",
+ 							"name": "sanction_effect_gdp",
  							"type": "radio",
  							"label": {
  								"de": "todo",
- 								"en": "Financial stability Russia"
+ 								"en": "GDP"
  							},
  							"col_span_label": 5,
  							"col_span_control": 1,
@@ -11014,48 +11585,42 @@
  							}
  						},
  						{
- 							"name": "effects_financial_russia",
+ 							"name": "sanction_effect_gdp",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "effects_financial_russia",
+ 							"name": "sanction_effect_gdp",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "effects_financial_russia",
+ 							"name": "sanction_effect_gdp",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "effects_financial_russia",
+ 							"name": "sanction_effect_gdp",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "effects_financial_russia",
+ 							"name": "sanction_effect_gdp",
  							"type": "radio",
+ 							"col_span_label": 0.5,
  							"col_span_control": 1,
  							"value_radio": "6"
  						},
  						{
- 							"name": "effects_financial_russia",
- 							"type": "radio",
- 							"col_span_label": 0.5,
- 							"col_span_control": 1,
- 							"value_radio": "7"
- 						},
- 						{
- 							"name": "effects_financial_germany",
+ 							"name": "sanction_effect_inflation",
  							"type": "radio",
  							"label": {
  								"de": "todo",
- 								"en": "Financial stability Ger\u0026shy;ma\u0026shy;ny"
+ 								"en": "In\u0026shy;fla\u0026shy;ti\u0026shy;on"
  							},
  							"col_span_label": 5,
  							"col_span_control": 1,
@@ -11078,48 +11643,42 @@
  							}
  						},
  						{
- 							"name": "effects_financial_germany",
+ 							"name": "sanction_effect_inflation",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "effects_financial_germany",
+ 							"name": "sanction_effect_inflation",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "effects_financial_germany",
+ 							"name": "sanction_effect_inflation",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "effects_financial_germany",
+ 							"name": "sanction_effect_inflation",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "effects_financial_germany",
+ 							"name": "sanction_effect_inflation",
  							"type": "radio",
+ 							"col_span_label": 0.5,
  							"col_span_control": 1,
  							"value_radio": "6"
  						},
  						{
- 							"name": "effects_financial_germany",
- 							"type": "radio",
- 							"col_span_label": 0.5,
- 							"col_span_control": 1,
- 							"value_radio": "7"
- 						},
- 						{
- 							"name": "effects_financial_eu",
+ 							"name": "sanction_effect_ecb_rate",
  							"type": "radio",
  							"label": {
  								"de": "todo",
- 								"en": "Financial stability EU"
+ 								"en": "Main re\u0026shy;financing rate of the ECB"
  							},
  							"col_span_label": 5,
  							"col_span_control": 1,
@@ -11142,240 +11701,42 @@
  							}
  						},
  						{
- 							"name": "effects_financial_eu",
+ 							"name": "sanction_effect_ecb_rate",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "effects_financial_eu",
+ 							"name": "sanction_effect_ecb_rate",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "effects_financial_eu",
+ 							"name": "sanction_effect_ecb_rate",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "effects_financial_eu",
+ 							"name": "sanction_effect_ecb_rate",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "effects_financial_eu",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "6"
- 						},
- 						{
- 							"name": "effects_financial_eu",
+ 							"name": "sanction_effect_ecb_rate",
  							"type": "radio",
  							"col_span_label": 0.5,
  							"col_span_control": 1,
- 							"value_radio": "7"
- 						},
- 						{
- 							"name": "effects_gdp_russia",
- 							"type": "radio",
- 							"label": {
- 								"de": "todo",
- 								"en": "GDP Russia"
- 							},
- 							"col_span_label": 5,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "effects_gdp_russia",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "effects_gdp_russia",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "effects_gdp_russia",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "effects_gdp_russia",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "effects_gdp_russia",
- 							"type": "radio",
- 							"col_span_control": 1,
  							"value_radio": "6"
- 						},
- 						{
- 							"name": "effects_gdp_russia",
- 							"type": "radio",
- 							"col_span_label": 0.5,
- 							"col_span_control": 1,
- 							"value_radio": "7"
- 						},
- 						{
- 							"name": "effects_gdp_germany",
- 							"type": "radio",
- 							"label": {
- 								"de": "todo",
- 								"en": "GDP Ger\u0026shy;ma\u0026shy;ny"
- 							},
- 							"col_span_label": 5,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "effects_gdp_germany",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "effects_gdp_germany",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "effects_gdp_germany",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "effects_gdp_germany",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "effects_gdp_germany",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "6"
- 						},
- 						{
- 							"name": "effects_gdp_germany",
- 							"type": "radio",
- 							"col_span_label": 0.5,
- 							"col_span_control": 1,
- 							"value_radio": "7"
- 						},
- 						{
- 							"name": "effects_gdp_eu",
- 							"type": "radio",
- 							"label": {
- 								"de": "todo",
- 								"en": "GDP EU "
- 							},
- 							"col_span_label": 5,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "effects_gdp_eu",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "effects_gdp_eu",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "effects_gdp_eu",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "effects_gdp_eu",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "effects_gdp_eu",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "6"
- 						},
- 						{
- 							"name": "effects_gdp_eu",
- 							"type": "radio",
- 							"col_span_label": 0.5,
- 							"col_span_control": 1,
- 							"value_radio": "7"
  						}
  					],
  					"style": {
  						"desktop": {
  							"grid_container_style": {
  								"auto_flow": "row",
- 								"template_columns": "   6fr    1fr    1fr    1fr    1fr    1fr    1.5fr "
+ 								"template_columns": "   6fr    1fr    1fr    1fr    1fr    1.5fr "
  							},
  							"box_style": {
  								"display": "grid"

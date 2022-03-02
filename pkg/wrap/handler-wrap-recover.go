@@ -105,12 +105,15 @@ func (m *logAndRecover) ServeHTTP(w http.ResponseWriter, rNew *http.Request) {
 	func() {
 		defer func() {
 			if rec := recover(); rec != nil {
-				msg1 := fmt.Sprintf("Panic in http handler %v:\n%v\n", shortened, rec)
+				// log.Fatal(...) is not caught by this
+				msg1 := fmt.Sprintf("Panic in http handler %v:\n\t%v\n", shortened, rec)
 				lg.Print(msg1)
 				dbg.StackTrace()
-				msg1 += "<span style='font-size:80%;'>If panic not triggered by log-x.Fatal:</span>\n"
-				msg1 += "Direct stacktrace."
-				msg1 += dbg.StackTracePre()
+				sttr := strings.Split(dbg.StackTracePre(), "\n")
+				if len(sttr) > 5 {
+					sttr = sttr[5:]
+				}
+				msg1 += strings.Join(sttr, "\n")
 				microErrorPage(w, rNew, msg1)
 			}
 		}()

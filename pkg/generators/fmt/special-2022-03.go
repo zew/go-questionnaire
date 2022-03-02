@@ -2,12 +2,13 @@ package fmt
 
 import (
 	"fmt"
+	"strings"
 
 	"github.com/zew/go-questionnaire/pkg/qst"
 	"github.com/zew/go-questionnaire/pkg/trl"
 )
 
-// q1
+// q4, q5a, q5b, q5c
 var rowLabels01 = []trl.S{
 	{
 		"de": "todo",
@@ -34,41 +35,26 @@ var inputNames01 = []string{
 	"sanction_trade",
 }
 
-// q4
+// q6
 var rowLabels02 = []trl.S{
 	{
 		"de": "todo",
-		"en": "Financial stability Russia",
+		"en": "GDP",
 	},
 	{
 		"de": "todo",
-		"en": "Financial stability Germany",
+		"en": "Inflation",
 	},
 	{
 		"de": "todo",
-		"en": "Financial stability EU",
-	},
-	{
-		"de": "todo",
-		"en": "GDP Russia",
-	},
-	{
-		"de": "todo",
-		"en": "GDP Germany",
-	},
-	{
-		"de": "todo",
-		"en": "GDP EU ",
+		"en": "Main refinancing rate of the ECB",
 	},
 }
 
 var inputNames02 = []string{
-	"effects_financial_russia",
-	"effects_financial_germany",
-	"effects_financial_eu",
-	"effects_gdp_russia",
-	"effects_gdp_germany",
-	"effects_gdp_eu",
+	"sanction_effect_gdp",
+	"sanction_effect_inflation",
+	"sanction_effect_ecb_rate",
 }
 
 func special202203(q *qst.QuestionnaireT) error {
@@ -79,8 +65,6 @@ func special202203(q *qst.QuestionnaireT) error {
 		return nil
 	}
 
-	//
-	//
 	//
 	//
 	//
@@ -96,7 +80,21 @@ func special202203(q *qst.QuestionnaireT) error {
 		}
 		page.WidthMax("46rem")
 
-		// gr0
+		var columnTemplate = []float32{
+			5.0, 1,
+			0.0, 1,
+			0.0, 1,
+			0.0, 1,
+			0.0, 1,
+			0.0, 1,
+			0.5, 1,
+		}
+
+		//
+		//
+		//
+
+		// gr1 - q4 intro
 		{
 			gr := page.AddGroup()
 			gr.Cols = 1
@@ -127,24 +125,12 @@ func special202203(q *qst.QuestionnaireT) error {
 
 		}
 
-		var columnTemplate = []float32{
-			5.0, 1,
-			0.0, 1,
-			0.0, 1,
-			0.0, 1,
-			0.0, 1,
-			0.0, 1,
-			0.5, 1,
-		}
-
-		//
-		// gr1-3
-		for i1 := 0; i1 < 3; i1++ {
-
+		// gr2 - q4
+		{
 			inputNamesLp := make([]string, len(inputNames01))
 			copy(inputNamesLp, inputNames01)
 			for i2, inpn := range inputNamesLp {
-				inputNamesLp[i2] = fmt.Sprintf("%v%v", inpn, i1+1)
+				inputNamesLp[i2] = fmt.Sprintf("%v%v", inpn, "_ukraine")
 			}
 
 			gb := qst.NewGridBuilderRadios(
@@ -171,7 +157,79 @@ func special202203(q *qst.QuestionnaireT) error {
 				<p style=''>
 					(from 0: not effective to 5: very effective):
 				</p>
-				`, i1+4),
+				`, 4),
+			}
+
+			gr := page.AddGrid(gb)
+			gr.OddRowsColoring = true
+
+		}
+
+		// gr3 - intro to q5 a, b, c
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 1
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{
+					"de": `
+						<p style=''>
+							todo
+						</p>
+					`,
+
+					"en": `
+						<p style=''>
+							<b>5.</b> &nbsp;
+							How damaging do you think the following sanctions will be 
+							for the following economies
+						</p>
+						<p style=''>
+							(from 0: no damage to 5: high damages):
+						</p>
+
+					`,
+				}
+				inp.ColSpanLabel = 1
+			}
+
+		}
+
+		//
+		// gr4-6 - q 5a, 5b, 5c
+		for i1, economy := range []string{"Russian", "German", "euro area"} {
+
+			inputNamesLp := make([]string, len(inputNames01))
+			copy(inputNamesLp, inputNames01)
+			for i2, inpn := range inputNamesLp {
+				s := strings.ToLower(economy)
+				s = strings.ReplaceAll(s, " ", "_")
+				inputNamesLp[i2] = fmt.Sprintf("%v_%v", inpn, s)
+			}
+
+			gb := qst.NewGridBuilderRadios(
+				columnTemplate,
+				zeroToFive(),
+				inputNamesLp,
+				[]string{"1", "2", "3", "4", "5", "6", "7"},
+				rowLabels01,
+			)
+
+			gb.MainLabel = trl.S{
+				"de": `
+				<p style=''>
+
+					todo
+				</p>
+				`,
+				"en": fmt.Sprintf(`
+				<p style=''>
+					<!-- <b>%v.</b> &nbsp; -->
+					For the <b>%v</b> economy
+				</p>
+				`, i1+5, economy),
 			}
 
 			gr := page.AddGrid(gb)
@@ -179,13 +237,25 @@ func special202203(q *qst.QuestionnaireT) error {
 		}
 
 		//
-		// gr4
+		// gr7 - q6
 		{
+
+			var columnTemplate = []float32{
+				5.0, 1,
+				0.0, 1,
+				0.0, 1,
+				0.0, 1,
+				0.0, 1,
+				0.5, 1,
+			}
+
 			gb := qst.NewGridBuilderRadios(
 				columnTemplate,
-				zeroToFive(),
+				// zeroToFive(),
+				improvedDeterioratedPlusMinus6(),
 				inputNames02,
-				[]string{"1", "2", "3", "4", "5", "6", "7"},
+				// []string{"1", "2", "3", "4", "5", "6", "7"},
+				radioVals6,
 				rowLabels02,
 			)
 
@@ -201,11 +271,11 @@ func special202203(q *qst.QuestionnaireT) error {
 					<b>7.</b> &nbsp;
 					How strong will be the
 					<b>total effects of all sanctions against Russia</b>
-					for financial stability and GDP in Russia, Germany, and the EU:
+					for GDP, inflation, and monetary policy in the euro area:
 				</p>
 
 				<p style=''>
-					(from 0: no damage to 5: high damages):
+					(-) means downward change, (+) means upward change:
 				</p>
 
 				`,
@@ -213,6 +283,7 @@ func special202203(q *qst.QuestionnaireT) error {
 
 			gr := page.AddGrid(gb)
 			gr.OddRowsColoring = true
+			gr.BottomVSpacers = 3
 		}
 
 	}

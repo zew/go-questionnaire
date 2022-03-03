@@ -27,6 +27,16 @@ type GridBuilder struct {
 	MainLabel trl.S // first row - before column headers - as wide as the group
 	cols      []gbCol
 	validator string
+
+	//  if column headers: second row, first column:
+	// 		since this contains one "label-control" input
+
+	//  Instead, put it into the MainLabel and "hang it over" the top left area:
+	//   <p style='position: relative; top: 1.1rem; height: 0.1rem;'>
+	//   	  <b>Sanktionsmaßnahme</b>
+	//   </p>
+
+	CellTopLeft trl.S
 }
 
 // AddCol adds a column;
@@ -236,6 +246,13 @@ func (p *pageT) AddGrid(gb *GridBuilder) *groupT {
 				// inp.Style.Desktop.GridContainerStyle.GapColumn is distorting cell widths..
 				inp.Style.Mobile.StyleBox.Padding = "0 0.1rem"
 				inp.Style.Mobile.StyleText.FontSize = 90
+
+				if false {
+					if colIdx == 0 && !gb.CellTopLeft.Empty() {
+						inp.Label = gb.CellTopLeft
+					}
+				}
+
 			}
 
 			// log.Printf("colIdx %v  -  lbl/ctl  %v  %v ", colIdx, inp.ColSpanLabel, inp.ColSpanControl)

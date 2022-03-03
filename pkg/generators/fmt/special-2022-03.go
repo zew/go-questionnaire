@@ -2,7 +2,6 @@ package fmt
 
 import (
 	"fmt"
-	"strings"
 
 	"github.com/zew/go-questionnaire/pkg/qst"
 	"github.com/zew/go-questionnaire/pkg/trl"
@@ -11,19 +10,19 @@ import (
 // q4, q5a, q5b, q5c
 var rowLabels01 = []trl.S{
 	{
-		"de": "todo",
+		"de": "Ausschluss von SWIFT",
 		"en": "SWIFT ban",
 	},
 	{
-		"de": "todo",
+		"de": "Maßnahmen gegen die russische Zentralbank",
 		"en": "Measures against the Russian Central Bank",
 	},
 	{
-		"de": "todo",
+		"de": "Einfrieren der Konten russischer Oligarchen",
 		"en": "Freezing foreign assets of Russian oligarchs",
 	},
 	{
-		"de": "todo",
+		"de": "Politischer Druck auf westliche Unternehmen, die Geschäftsbeziehungen mit russischen Unternehmen einzustellen",
 		"en": "Political pressure on Western companies to end business relationships with Russian firms",
 	},
 }
@@ -38,15 +37,15 @@ var inputNames01 = []string{
 // q6
 var rowLabels02 = []trl.S{
 	{
-		"de": "todo",
+		"de": "BIP",
 		"en": "GDP",
 	},
 	{
-		"de": "todo",
+		"de": "Inflation",
 		"en": "Inflation",
 	},
 	{
-		"de": "todo",
+		"de": "Haupt&shy;refinanzierungs&shy;fazilität der EZB",
 		"en": "Main refinancing rate of the ECB",
 	},
 }
@@ -105,7 +104,9 @@ func special202203(q *qst.QuestionnaireT) error {
 				inp.Label = trl.S{
 					"de": `
 						<p style=''>
-							todo
+							Als Reaktion auf den russischen Angriff auf die Ukraine 
+							hat eine große Zahl an Ländern entschieden, 
+							Sanktionen gegen Russland einzuführen.
 						</p>
 					`,
 
@@ -142,17 +143,22 @@ func special202203(q *qst.QuestionnaireT) error {
 			)
 
 			gb.MainLabel = trl.S{
-				"de": `
+				"de": fmt.Sprintf(`
 				<p style=''>
-
-					todo
+					<b>%v.</b> &nbsp;
+					In welchem Maße werden die folgenden Sanktionen Ihrer Einschätzung 
+					nach dazu beitragen, den Krieg in der Ukraine zu beenden?
 				</p>
-				`,
+				<p style=''>
+					(von 0: nicht wirksam bis 5: hochwirksam):
+				</p>
+				`, 4),
+
 				"en": fmt.Sprintf(`
 				<p style=''>
 					<b>%v.</b> &nbsp;
 					How do you think the following sanctions are effective
-					to end the military conflict in Ukraine
+					to end the military conflict in Ukraine?
 				</p>
 				<p style=''>
 					(from 0: not effective to 5: very effective):
@@ -176,7 +182,12 @@ func special202203(q *qst.QuestionnaireT) error {
 				inp.Label = trl.S{
 					"de": `
 						<p style=''>
-							todo
+							<b>5.</b> &nbsp;
+							Wie hoch schätzen Sie den Schaden für die jeweilige Volkswirtschaft ein, 
+							die durch die folgenden Sanktionsmaßnahmen verursacht werden?
+						</p>
+						<p style=''>
+							(von 0: kein Schaden bis 5: hoher Schaden):
 						</p>
 					`,
 
@@ -184,7 +195,7 @@ func special202203(q *qst.QuestionnaireT) error {
 						<p style=''>
 							<b>5.</b> &nbsp;
 							How damaging do you think the following sanctions will be 
-							for the following economies
+							for the following economies?
 						</p>
 						<p style=''>
 							(from 0: no damage to 5: high damages):
@@ -199,14 +210,28 @@ func special202203(q *qst.QuestionnaireT) error {
 
 		//
 		// gr4-6 - q 5a, 5b, 5c
-		for i1, economy := range []string{"Russian", "German", "euro area"} {
+		inpNamesSuffixes := []string{"russian", "german", "euro_area"}
+		lbls := []trl.S{
+			{
+				"de": "russische",
+				"en": "Russian",
+			},
+			{
+				"de": "deutsche",
+				"en": "German",
+			},
+			{
+				"de": "Eurogebiet",
+				"en": "euro area",
+			},
+		}
+
+		for i1, suffix := range inpNamesSuffixes {
 
 			inputNamesLp := make([]string, len(inputNames01))
 			copy(inputNamesLp, inputNames01)
 			for i2, inpn := range inputNamesLp {
-				s := strings.ToLower(economy)
-				s = strings.ReplaceAll(s, " ", "_")
-				inputNamesLp[i2] = fmt.Sprintf("%v_%v", inpn, s)
+				inputNamesLp[i2] = fmt.Sprintf("%v_%v", inpn, suffix)
 			}
 
 			gb := qst.NewGridBuilderRadios(
@@ -218,18 +243,30 @@ func special202203(q *qst.QuestionnaireT) error {
 			)
 
 			gb.MainLabel = trl.S{
-				"de": `
-				<p style=''>
 
-					todo
+				"de": fmt.Sprintf(`
+				<p style=''>
+					<!-- <b>%v.</b> &nbsp; -->
+					Für die <b>%v</b> Wirtschaft
 				</p>
-				`,
+				<p style='position: relative; top: 1.1rem; height: 0.1rem;'>
+					<bx>Sanktionsmaßnahme</bx>
+				</p>
+
+
+				`, i1+5, lbls[i1]["de"]),
+
 				"en": fmt.Sprintf(`
 				<p style=''>
 					<!-- <b>%v.</b> &nbsp; -->
 					For the <b>%v</b> economy
 				</p>
-				`, i1+5, economy),
+				<p style='position: relative; top: 1.1rem; height: 0.1rem;'>
+					<bx>Sanction</bx>
+				</p>
+
+
+				`, i1+5, lbls[i1]["en"]),
 			}
 
 			gr := page.AddGrid(gb)
@@ -251,7 +288,6 @@ func special202203(q *qst.QuestionnaireT) error {
 
 			gb := qst.NewGridBuilderRadios(
 				columnTemplate,
-				// zeroToFive(),
 				improvedDeterioratedPlusMinus6(),
 				inputNames02,
 				// []string{"1", "2", "3", "4", "5", "6", "7"},
@@ -262,16 +298,23 @@ func special202203(q *qst.QuestionnaireT) error {
 			gb.MainLabel = trl.S{
 				"de": `
 				<p style=''>
-					todo
+					<b>6.</b> &nbsp;
+					Wie hoch sind Ihrer Einschätzung nach die Wirkungen der gesamten 
+					Sanktionsmaßnahmen gegen Russland für Bruttoinlandsprodukt, 
+					Inflation und Geldpolitik im Eurogebiet?
+				</p>
+
+				<p style=''>
+					(-) = Rückgang, (+) = Steigerung:
 				</p>
 
 				`,
 				"en": `
 				<p style=''>
-					<b>7.</b> &nbsp;
+					<b>6.</b> &nbsp;
 					How strong will be the
 					<b>total effects of all sanctions against Russia</b>
-					for GDP, inflation, and monetary policy in the euro area:
+					for GDP, inflation, and monetary policy in the euro area?
 				</p>
 
 				<p style=''>

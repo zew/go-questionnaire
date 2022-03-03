@@ -88,7 +88,7 @@ var inputNamesAssetClassesChangeQ3 = []string{
 
 var influenceFactorLabelsQ3 = []trl.S{
 	{
-		"de": "Gesamtwirtschaftlicher Ausblick im Eurogebiet",
+		"de": "Gesamtwirtschaftlicher Ausblick",
 		"en": "Economic outlook",
 	},
 	{
@@ -100,7 +100,7 @@ var influenceFactorLabelsQ3 = []trl.S{
 		"en": "Monetary policy of the US Fed",
 	},
 	{
-		"de": "Ausblick Inflation im Eurogebiet",
+		"de": "Ausblick Inflation",
 		"en": "Outlook Inflation",
 	},
 	{
@@ -108,7 +108,7 @@ var influenceFactorLabelsQ3 = []trl.S{
 		"en": "Political situation",
 	},
 	{
-		"de": "Markt&shy;bewertung",
+		"de": "Aktuelle Markt&shy;bewertung",
 		"en": "Market valuation",
 	},
 	{
@@ -166,7 +166,7 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 	{
 		page := q.AddPage()
 		page.Label = trl.S{
-			"de": "Sonderfrage: Anlageklassen im Eurogebiet",
+			"de": "Sonderfrage: Anlageklassen im Eurogebiet und weltweit",
 			// "en": "Special: Asset Classes in the Euro Area",
 			"en": "Additional questions on the attractiveness of different asset classes",
 		}
@@ -199,14 +199,15 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 				<p style=''>
 					<b>1.</b> &nbsp;
 					Mit Blick auf die nächsten sechs Monate, 
-					wie beurteilen Sie das Rendite-Risko-Profil der folgenden Anlageklassen? 
-					
-					Orientieren Sie sich an breit gestreuten Indizes
+					wie beurteilen Sie das Rendite-Risko-Profil 
+					der folgenden Anlageklassen?
+
+					Orientieren Sie sich dabei an breit gestreuten Indizes
 					für das <b><i>Eurogebiet</i></b>.
 				</p>
 
 				<p style=''>
-					Das Rendite-Risiko-Profil beurteile ich …
+					Das Rendite-Risiko-Profil von … beurteile ich …
 				</p>
 				`,
 				"en": `
@@ -251,14 +252,15 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 				"de": `
 				<p style=''>
 					<b>2.</b> &nbsp;
+
 					Mit Blick auf die nächsten sechs Monate, 
-					wie beurteilen Sie das Rendite-Risko-Profil der folgenden Anlageklassen? 
-					
-					Orientieren Sie sich an <b><i>globalen</i></b>, breit gestreuten Indizes.
+					wie beurteilen Sie das Rendite-Risko-Profil der folgenden Anlageklassen?
+
+					Orientieren Sie sich dabei an breit getreuten <b><i>globalen</i></b> Indizes.
 				</p>
 
 				<p style=''>
-					Das Rendite-Risiko-Profil beurteile ich …
+					Das Rendite-Risiko-Profil von … beurteile ich …
 				</p>
 				`,
 				"en": `
@@ -300,13 +302,11 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 					Haben Entwicklungen der folgenden Faktoren 
 					Sie zu einer Revision Ihrer Einschätzungen 
 					zum Rendite-Risiko-Profil der einzelnen Assetklassen 
-					gegenüber September 2021 bewogen?
-
+					gegenüber September 2021 bewogen
 				</p>
 
 				<p style=''>
-					Wenn ja, 
-					nach oben (+) oder unten (-) ?
+					und wenn ja, nach oben (+) oder unten (-) ?
 				</p>
 
 					`,
@@ -386,7 +386,7 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 					<p style='position: relative; top: 0.8rem'>
 						<span>3.%v.</span> &nbsp;
 						%v
-						&nbsp; - &nbsp;  Eurogebiet
+						<!-- &nbsp; - &nbsp;  Eurogebiet -->
 					</p>
 					`,
 						idx+1,

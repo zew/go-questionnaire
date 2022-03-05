@@ -17,7 +17,7 @@ var rowLabelsAssetClassesEuroZoneQ3 = []trl.S{
 	},
 	{
 		"de": "Staats&shy;anleihen",
-		"en": "Sovereign bonds",
+		"en": "Govt. bonds",
 	},
 	{
 		"de": "Unter&shy;nehmens&shy;anleihen",
@@ -44,7 +44,7 @@ var rowLabelsAssetClassesGlobalQ3 = []trl.S{
 	},
 	{
 		"de": "Staats&shy;anleihen",
-		"en": "Sovereign bonds",
+		"en": "Govt. bonds",
 	},
 	{
 		"de": "Unter&shy;nehmens&shy;anleihen",
@@ -93,23 +93,24 @@ var influenceFactorLabelsQ3 = []trl.S{
 	},
 	{
 		"de": "Geldpolitik der EZB",
-		"en": "Monetary policy of the ECB",
+		"en": "ECB monetary policy",
 	},
 	{
 		"de": "Geldpolitik der US-Notenbank",
-		"en": "Monetary policy of the US Fed",
+		"en": "US Federal Reserve monetary policy",
 	},
 	{
 		"de": "Ausblick Inflation",
-		"en": "Outlook Inflation",
+		"en": "Inflation outlook ",
 	},
 	{
 		"de": "Politische Rahmen&shy;bedingungen",
-		"en": "Political situation",
+		"en": "Political framework",
 	},
 	{
 		"de": "Aktuelle Markt&shy;bewertung",
-		"en": "Market valuation",
+		// "en": "Market valuation",
+		"en": "Current valuation multiples",
 	},
 	{
 		"de": "Krieg Russ&shy;land - Ukraine",
@@ -119,20 +120,20 @@ var influenceFactorLabelsQ3 = []trl.S{
 
 var rowLabelsAssetClassesEuroZoneQ3B = []trl.S{
 	{
-		"de": "Aktien (Eurogebiet)",
-		"en": "Stocks (euro area)",
+		"de": "Aktien",
+		"en": "Stocks",
 	},
 	{
-		"de": "Staats&shy;anleihen (Eurogebiet)",
-		"en": "Sovereign bonds (euro area)",
+		"de": "Staats&shy;anleihen",
+		"en": "Sovereign bonds",
 	},
 	{
-		"de": "Unter&shy;nehmens&shy;anleihen (Eurogebiet)",
-		"en": "Corporate bonds (euro area)",
+		"de": "Unter&shy;nehmens&shy;anleihen",
+		"en": "Corporate bonds",
 	},
 	{
-		"de": "Immobilien (Eurogebiet)",
-		"en": "Real estate (euro area)",
+		"de": "Immobilien",
+		"en": "Real estate",
 	},
 }
 
@@ -198,16 +199,17 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 				"de": `
 				<p style=''>
 					<b>1.</b> &nbsp;
+
 					Mit Blick auf die nächsten sechs Monate, 
 					wie beurteilen Sie das Rendite-Risko-Profil 
 					der folgenden Anlageklassen?
-
-					Orientieren Sie sich dabei an breit gestreuten Indizes
-					für das <b><i>Eurogebiet</i></b>.
+					
+					Orientieren Sie sich an breit gestreuten Indizes 
+					für das <b>Eurogebiet</b>.
 				</p>
 
 				<p style=''>
-					Das Rendite-Risiko-Profil von … beurteile ich …
+					Das Rendite-Risiko-Profil beurteile ich …
 				</p>
 				`,
 				"en": `
@@ -252,15 +254,15 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 				"de": `
 				<p style=''>
 					<b>2.</b> &nbsp;
-
 					Mit Blick auf die nächsten sechs Monate, 
-					wie beurteilen Sie das Rendite-Risko-Profil der folgenden Anlageklassen?
+					wie beurteilen Sie das Rendite-Risko-Profil 
+					der folgenden Anlageklassen?
 
-					Orientieren Sie sich dabei an breit getreuten <b><i>globalen</i></b> Indizes.
+					Orientieren Sie sich an breit gestreuten <b>globalen</b> Indizes.
 				</p>
 
 				<p style=''>
-					Das Rendite-Risiko-Profil von … beurteile ich …
+					Das Rendite-Risiko-Profil beurteile ich …
 				</p>
 				`,
 				"en": `
@@ -301,12 +303,13 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 					<b>3.</b>  &nbsp;
 					Haben Entwicklungen der folgenden Faktoren 
 					Sie zu einer Revision Ihrer Einschätzungen 
-					zum Rendite-Risiko-Profil der einzelnen Assetklassen 
-					gegenüber September 2021 bewogen
+					zum Rendite-Risiko-Profil der einzelnen Assetklassen
+					im <b>Eurogebiet</b> 
+					gegenüber September 2021 bewogen?
 				</p>
 
 				<p style=''>
-					und wenn ja, nach oben (+) oder unten (-) ?
+					und wenn ja, nach oben (+) oder unten (-)
 				</p>
 
 					`,
@@ -314,10 +317,14 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 					"en": `
 				<p style=''>
 					<b>3.</b>  &nbsp;
-					Do the following factors motivate you
-					to change your expectations (compared to December 2021) 
-					regarding the return-risk-profile of 
-					asset classes in the euro area?					
+
+					Did developments in the following areas
+					lead you to change your assessment 
+					of the return-risk profiles
+					of the following four asset classes 
+					(compared to December 2021)
+					in the <b>euro area</b>?
+
 				</p>
 
 				<p style=''>
@@ -386,7 +393,7 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 					<p style='position: relative; top: 0.8rem'>
 						<span>3.%v.</span> &nbsp;
 						%v
-						<!-- &nbsp; - &nbsp;  Eurogebiet -->
+						 &nbsp; - &nbsp;  Eurogebiet 
 					</p>
 					`,
 						idx+1,
@@ -397,7 +404,7 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 						<span>3.%v.</span> &nbsp;
 
 						%v
-						<!-- &nbsp; - &nbsp;  euro area -->
+						 &nbsp; - &nbsp;  euro area 
 					</p>
 					`,
 						idx+1,

@@ -791,11 +791,11 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			},
 			{
 				"de": "Chemie, Pharma",
-				"en": "Chemical, Pharmaceutical",
+				"en": "Chemicals, Pharma",
 			},
 			{
 				"de": "Stahl/NE-Metalle",
-				"en": "Metallurgy",
+				"en": "Steel/Metal Products",
 			},
 			{
 				"de": "Elektronik",
@@ -803,12 +803,12 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			},
 			{
 				"de": "Maschinen&shy;bau",
-				"en": "Mechanical Engineering",
+				"en": "Machinery",
 			},
 			// row 2
 			{
 				"de": "Konsum, Handel",
-				"en": "Retail",
+				"en": "Consumption/Trade",
 			},
 			{
 				"de": "Baugewerbe",
@@ -824,11 +824,11 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			},
 			{
 				"de": "Telekommunikation",
-				"en": "Telco",
+				"en": "Tele&shy;communications",
 			},
 			{
 				"de": "Inform.-Technologien",
-				"en": "IT",
+				"en": "Inform.-Technologies",
 			},
 		}
 

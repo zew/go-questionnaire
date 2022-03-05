@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "f5fe510a18f53a930ed27bd881190ee8bcd3bccb4951339a3e663ca2cc5e4d1f",
+ 	"md_5": "80a818a65cb7e24fc23ce33ed5a0f740df645e3b54a5fdd8737b80ed6ea77576",
  	"lang_codes": [
  		"de",
  		"en"
@@ -4041,7 +4041,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Chemie, Pharma",
- 								"en": "Chemical, Phar\u0026shy;ma\u0026shy;ceu\u0026shy;ti\u0026shy;cal"
+ 								"en": "Chemicals, Pharma"
  							},
  							"col_span_label": 2,
  							"col_span_control": 1,
@@ -4087,7 +4087,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Stahl/NE-Metalle",
- 								"en": "Metallurgy"
+ 								"en": "Steel/Metal Products"
  							},
  							"col_span_label": 2,
  							"col_span_control": 1,
@@ -4179,7 +4179,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Maschinen\u0026shy;bau",
- 								"en": "Mechanical Engineering"
+ 								"en": "Machinery"
  							},
  							"col_span_label": 2,
  							"col_span_control": 1,
@@ -4225,7 +4225,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Konsum, Handel",
- 								"en": "Retail"
+ 								"en": "Consumption/Trade"
  							},
  							"col_span_label": 2,
  							"col_span_control": 1,
@@ -4409,7 +4409,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Te\u0026shy;le\u0026shy;kom\u0026shy;mu\u0026shy;ni\u0026shy;ka\u0026shy;ti\u0026shy;on",
- 								"en": "Telco"
+ 								"en": "Tele\u0026shy;communications"
  							},
  							"col_span_label": 2,
  							"col_span_control": 1,
@@ -4455,7 +4455,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Inform.-Technologien",
- 								"en": "IT"
+ 								"en": "Inform.-Technologies"
  							},
  							"col_span_label": 2,
  							"col_span_control": 1,
@@ -4560,7 +4560,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003cb\u003e1.\u003c/b\u003e \u0026nbsp;\n\t\t\t\t\tMit Blick auf die nächsten sechs Monate, \n\t\t\t\t\twie beurteilen Sie das Rendite-Risko-Profil \n\t\t\t\t\tder folgenden Anlageklassen?\n\n\t\t\t\t\tOrientieren Sie sich dabei an breit gestreuten Indizes\n\t\t\t\t\tfür das \u003cb\u003e\u003ci\u003eEuro\u0026shy;gebiet\u003c/i\u003e\u003c/b\u003e.\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\tDas Rendite-Risiko-Profil von … beurteile ich …\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t",
+ 								"de": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003cb\u003e1.\u003c/b\u003e \u0026nbsp;\n\n\t\t\t\t\tMit Blick auf die nächsten sechs Monate, \n\t\t\t\t\twie beurteilen Sie das Rendite-Risko-Profil \n\t\t\t\t\tder folgenden Anlageklassen?\n\t\t\t\t\t\n\t\t\t\t\tOrientieren Sie sich an breit gestreuten Indizes \n\t\t\t\t\tfür das \u003cb\u003eEuro\u0026shy;gebiet\u003c/b\u003e.\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\tDas Rendite-Risiko-Profil beurteile ich …\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t",
  								"en": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003cb\u003e1.\u003c/b\u003e \u0026nbsp;\n\t\t\t\t\tHow do you assess the return-risk profile of the following asset classes \n\t\t\t\t\tin the \u003cb\u003e\u003ci\u003eeuro area\u003c/i\u003e\u003c/b\u003e for the next 6 months? \n\n\t\t\t\t\tPlease consider well-diversified indices.\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\tMy assessment of the return-risk profile is …\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 5,
@@ -4845,7 +4845,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Staats\u0026shy;anleihen",
- 								"en": "Sovereign bonds"
+ 								"en": "Govt. bonds"
  							},
  							"col_span_label": 3,
  							"col_span_control": 1,
@@ -5025,7 +5025,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003cb\u003e2.\u003c/b\u003e \u0026nbsp;\n\n\t\t\t\t\tMit Blick auf die nächsten sechs Monate, \n\t\t\t\t\twie beurteilen Sie das Rendite-Risko-Profil der folgenden Anlageklassen?\n\n\t\t\t\t\tOrientieren Sie sich dabei an breit getreuten \u003cb\u003e\u003ci\u003eglobalen\u003c/i\u003e\u003c/b\u003e Indizes.\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\tDas Rendite-Risiko-Profil von … beurteile ich …\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t",
+ 								"de": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003cb\u003e2.\u003c/b\u003e \u0026nbsp;\n\t\t\t\t\tMit Blick auf die nächsten sechs Monate, \n\t\t\t\t\twie beurteilen Sie das Rendite-Risko-Profil \n\t\t\t\t\tder folgenden Anlageklassen?\n\n\t\t\t\t\tOrientieren Sie sich an breit gestreuten \u003cb\u003eglobalen\u003c/b\u003e Indizes.\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\tDas Rendite-Risiko-Profil beurteile ich …\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t",
  								"en": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003cb\u003e2.\u003c/b\u003e \u0026nbsp;\n\t\t\t\t\tHow do you assess the return-risk profile  \n\t\t\t\t\tof the following \u003cb\u003e\u003ci\u003eglobal\u003c/i\u003e\u003c/b\u003e asset classes for the next 6 months? \n\n\t\t\t\t\tPlease consider well-diversified indices.\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\tMy assessment of the return-risk profile is …\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 5,
@@ -5310,7 +5310,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Staats\u0026shy;anleihen",
- 								"en": "Sovereign bonds"
+ 								"en": "Govt. bonds"
  							},
  							"col_span_label": 3,
  							"col_span_control": 1,
@@ -5645,8 +5645,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003cb\u003e3.\u003c/b\u003e  \u0026nbsp;\n\t\t\t\t\tHaben Entwicklungen der folgenden Faktoren \n\t\t\t\t\tSie zu einer Revision Ihrer Einschätzungen \n\t\t\t\t\tzum Rendite-Risiko-Profil der einzelnen Assetklassen \n\t\t\t\t\tgegenüber September 2021 bewogen\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\tund wenn ja, nach oben (+) oder unten (-) ?\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t",
- 								"en": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003cb\u003e3.\u003c/b\u003e  \u0026nbsp;\n\t\t\t\t\tDo the following factors motivate you\n\t\t\t\t\tto change your expectations (compared to December 2021) \n\t\t\t\t\tregarding the return-risk-profile of \n\t\t\t\t\tasset classes in the euro area?\t\t\t\t\t\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t(+) = upward change, (-) = downward change\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\n\n\t\t\t\t\t"
+ 								"de": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003cb\u003e3.\u003c/b\u003e  \u0026nbsp;\n\t\t\t\t\tHaben Entwicklungen der folgenden Faktoren \n\t\t\t\t\tSie zu einer Revision Ihrer Einschätzungen \n\t\t\t\t\tzum Rendite-Risiko-Profil der einzelnen Assetklassen\n\t\t\t\t\tim \u003cb\u003eEuro\u0026shy;gebiet\u003c/b\u003e \n\t\t\t\t\tgegenüber September 2021 bewogen?\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\tund wenn ja, nach oben (+) oder unten (-)\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t",
+ 								"en": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003cb\u003e3.\u003c/b\u003e  \u0026nbsp;\n\n\t\t\t\t\tDid de\u0026shy;vel\u0026shy;op\u0026shy;ments in the following areas\n\t\t\t\t\tlead you to change your assessment \n\t\t\t\t\tof the return-risk profiles\n\t\t\t\t\tof the following four asset classes \n\t\t\t\t\t(compared to December 2021)\n\t\t\t\t\tin the \u003cb\u003eeuro area\u003c/b\u003e?\n\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t(+) = upward change, (-) = downward change\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\n\n\t\t\t\t\t"
  							},
  							"col_span_label": 1
  						}
@@ -5677,8 +5677,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\u003cp style='position: relative; top: 0.8rem'\u003e\n\t\t\t\t\t\t\u003cspan\u003e3.1.\u003c/span\u003e \u0026nbsp;\n\t\t\t\t\t\tAktien (Euro\u0026shy;gebiet)\n\t\t\t\t\t\t\u003c!-- \u0026nbsp; - \u0026nbsp;  Euro\u0026shy;gebiet --\u003e\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t",
- 								"en": "\n\t\t\t\t\t\u003cp style='position: relative; top: 0.8rem'\u003e\n\t\t\t\t\t\t\u003cspan\u003e3.1.\u003c/span\u003e \u0026nbsp;\n\n\t\t\t\t\t\tStocks (euro area)\n\t\t\t\t\t\t\u003c!-- \u0026nbsp; - \u0026nbsp;  euro area --\u003e\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp style='position: relative; top: 0.8rem'\u003e\n\t\t\t\t\t\t\u003cspan\u003e3.1.\u003c/span\u003e \u0026nbsp;\n\t\t\t\t\t\tAktien\n\t\t\t\t\t\t \u0026nbsp; - \u0026nbsp;  Euro\u0026shy;gebiet \n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t",
+ 								"en": "\n\t\t\t\t\t\u003cp style='position: relative; top: 0.8rem'\u003e\n\t\t\t\t\t\t\u003cspan\u003e3.1.\u003c/span\u003e \u0026nbsp;\n\n\t\t\t\t\t\tStocks\n\t\t\t\t\t\t \u0026nbsp; - \u0026nbsp;  euro area \n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
  							},
  							"col_span": 6,
  							"col_span_label": 1
@@ -6012,7 +6012,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Geld\u0026shy;po\u0026shy;li\u0026shy;tik der EZB",
- 								"en": "Monetary policy of the ECB"
+ 								"en": "ECB monetary policy"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -6070,7 +6070,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Geld\u0026shy;po\u0026shy;li\u0026shy;tik der US-Notenbank",
- 								"en": "Monetary policy of the US Fed"
+ 								"en": "US Federal Reserve monetary policy"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -6128,7 +6128,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Ausblick In\u0026shy;fla\u0026shy;ti\u0026shy;on",
- 								"en": "Outlook In\u0026shy;fla\u0026shy;ti\u0026shy;on"
+ 								"en": "In\u0026shy;fla\u0026shy;ti\u0026shy;on outlook "
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -6186,7 +6186,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Politische Rahmen\u0026shy;bedingungen",
- 								"en": "Political situation"
+ 								"en": "Political framework"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -6244,7 +6244,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Aktuelle Markt\u0026shy;bewertung",
- 								"en": "Market valuation"
+ 								"en": "Current valuation multiples"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -6462,8 +6462,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\u003cp style='position: relative; top: 0.8rem'\u003e\n\t\t\t\t\t\t\u003cspan\u003e3.2.\u003c/span\u003e \u0026nbsp;\n\t\t\t\t\t\tStaats\u0026shy;anleihen (Euro\u0026shy;gebiet)\n\t\t\t\t\t\t\u003c!-- \u0026nbsp; - \u0026nbsp;  Euro\u0026shy;gebiet --\u003e\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t",
- 								"en": "\n\t\t\t\t\t\u003cp style='position: relative; top: 0.8rem'\u003e\n\t\t\t\t\t\t\u003cspan\u003e3.2.\u003c/span\u003e \u0026nbsp;\n\n\t\t\t\t\t\tSovereign bonds (euro area)\n\t\t\t\t\t\t\u003c!-- \u0026nbsp; - \u0026nbsp;  euro area --\u003e\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp style='position: relative; top: 0.8rem'\u003e\n\t\t\t\t\t\t\u003cspan\u003e3.2.\u003c/span\u003e \u0026nbsp;\n\t\t\t\t\t\tStaats\u0026shy;anleihen\n\t\t\t\t\t\t \u0026nbsp; - \u0026nbsp;  Euro\u0026shy;gebiet \n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t",
+ 								"en": "\n\t\t\t\t\t\u003cp style='position: relative; top: 0.8rem'\u003e\n\t\t\t\t\t\t\u003cspan\u003e3.2.\u003c/span\u003e \u0026nbsp;\n\n\t\t\t\t\t\tSovereign bonds\n\t\t\t\t\t\t \u0026nbsp; - \u0026nbsp;  euro area \n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
  							},
  							"col_span": 6,
  							"col_span_label": 1
@@ -6797,7 +6797,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Geld\u0026shy;po\u0026shy;li\u0026shy;tik der EZB",
- 								"en": "Monetary policy of the ECB"
+ 								"en": "ECB monetary policy"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -6855,7 +6855,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Geld\u0026shy;po\u0026shy;li\u0026shy;tik der US-Notenbank",
- 								"en": "Monetary policy of the US Fed"
+ 								"en": "US Federal Reserve monetary policy"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -6913,7 +6913,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Ausblick In\u0026shy;fla\u0026shy;ti\u0026shy;on",
- 								"en": "Outlook In\u0026shy;fla\u0026shy;ti\u0026shy;on"
+ 								"en": "In\u0026shy;fla\u0026shy;ti\u0026shy;on outlook "
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -6971,7 +6971,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Politische Rahmen\u0026shy;bedingungen",
- 								"en": "Political situation"
+ 								"en": "Political framework"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -7029,7 +7029,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Aktuelle Markt\u0026shy;bewertung",
- 								"en": "Market valuation"
+ 								"en": "Current valuation multiples"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -7247,8 +7247,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\u003cp style='position: relative; top: 0.8rem'\u003e\n\t\t\t\t\t\t\u003cspan\u003e3.3.\u003c/span\u003e \u0026nbsp;\n\t\t\t\t\t\tUnter\u0026shy;nehmens\u0026shy;anleihen (Euro\u0026shy;gebiet)\n\t\t\t\t\t\t\u003c!-- \u0026nbsp; - \u0026nbsp;  Euro\u0026shy;gebiet --\u003e\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t",
- 								"en": "\n\t\t\t\t\t\u003cp style='position: relative; top: 0.8rem'\u003e\n\t\t\t\t\t\t\u003cspan\u003e3.3.\u003c/span\u003e \u0026nbsp;\n\n\t\t\t\t\t\tCorporate bonds (euro area)\n\t\t\t\t\t\t\u003c!-- \u0026nbsp; - \u0026nbsp;  euro area --\u003e\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp style='position: relative; top: 0.8rem'\u003e\n\t\t\t\t\t\t\u003cspan\u003e3.3.\u003c/span\u003e \u0026nbsp;\n\t\t\t\t\t\tUnter\u0026shy;nehmens\u0026shy;anleihen\n\t\t\t\t\t\t \u0026nbsp; - \u0026nbsp;  Euro\u0026shy;gebiet \n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t",
+ 								"en": "\n\t\t\t\t\t\u003cp style='position: relative; top: 0.8rem'\u003e\n\t\t\t\t\t\t\u003cspan\u003e3.3.\u003c/span\u003e \u0026nbsp;\n\n\t\t\t\t\t\tCorporate bonds\n\t\t\t\t\t\t \u0026nbsp; - \u0026nbsp;  euro area \n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
  							},
  							"col_span": 6,
  							"col_span_label": 1
@@ -7582,7 +7582,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Geld\u0026shy;po\u0026shy;li\u0026shy;tik der EZB",
- 								"en": "Monetary policy of the ECB"
+ 								"en": "ECB monetary policy"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -7640,7 +7640,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Geld\u0026shy;po\u0026shy;li\u0026shy;tik der US-Notenbank",
- 								"en": "Monetary policy of the US Fed"
+ 								"en": "US Federal Reserve monetary policy"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -7698,7 +7698,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Ausblick In\u0026shy;fla\u0026shy;ti\u0026shy;on",
- 								"en": "Outlook In\u0026shy;fla\u0026shy;ti\u0026shy;on"
+ 								"en": "In\u0026shy;fla\u0026shy;ti\u0026shy;on outlook "
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -7756,7 +7756,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Politische Rahmen\u0026shy;bedingungen",
- 								"en": "Political situation"
+ 								"en": "Political framework"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -7814,7 +7814,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Aktuelle Markt\u0026shy;bewertung",
- 								"en": "Market valuation"
+ 								"en": "Current valuation multiples"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -8032,8 +8032,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\u003cp style='position: relative; top: 0.8rem'\u003e\n\t\t\t\t\t\t\u003cspan\u003e3.4.\u003c/span\u003e \u0026nbsp;\n\t\t\t\t\t\tImmobilien (Euro\u0026shy;gebiet)\n\t\t\t\t\t\t\u003c!-- \u0026nbsp; - \u0026nbsp;  Euro\u0026shy;gebiet --\u003e\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t",
- 								"en": "\n\t\t\t\t\t\u003cp style='position: relative; top: 0.8rem'\u003e\n\t\t\t\t\t\t\u003cspan\u003e3.4.\u003c/span\u003e \u0026nbsp;\n\n\t\t\t\t\t\tReal estate (euro area)\n\t\t\t\t\t\t\u003c!-- \u0026nbsp; - \u0026nbsp;  euro area --\u003e\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp style='position: relative; top: 0.8rem'\u003e\n\t\t\t\t\t\t\u003cspan\u003e3.4.\u003c/span\u003e \u0026nbsp;\n\t\t\t\t\t\tImmobilien\n\t\t\t\t\t\t \u0026nbsp; - \u0026nbsp;  Euro\u0026shy;gebiet \n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t",
+ 								"en": "\n\t\t\t\t\t\u003cp style='position: relative; top: 0.8rem'\u003e\n\t\t\t\t\t\t\u003cspan\u003e3.4.\u003c/span\u003e \u0026nbsp;\n\n\t\t\t\t\t\tReal estate\n\t\t\t\t\t\t \u0026nbsp; - \u0026nbsp;  euro area \n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
  							},
  							"col_span": 6,
  							"col_span_label": 1
@@ -8367,7 +8367,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Geld\u0026shy;po\u0026shy;li\u0026shy;tik der EZB",
- 								"en": "Monetary policy of the ECB"
+ 								"en": "ECB monetary policy"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -8425,7 +8425,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Geld\u0026shy;po\u0026shy;li\u0026shy;tik der US-Notenbank",
- 								"en": "Monetary policy of the US Fed"
+ 								"en": "US Federal Reserve monetary policy"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -8483,7 +8483,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Ausblick In\u0026shy;fla\u0026shy;ti\u0026shy;on",
- 								"en": "Outlook In\u0026shy;fla\u0026shy;ti\u0026shy;on"
+ 								"en": "In\u0026shy;fla\u0026shy;ti\u0026shy;on outlook "
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -8541,7 +8541,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Politische Rahmen\u0026shy;bedingungen",
- 								"en": "Political situation"
+ 								"en": "Political framework"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -8599,7 +8599,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Aktuelle Markt\u0026shy;bewertung",
- 								"en": "Market valuation"
+ 								"en": "Current valuation multiples"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -8853,7 +8853,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\n\t\t\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\t\tAls Reaktion auf den russischen Angriff auf die Ukraine \n\t\t\t\t\t\t\that eine große Zahl an Ländern entschieden, \n\t\t\t\t\t\t\tSanktionen gegen Russland einzuführen.\n\t\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t",
- 								"en": "\n\t\t\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\t\t\u003cb\u003e\n\t\t\t\t\t\t\tIn response to the Russian attack on Ukraine,\n\t\t\t\t\t\t\ta majority of Western countries decided\n\t\t\t\t\t\t\tto implement eco\u0026shy;nom\u0026shy;ic sanctions against Russia.\n\t\t\t\t\t\t\t\u003c/b\u003e\n\t\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t"
+ 								"en": "\n\t\t\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\t\t\u003cb\u003e\n\t\t\t\t\t\t\tIn response to the Russian attack on Ukraine,\n\t\t\t\t\t\t\ta majority of western countries decided\n\t\t\t\t\t\t\tto implement eco\u0026shy;nom\u0026shy;ic sanctions against Russia.\n\t\t\t\t\t\t\t\u003c/b\u003e\n\t\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t"
  							},
  							"col_span_label": 1
  						}
@@ -8868,7 +8868,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003cb\u003e4.\u003c/b\u003e \u0026nbsp;\n\t\t\t\t\tIn welchem Maße werden die folgenden Sanktionen Ihrer Einschätzung \n\t\t\t\t\tnach dazu beitragen, den Krieg in der Ukraine zu beenden?\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t(von 0: nicht wirksam bis 5: hochwirksam):\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t",
- 								"en": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003cb\u003e4.\u003c/b\u003e \u0026nbsp;\n\t\t\t\t\tHow do you think the following sanctions are effective\n\t\t\t\t\tto end the military conflict in Ukraine?\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t(from 0: not effective to 5: very effective):\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"en": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003cb\u003e4.\u003c/b\u003e \u0026nbsp;\n\t\t\t\t\tHow effective do you think the following sanctions are \n\t\t\t\t\tto end the military conflict in Ukraine?\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t(from 0: not effective to 5: very effective):\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 7,
  							"col_span_label": 1
@@ -9187,8 +9187,8 @@
  							"name": "sanction_swift_ukraine",
  							"type": "radio",
  							"label": {
- 								"de": "Ausschluss von SWIFT",
- 								"en": "SWIFT ban"
+ 								"de": "Ausschluss russischer Banken von SWIFT",
+ 								"en": "Ban of Russian banks from SWIFT"
  							},
  							"col_span_label": 5,
  							"col_span_control": 1,
@@ -9482,8 +9482,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003c!-- \u003cb\u003e5.\u003c/b\u003e \u0026nbsp; --\u003e\n\t\t\t\t\tFür die \u003cb\u003erussische\u003c/b\u003e Wirt\u0026shy;schaft\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t\u003cp style='position: relative; top: 1.1rem; height: 0.1rem;'\u003e\n\t\t\t\t\t\u003cbx\u003eSanktionsmaßnahme\u003c/bx\u003e\n\t\t\t\t\u003c/p\u003e\n\n\n\t\t\t\t",
- 								"en": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003c!-- \u003cb\u003e5.\u003c/b\u003e \u0026nbsp; --\u003e\n\t\t\t\t\tFor the \u003cb\u003eRussian\u003c/b\u003e econ\u0026shy;o\u0026shy;my\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t\u003cp style='position: relative; top: 1.1rem; height: 0.1rem;'\u003e\n\t\t\t\t\t\u003cbx\u003eSanction\u003c/bx\u003e\n\t\t\t\t\u003c/p\u003e\n\n\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003c!-- \u003cb\u003e5.\u003c/b\u003e \u0026nbsp; --\u003e\n\t\t\t\t\tFür die \u003cb\u003erussische\u003c/b\u003e Volkswirt\u0026shy;schaft\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t\u003cp style='position: relative; top: 1.1rem; height: 0.1rem;'\u003e\n\t\t\t\t\t\u003cbx\u003eSanktionsmaßnahme\u003c/bx\u003e\n\t\t\t\t\u003c/p\u003e\n\n\n\t\t\t\t",
+ 								"en": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003c!-- \u003cb\u003e5.\u003c/b\u003e \u0026nbsp; --\u003e\n\t\t\t\t\tFor the \u003cb\u003eRussian\u003c/b\u003e econ\u0026shy;o\u0026shy;my \n\t\t\t\t\u003c/p\u003e\n\t\t\t\t\u003cp style='position: relative; top: 1.1rem; height: 0.1rem;'\u003e\n\t\t\t\t\t\u003cbx\u003eSanction\u003c/bx\u003e\n\t\t\t\t\u003c/p\u003e\n\n\n\t\t\t\t"
  							},
  							"col_span": 7,
  							"col_span_label": 1
@@ -9802,8 +9802,8 @@
  							"name": "sanction_swift_russian",
  							"type": "radio",
  							"label": {
- 								"de": "Ausschluss von SWIFT",
- 								"en": "SWIFT ban"
+ 								"de": "Ausschluss russischer Banken von SWIFT",
+ 								"en": "Ban of Russian banks from SWIFT"
  							},
  							"col_span_label": 5,
  							"col_span_control": 1,
@@ -10083,8 +10083,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003c!-- \u003cb\u003e6.\u003c/b\u003e \u0026nbsp; --\u003e\n\t\t\t\t\tFür die \u003cb\u003edeutsche\u003c/b\u003e Wirt\u0026shy;schaft\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t\u003cp style='position: relative; top: 1.1rem; height: 0.1rem;'\u003e\n\t\t\t\t\t\u003cbx\u003eSanktionsmaßnahme\u003c/bx\u003e\n\t\t\t\t\u003c/p\u003e\n\n\n\t\t\t\t",
- 								"en": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003c!-- \u003cb\u003e6.\u003c/b\u003e \u0026nbsp; --\u003e\n\t\t\t\t\tFor the \u003cb\u003eGerman\u003c/b\u003e econ\u0026shy;o\u0026shy;my\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t\u003cp style='position: relative; top: 1.1rem; height: 0.1rem;'\u003e\n\t\t\t\t\t\u003cbx\u003eSanction\u003c/bx\u003e\n\t\t\t\t\u003c/p\u003e\n\n\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003c!-- \u003cb\u003e6.\u003c/b\u003e \u0026nbsp; --\u003e\n\t\t\t\t\tFür die \u003cb\u003edeutsche\u003c/b\u003e Volkswirt\u0026shy;schaft\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t\u003cp style='position: relative; top: 1.1rem; height: 0.1rem;'\u003e\n\t\t\t\t\t\u003cbx\u003eSanktionsmaßnahme\u003c/bx\u003e\n\t\t\t\t\u003c/p\u003e\n\n\n\t\t\t\t",
+ 								"en": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003c!-- \u003cb\u003e6.\u003c/b\u003e \u0026nbsp; --\u003e\n\t\t\t\t\tFor the \u003cb\u003eGerman\u003c/b\u003e econ\u0026shy;o\u0026shy;my \n\t\t\t\t\u003c/p\u003e\n\t\t\t\t\u003cp style='position: relative; top: 1.1rem; height: 0.1rem;'\u003e\n\t\t\t\t\t\u003cbx\u003eSanction\u003c/bx\u003e\n\t\t\t\t\u003c/p\u003e\n\n\n\t\t\t\t"
  							},
  							"col_span": 7,
  							"col_span_label": 1
@@ -10403,8 +10403,8 @@
  							"name": "sanction_swift_german",
  							"type": "radio",
  							"label": {
- 								"de": "Ausschluss von SWIFT",
- 								"en": "SWIFT ban"
+ 								"de": "Ausschluss russischer Banken von SWIFT",
+ 								"en": "Ban of Russian banks from SWIFT"
  							},
  							"col_span_label": 5,
  							"col_span_control": 1,
@@ -10684,8 +10684,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003c!-- \u003cb\u003e7.\u003c/b\u003e \u0026nbsp; --\u003e\n\t\t\t\t\tFür die \u003cb\u003eEuro\u0026shy;gebiet\u003c/b\u003e Wirt\u0026shy;schaft\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t\u003cp style='position: relative; top: 1.1rem; height: 0.1rem;'\u003e\n\t\t\t\t\t\u003cbx\u003eSanktionsmaßnahme\u003c/bx\u003e\n\t\t\t\t\u003c/p\u003e\n\n\n\t\t\t\t",
- 								"en": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003c!-- \u003cb\u003e7.\u003c/b\u003e \u0026nbsp; --\u003e\n\t\t\t\t\tFor the \u003cb\u003eeuro area\u003c/b\u003e econ\u0026shy;o\u0026shy;my\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t\u003cp style='position: relative; top: 1.1rem; height: 0.1rem;'\u003e\n\t\t\t\t\t\u003cbx\u003eSanction\u003c/bx\u003e\n\t\t\t\t\u003c/p\u003e\n\n\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003c!-- \u003cb\u003e7.\u003c/b\u003e \u0026nbsp; --\u003e\n\t\t\t\t\tFür die Volkswirt\u0026shy;schaft des \u003cb\u003eEuro\u0026shy;gebiets\u003c/b\u003e\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t\u003cp style='position: relative; top: 1.1rem; height: 0.1rem;'\u003e\n\t\t\t\t\t\u003cbx\u003eSanktionsmaßnahme\u003c/bx\u003e\n\t\t\t\t\u003c/p\u003e\n\n\n\t\t\t\t",
+ 								"en": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003c!-- \u003cb\u003e7.\u003c/b\u003e \u0026nbsp; --\u003e\n\t\t\t\t\tFor the econ\u0026shy;o\u0026shy;my of the \u003cb\u003eeuro area\u003c/b\u003e\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t\u003cp style='position: relative; top: 1.1rem; height: 0.1rem;'\u003e\n\t\t\t\t\t\u003cbx\u003eSanction\u003c/bx\u003e\n\t\t\t\t\u003c/p\u003e\n\n\n\t\t\t\t"
  							},
  							"col_span": 7,
  							"col_span_label": 1
@@ -11004,8 +11004,8 @@
  							"name": "sanction_swift_euro_area",
  							"type": "radio",
  							"label": {
- 								"de": "Ausschluss von SWIFT",
- 								"en": "SWIFT ban"
+ 								"de": "Ausschluss russischer Banken von SWIFT",
+ 								"en": "Ban of Russian banks from SWIFT"
  							},
  							"col_span_label": 5,
  							"col_span_control": 1,
@@ -11285,7 +11285,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003cb\u003e6.\u003c/b\u003e \u0026nbsp;\n\t\t\t\t\tWie hoch sind Ihrer Einschätzung nach die Wirkungen der ge\u0026shy;samten \n\t\t\t\t\tSanktionsmaßnahmen gegen Russland für Bruttoinlandsprodukt, \n\t\t\t\t\tIn\u0026shy;fla\u0026shy;ti\u0026shy;on und Geld\u0026shy;po\u0026shy;li\u0026shy;tik im Euro\u0026shy;gebiet?\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t(-) = Rückgang, (+) = Steigerung:\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t",
+ 								"de": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003cb\u003e6.\u003c/b\u003e \u0026nbsp;\n\t\t\t\t\tWie hoch sind Ihrer Einschätzung nach die Wirkungen der \u003cb\u003ege\u0026shy;samten \n\t\t\t\t\tSanktionsmaßnahmen\u003c/b\u003e gegen Russland für Bruttoinlandsprodukt, \n\t\t\t\t\tIn\u0026shy;fla\u0026shy;ti\u0026shy;on und Geld\u0026shy;po\u0026shy;li\u0026shy;tik im Euro\u0026shy;gebiet?\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t(-) = Rückgang, (+) = Steigerung:\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t",
  								"en": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003cb\u003e6.\u003c/b\u003e \u0026nbsp;\n\t\t\t\t\tHow strong will be the\n\t\t\t\t\t\u003cb\u003etotal effects of all sanctions against Russia\u003c/b\u003e\n\t\t\t\t\tfor GDP, in\u0026shy;fla\u0026shy;ti\u0026shy;on, and monetary policy in the euro area?\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t(-) means downward change, (+) means upward change:\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t"
  							},
  							"col_span": 6,
@@ -11677,7 +11677,7 @@
  							"name": "sanction_effect_ecb_rate",
  							"type": "radio",
  							"label": {
- 								"de": "Haupt\u0026shy;re\u0026shy;finanz\u0026shy;ierungs\u0026shy;fazilität der EZB",
+ 								"de": "Haupt\u0026shy;re\u0026shy;finanz\u0026shy;ierungs\u0026shy;satz der EZB",
  								"en": "Main re\u0026shy;financing rate of the ECB"
  							},
  							"col_span_label": 5,

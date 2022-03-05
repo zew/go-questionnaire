@@ -10,8 +10,8 @@ import (
 // q4, q5a, q5b, q5c
 var rowLabels01 = []trl.S{
 	{
-		"de": "Ausschluss von SWIFT",
-		"en": "SWIFT ban",
+		"de": "Ausschluss russischer Banken von SWIFT",
+		"en": "Ban of Russian banks from SWIFT",
 	},
 	{
 		"de": "Maßnahmen gegen die russische Zentralbank",
@@ -45,7 +45,7 @@ var rowLabels02 = []trl.S{
 		"en": "Inflation",
 	},
 	{
-		"de": "Haupt&shy;refinanzierungs&shy;fazilität der EZB",
+		"de": "Haupt&shy;refinanzierungs&shy;satz der EZB",
 		"en": "Main refinancing rate of the ECB",
 	},
 }
@@ -114,7 +114,7 @@ func special202203(q *qst.QuestionnaireT) error {
 						<p style=''>
 							<b>
 							In response to the Russian attack on Ukraine,
-							a majority of Western countries decided
+							a majority of western countries decided
 							to implement economic sanctions against Russia.
 							</b>
 						</p>
@@ -157,7 +157,7 @@ func special202203(q *qst.QuestionnaireT) error {
 				"en": fmt.Sprintf(`
 				<p style=''>
 					<b>%v.</b> &nbsp;
-					How do you think the following sanctions are effective
+					How effective do you think the following sanctions are 
 					to end the military conflict in Ukraine?
 				</p>
 				<p style=''>
@@ -213,16 +213,16 @@ func special202203(q *qst.QuestionnaireT) error {
 		inpNamesSuffixes := []string{"russian", "german", "euro_area"}
 		lbls := []trl.S{
 			{
-				"de": "russische",
-				"en": "Russian",
+				"de": "Für die <b>russische</b> Volkswirtschaft",
+				"en": "For the <b>Russian</b> economy ",
 			},
 			{
-				"de": "deutsche",
-				"en": "German",
+				"de": "Für die <b>deutsche</b> Volkswirtschaft",
+				"en": "For the <b>German</b> economy ",
 			},
 			{
-				"de": "Eurogebiet",
-				"en": "euro area",
+				"de": "Für die Volkswirtschaft des <b>Eurogebiets</b>",
+				"en": "For the economy of the <b>euro area</b>",
 			},
 		}
 
@@ -247,7 +247,7 @@ func special202203(q *qst.QuestionnaireT) error {
 				"de": fmt.Sprintf(`
 				<p style=''>
 					<!-- <b>%v.</b> &nbsp; -->
-					Für die <b>%v</b> Wirtschaft
+					%v
 				</p>
 				<p style='position: relative; top: 1.1rem; height: 0.1rem;'>
 					<bx>Sanktionsmaßnahme</bx>
@@ -259,7 +259,7 @@ func special202203(q *qst.QuestionnaireT) error {
 				"en": fmt.Sprintf(`
 				<p style=''>
 					<!-- <b>%v.</b> &nbsp; -->
-					For the <b>%v</b> economy
+					%v
 				</p>
 				<p style='position: relative; top: 1.1rem; height: 0.1rem;'>
 					<bx>Sanction</bx>
@@ -299,8 +299,8 @@ func special202203(q *qst.QuestionnaireT) error {
 				"de": `
 				<p style=''>
 					<b>6.</b> &nbsp;
-					Wie hoch sind Ihrer Einschätzung nach die Wirkungen der gesamten 
-					Sanktionsmaßnahmen gegen Russland für Bruttoinlandsprodukt, 
+					Wie hoch sind Ihrer Einschätzung nach die Wirkungen der <b>gesamten 
+					Sanktionsmaßnahmen</b> gegen Russland für Bruttoinlandsprodukt, 
 					Inflation und Geldpolitik im Eurogebiet?
 				</p>
 

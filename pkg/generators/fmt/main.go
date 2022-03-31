@@ -27,7 +27,7 @@ var columnTemplate6 = []float32{
 	0.4, 1,
 }
 
-var rowLabelsEuroGerUSGlob = []trl.S{
+var rowLabelsEuroGerUSGlob1 = []trl.S{
 	{
 		"de": "Euroraum",
 		"en": "Euro area",
@@ -45,23 +45,74 @@ var rowLabelsEuroGerUSGlob = []trl.S{
 		"en": "China",
 	},
 }
+var rowLabelsEuroGerUSGlob2 = []trl.S{
+	{
+		"de": "Euroraum",
+		"en": "Euro area",
+	},
+	{
+		"de": "USA",
+		"en": "US",
+	},
+	{
+		"de": "China",
+		"en": "China",
+	},
+}
 
-var rowLabelsSmallLargeEnterprises = []trl.S{
+var rowLabelsSectors = []trl.S{
 	{
-		"de": "Großunternehmen",
-		"en": "Large enterprises",
+		"de": "Banken",
+		"en": "Banks",
 	},
 	{
-		"de": "KMU",
-		"en": "Small+medium enterprises",
+		"de": "Versicherungen",
+		"en": "Insurance",
 	},
 	{
-		"de": "Immobilienkredite",
-		"en": "Real estate credit",
+		"de": "Fahrzeugbau",
+		"en": "Automotive",
 	},
 	{
-		"de": "Konsumentenkredite",
-		"en": "Consumer credit",
+		"de": "Chemie, Pharma",
+		"en": "Chemicals, Pharma",
+	},
+	{
+		"de": "Stahl/NE-Metalle",
+		"en": "Steel/Metal Products",
+	},
+	{
+		"de": "Elektronik",
+		"en": "Electronics",
+	},
+	{
+		"de": "Maschinen&shy;bau",
+		"en": "Machinery",
+	},
+	// row 2
+	{
+		"de": "Konsum, Handel",
+		"en": "Private Consumption / Retail Sales",
+	},
+	{
+		"de": "Baugewerbe",
+		"en": "Construction",
+	},
+	{
+		"de": "Versorger",
+		"en": "Utilities",
+	},
+	{
+		"de": "Dienstleister",
+		"en": "Services",
+	},
+	{
+		"de": "Telekommunikation",
+		"en": "Tele&shy;communications",
+	},
+	{
+		"de": "Inform.-Technologien",
+		"en": "Inform.-Technologies",
 	},
 }
 
@@ -235,7 +286,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				labelsGoodBad(),
 				[]string{"y0_ez", "y0_deu", "y0_usa", "y0_chn"},
 				radioVals4,
-				rowLabelsEuroGerUSGlob,
+				rowLabelsEuroGerUSGlob1,
 			)
 			gb.MainLabel = trl.S{
 				"de": "<b>1.</b> Die gesamtwirtschaftliche Situation beurteilen wir als",
@@ -252,7 +303,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				labelsImproveDeteriorate(),
 				[]string{"y_ez", "y_deu", "y_usa", "y_chn"},
 				radioVals4,
-				rowLabelsEuroGerUSGlob,
+				rowLabelsEuroGerUSGlob1,
 			)
 			gb.MainLabel = trl.S{
 				"de": "<b>2a.</b> Die gesamtwirtschaftliche Situation wird sich mittelfristig (<bx>6</bx>&nbsp;Mo.)",
@@ -456,7 +507,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				labelsIncreaseDecrease(),
 				[]string{"pi_ez", "pi_deu", "pi_usa", "pi_chn"},
 				radioVals4,
-				rowLabelsEuroGerUSGlob,
+				rowLabelsEuroGerUSGlob1,
 			)
 			gb.MainLabel = trl.S{
 				"de": "<b>3.</b> Die jährliche gesamtwirtschaftliche Inflationsrate wird mittelfristig (<bx>6</bx>&nbsp;Mo.)",
@@ -468,20 +519,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 		// gr1
 		{
-			var rowLabelsEuroGerUSGlob = []trl.S{
-				{
-					"de": "Euroraum",
-					"en": "Euro area",
-				},
-				{
-					"de": "USA",
-					"en": "US",
-				},
-				{
-					"de": "China",
-					"en": "China",
-				},
-			}
 			gb := qst.NewGridBuilderRadios(
 				columnTemplate4,
 				labelsIncreaseDecrease(),
@@ -489,7 +526,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				// i_ez goes into i_deu
 				[]string{"i_deu", "i_usa", "i_chn"},
 				radioVals4,
-				rowLabelsEuroGerUSGlob,
+				rowLabelsEuroGerUSGlob2,
 			)
 			gb.MainLabel = trl.S{
 				"de": "<b>4.</b> Die <i>kurzfristigen</i> Zinsen (3-Mo.-Interbanksätze) werden mittelfristig (<bx>6</bx>&nbsp;Mo.)",
@@ -776,62 +813,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		page.Short = trl.S{"de": "Sektoren", "en": "Sectors"}
 		page.WidthMax("36rem")
 
-		rowLabelsSectors := []trl.S{
-			{
-				"de": "Banken",
-				"en": "Banks",
-			},
-			{
-				"de": "Versicherungen",
-				"en": "Insurance",
-			},
-			{
-				"de": "Fahrzeugbau",
-				"en": "Automotive",
-			},
-			{
-				"de": "Chemie, Pharma",
-				"en": "Chemicals, Pharma",
-			},
-			{
-				"de": "Stahl/NE-Metalle",
-				"en": "Steel/Metal Products",
-			},
-			{
-				"de": "Elektronik",
-				"en": "Electronics",
-			},
-			{
-				"de": "Maschinen&shy;bau",
-				"en": "Machinery",
-			},
-			// row 2
-			{
-				"de": "Konsum, Handel",
-				"en": "Consumption/Trade",
-			},
-			{
-				"de": "Baugewerbe",
-				"en": "Construction",
-			},
-			{
-				"de": "Versorger",
-				"en": "Utilities",
-			},
-			{
-				"de": "Dienstleister",
-				"en": "Services",
-			},
-			{
-				"de": "Telekommunikation",
-				"en": "Tele&shy;communications",
-			},
-			{
-				"de": "Inform.-Technologien",
-				"en": "Inform.-Technologies",
-			},
-		}
-
 		// gr0
 		{
 			gb := qst.NewGridBuilderRadios(
@@ -840,7 +821,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				[]string{
 					"sec_banks", "sec_insur", "sec_cars", "sec_chemi", "sec_steel", "sec_elect", "sec_mecha",
 					// "sec_c",
-					"sec_consu", "sec_const", "sec_utili", "sec_servi", "sec_telec", "sec_infor"},
+					"sec_consu", "sec_const", "sec_utili", "sec_servi", "sec_telec", "sec_infor",
+				},
 				radioVals4,
 				rowLabelsSectors,
 			)
@@ -908,6 +890,10 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	err = special202203(&q)
 	if err != nil {
 		return nil, fmt.Errorf("Error adding special202203(): %v", err)
+	}
+	err = special202204(&q)
+	if err != nil {
+		return nil, fmt.Errorf("Error adding special202204(): %v", err)
 	}
 
 	//

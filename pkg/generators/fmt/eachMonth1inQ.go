@@ -88,10 +88,6 @@ func eachMonth1inQ(q *qst.QuestionnaireT) error {
 			inp := gr.AddInput()
 			inp.Type = "textblock"
 			inp.Label = trl.S{
-				"de": "Prognose Wachstum des BIP je <b>Quartal</b> <br>\n (real, saisonbereinigt, nicht annualisiert)",
-				"en": "Forecast <b>quarterly</b> GDP growth <br>\n(real, seasonally adjusted, non annualized)",
-			}
-			inp.Label = trl.S{
 				"de": "Prognose <bx>Quartal</bx>",
 				"en": "Forecast <bx>Quarter</bx>",
 			}
@@ -119,6 +115,13 @@ func eachMonth1inQ(q *qst.QuestionnaireT) error {
 					"de": q.Survey.Quarter(i),
 					"en": q.Survey.Quarter(i),
 				}
+				if i == 0 {
+					inp.Label = trl.S{
+						"de": q.Survey.Quarter(i) + "*",
+						"en": q.Survey.Quarter(i) + "*",
+					}
+
+				}
 				inp.Suffix = trl.S{
 					"de": "%",
 					"en": "pct",
@@ -137,6 +140,21 @@ func eachMonth1inQ(q *qst.QuestionnaireT) error {
 		yearCorrected, err := strconv.Atoi(yearCorrectedS)
 		if err != nil {
 			return err
+		}
+
+		// row 2a quarter explanation
+		{
+			inp := gr.AddInput()
+			inp.Type = "textblock"
+			inp.Label = trl.S{
+				"de": fmt.Sprintf("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<superscript>*</superscript><span style='font-size:80%%'> Die realisierten Zahlen für %v werden erst <a  target='_blank'  href='https://www.destatis.de/SiteGlobals/Forms/Suche/Termine/DE/Terminsuche_Formular.html' >später</a> veröffentlicht.<span>", q.Survey.Quarter(0)),
+				"en": fmt.Sprintf("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<superscript>*</superscript><span style='font-size:80%%'> Realized numbers for %v are only published <a  target='_blank'  href='https://www.destatis.de/SiteGlobals/Forms/Suche/Termine/DE/Terminsuche_Formular.html' >later</a>.<span>", q.Survey.Quarter(0)),
+			}
+			inp.ColSpan = 12
+			inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
+			inp.StyleLbl.Mobile.StyleBox.Position = "relative"
+			inp.StyleLbl.Mobile.StyleBox.Top = "0.6rem"
+
 		}
 
 		// row 3 - three years - label

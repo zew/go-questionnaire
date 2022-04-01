@@ -76,61 +76,6 @@ func special_2022_01(q *qst.QuestionnaireT) error {
 		//
 		//
 		// gr2
-		rowLabelsSectors := []trl.S{
-			{
-				"de": "Banken",
-				"en": "Banks",
-			},
-			{
-				"de": "Versicherungen",
-				"en": "Insurance",
-			},
-			{
-				"de": "Fahrzeug&shy;bau",
-				"en": "Automotive",
-			},
-			{
-				"de": "Chemie, Pharma",
-				"en": "Chemical, Pharmaceutical",
-			},
-			{
-				"de": "Stahl/NE-Metalle",
-				"en": "Metallurgy",
-			},
-			{
-				"de": "Elektronik",
-				"en": "Electronics",
-			},
-			{
-				"de": "Maschinen&shy;bau",
-				"en": "Mechanical Engineering",
-			},
-			// row 2
-			{
-				"de": "Konsum, Handel",
-				"en": "Retail",
-			},
-			{
-				"de": "Bau&shy;gewerbe",
-				"en": "Construction",
-			},
-			{
-				"de": "Versorger",
-				"en": "Utilities",
-			},
-			{
-				"de": "Dienst&shy;leister",
-				"en": "Services",
-			},
-			{
-				"de": "Telekommunikation",
-				"en": "Telco",
-			},
-			{
-				"de": "Inform.-Techno&shy;logien",
-				"en": "IT",
-			},
-		}
 		{
 			gb := qst.NewGridBuilderRadios(
 				columnTemplate6,

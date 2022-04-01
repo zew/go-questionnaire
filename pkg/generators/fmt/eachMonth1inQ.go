@@ -52,12 +52,14 @@ func eachMonth1inQ(q *qst.QuestionnaireT) error {
 				</p>
 				`,
 				"en": `<b>1.</b> 
-				German GDP growth rate - point forecast <br>
+				Point forecast of the growth rate of the <b>German GDP</b> <br>
 				<div class='vspacer-08' ></div>
 				<p style='font-size: 90%'>
-				For the quarterly values, please quote the non-annualized quarterly growth
-						of the real & seasonal adjusted GDP.
-				For the yearly values, please quote the yearly growth rate of the real GDP.
+				For the quarterly values, 
+				please indicate non-annualized quarterly 
+				real & seasonally adjusted GDP growth. 
+				For the yearly values, 
+				please indicate the annual real GDP growth rate.
 				</p>
 				`,
 			}
@@ -238,6 +240,14 @@ func eachMonth1inQ(q *qst.QuestionnaireT) error {
 			"de": "Internationale Lieferengpässe",
 			"en": "Supply chain disruptions",
 		},
+		{
+			"de": "Energiepreise",
+			"en": "Energy prices",
+		},
+		{
+			"de": "Engpässe bei Rohstoffen",
+			"en": "Shortages of raw materials",
+		},
 	}
 
 	colTemplate, colsRowFree, styleRowFree := colTemplateWithFreeRow()
@@ -257,6 +267,8 @@ func eachMonth1inQ(q *qst.QuestionnaireT) error {
 				"rev_mp_fed",
 				"rev_corona",
 				"rev_supply_disrupt",
+				"rev_energy_prices",
+				"rev_shortages_raw_mat",
 				// "rev_free",
 			},
 			radioVals6,

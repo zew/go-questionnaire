@@ -24,7 +24,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "71cdbc322f76a7d5ceb2f0a7bc24228c6b47bcbe2ea890f87f5e42b3ebe50015",
+ 	"md_5": "27250afffff832acf12081c912eb38e851342c90648628abd409ee6cdd22d01d",
  	"lang_codes": [
  		"de",
  		"en"
@@ -4563,7 +4563,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "\u003cb\u003e1.\u003c/b\u003e \n\t\t\t\tPunktpro\u0026shy;gno\u0026shy;se der Wachstumsrate des deutschen BIP \u003cbr\u003e\n\t\t\t\t\u003cdiv class='vspacer-08' \u003e\u003c/div\u003e\n\t\t\t\t\u003cp style='font-size: 90%'\u003e\n\t\t\t\tBei den Quartalwerten bitte nicht-annualisiertes Quartalswachstum \n\t\t\t\t\t\tdes realen \u0026 saisonbereinigten BIP angeben. \n\t\t\t\tBei den Jahreswerten die Jahreswachstumsrate des realen BIP.\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t",
- 								"en": "\u003cb\u003e1.\u003c/b\u003e \n\t\t\t\tGerman GDP growth rate - point forecast \u003cbr\u003e\n\t\t\t\t\u003cdiv class='vspacer-08' \u003e\u003c/div\u003e\n\t\t\t\t\u003cp style='font-size: 90%'\u003e\n\t\t\t\tFor the quarterly values, please quote the non-annualized quarterly growth\n\t\t\t\t\t\tof the real \u0026 seasonal adjusted GDP.\n\t\t\t\tFor the yearly values, please quote the yearly growth rate of the real GDP.\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"en": "\u003cb\u003e1.\u003c/b\u003e \n\t\t\t\tPoint forecast of the growth rate of the \u003cb\u003eGerman GDP\u003c/b\u003e \u003cbr\u003e\n\t\t\t\t\u003cdiv class='vspacer-08' \u003e\u003c/div\u003e\n\t\t\t\t\u003cp style='font-size: 90%'\u003e\n\t\t\t\tFor the quarterly values, \n\t\t\t\tplease indicate non-annualized quarterly \n\t\t\t\treal \u0026 seasonally adjusted GDP growth. \n\t\t\t\tFor the yearly values, \n\t\t\t\tplease indicate the annual real GDP growth rate.\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 12,
  							"col_span_label": 1
@@ -5804,6 +5804,122 @@
  							"col_span_label": 0.4,
  							"col_span_control": 1,
  							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "rev_energy_prices",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Energiepreise",
+ 								"en": "Energy prices"
+ 							},
+ 							"col_span_label": 3.6,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "rev_energy_prices",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "rev_energy_prices",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "rev_energy_prices",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "rev_energy_prices",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "rev_energy_prices",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "rev_shortages_raw_mat",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Engpässe bei Rohstoffen",
+ 								"en": "Shortages of raw materials"
+ 							},
+ 							"col_span_label": 3.6,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "rev_shortages_raw_mat",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "rev_shortages_raw_mat",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "rev_shortages_raw_mat",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "rev_shortages_raw_mat",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "rev_shortages_raw_mat",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
  						}
  					],
  					"style": {
@@ -5890,6 +6006,2162 @@
  						"desktop": {
  							"grid_container_style": {
  								"template_columns": "   3.48fr    1fr    1fr    1fr    1fr    1fr    1.4fr "
+ 							},
+ 							"box_style": {
+ 								"display": "grid"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "Sonderfrage zu den Auswirkungen der neuen geopolitischen Situation, die durch Russlands Krieg gegen die Ukraine herbeigeführt wurde",
+ 				"en": "Special question on the new geopolitical situation resulting from Russia’s war against the Ukraine:"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"short": {
+ 				"de": "Krieg gegen\u003cbr\u003eUkraine",
+ 				"en": "War against\u003cbr\u003eUkraine"
+ 			},
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "48rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 6,
+ 					"odd_rows_coloring": true,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\n\t\t\t\t\u003cb\u003e1.\u003c/b\u003e\n\t\t\t\tDie neue geopolitische Situation hat sich folgendermaßen auf meine Pro\u0026shy;gno\u0026shy;sen des realen Bruttoinlandsproduktes (BIP) von Deutsch\u0026shy;land ausgewirkt:\n\t\t\t",
+ 								"en": "\n\t\t\t\t\u003cb\u003e1.\u003c/b\u003e\n\t\t\t\tThe new geopolitical situation had the following effects on my forecasts of real gross domestic product (GDP) in Ger\u0026shy;ma\u0026shy;ny:\n\t\t\t"
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "stark\u003cbr\u003eer\u0026shy;höht",
+ 								"en": "strong\u0026shy;ly\u003cbr\u003ein\u0026shy;creased"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "er\u0026shy;höht",
+ 								"en": "in\u0026shy;creased"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "nicht\u003cbr\u003ever\u0026shy;än\u0026shy;dert",
+ 								"en": "not changed"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "re\u0026shy;du\u0026shy;ziert",
+ 								"en": "de\u0026shy;creased"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "stark\u003cbr\u003ere\u0026shy;du\u0026shy;ziert",
+ 								"en": "strong\u0026shy;ly\u003cbr\u003ede\u0026shy;creased"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "keine\u003cbr\u003eAn\u0026shy;gabe",
+ 								"en": "no an\u0026shy;swer"
+ 							},
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "war_on_gdp_2022",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Für 2022",
+ 								"en": "For 2022"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "war_on_gdp_2022",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "war_on_gdp_2022",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "war_on_gdp_2022",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "war_on_gdp_2022",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "war_on_gdp_2022",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "war_on_gdp_2023",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Für 2023",
+ 								"en": "For 2023"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "war_on_gdp_2023",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "war_on_gdp_2023",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "war_on_gdp_2023",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "war_on_gdp_2023",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "war_on_gdp_2023",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "war_on_gdp_2024",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Für 2024",
+ 								"en": "For 2024"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "war_on_gdp_2024",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "war_on_gdp_2024",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "war_on_gdp_2024",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "war_on_gdp_2024",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "war_on_gdp_2024",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "war_on_gdp_5yrs",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Auf Sicht von 5\u0026nbsp;Jahren",
+ 								"en": "In the next 5 years"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "war_on_gdp_5yrs",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "war_on_gdp_5yrs",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "war_on_gdp_5yrs",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "war_on_gdp_5yrs",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "war_on_gdp_5yrs",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"auto_flow": "row",
+ 								"template_columns": "   3fr    1fr    1fr    1fr    1fr    1.4fr "
+ 							},
+ 							"box_style": {
+ 								"display": "grid"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 6,
+ 					"odd_rows_coloring": true,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003e2.\u003c/b\u003e \n\t\t\t\tAuf Sicht von 5 Jahren hat sich die neue geopolitische Situation folgendermaßen auf meine Pro\u0026shy;gno\u0026shy;sen der Ertragslage deutscher Un\u0026shy;ter\u0026shy;neh\u0026shy;men in den folgenden Branchen ausgewirkt:",
+ 								"en": "\u003cb\u003e2.\u003c/b\u003e \n\t\t\t\tThe new geopolitical situation had the following effects on my forecasts of the profit situation of German companies in the following industries over the next 5 years.\n\t\t\t\t"
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "deut\u0026shy;lich besser",
+ 								"en": "sig\u0026shy;nif\u0026shy;i\u0026shy;cant\u0026shy;ly better"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "leicht\u003cbr\u003ebesser",
+ 								"en": "slightly better"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "un\u0026shy;ver-\u003cbr\u003eän\u0026shy;dert",
+ 								"en": "the same"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "leicht schlech\u0026shy;ter",
+ 								"en": "slightly worse"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "deut\u0026shy;lich schlech\u0026shy;ter",
+ 								"en": "sig\u0026shy;nif\u0026shy;i\u0026shy;cant\u0026shy;ly worse"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "keine\u003cbr\u003eAn\u0026shy;gabe",
+ 								"en": "no an\u0026shy;swer"
+ 							},
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "war_sec_banks",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Banken",
+ 								"en": "Banks"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "war_sec_banks",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "war_sec_banks",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "war_sec_banks",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "war_sec_banks",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "war_sec_banks",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "war_sec_insur",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Versi\u0026shy;cherungen",
+ 								"en": "Insurance"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "war_sec_insur",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "war_sec_insur",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "war_sec_insur",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "war_sec_insur",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "war_sec_insur",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "war_sec_cars",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Fahrzeugbau",
+ 								"en": "Automotive"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "war_sec_cars",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "war_sec_cars",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "war_sec_cars",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "war_sec_cars",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "war_sec_cars",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "war_sec_chemi",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Chemie, Pharma",
+ 								"en": "Chemicals, Pharma"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "war_sec_chemi",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "war_sec_chemi",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "war_sec_chemi",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "war_sec_chemi",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "war_sec_chemi",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "war_sec_steel",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Stahl/NE-Metalle",
+ 								"en": "Steel/Metal Products"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "war_sec_steel",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "war_sec_steel",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "war_sec_steel",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "war_sec_steel",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "war_sec_steel",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "war_sec_elect",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Elektronik",
+ 								"en": "Electronics"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "war_sec_elect",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "war_sec_elect",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "war_sec_elect",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "war_sec_elect",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "war_sec_elect",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "war_sec_mecha",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Maschinen\u0026shy;bau",
+ 								"en": "Machinery"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "war_sec_mecha",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "war_sec_mecha",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "war_sec_mecha",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "war_sec_mecha",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "war_sec_mecha",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "war_sec_consu",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Konsum, Handel",
+ 								"en": "Private Consumption / Retail Sales"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "war_sec_consu",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "war_sec_consu",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "war_sec_consu",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "war_sec_consu",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "war_sec_consu",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "war_sec_const",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Baugewerbe",
+ 								"en": "Construction"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "war_sec_const",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "war_sec_const",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "war_sec_const",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "war_sec_const",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "war_sec_const",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "war_sec_utili",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Versorger",
+ 								"en": "Utilities"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "war_sec_utili",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "war_sec_utili",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "war_sec_utili",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "war_sec_utili",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "war_sec_utili",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "war_sec_servi",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Dienstleister",
+ 								"en": "Services"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "war_sec_servi",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "war_sec_servi",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "war_sec_servi",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "war_sec_servi",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "war_sec_servi",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "war_sec_telec",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Te\u0026shy;le\u0026shy;kom\u0026shy;mu\u0026shy;ni\u0026shy;ka\u0026shy;ti\u0026shy;on",
+ 								"en": "Tele\u0026shy;communications"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "war_sec_telec",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "war_sec_telec",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "war_sec_telec",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "war_sec_telec",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "war_sec_telec",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "war_sec_infor",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Inform.-Technologien",
+ 								"en": "Inform.-Technologies"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "war_sec_infor",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "war_sec_infor",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "war_sec_infor",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "war_sec_infor",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "war_sec_infor",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"auto_flow": "row",
+ 								"template_columns": "   3fr    1fr    1fr    1fr    1fr    1.4fr "
+ 							},
+ 							"box_style": {
+ 								"display": "grid"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 6,
+ 					"odd_rows_coloring": true,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\n\t\t\t\t\u003cb\u003e3.\u003c/b\u003e\n\t\t\t\tDie neue geopolitische Situation hat sich folgendermaßen auf meine Pro\u0026shy;gno\u0026shy;sen der Zinsen von 10-jährigen Bundesanleihen ausgewirkt:\n\n\t\t\t\t",
+ 								"en": "\n\t\t\t\t\u003cb\u003e3.\u003c/b\u003e\n\t\t\t\tThe new geopolitical situation had the following effects on my forecasts of interest rates on the 10-year German Bund:\n\t\t\t\t"
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "stark\u003cbr\u003eer\u0026shy;höht",
+ 								"en": "strong\u0026shy;ly\u003cbr\u003ein\u0026shy;creased"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "er\u0026shy;höht",
+ 								"en": "in\u0026shy;creased"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "nicht\u003cbr\u003ever\u0026shy;än\u0026shy;dert",
+ 								"en": "not changed"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "re\u0026shy;du\u0026shy;ziert",
+ 								"en": "de\u0026shy;creased"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "stark\u003cbr\u003ere\u0026shy;du\u0026shy;ziert",
+ 								"en": "strong\u0026shy;ly\u003cbr\u003ede\u0026shy;creased"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "keine\u003cbr\u003eAn\u0026shy;gabe",
+ 								"en": "no an\u0026shy;swer"
+ 							},
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "war_govt_bonds_6m",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Auf Sicht von 6\u0026nbsp;Monaten",
+ 								"en": "In the next 6 months"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "war_govt_bonds_6m",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "war_govt_bonds_6m",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "war_govt_bonds_6m",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "war_govt_bonds_6m",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "war_govt_bonds_6m",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "war_govt_bonds_2022",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Für 2022",
+ 								"en": "For 2022"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "war_govt_bonds_2022",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "war_govt_bonds_2022",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "war_govt_bonds_2022",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "war_govt_bonds_2022",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "war_govt_bonds_2022",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "war_govt_bonds_2023",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Für 2023",
+ 								"en": "For 2023"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "war_govt_bonds_2023",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "war_govt_bonds_2023",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "war_govt_bonds_2023",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "war_govt_bonds_2023",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "war_govt_bonds_2023",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "war_govt_bonds_5yrs",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Auf Sicht von 5\u0026nbsp;Jahren",
+ 								"en": "In the next 5 years"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "war_govt_bonds_5yrs",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "war_govt_bonds_5yrs",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "war_govt_bonds_5yrs",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "war_govt_bonds_5yrs",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "war_govt_bonds_5yrs",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"auto_flow": "row",
+ 								"template_columns": "   3fr    1fr    1fr    1fr    1fr    1.4fr "
  							},
  							"box_style": {
  								"display": "grid"
@@ -7123,7 +9395,7 @@
  							"accesskey": "n",
  							"col_span": 1,
  							"col_span_control": 1,
- 							"response": "9",
+ 							"response": "10",
  							"style_control": {
  								"desktop": {
  									"grid_container_style": {},

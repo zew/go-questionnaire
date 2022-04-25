@@ -21,221 +21,20 @@ import (
 	"net/http"
 	"net/url"
 	"os"
-	"path"
 	"strings"
-	"time"
 
-	"github.com/pbberlin/flags"
 	"github.com/zew/go-questionnaire/pkg/cfg"
-	"github.com/zew/go-questionnaire/pkg/cloudio"
 	"github.com/zew/go-questionnaire/pkg/lgn"
 	"github.com/zew/go-questionnaire/pkg/qst"
-	"github.com/zew/util"
 )
 
-func getClient() *http.Client {
-	client := util.HttpClient()
-	client = &http.Client{}
-	log.Printf("client timeout is %v", client.Timeout)
-	return client
-}
-
-// RemoteConnConfigT is on top of
-// of the ordinary config
-type RemoteConnConfigT struct {
-	RemoteHost    string
-	BindSocket    string
-	URLPathPrefix string
-
-	AdminLogin string // Some admin account of the remote machine
-	Pass       string
-
-	SurveyType string
-	WaveID     string // special value "current" is evaluated to current year
-
-	DownloadDir string
-	MinUserID   int // constrain range of UserIDs being processed, exclude test user data entry
-	MaxUserID   int // see MinUserID
-}
-
-// Example returns a minimal configuration, to be extended or adapted
-func Example() RemoteConnConfigT {
-	r := RemoteConnConfigT{}
-	r.RemoteHost = "https://www.peu2018.eu"
-	r.RemoteHost = "https://financial-literacy-test.appspot.com"
-	r.RemoteHost = "https://survey2.zew.de"
-
-	r.BindSocket = "443"
-	r.URLPathPrefix = "survey"
-	r.URLPathPrefix = ""
-
-	r.AdminLogin = "transferrer"
-	r.Pass = "Spark!sh32"
-
-	r.SurveyType = "fmt"
-	r.SurveyType = "flit"
-	r.SurveyType = "lt2020"
-
-	r.WaveID = qst.NewSurvey(r.SurveyType).WaveID()
-	r.WaveID = "2020-05"
-
-	r.DownloadDir = "responses/downloaded"
-
-	return r
-}
-
-// LoadRemote reads from an io.Reader
-// to avoid cyclical deps.
-func LoadRemote(r io.Reader) *RemoteConnConfigT {
-
-	log.Printf("Loading remote config...")
-
-	decoder := json.NewDecoder(r)
-	tempCfg := RemoteConnConfigT{}
-	err := decoder.Decode(&tempCfg)
-	if err != nil {
-		log.Fatalf("error decoding into RemoteConnConfigT: %v", err)
-	}
-
-	if tempCfg.WaveID == "current" {
-		tNow := time.Now()
-		tempCfg.WaveID = fmt.Sprintf("%v%02d", tNow.Year(), int(tNow.Month()))
-	}
-
-	return &tempCfg
-}
-
-// RetrieveFromServer requests the JSONified questionnaires
+// RetrieveFromRemote requests the JSONified questionnaires
 // from the survey server endpoint; decompresses the GZIPPed
 // response and parses the bytes into a slice of questionnaires
-func RetrieveFromServer() (
+func RetrieveFromRemote(cfgRem *RemoteConnConfigT) (
 	[]*qst.QuestionnaireT,
-	*RemoteConnConfigT,
 	error,
 ) {
-
-	// we need config and logins
-	// for main app at least initialized
-	{
-		//
-		// We take a config;
-		// save it to file and then activate it from file.
-		cf := &cfg.ConfigT{}
-		cf.AppName = "Transferrer for Go Questionnaire - http client"
-		cf.AppMnemonic = "tf"
-		cf.LangCodes = []string{"en"}
-		cf.Loc = time.FixedZone("UTC", 1*3600) // cf.Loc is needed below
-		// cf.URLPathPrefix is needed for cfg.Pref() properly working
-		// It is set later from transferrer config
-
-		pthAutogen := path.Join("/transferrer", "config-autogen.json")
-		cloudio.MarshalWriteFile(&cf, pthAutogen)
-		cfg.CfgPath = pthAutogen
-
-		fileName := cfg.CfgPath
-		r, bucketClose, err := cloudio.Open(fileName)
-		if err != nil {
-			log.Fatalf("Error opening writer to %v: %v", fileName, err)
-		}
-		defer func() {
-			if r != nil {
-				err := r.Close()
-				if err != nil {
-					log.Printf("Error closing writer to bucket to %v: %v", fileName, err)
-				}
-			}
-		}()
-		defer func() {
-			err := bucketClose()
-			if err != nil {
-				log.Printf("Error closing bucket of writer to %v: %v", fileName, err)
-			}
-		}()
-		log.Printf("Opened reader to cloud config %v", fileName)
-		cfg.Load(r)
-	}
-
-	//
-	//
-	// logins data is directly read from file;
-	// it only contains the remote salt
-	// required to create form request tokens
-	lgn.LgnsPath = path.Join("/transferrer", "logins-remote-salt.json")
-	{
-		fileName := lgn.LgnsPath
-		r, bucketClose, err := cloudio.Open(fileName)
-		if err != nil {
-			log.Fatalf("Error opening writer to %v: %v", fileName, err)
-		}
-		defer func() {
-			if r != nil {
-				err := r.Close()
-				if err != nil {
-					log.Printf("Error closing writer to bucket to %v: %v", fileName, err)
-				}
-			}
-		}()
-		defer func() {
-			err := bucketClose()
-			if err != nil {
-				log.Printf("Error closing bucket of writer to %v: %v", fileName, err)
-			}
-		}()
-		log.Printf("Opened reader to cloud config %v", fileName)
-		lgn.Load(r)
-
-		cloudio.MarshalWriteFile(lgn.Example(), path.Join("/transferrer", "logins-example.json"))
-
-	}
-
-	//
-	//
-	//
-	// the actual config for *this* app:
-	fl := flags.New()
-	fl.Add(
-		flags.FlagT{
-			Long:       "remote_file",
-			Short:      "rmt",
-			DefaultVal: path.Join("/transferrer", "remote.json"),
-			Desc:       "JSON file containing connection to remote host",
-		},
-	)
-	fl.Gen()
-	var cfgRem RemoteConnConfigT
-	cfgRem = Example()
-	cloudio.MarshalWriteFile(&cfgRem, path.Join("/transferrer", "example-remote.json"))
-	{
-		rmt := fl.ByKey("rmt").Val
-		fileName := rmt
-		r, bucketClose, err := cloudio.Open(fileName)
-		if err != nil {
-			log.Fatalf("Error opening writer to %v: %v", fileName, err)
-		}
-		defer func() {
-			err := r.Close()
-			if err != nil {
-				log.Printf("Error closing writer to bucket to %v: %v", fileName, err)
-			}
-		}()
-		defer func() {
-			err := bucketClose()
-			if err != nil {
-				log.Printf("Error closing bucket of writer to %v: %v", fileName, err)
-			}
-		}()
-		log.Printf("Opened reader to cloud config %v", fileName)
-		cfgRem = *(LoadRemote(r))
-	}
-
-	//
-	//
-	//
-	//
-	//
-
-	// make cfg.Pref() work properly:
-	cfg.Get().URLPathPrefix = cfgRem.URLPathPrefix
 
 	host := fmt.Sprintf("%v:%v", cfgRem.RemoteHost, cfgRem.BindSocket)
 	if cfgRem.BindSocket == "" {
@@ -276,7 +75,7 @@ func RetrieveFromServer() (
 			strings.NewReader(vals.Encode()), // <-- URL-encoded payload
 		)
 		if err != nil {
-			return nil, &cfgRem, fmt.Errorf("error creating request for %v: %w", urlReq, err)
+			return nil, fmt.Errorf("error creating request for %v: %w", urlReq, err)
 		}
 		req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
 		resp, err := getClient().Do(req)
@@ -285,7 +84,7 @@ func RetrieveFromServer() (
 		}
 
 		if resp == nil {
-			return nil, &cfgRem, fmt.Errorf("response is nil - from %v", urlReq)
+			return nil, fmt.Errorf("response is nil - from %v", urlReq)
 		}
 
 		defer resp.Body.Close()
@@ -306,11 +105,11 @@ func RetrieveFromServer() (
 
 		log.Printf("Cookie is %+v \ngleaned from %v", sessCook, req.URL)
 		if sessCook == nil {
-			return nil, &cfgRem, fmt.Errorf("we need a session cookie to continue")
+			return nil, fmt.Errorf("we need a session cookie to continue")
 		}
 
 		if !strings.Contains(string(respBytes), "Logged in as "+cfgRem.AdminLogin) {
-			return nil, &cfgRem, fmt.Errorf("Response must contain 'Logged in as %v' \n\n%v", cfgRem.AdminLogin, string(respBytes))
+			return nil, fmt.Errorf("Response must contain 'Logged in as %v' \n\n%v", cfgRem.AdminLogin, string(respBytes))
 		}
 
 	}
@@ -331,7 +130,7 @@ func RetrieveFromServer() (
 	log.Printf("%v requesting %v?%v", method, urlReq, vals.Encode())
 	req, err := http.NewRequest(method, urlReq, bytes.NewBufferString(vals.Encode())) // <-- URL-encoded payload
 	if err != nil {
-		return nil, &cfgRem, fmt.Errorf("error creating request %v: %w", urlReq, err)
+		return nil, fmt.Errorf("error creating request %v: %w", urlReq, err)
 	}
 	// strangely, the json *response* is empty, if we omit this:
 	req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
@@ -342,7 +141,7 @@ func RetrieveFromServer() (
 
 	resp, err := getClient().Do(req)
 	if err != nil {
-		return nil, &cfgRem, fmt.Errorf("error requesting %v: %w", urlReq, err)
+		return nil, fmt.Errorf("error requesting %v: %w", urlReq, err)
 	}
 
 	defer resp.Body.Close()
@@ -358,7 +157,7 @@ func RetrieveFromServer() (
 			// if the http download does not work...
 			bts, err := io.ReadAll(resp.Body)
 			if err != nil {
-				return nil, &cfgRem, fmt.Errorf("could not read all response %w", err)
+				return nil, fmt.Errorf("could not read all response %w", err)
 			}
 			log.Printf("response is %v bytes", len(bts))
 			if len(bts) < 15000 {
@@ -367,13 +166,13 @@ func RetrieveFromServer() (
 			btsRdr := bytes.NewReader(bts)
 			rdr1, err = gzip.NewReader(btsRdr)
 			if err != nil {
-				return nil, &cfgRem, fmt.Errorf("could not read the response as gzip #1: %w", err)
+				return nil, fmt.Errorf("could not read the response as gzip #1: %w", err)
 			}
 		}
 
 		rdr1, err = gzip.NewReader(resp.Body)
 		if err != nil {
-			return nil, &cfgRem, fmt.Errorf("could not read the response as gzip #2: %w", err)
+			return nil, fmt.Errorf("could not read the response as gzip #2: %w", err)
 		}
 		defer rdr1.Close()
 	default:
@@ -394,7 +193,7 @@ func RetrieveFromServer() (
 	// Check response status
 	rsc := resp.StatusCode
 	if rsc != http.StatusOK && rsc != http.StatusTemporaryRedirect && rsc != http.StatusSeeOther {
-		return nil, &cfgRem, fmt.Errorf("bad response %v - %q ", resp.StatusCode, resp.Status)
+		return nil, fmt.Errorf("bad response %v - %q ", resp.StatusCode, resp.Status)
 	}
 
 	dec := json.NewDecoder(rdr1)
@@ -405,12 +204,12 @@ func RetrieveFromServer() (
 		fn := "tmp-transferrer-endpoint-response-error.html"
 		bts, _ := io.ReadAll(rdr1)
 		os.WriteFile(fn, bts, 0777)
-		return nil, &cfgRem, fmt.Errorf("Response written to %v", fn)
+		return nil, fmt.Errorf("Response written to %v", fn)
 
 	}
 	log.Printf("Unmarshalled %v questionnaires from responese stream", len(qs))
 	log.Printf("====================================================")
 
-	return qs, &cfgRem, nil
+	return qs, nil
 
 }

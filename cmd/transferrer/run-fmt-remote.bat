@@ -29,7 +29,7 @@ ECHO "built finished"
 @REM standalone execution...
 @REM config dir is app-bucket
 transferrer.exe -rmt=transferrer/fmt-remote.json  >>%LOGFILE% 2>&1
-ECHO "transfer finished"
+ECHO "transfer finished; see log file"
 
 @REM COPY /Y  C:\xampp\htdocs\go-questionnaire\app-bucket\responses\downloaded\fmt-*.csv C:\xampp\htdocs\fmt\Mikrodaten-ger\
 

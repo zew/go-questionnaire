@@ -27,10 +27,15 @@ func main() {
 
 	qs, err := tf.RetrieveFromRemote(cfgRem)
 	if err != nil {
-		log.Printf("Error retrieving questionnaires from remote: %v", err)
+		log.Printf("error retrieving questionnaires from remote: %v", err)
 		return
 	}
 
-	tf.ProcessQs(cfgRem, qs)
+	csvPath, err := tf.ProcessQs(cfgRem, qs)
+	if err != nil {
+		log.Printf("error processing questionnaires from remote: %v", err)
+		return
+	}
+	log.Printf("CSV file saved under: %v", csvPath)
 
 }

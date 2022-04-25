@@ -12,7 +12,13 @@ import (
 	"github.com/zew/go-questionnaire/pkg/qst"
 )
 
-func ProcessQs(cfgRem *RemoteConnConfigT, qs []*qst.QuestionnaireT) {
+func ProcessQs(cfgRem *RemoteConnConfigT, qs []*qst.QuestionnaireT) (string, error) {
+
+	if cfgRem.DownloadDir == "" {
+		log.Panicf("download dir cannot be empty")
+	}
+
+	fnCSV := path.Join(cfgRem.DownloadDir, fmt.Sprintf("%v-%v.csv", cfgRem.SurveyType, cfgRem.WaveID))
 
 	dirFull := path.Join(cfgRem.DownloadDir, cfgRem.SurveyType, cfgRem.WaveID)
 	dirEmpty := path.Join(dirFull, "empty")
@@ -186,28 +192,29 @@ func ProcessQs(cfgRem *RemoteConnConfigT, qs []*qst.QuestionnaireT) {
 	csvWtr := csv.NewWriter(wtr)
 	csvWtr.Comma = ';'
 	if err := csvWtr.Write(allKeysSuperset); err != nil {
-		log.Printf("error writing header line to csv: %v", err)
+		return fnCSV, fmt.Errorf("error writing header line to csv: %w", err)
 	}
 	for _, record := range valsBySuperset {
 		if err := csvWtr.Write(record); err != nil {
-			log.Printf("error writing record to csv: %v", err)
+			return fnCSV, fmt.Errorf("error writing record to csv: %w", err)
 		}
 	}
 
 	// Write any buffered data to the underlying writer (standard output).
 	csvWtr.Flush()
 	if err := csvWtr.Error(); err != nil {
-		log.Printf("error flushing csv to response writer: %v", err)
+		return fnCSV, fmt.Errorf("error flushing csv to response writer: %w", err)
 	}
 
-	fn := path.Join(cfgRem.DownloadDir, fmt.Sprintf("%v-%v.csv", cfgRem.SurveyType, cfgRem.WaveID))
-	err := cloudio.WriteFile(fn, wtr, 0644)
+	err := cloudio.WriteFile(fnCSV, wtr, 0644)
 	if err != nil {
-		log.Printf("Could not write file %v: %v", fn, err)
+		return fnCSV, fmt.Errorf("could not write CSV file %v: %v", fnCSV, err)
 	}
 
 	//
-	// Labels into separate CSV file
+	//
+	//
+	// separate CSV file with labels
 	if len(qs) > 0 {
 
 		nams := []string{} // input names
@@ -217,7 +224,7 @@ func ProcessQs(cfgRem *RemoteConnConfigT, qs []*qst.QuestionnaireT) {
 		pthBase := path.Join(qst.BasePath(), fnCore+".json")
 		qBase, err := qst.Load1(pthBase)
 		if err != nil {
-			log.Printf("Loading base questionnaire error %v", err)
+			log.Printf("loading base questionnaire error %v", err)
 		}
 
 		// enclosing every cell value in double quotes allows to include newlines
@@ -245,17 +252,19 @@ func ProcessQs(cfgRem *RemoteConnConfigT, qs []*qst.QuestionnaireT) {
 		buf.WriteString("\n")
 		buf.WriteString(strings.Join(lbls, ";"))
 
-		fnLabels := strings.ReplaceAll(fn, ".csv", "-labels.csv")
+		fnLabels := strings.ReplaceAll(fnCSV, ".csv", "-labels.csv")
 		err = cloudio.WriteFile(fnLabels, buf, 0644)
 		if err != nil {
-			log.Printf("writing file failed: %v - error %v", fnLabels, err)
+			log.Printf("writing labels file failed: %v - error %v", fnLabels, err)
 		}
 
 	}
 
 	log.Printf(
 		"\n\nRegular finish. %v questionnaire(s) processed\n%v non empty - %v empty\nresults in %v\n\n", len(qs),
-		nonEmpty, empty, fn,
+		nonEmpty, empty, fnCSV,
 	)
+
+	return fnCSV, nil
 
 }

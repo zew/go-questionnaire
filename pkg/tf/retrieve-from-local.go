@@ -31,16 +31,13 @@ func LogAndRespond(w http.ResponseWriter, r *http.Request, s string, err error) 
 	}
 }
 
-// RetrieveFromLocal requests the JSONified questionnaires
-// from the survey server endpoint; decompresses the GZIPPed
-// response and parses the bytes into a slice of questionnaires
+// RetrieveFromLocal reads the JSONified questionnaires
+// from app-bucket on the survey server
 func RetrieveFromLocal(
-	w http.ResponseWriter,
-	r *http.Request,
 	pth string,
 	fetchAll string,
-	// cfgRem *RemoteConnConfigT,
-) []*qst.QuestionnaireT { // error,
+
+) ([]*qst.QuestionnaireT, error) {
 
 	var qs []*qst.QuestionnaireT
 
@@ -48,16 +45,9 @@ func RetrieveFromLocal(
 	infos, err := cloudio.ReadDir(pth)
 	// infos, err := dir.Readdir(-1)
 	if err != nil {
-		LogAndRespond(w, r, "Could not read directory.", err)
-		return qs
+		return qs, fmt.Errorf("Could not read directory; %w", err)
 	}
 
-	cntr := 0
-	btsCtr := 0
-	gz := gzip.NewWriter(w)
-	defer gz.Close()
-
-	gz.Write([]byte("["))
 	for i, info := range *infos {
 		if !info.IsDir {
 			if i < 10 || i%50 == 0 {
@@ -74,8 +64,8 @@ func RetrieveFromLocal(
 		// var q = &qst.QuestionnaireT{}
 		q, err := qst.Load1(pth)
 		if err != nil {
-			LogAndRespond(w, r, fmt.Sprintf("iter %3v: No file %v found.", i, pth), err)
-			return qs
+			s := fmt.Sprintf("iter %3v: No file %v found", i, pth)
+			return qs, fmt.Errorf(s+" - %w", err)
 		}
 
 		/*
@@ -97,20 +87,42 @@ func RetrieveFromLocal(
 
 		qs = append(qs, q)
 
+	}
+
+	return qs, nil
+
+}
+
+// PipeQStoResponse takes a slice of questionnaires
+// and writess them into the http response
+func PipeQStoResponse(
+	w http.ResponseWriter,
+	r *http.Request,
+	qs []*qst.QuestionnaireT,
+) {
+
+	cntr := 0
+	btsCtr := 0
+	gz := gzip.NewWriter(w)
+	defer gz.Close()
+
+	gz.Write([]byte("["))
+	for _, q := range qs {
+
 		firstColLeftMostPrefix := " "
-		byts, err := json.MarshalIndent(q, firstColLeftMostPrefix, "\t")
+		bts, err := json.MarshalIndent(q, firstColLeftMostPrefix, "\t")
 		if err != nil {
 			LogAndRespond(w, r, "marshalling questionnaire failed", err)
-			return qs
+			return
 		}
 
 		if cntr > 0 {
 			gz.Write([]byte(","))
 		}
-		gzipBytes, err := gz.Write(byts)
+		gzipBytes, err := gz.Write(bts)
 		if err != nil {
 			LogAndRespond(w, r, "gzipping questionnaire failed: %v", err)
-			return qs
+			return
 		}
 		cntr++
 		btsCtr += gzipBytes
@@ -119,7 +131,5 @@ func RetrieveFromLocal(
 	gz.Write([]byte("]"))
 	sz1 := fmt.Sprintf("%.3f MB", float64(btsCtr/(1<<10))/(1<<10))
 	log.Printf("%v questionnaires to http response written - gzipped %v", cntr, sz1)
-
-	return qs
 
 }

@@ -32,7 +32,8 @@ func main() {
 		return
 	}
 
-	csvPath, err := tf.ProcessQs(cfgRem, qs)
+	saveQSFilesToDownloadDir := true
+	csvPath, err := tf.ProcessQs(cfgRem, qs, saveQSFilesToDownloadDir)
 	if err != nil {
 		log.Printf("error processing questionnaires from remote: %v", err)
 		return

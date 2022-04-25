@@ -12,7 +12,7 @@ import (
 	"github.com/zew/go-questionnaire/pkg/qst"
 )
 
-func ProcessQs(cfgRem *RemoteConnConfigT, qs []*qst.QuestionnaireT) (string, error) {
+func ProcessQs(cfgRem *RemoteConnConfigT, qs []*qst.QuestionnaireT, saveQSFilesToDownloadDir bool) (string, error) {
 
 	if cfgRem.DownloadDir == "" {
 		log.Panicf("download dir cannot be empty")
@@ -63,12 +63,8 @@ func ProcessQs(cfgRem *RemoteConnConfigT, qs []*qst.QuestionnaireT) (string, err
 
 		serverSideMD5 := q.MD5
 
+		pthEmpty := path.Join(dirEmpty, q.UserID+".json") // delete empty questionnaires and save them elsewhere
 		pthFull := path.Join(dirFull, q.UserID+".json")
-		err := q.Save1(pthFull)
-		if err != nil {
-			log.Printf("%3v: Error saving %v: %v", i, pthFull, err)
-			continue
-		}
 
 		//
 		if q.MD5 != serverSideMD5 {
@@ -92,31 +88,47 @@ func ProcessQs(cfgRem *RemoteConnConfigT, qs []*qst.QuestionnaireT) (string, err
 
 		//
 		//
-		// Delete empty questionnaires and save them elsewhere
 		//
-		// previous runs: remove their empty files
-		pthEmpty := path.Join(dirEmpty, q.UserID+".json")
-		err = cloudio.Delete(pthEmpty)
-		if err != nil && !cloudio.IsNotExist(err) {
-			log.Printf("%3v: Error removing previously empty %v - %v", i, pthEmpty, err)
-		}
 		// current run: move empty to dir empty
 		realEntries, _, _ := q.Statistics()
-		if realEntries == 0 {
-			log.Printf("%3v: %v. No answers, moving to %v.", i, pthFull, "empty")
-			err = cloudio.Delete(pthFull)
-			if err != nil && !cloudio.IsNotExist(err) {
-				log.Printf("%3v: Error removing empty %v - %v", i, pthFull, err)
+
+		if realEntries > 0 {
+
+			if saveQSFilesToDownloadDir {
+				// save non empty
+				err := q.Save1(pthFull)
+				if err != nil {
+					log.Printf("%3v: Error saving %v: %v", i, pthFull, err)
+					continue
+				}
+				// quest file may have been empty during previous runs;
+				// but may be filled now; delete previously empty
+				err = cloudio.Delete(pthEmpty)
+				if err != nil && !cloudio.IsNotExist(err) {
+					log.Printf("%3v: Error removing previously empty %v - %v", i, pthEmpty, err)
+				}
+
 			}
-			err := q.Save1(pthEmpty)
-			if err != nil {
-				log.Printf("%3v: Error saving  to empty %v: %v", i, pthEmpty, err)
+			nonEmpty++
+
+		} else {
+
+			// realEntries == 0
+			if saveQSFilesToDownloadDir {
+				log.Printf("%3v: %v. No answers, moving to %v.", i, pthFull, "empty")
+				err := cloudio.Delete(pthFull)
+				if err != nil && !cloudio.IsNotExist(err) {
+					log.Printf("%3v: Error removing empty %v - %v", i, pthFull, err)
+				}
+				err = q.Save1(pthEmpty)
+				if err != nil {
+					log.Printf("%3v: Error saving  to empty %v: %v", i, pthEmpty, err)
+				}
 			}
 			empty++
 			continue
-		}
 
-		nonEmpty++
+		}
 
 		// Prepare columns...
 		finishes, ks, vs := q.KeysValues(true)

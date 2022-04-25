@@ -73,6 +73,8 @@ func TransferrerEndpointH(w http.ResponseWriter, r *http.Request) {
 
 	format, _ := sess.ReqParam("format")
 
+	//
+	// not CSV - GZIP
 	if format != "CSV" {
 		w.Header().Set("Content-Type", "application/json; charset=utf-8")
 		w.Header().Set("Content-Encoding", "gzip")
@@ -97,7 +99,8 @@ func TransferrerEndpointH(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	csvPath, err := tf.ProcessQs(cfgRem, qs)
+	saveQSFilesToDownloadDir := false
+	csvPath, err := tf.ProcessQs(cfgRem, qs, saveQSFilesToDownloadDir)
 	if err != nil {
 		tf.LogAndRespond(w, r, "error processing questionnaires from remote: %v", err)
 		return

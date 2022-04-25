@@ -785,3 +785,5 @@ Or at least from another GC/S3 bucket.
 
 * CSS funcs are dispersed. Generic funcs are in the `css` package.  
 `groupT` and `inputT` have specialized methods.
+
+* Save CSV to different location but `app-bucket\responses\downloaded\*.CSV`

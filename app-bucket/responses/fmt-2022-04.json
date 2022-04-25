@@ -24,7 +24,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "27250afffff832acf12081c912eb38e851342c90648628abd409ee6cdd22d01d",
+ 	"md_5": "d67bf8725071692129b71caa0b6faf629954e8afec15f6f424acd9e9f215859a",
  	"lang_codes": [
  		"de",
  		"en"
@@ -7925,64 +7925,6 @@
  							}
  						},
  						{
- 							"name": "war_govt_bonds_6m",
- 							"type": "radio",
- 							"label": {
- 								"de": "Auf Sicht von 6\u0026nbsp;Monaten",
- 								"en": "In the next 6 months"
- 							},
- 							"col_span_label": 2,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "war_govt_bonds_6m",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "war_govt_bonds_6m",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "war_govt_bonds_6m",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "war_govt_bonds_6m",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "war_govt_bonds_6m",
- 							"type": "radio",
- 							"col_span_label": 0.4,
- 							"col_span_control": 1,
- 							"value_radio": "6"
- 						},
- 						{
  							"name": "war_govt_bonds_2022",
  							"type": "radio",
  							"label": {
@@ -8093,6 +8035,64 @@
  						},
  						{
  							"name": "war_govt_bonds_2023",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "war_govt_bonds_2024",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Für 2024",
+ 								"en": "For 2024"
+ 							},
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "war_govt_bonds_2024",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "war_govt_bonds_2024",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "war_govt_bonds_2024",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "war_govt_bonds_2024",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "war_govt_bonds_2024",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,

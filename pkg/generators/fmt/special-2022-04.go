@@ -48,24 +48,6 @@ func special202204(q *qst.QuestionnaireT) error {
 				"en": "In the next 5 years",
 			},
 		}
-		rowLabelsTimeHorizon2 := []trl.S{
-			{
-				"de": "Auf Sicht von 6&nbsp;Monaten",
-				"en": "In the next 6 months",
-			},
-			{
-				"de": "Für 2022",
-				"en": "For 2022",
-			},
-			{
-				"de": "Für 2023",
-				"en": "For 2023",
-			},
-			{
-				"de": "Auf Sicht von 5&nbsp;Jahren",
-				"en": "In the next 5 years",
-			},
-		}
 
 		// gr1
 		{
@@ -139,13 +121,13 @@ func special202204(q *qst.QuestionnaireT) error {
 				columnTemplate6,
 				raiseDecrease6b(),
 				[]string{
-					"war_govt_bonds_6m",
 					"war_govt_bonds_2022",
 					"war_govt_bonds_2023",
+					"war_govt_bonds_2024",
 					"war_govt_bonds_5yrs",
 				},
 				radioVals6,
-				rowLabelsTimeHorizon2,
+				rowLabelsTimeHorizon1,
 			)
 
 			gb.MainLabel = trl.S{

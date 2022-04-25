@@ -89,11 +89,8 @@ func LoadRemote(r io.Reader) *RemoteConnConfigT {
 	return &tempCfg
 }
 
-// ConfigsThree loads three configs;
-// main app config;
-// main app logins;
-// transferrer config
-func ConfigsThree() *RemoteConnConfigT {
+// ConfigsMainApp loads main app config and main app logins
+func ConfigsMainApp() {
 
 	// we need config and logins
 	// for main app at least initialized
@@ -169,10 +166,13 @@ func ConfigsThree() *RemoteConnConfigT {
 
 	}
 
-	//
-	//
-	//
-	// the actual config for *this* app:
+}
+
+// ConfigTransferrer loads the transferrer config;
+// using loadRemote();
+// TransferrerEndpointH() uses another method
+func ConfigTransferrer() *RemoteConnConfigT {
+
 	fl := flags.New()
 	fl.Add(
 		flags.FlagT{
@@ -208,12 +208,6 @@ func ConfigsThree() *RemoteConnConfigT {
 		log.Printf("Opened reader to cloud config %v", fileName)
 		cfgRem = *(LoadRemote(r))
 	}
-
-	//
-	//
-	//
-	//
-	//
 
 	// make cfg.Pref() work properly:
 	cfg.Get().URLPathPrefix = cfgRem.URLPathPrefix

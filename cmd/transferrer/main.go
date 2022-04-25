@@ -23,7 +23,8 @@ func main() {
 		log.Fatalf("Error - cannot 'cd' to main app dir: %v", err)
 	}
 
-	cfgRem := tf.ConfigsThree()
+	tf.ConfigsMainApp()
+	cfgRem := tf.ConfigTransferrer()
 
 	qs, err := tf.RetrieveFromRemote(cfgRem)
 	if err != nil {

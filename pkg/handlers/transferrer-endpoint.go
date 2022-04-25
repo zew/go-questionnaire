@@ -71,9 +71,9 @@ func TransferrerEndpointH(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	getCSV, _ := sess.ReqParam("wave_id")
+	format, _ := sess.ReqParam("format")
 
-	if getCSV != "true" {
+	if format != "CSV" {
 		w.Header().Set("Content-Type", "application/json; charset=utf-8")
 		w.Header().Set("Content-Encoding", "gzip")
 		// w.Header().Set("Content-Length", fmt.Sprintf("%v", len(byts)))  // do not set, if response is gzipped !
@@ -83,8 +83,20 @@ func TransferrerEndpointH(w http.ResponseWriter, r *http.Request) {
 	}
 	// end of GZIP
 
-	// CSV
-	cfgRem := tf.ConfigsThree()
+	//
+	//
+	// CSV direct download
+	//   requires the config for the wave being on the server
+	remoteCfgPath := path.Join("transferrer", fmt.Sprintf("%v-remote.json", surveyID))
+	// instead of cfgRem := tf.LoadRemote()
+	cfgRem := &tf.RemoteConnConfigT{}
+	err = cloudio.ReadFileUnmarshal(remoteCfgPath, cfgRem)
+	if err != nil {
+		s := fmt.Sprintf("error reading transferrer config %v: %%v", remoteCfgPath)
+		tf.LogAndRespond(w, r, s, err)
+		return
+	}
+
 	csvPath, err := tf.ProcessQs(cfgRem, qs)
 	if err != nil {
 		tf.LogAndRespond(w, r, "error processing questionnaires from remote: %v", err)
@@ -92,7 +104,9 @@ func TransferrerEndpointH(w http.ResponseWriter, r *http.Request) {
 	}
 	log.Printf("CSV file saved under: %v", csvPath)
 
-	w.Header().Set("Content-Type", "application/csv; charset=utf-8")
+	w.Header().Set("Content-Type", "text/csv; charset=utf-8")
+	w.Header().Set("Content-Disposition", "attachment; filename="+path.Base(csvPath))
+
 	bts, err := cloudio.ReadFile(csvPath)
 	if err != nil {
 		tf.LogAndRespond(w, r, "error opening CSV: %v", err)

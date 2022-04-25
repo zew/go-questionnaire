@@ -41,17 +41,18 @@ func RetrieveFromLocal(
 
 	var qs []*qst.QuestionnaireT
 
-	log.Printf("transferrer-endpoint-reading-directory %v", pth)
+	log.Printf("transferrer-endpoint: reading from dir  %v", pth)
 	infos, err := cloudio.ReadDir(pth)
 	// infos, err := dir.Readdir(-1)
 	if err != nil {
 		return qs, fmt.Errorf("Could not read directory; %w", err)
 	}
+	log.Printf("transferrer-endpoint: found %v files", len(*infos))
 
 	for i, info := range *infos {
 		if !info.IsDir {
 			if i < 10 || i%50 == 0 {
-				log.Printf("iter %3v: Name: %v, Size: %v", i, info.Key, info.Size)
+				log.Printf("    iter %3v: Name: %v, Size: %v", i, info.Key, info.Size)
 			}
 		}
 

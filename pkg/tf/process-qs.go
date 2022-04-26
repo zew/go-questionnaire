@@ -12,6 +12,9 @@ import (
 	"github.com/zew/go-questionnaire/pkg/qst"
 )
 
+// ProcessQs iterates over qs
+// and extracts columns and values;
+// it is independent of the structure of the questionaires in qs
 func ProcessQs(cfgRem *RemoteConnConfigT, qs []*qst.QuestionnaireT, saveQSFilesToDownloadDir bool) (string, error) {
 
 	if cfgRem.DownloadDir == "" {

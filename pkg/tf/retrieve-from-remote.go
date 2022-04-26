@@ -1,14 +1,3 @@
-// Package tf - transferrer - fetches completed questionnaires
-// from /transferrer-endpoint as gzipped JSON via http(s) request;
-// downloads and CSVs are stored to ./app-bucket/responses/downloaded;
-//
-// multiple configs are required in ./app-bucket/transferrer;
-// config-autogen.json      is mostly a dummy to satisfy bootstrap;
-// logins-remote-salt.json  is needed to login remotely;
-// remote-fmt.json or remote-fmt-localhost.json contain
-// 			https POST request data
-// 			destination survey
-// 			login
 package tf
 
 import (

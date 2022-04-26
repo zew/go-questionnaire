@@ -325,7 +325,8 @@ Thus the application can be hosted by cloud providers with buckets or on classic
 
 * Survey results are pulled in by the `transferrer`,  
  aggregating responses into a CSV file.  
- `transferrer` logic is agnostic to questionnaire structure.
+ `transferrer` logic is agnostic to questionnaire structure.  
+ See `./pkg/tf/config-transferrer.go` for details.
 
 * The `updater` subpackage automates in-flight changes to the questionnaire.  
 No need for database "schema" artistry.  
@@ -785,5 +786,3 @@ Or at least from another GC/S3 bucket.
 
 * CSS funcs are dispersed. Generic funcs are in the `css` package.  
 `groupT` and `inputT` have specialized methods.
-
-* Save CSV to different location but `app-bucket\responses\downloaded\*.CSV`

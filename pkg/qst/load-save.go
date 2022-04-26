@@ -23,7 +23,7 @@ func Load1(fn string) (*QuestionnaireT, error) {
 		fn += ".json"
 	}
 
-	log.Printf("Trying loading qst from: %v", fn)
+	log.Printf("load qst %v", fn)
 
 	bts, err := cloudio.ReadFile(fn)
 	if err != nil {

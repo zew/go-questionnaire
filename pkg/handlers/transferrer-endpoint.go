@@ -71,10 +71,9 @@ func TransferrerEndpointH(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	format, _ := sess.ReqParam("format")
-
 	//
-	// not CSV - GZIP
+	// GZIP mode - start
+	format, _ := sess.ReqParam("format")
 	if format != "CSV" {
 		w.Header().Set("Content-Type", "application/json; charset=utf-8")
 		w.Header().Set("Content-Encoding", "gzip")
@@ -83,11 +82,11 @@ func TransferrerEndpointH(w http.ResponseWriter, r *http.Request) {
 		tf.PipeQStoResponse(w, r, qs)
 		return
 	}
-	// end of GZIP
+	// GZIP mode - end
+	//
 
 	//
-	//
-	// CSV direct download
+	// CSV direct download mode - start
 	//   requires the config for the wave being on the server
 	remoteCfgPath := path.Join("transferrer", fmt.Sprintf("%v-remote.json", surveyID))
 	// instead of cfgRem := tf.LoadRemote()
@@ -98,6 +97,9 @@ func TransferrerEndpointH(w http.ResponseWriter, r *http.Request) {
 		tf.LogAndRespond(w, r, s, err)
 		return
 	}
+	// filling in survey name and wave ID from URL request
+	cfgRem.SurveyType = surveyID
+	cfgRem.WaveID = waveID
 
 	saveQSFilesToDownloadDir := false
 	csvPath, err := tf.ProcessQs(cfgRem, qs, saveQSFilesToDownloadDir)
@@ -115,6 +117,13 @@ func TransferrerEndpointH(w http.ResponseWriter, r *http.Request) {
 		tf.LogAndRespond(w, r, "error opening CSV: %v", err)
 		return
 	}
+	err = cloudio.Delete(csvPath) // first delete the CSV, then serve the bytes
+	if err != nil {
+		tf.LogAndRespond(w, r, "error deleting CSV: %v", err)
+	}
+
 	w.Write(bts)
+	// CSV direct download mode - start
+	//
 
 }

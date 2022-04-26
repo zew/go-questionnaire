@@ -51,8 +51,8 @@ func RetrieveFromLocal(
 
 	for i, info := range *infos {
 		if !info.IsDir {
-			if i < 10 || i%50 == 0 {
-				log.Printf("    iter %3v: Name: %v, Size: %v", i, info.Key, info.Size)
+			if i < 4 || i%50 == 0 {
+				log.Printf("  q#%3v: %v, size: %v", i, info.Key, info.Size)
 			}
 		}
 

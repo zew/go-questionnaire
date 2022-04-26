@@ -1,3 +1,24 @@
+// Package tf - transferrer - has two uses.
+//
+// 1. As standalone client (see ./cmd), fetching completed questionnaires
+// from [remote-host]/transferrer-endpoint as gzipped JSON via http(s) request;
+// then extracting CSV data from the downloaded JSON files.
+// JSON questionnaires and CSVs are stored to ./app-bucket/responses/downloaded/[survey_id];
+// multiple configs are required for this mode; they reside in ./app-bucket/transferrer;
+// config-autogen.json      contains some seed values for a valid config for the main server app;
+// config-[survey].json     contains the full blown settings for a main server app
+// logins-remote-salt.json  is needed for form tokens;
+// remote-fmt.json or remote-fmt-localhost.json contain
+// 			data to make the https POST
+// 			destination survey
+// 			remote login
+//
+// 2. For direct download; as extension to [remote-host]/transferrer-endpoint;
+// directly returning the CSV extract; we simply have to login as an admin
+// 	who has a role [survey_id]-downloader != "";
+// then we have to append format=CSV to the usual URL parameters;
+// for instance
+// https://survey2.zew.de:443/transferrer-endpoint?fetch_all=1&survey_id=fmt&wave_id=2022-04&format=CSV
 package tf
 
 import (
@@ -42,8 +63,8 @@ type RemoteConnConfigT struct {
 	MaxUserID   int // see MinUserID
 }
 
-// Example returns a minimal configuration, to be extended or adapted
-func Example() RemoteConnConfigT {
+// Example1 returns a minimal configuration for usage as client
+func Example1() RemoteConnConfigT {
 	r := RemoteConnConfigT{}
 	r.RemoteHost = "https://www.peu2018.eu"
 	r.RemoteHost = "https://financial-literacy-test.appspot.com"
@@ -54,17 +75,21 @@ func Example() RemoteConnConfigT {
 	r.URLPathPrefix = ""
 
 	r.AdminLogin = "transferrer"
-	r.Pass = "Spark!sh32"
+	r.Pass = "secret"
 
 	r.SurveyType = "fmt"
-	r.SurveyType = "flit"
-	r.SurveyType = "lt2020"
-
 	r.WaveID = qst.NewSurvey(r.SurveyType).WaveID()
 	r.WaveID = "2020-05"
 
 	r.DownloadDir = "responses/downloaded"
 
+	return r
+}
+
+// Example2 returns a minimal configuration for usage on remote server
+func Example2() RemoteConnConfigT {
+	r := RemoteConnConfigT{}
+	r.MinUserID = 10 * 1000
 	return r
 }
 
@@ -89,7 +114,7 @@ func LoadRemote(r io.Reader) *RemoteConnConfigT {
 	return &tempCfg
 }
 
-// ConfigsMainApp loads main app config and main app logins
+// ConfigsMainApp loads configs and logins *similar* to main app
 func ConfigsMainApp() {
 
 	// we need config and logins
@@ -162,15 +187,14 @@ func ConfigsMainApp() {
 		log.Printf("Opened reader to cloud config %v", fileName)
 		lgn.Load(r)
 
-		cloudio.MarshalWriteFile(lgn.Example(), path.Join("/transferrer", "logins-example.json"))
-
 	}
 
 }
 
 // ConfigTransferrer loads the transferrer config;
 // using loadRemote();
-// TransferrerEndpointH() uses another method
+// TransferrerEndpointH() in direct download mode uses another method
+// with far fewer values
 func ConfigTransferrer() *RemoteConnConfigT {
 
 	fl := flags.New()
@@ -184,8 +208,13 @@ func ConfigTransferrer() *RemoteConnConfigT {
 	)
 	fl.Gen()
 	var cfgRem RemoteConnConfigT
-	cfgRem = Example()
-	cloudio.MarshalWriteFile(&cfgRem, path.Join("/transferrer", "example-remote.json"))
+
+	cfgRem = Example1()
+	cloudio.MarshalWriteFile(&cfgRem, path.Join("/transferrer", "example-usage-client.json"))
+
+	cfgRem = Example2()
+	cloudio.MarshalWriteFile(&cfgRem, path.Join("/transferrer", "example-usage-direct-download.json"))
+
 	{
 		rmt := fl.ByKey("rmt").Val
 		fileName := rmt

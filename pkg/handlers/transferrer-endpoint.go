@@ -87,7 +87,8 @@ func TransferrerEndpointH(w http.ResponseWriter, r *http.Request) {
 
 	//
 	// CSV direct download mode - start
-	//   requires the config for the wave being on the server
+	//  direct download requires only a *minimal* config for the requested survey_id stored on the server
+	// 	whereas client mode requires lots of configs for standalone operation.
 	remoteCfgPath := path.Join("transferrer", fmt.Sprintf("%v-remote.json", surveyID))
 	// instead of cfgRem := tf.LoadRemote()
 	cfgRem := &tf.RemoteConnConfigT{}

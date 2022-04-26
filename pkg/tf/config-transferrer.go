@@ -19,6 +19,9 @@
 // then we have to append format=CSV to the usual URL parameters;
 // for instance
 // https://survey2.zew.de:443/transferrer-endpoint?fetch_all=1&survey_id=fmt&wave_id=2022-04&format=CSV
+//
+// Consider to get rid of the standalone mode - since the download of JSON files
+// has become uninteresting
 package tf
 
 import (

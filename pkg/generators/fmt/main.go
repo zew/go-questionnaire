@@ -289,7 +289,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				rowLabelsEuroGerUSGlob1,
 			)
 			gb.MainLabel = trl.S{
-				"de": "<b>1.</b> Die gesamtwirtschaftliche Situation beurteilen wir als",
+				"de": "<b>1.</b> Die gesamtwirtschaftliche Situation beurteilen wir zurzeit als",
 				"en": "<b>1.</b> We estimate the current overall macroeconomic situation as being",
 			}
 			gr := page.AddGrid(gb)
@@ -894,6 +894,10 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	err = special202204(&q)
 	if err != nil {
 		return nil, fmt.Errorf("Error adding special202204(): %v", err)
+	}
+	err = special202205(&q)
+	if err != nil {
+		return nil, fmt.Errorf("Error adding special202205(): %v", err)
 	}
 
 	//

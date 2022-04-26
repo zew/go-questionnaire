@@ -26,6 +26,10 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 		return nil
 	}
 
+	if q.Survey.Year == 2022 && q.Survey.Month == 5 {
+		return nil
+	}
+
 	lblStyleRight := css.NewStylesResponsive(nil)
 	lblStyleRight.Desktop.StyleText.AlignHorizontal = "right"
 	lblStyleRight.Desktop.StyleBox.Padding = "0 1.0rem 0 0"

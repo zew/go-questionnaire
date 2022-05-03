@@ -66,8 +66,8 @@ var inflationFactorLabel2205 = []trl.S{
 		"en": "Green transformation",
 	},
 	{
-		"de": "Krieg gegen Ukraine",
-		"en": "War on Ukraine",
+		"de": "Krieg in der Ukraine",
+		"en": "War in Ukraine",
 	},
 	// {
 	// 	"de": "Andere",
@@ -408,7 +408,7 @@ func special202205(q *qst.QuestionnaireT) error {
 					<b>2.</b>  &nbsp;
 						Haben Entwicklungen in den folgenden Bereichen
 						 Sie zu einer Revision Ihrer <b>Inflationsprognosen</b> für den Euroraum
-						 (ggü. November 2021) bewogen 
+						 (ggü. Februar 2022) bewogen 
 						 und wenn ja, nach oben (+) oder unten (-)?
 					`,
 
@@ -416,7 +416,7 @@ func special202205(q *qst.QuestionnaireT) error {
 					<b>2.</b>  &nbsp;
 						Did developments in the following areas make you change 
 						your inflation forecasts for the euro area  
-						(relative to November 2021)? 
+						(relative to February 2022)? 
 						
 						If yes, did you revise them up or down?
 

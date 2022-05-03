@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "4caae81297f4a81e26768f15b12e0a2d9d17aedc1685277d7d35575cb7fa8dc8",
+ 	"md_5": "829d56e3f959c25b4ed76539ed2511f527f9baab5e387f82f133c5869af46ddc",
  	"lang_codes": [
  		"de",
  		"en"
@@ -5392,8 +5392,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\u003cb\u003e2.\u003c/b\u003e  \u0026nbsp;\n\t\t\t\t\t\tHaben Entwicklungen in den folgenden Bereichen\n\t\t\t\t\t\t Sie zu einer Revision Ihrer \u003cb\u003eIn\u0026shy;fla\u0026shy;ti\u0026shy;onspro\u0026shy;gno\u0026shy;sen\u003c/b\u003e für den Euro\u0026shy;raum\n\t\t\t\t\t\t (ggü. November 2021) bewogen \n\t\t\t\t\t\t und wenn ja, nach oben (+) oder unten (-)?\n\t\t\t\t\t",
- 								"en": "\n\t\t\t\t\t\u003cb\u003e2.\u003c/b\u003e  \u0026nbsp;\n\t\t\t\t\t\tDid de\u0026shy;vel\u0026shy;op\u0026shy;ments in the following areas make you change \n\t\t\t\t\t\tyour in\u0026shy;fla\u0026shy;ti\u0026shy;on forecasts for the euro area  \n\t\t\t\t\t\t(relative to November 2021)? \n\t\t\t\t\t\t\n\t\t\t\t\t\tIf yes, did you revise them up or down?\n\n\t\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\t\t(response categories: \n\t\t\t\t\t\t\tstrong\u0026shy;ly pos\u0026shy;itive (++), pos\u0026shy;itive (+), \n\t\t\t\t\t\t\tno in\u0026shy;flu\u0026shy;ence (0), \n\t\t\t\t\t\t\tneg\u0026shy;ative (-), strong\u0026shy;ly neg\u0026shy;ative (--)) \n\t\t\t\t\t\n\t\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cb\u003e2.\u003c/b\u003e  \u0026nbsp;\n\t\t\t\t\t\tHaben Entwicklungen in den folgenden Bereichen\n\t\t\t\t\t\t Sie zu einer Revision Ihrer \u003cb\u003eIn\u0026shy;fla\u0026shy;ti\u0026shy;onspro\u0026shy;gno\u0026shy;sen\u003c/b\u003e für den Euro\u0026shy;raum\n\t\t\t\t\t\t (ggü. Februar 2022) bewogen \n\t\t\t\t\t\t und wenn ja, nach oben (+) oder unten (-)?\n\t\t\t\t\t",
+ 								"en": "\n\t\t\t\t\t\u003cb\u003e2.\u003c/b\u003e  \u0026nbsp;\n\t\t\t\t\t\tDid de\u0026shy;vel\u0026shy;op\u0026shy;ments in the following areas make you change \n\t\t\t\t\t\tyour in\u0026shy;fla\u0026shy;ti\u0026shy;on forecasts for the euro area  \n\t\t\t\t\t\t(relative to February 2022)? \n\t\t\t\t\t\t\n\t\t\t\t\t\tIf yes, did you revise them up or down?\n\n\t\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\t\t(response categories: \n\t\t\t\t\t\t\tstrong\u0026shy;ly pos\u0026shy;itive (++), pos\u0026shy;itive (+), \n\t\t\t\t\t\t\tno in\u0026shy;flu\u0026shy;ence (0), \n\t\t\t\t\t\t\tneg\u0026shy;ative (-), strong\u0026shy;ly neg\u0026shy;ative (--)) \n\t\t\t\t\t\n\t\t\t\t\t"
  							},
  							"col_span_label": 1
  						}
@@ -6280,8 +6280,8 @@
  							"name": "inff_22_24__war_ukraine",
  							"type": "radio",
  							"label": {
- 								"de": "Krieg gegen Ukraine",
- 								"en": "War on Ukraine"
+ 								"de": "Krieg in der Ukraine",
+ 								"en": "War in Ukraine"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,

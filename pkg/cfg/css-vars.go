@@ -121,7 +121,7 @@ func (cs cssVars) ByKey(k string) cssVar {
 	return cssVar{Key: "css-var-not-found", Val: k}
 }
 
-// Stack combines / merges addenum into cs
+// Stack combines / merges addenum into base
 func Stack(base, addenum cssVars) cssVars {
 
 	// copy of base
@@ -143,6 +143,7 @@ func Stack(base, addenum cssVars) cssVars {
 		}
 		if !found {
 			// not contained in base => not overwrite - but append
+			// log.Printf("  appending \n\t\t%+v", cadd)
 			ret = append(ret, cadd)
 		}
 	}

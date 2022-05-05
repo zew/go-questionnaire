@@ -158,6 +158,9 @@ func Load(r io.Reader) {
 	for key := range tempCfg.CSSVarsSite {
 		tempCfg.CSSVarsSite[key] = Stack(tempCfg.CSSVars, tempCfg.CSSVarsSite[key])
 		log.Printf("combined CSSVars base plus %-10s- computed; %v entries", key, len(tempCfg.CSSVarsSite[key]))
+		// if key == "biii" {
+		// 	dbg.Dump(tempCfg.CSSVarsSite[key])
+		// }
 	}
 
 	basePlusCustom := trl.CoreTranslations()

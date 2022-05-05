@@ -237,12 +237,9 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		page.Short = trl.S{"de": "Impact"}
 		page.WidthMax("34rem") // 55
 
-		page.ValidationFuncName = "fmtPage1"
+		page.ValidationFuncName = "biiiP1"
 		page.ValidationFuncMsg = trl.S{
-			// "de": "Summiert sich nicht zu 100. Wirklich weiter?",
-			// Möchten Sie dies ändern?
-			"de": "Ihre Antworten auf Frage 2b addieren sich nicht zu 100%. Wirklich weiter?",
-			"en": "Your answers to question 2b dont add up to 100%. Continue anyway?",
+			"de": "no javascript dialog message needed",
 		}
 
 		// gr0
@@ -260,7 +257,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"no",
 			}
 			gr := page.AddGroup()
-			gr.Cols = 2
+			gr.Cols = 1
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
@@ -268,21 +265,60 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.ColSpan = gr.Cols
 			}
 			for idx, label := range labels {
-				{
-					rad := gr.AddInput()
-					rad.Type = "radio"
-					rad.Name = "q4"
-					rad.ValueRadio = radioValues[idx]
+				rad := gr.AddInput()
+				rad.Type = "radio"
+				rad.Name = "q4"
+				rad.ValueRadio = radioValues[idx]
 
-					rad.ColSpan = 1
-					rad.ColSpanLabel = 1
-					rad.ColSpanControl = 6
+				rad.ColSpan = 1
+				rad.ColSpanLabel = 1
+				rad.ColSpanControl = 6
 
-					rad.Label = label
+				rad.Label = label
 
-					rad.ControlFirst()
-				}
-			}
+				rad.ControlFirst()
+
+				//
+				if idx == 0 {
+					labels := []trl.S{
+						{"de": "seit >10 Jahren "},
+						{"de": "seit >5 Jahren"},
+						{"de": "seit >3 Jahren"},
+						{"de": "seit <=3 Jahren"},
+						{"de": "erst seit kurzem"},
+					}
+					radioValues := []string{
+						"10yrs",
+						"5yrs",
+						"3yrs",
+						"lessthan3",
+						"recently",
+					}
+					// gr := page.AddGroup()
+					// gr.Cols = 1
+					for idx, label := range labels {
+						{
+							rad := gr.AddInput()
+							rad.Type = "radio"
+							rad.Name = "q4a"
+							rad.ValueRadio = radioValues[idx]
+
+							rad.ColSpan = 1
+							rad.ColSpanLabel = 1
+							rad.ColSpanControl = 6
+
+							rad.Label = label
+
+							rad.ControlFirst()
+
+							rad.Style = css.NewStylesResponsive(rad.Style)
+							rad.Style.Desktop.StyleBox.Margin = "0 0 0 3.2rem"
+
+						}
+					}
+				} // idx==0
+
+			} // range labels
 
 		}
 	}

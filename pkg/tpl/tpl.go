@@ -262,7 +262,8 @@ func Exec(w io.Writer, r *http.Request, mp map[string]interface{}, tName string)
 	core, _ := SiteCore(site)
 	mp["SiteCore"], _ = SiteCore(site)
 
-	// mp["CSSSite"] must be of type cfg.[]cssVar; we only check for existence
+	// we only branch depending on existence; we ignore the value
+	// mp["CSSSite"] must be of type cfg.[]cssVar;
 	if _, ok := mp["CSSSite"]; !ok {
 		mp["CSSSite"] = cfg.Get().CSSVarsSite[core]
 	} else {

@@ -475,7 +475,6 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 
 					// rad.Label = lbl
 					// rad.ControlFirst()
-					// rad.LabelRight()
 
 					// 	rad.Validator = "must;comprehensionPOP2"
 				}

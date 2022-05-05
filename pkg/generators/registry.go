@@ -16,6 +16,7 @@ import (
 	"github.com/go-playground/form"
 	"github.com/zew/go-questionnaire/pkg/cfg"
 	"github.com/zew/go-questionnaire/pkg/cloudio"
+	"github.com/zew/go-questionnaire/pkg/generators/biii"
 	"github.com/zew/go-questionnaire/pkg/generators/example"
 	"github.com/zew/go-questionnaire/pkg/generators/fmt"
 	"github.com/zew/go-questionnaire/pkg/generators/pat"
@@ -35,6 +36,7 @@ var gens = map[string]genT{
 	"pat1":    pat1.Create,
 	"pat2":    pat2.Create,
 	"pat3":    pat3.Create,
+	"biii":     biii.Create,
 	// "flit":    flit.Create,
 	// "peu2018": peu2018.Create,
 	// "mul":     mul.Create,

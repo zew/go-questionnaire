@@ -136,19 +136,41 @@ func main() {
 		}
 		go func() { log.Fatal(fallbackSrv.ListenAndServe()) }()
 
-		//
-		//
-		// tlsCfg := &tls.Config{}
+		// Valsorda config from 2018  - compatible to sparkassen
 		tlsCfg := &tls.Config{
-			MinVersion:               tls.VersionTLS12,
-			CurvePreferences:         []tls.CurveID{tls.CurveP521, tls.CurveP384, tls.CurveP256},
+			// Causes servers to use Go's default ciphersuite preferences,
+			// which are tuned to avoid attacks. Does nothing on clients.
 			PreferServerCipherSuites: true,
-			CipherSuites: []uint16{
-				tls.TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,
-				tls.TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA,
-				tls.TLS_RSA_WITH_AES_256_GCM_SHA384,
-				tls.TLS_RSA_WITH_AES_256_CBC_SHA,
+			// Only use curves which have assembly implementations
+			CurvePreferences: []tls.CurveID{
+				tls.CurveP256,
+				tls.X25519, // Go 1.8 only
 			},
+			MinVersion: tls.VersionTLS12,
+			CipherSuites: []uint16{
+				tls.TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,
+				tls.TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,
+				tls.TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305,
+				tls.TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305,
+				tls.TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,
+				tls.TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,
+			},
+		}
+		if false {
+			// Recommendation from 2022 - causes sparkassen to get "no common cipher suit"
+			// Sparkassen using www.f-i.de report trouble
+			tlsCfg = &tls.Config{
+				MinVersion:               tls.VersionTLS12,
+				CurvePreferences:         []tls.CurveID{tls.CurveP521, tls.CurveP384, tls.CurveP256},
+				PreferServerCipherSuites: true,
+				CipherSuites: []uint16{
+					tls.TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,
+					tls.TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA,
+					tls.TLS_RSA_WITH_AES_256_GCM_SHA384,
+					tls.TLS_RSA_WITH_AES_256_CBC_SHA,
+				},
+			}
+
 		}
 		if !cfg.Get().TLS13 {
 			// Best disabled, as they don't provide Forward Secrecy,
@@ -175,12 +197,6 @@ func main() {
 			log.Fatal(srv.ListenAndServeTLS("", ""))
 		} else {
 			// chrome://flags/#allow-insecure-localhost
-			// tlsConfigLocal := &tls.Config{
-			// 	InsecureSkipVerify: true,
-			// 	MinVersion:         tls.VersionTLS13,
-			// 	MaxVersion:         tls.VersionTLS13,
-			// }
-			// srv.TLSConfig = tlsConfigLocal
 			pthPem := path.Join("static", "certs", "server.pem")
 			pthKey := path.Join("static", "certs", "server.key")
 			log.Fatal(srv.ListenAndServeTLS(pthPem, pthKey))

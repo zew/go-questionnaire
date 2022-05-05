@@ -137,6 +137,10 @@ var hyph = []string{
 	"ver|schlech|tert",
 	"ver|än|dern",
 	"ver|än|dert",
+
+	"Vermögens|verwalter ",
+	"Markt|teil|nehmer ",
+
 	"Wechsel|kurse",
 	"Welt|wirt|schaft",
 	"Wett|be|werbs|sit|uation",

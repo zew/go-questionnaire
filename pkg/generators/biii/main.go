@@ -237,7 +237,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		page.Short = trl.S{"de": "Impact"}
 		page.WidthMax("34rem") // 55
 
-		page.ValidationFuncName = "biiiP1"
+		page.ValidationFuncName = "biiiPage1"
 		page.ValidationFuncMsg = trl.S{
 			"de": "no javascript dialog message needed",
 		}
@@ -251,7 +251,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				{"de": "Nein"},
 			}
 			radioValues := []string{
-				"yes",
+				"now",
 				"in_future",
 				"in_planning",
 				"no",
@@ -321,6 +321,56 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			} // range labels
 
 		}
+	}
+
+	// page 2a-01
+	{
+		page := q.AddPage()
+		page.Short = trl.S{"de": "II Now"}
+		page.Label = trl.S{"de": ""}
+		page.NavigationCondition = "BIIINow"
+		// page.NoNavigation = true
+		page.WidthMax("42rem")
+
+		// gr0
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 1
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.ColSpan = 1
+				inp.ColSpanLabel = 1
+				inp.Label = trl.S{"de": "now"}
+			}
+		}
+
+	}
+
+	// page 2b-01
+	{
+		page := q.AddPage()
+		page.Short = trl.S{"de": "II Later"}
+		page.Label = trl.S{"de": ""}
+		page.NavigationCondition = "BIIILater"
+		// page.NoNavigation = true
+		page.WidthMax("42rem")
+
+		// gr0
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 1
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.ColSpan = 1
+				inp.ColSpanLabel = 1
+				inp.Label = trl.S{"de": "Later"}
+			}
+		}
+
 	}
 
 	//

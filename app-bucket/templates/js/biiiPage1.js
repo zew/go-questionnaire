@@ -26,8 +26,8 @@ function showQ4a(event) {
 
 
 
-    // let radio1Val = document.forms.frmMain.q4yes.value;
-    let radio1Checked = document.forms.frmMain.q4yes.checked;
+    // let radio1Val = document.forms.frmMain.q4now.value;
+    let radio1Checked = document.forms.frmMain.q4now.checked;
     // console.log("inp1: ", radio1Checked);
 
     showHideSubRadios(radio1Checked);
@@ -37,8 +37,8 @@ function showQ4a(event) {
 }
 
 
-if (document.forms.frmMain.q4yes) {
-    document.forms.frmMain.q4yes.addEventListener('change',showQ4a);
+if (document.forms.frmMain.q4now) {
+    document.forms.frmMain.q4now.addEventListener('change',showQ4a);
     document.forms.frmMain.q4in_future.addEventListener('change', showQ4a);
     document.forms.frmMain.q4in_planning.addEventListener('change', showQ4a);
     document.forms.frmMain.q4no.addEventListener('change', showQ4a);

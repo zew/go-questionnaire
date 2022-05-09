@@ -696,6 +696,55 @@ func (q *QuestionnaireT) SetLangCode(newCode string) error {
 	return nil
 }
 
+// PrevPage computation;
+// q contains currPage from *last* request;
+// we remember this, because we want to store request values *there*
+func (q *QuestionnaireT) PrevPage() (prevPage int) {
+	prevPage = q.CurrPage
+	if prevPage > len(q.Pages)-1 || prevPage < 0 {
+		q.CurrPage = 0
+		prevPage = 0
+	}
+	return prevPage
+}
+
+// FindNewPage determines the new page
+func (q *QuestionnaireT) FindNewPage(sess *sessx.SessT) {
+
+	prevPage := q.PrevPage()
+	currPage := prevPage // Default assumption: we are still on prev page - unless there is some modification:
+	submit := sess.EffectiveStr("submitBtn")
+	if submit == "prev" {
+		currPage = q.Prev()
+	} else if submit == "next" {
+		currPage = q.Next()
+	} else {
+		// Apart from "prev" and "next", submitBtn can also hold an explicit destination page
+		explicit, ok, err := sess.EffectiveInt("submitBtn")
+		if err != nil {
+			// invalid page value, just dont use it
+		}
+		if ok && err == nil && explicit > -1 {
+			log.Printf("curPage set explicitly by 'submitBtn' to %v", explicit)
+			currPage = explicit
+		}
+	}
+	// The progress bar uses "page" to submit an explicit destination page.
+	// There are no conflicts of overriding submitBtn and page
+	// since submitBtn has only a value if actually pressed.
+	explicit, ok, err := sess.EffectiveInt("page")
+	if err != nil {
+		// invalid page value, just dont use it
+	}
+	if ok && err == nil && explicit > -1 {
+		log.Printf("curPage set explicitly by param 'page' to %v", explicit)
+		currPage = explicit
+	}
+	q.CurrPage = currPage // Put current page into questionnaire
+	log.Printf("submitBtn was '%v' - new currPage is %v", submit, currPage)
+
+}
+
 // CurrentPageHTML is a comfort shortcut to PageHTML
 func (q *QuestionnaireT) CurrentPageHTML() (string, error) {
 	return q.PageHTML(q.CurrPage)
@@ -1003,7 +1052,7 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 				grpHTML = strings.Replace(grpHTML, "[groupID]", fmt.Sprintf("%v", nonCompositCntr+1), -1)
 			}
 
-			// dynamic question numbering - based on isNavigation()
+			// dynamic question numbering - based on NavigationCondition, isNavigation()
 			// todo
 
 			fmt.Fprint(w, grpHTML+"\n")
@@ -1296,6 +1345,13 @@ func EnglishTextAndNumbersOnly(s string) string {
 	// 	log.Printf("\n%v\n%v", sBefore, s)
 	// }
 
+	return s
+}
+
+// CleanseUserAgent is stricter than EnglishTextAndNumbersOnly
+func CleanseUserAgent(s string) string {
+	s = EnglishTextAndNumbersOnly(s)
+	s = strings.ReplaceAll(s, "+", "plus") // additional removal
 	return s
 }
 

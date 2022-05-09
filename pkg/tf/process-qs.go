@@ -156,14 +156,14 @@ func ProcessQs(cfgRem *RemoteConnConfigT, qs []*qst.QuestionnaireT, saveQSFilesT
 
 		// equivalent staticCols...
 		prepend := []string{
-			qs[i].UserID,         // user_id
-			qs[i].LangCode,       // lang_code
-			formattedClosingTime, // closing_time
-			status,               // status
-			q.RemoteIP,           // remote_ip
-			qst.EnglishTextAndNumbersOnly(q.UserAgent), // user_agent
-			fmt.Sprint(q.VersionEffective),             // version effective
-			fmt.Sprint(q.VersionMax),                   // number of versions
+			qs[i].UserID,                      // user_id
+			qs[i].LangCode,                    // lang_code
+			formattedClosingTime,              // closing_time
+			status,                            // status
+			q.RemoteIP,                        // remote_ip
+			qst.CleanseUserAgent(q.UserAgent), // user_agent
+			fmt.Sprint(q.VersionEffective),    // version effective
+			fmt.Sprint(q.VersionMax),          // number of versions
 		}
 		for iPg := 0; iPg < maxPages; iPg++ {
 			if iPg < len(finishes) {

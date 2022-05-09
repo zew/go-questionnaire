@@ -281,46 +281,7 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 		q.Attrs[k] = v
 	}
 
-	//
-	// Page logic
-	//
-	// contains currPage from last request
-	// remember, because we want to store request values *there*
-	prevPage := q.CurrPage
-	if prevPage > len(q.Pages)-1 || prevPage < 0 {
-		q.CurrPage = 0
-		prevPage = 0
-	}
-	currPage := prevPage // Default assumption: we are still on prev page - unless there is some modification:
-	submit := sess.EffectiveStr("submitBtn")
-	if submit == "prev" {
-		currPage = q.Prev()
-	} else if submit == "next" {
-		currPage = q.Next()
-	} else {
-		// Apart from "prev" and "next", submitBtn can also hold an explicit destination page
-		explicit, ok, err := sess.EffectiveInt("submitBtn")
-		if err != nil {
-			// invalid page value, just dont use it
-		}
-		if ok && err == nil && explicit > -1 {
-			log.Printf("curPage set explicitly by 'submitBtn' to %v", explicit)
-			currPage = explicit
-		}
-	}
-	// The progress bar uses "page" to submit an explicit destination page.
-	// There are no conflicts of overriding submitBtn and page
-	// since submitBtn has only a value if actually pressed.
-	explicit, ok, err := sess.EffectiveInt("page")
-	if err != nil {
-		// invalid page value, just dont use it
-	}
-	if ok && err == nil && explicit > -1 {
-		log.Printf("curPage set explicitly by param 'page' to %v", explicit)
-		currPage = explicit
-	}
-	q.CurrPage = currPage // Put current page into questionnaire
-	log.Printf("submitBtn was '%v' - new currPage is %v", submit, currPage)
+	prevPage := q.PrevPage() // remember before
 
 	//
 	// Put request values into questionnaire
@@ -349,10 +310,14 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 		log.Printf("(Page#%2v) Setting %-24q to '%v'", prevPage, inpName, val)
 	}
 
+	// based on most recent input values
+	q.FindNewPage(sess)
+
 	if sess.EffectiveStr("skip_validation") == "" && r.Method == "POST" {
 		var forward *qst.ErrorForward
 		err, forward = q.ValidateResponseData(prevPage, q.LangCode)
 		if err != nil {
+			submit := sess.EffectiveStr("submitBtn")
 			if submit != "prev" { // effectively allow going back - but not going forth
 				q.CurrPage = prevPage // Prevent changing page, keep participant on page with errors
 			} else {
@@ -403,6 +368,9 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 	// Save questionnaire into session
 	sess.PutObject("questionnaire", q)
 
+	//
+	//
+
 	q2, _ := q.Split()
 	err = q2.Save1(l.QuestPath())
 	if err != nil {
@@ -436,6 +404,7 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 	tpl.Exec(w1, r, mp, "quest.html")
 
 	mp["Content"] = w1.String()
+	delete(mp, "CSSSite") // remove, to prevent fallback to default CSS
 	// tpl.RenderStack(r, w, []string{"layout.html"}, mp)
 
 	tpl.Exec(w, r, mp, "layout.html")

@@ -17,7 +17,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "842831c4f049d951a577a77c7590ef3a5b4a9bca45585d2b27a5cd5f409380eb",
+ 	"md_5": "6b6f64cdd720fe25bff3f22e5026a507c0713baec836633ebbc45576a17bfbce",
  	"lang_codes": [
  		"de"
  	],
@@ -998,7 +998,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 6,
- 							"value_radio": "yes",
+ 							"value_radio": "now",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -1324,10 +1324,106 @@
  					]
  				}
  			],
- 			"validation_func_name": "biiiP1",
+ 			"validation_func_name": "biiiPage1",
  			"validation_func_msg": {
  				"de": "no javascript dialog message needed"
  			}
+ 		},
+ 		{
+ 			"label": {
+ 				"de": ""
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"short": {
+ 				"de": "II Now"
+ 			},
+ 			"navigation_condition": "BIIINow",
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "42rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "now"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": ""
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"short": {
+ 				"de": "II Later"
+ 			},
+ 			"navigation_condition": "BIIILater",
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "42rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Later"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				}
+ 			]
  		},
  		{
  			"label": {
@@ -1455,7 +1551,7 @@
  							"accesskey": "n",
  							"col_span": 1,
  							"col_span_control": 1,
- 							"response": "3",
+ 							"response": "5",
  							"style_control": {
  								"desktop": {
  									"grid_container_style": {},

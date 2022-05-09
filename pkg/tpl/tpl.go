@@ -262,11 +262,18 @@ func Exec(w io.Writer, r *http.Request, mp map[string]interface{}, tName string)
 	core, _ := SiteCore(site)
 	mp["SiteCore"], _ = SiteCore(site)
 
+	// CSS is determined by mp["Site"];
+	//
+	// if the key "CSSSite" is already present, then
+	// we fall back to default CSS vars
+	//
 	// we only branch depending on existence; we ignore the value
+	//
 	// mp["CSSSite"] must be of type cfg.[]cssVar;
 	if _, ok := mp["CSSSite"]; !ok {
 		mp["CSSSite"] = cfg.Get().CSSVarsSite[core]
 	} else {
+		// log.Printf("setting CSSSite to DEFAULT CSS vars")
 		mp["CSSSite"] = cfg.Get().CSSVars
 	}
 

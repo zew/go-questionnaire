@@ -118,9 +118,10 @@ var fcNav = func(r *http.Request, q *qst.QuestionnaireT, SBookMarkURI string) te
 		}
 		cntr := 0
 		for i, lpP := range q.Pages {
-			if lpP.NoNavigation {
+			if !q.IsInNavigation(i) {
 				continue
 			}
+
 			cntr++
 			title := lpP.Short.Tr(lc)
 			key := "quest-page-" + fmt.Sprint(i)

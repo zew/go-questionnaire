@@ -99,14 +99,16 @@ type inputT struct {
 	DD *DropdownT `json:"drop_down,omitempty"` // As pointer to prevent JSON cluttering
 
 	Validator string `json:"validator,omitempty"` // i.e. any key from map of validators, i.e. "must;inRange20"
-	ErrMsg    string `json:"err_msg,omitempty"`   // key to coreTranslations, content comes from Validator(Response), compare OnInvalid
+	// key to coreTranslations, content comes from Validator(Response), compare OnInvalid
+	// for radio inputs, see error-proxy
+	ErrMsg string `json:"err_msg,omitempty"`
 
 	// Response - input.value - numbers are stored as strings too - also contains the value of options and checkboxes
 	Response   string `json:"response,omitempty"`
 	ValueRadio string `json:"value_radio,omitempty"` // for type = radio
 
-	/* compositFunc == 'composit' OR dynFunc == 'dynamic'
-	'composit' =>    first arg paramSetIdx, second arg seqIdx */
+	// compositFunc == 'composit' OR dynFunc == 'dynamic'
+	//       if 'composit' =>    first arg paramSetIdx, second arg seqIdx
 	DynamicFunc string `json:"dynamic_func,omitempty"`
 
 	Style    *css.StylesResponsive `json:"style,omitempty"` // pointer, to avoid empty JSON blocks
@@ -1052,7 +1054,7 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 				grpHTML = strings.Replace(grpHTML, "[groupID]", fmt.Sprintf("%v", nonCompositCntr+1), -1)
 			}
 
-			// dynamic question numbering - based on NavigationCondition, isNavigation()
+			// dynamic question numbering - based on NavigationCondition, IsInNavigation()
 			// todo
 
 			fmt.Fprint(w, grpHTML+"\n")
@@ -1108,9 +1110,9 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 	return ret, nil
 }
 
-// isNavigation checks whether pageIdx is suitable
+// IsInNavigation checks whether pageIdx is suitable
 // as next or previous page
-func (q *QuestionnaireT) isNavigation(pageIdx int) bool {
+func (q *QuestionnaireT) IsInNavigation(pageIdx int) bool {
 
 	if pageIdx < 0 || pageIdx > len(q.Pages)-1 {
 		return false
@@ -1128,11 +1130,11 @@ func (q *QuestionnaireT) isNavigation(pageIdx int) bool {
 }
 
 // EnumeratePages allocates a sequence number
-// based on isNavigation()
+// based on IsInNavigation()
 func (q *QuestionnaireT) EnumeratePages() {
 	navigationalNum := 0
 	for i1 := 0; i1 < len(q.Pages); i1++ {
-		if q.isNavigation(i1) {
+		if q.IsInNavigation(i1) {
 			navigationalNum++
 			q.Pages[i1].navigationSequenceNum = navigationalNum
 		}
@@ -1143,13 +1145,13 @@ func (q *QuestionnaireT) EnumeratePages() {
 func (q *QuestionnaireT) nextInNavi() (int, bool) {
 	// Find next page in navigation
 	for i := q.CurrPage + 1; i < len(q.Pages); i++ {
-		if q.isNavigation(i) {
+		if q.IsInNavigation(i) {
 			return i, true
 		}
 	}
 	// Fallback: Last page in navigation
 	for i := len(q.Pages) - 1; i >= 0; i-- {
-		if q.isNavigation(i) {
+		if q.IsInNavigation(i) {
 			return i, false
 		}
 	}
@@ -1160,13 +1162,13 @@ func (q *QuestionnaireT) nextInNavi() (int, bool) {
 func (q *QuestionnaireT) prevInNavi() (int, bool) {
 	// Find prev page in navigation
 	for i := q.CurrPage - 1; i >= 0; i-- {
-		if q.isNavigation(i) {
+		if q.IsInNavigation(i) {
 			return i, true
 		}
 	}
 	// Fallback: First page in navigation
 	for i := 0; i < len(q.Pages); i++ {
-		if q.isNavigation(i) {
+		if q.IsInNavigation(i) {
 			return i, false
 		}
 	}

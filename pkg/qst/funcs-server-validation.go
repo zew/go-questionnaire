@@ -471,6 +471,23 @@ func init() {
 		return nil
 	}
 
+	validators["biii_branch1"] = func(q *QuestionnaireT, inpSelf *inputT) error {
+
+		s := `Dies ist eine zentrale Frage für die weitere Fragefolge. 
+		Bitte treffen Sie eine Auswahl.`
+		inp := q.Pages[1].Groups[0].Inputs[2]
+		if inp.Response == "now" {
+			// return fmt.Errorf("now " + s)
+			return nil
+		}
+		if inp.Response != "" && inp.Response != "now" {
+			// return fmt.Errorf("later " + s)
+			return nil
+		}
+
+		return fmt.Errorf(s)
+	}
+
 }
 
 // ConsolidateRadioErrors removes repeating error messages from radio inputs

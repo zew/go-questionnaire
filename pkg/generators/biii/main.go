@@ -2,6 +2,7 @@ package biii
 
 import (
 	"fmt"
+	"math"
 
 	"github.com/zew/go-questionnaire/pkg/cfg"
 	"github.com/zew/go-questionnaire/pkg/css"
@@ -135,20 +136,18 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.ColSpan = gr.Cols
 			}
 			for idx, labl := range labels {
-				{
-					rad := gr.AddInput()
-					rad.Type = "radio"
-					rad.Name = "q2"
-					rad.ValueRadio = radioValues[idx]
+				rad := gr.AddInput()
+				rad.Type = "radio"
+				rad.Name = "q2"
+				rad.ValueRadio = radioValues[idx]
 
-					rad.ColSpan = 1
-					rad.ColSpanLabel = 1
-					rad.ColSpanControl = 6
+				rad.ColSpan = 1
+				rad.ColSpanLabel = 1
+				rad.ColSpanControl = 6
 
-					rad.Label = labl
+				rad.Label = labl
 
-					rad.ControlFirst()
-				}
+				rad.ControlFirst()
 			}
 			{
 				inp := gr.AddInput()
@@ -196,20 +195,18 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.ColSpan = gr.Cols
 			}
 			for idx, label := range labels {
-				{
-					rad := gr.AddInput()
-					rad.Type = "radio"
-					rad.Name = "q3"
-					rad.ValueRadio = radioValues[idx]
+				rad := gr.AddInput()
+				rad.Type = "radio"
+				rad.Name = "q3"
+				rad.ValueRadio = radioValues[idx]
 
-					rad.ColSpan = 1
-					rad.ColSpanLabel = 1
-					rad.ColSpanControl = 6
+				rad.ColSpan = 1
+				rad.ColSpanLabel = 1
+				rad.ColSpanControl = 6
 
-					rad.Label = label
+				rad.Label = label
 
-					rad.ControlFirst()
-				}
+				rad.ControlFirst()
 			}
 			{
 				inp := gr.AddInput()
@@ -233,9 +230,9 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	// page 1
 	{
 		page := q.AddPage()
-		page.Label = trl.S{"de": "Impact"}
-		page.Short = trl.S{"de": "Impact"}
-		page.WidthMax("34rem") // 55
+		page.Label = trl.S{"de": "Ihre Position zu Impact Investing"}
+		page.Short = trl.S{"de": "Position"}
+		page.WidthMax("38rem")
 
 		page.ValidationFuncName = "biiiPage1"
 		page.ValidationFuncMsg = trl.S{
@@ -257,26 +254,47 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"no",
 			}
 			gr := page.AddGroup()
-			gr.Cols = 1
+			gr.Cols = 5
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
 				inp.Label = trl.S{"de": "<b>4.</b> &nbsp;	Arbeitet Ihre Organisation mit Impact Investments?"}
 				inp.ColSpan = gr.Cols
+				inp.ColSpan = 4
+
 			}
+
+			// composit validation
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.ColSpan = gr.Cols
+				inp.ColSpan = 1
+				inp.ColSpanLabel = 1
+				inp.Validator = "biii_branch1"
+
+				inp.Style = css.NewStylesResponsive(inp.Style)
+				inp.Style.Desktop.Position = "relative"
+				inp.Style.Desktop.Top = "7rem"
+				inp.Style.Desktop.Left = "-6rem"
+
+			}
+
 			for idx, label := range labels {
 				rad := gr.AddInput()
 				rad.Type = "radio"
 				rad.Name = "q4"
 				rad.ValueRadio = radioValues[idx]
 
-				rad.ColSpan = 1
+				rad.ColSpan = gr.Cols
 				rad.ColSpanLabel = 1
 				rad.ColSpanControl = 6
 
 				rad.Label = label
 
 				rad.ControlFirst()
+				// rad.Validator = "must"
+				// rad.ErrMsg = "must_central_biii"
 
 				//
 				if idx == 0 {
@@ -297,24 +315,22 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					// gr := page.AddGroup()
 					// gr.Cols = 1
 					for idx, label := range labels {
-						{
-							rad := gr.AddInput()
-							rad.Type = "radio"
-							rad.Name = "q4a"
-							rad.ValueRadio = radioValues[idx]
+						rad := gr.AddInput()
+						rad.Type = "radio"
+						rad.Name = "q4a"
+						rad.ValueRadio = radioValues[idx]
 
-							rad.ColSpan = 1
-							rad.ColSpanLabel = 1
-							rad.ColSpanControl = 6
+						rad.ColSpan = gr.Cols
+						rad.ColSpanLabel = 1
+						rad.ColSpanControl = 6
 
-							rad.Label = label
+						rad.Label = label
 
-							rad.ControlFirst()
+						rad.ControlFirst()
 
-							rad.Style = css.NewStylesResponsive(rad.Style)
-							rad.Style.Desktop.StyleBox.Margin = "0 0 0 3.2rem"
+						rad.Style = css.NewStylesResponsive(rad.Style)
+						rad.Style.Desktop.StyleBox.Margin = "0 0 0 3.2rem"
 
-						}
 					}
 				} // idx==0
 
@@ -323,7 +339,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		}
 	}
 
-	// page 2a-01
+	// page 2a-01 IE now yes
 	{
 		page := q.AddPage()
 		page.Short = trl.S{"de": "II Now"}
@@ -334,24 +350,87 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 		// gr0
 		{
+			labels := []trl.S{
+				{"de": "Wir arbeiten nur mit Impact Investments"},
+				{"de": "Impact Investing ist Teil unserer SRI / ESG Aktivitäten"},
+				{"de": "Impact Investing ist ein unabhängiger Bereich neben unseren konventionellen und SRI / ESG Aktivitäten"},
+			}
+			radioValues := []string{
+				"all",
+				"partly",
+				"separate_dept",
+			}
 			gr := page.AddGroup()
 			gr.Cols = 1
-			gr.BottomVSpacers = 1
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
+				inp.Label = trl.S{"de": "<b>5.</b> &nbsp;	Wenn Sie gegenwärtig mit Impact Investments arbeiten, welchen Platz haben Impact Investments in Ihrer Organisation?"}
+				inp.ColSpan = gr.Cols
+			}
+			for idx, label := range labels {
+				rad := gr.AddInput()
+				rad.Type = "radio"
+				rad.Name = "q5"
+				rad.ValueRadio = radioValues[idx]
+
+				rad.ColSpan = 1
+				rad.ColSpanLabel = 1
+				rad.ColSpanControl = 6
+
+				rad.Label = label
+
+				rad.ControlFirst()
+			}
+		}
+
+		//
+		//
+		// gr1
+		{
+			labels := []trl.S{
+				{"de": "Impact Investments am 31/12/2021"},
+				{"de": "Andere Investments mit ESG Bezug am 31/12/2021"},
+				{"de": "Konventionelle Investments am 31/12/2021"},
+			}
+			radioValues := []string{
+				"impact",
+				"other",
+				"conventional",
+			}
+			gr := page.AddGroup()
+			gr.Cols = 1
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{"de": "<b>6.</b> &nbsp;	Welches Investitionsvolumen (Assets under Management, Kreditsumme, investiertes Kapital) verzeichnet Ihre Organisation <u>insgesamt</u>?"}
+				inp.ColSpan = gr.Cols
+			}
+			for idx, label := range labels {
+				inp := gr.AddInput()
+				inp.Type = "number"
+				inp.Name = fmt.Sprintf("q6_%v", radioValues[idx])
+				inp.Label = label
+
 				inp.ColSpan = 1
-				inp.ColSpanLabel = 1
-				inp.Label = trl.S{"de": "now"}
+				inp.ColSpanLabel = 6
+				inp.ColSpanControl = 2
+				inp.Min = 0
+				inp.Max = math.MaxFloat64
+				inp.Step = 1000
+				inp.Step = 1
+				inp.MaxChars = 18
+				inp.Suffix = trl.S{"de": "€"}
+				inp.Placeholder = trl.S{"de": "0.000.000"}
 			}
 		}
 
 	}
 
-	// page 2b-01
+	// page 2b-01 IE no or later
 	{
 		page := q.AddPage()
-		page.Short = trl.S{"de": "II Later"}
+		page.Short = trl.S{"de": "IE not or later"}
 		page.Label = trl.S{"de": ""}
 		page.NavigationCondition = "BIIILater"
 		// page.NoNavigation = true
@@ -359,15 +438,54 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 		// gr0
 		{
+			labels := []trl.S{
+				{"de": "Wir bereiten einen Markteintritt strategisch vor"},
+				{"de": "Wir prüfen künftige Marktchancen sorgfältig "},
+				{"de": "Wir beginnen, Informationen zu diesem Markt zu sammeln"},
+				{"de": "Wir sehen keine Notwendigkeit, uns damit zu befassen "},
+			}
+			radioValues := []string{
+				"strategic_prep",
+				"due_dilligence",
+				"collect_info",
+				"no_necessity",
+			}
 			gr := page.AddGroup()
 			gr.Cols = 1
-			gr.BottomVSpacers = 1
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				inp.ColSpan = 1
-				inp.ColSpanLabel = 1
-				inp.Label = trl.S{"de": "Later"}
+				inp.Label = trl.S{"de": "<b>42.</b> &nbsp;	Falls Ihre Organisation bisher noch nicht im Impact Investing-Markt tätig ist, wie bewerten Sie dieses Feld für die Zukunft: "}
+				// (bitte nur eine Auswahl)
+				inp.ColSpan = gr.Cols
+			}
+			for idx, label := range labels {
+				rad := gr.AddInput()
+				rad.Type = "radio"
+				rad.Name = "q42"
+				rad.ValueRadio = radioValues[idx]
+
+				rad.ColSpan = 1
+				rad.ColSpanLabel = 1
+				rad.ColSpanControl = 6
+
+				rad.Label = label
+
+				rad.ControlFirst()
+			}
+			{
+				inp := gr.AddInput()
+				inp.Type = "textarea"
+				inp.Name = "q42other"
+				inp.MaxChars = 150
+				inp.Label = trl.S{"de": "Wir sehen diesen Markt eher skeptisch aus den folgenden Gründen:"}
+				inp.ColSpan = gr.Cols
+				inp.ColSpanLabel = 2
+				inp.ColSpanControl = 3
+				// inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
+				// inp.StyleLbl.Desktop.StyleBox.Padding = "0 0 0 3.4rem"
+				// inp.Style = css.NewStylesResponsive(inp.Style)
+				// inp.Style.Desktop.StyleBox.Margin = "1.2rem 0 0 0"
 			}
 		}
 

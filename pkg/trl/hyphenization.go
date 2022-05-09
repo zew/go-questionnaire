@@ -239,7 +239,7 @@ var hyph = []string{
 // hyphm is filled during app initialization from hyph above.
 var hyphm = map[string]string{}
 
-// TODO: Differentiation by language?
+// todo: Differentiation by language?
 func init() {
 	cntr := -1
 	for _, v := range hyph {

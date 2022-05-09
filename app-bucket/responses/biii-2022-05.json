@@ -17,7 +17,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "6b6f64cdd720fe25bff3f22e5026a507c0713baec836633ebbc45576a17bfbce",
+ 	"md_5": "1a046f6123867515576ba4d8edd7000e5b47e1ac207a0c5ba1eceffad35f7b7a",
  	"lang_codes": [
  		"de"
  	],
@@ -948,20 +948,20 @@
  		},
  		{
  			"label": {
- 				"de": "Impact"
+ 				"de": "Ihre Position zu Impact Investing"
  			},
  			"description": {
  				"de": "",
  				"en": ""
  			},
  			"short": {
- 				"de": "Impact"
+ 				"de": "Position"
  			},
  			"style": {
  				"desktop": {
  					"grid_container_style": {},
  					"box_style": {
- 						"width_max": "34rem"
+ 						"width_max": "38rem"
  					},
  					"grid_item_style": {},
  					"text_style": {}
@@ -979,15 +979,39 @@
  			"groups": [
  				{
  					"bottom_vspacers": 3,
- 					"columns": 1,
+ 					"columns": 5,
  					"inputs": [
  						{
  							"type": "textblock",
  							"label": {
  								"de": "\u003cb\u003e4.\u003c/b\u003e \u0026nbsp;\tArbeitet Ihre Organisation mit Impact In\u0026shy;vest\u0026shy;ments?"
  							},
- 							"col_span": 1,
+ 							"col_span": 4,
  							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"validator": "biii_branch1",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"left": "-6rem",
+ 										"top": "7rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "q4",
@@ -995,7 +1019,7 @@
  							"label": {
  								"de": "Gegenwärtig"
  							},
- 							"col_span": 1,
+ 							"col_span": 5,
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"value_radio": "now",
@@ -1023,7 +1047,7 @@
  							"label": {
  								"de": "seit \u003e10 Jahren "
  							},
- 							"col_span": 1,
+ 							"col_span": 5,
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"value_radio": "10yrs",
@@ -1067,7 +1091,7 @@
  							"label": {
  								"de": "seit \u003e5 Jahren"
  							},
- 							"col_span": 1,
+ 							"col_span": 5,
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"value_radio": "5yrs",
@@ -1111,7 +1135,7 @@
  							"label": {
  								"de": "seit \u003e3 Jahren"
  							},
- 							"col_span": 1,
+ 							"col_span": 5,
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"value_radio": "3yrs",
@@ -1155,7 +1179,7 @@
  							"label": {
  								"de": "seit \u003c=3 Jahren"
  							},
- 							"col_span": 1,
+ 							"col_span": 5,
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"value_radio": "lessthan3",
@@ -1199,7 +1223,7 @@
  							"label": {
  								"de": "erst seit kurzem"
  							},
- 							"col_span": 1,
+ 							"col_span": 5,
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"value_radio": "recently",
@@ -1243,7 +1267,7 @@
  							"label": {
  								"de": "Möglicherweise in der Zukunft"
  							},
- 							"col_span": 1,
+ 							"col_span": 5,
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"value_radio": "in_future",
@@ -1271,7 +1295,7 @@
  							"label": {
  								"de": "In Planung"
  							},
- 							"col_span": 1,
+ 							"col_span": 5,
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"value_radio": "in_planning",
@@ -1299,7 +1323,7 @@
  							"label": {
  								"de": "Nein"
  							},
- 							"col_span": 1,
+ 							"col_span": 5,
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"value_radio": "no",
@@ -1362,16 +1386,171 @@
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
  				{
- 					"bottom_vspacers": 1,
+ 					"bottom_vspacers": 3,
  					"columns": 1,
  					"inputs": [
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "now"
+ 								"de": "\u003cb\u003e5.\u003c/b\u003e \u0026nbsp;\tWenn Sie gegenwärtig mit Impact In\u0026shy;vest\u0026shy;ments arbeiten, welchen Platz haben Impact In\u0026shy;vest\u0026shy;ments in Ihrer Organisation?"
  							},
  							"col_span": 1,
  							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "q5",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Wir arbeiten nur mit Impact In\u0026shy;vest\u0026shy;ments"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "all",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q5",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Impact Investing ist Teil unserer SRI / ESG Aktivitäten"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "partly",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q5",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Impact Investing ist ein unabhängiger Bereich neben unseren konventionellen und SRI / ESG Aktivitäten"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "separate_dept",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003e6.\u003c/b\u003e \u0026nbsp;\tWelches Investitionsvolumen (Assets under Man\u0026shy;age\u0026shy;ment, Kreditsumme, investiertes Kapital) verzeichnet Ihre Organisation \u003cu\u003einsge\u0026shy;samt\u003c/u\u003e?"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "q6_impact",
+ 							"type": "number",
+ 							"max_chars": 18,
+ 							"step": 1,
+ 							"max": 1.7976931348623157e+308,
+ 							"placeholder": {
+ 								"de": "0.000.000"
+ 							},
+ 							"label": {
+ 								"de": "Impact In\u0026shy;vest\u0026shy;ments am 31/12/2021"
+ 							},
+ 							"suffix": {
+ 								"de": "€"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 6,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "q6_other",
+ 							"type": "number",
+ 							"max_chars": 18,
+ 							"step": 1,
+ 							"max": 1.7976931348623157e+308,
+ 							"placeholder": {
+ 								"de": "0.000.000"
+ 							},
+ 							"label": {
+ 								"de": "Andere In\u0026shy;vest\u0026shy;ments mit ESG Bezug am 31/12/2021"
+ 							},
+ 							"suffix": {
+ 								"de": "€"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 6,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "q6_conventional",
+ 							"type": "number",
+ 							"max_chars": 18,
+ 							"step": 1,
+ 							"max": 1.7976931348623157e+308,
+ 							"placeholder": {
+ 								"de": "0.000.000"
+ 							},
+ 							"label": {
+ 								"de": "Konventionelle In\u0026shy;vest\u0026shy;ments am 31/12/2021"
+ 							},
+ 							"suffix": {
+ 								"de": "€"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 6,
+ 							"col_span_control": 2
  						}
  					]
  				}
@@ -1386,7 +1565,7 @@
  				"en": ""
  			},
  			"short": {
- 				"de": "II Later"
+ 				"de": "IE not or later"
  			},
  			"navigation_condition": "BIIILater",
  			"style": {
@@ -1410,16 +1589,139 @@
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
  				{
- 					"bottom_vspacers": 1,
+ 					"bottom_vspacers": 3,
  					"columns": 1,
  					"inputs": [
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Later"
+ 								"de": "\u003cb\u003e42.\u003c/b\u003e \u0026nbsp;\tFalls Ihre Organisation bisher noch nicht im Impact Investing-Markt tätig ist, wie be\u0026shy;wer\u0026shy;ten Sie dieses Feld für die Zukunft: "
  							},
  							"col_span": 1,
  							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "q42",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Wir bereiten einen Markteintritt strategisch vor"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "strategic_prep",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q42",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Wir prüfen künftige Marktchancen sorgfältig "
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "due_dilligence",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q42",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Wir beginnen, Informationen zu diesem Markt zu sammeln"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "collect_info",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q42",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Wir sehen keine Notwendigkeit, uns damit zu befassen "
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "no_necessity",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q42other",
+ 							"type": "textarea",
+ 							"max_chars": 150,
+ 							"label": {
+ 								"de": "Wir sehen diesen Markt eher skeptisch aus den folgenden Gründen:"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 2,
+ 							"col_span_control": 3
  						}
  					]
  				}

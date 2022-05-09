@@ -24,16 +24,18 @@ func GermanOnly(q *QuestionnaireT, pageIdx int) bool {
 }
 func BIIINow(q *QuestionnaireT, pageIdx int) bool {
 	// input[0] is a text element
-	inp := q.Pages[1].Groups[0].Inputs[1]
+	// input[0] is an error dyn element
+	inp := q.Pages[1].Groups[0].Inputs[2]
 	if inp.Response == "now" {
-		// log.Printf(" => branch now; Response is %q", inp.Response)
 		return true
 	}
-	// log.Printf(" =>  branch later;  Response is %q", inp.Response)
 	return false
 }
 
-// inverse of BIIINow
 func BIIILater(q *QuestionnaireT, pageIdx int) bool {
-	return !BIIINow(q, pageIdx)
+	inp := q.Pages[1].Groups[0].Inputs[2]
+	if inp.Response != "" && inp.Response != "now" {
+		return true
+	}
+	return false
 }

@@ -41,7 +41,7 @@ func (q *QuestionnaireT) ProgressBar() string {
 
 	for idx, p := range q.Pages {
 
-		if !q.isNavigation(idx) {
+		if !q.IsInNavigation(idx) {
 			continue
 		}
 

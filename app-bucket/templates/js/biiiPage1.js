@@ -1,6 +1,7 @@
 function showHideSubRadios(showHide) {
 
-    const subRadiosClasses = ["pg01-grp00-inp02", "pg01-grp00-inp03", "pg01-grp00-inp04", "pg01-grp00-inp05", "pg01-grp00-inp06"];
+    // const subRadiosClasses = ["pg01-grp00-inp02", "pg01-grp00-inp03", "pg01-grp00-inp04", "pg01-grp00-inp05", "pg01-grp00-inp06"];
+    const subRadiosClasses = ["pg01-grp00-inp03", "pg01-grp00-inp04", "pg01-grp00-inp05", "pg01-grp00-inp06", "pg01-grp00-inp07"];
     for (const subRadio of subRadiosClasses) {
         // let containers = document.querySelectorAll(querySelect); // would be OR selection
         let selector = subRadio + " grid-item-lvl-1";   // AND selection

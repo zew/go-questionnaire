@@ -1,3 +1,26 @@
 .survey-wave-id {
     display: none;
 }
+
+.progress>li{
+    background-image: linear-gradient(to right, var(--clr-sec-lgt2), var(--clr-sec-lgt2), var(--clr-sec-drk1));
+}
+
+.progress>li.is-active:before {
+    color: #cfc;
+    background: #4b4;
+}
+
+a:link {
+    color: var(--clr-pri-vis);
+}
+
+
+nav {
+    grid-template-columns: [col-img] 2fr [col-title] 8fr [col-menu] 1.3fr;
+}
+@media screen and (max-width: 800px){
+    nav {
+        grid-template-columns: 0.5fr 4fr 3.0em [col-menu] 2em 0.15fr;
+    }
+}

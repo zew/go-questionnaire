@@ -72,7 +72,7 @@ func (q *QuestionnaireT) Statistics() (int, int, float64) {
 
 	for pageIdx, p := range q.Pages {
 
-		if !q.isNavigation(pageIdx) {
+		if !q.IsInNavigation(pageIdx) {
 			continue
 		}
 

@@ -1578,7 +1578,6 @@ ul.mnu-3rd-lvl li:last-child {
     background-color: var(--clr-sec-drk1);
     background-color: var(--clr-sec);
     background-color: var(--clr-sec-lgt2);
-    background-blend-mode: multiply;
     background-size: cover;
 
 }

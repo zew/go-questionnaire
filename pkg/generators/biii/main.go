@@ -29,7 +29,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	// page 0
 	{
 		page := q.AddPage()
-		page.Short = trl.S{"de": "Rolle und Fokus"}
+		page.Short = trl.S{"de": "Start"}
 		page.Label = trl.S{"de": ""}
 		// page.NoNavigation = true
 		page.WidthMax("42rem")
@@ -46,6 +46,12 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.ColSpanLabel = 1
 				inp.Label = trl.S{
 					"de": `
+
+					<p style='text-align: justify; font-size: 130%'>
+						Willkommen zur Marktstudie der <a href='https://bundesinitiative-impact-investing.de/'>Bundesinitiative Impact Investing (BIII)</a>
+						 im Auftrag der AIR GmbH 
+						  –  ausgeführt durch das ZEW Mannheim					
+					</p>
 
 					<p style='text-align: justify;'>
 					Im Rahmen dieser Erhebung nutzen wir bewusst eine breite Definition
@@ -230,8 +236,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	// page 1
 	{
 		page := q.AddPage()
-		page.Label = trl.S{"de": "Ihre Position zu Impact Investing"}
-		page.Short = trl.S{"de": "Position"}
+		page.Label = trl.S{"de": "Ihre Entscheidung zu Impact Investing"}
+		page.Short = trl.S{"de": "Entscheidung"}
 		page.WidthMax("38rem")
 
 		page.ValidationFuncName = "biiiPage1"
@@ -339,7 +345,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		}
 	}
 
-	// page 2a-01 IE now yes
+	// page 2a-01 II now yes
 	{
 		page := q.AddPage()
 		page.Short = trl.S{"de": "II Now"}
@@ -430,7 +436,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	// page 2b-01 IE no or later
 	{
 		page := q.AddPage()
-		page.Short = trl.S{"de": "IE not or later"}
+		page.Short = trl.S{"de": "II not or later"}
 		page.Label = trl.S{"de": ""}
 		page.NavigationCondition = "BIIILater"
 		// page.NoNavigation = true

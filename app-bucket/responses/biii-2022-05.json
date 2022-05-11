@@ -17,7 +17,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "1a046f6123867515576ba4d8edd7000e5b47e1ac207a0c5ba1eceffad35f7b7a",
+ 	"md_5": "f99c2e4b71827fa55bd3791d74450280f0f9b69a21e3335f4dc503001ad6cc97",
  	"lang_codes": [
  		"de"
  	],
@@ -34,7 +34,7 @@
  				"en": ""
  			},
  			"short": {
- 				"de": "Rolle und Fokus"
+ 				"de": "Start"
  			},
  			"style": {
  				"desktop": {
@@ -63,7 +63,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\n\t\t\t\t\t\u003cp style='text-align: justify;'\u003e\n\t\t\t\t\tIm Rahmen dieser Erhebung nutzen wir bewusst eine breite Definition\n\t\t\t\t\t von Impact In\u0026shy;vest\u0026shy;ments. \n\t\t\t\t\t \n\t\t\t\t\t Diese spiegelt das Verständnis des Global Impact Investing Networks (GIIN) wider. \n\t\t\t\t\t \n\t\t\t\t\t Demnach sind Impact In\u0026shy;vest\u0026shy;ments \"Investitionen, die mit der Absicht getätigt werden, \n\t\t\t\t\t neben einer finanziellen Rendite auch eine pos\u0026shy;itive, \n\t\t\t\t\t messbare soziale und ökologische Wirkung zu erzielen\" (GIIN, 2017). \n\t\t\t\t\t \n\t\t\t\t\t Auch in akademischen Studien wird ähnlich argumentiert. \n\t\t\t\t\t \n\t\t\t\t\t Busch et al. (2021) bezeichnen Impact bezogene In\u0026shy;vest\u0026shy;ments \n\t\t\t\t\t als \"Investitionen, die sich auf Veränderungen in der realen Welt \n\t\t\t\t\t im Hinblick auf die Lösung sozialer Probleme und/oder die Milderung \n\t\t\t\t\t ökologischer Schäden konzentrieren\". \n\t\t\t\t\t \n\t\t\t\t\t Ob entsprechende In\u0026shy;vest\u0026shy;ments aktiv und zusätzlich zu sozialen\n\t\t\t\t\t  und ökologischen Lösungen und Veränderungen beitragen, \n\t\t\t\t\t  wird im Rahmen der Erhebung separat ermittelt. \t\t\t\t\t\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
+ 								"de": "\n\n\t\t\t\t\t\u003cp style='text-align: justify; fontsize: 130%'\u003e\n\t\t\t\t\t\tWillkommen zur Marktstudie der \u003ca href='https://bundesinitiative-impact-investing.de/'\u003eBundesinitiative Impact Investing (BIII)\u003c/a\u003e\n\t\t\t\t\t\t im Auftrag der AIR GmbH \n\t\t\t\t\t\t  – in Kooperation mit dem ZEW Mannheim und der EVPA\t\t\t\t\t\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003cp style='text-align: justify;'\u003e\n\t\t\t\t\tIm Rahmen dieser Erhebung nutzen wir bewusst eine breite Definition\n\t\t\t\t\t von Impact In\u0026shy;vest\u0026shy;ments. \n\t\t\t\t\t \n\t\t\t\t\t Diese spiegelt das Verständnis des Global Impact Investing Networks (GIIN) wider. \n\t\t\t\t\t \n\t\t\t\t\t Demnach sind Impact In\u0026shy;vest\u0026shy;ments \"Investitionen, die mit der Absicht getätigt werden, \n\t\t\t\t\t neben einer finanziellen Rendite auch eine pos\u0026shy;itive, \n\t\t\t\t\t messbare soziale und ökologische Wirkung zu erzielen\" (GIIN, 2017). \n\t\t\t\t\t \n\t\t\t\t\t Auch in akademischen Studien wird ähnlich argumentiert. \n\t\t\t\t\t \n\t\t\t\t\t Busch et al. (2021) bezeichnen Impact bezogene In\u0026shy;vest\u0026shy;ments \n\t\t\t\t\t als \"Investitionen, die sich auf Veränderungen in der realen Welt \n\t\t\t\t\t im Hinblick auf die Lösung sozialer Probleme und/oder die Milderung \n\t\t\t\t\t ökologischer Schäden konzentrieren\". \n\t\t\t\t\t \n\t\t\t\t\t Ob entsprechende In\u0026shy;vest\u0026shy;ments aktiv und zusätzlich zu sozialen\n\t\t\t\t\t  und ökologischen Lösungen und Veränderungen beitragen, \n\t\t\t\t\t  wird im Rahmen der Erhebung separat ermittelt. \t\t\t\t\t\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -948,14 +948,14 @@
  		},
  		{
  			"label": {
- 				"de": "Ihre Position zu Impact Investing"
+ 				"de": "Ihre Entscheidung zu Impact Investing"
  			},
  			"description": {
  				"de": "",
  				"en": ""
  			},
  			"short": {
- 				"de": "Position"
+ 				"de": "Entscheidung"
  			},
  			"style": {
  				"desktop": {
@@ -1565,7 +1565,7 @@
  				"en": ""
  			},
  			"short": {
- 				"de": "IE not or later"
+ 				"de": "II not or later"
  			},
  			"navigation_condition": "BIIILater",
  			"style": {

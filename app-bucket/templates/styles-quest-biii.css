@@ -4,6 +4,8 @@
 
 .progress>li{
     background-image: linear-gradient(to right, var(--clr-sec-lgt2), var(--clr-sec-lgt2), var(--clr-sec-drk1));
+    background-image: linear-gradient(to right, var(--clr-sec-lgt2), var(--clr-sec-lgt2), rgb(125, 155, 122));
+    background-image: linear-gradient(to right, var(--clr-sec-lgt2), var(--clr-sec-lgt2), rgb(145, 195, 132));
 }
 
 .progress>li.is-active:before {
@@ -18,9 +20,36 @@ a:link {
 
 nav {
     grid-template-columns: [col-img] 2fr [col-title] 8fr [col-menu] 1.3fr;
+    background-color: #4b4;
+    background-color: rgb(66, 144, 66);
+    opacity: 0.8;
 }
 @media screen and (max-width: 800px){
     nav {
         grid-template-columns: 0.5fr 4fr 3.0em [col-menu] 2em 0.15fr;
     }
+}
+
+ol.progress{
+    margin-bottom: 3rem;
+}
+
+.content {
+
+
+    background-image: url(https://localhost:8083/survey/img/ui/biii-bg.jpg), url(https://localhost:8083/survey/img/ui/biii-bg-mirrored.jpg);
+    background-repeat: no-repeat;
+
+    background-size: cover,    cover;
+    background-size: contain , contain;
+    background-size: 16%, 18%;
+
+    background-position:   bottom right, bottom left;
+ 
+    background-position-y: bottom, bottom;
+    background-position-y: -15%, -34%;
+    background-position-y: -16rem, -11rem;
+ 
+    background-position-x: right, left;
+    background-position-x: 103%, left;
 }

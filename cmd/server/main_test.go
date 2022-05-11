@@ -17,7 +17,7 @@ in package systemtest.
 	go test -v ./mypackage/... -test.v
 	go test -v ./mypackage/...
 
-  I.e.
+  i.e. for systemtest
 	go test -v ./cmd/server/...
 
 

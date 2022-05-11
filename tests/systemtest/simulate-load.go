@@ -17,7 +17,6 @@ import (
 	"bytes"
 	"fmt"
 	"io"
-	"log"
 	"net/http"
 	"net/url"
 	"path"
@@ -170,6 +169,29 @@ var presets = map[string]map[int]map[string]string{
 			"pop3_part2_q6_4": "0",
 		},
 	},
+	"biii": {
+		0: {
+			"q1_role": "investor",
+			"q2":      "private_investor",
+			"q3":      "esg",
+		},
+		1: {
+			"q4":  "now",
+			"q4a": "10yrs",
+		},
+		2: {
+			"q5":              "all",
+			"q6_impact":       "1000",
+			"q6_other":        "2000",
+			"q6_conventional": "111111000",
+		},
+	},
+}
+
+var skipPages = map[string]map[int]interface{}{
+	"biii": {
+		3: nil,
+	},
 }
 
 func getPreset(qType string, pageIdx int, inpName string) (string, bool) {
@@ -202,8 +224,8 @@ func deleteHelper(t *testing.T, pth string) {
 	}
 }
 
-// copy files for inspection
-func copySystemtestJSON(t *testing.T, q *qst.QuestionnaireT) {
+// copySystemtestJSONForInspection copies files for inspection
+func copySystemtestJSONForInspection(t *testing.T, q *qst.QuestionnaireT) {
 	clientPth := strings.Replace(q.FilePath1(), "systemtest.json", "systemtest_src.json", -1)
 	copyHelper(t, clientPth)
 	copyHelper(t, q.FilePath1())
@@ -217,6 +239,7 @@ func removeSystemtestJSON(t *testing.T, q *qst.QuestionnaireT) {
 	deleteHelper(t, q.FilePath1())
 }
 
+// clientPageToServer doing POST requests to a single page of the test server
 func clientPageToServer(t *testing.T, clQ *qst.QuestionnaireT, idxPage int,
 	urlMain string, sessCook *http.Cookie) {
 
@@ -225,12 +248,17 @@ func clientPageToServer(t *testing.T, clQ *qst.QuestionnaireT, idxPage int,
 	// values from ctr.IncrementStr() are stored into clQ (client questionnaire)
 	// and POSTed to the server
 
+	// loop fills clQ and concatenates the URL params for the POST request below
 	lpCntr := 0
 	vals := url.Values{}
 	for i1, p := range clQ.Pages {
+
 		if i1 != idxPage {
 			continue
 		}
+
+		clQ.Pages[idxPage].Finished = time.Now()
+
 		vals.Set("token", lgn.FormToken())
 		vals.Set("submitBtn", "next")
 
@@ -262,7 +290,7 @@ func clientPageToServer(t *testing.T, clQ *qst.QuestionnaireT, idxPage int,
 				clQ.Pages[i1].Groups[i2].Inputs[i3].Response = val
 				lpCntr++
 				if lpCntr < 3 || lpCntr%10 == 0 {
-					log.Printf("Input %12v set to value %2v ", inp.Name, val)
+					t.Logf("Input %12v set to value %2v ", inp.Name, val)
 				}
 				// }
 			}
@@ -294,11 +322,11 @@ func clientPageToServer(t *testing.T, clQ *qst.QuestionnaireT, idxPage int,
 // with the "server" version.
 //
 // qSrc is the basic survey template file for iterating pages and inputs
-// clQ  is a fake  user response file - recording the data requested to the test server
+// clQ  is a fake user response file - recording the data requested to the test server - "client questionnaire"
 //
 func FillQuestAndComparesServerResult(t *testing.T, qSrc *qst.QuestionnaireT, urlMain string, sessCook *http.Cookie) {
 
-	var clQ = &qst.QuestionnaireT{}
+	var clQ = &qst.QuestionnaireT{} // see func description
 	var err error
 
 	pthBase := path.Join(qst.BasePath(), qSrc.Survey.Filename()+".json")
@@ -317,9 +345,6 @@ func FillQuestAndComparesServerResult(t *testing.T, qSrc *qst.QuestionnaireT, ur
 		t.Fatalf("Client questionnaire splitting failed: %v", err)
 	}
 	clQ.Survey = qSrc.Survey
-	for i := 0; i < len(clQ.Pages); i++ {
-		clQ.Pages[i].Finished = time.Now()
-	}
 	clQ.Attrs = map[string]string{}
 	clQ.Attrs["user-attribute-1"] = "user-val-1"
 	// qSrc.Attrs are empty...
@@ -342,15 +367,18 @@ func FillQuestAndComparesServerResult(t *testing.T, qSrc *qst.QuestionnaireT, ur
 	// After UserID have been set => deletion possible
 	removeSystemtestJSON(t, clQ)
 	defer removeSystemtestJSON(t, clQ)
-	defer copySystemtestJSON(t, clQ) // resolved inversely
+	defer copySystemtestJSONForInspection(t, clQ) // resolved inversely
 
 	//
 	// Doing load
 	for idx := range clQ.Pages {
+		if _, ok := skipPages[clQ.Survey.Type][idx]; ok {
+			t.Logf("	Survey %v - skipping page %v", clQ.Survey.Type, idx)
+			continue
+		}
 		clientPageToServer(t, clQ, idx, urlMain, sessCook)
 	}
-	clQ.CurrPage = len(clQ.Pages) - 2                  // last page does not get requested
-	clQ.Pages[len(clQ.Pages)-1].Finished = time.Time{} // last page finishing time is zero value
+	clQ.CurrPage = len(clQ.Pages) - 2 // last page does not get requested
 
 	clientPth := strings.Replace(clQ.FilePath1(), "systemtest.json", "systemtest_src.json", -1)
 

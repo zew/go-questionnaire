@@ -2,6 +2,23 @@
     display: none;
 }
 
+/* 'focus rectangle' for radios and checkboxes  */
+input[type=checkbox]:focus,
+input[type=radio]:focus {
+    box-shadow:
+        0 0 0 0.060em var(--clr-sec-lgt2),
+        0 0 0 0.110em rgb(215, 237, 165);
+}
+
+
+#loginlogout {
+    display: none;
+}
+
+ol.progress {
+    margin-bottom: 1.5rem;
+}
+
 .progress>li{
     background-image: linear-gradient(to right, var(--clr-sec-lgt2), var(--clr-sec-lgt2), var(--clr-sec-drk1));
     background-image: linear-gradient(to right, var(--clr-sec-lgt2), var(--clr-sec-lgt2), rgb(125, 155, 122));
@@ -30,26 +47,29 @@ nav {
     }
 }
 
-ol.progress{
-    margin-bottom: 3rem;
-}
 
 .content {
-
-
-    background-image: url(https://localhost:8083/survey/img/ui/biii-bg.jpg), url(https://localhost:8083/survey/img/ui/biii-bg-mirrored.jpg);
+    background-image: url(https://localhost:8083/survey/img/ui/biii-bg-mirrored.jpg), url(https://localhost:8083/survey/img/ui/biii-bg.jpg);
     background-repeat: no-repeat;
 
     background-size: cover,    cover;
     background-size: contain , contain;
     background-size: 16%, 18%;
 
-    background-position:   bottom right, bottom left;
+    background-position:   bottom left, bottom right;
  
     background-position-y: bottom, bottom;
-    background-position-y: -15%, -34%;
-    background-position-y: -16rem, -11rem;
+    background-position-y: -34%, -15%;
+    background-position-y: -11rem, -15.0rem;
  
-    background-position-x: right, left;
-    background-position-x: 103%, left;
+    background-position-x: left, right;
+    background-position-x: left, 103%;
+
+    background-repeat: repeat-y;
+}
+
+@media screen and (max-width: 960px) {
+    .content {
+        background-image: none;
+    }
 }

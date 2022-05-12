@@ -806,14 +806,13 @@ input[type=radio] {
 }
 
 
-
+/* 'focus rectangle' for radios and checkboxes  */
 input[type=checkbox]:focus,
 input[type=radio]:focus         {
      /* scale(2) also scales the focus rectangle :( */
     box-shadow:
         0 0 0 0.090em var(--clr-sec-lgt2),
         0 0 0 0.110em var(--clr-pri-hov);
-
 }
 
 

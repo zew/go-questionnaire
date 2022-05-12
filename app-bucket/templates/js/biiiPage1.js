@@ -1,6 +1,5 @@
 function showHideSubRadios(showHide) {
 
-    // const subRadiosClasses = ["pg01-grp00-inp02", "pg01-grp00-inp03", "pg01-grp00-inp04", "pg01-grp00-inp05", "pg01-grp00-inp06"];
     const subRadiosClasses = ["pg01-grp00-inp03", "pg01-grp00-inp04", "pg01-grp00-inp05", "pg01-grp00-inp06", "pg01-grp00-inp07"];
     for (const subRadio of subRadiosClasses) {
         // let containers = document.querySelectorAll(querySelect); // would be OR selection
@@ -49,4 +48,8 @@ if (document.forms.frmMain.q4now) {
 // addEventListener is cumulative
 window.addEventListener("load", function (event) {
    showQ4a();
+
+    const first = document.getElementById("q4now");
+    first.focus();
+    
 });

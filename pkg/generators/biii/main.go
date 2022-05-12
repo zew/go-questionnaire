@@ -48,9 +48,9 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					"de": `
 
 					<p style='text-align: justify; font-size: 130%'>
-						Willkommen zur Marktstudie der <a href='https://bundesinitiative-impact-investing.de/'>Bundesinitiative Impact Investing (BIII)</a>
+						Willkommen zur Marktstudie der <a target='_blank' href='https://bundesinitiative-impact-investing.de/'>Bundesinitiative Impact Investing (BIII)</a>
 						 im Auftrag der AIR GmbH 
-						  –  ausgeführt durch das ZEW Mannheim					
+						  –  technische Ausführung durch das <a  target='_blank' href='https://zew.de/'>ZEW Mannheim</a>					
 					</p>
 
 					<p style='text-align: justify;'>
@@ -236,8 +236,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	// page 1
 	{
 		page := q.AddPage()
-		page.Label = trl.S{"de": "Ihre Entscheidung zu Impact Investing"}
-		page.Short = trl.S{"de": "Entscheidung"}
+		page.Label = trl.S{"de": "Ihre grundsätzliche Position zu Impact Investing"}
+		page.Short = trl.S{"de": "Grundposition"}
 		page.WidthMax("38rem")
 
 		page.ValidationFuncName = "biiiPage1"
@@ -345,13 +345,16 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		}
 	}
 
-	// page 2a-01 II now yes
+	//
+	//
+	// branch "now"
+	//
+	// page 2
 	{
 		page := q.AddPage()
-		page.Short = trl.S{"de": "II Now"}
+		page.Short = trl.S{"de": "II Now - 1"}
 		page.Label = trl.S{"de": ""}
 		page.NavigationCondition = "BIIINow"
-		// page.NoNavigation = true
 		page.WidthMax("42rem")
 
 		// gr0
@@ -432,8 +435,110 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		}
 
 	}
+	// page 3
+	{
+		page := q.AddPage()
+		page.Short = trl.S{"de": "II Now - 2"}
+		page.Label = trl.S{"de": "Ihre Impact Investing Ansätze"}
+		page.NavigationCondition = "BIIINow"
+		page.WidthMax("42rem")
 
-	// page 2b-01 IE no or later
+		// gr0
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{"de": `Im folgenden Teil wollen wir einen Überblick über Ihr Verständnis und Ihre Umsetzung von Impact Investing erfassen.`}
+				inp.ColSpan = gr.Cols
+			}
+		}
+
+		// gr1
+		{
+			labels := []trl.S{
+				{"de": "Werte und ethische Überzeugungen"},
+				{"de": "Kundennachfrage"},
+				{"de": "Wirtschaftliche Motive (Impact Investing ist ein wichtiges neues Geschäftsfeld)"},
+				{"de": "Minimierung und Management von Risiken"},
+				{"de": "Lösung drängender gesellschaftlicher oder ökologischer Probleme"},
+				{"de": "Um den sozialen und/oder ökologischen Schaden unserer Investments zu minimieren"},
+			}
+			subName := []string{
+				"ethics",
+				"demand",
+				"business_growth",
+				"risk_reduction",
+				"ecology",
+				"damage_control",
+			}
+			gr := page.AddGroup()
+			gr.Cols = 1
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{"de": "<b>7.</b> &nbsp;	Was sind die Beweggründe dafür, dass Sie im Impact Investing tätig sind/ wurden?"}
+				inp.ColSpan = gr.Cols
+			}
+			for idx, label := range labels {
+				rad := gr.AddInput()
+				rad.Type = "checkbox"
+				rad.Name = fmt.Sprintf("q7_%v", subName[idx])
+
+				rad.ColSpan = 1
+				rad.ColSpanLabel = 6
+				rad.ColSpanControl = 3
+
+				rad.Label = label
+
+				// rad.ControlFirst()
+			}
+		}
+		// gr2
+		{
+			labels := []trl.S{
+				{"de": "Über marktübliche risikoadjustierte Rendite"},
+				{"de": "Marktübliche risikoadjustierte Rendite"},
+				{"de": "Unter marktübliche risikoadjustierte Rendite"},
+				{"de": "Negative Rendite"},
+			}
+			radioValues := []string{
+				"over_market_avg",
+				"equal_market_avg",
+				"below_market_avg",
+				"negative",
+			}
+			gr := page.AddGroup()
+			gr.Cols = 1
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{"de": "<b>8.</b> &nbsp;	Welche finanziellen Ziele verfolgen Sie mit Ihren Impact Investment?"}
+				inp.ColSpan = gr.Cols
+			}
+			for idx, labl := range labels {
+				rad := gr.AddInput()
+				rad.Type = "radio"
+				rad.Name = "q8"
+				rad.ValueRadio = radioValues[idx]
+
+				rad.ColSpan = 1
+				rad.ColSpanLabel = 1
+				rad.ColSpanControl = 6
+
+				rad.Label = labl
+
+				rad.ControlFirst()
+			}
+		}
+
+	}
+
+	//
+	// branch "not now"
+	//
+	// page 2b-01 II no or later
 	{
 		page := q.AddPage()
 		page.Short = trl.S{"de": "II not or later"}

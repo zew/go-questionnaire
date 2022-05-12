@@ -17,7 +17,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "f99c2e4b71827fa55bd3791d74450280f0f9b69a21e3335f4dc503001ad6cc97",
+ 	"md_5": "f37f4fa8f925053bd053a126ab4ce298d9e7098bfa8adeda45761a0e97aba0f2",
  	"lang_codes": [
  		"de"
  	],
@@ -63,7 +63,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\n\t\t\t\t\t\u003cp style='text-align: justify; fontsize: 130%'\u003e\n\t\t\t\t\t\tWillkommen zur Marktstudie der \u003ca href='https://bundesinitiative-impact-investing.de/'\u003eBundesinitiative Impact Investing (BIII)\u003c/a\u003e\n\t\t\t\t\t\t im Auftrag der AIR GmbH \n\t\t\t\t\t\t  – in Kooperation mit dem ZEW Mannheim und der EVPA\t\t\t\t\t\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003cp style='text-align: justify;'\u003e\n\t\t\t\t\tIm Rahmen dieser Erhebung nutzen wir bewusst eine breite Definition\n\t\t\t\t\t von Impact In\u0026shy;vest\u0026shy;ments. \n\t\t\t\t\t \n\t\t\t\t\t Diese spiegelt das Verständnis des Global Impact Investing Networks (GIIN) wider. \n\t\t\t\t\t \n\t\t\t\t\t Demnach sind Impact In\u0026shy;vest\u0026shy;ments \"Investitionen, die mit der Absicht getätigt werden, \n\t\t\t\t\t neben einer finanziellen Rendite auch eine pos\u0026shy;itive, \n\t\t\t\t\t messbare soziale und ökologische Wirkung zu erzielen\" (GIIN, 2017). \n\t\t\t\t\t \n\t\t\t\t\t Auch in akademischen Studien wird ähnlich argumentiert. \n\t\t\t\t\t \n\t\t\t\t\t Busch et al. (2021) bezeichnen Impact bezogene In\u0026shy;vest\u0026shy;ments \n\t\t\t\t\t als \"Investitionen, die sich auf Veränderungen in der realen Welt \n\t\t\t\t\t im Hinblick auf die Lösung sozialer Probleme und/oder die Milderung \n\t\t\t\t\t ökologischer Schäden konzentrieren\". \n\t\t\t\t\t \n\t\t\t\t\t Ob entsprechende In\u0026shy;vest\u0026shy;ments aktiv und zusätzlich zu sozialen\n\t\t\t\t\t  und ökologischen Lösungen und Veränderungen beitragen, \n\t\t\t\t\t  wird im Rahmen der Erhebung separat ermittelt. \t\t\t\t\t\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
+ 								"de": "\n\n\t\t\t\t\t\u003cp style='text-align: justify; font-size: 130%'\u003e\n\t\t\t\t\t\tWillkommen zur Marktstudie der \u003ca target='_blank' href='https://bundesinitiative-impact-investing.de/'\u003eBundesinitiative Impact Investing (BIII)\u003c/a\u003e\n\t\t\t\t\t\t im Auftrag der AIR GmbH \n\t\t\t\t\t\t  –  technische Ausführung durch das \u003ca  target='_blank' href='https://zew.de/'\u003eZEW Mannheim\u003c/a\u003e\t\t\t\t\t\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003cp style='text-align: justify;'\u003e\n\t\t\t\t\tIm Rahmen dieser Erhebung nutzen wir bewusst eine breite Definition\n\t\t\t\t\t von Impact In\u0026shy;vest\u0026shy;ments. \n\t\t\t\t\t \n\t\t\t\t\t Diese spiegelt das Verständnis des Global Impact Investing Networks (GIIN) wider. \n\t\t\t\t\t \n\t\t\t\t\t Demnach sind Impact In\u0026shy;vest\u0026shy;ments \"Investitionen, die mit der Absicht getätigt werden, \n\t\t\t\t\t neben einer finanziellen Rendite auch eine pos\u0026shy;itive, \n\t\t\t\t\t messbare soziale und ökologische Wirkung zu erzielen\" (GIIN, 2017). \n\t\t\t\t\t \n\t\t\t\t\t Auch in akademischen Studien wird ähnlich argumentiert. \n\t\t\t\t\t \n\t\t\t\t\t Busch et al. (2021) bezeichnen Impact bezogene In\u0026shy;vest\u0026shy;ments \n\t\t\t\t\t als \"Investitionen, die sich auf Veränderungen in der realen Welt \n\t\t\t\t\t im Hinblick auf die Lösung sozialer Probleme und/oder die Milderung \n\t\t\t\t\t ökologischer Schäden konzentrieren\". \n\t\t\t\t\t \n\t\t\t\t\t Ob entsprechende In\u0026shy;vest\u0026shy;ments aktiv und zusätzlich zu sozialen\n\t\t\t\t\t  und ökologischen Lösungen und Veränderungen beitragen, \n\t\t\t\t\t  wird im Rahmen der Erhebung separat ermittelt. \t\t\t\t\t\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -948,14 +948,14 @@
  		},
  		{
  			"label": {
- 				"de": "Ihre Entscheidung zu Impact Investing"
+ 				"de": "Ihre grundsätzliche Position zu Impact Investing"
  			},
  			"description": {
  				"de": "",
  				"en": ""
  			},
  			"short": {
- 				"de": "Entscheidung"
+ 				"de": "Grundposition"
  			},
  			"style": {
  				"desktop": {
@@ -1362,7 +1362,7 @@
  				"en": ""
  			},
  			"short": {
- 				"de": "II Now"
+ 				"de": "II Now - 1"
  			},
  			"navigation_condition": "BIIINow",
  			"style": {
@@ -1551,6 +1551,254 @@
  							"col_span": 1,
  							"col_span_label": 6,
  							"col_span_control": 2
+ 						}
+ 					]
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "Ihre Impact Investing Ansätze"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"short": {
+ 				"de": "II Now - 2"
+ 			},
+ 			"navigation_condition": "BIIINow",
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "42rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Im folgenden Teil wollen wir einen Überblick über Ihr Verständnis und Ihre Umsetzung von Impact Investing erfassen."
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003e7.\u003c/b\u003e \u0026nbsp;\tWas sind die Beweggründe da\u0026shy;für, dass Sie im Impact Investing tätig sind/ wurden?"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "q7_ethics",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "Werte und ethische Überzeugungen"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 6,
+ 							"col_span_control": 3
+ 						},
+ 						{
+ 							"name": "q7_demand",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "Kundennachfrage"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 6,
+ 							"col_span_control": 3
+ 						},
+ 						{
+ 							"name": "q7_business_growth",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "Wirt\u0026shy;schaft\u0026shy;liche Motive (Impact Investing ist ein wich\u0026shy;tiges neues Geschäftsfeld)"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 6,
+ 							"col_span_control": 3
+ 						},
+ 						{
+ 							"name": "q7_risk_reduction",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "Minimierung und Man\u0026shy;age\u0026shy;ment von Risiken"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 6,
+ 							"col_span_control": 3
+ 						},
+ 						{
+ 							"name": "q7_ecology",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "Lösung drängender gesellschaftlicher oder ökologischer Probleme"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 6,
+ 							"col_span_control": 3
+ 						},
+ 						{
+ 							"name": "q7_damage_control",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "Um den sozialen und/oder ökologischen Schaden unserer In\u0026shy;vest\u0026shy;ments zu minimieren"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 6,
+ 							"col_span_control": 3
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003e8.\u003c/b\u003e \u0026nbsp;\tWelche finanziellen Ziele verfolgen Sie mit Ihren Impact In\u0026shy;vest\u0026shy;ment?"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "q8",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Über marktübliche risikoadjustierte Rendite"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "over_market_avg",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q8",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Marktübliche risikoadjustierte Rendite"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "equal_market_avg",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q8",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Unter marktübliche risikoadjustierte Rendite"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "below_market_avg",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q8",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Neg\u0026shy;ative Rendite"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "negative",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						}
  					]
  				}
@@ -1853,7 +2101,7 @@
  							"accesskey": "n",
  							"col_span": 1,
  							"col_span_control": 1,
- 							"response": "5",
+ 							"response": "6",
  							"style_control": {
  								"desktop": {
  									"grid_container_style": {},

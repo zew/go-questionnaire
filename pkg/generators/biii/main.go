@@ -412,7 +412,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				inp.Label = trl.S{"de": "<b>6.</b> &nbsp;	Welches Investitionsvolumen (Assets under Management, Kreditsumme, investiertes Kapital) verzeichnet Ihre Organisation <u>insgesamt</u>?"}
+				inp.Label = trl.S{"de": "<b>6.</b> &nbsp;	Welches Investitionsvolumen (Assets under Management, Kreditsumme, investiertes Kapital) verzeichnet Ihre Organisation <i>insgesamt</i>?"}
 				inp.ColSpan = gr.Cols
 			}
 			for idx, label := range labels {
@@ -422,15 +422,19 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.Label = label
 
 				inp.ColSpan = 1
-				inp.ColSpanLabel = 6
-				inp.ColSpanControl = 2
+				inp.ColSpanLabel = 5
+				inp.ColSpanControl = 3
 				inp.Min = 0
 				inp.Max = math.MaxFloat64
 				inp.Step = 1000
 				inp.Step = 1
-				inp.MaxChars = 18
+				inp.MaxChars = 15
 				inp.Suffix = trl.S{"de": "€"}
 				inp.Placeholder = trl.S{"de": "0.000.000"}
+
+				inp.Style = css.NewStylesResponsive(inp.Style)
+				inp.Style.Desktop.StyleBox.Margin = "0 0 0 2.4rem"
+
 			}
 		}
 
@@ -487,12 +491,15 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				rad.Name = fmt.Sprintf("q7_%v", subName[idx])
 
 				rad.ColSpan = 1
-				rad.ColSpanLabel = 6
-				rad.ColSpanControl = 3
+				rad.ColSpanLabel = 1
+				rad.ColSpanControl = 6
 
 				rad.Label = label
 
-				// rad.ControlFirst()
+				rad.Style = css.NewStylesResponsive(rad.Style)
+				// rad.Style.Desktop.StyleBox.Margin = "0 0 0 2.4rem"
+
+				rad.ControlFirst()
 			}
 		}
 		// gr2

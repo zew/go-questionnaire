@@ -186,6 +186,7 @@ func (fragm *staticPrefixT) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	siteName := cfg.Get().AppMnemonic
 	if q, ok, _ := qst.FromSession(w, r); ok {
 		siteName, _ = SiteCore(q.Survey.Type)
+		// log.Printf("Markdown handler: derived site from questionnaire in session: %v", siteName)
 	}
 
 	if isMarkdown {
@@ -224,6 +225,7 @@ func (fragm *staticPrefixT) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		}
 
 		mp := map[string]interface{}{
+			"Site":      siteName,
 			"HTMLTitle": HTMLTitle,
 			"Content":   w1.String(),
 			"Q": &qst.QuestionnaireT{
@@ -271,6 +273,8 @@ func (fragm *staticPrefixT) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 //
 // Markdown files are converted to HTML;
 // needs session to differentiate files by language setting
+//
+// the actual handler is ServeDoc() below
 func NewDocServer(docPrefix string) {
 
 	if !strings.HasPrefix(docPrefix, "/") {
@@ -281,10 +285,6 @@ func NewDocServer(docPrefix string) {
 	}
 
 	packageDocPrefix = staticPrefixT(docPrefix)
-
-	// mux.Handle(cfg.Pref(docPrefix), &packageDocPrefix) // now via ServeMarkdown()
-	// mux.Handle(cfg.PrefTS(docPrefix), &packageDocPrefix) // now via ServeMarkdown()
-
 }
 
 // ServeDoc serves markdown and other content in app-prefix/doc/

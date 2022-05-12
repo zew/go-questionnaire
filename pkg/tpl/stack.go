@@ -106,6 +106,7 @@ type hieraT struct {
 func (hr *hieraT) step(tplName string) {
 	wTemp := &strings.Builder{}
 	// todo - tplName inside bundle
+	delete(hr.binding, "CSSSite") // remove, to prevent fallback to default CSS
 	Exec(wTemp, hr.req, hr.binding, tplName)
 	hr.binding["Content"] = wTemp.String()
 }

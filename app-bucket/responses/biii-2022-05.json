@@ -17,7 +17,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "f37f4fa8f925053bd053a126ab4ce298d9e7098bfa8adeda45761a0e97aba0f2",
+ 	"md_5": "9052acef3bb0c27433cd57c524edd11b7f0f37d4e5c81c718735e2837f032ce6",
  	"lang_codes": [
  		"de"
  	],
@@ -1490,7 +1490,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e6.\u003c/b\u003e \u0026nbsp;\tWelches Investitionsvolumen (Assets under Man\u0026shy;age\u0026shy;ment, Kreditsumme, investiertes Kapital) verzeichnet Ihre Organisation \u003cu\u003einsge\u0026shy;samt\u003c/u\u003e?"
+ 								"de": "\u003cb\u003e6.\u003c/b\u003e \u0026nbsp;\tWelches Investitionsvolumen (Assets under Man\u0026shy;age\u0026shy;ment, Kreditsumme, investiertes Kapital) verzeichnet Ihre Organisation \u003ci\u003einsge\u0026shy;samt\u003c/i\u003e?"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -1498,7 +1498,7 @@
  						{
  							"name": "q6_impact",
  							"type": "number",
- 							"max_chars": 18,
+ 							"max_chars": 15,
  							"step": 1,
  							"max": 1.7976931348623157e+308,
  							"placeholder": {
@@ -1511,13 +1511,29 @@
  								"de": "€"
  							},
  							"col_span": 1,
- 							"col_span_label": 6,
- 							"col_span_control": 2
+ 							"col_span_label": 5,
+ 							"col_span_control": 3,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 2.4rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "q6_other",
  							"type": "number",
- 							"max_chars": 18,
+ 							"max_chars": 15,
  							"step": 1,
  							"max": 1.7976931348623157e+308,
  							"placeholder": {
@@ -1530,13 +1546,29 @@
  								"de": "€"
  							},
  							"col_span": 1,
- 							"col_span_label": 6,
- 							"col_span_control": 2
+ 							"col_span_label": 5,
+ 							"col_span_control": 3,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 2.4rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "q6_conventional",
  							"type": "number",
- 							"max_chars": 18,
+ 							"max_chars": 15,
  							"step": 1,
  							"max": 1.7976931348623157e+308,
  							"placeholder": {
@@ -1549,8 +1581,24 @@
  								"de": "€"
  							},
  							"col_span": 1,
- 							"col_span_label": 6,
- 							"col_span_control": 2
+ 							"col_span_label": 5,
+ 							"col_span_control": 3,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 2.4rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						}
  					]
  				}
@@ -1621,8 +1669,39 @@
  								"de": "Werte und ethische Überzeugungen"
  							},
  							"col_span": 1,
- 							"col_span_label": 6,
- 							"col_span_control": 3
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "q7_demand",
@@ -1631,8 +1710,39 @@
  								"de": "Kundennachfrage"
  							},
  							"col_span": 1,
- 							"col_span_label": 6,
- 							"col_span_control": 3
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "q7_business_growth",
@@ -1641,8 +1751,39 @@
  								"de": "Wirt\u0026shy;schaft\u0026shy;liche Motive (Impact Investing ist ein wich\u0026shy;tiges neues Geschäftsfeld)"
  							},
  							"col_span": 1,
- 							"col_span_label": 6,
- 							"col_span_control": 3
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "q7_risk_reduction",
@@ -1651,8 +1792,39 @@
  								"de": "Minimierung und Man\u0026shy;age\u0026shy;ment von Risiken"
  							},
  							"col_span": 1,
- 							"col_span_label": 6,
- 							"col_span_control": 3
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "q7_ecology",
@@ -1661,8 +1833,39 @@
  								"de": "Lösung drängender gesellschaftlicher oder ökologischer Probleme"
  							},
  							"col_span": 1,
- 							"col_span_label": 6,
- 							"col_span_control": 3
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "q7_damage_control",
@@ -1671,8 +1874,39 @@
  								"de": "Um den sozialen und/oder ökologischen Schaden unserer In\u0026shy;vest\u0026shy;ments zu minimieren"
  							},
  							"col_span": 1,
- 							"col_span_label": 6,
- 							"col_span_control": 3
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						}
  					]
  				},

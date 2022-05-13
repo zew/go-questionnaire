@@ -433,7 +433,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.Placeholder = trl.S{"de": "0.000.000"}
 
 				inp.Style = css.NewStylesResponsive(inp.Style)
-				inp.Style.Desktop.StyleBox.Margin = "0 0 0 2.4rem"
+				inp.Style.Desktop.StyleBox.Margin = "0 0 0 2.5rem"
 
 			}
 		}
@@ -538,6 +538,469 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 				rad.ControlFirst()
 			}
+		}
+
+		// gr3
+		{
+			labels := []trl.S{
+				{"de": "Berichterstattung über Ihre Impact Investments"},
+				{"de": "Technische Unterstützung, Vernetzung etc."},
+				{"de": "Aktive Mitwirkung durch einen Sitz im Aufsichtsrat"},
+				{"de": "Stimmrecht oder Proxy Voting"},
+				{"de": "Aktiver Dialog mit Unternehmen"},
+				{"de": "Bereitstellung von Kapital zu günstigen Konditionen (concessionary capital)"},
+				{"de": "Unterstützung zur Entwicklung neuer Märkte"},
+			}
+			subName := []string{
+				"reporting",
+				"tech_support",
+				"board_member",
+				"proxy_voting",
+				"dialogue",
+				"capital_provision",
+				"market_development",
+			}
+			gr := page.AddGroup()
+			gr.Cols = 1
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{"de": "<b>9.</b> &nbsp;	Welche Einflussmöglichkeiten nutzen Sie als Impact Investor?"}
+				inp.ColSpan = gr.Cols
+			}
+			for idx, label := range labels {
+				rad := gr.AddInput()
+				rad.Type = "checkbox"
+				rad.Name = fmt.Sprintf("q9_%v", subName[idx])
+
+				rad.ColSpan = 1
+				rad.ColSpanLabel = 1
+				rad.ColSpanControl = 6
+
+				rad.Label = label
+
+				rad.Style = css.NewStylesResponsive(rad.Style)
+				// rad.Style.Desktop.StyleBox.Margin = "0 0 0 2.4rem"
+
+				rad.ControlFirst()
+			}
+			{
+				inp := gr.AddInput()
+				inp.Type = "text"
+				inp.Name = "q9other"
+				inp.MaxChars = 20
+				inp.Label = trl.S{"de": "Weitere, bitte nennen"}
+				inp.ColSpan = gr.Cols
+				inp.ColSpanLabel = 2
+				inp.ColSpanControl = 3
+				inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
+				inp.StyleLbl.Desktop.StyleBox.Padding = "0 0 0 3.4rem"
+
+				inp.Style = css.NewStylesResponsive(inp.Style)
+				inp.Style.Desktop.StyleBox.Margin = "1.2rem 0 0 0"
+			}
+		}
+
+	}
+	// page 3
+	{
+		page := q.AddPage()
+		page.Short = trl.S{"de": "II Now - 3"}
+		page.Label = trl.S{"de": ""}
+		page.NavigationCondition = "BIIINow"
+		page.WidthMax("42rem")
+
+		//
+		//
+		// gr0
+		{
+			gr := page.AddGroup()
+			gr.Cols = 35
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{"de": `
+					
+					<br>
+
+					<p style='text-align: justify;'>
+					<b>10.</b> &nbsp;	
+					<b>
+					Welche Anlagestile verfolgen Sie für Ihre Impact Investments? 
+					Bitte tragen Sie ungefähre anteilige Investitionsvolumina ein. 
+					</b>
+
+					&nbsp; 
+					<br>
+
+					Der Ausgangspunkt für die folgende Frage bezieht sich auf die GIIN (2017) Definition: 
+					"Impact Investments sind Investitionen, die mit der Absicht getätigt werden, 
+					neben einer finanziellen Rendite auch eine positive, 
+					messbare soziale und ökologische Wirkung zu erzielen" (GIIN, 2017). 
+					
+					Tragen Sie bitte ausgehend von dieser breiten Definition 
+					die entsprechenden Investitionsvolumina ein. 
+					
+					Wichtig dabei ist, dass jedes Volumen <i>nur einmalig eingetragen</i> wird 
+					und sich somit in der Summe wieder 100% ergeben.
+					</p>
+					<br>
+				`}
+				inp.ColSpan = gr.Cols
+			}
+
+			// 10a
+			{
+				inp := gr.AddInput()
+				inp.Type = "number"
+				inp.Name = fmt.Sprintf("q10a")
+				inp.Label = trl.S{"de": `
+					<b>A)</b> &nbsp; Kapitalerhöhungen / -zuführungen (z.B. IPO, PE Investment, Kredite etc.), 
+					die zur Generierung eines zusätzlichen Impacts führen
+				`}
+
+				inp.ColSpan = gr.Cols
+				inp.ColSpanLabel = 5
+				inp.ColSpanControl = 2
+				inp.Min = 0
+				inp.Max = math.MaxFloat64
+				inp.Step = 1000
+				inp.Step = 1
+				inp.MaxChars = 15
+				inp.Suffix = trl.S{"de": "€"}
+				inp.Placeholder = trl.S{"de": "0.000.000"}
+
+				inp.ControlTop()
+				inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
+				inp.StyleLbl.Desktop.StyleBox.Padding = "0 0.8rem 0 0 "
+
+			}
+			{
+				inp := gr.AddInput()
+				inp.Type = "number"
+				inp.Name = fmt.Sprintf("q10a_pct")
+				inp.Label = trl.S{"de": `
+					Der hierdurch erzeugte, realweltliche Impact 
+					(sozial und/oder ökologisch) wird gemessen und dokumentiert (Outcome Ebene)
+				`}
+
+				inp.ColSpan = gr.Cols
+				inp.ColSpanLabel = 16
+				inp.ColSpanControl = 7
+				inp.Min = 0
+				inp.Max = 100
+				inp.Step = 1000
+				inp.Step = 0.1
+				inp.MaxChars = 5
+				inp.Suffix = trl.S{"de": "% Anteil"}
+				inp.Placeholder = trl.S{"de": "00"}
+
+				inp.ControlTop()
+				inp.Style = css.NewStylesResponsive(inp.Style)
+				inp.Style.Desktop.StyleBox.Margin = "-0.5rem 0 1.5rem 2.4rem"
+
+				inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
+				inp.StyleLbl.Desktop.StyleBox.Padding = "0 0.8rem 0 0 "
+
+			}
+
+			// 10b
+			{
+				inp := gr.AddInput()
+				inp.Type = "number"
+				inp.Name = fmt.Sprintf("q10b")
+				inp.Label = trl.S{"de": `
+					<b>B)</b> &nbsp; 
+					Andere (über A hinausgehende) Investitionen in Investees mit klaren Impact Zielen
+					 (z.B. Unternehmen bei denen Impact den Kern des Geschäftsmodells 
+						bildet oder Unternehmen mit Science-based Targets)
+				`}
+
+				inp.ColSpan = gr.Cols
+				inp.ColSpanLabel = 5
+				inp.ColSpanControl = 2
+				inp.Min = 0
+				inp.Max = math.MaxFloat64
+				inp.Step = 1000
+				inp.Step = 1
+				inp.MaxChars = 15
+				inp.Suffix = trl.S{"de": "€"}
+				inp.Placeholder = trl.S{"de": "0.000.000"}
+
+				inp.ControlTop()
+				inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
+				inp.StyleLbl.Desktop.StyleBox.Padding = "0 0.8rem 0 0 "
+
+			}
+			{
+				inp := gr.AddInput()
+				inp.Type = "number"
+				inp.Name = fmt.Sprintf("q10b_pct")
+				inp.Label = trl.S{"de": `
+					Der hierdurch erzeugte, realweltliche Impact (sozial und/oder ökologisch) 
+					wird gemessen und dokumentiert (Outcome Ebene)					
+				`}
+
+				inp.ColSpan = gr.Cols
+				inp.ColSpanLabel = 16
+				inp.ColSpanControl = 7
+				inp.Min = 0
+				inp.Max = 100
+				inp.Step = 1000
+				inp.Step = 0.1
+				inp.MaxChars = 5
+				inp.Suffix = trl.S{"de": "% Anteil"}
+				inp.Placeholder = trl.S{"de": "00"}
+
+				inp.ControlTop()
+				inp.Style = css.NewStylesResponsive(inp.Style)
+				inp.Style.Desktop.StyleBox.Margin = "-0.5rem 0 1.5rem 2.4rem"
+
+				inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
+				inp.StyleLbl.Desktop.StyleBox.Padding = "0 0.8rem 0 0 "
+
+			}
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{"de": `
+					<b>C)</b> &nbsp; 
+					Alle weiteren (über A und B hinaus gehenden) Investitionen und Aktien
+				`}
+				inp.ColSpan = gr.Cols
+			}
+
+			// 10c1, 10c2
+			{
+				inp := gr.AddInput()
+				inp.Type = "number"
+				inp.Name = fmt.Sprintf("q10c1")
+				inp.Label = trl.S{"de": `
+					<!-- <b>C1)</b> &nbsp;  -->
+					Für die eine strategische Engagement Policy existiert (z.B. aktiver Dialog mit den Investees)
+				`}
+
+				inp.ColSpan = gr.Cols
+				inp.ColSpanLabel = 5
+				inp.ColSpanControl = 2
+				inp.Min = 0
+				inp.Max = math.MaxFloat64
+				inp.Step = 1000
+				inp.Step = 1
+				inp.MaxChars = 15
+				inp.Suffix = trl.S{"de": "€"}
+				inp.Placeholder = trl.S{"de": "0.000.000"}
+
+				inp.ControlTop()
+				inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
+				inp.StyleLbl.Desktop.StyleBox.Padding = "0 0.8rem 0 0 "
+
+			}
+			{
+				inp := gr.AddInput()
+				inp.Type = "number"
+				inp.Name = fmt.Sprintf("q10c1_pct")
+				inp.Label = trl.S{"de": `
+					Investitionen für die der transformative Impact der Engagement Policy dokumentiert wird
+				`}
+
+				inp.ColSpan = gr.Cols
+				inp.ColSpanLabel = 16
+				inp.ColSpanControl = 7
+				inp.Min = 0
+				inp.Max = 100
+				inp.Step = 1000
+				inp.Step = 0.1
+				inp.MaxChars = 5
+				inp.Suffix = trl.S{"de": "% Anteil"}
+				inp.Placeholder = trl.S{"de": "00"}
+
+				inp.ControlTop()
+				inp.Style = css.NewStylesResponsive(inp.Style)
+				inp.Style.Desktop.StyleBox.Margin = "-0.5rem 0 0.2rem 2.4rem"
+
+				inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
+				inp.StyleLbl.Desktop.StyleBox.Padding = "0 0.8rem 0 0 "
+
+			}
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "number"
+				inp.Name = fmt.Sprintf("q10c2")
+				inp.Label = trl.S{"de": `
+					<!-- <b>C2)</b> &nbsp;  -->
+					Für die eine strategische Voting Policy (z.B. Ausübung von Stimmrechten) existiert
+				`}
+
+				inp.ColSpan = gr.Cols
+				inp.ColSpanLabel = 5
+				inp.ColSpanControl = 2
+				inp.Min = 0
+				inp.Max = math.MaxFloat64
+				inp.Step = 1000
+				inp.Step = 1
+				inp.MaxChars = 15
+				inp.Suffix = trl.S{"de": "€"}
+				inp.Placeholder = trl.S{"de": "0.000.000"}
+
+				inp.ControlTop()
+				inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
+				inp.StyleLbl.Desktop.StyleBox.Padding = "0 0.8rem 0 0 "
+
+			}
+			{
+				inp := gr.AddInput()
+				inp.Type = "number"
+				inp.Name = fmt.Sprintf("q10d1_pct")
+				inp.Label = trl.S{"de": `
+					Aktien für die der transformative Impact der Voting Policy dokumentiert wird
+				`}
+
+				inp.ColSpan = gr.Cols
+				inp.ColSpanLabel = 16
+				inp.ColSpanControl = 7
+				inp.Min = 0
+				inp.Max = 100
+				inp.Step = 1000
+				inp.Step = 0.1
+				inp.MaxChars = 5
+				inp.Suffix = trl.S{"de": "% Anteil"}
+				inp.Placeholder = trl.S{"de": "00"}
+
+				inp.ControlTop()
+				inp.Style = css.NewStylesResponsive(inp.Style)
+				inp.Style.Desktop.StyleBox.Margin = "-0.5rem 0 1.5rem 2.4rem"
+
+				inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
+				inp.StyleLbl.Desktop.StyleBox.Padding = "0 0.8rem 0 0 "
+
+			}
+
+			// 10d
+			{
+				inp := gr.AddInput()
+				inp.Type = "number"
+				inp.Name = fmt.Sprintf("q10d")
+				inp.Label = trl.S{"de": `
+					<b>D)</b> &nbsp; 
+					Alle weiteren (über A, B und C hinaus gehenden) ESG gemanagten Investitionen (z.B. Ausschlüsse / Best-in-class Ansätze / ESG Integration etc)
+				`}
+
+				inp.ColSpan = gr.Cols
+				inp.ColSpanLabel = 5
+				inp.ColSpanControl = 2
+				inp.Min = 0
+				inp.Max = math.MaxFloat64
+				inp.Step = 1000
+				inp.Step = 1
+				inp.MaxChars = 15
+				inp.Suffix = trl.S{"de": "€"}
+				inp.Placeholder = trl.S{"de": "0.000.000"}
+
+				inp.ControlTop()
+				inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
+				inp.StyleLbl.Desktop.StyleBox.Padding = "0 0.8rem 0 0 "
+
+			}
+			{
+				inp := gr.AddInput()
+				inp.Type = "number"
+				inp.Name = fmt.Sprintf("q10d_pct")
+				inp.Label = trl.S{"de": `
+					Investitionen für die die Impact Performance mit einem Benchmark-Vergleich oder Anhand von SDG Beiträgen dargestellt wird (Output Ebene)
+				`}
+
+				inp.ColSpan = gr.Cols
+				inp.ColSpanLabel = 16
+				inp.ColSpanControl = 7
+				inp.Min = 0
+				inp.Max = 100
+				inp.Step = 1000
+				inp.Step = 0.1
+				inp.MaxChars = 5
+				inp.Suffix = trl.S{"de": "% Anteil"}
+				inp.Placeholder = trl.S{"de": "00"}
+
+				inp.ControlTop()
+				inp.Style = css.NewStylesResponsive(inp.Style)
+				inp.Style.Desktop.StyleBox.Margin = "-0.5rem 0 1.5rem 2.4rem"
+
+				inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
+				inp.StyleLbl.Desktop.StyleBox.Padding = "0 0.8rem 0 0 "
+
+			}
+
+			// 10e
+			{
+				inp := gr.AddInput()
+				inp.Type = "text"
+				inp.Name = "q10e_other"
+				inp.MaxChars = 20
+				inp.Label = trl.S{"de": `
+					<b>E)</b> &nbsp; 
+					Weitere (Bitte nennen)
+				`}
+				inp.ColSpan = 5*5 - 1
+				inp.ColSpanLabel = 1.9
+				inp.ColSpanControl = 2.1
+
+				inp.ControlTop()
+				inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
+				inp.StyleLbl.Desktop.StyleBox.Padding = "0 0.8rem 0 0 "
+
+			}
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "number"
+				inp.Name = fmt.Sprintf("q10e")
+
+				inp.ColSpan = 2 * 5
+				inp.ColSpanLabel = 0
+				inp.ColSpanControl = 2
+				inp.Min = 0
+				inp.Max = math.MaxFloat64
+				inp.Step = 1000
+				inp.Step = 1
+				inp.MaxChars = 15
+				inp.Suffix = trl.S{"de": "€"}
+				inp.Placeholder = trl.S{"de": "0.000.000"}
+
+				inp.ControlTop()
+				inp.StyleCtl = css.NewStylesResponsive(inp.StyleCtl)
+				inp.StyleCtl.Desktop.StyleBox.Padding = "0 0 0 0.9rem"
+
+			}
+			{
+				inp := gr.AddInput()
+				inp.Type = "number"
+				inp.Name = fmt.Sprintf("q10e_pct")
+				inp.Label = trl.S{"de": `
+					Impact relevante Informationen werden gemessen und dokumentiert					
+				`}
+
+				inp.ColSpan = gr.Cols
+				inp.ColSpanLabel = 16
+				inp.ColSpanControl = 7
+				inp.Min = 0
+				inp.Max = 100
+				inp.Step = 1000
+				inp.Step = 0.1
+				inp.MaxChars = 5
+				inp.Suffix = trl.S{"de": "% Anteil"}
+				inp.Placeholder = trl.S{"de": "00"}
+
+				inp.ControlTop()
+				inp.Style = css.NewStylesResponsive(inp.Style)
+				inp.Style.Desktop.StyleBox.Margin = "-0.5rem 0 1.5rem 2.4rem"
+
+				inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
+				inp.StyleLbl.Desktop.StyleBox.Padding = "0 0.8rem 0 0"
+
+			}
+
 		}
 
 	}

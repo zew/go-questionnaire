@@ -17,7 +17,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "9052acef3bb0c27433cd57c524edd11b7f0f37d4e5c81c718735e2837f032ce6",
+ 	"md_5": "3721ca705f2f79b4b15a0f352aff9aa9db142c14f9c37eb0ea2282ef028ed5e6",
  	"lang_codes": [
  		"de"
  	],
@@ -1517,7 +1517,7 @@
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {
- 										"margin": "0 0 0 2.4rem"
+ 										"margin": "0 0 0 2.5rem"
  									},
  									"grid_item_style": {},
  									"text_style": {}
@@ -1552,7 +1552,7 @@
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {
- 										"margin": "0 0 0 2.4rem"
+ 										"margin": "0 0 0 2.5rem"
  									},
  									"grid_item_style": {},
  									"text_style": {}
@@ -1587,7 +1587,7 @@
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {
- 										"margin": "0 0 0 2.4rem"
+ 										"margin": "0 0 0 2.5rem"
  									},
  									"grid_item_style": {},
  									"text_style": {}
@@ -2035,6 +2035,1139 @@
  							}
  						}
  					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003e9.\u003c/b\u003e \u0026nbsp;\tWelche Ein\u0026shy;flussmöglichkeiten nutzen Sie als Impact Investor?"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "q9_reporting",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "Berichterstattung über Ihre Impact In\u0026shy;vest\u0026shy;ments"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q9_tech_support",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "Technische Unterstützung, Vernetzung etc."
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q9_board_member",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "Aktive Mitwirkung durch einen Sitz im Aufsichtsrat"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q9_proxy_voting",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "Stimmrecht oder Proxy Voting"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q9_dialogue",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "Aktiver Dialog mit Un\u0026shy;ter\u0026shy;neh\u0026shy;men"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q9_capital_provision",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "Bereitstellung von Kapital zu günstigen Konditionen (concessionary capital)"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q9_market_development",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "Unterstützung zur Entwicklung neuer Märkte"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q9other",
+ 							"type": "text",
+ 							"max_chars": 20,
+ 							"label": {
+ 								"de": "Weitere, bitte nennen"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 2,
+ 							"col_span_control": 3,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "1.2rem 0 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0 0 3.4rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": ""
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"short": {
+ 				"de": "II Now - 3"
+ 			},
+ 			"navigation_condition": "BIIINow",
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "42rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 35,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\n\t\t\t\t\t\n\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\t\u003cp style='text-align: justify;'\u003e\n\t\t\t\t\t\u003cb\u003e10.\u003c/b\u003e \u0026nbsp;\t\n\t\t\t\t\t\u003cb\u003e\n\t\t\t\t\tWelche Anlagestile verfolgen Sie für Ihre Impact In\u0026shy;vest\u0026shy;ments? \n\t\t\t\t\tBitte tragen Sie ungefähre anteilige Investitionsvolumina ein. \n\t\t\t\t\t\u003c/b\u003e\n\n\t\t\t\t\t\u0026nbsp; \n\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\tDer Ausgangspunkt für die folgende Frage bezieht sich auf die GIIN (2017) Definition: \n\t\t\t\t\t\"Impact In\u0026shy;vest\u0026shy;ments sind Investitionen, die mit der Absicht getätigt werden, \n\t\t\t\t\tneben einer finanziellen Rendite auch eine pos\u0026shy;itive, \n\t\t\t\t\tmessbare soziale und ökologische Wirkung zu erzielen\" (GIIN, 2017). \n\t\t\t\t\t\n\t\t\t\t\tTragen Sie bitte ausgehend von dieser breiten Definition \n\t\t\t\t\tdie entsprechenden Investitionsvolumina ein. \n\t\t\t\t\t\n\t\t\t\t\tWich\u0026shy;tig dabei ist, dass jedes Volumen \u003ci\u003enur einmalig eingetragen\u003c/i\u003e wird \n\t\t\t\t\tund sich somit in der Summe wieder 100% ergeben.\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t"
+ 							},
+ 							"col_span": 35,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "q10a",
+ 							"type": "number",
+ 							"max_chars": 15,
+ 							"step": 1,
+ 							"max": 1.7976931348623157e+308,
+ 							"placeholder": {
+ 								"de": "0.000.000"
+ 							},
+ 							"label": {
+ 								"de": "\n\t\t\t\t\t\u003cb\u003eA)\u003c/b\u003e \u0026nbsp; Kapitalerhöhungen / -zuführungen (z.B. IPO, PE In\u0026shy;vest\u0026shy;ment, Kredite etc.), \n\t\t\t\t\tdie zur Generierung eines zusätzlichen Impacts führen\n\t\t\t\t"
+ 							},
+ 							"suffix": {
+ 								"de": "€"
+ 							},
+ 							"col_span": 35,
+ 							"col_span_label": 5,
+ 							"col_span_control": 2,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.8rem 0 0 "
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q10a_pct",
+ 							"type": "number",
+ 							"max_chars": 5,
+ 							"step": 0.1,
+ 							"max": 100,
+ 							"placeholder": {
+ 								"de": "00"
+ 							},
+ 							"label": {
+ 								"de": "\n\t\t\t\t\tDer hierdurch erzeugte, realweltliche Impact \n\t\t\t\t\t(sozial und/oder ökologisch) wird gemessen und dokumentiert (Outcome Ebene)\n\t\t\t\t"
+ 							},
+ 							"suffix": {
+ 								"de": "% Anteil"
+ 							},
+ 							"col_span": 35,
+ 							"col_span_label": 16,
+ 							"col_span_control": 7,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "-0.5rem 0 1.5rem 2.4rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.8rem 0 0 "
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q10b",
+ 							"type": "number",
+ 							"max_chars": 15,
+ 							"step": 1,
+ 							"max": 1.7976931348623157e+308,
+ 							"placeholder": {
+ 								"de": "0.000.000"
+ 							},
+ 							"label": {
+ 								"de": "\n\t\t\t\t\t\u003cb\u003eB)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tAndere (über A hinausgehende) Investitionen in Investees mit klaren Impact Zielen\n\t\t\t\t\t (z.B. Un\u0026shy;ter\u0026shy;neh\u0026shy;men bei denen Impact den Kern des Geschäftsmodells \n\t\t\t\t\t\tbildet oder Un\u0026shy;ter\u0026shy;neh\u0026shy;men mit Science-based Targets)\n\t\t\t\t"
+ 							},
+ 							"suffix": {
+ 								"de": "€"
+ 							},
+ 							"col_span": 35,
+ 							"col_span_label": 5,
+ 							"col_span_control": 2,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.8rem 0 0 "
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q10b_pct",
+ 							"type": "number",
+ 							"max_chars": 5,
+ 							"step": 0.1,
+ 							"max": 100,
+ 							"placeholder": {
+ 								"de": "00"
+ 							},
+ 							"label": {
+ 								"de": "\n\t\t\t\t\tDer hierdurch erzeugte, realweltliche Impact (sozial und/oder ökologisch) \n\t\t\t\t\twird gemessen und dokumentiert (Outcome Ebene)\t\t\t\t\t\n\t\t\t\t"
+ 							},
+ 							"suffix": {
+ 								"de": "% Anteil"
+ 							},
+ 							"col_span": 35,
+ 							"col_span_label": 16,
+ 							"col_span_control": 7,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "-0.5rem 0 1.5rem 2.4rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.8rem 0 0 "
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\n\t\t\t\t\t\u003cb\u003eC)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tAlle weiteren (über A und B hinaus gehenden) Investitionen und Aktien\n\t\t\t\t"
+ 							},
+ 							"col_span": 35,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "q10c1",
+ 							"type": "number",
+ 							"max_chars": 15,
+ 							"step": 1,
+ 							"max": 1.7976931348623157e+308,
+ 							"placeholder": {
+ 								"de": "0.000.000"
+ 							},
+ 							"label": {
+ 								"de": "\n\t\t\t\t\t\u003c!-- \u003cb\u003eC1)\u003c/b\u003e \u0026nbsp;  --\u003e\n\t\t\t\t\tFür die eine strategische Engagement Policy existiert (z.B. aktiver Dialog mit den Investees)\n\t\t\t\t"
+ 							},
+ 							"suffix": {
+ 								"de": "€"
+ 							},
+ 							"col_span": 35,
+ 							"col_span_label": 5,
+ 							"col_span_control": 2,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.8rem 0 0 "
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q10c1_pct",
+ 							"type": "number",
+ 							"max_chars": 5,
+ 							"step": 0.1,
+ 							"max": 100,
+ 							"placeholder": {
+ 								"de": "00"
+ 							},
+ 							"label": {
+ 								"de": "\n\t\t\t\t\tInvestitionen für die der transformative Impact der Engagement Policy dokumentiert wird\n\t\t\t\t"
+ 							},
+ 							"suffix": {
+ 								"de": "% Anteil"
+ 							},
+ 							"col_span": 35,
+ 							"col_span_label": 16,
+ 							"col_span_control": 7,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "-0.5rem 0 0.2rem 2.4rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.8rem 0 0 "
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q10c2",
+ 							"type": "number",
+ 							"max_chars": 15,
+ 							"step": 1,
+ 							"max": 1.7976931348623157e+308,
+ 							"placeholder": {
+ 								"de": "0.000.000"
+ 							},
+ 							"label": {
+ 								"de": "\n\t\t\t\t\t\u003c!-- \u003cb\u003eC2)\u003c/b\u003e \u0026nbsp;  --\u003e\n\t\t\t\t\tFür die eine strategische Voting Policy (z.B. Ausübung von Stimmrechten) existiert\n\t\t\t\t"
+ 							},
+ 							"suffix": {
+ 								"de": "€"
+ 							},
+ 							"col_span": 35,
+ 							"col_span_label": 5,
+ 							"col_span_control": 2,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.8rem 0 0 "
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q10d1_pct",
+ 							"type": "number",
+ 							"max_chars": 5,
+ 							"step": 0.1,
+ 							"max": 100,
+ 							"placeholder": {
+ 								"de": "00"
+ 							},
+ 							"label": {
+ 								"de": "\n\t\t\t\t\tAktien für die der transformative Impact der Voting Policy dokumentiert wird\n\t\t\t\t"
+ 							},
+ 							"suffix": {
+ 								"de": "% Anteil"
+ 							},
+ 							"col_span": 35,
+ 							"col_span_label": 16,
+ 							"col_span_control": 7,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "-0.5rem 0 1.5rem 2.4rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.8rem 0 0 "
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q10d",
+ 							"type": "number",
+ 							"max_chars": 15,
+ 							"step": 1,
+ 							"max": 1.7976931348623157e+308,
+ 							"placeholder": {
+ 								"de": "0.000.000"
+ 							},
+ 							"label": {
+ 								"de": "\n\t\t\t\t\t\u003cb\u003eD)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tAlle weiteren (über A, B und C hinaus gehenden) ESG gemanagten Investitionen (z.B. Ausschlüsse / Best-in-class Ansätze / ESG Integration etc)\n\t\t\t\t"
+ 							},
+ 							"suffix": {
+ 								"de": "€"
+ 							},
+ 							"col_span": 35,
+ 							"col_span_label": 5,
+ 							"col_span_control": 2,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.8rem 0 0 "
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q10d_pct",
+ 							"type": "number",
+ 							"max_chars": 5,
+ 							"step": 0.1,
+ 							"max": 100,
+ 							"placeholder": {
+ 								"de": "00"
+ 							},
+ 							"label": {
+ 								"de": "\n\t\t\t\t\tInvestitionen für die die Impact Performance mit einem Benchmark-Vergleich oder Anhand von SDG Beiträgen dargestellt wird (Output Ebene)\n\t\t\t\t"
+ 							},
+ 							"suffix": {
+ 								"de": "% Anteil"
+ 							},
+ 							"col_span": 35,
+ 							"col_span_label": 16,
+ 							"col_span_control": 7,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "-0.5rem 0 1.5rem 2.4rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.8rem 0 0 "
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q10other",
+ 							"type": "text",
+ 							"max_chars": 20,
+ 							"label": {
+ 								"de": "\n\t\t\t\t\t\u003cb\u003eE)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tWeitere (Bitte nennen)\n\t\t\t\t"
+ 							},
+ 							"col_span": 24,
+ 							"col_span_label": 1.9,
+ 							"col_span_control": 2.1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.8rem 0 0 "
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q10e",
+ 							"type": "number",
+ 							"max_chars": 15,
+ 							"step": 1,
+ 							"max": 1.7976931348623157e+308,
+ 							"placeholder": {
+ 								"de": "0.000.000"
+ 							},
+ 							"suffix": {
+ 								"de": "€"
+ 							},
+ 							"col_span": 10,
+ 							"col_span_control": 2,
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0 0 0.9rem"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q10e_pct",
+ 							"type": "number",
+ 							"max_chars": 5,
+ 							"step": 0.1,
+ 							"max": 100,
+ 							"placeholder": {
+ 								"de": "00"
+ 							},
+ 							"label": {
+ 								"de": "\n\t\t\t\t\tImpact relevante Informationen werden gemessen und dokumentiert\t\t\t\t\t\n\t\t\t\t"
+ 							},
+ 							"suffix": {
+ 								"de": "% Anteil"
+ 							},
+ 							"col_span": 35,
+ 							"col_span_label": 16,
+ 							"col_span_control": 7,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "-0.5rem 0 1.5rem 2.4rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.8rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
  				}
  			]
  		},
@@ -2335,7 +3468,7 @@
  							"accesskey": "n",
  							"col_span": 1,
  							"col_span_control": 1,
- 							"response": "6",
+ 							"response": "7",
  							"style_control": {
  								"desktop": {
  									"grid_container_style": {},

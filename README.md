@@ -121,8 +121,8 @@ on user input, inclusion of page-wise `JavaScript` files possible
 
 * `loadtest` performs 60 concurrent requests 1.41 seconds - on 2018 Lenovo Notebook.
 
-* Server self test on `travis-ci`; see build logs for details.  
-Since 2021, `travis-ci` is not working anymore.
+* Server self test via `codecov.io`; see build logs for details.  
+See `github` - `actions` - `workflow runs` for details.
 
 * The `transferrer` pulls in the responses from an internet server. Once inside your organization, the results are fed into any CSV or JSON reading application.
 
@@ -144,7 +144,6 @@ go get -u github.com/zew/go-questionnaire
 cd go-questionnaire
 mv config-example.json  config.json  # adapt to your purposes
 mv logins-example.json  logins.json  # dito
-touch ./templates/styles-quest-[survey].css # put your site's styles here
 go build
 ./go-questionnaire                   # under windows: go-questionnaire.exe
 ```
@@ -196,7 +195,7 @@ Each input has a span. Its label and form element each have a sub-span.
 `dynFuncT` and `CompositeFuncT` can be used to render real timy dynamic content
 and question blocks.
 
-## Create survey and logins
+## Create survey JSON file and login URLs
 
 If you have created your survey `myquest` you need to restart the application.
 
@@ -304,8 +303,8 @@ dev_appserver.py app.yaml
 Profiles are configured key-value sets who are copied into the logged-in user's attributes.  
   This way any number of user properties can be specified, while the login URL remains short or ultra short.
 
-* Package `main` serves questionnaires via http(s).  
-with automatic `Lets encrypt` certification.
+* Package `/cms/server` serves questionnaires via http(s).  
+with configurable `Lets encrypt` certification (auto self-renewal).
 
 * Directory `app-bucket/responses` stores indididual answers  
  (and initial questionnaire templates).

@@ -625,10 +625,11 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 					<p style='text-align: justify;'>
 					<b>10.</b> &nbsp;	
-					<b>
+					
 					Welche Anlagestile verfolgen Sie für Ihre Impact Investments? 
+					<br>
+					<br>
 					Bitte tragen Sie ungefähre anteilige Investitionsvolumina ein. 
-					</b>
 
 					&nbsp; 
 					<br>
@@ -689,7 +690,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.ColSpanControl = 7
 				inp.Min = 0
 				inp.Max = 100
-				inp.Step = 1000
 				inp.Step = 0.1
 				inp.MaxChars = 5
 				inp.Suffix = trl.S{"de": "% Anteil"}
@@ -746,7 +746,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.ColSpanControl = 7
 				inp.Min = 0
 				inp.Max = 100
-				inp.Step = 1000
 				inp.Step = 0.1
 				inp.MaxChars = 5
 				inp.Suffix = trl.S{"de": "% Anteil"}
@@ -810,7 +809,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.ColSpanControl = 7
 				inp.Min = 0
 				inp.Max = 100
-				inp.Step = 1000
 				inp.Step = 0.1
 				inp.MaxChars = 5
 				inp.Suffix = trl.S{"de": "% Anteil"}
@@ -863,7 +861,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.ColSpanControl = 7
 				inp.Min = 0
 				inp.Max = 100
-				inp.Step = 1000
 				inp.Step = 0.1
 				inp.MaxChars = 5
 				inp.Suffix = trl.S{"de": "% Anteil"}
@@ -917,7 +914,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.ColSpanControl = 7
 				inp.Min = 0
 				inp.Max = 100
-				inp.Step = 1000
 				inp.Step = 0.1
 				inp.MaxChars = 5
 				inp.Suffix = trl.S{"de": "% Anteil"}
@@ -986,7 +982,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.ColSpanControl = 7
 				inp.Min = 0
 				inp.Max = 100
-				inp.Step = 1000
 				inp.Step = 0.1
 				inp.MaxChars = 5
 				inp.Suffix = trl.S{"de": "% Anteil"}
@@ -1004,6 +999,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		}
 
 	}
+
+	page4Quest11(&q)
 
 	//
 	// branch "not now"
@@ -1063,10 +1060,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.ColSpan = gr.Cols
 				inp.ColSpanLabel = 2
 				inp.ColSpanControl = 3
-				// inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
-				// inp.StyleLbl.Desktop.StyleBox.Padding = "0 0 0 3.4rem"
-				// inp.Style = css.NewStylesResponsive(inp.Style)
-				// inp.Style.Desktop.StyleBox.Margin = "1.2rem 0 0 0"
 			}
 		}
 

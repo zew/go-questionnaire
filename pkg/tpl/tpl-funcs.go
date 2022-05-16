@@ -118,7 +118,11 @@ var fcNav = func(r *http.Request, q *qst.QuestionnaireT, SBookMarkURI string) te
 		}
 		cntr := 0
 		for i, lpP := range q.Pages {
+
 			if !q.IsInNavigation(i) {
+				continue
+			}
+			if lpP.SuppressInProgressbar {
 				continue
 			}
 

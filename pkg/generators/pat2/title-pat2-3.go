@@ -14,6 +14,8 @@ func TitlePat23(q *qst.QuestionnaireT) error {
 		page := q.AddPage()
 		page.Label = trl.S{"de": ""}
 		page.NoNavigation = true
+		page.SuppressProgressbar = true
+
 		page.WidthMax("36rem") // 60
 
 		//

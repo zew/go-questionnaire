@@ -29,10 +29,13 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	// page 0
 	{
 		page := q.AddPage()
+
 		page.Short = trl.S{"de": "Start"}
 		page.Label = trl.S{"de": ""}
-		// page.NoNavigation = true
 		page.WidthMax("42rem")
+
+		page.SuppressProgressbar = true
+		page.SuppressInProgressbar = true
 
 		// gr0
 		{
@@ -51,7 +54,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 						Willkommen zur Marktstudie der <a target='_blank' href='https://bundesinitiative-impact-investing.de/'>Bundesinitiative Impact Investing (BIII)</a>
 						und der <a target='_blank' href='https://www.wiso.uni-hamburg.de/fachbereich-sozoek/professuren/busch/04-team/busch-timo.html'>Universität Hamburg</a>
 						 im Auftrag der AIR GmbH 
-						  –  technische Ausführung durch das <a  target='_blank' href='https://zew.de/'>ZEW Mannheim</a>					
+						  –  Online Umsetzung durch das <a  target='_blank' href='https://zew.de/'>ZEW Mannheim</a>					
 					</p>
 
 					<p style='text-align: justify;'>
@@ -93,7 +96,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			gb := qst.NewGridBuilderRadios(
 				columnTemplate3,
 				roleOrFunctionQ1,
-				[]string{"q1_role"},
+				[]string{"q1"},
 				radioValsQ1,
 				[]trl.S{{"de": "<b>1.</b> &nbsp;	Sind Sie…?"}},
 			)
@@ -446,6 +449,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		page.Short = trl.S{"de": "II Now - 2"}
 		page.Label = trl.S{"de": "Ihre Impact Investing Ansätze"}
 		page.NavigationCondition = "BIIINow"
+		page.SuppressInProgressbar = true
 		page.WidthMax("42rem")
 
 		// gr0
@@ -603,7 +607,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		}
 
 	}
-	// page 3
+	// page 4
 	{
 		page := q.AddPage()
 		page.Short = trl.S{"de": "II Now - 3"}
@@ -1006,13 +1010,13 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	//
 	// branch "not now"
 	//
+	//
 	// page 2b-01 II no or later
 	{
 		page := q.AddPage()
 		page.Short = trl.S{"de": "II not or later"}
 		page.Label = trl.S{"de": ""}
 		page.NavigationCondition = "BIIILater"
-		// page.NoNavigation = true
 		page.WidthMax("42rem")
 
 		// gr0
@@ -1067,7 +1071,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	}
 
 	//
-	// page 7 - after seasonal
 	// Finish questionnaire?  - one before last page
 	{
 		page := q.AddPage()
@@ -1173,12 +1176,12 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 	}
 
-	// page 8 - after seasonal
 	// Report of results
 	{
 		page := q.AddPage()
 		page.Label = trl.S{"de": "Ihre Eingaben", "en": "Summary of results"}
 		page.NoNavigation = true
+		page.SuppressProgressbar = true
 		page.WidthMax("calc(100% - 1.2rem)")
 		page.WidthMax("40rem")
 		{

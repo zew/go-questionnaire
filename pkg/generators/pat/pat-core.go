@@ -51,6 +51,8 @@ func Title(q *qst.QuestionnaireT, isPOP bool, comprehendWarning bool) error {
 		page := q.AddPage()
 		page.Label = trl.S{"de": ""}
 		page.NoNavigation = true
+		page.SuppressProgressbar = true
+
 		page.WidthMax("36rem") // 60
 
 		//
@@ -904,6 +906,8 @@ func End(q *qst.QuestionnaireT, vE VariableElements) error {
 		page := q.AddPage()
 		page.Label = cfg.Get().Mp["end"]
 		page.NoNavigation = true
+		page.SuppressProgressbar = true
+
 		page.WidthMax("30rem")
 
 		{

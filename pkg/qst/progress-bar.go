@@ -44,6 +44,9 @@ func (q *QuestionnaireT) ProgressBar() string {
 		if !q.IsInNavigation(idx) {
 			continue
 		}
+		if q.Pages[idx].SuppressInProgressbar {
+			continue
+		}
 
 		completeOrActive := ""
 		if idx < q.CurrPage {

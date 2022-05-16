@@ -190,7 +190,7 @@ var presets = map[string]map[int]map[string]string{
 
 var skipPages = map[string]map[int]interface{}{
 	"biii": {
-		9: nil,
+		12: nil,
 	},
 }
 

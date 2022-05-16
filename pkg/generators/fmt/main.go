@@ -37,6 +37,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		page := q.AddPage()
 		page.Label = trl.S{"de": "Begrüßung", "en": "Greeting"}
 		page.NoNavigation = true
+		page.SuppressProgressbar = true
 		page.WidthMax("36rem")
 
 		// gr0
@@ -907,6 +908,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		page := q.AddPage()
 		page.Label = trl.S{"de": "Ihre Eingaben", "en": "Summary of results"}
 		page.NoNavigation = true
+		page.SuppressProgressbar = true
+
 		page.WidthMax("calc(100% - 1.2rem)")
 		page.WidthMax("40rem")
 		{

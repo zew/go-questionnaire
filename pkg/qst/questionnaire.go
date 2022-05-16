@@ -383,12 +383,35 @@ func (q QuestionnaireT) GroupHTMLTableBased(pageIdx, grpIdx int) string {
 
 // Type page contains groups with inputs
 type pageT struct {
-	Section             trl.S  `json:"section,omitempty"`              // extra strong before label in content - summary headline for multiple pages
-	Label               trl.S  `json:"label,omitempty"`                // headline, set to "" to prevent rendering
-	Desc                trl.S  `json:"description,omitempty"`          // abstract
-	Short               trl.S  `json:"short,omitempty"`                // sort version of section/label/description - in progress bar and navigation menu
-	NoNavigation        bool   `json:"no_navigation,omitempty"`        // page will not show up in progress bar
-	NavigationCondition string `json:"navigation_condition,omitempty"` // free func whether showing a page in navigation
+	Section trl.S `json:"section,omitempty"`     // extra strong before label in content - summary headline for multiple pages
+	Label   trl.S `json:"label,omitempty"`       // headline, set to "" to prevent rendering
+	Desc    trl.S `json:"description,omitempty"` // abstract
+	Short   trl.S `json:"short,omitempty"`       // sort version of section/label/description - in progress bar and navigation menu
+
+	// Navi control stuff
+	//
+	// SuppressProgressbar
+	// 		suppresses display *of* progress bar,
+	//
+	// NoNavigation
+	// 		suppresses button "back to page X" and "continue to page Y"
+	// 		suppresses display *in* progress bar,
+	// 		for introduction pages and closing pages, or other standalone pages
+	// 			back/continue buttons must be explicitly programmed, and set to next()/prev() or some page index
+	//
+	// NavigationCondition
+	// 		provides additional, dynamic conditions
+	// 		for exclusion of a page from navigation
+	//
+	// Both, NoNavigation and NavigationCondition,
+	// are evaluated in func IsInNavigation()
+	//
+	SuppressProgressbar bool   `json:"suppress_progressbar,omitempty"`
+	NoNavigation        bool   `json:"no_navigation,omitempty"`
+	NavigationCondition string `json:"navigation_condition,omitempty"` // see NoNavigation
+
+	// SuppressInProgressbar is a weak form of NoNavigation
+	SuppressInProgressbar bool `json:"suppress_in_progressbar,omitempty"`
 
 	navigationSequenceNum int // number in navigation order; dynamically computed in MainH()
 
@@ -1110,8 +1133,16 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 	return ret, nil
 }
 
+// SuppressProgressBar - dont show progress bar in current page;
+// while back/forth buttons may still be rendered
+// convenience func for templates;
+func (q *QuestionnaireT) SuppressProgressBar() bool {
+	return q.Pages[q.CurrPage].SuppressProgressbar
+}
+
 // IsInNavigation checks whether pageIdx is suitable
 // as next or previous page
+// and whether it should show up in progress bar
 func (q *QuestionnaireT) IsInNavigation(pageIdx int) bool {
 
 	if pageIdx < 0 || pageIdx > len(q.Pages)-1 {
@@ -1209,12 +1240,6 @@ func (q *QuestionnaireT) Next() int {
 func (q *QuestionnaireT) NextNaviNum() string {
 	pg, _ := q.nextInNavi()
 	return fmt.Sprintf("%v", q.Pages[pg].navigationSequenceNum)
-}
-
-// CurrPageInNavigation - is the current page
-// shown in navigation; convenience func for templates
-func (q *QuestionnaireT) CurrPageInNavigation() bool {
-	return !q.Pages[q.CurrPage].NoNavigation
 }
 
 // Compare compares page completion times and input responses.

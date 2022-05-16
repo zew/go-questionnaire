@@ -49,6 +49,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 					<p style='text-align: justify; font-size: 130%'>
 						Willkommen zur Marktstudie der <a target='_blank' href='https://bundesinitiative-impact-investing.de/'>Bundesinitiative Impact Investing (BIII)</a>
+						und der <a target='_blank' href='https://www.wiso.uni-hamburg.de/fachbereich-sozoek/professuren/busch/04-team/busch-timo.html'>Universität Hamburg</a>
 						 im Auftrag der AIR GmbH 
 						  –  technische Ausführung durch das <a  target='_blank' href='https://zew.de/'>ZEW Mannheim</a>					
 					</p>

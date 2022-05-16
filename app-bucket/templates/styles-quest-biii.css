@@ -73,3 +73,12 @@ nav {
         background-image: none;
     }
 }
+
+@media screen and (max-width: 800px) {
+    #q10e_other {
+        max-width: 8rem;
+    }
+    #q11_hybrid_explain {
+        max-width: 8rem;
+    }
+}

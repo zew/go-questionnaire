@@ -150,8 +150,10 @@ func page4Quest11(q *qst.QuestionnaireT) {
 			}
 
 		}
-	}
+	} // page 4
 
+	//
+	//
 	// page 5
 	{
 		page := q.AddPage()
@@ -198,7 +200,7 @@ func page4Quest11(q *qst.QuestionnaireT) {
 			{
 				gb := qst.NewGridBuilderRadios(
 					columnTemplateLocal,
-					oneToFiveNumbers,
+					oneToFiveVolume,
 					inpNames,
 					radioVals5,
 					q12Labels,
@@ -266,7 +268,7 @@ func page4Quest11(q *qst.QuestionnaireT) {
 				}
 
 				//
-				for idx := 0; idx < len(oneToFiveNumbers); idx++ {
+				for idx := 0; idx < len(oneToFiveVolume); idx++ {
 					rad := gr.AddInput()
 					rad.Type = "radio"
 
@@ -282,5 +284,338 @@ func page4Quest11(q *qst.QuestionnaireT) {
 
 		}
 
-	} // page4
+	} // page 5
+
+	// page 6
+	{
+		page := q.AddPage()
+		page.Short = trl.S{"de": "II Now - p6"}
+		page.Label = trl.S{"de": ""}
+		page.NavigationCondition = "BIIINow"
+		page.WidthMax("48rem")
+
+		//
+		//
+		//
+		// gr0
+		var columnTemplateLocal = []float32{
+			3.6, 1,
+			0.0, 1,
+			0.0, 1,
+			0.0, 1,
+			0.0, 1,
+		}
+
+		// for idx, assCl := range inputNamesAssetClassesChangeQ3 {
+		{
+
+			inpNames := []string{}
+			for _, nm := range q13inputNames {
+				inpNames = append(inpNames, "q13_"+nm)
+			}
+
+			{
+				gb := qst.NewGridBuilderRadios(
+					columnTemplateLocal,
+					oneToFiveImportance,
+					inpNames,
+					radioVals5,
+					q13Labels,
+				)
+
+				gb.MainLabel = trl.S{
+					"de": fmt.Sprintf(`
+						<b>13. </b> &nbsp;	
+						
+						Auf die Erreichung welcher Sustainable Development Goals (SDGs)/ Ziele für nachhaltige Entwicklung der UN arbeiten Sie mit Ihren Investitionen hin?					
+
+						<!--
+						<br>
+						<br>
+						(Mehrfachauswahl in der Reihfolge der Wichtigkeit möglich)
+						-->
+
+					`),
+				}
+
+				gr := page.AddGrid(gb)
+				gr.BottomVSpacers = 3
+			}
+
+		}
+	}
+
+	// page 7
+	{
+		page := q.AddPage()
+		page.Short = trl.S{"de": "II Now - p7"}
+		page.Label = trl.S{"de": ""}
+		page.NavigationCondition = "BIIINow"
+		page.WidthMax("48rem")
+
+		// gr1
+		{
+			labels := []trl.S{
+				{"de": "Weniger als 1 Monat"},
+				{"de": "1-6 Monate "},
+				{"de": "6-12 Monate"},
+				{"de": "< 2 Jahre"},
+				{"de": "2-4 Jahre"},
+				{"de": "4-6 Jahre"},
+				{"de": "6-8 Jahre"},
+				{"de": "8-10 Jahre"},
+				{"de": "10+ Jahre"},
+			}
+			radioValues := []string{
+				"under1month",
+				"months1to6",
+				"months6to12",
+				"under2yrs",
+				"years2to4",
+				"years4to6",
+				"years6to8",
+				"years8to10",
+				"over10years",
+			}
+			gr := page.AddGroup()
+			gr.Cols = 1
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{"de": `<b>14.</b> &nbsp;	
+					Wie lang ist die durchschnittliche Laufzeit Ihrer Investments?
+				`}
+				inp.ColSpan = gr.Cols
+			}
+			for idx, labl := range labels {
+				rad := gr.AddInput()
+				rad.Type = "radio"
+				rad.Name = "q14"
+				rad.ValueRadio = radioValues[idx]
+
+				rad.ColSpan = 1
+				rad.ColSpanLabel = 1
+				rad.ColSpanControl = 6
+
+				rad.Label = labl
+
+				rad.ControlFirst()
+			}
+		}
+
+		// gr2
+		{
+			labels := []trl.S{
+				{"de": "Unzureichende Managementkompetenz der Investees"},
+				{"de": "In der Komplexität des Geschäftsmodells "},
+				{"de": "Länder- und Währungsrisiken "},
+				{"de": "Liquiditäts- und Ausstiegsrisiko "},
+				{"de": "Makroökonomische Risiken"},
+			}
+			subName := []string{
+				"competence_lack",
+				"complexity",
+				"country_currency",
+				"liquidy_liquidation",
+				"macro",
+			}
+			gr := page.AddGroup()
+			gr.Cols = 1
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{"de": "<b>15.</b> &nbsp;	Wo liegen bei einem Impact Investment die größten finanziellen Risiken?"}
+				inp.ColSpan = gr.Cols
+			}
+			for idx, label := range labels {
+				rad := gr.AddInput()
+				rad.Type = "checkbox"
+				rad.Name = fmt.Sprintf("q15_%v", subName[idx])
+
+				rad.ColSpan = 1
+				rad.ColSpanLabel = 1
+				rad.ColSpanControl = 6
+
+				rad.Label = label
+
+				rad.Style = css.NewStylesResponsive(rad.Style)
+				// rad.Style.Desktop.StyleBox.Margin = "0 0 0 2.4rem"
+
+				rad.ControlFirst()
+			}
+		}
+
+		// gr3
+		{
+			labels := []trl.S{
+				{"de": "Das Risiko, dass ein negativer Impact erzeugt wird"},
+				{"de": "Das Risiko, dass die zuvor festgelegten sozialen und ökologischen Impact-Ziele nicht erreicht werden"},
+				{"de": `Das "mission drift" Risiko; d.h. finanzielle Aspekte verdrängen die ursprünglichen Impact-Ziele `},
+				{"de": "Es erfolgt keine kontinuierliche Impact Evaluation"},
+			}
+			subName := []string{
+				"negative_impact",
+				"underachievement",
+				"mission_drift",
+				"no_evaluation",
+			}
+			gr := page.AddGroup()
+			gr.Cols = 1
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{"de": "<b>16.</b> &nbsp; Überwachen Sie:"}
+				inp.ColSpan = gr.Cols
+			}
+			for idx, label := range labels {
+				rad := gr.AddInput()
+				rad.Type = "checkbox"
+				rad.Name = fmt.Sprintf("q15_%v", subName[idx])
+
+				rad.ColSpan = 1
+				rad.ColSpanLabel = 1
+				rad.ColSpanControl = 6
+
+				rad.Label = label
+
+				rad.Style = css.NewStylesResponsive(rad.Style)
+				// rad.Style.Desktop.StyleBox.Margin = "0 0 0 2.4rem"
+
+				rad.ControlFirst()
+			}
+		}
+
+	} // page 7
+
+	// page 8
+	{
+		page := q.AddPage()
+		page.Short = trl.S{"de": "II Now - p8"}
+		page.Label = trl.S{"de": ""}
+		page.NavigationCondition = "BIIINow"
+		page.WidthMax("48rem")
+
+		// gr1
+		{
+			labels := []trl.S{
+				{"de": "Direktinvestitionen (von der Organisation selbst verwaltet, d.h. Ihre Organisation verwaltet Impact Investitionen)"},
+				{"de": "Indirekte Investitionen (d.h. Ihre Organisation investiert oder vermittelt über Fonds / Programme Dritter, die von Dritten verwaltet werden und in Impact investieren)"},
+				{"de": "Vertrieb von Impact-Investment-Fonds, die von anderen verwaltet werden (d.h. Ihre Organisation vertreibt Fonds, die in anderen Ländern oder von anderen Organisationen verwaltet werden) "},
+			}
+			radioValues := []string{
+				"direct",
+				"indirect",
+				"fund",
+			}
+			gr := page.AddGroup()
+			gr.Cols = 1
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{"de": `<b>17.</b> &nbsp;	
+					Investieren Sie direkt oder indirekt? 
+				`}
+				inp.ColSpan = gr.Cols
+			}
+			for idx, labl := range labels {
+				rad := gr.AddInput()
+				rad.Type = "radio"
+				rad.Name = "q17"
+				rad.ValueRadio = radioValues[idx]
+
+				rad.ColSpan = 1
+				rad.ColSpanLabel = 1
+				rad.ColSpanControl = 6
+
+				rad.Label = labl
+
+				rad.ControlFirst()
+			}
+		}
+
+		// gr2
+		{
+			labels := []trl.S{
+				{"de": "Investees, die zur Lösung spezifischer sozialer und/oder ökologischer Herausforderungen beitragen, die ansonsten benachteiligte Bevölkerungsgruppen und/oder den Planeten betreffen"},
+				{"de": "Investees, die positive Auswirkungen für die Menschen und/oder den Planeten erzielen"},
+				{"de": "Investees, die Tätigkeiten mit erheblichen negativen Auswirkungen auf die Menschen und/oder den Planeten ausschließen"},
+				{"de": "Investees, die soziale und/oder ökologische Daten nutzen, um den finanziellen Wert mittel- und langfristig zu maximieren"},
+			}
+			radioValues := []string{
+				"challengers",
+				"people",
+				"prevention",
+				"data_driven",
+			}
+			gr := page.AddGroup()
+			gr.Cols = 1
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{"de": `<b>18.</b> &nbsp;	
+					In welche Art von Investees fließt der Großteil Ihrer Impact Investitionen? 
+				`}
+				inp.ColSpan = gr.Cols
+			}
+			for idx, labl := range labels {
+				rad := gr.AddInput()
+				rad.Type = "radio"
+				rad.Name = "q18"
+				rad.ValueRadio = radioValues[idx]
+
+				rad.ColSpan = 1
+				rad.ColSpanLabel = 1
+				rad.ColSpanControl = 6
+
+				rad.Label = labl
+
+				rad.ControlFirst()
+			}
+		}
+
+		// gr3
+		{
+			labels := []trl.S{
+				{"de": "Traditionelle Organisationen mit beabsichtigtem (intentional) sozialen und/oder ökologischen Impact"},
+				{"de": "Gewinnorientierte Organisationen mit sozialem Auftrag ohne Gewinnsperre"},
+				{"de": "Gewinnorientierte Organisationen mit sozialem Auftrag mit Gewinnsperre"},
+				{"de": "Gemeinnützige Organisationen mit kommerziellen Aktivitäten"},
+				{"de": "Gemeinnützige Organisationen ohne kommerzielle Aktivitäten"},
+				{"de": "Nicht anwendbar (N/A) "},
+			}
+			subName := []string{
+				"traditonal",
+				"for_profit_statute",
+				"non_profit_statute",
+				"charity_commercial",
+				"charity_non_commercial",
+				"not_applicable",
+			}
+			gr := page.AddGroup()
+			gr.Cols = 1
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{"de": "<b>19.</b> &nbsp;	Welche Art von Organisation(en) unterstützen Sie?"}
+				inp.ColSpan = gr.Cols
+			}
+			for idx, label := range labels {
+				rad := gr.AddInput()
+				rad.Type = "checkbox"
+				rad.Name = fmt.Sprintf("q19_%v", subName[idx])
+
+				rad.ColSpan = 1
+				rad.ColSpanLabel = 1
+				rad.ColSpanControl = 6
+
+				rad.Label = label
+
+				rad.Style = css.NewStylesResponsive(rad.Style)
+				// rad.Style.Desktop.StyleBox.Margin = "0 0 0 2.4rem"
+
+				rad.ControlFirst()
+			}
+		}
+
+	} // page 8
 }

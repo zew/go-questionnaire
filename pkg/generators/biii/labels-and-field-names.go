@@ -55,7 +55,7 @@ var columnTemplate6 = []float32{
 }
 */
 
-var oneToFiveNumbers = []trl.S{
+var oneToFiveVolume = []trl.S{
 	{"de": "1<br>höchstes<br>Vol."},
 	{"de": "2"},
 	{"de": "3"},
@@ -72,7 +72,7 @@ var q12Labels = []trl.S{
 	{"de": "Erwerbstätigkeit"},
 	{"de": "Forschung"},
 	{"de": "Gesundheit (Krankenhäuser, Rehabilitation, Pflegeheime, psychische Gesundheit / Krisenintervention)"},
-	{"de": "Soziale Dienste (Notfall, Hilfe, Einkommensunterstützung / Unterhalt)"},
+	{"de": "Soziale Dienste (Notfall, Hilfe, Einkommens&shy;unterstützung / Unterhalt)"},
 	{"de": "Umweltschutz (Forstwirtschaft, Land, Abfall, Luft, biologische Vielfalt und Ökosysteme, Meere und Küstengebiete)"},
 	{"de": "WASH (Wasser, Sanitärversorgung und Hygiene)"},
 	{"de": "Landwirtschaft"},
@@ -81,7 +81,7 @@ var q12Labels = []trl.S{
 	{"de": "IT / Technologien"},
 	{"de": "Fertigung / Produktion"},
 	{"de": "Stadterneuerung / Territoriale Entwicklung"},
-	{"de": "Finanzielle Eingliederung und Zugang zu Finanzmitteln (d.h. Mikrofinanzierung, Mikroversicherungen, Finanz Bildungsdienstleistungen, Bankwesen)"},
+	{"de": "Finanzielle Eingliederung und Zugang zu Finanzmitteln (d.h. Mikro&shy;finanzierung, Mikro&shy;versicherungen, Finanz Bildungs&shy;dienst&shy;leistungen, Bankwesen)"},
 }
 
 var q12inputNames = []string{
@@ -102,4 +102,50 @@ var q12inputNames = []string{
 	"prodution",
 	"urban_dev",
 	"microfinance",
+}
+
+var oneToFiveImportance = []trl.S{
+	{"de": "1<br>höchste<br>Wichtigkeit"},
+	{"de": "2"},
+	{"de": "3"},
+	{"de": "4"},
+	{"de": "5<br>niedrigste<br>Wichtigkeit"},
+	// {"de": "keine<br>Angabe"},
+}
+
+var q13Labels = []trl.S{
+	{"de": "Wir berücksichtigen die SDGs in unserer Strategie nicht"},
+	{"de": "Keine Armut"},
+	{"de": "Kein Hunger"},
+	{"de": "Gesundheit und Wohlergehen"},
+	{"de": "Hochwertige Bildung"},
+	{"de": "Geschlechtergleichheit"},
+	{"de": "Sauberes Wasser und Sanitäreinrichtungen"},
+	{"de": "Bezahlbare und Saubere Energie"},
+	{"de": "Menschenwürdige Arbeit und Wirtschaftswachstum"},
+	{"de": "Industrie, Innovation und Infrastruktur"},
+	{"de": "Weniger Ungleichheiten"},
+	{"de": "Nachhaltige Städte und Gemeinden"},
+	{"de": "Nachhaltiger Konsum und Produktion"},
+	{"de": "Maßnahmen zum Klimaschutz"},
+	{"de": "Leben unter Wasser"},
+	{"de": "Leben an Land"},
+	{"de": "Frieden, Gerechtigkeit und starke Institutionen"},
+	{"de": "Partnerschaften zur Erreichung der Ziele"},
+}
+
+var q13inputNames = []string{
+	"1",
+	"2",
+	"3",
+	"4",
+	"5",
+	"6",
+	"7",
+	"8",
+	"9",
+	"10",
+	"11",
+	"12",
+	"13",
 }

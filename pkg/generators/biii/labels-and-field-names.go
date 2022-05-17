@@ -20,6 +20,13 @@ var columnTemplate3 = []float32{
 	0.0, 1,
 	0.0, 1,
 }
+
+var columnTemplate3a = []float32{
+	3.6, 1,
+	0.0, 1,
+	0.0, 1,
+}
+
 var columnTemplate4 = []float32{
 	2, 1,
 	0, 1,
@@ -170,4 +177,26 @@ var q27columns = []trl.S{
 	{"de": "3<br><br>teils/teils"},
 	{"de": "4<br>eher unklar"},
 	{"de": "5<br>völlig unklar"},
+}
+
+var q30columns = []trl.S{
+	{"de": "1<br>sehr großen"},
+	{"de": "2<br><br>großen"},
+	{"de": "3<br><br>geringen"},
+	{"de": "4<br><br>keinen"},
+	{"de": "5<br>keine Angabe"},
+}
+
+var q31columns = []trl.S{
+	{"de": "1<br>äußerst relevant"},
+	{"de": "2<br><br>relevant"},
+	{"de": "3<br><br>teils/teils"},
+	{"de": "4<br>eher irrelevant"},
+	{"de": "5<br><br>irrelevant"},
+}
+
+var q32columns = []trl.S{
+	{"de": "1<br>größter Fortschriftt"},
+	{"de": "2<br><br>"},
+	{"de": "3<br>geringster Fortschriftt"},
 }

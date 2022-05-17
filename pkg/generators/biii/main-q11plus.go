@@ -175,7 +175,6 @@ func page4Quest11(q *qst.QuestionnaireT) {
 			0.0, 1,
 			0.0, 1,
 		}
-		// additional row below each block
 		colsBelow1 := append([]float32{1.0}, columnTemplateLocal...)
 		colsBelow1 = []float32{
 			// 1.4, 2.2, //   3.0, 1,  |  4.6 separated to two cols
@@ -252,7 +251,7 @@ func page4Quest11(q *qst.QuestionnaireT) {
 				{
 					inp := gr.AddInput()
 					inp.Type = "text"
-					inp.Name = "q12__other_explain"
+					inp.Name = "q12_other_label"
 					inp.MaxChars = 17
 					inp.ColSpan = 1
 					inp.ColSpanLabel = 2.4
@@ -274,7 +273,7 @@ func page4Quest11(q *qst.QuestionnaireT) {
 					rad := gr.AddInput()
 					rad.Type = "radio"
 
-					rad.Name = "q12" + "__other"
+					rad.Name = "q12" + "_other"
 					rad.ValueRadio = fmt.Sprint(idx + 1)
 
 					rad.ColSpan = 1
@@ -873,7 +872,7 @@ func page4Quest11(q *qst.QuestionnaireT) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "text"
-				inp.Name = "q23other"
+				inp.Name = "q23_other"
 				inp.MaxChars = 20
 				inp.Label = trl.S{"de": "Andere, bitte nennen"}
 				inp.ColSpan = gr.Cols
@@ -945,7 +944,7 @@ func page4Quest11(q *qst.QuestionnaireT) {
 				`,
 			}
 			gr := page.AddGrid(gb)
-			gr.BottomVSpacers = 3
+			gr.BottomVSpacers = 4
 		}
 
 		// {
@@ -1001,8 +1000,6 @@ func page4Quest11(q *qst.QuestionnaireT) {
 			0.0, 1,
 			0.0, 1,
 		}
-
-		// for idx, assCl := range inputNamesAssetClassesChangeQ3 {
 		{
 
 			inpNames := []string{}
@@ -1062,7 +1059,6 @@ func page4Quest11(q *qst.QuestionnaireT) {
 		}
 
 		{
-			// additional row below each block
 			colsBelow1 := append([]float32{1.0}, columnTemplate5...)
 			colsBelow1 = []float32{
 				// 1.4, 2.2, //   3.0, 1,  |  4.6 separated to two cols
@@ -1099,7 +1095,7 @@ func page4Quest11(q *qst.QuestionnaireT) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "text"
-				inp.Name = "q27_other"
+				inp.Name = "q27_other_label"
 				inp.MaxChars = 17
 				inp.ColSpan = 1
 				inp.ColSpanLabel = 2.4
@@ -1112,7 +1108,7 @@ func page4Quest11(q *qst.QuestionnaireT) {
 			for idx := 0; idx < len(oneToFiveVolume); idx++ {
 				rad := gr.AddInput()
 				rad.Type = "radio"
-				rad.Name = "q27" + "__other"
+				rad.Name = "q27" + "_other"
 				rad.ValueRadio = fmt.Sprint(idx + 1)
 				rad.ColSpan = 1
 				rad.ColSpanLabel = colsBelow1[2*(idx+1)]
@@ -1156,7 +1152,6 @@ func page4Quest11(q *qst.QuestionnaireT) {
 		}
 
 		{
-			// additional row below each block
 			colsBelow1 := append([]float32{1.0}, columnTemplate5...)
 			colsBelow1 = []float32{
 				// 1.4, 2.2, //   3.0, 1,  |  4.6 separated to two cols
@@ -1193,7 +1188,7 @@ func page4Quest11(q *qst.QuestionnaireT) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "text"
-				inp.Name = "q28_other"
+				inp.Name = "q28_other_label"
 				inp.MaxChars = 17
 				inp.ColSpan = 1
 				inp.ColSpanLabel = 2.4
@@ -1206,7 +1201,7 @@ func page4Quest11(q *qst.QuestionnaireT) {
 			for idx := 0; idx < len(oneToFiveVolume); idx++ {
 				rad := gr.AddInput()
 				rad.Type = "radio"
-				rad.Name = "q28" + "__other"
+				rad.Name = "q28" + "_other"
 				rad.ValueRadio = fmt.Sprint(idx + 1)
 				rad.ColSpan = 1
 				rad.ColSpanLabel = colsBelow1[2*(idx+1)]
@@ -1225,20 +1220,385 @@ func page4Quest11(q *qst.QuestionnaireT) {
 		page.SuppressInProgressbar = true
 		page.WidthMax("42rem")
 
-		gr := page.AddGroup()
-		gr.Cols = 1
-		gr.BottomVSpacers = 1
+		// gr 0
 		{
-			inp := gr.AddInput()
-			inp.Type = "textblock"
-			inp.Label = trl.S{"de": `
-
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 1
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{"de": `
 					<p style='font-size: 130%'>
 						Entwicklung des Impact Investing Marktes
 					</p>
+
+					<br>
 				`}
-			inp.ColSpan = gr.Cols
+				inp.ColSpan = gr.Cols
+			}
 		}
+
+		// gr1
+		{
+			labels := []trl.S{
+				{"de": "Wir waren vor 2 Jahren noch nicht am Markt "},
+				{"de": "Wir sind in 2 Jahren gewachsen - um "},
+				{"de": "Unsere Anlagesumme ist gleichgeblieben"},
+				{"de": "Wir sind in 2 Jahren geschrumpft - um "},
+			}
+			radioValues := []string{
+				"younger_than2",
+				"growth",
+				"unchanged",
+				"shrinking",
+			}
+			gr := page.AddGroup()
+			gr.Cols = 5
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{"de": `
+					<b>29.</b> &nbsp;	
+					Wie groß war das Wachstum Ihrer Anlagesumme 
+					in Impact Investing in den letzten zwei Jahren?
+
+				`}
+				inp.ColSpan = gr.Cols
+			}
+			for idx, label := range labels {
+				rad := gr.AddInput()
+				rad.Type = "radio"
+				rad.Name = "q29"
+				rad.ValueRadio = radioValues[idx]
+
+				if idx%2 == 1 {
+					rad.ColSpan = 3
+				} else {
+					rad.ColSpan = 3
+				}
+				rad.ColSpanLabel = 1
+				rad.ColSpanControl = 6
+
+				rad.Label = label
+
+				rad.ControlFirst()
+
+				if idx%2 == 1 {
+					inp := gr.AddInput()
+					inp.Type = "number"
+					inp.Name = fmt.Sprintf("q29_%v_pct", radioValues[idx])
+					// inp.Label = label
+					inp.ColSpan = 2
+					// inp.ColSpanLabel = 16
+					inp.ColSpanControl = 7
+					inp.Min = 0
+					inp.Max = 100
+					inp.Step = 0.1
+					inp.MaxChars = 5
+					inp.Suffix = trl.S{"de": "%"}
+					inp.Placeholder = trl.S{"de": "00"}
+					inp.LabelPadRight()
+
+					inp.Style = css.NewStylesResponsive(inp.Style)
+					inp.Style.Desktop.StyleBox.Position = "relative"
+					inp.Style.Desktop.StyleBox.Left = "-3rem"
+				}
+			}
+		}
+
+		// gr 2
+		{
+			{
+				gb := qst.NewGridBuilderRadios(
+					columnTemplate5,
+					q30columns,
+					[]string{
+						"q30_management",
+						"q30_measurement",
+						"q30_methods",
+						"q30_defintions",
+
+						"q30_benchmarks",
+						"q30_certificates",
+						"q30_labels",
+						"q30_kpis",
+
+						"q30_data",
+						"q30_ratings",
+						"q30_best_pract",
+						"q30_reporting",
+
+						"q30_legal_frame",
+					},
+					radioVals5,
+					[]trl.S{
+						{"de": "Impact Management"},
+						{"de": "Impact Messung "},
+						{"de": "Methoden zur Impact Messung "},
+						{"de": "Impact Definition "},
+
+						{"de": "Impact Benchmarks"},
+						{"de": "Impact Zertifizierung "},
+						{"de": "Impact Labels"},
+						{"de": "Katalog von Kriterien und KPIs"},
+
+						{"de": "Impact Datenverfügbarkeit "},
+						{"de": "Impact Ratings"},
+						{"de": "Best practices"},
+						{"de": "Berichterstattung "},
+
+						{"de": "Gesetzlicher Rahmen"},
+					},
+				)
+
+				gb.MainLabel = trl.S{
+					"de": fmt.Sprintf(`
+						<b>30. </b> &nbsp;	
+						Welchen Fortschritt hat es in letzten drei Jahren in den folgenden Bereichen gegeben?
+					`),
+				}
+
+				gr := page.AddGrid(gb)
+				gr.BottomVSpacers = 3
+			}
+
+		}
+
+	}
+
+	// page 14
+	{
+		page := q.AddPage()
+		page.Short = trl.S{"de": ""}
+		page.Label = trl.S{"de": ""}
+		page.NavigationCondition = "BIIINow"
+		page.SuppressInProgressbar = true
+		page.WidthMax("42rem")
+
+		// gr3
+		{
+			gb := qst.NewGridBuilderRadios(
+				columnTemplate5,
+				q31columns,
+				[]string{
+					"q31_regulation",
+					"q31_transparency",
+					"q31_intermediaries",
+					"q31_capacities",
+
+					"q31_bestpract",
+					"q31_methodoloy",
+					"q31_integration",
+					"q31_quality",
+
+					"q31_differentiation",
+					"q31_demand",
+					"q31_incentives",
+					"q31_successstories",
+
+					"q31_certifications",
+				},
+				radioVals5,
+				[]trl.S{
+					{"de": "Regulatorischer Rahmen "},
+					{"de": "Verbesserte Informationslage und Markttransparenz "},
+					{"de": "Entwicklung dynamischer intermediärer Strukturen"},
+					{"de": "Impact-Managementkapazitäten der Investees"},
+
+					{"de": "Fähigkeit der Investoren zur Implementierung von Best Practices"},
+					{"de": "Entwicklung einer standardisierten Methodik zur Impact-Messung und -Steuerung"},
+					{"de": "Integration von Impact Management und Messung in alle Investitionsprozesse "},
+					{"de": "Qualitativ hochwertige Angebote von Impact Investment Produkten "},
+
+					{"de": "Ausdifferenzierung von Impact-Anspruchsniveau in Asset Klassen "},
+					{"de": "Hohe Nachfrage durch Investees / Sozialunternehmen"},
+					{"de": "Staatliche Anreize zur Unterstützung des Impact Investing"},
+					{"de": "Verbreitung von Erfolgsgeschichten "},
+
+					{"de": "Entwicklung von Impact Labels und Zertifizierung "},
+				},
+			)
+			gb.MainLabel = trl.S{
+				"de": `
+					<b>31.</b> &nbsp;
+					Für wie relevant erachten Sie die folgenden Rahmenbedingungen für die weitere Entwicklung und das Wachstum des Impact Investment Sektors? 
+				`,
+			}
+			gr := page.AddGrid(gb)
+			gr.BottomVSpacers = 1
+		}
+		{
+			colsBelow1 := append([]float32{1.0}, columnTemplate5...)
+			colsBelow1 = []float32{
+				// 1.4, 2.2, //   3.0, 1,  |  4.6 separated to two cols
+				1.38, 2.1, //   3.0, 1,  |  4.6 separated to two cols
+				0.0, 1, //     3.0, 1,  |  4.6 separated to two cols
+				0.0, 1,
+				0.0, 1,
+				0.0, 1,
+				0.0, 1,
+			}
+			colsBelow2 := []float32{}
+			for i := 0; i < len(colsBelow1); i += 2 {
+				colsBelow2 = append(colsBelow2, colsBelow1[i]+colsBelow1[i+1])
+			}
+
+			gr := page.AddGroup()
+			gr.Cols = 7
+			gr.BottomVSpacers = 4
+			stl := ""
+			for colIdx := 0; colIdx < len(colsBelow2); colIdx++ {
+				stl = fmt.Sprintf(
+					"%v   %vfr ",
+					stl,
+					colsBelow2[colIdx],
+				)
+			}
+			gr.Style = css.NewStylesResponsive(gr.Style)
+			if gr.Style.Desktop.StyleGridContainer.TemplateColumns == "" {
+				gr.Style.Desktop.StyleBox.Display = "grid"
+				gr.Style.Desktop.StyleGridContainer.TemplateColumns = stl
+			} else {
+				log.Printf("GridBuilder.AddGrid() - another TemplateColumns already present.\nwnt%v\ngot%v", stl, gr.Style.Desktop.StyleGridContainer.TemplateColumns)
+			}
+			{
+				inp := gr.AddInput()
+				inp.Type = "text"
+				inp.Name = "q31_other"
+				inp.MaxChars = 17
+				inp.ColSpan = 1
+				inp.ColSpanLabel = 2.4
+				inp.ColSpanControl = 4
+				inp.Label = trl.S{
+					"de": "Andere",
+					"en": "Other",
+				}
+			}
+			for idx := 0; idx < len(oneToFiveVolume); idx++ {
+				rad := gr.AddInput()
+				rad.Type = "radio"
+				rad.Name = "q31" + "_other"
+				rad.ValueRadio = fmt.Sprint(idx + 1)
+				rad.ColSpan = 1
+				rad.ColSpanLabel = colsBelow1[2*(idx+1)]
+				rad.ColSpanControl = colsBelow1[2*(idx+1)] + 1
+			}
+		}
+
+	}
+
+	// page 15
+	{
+		page := q.AddPage()
+		page.Short = trl.S{"de": ""}
+		page.Label = trl.S{"de": ""}
+		page.NavigationCondition = "BIIINow"
+		page.SuppressInProgressbar = true
+		page.WidthMax("42rem")
+
+		// gr3
+		{
+			gb := qst.NewGridBuilderRadios(
+				columnTemplate3a,
+				q32columns,
+				[]string{
+					"q32_method_mgt_meas",
+					"q32_definition",
+					"q32_certifications",
+					"q32_education",
+
+					"q32_data",
+					"q32_legislation",
+					"q32_bestpract",
+					"q32_reporting",
+
+					"q32_assetclass",
+					"q32_productdesign",
+				},
+				radioVals3,
+				[]trl.S{
+					{"de": "Impact Methodologie, Management und Messung "},
+					{"de": "Harmonisierte Impact Definition "},
+					{"de": "Impact Labels, Ratings und Zertifizierungen "},
+					{"de": "Bildung und Weiterbildung"},
+
+					{"de": "Impact Datenverfügbarkeit und Kriterienkatalog "},
+					{"de": "Gesetzgebung Impact  "},
+					{"de": "Benchmarks und Best practices "},
+					{"de": "Berichterstattung "},
+
+					{"de": "Impact Investing als Anlageklasse  "},
+					{"de": "Produktgestaltung"},
+				},
+			)
+			gb.MainLabel = trl.S{
+				"de": `
+					<b>32.</b> &nbsp;
+					In welchen Bereichen sind die größten Fortschritte notwendig? 
+				`,
+			}
+			gr := page.AddGrid(gb)
+			gr.BottomVSpacers = 1
+		}
+		{
+			colsBelow1 := append([]float32{1.0}, columnTemplate3a...)
+			colsBelow1 = []float32{
+				// 1.4, 2.2, //   3.0, 1,  |  4.6 separated to two cols
+				1.38, 2.1, //   3.0, 1,  |  4.6 separated to two cols
+				0.0, 1, //     3.0, 1,  |  4.6 separated to two cols
+				0.0, 1,
+				0.0, 1,
+			}
+			colsBelow2 := []float32{}
+			for i := 0; i < len(colsBelow1); i += 2 {
+				colsBelow2 = append(colsBelow2, colsBelow1[i]+colsBelow1[i+1])
+			}
+
+			gr := page.AddGroup()
+			gr.Cols = 7
+			gr.BottomVSpacers = 4
+			stl := ""
+			for colIdx := 0; colIdx < len(colsBelow2); colIdx++ {
+				stl = fmt.Sprintf(
+					"%v   %vfr ",
+					stl,
+					colsBelow2[colIdx],
+				)
+			}
+			gr.Style = css.NewStylesResponsive(gr.Style)
+			if gr.Style.Desktop.StyleGridContainer.TemplateColumns == "" {
+				gr.Style.Desktop.StyleBox.Display = "grid"
+				gr.Style.Desktop.StyleGridContainer.TemplateColumns = stl
+			} else {
+				log.Printf("GridBuilder.AddGrid() - another TemplateColumns already present.\nwnt%v\ngot%v", stl, gr.Style.Desktop.StyleGridContainer.TemplateColumns)
+			}
+			{
+				inp := gr.AddInput()
+				inp.Type = "text"
+				inp.Name = "q32_other_label"
+				inp.MaxChars = 17
+				inp.ColSpan = 1
+				inp.ColSpanLabel = 2.4
+				inp.ColSpanControl = 4
+				inp.Label = trl.S{
+					"de": "Andere",
+					"en": "Other",
+				}
+			}
+			for idx := 0; idx < len(radioVals3); idx++ {
+				rad := gr.AddInput()
+				rad.Type = "radio"
+				rad.Name = "q32_other"
+				rad.ValueRadio = fmt.Sprint(idx + 1)
+				rad.ColSpan = 1
+				// rad.ColSpanLabel = 1
+				// rad.ColSpanControl = 1
+				rad.ColSpanLabel = colsBelow1[2*(idx+1)]
+				rad.ColSpanControl = colsBelow1[2*(idx+1)] + 1
+			}
+		}
+
 	}
 
 }

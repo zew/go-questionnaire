@@ -162,7 +162,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "text"
-				inp.Name = "q2other"
+				inp.Name = "q2_other"
 				inp.MaxChars = 20
 				inp.Label = trl.S{"de": "Andere, bitte nennen"}
 				inp.ColSpan = gr.Cols
@@ -221,7 +221,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "text"
-				inp.Name = "q3other"
+				inp.Name = "q3_other"
 				inp.MaxChars = 20
 				inp.Label = trl.S{"de": "Andere, bitte nennen"}
 				inp.ColSpan = gr.Cols
@@ -245,6 +245,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		page.WidthMax("38rem")
 
 		page.ValidationFuncName = "biiiPage1"
+		page.SuppressProgressbar = true
+
 		page.ValidationFuncMsg = trl.S{
 			"de": "no javascript dialog message needed",
 		}
@@ -592,7 +594,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "text"
-				inp.Name = "q9other"
+				inp.Name = "q9_other"
 				inp.MaxChars = 20
 				inp.Label = trl.S{"de": "Weitere, bitte nennen"}
 				inp.ColSpan = gr.Cols
@@ -1060,7 +1062,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "textarea"
-				inp.Name = "q42other"
+				inp.Name = "q42_other"
 				inp.MaxChars = 150
 				inp.Label = trl.S{"de": "Wir sehen diesen Markt eher skeptisch aus den folgenden Gründen:"}
 				inp.ColSpan = gr.Cols

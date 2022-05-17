@@ -1465,7 +1465,7 @@ func page4Quest11(q *qst.QuestionnaireT) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "text"
-				inp.Name = "q31_other"
+				inp.Name = "q31_other_label"
 				inp.MaxChars = 17
 				inp.ColSpan = 1
 				inp.ColSpanLabel = 2.4

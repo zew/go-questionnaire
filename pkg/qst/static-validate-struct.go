@@ -233,7 +233,12 @@ func (q *QuestionnaireT) Validate() error {
 
 	// preflight for composite funcs
 	// make sure, input names are unique
+	// 		multiple radios are distinguished by their radioval
 	names := map[string]int{}
+
+	// prevent doubles of radios and non-radios
+	namesRadio := map[string]int{}
+
 	for i1 := 0; i1 < len(q.Pages); i1++ {
 		for i2 := 0; i2 < len(q.Pages[i1].Groups); i2++ {
 
@@ -258,31 +263,43 @@ func (q *QuestionnaireT) Validate() error {
 
 				s := fmt.Sprintf("Page %v - Group %v - Input %v: ", i1, i2, i3)
 				inp := q.Pages[i1].Groups[i2].Inputs[i3]
-
 				// grp := q.Pages[i1].Elements[i2].Name
-				nm := inp.Name
 
 				if inp.IsLayout() {
 					continue
 				}
 
-				if inp.Type == "radio" {
-					nm = inp.Name + "__radioval__" + inp.ValueRadio
-				}
-
 				if inp.IsReserved() {
-					return fmt.Errorf(s+"Name '%v' is reserved", nm)
+					return fmt.Errorf(s+"Name '%v' is reserved", inp.Name)
 				}
 
+				nm := inp.Name
+
+				// validity of nm
 				if nm == "" {
 					return fmt.Errorf(s+"Name %v is empty", nm)
 				}
-
 				if not09azHyphenUnderscore.MatchString(nm) {
 					return fmt.Errorf(s+"Name %v must consist of [a-z0-9_-]", nm)
 				}
 
-				names[nm]++
+				// additional checks of ValueRadio
+				if inp.Type == "radio" {
+					if inp.ValueRadio == "" {
+						return fmt.Errorf(s+"Name %v has empty radioval", nm)
+					}
+					if not09azHyphenUnderscore.MatchString(inp.ValueRadio) {
+						return fmt.Errorf(s+"Name %v - radioval %v must consist of [a-z0-9_-]", nm, inp.ValueRadio)
+					}
+					nmRadio := inp.Name + "__radioval__" + inp.ValueRadio // distinguish...
+					names[nmRadio]++
+				}
+
+				if inp.Type != "radio" {
+					names[nm]++
+				} else {
+					namesRadio[nm]++ // multiple
+				}
 
 			}
 		}
@@ -296,6 +313,11 @@ func (q *QuestionnaireT) Validate() error {
 		}
 		if k != strings.ToLower(k) {
 			s := fmt.Sprintf("Page element '%v' is not lower case  (%v)", k, v)
+			log.Printf(s)
+			return fmt.Errorf(s)
+		}
+		if _, ok := namesRadio[k]; ok {
+			s := fmt.Sprintf("Page element '%v' input as radio and non-radio (%v)", k, v)
 			log.Printf(s)
 			return fmt.Errorf(s)
 		}

@@ -17,7 +17,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "c7fc742601f2d8ec373a6a27f8fbcac6e52653e865de86a00e2649a64de268b3",
+ 	"md_5": "9acb3c70ef7a35885d1126a0562388d5d95675f52d8ff81cf56f355ce3bd26ca",
  	"lang_codes": [
  		"de"
  	],
@@ -4930,7 +4930,7 @@
  					"columns": 7,
  					"inputs": [
  						{
- 							"name": "q12__other_explain",
+ 							"name": "q12_other_label",
  							"type": "text",
  							"max_chars": 17,
  							"label": {
@@ -10048,7 +10048,7 @@
  					"columns": 7,
  					"inputs": [
  						{
- 							"name": "q27_other",
+ 							"name": "q27_other_label",
  							"type": "text",
  							"max_chars": 17,
  							"label": {
@@ -10718,7 +10718,7 @@
  					"columns": 7,
  					"inputs": [
  						{
- 							"name": "q28_other",
+ 							"name": "q28_other_label",
  							"type": "text",
  							"max_chars": 17,
  							"label": {
@@ -12893,7 +12893,7 @@
  					"columns": 7,
  					"inputs": [
  						{
- 							"name": "q31_other",
+ 							"name": "q31_other_label",
  							"type": "text",
  							"max_chars": 17,
  							"label": {

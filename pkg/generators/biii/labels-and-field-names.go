@@ -160,7 +160,7 @@ var q25RadioVals = []string{"exceeds", "as_expected", "below"}
 
 var oneToFiveEfficiency = []trl.S{
 	{"de": "1<br>sehr effektiv"},
-	{"de": "2<br<br>effektiv"},
+	{"de": "2<br><br>effektiv"},
 	{"de": "3<br><br>teils/teils"},
 	{"de": "4<br>eher ineffektiv"},
 	{"de": "5<br><brineffektiv"},

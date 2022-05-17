@@ -17,7 +17,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "c096b9f2fc6556dc0b0aa43389def7fdb3e4ba88430fb18352a82caf87ec69ee",
+ 	"md_5": "30814a71d6222f6daca78338df7fe5c2479ba497f437be51f85bb8c596bf91a6",
  	"lang_codes": [
  		"de"
  	],
@@ -1364,7 +1364,7 @@
  				"en": ""
  			},
  			"short": {
- 				"de": "II Now - 1"
+ 				"de": "Grundsätzliches"
  			},
  			"navigation_condition": "BIIINow",
  			"style": {
@@ -2397,6 +2397,7 @@
  				"de": "II Now - 3"
  			},
  			"navigation_condition": "BIIINow",
+ 			"suppress_in_progressbar": true,
  			"style": {
  				"desktop": {
  					"grid_container_style": {},
@@ -5942,6 +5943,7 @@
  				"de": "II Now - p7"
  			},
  			"navigation_condition": "BIIINow",
+ 			"suppress_in_progressbar": true,
  			"style": {
  				"desktop": {
  					"grid_container_style": {},
@@ -6639,6 +6641,7 @@
  				"de": "II Now - p8"
  			},
  			"navigation_condition": "BIIINow",
+ 			"suppress_in_progressbar": true,
  			"style": {
  				"desktop": {
  					"grid_container_style": {},
@@ -7154,7 +7157,7 @@
  				"en": ""
  			},
  			"short": {
- 				"de": "II Now - p9"
+ 				"de": "Messung"
  			},
  			"navigation_condition": "BIIINow",
  			"style": {
@@ -7834,6 +7837,7 @@
  				"de": "II Now - p10"
  			},
  			"navigation_condition": "BIIIMeasure",
+ 			"suppress_in_progressbar": true,
  			"style": {
  				"desktop": {
  					"grid_container_style": {},
@@ -9364,7 +9368,7 @@
  				"en": ""
  			},
  			"short": {
- 				"de": "II Now - p9"
+ 				"de": "Integrität"
  			},
  			"navigation_condition": "BIIINow",
  			"style": {
@@ -9388,7 +9392,7 @@
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
  				{
- 					"bottom_vspacers": 3,
+ 					"bottom_vspacers": 1,
  					"columns": 1,
  					"inputs": [
  						{
@@ -9460,7 +9464,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "2\u003cbr\u003cbr\u003eeffektiv"
+ 								"de": "2\u003cbr\u003e\u003cbr\u003eeffektiv"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -9936,6 +9940,8 @@
  				"de": "Abschluss",
  				"en": "Finish"
  			},
+ 			"suppress_progressbar": true,
+ 			"suppress_in_progressbar": true,
  			"style": {
  				"desktop": {
  					"grid_container_style": {},

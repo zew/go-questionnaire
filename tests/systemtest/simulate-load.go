@@ -185,19 +185,25 @@ var presets = map[string]map[int]map[string]string{
 			"q6_other":        "2000",
 			"q6_conventional": "111111000",
 		},
+		10: {
+			"q20_mo_measure": "0",
+			// "q20_mo_measure":        "", // checkbox not set
+			"q20_neg_externalities": "all",
+		},
 	},
 }
 
 var skipPages = map[string]map[int]interface{}{
 	"biii": {
-		12: nil,
+		// 11: nil,
+		13: nil,
 	},
 }
 
-func getPreset(qType string, pageIdx int, inpName string) (string, bool) {
-	if _, ok1 := presets[qType]; ok1 {
-		if _, ok2 := presets[qType][pageIdx]; ok2 {
-			if vl, ok3 := presets[qType][pageIdx][inpName]; ok3 {
+func getPreset(surv string, pageIdx int, inpName string) (string, bool) {
+	if _, ok1 := presets[surv]; ok1 {
+		if _, ok2 := presets[surv][pageIdx]; ok2 {
+			if vl, ok3 := presets[surv][pageIdx][inpName]; ok3 {
 				return vl, true
 			}
 		}

@@ -628,7 +628,7 @@ func page4Quest11(q *qst.QuestionnaireT) {
 	// page 10
 	{
 		page := q.AddPage()
-		page.Short = trl.S{"de": "II Now - p9"}
+		page.Short = trl.S{"de": "Messung"}
 		page.Label = trl.S{"de": ""}
 		page.NavigationCondition = "BIIINow"
 		page.WidthMax("42rem")
@@ -986,7 +986,7 @@ func page4Quest11(q *qst.QuestionnaireT) {
 	// page 12
 	{
 		page := q.AddPage()
-		page.Short = trl.S{"de": "II Now - p9"}
+		page.Short = trl.S{"de": "Integrität"}
 		page.Label = trl.S{"de": ""}
 		page.NavigationCondition = "BIIINow"
 		page.WidthMax("42rem")

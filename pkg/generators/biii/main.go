@@ -356,7 +356,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	// page 2
 	{
 		page := q.AddPage()
-		page.Short = trl.S{"de": "II Now - 1"}
+		page.Short = trl.S{"de": "Basisparameter"}
 		page.Label = trl.S{"de": ""}
 		page.NavigationCondition = "BIIINow"
 		page.WidthMax("42rem")
@@ -613,6 +613,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		page.Short = trl.S{"de": "II Now - 3"}
 		page.Label = trl.S{"de": ""}
 		page.NavigationCondition = "BIIINow"
+		page.SuppressInProgressbar = true
 		page.WidthMax("42rem")
 
 		//
@@ -1076,6 +1077,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		page := q.AddPage()
 		page.Label = trl.S{"de": "Abschluss", "en": "Finish"}
 		page.Short = trl.S{"de": "Abschluss", "en": "Finish"}
+		page.SuppressInProgressbar = true
+		page.SuppressProgressbar = true
 		page.WidthMax("36rem")
 
 		// gr1

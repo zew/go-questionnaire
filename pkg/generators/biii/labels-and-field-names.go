@@ -26,6 +26,14 @@ var columnTemplate4 = []float32{
 	0, 1,
 	0.4, 1, // no answer slightly apart
 }
+var columnTemplate5 = []float32{
+	3.6, 1,
+	0.0, 1,
+	0.0, 1,
+	0.0, 1,
+	0.0, 1,
+}
+
 var columnTemplate6 = []float32{
 	2, 1,
 	0, 1,
@@ -34,26 +42,6 @@ var columnTemplate6 = []float32{
 	0, 1,
 	0.4, 1,
 }
-
-/* var headersGoodBad = []trl.S{
-	{
-		"de": "gut",
-		"en": "good",
-	},
-	{
-		"de": "normal",
-		"en": "normal",
-	},
-	{
-		"de": "schlecht",
-		"en": "bad",
-	},
-	{
-		"de": "keine<br>Angabe",
-		"en": "no estimate",
-	},
-}
-*/
 
 var oneToFiveVolume = []trl.S{
 	{"de": "1<br>höchstes<br>Vol."},
@@ -163,7 +151,7 @@ var oneToFiveEfficiency = []trl.S{
 	{"de": "2<br><br>effektiv"},
 	{"de": "3<br><br>teils/teils"},
 	{"de": "4<br>eher ineffektiv"},
-	{"de": "5<br><brineffektiv"},
+	{"de": "5<br><br>ineffektiv"},
 }
 
 var q26Labels = []trl.S{
@@ -174,4 +162,12 @@ var q26Labels = []trl.S{
 var q26inputNames = []string{
 	"germany",
 	"international",
+}
+
+var q27columns = []trl.S{
+	{"de": "1<br>sehr eindeutig"},
+	{"de": "2<br><br>eindeutig"},
+	{"de": "3<br><br>teils/teils"},
+	{"de": "4<br>eher unklar"},
+	{"de": "5<br>völlig unklar"},
 }

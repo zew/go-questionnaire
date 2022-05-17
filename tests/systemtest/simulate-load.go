@@ -186,8 +186,7 @@ var presets = map[string]map[int]map[string]string{
 			"q6_conventional": "111111000",
 		},
 		10: {
-			"q20_mo_measure": "0",
-			// "q20_mo_measure":        "", // checkbox not set
+			"q20_mo_measure":        "0", // checkbox not set
 			"q20_neg_externalities": "all",
 		},
 	},
@@ -196,7 +195,7 @@ var presets = map[string]map[int]map[string]string{
 var skipPages = map[string]map[int]interface{}{
 	"biii": {
 		// 11: nil,
-		13: nil,
+		14: nil,
 	},
 }
 

@@ -929,64 +929,48 @@ func page4Quest11(q *qst.QuestionnaireT) {
 
 		// gr3
 		{
-			gr := page.AddGroup()
-			gr.Cols = 1
-			gr.BottomVSpacers = 1
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.ColSpan = 1
-				inp.ColSpanLabel = 1
-				inp.Label = trl.S{
-					"de": `
-						<b>25.</b> &nbsp;	Wie bewerten Sie die Performance Ihres Impact-Portfolios?
-					`,
-				}
+			gb := qst.NewGridBuilderRadios(
+				columnTemplate3,
+				q25Columns,
+				[]string{"q25performance", "q25impact"},
+				q25RadioVals,
+				[]trl.S{
+					{"de": `Finanzielle Performance`},
+					{"de": `Impact Performance`},
+				},
+			)
+			gb.MainLabel = trl.S{
+				"de": `
+					<b>25.</b> &nbsp;	Wie bewerten Sie die Performance Ihres Impact-Portfolios?
+				`,
 			}
+			gr := page.AddGrid(gb)
+			gr.BottomVSpacers = 3
 		}
 
-		// gr4
-		{
-			gb := qst.NewGridBuilderRadios(
-				columnTemplate3,
-				q25Columns,
-				[]string{"q25performance"},
-				q25RadioVals,
-				[]trl.S{
-					{"de": `
-						Finanzielle Performance
-					`},
-				},
-			)
-			// gb.MainLabel = ...
-			gr := page.AddGrid(gb)
-			gr.BottomVSpacers = 2
-
-		}
-		// gr5
-		{
-			gb := qst.NewGridBuilderRadios(
-				columnTemplate3,
-				q25Columns,
-				[]string{"q25impact"},
-				q25RadioVals,
-				[]trl.S{
-					{"de": `
-						Impact Performance
-					`},
-				},
-			)
-			// gb.MainLabel = ...
-			gr := page.AddGrid(gb)
-			_ = gr
-		}
+		// {
+		// 	gb := qst.NewGridBuilderRadios(
+		// 		columnTemplate3,
+		// 		q25Columns,
+		// 		[]string{"q25impact"},
+		// 		q25RadioVals,
+		// 		[]trl.S{
+		// 			{"de": `
+		// 				Impact Performance
+		// 			`},
+		// 		},
+		// 	)
+		// 	// gb.MainLabel = ...
+		// 	gr := page.AddGrid(gb)
+		// 	_ = gr
+		// }
 
 	}
 
 	// page 12
 	{
 		page := q.AddPage()
-		page.Short = trl.S{"de": "Integrität"}
+		page.Short = trl.S{"de": "Integrität<br>Entwicklung"}
 		page.Label = trl.S{"de": ""}
 		page.NavigationCondition = "BIIINow"
 		page.WidthMax("42rem")
@@ -1048,6 +1032,213 @@ func page4Quest11(q *qst.QuestionnaireT) {
 
 		}
 
+		// gr3
+		{
+			gb := qst.NewGridBuilderRadios(
+				columnTemplate5,
+				q27columns,
+				[]string{
+					"q27_sfrd",
+					"q27_mifid2",
+					"q27_eu_taxonomy",
+					"q27_opfim",
+				},
+				radioVals5,
+				[]trl.S{
+					{"de": `SFRD`},
+					{"de": `MiFID II`},
+					{"de": `EU Taxonomy`},
+					{"de": `Operating Principles for Impact Management`},
+				},
+			)
+			gb.MainLabel = trl.S{
+				"de": `
+					<b>27.</b> &nbsp;
+					Wie schätzen Sie die regulatorischen Anforderungen der folgenden Richtlinien für die Praxis des Impact Investings ein? 
+				`,
+			}
+			gr := page.AddGrid(gb)
+			gr.BottomVSpacers = 1
+		}
+
+		{
+			// additional row below each block
+			colsBelow1 := append([]float32{1.0}, columnTemplate5...)
+			colsBelow1 = []float32{
+				// 1.4, 2.2, //   3.0, 1,  |  4.6 separated to two cols
+				1.38, 2.1, //   3.0, 1,  |  4.6 separated to two cols
+				0.0, 1, //     3.0, 1,  |  4.6 separated to two cols
+				0.0, 1,
+				0.0, 1,
+				0.0, 1,
+				0.0, 1,
+			}
+			colsBelow2 := []float32{}
+			for i := 0; i < len(colsBelow1); i += 2 {
+				colsBelow2 = append(colsBelow2, colsBelow1[i]+colsBelow1[i+1])
+			}
+
+			gr := page.AddGroup()
+			gr.Cols = 7
+			gr.BottomVSpacers = 4
+			stl := ""
+			for colIdx := 0; colIdx < len(colsBelow2); colIdx++ {
+				stl = fmt.Sprintf(
+					"%v   %vfr ",
+					stl,
+					colsBelow2[colIdx],
+				)
+			}
+			gr.Style = css.NewStylesResponsive(gr.Style)
+			if gr.Style.Desktop.StyleGridContainer.TemplateColumns == "" {
+				gr.Style.Desktop.StyleBox.Display = "grid"
+				gr.Style.Desktop.StyleGridContainer.TemplateColumns = stl
+			} else {
+				log.Printf("GridBuilder.AddGrid() - another TemplateColumns already present.\nwnt%v\ngot%v", stl, gr.Style.Desktop.StyleGridContainer.TemplateColumns)
+			}
+			{
+				inp := gr.AddInput()
+				inp.Type = "text"
+				inp.Name = "q27_other"
+				inp.MaxChars = 17
+				inp.ColSpan = 1
+				inp.ColSpanLabel = 2.4
+				inp.ColSpanControl = 4
+				inp.Label = trl.S{
+					"de": "Andere",
+					"en": "Other",
+				}
+			}
+			for idx := 0; idx < len(oneToFiveVolume); idx++ {
+				rad := gr.AddInput()
+				rad.Type = "radio"
+				rad.Name = "q27" + "__other"
+				rad.ValueRadio = fmt.Sprint(idx + 1)
+				rad.ColSpan = 1
+				rad.ColSpanLabel = colsBelow1[2*(idx+1)]
+				rad.ColSpanControl = colsBelow1[2*(idx+1)] + 1
+			}
+		}
+
+		// gr4
+		{
+			gb := qst.NewGridBuilderRadios(
+				columnTemplate5,
+				oneToFiveEfficiency,
+				[]string{
+					"q28_definitions",
+					"q28_guidelines",
+					"q28_transparency",
+					"q28_objectives",
+					"q28_measurments",
+					"q28_data",
+					"q28_duedilligence",
+				},
+				radioVals5,
+				[]trl.S{
+					{"de": "Einheitliche Definition von Impact Investing "},
+					{"de": "Verpflichtende Impact Messungs- und Reporting-Bestimmungen "},
+					{"de": "Mehr Wissen und Transparenz "},
+					{"de": "Klare Impact Ziele in Strategie und Entscheidungsprozessen"},
+					{"de": "Entwicklung von Messinstrumenten über den gesamten Impact-Messungsprozess "},
+					{"de": "Effektive Datenerhebung, -speicherung und -validierung"},
+					{"de": "Obligatorische Due Diligence für Impact"},
+				},
+			)
+			gb.MainLabel = trl.S{
+				"de": `
+					<b>28.</b> &nbsp;
+					Wie effektiv sind Ihrer Meinung nach die folgenden Maßnahmen, um Impact Washing zu verhindern? 
+				`,
+			}
+			gr := page.AddGrid(gb)
+			gr.BottomVSpacers = 1
+		}
+
+		{
+			// additional row below each block
+			colsBelow1 := append([]float32{1.0}, columnTemplate5...)
+			colsBelow1 = []float32{
+				// 1.4, 2.2, //   3.0, 1,  |  4.6 separated to two cols
+				1.38, 2.1, //   3.0, 1,  |  4.6 separated to two cols
+				0.0, 1, //     3.0, 1,  |  4.6 separated to two cols
+				0.0, 1,
+				0.0, 1,
+				0.0, 1,
+				0.0, 1,
+			}
+			colsBelow2 := []float32{}
+			for i := 0; i < len(colsBelow1); i += 2 {
+				colsBelow2 = append(colsBelow2, colsBelow1[i]+colsBelow1[i+1])
+			}
+
+			gr := page.AddGroup()
+			gr.Cols = 7
+			gr.BottomVSpacers = 4
+			stl := ""
+			for colIdx := 0; colIdx < len(colsBelow2); colIdx++ {
+				stl = fmt.Sprintf(
+					"%v   %vfr ",
+					stl,
+					colsBelow2[colIdx],
+				)
+			}
+			gr.Style = css.NewStylesResponsive(gr.Style)
+			if gr.Style.Desktop.StyleGridContainer.TemplateColumns == "" {
+				gr.Style.Desktop.StyleBox.Display = "grid"
+				gr.Style.Desktop.StyleGridContainer.TemplateColumns = stl
+			} else {
+				log.Printf("GridBuilder.AddGrid() - another TemplateColumns already present.\nwnt%v\ngot%v", stl, gr.Style.Desktop.StyleGridContainer.TemplateColumns)
+			}
+			{
+				inp := gr.AddInput()
+				inp.Type = "text"
+				inp.Name = "q28_other"
+				inp.MaxChars = 17
+				inp.ColSpan = 1
+				inp.ColSpanLabel = 2.4
+				inp.ColSpanControl = 4
+				inp.Label = trl.S{
+					"de": "Andere",
+					"en": "Other",
+				}
+			}
+			for idx := 0; idx < len(oneToFiveVolume); idx++ {
+				rad := gr.AddInput()
+				rad.Type = "radio"
+				rad.Name = "q28" + "__other"
+				rad.ValueRadio = fmt.Sprint(idx + 1)
+				rad.ColSpan = 1
+				rad.ColSpanLabel = colsBelow1[2*(idx+1)]
+				rad.ColSpanControl = colsBelow1[2*(idx+1)] + 1
+			}
+		}
+
+	}
+
+	// page 13
+	{
+		page := q.AddPage()
+		page.Short = trl.S{"de": ""}
+		page.Label = trl.S{"de": ""}
+		page.NavigationCondition = "BIIINow"
+		page.SuppressInProgressbar = true
+		page.WidthMax("42rem")
+
+		gr := page.AddGroup()
+		gr.Cols = 1
+		gr.BottomVSpacers = 1
+		{
+			inp := gr.AddInput()
+			inp.Type = "textblock"
+			inp.Label = trl.S{"de": `
+
+					<p style='font-size: 130%'>
+						Entwicklung des Impact Investing Marktes
+					</p>
+				`}
+			inp.ColSpan = gr.Cols
+		}
 	}
 
 }

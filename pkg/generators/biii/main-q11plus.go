@@ -1497,7 +1497,7 @@ func page4Quest11(q *qst.QuestionnaireT) {
 		page.SuppressInProgressbar = true
 		page.WidthMax("42rem")
 
-		// gr3
+		// gr0
 		{
 			gb := qst.NewGridBuilderRadios(
 				columnTemplate3a,
@@ -1544,7 +1544,6 @@ func page4Quest11(q *qst.QuestionnaireT) {
 		{
 			colsBelow1 := append([]float32{1.0}, columnTemplate3a...)
 			colsBelow1 = []float32{
-				// 1.4, 2.2, //   3.0, 1,  |  4.6 separated to two cols
 				1.38, 2.1, //   3.0, 1,  |  4.6 separated to two cols
 				0.0, 1, //     3.0, 1,  |  4.6 separated to two cols
 				0.0, 1,
@@ -1592,11 +1591,178 @@ func page4Quest11(q *qst.QuestionnaireT) {
 				rad.Name = "q32_other"
 				rad.ValueRadio = fmt.Sprint(idx + 1)
 				rad.ColSpan = 1
-				// rad.ColSpanLabel = 1
-				// rad.ColSpanControl = 1
 				rad.ColSpanLabel = colsBelow1[2*(idx+1)]
 				rad.ColSpanControl = colsBelow1[2*(idx+1)] + 1
 			}
+		}
+
+	}
+
+	// page 16
+	{
+		page := q.AddPage()
+		page.Short = trl.S{"de": ""}
+		page.Label = trl.S{"de": ""}
+		page.NavigationCondition = "BIIINow"
+		page.SuppressInProgressbar = true
+		page.WidthMax("42rem")
+
+		page.ValidationFuncName = "biiiPage16"
+
+		mainLbls := []trl.S{
+			{
+
+				"de": `
+					<b>33a.</b> &nbsp;
+					In welchen Themenfeldern sehen Sie 
+					den größten 
+					<b><i>Bedarf an Kapital</i></b> 
+					für Impact Investments?
+
+					<br>
+					Bitte <i>drei</i> pro Spalte wählen.
+				`,
+			},
+			{
+
+				"de": `
+					<b>33b.</b> &nbsp;
+					In welchen Themenfeldern sehen Sie 
+					den größten 
+					das <b><i>größte Potential</i></b> 
+					für Impact Investments? 
+
+					<br>
+					Bitte <i>drei</i> pro Spalte wählen.
+				`,
+			},
+		}
+
+		fns := []string{
+			"paris",
+			"leisure",
+			"education",
+			"work",
+
+			"research",
+			"health",
+			"social_services",
+			"env_protection",
+
+			"oceans",
+			"wash",
+			"agriculture",
+			"energy",
+
+			"residential",
+			"it",
+			"production",
+			"urban_dev",
+
+			"financial_access",
+		}
+
+		lbls := []trl.S{
+			{"de": "Paris-Aligned oder Net Zero"},
+			{"de": "Kultur und Freizeit (Kultur, Kunst, Sport, sonstige Freizeitgestaltung und soziale Vereine)"},
+			{"de": "Bildung (Grundschule, Sekundarschule, Hochschule, Sonstiges)"},
+			{"de": "Erwerbstätigkeit"},
+
+			{"de": "Forschung"},
+			{"de": "Gesundheit (Krankenhäuser, Rehabilitation, Pflegeheime, psychische Gesundheit / Krisenintervention)"},
+			{"de": "Soziale Dienste (Notfall, Hilfe, Einkommensunterstützung / Unterhalt)"},
+			{"de": "Umweltschutz (Forstwirtschaft, Land, Abfall, Luft, biologische Vielfalt und Ökosysteme,"},
+
+			{"de": "Meere und Küstengebiete)"},
+			{"de": "WASH (Wasser, Sanitärversorgung und Hygiene)"},
+			{"de": "Landwirtschaft"},
+			{"de": "Energie (Zugang zu Energie, erneuerbare Energie)"},
+
+			{"de": "Wohnen"},
+			{"de": "IT / Technologien"},
+			{"de": "Fertigung / Produktion"},
+			{"de": "Stadterneuerung / Territoriale Entwicklung"},
+
+			{"de": "Finanzielle Eingliederung und Zugang zu Finanzmitteln (d.h. Mikrofinanzierung, Mikroversicherungen, Finanz Bildungsdienstleistungen, Bankwesen)"},
+		}
+
+		q33ab := []string{"q33a", "q33b"}
+		for q33idx, q := range q33ab {
+
+			fieldNames := make([]string, 0, len(fns))
+			for _, fn := range fns {
+				fieldNames = append(fieldNames, fmt.Sprintf("%v_%v", q, fn))
+			}
+
+			// gr0
+			{
+				gb := qst.NewGridBuilderRadios(
+					columnTemplate3a,
+					q33Columns,
+					fieldNames,
+					radioVals3,
+					lbls,
+				)
+				gb.MainLabel = mainLbls[q33idx]
+				gr := page.AddGrid(gb)
+				gr.BottomVSpacers = 1
+			}
+			{
+				colsBelow1 := append([]float32{1.0}, columnTemplate3a...)
+				colsBelow1 = []float32{
+					1.38, 2.1, //   3.0, 1,  |  4.6 separated to two cols
+					0.0, 1, //     3.0, 1,  |  4.6 separated to two cols
+					0.0, 1,
+					0.0, 1,
+				}
+				colsBelow2 := []float32{}
+				for i := 0; i < len(colsBelow1); i += 2 {
+					colsBelow2 = append(colsBelow2, colsBelow1[i]+colsBelow1[i+1])
+				}
+
+				gr := page.AddGroup()
+				gr.Cols = 7
+				gr.BottomVSpacers = 4
+				stl := ""
+				for colIdx := 0; colIdx < len(colsBelow2); colIdx++ {
+					stl = fmt.Sprintf(
+						"%v   %vfr ",
+						stl,
+						colsBelow2[colIdx],
+					)
+				}
+				gr.Style = css.NewStylesResponsive(gr.Style)
+				if gr.Style.Desktop.StyleGridContainer.TemplateColumns == "" {
+					gr.Style.Desktop.StyleBox.Display = "grid"
+					gr.Style.Desktop.StyleGridContainer.TemplateColumns = stl
+				} else {
+					log.Printf("GridBuilder.AddGrid() - another TemplateColumns already present.\nwnt%v\ngot%v", stl, gr.Style.Desktop.StyleGridContainer.TemplateColumns)
+				}
+				{
+					inp := gr.AddInput()
+					inp.Type = "text"
+					inp.Name = fmt.Sprintf("%v_other_label", q) // "q33a_other_label"
+
+					inp.MaxChars = 17
+					inp.ColSpan = 1
+					inp.ColSpanLabel = 2.4
+					inp.ColSpanControl = 4
+					inp.Label = trl.S{
+						"de": "Andere",
+						"en": "Other",
+					}
+				}
+				for idx := 0; idx < len(radioVals3); idx++ {
+					rad := gr.AddInput()
+					rad.Type = "radio"
+					rad.Name = fmt.Sprintf("%v_other", q) // "q33a_other"
+					rad.ValueRadio = fmt.Sprint(idx + 1)
+					rad.ColSpan = 1
+					rad.ColSpanLabel = colsBelow1[2*(idx+1)]
+					rad.ColSpanControl = colsBelow1[2*(idx+1)] + 1
+				}
+			}
+
 		}
 
 	}

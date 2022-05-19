@@ -413,7 +413,7 @@ type pageT struct {
 	// SuppressInProgressbar is a weak form of NoNavigation
 	SuppressInProgressbar bool `json:"suppress_in_progressbar,omitempty"`
 
-	navigationSequenceNum int // number in navigation order; dynamically computed in MainH()
+	navigationSequenceNum int // page number in navigation order; dynamically computed in MainH()
 
 	Style *css.StylesResponsive `json:"style,omitempty"`
 
@@ -1163,11 +1163,11 @@ func (q *QuestionnaireT) IsInNavigation(pageIdx int) bool {
 // EnumeratePages allocates a sequence number
 // based on IsInNavigation()
 func (q *QuestionnaireT) EnumeratePages() {
-	navigationalNum := 0
+	pageCntr := 0
 	for i1 := 0; i1 < len(q.Pages); i1++ {
 		if q.IsInNavigation(i1) {
-			navigationalNum++
-			q.Pages[i1].navigationSequenceNum = navigationalNum
+			pageCntr++
+			q.Pages[i1].navigationSequenceNum = pageCntr
 		}
 	}
 }

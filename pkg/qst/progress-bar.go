@@ -2,6 +2,7 @@ package qst
 
 import (
 	"fmt"
+	"log"
 	"strings"
 )
 
@@ -39,6 +40,32 @@ func (q *QuestionnaireT) ProgressBar() string {
 	b.WriteString(fmt.Sprintf("\t\t\t\t<ol class='progress'>\n"))
 	b.WriteString(fmt.Sprintf("\t\t\t\t\t<input type='hidden' name='page' value='-1' >\n"))
 
+	progressItems := []int{}
+	for idx := range q.Pages {
+		if !q.IsInNavigation(idx) {
+			continue
+		}
+		if q.Pages[idx].SuppressInProgressbar {
+			continue
+		}
+		progressItems = append(progressItems, idx)
+	}
+	progressItems = append(progressItems, 1000*1000)
+	// log.Printf("progressItems %+v", progressItems)
+
+	pbActive := 100
+	boundLower := 0
+	for i, boundUpper := range progressItems {
+		// log.Printf("checking q.CurrPage %v is between [%v,%v] => activePBItem %v", q.CurrPage, boundLower, boundUpper, pbActive)
+		if q.CurrPage >= boundLower && q.CurrPage < boundUpper {
+			pbActive = i - 1 // -1 because we iterate over the max bounds
+			log.Printf("    q.CurrPage %v is between [%v,%v] => activePBItem %v - progressItems %+v", q.CurrPage, boundLower, boundUpper, pbActive, progressItems)
+			break
+		}
+		boundLower = boundUpper
+	}
+
+	pbCurr := -1 // progress bar item number
 	for idx, p := range q.Pages {
 
 		if !q.IsInNavigation(idx) {
@@ -47,15 +74,17 @@ func (q *QuestionnaireT) ProgressBar() string {
 		if q.Pages[idx].SuppressInProgressbar {
 			continue
 		}
-
+		pbCurr++
 		completeOrActive := ""
-		if idx < q.CurrPage {
+
+		if pbCurr < pbActive {
 			completeOrActive = "is-complete"
-		} else if idx == q.CurrPage {
+		} else if pbCurr == pbActive {
 			completeOrActive = "is-active"
 		}
+		// else default:  is-in-future
 
-		eff := p.Short.TrSilent(q.LangCode)
+		shortLbl := p.Short.TrSilent(q.LangCode)
 
 		/*
 			<li> elements become hyperlinks to the questionnaire pages
@@ -87,8 +116,9 @@ func (q *QuestionnaireT) ProgressBar() string {
 					</li> 
 				`,
 				onclick, pointr,
-				completeOrActive, p.navigationSequenceNum,
-				eff,
+				completeOrActive,
+				pbCurr+1,
+				shortLbl,
 			),
 		)
 

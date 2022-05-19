@@ -200,3 +200,9 @@ var q32columns = []trl.S{
 	{"de": "2<br><br>"},
 	{"de": "3<br>geringster Fortschriftt"},
 }
+
+var q33Columns = []trl.S{
+	{"de": "1<br>größtes Potenzial"},
+	{"de": "2<br><br>"},
+	{"de": "3<br>geringstes Potenzial"},
+}

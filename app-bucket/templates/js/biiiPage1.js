@@ -47,9 +47,7 @@ if (document.forms.frmMain.q4now) {
 
 // addEventListener is cumulative
 window.addEventListener("load", function (event) {
-   showQ4a();
-
+    showQ4a();
     const first = document.getElementById("q4now");
     first.focus();
-    
 });

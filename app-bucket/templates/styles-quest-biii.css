@@ -30,6 +30,17 @@ ol.progress {
     background: #4b4;
 }
 
+
+/* future */
+                .progress-bar-label{
+    color: rgb(85, 105, 81);}
+li.is-complete  .progress-bar-label{
+    color: rgb(190, 201, 188);
+}
+li.is-active    .progress-bar-label{
+    color: rgb(60, 129, 44);
+}
+
 a:link {
     color: var(--clr-pri-vis);
 }
@@ -78,7 +89,7 @@ nav {
     #q10e_other {
         max-width: 8rem;
     }
-    #q11_hybrid_explain {
+#q11_hybrid_explain {
         max-width: 8rem;
     }
 }

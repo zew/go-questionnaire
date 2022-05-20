@@ -895,7 +895,7 @@ func page4Quest11(q *qst.QuestionnaireT) {
 				inp.StyleLbl.Desktop.StyleBox.Padding = "0 0 0 3.4rem"
 
 				inp.Style = css.NewStylesResponsive(inp.Style)
-				inp.Style.Desktop.StyleBox.Margin = "1.2rem 0 0 0"
+				inp.Style.Desktop.StyleBox.Margin = "0.35rem 0 0 0"
 			}
 		}
 
@@ -2009,6 +2009,430 @@ func page4Quest11(q *qst.QuestionnaireT) {
 				rad.Style = css.NewStylesResponsive(rad.Style)
 				rad.ControlFirst()
 			}
+		}
+
+	}
+
+	// page 19
+	{
+		page := q.AddPage()
+		page.Short = trl.S{"de": "Über Sie"}
+		page.Label = trl.S{"de": ""}
+		page.NavigationCondition = "BIIINow"
+		page.WidthMax("42rem")
+
+		page.ValidationFuncName = "biiiPage19"
+
+		// gr0
+		gr := page.AddGroup()
+		gr.Cols = 1
+		gr.BottomVSpacers = 1
+		{
+			inp := gr.AddInput()
+			inp.Type = "textblock"
+			inp.Label = trl.S{"de": `
+
+					<p style='font-size: 130%'>
+						Über Sie und Ihre Organisation 
+					</p>
+				`}
+			inp.ColSpan = gr.Cols
+		}
+
+		// gr1
+		{
+			labels := []trl.S{
+				{"de": "<18"},
+				{"de": "18-39"},
+				{"de": "40-69"},
+				{"de": "70+"},
+			}
+			radioValues := []string{
+				"under18",
+				"betw18to39",
+				"betw40to69",
+				"over69",
+			}
+			gr := page.AddGroup()
+			gr.Cols = 1
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{"de": `
+					<b>37.</b> &nbsp;	
+					Wie alt sind sie?
+				`}
+				inp.ColSpan = gr.Cols
+			}
+			for idx, label := range labels {
+				rad := gr.AddInput()
+				rad.Type = "radio"
+				rad.Name = "q37"
+				rad.ValueRadio = radioValues[idx]
+
+				rad.ColSpan = 1
+				rad.ColSpanLabel = 1
+				rad.ColSpanControl = 6
+
+				rad.Label = label
+
+				rad.ControlFirst()
+			}
+		}
+
+		// gr2
+		{
+			labels := []trl.S{
+				{"de": "Männlich"},
+				{"de": "Weiblich"},
+				{"de": "Divers"},
+			}
+			radioValues := []string{
+				"male",
+				"female",
+				"diverse",
+			}
+			gr := page.AddGroup()
+			gr.Cols = 1
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{"de": `
+					<b>38.</b> &nbsp;	
+					Sind sie…?
+				`}
+				inp.ColSpan = gr.Cols
+			}
+			for idx, label := range labels {
+				rad := gr.AddInput()
+				rad.Type = "radio"
+				rad.Name = "q38"
+				rad.ValueRadio = radioValues[idx]
+
+				rad.ColSpan = 1
+				rad.ColSpanLabel = 1
+				rad.ColSpanControl = 6
+
+				rad.Label = label
+
+				rad.ControlFirst()
+			}
+		}
+
+		//
+		//
+		//
+		// gr3
+		{
+			gr := page.AddGroup()
+			gr.Cols = 6
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{"de": `
+					<b>39.</b> &nbsp;	
+					In welchen Regionen/ Ländern investieren Sie Ihr Kapital?
+				`}
+				inp.ColSpan = gr.Cols
+			}
+
+			labels := []trl.S{
+				{"de": "Deutschland"},
+				{"de": "Österreich"},
+				{"de": "Schweiz"},
+				{"de": "Westeuropa"},
+				{"de": "Mittelosteuropa"},
+				{"de": "Weltweit"},
+			}
+			mainNames := []string{
+				"germany",
+				"austria",
+				"switzerland",
+				"western_europe",
+				"middle_east_eur",
+				"worldwide",
+			}
+
+			subLabels := map[int][]trl.S{
+				3: {
+					{"de": "Dänemark"},
+					{"de": "Finnland"},
+					{"de": "Frankreich"},
+					{"de": "Griechenland"},
+					{"de": "Großbritannien"},
+					{"de": "Island"},
+					{"de": "Irland"},
+					{"de": "Italien"},
+					{"de": "Liechtenstein"},
+					{"de": "Luxemburg"},
+					{"de": "Malta"},
+					{"de": "Monaco"},
+					{"de": "Niederlanden"},
+					{"de": "Norwegen"},
+					{"de": "Portugal"},
+					{"de": "Schweden"},
+					{"de": "Spanien "},
+				},
+				4: {
+					{"de": "Albanien"},
+					{"de": "Armenien"},
+					{"de": "Aserbaidschan"},
+					{"de": "Belarus"},
+					{"de": "Bosnien und Herzegowina"},
+					{"de": "Estland"},
+					{"de": "Georgien"},
+					{"de": "Kosovo"},
+					{"de": "Kroatien"},
+					{"de": "Lettland"},
+					{"de": "Litauen"},
+					{"de": "Montenegro"},
+					{"de": "Nordmazedonien"},
+					{"de": "Polen"},
+					{"de": "Republik Moldau"},
+					{"de": "Rumänien"},
+					{"de": "Serbien"},
+					{"de": "Slowakei"},
+					{"de": "Tschechische Republik"},
+					{"de": "Ukraine"},
+					{"de": "Ungarn"},
+					{"de": "Russland"},
+				},
+				5: {
+					{"de": "Lateinamerika / Karibik"},
+					{"de": "Nordamerika"},
+					{"de": "Naher Osten / Nordafrika"},
+					{"de": "Ostasien und Pazifik"},
+					{"de": "Sub-Sahara Afrika"},
+					{"de": "Südasien"},
+					{"de": "Zentralasien "}},
+			}
+
+			subNames := map[int][]string{
+				3: {
+					"andorra",
+					"belgien",
+					"daenemark",
+					"finnland",
+					"frankreich",
+					"griechenland",
+					"grossbritannien",
+					"island",
+					"irland",
+					"italien",
+					"liechtenstein",
+					"luxemburg",
+					"malta",
+					"monaco",
+					"niederlanden",
+					"norwegen",
+					"portugal",
+					"schweden",
+					"spanien ",
+				},
+				4: {
+					"albanien",
+					"armenien",
+					"aserbaidschan",
+					"belarus",
+					"bosnien_herzeg",
+					"estland",
+					"georgien",
+					"kosovo",
+					"kroatien",
+					"lettland",
+					"litauen",
+					"montenegro",
+					"nordmazedonien",
+					"polen",
+					"moldau",
+					"rumaenien",
+					"serbien",
+					"slowakei",
+					"tschech_rep",
+					"ukraine",
+					"ungarn",
+					"russland",
+				},
+				5: {
+					"lateinam_karibik",
+					"nordamerika",
+					"nahost_nordafr",
+					"ostasien_paz",
+					"subsahara",
+					"suedasien",
+					"zentralasien",
+				},
+			}
+
+			// composit validation
+			/*
+				{
+					inp := gr.AddInput()
+					inp.Type = "textblock"
+					inp.ColSpan = gr.Cols
+					inp.ColSpan = 1
+					inp.ColSpanLabel = 1
+					inp.Validator = "biii_branch1"
+
+					inp.Style = css.NewStylesResponsive(inp.Style)
+					inp.Style.Desktop.Position = "relative"
+					inp.Style.Desktop.Top = "7rem"
+					inp.Style.Desktop.Left = "-6rem"
+				}
+
+			*/
+
+			for i1, label := range labels {
+				rad := gr.AddInput()
+				rad.Type = "checkbox"
+				rad.Name = fmt.Sprintf("q39_%v", mainNames[i1])
+
+				rad.ColSpan = gr.Cols
+				rad.ColSpanLabel = 1
+				rad.ColSpanControl = 11
+				rad.Label = label
+				rad.ControlFirst()
+
+				//
+				if _, ok := subLabels[i1]; ok {
+					labels := subLabels[i1]
+					names := subNames[i1]
+					for i2, label := range labels {
+						rad := gr.AddInput()
+						rad.Type = "checkbox"
+						rad.Name = fmt.Sprintf("q39_sub%v_%v", i1, names[i2])
+						rad.ColSpan = 2
+
+						rad.ColSpanLabel = 2
+						rad.ColSpanControl = 6
+
+						rad.Label = label
+						rad.ControlFirst()
+
+						rad.Style = css.NewStylesResponsive(rad.Style)
+						rad.Style.Desktop.StyleBox.Position = "relative"
+						rad.Style.Desktop.StyleBox.Left = "3.2rem"
+					}
+				} // idx==0
+
+			} // range labels q39
+		}
+
+		//
+		//
+		// gr5
+		{
+			labels := []trl.S{
+				{"de": "Deutschland"},
+				{"de": "Österreich"},
+				{"de": "Schweiz"},
+			}
+			radioValues := []string{
+				"germany",
+				"austria",
+				"switzerland",
+			}
+			gr := page.AddGroup()
+			gr.Cols = 1
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{"de": `
+					<b>40.</b> &nbsp;	
+					Wo sitzt Ihr Managementteam?
+				`}
+				inp.ColSpan = gr.Cols
+			}
+			for idx, label := range labels {
+				rad := gr.AddInput()
+				rad.Type = "radio"
+				rad.Name = "q40"
+				rad.ValueRadio = radioValues[idx]
+
+				rad.ColSpan = 1
+				rad.ColSpanLabel = 1
+				rad.ColSpanControl = 6
+
+				rad.Label = label
+
+				rad.ControlFirst()
+			}
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "text"
+				inp.Name = "q40_other"
+				inp.MaxChars = 20
+				inp.Label = trl.S{"de": "Andere, bitte nennen"}
+				inp.ColSpan = gr.Cols
+				inp.ColSpanLabel = 2
+				inp.ColSpanControl = 3
+				inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
+				inp.StyleLbl.Desktop.StyleBox.Padding = "0 0 0 3.4rem"
+
+				inp.Style = css.NewStylesResponsive(inp.Style)
+				inp.Style.Desktop.StyleBox.Margin = "0.35rem 0 0 0"
+			}
+
+		}
+
+		//
+		//
+		// gr6
+		{
+			labels := []trl.S{
+				{"de": "Deutschland"},
+				{"de": "Österreich"},
+				{"de": "Schweiz"},
+			}
+			radioValues := []string{
+				"germany",
+				"austria",
+				"switzerland",
+			}
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 4
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{"de": `
+					<b>41.</b> &nbsp;	
+					In welchem Land ist der Hauptsitz Ihrer Organisation?
+				`}
+				inp.ColSpan = gr.Cols
+			}
+			for idx, label := range labels {
+				rad := gr.AddInput()
+				rad.Type = "radio"
+				rad.Name = "q41"
+				rad.ValueRadio = radioValues[idx]
+
+				rad.ColSpan = 1
+				rad.ColSpanLabel = 1
+				rad.ColSpanControl = 6
+
+				rad.Label = label
+
+				rad.ControlFirst()
+			}
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "text"
+				inp.Name = "q41_other"
+				inp.MaxChars = 20
+				inp.Label = trl.S{"de": "Andere, bitte nennen"}
+				inp.ColSpan = gr.Cols
+				inp.ColSpanLabel = 2
+				inp.ColSpanControl = 3
+				inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
+				inp.StyleLbl.Desktop.StyleBox.Padding = "0 0 0 3.4rem"
+
+				inp.Style = css.NewStylesResponsive(inp.Style)
+				inp.Style.Desktop.StyleBox.Margin = "0.35rem 0 0 0"
+			}
+
 		}
 
 	}

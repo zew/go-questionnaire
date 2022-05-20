@@ -573,7 +573,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				inp.Label = trl.S{"de": "<b>9.</b> &nbsp;	Welche Einflussmöglichkeiten nutzen Sie als Impact Investor?"}
+				inp.Label = trl.S{"de": `<b>9.</b> &nbsp;	Welche Einflussmöglichkeiten nutzen Sie als Impact Investor?`}
 				inp.ColSpan = gr.Cols
 			}
 			for idx, label := range labels {

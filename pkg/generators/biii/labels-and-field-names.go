@@ -201,8 +201,19 @@ var q32columns = []trl.S{
 	{"de": "3<br>geringster Fortschriftt"},
 }
 
-var q33Columns = []trl.S{
+var q33aColumns = []trl.S{
+	{"de": "1<br>größter Bedarf"},
+	{"de": "2<br><br>"},
+	{"de": "3<br>geringster Bedarf"},
+}
+var q33bColumns = []trl.S{
 	{"de": "1<br>größtes Potenzial"},
 	{"de": "2<br><br>"},
 	{"de": "3<br>geringstes Potenzial"},
+}
+
+var q34columns = []trl.S{
+	{"de": "1<br>höchste Entwicklung"},
+	{"de": "2<br><br>"},
+	{"de": "3<br>geringste Entwicklung"},
 }

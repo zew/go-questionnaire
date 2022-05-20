@@ -32,10 +32,21 @@ func page4Quest11(q *qst.QuestionnaireT) {
 				{"de": "Börsengehandeltes Beteiligungskapital / Aktien (Public equity)"},
 				{"de": "Privates (nicht börsengehandeltes) Fremdkapital/ Anleihen (Private debt)  "},
 				{"de": "Börsengehandeltes Fremdkapital / Anleihen (Public debt)  "},
+
 				{"de": "Immobilien (Real estate)  "},
 				{"de": "Einlagen oder Zahlungsmitteläquivalente / Geldwerte (Deposits or cash equivalents / monetary assets)  "},
-				{"de": "Soziale Infrastruktur Finanzierung (SOC (z.B. SIB / DIB) )  "},
+				{"de": `Soziale Infrastruktur Finanzierung (SOC (z.B. SIB / DIB) ) 
+						<div style="font-size:80%; line-height: 100%; margin-top: 0.3rem; margin-left: 1rem;">
+							SOC: Social Outcomes Contracting; 
+							<br>
+							SIB: Social Impact Bond; 
+							<br>
+							DIB: Development Impact Bond
+						</div>
+					
+				`},
 				{"de": "Grüne Anleihen (Green Bonds)  "},
+
 				{"de": "Schwellenländer(markt) (Emerging markets)  "},
 				{"de": "Mikrofinanzierung (Microfinance)  "},
 				{"de": "Rohstoffe (Commodities)  "},
@@ -46,10 +57,12 @@ func page4Quest11(q *qst.QuestionnaireT) {
 				"public_equity",
 				"private_external",
 				"public_external",
+
 				"real_estate",
 				"money_deposits",
 				"soc",
 				"green_bonds",
+
 				"emerging_markets",
 				"microfinance",
 				"commodities",
@@ -1687,6 +1700,7 @@ func page4Quest11(q *qst.QuestionnaireT) {
 		}
 
 		q33ab := []string{"q33a", "q33b"}
+		cols := [][]trl.S{q33aColumns, q33bColumns}
 		for q33idx, q := range q33ab {
 
 			fieldNames := make([]string, 0, len(fns))
@@ -1698,7 +1712,7 @@ func page4Quest11(q *qst.QuestionnaireT) {
 			{
 				gb := qst.NewGridBuilderRadios(
 					columnTemplate3a,
-					q33Columns,
+					cols[q33idx],
 					fieldNames,
 					radioVals3,
 					lbls,
@@ -1763,6 +1777,238 @@ func page4Quest11(q *qst.QuestionnaireT) {
 				}
 			}
 
+		}
+
+	}
+
+	// page 17
+	{
+		page := q.AddPage()
+		page.Short = trl.S{"de": ""}
+		page.Label = trl.S{"de": ""}
+		page.NavigationCondition = "BIIINow"
+		page.SuppressInProgressbar = true
+		page.WidthMax("42rem")
+
+		// gr0
+		{
+			gb := qst.NewGridBuilderRadios(
+				columnTemplate3a,
+				q34columns,
+				[]string{
+					"q34_private_equity",
+					"q34_public_equity",
+					"q34_private_external",
+					"q34_public_external",
+
+					"q34_real_estate",
+					"q34_money_deposits",
+					"q34_soc",
+					"q34_green_bonds",
+
+					"q34_emerging_markets",
+					"q34_microfinance",
+					"q34_commodities",
+					"q34_slb",
+				},
+				radioVals3,
+				[]trl.S{
+					{"de": "Privates (nicht börsengehandeltes) Beteiligungskapital (Private equity)"},
+					{"de": "Börsengehandeltes Beteiligungskapital / Aktien (Public equity)"},
+					{"de": "Private (nicht börsengehandeltes) Fremdkapital/ Anleihen (Private debt)"},
+					{"de": "Börsengehandeltes Fremdkapital / Anleihen (Public debt)  "},
+
+					{"de": "Immobilien (Real estate)  "},
+					{"de": "Einlagen oder Zahlungsmitteläquivalente / Geldwerte (Deposits oder cash equivalents / monetary assets) "},
+					{"de": `Soziale Infrastruktur Finanzierung (SOC (z.B. SIB / DIB) ) 
+						<div style="font-size:80%; line-height: 100%; margin-top: 0.3rem; margin-left: 1rem;">
+							SOC: Social Outcomes Contracting; 
+							<br>
+							SIB: Social Impact Bond; 
+							<br>
+							DIB: Development Impact Bond
+						</div>
+					
+					`},
+					{"de": "Grüne Anleihen (Green Bonds)  "},
+
+					{"de": "Schwellenländer(markt) (Emerging markets)  "},
+					{"de": "Mikrofinanzierung (Microfinance)  "},
+					{"de": "Rohstoffe (Commodities)  "},
+					{"de": "Sustainability-Linked Bonds (SLBs)"},
+				},
+			)
+			gb.MainLabel = trl.S{
+				"de": `
+					<b>34.</b> &nbsp;
+					In welchen Asset Klassen erwarten Sie eine besonders dynamische Entwicklung?
+				`,
+			}
+			gr := page.AddGrid(gb)
+			gr.BottomVSpacers = 1
+		}
+
+		if true {
+			fnOthers := []string{"q34_hybrid", "q34_other"}
+			lblOthers := []trl.S{
+				{"de": "Hybride Finanz&shy;instrumente (Hybrid financial instruments), bitte nennen"},
+				{"de": "Andere, bitte nennen"},
+			}
+
+			for otherIdx, fldName := range fnOthers {
+
+				colsBelow1 := append([]float32{1.0}, columnTemplate3a...)
+				colsBelow1 = []float32{
+					1.38, 2.1, //   3.0, 1,  |  4.6 separated to two cols
+					0.0, 1, //     3.0, 1,  |  4.6 separated to two cols
+					0.0, 1,
+					0.0, 1,
+				}
+				colsBelow2 := []float32{}
+				for i := 0; i < len(colsBelow1); i += 2 {
+					colsBelow2 = append(colsBelow2, colsBelow1[i]+colsBelow1[i+1])
+				}
+
+				gr := page.AddGroup()
+				gr.Cols = 7
+				gr.BottomVSpacers = 4
+				stl := ""
+				for colIdx := 0; colIdx < len(colsBelow2); colIdx++ {
+					stl = fmt.Sprintf(
+						"%v   %vfr ",
+						stl,
+						colsBelow2[colIdx],
+					)
+				}
+				gr.Style = css.NewStylesResponsive(gr.Style)
+				if gr.Style.Desktop.StyleGridContainer.TemplateColumns == "" {
+					gr.Style.Desktop.StyleBox.Display = "grid"
+					gr.Style.Desktop.StyleGridContainer.TemplateColumns = stl
+				} else {
+					log.Printf("GridBuilder.AddGrid() - another TemplateColumns already present.\nwnt%v\ngot%v", stl, gr.Style.Desktop.StyleGridContainer.TemplateColumns)
+				}
+				{
+					inp := gr.AddInput()
+					inp.Type = "text"
+					inp.Name = fmt.Sprintf("q34_%v_label", fldName)
+					inp.MaxChars = 17
+					inp.ColSpan = 1
+					inp.ColSpanLabel = 2.4
+					inp.ColSpanControl = 4
+					// inp.Label = trl.S{
+					// 	"de": "Andere",
+					// 	"en": "Other",
+					// }
+					inp.Label = lblOthers[otherIdx]
+				}
+				for idx := 0; idx < len(radioVals3); idx++ {
+					rad := gr.AddInput()
+					rad.Type = "radio"
+					rad.Name = fmt.Sprintf("q34_%v", fldName)
+					rad.ValueRadio = fmt.Sprint(idx + 1)
+					rad.ColSpan = 1
+					rad.ColSpanLabel = colsBelow1[2*(idx+1)]
+					rad.ColSpanControl = colsBelow1[2*(idx+1)] + 1
+				}
+			}
+
+		}
+
+	}
+
+	// page 18
+	{
+		page := q.AddPage()
+		page.Short = trl.S{"de": ""}
+		page.Label = trl.S{"de": ""}
+		page.NavigationCondition = "BIIINow"
+		page.SuppressInProgressbar = true
+		page.WidthMax("42rem")
+
+		// gr0
+		{
+			gb := qst.NewGridBuilderRadios(
+				columnTemplate3a,
+				q33bColumns,
+				[]string{
+					"q35_europe",
+					"q35_east_asia",
+					"q35_north_america",
+					"q35_near_east",
+
+					"q35_south_asia",
+					"q35_latin_america",
+					"q35_sub_sahara",
+					"q35_central_asia",
+				},
+				radioVals3,
+				[]trl.S{
+					{"de": "Europa"},
+					{"de": "Ostasien und Pazifik"},
+					{"de": "Nordamerika"},
+					{"de": "Naher Osten / Nordafrika"},
+
+					{"de": "Südasien"},
+					{"de": "Lateinamerika / Karibik"},
+					{"de": "Sub-Sahara Afrika"},
+					{"de": "Zentralasien "},
+				},
+			)
+			gb.MainLabel = trl.S{
+				"de": `
+					<b>35.</b> &nbsp;
+					In welchen Regionen sehen Sie das größte Potenzial für effektive Investitionen im Impact Investing?
+				`,
+			}
+			gr := page.AddGrid(gb)
+			gr.BottomVSpacers = 3
+		}
+
+		// gr1
+		{
+			labels := []trl.S{
+				{"de": "Impact Investing ist zu einem relevanten Segment des Kapitalmarkts (> 10 % aller Anlagen) geworden"},
+				{"de": "Impact Investing wächst vor allem in der Entwicklungszusammenarbeit"},
+				{"de": "Impact Investing wächst vor allem wegen der Implementierung von Retail-Lösungen"},
+				{"de": "Impact Investing wächst vor allem durch Investments im Entwicklungsbereich"},
+
+				{"de": "VC nimmt die führende Rolle ein"},
+				{"de": "Regulatorische Begrenzungen dämpfen die Dynamik des Impact Investing Markts"},
+				{"de": "Impact Investing stagniert"},
+			}
+			subName := []string{
+				"greater10pct",
+				"development_coop",
+				"retail",
+				"development",
+
+				"leading_vc",
+				"regulations_dampen",
+				"stagnation",
+			}
+			gr := page.AddGroup()
+			gr.Cols = 1
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{
+					"de": `<b>36.</b> &nbsp;	
+                    Wo sehen Sie den Impact Investing Markt in Deutschland in drei Jahren?
+                    `,
+				}
+				inp.ColSpan = gr.Cols
+			}
+			for idx, label := range labels {
+				rad := gr.AddInput()
+				rad.Type = "checkbox"
+				rad.Name = fmt.Sprintf("q36_%v", subName[idx])
+				rad.ColSpan = 1
+				rad.ColSpanLabel = 1
+				rad.ColSpanControl = 6
+				rad.Label = label
+				rad.Style = css.NewStylesResponsive(rad.Style)
+				rad.ControlFirst()
+			}
 		}
 
 	}

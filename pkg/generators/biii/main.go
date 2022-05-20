@@ -445,6 +445,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		}
 
 	}
+
 	// page 3
 	{
 		page := q.AddPage()
@@ -609,6 +610,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		}
 
 	}
+
 	// page 4
 	{
 		page := q.AddPage()

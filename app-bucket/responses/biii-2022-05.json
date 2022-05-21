@@ -17,7 +17,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "477b6bece0a466995188f3789d73a3cff1a5146eb68a20f9c14db9954fe7fc45",
+ 	"md_5": "947397e5ee81d3920945dca3fa2775e6d588c3c02b60dd49b0957909baee7762",
  	"lang_codes": [
  		"de"
  	],
@@ -3115,7 +3115,7 @@
  								"de": "00"
  							},
  							"label": {
- 								"de": "\n\t\t\t\t\tImpact relevante Informationen werden gemessen und dokumentiert\t\t\t\t\t\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\tImpact re\u0026shy;le\u0026shy;vante Informationen werden gemessen und dokumentiert\t\t\t\t\t\n\t\t\t\t"
  							},
  							"suffix": {
  								"de": "% Anteil"
@@ -5563,7 +5563,7 @@
  							"name": "q13_7",
  							"type": "radio",
  							"label": {
- 								"de": "Sauberes Wasser und Sanitäreinrichtungen"
+ 								"de": "Sauberes Wasser und Sanitär\u0026shy;ein\u0026shy;richtungen"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -9260,7 +9260,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "1\u003cbr\u003esehr effektiv"
+ 								"de": "1\u003cbr\u003esehr ef\u0026shy;fek\u0026shy;tiv"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -9304,7 +9304,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "2\u003cbr\u003e\u003cbr\u003eeffektiv"
+ 								"de": "2\u003cbr\u003e\u003cbr\u003eef\u0026shy;fek\u0026shy;tiv"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -9390,7 +9390,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "4\u003cbr\u003eeher ineffektiv"
+ 								"de": "4\u003cbr\u003eeher in\u0026shy;ef\u0026shy;fek\u0026shy;tiv"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -9433,7 +9433,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "5\u003cbr\u003e\u003cbr\u003eineffektiv"
+ 								"de": "5\u003cbr\u003e\u003cbr\u003ein\u0026shy;ef\u0026shy;fek\u0026shy;tiv"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -9609,7 +9609,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "1\u003cbr\u003esehr eindeutig"
+ 								"de": "1\u003cbr\u003esehr ein\u0026shy;deutig"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -9653,7 +9653,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "2\u003cbr\u003e\u003cbr\u003eeindeutig"
+ 								"de": "2\u003cbr\u003e\u003cbr\u003eein\u0026shy;deutig"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -10121,7 +10121,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\u003cb\u003e28.\u003c/b\u003e \u0026nbsp;\n\t\t\t\t\tWie effektiv sind Ihrer Meinung nach die folgenden Maßnahmen, um Impact Washing zu verhindern? \n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cb\u003e28.\u003c/b\u003e \u0026nbsp;\n\t\t\t\t\tWie ef\u0026shy;fek\u0026shy;tiv sind Ihrer Meinung nach die folgenden Maßnahmen, um Impact Washing zu verhindern? \n\t\t\t\t"
  							},
  							"col_span": 5,
  							"col_span_label": 1
@@ -10129,7 +10129,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "1\u003cbr\u003esehr effektiv"
+ 								"de": "1\u003cbr\u003esehr ef\u0026shy;fek\u0026shy;tiv"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -10173,7 +10173,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "2\u003cbr\u003e\u003cbr\u003eeffektiv"
+ 								"de": "2\u003cbr\u003e\u003cbr\u003eef\u0026shy;fek\u0026shy;tiv"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -10259,7 +10259,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "4\u003cbr\u003eeher ineffektiv"
+ 								"de": "4\u003cbr\u003eeher in\u0026shy;ef\u0026shy;fek\u0026shy;tiv"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -10302,7 +10302,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "5\u003cbr\u003e\u003cbr\u003eineffektiv"
+ 								"de": "5\u003cbr\u003e\u003cbr\u003ein\u0026shy;ef\u0026shy;fek\u0026shy;tiv"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -10546,7 +10546,7 @@
  							"name": "q28_measurments",
  							"type": "radio",
  							"label": {
- 								"de": "Entwicklung von Messinstrumenten über den ge\u0026shy;samten Impact-Messungsprozess "
+ 								"de": "Entwicklung von Messinstrumenten über den ge\u0026shy;samten Impact-Messungs\u0026shy;prozess "
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -10596,7 +10596,7 @@
  							"name": "q28_data",
  							"type": "radio",
  							"label": {
- 								"de": "Effektive Da\u0026shy;tenerhebung, -speicherung und -validierung"
+ 								"de": "Ef\u0026shy;fek\u0026shy;tive Da\u0026shy;tenerhebung, -speicherung und -validierung"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -11996,7 +11996,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\u003cb\u003e31.\u003c/b\u003e \u0026nbsp;\n\t\t\t\t\tFür wie relevant erachten Sie die folgenden Rahmenbedingungen für die weitere Entwicklung und das Wachstum des Impact In\u0026shy;vest\u0026shy;ment Sektors? \n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cb\u003e31.\u003c/b\u003e \u0026nbsp;\n\t\t\t\t\tFür wie re\u0026shy;le\u0026shy;vant erachten Sie die folgenden Rahmenbedingungen für die weitere Entwicklung und das Wachstum des Impact In\u0026shy;vest\u0026shy;ment Sektors? \n\t\t\t\t"
  							},
  							"col_span": 5,
  							"col_span_label": 1
@@ -12004,7 +12004,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "1\u003cbr\u003eäußerst relevant"
+ 								"de": "1\u003cbr\u003eäußerst re\u0026shy;le\u0026shy;vant"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -12048,7 +12048,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "2\u003cbr\u003e\u003cbr\u003erelevant"
+ 								"de": "2\u003cbr\u003e\u003cbr\u003ere\u0026shy;le\u0026shy;vant"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -12134,7 +12134,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "4\u003cbr\u003eeher irrelevant"
+ 								"de": "4\u003cbr\u003eeher ir\u0026shy;re\u0026shy;le\u0026shy;vant"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -12177,7 +12177,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "5\u003cbr\u003e\u003cbr\u003eirrelevant"
+ 								"de": "5\u003cbr\u003e\u003cbr\u003eir\u0026shy;re\u0026shy;le\u0026shy;vant"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -16170,7 +16170,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\u003cb\u003e35.\u003c/b\u003e \u0026nbsp;\n\t\t\t\t\tIn welchen Regionen sehen Sie das größte Potenzial für effektive Investitionen im Impact Investing?\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cb\u003e35.\u003c/b\u003e \u0026nbsp;\n\t\t\t\t\tIn welchen Regionen sehen Sie das größte Potenzial für ef\u0026shy;fek\u0026shy;tive Investitionen im Impact Investing?\n\t\t\t\t"
  							},
  							"col_span": 3,
  							"col_span_label": 1
@@ -16646,7 +16646,7 @@
  							"name": "q36_greater10pct",
  							"type": "checkbox",
  							"label": {
- 								"de": "Impact Investing ist zu einem relevanten Segment des Kapitalmarkts (\u003e 10 % aller Anlagen) geworden"
+ 								"de": "Impact Investing ist zu einem re\u0026shy;le\u0026shy;vanten Segment des Kapitalmarkts (\u003e 10 % aller Anlagen) geworden"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -16949,7 +16949,7 @@
  				"desktop": {
  					"grid_container_style": {},
  					"box_style": {
- 						"width_max": "42rem"
+ 						"width_max": "38rem"
  					},
  					"grid_item_style": {},
  					"text_style": {}
@@ -19854,6 +19854,885 @@
  							"col_span": 1,
  							"col_span_label": 2,
  							"col_span_control": 3
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 5,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\n\t\t\t\t\t\u003cb\u003e43.\u003c/b\u003e \u0026nbsp;\t\n\t\t\t\t\tFalls Sie einen Markteintritt strategisch vorbereiten… \n\t\t\t\t"
+ 							},
+ 							"col_span": 5,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "q43_not_applicable",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "N/A (Nicht anwendbar)"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q43_year_month",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "Für welches Jahr/Monat?"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q43_year_month_detail",
+ 							"type": "text",
+ 							"max_chars": 8,
+ 							"placeholder": {
+ 								"de": "20xx"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_control": 7,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"left": "-1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q43_segment",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "Für welches Marktsegment (Eigenkapital, Fremdkapital, strukturierte Finanzierung)? "
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q43_segment_detail",
+ 							"type": "text",
+ 							"max_chars": 20,
+ 							"col_span": 2,
+ 							"col_span_control": 7,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"left": "-1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q43_volume",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "Mit welchem geplanten Volumen? "
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q43_volume_detail",
+ 							"type": "number",
+ 							"max_chars": 15,
+ 							"step": 1,
+ 							"max": 1.7976931348623157e+308,
+ 							"placeholder": {
+ 								"de": "0.000.000"
+ 							},
+ 							"suffix": {
+ 								"de": "€"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_control": 7,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"left": "-1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 2,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Für welche Themen?"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "q43a_q43a_education",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "Bil\u0026shy;dung"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 2,
+ 							"col_span_control": 10,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q43a_q43a_nutrition",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "Ernährung"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 2,
+ 							"col_span_control": 10,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q43a_q43a_health",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "Gesundheit"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 2,
+ 							"col_span_control": 10,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q43a_q43a_poverty",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "Armutsbekämpfung"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 2,
+ 							"col_span_control": 10,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q43a_q43a_justice",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "Soziale / Geschlech\u0026shy;ter-Gerechtigkeit"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 2,
+ 							"col_span_control": 10,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q43a_q43a_elderly_care",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "De\u0026shy;mo\u0026shy;gra\u0026shy;fischer Wandel / Altenpflege"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 2,
+ 							"col_span_control": 10,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q43a_q43a_youth",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "Kinder- und Jugendhilfe"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 2,
+ 							"col_span_control": 10,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q43a_q43a_migration",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "Migration und Integration"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 2,
+ 							"col_span_control": 10,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q43a_q43a_residential",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "(Sozialer) Wohnungsbau"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 2,
+ 							"col_span_control": 10,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q43a_q43a_clean_energy",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "Saubere Energie"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 2,
+ 							"col_span_control": 10,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q43a_q43a_culture",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "Kunst und Kultur"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 2,
+ 							"col_span_control": 10,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q43a_q43a_sanitation",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "Wasser, Sanitärversorgung und Hygiene"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 2,
+ 							"col_span_control": 10,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q43a_q43a_inclusion",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "Finanzielle Inklusion"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 2,
+ 							"col_span_control": 10,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q43a_q43a_sustainability",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "Nachhaltiges Wirt\u0026shy;schaften"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 2,
+ 							"col_span_control": 10,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q43a_q43a_labor_market",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "Arbeitsmarktintegration"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 2,
+ 							"col_span_control": 10,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q43a_q43a_digital",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "Digitalisierung"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 2,
+ 							"col_span_control": 10,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q43a_q43a_mobility",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "Mobilität"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 2,
+ 							"col_span_control": 10,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q43a_q43a_climate",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "Klimaschutz"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 2,
+ 							"col_span_control": 10,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q43a_q43a_biodiversity",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "Schutz von Ökosystemen und Biodiversität"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 2,
+ 							"col_span_control": 10,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q43_other",
+ 							"type": "text",
+ 							"max_chars": 20,
+ 							"label": {
+ 								"de": "Andere, bitte nennen"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 2,
+ 							"col_span_control": 3,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.35rem 0 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0 0 3.4rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						}
  					]
  				}

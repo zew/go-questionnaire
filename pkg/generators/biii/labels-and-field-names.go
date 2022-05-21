@@ -115,7 +115,7 @@ var q13Labels = []trl.S{
 	{"de": "Gesundheit und Wohlergehen"},
 	{"de": "Hochwertige Bildung"},
 	{"de": "Geschlechtergleichheit"},
-	{"de": "Sauberes Wasser und Sanitäreinrichtungen"},
+	{"de": "Sauberes Wasser und Sanitär&shy;ein&shy;richtungen"},
 	{"de": "Bezahlbare und Saubere Energie"},
 	{"de": "Menschenwürdige Arbeit und Wirtschaftswachstum"},
 	{"de": "Industrie, Innovation und Infrastruktur"},
@@ -172,8 +172,8 @@ var q26inputNames = []string{
 }
 
 var q27columns = []trl.S{
-	{"de": "1<br>sehr eindeutig"},
-	{"de": "2<br><br>eindeutig"},
+	{"de": "1<br>sehr ein&shy;deutig"},
+	{"de": "2<br><br>ein&shy;deutig"},
 	{"de": "3<br><br>teils/teils"},
 	{"de": "4<br>eher unklar"},
 	{"de": "5<br>völlig unklar"},

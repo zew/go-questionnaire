@@ -1149,7 +1149,7 @@ func page4Quest11(q *qst.QuestionnaireT) {
 					{"de": "Verpflichtende Impact Messungs- und Reporting-Bestimmungen "},
 					{"de": "Mehr Wissen und Transparenz "},
 					{"de": "Klare Impact Ziele in Strategie und Entscheidungsprozessen"},
-					{"de": "Entwicklung von Messinstrumenten über den gesamten Impact-Messungsprozess "},
+					{"de": "Entwicklung von Messinstrumenten über den gesamten Impact-Messungs&shy;prozess "},
 					{"de": "Effektive Datenerhebung, -speicherung und -validierung"},
 					{"de": "Obligatorische Due Diligence für Impact"},
 				},
@@ -2019,7 +2019,7 @@ func page4Quest11(q *qst.QuestionnaireT) {
 		page.Short = trl.S{"de": "Über Sie"}
 		page.Label = trl.S{"de": ""}
 		page.NavigationCondition = "BIIINow"
-		page.WidthMax("42rem")
+		page.WidthMax("38rem")
 
 		page.ValidationFuncName = "biiiPage19"
 

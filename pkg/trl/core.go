@@ -278,8 +278,8 @@ var coreTranslations = Map{
 	},
 	// system messages
 	"login_by_hash_failed": {
-		"de": "Anmeldung via Hash gescheitert.\nBitte nutzen Sie den übermittelten Link um sich anzumelden.\nWenn der Link in zwei Zeilen geteilt wurde, verbinden Sie die Zeilen wieder.",
-		"en": "Login by hash failed.\nPlease use the provided link to login.\nIf the link was split into two lines, reconnect them.",
+		"de": "Anmeldung via Link gescheitert oder Sitzung verfallen.\nBitte nutzen Sie den übermittelten Link um sich anzumelden.\nWenn der Link in zwei Zeilen geteilt wurde, verbinden Sie die Zeilen wieder.",
+		"en": "Login via link failed or session timed out.\nPlease use the provided link to login.\nIf the link was split into two lines, reconnect them.",
 		"es": "Error al iniciar sesión por hash.\nPor favor, utilice el enlace proporcionado para iniciar sesión.\nSi el enlace se dividió en dos líneas, vuelva a conectarlas.",
 		"fr": "Login par hachage a échoué.\nVeuillez utiliser le lien fourni pour vous connecter.\nSi le lien a été divisé en deux lignes, reconnectez-les.",
 		"it": "Il login non è andato a buon fine.\nPer piacere si utilizzi il link fornitovi per effettuare il login.\nSe il link è spezzato in due, le due parti devono essere riconnesse.",

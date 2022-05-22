@@ -17,7 +17,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "947397e5ee81d3920945dca3fa2775e6d588c3c02b60dd49b0957909baee7762",
+ 	"md_5": "f57e735ab4ac91667998c5ed647dd702b29e2b498fc1d00c363add5be0128885",
  	"lang_codes": [
  		"de"
  	],
@@ -20740,7 +20740,7 @@
  		},
  		{
  			"label": {
- 				"de": "Abschluss",
+ 				"de": "Abschluss\u003cbr\u003e\u003cbr\u003e",
  				"en": "Finish"
  			},
  			"description": {
@@ -20774,68 +20774,165 @@
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
  				{
- 					"bottom_vspacers": 2,
+ 					"bottom_vspacers": 3,
  					"columns": 1,
  					"inputs": [
  						{
- 							"type": "textblock",
+ 							"name": "q44_dsgvo",
+ 							"type": "checkbox",
  							"label": {
- 								"de": "Wollen Sie uns noch etwas mitteilen?",
- 								"en": "Any remarks or advice for us?"
+ 								"de": "\n\t\t\t\t\t\t\u003cb\u003eEinwilligungserklärung gemäß DSGVO\u003c/b\u003e\n\n\t\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\t\tDie Antworten dieser Online-Umfrage werden von uns streng vertraulich, \n\t\t\t\t\t\tDSGVO-konform behandelt und nur in anonymer bzw. aggregierter Form benutzt.\n\n\t\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\t\tHiermit willige ich ein, dass meine gesammelten Da\u0026shy;ten \n\t\t\t\t\t\tfür die BIII Impact In\u0026shy;vest\u0026shy;ment Studie 2022 verwendet werden. \n\t\t\t\t\t"
  							},
- 							"col_span_label": 1
- 						},
- 						{
- 							"name": "comment",
- 							"type": "textarea",
- 							"max_chars": 300,
- 							"col_span_control": 1
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"validator": "must",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						}
- 					],
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {
- 								"row_gap": "0.2rem"
- 							},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
+ 					]
  				},
  				{
  					"bottom_vspacers": 3,
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "finished",
- 							"type": "radio",
+ 							"type": "textblock",
  							"label": {
- 								"de": "Zugang bleibt bestehen.  Da\u0026shy;ten können in weiteren Sitzungen geändert/ergänzt werden. ",
- 								"en": "Leave the ques\u0026shy;tion\u0026shy;naire open. Data  can be changed/completed\u0026nbsp;in later sessions.     "
+ 								"de": "\u003cb\u003eWeitergabe meiner Da\u0026shy;ten\u003c/b\u003e \u003cbr\u003e\u003cbr\u003e"
  							},
  							"col_span": 1,
- 							"col_span_label": 6,
- 							"col_span_control": 1,
- 							"value_radio": "remain-open"
+ 							"col_span_label": 1
  						},
  						{
- 							"name": "finished",
+ 							"name": "q45",
  							"type": "radio",
  							"label": {
- 								"de": "Fragebogen ist abgeschlossen und kann nicht mehr geöffnet werden. ",
- 								"en": "The ques\u0026shy;tion\u0026shy;naire is finished. No more edits.                         "
+ 								"de": "Ich erkläre mich einverstanden, dass meine angegebenen personenbezogenen Da\u0026shy;ten genutzt werden und zu Auswertungszwecken an die European Venture Philanthropy Association (EVPA) weitergeleitet werden dürfen. "
  							},
  							"col_span": 1,
- 							"col_span_label": 6,
- 							"col_span_control": 1,
- 							"value_radio": "qst-finished"
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "evpa",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q45_org_name",
+ 							"type": "text",
+ 							"max_chars": 27,
+ 							"label": {
+ 								"de": "Name Ihrer Organisation"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 2,
+ 							"col_span_control": 3,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 6rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q45_comment",
+ 							"type": "textarea",
+ 							"max_chars": 150,
+ 							"placeholder": {
+ 								"de": "Kommentarfeld"
+ 							},
+ 							"label": {
+ 								"de": "Kommentar"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 2,
+ 							"col_span_control": 3,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 6rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q45",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Meine Da\u0026shy;ten sollen anonymisiert verwendet werden."
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "anonymous",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						}
  					]
  				},
@@ -20846,8 +20943,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Durch Klicken er\u0026shy;hal\u0026shy;ten Sie eine Zusammenfassung Ihrer Antworten",
- 								"en": "By clicking, you will receive a summary of your an\u0026shy;swers."
+ 								"de": "",
+ 								"en": ""
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -20906,8 +21003,8 @@
  		},
  		{
  			"label": {
- 				"de": "Ihre Eingaben",
- 				"en": "Summary of results"
+ 				"de": "",
+ 				"en": ""
  			},
  			"description": {
  				"de": "",
@@ -20940,21 +21037,17 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"type": "dyn-textblock",
- 							"col_span_control": 1,
- 							"dynamic_func": "ResponseStatistics"
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\t\n\t\t\t\t\t\u003cspan style=\"font-size: 130%\"\u003e\n\t\t\t\t\tVielen Dank für Ihre Mithilfe!\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\tWir werden die Ergebnisse der Erhebung in der 2022 Bundesinitiative\n\t\t\t\t\tImpact Investing (BIII) Markstudie aufnehmen und mit Ihnen teilen!\n\t\t\t\t\t\u003c/span\u003e\n\t\t\t\t"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
  						},
  						{
  							"type": "dyn-textblock",
  							"col_span_control": 1,
  							"dynamic_func": "PersonalLink"
- 						},
- 						{
- 							"type": "dyn-textblock",
- 							"param": "site-imprint.md",
- 							"col_span": 1,
- 							"col_span_label": 1,
- 							"dynamic_func": "RenderStaticContent"
  						}
  					]
  				}

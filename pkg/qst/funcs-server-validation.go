@@ -77,6 +77,9 @@ func init() {
 		if arg == "" {
 			return fmt.Errorf(cfg.Get().Mp["must_not_empty"].Tr(q.LangCode))
 		}
+		if inp.Type == "checkbox" && arg == "0" {
+			return fmt.Errorf(cfg.Get().Mp["must_not_empty"].Tr(q.LangCode))
+		}
 		return nil
 	}
 

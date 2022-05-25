@@ -595,8 +595,8 @@ func page4Quest11(q *qst.QuestionnaireT) {
 		{
 			labels := []trl.S{
 				{"de": "Traditionelle Organisationen mit beabsichtigtem (intentional) sozialen und/oder ökologischen Impact"},
-				{"de": "Gewinnorientierte Organisationen mit sozialem Auftrag ohne Gewinnsperre"},
-				{"de": "Gewinnorientierte Organisationen mit sozialem Auftrag mit Gewinnsperre"},
+				{"de": "Gewinnorientierte Organisationen mit sozialem Auftrag ohne Ausschüttungs&shy;sperre"},
+				{"de": "Gewinnorientierte Organisationen mit sozialem Auftrag mit Ausschüttungs&shy;sperre"},
 				{"de": "Gemeinnützige Organisationen mit kommerziellen Aktivitäten"},
 				{"de": "Gemeinnützige Organisationen ohne kommerzielle Aktivitäten"},
 				{"de": "Nicht anwendbar (N/A) "},
@@ -939,7 +939,20 @@ func page4Quest11(q *qst.QuestionnaireT) {
 			}
 		}
 
-		// gr3
+	}
+
+	// page 12
+	{
+		page := q.AddPage()
+		page.Short = trl.S{"de": ""}
+		page.Label = trl.S{"de": ""}
+		page.NavigationCondition = "BIIINow"
+
+		page.SuppressInProgressbar = true
+
+		page.WidthMax("42rem")
+
+		// gr0
 		{
 			gb := qst.NewGridBuilderRadios(
 				columnTemplate3,
@@ -960,26 +973,9 @@ func page4Quest11(q *qst.QuestionnaireT) {
 			gr.BottomVSpacers = 4
 		}
 
-		// {
-		// 	gb := qst.NewGridBuilderRadios(
-		// 		columnTemplate3,
-		// 		q25Columns,
-		// 		[]string{"q25impact"},
-		// 		q25RadioVals,
-		// 		[]trl.S{
-		// 			{"de": `
-		// 				Impact Performance
-		// 			`},
-		// 		},
-		// 	)
-		// 	// gb.MainLabel = ...
-		// 	gr := page.AddGrid(gb)
-		// 	_ = gr
-		// }
-
 	}
 
-	// page 12
+	// page 13
 	{
 		page := q.AddPage()
 		page.Short = trl.S{"de": "Integrität<br>Entwicklung"}
@@ -1224,7 +1220,7 @@ func page4Quest11(q *qst.QuestionnaireT) {
 
 	}
 
-	// page 13
+	// page 14
 	{
 		page := q.AddPage()
 		page.Short = trl.S{"de": ""}
@@ -1243,7 +1239,7 @@ func page4Quest11(q *qst.QuestionnaireT) {
 				inp.Type = "textblock"
 				inp.Label = trl.S{"de": `
 					<p style='font-size: 130%'>
-						Entwicklung des Impact Investing Marktes
+						Entwicklung des Impact Investing-Marktes
 					</p>
 
 					<br>
@@ -1380,7 +1376,7 @@ func page4Quest11(q *qst.QuestionnaireT) {
 
 	}
 
-	// page 14
+	// page 15
 	{
 		page := q.AddPage()
 		page.Short = trl.S{"de": ""}
@@ -1501,7 +1497,7 @@ func page4Quest11(q *qst.QuestionnaireT) {
 
 	}
 
-	// page 15
+	// page 16
 	{
 		page := q.AddPage()
 		page.Short = trl.S{"de": ""}
@@ -1611,7 +1607,7 @@ func page4Quest11(q *qst.QuestionnaireT) {
 
 	}
 
-	// page 16
+	// page 17
 	{
 		page := q.AddPage()
 		page.Short = trl.S{"de": ""}
@@ -1781,7 +1777,7 @@ func page4Quest11(q *qst.QuestionnaireT) {
 
 	}
 
-	// page 17
+	// page 18
 	{
 		page := q.AddPage()
 		page.Short = trl.S{"de": ""}
@@ -1916,7 +1912,7 @@ func page4Quest11(q *qst.QuestionnaireT) {
 
 	}
 
-	// page 18
+	// page 19
 	{
 		page := q.AddPage()
 		page.Short = trl.S{"de": ""}
@@ -1973,7 +1969,7 @@ func page4Quest11(q *qst.QuestionnaireT) {
 				{"de": "Impact Investing wächst vor allem durch Investments im Entwicklungsbereich"},
 
 				{"de": "VC nimmt die führende Rolle ein"},
-				{"de": "Regulatorische Begrenzungen dämpfen die Dynamik des Impact Investing Markts"},
+				{"de": "Regulatorische Begrenzungen dämpfen die Dynamik des Impact Investing-Marktes"},
 				{"de": "Impact Investing stagniert"},
 			}
 			subName := []string{
@@ -2013,7 +2009,7 @@ func page4Quest11(q *qst.QuestionnaireT) {
 
 	}
 
-	// page 19
+	// page 20
 	{
 		page := q.AddPage()
 		page.Short = trl.S{"de": "Über Sie"}

@@ -150,12 +150,13 @@ var influenceFactorNamesQ3 = []string{
 
 func eachMonth3inQ(q *qst.QuestionnaireT) error {
 
-	cond := false
-	cond = cond || q.Survey.Year == 2021 && q.Survey.Month == 9
-	cond = cond || q.Survey.Year == 2021 && q.Survey.Month == 12
-	cond = cond || q.Survey.Year == 2022 && q.Survey.Month == 3
+	include := false
+	include = include || q.Survey.Year == 2021 && q.Survey.Month == 9
+	include = include || q.Survey.Year == 2021 && q.Survey.Month == 12
+	include = include || q.Survey.Year == 2022 && q.Survey.Month == 3
+	include = include || q.Survey.Year == 2022 && q.Survey.Month == 6
 
-	if !cond {
+	if !include {
 		return nil
 	}
 

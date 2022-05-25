@@ -7,7 +7,15 @@ import (
 	"github.com/zew/go-questionnaire/pkg/trl"
 )
 
-func special202203(q *qst.QuestionnaireT) error {
+func special202206(q *qst.QuestionnaireT) error {
+
+	cond := false
+	cond = cond || q.Survey.Year == 2022 && q.Survey.Month == 6
+	if !cond {
+		return nil
+	}
+
+	return nil
 
 	// q4, q5a, q5b, q5c
 	var rowLabels01 = []trl.S{
@@ -56,12 +64,6 @@ func special202203(q *qst.QuestionnaireT) error {
 		"sanction_effect_gdp",
 		"sanction_effect_inflation",
 		"sanction_effect_ecb_rate",
-	}
-
-	cond := false
-	cond = cond || q.Survey.Year == 2022 && q.Survey.Month == 3
-	if !cond {
-		return nil
 	}
 
 	//

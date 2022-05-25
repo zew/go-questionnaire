@@ -125,7 +125,7 @@ func later(q *qst.QuestionnaireT) {
 
 					if idx == 1 {
 						inp.MaxChars = 8
-						inp.Placeholder = trl.S{"de": "20xx"}
+						inp.Placeholder = trl.S{"de": "00/20xx"}
 					}
 					// inp.Suffix = trl.S{"de": "%"}
 

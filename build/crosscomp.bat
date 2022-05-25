@@ -1,3 +1,5 @@
+@REM from app root
+
 SET GOOS=solaris
 SET GOOS=openbsd
 SET GOOS=linux

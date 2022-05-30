@@ -188,7 +188,7 @@ func finish(q *qst.QuestionnaireT) {
 			// 	inp := gr.AddInput()
 			// 	inp.Type = "dyn-textblock"
 			// 	inp.DynamicFunc = "RenderStaticContent"
-			// 	inp.Param = "site-imprint.md"
+			// 	inp.DynamicFuncParamset   = "site-imprint.md"
 			// 	inp.ColSpan = 1
 			// 	inp.ColSpanLabel = 1
 			// }

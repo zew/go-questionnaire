@@ -23,7 +23,7 @@ func Load1(fn string) (*QuestionnaireT, error) {
 		fn += ".json"
 	}
 
-	log.Printf("load qst %v", fn)
+	// log.Printf("load qst %v", fn)
 
 	bts, err := cloudio.ReadFile(fn)
 	if err != nil {
@@ -85,23 +85,11 @@ func (q *QuestionnaireT) Save1(fn string) error {
 
 	pthOld := path.Join(saveDir, questFile)
 
-	// keepBackup := false
-	// if keepBackup {
-	// 	fileBackup := strings.Replace(questFile, ".json", fmt.Sprintf("_%v.json", time.Now().Unix()), 1)
-	// 	pthBackup := path.Join(saveDir, fileBackup)
-	// 	if questFile != "questionnaire-example.json" {
-	// 		err = os.Rename(pthOld, pthBackup)
-	// 		if err != nil {
-	// 			return err
-	// 		}
-	// 	}
-	// }
-
 	err = cloudio.WriteFile(pthOld, bytes.NewReader(bts), 0644)
 	if err != nil {
 		return err
 	}
-	log.Printf("Saved questionnaire file to %v", pthOld)
+	// log.Printf("Saved questionnaire file to %v", pthOld)
 	return nil
 }
 

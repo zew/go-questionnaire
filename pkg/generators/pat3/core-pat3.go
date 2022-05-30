@@ -211,7 +211,7 @@ func POP3Part1Decision34(q *qst.QuestionnaireT, decisionNumber int, inpName stri
 			inp.Type = "dyn-textblock"
 			inp.ColSpanControl = 1
 			inp.DynamicFunc = "ErrorProxy"
-			inp.Param = inpName + "_q1"
+			inp.DynamicFuncParamset = inpName + "_q1"
 		}
 	}
 
@@ -273,7 +273,7 @@ func POP3Part1Decision34(q *qst.QuestionnaireT, decisionNumber int, inpName stri
 			inp.Type = "dyn-textblock"
 			inp.ColSpanControl = 1
 			inp.DynamicFunc = "ErrorProxy"
-			inp.Param = inpName + "_q2"
+			inp.DynamicFuncParamset = inpName + "_q2"
 		}
 	}
 

@@ -84,7 +84,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp := gr.AddInput()
 				inp.Type = "dyn-textblock"
 				inp.DynamicFunc = "RenderStaticContent"
-				inp.Param = "page-0-data-protection.md"
+				inp.DynamicFuncParamset = "page-0-data-protection.md"
 				inp.ColSpan = 1
 				inp.ColSpanLabel = 1
 			}

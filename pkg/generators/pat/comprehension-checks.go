@@ -143,7 +143,7 @@ func ComprehensionCheck1(q *qst.QuestionnaireT) error {
 				inp.Type = "dyn-textblock"
 				inp.ColSpan = 8
 				inp.DynamicFunc = "ErrorProxy"
-				inp.Param = "q_found_compr_"
+				inp.DynamicFuncParamset = "q_found_compr_"
 
 				inp.Style = css.NewStylesResponsive(inp.Style)
 				inp.Style.Desktop.StyleBox.Position = "relative"
@@ -324,7 +324,7 @@ func ComprehensionCheck2(q *qst.QuestionnaireT) error {
 				inp.Type = "dyn-textblock"
 				inp.ColSpan = 1
 				inp.DynamicFunc = "ErrorProxy"
-				inp.Param = "q_tpref_compr"
+				inp.DynamicFuncParamset = "q_tpref_compr"
 
 				inp.Style = css.NewStylesResponsive(inp.Style)
 				inp.Style.Desktop.StyleBox.Position = "relative"

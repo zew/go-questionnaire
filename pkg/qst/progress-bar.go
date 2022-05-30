@@ -2,7 +2,6 @@ package qst
 
 import (
 	"fmt"
-	"log"
 	"strings"
 )
 
@@ -59,7 +58,7 @@ func (q *QuestionnaireT) ProgressBar() string {
 		// log.Printf("checking q.CurrPage %v is between [%v,%v] => activePBItem %v", q.CurrPage, boundLower, boundUpper, pbActive)
 		if q.CurrPage >= boundLower && q.CurrPage < boundUpper {
 			pbActive = i - 1 // -1 because we iterate over the max bounds
-			log.Printf("    q.CurrPage %v is between [%v,%v] => activePBItem %v - progressItems %+v", q.CurrPage, boundLower, boundUpper, pbActive, progressItems)
+			// log.Printf("    q.CurrPage %v is between [%v,%v] => activePBItem %v - progressItems %+v", q.CurrPage, boundLower, boundUpper, pbActive, progressItems)
 			break
 		}
 		boundLower = boundUpper

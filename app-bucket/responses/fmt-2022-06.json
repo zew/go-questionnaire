@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "a0f32f1365e49b4205b24555b63badd5308dc624563dba7419815a51d69a3acf",
+ 	"md_5": "6856ed8f4b917eec0bfc417cb07387b2b8aa82aae84c76798f6c08131873dc74",
  	"lang_codes": [
  		"de",
  		"en"
@@ -76,10 +76,10 @@
  						},
  						{
  							"type": "dyn-textblock",
- 							"param": "page-0-data-protection.md",
  							"col_span": 1,
  							"col_span_label": 1,
- 							"dynamic_func": "RenderStaticContent"
+ 							"dynamic_func": "RenderStaticContent",
+ 							"dynamic_func_paramset": "page-0-data-protection.md"
  						}
  					]
  				},
@@ -8815,6 +8815,51 @@
  		},
  		{
  			"label": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"no_navigation": true,
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "40rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "dyn-textblock",
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"dynamic_func": "RenderStaticContent",
+ 							"dynamic_func_paramset": "/echart/inner.html"
+ 						}
+ 					]
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
  				"de": "Abschluss",
  				"en": "Finish"
  			},
@@ -8939,7 +8984,7 @@
  							"accesskey": "n",
  							"col_span": 1,
  							"col_span_control": 1,
- 							"response": "8",
+ 							"response": "9",
  							"style_control": {
  								"desktop": {
  									"grid_container_style": {},
@@ -9024,10 +9069,10 @@
  						},
  						{
  							"type": "dyn-textblock",
- 							"param": "site-imprint.md",
  							"col_span": 1,
  							"col_span_label": 1,
- 							"dynamic_func": "RenderStaticContent"
+ 							"dynamic_func": "RenderStaticContent",
+ 							"dynamic_func_paramset": "site-imprint.md"
  						}
  					]
  				}

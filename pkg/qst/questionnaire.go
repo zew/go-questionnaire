@@ -67,9 +67,8 @@ func nobreakGlue(el1, glue, el2 string) string {
 // Multiple checkboxes (checkboxgroup) with same name but distinct values are a dubious instrument.
 // See comment to implementedType checkboxgroup.
 type inputT struct {
-	Name  string `json:"name,omitempty"`
-	Type  string `json:"type,omitempty"`  // see implementedTypes
-	Param string `json:"param,omitempty"` // for dyn-text - name of parameter set
+	Name string `json:"name,omitempty"`
+	Type string `json:"type,omitempty"` // see implementedTypes
 
 	MaxChars    int     `json:"max_chars,omitempty"`  // input chars; => SIZE for input, MAXLENGTH for textarea, text; also used for width
 	Step        float64 `json:"step,omitempty"`       // for number input:  stepping interval, i.e. 2 or 0.1
@@ -100,16 +99,23 @@ type inputT struct {
 
 	Validator string `json:"validator,omitempty"` // i.e. any key from map of validators, i.e. "must;inRange20"
 	// key to coreTranslations, content comes from Validator(Response), compare OnInvalid
-	// for radio inputs, see error-proxy
+	// for radio inputs, see ErrorProxy
 	ErrMsg string `json:"err_msg,omitempty"`
 
 	// Response - input.value - numbers are stored as strings too - also contains the value of options and checkboxes
 	Response   string `json:"response,omitempty"`
 	ValueRadio string `json:"value_radio,omitempty"` // for type = radio
 
-	// compositFunc == 'composit' OR dynFunc == 'dynamic'
-	//       if 'composit' =>    first arg paramSetIdx, second arg seqIdx
-	DynamicFunc string `json:"dynamic_func,omitempty"`
+	// depending if
+	// 		inp.Type == "dyn-composite"
+	// 		inp.Type == "dyn-textblock"
+	// then
+	// 		=> lookup in CompositeFuncs in funcs-composite.go
+	// 		=> lookup in       dynFuncs in funcs-dynamic.go
+	//       if "dyn-composite" =>   first arg paramSetIdx, second arg seqIdx, for example TimePreferenceSelfComprehensionCheck__0__0
+	// 		 if "dyn-textblock" =>   param in inp.Param
+	DynamicFunc         string `json:"dynamic_func,omitempty"`
+	DynamicFuncParamset string `json:"dynamic_func_paramset,omitempty"` // for "dyn-textblock" - name of parameter set
 
 	Style    *css.StylesResponsive `json:"style,omitempty"` // pointer, to avoid empty JSON blocks
 	StyleLbl *css.StylesResponsive `json:"style_label,omitempty"`

@@ -19,10 +19,17 @@ var implementedTypes = map[string]interface{}{
 	*/
 	"textblock":      nil, // no control - ColSpanLabel counts, ColSpanControl is ignored
 	"button":         nil, // no label - only control - return value not saved - only indirectly used for state handling
-	"label-as-input": nil, // ColspanLabel is empty - ColspanControl has the label text
-	"dyn-textblock":  nil, // like textblock, but executed a http request time, contains no inputs - can be used as dynamic label for following inputs
-	"dyn-composite":  nil, // executed at http request time, free dynamic fragment of text and multiple inputs
+	"label-as-input": nil, // ColspanLabel is empty - ColspanControl has the label text; if we need a label in the _second_ grid cell, instead of in the first
 
+	// like textblock, but executed a http request time;
+	//   	contains no inputs;
+	// 		can be used as dynamic label for a following input;
+	// 		can be used as "ErrorProxy"
+	"dyn-textblock": nil,
+	// executed at http request time;
+	// free dynamic fragment of text and multiple inputs;
+	// turns the entire group into a dynamic element
+	"dyn-composite": nil,
 }
 
 const (

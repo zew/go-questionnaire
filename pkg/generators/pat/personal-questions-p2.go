@@ -362,7 +362,7 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 				inp.Type = "dyn-textblock"
 				inp.ColSpan = 4
 				inp.DynamicFunc = "ErrorProxy"
-				inp.Param = "q20"
+				inp.DynamicFuncParamset = "q20"
 			}
 			keyVals := []string{
 				"inactive;;Ich bin nicht politisch aktiv",

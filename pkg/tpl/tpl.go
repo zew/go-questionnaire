@@ -97,7 +97,7 @@ func bundle(base *template.Template, extend string) error {
 // however this is incompatible with using cached pre-parsed templates;
 // we need to add dynamic stuff as params instead;
 // see nav(*http.Request) as example.
-func obsoleteAddDynamicFuncs(t *template.Template, r *http.Request) {
+func obsoleteAddDyynamicFuncs(t *template.Template, r *http.Request) {
 }
 
 // SiteCore returns only the non-numerical part of the site name;
@@ -170,7 +170,7 @@ func Get(tName string, forceFreshParsing bool) (*template.Template, error) {
 	}
 
 	// funcs can only be added *before* parsing
-	// obsoleteAddDynamicFuncs(tDerived, r)
+	// obsoleteAddDyynamicFuncs(tDerived, r)
 
 	return tDerived, nil
 }

@@ -534,7 +534,7 @@ func (q *QuestionnaireT) ValidateResponseData(pageNum int, langCode string) (las
 				inp := q.Pages[i1].Groups[i2].Inputs[i3]
 				if inp.Type == "dyn-textblock" && inp.DynamicFunc == "ErrorProxy" {
 					q.Pages[i1].Groups[i2].Inputs[i3].ErrMsg = ""
-					errorProxies[inp.Param] = inp
+					errorProxies[inp.DynamicFuncParamset] = inp
 				}
 			}
 		}

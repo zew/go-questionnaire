@@ -31,9 +31,18 @@ function updatePosition() {
     });
 }
 
+
 function onPointDrag(dataIndex, pos) {
     dataSeries[dataIndex] = chrt.convertFromPixel('grid', pos);
-    console.log(`drag pos ${pos}`);  // pos is an array with index 0,1
+    // console.log(`drag pos ${pos}`);  // pos is an array with index 0,1
+
+    // why cant we make this a global scope variable???
+    let outputControl = document.getElementsByName("echart_output")[0];
+    let x = Math.round(dataSeries[dataIndex][0]*100)/100;
+    let y = Math.round(dataSeries[dataIndex][1]*100)/100;
+    outputControl.value = `${x}   -    ${y}`;
+    // outputControl.value = `${pos[0]}   ${pos[1]}`;
+
     // update data
     chrt.setOption({
         series: [
@@ -166,6 +175,8 @@ setTimeout(  () => {
 
 
 let chartDom = document.getElementById('container');
+// https://echarts.apache.org/en/api.html#echarts
+// https://echarts.apache.org/handbook/en/concepts/style/#theme
 // let chrt     = echarts.init(chartDom, 'dark');
 let chrt     = echarts.init(chartDom);
 console.log(`echart object created`);
@@ -174,6 +185,8 @@ if (option && typeof option === 'object') {
     chrt.setOption(option);
     console.log(`echart options set`);
 }
+
+
 
 window.addEventListener('resize', updatePosition);
 // window.addEventListener('resize', chrt.resize);

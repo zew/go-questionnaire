@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "6856ed8f4b917eec0bfc417cb07387b2b8aa82aae84c76798f6c08131873dc74",
+ 	"md_5": "5b38af10f2ed418708ee9323731e98b8e45a139890f5147e341f427aa958aa96",
  	"lang_codes": [
  		"de",
  		"en"
@@ -8822,7 +8822,6 @@
  				"de": "",
  				"en": ""
  			},
- 			"no_navigation": true,
  			"style": {
  				"desktop": {
  					"grid_container_style": {},
@@ -8853,6 +8852,14 @@
  							"col_span_label": 1,
  							"dynamic_func": "RenderStaticContent",
  							"dynamic_func_paramset": "/echart/inner.html"
+ 						},
+ 						{
+ 							"name": "echart_output",
+ 							"type": "text",
+ 							"max_chars": 40,
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1
  						}
  					]
  				}

@@ -19,7 +19,7 @@ func special202206(q *qst.QuestionnaireT) error {
 			"de": "",
 			"en": "",
 		}
-		page.NoNavigation = true
+		// page.NoNavigation = true
 		// page.SuppressProgressbar = true
 
 		page.WidthMax("calc(100% - 1.2rem)")
@@ -34,6 +34,15 @@ func special202206(q *qst.QuestionnaireT) error {
 				inp.DynamicFuncParamset = "/echart/inner.html"
 				inp.ColSpan = 1
 				inp.ColSpanLabel = 1
+			}
+			{
+				inp := gr.AddInput()
+				inp.Type = "text"
+				inp.Name = "echart_output"
+				inp.MaxChars = 40
+				inp.ColSpan = 1
+				inp.ColSpanLabel = 1
+				inp.ColSpanControl = 1
 			}
 		}
 	}

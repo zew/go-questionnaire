@@ -5,7 +5,7 @@ import (
 )
 
 var implementedTypes = map[string]interface{}{
-	"text":                 nil,
+	"text":                 nil, // default, also for non-strict number input
 	"number":               nil,
 	"textarea":             nil,
 	"dropdown":             nil,

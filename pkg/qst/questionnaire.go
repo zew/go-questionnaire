@@ -285,7 +285,7 @@ func (gr *groupT) Vertical(argRows ...int) {
 // WidthMax limits width in desktop view
 // for instance to 30rem;
 // mobile view: no limitation
-// // compare page.WidthMax
+//     compare page.WidthMax
 func (gr *groupT) WidthMax(s string) {
 	gr.Style = css.NewStylesResponsive(gr.Style)
 	gr.Style.Desktop.StyleBox.WidthMax = s

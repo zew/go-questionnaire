@@ -95,7 +95,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			gb := qst.NewGridBuilderRadios(
 				columnTemplate3,
 				roleOrFunctionQ1,
-				[]string{"q1"},
+				[]string{"q01"},
 				radioValsQ1,
 				[]trl.S{{"de": "<b>1.</b> &nbsp;	Sind Sie…?"}},
 			)
@@ -120,6 +120,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				{"de": "Entwicklungsfinanzierungsagentur oder -einrichtung"},
 				{"de": "Öffentlicher Finanzierungsfonds oder -einrichtung"},
 				{"de": "Inkubator und Beschleuniger"},
+				{"de": "Andere, bitte nennen"},
 			}
 			radioValues := []string{
 				"private_investor",
@@ -135,43 +136,48 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"development_agency",
 				"public_fund",
 				"incubator",
+				"other",
 			}
 			gr := page.AddGroup()
-			gr.Cols = 2
+			gr.Cols = 7
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
 				inp.Label = trl.S{"de": "<b>2.</b> &nbsp;	Als welche Art von Organisation ordnen Sie sich ein?"}
 				inp.ColSpan = gr.Cols
 			}
-			for idx, labl := range labels {
+			for idx, label := range labels {
 				rad := gr.AddInput()
 				rad.Type = "radio"
-				rad.Name = "q2"
+				rad.Name = "q02"
 				rad.ValueRadio = radioValues[idx]
 
-				rad.ColSpan = 1
 				rad.ColSpanLabel = 1
 				rad.ColSpanControl = 6
 
-				rad.Label = labl
+				// all rows except last
+				if idx < len(labels)-1 {
+					rad.ColSpan = gr.Cols
+					rad.Label = label
+					rad.ControlFirst()
+				} else {
+					// last row: now label
+					rad.ColSpan = 1
+					rad.ColSpanLabel = 0 // value 0 prevents the label from taking any place
+					rad.ColSpanControl = 1
 
-				rad.ControlFirst()
-			}
-			{
-				inp := gr.AddInput()
-				inp.Type = "text"
-				inp.Name = "q2_other"
-				inp.MaxChars = 20
-				inp.Label = trl.S{"de": "Andere, bitte nennen"}
-				inp.ColSpan = gr.Cols
-				inp.ColSpanLabel = 2
-				inp.ColSpanControl = 3
-				inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
-				inp.StyleLbl.Desktop.StyleBox.Padding = "0 0 0 3.4rem"
+					inp := gr.AddInput()
+					inp.Type = "text"
+					inp.Name = "q02_other"
+					inp.MaxChars = 20
+					inp.Label = label
 
-				inp.Style = css.NewStylesResponsive(inp.Style)
-				inp.Style.Desktop.StyleBox.Margin = "1.2rem 0 0 0"
+					inp.ColSpan = gr.Cols - 1
+					inp.ColSpanLabel = 2
+					inp.ColSpanControl = 5
+					inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
+				}
+
 			}
 		}
 
@@ -185,6 +191,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				{"de": "Thematische Funds oder Themenbezogene Produkte (z.B. Klima, Menschenrechte, Gesundheit, ...)"},
 				{"de": "Impact Investments"},
 				{"de": "Wir tätigen keine Investments"},
+				{"de": "Andere, bitte nennen"},
 			}
 			radioValues := []string{
 				"exclusions",
@@ -194,9 +201,10 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"theme_funds",
 				"impact_investments",
 				"no_investing",
+				"other",
 			}
 			gr := page.AddGroup()
-			gr.Cols = 2
+			gr.Cols = 7
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
@@ -206,32 +214,51 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			for idx, label := range labels {
 				rad := gr.AddInput()
 				rad.Type = "radio"
-				rad.Name = "q3"
+				rad.Name = "q03"
 				rad.ValueRadio = radioValues[idx]
 
-				rad.ColSpan = 1
 				rad.ColSpanLabel = 1
 				rad.ColSpanControl = 6
 
-				rad.Label = label
+				// all rows except last
+				if idx < len(labels)-1 {
+					rad.ColSpan = gr.Cols
+					rad.Label = label
+					rad.ControlFirst()
+				} else {
+					// last row: now label
+					rad.ColSpan = 1
+					rad.ColSpanLabel = 0 // value 0 prevents the label from taking any place
+					rad.ColSpanControl = 1
 
-				rad.ControlFirst()
-			}
-			{
-				inp := gr.AddInput()
-				inp.Type = "text"
-				inp.Name = "q3_other"
-				inp.MaxChars = 20
-				inp.Label = trl.S{"de": "Andere, bitte nennen"}
-				inp.ColSpan = gr.Cols
-				inp.ColSpanLabel = 2
-				inp.ColSpanControl = 3
-				inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
-				inp.StyleLbl.Desktop.StyleBox.Padding = "0 0 0 3.4rem"
+					inp := gr.AddInput()
+					inp.Type = "text"
+					inp.Name = "q03_other"
+					inp.MaxChars = 20
+					inp.Label = label
 
-				inp.Style = css.NewStylesResponsive(inp.Style)
-				inp.Style.Desktop.StyleBox.Margin = "1.2rem 0 0 0"
+					inp.ColSpan = gr.Cols - 1
+					inp.ColSpanLabel = 2
+					inp.ColSpanControl = 5
+					inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
+				}
+
 			}
+			// {
+			// 	inp := gr.AddInput()
+			// 	inp.Type = "text"
+			// 	inp.Name = "q03_other"
+			// 	inp.MaxChars = 20
+			// 	inp.Label = trl.S{"de": "Andere, bitte nennen"}
+			// 	inp.ColSpan = gr.Cols
+			// 	inp.ColSpanLabel = 2
+			// 	inp.ColSpanControl = 3
+			// 	inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
+			// 	inp.StyleLbl.Desktop.StyleBox.Padding = "0 0 0 3.4rem"
+
+			// 	inp.Style = css.NewStylesResponsive(inp.Style)
+			// 	inp.Style.Desktop.StyleBox.Margin = "1.2rem 0 0 0"
+			// }
 		}
 
 	}
@@ -294,7 +321,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			for idx, label := range labels {
 				rad := gr.AddInput()
 				rad.Type = "radio"
-				rad.Name = "q4"
+				rad.Name = "q04"
 				rad.ValueRadio = radioValues[idx]
 
 				rad.ColSpan = gr.Cols
@@ -328,7 +355,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					for idx, label := range labels {
 						rad := gr.AddInput()
 						rad.Type = "radio"
-						rad.Name = "q4a"
+						rad.Name = "q04a"
 						rad.ValueRadio = radioValues[idx]
 
 						rad.ColSpan = gr.Cols
@@ -385,7 +412,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			for idx, label := range labels {
 				rad := gr.AddInput()
 				rad.Type = "radio"
-				rad.Name = "q5"
+				rad.Name = "q05"
 				rad.ValueRadio = radioValues[idx]
 
 				rad.ColSpan = 1
@@ -423,7 +450,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			for idx, label := range labels {
 				inp := gr.AddInput()
 				inp.Type = "number"
-				inp.Name = fmt.Sprintf("q6_%v", radioValues[idx])
+				inp.Name = fmt.Sprintf("q06_%v", radioValues[idx])
 				inp.Label = label
 
 				inp.ColSpan = 1
@@ -495,7 +522,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			for idx, label := range labels {
 				rad := gr.AddInput()
 				rad.Type = "checkbox"
-				rad.Name = fmt.Sprintf("q7_%v", subName[idx])
+				rad.Name = fmt.Sprintf("q07_%v", subName[idx])
 
 				rad.ColSpan = 1
 				rad.ColSpanLabel = 1
@@ -534,7 +561,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			for idx, labl := range labels {
 				rad := gr.AddInput()
 				rad.Type = "radio"
-				rad.Name = "q8"
+				rad.Name = "q08"
 				rad.ValueRadio = radioValues[idx]
 
 				rad.ColSpan = 1
@@ -578,7 +605,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			for idx, label := range labels {
 				rad := gr.AddInput()
 				rad.Type = "checkbox"
-				rad.Name = fmt.Sprintf("q9_%v", subName[idx])
+				rad.Name = fmt.Sprintf("q09_%v", subName[idx])
 
 				rad.ColSpan = 1
 				rad.ColSpanLabel = 1
@@ -594,7 +621,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "text"
-				inp.Name = "q9_other"
+				inp.Name = "q09_other"
 				inp.MaxChars = 20
 				inp.Label = trl.S{"de": "Weitere, bitte nennen"}
 				inp.ColSpan = gr.Cols

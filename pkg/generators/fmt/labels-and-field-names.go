@@ -4,6 +4,7 @@ import "github.com/zew/go-questionnaire/pkg/trl"
 
 var radioVals4 = []string{"1", "2", "3", "4"}
 var radioVals6 = []string{"1", "2", "3", "4", "5", "6"}
+var radioVals7 = []string{"1", "2", "3", "4", "5", "6", "7"}
 var columnTemplate4 = []float32{
 	2, 1,
 	0, 1,
@@ -17,6 +18,37 @@ var columnTemplate6 = []float32{
 	0, 1,
 	0, 1,
 	0.4, 1,
+}
+
+// NFCL - no first column labels
+var columnTemplate6NFCL = []float32{
+	0, 1,
+	0, 1,
+	0, 1,
+	0, 1,
+	0, 1,
+	0.4, 1,
+}
+
+var columnTemplate7 = []float32{
+	5.0, 1,
+	0.0, 1,
+	0.0, 1,
+	0.0, 1,
+	0.0, 1,
+	0.0, 1,
+	0.5, 1,
+}
+
+// NFCL - no first column labels
+var columnTemplate7NFCL = []float32{
+	0.0, 1,
+	0.0, 1,
+	0.0, 1,
+	0.0, 1,
+	0.0, 1,
+	0.0, 1,
+	0.5, 1,
 }
 
 var rowLabelsEuroGerUSGlob1 = []trl.S{

@@ -17,7 +17,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "b4a01931946106bef52197bcf6bff86787d7fd32e9745a8359e3b6ae23830068",
+ 	"md_5": "5ce14498c7ee392acb07d3d2468b84fb4e263595b259a45572307871d743fe35",
  	"lang_codes": [
  		"de"
  	],
@@ -72,10 +72,10 @@
  						},
  						{
  							"type": "dyn-textblock",
- 							"param": "page-0-data-protection.md",
  							"col_span": 1,
  							"col_span_label": 1,
- 							"dynamic_func": "RenderStaticContent"
+ 							"dynamic_func": "RenderStaticContent",
+ 							"dynamic_func_paramset": "page-0-data-protection.md"
  						}
  					]
  				},
@@ -214,7 +214,7 @@
  							}
  						},
  						{
- 							"name": "q1",
+ 							"name": "q01",
  							"type": "radio",
  							"label": {
  								"de": "\u003cb\u003e1.\u003c/b\u003e \u0026nbsp;\tSind Sie…?"
@@ -240,13 +240,13 @@
  							}
  						},
  						{
- 							"name": "q1",
+ 							"name": "q01",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "assetmgr"
  						},
  						{
- 							"name": "q1",
+ 							"name": "q01",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "passiveparticipant"
@@ -274,23 +274,23 @@
  				},
  				{
  					"bottom_vspacers": 3,
- 					"columns": 2,
+ 					"columns": 7,
  					"inputs": [
  						{
  							"type": "textblock",
  							"label": {
  								"de": "\u003cb\u003e2.\u003c/b\u003e \u0026nbsp;\tAls welche Art von Organisation ordnen Sie sich ein?"
  							},
- 							"col_span": 2,
+ 							"col_span": 7,
  							"col_span_label": 1
  						},
  						{
- 							"name": "q2",
+ 							"name": "q02",
  							"type": "radio",
  							"label": {
  								"de": "Privat Investor"
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"value_radio": "private_investor",
@@ -313,12 +313,12 @@
  							}
  						},
  						{
- 							"name": "q2",
+ 							"name": "q02",
  							"type": "radio",
  							"label": {
  								"de": "Busi\u0026shy;ness Angel"
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"value_radio": "business_angel",
@@ -341,12 +341,12 @@
  							}
  						},
  						{
- 							"name": "q2",
+ 							"name": "q02",
  							"type": "radio",
  							"label": {
  								"de": "VC / PE Impact Fondsmanager"
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"value_radio": "impact_fund_mgr",
@@ -369,12 +369,12 @@
  							}
  						},
  						{
- 							"name": "q2",
+ 							"name": "q02",
  							"type": "radio",
  							"label": {
  								"de": "Privates Finanzinstitut (einschließlich traditioneller Banken und ethischer Banken)"
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"value_radio": "private_bank",
@@ -397,12 +397,12 @@
  							}
  						},
  						{
- 							"name": "q2",
+ 							"name": "q02",
  							"type": "radio",
  							"label": {
  								"de": "Versi\u0026shy;cherungsgesellschaft oder Pensionsfonds"
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"value_radio": "insurance_fund",
@@ -425,12 +425,12 @@
  							}
  						},
  						{
- 							"name": "q2",
+ 							"name": "q02",
  							"type": "radio",
  							"label": {
  								"de": "Mikrofinanzinstitution"
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"value_radio": "micro_institution",
@@ -453,12 +453,12 @@
  							}
  						},
  						{
- 							"name": "q2",
+ 							"name": "q02",
  							"type": "radio",
  							"label": {
  								"de": "Crowdfunding-Plattform"
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"value_radio": "crowdfunding_plattform",
@@ -481,12 +481,12 @@
  							}
  						},
  						{
- 							"name": "q2",
+ 							"name": "q02",
  							"type": "radio",
  							"label": {
  								"de": "Stif\u0026shy;tung"
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"value_radio": "foundation",
@@ -509,12 +509,12 @@
  							}
  						},
  						{
- 							"name": "q2",
+ 							"name": "q02",
  							"type": "radio",
  							"label": {
  								"de": "Family Office"
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"value_radio": "family_office",
@@ -537,12 +537,12 @@
  							}
  						},
  						{
- 							"name": "q2",
+ 							"name": "q02",
  							"type": "radio",
  							"label": {
  								"de": "In\u0026shy;vest\u0026shy;mentfondsmanager eines börsennotierten Un\u0026shy;ter\u0026shy;neh\u0026shy;mens"
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"value_radio": "mgr_listed_comp",
@@ -565,12 +565,12 @@
  							}
  						},
  						{
- 							"name": "q2",
+ 							"name": "q02",
  							"type": "radio",
  							"label": {
  								"de": "Entwicklungsfinanzierungsagentur oder -einrichtung"
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"value_radio": "development_agency",
@@ -593,12 +593,12 @@
  							}
  						},
  						{
- 							"name": "q2",
+ 							"name": "q02",
  							"type": "radio",
  							"label": {
  								"de": "Öffentlicher Finanzierungsfonds oder -einrichtung"
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"value_radio": "public_fund",
@@ -621,12 +621,12 @@
  							}
  						},
  						{
- 							"name": "q2",
+ 							"name": "q02",
  							"type": "radio",
  							"label": {
  								"de": "Inkubator und Beschleuniger"
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"value_radio": "incubator",
@@ -649,37 +649,26 @@
  							}
  						},
  						{
- 							"name": "q2_other",
+ 							"name": "q02",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "other"
+ 						},
+ 						{
+ 							"name": "q02_other",
  							"type": "text",
  							"max_chars": 20,
  							"label": {
  								"de": "Andere, bitte nennen"
  							},
- 							"col_span": 2,
+ 							"col_span": 6,
  							"col_span_label": 2,
- 							"col_span_control": 3,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "1.2rem 0 0 0"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
+ 							"col_span_control": 5,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0 0 3.4rem"
- 									},
+ 									"box_style": {},
  									"grid_item_style": {},
  									"text_style": {}
  								},
@@ -695,23 +684,23 @@
  				},
  				{
  					"bottom_vspacers": 3,
- 					"columns": 2,
+ 					"columns": 7,
  					"inputs": [
  						{
  							"type": "textblock",
  							"label": {
  								"de": "\u003cb\u003e3.\u003c/b\u003e \u0026nbsp;\tWelchen Fokus haben Sie bei Ihrer In\u0026shy;vest\u0026shy;ment-Strategie bzw. welche Produktgestaltung nutzen Sie? "
  							},
- 							"col_span": 2,
+ 							"col_span": 7,
  							"col_span_label": 1
  						},
  						{
- 							"name": "q3",
+ 							"name": "q03",
  							"type": "radio",
  							"label": {
  								"de": "Ausschlüsse oder Neg\u0026shy;ative Screening"
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"value_radio": "exclusions",
@@ -734,12 +723,12 @@
  							}
  						},
  						{
- 							"name": "q3",
+ 							"name": "q03",
  							"type": "radio",
  							"label": {
  								"de": "Best-in-Class"
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"value_radio": "best_in_class",
@@ -762,12 +751,12 @@
  							}
  						},
  						{
- 							"name": "q3",
+ 							"name": "q03",
  							"type": "radio",
  							"label": {
  								"de": "ESG (ökologische, soziale oder Governance) Integration"
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"value_radio": "esg",
@@ -790,12 +779,12 @@
  							}
  						},
  						{
- 							"name": "q3",
+ 							"name": "q03",
  							"type": "radio",
  							"label": {
  								"de": "Norms-based Screening (z.B. UN's Global Compact, OECD Guidelines for Multinational Enter\u0026shy;prises, …)"
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"value_radio": "norms_based",
@@ -818,12 +807,12 @@
  							}
  						},
  						{
- 							"name": "q3",
+ 							"name": "q03",
  							"type": "radio",
  							"label": {
  								"de": "Thematische Funds oder Themenbezogene Produkte (z.B. Klima, Menschenrechte, Gesundheit, ...)"
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"value_radio": "theme_funds",
@@ -846,12 +835,12 @@
  							}
  						},
  						{
- 							"name": "q3",
+ 							"name": "q03",
  							"type": "radio",
  							"label": {
  								"de": "Impact In\u0026shy;vest\u0026shy;ments"
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"value_radio": "impact_investments",
@@ -874,12 +863,12 @@
  							}
  						},
  						{
- 							"name": "q3",
+ 							"name": "q03",
  							"type": "radio",
  							"label": {
  								"de": "Wir tätigen keine In\u0026shy;vest\u0026shy;ments"
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"value_radio": "no_investing",
@@ -902,37 +891,26 @@
  							}
  						},
  						{
- 							"name": "q3_other",
+ 							"name": "q03",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "other"
+ 						},
+ 						{
+ 							"name": "q03_other",
  							"type": "text",
  							"max_chars": 20,
  							"label": {
  								"de": "Andere, bitte nennen"
  							},
- 							"col_span": 2,
+ 							"col_span": 6,
  							"col_span_label": 2,
- 							"col_span_control": 3,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "1.2rem 0 0 0"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
+ 							"col_span_control": 5,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0 0 3.4rem"
- 									},
+ 									"box_style": {},
  									"grid_item_style": {},
  									"text_style": {}
  								},
@@ -1017,7 +995,7 @@
  							}
  						},
  						{
- 							"name": "q4",
+ 							"name": "q04",
  							"type": "radio",
  							"label": {
  								"de": "Gegenwärtig"
@@ -1045,7 +1023,7 @@
  							}
  						},
  						{
- 							"name": "q4a",
+ 							"name": "q04a",
  							"type": "radio",
  							"label": {
  								"de": "seit \u003e10 Jahren "
@@ -1089,7 +1067,7 @@
  							}
  						},
  						{
- 							"name": "q4a",
+ 							"name": "q04a",
  							"type": "radio",
  							"label": {
  								"de": "seit \u003e5 Jahren"
@@ -1133,7 +1111,7 @@
  							}
  						},
  						{
- 							"name": "q4a",
+ 							"name": "q04a",
  							"type": "radio",
  							"label": {
  								"de": "seit \u003e3 Jahren"
@@ -1177,7 +1155,7 @@
  							}
  						},
  						{
- 							"name": "q4a",
+ 							"name": "q04a",
  							"type": "radio",
  							"label": {
  								"de": "seit \u003c=3 Jahren"
@@ -1221,7 +1199,7 @@
  							}
  						},
  						{
- 							"name": "q4a",
+ 							"name": "q04a",
  							"type": "radio",
  							"label": {
  								"de": "erst seit kurzem"
@@ -1265,7 +1243,7 @@
  							}
  						},
  						{
- 							"name": "q4",
+ 							"name": "q04",
  							"type": "radio",
  							"label": {
  								"de": "Möglicherweise in der Zukunft"
@@ -1293,7 +1271,7 @@
  							}
  						},
  						{
- 							"name": "q4",
+ 							"name": "q04",
  							"type": "radio",
  							"label": {
  								"de": "In Planung"
@@ -1321,7 +1299,7 @@
  							}
  						},
  						{
- 							"name": "q4",
+ 							"name": "q04",
  							"type": "radio",
  							"label": {
  								"de": "Nein"
@@ -1401,7 +1379,7 @@
  							"col_span_label": 1
  						},
  						{
- 							"name": "q5",
+ 							"name": "q05",
  							"type": "radio",
  							"label": {
  								"de": "Wir arbeiten nur mit Impact In\u0026shy;vest\u0026shy;ments"
@@ -1429,7 +1407,7 @@
  							}
  						},
  						{
- 							"name": "q5",
+ 							"name": "q05",
  							"type": "radio",
  							"label": {
  								"de": "Impact Investing ist Teil unserer SRI / ESG Aktivitäten"
@@ -1457,7 +1435,7 @@
  							}
  						},
  						{
- 							"name": "q5",
+ 							"name": "q05",
  							"type": "radio",
  							"label": {
  								"de": "Impact Investing ist ein unabhängiger Bereich neben unseren konventionellen und SRI / ESG Aktivitäten"
@@ -1499,7 +1477,7 @@
  							"col_span_label": 1
  						},
  						{
- 							"name": "q6_impact",
+ 							"name": "q06_impact",
  							"type": "number",
  							"max_chars": 15,
  							"step": 1,
@@ -1534,7 +1512,7 @@
  							}
  						},
  						{
- 							"name": "q6_other",
+ 							"name": "q06_other",
  							"type": "number",
  							"max_chars": 15,
  							"step": 1,
@@ -1569,7 +1547,7 @@
  							}
  						},
  						{
- 							"name": "q6_conventional",
+ 							"name": "q06_conventional",
  							"type": "number",
  							"max_chars": 15,
  							"step": 1,
@@ -1667,7 +1645,7 @@
  							"col_span_label": 1
  						},
  						{
- 							"name": "q7_ethics",
+ 							"name": "q07_ethics",
  							"type": "checkbox",
  							"label": {
  								"de": "Werte und ethische Überzeugungen"
@@ -1708,7 +1686,7 @@
  							}
  						},
  						{
- 							"name": "q7_demand",
+ 							"name": "q07_demand",
  							"type": "checkbox",
  							"label": {
  								"de": "Kundennachfrage"
@@ -1749,7 +1727,7 @@
  							}
  						},
  						{
- 							"name": "q7_business_growth",
+ 							"name": "q07_business_growth",
  							"type": "checkbox",
  							"label": {
  								"de": "Wirt\u0026shy;schaft\u0026shy;liche Motive (Impact Investing ist ein wich\u0026shy;tiges neues Geschäftsfeld)"
@@ -1790,7 +1768,7 @@
  							}
  						},
  						{
- 							"name": "q7_risk_reduction",
+ 							"name": "q07_risk_reduction",
  							"type": "checkbox",
  							"label": {
  								"de": "Minimierung und Man\u0026shy;age\u0026shy;ment von Risiken"
@@ -1831,7 +1809,7 @@
  							}
  						},
  						{
- 							"name": "q7_ecology",
+ 							"name": "q07_ecology",
  							"type": "checkbox",
  							"label": {
  								"de": "Lösung drängender gesellschaftlicher oder ökologischer Probleme"
@@ -1872,7 +1850,7 @@
  							}
  						},
  						{
- 							"name": "q7_damage_control",
+ 							"name": "q07_damage_control",
  							"type": "checkbox",
  							"label": {
  								"de": "Um den sozialen und/oder ökologischen Schaden unserer In\u0026shy;vest\u0026shy;ments zu minimieren"
@@ -1927,7 +1905,7 @@
  							"col_span_label": 1
  						},
  						{
- 							"name": "q8",
+ 							"name": "q08",
  							"type": "radio",
  							"label": {
  								"de": "Über marktübliche risikoadjustierte Rendite"
@@ -1955,7 +1933,7 @@
  							}
  						},
  						{
- 							"name": "q8",
+ 							"name": "q08",
  							"type": "radio",
  							"label": {
  								"de": "Marktübliche risikoadjustierte Rendite"
@@ -1983,7 +1961,7 @@
  							}
  						},
  						{
- 							"name": "q8",
+ 							"name": "q08",
  							"type": "radio",
  							"label": {
  								"de": "Unter marktübliche risikoadjustierte Rendite"
@@ -2011,7 +1989,7 @@
  							}
  						},
  						{
- 							"name": "q8",
+ 							"name": "q08",
  							"type": "radio",
  							"label": {
  								"de": "Neg\u0026shy;ative Rendite"
@@ -2053,7 +2031,7 @@
  							"col_span_label": 1
  						},
  						{
- 							"name": "q9_reporting",
+ 							"name": "q09_reporting",
  							"type": "checkbox",
  							"label": {
  								"de": "Berichterstattung über Ihre Impact In\u0026shy;vest\u0026shy;ments"
@@ -2094,7 +2072,7 @@
  							}
  						},
  						{
- 							"name": "q9_tech_support",
+ 							"name": "q09_tech_support",
  							"type": "checkbox",
  							"label": {
  								"de": "Technische Unterstützung, Vernetzung etc."
@@ -2135,7 +2113,7 @@
  							}
  						},
  						{
- 							"name": "q9_board_member",
+ 							"name": "q09_board_member",
  							"type": "checkbox",
  							"label": {
  								"de": "Aktive Mitwirkung durch einen Sitz im Aufsichtsrat"
@@ -2176,7 +2154,7 @@
  							}
  						},
  						{
- 							"name": "q9_proxy_voting",
+ 							"name": "q09_proxy_voting",
  							"type": "checkbox",
  							"label": {
  								"de": "Stimmrecht oder Proxy Voting"
@@ -2217,7 +2195,7 @@
  							}
  						},
  						{
- 							"name": "q9_dialogue",
+ 							"name": "q09_dialogue",
  							"type": "checkbox",
  							"label": {
  								"de": "Aktiver Dialog mit Un\u0026shy;ter\u0026shy;neh\u0026shy;men"
@@ -2258,7 +2236,7 @@
  							}
  						},
  						{
- 							"name": "q9_capital_provision",
+ 							"name": "q09_capital_provision",
  							"type": "checkbox",
  							"label": {
  								"de": "Bereitstellung von Kapital zu günstigen Konditionen (concessionary capital)"
@@ -2299,7 +2277,7 @@
  							}
  						},
  						{
- 							"name": "q9_market_development",
+ 							"name": "q09_market_development",
  							"type": "checkbox",
  							"label": {
  								"de": "Unterstützung zur Entwicklung neuer Märkte"
@@ -2340,7 +2318,7 @@
  							}
  						},
  						{
- 							"name": "q9_other",
+ 							"name": "q09_other",
  							"type": "text",
  							"max_chars": 20,
  							"label": {

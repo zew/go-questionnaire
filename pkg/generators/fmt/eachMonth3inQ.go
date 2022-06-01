@@ -9,145 +9,6 @@ import (
 	"github.com/zew/go-questionnaire/pkg/trl"
 )
 
-// q1
-var rowLabelsAssetClassesEuroZoneQ3 = []trl.S{
-	{
-		"de": "Aktien",
-		"en": "Stocks",
-	},
-	{
-		"de": "Staats&shy;anleihen",
-		"en": "Govt. bonds",
-	},
-	{
-		"de": "Unter&shy;nehmens&shy;anleihen",
-		"en": "Corporate bonds",
-	},
-	{
-		"de": "Immobilien",
-		"en": "Real estate",
-	},
-}
-
-var inputNamesAssetClassesEuroZoneQ3 = []string{
-	"ass_euro_stocks",
-	"ass_euro_bonds_govt",
-	"ass_euro_bonds_corp",
-	"ass_euro_re",
-}
-
-// q2
-var rowLabelsAssetClassesGlobalQ3 = []trl.S{
-	{
-		"de": "Aktien",
-		"en": "Stocks",
-	},
-	{
-		"de": "Staats&shy;anleihen",
-		"en": "Govt. bonds",
-	},
-	{
-		"de": "Unter&shy;nehmens&shy;anleihen",
-		"en": "Corporate bonds",
-	},
-	{
-		"de": "Immobilien",
-		"en": "Real estate",
-	},
-	{
-		"de": "Gold",
-		"en": "Gold",
-	},
-	{
-		"de": "Rohstoffe",
-		"en": "Raw materials",
-	},
-	{
-		"de": "Krypto&shy;währungen",
-		"en": "Crypto currencies",
-	},
-}
-
-var inputNamesAssetClassesGlobalQ3 = []string{
-	"ass_global_stocks",
-	"ass_global_bonds_govt",
-	"ass_global_bonds_corp",
-	"ass_global_re",
-	"ass_global_gold",
-	"ass_global_raw_materials",
-	"ass_global_crypto",
-}
-
-// q3
-var inputNamesAssetClassesChangeQ3 = []string{
-	"chg_euro_stocks",
-	"chg_euro_bonds_govt",
-	"chg_euro_bonds_corp",
-	"chg_euro_re",
-}
-
-var influenceFactorLabelsQ3 = []trl.S{
-	{
-		"de": "Gesamtwirtschaftlicher Ausblick",
-		"en": "Economic outlook",
-	},
-	{
-		"de": "Geldpolitik der EZB",
-		"en": "ECB monetary policy",
-	},
-	{
-		"de": "Geldpolitik der US-Notenbank",
-		"en": "US Federal Reserve monetary policy",
-	},
-	{
-		"de": "Ausblick Inflation",
-		"en": "Inflation outlook ",
-	},
-	{
-		"de": "Politische Rahmen&shy;bedingungen",
-		"en": "Political framework",
-	},
-	{
-		"de": "Aktuelle Markt&shy;bewertung",
-		// "en": "Market valuation",
-		"en": "Current valuation multiples",
-	},
-	{
-		"de": "Krieg Russ&shy;land - Ukraine",
-		"en": "Russia's war with Ukraine",
-	},
-}
-
-var rowLabelsAssetClassesEuroZoneQ3B = []trl.S{
-	{
-		"de": "Aktien",
-		"en": "Stocks",
-	},
-	{
-		"de": "Staats&shy;anleihen",
-		"en": "Sovereign bonds",
-	},
-	{
-		"de": "Unter&shy;nehmens&shy;anleihen",
-		"en": "Corporate bonds",
-	},
-	{
-		"de": "Immobilien",
-		"en": "Real estate",
-	},
-}
-
-var influenceFactorNamesQ3 = []string{
-	"economy",    // overall economic outlook
-	"ecb",        // monetary policy ecb
-	"fed",        // monetary policy fed
-	"inflation",  // outlook inflation
-	"politics",   // political framework
-	"valuation",  // market valuation
-	"warukraine", //
-	// "other",     // other
-}
-
 func eachMonth3inQ(q *qst.QuestionnaireT) error {
 
 	include := false
@@ -158,6 +19,148 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 
 	if !include {
 		return nil
+	}
+
+	// q1
+	var rowLabelsAssetClassesEuroZoneQ3 = []trl.S{
+		{
+			"de": "Aktien",
+			"en": "Stocks",
+		},
+		{
+			"de": "Staats&shy;anleihen",
+			"en": "Govt. bonds",
+		},
+		{
+			"de": "Unter&shy;nehmens&shy;anleihen",
+			"en": "Corporate bonds",
+		},
+		{
+			"de": "Immobilien",
+			"en": "Real estate",
+		},
+	}
+
+	var inputNamesAssetClassesEuroZoneQ3 = []string{
+		"ass_euro_stocks",
+		"ass_euro_bonds_govt",
+		"ass_euro_bonds_corp",
+		"ass_euro_re",
+	}
+
+	// q2
+	var lblsQ2 = []trl.S{
+		{
+			"de": "Aktien",
+			"en": "Stocks",
+		},
+		{
+			"de": "Staats&shy;anleihen",
+			"en": "Govt. bonds",
+		},
+		{
+			"de": "Unter&shy;nehmens&shy;anleihen",
+			"en": "Corporate bonds",
+		},
+		{
+			"de": "Immobilien",
+			"en": "Real estate",
+		},
+		{
+			"de": "Gold",
+			"en": "Gold",
+		},
+		{
+			"de": "Rohstoffe",
+			"en": "Raw materials",
+		},
+		{
+			"de": "Krypto&shy;währungen",
+			"en": "Crypto currencies",
+		},
+	}
+
+	var namesQ2 = []string{
+		"ass_global_stocks",
+		"ass_global_bonds_govt",
+		"ass_global_bonds_corp",
+		"ass_global_re",
+		"ass_global_gold",
+		"ass_global_raw_materials",
+		"ass_global_crypto",
+	}
+
+	// q3
+	var namesQ3Assets = []string{
+		"chg_euro_stocks",
+		"chg_euro_bonds_govt",
+		"chg_euro_bonds_corp",
+		"chg_euro_re",
+	}
+	var namesQ3Influence = []string{
+		"economy",    // overall economic outlook
+		"ecb",        // monetary policy ecb
+		"fed",        // monetary policy fed
+		"inflation",  // outlook inflation
+		"politics",   // political framework
+		"valuation",  // market valuation
+		"warukraine", //
+		"covid19",    //
+	}
+
+	var labelsQ3Assets = []trl.S{
+		{
+			"de": "Aktien",
+			"en": "Stocks",
+		},
+		{
+			"de": "Staats&shy;anleihen",
+			"en": "Sovereign bonds",
+		},
+		{
+			"de": "Unter&shy;nehmens&shy;anleihen",
+			"en": "Corporate bonds",
+		},
+		{
+			"de": "Immobilien",
+			"en": "Real estate",
+		},
+	}
+
+	var labelsQ3Influences = []trl.S{
+		{
+			"de": "Gesamtwirtschaftlicher Ausblick",
+			"en": "Economic outlook",
+		},
+		{
+			"de": "Geldpolitik der EZB",
+			"en": "ECB monetary policy",
+		},
+		{
+			"de": "Geldpolitik der US-Notenbank",
+			"en": "US Federal Reserve monetary policy",
+		},
+		{
+			"de": "Ausblick Inflation",
+			"en": "Inflation outlook ",
+		},
+		{
+			"de": "Politische Rahmen&shy;bedingungen",
+			"en": "Political framework",
+		},
+		{
+			"de": "Aktuelle Markt&shy;bewertung",
+			// "en": "Market valuation",
+			"en": "Current valuation multiples",
+		},
+		{
+			"de": "Krieg Russ&shy;land - Ukraine",
+			"en": "Russia's war with Ukraine",
+		},
+		{
+			"de": "Covid-19 Pandemie",
+			"en": "Covid-19 pandemic",
+		},
 	}
 
 	//
@@ -246,9 +249,9 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 			gb := qst.NewGridBuilderRadios(
 				columnTemplateLocal,
 				positiveNegative5(),
-				inputNamesAssetClassesGlobalQ3,
+				namesQ2,
 				radioVals6,
-				rowLabelsAssetClassesGlobalQ3,
+				lblsQ2,
 			)
 
 			gb.MainLabel = trl.S{
@@ -344,6 +347,7 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 		//
 		//
 		// gr4 ... gr11
+		// questions 3.1 ... 3.4
 		var columnTemplateLocal = []float32{
 			3.6, 1,
 			0.0, 1,
@@ -353,32 +357,38 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 			0.4, 1,
 		}
 		// additional row below each block
-		colsBelow1 := append([]float32{1.0}, columnTemplateLocal...)
-		colsBelow1 = []float32{
-			// 1.4, 2.2, //   3.0, 1,  |  4.6 separated to two cols
-			1.38, 2.1, //   3.0, 1,  |  4.6 separated to two cols
-			0.0, 1, //     3.0, 1,  |  4.6 separated to two cols
+		colsBelow := append([]float32{1.0}, columnTemplateLocal...)
+
+		// the first column - with a width of 4.6  (3.6+1)
+		// 		is separated into two cols:
+		// 			1.4, 2.2  and 0, 1
+		// 		adding up to
+		// 			3.6       and 1
+		//
+		// the default GapColumn = "0.4rem" skewed this; so we previously used
+		//    		1.38, 2.1
+		colsBelow = []float32{
+			1.4, 2.2,
+			0.0, 1,
 			0.0, 1,
 			0.0, 1,
 			0.0, 1,
 			0.0, 1,
 			0.4, 1,
 		}
-		colsBelow2 := []float32{}
-		for i := 0; i < len(colsBelow1); i += 2 {
-			colsBelow2 = append(colsBelow2, colsBelow1[i]+colsBelow1[i+1])
+		colsBelowPairs := []float32{} // adding up colspan label and colspan control
+		for i := 0; i < len(colsBelow); i += 2 {
+			colsBelowPairs = append(colsBelowPairs, colsBelow[i]+colsBelow[i+1])
 		}
-		// log.Printf("colsBelow1 %+v", colsBelow1)
-		// log.Printf("colsBelow2 %+v", colsBelow2)
 
-		for idx, assCl := range inputNamesAssetClassesChangeQ3 {
+		for idx, assCl := range namesQ3Assets {
 
 			names := []string{}
-			for _, nm := range influenceFactorNamesQ3 {
+			for _, nm := range namesQ3Influence {
 				names = append(names, assCl+"__"+nm)
 			}
 
-			lbl := rowLabelsAssetClassesEuroZoneQ3B[idx]
+			lbl := labelsQ3Assets[idx]
 
 			{
 				gb := qst.NewGridBuilderRadios(
@@ -386,7 +396,7 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 					improvedDeterioratedPlusMinus6(),
 					names,
 					radioVals6,
-					influenceFactorLabelsQ3,
+					labelsQ3Influences,
 				)
 
 				gb.MainLabel = trl.S{
@@ -426,11 +436,11 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 					gr.BottomVSpacers = 4
 				}
 				stl := ""
-				for colIdx := 0; colIdx < len(colsBelow2); colIdx++ {
+				for colIdx := 0; colIdx < len(colsBelowPairs); colIdx++ {
 					stl = fmt.Sprintf(
 						"%v   %vfr ",
 						stl,
-						colsBelow2[colIdx],
+						colsBelowPairs[colIdx],
 					)
 				}
 				gr.Style = css.NewStylesResponsive(gr.Style)
@@ -455,11 +465,6 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 						"de": "Andere",
 						"en": "Other",
 					}
-
-					// inp.StyleCtl = css.NewStylesResponsive(inp.StyleCtl)
-					// inp.StyleCtl.Desktop.StyleBox.WidthMax = "14.0rem"
-					// inp.StyleCtl.Mobile.StyleBox.WidthMax = "4.0rem"
-
 				}
 
 				//
@@ -471,13 +476,9 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 					rad.ValueRadio = fmt.Sprint(idx + 1)
 
 					rad.ColSpan = 1
-					rad.ColSpanLabel = colsBelow1[2*(idx+1)]
-					rad.ColSpanControl = colsBelow1[2*(idx+1)] + 1
+					rad.ColSpanLabel = colsBelow[2*(idx+1)]
+					rad.ColSpanControl = colsBelow[2*(idx+1)] + 1
 
-					// rad.Label = lbl
-					// rad.ControlFirst()
-
-					// 	rad.Validator = "must;comprehensionPOP2"
 				}
 
 			}

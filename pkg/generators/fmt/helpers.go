@@ -3,8 +3,44 @@ package fmt
 import (
 	"fmt"
 
+	"github.com/zew/go-questionnaire/pkg/qst"
 	"github.com/zew/go-questionnaire/pkg/trl"
 )
+
+func addEchartsExamplePage(q *qst.QuestionnaireT) {
+
+	{
+		page := q.AddPage()
+		page.Label = trl.S{
+			"de": "",
+			"en": "",
+		}
+		page.WidthMax("calc(100% - 1.2rem)")
+		page.WidthMax("40rem")
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			{
+				inp := gr.AddInput()
+				inp.Type = "dyn-textblock"
+				inp.DynamicFunc = "RenderStaticContent"
+				inp.DynamicFuncParamset = "/echart/inner.html"
+				inp.ColSpan = 1
+				inp.ColSpanLabel = 1
+			}
+			{
+				inp := gr.AddInput()
+				inp.Type = "text"
+				inp.Name = "echart_output"
+				inp.MaxChars = 40
+				inp.ColSpan = 1
+				inp.ColSpanLabel = 1
+				inp.ColSpanControl = 1
+			}
+		}
+	}
+
+}
 
 func colTemplateWithFreeRow() ([]float32, []float32, string) {
 
@@ -487,6 +523,8 @@ func positiveNegative5() []trl.S {
 	return tm
 
 }
+
+// compare oneToFive
 func zeroToFive() []trl.S {
 
 	tm := []trl.S{
@@ -523,6 +561,7 @@ func zeroToFive() []trl.S {
 	return tm
 
 }
+
 func improvedDeteriorated6() []trl.S {
 
 	tm := []trl.S{
@@ -763,6 +802,40 @@ func improvedDeterioratedPlusMinus6() []trl.S {
 		{
 			"de": "--",
 			"en": "--",
+		},
+
+		{
+			"de": "keine<br>Angabe",
+			"en": "no answer",
+		},
+	}
+
+	return tm
+
+}
+
+func agree6() []trl.S {
+
+	tm := []trl.S{
+		{
+			"de": "volle Zustimmung",
+			"en": "strongly agree",
+		},
+		{
+			"de": "Zustimmung",
+			"en": "agree",
+		},
+		{
+			"de": "unentschieden",
+			"en": "undecided",
+		},
+		{
+			"de": "Ablehnung",
+			"en": "disagree",
+		},
+		{
+			"de": "voll Ablehnung",
+			"en": "strongly disagree",
 		},
 
 		{

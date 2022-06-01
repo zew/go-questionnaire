@@ -162,7 +162,9 @@ func (q QuestionnaireT) GroupHTMLGridBased(pageIdx, grpIdx int) string {
 	}
 
 	if gr.Style.Desktop.StyleGridContainer.GapColumn == "" {
-		gr.Style.Desktop.StyleGridContainer.GapColumn = "0.4rem"
+		// this skews column width when nesting grids
+		// => disabled 2022-06
+		// gr.Style.Desktop.StyleGridContainer.GapColumn = "0.4rem"
 	}
 	if gr.Style.Desktop.StyleGridContainer.GapRow == "" {
 		gr.Style.Desktop.StyleGridContainer.GapRow = "0.8rem"

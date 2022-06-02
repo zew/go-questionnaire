@@ -818,23 +818,23 @@ func agree6() []trl.S {
 
 	tm := []trl.S{
 		{
-			"de": "volle Zustimmung",
+			"de": "stimme voll zu",
 			"en": "strongly agree",
 		},
 		{
-			"de": "Zustimmung",
+			"de": "stimme zu",
 			"en": "agree",
 		},
 		{
-			"de": "unentschieden",
+			"de": "unsicher",
 			"en": "undecided",
 		},
 		{
-			"de": "Ablehnung",
+			"de": "stimme nicht zu",
 			"en": "disagree",
 		},
 		{
-			"de": "voll Ablehnung",
+			"de": "stimme überhaupt nicht zu",
 			"en": "strongly disagree",
 		},
 

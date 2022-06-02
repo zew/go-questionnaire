@@ -441,7 +441,13 @@ func page4Quest11(q *qst.QuestionnaireT) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				inp.Label = trl.S{"de": "<b>15.</b> &nbsp;	Wo liegen bei einem Impact Investment die größten finanziellen Risiken?"}
+				inp.Label = trl.S{
+					"de": `
+					<b>15.</b> &nbsp;	
+					Wo liegen bei einem Impact Investment die größten finanziellen Risiken?
+					<br>
+					(Mehrfachauswahl möglich)
+				`}
 				inp.ColSpan = gr.Cols
 			}
 			for idx, label := range labels {
@@ -481,7 +487,13 @@ func page4Quest11(q *qst.QuestionnaireT) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				inp.Label = trl.S{"de": "<b>16.</b> &nbsp; Überwachen Sie:"}
+				inp.Label = trl.S{
+					"de": `
+					<b>16.</b> &nbsp; 
+					Überwachen Sie:
+					<br>
+					(Mehrfachauswahl möglich)
+				`}
 				inp.ColSpan = gr.Cols
 			}
 			for idx, label := range labels {
@@ -614,7 +626,12 @@ func page4Quest11(q *qst.QuestionnaireT) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				inp.Label = trl.S{"de": "<b>19.</b> &nbsp;	Welche Art von Organisation(en) unterstützen Sie?"}
+				inp.Label = trl.S{
+					"de": `<b>19.</b> &nbsp;	
+					Welche Art von Organisation(en) unterstützen Sie?
+					<br>
+					(Mehrfachauswahl möglich)
+				`}
 				inp.ColSpan = gr.Cols
 			}
 			for idx, label := range labels {
@@ -685,6 +702,8 @@ func page4Quest11(q *qst.QuestionnaireT) {
 
 					<b>20.</b> &nbsp;	
 					Wie messen Sie den Impact? 
+					<br>
+					(Mehrfachauswahl möglich)
 				`}
 				inp.ColSpan = gr.Cols
 			}
@@ -735,6 +754,8 @@ func page4Quest11(q *qst.QuestionnaireT) {
 				inp.Label = trl.S{"de": `
 					<b>21.</b> &nbsp;	
 					Wie managen Sie den Impact Ihrer Investments?
+					<br>
+					(Mehrfachauswahl möglich)
 				`}
 				inp.ColSpan = gr.Cols
 			}
@@ -798,6 +819,8 @@ func page4Quest11(q *qst.QuestionnaireT) {
 				inp.Label = trl.S{"de": `
 					<b>22.</b> &nbsp;	
 					Woher kommen die Daten für die Messung des Impacts?
+					<br>
+					(Mehrfachauswahl möglich)
 				`}
 				inp.ColSpan = gr.Cols
 			}
@@ -865,6 +888,8 @@ func page4Quest11(q *qst.QuestionnaireT) {
 				inp.Label = trl.S{"de": `
 					<b>23.</b> &nbsp;	
 					Welche der folgenden Rahmenwerke nutzen Sie für das IMM?
+					<br>
+					(Mehrfachauswahl möglich)
 				`}
 				inp.ColSpan = gr.Cols
 			}
@@ -1990,8 +2015,9 @@ func page4Quest11(q *qst.QuestionnaireT) {
 				inp.Label = trl.S{
 					"de": `<b>36.</b> &nbsp;	
                     Wo sehen Sie den Impact Investing Markt in Deutschland in drei Jahren?
-                    `,
-				}
+					<br>
+					(Mehrfachauswahl möglich)
+                `}
 				inp.ColSpan = gr.Cols
 			}
 			for idx, label := range labels {
@@ -2128,6 +2154,8 @@ func page4Quest11(q *qst.QuestionnaireT) {
 				inp.Label = trl.S{"de": `
 					<b>39.</b> &nbsp;	
 					In welchen Regionen/ Ländern investieren Sie Ihr Kapital?
+					<br>
+					(Mehrfachauswahl möglich)
 				`}
 				inp.ColSpan = gr.Cols
 			}
@@ -2259,24 +2287,6 @@ func page4Quest11(q *qst.QuestionnaireT) {
 					"zentralasien",
 				},
 			}
-
-			// composit validation
-			/*
-				{
-					inp := gr.AddInput()
-					inp.Type = "textblock"
-					inp.ColSpan = gr.Cols
-					inp.ColSpan = 1
-					inp.ColSpanLabel = 1
-					inp.Validator = "biii_branch1"
-
-					inp.Style = css.NewStylesResponsive(inp.Style)
-					inp.Style.Desktop.Position = "relative"
-					inp.Style.Desktop.Top = "7rem"
-					inp.Style.Desktop.Left = "-6rem"
-				}
-
-			*/
 
 			for i1, label := range labels {
 				rad := gr.AddInput()

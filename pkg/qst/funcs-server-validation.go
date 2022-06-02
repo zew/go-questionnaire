@@ -478,7 +478,7 @@ func init() {
 
 		s := `Dies ist eine zentrale Frage für die weitere Fragefolge. 
 		Bitte treffen Sie eine Auswahl.`
-		inp := q.Pages[1].Groups[0].Inputs[2]
+		inp := q.Pages[2].Groups[0].Inputs[2]
 		if inp.Response == "now" {
 			// return fmt.Errorf("now " + s)
 			return nil

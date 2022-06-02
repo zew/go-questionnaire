@@ -24,9 +24,7 @@ func GermanOnly(q *QuestionnaireT, pageIdx int) bool {
 	return true
 }
 func BIIINow(q *QuestionnaireT, pageIdx int) bool {
-	// input[0] is a text element
-	// input[0] is an error dyn element
-	inp := q.Pages[1].Groups[0].Inputs[2]
+	inp := q.Pages[2].Groups[0].Inputs[2]
 	if inp.Response == "now" {
 		return true
 	}
@@ -34,7 +32,7 @@ func BIIINow(q *QuestionnaireT, pageIdx int) bool {
 }
 
 func BIIILater(q *QuestionnaireT, pageIdx int) bool {
-	inp := q.Pages[1].Groups[0].Inputs[2]
+	inp := q.Pages[2].Groups[0].Inputs[2]
 	if inp.Response != "" && inp.Response != "now" {
 		return true
 	}
@@ -46,7 +44,7 @@ func BIIIMeasure(q *QuestionnaireT, pageIdx int) bool {
 		return false
 	}
 	// q20 - we measure impact of our investments
-	inp := q.Pages[10].Groups[0].Inputs[1]
+	inp := q.Pages[11].Groups[0].Inputs[1]
 	if inp.Response != "" && inp.Response != "1" {
 		return true
 	}

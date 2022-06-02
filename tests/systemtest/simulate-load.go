@@ -170,22 +170,22 @@ var presets = map[string]map[int]map[string]string{
 		},
 	},
 	"biii": {
-		0: {
-			"q1_role": "investor",
-			"q2":      "private_investor",
-			"q3":      "esg",
-		},
 		1: {
-			"q4":  "now",
-			"q4a": "10yrs",
+			"q01_role": "investor",
+			"q02":      "private_investor",
+			"q03":      "esg",
 		},
 		2: {
-			"q5":              "all",
-			"q6_impact":       "1000",
-			"q6_other":        "2000",
-			"q6_conventional": "111111000",
+			"q04":  "now",
+			"q04a": "10yrs",
 		},
-		10: {
+		3: {
+			"q05":              "all",
+			"q06_impact":       "1000",
+			"q06_other":        "2000",
+			"q06_conventional": "111111000",
+		},
+		11: {
 			"q20_mo_measure":        "0", // checkbox not set
 			"q20_neg_externalities": "all",
 		},
@@ -195,7 +195,7 @@ var presets = map[string]map[int]map[string]string{
 var skipPages = map[string]map[int]interface{}{
 	"biii": {
 		// 11: nil,
-		21: nil,
+		22: nil,
 	},
 }
 

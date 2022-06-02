@@ -1,6 +1,9 @@
 .survey-wave-id {
     display: none;
 }
+.survey-org {
+    display: none;
+}
 
 /* 'focus rectangle' for radios and checkboxes  */
 input[type=checkbox]:focus,

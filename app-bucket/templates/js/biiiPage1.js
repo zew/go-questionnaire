@@ -1,6 +1,13 @@
 function showHideSubRadios(showHide) {
 
-    const subRadiosClasses = ["pg01-grp00-inp03", "pg01-grp00-inp04", "pg01-grp00-inp05", "pg01-grp00-inp06", "pg01-grp00-inp07"];
+    const subRadiosClasses = 
+    [
+        "pg02-grp00-inp03", 
+        "pg02-grp00-inp04", 
+        "pg02-grp00-inp05", 
+        "pg02-grp00-inp06", 
+        "pg02-grp00-inp07"
+    ];
     for (const subRadio of subRadiosClasses) {
         // let containers = document.querySelectorAll(querySelect); // would be OR selection
         let selector = subRadio + " grid-item-lvl-1";   // AND selection
@@ -26,8 +33,8 @@ function showQ4a(event) {
 
 
 
-    // let radio1Val = document.forms.frmMain.q4now.value;
-    let radio1Checked = document.forms.frmMain.q4now.checked;
+    // let radio1Val = document.forms.frmMain.q04now.value;
+    let radio1Checked = document.forms.frmMain.q04now.checked;
     // console.log("inp1: ", radio1Checked);
 
     showHideSubRadios(radio1Checked);
@@ -37,17 +44,17 @@ function showQ4a(event) {
 }
 
 
-if (document.forms.frmMain.q4now) {
-    document.forms.frmMain.q4now.addEventListener('change',showQ4a);
-    document.forms.frmMain.q4in_future.addEventListener('change', showQ4a);
-    document.forms.frmMain.q4in_planning.addEventListener('change', showQ4a);
-    document.forms.frmMain.q4no.addEventListener('change', showQ4a);
+if (document.forms.frmMain.q04now) {
+    document.forms.frmMain.q04now.addEventListener('change',showQ4a);
+    document.forms.frmMain.q04in_future.addEventListener('change', showQ4a);
+    document.forms.frmMain.q04in_planning.addEventListener('change', showQ4a);
+    document.forms.frmMain.q04no.addEventListener('change', showQ4a);
     console.log("handlers assigned");
 }
 
 // addEventListener is cumulative
 window.addEventListener("load", function (event) {
     showQ4a();
-    const first = document.getElementById("q4now");
+    const first = document.getElementById("q04now");
     first.focus();
 });

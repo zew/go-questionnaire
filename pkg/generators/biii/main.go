@@ -22,10 +22,11 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	q.Survey.Org = trl.S{"de": "BIII", "en": "BIII"}
 
 	q.Survey.Name = trl.S{
-		"de": "Erhebung 2022 - Marktstudie Impact Investment",
+		// "de": "Erhebung 2022 - Marktstudie Impact Investment",
+		"de": "Marktstudie Impact Investing in Deutschland 2022 der Bundesinitiative Impact Investing",
 	}
 
-	// page 0
+	// page -1
 	{
 		page := q.AddPage()
 
@@ -43,39 +44,78 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			gr.BottomVSpacers = 1
 			{
 				inp := gr.AddInput()
+				inp.Type = "dyn-textblock"
+				inp.DynamicFunc = "RenderStaticContent"
+				inp.DynamicFuncParamset = "welcome.md"
+				inp.ColSpan = 1
+				inp.ColSpanLabel = 1
+			}
+		}
+
+	}
+
+	// page 0
+	{
+		page := q.AddPage()
+
+		page.Short = trl.S{"de": "Start"}
+		page.Label = trl.S{"de": ""}
+		page.WidthMax("42rem")
+
+		page.SuppressProgressbar = true
+		page.SuppressInProgressbar = true
+
+		page.ValidationFuncName = "biiiPage0"
+		page.ValidationFuncMsg = trl.S{"de": "no javascript dialog message needed"}
+
+		// gr0
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 1
+			{
+				inp := gr.AddInput()
 				inp.Type = "textblock"
 				inp.ColSpan = 1
 				inp.ColSpanLabel = 1
 				inp.Label = trl.S{
 					"de": `
 
+					<!--
 					<p style='text-align: justify; font-size: 130%'>
 						Willkommen zur Marktstudie der <a target='_blank' href='https://bundesinitiative-impact-investing.de/'>Bundesinitiative Impact Investing (BIII)</a>
 						und der <a target='_blank' href='https://www.wiso.uni-hamburg.de/fachbereich-sozoek/professuren/busch/04-team/busch-timo.html'>Universität Hamburg</a>
-						 im Auftrag der AIR GmbH 
-						  –  Online Umsetzung durch das <a  target='_blank' href='https://zew.de/'>ZEW Mannheim</a>					
+						 im Auftrag der AIR GmbH
+						  –  Online Umsetzung durch das <a  target='_blank' href='https://zew.de/'>ZEW Mannheim</a>
 					</p>
+					-->
 
 					<p style='text-align: justify;'>
+					Im Rahmen dieser Erhebung wollen wir eine Marktstudie für den deutschen Impact Investing Markt 2022 durchführen.
+
 					Im Rahmen dieser Erhebung nutzen wir bewusst eine breite Definition
-					 von Impact Investments. 
-					 
-					 Diese spiegelt das Verständnis des Global Impact Investing Networks (GIIN) wider. 
-					 
-					 Demnach sind Impact Investments "Investitionen, die mit der Absicht getätigt werden, 
-					 neben einer finanziellen Rendite auch eine positive, 
-					 messbare soziale und ökologische Wirkung zu erzielen" (GIIN, 2017). 
-					 
-					 Auch in akademischen Studien wird ähnlich argumentiert. 
-					 
-					 Busch et al. (2021) bezeichnen Impact bezogene Investments 
-					 als "Investitionen, die sich auf Veränderungen in der realen Welt 
-					 im Hinblick auf die Lösung sozialer Probleme und/oder die Milderung 
-					 ökologischer Schäden konzentrieren". 
-					 
+					 von Impact Investments.
+
+					 Diese spiegelt das Verständnis des Global Impact Investing Networks (GIIN) wider.
+
+					 Demnach sind Impact Investments "Investitionen, die mit der Absicht getätigt werden,
+					 neben einer finanziellen Rendite auch eine positive,
+					 messbare soziale und ökologische Wirkung zu erzielen" (GIIN, 2017).
+
+					 Auch in akademischen Studien wird ähnlich argumentiert.
+
+					 Busch et al. (2021) bezeichnen Impact bezogene Investments
+					 als "Investitionen, die sich auf Veränderungen in der realen Welt
+					 im Hinblick auf die Lösung sozialer Probleme und/oder die Milderung
+					 ökologischer Schäden konzentrieren".
+
 					 Ob entsprechende Investments aktiv und zusätzlich zu sozialen
-					  und ökologischen Lösungen und Veränderungen beitragen, 
-					  wird im Rahmen der Erhebung separat ermittelt. 					
+					 und ökologischen Lösungen und Veränderungen beitragen, 
+					 wird im Rahmen der Erhebung separat ermittelt.
+
+					Wir würden Sie bitten, 
+					den Online-Fragebogen <i>vollständig</i> auszufüllen 
+					und zu beenden. 
 					</p>
 					`,
 				}
@@ -92,22 +132,96 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 		// gr1
 		{
-			gb := qst.NewGridBuilderRadios(
-				columnTemplate3,
-				roleOrFunctionQ1,
-				[]string{"q01"},
-				radioValsQ1,
-				[]trl.S{{"de": "<b>1.</b> &nbsp;	Sind Sie…?"}},
-			)
-			// gb.MainLabel = ...
-			gr := page.AddGrid(gb)
-			_ = gr
+			var radioValues = []string{"investor", "investee", "assetmgr", "passiveparticipant"}
+			var labels = []trl.S{
+				{"de": "Investor<br>(asset owner)"},
+				{"de": "Investee"},
+				{"de": "Vermögensverwalter<br>(asset manager)"},
+				{"de": "Ein anderer (passiver) Marktteilnehmer (z.B. Berater, ...)"},
+			}
+
+			gr := page.AddGroup()
+			gr.Cols = 7
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{"de": "<b>1.</b> &nbsp;	Sind Sie…?"}
+				inp.ColSpan = gr.Cols
+			}
+			for idx, label := range labels {
+				rad := gr.AddInput()
+				rad.Type = "radio"
+				rad.Name = "q01"
+				rad.ValueRadio = radioValues[idx]
+
+				rad.ColSpanLabel = 1
+				rad.ColSpanControl = 6
+
+				rad.ColSpan = gr.Cols
+				rad.Label = label
+				rad.ControlFirst()
+			}
+		}
+
+		// example
+		{
+			labels := []trl.S{
+				{"de": "Gewinn"},
+				{"de": "Moral"},
+				{"de": "Ethik"},
+				{"de": "Umsatz"},
+				{"de": "Partnerschaft"},
+				{"de": "Klima"},
+				{"de": "Waldschutz"},
+				{"de": "Tierschutz"},
+			}
+			names := []string{
+				"1",
+				"2",
+				"3",
+				"4",
+				"5",
+				"6",
+				"7",
+				"8",
+			}
+			gr := page.AddGroup()
+			gr.Cols = 7
+			gr.WidthMax("17rem")
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{"de": `<b>Frage X.</b> &nbsp;
+					<br>
+					Welche Prioritäten haben Sie?
+					<br>
+					In Zahlen von 1-5
+					<br>
+					Es kann nur in 5 Felder eingetragen werden.
+					`}
+				inp.ColSpan = gr.Cols
+			}
+			for idx, label := range labels {
+				inp := gr.AddInput()
+				inp.Type = "number"
+				inp.Name = fmt.Sprintf("q0x_%v", names[idx])
+				inp.Label = label
+				inp.Min = 1
+				inp.Max = 5
+				inp.MaxChars = 2
+
+				inp.ColSpan = gr.Cols
+				inp.ColSpanLabel = 6
+				inp.ColSpanControl = 1
+
+				// inp.ControlFirst()
+			}
 		}
 
 		// gr2
 		{
 			labels := []trl.S{
-				{"de": "Privat Investor"},
+				{"de": "Privatinvestor"},
 				{"de": "Business Angel"},
 				{"de": "VC / PE Impact Fondsmanager"},
 				{"de": "Privates Finanzinstitut (einschließlich traditioneller Banken und ethischer Banken)"},
@@ -119,7 +233,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				{"de": "Investmentfondsmanager eines börsennotierten Unternehmens"},
 				{"de": "Entwicklungsfinanzierungsagentur oder -einrichtung"},
 				{"de": "Öffentlicher Finanzierungsfonds oder -einrichtung"},
-				{"de": "Inkubator und Beschleuniger"},
+				{"de": "Inkubator oder Accelerator"},
 				{"de": "Andere, bitte nennen"},
 			}
 			radioValues := []string{
@@ -143,7 +257,12 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				inp.Label = trl.S{"de": "<b>2.</b> &nbsp;	Als welche Art von Organisation ordnen Sie sich ein?"}
+				inp.Label = trl.S{
+					"de": `
+					<b>2.</b> &nbsp;	
+					Als welche Art von Organisation ordnen Sie sich ein?
+					`,
+				}
 				inp.ColSpan = gr.Cols
 			}
 			for idx, label := range labels {
@@ -190,6 +309,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				{"de": "Norms-based Screening (z.B. UN's Global Compact, OECD Guidelines for Multinational Enterprises, …)"},
 				{"de": "Thematische Funds oder Themenbezogene Produkte (z.B. Klima, Menschenrechte, Gesundheit, ...)"},
 				{"de": "Impact Investments"},
+				{"de": "Immobilienfonds mit Nachhaltigkeitsfokus"},
 				{"de": "Wir tätigen keine Investments"},
 				{"de": "Andere, bitte nennen"},
 			}
@@ -200,6 +320,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"norms_based",
 				"theme_funds",
 				"impact_investments",
+				"real_estate",
 				"no_investing",
 				"other",
 			}
@@ -208,14 +329,19 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				inp.Label = trl.S{"de": "<b>3.</b> &nbsp;	Welchen Fokus haben Sie bei Ihrer Investment-Strategie bzw. welche Produktgestaltung nutzen Sie? "}
+				inp.Label = trl.S{
+					"de": `
+					<b>3.</b> &nbsp;
+					Welchen Fokus haben Sie bei Ihrer Investment-Strategie bzw. welche Produktgestaltung nutzen Sie?
+					<br>
+					(Mehrfachauswahl möglich)
+				`}
 				inp.ColSpan = gr.Cols
 			}
 			for idx, label := range labels {
 				rad := gr.AddInput()
-				rad.Type = "radio"
-				rad.Name = "q03"
-				rad.ValueRadio = radioValues[idx]
+				rad.Type = "checkbox"
+				rad.Name = fmt.Sprintf("q03_%v", radioValues[idx])
 
 				rad.ColSpanLabel = 1
 				rad.ColSpanControl = 6
@@ -233,7 +359,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 					inp := gr.AddInput()
 					inp.Type = "text"
-					inp.Name = "q03_other"
+					inp.Name = "q03_other_label"
 					inp.MaxChars = 20
 					inp.Label = label
 
@@ -244,21 +370,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				}
 
 			}
-			// {
-			// 	inp := gr.AddInput()
-			// 	inp.Type = "text"
-			// 	inp.Name = "q03_other"
-			// 	inp.MaxChars = 20
-			// 	inp.Label = trl.S{"de": "Andere, bitte nennen"}
-			// 	inp.ColSpan = gr.Cols
-			// 	inp.ColSpanLabel = 2
-			// 	inp.ColSpanControl = 3
-			// 	inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
-			// 	inp.StyleLbl.Desktop.StyleBox.Padding = "0 0 0 3.4rem"
-
-			// 	inp.Style = css.NewStylesResponsive(inp.Style)
-			// 	inp.Style.Desktop.StyleBox.Margin = "1.2rem 0 0 0"
-			// }
 		}
 
 	}
@@ -270,25 +381,23 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		page.Short = trl.S{"de": "Grundposition"}
 		page.WidthMax("38rem")
 
-		page.ValidationFuncName = "biiiPage1"
 		page.SuppressProgressbar = true
 
-		page.ValidationFuncMsg = trl.S{
-			"de": "no javascript dialog message needed",
-		}
+		page.ValidationFuncName = "biiiPage1"
+		page.ValidationFuncMsg = trl.S{"de": "no javascript dialog message needed"}
 
 		// gr0
 		{
 			labels := []trl.S{
 				{"de": "Gegenwärtig"},
-				{"de": "Möglicherweise in der Zukunft"},
 				{"de": "In Planung"},
+				{"de": "Möglicherweise in der Zukunft"},
 				{"de": "Nein"},
 			}
 			radioValues := []string{
 				"now",
-				"in_future",
 				"in_planning",
+				"in_future",
 				"no",
 			}
 			gr := page.AddGroup()
@@ -315,7 +424,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.Style.Desktop.Position = "relative"
 				inp.Style.Desktop.Top = "7rem"
 				inp.Style.Desktop.Left = "-6rem"
-
 			}
 
 			for idx, label := range labels {
@@ -406,7 +514,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				inp.Label = trl.S{"de": "<b>5.</b> &nbsp;	Wenn Sie gegenwärtig mit Impact Investments arbeiten, welchen Platz haben Impact Investments in Ihrer Organisation?"}
+				inp.Label = trl.S{"de": "<b>5.</b> &nbsp;	Welchen Platz haben Impact In¬vest¬ments in Ihrer Organisation?"}
 				inp.ColSpan = gr.Cols
 			}
 			for idx, label := range labels {
@@ -500,7 +608,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				{"de": "Kundennachfrage"},
 				{"de": "Wirtschaftliche Motive (Impact Investing ist ein wichtiges neues Geschäftsfeld)"},
 				{"de": "Minimierung und Management von Risiken"},
-				{"de": "Lösung drängender gesellschaftlicher oder ökologischer Probleme"},
+				{"de": "Lösung drängender gesellschaftlicher und/oder ökologischer Probleme"},
 				{"de": "Um den sozialen und/oder ökologischen Schaden unserer Investments zu minimieren"},
 			}
 			subName := []string{
@@ -516,7 +624,13 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				inp.Label = trl.S{"de": "<b>7.</b> &nbsp;	Was sind die Beweggründe dafür, dass Sie im Impact Investing tätig sind/ wurden?"}
+				inp.Label = trl.S{
+					"de": `
+					<b>7.</b> &nbsp;
+					Was sind die Beweggründe dafür, dass Sie im Impact Investing tätig sind/ wurden?
+					<br>
+					(Mehrfachauswahl möglich)
+				`}
 				inp.ColSpan = gr.Cols
 			}
 			for idx, label := range labels {
@@ -530,19 +644,16 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 				rad.Label = label
 
-				rad.Style = css.NewStylesResponsive(rad.Style)
-				// rad.Style.Desktop.StyleBox.Margin = "0 0 0 2.4rem"
-
 				rad.ControlFirst()
 			}
 		}
 		// gr2
 		{
 			labels := []trl.S{
-				{"de": "Über marktübliche risikoadjustierte Rendite"},
-				{"de": "Marktübliche risikoadjustierte Rendite"},
-				{"de": "Unter marktübliche risikoadjustierte Rendite"},
-				{"de": "Negative Rendite"},
+				{"de": "Über Marktübliche risikoadjustierte Renditen"},
+				{"de": "Marktübliche risikoadjustierte Renditen"},
+				{"de": "Unter marktübliche risikoadjustierte Renditen"},
+				{"de": "Negative Renditen"},
 			}
 			radioValues := []string{
 				"over_market_avg",
@@ -555,7 +666,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				inp.Label = trl.S{"de": "<b>8.</b> &nbsp;	Welche finanziellen Ziele verfolgen Sie mit Ihren Impact Investment?"}
+				inp.Label = trl.S{"de": "<b>8.</b> &nbsp;	Welche finanziellen Ziele verfolgen Sie mit Ihren Impact Investments?"}
 				inp.ColSpan = gr.Cols
 			}
 			for idx, labl := range labels {
@@ -577,10 +688,10 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		// gr3
 		{
 			labels := []trl.S{
-				{"de": "Berichterstattung über Ihre Impact Investments"},
-				{"de": "Technische Unterstützung, Vernetzung etc."},
+				{"de": "Signalling durch Berichterstattung über Impact Investments"},
+				{"de": "Technische Unterstützung, Beratung, Vernetzung etc."},
 				{"de": "Aktive Mitwirkung durch einen Sitz im Aufsichtsrat"},
-				{"de": "Stimmrecht oder Proxy Voting"},
+				{"de": "Stimmrechtsausübung oder Proxy Voting"},
 				{"de": "Aktiver Dialog mit Unternehmen"},
 				{"de": "Bereitstellung von Kapital zu günstigen Konditionen (concessionary capital)"},
 				{"de": "Unterstützung zur Entwicklung neuer Märkte"},
@@ -599,7 +710,13 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				inp.Label = trl.S{"de": `<b>9.</b> &nbsp;	Welche Einflussmöglichkeiten nutzen Sie als Impact Investor?`}
+				inp.Label = trl.S{
+					"de": `
+					<b>9.</b> &nbsp;
+					Welche Einflussmöglichkeiten nutzen Sie als Impact Investor?
+					<br>
+					(Mehrfachauswahl möglich)
+				`}
 				inp.ColSpan = gr.Cols
 			}
 			for idx, label := range labels {
@@ -656,29 +773,29 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp := gr.AddInput()
 				inp.Type = "textblock"
 				inp.Label = trl.S{"de": `
-					
+
 					<br>
 
 					<p style='text-align: justify;'>
-					<b>10.</b> &nbsp;	
-					
-					Welche Anlagestile verfolgen Sie für Ihre Impact Investments? 
-					<br>
-					<br>
-					Bitte tragen Sie ungefähre anteilige Investitionsvolumina ein. 
+					<b>10.</b> &nbsp;
 
-					&nbsp; 
+					Welche Anlagestile verfolgen Sie für Ihre Impact Investments?
+					<br>
+					<br>
+					Bitte tragen Sie ungefähre anteilige Investitionsvolumina ein.
+
+					&nbsp;
 					<br>
 
-					Der Ausgangspunkt für die folgende Frage bezieht sich auf die GIIN (2017) Definition: 
-					"Impact Investments sind Investitionen, die mit der Absicht getätigt werden, 
-					neben einer finanziellen Rendite auch eine positive, 
-					messbare soziale und ökologische Wirkung zu erzielen" (GIIN, 2017). 
-					
-					Tragen Sie bitte ausgehend von dieser breiten Definition 
-					die entsprechenden Investitionsvolumina ein. 
-					
-					Wichtig dabei ist, dass jedes Volumen <i>nur einmalig eingetragen</i> wird 
+					Der Ausgangspunkt für die folgende Frage bezieht sich auf die GIIN (2017) Definition:
+					"Impact Investments sind Investitionen, die mit der Absicht getätigt werden,
+					neben einer finanziellen Rendite auch eine positive,
+					messbare soziale und ökologische Wirkung zu erzielen" (GIIN, 2017).
+
+					Tragen Sie bitte ausgehend von dieser breiten Definition
+					die entsprechenden Investitionsvolumina ein.
+
+					Wichtig dabei ist, dass jedes Volumen <i>nur einmalig eingetragen</i> wird
 					und sich somit in der Summe wieder 100% ergeben.
 					</p>
 					<br>
@@ -692,7 +809,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.Type = "number"
 				inp.Name = fmt.Sprintf("q10a")
 				inp.Label = trl.S{"de": `
-					<b>A)</b> &nbsp; Kapitalerhöhungen / -zuführungen (z.B. IPO, PE Investment, Kredite etc.), 
+					<b>A)</b> &nbsp; Kapitalerhöhungen / -zuführungen (z.B. IPO, PE Investment, Kredite etc.),
 					die zur Generierung eines zusätzlichen Impacts führen
 				`}
 
@@ -717,7 +834,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.Type = "number"
 				inp.Name = fmt.Sprintf("q10a_pct")
 				inp.Label = trl.S{"de": `
-					Der hierdurch erzeugte, realweltliche Impact 
+					Der hierdurch erzeugte, realweltliche Impact
 					(sozial und/oder ökologisch) wird gemessen und dokumentiert (Outcome Ebene)
 				`}
 
@@ -746,9 +863,9 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.Type = "number"
 				inp.Name = fmt.Sprintf("q10b")
 				inp.Label = trl.S{"de": `
-					<b>B)</b> &nbsp; 
+					<b>B)</b> &nbsp;
 					Andere (über A hinausgehende) Investitionen in Investees mit klaren Impact Zielen
-					 (z.B. Unternehmen bei denen Impact den Kern des Geschäftsmodells 
+					 (z.B. Unternehmen bei denen Impact den Kern des Geschäftsmodells
 						bildet oder Unternehmen mit Science-based Targets)
 				`}
 
@@ -773,8 +890,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.Type = "number"
 				inp.Name = fmt.Sprintf("q10b_pct")
 				inp.Label = trl.S{"de": `
-					Der hierdurch erzeugte, realweltliche Impact (sozial und/oder ökologisch) 
-					wird gemessen und dokumentiert (Outcome Ebene)					
+					Der hierdurch erzeugte, realweltliche Impact (sozial und/oder ökologisch)
+					wird gemessen und dokumentiert (Outcome Ebene)
 				`}
 
 				inp.ColSpan = gr.Cols
@@ -800,7 +917,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp := gr.AddInput()
 				inp.Type = "textblock"
 				inp.Label = trl.S{"de": `
-					<b>C)</b> &nbsp; 
+					<b>C)</b> &nbsp;
 					Alle weiteren (über A und B hinaus gehenden) Investitionen und Aktien
 				`}
 				inp.ColSpan = gr.Cols
@@ -917,7 +1034,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.Type = "number"
 				inp.Name = fmt.Sprintf("q10d")
 				inp.Label = trl.S{"de": `
-					<b>D)</b> &nbsp; 
+					<b>D)</b> &nbsp;
 					Alle weiteren (über A, B und C hinaus gehenden) ESG gemanagten Investitionen (z.B. Ausschlüsse / Best-in-class Ansätze / ESG Integration etc)
 				`}
 
@@ -971,7 +1088,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.Name = "q10e_other"
 				inp.MaxChars = 20
 				inp.Label = trl.S{"de": `
-					<b>E)</b> &nbsp; 
+					<b>E)</b> &nbsp;
 					Weitere (Bitte nennen)
 				`}
 				inp.ColSpan = 5*5 - 1
@@ -1010,7 +1127,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.Type = "number"
 				inp.Name = fmt.Sprintf("q10e_pct")
 				inp.Label = trl.S{"de": `
-					Impact relevante Informationen werden gemessen und dokumentiert					
+					Impact relevante Informationen werden gemessen und dokumentiert
 				`}
 
 				inp.ColSpan = gr.Cols

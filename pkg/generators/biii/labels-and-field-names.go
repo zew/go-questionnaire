@@ -3,14 +3,6 @@ package biii
 import "github.com/zew/go-questionnaire/pkg/trl"
 
 var radioVals3 = []string{"1", "2", "3"}
-
-var radioValsQ1 = []string{"investor", "assetmgr", "passiveparticipant"}
-var roleOrFunctionQ1 = []trl.S{
-	{"de": "Investor<br>(asset owner)"},
-	{"de": "Vermögensverwalter<br>(asset manager)"},
-	{"de": "Ein anderer (passiver) Marktteilnehmer (z.B. Berater, ...)"},
-}
-
 var radioVals4 = []string{"1", "2", "3", "4"}
 var radioVals5 = []string{"1", "2", "3", "4", "5"}
 var radioVals6 = []string{"1", "2", "3", "4", "5", "6"}
@@ -110,26 +102,27 @@ var oneToFiveImportance = []trl.S{
 
 var q13Labels = []trl.S{
 	{"de": "Wir berücksichtigen die SDGs in unserer Strategie nicht"},
-	{"de": "Keine Armut"},
-	{"de": "Kein Hunger"},
-	{"de": "Gesundheit und Wohlergehen"},
-	{"de": "Hochwertige Bildung"},
-	{"de": "Geschlechtergleichheit"},
-	{"de": "Sauberes Wasser und Sanitär&shy;ein&shy;richtungen"},
-	{"de": "Bezahlbare und Saubere Energie"},
-	{"de": "Menschenwürdige Arbeit und Wirtschaftswachstum"},
-	{"de": "Industrie, Innovation und Infrastruktur"},
-	{"de": "Weniger Ungleichheiten"},
-	{"de": "Nachhaltige Städte und Gemeinden"},
-	{"de": "Nachhaltiger Konsum und Produktion"},
-	{"de": "Maßnahmen zum Klimaschutz"},
-	{"de": "Leben unter Wasser"},
-	{"de": "Leben an Land"},
-	{"de": "Frieden, Gerechtigkeit und starke Institutionen"},
-	{"de": "Partnerschaften zur Erreichung der Ziele"},
+	{"de": "1. Keine Armut"},
+	{"de": "2. Kein Hunger"},
+	{"de": "3. Gesundheit und Wohlergehen"},
+	{"de": "4. Hochwertige Bildung"},
+	{"de": "5. Geschlechtergleichheit"},
+	{"de": "6. Sauberes Wasser und Sanitär&shy;ein&shy;richtungen"},
+	{"de": "7.Bezahlbare und Saubere Energie"},
+	{"de": "8. Menschenwürdige Arbeit und Wirtschaftswachstum"},
+	{"de": "9. Industrie, Innovation und Infrastruktur"},
+	{"de": "10. Weniger Ungleichheiten"},
+	{"de": "11. Nachhaltige Städte und Gemeinden"},
+	{"de": "12. Nachhaltiger Konsum und Produktion"},
+	{"de": "13. Maßnahmen zum Klimaschutz"},
+	{"de": "14. Leben unter Wasser"},
+	{"de": "15. Leben an Land"},
+	{"de": "16. Frieden, Gerechtigkeit und starke Institutionen"},
+	{"de": "17. Partnerschaften zur Erreichung der Ziele"},
 }
 
 var q13inputNames = []string{
+	"not",
 	"1",
 	"2",
 	"3",
@@ -143,6 +136,10 @@ var q13inputNames = []string{
 	"11",
 	"12",
 	"13",
+	"14",
+	"15",
+	"16",
+	"17",
 }
 
 var q25Columns = []trl.S{

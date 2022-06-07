@@ -65,9 +65,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		page.SuppressProgressbar = true
 		page.SuppressInProgressbar = true
 
-		page.ValidationFuncName = "biiiPage0"
-		page.ValidationFuncMsg = trl.S{"de": "no javascript dialog message needed"}
-
 		// gr0
 		{
 			gr := page.AddGroup()
@@ -160,61 +157,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				rad.ColSpan = gr.Cols
 				rad.Label = label
 				rad.ControlFirst()
-			}
-		}
-
-		// example
-		{
-			labels := []trl.S{
-				{"de": "Gewinn"},
-				{"de": "Moral"},
-				{"de": "Ethik"},
-				{"de": "Umsatz"},
-				{"de": "Partnerschaft"},
-				{"de": "Klima"},
-				{"de": "Waldschutz"},
-				{"de": "Tierschutz"},
-			}
-			names := []string{
-				"1",
-				"2",
-				"3",
-				"4",
-				"5",
-				"6",
-				"7",
-				"8",
-			}
-			gr := page.AddGroup()
-			gr.Cols = 7
-			gr.WidthMax("17rem")
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.Label = trl.S{"de": `<b>Frage X.</b> &nbsp;
-					<br>
-					Welche Prioritäten haben Sie?
-					<br>
-					In Zahlen von 1-5
-					<br>
-					Es kann nur in 5 Felder eingetragen werden.
-					`}
-				inp.ColSpan = gr.Cols
-			}
-			for idx, label := range labels {
-				inp := gr.AddInput()
-				inp.Type = "number"
-				inp.Name = fmt.Sprintf("q0x_%v", names[idx])
-				inp.Label = label
-				inp.Min = 1
-				inp.Max = 5
-				inp.MaxChars = 2
-
-				inp.ColSpan = gr.Cols
-				inp.ColSpanLabel = 6
-				inp.ColSpanControl = 1
-
-				// inp.ControlFirst()
 			}
 		}
 
@@ -514,7 +456,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				inp.Label = trl.S{"de": "<b>5.</b> &nbsp;	Welchen Platz haben Impact In¬vest¬ments in Ihrer Organisation?"}
+				inp.Label = trl.S{"de": "<b>5.</b> &nbsp;	Welchen Platz haben Impact Investments in Ihrer Organisation?"}
 				inp.ColSpan = gr.Cols
 			}
 			for idx, label := range labels {
@@ -695,6 +637,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				{"de": "Aktiver Dialog mit Unternehmen"},
 				{"de": "Bereitstellung von Kapital zu günstigen Konditionen (concessionary capital)"},
 				{"de": "Unterstützung zur Entwicklung neuer Märkte"},
+				{"de": "Weitere, bitte nennen&nbsp;&nbsp;"},
 			}
 			subName := []string{
 				"reporting",
@@ -704,9 +647,10 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"dialogue",
 				"capital_provision",
 				"market_development",
+				"other",
 			}
 			gr := page.AddGroup()
-			gr.Cols = 1
+			gr.Cols = 7
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
@@ -724,34 +668,101 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				rad.Type = "checkbox"
 				rad.Name = fmt.Sprintf("q09_%v", subName[idx])
 
-				rad.ColSpan = 1
 				rad.ColSpanLabel = 1
 				rad.ColSpanControl = 6
 
-				rad.Label = label
+				// all rows except last
+				if idx < len(labels)-1 {
+					rad.ColSpan = gr.Cols
+					rad.Label = label
+					rad.ControlFirst()
+				} else {
+					// last row: now label
+					rad.ColSpan = 1
+					rad.ColSpanLabel = 0 // value 0 prevents the label from taking any place
+					rad.ColSpanControl = 1
 
-				rad.Style = css.NewStylesResponsive(rad.Style)
-				// rad.Style.Desktop.StyleBox.Margin = "0 0 0 2.4rem"
+					inp := gr.AddInput()
+					inp.Type = "text"
+					inp.Name = "q09_other_label"
+					inp.MaxChars = 20
+					inp.Label = label
 
-				rad.ControlFirst()
-			}
-			{
-				inp := gr.AddInput()
-				inp.Type = "text"
-				inp.Name = "q09_other"
-				inp.MaxChars = 20
-				inp.Label = trl.S{"de": "Weitere, bitte nennen"}
-				inp.ColSpan = gr.Cols
-				inp.ColSpanLabel = 2
-				inp.ColSpanControl = 3
-				inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
-				inp.StyleLbl.Desktop.StyleBox.Padding = "0 0 0 3.4rem"
+					inp.ColSpan = gr.Cols - 1
+					inp.ColSpanLabel = 2
+					inp.ColSpanControl = 5
+					inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
+				}
 
-				inp.Style = css.NewStylesResponsive(inp.Style)
-				inp.Style.Desktop.StyleBox.Margin = "1.2rem 0 0 0"
 			}
 		}
 
+		/* 		if true {
+		   			labels := []trl.S{
+		   				{"de": "Signalling durch Berichterstattung über Impact Investments"},
+		   				{"de": "Technische Unterstützung, Beratung, Vernetzung etc."},
+		   				{"de": "Aktive Mitwirkung durch einen Sitz im Aufsichtsrat"},
+		   				{"de": "Stimmrechtsausübung oder Proxy Voting"},
+		   				{"de": "Aktiver Dialog mit Unternehmen"},
+		   				{"de": "Bereitstellung von Kapital zu günstigen Konditionen (concessionary capital)"},
+		   				{"de": "Unterstützung zur Entwicklung neuer Märkte"},
+		   			}
+		   			subName := []string{
+		   				"reporting",
+		   				"tech_support",
+		   				"board_member",
+		   				"proxy_voting",
+		   				"dialogue",
+		   				"capital_provision",
+		   				"market_development",
+		   			}
+		   			gr := page.AddGroup()
+		   			gr.Cols = 1
+		   			{
+		   				inp := gr.AddInput()
+		   				inp.Type = "textblock"
+		   				inp.Label = trl.S{
+		   					"de": `
+		   						<b>9.</b> &nbsp;
+		   						Welche Einflussmöglichkeiten nutzen Sie als Impact Investor?
+		   						<br>
+		   						(Mehrfachauswahl möglich)
+		   					`}
+		   				inp.ColSpan = gr.Cols
+		   			}
+		   			for idx, label := range labels {
+		   				rad := gr.AddInput()
+		   				rad.Type = "checkbox"
+		   				rad.Name = fmt.Sprintf("q09_v1_%v", subName[idx])
+
+		   				rad.ColSpan = 1
+		   				rad.ColSpanLabel = 1
+		   				rad.ColSpanControl = 6
+
+		   				rad.Label = label
+
+		   				rad.Style = css.NewStylesResponsive(rad.Style)
+		   				// rad.Style.Desktop.StyleBox.Margin = "0 0 0 2.4rem"
+
+		   				rad.ControlFirst()
+		   			}
+		   			{
+		   				inp := gr.AddInput()
+		   				inp.Type = "text"
+		   				inp.Name = "q09_v1_other"
+		   				inp.MaxChars = 20
+		   				inp.Label = trl.S{"de": "Weitere, bitte nennen"}
+		   				inp.ColSpan = gr.Cols
+		   				inp.ColSpanLabel = 2
+		   				inp.ColSpanControl = 3
+		   				inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
+		   				inp.StyleLbl.Desktop.StyleBox.Padding = "0 0 0 3.4rem"
+
+		   				inp.Style = css.NewStylesResponsive(inp.Style)
+		   				inp.Style.Desktop.StyleBox.Margin = "1.2rem 0 0 0"
+		   			}
+		   		}
+		*/
 	}
 
 	// page 4
@@ -761,7 +772,11 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		page.Label = trl.S{"de": ""}
 		page.NavigationCondition = "BIIINow"
 		page.SuppressInProgressbar = true
+
 		page.WidthMax("42rem")
+
+		page.ValidationFuncName = "biiiPage5"
+		page.ValidationFuncMsg = trl.S{"de": "no javascript dialog message needed"}
 
 		//
 		//
@@ -779,10 +794,10 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					<p style='text-align: justify;'>
 					<b>10.</b> &nbsp;
 
-					Welche Anlagestile verfolgen Sie für Ihre Impact Investments?
+					Welche Anlagestile verfolgen Sie mit <u>Ihren Impact</u> Investments?
+
 					<br>
 					<br>
-					Bitte tragen Sie ungefähre anteilige Investitionsvolumina ein.
 
 					&nbsp;
 					<br>
@@ -795,8 +810,9 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					Tragen Sie bitte ausgehend von dieser breiten Definition
 					die entsprechenden Investitionsvolumina ein.
 
-					Wichtig dabei ist, dass jedes Volumen <i>nur einmalig eingetragen</i> wird
+					<b>Wichtig dabei ist, dass jedes Volumen <i>nur einmalig eingetragen</i> wird
 					und sich somit in der Summe wieder 100% ergeben.
+					</b>
 					</p>
 					<br>
 				`}
@@ -1004,7 +1020,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "number"
-				inp.Name = fmt.Sprintf("q10d1_pct")
+				inp.Name = fmt.Sprintf("q10c2_pct")
 				inp.Label = trl.S{"de": `
 					Aktien für die der transformative Impact der Voting Policy dokumentiert wird
 				`}
@@ -1059,7 +1075,9 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.Type = "number"
 				inp.Name = fmt.Sprintf("q10d_pct")
 				inp.Label = trl.S{"de": `
-					Investitionen für die die Impact Performance mit einem Benchmark-Vergleich oder Anhand von SDG Beiträgen dargestellt wird (Output Ebene)
+					Investitionen für die die Impact Performance 
+					mit einem Benchmark-Vergleich oder anhand von SDG Beiträgen dargestellt 
+					wird (Output Ebene)
 				`}
 
 				inp.ColSpan = gr.Cols

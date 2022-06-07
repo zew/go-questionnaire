@@ -52,7 +52,6 @@ var oneToFiveVolume = []trl.S{
 }
 
 var q12Labels = []trl.S{
-	{"de": "Nicht Anwendbar (N/A)"},
 	{"de": "Paris-Aligned oder Net Zero"},
 	{"de": "Kultur und Freizeit (Kultur, Kunst, Sport, sonstige Freizeitgestaltung und soziale Vereine)"},
 	{"de": "Bildung (Grundschule, Sekundarschule, Hochschule, Sonstiges)"},
@@ -69,26 +68,29 @@ var q12Labels = []trl.S{
 	{"de": "Fertigung / Produktion"},
 	{"de": "Stadterneuerung / Territoriale Entwicklung"},
 	{"de": "Finanzielle Eingliederung und Zugang zu Finanzmitteln (d.h. Mikro&shy;finanzierung, Mikro&shy;versicherungen, Finanz Bildungs&shy;dienst&shy;leistungen, Bankwesen)"},
+	{"de": "Andere"},
+	{"de": "Nicht Anwendbar (N/A)"},
 }
 
 var q12inputNames = []string{
-	"na",
-	"paris_align",
-	"culture_sports",
-	"education",
-	"work",
-	"research",
-	"health",
-	"social_service",
-	"environment",
-	"sanitary",
-	"agriculture",
-	"energy",
-	"residential",
-	"technology",
-	"prodution",
-	"urban_dev",
-	"microfinance",
+	"q12_paris_align",
+	"q12_culture_sports",
+	"q12_education",
+	"q12_work",
+	"q12_research",
+	"q12_health",
+	"q12_social_service",
+	"q12_environment",
+	"q12_sanitary",
+	"q12_agriculture",
+	"q12_energy",
+	"q12_residential",
+	"q12_technology",
+	"q12_prodution",
+	"q12_urban_dev",
+	"q12_microfinance",
+	"q12_other",
+	"q12_na",
 }
 
 var oneToFiveImportance = []trl.S{

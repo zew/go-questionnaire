@@ -171,131 +171,142 @@ func page4Quest11(q *qst.QuestionnaireT) {
 	// page 6
 	{
 		page := q.AddPage()
-		page.Short = trl.S{"de": "II Now - p5"}
 		page.Label = trl.S{"de": ""}
 		page.NavigationCondition = "BIIINow"
 		page.SuppressInProgressbar = true
 		page.WidthMax("48rem")
 
-		//
-		//
-		//
-		// gr0, gr1
-		var columnTemplateLocal = []float32{
-			3.6, 1,
-			0.0, 1,
-			0.0, 1,
-			0.0, 1,
-			0.0, 1,
-		}
-		colsBelow1 := append([]float32{1.0}, columnTemplateLocal...)
-		colsBelow1 = []float32{
-			// 1.4, 2.2, //   3.0, 1,  |  4.6 separated to two cols
-			1.38, 2.1, //   3.0, 1,  |  4.6 separated to two cols
-			0.0, 1, //     3.0, 1,  |  4.6 separated to two cols
-			0.0, 1,
-			0.0, 1,
-			0.0, 1,
-			0.0, 1,
-		}
-		colsBelow2 := []float32{}
-		for i := 0; i < len(colsBelow1); i += 2 {
-			colsBelow2 = append(colsBelow2, colsBelow1[i]+colsBelow1[i+1])
-		}
+		page.ValidationFuncName = "biiiQ12"
+		page.ValidationFuncMsg = trl.S{"de": "no javascript dialog message needed"}
 
-		// for idx, assCl := range inputNamesAssetClassesChangeQ3 {
-		{
-
-			inpNames := []string{}
-			for _, nm := range q12inputNames {
-				inpNames = append(inpNames, "q12_"+nm)
-			}
-
-			{
-				gb := qst.NewGridBuilderRadios(
-					columnTemplateLocal,
-					oneToFiveVolume,
-					inpNames,
-					radioVals5,
-					q12Labels,
-				)
-
-				gb.MainLabel = trl.S{
-					"de": fmt.Sprintf(`
+		mainLbl := trl.S{
+			"de": fmt.Sprintf(`
 						<b>12. </b> &nbsp;	
 						
-						Welche Themenfelder decken Ihre Investitionen ab? Bitte tragen Sie soweit möglich, anteilige Impact Investitionsvolumina ein.
-
-						<!--
+						Welche Themenfelder decken Ihre Investitionen ab? 
+					
 						<br>
 						<br>
-						(Mehrfachauswahl in der Reihenfolge der investierten Volumina. 1 bis 5, 1= höchstes Volumen)
-						-->
+						(Mehrfachauswahl in der Reihenfolge der investierten Volumina. 1 bis 5,  1= höchstes Volumen)
 
 					`),
-				}
+		}
 
-				gr := page.AddGrid(gb)
-				gr.BottomVSpacers = 1
+		{
+
+			gr := page.AddBiiiPrio(mainLbl, q12Labels, q12inputNames, 16)
+			_ = gr
+			// gr.WidthMax("38rem")
+
+		}
+
+		if true {
+
+			//
+			//
+			//
+			// gr0, gr1
+			var columnTemplateLocal = []float32{
+				3.6, 1,
+				0.0, 1,
+				0.0, 1,
+				0.0, 1,
+				0.0, 1,
+			}
+			colsBelow1 := append([]float32{1.0}, columnTemplateLocal...)
+			colsBelow1 = []float32{
+				1.4, 2.2, //   3.0, 1,  |  4.6 separated to two cols
+				0.0, 1,
+				0.0, 1,
+				0.0, 1,
+				0.0, 1,
+				0.0, 1,
+			}
+			colsBelow2 := []float32{}
+			for i := 0; i < len(colsBelow1); i += 2 {
+				colsBelow2 = append(colsBelow2, colsBelow1[i]+colsBelow1[i+1])
 			}
 
 			{
 
-				gr := page.AddGroup()
-				gr.Cols = 7
-				gr.BottomVSpacers = 4
-				stl := ""
-				for colIdx := 0; colIdx < len(colsBelow2); colIdx++ {
-					stl = fmt.Sprintf(
-						"%v   %vfr ",
-						stl,
-						colsBelow2[colIdx],
-					)
-				}
-				gr.Style = css.NewStylesResponsive(gr.Style)
-				if gr.Style.Desktop.StyleGridContainer.TemplateColumns == "" {
-					gr.Style.Desktop.StyleBox.Display = "grid"
-					gr.Style.Desktop.StyleGridContainer.TemplateColumns = stl
-					// log.Printf("fmt special 2021-09: grid template - %v", stl)
-				} else {
-					log.Printf("GridBuilder.AddGrid() - another TemplateColumns already present.\nwnt%v\ngot%v", stl, gr.Style.Desktop.StyleGridContainer.TemplateColumns)
+				inpNames := []string{}
+				for _, nm := range q12inputNames {
+					inpNames = append(inpNames, "q12_v1_"+nm)
 				}
 
 				{
-					inp := gr.AddInput()
-					inp.Type = "text"
-					inp.Name = "q12_other_label"
-					inp.MaxChars = 17
-					inp.ColSpan = 1
-					inp.ColSpanLabel = 2.4
-					inp.ColSpanControl = 4
-					// inp.Placeholder = trl.S{"de": "Andere: Welche?", "en": "Other: Which?"}
-					inp.Label = trl.S{
-						"de": "Andere",
-						"en": "Other",
-					}
+					gb := qst.NewGridBuilderRadios(
+						columnTemplateLocal,
+						oneToFiveVolume,
+						inpNames,
+						radioVals5,
+						q12Labels,
+					)
 
-					// inp.StyleCtl = css.NewStylesResponsive(inp.StyleCtl)
-					// inp.StyleCtl.Desktop.StyleBox.WidthMax = "14.0rem"
-					// inp.StyleCtl.Mobile.StyleBox.WidthMax = "4.0rem"
+					gb.MainLabel = mainLbl
 
+					gr := page.AddGrid(gb)
+					gr.BottomVSpacers = 1
 				}
 
-				//
-				for idx := 0; idx < len(oneToFiveVolume); idx++ {
-					rad := gr.AddInput()
-					rad.Type = "radio"
+				{
 
-					rad.Name = "q12" + "_other"
-					rad.ValueRadio = fmt.Sprint(idx + 1)
+					gr := page.AddGroup()
+					gr.Cols = 7
+					gr.BottomVSpacers = 4
+					stl := ""
+					for colIdx := 0; colIdx < len(colsBelow2); colIdx++ {
+						stl = fmt.Sprintf(
+							"%v   %vfr ",
+							stl,
+							colsBelow2[colIdx],
+						)
+					}
+					gr.Style = css.NewStylesResponsive(gr.Style)
+					if gr.Style.Desktop.StyleGridContainer.TemplateColumns == "" {
+						gr.Style.Desktop.StyleBox.Display = "grid"
+						gr.Style.Desktop.StyleGridContainer.TemplateColumns = stl
+						// log.Printf("fmt special 2021-09: grid template - %v", stl)
+					} else {
+						log.Printf("GridBuilder.AddGrid() - another TemplateColumns already present.\nwnt%v\ngot%v", stl, gr.Style.Desktop.StyleGridContainer.TemplateColumns)
+					}
 
-					rad.ColSpan = 1
-					rad.ColSpanLabel = colsBelow1[2*(idx+1)]
-					rad.ColSpanControl = colsBelow1[2*(idx+1)] + 1
+					{
+						inp := gr.AddInput()
+						inp.Type = "text"
+						inp.Name = "q12_v1_other_label"
+						inp.MaxChars = 17
+						inp.ColSpan = 1
+						inp.ColSpanLabel = 2.4
+						inp.ColSpanControl = 4
+						// inp.Placeholder = trl.S{"de": "Andere: Welche?", "en": "Other: Which?"}
+						inp.Label = trl.S{
+							"de": "Andere",
+							"en": "Other",
+						}
+
+						// inp.StyleCtl = css.NewStylesResponsive(inp.StyleCtl)
+						// inp.StyleCtl.Desktop.StyleBox.WidthMax = "14.0rem"
+						// inp.StyleCtl.Mobile.StyleBox.WidthMax = "4.0rem"
+
+					}
+
+					//
+					for idx := 0; idx < len(oneToFiveVolume); idx++ {
+						rad := gr.AddInput()
+						rad.Type = "radio"
+
+						rad.Name = "q12_v1" + "_other"
+						rad.ValueRadio = fmt.Sprint(idx + 1)
+
+						rad.ColSpan = 1
+						rad.ColSpanLabel = colsBelow1[2*(idx+1)]
+						rad.ColSpanControl = colsBelow1[2*(idx+1)] + 1
+					}
+
 				}
 
 			}
-
 		}
 
 	}
@@ -345,11 +356,9 @@ func page4Quest11(q *qst.QuestionnaireT) {
 						
 						Auf die Erreichung welcher Sustainable Development Goals (SDGs)/ Ziele für nachhaltige Entwicklung der UN arbeiten Sie mit Ihren Investitionen hin?					
 
-						<!--
 						<br>
 						<br>
-						(Mehrfachauswahl in der Reihfolge der Wichtigkeit möglich)
-						-->
+						(Mehrfachauswahl in der Reihenfolge der Wichtigkeit. 1 bis 5, 1= höchste Wichtigkeit)
 
 					`),
 				}
@@ -1700,7 +1709,7 @@ func page4Quest11(q *qst.QuestionnaireT) {
 			{"de": "Paris-Aligned oder Net Zero"},
 			{"de": "Kultur und Freizeit (Kultur, Kunst, Sport, sonstige Freizeitgestaltung und soziale Vereine)"},
 			{"de": "Bildung (Grundschule, Sekundarschule, Hochschule, Sonstiges)"},
-			{"de": "Erwerbstätigkeit"},
+			{"de": "Arbeitsmarktintegration"},
 
 			{"de": "Forschung"},
 			{"de": "Gesundheit (Krankenhäuser, Rehabilitation, Pflegeheime, psychische Gesundheit / Krisenintervention)"},

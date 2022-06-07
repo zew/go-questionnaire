@@ -136,7 +136,7 @@ func special202203(q *qst.QuestionnaireT) error {
 
 			gb := qst.NewGridBuilderRadios(
 				columnTemplate,
-				zeroToFive(),
+				importanceZeroToFive(),
 				inputNamesLp,
 				[]string{"1", "2", "3", "4", "5", "6", "7"},
 				rowLabels01,
@@ -236,7 +236,7 @@ func special202203(q *qst.QuestionnaireT) error {
 
 			gb := qst.NewGridBuilderRadios(
 				columnTemplate,
-				zeroToFive(),
+				importanceZeroToFive(),
 				inputNamesLp,
 				[]string{"1", "2", "3", "4", "5", "6", "7"},
 				rowLabels01,

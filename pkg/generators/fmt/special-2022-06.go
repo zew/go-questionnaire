@@ -17,8 +17,8 @@ func special202206(q *qst.QuestionnaireT) error {
 	{
 		page := q.AddPage()
 		page.Short = trl.S{
-			"de": "Crypto",
-			"en": "Crypto",
+			"de": "Sonderfrage:<br>Stablecoins",
+			"en": "Special:<br>Stablecoins",
 		}
 		page.Label = trl.S{
 			"de": "",
@@ -45,7 +45,7 @@ func special202206(q *qst.QuestionnaireT) error {
 						<h3>Sonderfragen zu den systemischen Risiken von Stablecoins </h3>
 
 						<p style="text-align: justify:">
-						Inmitten von allgemeinen Turbulenzen an den Märkten für Kryptowerten kollabierte Mitte Mai 2022 die digitale Währung Terra. Terra war als Stablecoin konzipiert, d.h. eine digitale Währung, die den Wert von einem US-Dollar haben soll. Auch Tether, der größte Stablecoin nach Marktkapitalisierung  (am 1. Juni, 2022 circa 72,5 Milliarden US-Dollar), entfernte sich von seinem Zielpreis von 1 US-Dollar und fiel bis auf einem Marktpreis von knapp 0,95 US-Dollar. Zwar hat sich der Marktpreis von Tether seitdem wieder erholt. Allerdings war die Differenz zwischen dem Zielpreis von 1 US-Dollar und dem Marktpreis am 1. Juni 2022 noch deutlich größer als vor den Turbulenzen. 
+						Inmitten von allgemeinen Turbulenzen an den Märkten für Kryptowerten kollabierte Mitte Mai 2022 die digitale Währung Terra. Terra war als Stablecoin konzipiert, d.h. eine digitale Währung, die den Wert von einem US-Dollar haben soll. Auch Tether, der größte Stablecoin nach Marktkapitalisierung  (am 1. Juni, 2022 circa 72,5 Milliarden US-Dollar), entfernte sich von seinem Zielpreis von 1 US-Dollar und fiel bis auf einem Marktpreis von knapp 0,95 US-Dollar. Zwar hat sich der Marktpreis von Tether seither wieder erholt. Jedoch war die Differenz zwischen dem Zielpreis von 1 US-Dollar und dem Marktpreis am 1. Juni 2022 noch deutlich größer als vor den Turbulenzen. 
 						</p>
 
 						<p style="text-align: justify:">
@@ -74,6 +74,7 @@ func special202206(q *qst.QuestionnaireT) error {
 				"qs4b1_channels",
 				"qs4b2_firesales",
 				"qs4b3_indirect",
+				"qs4b4_open",
 			}
 			mainLbls1 := []trl.S{
 				{
@@ -90,13 +91,14 @@ func special202206(q *qst.QuestionnaireT) error {
 						</p>
 					`,
 				},
+				// q4b1
 				{
 					"de": `
 						<p style="margin-left: -3.1rem; margin-bottom: 0.3rem;">
 						<b>4b.</b> &nbsp;
 						Wie wichtig wären die folgenden Kanäle für die Transmission von Shocks in das traditionelle Finanzsystem, 
 						die vom Zusammenbruch eines großen Asset Backed Stablecoins ausgehen? 
-						(0: Nicht wichtig, 5: extrem wichtig). 
+						 
 						Bitte berücksichtigen Sie nur Stablecoins, 
 						die mit Finanzwerten aus dem traditionellen Finanzsystem abgesichert sind, 
 						d.h. z.B. Staats- oder Unternehmensanleihen.
@@ -104,7 +106,7 @@ func special202206(q *qst.QuestionnaireT) error {
 
 						<p style="margin: 0 0 -0.67rem 0; ">
 							<b>1.</b> &nbsp;	
-							1.	Fire Sales, die vom Emittenten des Stablecoins ausgehen: Der große Andrang von Haltern des Stablecoins, die diese gegen US-Dollar eintauschen wollen, zwingt den Emittenten des Stablecoins dazu, schnell Finanzwerte zu verkaufen, was zu Preisverfällen bei diesen Finanzwerten führt. 
+							Fire Sales, die vom Emittenten des Stablecoins ausgehen: Der große Andrang von Haltern des Stablecoins, die diese gegen US-Dollar eintauschen wollen, zwingt den Emittenten des Stablecoins dazu, schnell Finanzwerte zu verkaufen, was zu Preisverfällen bei diesen Finanzwerten führt. 
 						</p>
 					`,
 					"en": `
@@ -115,31 +117,49 @@ func special202206(q *qst.QuestionnaireT) error {
 
 						<p style="margin: 0 0 -0.67rem 0; ">
 							<b>1.</b> &nbsp;	
-							Fire-sales, originating from the stable coin's issuer: Large redemptions force the issuer to quickly sell traditional assets, causing dislocations in the respective assets' prices. Holders of these assets from the traditional financial system suffer mark-to-market losses.
+							Fire-sales, originating from the stable coin's issuer: Large redemptions force the issuer to quickly sell traditional assets, causing dislocations in the respective assets' prices. 
+							
 						</p>
 					`,
 				},
+				// q4b2
 				{
 					"de": `
 						<p style="margin: 0 0 -0.67rem 0; ">
-							<b>2.</b>	&nbsp;  2.	Fire Sales, die von Haltern des Stablecoins ausgehen: Akteure des traditionellen Finanzsystems, die den Stablecoin halten, erleiden Verluste. Diese Verluste zwingen die Akteure des traditionellen Finanzsystems traditionelle Finanzwerte zu verkaufen, was zu Preisverfällen bei diesen Finanzwerten führt.
+							<b>2.</b>	&nbsp;  Fire Sales, die von Haltern des Stablecoins ausgehen: Akteure des traditionellen Finanzsystems, die den Stablecoin halten, erleiden Verluste. Diese Verluste zwingen die Akteure des traditionellen Finanzsystems traditionelle Finanzwerte zu verkaufen, was zu Preisverfällen bei diesen Finanzwerten führt.
 						</p>
 					`,
 					"en": `
 						<p style="margin: 0 0 -0.67rem 0; ">
-							<b>2.</b>	&nbsp;  Fire-sale, originating from holders of asset-backed stable coins: Actors from the traditional financial system, who own the collapsing stable coin, suffer losses. These losses then force them to sell non-crypto assets, causing dislocations on traditional asset markets.
+							<b>2.</b>	&nbsp;  Fire-sales, originating from holders of asset-backed stable coins: Actors from the traditional financial system, who own the collapsing stable coin, suffer losses. These losses then force them to sell non-crypto assets, causing dislocations on traditional asset markets.
 						</p>
 					`,
 				},
+				// q4b3
 				{
 					"de": `
 						<p style="margin: 0 0 -0.67rem 0; ">
-							<b>3.</b>	&nbsp;  3.	 Kreditbeziehungen: Akteure des traditionellen Finanzsystems haben Kredite an Unternehmen und Haushalte vergeben, die unmittelbar vom Zusammenbruch des Stablecoins betroffen sind. 
+							<b>3.</b>	&nbsp;  Kreditbeziehungen: Akteure des traditionellen Finanzsystems haben Kredite an Unternehmen und Haushalte vergeben, die unmittelbar vom Zusammenbruch des Stablecoins betroffen sind. 
 						</p>
 					`,
 					"en": `
 						<p style="margin: 0 0 -0.67rem 0; ">
-							<b>3.</b>	&nbsp;  Indirect exposures: Actors from the traditional financial system have lending exposures to clients, who are directly exposed to the collapsing stable coin.
+							<b>3.</b>	&nbsp;  Credit exposures: Actors from the traditional financial system have lending exposures to clients, who are directly exposed to the collapsing stable coin.
+						</p>
+					`,
+				},
+				// q4b4
+				{
+					"de": `
+						<p style="margin: 0 0 -0.67rem 0; ">
+							<b>4.</b>	&nbsp;  
+							Offen
+						</p>
+					`,
+					"en": `
+						<p style="margin: 0 0 -0.67rem 0; ">
+							<b>4.</b>	&nbsp;  
+							Open
 						</p>
 					`,
 				},
@@ -149,12 +169,32 @@ func special202206(q *qst.QuestionnaireT) error {
 
 				names := []string{name}
 
-				hdrLabels := zeroToFive()
-				if idx == 4 {
-					hdrLabels = zeroToFive()
+				hdrLabels := importanceZeroToFive()
+				if idx == 0 {
+					hdrLabels = effectZeroToFive()
 				}
 
 				{
+
+					if idx == len(names1)-1 {
+						gr := page.AddGroup()
+						gr.Cols = 1
+						gr.BottomVSpacers = 1
+						{
+
+							inp := gr.AddInput()
+							inp.Type = "text"
+							inp.Name = "qs4b4_open_label"
+							inp.Label = mainLbls1[idx]
+							inp.ColSpan = 1
+							inp.MaxChars = 20
+							inp.ColSpanLabel = 2
+							inp.ColSpanControl = 7
+						}
+						gr.Style = css.NewStylesResponsive(gr.Style)
+						gr.Style.Desktop.StyleBox.Margin = "0 0 0 3.1rem"
+					}
+
 					gb := qst.NewGridBuilderRadios(
 						columnTemplate7NFCL,
 						hdrLabels,
@@ -163,7 +203,11 @@ func special202206(q *qst.QuestionnaireT) error {
 						[]trl.S{{"de": ``, "en": ``}},
 					)
 
-					gb.MainLabel = mainLbls1[idx]
+					if idx == len(names1)-1 {
+						// see above
+					} else {
+						gb.MainLabel = mainLbls1[idx]
+					}
 					gr := page.AddGrid(gb)
 
 					gr.BottomVSpacers = 3
@@ -248,7 +292,7 @@ func special202206(q *qst.QuestionnaireT) error {
 					"de": `
 					Einführung einer Finanzaufsicht über die Emittenten von Stablecoins 
 					`,
-					"en": `Supervision of the entities that issue the stable coins `,
+					"en": `Introduction of financial supervision of the entities that issue the stable coins`,
 				},
 				{
 					"de": `
@@ -258,7 +302,7 @@ func special202206(q *qst.QuestionnaireT) error {
 				},
 				{
 					"de": `
-					Minimale Eigenkapitalvorgaben für die Emittenten von Stablecoins
+					Minimum Eigenkapitalvorgaben für die Emittenten von Stablecoins
 					`,
 					"en": `Minimum capital requirements for the issuers of stable coins`,
 				},
@@ -266,7 +310,7 @@ func special202206(q *qst.QuestionnaireT) error {
 					"de": `
 					Stablecoins vollständig verbieten
 					`,
-					"en": `Forbidding stable coins`,
+					"en": `Forbidding stable coins entirely`,
 				},
 			}
 

@@ -17,7 +17,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "992588423b77867fe33d529109df99700d113cf48b9836c2688e06dff63b4d71",
+ 	"md_5": "ce68b26f3d464d97523bb5e9847fd6db6a45f39d0b8013b31fbfd4afa5ba0e26",
  	"lang_codes": [
  		"de"
  	],
@@ -260,143 +260,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eFrage X.\u003c/b\u003e \u0026nbsp;\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\tWelche Prioritäten haben Sie?\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\tIn Zahlen von 1-5\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\tEs kann nur in 5 Felder eingetragen werden.\n\t\t\t\t\t"
- 							},
- 							"col_span": 7,
- 							"col_span_label": 1
- 						},
- 						{
- 							"name": "q0x_1",
- 							"type": "number",
- 							"max_chars": 2,
- 							"min": 1,
- 							"max": 5,
- 							"label": {
- 								"de": "Gewinn"
- 							},
- 							"col_span": 7,
- 							"col_span_label": 6,
- 							"col_span_control": 1
- 						},
- 						{
- 							"name": "q0x_2",
- 							"type": "number",
- 							"max_chars": 2,
- 							"min": 1,
- 							"max": 5,
- 							"label": {
- 								"de": "Moral"
- 							},
- 							"col_span": 7,
- 							"col_span_label": 6,
- 							"col_span_control": 1
- 						},
- 						{
- 							"name": "q0x_3",
- 							"type": "number",
- 							"max_chars": 2,
- 							"min": 1,
- 							"max": 5,
- 							"label": {
- 								"de": "Ethik"
- 							},
- 							"col_span": 7,
- 							"col_span_label": 6,
- 							"col_span_control": 1
- 						},
- 						{
- 							"name": "q0x_4",
- 							"type": "number",
- 							"max_chars": 2,
- 							"min": 1,
- 							"max": 5,
- 							"label": {
- 								"de": "Umsatz"
- 							},
- 							"col_span": 7,
- 							"col_span_label": 6,
- 							"col_span_control": 1
- 						},
- 						{
- 							"name": "q0x_5",
- 							"type": "number",
- 							"max_chars": 2,
- 							"min": 1,
- 							"max": 5,
- 							"label": {
- 								"de": "Partnerschaft"
- 							},
- 							"col_span": 7,
- 							"col_span_label": 6,
- 							"col_span_control": 1
- 						},
- 						{
- 							"name": "q0x_6",
- 							"type": "number",
- 							"max_chars": 2,
- 							"min": 1,
- 							"max": 5,
- 							"label": {
- 								"de": "Klima"
- 							},
- 							"col_span": 7,
- 							"col_span_label": 6,
- 							"col_span_control": 1
- 						},
- 						{
- 							"name": "q0x_7",
- 							"type": "number",
- 							"max_chars": 2,
- 							"min": 1,
- 							"max": 5,
- 							"label": {
- 								"de": "Waldschutz"
- 							},
- 							"col_span": 7,
- 							"col_span_label": 6,
- 							"col_span_control": 1
- 						},
- 						{
- 							"name": "q0x_8",
- 							"type": "number",
- 							"max_chars": 2,
- 							"min": 1,
- 							"max": 5,
- 							"label": {
- 								"de": "Tierschutz"
- 							},
- 							"col_span": 7,
- 							"col_span_label": 6,
- 							"col_span_control": 1
- 						}
- 					],
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {},
- 							"box_style": {
- 								"width_max": "17rem"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {},
- 							"box_style": {
- 								"width_max": "none"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
- 				},
- 				{
- 					"bottom_vspacers": 3,
- 					"columns": 7,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "\u003cb\u003e2.\u003c/b\u003e \u0026nbsp;\tAls welche Art von Organisation ordnen Sie sich ein?"
+ 								"de": "\n\t\t\t\t\t\u003cb\u003e2.\u003c/b\u003e \u0026nbsp;\t\n\t\t\t\t\tAls welche Art von Organisation ordnen Sie sich ein?\n\t\t\t\t\t"
  							},
  							"col_span": 7,
  							"col_span_label": 1
@@ -405,7 +269,7 @@
  							"name": "q02",
  							"type": "radio",
  							"label": {
- 								"de": "Privat Investor"
+ 								"de": "Privatinvestor"
  							},
  							"col_span": 7,
  							"col_span_label": 1,
@@ -741,7 +605,7 @@
  							"name": "q02",
  							"type": "radio",
  							"label": {
- 								"de": "Inkubator und Beschleuniger"
+ 								"de": "Inkubator oder Accelerator"
  							},
  							"col_span": 7,
  							"col_span_label": 1,
@@ -974,6 +838,33 @@
  							}
  						},
  						{
+ 							"name": "q03_real_estate",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "Immobilienfonds mit Nachhaltigkeitsfokus"
+ 							},
+ 							"col_span": 7,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
  							"name": "q03_no_investing",
  							"type": "checkbox",
  							"label": {
@@ -1033,11 +924,7 @@
  						}
  					]
  				}
- 			],
- 			"validation_func_name": "biiiPage0",
- 			"validation_func_msg": {
- 				"de": "no javascript dialog message needed"
- 			}
+ 			]
  		},
  		{
  			"label": {
@@ -1486,7 +1373,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e5.\u003c/b\u003e \u0026nbsp;\tWenn Sie gegenwärtig mit Impact In\u0026shy;vest\u0026shy;ments arbeiten, welchen Platz haben Impact In\u0026shy;vest\u0026shy;ments in Ihrer Organisation?"
+ 								"de": "\u003cb\u003e5.\u003c/b\u003e \u0026nbsp;\tWelchen Platz haben Impact In\u0026shy;vest\u0026shy;ments in Ihrer Organisation?"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -1869,7 +1756,7 @@
  							"name": "q07_ecology",
  							"type": "checkbox",
  							"label": {
- 								"de": "Lösung drängender gesellschaftlicher oder ökologischer Probleme"
+ 								"de": "Lösung drängender gesellschaftlicher und/oder ökologischer Probleme"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -1928,7 +1815,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e8.\u003c/b\u003e \u0026nbsp;\tWelche finanziellen Ziele verfolgen Sie mit Ihren Impact In\u0026shy;vest\u0026shy;ment?"
+ 								"de": "\u003cb\u003e8.\u003c/b\u003e \u0026nbsp;\tWelche finanziellen Ziele verfolgen Sie mit Ihren Impact In\u0026shy;vest\u0026shy;ments?"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -1937,7 +1824,7 @@
  							"name": "q08",
  							"type": "radio",
  							"label": {
- 								"de": "Über marktübliche risikoadjustierte Rendite"
+ 								"de": "Über Marktübliche risikoadjustierte Renditen"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -1965,7 +1852,7 @@
  							"name": "q08",
  							"type": "radio",
  							"label": {
- 								"de": "Marktübliche risikoadjustierte Rendite"
+ 								"de": "Marktübliche risikoadjustierte Renditen"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -1993,7 +1880,7 @@
  							"name": "q08",
  							"type": "radio",
  							"label": {
- 								"de": "Unter marktübliche risikoadjustierte Rendite"
+ 								"de": "Unter marktübliche risikoadjustierte Renditen"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -2021,7 +1908,7 @@
  							"name": "q08",
  							"type": "radio",
  							"label": {
- 								"de": "Neg\u0026shy;ative Rendite"
+ 								"de": "Neg\u0026shy;ative Renditen"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -2049,39 +1936,25 @@
  				},
  				{
  					"bottom_vspacers": 3,
- 					"columns": 1,
+ 					"columns": 7,
  					"inputs": [
  						{
  							"type": "textblock",
  							"label": {
  								"de": "\n\t\t\t\t\t\u003cb\u003e9.\u003c/b\u003e \u0026nbsp;\n\t\t\t\t\tWelche Ein\u0026shy;flussmöglichkeiten nutzen Sie als Impact Investor?\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t(Mehrfachauswahl möglich)\n\t\t\t\t"
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1
  						},
  						{
  							"name": "q09_reporting",
  							"type": "checkbox",
  							"label": {
- 								"de": "Berichterstattung über Ihre Impact In\u0026shy;vest\u0026shy;ments"
+ 								"de": "Signalling durch Berichterstattung über Impact In\u0026shy;vest\u0026shy;ments"
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -2104,25 +1977,11 @@
  							"name": "q09_tech_support",
  							"type": "checkbox",
  							"label": {
- 								"de": "Technische Unterstützung, Vernetzung etc."
+ 								"de": "Technische Unterstützung, Beratung, Vernetzung etc."
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -2147,23 +2006,9 @@
  							"label": {
  								"de": "Aktive Mitwirkung durch einen Sitz im Aufsichtsrat"
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -2186,25 +2031,11 @@
  							"name": "q09_proxy_voting",
  							"type": "checkbox",
  							"label": {
- 								"de": "Stimmrecht oder Proxy Voting"
+ 								"de": "Stimmrechtsausübung oder Proxy Voting"
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -2229,23 +2060,9 @@
  							"label": {
  								"de": "Aktiver Dialog mit Un\u0026shy;ter\u0026shy;neh\u0026shy;men"
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -2270,23 +2087,9 @@
  							"label": {
  								"de": "Bereitstellung von Kapital zu günstigen Konditionen (concessionary capital)"
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -2311,23 +2114,9 @@
  							"label": {
  								"de": "Unterstützung zur Entwicklung neuer Märkte"
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -2348,36 +2137,24 @@
  						},
  						{
  							"name": "q09_other",
+ 							"type": "checkbox",
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "q09_other_label",
  							"type": "text",
  							"max_chars": 20,
  							"label": {
- 								"de": "Weitere, bitte nennen"
+ 								"de": "Weitere, bitte nennen\u0026nbsp;\u0026nbsp;"
  							},
- 							"col_span": 1,
+ 							"col_span": 6,
  							"col_span_label": 2,
- 							"col_span_control": 3,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "1.2rem 0 0 0"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
+ 							"col_span_control": 5,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0 0 3.4rem"
- 									},
+ 									"box_style": {},
  									"grid_item_style": {},
  									"text_style": {}
  								},
@@ -2433,7 +2210,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\n\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\t\u003cp style='text-align: justify;'\u003e\n\t\t\t\t\t\u003cb\u003e10.\u003c/b\u003e \u0026nbsp;\n\n\t\t\t\t\tWelche Anlagestile verfolgen Sie für Ihre Impact In\u0026shy;vest\u0026shy;ments?\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\tBitte tragen Sie ungefähre anteilige Investitionsvolumina ein.\n\n\t\t\t\t\t\u0026nbsp;\n\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\tDer Ausgangspunkt für die folgende Frage bezieht sich auf die GIIN (2017) Definition:\n\t\t\t\t\t\"Impact In\u0026shy;vest\u0026shy;ments sind Investitionen, die mit der Absicht getätigt werden,\n\t\t\t\t\tneben einer finanziellen Rendite auch eine pos\u0026shy;itive,\n\t\t\t\t\tmessbare soziale und ökologische Wirkung zu erzielen\" (GIIN, 2017).\n\n\t\t\t\t\tTragen Sie bitte ausgehend von dieser breiten Definition\n\t\t\t\t\tdie entsprechenden Investitionsvolumina ein.\n\n\t\t\t\t\tWich\u0026shy;tig dabei ist, dass jedes Volumen \u003ci\u003enur einmalig eingetragen\u003c/i\u003e wird\n\t\t\t\t\tund sich somit in der Summe wieder 100% ergeben.\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t"
+ 								"de": "\n\n\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\t\u003cp style='text-align: justify;'\u003e\n\t\t\t\t\t\u003cb\u003e10.\u003c/b\u003e \u0026nbsp;\n\n\t\t\t\t\tWelche Anlagestile verfolgen Sie mit \u003cu\u003eIhren Impact\u003c/u\u003e In\u0026shy;vest\u0026shy;ments?\n\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\t\u0026nbsp;\n\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\tDer Ausgangspunkt für die folgende Frage bezieht sich auf die GIIN (2017) Definition:\n\t\t\t\t\t\"Impact In\u0026shy;vest\u0026shy;ments sind Investitionen, die mit der Absicht getätigt werden,\n\t\t\t\t\tneben einer finanziellen Rendite auch eine pos\u0026shy;itive,\n\t\t\t\t\tmessbare soziale und ökologische Wirkung zu erzielen\" (GIIN, 2017).\n\n\t\t\t\t\tTragen Sie bitte ausgehend von dieser breiten Definition\n\t\t\t\t\tdie entsprechenden Investitionsvolumina ein.\n\n\t\t\t\t\t\u003cb\u003eWich\u0026shy;tig dabei ist, dass jedes Volumen \u003ci\u003enur einmalig eingetragen\u003c/i\u003e wird\n\t\t\t\t\tund sich somit in der Summe wieder 100% ergeben.\n\t\t\t\t\t\u003c/b\u003e\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t"
  							},
  							"col_span": 35,
  							"col_span_label": 1
@@ -2852,7 +2629,7 @@
  							}
  						},
  						{
- 							"name": "q10d1_pct",
+ 							"name": "q10c2_pct",
  							"type": "number",
  							"max_chars": 5,
  							"step": 0.1,
@@ -2979,7 +2756,7 @@
  								"de": "00"
  							},
  							"label": {
- 								"de": "\n\t\t\t\t\tInvestitionen für die die Impact Performance mit einem Benchmark-Vergleich oder Anhand von SDG Beiträgen dargestellt wird (Output Ebene)\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\tInvestitionen für die die Impact Performance \n\t\t\t\t\tmit einem Benchmark-Vergleich oder anhand von SDG Beiträgen dargestellt \n\t\t\t\t\twird (Output Ebene)\n\t\t\t\t"
  							},
  							"suffix": {
  								"de": "% Anteil"
@@ -3181,7 +2958,11 @@
  						}
  					]
  				}
- 			]
+ 			],
+ 			"validation_func_name": "biiiPage5",
+ 			"validation_func_msg": {
+ 				"de": "no javascript dialog message needed"
+ 			}
  		},
  		{
  			"label": {
@@ -3808,9 +3589,6 @@
  				"de": "",
  				"en": ""
  			},
- 			"short": {
- 				"de": "II Now - p5"
- 			},
  			"navigation_condition": "BIIINow",
  			"suppress_in_progressbar": true,
  			"style": {
@@ -3834,13 +3612,268 @@
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
  				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 7,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\n\t\t\t\t\t\t\u003cb\u003e12. \u003c/b\u003e \u0026nbsp;\t\n\t\t\t\t\t\t\n\t\t\t\t\t\tWelche Themenfelder decken Ihre Investitionen ab? \n\t\t\t\t\t\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t(Mehrfachauswahl in der Reihenfolge der investierten Volumina. 1 bis 5,  1= höchs\u0026shy;tes Volumen)\n\n\t\t\t\t\t"
+ 							},
+ 							"col_span": 7,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "q12_paris_align",
+ 							"type": "number",
+ 							"max_chars": 2,
+ 							"min": 1,
+ 							"max": 5,
+ 							"label": {
+ 								"de": "Paris-Aligned oder Net Zero"
+ 							},
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "q12_culture_sports",
+ 							"type": "number",
+ 							"max_chars": 2,
+ 							"min": 1,
+ 							"max": 5,
+ 							"label": {
+ 								"de": "Kultur und Freizeit (Kultur, Kunst, Sport, sonstige Freizeitgestaltung und soziale Vereine)"
+ 							},
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "q12_education",
+ 							"type": "number",
+ 							"max_chars": 2,
+ 							"min": 1,
+ 							"max": 5,
+ 							"label": {
+ 								"de": "Bil\u0026shy;dung (Grundschule, Sekundarschule, Hochschule, Sonstiges)"
+ 							},
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "q12_work",
+ 							"type": "number",
+ 							"max_chars": 2,
+ 							"min": 1,
+ 							"max": 5,
+ 							"label": {
+ 								"de": "Erwerbstätigkeit"
+ 							},
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "q12_research",
+ 							"type": "number",
+ 							"max_chars": 2,
+ 							"min": 1,
+ 							"max": 5,
+ 							"label": {
+ 								"de": "For\u0026shy;schung"
+ 							},
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "q12_health",
+ 							"type": "number",
+ 							"max_chars": 2,
+ 							"min": 1,
+ 							"max": 5,
+ 							"label": {
+ 								"de": "Gesundheit (Krankenhäuser, Rehabilitation, Pflegeheime, psychische Gesundheit / Krisenintervention)"
+ 							},
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "q12_social_service",
+ 							"type": "number",
+ 							"max_chars": 2,
+ 							"min": 1,
+ 							"max": 5,
+ 							"label": {
+ 								"de": "Soziale Dienste (Notfall, Hilfe, Einkommens\u0026shy;unterstützung / Unterhalt)"
+ 							},
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "q12_environment",
+ 							"type": "number",
+ 							"max_chars": 2,
+ 							"min": 1,
+ 							"max": 5,
+ 							"label": {
+ 								"de": "Umweltschutz (Forstwirt\u0026shy;schaft, Land, Abfall, Luft, biologische Vielfalt und Ökosysteme, Meere und Küstengebiete)"
+ 							},
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "q12_sanitary",
+ 							"type": "number",
+ 							"max_chars": 2,
+ 							"min": 1,
+ 							"max": 5,
+ 							"label": {
+ 								"de": "WASH (Wasser, Sanitärversorgung und Hygiene)"
+ 							},
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "q12_agriculture",
+ 							"type": "number",
+ 							"max_chars": 2,
+ 							"min": 1,
+ 							"max": 5,
+ 							"label": {
+ 								"de": "Landwirt\u0026shy;schaft"
+ 							},
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "q12_energy",
+ 							"type": "number",
+ 							"max_chars": 2,
+ 							"min": 1,
+ 							"max": 5,
+ 							"label": {
+ 								"de": "Energie (Zugang zu Energie, erneuerbare Energie)"
+ 							},
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "q12_residential",
+ 							"type": "number",
+ 							"max_chars": 2,
+ 							"min": 1,
+ 							"max": 5,
+ 							"label": {
+ 								"de": "Wohnen"
+ 							},
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "q12_technology",
+ 							"type": "number",
+ 							"max_chars": 2,
+ 							"min": 1,
+ 							"max": 5,
+ 							"label": {
+ 								"de": "IT / Technologien"
+ 							},
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "q12_prodution",
+ 							"type": "number",
+ 							"max_chars": 2,
+ 							"min": 1,
+ 							"max": 5,
+ 							"label": {
+ 								"de": "Fertigung / Produktion"
+ 							},
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "q12_urban_dev",
+ 							"type": "number",
+ 							"max_chars": 2,
+ 							"min": 1,
+ 							"max": 5,
+ 							"label": {
+ 								"de": "Stadterneuerung / Territoriale Entwicklung"
+ 							},
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "q12_microfinance",
+ 							"type": "number",
+ 							"max_chars": 2,
+ 							"min": 1,
+ 							"max": 5,
+ 							"label": {
+ 								"de": "Finanzielle Eingliederung und Zugang zu Finanzmitteln (d.h. Mikro\u0026shy;finanzierung, Mikro\u0026shy;versi\u0026shy;cherungen, Finanz Bil\u0026shy;dungs\u0026shy;dienst\u0026shy;leistungen, Bankwesen)"
+ 							},
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "q12_other_label",
+ 							"type": "text",
+ 							"max_chars": 17,
+ 							"label": {
+ 								"de": "Andere"
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 1,
+ 							"col_span_control": 3
+ 						},
+ 						{
+ 							"name": "q12_other",
+ 							"type": "number",
+ 							"max_chars": 2,
+ 							"min": 1,
+ 							"max": 5,
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "q12_na",
+ 							"type": "number",
+ 							"max_chars": 2,
+ 							"min": 1,
+ 							"max": 5,
+ 							"label": {
+ 								"de": "Nicht Anwendbar (N/A)"
+ 							},
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
+ 						}
+ 					]
+ 				},
+ 				{
  					"bottom_vspacers": 1,
  					"columns": 5,
  					"inputs": [
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\t\u003cb\u003e12. \u003c/b\u003e \u0026nbsp;\t\n\t\t\t\t\t\t\n\t\t\t\t\t\tWelche Themenfelder decken Ihre Investitionen ab? Bitte tragen Sie soweit möglich, anteilige Impact Investitionsvolumina ein.\n\n\t\t\t\t\t\t\u003c!--\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t(Mehrfachauswahl in der Reihenfolge der investierten Volumina. 1 bis 5, 1= höchs\u0026shy;tes Volumen)\n\t\t\t\t\t\t--\u003e\n\n\t\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\t\u003cb\u003e12. \u003c/b\u003e \u0026nbsp;\t\n\t\t\t\t\t\t\n\t\t\t\t\t\tWelche Themenfelder decken Ihre Investitionen ab? \n\t\t\t\t\t\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t(Mehrfachauswahl in der Reihenfolge der investierten Volumina. 1 bis 5,  1= höchs\u0026shy;tes Volumen)\n\n\t\t\t\t\t"
  							},
  							"col_span": 5,
  							"col_span_label": 1
@@ -4062,57 +4095,7 @@
  							}
  						},
  						{
- 							"name": "q12_na",
- 							"type": "radio",
- 							"label": {
- 								"de": "Nicht Anwendbar (N/A)"
- 							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q12_na",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q12_na",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "q12_na",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "q12_na",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "q12_paris_align",
+ 							"name": "q12_v1_q12_paris_align",
  							"type": "radio",
  							"label": {
  								"de": "Paris-Aligned oder Net Zero"
@@ -4138,31 +4121,31 @@
  							}
  						},
  						{
- 							"name": "q12_paris_align",
+ 							"name": "q12_v1_q12_paris_align",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "q12_paris_align",
+ 							"name": "q12_v1_q12_paris_align",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "q12_paris_align",
+ 							"name": "q12_v1_q12_paris_align",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "q12_paris_align",
+ 							"name": "q12_v1_q12_paris_align",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "q12_culture_sports",
+ 							"name": "q12_v1_q12_culture_sports",
  							"type": "radio",
  							"label": {
  								"de": "Kultur und Freizeit (Kultur, Kunst, Sport, sonstige Freizeitgestaltung und soziale Vereine)"
@@ -4188,31 +4171,31 @@
  							}
  						},
  						{
- 							"name": "q12_culture_sports",
+ 							"name": "q12_v1_q12_culture_sports",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "q12_culture_sports",
+ 							"name": "q12_v1_q12_culture_sports",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "q12_culture_sports",
+ 							"name": "q12_v1_q12_culture_sports",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "q12_culture_sports",
+ 							"name": "q12_v1_q12_culture_sports",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "q12_education",
+ 							"name": "q12_v1_q12_education",
  							"type": "radio",
  							"label": {
  								"de": "Bil\u0026shy;dung (Grundschule, Sekundarschule, Hochschule, Sonstiges)"
@@ -4238,31 +4221,31 @@
  							}
  						},
  						{
- 							"name": "q12_education",
+ 							"name": "q12_v1_q12_education",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "q12_education",
+ 							"name": "q12_v1_q12_education",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "q12_education",
+ 							"name": "q12_v1_q12_education",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "q12_education",
+ 							"name": "q12_v1_q12_education",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "q12_work",
+ 							"name": "q12_v1_q12_work",
  							"type": "radio",
  							"label": {
  								"de": "Erwerbstätigkeit"
@@ -4288,31 +4271,31 @@
  							}
  						},
  						{
- 							"name": "q12_work",
+ 							"name": "q12_v1_q12_work",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "q12_work",
+ 							"name": "q12_v1_q12_work",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "q12_work",
+ 							"name": "q12_v1_q12_work",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "q12_work",
+ 							"name": "q12_v1_q12_work",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "q12_research",
+ 							"name": "q12_v1_q12_research",
  							"type": "radio",
  							"label": {
  								"de": "For\u0026shy;schung"
@@ -4338,31 +4321,31 @@
  							}
  						},
  						{
- 							"name": "q12_research",
+ 							"name": "q12_v1_q12_research",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "q12_research",
+ 							"name": "q12_v1_q12_research",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "q12_research",
+ 							"name": "q12_v1_q12_research",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "q12_research",
+ 							"name": "q12_v1_q12_research",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "q12_health",
+ 							"name": "q12_v1_q12_health",
  							"type": "radio",
  							"label": {
  								"de": "Gesundheit (Krankenhäuser, Rehabilitation, Pflegeheime, psychische Gesundheit / Krisenintervention)"
@@ -4388,31 +4371,31 @@
  							}
  						},
  						{
- 							"name": "q12_health",
+ 							"name": "q12_v1_q12_health",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "q12_health",
+ 							"name": "q12_v1_q12_health",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "q12_health",
+ 							"name": "q12_v1_q12_health",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "q12_health",
+ 							"name": "q12_v1_q12_health",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "q12_social_service",
+ 							"name": "q12_v1_q12_social_service",
  							"type": "radio",
  							"label": {
  								"de": "Soziale Dienste (Notfall, Hilfe, Einkommens\u0026shy;unterstützung / Unterhalt)"
@@ -4438,31 +4421,31 @@
  							}
  						},
  						{
- 							"name": "q12_social_service",
+ 							"name": "q12_v1_q12_social_service",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "q12_social_service",
+ 							"name": "q12_v1_q12_social_service",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "q12_social_service",
+ 							"name": "q12_v1_q12_social_service",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "q12_social_service",
+ 							"name": "q12_v1_q12_social_service",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "q12_environment",
+ 							"name": "q12_v1_q12_environment",
  							"type": "radio",
  							"label": {
  								"de": "Umweltschutz (Forstwirt\u0026shy;schaft, Land, Abfall, Luft, biologische Vielfalt und Ökosysteme, Meere und Küstengebiete)"
@@ -4488,31 +4471,31 @@
  							}
  						},
  						{
- 							"name": "q12_environment",
+ 							"name": "q12_v1_q12_environment",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "q12_environment",
+ 							"name": "q12_v1_q12_environment",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "q12_environment",
+ 							"name": "q12_v1_q12_environment",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "q12_environment",
+ 							"name": "q12_v1_q12_environment",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "q12_sanitary",
+ 							"name": "q12_v1_q12_sanitary",
  							"type": "radio",
  							"label": {
  								"de": "WASH (Wasser, Sanitärversorgung und Hygiene)"
@@ -4538,31 +4521,31 @@
  							}
  						},
  						{
- 							"name": "q12_sanitary",
+ 							"name": "q12_v1_q12_sanitary",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "q12_sanitary",
+ 							"name": "q12_v1_q12_sanitary",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "q12_sanitary",
+ 							"name": "q12_v1_q12_sanitary",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "q12_sanitary",
+ 							"name": "q12_v1_q12_sanitary",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "q12_agriculture",
+ 							"name": "q12_v1_q12_agriculture",
  							"type": "radio",
  							"label": {
  								"de": "Landwirt\u0026shy;schaft"
@@ -4588,31 +4571,31 @@
  							}
  						},
  						{
- 							"name": "q12_agriculture",
+ 							"name": "q12_v1_q12_agriculture",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "q12_agriculture",
+ 							"name": "q12_v1_q12_agriculture",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "q12_agriculture",
+ 							"name": "q12_v1_q12_agriculture",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "q12_agriculture",
+ 							"name": "q12_v1_q12_agriculture",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "q12_energy",
+ 							"name": "q12_v1_q12_energy",
  							"type": "radio",
  							"label": {
  								"de": "Energie (Zugang zu Energie, erneuerbare Energie)"
@@ -4638,31 +4621,31 @@
  							}
  						},
  						{
- 							"name": "q12_energy",
+ 							"name": "q12_v1_q12_energy",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "q12_energy",
+ 							"name": "q12_v1_q12_energy",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "q12_energy",
+ 							"name": "q12_v1_q12_energy",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "q12_energy",
+ 							"name": "q12_v1_q12_energy",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "q12_residential",
+ 							"name": "q12_v1_q12_residential",
  							"type": "radio",
  							"label": {
  								"de": "Wohnen"
@@ -4688,31 +4671,31 @@
  							}
  						},
  						{
- 							"name": "q12_residential",
+ 							"name": "q12_v1_q12_residential",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "q12_residential",
+ 							"name": "q12_v1_q12_residential",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "q12_residential",
+ 							"name": "q12_v1_q12_residential",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "q12_residential",
+ 							"name": "q12_v1_q12_residential",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "q12_technology",
+ 							"name": "q12_v1_q12_technology",
  							"type": "radio",
  							"label": {
  								"de": "IT / Technologien"
@@ -4738,31 +4721,31 @@
  							}
  						},
  						{
- 							"name": "q12_technology",
+ 							"name": "q12_v1_q12_technology",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "q12_technology",
+ 							"name": "q12_v1_q12_technology",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "q12_technology",
+ 							"name": "q12_v1_q12_technology",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "q12_technology",
+ 							"name": "q12_v1_q12_technology",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "q12_prodution",
+ 							"name": "q12_v1_q12_prodution",
  							"type": "radio",
  							"label": {
  								"de": "Fertigung / Produktion"
@@ -4788,31 +4771,31 @@
  							}
  						},
  						{
- 							"name": "q12_prodution",
+ 							"name": "q12_v1_q12_prodution",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "q12_prodution",
+ 							"name": "q12_v1_q12_prodution",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "q12_prodution",
+ 							"name": "q12_v1_q12_prodution",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "q12_prodution",
+ 							"name": "q12_v1_q12_prodution",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "q12_urban_dev",
+ 							"name": "q12_v1_q12_urban_dev",
  							"type": "radio",
  							"label": {
  								"de": "Stadterneuerung / Territoriale Entwicklung"
@@ -4838,31 +4821,31 @@
  							}
  						},
  						{
- 							"name": "q12_urban_dev",
+ 							"name": "q12_v1_q12_urban_dev",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "q12_urban_dev",
+ 							"name": "q12_v1_q12_urban_dev",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "q12_urban_dev",
+ 							"name": "q12_v1_q12_urban_dev",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "q12_urban_dev",
+ 							"name": "q12_v1_q12_urban_dev",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "q12_microfinance",
+ 							"name": "q12_v1_q12_microfinance",
  							"type": "radio",
  							"label": {
  								"de": "Finanzielle Eingliederung und Zugang zu Finanzmitteln (d.h. Mikro\u0026shy;finanzierung, Mikro\u0026shy;versi\u0026shy;cherungen, Finanz Bil\u0026shy;dungs\u0026shy;dienst\u0026shy;leistungen, Bankwesen)"
@@ -4888,25 +4871,125 @@
  							}
  						},
  						{
- 							"name": "q12_microfinance",
+ 							"name": "q12_v1_q12_microfinance",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "q12_microfinance",
+ 							"name": "q12_v1_q12_microfinance",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "q12_microfinance",
+ 							"name": "q12_v1_q12_microfinance",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "q12_microfinance",
+ 							"name": "q12_v1_q12_microfinance",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "q12_v1_q12_other",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Andere"
+ 							},
+ 							"col_span_label": 3.6,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q12_v1_q12_other",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "q12_v1_q12_other",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "q12_v1_q12_other",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "q12_v1_q12_other",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "q12_v1_q12_na",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Nicht Anwendbar (N/A)"
+ 							},
+ 							"col_span_label": 3.6,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q12_v1_q12_na",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "q12_v1_q12_na",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "q12_v1_q12_na",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "q12_v1_q12_na",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
@@ -4937,7 +5020,7 @@
  					"columns": 7,
  					"inputs": [
  						{
- 							"name": "q12_other_label",
+ 							"name": "q12_v1_other_label",
  							"type": "text",
  							"max_chars": 17,
  							"label": {
@@ -4949,35 +5032,35 @@
  							"col_span_control": 4
  						},
  						{
- 							"name": "q12_other",
+ 							"name": "q12_v1_other",
  							"type": "radio",
  							"col_span": 1,
  							"col_span_control": 1,
  							"value_radio": "1"
  						},
  						{
- 							"name": "q12_other",
+ 							"name": "q12_v1_other",
  							"type": "radio",
  							"col_span": 1,
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "q12_other",
+ 							"name": "q12_v1_other",
  							"type": "radio",
  							"col_span": 1,
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "q12_other",
+ 							"name": "q12_v1_other",
  							"type": "radio",
  							"col_span": 1,
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "q12_other",
+ 							"name": "q12_v1_other",
  							"type": "radio",
  							"col_span": 1,
  							"col_span_control": 1,
@@ -4987,7 +5070,7 @@
  					"style": {
  						"desktop": {
  							"grid_container_style": {
- 								"template_columns": "   3.48fr    1fr    1fr    1fr    1fr    1fr "
+ 								"template_columns": "   3.6fr    1fr    1fr    1fr    1fr    1fr "
  							},
  							"box_style": {
  								"display": "grid"
@@ -5003,7 +5086,11 @@
  						}
  					}
  				}
- 			]
+ 			],
+ 			"validation_func_name": "biiiQ12",
+ 			"validation_func_msg": {
+ 				"de": "no javascript dialog message needed"
+ 			}
  		},
  		{
  			"label": {
@@ -5045,7 +5132,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\t\u003cb\u003e13. \u003c/b\u003e \u0026nbsp;\t\n\t\t\t\t\t\t\n\t\t\t\t\t\tAuf die Erreichung welcher Sustainable De\u0026shy;vel\u0026shy;op\u0026shy;ment Goals (SDGs)/ Ziele für nachhaltige Entwicklung der UN arbeiten Sie mit Ihren Investitionen hin?\t\t\t\t\t\n\n\t\t\t\t\t\t\u003c!--\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t(Mehrfachauswahl in der Reihfolge der Wich\u0026shy;tig\u0026shy;keit möglich)\n\t\t\t\t\t\t--\u003e\n\n\t\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\t\u003cb\u003e13. \u003c/b\u003e \u0026nbsp;\t\n\t\t\t\t\t\t\n\t\t\t\t\t\tAuf die Erreichung welcher Sustainable De\u0026shy;vel\u0026shy;op\u0026shy;ment Goals (SDGs)/ Ziele für nachhaltige Entwicklung der UN arbeiten Sie mit Ihren Investitionen hin?\t\t\t\t\t\n\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t(Mehrfachauswahl in der Reihenfolge der Wich\u0026shy;tig\u0026shy;keit. 1 bis 5, 1= höchs\u0026shy;te Wich\u0026shy;tig\u0026shy;keit)\n\n\t\t\t\t\t"
  							},
  							"col_span": 5,
  							"col_span_label": 1
@@ -14181,7 +14268,7 @@
  							"name": "q33a_work",
  							"type": "radio",
  							"label": {
- 								"de": "Erwerbstätigkeit"
+ 								"de": "Arbeitsmarktintegration"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -15047,7 +15134,7 @@
  							"name": "q33b_work",
  							"type": "radio",
  							"label": {
- 								"de": "Erwerbstätigkeit"
+ 								"de": "Arbeitsmarktintegration"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,

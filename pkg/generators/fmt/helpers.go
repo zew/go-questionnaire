@@ -524,13 +524,12 @@ func positiveNegative5() []trl.S {
 
 }
 
-// compare oneToFive
-func zeroToFive() []trl.S {
+func importanceZeroToFive() []trl.S {
 
 	tm := []trl.S{
 		{
-			"de": "0",
-			"en": "0",
+			"de": "0<br>(nicht<br>wichtig)",
+			"en": "0<br>(not<br>important)",
 		},
 		{
 			"de": "1",
@@ -549,8 +548,45 @@ func zeroToFive() []trl.S {
 			"en": "4",
 		},
 		{
-			"de": "5",
-			"en": "5",
+			"de": "5<br>(extrem<br>wichtig)",
+			"en": "5<br>(extremely<br>important)",
+		},
+		{
+			"de": "keine<br>Angabe",
+			"en": "no answer",
+		},
+	}
+
+	return tm
+
+}
+
+func effectZeroToFive() []trl.S {
+
+	tm := []trl.S{
+		{
+			"de": "0<br>(kein<br>Effekt)",
+			"en": "0<br>(no<br>effect)",
+		},
+		{
+			"de": "1",
+			"en": "1",
+		},
+		{
+			"de": "2",
+			"en": "2",
+		},
+		{
+			"de": "3",
+			"en": "3",
+		},
+		{
+			"de": "4",
+			"en": "4",
+		},
+		{
+			"de": "5<br>(extrem großer Effekt)",
+			"en": "5<br>(extremely large effect)",
 		},
 		{
 			"de": "keine<br>Angabe",

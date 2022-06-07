@@ -9,23 +9,44 @@
     Sehr geehrte Damen und Herren,
     <br>
     <br>
-    In 2020 hat die Bundesinitiative Impact Investing e.V. (Biii) eine Markstudie durchgeführt, um die Potentiale, Entwicklungen und Trends des deutschen Impact-Investing-Markts zu untersuchen. Die Ergebnisse zeigten, dass es sich bei Impact Investing in Deutschland um einen ausdifferenzierten Milliardenmarkt mit großem Wachstumspotential und hoher Dynamik handelt und dass, Transparenz und Erfahrungsaustausch, essentiell für die Weiterentwicklung des deutschen Impact Investing Markts sind. Zwei Jahre später wollen wir den Impact Investing Markt in Deutschland weiter untersuchen und einen besseren Überblick über die Landschaft der Impact-Investitionen zu verschaffen. Der Marktstudie 2022 soll einen Einblick in die Impact Investing Herausforderungen, mit denen die Welt des Impact Investing konfrontiert ist werfen, weitere Motive von Impact Investoren zu erkennen, und sich mit finanziellen Erträgen, Impact Management und Rahmenbedingungen sowie regulatorischen Hindernissen befassen. 
+
+    die Marktstudie 2020 der <i>Bundesinitiative Impact Investing (BIII)</i> hat unter anderem gezeigt, dass Transparenz und ein besseres Marktverständnis essenziell für die Weiterentwicklung des deutschen Impact Investing-Marktes sind.   
 </p>
 
 <p style='text-align: justify; font-size: 110%'>
-    In Kooperation mit der Universität Hamburg und Advanced Impact Research GmbH, führt Biii die umfassende Befragung von Investoren zu diesem Thema durch – zu der wir Sie hiermit herzlich einladen!  Mit Ihrer Teilnahme unterstützen Sie das gegenseitige Verständnis des deutschen Impact Investing-Marktes und die weitere Entwicklung dieses Marktes, und damit diese wichtige Kooperation weiter zu verbessern. Wir wären Ihnen dankbar an ZEW – Leibniz Centre for European Economic Research, die für die Online-Erhebung auf operativer Ebene zuständig sind, die Erhebung so weit wie möglich vollständig zu beenden.
+    Daher wollen wir diesen nun 2022 mit einer neuerlichen Studie weiter ergründen und einen detaillierten Überblick über Entwicklungen und Herausforderungen in Bezug auf Aspekte wie Investitionsmotive, finanzielle Renditen, Wirkung oder rechtliche Rahmenbedingungen geben. Die Veröffentlichung der Ergebnisse ist für September 2022 geplant. 
 </p>
 
 <p style='text-align: justify; font-size: 110%'>
-    Alle Antworten dieser Online-Umfrage werden von uns streng vertraulich, DSGVO-konform behandelt und nur in anonymer bzw. aggregierter Form benutzt. Bei Einwilligung zur Datenweitergabe zu Auswertungszwecken, werden diese an die European Venture Philanthropy Association (EVPA) weitergeleitet. Die Veröffentlichung der Ergebnisse der Umfrage ist für September 2022 geplant. Alle Teilnehmer werden wir aktiv über die Ergebnisse der Umfrage informieren.
+    Zur Erhebung der Daten führt die <i>BIII</i> in Kooperation mit der <i>Universität Hamburg</i> und <i>Advanced Impact Research GmbH</i> eine umfassende Befragung von Investoren und Intermediären durch – zu der wir Sie hiermit herzlich einladen!  
+</p>
+
+<p style='text-align: justify; font-size: 110%'>
+    Mit Ihrer Teilnahme tragen Sie maßgeblich dazu bei, den deutschen Impact Investing Markt zu stärken, weiterzuentwickeln und helfen, zusätzliches Kapital zur Bewältigung gesellschaftlicher Herausforderungen zu mobilisieren. 
+</p>
+
+<p style='text-align: justify; font-size: 110%'>
+    Wir möchten Sie bitten, den Online-Fragebogen möglichst <b>vollständig</b> auszufüllen. 
+</p>
+
+<p style='text-align: justify; font-size: 110%'>
+    Alle Antworten dieser Online-Umfrage werden von uns <b>streng vertraulich</b>, DSGVO-konform behandelt und nur in anonymer bzw.    aggregierter Form ausgewertet.
+</p>
+
+<p style='text-align: justify; font-size: 110%'>
+    Als Teil der <i>Global Steering Group for Impact Investments (GSG)</i> möchte die <i>BIII</i> gerne auch zu einem besseren Verständnis des europäischen/globalen Impact Investing Markt beitragen. Bei Einwilligung zur Datenweitergabe zu Auswertungszwecken, werden die Daten an die <i>European Venture Philanthropy Association (EVPA)</i> weitergeleitet und fließen in die Erhebungen von <i>EVPA</i> und <i>GSG</i> mit ein. Damit helfen Sie uns, ein breiteres Verständnis von Impact Investing zu bekommen und die Situation in Deutschland auch mit anderen Ländern zu vergleichen. 
+ </p>
+
+<p style='text-align: justify; font-size: 110%'>
+    Die Online-Umsetzung unserer Umfrage erfolgt durch das <a href="https://www.zew.de">ZEW Mannheim</a> und wird unter der Domäne des ZEW gehostet. Details zum Datenschutz im <a href="/{{AppPrefix}}/doc/site-imprint.md">Impressum</a>.
 </p>
 
 
 <p style='text-align: justify; font-size: 110%'>
-    Für Ihre Unterstützung bedanken wir uns auch im Namen unserer Kooperationspartner sehr herzlich. Für Rückfragen stehen wir gerne zur Verfügung. 
+    Für Ihre Unterstützung bedanken wir uns auch im Namen unserer Kooperationspartner sehr herzlich.  
     <br>
     <br>
-    Ihre Ansprächpartner sind:
+    Bei Rückfragen stehen wir jederzeit gerne zur Verfügung.
     <br>
 
     <table>

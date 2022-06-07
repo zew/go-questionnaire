@@ -17,6 +17,10 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 	include = include || q.Survey.Year == 2022 && q.Survey.Month == 3
 	include = include || q.Survey.Year == 2022 && q.Survey.Month == 6
 
+	// !!!
+	// update the 3 month reference "compared to [now minus three months]"
+	// !!!
+
 	if !include {
 		return nil
 	}
@@ -72,7 +76,7 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 		},
 		{
 			"de": "Rohstoffe",
-			"en": "Raw materials",
+			"en": "Commodities",
 		},
 		{
 			"de": "Krypto&shy;währungen",
@@ -309,7 +313,7 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 					Sie zu einer Revision Ihrer Einschätzungen 
 					zum Rendite-Risiko-Profil der einzelnen Assetklassen
 					im <b>Eurogebiet</b> 
-					gegenüber September 2021 bewogen?
+					gegenüber März 2022 bewogen?
 				</p>
 
 				<p style=''>
@@ -326,7 +330,7 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 					lead you to change your assessment 
 					of the return-risk profiles
 					of the following four asset classes 
-					(compared to December 2021)
+					(compared to March 2022)
 					in the <b>euro area</b>?
 
 				</p>

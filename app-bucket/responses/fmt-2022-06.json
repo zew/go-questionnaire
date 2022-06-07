@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "e051f9b7718dedf5cbe4b9529aab4fca908ec40e91e4d637b20cc52c2d70e1f2",
+ 	"md_5": "fe8d5938ff24d35dd09696a1ec0b24885962dfa1b5d34d6c1fbacea7c7d1a7be",
  	"lang_codes": [
  		"de",
  		"en"
@@ -5519,7 +5519,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Rohstoffe",
- 								"en": "Raw materials"
+ 								"en": "Commodities"
  							},
  							"col_span_label": 3,
  							"col_span_control": 1,
@@ -5646,8 +5646,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003cb\u003e3.\u003c/b\u003e  \u0026nbsp;\n\t\t\t\t\tHaben Entwicklungen der folgenden Faktoren \n\t\t\t\t\tSie zu einer Revision Ihrer Einschätzungen \n\t\t\t\t\tzum Rendite-Risiko-Profil der einzelnen Assetklassen\n\t\t\t\t\tim \u003cb\u003eEuro\u0026shy;gebiet\u003c/b\u003e \n\t\t\t\t\tgegenüber September 2021 bewogen?\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\tund wenn ja, nach oben (+) oder unten (-)\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t",
- 								"en": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003cb\u003e3.\u003c/b\u003e  \u0026nbsp;\n\n\t\t\t\t\tDid de\u0026shy;vel\u0026shy;op\u0026shy;ments in the following areas\n\t\t\t\t\tlead you to change your assessment \n\t\t\t\t\tof the return-risk profiles\n\t\t\t\t\tof the following four asset classes \n\t\t\t\t\t(compared to December 2021)\n\t\t\t\t\tin the \u003cb\u003eeuro area\u003c/b\u003e?\n\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t(+) = upward change, (-) = downward change\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\n\n\t\t\t\t\t"
+ 								"de": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003cb\u003e3.\u003c/b\u003e  \u0026nbsp;\n\t\t\t\t\tHaben Entwicklungen der folgenden Faktoren \n\t\t\t\t\tSie zu einer Revision Ihrer Einschätzungen \n\t\t\t\t\tzum Rendite-Risiko-Profil der einzelnen Assetklassen\n\t\t\t\t\tim \u003cb\u003eEuro\u0026shy;gebiet\u003c/b\u003e \n\t\t\t\t\tgegenüber März 2022 bewogen?\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\tund wenn ja, nach oben (+) oder unten (-)\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t",
+ 								"en": "\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\u003cb\u003e3.\u003c/b\u003e  \u0026nbsp;\n\n\t\t\t\t\tDid de\u0026shy;vel\u0026shy;op\u0026shy;ments in the following areas\n\t\t\t\t\tlead you to change your assessment \n\t\t\t\t\tof the return-risk profiles\n\t\t\t\t\tof the following four asset classes \n\t\t\t\t\t(compared to March 2022)\n\t\t\t\t\tin the \u003cb\u003eeuro area\u003c/b\u003e?\n\n\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t(+) = upward change, (-) = downward change\n\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\n\n\t\t\t\t\t"
  							},
  							"col_span_label": 1
  						}
@@ -9055,8 +9055,8 @@
  				"en": ""
  			},
  			"short": {
- 				"de": "Crypto",
- 				"en": "Crypto"
+ 				"de": "Sonderfrage:\u003cbr\u003eStablecoins",
+ 				"en": "Special:\u003cbr\u003eStablecoins"
  			},
  			"style": {
  				"desktop": {
@@ -9085,8 +9085,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\t\u003ch3\u003eSonderfragen zu den systemischen Risiken von Stablecoins \u003c/h3\u003e\n\n\t\t\t\t\t\t\u003cp style=\"text-align: justify:\"\u003e\n\t\t\t\t\t\tInmitten von allgemeinen Turbulenzen an den Märkten für Kryptowerten kollabierte Mitte Mai 2022 die digitale Währung Terra. Terra war als Stablecoin konzipiert, d.h. eine digitale Währung, die immer (ungefähr) den Wert von einem US-Dollar haben soll. Auch Tether, der größte Stablecoin nach Marktkapitalisierung  (am 1. Juni, 2022 circa 72,5 Milliarden US-Dollar), entfernte sich von seinem Zielpreis von 1 US-Dollar und fiel bis auf einem Marktpreis von knapp 0,95 US-Dollar. Zwar hat sich der Marktpreis von Tether seitdem wieder erholt. Allerdings war die Differenz zwi\u0026shy;schen dem Zielpreis von 1 US-Dollar und dem Marktpreis am 1. Juni 2022 noch deut\u0026shy;lich grö\u0026shy;ßer als vor den Turbulenzen. \n\t\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\t\u003cp style=\"text-align: justify:\"\u003e\n\t\t\t\t\t\tTether ist ein so genannter Asset Backed Stablecoin. Der Emittent des Stablecoins verspricht üblicherweise für jeden emittierten Stablecoin Finanzwerte im Wert von 1 US-Dollar (oder Euro etc.) zu halten. Außerdem verspricht der Emittent den Haltern des Stablecoins, dass sie diese jederzeit im Verhältnis von 1:1 gegen US-Dollar eintauschen können. Unter nor\u0026shy;malen Marktbedingungen sorgt ein Arbitragemechanismus da\u0026shy;für, dass der Marktpreis des Stablecoins immer (ungefähr) 1 US-Dollar beträgt. So kaufen Arbitrageure wenn der Preis eines Stablecoins unter 1 US-Dollar fällt die entsprechenden Stablecoins auf den Kryptomärkten und tauschen diese beim Emittenten gegen jeweils 1 US-Dollar ein, was den Preis des Stablecoins nach oben Richtung 1 US-Dollar treibt. Wenn der Preis des Stablecoins über 1 US-Dollar liegt, tauschen Arbitrageure beim Emittenten des Stablecoins US-Dollar gegen neue Stablecoins und verkaufen diese auf Kryptomärkten, was den Preis nach unten Richtung 1 US-Dollar treibt.  \n\t\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t",
- 								"en": "\n\n\t\t\t\t\t\t\u003ch3\u003eAdditional questions on the financial stability implications of stable coins\u003c/h3\u003e\n\n\t\t\t\t\t\t\u003cp style=\"text-align: justify:\"\u003e\n\t\t\t\t\t\tThe middle of May 2022 saw the collapse of the coin Terra amid general turbulences on markets for cryptocurrencies. Terra was conceived as a crypto asset that should always be worth exactly 1 USD, i.e. a so-called stable coin. During the unraveling of Terra, also Tether, the largest stable coin by market value (about 73 billion USD as of May 25, 2022), temporarily lost its peg of 1 USD, trading as low as 0.97 USD. Tether has recovered most of its losses since then, but still trades be\u0026shy;low 1 USD as of May 25, 2022.\n\t\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\t\u003cp style=\"text-align: justify:\"\u003e\n\t\t\t\t\t\tTether is a so-called asset-backed stable coin. The entities that issue asset-backed stable coins usually promise to hold financial assets worth 1 USD (the peg) for every stable coin issued. They also promise holders of their stable coins that they can always redeem these for USD at a ratio of 1:1. Under nor\u0026shy;mal market conditions, arbitrage ensures that the stable coins have a market price of 1 USD. More specifically, if the price of a stable coin is be\u0026shy;low 1 USD, arbitrageurs buy it on the market and redeem it for 1 USD each with the stable coin's issuer, thereby driving up the stable coin's market price. If the price of a stable coin is above 1 USD, arbitrageurs exchange USD against stable coins at the stable coin's issuer and sell these on the market, thereby driving down the stable coin's market price.\n\t\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\t\u003ch3\u003eSonderfragen zu den systemischen Risiken von Stablecoins \u003c/h3\u003e\n\n\t\t\t\t\t\t\u003cp style=\"text-align: justify:\"\u003e\n\t\t\t\t\t\tInmitten von allgemeinen Turbulenzen an den Märkten für Kryptowerten kollabierte Mitte Mai 2022 die digitale Währung Terra. Terra war als Stablecoin konzipiert, d.h. eine digitale Währung, die den Wert von einem US-Dollar haben soll. Auch Tether, der größte Stablecoin nach Marktkapitalisierung  (am 1. Juni, 2022 circa 72,5 Milliarden US-Dollar), entfernte sich von seinem Zielpreis von 1 US-Dollar und fiel bis auf einem Marktpreis von knapp 0,95 US-Dollar. Zwar hat sich der Marktpreis von Tether seither wieder erholt. Jedoch war die Differenz zwi\u0026shy;schen dem Zielpreis von 1 US-Dollar und dem Marktpreis am 1. Juni 2022 noch deut\u0026shy;lich grö\u0026shy;ßer als vor den Turbulenzen. \n\t\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\t\u003cp style=\"text-align: justify:\"\u003e\n\t\t\t\t\t\tTether ist ein so genannter Asset Backed Stablecoin. Der Emittent des Stablecoins verspricht üblicherweise für jeden emittierten Stablecoin Finanzwerte im Wert von 1 US-Dollar (oder Euro etc.) zu halten. Außerdem verspricht der Emittent den Haltern des Stablecoins, dass sie diese jederzeit im Verhältnis von 1:1 gegen US-Dollar eintauschen können. Unter nor\u0026shy;malen Marktbedingungen sorgt ein Arbitragemechanismus da\u0026shy;für, dass der Marktpreis des Stablecoins immer (ungefähr) 1 US-Dollar beträgt. So kaufen Arbitrageure wenn der Preis eines Stablecoins unter 1 US-Dollar fällt die entsprechenden Stablecoins auf den Kryptomärkten und tauschen diese beim Emittenten gegen jeweils 1 US-Dollar ein, was den Preis des Stablecoins nach oben Richtung 1 US-Dollar treibt. Wenn der Preis des Stablecoins über 1 US-Dollar liegt, tauschen Arbitrageure beim Emittenten des Stablecoins US-Dollar gegen neue Stablecoins und verkaufen diese auf Kryptomärkten, was den Preis nach unten Richtung 1 US-Dollar treibt.  \n\t\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t",
+ 								"en": "\n\n\t\t\t\t\t\t\u003ch3\u003eAdditional questions on the financial stability implications of stable coins\u003c/h3\u003e\n\n\t\t\t\t\t\t\u003cp style=\"text-align: justify:\"\u003e\n\t\t\t\t\t\tThe middle of May 2022 saw the collapse of the coin Terra amid general turbulences on markets for cryptocurrencies. Terra was conceived as a crypto asset that should always be worth 1 U.S. Dollar (USD), i.e. a so-called stable coin. During the unraveling of Terra, also Tether, the largest stable coin by market value (about 72.5 billion USD as of June 1, 2022), temporarily lost its peg of 1 USD, trading as low as 0.95 USD. Although Tether has recovered most of its losses since then, the difference be\u0026shy;tween its target price of 1 USD and its market price on June 1, 2022 still was considerably higher than before the turbulences.  \n\t\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\t\u003cp style=\"text-align: justify:\"\u003e\n\t\t\t\t\t\tTether is a so-called asset-backed stable coin. The entities that issue asset-backed stable coins usually promise to hold financial assets worth 1 USD (or Euro etc.) for every stable coin issued. They also promise holders of their stable coins that they can always redeem these for USD at a ratio of 1:1. Under nor\u0026shy;mal market conditions, arbitrage ensures that the stable coins have a market price of 1 USD. More specifically, if the price of a stable coin is be\u0026shy;low 1 USD, arbitrageurs buy it on the market and redeem it for 1 USD each with the stable coin’s issuer, thereby driving up the stable coin’s market price. If the price of a stable coin is above 1 USD, arbitrageurs exchange USD against stable coins at the stable coin’s issuer and sell these on the market, thereby driving down the stable coin’s market price.\n\t\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -9109,8 +9109,8 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "0",
- 								"en": "0"
+ 								"de": "0\u003cbr\u003e(kein\u003cbr\u003eEffekt)",
+ 								"en": "0\u003cbr\u003e(no\u003cbr\u003eeffect)"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -9329,8 +9329,8 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "5",
- 								"en": "5"
+ 								"de": "5\u003cbr\u003e(extrem großer Effekt)",
+ 								"en": "5\u003cbr\u003e(extremely large effect)"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -9507,8 +9507,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\t\u003cp style=\"margin-left: -3.1rem; margin-bottom: 0.3rem;\"\u003e\n\t\t\t\t\t\t\u003cb\u003e4b.\u003c/b\u003e \u0026nbsp;\n\t\t\t\t\t\tWie wich\u0026shy;tig wären die folgenden Kanäle für die Transmission von Shocks in das traditionelle Finanzsystem, \n\t\t\t\t\t\tdie vom Zusammenbruch eines großen Asset Backed Stablecoins ausgehen? \n\t\t\t\t\t\t(0: Nicht wich\u0026shy;tig, 5: extrem wich\u0026shy;tig). \n\t\t\t\t\t\tBitte berücksichtigen Sie nur Stablecoins, \n\t\t\t\t\t\tdie mit Finanzwerten aus dem traditionellen Finanzsystem abgesi\u0026shy;chert sind, \n\t\t\t\t\t\td.h. z.B. Staats- oder Un\u0026shy;ter\u0026shy;neh\u0026shy;mensanleihen.\n\t\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\t\u003cp style=\"margin: 0 0 -0.67rem 0; \"\u003e\n\t\t\t\t\t\t\t\u003cb\u003e1.\u003c/b\u003e \u0026nbsp;\t\n\t\t\t\t\t\t\t1.\tFire Sales, die vom Emittenten des Stablecoins ausgehen: Der große Andrang von Haltern des Stablecoins, die diese gegen US-Dollar eintauschen wollen, zwingt den Emittenten des Stablecoins dazu, schnell Finanzwerte zu verkaufen, was zu Preisverfällen bei diesen Finanzwerten führt. \n\t\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t",
- 								"en": "\n\t\t\t\t\t\t\u003cp style=\"margin-left: -3.1rem; margin-bottom: 0.3rem;\"\u003e\n\t\t\t\t\t\t\u003cb\u003e4b.\u003c/b\u003e \u0026nbsp;\n\t\t\t\t\t\tHow important would the following channels be for the transmission of shocks originating from the collapse of a large asset-backed stable coin to the traditional financial system? (0: not important, 5: extremely important). Please consider only stable coins that are backed by traditional financial assets, e.g. government or corporate bonds.\n\t\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\t\u003cp style=\"margin: 0 0 -0.67rem 0; \"\u003e\n\t\t\t\t\t\t\t\u003cb\u003e1.\u003c/b\u003e \u0026nbsp;\t\n\t\t\t\t\t\t\tFire-sales, originating from the stable coin's issuer: Large redemptions force the issuer to quickly sell traditional assets, causing dislocations in the respective assets' prices. Holders of these assets from the traditional financial system suffer mark-to-market losses.\n\t\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\t\u003cp style=\"margin-left: -3.1rem; margin-bottom: 0.3rem;\"\u003e\n\t\t\t\t\t\t\u003cb\u003e4b.\u003c/b\u003e \u0026nbsp;\n\t\t\t\t\t\tWie wich\u0026shy;tig wären die folgenden Kanäle für die Transmission von Shocks in das traditionelle Finanzsystem, \n\t\t\t\t\t\tdie vom Zusammenbruch eines großen Asset Backed Stablecoins ausgehen? \n\t\t\t\t\t\t \n\t\t\t\t\t\tBitte berücksichtigen Sie nur Stablecoins, \n\t\t\t\t\t\tdie mit Finanzwerten aus dem traditionellen Finanzsystem abgesi\u0026shy;chert sind, \n\t\t\t\t\t\td.h. z.B. Staats- oder Un\u0026shy;ter\u0026shy;neh\u0026shy;mensanleihen.\n\t\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\t\u003cp style=\"margin: 0 0 -0.67rem 0; \"\u003e\n\t\t\t\t\t\t\t\u003cb\u003e1.\u003c/b\u003e \u0026nbsp;\t\n\t\t\t\t\t\t\tFire Sales, die vom Emittenten des Stablecoins ausgehen: Der große Andrang von Haltern des Stablecoins, die diese gegen US-Dollar eintauschen wollen, zwingt den Emittenten des Stablecoins dazu, schnell Finanzwerte zu verkaufen, was zu Preisverfällen bei diesen Finanzwerten führt. \n\t\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t",
+ 								"en": "\n\t\t\t\t\t\t\u003cp style=\"margin-left: -3.1rem; margin-bottom: 0.3rem;\"\u003e\n\t\t\t\t\t\t\u003cb\u003e4b.\u003c/b\u003e \u0026nbsp;\n\t\t\t\t\t\tHow important would the following channels be for the transmission of shocks originating from the collapse of a large asset-backed stable coin to the traditional financial system? (0: not important, 5: extremely important). Please consider only stable coins that are backed by traditional financial assets, e.g. government or corporate bonds.\n\t\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\t\u003cp style=\"margin: 0 0 -0.67rem 0; \"\u003e\n\t\t\t\t\t\t\t\u003cb\u003e1.\u003c/b\u003e \u0026nbsp;\t\n\t\t\t\t\t\t\tFire-sales, originating from the stable coin's issuer: Large redemptions force the issuer to quickly sell traditional assets, causing dislocations in the respective assets' prices. \n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
  							},
  							"col_span": 7,
  							"col_span_label": 1
@@ -9516,8 +9516,8 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "0",
- 								"en": "0"
+ 								"de": "0\u003cbr\u003e(nicht\u003cbr\u003ewich\u0026shy;tig)",
+ 								"en": "0\u003cbr\u003e(not\u003cbr\u003eimportant)"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -9736,8 +9736,8 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "5",
- 								"en": "5"
+ 								"de": "5\u003cbr\u003e(extrem\u003cbr\u003ewich\u0026shy;tig)",
+ 								"en": "5\u003cbr\u003e(extremely\u003cbr\u003eimportant)"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -9914,8 +9914,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\t\u003cp style=\"margin: 0 0 -0.67rem 0; \"\u003e\n\t\t\t\t\t\t\t\u003cb\u003e2.\u003c/b\u003e\t\u0026nbsp;  2.\tFire Sales, die von Haltern des Stablecoins ausgehen: Akteure des traditionellen Finanzsystems, die den Stablecoin halten, erleiden Verluste. Diese Verluste zwingen die Akteure des traditionellen Finanzsystems traditionelle Finanzwerte zu verkaufen, was zu Preisverfällen bei diesen Finanzwerten führt.\n\t\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t",
- 								"en": "\n\t\t\t\t\t\t\u003cp style=\"margin: 0 0 -0.67rem 0; \"\u003e\n\t\t\t\t\t\t\t\u003cb\u003e2.\u003c/b\u003e\t\u0026nbsp;  Fire-sale, originating from holders of asset-backed stable coins: Actors from the traditional financial system, who own the collapsing stable coin, suffer losses. These losses then force them to sell non-crypto assets, causing dislocations on traditional asset markets.\n\t\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\t\u003cp style=\"margin: 0 0 -0.67rem 0; \"\u003e\n\t\t\t\t\t\t\t\u003cb\u003e2.\u003c/b\u003e\t\u0026nbsp;  Fire Sales, die von Haltern des Stablecoins ausgehen: Akteure des traditionellen Finanzsystems, die den Stablecoin halten, erleiden Verluste. Diese Verluste zwingen die Akteure des traditionellen Finanzsystems traditionelle Finanzwerte zu verkaufen, was zu Preisverfällen bei diesen Finanzwerten führt.\n\t\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t",
+ 								"en": "\n\t\t\t\t\t\t\u003cp style=\"margin: 0 0 -0.67rem 0; \"\u003e\n\t\t\t\t\t\t\t\u003cb\u003e2.\u003c/b\u003e\t\u0026nbsp;  Fire-sales, originating from holders of asset-backed stable coins: Actors from the traditional financial system, who own the collapsing stable coin, suffer losses. These losses then force them to sell non-crypto assets, causing dislocations on traditional asset markets.\n\t\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
  							},
  							"col_span": 7,
  							"col_span_label": 1
@@ -9923,8 +9923,8 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "0",
- 								"en": "0"
+ 								"de": "0\u003cbr\u003e(nicht\u003cbr\u003ewich\u0026shy;tig)",
+ 								"en": "0\u003cbr\u003e(not\u003cbr\u003eimportant)"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -10143,8 +10143,8 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "5",
- 								"en": "5"
+ 								"de": "5\u003cbr\u003e(extrem\u003cbr\u003ewich\u0026shy;tig)",
+ 								"en": "5\u003cbr\u003e(extremely\u003cbr\u003eimportant)"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -10321,8 +10321,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\t\u003cp style=\"margin: 0 0 -0.67rem 0; \"\u003e\n\t\t\t\t\t\t\t\u003cb\u003e3.\u003c/b\u003e\t\u0026nbsp;  3.\t Kreditbeziehungen: Akteure des traditionellen Finanzsystems haben Kredite an Un\u0026shy;ter\u0026shy;neh\u0026shy;men und Haushalte vergeben, die unmittelbar vom Zusammenbruch des Stablecoins betroffen sind. \n\t\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t",
- 								"en": "\n\t\t\t\t\t\t\u003cp style=\"margin: 0 0 -0.67rem 0; \"\u003e\n\t\t\t\t\t\t\t\u003cb\u003e3.\u003c/b\u003e\t\u0026nbsp;  Indirect exposures: Actors from the traditional financial system have lending exposures to clients, who are directly exposed to the collapsing stable coin.\n\t\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\t\u003cp style=\"margin: 0 0 -0.67rem 0; \"\u003e\n\t\t\t\t\t\t\t\u003cb\u003e3.\u003c/b\u003e\t\u0026nbsp;  Kreditbeziehungen: Akteure des traditionellen Finanzsystems haben Kredite an Un\u0026shy;ter\u0026shy;neh\u0026shy;men und Haushalte vergeben, die unmittelbar vom Zusammenbruch des Stablecoins betroffen sind. \n\t\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t",
+ 								"en": "\n\t\t\t\t\t\t\u003cp style=\"margin: 0 0 -0.67rem 0; \"\u003e\n\t\t\t\t\t\t\t\u003cb\u003e3.\u003c/b\u003e\t\u0026nbsp;  Credit exposures: Actors from the traditional financial system have lending exposures to clients, who are directly exposed to the collapsing stable coin.\n\t\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
  							},
  							"col_span": 7,
  							"col_span_label": 1
@@ -10330,8 +10330,8 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "0",
- 								"en": "0"
+ 								"de": "0\u003cbr\u003e(nicht\u003cbr\u003ewich\u0026shy;tig)",
+ 								"en": "0\u003cbr\u003e(not\u003cbr\u003eimportant)"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -10550,8 +10550,8 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "5",
- 								"en": "5"
+ 								"de": "5\u003cbr\u003e(extrem\u003cbr\u003ewich\u0026shy;tig)",
+ 								"en": "5\u003cbr\u003e(extremely\u003cbr\u003eimportant)"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -10694,6 +10694,438 @@
  						},
  						{
  							"name": "qs4b3_indirect",
+ 							"type": "radio",
+ 							"col_span_label": 0.5,
+ 							"col_span_control": 1,
+ 							"value_radio": "7"
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"auto_flow": "row",
+ 								"template_columns": "   1fr    1fr    1fr    1fr    1fr    1fr    1.5fr "
+ 							},
+ 							"box_style": {
+ 								"display": "grid",
+ 								"margin": "0 0 0 3.1rem"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"name": "qs4b4_open_label",
+ 							"type": "text",
+ 							"max_chars": 20,
+ 							"label": {
+ 								"de": "\n\t\t\t\t\t\t\u003cp style=\"margin: 0 0 -0.67rem 0; \"\u003e\n\t\t\t\t\t\t\t\u003cb\u003e4.\u003c/b\u003e\t\u0026nbsp;  \n\t\t\t\t\t\t\tOffen\n\t\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t",
+ 								"en": "\n\t\t\t\t\t\t\u003cp style=\"margin: 0 0 -0.67rem 0; \"\u003e\n\t\t\t\t\t\t\t\u003cb\u003e4.\u003c/b\u003e\t\u0026nbsp;  \n\t\t\t\t\t\t\tOpen\n\t\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 2,
+ 							"col_span_control": 7
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"margin": "0 0 0 3.1rem"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 7,
+ 					"inputs": [
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "0\u003cbr\u003e(nicht\u003cbr\u003ewich\u0026shy;tig)",
+ 								"en": "0\u003cbr\u003e(not\u003cbr\u003eimportant)"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "1",
+ 								"en": "1"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "2",
+ 								"en": "2"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "3",
+ 								"en": "3"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "4",
+ 								"en": "4"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "5\u003cbr\u003e(extrem\u003cbr\u003ewich\u0026shy;tig)",
+ 								"en": "5\u003cbr\u003e(extremely\u003cbr\u003eimportant)"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "keine\u003cbr\u003eAn\u0026shy;gabe",
+ 								"en": "no an\u0026shy;swer"
+ 							},
+ 							"col_span_label": 0.5,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qs4b4_open",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "",
+ 								"en": ""
+ 							},
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qs4b4_open",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "qs4b4_open",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "qs4b4_open",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "qs4b4_open",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "qs4b4_open",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "qs4b4_open",
  							"type": "radio",
  							"col_span_label": 0.5,
  							"col_span_control": 1,
@@ -11362,7 +11794,7 @@
  							"type": "radio",
  							"label": {
  								"de": "\n\t\t\t\t\tEinführung einer Finanzaufsicht über die Emittenten von Stablecoins \n\t\t\t\t\t",
- 								"en": "Supervision of the entities that issue the stable coins "
+ 								"en": "Introduction of financial supervision of the entities that issue the stable coins"
  							},
  							"col_span_label": 9,
  							"col_span_control": 1,
@@ -11477,7 +11909,7 @@
  							"name": "qs5b3",
  							"type": "radio",
  							"label": {
- 								"de": "\n\t\t\t\t\tMinimale Eigenkapitalvorgaben für die Emittenten von Stablecoins\n\t\t\t\t\t",
+ 								"de": "\n\t\t\t\t\tMinimum Eigenkapitalvorgaben für die Emittenten von Stablecoins\n\t\t\t\t\t",
  								"en": "Minimum capital requirements for the issuers of stable coins"
  							},
  							"col_span_label": 9,
@@ -11536,7 +11968,7 @@
  							"type": "radio",
  							"label": {
  								"de": "\n\t\t\t\t\tStablecoins vollständig verbieten\n\t\t\t\t\t",
- 								"en": "Forbidding stable coins"
+ 								"en": "Forbidding stable coins entirely"
  							},
  							"col_span_label": 9,
  							"col_span_control": 1,

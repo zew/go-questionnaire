@@ -181,9 +181,9 @@ var q27columns = []trl.S{
 var q30columns = []trl.S{
 	{"de": "1<br>sehr großen"},
 	{"de": "2<br><br>großen"},
-	{"de": "3<br><br>geringen"},
-	{"de": "4<br><br>keinen"},
-	{"de": "5<br>keine Angabe"},
+	{"de": "3<br><br>mäßigen"},
+	{"de": "4<br><br>geringen"},
+	{"de": "5<br><br>keinen"},
 }
 
 var q31columns = []trl.S{

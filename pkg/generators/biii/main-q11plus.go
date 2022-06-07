@@ -433,9 +433,9 @@ func page4Quest11(q *qst.QuestionnaireT) {
 		{
 			labels := []trl.S{
 				{"de": "Unzureichende Managementkompetenz der Investees"},
-				{"de": "In der Komplexität des Geschäftsmodells "},
+				{"de": "Komplexität des Geschäftsmodells "},
 				{"de": "Länder- und Währungsrisiken "},
-				{"de": "Liquiditäts- und Ausstiegsrisiko "},
+				{"de": "Liquiditäts- und Exit-Risiko"},
 				{"de": "Makroökonomische Risiken"},
 			}
 			subName := []string{
@@ -499,7 +499,7 @@ func page4Quest11(q *qst.QuestionnaireT) {
 				inp.Label = trl.S{
 					"de": `
 					<b>16.</b> &nbsp; 
-					Überwachen Sie:
+					Überwachen Sie folgende Risiken in Bezug auf Ihre Impact Investments?
 					<br>
 					(Mehrfachauswahl möglich)
 				`}
@@ -675,12 +675,13 @@ func page4Quest11(q *qst.QuestionnaireT) {
 		{
 			labels := []trl.S{
 				{"de": "Wir messen den Impact unserer Investments nicht "},
-				{"de": "Wir messen negative Externalitäten"},
+				{"de": "Wir messen den negativen Impact (Praktiken, die der Gesellschaft und/oder der Umwelt schaden)"},
 				{"de": "Wir messen den positiven Impact anhand klar definierter KPIs (Key Performance Indicators)"},
-				{"de": "Wir haben Zielvereinbarungen nach bestimmten Indikatoren und Controlling "},
+				{"de": "Wir haben Zielvereinbarungen nach bestimmten Indikatoren und kontrollieren deren Einhaltung"},
 				{"de": "Wir messen sowohl den Unternehmens- als auch den Investoren-Impact"},
 				{"de": "Wir messen unseren zusätzlichen Beitrag (Additionalität) im Vergleich zu einem Base-line-Szenario"},
 				{"de": "Wir erstellen eine Gesamtbilanz unseres negativen und positiven Impacts (net-impact)"},
+				{"de": "Andere, bitte nennen"},
 			}
 			subName := []string{
 				"mo_measure",
@@ -690,9 +691,10 @@ func page4Quest11(q *qst.QuestionnaireT) {
 				"impact_comp_investor",
 				"additionality",
 				"total_score",
+				"other",
 			}
 			gr := page.AddGroup()
-			gr.Cols = 1
+			gr.Cols = 7
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
@@ -703,32 +705,64 @@ func page4Quest11(q *qst.QuestionnaireT) {
 					</p>
 
 					<p style='font-size: 110%; text-align: justify'>
-					Im folgenden Teil wollen wir einen Überblick über die am Markt verwendeten Messungs- und Managementstrategien erheben. 
+					Im folgenden Teil wollen wir Daten zu den am Markt verwendeten Messungs- und Managementstrategien erheben.
 					</p>
 
 					<br>
 
 
 					<b>20.</b> &nbsp;	
-					Wie messen Sie den Impact? 
+					Wie messen Sie den Impact Ihrer Impact Investments?? 
 					<br>
 					(Mehrfachauswahl möglich)
 				`}
 				inp.ColSpan = gr.Cols
 			}
+			// for idx, label := range labels {
+			// 	rad := gr.AddInput()
+			// 	rad.Type = "checkbox"
+			// 	rad.Name = fmt.Sprintf("q20_%v", subName[idx])
+
+			// 	rad.ColSpan = 1
+			// 	rad.ColSpanLabel = 1
+			// 	rad.ColSpanControl = 6
+
+			// 	rad.Label = label
+
+			// 	rad.Style = css.NewStylesResponsive(rad.Style)
+			// 	rad.ControlFirst()
+			// }
 			for idx, label := range labels {
 				rad := gr.AddInput()
 				rad.Type = "checkbox"
 				rad.Name = fmt.Sprintf("q20_%v", subName[idx])
 
-				rad.ColSpan = 1
 				rad.ColSpanLabel = 1
 				rad.ColSpanControl = 6
 
-				rad.Label = label
+				// all rows except last
+				if idx < len(labels)-1 {
+					rad.ColSpan = gr.Cols
+					rad.Label = label
+					rad.ControlFirst()
+				} else {
+					// last row: now label
+					rad.ColSpan = 1
+					rad.ColSpanLabel = 0 // value 0 prevents the label from taking any place
+					rad.ColSpanControl = 1
 
-				rad.Style = css.NewStylesResponsive(rad.Style)
-				rad.ControlFirst()
+					inp := gr.AddInput()
+					inp.Type = "text"
+					inp.Name = "q20_other_label"
+					inp.MaxChars = 20
+					inp.Label = label
+
+					inp.ColSpan = gr.Cols - 1
+					inp.ColSpanLabel = 2
+					inp.ColSpanControl = 5
+					inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
+				}
+
 			}
 		}
 
@@ -762,7 +796,7 @@ func page4Quest11(q *qst.QuestionnaireT) {
 				inp.Type = "textblock"
 				inp.Label = trl.S{"de": `
 					<b>21.</b> &nbsp;	
-					Wie managen Sie den Impact Ihrer Investments?
+					Wie managen Sie den Impact Ihrer Impact Investments?
 					<br>
 					(Mehrfachauswahl möglich)
 				`}
@@ -869,6 +903,7 @@ func page4Quest11(q *qst.QuestionnaireT) {
 
 				{"de": "IRIS+ "},
 				{"de": "EU Taxonomie"},
+				{"de": "Andere, bitte nennen"},
 			}
 			subName := []string{
 				"none",
@@ -888,9 +923,10 @@ func page4Quest11(q *qst.QuestionnaireT) {
 
 				"irisplus",
 				"eu_taxonomy",
+				"other",
 			}
 			gr := page.AddGroup()
-			gr.Cols = 1
+			gr.Cols = 7
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
@@ -907,29 +943,32 @@ func page4Quest11(q *qst.QuestionnaireT) {
 				rad.Type = "checkbox"
 				rad.Name = fmt.Sprintf("q23_%v", subName[idx])
 
-				rad.ColSpan = 1
 				rad.ColSpanLabel = 1
 				rad.ColSpanControl = 6
 
-				rad.Label = label
+				// all rows except last
+				if idx < len(labels)-1 {
+					rad.ColSpan = gr.Cols
+					rad.Label = label
+					rad.ControlFirst()
+				} else {
+					// last row: now label
+					rad.ColSpan = 1
+					rad.ColSpanLabel = 0 // value 0 prevents the label from taking any place
+					rad.ColSpanControl = 1
 
-				rad.Style = css.NewStylesResponsive(rad.Style)
-				rad.ControlFirst()
-			}
-			{
-				inp := gr.AddInput()
-				inp.Type = "text"
-				inp.Name = "q23_other"
-				inp.MaxChars = 20
-				inp.Label = trl.S{"de": "Andere, bitte nennen"}
-				inp.ColSpan = gr.Cols
-				inp.ColSpanLabel = 2
-				inp.ColSpanControl = 3
-				inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
-				inp.StyleLbl.Desktop.StyleBox.Padding = "0 0 0 3.4rem"
+					inp := gr.AddInput()
+					inp.Type = "text"
+					inp.Name = "q23_other_label"
+					inp.MaxChars = 20
+					inp.Label = label
 
-				inp.Style = css.NewStylesResponsive(inp.Style)
-				inp.Style.Desktop.StyleBox.Margin = "0.35rem 0 0 0"
+					inp.ColSpan = gr.Cols - 1
+					inp.ColSpanLabel = 2
+					inp.ColSpanControl = 5
+					inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
+				}
+
 			}
 		}
 
@@ -953,7 +992,7 @@ func page4Quest11(q *qst.QuestionnaireT) {
 				inp := gr.AddInput()
 				inp.Type = "textblock"
 				inp.Label = trl.S{"de": `<b>24.</b> &nbsp;	
-					Lassen Sie Ihren sozialen oder ökologischen Impact durch eine externe Prüfung verifizieren? 
+					Lassen Sie Ihren sozialen und/oder ökologischen Impact durch eine externe Prüfung verifizieren? 
 				`}
 				inp.ColSpan = gr.Cols
 			}
@@ -1062,7 +1101,7 @@ func page4Quest11(q *qst.QuestionnaireT) {
 				gb.MainLabel = trl.S{
 					"de": fmt.Sprintf(`
 						<b>26. </b> &nbsp;	
-						Wie bewerten Sie die akftuellen rechtlichen Rahmenbedingungen für Impact Investing in Deutschland und international?
+						Wie bewerten Sie die aktuellen rechtlichen Rahmenbedingungen für Impact Investing in Deutschland und international?
 					`),
 				}
 
@@ -1104,9 +1143,8 @@ func page4Quest11(q *qst.QuestionnaireT) {
 		{
 			colsBelow1 := append([]float32{1.0}, columnTemplate5...)
 			colsBelow1 = []float32{
-				// 1.4, 2.2, //   3.0, 1,  |  4.6 separated to two cols
-				1.38, 2.1, //   3.0, 1,  |  4.6 separated to two cols
-				0.0, 1, //     3.0, 1,  |  4.6 separated to two cols
+				1.4, 2.2, //   3.0, 1,  |  4.6 separated to two cols
+				0.0, 1,
 				0.0, 1,
 				0.0, 1,
 				0.0, 1,
@@ -1197,9 +1235,8 @@ func page4Quest11(q *qst.QuestionnaireT) {
 		{
 			colsBelow1 := append([]float32{1.0}, columnTemplate5...)
 			colsBelow1 = []float32{
-				// 1.4, 2.2, //   3.0, 1,  |  4.6 separated to two cols
-				1.38, 2.1, //   3.0, 1,  |  4.6 separated to two cols
-				0.0, 1, //     3.0, 1,  |  4.6 separated to two cols
+				1.4, 2.2, //   3.0, 1,  |  4.6 separated to two cols
+				0.0, 1,
 				0.0, 1,
 				0.0, 1,
 				0.0, 1,
@@ -1285,10 +1322,10 @@ func page4Quest11(q *qst.QuestionnaireT) {
 		// gr1
 		{
 			labels := []trl.S{
-				{"de": "Wir waren vor 2 Jahren noch nicht am Markt "},
-				{"de": "Wir sind in 2 Jahren gewachsen - um "},
-				{"de": "Unsere Anlagesumme ist gleichgeblieben"},
-				{"de": "Wir sind in 2 Jahren geschrumpft - um "},
+				{"de": "Wir waren vor 2&nbsp;Jahren noch nicht am Markt "},
+				{"de": "Wir sind in 2&nbsp;Jahren gewachsen - um "},
+				{"de": "Unsere Anlagesumme ist in den letzten 2&nbsp;Jahren gleichgeblieben"},
+				{"de": "Wir sind in 2&nbsp;Jahren geschrumpft - um "},
 			}
 			radioValues := []string{
 				"younger_than2",
@@ -1459,7 +1496,7 @@ func page4Quest11(q *qst.QuestionnaireT) {
 					{"de": "Staatliche Anreize zur Unterstützung des Impact Investing"},
 					{"de": "Verbreitung von Erfolgsgeschichten "},
 
-					{"de": "Entwicklung von Impact Labels und Zertifizierung "},
+					{"de": "Entwicklung von Impact Labels und Zertifizierungen"},
 				},
 			)
 			gb.MainLabel = trl.S{
@@ -1474,9 +1511,8 @@ func page4Quest11(q *qst.QuestionnaireT) {
 		{
 			colsBelow1 := append([]float32{1.0}, columnTemplate5...)
 			colsBelow1 = []float32{
-				// 1.4, 2.2, //   3.0, 1,  |  4.6 separated to two cols
-				1.38, 2.1, //   3.0, 1,  |  4.6 separated to two cols
-				0.0, 1, //     3.0, 1,  |  4.6 separated to two cols
+				1.4, 2.2, //   3.0, 1,  |  4.6 separated to two cols
+				0.0, 1,
 				0.0, 1,
 				0.0, 1,
 				0.0, 1,
@@ -1579,6 +1615,9 @@ func page4Quest11(q *qst.QuestionnaireT) {
 				"de": `
 					<b>32.</b> &nbsp;
 					In welchen Bereichen sind die größten Fortschritte notwendig? 
+					<br>
+					<br>
+					(Top 5 Nennungen, 1 bis 5, 1= höchster Fortschritt notwendig)
 				`,
 			}
 			gr := page.AddGrid(gb)
@@ -1872,6 +1911,10 @@ func page4Quest11(q *qst.QuestionnaireT) {
 				"de": `
 					<b>34.</b> &nbsp;
 					In welchen Asset Klassen erwarten Sie eine besonders dynamische Entwicklung?
+
+					<br>
+					<br>
+					(Top 5 Nennungen, 1 bis 5, 1= höchste Entwicklung)
 				`,
 			}
 			gr := page.AddGrid(gb)
@@ -2005,6 +2048,7 @@ func page4Quest11(q *qst.QuestionnaireT) {
 				{"de": "VC nimmt die führende Rolle ein"},
 				{"de": "Regulatorische Begrenzungen dämpfen die Dynamik des Impact Investing-Marktes"},
 				{"de": "Impact Investing stagniert"},
+				{"de": "Andere, bitte nennen"},
 			}
 			subName := []string{
 				"greater10pct",
@@ -2015,9 +2059,10 @@ func page4Quest11(q *qst.QuestionnaireT) {
 				"leading_vc",
 				"regulations_dampen",
 				"stagnation",
+				"other",
 			}
 			gr := page.AddGroup()
-			gr.Cols = 1
+			gr.Cols = 7
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
@@ -2033,13 +2078,35 @@ func page4Quest11(q *qst.QuestionnaireT) {
 				rad := gr.AddInput()
 				rad.Type = "checkbox"
 				rad.Name = fmt.Sprintf("q36_%v", subName[idx])
-				rad.ColSpan = 1
+
 				rad.ColSpanLabel = 1
 				rad.ColSpanControl = 6
-				rad.Label = label
-				rad.Style = css.NewStylesResponsive(rad.Style)
-				rad.ControlFirst()
+
+				// all rows except last
+				if idx < len(labels)-1 {
+					rad.ColSpan = gr.Cols
+					rad.Label = label
+					rad.ControlFirst()
+				} else {
+					// last row: now label
+					rad.ColSpan = 1
+					rad.ColSpanLabel = 0 // value 0 prevents the label from taking any place
+					rad.ColSpanControl = 1
+
+					inp := gr.AddInput()
+					inp.Type = "text"
+					inp.Name = "q36_other_label"
+					inp.MaxChars = 20
+					inp.Label = label
+
+					inp.ColSpan = gr.Cols - 1
+					inp.ColSpanLabel = 2
+					inp.ColSpanControl = 5
+					inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
+				}
+
 			}
+
 		}
 
 	}
@@ -2091,7 +2158,7 @@ func page4Quest11(q *qst.QuestionnaireT) {
 				inp.Type = "textblock"
 				inp.Label = trl.S{"de": `
 					<b>37.</b> &nbsp;	
-					Wie alt sind sie?
+					Wie alt sind Sie?
 				`}
 				inp.ColSpan = gr.Cols
 			}
@@ -2188,6 +2255,8 @@ func page4Quest11(q *qst.QuestionnaireT) {
 
 			subLabels := map[int][]trl.S{
 				3: {
+					{"de": "Andorra"},
+					{"de": "Belgien"},
 					{"de": "Dänemark"},
 					{"de": "Finnland"},
 					{"de": "Frankreich"},
@@ -2244,7 +2313,7 @@ func page4Quest11(q *qst.QuestionnaireT) {
 				3: {
 					"andorra",
 					"belgien",
-					"daenemark",
+					"denmark",
 					"finnland",
 					"frankreich",
 					"griechenland",
@@ -2260,7 +2329,7 @@ func page4Quest11(q *qst.QuestionnaireT) {
 					"norwegen",
 					"portugal",
 					"schweden",
-					"spanien ",
+					"spanien",
 				},
 				4: {
 					"albanien",
@@ -2324,6 +2393,8 @@ func page4Quest11(q *qst.QuestionnaireT) {
 						rad.Label = label
 						rad.ControlFirst()
 
+						// log.Printf("%v - %v", names[i2], label)
+
 						rad.Style = css.NewStylesResponsive(rad.Style)
 						rad.Style.Desktop.StyleBox.Position = "relative"
 						rad.Style.Desktop.StyleBox.Left = "3.2rem"
@@ -2341,14 +2412,16 @@ func page4Quest11(q *qst.QuestionnaireT) {
 				{"de": "Deutschland"},
 				{"de": "Österreich"},
 				{"de": "Schweiz"},
+				{"de": "Andere, bitte nennen"},
 			}
 			radioValues := []string{
 				"germany",
 				"austria",
 				"switzerland",
+				"other",
 			}
 			gr := page.AddGroup()
-			gr.Cols = 1
+			gr.Cols = 7
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
@@ -2364,29 +2437,32 @@ func page4Quest11(q *qst.QuestionnaireT) {
 				rad.Name = "q40"
 				rad.ValueRadio = radioValues[idx]
 
-				rad.ColSpan = 1
 				rad.ColSpanLabel = 1
 				rad.ColSpanControl = 6
 
-				rad.Label = label
+				// all rows except last
+				if idx < len(labels)-1 {
+					rad.ColSpan = gr.Cols
+					rad.Label = label
+					rad.ControlFirst()
+				} else {
+					// last row: now label
+					rad.ColSpan = 1
+					rad.ColSpanLabel = 0 // value 0 prevents the label from taking any place
+					rad.ColSpanControl = 1
 
-				rad.ControlFirst()
-			}
+					inp := gr.AddInput()
+					inp.Type = "text"
+					inp.Name = "q40_other"
+					inp.MaxChars = 20
+					inp.Label = label
 
-			{
-				inp := gr.AddInput()
-				inp.Type = "text"
-				inp.Name = "q40_other"
-				inp.MaxChars = 20
-				inp.Label = trl.S{"de": "Andere, bitte nennen"}
-				inp.ColSpan = gr.Cols
-				inp.ColSpanLabel = 2
-				inp.ColSpanControl = 3
-				inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
-				inp.StyleLbl.Desktop.StyleBox.Padding = "0 0 0 3.4rem"
+					inp.ColSpan = gr.Cols - 1
+					inp.ColSpanLabel = 2
+					inp.ColSpanControl = 5
+					inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
+				}
 
-				inp.Style = css.NewStylesResponsive(inp.Style)
-				inp.Style.Desktop.StyleBox.Margin = "0.35rem 0 0 0"
 			}
 
 		}
@@ -2399,14 +2475,16 @@ func page4Quest11(q *qst.QuestionnaireT) {
 				{"de": "Deutschland"},
 				{"de": "Österreich"},
 				{"de": "Schweiz"},
+				{"de": "Andere, bitte nennen"},
 			}
 			radioValues := []string{
 				"germany",
 				"austria",
 				"switzerland",
+				"other",
 			}
 			gr := page.AddGroup()
-			gr.Cols = 1
+			gr.Cols = 7
 			gr.BottomVSpacers = 4
 			{
 				inp := gr.AddInput()
@@ -2423,29 +2501,32 @@ func page4Quest11(q *qst.QuestionnaireT) {
 				rad.Name = "q41"
 				rad.ValueRadio = radioValues[idx]
 
-				rad.ColSpan = 1
 				rad.ColSpanLabel = 1
 				rad.ColSpanControl = 6
 
-				rad.Label = label
+				// all rows except last
+				if idx < len(labels)-1 {
+					rad.ColSpan = gr.Cols
+					rad.Label = label
+					rad.ControlFirst()
+				} else {
+					// last row: now label
+					rad.ColSpan = 1
+					rad.ColSpanLabel = 0 // value 0 prevents the label from taking any place
+					rad.ColSpanControl = 1
 
-				rad.ControlFirst()
-			}
+					inp := gr.AddInput()
+					inp.Type = "text"
+					inp.Name = "q41_other"
+					inp.MaxChars = 20
+					inp.Label = label
 
-			{
-				inp := gr.AddInput()
-				inp.Type = "text"
-				inp.Name = "q41_other"
-				inp.MaxChars = 20
-				inp.Label = trl.S{"de": "Andere, bitte nennen"}
-				inp.ColSpan = gr.Cols
-				inp.ColSpanLabel = 2
-				inp.ColSpanControl = 3
-				inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
-				inp.StyleLbl.Desktop.StyleBox.Padding = "0 0 0 3.4rem"
+					inp.ColSpan = gr.Cols - 1
+					inp.ColSpanLabel = 2
+					inp.ColSpanControl = 5
+					inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
+				}
 
-				inp.Style = css.NewStylesResponsive(inp.Style)
-				inp.Style.Desktop.StyleBox.Margin = "0.35rem 0 0 0"
 			}
 
 		}

@@ -30,15 +30,17 @@ func later(q *qst.QuestionnaireT) {
 				{"de": "Wir prüfen künftige Marktchancen sorgfältig "},
 				{"de": "Wir beginnen, Informationen zu diesem Markt zu sammeln"},
 				{"de": "Wir sehen keine Notwendigkeit, uns damit zu befassen "},
+				{"de": "Wir sehen diesen Markt eher skeptisch aus den folgenden Gründen: "},
 			}
 			radioValues := []string{
 				"strategic_prep",
 				"due_dilligence",
 				"collect_info",
 				"no_necessity",
+				"sceptical",
 			}
 			gr := page.AddGroup()
-			gr.Cols = 1
+			gr.Cols = 7
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
@@ -46,30 +48,41 @@ func later(q *qst.QuestionnaireT) {
 				// (bitte nur eine Auswahl)
 				inp.ColSpan = gr.Cols
 			}
+
 			for idx, label := range labels {
 				rad := gr.AddInput()
 				rad.Type = "radio"
 				rad.Name = "q42"
 				rad.ValueRadio = radioValues[idx]
 
-				rad.ColSpan = 1
 				rad.ColSpanLabel = 1
 				rad.ColSpanControl = 6
 
-				rad.Label = label
+				// all rows except last
+				if idx < len(labels)-1 {
+					rad.ColSpan = gr.Cols
+					rad.Label = label
+					rad.ControlFirst()
+				} else {
+					// last row: now label
+					rad.ColSpan = 1
+					rad.ColSpanLabel = 0 // value 0 prevents the label from taking any place
+					rad.ColSpanControl = 1
 
-				rad.ControlFirst()
+					inp := gr.AddInput()
+					inp.Type = "textarea"
+					inp.Name = "q42_other"
+					inp.MaxChars = 150
+					inp.Label = label
+
+					inp.ColSpan = gr.Cols - 1
+					inp.ColSpanLabel = 4
+					inp.ColSpanControl = 5
+					inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
+				}
+
 			}
-			{
-				inp := gr.AddInput()
-				inp.Type = "textarea"
-				inp.Name = "q42_other"
-				inp.MaxChars = 150
-				inp.Label = trl.S{"de": "Wir sehen diesen Markt eher skeptisch aus den folgenden Gründen:"}
-				inp.ColSpan = gr.Cols
-				inp.ColSpanLabel = 2
-				inp.ColSpanControl = 3
-			}
+
 		}
 
 		// gr1

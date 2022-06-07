@@ -99,19 +99,19 @@ func finish(q *qst.QuestionnaireT) {
 						inp.Style = css.NewStylesResponsive(inp.Style)
 						inp.Style.Desktop.StyleBox.Margin = "0 0 0 6rem"
 					}
-					{
-						inp := gr.AddInput()
-						inp.Type = "textarea"
-						inp.Name = "q45_comment"
-						inp.MaxChars = 150
-						inp.Label = trl.S{"de": "Kommentar"}
-						inp.ColSpan = gr.Cols
-						inp.ColSpanLabel = 2
-						inp.ColSpanControl = 3
-						inp.Placeholder = trl.S{"de": "Kommentarfeld"}
-						inp.Style = css.NewStylesResponsive(inp.Style)
-						inp.Style.Desktop.StyleBox.Margin = "0 0 0 6rem"
-					}
+					// {
+					// 	inp := gr.AddInput()
+					// 	inp.Type = "textarea"
+					// 	inp.Name = "q45_comment"
+					// 	inp.MaxChars = 150
+					// 	inp.Label = trl.S{"de": "Kommentar"}
+					// 	inp.ColSpan = gr.Cols
+					// 	inp.ColSpanLabel = 2
+					// 	inp.ColSpanControl = 3
+					// 	inp.Placeholder = trl.S{"de": "Kommentarfeld"}
+					// 	inp.Style = css.NewStylesResponsive(inp.Style)
+					// 	inp.Style.Desktop.StyleBox.Margin = "0 0 0 6rem"
+					// }
 				}
 
 			}

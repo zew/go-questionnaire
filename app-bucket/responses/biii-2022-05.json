@@ -17,7 +17,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "ce68b26f3d464d97523bb5e9847fd6db6a45f39d0b8013b31fbfd4afa5ba0e26",
+ 	"md_5": "c28f0e15551045c78d17e2f276f7acb4898c37aa7cbe7c6387cdfa5fb69a755f",
  	"lang_codes": [
  		"de"
  	],
@@ -6632,7 +6632,7 @@
  							"name": "q15_complexity",
  							"type": "checkbox",
  							"label": {
- 								"de": "In der Komplexität des Geschäftsmodells "
+ 								"de": "Komplexität des Geschäftsmodells "
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -6714,7 +6714,7 @@
  							"name": "q15_liquidy_liquidation",
  							"type": "checkbox",
  							"label": {
- 								"de": "Liquiditäts- und Ausstiegsrisiko "
+ 								"de": "Liquiditäts- und Exit-Risiko"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -6801,7 +6801,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\u003cb\u003e16.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tÜberwachen Sie:\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t(Mehrfachauswahl möglich)\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cb\u003e16.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tÜberwachen Sie folgende Risiken in Bezug auf Ihre Impact In\u0026shy;vest\u0026shy;ments?\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t(Mehrfachauswahl möglich)\n\t\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -7527,14 +7527,14 @@
  			"groups": [
  				{
  					"bottom_vspacers": 3,
- 					"columns": 1,
+ 					"columns": 7,
  					"inputs": [
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\n\t\t\t\t\t\u003cp style='font-size: 130%'\u003e\n\t\t\t\t\t\tImpact Messung und Man\u0026shy;age\u0026shy;ment (IMM)\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003cp style='font-size: 110%; text-align: justify'\u003e\n\t\t\t\t\tIm folgenden Teil wollen wir einen Überblick über die am Markt verwendeten Messungs- und Man\u0026shy;age\u0026shy;mentstrategien erheben. \n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003cbr\u003e\n\n\n\t\t\t\t\t\u003cb\u003e20.\u003c/b\u003e \u0026nbsp;\t\n\t\t\t\t\tWie messen Sie den Impact? \n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t(Mehrfachauswahl möglich)\n\t\t\t\t"
+ 								"de": "\n\n\t\t\t\t\t\u003cp style='font-size: 130%'\u003e\n\t\t\t\t\t\tImpact Messung und Man\u0026shy;age\u0026shy;ment (IMM)\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003cp style='font-size: 110%; text-align: justify'\u003e\n\t\t\t\t\tIm folgenden Teil wollen wir Da\u0026shy;ten zu den am Markt verwendeten Messungs- und Man\u0026shy;age\u0026shy;mentstrategien erheben.\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003cbr\u003e\n\n\n\t\t\t\t\t\u003cb\u003e20.\u003c/b\u003e \u0026nbsp;\t\n\t\t\t\t\tWie messen Sie den Impact Ihrer Impact In\u0026shy;vest\u0026shy;ments?? \n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t(Mehrfachauswahl möglich)\n\t\t\t\t"
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1
  						},
  						{
@@ -7543,23 +7543,9 @@
  							"label": {
  								"de": "Wir messen den Impact unserer In\u0026shy;vest\u0026shy;ments nicht "
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -7582,25 +7568,11 @@
  							"name": "q20_neg_externalities",
  							"type": "checkbox",
  							"label": {
- 								"de": "Wir messen neg\u0026shy;ative Externalitäten"
+ 								"de": "Wir messen den neg\u0026shy;ativen Impact (Praktiken, die der Gesellschaft und/oder der Umwelt schaden)"
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -7625,23 +7597,9 @@
  							"label": {
  								"de": "Wir messen den pos\u0026shy;itiven Impact anhand klar definierter KPIs (Key Performance Indicators)"
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -7664,25 +7622,11 @@
  							"name": "q20_contracted_objectives",
  							"type": "checkbox",
  							"label": {
- 								"de": "Wir haben Zielvereinbarungen nach bestimmten Indikatoren und Controlling "
+ 								"de": "Wir haben Zielvereinbarungen nach bestimmten Indikatoren und kontrollieren deren Einhaltung"
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -7707,23 +7651,9 @@
  							"label": {
  								"de": "Wir messen sowohl den Un\u0026shy;ter\u0026shy;neh\u0026shy;mens- als auch den Investoren-Impact"
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -7748,23 +7678,9 @@
  							"label": {
  								"de": "Wir messen unseren zusätzlichen Beitrag (Additionalität) im Vergleich zu einem Base-line-Szenario"
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -7789,23 +7705,9 @@
  							"label": {
  								"de": "Wir erstellen eine Ge\u0026shy;samtbilanz unseres neg\u0026shy;ativen und pos\u0026shy;itiven Impacts (net-impact)"
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -7814,6 +7716,37 @@
  										"justify_self": "start",
  										"order": 2
  									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q20_other",
+ 							"type": "checkbox",
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "q20_other_label",
+ 							"type": "text",
+ 							"max_chars": 20,
+ 							"label": {
+ 								"de": "Andere, bitte nennen"
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 2,
+ 							"col_span_control": 5,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
  									"text_style": {}
  								},
  								"mobile": {
@@ -7833,7 +7766,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\u003cb\u003e21.\u003c/b\u003e \u0026nbsp;\t\n\t\t\t\t\tWie managen Sie den Impact Ihrer In\u0026shy;vest\u0026shy;ments?\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t(Mehrfachauswahl möglich)\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cb\u003e21.\u003c/b\u003e \u0026nbsp;\t\n\t\t\t\t\tWie managen Sie den Impact Ihrer Impact In\u0026shy;vest\u0026shy;ments?\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t(Mehrfachauswahl möglich)\n\t\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -8547,14 +8480,14 @@
  				},
  				{
  					"bottom_vspacers": 3,
- 					"columns": 1,
+ 					"columns": 7,
  					"inputs": [
  						{
  							"type": "textblock",
  							"label": {
  								"de": "\n\t\t\t\t\t\u003cb\u003e23.\u003c/b\u003e \u0026nbsp;\t\n\t\t\t\t\tWelche der folgenden Rahmenwerke nutzen Sie für das IMM?\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t(Mehrfachauswahl möglich)\n\t\t\t\t"
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1
  						},
  						{
@@ -8563,23 +8496,9 @@
  							"label": {
  								"de": "Wir nutzen keine anerkannten Rahmenwerke zur Impact Messung"
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -8604,23 +8523,9 @@
  							"label": {
  								"de": "Wir nutzen eigene Metriken und Indikatoren "
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -8645,23 +8550,9 @@
  							"label": {
  								"de": "Principles for Responsible In\u0026shy;vest\u0026shy;ment (PRI) "
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -8686,23 +8577,9 @@
  							"label": {
  								"de": "Operating Principles for Impact Man\u0026shy;age\u0026shy;ment "
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -8727,23 +8604,9 @@
  							"label": {
  								"de": "SDG Impact Standards "
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -8768,23 +8631,9 @@
  							"label": {
  								"de": "EVPA five-steps process"
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -8809,23 +8658,9 @@
  							"label": {
  								"de": "Impact Man\u0026shy;age\u0026shy;ment Project (IMP) 5 dimensions of impact "
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -8850,23 +8685,9 @@
  							"label": {
  								"de": "SVI Principles of Social Value and SROI "
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -8891,23 +8712,9 @@
  							"label": {
  								"de": "GIIN Compass "
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -8932,23 +8739,9 @@
  							"label": {
  								"de": "Theory of Change (ToC) "
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -8973,23 +8766,9 @@
  							"label": {
  								"de": "GRI "
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -9014,23 +8793,9 @@
  							"label": {
  								"de": "BLab assessment (B Corp) "
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -9055,23 +8820,9 @@
  							"label": {
  								"de": "IRIS+ "
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -9093,76 +8844,23 @@
  						{
  							"name": "q23_eu_taxonomy",
  							"type": "checkbox",
- 							"label": {
- 								"de": "EU Taxonomie"
- 							},
  							"col_span": 1,
- 							"col_span_label": 1,
- 							"col_span_control": 6,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "start",
- 										"order": 2
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q23_other",
+ 							"name": "q23_other_label",
  							"type": "text",
  							"max_chars": 20,
  							"label": {
- 								"de": "Andere, bitte nennen"
+ 								"de": "EU Taxonomie"
  							},
- 							"col_span": 1,
+ 							"col_span": 6,
  							"col_span_label": 2,
- 							"col_span_control": 3,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.35rem 0 0 0"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
+ 							"col_span_control": 5,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0 0 3.4rem"
- 									},
+ 									"box_style": {},
  									"grid_item_style": {},
  									"text_style": {}
  								},
@@ -9183,7 +8881,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e24.\u003c/b\u003e \u0026nbsp;\t\n\t\t\t\t\tLassen Sie Ihren sozialen oder ökologischen Impact durch eine externe Prüfung verifizieren? \n\t\t\t\t"
+ 								"de": "\u003cb\u003e24.\u003c/b\u003e \u0026nbsp;\t\n\t\t\t\t\tLassen Sie Ihren sozialen und/oder ökologischen Impact durch eine externe Prüfung verifizieren? \n\t\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -9631,7 +9329,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\t\u003cb\u003e26. \u003c/b\u003e \u0026nbsp;\t\n\t\t\t\t\t\tWie be\u0026shy;wer\u0026shy;ten Sie die akftuellen rechtlichen Rahmenbedingungen für Impact Investing in Deutsch\u0026shy;land und in\u0026shy;ter\u0026shy;na\u0026shy;tion\u0026shy;al?\n\t\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\t\u003cb\u003e26. \u003c/b\u003e \u0026nbsp;\t\n\t\t\t\t\t\tWie be\u0026shy;wer\u0026shy;ten Sie die aktuellen rechtlichen Rahmenbedingungen für Impact Investing in Deutsch\u0026shy;land und in\u0026shy;ter\u0026shy;na\u0026shy;tion\u0026shy;al?\n\t\t\t\t\t"
  							},
  							"col_span": 5,
  							"col_span_label": 1
@@ -10477,7 +10175,7 @@
  					"style": {
  						"desktop": {
  							"grid_container_style": {
- 								"template_columns": "   3.48fr    1fr    1fr    1fr    1fr    1fr "
+ 								"template_columns": "   3.6fr    1fr    1fr    1fr    1fr    1fr "
  							},
  							"box_style": {
  								"display": "grid"
@@ -11147,7 +10845,7 @@
  					"style": {
  						"desktop": {
  							"grid_container_style": {
- 								"template_columns": "   3.48fr    1fr    1fr    1fr    1fr    1fr "
+ 								"template_columns": "   3.6fr    1fr    1fr    1fr    1fr    1fr "
  							},
  							"box_style": {
  								"display": "grid"
@@ -11228,7 +10926,7 @@
  							"name": "q29",
  							"type": "radio",
  							"label": {
- 								"de": "Wir waren vor 2 Jahren noch nicht am Markt "
+ 								"de": "Wir waren vor 2\u0026nbsp;Jahren noch nicht am Markt "
  							},
  							"col_span": 3,
  							"col_span_label": 1,
@@ -11256,7 +10954,7 @@
  							"name": "q29",
  							"type": "radio",
  							"label": {
- 								"de": "Wir sind in 2 Jahren gewachsen - um "
+ 								"de": "Wir sind in 2\u0026nbsp;Jahren gewachsen - um "
  							},
  							"col_span": 3,
  							"col_span_label": 1,
@@ -11332,7 +11030,7 @@
  							"name": "q29",
  							"type": "radio",
  							"label": {
- 								"de": "Unsere Anlagesumme ist gleichgeblieben"
+ 								"de": "Unsere Anlagesumme ist in den letzten 2\u0026nbsp;Jahren gleichgeblieben"
  							},
  							"col_span": 3,
  							"col_span_label": 1,
@@ -11360,7 +11058,7 @@
  							"name": "q29",
  							"type": "radio",
  							"label": {
- 								"de": "Wir sind in 2 Jahren geschrumpft - um "
+ 								"de": "Wir sind in 2\u0026nbsp;Jahren geschrumpft - um "
  							},
  							"col_span": 3,
  							"col_span_label": 1,
@@ -11536,7 +11234,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "3\u003cbr\u003e\u003cbr\u003egeringen"
+ 								"de": "3\u003cbr\u003e\u003cbr\u003emäßigen"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -11579,7 +11277,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "4\u003cbr\u003e\u003cbr\u003ekeinen"
+ 								"de": "4\u003cbr\u003e\u003cbr\u003egeringen"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -11622,7 +11320,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "5\u003cbr\u003ekeine An\u0026shy;gabe"
+ 								"de": "5\u003cbr\u003e\u003cbr\u003ekeinen"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -13200,7 +12898,7 @@
  							"name": "q31_certifications",
  							"type": "radio",
  							"label": {
- 								"de": "Entwicklung von Impact Labels und Zertifizierung "
+ 								"de": "Entwicklung von Impact Labels und Zertifizierungen"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -13322,7 +13020,7 @@
  					"style": {
  						"desktop": {
  							"grid_container_style": {
- 								"template_columns": "   3.48fr    1fr    1fr    1fr    1fr    1fr "
+ 								"template_columns": "   3.6fr    1fr    1fr    1fr    1fr    1fr "
  							},
  							"box_style": {
  								"display": "grid"
@@ -13380,7 +13078,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\u003cb\u003e32.\u003c/b\u003e \u0026nbsp;\n\t\t\t\t\tIn welchen Bereichen sind die größten Fortschritte notwendig? \n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cb\u003e32.\u003c/b\u003e \u0026nbsp;\n\t\t\t\t\tIn welchen Bereichen sind die größten Fortschritte notwendig? \n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t(Top 5 Nennungen, 1 bis 5, 1= höchs\u0026shy;ter Fortschritt notwendig)\n\t\t\t\t"
  							},
  							"col_span": 3,
  							"col_span_label": 1
@@ -15783,7 +15481,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\u003cb\u003e34.\u003c/b\u003e \u0026nbsp;\n\t\t\t\t\tIn welchen Asset Klassen erwarten Sie eine besonders dynamische Entwicklung?\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cb\u003e34.\u003c/b\u003e \u0026nbsp;\n\t\t\t\t\tIn welchen Asset Klassen erwarten Sie eine besonders dynamische Entwicklung?\n\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t(Top 5 Nennungen, 1 bis 5, 1= höchs\u0026shy;te Entwicklung)\n\t\t\t\t"
  							},
  							"col_span": 3,
  							"col_span_label": 1
@@ -17011,14 +16709,14 @@
  				},
  				{
  					"bottom_vspacers": 3,
- 					"columns": 1,
+ 					"columns": 7,
  					"inputs": [
  						{
  							"type": "textblock",
  							"label": {
  								"de": "\u003cb\u003e36.\u003c/b\u003e \u0026nbsp;\t\n                    Wo sehen Sie den Impact Investing Markt in Deutsch\u0026shy;land in drei Jahren?\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t(Mehrfachauswahl möglich)\n                "
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1
  						},
  						{
@@ -17027,23 +16725,9 @@
  							"label": {
  								"de": "Impact Investing ist zu einem re\u0026shy;le\u0026shy;vanten Segment des Kapitalmarkts (\u003e 10 % aller Anlagen) geworden"
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -17068,23 +16752,9 @@
  							"label": {
  								"de": "Impact Investing wächst vor allem in der Entwicklungszusammenarbeit"
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -17109,23 +16779,9 @@
  							"label": {
  								"de": "Impact Investing wächst vor allem wegen der Implementierung von Retail-Lösungen"
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -17150,23 +16806,9 @@
  							"label": {
  								"de": "Impact Investing wächst vor allem durch In\u0026shy;vest\u0026shy;ments im Entwicklungsbereich"
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -17191,23 +16833,9 @@
  							"label": {
  								"de": "VC nimmt die führende Rolle ein"
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -17232,23 +16860,9 @@
  							"label": {
  								"de": "Regulatorische Begrenzungen dämpfen die Dynamik des Impact Investing-Marktes"
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -17273,23 +16887,9 @@
  							"label": {
  								"de": "Impact Investing stagniert"
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -17298,6 +16898,37 @@
  										"justify_self": "start",
  										"order": 2
  									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q36_other",
+ 							"type": "checkbox",
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "q36_other_label",
+ 							"type": "text",
+ 							"max_chars": 20,
+ 							"label": {
+ 								"de": "Andere, bitte nennen"
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 2,
+ 							"col_span_control": 5,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
  									"text_style": {}
  								},
  								"mobile": {
@@ -17365,7 +16996,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\u003cb\u003e37.\u003c/b\u003e \u0026nbsp;\t\n\t\t\t\t\tWie alt sind sie?\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cb\u003e37.\u003c/b\u003e \u0026nbsp;\t\n\t\t\t\t\tWie alt sind Sie?\n\t\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -17706,7 +17337,7 @@
  							"name": "q39_sub3_andorra",
  							"type": "checkbox",
  							"label": {
- 								"de": "Dänemark"
+ 								"de": "Andorra"
  							},
  							"col_span": 2,
  							"col_span_label": 2,
@@ -17750,7 +17381,7 @@
  							"name": "q39_sub3_belgien",
  							"type": "checkbox",
  							"label": {
- 								"de": "Finnland"
+ 								"de": "Belgien"
  							},
  							"col_span": 2,
  							"col_span_label": 2,
@@ -17791,10 +17422,10 @@
  							}
  						},
  						{
- 							"name": "q39_sub3_daenemark",
+ 							"name": "q39_sub3_denmark",
  							"type": "checkbox",
  							"label": {
- 								"de": "Frankreich"
+ 								"de": "Dänemark"
  							},
  							"col_span": 2,
  							"col_span_label": 2,
@@ -17838,7 +17469,7 @@
  							"name": "q39_sub3_finnland",
  							"type": "checkbox",
  							"label": {
- 								"de": "Griechenland"
+ 								"de": "Finnland"
  							},
  							"col_span": 2,
  							"col_span_label": 2,
@@ -17882,7 +17513,7 @@
  							"name": "q39_sub3_frankreich",
  							"type": "checkbox",
  							"label": {
- 								"de": "Großbritannien"
+ 								"de": "Frankreich"
  							},
  							"col_span": 2,
  							"col_span_label": 2,
@@ -17926,7 +17557,7 @@
  							"name": "q39_sub3_griechenland",
  							"type": "checkbox",
  							"label": {
- 								"de": "Island"
+ 								"de": "Griechenland"
  							},
  							"col_span": 2,
  							"col_span_label": 2,
@@ -17970,7 +17601,7 @@
  							"name": "q39_sub3_grossbritannien",
  							"type": "checkbox",
  							"label": {
- 								"de": "Irland"
+ 								"de": "Großbritannien"
  							},
  							"col_span": 2,
  							"col_span_label": 2,
@@ -18014,7 +17645,7 @@
  							"name": "q39_sub3_island",
  							"type": "checkbox",
  							"label": {
- 								"de": "Italien"
+ 								"de": "Island"
  							},
  							"col_span": 2,
  							"col_span_label": 2,
@@ -18058,7 +17689,7 @@
  							"name": "q39_sub3_irland",
  							"type": "checkbox",
  							"label": {
- 								"de": "Liechtenstein"
+ 								"de": "Irland"
  							},
  							"col_span": 2,
  							"col_span_label": 2,
@@ -18102,7 +17733,7 @@
  							"name": "q39_sub3_italien",
  							"type": "checkbox",
  							"label": {
- 								"de": "Luxemburg"
+ 								"de": "Italien"
  							},
  							"col_span": 2,
  							"col_span_label": 2,
@@ -18146,7 +17777,7 @@
  							"name": "q39_sub3_liechtenstein",
  							"type": "checkbox",
  							"label": {
- 								"de": "Malta"
+ 								"de": "Liechtenstein"
  							},
  							"col_span": 2,
  							"col_span_label": 2,
@@ -18190,7 +17821,7 @@
  							"name": "q39_sub3_luxemburg",
  							"type": "checkbox",
  							"label": {
- 								"de": "Monaco"
+ 								"de": "Luxemburg"
  							},
  							"col_span": 2,
  							"col_span_label": 2,
@@ -18234,7 +17865,7 @@
  							"name": "q39_sub3_malta",
  							"type": "checkbox",
  							"label": {
- 								"de": "Niederlanden"
+ 								"de": "Malta"
  							},
  							"col_span": 2,
  							"col_span_label": 2,
@@ -18278,7 +17909,7 @@
  							"name": "q39_sub3_monaco",
  							"type": "checkbox",
  							"label": {
- 								"de": "Norwegen"
+ 								"de": "Monaco"
  							},
  							"col_span": 2,
  							"col_span_label": 2,
@@ -18322,7 +17953,7 @@
  							"name": "q39_sub3_niederlanden",
  							"type": "checkbox",
  							"label": {
- 								"de": "Portugal"
+ 								"de": "Niederlanden"
  							},
  							"col_span": 2,
  							"col_span_label": 2,
@@ -18366,7 +17997,7 @@
  							"name": "q39_sub3_norwegen",
  							"type": "checkbox",
  							"label": {
- 								"de": "Schweden"
+ 								"de": "Norwegen"
  							},
  							"col_span": 2,
  							"col_span_label": 2,
@@ -18408,6 +18039,94 @@
  						},
  						{
  							"name": "q39_sub3_portugal",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "Portugal"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 2,
+ 							"col_span_control": 6,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"left": "3.2rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q39_sub3_schweden",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "Schweden"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 2,
+ 							"col_span_control": 6,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"left": "3.2rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q39_sub3_spanien",
  							"type": "checkbox",
  							"label": {
  								"de": "Spanien "
@@ -19784,14 +19503,14 @@
  				},
  				{
  					"bottom_vspacers": 3,
- 					"columns": 1,
+ 					"columns": 7,
  					"inputs": [
  						{
  							"type": "textblock",
  							"label": {
  								"de": "\n\t\t\t\t\t\u003cb\u003e40.\u003c/b\u003e \u0026nbsp;\t\n\t\t\t\t\tWo sitzt Ihr Man\u0026shy;age\u0026shy;mentteam?\n\t\t\t\t"
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1
  						},
  						{
@@ -19800,7 +19519,7 @@
  							"label": {
  								"de": "Deutsch\u0026shy;land"
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"value_radio": "germany",
@@ -19828,7 +19547,7 @@
  							"label": {
  								"de": "Österreich"
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"value_radio": "austria",
@@ -19856,7 +19575,7 @@
  							"label": {
  								"de": "Schweiz"
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"value_radio": "switzerland",
@@ -19879,37 +19598,26 @@
  							}
  						},
  						{
+ 							"name": "q40",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "other"
+ 						},
+ 						{
  							"name": "q40_other",
  							"type": "text",
  							"max_chars": 20,
  							"label": {
  								"de": "Andere, bitte nennen"
  							},
- 							"col_span": 1,
+ 							"col_span": 6,
  							"col_span_label": 2,
- 							"col_span_control": 3,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.35rem 0 0 0"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
+ 							"col_span_control": 5,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0 0 3.4rem"
- 									},
+ 									"box_style": {},
  									"grid_item_style": {},
  									"text_style": {}
  								},
@@ -19925,14 +19633,14 @@
  				},
  				{
  					"bottom_vspacers": 4,
- 					"columns": 1,
+ 					"columns": 7,
  					"inputs": [
  						{
  							"type": "textblock",
  							"label": {
  								"de": "\n\t\t\t\t\t\u003cb\u003e41.\u003c/b\u003e \u0026nbsp;\t\n\t\t\t\t\tIn welchem Land ist der Hauptsitz Ihrer Organisation?\n\t\t\t\t"
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1
  						},
  						{
@@ -19941,7 +19649,7 @@
  							"label": {
  								"de": "Deutsch\u0026shy;land"
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"value_radio": "germany",
@@ -19969,7 +19677,7 @@
  							"label": {
  								"de": "Österreich"
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"value_radio": "austria",
@@ -19997,7 +19705,7 @@
  							"label": {
  								"de": "Schweiz"
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"value_radio": "switzerland",
@@ -20020,37 +19728,26 @@
  							}
  						},
  						{
+ 							"name": "q41",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "other"
+ 						},
+ 						{
  							"name": "q41_other",
  							"type": "text",
  							"max_chars": 20,
  							"label": {
  								"de": "Andere, bitte nennen"
  							},
- 							"col_span": 1,
+ 							"col_span": 6,
  							"col_span_label": 2,
- 							"col_span_control": 3,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.35rem 0 0 0"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
+ 							"col_span_control": 5,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0 0 3.4rem"
- 									},
+ 									"box_style": {},
  									"grid_item_style": {},
  									"text_style": {}
  								},
@@ -20101,14 +19798,14 @@
  			"groups": [
  				{
  					"bottom_vspacers": 3,
- 					"columns": 1,
+ 					"columns": 7,
  					"inputs": [
  						{
  							"type": "textblock",
  							"label": {
  								"de": "\u003cb\u003e42.\u003c/b\u003e \u0026nbsp;\tFalls Ihre Organisation bisher noch nicht im Impact Investing-Markt tätig ist, wie be\u0026shy;wer\u0026shy;ten Sie dieses Feld für die Zukunft: "
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1
  						},
  						{
@@ -20117,7 +19814,7 @@
  							"label": {
  								"de": "Wir bereiten einen Markteintritt strategisch vor"
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"value_radio": "strategic_prep",
@@ -20145,7 +19842,7 @@
  							"label": {
  								"de": "Wir prüfen künftige Marktchancen sorgfältig "
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"value_radio": "due_dilligence",
@@ -20173,7 +19870,7 @@
  							"label": {
  								"de": "Wir beginnen, Informationen zu diesem Markt zu sammeln"
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"value_radio": "collect_info",
@@ -20201,7 +19898,7 @@
  							"label": {
  								"de": "Wir sehen keine Notwendigkeit, uns damit zu befassen "
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"value_radio": "no_necessity",
@@ -20224,15 +19921,36 @@
  							}
  						},
  						{
+ 							"name": "q42",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "sceptical"
+ 						},
+ 						{
  							"name": "q42_other",
  							"type": "textarea",
  							"max_chars": 150,
  							"label": {
- 								"de": "Wir sehen diesen Markt eher skeptisch aus den folgenden Gründen:"
+ 								"de": "Wir sehen diesen Markt eher skeptisch aus den folgenden Gründen: "
  							},
- 							"col_span": 1,
- 							"col_span_label": 2,
- 							"col_span_control": 3
+ 							"col_span": 6,
+ 							"col_span_label": 4,
+ 							"col_span_control": 5,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						}
  					]
  				},
@@ -21233,36 +20951,6 @@
  							"max_chars": 27,
  							"label": {
  								"de": "Name Ihrer Organisation"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 2,
- 							"col_span_control": 3,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0 0 0 6rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q45_comment",
- 							"type": "textarea",
- 							"max_chars": 150,
- 							"placeholder": {
- 								"de": "Kommentarfeld"
- 							},
- 							"label": {
- 								"de": "Kommentar"
  							},
  							"col_span": 1,
  							"col_span_label": 2,

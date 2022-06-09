@@ -68,7 +68,7 @@ var q12Labels = []trl.S{
 	{"de": "Fertigung / Produktion"},
 	{"de": "Stadterneuerung / Territoriale Entwicklung"},
 	{"de": "Finanzielle Eingliederung und Zugang zu Finanzmitteln (d.h. Mikro&shy;finanzierung, Mikro&shy;versicherungen, Finanz Bildungs&shy;dienst&shy;leistungen, Bankwesen)"},
-	{"de": "Andere"},
+	{"de": "Andere, bitte nennen"},
 	{"de": "Nicht Anwendbar (N/A)"},
 }
 
@@ -124,24 +124,24 @@ var q13Labels = []trl.S{
 }
 
 var q13inputNames = []string{
-	"not",
-	"1",
-	"2",
-	"3",
-	"4",
-	"5",
-	"6",
-	"7",
-	"8",
-	"9",
-	"10",
-	"11",
-	"12",
-	"13",
-	"14",
-	"15",
-	"16",
-	"17",
+	"q13_not",
+	"q13_1",
+	"q13_2",
+	"q13_3",
+	"q13_4",
+	"q13_5",
+	"q13_6",
+	"q13_7",
+	"q13_8",
+	"q13_9",
+	"q13_10",
+	"q13_11",
+	"q13_12",
+	"q13_13",
+	"q13_14",
+	"q13_15",
+	"q13_16",
+	"q13_17",
 }
 
 var q25Columns = []trl.S{

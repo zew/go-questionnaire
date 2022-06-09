@@ -17,7 +17,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "63e08676606e29e3de6da733dcf138d9ae0281c1ad5a9ed24ea2226c46fa1382",
+ 	"md_5": "a5803892d87a68c7711e5f57bfade4a1112ce979da1cc02d57819fe67c632bbc",
  	"lang_codes": [
  		"de"
  	],
@@ -3618,7 +3618,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\t\u003cb\u003e12. \u003c/b\u003e \u0026nbsp;\t\n\t\t\t\t\t\t\n\t\t\t\t\t\tWelche Themenfelder decken Ihre Investitionen ab? \n\t\t\t\t\t\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003c!--\n\t\t\t\t\t\t(Mehrfachauswahl in der Reihenfolge der investierten Volumina. 1 bis 5,  1= höchs\u0026shy;tes Volumen)\n\t\t\t\t\t\t--\u003e\n\t\t\t\t\t\t(Wählen Sie bis zu fünf )\n\n\t\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\t\u003cb\u003e12. \u003c/b\u003e \u0026nbsp;\t\n\t\t\t\t\t\t\n\t\t\t\t\t\tWelche Themenfelder decken Ihre Investitionen ab? \n\t\t\t\t\t\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003c!--\n\t\t\t\t\t\t(Mehrfachauswahl in der Reihenfolge der investierten Volumina. 1 bis 5,  1= höchs\u0026shy;tes Volumen)\n\t\t\t\t\t\t--\u003e\n\t\t\t\t\t\t(Wählen Sie bis zu fünf)\n\n\t\t\t\t\t"
  							},
  							"col_span": 9,
  							"col_span_label": 1
@@ -4028,10 +4028,10 @@
  							"type": "text",
  							"max_chars": 17,
  							"label": {
- 								"de": "Andere"
+ 								"de": "Andere, bitte nennen"
  							},
  							"col_span": 6,
- 							"col_span_label": 1,
+ 							"col_span_label": 3,
  							"col_span_control": 3
  						},
  						{
@@ -4128,13 +4128,13 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\t\u003cb\u003e13. \u003c/b\u003e \u0026nbsp;\t\n\t\t\t\t\t\tAuf die Erreichung welcher Sustainable De\u0026shy;vel\u0026shy;op\u0026shy;ment Goals (SDGs)/ Ziele für nachhaltige Entwicklung der UN arbeiten Sie mit Ihren Investitionen hin?\t\t\t\t\t\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t(Wählen Sie bis zu fünf )\n\t\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\t\u003cb\u003e13. \u003c/b\u003e \u0026nbsp;\t\n\t\t\t\t\t\tAuf die Erreichung welcher Sustainable De\u0026shy;vel\u0026shy;op\u0026shy;ment Goals (SDGs)/ Ziele für nachhaltige Entwicklung der UN arbeiten Sie mit Ihren Investitionen hin?\t\t\t\t\t\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t(Wählen Sie bis zu fünf)\n\t\t\t\t\t"
  							},
  							"col_span": 7,
  							"col_span_label": 1
  						},
  						{
- 							"name": "not",
+ 							"name": "q13_not",
  							"type": "checkbox",
  							"label": {
  								"de": "Wir berücksichtigen die SDGs in unserer Strategie nicht"
@@ -4144,7 +4144,7 @@
  							"col_span_control": 1
  						},
  						{
- 							"name": "1",
+ 							"name": "q13_1",
  							"type": "checkbox",
  							"label": {
  								"de": "1. Keine Armut"
@@ -4154,7 +4154,7 @@
  							"col_span_control": 1
  						},
  						{
- 							"name": "2",
+ 							"name": "q13_2",
  							"type": "checkbox",
  							"label": {
  								"de": "2. Kein Hunger"
@@ -4164,7 +4164,7 @@
  							"col_span_control": 1
  						},
  						{
- 							"name": "3",
+ 							"name": "q13_3",
  							"type": "checkbox",
  							"label": {
  								"de": "3. Gesundheit und Wohlergehen"
@@ -4174,7 +4174,7 @@
  							"col_span_control": 1
  						},
  						{
- 							"name": "4",
+ 							"name": "q13_4",
  							"type": "checkbox",
  							"label": {
  								"de": "4. Hochwertige Bil\u0026shy;dung"
@@ -4184,7 +4184,7 @@
  							"col_span_control": 1
  						},
  						{
- 							"name": "5",
+ 							"name": "q13_5",
  							"type": "checkbox",
  							"label": {
  								"de": "5. Geschlech\u0026shy;tergleichheit"
@@ -4194,7 +4194,7 @@
  							"col_span_control": 1
  						},
  						{
- 							"name": "6",
+ 							"name": "q13_6",
  							"type": "checkbox",
  							"label": {
  								"de": "6. Sauberes Wasser und Sanitär\u0026shy;ein\u0026shy;richtungen"
@@ -4204,7 +4204,7 @@
  							"col_span_control": 1
  						},
  						{
- 							"name": "7",
+ 							"name": "q13_7",
  							"type": "checkbox",
  							"label": {
  								"de": "7.Bezahlbare und Saubere Energie"
@@ -4214,7 +4214,7 @@
  							"col_span_control": 1
  						},
  						{
- 							"name": "8",
+ 							"name": "q13_8",
  							"type": "checkbox",
  							"label": {
  								"de": "8. Menschenwürdige Arbeit und Wirt\u0026shy;schaftswachstum"
@@ -4224,7 +4224,7 @@
  							"col_span_control": 1
  						},
  						{
- 							"name": "9",
+ 							"name": "q13_9",
  							"type": "checkbox",
  							"label": {
  								"de": "9. Industrie, Innovation und Infrastruktur"
@@ -4234,7 +4234,7 @@
  							"col_span_control": 1
  						},
  						{
- 							"name": "10",
+ 							"name": "q13_10",
  							"type": "checkbox",
  							"label": {
  								"de": "10. Weniger Ungleichheiten"
@@ -4244,7 +4244,7 @@
  							"col_span_control": 1
  						},
  						{
- 							"name": "11",
+ 							"name": "q13_11",
  							"type": "checkbox",
  							"label": {
  								"de": "11. Nachhaltige Städte und Gemeinden"
@@ -4254,7 +4254,7 @@
  							"col_span_control": 1
  						},
  						{
- 							"name": "12",
+ 							"name": "q13_12",
  							"type": "checkbox",
  							"label": {
  								"de": "12. Nachhaltiger Konsum und Produktion"
@@ -4264,7 +4264,7 @@
  							"col_span_control": 1
  						},
  						{
- 							"name": "13",
+ 							"name": "q13_13",
  							"type": "checkbox",
  							"label": {
  								"de": "13. Maßnahmen zum Klimaschutz"
@@ -4274,7 +4274,7 @@
  							"col_span_control": 1
  						},
  						{
- 							"name": "14",
+ 							"name": "q13_14",
  							"type": "checkbox",
  							"label": {
  								"de": "14. Leben unter Wasser"
@@ -4284,7 +4284,7 @@
  							"col_span_control": 1
  						},
  						{
- 							"name": "15",
+ 							"name": "q13_15",
  							"type": "checkbox",
  							"label": {
  								"de": "15. Leben an Land"
@@ -4294,7 +4294,7 @@
  							"col_span_control": 1
  						},
  						{
- 							"name": "16",
+ 							"name": "q13_16",
  							"type": "checkbox",
  							"label": {
  								"de": "16. Frieden, Gerechtigkeit und starke Institutionen"
@@ -4304,7 +4304,7 @@
  							"col_span_control": 1
  						},
  						{
- 							"name": "17",
+ 							"name": "q13_17",
  							"type": "checkbox",
  							"label": {
  								"de": "17. Partnerschaften zur Erreichung der Ziele"
@@ -4315,7 +4315,11 @@
  						}
  					]
  				}
- 			]
+ 			],
+ 			"validation_func_name": "biiiQ13",
+ 			"validation_func_msg": {
+ 				"de": "no javascript dialog message needed"
+ 			}
  		},
  		{
  			"label": {
@@ -11146,7 +11150,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\t\u003cb\u003e32.\u003c/b\u003e \u0026nbsp;\n\t\t\t\t\t\tIn welchen Bereichen sind die größten Fortschritte notwendig?\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t(Wählen Sie bis zu fünf )\n\t\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\t\u003cb\u003e32.\u003c/b\u003e \u0026nbsp;\n\t\t\t\t\t\tIn welchen Bereichen sind die größten Fortschritte notwendig?\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t(Wählen Sie bis zu fünf)\n\t\t\t\t\t"
  							},
  							"col_span": 9,
  							"col_span_label": 1
@@ -11359,7 +11363,7 @@
  								"de": "Andere, bitte nennen"
  							},
  							"col_span": 6,
- 							"col_span_label": 1,
+ 							"col_span_label": 3,
  							"col_span_control": 3
  						},
  						{
@@ -11403,7 +11407,7 @@
  				"desktop": {
  					"grid_container_style": {},
  					"box_style": {
- 						"width_max": "42rem"
+ 						"width_max": "44rem"
  					},
  					"grid_item_style": {},
  					"text_style": {}
@@ -11420,1739 +11424,676 @@
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
  				{
- 					"bottom_vspacers": 1,
- 					"columns": 3,
+ 					"bottom_vspacers": 3,
+ 					"columns": 14,
  					"inputs": [
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\u003cb\u003e33a.\u003c/b\u003e \u0026nbsp;\n\t\t\t\t\tIn welchen Themenfeldern sehen Sie \n\t\t\t\t\tden größten \n\t\t\t\t\t\u003cb\u003e\u003ci\u003eBedarf an Kapital\u003c/i\u003e\u003c/b\u003e \n\t\t\t\t\tfür Impact In\u0026shy;vest\u0026shy;ments?\n\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\tBitte \u003ci\u003edrei\u003c/i\u003e pro Spalte wählen.\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cb\u003e33.\u003c/b\u003e \u0026nbsp;\n\t\t\t\t\tIn welchen Themenfeldern sehen Sie\n\t\t\t\t\t\n\t\t\t\t\t\u003c!--\n\t\t\t\t\tden größten \u003cb\u003e\u003ci\u003eBedarf an Kapital\u003c/i\u003e\u003c/b\u003e\n\t\t\t\t\tdas \u003cb\u003e\u003ci\u003egrößte Potential\u003c/i\u003e\u003c/b\u003e\n\t\t\t\t\t--\u003e\n\t\t\t\t\t\u003ctable style=\"margin: -0.75rem 0\"\u003e\n\t\t\t\t\t\t\u003ctr\u003e\n\n\t\t\t\t\t\t\t\u003ctd style=\"width:43%\"\u003e\n\t\t\t\t\t\t\t\t\u0026nbsp;\n\t\t\t\t\t\t\t\u003c/td\u003e\n\t\t\t\t\t\t\t\u003ctd style=\"width:28%\"\u003e\n\t\t\t\t\t\t\t\tden größten \u003cb\u003e\u003ci\u003eBedarf an Kapital\u003c/i\u003e\u003c/b\u003e\n\t\t\t\t\t\t\t\u003c/td\u003e\n\t\t\t\t\t\t\t\u003ctd style=\"width:28%\"\u003e\n\t\t\t\t\t\t\t\tdas \u003cb\u003e\u003ci\u003egrößte Potential\u003c/i\u003e\u003c/b\u003e\n\t\t\t\t\t\t\t\u003c/td\u003e\n\n\n\t\t\t\t\t\t\u003c/tr\u003e\n\t\t\t\t\t\u003c/table\u003e\n\n\t\t\t\t\tfür Impact In\u0026shy;vest\u0026shy;ments?\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t(Wählen Sie \u003ci\u003eje Spalte\u003c/i\u003e bis zu fünf Themenfelder)\n\t\t\t\t"
  							},
- 							"col_span": 3,
+ 							"col_span": 14,
  							"col_span_label": 1
  						},
  						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "1\u003cbr\u003egrößter Bedarf"
- 							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "2\u003cbr\u003e\u003cbr\u003e"
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "3\u003cbr\u003egeringster Bedarf"
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q33a_paris",
- 							"type": "radio",
+ 							"name": "q33_paris_need",
+ 							"type": "checkbox",
  							"label": {
  								"de": "Paris-Aligned oder Net Zero"
  							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q33a_paris",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q33a_paris",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "q33a_leisure",
- 							"type": "radio",
- 							"label": {
- 								"de": "Kultur und Freizeit (Kultur, Kunst, Sport, sonstige Freizeitgestaltung und soziale Vereine)"
- 							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q33a_leisure",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q33a_leisure",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "q33a_education",
- 							"type": "radio",
- 							"label": {
- 								"de": "Bil\u0026shy;dung (Grundschule, Sekundarschule, Hochschule, Sonstiges)"
- 							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q33a_education",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q33a_education",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "q33a_work",
- 							"type": "radio",
- 							"label": {
- 								"de": "Arbeitsmarktintegration"
- 							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q33a_work",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q33a_work",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "q33a_research",
- 							"type": "radio",
- 							"label": {
- 								"de": "For\u0026shy;schung"
- 							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q33a_research",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q33a_research",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "q33a_health",
- 							"type": "radio",
- 							"label": {
- 								"de": "Gesundheit (Krankenhäuser, Rehabilitation, Pflegeheime, psychische Gesundheit / Krisenintervention)"
- 							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q33a_health",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q33a_health",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "q33a_social_services",
- 							"type": "radio",
- 							"label": {
- 								"de": "Soziale Dienste (Notfall, Hilfe, Einkommensunterstützung / Unterhalt)"
- 							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q33a_social_services",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q33a_social_services",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "q33a_env_protection",
- 							"type": "radio",
- 							"label": {
- 								"de": "Umweltschutz (Forstwirt\u0026shy;schaft, Land, Abfall, Luft, biologische Vielfalt und Ökosysteme,"
- 							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q33a_env_protection",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q33a_env_protection",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "q33a_oceans",
- 							"type": "radio",
- 							"label": {
- 								"de": "Meere und Küstengebiete)"
- 							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q33a_oceans",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q33a_oceans",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "q33a_wash",
- 							"type": "radio",
- 							"label": {
- 								"de": "WASH (Wasser, Sanitärversorgung und Hygiene)"
- 							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q33a_wash",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q33a_wash",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "q33a_agriculture",
- 							"type": "radio",
- 							"label": {
- 								"de": "Landwirt\u0026shy;schaft"
- 							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q33a_agriculture",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q33a_agriculture",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "q33a_energy",
- 							"type": "radio",
- 							"label": {
- 								"de": "Energie (Zugang zu Energie, erneuerbare Energie)"
- 							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q33a_energy",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q33a_energy",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "q33a_residential",
- 							"type": "radio",
- 							"label": {
- 								"de": "Wohnen"
- 							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q33a_residential",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q33a_residential",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "q33a_it",
- 							"type": "radio",
- 							"label": {
- 								"de": "IT / Technologien"
- 							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q33a_it",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q33a_it",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "q33a_production",
- 							"type": "radio",
- 							"label": {
- 								"de": "Fertigung / Produktion"
- 							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q33a_production",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q33a_production",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "q33a_urban_dev",
- 							"type": "radio",
- 							"label": {
- 								"de": "Stadterneuerung / Territoriale Entwicklung"
- 							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q33a_urban_dev",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q33a_urban_dev",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "q33a_financial_access",
- 							"type": "radio",
- 							"label": {
- 								"de": "Finanzielle Eingliederung und Zugang zu Finanzmitteln (d.h. Mikrofinanzierung, Mikroversi\u0026shy;cherungen, Finanz Bil\u0026shy;dungsdienstleistungen, Bankwesen)"
- 							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q33a_financial_access",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q33a_financial_access",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						}
- 					],
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {
- 								"auto_flow": "row",
- 								"template_columns": "   4.6fr    1fr    1fr "
- 							},
- 							"box_style": {
- 								"display": "grid"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
- 				},
- 				{
- 					"bottom_vspacers": 4,
- 					"columns": 7,
- 					"inputs": [
- 						{
- 							"name": "q33a_other_label",
+ 							"name": "q33_paris_need_addl",
  							"type": "text",
- 							"max_chars": 17,
- 							"label": {
- 								"de": "Andere",
- 								"en": "Other"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 2.4,
- 							"col_span_control": 4
- 						},
- 						{
- 							"name": "q33a_other",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "1"
- 						},
- 						{
- 							"name": "q33a_other",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q33a_other",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						}
- 					],
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {
- 								"template_columns": "   3.48fr    1fr    1fr    1fr "
- 							},
- 							"box_style": {
- 								"display": "grid"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
- 				},
- 				{
- 					"bottom_vspacers": 1,
- 					"columns": 3,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "\n\t\t\t\t\t\u003cb\u003e33b.\u003c/b\u003e \u0026nbsp;\n\t\t\t\t\tIn welchen Themenfeldern sehen Sie \n\t\t\t\t\tden größten \n\t\t\t\t\tdas \u003cb\u003e\u003ci\u003egrößte Potential\u003c/i\u003e\u003c/b\u003e \n\t\t\t\t\tfür Impact In\u0026shy;vest\u0026shy;ments? \n\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\tBitte \u003ci\u003edrei\u003c/i\u003e pro Spalte wählen.\n\t\t\t\t"
+ 							"max_chars": 14,
+ 							"placeholder": {
+ 								"de": "opt. Kommentar"
  							},
  							"col_span": 3,
- 							"col_span_label": 1
+ 							"col_span_control": 1
  						},
  						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "1\u003cbr\u003egrößtes Potenzial"
- 							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"name": "q33_paris_pot",
+ 							"type": "checkbox",
+ 							"col_span": 1,
+ 							"col_span_control": 1
  						},
  						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "2\u003cbr\u003e\u003cbr\u003e"
+ 							"name": "q33_paris_pot_addl",
+ 							"type": "text",
+ 							"max_chars": 14,
+ 							"placeholder": {
+ 								"de": "opt. Kommentar"
  							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"col_span": 3,
+ 							"col_span_control": 1
  						},
  						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "3\u003cbr\u003egeringstes Potenzial"
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q33b_paris",
- 							"type": "radio",
- 							"label": {
- 								"de": "Paris-Aligned oder Net Zero"
- 							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q33b_paris",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q33b_paris",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "q33b_leisure",
- 							"type": "radio",
+ 							"name": "q33_leisure_need",
+ 							"type": "checkbox",
  							"label": {
  								"de": "Kultur und Freizeit (Kultur, Kunst, Sport, sonstige Freizeitgestaltung und soziale Vereine)"
  							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q33b_leisure",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
+ 							"name": "q33_leisure_need_addl",
+ 							"type": "text",
+ 							"max_chars": 14,
+ 							"placeholder": {
+ 								"de": "opt. Kommentar"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q33b_leisure",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"name": "q33_leisure_pot",
+ 							"type": "checkbox",
+ 							"col_span": 1,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q33b_education",
- 							"type": "radio",
+ 							"name": "q33_leisure_pot_addl",
+ 							"type": "text",
+ 							"max_chars": 14,
+ 							"placeholder": {
+ 								"de": "opt. Kommentar"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "q33_education_need",
+ 							"type": "checkbox",
  							"label": {
  								"de": "Bil\u0026shy;dung (Grundschule, Sekundarschule, Hochschule, Sonstiges)"
  							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q33b_education",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
+ 							"name": "q33_education_need_addl",
+ 							"type": "text",
+ 							"max_chars": 14,
+ 							"placeholder": {
+ 								"de": "opt. Kommentar"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q33b_education",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"name": "q33_education_pot",
+ 							"type": "checkbox",
+ 							"col_span": 1,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q33b_work",
- 							"type": "radio",
+ 							"name": "q33_education_pot_addl",
+ 							"type": "text",
+ 							"max_chars": 14,
+ 							"placeholder": {
+ 								"de": "opt. Kommentar"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "q33_work_need",
+ 							"type": "checkbox",
  							"label": {
  								"de": "Arbeitsmarktintegration"
  							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q33b_work",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
+ 							"name": "q33_work_need_addl",
+ 							"type": "text",
+ 							"max_chars": 14,
+ 							"placeholder": {
+ 								"de": "opt. Kommentar"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q33b_work",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"name": "q33_work_pot",
+ 							"type": "checkbox",
+ 							"col_span": 1,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q33b_research",
- 							"type": "radio",
+ 							"name": "q33_work_pot_addl",
+ 							"type": "text",
+ 							"max_chars": 14,
+ 							"placeholder": {
+ 								"de": "opt. Kommentar"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "q33_research_need",
+ 							"type": "checkbox",
  							"label": {
  								"de": "For\u0026shy;schung"
  							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q33b_research",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
+ 							"name": "q33_research_need_addl",
+ 							"type": "text",
+ 							"max_chars": 14,
+ 							"placeholder": {
+ 								"de": "opt. Kommentar"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q33b_research",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"name": "q33_research_pot",
+ 							"type": "checkbox",
+ 							"col_span": 1,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q33b_health",
- 							"type": "radio",
+ 							"name": "q33_research_pot_addl",
+ 							"type": "text",
+ 							"max_chars": 14,
+ 							"placeholder": {
+ 								"de": "opt. Kommentar"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "q33_health_need",
+ 							"type": "checkbox",
  							"label": {
  								"de": "Gesundheit (Krankenhäuser, Rehabilitation, Pflegeheime, psychische Gesundheit / Krisenintervention)"
  							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q33b_health",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
+ 							"name": "q33_health_need_addl",
+ 							"type": "text",
+ 							"max_chars": 14,
+ 							"placeholder": {
+ 								"de": "opt. Kommentar"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q33b_health",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"name": "q33_health_pot",
+ 							"type": "checkbox",
+ 							"col_span": 1,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q33b_social_services",
- 							"type": "radio",
+ 							"name": "q33_health_pot_addl",
+ 							"type": "text",
+ 							"max_chars": 14,
+ 							"placeholder": {
+ 								"de": "opt. Kommentar"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "q33_social_services_need",
+ 							"type": "checkbox",
  							"label": {
  								"de": "Soziale Dienste (Notfall, Hilfe, Einkommensunterstützung / Unterhalt)"
  							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q33b_social_services",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
+ 							"name": "q33_social_services_need_addl",
+ 							"type": "text",
+ 							"max_chars": 14,
+ 							"placeholder": {
+ 								"de": "opt. Kommentar"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q33b_social_services",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"name": "q33_social_services_pot",
+ 							"type": "checkbox",
+ 							"col_span": 1,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q33b_env_protection",
- 							"type": "radio",
+ 							"name": "q33_social_services_pot_addl",
+ 							"type": "text",
+ 							"max_chars": 14,
+ 							"placeholder": {
+ 								"de": "opt. Kommentar"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "q33_env_protection_need",
+ 							"type": "checkbox",
  							"label": {
  								"de": "Umweltschutz (Forstwirt\u0026shy;schaft, Land, Abfall, Luft, biologische Vielfalt und Ökosysteme,"
  							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q33b_env_protection",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
+ 							"name": "q33_env_protection_need_addl",
+ 							"type": "text",
+ 							"max_chars": 14,
+ 							"placeholder": {
+ 								"de": "opt. Kommentar"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q33b_env_protection",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"name": "q33_env_protection_pot",
+ 							"type": "checkbox",
+ 							"col_span": 1,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q33b_oceans",
- 							"type": "radio",
+ 							"name": "q33_env_protection_pot_addl",
+ 							"type": "text",
+ 							"max_chars": 14,
+ 							"placeholder": {
+ 								"de": "opt. Kommentar"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "q33_oceans_need",
+ 							"type": "checkbox",
  							"label": {
  								"de": "Meere und Küstengebiete)"
  							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q33b_oceans",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
+ 							"name": "q33_oceans_need_addl",
+ 							"type": "text",
+ 							"max_chars": 14,
+ 							"placeholder": {
+ 								"de": "opt. Kommentar"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q33b_oceans",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"name": "q33_oceans_pot",
+ 							"type": "checkbox",
+ 							"col_span": 1,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q33b_wash",
- 							"type": "radio",
+ 							"name": "q33_oceans_pot_addl",
+ 							"type": "text",
+ 							"max_chars": 14,
+ 							"placeholder": {
+ 								"de": "opt. Kommentar"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "q33_wash_need",
+ 							"type": "checkbox",
  							"label": {
  								"de": "WASH (Wasser, Sanitärversorgung und Hygiene)"
  							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q33b_wash",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
+ 							"name": "q33_wash_need_addl",
+ 							"type": "text",
+ 							"max_chars": 14,
+ 							"placeholder": {
+ 								"de": "opt. Kommentar"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q33b_wash",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"name": "q33_wash_pot",
+ 							"type": "checkbox",
+ 							"col_span": 1,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q33b_agriculture",
- 							"type": "radio",
+ 							"name": "q33_wash_pot_addl",
+ 							"type": "text",
+ 							"max_chars": 14,
+ 							"placeholder": {
+ 								"de": "opt. Kommentar"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "q33_agriculture_need",
+ 							"type": "checkbox",
  							"label": {
  								"de": "Landwirt\u0026shy;schaft"
  							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q33b_agriculture",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
+ 							"name": "q33_agriculture_need_addl",
+ 							"type": "text",
+ 							"max_chars": 14,
+ 							"placeholder": {
+ 								"de": "opt. Kommentar"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q33b_agriculture",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"name": "q33_agriculture_pot",
+ 							"type": "checkbox",
+ 							"col_span": 1,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q33b_energy",
- 							"type": "radio",
+ 							"name": "q33_agriculture_pot_addl",
+ 							"type": "text",
+ 							"max_chars": 14,
+ 							"placeholder": {
+ 								"de": "opt. Kommentar"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "q33_energy_need",
+ 							"type": "checkbox",
  							"label": {
  								"de": "Energie (Zugang zu Energie, erneuerbare Energie)"
  							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q33b_energy",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
+ 							"name": "q33_energy_need_addl",
+ 							"type": "text",
+ 							"max_chars": 14,
+ 							"placeholder": {
+ 								"de": "opt. Kommentar"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q33b_energy",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"name": "q33_energy_pot",
+ 							"type": "checkbox",
+ 							"col_span": 1,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q33b_residential",
- 							"type": "radio",
+ 							"name": "q33_energy_pot_addl",
+ 							"type": "text",
+ 							"max_chars": 14,
+ 							"placeholder": {
+ 								"de": "opt. Kommentar"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "q33_residential_need",
+ 							"type": "checkbox",
  							"label": {
  								"de": "Wohnen"
  							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q33b_residential",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
+ 							"name": "q33_residential_need_addl",
+ 							"type": "text",
+ 							"max_chars": 14,
+ 							"placeholder": {
+ 								"de": "opt. Kommentar"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q33b_residential",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"name": "q33_residential_pot",
+ 							"type": "checkbox",
+ 							"col_span": 1,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q33b_it",
- 							"type": "radio",
+ 							"name": "q33_residential_pot_addl",
+ 							"type": "text",
+ 							"max_chars": 14,
+ 							"placeholder": {
+ 								"de": "opt. Kommentar"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "q33_it_need",
+ 							"type": "checkbox",
  							"label": {
  								"de": "IT / Technologien"
  							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q33b_it",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
+ 							"name": "q33_it_need_addl",
+ 							"type": "text",
+ 							"max_chars": 14,
+ 							"placeholder": {
+ 								"de": "opt. Kommentar"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q33b_it",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"name": "q33_it_pot",
+ 							"type": "checkbox",
+ 							"col_span": 1,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q33b_production",
- 							"type": "radio",
+ 							"name": "q33_it_pot_addl",
+ 							"type": "text",
+ 							"max_chars": 14,
+ 							"placeholder": {
+ 								"de": "opt. Kommentar"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "q33_production_need",
+ 							"type": "checkbox",
  							"label": {
  								"de": "Fertigung / Produktion"
  							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q33b_production",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
+ 							"name": "q33_production_need_addl",
+ 							"type": "text",
+ 							"max_chars": 14,
+ 							"placeholder": {
+ 								"de": "opt. Kommentar"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q33b_production",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"name": "q33_production_pot",
+ 							"type": "checkbox",
+ 							"col_span": 1,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q33b_urban_dev",
- 							"type": "radio",
+ 							"name": "q33_production_pot_addl",
+ 							"type": "text",
+ 							"max_chars": 14,
+ 							"placeholder": {
+ 								"de": "opt. Kommentar"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "q33_urban_dev_need",
+ 							"type": "checkbox",
  							"label": {
  								"de": "Stadterneuerung / Territoriale Entwicklung"
  							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q33b_urban_dev",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
+ 							"name": "q33_urban_dev_need_addl",
+ 							"type": "text",
+ 							"max_chars": 14,
+ 							"placeholder": {
+ 								"de": "opt. Kommentar"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q33b_urban_dev",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"name": "q33_urban_dev_pot",
+ 							"type": "checkbox",
+ 							"col_span": 1,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q33b_financial_access",
- 							"type": "radio",
+ 							"name": "q33_urban_dev_pot_addl",
+ 							"type": "text",
+ 							"max_chars": 14,
+ 							"placeholder": {
+ 								"de": "opt. Kommentar"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "q33_financial_access_need",
+ 							"type": "checkbox",
  							"label": {
  								"de": "Finanzielle Eingliederung und Zugang zu Finanzmitteln (d.h. Mikrofinanzierung, Mikroversi\u0026shy;cherungen, Finanz Bil\u0026shy;dungsdienstleistungen, Bankwesen)"
  							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q33b_financial_access",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q33b_financial_access",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						}
- 					],
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {
- 								"auto_flow": "row",
- 								"template_columns": "   4.6fr    1fr    1fr "
+ 							"name": "q33_financial_access_need_addl",
+ 							"type": "text",
+ 							"max_chars": 14,
+ 							"placeholder": {
+ 								"de": "opt. Kommentar"
  							},
- 							"box_style": {
- 								"display": "grid"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
+ 							"col_span": 3,
+ 							"col_span_control": 1
  						},
- 						"mobile": {
- 							"grid_container_style": {},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
- 				},
- 				{
- 					"bottom_vspacers": 4,
- 					"columns": 7,
- 					"inputs": [
  						{
- 							"name": "q33b_other_label",
+ 							"name": "q33_financial_access_pot",
+ 							"type": "checkbox",
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "q33_financial_access_pot_addl",
+ 							"type": "text",
+ 							"max_chars": 14,
+ 							"placeholder": {
+ 								"de": "opt. Kommentar"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "q33_other_need_label",
  							"type": "text",
  							"max_chars": 17,
  							"label": {
- 								"de": "Andere",
- 								"en": "Other"
+ 								"de": "Andere, bitte nennen"
  							},
- 							"col_span": 1,
- 							"col_span_label": 2.4,
- 							"col_span_control": 4
+ 							"col_span": 6,
+ 							"col_span_label": 3,
+ 							"col_span_control": 3
  						},
  						{
- 							"name": "q33b_other",
- 							"type": "radio",
+ 							"name": "q33_other_need",
+ 							"type": "checkbox",
  							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "1"
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q33b_other",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "2"
+ 							"name": "q33_other_need_addl",
+ 							"type": "text",
+ 							"max_chars": 14,
+ 							"placeholder": {
+ 								"de": "opt. Kommentar"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q33b_other",
- 							"type": "radio",
+ 							"name": "q33_other_pot",
+ 							"type": "checkbox",
  							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "q33_other_pot_addl",
+ 							"type": "text",
+ 							"max_chars": 14,
+ 							"placeholder": {
+ 								"de": "opt. Kommentar"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_control": 1
  						}
- 					],
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {
- 								"template_columns": "   3.48fr    1fr    1fr    1fr "
- 							},
- 							"box_style": {
- 								"display": "grid"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
+ 					]
  				}
  			],
- 			"validation_func_name": "biiiPage16"
+ 			"validation_func_name": "biiiQ33"
  		},
  		{
  			"label": {
@@ -13194,7 +12135,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\t\u003cb\u003e34.\u003c/b\u003e \u0026nbsp;\n\t\t\t\t\t\tIn welchen Asset Klassen erwarten Sie eine besonders dynamische Entwicklung?\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t(Wählen Sie bis zu fünf )\n\t\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\t\u003cb\u003e34.\u003c/b\u003e \u0026nbsp;\n\t\t\t\t\t\tIn welchen Asset Klassen erwarten Sie eine besonders dynamische Entwicklung?\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t(Wählen Sie bis zu fünf)\n\t\t\t\t\t"
  							},
  							"col_span": 9,
  							"col_span_label": 1
@@ -13447,7 +12388,7 @@
  								"de": "Hybride Finanz\u0026shy;instrumente (Hybrid financial instruments), bitte nennen"
  							},
  							"col_span": 6,
- 							"col_span_label": 1,
+ 							"col_span_label": 3,
  							"col_span_control": 3
  						},
  						{
@@ -13474,7 +12415,7 @@
  								"de": "Andere, bitte nennen"
  							},
  							"col_span": 6,
- 							"col_span_label": 1,
+ 							"col_span_label": 3,
  							"col_span_control": 3
  						},
  						{

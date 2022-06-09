@@ -191,7 +191,7 @@ func page4Quest11(q *qst.QuestionnaireT) {
 						<!--
 						(Mehrfachauswahl in der Reihenfolge der investierten Volumina. 1 bis 5,  1= höchstes Volumen)
 						-->
-						(Wählen Sie bis zu fünf )
+						(Wählen Sie bis zu fünf)
 
 					`),
 			}
@@ -213,6 +213,9 @@ func page4Quest11(q *qst.QuestionnaireT) {
 
 		page.WidthMax("34rem")
 
+		page.ValidationFuncName = "biiiQ13"
+		page.ValidationFuncMsg = trl.S{"de": "no javascript dialog message needed"}
+
 		{
 			mainLbl := trl.S{
 				"de": fmt.Sprintf(`
@@ -220,7 +223,7 @@ func page4Quest11(q *qst.QuestionnaireT) {
 						Auf die Erreichung welcher Sustainable Development Goals (SDGs)/ Ziele für nachhaltige Entwicklung der UN arbeiten Sie mit Ihren Investitionen hin?					
 						<br>
 						<br>
-						(Wählen Sie bis zu fünf )
+						(Wählen Sie bis zu fünf)
 					`),
 			}
 			gr := page.AddBiiiPrio(mainLbl, q13Labels, q13inputNames, map[int]bool{}, 0)
@@ -1478,7 +1481,7 @@ func page4Quest11(q *qst.QuestionnaireT) {
 						In welchen Bereichen sind die größten Fortschritte notwendig?
 						<br>
 						<br>
-						(Wählen Sie bis zu fünf )
+						(Wählen Sie bis zu fünf)
 					`),
 			}
 			gr := page.AddBiiiPrio(mainLbl, q32Labels, q32inputNames, map[int]bool{10: true}, 2)
@@ -1598,166 +1601,184 @@ func page4Quest11(q *qst.QuestionnaireT) {
 		page.Label = trl.S{"de": ""}
 		page.NavigationCondition = "BIIINow"
 		page.SuppressInProgressbar = true
-		page.WidthMax("42rem")
+		page.WidthMax("44rem")
 
-		page.ValidationFuncName = "biiiPage16"
+		page.ValidationFuncName = "biiiQ33"
 
-		mainLbls := []trl.S{
-			{
+		{
 
-				"de": `
-					<b>33a.</b> &nbsp;
-					In welchen Themenfeldern sehen Sie 
-					den größten 
-					<b><i>Bedarf an Kapital</i></b> 
+			q33inputNames := []string{
+				"q33_paris",
+				"q33_leisure",
+				"q33_education",
+				"q33_work",
+
+				"q33_research",
+				"q33_health",
+				"q33_social_services",
+				"q33_env_protection",
+
+				"q33_oceans",
+				"q33_wash",
+				"q33_agriculture",
+				"q33_energy",
+
+				"q33_residential",
+				"q33_it",
+				"q33_production",
+				"q33_urban_dev",
+
+				"q33_financial_access",
+				"q33_other",
+			}
+			q33Labels := []trl.S{
+				{"de": "Paris-Aligned oder Net Zero"},
+				{"de": "Kultur und Freizeit (Kultur, Kunst, Sport, sonstige Freizeitgestaltung und soziale Vereine)"},
+				{"de": "Bildung (Grundschule, Sekundarschule, Hochschule, Sonstiges)"},
+				{"de": "Arbeitsmarktintegration"},
+
+				{"de": "Forschung"},
+				{"de": "Gesundheit (Krankenhäuser, Rehabilitation, Pflegeheime, psychische Gesundheit / Krisenintervention)"},
+				{"de": "Soziale Dienste (Notfall, Hilfe, Einkommensunterstützung / Unterhalt)"},
+				{"de": "Umweltschutz (Forstwirtschaft, Land, Abfall, Luft, biologische Vielfalt und Ökosysteme,"},
+
+				{"de": "Meere und Küstengebiete)"},
+				{"de": "WASH (Wasser, Sanitärversorgung und Hygiene)"},
+				{"de": "Landwirtschaft"},
+				{"de": "Energie (Zugang zu Energie, erneuerbare Energie)"},
+
+				{"de": "Wohnen"},
+				{"de": "IT / Technologien"},
+				{"de": "Fertigung / Produktion"},
+				{"de": "Stadterneuerung / Territoriale Entwicklung"},
+
+				{"de": "Finanzielle Eingliederung und Zugang zu Finanzmitteln (d.h. Mikrofinanzierung, Mikroversicherungen, Finanz Bildungsdienstleistungen, Bankwesen)"},
+				{"de": "Andere, bitte nennen"},
+			}
+
+			mainLbl := trl.S{
+				"de": fmt.Sprintf(`
+					<b>33.</b> &nbsp;
+					In welchen Themenfeldern sehen Sie
+					
+					<!--
+					den größten <b><i>Bedarf an Kapital</i></b>
+					das <b><i>größte Potential</i></b>
+					-->
+					<table style="margin: -0.75rem 0">
+						<tr>
+
+							<td style="width:43%%">
+								&nbsp;
+							</td>
+							<td style="width:28%%">
+								den größten <b><i>Bedarf an Kapital</i></b>
+							</td>
+							<td style="width:28%%">
+								das <b><i>größte Potential</i></b>
+							</td>
+
+
+						</tr>
+					</table>
+
 					für Impact Investments?
-
 					<br>
-					Bitte <i>drei</i> pro Spalte wählen.
-				`,
-			},
-			{
-
-				"de": `
-					<b>33b.</b> &nbsp;
-					In welchen Themenfeldern sehen Sie 
-					den größten 
-					das <b><i>größte Potential</i></b> 
-					für Impact Investments? 
-
+					(Wählen Sie <i>je Spalte</i> bis zu fünf Themenfelder)
 					<br>
-					Bitte <i>drei</i> pro Spalte wählen.
-				`,
-			},
+				`),
+			}
+			gr := page.AddBiiiPrio2Cols(mainLbl, q33Labels, q33inputNames, map[int]bool{17: true})
+			_ = gr
 		}
 
-		fns := []string{
-			"paris",
-			"leisure",
-			"education",
-			"work",
-
-			"research",
-			"health",
-			"social_services",
-			"env_protection",
-
-			"oceans",
-			"wash",
-			"agriculture",
-			"energy",
-
-			"residential",
-			"it",
-			"production",
-			"urban_dev",
-
-			"financial_access",
-		}
-
-		lbls := []trl.S{
-			{"de": "Paris-Aligned oder Net Zero"},
-			{"de": "Kultur und Freizeit (Kultur, Kunst, Sport, sonstige Freizeitgestaltung und soziale Vereine)"},
-			{"de": "Bildung (Grundschule, Sekundarschule, Hochschule, Sonstiges)"},
-			{"de": "Arbeitsmarktintegration"},
-
-			{"de": "Forschung"},
-			{"de": "Gesundheit (Krankenhäuser, Rehabilitation, Pflegeheime, psychische Gesundheit / Krisenintervention)"},
-			{"de": "Soziale Dienste (Notfall, Hilfe, Einkommensunterstützung / Unterhalt)"},
-			{"de": "Umweltschutz (Forstwirtschaft, Land, Abfall, Luft, biologische Vielfalt und Ökosysteme,"},
-
-			{"de": "Meere und Küstengebiete)"},
-			{"de": "WASH (Wasser, Sanitärversorgung und Hygiene)"},
-			{"de": "Landwirtschaft"},
-			{"de": "Energie (Zugang zu Energie, erneuerbare Energie)"},
-
-			{"de": "Wohnen"},
-			{"de": "IT / Technologien"},
-			{"de": "Fertigung / Produktion"},
-			{"de": "Stadterneuerung / Territoriale Entwicklung"},
-
-			{"de": "Finanzielle Eingliederung und Zugang zu Finanzmitteln (d.h. Mikrofinanzierung, Mikroversicherungen, Finanz Bildungsdienstleistungen, Bankwesen)"},
-		}
-
-		q33ab := []string{"q33a", "q33b"}
-		cols := [][]trl.S{q33aColumns, q33bColumns}
-		for q33idx, q := range q33ab {
-
-			fieldNames := make([]string, 0, len(fns))
-			for _, fn := range fns {
-				fieldNames = append(fieldNames, fmt.Sprintf("%v_%v", q, fn))
+		/*
+			fns := []string{
 			}
 
-			// gr0
-			{
-				gb := qst.NewGridBuilderRadios(
-					columnTemplate3a,
-					cols[q33idx],
-					fieldNames,
-					radioVals3,
-					lbls,
-				)
-				gb.MainLabel = mainLbls[q33idx]
-				gr := page.AddGrid(gb)
-				gr.BottomVSpacers = 1
+			lbls := []trl.S{
 			}
-			{
-				colsBelow1 := append([]float32{1.0}, columnTemplate3a...)
-				colsBelow1 = []float32{
-					1.38, 2.1, //   3.0, 1,  |  4.6 separated to two cols
-					0.0, 1, //     3.0, 1,  |  4.6 separated to two cols
-					0.0, 1,
-					0.0, 1,
-				}
-				colsBelow2 := []float32{}
-				for i := 0; i < len(colsBelow1); i += 2 {
-					colsBelow2 = append(colsBelow2, colsBelow1[i]+colsBelow1[i+1])
+
+			q33ab := []string{"q33a", "q33b"}
+			cols := [][]trl.S{q33aColumns, q33bColumns}
+			for q33idx, q := range q33ab {
+
+				fieldNames := make([]string, 0, len(fns))
+				for _, fn := range fns {
+					fieldNames = append(fieldNames, fmt.Sprintf("%v_%v", q, fn))
 				}
 
-				gr := page.AddGroup()
-				gr.Cols = 7
-				gr.BottomVSpacers = 4
-				stl := ""
-				for colIdx := 0; colIdx < len(colsBelow2); colIdx++ {
-					stl = fmt.Sprintf(
-						"%v   %vfr ",
-						stl,
-						colsBelow2[colIdx],
+				// gr0
+				{
+					gb := qst.NewGridBuilderRadios(
+						columnTemplate3a,
+						cols[q33idx],
+						fieldNames,
+						radioVals3,
+						lbls,
 					)
-				}
-				gr.Style = css.NewStylesResponsive(gr.Style)
-				if gr.Style.Desktop.StyleGridContainer.TemplateColumns == "" {
-					gr.Style.Desktop.StyleBox.Display = "grid"
-					gr.Style.Desktop.StyleGridContainer.TemplateColumns = stl
-				} else {
-					log.Printf("GridBuilder.AddGrid() - another TemplateColumns already present.\nwnt%v\ngot%v", stl, gr.Style.Desktop.StyleGridContainer.TemplateColumns)
+					gb.MainLabel = mainLbls[q33idx]
+					gr := page.AddGrid(gb)
+					gr.BottomVSpacers = 1
 				}
 				{
-					inp := gr.AddInput()
-					inp.Type = "text"
-					inp.Name = fmt.Sprintf("%v_other_label", q) // "q33a_other_label"
+					colsBelow1 := append([]float32{1.0}, columnTemplate3a...)
+					colsBelow1 = []float32{
+						1.38, 2.1, //   3.0, 1,  |  4.6 separated to two cols
+						0.0, 1, //     3.0, 1,  |  4.6 separated to two cols
+						0.0, 1,
+						0.0, 1,
+					}
+					colsBelow2 := []float32{}
+					for i := 0; i < len(colsBelow1); i += 2 {
+						colsBelow2 = append(colsBelow2, colsBelow1[i]+colsBelow1[i+1])
+					}
 
-					inp.MaxChars = 17
-					inp.ColSpan = 1
-					inp.ColSpanLabel = 2.4
-					inp.ColSpanControl = 4
-					inp.Label = trl.S{
-						"de": "Andere",
-						"en": "Other",
+					gr := page.AddGroup()
+					gr.Cols = 7
+					gr.BottomVSpacers = 4
+					stl := ""
+					for colIdx := 0; colIdx < len(colsBelow2); colIdx++ {
+						stl = fmt.Sprintf(
+							"%v   %vfr ",
+							stl,
+							colsBelow2[colIdx],
+						)
+					}
+					gr.Style = css.NewStylesResponsive(gr.Style)
+					if gr.Style.Desktop.StyleGridContainer.TemplateColumns == "" {
+						gr.Style.Desktop.StyleBox.Display = "grid"
+						gr.Style.Desktop.StyleGridContainer.TemplateColumns = stl
+					} else {
+						log.Printf("GridBuilder.AddGrid() - another TemplateColumns already present.\nwnt%v\ngot%v", stl, gr.Style.Desktop.StyleGridContainer.TemplateColumns)
+					}
+					{
+						inp := gr.AddInput()
+						inp.Type = "text"
+						inp.Name = fmt.Sprintf("%v_other_label", q) // "q33a_other_label"
+
+						inp.MaxChars = 17
+						inp.ColSpan = 1
+						inp.ColSpanLabel = 2.4
+						inp.ColSpanControl = 4
+						inp.Label = trl.S{
+							"de": "Andere",
+							"en": "Other",
+						}
+					}
+					for idx := 0; idx < len(radioVals3); idx++ {
+						rad := gr.AddInput()
+						rad.Type = "radio"
+						rad.Name = fmt.Sprintf("%v_other", q) // "q33a_other"
+						rad.ValueRadio = fmt.Sprint(idx + 1)
+						rad.ColSpan = 1
+						rad.ColSpanLabel = colsBelow1[2*(idx+1)]
+						rad.ColSpanControl = colsBelow1[2*(idx+1)] + 1
 					}
 				}
-				for idx := 0; idx < len(radioVals3); idx++ {
-					rad := gr.AddInput()
-					rad.Type = "radio"
-					rad.Name = fmt.Sprintf("%v_other", q) // "q33a_other"
-					rad.ValueRadio = fmt.Sprint(idx + 1)
-					rad.ColSpan = 1
-					rad.ColSpanLabel = colsBelow1[2*(idx+1)]
-					rad.ColSpanControl = colsBelow1[2*(idx+1)] + 1
-				}
-			}
 
-		}
+			}
+		*/
 
 	}
 
@@ -1828,7 +1849,7 @@ func page4Quest11(q *qst.QuestionnaireT) {
 						In welchen Asset Klassen erwarten Sie eine besonders dynamische Entwicklung?
 						<br>
 						<br>
-						(Wählen Sie bis zu fünf )
+						(Wählen Sie bis zu fünf)
 					`),
 			}
 			gr := page.AddBiiiPrio(mainLbl, q34Labels, q34inputNames, map[int]bool{12: true, 13: true}, 2)

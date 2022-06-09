@@ -174,139 +174,31 @@ func page4Quest11(q *qst.QuestionnaireT) {
 		page.Label = trl.S{"de": ""}
 		page.NavigationCondition = "BIIINow"
 		page.SuppressInProgressbar = true
-		page.WidthMax("48rem")
+		page.WidthMax("44rem")
 
 		page.ValidationFuncName = "biiiQ12"
 		page.ValidationFuncMsg = trl.S{"de": "no javascript dialog message needed"}
 
-		mainLbl := trl.S{
-			"de": fmt.Sprintf(`
+		{
+			mainLbl := trl.S{
+				"de": fmt.Sprintf(`
 						<b>12. </b> &nbsp;	
 						
 						Welche Themenfelder decken Ihre Investitionen ab? 
 					
 						<br>
 						<br>
+						<!--
 						(Mehrfachauswahl in der Reihenfolge der investierten Volumina. 1 bis 5,  1= höchstes Volumen)
+						-->
+						(Wählen Sie bis zu fünf )
 
 					`),
-		}
-
-		{
-
-			gr := page.AddBiiiPrio(mainLbl, q12Labels, q12inputNames, 16)
+			}
+			gr := page.AddBiiiPrio(mainLbl, q12Labels, q12inputNames, map[int]bool{16: true}, 1)
 			_ = gr
 			// gr.WidthMax("38rem")
 
-		}
-
-		if true {
-
-			//
-			//
-			//
-			// gr0, gr1
-			var columnTemplateLocal = []float32{
-				3.6, 1,
-				0.0, 1,
-				0.0, 1,
-				0.0, 1,
-				0.0, 1,
-			}
-			colsBelow1 := append([]float32{1.0}, columnTemplateLocal...)
-			colsBelow1 = []float32{
-				1.4, 2.2, //   3.0, 1,  |  4.6 separated to two cols
-				0.0, 1,
-				0.0, 1,
-				0.0, 1,
-				0.0, 1,
-				0.0, 1,
-			}
-			colsBelow2 := []float32{}
-			for i := 0; i < len(colsBelow1); i += 2 {
-				colsBelow2 = append(colsBelow2, colsBelow1[i]+colsBelow1[i+1])
-			}
-
-			{
-
-				inpNames := []string{}
-				for _, nm := range q12inputNames {
-					inpNames = append(inpNames, "q12_v1_"+nm)
-				}
-
-				{
-					gb := qst.NewGridBuilderRadios(
-						columnTemplateLocal,
-						oneToFiveVolume,
-						inpNames,
-						radioVals5,
-						q12Labels,
-					)
-
-					gb.MainLabel = mainLbl
-
-					gr := page.AddGrid(gb)
-					gr.BottomVSpacers = 1
-				}
-
-				{
-
-					gr := page.AddGroup()
-					gr.Cols = 7
-					gr.BottomVSpacers = 4
-					stl := ""
-					for colIdx := 0; colIdx < len(colsBelow2); colIdx++ {
-						stl = fmt.Sprintf(
-							"%v   %vfr ",
-							stl,
-							colsBelow2[colIdx],
-						)
-					}
-					gr.Style = css.NewStylesResponsive(gr.Style)
-					if gr.Style.Desktop.StyleGridContainer.TemplateColumns == "" {
-						gr.Style.Desktop.StyleBox.Display = "grid"
-						gr.Style.Desktop.StyleGridContainer.TemplateColumns = stl
-						// log.Printf("fmt special 2021-09: grid template - %v", stl)
-					} else {
-						log.Printf("GridBuilder.AddGrid() - another TemplateColumns already present.\nwnt%v\ngot%v", stl, gr.Style.Desktop.StyleGridContainer.TemplateColumns)
-					}
-
-					{
-						inp := gr.AddInput()
-						inp.Type = "text"
-						inp.Name = "q12_v1_other_label"
-						inp.MaxChars = 17
-						inp.ColSpan = 1
-						inp.ColSpanLabel = 2.4
-						inp.ColSpanControl = 4
-						// inp.Placeholder = trl.S{"de": "Andere: Welche?", "en": "Other: Which?"}
-						inp.Label = trl.S{
-							"de": "Andere",
-							"en": "Other",
-						}
-
-						// inp.StyleCtl = css.NewStylesResponsive(inp.StyleCtl)
-						// inp.StyleCtl.Desktop.StyleBox.WidthMax = "14.0rem"
-						// inp.StyleCtl.Mobile.StyleBox.WidthMax = "4.0rem"
-
-					}
-
-					//
-					for idx := 0; idx < len(oneToFiveVolume); idx++ {
-						rad := gr.AddInput()
-						rad.Type = "radio"
-
-						rad.Name = "q12_v1" + "_other"
-						rad.ValueRadio = fmt.Sprint(idx + 1)
-
-						rad.ColSpan = 1
-						rad.ColSpanLabel = colsBelow1[2*(idx+1)]
-						rad.ColSpanControl = colsBelow1[2*(idx+1)] + 1
-					}
-
-				}
-
-			}
 		}
 
 	}
@@ -319,55 +211,23 @@ func page4Quest11(q *qst.QuestionnaireT) {
 		page.NavigationCondition = "BIIINow"
 		page.SuppressInProgressbar = true
 
-		page.WidthMax("48rem")
+		page.WidthMax("34rem")
 
-		//
-		//
-		//
-		// gr0
-		var columnTemplateLocal = []float32{
-			3.6, 1,
-			0.0, 1,
-			0.0, 1,
-			0.0, 1,
-			0.0, 1,
-		}
-
-		// for idx, assCl := range inputNamesAssetClassesChangeQ3 {
 		{
-
-			inpNames := []string{}
-			for _, nm := range q13inputNames {
-				inpNames = append(inpNames, "q13_"+nm)
-			}
-
-			{
-				gb := qst.NewGridBuilderRadios(
-					columnTemplateLocal,
-					oneToFiveImportance,
-					inpNames,
-					radioVals5,
-					q13Labels,
-				)
-
-				gb.MainLabel = trl.S{
-					"de": fmt.Sprintf(`
+			mainLbl := trl.S{
+				"de": fmt.Sprintf(`
 						<b>13. </b> &nbsp;	
-						
 						Auf die Erreichung welcher Sustainable Development Goals (SDGs)/ Ziele für nachhaltige Entwicklung der UN arbeiten Sie mit Ihren Investitionen hin?					
-
 						<br>
 						<br>
-						(Mehrfachauswahl in der Reihenfolge der Wichtigkeit. 1 bis 5, 1= höchste Wichtigkeit)
-
+						(Wählen Sie bis zu fünf )
 					`),
-				}
-
-				gr := page.AddGrid(gb)
-				gr.BottomVSpacers = 3
 			}
-
+			gr := page.AddBiiiPrio(mainLbl, q13Labels, q13inputNames, map[int]bool{}, 0)
+			_ = gr
+			// gr.WidthMax("38rem")
 		}
+
 	}
 
 	// page 8
@@ -1576,108 +1436,159 @@ func page4Quest11(q *qst.QuestionnaireT) {
 		page.SuppressInProgressbar = true
 		page.WidthMax("42rem")
 
-		// gr0
+		page.ValidationFuncName = "biiiQ32"
+		page.ValidationFuncMsg = trl.S{"de": "no javascript dialog message needed"}
+
 		{
-			gb := qst.NewGridBuilderRadios(
-				columnTemplate3a,
-				q32columns,
-				[]string{
-					"q32_method_mgt_meas",
-					"q32_definition",
-					"q32_certifications",
-					"q32_education",
 
-					"q32_data",
-					"q32_legislation",
-					"q32_bestpract",
-					"q32_reporting",
+			q32inputNames := []string{
+				"q32_method_mgt_meas",
+				"q32_definition",
+				"q32_certifications",
+				"q32_education",
 
-					"q32_assetclass",
-					"q32_productdesign",
-				},
-				radioVals3,
-				[]trl.S{
-					{"de": "Impact Methodologie, Management und Messung "},
-					{"de": "Harmonisierte Impact Definition "},
-					{"de": "Impact Labels, Ratings und Zertifizierungen "},
-					{"de": "Bildung und Weiterbildung"},
+				"q32_data",
+				"q32_legislation",
+				"q32_bestpract",
+				"q32_reporting",
 
-					{"de": "Impact Datenverfügbarkeit und Kriterienkatalog "},
-					{"de": "Gesetzgebung Impact  "},
-					{"de": "Benchmarks und Best practices "},
-					{"de": "Berichterstattung "},
-
-					{"de": "Impact Investing als Anlageklasse  "},
-					{"de": "Produktgestaltung"},
-				},
-			)
-			gb.MainLabel = trl.S{
-				"de": `
-					<b>32.</b> &nbsp;
-					In welchen Bereichen sind die größten Fortschritte notwendig? 
-					<br>
-					<br>
-					(Top 5 Nennungen, 1 bis 5, 1= höchster Fortschritt notwendig)
-				`,
+				"q32_assetclass",
+				"q32_productdesign",
+				"q32_other",
 			}
-			gr := page.AddGrid(gb)
-			gr.BottomVSpacers = 1
+			q32Labels := []trl.S{
+				{"de": "Impact Methodologie, Management und Messung "},
+				{"de": "Harmonisierte Impact Definition "},
+				{"de": "Impact Labels, Ratings und Zertifizierungen "},
+				{"de": "Bildung und Weiterbildung"},
+
+				{"de": "Impact Datenverfügbarkeit und Kriterienkatalog "},
+				{"de": "Gesetzgebung Impact  "},
+				{"de": "Benchmarks und Best practices "},
+				{"de": "Berichterstattung "},
+
+				{"de": "Impact Investing als Anlageklasse  "},
+				{"de": "Produktgestaltung"},
+				{"de": "Andere, bitte nennen"},
+			}
+
+			mainLbl := trl.S{
+				"de": fmt.Sprintf(`
+						<b>32.</b> &nbsp;
+						In welchen Bereichen sind die größten Fortschritte notwendig?
+						<br>
+						<br>
+						(Wählen Sie bis zu fünf )
+					`),
+			}
+			gr := page.AddBiiiPrio(mainLbl, q32Labels, q32inputNames, map[int]bool{10: true}, 2)
+			_ = gr
+			// gr.WidthMax("38rem")
 		}
-		{
-			colsBelow1 := append([]float32{1.0}, columnTemplate3a...)
-			colsBelow1 = []float32{
-				1.38, 2.1, //   3.0, 1,  |  4.6 separated to two cols
-				0.0, 1, //     3.0, 1,  |  4.6 separated to two cols
-				0.0, 1,
-				0.0, 1,
-			}
-			colsBelow2 := []float32{}
-			for i := 0; i < len(colsBelow1); i += 2 {
-				colsBelow2 = append(colsBelow2, colsBelow1[i]+colsBelow1[i+1])
-			}
 
-			gr := page.AddGroup()
-			gr.Cols = 7
-			gr.BottomVSpacers = 4
-			stl := ""
-			for colIdx := 0; colIdx < len(colsBelow2); colIdx++ {
-				stl = fmt.Sprintf(
-					"%v   %vfr ",
-					stl,
-					colsBelow2[colIdx],
+		/*
+			// gr0
+			{
+				gb := qst.NewGridBuilderRadios(
+					columnTemplate3a,
+					q32columns,
+					[]string{
+						"q32_method_mgt_meas",
+						"q32_definition",
+						"q32_certifications",
+						"q32_education",
+
+						"q32_data",
+						"q32_legislation",
+						"q32_bestpract",
+						"q32_reporting",
+
+						"q32_assetclass",
+						"q32_productdesign",
+					},
+					radioVals3,
+					[]trl.S{
+						{"de": "Impact Methodologie, Management und Messung "},
+						{"de": "Harmonisierte Impact Definition "},
+						{"de": "Impact Labels, Ratings und Zertifizierungen "},
+						{"de": "Bildung und Weiterbildung"},
+
+						{"de": "Impact Datenverfügbarkeit und Kriterienkatalog "},
+						{"de": "Gesetzgebung Impact  "},
+						{"de": "Benchmarks und Best practices "},
+						{"de": "Berichterstattung "},
+
+						{"de": "Impact Investing als Anlageklasse  "},
+						{"de": "Produktgestaltung"},
+					},
 				)
-			}
-			gr.Style = css.NewStylesResponsive(gr.Style)
-			if gr.Style.Desktop.StyleGridContainer.TemplateColumns == "" {
-				gr.Style.Desktop.StyleBox.Display = "grid"
-				gr.Style.Desktop.StyleGridContainer.TemplateColumns = stl
-			} else {
-				log.Printf("GridBuilder.AddGrid() - another TemplateColumns already present.\nwnt%v\ngot%v", stl, gr.Style.Desktop.StyleGridContainer.TemplateColumns)
+				gb.MainLabel = trl.S{
+					"de": `
+						<b>32.</b> &nbsp;
+						In welchen Bereichen sind die größten Fortschritte notwendig?
+						<br>
+						<br>
+						(Top 5 Nennungen, 1 bis 5, 1= höchster Fortschritt notwendig)
+					`,
+				}
+				gr := page.AddGrid(gb)
+				gr.BottomVSpacers = 1
 			}
 			{
-				inp := gr.AddInput()
-				inp.Type = "text"
-				inp.Name = "q32_other_label"
-				inp.MaxChars = 17
-				inp.ColSpan = 1
-				inp.ColSpanLabel = 2.4
-				inp.ColSpanControl = 4
-				inp.Label = trl.S{
-					"de": "Andere",
-					"en": "Other",
+				colsBelow1 := append([]float32{1.0}, columnTemplate3a...)
+				colsBelow1 = []float32{
+					1.38, 2.1, //   3.0, 1,  |  4.6 separated to two cols
+					0.0, 1, //     3.0, 1,  |  4.6 separated to two cols
+					0.0, 1,
+					0.0, 1,
+				}
+				colsBelow2 := []float32{}
+				for i := 0; i < len(colsBelow1); i += 2 {
+					colsBelow2 = append(colsBelow2, colsBelow1[i]+colsBelow1[i+1])
+				}
+
+				gr := page.AddGroup()
+				gr.Cols = 7
+				gr.BottomVSpacers = 4
+				stl := ""
+				for colIdx := 0; colIdx < len(colsBelow2); colIdx++ {
+					stl = fmt.Sprintf(
+						"%v   %vfr ",
+						stl,
+						colsBelow2[colIdx],
+					)
+				}
+				gr.Style = css.NewStylesResponsive(gr.Style)
+				if gr.Style.Desktop.StyleGridContainer.TemplateColumns == "" {
+					gr.Style.Desktop.StyleBox.Display = "grid"
+					gr.Style.Desktop.StyleGridContainer.TemplateColumns = stl
+				} else {
+					log.Printf("GridBuilder.AddGrid() - another TemplateColumns already present.\nwnt%v\ngot%v", stl, gr.Style.Desktop.StyleGridContainer.TemplateColumns)
+				}
+				{
+					inp := gr.AddInput()
+					inp.Type = "text"
+					inp.Name = "q32_other_label"
+					inp.MaxChars = 17
+					inp.ColSpan = 1
+					inp.ColSpanLabel = 2.4
+					inp.ColSpanControl = 4
+					inp.Label = trl.S{
+						"de": "Andere",
+						"en": "Other",
+					}
+				}
+				for idx := 0; idx < len(radioVals3); idx++ {
+					rad := gr.AddInput()
+					rad.Type = "radio"
+					rad.Name = "q32_other"
+					rad.ValueRadio = fmt.Sprint(idx + 1)
+					rad.ColSpan = 1
+					rad.ColSpanLabel = colsBelow1[2*(idx+1)]
+					rad.ColSpanControl = colsBelow1[2*(idx+1)] + 1
 				}
 			}
-			for idx := 0; idx < len(radioVals3); idx++ {
-				rad := gr.AddInput()
-				rad.Type = "radio"
-				rad.Name = "q32_other"
-				rad.ValueRadio = fmt.Sprint(idx + 1)
-				rad.ColSpan = 1
-				rad.ColSpanLabel = colsBelow1[2*(idx+1)]
-				rad.ColSpanControl = colsBelow1[2*(idx+1)] + 1
-			}
-		}
-
+		*/
 	}
 
 	// page 17
@@ -1859,134 +1770,202 @@ func page4Quest11(q *qst.QuestionnaireT) {
 		page.SuppressInProgressbar = true
 		page.WidthMax("42rem")
 
-		// gr0
+		page.ValidationFuncName = "biiiQ34"
+		page.ValidationFuncMsg = trl.S{"de": "no javascript dialog message needed"}
+
 		{
-			gb := qst.NewGridBuilderRadios(
-				columnTemplate3a,
-				q34columns,
-				[]string{
-					"q34_private_equity",
-					"q34_public_equity",
-					"q34_private_external",
-					"q34_public_external",
+			q34inputNames := []string{
+				"q34_private_equity",
+				"q34_public_equity",
+				"q34_private_external",
+				"q34_public_external",
 
-					"q34_real_estate",
-					"q34_money_deposits",
-					"q34_soc",
-					"q34_green_bonds",
+				"q34_real_estate",
+				"q34_money_deposits",
+				"q34_soc",
+				"q34_green_bonds",
 
-					"q34_emerging_markets",
-					"q34_microfinance",
-					"q34_commodities",
-					"q34_slb",
-				},
-				radioVals3,
-				[]trl.S{
-					{"de": "Privates (nicht börsengehandeltes) Beteiligungskapital (Private equity)"},
-					{"de": "Börsengehandeltes Beteiligungskapital / Aktien (Public equity)"},
-					{"de": "Private (nicht börsengehandeltes) Fremdkapital/ Anleihen (Private debt)"},
-					{"de": "Börsengehandeltes Fremdkapital / Anleihen (Public debt)  "},
+				"q34_emerging_markets",
+				"q34_microfinance",
+				"q34_commodities",
+				"q34_slb",
 
-					{"de": "Immobilien (Real estate)  "},
-					{"de": "Einlagen oder Zahlungsmitteläquivalente / Geldwerte (Deposits oder cash equivalents / monetary assets) "},
-					{"de": `Soziale Infrastruktur Finanzierung (SOC (z.B. SIB / DIB) ) 
-						<div style="font-size:80%; line-height: 100%; margin-top: 0.3rem; margin-left: 1rem;">
-							SOC: Social Outcomes Contracting; 
-							<br>
-							SIB: Social Impact Bond; 
-							<br>
-							DIB: Development Impact Bond
-						</div>
-					
-					`},
-					{"de": "Grüne Anleihen (Green Bonds)  "},
-
-					{"de": "Schwellenländer(markt) (Emerging markets)  "},
-					{"de": "Mikrofinanzierung (Microfinance)  "},
-					{"de": "Rohstoffe (Commodities)  "},
-					{"de": "Sustainability-Linked Bonds (SLBs)"},
-				},
-			)
-			gb.MainLabel = trl.S{
-				"de": `
-					<b>34.</b> &nbsp;
-					In welchen Asset Klassen erwarten Sie eine besonders dynamische Entwicklung?
-
-					<br>
-					<br>
-					(Top 5 Nennungen, 1 bis 5, 1= höchste Entwicklung)
-				`,
+				"q34_hybrid",
+				"q34_other",
 			}
-			gr := page.AddGrid(gb)
-			gr.BottomVSpacers = 1
-		}
+			q34Labels := []trl.S{
+				{"de": "Privates (nicht börsengehandeltes) Beteiligungskapital (Private equity)"},
+				{"de": "Börsengehandeltes Beteiligungskapital / Aktien (Public equity)"},
+				{"de": "Private (nicht börsengehandeltes) Fremdkapital/ Anleihen (Private debt)"},
+				{"de": "Börsengehandeltes Fremdkapital / Anleihen (Public debt)  "},
 
-		if true {
-			fnOthers := []string{"q34_hybrid", "q34_other"}
-			lblOthers := []trl.S{
+				{"de": "Immobilien (Real estate)  "},
+				{"de": "Einlagen oder Zahlungsmitteläquivalente / Geldwerte (Deposits oder cash equivalents / monetary assets) "},
+				{"de": `Soziale Infrastruktur Finanzierung (SOC (z.B. SIB / DIB) )
+							<div style="font-size:80%; line-height: 100%; margin-top: 0.3rem; margin-left: 1rem;">
+								SOC: Social Outcomes Contracting;
+								<br>
+								SIB: Social Impact Bond;
+								<br>
+								DIB: Development Impact Bond
+							</div>
+
+						`},
+				{"de": "Grüne Anleihen (Green Bonds)  "},
+
+				{"de": "Schwellenländer(markt) (Emerging markets)  "},
+				{"de": "Mikrofinanzierung (Microfinance)  "},
+				{"de": "Rohstoffe (Commodities)  "},
+				{"de": "Sustainability-Linked Bonds (SLBs)"},
+
 				{"de": "Hybride Finanz&shy;instrumente (Hybrid financial instruments), bitte nennen"},
 				{"de": "Andere, bitte nennen"},
 			}
 
-			for otherIdx, fldName := range fnOthers {
+			mainLbl := trl.S{
+				"de": fmt.Sprintf(`
+						<b>34.</b> &nbsp;
+						In welchen Asset Klassen erwarten Sie eine besonders dynamische Entwicklung?
+						<br>
+						<br>
+						(Wählen Sie bis zu fünf )
+					`),
+			}
+			gr := page.AddBiiiPrio(mainLbl, q34Labels, q34inputNames, map[int]bool{12: true, 13: true}, 2)
+			_ = gr
+		}
+		// gr.WidthMax("38rem")
 
-				colsBelow1 := append([]float32{1.0}, columnTemplate3a...)
-				colsBelow1 = []float32{
-					1.38, 2.1, //   3.0, 1,  |  4.6 separated to two cols
-					0.0, 1, //     3.0, 1,  |  4.6 separated to two cols
-					0.0, 1,
-					0.0, 1,
-				}
-				colsBelow2 := []float32{}
-				for i := 0; i < len(colsBelow1); i += 2 {
-					colsBelow2 = append(colsBelow2, colsBelow1[i]+colsBelow1[i+1])
-				}
+		/*
 
-				gr := page.AddGroup()
-				gr.Cols = 7
-				gr.BottomVSpacers = 4
-				stl := ""
-				for colIdx := 0; colIdx < len(colsBelow2); colIdx++ {
-					stl = fmt.Sprintf(
-						"%v   %vfr ",
-						stl,
-						colsBelow2[colIdx],
-					)
+			// gr0
+			{
+				gb := qst.NewGridBuilderRadios(
+					columnTemplate3a,
+					q34columns,
+					[]string{
+						"q34_private_equity",
+						"q34_public_equity",
+						"q34_private_external",
+						"q34_public_external",
+
+						"q34_real_estate",
+						"q34_money_deposits",
+						"q34_soc",
+						"q34_green_bonds",
+
+						"q34_emerging_markets",
+						"q34_microfinance",
+						"q34_commodities",
+						"q34_slb",
+					},
+					radioVals3,
+					[]trl.S{
+						{"de": "Privates (nicht börsengehandeltes) Beteiligungskapital (Private equity)"},
+						{"de": "Börsengehandeltes Beteiligungskapital / Aktien (Public equity)"},
+						{"de": "Private (nicht börsengehandeltes) Fremdkapital/ Anleihen (Private debt)"},
+						{"de": "Börsengehandeltes Fremdkapital / Anleihen (Public debt)  "},
+
+						{"de": "Immobilien (Real estate)  "},
+						{"de": "Einlagen oder Zahlungsmitteläquivalente / Geldwerte (Deposits oder cash equivalents / monetary assets) "},
+						{"de": `Soziale Infrastruktur Finanzierung (SOC (z.B. SIB / DIB) )
+							<div style="font-size:80%; line-height: 100%; margin-top: 0.3rem; margin-left: 1rem;">
+								SOC: Social Outcomes Contracting;
+								<br>
+								SIB: Social Impact Bond;
+								<br>
+								DIB: Development Impact Bond
+							</div>
+
+						`},
+						{"de": "Grüne Anleihen (Green Bonds)  "},
+
+						{"de": "Schwellenländer(markt) (Emerging markets)  "},
+						{"de": "Mikrofinanzierung (Microfinance)  "},
+						{"de": "Rohstoffe (Commodities)  "},
+						{"de": "Sustainability-Linked Bonds (SLBs)"},
+					},
+				)
+				gb.MainLabel = trl.S{
+					"de": `
+						<b>34.</b> &nbsp;
+						In welchen Asset Klassen erwarten Sie eine besonders dynamische Entwicklung?
+
+						<br>
+						<br>
+						(Top 5 Nennungen, 1 bis 5, 1= höchste Entwicklung)
+					`,
 				}
-				gr.Style = css.NewStylesResponsive(gr.Style)
-				if gr.Style.Desktop.StyleGridContainer.TemplateColumns == "" {
-					gr.Style.Desktop.StyleBox.Display = "grid"
-					gr.Style.Desktop.StyleGridContainer.TemplateColumns = stl
-				} else {
-					log.Printf("GridBuilder.AddGrid() - another TemplateColumns already present.\nwnt%v\ngot%v", stl, gr.Style.Desktop.StyleGridContainer.TemplateColumns)
-				}
-				{
-					inp := gr.AddInput()
-					inp.Type = "text"
-					inp.Name = fmt.Sprintf("q34_%v_label", fldName)
-					inp.MaxChars = 17
-					inp.ColSpan = 1
-					inp.ColSpanLabel = 2.4
-					inp.ColSpanControl = 4
-					// inp.Label = trl.S{
-					// 	"de": "Andere",
-					// 	"en": "Other",
-					// }
-					inp.Label = lblOthers[otherIdx]
-				}
-				for idx := 0; idx < len(radioVals3); idx++ {
-					rad := gr.AddInput()
-					rad.Type = "radio"
-					rad.Name = fmt.Sprintf("q34_%v", fldName)
-					rad.ValueRadio = fmt.Sprint(idx + 1)
-					rad.ColSpan = 1
-					rad.ColSpanLabel = colsBelow1[2*(idx+1)]
-					rad.ColSpanControl = colsBelow1[2*(idx+1)] + 1
-				}
+				gr := page.AddGrid(gb)
+				gr.BottomVSpacers = 1
 			}
 
-		}
+			if true {
+				fnOthers := []string{"q34_hybrid", "q34_other"}
+				lblOthers := []trl.S{
+					{"de": "Hybride Finanz&shy;instrumente (Hybrid financial instruments), bitte nennen"},
+					{"de": "Andere, bitte nennen"},
+				}
 
+				for otherIdx, fldName := range fnOthers {
+
+					colsBelow1 := append([]float32{1.0}, columnTemplate3a...)
+					colsBelow1 = []float32{
+						1.38, 2.1, //   3.0, 1,  |  4.6 separated to two cols
+						0.0, 1, //     3.0, 1,  |  4.6 separated to two cols
+						0.0, 1,
+						0.0, 1,
+					}
+					colsBelow2 := []float32{}
+					for i := 0; i < len(colsBelow1); i += 2 {
+						colsBelow2 = append(colsBelow2, colsBelow1[i]+colsBelow1[i+1])
+					}
+
+					gr := page.AddGroup()
+					gr.Cols = 7
+					gr.BottomVSpacers = 4
+					stl := ""
+					for colIdx := 0; colIdx < len(colsBelow2); colIdx++ {
+						stl = fmt.Sprintf(
+							"%v   %vfr ",
+							stl,
+							colsBelow2[colIdx],
+						)
+					}
+					gr.Style = css.NewStylesResponsive(gr.Style)
+					if gr.Style.Desktop.StyleGridContainer.TemplateColumns == "" {
+						gr.Style.Desktop.StyleBox.Display = "grid"
+						gr.Style.Desktop.StyleGridContainer.TemplateColumns = stl
+					} else {
+						log.Printf("GridBuilder.AddGrid() - another TemplateColumns already present.\nwnt%v\ngot%v", stl, gr.Style.Desktop.StyleGridContainer.TemplateColumns)
+					}
+					{
+						inp := gr.AddInput()
+						inp.Type = "text"
+						inp.Name = fmt.Sprintf("q34_%v_label", fldName)
+						inp.MaxChars = 17
+						inp.ColSpan = 1
+						inp.ColSpanLabel = 2.4
+						inp.ColSpanControl = 4
+						// inp.Label = trl.S{
+						// 	"de": "Andere",
+						// 	"en": "Other",
+						// }
+						inp.Label = lblOthers[otherIdx]
+					}
+					for idx := 0; idx < len(radioVals3); idx++ {
+						rad := gr.AddInput()
+						rad.Type = "radio"
+						rad.Name = fmt.Sprintf("q34_%v", fldName)
+						rad.ValueRadio = fmt.Sprint(idx + 1)
+						rad.ColSpan = 1
+						rad.ColSpanLabel = colsBelow1[2*(idx+1)]
+						rad.ColSpanControl = colsBelow1[2*(idx+1)] + 1
+					}
+				}
+
+			}
+		*/
 	}
 
 	// page 19

@@ -1,22 +1,17 @@
 const names = [
-    "q12_paris_align",
-    "q12_culture_sports",
-    "q12_education",
-    "q12_work",
-    "q12_research",
-    "q12_health",
-    "q12_social_service",
-    "q12_environment",
-    "q12_sanitary",
-    "q12_agriculture",
-    "q12_energy",
-    "q12_residential",
-    "q12_technology",
-    "q12_prodution",
-    "q12_urban_dev",
-    "q12_microfinance",
-    "q12_other",
-    "q12_na",
+    "q32_method_mgt_meas",
+    "q32_definition",
+    "q32_certifications",
+    "q32_education",
+
+    "q32_data",
+    "q32_legislation",
+    "q32_bestpract",
+    "q32_reporting",
+
+    "q32_assetclass",
+    "q32_productdesign",
+    "q32_other",
 ];
 
 

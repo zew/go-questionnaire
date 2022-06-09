@@ -17,7 +17,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "c28f0e15551045c78d17e2f276f7acb4898c37aa7cbe7c6387cdfa5fb69a755f",
+ 	"md_5": "63e08676606e29e3de6da733dcf138d9ae0281c1ad5a9ed24ea2226c46fa1382",
  	"lang_codes": [
  		"de"
  	],
@@ -3595,7 +3595,7 @@
  				"desktop": {
  					"grid_container_style": {},
  					"box_style": {
- 						"width_max": "48rem"
+ 						"width_max": "44rem"
  					},
  					"grid_item_style": {},
  					"text_style": {}
@@ -3613,22 +3613,19 @@
  			"groups": [
  				{
  					"bottom_vspacers": 3,
- 					"columns": 7,
+ 					"columns": 9,
  					"inputs": [
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\t\u003cb\u003e12. \u003c/b\u003e \u0026nbsp;\t\n\t\t\t\t\t\t\n\t\t\t\t\t\tWelche Themenfelder decken Ihre Investitionen ab? \n\t\t\t\t\t\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t(Mehrfachauswahl in der Reihenfolge der investierten Volumina. 1 bis 5,  1= höchs\u0026shy;tes Volumen)\n\n\t\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\t\u003cb\u003e12. \u003c/b\u003e \u0026nbsp;\t\n\t\t\t\t\t\t\n\t\t\t\t\t\tWelche Themenfelder decken Ihre Investitionen ab? \n\t\t\t\t\t\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003c!--\n\t\t\t\t\t\t(Mehrfachauswahl in der Reihenfolge der investierten Volumina. 1 bis 5,  1= höchs\u0026shy;tes Volumen)\n\t\t\t\t\t\t--\u003e\n\t\t\t\t\t\t(Wählen Sie bis zu fünf )\n\n\t\t\t\t\t"
  							},
- 							"col_span": 7,
+ 							"col_span": 9,
  							"col_span_label": 1
  						},
  						{
  							"name": "q12_paris_align",
- 							"type": "number",
- 							"max_chars": 2,
- 							"min": 1,
- 							"max": 5,
+ 							"type": "checkbox",
  							"label": {
  								"de": "Paris-Aligned oder Net Zero"
  							},
@@ -3637,11 +3634,23 @@
  							"col_span_control": 1
  						},
  						{
- 							"name": "q12_culture_sports",
+ 							"name": "q12_paris_align_addl",
  							"type": "number",
- 							"max_chars": 2,
- 							"min": 1,
- 							"max": 5,
+ 							"max_chars": 6,
+ 							"step": 0.1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "0,0"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio. €"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "q12_culture_sports",
+ 							"type": "checkbox",
  							"label": {
  								"de": "Kultur und Freizeit (Kultur, Kunst, Sport, sonstige Freizeitgestaltung und soziale Vereine)"
  							},
@@ -3650,11 +3659,23 @@
  							"col_span_control": 1
  						},
  						{
- 							"name": "q12_education",
+ 							"name": "q12_culture_sports_addl",
  							"type": "number",
- 							"max_chars": 2,
- 							"min": 1,
- 							"max": 5,
+ 							"max_chars": 6,
+ 							"step": 0.1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "0,0"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio. €"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "q12_education",
+ 							"type": "checkbox",
  							"label": {
  								"de": "Bil\u0026shy;dung (Grundschule, Sekundarschule, Hochschule, Sonstiges)"
  							},
@@ -3663,11 +3684,23 @@
  							"col_span_control": 1
  						},
  						{
- 							"name": "q12_work",
+ 							"name": "q12_education_addl",
  							"type": "number",
- 							"max_chars": 2,
- 							"min": 1,
- 							"max": 5,
+ 							"max_chars": 6,
+ 							"step": 0.1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "0,0"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio. €"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "q12_work",
+ 							"type": "checkbox",
  							"label": {
  								"de": "Erwerbstätigkeit"
  							},
@@ -3676,11 +3709,23 @@
  							"col_span_control": 1
  						},
  						{
- 							"name": "q12_research",
+ 							"name": "q12_work_addl",
  							"type": "number",
- 							"max_chars": 2,
- 							"min": 1,
- 							"max": 5,
+ 							"max_chars": 6,
+ 							"step": 0.1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "0,0"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio. €"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "q12_research",
+ 							"type": "checkbox",
  							"label": {
  								"de": "For\u0026shy;schung"
  							},
@@ -3689,11 +3734,23 @@
  							"col_span_control": 1
  						},
  						{
- 							"name": "q12_health",
+ 							"name": "q12_research_addl",
  							"type": "number",
- 							"max_chars": 2,
- 							"min": 1,
- 							"max": 5,
+ 							"max_chars": 6,
+ 							"step": 0.1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "0,0"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio. €"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "q12_health",
+ 							"type": "checkbox",
  							"label": {
  								"de": "Gesundheit (Krankenhäuser, Rehabilitation, Pflegeheime, psychische Gesundheit / Krisenintervention)"
  							},
@@ -3702,11 +3759,23 @@
  							"col_span_control": 1
  						},
  						{
- 							"name": "q12_social_service",
+ 							"name": "q12_health_addl",
  							"type": "number",
- 							"max_chars": 2,
- 							"min": 1,
- 							"max": 5,
+ 							"max_chars": 6,
+ 							"step": 0.1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "0,0"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio. €"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "q12_social_service",
+ 							"type": "checkbox",
  							"label": {
  								"de": "Soziale Dienste (Notfall, Hilfe, Einkommens\u0026shy;unterstützung / Unterhalt)"
  							},
@@ -3715,11 +3784,23 @@
  							"col_span_control": 1
  						},
  						{
- 							"name": "q12_environment",
+ 							"name": "q12_social_service_addl",
  							"type": "number",
- 							"max_chars": 2,
- 							"min": 1,
- 							"max": 5,
+ 							"max_chars": 6,
+ 							"step": 0.1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "0,0"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio. €"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "q12_environment",
+ 							"type": "checkbox",
  							"label": {
  								"de": "Umweltschutz (Forstwirt\u0026shy;schaft, Land, Abfall, Luft, biologische Vielfalt und Ökosysteme, Meere und Küstengebiete)"
  							},
@@ -3728,11 +3809,23 @@
  							"col_span_control": 1
  						},
  						{
- 							"name": "q12_sanitary",
+ 							"name": "q12_environment_addl",
  							"type": "number",
- 							"max_chars": 2,
- 							"min": 1,
- 							"max": 5,
+ 							"max_chars": 6,
+ 							"step": 0.1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "0,0"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio. €"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "q12_sanitary",
+ 							"type": "checkbox",
  							"label": {
  								"de": "WASH (Wasser, Sanitärversorgung und Hygiene)"
  							},
@@ -3741,11 +3834,23 @@
  							"col_span_control": 1
  						},
  						{
- 							"name": "q12_agriculture",
+ 							"name": "q12_sanitary_addl",
  							"type": "number",
- 							"max_chars": 2,
- 							"min": 1,
- 							"max": 5,
+ 							"max_chars": 6,
+ 							"step": 0.1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "0,0"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio. €"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "q12_agriculture",
+ 							"type": "checkbox",
  							"label": {
  								"de": "Landwirt\u0026shy;schaft"
  							},
@@ -3754,11 +3859,23 @@
  							"col_span_control": 1
  						},
  						{
- 							"name": "q12_energy",
+ 							"name": "q12_agriculture_addl",
  							"type": "number",
- 							"max_chars": 2,
- 							"min": 1,
- 							"max": 5,
+ 							"max_chars": 6,
+ 							"step": 0.1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "0,0"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio. €"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "q12_energy",
+ 							"type": "checkbox",
  							"label": {
  								"de": "Energie (Zugang zu Energie, erneuerbare Energie)"
  							},
@@ -3767,11 +3884,23 @@
  							"col_span_control": 1
  						},
  						{
- 							"name": "q12_residential",
+ 							"name": "q12_energy_addl",
  							"type": "number",
- 							"max_chars": 2,
- 							"min": 1,
- 							"max": 5,
+ 							"max_chars": 6,
+ 							"step": 0.1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "0,0"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio. €"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "q12_residential",
+ 							"type": "checkbox",
  							"label": {
  								"de": "Wohnen"
  							},
@@ -3780,11 +3909,23 @@
  							"col_span_control": 1
  						},
  						{
- 							"name": "q12_technology",
+ 							"name": "q12_residential_addl",
  							"type": "number",
- 							"max_chars": 2,
- 							"min": 1,
- 							"max": 5,
+ 							"max_chars": 6,
+ 							"step": 0.1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "0,0"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio. €"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "q12_technology",
+ 							"type": "checkbox",
  							"label": {
  								"de": "IT / Technologien"
  							},
@@ -3793,11 +3934,23 @@
  							"col_span_control": 1
  						},
  						{
- 							"name": "q12_prodution",
+ 							"name": "q12_technology_addl",
  							"type": "number",
- 							"max_chars": 2,
- 							"min": 1,
- 							"max": 5,
+ 							"max_chars": 6,
+ 							"step": 0.1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "0,0"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio. €"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "q12_prodution",
+ 							"type": "checkbox",
  							"label": {
  								"de": "Fertigung / Produktion"
  							},
@@ -3806,11 +3959,23 @@
  							"col_span_control": 1
  						},
  						{
- 							"name": "q12_urban_dev",
+ 							"name": "q12_prodution_addl",
  							"type": "number",
- 							"max_chars": 2,
- 							"min": 1,
- 							"max": 5,
+ 							"max_chars": 6,
+ 							"step": 0.1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "0,0"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio. €"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "q12_urban_dev",
+ 							"type": "checkbox",
  							"label": {
  								"de": "Stadterneuerung / Territoriale Entwicklung"
  							},
@@ -3819,16 +3984,43 @@
  							"col_span_control": 1
  						},
  						{
- 							"name": "q12_microfinance",
+ 							"name": "q12_urban_dev_addl",
  							"type": "number",
- 							"max_chars": 2,
- 							"min": 1,
- 							"max": 5,
+ 							"max_chars": 6,
+ 							"step": 0.1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "0,0"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio. €"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "q12_microfinance",
+ 							"type": "checkbox",
  							"label": {
  								"de": "Finanzielle Eingliederung und Zugang zu Finanzmitteln (d.h. Mikro\u0026shy;finanzierung, Mikro\u0026shy;versi\u0026shy;cherungen, Finanz Bil\u0026shy;dungs\u0026shy;dienst\u0026shy;leistungen, Bankwesen)"
  							},
  							"col_span": 7,
  							"col_span_label": 6,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "q12_microfinance_addl",
+ 							"type": "number",
+ 							"max_chars": 6,
+ 							"step": 0.1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "0,0"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio. €"
+ 							},
+ 							"col_span": 2,
  							"col_span_control": 1
  						},
  						{
@@ -3844,1247 +4036,51 @@
  						},
  						{
  							"name": "q12_other",
- 							"type": "number",
- 							"max_chars": 2,
- 							"min": 1,
- 							"max": 5,
+ 							"type": "checkbox",
  							"col_span": 1,
  							"col_span_control": 1
  						},
  						{
- 							"name": "q12_na",
+ 							"name": "q12_other_addl",
  							"type": "number",
- 							"max_chars": 2,
- 							"min": 1,
- 							"max": 5,
+ 							"max_chars": 6,
+ 							"step": 0.1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "0,0"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio. €"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "q12_na",
+ 							"type": "checkbox",
  							"label": {
  								"de": "Nicht Anwendbar (N/A)"
  							},
  							"col_span": 7,
  							"col_span_label": 6,
  							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "q12_na_addl",
+ 							"type": "number",
+ 							"max_chars": 6,
+ 							"step": 0.1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "0,0"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio. €"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_control": 1
  						}
  					]
- 				},
- 				{
- 					"bottom_vspacers": 1,
- 					"columns": 5,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "\n\t\t\t\t\t\t\u003cb\u003e12. \u003c/b\u003e \u0026nbsp;\t\n\t\t\t\t\t\t\n\t\t\t\t\t\tWelche Themenfelder decken Ihre Investitionen ab? \n\t\t\t\t\t\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t(Mehrfachauswahl in der Reihenfolge der investierten Volumina. 1 bis 5,  1= höchs\u0026shy;tes Volumen)\n\n\t\t\t\t\t"
- 							},
- 							"col_span": 5,
- 							"col_span_label": 1
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "1\u003cbr\u003ehöchs\u0026shy;tes\u003cbr\u003eVol."
- 							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "2"
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "3"
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "4"
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "5\u003cbr\u003enied\u0026shy;rigstes\u003cbr\u003eVol."
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q12_v1_q12_paris_align",
- 							"type": "radio",
- 							"label": {
- 								"de": "Paris-Aligned oder Net Zero"
- 							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q12_v1_q12_paris_align",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q12_v1_q12_paris_align",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "q12_v1_q12_paris_align",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "q12_v1_q12_paris_align",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "q12_v1_q12_culture_sports",
- 							"type": "radio",
- 							"label": {
- 								"de": "Kultur und Freizeit (Kultur, Kunst, Sport, sonstige Freizeitgestaltung und soziale Vereine)"
- 							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q12_v1_q12_culture_sports",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q12_v1_q12_culture_sports",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "q12_v1_q12_culture_sports",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "q12_v1_q12_culture_sports",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "q12_v1_q12_education",
- 							"type": "radio",
- 							"label": {
- 								"de": "Bil\u0026shy;dung (Grundschule, Sekundarschule, Hochschule, Sonstiges)"
- 							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q12_v1_q12_education",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q12_v1_q12_education",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "q12_v1_q12_education",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "q12_v1_q12_education",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "q12_v1_q12_work",
- 							"type": "radio",
- 							"label": {
- 								"de": "Erwerbstätigkeit"
- 							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q12_v1_q12_work",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q12_v1_q12_work",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "q12_v1_q12_work",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "q12_v1_q12_work",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "q12_v1_q12_research",
- 							"type": "radio",
- 							"label": {
- 								"de": "For\u0026shy;schung"
- 							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q12_v1_q12_research",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q12_v1_q12_research",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "q12_v1_q12_research",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "q12_v1_q12_research",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "q12_v1_q12_health",
- 							"type": "radio",
- 							"label": {
- 								"de": "Gesundheit (Krankenhäuser, Rehabilitation, Pflegeheime, psychische Gesundheit / Krisenintervention)"
- 							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q12_v1_q12_health",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q12_v1_q12_health",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "q12_v1_q12_health",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "q12_v1_q12_health",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "q12_v1_q12_social_service",
- 							"type": "radio",
- 							"label": {
- 								"de": "Soziale Dienste (Notfall, Hilfe, Einkommens\u0026shy;unterstützung / Unterhalt)"
- 							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q12_v1_q12_social_service",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q12_v1_q12_social_service",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "q12_v1_q12_social_service",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "q12_v1_q12_social_service",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "q12_v1_q12_environment",
- 							"type": "radio",
- 							"label": {
- 								"de": "Umweltschutz (Forstwirt\u0026shy;schaft, Land, Abfall, Luft, biologische Vielfalt und Ökosysteme, Meere und Küstengebiete)"
- 							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q12_v1_q12_environment",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q12_v1_q12_environment",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "q12_v1_q12_environment",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "q12_v1_q12_environment",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "q12_v1_q12_sanitary",
- 							"type": "radio",
- 							"label": {
- 								"de": "WASH (Wasser, Sanitärversorgung und Hygiene)"
- 							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q12_v1_q12_sanitary",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q12_v1_q12_sanitary",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "q12_v1_q12_sanitary",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "q12_v1_q12_sanitary",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "q12_v1_q12_agriculture",
- 							"type": "radio",
- 							"label": {
- 								"de": "Landwirt\u0026shy;schaft"
- 							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q12_v1_q12_agriculture",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q12_v1_q12_agriculture",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "q12_v1_q12_agriculture",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "q12_v1_q12_agriculture",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "q12_v1_q12_energy",
- 							"type": "radio",
- 							"label": {
- 								"de": "Energie (Zugang zu Energie, erneuerbare Energie)"
- 							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q12_v1_q12_energy",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q12_v1_q12_energy",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "q12_v1_q12_energy",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "q12_v1_q12_energy",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "q12_v1_q12_residential",
- 							"type": "radio",
- 							"label": {
- 								"de": "Wohnen"
- 							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q12_v1_q12_residential",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q12_v1_q12_residential",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "q12_v1_q12_residential",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "q12_v1_q12_residential",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "q12_v1_q12_technology",
- 							"type": "radio",
- 							"label": {
- 								"de": "IT / Technologien"
- 							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q12_v1_q12_technology",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q12_v1_q12_technology",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "q12_v1_q12_technology",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "q12_v1_q12_technology",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "q12_v1_q12_prodution",
- 							"type": "radio",
- 							"label": {
- 								"de": "Fertigung / Produktion"
- 							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q12_v1_q12_prodution",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q12_v1_q12_prodution",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "q12_v1_q12_prodution",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "q12_v1_q12_prodution",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "q12_v1_q12_urban_dev",
- 							"type": "radio",
- 							"label": {
- 								"de": "Stadterneuerung / Territoriale Entwicklung"
- 							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q12_v1_q12_urban_dev",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q12_v1_q12_urban_dev",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "q12_v1_q12_urban_dev",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "q12_v1_q12_urban_dev",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "q12_v1_q12_microfinance",
- 							"type": "radio",
- 							"label": {
- 								"de": "Finanzielle Eingliederung und Zugang zu Finanzmitteln (d.h. Mikro\u0026shy;finanzierung, Mikro\u0026shy;versi\u0026shy;cherungen, Finanz Bil\u0026shy;dungs\u0026shy;dienst\u0026shy;leistungen, Bankwesen)"
- 							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q12_v1_q12_microfinance",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q12_v1_q12_microfinance",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "q12_v1_q12_microfinance",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "q12_v1_q12_microfinance",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "q12_v1_q12_other",
- 							"type": "radio",
- 							"label": {
- 								"de": "Andere"
- 							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q12_v1_q12_other",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q12_v1_q12_other",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "q12_v1_q12_other",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "q12_v1_q12_other",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "q12_v1_q12_na",
- 							"type": "radio",
- 							"label": {
- 								"de": "Nicht Anwendbar (N/A)"
- 							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q12_v1_q12_na",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q12_v1_q12_na",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "q12_v1_q12_na",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "q12_v1_q12_na",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						}
- 					],
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {
- 								"auto_flow": "row",
- 								"template_columns": "   4.6fr    1fr    1fr    1fr    1fr "
- 							},
- 							"box_style": {
- 								"display": "grid"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
- 				},
- 				{
- 					"bottom_vspacers": 4,
- 					"columns": 7,
- 					"inputs": [
- 						{
- 							"name": "q12_v1_other_label",
- 							"type": "text",
- 							"max_chars": 17,
- 							"label": {
- 								"de": "Andere",
- 								"en": "Other"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 2.4,
- 							"col_span_control": 4
- 						},
- 						{
- 							"name": "q12_v1_other",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "1"
- 						},
- 						{
- 							"name": "q12_v1_other",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q12_v1_other",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "q12_v1_other",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "q12_v1_other",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						}
- 					],
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {
- 								"template_columns": "   3.6fr    1fr    1fr    1fr    1fr    1fr "
- 							},
- 							"box_style": {
- 								"display": "grid"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
  				}
  			],
  			"validation_func_name": "biiiQ12",
@@ -5109,7 +4105,7 @@
  				"desktop": {
  					"grid_container_style": {},
  					"box_style": {
- 						"width_max": "48rem"
+ 						"width_max": "34rem"
  					},
  					"grid_item_style": {},
  					"text_style": {}
@@ -5127,1152 +4123,197 @@
  			"groups": [
  				{
  					"bottom_vspacers": 3,
- 					"columns": 5,
+ 					"columns": 7,
  					"inputs": [
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\t\u003cb\u003e13. \u003c/b\u003e \u0026nbsp;\t\n\t\t\t\t\t\t\n\t\t\t\t\t\tAuf die Erreichung welcher Sustainable De\u0026shy;vel\u0026shy;op\u0026shy;ment Goals (SDGs)/ Ziele für nachhaltige Entwicklung der UN arbeiten Sie mit Ihren Investitionen hin?\t\t\t\t\t\n\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t(Mehrfachauswahl in der Reihenfolge der Wich\u0026shy;tig\u0026shy;keit. 1 bis 5, 1= höchs\u0026shy;te Wich\u0026shy;tig\u0026shy;keit)\n\n\t\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\t\u003cb\u003e13. \u003c/b\u003e \u0026nbsp;\t\n\t\t\t\t\t\tAuf die Erreichung welcher Sustainable De\u0026shy;vel\u0026shy;op\u0026shy;ment Goals (SDGs)/ Ziele für nachhaltige Entwicklung der UN arbeiten Sie mit Ihren Investitionen hin?\t\t\t\t\t\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t(Wählen Sie bis zu fünf )\n\t\t\t\t\t"
  							},
- 							"col_span": 5,
+ 							"col_span": 7,
  							"col_span_label": 1
  						},
  						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "1\u003cbr\u003ehöchs\u0026shy;te\u003cbr\u003eWich\u0026shy;tig\u0026shy;keit"
- 							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "2"
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "3"
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "4"
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "5\u003cbr\u003enied\u0026shy;rigste\u003cbr\u003eWich\u0026shy;tig\u0026shy;keit"
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q13_not",
- 							"type": "radio",
+ 							"name": "not",
+ 							"type": "checkbox",
  							"label": {
  								"de": "Wir berücksichtigen die SDGs in unserer Strategie nicht"
  							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q13_not",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q13_not",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "q13_not",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "q13_not",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "q13_1",
- 							"type": "radio",
+ 							"name": "1",
+ 							"type": "checkbox",
  							"label": {
  								"de": "1. Keine Armut"
  							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q13_1",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q13_1",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "q13_1",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "q13_1",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "q13_2",
- 							"type": "radio",
+ 							"name": "2",
+ 							"type": "checkbox",
  							"label": {
  								"de": "2. Kein Hunger"
  							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q13_2",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q13_2",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "q13_2",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "q13_2",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "q13_3",
- 							"type": "radio",
+ 							"name": "3",
+ 							"type": "checkbox",
  							"label": {
  								"de": "3. Gesundheit und Wohlergehen"
  							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q13_3",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q13_3",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "q13_3",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "q13_3",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "q13_4",
- 							"type": "radio",
+ 							"name": "4",
+ 							"type": "checkbox",
  							"label": {
  								"de": "4. Hochwertige Bil\u0026shy;dung"
  							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q13_4",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q13_4",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "q13_4",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "q13_4",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "q13_5",
- 							"type": "radio",
+ 							"name": "5",
+ 							"type": "checkbox",
  							"label": {
  								"de": "5. Geschlech\u0026shy;tergleichheit"
  							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q13_5",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q13_5",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "q13_5",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "q13_5",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "q13_6",
- 							"type": "radio",
+ 							"name": "6",
+ 							"type": "checkbox",
  							"label": {
  								"de": "6. Sauberes Wasser und Sanitär\u0026shy;ein\u0026shy;richtungen"
  							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q13_6",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q13_6",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "q13_6",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "q13_6",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "q13_7",
- 							"type": "radio",
+ 							"name": "7",
+ 							"type": "checkbox",
  							"label": {
  								"de": "7.Bezahlbare und Saubere Energie"
  							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q13_7",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q13_7",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "q13_7",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "q13_7",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "q13_8",
- 							"type": "radio",
+ 							"name": "8",
+ 							"type": "checkbox",
  							"label": {
  								"de": "8. Menschenwürdige Arbeit und Wirt\u0026shy;schaftswachstum"
  							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q13_8",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q13_8",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "q13_8",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "q13_8",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "q13_9",
- 							"type": "radio",
+ 							"name": "9",
+ 							"type": "checkbox",
  							"label": {
  								"de": "9. Industrie, Innovation und Infrastruktur"
  							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q13_9",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q13_9",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "q13_9",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "q13_9",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "q13_10",
- 							"type": "radio",
+ 							"name": "10",
+ 							"type": "checkbox",
  							"label": {
  								"de": "10. Weniger Ungleichheiten"
  							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q13_10",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q13_10",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "q13_10",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "q13_10",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "q13_11",
- 							"type": "radio",
+ 							"name": "11",
+ 							"type": "checkbox",
  							"label": {
  								"de": "11. Nachhaltige Städte und Gemeinden"
  							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q13_11",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q13_11",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "q13_11",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "q13_11",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "q13_12",
- 							"type": "radio",
+ 							"name": "12",
+ 							"type": "checkbox",
  							"label": {
  								"de": "12. Nachhaltiger Konsum und Produktion"
  							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q13_12",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q13_12",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "q13_12",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "q13_12",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "q13_13",
- 							"type": "radio",
+ 							"name": "13",
+ 							"type": "checkbox",
  							"label": {
  								"de": "13. Maßnahmen zum Klimaschutz"
  							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q13_13",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q13_13",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "q13_13",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "q13_13",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "q13_14",
- 							"type": "radio",
+ 							"name": "14",
+ 							"type": "checkbox",
  							"label": {
  								"de": "14. Leben unter Wasser"
  							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q13_14",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q13_14",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "q13_14",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "q13_14",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "q13_15",
- 							"type": "radio",
+ 							"name": "15",
+ 							"type": "checkbox",
  							"label": {
  								"de": "15. Leben an Land"
  							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q13_15",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q13_15",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "q13_15",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "q13_15",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "q13_16",
- 							"type": "radio",
+ 							"name": "16",
+ 							"type": "checkbox",
  							"label": {
  								"de": "16. Frieden, Gerechtigkeit und starke Institutionen"
  							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q13_16",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q13_16",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "q13_16",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "q13_16",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "q13_17",
- 							"type": "radio",
+ 							"name": "17",
+ 							"type": "checkbox",
  							"label": {
  								"de": "17. Partnerschaften zur Erreichung der Ziele"
  							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q13_17",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q13_17",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "q13_17",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "q13_17",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
  						}
- 					],
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {
- 								"auto_flow": "row",
- 								"template_columns": "   4.6fr    1fr    1fr    1fr    1fr "
- 							},
- 							"box_style": {
- 								"display": "grid"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
+ 					]
  				}
  			]
  		},
@@ -8844,6 +6885,33 @@
  						{
  							"name": "q23_eu_taxonomy",
  							"type": "checkbox",
+ 							"label": {
+ 								"de": "EU Taxonomie"
+ 							},
+ 							"col_span": 7,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q23_other",
+ 							"type": "checkbox",
  							"col_span": 1,
  							"col_span_control": 1
  						},
@@ -8852,7 +6920,7 @@
  							"type": "text",
  							"max_chars": 20,
  							"label": {
- 								"de": "EU Taxonomie"
+ 								"de": "Andere, bitte nennen"
  							},
  							"col_span": 6,
  							"col_span_label": 2,
@@ -13072,606 +11140,251 @@
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
  				{
- 					"bottom_vspacers": 1,
- 					"columns": 3,
+ 					"bottom_vspacers": 3,
+ 					"columns": 9,
  					"inputs": [
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\u003cb\u003e32.\u003c/b\u003e \u0026nbsp;\n\t\t\t\t\tIn welchen Bereichen sind die größten Fortschritte notwendig? \n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t(Top 5 Nennungen, 1 bis 5, 1= höchs\u0026shy;ter Fortschritt notwendig)\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\t\u003cb\u003e32.\u003c/b\u003e \u0026nbsp;\n\t\t\t\t\t\tIn welchen Bereichen sind die größten Fortschritte notwendig?\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t(Wählen Sie bis zu fünf )\n\t\t\t\t\t"
  							},
- 							"col_span": 3,
+ 							"col_span": 9,
  							"col_span_label": 1
  						},
  						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "1\u003cbr\u003egrößter Fortschriftt"
- 							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "2\u003cbr\u003e\u003cbr\u003e"
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "3\u003cbr\u003egeringster Fortschriftt"
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
  							"name": "q32_method_mgt_meas",
- 							"type": "radio",
+ 							"type": "checkbox",
  							"label": {
  								"de": "Impact Methodologie, Man\u0026shy;age\u0026shy;ment und Messung "
  							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q32_method_mgt_meas",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q32_method_mgt_meas",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"name": "q32_method_mgt_meas_addl",
+ 							"type": "text",
+ 							"max_chars": 16,
+ 							"placeholder": {
+ 								"de": "opt. Kommentar"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_control": 1
  						},
  						{
  							"name": "q32_definition",
- 							"type": "radio",
+ 							"type": "checkbox",
  							"label": {
  								"de": "Harmonisierte Impact Definition "
  							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q32_definition",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q32_definition",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"name": "q32_definition_addl",
+ 							"type": "text",
+ 							"max_chars": 16,
+ 							"placeholder": {
+ 								"de": "opt. Kommentar"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_control": 1
  						},
  						{
  							"name": "q32_certifications",
- 							"type": "radio",
+ 							"type": "checkbox",
  							"label": {
  								"de": "Impact Labels, Ratings und Zertifizierungen "
  							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q32_certifications",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q32_certifications",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"name": "q32_certifications_addl",
+ 							"type": "text",
+ 							"max_chars": 16,
+ 							"placeholder": {
+ 								"de": "opt. Kommentar"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_control": 1
  						},
  						{
  							"name": "q32_education",
- 							"type": "radio",
+ 							"type": "checkbox",
  							"label": {
  								"de": "Bil\u0026shy;dung und Weiterbil\u0026shy;dung"
  							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q32_education",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q32_education",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"name": "q32_education_addl",
+ 							"type": "text",
+ 							"max_chars": 16,
+ 							"placeholder": {
+ 								"de": "opt. Kommentar"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_control": 1
  						},
  						{
  							"name": "q32_data",
- 							"type": "radio",
+ 							"type": "checkbox",
  							"label": {
  								"de": "Impact Da\u0026shy;tenver\u0026shy;füg\u0026shy;barkeit und Kriterienkatalog "
  							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q32_data",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q32_data",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"name": "q32_data_addl",
+ 							"type": "text",
+ 							"max_chars": 16,
+ 							"placeholder": {
+ 								"de": "opt. Kommentar"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_control": 1
  						},
  						{
  							"name": "q32_legislation",
- 							"type": "radio",
+ 							"type": "checkbox",
  							"label": {
  								"de": "Gesetzgebung Impact  "
  							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q32_legislation",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q32_legislation",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"name": "q32_legislation_addl",
+ 							"type": "text",
+ 							"max_chars": 16,
+ 							"placeholder": {
+ 								"de": "opt. Kommentar"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_control": 1
  						},
  						{
  							"name": "q32_bestpract",
- 							"type": "radio",
+ 							"type": "checkbox",
  							"label": {
  								"de": "Benchmarks und Best practices "
  							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q32_bestpract",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q32_bestpract",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"name": "q32_bestpract_addl",
+ 							"type": "text",
+ 							"max_chars": 16,
+ 							"placeholder": {
+ 								"de": "opt. Kommentar"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_control": 1
  						},
  						{
  							"name": "q32_reporting",
- 							"type": "radio",
+ 							"type": "checkbox",
  							"label": {
  								"de": "Berichterstattung "
  							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q32_reporting",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q32_reporting",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"name": "q32_reporting_addl",
+ 							"type": "text",
+ 							"max_chars": 16,
+ 							"placeholder": {
+ 								"de": "opt. Kommentar"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_control": 1
  						},
  						{
  							"name": "q32_assetclass",
- 							"type": "radio",
+ 							"type": "checkbox",
  							"label": {
  								"de": "Impact Investing als Anlageklasse  "
  							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q32_assetclass",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q32_assetclass",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"name": "q32_assetclass_addl",
+ 							"type": "text",
+ 							"max_chars": 16,
+ 							"placeholder": {
+ 								"de": "opt. Kommentar"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_control": 1
  						},
  						{
  							"name": "q32_productdesign",
- 							"type": "radio",
+ 							"type": "checkbox",
  							"label": {
  								"de": "Produktgestaltung"
  							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q32_productdesign",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q32_productdesign",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						}
- 					],
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {
- 								"auto_flow": "row",
- 								"template_columns": "   4.6fr    1fr    1fr "
+ 							"name": "q32_productdesign_addl",
+ 							"type": "text",
+ 							"max_chars": 16,
+ 							"placeholder": {
+ 								"de": "opt. Kommentar"
  							},
- 							"box_style": {
- 								"display": "grid"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
+ 							"col_span": 2,
+ 							"col_span_control": 1
  						},
- 						"mobile": {
- 							"grid_container_style": {},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
- 				},
- 				{
- 					"bottom_vspacers": 4,
- 					"columns": 7,
- 					"inputs": [
  						{
  							"name": "q32_other_label",
  							"type": "text",
  							"max_chars": 17,
  							"label": {
- 								"de": "Andere",
- 								"en": "Other"
+ 								"de": "Andere, bitte nennen"
  							},
- 							"col_span": 1,
- 							"col_span_label": 2.4,
- 							"col_span_control": 4
+ 							"col_span": 6,
+ 							"col_span_label": 1,
+ 							"col_span_control": 3
  						},
  						{
  							"name": "q32_other",
- 							"type": "radio",
+ 							"type": "checkbox",
  							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "1"
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q32_other",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q32_other",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"name": "q32_other_addl",
+ 							"type": "text",
+ 							"max_chars": 16,
+ 							"placeholder": {
+ 								"de": "opt. Kommentar"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_control": 1
  						}
- 					],
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {
- 								"template_columns": "   3.48fr    1fr    1fr    1fr "
- 							},
- 							"box_style": {
- 								"display": "grid"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
+ 					]
  				}
- 			]
+ 			],
+ 			"validation_func_name": "biiiQ32",
+ 			"validation_func_msg": {
+ 				"de": "no javascript dialog message needed"
+ 			}
  		},
  		{
  			"label": {
@@ -15475,737 +13188,318 @@
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
  				{
- 					"bottom_vspacers": 1,
- 					"columns": 3,
+ 					"bottom_vspacers": 3,
+ 					"columns": 9,
  					"inputs": [
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\u003cb\u003e34.\u003c/b\u003e \u0026nbsp;\n\t\t\t\t\tIn welchen Asset Klassen erwarten Sie eine besonders dynamische Entwicklung?\n\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t(Top 5 Nennungen, 1 bis 5, 1= höchs\u0026shy;te Entwicklung)\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\t\u003cb\u003e34.\u003c/b\u003e \u0026nbsp;\n\t\t\t\t\t\tIn welchen Asset Klassen erwarten Sie eine besonders dynamische Entwicklung?\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t(Wählen Sie bis zu fünf )\n\t\t\t\t\t"
  							},
- 							"col_span": 3,
+ 							"col_span": 9,
  							"col_span_label": 1
  						},
  						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "1\u003cbr\u003ehöchs\u0026shy;te Entwicklung"
- 							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "2\u003cbr\u003e\u003cbr\u003e"
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "3\u003cbr\u003egeringste Entwicklung"
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
  							"name": "q34_private_equity",
- 							"type": "radio",
+ 							"type": "checkbox",
  							"label": {
  								"de": "Privates (nicht börsengehandeltes) Beteiligungskapital (Private equity)"
  							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q34_private_equity",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q34_private_equity",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"name": "q34_private_equity_addl",
+ 							"type": "text",
+ 							"max_chars": 16,
+ 							"placeholder": {
+ 								"de": "opt. Kommentar"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_control": 1
  						},
  						{
  							"name": "q34_public_equity",
- 							"type": "radio",
+ 							"type": "checkbox",
  							"label": {
  								"de": "Börsengehandeltes Beteiligungskapital / Aktien (Public equity)"
  							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q34_public_equity",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q34_public_equity",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"name": "q34_public_equity_addl",
+ 							"type": "text",
+ 							"max_chars": 16,
+ 							"placeholder": {
+ 								"de": "opt. Kommentar"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_control": 1
  						},
  						{
  							"name": "q34_private_external",
- 							"type": "radio",
+ 							"type": "checkbox",
  							"label": {
  								"de": "Private (nicht börsengehandeltes) Fremdkapital/ Anleihen (Private debt)"
  							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q34_private_external",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q34_private_external",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"name": "q34_private_external_addl",
+ 							"type": "text",
+ 							"max_chars": 16,
+ 							"placeholder": {
+ 								"de": "opt. Kommentar"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_control": 1
  						},
  						{
  							"name": "q34_public_external",
- 							"type": "radio",
+ 							"type": "checkbox",
  							"label": {
  								"de": "Börsengehandeltes Fremdkapital / Anleihen (Public debt)  "
  							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q34_public_external",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q34_public_external",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"name": "q34_public_external_addl",
+ 							"type": "text",
+ 							"max_chars": 16,
+ 							"placeholder": {
+ 								"de": "opt. Kommentar"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_control": 1
  						},
  						{
  							"name": "q34_real_estate",
- 							"type": "radio",
+ 							"type": "checkbox",
  							"label": {
  								"de": "Immobilien (Real estate)  "
  							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q34_real_estate",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q34_real_estate",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"name": "q34_real_estate_addl",
+ 							"type": "text",
+ 							"max_chars": 16,
+ 							"placeholder": {
+ 								"de": "opt. Kommentar"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_control": 1
  						},
  						{
  							"name": "q34_money_deposits",
- 							"type": "radio",
+ 							"type": "checkbox",
  							"label": {
  								"de": "Einlagen oder Zahlungsmitteläquivalente / Geldwerte (Deposits oder cash equivalents / monetary assets) "
  							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q34_money_deposits",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q34_money_deposits",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "q34_soc",
- 							"type": "radio",
- 							"label": {
- 								"de": "Soziale Infrastruktur Finanzierung (SOC (z.B. SIB / DIB) ) \n\t\t\t\t\t\t\u003cdiv style=\"font-size:80%; line-height: 100%; margin-top: 0.3rem; margin-left: 1rem;\"\u003e\n\t\t\t\t\t\t\tSOC: Social Outcomes Contracting; \n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\tSIB: Social Impact Bond; \n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\tDIB: De\u0026shy;vel\u0026shy;op\u0026shy;ment Impact Bond\n\t\t\t\t\t\t\u003c/div\u003e\n\t\t\t\t\t\n\t\t\t\t\t"
+ 							"name": "q34_money_deposits_addl",
+ 							"type": "text",
+ 							"max_chars": 16,
+ 							"placeholder": {
+ 								"de": "opt. Kommentar"
  							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"col_span": 2,
+ 							"col_span_control": 1
  						},
  						{
  							"name": "q34_soc",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "Soziale Infrastruktur Finanzierung (SOC (z.B. SIB / DIB) )\n\t\t\t\t\t\t\t\u003cdiv style=\"font-size:80%; line-height: 100%; margin-top: 0.3rem; margin-left: 1rem;\"\u003e\n\t\t\t\t\t\t\t\tSOC: Social Outcomes Contracting;\n\t\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\t\tSIB: Social Impact Bond;\n\t\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\t\tDIB: De\u0026shy;vel\u0026shy;op\u0026shy;ment Impact Bond\n\t\t\t\t\t\t\t\u003c/div\u003e\n\n\t\t\t\t\t\t"
+ 							},
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q34_soc",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"name": "q34_soc_addl",
+ 							"type": "text",
+ 							"max_chars": 16,
+ 							"placeholder": {
+ 								"de": "opt. Kommentar"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_control": 1
  						},
  						{
  							"name": "q34_green_bonds",
- 							"type": "radio",
+ 							"type": "checkbox",
  							"label": {
  								"de": "Grüne Anleihen (Green Bonds)  "
  							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q34_green_bonds",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q34_green_bonds",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"name": "q34_green_bonds_addl",
+ 							"type": "text",
+ 							"max_chars": 16,
+ 							"placeholder": {
+ 								"de": "opt. Kommentar"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_control": 1
  						},
  						{
  							"name": "q34_emerging_markets",
- 							"type": "radio",
+ 							"type": "checkbox",
  							"label": {
  								"de": "Schwellenländer(markt) (Emerging markets)  "
  							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q34_emerging_markets",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q34_emerging_markets",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"name": "q34_emerging_markets_addl",
+ 							"type": "text",
+ 							"max_chars": 16,
+ 							"placeholder": {
+ 								"de": "opt. Kommentar"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_control": 1
  						},
  						{
  							"name": "q34_microfinance",
- 							"type": "radio",
+ 							"type": "checkbox",
  							"label": {
  								"de": "Mikrofinanzierung (Microfinance)  "
  							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q34_microfinance",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q34_microfinance",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"name": "q34_microfinance_addl",
+ 							"type": "text",
+ 							"max_chars": 16,
+ 							"placeholder": {
+ 								"de": "opt. Kommentar"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_control": 1
  						},
  						{
  							"name": "q34_commodities",
- 							"type": "radio",
+ 							"type": "checkbox",
  							"label": {
  								"de": "Rohstoffe (Commodities)  "
  							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q34_commodities",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q34_commodities",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"name": "q34_commodities_addl",
+ 							"type": "text",
+ 							"max_chars": 16,
+ 							"placeholder": {
+ 								"de": "opt. Kommentar"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_control": 1
  						},
  						{
  							"name": "q34_slb",
- 							"type": "radio",
+ 							"type": "checkbox",
  							"label": {
  								"de": "Sustainability-Linked Bonds (SLBs)"
  							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"col_span": 7,
+ 							"col_span_label": 6,
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q34_slb",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q34_slb",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						}
- 					],
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {
- 								"auto_flow": "row",
- 								"template_columns": "   4.6fr    1fr    1fr "
+ 							"name": "q34_slb_addl",
+ 							"type": "text",
+ 							"max_chars": 16,
+ 							"placeholder": {
+ 								"de": "opt. Kommentar"
  							},
- 							"box_style": {
- 								"display": "grid"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
+ 							"col_span": 2,
+ 							"col_span_control": 1
  						},
- 						"mobile": {
- 							"grid_container_style": {},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
- 				},
- 				{
- 					"bottom_vspacers": 4,
- 					"columns": 7,
- 					"inputs": [
  						{
- 							"name": "q34_q34_hybrid_label",
+ 							"name": "q34_hybrid_label",
  							"type": "text",
  							"max_chars": 17,
  							"label": {
  								"de": "Hybride Finanz\u0026shy;instrumente (Hybrid financial instruments), bitte nennen"
  							},
- 							"col_span": 1,
- 							"col_span_label": 2.4,
- 							"col_span_control": 4
+ 							"col_span": 6,
+ 							"col_span_label": 1,
+ 							"col_span_control": 3
  						},
  						{
- 							"name": "q34_q34_hybrid",
- 							"type": "radio",
+ 							"name": "q34_hybrid",
+ 							"type": "checkbox",
  							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "1"
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q34_q34_hybrid",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q34_q34_hybrid",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						}
- 					],
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {
- 								"template_columns": "   3.48fr    1fr    1fr    1fr "
+ 							"name": "q34_hybrid_addl",
+ 							"type": "text",
+ 							"max_chars": 16,
+ 							"placeholder": {
+ 								"de": "opt. Kommentar"
  							},
- 							"box_style": {
- 								"display": "grid"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
+ 							"col_span": 2,
+ 							"col_span_control": 1
  						},
- 						"mobile": {
- 							"grid_container_style": {},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
- 				},
- 				{
- 					"bottom_vspacers": 4,
- 					"columns": 7,
- 					"inputs": [
  						{
- 							"name": "q34_q34_other_label",
+ 							"name": "q34_other_label",
  							"type": "text",
  							"max_chars": 17,
  							"label": {
  								"de": "Andere, bitte nennen"
  							},
- 							"col_span": 1,
- 							"col_span_label": 2.4,
- 							"col_span_control": 4
+ 							"col_span": 6,
+ 							"col_span_label": 1,
+ 							"col_span_control": 3
  						},
  						{
- 							"name": "q34_q34_other",
- 							"type": "radio",
+ 							"name": "q34_other",
+ 							"type": "checkbox",
  							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "1"
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q34_q34_other",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q34_q34_other",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						}
- 					],
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {
- 								"template_columns": "   3.48fr    1fr    1fr    1fr "
+ 							"name": "q34_other_addl",
+ 							"type": "text",
+ 							"max_chars": 16,
+ 							"placeholder": {
+ 								"de": "opt. Kommentar"
  							},
- 							"box_style": {
- 								"display": "grid"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
+ 							"col_span": 2,
+ 							"col_span_control": 1
  						}
- 					}
+ 					]
  				}
- 			]
+ 			],
+ 			"validation_func_name": "biiiQ34",
+ 			"validation_func_msg": {
+ 				"de": "no javascript dialog message needed"
+ 			}
  		},
  		{
  			"label": {

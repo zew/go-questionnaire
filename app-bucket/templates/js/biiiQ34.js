@@ -1,22 +1,22 @@
 const names = [
-    "q12_paris_align",
-    "q12_culture_sports",
-    "q12_education",
-    "q12_work",
-    "q12_research",
-    "q12_health",
-    "q12_social_service",
-    "q12_environment",
-    "q12_sanitary",
-    "q12_agriculture",
-    "q12_energy",
-    "q12_residential",
-    "q12_technology",
-    "q12_prodution",
-    "q12_urban_dev",
-    "q12_microfinance",
-    "q12_other",
-    "q12_na",
+    "q34_private_equity",
+    "q34_public_equity",
+    "q34_private_external",
+    "q34_public_external",
+
+    "q34_real_estate",
+    "q34_money_deposits",
+    "q34_soc",
+    "q34_green_bonds",
+
+    "q34_emerging_markets",
+    "q34_microfinance",
+    "q34_commodities",
+    "q34_slb",
+
+    "q34_hybrid",
+    "q34_other",
+
 ];
 
 

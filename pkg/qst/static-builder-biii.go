@@ -11,8 +11,15 @@ func (p *pageT) AddBiiiPrio(
 	mainLbl trl.S,
 	labels []trl.S,
 	names []string,
-	idxOther int,
+	// idxOther int,
+	idxOther map[int]bool,
+	showVolumeInput int,
 ) *groupT {
+
+	colSpace := float32(0)
+	if showVolumeInput > 0 {
+		colSpace = 2
+	}
 
 	if len(labels) == 0 || len(names) == 0 {
 		labels = []trl.S{
@@ -38,7 +45,7 @@ func (p *pageT) AddBiiiPrio(
 	}
 
 	gr := p.AddGroup()
-	gr.Cols = 7
+	gr.Cols = 7 + colSpace
 	// gr.WidthMax("17rem")
 
 	if !mainLbl.Empty() {
@@ -50,44 +57,67 @@ func (p *pageT) AddBiiiPrio(
 
 	for idx, label := range labels {
 
-		if idx != idxOther {
+		if _, ok := idxOther[idx]; !ok {
 
 			inp := gr.AddInput()
-			inp.Type = "number"
+			inp.Type = "checkbox"
 			inp.Name = fmt.Sprintf("%v", names[idx])
 			inp.Label = label
-			inp.Min = 1
-			inp.Max = 5
-			inp.MaxChars = 2
 
-			inp.ColSpan = gr.Cols
+			inp.ColSpan = gr.Cols - colSpace
 			inp.ColSpanLabel = 6
 			inp.ColSpanControl = 1
 
 		} else {
 
-			inp2 := gr.AddInput()
-			inp2.Type = "text"
-			inp2.Name = fmt.Sprintf("%v_label", names[idx])
-			inp2.Label = label
-			inp2.MaxChars = 17
+			inpOth := gr.AddInput()
+			inpOth.Type = "text"
+			inpOth.Name = fmt.Sprintf("%v_label", names[idx])
+			inpOth.Label = label
+			inpOth.MaxChars = 17
 
-			inp2.ColSpan = 6
-			inp2.ColSpanLabel = 1
-			inp2.ColSpanControl = 3
+			inpOth.ColSpan = gr.Cols - colSpace - 1
+			inpOth.ColSpanLabel = 1
+			inpOth.ColSpanControl = 3
 
 			inp := gr.AddInput()
-			inp.Type = "number"
+			inp.Type = "checkbox"
 			inp.Name = fmt.Sprintf("%v", names[idx])
 			// inp.Label = label // no label
-			inp.Min = 1
-			inp.Max = 5
-			inp.MaxChars = 2
 
 			inp.ColSpan = 1
 			inp.ColSpanLabel = 0
 			inp.ColSpanControl = 1
 
+		}
+
+		if showVolumeInput == 1 {
+			inp := gr.AddInput()
+			inp.Type = "number"
+			inp.Name = fmt.Sprintf("%v_addl", names[idx])
+			inp.MaxChars = 6
+			inp.Placeholder = trl.S{"de": "0,0"}
+			inp.Suffix = trl.S{"de": "Mio. €"}
+
+			inp.Min = 0
+			inp.Max = 1000 * 1000
+			inp.Step = 0.1
+
+			inp.ColSpan = colSpace
+			inp.ColSpanLabel = 0
+			inp.ColSpanControl = 1
+		}
+
+		if showVolumeInput == 2 {
+			inp := gr.AddInput()
+			inp.Type = "text"
+			inp.Name = fmt.Sprintf("%v_addl", names[idx])
+			inp.MaxChars = 16
+			inp.Placeholder = trl.S{"de": "opt. Kommentar"}
+
+			inp.ColSpan = colSpace
+			inp.ColSpanLabel = 0
+			inp.ColSpanControl = 1
 		}
 
 		// inp.ControlFirst()

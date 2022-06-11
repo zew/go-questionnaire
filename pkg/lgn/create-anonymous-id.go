@@ -7,10 +7,12 @@ import (
 	"net/http"
 	"strconv"
 	"strings"
+	"time"
 
 	"github.com/go-playground/form"
 	hashids "github.com/speps/go-hashids"
 	"github.com/zew/go-questionnaire/pkg/cfg"
+	"github.com/zew/go-questionnaire/pkg/ctr"
 )
 
 type iDElements struct {
@@ -66,17 +68,89 @@ func (c *iDElements) Encode(w io.Writer) (int, string) {
 
 }
 
+var hashIDCounter = ctr.New() //  not stable across app restarts
+
+// LoginWithoutLink creates a hash ID
+// and forwards to direct login /d
+//
+// A user ID is created from unix time
+func LoginWithoutLink(w http.ResponseWriter, r *http.Request) {
+
+	// number of millisecond elapsed since Unix epoch
+	t1 := time.Now().UnixNano()
+	t2 := int64(time.Nanosecond) * t1 / int64(time.Millisecond) / int64(time.Millisecond)
+	_ = t2
+
+	// better:
+	//    	resolution is seconds
+	//    	cappedto seconds of 4 months instead of 100 years
+	// 		for intra-second distinction: incremental counter
+	//		minimum size: 100.000 - to distinguish from pre-generated UIDs
+	// 		max size 10 billion still acceptable
+	//
+	// 	doubles only during app restarts within the same second
+	// 		in conjunction with multiple requests within the same second
+	ts := int(time.Now().Unix())
+	last4Months := 3600 * 24 * 4 * 28 //                   9.676.800
+	uid := ts % last4Months           //           0...    9.676.800
+	uid += 100 * 1000                 //     100.000...    9.776.800
+	uid *= 1000                       // 100.000.000...9.776.800.000
+
+	incr := hashIDCounter.Increment()
+	if incr > 999 {
+		hashIDCounter.Reset()
+		incr = 1
+	}
+	uid += int(incr)
+
+	h, err := hashids.NewWithData(getGen())
+	if err != nil {
+		fmt.Fprintf(w, "Error creating hash ID: %v", err.Error())
+	}
+
+	hashID, err := h.Encode([]int{uid})
+	if err != nil {
+		fmt.Fprintf(w, "Error encoding hash ID: %v", err.Error())
+	}
+
+	// forward to LoginByHashID
+	url := cfg.Pref(fmt.Sprintf("/d/%v--%v", cfg.Get().AnonymousSurveyID, hashID))
+
+	if false {
+		// http.Redirect(w, r, url, http.StatusFound)
+		http.Redirect(w, r, url, http.StatusTemporaryRedirect)
+	}
+
+	if true {
+		link := ""
+		// forward-link%vforward-link is used by decorators, to extract the forwarding URL
+		link = fmt.Sprintf(`
+			<a href='%v'>Start questionnaire</a>
+			<!--forward-link%vforward-link-->
+			`,
+			url,
+			url,
+		)
+		w.Header().Set("Content-Type", "text/html; charset=utf-8")
+		fmt.Fprint(w, link)
+	}
+
+}
+
 // CreateAnonymousIDH has outer HTML scaffold - for more, see CreateAnonymousID
 func CreateAnonymousIDH(w http.ResponseWriter, r *http.Request) {
 	createAnonymousID(w, r, true)
 }
 
 // CreateAnonymousIDCoreH has *no* outer HTML scaffold - for more, see CreateAnonymousID
+//    seems unused
 func CreateAnonymousIDCoreH(w http.ResponseWriter, r *http.Request) {
 	createAnonymousID(w, r, false)
 }
 
-// CreateAnonymousID creates a non-personal ID from personal characteristics
+// CreateAnonymousID creates a HashID for LoginByHashID
+// from personal characteristics
+// then forwards to LoginByHashID
 func createAnonymousID(w http.ResponseWriter, r *http.Request, outerHTML bool) {
 
 	/*

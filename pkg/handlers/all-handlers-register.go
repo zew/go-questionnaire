@@ -52,10 +52,19 @@ func RegisterHandlers(mux *http.ServeMux) {
 			}, // 2021-04 - non admin user is allowed to change password
 		},
 		{
+			// forwards to LoginByHashID /d
 			Urls:    []string{"/create-anonymous-id"},
 			Title:   "Anonymous login",
 			Handler: lgn.CreateAnonymousIDH,
 			Keys:    []string{"create-anonymous-id"},
+			Allow:   map[handler.Privilege]bool{handler.LoggedOut: true},
+		},
+		{
+			// forwards to LoginByHashID /d
+			Urls:    []string{"/l"},
+			Title:   "Login without link",
+			Handler: lgn.LoginWithoutLink,
+			Keys:    []string{"l"},
 			Allow:   map[handler.Privilege]bool{handler.LoggedOut: true},
 		},
 		{
@@ -206,6 +215,8 @@ func RegisterHandlers(mux *http.ServeMux) {
 			ShortCut: "p",
 		},
 		{
+			// gets forwarded to - from lgn.CreateAnonymousIDH
+			// gets forwarded to - from lgn.LoginWithoutLink
 			Urls:    []string{"/d"}, // 'd' for direct
 			Title:   "Login by hash ID",
 			Handler: LoginByHashID,

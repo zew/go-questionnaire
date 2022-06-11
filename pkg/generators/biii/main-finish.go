@@ -44,6 +44,10 @@ func finish(q *qst.QuestionnaireT) {
 
 						<br>
 
+						Im <a href="/doc/site-imprint.md" >Impressum</a> finden Sie umfangreiche Angaben zum Datenschutz.
+
+						<br>
+
 						Hiermit willige ich ein, dass meine gesammelten Daten 
 						für die BIII Impact Investment Studie 2022 verwendet werden. 
 					`,
@@ -99,25 +103,26 @@ func finish(q *qst.QuestionnaireT) {
 						inp.Style = css.NewStylesResponsive(inp.Style)
 						inp.Style.Desktop.StyleBox.Margin = "0 0 0 6rem"
 					}
-					// {
-					// 	inp := gr.AddInput()
-					// 	inp.Type = "textarea"
-					// 	inp.Name = "q45_comment"
-					// 	inp.MaxChars = 150
-					// 	inp.Label = trl.S{"de": "Kommentar"}
-					// 	inp.ColSpan = gr.Cols
-					// 	inp.ColSpanLabel = 2
-					// 	inp.ColSpanControl = 3
-					// 	inp.Placeholder = trl.S{"de": "Kommentarfeld"}
-					// 	inp.Style = css.NewStylesResponsive(inp.Style)
-					// 	inp.Style.Desktop.StyleBox.Margin = "0 0 0 6rem"
-					// }
 				}
 
 			}
 		}
 
-		// gr3
+		// gr1
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			{
+				inp := gr.AddInput()
+				inp.Type = "dyn-composite"
+				inp.DynamicFuncParamset = ""
+				inp.DynamicFunc = fmt.Sprintf("QuestForOrg__%v__%v", 0, 0)
+
+				inp.ColSpanControl = 1
+			}
+		}
+
+		// gr2
 		{
 			gr := page.AddGroup()
 			gr.Style = css.NewStylesResponsive(gr.Style)

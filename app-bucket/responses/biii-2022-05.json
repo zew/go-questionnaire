@@ -17,7 +17,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "a5803892d87a68c7711e5f57bfade4a1112ce979da1cc02d57819fe67c632bbc",
+ 	"md_5": "ea3ebabaa76601f43898c189082f6a57b61794a6d78f0ba75ac76ac3ef564d69",
  	"lang_codes": [
  		"de"
  	],
@@ -2210,7 +2210,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\n\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\t\u003cp style='text-align: justify;'\u003e\n\t\t\t\t\t\u003cb\u003e10.\u003c/b\u003e \u0026nbsp;\n\n\t\t\t\t\tWelche Anlagestile verfolgen Sie mit \u003cu\u003eIhren Impact\u003c/u\u003e In\u0026shy;vest\u0026shy;ments?\n\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\t\u0026nbsp;\n\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\tDer Ausgangspunkt für die folgende Frage bezieht sich auf die GIIN (2017) Definition:\n\t\t\t\t\t\"Impact In\u0026shy;vest\u0026shy;ments sind Investitionen, die mit der Absicht getätigt werden,\n\t\t\t\t\tneben einer finanziellen Rendite auch eine pos\u0026shy;itive,\n\t\t\t\t\tmessbare soziale und ökologische Wirkung zu erzielen\" (GIIN, 2017).\n\n\t\t\t\t\tTragen Sie bitte ausgehend von dieser breiten Definition\n\t\t\t\t\tdie entsprechenden Investitionsvolumina ein.\n\n\t\t\t\t\t\u003cb\u003eWich\u0026shy;tig dabei ist, dass jedes Volumen \u003ci\u003enur einmalig eingetragen\u003c/i\u003e wird\n\t\t\t\t\tund sich somit in der Summe wieder 100% ergeben.\n\t\t\t\t\t\u003c/b\u003e\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t"
+ 								"de": "\n\n\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\t\u003cp style='text-align: justify;'\u003e\n\t\t\t\t\t\u003cb\u003e10.\u003c/b\u003e \u0026nbsp;\n\n\t\t\t\t\tWelche Anlagestile verfolgen Sie mit \u003cu\u003eIhren Impact\u003c/u\u003e In\u0026shy;vest\u0026shy;ments?\n\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u0026nbsp;\n\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\tDer Ausgangspunkt für die folgende Frage bezieht sich auf die GIIN (2017) Definition:\n\t\t\t\t\t\"Impact In\u0026shy;vest\u0026shy;ments sind Investitionen, die mit der Absicht getätigt werden,\n\t\t\t\t\tneben einer finanziellen Rendite auch eine pos\u0026shy;itive,\n\t\t\t\t\tmessbare soziale und ökologische Wirkung zu erzielen\" (GIIN, 2017).\n\n\t\t\t\t\tTragen Sie bitte ausgehend von dieser breiten Definition\n\t\t\t\t\tdie entsprechenden Investitionsvolumina ein.\n\n\t\t\t\t\t\u003cb\u003eWich\u0026shy;tig dabei ist, dass jedes Volumen \u003ci\u003enur einmalig eingetragen\u003c/i\u003e wird\n\t\t\t\t\tund sich somit in der Summe wieder 100% ergeben.\n\t\t\t\t\t\u003c/b\u003e\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t"
  							},
  							"col_span": 35,
  							"col_span_label": 1
@@ -11430,7 +11430,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\u003cb\u003e33.\u003c/b\u003e \u0026nbsp;\n\t\t\t\t\tIn welchen Themenfeldern sehen Sie\n\t\t\t\t\t\n\t\t\t\t\t\u003c!--\n\t\t\t\t\tden größten \u003cb\u003e\u003ci\u003eBedarf an Kapital\u003c/i\u003e\u003c/b\u003e\n\t\t\t\t\tdas \u003cb\u003e\u003ci\u003egrößte Potential\u003c/i\u003e\u003c/b\u003e\n\t\t\t\t\t--\u003e\n\t\t\t\t\t\u003ctable style=\"margin: -0.75rem 0\"\u003e\n\t\t\t\t\t\t\u003ctr\u003e\n\n\t\t\t\t\t\t\t\u003ctd style=\"width:43%\"\u003e\n\t\t\t\t\t\t\t\t\u0026nbsp;\n\t\t\t\t\t\t\t\u003c/td\u003e\n\t\t\t\t\t\t\t\u003ctd style=\"width:28%\"\u003e\n\t\t\t\t\t\t\t\tden größten \u003cb\u003e\u003ci\u003eBedarf an Kapital\u003c/i\u003e\u003c/b\u003e\n\t\t\t\t\t\t\t\u003c/td\u003e\n\t\t\t\t\t\t\t\u003ctd style=\"width:28%\"\u003e\n\t\t\t\t\t\t\t\tdas \u003cb\u003e\u003ci\u003egrößte Potential\u003c/i\u003e\u003c/b\u003e\n\t\t\t\t\t\t\t\u003c/td\u003e\n\n\n\t\t\t\t\t\t\u003c/tr\u003e\n\t\t\t\t\t\u003c/table\u003e\n\n\t\t\t\t\tfür Impact In\u0026shy;vest\u0026shy;ments?\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t(Wählen Sie \u003ci\u003eje Spalte\u003c/i\u003e bis zu fünf Themenfelder)\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cb\u003e33.\u003c/b\u003e \u0026nbsp;\n\t\t\t\t\tIn welchen Themenfeldern sehen Sie\n\t\t\t\t\t\n\t\t\t\t\t\u003c!--\n\t\t\t\t\tden größten \u003cb\u003e\u003ci\u003eBedarf an Kapital\u003c/i\u003e\u003c/b\u003e\n\t\t\t\t\tdas \u003cb\u003e\u003ci\u003egrößte Potential\u003c/i\u003e\u003c/b\u003e\n\t\t\t\t\t--\u003e\n\t\t\t\t\t\u003ctable style=\"margin: -0.75rem 0\"\u003e\n\t\t\t\t\t\t\u003ctr\u003e\n\n\t\t\t\t\t\t\t\u003ctd style=\"width:43%\"\u003e\n\t\t\t\t\t\t\t\t\u0026nbsp;\n\t\t\t\t\t\t\t\u003c/td\u003e\n\t\t\t\t\t\t\t\u003ctd style=\"width:28%\"\u003e\n\t\t\t\t\t\t\t\tden größten \u003cb\u003e\u003ci\u003eBedarf an Kapital\u003c/i\u003e\u003c/b\u003e\n\t\t\t\t\t\t\t\u003c/td\u003e\n\t\t\t\t\t\t\t\u003ctd style=\"width:28%\"\u003e\n\t\t\t\t\t\t\t\tdas \u003cb\u003e\u003ci\u003egrößte Potential\u003c/i\u003e\u003c/b\u003e\n\t\t\t\t\t\t\t\u003c/td\u003e\n\n\n\t\t\t\t\t\t\u003c/tr\u003e\n\t\t\t\t\t\u003c/table\u003e\n\n\t\t\t\t\tfür Impact In\u0026shy;vest\u0026shy;ments?\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t(Wählen Sie \u003ci\u003eje Spalte\u003c/i\u003e bis zu fünf Themenfelder)\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t"
  							},
  							"col_span": 14,
  							"col_span_label": 1
@@ -17235,6 +17235,17 @@
  									"text_style": {}
  								}
  							}
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "dyn-composite",
+ 							"col_span_control": 1,
+ 							"dynamic_func": "QuestForOrg__0__0"
  						}
  					]
  				},

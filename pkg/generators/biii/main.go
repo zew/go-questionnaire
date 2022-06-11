@@ -731,8 +731,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					Welche Anlagestile verfolgen Sie mit <u>Ihren Impact</u> Investments?
 
 					<br>
-					<br>
-
 					&nbsp;
 					<br>
 

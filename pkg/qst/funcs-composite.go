@@ -1,6 +1,7 @@
 package qst
 
 import (
+	"github.com/zew/go-questionnaire/pkg/qst/composite/cpbiii"
 	"github.com/zew/go-questionnaire/pkg/qst/composite/cppat"
 	"github.com/zew/go-questionnaire/pkg/qst/compositeif"
 )
@@ -10,7 +11,8 @@ import (
 //
 // Compare dynFuncT, validatorT
 //
-// A composite func returns dynamic HTML with session values inserted from the questionnaire
+// A composite func returns dynamic HTML
+// with session values inserted from the questionnaire
 // A composite func also returns the input *names* for json generation of the questionnaire template
 //
 // Matching is required for
@@ -43,4 +45,5 @@ var CompositeFuncs = map[string]CompositeFuncT{
 	"TimePreferenceSelfComprehensionCheck":   cppat.TimePreferenceSelfComprehensionCheck,   //   ... disabled
 	"GroupPreferences":                       cppat.GroupPreferences,                       // belongs to pat
 	"GroupPreferencesPOP3":                   cppat.GroupPreferencesPOP3,                   //
+	"QuestForOrg":                            cpbiii.QuestForOrg,                           //
 }

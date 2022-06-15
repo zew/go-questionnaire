@@ -55,7 +55,7 @@ var q12Labels = []trl.S{
 	{"de": "Paris-Aligned oder Net Zero"},
 	{"de": "Kultur und Freizeit (Kultur, Kunst, Sport, sonstige Freizeitgestaltung und soziale Vereine)"},
 	{"de": "Bildung (Grundschule, Sekundarschule, Hochschule, Sonstiges)"},
-	{"de": "Erwerbstätigkeit"},
+	{"de": "Arbeitsmarktintegration"},
 	{"de": "Forschung"},
 	{"de": "Gesundheit (Krankenhäuser, Rehabilitation, Pflegeheime, psychische Gesundheit / Krisenintervention)"},
 	{"de": "Soziale Dienste (Notfall, Hilfe, Einkommens&shy;unterstützung / Unterhalt)"},
@@ -162,7 +162,7 @@ var oneToFiveEfficiency = []trl.S{
 
 var q26Labels = []trl.S{
 	{"de": "Deutschland"},
-	{"de": "international"},
+	{"de": "International"},
 }
 
 var q26inputNames = []string{
@@ -206,9 +206,9 @@ var q33aColumns = []trl.S{
 	{"de": "3<br>geringster Bedarf"},
 }
 var q33bColumns = []trl.S{
-	{"de": "1<br>größtes Potenzial"},
+	{"de": "1<br>großes Potenzial"},
 	{"de": "2<br><br>"},
-	{"de": "3<br>geringstes Potenzial"},
+	{"de": "3<br>geringes Potenzial"},
 }
 
 var q34columns = []trl.S{

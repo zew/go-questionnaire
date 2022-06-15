@@ -89,7 +89,7 @@ func (p *pageT) AddBiiiPrio(
 			inp.Type = "text"
 			inp.Name = fmt.Sprintf("%v_addl", names[idx])
 			inp.MaxChars = 16
-			inp.Placeholder = trl.S{"de": "opt. Kommentar"}
+			inp.Placeholder = trl.S{"de": "opt. Prio"}
 
 			inp.ColSpan = colSpace
 			inp.ColSpanLabel = 0
@@ -187,7 +187,7 @@ func (p *pageT) AddBiiiPrio2Cols(
 				inp.Type = "text"
 				inp.Name = fmt.Sprintf("%v_addl", nameCol)
 				inp.MaxChars = 14
-				inp.Placeholder = trl.S{"de": "opt. Kommentar"}
+				inp.Placeholder = trl.S{"de": "opt. Prio"}
 
 				inp.ColSpan = colsComment
 				inp.ColSpanLabel = 0

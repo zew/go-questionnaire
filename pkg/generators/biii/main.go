@@ -88,12 +88,9 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					-->
 
 					<p style='text-align: justify;'>
-					Im Rahmen dieser Erhebung wollen wir eine Marktstudie für den deutschen Impact Investing Markt 2022 durchführen.
+					Im Rahmen dieser Erhebung wollen wir eine Marktstudie für den deutschen Impact Investing-Markt 2022 durchführen.
 
-					Im Rahmen dieser Erhebung nutzen wir bewusst eine breite Definition
-					 von Impact Investments.
-
-					 Diese spiegelt das Verständnis des Global Impact Investing Networks (GIIN) wider.
+					Wir nutzen bewusst eine breite Definition von Impact Investments, die das Verständnis des Global Impact Investing Networks (GIIN) widerspiegelt.
 
 					 Demnach sind Impact Investments "Investitionen, die mit der Absicht getätigt werden,
 					 neben einer finanziellen Rendite auch eine positive,
@@ -132,8 +129,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			var radioValues = []string{"investor", "investee", "assetmgr", "passiveparticipant"}
 			var labels = []trl.S{
 				{"de": "Investor<br>(asset owner)"},
-				{"de": "Investee"},
-				{"de": "Vermögensverwalter<br>(asset manager)"},
+				{"de": "Investee (Kapitalempfänger)"},
+				{"de": "Intermediär<br>(Vermögensverwalter, Asset Manager)"},
 				{"de": "Ein anderer (passiver) Marktteilnehmer (z.B. Berater, ...)"},
 			}
 
@@ -509,10 +506,10 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.Min = 0
 				inp.Max = math.MaxFloat64
 				inp.Step = 1000
-				inp.Step = 1
-				inp.MaxChars = 15
-				inp.Suffix = trl.S{"de": "€"}
-				inp.Placeholder = trl.S{"de": "0.000.000"}
+				inp.Step = 0.01
+				inp.MaxChars = 9
+				inp.Suffix = trl.S{"de": "Mio €"}
+				inp.Placeholder = trl.S{"de": "0,00"}
 
 				inp.Style = css.NewStylesResponsive(inp.Style)
 				inp.Style.Desktop.StyleBox.Margin = "0 0 0 2.5rem"
@@ -551,7 +548,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				{"de": "Wirtschaftliche Motive (Impact Investing ist ein wichtiges neues Geschäftsfeld)"},
 				{"de": "Minimierung und Management von Risiken"},
 				{"de": "Lösung drängender gesellschaftlicher und/oder ökologischer Probleme"},
-				{"de": "Um den sozialen und/oder ökologischen Schaden unserer Investments zu minimieren"},
+				{"de": "Minimierung des sozialen und/und ökologischen Schadens unserer Investments"},
+				{"de": "Andere, bitte nennen&nbsp;&nbsp;"},
 			}
 			subName := []string{
 				"ethics",
@@ -560,9 +558,10 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"risk_reduction",
 				"ecology",
 				"damage_control",
+				"other",
 			}
 			gr := page.AddGroup()
-			gr.Cols = 1
+			gr.Cols = 7
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
@@ -580,15 +579,49 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				rad.Type = "checkbox"
 				rad.Name = fmt.Sprintf("q07_%v", subName[idx])
 
-				rad.ColSpan = 1
 				rad.ColSpanLabel = 1
 				rad.ColSpanControl = 6
 
-				rad.Label = label
+				// all rows except last
+				if idx < len(labels)-1 {
+					rad.ColSpan = gr.Cols
+					rad.Label = label
+					rad.ControlFirst()
+				} else {
+					// last row: now label
+					rad.ColSpan = 1
+					rad.ColSpanLabel = 0 // value 0 prevents the label from taking any place
+					rad.ColSpanControl = 1
 
-				rad.ControlFirst()
+					inp := gr.AddInput()
+					inp.Type = "text"
+					inp.Name = "q07_other_label"
+					inp.MaxChars = 20
+					inp.Label = label
+
+					inp.ColSpan = gr.Cols - 1
+					inp.ColSpanLabel = 2
+					inp.ColSpanControl = 5
+					inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
+				}
+
 			}
 		}
+		// 	for idx, label := range labels {
+		// 		rad := gr.AddInput()
+		// 		rad.Type = "checkbox"
+		// 		rad.Name = fmt.Sprintf("q07_%v", subName[idx])
+
+		// 		rad.ColSpan = 1
+		// 		rad.ColSpanLabel = 1
+		// 		rad.ColSpanControl = 6
+
+		// 		rad.Label = label
+
+		// 		rad.ControlFirst()
+		// 	}
+		// }
+
 		// gr2
 		{
 			labels := []trl.S{
@@ -608,7 +641,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				inp.Label = trl.S{"de": "<b>8.</b> &nbsp;	Welche finanziellen Ziele verfolgen Sie mit Ihren Impact Investments?"}
+				inp.Label = trl.S{"de": "<b>8.</b> &nbsp;	Welche finanziellen Ziele verfolgen Sie mit <u>Ihren Impact Investments</u>?"}
 				inp.ColSpan = gr.Cols
 			}
 			for idx, labl := range labels {
@@ -734,7 +767,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					&nbsp;
 					<br>
 
-					Der Ausgangspunkt für die folgende Frage bezieht sich auf die GIIN (2017) Definition:
+					Die Grundlage für die folgende Frage bildet die GIIN (2017) Definition:
 					"Impact Investments sind Investitionen, die mit der Absicht getätigt werden,
 					neben einer finanziellen Rendite auch eine positive,
 					messbare soziale und ökologische Wirkung zu erzielen" (GIIN, 2017).
@@ -767,10 +800,10 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.Min = 0
 				inp.Max = math.MaxFloat64
 				inp.Step = 1000
-				inp.Step = 1
-				inp.MaxChars = 15
-				inp.Suffix = trl.S{"de": "€"}
-				inp.Placeholder = trl.S{"de": "0.000.000"}
+				inp.Step = 0.01
+				inp.MaxChars = 9
+				inp.Suffix = trl.S{"de": "Mio €"}
+				inp.Placeholder = trl.S{"de": "0,00"}
 
 				inp.ControlTop()
 				inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
@@ -823,10 +856,10 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.Min = 0
 				inp.Max = math.MaxFloat64
 				inp.Step = 1000
-				inp.Step = 1
-				inp.MaxChars = 15
-				inp.Suffix = trl.S{"de": "€"}
-				inp.Placeholder = trl.S{"de": "0.000.000"}
+				inp.Step = 0.01
+				inp.MaxChars = 9
+				inp.Suffix = trl.S{"de": "Mio €"}
+				inp.Placeholder = trl.S{"de": "0,00"}
 
 				inp.ControlTop()
 				inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
@@ -887,10 +920,10 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.Min = 0
 				inp.Max = math.MaxFloat64
 				inp.Step = 1000
-				inp.Step = 1
-				inp.MaxChars = 15
-				inp.Suffix = trl.S{"de": "€"}
-				inp.Placeholder = trl.S{"de": "0.000.000"}
+				inp.Step = 0.01
+				inp.MaxChars = 9
+				inp.Suffix = trl.S{"de": "Mio €"}
+				inp.Placeholder = trl.S{"de": "0,00"}
 
 				inp.ControlTop()
 				inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
@@ -939,10 +972,10 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.Min = 0
 				inp.Max = math.MaxFloat64
 				inp.Step = 1000
-				inp.Step = 1
-				inp.MaxChars = 15
-				inp.Suffix = trl.S{"de": "€"}
-				inp.Placeholder = trl.S{"de": "0.000.000"}
+				inp.Step = 0.01
+				inp.MaxChars = 9
+				inp.Suffix = trl.S{"de": "Mio €"}
+				inp.Placeholder = trl.S{"de": "0,00"}
 
 				inp.ControlTop()
 				inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
@@ -992,10 +1025,10 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.Min = 0
 				inp.Max = math.MaxFloat64
 				inp.Step = 1000
-				inp.Step = 1
-				inp.MaxChars = 15
-				inp.Suffix = trl.S{"de": "€"}
-				inp.Placeholder = trl.S{"de": "0.000.000"}
+				inp.Step = 0.01
+				inp.MaxChars = 9
+				inp.Suffix = trl.S{"de": "Mio €"}
+				inp.Placeholder = trl.S{"de": "0,00"}
 
 				inp.ControlTop()
 				inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
@@ -1062,10 +1095,10 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.Min = 0
 				inp.Max = math.MaxFloat64
 				inp.Step = 1000
-				inp.Step = 1
-				inp.MaxChars = 15
-				inp.Suffix = trl.S{"de": "€"}
-				inp.Placeholder = trl.S{"de": "0.000.000"}
+				inp.Step = 0.01
+				inp.MaxChars = 9
+				inp.Suffix = trl.S{"de": "Mio €"}
+				inp.Placeholder = trl.S{"de": "0,00"}
 
 				inp.ControlTop()
 				inp.StyleCtl = css.NewStylesResponsive(inp.StyleCtl)

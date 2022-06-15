@@ -3,6 +3,7 @@ package biii
 import (
 	"fmt"
 	"math"
+	"strings"
 
 	"github.com/zew/go-questionnaire/pkg/css"
 	"github.com/zew/go-questionnaire/pkg/qst"
@@ -18,7 +19,7 @@ func later(q *qst.QuestionnaireT) {
 	// page 2b-01 II no or later
 	{
 		page := q.AddPage()
-		page.Short = trl.S{"de": "II not or later"}
+		page.Short = trl.S{"de": "Zukunftsposition"}
 		page.Label = trl.S{"de": ""}
 		page.NavigationCondition = "BIIILater"
 		page.WidthMax("42rem")
@@ -44,7 +45,7 @@ func later(q *qst.QuestionnaireT) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				inp.Label = trl.S{"de": "<b>42.</b> &nbsp;	Falls Ihre Organisation bisher noch nicht im Impact Investing-Markt tätig ist, wie bewerten Sie dieses Feld für die Zukunft: "}
+				inp.Label = trl.S{"de": "<b>42.</b> &nbsp;	Falls Ihre Organisation bisher noch nicht im Impact Investing-Markt tätig ist, was planen Sie für die Zukunft? "}
 				// (bitte nur eine Auswahl)
 				inp.ColSpan = gr.Cols
 			}
@@ -159,11 +160,10 @@ func later(q *qst.QuestionnaireT) {
 					inp.ColSpanControl = 7
 					inp.Min = 0
 					inp.Max = math.MaxFloat64
-					inp.Step = 1000
-					inp.Step = 1
-					inp.MaxChars = 15
-					inp.Suffix = trl.S{"de": "€"}
-					inp.Placeholder = trl.S{"de": "0.000.000"}
+					inp.Step = 0.01
+					inp.MaxChars = 9
+					inp.Suffix = trl.S{"de": "Mio €"}
+					inp.Placeholder = trl.S{"de": "0,00"}
 
 					inp.LabelPadRight()
 					// inp.Style = css.NewStylesResponsive(inp.Style)
@@ -177,56 +177,14 @@ func later(q *qst.QuestionnaireT) {
 
 		// gr2
 		{
-			labels := []trl.S{
-				{"de": "Bildung"},
-				{"de": "Ernährung"},
-				{"de": "Gesundheit"},
-				{"de": "Armutsbekämpfung"},
-
-				{"de": "Soziale / Geschlechter-Gerechtigkeit"},
-				{"de": "Demografischer Wandel / Altenpflege"},
-				{"de": "Kinder- und Jugendhilfe"},
-				{"de": "Migration und Integration"},
-
-				{"de": "(Sozialer) Wohnungsbau"},
-				{"de": "Saubere Energie"},
-				{"de": "Kunst und Kultur"},
-				{"de": "Wasser, Sanitärversorgung und Hygiene"},
-
-				{"de": "Finanzielle Inklusion"},
-				{"de": "Nachhaltiges Wirtschaften"},
-				{"de": "Arbeitsmarktintegration"},
-				{"de": "Digitalisierung"},
-
-				{"de": "Mobilität"},
-				{"de": "Klimaschutz"},
-				{"de": "Schutz von Ökosystemen und Biodiversität"},
+			tmp1 := q12inputNames[:len(q12inputNames)-2]
+			tmp2 := q12Labels[:len(q12inputNames)-2]
+			inpNames := make([]string, len(tmp1))
+			copy(inpNames, tmp1)
+			for i := 0; i < len(inpNames); i++ {
+				inpNames[i] = strings.ReplaceAll(inpNames[i], "q12", "q43a")
 			}
-			inpNames := []string{
-				"q43a_education",
-				"q43a_nutrition",
-				"q43a_health",
-				"q43a_poverty",
 
-				"q43a_justice",
-				"q43a_elderly_care",
-				"q43a_youth",
-				"q43a_migration",
-
-				"q43a_residential",
-				"q43a_clean_energy",
-				"q43a_culture",
-				"q43a_sanitation",
-
-				"q43a_inclusion",
-				"q43a_sustainability",
-				"q43a_labor_market",
-				"q43a_digital",
-
-				"q43a_mobility",
-				"q43a_climate",
-				"q43a_biodiversity",
-			}
 			gr := page.AddGroup()
 			gr.Cols = 2
 			{
@@ -236,10 +194,10 @@ func later(q *qst.QuestionnaireT) {
 				inp.Label = trl.S{"de": "Für welche Themen?"}
 				inp.ColSpan = gr.Cols
 			}
-			for idx, label := range labels {
+			for idx, label := range tmp2 {
 				rad := gr.AddInput()
 				rad.Type = "checkbox"
-				rad.Name = fmt.Sprintf("q43a_%v", inpNames[idx])
+				rad.Name = fmt.Sprintf("%v", inpNames[idx])
 
 				rad.ColSpan = 1
 				rad.ColSpanLabel = 2

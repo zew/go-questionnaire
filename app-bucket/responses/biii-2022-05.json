@@ -17,13 +17,13 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "ea3ebabaa76601f43898c189082f6a57b61794a6d78f0ba75ac76ac3ef564d69",
+ 	"md_5": "e6fa73a491873e6daaae163605ea198c4d03406d90176e09c59b4ef19f626c7b",
  	"lang_codes": [
  		"de"
  	],
  	"allow_skip_forward": false,
  	"version_effective": 0,
- 	"max_groups": 6,
+ 	"max_groups": 7,
  	"pages": [
  		{
  			"label": {
@@ -113,7 +113,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\n\t\t\t\t\t\u003c!--\n\t\t\t\t\t\u003cp style='text-align: justify; font-size: 130%'\u003e\n\t\t\t\t\t\tWillkommen zur Marktstudie der \u003ca target='_blank' href='https://bundesinitiative-impact-investing.de/'\u003eBundesinitiative Impact Investing (BIII)\u003c/a\u003e\n\t\t\t\t\t\tund der \u003ca target='_blank' href='https://www.wiso.uni-hamburg.de/fachbereich-sozoek/professuren/busch/04-team/busch-timo.html'\u003eUniversität Hamburg\u003c/a\u003e\n\t\t\t\t\t\t im Auftrag der AIR GmbH\n\t\t\t\t\t\t  –  Online Umsetzung durch das \u003ca  target='_blank' href='https://zew.de/'\u003eZEW Mannheim\u003c/a\u003e\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t--\u003e\n\n\t\t\t\t\t\u003cp style='text-align: justify;'\u003e\n\t\t\t\t\tIm Rahmen dieser Erhebung wollen wir eine Marktstudie für den deutschen Impact Investing Markt 2022 durchführen.\n\n\t\t\t\t\tIm Rahmen dieser Erhebung nutzen wir bewusst eine breite Definition\n\t\t\t\t\t von Impact In\u0026shy;vest\u0026shy;ments.\n\n\t\t\t\t\t Diese spiegelt das Verständnis des Global Impact Investing Networks (GIIN) wider.\n\n\t\t\t\t\t Demnach sind Impact In\u0026shy;vest\u0026shy;ments \"Investitionen, die mit der Absicht getätigt werden,\n\t\t\t\t\t neben einer finanziellen Rendite auch eine pos\u0026shy;itive,\n\t\t\t\t\t messbare soziale und ökologische Wirkung zu erzielen\" (GIIN, 2017).\n\n\t\t\t\t\t Auch in akademischen Studien wird ähnlich argumentiert.\n\n\t\t\t\t\t Busch et al. (2021) bezeichnen Impact bezogene In\u0026shy;vest\u0026shy;ments\n\t\t\t\t\t als \"Investitionen, die sich auf Veränderungen in der realen Welt\n\t\t\t\t\t im Hinblick auf die Lösung sozialer Probleme und/oder die Milderung\n\t\t\t\t\t ökologischer Schäden konzentrieren\".\n\n\t\t\t\t\t Ob entsprechende In\u0026shy;vest\u0026shy;ments aktiv und zusätzlich zu sozialen\n\t\t\t\t\t und ökologischen Lösungen und Veränderungen beitragen, \n\t\t\t\t\t wird im Rahmen der Erhebung separat ermittelt.\n\n\t\t\t\t\tWir würden Sie bitten, \n\t\t\t\t\tden Online-Fragebogen \u003ci\u003evollständig\u003c/i\u003e auszufüllen \n\t\t\t\t\tund zu beenden. \n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
+ 								"de": "\n\n\t\t\t\t\t\u003c!--\n\t\t\t\t\t\u003cp style='text-align: justify; font-size: 130%'\u003e\n\t\t\t\t\t\tWillkommen zur Marktstudie der \u003ca target='_blank' href='https://bundesinitiative-impact-investing.de/'\u003eBundesinitiative Impact Investing (BIII)\u003c/a\u003e\n\t\t\t\t\t\tund der \u003ca target='_blank' href='https://www.wiso.uni-hamburg.de/fachbereich-sozoek/professuren/busch/04-team/busch-timo.html'\u003eUniversität Hamburg\u003c/a\u003e\n\t\t\t\t\t\t im Auftrag der AIR GmbH\n\t\t\t\t\t\t  –  Online Umsetzung durch das \u003ca  target='_blank' href='https://zew.de/'\u003eZEW Mannheim\u003c/a\u003e\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t--\u003e\n\n\t\t\t\t\t\u003cp style='text-align: justify;'\u003e\n\t\t\t\t\tIm Rahmen dieser Erhebung wollen wir eine Marktstudie für den deutschen Impact Investing-Markt 2022 durchführen.\n\n\t\t\t\t\tWir nutzen bewusst eine breite Definition von Impact In\u0026shy;vest\u0026shy;ments, die das Verständnis des Global Impact Investing Networks (GIIN) widerspiegelt.\n\n\t\t\t\t\t Demnach sind Impact In\u0026shy;vest\u0026shy;ments \"Investitionen, die mit der Absicht getätigt werden,\n\t\t\t\t\t neben einer finanziellen Rendite auch eine pos\u0026shy;itive,\n\t\t\t\t\t messbare soziale und ökologische Wirkung zu erzielen\" (GIIN, 2017).\n\n\t\t\t\t\t Auch in akademischen Studien wird ähnlich argumentiert.\n\n\t\t\t\t\t Busch et al. (2021) bezeichnen Impact bezogene In\u0026shy;vest\u0026shy;ments\n\t\t\t\t\t als \"Investitionen, die sich auf Veränderungen in der realen Welt\n\t\t\t\t\t im Hinblick auf die Lösung sozialer Probleme und/oder die Milderung\n\t\t\t\t\t ökologischer Schäden konzentrieren\".\n\n\t\t\t\t\t Ob entsprechende In\u0026shy;vest\u0026shy;ments aktiv und zusätzlich zu sozialen\n\t\t\t\t\t und ökologischen Lösungen und Veränderungen beitragen, \n\t\t\t\t\t wird im Rahmen der Erhebung separat ermittelt.\n\n\t\t\t\t\tWir würden Sie bitten, \n\t\t\t\t\tden Online-Fragebogen \u003ci\u003evollständig\u003c/i\u003e auszufüllen \n\t\t\t\t\tund zu beenden. \n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -171,7 +171,7 @@
  							"name": "q01",
  							"type": "radio",
  							"label": {
- 								"de": "Investee"
+ 								"de": "Investee (Kapitalempfänger)"
  							},
  							"col_span": 7,
  							"col_span_label": 1,
@@ -199,7 +199,7 @@
  							"name": "q01",
  							"type": "radio",
  							"label": {
- 								"de": "Vermögensverwalter\u003cbr\u003e(asset manager)"
+ 								"de": "Intermediär\u003cbr\u003e(Vermögensverwalter, Asset Manager)"
  							},
  							"col_span": 7,
  							"col_span_label": 1,
@@ -1479,17 +1479,17 @@
  						{
  							"name": "q06_impact",
  							"type": "number",
- 							"max_chars": 15,
- 							"step": 1,
+ 							"max_chars": 9,
+ 							"step": 0.01,
  							"max": 1.7976931348623157e+308,
  							"placeholder": {
- 								"de": "0.000.000"
+ 								"de": "0,00"
  							},
  							"label": {
  								"de": "Impact In\u0026shy;vest\u0026shy;ments am 31/12/2021"
  							},
  							"suffix": {
- 								"de": "€"
+ 								"de": "Mio €"
  							},
  							"col_span": 1,
  							"col_span_label": 5,
@@ -1514,17 +1514,17 @@
  						{
  							"name": "q06_other",
  							"type": "number",
- 							"max_chars": 15,
- 							"step": 1,
+ 							"max_chars": 9,
+ 							"step": 0.01,
  							"max": 1.7976931348623157e+308,
  							"placeholder": {
- 								"de": "0.000.000"
+ 								"de": "0,00"
  							},
  							"label": {
  								"de": "Andere In\u0026shy;vest\u0026shy;ments mit ESG Bezug am 31/12/2021"
  							},
  							"suffix": {
- 								"de": "€"
+ 								"de": "Mio €"
  							},
  							"col_span": 1,
  							"col_span_label": 5,
@@ -1549,17 +1549,17 @@
  						{
  							"name": "q06_conventional",
  							"type": "number",
- 							"max_chars": 15,
- 							"step": 1,
+ 							"max_chars": 9,
+ 							"step": 0.01,
  							"max": 1.7976931348623157e+308,
  							"placeholder": {
- 								"de": "0.000.000"
+ 								"de": "0,00"
  							},
  							"label": {
  								"de": "Konventionelle In\u0026shy;vest\u0026shy;ments am 31/12/2021"
  							},
  							"suffix": {
- 								"de": "€"
+ 								"de": "Mio €"
  							},
  							"col_span": 1,
  							"col_span_label": 5,
@@ -1634,14 +1634,14 @@
  				},
  				{
  					"bottom_vspacers": 3,
- 					"columns": 1,
+ 					"columns": 7,
  					"inputs": [
  						{
  							"type": "textblock",
  							"label": {
  								"de": "\n\t\t\t\t\t\u003cb\u003e7.\u003c/b\u003e \u0026nbsp;\n\t\t\t\t\tWas sind die Beweggründe da\u0026shy;für, dass Sie im Impact Investing tätig sind/ wurden?\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t(Mehrfachauswahl möglich)\n\t\t\t\t"
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1
  						},
  						{
@@ -1650,7 +1650,7 @@
  							"label": {
  								"de": "Werte und ethische Überzeugungen"
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"style_label": {
@@ -1677,7 +1677,7 @@
  							"label": {
  								"de": "Kundennachfrage"
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"style_label": {
@@ -1704,7 +1704,7 @@
  							"label": {
  								"de": "Wirt\u0026shy;schaft\u0026shy;liche Motive (Impact Investing ist ein wich\u0026shy;tiges neues Geschäftsfeld)"
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"style_label": {
@@ -1731,7 +1731,7 @@
  							"label": {
  								"de": "Minimierung und Man\u0026shy;age\u0026shy;ment von Risiken"
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"style_label": {
@@ -1758,7 +1758,7 @@
  							"label": {
  								"de": "Lösung drängender gesellschaftlicher und/oder ökologischer Probleme"
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"style_label": {
@@ -1783,9 +1783,9 @@
  							"name": "q07_damage_control",
  							"type": "checkbox",
  							"label": {
- 								"de": "Um den sozialen und/oder ökologischen Schaden unserer In\u0026shy;vest\u0026shy;ments zu minimieren"
+ 								"de": "Minimierung des sozialen und/und ökologischen Schadens unserer In\u0026shy;vest\u0026shy;ments"
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
  							"style_label": {
@@ -1805,6 +1805,37 @@
  									"text_style": {}
  								}
  							}
+ 						},
+ 						{
+ 							"name": "q07_other",
+ 							"type": "checkbox",
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "q07_other_label",
+ 							"type": "text",
+ 							"max_chars": 20,
+ 							"label": {
+ 								"de": "Andere, bitte nennen\u0026nbsp;\u0026nbsp;"
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 2,
+ 							"col_span_control": 5,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						}
  					]
  				},
@@ -1815,7 +1846,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e8.\u003c/b\u003e \u0026nbsp;\tWelche finanziellen Ziele verfolgen Sie mit Ihren Impact In\u0026shy;vest\u0026shy;ments?"
+ 								"de": "\u003cb\u003e8.\u003c/b\u003e \u0026nbsp;\tWelche finanziellen Ziele verfolgen Sie mit \u003cu\u003eIhren Impact In\u0026shy;vest\u0026shy;ments\u003c/u\u003e?"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -2210,7 +2241,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\n\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\t\u003cp style='text-align: justify;'\u003e\n\t\t\t\t\t\u003cb\u003e10.\u003c/b\u003e \u0026nbsp;\n\n\t\t\t\t\tWelche Anlagestile verfolgen Sie mit \u003cu\u003eIhren Impact\u003c/u\u003e In\u0026shy;vest\u0026shy;ments?\n\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u0026nbsp;\n\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\tDer Ausgangspunkt für die folgende Frage bezieht sich auf die GIIN (2017) Definition:\n\t\t\t\t\t\"Impact In\u0026shy;vest\u0026shy;ments sind Investitionen, die mit der Absicht getätigt werden,\n\t\t\t\t\tneben einer finanziellen Rendite auch eine pos\u0026shy;itive,\n\t\t\t\t\tmessbare soziale und ökologische Wirkung zu erzielen\" (GIIN, 2017).\n\n\t\t\t\t\tTragen Sie bitte ausgehend von dieser breiten Definition\n\t\t\t\t\tdie entsprechenden Investitionsvolumina ein.\n\n\t\t\t\t\t\u003cb\u003eWich\u0026shy;tig dabei ist, dass jedes Volumen \u003ci\u003enur einmalig eingetragen\u003c/i\u003e wird\n\t\t\t\t\tund sich somit in der Summe wieder 100% ergeben.\n\t\t\t\t\t\u003c/b\u003e\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t"
+ 								"de": "\n\n\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\t\u003cp style='text-align: justify;'\u003e\n\t\t\t\t\t\u003cb\u003e10.\u003c/b\u003e \u0026nbsp;\n\n\t\t\t\t\tWelche Anlagestile verfolgen Sie mit \u003cu\u003eIhren Impact\u003c/u\u003e In\u0026shy;vest\u0026shy;ments?\n\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u0026nbsp;\n\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\tDie Grundlage für die folgende Frage bildet die GIIN (2017) Definition:\n\t\t\t\t\t\"Impact In\u0026shy;vest\u0026shy;ments sind Investitionen, die mit der Absicht getätigt werden,\n\t\t\t\t\tneben einer finanziellen Rendite auch eine pos\u0026shy;itive,\n\t\t\t\t\tmessbare soziale und ökologische Wirkung zu erzielen\" (GIIN, 2017).\n\n\t\t\t\t\tTragen Sie bitte ausgehend von dieser breiten Definition\n\t\t\t\t\tdie entsprechenden Investitionsvolumina ein.\n\n\t\t\t\t\t\u003cb\u003eWich\u0026shy;tig dabei ist, dass jedes Volumen \u003ci\u003enur einmalig eingetragen\u003c/i\u003e wird\n\t\t\t\t\tund sich somit in der Summe wieder 100% ergeben.\n\t\t\t\t\t\u003c/b\u003e\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t"
  							},
  							"col_span": 35,
  							"col_span_label": 1
@@ -2218,17 +2249,17 @@
  						{
  							"name": "q10a",
  							"type": "number",
- 							"max_chars": 15,
- 							"step": 1,
+ 							"max_chars": 9,
+ 							"step": 0.01,
  							"max": 1.7976931348623157e+308,
  							"placeholder": {
- 								"de": "0.000.000"
+ 								"de": "0,00"
  							},
  							"label": {
  								"de": "\n\t\t\t\t\t\u003cb\u003eA)\u003c/b\u003e \u0026nbsp; Kapitalerhöhungen / -zuführungen (z.B. IPO, PE In\u0026shy;vest\u0026shy;ment, Kredite etc.),\n\t\t\t\t\tdie zur Generierung eines zusätzlichen Impacts führen\n\t\t\t\t"
  							},
  							"suffix": {
- 								"de": "€"
+ 								"de": "Mio €"
  							},
  							"col_span": 35,
  							"col_span_label": 5,
@@ -2336,17 +2367,17 @@
  						{
  							"name": "q10b",
  							"type": "number",
- 							"max_chars": 15,
- 							"step": 1,
+ 							"max_chars": 9,
+ 							"step": 0.01,
  							"max": 1.7976931348623157e+308,
  							"placeholder": {
- 								"de": "0.000.000"
+ 								"de": "0,00"
  							},
  							"label": {
  								"de": "\n\t\t\t\t\t\u003cb\u003eB)\u003c/b\u003e \u0026nbsp;\n\t\t\t\t\tAndere (über A hinausgehende) Investitionen in Investees mit klaren Impact Zielen\n\t\t\t\t\t (z.B. Un\u0026shy;ter\u0026shy;neh\u0026shy;men bei denen Impact den Kern des Geschäftsmodells\n\t\t\t\t\t\tbildet oder Un\u0026shy;ter\u0026shy;neh\u0026shy;men mit Science-based Targets)\n\t\t\t\t"
  							},
  							"suffix": {
- 								"de": "€"
+ 								"de": "Mio €"
  							},
  							"col_span": 35,
  							"col_span_label": 5,
@@ -2462,17 +2493,17 @@
  						{
  							"name": "q10c1",
  							"type": "number",
- 							"max_chars": 15,
- 							"step": 1,
+ 							"max_chars": 9,
+ 							"step": 0.01,
  							"max": 1.7976931348623157e+308,
  							"placeholder": {
- 								"de": "0.000.000"
+ 								"de": "0,00"
  							},
  							"label": {
  								"de": "\n\t\t\t\t\t\u003c!-- \u003cb\u003eC1)\u003c/b\u003e \u0026nbsp;  --\u003e\n\t\t\t\t\tFür die eine strategische Engagement Policy existiert (z.B. aktiver Dialog mit den Investees)\n\t\t\t\t"
  							},
  							"suffix": {
- 								"de": "€"
+ 								"de": "Mio €"
  							},
  							"col_span": 35,
  							"col_span_label": 5,
@@ -2580,17 +2611,17 @@
  						{
  							"name": "q10c2",
  							"type": "number",
- 							"max_chars": 15,
- 							"step": 1,
+ 							"max_chars": 9,
+ 							"step": 0.01,
  							"max": 1.7976931348623157e+308,
  							"placeholder": {
- 								"de": "0.000.000"
+ 								"de": "0,00"
  							},
  							"label": {
  								"de": "\n\t\t\t\t\t\u003c!-- \u003cb\u003eC2)\u003c/b\u003e \u0026nbsp;  --\u003e\n\t\t\t\t\tFür die eine strategische Voting Policy (z.B. Ausübung von Stimmrechten) existiert\n\t\t\t\t"
  							},
  							"suffix": {
- 								"de": "€"
+ 								"de": "Mio €"
  							},
  							"col_span": 35,
  							"col_span_label": 5,
@@ -2698,17 +2729,17 @@
  						{
  							"name": "q10d",
  							"type": "number",
- 							"max_chars": 15,
- 							"step": 1,
+ 							"max_chars": 9,
+ 							"step": 0.01,
  							"max": 1.7976931348623157e+308,
  							"placeholder": {
- 								"de": "0.000.000"
+ 								"de": "0,00"
  							},
  							"label": {
  								"de": "\n\t\t\t\t\t\u003cb\u003eD)\u003c/b\u003e \u0026nbsp;\n\t\t\t\t\tAlle weiteren (über A, B und C hinaus gehenden) ESG gemanagten Investitionen (z.B. Ausschlüsse / Best-in-class Ansätze / ESG Integration etc)\n\t\t\t\t"
  							},
  							"suffix": {
- 								"de": "€"
+ 								"de": "Mio €"
  							},
  							"col_span": 35,
  							"col_span_label": 5,
@@ -2859,14 +2890,14 @@
  						{
  							"name": "q10e",
  							"type": "number",
- 							"max_chars": 15,
- 							"step": 1,
+ 							"max_chars": 9,
+ 							"step": 0.01,
  							"max": 1.7976931348623157e+308,
  							"placeholder": {
- 								"de": "0.000.000"
+ 								"de": "0,00"
  							},
  							"suffix": {
- 								"de": "€"
+ 								"de": "Mio €"
  							},
  							"col_span": 10,
  							"col_span_control": 2,
@@ -3004,7 +3035,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cb\u003e11.\u003c/b\u003e \u0026nbsp;\t\n\t\t\t\t\t\n\t\t\t\t\tBitte tragen Sie soweit möglich, ungefähre anteilige Impact Investitionsvolumina nach Anlageklassen/Instrumenten (in Pro\u0026shy;zent) ein. \t\t\t\t\t\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cb\u003e11.\u003c/b\u003e \u0026nbsp;\t\n\t\t\t\t\t\n\t\t\t\t\tBitte tragen Sie soweit möglich ungefähre Impact Investitionsvolumina nach Anlageklassen/Instrumenten (in Pro\u0026shy;zent) ein. (Investitionsvolumina können mehrfach zugeordnet werden)\n\t\t\t\t"
  							},
  							"col_span": 7,
  							"col_span_label": 1
@@ -3229,7 +3260,7 @@
  								"de": "00"
  							},
  							"label": {
- 								"de": "Soziale Infrastruktur Finanzierung (SOC (z.B. SIB / DIB) ) \n\t\t\t\t\t\t\u003cdiv style=\"font-size:80%; line-height: 100%; margin-top: 0.3rem; margin-left: 1rem;\"\u003e\n\t\t\t\t\t\t\tSOC: Social Outcomes Contracting; \n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\tSIB: Social Impact Bond; \n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\tDIB: De\u0026shy;vel\u0026shy;op\u0026shy;ment Impact Bond\n\t\t\t\t\t\t\u003c/div\u003e\n\t\t\t\t\t\n\t\t\t\t"
+ 								"de": "Wirkungsorientierte Finanzierungsinstrumente (SOC (z.B. SIB / DIB) ) \n\t\t\t\t\t\t\u003cdiv style=\"font-size:80%; line-height: 100%; margin-top: 0.3rem; margin-left: 1rem;\"\u003e\n\t\t\t\t\t\t\tSOC: Social Outcomes Contracting; \n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\tSIB: Social Impact Bond; \n\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\tDIB: De\u0026shy;vel\u0026shy;op\u0026shy;ment Impact Bond\n\t\t\t\t\t\t\u003c/div\u003e\n\t\t\t\t\t\n\t\t\t\t"
  							},
  							"suffix": {
  								"de": "%"
@@ -3299,7 +3330,7 @@
  								"de": "00"
  							},
  							"label": {
- 								"de": "Schwellenländer(markt) (Emerging markets)  "
+ 								"de": "Schwellen- und Entwicklungsländer (Emerging markets)  "
  							},
  							"suffix": {
  								"de": "%"
@@ -3618,7 +3649,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\t\u003cb\u003e12. \u003c/b\u003e \u0026nbsp;\t\n\t\t\t\t\t\t\n\t\t\t\t\t\tWelche Themenfelder decken Ihre Investitionen ab? \n\t\t\t\t\t\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003c!--\n\t\t\t\t\t\t(Mehrfachauswahl in der Reihenfolge der investierten Volumina. 1 bis 5,  1= höchs\u0026shy;tes Volumen)\n\t\t\t\t\t\t--\u003e\n\t\t\t\t\t\t(Wählen Sie bis zu fünf)\n\n\t\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\t\u003cb\u003e12. \u003c/b\u003e \u0026nbsp;\t\n\t\t\t\t\t\t\n\t\t\t\t\t\tWelche Themenfelder decken Ihre Investitionen ab? \n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cb\u003e(Wählen Sie die Top Fünf (maximal). Optional mit In\u0026shy;vest\u0026shy;mentvolumina)\u003c/b\u003e\n\t\t\t\t\t\n\t\t\t\t\t\t\u003c!--\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t(Wählen Sie bis zu fünf)\n\t\t\t\t\t\t\n\t\t\t\t\t\t--\u003e\n\n\t\t\t\t\t"
  							},
  							"col_span": 9,
  							"col_span_label": 1
@@ -3702,7 +3733,7 @@
  							"name": "q12_work",
  							"type": "checkbox",
  							"label": {
- 								"de": "Erwerbstätigkeit"
+ 								"de": "Arbeitsmarktintegration"
  							},
  							"col_span": 7,
  							"col_span_label": 6,
@@ -4128,7 +4159,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\t\u003cb\u003e13. \u003c/b\u003e \u0026nbsp;\t\n\t\t\t\t\t\tAuf die Erreichung welcher Sustainable De\u0026shy;vel\u0026shy;op\u0026shy;ment Goals (SDGs)/ Ziele für nachhaltige Entwicklung der UN arbeiten Sie mit Ihren Investitionen hin?\t\t\t\t\t\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t(Wählen Sie bis zu fünf)\n\t\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\t\u003cb\u003e13. \u003c/b\u003e \u0026nbsp;\t\n\t\t\t\t\t\tAuf die Erreichung welcher Sustainable De\u0026shy;vel\u0026shy;op\u0026shy;ment Goals (SDGs)/ Ziele für nachhaltige Entwicklung der UN arbeiten Sie mit Ihren Investitionen hin?\t\t\t\t\t\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cb\u003e(Wählen Sie die Top Fünf (maximal))\u003c/b\u003e\n\n\t\t\t\t\t\t\u003c!--\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t(Wählen Sie bis zu fünf)\n\t\t\t\t\t\t--\u003e\n\t\t\t\t\t"
  							},
  							"col_span": 7,
  							"col_span_label": 1
@@ -4622,14 +4653,14 @@
  				},
  				{
  					"bottom_vspacers": 3,
- 					"columns": 1,
+ 					"columns": 7,
  					"inputs": [
  						{
  							"type": "textblock",
  							"label": {
  								"de": "\n\t\t\t\t\t\u003cb\u003e15.\u003c/b\u003e \u0026nbsp;\t\n\t\t\t\t\tWo liegen bei einem Impact In\u0026shy;vest\u0026shy;ment die größten finanziellen Risiken?\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t(Mehrfachauswahl möglich)\n\t\t\t\t"
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1
  						},
  						{
@@ -4638,23 +4669,9 @@
  							"label": {
  								"de": "Unzureichende Man\u0026shy;age\u0026shy;mentkompetenz der Investees"
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -4679,23 +4696,9 @@
  							"label": {
  								"de": "Komplexität des Geschäftsmodells "
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -4720,23 +4723,9 @@
  							"label": {
  								"de": "Länder- und Währungsrisiken "
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -4761,23 +4750,9 @@
  							"label": {
  								"de": "Liquiditäts- und Exit-Risiko"
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -4802,23 +4777,9 @@
  							"label": {
  								"de": "Makroökonomische Risiken"
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -4827,6 +4788,37 @@
  										"justify_self": "start",
  										"order": 2
  									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q15_other",
+ 							"type": "checkbox",
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "q15_other_label",
+ 							"type": "text",
+ 							"max_chars": 20,
+ 							"label": {
+ 								"de": "Andere, bitte nennen"
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 2,
+ 							"col_span_control": 5,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
  									"text_style": {}
  								},
  								"mobile": {
@@ -5577,7 +5569,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\n\t\t\t\t\t\u003cp style='font-size: 130%'\u003e\n\t\t\t\t\t\tImpact Messung und Man\u0026shy;age\u0026shy;ment (IMM)\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003cp style='font-size: 110%; text-align: justify'\u003e\n\t\t\t\t\tIm folgenden Teil wollen wir Da\u0026shy;ten zu den am Markt verwendeten Messungs- und Man\u0026shy;age\u0026shy;mentstrategien erheben.\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003cbr\u003e\n\n\n\t\t\t\t\t\u003cb\u003e20.\u003c/b\u003e \u0026nbsp;\t\n\t\t\t\t\tWie messen Sie den Impact Ihrer Impact In\u0026shy;vest\u0026shy;ments?? \n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t(Mehrfachauswahl möglich)\n\t\t\t\t"
+ 								"de": "\n\n\t\t\t\t\t\u003cp style='font-size: 130%;font-weight: bold'\u003e\n\t\t\t\t\t\tImpact Messung und Man\u0026shy;age\u0026shy;ment (IMM)\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003cp style='font-size: 110%; text-align: justify'\u003e\n\t\t\t\t\tIm folgenden Teil wollen wir Da\u0026shy;ten zu den am Markt verwendeten Messungs- und Man\u0026shy;age\u0026shy;mentstrategien erheben.\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003cbr\u003e\n\n\n\t\t\t\t\t\u003cb\u003e20.\u003c/b\u003e \u0026nbsp;\t\n\t\t\t\t\tWie messen Sie den Impact Ihrer Impact In\u0026shy;vest\u0026shy;ments?? \n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t(Mehrfachauswahl möglich)\n\t\t\t\t"
  							},
  							"col_span": 7,
  							"col_span_label": 1
@@ -5721,7 +5713,7 @@
  							"name": "q20_additionality",
  							"type": "checkbox",
  							"label": {
- 								"de": "Wir messen unseren zusätzlichen Beitrag (Additionalität) im Vergleich zu einem Base-line-Szenario"
+ 								"de": "Wir messen unseren zusätzlichen Beitrag (Additionalität) im Vergleich zu einem Base-Line-Szenario"
  							},
  							"col_span": 7,
  							"col_span_label": 1,
@@ -7387,7 +7379,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\n\t\t\t\t\t\u003cp style='font-size: 130%'\u003e\n\t\t\t\t\t\tIntegrität und Regu\u0026shy;lierung\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\n\t\t\t\t\t\u003cp style='font-size: 130%; font-weight: bold;'\u003e\n\t\t\t\t\t\tIntegrität und Regu\u0026shy;lierung\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\tIm folgenden Teil wollen wir Da\u0026shy;ten zu den aktuellen regulatorischen Rahmenbedingungen und der Integrität des Marktes erheben.\n\t\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -7395,7 +7387,7 @@
  					]
  				},
  				{
- 					"bottom_vspacers": 3,
+ 					"bottom_vspacers": 1,
  					"columns": 5,
  					"inputs": [
  						{
@@ -7676,7 +7668,7 @@
  							"name": "q26_international",
  							"type": "radio",
  							"label": {
- 								"de": "in\u0026shy;ter\u0026shy;na\u0026shy;tion\u0026shy;al"
+ 								"de": "In\u0026shy;ter\u0026shy;na\u0026shy;tion\u0026shy;al"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -7728,6 +7720,77 @@
  							"grid_container_style": {
  								"auto_flow": "row",
  								"template_columns": "   4.6fr    1fr    1fr    1fr    1fr "
+ 							},
+ 							"box_style": {
+ 								"display": "grid"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 4,
+ 					"columns": 7,
+ 					"inputs": [
+ 						{
+ 							"name": "q26_other_label",
+ 							"type": "text",
+ 							"max_chars": 17,
+ 							"label": {
+ 								"de": "Andere",
+ 								"en": "Other"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 2.4,
+ 							"col_span_control": 4
+ 						},
+ 						{
+ 							"name": "q26_other",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "1"
+ 						},
+ 						{
+ 							"name": "q26_other",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "q26_other",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "q26_other",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "q26_other",
+ 							"type": "radio",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"template_columns": "   3.6fr    1fr    1fr    1fr    1fr    1fr "
  							},
  							"box_style": {
  								"display": "grid"
@@ -8975,7 +9038,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\u003cp style='font-size: 130%'\u003e\n\t\t\t\t\t\tEntwicklung des Impact Investing-Marktes\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cp style='font-size: 130%; font-weight: bold'\u003e\n\t\t\t\t\t\tEntwicklung des Impact Investing-Marktes\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -9936,7 +9999,7 @@
  							"name": "q30_best_pract",
  							"type": "radio",
  							"label": {
- 								"de": "Best practices"
+ 								"de": "Best Practices"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -10567,56 +10630,6 @@
  							"value_radio": "5"
  						},
  						{
- 							"name": "q31_bestpract",
- 							"type": "radio",
- 							"label": {
- 								"de": "Fähigkeit der Investoren zur Implementierung von Best Practices"
- 							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q31_bestpract",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q31_bestpract",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "q31_bestpract",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "q31_bestpract",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
  							"name": "q31_methodoloy",
  							"type": "radio",
  							"label": {
@@ -10662,56 +10675,6 @@
  						},
  						{
  							"name": "q31_methodoloy",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "q31_integration",
- 							"type": "radio",
- 							"label": {
- 								"de": "Integration von Impact Man\u0026shy;age\u0026shy;ment und Messung in alle Investitionsprozesse "
- 							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q31_integration",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q31_integration",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "q31_integration",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "q31_integration",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
@@ -10770,7 +10733,7 @@
  							"name": "q31_differentiation",
  							"type": "radio",
  							"label": {
- 								"de": "Ausdifferenzierung von Impact-Anspruchsniveau in Asset Klassen "
+ 								"de": "Ausdifferenzierung von Impact-Anspruchsniveaus in Asset Klassen "
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -11150,7 +11113,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\t\u003cb\u003e32.\u003c/b\u003e \u0026nbsp;\n\t\t\t\t\t\tIn welchen Bereichen sind die größten Fortschritte notwendig?\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t(Wählen Sie bis zu fünf)\n\t\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\t\u003cb\u003e32.\u003c/b\u003e \u0026nbsp;\n\t\t\t\t\t\tIn welchen Bereichen sind die größten Fortschritte notwendig?\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cb\u003e\n\t\t\t\t\t\t(Wählen Sie die Top Fünf. Optional mit Priorisierung (1=größter Fortschritt))\n\t\t\t\t\t\t\u003c/b\u003e\n\t\t\t\t\t"
  							},
  							"col_span": 9,
  							"col_span_label": 1
@@ -11170,7 +11133,7 @@
  							"type": "text",
  							"max_chars": 16,
  							"placeholder": {
- 								"de": "opt. Kommentar"
+ 								"de": "opt. Prio"
  							},
  							"col_span": 2,
  							"col_span_control": 1
@@ -11190,7 +11153,7 @@
  							"type": "text",
  							"max_chars": 16,
  							"placeholder": {
- 								"de": "opt. Kommentar"
+ 								"de": "opt. Prio"
  							},
  							"col_span": 2,
  							"col_span_control": 1
@@ -11210,7 +11173,7 @@
  							"type": "text",
  							"max_chars": 16,
  							"placeholder": {
- 								"de": "opt. Kommentar"
+ 								"de": "opt. Prio"
  							},
  							"col_span": 2,
  							"col_span_control": 1
@@ -11230,7 +11193,7 @@
  							"type": "text",
  							"max_chars": 16,
  							"placeholder": {
- 								"de": "opt. Kommentar"
+ 								"de": "opt. Prio"
  							},
  							"col_span": 2,
  							"col_span_control": 1
@@ -11250,7 +11213,7 @@
  							"type": "text",
  							"max_chars": 16,
  							"placeholder": {
- 								"de": "opt. Kommentar"
+ 								"de": "opt. Prio"
  							},
  							"col_span": 2,
  							"col_span_control": 1
@@ -11270,7 +11233,7 @@
  							"type": "text",
  							"max_chars": 16,
  							"placeholder": {
- 								"de": "opt. Kommentar"
+ 								"de": "opt. Prio"
  							},
  							"col_span": 2,
  							"col_span_control": 1
@@ -11279,7 +11242,7 @@
  							"name": "q32_bestpract",
  							"type": "checkbox",
  							"label": {
- 								"de": "Benchmarks und Best practices "
+ 								"de": "Benchmarks und Best Practices "
  							},
  							"col_span": 7,
  							"col_span_label": 6,
@@ -11290,7 +11253,7 @@
  							"type": "text",
  							"max_chars": 16,
  							"placeholder": {
- 								"de": "opt. Kommentar"
+ 								"de": "opt. Prio"
  							},
  							"col_span": 2,
  							"col_span_control": 1
@@ -11310,7 +11273,7 @@
  							"type": "text",
  							"max_chars": 16,
  							"placeholder": {
- 								"de": "opt. Kommentar"
+ 								"de": "opt. Prio"
  							},
  							"col_span": 2,
  							"col_span_control": 1
@@ -11330,7 +11293,7 @@
  							"type": "text",
  							"max_chars": 16,
  							"placeholder": {
- 								"de": "opt. Kommentar"
+ 								"de": "opt. Prio"
  							},
  							"col_span": 2,
  							"col_span_control": 1
@@ -11350,7 +11313,7 @@
  							"type": "text",
  							"max_chars": 16,
  							"placeholder": {
- 								"de": "opt. Kommentar"
+ 								"de": "opt. Prio"
  							},
  							"col_span": 2,
  							"col_span_control": 1
@@ -11377,7 +11340,7 @@
  							"type": "text",
  							"max_chars": 16,
  							"placeholder": {
- 								"de": "opt. Kommentar"
+ 								"de": "opt. Prio"
  							},
  							"col_span": 2,
  							"col_span_control": 1
@@ -11430,7 +11393,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\u003cb\u003e33.\u003c/b\u003e \u0026nbsp;\n\t\t\t\t\tIn welchen Themenfeldern sehen Sie\n\t\t\t\t\t\n\t\t\t\t\t\u003c!--\n\t\t\t\t\tden größten \u003cb\u003e\u003ci\u003eBedarf an Kapital\u003c/i\u003e\u003c/b\u003e\n\t\t\t\t\tdas \u003cb\u003e\u003ci\u003egrößte Potential\u003c/i\u003e\u003c/b\u003e\n\t\t\t\t\t--\u003e\n\t\t\t\t\t\u003ctable style=\"margin: -0.75rem 0\"\u003e\n\t\t\t\t\t\t\u003ctr\u003e\n\n\t\t\t\t\t\t\t\u003ctd style=\"width:43%\"\u003e\n\t\t\t\t\t\t\t\t\u0026nbsp;\n\t\t\t\t\t\t\t\u003c/td\u003e\n\t\t\t\t\t\t\t\u003ctd style=\"width:28%\"\u003e\n\t\t\t\t\t\t\t\tden größten \u003cb\u003e\u003ci\u003eBedarf an Kapital\u003c/i\u003e\u003c/b\u003e\n\t\t\t\t\t\t\t\u003c/td\u003e\n\t\t\t\t\t\t\t\u003ctd style=\"width:28%\"\u003e\n\t\t\t\t\t\t\t\tdas \u003cb\u003e\u003ci\u003egrößte Potential\u003c/i\u003e\u003c/b\u003e\n\t\t\t\t\t\t\t\u003c/td\u003e\n\n\n\t\t\t\t\t\t\u003c/tr\u003e\n\t\t\t\t\t\u003c/table\u003e\n\n\t\t\t\t\tfür Impact In\u0026shy;vest\u0026shy;ments?\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t(Wählen Sie \u003ci\u003eje Spalte\u003c/i\u003e bis zu fünf Themenfelder)\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t"
+ 								"de": "\n\n\t\t\t\t\t\u003cb\u003e33.\u003c/b\u003e \u0026nbsp;\n\n\t\t\t\t\tIn welchen Themenfeldern sehen Sie \n\t\t\t\t\t\ta) den \u003cb\u003egrößten Bedarf an Kapital\u003c/b\u003e, \n\t\t\t\t\t\tb) das \u003cb\u003egrößte Potential\u003c/b\u003e \n\t\t\t\t\tfür Impact In\u0026shy;vest\u0026shy;ments? \n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cb\u003e\n\t\t\t\t\t(Wählen Sie die Top Fünf. Optional mit Priorisierung (1=größter Bedarf/ Potential))\n\t\t\t\t\t\u003c/b\u003e\n\n\n\n\t\t\t\t\t\u003ctable style=\"margin-left: -0.4rem;margin-bottom: -0.45rem;\"\u003e\n\t\t\t\t\t\t\u003ctr\u003e\n\n\t\t\t\t\t\t\t\u003ctd style=\"width:43%\"\u003e\n\n\t\t\t\t\t\t\t\t\u0026nbsp;\n\t\t\t\t\t\t\t\u003c/td\u003e\n\t\t\t\t\t\t\t\u003ctd style=\"width:28%\"\u003e\n\t\t\t\t\t\t\t\ta) größten Bedarf an Kapital/\n\t\t\t\t\t\t\t\u003c/td\u003e\n\t\t\t\t\t\t\t\u003ctd style=\"width:28%\"\u003e\n\t\t\t\t\t\t\t\tb) größtes Potential \n\t\t\t\t\t\t\t\u003c/td\u003e\n\n\n\t\t\t\t\t\t\u003c/tr\u003e\n\t\t\t\t\t\u003c/table\u003e\n\n\n\n\t\t\t\t"
  							},
  							"col_span": 14,
  							"col_span_label": 1
@@ -11450,7 +11413,7 @@
  							"type": "text",
  							"max_chars": 14,
  							"placeholder": {
- 								"de": "opt. Kommentar"
+ 								"de": "opt. Prio"
  							},
  							"col_span": 3,
  							"col_span_control": 1
@@ -11466,7 +11429,7 @@
  							"type": "text",
  							"max_chars": 14,
  							"placeholder": {
- 								"de": "opt. Kommentar"
+ 								"de": "opt. Prio"
  							},
  							"col_span": 3,
  							"col_span_control": 1
@@ -11486,7 +11449,7 @@
  							"type": "text",
  							"max_chars": 14,
  							"placeholder": {
- 								"de": "opt. Kommentar"
+ 								"de": "opt. Prio"
  							},
  							"col_span": 3,
  							"col_span_control": 1
@@ -11502,7 +11465,7 @@
  							"type": "text",
  							"max_chars": 14,
  							"placeholder": {
- 								"de": "opt. Kommentar"
+ 								"de": "opt. Prio"
  							},
  							"col_span": 3,
  							"col_span_control": 1
@@ -11522,7 +11485,7 @@
  							"type": "text",
  							"max_chars": 14,
  							"placeholder": {
- 								"de": "opt. Kommentar"
+ 								"de": "opt. Prio"
  							},
  							"col_span": 3,
  							"col_span_control": 1
@@ -11538,7 +11501,7 @@
  							"type": "text",
  							"max_chars": 14,
  							"placeholder": {
- 								"de": "opt. Kommentar"
+ 								"de": "opt. Prio"
  							},
  							"col_span": 3,
  							"col_span_control": 1
@@ -11558,7 +11521,7 @@
  							"type": "text",
  							"max_chars": 14,
  							"placeholder": {
- 								"de": "opt. Kommentar"
+ 								"de": "opt. Prio"
  							},
  							"col_span": 3,
  							"col_span_control": 1
@@ -11574,7 +11537,7 @@
  							"type": "text",
  							"max_chars": 14,
  							"placeholder": {
- 								"de": "opt. Kommentar"
+ 								"de": "opt. Prio"
  							},
  							"col_span": 3,
  							"col_span_control": 1
@@ -11594,7 +11557,7 @@
  							"type": "text",
  							"max_chars": 14,
  							"placeholder": {
- 								"de": "opt. Kommentar"
+ 								"de": "opt. Prio"
  							},
  							"col_span": 3,
  							"col_span_control": 1
@@ -11610,7 +11573,7 @@
  							"type": "text",
  							"max_chars": 14,
  							"placeholder": {
- 								"de": "opt. Kommentar"
+ 								"de": "opt. Prio"
  							},
  							"col_span": 3,
  							"col_span_control": 1
@@ -11630,7 +11593,7 @@
  							"type": "text",
  							"max_chars": 14,
  							"placeholder": {
- 								"de": "opt. Kommentar"
+ 								"de": "opt. Prio"
  							},
  							"col_span": 3,
  							"col_span_control": 1
@@ -11646,7 +11609,7 @@
  							"type": "text",
  							"max_chars": 14,
  							"placeholder": {
- 								"de": "opt. Kommentar"
+ 								"de": "opt. Prio"
  							},
  							"col_span": 3,
  							"col_span_control": 1
@@ -11666,7 +11629,7 @@
  							"type": "text",
  							"max_chars": 14,
  							"placeholder": {
- 								"de": "opt. Kommentar"
+ 								"de": "opt. Prio"
  							},
  							"col_span": 3,
  							"col_span_control": 1
@@ -11682,7 +11645,7 @@
  							"type": "text",
  							"max_chars": 14,
  							"placeholder": {
- 								"de": "opt. Kommentar"
+ 								"de": "opt. Prio"
  							},
  							"col_span": 3,
  							"col_span_control": 1
@@ -11702,7 +11665,7 @@
  							"type": "text",
  							"max_chars": 14,
  							"placeholder": {
- 								"de": "opt. Kommentar"
+ 								"de": "opt. Prio"
  							},
  							"col_span": 3,
  							"col_span_control": 1
@@ -11718,7 +11681,7 @@
  							"type": "text",
  							"max_chars": 14,
  							"placeholder": {
- 								"de": "opt. Kommentar"
+ 								"de": "opt. Prio"
  							},
  							"col_span": 3,
  							"col_span_control": 1
@@ -11738,7 +11701,7 @@
  							"type": "text",
  							"max_chars": 14,
  							"placeholder": {
- 								"de": "opt. Kommentar"
+ 								"de": "opt. Prio"
  							},
  							"col_span": 3,
  							"col_span_control": 1
@@ -11754,7 +11717,7 @@
  							"type": "text",
  							"max_chars": 14,
  							"placeholder": {
- 								"de": "opt. Kommentar"
+ 								"de": "opt. Prio"
  							},
  							"col_span": 3,
  							"col_span_control": 1
@@ -11774,7 +11737,7 @@
  							"type": "text",
  							"max_chars": 14,
  							"placeholder": {
- 								"de": "opt. Kommentar"
+ 								"de": "opt. Prio"
  							},
  							"col_span": 3,
  							"col_span_control": 1
@@ -11790,7 +11753,7 @@
  							"type": "text",
  							"max_chars": 14,
  							"placeholder": {
- 								"de": "opt. Kommentar"
+ 								"de": "opt. Prio"
  							},
  							"col_span": 3,
  							"col_span_control": 1
@@ -11810,7 +11773,7 @@
  							"type": "text",
  							"max_chars": 14,
  							"placeholder": {
- 								"de": "opt. Kommentar"
+ 								"de": "opt. Prio"
  							},
  							"col_span": 3,
  							"col_span_control": 1
@@ -11826,7 +11789,7 @@
  							"type": "text",
  							"max_chars": 14,
  							"placeholder": {
- 								"de": "opt. Kommentar"
+ 								"de": "opt. Prio"
  							},
  							"col_span": 3,
  							"col_span_control": 1
@@ -11846,7 +11809,7 @@
  							"type": "text",
  							"max_chars": 14,
  							"placeholder": {
- 								"de": "opt. Kommentar"
+ 								"de": "opt. Prio"
  							},
  							"col_span": 3,
  							"col_span_control": 1
@@ -11862,7 +11825,7 @@
  							"type": "text",
  							"max_chars": 14,
  							"placeholder": {
- 								"de": "opt. Kommentar"
+ 								"de": "opt. Prio"
  							},
  							"col_span": 3,
  							"col_span_control": 1
@@ -11882,7 +11845,7 @@
  							"type": "text",
  							"max_chars": 14,
  							"placeholder": {
- 								"de": "opt. Kommentar"
+ 								"de": "opt. Prio"
  							},
  							"col_span": 3,
  							"col_span_control": 1
@@ -11898,7 +11861,7 @@
  							"type": "text",
  							"max_chars": 14,
  							"placeholder": {
- 								"de": "opt. Kommentar"
+ 								"de": "opt. Prio"
  							},
  							"col_span": 3,
  							"col_span_control": 1
@@ -11918,7 +11881,7 @@
  							"type": "text",
  							"max_chars": 14,
  							"placeholder": {
- 								"de": "opt. Kommentar"
+ 								"de": "opt. Prio"
  							},
  							"col_span": 3,
  							"col_span_control": 1
@@ -11934,7 +11897,7 @@
  							"type": "text",
  							"max_chars": 14,
  							"placeholder": {
- 								"de": "opt. Kommentar"
+ 								"de": "opt. Prio"
  							},
  							"col_span": 3,
  							"col_span_control": 1
@@ -11954,7 +11917,7 @@
  							"type": "text",
  							"max_chars": 14,
  							"placeholder": {
- 								"de": "opt. Kommentar"
+ 								"de": "opt. Prio"
  							},
  							"col_span": 3,
  							"col_span_control": 1
@@ -11970,7 +11933,7 @@
  							"type": "text",
  							"max_chars": 14,
  							"placeholder": {
- 								"de": "opt. Kommentar"
+ 								"de": "opt. Prio"
  							},
  							"col_span": 3,
  							"col_span_control": 1
@@ -11990,7 +11953,7 @@
  							"type": "text",
  							"max_chars": 14,
  							"placeholder": {
- 								"de": "opt. Kommentar"
+ 								"de": "opt. Prio"
  							},
  							"col_span": 3,
  							"col_span_control": 1
@@ -12006,7 +11969,7 @@
  							"type": "text",
  							"max_chars": 14,
  							"placeholder": {
- 								"de": "opt. Kommentar"
+ 								"de": "opt. Prio"
  							},
  							"col_span": 3,
  							"col_span_control": 1
@@ -12026,7 +11989,7 @@
  							"type": "text",
  							"max_chars": 14,
  							"placeholder": {
- 								"de": "opt. Kommentar"
+ 								"de": "opt. Prio"
  							},
  							"col_span": 3,
  							"col_span_control": 1
@@ -12042,7 +12005,7 @@
  							"type": "text",
  							"max_chars": 14,
  							"placeholder": {
- 								"de": "opt. Kommentar"
+ 								"de": "opt. Prio"
  							},
  							"col_span": 3,
  							"col_span_control": 1
@@ -12069,7 +12032,7 @@
  							"type": "text",
  							"max_chars": 14,
  							"placeholder": {
- 								"de": "opt. Kommentar"
+ 								"de": "opt. Prio"
  							},
  							"col_span": 3,
  							"col_span_control": 1
@@ -12085,7 +12048,7 @@
  							"type": "text",
  							"max_chars": 14,
  							"placeholder": {
- 								"de": "opt. Kommentar"
+ 								"de": "opt. Prio"
  							},
  							"col_span": 3,
  							"col_span_control": 1
@@ -12135,7 +12098,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\t\u003cb\u003e34.\u003c/b\u003e \u0026nbsp;\n\t\t\t\t\t\tIn welchen Asset Klassen erwarten Sie eine besonders dynamische Entwicklung?\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t(Wählen Sie bis zu fünf)\n\t\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\t\u003cb\u003e34.\u003c/b\u003e \u0026nbsp;\n\t\t\t\t\t\tIn welchen Asset Klassen erwarten Sie eine besonders dynamische Entwicklung?\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cb\u003e\n\t\t\t\t\t\t(Wählen Sie die Top Fünf. Optional mit Priorisierung (1=dynamischste Entwicklung))\n\t\t\t\t\t\t\u003c/b\u003e\n\t\t\t\t\t"
  							},
  							"col_span": 9,
  							"col_span_label": 1
@@ -12155,7 +12118,7 @@
  							"type": "text",
  							"max_chars": 16,
  							"placeholder": {
- 								"de": "opt. Kommentar"
+ 								"de": "opt. Prio"
  							},
  							"col_span": 2,
  							"col_span_control": 1
@@ -12175,7 +12138,7 @@
  							"type": "text",
  							"max_chars": 16,
  							"placeholder": {
- 								"de": "opt. Kommentar"
+ 								"de": "opt. Prio"
  							},
  							"col_span": 2,
  							"col_span_control": 1
@@ -12195,7 +12158,7 @@
  							"type": "text",
  							"max_chars": 16,
  							"placeholder": {
- 								"de": "opt. Kommentar"
+ 								"de": "opt. Prio"
  							},
  							"col_span": 2,
  							"col_span_control": 1
@@ -12215,7 +12178,7 @@
  							"type": "text",
  							"max_chars": 16,
  							"placeholder": {
- 								"de": "opt. Kommentar"
+ 								"de": "opt. Prio"
  							},
  							"col_span": 2,
  							"col_span_control": 1
@@ -12235,7 +12198,7 @@
  							"type": "text",
  							"max_chars": 16,
  							"placeholder": {
- 								"de": "opt. Kommentar"
+ 								"de": "opt. Prio"
  							},
  							"col_span": 2,
  							"col_span_control": 1
@@ -12255,7 +12218,7 @@
  							"type": "text",
  							"max_chars": 16,
  							"placeholder": {
- 								"de": "opt. Kommentar"
+ 								"de": "opt. Prio"
  							},
  							"col_span": 2,
  							"col_span_control": 1
@@ -12264,7 +12227,7 @@
  							"name": "q34_soc",
  							"type": "checkbox",
  							"label": {
- 								"de": "Soziale Infrastruktur Finanzierung (SOC (z.B. SIB / DIB) )\n\t\t\t\t\t\t\t\u003cdiv style=\"font-size:80%; line-height: 100%; margin-top: 0.3rem; margin-left: 1rem;\"\u003e\n\t\t\t\t\t\t\t\tSOC: Social Outcomes Contracting;\n\t\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\t\tSIB: Social Impact Bond;\n\t\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\t\tDIB: De\u0026shy;vel\u0026shy;op\u0026shy;ment Impact Bond\n\t\t\t\t\t\t\t\u003c/div\u003e\n\n\t\t\t\t\t\t"
+ 								"de": "Wirkungsorientierte Finanzierungsinstrumente (SOC (z.B. SIB / DIB) )\n\t\t\t\t\t\t\t\u003cdiv style=\"font-size:80%; line-height: 100%; margin-top: 0.3rem; margin-left: 1rem;\"\u003e\n\t\t\t\t\t\t\t\tSOC: Social Outcomes Contracting;\n\t\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\t\tSIB: Social Impact Bond;\n\t\t\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\t\tDIB: De\u0026shy;vel\u0026shy;op\u0026shy;ment Impact Bond\n\t\t\t\t\t\t\t\u003c/div\u003e\n\n\t\t\t\t\t\t"
  							},
  							"col_span": 7,
  							"col_span_label": 6,
@@ -12275,7 +12238,7 @@
  							"type": "text",
  							"max_chars": 16,
  							"placeholder": {
- 								"de": "opt. Kommentar"
+ 								"de": "opt. Prio"
  							},
  							"col_span": 2,
  							"col_span_control": 1
@@ -12295,7 +12258,7 @@
  							"type": "text",
  							"max_chars": 16,
  							"placeholder": {
- 								"de": "opt. Kommentar"
+ 								"de": "opt. Prio"
  							},
  							"col_span": 2,
  							"col_span_control": 1
@@ -12304,7 +12267,7 @@
  							"name": "q34_emerging_markets",
  							"type": "checkbox",
  							"label": {
- 								"de": "Schwellenländer(markt) (Emerging markets)  "
+ 								"de": "Schwellen- und Entwicklungsländer (Emerging markets)  "
  							},
  							"col_span": 7,
  							"col_span_label": 6,
@@ -12315,7 +12278,7 @@
  							"type": "text",
  							"max_chars": 16,
  							"placeholder": {
- 								"de": "opt. Kommentar"
+ 								"de": "opt. Prio"
  							},
  							"col_span": 2,
  							"col_span_control": 1
@@ -12335,7 +12298,7 @@
  							"type": "text",
  							"max_chars": 16,
  							"placeholder": {
- 								"de": "opt. Kommentar"
+ 								"de": "opt. Prio"
  							},
  							"col_span": 2,
  							"col_span_control": 1
@@ -12355,7 +12318,7 @@
  							"type": "text",
  							"max_chars": 16,
  							"placeholder": {
- 								"de": "opt. Kommentar"
+ 								"de": "opt. Prio"
  							},
  							"col_span": 2,
  							"col_span_control": 1
@@ -12375,7 +12338,7 @@
  							"type": "text",
  							"max_chars": 16,
  							"placeholder": {
- 								"de": "opt. Kommentar"
+ 								"de": "opt. Prio"
  							},
  							"col_span": 2,
  							"col_span_control": 1
@@ -12402,7 +12365,7 @@
  							"type": "text",
  							"max_chars": 16,
  							"placeholder": {
- 								"de": "opt. Kommentar"
+ 								"de": "opt. Prio"
  							},
  							"col_span": 2,
  							"col_span_control": 1
@@ -12429,7 +12392,7 @@
  							"type": "text",
  							"max_chars": 16,
  							"placeholder": {
- 								"de": "opt. Kommentar"
+ 								"de": "opt. Prio"
  							},
  							"col_span": 2,
  							"col_span_control": 1
@@ -12482,7 +12445,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\u003cb\u003e35.\u003c/b\u003e \u0026nbsp;\n\t\t\t\t\tIn welchen Regionen sehen Sie das größte Potenzial für ef\u0026shy;fek\u0026shy;tive Investitionen im Impact Investing?\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cb\u003e35.\u003c/b\u003e \u0026nbsp;\n\t\t\t\t\tIn welchen Regionen sehen Sie das größte Potenzial für ef\u0026shy;fek\u0026shy;tive Impact In\u0026shy;vest\u0026shy;ments?\n\t\t\t\t"
  							},
  							"col_span": 3,
  							"col_span_label": 1
@@ -12490,7 +12453,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "1\u003cbr\u003egrößtes Potenzial"
+ 								"de": "1\u003cbr\u003egroßes Potenzial"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -12577,7 +12540,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "3\u003cbr\u003egeringstes Potenzial"
+ 								"de": "3\u003cbr\u003egeringes Potenzial"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -13217,7 +13180,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\n\t\t\t\t\t\u003cp style='font-size: 130%'\u003e\n\t\t\t\t\t\tÜber Sie und Ihre Organisation \n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
+ 								"de": "\n\n\t\t\t\t\t\u003cp style='font-size: 130%; font-weight: bold;'\u003e\n\t\t\t\t\t\tÜber Sie und Ihre Organisation \n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -15743,21 +15706,20 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\u003cb\u003e40.\u003c/b\u003e \u0026nbsp;\t\n\t\t\t\t\tWo sitzt Ihr Man\u0026shy;age\u0026shy;mentteam?\n\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cb\u003e40.\u003c/b\u003e \u0026nbsp;\t\n\t\t\t\t\tWo sitzt Ihr Man\u0026shy;age\u0026shy;mentteam?\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t(Mehrfachauswahl möglich)\n\t\t\t\t"
  							},
  							"col_span": 7,
  							"col_span_label": 1
  						},
  						{
- 							"name": "q40",
- 							"type": "radio",
+ 							"name": "q40_germany",
+ 							"type": "checkbox",
  							"label": {
  								"de": "Deutsch\u0026shy;land"
  							},
  							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
- 							"value_radio": "germany",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -15777,15 +15739,14 @@
  							}
  						},
  						{
- 							"name": "q40",
- 							"type": "radio",
+ 							"name": "q40_austria",
+ 							"type": "checkbox",
  							"label": {
  								"de": "Österreich"
  							},
  							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
- 							"value_radio": "austria",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -15805,15 +15766,14 @@
  							}
  						},
  						{
- 							"name": "q40",
- 							"type": "radio",
+ 							"name": "q40_switzerland",
+ 							"type": "checkbox",
  							"label": {
  								"de": "Schweiz"
  							},
  							"col_span": 7,
  							"col_span_label": 1,
  							"col_span_control": 6,
- 							"value_radio": "switzerland",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -15833,14 +15793,13 @@
  							}
  						},
  						{
- 							"name": "q40",
- 							"type": "radio",
+ 							"name": "q40_other",
+ 							"type": "checkbox",
  							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "other"
+ 							"col_span_control": 1
  						},
  						{
- 							"name": "q40_other",
+ 							"name": "q40_other_label",
  							"type": "text",
  							"max_chars": 20,
  							"label": {
@@ -16008,7 +15967,7 @@
  				"en": ""
  			},
  			"short": {
- 				"de": "II not or later"
+ 				"de": "Zukunftsposition"
  			},
  			"navigation_condition": "BIIILater",
  			"style": {
@@ -16038,7 +15997,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e42.\u003c/b\u003e \u0026nbsp;\tFalls Ihre Organisation bisher noch nicht im Impact Investing-Markt tätig ist, wie be\u0026shy;wer\u0026shy;ten Sie dieses Feld für die Zukunft: "
+ 								"de": "\u003cb\u003e42.\u003c/b\u003e \u0026nbsp;\tFalls Ihre Organisation bisher noch nicht im Impact Investing-Markt tätig ist, was planen Sie für die Zukunft? "
  							},
  							"col_span": 7,
  							"col_span_label": 1
@@ -16451,14 +16410,14 @@
  						{
  							"name": "q43_volume_detail",
  							"type": "number",
- 							"max_chars": 15,
- 							"step": 1,
+ 							"max_chars": 9,
+ 							"step": 0.01,
  							"max": 1.7976931348623157e+308,
  							"placeholder": {
- 								"de": "0.000.000"
+ 								"de": "0,00"
  							},
  							"suffix": {
- 								"de": "€"
+ 								"de": "Mio €"
  							},
  							"col_span": 2,
  							"col_span_control": 7,
@@ -16511,10 +16470,10 @@
  							"col_span_label": 1
  						},
  						{
- 							"name": "q43a_q43a_education",
+ 							"name": "q43a_paris_align",
  							"type": "checkbox",
  							"label": {
- 								"de": "Bil\u0026shy;dung"
+ 								"de": "Paris-Aligned oder Net Zero"
  							},
  							"col_span": 1,
  							"col_span_label": 2,
@@ -16538,10 +16497,10 @@
  							}
  						},
  						{
- 							"name": "q43a_q43a_nutrition",
+ 							"name": "q43a_culture_sports",
  							"type": "checkbox",
  							"label": {
- 								"de": "Ernährung"
+ 								"de": "Kultur und Freizeit (Kultur, Kunst, Sport, sonstige Freizeitgestaltung und soziale Vereine)"
  							},
  							"col_span": 1,
  							"col_span_label": 2,
@@ -16565,10 +16524,10 @@
  							}
  						},
  						{
- 							"name": "q43a_q43a_health",
+ 							"name": "q43a_education",
  							"type": "checkbox",
  							"label": {
- 								"de": "Gesundheit"
+ 								"de": "Bil\u0026shy;dung (Grundschule, Sekundarschule, Hochschule, Sonstiges)"
  							},
  							"col_span": 1,
  							"col_span_label": 2,
@@ -16592,304 +16551,7 @@
  							}
  						},
  						{
- 							"name": "q43a_q43a_poverty",
- 							"type": "checkbox",
- 							"label": {
- 								"de": "Armutsbekämpfung"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 2,
- 							"col_span_control": 10,
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "start",
- 										"order": 2
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q43a_q43a_justice",
- 							"type": "checkbox",
- 							"label": {
- 								"de": "Soziale / Geschlech\u0026shy;ter-Gerechtigkeit"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 2,
- 							"col_span_control": 10,
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "start",
- 										"order": 2
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q43a_q43a_elderly_care",
- 							"type": "checkbox",
- 							"label": {
- 								"de": "De\u0026shy;mo\u0026shy;gra\u0026shy;fischer Wandel / Altenpflege"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 2,
- 							"col_span_control": 10,
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "start",
- 										"order": 2
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q43a_q43a_youth",
- 							"type": "checkbox",
- 							"label": {
- 								"de": "Kinder- und Jugendhilfe"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 2,
- 							"col_span_control": 10,
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "start",
- 										"order": 2
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q43a_q43a_migration",
- 							"type": "checkbox",
- 							"label": {
- 								"de": "Migration und Integration"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 2,
- 							"col_span_control": 10,
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "start",
- 										"order": 2
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q43a_q43a_residential",
- 							"type": "checkbox",
- 							"label": {
- 								"de": "(Sozialer) Wohnungsbau"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 2,
- 							"col_span_control": 10,
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "start",
- 										"order": 2
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q43a_q43a_clean_energy",
- 							"type": "checkbox",
- 							"label": {
- 								"de": "Saubere Energie"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 2,
- 							"col_span_control": 10,
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "start",
- 										"order": 2
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q43a_q43a_culture",
- 							"type": "checkbox",
- 							"label": {
- 								"de": "Kunst und Kultur"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 2,
- 							"col_span_control": 10,
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "start",
- 										"order": 2
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q43a_q43a_sanitation",
- 							"type": "checkbox",
- 							"label": {
- 								"de": "Wasser, Sanitärversorgung und Hygiene"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 2,
- 							"col_span_control": 10,
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "start",
- 										"order": 2
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q43a_q43a_inclusion",
- 							"type": "checkbox",
- 							"label": {
- 								"de": "Finanzielle Inklusion"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 2,
- 							"col_span_control": 10,
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "start",
- 										"order": 2
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q43a_q43a_sustainability",
- 							"type": "checkbox",
- 							"label": {
- 								"de": "Nachhaltiges Wirt\u0026shy;schaften"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 2,
- 							"col_span_control": 10,
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "start",
- 										"order": 2
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q43a_q43a_labor_market",
+ 							"name": "q43a_work",
  							"type": "checkbox",
  							"label": {
  								"de": "Arbeitsmarktintegration"
@@ -16916,10 +16578,10 @@
  							}
  						},
  						{
- 							"name": "q43a_q43a_digital",
+ 							"name": "q43a_research",
  							"type": "checkbox",
  							"label": {
- 								"de": "Digitalisierung"
+ 								"de": "For\u0026shy;schung"
  							},
  							"col_span": 1,
  							"col_span_label": 2,
@@ -16943,10 +16605,10 @@
  							}
  						},
  						{
- 							"name": "q43a_q43a_mobility",
+ 							"name": "q43a_health",
  							"type": "checkbox",
  							"label": {
- 								"de": "Mobilität"
+ 								"de": "Gesundheit (Krankenhäuser, Rehabilitation, Pflegeheime, psychische Gesundheit / Krisenintervention)"
  							},
  							"col_span": 1,
  							"col_span_label": 2,
@@ -16970,10 +16632,10 @@
  							}
  						},
  						{
- 							"name": "q43a_q43a_climate",
+ 							"name": "q43a_social_service",
  							"type": "checkbox",
  							"label": {
- 								"de": "Klimaschutz"
+ 								"de": "Soziale Dienste (Notfall, Hilfe, Einkommens\u0026shy;unterstützung / Unterhalt)"
  							},
  							"col_span": 1,
  							"col_span_label": 2,
@@ -16997,10 +16659,226 @@
  							}
  						},
  						{
- 							"name": "q43a_q43a_biodiversity",
+ 							"name": "q43a_environment",
  							"type": "checkbox",
  							"label": {
- 								"de": "Schutz von Ökosystemen und Biodiversität"
+ 								"de": "Umweltschutz (Forstwirt\u0026shy;schaft, Land, Abfall, Luft, biologische Vielfalt und Ökosysteme, Meere und Küstengebiete)"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 2,
+ 							"col_span_control": 10,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q43a_sanitary",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "WASH (Wasser, Sanitärversorgung und Hygiene)"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 2,
+ 							"col_span_control": 10,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q43a_agriculture",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "Landwirt\u0026shy;schaft"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 2,
+ 							"col_span_control": 10,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q43a_energy",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "Energie (Zugang zu Energie, erneuerbare Energie)"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 2,
+ 							"col_span_control": 10,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q43a_residential",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "Wohnen"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 2,
+ 							"col_span_control": 10,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q43a_technology",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "IT / Technologien"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 2,
+ 							"col_span_control": 10,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q43a_prodution",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "Fertigung / Produktion"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 2,
+ 							"col_span_control": 10,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q43a_urban_dev",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "Stadterneuerung / Territoriale Entwicklung"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 2,
+ 							"col_span_control": 10,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q43a_microfinance",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "Finanzielle Eingliederung und Zugang zu Finanzmitteln (d.h. Mikro\u0026shy;finanzierung, Mikro\u0026shy;versi\u0026shy;cherungen, Finanz Bil\u0026shy;dungs\u0026shy;dienst\u0026shy;leistungen, Bankwesen)"
  							},
  							"col_span": 1,
  							"col_span_label": 2,
@@ -17113,7 +16991,7 @@
  							"name": "q44_dsgvo",
  							"type": "checkbox",
  							"label": {
- 								"de": "\n\t\t\t\t\t\t\u003cb\u003eEinwilligungserklärung gemäß DSGVO\u003c/b\u003e\n\n\t\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\t\tDie Antworten dieser Online-Umfrage werden von uns streng vertraulich, \n\t\t\t\t\t\tDSGVO-konform behandelt und nur in anonymer bzw. aggregierter Form benutzt.\n\n\t\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\t\tHiermit willige ich ein, dass meine gesammelten Da\u0026shy;ten \n\t\t\t\t\t\tfür die BIII Impact In\u0026shy;vest\u0026shy;ment Studie 2022 verwendet werden. \n\t\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\t\u003cb\u003eEinwilligungserklärung gemäß DSGVO\u003c/b\u003e\n\n\t\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\t\tDie Antworten dieser Online-Umfrage werden von uns streng vertraulich, \n\t\t\t\t\t\tDSGVO-konform behandelt und nur in anonymer bzw. aggregierter Form benutzt.\n\n\t\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\t\tIm \u003ca href=\"/doc/site-imprint.md\" \u003eImpressum\u003c/a\u003e finden Sie umfangreiche An\u0026shy;gaben zum Da\u0026shy;tenschutz.\n\n\t\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\t\tHiermit willige ich ein, dass meine gesammelten Da\u0026shy;ten \n\t\t\t\t\t\tfür die BIII Impact In\u0026shy;vest\u0026shy;ment Studie 2022 verwendet werden. \n\t\t\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1,

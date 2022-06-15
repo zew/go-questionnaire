@@ -35,7 +35,7 @@ func page4Quest11(q *qst.QuestionnaireT) {
 
 				{"de": "Immobilien (Real estate)  "},
 				{"de": "Einlagen oder Zahlungsmitteläquivalente / Geldwerte (Deposits or cash equivalents / monetary assets)  "},
-				{"de": `Soziale Infrastruktur Finanzierung (SOC (z.B. SIB / DIB) ) 
+				{"de": `Wirkungsorientierte Finanzierungsinstrumente (SOC (z.B. SIB / DIB) ) 
 						<div style="font-size:80%; line-height: 100%; margin-top: 0.3rem; margin-left: 1rem;">
 							SOC: Social Outcomes Contracting; 
 							<br>
@@ -47,7 +47,7 @@ func page4Quest11(q *qst.QuestionnaireT) {
 				`},
 				{"de": "Grüne Anleihen (Green Bonds)  "},
 
-				{"de": "Schwellenländer(markt) (Emerging markets)  "},
+				{"de": "Schwellen- und Entwicklungsländer (Emerging markets)  "},
 				{"de": "Mikrofinanzierung (Microfinance)  "},
 				{"de": "Rohstoffe (Commodities)  "},
 				{"de": "Sustainability-Linked Bonds (SLBs)  "},
@@ -77,7 +77,7 @@ func page4Quest11(q *qst.QuestionnaireT) {
 					<br>
 					<b>11.</b> &nbsp;	
 					
-					Bitte tragen Sie soweit möglich, ungefähre anteilige Impact Investitionsvolumina nach Anlageklassen/Instrumenten (in Prozent) ein. 					
+					Bitte tragen Sie soweit möglich ungefähre Impact Investitionsvolumina nach Anlageklassen/Instrumenten (in Prozent) ein. (Investitionsvolumina können mehrfach zugeordnet werden)
 				`}
 				inp.ColSpan = gr.Cols
 			}
@@ -185,13 +185,15 @@ func page4Quest11(q *qst.QuestionnaireT) {
 						<b>12. </b> &nbsp;	
 						
 						Welche Themenfelder decken Ihre Investitionen ab? 
+						<br>
+						<b>(Wählen Sie die Top Fünf (maximal). Optional mit Investmentvolumina)</b>
 					
-						<br>
-						<br>
 						<!--
-						(Mehrfachauswahl in der Reihenfolge der investierten Volumina. 1 bis 5,  1= höchstes Volumen)
-						-->
+						<br>
+						<br>
 						(Wählen Sie bis zu fünf)
+						
+						-->
 
 					`),
 			}
@@ -222,8 +224,12 @@ func page4Quest11(q *qst.QuestionnaireT) {
 						<b>13. </b> &nbsp;	
 						Auf die Erreichung welcher Sustainable Development Goals (SDGs)/ Ziele für nachhaltige Entwicklung der UN arbeiten Sie mit Ihren Investitionen hin?					
 						<br>
+						<b>(Wählen Sie die Top Fünf (maximal))</b>
+
+						<!--
 						<br>
 						(Wählen Sie bis zu fünf)
+						-->
 					`),
 			}
 			gr := page.AddBiiiPrio(mainLbl, q13Labels, q13inputNames, map[int]bool{}, 0)
@@ -300,6 +306,7 @@ func page4Quest11(q *qst.QuestionnaireT) {
 				{"de": "Länder- und Währungsrisiken "},
 				{"de": "Liquiditäts- und Exit-Risiko"},
 				{"de": "Makroökonomische Risiken"},
+				{"de": "Andere, bitte nennen"},
 			}
 			subName := []string{
 				"competence_lack",
@@ -307,9 +314,10 @@ func page4Quest11(q *qst.QuestionnaireT) {
 				"country_currency",
 				"liquidy_liquidation",
 				"macro",
+				"other",
 			}
 			gr := page.AddGroup()
-			gr.Cols = 1
+			gr.Cols = 7
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
@@ -327,17 +335,49 @@ func page4Quest11(q *qst.QuestionnaireT) {
 				rad.Type = "checkbox"
 				rad.Name = fmt.Sprintf("q15_%v", subName[idx])
 
-				rad.ColSpan = 1
 				rad.ColSpanLabel = 1
 				rad.ColSpanControl = 6
 
-				rad.Label = label
+				// all rows except last
+				if idx < len(labels)-1 {
+					rad.ColSpan = gr.Cols
+					rad.Label = label
+					rad.ControlFirst()
+				} else {
+					// last row: now label
+					rad.ColSpan = 1
+					rad.ColSpanLabel = 0 // value 0 prevents the label from taking any place
+					rad.ColSpanControl = 1
 
-				rad.Style = css.NewStylesResponsive(rad.Style)
-				// rad.Style.Desktop.StyleBox.Margin = "0 0 0 2.4rem"
+					inp := gr.AddInput()
+					inp.Type = "text"
+					inp.Name = "q15_other_label"
+					inp.MaxChars = 20
+					inp.Label = label
 
-				rad.ControlFirst()
+					inp.ColSpan = gr.Cols - 1
+					inp.ColSpanLabel = 2
+					inp.ColSpanControl = 5
+					inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
+				}
+
 			}
+			// for idx, label := range labels {
+			// 	rad := gr.AddInput()
+			// 	rad.Type = "checkbox"
+			// 	rad.Name = fmt.Sprintf("q15_%v", subName[idx])
+
+			// 	rad.ColSpan = 1
+			// 	rad.ColSpanLabel = 1
+			// 	rad.ColSpanControl = 6
+
+			// 	rad.Label = label
+
+			// 	rad.Style = css.NewStylesResponsive(rad.Style)
+			// 	// rad.Style.Desktop.StyleBox.Margin = "0 0 0 2.4rem"
+
+			// 	rad.ControlFirst()
+			// }
 		}
 
 		// gr3
@@ -542,7 +582,7 @@ func page4Quest11(q *qst.QuestionnaireT) {
 				{"de": "Wir messen den positiven Impact anhand klar definierter KPIs (Key Performance Indicators)"},
 				{"de": "Wir haben Zielvereinbarungen nach bestimmten Indikatoren und kontrollieren deren Einhaltung"},
 				{"de": "Wir messen sowohl den Unternehmens- als auch den Investoren-Impact"},
-				{"de": "Wir messen unseren zusätzlichen Beitrag (Additionalität) im Vergleich zu einem Base-line-Szenario"},
+				{"de": "Wir messen unseren zusätzlichen Beitrag (Additionalität) im Vergleich zu einem Base-Line-Szenario"},
 				{"de": "Wir erstellen eine Gesamtbilanz unseres negativen und positiven Impacts (net-impact)"},
 				{"de": "Andere, bitte nennen"},
 			}
@@ -563,7 +603,7 @@ func page4Quest11(q *qst.QuestionnaireT) {
 				inp.Type = "textblock"
 				inp.Label = trl.S{"de": `
 
-					<p style='font-size: 130%'>
+					<p style='font-size: 130%;font-weight: bold'>
 						Impact Messung und Management (IMM)
 					</p>
 
@@ -581,20 +621,6 @@ func page4Quest11(q *qst.QuestionnaireT) {
 				`}
 				inp.ColSpan = gr.Cols
 			}
-			// for idx, label := range labels {
-			// 	rad := gr.AddInput()
-			// 	rad.Type = "checkbox"
-			// 	rad.Name = fmt.Sprintf("q20_%v", subName[idx])
-
-			// 	rad.ColSpan = 1
-			// 	rad.ColSpanLabel = 1
-			// 	rad.ColSpanControl = 6
-
-			// 	rad.Label = label
-
-			// 	rad.Style = css.NewStylesResponsive(rad.Style)
-			// 	rad.ControlFirst()
-			// }
 			for idx, label := range labels {
 				rad := gr.AddInput()
 				rad.Type = "checkbox"
@@ -927,9 +953,10 @@ func page4Quest11(q *qst.QuestionnaireT) {
 			inp.Type = "textblock"
 			inp.Label = trl.S{"de": `
 
-					<p style='font-size: 130%'>
+					<p style='font-size: 130%; font-weight: bold;'>
 						Integrität und Regulierung
 					</p>
+					Im folgenden Teil wollen wir Daten zu den aktuellen regulatorischen Rahmenbedingungen und der Integrität des Marktes erheben.
 				`}
 			inp.ColSpan = gr.Cols
 		}
@@ -969,9 +996,66 @@ func page4Quest11(q *qst.QuestionnaireT) {
 				}
 
 				gr := page.AddGrid(gb)
-				gr.BottomVSpacers = 3
+				gr.BottomVSpacers = 1
 			}
 
+		}
+
+		{
+			colsBelow1 := append([]float32{1.0}, columnTemplate5...)
+			colsBelow1 = []float32{
+				1.4, 2.2, //   3.0, 1,  |  4.6 separated to two cols
+				0.0, 1,
+				0.0, 1,
+				0.0, 1,
+				0.0, 1,
+				0.0, 1,
+			}
+			colsBelow2 := []float32{}
+			for i := 0; i < len(colsBelow1); i += 2 {
+				colsBelow2 = append(colsBelow2, colsBelow1[i]+colsBelow1[i+1])
+			}
+
+			gr := page.AddGroup()
+			gr.Cols = 7
+			gr.BottomVSpacers = 4
+			stl := ""
+			for colIdx := 0; colIdx < len(colsBelow2); colIdx++ {
+				stl = fmt.Sprintf(
+					"%v   %vfr ",
+					stl,
+					colsBelow2[colIdx],
+				)
+			}
+			gr.Style = css.NewStylesResponsive(gr.Style)
+			if gr.Style.Desktop.StyleGridContainer.TemplateColumns == "" {
+				gr.Style.Desktop.StyleBox.Display = "grid"
+				gr.Style.Desktop.StyleGridContainer.TemplateColumns = stl
+			} else {
+				log.Printf("GridBuilder.AddGrid() - another TemplateColumns already present.\nwnt%v\ngot%v", stl, gr.Style.Desktop.StyleGridContainer.TemplateColumns)
+			}
+			{
+				inp := gr.AddInput()
+				inp.Type = "text"
+				inp.Name = "q26_other_label"
+				inp.MaxChars = 17
+				inp.ColSpan = 1
+				inp.ColSpanLabel = 2.4
+				inp.ColSpanControl = 4
+				inp.Label = trl.S{
+					"de": "Andere",
+					"en": "Other",
+				}
+			}
+			for idx := 0; idx < len(oneToFiveVolume); idx++ {
+				rad := gr.AddInput()
+				rad.Type = "radio"
+				rad.Name = "q26" + "_other"
+				rad.ValueRadio = fmt.Sprint(idx + 1)
+				rad.ColSpan = 1
+				rad.ColSpanLabel = colsBelow1[2*(idx+1)]
+				rad.ColSpanControl = colsBelow1[2*(idx+1)] + 1
+			}
 		}
 
 		// gr3
@@ -1172,7 +1256,7 @@ func page4Quest11(q *qst.QuestionnaireT) {
 				inp := gr.AddInput()
 				inp.Type = "textblock"
 				inp.Label = trl.S{"de": `
-					<p style='font-size: 130%'>
+					<p style='font-size: 130%; font-weight: bold'>
 						Entwicklung des Impact Investing-Marktes
 					</p>
 
@@ -1288,7 +1372,7 @@ func page4Quest11(q *qst.QuestionnaireT) {
 
 						{"de": "Impact Datenverfügbarkeit "},
 						{"de": "Impact Ratings"},
-						{"de": "Best practices"},
+						{"de": "Best Practices"},
 						{"de": "Berichterstattung "},
 
 						{"de": "Gesetzlicher Rahmen"},
@@ -1330,9 +1414,9 @@ func page4Quest11(q *qst.QuestionnaireT) {
 					"q31_intermediaries",
 					"q31_capacities",
 
-					"q31_bestpract",
+					// "q31_bestpract",
 					"q31_methodoloy",
-					"q31_integration",
+					// "q31_integration",
 					"q31_quality",
 
 					"q31_differentiation",
@@ -1349,12 +1433,12 @@ func page4Quest11(q *qst.QuestionnaireT) {
 					{"de": "Entwicklung dynamischer intermediärer Strukturen"},
 					{"de": "Impact-Managementkapazitäten der Investees"},
 
-					{"de": "Fähigkeit der Investoren zur Implementierung von Best Practices"},
+					// {"de": "Fähigkeit der Investoren zur Implementierung von Best Practices"},
 					{"de": "Entwicklung einer standardisierten Methodik zur Impact-Messung und -Steuerung"},
-					{"de": "Integration von Impact Management und Messung in alle Investitionsprozesse "},
+					// {"de": "Integration von Impact Management und Messung in alle Investitionsprozesse "},
 					{"de": "Qualitativ hochwertige Angebote von Impact Investment Produkten "},
 
-					{"de": "Ausdifferenzierung von Impact-Anspruchsniveau in Asset Klassen "},
+					{"de": "Ausdifferenzierung von Impact-Anspruchsniveaus in Asset Klassen "},
 					{"de": "Hohe Nachfrage durch Investees / Sozialunternehmen"},
 					{"de": "Staatliche Anreize zur Unterstützung des Impact Investing"},
 					{"de": "Verbreitung von Erfolgsgeschichten "},
@@ -1467,7 +1551,7 @@ func page4Quest11(q *qst.QuestionnaireT) {
 
 				{"de": "Impact Datenverfügbarkeit und Kriterienkatalog "},
 				{"de": "Gesetzgebung Impact  "},
-				{"de": "Benchmarks und Best practices "},
+				{"de": "Benchmarks und Best Practices "},
 				{"de": "Berichterstattung "},
 
 				{"de": "Impact Investing als Anlageklasse  "},
@@ -1480,8 +1564,9 @@ func page4Quest11(q *qst.QuestionnaireT) {
 						<b>32.</b> &nbsp;
 						In welchen Bereichen sind die größten Fortschritte notwendig?
 						<br>
-						<br>
-						(Wählen Sie bis zu fünf)
+						<b>
+						(Wählen Sie die Top Fünf. Optional mit Priorisierung (1=größter Fortschritt))
+						</b>
 					`),
 			}
 			gr := page.AddBiiiPrio(mainLbl, q32Labels, q32inputNames, map[int]bool{10: true}, 2)
@@ -1489,109 +1574,6 @@ func page4Quest11(q *qst.QuestionnaireT) {
 			// gr.WidthMax("38rem")
 		}
 
-		/*
-			// gr0
-			{
-				gb := qst.NewGridBuilderRadios(
-					columnTemplate3a,
-					q32columns,
-					[]string{
-						"q32_method_mgt_meas",
-						"q32_definition",
-						"q32_certifications",
-						"q32_education",
-
-						"q32_data",
-						"q32_legislation",
-						"q32_bestpract",
-						"q32_reporting",
-
-						"q32_assetclass",
-						"q32_productdesign",
-					},
-					radioVals3,
-					[]trl.S{
-						{"de": "Impact Methodologie, Management und Messung "},
-						{"de": "Harmonisierte Impact Definition "},
-						{"de": "Impact Labels, Ratings und Zertifizierungen "},
-						{"de": "Bildung und Weiterbildung"},
-
-						{"de": "Impact Datenverfügbarkeit und Kriterienkatalog "},
-						{"de": "Gesetzgebung Impact  "},
-						{"de": "Benchmarks und Best practices "},
-						{"de": "Berichterstattung "},
-
-						{"de": "Impact Investing als Anlageklasse  "},
-						{"de": "Produktgestaltung"},
-					},
-				)
-				gb.MainLabel = trl.S{
-					"de": `
-						<b>32.</b> &nbsp;
-						In welchen Bereichen sind die größten Fortschritte notwendig?
-						<br>
-						<br>
-						(Top 5 Nennungen, 1 bis 5, 1= höchster Fortschritt notwendig)
-					`,
-				}
-				gr := page.AddGrid(gb)
-				gr.BottomVSpacers = 1
-			}
-			{
-				colsBelow1 := append([]float32{1.0}, columnTemplate3a...)
-				colsBelow1 = []float32{
-					1.38, 2.1, //   3.0, 1,  |  4.6 separated to two cols
-					0.0, 1, //     3.0, 1,  |  4.6 separated to two cols
-					0.0, 1,
-					0.0, 1,
-				}
-				colsBelow2 := []float32{}
-				for i := 0; i < len(colsBelow1); i += 2 {
-					colsBelow2 = append(colsBelow2, colsBelow1[i]+colsBelow1[i+1])
-				}
-
-				gr := page.AddGroup()
-				gr.Cols = 7
-				gr.BottomVSpacers = 4
-				stl := ""
-				for colIdx := 0; colIdx < len(colsBelow2); colIdx++ {
-					stl = fmt.Sprintf(
-						"%v   %vfr ",
-						stl,
-						colsBelow2[colIdx],
-					)
-				}
-				gr.Style = css.NewStylesResponsive(gr.Style)
-				if gr.Style.Desktop.StyleGridContainer.TemplateColumns == "" {
-					gr.Style.Desktop.StyleBox.Display = "grid"
-					gr.Style.Desktop.StyleGridContainer.TemplateColumns = stl
-				} else {
-					log.Printf("GridBuilder.AddGrid() - another TemplateColumns already present.\nwnt%v\ngot%v", stl, gr.Style.Desktop.StyleGridContainer.TemplateColumns)
-				}
-				{
-					inp := gr.AddInput()
-					inp.Type = "text"
-					inp.Name = "q32_other_label"
-					inp.MaxChars = 17
-					inp.ColSpan = 1
-					inp.ColSpanLabel = 2.4
-					inp.ColSpanControl = 4
-					inp.Label = trl.S{
-						"de": "Andere",
-						"en": "Other",
-					}
-				}
-				for idx := 0; idx < len(radioVals3); idx++ {
-					rad := gr.AddInput()
-					rad.Type = "radio"
-					rad.Name = "q32_other"
-					rad.ValueRadio = fmt.Sprint(idx + 1)
-					rad.ColSpan = 1
-					rad.ColSpanLabel = colsBelow1[2*(idx+1)]
-					rad.ColSpanControl = colsBelow1[2*(idx+1)] + 1
-				}
-			}
-		*/
 	}
 
 	// page 17
@@ -1658,127 +1640,45 @@ func page4Quest11(q *qst.QuestionnaireT) {
 
 			mainLbl := trl.S{
 				"de": fmt.Sprintf(`
+
 					<b>33.</b> &nbsp;
-					In welchen Themenfeldern sehen Sie
-					
-					<!--
-					den größten <b><i>Bedarf an Kapital</i></b>
-					das <b><i>größte Potential</i></b>
-					-->
-					<table style="margin: -0.75rem 0">
+
+					In welchen Themenfeldern sehen Sie 
+						a) den <b>größten Bedarf an Kapital</b>, 
+						b) das <b>größte Potential</b> 
+					für Impact Investments? 
+					<br>
+					<b>
+					(Wählen Sie die Top Fünf. Optional mit Priorisierung (1=größter Bedarf/ Potential))
+					</b>
+
+
+
+					<table style="margin-left: -0.4rem;margin-bottom: -0.45rem;">
 						<tr>
 
 							<td style="width:43%%">
+
 								&nbsp;
 							</td>
 							<td style="width:28%%">
-								den größten <b><i>Bedarf an Kapital</i></b>
+								a) größten Bedarf an Kapital/
 							</td>
 							<td style="width:28%%">
-								das <b><i>größte Potential</i></b>
+								b) größtes Potential 
 							</td>
 
 
 						</tr>
 					</table>
 
-					für Impact Investments?
-					<br>
-					(Wählen Sie <i>je Spalte</i> bis zu fünf Themenfelder)
-					<br>
+
+
 				`),
 			}
 			gr := page.AddBiiiPrio2Cols(mainLbl, q33Labels, q33inputNames, map[int]bool{17: true})
 			_ = gr
 		}
-
-		/*
-			fns := []string{
-			}
-
-			lbls := []trl.S{
-			}
-
-			q33ab := []string{"q33a", "q33b"}
-			cols := [][]trl.S{q33aColumns, q33bColumns}
-			for q33idx, q := range q33ab {
-
-				fieldNames := make([]string, 0, len(fns))
-				for _, fn := range fns {
-					fieldNames = append(fieldNames, fmt.Sprintf("%v_%v", q, fn))
-				}
-
-				// gr0
-				{
-					gb := qst.NewGridBuilderRadios(
-						columnTemplate3a,
-						cols[q33idx],
-						fieldNames,
-						radioVals3,
-						lbls,
-					)
-					gb.MainLabel = mainLbls[q33idx]
-					gr := page.AddGrid(gb)
-					gr.BottomVSpacers = 1
-				}
-				{
-					colsBelow1 := append([]float32{1.0}, columnTemplate3a...)
-					colsBelow1 = []float32{
-						1.38, 2.1, //   3.0, 1,  |  4.6 separated to two cols
-						0.0, 1, //     3.0, 1,  |  4.6 separated to two cols
-						0.0, 1,
-						0.0, 1,
-					}
-					colsBelow2 := []float32{}
-					for i := 0; i < len(colsBelow1); i += 2 {
-						colsBelow2 = append(colsBelow2, colsBelow1[i]+colsBelow1[i+1])
-					}
-
-					gr := page.AddGroup()
-					gr.Cols = 7
-					gr.BottomVSpacers = 4
-					stl := ""
-					for colIdx := 0; colIdx < len(colsBelow2); colIdx++ {
-						stl = fmt.Sprintf(
-							"%v   %vfr ",
-							stl,
-							colsBelow2[colIdx],
-						)
-					}
-					gr.Style = css.NewStylesResponsive(gr.Style)
-					if gr.Style.Desktop.StyleGridContainer.TemplateColumns == "" {
-						gr.Style.Desktop.StyleBox.Display = "grid"
-						gr.Style.Desktop.StyleGridContainer.TemplateColumns = stl
-					} else {
-						log.Printf("GridBuilder.AddGrid() - another TemplateColumns already present.\nwnt%v\ngot%v", stl, gr.Style.Desktop.StyleGridContainer.TemplateColumns)
-					}
-					{
-						inp := gr.AddInput()
-						inp.Type = "text"
-						inp.Name = fmt.Sprintf("%v_other_label", q) // "q33a_other_label"
-
-						inp.MaxChars = 17
-						inp.ColSpan = 1
-						inp.ColSpanLabel = 2.4
-						inp.ColSpanControl = 4
-						inp.Label = trl.S{
-							"de": "Andere",
-							"en": "Other",
-						}
-					}
-					for idx := 0; idx < len(radioVals3); idx++ {
-						rad := gr.AddInput()
-						rad.Type = "radio"
-						rad.Name = fmt.Sprintf("%v_other", q) // "q33a_other"
-						rad.ValueRadio = fmt.Sprint(idx + 1)
-						rad.ColSpan = 1
-						rad.ColSpanLabel = colsBelow1[2*(idx+1)]
-						rad.ColSpanControl = colsBelow1[2*(idx+1)] + 1
-					}
-				}
-
-			}
-		*/
 
 	}
 
@@ -1822,7 +1722,7 @@ func page4Quest11(q *qst.QuestionnaireT) {
 
 				{"de": "Immobilien (Real estate)  "},
 				{"de": "Einlagen oder Zahlungsmitteläquivalente / Geldwerte (Deposits oder cash equivalents / monetary assets) "},
-				{"de": `Soziale Infrastruktur Finanzierung (SOC (z.B. SIB / DIB) )
+				{"de": `Wirkungsorientierte Finanzierungsinstrumente (SOC (z.B. SIB / DIB) )
 							<div style="font-size:80%; line-height: 100%; margin-top: 0.3rem; margin-left: 1rem;">
 								SOC: Social Outcomes Contracting;
 								<br>
@@ -1834,7 +1734,7 @@ func page4Quest11(q *qst.QuestionnaireT) {
 						`},
 				{"de": "Grüne Anleihen (Green Bonds)  "},
 
-				{"de": "Schwellenländer(markt) (Emerging markets)  "},
+				{"de": "Schwellen- und Entwicklungsländer (Emerging markets)  "},
 				{"de": "Mikrofinanzierung (Microfinance)  "},
 				{"de": "Rohstoffe (Commodities)  "},
 				{"de": "Sustainability-Linked Bonds (SLBs)"},
@@ -1848,145 +1748,14 @@ func page4Quest11(q *qst.QuestionnaireT) {
 						<b>34.</b> &nbsp;
 						In welchen Asset Klassen erwarten Sie eine besonders dynamische Entwicklung?
 						<br>
-						<br>
-						(Wählen Sie bis zu fünf)
+						<b>
+						(Wählen Sie die Top Fünf. Optional mit Priorisierung (1=dynamischste Entwicklung))
+						</b>
 					`),
 			}
 			gr := page.AddBiiiPrio(mainLbl, q34Labels, q34inputNames, map[int]bool{12: true, 13: true}, 2)
 			_ = gr
 		}
-		// gr.WidthMax("38rem")
-
-		/*
-
-			// gr0
-			{
-				gb := qst.NewGridBuilderRadios(
-					columnTemplate3a,
-					q34columns,
-					[]string{
-						"q34_private_equity",
-						"q34_public_equity",
-						"q34_private_external",
-						"q34_public_external",
-
-						"q34_real_estate",
-						"q34_money_deposits",
-						"q34_soc",
-						"q34_green_bonds",
-
-						"q34_emerging_markets",
-						"q34_microfinance",
-						"q34_commodities",
-						"q34_slb",
-					},
-					radioVals3,
-					[]trl.S{
-						{"de": "Privates (nicht börsengehandeltes) Beteiligungskapital (Private equity)"},
-						{"de": "Börsengehandeltes Beteiligungskapital / Aktien (Public equity)"},
-						{"de": "Private (nicht börsengehandeltes) Fremdkapital/ Anleihen (Private debt)"},
-						{"de": "Börsengehandeltes Fremdkapital / Anleihen (Public debt)  "},
-
-						{"de": "Immobilien (Real estate)  "},
-						{"de": "Einlagen oder Zahlungsmitteläquivalente / Geldwerte (Deposits oder cash equivalents / monetary assets) "},
-						{"de": `Soziale Infrastruktur Finanzierung (SOC (z.B. SIB / DIB) )
-							<div style="font-size:80%; line-height: 100%; margin-top: 0.3rem; margin-left: 1rem;">
-								SOC: Social Outcomes Contracting;
-								<br>
-								SIB: Social Impact Bond;
-								<br>
-								DIB: Development Impact Bond
-							</div>
-
-						`},
-						{"de": "Grüne Anleihen (Green Bonds)  "},
-
-						{"de": "Schwellenländer(markt) (Emerging markets)  "},
-						{"de": "Mikrofinanzierung (Microfinance)  "},
-						{"de": "Rohstoffe (Commodities)  "},
-						{"de": "Sustainability-Linked Bonds (SLBs)"},
-					},
-				)
-				gb.MainLabel = trl.S{
-					"de": `
-						<b>34.</b> &nbsp;
-						In welchen Asset Klassen erwarten Sie eine besonders dynamische Entwicklung?
-
-						<br>
-						<br>
-						(Top 5 Nennungen, 1 bis 5, 1= höchste Entwicklung)
-					`,
-				}
-				gr := page.AddGrid(gb)
-				gr.BottomVSpacers = 1
-			}
-
-			if true {
-				fnOthers := []string{"q34_hybrid", "q34_other"}
-				lblOthers := []trl.S{
-					{"de": "Hybride Finanz&shy;instrumente (Hybrid financial instruments), bitte nennen"},
-					{"de": "Andere, bitte nennen"},
-				}
-
-				for otherIdx, fldName := range fnOthers {
-
-					colsBelow1 := append([]float32{1.0}, columnTemplate3a...)
-					colsBelow1 = []float32{
-						1.38, 2.1, //   3.0, 1,  |  4.6 separated to two cols
-						0.0, 1, //     3.0, 1,  |  4.6 separated to two cols
-						0.0, 1,
-						0.0, 1,
-					}
-					colsBelow2 := []float32{}
-					for i := 0; i < len(colsBelow1); i += 2 {
-						colsBelow2 = append(colsBelow2, colsBelow1[i]+colsBelow1[i+1])
-					}
-
-					gr := page.AddGroup()
-					gr.Cols = 7
-					gr.BottomVSpacers = 4
-					stl := ""
-					for colIdx := 0; colIdx < len(colsBelow2); colIdx++ {
-						stl = fmt.Sprintf(
-							"%v   %vfr ",
-							stl,
-							colsBelow2[colIdx],
-						)
-					}
-					gr.Style = css.NewStylesResponsive(gr.Style)
-					if gr.Style.Desktop.StyleGridContainer.TemplateColumns == "" {
-						gr.Style.Desktop.StyleBox.Display = "grid"
-						gr.Style.Desktop.StyleGridContainer.TemplateColumns = stl
-					} else {
-						log.Printf("GridBuilder.AddGrid() - another TemplateColumns already present.\nwnt%v\ngot%v", stl, gr.Style.Desktop.StyleGridContainer.TemplateColumns)
-					}
-					{
-						inp := gr.AddInput()
-						inp.Type = "text"
-						inp.Name = fmt.Sprintf("q34_%v_label", fldName)
-						inp.MaxChars = 17
-						inp.ColSpan = 1
-						inp.ColSpanLabel = 2.4
-						inp.ColSpanControl = 4
-						// inp.Label = trl.S{
-						// 	"de": "Andere",
-						// 	"en": "Other",
-						// }
-						inp.Label = lblOthers[otherIdx]
-					}
-					for idx := 0; idx < len(radioVals3); idx++ {
-						rad := gr.AddInput()
-						rad.Type = "radio"
-						rad.Name = fmt.Sprintf("q34_%v", fldName)
-						rad.ValueRadio = fmt.Sprint(idx + 1)
-						rad.ColSpan = 1
-						rad.ColSpanLabel = colsBelow1[2*(idx+1)]
-						rad.ColSpanControl = colsBelow1[2*(idx+1)] + 1
-					}
-				}
-
-			}
-		*/
 	}
 
 	// page 19
@@ -2030,7 +1799,7 @@ func page4Quest11(q *qst.QuestionnaireT) {
 			gb.MainLabel = trl.S{
 				"de": `
 					<b>35.</b> &nbsp;
-					In welchen Regionen sehen Sie das größte Potenzial für effektive Investitionen im Impact Investing?
+					In welchen Regionen sehen Sie das größte Potenzial für effektive Impact Investments?
 				`,
 			}
 			gr := page.AddGrid(gb)
@@ -2130,7 +1899,7 @@ func page4Quest11(q *qst.QuestionnaireT) {
 			inp.Type = "textblock"
 			inp.Label = trl.S{"de": `
 
-					<p style='font-size: 130%'>
+					<p style='font-size: 130%; font-weight: bold;'>
 						Über Sie und Ihre Organisation 
 					</p>
 				`}
@@ -2414,7 +2183,7 @@ func page4Quest11(q *qst.QuestionnaireT) {
 				{"de": "Schweiz"},
 				{"de": "Andere, bitte nennen"},
 			}
-			radioValues := []string{
+			subName := []string{
 				"germany",
 				"austria",
 				"switzerland",
@@ -2428,14 +2197,15 @@ func page4Quest11(q *qst.QuestionnaireT) {
 				inp.Label = trl.S{"de": `
 					<b>40.</b> &nbsp;	
 					Wo sitzt Ihr Managementteam?
+					<br>
+					(Mehrfachauswahl möglich)
 				`}
 				inp.ColSpan = gr.Cols
 			}
 			for idx, label := range labels {
 				rad := gr.AddInput()
-				rad.Type = "radio"
-				rad.Name = "q40"
-				rad.ValueRadio = radioValues[idx]
+				rad.Type = "checkbox"
+				rad.Name = fmt.Sprintf("q40_%v", subName[idx])
 
 				rad.ColSpanLabel = 1
 				rad.ColSpanControl = 6
@@ -2453,7 +2223,7 @@ func page4Quest11(q *qst.QuestionnaireT) {
 
 					inp := gr.AddInput()
 					inp.Type = "text"
-					inp.Name = "q40_other"
+					inp.Name = "q40_other_label"
 					inp.MaxChars = 20
 					inp.Label = label
 

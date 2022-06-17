@@ -17,7 +17,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "e6fa73a491873e6daaae163605ea198c4d03406d90176e09c59b4ef19f626c7b",
+ 	"md_5": "f1b1828327967747c626663b35b068353dfc3262b51bde2280e49e3b1b74817a",
  	"lang_codes": [
  		"de"
  	],
@@ -1855,7 +1855,7 @@
  							"name": "q08",
  							"type": "radio",
  							"label": {
- 								"de": "Über Marktübliche risikoadjustierte Renditen"
+ 								"de": "Über marktübliche risikoadjustierte Renditen"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -5057,15 +5057,28 @@
  							"col_span_label": 1
  						},
  						{
- 							"name": "q17",
- 							"type": "radio",
+ 							"name": "q19_direct",
+ 							"type": "checkbox",
  							"label": {
  								"de": "Direktinvestitionen (von der Organisation selbst verwaltet, d.h. Ihre Organisation verwaltet Impact Investitionen)"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 6,
- 							"value_radio": "direct",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -5085,15 +5098,28 @@
  							}
  						},
  						{
- 							"name": "q17",
- 							"type": "radio",
+ 							"name": "q19_indirect",
+ 							"type": "checkbox",
  							"label": {
  								"de": "Indirekte Investitionen (d.h. Ihre Organisation investiert oder vermittelt über Fonds / Programme Dritter, die von Dritten verwaltet werden und in Impact investieren)"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 6,
- 							"value_radio": "indirect",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -5113,15 +5139,28 @@
  							}
  						},
  						{
- 							"name": "q17",
- 							"type": "radio",
+ 							"name": "q19_fund",
+ 							"type": "checkbox",
  							"label": {
  								"de": "Vertrieb von Impact-In\u0026shy;vest\u0026shy;ment-Fonds, die von anderen verwaltet werden (d.h. Ihre Organisation vertreibt Fonds, die in anderen Ländern oder von anderen Organisationen verwaltet werden) "
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 6,
- 							"value_radio": "fund",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -7387,7 +7426,7 @@
  					]
  				},
  				{
- 					"bottom_vspacers": 1,
+ 					"bottom_vspacers": 2,
  					"columns": 5,
  					"inputs": [
  						{
@@ -7740,71 +7779,20 @@
  					"columns": 7,
  					"inputs": [
  						{
- 							"name": "q26_other_label",
- 							"type": "text",
- 							"max_chars": 17,
+ 							"name": "q26_comment",
+ 							"type": "textarea",
+ 							"max_chars": 150,
+ 							"placeholder": {
+ 								"de": "Optionaler Kommentar "
+ 							},
  							"label": {
- 								"de": "Andere",
- 								"en": "Other"
+ 								"de": "Optionaler Kommentar "
  							},
- 							"col_span": 1,
- 							"col_span_label": 2.4,
- 							"col_span_control": 4
- 						},
- 						{
- 							"name": "q26_other",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "1"
- 						},
- 						{
- 							"name": "q26_other",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "q26_other",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "q26_other",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "q26_other",
- 							"type": "radio",
- 							"col_span": 1,
- 							"col_span_control": 1,
- 							"value_radio": "5"
+ 							"col_span": 7,
+ 							"col_span_label": 4,
+ 							"col_span_control": 5
  						}
- 					],
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {
- 								"template_columns": "   3.6fr    1fr    1fr    1fr    1fr    1fr "
- 							},
- 							"box_style": {
- 								"display": "grid"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
+ 					]
  				},
  				{
  					"bottom_vspacers": 1,

@@ -10,7 +10,7 @@
     <br>
     <br>
 
-    die Marktstudie 2020 der <i>Bundesinitiative Impact Investing (BIII)</i> hat unter anderem gezeigt, dass Transparenz und ein besseres Marktverständnis essenziell für die Weiterentwicklung des deutschen Impact Investing-Marktes sind.   
+    die Marktstudie 2020 der [Bundesinitiative Impact Investing (BIII)](https://bundesinitiative-impact-investing.de/)  hat unter anderem gezeigt, dass Transparenz und ein besseres Marktverständnis essenziell für die Weiterentwicklung des deutschen Impact Investing-Marktes sind.   
 </p>
 
 <p style='text-align: justify; font-size: 110%'>

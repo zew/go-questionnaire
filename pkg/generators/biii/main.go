@@ -625,7 +625,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		// gr2
 		{
 			labels := []trl.S{
-				{"de": "Über Marktübliche risikoadjustierte Renditen"},
+				{"de": "Über marktübliche risikoadjustierte Renditen"},
 				{"de": "Marktübliche risikoadjustierte Renditen"},
 				{"de": "Unter marktübliche risikoadjustierte Renditen"},
 				{"de": "Negative Renditen"},

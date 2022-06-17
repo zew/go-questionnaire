@@ -61,10 +61,10 @@ func RegisterHandlers(mux *http.ServeMux) {
 		},
 		{
 			// forwards to LoginByHashID /d
-			Urls:    []string{"/l"},
+			Urls:    []string{"/a"},
 			Title:   "Login without link",
 			Handler: lgn.LoginWithoutLink,
-			Keys:    []string{"l"},
+			Keys:    []string{"a"},
 			Allow:   map[handler.Privilege]bool{handler.LoggedOut: true},
 		},
 		{

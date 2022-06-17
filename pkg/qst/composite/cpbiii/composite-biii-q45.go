@@ -14,7 +14,7 @@ func QuestForOrg(q qstif.Q, seq0to5, paramSetIdx int) (string, []string, error) 
 			<br>
 		</label>
 		<input type="text"  name="q46"  value="" %v
-			placeholder="bspw. deutsche-bank.de oder www.dkb.de"
+			placeholder="bspw. deutsche-bank.de oder dkb.de"
 			maxlength="40"
 		> 
 	`

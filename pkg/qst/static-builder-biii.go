@@ -85,6 +85,7 @@ func (p *pageT) AddBiiiPrio(
 		}
 
 		if showFreeInput == 2 {
+
 			inp := gr.AddInput()
 			inp.Type = "text"
 			inp.Name = fmt.Sprintf("%v_addl", names[idx])
@@ -94,6 +95,14 @@ func (p *pageT) AddBiiiPrio(
 			inp.ColSpan = colSpace
 			inp.ColSpanLabel = 0
 			inp.ColSpanControl = 1
+
+			// changed after Prof Bush
+			inp.Min = 0
+			inp.Max = 5
+			inp.Step = 1
+			inp.MaxChars = 8
+			inp.Type = "number"
+
 		}
 
 		// inp.ControlFirst()
@@ -192,6 +201,14 @@ func (p *pageT) AddBiiiPrio2Cols(
 				inp.ColSpan = colsComment
 				inp.ColSpanLabel = 0
 				inp.ColSpanControl = 1
+
+				// changed after Prof Bush
+				inp.Min = 0
+				inp.Max = 5
+				inp.Step = 1
+				inp.MaxChars = 8
+				inp.Type = "number"
+
 			}
 
 			// inp.ControlFirst()

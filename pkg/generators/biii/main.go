@@ -65,6 +65,9 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		page.SuppressProgressbar = true
 		page.SuppressInProgressbar = true
 
+		page.ValidationFuncName = "biiiPage0"
+		page.ValidationFuncMsg = trl.S{"de": "no javascript dialog message needed"}
+
 		// gr0
 		{
 			gr := page.AddGroup()

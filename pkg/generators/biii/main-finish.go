@@ -183,19 +183,12 @@ func finish(q *qst.QuestionnaireT) {
 					</span>
 				`}
 			}
-			{
-				inp := gr.AddInput()
-				inp.Type = "dyn-textblock"
-				inp.ColSpanControl = 1
-				inp.DynamicFunc = "PersonalLink"
-			}
+
 			// {
 			// 	inp := gr.AddInput()
 			// 	inp.Type = "dyn-textblock"
-			// 	inp.DynamicFunc = "RenderStaticContent"
-			// 	inp.DynamicFuncParamset   = "site-imprint.md"
-			// 	inp.ColSpan = 1
-			// 	inp.ColSpanLabel = 1
+			// 	inp.ColSpanControl = 1
+			// 	inp.DynamicFunc = "PersonalLink"
 			// }
 		}
 	}

@@ -17,7 +17,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "f1b1828327967747c626663b35b068353dfc3262b51bde2280e49e3b1b74817a",
+ 	"md_5": "f9eba38e63f27ee9963c228cfeae359f8c1372342f2e88233c153728b05df38f",
  	"lang_codes": [
  		"de"
  	],
@@ -924,7 +924,11 @@
  						}
  					]
  				}
- 			]
+ 			],
+ 			"validation_func_name": "biiiPage0",
+ 			"validation_func_msg": {
+ 				"de": "no javascript dialog message needed"
+ 			}
  		},
  		{
  			"label": {
@@ -11118,8 +11122,10 @@
  						},
  						{
  							"name": "q32_method_mgt_meas_addl",
- 							"type": "text",
- 							"max_chars": 16,
+ 							"type": "number",
+ 							"max_chars": 8,
+ 							"step": 1,
+ 							"max": 5,
  							"placeholder": {
  								"de": "opt. Prio"
  							},
@@ -11138,8 +11144,10 @@
  						},
  						{
  							"name": "q32_definition_addl",
- 							"type": "text",
- 							"max_chars": 16,
+ 							"type": "number",
+ 							"max_chars": 8,
+ 							"step": 1,
+ 							"max": 5,
  							"placeholder": {
  								"de": "opt. Prio"
  							},
@@ -11158,8 +11166,10 @@
  						},
  						{
  							"name": "q32_certifications_addl",
- 							"type": "text",
- 							"max_chars": 16,
+ 							"type": "number",
+ 							"max_chars": 8,
+ 							"step": 1,
+ 							"max": 5,
  							"placeholder": {
  								"de": "opt. Prio"
  							},
@@ -11178,8 +11188,10 @@
  						},
  						{
  							"name": "q32_education_addl",
- 							"type": "text",
- 							"max_chars": 16,
+ 							"type": "number",
+ 							"max_chars": 8,
+ 							"step": 1,
+ 							"max": 5,
  							"placeholder": {
  								"de": "opt. Prio"
  							},
@@ -11198,8 +11210,10 @@
  						},
  						{
  							"name": "q32_data_addl",
- 							"type": "text",
- 							"max_chars": 16,
+ 							"type": "number",
+ 							"max_chars": 8,
+ 							"step": 1,
+ 							"max": 5,
  							"placeholder": {
  								"de": "opt. Prio"
  							},
@@ -11218,8 +11232,10 @@
  						},
  						{
  							"name": "q32_legislation_addl",
- 							"type": "text",
- 							"max_chars": 16,
+ 							"type": "number",
+ 							"max_chars": 8,
+ 							"step": 1,
+ 							"max": 5,
  							"placeholder": {
  								"de": "opt. Prio"
  							},
@@ -11238,8 +11254,10 @@
  						},
  						{
  							"name": "q32_bestpract_addl",
- 							"type": "text",
- 							"max_chars": 16,
+ 							"type": "number",
+ 							"max_chars": 8,
+ 							"step": 1,
+ 							"max": 5,
  							"placeholder": {
  								"de": "opt. Prio"
  							},
@@ -11258,8 +11276,10 @@
  						},
  						{
  							"name": "q32_reporting_addl",
- 							"type": "text",
- 							"max_chars": 16,
+ 							"type": "number",
+ 							"max_chars": 8,
+ 							"step": 1,
+ 							"max": 5,
  							"placeholder": {
  								"de": "opt. Prio"
  							},
@@ -11278,8 +11298,10 @@
  						},
  						{
  							"name": "q32_assetclass_addl",
- 							"type": "text",
- 							"max_chars": 16,
+ 							"type": "number",
+ 							"max_chars": 8,
+ 							"step": 1,
+ 							"max": 5,
  							"placeholder": {
  								"de": "opt. Prio"
  							},
@@ -11298,8 +11320,10 @@
  						},
  						{
  							"name": "q32_productdesign_addl",
- 							"type": "text",
- 							"max_chars": 16,
+ 							"type": "number",
+ 							"max_chars": 8,
+ 							"step": 1,
+ 							"max": 5,
  							"placeholder": {
  								"de": "opt. Prio"
  							},
@@ -11325,8 +11349,10 @@
  						},
  						{
  							"name": "q32_other_addl",
- 							"type": "text",
- 							"max_chars": 16,
+ 							"type": "number",
+ 							"max_chars": 8,
+ 							"step": 1,
+ 							"max": 5,
  							"placeholder": {
  								"de": "opt. Prio"
  							},
@@ -11398,8 +11424,10 @@
  						},
  						{
  							"name": "q33_paris_need_addl",
- 							"type": "text",
- 							"max_chars": 14,
+ 							"type": "number",
+ 							"max_chars": 8,
+ 							"step": 1,
+ 							"max": 5,
  							"placeholder": {
  								"de": "opt. Prio"
  							},
@@ -11414,8 +11442,10 @@
  						},
  						{
  							"name": "q33_paris_pot_addl",
- 							"type": "text",
- 							"max_chars": 14,
+ 							"type": "number",
+ 							"max_chars": 8,
+ 							"step": 1,
+ 							"max": 5,
  							"placeholder": {
  								"de": "opt. Prio"
  							},
@@ -11434,8 +11464,10 @@
  						},
  						{
  							"name": "q33_leisure_need_addl",
- 							"type": "text",
- 							"max_chars": 14,
+ 							"type": "number",
+ 							"max_chars": 8,
+ 							"step": 1,
+ 							"max": 5,
  							"placeholder": {
  								"de": "opt. Prio"
  							},
@@ -11450,8 +11482,10 @@
  						},
  						{
  							"name": "q33_leisure_pot_addl",
- 							"type": "text",
- 							"max_chars": 14,
+ 							"type": "number",
+ 							"max_chars": 8,
+ 							"step": 1,
+ 							"max": 5,
  							"placeholder": {
  								"de": "opt. Prio"
  							},
@@ -11470,8 +11504,10 @@
  						},
  						{
  							"name": "q33_education_need_addl",
- 							"type": "text",
- 							"max_chars": 14,
+ 							"type": "number",
+ 							"max_chars": 8,
+ 							"step": 1,
+ 							"max": 5,
  							"placeholder": {
  								"de": "opt. Prio"
  							},
@@ -11486,8 +11522,10 @@
  						},
  						{
  							"name": "q33_education_pot_addl",
- 							"type": "text",
- 							"max_chars": 14,
+ 							"type": "number",
+ 							"max_chars": 8,
+ 							"step": 1,
+ 							"max": 5,
  							"placeholder": {
  								"de": "opt. Prio"
  							},
@@ -11506,8 +11544,10 @@
  						},
  						{
  							"name": "q33_work_need_addl",
- 							"type": "text",
- 							"max_chars": 14,
+ 							"type": "number",
+ 							"max_chars": 8,
+ 							"step": 1,
+ 							"max": 5,
  							"placeholder": {
  								"de": "opt. Prio"
  							},
@@ -11522,8 +11562,10 @@
  						},
  						{
  							"name": "q33_work_pot_addl",
- 							"type": "text",
- 							"max_chars": 14,
+ 							"type": "number",
+ 							"max_chars": 8,
+ 							"step": 1,
+ 							"max": 5,
  							"placeholder": {
  								"de": "opt. Prio"
  							},
@@ -11542,8 +11584,10 @@
  						},
  						{
  							"name": "q33_research_need_addl",
- 							"type": "text",
- 							"max_chars": 14,
+ 							"type": "number",
+ 							"max_chars": 8,
+ 							"step": 1,
+ 							"max": 5,
  							"placeholder": {
  								"de": "opt. Prio"
  							},
@@ -11558,8 +11602,10 @@
  						},
  						{
  							"name": "q33_research_pot_addl",
- 							"type": "text",
- 							"max_chars": 14,
+ 							"type": "number",
+ 							"max_chars": 8,
+ 							"step": 1,
+ 							"max": 5,
  							"placeholder": {
  								"de": "opt. Prio"
  							},
@@ -11578,8 +11624,10 @@
  						},
  						{
  							"name": "q33_health_need_addl",
- 							"type": "text",
- 							"max_chars": 14,
+ 							"type": "number",
+ 							"max_chars": 8,
+ 							"step": 1,
+ 							"max": 5,
  							"placeholder": {
  								"de": "opt. Prio"
  							},
@@ -11594,8 +11642,10 @@
  						},
  						{
  							"name": "q33_health_pot_addl",
- 							"type": "text",
- 							"max_chars": 14,
+ 							"type": "number",
+ 							"max_chars": 8,
+ 							"step": 1,
+ 							"max": 5,
  							"placeholder": {
  								"de": "opt. Prio"
  							},
@@ -11614,8 +11664,10 @@
  						},
  						{
  							"name": "q33_social_services_need_addl",
- 							"type": "text",
- 							"max_chars": 14,
+ 							"type": "number",
+ 							"max_chars": 8,
+ 							"step": 1,
+ 							"max": 5,
  							"placeholder": {
  								"de": "opt. Prio"
  							},
@@ -11630,8 +11682,10 @@
  						},
  						{
  							"name": "q33_social_services_pot_addl",
- 							"type": "text",
- 							"max_chars": 14,
+ 							"type": "number",
+ 							"max_chars": 8,
+ 							"step": 1,
+ 							"max": 5,
  							"placeholder": {
  								"de": "opt. Prio"
  							},
@@ -11650,8 +11704,10 @@
  						},
  						{
  							"name": "q33_env_protection_need_addl",
- 							"type": "text",
- 							"max_chars": 14,
+ 							"type": "number",
+ 							"max_chars": 8,
+ 							"step": 1,
+ 							"max": 5,
  							"placeholder": {
  								"de": "opt. Prio"
  							},
@@ -11666,8 +11722,10 @@
  						},
  						{
  							"name": "q33_env_protection_pot_addl",
- 							"type": "text",
- 							"max_chars": 14,
+ 							"type": "number",
+ 							"max_chars": 8,
+ 							"step": 1,
+ 							"max": 5,
  							"placeholder": {
  								"de": "opt. Prio"
  							},
@@ -11686,8 +11744,10 @@
  						},
  						{
  							"name": "q33_oceans_need_addl",
- 							"type": "text",
- 							"max_chars": 14,
+ 							"type": "number",
+ 							"max_chars": 8,
+ 							"step": 1,
+ 							"max": 5,
  							"placeholder": {
  								"de": "opt. Prio"
  							},
@@ -11702,8 +11762,10 @@
  						},
  						{
  							"name": "q33_oceans_pot_addl",
- 							"type": "text",
- 							"max_chars": 14,
+ 							"type": "number",
+ 							"max_chars": 8,
+ 							"step": 1,
+ 							"max": 5,
  							"placeholder": {
  								"de": "opt. Prio"
  							},
@@ -11722,8 +11784,10 @@
  						},
  						{
  							"name": "q33_wash_need_addl",
- 							"type": "text",
- 							"max_chars": 14,
+ 							"type": "number",
+ 							"max_chars": 8,
+ 							"step": 1,
+ 							"max": 5,
  							"placeholder": {
  								"de": "opt. Prio"
  							},
@@ -11738,8 +11802,10 @@
  						},
  						{
  							"name": "q33_wash_pot_addl",
- 							"type": "text",
- 							"max_chars": 14,
+ 							"type": "number",
+ 							"max_chars": 8,
+ 							"step": 1,
+ 							"max": 5,
  							"placeholder": {
  								"de": "opt. Prio"
  							},
@@ -11758,8 +11824,10 @@
  						},
  						{
  							"name": "q33_agriculture_need_addl",
- 							"type": "text",
- 							"max_chars": 14,
+ 							"type": "number",
+ 							"max_chars": 8,
+ 							"step": 1,
+ 							"max": 5,
  							"placeholder": {
  								"de": "opt. Prio"
  							},
@@ -11774,8 +11842,10 @@
  						},
  						{
  							"name": "q33_agriculture_pot_addl",
- 							"type": "text",
- 							"max_chars": 14,
+ 							"type": "number",
+ 							"max_chars": 8,
+ 							"step": 1,
+ 							"max": 5,
  							"placeholder": {
  								"de": "opt. Prio"
  							},
@@ -11794,8 +11864,10 @@
  						},
  						{
  							"name": "q33_energy_need_addl",
- 							"type": "text",
- 							"max_chars": 14,
+ 							"type": "number",
+ 							"max_chars": 8,
+ 							"step": 1,
+ 							"max": 5,
  							"placeholder": {
  								"de": "opt. Prio"
  							},
@@ -11810,8 +11882,10 @@
  						},
  						{
  							"name": "q33_energy_pot_addl",
- 							"type": "text",
- 							"max_chars": 14,
+ 							"type": "number",
+ 							"max_chars": 8,
+ 							"step": 1,
+ 							"max": 5,
  							"placeholder": {
  								"de": "opt. Prio"
  							},
@@ -11830,8 +11904,10 @@
  						},
  						{
  							"name": "q33_residential_need_addl",
- 							"type": "text",
- 							"max_chars": 14,
+ 							"type": "number",
+ 							"max_chars": 8,
+ 							"step": 1,
+ 							"max": 5,
  							"placeholder": {
  								"de": "opt. Prio"
  							},
@@ -11846,8 +11922,10 @@
  						},
  						{
  							"name": "q33_residential_pot_addl",
- 							"type": "text",
- 							"max_chars": 14,
+ 							"type": "number",
+ 							"max_chars": 8,
+ 							"step": 1,
+ 							"max": 5,
  							"placeholder": {
  								"de": "opt. Prio"
  							},
@@ -11866,8 +11944,10 @@
  						},
  						{
  							"name": "q33_it_need_addl",
- 							"type": "text",
- 							"max_chars": 14,
+ 							"type": "number",
+ 							"max_chars": 8,
+ 							"step": 1,
+ 							"max": 5,
  							"placeholder": {
  								"de": "opt. Prio"
  							},
@@ -11882,8 +11962,10 @@
  						},
  						{
  							"name": "q33_it_pot_addl",
- 							"type": "text",
- 							"max_chars": 14,
+ 							"type": "number",
+ 							"max_chars": 8,
+ 							"step": 1,
+ 							"max": 5,
  							"placeholder": {
  								"de": "opt. Prio"
  							},
@@ -11902,8 +11984,10 @@
  						},
  						{
  							"name": "q33_production_need_addl",
- 							"type": "text",
- 							"max_chars": 14,
+ 							"type": "number",
+ 							"max_chars": 8,
+ 							"step": 1,
+ 							"max": 5,
  							"placeholder": {
  								"de": "opt. Prio"
  							},
@@ -11918,8 +12002,10 @@
  						},
  						{
  							"name": "q33_production_pot_addl",
- 							"type": "text",
- 							"max_chars": 14,
+ 							"type": "number",
+ 							"max_chars": 8,
+ 							"step": 1,
+ 							"max": 5,
  							"placeholder": {
  								"de": "opt. Prio"
  							},
@@ -11938,8 +12024,10 @@
  						},
  						{
  							"name": "q33_urban_dev_need_addl",
- 							"type": "text",
- 							"max_chars": 14,
+ 							"type": "number",
+ 							"max_chars": 8,
+ 							"step": 1,
+ 							"max": 5,
  							"placeholder": {
  								"de": "opt. Prio"
  							},
@@ -11954,8 +12042,10 @@
  						},
  						{
  							"name": "q33_urban_dev_pot_addl",
- 							"type": "text",
- 							"max_chars": 14,
+ 							"type": "number",
+ 							"max_chars": 8,
+ 							"step": 1,
+ 							"max": 5,
  							"placeholder": {
  								"de": "opt. Prio"
  							},
@@ -11974,8 +12064,10 @@
  						},
  						{
  							"name": "q33_financial_access_need_addl",
- 							"type": "text",
- 							"max_chars": 14,
+ 							"type": "number",
+ 							"max_chars": 8,
+ 							"step": 1,
+ 							"max": 5,
  							"placeholder": {
  								"de": "opt. Prio"
  							},
@@ -11990,8 +12082,10 @@
  						},
  						{
  							"name": "q33_financial_access_pot_addl",
- 							"type": "text",
- 							"max_chars": 14,
+ 							"type": "number",
+ 							"max_chars": 8,
+ 							"step": 1,
+ 							"max": 5,
  							"placeholder": {
  								"de": "opt. Prio"
  							},
@@ -12017,8 +12111,10 @@
  						},
  						{
  							"name": "q33_other_need_addl",
- 							"type": "text",
- 							"max_chars": 14,
+ 							"type": "number",
+ 							"max_chars": 8,
+ 							"step": 1,
+ 							"max": 5,
  							"placeholder": {
  								"de": "opt. Prio"
  							},
@@ -12033,8 +12129,10 @@
  						},
  						{
  							"name": "q33_other_pot_addl",
- 							"type": "text",
- 							"max_chars": 14,
+ 							"type": "number",
+ 							"max_chars": 8,
+ 							"step": 1,
+ 							"max": 5,
  							"placeholder": {
  								"de": "opt. Prio"
  							},
@@ -12103,8 +12201,10 @@
  						},
  						{
  							"name": "q34_private_equity_addl",
- 							"type": "text",
- 							"max_chars": 16,
+ 							"type": "number",
+ 							"max_chars": 8,
+ 							"step": 1,
+ 							"max": 5,
  							"placeholder": {
  								"de": "opt. Prio"
  							},
@@ -12123,8 +12223,10 @@
  						},
  						{
  							"name": "q34_public_equity_addl",
- 							"type": "text",
- 							"max_chars": 16,
+ 							"type": "number",
+ 							"max_chars": 8,
+ 							"step": 1,
+ 							"max": 5,
  							"placeholder": {
  								"de": "opt. Prio"
  							},
@@ -12143,8 +12245,10 @@
  						},
  						{
  							"name": "q34_private_external_addl",
- 							"type": "text",
- 							"max_chars": 16,
+ 							"type": "number",
+ 							"max_chars": 8,
+ 							"step": 1,
+ 							"max": 5,
  							"placeholder": {
  								"de": "opt. Prio"
  							},
@@ -12163,8 +12267,10 @@
  						},
  						{
  							"name": "q34_public_external_addl",
- 							"type": "text",
- 							"max_chars": 16,
+ 							"type": "number",
+ 							"max_chars": 8,
+ 							"step": 1,
+ 							"max": 5,
  							"placeholder": {
  								"de": "opt. Prio"
  							},
@@ -12183,8 +12289,10 @@
  						},
  						{
  							"name": "q34_real_estate_addl",
- 							"type": "text",
- 							"max_chars": 16,
+ 							"type": "number",
+ 							"max_chars": 8,
+ 							"step": 1,
+ 							"max": 5,
  							"placeholder": {
  								"de": "opt. Prio"
  							},
@@ -12203,8 +12311,10 @@
  						},
  						{
  							"name": "q34_money_deposits_addl",
- 							"type": "text",
- 							"max_chars": 16,
+ 							"type": "number",
+ 							"max_chars": 8,
+ 							"step": 1,
+ 							"max": 5,
  							"placeholder": {
  								"de": "opt. Prio"
  							},
@@ -12223,8 +12333,10 @@
  						},
  						{
  							"name": "q34_soc_addl",
- 							"type": "text",
- 							"max_chars": 16,
+ 							"type": "number",
+ 							"max_chars": 8,
+ 							"step": 1,
+ 							"max": 5,
  							"placeholder": {
  								"de": "opt. Prio"
  							},
@@ -12243,8 +12355,10 @@
  						},
  						{
  							"name": "q34_green_bonds_addl",
- 							"type": "text",
- 							"max_chars": 16,
+ 							"type": "number",
+ 							"max_chars": 8,
+ 							"step": 1,
+ 							"max": 5,
  							"placeholder": {
  								"de": "opt. Prio"
  							},
@@ -12263,8 +12377,10 @@
  						},
  						{
  							"name": "q34_emerging_markets_addl",
- 							"type": "text",
- 							"max_chars": 16,
+ 							"type": "number",
+ 							"max_chars": 8,
+ 							"step": 1,
+ 							"max": 5,
  							"placeholder": {
  								"de": "opt. Prio"
  							},
@@ -12283,8 +12399,10 @@
  						},
  						{
  							"name": "q34_microfinance_addl",
- 							"type": "text",
- 							"max_chars": 16,
+ 							"type": "number",
+ 							"max_chars": 8,
+ 							"step": 1,
+ 							"max": 5,
  							"placeholder": {
  								"de": "opt. Prio"
  							},
@@ -12303,8 +12421,10 @@
  						},
  						{
  							"name": "q34_commodities_addl",
- 							"type": "text",
- 							"max_chars": 16,
+ 							"type": "number",
+ 							"max_chars": 8,
+ 							"step": 1,
+ 							"max": 5,
  							"placeholder": {
  								"de": "opt. Prio"
  							},
@@ -12323,8 +12443,10 @@
  						},
  						{
  							"name": "q34_slb_addl",
- 							"type": "text",
- 							"max_chars": 16,
+ 							"type": "number",
+ 							"max_chars": 8,
+ 							"step": 1,
+ 							"max": 5,
  							"placeholder": {
  								"de": "opt. Prio"
  							},
@@ -12350,8 +12472,10 @@
  						},
  						{
  							"name": "q34_hybrid_addl",
- 							"type": "text",
- 							"max_chars": 16,
+ 							"type": "number",
+ 							"max_chars": 8,
+ 							"step": 1,
+ 							"max": 5,
  							"placeholder": {
  								"de": "opt. Prio"
  							},
@@ -12377,8 +12501,10 @@
  						},
  						{
  							"name": "q34_other_addl",
- 							"type": "text",
- 							"max_chars": 16,
+ 							"type": "number",
+ 							"max_chars": 8,
+ 							"step": 1,
+ 							"max": 5,
  							"placeholder": {
  								"de": "opt. Prio"
  							},
@@ -17222,11 +17348,6 @@
  							},
  							"col_span": 1,
  							"col_span_label": 1
- 						},
- 						{
- 							"type": "dyn-textblock",
- 							"col_span_control": 1,
- 							"dynamic_func": "PersonalLink"
  						}
  					]
  				}

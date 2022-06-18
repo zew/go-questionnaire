@@ -9,7 +9,7 @@ const names = [
 
 
 
-function checkOneToFive(event) {
+function requireSiblingEntry(event) {
 
     // console.log(`name: ${event.target.name} - val is ${event.target.value}`)
     let inpSrc = event.target;    
@@ -31,11 +31,44 @@ function checkOneToFive(event) {
     return true;
 }
 
+function submitCheck(event) {
+    console.log(`submit check start`);
+    
+    let sum = 0;
+    for (const name of names) {
+        let inp = document.forms.frmMain[name];
+        // console.log(`${inp.name} - value has type `,typeof inp.value);
+        // console.log(`${inp.name} - value has value `, Number(inp.value));
+
+        sum += Number(inp.value);
+        // console.log(`${inp.name} - val is -${Number(inp.value)}- - ${sum}`);
+    }
+
+    console.log(`sum is ${sum}`);
+
+    if (sum != 0) {
+
+        if (sum < 99.999 || sum > 100.001) {
+            alert("Ergibt nicht 100 Prozent");
+            event.preventDefault();
+            return false;        
+        }
+
+    }
+
+    return true;
+
+
+}
 
 // addEventListener is cumulative
 window.addEventListener("load", function (event) {
     for (const inp of names) {
-        document.forms.frmMain[inp].addEventListener('change', checkOneToFive);
+        document.forms.frmMain[inp].addEventListener('change', requireSiblingEntry);
     }
+
+    document.forms.frmMain.addEventListener('submit', submitCheck);
+    // submitCheck(null);
+
     console.log("handlers assigned");
 });

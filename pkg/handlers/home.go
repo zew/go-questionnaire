@@ -92,6 +92,13 @@ func loadQuestionnaire(w http.ResponseWriter, r *http.Request, l *lgn.LoginT) (*
 		return q, err
 	}
 
+	if permaLink, ok := l.Attrs["permalink"]; ok {
+		if q.Attrs == nil {
+			q.Attrs = map[string]string{}
+		}
+		q.Attrs["permalink"] = permaLink
+	}
+
 	log.Printf("Questionnaire loaded from file; %v pages", len(q.Pages))
 	return q, nil
 
@@ -360,7 +367,7 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 
 	err = q.ComputeDynamicContent(q.CurrPage)
 	if err != nil {
-		log.Printf("ComputeDynamicContent computation for page %v caused error %v", prevPage, err)
+		log.Printf("ComputeDynamicContent computation for page %v caused error %v", q.CurrPage, err)
 	}
 
 	//

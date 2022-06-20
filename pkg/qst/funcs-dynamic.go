@@ -26,6 +26,7 @@ type dynFuncT func(*QuestionnaireT, *inputT, string) (string, error)
 var dynFuncs = map[string]dynFuncT{
 	"ResponseStatistics":             ResponseStatistics,
 	"PersonalLink":                   PersonalLink,
+	"PermaLink":                      PermaLink,
 	"HasEuroQuestion":                ResponseTextHasEuro,
 	"FederalStateAboveOrBelowMedian": FederalStateAboveOrBelowMedian,
 	"PatLogos":                       PatLogos,
@@ -151,6 +152,26 @@ func PersonalLink(q *QuestionnaireT, inp *inputT, paramSet string) (string, erro
 		ret = cfg.Get().Mp["review_by_personal_link"].Tr(q.LangCode)
 	}
 	log.Printf("PersonalLink: closed is %v", closed)
+	return ret, nil
+}
+
+// PermaLink returns the perma link
+func PermaLink(q *QuestionnaireT, inp *inputT, paramSet string) (string, error) {
+	closed := !q.ClosingTime.IsZero()
+	ret := ""
+	if closed {
+		ret = cfg.Get().Mp["finished_by_participant"].Tr(q.LangCode)
+		ret = fmt.Sprintf(ret, q.ClosingTime.Format("02.01.2006 15:04"))
+	} else {
+		permaLink, ok := q.Attrs["permalink"]
+		if ok {
+			lnk := cfg.Get().AbsoluteLink() + "/d/" + permaLink
+			// log.Printf("lnk: %v", lnk)
+			template := cfg.Get().Mp["review_by_permalink"].Tr(q.LangCode)
+			ret = fmt.Sprintf(template, lnk, lnk)
+		}
+	}
+	// log.Printf("PermaLink: %v", ret)
 	return ret, nil
 }
 

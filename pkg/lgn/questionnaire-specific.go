@@ -69,9 +69,11 @@ func LoginByHash(w http.ResponseWriter, r *http.Request) (bool, error) {
 
 			//
 			surveyID := ""
+			permaLink := ""
 			parts := strings.Split(h, "--") // h coming from anonymous id
 			if len(parts) > 1 {
 				surveyID = strings.ToLower(parts[0])
+				permaLink = h
 				h = parts[1]
 			}
 
@@ -105,6 +107,9 @@ func LoginByHash(w http.ResponseWriter, r *http.Request) (bool, error) {
 						l.Roles = map[string]string{}
 						l.Attrs = map[string]string{}
 						l.Attrs["survey_id"] = dlr.SurveyID
+						if permaLink != "" {
+							l.Attrs["permalink"] = permaLink
+						}
 						// todo - attrs from profiles? see below
 
 						/*

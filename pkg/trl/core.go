@@ -349,4 +349,30 @@ var coreTranslations = Map{
 		"it": "Può rivedere o modificare i suoi dati usando il Suo link personale. <br>\n<a href='/?submitBtn=prev'>Indietro</a><br>\n",
 		"pl": "Dane można przejrzeć lub zmienić przy użyciu osobistego łącza.<br>\n<a href='/?submitBtn=prev'>Wstecz</a><br>\n",
 	},
+	"review_by_permalink": {
+		"de": `
+		<ul  style='margin-top: -1.2rem'>
+			<li>
+			<!-- Bis zum Umfrage-Ende-->
+			Sie können den Fragebogen
+			über folgenden Link erneut aufrufen: 
+			<a href='%v'>%v</a>.   
+			<br>
+			(Vielleicht wollen Sie sich diesen Link kopieren. Sie müssten sonst wieder von vorne beginnen.)
+			</li>
+		</ul>			
+		`,
+		"en": `
+		<ul  style='margin-top: -1.2rem'>
+			<li>
+			Until the end of the survey,
+			you can change your entries
+			using following link: 
+			<a href='%v'>%v</a>.   
+			<br>
+			(Maybe you want to copy this link)
+			</li>
+		</ul>
+		`,
+	},
 }

@@ -7,6 +7,7 @@ import (
 	"net/http"
 	"strconv"
 	"strings"
+	"sync"
 	"time"
 
 	"github.com/go-playground/form"
@@ -70,23 +71,26 @@ func (c *iDElements) Encode(w io.Writer) (int, string) {
 
 var hashIDCounter = ctr.New() //  not stable across app restarts
 
+var doOnce sync.Once
+
 // LoginWithoutLink creates a hash ID
 // and forwards to direct login /d
 //
-// A user ID is created from unix time
+// the user ID is created from unix time
+// 		plus some in-memory counter
+//
+// it's called permalink in subsequent logic
 func LoginWithoutLink(w http.ResponseWriter, r *http.Request) {
 
-	// number of millisecond elapsed since Unix epoch
-	t1 := time.Now().UnixNano()
-	t2 := int64(time.Nanosecond) * t1 / int64(time.Millisecond) / int64(time.Millisecond)
-	_ = t2
+	doOnce.Do(func() {
+		time.Sleep(1000 * time.Millisecond) // prevent identical conflicts during restart within *same* second; see below
+	})
 
-	// better:
-	//    	resolution is seconds
-	//    	cappedto seconds of 4 months instead of 100 years
-	// 		for intra-second distinction: incremental counter
-	//		minimum size: 100.000 - to distinguish from pre-generated UIDs
-	// 		max size 10 billion still acceptable
+	// resolution is seconds
+	// capped to seconds of 4 months instead of 100 years
+	// for intra-second distinction: incremental counter
+	// minimum size: 100.000 - to distinguish from pre-generated UIDs
+	// max size 10 billion; is still acceptable
 	//
 	// 	doubles only during app restarts within the same second
 	// 		in conjunction with multiple requests within the same second
@@ -116,7 +120,7 @@ func LoginWithoutLink(w http.ResponseWriter, r *http.Request) {
 	// forward to LoginByHashID
 	url := cfg.Pref(fmt.Sprintf("/d/%v--%v", cfg.Get().AnonymousSurveyID, hashID))
 
-	if false {
+	if true {
 		// http.Redirect(w, r, url, http.StatusFound)
 		http.Redirect(w, r, url, http.StatusTemporaryRedirect)
 	}

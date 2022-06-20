@@ -456,13 +456,16 @@ func page4Quest11(q *qst.QuestionnaireT) {
 				inp.Type = "textblock"
 				inp.Label = trl.S{"de": `<b>17.</b> &nbsp;	
 					Investieren Sie direkt oder indirekt? 
+					<br>
+					(Mehrfachauswahl möglich)
+
 				`}
 				inp.ColSpan = gr.Cols
 			}
 			for idx, label := range labels {
 				rad := gr.AddInput()
 				rad.Type = "checkbox"
-				rad.Name = fmt.Sprintf("q19_%v", subName[idx])
+				rad.Name = fmt.Sprintf("q17_%v", subName[idx])
 
 				rad.ColSpan = 1
 				rad.ColSpanLabel = 1
@@ -475,20 +478,6 @@ func page4Quest11(q *qst.QuestionnaireT) {
 
 				rad.ControlFirst()
 			}
-			// for idx, labl := range labels {
-			// 	rad := gr.AddInput()
-			// 	rad.Type = "radio"
-			// 	rad.Name = "q17"
-			// 	rad.ValueRadio = radioValues[idx]
-
-			// 	rad.ColSpan = 1
-			// 	rad.ColSpanLabel = 1
-			// 	rad.ColSpanControl = 6
-
-			// 	rad.Label = labl
-
-			// 	rad.ControlFirst()
-			// }
 		}
 
 		// gr2
@@ -556,7 +545,7 @@ func page4Quest11(q *qst.QuestionnaireT) {
 				inp.Type = "textblock"
 				inp.Label = trl.S{
 					"de": `<b>19.</b> &nbsp;	
-					Welche Art von Organisation(en) unterstützen Sie?
+					In welche Art von Organisation(en) investieren Sie?
 					<br>
 					(Mehrfachauswahl möglich)
 				`}
@@ -1040,63 +1029,6 @@ func page4Quest11(q *qst.QuestionnaireT) {
 			// inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
 
 		}
-
-		// {
-		// 	colsBelow1 := append([]float32{1.0}, columnTemplate5...)
-		// 	colsBelow1 = []float32{
-		// 		1.4, 2.2, //   3.0, 1,  |  4.6 separated to two cols
-		// 		0.0, 1,
-		// 		0.0, 1,
-		// 		0.0, 1,
-		// 		0.0, 1,
-		// 		0.0, 1,
-		// 	}
-		// 	colsBelow2 := []float32{}
-		// 	for i := 0; i < len(colsBelow1); i += 2 {
-		// 		colsBelow2 = append(colsBelow2, colsBelow1[i]+colsBelow1[i+1])
-		// 	}
-
-		// 	gr := page.AddGroup()
-		// 	gr.Cols = 7
-		// 	gr.BottomVSpacers = 4
-		// 	stl := ""
-		// 	for colIdx := 0; colIdx < len(colsBelow2); colIdx++ {
-		// 		stl = fmt.Sprintf(
-		// 			"%v   %vfr ",
-		// 			stl,
-		// 			colsBelow2[colIdx],
-		// 		)
-		// 	}
-		// 	gr.Style = css.NewStylesResponsive(gr.Style)
-		// 	if gr.Style.Desktop.StyleGridContainer.TemplateColumns == "" {
-		// 		gr.Style.Desktop.StyleBox.Display = "grid"
-		// 		gr.Style.Desktop.StyleGridContainer.TemplateColumns = stl
-		// 	} else {
-		// 		log.Printf("GridBuilder.AddGrid() - another TemplateColumns already present.\nwnt%v\ngot%v", stl, gr.Style.Desktop.StyleGridContainer.TemplateColumns)
-		// 	}
-		// 	{
-		// 		inp := gr.AddInput()
-		// 		inp.Type = "text"
-		// 		inp.Name = "q26_other_label"
-		// 		inp.MaxChars = 17
-		// 		inp.ColSpan = 1
-		// 		inp.ColSpanLabel = 2.4
-		// 		inp.ColSpanControl = 4
-		// 		inp.Label = trl.S{
-		// 			"de": "Andere",
-		// 			"en": "Other",
-		// 		}
-		// 	}
-		// 	for idx := 0; idx < len(oneToFiveVolume); idx++ {
-		// 		rad := gr.AddInput()
-		// 		rad.Type = "radio"
-		// 		rad.Name = "q26" + "_other"
-		// 		rad.ValueRadio = fmt.Sprint(idx + 1)
-		// 		rad.ColSpan = 1
-		// 		rad.ColSpanLabel = colsBelow1[2*(idx+1)]
-		// 		rad.ColSpanControl = colsBelow1[2*(idx+1)] + 1
-		// 	}
-		// }
 
 		// gr3
 		{

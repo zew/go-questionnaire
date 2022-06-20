@@ -8,6 +8,7 @@ package cfg
 import (
 	"bytes"
 	"encoding/json"
+	"fmt"
 	"io"
 	"log"
 	"path"
@@ -274,6 +275,27 @@ func (c *ConfigT) Val(site, langCode, key string) string {
 func PrefTS(pth ...string) string {
 	p := Pref(pth...)
 	return p + "/"
+}
+
+// AbsoluteLink creates a HTTP URL
+func (c *ConfigT) AbsoluteLink() string {
+	port := fmt.Sprintf(":%v", c.BindSocket)
+	if c.BindSocket == 0 || c.BindSocket == 80 || c.BindSocket == 443 {
+		port = ""
+	}
+	lnk := fmt.Sprintf("%v%v", c.HostName, port)
+
+	if c.URLPathPrefix != "" {
+		lnk = lnk + "/" + c.URLPathPrefix
+	}
+
+	if c.TLS {
+		lnk = "https://" + lnk
+	} else {
+		lnk = "http://" + lnk
+	}
+
+	return lnk
 }
 
 // Example writes a minimal configuration to file, to be extended or adapted

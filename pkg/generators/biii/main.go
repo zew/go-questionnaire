@@ -91,7 +91,11 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					-->
 
 					<p style='text-align: justify;'>
-					Im Rahmen dieser Erhebung wollen wir eine Marktstudie für den deutschen Impact Investing-Markt 2022 durchführen.
+					Im Rahmen dieser Erhebung wollen wir eine Marktstudie 
+					für den Impact Investing-Markt  
+					im deutschsprachigen Raum 
+					für das Jahr 2022 
+					durchführen.
 
 					Wir nutzen bewusst eine breite Definition von Impact Investments, die das Verständnis des Global Impact Investing Networks (GIIN) widerspiegelt.
 
@@ -125,6 +129,13 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.ColSpan = 1
 				inp.ColSpanLabel = 1
 			}
+			{
+				inp := gr.AddInput()
+				inp.Type = "dyn-textblock"
+				inp.ColSpanControl = 1
+				inp.DynamicFunc = "PermaLink"
+			}
+
 		}
 
 		// gr1
@@ -484,7 +495,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				{"de": "Andere Investments mit ESG Bezug am 31/12/2021"},
 				{"de": "Konventionelle Investments am 31/12/2021"},
 			}
-			radioValues := []string{
+			names := []string{
 				"impact",
 				"other",
 				"conventional",
@@ -500,7 +511,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			for idx, label := range labels {
 				inp := gr.AddInput()
 				inp.Type = "number"
-				inp.Name = fmt.Sprintf("q06_%v", radioValues[idx])
+				inp.Name = fmt.Sprintf("q06_%v", names[idx])
 				inp.Label = label
 
 				inp.ColSpan = 1
@@ -516,6 +527,42 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 				inp.Style = css.NewStylesResponsive(inp.Style)
 				inp.Style.Desktop.StyleBox.Margin = "0 0 0 2.5rem"
+
+				if idx == 0 {
+					labelsSub := []trl.S{
+						{"de": "Direkte Investments"},
+						{"de": "Indirekte Investments bzw. über Intermediäre (Fonds, Asset Manager,…)"},
+					}
+					namesSub := []string{
+						"direkt",
+						"indirekt",
+					}
+					for idx2, labelSub := range labelsSub {
+
+						inp := gr.AddInput()
+						inp.Type = "number"
+						inp.Name = fmt.Sprintf("q06a_%v", namesSub[idx2])
+						inp.Label = labelSub
+
+						inp.ColSpan = gr.Cols
+						inp.ColSpanLabel = 18
+						inp.ColSpanControl = 11
+						inp.Min = 0
+						inp.Max = 100
+						inp.Step = 0.1
+						inp.MaxChars = 5
+						inp.Suffix = trl.S{"de": "% Anteil"}
+						inp.Placeholder = trl.S{"de": "00"}
+
+						inp.ControlTop()
+						inp.Style = css.NewStylesResponsive(inp.Style)
+						inp.Style.Desktop.StyleBox.Margin = "0 0 0 6.4rem"
+
+						inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
+						inp.StyleLbl.Desktop.StyleBox.Padding = "0 0.8rem 0 0 "
+
+					}
+				}
 
 			}
 		}
@@ -535,6 +582,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		{
 			gr := page.AddGroup()
 			gr.Cols = 1
+			gr.BottomVSpacers = 2
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"

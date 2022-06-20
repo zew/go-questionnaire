@@ -1,7 +1,7 @@
-* Durch Klicken auf `Weiter zu Seite…` werden Ihre Antworten gespeichert und Sie gelangen zur jeweils nächsten Seite.
+* Durch Klicken auf  &nbsp; `Weiter zu Seite…` &nbsp; werden Ihre Antworten gespeichert und Sie gelangen zur jeweils nächsten Seite.
 
-<!--
+* Bitte klicken Sie am Schluss auf &nbsp; `Fragebogen abschließen`, um die Daten final zu speichern.
 
-* Bei einer Unterbrechung (Schließen des Browsers) bleiben Ihre Antworten erhalten und können später über Ihren persönlichen Link wieder aufgerufen und geändert werden.
--->
+* Wir würden Sie bitten, den Fragebogen einmal auszufüllen und abzuschließen. Nach zwei Stunden Inaktivität oder bei Schließen des Browsers wird die Umfrage unterbrochen.
+
 

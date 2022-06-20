@@ -22,9 +22,7 @@
 </p>
 
 <p style='text-align: justify; font-size: 110%'>
-    Mit Ihrer Teilnahme tragen Sie maßgeblich dazu bei, den Impact Investing-Markt im deutschsprachigen Raum zu stärken und weiterzuentwickeln.
-    
-    Sie helfen, zusätzliches Kapital zur Bewältigung gesellschaftlicher Herausforderungen zu mobilisieren. 
+    Mit Ihrer Teilnahme tragen Sie maßgeblich dazu bei, den Impact Investing-Markt im deutschsprachigen Raum zu stärken, weiterzuentwickeln und helfen, zusätzliches Kapital zur Bewältigung gesellschaftlicher Herausforderungen zu mobilisieren.
 </p>
 
 <p style='text-align: justify; font-size: 110%'>

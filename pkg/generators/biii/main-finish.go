@@ -15,25 +15,24 @@ func finish(q *qst.QuestionnaireT) {
 	{
 		page := q.AddPage()
 		page.Label = trl.S{"de": "Abschluss<br><br>", "en": "Finish"}
-		// page.Label = trl.S{"de": "", "en": ""}
 		page.Short = trl.S{"de": "Abschluss", "en": "Finish"}
 		page.SuppressInProgressbar = true
 		page.SuppressProgressbar = true
-		page.WidthMax("36rem")
+		page.WidthMax("40rem")
 
 		// gr0
 		{
 			gr := page.AddGroup()
 			gr.Cols = 1
 			{
-				rad := gr.AddInput()
-				rad.Type = "checkbox"
-				rad.Name = "q44_dsgvo"
-				rad.ColSpan = 1
-				rad.ColSpanLabel = 1
-				rad.ColSpanControl = 6
-				rad.Validator = "must"
-				rad.Label = trl.S{
+				inp := gr.AddInput()
+				inp.Type = "checkbox"
+				inp.Name = "q44_dsgvo"
+				inp.ColSpan = 1
+				inp.ColSpanLabel = 1
+				inp.ColSpanControl = 6
+				inp.Validator = "must"
+				inp.Label = trl.S{
 					"de": `
 						<b>Einwilligungserklärung gemäß DSGVO</b>
 
@@ -49,29 +48,98 @@ func finish(q *qst.QuestionnaireT) {
 						<br>
 
 						Hiermit willige ich ein, dass meine gesammelten Daten 
-						für die BIII Impact Investment Studie 2022 verwendet werden. 
+						für die Marktstudie Impact Investing in Deutschland 2022 
+						der Bundesinitiative Impact Investing verwendet werden.
+
+
+						<br>
+
+						Um den Daten bestmöglich wissenschaftlich auswerten, 
+						validieren und ggf. bereinigen zu können, wären wir dankbar, 
+						wenn Sie uns den Namen Ihrer Organisation nennen könnten. 
+						
+						Es gilt selbstverständlich weiterhin, dass die Daten streng vertraulich, 
+						DSGVO-konform behandelt und nur in anonymer bzw. aggregierter 
+						Form benutzt werden.
+
 					`,
 				}
-				rad.ControlFirst()
+
+				inp.ControlFirst()
+				inp.ControlTop()
+			}
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "text"
+				// inp.Type = "hidden"
+				inp.Name = "q45_org_name"
+				inp.MaxChars = 27
+				inp.Label = trl.S{"de": "Name Ihrer Organisation&nbsp;&nbsp;"}
+				inp.ColSpan = gr.Cols
+				inp.ColSpanLabel = 2
+				inp.ColSpanControl = 3
+				inp.Style = css.NewStylesResponsive(inp.Style)
+				inp.Style.Desktop.StyleBox.Margin = "0 0 0 6rem"
 			}
 		}
 
 		// gr0
 		{
 			labels := []trl.S{
-				{"de": "Ich erkläre mich einverstanden, dass meine angegebenen personenbezogenen Daten genutzt werden und zu Auswertungszwecken an die European Venture Philanthropy Association (EVPA) weitergeleitet werden dürfen. "},
-				{"de": "Meine Daten sollen anonymisiert verwendet werden."},
+				{"de": `
+					Ich erkläre mich einverstanden, 
+					dass meine angegebenen personenbezogenen Daten 
+					genutzt werden 
+					und zu Auswertungszwecken an die European Venture Philanthropy Association (EVPA) 
+					weitergeleitet 
+					
+					und in anonymer bzw. aggregierter Form für eine europaweite 
+					Studie zu Impact Investing von EVPA 
+					und Global Steering Group for Impact Investments (GSG) verwendet werden.
+					
+				`},
+
+				{"de": `
+					Ich erkläre mich einverstanden, 
+					dass meine angegebenen personenbezogenen Daten 
+					<i>anonymisiert</i> 
+					zu Auswertungszwecken 
+					an die European Venture Philanthropy Association (EVPA) weitergeleitet 
+					und in anonymer bzw. aggregierter Form für eine europaweite 
+					Studie zu Impact Investing von EVPA und Global Steering Group 
+					for Impact Investments (GSG) verwendet werden.				
+				`},
+
+				{"de": "Meine Daten sollen nicht an die EVPA weitergeleitet werden."},
 			}
 			radioValues := []string{
-				"evpa",
-				"anonymous",
+				"evpa_yes",
+				"evpa_anonymous",
+				"evpa_not",
 			}
 			gr := page.AddGroup()
 			gr.Cols = 1
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				inp.Label = trl.S{"de": "<b>Weitergabe meiner Daten</b> <br><br>"}
+				inp.Label = trl.S{"de": `
+					<b>Weitergabe meiner Daten an die EVPA</b> 
+					<br>
+					<br>
+					
+					Mit Ihrer Einwilligung würden wir mit den im Rahmen dieser Erhebung 
+					gesammelten Daten gerne auch zu einer europaweiten 
+					Studie zu Impact Investing von EVPA und GSG beitragen. 
+					
+					Dies wäre ein wichtiger Schritt hin zu einem besseren Verständnis 
+					des Impact Investing Marktes auf europäischer Ebene 
+					sowie zu einer Vergleichbarkeit nationaler Entwicklungen 
+					und Trends im Impact Investing.					
+					<br>
+					<br>
+					
+				`}
 				inp.ColSpan = gr.Cols
 			}
 			for idx, label := range labels {
@@ -87,40 +155,27 @@ func finish(q *qst.QuestionnaireT) {
 				rad.Label = label
 
 				rad.ControlFirst()
+				rad.ControlTop()
 
 				rad.Validator = "mustRadioGroup"
 
-				if idx == 0 {
-					{
-						inp := gr.AddInput()
-						inp.Type = "text"
-						inp.Name = "q45_org_name"
-						inp.MaxChars = 27
-						inp.Label = trl.S{"de": "Name Ihrer Organisation"}
-						inp.ColSpan = gr.Cols
-						inp.ColSpanLabel = 2
-						inp.ColSpanControl = 3
-						inp.Style = css.NewStylesResponsive(inp.Style)
-						inp.Style.Desktop.StyleBox.Margin = "0 0 0 6rem"
-					}
-				}
-
 			}
 		}
 
-		// gr1
-		{
-			gr := page.AddGroup()
-			gr.Cols = 1
-			{
-				inp := gr.AddInput()
-				inp.Type = "dyn-composite"
-				inp.DynamicFuncParamset = ""
-				inp.DynamicFunc = fmt.Sprintf("QuestForOrg__%v__%v", 0, 0)
+		// // gr1
+		// {
+		// 	gr := page.AddGroup()
+		// 	gr.Cols = 1
+		// 	gr.BottomVSpacers = 1
+		// 	{
+		// 		inp := gr.AddInput()
+		// 		inp.Type = "dyn-composite"
+		// 		inp.DynamicFuncParamset = ""
+		// 		inp.DynamicFunc = fmt.Sprintf("QuestForOrg__%v__%v", 0, 0)
 
-				inp.ColSpanControl = 1
-			}
-		}
+		// 		inp.ColSpanControl = 1
+		// 	}
+		// }
 
 		// gr2
 		{
@@ -133,7 +188,10 @@ func finish(q *qst.QuestionnaireT) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
-				inp.Label = trl.S{"de": "", "en": ""}
+				inp.Label = trl.S{
+					"de": `Fragebogen abschließen um die Daten final zu speichern.`,
+					"en": ``,
+				}
 				inp.ColSpan = 1
 				inp.ColSpanLabel = 1
 			}

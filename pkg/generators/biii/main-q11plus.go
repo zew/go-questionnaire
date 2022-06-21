@@ -278,7 +278,7 @@ func page4Quest11(q *qst.QuestionnaireT) {
 				inp := gr.AddInput()
 				inp.Type = "textblock"
 				inp.Label = trl.S{"de": `<b>14.</b> &nbsp;	
-					Wie lang ist die durchschnittliche Laufzeit Ihrer Investments?
+					Wie lang ist die durchschnittliche Haltedauer Ihrer Investments?
 				`}
 				inp.ColSpan = gr.Cols
 			}
@@ -574,7 +574,7 @@ func page4Quest11(q *qst.QuestionnaireT) {
 	// page 10
 	{
 		page := q.AddPage()
-		page.Short = trl.S{"de": "Messung"}
+		page.Short = trl.S{"de": "IMM"}
 		page.Label = trl.S{"de": ""}
 		page.NavigationCondition = "BIIINow"
 		page.WidthMax("42rem")
@@ -613,7 +613,8 @@ func page4Quest11(q *qst.QuestionnaireT) {
 					</p>
 
 					<p style='font-size: 110%; text-align: justify'>
-					Im folgenden Teil wollen wir Daten zu den am Markt verwendeten Messungs- und Managementstrategien erheben.
+					Im folgenden Teil wollen wir Daten zu den am Markt 
+					verwendeten Impact Messungs- und Managementstrategien erheben.
 					</p>
 
 					<br>
@@ -671,6 +672,7 @@ func page4Quest11(q *qst.QuestionnaireT) {
 				{"de": "Die Wirkung des Investments wird über den gesamten Investmentprozess hinweg (von der Auswahl bis zum Reporting) als zentrales Kriterium berücksichtigt"},
 				{"de": "Wir haben ein eigenständiges und regelmäßiges Impact Reporting"},
 				{"de": "Die Erreichung der Impact-Ziele wird bei der Managementvergütung berücksichtigt"},
+				{"de": "Andere, bitte nennen"},
 			}
 			subName := []string{
 				"none",
@@ -682,9 +684,11 @@ func page4Quest11(q *qst.QuestionnaireT) {
 				"whole_lifecycle",
 				"own_reporting",
 				"coupled_salaries",
+
+				"other",
 			}
 			gr := page.AddGroup()
-			gr.Cols = 1
+			gr.Cols = 7
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
@@ -701,14 +705,32 @@ func page4Quest11(q *qst.QuestionnaireT) {
 				rad.Type = "checkbox"
 				rad.Name = fmt.Sprintf("q21_%v", subName[idx])
 
-				rad.ColSpan = 1
 				rad.ColSpanLabel = 1
 				rad.ColSpanControl = 6
 
-				rad.Label = label
+				// all rows except last
+				if idx < len(labels)-1 {
+					rad.ColSpan = gr.Cols
+					rad.Label = label
+					rad.ControlFirst()
+				} else {
+					// last row: now label
+					rad.ColSpan = 1
+					rad.ColSpanLabel = 0 // value 0 prevents the label from taking any place
+					rad.ColSpanControl = 1
 
-				rad.Style = css.NewStylesResponsive(rad.Style)
-				rad.ControlFirst()
+					inp := gr.AddInput()
+					inp.Type = "text"
+					inp.Name = "q21_other_label"
+					inp.MaxChars = 20
+					inp.Label = label
+
+					inp.ColSpan = gr.Cols - 1
+					inp.ColSpanLabel = 2
+					inp.ColSpanControl = 5
+					inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
+				}
+
 			}
 		}
 
@@ -945,7 +967,7 @@ func page4Quest11(q *qst.QuestionnaireT) {
 	// page 13
 	{
 		page := q.AddPage()
-		page.Short = trl.S{"de": "Integrität<br>Entwicklung"}
+		page.Short = trl.S{"de": "Integrität<br>Regulierung"}
 		page.Label = trl.S{"de": ""}
 		page.NavigationCondition = "BIIINow"
 		page.WidthMax("42rem")
@@ -1213,10 +1235,10 @@ func page4Quest11(q *qst.QuestionnaireT) {
 	// page 14
 	{
 		page := q.AddPage()
-		page.Short = trl.S{"de": ""}
+		page.Short = trl.S{"de": "Entwicklung des Impact Investing-Marktes"}
 		page.Label = trl.S{"de": ""}
 		page.NavigationCondition = "BIIINow"
-		page.SuppressInProgressbar = true
+		// page.SuppressInProgressbar = true
 		page.WidthMax("42rem")
 
 		// gr 0
@@ -1354,7 +1376,8 @@ func page4Quest11(q *qst.QuestionnaireT) {
 				gb.MainLabel = trl.S{
 					"de": fmt.Sprintf(`
 						<b>30. </b> &nbsp;	
-						Welchen Fortschritt hat es in letzten drei Jahren in den folgenden Bereichen gegeben?
+						Welchen Fortschritt hat es in letzten zwei Jahren
+						 in den folgenden Bereichen gegeben?
 					`),
 				}
 
@@ -1537,7 +1560,9 @@ func page4Quest11(q *qst.QuestionnaireT) {
 						In welchen Bereichen sind die größten Fortschritte notwendig?
 						<br>
 						<b>
-						(Wählen Sie die Top Fünf. Optional mit Priorisierung (1=größter Fortschritt))
+
+						(Wählen Sie die Top Fünf. 
+							Optional mit Priorisierung (1-5, 1=größter Fortschritt)). 
 						</b>
 					`),
 			}
@@ -1621,7 +1646,9 @@ func page4Quest11(q *qst.QuestionnaireT) {
 					für Impact Investments? 
 					<br>
 					<b>
-					(Wählen Sie die Top Fünf. Optional mit Priorisierung (1=größter Bedarf/ Potential))
+					(Wählen Sie die Top Fünf. 
+							Optional mit Priorisierung (1-5, 1=größter Bedarf/ Potential)). 
+
 					</b>
 
 
@@ -1721,7 +1748,7 @@ func page4Quest11(q *qst.QuestionnaireT) {
 						In welchen Asset Klassen erwarten Sie eine besonders dynamische Entwicklung?
 						<br>
 						<b>
-						(Wählen Sie die Top Fünf. Optional mit Priorisierung (1=dynamischste Entwicklung))
+						(Wählen Sie die Top Fünf. Optional mit Priorisierung (1-5, 1=dynamischste Entwicklung)). 
 						</b>
 					`),
 			}

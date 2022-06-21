@@ -45,7 +45,9 @@ Go Version 1.__16__
 
 * Secure login URLs < 65 characters in size
 
-* Shortcut logins `example.com/d/A5FE3P`
+* Anonymous logins `example.com/a`
+
+* Shortcut  logins `example.com/d/A5FE3P`
 
 * Automatic smartphone version
 
@@ -300,7 +302,7 @@ dev_appserver.py app.yaml
    with above parameters configured in `directLoginRanges`.  
    The anonymous ID is converted into an integer, which is encoded as a hash ID.  
    [QR code example](http://financial-literacy-test.appspot.com/img/ui/qr.png).  
-  * Login without link (lgn.LoginWithoutLink)  
+  * Login without link (lgn.LoginWithoutID)  
     via URL `domain`/l
 Profiles are configured key-value sets who are copied into the logged-in user's attributes.  
   This way any number of user properties can be specified, while the login URL remains short or ultra short.

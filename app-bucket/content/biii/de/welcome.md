@@ -14,7 +14,7 @@
 </p>
 
 <p style='text-align: justify; font-size: 110%'>
-    Daher wollen wir diesen nun 2022 mit einer neuerlichen Studie weiter ergründen und einen detaillierten Überblick über Entwicklungen und Herausforderungen in Bezug auf Aspekte wie Investitionsmotive, finanzielle Renditen, Wirkung oder rechtliche Rahmenbedingungen geben. Die Veröffentlichung der Ergebnisse ist für September 2022 geplant. 
+    Daher wollen wir diesen nun 2022 mit einer neuerlichen Studie weiter ergründen und einen detaillierten Überblick über Entwicklungen und Herausforderungen in Bezug auf Aspekte wie Investitionsmotive, finanzielle Renditen, Wirkung oder rechtliche Rahmenbedingungen geben. Die Veröffentlichung der Ergebnisse ist für Herbst 2022 geplant. 
 </p>
 
 <p style='text-align: justify; font-size: 110%'>

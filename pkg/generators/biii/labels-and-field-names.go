@@ -56,10 +56,14 @@ var q12Labels = []trl.S{
 	{"de": "Kultur und Freizeit (Kultur, Kunst, Sport, sonstige Freizeitgestaltung und soziale Vereine)"},
 	{"de": "Bildung (Grundschule, Sekundarschule, Hochschule, Sonstiges)"},
 	{"de": "Arbeitsmarktintegration"},
+
 	{"de": "Forschung"},
 	{"de": "Gesundheit (Krankenhäuser, Rehabilitation, Pflegeheime, psychische Gesundheit / Krisenintervention)"},
 	{"de": "Soziale Dienste (Notfall, Hilfe, Einkommens&shy;unterstützung / Unterhalt)"},
-	{"de": "Umweltschutz (Forstwirtschaft, Land, Abfall, Luft, biologische Vielfalt und Ökosysteme, Meere und Küstengebiete)"},
+
+	{"de": "Umweltschutz (Forstwirtschaft, Land, Abfall, Luft, biologische Vielfalt und Ökosysteme,"},
+	{"de": "Meere und Küstengebiete)"},
+
 	{"de": "WASH (Wasser, Sanitärversorgung und Hygiene)"},
 	{"de": "Landwirtschaft"},
 	{"de": "Energie (Zugang zu Energie, erneuerbare Energie)"},
@@ -69,7 +73,7 @@ var q12Labels = []trl.S{
 	{"de": "Stadterneuerung / Territoriale Entwicklung"},
 	{"de": "Finanzielle Eingliederung und Zugang zu Finanzmitteln (d.h. Mikro&shy;finanzierung, Mikro&shy;versicherungen, Finanz Bildungs&shy;dienst&shy;leistungen, Bankwesen)"},
 	{"de": "Andere, bitte nennen"},
-	{"de": "Nicht Anwendbar (N/A)"},
+	{"de": "Nicht anwendbar (N/A)"},
 }
 
 var q12inputNames = []string{
@@ -77,10 +81,13 @@ var q12inputNames = []string{
 	"q12_culture_sports",
 	"q12_education",
 	"q12_work",
+
 	"q12_research",
 	"q12_health",
 	"q12_social_service",
-	"q12_environment",
+	"q12_environment_land",
+	"q12_environment_sea",
+
 	"q12_sanitary",
 	"q12_agriculture",
 	"q12_energy",

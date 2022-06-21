@@ -15,8 +15,8 @@ func finish(q *qst.QuestionnaireT) {
 	{
 		page := q.AddPage()
 		page.Label = trl.S{"de": "Abschluss<br><br>", "en": "Finish"}
-		page.Short = trl.S{"de": "Abschluss", "en": "Finish"}
-		page.SuppressInProgressbar = true
+		page.Short = trl.S{"de": "DSGVO", "en": "Finish"}
+		// page.SuppressInProgressbar = true
 		page.SuppressProgressbar = true
 		page.WidthMax("40rem")
 
@@ -24,6 +24,7 @@ func finish(q *qst.QuestionnaireT) {
 		{
 			gr := page.AddGroup()
 			gr.Cols = 1
+			gr.BottomVSpacers = 1
 			{
 				inp := gr.AddInput()
 				inp.Type = "checkbox"
@@ -51,16 +52,8 @@ func finish(q *qst.QuestionnaireT) {
 						für die Marktstudie Impact Investing in Deutschland 2022 
 						der Bundesinitiative Impact Investing verwendet werden.
 
-
 						<br>
-
-						Um den Daten bestmöglich wissenschaftlich auswerten, 
-						validieren und ggf. bereinigen zu können, wären wir dankbar, 
-						wenn Sie uns den Namen Ihrer Organisation nennen könnten. 
-						
-						Es gilt selbstverständlich weiterhin, dass die Daten streng vertraulich, 
-						DSGVO-konform behandelt und nur in anonymer bzw. aggregierter 
-						Form benutzt werden.
+						<br>
 
 					`,
 				}
@@ -71,11 +64,36 @@ func finish(q *qst.QuestionnaireT) {
 
 			{
 				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{"de": `
+
+					<p>
+
+					Um die Daten bestmöglich wissenschaftlich auswerten, 
+					validieren und ggf. bereinigen zu können, wären wir dankbar, 
+					wenn Sie uns den Namen Ihrer Organisation nennen könnten&nbsp;(optional). 
+					<br>
+					Es gilt selbstverständlich weiterhin, dass die Daten streng vertraulich, 
+					DSGVO-konform behandelt und nur in anonymer bzw. aggregierter 
+					Form benutzt werden.
+
+					</p>
+
+				`}
+				inp.ColSpan = gr.Cols
+			}
+
+			{
+				inp := gr.AddInput()
 				inp.Type = "text"
 				// inp.Type = "hidden"
 				inp.Name = "q45_org_name"
 				inp.MaxChars = 27
-				inp.Label = trl.S{"de": "Name Ihrer Organisation&nbsp;&nbsp;"}
+				inp.Label = trl.S{"de": `
+					Name Ihrer Organisation&nbsp;&nbsp;					
+				`}
+				inp.Placeholder = trl.S{"de": `optional`}
+
 				inp.ColSpan = gr.Cols
 				inp.ColSpanLabel = 2
 				inp.ColSpanControl = 3
@@ -124,20 +142,21 @@ func finish(q *qst.QuestionnaireT) {
 				inp := gr.AddInput()
 				inp.Type = "textblock"
 				inp.Label = trl.S{"de": `
+					<br>
 					<b>Weitergabe meiner Daten an die EVPA</b> 
 					<br>
-					<br>
 					
-					Mit Ihrer Einwilligung würden wir mit den im Rahmen dieser Erhebung 
-					gesammelten Daten gerne auch zu einer europaweiten 
-					Studie zu Impact Investing von EVPA und GSG beitragen. 
-					
-					Dies wäre ein wichtiger Schritt hin zu einem besseren Verständnis 
-					des Impact Investing Marktes auf europäischer Ebene 
-					sowie zu einer Vergleichbarkeit nationaler Entwicklungen 
-					und Trends im Impact Investing.					
-					<br>
-					<br>
+					<p>
+						Mit Ihrer Einwilligung würden wir mit den im Rahmen dieser Erhebung 
+						gesammelten Daten gerne auch zu einer europaweiten 
+						Studie zu Impact Investing von EVPA und GSG beitragen. 
+						
+						Dies wäre ein wichtiger Schritt hin zu einem besseren Verständnis 
+						des Impact Investing Marktes auf europäischer Ebene 
+						sowie zu einer Vergleichbarkeit nationaler Entwicklungen 
+						und Trends im Impact Investing.					
+						<br>
+					</p>
 					
 				`}
 				inp.ColSpan = gr.Cols
@@ -236,8 +255,10 @@ func finish(q *qst.QuestionnaireT) {
 					Vielen Dank für Ihre Mithilfe!
 					<br>
 					<br>
-					Wir werden die Ergebnisse der Erhebung in der 2022 Bundesinitiative
-					Impact Investing (BIII) Markstudie aufnehmen und mit Ihnen teilen!
+
+					Die Ergebnisse der Markstudie Impact Investing in 
+					Deutschland 2022 der Bundesinitiative Impact Investing (BIII) werden im Herbst 2022 veröffentlicht.
+
 					</span>
 				`}
 			}

@@ -120,7 +120,9 @@ func helper(w http.ResponseWriter, r *http.Request, err error, msgs ...string) {
 	errorH(w, r, err.Error()+" - "+dbg.CallingLine())
 }
 
-// LoginByHashID is an entry point for HashIDs
+// LoginByHashID is an entry point for HashIDs;
+//  it prepares the request params
+//   so that they can be processed below by lgn.LoginByHash
 func LoginByHashID(w http.ResponseWriter, r *http.Request) {
 
 	// Assuming https://mydomain.com/some/path/hash-id

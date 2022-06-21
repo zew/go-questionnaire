@@ -63,7 +63,7 @@ func RegisterHandlers(mux *http.ServeMux) {
 			// forwards to LoginByHashID /d
 			Urls:    []string{"/a"},
 			Title:   "Login without link",
-			Handler: lgn.LoginWithoutLink,
+			Handler: lgn.LoginWithoutID,
 			Keys:    []string{"a"},
 			Allow:   map[handler.Privilege]bool{handler.LoggedOut: true},
 		},
@@ -216,7 +216,7 @@ func RegisterHandlers(mux *http.ServeMux) {
 		},
 		{
 			// gets forwarded to - from lgn.CreateAnonymousIDH
-			// gets forwarded to - from lgn.LoginWithoutLink
+			// gets forwarded to - from lgn.LoginWithoutID
 			Urls:    []string{"/d"}, // 'd' for direct
 			Title:   "Login by hash ID",
 			Handler: LoginByHashID,

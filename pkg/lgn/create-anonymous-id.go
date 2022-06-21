@@ -73,17 +73,37 @@ var hashIDCounter = ctr.New() //  not stable across app restarts
 
 var doOnce sync.Once
 
-// LoginWithoutLink creates a hash ID
-// and forwards to direct login /d
+// LoginWithoutID creates a hash ID
+// and forwards to direct login /d - LoginByHashID
 //
 // the user ID is created from unix time
 // 		plus some in-memory counter
 //
 // it's called permalink in subsequent logic
-func LoginWithoutLink(w http.ResponseWriter, r *http.Request) {
+//
+// it's related to CreateAnonymousID but the ID comes from an internal timestamp plus atomic counter,
+//   it is not created from coarse personal attributes (such as first letter of father's name)
+func LoginWithoutID(w http.ResponseWriter, r *http.Request) {
+
+	// prevent *repeated* anonymous login
+	l, isLoggedIn, err := LoggedInCheck(w, r)
+	if err != nil {
+		log.Printf("LoggedInCheck error inside LoginWithoutID: %v", err)
+	}
+	if isLoggedIn {
+		if _, ok := l.Attrs["permalink"]; ok {
+			log.Printf("LoginWithoutID - a login is already present and has the permalink attribute")
+			// forward to existing questionnaire
+			url := cfg.Pref("/")
+			http.Redirect(w, r, url, http.StatusTemporaryRedirect)
+			w.Header().Set("Content-Type", "text/html; charset=utf-8")
+			fmt.Fprint(w, "You are already logged in.")
+			return
+		}
+	}
 
 	doOnce.Do(func() {
-		time.Sleep(1000 * time.Millisecond) // prevent identical conflicts during restart within *same* second; see below
+		time.Sleep(1000 * time.Millisecond) // prevent identical ID conflicts during restart within *same* second; see below
 	})
 
 	// resolution is seconds
@@ -92,8 +112,9 @@ func LoginWithoutLink(w http.ResponseWriter, r *http.Request) {
 	// minimum size: 100.000 - to distinguish from pre-generated UIDs
 	// max size 10 billion; is still acceptable
 	//
-	// 	doubles only during app restarts within the same second
+	// 	doubles could occur during app restarts within the same second
 	// 		in conjunction with multiple requests within the same second
+	// 		=> doOnce() above prevents that
 	ts := int(time.Now().Unix())
 	last4Months := 3600 * 24 * 4 * 28 //                   9.676.800
 	uid := ts % last4Months           //           0...    9.676.800

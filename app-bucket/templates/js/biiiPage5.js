@@ -46,7 +46,7 @@ function submitCheck(event) {
 
     console.log(`sum is ${sum}`);
 
-    if (sum != 0) {
+    if (sum != 0 || true) {
 
         if (sum < 99.999 || sum > 100.001) {
             alert("Ergibt nicht 100 Prozent");

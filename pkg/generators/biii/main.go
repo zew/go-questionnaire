@@ -91,11 +91,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					-->
 
 					<p style='text-align: justify;'>
-					Im Rahmen dieser Erhebung wollen wir eine Marktstudie 
-					für den Impact Investing-Markt  
-					im deutschsprachigen Raum 
-					für das Jahr 2022 
-					durchführen.
 
 					Wir nutzen bewusst eine breite Definition von Impact Investments, die das Verständnis des Global Impact Investing Networks (GIIN) widerspiegelt.
 
@@ -285,7 +280,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.Label = trl.S{
 					"de": `
 					<b>3.</b> &nbsp;
-					Welchen Fokus haben Sie bei Ihrer Investment-Strategie bzw. welche Produktgestaltung nutzen Sie?
+					Welchen Nachhaltigkeits-/Impact-Fokus haben Sie bei Ihrer Investment-Strategie bzw. welche Produktgestaltung nutzen Sie?
 					<br>
 					(Mehrfachauswahl möglich)
 				`}
@@ -812,7 +807,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					<p style='text-align: justify;'>
 					<b>10.</b> &nbsp;
 
-					Welche Anlagestile verfolgen Sie mit <u>Ihren Impact</u> Investments?
+					Welche Anlagestile verfolgen Sie mit <u>Ihren Impact Investments</u>?
 
 					<br>
 					&nbsp;

@@ -621,7 +621,7 @@ func page4Quest11(q *qst.QuestionnaireT) {
 
 
 					<b>20.</b> &nbsp;	
-					Wie messen Sie den Impact Ihrer Impact Investments?? 
+					Wie messen Sie den Impact Ihrer Impact Investments? 
 					<br>
 					(Mehrfachauswahl möglich)
 				`}
@@ -1619,9 +1619,9 @@ func page4Quest11(q *qst.QuestionnaireT) {
 				{"de": "Forschung"},
 				{"de": "Gesundheit (Krankenhäuser, Rehabilitation, Pflegeheime, psychische Gesundheit / Krisenintervention)"},
 				{"de": "Soziale Dienste (Notfall, Hilfe, Einkommensunterstützung / Unterhalt)"},
-				{"de": "Umweltschutz (Forstwirtschaft, Land, Abfall, Luft, biologische Vielfalt und Ökosysteme,"},
+				{"de": "Umweltschutz (Forstwirtschaft, Land, Abfall, Luft, biologische Vielfalt und Ökosysteme)"},
 
-				{"de": "Meere und Küstengebiete)"},
+				{"de": "Meere und Küstengebiete"},
 				{"de": "WASH (Wasser, Sanitärversorgung und Hygiene)"},
 				{"de": "Landwirtschaft"},
 				{"de": "Energie (Zugang zu Energie, erneuerbare Energie)"},

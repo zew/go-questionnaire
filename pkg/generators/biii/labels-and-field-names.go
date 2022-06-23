@@ -61,8 +61,8 @@ var q12Labels = []trl.S{
 	{"de": "Gesundheit (Krankenhäuser, Rehabilitation, Pflegeheime, psychische Gesundheit / Krisenintervention)"},
 	{"de": "Soziale Dienste (Notfall, Hilfe, Einkommens&shy;unterstützung / Unterhalt)"},
 
-	{"de": "Umweltschutz (Forstwirtschaft, Land, Abfall, Luft, biologische Vielfalt und Ökosysteme,"},
-	{"de": "Meere und Küstengebiete)"},
+	{"de": "Umweltschutz (Forstwirtschaft, Land, Abfall, Luft, biologische Vielfalt und Ökosysteme)"},
+	{"de": "Meere und Küstengebiete"},
 
 	{"de": "WASH (Wasser, Sanitärversorgung und Hygiene)"},
 	{"de": "Landwirtschaft"},

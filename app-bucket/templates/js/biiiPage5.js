@@ -49,9 +49,9 @@ function submitCheck(event) {
     if (sum != 0 || true) {
 
         if (sum < 99.999 || sum > 100.001) {
-            alert("Ergibt nicht 100 Prozent");
-            event.preventDefault();
-            return false;        
+            // alert("Ergibt nicht 100 Prozent");
+            // event.preventDefault();
+            // return false;        
         }
 
     }

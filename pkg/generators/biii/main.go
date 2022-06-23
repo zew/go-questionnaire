@@ -821,9 +821,14 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					Tragen Sie bitte ausgehend von dieser breiten Definition
 					die entsprechenden Investitionsvolumina ein.
 
-					<b>Wichtig dabei ist, dass jedes Volumen <i>nur einmalig eingetragen</i> wird
-					und sich somit in der Summe wieder 100% ergeben.
+					<b>
+						Wichtig dabei ist, dass jedes Volumen <i>nur einmalig eingetragen</i> wird, 
+						sodass die Summe der entsprechenden Investitionsvolumina (A, B, C, D, E) 
+						den Gesamtbetrag Ihrer Impact Investments darstellt. 
+						
+						Der „% Anteil“ bezieht sich auf das zugehörige Einzelvolumen.
 					</b>
+
 					</p>
 					<br>
 				`}

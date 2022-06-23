@@ -17,7 +17,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "f44b9b4ec394fa02c6c32abda749e682b124796b0e4f1079223e95a9ae0b9de0",
+ 	"md_5": "3e986c0f32be1899ecc1d54e2b91492e5d9fc4715f14d1d9d364c359e06d47c1",
  	"lang_codes": [
  		"de"
  	],
@@ -2384,7 +2384,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\n\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\t\u003cp style='text-align: justify;'\u003e\n\t\t\t\t\t\u003cb\u003e10.\u003c/b\u003e \u0026nbsp;\n\n\t\t\t\t\tWelche Anlagestile verfolgen Sie mit \u003cu\u003eIhren Impact In\u0026shy;vest\u0026shy;ments\u003c/u\u003e?\n\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u0026nbsp;\n\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\tDie Grundlage für die folgende Frage bildet die GIIN (2017) Definition:\n\t\t\t\t\t\"Impact In\u0026shy;vest\u0026shy;ments sind Investitionen, die mit der Absicht getätigt werden,\n\t\t\t\t\tneben einer finanziellen Rendite auch eine pos\u0026shy;itive,\n\t\t\t\t\tmessbare soziale und ökologische Wirkung zu erzielen\" (GIIN, 2017).\n\n\t\t\t\t\tTragen Sie bitte ausgehend von dieser breiten Definition\n\t\t\t\t\tdie entsprechenden Investitionsvolumina ein.\n\n\t\t\t\t\t\u003cb\u003eWich\u0026shy;tig dabei ist, dass jedes Volumen \u003ci\u003enur einmalig eingetragen\u003c/i\u003e wird\n\t\t\t\t\tund sich somit in der Summe wieder 100% ergeben.\n\t\t\t\t\t\u003c/b\u003e\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t"
+ 								"de": "\n\n\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\t\u003cp style='text-align: justify;'\u003e\n\t\t\t\t\t\u003cb\u003e10.\u003c/b\u003e \u0026nbsp;\n\n\t\t\t\t\tWelche Anlagestile verfolgen Sie mit \u003cu\u003eIhren Impact In\u0026shy;vest\u0026shy;ments\u003c/u\u003e?\n\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u0026nbsp;\n\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\tDie Grundlage für die folgende Frage bildet die GIIN (2017) Definition:\n\t\t\t\t\t\"Impact In\u0026shy;vest\u0026shy;ments sind Investitionen, die mit der Absicht getätigt werden,\n\t\t\t\t\tneben einer finanziellen Rendite auch eine pos\u0026shy;itive,\n\t\t\t\t\tmessbare soziale und ökologische Wirkung zu erzielen\" (GIIN, 2017).\n\n\t\t\t\t\tTragen Sie bitte ausgehend von dieser breiten Definition\n\t\t\t\t\tdie entsprechenden Investitionsvolumina ein.\n\n\t\t\t\t\t\u003cb\u003e\n\t\t\t\t\t\tWich\u0026shy;tig dabei ist, dass jedes Volumen \u003ci\u003enur einmalig eingetragen\u003c/i\u003e wird, \n\t\t\t\t\t\tsodass die Summe der entsprechenden Investitionsvolumina (A, B, C, D, E) \n\t\t\t\t\t\tden Ge\u0026shy;samtbetrag Ihrer Impact In\u0026shy;vest\u0026shy;ments darstellt. \n\t\t\t\t\t\t\n\t\t\t\t\t\tDer „% Anteil“ bezieht sich auf das zugehörige Einzelvolumen.\n\t\t\t\t\t\u003c/b\u003e\n\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t"
  							},
  							"col_span": 35,
  							"col_span_label": 1
@@ -3976,7 +3976,7 @@
  							"name": "q12_environment_land",
  							"type": "checkbox",
  							"label": {
- 								"de": "Umweltschutz (Forstwirt\u0026shy;schaft, Land, Abfall, Luft, biologische Vielfalt und Ökosysteme,"
+ 								"de": "Umweltschutz (Forstwirt\u0026shy;schaft, Land, Abfall, Luft, biologische Vielfalt und Ökosysteme)"
  							},
  							"col_span": 7,
  							"col_span_label": 6,
@@ -4001,7 +4001,7 @@
  							"name": "q12_environment_sea",
  							"type": "checkbox",
  							"label": {
- 								"de": "Meere und Küstengebiete)"
+ 								"de": "Meere und Küstengebiete"
  							},
  							"col_span": 7,
  							"col_span_label": 6,
@@ -5776,7 +5776,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\n\t\t\t\t\t\u003cp style='font-size: 130%;font-weight: bold'\u003e\n\t\t\t\t\t\tImpact Messung und Man\u0026shy;age\u0026shy;ment (IMM)\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003cp style='font-size: 110%; text-align: justify'\u003e\n\t\t\t\t\tIm folgenden Teil wollen wir Da\u0026shy;ten zu den am Markt \n\t\t\t\t\tverwendeten Impact Messungs- und Man\u0026shy;age\u0026shy;mentstrategien erheben.\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003cbr\u003e\n\n\n\t\t\t\t\t\u003cb\u003e20.\u003c/b\u003e \u0026nbsp;\t\n\t\t\t\t\tWie messen Sie den Impact Ihrer Impact In\u0026shy;vest\u0026shy;ments?? \n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t(Mehrfachauswahl möglich)\n\t\t\t\t"
+ 								"de": "\n\n\t\t\t\t\t\u003cp style='font-size: 130%;font-weight: bold'\u003e\n\t\t\t\t\t\tImpact Messung und Man\u0026shy;age\u0026shy;ment (IMM)\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003cp style='font-size: 110%; text-align: justify'\u003e\n\t\t\t\t\tIm folgenden Teil wollen wir Da\u0026shy;ten zu den am Markt \n\t\t\t\t\tverwendeten Impact Messungs- und Man\u0026shy;age\u0026shy;mentstrategien erheben.\n\t\t\t\t\t\u003c/p\u003e\n\n\t\t\t\t\t\u003cbr\u003e\n\n\n\t\t\t\t\t\u003cb\u003e20.\u003c/b\u003e \u0026nbsp;\t\n\t\t\t\t\tWie messen Sie den Impact Ihrer Impact In\u0026shy;vest\u0026shy;ments? \n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t(Mehrfachauswahl möglich)\n\t\t\t\t"
  							},
  							"col_span": 7,
  							"col_span_label": 1
@@ -11778,7 +11778,7 @@
  							"name": "q33_env_protection_need",
  							"type": "checkbox",
  							"label": {
- 								"de": "Umweltschutz (Forstwirt\u0026shy;schaft, Land, Abfall, Luft, biologische Vielfalt und Ökosysteme,"
+ 								"de": "Umweltschutz (Forstwirt\u0026shy;schaft, Land, Abfall, Luft, biologische Vielfalt und Ökosysteme)"
  							},
  							"col_span": 7,
  							"col_span_label": 6,
@@ -11818,7 +11818,7 @@
  							"name": "q33_oceans_need",
  							"type": "checkbox",
  							"label": {
- 								"de": "Meere und Küstengebiete)"
+ 								"de": "Meere und Küstengebiete"
  							},
  							"col_span": 7,
  							"col_span_label": 6,
@@ -16858,7 +16858,7 @@
  							"name": "q43a_environment_land",
  							"type": "checkbox",
  							"label": {
- 								"de": "Umweltschutz (Forstwirt\u0026shy;schaft, Land, Abfall, Luft, biologische Vielfalt und Ökosysteme,"
+ 								"de": "Umweltschutz (Forstwirt\u0026shy;schaft, Land, Abfall, Luft, biologische Vielfalt und Ökosysteme)"
  							},
  							"col_span": 1,
  							"col_span_label": 2,
@@ -16885,7 +16885,7 @@
  							"name": "q43a_environment_sea",
  							"type": "checkbox",
  							"label": {
- 								"de": "Meere und Küstengebiete)"
+ 								"de": "Meere und Küstengebiete"
  							},
  							"col_span": 1,
  							"col_span_label": 2,

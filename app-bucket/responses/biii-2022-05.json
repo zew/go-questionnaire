@@ -17,7 +17,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "3e986c0f32be1899ecc1d54e2b91492e5d9fc4715f14d1d9d364c359e06d47c1",
+ 	"md_5": "b74875d93983bc05a330e34f8a46acd803d64ed3397b6f9f65b7de7e9b29bea7",
  	"lang_codes": [
  		"de"
  	],
@@ -4198,20 +4198,13 @@
  							"col_span_control": 1
  						},
  						{
- 							"name": "q12_microfinance_label",
- 							"type": "text",
- 							"max_chars": 17,
+ 							"name": "q12_microfinance",
+ 							"type": "checkbox",
  							"label": {
  								"de": "Finanzielle Eingliederung und Zugang zu Finanzmitteln (d.h. Mikro\u0026shy;finanzierung, Mikro\u0026shy;versi\u0026shy;cherungen, Finanz Bil\u0026shy;dungs\u0026shy;dienst\u0026shy;leistungen, Bankwesen)"
  							},
- 							"col_span": 6,
- 							"col_span_label": 3,
- 							"col_span_control": 3
- 						},
- 						{
- 							"name": "q12_microfinance",
- 							"type": "checkbox",
- 							"col_span": 1,
+ 							"col_span": 7,
+ 							"col_span_label": 6,
  							"col_span_control": 1
  						},
  						{
@@ -4230,13 +4223,20 @@
  							"col_span_control": 1
  						},
  						{
- 							"name": "q12_other",
- 							"type": "checkbox",
+ 							"name": "q12_other_label",
+ 							"type": "text",
+ 							"max_chars": 17,
  							"label": {
  								"de": "Andere, bitte nennen"
  							},
- 							"col_span": 7,
- 							"col_span_label": 6,
+ 							"col_span": 6,
+ 							"col_span_label": 3,
+ 							"col_span_control": 3
+ 						},
+ 						{
+ 							"name": "q12_other",
+ 							"type": "checkbox",
+ 							"col_span": 1,
  							"col_span_control": 1
  						},
  						{

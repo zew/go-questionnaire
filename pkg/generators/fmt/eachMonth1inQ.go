@@ -246,7 +246,11 @@ func eachMonth1inQ(q *qst.QuestionnaireT) error {
 		},
 		{
 			"de": "Engpässe bei Rohstoffen",
-			"en": "Shortages of raw materials",
+			"en": "Raw material shortages",
+		},
+		{
+			"de": "Inflation",
+			"en": "Inflation",
 		},
 	}
 
@@ -255,7 +259,7 @@ func eachMonth1inQ(q *qst.QuestionnaireT) error {
 	{
 		gb := qst.NewGridBuilderRadios(
 			colTemplate,
-			labelsStronglyPositiveStronglyNegativeInfluence(),
+			improvedDeterioratedPlusMinus6(),
 			// prefix iogf_ => impact on growth forecast
 			//   but we stick to rev_ => revision
 			[]string{
@@ -269,14 +273,28 @@ func eachMonth1inQ(q *qst.QuestionnaireT) error {
 				"rev_supply_disrupt",
 				"rev_energy_prices",
 				"rev_shortages_raw_mat",
+				"rev_inflation",
 				// "rev_free",
 			},
 			radioVals6,
 			rowLabelsEconomicAreas,
 		)
 		gb.MainLabel = trl.S{
-			"de": "<b>2.</b> Haben Entwicklungen in den folgenden Bereichen Sie zu einer Revision Ihrer Konjunkturprognosen für die deutsche Wirtschaft bewogen?",
-			"en": "<b>2.</b> Which developments have led you to change your assessment of the business cycle outlook for the German economy?",
+			"de": `<b>2.</b> 
+					Haben Entwicklungen in den folgenden Bereichen Sie 
+					zu einer Revision Ihrer Konjunkturprognosen 
+					für die deutsche Wirtschaft bewogen 					
+					und wenn ja in welche Richtung? 
+					<br>
+					(Erhöhung (+), Senkung (-))	
+			`,
+			"en": `<b>2.</b> 
+					Which developments have led you to change your assessment 
+					of the business cycle outlook for the German economy? 
+					<br>
+					If they made you change your assessment, 
+					did they make you revise your assessment up (+) or down (-)?
+				`,
 		}
 		gr := page.AddGrid(gb)
 		gr.OddRowsColoring = true
@@ -288,7 +306,7 @@ func eachMonth1inQ(q *qst.QuestionnaireT) error {
 		//
 		// row free input
 		gr := page.AddGroup()
-		gr.Cols = float32(len(labelsStronglyPositiveStronglyNegativeInfluence()) + 1)
+		gr.Cols = float32(len(improvedDeterioratedPlusMinus6()) + 1)
 		gr.Cols = 7
 
 		gr.Style = css.NewStylesResponsive(gr.Style)
@@ -318,7 +336,7 @@ func eachMonth1inQ(q *qst.QuestionnaireT) error {
 		}
 
 		//
-		for idx := 0; idx < len(labelsStronglyPositiveStronglyNegativeInfluence()); idx++ {
+		for idx := 0; idx < len(improvedDeterioratedPlusMinus6()); idx++ {
 			rad := gr.AddInput()
 			rad.Type = "radio"
 			rad.Name = "rev_growth_free"

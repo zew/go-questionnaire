@@ -197,7 +197,7 @@ func page4Quest11(q *qst.QuestionnaireT) {
 
 					`),
 			}
-			gr := page.AddBiiiPrio(mainLbl, q12Labels, q12inputNames, map[int]bool{16: true}, 1)
+			gr := page.AddBiiiPrio(mainLbl, q12Labels, q12inputNames, map[int]bool{17: true}, 1)
 			_ = gr
 			// gr.WidthMax("38rem")
 

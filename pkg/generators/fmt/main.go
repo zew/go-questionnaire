@@ -340,14 +340,15 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		{
 			gr := page.AddGroup()
 			gr.Cols = 4
+			gr.BottomVSpacers = 2
 			gr.Style = css.NewStylesResponsive(gr.Style)
 			gr.WidthMax("15rem")
 
 			{
 				inp := gr.AddInput()
 				inp.Label = trl.S{
-					"de": fmt.Sprintf("Aktuelles Quartal (%v)", q.Survey.Quarter(0)),
-					"en": fmt.Sprintf("Current quarter  (%v)", q.Survey.Quarter(0)),
+					"de": fmt.Sprintf("Aktuelles Quartal (%v)*", q.Survey.Quarter(0)),
+					"en": fmt.Sprintf("Current quarter  (%v)*", q.Survey.Quarter(0)),
 				}
 				// inp.Tooltip = trl.S{
 				// 	"de": fmt.Sprintf("Unmittelbar zurückliegendes Quartal"),
@@ -382,6 +383,32 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.ColSpanLabel = 3
 				inp.ColSpanControl = 1
 				inp.Suffix = trl.S{"de": "%", "en": "pct"}
+			}
+
+			// row 2c quarter explanation / footnote
+
+		}
+
+		var lblFootnote = trl.S{
+			"de": fmt.Sprintf("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<superscript>*</superscript><span style='font-size:80%%'> Die realisierten Zahlen für %v werden erst <a  target='_blank'  href='https://www.destatis.de/SiteGlobals/Forms/Suche/Termine/DE/Terminsuche_Formular.html' >später</a> veröffentlicht.<span>", q.Survey.Quarter(0)),
+			"en": fmt.Sprintf("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<superscript>*</superscript><span style='font-size:80%%'> Realized numbers for %v are only published <a  target='_blank'  href='https://www.destatis.de/SiteGlobals/Forms/Suche/Termine/DE/Terminsuche_Formular.html' >later</a>.<span>", q.Survey.Quarter(0)),
+		}
+
+		// gr3c
+		// 	full width
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = lblFootnote
+				inp.ColSpan = gr.Cols
+				inp.ColSpanLabel = 1
+
+				inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
+				inp.StyleLbl.Mobile.StyleBox.Position = "relative"
+				inp.StyleLbl.Mobile.StyleBox.Top = "0.6rem"
 			}
 		}
 
@@ -804,8 +831,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	// Finish questionnaire?  - one before last page
 	{
 		page := q.AddPage()
-		page.Label = trl.S{"de": "Abschluss", "en": "Finish"}
-		page.Short = trl.S{"de": "Abschluss", "en": "Finish"}
+		page.Label = trl.S{"de": "Abschluss", "en": "Finalization"}
+		page.Short = trl.S{"de": "Abschluss", "en": "Finalization"}
 		page.WidthMax("36rem")
 
 		// gr1

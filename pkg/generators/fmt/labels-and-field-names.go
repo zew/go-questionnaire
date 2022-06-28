@@ -1,6 +1,8 @@
 package fmt
 
-import "github.com/zew/go-questionnaire/pkg/trl"
+import (
+	"github.com/zew/go-questionnaire/pkg/trl"
+)
 
 var radioVals4 = []string{"1", "2", "3", "4"}
 var radioVals6 = []string{"1", "2", "3", "4", "5", "6"}
@@ -98,8 +100,8 @@ var rowLabelsSectors = []trl.S{
 		"en": "Automotive",
 	},
 	{
-		"de": "Chemie, Pharma",
-		"en": "Chemicals, Pharma",
+		"de": "Chemie/Pharma",
+		"en": "Chemicals/Pharma",
 	},
 	{
 		"de": "Stahl/NE-Metalle",

@@ -24,14 +24,14 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "c210add70b2adbd2a56b942921cf07cd70b78cb0f660699f5103c437b138c27b",
+ 	"md_5": "1374ee062d214b848aa80c9fee5a3d790231c7f752c98aee1c31e558db1f71a0",
  	"lang_codes": [
  		"de",
  		"en"
  	],
  	"allow_skip_forward": false,
  	"version_effective": 0,
- 	"max_groups": 5,
+ 	"max_groups": 6,
  	"pages": [
  		{
  			"label": {
@@ -1318,7 +1318,7 @@
  					]
  				},
  				{
- 					"bottom_vspacers": 3,
+ 					"bottom_vspacers": 2,
  					"columns": 4,
  					"inputs": [
  						{
@@ -1328,8 +1328,8 @@
  							"step": 0.01,
  							"max": 100,
  							"label": {
- 								"de": "Aktuelles Quartal (Q2\u0026nbsp;2022)",
- 								"en": "Current quarter  (Q2\u0026nbsp;2022)"
+ 								"de": "Aktuelles Quartal (Q2\u0026nbsp;2022)*",
+ 								"en": "Current quarter  (Q2\u0026nbsp;2022)*"
  							},
  							"suffix": {
  								"de": "%",
@@ -1376,6 +1376,38 @@
  							"text_style": {}
  						}
  					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u0026nbsp;\u0026nbsp;\u0026nbsp;\u0026nbsp;\u0026nbsp;\u003csuperscript\u003e*\u003c/superscript\u003e\u003cspan style='font-size:80%'\u003e Die realisierten Zahlen für Q2\u0026nbsp;2022 werden erst \u003ca  target='_blank'  href='https://www.destatis.de/SiteGlobals/Forms/Suche/Termine/DE/Terminsuche_Formular.html' \u003espäter\u003c/a\u003e veröffentlicht.\u003cspan\u003e",
+ 								"en": "\u0026nbsp;\u0026nbsp;\u0026nbsp;\u0026nbsp;\u0026nbsp;\u003csuperscript\u003e*\u003c/superscript\u003e\u003cspan style='font-size:80%'\u003e Realized numbers for Q2\u0026nbsp;2022 are only published \u003ca  target='_blank'  href='https://www.destatis.de/SiteGlobals/Forms/Suche/Termine/DE/Terminsuche_Formular.html' \u003elater\u003c/a\u003e.\u003cspan\u003e"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"top": "0.6rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
  				}
  			],
  			"validation_func_name": "fmtPage1",
@@ -4044,8 +4076,8 @@
  							"name": "sec_chemi",
  							"type": "radio",
  							"label": {
- 								"de": "Chemie, Pharma",
- 								"en": "Chemicals, Pharma"
+ 								"de": "Chemie/Pharma",
+ 								"en": "Chemicals/Pharma"
  							},
  							"col_span_label": 2,
  							"col_span_control": 1,
@@ -4533,8 +4565,8 @@
  				"en": ""
  			},
  			"short": {
- 				"de": "Wachstum",
- 				"en": "Growth"
+ 				"de": "Wirtschafts-\u003cbr\u003eWachstum",
+ 				"en": "Economic\u003cbr\u003eGrowth"
  			},
  			"style": {
  				"desktop": {
@@ -5347,7 +5379,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Kon\u0026shy;junk\u0026shy;tur\u0026shy;da\u0026shy;ten Deutsch\u0026shy;land",
- 								"en": "Busi\u0026shy;ness cycle data Ger\u0026shy;ma\u0026shy;ny"
+ 								"en": "Eco\u0026shy;nom\u0026shy;ic de\u0026shy;vel\u0026shy;op\u0026shy;ment Ger\u0026shy;ma\u0026shy;ny"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -5753,7 +5785,7 @@
  							"type": "radio",
  							"label": {
  								"de": "In\u0026shy;ter\u0026shy;na\u0026shy;tion\u0026shy;ale Lieferengpässe",
- 								"en": "Supply chain disruptions"
+ 								"en": "In\u0026shy;ter\u0026shy;na\u0026shy;tion\u0026shy;al supply bottlenecks"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -5801,64 +5833,6 @@
  						},
  						{
  							"name": "rev_supply_disrupt",
- 							"type": "radio",
- 							"col_span_label": 0.4,
- 							"col_span_control": 1,
- 							"value_radio": "6"
- 						},
- 						{
- 							"name": "rev_energy_prices",
- 							"type": "radio",
- 							"label": {
- 								"de": "Energiepreise",
- 								"en": "Energy prices"
- 							},
- 							"col_span_label": 3.6,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "rev_energy_prices",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "rev_energy_prices",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "rev_energy_prices",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "rev_energy_prices",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "5"
- 						},
- 						{
- 							"name": "rev_energy_prices",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
@@ -5926,8 +5900,8 @@
  							"name": "rev_inflation",
  							"type": "radio",
  							"label": {
- 								"de": "In\u0026shy;fla\u0026shy;ti\u0026shy;on",
- 								"en": "In\u0026shy;fla\u0026shy;ti\u0026shy;on"
+ 								"de": "In\u0026shy;fla\u0026shy;ti\u0026shy;on (außer Energie)",
+ 								"en": "In\u0026shy;fla\u0026shy;ti\u0026shy;on (excl. energy prices)"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,
@@ -5975,6 +5949,64 @@
  						},
  						{
  							"name": "rev_inflation",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "6"
+ 						},
+ 						{
+ 							"name": "rev_energy_prices",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Energiepreise",
+ 								"en": "Energy prices"
+ 							},
+ 							"col_span_label": 3.6,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "rev_energy_prices",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "rev_energy_prices",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "rev_energy_prices",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "rev_energy_prices",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "5"
+ 						},
+ 						{
+ 							"name": "rev_energy_prices",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
@@ -6085,7 +6117,7 @@
  		{
  			"label": {
  				"de": "Abschluss",
- 				"en": "Finish"
+ 				"en": "Finalization"
  			},
  			"description": {
  				"de": "",
@@ -6093,7 +6125,7 @@
  			},
  			"short": {
  				"de": "Abschluss",
- 				"en": "Finish"
+ 				"en": "Finalization"
  			},
  			"style": {
  				"desktop": {

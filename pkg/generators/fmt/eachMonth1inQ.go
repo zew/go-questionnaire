@@ -28,8 +28,8 @@ func eachMonth1inQ(q *qst.QuestionnaireT) error {
 		"en": "Special: Short- and Medium-Term Economic Growth",
 	}
 	page.Short = trl.S{
-		"de": "Wachstum",
-		"en": "Growth",
+		"de": "Wirtschafts-<br>Wachstum",
+		"en": "Economic<br>Growth",
 	}
 	page.WidthMax("42rem")
 
@@ -122,7 +122,6 @@ func eachMonth1inQ(q *qst.QuestionnaireT) error {
 						"de": q.Survey.Quarter(i) + "*",
 						"en": q.Survey.Quarter(i) + "*",
 					}
-
 				}
 				inp.Suffix = trl.S{
 					"de": "%",
@@ -144,19 +143,20 @@ func eachMonth1inQ(q *qst.QuestionnaireT) error {
 			return err
 		}
 
-		// row 2a quarter explanation
+		var lblFootnote = trl.S{
+			"de": fmt.Sprintf("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<superscript>*</superscript><span style='font-size:80%%'> Die realisierten Zahlen für %v werden erst <a  target='_blank'  href='https://www.destatis.de/SiteGlobals/Forms/Suche/Termine/DE/Terminsuche_Formular.html' >später</a> veröffentlicht.<span>", q.Survey.Quarter(0)),
+			"en": fmt.Sprintf("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<superscript>*</superscript><span style='font-size:80%%'> Realized numbers for %v are only published <a  target='_blank'  href='https://www.destatis.de/SiteGlobals/Forms/Suche/Termine/DE/Terminsuche_Formular.html' >later</a>.<span>", q.Survey.Quarter(0)),
+		}
+
+		// row 2a quarter explanation / footnote
 		{
 			inp := gr.AddInput()
 			inp.Type = "textblock"
-			inp.Label = trl.S{
-				"de": fmt.Sprintf("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<superscript>*</superscript><span style='font-size:80%%'> Die realisierten Zahlen für %v werden erst <a  target='_blank'  href='https://www.destatis.de/SiteGlobals/Forms/Suche/Termine/DE/Terminsuche_Formular.html' >später</a> veröffentlicht.<span>", q.Survey.Quarter(0)),
-				"en": fmt.Sprintf("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<superscript>*</superscript><span style='font-size:80%%'> Realized numbers for %v are only published <a  target='_blank'  href='https://www.destatis.de/SiteGlobals/Forms/Suche/Termine/DE/Terminsuche_Formular.html' >later</a>.<span>", q.Survey.Quarter(0)),
-			}
+			inp.Label = lblFootnote
 			inp.ColSpan = 12
 			inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
 			inp.StyleLbl.Mobile.StyleBox.Position = "relative"
 			inp.StyleLbl.Mobile.StyleBox.Top = "0.6rem"
-
 		}
 
 		// row 3 - three years - label
@@ -210,7 +210,7 @@ func eachMonth1inQ(q *qst.QuestionnaireT) error {
 	rowLabelsEconomicAreas := []trl.S{
 		{
 			"de": "Konjunkturdaten Deutschland",
-			"en": "Business cycle data Germany",
+			"en": "Economic development Germany",
 		},
 		{
 			"de": "Exportmärkte",
@@ -238,19 +238,21 @@ func eachMonth1inQ(q *qst.QuestionnaireT) error {
 		},
 		{
 			"de": "Internationale Lieferengpässe",
-			"en": "Supply chain disruptions",
-		},
-		{
-			"de": "Energiepreise",
-			"en": "Energy prices",
+			"en": "International supply bottlenecks",
+			// "en": "Supply chain disruptions",
+			// -	Supply chain bottlenecks
 		},
 		{
 			"de": "Engpässe bei Rohstoffen",
 			"en": "Raw material shortages",
 		},
 		{
-			"de": "Inflation",
-			"en": "Inflation",
+			"de": "Inflation (außer Energie)",
+			"en": "Inflation (excl. energy prices)",
+		},
+		{
+			"de": "Energiepreise",
+			"en": "Energy prices",
 		},
 	}
 
@@ -271,9 +273,9 @@ func eachMonth1inQ(q *qst.QuestionnaireT) error {
 				"rev_mp_fed",
 				"rev_corona",
 				"rev_supply_disrupt",
-				"rev_energy_prices",
 				"rev_shortages_raw_mat",
 				"rev_inflation",
+				"rev_energy_prices",
 				// "rev_free",
 			},
 			radioVals6,

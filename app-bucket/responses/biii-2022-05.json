@@ -17,7 +17,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "b74875d93983bc05a330e34f8a46acd803d64ed3397b6f9f65b7de7e9b29bea7",
+ 	"md_5": "e5026966af9a128311e69de657686c40b38a73116fb4dbeee786e700d1341a2d",
  	"lang_codes": [
  		"de"
  	],
@@ -13348,7 +13348,6 @@
  			"short": {
  				"de": "Über Sie"
  			},
- 			"navigation_condition": "BIIINow",
  			"style": {
  				"desktop": {
  					"grid_container_style": {},

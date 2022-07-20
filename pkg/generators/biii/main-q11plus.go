@@ -1884,7 +1884,7 @@ func page4Quest11(q *qst.QuestionnaireT) {
 		page := q.AddPage()
 		page.Short = trl.S{"de": "Über Sie"}
 		page.Label = trl.S{"de": ""}
-		page.NavigationCondition = "BIIINow"
+		// page.NavigationCondition = "BIIINow"
 		page.WidthMax("38rem")
 
 		page.ValidationFuncName = "biiiPage19"

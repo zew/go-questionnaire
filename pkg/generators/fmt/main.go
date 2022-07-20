@@ -2,6 +2,7 @@ package fmt
 
 import (
 	"fmt"
+	"strconv"
 
 	"github.com/zew/go-questionnaire/pkg/cfg"
 	"github.com/zew/go-questionnaire/pkg/css"
@@ -389,27 +390,35 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 		}
 
-		var lblFootnote = trl.S{
-			"de": fmt.Sprintf("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<superscript>*</superscript><span style='font-size:80%%'> Die realisierten Zahlen für %v werden erst <a  target='_blank'  href='https://www.destatis.de/SiteGlobals/Forms/Suche/Termine/DE/Terminsuche_Formular.html' >später</a> veröffentlicht.<span>", q.Survey.Quarter(0)),
-			"en": fmt.Sprintf("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<superscript>*</superscript><span style='font-size:80%%'> Realized numbers for %v are only published <a  target='_blank'  href='https://www.destatis.de/SiteGlobals/Forms/Suche/Termine/DE/Terminsuche_Formular.html' >later</a>.<span>", q.Survey.Quarter(0)),
+		offsetDestatis := 0 // next quarter
+		if osd, err := s.Param("destatis"); err == nil {
+			offsetDestatis, _ = strconv.Atoi(osd)
 		}
 
-		// gr3c
-		// 	full width
-		{
-			gr := page.AddGroup()
-			gr.Cols = 1
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.Label = lblFootnote
-				inp.ColSpan = gr.Cols
-				inp.ColSpanLabel = 1
-
-				inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
-				inp.StyleLbl.Mobile.StyleBox.Position = "relative"
-				inp.StyleLbl.Mobile.StyleBox.Top = "0.6rem"
+		if offsetDestatis != 0 {
+			var lblFootnote = trl.S{
+				"de": fmt.Sprintf("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<superscript>*</superscript><span style='font-size:80%%'> Die realisierten Zahlen für %v werden erst <a  target='_blank'  href='https://www.destatis.de/SiteGlobals/Forms/Suche/Termine/DE/Terminsuche_Formular.html' >später</a> veröffentlicht.<span>", q.Survey.Quarter(0)),
+				"en": fmt.Sprintf("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<superscript>*</superscript><span style='font-size:80%%'> Realized numbers for %v are only published <a  target='_blank'  href='https://www.destatis.de/SiteGlobals/Forms/Suche/Termine/DE/Terminsuche_Formular.html' >later</a>.<span>", q.Survey.Quarter(0)),
 			}
+
+			// gr3c
+			// 	full width
+			{
+				gr := page.AddGroup()
+				gr.Cols = 1
+				{
+					inp := gr.AddInput()
+					inp.Type = "textblock"
+					inp.Label = lblFootnote
+					inp.ColSpan = gr.Cols
+					inp.ColSpanLabel = 1
+
+					inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
+					inp.StyleLbl.Mobile.StyleBox.Position = "relative"
+					inp.StyleLbl.Mobile.StyleBox.Top = "0.6rem"
+				}
+			}
+
 		}
 
 	}

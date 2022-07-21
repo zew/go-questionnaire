@@ -200,7 +200,6 @@ func main() {
 			pthPem := path.Join("static", "certs", "server.pem")
 			pthKey := path.Join("static", "certs", "server.key")
 			log.Fatal(srv.ListenAndServeTLS(pthPem, pthKey))
-
 		}
 	} else {
 		log.Fatal(http.ListenAndServe(IPPort, mux4))

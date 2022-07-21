@@ -1,0 +1,1644 @@
+{
+ 	"survey": {
+ 		"type": "kneb1",
+ 		"org": {
+ 			"en": "ZEW"
+ 		},
+ 		"name": {
+ 			"en": "Financial Literacy Test"
+ 		},
+ 		"year": 2022,
+ 		"month": 7,
+ 		"deadline": "2022-07-28T23:59:00+02:00",
+ 		"params": [
+ 			{},
+ 			{}
+ 		]
+ 	},
+ 	"closing_time": "0001-01-01T00:00:00Z",
+ 	"md_5": "10dd218647ba05adbe8ab503312884fb6c9b34110fe76ba27a130550017c1dd2",
+ 	"lang_codes": [
+ 		"en"
+ 	],
+ 	"allow_skip_forward": false,
+ 	"version_effective": 0,
+ 	"max_groups": 7,
+ 	"pages": [
+ 		{
+ 			"section": {
+ 				"en": "Sociodemographics"
+ 			},
+ 			"label": {
+ 				"en": "Age, origin, experience"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"short": {
+ 				"en": "Sociodemo-\u003cbr\u003egraphics"
+ 			},
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "42rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 4,
+ 					"inputs": [
+ 						{
+ 							"name": "q01_age",
+ 							"type": "number",
+ 							"max_chars": 4,
+ 							"step": 1,
+ 							"min": 15,
+ 							"max": 150,
+ 							"label": {
+ 								"en": "How old are you?"
+ 							},
+ 							"suffix": {
+ 								"en": "\u0026nbsp; years"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 1,
+ 							"col_span_control": 2,
+ 							"validator": "inRange100"
+ 						},
+ 						{
+ 							"name": "q02_country_birth",
+ 							"type": "text",
+ 							"max_chars": 20,
+ 							"label": {
+ 								"en": "What is your country of birth?"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 1,
+ 							"col_span_control": 2
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 7,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"en": "What is your gender?"
+ 							},
+ 							"col_span": 7,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "q03_gender",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Male"
+ 							},
+ 							"col_span": 7,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "male",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q03_gender",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Female"
+ 							},
+ 							"col_span": 7,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "female",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q03_gender",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Diverse"
+ 							},
+ 							"col_span": 7,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "diverse",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 7,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"en": "Are you currently an \u003ci\u003eexchange\u003c/i\u003e student in Mannheim?"
+ 							},
+ 							"col_span": 7,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "q04_visiting_student",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Yes"
+ 							},
+ 							"col_span": 7,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "yes",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q04_visiting_student",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "No"
+ 							},
+ 							"col_span": 7,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "no",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q04a_country_study",
+ 							"type": "text",
+ 							"max_chars": 20,
+ 							"label": {
+ 								"en": "If yes: from which country?"
+ 							},
+ 							"col_span": 7,
+ 							"col_span_label": 2,
+ 							"col_span_control": 5,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 2.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 7,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"en": "Do you already have professional experience from working in a job (other than a student job)?"
+ 							},
+ 							"col_span": 7,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "q05_professional_experience",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Yes"
+ 							},
+ 							"col_span": 7,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "yes",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q05_professional_experience",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "No"
+ 							},
+ 							"col_span": 7,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "no",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 7,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"en": "If yes: was this experience related to finance?"
+ 							},
+ 							"col_span": 7,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "q06_professional_finance",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Yes"
+ 							},
+ 							"col_span": 7,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "yes",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q06_professional_finance",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "No"
+ 							},
+ 							"col_span": 7,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "no",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"margin": "0 0 0 4rem"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 7,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"en": "Have you ever worked with a statistics program like Stata or\u0026nbspR?"
+ 							},
+ 							"col_span": 7,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "q07_stata_or_r",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Yes"
+ 							},
+ 							"col_span": 7,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "yes",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q07_stata_or_r",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "No"
+ 							},
+ 							"col_span": 7,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"value_radio": "no",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 4,
+ 					"columns": 6,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Sie schätzen Ihren Gesundheitszustand als",
+ 								"en": "Would you say your health\u0026nbsp;is"
+ 							},
+ 							"col_span": 6,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "Sehr gut",
+ 								"en": "Very good"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "Gut",
+ 								"en": "Good"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "Durchschnittlich",
+ 								"en": "Fair"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "Schlecht",
+ 								"en": "Bad"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "Sehr schlecht",
+ 								"en": "Very bad"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "Keine\u003cbr\u003eAn\u0026shy;gabe",
+ 								"en": "No an\u0026shy;swer"
+ 							},
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q07_health",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": ""
+ 							},
+ 							"col_span_control": 1,
+ 							"value_radio": "very_good",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q07_health",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "good"
+ 						},
+ 						{
+ 							"name": "q07_health",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "average"
+ 						},
+ 						{
+ 							"name": "q07_health",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "bad"
+ 						},
+ 						{
+ 							"name": "q07_health",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "very_bad"
+ 						},
+ 						{
+ 							"name": "q07_health",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "no_answer"
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"auto_flow": "row",
+ 								"template_columns": "   1fr    1fr    1fr    1fr    1fr    1.4fr "
+ 							},
+ 							"box_style": {
+ 								"display": "grid"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"section": {
+ 				"en": "Financial decisions"
+ 			},
+ 			"label": {
+ 				"en": "Wealth, assets"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"short": {
+ 				"en": "Financial\u003cbr\u003edecisions"
+ 			},
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "40rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 4,
+ 					"inputs": [
+ 						{
+ 							"name": "q08_income",
+ 							"type": "number",
+ 							"max_chars": 9,
+ 							"step": 1,
+ 							"max": 9223372036854776000,
+ 							"label": {
+ 								"en": "\n\t\t\t\t\t\u003cb\u003eWhat is your current income?\u003c/b\u003e \n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\tPlease consider all sources of current income from work, transfers from your parents, stipends etc.\n\t\t\t\t"
+ 							},
+ 							"suffix": {
+ 								"en": "\u0026nbsp€"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"validator": "inRange1Mio",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 4,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"en": "\u003cb\u003eWhat is approximately the amount of wealth you own\u003c/b\u003e"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 4
+ 						},
+ 						{
+ 							"name": "q09a_wealth_liquid",
+ 							"type": "number",
+ 							"max_chars": 9,
+ 							"step": 1,
+ 							"max": 9223372036854776000,
+ 							"label": {
+ 								"en": "In cash (also on a debit account, sav\u0026shy;ings account etc.)"
+ 							},
+ 							"suffix": {
+ 								"en": "\u0026nbsp€"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"validator": "inRange1Mio"
+ 						},
+ 						{
+ 							"name": "q09b_wealth_fungible",
+ 							"type": "number",
+ 							"max_chars": 9,
+ 							"step": 1,
+ 							"max": 9223372036854776000,
+ 							"label": {
+ 								"en": "In assets, e.g. in stocks, bonds, mutual funds etc."
+ 							},
+ 							"suffix": {
+ 								"en": "\u0026nbsp€"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"validator": "inRange1Mio"
+ 						},
+ 						{
+ 							"name": "q09c_wealth_re",
+ 							"type": "number",
+ 							"max_chars": 9,
+ 							"step": 1,
+ 							"max": 9223372036854776000,
+ 							"label": {
+ 								"en": "In real estate"
+ 							},
+ 							"suffix": {
+ 								"en": "\u0026nbsp€"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"validator": "inRange1Mio"
+ 						},
+ 						{
+ 							"name": "q09d_wealth_other",
+ 							"type": "number",
+ 							"max_chars": 9,
+ 							"step": 1,
+ 							"max": 9223372036854776000,
+ 							"label": {
+ 								"en": "In other valuables (e.g. cars, durables, art etc.)"
+ 							},
+ 							"suffix": {
+ 								"en": "\u0026nbsp€"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"validator": "inRange1Mio"
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 4,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"en": "\u003cb\u003eWhat is the amount of debt you owe\u003c/b\u003e"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 4
+ 						},
+ 						{
+ 							"name": "q10a_debt_bank",
+ 							"type": "number",
+ 							"max_chars": 9,
+ 							"step": 1,
+ 							"max": 9223372036854776000,
+ 							"label": {
+ 								"en": "To a bank"
+ 							},
+ 							"suffix": {
+ 								"en": "\u0026nbsp€"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"validator": "inRange1Mio"
+ 						},
+ 						{
+ 							"name": "q10b_debt_other",
+ 							"type": "number",
+ 							"max_chars": 9,
+ 							"step": 1,
+ 							"max": 9223372036854776000,
+ 							"label": {
+ 								"en": "To another institution"
+ 							},
+ 							"suffix": {
+ 								"en": "\u0026nbsp€"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"validator": "inRange1Mio"
+ 						},
+ 						{
+ 							"name": "q10c_debt_parents",
+ 							"type": "number",
+ 							"max_chars": 9,
+ 							"step": 1,
+ 							"max": 9223372036854776000,
+ 							"label": {
+ 								"en": "To your parents"
+ 							},
+ 							"suffix": {
+ 								"en": "\u0026nbsp€"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"validator": "inRange1Mio"
+ 						},
+ 						{
+ 							"name": "q10d_debt_friends",
+ 							"type": "number",
+ 							"max_chars": 9,
+ 							"step": 1,
+ 							"max": 9223372036854776000,
+ 							"label": {
+ 								"en": "To other friends or relatives"
+ 							},
+ 							"suffix": {
+ 								"en": "\u0026nbsp€"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 2,
+ 							"col_span_control": 1,
+ 							"validator": "inRange1Mio"
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 4,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"en": "\u003cb\u003eDo you currently own/use any of the following financial products?\u003c/b\u003e"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "q11_asset_investment_account",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"en": "An in\u0026shy;vest\u0026shy;ment account"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 5,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "q11_asset_savings_account",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"en": "A sav\u0026shy;ings account"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 5,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "q11_asset_stocks",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"en": "Stocks and shares"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 5,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "q11_asset_mutual",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"en": "Mutual funds"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 5,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "q11_asset_bonds",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"en": "Bonds"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 5,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "q11_asset_credit_card",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"en": "A credit card"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 5,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "q11_asset_insurance",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"en": "An insurance contract (except mandatory health insurance)"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 5,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "q11_asset_mobile_account",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"en": "A mobile phone payment app (e.g. Google pay, Apple pay etc.)"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 5,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "q11_asset_crypto",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"en": "Crypto assets (e.g. Bitcoin) or ICOs (Initial Coin Offerings)"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 5,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "q11_asset_no_answer",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"en": "No an\u0026shy;swer"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 5,
+ 							"col_span_control": 2
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 4,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"en": "\u003cb\u003eDo you do any of the following for yourself or your household?\u003c/b\u003e"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "q12_beh_planning",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"en": "Make a plan to manage your income and expenses"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 5,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "q12_beh_expenses_notes",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"en": "Keep a note of your spending"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 5,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "q12_beh_money_stashes",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"en": "Keep money for bills separate from day-to-day spending money"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 5,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "q12_beh_planning_due_payments",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"en": "Make a note of upcoming bills to make sure you  don't miss them"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 5,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "q12_beh_app",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"en": "Use a banking app or money man\u0026shy;age\u0026shy;ment tool to keep track of your outgoings"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 5,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "q12_beh_automatic_payments",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"en": "Arrange automatic payments for regular outgoings"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 5,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "q12_beh_no_reply",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"en": "No an\u0026shy;swer"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 5,
+ 							"col_span_control": 2
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 4,
+ 					"columns": 5,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"en": "Sometimes people find that their income does not quite cover their living expenses. \n\t\t\t\t\tIn the last 12\u0026nbsp;months, has this happened to you personally?"
+ 							},
+ 							"col_span": 5,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "Ja",
+ 								"en": "Yes"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "Nein",
+ 								"en": "No"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "Weiß nicht",
+ 								"en": "Do not know"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "Nicht anwendbar",
+ 								"en": "Not ap\u0026shy;pli\u0026shy;ca\u0026shy;ble"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "Keine Antwort",
+ 								"en": "No an\u0026shy;swer"
+ 							},
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q13_broke_before_paycheck",
+ 							"type": "radio",
+ 							"label": {
+ 								"en": ""
+ 							},
+ 							"col_span_control": 1,
+ 							"value_radio": "yes",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q13_broke_before_paycheck",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "no"
+ 						},
+ 						{
+ 							"name": "q13_broke_before_paycheck",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "dont_know"
+ 						},
+ 						{
+ 							"name": "q13_broke_before_paycheck",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "not_applicable"
+ 						},
+ 						{
+ 							"name": "q13_broke_before_paycheck",
+ 							"type": "radio",
+ 							"col_span_label": 0.4,
+ 							"col_span_control": 1,
+ 							"value_radio": "no_answer"
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"auto_flow": "row",
+ 								"template_columns": "   1fr    1fr    1fr    1fr    1.4fr "
+ 							},
+ 							"box_style": {
+ 								"display": "grid"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "Ihre Eingaben sind gespeichert.",
+ 				"en": "Your entries have been saved."
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"no_navigation": true,
+ 			"finished": "0001-01-01T00:00:00Z"
+ 		}
+ 	]
+ }

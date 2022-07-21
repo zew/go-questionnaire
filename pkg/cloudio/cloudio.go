@@ -56,6 +56,7 @@ func init() {
 	}
 }
 
+// prepareLocalDir creates "app-bucket" if it does not exist
 func prepareLocalDir() error {
 	// bucketDir := filepath.Join(".", "app-bucket")
 	bucketDir := filepath.Join(exeToAppRoot, "app-bucket")
@@ -76,7 +77,8 @@ func bucketLocal() (*blob.Bucket, error) {
 	if err != nil {
 		return nil, err
 	}
-	storageDriverURL := fmt.Sprintf("file:///%s", filepath.Join(wd, exeToAppRoot, "app-bucket")+"/") // relative directory not working on travis - but on appengine and windows
+	wdExt := filepath.Join(wd, exeToAppRoot, "app-bucket") + string(filepath.Separator)
+	storageDriverURL := fmt.Sprintf("file:///%s", wdExt) // relative directory not working on travis - but on appengine and windows
 	// storageDriverURL := cfg.Get().StorageDriverURL
 	bucket, err := blob.OpenBucket(ctx, storageDriverURL)
 	if err != nil {

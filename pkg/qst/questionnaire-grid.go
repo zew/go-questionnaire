@@ -117,6 +117,13 @@ func (inp *inputT) ControlTop() {
 	inp.StyleCtl.Desktop.StyleGridItem.AlignSelf = "start"
 }
 
+// ControlBottom puts the control vertically on bottom;
+// default would be vertically centered
+func (inp *inputT) ControlBottom() {
+	inp.StyleCtl = css.NewStylesResponsive(inp.StyleCtl)
+	inp.StyleCtl.Desktop.StyleGridItem.AlignSelf = "end"
+}
+
 // LabelRight aligns the label right;
 // but also the text right;
 // different from ControlFirst()

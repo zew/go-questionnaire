@@ -31,7 +31,7 @@ func addEchartsExamplePage(q *qst.QuestionnaireT) {
 			{
 				inp := gr.AddInput()
 				inp.Type = "text"
-				inp.Name = "echart_output"
+				inp.Name = "chart_output"
 				inp.MaxChars = 40
 				inp.ColSpan = 1
 				inp.ColSpanLabel = 1

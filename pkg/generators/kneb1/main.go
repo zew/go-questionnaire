@@ -22,18 +22,43 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	q.Survey.Name = trl.S{"en": "Financial Literacy Test"}
 	// q.Variations = 1
 
-	// page 1
+	// page 0
 	{
-		p := q.AddPage()
+		page := q.AddPage()
 
-		p.Section = trl.S{"en": "Sociodemographics"}
-		p.Label = trl.S{"en": "Age, origin, experience"}
-		p.Short = trl.S{"en": "Sociodemo-<br>graphics"}
-		p.WidthMax("42rem")
+		page.Label = trl.S{"en": "Chart"}
+		page.Short = trl.S{"en": "Chart"}
+		page.WidthMax("42rem")
 
 		// gr0
 		{
-			gr := p.AddGroup()
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 1
+			{
+				inp := gr.AddInput()
+				inp.Type = "dyn-textblock"
+				inp.DynamicFunc = "RenderStaticContent"
+				inp.DynamicFuncParamset = "./echart/inner-01.html"
+				inp.ColSpan = 1
+				inp.ColSpanLabel = 1
+			}
+		}
+
+	}
+
+	// page 1
+	{
+		page := q.AddPage()
+
+		page.Section = trl.S{"en": "Sociodemographics"}
+		page.Label = trl.S{"en": "Age, origin, experience"}
+		page.Short = trl.S{"en": "Sociodemo-<br>graphics"}
+		page.WidthMax("42rem")
+
+		// gr0
+		{
+			gr := page.AddGroup()
 			gr.Cols = 4
 			gr.BottomVSpacers = 1
 
@@ -85,7 +110,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				{"de": "Diverse"},
 			}
 
-			gr := p.AddGroup()
+			gr := page.AddGroup()
 			gr.Cols = 7
 			{
 				inp := gr.AddInput()
@@ -119,7 +144,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				{"de": "No"},
 			}
 
-			gr := p.AddGroup()
+			gr := page.AddGroup()
 			gr.Cols = 7
 			{
 				inp := gr.AddInput()
@@ -170,7 +195,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				{"de": "No"},
 			}
 
-			gr := p.AddGroup()
+			gr := page.AddGroup()
 			gr.Cols = 7
 			gr.BottomVSpacers = 1
 			{
@@ -205,7 +230,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				{"de": "No"},
 			}
 
-			gr := p.AddGroup()
+			gr := page.AddGroup()
 			gr.Cols = 7
 			gr.Style = css.NewStylesResponsive(gr.Style)
 			gr.Style.Desktop.StyleBox.Margin = "0 0 0 4rem"
@@ -241,7 +266,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				{"de": "No"},
 			}
 
-			gr := p.AddGroup()
+			gr := page.AddGroup()
 			gr.Cols = 7
 			{
 				inp := gr.AddInput()
@@ -281,7 +306,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"de": "Sie schätzen Ihren Gesundheitszustand als",
 				"en": "Would you say your health&nbsp;is",
 			}
-			gr := p.AddGrid(gb)
+			gr := page.AddGrid(gb)
 			gr.BottomVSpacers = 4
 		}
 
@@ -291,16 +316,16 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	// page 2
 	{
 
-		p := q.AddPage()
-		p.WidthMax("40rem")
-		p.Section = trl.S{"en": "Financial decisions"}
-		p.Label = trl.S{"en": "Wealth, assets"}
-		p.Short = trl.S{"en": "Financial<br>decisions"}
+		page := q.AddPage()
+		page.WidthMax("40rem")
+		page.Section = trl.S{"en": "Financial decisions"}
+		page.Label = trl.S{"en": "Wealth, assets"}
+		page.Short = trl.S{"en": "Financial<br>decisions"}
 
 		{
 			//
 			// Income
-			gr := p.AddGroup()
+			gr := page.AddGroup()
 			gr.Cols = 4
 			gr.BottomVSpacers = 2
 			{
@@ -330,7 +355,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 			//
 			// Wealth
-			gr = p.AddGroup()
+			gr = page.AddGroup()
 			gr.Cols = 4
 			gr.BottomVSpacers = 2
 			{
@@ -418,7 +443,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 			//
 			// Debt
-			gr = p.AddGroup()
+			gr = page.AddGroup()
 			gr.Cols = 4
 			gr.BottomVSpacers = 2
 			{
@@ -507,7 +532,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		//
 		// type of fin assets
 		{
-			gr := p.AddGroup()
+			gr := page.AddGroup()
 			gr.Cols = 4
 			gr.BottomVSpacers = 2
 			{
@@ -560,7 +585,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		//
 		// fin activity
 		{
-			gr := p.AddGroup()
+			gr := page.AddGroup()
 			gr.Cols = 4
 			gr.BottomVSpacers = 2
 			{
@@ -618,7 +643,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"en": `Sometimes people find that their income does not quite cover their living expenses. 
 					In the last 12&nbsp;months, has this happened to you personally?`,
 			}
-			gr := p.AddGrid(gb)
+			gr := page.AddGrid(gb)
 			gr.BottomVSpacers = 4
 		}
 

@@ -1,0 +1,22 @@
+<!-- 
+    inner is a reduction of standalone.html 
+    remove the outer HTML body tags;
+    but keep the CSS links from the HTML head
+
+
+    prefix all js and css resources by /{{AppPrefix}}/doc/kneb1/echart/
+-->
+
+<input name="chart_output" type="text" value="0" />
+
+<!-- some height is required for the chart to show up -->
+<div id="chart_container" ></div>
+
+
+<!-- CDN only advantageous, if already cached by browser from other site - unlikely for echarts  -->
+<!-- <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.3.2/dist/echarts.min.js"></script> -->
+<script type="text/javascript" src="/{{AppPrefix}}/doc/kneb1/echart/echarts.min.js"></script>
+
+
+<script type="text/javascript" src="/{{AppPrefix}}/doc/kneb1/echart/custom.js"></script>
+

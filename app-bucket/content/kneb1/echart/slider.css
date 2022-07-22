@@ -1,0 +1,69 @@
+
+#chart_container {
+    min-height: 32rem; /* some height is required for the chart to show up */
+
+    width: calc(100%-2rem);
+    margin: 1rem 2rem;
+}
+
+/* https://www.w3schools.com/howto/howto_js_rangeslider.asp */
+
+.slider-container {
+    width: calc(100%-2rem);
+    /* background-color: lightcyan; */
+    margin: 1rem 2rem;
+}
+
+.slider {
+    -webkit-appearance: none;
+    width:  100%;
+    height: 40px;
+    background: darkgray;
+    outline: none;
+    border-radius: 0.2rem;
+
+    /* darkening on mouse over */
+    opacity: 0.9;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider:hover {
+    /* darkening on mouse over */
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width:  23px;
+    height: 38px;
+
+    background: lightgrey;
+    border-radius: 0.2rem;
+    cursor: pointer;
+
+    border-right:  1px solid #222;
+    border-bottom: 1px solid #222;
+}
+
+.slider::-moz-range-thumb {
+    width:  23px;
+    height: 38px;
+    background: lightgrey;
+    border-radius: 0.2rem;
+    cursor: pointer;
+
+    border-right:  1px solid #222;
+    border-bottom: 1px solid #222;
+}
+
+input[name=share_safe],
+input[name=share_risky],
+xxx{
+    width: 2.5rem;
+}
+input[name=share_risky],
+xxx{
+    float:right;
+}

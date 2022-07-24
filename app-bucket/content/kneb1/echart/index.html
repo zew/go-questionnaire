@@ -5,7 +5,19 @@
 </head>
 <body style="height: 100%; margin: 0">
 
+<!-- 
+    needs apache conf mime types file
+      application/javascript				mjs
 
+
+    inner.html is a reduction of index.html 
+    
+      * remove the outer HTML body tags;
+        but keep the CSS links from the HTML head
+
+      * prefix all js and css resources by /{{AppPrefix}}/doc/kneb1/echart/
+
+ -->
 
 <!-- https://www.w3schools.com/howto/howto_js_rangeslider.asp -->
 <link rel="stylesheet" href="slider.css">
@@ -29,19 +41,25 @@
   >
 </div>
 
+
 <input name="chart_output" type="text" value="0" />
 
 <div id="chart_container" ></div>
 
+
+
+
 <!-- CDN only advantageous, if already cached by browser from other site - unlikely for echarts  -->
 <!-- <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.3.2/dist/echarts.min.js"></script> -->
-<script type="text/javascript" src="echarts.min.js"></script>
 
+<script type="text/javascript" src="echarts.min.js"></script>
+<script type="text/javascript" src='ecStat.js'     ></script>
 
 <script type="text/javascript" src="common.js"></script>
-<script type="text/javascript" src="data.js"></script>
-<script type="text/javascript" src="custom-1.js"></script>
 
+<!-- loading as a module triggers CORS hell -->
+<!-- <script type="module"          src="chart.mjs"></script> -->
+<script type="text/javascript" src="chart.mjs"></script>
 
 
 </body>

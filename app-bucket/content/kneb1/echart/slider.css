@@ -1,11 +1,4 @@
-
-#chart_container {
-    min-height: 32rem; /* some height is required for the chart to show up */
-
-    width: calc(100%-2rem);
-    margin: 1rem 2rem;
-}
-
+/* slider */
 /* https://www.w3schools.com/howto/howto_js_rangeslider.asp */
 
 .slider-container {
@@ -66,4 +59,21 @@ xxx{
 input[name=share_risky],
 xxx{
     float:right;
+}
+
+
+/* chart */
+
+input[name=chart_output] {
+    margin: 0rem 6rem;
+    position: relative;
+    top: 2rem;
+}
+
+#chart_container {
+    min-height: 32rem;
+    /* some height is required for the chart to show up */
+
+    width: calc(100%-2rem);
+    margin: 1rem 2rem;
 }

@@ -39,7 +39,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp := gr.AddInput()
 				inp.Type = "dyn-textblock"
 				inp.DynamicFunc = "RenderStaticContent"
-				inp.DynamicFuncParamset = "./echart/inner-01.html"
+				inp.DynamicFuncParamset = "./echart/inner.html"
 				inp.ColSpan = 1
 				inp.ColSpanLabel = 1
 			}

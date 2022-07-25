@@ -6,9 +6,6 @@
 <body style="height: 100%; margin: 0">
 
 <!-- 
-    needs apache conf mime types file
-      application/javascript				mjs
-
 
     inner.html is a reduction of index.html 
     
@@ -57,7 +54,13 @@
 
 <script type="text/javascript" src="common.js"></script>
 
-<!-- loading as a module triggers CORS hell -->
+<!-- 
+  loading as a module needs apache conf mime types file
+      application/javascript				mjs
+
+  for local files, there is browser extension, which does not work
+
+-->
 <!-- <script type="module"          src="chart.mjs"></script> -->
 <script type="text/javascript" src="chart.mjs"></script>
 

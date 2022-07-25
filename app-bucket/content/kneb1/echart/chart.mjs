@@ -20,31 +20,26 @@ var option;
 // see https://github.com/ecomfe/echarts-stat
 echarts.registerTransform(ecStat.transform.histogram);
 
+var colorPalette = ['#d87c7c', '#919e8b', '#d7ab82', '#6e7074', '#61a0a8', '#efa18d', '#787464', '#cc7e63', '#724e58', '#4b565b'];
+function getColor() {
+    let idx = colorPalette.length % counterDraws;
+    return colorPalette[idx];
+}
+
+
 var ds1 = {
     source: [
         [10.3, 143],
         [10.6, 214],
         [10.8, 251],
-        [10.7, 86],
-        [10.8, 93],
         [10.0, 176],
         [10.1, 221],
         [10.2, 188],
-        [10.4, 91],
         [10.4, 191],
         [10.0, 196],
         [10.9, 177],
         [10.9, 153],
         [10.3, 201],
-        [10.7, 199],
-        [10.2, 98],
-        [10.5, 121],
-        [10.3, 105],
-        [10.5, 168],
-        [10.9, 84],
-        [10.0, 197],
-        [10.0, 155],
-        [10.6, 125]
     ]
 };
 
@@ -59,18 +54,33 @@ var ds2 = {
     ]
 };
 
-var counterDraws = -1  // counter for getData
+
+var counterDraws = 4  // counter for getData
+
+
+
+
+var ds1a = {
+    source: []
+};
+
+var ds2a = {
+    source: [
+        [ 25, 0],
+        [ 75, 0],
+        [125, 0],
+        [175, 0],
+        [225, 0],
+        [275, 0],
+    ]
+};
+
 
 function getData() {
 
     counterDraws++;
 
-    let ds1a = ds1;
-    let ds2a = ds2;
-
-
-    ds1a.source = [];
-    for (let i = 0; i < (counterDraws+4); i++) {
+    for (let i = ds1a.source.length; i < (counterDraws+1); i++) {
         let val = 90.0 + 90*Math.random();
         let subAr = ["draw", val];
         ds1a.source.push(subAr);
@@ -78,15 +88,7 @@ function getData() {
 
     console.log(`counterDraws ${counterDraws} - ds1a: `, ds1a.source );
     
-    ds2a.source = [
-        [ 25, 0],
-        [ 75, 0],
-        [125, 0],
-        [175, 0],
-        [225, 0],
-        [275, 0],
-    ];
-    for (let i = 0; i < ds1a.source.length; i++) {
+    for (let i = ds1a.source.length-1; i < ds1a.source.length; i++) {
 
         let val = Math.floor(ds1a.source[i][1]);
 
@@ -94,7 +96,7 @@ function getData() {
         
         let binIdx = (binId - 25) / 50;
         
-        // console.log(`   val ${val} => binId ${binId} - => binIdx ${binIdx}`);
+        console.log(`   val ${val} => binId ${binId} - => binIdx ${binIdx}`);
 
         ds2a.source[binIdx][1]++;
     }
@@ -168,12 +170,34 @@ option = {
     ],
     series: [
         {
-            name: 'origianl scatter',
+            name: 'random draws',
             type: 'scatter',
             xAxisIndex: 0,
             yAxisIndex: 0,
             encode: { tooltip: [0, 1] },
-            datasetIndex: 0
+            symbol: 'emptyCircle',
+            symbolSize: function (value, params) {
+                // console.log(`symbolSize`, params);
+                // console.log(`symbolSize`, params.data);
+                // console.log(`symbolSize`, params.dataIndex, counterDraws);
+                // console.log(`symbolSize color`, params.color);
+                let a1 = params.dataIndex + 1;
+                let a2 = counterDraws;
+                if (a1 == a2) {
+                    return 14;
+                }
+                params.color = '#919e8b';
+                return 10;
+                return value;
+            },
+
+            // color does not work as symbolSize 
+            // color: function (value, params) {
+            //     return getColor();
+            // },
+            // color: getColor(),
+
+            datasetIndex: 0,
         },
         {
             name: 'histogram',
@@ -189,7 +213,7 @@ option = {
             encode: { x: 1, y: 0, itemName: 4 },
             datasetIndex: 1
         }
-    ]
+    ],
 };
 
 option && myChart.setOption(option);

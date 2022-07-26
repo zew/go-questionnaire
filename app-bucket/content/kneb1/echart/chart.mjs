@@ -17,8 +17,6 @@ var option;
 
 
 
-// see https://github.com/ecomfe/echarts-stat
-echarts.registerTransform(ecStat.transform.histogram);
 
 var colorPalette = ['#d87c7c', '#919e8b', '#d7ab82', '#6e7074', '#61a0a8', '#efa18d', '#787464', '#cc7e63', '#724e58', '#4b565b'];
 function getColor() {
@@ -55,10 +53,14 @@ var ds2 = {
 };
 
 
-var counterDraws = 4  // counter for getData
+var counterDrawsInit = 4 ;
+var counterDraws = counterDrawsInit;  // counter for getData
 
+var maxXHisto = 0;
 
-
+function getMax() {
+    return maxXHisto+2; 
+}
 
 var ds1a = {
     source: []
@@ -86,9 +88,14 @@ function getData() {
         ds1a.source.push(subAr);
     }
 
-    console.log(`counterDraws ${counterDraws} - ds1a: `, ds1a.source );
+    // console.log(`counterDraws ${counterDraws} - ds1a: `, ds1a.source );
     
-    for (let i = ds1a.source.length-1; i < ds1a.source.length; i++) {
+    let start = ds1a.source.length - 1
+    if (counterDraws == counterDrawsInit+1) {
+        start = 0;
+    }
+
+    for (let i = start; i < ds1a.source.length; i++) {
 
         let val = Math.floor(ds1a.source[i][1]);
 
@@ -96,12 +103,17 @@ function getData() {
         
         let binIdx = (binId - 25) / 50;
         
-        console.log(`   val ${val} => binId ${binId} - => binIdx ${binIdx}`);
+        // console.log(`   val ${val} => binId ${binId} - => binIdx ${binIdx}`);
 
         ds2a.source[binIdx][1]++;
+
+        if (ds2a.source[binIdx][1] > maxXHisto) {
+            maxXHisto = ds2a.source[binIdx][1];
+        }
+
     }
 
-    console.log(`counterDraws ${counterDraws} - ds2a: `, ds2a.source);
+    // console.log(`counterDraws ${counterDraws} - ds2a: `, ds2a.source);
 
     return [
         ds1a,
@@ -141,6 +153,12 @@ option = {
             scale: true,
             gridIndex: 1,
             inverse: true,
+
+            min: 0,
+            max: function(){
+                return getMax();
+            },
+
         }
     ],
     yAxis: [
@@ -165,7 +183,6 @@ option = {
                 onZero: false,
             },
             position: 'right',
-
         }
     ],
     series: [
@@ -176,6 +193,7 @@ option = {
             yAxisIndex: 0,
             encode: { tooltip: [0, 1] },
             symbol: 'emptyCircle',
+            symbol: 'circle',
             symbolSize: function (value, params) {
                 // console.log(`symbolSize`, params);
                 // console.log(`symbolSize`, params.data);
@@ -184,10 +202,10 @@ option = {
                 let a1 = params.dataIndex + 1;
                 let a2 = counterDraws;
                 if (a1 == a2) {
-                    return 14;
+                    return 7;
                 }
                 params.color = '#919e8b';
-                return 10;
+                return 3;
                 return value;
             },
 
@@ -208,7 +226,9 @@ option = {
             barWidth: '2px',
             label: {
                 show: true,
-                position: 'right'
+                position: 'right',
+                position: 'center',
+
             },
             encode: { x: 1, y: 0, itemName: 4 },
             datasetIndex: 1

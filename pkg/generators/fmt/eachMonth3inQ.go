@@ -176,7 +176,6 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 		page := q.AddPage()
 		page.Label = trl.S{
 			"de": "Sonderfrage: Anlageklassen im Eurogebiet und weltweit",
-			// "en": "Special: Asset Classes in the Euro Area",
 			"en": "Additional questions on the attractiveness of different asset classes",
 		}
 		page.Short = trl.S{

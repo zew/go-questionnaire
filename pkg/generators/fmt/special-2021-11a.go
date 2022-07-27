@@ -126,7 +126,7 @@ func special202111a(q *qst.QuestionnaireT) error {
 					Anstieg des HICP von Jan bis Dez; Erwartungswert
 				`,
 					"en": `<b>1.</b> &nbsp;	
-					Forecast of <b>annual inflation rate in the Euro area</b><br>
+					Forecast of <b>annual inflation rate in the euro area</b><br>
 					Avg. percentage change in HICP from Jan to Dec
 				`,
 				}

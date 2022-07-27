@@ -1,9 +1,9 @@
 const frmM = document.forms.frmMain;
 
 const inputNamesMatrix = {
-    "inf2022": ["inf2022_under1", "inf2022_between1and2", "inf2022_between2and3", "inf2022_above3"],
-    "inf2023": ["inf2023_under1", "inf2023_between1and2", "inf2023_between2and3", "inf2023_above3"],
-    "inf2024": ["inf2024_under1", "inf2024_between1and2", "inf2024_between2and3", "inf2024_above3"],
+    "inf2022": ["inf2022_under2", "inf2022_between2and3", "inf2022_between3and4", "inf2022_above4"],
+    "inf2023": ["inf2023_under2", "inf2023_between2and3", "inf2023_between3and4", "inf2023_above4"],
+    "inf2024": ["inf2024_under2", "inf2024_between2and3", "inf2024_between3and4", "inf2024_above4"],
 };
 
 const globRowKeys = Object.keys(inputNamesMatrix);

@@ -158,7 +158,7 @@ func special202108(q *qst.QuestionnaireT) error {
 
 					
 				`,
-					"en": `<b>1.</b> Forecast <b>annual inflation rate in the Euro area</b>
+					"en": `<b>1.</b> Forecast <b>annual inflation rate in the euro area</b>
 				<br>
 				HICP  increase from Jan to Dec; expected value
 				`,
@@ -198,11 +198,11 @@ func special202108(q *qst.QuestionnaireT) error {
 			rowLabelsEconomicAreasShort := []trl.S{
 				{
 					"de": "Konjunkturdaten Euroraum",
-					"en": "Business cycle data Euro area",
+					"en": "Business cycle data euro area",
 				},
 				{
 					"de": "Löhne Euroraum",
-					"en": "Wages Euro area",
+					"en": "Wages euro area",
 				},
 				{
 					"de": "Rohstoffpreise",

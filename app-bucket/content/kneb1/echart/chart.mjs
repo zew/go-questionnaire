@@ -11,10 +11,8 @@
 
 var chartDom = document.getElementById('chart_container');
 // console.log(chartDom);
-
 var myChart = echarts.init(chartDom);
 var option;
-
 
 
 
@@ -25,7 +23,7 @@ function getColor() {
 }
 
 
-var ds1 = {
+var ds1Example = {
     source: [
         [10.3, 143],
         [10.6, 214],
@@ -41,32 +39,7 @@ var ds1 = {
     ]
 };
 
-var ds2 = {
-    source: [
-        [ 25,  0],
-        [ 75,  5],
-        [125,  4],
-        [175, 12],
-        [225,  3],
-        [275,  1],
-    ]
-};
-
-
-var counterDrawsInit = 4 ;
-var counterDraws = counterDrawsInit;  // counter for getData
-
-var maxXHisto = 0;
-
-function getMax() {
-    return maxXHisto+2; 
-}
-
-var ds1a = {
-    source: []
-};
-
-var ds2a = {
+var ds2Example = {
     source: [
         [ 25, 0],
         [ 75, 0],
@@ -78,37 +51,78 @@ var ds2a = {
 };
 
 
+var ds1 = {
+    source: []
+};
+var counterDrawsInit = 4 ;
+var counterDraws = counterDrawsInit;  // counter for getData
+
+
+
+
+var mn = 0.0; // mean
+var sd = 1.0; // standard deviation
+
+var mn = 153.0; // mean
+var sd = 15.89; // standard deviation
+
+var normDist = new jsstats.NormalDistribution(mn, sd);
+
+
+// histogram config
+// ======================
+
+const  w = 20;   // width
+const wh = 10;   // width half
+
+var maxXHisto = 0;
+
+function getMax() {
+    return maxXHisto+2; 
+}
+
+
+
+var ds2 = {
+    source: []
+};
+for (let i = 0; i <= 300/w; i++) {
+    ds2.source.push([wh + i*w, 0]);    
+}
+
+// console.log(ds2.source);
+
 function getData() {
 
     counterDraws++;
 
-    for (let i = ds1a.source.length; i < (counterDraws+1); i++) {
-        let val = 90.0 + 90*Math.random();
-        let subAr = ["draw", val];
-        ds1a.source.push(subAr);
+    for (let i = ds1.source.length; i < (counterDraws+1); i++) {
+        let linDraw = Math.random();
+        let draw  = normDist.invCumulativeProbability(linDraw)
+        // console.log(`   lin draw ${linDraw} => draw  ${draw}`);
+
+        let subAr = ["draw", draw];
+        ds1.source.push(subAr);
     }
 
     // console.log(`counterDraws ${counterDraws} - ds1a: `, ds1a.source );
-    
-    let start = ds1a.source.length - 1
+
+
+    // histogram data
+
+
+    let i0 = ds1.source.length - 1
     if (counterDraws == counterDrawsInit+1) {
-        start = 0;
+        i0 = 0;
     }
-
-    for (let i = start; i < ds1a.source.length; i++) {
-
-        let val = Math.floor(ds1a.source[i][1]);
-
-        let binId = Math.round(val/50)*50 + 25;
-        
-        let binIdx = (binId - 25) / 50;
-        
+    for (let i = i0; i < ds1.source.length; i++) {
+        let val    = Math.floor(ds1.source[i][1]);
+        let binId  = Math.round(val/w)*w + wh;
+        let binIdx = (binId - wh) / w;
         // console.log(`   val ${val} => binId ${binId} - => binIdx ${binIdx}`);
-
-        ds2a.source[binIdx][1]++;
-
-        if (ds2a.source[binIdx][1] > maxXHisto) {
-            maxXHisto = ds2a.source[binIdx][1];
+        ds2.source[binIdx][1]++;
+        if (ds2.source[binIdx][1] > maxXHisto) {
+            maxXHisto = ds2.source[binIdx][1];
         }
 
     }
@@ -116,8 +130,8 @@ function getData() {
     // console.log(`counterDraws ${counterDraws} - ds2a: `, ds2a.source);
 
     return [
-        ds1a,
-        ds2a,
+        ds1,
+        ds2,
         {
             transform: {
                 type: 'ecStat:histogram',
@@ -194,19 +208,33 @@ option = {
             encode: { tooltip: [0, 1] },
             symbol: 'emptyCircle',
             symbol: 'circle',
+            // symbolOffset only works for the entire series
+            //   symbolOffset: [  -33, 10],
+            //   symbolOffset: [ Math.floor((Math.random() *  44)) -22],
             symbolSize: function (value, params) {
-                // console.log(`symbolSize`, params);
                 // console.log(`symbolSize`, params.data);
                 // console.log(`symbolSize`, params.dataIndex, counterDraws);
-                // console.log(`symbolSize color`, params.color);
                 let a1 = params.dataIndex + 1;
                 let a2 = counterDraws;
                 if (a1 == a2) {
                     return 7;
                 }
-                params.color = '#919e8b';
+                params.color = '#919e8b';  // does not affect
                 return 3;
-                return value;
+                // return value;
+            },
+            itemStyle: {
+                // borderWidth: 3,
+                // borderColor: '#EE6666',
+
+                // color function not possible
+                // color: function (value, params) {
+                //     return '#919e8b';
+                // },
+                // color: 'yellow',
+
+
+                opacity: 0.3,
             },
 
             // color does not work as symbolSize 
@@ -246,4 +274,4 @@ setInterval(() => {
         //     data: makeRandomData()
         // }
     });
-}, 2000);
+}, 200);

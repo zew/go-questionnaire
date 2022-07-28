@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "b6cb3db0561e2ca98cab6d0ab4c95596c90065340a567c60b99743d8501ca6e0",
+ 	"md_5": "fdfb464e96aa6d3ff63499a8d79f0b75b2a84d5de71e36fd49ac8d0ad4a2e5e7",
  	"lang_codes": [
  		"de",
  		"en"
@@ -5345,8 +5345,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e2.\u003c/b\u003e \u0026nbsp; \n\t\t\t\tHaben Entwicklungen in den folgenden Bereichen Sie zu einer Revision \n\t\t\t\tIhrer \u003cb\u003eIn\u0026shy;fla\u0026shy;ti\u0026shy;onspro\u0026shy;gno\u0026shy;sen\u003c/b\u003e für den Euro\u0026shy;raum (ggü. Mai 2022) bewogen \n\t\t\t\tund wenn ja, nach oben (+) oder unten (-)?\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cb\u003eFür die Jahre 2022, 2023 und 2024\u003c/b\u003e\n\t\t\t",
- 								"en": "\u003cb\u003e2.\u003c/b\u003e \u0026nbsp; \n\t\t\t\tWhat are the main factors leading you to change your in\u0026shy;fla\u0026shy;ti\u0026shy;on forecasts \n\t\t\t\tfor the euro area (in comparison to your forecasts as of May 2022). \n\t\t\t\t(+) means in\u0026shy;crease in in\u0026shy;fla\u0026shy;ti\u0026shy;on forecast, \n\t\t\t\t(-) means de\u0026shy;crease in in\u0026shy;fla\u0026shy;ti\u0026shy;on forecast.\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cb\u003eFor the years 2022, 2023, and 2024\u003c/b\u003e\n\t\t\t"
+ 								"de": "\u003cb\u003e2.\u003c/b\u003e \u0026nbsp; \n\t\t\t\tHaben Entwicklungen in den folgenden Bereichen Sie zu einer Revision \n\t\t\t\tIhrer \u003cb\u003eIn\u0026shy;fla\u0026shy;ti\u0026shy;onspro\u0026shy;gno\u0026shy;sen\u003c/b\u003e für den Euro\u0026shy;raum (ggü. Mai 2022) bewogen \n\t\t\t\tund wenn ja, nach oben (+) oder unten (-)?\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cb\u003eFür die Jahre 2022, 2023 und 2024\u003c/b\u003e\n\t\t\t",
+ 								"en": "\u003cb\u003e2.\u003c/b\u003e \u0026nbsp;\n\t\t\t\tWhat are the main factors leading you to change your in\u0026shy;fla\u0026shy;ti\u0026shy;on forecasts\n\t\t\t\tfor the euro area (in comparison to your forecasts as of May 2022).\n\t\t\t\t(+) means in\u0026shy;crease in in\u0026shy;fla\u0026shy;ti\u0026shy;on forecast,\n\t\t\t\t(-) means de\u0026shy;crease in in\u0026shy;fla\u0026shy;ti\u0026shy;on forecast.\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cbr\u003e\n\t\t\t\t\u003cb\u003eFor the years 2022, 2023, and 2024\u003c/b\u003e\n\t\t\t"
  							},
  							"col_span": 6,
  							"col_span_label": 1

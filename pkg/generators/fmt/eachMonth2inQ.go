@@ -386,22 +386,27 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 			radioVals6,
 			rowLabelsEconomicAreasShort,
 		)
+		idxThreeMonthsBefore := trl.MonthsShift(int(q.Survey.Month), -3)
+		monthMinus3 := trl.MonthByInt(idxThreeMonthsBefore)
 		gb.MainLabel = trl.S{
-			"de": `<b>2.</b> &nbsp; 
+			"de": fmt.Sprintf(`<b>2.</b> &nbsp; 
 				Haben Entwicklungen in den folgenden Bereichen Sie zu einer Revision 
-				Ihrer <b>Inflationsprognosen</b> für den Euroraum (ggü. Mai 2022) bewogen 
+				Ihrer <b>Inflationsprognosen</b> für den Euroraum (ggü. %v 2022) bewogen 
 				und wenn ja, nach oben (+) oder unten (-)?
 				<br>
+				<br>
 				<b>Für die Jahre 2022, 2023 und 2024</b>
-			`,
-			"en": `<b>2.</b> &nbsp; 
-				What are the main factors leading you to change your inflation forecasts 
-				for the euro area (in comparison to your forecasts as of May 2022). 
-				(+) means increase in inflation forecast, 
+			`, monthMinus3.Tr("de"),
+			),
+			"en": fmt.Sprintf(`<b>2.</b> &nbsp;
+				What are the main factors leading you to change your inflation forecasts
+				for the euro area (in comparison to your forecasts as of %v 2022).
+				(+) means increase in inflation forecast,
 				(-) means decrease in inflation forecast.
 				<br>
+				<br>
 				<b>For the years 2022, 2023, and 2024</b>
-			`,
+			`, monthMinus3.Tr("en")),
 		}
 		gr := page.AddGrid(gb)
 		gr.OddRowsColoring = true

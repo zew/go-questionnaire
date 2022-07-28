@@ -74,7 +74,6 @@ console.log(`p ${p}  => p ${x}`);
         }
         // big steps
         for (let idx = 0.02; idx < 1.0; idx += 0.02) {
-        // for (let idx = -4.0; idx <= 4.0; idx += 0.1) {
             let item = [idx, normDist.invCumulativeProbability(idx)];
             data.push(item);
         }

@@ -71,7 +71,7 @@ input[name=chart_output] {
 }
 
 #chart_container {
-    min-height: 32rem;
+    min-height: 22rem;
     /* some height is required for the chart to show up */
 
     width: calc(100%-2rem);

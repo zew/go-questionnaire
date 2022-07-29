@@ -1,3 +1,56 @@
-<input name="chart_output" type="text" value="0" />
+<!-- https://www.w3schools.com/howto/howto_js_rangeslider.asp -->
+<link rel="stylesheet" href="/{{AppPrefix}}/doc/kneb1/echart/slider.css">
 
-<!-- renew this from the body of index.html -->
+<div class="slider-container">
+  <input 
+      type="range" 
+
+      class="slider" 
+      id="sliderInner"
+
+      min="0" 
+      max="100" 
+      step="10" 
+      value="50" 
+      autofocus
+  >
+</div>
+<div class="slider-container">
+  <input type="number" size=3  disabled name="share_safe"  id="">
+  <input type="number" size=3  disabled name="share_risky" id="">
+  <br>
+  <br>
+  &nbsp; <a href="#" onclick="javascript:nextStep();">Next Step</a>
+  &nbsp; &nbsp;
+  &nbsp; <a href="#" onclick="javascript:forever();" >Step forever</a>
+</div>
+
+
+
+<!-- <input name="chart_output" type="text" value="0" /> -->
+
+<div id="chart_container" ></div>
+
+
+
+
+<!-- CDN only advantageous, if already cached by browser from other site - unlikely for echarts  -->
+<!-- <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.3.2/dist/echarts.min.js"></script> -->
+
+<script type="text/javascript" src="/{{AppPrefix}}/doc/kneb1/echart/echarts.min.js"></script>
+<script type="text/javascript" src="/{{AppPrefix}}/doc/kneb1/echart/js-stats-subset.js"></script>
+
+<script type="text/javascript" src="/{{AppPrefix}}/doc/kneb1/echart/common.js"></script>
+
+<!-- 
+  loading as a module needs apache conf mime types file
+      application/javascript				mjs
+
+  for local files, there is browser extension, which does not work
+
+-->
+<!-- <script type="module"          src="chart.mjs"></script> -->
+<script type="text/javascript" src="/{{AppPrefix}}/doc/kneb1/echart/chart.mjs"></script>
+
+
+

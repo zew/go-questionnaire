@@ -21,11 +21,6 @@
 <link rel="stylesheet" href="slider.css">
 
 <div class="slider-container">
-  <input type="number" size=3  disabled name="share_safe"  id="">
-  <input type="number" size=3  disabled name="share_risky" id="">
-</div>
-
-<div class="slider-container">
   <input 
       type="range" 
 
@@ -36,11 +31,22 @@
       max="100" 
       step="10" 
       value="50" 
+      autofocus
   >
+</div>
+<div class="slider-container">
+  <input type="number" size=3  disabled name="share_safe"  id="">
+  <input type="number" size=3  disabled name="share_risky" id="">
+  <br>
+  <br>
+  &nbsp; <a href="#" onclick="javascript:nextStep();">Next Step</a>
+  &nbsp; &nbsp;
+  &nbsp; <a href="#" onclick="javascript:forever();" >Step forever</a>
 </div>
 
 
-<input name="chart_output" type="text" value="0" />
+
+<!-- <input name="chart_output" type="text" value="0" /> -->
 
 <div id="chart_container" ></div>
 

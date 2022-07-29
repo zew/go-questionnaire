@@ -49,7 +49,7 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 	// page.Section = trl.S{"de": "Sonderfrage", "en": "Special"}
 	page.Label = trl.S{
 		"de": "Sonderfrage: Inflation und Geldpolitik",
-		"en": "Special: Inflation and monetary policy",
+		"en": "Special Questions: Inflation, its causes, and monetary policy ",
 	}
 	page.Short = trl.S{
 		"de": "Inflation,<br>Geldpolitik",
@@ -82,7 +82,7 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 					<!-- Anstieg des HICP von Jan bis Dez; Erwartungswert -->
 				`,
 				"en": `
-					<b>1a.</b> &nbsp; Forecast of <b>annual inflation rate in the euro area</b>
+					<b>1a.</b> &nbsp; Point forecast of the <b>annual inflation rate in the euro area</b>
 					<br>
 					(annual average change of the HICP, in percent)
 					<!-- Avg. percentage change in HICP from Jan to Dec; -->
@@ -548,8 +548,8 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 				"en": "End of 2023",
 			},
 			{
-				"de": "Ende 2023",
-				"en": "End of 2023",
+				"de": "Ende 2024",
+				"en": "End of 2024",
 			},
 		}
 

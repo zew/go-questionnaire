@@ -8,6 +8,7 @@
 // import ecStat from './ecStat.js';
 
 
+// https://survey2.zew.de/survey/?u=9990&sid=kneb1&wid=2022-08&p=1&h=9DBZ8ko6n9vv4elnU5cg4duPQFQFD36lx7VVnNjQCno#
 
 var chartDom = document.getElementById('chart_container');
 // console.log(chartDom);
@@ -23,6 +24,7 @@ function getColor() {
 }
 
 
+// risky asset random draws
 var ds1Example = {
     source: [
         [10.3, 143],
@@ -39,10 +41,24 @@ var ds1Example = {
     ]
 };
 
+// risky asset histogram
 var ds2Example = {
     source: [
         [ 25, 0],
         [ 75, 0],
+        [125, 0],
+        [175, 0],
+        [225, 0],
+        [275, 0],
+    ]
+};
+
+
+// riskless asset histogram
+var ds3 = {
+    source: [
+        [25,  0],
+        [75,  10],
         [125, 0],
         [175, 0],
         [225, 0],
@@ -72,8 +88,9 @@ var normDist = new jsstats.NormalDistribution(mn, sd);
 // histogram config
 // ======================
 
-const  w = 20;   // width
-const wh = 10;   // width half
+// const  w = 20;   // width
+const  w = 10;   // width
+const wh = w/2;  // width half
 
 var maxXHisto = 0;
 
@@ -96,8 +113,26 @@ function getData() {
 
     counterDraws++;
 
+    if (false) {   
+        try {
+            // both cases lead to infinity
+            console.log( "icnp(0.0):", normDist.invCumulativeProbability(0)    );        
+            console.log( "icnp(1.0):", normDist.invCumulativeProbability(1.0)  );        
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+    // 
+    // random draws - mapped to normal dist.
     for (let i = ds1.source.length; i < (counterDraws+1); i++) {
-        let linDraw = Math.random();
+        let linDraw = Math.random(); // a number from 0 to <1
+
+        while (linDraw == 0.0) {
+            // just avoid 0.0, because it creates infinity below
+            linDraw = Math.random(); 
+        }
+
         let draw  = normDist.invCumulativeProbability(linDraw)
         // console.log(`   lin draw ${linDraw} => draw  ${draw}`);
 
@@ -108,9 +143,8 @@ function getData() {
     // console.log(`counterDraws ${counterDraws} - ds1a: `, ds1a.source );
 
 
+    // 
     // histogram data
-
-
     let i0 = ds1.source.length - 1
     if (counterDraws == counterDrawsInit+1) {
         i0 = 0;
@@ -127,11 +161,14 @@ function getData() {
 
     }
 
+    ds3.source[2] = [75, maxXHisto];
+
     // console.log(`counterDraws ${counterDraws} - ds2a: `, ds2a.source);
 
     return [
         ds1,
         ds2,
+        ds3,
         {
             transform: {
                 type: 'ecStat:histogram',
@@ -147,12 +184,13 @@ option = {
     tooltip: {},
     grid: [
         {
-            top:   '04%',
-            right: '60%',
+            top:    '04%',
+            right:  '75%',
         },
         {
             top:    '04%',
-            left:   '56%',
+            left:   '35%',
+            width:  '50%',
         }
     ],
     xAxis: [
@@ -167,13 +205,11 @@ option = {
             scale: true,
             gridIndex: 1,
             inverse: true,
-
             min: 0,
             max: function(){
                 return getMax();
             },
-
-        }
+        },
     ],
     yAxis: [
         {
@@ -197,12 +233,24 @@ option = {
                 onZero: false,
             },
             position: 'right',
+        },
+        {
+            gridIndex: 1,
+            type: 'category',
+            axisLine: {
+                // necessary for position: right to take effect
+                onZero: false,
+            },
+            position: 'right',
         }
+
+
     ],
     series: [
         {
             name: 'random draws',
             type: 'scatter',
+            color: '#d87c7c',
             xAxisIndex: 0,
             yAxisIndex: 0,
             encode: { tooltip: [0, 1] },
@@ -217,7 +265,7 @@ option = {
                 let a1 = params.dataIndex + 1;
                 let a2 = counterDraws;
                 if (a1 == a2) {
-                    return 7;
+                    return 10;
                 }
                 params.color = '#919e8b';  // does not affect
                 return 3;
@@ -234,7 +282,7 @@ option = {
                 // color: 'yellow',
 
 
-                opacity: 0.3,
+                opacity: 0.4,
             },
 
             // color does not work as symbolSize 
@@ -248,30 +296,77 @@ option = {
         {
             name: 'histogram',
             type: 'bar',
+            color: '#d87c7c',
             xAxisIndex: 1,
             yAxisIndex: 1,
             barWidth: '99.3%',
-            barWidth: '2px',
+            barWidth: '4px',
             label: {
                 show: true,
-                position: 'right',
                 position: 'center',
-
+                position: 'left',
+                position: 'right',
+                // distance to host graphic element
+                distance: 55,
+                offset: [10,0],
             },
+            // label position - free func
+            //   echarts.apache.org/en/option.html#series-bar
+            labelLayout(params) {
+                let fs = 12;
+                if (params.rect.width < 1.0) {
+                    fs = 0;
+                }
+                return {
+
+                    // x:        params.rect.x + 1,
+                    dx: 2,
+                    y:        params.rect.y + 1,       
+                    fontSize: fs,
+                    // not working
+                    //   opacity: 0.2,
+                    //   color: '#AA0101',
+                };
+            },  
             encode: { x: 1, y: 0, itemName: 4 },
             datasetIndex: 1
-        }
+        },
+        {
+            name: 'histogram2',
+            type: 'bar',
+            xAxisIndex: 1,
+            yAxisIndex: 2,
+            barWidth: '32px',
+            encode: { x: 1, y: 0, itemName: 4 },
+            datasetIndex: 2
+        },
+
     ],
 };
 
 option && myChart.setOption(option);
 
-
-setInterval(() => {
+function nextStep() {
     myChart.setOption({
         dataset: getData(),
         // series: {
         //     data: makeRandomData()
         // }
     });
-}, 200);
+    return false;
+}
+
+
+function forever() {
+    setInterval(() => {
+        myChart.setOption({
+            dataset: getData(),
+            // series: {
+            //     data: makeRandomData()
+            // }
+        });
+    }, 200); 
+    return false;
+}
+
+

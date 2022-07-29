@@ -8,15 +8,18 @@
  			"en": "Financial Literacy Test"
  		},
  		"year": 2022,
- 		"month": 7,
- 		"deadline": "2022-07-28T23:59:00+02:00",
+ 		"month": 8,
+ 		"deadline": "2022-08-15T17:15:00+02:00",
  		"params": [
- 			{},
+ 			{
+ 				"name": "main_refinance_rate_ecb",
+ 				"val": "0,5%"
+ 			},
  			{}
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "e667dd4b24706e1f47a27fd8c0d572e07e4f8f975f94fde44e881eb2d421b875",
+ 	"md_5": "a4151ae041a456df815d235ff71fd0a29a7b1b316ce86a24e3337b961663ab54",
  	"lang_codes": [
  		"en"
  	],
@@ -64,7 +67,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"dynamic_func": "RenderStaticContent",
- 							"dynamic_func_paramset": "./echart/inner-01.html"
+ 							"dynamic_func_paramset": "./echart/inner.html"
  						}
  					]
  				}

@@ -65,7 +65,7 @@ console.log(`p ${p}  => p ${x}`);
         return data;
     }
 
-    function dataNormalCDF3(sigma) {
+    function dataInverseNormalCDF3(sigma) {
         let data = [];
         // small steps
         for (let idx = 0.001; idx < 0.02; idx += 0.001) {
@@ -98,7 +98,7 @@ console.log(`p ${p}  => p ${x}`);
             // },
             {
                 type: 'line',
-                data: dataNormalCDF3(1),
+                data: dataInverseNormalCDF3(1),
             },
         ],
     };

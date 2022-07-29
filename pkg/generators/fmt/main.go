@@ -582,8 +582,14 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.ColSpanLabel = 4
 				inp.ColSpanControl = 2
 				inp.Label = trl.S{
-					"de": "<b>6b.</b> Den DAX erwarte ich in 6&nbsp;Monaten bei ",
-					"en": "<b>6b.</b> Six&nbsp;months ahead, I expect the DAX to stand at",
+					"de": `
+					   <b>6b.</b> 
+					   Den DAX erwarte ich in 6&nbsp;Monaten&nbsp;bei 
+					`,
+					"en": `
+					   <b>6b.</b> 
+					   Six&nbsp;months ahead, I expect the DAX to stand&nbsp;at
+					`,
 				}
 				inp.Suffix = trl.S{"de": "Punkten", "en": "points"}
 			}

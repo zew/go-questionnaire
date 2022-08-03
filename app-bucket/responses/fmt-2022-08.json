@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "9845495d9c786cf3846c54e93b95f804a459b0f50e4240bb91a9a21e1ac8483d",
+ 	"md_5": "6148223f2fdc9a6e62c629fde32d829d2c0e510114c26dea1de55a59f06c08c5",
  	"lang_codes": [
  		"de",
  		"en"
@@ -4522,7 +4522,7 @@
  		},
  		{
  			"label": {
- 				"de": "Sonderfrage: Inflation und Geldpolitik",
+ 				"de": "Sonderfrage: Inflation, Inflationstreiber und Geldpolitik",
  				"en": "Special Questions: Inflation, its causes, and monetary policy "
  			},
  			"description": {
@@ -4531,7 +4531,7 @@
  			},
  			"short": {
  				"de": "Inflation,\u003cbr\u003eGeldpolitik",
- 				"en": "Inflation,\u003cbr\u003eMon. Policy"
+ 				"en": "Inflation,\u003cbr\u003eMonetary Policy"
  			},
  			"style": {
  				"desktop": {
@@ -6737,7 +6737,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "[zentrales 90% Konfidenzintervall]",
- 								"en": "[central 90\u0026nbsp;pct confidence interval]"
+ 								"en": "[central 90% confidence interval]"
  							},
  							"col_span": 7,
  							"col_span_label": 1,

@@ -48,12 +48,13 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 	page := q.AddPage()
 	// page.Section = trl.S{"de": "Sonderfrage", "en": "Special"}
 	page.Label = trl.S{
-		"de": "Sonderfrage: Inflation und Geldpolitik",
+		// "de": "Sonderfrage: Inflation und Geldpolitik",
+		"de": "Sonderfrage: Inflation, Inflationstreiber und Geldpolitik",
 		"en": "Special Questions: Inflation, its causes, and monetary policy ",
 	}
 	page.Short = trl.S{
 		"de": "Inflation,<br>Geldpolitik",
-		"en": "Inflation,<br>Mon. Policy",
+		"en": "Inflation,<br>Monetary Policy",
 	}
 	page.WidthMax("48rem")
 	page.ValidationFuncName = "fmt-m2-p6"
@@ -630,7 +631,7 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 			inp.ColSpan = 7
 			inp.Label = trl.S{
 				"de": "[zentrales 90% Konfidenzintervall]",
-				"en": "[central 90&nbsp;pct confidence interval]",
+				"en": "[central 90% confidence interval]",
 			}
 			inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
 

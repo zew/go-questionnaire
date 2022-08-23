@@ -16,6 +16,7 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 	include = include || q.Survey.Year == 2021 && q.Survey.Month == 12
 	include = include || q.Survey.Year == 2022 && q.Survey.Month == 3
 	include = include || q.Survey.Year == 2022 && q.Survey.Month == 6
+	include = include || q.Survey.Year == 2022 && q.Survey.Month == 6+3
 
 	// !!!
 	// update the 3 month reference "compared to [now minus three months]"
@@ -158,11 +159,13 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 			"en": "Current valuation multiples",
 		},
 		{
-			"de": "Krieg Russ&shy;land - Ukraine",
+			// "de": "Krieg Russ&shy;land - Ukraine",
+			"de": "Russ&shy;land-Ukraine-Krieg",
 			"en": "Russia's war with Ukraine",
 		},
 		{
-			"de": "Covid-19 Pandemie",
+			// "de": "Covid-19 Pandemie",
+			"de": "Corona-Pandemie",
 			"en": "Covid-19 pandemic",
 		},
 	}
@@ -196,7 +199,7 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 			}
 			gb := qst.NewGridBuilderRadios(
 				columnTemplateLocal,
-				positiveNegative5(),
+				positiveNegative5HardBroken(),
 				inputNamesAssetClassesEuroZoneQ3,
 				radioVals6,
 				rowLabelsAssetClassesEuroZoneQ3,
@@ -212,11 +215,11 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 					der folgenden Anlageklassen?
 					
 					Orientieren Sie sich an breit gestreuten Indizes 
-					für das <b>Eurogebiet</b>.
+					für das <b><i>Eurogebiet</i></b>.
 				</p>
 
 				<p style=''>
-					Das Rendite-Risiko-Profil beurteile ich …
+					Das Rendite-Risiko-Profil von … beurteile ich …
 				</p>
 				`,
 				"en": `
@@ -251,7 +254,8 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 			}
 			gb := qst.NewGridBuilderRadios(
 				columnTemplateLocal,
-				positiveNegative5(),
+				// positiveNegative5(),
+				positiveNegative5HardBroken(),
 				namesQ2,
 				radioVals6,
 				lblsQ2,
@@ -265,7 +269,7 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 					wie beurteilen Sie das Rendite-Risko-Profil 
 					der folgenden Anlageklassen?
 
-					Orientieren Sie sich an breit gestreuten <b>globalen</b> Indizes.
+					Orientieren Sie sich an breit gestreuten <b><i>globalen</i></b> Indizes.
 				</p>
 
 				<p style=''>
@@ -311,12 +315,12 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 					Haben Entwicklungen der folgenden Faktoren 
 					Sie zu einer Revision Ihrer Einschätzungen 
 					zum Rendite-Risiko-Profil der einzelnen Assetklassen
-					im <b>Eurogebiet</b> 
-					gegenüber März 2022 bewogen?
+					im <b><i>Eurogebiet</i></b> 
+					gegenüber Juni 2022 bewogen?
 				</p>
 
 				<p style=''>
-					und wenn ja, nach oben (+) oder unten (-)
+					Und wenn ja, nach oben (+) oder unten (-)
 				</p>
 
 					`,
@@ -329,8 +333,8 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 					lead you to change your assessment 
 					of the return-risk profiles
 					of the following four asset classes 
-					(compared to March 2022)
-					in the <b>euro area</b>?
+					(compared to June 2022)
+					in the <b><i>euro area</i></b>?
 
 				</p>
 
@@ -405,7 +409,7 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 				gb.MainLabel = trl.S{
 					"de": fmt.Sprintf(`
 					<p style='position: relative; top: 0.8rem'>
-						<span>3.%v.</span> &nbsp;
+						<span  style='font-weight: bold' >3.%v.</span> &nbsp;
 						%v
 						 &nbsp; - &nbsp;  Eurogebiet 
 					</p>
@@ -415,7 +419,7 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 					),
 					"en": fmt.Sprintf(`
 					<p style='position: relative; top: 0.8rem'>
-						<span>3.%v.</span> &nbsp;
+						<span  style='font-weight: bold' >3.%v.</span> &nbsp;
 
 						%v
 						 &nbsp; - &nbsp;  euro area 

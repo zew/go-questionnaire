@@ -322,6 +322,11 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		}
 
 		// gr3a
+		offsetDestatis := 0 // next quarter
+		if osd, err := s.Param("destatis"); err == nil {
+			offsetDestatis, _ = strconv.Atoi(osd)
+		}
+
 		{
 			gr := page.AddGroup()
 			gr.Cols = 5
@@ -348,9 +353,15 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			{
 				inp := gr.AddInput()
 				inp.Label = trl.S{
-					"de": fmt.Sprintf("Aktuelles Quartal (%v)*", q.Survey.Quarter(0)),
-					"en": fmt.Sprintf("Current quarter  (%v)*", q.Survey.Quarter(0)),
+					"de": fmt.Sprintf("Aktuelles Quartal (%v)", q.Survey.Quarter(0)),
+					"en": fmt.Sprintf("Current quarter  (%v)", q.Survey.Quarter(0)),
 				}
+				if offsetDestatis != 0 {
+					for key, val := range inp.Label {
+						inp.Label[key] = val + "*"
+					}
+				}
+
 				// inp.Tooltip = trl.S{
 				// 	"de": fmt.Sprintf("Unmittelbar zurückliegendes Quartal"),
 				// 	"en": fmt.Sprintf("Most recent quarter"),
@@ -388,11 +399,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 			// row 2c quarter explanation / footnote
 
-		}
-
-		offsetDestatis := 0 // next quarter
-		if osd, err := s.Param("destatis"); err == nil {
-			offsetDestatis, _ = strconv.Atoi(osd)
 		}
 
 		if offsetDestatis != 0 {

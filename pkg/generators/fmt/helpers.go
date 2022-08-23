@@ -523,6 +523,35 @@ func positiveNegative5() []trl.S {
 
 }
 
+func positiveNegative5HardBroken() []trl.S {
+
+	tm := []trl.S{
+		{
+			"de": "stark <br> positiv",
+			"en": "strongly <br> positive",
+		},
+		{
+			"de": "leicht <br> positiv",
+			"en": "slightly <br> positive",
+		},
+		{
+			"de": "leicht <br> negativ",
+			"en": "slightly <br> negative",
+		},
+		{
+			"de": "stark <br> negativ",
+			"en": "strongly <br> negative",
+		},
+		{
+			"de": "keine <br> Angabe",
+			"en": "no <br> answer",
+		},
+	}
+
+	return tm
+
+}
+
 func importanceZeroToFive() []trl.S {
 
 	tm := []trl.S{

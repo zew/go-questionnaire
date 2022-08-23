@@ -1,14 +1,16 @@
-// https://github.com/apache/echarts
-// https://github.com/ecomfe/echarts-stat
-// https://github.com/ecomfe/awesome-echarts
-// https://echarts.apache.org/examples/en/editor.html?c=bar-histogram
+// 
 
-// import simply does not work; possibly because of stackoverflow.com/questions/71022803
+// github.com/apache/echarts
+// github.com/ecomfe/echarts-stat
+// github.com/ecomfe/awesome-echarts
+// echarts.apache.org/examples/en/editor.html?c=bar-histogram
+
+// import does not work; possibly because of stackoverflow.com/questions/71022803
 // import * as echarts from './echarts.min.js';
 // import ecStat from './ecStat.js';
 
 
-// https://survey2.zew.de/survey/?u=9990&sid=kneb1&wid=2022-08&p=1&h=9DBZ8ko6n9vv4elnU5cg4duPQFQFD36lx7VVnNjQCno#
+// survey2.zew.de/survey/?u=9990&sid=kneb1&wid=2022-08&p=1&h=9DBZ8ko6n9vv4elnU5cg4duPQFQFD36lx7VVnNjQCno#
 
 var chartDom = document.getElementById('chart_container');
 // console.log(chartDom);
@@ -22,6 +24,19 @@ function getColor() {
     let idx = colorPalette.length % counterDraws;
     return colorPalette[idx];
 }
+
+
+// histogram config
+// ======================
+
+const w  = 10;   // width
+const wh = w/2;  // width half
+
+var maxXHisto = 0;
+function getMax() {
+    return maxXHisto + 2;
+}
+
 
 
 // risky asset random draws
@@ -58,7 +73,7 @@ var ds2Example = {
 var ds3 = {
     source: [
         [25,  0],
-        [75,  10],
+        [75, 10],
         [125, 0],
         [175, 0],
         [225, 0],
@@ -75,29 +90,15 @@ var counterDraws = counterDrawsInit;  // counter for getData
 
 
 
-
+// Carolin-01-start
 var mn = 0.0; // mean
 var sd = 1.0; // standard deviation
 
 var mn = 153.0; // mean
 var sd = 15.89; // standard deviation
 
+// github.com/chen0040/js-stats
 var normDist = new jsstats.NormalDistribution(mn, sd);
-
-
-// histogram config
-// ======================
-
-// const  w = 20;   // width
-const  w = 10;   // width
-const wh = w/2;  // width half
-
-var maxXHisto = 0;
-
-function getMax() {
-    return maxXHisto+2; 
-}
-
 
 
 var ds2 = {

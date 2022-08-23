@@ -1,4 +1,4 @@
-// https://github.com/chen0040/js-stats
+// github.com/chen0040/js-stats
 
 var jsstats = jsstats || {};
 

@@ -374,7 +374,12 @@ func GenerateHashesH(w http.ResponseWriter, r *http.Request) {
 			queryString += "&override_closure=true"
 		}
 
-		url := fmt.Sprintf("%v?%v", fe.Host+cfg.PrefTS(), queryString)
+		pfx := cfg.PrefTS()
+		if fe.Host == "https://survey2.zew.de" {
+			pfx = ""
+		}
+
+		url := fmt.Sprintf("%v?%v", fe.Host+pfx, queryString)
 
 		fmt.Fprintf(b1, "<a href='%v'  target='_blank' >login as user %4v<a> \t ", url, i)
 		fmt.Fprintf(b2, "%4v\t\t%v\n", i, url)

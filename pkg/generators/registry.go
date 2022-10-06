@@ -18,12 +18,14 @@ import (
 	"github.com/zew/go-questionnaire/pkg/cloudio"
 	"github.com/zew/go-questionnaire/pkg/generators/biii"
 	"github.com/zew/go-questionnaire/pkg/generators/example"
+	"github.com/zew/go-questionnaire/pkg/generators/flit"
 	"github.com/zew/go-questionnaire/pkg/generators/fmt"
 	"github.com/zew/go-questionnaire/pkg/generators/kneb1"
 	"github.com/zew/go-questionnaire/pkg/generators/pat"
 	"github.com/zew/go-questionnaire/pkg/generators/pat1"
 	"github.com/zew/go-questionnaire/pkg/generators/pat2"
 	"github.com/zew/go-questionnaire/pkg/generators/pat3"
+	"github.com/zew/go-questionnaire/pkg/generators/pds"
 	"github.com/zew/go-questionnaire/pkg/qst"
 	"github.com/zew/go-questionnaire/pkg/tpl"
 )
@@ -33,6 +35,8 @@ type genT func(s qst.SurveyT) (*qst.QuestionnaireT, error)
 var gens = map[string]genT{
 	"example": example.Create,
 	"fmt":     fmt.Create,
+	"flit":    flit.Create,
+	"pds":    pds.Create,
 	"pat":     pat.Create,
 	"pat1":    pat1.Create,
 	"pat2":    pat2.Create,

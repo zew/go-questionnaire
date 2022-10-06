@@ -1,0 +1,146 @@
+{
+ 	"survey": {
+ 		"type": "pds",
+ 		"org": {
+ 			"en": "ZEW"
+ 		},
+ 		"name": {
+ 			"en": "Private Debt Survey"
+ 		},
+ 		"year": 2022,
+ 		"month": 10,
+ 		"deadline": "2022-10-28T23:59:00+02:00",
+ 		"params": [
+ 			{},
+ 			{}
+ 		]
+ 	},
+ 	"closing_time": "0001-01-01T00:00:00Z",
+ 	"md_5": "dc72f4f302662f89f9ca385af04cd04d534daac7d6584f7bb895e96e755ba73a",
+ 	"lang_codes": [
+ 		"en"
+ 	],
+ 	"allow_skip_forward": false,
+ 	"version_effective": 0,
+ 	"max_groups": 1,
+ 	"pages": [
+ 		{
+ 			"label": {
+ 				"en": "Chart"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"short": {
+ 				"en": "Chart"
+ 			},
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "42rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "dyn-textblock",
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"dynamic_func": "RenderStaticContent",
+ 							"dynamic_func_paramset": "./inner.html"
+ 						}
+ 					]
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"section": {
+ 				"en": "Sociodemographics"
+ 			},
+ 			"label": {
+ 				"en": "Age, origin, experience"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"short": {
+ 				"en": "Sociodemo-\u003cbr\u003egraphics"
+ 			},
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "42rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 4,
+ 					"inputs": [
+ 						{
+ 							"name": "q01_age",
+ 							"type": "number",
+ 							"max_chars": 4,
+ 							"step": 1,
+ 							"min": 15,
+ 							"max": 150,
+ 							"label": {
+ 								"en": "How old are you?"
+ 							},
+ 							"suffix": {
+ 								"en": "\u0026nbsp; years"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 1,
+ 							"col_span_control": 2,
+ 							"validator": "inRange100"
+ 						}
+ 					]
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "Ihre Eingaben sind gespeichert.",
+ 				"en": "Your entries have been saved."
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"no_navigation": true,
+ 			"finished": "0001-01-01T00:00:00Z"
+ 		}
+ 	]
+ }

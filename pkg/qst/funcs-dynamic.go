@@ -322,18 +322,27 @@ func RenderStaticContentInner(w io.Writer, subPth, site, lang string) error {
 		}
 
 	} else {
-		pth := path.Join(".", "content", site, lang, subPth) // not filepath; cloudio always has forward slash
-		bts, err = cloudio.ReadFile(pth)
-		if err != nil {
-			if errors.Is(err, os.ErrNotExist) {
-				bts, err = cloudio.ReadFile(path.Join(".", "content", site, subPth))
-				if errors.Is(err, os.ErrNotExist) {
-					bts, err = cloudio.ReadFile(path.Join(".", "content", subPth))
-				}
+
+		pths := []string{
+			path.Join(".", "content", site, lang, subPth),
+			path.Join(".", "content", site, subPth),
+			path.Join(".", "content", subPth),
+		}
+
+		var lpErr error
+		for _, pth := range pths {
+			bts, lpErr = cloudio.ReadFile(pth)
+			if lpErr == nil {
+				lenRaw := float64(len(bts)) / 1024
+				log.Printf("MarkdownH: found %v - size %4.3f kB", pth, lenRaw)
+				break
+			}
+			if errors.Is(lpErr, os.ErrNotExist) {
+				continue
 			}
 		}
-		if err != nil {
-			errDecorated := fmt.Errorf("MarkdownH: cannot open markdown %v or upwards: %w", pth, err)
+		if lpErr != nil {
+			errDecorated := fmt.Errorf("MarkdownH: cannot open markdown \n\t%w  \n\t%v", lpErr, pths)
 			log.Print(errDecorated)
 			return errDecorated
 		}
@@ -384,7 +393,7 @@ func RenderStaticContentInner(w io.Writer, subPth, site, lang string) error {
 	hp := trl.HyphenizeText(w1.String())
 
 	fmt.Fprint(w, hp)
-	fmt.Fprint(w, "\n\t</div>  <!-- markdown -->\n")
+	fmt.Fprintf(w, "\n\t</div>  <!-- markdown  %2.4f kB -->\n", float32(len(hp))/1024)
 
 	// output += "<br>\n<br>\n<br>\n<p style='font-size: 75%;'>\nRendered by russross/blackfriday</p>\n" // Inconspicuous rendering marker
 
@@ -393,7 +402,6 @@ func RenderStaticContentInner(w io.Writer, subPth, site, lang string) error {
 }
 
 // ErrorProxy - shows errors for inputs named like paramSet
-//
 func ErrorProxy(q *QuestionnaireT, inp *inputT, paramSet string) (string, error) {
 	return "", nil
 }

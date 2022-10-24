@@ -48,6 +48,31 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	{
 		page := q.AddPage()
 
+		page.Label = trl.S{"en": "Slider"}
+		page.Short = trl.S{"en": "Slider"}
+		page.WidthMax("42rem")
+
+		// gr0
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 1
+			{
+				inp := gr.AddInput()
+				inp.Type = "dyn-textblock"
+				inp.DynamicFunc = "RenderStaticContent"
+				inp.DynamicFuncParamset = "./slider/inner.html"
+				inp.ColSpan = 1
+				inp.ColSpanLabel = 1
+			}
+		}
+
+	} // page1
+
+	// page2
+	{
+		page := q.AddPage()
+
 		page.Section = trl.S{"en": "Sociodemographics"}
 		page.Label = trl.S{"en": "Age, origin, experience"}
 		page.Short = trl.S{"en": "Sociodemo-<br>graphics"}
@@ -80,7 +105,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 		}
 
-	} // page1
+	} // page2
 
 	// Report of results
 	{

@@ -1,0 +1,38 @@
+
+
+  <!-- 
+
+    inner.html is a reduction of index.html 
+    
+      * remove the outer HTML body tags;
+        but keep the CSS links from the HTML head
+
+      * prefix all js and css resources by /{{AppPrefix}}/doc/pds/slider/
+
+ -->
+
+  <link rel="stylesheet" href="/{{AppPrefix}}/doc/pds/slider/slider.css">
+
+  <div class="slider01-container">
+    <input type="range" class="slider01" id="slider01Thumb" min="0" max="100" step="10" value="50" autofocus>
+
+    <br>
+
+    <input type="number" size=3 disabled name="slider01cx1" id="">
+    <input type="number" size=3 disabled name="slider01cx2" id="">
+
+    <!--   
+    <br>
+    <br>
+    &nbsp; <a href="#" onclick="javascript:nextStep();">Next Step</a>
+    &nbsp; &nbsp;
+    &nbsp; <a href="#" onclick="javascript:forever();" >Step forever</a>
+    -->
+
+  </div>
+
+
+
+  <!-- <input name="chart_output" type="text" value="0" /> -->
+
+  <script type="text/javascript" src="/{{AppPrefix}}/doc/pds/slider/common.js"></script>

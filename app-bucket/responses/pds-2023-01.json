@@ -7,16 +7,16 @@
  		"name": {
  			"en": "Private Debt Survey"
  		},
- 		"year": 2022,
- 		"month": 10,
- 		"deadline": "2022-10-28T23:59:00+02:00",
+ 		"year": 2023,
+ 		"month": 1,
+ 		"deadline": "2030-01-01T00:00:00+01:00",
  		"params": [
  			{},
  			{}
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "dc72f4f302662f89f9ca385af04cd04d534daac7d6584f7bb895e96e755ba73a",
+ 	"md_5": "9c0dc41d0ec236898ed4fc913a10f1bc7b6438328ef2d844c5beb01b3fe62b75",
  	"lang_codes": [
  		"en"
  	],
@@ -64,7 +64,53 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"dynamic_func": "RenderStaticContent",
- 							"dynamic_func_paramset": "./inner.html"
+ 							"dynamic_func_paramset": "./welcome-page.html"
+ 						}
+ 					]
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"en": "Slider"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"short": {
+ 				"en": "Slider"
+ 			},
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "42rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "dyn-textblock",
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"dynamic_func": "RenderStaticContent",
+ 							"dynamic_func_paramset": "./slider/inner.html"
  						}
  					]
  				}

@@ -61,7 +61,22 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp := gr.AddInput()
 				inp.Type = "dyn-textblock"
 				inp.DynamicFunc = "RenderStaticContent"
-				inp.DynamicFuncParamset = "./slider/inner.html"
+				inp.DynamicFuncParamset = "./slider/inner-1.html"
+				inp.ColSpan = 1
+				inp.ColSpanLabel = 1
+			}
+		}
+
+		// gr1
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 1
+			{
+				inp := gr.AddInput()
+				inp.Type = "dyn-textblock"
+				inp.DynamicFunc = "RenderStaticContent"
+				inp.DynamicFuncParamset = "./slider/inner-2.html"
 				inp.ColSpan = 1
 				inp.ColSpanLabel = 1
 			}

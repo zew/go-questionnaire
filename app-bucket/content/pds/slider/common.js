@@ -1,36 +1,39 @@
 
 var slider01 = document.getElementById("slider01");
-
-var slider01cx1  = document.getElementsByName("slider01cx1")[0];
-var slider01cx2  = document.getElementsByName("slider01cx2")[0];
 var slider01Legend = document.getElementsByName("slider01Legend")[0];
 
-// init output windows
-// slider01cx1.value = 100 - slider01.value;
-// slider01cx2.value = slider01.value;
-// slider01Legend.value = slider01.value
-
-// slider01.value = 40; // setting an init value
+var slider02 = document.getElementById("slider02");
+var slider02Legend = document.getElementsByName("slider02Legend")[0];
 
 
 
-let initSlider = () => {
+let initSlider01 = (inst) => {
     slider01.value = 25; 
     // slider01.click();
     const evt = new Event("input");
     slider01.dispatchEvent(evt);    
 }
+let initSlider02 = (inst) => {
+    slider02.value = 25; 
+    // slider02.click();
+    const evt = new Event("input");
+    slider02.dispatchEvent(evt);    
+}
 
-// initSlider();
-window.addEventListener('load', initSlider, false);
+// init sliders;
+window.addEventListener('load', initSlider01, false);
+window.addEventListener('load', initSlider02, false);
 
 
-// update
+// update sliders
 slider01.oninput = function () {
-    // slider01cx1.value = 100 - this.value;
-    // slider01cx2.value = this.value;
     let incr = parseInt(this.value) + 5;
     slider01Legend.value =  `${this.value}  -  ${incr}`;
+}
+
+slider02.oninput = function () {
+    let incr = parseInt(this.value) + 5;
+    slider02Legend.value =  `${this.value}  -  ${incr}`;
 }
 
 

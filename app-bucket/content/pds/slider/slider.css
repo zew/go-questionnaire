@@ -9,8 +9,8 @@
     --sliderHeight: 28px;
 }
 
-.slider01-container,
-.slider01-legend,
+.slider-container,
+.slider-legend,
 xxx {
 
     /* border: 1px solid aqua; */
@@ -23,7 +23,7 @@ xxx {
 }
 
 
-.slider01-container {
+.slider-container {
 
     width: calc( 75% - 2.2rem );
     
@@ -40,14 +40,14 @@ xxx {
 
 }
 
-.slider01-legend {
+.slider-legend {
     width: calc(25% - 2.2rem);
     padding-top: 0.808rem;
 }
 
 
 
-.slider01 {
+.slider-base {
     -webkit-appearance: none;
     width:  100%;
     height: calc( var(--sliderHeight)/ 1 );
@@ -70,14 +70,14 @@ xxx {
 }
 
 /* special focus */
-.slider01:focus {
+.slider-base:focus {
     box-shadow:
         0 0 0 0.005em var(--clr-sec),
         0 0 0 0.150em var(--clr-pri-hov) inset;
     box-shadow: none;
 }
 
-.slider01:hover {
+.slider-base:hover {
     /* darkening on mouse over */
     opacity: 1;
 }
@@ -91,14 +91,18 @@ xxx {
     cannot be combined
 */
 
-.slider01::-webkit-slider-thumb {
+.slider-base::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
 }
 
-.slider01::-webkit-slider-thumb,
-xxx {
-    width:  calc(100%/20);
+.slider-base::-webkit-slider-thumb {
+    /* width:  calc(100%/20.00);
+
+
+    width:  calc(100%/20.00 + 8px);
+    position: relative;
+    left: -4px; */
 
     height: 100%;  /* not working in chrome */
     height: calc( var(--sliderHeight)/ 1 );
@@ -119,13 +123,17 @@ xxx {
     background-attachment: inherit;
     background-repeat: no-repeat;
     background-position-x: center;
-    background-position-y: bottom;
+    background-position-y: top;
 }
 
 
-.slider01::-moz-range-thumb,
-xxx {
-    width:  calc(100%/20);
+.slider-base::-moz-range-thumb {
+    /* width:  calc(100%/20.00);
+
+
+    width:  calc(100%/20.00 + 8px);
+    position: relative;
+    left: -4px; */
 
     height: 100%;  /* not working in chrome */
     height: calc( var(--sliderHeight)/ 1 );
@@ -146,10 +154,42 @@ xxx {
     background-attachment: inherit;
     background-repeat: no-repeat;
     background-position-x: center;
-    background-position-y: bottom;
+    background-position-y: top;
 }
 
-.slider01:focus::-webkit-slider-thumb {
+
+
+.slider-20::-webkit-slider-thumb {
+    width:  calc(100%/20.00);
+    /* 
+    width:  calc(100%/20.00 + 8px);
+    position: relative;
+    left: -4px; */
+}
+.slider-20::-moz-range-thumb {
+    width:  calc(100%/20.00);
+    /* 
+    width:  calc(100%/20.00 + 8px);
+    position: relative;
+    left: -4px; */
+}
+
+
+.slider-10::-webkit-slider-thumb {
+    width:  calc(100%/10.00);
+    width:  calc(100%/10.00 + 18px);
+    position: relative;
+    left: -10px;
+}
+.slider-10::-moz-range-thumb {
+    width:  calc(100%/10.00);
+    width:  calc(100%/10.00 + 18px);
+    position: relative;
+    left: -10px;
+}
+
+
+.slider-base:focus::-webkit-slider-thumb {
     box-shadow: none;
     box-shadow:
         0 0 0.1em 0.055em var(--clr-sec),
@@ -162,26 +202,27 @@ xxx {
         ;
 }
 
-.slider01:focus::-moz-range-thumb{
+.slider-base:focus::-moz-range-thumb{
     box-shadow:
         0 0 0.1em 0.055em var(--clr-sec),
         0 0 0.1em 0.340em rgba(2, 134, 228, 0.12)
         ;
 }
 
-.slider01-container input {
+.slider-container input {
     font-size: initial;
 }
 
 
 input[name=slider01Legend],
+input[name=slider02Legend],
 xxx {
     width: 5.5rem;
     margin: 0;
 }
 
 
-div.slider01-tick{
+div.slidertick-20 {
     display: inline-block;
 
     position: relative;
@@ -191,7 +232,8 @@ div.slider01-tick{
     left: -0.5px;
 
     width: 5%;
-    width: calc(100%/20);
+    width: calc(100%/20.00);
+    /* width: calc(100%/20.39); */
     height: 0.4rem;
     margin:  0;
     padding: 0;
@@ -201,7 +243,62 @@ div.slider01-tick{
 
 }
 
-div.slider01-tick div {
+div.slidertick-20 div {
+    position: relative;
+    left: -0.31rem;
+     top: -0.505rem;
+     font-size: 0.4rem;
+     font-size: 0.6rem;
+
+
+    font-size: 0.7rem;
+    left: -0.431rem;
+    top:  -0.905rem;
+}
+
+/* developer.mozilla.org/en-US/docs/Web/CSS/:nth-child */
+
+.slidertick-20:nth-child(1) {
+    /* border-left:    1.002px solid darkslategrey; */
+}
+
+.slidertick-20:nth-child(20) {
+    width: calc(100%/20.00 - 1.4%) ;
+    /* border:   1.00px solid red; */
+}
+
+.slidertick-20:nth-child(21) {
+    width: 1.4%;
+    border-left:   none;
+    border-right:   1.00px solid darkslategrey;
+    /* border: 1.00px solid darkblue; */
+}
+
+
+
+
+div.slidertick-10 {
+    display: inline-block;
+
+    position: relative;
+    top: 0.025rem;
+    top: 0.35rem;
+    
+    left: -0.2px;
+
+    width: 5%;
+    width: calc(100%/10.00);
+    width: calc(100%/10.49);
+    height: 0.4rem;
+    margin:  0;
+    padding: 0;
+
+    border-left:  1px solid darkslategrey;
+    /* border-right: 1px solid darkslategrey; */
+
+}
+
+div.slidertick-10 div {
     position: relative;
     left: -0.31rem;
      top: -0.505rem;
@@ -215,32 +312,20 @@ div.slider01-tick div {
 }
 /* developer.mozilla.org/en-US/docs/Web/CSS/:nth-child */
 
-.slider01-tick:nth-child(1),
-xxx
-{
+.slidertick-10:nth-child(1) {
     /* border-left:    1.002px solid darkslategrey; */
 }
 
-.slider01-tick:nth-child(20),
-xxx
-{
-    /* border-right:   1.002px solid darkslategrey; */
-}
 
-.slider01-tick:nth-child(20),
-xxx
-{
-    width: calc(100%/20 - 1.4%) ;
+.slidertick-10:nth-child(10) {
+    width: calc(100%/10.00 - 1.4%) ;
     /* border:   1.00px solid red; */
 }
 
-.slider01-tick:nth-child(21),
-xxx
-{
+.slidertick-10:nth-child(11) {
     width: 1.4%;
     border-left:   none;
     border-right:   1.00px solid darkslategrey;
-
     /* border: 1.00px solid darkblue; */
 }
 

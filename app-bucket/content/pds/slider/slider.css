@@ -1,24 +1,80 @@
 /* slider */
-/* https://www.w3schools.com/howto/howto_js_rangeslider.asp */
+/* www.w3schools.com/howto/howto_js_rangeslider.asp */
+
+
+:root {
+    /* background image position */
+    --sliderHeight: 36px;
+    --sliderHeight: 24px;
+    --sliderHeight: 28px;
+}
+
+.slider01-container,
+.slider01-legend,
+xxx {
+
+    /* border: 1px solid aqua; */
+    display: inline-block;
+    vertical-align: top;
+    
+    height: calc(var(--sliderHeight)/ 1);
+
+    margin: 1rem 1rem;
+}
+
 
 .slider01-container {
-    width: calc(100%-2rem);
+
+    width: calc( 75% - 2.2rem );
+    
+    border:  none;
+    /* border: 1px solid gray; */
+    outline: none;
+    
     /* background-color: lightcyan; */
-    margin: 1rem 2rem;
+    
+    /* inline-block bin-packing  */
+    padding: 0;
+    line-height: 100%;
+    font-size:     0px;
+
 }
+
+.slider01-legend {
+    width: calc(25% - 2.2rem);
+    padding-top: 0.808rem;
+}
+
+
 
 .slider01 {
     -webkit-appearance: none;
     width:  100%;
-    height: 40px;
-    background: darkgray;
+    height: calc( var(--sliderHeight)/ 1 );
+
+    /* unset global CSS styles for input elements  */
+    margin:  0;
+    padding: 0;
     outline: none;
-    border-radius: 0.2rem;
+    border:  none; 
+
+    background-color: transparent;
+    background-color: lightgray;
+
+    border-radius: 0.0rem;
 
     /* darkening on mouse over */
     opacity: 0.9;
     -webkit-transition: .2s;
     transition: opacity .2s;
+}
+
+/* special focus */
+.slider01:focus {
+    box-shadow:
+        0 0 0 0.005em var(--clr-sec),
+        0 0 0 0.150em var(--clr-pri-hov) inset;
+    box-shadow: none;
 }
 
 .slider01:hover {
@@ -30,8 +86,9 @@
 
 
 /* 
-    following two need to repeated
-    identical; cannot be combined
+    slider thumb
+    following classes two and three need to be identical; 
+    cannot be combined
 */
 
 .slider01::-webkit-slider-thumb {
@@ -41,39 +98,138 @@
 
 .slider01::-webkit-slider-thumb,
 xxx {
-    width:  23px;
-    height: 38px;
-    background: lightgrey;
-    border-radius: 0.2rem;
+    width:  calc(100%/20);
+
+    height: 100%;  /* not working in chrome */
+    height: calc( var(--sliderHeight)/ 1 );
+
+
+    background-color: transparent;
+    border: none;
+    /* border: 1px solid red; */
+    border-radius: 0.0rem;
     cursor: pointer;
 
-    border-right:  1px solid #222;
-    border-bottom: 1px solid #222;
+    /* border-right:  1px solid #222; */
+    /* border-bottom: 1px solid #222; */
+
+    background-image: url("/survey/doc/pds/slider/img/pointer.png");
+    background-size: contain;
+    background-size: cover;
+    background-attachment: inherit;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: bottom;
 }
 
 
 .slider01::-moz-range-thumb,
 xxx {
-    width:  23px;
-    height: 38px;
-    background: lightgrey;
-    border-radius: 0.2rem;
+    width:  calc(100%/20);
+
+    height: 100%;  /* not working in chrome */
+    height: calc( var(--sliderHeight)/ 1 );
+
+
+    background-color: transparent;
+    border: none;
+    /* border: 1px solid red; */
+    border-radius: 0.0rem;
     cursor: pointer;
 
-    border-right:  1px solid #222;
-    border-bottom: 1px solid #222;
+    /* border-right:  1px solid #222; */
+    /* border-bottom: 1px solid #222; */
+
+    background-image: url("/survey/doc/pds/slider/img/pointer.png");
+    background-size: contain;
+    background-size: cover;
+    background-attachment: inherit;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: bottom;
 }
 
+.slider01:focus::-webkit-slider-thumb {
+    box-shadow: none;
+    box-shadow:
+        0 0 0 0.105em var(--clr-sec),
+        0 0 0 0.245em var(--clr-pri-hov),
+        0 0 0 0.640em transparent ;
+}
 
+.slider01-container input {
+    font-size: initial;
+}
 
 input[name=slider01cx1],
 input[name=slider01cx2],
 xxx{
     width: 2.5rem;
+
+    margin: 0;
 }
 input[name=slider01cx1],
 xxx{
     float:right;
 }
 
+input[name=slider01Legend],
+xxx {
+    width: 6.5rem;
+    margin: 0;
+}
 
+
+div.slider01-tick{
+    display: inline-block;
+
+    position: relative;
+    top: 0.025rem;
+    top: 0.35rem;
+    
+    left: -0.5px;
+
+    width: 5%;
+    width: calc(100%/20);
+    height: 0.4rem;
+    margin:  0;
+    padding: 0;
+
+    border-left:  1px solid darkslategrey;
+    /* border-right: 1px solid darkslategrey; */
+
+}
+
+div.slider01-tick div {
+    position: relative;
+    left: -0.31rem;
+     top: -0.505rem;
+     font-size: 0.4rem;
+     font-size: 0.6rem;
+
+
+    font-size: 0.7rem;
+    left: -0.431rem;
+    top:  -0.905rem;
+}
+/* developer.mozilla.org/en-US/docs/Web/CSS/:nth-child */
+
+.slider01-tick:nth-child(1),
+xxx
+{
+    border-left:    1.002px solid darkslategrey;
+}
+
+.slider01-tick:nth-child(20),
+xxx
+{
+    /* border-right:   1.002px solid darkslategrey; */
+}
+
+.slider01-tick:nth-child(21),
+xxx
+{
+    width: 0%;
+    margin-left: -2.05px;
+    border-right:   1.00px solid darkslategrey;
+}

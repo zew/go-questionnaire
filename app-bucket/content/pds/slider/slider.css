@@ -152,30 +152,31 @@ xxx {
 .slider01:focus::-webkit-slider-thumb {
     box-shadow: none;
     box-shadow:
-        0 0 0 0.105em var(--clr-sec),
-        0 0 0 0.245em var(--clr-pri-hov),
-        0 0 0 0.640em transparent ;
+        0 0 0.1em 0.055em var(--clr-sec),
+        0 0 0.1em 0.145em var(--clr-pri-hov),
+        0 0 0.1em 0.340em rgba(0,44,44,0.7) 
+        ;
+    box-shadow:
+        0 0 0.1em 0.055em var(--clr-sec),
+        0 0 0.1em 0.340em rgba(2, 134, 228, 0.12)
+        ;
+}
+
+.slider01:focus::-moz-range-thumb{
+    box-shadow:
+        0 0 0.1em 0.055em var(--clr-sec),
+        0 0 0.1em 0.340em rgba(2, 134, 228, 0.12)
+        ;
 }
 
 .slider01-container input {
     font-size: initial;
 }
 
-input[name=slider01cx1],
-input[name=slider01cx2],
-xxx{
-    width: 2.5rem;
-
-    margin: 0;
-}
-input[name=slider01cx1],
-xxx{
-    float:right;
-}
 
 input[name=slider01Legend],
 xxx {
-    width: 6.5rem;
+    width: 5.5rem;
     margin: 0;
 }
 
@@ -217,7 +218,7 @@ div.slider01-tick div {
 .slider01-tick:nth-child(1),
 xxx
 {
-    border-left:    1.002px solid darkslategrey;
+    /* border-left:    1.002px solid darkslategrey; */
 }
 
 .slider01-tick:nth-child(20),
@@ -226,10 +227,21 @@ xxx
     /* border-right:   1.002px solid darkslategrey; */
 }
 
+.slider01-tick:nth-child(20),
+xxx
+{
+    width: calc(100%/20 - 1.4%) ;
+    /* border:   1.00px solid red; */
+}
+
 .slider01-tick:nth-child(21),
 xxx
 {
-    width: 0%;
-    margin-left: -2.05px;
+    width: 1.4%;
+    border-left:   none;
     border-right:   1.00px solid darkslategrey;
+
+    /* border: 1.00px solid darkblue; */
 }
+
+

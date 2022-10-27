@@ -31,9 +31,9 @@ import (
 
 // No line wrapping between element 1 and 2
 //
-//  But line wrapping *inside* each of them.
+//	But line wrapping *inside* each of them.
 //
-//  el1 and el2 must be inline-block, for whitespace nowrap to work.
+//	el1 and el2 must be inline-block, for whitespace nowrap to work.
 func nobreakGlue(el1, glue, el2 string) string {
 
 	if el1 == "" || el2 == "" {
@@ -230,6 +230,17 @@ type groupT struct {
 	Style *css.StylesResponsive `json:"style,omitempty"` // pointer, to avoid empty JSON blocks
 }
 
+// WrappedPageT for creating helper funcs outside
+// the package - *temporarily*.
+type WrappedPageT struct {
+	*pageT
+}
+
+// WrapPageT is a wrapper for pageT
+func WrapPageT(pt *pageT) *WrappedPageT {
+	return &WrappedPageT{pt}
+}
+
 // AddInput creates a new input
 // and adds this input to the group's inputs
 func (gr *groupT) AddInput() *inputT {
@@ -285,7 +296,8 @@ func (gr *groupT) Vertical(argRows ...int) {
 // WidthMax limits width in desktop view
 // for instance to 30rem;
 // mobile view: no limitation
-//     compare page.WidthMax
+//
+//	compare page.WidthMax
 func (gr *groupT) WidthMax(s string) {
 	gr.Style = css.NewStylesResponsive(gr.Style)
 	gr.Style.Desktop.StyleBox.WidthMax = s
@@ -806,7 +818,9 @@ var debugShuffling = false
 // RandomizeOrder creates a shuffled ordering of groups
 // determined by UserID and .RandomizationGroup;
 // groups with RandomizationGroup==0 retain their position
-//  on fixed order position;
+//
+//	on fixed order position;
+//
 // others get a randomized position
 func (q *QuestionnaireT) RandomizeOrder(pageIdx int) []int {
 
@@ -1432,12 +1446,16 @@ func (q *QuestionnaireT) LabelIsOutline(s string) bool {
 // radio input labels are concatenated from bottom to top;
 // resulting in multiple identical labels;
 // i.e. three times
-// 		Your growth estimate? Ger        O  O  O
+//
+//	Your growth estimate? Ger        O  O  O
+//
 // and three more times
-// 		Your growth estimate? Ger   US   O  O  O
+//
+//	Your growth estimate? Ger   US   O  O  O
 //
 // or they might differ only in a suffix
-// 		Are you Alice?        Yes O   No O
+//
+//	Are you Alice?        Yes O   No O
 //
 // use cleanseIdentical for the first case
 // use cleansePrefixes for the second case

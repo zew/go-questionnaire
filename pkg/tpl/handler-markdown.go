@@ -46,7 +46,7 @@ func RenderStaticContent(w io.Writer, subPth, site, lang string) error {
 		bts, err = os.ReadFile("./README.md")
 		if err != nil {
 			s := fmt.Sprintf("MarkdownH: cannot open README.md in app root: %v", err)
-			log.Printf(s)
+			log.Print(s)
 			return fmt.Errorf(s+" %w", err)
 		}
 		// rewrite links in README.MD from app root
@@ -69,7 +69,6 @@ func RenderStaticContent(w io.Writer, subPth, site, lang string) error {
 		}
 
 		var lpErr error
-		bts := []byte{}
 		for _, pth := range pths {
 			bts, lpErr = cloudio.ReadFile(pth)
 			if lpErr == nil {
@@ -108,6 +107,7 @@ func RenderStaticContent(w io.Writer, subPth, site, lang string) error {
 			subst := []byte("(" + cfg.PrefTS("/doc/"))
 			bts = bytes.Replace(bts, needle, subst, -1)
 		}
+		// log.Printf("  bts repl README:      %2.4f kB", float32(len(bts))/1024)
 
 	}
 
@@ -117,18 +117,24 @@ func RenderStaticContent(w io.Writer, subPth, site, lang string) error {
 	//     /urlprefix/
 	bts = bytes.Replace(bts, []byte("/{{AppPrefix}}"), []byte(cfg.Pref()), -1)
 
-	// Since blackfriday version 1.52, bullet lists only work for UNIX line breaks
-	// bts = bytes.ReplaceAll(bts, []byte("\r\n"), []byte("\n"))
-
 	fmt.Fprint(w, "\n\t<div class='markdown'>\n")
 
 	ext := path.Ext(subPth)
 	w1 := &strings.Builder{}
 	if ext == ".html" {
-		fmt.Fprint(w1, string(bts)) // html direct
+		// no conversion
 	} else {
-		fmt.Fprint(w1, string(blackfriday.Run(bts))) // render markdown
+		// since blackfriday version 1.52,
+		// 	conversion only works for UNIX line breaks
+		if false {
+			bts = bytes.ReplaceAll(bts, []byte("\r\n"), []byte("\n"))
+		}
+
+		// log.Printf("  markdown:  %2.4f kB", float32(len(bts))/1024)
+		bts = blackfriday.Run(bts) // render markdown
+		// log.Printf("  html:      %2.4f kB", float32(len(bts))/1024)
 	}
+	fmt.Fprint(w1, string(bts))
 
 	hp := trl.HyphenizeText(w1.String())
 

@@ -118,6 +118,7 @@ xxx {
     /* border-bottom: 1px solid #222; */
 
     background-image: url("/survey/doc/pds/slider/img/pointer.png");
+    background-image: var(--img-url-pointer);
     background-size: contain;
     background-size: cover;
     background-attachment: inherit;
@@ -149,6 +150,7 @@ xxx {
     /* border-bottom: 1px solid #222; */
 
     background-image: url("/survey/doc/pds/slider/img/pointer.png");
+    background-image: var(--img-url-pointer);
     background-size: contain;
     background-size: cover;
     background-attachment: inherit;

@@ -19,3 +19,8 @@ Unternehmen
 
 URL - private-debt-survey.zew.de
 
+
+## Questions 2022-11
+
+Alles in Englisch?
+

@@ -1,10 +1,83 @@
 package pds
 
 import (
+	"fmt"
+
 	"github.com/zew/go-questionnaire/pkg/ctr"
 	"github.com/zew/go-questionnaire/pkg/qst"
 	"github.com/zew/go-questionnaire/pkg/trl"
 )
+
+func helperVolumesGroup(
+	page *qst.WrappedPageT,
+	name string,
+) {
+
+	// gr1
+	{
+		gr := page.AddGroup()
+		gr.Cols = 1
+		gr.BottomVSpacers = 1
+		{
+			inp := gr.AddInput()
+			inp.Type = "number"
+			inp.Name = fmt.Sprintf("%v_main", name)
+
+			inp.Label = trl.S{
+				"de": `Please state the volume (in million Euro) of deals closed in Q4 2022.`,
+			}
+			inp.Suffix = trl.S{"de": "Million Euro"}
+
+			inp.MaxChars = 12
+			inp.Step = 1
+			inp.Min = 0
+			inp.Max = 1000 * 1000
+			// inp.Validator = "inRange100"
+
+			inp.ColSpan = 1
+			inp.ColSpanLabel = 3
+			inp.ColSpanControl = 2
+		}
+
+	}
+
+	// gr2
+	{
+		gr := page.AddGroup()
+		gr.Cols = 1
+		gr.BottomVSpacers = 3
+
+		lbls := map[string]string{
+			"low":   "Lower Mid-Market (0-15m € EBITDA)",
+			"mid":   "Core Mid-Market (15-50m € EBITDA)",
+			"upper": "Upper Mid-Market (>50m € EBITDA)",
+		}
+
+		for _, suffx := range []string{"low", "mid", "upper"} {
+
+			inp := gr.AddInput()
+			inp.Type = "number"
+			inp.Name = fmt.Sprintf("%v_%v", name, suffx)
+
+			inp.Label = trl.S{
+				"de": fmt.Sprintf("- %v", lbls[suffx]),
+			}
+			inp.Suffix = trl.S{"de": "Million Euro"}
+
+			inp.MaxChars = 12
+			inp.Step = 1
+			inp.Min = 0
+			inp.Max = 1000 * 1000
+			// inp.Validator = "inRange100"
+
+			inp.ColSpan = 1
+			inp.ColSpanLabel = 3
+			inp.ColSpanControl = 2
+		}
+
+	}
+
+}
 
 // Create questionnaire
 func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
@@ -13,18 +86,18 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 	q := qst.QuestionnaireT{}
 	q.Survey = s
-	q.LangCodes = []string{"en"} // governs default language code
+	q.LangCodes = []string{"de"} // governs default language code
 
-	q.Survey.Org = trl.S{"en": "ZEW"}
-	q.Survey.Name = trl.S{"en": "Private Debt Survey"}
+	q.Survey.Org = trl.S{"de": "ZEW"}
+	q.Survey.Name = trl.S{"de": "Private Debt Survey"}
 	// q.Variations = 1
 
 	// page 0
 	{
 		page := q.AddPage()
 
-		page.Label = trl.S{"en": "Chart"}
-		page.Short = trl.S{"en": "Chart"}
+		page.Label = trl.S{"de": "Chart"}
+		page.Short = trl.S{"de": "Chart"}
 		page.WidthMax("42rem")
 
 		// gr0
@@ -48,8 +121,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	{
 		page := q.AddPage()
 
-		page.Label = trl.S{"en": "Slider"}
-		page.Short = trl.S{"en": "Slider"}
+		page.Label = trl.S{"de": "Slider"}
+		page.Short = trl.S{"de": "Slider"}
 		page.WidthMax("42rem")
 
 		// gr0
@@ -88,37 +161,13 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	{
 		page := q.AddPage()
 
-		page.Section = trl.S{"en": "Sociodemographics"}
-		page.Label = trl.S{"en": "Age, origin, experience"}
-		page.Short = trl.S{"en": "Sociodemo-<br>graphics"}
+		page.Section = trl.S{"de": "Section 1"}
+		page.Label = trl.S{"de": "Label long"}
+		page.Short = trl.S{"de": "Label<br>short"}
 		page.WidthMax("42rem")
 
-		// gr0
-		{
-			gr := page.AddGroup()
-			gr.Cols = 4
-			gr.BottomVSpacers = 1
-
-			{
-				inp := gr.AddInput()
-				inp.Type = "number"
-				inp.Name = "q01_age"
-
-				inp.Label = trl.S{"en": "How old are you?"}
-				inp.MaxChars = 4
-				inp.Step = 1
-				inp.Min = 15
-				inp.Max = 150
-				inp.Validator = "inRange100"
-
-				inp.ColSpan = 4
-				inp.ColSpanLabel = 1
-				inp.ColSpanControl = 2
-				// inp.Suffix = trl.S{"en": "years"}
-				inp.Suffix = trl.S{"en": "&nbsp; years"}
-			}
-
-		}
+		helperVolumesGroup(qst.WrapPageT(page), "xx")
+		helperVolumesGroup(qst.WrapPageT(page), "yy")
 
 	} // page2
 

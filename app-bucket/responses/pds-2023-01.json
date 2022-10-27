@@ -16,7 +16,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "54848a3185bce468d526c22ba7a6d3b2e1ddbe134704985ff54b709e607c2f7e",
+ 	"md_5": "81bb7865f99db354155c955b13851838d2f9c958e4c5d34d38988b1819a62c57",
  	"lang_codes": [
  		"de"
  	],
@@ -26,15 +26,16 @@
  	"pages": [
  		{
  			"label": {
- 				"de": "Chart"
+ 				"de": "Begrüßung"
  			},
  			"description": {
  				"de": "",
  				"en": ""
  			},
  			"short": {
- 				"de": "Chart"
+ 				"de": "Begrüßung"
  			},
+ 			"suppress_in_progressbar": true,
  			"style": {
  				"desktop": {
  					"grid_container_style": {},
@@ -237,7 +238,23 @@
  							"col_span_label": 3,
  							"col_span_control": 2
  						}
- 					]
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"margin": "0 0 0 2rem"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
  				},
  				{
  					"bottom_vspacers": 1,
@@ -313,7 +330,23 @@
  							"col_span_label": 3,
  							"col_span_control": 2
  						}
- 					]
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"margin": "0 0 0 2rem"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
  				}
  			]
  		},

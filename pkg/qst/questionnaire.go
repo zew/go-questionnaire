@@ -429,6 +429,7 @@ type pageT struct {
 	NavigationCondition string `json:"navigation_condition,omitempty"` // see NoNavigation
 
 	// SuppressInProgressbar is a weak form of NoNavigation
+	// 		because navigation buttons are still shown in body
 	SuppressInProgressbar bool `json:"suppress_in_progressbar,omitempty"`
 
 	navigationSequenceNum int // page number in navigation order; dynamically computed in MainH()

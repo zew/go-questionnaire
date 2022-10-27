@@ -3,6 +3,7 @@ package pds
 import (
 	"fmt"
 
+	"github.com/zew/go-questionnaire/pkg/css"
 	"github.com/zew/go-questionnaire/pkg/ctr"
 	"github.com/zew/go-questionnaire/pkg/qst"
 	"github.com/zew/go-questionnaire/pkg/trl"
@@ -45,6 +46,8 @@ func helperVolumesGroup(
 	{
 		gr := page.AddGroup()
 		gr.Cols = 1
+		gr.Style = css.NewStylesResponsive(gr.Style)
+		gr.Style.Desktop.StyleBox.Margin = "0 0 0 2rem"
 		gr.BottomVSpacers = 3
 
 		lbls := map[string]string{
@@ -64,7 +67,7 @@ func helperVolumesGroup(
 			}
 			inp.Suffix = trl.S{"de": "Million Euro"}
 
-			inp.MaxChars = 12
+			inp.MaxChars = 10
 			inp.Step = 1
 			inp.Min = 0
 			inp.Max = 1000 * 1000
@@ -95,9 +98,10 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	// page 0
 	{
 		page := q.AddPage()
+		page.SuppressInProgressbar = true
 
-		page.Label = trl.S{"de": "Chart"}
-		page.Short = trl.S{"de": "Chart"}
+		page.Label = trl.S{"de": "Begrüßung"}
+		page.Short = trl.S{"de": "Begrüßung"}
 		page.WidthMax("42rem")
 
 		// gr0

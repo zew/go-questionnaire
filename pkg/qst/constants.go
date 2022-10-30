@@ -12,6 +12,7 @@ var implementedTypes = map[string]interface{}{
 	"checkbox":             nil, // standalone checkbox
 	"radio":                nil, // new in version 2
 	"hidden":               nil, // no rendering
+	"javascript-block":     nil, // script block
 	"dyn-composite-scalar": nil, // placeholder for an input of a dyn-composite - rendered by the dyn-composite
 
 	/*
@@ -87,7 +88,8 @@ func (h horizontalAlignment) String() string {
 
 // On colsTotal == 0  division by zero case:
 // We return no CSS.
-// 		=> No width restriction - elements grow horizontally as much as needed
+//
+//	=> No width restriction - elements grow horizontally as much as needed
 func colWidth(colsElement float32, colsTotal float32) string {
 	css := ""
 	if colsTotal < 1 { // Prevent any division by zero

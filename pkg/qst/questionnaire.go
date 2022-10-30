@@ -83,7 +83,7 @@ type inputT struct {
 	Tooltip   trl.S  `json:"tooltip,omitempty"`
 	AccessKey string `json:"accesskey,omitempty"`
 
-	/*Colspan determines, how many column slots of the group column layout
+	/* Colspan determines, how many column slots of the group column layout
 	the input occupies.
 	Default value is assumed to be 1.
 	Increase it manually in the generator function.
@@ -120,6 +120,8 @@ type inputT struct {
 	Style    *css.StylesResponsive `json:"style,omitempty"` // pointer, to avoid empty JSON blocks
 	StyleLbl *css.StylesResponsive `json:"style_label,omitempty"`
 	StyleCtl *css.StylesResponsive `json:"style_control,omitempty"`
+
+	JSBlockStrings map[string]trl.S `json:"js_block_strings,omitempty"`
 }
 
 // NewInput returns an input filled in with globally enumerated label, decription etc.
@@ -443,8 +445,10 @@ type pageT struct {
 
 	Groups []*groupT `json:"groups,omitempty"`
 
+	// we want to migrate those to inputs of type javascript-block
 	ValidationFuncName string `json:"validation_func_name,omitempty"` // file name containing javascript validation func template
-	ValidationFuncMsg  trl.S  `json:"validation_func_msg,omitempty"`
+	// there should be several strings - key/value - not just one "msg"
+	ValidationFuncMsg trl.S `json:"validation_func_msg,omitempty"`
 }
 
 // AddGroup creates a new group
@@ -649,34 +653,6 @@ func (q *QuestionnaireT) EditPage(idx int) *pageT {
 	}
 	return q.Pages[idx]
 }
-
-/*
-// RemoveGroup from page
-func (q *QuestionnaireT) RemoveGroup(pageIdx, grpIdx int) {
-
-	if pageIdx < 0 || pageIdx > len(q.Pages)-1 {
-		log.Panicf(
-			"AddPageAfter(): %v pages - valid indexes are 0...%v",
-			len(q.Pages), len(q.Pages)-1)
-	}
-
-	if grpIdx < 0 || grpIdx > len(q.Pages[pageIdx].Groups)-1 {
-		log.Panicf(
-			"AddPageAfter(): %v pages - valid indexes are 0...%v",
-			len(q.Pages[pageIdx].Groups),
-			len(q.Pages[pageIdx].Groups)-1,
-		)
-	}
-
-	copy(
-		q.Pages[pageIdx].Groups[grpIdx+0:],
-		q.Pages[pageIdx].Groups[grpIdx+1:],
-	) // shift one slot to the left
-
-	q.Pages[pageIdx].Groups = q.Pages[pageIdx].Groups[:len(q.Pages[pageIdx].Groups)-1]
-
-}
-*/
 
 // AddFinishButtonNextToLast from page
 //
@@ -913,6 +889,31 @@ func (q *QuestionnaireT) RandomizeOrder(pageIdx int) []int {
 
 }
 
+// RenderJS prints the contents of a JavaScript template into the HTML response;
+// used for page level JavaScript blocks;
+// used also for inputs of type 'javascript-block'
+func (q *QuestionnaireT) RenderJS(w io.Writer, fileName string, keyVals map[string]trl.S) {
+
+	tplFile := fileName + ".js"
+
+	mp := map[string]string{}
+
+	for k, v := range keyVals {
+		mp[k] = v.Tr(q.LangCode)
+	}
+
+	t, err := ParseJavaScript(tplFile)
+	if err != nil {
+		log.Printf("Error parsing tpl %v: %v", tplFile, err)
+	} else {
+		err := t.Execute(w, mp)
+		if err != nil {
+			log.Printf("Error executing tpl %v: %v", tplFile, err)
+		}
+	}
+
+}
+
 // PageHTML generates HTML for a specific page of the questionnaire
 func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 
@@ -1120,21 +1121,7 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 	//
 	//
 	if page.ValidationFuncName != "" {
-
-		tplFile := page.ValidationFuncName + ".js"
-
-		mp := map[string]string{}
-		mp["msg"] = page.ValidationFuncMsg.Tr(q.LangCode)
-		t, err := ParseJavaScript(tplFile)
-		if err != nil {
-			log.Printf("Error parsing tpl %v: %v", tplFile, err)
-		} else {
-			err := t.Execute(w, mp)
-			if err != nil {
-				log.Printf("Error executing tpl %v: %v", tplFile, err)
-			}
-		}
-
+		q.RenderJS(w, page.ValidationFuncName, map[string]trl.S{"msg": page.ValidationFuncMsg})
 	}
 
 	ret := w.String()
@@ -1751,7 +1738,7 @@ func ParseJavaScript(tName string) (*template.Template, error) {
 
 	w := &strings.Builder{}
 	fmt.Fprintf(w, "<script>\n")
-	fmt.Fprintf(w, string(cnts))
+	fmt.Fprint(w, string(cnts))
 	fmt.Fprintf(w, "console.log('JS tpl %v successfully added')", pth)
 	fmt.Fprintf(w, "</script>\n")
 

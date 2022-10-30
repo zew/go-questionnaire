@@ -2,11 +2,13 @@ package pds
 
 import (
 	"fmt"
+	"log"
 
 	"github.com/zew/go-questionnaire/pkg/css"
 	"github.com/zew/go-questionnaire/pkg/ctr"
 	"github.com/zew/go-questionnaire/pkg/qst"
 	"github.com/zew/go-questionnaire/pkg/trl"
+	"github.com/zew/util"
 )
 
 func helperVolumesGroup(
@@ -78,6 +80,27 @@ func helperVolumesGroup(
 			inp.ColSpanControl = 2
 		}
 
+		inp := gr.AddInput()
+		inp.ColSpanControl = 1
+		inp.Type = "javascript-block"
+		inp.Name = "lowMidUpperSum"
+		inp.JSBlockStrings = map[string]trl.S{
+			"msg": {
+				"de": "Sind Sie sicher?",
+				"en": "Are you sure?",
+			},
+		}
+		for idx, suffx := range []string{"main", "low", "mid", "upper"} {
+			inpNamePlaceholder := fmt.Sprintf("%v_%v", "inp", idx+1) // {{.inp_1}}, {{.inp_2}}, ...
+			nm := fmt.Sprintf("%v_%v", name, suffx)
+			inp.JSBlockStrings[inpNamePlaceholder] = trl.S{
+				"de": nm,
+				"en": nm,
+			}
+		}
+
+		log.Print(util.IndentedDump(inp.JSBlockStrings))
+
 	}
 
 }
@@ -102,6 +125,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 		page.Label = trl.S{"de": "Begrüßung"}
 		page.Short = trl.S{"de": "Begrüßung"}
+
+		page.ValidationFuncName = ""
 		page.WidthMax("42rem")
 
 		// gr0

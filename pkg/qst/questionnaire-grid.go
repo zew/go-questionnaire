@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"io"
 	"math"
+	"path"
 	"sort"
 	"strings"
 
@@ -150,8 +151,6 @@ func (inp *inputT) appendTooltip(w io.Writer, langCode string) {
 
 }
 
-//
-//
 // GroupHTMLGridBased renders a group of inputs to GroupHTMLGridBased
 func (q QuestionnaireT) GroupHTMLGridBased(pageIdx, grpIdx int) string {
 
@@ -316,6 +315,15 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 
 	case "textblock":
 		// no op
+
+	case "javascript-block":
+		sb := &strings.Builder{}
+		q.RenderJS(
+			sb,
+			path.Join(q.Survey.Type, inp.Name),
+			inp.JSBlockStrings,
+		)
+		ctrl = sb.String()
 
 	case "button":
 		ctrl = fmt.Sprintf(

@@ -16,7 +16,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "81bb7865f99db354155c955b13851838d2f9c958e4c5d34d38988b1819a62c57",
+ 	"md_5": "606970e1ef4ca91f4f82c5e7795ed9e6c7c4d5d07dbfc787b5daa58162857bb8",
  	"lang_codes": [
  		"de"
  	],
@@ -193,7 +193,7 @@
  						{
  							"name": "xx_low",
  							"type": "number",
- 							"max_chars": 12,
+ 							"max_chars": 10,
  							"step": 1,
  							"max": 1000000,
  							"label": {
@@ -209,7 +209,7 @@
  						{
  							"name": "xx_mid",
  							"type": "number",
- 							"max_chars": 12,
+ 							"max_chars": 10,
  							"step": 1,
  							"max": 1000000,
  							"label": {
@@ -225,7 +225,7 @@
  						{
  							"name": "xx_upper",
  							"type": "number",
- 							"max_chars": 12,
+ 							"max_chars": 10,
  							"step": 1,
  							"max": 1000000,
  							"label": {
@@ -237,6 +237,33 @@
  							"col_span": 1,
  							"col_span_label": 3,
  							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "module1",
+ 							"type": "javascript-block",
+ 							"col_span_control": 1,
+ 							"js_block_strings": {
+ 								"inp_1": {
+ 									"de": "xx_main",
+ 									"en": "xx_main"
+ 								},
+ 								"inp_2": {
+ 									"de": "xx_low",
+ 									"en": "xx_low"
+ 								},
+ 								"inp_3": {
+ 									"de": "xx_mid",
+ 									"en": "xx_mid"
+ 								},
+ 								"inp_4": {
+ 									"de": "xx_upper",
+ 									"en": "xx_upper"
+ 								},
+ 								"msg": {
+ 									"de": "Sind Sie sicher?",
+ 									"en": "Are you sure?"
+ 								}
+ 							}
  						}
  					],
  					"style": {
@@ -285,7 +312,7 @@
  						{
  							"name": "yy_low",
  							"type": "number",
- 							"max_chars": 12,
+ 							"max_chars": 10,
  							"step": 1,
  							"max": 1000000,
  							"label": {
@@ -301,7 +328,7 @@
  						{
  							"name": "yy_mid",
  							"type": "number",
- 							"max_chars": 12,
+ 							"max_chars": 10,
  							"step": 1,
  							"max": 1000000,
  							"label": {
@@ -317,7 +344,7 @@
  						{
  							"name": "yy_upper",
  							"type": "number",
- 							"max_chars": 12,
+ 							"max_chars": 10,
  							"step": 1,
  							"max": 1000000,
  							"label": {
@@ -329,6 +356,33 @@
  							"col_span": 1,
  							"col_span_label": 3,
  							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "module1",
+ 							"type": "javascript-block",
+ 							"col_span_control": 1,
+ 							"js_block_strings": {
+ 								"inp_1": {
+ 									"de": "yy_main",
+ 									"en": "yy_main"
+ 								},
+ 								"inp_2": {
+ 									"de": "yy_low",
+ 									"en": "yy_low"
+ 								},
+ 								"inp_3": {
+ 									"de": "yy_mid",
+ 									"en": "yy_mid"
+ 								},
+ 								"inp_4": {
+ 									"de": "yy_upper",
+ 									"en": "yy_upper"
+ 								},
+ 								"msg": {
+ 									"de": "Sind Sie sicher?",
+ 									"en": "Are you sure?"
+ 								}
+ 							}
  						}
  					],
  					"style": {

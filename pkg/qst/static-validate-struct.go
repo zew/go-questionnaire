@@ -87,28 +87,30 @@ func (q *QuestionnaireT) TranslationCompleteness() error {
 }
 
 // Validate performs integrity tests - suitable for every request
-// 		waveId, langCodes valid?
-// 		input type valid?
-// 		submit button jump page exists
-// 		validator func exists?
-// 		input names uniqueness?
+//
+//	waveId, langCodes valid?
+//	input type valid?
+//	submit button jump page exists
+//	validator func exists?
+//	input names uniqueness?
 //
 // Validate also does some initialization stuff - needed only at JSON creation time
-//		Setting page and group width to 100
-//		Setting values for radiogroups
-//		Setting navigation sequence enumeration values
+//
+//	Setting page and group width to 100
+//	Setting values for radiogroups
+//	Setting navigation sequence enumeration values
 func (q *QuestionnaireT) Validate() error {
 
 	if q.Survey.Type == "" || !Mustaz09Underscore(q.Survey.Type) {
 		s := fmt.Sprintf("WaveID must contain a SurveyID string consisting of lower case letters: %v", q.Survey.Type)
-		log.Printf(s)
+		log.Print(s)
 		return fmt.Errorf(s)
 	}
 
 	for _, lc := range q.LangCodes {
 		if _, ok := cfg.Get().Mp["lang_"+lc]; !ok {
 			s := fmt.Sprintf("LangCodes val %v is not a key in cfg.Get().Mp['lang_...']", lc)
-			log.Printf(s)
+			log.Print(s)
 			return fmt.Errorf(s)
 		}
 	}
@@ -131,7 +133,7 @@ func (q *QuestionnaireT) Validate() error {
 
 			// a number of columns per group must be set
 			if q.Pages[i1].Groups[i2].Cols < 1 {
-				return fmt.Errorf("Page %v - Group %v - Number of columns must be greater 0: ", i1, i2)
+				return fmt.Errorf("page %v - group %v - number of columns must be greater 0: ", i1, i2)
 			}
 
 			for i3 := 0; i3 < len(q.Pages[i1].Groups[i2].Inputs); i3++ {
@@ -159,13 +161,14 @@ func (q *QuestionnaireT) Validate() error {
 						q.Pages[i1].Groups[i2].Inputs[i3].ColSpanLabel = 0
 					}
 				}
-				/* 				// same for colspan
-				   				if (!inp.Label.Empty() || !inp.Desc.Empty()) && inp.ColSpan == 0 {
-				   					q.Pages[i1].Groups[i2].Inputs[i3].ColSpan = 1
-				   					if inp.Type == "label-as-input" || inp.Type == "button" {
-				   						q.Pages[i1].Groups[i2].Inputs[i3].ColSpan = 0
-				   					}
-				   				}
+				/*
+					// same for colspan
+					if (!inp.Label.Empty() || !inp.Desc.Empty()) && inp.ColSpan == 0 {
+						q.Pages[i1].Groups[i2].Inputs[i3].ColSpan = 1
+						if inp.Type == "label-as-input" || inp.Type == "button" {
+							q.Pages[i1].Groups[i2].Inputs[i3].ColSpan = 0
+						}
+					}
 				*/
 
 				// button has label - but never colspanlabel
@@ -234,6 +237,7 @@ func (q *QuestionnaireT) Validate() error {
 	// preflight for composite funcs
 	// make sure, input names are unique
 	// 		multiple radios are distinguished by their radioval
+	// 		multiple javascript-blocks are distinguished by JSBlockStrings
 	names := map[string]int{}
 
 	// prevent doubles of radios and non-radios
@@ -249,8 +253,8 @@ func (q *QuestionnaireT) Validate() error {
 				_, _, err := cF(q, seqIdx, paramSetIdx)
 				if err != nil {
 					return fmt.Errorf(
-						`Page %v - Group %v - Composite func %v
-						err %v
+						`page %v - group %v - composite func %v
+						err %w
 						`,
 						i1, i2,
 						compFuncNameWithParamSet,
@@ -266,6 +270,10 @@ func (q *QuestionnaireT) Validate() error {
 				// grp := q.Pages[i1].Elements[i2].Name
 
 				if inp.IsLayout() {
+					continue
+				}
+
+				if inp.Type == "javascript-block" {
 					continue
 				}
 
@@ -308,17 +316,17 @@ func (q *QuestionnaireT) Validate() error {
 	for k, v := range names {
 		if v > 1 {
 			s := fmt.Sprintf("Page element '%v' is not unique  (%v)", k, v)
-			log.Printf(s)
+			log.Print(s)
 			return fmt.Errorf(s)
 		}
 		if k != strings.ToLower(k) {
 			s := fmt.Sprintf("Page element '%v' is not lower case  (%v)", k, v)
-			log.Printf(s)
+			log.Print(s)
 			return fmt.Errorf(s)
 		}
 		if _, ok := namesRadio[k]; ok {
 			s := fmt.Sprintf("Page element '%v' input as radio and non-radio (%v)", k, v)
-			log.Printf(s)
+			log.Print(s)
 			return fmt.Errorf(s)
 		}
 	}

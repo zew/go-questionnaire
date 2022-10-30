@@ -16,7 +16,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "606970e1ef4ca91f4f82c5e7795ed9e6c7c4d5d07dbfc787b5daa58162857bb8",
+ 	"md_5": "5bec5371b1937fd9471d314b804f883e551149efd381ea57b0aaf4620d5ced1e",
  	"lang_codes": [
  		"de"
  	],
@@ -239,26 +239,16 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "module1",
+ 							"name": "lowMidUpperSum",
  							"type": "javascript-block",
  							"col_span_control": 1,
  							"js_block_strings": {
- 								"inp_1": {
- 									"de": "xx_main",
- 									"en": "xx_main"
- 								},
- 								"inp_2": {
- 									"de": "xx_low",
- 									"en": "xx_low"
- 								},
- 								"inp_3": {
- 									"de": "xx_mid",
- 									"en": "xx_mid"
- 								},
- 								"inp_4": {
- 									"de": "xx_upper",
- 									"en": "xx_upper"
- 								},
+ 								"inp_1": "xx_main",
+ 								"inp_2": "xx_low",
+ 								"inp_3": "xx_mid",
+ 								"inp_4": "xx_upper"
+ 							},
+ 							"js_block_translations": {
  								"msg": {
  									"de": "Sind Sie sicher?",
  									"en": "Are you sure?"
@@ -358,26 +348,16 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "module1",
+ 							"name": "lowMidUpperSum",
  							"type": "javascript-block",
  							"col_span_control": 1,
  							"js_block_strings": {
- 								"inp_1": {
- 									"de": "yy_main",
- 									"en": "yy_main"
- 								},
- 								"inp_2": {
- 									"de": "yy_low",
- 									"en": "yy_low"
- 								},
- 								"inp_3": {
- 									"de": "yy_mid",
- 									"en": "yy_mid"
- 								},
- 								"inp_4": {
- 									"de": "yy_upper",
- 									"en": "yy_upper"
- 								},
+ 								"inp_1": "yy_main",
+ 								"inp_2": "yy_low",
+ 								"inp_3": "yy_mid",
+ 								"inp_4": "yy_upper"
+ 							},
+ 							"js_block_translations": {
  								"msg": {
  									"de": "Sind Sie sicher?",
  									"en": "Are you sure?"

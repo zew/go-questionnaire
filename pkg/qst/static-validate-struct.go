@@ -265,7 +265,7 @@ func (q *QuestionnaireT) Validate() error {
 
 			for i3 := 0; i3 < len(q.Pages[i1].Groups[i2].Inputs); i3++ {
 
-				s := fmt.Sprintf("Page %v - Group %v - Input %v: ", i1, i2, i3)
+				s := fmt.Sprintf("page %v - group %v - input %v: ", i1, i2, i3)
 				inp := q.Pages[i1].Groups[i2].Inputs[i3]
 				// grp := q.Pages[i1].Elements[i2].Name
 

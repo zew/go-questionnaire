@@ -188,6 +188,12 @@ func (q QuestionnaireT) GroupHTMLGridBased(pageIdx, grpIdx int) string {
 			continue
 		}
 
+		// no grid cells
+		if inp.IsHidden() {
+			fmt.Fprint(wInner, q.InputHTMLGrid(pageIdx, grpIdx, inpIdx, q.LangCode))
+			continue
+		}
+
 		inp.Style = css.NewStylesResponsive(inp.Style)
 
 		//
@@ -321,6 +327,7 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 		q.RenderJS(
 			sb,
 			path.Join(q.Survey.Type, inp.Name),
+			inp.JSBlockTrls,
 			inp.JSBlockStrings,
 		)
 		ctrl = sb.String()

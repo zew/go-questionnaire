@@ -121,7 +121,8 @@ type inputT struct {
 	StyleLbl *css.StylesResponsive `json:"style_label,omitempty"`
 	StyleCtl *css.StylesResponsive `json:"style_control,omitempty"`
 
-	JSBlockStrings map[string]trl.S `json:"js_block_strings,omitempty"`
+	JSBlockStrings map[string]string `json:"js_block_strings,omitempty"`
+	JSBlockTrls    map[string]trl.S  `json:"js_block_translations,omitempty"`
 }
 
 // NewInput returns an input filled in with globally enumerated label, decription etc.
@@ -177,9 +178,13 @@ func (inp inputT) IsLabelOnly() bool {
 	return false
 }
 
-// IsHidden types having neither visible ctrl nor label part
+// IsHidden types having neither visible ctrl nor label part;
+// thus no grid-cells are rendered
 func (inp inputT) IsHidden() bool {
 	if inp.Type == "hidden" {
+		return true
+	}
+	if inp.Type == "javascript-block" {
 		return true
 	}
 	if inp.Type == "dyn-composite-scalar" {
@@ -892,14 +897,23 @@ func (q *QuestionnaireT) RandomizeOrder(pageIdx int) []int {
 // RenderJS prints the contents of a JavaScript template into the HTML response;
 // used for page level JavaScript blocks;
 // used also for inputs of type 'javascript-block'
-func (q *QuestionnaireT) RenderJS(w io.Writer, fileName string, keyVals map[string]trl.S) {
+func (q *QuestionnaireT) RenderJS(
+	w io.Writer,
+	fileName string,
+	translations map[string]trl.S,
+	jsStrings map[string]string,
+
+) {
 
 	tplFile := fileName + ".js"
 
-	mp := map[string]string{}
+	mp := map[string]interface{}{}
 
-	for k, v := range keyVals {
+	for k, v := range translations {
 		mp[k] = v.Tr(q.LangCode)
+	}
+	for k, v := range jsStrings {
+		mp[k] = template.JS(v)
 	}
 
 	t, err := ParseJavaScript(tplFile)
@@ -1121,7 +1135,12 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 	//
 	//
 	if page.ValidationFuncName != "" {
-		q.RenderJS(w, page.ValidationFuncName, map[string]trl.S{"msg": page.ValidationFuncMsg})
+		q.RenderJS(
+			w,
+			page.ValidationFuncName,
+			map[string]trl.S{"msg": page.ValidationFuncMsg},
+			map[string]string{},
+		)
 	}
 
 	ret := w.String()

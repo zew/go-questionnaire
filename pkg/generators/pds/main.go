@@ -45,10 +45,22 @@ func helperVolumesGroup(
 	// gr2
 	{
 		gr := page.AddGroup()
-		gr.Cols = 1
+		gr.Cols = 2
 		gr.Style = css.NewStylesResponsive(gr.Style)
 		gr.Style.Desktop.StyleBox.Margin = "0 0 0 2rem"
 		gr.BottomVSpacers = 3
+
+		{
+
+			inp := gr.AddInput()
+			inp.Type = "textblock"
+			inp.ColSpan = 1
+			inp.Label = trl.S{
+				"de": `Please state the volume (in million Euro) of deals
+				 closed in Q4 2022 by market segment: `,
+			}
+
+		}
 
 		lbls := map[string]string{
 			"low":   "Lower Mid-Market (0-15m € EBITDA)",
@@ -73,7 +85,7 @@ func helperVolumesGroup(
 			inp.Max = 1000 * 1000
 			// inp.Validator = "inRange100"
 
-			inp.ColSpan = 1
+			inp.ColSpan = 2
 			inp.ColSpanLabel = 3
 			inp.ColSpanControl = 2
 		}
@@ -178,6 +190,31 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.DynamicFuncParamset = "./slider/inner-2.html"
 				inp.ColSpan = 1
 				inp.ColSpanLabel = 1
+			}
+		}
+
+		// gr2
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 3
+			{
+				inp := gr.AddInput()
+				inp.Name = "slider01"
+				inp.Type = "range"
+				inp.Min = 0
+				inp.Max = 100
+				inp.Step = 5
+				inp.Style.Desktop.Width = "90%"
+
+				inp.Label = trl.S{
+					"de": "Normal Slider",
+					"en": "Normal Slider",
+				}
+
+				inp.ColSpan = 1
+				inp.ColSpanLabel = 2
+				inp.ColSpanControl = 8
 			}
 		}
 

@@ -366,7 +366,7 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 			ctrl += fmt.Sprintf("<span data='label-as-input'>%v</span> ", inp.Label.Tr(q.LangCode))
 		}
 
-	case "text", "number", "hidden", "checkbox", "radio":
+	case "text", "number", "range", "hidden", "checkbox", "radio":
 		rspvl := inp.Response
 
 		checked := ""
@@ -384,13 +384,16 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 		}
 
 		width := fmt.Sprintf("width:%.2frem", float32(inp.MaxChars)*0.65)
+		if inp.Type == "range" {
+			width = "width: 100%"
+		}
 		if inp.Type == "checkbox" || inp.Type == "radio" {
 			width = ""
 		}
 
 		stepping := ""
 		excelFormat := ""
-		if inp.Type == "number" {
+		if inp.Type == "number" || inp.Type == "range" {
 			if inp.Step != 0 {
 				if inp.Step >= 1 {
 					stepping = fmt.Sprintf(" step='%.0f'  ", inp.Step)
@@ -420,7 +423,7 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 			// onInvalid = fmt.Sprintf("oninvalid='setCustomValidity(\"%v\")' oninput='setCustomValidity(\"\")'", inp.OnInvalid.TrSilent(langCode))
 			onInvalid = fmt.Sprintf("data-validation_msg='%v'", inp.OnInvalid.TrSilent(langCode))
 		} else {
-			if inp.Type == "number" {
+			if inp.Type == "number" || inp.Type == "range" {
 				if inp.Min != 0 || inp.Max != 0 {
 					txt := fmt.Sprintf(cfg.Get().Mp["entry_range"].TrSilent(langCode), inp.Min, inp.Max)
 					if inp.Step != 0 && inp.Step != 1 {

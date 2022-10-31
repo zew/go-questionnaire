@@ -16,7 +16,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "50bf2b3e03589f79b5fe60eeb44adb315057a3e767ce81f250f771b01474469d",
+ 	"md_5": "1c36e3fd416af337df3520f7b549dad2d7becc1527dd30983d77758a25a8ec44",
  	"lang_codes": [
  		"de"
  	],
@@ -130,10 +130,10 @@
  				},
  				{
  					"bottom_vspacers": 3,
- 					"columns": 1,
+ 					"columns": 11,
  					"inputs": [
  						{
- 							"name": "slider01",
+ 							"name": "range01",
  							"type": "range",
  							"step": 5,
  							"max": 100,
@@ -141,9 +141,84 @@
  								"de": "Nor\u0026shy;mal Slider",
  								"en": "Nor\u0026shy;mal Slider"
  							},
- 							"col_span": 1,
+ 							"col_span": 7,
+ 							"col_span_label": 2,
+ 							"col_span_control": 8,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"width": "90%"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "range01_display",
+ 							"type": "text",
+ 							"max_chars": 8,
+ 							"col_span": 2,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "range01_noanswer",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "ke. Antwort",
+ 								"en": "no an\u0026shy;swer"
+ 							},
+ 							"col_span": 2,
  							"col_span_label": 1,
- 							"col_span_control": 8
+ 							"col_span_control": 1,
+ 							"value_radio": "xx",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"col": "auto/1"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"col": "auto/1"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "range",
+ 							"type": "javascript-block",
+ 							"col_span_control": 1,
+ 							"js_block_strings": {
+ 								"inputName": "range01"
+ 							}
  						}
  					]
  				}
@@ -214,8 +289,26 @@
  							"label": {
  								"de": "Please state the volume (in million Euro) of deals\n\t\t\t\t closed in Q4 2022 by market segment: "
  							},
- 							"col_span": 1,
- 							"col_span_label": 1
+ 							"col_span": 2,
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"width": "60%"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"width": "96%"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "xx_low",
@@ -331,8 +424,26 @@
  							"label": {
  								"de": "Please state the volume (in million Euro) of deals\n\t\t\t\t closed in Q4 2022 by market segment: "
  							},
- 							"col_span": 1,
- 							"col_span_label": 1
+ 							"col_span": 2,
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"width": "60%"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"width": "96%"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "yy_low",

@@ -40,8 +40,7 @@
 
     <style>
       .cont {
-        /* width: 75%;  */
-        width: 68%; 
+        width: 82%; 
         margin: 1em 10%; 
         margin-left: 2%;
         margin-top: 2.2rem; 
@@ -49,24 +48,30 @@
         font-size: 70%;
       }
 
+      .cont tr  td {
+        width: calc(100% / 10  - 6.8%);
+      }
+
       .cont tr:nth-child(1)  td {
-        width: calc(100% / 10);
-        background-color: lightblue;
         background-color: var(--clr-sec-lgt2);
         text-align: center;
-
         border-bottom: 1px solid lightgray;
 
       }
       .cont tr:nth-child(2)  td {
-        width: calc(100% / 10);
-        background-color: lightgoldenrodyellow;
         background-color: var(--clr-sec-lgt1);
         text-align: center;
       }
 
       .cont tr  td {
         border-right: 1px solid lightgray;
+      }
+      .cont tr  td:nth-child(11) {
+        border-right:  none;
+        width: 6.8%;
+        /* text-align: right; */
+        background-color: transparent;
+        padding-left: 1.5rem;
       }
 
     </style>
@@ -86,6 +91,8 @@
           <td> 35 - 40 </td>
           <td> 40 - 45 </td>
           <td> 45 - 50 </td>
+          
+          <td> ke. Ang. </td>
         </tr>
         <tr>
           <td>  <input type="radio" name="xx" id="">  </td>
@@ -98,6 +105,8 @@
           <td>  <input type="radio" name="xx" id="">  </td>
           <td>  <input type="radio" name="xx" id="">  </td>
           <td>  <input type="radio" name="xx" id="">  </td>
+          
+          <td>  <input type="radio" name="no_answer" id="">  </td>
         </tr>
       </table>
     
@@ -107,10 +116,10 @@
       
       
       <!-- <label for="fader">Volume </label> -->
-      <input type="range" min="0" max="100"  id="fader" 
-        step="1" list="volsettings"  style="width:80%" value="20">
+      <!-- <input type="range" min="0" max="100"  id="fader" 
+        step="1" list="range-scale"  style="width:80%" value="20"> -->
 
-      <datalist id="volsettings">
+      <datalist id="range-scale">
         <option>  0</option>
         <option  style="font-size: 2rem;"> 10</option>
         <option  style="font-size: 2rem;"> 20</option>

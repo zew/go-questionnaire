@@ -54,11 +54,15 @@ func helperVolumesGroup(
 
 			inp := gr.AddInput()
 			inp.Type = "textblock"
-			inp.ColSpan = 1
+			inp.ColSpan = 2
 			inp.Label = trl.S{
 				"de": `Please state the volume (in million Euro) of deals
 				 closed in Q4 2022 by market segment: `,
 			}
+
+			inp.Style = css.NewStylesResponsive(inp.Style)
+			inp.Style.Desktop.StyleBox.Width = "60%"
+			inp.Style.Mobile.StyleBox.Width = "96%"
 
 		}
 
@@ -196,15 +200,16 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		// gr2
 		{
 			gr := page.AddGroup()
-			gr.Cols = 1
+			gr.Cols = 11
 			gr.BottomVSpacers = 3
 			{
 				inp := gr.AddInput()
-				inp.Name = "slider01"
+				inp.Name = "range01"
 				inp.Type = "range"
 				inp.Min = 0
 				inp.Max = 100
 				inp.Step = 5
+				inp.Style = css.NewStylesResponsive(inp.Style)
 				inp.Style.Desktop.Width = "90%"
 
 				inp.Label = trl.S{
@@ -212,10 +217,52 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					"en": "Normal Slider",
 				}
 
-				inp.ColSpan = 1
+				inp.ColSpan = 7
 				inp.ColSpanLabel = 2
 				inp.ColSpanControl = 8
 			}
+			{
+				inp := gr.AddInput()
+				inp.Name = "range01_display"
+				inp.Type = "text"
+				inp.MaxChars = 8
+				inp.ColSpan = 2
+				inp.ColSpanLabel = 0
+				inp.ColSpanControl = 1
+			}
+			{
+				inp := gr.AddInput()
+				inp.Name = "range01_noanswer"
+				inp.Type = "radio"
+				inp.ColSpan = 2
+				inp.Label = trl.S{
+					"de": "nicht verfügb.",
+					"en": "not available",
+				}
+				inp.ValueRadio = "xx"
+				inp.ColSpanLabel = 1
+				inp.ColSpanControl = 1
+
+				// inp.ControlTop()
+				// inp.ControlBottom()
+
+				inp.StyleCtl = css.NewStylesResponsive(inp.StyleCtl)
+				inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
+
+				inp.StyleCtl.Desktop.StyleGridItem.Col = "auto/1"
+				inp.StyleLbl.Desktop.StyleGridItem.Col = "auto/1"
+			}
+
+			{
+				inp := gr.AddInput()
+				inp.ColSpanControl = 1
+				inp.Type = "javascript-block"
+				inp.Name = "range"
+
+				inp.JSBlockStrings = map[string]string{}
+				inp.JSBlockStrings["inputName"] = "range01" // as above
+			}
+
 		}
 
 	} // page1

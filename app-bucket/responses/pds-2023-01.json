@@ -16,7 +16,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "1c36e3fd416af337df3520f7b549dad2d7becc1527dd30983d77758a25a8ec44",
+ 	"md_5": "96f99afec0f0fbaa856db92b14a71dca136d183a9061b3c90e9644906e420a51",
  	"lang_codes": [
  		"de"
  	],
@@ -66,6 +66,398 @@
  							"col_span_label": 1,
  							"dynamic_func": "RenderStaticContent",
  							"dynamic_func_paramset": "./welcome-page.html"
+ 						}
+ 					]
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"section": {
+ 				"de": "Section 1"
+ 			},
+ 			"label": {
+ 				"de": "Label long"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"short": {
+ 				"de": "Label\u003cbr\u003eshort"
+ 			},
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "42rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "What GICS sectors provides the most attractive \n\t\t\t\t\tin\u0026shy;vest\u0026shy;ment opportunities in the next three months? \n\t\t\t\t\tPlease rank the top three."
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 9,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Energy"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "xx_prio1",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "energy"
+ 						},
+ 						{
+ 							"name": "xx_prio2",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "energy"
+ 						},
+ 						{
+ 							"name": "xx_prio3",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "energy"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Materials"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "xx_prio1",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "materials"
+ 						},
+ 						{
+ 							"name": "xx_prio2",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "materials"
+ 						},
+ 						{
+ 							"name": "xx_prio3",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "materials"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "In\u0026shy;dus\u0026shy;tri\u0026shy;als"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "xx_prio1",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "industrials"
+ 						},
+ 						{
+ 							"name": "xx_prio2",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "industrials"
+ 						},
+ 						{
+ 							"name": "xx_prio3",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "industrials"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Cons\u0026shy;umer Discretionary"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "xx_prio1",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "consumer_discretionary"
+ 						},
+ 						{
+ 							"name": "xx_prio2",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "consumer_discretionary"
+ 						},
+ 						{
+ 							"name": "xx_prio3",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "consumer_discretionary"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Cons\u0026shy;umer Staples"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "xx_prio1",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "consumer_staples"
+ 						},
+ 						{
+ 							"name": "xx_prio2",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "consumer_staples"
+ 						},
+ 						{
+ 							"name": "xx_prio3",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "consumer_staples"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Health Care"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "xx_prio1",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "health_care"
+ 						},
+ 						{
+ 							"name": "xx_prio2",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "health_care"
+ 						},
+ 						{
+ 							"name": "xx_prio3",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "health_care"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Financials"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "xx_prio1",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "financials"
+ 						},
+ 						{
+ 							"name": "xx_prio2",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "financials"
+ 						},
+ 						{
+ 							"name": "xx_prio3",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "financials"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Information Technology"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "xx_prio1",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "information_technology"
+ 						},
+ 						{
+ 							"name": "xx_prio2",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "information_technology"
+ 						},
+ 						{
+ 							"name": "xx_prio3",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "information_technology"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Communication Services"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "xx_prio1",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "communication_services"
+ 						},
+ 						{
+ 							"name": "xx_prio2",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "communication_services"
+ 						},
+ 						{
+ 							"name": "xx_prio3",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "communication_services"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Utilities"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "xx_prio1",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "utilities"
+ 						},
+ 						{
+ 							"name": "xx_prio2",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "utilities"
+ 						},
+ 						{
+ 							"name": "xx_prio3",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "utilities"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Real Estate"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "xx_prio1",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "real_estate"
+ 						},
+ 						{
+ 							"name": "xx_prio2",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "real_estate"
+ 						},
+ 						{
+ 							"name": "xx_prio3",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "real_estate"
+ 						},
+ 						{
+ 							"name": "prio123",
+ 							"type": "javascript-block",
+ 							"col_span_control": 1,
+ 							"js_block_strings": {
+ 								"inp_1": "xx_prio0",
+ 								"inp_2": "xx_prio1",
+ 								"inp_3": "xx_prio2",
+ 								"inputBaseName": "xx"
+ 							},
+ 							"js_block_translations": {
+ 								"msg": {
+ 									"de": "Keine Prio zweimal",
+ 									"en": "Priorities not twice"
+ 								}
+ 							}
  						}
  					]
  				}
@@ -172,8 +564,8 @@
  							"name": "range01_noanswer",
  							"type": "radio",
  							"label": {
- 								"de": "ke. Antwort",
- 								"en": "no an\u0026shy;swer"
+ 								"de": "nicht verfügb.",
+ 								"en": "not available"
  							},
  							"col_span": 2,
  							"col_span_label": 1,
@@ -213,7 +605,7 @@
  							}
  						},
  						{
- 							"name": "range",
+ 							"name": "prio123",
  							"type": "javascript-block",
  							"col_span_control": 1,
  							"js_block_strings": {
@@ -226,7 +618,7 @@
  		},
  		{
  			"section": {
- 				"de": "Section 1"
+ 				"de": "Section 2"
  			},
  			"label": {
  				"de": "Label long"
@@ -370,8 +762,8 @@
  							},
  							"js_block_translations": {
  								"msg": {
- 									"de": "Sind Sie sicher?",
- 									"en": "Are you sure?"
+ 									"de": "Addiert sicht nicht auf. Trotzdem weiter?",
+ 									"en": "Does not add up. Continue?"
  								}
  							}
  						}
@@ -505,8 +897,8 @@
  							},
  							"js_block_translations": {
  								"msg": {
- 									"de": "Sind Sie sicher?",
- 									"en": "Are you sure?"
+ 									"de": "Addiert sicht nicht auf. Trotzdem weiter?",
+ 									"en": "Does not add up. Continue?"
  								}
  							}
  						}

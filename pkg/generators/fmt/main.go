@@ -185,8 +185,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				rowLabelsEuroGerUSGlob1,
 			)
 			gb.MainLabel = trl.S{
-				"de": "<b>1.</b> Die gesamtwirtschaftliche Situation beurteilen wir zurzeit als",
-				"en": "<b>1.</b> We estimate the current overall macroeconomic situation as being",
+				"de": "<b>1.</b> &nbsp; Die gesamtwirtschaftliche Situation beurteilen wir zurzeit als",
+				"en": "<b>1.</b> &nbsp; We estimate the current overall macroeconomic situation as being",
 			}
 			gr := page.AddGrid(gb)
 			gr.OddRowsColoring = true
@@ -202,8 +202,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				rowLabelsEuroGerUSGlob1,
 			)
 			gb.MainLabel = trl.S{
-				"de": "<b>2a.</b> Die gesamtwirtschaftliche Situation wird sich mittelfristig (<bx>6</bx>&nbsp;Mo.)",
-				"en": "<b>2a.</b> In the medium-term (<bx>6</bx>&nbsp;months), the overall macroeconomic situation will",
+				"de": "<b>2a.</b> &nbsp; Die gesamtwirtschaftliche Situation wird sich mittelfristig (<bx>6</bx>&nbsp;Mo.)",
+				"en": "<b>2a.</b> &nbsp; In the medium-term (<bx>6</bx>&nbsp;months), the overall macroeconomic situation will",
 			}
 			gr := page.AddGrid(gb)
 			gr.OddRowsColoring = true
@@ -221,8 +221,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.Type = "textblock"
 				inp.ColSpan = 10
 				inp.Label = trl.S{
-					"de": "<b>2b.</b> Für wie wahrscheinlich halten Sie die folgenden mittelfristigen (<bx>6</bx>&nbsp;Mo.) Entwicklungen der gesamtwirtschaftlichen Situation in Deutschland?",
-					"en": "<b>2b.</b> Please assess the probability of the following medium-term (<bx>6</bx>&nbsp;months) developments of the overall macroeconomic situation in Germany (in percent).",
+					"de": "<b>2b.</b> &nbsp; Für wie wahrscheinlich halten Sie die folgenden mittelfristigen (<bx>6</bx>&nbsp;Mo.) Entwicklungen der gesamtwirtschaftlichen Situation in Deutschland?",
+					"en": "<b>2b.</b> &nbsp; Please assess the probability of the following medium-term (<bx>6</bx>&nbsp;months) developments of the overall macroeconomic situation in Germany (in percent).",
 				}
 
 				inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
@@ -337,8 +337,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.ColSpan = 5
 				inp.ColSpanLabel = 5
 				inp.Label = trl.S{
-					"de": fmt.Sprintf("<b>2c.</b> Die Wahrscheinlichkeit eines negativen BIP-Wachstums in Deutschland (Wachstum des realen & saisonbereinigten BIP zum Vorquartal) liegt bei"), //nextQ()
-					"en": fmt.Sprintf("<b>2c.</b> The probability of a negative GDP growth in Germany (quarterly growth of the seasonally adjusted real GDP) will be"),                         // nextQ()
+					"de": fmt.Sprint("<b>2c.</b> &nbsp; Die Wahrscheinlichkeit eines negativen BIP-Wachstums in Deutschland (Wachstum des realen & saisonbereinigten BIP zum Vorquartal) liegt bei"), //nextQ()
+					"en": fmt.Sprint("<b>2c.</b> &nbsp; The probability of a negative GDP growth in Germany (quarterly growth of the seasonally adjusted real GDP) will be"),                         // nextQ()
 				}
 			}
 		}
@@ -447,8 +447,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				rowLabelsEuroGerUSGlob1,
 			)
 			gb.MainLabel = trl.S{
-				"de": "<b>3.</b> Die jährliche gesamtwirtschaftliche Inflationsrate wird mittelfristig (<bx>6</bx>&nbsp;Mo.)",
-				"en": "<b>3.</b> In the medium-term (<bx>6</bx>&nbsp;months), the annual inflation rate will",
+				"de": "<b>3.</b> &nbsp; Die jährliche gesamtwirtschaftliche Inflationsrate wird mittelfristig (<bx>6</bx>&nbsp;Mo.)",
+				"en": "<b>3.</b> &nbsp; In the medium-term (<bx>6</bx>&nbsp;months), the annual inflation rate will",
 			}
 			gr := page.AddGrid(gb)
 			gr.OddRowsColoring = true
@@ -466,8 +466,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				rowLabelsEuroGerUSGlob2,
 			)
 			gb.MainLabel = trl.S{
-				"de": "<b>4.</b> Die <i>kurzfristigen</i> Zinsen (3-Mo.-Interbanksätze) werden mittelfristig (<bx>6</bx>&nbsp;Mo.)",
-				"en": "<b>4.</b> In the medium-term (<bx>6</bx>&nbsp;months), <i>short-term</i> interest rates (3-month interbank rates) will",
+				"de": "<b>4.</b> &nbsp; Die <i>kurzfristigen</i> Zinsen (3-Mo.-Interbanksätze) werden mittelfristig (<bx>6</bx>&nbsp;Mo.)",
+				"en": "<b>4.</b> &nbsp; In the medium-term (<bx>6</bx>&nbsp;months), <i>short-term</i> interest rates (3-month interbank rates) will",
 			}
 			gr := page.AddGrid(gb)
 			gr.OddRowsColoring = true
@@ -500,8 +500,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				rowLabelsEuroGerUSGlob,
 			)
 			gb.MainLabel = trl.S{
-				"de": "<b>5.</b> Die <i>langfristigen</i> Zinsen (zehnjähriger Staatsanleihen) werden mittelfristig (<bx>6</bx>&nbsp;Mo.)",
-				"en": "<b>5.</b> In the medium-term, <i>long-term</i> interest rates (yields on 10-year sovereign bonds) will",
+				"de": "<b>5.</b> &nbsp; Die <i>langfristigen</i> Zinsen (zehnjähriger Staatsanleihen) werden mittelfristig (<bx>6</bx>&nbsp;Mo.)",
+				"en": "<b>5.</b> &nbsp; In the medium-term, <i>long-term</i> interest rates (yields on 10-year sovereign bonds) will",
 			}
 			gr := page.AddGrid(gb)
 			gr.OddRowsColoring = true
@@ -560,8 +560,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				rowLabelsUncorrelatedAssets,
 			)
 			gb.MainLabel = trl.S{
-				"de": "<b>6a.</b> Die folgenden Aktienindizes werden mittelfristig (<bx>6</bx>&nbsp;Mo.)",
-				"en": "<b>6a.</b> In the medium-term (<bx>6</bx>&nbsp;months), the following stock market indices will",
+				"de": "<b>6a.</b> &nbsp; Die folgenden Aktienindizes werden mittelfristig (<bx>6</bx>&nbsp;Mo.)",
+				"en": "<b>6a.</b> &nbsp; In the medium-term (<bx>6</bx>&nbsp;months), the following stock market indices will",
 			}
 			gr := page.AddGrid(gb)
 			gr.OddRowsColoring = true
@@ -589,11 +589,11 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.ColSpanControl = 2
 				inp.Label = trl.S{
 					"de": `
-					   <b>6b.</b> 
+					   <b>6b.</b> &nbsp;  
 					   Den DAX erwarte ich in 6&nbsp;Monaten&nbsp;bei 
 					`,
 					"en": `
-					   <b>6b.</b> 
+					   <b>6b.</b> &nbsp; 
 					   Six&nbsp;months ahead, I expect the DAX to stand&nbsp;at
 					`,
 				}
@@ -670,8 +670,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp := gr.AddInput()
 				inp.Type = "textblock"
 				inp.Label = trl.S{
-					"de": "<b>6c.</b> Aus Sicht der Fundamentaldaten der DAX-Unternehmen ist der DAX derzeit",
-					"en": "<b>6c.</b> In view of the fundamentals of the DAX companies, the DAX is currently",
+					"en": "<b>6c.</b> &nbsp; In view of the fundamentals of the DAX companies, the DAX is currently",
+					"de": "<b>6c.</b> &nbsp; Aus Sicht der Fundamentaldaten der DAX-Unternehmen ist der DAX derzeit",
 				}
 			}
 			gr.Style = css.NewStylesResponsive(gr.Style)
@@ -740,8 +740,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				rowLabelsCurrencies,
 			)
 			gb.MainLabel = trl.S{
-				"de": "<b>7.</b> Folgende Währungen werden gegenüber dem Euro mittelfristig (<bx>6</bx>&nbsp;Mo.)",
-				"en": "<b>7.</b> In the medium-term (<bx>6</bx>&nbsp;months), the following currencies compared to the Euro will",
+				"de": "<b>7.</b> &nbsp; Folgende Währungen werden gegenüber dem Euro mittelfristig (<bx>6</bx>&nbsp;Mo.)",
+				"en": "<b>7.</b> &nbsp; In the medium-term (<bx>6</bx>&nbsp;months), the following currencies compared to the Euro will",
 			}
 			gr := page.AddGrid(gb)
 			gr.OddRowsColoring = true
@@ -770,8 +770,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				rowLabelsSectors,
 			)
 			gb.MainLabel = trl.S{
-				"de": "<b>8.</b> Die Ertragslage der Unternehmen in Deutschland wird mittelfristig (<bx>6</bx>&nbsp;Mo.) in den folgenden Branchen ",
-				"en": "<b>8.</b> In the medium-term (<bx>6</bx>&nbsp;months), the profit situation of German companies in the following sectors will",
+				"de": "<b>8.</b> &nbsp; Die Ertragslage der Unternehmen in Deutschland wird mittelfristig (<bx>6</bx>&nbsp;Mo.) in den folgenden Branchen ",
+				"en": "<b>8.</b> &nbsp; In the medium-term (<bx>6</bx>&nbsp;months), the profit situation of German companies in the following sectors will",
 			}
 			gr := page.AddGrid(gb)
 			gr.OddRowsColoring = true

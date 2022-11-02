@@ -15,13 +15,13 @@
  		"params": [
  			{
  				"name": "main_refinance_rate_ecb",
- 				"val": "0,5%"
+ 				"val": "2%"
  			},
  			{}
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "cdca496b5fb715d5b9fc879690347d1122834b9bb306c956ef9738721f8e6c55",
+ 	"md_5": "beca0a2aa844984ceded2281e29010def2d136a5c286960aefe120c602bbdac3",
  	"lang_codes": [
  		"de",
  		"en"
@@ -296,8 +296,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e1.\u003c/b\u003e Die ge\u0026shy;samtwirt\u0026shy;schaft\u0026shy;liche Situation beurteilen wir zurzeit als",
- 								"en": "\u003cb\u003e1.\u003c/b\u003e We estimate the current overall macroeco\u0026shy;nom\u0026shy;ic situation as being"
+ 								"de": "\u003cb\u003e1.\u003c/b\u003e \u0026nbsp; Die ge\u0026shy;samtwirt\u0026shy;schaft\u0026shy;liche Situation beurteilen wir zurzeit als",
+ 								"en": "\u003cb\u003e1.\u003c/b\u003e \u0026nbsp; We estimate the current overall macroeco\u0026shy;nom\u0026shy;ic situation as being"
  							},
  							"col_span": 4,
  							"col_span_label": 1
@@ -333,7 +333,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"align_self": "start"
+ 										"align_self": "end"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -377,7 +377,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"align_self": "start"
+ 										"align_self": "end"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -421,7 +421,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"align_self": "start"
+ 										"align_self": "end"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -466,7 +466,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"align_self": "start"
+ 										"align_self": "end"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -693,8 +693,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e2a.\u003c/b\u003e Die ge\u0026shy;samtwirt\u0026shy;schaft\u0026shy;liche Situation wird sich mittel\u0026shy;fristig (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;Mo.)",
- 								"en": "\u003cb\u003e2a.\u003c/b\u003e In the medium-term (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;months), the overall macroeco\u0026shy;nom\u0026shy;ic situation will"
+ 								"de": "\u003cb\u003e2a.\u003c/b\u003e \u0026nbsp; Die ge\u0026shy;samtwirt\u0026shy;schaft\u0026shy;liche Situation wird sich mittel\u0026shy;fristig (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;Mo.)",
+ 								"en": "\u003cb\u003e2a.\u003c/b\u003e \u0026nbsp; In the medium-term (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;months), the overall macroeco\u0026shy;nom\u0026shy;ic situation will"
  							},
  							"col_span": 4,
  							"col_span_label": 1
@@ -730,7 +730,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"align_self": "start"
+ 										"align_self": "end"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -747,7 +747,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "nicht ver\u0026shy;än\u0026shy;dern",
+ 								"de": "nicht\u003cbr\u003ever\u0026shy;än\u0026shy;dern",
  								"en": "not change"
  							},
  							"col_span_control": 1,
@@ -774,7 +774,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"align_self": "start"
+ 										"align_self": "end"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -818,7 +818,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"align_self": "start"
+ 										"align_self": "end"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -863,7 +863,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"align_self": "start"
+ 										"align_self": "end"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -1089,8 +1089,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e2b.\u003c/b\u003e Für wie wahrscheinlich halten Sie die folgenden mittel\u0026shy;fristigen (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;Mo.) Entwicklungen der ge\u0026shy;samtwirt\u0026shy;schaft\u0026shy;lichen Situation in Deutsch\u0026shy;land?",
- 								"en": "\u003cb\u003e2b.\u003c/b\u003e Please assess the probability of the following medium-term (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;months) de\u0026shy;vel\u0026shy;op\u0026shy;ments of the overall macroeco\u0026shy;nom\u0026shy;ic situation in Ger\u0026shy;ma\u0026shy;ny (in per\u0026shy;cent)."
+ 								"de": "\u003cb\u003e2b.\u003c/b\u003e \u0026nbsp; Für wie wahrscheinlich halten Sie die folgenden mittel\u0026shy;fristigen (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;Mo.) Entwicklungen der ge\u0026shy;samtwirt\u0026shy;schaft\u0026shy;lichen Situation in Deutsch\u0026shy;land?",
+ 								"en": "\u003cb\u003e2b.\u003c/b\u003e \u0026nbsp; Please assess the probability of the following medium-term (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;months) de\u0026shy;vel\u0026shy;op\u0026shy;ments of the overall macroeco\u0026shy;nom\u0026shy;ic situation in Ger\u0026shy;ma\u0026shy;ny (in per\u0026shy;cent)."
  							},
  							"col_span": 10,
  							"col_span_label": 1,
@@ -1306,8 +1306,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e2c.\u003c/b\u003e Die Wahrscheinlichkeit eines neg\u0026shy;ativen BIP-Wachstums in Deutsch\u0026shy;land (Wachstum des realen \u0026 saisonbereinigten BIP zum Vorquartal) liegt bei",
- 								"en": "\u003cb\u003e2c.\u003c/b\u003e The probability of a neg\u0026shy;ative GDP growth in Ger\u0026shy;ma\u0026shy;ny (quarterly growth of the seasonally adjusted real GDP) will be"
+ 								"de": "\u003cb\u003e2c.\u003c/b\u003e \u0026nbsp; Die Wahrscheinlichkeit eines neg\u0026shy;ativen BIP-Wachstums in Deutsch\u0026shy;land (Wachstum des realen \u0026 saisonbereinigten BIP zum Vorquartal) liegt bei",
+ 								"en": "\u003cb\u003e2c.\u003c/b\u003e \u0026nbsp; The probability of a neg\u0026shy;ative GDP growth in Ger\u0026shy;ma\u0026shy;ny (quarterly growth of the seasonally adjusted real GDP) will be"
  							},
  							"col_span": 5,
  							"col_span_label": 5
@@ -1422,8 +1422,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e3.\u003c/b\u003e Die jährliche ge\u0026shy;samtwirt\u0026shy;schaft\u0026shy;liche In\u0026shy;fla\u0026shy;ti\u0026shy;onsrate wird mittel\u0026shy;fristig (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;Mo.)",
- 								"en": "\u003cb\u003e3.\u003c/b\u003e In the medium-term (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;months), the annual in\u0026shy;fla\u0026shy;ti\u0026shy;on rate will"
+ 								"de": "\u003cb\u003e3.\u003c/b\u003e \u0026nbsp; Die jährliche ge\u0026shy;samtwirt\u0026shy;schaft\u0026shy;liche In\u0026shy;fla\u0026shy;ti\u0026shy;onsrate wird mittel\u0026shy;fristig (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;Mo.)",
+ 								"en": "\u003cb\u003e3.\u003c/b\u003e \u0026nbsp; In the medium-term (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;months), the annual in\u0026shy;fla\u0026shy;ti\u0026shy;on rate will"
  							},
  							"col_span": 4,
  							"col_span_label": 1
@@ -1459,7 +1459,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"align_self": "start"
+ 										"align_self": "end"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -1476,7 +1476,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "gleich blei\u0026shy;ben",
+ 								"de": "gleich\u003cbr\u003eblei\u0026shy;ben",
  								"en": "not change"
  							},
  							"col_span_control": 1,
@@ -1503,7 +1503,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"align_self": "start"
+ 										"align_self": "end"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -1547,7 +1547,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"align_self": "start"
+ 										"align_self": "end"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -1592,7 +1592,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"align_self": "start"
+ 										"align_self": "end"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -1819,8 +1819,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e4.\u003c/b\u003e Die \u003ci\u003ekurzfristigen\u003c/i\u003e Zinsen (3-Mo.-Interbanksätze) werden mittel\u0026shy;fristig (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;Mo.)",
- 								"en": "\u003cb\u003e4.\u003c/b\u003e In the medium-term (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;months), \u003ci\u003eshort-term\u003c/i\u003e interest rates (3-month interbank rates) will"
+ 								"de": "\u003cb\u003e4.\u003c/b\u003e \u0026nbsp; Die \u003ci\u003ekurzfristigen\u003c/i\u003e Zinsen (3-Mo.-Interbanksätze) werden mittel\u0026shy;fristig (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;Mo.)",
+ 								"en": "\u003cb\u003e4.\u003c/b\u003e \u0026nbsp; In the medium-term (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;months), \u003ci\u003eshort-term\u003c/i\u003e interest rates (3-month interbank rates) will"
  							},
  							"col_span": 4,
  							"col_span_label": 1
@@ -1856,7 +1856,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"align_self": "start"
+ 										"align_self": "end"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -1873,7 +1873,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "gleich blei\u0026shy;ben",
+ 								"de": "gleich\u003cbr\u003eblei\u0026shy;ben",
  								"en": "not change"
  							},
  							"col_span_control": 1,
@@ -1900,7 +1900,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"align_self": "start"
+ 										"align_self": "end"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -1944,7 +1944,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"align_self": "start"
+ 										"align_self": "end"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -1989,7 +1989,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"align_self": "start"
+ 										"align_self": "end"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -2170,8 +2170,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e5.\u003c/b\u003e Die \u003ci\u003elang\u0026shy;fristigen\u003c/i\u003e Zinsen (zehnjähriger Staatsanleihen) werden mittel\u0026shy;fristig (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;Mo.)",
- 								"en": "\u003cb\u003e5.\u003c/b\u003e In the medium-term, \u003ci\u003elong-term\u003c/i\u003e interest rates (yields on 10-year sovereign bonds) will"
+ 								"de": "\u003cb\u003e5.\u003c/b\u003e \u0026nbsp; Die \u003ci\u003elang\u0026shy;fristigen\u003c/i\u003e Zinsen (zehnjähriger Staatsanleihen) werden mittel\u0026shy;fristig (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;Mo.)",
+ 								"en": "\u003cb\u003e5.\u003c/b\u003e \u0026nbsp; In the medium-term, \u003ci\u003elong-term\u003c/i\u003e interest rates (yields on 10-year sovereign bonds) will"
  							},
  							"col_span": 4,
  							"col_span_label": 1
@@ -2207,7 +2207,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"align_self": "start"
+ 										"align_self": "end"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -2224,7 +2224,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "gleich blei\u0026shy;ben",
+ 								"de": "gleich\u003cbr\u003eblei\u0026shy;ben",
  								"en": "not change"
  							},
  							"col_span_control": 1,
@@ -2251,7 +2251,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"align_self": "start"
+ 										"align_self": "end"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -2295,7 +2295,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"align_self": "start"
+ 										"align_self": "end"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -2340,7 +2340,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"align_self": "start"
+ 										"align_self": "end"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -2556,8 +2556,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e6a.\u003c/b\u003e Die folgenden Aktienindizes werden mittel\u0026shy;fristig (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;Mo.)",
- 								"en": "\u003cb\u003e6a.\u003c/b\u003e In the medium-term (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;months), the following stock market indices will"
+ 								"de": "\u003cb\u003e6a.\u003c/b\u003e \u0026nbsp; Die folgenden Aktienindizes werden mittel\u0026shy;fristig (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;Mo.)",
+ 								"en": "\u003cb\u003e6a.\u003c/b\u003e \u0026nbsp; In the medium-term (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;months), the following stock market indices will"
  							},
  							"col_span": 4,
  							"col_span_label": 1
@@ -2593,7 +2593,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"align_self": "start"
+ 										"align_self": "end"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -2610,7 +2610,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "gleich blei\u0026shy;ben",
+ 								"de": "gleich\u003cbr\u003eblei\u0026shy;ben",
  								"en": "not change"
  							},
  							"col_span_control": 1,
@@ -2637,7 +2637,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"align_self": "start"
+ 										"align_self": "end"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -2681,7 +2681,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"align_self": "start"
+ 										"align_self": "end"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -2726,7 +2726,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"align_self": "start"
+ 										"align_self": "end"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -2960,8 +2960,8 @@
  								"en": "0000"
  							},
  							"label": {
- 								"de": "\n\t\t\t\t\t   \u003cb\u003e6b.\u003c/b\u003e \n\t\t\t\t\t   Den DAX erwarte ich in 6\u0026nbsp;Monaten\u0026nbsp;bei \n\t\t\t\t\t",
- 								"en": "\n\t\t\t\t\t   \u003cb\u003e6b.\u003c/b\u003e \n\t\t\t\t\t   Six\u0026nbsp;months ahead, I expect the DAX to stand\u0026nbsp;at\n\t\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t   \u003cb\u003e6b.\u003c/b\u003e \u0026nbsp;  \n\t\t\t\t\t   Den DAX erwarte ich in 6\u0026nbsp;Monaten\u0026nbsp;bei \n\t\t\t\t\t",
+ 								"en": "\n\t\t\t\t\t   \u003cb\u003e6b.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t   Six\u0026nbsp;months ahead, I expect the DAX to stand\u0026nbsp;at\n\t\t\t\t\t"
  							},
  							"suffix": {
  								"de": "Punkten",
@@ -3068,8 +3068,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e6c.\u003c/b\u003e Aus Sicht der Fundamentalda\u0026shy;ten der DAX-Un\u0026shy;ter\u0026shy;neh\u0026shy;men ist der DAX derzeit",
- 								"en": "\u003cb\u003e6c.\u003c/b\u003e In view of the fundamentals of the DAX companies, the DAX is currently"
+ 								"de": "\u003cb\u003e6c.\u003c/b\u003e \u0026nbsp; Aus Sicht der Fundamentalda\u0026shy;ten der DAX-Un\u0026shy;ter\u0026shy;neh\u0026shy;men ist der DAX derzeit",
+ 								"en": "\u003cb\u003e6c.\u003c/b\u003e \u0026nbsp; In view of the fundamentals of the DAX companies, the DAX is currently"
  							},
  							"col_span_label": 1
  						}
@@ -3126,7 +3126,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"align_self": "start"
+ 										"align_self": "end"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -3170,7 +3170,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"align_self": "start"
+ 										"align_self": "end"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -3214,7 +3214,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"align_self": "start"
+ 										"align_self": "end"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -3258,7 +3258,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"align_self": "start"
+ 										"align_self": "end"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -3375,8 +3375,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e7.\u003c/b\u003e Folgende Währungen werden gegenüber dem Euro mittel\u0026shy;fristig (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;Mo.)",
- 								"en": "\u003cb\u003e7.\u003c/b\u003e In the medium-term (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;months), the following currencies compared to the Euro will"
+ 								"de": "\u003cb\u003e7.\u003c/b\u003e \u0026nbsp; Folgende Währungen werden gegenüber dem Euro mittel\u0026shy;fristig (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;Mo.)",
+ 								"en": "\u003cb\u003e7.\u003c/b\u003e \u0026nbsp; In the medium-term (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;months), the following currencies compared to the Euro will"
  							},
  							"col_span": 4,
  							"col_span_label": 1
@@ -3412,7 +3412,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"align_self": "start"
+ 										"align_self": "end"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -3429,7 +3429,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "gleich blei\u0026shy;ben",
+ 								"de": "gleich\u003cbr\u003eblei\u0026shy;ben",
  								"en": "stay constant"
  							},
  							"col_span_control": 1,
@@ -3456,7 +3456,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"align_self": "start"
+ 										"align_self": "end"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -3500,7 +3500,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"align_self": "start"
+ 										"align_self": "end"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -3545,7 +3545,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"align_self": "start"
+ 										"align_self": "end"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -3715,8 +3715,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e8.\u003c/b\u003e Die Ertragslage der Un\u0026shy;ter\u0026shy;neh\u0026shy;men in Deutsch\u0026shy;land wird mittel\u0026shy;fristig (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;Mo.) in den folgenden Branchen ",
- 								"en": "\u003cb\u003e8.\u003c/b\u003e In the medium-term (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;months), the profit situation of German companies in the following sectors will"
+ 								"de": "\u003cb\u003e8.\u003c/b\u003e \u0026nbsp; Die Ertragslage der Un\u0026shy;ter\u0026shy;neh\u0026shy;men in Deutsch\u0026shy;land wird mittel\u0026shy;fristig (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;Mo.) in den folgenden Branchen ",
+ 								"en": "\u003cb\u003e8.\u003c/b\u003e \u0026nbsp; In the medium-term (\u003cbx\u003e6\u003c/bx\u003e\u0026nbsp;months), the profit situation of German companies in the following sectors will"
  							},
  							"col_span": 4,
  							"col_span_label": 1
@@ -3752,7 +3752,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"align_self": "start"
+ 										"align_self": "end"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -3769,7 +3769,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "gleich blei\u0026shy;ben",
+ 								"de": "gleich\u003cbr\u003eblei\u0026shy;ben",
  								"en": "not change"
  							},
  							"col_span_control": 1,
@@ -3796,7 +3796,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"align_self": "start"
+ 										"align_self": "end"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -3840,7 +3840,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"align_self": "start"
+ 										"align_self": "end"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -3885,7 +3885,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"align_self": "start"
+ 										"align_self": "end"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -4716,7 +4716,7 @@
  								"de": "\u003cb\u003e1b.\u003c/b\u003e \u0026nbsp; Wir möchten gerne von Ihnen erfahren, \n\t\t\t\t\t\tfür wie wahrscheinlich Sie bestimmte Ausprägungen \n\t\t\t\t\t\tder durchschnittlichen jährlichen In\u0026shy;fla\u0026shy;ti\u0026shy;onsrate \n\t\t\t\t\t\tin den folgenden Jahren halten.\n\t\t\t\t\t\t\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003ci\u003e\n\t\t\t\t\t\tBitte stellen Sie si\u0026shy;cher, \n\t\t\t\t\t\tdass die Summen der Wahrscheinlichkeiten \n\t\t\t\t\t\tin den Zeilen jeweils 100% ergeben.\n\t\t\t\t\t\t\u003c/i\u003e\n\n\t\t\t\t\t\t\n\t\t\t\t\t\t",
  								"en": "\u003cb\u003e1b.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tHow likely are specific future realizations of in\u0026shy;fla\u0026shy;ti\u0026shy;on? \n\t\t\t\t\t\t\n\t\t\t\t\t\tPlease give us your assessments for the annual av\u0026shy;er\u0026shy;age in\u0026shy;fla\u0026shy;ti\u0026shy;on rate \n\t\t\t\t\t\tin the euro area.\n\t\t\t\t\t\t\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003ci\u003e\n\t\t\t\t\t\tPlease ensure that the probabilities \n\t\t\t\t\t\tin every line add up to 100%.\n\t\t\t\t\t\t\u003c/i\u003e\n\t\t\t\t\t\t"
  							},
- 							"col_span": 7,
+ 							"col_span": 8,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
@@ -4747,8 +4747,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "unter \u003cbr\u003e2\u0026nbsp;Pro\u0026shy;zent",
- 								"en": "be\u0026shy;low \u003cbr\u003e2\u0026nbsp;per\u0026shy;cent"
+ 								"de": "unter \u003cbr\u003e4\u0026nbsp;Pro\u0026shy;zent",
+ 								"en": "be\u0026shy;low \u003cbr\u003e4\u0026nbsp;per\u0026shy;cent"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -4757,7 +4757,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"align_self": "start"
+ 										"align_self": "end"
  									},
  									"text_style": {}
  								},
@@ -4790,8 +4790,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "zwi\u0026shy;schen 2 u.  \u003cbr\u003e3\u0026nbsp;Pro\u0026shy;zent",
- 								"en": "be\u0026shy;tween  2 and \u003cbr\u003e3\u0026nbsp;per\u0026shy;cent"
+ 								"de": "zwi\u0026shy;schen 4 u.  \u003cbr\u003e6\u0026nbsp;Pro\u0026shy;zent",
+ 								"en": "be\u0026shy;tween  4 and \u003cbr\u003e6\u0026nbsp;per\u0026shy;cent"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -4800,7 +4800,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"align_self": "start"
+ 										"align_self": "end"
  									},
  									"text_style": {}
  								},
@@ -4833,8 +4833,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "zwi\u0026shy;schen 3 u.  \u003cbr\u003e4\u0026nbsp;Pro\u0026shy;zent",
- 								"en": "be\u0026shy;tween  3 and \u003cbr\u003e4\u0026nbsp;per\u0026shy;cent"
+ 								"de": "zwi\u0026shy;schen 6 u.  \u003cbr\u003e8\u0026nbsp;Pro\u0026shy;zent",
+ 								"en": "be\u0026shy;tween  6 and \u003cbr\u003e8\u0026nbsp;per\u0026shy;cent"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -4843,7 +4843,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"align_self": "start"
+ 										"align_self": "end"
  									},
  									"text_style": {}
  								},
@@ -4876,8 +4876,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "grö\u0026shy;ßer als 4\u0026nbsp;Pro\u0026shy;zent",
- 								"en": "above  \u003cbr\u003e4\u0026nbsp;per\u0026shy;cent"
+ 								"de": "zwi\u0026shy;schen 8 u.  \u003cbr\u003e10\u0026nbsp;Pro\u0026shy;zent",
+ 								"en": "be\u0026shy;tween  8 and \u003cbr\u003e10\u0026nbsp;per\u0026shy;cent"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -4886,7 +4886,50 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"align_self": "start"
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": " 0 0.3rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"line_height": 118
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "grö\u0026shy;ßer als 10\u0026nbsp;Pro\u0026shy;zent",
+ 								"en": "above  \u003cbr\u003e10\u0026nbsp;per\u0026shy;cent"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
  									},
  									"text_style": {}
  								},
@@ -4930,7 +4973,7 @@
  									"box_style": {},
  									"grid_item_style": {
  										"justify_self": "start",
- 										"align_self": "center"
+ 										"align_self": "end"
  									},
  									"text_style": {
  										"font_size": 120,
@@ -4960,7 +5003,7 @@
  									"box_style": {},
  									"grid_item_style": {
  										"justify_self": "center",
- 										"align_self": "start"
+ 										"align_self": "end"
  									},
  									"text_style": {
  										"align_horizontal": "left"
@@ -5000,7 +5043,7 @@
  							"col_span_label": 1
  						},
  						{
- 							"name": "inf2022_under2",
+ 							"name": "inf2022_under4",
  							"type": "number",
  							"max_chars": 3,
  							"max": 100,
@@ -5012,7 +5055,7 @@
  							"col_span_control": 3
  						},
  						{
- 							"name": "inf2022_between2and3",
+ 							"name": "inf2022_between4and6",
  							"type": "number",
  							"max_chars": 3,
  							"max": 100,
@@ -5024,7 +5067,7 @@
  							"col_span_control": 3
  						},
  						{
- 							"name": "inf2022_between3and4",
+ 							"name": "inf2022_between6and8",
  							"type": "number",
  							"max_chars": 3,
  							"max": 100,
@@ -5036,7 +5079,19 @@
  							"col_span_control": 3
  						},
  						{
- 							"name": "inf2022_above4",
+ 							"name": "inf2022_between8and10",
+ 							"type": "number",
+ 							"max_chars": 3,
+ 							"max": 100,
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 3
+ 						},
+ 						{
+ 							"name": "inf2022_above10",
  							"type": "number",
  							"max_chars": 3,
  							"max": 100,
@@ -5060,8 +5115,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"justify_self": "start",
- 										"align_self": "start"
+ 										"justify_self": "start"
  									},
  									"text_style": {
  										"align_horizontal": "left"
@@ -5085,8 +5139,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"justify_self": "start",
- 										"align_self": "start"
+ 										"justify_self": "start"
  									},
  									"text_style": {}
  								},
@@ -5108,7 +5161,7 @@
  							"col_span_label": 1
  						},
  						{
- 							"name": "inf2023_under2",
+ 							"name": "inf2023_under4",
  							"type": "number",
  							"max_chars": 3,
  							"max": 100,
@@ -5120,7 +5173,7 @@
  							"col_span_control": 3
  						},
  						{
- 							"name": "inf2023_between2and3",
+ 							"name": "inf2023_between4and6",
  							"type": "number",
  							"max_chars": 3,
  							"max": 100,
@@ -5132,7 +5185,7 @@
  							"col_span_control": 3
  						},
  						{
- 							"name": "inf2023_between3and4",
+ 							"name": "inf2023_between6and8",
  							"type": "number",
  							"max_chars": 3,
  							"max": 100,
@@ -5144,7 +5197,19 @@
  							"col_span_control": 3
  						},
  						{
- 							"name": "inf2023_above4",
+ 							"name": "inf2023_between8and10",
+ 							"type": "number",
+ 							"max_chars": 3,
+ 							"max": 100,
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 3
+ 						},
+ 						{
+ 							"name": "inf2023_above10",
  							"type": "number",
  							"max_chars": 3,
  							"max": 100,
@@ -5168,8 +5233,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"justify_self": "start",
- 										"align_self": "start"
+ 										"justify_self": "start"
  									},
  									"text_style": {
  										"align_horizontal": "left"
@@ -5193,8 +5257,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"justify_self": "start",
- 										"align_self": "start"
+ 										"justify_self": "start"
  									},
  									"text_style": {}
  								},
@@ -5216,7 +5279,7 @@
  							"col_span_label": 1
  						},
  						{
- 							"name": "inf2024_under2",
+ 							"name": "inf2024_under4",
  							"type": "number",
  							"max_chars": 3,
  							"max": 100,
@@ -5228,7 +5291,7 @@
  							"col_span_control": 3
  						},
  						{
- 							"name": "inf2024_between2and3",
+ 							"name": "inf2024_between4and6",
  							"type": "number",
  							"max_chars": 3,
  							"max": 100,
@@ -5240,7 +5303,7 @@
  							"col_span_control": 3
  						},
  						{
- 							"name": "inf2024_between3and4",
+ 							"name": "inf2024_between6and8",
  							"type": "number",
  							"max_chars": 3,
  							"max": 100,
@@ -5252,7 +5315,19 @@
  							"col_span_control": 3
  						},
  						{
- 							"name": "inf2024_above4",
+ 							"name": "inf2024_between8and10",
+ 							"type": "number",
+ 							"max_chars": 3,
+ 							"max": 100,
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 3
+ 						},
+ 						{
+ 							"name": "inf2024_above10",
  							"type": "number",
  							"max_chars": 3,
  							"max": 100,
@@ -5276,8 +5351,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"justify_self": "start",
- 										"align_self": "start"
+ 										"justify_self": "start"
  									},
  									"text_style": {
  										"align_horizontal": "left"
@@ -5301,8 +5375,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"justify_self": "start",
- 										"align_self": "start"
+ 										"justify_self": "start"
  									},
  									"text_style": {}
  								},
@@ -5313,13 +5386,24 @@
  									"text_style": {}
  								}
  							}
+ 						},
+ 						{
+ 							"name": "inflationRange",
+ 							"type": "javascript-block",
+ 							"col_span_control": 1,
+ 							"js_block_translations": {
+ 								"msg": {
+ 									"de": "Ihre Antworten auf Frage 1b addieren sich nicht zu 100%. Wirklich weiter?",
+ 									"en": "Your answers to question 1b dont add up to 100%. Continue anyway?"
+ 								}
+ 							}
  						}
  					],
  					"style": {
  						"desktop": {
  							"grid_container_style": {
  								"auto_flow": "row",
- 								"template_columns": "1.6fr    2.7fr 3.1fr 3.1fr 2.4fr    2.4fr  1.4fr"
+ 								"template_columns": "1.6fr    2.7fr 3.1fr 3.1fr 3.4fr 2.4fr    2.4fr  1.4fr"
  							},
  							"box_style": {
  								"display": "grid"
@@ -5382,7 +5466,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"align_self": "start"
+ 										"align_self": "end"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -5426,7 +5510,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"align_self": "start"
+ 										"align_self": "end"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -5470,7 +5554,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"align_self": "start"
+ 										"align_self": "end"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -5514,7 +5598,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"align_self": "start"
+ 										"align_self": "end"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -5558,7 +5642,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"align_self": "start"
+ 										"align_self": "end"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -5603,7 +5687,7 @@
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"align_self": "start"
+ 										"align_self": "end"
  									},
  									"text_style": {
  										"align_horizontal": "center"
@@ -6362,8 +6446,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e3.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tDen \u003cb\u003eHauptre\u0026shy;finanz\u0026shy;ierungssatz\u003c/b\u003e der EZB (derzeit 0,5%) erwarte ich \n\t\t\t\t\t",
- 								"en": "\u003cb\u003e3.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tI expect the \u003cb\u003emain re\u0026shy;financing facility rate\u003c/b\u003e of the ECB (currently at 0,5%) to be \n\t\t\t\t\t"
+ 								"de": "\u003cb\u003e3.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tDen \u003cb\u003eHauptre\u0026shy;finanz\u0026shy;ierungssatz\u003c/b\u003e der EZB (derzeit 2%) erwarte ich \n\t\t\t\t\t",
+ 								"en": "\u003cb\u003e3.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tI expect the \u003cb\u003emain re\u0026shy;financing facility rate\u003c/b\u003e of the ECB (currently at 2%) to be \n\t\t\t\t\t"
  							},
  							"col_span": 12,
  							"col_span_label": 12
@@ -6785,12 +6869,7 @@
  						}
  					}
  				}
- 			],
- 			"validation_func_name": "fmt-m2-p6",
- 			"validation_func_msg": {
- 				"de": "Ihre Antworten auf Frage 1b addieren sich nicht zu 100%. Wirklich weiter?",
- 				"en": "Your answers to question 1b dont add up to 100%. Continue anyway?"
- 			}
+ 			]
  		},
  		{
  			"label": {

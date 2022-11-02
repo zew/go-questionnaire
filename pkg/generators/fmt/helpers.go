@@ -113,7 +113,7 @@ func labelsImproveDeteriorate() []trl.S {
 			"en": "improve",
 		},
 		{
-			"de": "nicht verändern",
+			"de": "nicht<br>verändern",
 			"en": "not change",
 		},
 		{
@@ -138,7 +138,7 @@ func labelsImproveDeteriorateSectoral() []trl.S {
 			"en": "improve",
 		},
 		{
-			"de": "gleich bleiben",
+			"de": "gleich<br>bleiben",
 			"en": "not change",
 		},
 		{
@@ -163,7 +163,7 @@ func labelsIncreaseDecrease() []trl.S {
 			"en": "increase",
 		},
 		{
-			"de": "gleich bleiben",
+			"de": "gleich<br>bleiben",
 			"en": "not change",
 		},
 		{
@@ -188,7 +188,7 @@ func labelsIncreaseDecreaseCurrency() []trl.S {
 			"en": "appreciate",
 		},
 		{
-			"de": "gleich bleiben",
+			"de": "gleich<br>bleiben",
 			"en": "stay constant",
 		},
 		{

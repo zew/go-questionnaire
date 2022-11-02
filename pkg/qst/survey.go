@@ -14,8 +14,7 @@ import (
 // ParamT contains changing parameters to a questionnaire
 type ParamT struct {
 	Name string `json:"name,omitempty"` // i.e. main_refinance_rate_ecb
-	Val  string `json:"val,omitempty"`  // i.e. "01.02.2018: 3.2%"
-	// Challenge string `json:"challenge,omitempty"` // i.e.  Set field 'main_refinance_rate_ecb' to `01.02.2018: 3.2%` as in `main refinancing operations rate of the ECB (01.02.2018: 3.2%)`"
+	Val  string `json:"val,omitempty"`  // i.e. "0,5%"
 }
 
 // Param returns the value of a surveys param
@@ -30,7 +29,6 @@ func (s *SurveyT) Param(name string) (string, error) {
 
 // SurveyT stores the interval components of a questionnaire wave.
 // For quarterly intervals, it needs to be extended
-//
 type SurveyT struct {
 	Type string `json:"type,omitempty"` // The type identifier, i.e. "fmt" or "cep"
 
@@ -102,34 +100,34 @@ offset adds/subtracts to/from quarter;
 overflowing over 4; underflowing under 1
 
 January  of    0 -                       => Q1 0
-   January  of 2021 -                       => Q1 2021
-   January  of 2021 -    plus 1 Quarter     => Q2 2021
-   January  of 2021 -    plus 3 Quarters    => Q4 2021
-   January  of 2021 -    plus 4 Quarters    => Q1 2022
-   January  of 2021 -    plus 5 Quarters    => Q2 2022
-   March    of    0 -                       => Q1 0
-   March    of 2021 -                       => Q1 2021
-   March    of 2021 -    plus 1 Quarter     => Q2 2021
-   March    of 2021 -    plus 3 Quarters    => Q4 2021
-   March    of 2021 -    plus 4 Quarters    => Q1 2022
-   April    of 2021 -                       => Q2 2021
-   April    of 2021 -    plus 1 Quarter     => Q3 2021
-   April    of 2021 -    plus 3 Quarters    => Q1 2022
-   April    of 2021 -    plus 4 Quarters    => Q2 2022
-   October  of 2021 -                       => Q4 2021
-   October  of 2021 -    plus 1 Quarter     => Q1 2022
-   October  of 2021 -    plus 4 Quarters    => Q4 2022
-   October  of 2021 -    plus 1 Quarter     => Q2 2024
-   December of 2021 -                       => Q4 2021
-   December of 2021 -    plus 1 Quarter     => Q1 2022
-   December of 2021 -    plus 4 Quarters    => Q4 2022
-   December of 2021 -    plus 1 Quarter     => Q2 2024
-   January  of 2021 -    minus 1 Quarter    => Q4 2020
-   March    of 2021 -    minus 1 Quarter    => Q4 2020
-   April    of 2021 -    minus 1 Quarter    => Q1 2021
-   January  of 2021 -    minus 4 Quarters   => Q1 2020
-   January  of 2021 -    minus 5 Quarters   => Q4 2019
 
+	January  of 2021 -                       => Q1 2021
+	January  of 2021 -    plus 1 Quarter     => Q2 2021
+	January  of 2021 -    plus 3 Quarters    => Q4 2021
+	January  of 2021 -    plus 4 Quarters    => Q1 2022
+	January  of 2021 -    plus 5 Quarters    => Q2 2022
+	March    of    0 -                       => Q1 0
+	March    of 2021 -                       => Q1 2021
+	March    of 2021 -    plus 1 Quarter     => Q2 2021
+	March    of 2021 -    plus 3 Quarters    => Q4 2021
+	March    of 2021 -    plus 4 Quarters    => Q1 2022
+	April    of 2021 -                       => Q2 2021
+	April    of 2021 -    plus 1 Quarter     => Q3 2021
+	April    of 2021 -    plus 3 Quarters    => Q1 2022
+	April    of 2021 -    plus 4 Quarters    => Q2 2022
+	October  of 2021 -                       => Q4 2021
+	October  of 2021 -    plus 1 Quarter     => Q1 2022
+	October  of 2021 -    plus 4 Quarters    => Q4 2022
+	October  of 2021 -    plus 1 Quarter     => Q2 2024
+	December of 2021 -                       => Q4 2021
+	December of 2021 -    plus 1 Quarter     => Q1 2022
+	December of 2021 -    plus 4 Quarters    => Q4 2022
+	December of 2021 -    plus 1 Quarter     => Q2 2024
+	January  of 2021 -    minus 1 Quarter    => Q4 2020
+	March    of 2021 -    minus 1 Quarter    => Q4 2020
+	April    of 2021 -    minus 1 Quarter    => Q1 2021
+	January  of 2021 -    minus 4 Quarters   => Q1 2020
+	January  of 2021 -    minus 5 Quarters   => Q4 2019
 */
 func (s SurveyT) Quarter(offs ...int) string {
 	y := s.Year
@@ -293,7 +291,7 @@ func (s *SurveyT) HTMLForm(questTypes []string, errStr string) string {
                      '12.04.2021 17:15 CEST' for concrete     
             Deadline <input type="text" name="deadline"  value="%v" placeholder="dd.mm.yyyy hh:mm CEST"   xxlist="time-entries" size=30 /> 
 
-for FMT eachMonth2inQ() main_refinance_rate_ecb': -since- 01.09.2019: 0,0%% - Stand 03.05.2021
+for FMT eachMonth2inQ() main_refinance_rate_ecb': 0,5%%
 %v
                      <input type="submit" name="submit" id="submit"  value="Submit" accesskey="s"  /> <br>
 		</form>

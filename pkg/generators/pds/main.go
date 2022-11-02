@@ -123,7 +123,15 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"de": `How do you expect the quality of deals in terms of the risk-return profile change in Q1 2023?`,
 				"en": `How do you expect the quality of deals in terms of the risk-return profile change in Q1 2023?`,
 			}
-			sentimentSingleRow(qst.WrapPageT(page), "xx2", lblMain)
+			sentimentSingleRow(qst.WrapPageT(page), "xx2", lblMain, 1)
+		}
+
+		{
+			lblMain := trl.S{
+				"de": `How big is your investment team? Please choose the team size in terms of full time equivalents.`,
+				"en": `How big is your investment team? Please choose the team size in terms of full time equivalents.`,
+			}
+			sentimentSingleRow(qst.WrapPageT(page), "xx3", lblMain, 2)
 		}
 
 	} // page1

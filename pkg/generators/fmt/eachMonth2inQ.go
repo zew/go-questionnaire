@@ -57,11 +57,6 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 		"en": "Inflation,<br>Monetary Policy",
 	}
 	page.WidthMax("48rem")
-	page.ValidationFuncName = "fmt-m2-p6"
-	page.ValidationFuncMsg = trl.S{
-		"de": "Ihre Antworten auf Frage 1b addieren sich nicht zu 100%. Wirklich weiter?",
-		"en": "Your answers to question 1b dont add up to 100%. Continue anyway?",
-	}
 
 	{
 		gr := page.AddGroup()
@@ -133,13 +128,12 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 		gr.Cols = 6
 		gr.Style = css.NewStylesResponsive(gr.Style)
 		gr.Style.Mobile.StyleGridContainer.GapRow = "0.02rem"
-		// gr.WidthMax("30rem")
-		gr.ColWidths("1.6fr    2.7fr 3.1fr 3.1fr 2.4fr    2.4fr  1.4fr")
+		gr.ColWidths("1.6fr    2.7fr 3.1fr 3.1fr 3.4fr 2.4fr    2.4fr  1.4fr")
 
 		{
 			inp := gr.AddInput()
 			inp.Type = "textblock"
-			inp.ColSpan = 7
+			inp.ColSpan = 8
 			inp.Label = trl.S{
 				"de": `<b>1b.</b> &nbsp; Wir möchten gerne von Ihnen erfahren, 
 						für wie wahrscheinlich Sie bestimmte Ausprägungen 
@@ -186,22 +180,24 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 
 		labels := []trl.S{
 			{
-				"de": "unter <br>2&nbsp;Prozent",
-				"en": "below <br>2&nbsp;percent",
+				"de": "unter <br>4&nbsp;Prozent",
+				"en": "below <br>4&nbsp;percent",
 			},
 			{
-				// "de": "zwischen 1&nbsp;u.&nbsp;2&nbsp;Prozent",
-				"de": "zwischen 2 u.  <br>3&nbsp;Prozent",
-				"en": "between  2 and <br>3&nbsp;percent",
+				"de": "zwischen 4 u.  <br>6&nbsp;Prozent",
+				"en": "between  4 and <br>6&nbsp;percent",
 			},
 			{
-				// "de": "zwischen 2&nbsp;u.&nbsp;3&nbsp;Prozent",
-				"de": "zwischen 3 u.  <br>4&nbsp;Prozent",
-				"en": "between  3 and <br>4&nbsp;percent",
+				"de": "zwischen 6 u.  <br>8&nbsp;Prozent",
+				"en": "between  6 and <br>8&nbsp;percent",
 			},
 			{
-				"de": "größer als 4&nbsp;Prozent",
-				"en": "above  <br>4&nbsp;percent",
+				"de": "zwischen 8 u.  <br>10&nbsp;Prozent",
+				"en": "between  8 and <br>10&nbsp;percent",
+			},
+			{
+				"de": "größer als 10&nbsp;Prozent",
+				"en": "above  <br>10&nbsp;percent",
 			},
 		}
 
@@ -212,11 +208,11 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 			inp.ColSpan = 1
 			inp.Label = lbl
 			inp.Style = css.ItemStartCA(inp.Style)
+			inp.Style.Desktop.StyleGridItem.AlignSelf = "end"
 			inp.Style.Mobile.StyleBox.Padding = " 0 0.3rem 0 0" // prevent overlapping of columns in narrow mobile view
 
 			inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
 			inp.StyleLbl.Desktop.StyleText.LineHeight = 118
-
 		}
 
 		//
@@ -236,7 +232,7 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 			inp.Style = css.TextCACenter(inp.Style)
 
 			inp.Style.Desktop.StyleText.FontSize = 120
-
+			inp.Style.Desktop.StyleGridItem.AlignSelf = "end"
 		}
 		{
 			inp := gr.AddInput()
@@ -249,11 +245,13 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 			inp.Style = css.ItemCenteredMCA(inp.Style)
 			inp.Style = css.ItemStartCA(inp.Style)
 			inp.Style = css.TextStart(inp.Style)
+			inp.Style.Desktop.StyleGridItem.AlignSelf = "end"
 
 			inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
 			inp.StyleLbl.Desktop.StyleText.LineHeight = 118
 		}
 
+		//
 		//
 		// second to fourth row: inputs
 		for i := 2022; i <= 2024; i++ {
@@ -268,8 +266,11 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 				}
 			}
 
+			// inpNames := []string{
+			// 	"under2", "between2and3", "between3and4", "above4",
+			// }
 			inpNames := []string{
-				"under2", "between2and3", "between3and4", "above4",
+				"under4", "between4and6", "between6and8", "between8and10", "above10",
 			}
 
 			for _, inpname := range inpNames {
@@ -295,11 +296,8 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 					"de": "100&nbsp;%",
 					"en": "100&nbsp;%",
 				}
-				// inp.Style = css.ItemCenteredMCA(inp.Style)
 				inp.Style = css.ItemStartMA(inp.Style)
-				inp.Style = css.ItemStartCA(inp.Style)
 				inp.Style = css.TextStart(inp.Style)
-
 			}
 			{
 				inp := gr.AddInput()
@@ -307,12 +305,36 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 				inp.ColSpan = 1
 				inp.Name = fmt.Sprintf("inf%v__noanswer", i)
 				inp.ColSpanControl = 1
-				// inp.Style = css.ItemCenteredMCA(inp.Style)
 				inp.Style = css.ItemStartMA(inp.Style)
-				inp.Style = css.ItemStartCA(inp.Style)
-
 			}
+
 		}
+
+		//
+		//
+		{
+			inp := gr.AddInput()
+			inp.ColSpanControl = 1
+			inp.Type = "javascript-block"
+			inp.Name = "inflationRange"
+
+			s1 := trl.S{
+				"de": "Ihre Antworten auf Frage 1b addieren sich nicht zu 100%. Wirklich weiter?",
+				"en": "Your answers to question 1b dont add up to 100%. Continue anyway?",
+			}
+			inp.JSBlockTrls = map[string]trl.S{
+				"msg": s1,
+			}
+
+			// inp.JSBlockStrings = map[string]string{}
+			// inp.JSBlockStrings["inputBaseName"] = name
+			// for idx1 := 0; idx1 < 3; idx1++ {
+			// 	key := fmt.Sprintf("%v_%v", "inp", idx1+1) // {{.inp_1}}, {{.inp_2}}, ...
+			// 	inp.JSBlockStrings[key] = fmt.Sprintf("%v_prio%v", name, idx1)
+			// }
+
+		}
+
 	}
 
 	// gr2
@@ -461,49 +483,13 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 
 	}
 
-	// // gr2a
-	// {
-	// 	gr := page.AddGroup()
-	// 	gr.Cols = 1
-	// 	gr.BottomVSpacers = 1
-	// 	gr.BottomVSpacers = 0
-	// 	{
-	// 		inp := gr.AddInput()
-	// 		inp.Type = "text"
-	// 		inp.Name = "rev_free_label"
-	// 		inp.MaxChars = 24
-	// 		inp.ColSpan = 1
-	// 		inp.ColSpanControl = 1
-	// 		inp.Label = nil
-	// 		inp.Placeholder = trl.S{"de": "Sonstige", "en": "Other"}
-	// 	}
-	// }
-
-	// // gr2b
-	// {
-	// 	gb := qst.NewGridBuilderRadios(
-	// 		columnTemplateLocal,
-	// 		nil,
-	// 		[]string{"rev_free"},
-	// 		radioVals6,
-	// 		[]trl.S{
-	// 			{
-	// 				"de": " &nbsp;  ", // -
-	// 				"en": " &nbsp;  ", // -
-	// 			},
-	// 		},
-	// 	)
-	// 	gb.MainLabel = nil
-	// 	gr := page.AddGrid(gb)
-	// 	gr.OddRowsColoring = true
-	// }
-
 	// gr3
 	{
-		// 2019	18 Sep. 0.00
 		latestECBRate, err := q.Survey.Param("main_refinance_rate_ecb")
+		// www.euribor-rates.eu/en/ecb-refinancing-rate/
+		// www.euribor-rates.eu/en/ecb-refinancing-rate/
 		if err != nil {
-			return fmt.Errorf("Set field 'main_refinance_rate_ecb' to `01.02.2018: 3.2%%` as in `main refinancing operations rate of the ECB (01.02.2018: 3.2%%)`; error was %v", err)
+			return fmt.Errorf("set field 'main_refinance_rate_ecb' to `01.02.2018: 3.2%%` as in `main refinancing operations rate of the ECB (01.02.2018: 3.2%%)`; error was %v", err)
 		}
 
 		//

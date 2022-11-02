@@ -239,8 +239,11 @@ func (p *pageT) AddGrid(gb *GridBuilder) *groupT {
 				inp.Label = gb.cols[colIdx].header
 				inp.ColSpanLabel = gb.cols[colIdx].spanLabel
 				inp.ColSpanControl = gb.cols[colIdx].spanControl
+
 				inp.StyleCtl = css.ItemCenteredCA(inp.StyleCtl)
 				inp.StyleCtl = css.ItemStartCA(inp.StyleCtl)
+				// pbu 2022-11-02: vertically aligned to bottom - is this better?
+				inp.StyleCtl.Desktop.StyleGridItem.AlignSelf = "end"
 
 				inp.Style = css.NewStylesResponsive(inp.Style)
 				// inp.Style.Desktop.GridContainerStyle.GapColumn is distorting cell widths..

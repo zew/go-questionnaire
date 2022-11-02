@@ -16,13 +16,13 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "217186566e7ef84ee80c50c8824412b33620ad07d1736f1b4760b4c323d266c1",
+ 	"md_5": "9d93e1e8fcc9878a68885fa25d8a7dab02c30aa588f5a09a50a604ddb4a3a72c",
  	"lang_codes": [
  		"de"
  	],
  	"allow_skip_forward": false,
  	"version_effective": 0,
- 	"max_groups": 6,
+ 	"max_groups": 8,
  	"pages": [
  		{
  			"label": {
@@ -577,8 +577,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Another question.",
- 								"en": "Another question."
+ 								"de": "Another priority type question.",
+ 								"en": "Another priority type question."
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -1156,6 +1156,227 @@
  									"grid_item_style": {
  										"justify_self": "center",
  										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "How big is your in\u0026shy;vest\u0026shy;ment team? Please choose the team size in terms of full time equivalents.",
+ 								"en": "How big is your in\u0026shy;vest\u0026shy;ment team? Please choose the team size in terms of full time equivalents."
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 16,
+ 					"inputs": [
+ 						{
+ 							"name": "xx3",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "\u003c5\u0026nbsp;FTE",
+ 								"en": "\u003c5\u0026nbsp;FTE"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end",
+ 										"order": 2
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "xx3",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "5-10\u0026nbsp;FTE",
+ 								"en": "5-10\u0026nbsp;FTE"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "2",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end",
+ 										"order": 2
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "xx3",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "11-20\u0026nbsp;FTE",
+ 								"en": "11-20\u0026nbsp;FTE"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "3",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end",
+ 										"order": 2
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "xx3",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "\u003e20\u0026nbsp;FTE",
+ 								"en": "\u003e20\u0026nbsp;FTE"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "4",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end",
+ 										"order": 2
  									},
  									"text_style": {
  										"align_horizontal": "center"

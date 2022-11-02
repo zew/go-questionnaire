@@ -111,14 +111,14 @@ func (inp *inputT) ControlFirst() {
 	// inp.ColSpanControl, inp.ColSpanLabel = inp.ColSpanLabel, inp.ColSpanControl
 }
 
-// ControlTop puts the control vertically on top;
+// ControlTop puts the control vertically at top;
 // default would be vertically centered
 func (inp *inputT) ControlTop() {
 	inp.StyleCtl = css.NewStylesResponsive(inp.StyleCtl)
 	inp.StyleCtl.Desktop.StyleGridItem.AlignSelf = "start"
 }
 
-// ControlBottom puts the control vertically on bottom;
+// ControlBottom puts the control vertically at bottom;
 // default would be vertically centered
 func (inp *inputT) ControlBottom() {
 	inp.StyleCtl = css.NewStylesResponsive(inp.StyleCtl)
@@ -134,11 +134,37 @@ func (inp *inputT) LabelRight() {
 	inp.StyleLbl.Desktop.StyleText.AlignHorizontal = "right"
 }
 
+// LabelCenter - label horizontally centered;
+// default is 'left';
+// vertical remains 'center'
+func (inp *inputT) LabelCenter() {
+	inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
+	inp.StyleLbl.Desktop.StyleGridItem.JustifySelf = "center"
+}
+
 // LabelPadRight puts a padding right on the label
 // to prevent touching of the control
 func (inp *inputT) LabelPadRight() {
 	inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
 	inp.StyleLbl.Desktop.StyleBox.Padding = "0 1.0rem 0 0"
+}
+
+// Vertical order of control and label instead of horizontal
+func (inp *inputT) Vertical() {
+	inp.Style = css.NewStylesResponsive(inp.Style)
+	// inp.Style.Desktop.StyleBox.Display = "grid"
+	inp.Style.Desktop.StyleGridContainer.AutoFlow = "column"
+	rows := 1
+	inp.Style.Desktop.StyleGridContainer.TemplateRows = strings.Repeat("1fr ", rows)
+	inp.Style.Desktop.StyleGridContainer.TemplateColumns = " " // empty string
+}
+
+// VerticalLabel -
+func (inp *inputT) VerticalLabel() {
+	inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
+	inp.StyleLbl.Desktop.StyleGridItem.JustifySelf = "center"
+	inp.StyleLbl.Desktop.StyleGridItem.AlignSelf = "end"
+	inp.StyleLbl.Desktop.StyleText.AlignHorizontal = "center"
 }
 
 // appendTooltip appends an explanation

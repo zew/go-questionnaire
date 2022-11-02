@@ -57,7 +57,74 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		page.Short = trl.S{"de": "Label<br>short"}
 		page.WidthMax("42rem")
 
-		prio3Matrix(qst.WrapPageT(page), "xx")
+		{
+			inps := []string{
+				"energy",
+				"materials",
+				"industrials",
+				"consumer_discretionary",
+				"consumer_staples",
+				"health_care",
+				"financials",
+				"information_technology",
+				"communication_services",
+				"utilities",
+				"real_estate",
+			}
+
+			lbls := map[string]string{
+				"energy":                 "Energy",
+				"materials":              "Materials",
+				"industrials":            "Industrials",
+				"consumer_discretionary": "Consumer Discretionary",
+				"consumer_staples":       "Consumer Staples",
+				"health_care":            "Health Care",
+				"financials":             "Financials",
+				"information_technology": "Information Technology",
+				"communication_services": "Communication Services",
+				"utilities":              "Utilities",
+				"real_estate":            "Real Estate",
+			}
+
+			lblMain := trl.S{
+				"de": `What GICS sectors provides the most attractive 
+					investment opportunities in the next three months? 
+					Please rank the top three.`,
+			}
+			prio3Matrix(qst.WrapPageT(page), "xx", lblMain, inps, lbls)
+		}
+
+		{
+			inps := []string{
+				"row1",
+				"row2",
+				"row3",
+				"utilities",
+				"real_estate",
+			}
+
+			lbls := map[string]string{
+				"row1":        "row1",
+				"row2":        "row2",
+				"row3":        "row3",
+				"utilities":   "Utilities 2",
+				"real_estate": "Real Estate 2",
+			}
+
+			lblMain := trl.S{
+				"de": `Another priority type question.`,
+				"en": `Another priority type question.`,
+			}
+			prio3Matrix(qst.WrapPageT(page), "xx1", lblMain, inps, lbls)
+		}
+
+		{
+			lblMain := trl.S{
+				"de": `How do you expect the quality of deals in terms of the risk-return profile change in Q1 2023?`,
+				"en": `How do you expect the quality of deals in terms of the risk-return profile change in Q1 2023?`,
+			}
+			sentimentSingleRow(qst.WrapPageT(page), "xx2", lblMain)
+		}
 
 	} // page1
 
@@ -159,7 +226,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp := gr.AddInput()
 				inp.ColSpanControl = 1
 				inp.Type = "javascript-block"
-				inp.Name = "prio123"
+				inp.Name = "range"
 
 				inp.JSBlockStrings = map[string]string{}
 				inp.JSBlockStrings["inputName"] = "range01" // as above

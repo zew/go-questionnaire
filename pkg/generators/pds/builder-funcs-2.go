@@ -10,6 +10,9 @@ import (
 func prio3Matrix(
 	page *qst.WrappedPageT,
 	name string,
+	lblMain trl.S,
+	inps []string,
+	lbls map[string]string,
 ) {
 
 	// gr1
@@ -20,13 +23,7 @@ func prio3Matrix(
 		{
 			inp := gr.AddInput()
 			inp.Type = "textblock"
-
-			inp.Label = trl.S{
-				"de": `What GICS sectors provides the most attractive 
-					investment opportunities in the next three months? 
-					Please rank the top three.`,
-			}
-
+			inp.Label = lblMain
 			inp.ColSpan = 1
 			inp.ColSpanLabel = 1
 		}
@@ -39,46 +36,42 @@ func prio3Matrix(
 		gr.Cols = 9
 		gr.BottomVSpacers = 3
 
-		inps := []string{
-			"energy",
-			"materials",
-			"industrials",
-			"consumer_discretionary",
-			"consumer_staples",
-			"health_care",
-			"financials",
-			"information_technology",
-			"communication_services",
-			"utilities",
-			"real_estate",
-		}
-
-		lbls := map[string]string{
-			"energy":                 "Energy",
-			"materials":              "Materials",
-			"industrials":            "Industrials",
-			"consumer_discretionary": "Consumer Discretionary",
-			"consumer_staples":       "Consumer Staples",
-			"health_care":            "Health Care",
-			"financials":             "Financials",
-			"information_technology": "Information Technology",
-			"communication_services": "Communication Services",
-			"utilities":              "Utilities",
-			"real_estate":            "Real Estate",
-		}
-
-		for idx1, nm := range inps {
-
-			_ = idx1
-
+		// first row
+		{
 			inp := gr.AddInput()
 			inp.Type = "textblock"
-			inp.Label = trl.S{
-				"de": lbls[nm],
-			}
-
+			inp.Label.Empty()
 			inp.ColSpan = 3
 			inp.ColSpanLabel = 1
+			inp.LabelRight()
+		}
+		for idx2 := 0; idx2 < 3; idx2++ {
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{
+					"de": fmt.Sprintf("Prio %v", idx2+1),
+					"en": fmt.Sprintf("Prio %v", idx2+1),
+				}
+				inp.ColSpan = 2
+				inp.ColSpanLabel = 1
+				inp.LabelCenter()
+			}
+		}
+
+		// second ... n-th row
+		for _, nm := range inps {
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{
+					"de": lbls[nm],
+					"en": lbls[nm],
+				}
+				inp.ColSpan = 3
+				inp.ColSpanLabel = 1
+			}
 
 			for idx2 := 0; idx2 < 3; idx2++ {
 				inp := gr.AddInput()

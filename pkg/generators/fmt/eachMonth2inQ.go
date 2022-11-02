@@ -634,6 +634,43 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 
 	}
 
+	if q.Survey.Year == 2022 && q.Survey.Month == 11 {
+
+		gr := page.AddGroup()
+		gr.Cols = 1
+
+		{
+			inp := gr.AddInput()
+			inp.Type = "textblock"
+			inp.ColSpan = 1
+			inp.ColSpanLabel = 1
+			inp.Label = trl.S{
+				"de": `<b>4.</b> &nbsp; 
+					Mit Blick auf das Jahr 2023, wie beeinflusst die aktuelle Entwicklung der Inflation Ihre Beurteilung des Rendite‐Risiko‐Profils des DAX?
+				`,
+				"en": `<b>4.</b> &nbsp; 
+					How do current developments of inflation affect your assessment of the return-risk-profile of the DAX for the year 2023?
+				`,
+			}
+		}
+
+		{
+			inp := gr.AddInput()
+			inp.Type = "textblock"
+			inp.ColSpan = 1
+			inp.ColSpanLabel = 1
+			inp.Label = trl.S{
+				"de": `<b>5.</b> &nbsp; 
+					Beschreiben Sie kurz in ganzen Sätzen über welche Mechanismen die Inflation Ihre Rendite- und Risiko-Erwartungen für den DAX in 2023 beeinflusst bzw. warum Sie keinen Zusammenhang sehen.
+				`,
+				"en": `<b>5.</b> &nbsp; 
+					Please describe briefly in whole sentences via which mechanisms inflation affects your return-risk-expectations of the DAX for the year 2023 or why you see no relationship.
+				`,
+			}
+		}
+
+	}
+
 	return nil
 
 }

@@ -461,6 +461,10 @@ func labelsConducive1to5() []trl.S {
 
 }
 
+func improvedDeterioratedPlusMinus6() []trl.S {
+	return labelsPlusPlusMinusMinus()
+}
+
 func labelsPlusPlusMinusMinus() []trl.S {
 
 	tm := []trl.S{
@@ -473,8 +477,8 @@ func labelsPlusPlusMinusMinus() []trl.S {
 			"en": "+",
 		},
 		{
-			"de": "kein Einfluss",
-			"en": "no influence",
+			"de": "0",
+			"en": "0",
 		},
 		{
 			"de": "-",
@@ -836,40 +840,6 @@ func special202108C() []trl.S {
 
 		{
 			"de": "keine Angabe",
-			"en": "no answer",
-		},
-	}
-
-	return tm
-
-}
-
-func improvedDeterioratedPlusMinus6() []trl.S {
-
-	tm := []trl.S{
-		{
-			"de": "++",
-			"en": "++",
-		},
-		{
-			"de": "+",
-			"en": "+",
-		},
-		{
-			"de": "0",
-			"en": "0",
-		},
-		{
-			"de": "-",
-			"en": "-",
-		},
-		{
-			"de": "--",
-			"en": "--",
-		},
-
-		{
-			"de": "keine<br>Angabe",
 			"en": "no answer",
 		},
 	}

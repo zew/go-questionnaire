@@ -21,14 +21,14 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "beca0a2aa844984ceded2281e29010def2d136a5c286960aefe120c602bbdac3",
+ 	"md_5": "bc20f0c5fb75209fedc3cc3e5675717b6dca8b8f9e69da5ac728cacda46ec790",
  	"lang_codes": [
  		"de",
  		"en"
  	],
  	"allow_skip_forward": false,
  	"version_effective": 0,
- 	"max_groups": 5,
+ 	"max_groups": 7,
  	"pages": [
  		{
  			"label": {
@@ -1115,7 +1115,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "Ver\u0026shy;bes\u0026shy;se\u0026shy;rung",
- 								"en": "Im\u0026shy;prove\u0026shy;ment"
+ 								"en": "im\u0026shy;prove\u0026shy;ment"
  							},
  							"col_span": 3,
  							"col_span_label": 1,
@@ -1142,7 +1142,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "Gleich blei\u0026shy;ben",
- 								"en": "No change"
+ 								"en": "no change"
  							},
  							"col_span": 3,
  							"col_span_label": 1,
@@ -1169,7 +1169,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "Ver\u0026shy;schlech\u0026shy;te\u0026shy;rung",
- 								"en": "Wors\u0026shy;ening"
+ 								"en": "wors\u0026shy;ening"
  							},
  							"col_span": 3,
  							"col_span_label": 1,
@@ -5527,8 +5527,8 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "kein Ein\u0026shy;fluss",
- 								"en": "no in\u0026shy;flu\u0026shy;ence"
+ 								"de": "0",
+ 								"en": "0"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -5702,7 +5702,7 @@
  							}
  						},
  						{
- 							"name": "rev_bus_cycle_ea",
+ 							"name": "rev_bus_cycle",
  							"type": "radio",
  							"label": {
  								"de": "Konjunkturentwicklung im Euro\u0026shy;gebiet",
@@ -5729,38 +5729,38 @@
  							}
  						},
  						{
- 							"name": "rev_bus_cycle_ea",
+ 							"name": "rev_bus_cycle",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "rev_bus_cycle_ea",
+ 							"name": "rev_bus_cycle",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "rev_bus_cycle_ea",
+ 							"name": "rev_bus_cycle",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "rev_bus_cycle_ea",
+ 							"name": "rev_bus_cycle",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "rev_bus_cycle_ea",
+ 							"name": "rev_bus_cycle",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
  							"value_radio": "6"
  						},
  						{
- 							"name": "rev_wages_ea",
+ 							"name": "rev_wages",
  							"type": "radio",
  							"label": {
  								"de": "Entwicklung der Löhne im Euro\u0026shy;gebiet",
@@ -5787,31 +5787,31 @@
  							}
  						},
  						{
- 							"name": "rev_wages_ea",
+ 							"name": "rev_wages",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2"
  						},
  						{
- 							"name": "rev_wages_ea",
+ 							"name": "rev_wages",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3"
  						},
  						{
- 							"name": "rev_wages_ea",
+ 							"name": "rev_wages",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4"
  						},
  						{
- 							"name": "rev_wages_ea",
+ 							"name": "rev_wages",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5"
  						},
  						{
- 							"name": "rev_wages_ea",
+ 							"name": "rev_wages",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
@@ -6868,6 +6868,337 @@
  							"text_style": {}
  						}
  					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 14,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003e4.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tMit Blick auf das Jahr 2023, wie beein\u0026shy;flusst die aktuelle Entwicklung der In\u0026shy;fla\u0026shy;ti\u0026shy;on Ihre Beurteilung des Rendite‐Risiko‐Profils des DAX?\n\t\t\t\t",
+ 								"en": "\u003cb\u003e4.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tHow do current de\u0026shy;vel\u0026shy;op\u0026shy;ments of in\u0026shy;fla\u0026shy;ti\u0026shy;on affect your assessment of the return-risk-profile of the DAX for the year 2023?\n\t\t\t\t"
+ 							},
+ 							"col_span": 14,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "spec_4",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "stark\u003cbr\u003epo\u0026shy;si\u0026shy;tiv",
+ 								"en": "strong\u0026shy;ly\u003cbr\u003epos\u0026shy;itive"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "spec_4",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "leicht\u003cbr\u003epo\u0026shy;si\u0026shy;tiv",
+ 								"en": "slightly\u003cbr\u003epos\u0026shy;itive"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "2",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "spec_4",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "neu\u0026shy;tral",
+ 								"en": "neu\u0026shy;tral"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "3",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "spec_4",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "leicht\u003cbr\u003ene\u0026shy;ga\u0026shy;tiv",
+ 								"en": "slightly\u003cbr\u003eneg\u0026shy;ative"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "4",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "spec_4",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "stark\u003cbr\u003ene\u0026shy;ga\u0026shy;tiv",
+ 								"en": "strong\u0026shy;ly\u003cbr\u003eneg\u0026shy;ative"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "5",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "spec_4",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "keine\u003cbr\u003eAn\u0026shy;gabe",
+ 								"en": "no an\u0026shy;swer"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "6",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003e5.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tBeschreiben Sie kurz in ganzen Sätzen über welche Mechanismen die In\u0026shy;fla\u0026shy;ti\u0026shy;on Ihre Rendite- und Risiko-Erwartungen für den DAX in 2023 beein\u0026shy;flusst bzw. warum Sie keinen Zusammenhang sehen.\n\t\t\t\t",
+ 								"en": "\u003cb\u003e5.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tPlease describe briefly in whole sentences via which mechanisms in\u0026shy;fla\u0026shy;ti\u0026shy;on affects your return-risk-expectations of the DAX for the year 2023 or why you see no relationship.\n\t\t\t\t"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "spec_5",
+ 							"type": "textarea",
+ 							"max_chars": 300,
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						}
+ 					]
  				}
  			]
  		},

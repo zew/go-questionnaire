@@ -236,7 +236,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.ColSpan = 3
 				inp.Label = trl.S{
 					"de": "Verbesserung",
-					"en": "Improvement",
+					"en": "improvement",
 				}
 				inp.Style = css.ItemStartCA(inp.Style)
 				inp.Style.Mobile.StyleBox.Padding = "0 0.8rem 0 0"
@@ -247,7 +247,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.ColSpan = 3
 				inp.Label = trl.S{
 					"de": "Gleich bleiben",
-					"en": "No change",
+					"en": "no change",
 				}
 				inp.Style = css.ItemStartCA(inp.Style)
 				inp.Style.Mobile.StyleBox.Padding = "0 0.8rem 0 0"
@@ -258,7 +258,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.ColSpan = 3
 				inp.Label = trl.S{
 					"de": "Verschlechterung",
-					"en": "Worsening",
+					"en": "worsening",
 				}
 				inp.Style = css.ItemStartCA(inp.Style)
 			}

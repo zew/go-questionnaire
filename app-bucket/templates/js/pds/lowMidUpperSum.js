@@ -60,7 +60,7 @@ function funcOuter{{.inp_1}}(event) {
 {
     let frm = document.forms.frmMain;
     if (frm) {
-        frm.addEventListener('submit', funcOuter{{.inp_1 }});
+        frm.addEventListener('submit', funcOuter{{.inp_1}});
     }
     console.log("   funcOuter{{.inp_1 }} registered")
 }

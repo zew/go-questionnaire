@@ -1,5 +1,8 @@
 package fmt
 
+// todo: inflation fields for JS dynamic
+// MonthsShift
+
 import (
 	"fmt"
 
@@ -394,8 +397,8 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 			// prefix ioi_ => impact on inflation
 			//   but we stick to rev_ => revision
 			[]string{
-				"rev_bus_cycle_ea",
-				"rev_wages_ea",
+				"rev_bus_cycle",
+				"rev_wages",
 				"rev_energy_prices",
 				"rev_commodity_prices",
 				"rev_exch_rates",
@@ -636,36 +639,75 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 
 	if q.Survey.Year == 2022 && q.Survey.Month == 11 {
 
-		gr := page.AddGroup()
-		gr.Cols = 1
-
 		{
-			inp := gr.AddInput()
-			inp.Type = "textblock"
-			inp.ColSpan = 1
-			inp.ColSpanLabel = 1
-			inp.Label = trl.S{
-				"de": `<b>4.</b> &nbsp; 
+			gr := page.AddGroup()
+			gr.Cols = 14
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.ColSpan = 14
+				inp.ColSpanLabel = 1
+				inp.Label = trl.S{
+					"de": `<b>4.</b> &nbsp; 
 					Mit Blick auf das Jahr 2023, wie beeinflusst die aktuelle Entwicklung der Inflation Ihre Beurteilung des Rendite‐Risiko‐Profils des DAX?
 				`,
-				"en": `<b>4.</b> &nbsp; 
+					"en": `<b>4.</b> &nbsp; 
 					How do current developments of inflation affect your assessment of the return-risk-profile of the DAX for the year 2023?
 				`,
+				}
 			}
+
+			lbls := labelsPositiveNeutralNegative()
+
+			{
+				for idx2 := 0; idx2 < len(lbls); idx2++ {
+					inp := gr.AddInput()
+					inp.Type = "radio"
+					inp.Name = fmt.Sprintf("%v", "spec_4")
+					inp.ValueRadio = fmt.Sprintf("%v", idx2+1) // row idx1
+					inp.Label = lbls[idx2]
+					inp.ColSpan = 2
+					inp.ColSpanControl = 1
+					inp.Vertical()
+					inp.VerticalLabel()
+
+					if idx2 == len(lbls)-1 {
+						inp.ColSpan = 4
+					}
+
+				}
+
+			}
+
 		}
 
 		{
-			inp := gr.AddInput()
-			inp.Type = "textblock"
-			inp.ColSpan = 1
-			inp.ColSpanLabel = 1
-			inp.Label = trl.S{
-				"de": `<b>5.</b> &nbsp; 
+			gr := page.AddGroup()
+			gr.Cols = 1
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.ColSpan = 1
+				inp.ColSpanLabel = 1
+				inp.Label = trl.S{
+					"de": `<b>5.</b> &nbsp; 
 					Beschreiben Sie kurz in ganzen Sätzen über welche Mechanismen die Inflation Ihre Rendite- und Risiko-Erwartungen für den DAX in 2023 beeinflusst bzw. warum Sie keinen Zusammenhang sehen.
 				`,
-				"en": `<b>5.</b> &nbsp; 
+					"en": `<b>5.</b> &nbsp; 
 					Please describe briefly in whole sentences via which mechanisms inflation affects your return-risk-expectations of the DAX for the year 2023 or why you see no relationship.
 				`,
+				}
+			}
+			{
+				inp := gr.AddInput()
+				inp.Type = "textarea"
+				inp.Name = "spec_5"
+				inp.MaxChars = 300
+				inp.ColSpan = 1
+				inp.ColSpanLabel = 0
+				inp.ColSpanControl = 1
 			}
 		}
 

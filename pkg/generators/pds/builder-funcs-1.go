@@ -8,9 +8,16 @@ import (
 	"github.com/zew/go-questionnaire/pkg/trl"
 )
 
-func lowMidUpperSum(
+var subLbl1 = trl.S{
+	"en": `Please state the volume (in million Euro) of deals closed in Q4 2022 by market segment: `,
+	"de": `Please state the volume (in million Euro) of deals closed in Q4 2022 by market segment: `,
+}
+
+func restrictedText(
 	page *qst.WrappedPageT,
 	name string,
+	lbl trl.S,
+	subLbl trl.S,
 ) {
 
 	// gr1
@@ -23,9 +30,7 @@ func lowMidUpperSum(
 			inp.Type = "number"
 			inp.Name = fmt.Sprintf("%v_main", name)
 
-			inp.Label = trl.S{
-				"de": `Please state the volume (in million Euro) of deals closed in Q4 2022.`,
-			}
+			inp.Label = lbl
 			inp.Suffix = trl.S{"de": "Million Euro"}
 
 			inp.MaxChars = 12
@@ -54,10 +59,7 @@ func lowMidUpperSum(
 			inp := gr.AddInput()
 			inp.Type = "textblock"
 			inp.ColSpan = 2
-			inp.Label = trl.S{
-				"de": `Please state the volume (in million Euro) of deals
-				 closed in Q4 2022 by market segment: `,
-			}
+			inp.Label = subLbl
 
 			inp.Style = css.NewStylesResponsive(inp.Style)
 			inp.Style.Desktop.StyleBox.Width = "60%"

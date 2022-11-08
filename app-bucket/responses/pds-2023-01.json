@@ -16,24 +16,26 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "9d93e1e8fcc9878a68885fa25d8a7dab02c30aa588f5a09a50a604ddb4a3a72c",
+ 	"md_5": "2d1688d37053b3e8dd5d8379a34b8357c0a26bf409f111e16337917dc1a4daac",
  	"lang_codes": [
  		"de"
  	],
  	"allow_skip_forward": false,
  	"version_effective": 0,
- 	"max_groups": 8,
+ 	"max_groups": 9,
  	"pages": [
  		{
  			"label": {
- 				"de": "Begrüßung"
+ 				"de": "Begrüßung",
+ 				"en": "Greeting"
  			},
  			"description": {
  				"de": "",
  				"en": ""
  			},
  			"short": {
- 				"de": "Begrüßung"
+ 				"de": "Begrüßung",
+ 				"en": "Greeting"
  			},
  			"suppress_in_progressbar": true,
  			"style": {
@@ -68,6 +70,1127 @@
  							"dynamic_func_paramset": "./welcome-page.html"
  						}
  					]
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "Manager Characteristics (latest available data)",
+ 				"en": "Manager Characteristics (latest available data)"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"short": {
+ 				"de": "Manager",
+ 				"en": "Manager"
+ 			},
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "42rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"name": "identification",
+ 							"type": "text",
+ 							"max_chars": 24,
+ 							"placeholder": {
+ 								"de": "Name Manager",
+ 								"en": "name of manager"
+ 							},
+ 							"label": {
+ 								"de": "Identifikation",
+ 								"en": "Identification"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 2
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Strategie",
+ 								"en": "Strategy"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 8,
+ 					"inputs": [
+ 						{
+ 							"name": "strategy",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Senior",
+ 								"en": "Senior"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"top": "-0.2rem"
+ 									},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "strategy",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Unitranche",
+ 								"en": "Unitranche"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "2",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"top": "-0.2rem"
+ 									},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "strategy",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Subordinated",
+ 								"en": "Subordinated"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "3",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"top": "-0.2rem"
+ 									},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "strategy",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Mezzanine / PIK / Other",
+ 								"en": "Mezzanine / PIK / Other"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "4",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"top": "-0.2rem"
+ 									},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Teamgröße",
+ 								"en": "Team size"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 16,
+ 					"inputs": [
+ 						{
+ 							"name": "teamsize",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "\u003c5",
+ 								"en": "\u003c5"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end",
+ 										"order": 2
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "teamsize",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "5-10",
+ 								"en": "5-10"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "2",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end",
+ 										"order": 2
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "teamsize",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "11-20",
+ 								"en": "11-20"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "3",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end",
+ 										"order": 2
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "teamsize",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "\u003e20",
+ 								"en": "\u003e20"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "4",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end",
+ 										"order": 2
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "1. Portfolio Changes (past 3 Months)",
+ 				"en": "1. Portfolio Changes (past 3 Months)"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"short": {
+ 				"de": "Portfolio Changes",
+ 				"en": "Portfolio Changes"
+ 			},
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "42rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 2,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "A common explanation instead of the repeated one be\u0026shy;low each block",
+ 								"en": "A common explanation instead of the repeated one be\u0026shy;low each block"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 1
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"margin": "0 0 0 2rem"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"name": "senior_main",
+ 							"type": "number",
+ 							"max_chars": 12,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "Senior",
+ 								"en": "Senior"
+ 							},
+ 							"suffix": {
+ 								"de": "Million Euro"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 2,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Please state the volume (in million Euro) of deals closed in Q4 2022 by market segment: ",
+ 								"en": "Please state the volume (in million Euro) of deals closed in Q4 2022 by market segment: "
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"width": "60%"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"width": "96%"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "senior_low",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "- Lower Mid-Market (0-15m € EBITDA)"
+ 							},
+ 							"suffix": {
+ 								"de": "Million Euro"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "senior_mid",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "- Core Mid-Market (15-50m € EBITDA)"
+ 							},
+ 							"suffix": {
+ 								"de": "Million Euro"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "senior_upper",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "- Upper Mid-Market (\u003e50m € EBITDA)"
+ 							},
+ 							"suffix": {
+ 								"de": "Million Euro"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "lowMidUpperSum",
+ 							"type": "javascript-block",
+ 							"col_span_control": 1,
+ 							"js_block_strings": {
+ 								"inp_1": "senior_main",
+ 								"inp_2": "senior_low",
+ 								"inp_3": "senior_mid",
+ 								"inp_4": "senior_upper"
+ 							},
+ 							"js_block_translations": {
+ 								"msg": {
+ 									"de": "Addiert sicht nicht auf. Trotzdem weiter?",
+ 									"en": "Does not add up. Continue?"
+ 								}
+ 							}
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"margin": "0 0 0 2rem"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"name": "unitranche_main",
+ 							"type": "number",
+ 							"max_chars": 12,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "Unitranche",
+ 								"en": "Unitranche"
+ 							},
+ 							"suffix": {
+ 								"de": "Million Euro"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 2,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Please state the volume (in million Euro) of deals closed in Q4 2022 by market segment: ",
+ 								"en": "Please state the volume (in million Euro) of deals closed in Q4 2022 by market segment: "
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"width": "60%"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"width": "96%"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "unitranche_low",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "- Lower Mid-Market (0-15m € EBITDA)"
+ 							},
+ 							"suffix": {
+ 								"de": "Million Euro"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "unitranche_mid",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "- Core Mid-Market (15-50m € EBITDA)"
+ 							},
+ 							"suffix": {
+ 								"de": "Million Euro"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "unitranche_upper",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "- Upper Mid-Market (\u003e50m € EBITDA)"
+ 							},
+ 							"suffix": {
+ 								"de": "Million Euro"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "lowMidUpperSum",
+ 							"type": "javascript-block",
+ 							"col_span_control": 1,
+ 							"js_block_strings": {
+ 								"inp_1": "unitranche_main",
+ 								"inp_2": "unitranche_low",
+ 								"inp_3": "unitranche_mid",
+ 								"inp_4": "unitranche_upper"
+ 							},
+ 							"js_block_translations": {
+ 								"msg": {
+ 									"de": "Addiert sicht nicht auf. Trotzdem weiter?",
+ 									"en": "Does not add up. Continue?"
+ 								}
+ 							}
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"margin": "0 0 0 2rem"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"name": "subordinated_main",
+ 							"type": "number",
+ 							"max_chars": 12,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "Subordinated",
+ 								"en": "Subordinated"
+ 							},
+ 							"suffix": {
+ 								"de": "Million Euro"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 2,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Please state the volume (in million Euro) of deals closed in Q4 2022 by market segment: ",
+ 								"en": "Please state the volume (in million Euro) of deals closed in Q4 2022 by market segment: "
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"width": "60%"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"width": "96%"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "subordinated_low",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "- Lower Mid-Market (0-15m € EBITDA)"
+ 							},
+ 							"suffix": {
+ 								"de": "Million Euro"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "subordinated_mid",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "- Core Mid-Market (15-50m € EBITDA)"
+ 							},
+ 							"suffix": {
+ 								"de": "Million Euro"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "subordinated_upper",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "- Upper Mid-Market (\u003e50m € EBITDA)"
+ 							},
+ 							"suffix": {
+ 								"de": "Million Euro"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "lowMidUpperSum",
+ 							"type": "javascript-block",
+ 							"col_span_control": 1,
+ 							"js_block_strings": {
+ 								"inp_1": "subordinated_main",
+ 								"inp_2": "subordinated_low",
+ 								"inp_3": "subordinated_mid",
+ 								"inp_4": "subordinated_upper"
+ 							},
+ 							"js_block_translations": {
+ 								"msg": {
+ 									"de": "Addiert sicht nicht auf. Trotzdem weiter?",
+ 									"en": "Does not add up. Continue?"
+ 								}
+ 							}
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"margin": "0 0 0 2rem"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"name": "mezzanine_pik_other_main",
+ 							"type": "number",
+ 							"max_chars": 12,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "Mezzanine / PIK / Other",
+ 								"en": "Mezzanine / PIK / Other"
+ 							},
+ 							"suffix": {
+ 								"de": "Million Euro"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 2,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Please state the volume (in million Euro) of deals closed in Q4 2022 by market segment: ",
+ 								"en": "Please state the volume (in million Euro) of deals closed in Q4 2022 by market segment: "
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"width": "60%"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"width": "96%"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "mezzanine_pik_other_low",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "- Lower Mid-Market (0-15m € EBITDA)"
+ 							},
+ 							"suffix": {
+ 								"de": "Million Euro"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "mezzanine_pik_other_mid",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "- Core Mid-Market (15-50m € EBITDA)"
+ 							},
+ 							"suffix": {
+ 								"de": "Million Euro"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "mezzanine_pik_other_upper",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "- Upper Mid-Market (\u003e50m € EBITDA)"
+ 							},
+ 							"suffix": {
+ 								"de": "Million Euro"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "lowMidUpperSum",
+ 							"type": "javascript-block",
+ 							"col_span_control": 1,
+ 							"js_block_strings": {
+ 								"inp_1": "mezzanine_pik_other_main",
+ 								"inp_2": "mezzanine_pik_other_low",
+ 								"inp_3": "mezzanine_pik_other_mid",
+ 								"inp_4": "mezzanine_pik_other_upper"
+ 							},
+ 							"js_block_translations": {
+ 								"msg": {
+ 									"de": "Addiert sicht nicht auf. Trotzdem weiter?",
+ 									"en": "Does not add up. Continue?"
+ 								}
+ 							}
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"margin": "0 0 0 2rem"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
  				}
  			]
  		},
@@ -907,7 +2030,10 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"top": "-0.2rem"
+ 									},
  									"grid_item_style": {
  										"justify_self": "center",
  										"align_self": "end"
@@ -956,7 +2082,10 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"top": "-0.2rem"
+ 									},
  									"grid_item_style": {
  										"justify_self": "center",
  										"align_self": "end"
@@ -1005,7 +2134,10 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"top": "-0.2rem"
+ 									},
  									"grid_item_style": {
  										"justify_self": "center",
  										"align_self": "end"
@@ -1054,7 +2186,10 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"top": "-0.2rem"
+ 									},
  									"grid_item_style": {
  										"justify_self": "center",
  										"align_self": "end"
@@ -1075,8 +2210,8 @@
  							"name": "xx2",
  							"type": "radio",
  							"label": {
- 								"de": "Im\u0026shy;prove sig\u0026shy;nif\u0026shy;i\u0026shy;cant\u0026shy;ly",
- 								"en": "Im\u0026shy;prove sig\u0026shy;nif\u0026shy;i\u0026shy;cant\u0026shy;ly"
+ 								"de": "Wors\u0026shy;en sig\u0026shy;nif\u0026shy;i\u0026shy;cant\u0026shy;ly",
+ 								"en": "Wors\u0026shy;en sig\u0026shy;nif\u0026shy;i\u0026shy;cant\u0026shy;ly"
  							},
  							"col_span": 2,
  							"col_span_label": 1,
@@ -1103,7 +2238,10 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"top": "-0.2rem"
+ 									},
  									"grid_item_style": {
  										"justify_self": "center",
  										"align_self": "end"
@@ -1592,7 +2730,8 @@
  							"step": 1,
  							"max": 1000000,
  							"label": {
- 								"de": "Please state the volume (in million Euro) of deals closed in Q4 2022."
+ 								"de": "Please state the volume (in million Euro) of deals closed in Q4 2022.",
+ 								"en": "Please state the volume (in million Euro) of deals closed in Q4 2022."
  							},
  							"suffix": {
  								"de": "Million Euro"
@@ -1610,7 +2749,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Please state the volume (in million Euro) of deals\n\t\t\t\t closed in Q4 2022 by market segment: "
+ 								"de": "Please state the volume (in million Euro) of deals closed in Q4 2022 by market segment: ",
+ 								"en": "Please state the volume (in million Euro) of deals closed in Q4 2022 by market segment: "
  							},
  							"col_span": 2,
  							"col_span_label": 1,
@@ -1727,7 +2867,8 @@
  							"step": 1,
  							"max": 1000000,
  							"label": {
- 								"de": "Please state the volume (in million Euro) of deals closed in Q4 2022."
+ 								"de": "Please state the volume (in million Euro) of deals closed in Q4 2022.",
+ 								"en": "Please state the volume (in million Euro) of deals closed in Q4 2022."
  							},
  							"suffix": {
  								"de": "Million Euro"
@@ -1745,7 +2886,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Please state the volume (in million Euro) of deals\n\t\t\t\t closed in Q4 2022 by market segment: "
+ 								"de": "Please state the volume (in million Euro) of deals closed in Q4 2022 by market segment: ",
+ 								"en": "Please state the volume (in million Euro) of deals closed in Q4 2022 by market segment: "
  							},
  							"col_span": 2,
  							"col_span_label": 1,

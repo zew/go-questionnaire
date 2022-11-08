@@ -1,7 +1,7 @@
 package fmt
 
 // todo: inflation fields for JS dynamic
-// MonthsShift
+// MonthsShift year
 
 import (
 	"fmt"
@@ -387,7 +387,7 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 			},
 			{
 				"de": "Krieg in der Ukraine",
-				"en": "War in the Ukraine",
+				"en": "War in Ukraine",
 			},
 		}
 

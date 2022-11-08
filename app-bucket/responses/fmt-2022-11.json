@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "bc20f0c5fb75209fedc3cc3e5675717b6dca8b8f9e69da5ac728cacda46ec790",
+ 	"md_5": "2759bee49c3081d1005be731d71d195359a43af726202e916e43dfe9f49f38c6",
  	"lang_codes": [
  		"de",
  		"en"
@@ -6286,7 +6286,7 @@
  							"type": "radio",
  							"label": {
  								"de": "Krieg in der Ukraine",
- 								"en": "War in the Ukraine"
+ 								"en": "War in Ukraine"
  							},
  							"col_span_label": 3.6,
  							"col_span_control": 1,

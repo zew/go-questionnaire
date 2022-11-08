@@ -25,8 +25,14 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		page := q.AddPage()
 		page.SuppressInProgressbar = true
 
-		page.Label = trl.S{"de": "Begrüßung"}
-		page.Short = trl.S{"de": "Begrüßung"}
+		page.Label = trl.S{
+			"en": "Greeting",
+			"de": "Begrüßung",
+		}
+		page.Short = trl.S{
+			"en": "Greeting",
+			"de": "Begrüßung",
+		}
 
 		page.ValidationFuncName = ""
 		page.WidthMax("42rem")
@@ -48,7 +54,114 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 	}
 
+	// page 0a
+	{
+		page := q.AddPage()
+		// page.SuppressInProgressbar = true
+
+		page.Label = trl.S{
+			"en": "Manager Characteristics (latest available data)",
+			"de": "Manager Characteristics (latest available data)",
+		}
+		page.Short = trl.S{
+			"en": "Manager",
+			"de": "Manager",
+		}
+
+		page.ValidationFuncName = ""
+		page.WidthMax("42rem")
+
+		// gr0
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 1
+			{
+				inp := gr.AddInput()
+				inp.Type = "text"
+				inp.Name = "identification"
+				inp.MaxChars = 24
+				inp.Placeholder = trl.S{
+					"en": "name of manager",
+					"de": "Name Manager",
+				}
+				inp.Label = trl.S{
+					"en": "Identification",
+					"de": "Identifikation",
+				}
+				inp.ColSpan = 1
+				inp.ColSpanLabel = 1
+				inp.ColSpanControl = 2
+			}
+		}
+
+		// gr1
+		{
+			lblMain := trl.S{
+				"de": `Strategie`,
+				"en": `Strategy`,
+			}
+			multipleChoiceSingleRow(qst.WrapPageT(page), "strategy", lblMain, mode1)
+		}
+		// gr2
+		{
+			lblMain := trl.S{
+				"de": `Teamgröße`,
+				"en": `Team size`,
+			}
+			mode2mod := mode2
+			mode2mod.GroupBottomSpacers = 3
+			multipleChoiceSingleRow(qst.WrapPageT(page), "teamsize", lblMain, mode2mod)
+		}
+
+	} // page0a
+
 	// page1
+	{
+		page := q.AddPage()
+		// page.Section = trl.S{
+		// 	"en": "Section 1",
+		// 	"de": "Section 1",
+		// }
+		page.Label = trl.S{
+			"en": "1. Portfolio Changes (past 3 Months)",
+			"de": "1. Portfolio Changes (past 3 Months)",
+		}
+		page.Short = trl.S{
+			"en": "Portfolio Changes",
+			"de": "Portfolio Changes",
+		}
+
+		page.WidthMax("42rem")
+
+		{
+			gr := page.AddGroup()
+			gr.Cols = 2
+			// gr.Style = css.NewStylesResponsive(gr.Style)
+			// gr.Style.Desktop.StyleBox.Margin = "0 0 0 2rem"
+			gr.BottomVSpacers = 1
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.ColSpan = 2
+				inp.Label = trl.S{
+					"en": `A common explanation instead of the repeated one below each block`,
+					"de": `A common explanation instead of the repeated one below each block`,
+				}
+
+				// inp.Style = css.NewStylesResponsive(inp.Style)
+				// inp.Style.Desktop.StyleBox.Width = "60%"
+				// inp.Style.Mobile.StyleBox.Width = "96%"
+
+			}
+		}
+		for idx1, trancheTypeName := range trancheTypeNames {
+			lbl := allLbls["tranche-types"][idx1]
+			restrictedText(qst.WrapPageT(page), trancheTypeName, lbl, subLbl1)
+		}
+	}
+
+	// page2
 	{
 		page := q.AddPage()
 
@@ -123,7 +236,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"de": `How do you expect the quality of deals in terms of the risk-return profile change in Q1 2023?`,
 				"en": `How do you expect the quality of deals in terms of the risk-return profile change in Q1 2023?`,
 			}
-			sentimentSingleRow(qst.WrapPageT(page), "xx2", lblMain, 1)
+			multipleChoiceSingleRow(qst.WrapPageT(page), "xx2", lblMain, mode1X1)
 		}
 
 		{
@@ -131,12 +244,12 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"de": `How big is your investment team? Please choose the team size in terms of full time equivalents.`,
 				"en": `How big is your investment team? Please choose the team size in terms of full time equivalents.`,
 			}
-			sentimentSingleRow(qst.WrapPageT(page), "xx3", lblMain, 2)
+			multipleChoiceSingleRow(qst.WrapPageT(page), "xx3", lblMain, mode2X2)
 		}
 
-	} // page1
+	} // page2
 
-	// page2
+	// page3
 	{
 		page := q.AddPage()
 
@@ -242,9 +355,9 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 		}
 
-	} // page2
+	} // page3
 
-	// page3
+	// page4
 	{
 		page := q.AddPage()
 
@@ -253,10 +366,14 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		page.Short = trl.S{"de": "Label<br>short"}
 		page.WidthMax("42rem")
 
-		lowMidUpperSum(qst.WrapPageT(page), "xx")
-		lowMidUpperSum(qst.WrapPageT(page), "yy")
+		lbl := trl.S{
+			"de": `Please state the volume (in million Euro) of deals closed in Q4 2022.`,
+			"en": `Please state the volume (in million Euro) of deals closed in Q4 2022.`,
+		}
+		restrictedText(qst.WrapPageT(page), "xx", lbl, subLbl1)
+		restrictedText(qst.WrapPageT(page), "yy", lbl, subLbl1)
 
-	} // page3
+	} // page4
 
 	// Report of results
 	{

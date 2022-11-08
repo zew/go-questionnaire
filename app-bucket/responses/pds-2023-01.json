@@ -2,10 +2,12 @@
  	"survey": {
  		"type": "pds",
  		"org": {
- 			"de": "ZEW"
+ 			"de": "ZEW",
+ 			"en": "ZEW"
  		},
  		"name": {
- 			"de": "Private Debt Survey"
+ 			"de": "Private Debt Survey",
+ 			"en": "Private Debt Survey"
  		},
  		"year": 2023,
  		"month": 1,
@@ -16,13 +18,13 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "2d1688d37053b3e8dd5d8379a34b8357c0a26bf409f111e16337917dc1a4daac",
+ 	"md_5": "74fdb700c30479dec1ecaa9eebb928b7b110814b10cb99ac9ae1bd46c99e8733",
  	"lang_codes": [
- 		"de"
+ 		"en"
  	],
  	"allow_skip_forward": false,
  	"version_effective": 0,
- 	"max_groups": 9,
+ 	"max_groups": 17,
  	"pages": [
  		{
  			"label": {
@@ -626,30 +628,14 @@
  							"col_span": 2,
  							"col_span_label": 1
  						}
- 					],
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {},
- 							"box_style": {
- 								"margin": "0 0 0 2rem"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
+ 					]
  				},
  				{
  					"bottom_vspacers": 1,
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "senior_main",
+ 							"name": "senior_numdeals_main",
  							"type": "number",
  							"max_chars": 12,
  							"step": 1,
@@ -659,7 +645,149 @@
  								"en": "Senior"
  							},
  							"suffix": {
- 								"de": "Million Euro"
+ 								"de": "Deals",
+ 								"en": "Deals"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 2,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Please state the number of deals closed in Q4 2022 by market segment: ",
+ 								"en": "Please state the number of deals closed in Q4 2022 by market segment: "
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"width": "60%"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"width": "96%"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "senior_numdeals_low",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "- Lower Mid-Market (0-15m € EBITDA)"
+ 							},
+ 							"suffix": {
+ 								"de": "Deals",
+ 								"en": "Deals"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "senior_numdeals_mid",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "- Core Mid-Market (15-50m € EBITDA)"
+ 							},
+ 							"suffix": {
+ 								"de": "Deals",
+ 								"en": "Deals"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "senior_numdeals_upper",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "- Upper Mid-Market (\u003e50m € EBITDA)"
+ 							},
+ 							"suffix": {
+ 								"de": "Deals",
+ 								"en": "Deals"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "restrictedTextSum",
+ 							"type": "javascript-block",
+ 							"col_span_control": 1,
+ 							"js_block_strings": {
+ 								"inp_1": "senior_numdeals_main",
+ 								"inp_2": "senior_numdeals_low",
+ 								"inp_3": "senior_numdeals_mid",
+ 								"inp_4": "senior_numdeals_upper"
+ 							},
+ 							"js_block_translations": {
+ 								"msg": {
+ 									"de": "Addiert sicht nicht auf. Trotzdem weiter?",
+ 									"en": "Does not add up. Continue?"
+ 								}
+ 							}
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"margin": "0 0 0 2rem"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"name": "senior_volume_main",
+ 							"type": "number",
+ 							"max_chars": 12,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "Senior",
+ 								"en": "Senior"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "Million €"
  							},
  							"col_span": 1,
  							"col_span_label": 3,
@@ -699,7 +827,7 @@
  							}
  						},
  						{
- 							"name": "senior_low",
+ 							"name": "senior_volume_low",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -708,14 +836,15 @@
  								"de": "- Lower Mid-Market (0-15m € EBITDA)"
  							},
  							"suffix": {
- 								"de": "Million Euro"
+ 								"de": "Mio €",
+ 								"en": "Million €"
  							},
  							"col_span": 2,
  							"col_span_label": 3,
  							"col_span_control": 2
  						},
  						{
- 							"name": "senior_mid",
+ 							"name": "senior_volume_mid",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -724,14 +853,15 @@
  								"de": "- Core Mid-Market (15-50m € EBITDA)"
  							},
  							"suffix": {
- 								"de": "Million Euro"
+ 								"de": "Mio €",
+ 								"en": "Million €"
  							},
  							"col_span": 2,
  							"col_span_label": 3,
  							"col_span_control": 2
  						},
  						{
- 							"name": "senior_upper",
+ 							"name": "senior_volume_upper",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -740,21 +870,22 @@
  								"de": "- Upper Mid-Market (\u003e50m € EBITDA)"
  							},
  							"suffix": {
- 								"de": "Million Euro"
+ 								"de": "Mio €",
+ 								"en": "Million €"
  							},
  							"col_span": 2,
  							"col_span_label": 3,
  							"col_span_control": 2
  						},
  						{
- 							"name": "lowMidUpperSum",
+ 							"name": "restrictedTextSum",
  							"type": "javascript-block",
  							"col_span_control": 1,
  							"js_block_strings": {
- 								"inp_1": "senior_main",
- 								"inp_2": "senior_low",
- 								"inp_3": "senior_mid",
- 								"inp_4": "senior_upper"
+ 								"inp_1": "senior_volume_main",
+ 								"inp_2": "senior_volume_low",
+ 								"inp_3": "senior_volume_mid",
+ 								"inp_4": "senior_volume_upper"
  							},
  							"js_block_translations": {
  								"msg": {
@@ -786,7 +917,7 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "unitranche_main",
+ 							"name": "unitranche_numdeals_main",
  							"type": "number",
  							"max_chars": 12,
  							"step": 1,
@@ -796,7 +927,149 @@
  								"en": "Unitranche"
  							},
  							"suffix": {
- 								"de": "Million Euro"
+ 								"de": "Deals",
+ 								"en": "Deals"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 2,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Please state the number of deals closed in Q4 2022 by market segment: ",
+ 								"en": "Please state the number of deals closed in Q4 2022 by market segment: "
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"width": "60%"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"width": "96%"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "unitranche_numdeals_low",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "- Lower Mid-Market (0-15m € EBITDA)"
+ 							},
+ 							"suffix": {
+ 								"de": "Deals",
+ 								"en": "Deals"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "unitranche_numdeals_mid",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "- Core Mid-Market (15-50m € EBITDA)"
+ 							},
+ 							"suffix": {
+ 								"de": "Deals",
+ 								"en": "Deals"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "unitranche_numdeals_upper",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "- Upper Mid-Market (\u003e50m € EBITDA)"
+ 							},
+ 							"suffix": {
+ 								"de": "Deals",
+ 								"en": "Deals"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "restrictedTextSum",
+ 							"type": "javascript-block",
+ 							"col_span_control": 1,
+ 							"js_block_strings": {
+ 								"inp_1": "unitranche_numdeals_main",
+ 								"inp_2": "unitranche_numdeals_low",
+ 								"inp_3": "unitranche_numdeals_mid",
+ 								"inp_4": "unitranche_numdeals_upper"
+ 							},
+ 							"js_block_translations": {
+ 								"msg": {
+ 									"de": "Addiert sicht nicht auf. Trotzdem weiter?",
+ 									"en": "Does not add up. Continue?"
+ 								}
+ 							}
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"margin": "0 0 0 2rem"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"name": "unitranche_volume_main",
+ 							"type": "number",
+ 							"max_chars": 12,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "Unitranche",
+ 								"en": "Unitranche"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "Million €"
  							},
  							"col_span": 1,
  							"col_span_label": 3,
@@ -836,7 +1109,7 @@
  							}
  						},
  						{
- 							"name": "unitranche_low",
+ 							"name": "unitranche_volume_low",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -845,14 +1118,15 @@
  								"de": "- Lower Mid-Market (0-15m € EBITDA)"
  							},
  							"suffix": {
- 								"de": "Million Euro"
+ 								"de": "Mio €",
+ 								"en": "Million €"
  							},
  							"col_span": 2,
  							"col_span_label": 3,
  							"col_span_control": 2
  						},
  						{
- 							"name": "unitranche_mid",
+ 							"name": "unitranche_volume_mid",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -861,14 +1135,15 @@
  								"de": "- Core Mid-Market (15-50m € EBITDA)"
  							},
  							"suffix": {
- 								"de": "Million Euro"
+ 								"de": "Mio €",
+ 								"en": "Million €"
  							},
  							"col_span": 2,
  							"col_span_label": 3,
  							"col_span_control": 2
  						},
  						{
- 							"name": "unitranche_upper",
+ 							"name": "unitranche_volume_upper",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -877,21 +1152,22 @@
  								"de": "- Upper Mid-Market (\u003e50m € EBITDA)"
  							},
  							"suffix": {
- 								"de": "Million Euro"
+ 								"de": "Mio €",
+ 								"en": "Million €"
  							},
  							"col_span": 2,
  							"col_span_label": 3,
  							"col_span_control": 2
  						},
  						{
- 							"name": "lowMidUpperSum",
+ 							"name": "restrictedTextSum",
  							"type": "javascript-block",
  							"col_span_control": 1,
  							"js_block_strings": {
- 								"inp_1": "unitranche_main",
- 								"inp_2": "unitranche_low",
- 								"inp_3": "unitranche_mid",
- 								"inp_4": "unitranche_upper"
+ 								"inp_1": "unitranche_volume_main",
+ 								"inp_2": "unitranche_volume_low",
+ 								"inp_3": "unitranche_volume_mid",
+ 								"inp_4": "unitranche_volume_upper"
  							},
  							"js_block_translations": {
  								"msg": {
@@ -923,7 +1199,7 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "subordinated_main",
+ 							"name": "subordinated_numdeals_main",
  							"type": "number",
  							"max_chars": 12,
  							"step": 1,
@@ -933,7 +1209,8 @@
  								"en": "Subordinated"
  							},
  							"suffix": {
- 								"de": "Million Euro"
+ 								"de": "Deals",
+ 								"en": "Deals"
  							},
  							"col_span": 1,
  							"col_span_label": 3,
@@ -948,8 +1225,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Please state the volume (in million Euro) of deals closed in Q4 2022 by market segment: ",
- 								"en": "Please state the volume (in million Euro) of deals closed in Q4 2022 by market segment: "
+ 								"de": "Please state the number of deals closed in Q4 2022 by market segment: ",
+ 								"en": "Please state the number of deals closed in Q4 2022 by market segment: "
  							},
  							"col_span": 2,
  							"col_span_label": 1,
@@ -973,7 +1250,7 @@
  							}
  						},
  						{
- 							"name": "subordinated_low",
+ 							"name": "subordinated_numdeals_low",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -982,14 +1259,15 @@
  								"de": "- Lower Mid-Market (0-15m € EBITDA)"
  							},
  							"suffix": {
- 								"de": "Million Euro"
+ 								"de": "Deals",
+ 								"en": "Deals"
  							},
  							"col_span": 2,
  							"col_span_label": 3,
  							"col_span_control": 2
  						},
  						{
- 							"name": "subordinated_mid",
+ 							"name": "subordinated_numdeals_mid",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -998,14 +1276,15 @@
  								"de": "- Core Mid-Market (15-50m € EBITDA)"
  							},
  							"suffix": {
- 								"de": "Million Euro"
+ 								"de": "Deals",
+ 								"en": "Deals"
  							},
  							"col_span": 2,
  							"col_span_label": 3,
  							"col_span_control": 2
  						},
  						{
- 							"name": "subordinated_upper",
+ 							"name": "subordinated_numdeals_upper",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -1014,21 +1293,22 @@
  								"de": "- Upper Mid-Market (\u003e50m € EBITDA)"
  							},
  							"suffix": {
- 								"de": "Million Euro"
+ 								"de": "Deals",
+ 								"en": "Deals"
  							},
  							"col_span": 2,
  							"col_span_label": 3,
  							"col_span_control": 2
  						},
  						{
- 							"name": "lowMidUpperSum",
+ 							"name": "restrictedTextSum",
  							"type": "javascript-block",
  							"col_span_control": 1,
  							"js_block_strings": {
- 								"inp_1": "subordinated_main",
- 								"inp_2": "subordinated_low",
- 								"inp_3": "subordinated_mid",
- 								"inp_4": "subordinated_upper"
+ 								"inp_1": "subordinated_numdeals_main",
+ 								"inp_2": "subordinated_numdeals_low",
+ 								"inp_3": "subordinated_numdeals_mid",
+ 								"inp_4": "subordinated_numdeals_upper"
  							},
  							"js_block_translations": {
  								"msg": {
@@ -1060,17 +1340,18 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "mezzanine_pik_other_main",
+ 							"name": "subordinated_volume_main",
  							"type": "number",
  							"max_chars": 12,
  							"step": 1,
  							"max": 1000000,
  							"label": {
- 								"de": "Mezzanine / PIK / Other",
- 								"en": "Mezzanine / PIK / Other"
+ 								"de": "Subordinated",
+ 								"en": "Subordinated"
  							},
  							"suffix": {
- 								"de": "Million Euro"
+ 								"de": "Mio €",
+ 								"en": "Million €"
  							},
  							"col_span": 1,
  							"col_span_label": 3,
@@ -1110,7 +1391,7 @@
  							}
  						},
  						{
- 							"name": "mezzanine_pik_other_low",
+ 							"name": "subordinated_volume_low",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -1119,14 +1400,15 @@
  								"de": "- Lower Mid-Market (0-15m € EBITDA)"
  							},
  							"suffix": {
- 								"de": "Million Euro"
+ 								"de": "Mio €",
+ 								"en": "Million €"
  							},
  							"col_span": 2,
  							"col_span_label": 3,
  							"col_span_control": 2
  						},
  						{
- 							"name": "mezzanine_pik_other_mid",
+ 							"name": "subordinated_volume_mid",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -1135,14 +1417,15 @@
  								"de": "- Core Mid-Market (15-50m € EBITDA)"
  							},
  							"suffix": {
- 								"de": "Million Euro"
+ 								"de": "Mio €",
+ 								"en": "Million €"
  							},
  							"col_span": 2,
  							"col_span_label": 3,
  							"col_span_control": 2
  						},
  						{
- 							"name": "mezzanine_pik_other_upper",
+ 							"name": "subordinated_volume_upper",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -1151,21 +1434,304 @@
  								"de": "- Upper Mid-Market (\u003e50m € EBITDA)"
  							},
  							"suffix": {
- 								"de": "Million Euro"
+ 								"de": "Mio €",
+ 								"en": "Million €"
  							},
  							"col_span": 2,
  							"col_span_label": 3,
  							"col_span_control": 2
  						},
  						{
- 							"name": "lowMidUpperSum",
+ 							"name": "restrictedTextSum",
  							"type": "javascript-block",
  							"col_span_control": 1,
  							"js_block_strings": {
- 								"inp_1": "mezzanine_pik_other_main",
- 								"inp_2": "mezzanine_pik_other_low",
- 								"inp_3": "mezzanine_pik_other_mid",
- 								"inp_4": "mezzanine_pik_other_upper"
+ 								"inp_1": "subordinated_volume_main",
+ 								"inp_2": "subordinated_volume_low",
+ 								"inp_3": "subordinated_volume_mid",
+ 								"inp_4": "subordinated_volume_upper"
+ 							},
+ 							"js_block_translations": {
+ 								"msg": {
+ 									"de": "Addiert sicht nicht auf. Trotzdem weiter?",
+ 									"en": "Does not add up. Continue?"
+ 								}
+ 							}
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"margin": "0 0 0 2rem"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"name": "mezzanine_pik_other_numdeals_main",
+ 							"type": "number",
+ 							"max_chars": 12,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "Mezzanine / PIK / Other",
+ 								"en": "Mezzanine / PIK / Other"
+ 							},
+ 							"suffix": {
+ 								"de": "Deals",
+ 								"en": "Deals"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 2,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Please state the number of deals closed in Q4 2022 by market segment: ",
+ 								"en": "Please state the number of deals closed in Q4 2022 by market segment: "
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"width": "60%"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"width": "96%"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "mezzanine_pik_other_numdeals_low",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "- Lower Mid-Market (0-15m € EBITDA)"
+ 							},
+ 							"suffix": {
+ 								"de": "Deals",
+ 								"en": "Deals"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "mezzanine_pik_other_numdeals_mid",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "- Core Mid-Market (15-50m € EBITDA)"
+ 							},
+ 							"suffix": {
+ 								"de": "Deals",
+ 								"en": "Deals"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "mezzanine_pik_other_numdeals_upper",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "- Upper Mid-Market (\u003e50m € EBITDA)"
+ 							},
+ 							"suffix": {
+ 								"de": "Deals",
+ 								"en": "Deals"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "restrictedTextSum",
+ 							"type": "javascript-block",
+ 							"col_span_control": 1,
+ 							"js_block_strings": {
+ 								"inp_1": "mezzanine_pik_other_numdeals_main",
+ 								"inp_2": "mezzanine_pik_other_numdeals_low",
+ 								"inp_3": "mezzanine_pik_other_numdeals_mid",
+ 								"inp_4": "mezzanine_pik_other_numdeals_upper"
+ 							},
+ 							"js_block_translations": {
+ 								"msg": {
+ 									"de": "Addiert sicht nicht auf. Trotzdem weiter?",
+ 									"en": "Does not add up. Continue?"
+ 								}
+ 							}
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"margin": "0 0 0 2rem"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"name": "mezzanine_pik_other_volume_main",
+ 							"type": "number",
+ 							"max_chars": 12,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "Mezzanine / PIK / Other",
+ 								"en": "Mezzanine / PIK / Other"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "Million €"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 2,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Please state the volume (in million Euro) of deals closed in Q4 2022 by market segment: ",
+ 								"en": "Please state the volume (in million Euro) of deals closed in Q4 2022 by market segment: "
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"width": "60%"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"width": "96%"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "mezzanine_pik_other_volume_low",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "- Lower Mid-Market (0-15m € EBITDA)"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "Million €"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "mezzanine_pik_other_volume_mid",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "- Core Mid-Market (15-50m € EBITDA)"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "Million €"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "mezzanine_pik_other_volume_upper",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "- Upper Mid-Market (\u003e50m € EBITDA)"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "Million €"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "restrictedTextSum",
+ 							"type": "javascript-block",
+ 							"col_span_control": 1,
+ 							"js_block_strings": {
+ 								"inp_1": "mezzanine_pik_other_volume_main",
+ 								"inp_2": "mezzanine_pik_other_volume_low",
+ 								"inp_3": "mezzanine_pik_other_volume_mid",
+ 								"inp_4": "mezzanine_pik_other_volume_upper"
  							},
  							"js_block_translations": {
  								"msg": {
@@ -1195,18 +1761,17 @@
  			]
  		},
  		{
- 			"section": {
- 				"de": "Section 1"
- 			},
  			"label": {
- 				"de": "Label long"
+ 				"de": "Priority matrix and multi choice",
+ 				"en": "Priority matrix and multi choice"
  			},
  			"description": {
  				"de": "",
  				"en": ""
  			},
  			"short": {
- 				"de": "Label\u003cbr\u003eshort"
+ 				"de": "PM and MC",
+ 				"en": "PM and MC"
  			},
  			"style": {
  				"desktop": {
@@ -2724,7 +3289,7 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "xx_main",
+ 							"name": "xx_volume_main",
  							"type": "number",
  							"max_chars": 12,
  							"step": 1,
@@ -2734,7 +3299,8 @@
  								"en": "Please state the volume (in million Euro) of deals closed in Q4 2022."
  							},
  							"suffix": {
- 								"de": "Million Euro"
+ 								"de": "Mio €",
+ 								"en": "Million €"
  							},
  							"col_span": 1,
  							"col_span_label": 3,
@@ -2774,7 +3340,7 @@
  							}
  						},
  						{
- 							"name": "xx_low",
+ 							"name": "xx_volume_low",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -2783,14 +3349,15 @@
  								"de": "- Lower Mid-Market (0-15m € EBITDA)"
  							},
  							"suffix": {
- 								"de": "Million Euro"
+ 								"de": "Mio €",
+ 								"en": "Million €"
  							},
  							"col_span": 2,
  							"col_span_label": 3,
  							"col_span_control": 2
  						},
  						{
- 							"name": "xx_mid",
+ 							"name": "xx_volume_mid",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -2799,14 +3366,15 @@
  								"de": "- Core Mid-Market (15-50m € EBITDA)"
  							},
  							"suffix": {
- 								"de": "Million Euro"
+ 								"de": "Mio €",
+ 								"en": "Million €"
  							},
  							"col_span": 2,
  							"col_span_label": 3,
  							"col_span_control": 2
  						},
  						{
- 							"name": "xx_upper",
+ 							"name": "xx_volume_upper",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -2815,21 +3383,22 @@
  								"de": "- Upper Mid-Market (\u003e50m € EBITDA)"
  							},
  							"suffix": {
- 								"de": "Million Euro"
+ 								"de": "Mio €",
+ 								"en": "Million €"
  							},
  							"col_span": 2,
  							"col_span_label": 3,
  							"col_span_control": 2
  						},
  						{
- 							"name": "lowMidUpperSum",
+ 							"name": "restrictedTextSum",
  							"type": "javascript-block",
  							"col_span_control": 1,
  							"js_block_strings": {
- 								"inp_1": "xx_main",
- 								"inp_2": "xx_low",
- 								"inp_3": "xx_mid",
- 								"inp_4": "xx_upper"
+ 								"inp_1": "xx_volume_main",
+ 								"inp_2": "xx_volume_low",
+ 								"inp_3": "xx_volume_mid",
+ 								"inp_4": "xx_volume_upper"
  							},
  							"js_block_translations": {
  								"msg": {
@@ -2861,7 +3430,7 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "yy_main",
+ 							"name": "yy_volume_main",
  							"type": "number",
  							"max_chars": 12,
  							"step": 1,
@@ -2871,7 +3440,8 @@
  								"en": "Please state the volume (in million Euro) of deals closed in Q4 2022."
  							},
  							"suffix": {
- 								"de": "Million Euro"
+ 								"de": "Mio €",
+ 								"en": "Million €"
  							},
  							"col_span": 1,
  							"col_span_label": 3,
@@ -2911,7 +3481,7 @@
  							}
  						},
  						{
- 							"name": "yy_low",
+ 							"name": "yy_volume_low",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -2920,14 +3490,15 @@
  								"de": "- Lower Mid-Market (0-15m € EBITDA)"
  							},
  							"suffix": {
- 								"de": "Million Euro"
+ 								"de": "Mio €",
+ 								"en": "Million €"
  							},
  							"col_span": 2,
  							"col_span_label": 3,
  							"col_span_control": 2
  						},
  						{
- 							"name": "yy_mid",
+ 							"name": "yy_volume_mid",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -2936,14 +3507,15 @@
  								"de": "- Core Mid-Market (15-50m € EBITDA)"
  							},
  							"suffix": {
- 								"de": "Million Euro"
+ 								"de": "Mio €",
+ 								"en": "Million €"
  							},
  							"col_span": 2,
  							"col_span_label": 3,
  							"col_span_control": 2
  						},
  						{
- 							"name": "yy_upper",
+ 							"name": "yy_volume_upper",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -2952,21 +3524,22 @@
  								"de": "- Upper Mid-Market (\u003e50m € EBITDA)"
  							},
  							"suffix": {
- 								"de": "Million Euro"
+ 								"de": "Mio €",
+ 								"en": "Million €"
  							},
  							"col_span": 2,
  							"col_span_label": 3,
  							"col_span_control": 2
  						},
  						{
- 							"name": "lowMidUpperSum",
+ 							"name": "restrictedTextSum",
  							"type": "javascript-block",
  							"col_span_control": 1,
  							"js_block_strings": {
- 								"inp_1": "yy_main",
- 								"inp_2": "yy_low",
- 								"inp_3": "yy_mid",
- 								"inp_4": "yy_upper"
+ 								"inp_1": "yy_volume_main",
+ 								"inp_2": "yy_volume_low",
+ 								"inp_3": "yy_volume_mid",
+ 								"inp_4": "yy_volume_upper"
  							},
  							"js_block_translations": {
  								"msg": {

@@ -8,16 +8,44 @@ import (
 	"github.com/zew/go-questionnaire/pkg/trl"
 )
 
-var subLbl1 = trl.S{
-	"en": `Please state the volume (in million Euro) of deals closed in Q4 2022 by market segment: `,
-	"de": `Please state the volume (in million Euro) of deals closed in Q4 2022 by market segment: `,
+// config restricted text
+type configRT struct {
+	InputPrefix string
+	SubLbl      trl.S
+	Suffix      trl.S
+	Placeholder trl.S
 }
+
+var (
+	rT1 = configRT{
+		InputPrefix: "numdeals",
+		SubLbl: trl.S{
+			"en": `Please state the number of deals closed in Q4 2022 by market segment: `,
+			"de": `Please state the number of deals closed in Q4 2022 by market segment: `,
+		},
+		Suffix: trl.S{
+			"en": "Deals",
+			"de": "Deals",
+		},
+	}
+	rT2 = configRT{
+		InputPrefix: "volume",
+		SubLbl: trl.S{
+			"en": `Please state the volume (in million Euro) of deals closed in Q4 2022 by market segment: `,
+			"de": `Please state the volume (in million Euro) of deals closed in Q4 2022 by market segment: `,
+		},
+		Suffix: trl.S{
+			"en": "Million €",
+			"de": "Mio €",
+		},
+	}
+)
 
 func restrictedText(
 	page *qst.WrappedPageT,
-	name string,
+	inpNameMain string,
 	lbl trl.S,
-	subLbl trl.S,
+	cf configRT,
 ) {
 
 	// gr1
@@ -28,10 +56,10 @@ func restrictedText(
 		{
 			inp := gr.AddInput()
 			inp.Type = "number"
-			inp.Name = fmt.Sprintf("%v_main", name)
+			inp.Name = fmt.Sprintf("%v_%v_main", inpNameMain, cf.InputPrefix)
 
 			inp.Label = lbl
-			inp.Suffix = trl.S{"de": "Million Euro"}
+			inp.Suffix = cf.Suffix
 
 			inp.MaxChars = 12
 			inp.Step = 1
@@ -59,7 +87,7 @@ func restrictedText(
 			inp := gr.AddInput()
 			inp.Type = "textblock"
 			inp.ColSpan = 2
-			inp.Label = subLbl
+			inp.Label = cf.SubLbl
 
 			inp.Style = css.NewStylesResponsive(inp.Style)
 			inp.Style.Desktop.StyleBox.Width = "60%"
@@ -77,12 +105,12 @@ func restrictedText(
 
 			inp := gr.AddInput()
 			inp.Type = "number"
-			inp.Name = fmt.Sprintf("%v_%v", name, suffx)
+			inp.Name = fmt.Sprintf("%v_%v_%v", inpNameMain, cf.InputPrefix, suffx)
 
 			inp.Label = trl.S{
 				"de": fmt.Sprintf("- %v", lbls[suffx]),
 			}
-			inp.Suffix = trl.S{"de": "Million Euro"}
+			inp.Suffix = cf.Suffix
 
 			inp.MaxChars = 10
 			inp.Step = 1
@@ -98,7 +126,7 @@ func restrictedText(
 		inp := gr.AddInput()
 		inp.ColSpanControl = 1
 		inp.Type = "javascript-block"
-		inp.Name = "lowMidUpperSum"
+		inp.Name = "restrictedTextSum"
 
 		s1 := trl.S{
 			"de": "Addiert sicht nicht auf. Trotzdem weiter?",
@@ -111,7 +139,7 @@ func restrictedText(
 		inp.JSBlockStrings = map[string]string{}
 		for idx, suffx := range []string{"main", "low", "mid", "upper"} {
 			inpNamePlaceholder := fmt.Sprintf("%v_%v", "inp", idx+1) // {{.inp_1}}, {{.inp_2}}, ...
-			nm := fmt.Sprintf("%v_%v", name, suffx)
+			nm := fmt.Sprintf("%v_%v_%v", inpNameMain, cf.InputPrefix, suffx)
 			inp.JSBlockStrings[inpNamePlaceholder] = nm
 		}
 

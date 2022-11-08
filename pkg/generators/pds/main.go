@@ -14,10 +14,16 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 	q := qst.QuestionnaireT{}
 	q.Survey = s
-	q.LangCodes = []string{"de"} // governs default language code
+	q.LangCodes = []string{"en"} // governs default language code
 
-	q.Survey.Org = trl.S{"de": "ZEW"}
-	q.Survey.Name = trl.S{"de": "Private Debt Survey"}
+	q.Survey.Org = trl.S{
+		"en": "ZEW",
+		"de": "ZEW",
+	}
+	q.Survey.Name = trl.S{
+		"en": "Private Debt Survey",
+		"de": "Private Debt Survey",
+	}
 	// q.Variations = 1
 
 	// page 0
@@ -101,7 +107,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"de": `Strategie`,
 				"en": `Strategy`,
 			}
-			multipleChoiceSingleRow(qst.WrapPageT(page), "strategy", lblMain, mode1)
+			multipleChoiceSingleRow(qst.WrapPageT(page), "strategy", lblMain, mCh1)
 		}
 		// gr2
 		{
@@ -109,7 +115,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"de": `Teamgröße`,
 				"en": `Team size`,
 			}
-			mode2mod := mode2
+			mode2mod := mCh2
 			mode2mod.GroupBottomSpacers = 3
 			multipleChoiceSingleRow(qst.WrapPageT(page), "teamsize", lblMain, mode2mod)
 		}
@@ -137,27 +143,27 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		{
 			gr := page.AddGroup()
 			gr.Cols = 2
-			// gr.Style = css.NewStylesResponsive(gr.Style)
-			// gr.Style.Desktop.StyleBox.Margin = "0 0 0 2rem"
 			gr.BottomVSpacers = 1
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
 				inp.ColSpan = 2
 				inp.Label = trl.S{
-					"en": `A common explanation instead of the repeated one below each block`,
-					"de": `A common explanation instead of the repeated one below each block`,
+					"en": `A common explanation instead of the repeated one below each block. Should we group by question type (deals, time, volume) - or by strategy (senior, unit...) `,
+					"de": `A common explanation instead of the repeated one below each block. Should we group by question type (deals, time, volume) - or by strategy (senior, unit...) `,
 				}
-
-				// inp.Style = css.NewStylesResponsive(inp.Style)
-				// inp.Style.Desktop.StyleBox.Width = "60%"
-				// inp.Style.Mobile.StyleBox.Width = "96%"
-
 			}
 		}
 		for idx1, trancheTypeName := range trancheTypeNames {
-			lbl := allLbls["tranche-types"][idx1]
-			restrictedText(qst.WrapPageT(page), trancheTypeName, lbl, subLbl1)
+			{
+				trancheTypeLbl := allLbls["tranche-types"][idx1]
+				restrictedText(qst.WrapPageT(page), trancheTypeName, trancheTypeLbl, rT1)
+			}
+
+			{
+				trancheTypeLbl := allLbls["tranche-types"][idx1]
+				restrictedText(qst.WrapPageT(page), trancheTypeName, trancheTypeLbl, rT2)
+			}
 		}
 	}
 
@@ -165,9 +171,18 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	{
 		page := q.AddPage()
 
-		page.Section = trl.S{"de": "Section 1"}
 		page.Label = trl.S{"de": "Label long"}
 		page.Short = trl.S{"de": "Label<br>short"}
+
+		page.Label = trl.S{
+			"en": "Priority matrix and multi choice",
+			"de": "Priority matrix and multi choice",
+		}
+		page.Short = trl.S{
+			"en": "PM and MC",
+			"de": "PM and MC",
+		}
+
 		page.WidthMax("42rem")
 
 		{
@@ -236,7 +251,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"de": `How do you expect the quality of deals in terms of the risk-return profile change in Q1 2023?`,
 				"en": `How do you expect the quality of deals in terms of the risk-return profile change in Q1 2023?`,
 			}
-			multipleChoiceSingleRow(qst.WrapPageT(page), "xx2", lblMain, mode1X1)
+			multipleChoiceSingleRow(qst.WrapPageT(page), "xx2", lblMain, mChExample1)
 		}
 
 		{
@@ -244,7 +259,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"de": `How big is your investment team? Please choose the team size in terms of full time equivalents.`,
 				"en": `How big is your investment team? Please choose the team size in terms of full time equivalents.`,
 			}
-			multipleChoiceSingleRow(qst.WrapPageT(page), "xx3", lblMain, mode2X2)
+			multipleChoiceSingleRow(qst.WrapPageT(page), "xx3", lblMain, mChExample2)
 		}
 
 	} // page2
@@ -361,7 +376,10 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	{
 		page := q.AddPage()
 
-		page.Section = trl.S{"de": "Section 2"}
+		// page.Section = trl.S{
+		// 	"en": "Section 2",
+		// 	"de": "Section 2",
+		// }
 		page.Label = trl.S{"de": "Label long"}
 		page.Short = trl.S{"de": "Label<br>short"}
 		page.WidthMax("42rem")
@@ -370,8 +388,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"de": `Please state the volume (in million Euro) of deals closed in Q4 2022.`,
 			"en": `Please state the volume (in million Euro) of deals closed in Q4 2022.`,
 		}
-		restrictedText(qst.WrapPageT(page), "xx", lbl, subLbl1)
-		restrictedText(qst.WrapPageT(page), "yy", lbl, subLbl1)
+		restrictedText(qst.WrapPageT(page), "xx", lbl, rT2)
+		restrictedText(qst.WrapPageT(page), "yy", lbl, rT2)
 
 	} // page4
 

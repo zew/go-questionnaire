@@ -8,7 +8,8 @@ import (
 	"github.com/zew/go-questionnaire/pkg/trl"
 )
 
-type modeT struct {
+// config multiple choice
+type configMC struct {
 	KeyLabels          string
 	Cols               float32
 	InpColspan         float32
@@ -18,28 +19,28 @@ type modeT struct {
 }
 
 var (
-	mode1 = modeT{
+	mCh1 = configMC{
 		KeyLabels:   "tranche-types",
 		Cols:        8,
 		InpColspan:  2,
 		LabelBottom: false,
 		DontKnow:    false,
 	}
-	mode2 = modeT{
+	mCh2 = configMC{
 		KeyLabels:   "teamsize",
 		Cols:        16,
 		InpColspan:  16 / 4,
 		LabelBottom: true,
 		DontKnow:    false,
 	}
-	mode1X1 = modeT{
+	mChExample1 = configMC{
 		KeyLabels:   "improveWorsen1-5",
 		Cols:        14,
 		InpColspan:  2,
 		LabelBottom: false,
 		DontKnow:    true,
 	}
-	mode2X2 = modeT{
+	mChExample2 = configMC{
 		KeyLabels:   "smaller5larger20",
 		Cols:        16,
 		InpColspan:  16 / 4,
@@ -144,7 +145,7 @@ func multipleChoiceSingleRow(
 	page *qst.WrappedPageT,
 	nm string,
 	lblMain trl.S,
-	mode modeT,
+	cf configMC,
 ) {
 
 	// gr1
@@ -166,23 +167,23 @@ func multipleChoiceSingleRow(
 	{
 		gr := page.AddGroup()
 		gr.Cols = 14
-		gr.Cols = float32(mode.Cols)
+		gr.Cols = float32(cf.Cols)
 		// if mode == 2 {
 		// 	gr.Cols = 16
 		// }
 		gr.BottomVSpacers = 1
-		if mode.GroupBottomSpacers != 0 {
-			gr.BottomVSpacers = mode.GroupBottomSpacers
+		if cf.GroupBottomSpacers != 0 {
+			gr.BottomVSpacers = cf.GroupBottomSpacers
 		}
 
-		for idx2 := 0; idx2 < len(allLbls[mode.KeyLabels]); idx2++ {
+		for idx2 := 0; idx2 < len(allLbls[cf.KeyLabels]); idx2++ {
 			inp := gr.AddInput()
 			inp.Type = "radio"
 			inp.Name = fmt.Sprintf("%v", nm)
 			inp.ValueRadio = fmt.Sprintf("%v", idx2+1) // row idx1
-			inp.Label = allLbls[mode.KeyLabels][idx2]
+			inp.Label = allLbls[cf.KeyLabels][idx2]
 			inp.ColSpan = 2
-			inp.ColSpan = mode.InpColspan
+			inp.ColSpan = cf.InpColspan
 			// if mode == 2 {
 			// 	inp.ColSpan = gr.Cols / 4
 			// }
@@ -191,7 +192,7 @@ func multipleChoiceSingleRow(
 			inp.VerticalLabel()
 
 			inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
-			if mode.LabelBottom {
+			if cf.LabelBottom {
 				inp.StyleLbl.Desktop.StyleGridItem.Order = 2
 			} else {
 				// top
@@ -200,11 +201,11 @@ func multipleChoiceSingleRow(
 			}
 		}
 
-		if mode.DontKnow {
+		if cf.DontKnow {
 			inp := gr.AddInput()
 			inp.Type = "radio"
 			inp.Name = fmt.Sprintf("%v", nm)
-			inp.ValueRadio = fmt.Sprintf("%v", len(allLbls[mode.KeyLabels])+1)
+			inp.ValueRadio = fmt.Sprintf("%v", len(allLbls[cf.KeyLabels])+1)
 			inp.Label = lblDont
 			inp.ColSpan = 4
 			inp.ColSpanControl = 1

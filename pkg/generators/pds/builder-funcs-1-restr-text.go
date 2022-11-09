@@ -14,6 +14,9 @@ type configRT struct {
 	SubLbl      trl.S
 	Suffix      trl.S
 	Placeholder trl.S
+
+	SubNames []string // suffixes
+	SubLbls  map[string]string
 }
 
 var (
@@ -24,19 +27,52 @@ var (
 			"de": `Please state the number of deals closed in Q4 2022 by market segment: `,
 		},
 		Suffix: trl.S{
-			"en": "Deals",
+			"en": "deals",
 			"de": "Deals",
+		},
+		SubNames: []string{"low", "mid_upper", "other"},
+		SubLbls: map[string]string{
+			"low":       "Lower Mid-Market (0-15m € EBITDA)",
+			"mid_upper": "Core- and Upper Mid-Market (>15m € EBITDA)",
+			"other":     "Other",
 		},
 	}
 	rT2 = configRT{
-		InputPrefix: "volume",
+		InputPrefix: "vol_seg",
 		SubLbl: trl.S{
 			"en": `Please state the volume (in million Euro) of deals closed in Q4 2022 by market segment: `,
-			"de": `Please state the volume (in million Euro) of deals closed in Q4 2022 by market segment: `,
+			"de": `Bitte nennen Sie das Volumen (in Millionen Euro) von Abschlüssen in Q4 2022 nach Marktsegment: `,
 		},
 		Suffix: trl.S{
-			"en": "Million €",
+			"en": "million €",
 			"de": "Mio €",
+		},
+		SubNames: []string{"low", "mid", "upper"},
+		SubLbls: map[string]string{
+			"low":   "Lower Mid-Market (0-15m € EBITDA)",
+			"mid":   "Core Mid-Market (15-50m € EBITDA)",
+			"upper": "Upper Mid-Market (>50m € EBITDA)",
+		},
+	}
+	rT3 = configRT{
+		InputPrefix: "vol_reg",
+		SubLbl: trl.S{
+			"en": `Please state the volume (in million Euro) of deals closed in Q4 2022 by region: `,
+			"de": `Bitte nennen Sie das Volumen (in Millionen Euro) von Abschlüssen in Q4 2022 nach Region: `,
+		},
+		Suffix: trl.S{
+			"en": "million €",
+			"de": "Mio €",
+		},
+		SubNames: []string{"uk", "france", "dach", "benelux", "nordics", "southern_eu", "other"},
+		SubLbls: map[string]string{
+			"uk":          "UK",
+			"france":      "France",
+			"dach":        "DACH",
+			"benelux":     "Benelux",
+			"nordics":     "Nordics",
+			"southern_eu": "Southern Europe",
+			"other":       "Other",
 		},
 	}
 )
@@ -95,20 +131,23 @@ func restrictedText(
 
 		}
 
-		lbls := map[string]string{
-			"low":   "Lower Mid-Market (0-15m € EBITDA)",
-			"mid":   "Core Mid-Market (15-50m € EBITDA)",
-			"upper": "Upper Mid-Market (>50m € EBITDA)",
-		}
+		// suffxs := []string{"low", "mid", "upper"}
+		// lbls := map[string]string{
+		// 	"low":   "Lower Mid-Market (0-15m € EBITDA)",
+		// 	"mid":   "Core Mid-Market (15-50m € EBITDA)",
+		// 	"upper": "Upper Mid-Market (>50m € EBITDA)",
+		// }
 
-		for _, suffx := range []string{"low", "mid", "upper"} {
+		for _, suffx := range cf.SubNames {
 
 			inp := gr.AddInput()
 			inp.Type = "number"
 			inp.Name = fmt.Sprintf("%v_%v_%v", inpNameMain, cf.InputPrefix, suffx)
 
 			inp.Label = trl.S{
-				"de": fmt.Sprintf("- %v", lbls[suffx]),
+				"en": fmt.Sprintf("- %v", cf.SubLbls[suffx]),
+				"de": fmt.Sprintf("- %v", cf.SubLbls[suffx]),
+				//
 			}
 			inp.Suffix = cf.Suffix
 
@@ -137,7 +176,10 @@ func restrictedText(
 		}
 
 		inp.JSBlockStrings = map[string]string{}
-		for idx, suffx := range []string{"main", "low", "mid", "upper"} {
+		//
+		itr := []string{"main"}
+		itr = append(itr, cf.SubNames...)
+		for idx, suffx := range itr {
 			inpNamePlaceholder := fmt.Sprintf("%v_%v", "inp", idx+1) // {{.inp_1}}, {{.inp_2}}, ...
 			nm := fmt.Sprintf("%v_%v_%v", inpNameMain, cf.InputPrefix, suffx)
 			inp.JSBlockStrings[inpNamePlaceholder] = nm

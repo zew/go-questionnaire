@@ -104,6 +104,15 @@ func (s S) Left(max int) S {
 	return ret
 }
 
+// Bold  encloses in <b> ... </b>
+func (s S) Bold() S {
+	ret := S{}
+	for key, val := range s {
+		ret[key] = fmt.Sprintf("<b>%v</b>", val)
+	}
+	return ret
+}
+
 // Pad with &nbsp;
 func (s S) Pad(spaces int) S {
 	ret := S{}

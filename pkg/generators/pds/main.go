@@ -66,8 +66,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		// page.SuppressInProgressbar = true
 
 		page.Label = trl.S{
-			"en": "Manager Characteristics (latest available data)",
-			"de": "Manager Characteristics (latest available data)",
+			"en": "Manager Characteristics",
+			"de": "Manager Characteristics",
 		}
 		page.Short = trl.S{
 			"en": "Manager",
@@ -104,21 +104,25 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		// gr1
 		{
 			lblMain := trl.S{
-				"de": `Strategie`,
 				"en": `Strategy`,
+				"de": `Strategie`,
 			}
 			multipleChoiceSingleRow(qst.WrapPageT(page), "strategy", lblMain, mCh1)
 		}
 		// gr2
 		{
 			lblMain := trl.S{
-				"de": `Teamgröße`,
-				"en": `Team size`,
+				"de": `How big is your investment team? Please choose the team size in terms of full time equivalents.`,
+				"en": `How big is your investment team? Please choose the team size in terms of full time equivalents.`,
 			}
+
 			mode2mod := mCh2
 			mode2mod.GroupBottomSpacers = 3
 			multipleChoiceSingleRow(qst.WrapPageT(page), "teamsize", lblMain, mode2mod)
 		}
+
+		// gr3
+		assetClass(qst.WrapPageT(page))
 
 	} // page0a
 
@@ -155,15 +159,44 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			}
 		}
 		for idx1, trancheTypeName := range trancheTypeNames {
-			{
-				trancheTypeLbl := allLbls["tranche-types"][idx1]
-				restrictedText(qst.WrapPageT(page), trancheTypeName, trancheTypeLbl, rT1)
-			}
 
 			{
-				trancheTypeLbl := allLbls["tranche-types"][idx1]
-				restrictedText(qst.WrapPageT(page), trancheTypeName, trancheTypeLbl, rT2)
+				gr := page.AddGroup()
+				gr.Cols = 1
+				gr.BottomVSpacers = 0
+				{
+					inp := gr.AddInput()
+					inp.Type = "textblock"
+					inp.ColSpan = 2
+					inp.Label = allLbls["tranche-types"][idx1].Bold()
+					inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
+					inp.StyleLbl.Desktop.StyleText.FontSize = 115
+				}
 			}
+
+			// trancheTypeLbl := allLbls["tranche-types"][idx1]
+			lblNumber := trl.S{
+				"en": "Total number of new deals",
+				"de": "Gesamtzahl neue Abschlüsse",
+			}
+
+			restrictedText(qst.WrapPageT(page), trancheTypeName, lblNumber, rT1)
+			lblDuration := trl.S{
+				"en": "Average time to close a deal in weeks",
+				"de": "Durchschnittl. Zeit bis Abschluss in Wochen",
+			}
+			rangeClosingTime(qst.WrapPageT(page), trancheTypeName, lblDuration)
+			volBySegment := trl.S{
+				"en": "Total volume of new deals by segment",
+				"de": "Gesamtvolumen neuer Abschlüsse nach Marktsegment",
+			}
+			restrictedText(qst.WrapPageT(page), trancheTypeName, volBySegment, rT2)
+
+			volByRegion := trl.S{
+				"en": "Total volume of new deals by region",
+				"de": "Gesamtvolumen neuer Abschlüsse nach Region",
+			}
+			restrictedText(qst.WrapPageT(page), trancheTypeName, volByRegion, rT3)
 		}
 	}
 
@@ -171,16 +204,13 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	{
 		page := q.AddPage()
 
-		page.Label = trl.S{"de": "Label long"}
-		page.Short = trl.S{"de": "Label<br>short"}
-
 		page.Label = trl.S{
-			"en": "Priority matrix and multi choice",
-			"de": "Priority matrix and multi choice",
+			"en": "Priority matrix",
+			"de": "Priority matrix",
 		}
 		page.Short = trl.S{
-			"en": "PM and MC",
-			"de": "PM and MC",
+			"en": "Prio Matrix",
+			"de": "Prio Matrix",
 		}
 
 		page.WidthMax("42rem")
@@ -244,22 +274,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"en": `Another priority type question.`,
 			}
 			prio3Matrix(qst.WrapPageT(page), "xx1", lblMain, inps, lbls)
-		}
-
-		{
-			lblMain := trl.S{
-				"de": `How do you expect the quality of deals in terms of the risk-return profile change in Q1 2023?`,
-				"en": `How do you expect the quality of deals in terms of the risk-return profile change in Q1 2023?`,
-			}
-			multipleChoiceSingleRow(qst.WrapPageT(page), "xx2", lblMain, mChExample1)
-		}
-
-		{
-			lblMain := trl.S{
-				"de": `How big is your investment team? Please choose the team size in terms of full time equivalents.`,
-				"en": `How big is your investment team? Please choose the team size in terms of full time equivalents.`,
-			}
-			multipleChoiceSingleRow(qst.WrapPageT(page), "xx3", lblMain, mChExample2)
 		}
 
 	} // page2
@@ -384,15 +398,18 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		page.Short = trl.S{"de": "Label<br>short"}
 		page.WidthMax("42rem")
 
-		lbl := trl.S{
-			"de": `Please state the volume (in million Euro) of deals closed in Q4 2022.`,
-			"en": `Please state the volume (in million Euro) of deals closed in Q4 2022.`,
+		{
+			lblMain := trl.S{
+				"de": `How do you expect the quality of deals in terms of the risk-return profile change in Q1 2023?`,
+				"en": `How do you expect the quality of deals in terms of the risk-return profile change in Q1 2023?`,
+			}
+			multipleChoiceSingleRow(qst.WrapPageT(page), "xx2", lblMain, mChExample1)
 		}
-		restrictedText(qst.WrapPageT(page), "xx", lbl, rT2)
-		restrictedText(qst.WrapPageT(page), "yy", lbl, rT2)
 
 	} // page4
 
+	//
+	//
 	// Report of results
 	{
 		p := q.AddPage()

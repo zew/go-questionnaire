@@ -47,7 +47,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		{
 			gr := page.AddGroup()
 			gr.Cols = 1
-			gr.BottomVSpacers = 1
+			gr.BottomVSpacers = 3
 			{
 				inp := gr.AddInput()
 				inp.Type = "dyn-textblock"
@@ -197,6 +197,12 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"de": "Gesamtvolumen neuer Abschlüsse nach Region",
 			}
 			restrictedText(qst.WrapPageT(page), trancheTypeName, volByRegion, rT3)
+
+			volBySector := trl.S{
+				"en": "Total volume of new deals by sector",
+				"de": "Gesamtvolumen neuer Abschlüsse nach Sektor",
+			}
+			restrictedText(qst.WrapPageT(page), trancheTypeName, volBySector, rT4)
 		}
 	}
 

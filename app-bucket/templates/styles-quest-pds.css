@@ -10,3 +10,33 @@ textarea,
 a.button {
     margin-right: 0.5rem;
 }
+
+
+
+.content {
+    background-image: url(https://private-debt-survey.zew.de/img/ui/pds-bg-mirrored.png), url(https://private-debt-survey.zew.de/img/ui/pds-bg.png);
+    background-image: url(https://localhost:8083/survey/img/ui/pds-bg-mirrored.png), url(https://localhost:8083/survey/img/ui/pds-bg.png);
+    background-repeat: no-repeat;
+
+    background-size: cover, cover;
+    background-size: contain, contain;
+    background-size: 16%, 18%;
+
+    background-position: bottom left, bottom right;
+
+    background-position-y: bottom, bottom;
+    background-position-y: -34%, -15%;
+    background-position-y: -11rem, -15.0rem;
+
+    background-position-x: left, right;
+    background-position-x: left, 103%;
+
+    background-repeat: repeat-y;
+}
+
+@media screen and (max-width: 960px) {
+    .content {
+        background-image: none;
+    }
+}
+

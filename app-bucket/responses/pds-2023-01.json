@@ -18,13 +18,13 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "877a3fe8f387615719a4e046307e11363909a4a482feeb751709de3ac263d6c8",
+ 	"md_5": "3880daa527bfd7b26608a153e1f2329a6f4d90bbca4b785ea7742f66eb85e8c0",
  	"lang_codes": [
  		"en"
  	],
  	"allow_skip_forward": false,
  	"version_effective": 0,
- 	"max_groups": 33,
+ 	"max_groups": 41,
  	"pages": [
  		{
  			"label": {
@@ -61,7 +61,7 @@
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
  				{
- 					"bottom_vspacers": 1,
+ 					"bottom_vspacers": 3,
  					"columns": 1,
  					"inputs": [
  						{
@@ -948,10 +948,8 @@
  							"type": "javascript-block",
  							"col_span_control": 1,
  							"js_block_strings": {
- 								"inp_1": "senior_numdeals_main",
- 								"inp_2": "senior_numdeals_low",
- 								"inp_3": "senior_numdeals_mid_upper",
- 								"inp_4": "senior_numdeals_other"
+ 								"InpMain": "senior_numdeals",
+ 								"SummandNames": "\"senior_numdeals_low\", \"senior_numdeals_mid_upper\", \"senior_numdeals_other\""
  							},
  							"js_block_translations": {
  								"msg": {
@@ -1025,7 +1023,7 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "senior_vol_seg_main",
+ 							"name": "senior_volbyseg_main",
  							"type": "number",
  							"max_chars": 12,
  							"step": 1,
@@ -1076,7 +1074,7 @@
  							}
  						},
  						{
- 							"name": "senior_vol_seg_low",
+ 							"name": "senior_volbyseg_low",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -1094,7 +1092,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "senior_vol_seg_mid",
+ 							"name": "senior_volbyseg_mid",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -1112,7 +1110,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "senior_vol_seg_upper",
+ 							"name": "senior_volbyseg_upper",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -1134,10 +1132,8 @@
  							"type": "javascript-block",
  							"col_span_control": 1,
  							"js_block_strings": {
- 								"inp_1": "senior_vol_seg_main",
- 								"inp_2": "senior_vol_seg_low",
- 								"inp_3": "senior_vol_seg_mid",
- 								"inp_4": "senior_vol_seg_upper"
+ 								"InpMain": "senior_volbyseg",
+ 								"SummandNames": "\"senior_volbyseg_low\", \"senior_volbyseg_mid\", \"senior_volbyseg_upper\""
  							},
  							"js_block_translations": {
  								"msg": {
@@ -1169,7 +1165,7 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "senior_vol_reg_main",
+ 							"name": "senior_volbyreg_main",
  							"type": "number",
  							"max_chars": 12,
  							"step": 1,
@@ -1220,7 +1216,7 @@
  							}
  						},
  						{
- 							"name": "senior_vol_reg_uk",
+ 							"name": "senior_volbyreg_uk",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -1238,7 +1234,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "senior_vol_reg_france",
+ 							"name": "senior_volbyreg_france",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -1256,7 +1252,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "senior_vol_reg_dach",
+ 							"name": "senior_volbyreg_dach",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -1274,7 +1270,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "senior_vol_reg_benelux",
+ 							"name": "senior_volbyreg_benelux",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -1292,7 +1288,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "senior_vol_reg_nordics",
+ 							"name": "senior_volbyreg_nordics",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -1310,7 +1306,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "senior_vol_reg_southern_eu",
+ 							"name": "senior_volbyreg_southern_eu",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -1328,7 +1324,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "senior_vol_reg_other",
+ 							"name": "senior_volbyreg_other",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -1350,14 +1346,312 @@
  							"type": "javascript-block",
  							"col_span_control": 1,
  							"js_block_strings": {
- 								"inp_1": "senior_vol_reg_main",
- 								"inp_2": "senior_vol_reg_uk",
- 								"inp_3": "senior_vol_reg_france",
- 								"inp_4": "senior_vol_reg_dach",
- 								"inp_5": "senior_vol_reg_benelux",
- 								"inp_6": "senior_vol_reg_nordics",
- 								"inp_7": "senior_vol_reg_southern_eu",
- 								"inp_8": "senior_vol_reg_other"
+ 								"InpMain": "senior_volbyreg",
+ 								"SummandNames": "\"senior_volbyreg_uk\", \"senior_volbyreg_france\", \"senior_volbyreg_dach\", \"senior_volbyreg_benelux\", \"senior_volbyreg_nordics\", \"senior_volbyreg_southern_eu\", \"senior_volbyreg_other\""
+ 							},
+ 							"js_block_translations": {
+ 								"msg": {
+ 									"de": "Addiert sicht nicht auf. Trotzdem weiter?",
+ 									"en": "Does not add up. Continue?"
+ 								}
+ 							}
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"margin": "0 0 0 2rem"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"name": "senior_volbysec_main",
+ 							"type": "number",
+ 							"max_chars": 12,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "Ge\u0026shy;samtvolumen neuer Abschlüsse nach Sektor",
+ 								"en": "Total volume of new deals by sector"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "million €"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 2,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Bitte nennen Sie das Volumen (in Millionen Euro) von Abschlüssen in Q4 2022 nach Region: ",
+ 								"en": "Please state the volume (in million Euro) of deals closed in Q4 2022 by region: "
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"width": "60%"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"width": "96%"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "senior_volbysec_energy",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "- Energy",
+ 								"en": "- Energy"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "million €"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "senior_volbysec_materials",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "- Materials",
+ 								"en": "- Materials"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "million €"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "senior_volbysec_industrials",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "- In\u0026shy;dus\u0026shy;tri\u0026shy;als",
+ 								"en": "- In\u0026shy;dus\u0026shy;tri\u0026shy;als"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "million €"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "senior_volbysec_consumer_disc",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "- Cons\u0026shy;umer Discretionary",
+ 								"en": "- Cons\u0026shy;umer Discretionary"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "million €"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "senior_volbysec_consumer_stap",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "- Cons\u0026shy;umer Staples",
+ 								"en": "- Cons\u0026shy;umer Staples"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "million €"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "senior_volbysec_healthcare",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "- Health Care",
+ 								"en": "- Health Care"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "million €"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "senior_volbysec_financials",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "- Financials",
+ 								"en": "- Financials"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "million €"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "senior_volbysec_information_tech",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "- Information Technology",
+ 								"en": "- Information Technology"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "million €"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "senior_volbysec_comunication_svc",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "- Comunication Services",
+ 								"en": "- Comunication Services"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "million €"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "senior_volbysec_utilities",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "- Utilities",
+ 								"en": "- Utilities"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "million €"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "senior_volbysec_real_estate",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "- Real Estate",
+ 								"en": "- Real Estate"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "million €"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "senior_volbysec_other",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "- Other",
+ 								"en": "- Other"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "million €"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "restrictedTextSum",
+ 							"type": "javascript-block",
+ 							"col_span_control": 1,
+ 							"js_block_strings": {
+ 								"InpMain": "senior_volbysec",
+ 								"SummandNames": "\"senior_volbysec_energy\", \"senior_volbysec_materials\", \"senior_volbysec_industrials\", \"senior_volbysec_consumer_disc\", \"senior_volbysec_consumer_stap\", \"senior_volbysec_healthcare\", \"senior_volbysec_financials\", \"senior_volbysec_information_tech\", \"senior_volbysec_comunication_svc\", \"senior_volbysec_utilities\", \"senior_volbysec_real_estate\", \"senior_volbysec_other\""
  							},
  							"js_block_translations": {
  								"msg": {
@@ -1528,10 +1822,8 @@
  							"type": "javascript-block",
  							"col_span_control": 1,
  							"js_block_strings": {
- 								"inp_1": "unitranche_numdeals_main",
- 								"inp_2": "unitranche_numdeals_low",
- 								"inp_3": "unitranche_numdeals_mid_upper",
- 								"inp_4": "unitranche_numdeals_other"
+ 								"InpMain": "unitranche_numdeals",
+ 								"SummandNames": "\"unitranche_numdeals_low\", \"unitranche_numdeals_mid_upper\", \"unitranche_numdeals_other\""
  							},
  							"js_block_translations": {
  								"msg": {
@@ -1605,7 +1897,7 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "unitranche_vol_seg_main",
+ 							"name": "unitranche_volbyseg_main",
  							"type": "number",
  							"max_chars": 12,
  							"step": 1,
@@ -1656,7 +1948,7 @@
  							}
  						},
  						{
- 							"name": "unitranche_vol_seg_low",
+ 							"name": "unitranche_volbyseg_low",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -1674,7 +1966,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "unitranche_vol_seg_mid",
+ 							"name": "unitranche_volbyseg_mid",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -1692,7 +1984,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "unitranche_vol_seg_upper",
+ 							"name": "unitranche_volbyseg_upper",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -1714,10 +2006,8 @@
  							"type": "javascript-block",
  							"col_span_control": 1,
  							"js_block_strings": {
- 								"inp_1": "unitranche_vol_seg_main",
- 								"inp_2": "unitranche_vol_seg_low",
- 								"inp_3": "unitranche_vol_seg_mid",
- 								"inp_4": "unitranche_vol_seg_upper"
+ 								"InpMain": "unitranche_volbyseg",
+ 								"SummandNames": "\"unitranche_volbyseg_low\", \"unitranche_volbyseg_mid\", \"unitranche_volbyseg_upper\""
  							},
  							"js_block_translations": {
  								"msg": {
@@ -1749,7 +2039,7 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "unitranche_vol_reg_main",
+ 							"name": "unitranche_volbyreg_main",
  							"type": "number",
  							"max_chars": 12,
  							"step": 1,
@@ -1800,7 +2090,7 @@
  							}
  						},
  						{
- 							"name": "unitranche_vol_reg_uk",
+ 							"name": "unitranche_volbyreg_uk",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -1818,7 +2108,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "unitranche_vol_reg_france",
+ 							"name": "unitranche_volbyreg_france",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -1836,7 +2126,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "unitranche_vol_reg_dach",
+ 							"name": "unitranche_volbyreg_dach",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -1854,7 +2144,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "unitranche_vol_reg_benelux",
+ 							"name": "unitranche_volbyreg_benelux",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -1872,7 +2162,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "unitranche_vol_reg_nordics",
+ 							"name": "unitranche_volbyreg_nordics",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -1890,7 +2180,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "unitranche_vol_reg_southern_eu",
+ 							"name": "unitranche_volbyreg_southern_eu",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -1908,7 +2198,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "unitranche_vol_reg_other",
+ 							"name": "unitranche_volbyreg_other",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -1930,14 +2220,312 @@
  							"type": "javascript-block",
  							"col_span_control": 1,
  							"js_block_strings": {
- 								"inp_1": "unitranche_vol_reg_main",
- 								"inp_2": "unitranche_vol_reg_uk",
- 								"inp_3": "unitranche_vol_reg_france",
- 								"inp_4": "unitranche_vol_reg_dach",
- 								"inp_5": "unitranche_vol_reg_benelux",
- 								"inp_6": "unitranche_vol_reg_nordics",
- 								"inp_7": "unitranche_vol_reg_southern_eu",
- 								"inp_8": "unitranche_vol_reg_other"
+ 								"InpMain": "unitranche_volbyreg",
+ 								"SummandNames": "\"unitranche_volbyreg_uk\", \"unitranche_volbyreg_france\", \"unitranche_volbyreg_dach\", \"unitranche_volbyreg_benelux\", \"unitranche_volbyreg_nordics\", \"unitranche_volbyreg_southern_eu\", \"unitranche_volbyreg_other\""
+ 							},
+ 							"js_block_translations": {
+ 								"msg": {
+ 									"de": "Addiert sicht nicht auf. Trotzdem weiter?",
+ 									"en": "Does not add up. Continue?"
+ 								}
+ 							}
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"margin": "0 0 0 2rem"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"name": "unitranche_volbysec_main",
+ 							"type": "number",
+ 							"max_chars": 12,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "Ge\u0026shy;samtvolumen neuer Abschlüsse nach Sektor",
+ 								"en": "Total volume of new deals by sector"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "million €"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 2,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Bitte nennen Sie das Volumen (in Millionen Euro) von Abschlüssen in Q4 2022 nach Region: ",
+ 								"en": "Please state the volume (in million Euro) of deals closed in Q4 2022 by region: "
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"width": "60%"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"width": "96%"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "unitranche_volbysec_energy",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "- Energy",
+ 								"en": "- Energy"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "million €"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "unitranche_volbysec_materials",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "- Materials",
+ 								"en": "- Materials"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "million €"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "unitranche_volbysec_industrials",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "- In\u0026shy;dus\u0026shy;tri\u0026shy;als",
+ 								"en": "- In\u0026shy;dus\u0026shy;tri\u0026shy;als"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "million €"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "unitranche_volbysec_consumer_disc",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "- Cons\u0026shy;umer Discretionary",
+ 								"en": "- Cons\u0026shy;umer Discretionary"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "million €"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "unitranche_volbysec_consumer_stap",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "- Cons\u0026shy;umer Staples",
+ 								"en": "- Cons\u0026shy;umer Staples"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "million €"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "unitranche_volbysec_healthcare",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "- Health Care",
+ 								"en": "- Health Care"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "million €"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "unitranche_volbysec_financials",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "- Financials",
+ 								"en": "- Financials"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "million €"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "unitranche_volbysec_information_tech",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "- Information Technology",
+ 								"en": "- Information Technology"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "million €"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "unitranche_volbysec_comunication_svc",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "- Comunication Services",
+ 								"en": "- Comunication Services"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "million €"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "unitranche_volbysec_utilities",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "- Utilities",
+ 								"en": "- Utilities"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "million €"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "unitranche_volbysec_real_estate",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "- Real Estate",
+ 								"en": "- Real Estate"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "million €"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "unitranche_volbysec_other",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "- Other",
+ 								"en": "- Other"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "million €"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "restrictedTextSum",
+ 							"type": "javascript-block",
+ 							"col_span_control": 1,
+ 							"js_block_strings": {
+ 								"InpMain": "unitranche_volbysec",
+ 								"SummandNames": "\"unitranche_volbysec_energy\", \"unitranche_volbysec_materials\", \"unitranche_volbysec_industrials\", \"unitranche_volbysec_consumer_disc\", \"unitranche_volbysec_consumer_stap\", \"unitranche_volbysec_healthcare\", \"unitranche_volbysec_financials\", \"unitranche_volbysec_information_tech\", \"unitranche_volbysec_comunication_svc\", \"unitranche_volbysec_utilities\", \"unitranche_volbysec_real_estate\", \"unitranche_volbysec_other\""
  							},
  							"js_block_translations": {
  								"msg": {
@@ -2108,10 +2696,8 @@
  							"type": "javascript-block",
  							"col_span_control": 1,
  							"js_block_strings": {
- 								"inp_1": "subordinated_numdeals_main",
- 								"inp_2": "subordinated_numdeals_low",
- 								"inp_3": "subordinated_numdeals_mid_upper",
- 								"inp_4": "subordinated_numdeals_other"
+ 								"InpMain": "subordinated_numdeals",
+ 								"SummandNames": "\"subordinated_numdeals_low\", \"subordinated_numdeals_mid_upper\", \"subordinated_numdeals_other\""
  							},
  							"js_block_translations": {
  								"msg": {
@@ -2185,7 +2771,7 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "subordinated_vol_seg_main",
+ 							"name": "subordinated_volbyseg_main",
  							"type": "number",
  							"max_chars": 12,
  							"step": 1,
@@ -2236,7 +2822,7 @@
  							}
  						},
  						{
- 							"name": "subordinated_vol_seg_low",
+ 							"name": "subordinated_volbyseg_low",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -2254,7 +2840,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "subordinated_vol_seg_mid",
+ 							"name": "subordinated_volbyseg_mid",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -2272,7 +2858,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "subordinated_vol_seg_upper",
+ 							"name": "subordinated_volbyseg_upper",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -2294,10 +2880,8 @@
  							"type": "javascript-block",
  							"col_span_control": 1,
  							"js_block_strings": {
- 								"inp_1": "subordinated_vol_seg_main",
- 								"inp_2": "subordinated_vol_seg_low",
- 								"inp_3": "subordinated_vol_seg_mid",
- 								"inp_4": "subordinated_vol_seg_upper"
+ 								"InpMain": "subordinated_volbyseg",
+ 								"SummandNames": "\"subordinated_volbyseg_low\", \"subordinated_volbyseg_mid\", \"subordinated_volbyseg_upper\""
  							},
  							"js_block_translations": {
  								"msg": {
@@ -2329,7 +2913,7 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "subordinated_vol_reg_main",
+ 							"name": "subordinated_volbyreg_main",
  							"type": "number",
  							"max_chars": 12,
  							"step": 1,
@@ -2380,7 +2964,7 @@
  							}
  						},
  						{
- 							"name": "subordinated_vol_reg_uk",
+ 							"name": "subordinated_volbyreg_uk",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -2398,7 +2982,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "subordinated_vol_reg_france",
+ 							"name": "subordinated_volbyreg_france",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -2416,7 +3000,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "subordinated_vol_reg_dach",
+ 							"name": "subordinated_volbyreg_dach",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -2434,7 +3018,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "subordinated_vol_reg_benelux",
+ 							"name": "subordinated_volbyreg_benelux",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -2452,7 +3036,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "subordinated_vol_reg_nordics",
+ 							"name": "subordinated_volbyreg_nordics",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -2470,7 +3054,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "subordinated_vol_reg_southern_eu",
+ 							"name": "subordinated_volbyreg_southern_eu",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -2488,7 +3072,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "subordinated_vol_reg_other",
+ 							"name": "subordinated_volbyreg_other",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -2510,14 +3094,312 @@
  							"type": "javascript-block",
  							"col_span_control": 1,
  							"js_block_strings": {
- 								"inp_1": "subordinated_vol_reg_main",
- 								"inp_2": "subordinated_vol_reg_uk",
- 								"inp_3": "subordinated_vol_reg_france",
- 								"inp_4": "subordinated_vol_reg_dach",
- 								"inp_5": "subordinated_vol_reg_benelux",
- 								"inp_6": "subordinated_vol_reg_nordics",
- 								"inp_7": "subordinated_vol_reg_southern_eu",
- 								"inp_8": "subordinated_vol_reg_other"
+ 								"InpMain": "subordinated_volbyreg",
+ 								"SummandNames": "\"subordinated_volbyreg_uk\", \"subordinated_volbyreg_france\", \"subordinated_volbyreg_dach\", \"subordinated_volbyreg_benelux\", \"subordinated_volbyreg_nordics\", \"subordinated_volbyreg_southern_eu\", \"subordinated_volbyreg_other\""
+ 							},
+ 							"js_block_translations": {
+ 								"msg": {
+ 									"de": "Addiert sicht nicht auf. Trotzdem weiter?",
+ 									"en": "Does not add up. Continue?"
+ 								}
+ 							}
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"margin": "0 0 0 2rem"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"name": "subordinated_volbysec_main",
+ 							"type": "number",
+ 							"max_chars": 12,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "Ge\u0026shy;samtvolumen neuer Abschlüsse nach Sektor",
+ 								"en": "Total volume of new deals by sector"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "million €"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 2,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Bitte nennen Sie das Volumen (in Millionen Euro) von Abschlüssen in Q4 2022 nach Region: ",
+ 								"en": "Please state the volume (in million Euro) of deals closed in Q4 2022 by region: "
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"width": "60%"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"width": "96%"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "subordinated_volbysec_energy",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "- Energy",
+ 								"en": "- Energy"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "million €"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "subordinated_volbysec_materials",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "- Materials",
+ 								"en": "- Materials"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "million €"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "subordinated_volbysec_industrials",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "- In\u0026shy;dus\u0026shy;tri\u0026shy;als",
+ 								"en": "- In\u0026shy;dus\u0026shy;tri\u0026shy;als"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "million €"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "subordinated_volbysec_consumer_disc",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "- Cons\u0026shy;umer Discretionary",
+ 								"en": "- Cons\u0026shy;umer Discretionary"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "million €"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "subordinated_volbysec_consumer_stap",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "- Cons\u0026shy;umer Staples",
+ 								"en": "- Cons\u0026shy;umer Staples"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "million €"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "subordinated_volbysec_healthcare",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "- Health Care",
+ 								"en": "- Health Care"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "million €"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "subordinated_volbysec_financials",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "- Financials",
+ 								"en": "- Financials"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "million €"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "subordinated_volbysec_information_tech",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "- Information Technology",
+ 								"en": "- Information Technology"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "million €"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "subordinated_volbysec_comunication_svc",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "- Comunication Services",
+ 								"en": "- Comunication Services"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "million €"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "subordinated_volbysec_utilities",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "- Utilities",
+ 								"en": "- Utilities"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "million €"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "subordinated_volbysec_real_estate",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "- Real Estate",
+ 								"en": "- Real Estate"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "million €"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "subordinated_volbysec_other",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "- Other",
+ 								"en": "- Other"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "million €"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "restrictedTextSum",
+ 							"type": "javascript-block",
+ 							"col_span_control": 1,
+ 							"js_block_strings": {
+ 								"InpMain": "subordinated_volbysec",
+ 								"SummandNames": "\"subordinated_volbysec_energy\", \"subordinated_volbysec_materials\", \"subordinated_volbysec_industrials\", \"subordinated_volbysec_consumer_disc\", \"subordinated_volbysec_consumer_stap\", \"subordinated_volbysec_healthcare\", \"subordinated_volbysec_financials\", \"subordinated_volbysec_information_tech\", \"subordinated_volbysec_comunication_svc\", \"subordinated_volbysec_utilities\", \"subordinated_volbysec_real_estate\", \"subordinated_volbysec_other\""
  							},
  							"js_block_translations": {
  								"msg": {
@@ -2688,10 +3570,8 @@
  							"type": "javascript-block",
  							"col_span_control": 1,
  							"js_block_strings": {
- 								"inp_1": "mezzanine_pik_other_numdeals_main",
- 								"inp_2": "mezzanine_pik_other_numdeals_low",
- 								"inp_3": "mezzanine_pik_other_numdeals_mid_upper",
- 								"inp_4": "mezzanine_pik_other_numdeals_other"
+ 								"InpMain": "mezzanine_pik_other_numdeals",
+ 								"SummandNames": "\"mezzanine_pik_other_numdeals_low\", \"mezzanine_pik_other_numdeals_mid_upper\", \"mezzanine_pik_other_numdeals_other\""
  							},
  							"js_block_translations": {
  								"msg": {
@@ -2765,7 +3645,7 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "mezzanine_pik_other_vol_seg_main",
+ 							"name": "mezzanine_pik_other_volbyseg_main",
  							"type": "number",
  							"max_chars": 12,
  							"step": 1,
@@ -2816,7 +3696,7 @@
  							}
  						},
  						{
- 							"name": "mezzanine_pik_other_vol_seg_low",
+ 							"name": "mezzanine_pik_other_volbyseg_low",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -2834,7 +3714,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "mezzanine_pik_other_vol_seg_mid",
+ 							"name": "mezzanine_pik_other_volbyseg_mid",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -2852,7 +3732,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "mezzanine_pik_other_vol_seg_upper",
+ 							"name": "mezzanine_pik_other_volbyseg_upper",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -2874,10 +3754,8 @@
  							"type": "javascript-block",
  							"col_span_control": 1,
  							"js_block_strings": {
- 								"inp_1": "mezzanine_pik_other_vol_seg_main",
- 								"inp_2": "mezzanine_pik_other_vol_seg_low",
- 								"inp_3": "mezzanine_pik_other_vol_seg_mid",
- 								"inp_4": "mezzanine_pik_other_vol_seg_upper"
+ 								"InpMain": "mezzanine_pik_other_volbyseg",
+ 								"SummandNames": "\"mezzanine_pik_other_volbyseg_low\", \"mezzanine_pik_other_volbyseg_mid\", \"mezzanine_pik_other_volbyseg_upper\""
  							},
  							"js_block_translations": {
  								"msg": {
@@ -2909,7 +3787,7 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "mezzanine_pik_other_vol_reg_main",
+ 							"name": "mezzanine_pik_other_volbyreg_main",
  							"type": "number",
  							"max_chars": 12,
  							"step": 1,
@@ -2960,7 +3838,7 @@
  							}
  						},
  						{
- 							"name": "mezzanine_pik_other_vol_reg_uk",
+ 							"name": "mezzanine_pik_other_volbyreg_uk",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -2978,7 +3856,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "mezzanine_pik_other_vol_reg_france",
+ 							"name": "mezzanine_pik_other_volbyreg_france",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -2996,7 +3874,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "mezzanine_pik_other_vol_reg_dach",
+ 							"name": "mezzanine_pik_other_volbyreg_dach",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -3014,7 +3892,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "mezzanine_pik_other_vol_reg_benelux",
+ 							"name": "mezzanine_pik_other_volbyreg_benelux",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -3032,7 +3910,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "mezzanine_pik_other_vol_reg_nordics",
+ 							"name": "mezzanine_pik_other_volbyreg_nordics",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -3050,7 +3928,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "mezzanine_pik_other_vol_reg_southern_eu",
+ 							"name": "mezzanine_pik_other_volbyreg_southern_eu",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -3068,7 +3946,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "mezzanine_pik_other_vol_reg_other",
+ 							"name": "mezzanine_pik_other_volbyreg_other",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -3090,14 +3968,312 @@
  							"type": "javascript-block",
  							"col_span_control": 1,
  							"js_block_strings": {
- 								"inp_1": "mezzanine_pik_other_vol_reg_main",
- 								"inp_2": "mezzanine_pik_other_vol_reg_uk",
- 								"inp_3": "mezzanine_pik_other_vol_reg_france",
- 								"inp_4": "mezzanine_pik_other_vol_reg_dach",
- 								"inp_5": "mezzanine_pik_other_vol_reg_benelux",
- 								"inp_6": "mezzanine_pik_other_vol_reg_nordics",
- 								"inp_7": "mezzanine_pik_other_vol_reg_southern_eu",
- 								"inp_8": "mezzanine_pik_other_vol_reg_other"
+ 								"InpMain": "mezzanine_pik_other_volbyreg",
+ 								"SummandNames": "\"mezzanine_pik_other_volbyreg_uk\", \"mezzanine_pik_other_volbyreg_france\", \"mezzanine_pik_other_volbyreg_dach\", \"mezzanine_pik_other_volbyreg_benelux\", \"mezzanine_pik_other_volbyreg_nordics\", \"mezzanine_pik_other_volbyreg_southern_eu\", \"mezzanine_pik_other_volbyreg_other\""
+ 							},
+ 							"js_block_translations": {
+ 								"msg": {
+ 									"de": "Addiert sicht nicht auf. Trotzdem weiter?",
+ 									"en": "Does not add up. Continue?"
+ 								}
+ 							}
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"margin": "0 0 0 2rem"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"name": "mezzanine_pik_other_volbysec_main",
+ 							"type": "number",
+ 							"max_chars": 12,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "Ge\u0026shy;samtvolumen neuer Abschlüsse nach Sektor",
+ 								"en": "Total volume of new deals by sector"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "million €"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 2,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Bitte nennen Sie das Volumen (in Millionen Euro) von Abschlüssen in Q4 2022 nach Region: ",
+ 								"en": "Please state the volume (in million Euro) of deals closed in Q4 2022 by region: "
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"width": "60%"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"width": "96%"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "mezzanine_pik_other_volbysec_energy",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "- Energy",
+ 								"en": "- Energy"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "million €"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "mezzanine_pik_other_volbysec_materials",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "- Materials",
+ 								"en": "- Materials"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "million €"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "mezzanine_pik_other_volbysec_industrials",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "- In\u0026shy;dus\u0026shy;tri\u0026shy;als",
+ 								"en": "- In\u0026shy;dus\u0026shy;tri\u0026shy;als"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "million €"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "mezzanine_pik_other_volbysec_consumer_disc",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "- Cons\u0026shy;umer Discretionary",
+ 								"en": "- Cons\u0026shy;umer Discretionary"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "million €"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "mezzanine_pik_other_volbysec_consumer_stap",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "- Cons\u0026shy;umer Staples",
+ 								"en": "- Cons\u0026shy;umer Staples"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "million €"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "mezzanine_pik_other_volbysec_healthcare",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "- Health Care",
+ 								"en": "- Health Care"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "million €"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "mezzanine_pik_other_volbysec_financials",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "- Financials",
+ 								"en": "- Financials"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "million €"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "mezzanine_pik_other_volbysec_information_tech",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "- Information Technology",
+ 								"en": "- Information Technology"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "million €"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "mezzanine_pik_other_volbysec_comunication_svc",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "- Comunication Services",
+ 								"en": "- Comunication Services"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "million €"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "mezzanine_pik_other_volbysec_utilities",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "- Utilities",
+ 								"en": "- Utilities"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "million €"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "mezzanine_pik_other_volbysec_real_estate",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "- Real Estate",
+ 								"en": "- Real Estate"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "million €"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "mezzanine_pik_other_volbysec_other",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"label": {
+ 								"de": "- Other",
+ 								"en": "- Other"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "million €"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 3,
+ 							"col_span_control": 2
+ 						},
+ 						{
+ 							"name": "restrictedTextSum",
+ 							"type": "javascript-block",
+ 							"col_span_control": 1,
+ 							"js_block_strings": {
+ 								"InpMain": "mezzanine_pik_other_volbysec",
+ 								"SummandNames": "\"mezzanine_pik_other_volbysec_energy\", \"mezzanine_pik_other_volbysec_materials\", \"mezzanine_pik_other_volbysec_industrials\", \"mezzanine_pik_other_volbysec_consumer_disc\", \"mezzanine_pik_other_volbysec_consumer_stap\", \"mezzanine_pik_other_volbysec_healthcare\", \"mezzanine_pik_other_volbysec_financials\", \"mezzanine_pik_other_volbysec_information_tech\", \"mezzanine_pik_other_volbysec_comunication_svc\", \"mezzanine_pik_other_volbysec_utilities\", \"mezzanine_pik_other_volbysec_real_estate\", \"mezzanine_pik_other_volbysec_other\""
  							},
  							"js_block_translations": {
  								"msg": {

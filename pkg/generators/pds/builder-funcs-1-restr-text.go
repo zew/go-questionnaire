@@ -2,6 +2,7 @@ package pds
 
 import (
 	"fmt"
+	"strings"
 
 	"github.com/zew/go-questionnaire/pkg/css"
 	"github.com/zew/go-questionnaire/pkg/qst"
@@ -10,7 +11,7 @@ import (
 
 // config restricted text
 type configRT struct {
-	InputPrefix string
+	InputToken2 string // second token
 	SubLbl      trl.S
 	Suffix      trl.S
 	Placeholder trl.S
@@ -21,7 +22,7 @@ type configRT struct {
 
 var (
 	rT1 = configRT{
-		InputPrefix: "numdeals",
+		InputToken2: "numdeals",
 		SubLbl: trl.S{
 			"en": `Please state the number of deals closed in Q4 2022 by market segment: `,
 			"de": `Please state the number of deals closed in Q4 2022 by market segment: `,
@@ -38,7 +39,7 @@ var (
 		},
 	}
 	rT2 = configRT{
-		InputPrefix: "vol_seg",
+		InputToken2: "volbysegm",
 		SubLbl: trl.S{
 			"en": `Please state the volume (in million Euro) of deals closed in Q4 2022 by market segment: `,
 			"de": `Bitte nennen Sie das Volumen (in Millionen Euro) von Abschlüssen in Q4 2022 nach Marktsegment: `,
@@ -55,7 +56,7 @@ var (
 		},
 	}
 	rT3 = configRT{
-		InputPrefix: "vol_reg",
+		InputToken2: "volbyreg",
 		SubLbl: trl.S{
 			"en": `Please state the volume (in million Euro) of deals closed in Q4 2022 by region: `,
 			"de": `Bitte nennen Sie das Volumen (in Millionen Euro) von Abschlüssen in Q4 2022 nach Region: `,
@@ -75,6 +76,45 @@ var (
 			"other":       "Other",
 		},
 	}
+	rT4 = configRT{
+		InputToken2: "volbysect",
+		SubLbl: trl.S{
+			"en": `Please state the volume (in million Euro) of deals closed in Q4 2022 by region: `,
+			"de": `Bitte nennen Sie das Volumen (in Millionen Euro) von Abschlüssen in Q4 2022 nach Region: `,
+		},
+		Suffix: trl.S{
+			"en": "million €",
+			"de": "Mio €",
+		},
+		SubNames: []string{
+			"energy",
+			"materials",
+			"industrials",
+			"consumer_disc",
+			"consumer_stap",
+			"healthcare",
+			"financials",
+			"information_tech",
+			"comunication_svc",
+			"utilities",
+			"real_estate",
+			"other",
+		},
+		SubLbls: map[string]string{
+			"energy":           "Energy",
+			"materials":        "Materials",
+			"industrials":      "Industrials",
+			"consumer_disc":    "Consumer Discretionary",
+			"consumer_stap":    "Consumer Staples",
+			"healthcare":       "Health Care",
+			"financials":       "Financials",
+			"information_tech": "Information Technology",
+			"comunication_svc": "Comunication Services",
+			"utilities":        "Utilities",
+			"real_estate":      "Real Estate",
+			"other":            "Other",
+		},
+	}
 )
 
 func restrictedText(
@@ -92,7 +132,7 @@ func restrictedText(
 		{
 			inp := gr.AddInput()
 			inp.Type = "number"
-			inp.Name = fmt.Sprintf("%v_%v_main", inpNameMain, cf.InputPrefix)
+			inp.Name = fmt.Sprintf("%v_%v_main", inpNameMain, cf.InputToken2)
 
 			inp.Label = lbl
 			inp.Suffix = cf.Suffix
@@ -142,7 +182,7 @@ func restrictedText(
 
 			inp := gr.AddInput()
 			inp.Type = "number"
-			inp.Name = fmt.Sprintf("%v_%v_%v", inpNameMain, cf.InputPrefix, suffx)
+			inp.Name = fmt.Sprintf("%v_%v_%v", inpNameMain, cf.InputToken2, suffx)
 
 			inp.Label = trl.S{
 				"en": fmt.Sprintf("- %v", cf.SubLbls[suffx]),
@@ -177,13 +217,17 @@ func restrictedText(
 
 		inp.JSBlockStrings = map[string]string{}
 		//
-		itr := []string{"main"}
-		itr = append(itr, cf.SubNames...)
-		for idx, suffx := range itr {
-			inpNamePlaceholder := fmt.Sprintf("%v_%v", "inp", idx+1) // {{.inp_1}}, {{.inp_2}}, ...
-			nm := fmt.Sprintf("%v_%v_%v", inpNameMain, cf.InputPrefix, suffx)
-			inp.JSBlockStrings[inpNamePlaceholder] = nm
+
+		inpMain := fmt.Sprintf("%v_%v", inpNameMain, cf.InputToken2)
+		inp.JSBlockStrings["InpMain"] = inpMain
+
+		summands := []string{}
+		for _, suffx := range cf.SubNames {
+			nm := fmt.Sprintf("%v_%v", inpMain, suffx)
+			summands = append(summands, nm)
 		}
+
+		inp.JSBlockStrings["SummandNames"] = `"` + strings.Join(summands, `", "`) + `"`
 
 	}
 

@@ -51,9 +51,9 @@ var (
 
 var trancheTypeNames = []string{
 	"senior",
-	"unitranche",
-	"subordinated",
-	"mezzanine_pik_other",
+	"unit",       // unitranche
+	"subord",     // subordinated
+	"mezzpiketc", // "mezzanine_pik_other",
 }
 
 var allLbls = map[string][]trl.S{

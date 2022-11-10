@@ -171,7 +171,7 @@ func multipleChoiceSingleRow(
 		// if mode == 2 {
 		// 	gr.Cols = 16
 		// }
-		gr.BottomVSpacers = 1
+		gr.BottomVSpacers = 3
 		if cf.GroupBottomSpacers != 0 {
 			gr.BottomVSpacers = cf.GroupBottomSpacers
 		}

@@ -18,13 +18,13 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "3880daa527bfd7b26608a153e1f2329a6f4d90bbca4b785ea7742f66eb85e8c0",
+ 	"md_5": "41151fc27d5f2844a640d925f39902701537fa0c87e7da2f1f83fc037066fdda",
  	"lang_codes": [
  		"en"
  	],
  	"allow_skip_forward": false,
  	"version_effective": 0,
- 	"max_groups": 41,
+ 	"max_groups": 57,
  	"pages": [
  		{
  			"label": {
@@ -137,8 +137,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Strategie",
- 								"en": "Strategy"
+ 								"de": "Strategie - shouldn't this be checkboxes? See 'asset classes' be\u0026shy;low",
+ 								"en": "Strategy -  shouldn't this be checkboxes? See 'asset classes' be\u0026shy;low"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -146,7 +146,7 @@
  					]
  				},
  				{
- 					"bottom_vspacers": 1,
+ 					"bottom_vspacers": 3,
  					"columns": 8,
  					"inputs": [
  						{
@@ -796,8 +796,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "A common explanation instead of the repeated one be\u0026shy;low each block. Should we group by question type (deals, time, volume) - or by strategy (senior, unit...) ",
- 								"en": "A common explanation instead of the repeated one be\u0026shy;low each block. Should we group by question type (deals, time, volume) - or by strategy (senior, unit...) "
+ 								"de": "Should we group by question type (deals, time, volume) - \n\t\t\t\t\t\tor as now by strategy (senior, unit...)?\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\tAlso: One page per strategy\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\tAlso: This repeats for each 'asses class' ?\n\t\t\t\t\t",
+ 								"en": "Should we group by question type (deals, time, volume) - \n\t\t\t\t\t\tor as now by strategy (senior, unit...)?\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\tAlso: One page per strategy\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\tAlso: This repeats for each 'asses class' ?\n\t\t\t\t\t"
  							},
  							"col_span": 2,
  							"col_span_label": 1
@@ -813,7 +813,7 @@
  								"de": "\u003cb\u003eSenior\u003c/b\u003e",
  								"en": "\u003cb\u003eSenior\u003c/b\u003e"
  							},
- 							"col_span": 2,
+ 							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
@@ -1023,7 +1023,7 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "senior_volbyseg_main",
+ 							"name": "senior_volbysegm_main",
  							"type": "number",
  							"max_chars": 12,
  							"step": 1,
@@ -1074,7 +1074,7 @@
  							}
  						},
  						{
- 							"name": "senior_volbyseg_low",
+ 							"name": "senior_volbysegm_low",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -1092,7 +1092,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "senior_volbyseg_mid",
+ 							"name": "senior_volbysegm_mid",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -1110,7 +1110,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "senior_volbyseg_upper",
+ 							"name": "senior_volbysegm_upper",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -1132,8 +1132,8 @@
  							"type": "javascript-block",
  							"col_span_control": 1,
  							"js_block_strings": {
- 								"InpMain": "senior_volbyseg",
- 								"SummandNames": "\"senior_volbyseg_low\", \"senior_volbyseg_mid\", \"senior_volbyseg_upper\""
+ 								"InpMain": "senior_volbysegm",
+ 								"SummandNames": "\"senior_volbysegm_low\", \"senior_volbysegm_mid\", \"senior_volbysegm_upper\""
  							},
  							"js_block_translations": {
  								"msg": {
@@ -1379,7 +1379,7 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "senior_volbysec_main",
+ 							"name": "senior_volbysect_main",
  							"type": "number",
  							"max_chars": 12,
  							"step": 1,
@@ -1430,7 +1430,7 @@
  							}
  						},
  						{
- 							"name": "senior_volbysec_energy",
+ 							"name": "senior_volbysect_energy",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -1448,7 +1448,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "senior_volbysec_materials",
+ 							"name": "senior_volbysect_materials",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -1466,7 +1466,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "senior_volbysec_industrials",
+ 							"name": "senior_volbysect_industrials",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -1484,7 +1484,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "senior_volbysec_consumer_disc",
+ 							"name": "senior_volbysect_consumer_disc",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -1502,7 +1502,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "senior_volbysec_consumer_stap",
+ 							"name": "senior_volbysect_consumer_stap",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -1520,7 +1520,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "senior_volbysec_healthcare",
+ 							"name": "senior_volbysect_healthcare",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -1538,7 +1538,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "senior_volbysec_financials",
+ 							"name": "senior_volbysect_financials",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -1556,7 +1556,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "senior_volbysec_information_tech",
+ 							"name": "senior_volbysect_information_tech",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -1574,7 +1574,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "senior_volbysec_comunication_svc",
+ 							"name": "senior_volbysect_comunication_svc",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -1592,7 +1592,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "senior_volbysec_utilities",
+ 							"name": "senior_volbysect_utilities",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -1610,7 +1610,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "senior_volbysec_real_estate",
+ 							"name": "senior_volbysect_real_estate",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -1628,7 +1628,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "senior_volbysec_other",
+ 							"name": "senior_volbysect_other",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -1650,8 +1650,8 @@
  							"type": "javascript-block",
  							"col_span_control": 1,
  							"js_block_strings": {
- 								"InpMain": "senior_volbysec",
- 								"SummandNames": "\"senior_volbysec_energy\", \"senior_volbysec_materials\", \"senior_volbysec_industrials\", \"senior_volbysec_consumer_disc\", \"senior_volbysec_consumer_stap\", \"senior_volbysec_healthcare\", \"senior_volbysec_financials\", \"senior_volbysec_information_tech\", \"senior_volbysec_comunication_svc\", \"senior_volbysec_utilities\", \"senior_volbysec_real_estate\", \"senior_volbysec_other\""
+ 								"InpMain": "senior_volbysect",
+ 								"SummandNames": "\"senior_volbysect_energy\", \"senior_volbysect_materials\", \"senior_volbysect_industrials\", \"senior_volbysect_consumer_disc\", \"senior_volbysect_consumer_stap\", \"senior_volbysect_healthcare\", \"senior_volbysect_financials\", \"senior_volbysect_information_tech\", \"senior_volbysect_comunication_svc\", \"senior_volbysect_utilities\", \"senior_volbysect_real_estate\", \"senior_volbysect_other\""
  							},
  							"js_block_translations": {
  								"msg": {
@@ -1673,6 +1673,147 @@
  						"mobile": {
  							"grid_container_style": {},
  							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Should next three add up to 100%?",
+ 								"en": "Should next three add up to 100%?"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"name": "senior_esg",
+ 							"type": "range",
+ 							"step": 3,
+ 							"min": 3,
+ 							"max": 21,
+ 							"label": {
+ 								"de": "\u003cb\u003eShare ESG KPIs\u003c/b\u003e \u003cbr\u003eWhat is the share of new deals (at Fair Market Value) with explicit ESG targets in the credit documentation?",
+ 								"en": "\u003cb\u003eShare ESG KPIs\u003c/b\u003e \u003cbr\u003eWhat is the share of new deals (at Fair Market Value) with explicit ESG targets in the credit documentation?"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 2,
+ 							"col_span_control": 1
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width_max": "80%"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width_max": "none"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"name": "senior_esgratch",
+ 							"type": "range",
+ 							"step": 3,
+ 							"min": 3,
+ 							"max": 21,
+ 							"label": {
+ 								"de": "\u003cb\u003eShare ESG ratchets\u003c/b\u003e \u003cbr\u003e What is the share of new deals (at Fair Market Value) with ESG ratchets?",
+ 								"en": "\u003cb\u003eShare ESG ratchets\u003c/b\u003e \u003cbr\u003e What is the share of new deals (at Fair Market Value) with ESG ratchets?"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 2,
+ 							"col_span_control": 1
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width_max": "80%"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width_max": "none"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"name": "senior_esg15degrees",
+ 							"type": "range",
+ 							"step": 3,
+ 							"min": 3,
+ 							"max": 21,
+ 							"label": {
+ 								"de": "\u003cb\u003eShare 1.5°C target\u003c/b\u003e \u003cbr\u003e What is the share of new deals (at Fair Market Value) where the creditor explicitly states a strategy to add to the 1.5°C target?",
+ 								"en": "\u003cb\u003eShare 1.5°C target\u003c/b\u003e \u003cbr\u003e What is the share of new deals (at Fair Market Value) where the creditor explicitly states a strategy to add to the 1.5°C target?"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 2,
+ 							"col_span_control": 1
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width_max": "80%"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width_max": "none"
+ 							},
  							"grid_item_style": {},
  							"text_style": {}
  						}
@@ -1687,7 +1828,7 @@
  								"de": "\u003cb\u003eUnitranche\u003c/b\u003e",
  								"en": "\u003cb\u003eUnitranche\u003c/b\u003e"
  							},
- 							"col_span": 2,
+ 							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
@@ -1713,7 +1854,7 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "unitranche_numdeals_main",
+ 							"name": "unit_numdeals_main",
  							"type": "number",
  							"max_chars": 12,
  							"step": 1,
@@ -1764,7 +1905,7 @@
  							}
  						},
  						{
- 							"name": "unitranche_numdeals_low",
+ 							"name": "unit_numdeals_low",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -1782,7 +1923,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "unitranche_numdeals_mid_upper",
+ 							"name": "unit_numdeals_mid_upper",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -1800,7 +1941,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "unitranche_numdeals_other",
+ 							"name": "unit_numdeals_other",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -1822,8 +1963,8 @@
  							"type": "javascript-block",
  							"col_span_control": 1,
  							"js_block_strings": {
- 								"InpMain": "unitranche_numdeals",
- 								"SummandNames": "\"unitranche_numdeals_low\", \"unitranche_numdeals_mid_upper\", \"unitranche_numdeals_other\""
+ 								"InpMain": "unit_numdeals",
+ 								"SummandNames": "\"unit_numdeals_low\", \"unit_numdeals_mid_upper\", \"unit_numdeals_other\""
  							},
  							"js_block_translations": {
  								"msg": {
@@ -1855,7 +1996,7 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "unitranche_closing_time",
+ 							"name": "unit_closing_time",
  							"type": "range",
  							"step": 3,
  							"min": 3,
@@ -1897,7 +2038,7 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "unitranche_volbyseg_main",
+ 							"name": "unit_volbysegm_main",
  							"type": "number",
  							"max_chars": 12,
  							"step": 1,
@@ -1948,7 +2089,7 @@
  							}
  						},
  						{
- 							"name": "unitranche_volbyseg_low",
+ 							"name": "unit_volbysegm_low",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -1966,7 +2107,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "unitranche_volbyseg_mid",
+ 							"name": "unit_volbysegm_mid",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -1984,7 +2125,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "unitranche_volbyseg_upper",
+ 							"name": "unit_volbysegm_upper",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -2006,8 +2147,8 @@
  							"type": "javascript-block",
  							"col_span_control": 1,
  							"js_block_strings": {
- 								"InpMain": "unitranche_volbyseg",
- 								"SummandNames": "\"unitranche_volbyseg_low\", \"unitranche_volbyseg_mid\", \"unitranche_volbyseg_upper\""
+ 								"InpMain": "unit_volbysegm",
+ 								"SummandNames": "\"unit_volbysegm_low\", \"unit_volbysegm_mid\", \"unit_volbysegm_upper\""
  							},
  							"js_block_translations": {
  								"msg": {
@@ -2039,7 +2180,7 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "unitranche_volbyreg_main",
+ 							"name": "unit_volbyreg_main",
  							"type": "number",
  							"max_chars": 12,
  							"step": 1,
@@ -2090,7 +2231,7 @@
  							}
  						},
  						{
- 							"name": "unitranche_volbyreg_uk",
+ 							"name": "unit_volbyreg_uk",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -2108,7 +2249,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "unitranche_volbyreg_france",
+ 							"name": "unit_volbyreg_france",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -2126,7 +2267,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "unitranche_volbyreg_dach",
+ 							"name": "unit_volbyreg_dach",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -2144,7 +2285,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "unitranche_volbyreg_benelux",
+ 							"name": "unit_volbyreg_benelux",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -2162,7 +2303,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "unitranche_volbyreg_nordics",
+ 							"name": "unit_volbyreg_nordics",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -2180,7 +2321,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "unitranche_volbyreg_southern_eu",
+ 							"name": "unit_volbyreg_southern_eu",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -2198,7 +2339,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "unitranche_volbyreg_other",
+ 							"name": "unit_volbyreg_other",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -2220,8 +2361,8 @@
  							"type": "javascript-block",
  							"col_span_control": 1,
  							"js_block_strings": {
- 								"InpMain": "unitranche_volbyreg",
- 								"SummandNames": "\"unitranche_volbyreg_uk\", \"unitranche_volbyreg_france\", \"unitranche_volbyreg_dach\", \"unitranche_volbyreg_benelux\", \"unitranche_volbyreg_nordics\", \"unitranche_volbyreg_southern_eu\", \"unitranche_volbyreg_other\""
+ 								"InpMain": "unit_volbyreg",
+ 								"SummandNames": "\"unit_volbyreg_uk\", \"unit_volbyreg_france\", \"unit_volbyreg_dach\", \"unit_volbyreg_benelux\", \"unit_volbyreg_nordics\", \"unit_volbyreg_southern_eu\", \"unit_volbyreg_other\""
  							},
  							"js_block_translations": {
  								"msg": {
@@ -2253,7 +2394,7 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "unitranche_volbysec_main",
+ 							"name": "unit_volbysect_main",
  							"type": "number",
  							"max_chars": 12,
  							"step": 1,
@@ -2304,7 +2445,7 @@
  							}
  						},
  						{
- 							"name": "unitranche_volbysec_energy",
+ 							"name": "unit_volbysect_energy",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -2322,7 +2463,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "unitranche_volbysec_materials",
+ 							"name": "unit_volbysect_materials",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -2340,7 +2481,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "unitranche_volbysec_industrials",
+ 							"name": "unit_volbysect_industrials",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -2358,7 +2499,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "unitranche_volbysec_consumer_disc",
+ 							"name": "unit_volbysect_consumer_disc",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -2376,7 +2517,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "unitranche_volbysec_consumer_stap",
+ 							"name": "unit_volbysect_consumer_stap",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -2394,7 +2535,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "unitranche_volbysec_healthcare",
+ 							"name": "unit_volbysect_healthcare",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -2412,7 +2553,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "unitranche_volbysec_financials",
+ 							"name": "unit_volbysect_financials",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -2430,7 +2571,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "unitranche_volbysec_information_tech",
+ 							"name": "unit_volbysect_information_tech",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -2448,7 +2589,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "unitranche_volbysec_comunication_svc",
+ 							"name": "unit_volbysect_comunication_svc",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -2466,7 +2607,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "unitranche_volbysec_utilities",
+ 							"name": "unit_volbysect_utilities",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -2484,7 +2625,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "unitranche_volbysec_real_estate",
+ 							"name": "unit_volbysect_real_estate",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -2502,7 +2643,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "unitranche_volbysec_other",
+ 							"name": "unit_volbysect_other",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -2524,8 +2665,8 @@
  							"type": "javascript-block",
  							"col_span_control": 1,
  							"js_block_strings": {
- 								"InpMain": "unitranche_volbysec",
- 								"SummandNames": "\"unitranche_volbysec_energy\", \"unitranche_volbysec_materials\", \"unitranche_volbysec_industrials\", \"unitranche_volbysec_consumer_disc\", \"unitranche_volbysec_consumer_stap\", \"unitranche_volbysec_healthcare\", \"unitranche_volbysec_financials\", \"unitranche_volbysec_information_tech\", \"unitranche_volbysec_comunication_svc\", \"unitranche_volbysec_utilities\", \"unitranche_volbysec_real_estate\", \"unitranche_volbysec_other\""
+ 								"InpMain": "unit_volbysect",
+ 								"SummandNames": "\"unit_volbysect_energy\", \"unit_volbysect_materials\", \"unit_volbysect_industrials\", \"unit_volbysect_consumer_disc\", \"unit_volbysect_consumer_stap\", \"unit_volbysect_healthcare\", \"unit_volbysect_financials\", \"unit_volbysect_information_tech\", \"unit_volbysect_comunication_svc\", \"unit_volbysect_utilities\", \"unit_volbysect_real_estate\", \"unit_volbysect_other\""
  							},
  							"js_block_translations": {
  								"msg": {
@@ -2547,6 +2688,147 @@
  						"mobile": {
  							"grid_container_style": {},
  							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Should next three add up to 100%?",
+ 								"en": "Should next three add up to 100%?"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"name": "unit_esg",
+ 							"type": "range",
+ 							"step": 3,
+ 							"min": 3,
+ 							"max": 21,
+ 							"label": {
+ 								"de": "\u003cb\u003eShare ESG KPIs\u003c/b\u003e \u003cbr\u003eWhat is the share of new deals (at Fair Market Value) with explicit ESG targets in the credit documentation?",
+ 								"en": "\u003cb\u003eShare ESG KPIs\u003c/b\u003e \u003cbr\u003eWhat is the share of new deals (at Fair Market Value) with explicit ESG targets in the credit documentation?"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 2,
+ 							"col_span_control": 1
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width_max": "80%"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width_max": "none"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"name": "unit_esgratch",
+ 							"type": "range",
+ 							"step": 3,
+ 							"min": 3,
+ 							"max": 21,
+ 							"label": {
+ 								"de": "\u003cb\u003eShare ESG ratchets\u003c/b\u003e \u003cbr\u003e What is the share of new deals (at Fair Market Value) with ESG ratchets?",
+ 								"en": "\u003cb\u003eShare ESG ratchets\u003c/b\u003e \u003cbr\u003e What is the share of new deals (at Fair Market Value) with ESG ratchets?"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 2,
+ 							"col_span_control": 1
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width_max": "80%"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width_max": "none"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"name": "unit_esg15degrees",
+ 							"type": "range",
+ 							"step": 3,
+ 							"min": 3,
+ 							"max": 21,
+ 							"label": {
+ 								"de": "\u003cb\u003eShare 1.5°C target\u003c/b\u003e \u003cbr\u003e What is the share of new deals (at Fair Market Value) where the creditor explicitly states a strategy to add to the 1.5°C target?",
+ 								"en": "\u003cb\u003eShare 1.5°C target\u003c/b\u003e \u003cbr\u003e What is the share of new deals (at Fair Market Value) where the creditor explicitly states a strategy to add to the 1.5°C target?"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 2,
+ 							"col_span_control": 1
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width_max": "80%"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width_max": "none"
+ 							},
  							"grid_item_style": {},
  							"text_style": {}
  						}
@@ -2561,7 +2843,7 @@
  								"de": "\u003cb\u003eSubordinated\u003c/b\u003e",
  								"en": "\u003cb\u003eSubordinated\u003c/b\u003e"
  							},
- 							"col_span": 2,
+ 							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
@@ -2587,7 +2869,7 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "subordinated_numdeals_main",
+ 							"name": "subord_numdeals_main",
  							"type": "number",
  							"max_chars": 12,
  							"step": 1,
@@ -2638,7 +2920,7 @@
  							}
  						},
  						{
- 							"name": "subordinated_numdeals_low",
+ 							"name": "subord_numdeals_low",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -2656,7 +2938,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "subordinated_numdeals_mid_upper",
+ 							"name": "subord_numdeals_mid_upper",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -2674,7 +2956,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "subordinated_numdeals_other",
+ 							"name": "subord_numdeals_other",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -2696,8 +2978,8 @@
  							"type": "javascript-block",
  							"col_span_control": 1,
  							"js_block_strings": {
- 								"InpMain": "subordinated_numdeals",
- 								"SummandNames": "\"subordinated_numdeals_low\", \"subordinated_numdeals_mid_upper\", \"subordinated_numdeals_other\""
+ 								"InpMain": "subord_numdeals",
+ 								"SummandNames": "\"subord_numdeals_low\", \"subord_numdeals_mid_upper\", \"subord_numdeals_other\""
  							},
  							"js_block_translations": {
  								"msg": {
@@ -2729,7 +3011,7 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "subordinated_closing_time",
+ 							"name": "subord_closing_time",
  							"type": "range",
  							"step": 3,
  							"min": 3,
@@ -2771,7 +3053,7 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "subordinated_volbyseg_main",
+ 							"name": "subord_volbysegm_main",
  							"type": "number",
  							"max_chars": 12,
  							"step": 1,
@@ -2822,7 +3104,7 @@
  							}
  						},
  						{
- 							"name": "subordinated_volbyseg_low",
+ 							"name": "subord_volbysegm_low",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -2840,7 +3122,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "subordinated_volbyseg_mid",
+ 							"name": "subord_volbysegm_mid",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -2858,7 +3140,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "subordinated_volbyseg_upper",
+ 							"name": "subord_volbysegm_upper",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -2880,8 +3162,8 @@
  							"type": "javascript-block",
  							"col_span_control": 1,
  							"js_block_strings": {
- 								"InpMain": "subordinated_volbyseg",
- 								"SummandNames": "\"subordinated_volbyseg_low\", \"subordinated_volbyseg_mid\", \"subordinated_volbyseg_upper\""
+ 								"InpMain": "subord_volbysegm",
+ 								"SummandNames": "\"subord_volbysegm_low\", \"subord_volbysegm_mid\", \"subord_volbysegm_upper\""
  							},
  							"js_block_translations": {
  								"msg": {
@@ -2913,7 +3195,7 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "subordinated_volbyreg_main",
+ 							"name": "subord_volbyreg_main",
  							"type": "number",
  							"max_chars": 12,
  							"step": 1,
@@ -2964,7 +3246,7 @@
  							}
  						},
  						{
- 							"name": "subordinated_volbyreg_uk",
+ 							"name": "subord_volbyreg_uk",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -2982,7 +3264,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "subordinated_volbyreg_france",
+ 							"name": "subord_volbyreg_france",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -3000,7 +3282,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "subordinated_volbyreg_dach",
+ 							"name": "subord_volbyreg_dach",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -3018,7 +3300,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "subordinated_volbyreg_benelux",
+ 							"name": "subord_volbyreg_benelux",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -3036,7 +3318,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "subordinated_volbyreg_nordics",
+ 							"name": "subord_volbyreg_nordics",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -3054,7 +3336,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "subordinated_volbyreg_southern_eu",
+ 							"name": "subord_volbyreg_southern_eu",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -3072,7 +3354,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "subordinated_volbyreg_other",
+ 							"name": "subord_volbyreg_other",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -3094,8 +3376,8 @@
  							"type": "javascript-block",
  							"col_span_control": 1,
  							"js_block_strings": {
- 								"InpMain": "subordinated_volbyreg",
- 								"SummandNames": "\"subordinated_volbyreg_uk\", \"subordinated_volbyreg_france\", \"subordinated_volbyreg_dach\", \"subordinated_volbyreg_benelux\", \"subordinated_volbyreg_nordics\", \"subordinated_volbyreg_southern_eu\", \"subordinated_volbyreg_other\""
+ 								"InpMain": "subord_volbyreg",
+ 								"SummandNames": "\"subord_volbyreg_uk\", \"subord_volbyreg_france\", \"subord_volbyreg_dach\", \"subord_volbyreg_benelux\", \"subord_volbyreg_nordics\", \"subord_volbyreg_southern_eu\", \"subord_volbyreg_other\""
  							},
  							"js_block_translations": {
  								"msg": {
@@ -3127,7 +3409,7 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "subordinated_volbysec_main",
+ 							"name": "subord_volbysect_main",
  							"type": "number",
  							"max_chars": 12,
  							"step": 1,
@@ -3178,7 +3460,7 @@
  							}
  						},
  						{
- 							"name": "subordinated_volbysec_energy",
+ 							"name": "subord_volbysect_energy",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -3196,7 +3478,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "subordinated_volbysec_materials",
+ 							"name": "subord_volbysect_materials",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -3214,7 +3496,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "subordinated_volbysec_industrials",
+ 							"name": "subord_volbysect_industrials",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -3232,7 +3514,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "subordinated_volbysec_consumer_disc",
+ 							"name": "subord_volbysect_consumer_disc",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -3250,7 +3532,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "subordinated_volbysec_consumer_stap",
+ 							"name": "subord_volbysect_consumer_stap",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -3268,7 +3550,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "subordinated_volbysec_healthcare",
+ 							"name": "subord_volbysect_healthcare",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -3286,7 +3568,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "subordinated_volbysec_financials",
+ 							"name": "subord_volbysect_financials",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -3304,7 +3586,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "subordinated_volbysec_information_tech",
+ 							"name": "subord_volbysect_information_tech",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -3322,7 +3604,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "subordinated_volbysec_comunication_svc",
+ 							"name": "subord_volbysect_comunication_svc",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -3340,7 +3622,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "subordinated_volbysec_utilities",
+ 							"name": "subord_volbysect_utilities",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -3358,7 +3640,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "subordinated_volbysec_real_estate",
+ 							"name": "subord_volbysect_real_estate",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -3376,7 +3658,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "subordinated_volbysec_other",
+ 							"name": "subord_volbysect_other",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -3398,8 +3680,8 @@
  							"type": "javascript-block",
  							"col_span_control": 1,
  							"js_block_strings": {
- 								"InpMain": "subordinated_volbysec",
- 								"SummandNames": "\"subordinated_volbysec_energy\", \"subordinated_volbysec_materials\", \"subordinated_volbysec_industrials\", \"subordinated_volbysec_consumer_disc\", \"subordinated_volbysec_consumer_stap\", \"subordinated_volbysec_healthcare\", \"subordinated_volbysec_financials\", \"subordinated_volbysec_information_tech\", \"subordinated_volbysec_comunication_svc\", \"subordinated_volbysec_utilities\", \"subordinated_volbysec_real_estate\", \"subordinated_volbysec_other\""
+ 								"InpMain": "subord_volbysect",
+ 								"SummandNames": "\"subord_volbysect_energy\", \"subord_volbysect_materials\", \"subord_volbysect_industrials\", \"subord_volbysect_consumer_disc\", \"subord_volbysect_consumer_stap\", \"subord_volbysect_healthcare\", \"subord_volbysect_financials\", \"subord_volbysect_information_tech\", \"subord_volbysect_comunication_svc\", \"subord_volbysect_utilities\", \"subord_volbysect_real_estate\", \"subord_volbysect_other\""
  							},
  							"js_block_translations": {
  								"msg": {
@@ -3421,6 +3703,147 @@
  						"mobile": {
  							"grid_container_style": {},
  							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Should next three add up to 100%?",
+ 								"en": "Should next three add up to 100%?"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"name": "subord_esg",
+ 							"type": "range",
+ 							"step": 3,
+ 							"min": 3,
+ 							"max": 21,
+ 							"label": {
+ 								"de": "\u003cb\u003eShare ESG KPIs\u003c/b\u003e \u003cbr\u003eWhat is the share of new deals (at Fair Market Value) with explicit ESG targets in the credit documentation?",
+ 								"en": "\u003cb\u003eShare ESG KPIs\u003c/b\u003e \u003cbr\u003eWhat is the share of new deals (at Fair Market Value) with explicit ESG targets in the credit documentation?"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 2,
+ 							"col_span_control": 1
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width_max": "80%"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width_max": "none"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"name": "subord_esgratch",
+ 							"type": "range",
+ 							"step": 3,
+ 							"min": 3,
+ 							"max": 21,
+ 							"label": {
+ 								"de": "\u003cb\u003eShare ESG ratchets\u003c/b\u003e \u003cbr\u003e What is the share of new deals (at Fair Market Value) with ESG ratchets?",
+ 								"en": "\u003cb\u003eShare ESG ratchets\u003c/b\u003e \u003cbr\u003e What is the share of new deals (at Fair Market Value) with ESG ratchets?"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 2,
+ 							"col_span_control": 1
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width_max": "80%"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width_max": "none"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"name": "subord_esg15degrees",
+ 							"type": "range",
+ 							"step": 3,
+ 							"min": 3,
+ 							"max": 21,
+ 							"label": {
+ 								"de": "\u003cb\u003eShare 1.5°C target\u003c/b\u003e \u003cbr\u003e What is the share of new deals (at Fair Market Value) where the creditor explicitly states a strategy to add to the 1.5°C target?",
+ 								"en": "\u003cb\u003eShare 1.5°C target\u003c/b\u003e \u003cbr\u003e What is the share of new deals (at Fair Market Value) where the creditor explicitly states a strategy to add to the 1.5°C target?"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 2,
+ 							"col_span_control": 1
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width_max": "80%"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width_max": "none"
+ 							},
  							"grid_item_style": {},
  							"text_style": {}
  						}
@@ -3435,7 +3858,7 @@
  								"de": "\u003cb\u003eMezzanine / PIK / Other\u003c/b\u003e",
  								"en": "\u003cb\u003eMezzanine / PIK / Other\u003c/b\u003e"
  							},
- 							"col_span": 2,
+ 							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
@@ -3461,7 +3884,7 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "mezzanine_pik_other_numdeals_main",
+ 							"name": "mezzpiketc_numdeals_main",
  							"type": "number",
  							"max_chars": 12,
  							"step": 1,
@@ -3512,7 +3935,7 @@
  							}
  						},
  						{
- 							"name": "mezzanine_pik_other_numdeals_low",
+ 							"name": "mezzpiketc_numdeals_low",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -3530,7 +3953,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "mezzanine_pik_other_numdeals_mid_upper",
+ 							"name": "mezzpiketc_numdeals_mid_upper",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -3548,7 +3971,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "mezzanine_pik_other_numdeals_other",
+ 							"name": "mezzpiketc_numdeals_other",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -3570,8 +3993,8 @@
  							"type": "javascript-block",
  							"col_span_control": 1,
  							"js_block_strings": {
- 								"InpMain": "mezzanine_pik_other_numdeals",
- 								"SummandNames": "\"mezzanine_pik_other_numdeals_low\", \"mezzanine_pik_other_numdeals_mid_upper\", \"mezzanine_pik_other_numdeals_other\""
+ 								"InpMain": "mezzpiketc_numdeals",
+ 								"SummandNames": "\"mezzpiketc_numdeals_low\", \"mezzpiketc_numdeals_mid_upper\", \"mezzpiketc_numdeals_other\""
  							},
  							"js_block_translations": {
  								"msg": {
@@ -3603,7 +4026,7 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "mezzanine_pik_other_closing_time",
+ 							"name": "mezzpiketc_closing_time",
  							"type": "range",
  							"step": 3,
  							"min": 3,
@@ -3645,7 +4068,7 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "mezzanine_pik_other_volbyseg_main",
+ 							"name": "mezzpiketc_volbysegm_main",
  							"type": "number",
  							"max_chars": 12,
  							"step": 1,
@@ -3696,7 +4119,7 @@
  							}
  						},
  						{
- 							"name": "mezzanine_pik_other_volbyseg_low",
+ 							"name": "mezzpiketc_volbysegm_low",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -3714,7 +4137,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "mezzanine_pik_other_volbyseg_mid",
+ 							"name": "mezzpiketc_volbysegm_mid",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -3732,7 +4155,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "mezzanine_pik_other_volbyseg_upper",
+ 							"name": "mezzpiketc_volbysegm_upper",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -3754,8 +4177,8 @@
  							"type": "javascript-block",
  							"col_span_control": 1,
  							"js_block_strings": {
- 								"InpMain": "mezzanine_pik_other_volbyseg",
- 								"SummandNames": "\"mezzanine_pik_other_volbyseg_low\", \"mezzanine_pik_other_volbyseg_mid\", \"mezzanine_pik_other_volbyseg_upper\""
+ 								"InpMain": "mezzpiketc_volbysegm",
+ 								"SummandNames": "\"mezzpiketc_volbysegm_low\", \"mezzpiketc_volbysegm_mid\", \"mezzpiketc_volbysegm_upper\""
  							},
  							"js_block_translations": {
  								"msg": {
@@ -3787,7 +4210,7 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "mezzanine_pik_other_volbyreg_main",
+ 							"name": "mezzpiketc_volbyreg_main",
  							"type": "number",
  							"max_chars": 12,
  							"step": 1,
@@ -3838,7 +4261,7 @@
  							}
  						},
  						{
- 							"name": "mezzanine_pik_other_volbyreg_uk",
+ 							"name": "mezzpiketc_volbyreg_uk",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -3856,7 +4279,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "mezzanine_pik_other_volbyreg_france",
+ 							"name": "mezzpiketc_volbyreg_france",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -3874,7 +4297,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "mezzanine_pik_other_volbyreg_dach",
+ 							"name": "mezzpiketc_volbyreg_dach",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -3892,7 +4315,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "mezzanine_pik_other_volbyreg_benelux",
+ 							"name": "mezzpiketc_volbyreg_benelux",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -3910,7 +4333,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "mezzanine_pik_other_volbyreg_nordics",
+ 							"name": "mezzpiketc_volbyreg_nordics",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -3928,7 +4351,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "mezzanine_pik_other_volbyreg_southern_eu",
+ 							"name": "mezzpiketc_volbyreg_southern_eu",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -3946,7 +4369,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "mezzanine_pik_other_volbyreg_other",
+ 							"name": "mezzpiketc_volbyreg_other",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -3968,8 +4391,8 @@
  							"type": "javascript-block",
  							"col_span_control": 1,
  							"js_block_strings": {
- 								"InpMain": "mezzanine_pik_other_volbyreg",
- 								"SummandNames": "\"mezzanine_pik_other_volbyreg_uk\", \"mezzanine_pik_other_volbyreg_france\", \"mezzanine_pik_other_volbyreg_dach\", \"mezzanine_pik_other_volbyreg_benelux\", \"mezzanine_pik_other_volbyreg_nordics\", \"mezzanine_pik_other_volbyreg_southern_eu\", \"mezzanine_pik_other_volbyreg_other\""
+ 								"InpMain": "mezzpiketc_volbyreg",
+ 								"SummandNames": "\"mezzpiketc_volbyreg_uk\", \"mezzpiketc_volbyreg_france\", \"mezzpiketc_volbyreg_dach\", \"mezzpiketc_volbyreg_benelux\", \"mezzpiketc_volbyreg_nordics\", \"mezzpiketc_volbyreg_southern_eu\", \"mezzpiketc_volbyreg_other\""
  							},
  							"js_block_translations": {
  								"msg": {
@@ -4001,7 +4424,7 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "mezzanine_pik_other_volbysec_main",
+ 							"name": "mezzpiketc_volbysect_main",
  							"type": "number",
  							"max_chars": 12,
  							"step": 1,
@@ -4052,7 +4475,7 @@
  							}
  						},
  						{
- 							"name": "mezzanine_pik_other_volbysec_energy",
+ 							"name": "mezzpiketc_volbysect_energy",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -4070,7 +4493,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "mezzanine_pik_other_volbysec_materials",
+ 							"name": "mezzpiketc_volbysect_materials",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -4088,7 +4511,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "mezzanine_pik_other_volbysec_industrials",
+ 							"name": "mezzpiketc_volbysect_industrials",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -4106,7 +4529,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "mezzanine_pik_other_volbysec_consumer_disc",
+ 							"name": "mezzpiketc_volbysect_consumer_disc",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -4124,7 +4547,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "mezzanine_pik_other_volbysec_consumer_stap",
+ 							"name": "mezzpiketc_volbysect_consumer_stap",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -4142,7 +4565,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "mezzanine_pik_other_volbysec_healthcare",
+ 							"name": "mezzpiketc_volbysect_healthcare",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -4160,7 +4583,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "mezzanine_pik_other_volbysec_financials",
+ 							"name": "mezzpiketc_volbysect_financials",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -4178,7 +4601,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "mezzanine_pik_other_volbysec_information_tech",
+ 							"name": "mezzpiketc_volbysect_information_tech",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -4196,7 +4619,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "mezzanine_pik_other_volbysec_comunication_svc",
+ 							"name": "mezzpiketc_volbysect_comunication_svc",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -4214,7 +4637,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "mezzanine_pik_other_volbysec_utilities",
+ 							"name": "mezzpiketc_volbysect_utilities",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -4232,7 +4655,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "mezzanine_pik_other_volbysec_real_estate",
+ 							"name": "mezzpiketc_volbysect_real_estate",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -4250,7 +4673,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "mezzanine_pik_other_volbysec_other",
+ 							"name": "mezzpiketc_volbysect_other",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -4272,8 +4695,8 @@
  							"type": "javascript-block",
  							"col_span_control": 1,
  							"js_block_strings": {
- 								"InpMain": "mezzanine_pik_other_volbysec",
- 								"SummandNames": "\"mezzanine_pik_other_volbysec_energy\", \"mezzanine_pik_other_volbysec_materials\", \"mezzanine_pik_other_volbysec_industrials\", \"mezzanine_pik_other_volbysec_consumer_disc\", \"mezzanine_pik_other_volbysec_consumer_stap\", \"mezzanine_pik_other_volbysec_healthcare\", \"mezzanine_pik_other_volbysec_financials\", \"mezzanine_pik_other_volbysec_information_tech\", \"mezzanine_pik_other_volbysec_comunication_svc\", \"mezzanine_pik_other_volbysec_utilities\", \"mezzanine_pik_other_volbysec_real_estate\", \"mezzanine_pik_other_volbysec_other\""
+ 								"InpMain": "mezzpiketc_volbysect",
+ 								"SummandNames": "\"mezzpiketc_volbysect_energy\", \"mezzpiketc_volbysect_materials\", \"mezzpiketc_volbysect_industrials\", \"mezzpiketc_volbysect_consumer_disc\", \"mezzpiketc_volbysect_consumer_stap\", \"mezzpiketc_volbysect_healthcare\", \"mezzpiketc_volbysect_financials\", \"mezzpiketc_volbysect_information_tech\", \"mezzpiketc_volbysect_comunication_svc\", \"mezzpiketc_volbysect_utilities\", \"mezzpiketc_volbysect_real_estate\", \"mezzpiketc_volbysect_other\""
  							},
  							"js_block_translations": {
  								"msg": {
@@ -4299,506 +4722,6 @@
  							"text_style": {}
  						}
  					}
- 				}
- 			]
- 		},
- 		{
- 			"label": {
- 				"de": "Priority matrix",
- 				"en": "Priority matrix"
- 			},
- 			"description": {
- 				"de": "",
- 				"en": ""
- 			},
- 			"short": {
- 				"de": "Prio Matrix",
- 				"en": "Prio Matrix"
- 			},
- 			"style": {
- 				"desktop": {
- 					"grid_container_style": {},
- 					"box_style": {
- 						"width_max": "42rem"
- 					},
- 					"grid_item_style": {},
- 					"text_style": {}
- 				},
- 				"mobile": {
- 					"grid_container_style": {},
- 					"box_style": {
- 						"width_max": "calc(100% - 1.2rem)"
- 					},
- 					"grid_item_style": {},
- 					"text_style": {}
- 				}
- 			},
- 			"finished": "0001-01-01T00:00:00Z",
- 			"groups": [
- 				{
- 					"bottom_vspacers": 1,
- 					"columns": 1,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "What GICS sectors provides the most attractive \n\t\t\t\t\tin\u0026shy;vest\u0026shy;ment opportunities in the next three months? \n\t\t\t\t\tPlease rank the top three."
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1
- 						}
- 					]
- 				},
- 				{
- 					"bottom_vspacers": 3,
- 					"columns": 9,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"col_span": 3,
- 							"col_span_label": 1,
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "right"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "Prio 1",
- 								"en": "Prio 1"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 1,
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "center"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "Prio 2",
- 								"en": "Prio 2"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 1,
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "center"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "Prio 3",
- 								"en": "Prio 3"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 1,
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "center"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "Energy",
- 								"en": "Energy"
- 							},
- 							"col_span": 3,
- 							"col_span_label": 1
- 						},
- 						{
- 							"name": "xx_prio1",
- 							"type": "radio",
- 							"col_span": 2,
- 							"col_span_control": 1,
- 							"value_radio": "energy"
- 						},
- 						{
- 							"name": "xx_prio2",
- 							"type": "radio",
- 							"col_span": 2,
- 							"col_span_control": 1,
- 							"value_radio": "energy"
- 						},
- 						{
- 							"name": "xx_prio3",
- 							"type": "radio",
- 							"col_span": 2,
- 							"col_span_control": 1,
- 							"value_radio": "energy"
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "Materials",
- 								"en": "Materials"
- 							},
- 							"col_span": 3,
- 							"col_span_label": 1
- 						},
- 						{
- 							"name": "xx_prio1",
- 							"type": "radio",
- 							"col_span": 2,
- 							"col_span_control": 1,
- 							"value_radio": "materials"
- 						},
- 						{
- 							"name": "xx_prio2",
- 							"type": "radio",
- 							"col_span": 2,
- 							"col_span_control": 1,
- 							"value_radio": "materials"
- 						},
- 						{
- 							"name": "xx_prio3",
- 							"type": "radio",
- 							"col_span": 2,
- 							"col_span_control": 1,
- 							"value_radio": "materials"
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "In\u0026shy;dus\u0026shy;tri\u0026shy;als",
- 								"en": "In\u0026shy;dus\u0026shy;tri\u0026shy;als"
- 							},
- 							"col_span": 3,
- 							"col_span_label": 1
- 						},
- 						{
- 							"name": "xx_prio1",
- 							"type": "radio",
- 							"col_span": 2,
- 							"col_span_control": 1,
- 							"value_radio": "industrials"
- 						},
- 						{
- 							"name": "xx_prio2",
- 							"type": "radio",
- 							"col_span": 2,
- 							"col_span_control": 1,
- 							"value_radio": "industrials"
- 						},
- 						{
- 							"name": "xx_prio3",
- 							"type": "radio",
- 							"col_span": 2,
- 							"col_span_control": 1,
- 							"value_radio": "industrials"
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "Cons\u0026shy;umer Discretionary",
- 								"en": "Cons\u0026shy;umer Discretionary"
- 							},
- 							"col_span": 3,
- 							"col_span_label": 1
- 						},
- 						{
- 							"name": "xx_prio1",
- 							"type": "radio",
- 							"col_span": 2,
- 							"col_span_control": 1,
- 							"value_radio": "consumer_discretionary"
- 						},
- 						{
- 							"name": "xx_prio2",
- 							"type": "radio",
- 							"col_span": 2,
- 							"col_span_control": 1,
- 							"value_radio": "consumer_discretionary"
- 						},
- 						{
- 							"name": "xx_prio3",
- 							"type": "radio",
- 							"col_span": 2,
- 							"col_span_control": 1,
- 							"value_radio": "consumer_discretionary"
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "Cons\u0026shy;umer Staples",
- 								"en": "Cons\u0026shy;umer Staples"
- 							},
- 							"col_span": 3,
- 							"col_span_label": 1
- 						},
- 						{
- 							"name": "xx_prio1",
- 							"type": "radio",
- 							"col_span": 2,
- 							"col_span_control": 1,
- 							"value_radio": "consumer_staples"
- 						},
- 						{
- 							"name": "xx_prio2",
- 							"type": "radio",
- 							"col_span": 2,
- 							"col_span_control": 1,
- 							"value_radio": "consumer_staples"
- 						},
- 						{
- 							"name": "xx_prio3",
- 							"type": "radio",
- 							"col_span": 2,
- 							"col_span_control": 1,
- 							"value_radio": "consumer_staples"
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "Health Care",
- 								"en": "Health Care"
- 							},
- 							"col_span": 3,
- 							"col_span_label": 1
- 						},
- 						{
- 							"name": "xx_prio1",
- 							"type": "radio",
- 							"col_span": 2,
- 							"col_span_control": 1,
- 							"value_radio": "health_care"
- 						},
- 						{
- 							"name": "xx_prio2",
- 							"type": "radio",
- 							"col_span": 2,
- 							"col_span_control": 1,
- 							"value_radio": "health_care"
- 						},
- 						{
- 							"name": "xx_prio3",
- 							"type": "radio",
- 							"col_span": 2,
- 							"col_span_control": 1,
- 							"value_radio": "health_care"
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "Financials",
- 								"en": "Financials"
- 							},
- 							"col_span": 3,
- 							"col_span_label": 1
- 						},
- 						{
- 							"name": "xx_prio1",
- 							"type": "radio",
- 							"col_span": 2,
- 							"col_span_control": 1,
- 							"value_radio": "financials"
- 						},
- 						{
- 							"name": "xx_prio2",
- 							"type": "radio",
- 							"col_span": 2,
- 							"col_span_control": 1,
- 							"value_radio": "financials"
- 						},
- 						{
- 							"name": "xx_prio3",
- 							"type": "radio",
- 							"col_span": 2,
- 							"col_span_control": 1,
- 							"value_radio": "financials"
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "Information Technology",
- 								"en": "Information Technology"
- 							},
- 							"col_span": 3,
- 							"col_span_label": 1
- 						},
- 						{
- 							"name": "xx_prio1",
- 							"type": "radio",
- 							"col_span": 2,
- 							"col_span_control": 1,
- 							"value_radio": "information_technology"
- 						},
- 						{
- 							"name": "xx_prio2",
- 							"type": "radio",
- 							"col_span": 2,
- 							"col_span_control": 1,
- 							"value_radio": "information_technology"
- 						},
- 						{
- 							"name": "xx_prio3",
- 							"type": "radio",
- 							"col_span": 2,
- 							"col_span_control": 1,
- 							"value_radio": "information_technology"
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "Communication Services",
- 								"en": "Communication Services"
- 							},
- 							"col_span": 3,
- 							"col_span_label": 1
- 						},
- 						{
- 							"name": "xx_prio1",
- 							"type": "radio",
- 							"col_span": 2,
- 							"col_span_control": 1,
- 							"value_radio": "communication_services"
- 						},
- 						{
- 							"name": "xx_prio2",
- 							"type": "radio",
- 							"col_span": 2,
- 							"col_span_control": 1,
- 							"value_radio": "communication_services"
- 						},
- 						{
- 							"name": "xx_prio3",
- 							"type": "radio",
- 							"col_span": 2,
- 							"col_span_control": 1,
- 							"value_radio": "communication_services"
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "Utilities",
- 								"en": "Utilities"
- 							},
- 							"col_span": 3,
- 							"col_span_label": 1
- 						},
- 						{
- 							"name": "xx_prio1",
- 							"type": "radio",
- 							"col_span": 2,
- 							"col_span_control": 1,
- 							"value_radio": "utilities"
- 						},
- 						{
- 							"name": "xx_prio2",
- 							"type": "radio",
- 							"col_span": 2,
- 							"col_span_control": 1,
- 							"value_radio": "utilities"
- 						},
- 						{
- 							"name": "xx_prio3",
- 							"type": "radio",
- 							"col_span": 2,
- 							"col_span_control": 1,
- 							"value_radio": "utilities"
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "Real Estate",
- 								"en": "Real Estate"
- 							},
- 							"col_span": 3,
- 							"col_span_label": 1
- 						},
- 						{
- 							"name": "xx_prio1",
- 							"type": "radio",
- 							"col_span": 2,
- 							"col_span_control": 1,
- 							"value_radio": "real_estate"
- 						},
- 						{
- 							"name": "xx_prio2",
- 							"type": "radio",
- 							"col_span": 2,
- 							"col_span_control": 1,
- 							"value_radio": "real_estate"
- 						},
- 						{
- 							"name": "xx_prio3",
- 							"type": "radio",
- 							"col_span": 2,
- 							"col_span_control": 1,
- 							"value_radio": "real_estate"
- 						},
- 						{
- 							"name": "prio123",
- 							"type": "javascript-block",
- 							"col_span_control": 1,
- 							"js_block_strings": {
- 								"inp_1": "xx_prio0",
- 								"inp_2": "xx_prio1",
- 								"inp_3": "xx_prio2",
- 								"inputBaseName": "xx"
- 							},
- 							"js_block_translations": {
- 								"msg": {
- 									"de": "Keine Prio zweimal",
- 									"en": "Priorities not twice"
- 								}
- 							}
- 						}
- 					]
  				},
  				{
  					"bottom_vspacers": 1,
@@ -4807,8 +4730,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Another priority type question.",
- 								"en": "Another priority type question."
+ 								"de": "Should next three add up to 100%?",
+ 								"en": "Should next three add up to 100%?"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -4816,275 +4739,130 @@
  					]
  				},
  				{
- 					"bottom_vspacers": 3,
- 					"columns": 9,
+ 					"bottom_vspacers": 2,
+ 					"columns": 1,
  					"inputs": [
  						{
- 							"type": "textblock",
- 							"col_span": 3,
- 							"col_span_label": 1,
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "right"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "textblock",
+ 							"name": "mezzpiketc_esg",
+ 							"type": "range",
+ 							"step": 3,
+ 							"min": 3,
+ 							"max": 21,
  							"label": {
- 								"de": "Prio 1",
- 								"en": "Prio 1"
+ 								"de": "\u003cb\u003eShare ESG KPIs\u003c/b\u003e \u003cbr\u003eWhat is the share of new deals (at Fair Market Value) with explicit ESG targets in the credit documentation?",
+ 								"en": "\u003cb\u003eShare ESG KPIs\u003c/b\u003e \u003cbr\u003eWhat is the share of new deals (at Fair Market Value) with explicit ESG targets in the credit documentation?"
  							},
- 							"col_span": 2,
- 							"col_span_label": 1,
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "center"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "Prio 2",
- 								"en": "Prio 2"
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
  							},
- 							"col_span": 2,
- 							"col_span_label": 1,
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "center"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "Prio 3",
- 								"en": "Prio 3"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 1,
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "center"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "row1",
- 								"en": "row1"
- 							},
- 							"col_span": 3,
- 							"col_span_label": 1
- 						},
- 						{
- 							"name": "xx1_prio1",
- 							"type": "radio",
- 							"col_span": 2,
- 							"col_span_control": 1,
- 							"value_radio": "row1"
- 						},
- 						{
- 							"name": "xx1_prio2",
- 							"type": "radio",
- 							"col_span": 2,
- 							"col_span_control": 1,
- 							"value_radio": "row1"
- 						},
- 						{
- 							"name": "xx1_prio3",
- 							"type": "radio",
- 							"col_span": 2,
- 							"col_span_control": 1,
- 							"value_radio": "row1"
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "row2",
- 								"en": "row2"
- 							},
- 							"col_span": 3,
- 							"col_span_label": 1
- 						},
- 						{
- 							"name": "xx1_prio1",
- 							"type": "radio",
- 							"col_span": 2,
- 							"col_span_control": 1,
- 							"value_radio": "row2"
- 						},
- 						{
- 							"name": "xx1_prio2",
- 							"type": "radio",
- 							"col_span": 2,
- 							"col_span_control": 1,
- 							"value_radio": "row2"
- 						},
- 						{
- 							"name": "xx1_prio3",
- 							"type": "radio",
- 							"col_span": 2,
- 							"col_span_control": 1,
- 							"value_radio": "row2"
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "row3",
- 								"en": "row3"
- 							},
- 							"col_span": 3,
- 							"col_span_label": 1
- 						},
- 						{
- 							"name": "xx1_prio1",
- 							"type": "radio",
- 							"col_span": 2,
- 							"col_span_control": 1,
- 							"value_radio": "row3"
- 						},
- 						{
- 							"name": "xx1_prio2",
- 							"type": "radio",
- 							"col_span": 2,
- 							"col_span_control": 1,
- 							"value_radio": "row3"
- 						},
- 						{
- 							"name": "xx1_prio3",
- 							"type": "radio",
- 							"col_span": 2,
- 							"col_span_control": 1,
- 							"value_radio": "row3"
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "Utilities 2",
- 								"en": "Utilities 2"
- 							},
- 							"col_span": 3,
- 							"col_span_label": 1
- 						},
- 						{
- 							"name": "xx1_prio1",
- 							"type": "radio",
- 							"col_span": 2,
- 							"col_span_control": 1,
- 							"value_radio": "utilities"
- 						},
- 						{
- 							"name": "xx1_prio2",
- 							"type": "radio",
- 							"col_span": 2,
- 							"col_span_control": 1,
- 							"value_radio": "utilities"
- 						},
- 						{
- 							"name": "xx1_prio3",
- 							"type": "radio",
- 							"col_span": 2,
- 							"col_span_control": 1,
- 							"value_radio": "utilities"
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "Real Estate 2",
- 								"en": "Real Estate 2"
- 							},
- 							"col_span": 3,
- 							"col_span_label": 1
- 						},
- 						{
- 							"name": "xx1_prio1",
- 							"type": "radio",
- 							"col_span": 2,
- 							"col_span_control": 1,
- 							"value_radio": "real_estate"
- 						},
- 						{
- 							"name": "xx1_prio2",
- 							"type": "radio",
- 							"col_span": 2,
- 							"col_span_control": 1,
- 							"value_radio": "real_estate"
- 						},
- 						{
- 							"name": "xx1_prio3",
- 							"type": "radio",
- 							"col_span": 2,
- 							"col_span_control": 1,
- 							"value_radio": "real_estate"
- 						},
- 						{
- 							"name": "prio123",
- 							"type": "javascript-block",
- 							"col_span_control": 1,
- 							"js_block_strings": {
- 								"inp_1": "xx1_prio0",
- 								"inp_2": "xx1_prio1",
- 								"inp_3": "xx1_prio2",
- 								"inputBaseName": "xx1"
- 							},
- 							"js_block_translations": {
- 								"msg": {
- 									"de": "Keine Prio zweimal",
- 									"en": "Priorities not twice"
- 								}
- 							}
+ 							"col_span": 1,
+ 							"col_span_label": 2,
+ 							"col_span_control": 1
  						}
- 					]
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width_max": "80%"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width_max": "none"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"name": "mezzpiketc_esgratch",
+ 							"type": "range",
+ 							"step": 3,
+ 							"min": 3,
+ 							"max": 21,
+ 							"label": {
+ 								"de": "\u003cb\u003eShare ESG ratchets\u003c/b\u003e \u003cbr\u003e What is the share of new deals (at Fair Market Value) with ESG ratchets?",
+ 								"en": "\u003cb\u003eShare ESG ratchets\u003c/b\u003e \u003cbr\u003e What is the share of new deals (at Fair Market Value) with ESG ratchets?"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 2,
+ 							"col_span_control": 1
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width_max": "80%"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width_max": "none"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"name": "mezzpiketc_esg15degrees",
+ 							"type": "range",
+ 							"step": 3,
+ 							"min": 3,
+ 							"max": 21,
+ 							"label": {
+ 								"de": "\u003cb\u003eShare 1.5°C target\u003c/b\u003e \u003cbr\u003e What is the share of new deals (at Fair Market Value) where the creditor explicitly states a strategy to add to the 1.5°C target?",
+ 								"en": "\u003cb\u003eShare 1.5°C target\u003c/b\u003e \u003cbr\u003e What is the share of new deals (at Fair Market Value) where the creditor explicitly states a strategy to add to the 1.5°C target?"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 2,
+ 							"col_span_control": 1
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width_max": "80%"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width_max": "none"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
  				}
  			]
  		},
@@ -5243,6 +5021,902 @@
  		},
  		{
  			"label": {
+ 				"de": "4. Qualitative Questions",
+ 				"en": "4. Qualitative Questions"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"short": {
+ 				"de": "Quality",
+ 				"en": "Quality"
+ 			},
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "42rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "What do you think are the main risks for your in\u0026shy;vest\u0026shy;ment strategy over the next 3 months? Please choose three.",
+ 								"en": "What do you think are the main risks for your in\u0026shy;vest\u0026shy;ment strategy over the next 3 months? Please choose three."
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 9,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Prio 1",
+ 								"en": "Prio 1"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Prio 2",
+ 								"en": "Prio 2"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Prio 3",
+ 								"en": "Prio 3"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Busi\u0026shy;ness Cycle",
+ 								"en": "Busi\u0026shy;ness Cycle"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "risks_prio1",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "business_cycle"
+ 						},
+ 						{
+ 							"name": "risks_prio2",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "business_cycle"
+ 						},
+ 						{
+ 							"name": "risks_prio3",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "business_cycle"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Interest Rates",
+ 								"en": "Interest Rates"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "risks_prio1",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "interest_rates"
+ 						},
+ 						{
+ 							"name": "risks_prio2",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "interest_rates"
+ 						},
+ 						{
+ 							"name": "risks_prio3",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "interest_rates"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "In\u0026shy;fla\u0026shy;ti\u0026shy;on/Deflation",
+ 								"en": "In\u0026shy;fla\u0026shy;ti\u0026shy;on/Deflation"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "risks_prio1",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "inflation_deflation"
+ 						},
+ 						{
+ 							"name": "risks_prio2",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "inflation_deflation"
+ 						},
+ 						{
+ 							"name": "risks_prio3",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "inflation_deflation"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Demographics",
+ 								"en": "Demographics"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "risks_prio1",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "demographics"
+ 						},
+ 						{
+ 							"name": "risks_prio2",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "demographics"
+ 						},
+ 						{
+ 							"name": "risks_prio3",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "demographics"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Supply Chains",
+ 								"en": "Supply Chains"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "risks_prio1",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "supply_chains"
+ 						},
+ 						{
+ 							"name": "risks_prio2",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "supply_chains"
+ 						},
+ 						{
+ 							"name": "risks_prio3",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "supply_chains"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Health Issues",
+ 								"en": "Health Issues"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "risks_prio1",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "health_issues"
+ 						},
+ 						{
+ 							"name": "risks_prio2",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "health_issues"
+ 						},
+ 						{
+ 							"name": "risks_prio3",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "health_issues"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Regulatory Environ\u0026shy;ment",
+ 								"en": "Regulatory Environ\u0026shy;ment"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "risks_prio1",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "regulatory_environment"
+ 						},
+ 						{
+ 							"name": "risks_prio2",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "regulatory_environment"
+ 						},
+ 						{
+ 							"name": "risks_prio3",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "regulatory_environment"
+ 						},
+ 						{
+ 							"name": "risks_label",
+ 							"type": "text",
+ 							"max_chars": 18,
+ 							"label": {
+ 								"de": "Other",
+ 								"en": "Other"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 2,
+ 							"col_span_control": 4,
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"width_max": "6rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "risks_prio1",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "other"
+ 						},
+ 						{
+ 							"name": "risks_prio2",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "other"
+ 						},
+ 						{
+ 							"name": "risks_prio3",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "other"
+ 						},
+ 						{
+ 							"name": "prio123",
+ 							"type": "javascript-block",
+ 							"col_span_control": 1,
+ 							"js_block_strings": {
+ 								"inp_1": "risks_prio0",
+ 								"inp_2": "risks_prio1",
+ 								"inp_3": "risks_prio2",
+ 								"inputBaseName": "risks"
+ 							},
+ 							"js_block_translations": {
+ 								"msg": {
+ 									"de": "Keine Prio zweimal",
+ 									"en": "Priorities not twice"
+ 								}
+ 							}
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "What GICS sectors provides the most attractive \n\t\t\t\t\tin\u0026shy;vest\u0026shy;ment opportunities in the next three months? \n\t\t\t\t\tPlease rank the top three.",
+ 								"en": "What GICS sectors provides the most attractive \n\t\t\t\t\tin\u0026shy;vest\u0026shy;ment opportunities in the next three months? \n\t\t\t\t\tPlease rank the top three."
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 9,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Prio 1",
+ 								"en": "Prio 1"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Prio 2",
+ 								"en": "Prio 2"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Prio 3",
+ 								"en": "Prio 3"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Energy",
+ 								"en": "Energy"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "gicsprio_prio1",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "energy"
+ 						},
+ 						{
+ 							"name": "gicsprio_prio2",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "energy"
+ 						},
+ 						{
+ 							"name": "gicsprio_prio3",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "energy"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Materials",
+ 								"en": "Materials"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "gicsprio_prio1",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "materials"
+ 						},
+ 						{
+ 							"name": "gicsprio_prio2",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "materials"
+ 						},
+ 						{
+ 							"name": "gicsprio_prio3",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "materials"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "In\u0026shy;dus\u0026shy;tri\u0026shy;als",
+ 								"en": "In\u0026shy;dus\u0026shy;tri\u0026shy;als"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "gicsprio_prio1",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "industrials"
+ 						},
+ 						{
+ 							"name": "gicsprio_prio2",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "industrials"
+ 						},
+ 						{
+ 							"name": "gicsprio_prio3",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "industrials"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Cons\u0026shy;umer Discretionary",
+ 								"en": "Cons\u0026shy;umer Discretionary"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "gicsprio_prio1",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "consumer_discretionary"
+ 						},
+ 						{
+ 							"name": "gicsprio_prio2",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "consumer_discretionary"
+ 						},
+ 						{
+ 							"name": "gicsprio_prio3",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "consumer_discretionary"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Cons\u0026shy;umer Staples",
+ 								"en": "Cons\u0026shy;umer Staples"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "gicsprio_prio1",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "consumer_staples"
+ 						},
+ 						{
+ 							"name": "gicsprio_prio2",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "consumer_staples"
+ 						},
+ 						{
+ 							"name": "gicsprio_prio3",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "consumer_staples"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Health Care",
+ 								"en": "Health Care"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "gicsprio_prio1",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "health_care"
+ 						},
+ 						{
+ 							"name": "gicsprio_prio2",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "health_care"
+ 						},
+ 						{
+ 							"name": "gicsprio_prio3",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "health_care"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Financials",
+ 								"en": "Financials"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "gicsprio_prio1",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "financials"
+ 						},
+ 						{
+ 							"name": "gicsprio_prio2",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "financials"
+ 						},
+ 						{
+ 							"name": "gicsprio_prio3",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "financials"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Information Technology",
+ 								"en": "Information Technology"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "gicsprio_prio1",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "information_technology"
+ 						},
+ 						{
+ 							"name": "gicsprio_prio2",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "information_technology"
+ 						},
+ 						{
+ 							"name": "gicsprio_prio3",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "information_technology"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Communication Services",
+ 								"en": "Communication Services"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "gicsprio_prio1",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "communication_services"
+ 						},
+ 						{
+ 							"name": "gicsprio_prio2",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "communication_services"
+ 						},
+ 						{
+ 							"name": "gicsprio_prio3",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "communication_services"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Utilities",
+ 								"en": "Utilities"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "gicsprio_prio1",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "utilities"
+ 						},
+ 						{
+ 							"name": "gicsprio_prio2",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "utilities"
+ 						},
+ 						{
+ 							"name": "gicsprio_prio3",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "utilities"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Real Estate",
+ 								"en": "Real Estate"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "gicsprio_prio1",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "real_estate"
+ 						},
+ 						{
+ 							"name": "gicsprio_prio2",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "real_estate"
+ 						},
+ 						{
+ 							"name": "gicsprio_prio3",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "real_estate"
+ 						},
+ 						{
+ 							"name": "prio123",
+ 							"type": "javascript-block",
+ 							"col_span_control": 1,
+ 							"js_block_strings": {
+ 								"inp_1": "gicsprio_prio0",
+ 								"inp_2": "gicsprio_prio1",
+ 								"inp_3": "gicsprio_prio2",
+ 								"inputBaseName": "gicsprio"
+ 							},
+ 							"js_block_translations": {
+ 								"msg": {
+ 									"de": "Keine Prio zweimal",
+ 									"en": "Priorities not twice"
+ 								}
+ 							}
+ 						}
+ 					]
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
  				"de": "Label long"
  			},
  			"description": {
@@ -5288,7 +5962,7 @@
  					]
  				},
  				{
- 					"bottom_vspacers": 1,
+ 					"bottom_vspacers": 3,
  					"columns": 14,
  					"inputs": [
  						{

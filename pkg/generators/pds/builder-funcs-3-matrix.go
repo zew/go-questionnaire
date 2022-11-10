@@ -3,6 +3,7 @@ package pds
 import (
 	"fmt"
 
+	"github.com/zew/go-questionnaire/pkg/css"
 	"github.com/zew/go-questionnaire/pkg/qst"
 	"github.com/zew/go-questionnaire/pkg/trl"
 )
@@ -13,6 +14,7 @@ func prio3Matrix(
 	lblMain trl.S,
 	inps []string,
 	lbls map[string]string,
+	freeText bool,
 ) {
 
 	// gr1
@@ -60,9 +62,39 @@ func prio3Matrix(
 		}
 
 		// second ... n-th row
-		for _, nm := range inps {
+		for idx1, nm := range inps {
 
-			{
+			if freeText && idx1 == len(inps)-1 {
+				//
+				{
+					// inp := gr.AddInput()
+					// inp.Type = "textblock"
+					// inp.Label = trl.S{
+					// 	"de": lbls[nm],
+					// 	"en": lbls[nm],
+					// }
+					// inp.ColSpan = 1.5
+					// inp.ColSpanLabel = 1
+				}
+				{
+					inp := gr.AddInput()
+					inp.Type = "text"
+					inp.Name = fmt.Sprintf("%v_label", name)
+					inp.Label = trl.S{
+						"de": lbls[nm],
+						"en": lbls[nm],
+					}
+					inp.MaxChars = 18
+					inp.ColSpan = 3
+					inp.ColSpanLabel = 2
+					inp.ColSpanControl = 4
+
+					inp.StyleCtl = css.NewStylesResponsive(inp.StyleCtl)
+					inp.StyleCtl.Desktop.WidthMax = "6rem"
+
+				}
+
+			} else {
 				inp := gr.AddInput()
 				inp.Type = "textblock"
 				inp.Label = trl.S{
@@ -90,6 +122,9 @@ func prio3Matrix(
 
 		}
 
+		//
+		//
+		//
 		{
 			inp := gr.AddInput()
 			inp.ColSpanControl = 1

@@ -104,8 +104,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		// gr1
 		{
 			lblMain := trl.S{
-				"en": `Strategy`,
-				"de": `Strategie`,
+				"en": `Strategy -  shouldn't this be checkboxes? See 'asset classes' below`,
+				"de": `Strategie - shouldn't this be checkboxes? See 'asset classes' below`,
 			}
 			multipleChoiceSingleRow(qst.WrapPageT(page), "strategy", lblMain, mCh1)
 		}
@@ -153,8 +153,20 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.Type = "textblock"
 				inp.ColSpan = 2
 				inp.Label = trl.S{
-					"en": `A common explanation instead of the repeated one below each block. Should we group by question type (deals, time, volume) - or by strategy (senior, unit...) `,
-					"de": `A common explanation instead of the repeated one below each block. Should we group by question type (deals, time, volume) - or by strategy (senior, unit...) `,
+					"en": `Should we group by question type (deals, time, volume) - 
+						or as now by strategy (senior, unit...)?
+						<br>
+						Also: One page per strategy
+						<br>
+						Also: This repeats for each 'asses class' ?
+					`,
+					"de": `Should we group by question type (deals, time, volume) - 
+						or as now by strategy (senior, unit...)?
+						<br>
+						Also: One page per strategy
+						<br>
+						Also: This repeats for each 'asses class' ?
+					`,
 				}
 			}
 		}
@@ -167,7 +179,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				{
 					inp := gr.AddInput()
 					inp.Type = "textblock"
-					inp.ColSpan = 2
+					inp.ColSpan = 1
 					inp.Label = allLbls["tranche-types"][idx1].Bold()
 					inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
 					inp.StyleLbl.Desktop.StyleText.FontSize = 115
@@ -186,6 +198,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"de": "Durchschnittl. Zeit bis Abschluss in Wochen",
 			}
 			rangeClosingTime(qst.WrapPageT(page), trancheTypeName, lblDuration)
+
 			volBySegment := trl.S{
 				"en": "Total volume of new deals by segment",
 				"de": "Gesamtvolumen neuer Abschlüsse nach Marktsegment",
@@ -203,86 +216,41 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"de": "Gesamtvolumen neuer Abschlüsse nach Sektor",
 			}
 			restrictedText(qst.WrapPageT(page), trancheTypeName, volBySector, rT4)
+
+			{
+				gr := page.AddGroup()
+				gr.Cols = 1
+				gr.BottomVSpacers = 1
+				{
+					inp := gr.AddInput()
+					inp.Type = "textblock"
+					inp.ColSpan = 1
+					inp.Label = trl.S{
+						"en": "Should next three add up to 100%?",
+						"de": "Should next three add up to 100%?",
+					}
+				}
+			}
+			shareESG := trl.S{
+				"en": `<b>Share ESG KPIs</b> <br>What is the share of new deals (at Fair Market Value) with explicit ESG targets in the credit documentation?`,
+				"de": `<b>Share ESG KPIs</b> <br>What is the share of new deals (at Fair Market Value) with explicit ESG targets in the credit documentation?`,
+			}
+			rangePercentage(qst.WrapPageT(page), trancheTypeName, shareESG, "esg")
+
+			shareESGRatch := trl.S{
+				"en": `<b>Share ESG ratchets</b> <br> What is the share of new deals (at Fair Market Value) with ESG ratchets?`,
+				"de": `<b>Share ESG ratchets</b> <br> What is the share of new deals (at Fair Market Value) with ESG ratchets?`,
+			}
+			rangePercentage(qst.WrapPageT(page), trancheTypeName, shareESGRatch, "esgratch")
+
+			share15Degree := trl.S{
+				"en": `<b>Share 1.5°C target</b> <br> What is the share of new deals (at Fair Market Value) where the creditor explicitly states a strategy to add to the 1.5°C target?`,
+				"de": `<b>Share 1.5°C target</b> <br> What is the share of new deals (at Fair Market Value) where the creditor explicitly states a strategy to add to the 1.5°C target?`,
+			}
+			rangePercentage(qst.WrapPageT(page), trancheTypeName, share15Degree, "esg15degrees")
+
 		}
 	}
-
-	// page2
-	{
-		page := q.AddPage()
-
-		page.Label = trl.S{
-			"en": "Priority matrix",
-			"de": "Priority matrix",
-		}
-		page.Short = trl.S{
-			"en": "Prio Matrix",
-			"de": "Prio Matrix",
-		}
-
-		page.WidthMax("42rem")
-
-		{
-			inps := []string{
-				"energy",
-				"materials",
-				"industrials",
-				"consumer_discretionary",
-				"consumer_staples",
-				"health_care",
-				"financials",
-				"information_technology",
-				"communication_services",
-				"utilities",
-				"real_estate",
-			}
-
-			lbls := map[string]string{
-				"energy":                 "Energy",
-				"materials":              "Materials",
-				"industrials":            "Industrials",
-				"consumer_discretionary": "Consumer Discretionary",
-				"consumer_staples":       "Consumer Staples",
-				"health_care":            "Health Care",
-				"financials":             "Financials",
-				"information_technology": "Information Technology",
-				"communication_services": "Communication Services",
-				"utilities":              "Utilities",
-				"real_estate":            "Real Estate",
-			}
-
-			lblMain := trl.S{
-				"de": `What GICS sectors provides the most attractive 
-					investment opportunities in the next three months? 
-					Please rank the top three.`,
-			}
-			prio3Matrix(qst.WrapPageT(page), "xx", lblMain, inps, lbls)
-		}
-
-		{
-			inps := []string{
-				"row1",
-				"row2",
-				"row3",
-				"utilities",
-				"real_estate",
-			}
-
-			lbls := map[string]string{
-				"row1":        "row1",
-				"row2":        "row2",
-				"row3":        "row3",
-				"utilities":   "Utilities 2",
-				"real_estate": "Real Estate 2",
-			}
-
-			lblMain := trl.S{
-				"de": `Another priority type question.`,
-				"en": `Another priority type question.`,
-			}
-			prio3Matrix(qst.WrapPageT(page), "xx1", lblMain, inps, lbls)
-		}
-
-	} // page2
 
 	// page3
 	{
@@ -391,6 +359,96 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		}
 
 	} // page3
+
+	// page2
+	{
+		page := q.AddPage()
+
+		page.Label = trl.S{
+			"en": "4. Qualitative Questions",
+			"de": "4. Qualitative Questions",
+		}
+		page.Short = trl.S{
+			"en": "Quality",
+			"de": "Quality",
+		}
+
+		page.WidthMax("42rem")
+
+		// matrix1
+		{
+			inps := []string{
+				"business_cycle",
+				"interest_rates",
+				"inflation_deflation",
+				"demographics",
+				"supply_chains",
+				"health_issues",
+				"regulatory_environment",
+				"other",
+			}
+
+			lbls := map[string]string{
+				"business_cycle":         "Business Cycle",
+				"interest_rates":         "Interest Rates",
+				"inflation_deflation":    "Inflation/Deflation",
+				"demographics":           "Demographics",
+				"supply_chains":          "Supply Chains",
+				"health_issues":          "Health Issues",
+				"regulatory_environment": "Regulatory Environment",
+				"other":                  "Other",
+			}
+
+			lblMain := trl.S{
+				"en": `What do you think are the main risks for your investment strategy over the next 3 months? Please choose three.`,
+				"de": `What do you think are the main risks for your investment strategy over the next 3 months? Please choose three.`,
+			}
+			prio3Matrix(qst.WrapPageT(page), "risks", lblMain, inps, lbls, true)
+		}
+
+		//
+		// matrix2
+		{
+			inps := []string{
+				"energy",
+				"materials",
+				"industrials",
+				"consumer_discretionary",
+				"consumer_staples",
+				"health_care",
+				"financials",
+				"information_technology",
+				"communication_services",
+				"utilities",
+				"real_estate",
+			}
+
+			lbls := map[string]string{
+				"energy":                 "Energy",
+				"materials":              "Materials",
+				"industrials":            "Industrials",
+				"consumer_discretionary": "Consumer Discretionary",
+				"consumer_staples":       "Consumer Staples",
+				"health_care":            "Health Care",
+				"financials":             "Financials",
+				"information_technology": "Information Technology",
+				"communication_services": "Communication Services",
+				"utilities":              "Utilities",
+				"real_estate":            "Real Estate",
+			}
+
+			lblMain := trl.S{
+				"en": `What GICS sectors provides the most attractive 
+					investment opportunities in the next three months? 
+					Please rank the top three.`,
+				"de": `What GICS sectors provides the most attractive 
+					investment opportunities in the next three months? 
+					Please rank the top three.`,
+			}
+			prio3Matrix(qst.WrapPageT(page), "gicsprio", lblMain, inps, lbls, false)
+		}
+
+	} // page2
 
 	// page4
 	{

@@ -6,8 +6,6 @@ import (
 	"strings"
 )
 
-//
-//
 // Hyphenization
 // =================
 //
@@ -171,9 +169,11 @@ var hyph = []string{
 	"be|tween",
 	"busi|ness",
 	"can|di|date",
+
 	"com|plete|ly",
 	"Comp|etitive",
 	"Cons|umer",
+	"con|stant",
 	"de|crease",
 	"de|pre|ci|ate", // "depreciate"
 	"de|te|ri|o|rate",
@@ -199,6 +199,7 @@ var hyph = []string{
 	"in|vest|ment",
 	"man|age|ment",
 	"mac|ro|eco|nom|ics",
+	"mez|za|nine",
 	"mi|cro|eco|nom|ics",
 	"na|tion|al|i|ty",
 	"neg|ative",
@@ -219,11 +220,14 @@ var hyph = []string{
 	"sav|ings",
 	"sig|nif|i|cant",
 	"sig|nif|i|cant|ly",
+	"slight|ly",
 	"Small+|medium",
 	"strong|ly",
 	"strong|ly",
+	"sub|or|di|nat|ed",
 	"un|changed",
 	"Un|decided",
+	"unit|tranche",
 	"wors|en",
 	"will|ing",
 
@@ -321,13 +325,12 @@ func init() {
 // HyphenizeText replaces "mittelfristig" with "mittel|fristig"
 // Hyphenization is done _once_ during creation of the questionare JSON template.
 //
-//
 // We replace longer keys first,
 // to prevent erratic results for example from
 //
 // desa|cuer|do
-//     acuer|do
 //
+//	acuer|do
 func HyphenizeText(s string) string {
 	// s1 := s
 

@@ -20,7 +20,25 @@ Unternehmen
 URL - private-debt-survey.zew.de
 
 
-## Questions 2022-11
+## Questions 2022-11-14
 
-Alles in Englisch?
+<https://private-debt-survey.zew.de/a>
+
+* Alles in Englisch?  
+  Oder auch 'ne deutsche Fassung? 
+
+* strategy as checkbox  
+  asset class as checkbox  
+  repeat portfolio questions for each strategy/assestclass dynamically?
+
+### Slider
+
+* Browser+HTML - very free  
+  Builtin restrictions to styling  
+
+* Slider for interval
+
+* Slider - mobile
+
+Infrastructure
 

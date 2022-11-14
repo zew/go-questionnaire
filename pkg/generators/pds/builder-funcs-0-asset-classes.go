@@ -13,20 +13,20 @@ var assetClassesInputs = []string{
 }
 var assetClassesLabels = []trl.S{
 	{
-		"en": "Real estate",
-		"de": "Immobilien",
-	},
-	{
-		"en": "xx",
-		"de": "xx",
-	},
-	{
 		"en": "Corporate lending",
 		"de": "Corporate lending",
 	},
+	{
+		"en": "Real estate debt",
+		"de": "Real estate debt",
+	},
+	{
+		"en": "Infrastructure Debt",
+		"de": "Infrastructure Debt",
+	},
 }
 
-func assetClass(page *qst.WrappedPageT) {
+func multipleChoiceRow(page *qst.WrappedPageT) {
 
 	lblMain := trl.S{
 		"en": `Which asset classes do you invest in?<br> 
@@ -77,6 +77,61 @@ func assetClass(page *qst.WrappedPageT) {
 				inp.StyleLbl.Desktop.StyleBox.Position = "relative"
 				inp.StyleLbl.Desktop.StyleBox.Top = "-0.2rem"
 			}
+		}
+
+	}
+}
+
+func multipeChoiceColumn(
+	page *qst.WrappedPageT,
+	lblMain trl.S,
+	numCols float32,
+	inps []string,
+	lbls []trl.S,
+) {
+
+	// gr1
+	{
+		gr := page.AddGroup()
+		gr.Cols = 1
+		gr.BottomVSpacers = 1
+		{
+			inp := gr.AddInput()
+			inp.Type = "textblock"
+			inp.Label = lblMain
+			inp.ColSpan = 1
+			inp.ColSpanLabel = 1
+		}
+
+	}
+
+	// gr2
+	{
+		gr := page.AddGroup()
+		gr.Cols = numCols
+		// gr.BottomVSpacers = 1
+
+		for idx1 := 0; idx1 < len(inps); idx1++ {
+			inp := gr.AddInput()
+			inp.Type = "checkbox"
+			inp.Name = inps[idx1]
+			inp.Label = lbls[idx1]
+			inp.ColSpan = 1
+			inp.ColSpanControl = 4
+			inp.ColSpanLabel = 1
+			inp.ControlFirst()
+			// inp.Vertical()
+			// inp.VerticalLabel()
+
+			// labelBottom := false
+			// inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
+			// if labelBottom {
+			// 	inp.StyleLbl.Desktop.StyleGridItem.Order = 2
+			// } else {
+			// 	// top
+			// 	inp.StyleLbl.Desktop.StyleBox.Position = "relative"
+			// 	inp.StyleLbl.Desktop.StyleBox.Top = "-0.2rem"
+			// }
 		}
 
 	}

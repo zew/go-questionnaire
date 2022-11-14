@@ -77,7 +77,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		page.ValidationFuncName = ""
 		page.WidthMax("42rem")
 
-		// gr0
+		// gr1
 		{
 			gr := page.AddGroup()
 			gr.Cols = 1
@@ -101,14 +101,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			}
 		}
 
-		// gr1
-		{
-			lblMain := trl.S{
-				"en": `Strategy -  shouldn't this be checkboxes? See 'asset classes' below`,
-				"de": `Strategie - shouldn't this be checkboxes? See 'asset classes' below`,
-			}
-			multipleChoiceSingleRow(qst.WrapPageT(page), "strategy", lblMain, mCh1)
-		}
 		// gr2
 		{
 			lblMain := trl.S{
@@ -122,7 +114,16 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		}
 
 		// gr3
-		assetClass(qst.WrapPageT(page))
+		multipleChoiceRow(qst.WrapPageT(page))
+
+		// gr4
+		{
+			lblMain := trl.S{
+				"en": `Strategy -  shouldn't this be checkboxes? See 'asset classes' below`,
+				"de": `Strategie - shouldn't this be checkboxes? See 'asset classes' below`,
+			}
+			multipleChoiceSingleRow(qst.WrapPageT(page), "strategy", lblMain, mCh1)
+		}
 
 	} // page0a
 
@@ -265,6 +266,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			gr := page.AddGroup()
 			gr.Cols = 1
 			gr.BottomVSpacers = 1
+			gr.WidthMax("85%")
 			{
 				inp := gr.AddInput()
 				inp.Type = "dyn-textblock"
@@ -280,6 +282,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			gr := page.AddGroup()
 			gr.Cols = 1
 			gr.BottomVSpacers = 1
+			gr.WidthMax("85%")
 			{
 				inp := gr.AddInput()
 				inp.Type = "dyn-textblock"
@@ -448,29 +451,174 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			prio3Matrix(qst.WrapPageT(page), "gicsprio", lblMain, inps, lbls, false)
 		}
 
-	} // page2
-
-	// page4
-	{
-		page := q.AddPage()
-
-		// page.Section = trl.S{
-		// 	"en": "Section 2",
-		// 	"de": "Section 2",
-		// }
-		page.Label = trl.S{"de": "Label long"}
-		page.Short = trl.S{"de": "Label<br>short"}
-		page.WidthMax("42rem")
-
 		{
-			lblMain := trl.S{
-				"de": `How do you expect the quality of deals in terms of the risk-return profile change in Q1 2023?`,
-				"en": `How do you expect the quality of deals in terms of the risk-return profile change in Q1 2023?`,
+			esgImportance1 := trl.S{
+				"en": `How important are ESG considerations 
+					to core principal in your investment process?
+			`,
+				"de": `How important are ESG considerations 
+					to core principal in your investment process?
+			`,
 			}
-			multipleChoiceSingleRow(qst.WrapPageT(page), "xx2", lblMain, mChExample1)
+
+			// rejected at meeting 2022-11-14
+			// rangePercentage(qst.WrapPageT(page), "esg", esgImportance1, "importance2")
+
+			multipleChoiceSingleRow(qst.WrapPageT(page), "esg_importance1", esgImportance1, mCh3)
 		}
 
-	} // page4
+		//
+		// matrix3
+		{
+			inps := []string{
+				"availability",
+				"quality",
+				"performance",
+				"greenwashing",
+				"regulation",
+				"opportunities",
+				"other",
+			}
+
+			lbls := map[string]string{
+				"availability":  "ESG data availability",
+				"quality":       "ESG data quality",
+				"performance":   "Concerns about performance/sacrificing returns",
+				"greenwashing":  "Concerns about greenwashing",
+				"regulation":    "Complex regulatory landscape",
+				"opportunities": "Lack of suitable investments",
+				"other":         "Other",
+			}
+
+			lblMain := trl.S{
+				"en": `What is the biggest challenge related to the implementation of ESG into your investment strategy?`,
+				"de": `What is the biggest challenge related to the implementation of ESG into your investment strategy?`,
+			}
+			prio3Matrix(qst.WrapPageT(page), "esg_challenge", lblMain, inps, lbls, true)
+		}
+
+		{
+
+			var inps = []string{
+				"poverty",
+				"hunger",
+				"health",
+				"education",
+				"gender_eq",
+				"water",
+				"energy",
+				"work",
+				"industry",
+				"inequality",
+				"communities",
+				"responsible",
+				"climate",
+				"life_water",
+				"life_land",
+				"peace",
+				"partnership",
+			}
+			var lbls = []trl.S{
+				{
+					"de": "(1) No Poverty",
+					"en": "(1) No Poverty",
+				},
+				{
+					"de": "(2) Zero Hunger",
+					"en": "(2) Zero Hunger",
+				},
+				{
+					"de": "(3) Good Health and Well-Being",
+					"en": "(3) Good Health and Well-Being",
+				},
+				{
+					"de": "(4) Quality Education",
+					"en": "(4) Quality Education",
+				},
+				{
+					"de": "(5) Gender Equality",
+					"en": "(5) Gender Equality",
+				},
+				{
+					"de": "(6) Clean Water and Sanitation",
+					"en": "(6) Clean Water and Sanitation",
+				},
+				{
+					"de": "(7) Affordable and Clean Energy",
+					"en": "(7) Affordable and Clean Energy",
+				},
+				{
+					"de": "(8) Decent Work and Economic Growth",
+					"en": "(8) Decent Work and Economic Growth",
+				},
+				{
+					"de": "(9) Industry Innovation and Infrastructure",
+					"en": "(9) Industry Innovation and Infrastructure",
+				},
+				{
+					"de": "(10) Reduce Inequality",
+					"en": "(10) Reduce Inequality",
+				},
+				{
+					"de": "(11) Sustainable Cities and Communities",
+					"en": "(11) Sustainable Cities and Communities",
+				},
+				{
+					"de": "(12) Responsible Consumption and Production",
+					"en": "(12) Responsible Consumption and Production",
+				},
+				{
+					"de": "(13) Climate Action",
+					"en": "(13) Climate Action",
+				},
+				{
+					"de": "(14) Life below Water",
+					"en": "(14) Life below Water",
+				},
+				{
+					"de": "(15) Life on Land",
+					"en": "(15) Life on Land",
+				},
+				{
+					"de": "(16) Peace, Justice and strong Institutions",
+					"en": "(16) Peace, Justice and strong Institutions",
+				},
+				{
+					"de": "(17) Partnership for the Goals",
+					"en": "(17) Partnership for the Goals",
+				},
+			}
+
+			unSDG := trl.S{
+				"en": `What UN SDGs are supported by your investment strategy?`,
+				"de": `What UN SDGs are supported by your investment strategy?`,
+			}
+			multipeChoiceColumn(qst.WrapPageT(page), unSDG, 2, inps, lbls)
+		}
+
+	} // page2
+
+	// // page4
+	// {
+	// 	page := q.AddPage()
+
+	// 	// page.Section = trl.S{
+	// 	// 	"en": "Section 2",
+	// 	// 	"de": "Section 2",
+	// 	// }
+	// 	page.Label = trl.S{"de": "Label long"}
+	// 	page.Short = trl.S{"de": "Label<br>short"}
+	// 	page.WidthMax("42rem")
+
+	// 	{
+	// 		lblMain := trl.S{
+	// 			"de": `How do you expect the quality of deals in terms of the risk-return profile change in Q1 2023?`,
+	// 			"en": `How do you expect the quality of deals in terms of the risk-return profile change in Q1 2023?`,
+	// 		}
+	// 		multipleChoiceSingleRow(qst.WrapPageT(page), "xx2", lblMain, mChExample1)
+	// 	}
+
+	// } // page4
 
 	//
 	//

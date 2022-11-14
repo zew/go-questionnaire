@@ -18,7 +18,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "41151fc27d5f2844a640d925f39902701537fa0c87e7da2f1f83fc037066fdda",
+ 	"md_5": "8c5262332ee5cf39ee4fd471ceebe1ccce5e72ff10a50ebc78089e8e3de715ae",
  	"lang_codes": [
  		"en"
  	],
@@ -257,8 +257,8 @@
  							"name": "strategy",
  							"type": "radio",
  							"label": {
- 								"de": "Subordinated",
- 								"en": "Subordinated"
+ 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"col_span": 2,
  							"col_span_label": 1,
@@ -309,8 +309,8 @@
  							"name": "strategy",
  							"type": "radio",
  							"label": {
- 								"de": "Mezzanine / PIK / Other",
- 								"en": "Mezzanine / PIK / Other"
+ 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / Other",
+ 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / Other"
  							},
  							"col_span": 2,
  							"col_span_label": 1,
@@ -2840,8 +2840,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eSubordinated\u003c/b\u003e",
- 								"en": "\u003cb\u003eSubordinated\u003c/b\u003e"
+ 								"de": "\u003cb\u003eSub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed\u003c/b\u003e",
+ 								"en": "\u003cb\u003eSub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed\u003c/b\u003e"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -3855,8 +3855,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eMezzanine / PIK / Other\u003c/b\u003e",
- 								"en": "\u003cb\u003eMezzanine / PIK / Other\u003c/b\u003e"
+ 								"de": "\u003cb\u003eMez\u0026shy;za\u0026shy;nine / PIK / Other\u003c/b\u003e",
+ 								"en": "\u003cb\u003eMez\u0026shy;za\u0026shy;nine / PIK / Other\u003c/b\u003e"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -4908,7 +4908,25 @@
  							"dynamic_func": "RenderStaticContent",
  							"dynamic_func_paramset": "./slider/inner-1.html"
  						}
- 					]
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width_max": "85%"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width_max": "none"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
  				},
  				{
  					"bottom_vspacers": 1,
@@ -4921,7 +4939,25 @@
  							"dynamic_func": "RenderStaticContent",
  							"dynamic_func_paramset": "./slider/inner-2.html"
  						}
- 					]
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width_max": "85%"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width_max": "none"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
  				},
  				{
  					"bottom_vspacers": 3,
@@ -5912,40 +5948,49 @@
  							}
  						}
  					]
- 				}
- 			]
- 		},
- 		{
- 			"label": {
- 				"de": "Label long"
- 			},
- 			"description": {
- 				"de": "",
- 				"en": ""
- 			},
- 			"short": {
- 				"de": "Label\u003cbr\u003eshort"
- 			},
- 			"style": {
- 				"desktop": {
- 					"grid_container_style": {},
- 					"box_style": {
- 						"width_max": "42rem"
- 					},
- 					"grid_item_style": {},
- 					"text_style": {}
  				},
- 				"mobile": {
- 					"grid_container_style": {},
- 					"box_style": {
- 						"width_max": "calc(100% - 1.2rem)"
- 					},
- 					"grid_item_style": {},
- 					"text_style": {}
- 				}
- 			},
- 			"finished": "0001-01-01T00:00:00Z",
- 			"groups": [
+ 				{
+ 					"bottom_vspacers": 2,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"name": "esg_importance2",
+ 							"type": "range",
+ 							"step": 3,
+ 							"min": 3,
+ 							"max": 21,
+ 							"label": {
+ 								"de": "How important are ESG considerations \n\t\t\t\t\tto core principal in your in\u0026shy;vest\u0026shy;ment process?\n\t\t\t",
+ 								"en": "How important are ESG considerations \n\t\t\t\t\tto core principal in your in\u0026shy;vest\u0026shy;ment process?\n\t\t\t"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 2,
+ 							"col_span_control": 1
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width_max": "80%"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"width_max": "none"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
  				{
  					"bottom_vspacers": 1,
  					"columns": 1,
@@ -5953,8 +5998,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "How do you expect the quality of deals in terms of the risk-return profile change in Q1 2023?",
- 								"en": "How do you expect the quality of deals in terms of the risk-return profile change in Q1 2023?"
+ 								"de": "Alternative representation instead of slider",
+ 								"en": "Alternative representation instead of slider"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -5963,14 +6008,14 @@
  				},
  				{
  					"bottom_vspacers": 3,
- 					"columns": 14,
+ 					"columns": 10,
  					"inputs": [
  						{
- 							"name": "xx2",
+ 							"name": "esg_importance1",
  							"type": "radio",
  							"label": {
- 								"de": "Im\u0026shy;prove sig\u0026shy;nif\u0026shy;i\u0026shy;cant\u0026shy;ly",
- 								"en": "Im\u0026shy;prove sig\u0026shy;nif\u0026shy;i\u0026shy;cant\u0026shy;ly"
+ 								"de": "(1)\u003cbr\u003eNot re\u0026shy;le\u0026shy;vant",
+ 								"en": "(1)\u003cbr\u003eNot re\u0026shy;le\u0026shy;vant"
  							},
  							"col_span": 2,
  							"col_span_label": 1,
@@ -6018,11 +6063,11 @@
  							}
  						},
  						{
- 							"name": "xx2",
+ 							"name": "esg_importance1",
  							"type": "radio",
  							"label": {
- 								"de": "Im\u0026shy;prove slightly",
- 								"en": "Im\u0026shy;prove slightly"
+ 								"de": "(2)\u003cbr\u003e",
+ 								"en": "(2)\u003cbr\u003e"
  							},
  							"col_span": 2,
  							"col_span_label": 1,
@@ -6070,11 +6115,11 @@
  							}
  						},
  						{
- 							"name": "xx2",
+ 							"name": "esg_importance1",
  							"type": "radio",
  							"label": {
- 								"de": "Stay constant",
- 								"en": "Stay constant"
+ 								"de": "(3)\u003cbr\u003e",
+ 								"en": "(3)\u003cbr\u003e"
  							},
  							"col_span": 2,
  							"col_span_label": 1,
@@ -6122,11 +6167,11 @@
  							}
  						},
  						{
- 							"name": "xx2",
+ 							"name": "esg_importance1",
  							"type": "radio",
  							"label": {
- 								"de": "Wors\u0026shy;en slightly",
- 								"en": "Wors\u0026shy;en slightly"
+ 								"de": "(4)\u003cbr\u003e",
+ 								"en": "(4)\u003cbr\u003e"
  							},
  							"col_span": 2,
  							"col_span_label": 1,
@@ -6174,11 +6219,11 @@
  							}
  						},
  						{
- 							"name": "xx2",
+ 							"name": "esg_importance1",
  							"type": "radio",
  							"label": {
- 								"de": "Wors\u0026shy;en sig\u0026shy;nif\u0026shy;i\u0026shy;cant\u0026shy;ly",
- 								"en": "Wors\u0026shy;en sig\u0026shy;nif\u0026shy;i\u0026shy;cant\u0026shy;ly"
+ 								"de": "(5)\u003cbr\u003e Potential dealbreaker",
+ 								"en": "(5)\u003cbr\u003e Potential dealbreaker"
  							},
  							"col_span": 2,
  							"col_span_label": 1,
@@ -6224,26 +6269,323 @@
  									"text_style": {}
  								}
  							}
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "What is the biggest challenge related to the implementation of ESG into your in\u0026shy;vest\u0026shy;ment strategy?",
+ 								"en": "What is the biggest challenge related to the implementation of ESG into your in\u0026shy;vest\u0026shy;ment strategy?"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 9,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "right"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
- 							"name": "xx2",
- 							"type": "radio",
+ 							"type": "textblock",
  							"label": {
- 								"de": "Don´t know",
- 								"en": "Don´t know"
+ 								"de": "Prio 1",
+ 								"en": "Prio 1"
  							},
- 							"col_span": 4,
+ 							"col_span": 2,
  							"col_span_label": 1,
- 							"col_span_control": 1,
- 							"value_radio": "6",
- 							"style": {
+ 							"style_label": {
  								"desktop": {
- 									"grid_container_style": {
- 										"auto_flow": "column",
- 										"template_columns": " ",
- 										"template_rows": "1fr "
- 									},
+ 									"grid_container_style": {},
  									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Prio 2",
+ 								"en": "Prio 2"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Prio 3",
+ 								"en": "Prio 3"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "ESG data availability",
+ 								"en": "ESG data availability"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "esg_challenge_prio1",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "availability"
+ 						},
+ 						{
+ 							"name": "esg_challenge_prio2",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "availability"
+ 						},
+ 						{
+ 							"name": "esg_challenge_prio3",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "availability"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "ESG data quality",
+ 								"en": "ESG data quality"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "esg_challenge_prio1",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "quality"
+ 						},
+ 						{
+ 							"name": "esg_challenge_prio2",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "quality"
+ 						},
+ 						{
+ 							"name": "esg_challenge_prio3",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "quality"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Concerns about performance/sacrificing returns",
+ 								"en": "Concerns about performance/sacrificing returns"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "esg_challenge_prio1",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "performance"
+ 						},
+ 						{
+ 							"name": "esg_challenge_prio2",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "performance"
+ 						},
+ 						{
+ 							"name": "esg_challenge_prio3",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "performance"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Concerns about greenwashing",
+ 								"en": "Concerns about greenwashing"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "esg_challenge_prio1",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "greenwashing"
+ 						},
+ 						{
+ 							"name": "esg_challenge_prio2",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "greenwashing"
+ 						},
+ 						{
+ 							"name": "esg_challenge_prio3",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "greenwashing"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Complex regulatory landscape",
+ 								"en": "Complex regulatory landscape"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "esg_challenge_prio1",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "regulation"
+ 						},
+ 						{
+ 							"name": "esg_challenge_prio2",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "regulation"
+ 						},
+ 						{
+ 							"name": "esg_challenge_prio3",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "regulation"
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Lack of suitable in\u0026shy;vest\u0026shy;ments",
+ 								"en": "Lack of suitable in\u0026shy;vest\u0026shy;ments"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "esg_challenge_prio1",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "opportunities"
+ 						},
+ 						{
+ 							"name": "esg_challenge_prio2",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "opportunities"
+ 						},
+ 						{
+ 							"name": "esg_challenge_prio3",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "opportunities"
+ 						},
+ 						{
+ 							"name": "esg_challenge_label",
+ 							"type": "text",
+ 							"max_chars": 18,
+ 							"label": {
+ 								"de": "Other",
+ 								"en": "Other"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 2,
+ 							"col_span_control": 4,
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"width_max": "6rem"
+ 									},
  									"grid_item_style": {},
  									"text_style": {}
  								},
@@ -6253,18 +6595,534 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
+ 							}
+ 						},
+ 						{
+ 							"name": "esg_challenge_prio1",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "other"
+ 						},
+ 						{
+ 							"name": "esg_challenge_prio2",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "other"
+ 						},
+ 						{
+ 							"name": "esg_challenge_prio3",
+ 							"type": "radio",
+ 							"col_span": 2,
+ 							"col_span_control": 1,
+ 							"value_radio": "other"
+ 						},
+ 						{
+ 							"name": "prio123",
+ 							"type": "javascript-block",
+ 							"col_span_control": 1,
+ 							"js_block_strings": {
+ 								"inp_1": "esg_challenge_prio0",
+ 								"inp_2": "esg_challenge_prio1",
+ 								"inp_3": "esg_challenge_prio2",
+ 								"inputBaseName": "esg_challenge"
  							},
+ 							"js_block_translations": {
+ 								"msg": {
+ 									"de": "Keine Prio zweimal",
+ 									"en": "Priorities not twice"
+ 								}
+ 							}
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "What UN SDGs are supported by your in\u0026shy;vest\u0026shy;ment strategy?",
+ 								"en": "What UN SDGs are supported by your in\u0026shy;vest\u0026shy;ment strategy?"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 2,
+ 					"inputs": [
+ 						{
+ 							"name": "poverty",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "(1) \u003cxxbr\u003eNo Poverty",
+ 								"en": "(1) \u003cxxbr\u003eNo Poverty"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 4,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
+ 										"justify_self": "start",
+ 										"order": 2
  									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "hunger",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "(2) \u003cxxbr\u003eZero Hunger",
+ 								"en": "(2) \u003cxxbr\u003eZero Hunger"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 4,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "health",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "(3) \u003cxxbr\u003eGood Health and Well-Being",
+ 								"en": "(3) \u003cxxbr\u003eGood Health and Well-Being"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 4,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "education",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "(4) \u003cxxbr\u003eQuality Education",
+ 								"en": "(4) \u003cxxbr\u003eQuality Education"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 4,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "gender_eq",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "(5) \u003cxxbr\u003eGender Equality",
+ 								"en": "(5) \u003cxxbr\u003eGender Equality"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 4,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "water",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "(6) \u003cxxbr\u003eClean Water and Sanitation",
+ 								"en": "(6) \u003cxxbr\u003eClean Water and Sanitation"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 4,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "energy",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "(7) \u003cxxbr\u003eAffordable and Clean Energy",
+ 								"en": "(7) \u003cxxbr\u003eAffordable and Clean Energy"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 4,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "work",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "(8) \u003cxxbr\u003eDecent Work and Eco\u0026shy;nom\u0026shy;ic Growth",
+ 								"en": "(8) \u003cxxbr\u003eDecent Work and Eco\u0026shy;nom\u0026shy;ic Growth"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 4,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "industry",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "(9) \u003cxxbr\u003eIndustry Innovation and Infrastructure",
+ 								"en": "(9) \u003cxxbr\u003eIndustry Innovation and Infrastructure"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 4,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "inequality",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "(10) \u003cxxbr\u003eRe\u0026shy;duce Inequality",
+ 								"en": "(10) \u003cxxbr\u003eRe\u0026shy;duce Inequality"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 4,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "communities",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "(11) \u003cxxbr\u003eSustainable Cities and Communities",
+ 								"en": "(11) \u003cxxbr\u003eSustainable Cities and Communities"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 4,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "responsible",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "(12) \u003cxxbr\u003eResponsible Consumption and Production",
+ 								"en": "(12) \u003cxxbr\u003eResponsible Consumption and Production"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 4,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "climate",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "(13) \u003cxxbr\u003eClimate Action",
+ 								"en": "(13) \u003cxxbr\u003eClimate Action"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 4,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "life_water",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "(14) \u003cxxbr\u003eLife be\u0026shy;low Water",
+ 								"en": "(14) \u003cxxbr\u003eLife be\u0026shy;low Water"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 4,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "life_land",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "(15) \u003cxxbr\u003eLife on Land",
+ 								"en": "(15) \u003cxxbr\u003eLife on Land"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 4,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "peace",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "(16) \u003cxxbr\u003ePeace, Justice and strong Institutions",
+ 								"en": "(16) \u003cxxbr\u003ePeace, Justice and strong Institutions"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 4,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "partnership",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "(17) \u003cxxbr\u003ePartnership for the Goals",
+ 								"en": "(17) \u003cxxbr\u003ePartnership for the Goals"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 4,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
  								},
  								"mobile": {
  									"grid_container_style": {},

@@ -40,3 +40,22 @@ a.button {
     }
 }
 
+
+
+.pg2206 input[type="text"] {
+    margin-right: 0;
+}
+
+@media screen and (max-width: 800px) {
+
+    input[name="risks_label"] {
+        max-width: 6.1rem;
+        margin-left: 0.3rem;
+        margin-right: 0;
+    }
+
+    div.pg03 {
+        max-width: 90%  !important;
+        zoom: 0.75;
+    }
+}

@@ -33,6 +33,13 @@ var (
 		LabelBottom: true,
 		DontKnow:    false,
 	}
+	mCh3 = configMC{
+		KeyLabels:   "relevance1-5",
+		Cols:        10,
+		InpColspan:  2,
+		LabelBottom: false,
+		DontKnow:    false,
+	}
 	mChExample1 = configMC{
 		KeyLabels:   "improveWorsen1-5",
 		Cols:        14,
@@ -91,6 +98,28 @@ var allLbls = map[string][]trl.S{
 		{
 			"de": ">20",
 			"en": ">20",
+		},
+	},
+	"relevance1-5": {
+		{
+			"de": "(1)<br>Not relevant",
+			"en": "(1)<br>Not relevant",
+		},
+		{
+			"de": "(2)<br>",
+			"en": "(2)<br>",
+		},
+		{
+			"de": "(3)<br>",
+			"en": "(3)<br>",
+		},
+		{
+			"de": "(4)<br>",
+			"en": "(4)<br>",
+		},
+		{
+			"de": "(5)<br> Potential dealbreaker",
+			"en": "(5)<br> Potential dealbreaker",
 		},
 	},
 	"improveWorsen1-5": {

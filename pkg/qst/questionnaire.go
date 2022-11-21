@@ -237,17 +237,6 @@ type groupT struct {
 	Style *css.StylesResponsive `json:"style,omitempty"` // pointer, to avoid empty JSON blocks
 }
 
-// WrappedPageT for creating helper funcs outside
-// the package - *temporarily*.
-type WrappedPageT struct {
-	*pageT
-}
-
-// WrapPageT is a wrapper for pageT
-func WrapPageT(pt *pageT) *WrappedPageT {
-	return &WrappedPageT{pt}
-}
-
 // AddInput creates a new input
 // and adds this input to the group's inputs
 func (gr *groupT) AddInput() *inputT {
@@ -454,6 +443,8 @@ type pageT struct {
 	ValidationFuncName string `json:"validation_func_name,omitempty"` // file name containing javascript validation func template
 	// there should be several strings - key/value - not just one "msg"
 	ValidationFuncMsg trl.S `json:"validation_func_msg,omitempty"`
+
+	GeneratorFuncName string `json:"generator_func_name,omitempty"`
 }
 
 // AddGroup creates a new group
@@ -652,11 +643,24 @@ func (q *QuestionnaireT) AddPageAfter(idx int) *pageT {
 }
 
 // EditPage returns page X
+// compare WrapPage
 func (q *QuestionnaireT) EditPage(idx int) *pageT {
 	if idx < 0 || idx > len(q.Pages)-1 {
 		log.Panicf("EditPage(): %v pages - valid indexes are 0...%v", len(q.Pages), len(q.Pages)-1)
 	}
 	return q.Pages[idx]
+}
+
+// WrappedPageT for creating helper funcs outside
+// the package - *temporarily*.
+// compare EditPage
+type WrappedPageT struct {
+	*pageT
+}
+
+// WrapPageT is a wrapper for pageT
+func WrapPageT(pt *pageT) *WrappedPageT {
+	return &WrappedPageT{pt}
 }
 
 // AddFinishButtonNextToLast from page
@@ -933,11 +937,25 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 
 	if q.CurrPage > len(q.Pages)-1 || q.CurrPage < 0 {
 		s := fmt.Sprintf("You requested page %v out of %v. Page does not exist", pageIdx, len(q.Pages)-1)
-		log.Printf(s)
+		log.Print(s)
 		return s, fmt.Errorf(s)
 	}
 
 	page := q.Pages[pageIdx]
+
+	// dynamic page creation
+	if page.GeneratorFuncName != "" {
+		err := funcPGs[page.GeneratorFuncName](q, page)
+		if err != nil {
+			s := fmt.Sprintf("Page %v; GeneratorFuncName %v returned error %v",
+				pageIdx,
+				page.GeneratorFuncName,
+				err,
+			)
+			log.Print(s)
+			return s, fmt.Errorf(s)
+		}
+	}
 
 	found := false
 	for _, lc := range q.LangCodes {
@@ -948,10 +966,11 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 	}
 	if !found {
 		s := fmt.Sprintf("Language code '%v' is not supported in %v", q.LangCode, q.LangCodes)
-		log.Printf(s)
+		log.Print(s)
 		return s, fmt.Errorf(s)
 	}
 
+	// adding a group containing the previous/next buttons
 	if !page.NoNavigation {
 
 		var footer *groupT

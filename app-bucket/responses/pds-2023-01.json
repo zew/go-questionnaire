@@ -18,7 +18,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "8c5262332ee5cf39ee4fd471ceebe1ccce5e72ff10a50ebc78089e8e3de715ae",
+ 	"md_5": "6147b3304e9fe0d035836befc5d2ab0db2e547ef7a36fdb9f226746b9f305900",
  	"lang_codes": [
  		"en"
  	],
@@ -127,235 +127,6 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 2
- 						}
- 					]
- 				},
- 				{
- 					"bottom_vspacers": 1,
- 					"columns": 1,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "Strategie - shouldn't this be checkboxes? See 'asset classes' be\u0026shy;low",
- 								"en": "Strategy -  shouldn't this be checkboxes? See 'asset classes' be\u0026shy;low"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1
- 						}
- 					]
- 				},
- 				{
- 					"bottom_vspacers": 3,
- 					"columns": 8,
- 					"inputs": [
- 						{
- 							"name": "strategy",
- 							"type": "radio",
- 							"label": {
- 								"de": "Senior",
- 								"en": "Senior"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 1,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {
- 										"auto_flow": "column",
- 										"template_columns": " ",
- 										"template_rows": "1fr "
- 									},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"position": "relative",
- 										"top": "-0.2rem"
- 									},
- 									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "strategy",
- 							"type": "radio",
- 							"label": {
- 								"de": "Unitranche",
- 								"en": "Unitranche"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 1,
- 							"col_span_control": 1,
- 							"value_radio": "2",
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {
- 										"auto_flow": "column",
- 										"template_columns": " ",
- 										"template_rows": "1fr "
- 									},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"position": "relative",
- 										"top": "-0.2rem"
- 									},
- 									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "strategy",
- 							"type": "radio",
- 							"label": {
- 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 1,
- 							"col_span_control": 1,
- 							"value_radio": "3",
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {
- 										"auto_flow": "column",
- 										"template_columns": " ",
- 										"template_rows": "1fr "
- 									},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"position": "relative",
- 										"top": "-0.2rem"
- 									},
- 									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "strategy",
- 							"type": "radio",
- 							"label": {
- 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / Other",
- 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / Other"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 1,
- 							"col_span_control": 1,
- 							"value_radio": "4",
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {
- 										"auto_flow": "column",
- 										"template_columns": " ",
- 										"template_rows": "1fr "
- 									},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"position": "relative",
- 										"top": "-0.2rem"
- 									},
- 									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
  						}
  					]
  				},
@@ -603,8 +374,8 @@
  							"name": "real_estate",
  							"type": "checkbox",
  							"label": {
- 								"de": "Immobilien",
- 								"en": "Real estate"
+ 								"de": "Corporate lending",
+ 								"en": "Corporate lending"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -654,8 +425,8 @@
  							"name": "xx",
  							"type": "checkbox",
  							"label": {
- 								"de": "xx",
- 								"en": "xx"
+ 								"de": "Real estate debt",
+ 								"en": "Real estate debt"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -705,12 +476,241 @@
  							"name": "corp_lending",
  							"type": "checkbox",
  							"label": {
- 								"de": "Corporate lending",
- 								"en": "Corporate lending"
+ 								"de": "Infrastructure Debt",
+ 								"en": "Infrastructure Debt"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"top": "-0.2rem"
+ 									},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Strategie - shouldn't this be checkboxes? See 'asset classes' be\u0026shy;low",
+ 								"en": "Strategy -  shouldn't this be checkboxes? See 'asset classes' be\u0026shy;low"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 8,
+ 					"inputs": [
+ 						{
+ 							"name": "strategy",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Senior",
+ 								"en": "Senior"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"top": "-0.2rem"
+ 									},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "strategy",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Unitranche",
+ 								"en": "Unitranche"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "2",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"top": "-0.2rem"
+ 									},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "strategy",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "3",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"top": "-0.2rem"
+ 									},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "strategy",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / Other",
+ 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / Other"
+ 							},
+ 							"col_span": 2,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "4",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -5950,56 +5950,14 @@
  					]
  				},
  				{
- 					"bottom_vspacers": 2,
- 					"columns": 1,
- 					"inputs": [
- 						{
- 							"name": "esg_importance2",
- 							"type": "range",
- 							"step": 3,
- 							"min": 3,
- 							"max": 21,
- 							"label": {
- 								"de": "How important are ESG considerations \n\t\t\t\t\tto core principal in your in\u0026shy;vest\u0026shy;ment process?\n\t\t\t",
- 								"en": "How important are ESG considerations \n\t\t\t\t\tto core principal in your in\u0026shy;vest\u0026shy;ment process?\n\t\t\t"
- 							},
- 							"suffix": {
- 								"de": "%",
- 								"en": "%"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 2,
- 							"col_span_control": 1
- 						}
- 					],
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {},
- 							"box_style": {
- 								"width_max": "80%"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {},
- 							"box_style": {
- 								"width_max": "none"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
- 				},
- 				{
  					"bottom_vspacers": 1,
  					"columns": 1,
  					"inputs": [
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Alternative representation instead of slider",
- 								"en": "Alternative representation instead of slider"
+ 								"de": "How important are ESG considerations \n\t\t\t\t\tto core principal in your in\u0026shy;vest\u0026shy;ment process?\n\t\t\t",
+ 								"en": "How important are ESG considerations \n\t\t\t\t\tto core principal in your in\u0026shy;vest\u0026shy;ment process?\n\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -6660,8 +6618,8 @@
  							"name": "poverty",
  							"type": "checkbox",
  							"label": {
- 								"de": "(1) \u003cxxbr\u003eNo Poverty",
- 								"en": "(1) \u003cxxbr\u003eNo Poverty"
+ 								"de": "(1) No Poverty",
+ 								"en": "(1) No Poverty"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -6688,8 +6646,8 @@
  							"name": "hunger",
  							"type": "checkbox",
  							"label": {
- 								"de": "(2) \u003cxxbr\u003eZero Hunger",
- 								"en": "(2) \u003cxxbr\u003eZero Hunger"
+ 								"de": "(2) Zero Hunger",
+ 								"en": "(2) Zero Hunger"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -6716,8 +6674,8 @@
  							"name": "health",
  							"type": "checkbox",
  							"label": {
- 								"de": "(3) \u003cxxbr\u003eGood Health and Well-Being",
- 								"en": "(3) \u003cxxbr\u003eGood Health and Well-Being"
+ 								"de": "(3) Good Health and Well-Being",
+ 								"en": "(3) Good Health and Well-Being"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -6744,8 +6702,8 @@
  							"name": "education",
  							"type": "checkbox",
  							"label": {
- 								"de": "(4) \u003cxxbr\u003eQuality Education",
- 								"en": "(4) \u003cxxbr\u003eQuality Education"
+ 								"de": "(4) Quality Education",
+ 								"en": "(4) Quality Education"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -6772,8 +6730,8 @@
  							"name": "gender_eq",
  							"type": "checkbox",
  							"label": {
- 								"de": "(5) \u003cxxbr\u003eGender Equality",
- 								"en": "(5) \u003cxxbr\u003eGender Equality"
+ 								"de": "(5) Gender Equality",
+ 								"en": "(5) Gender Equality"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -6800,8 +6758,8 @@
  							"name": "water",
  							"type": "checkbox",
  							"label": {
- 								"de": "(6) \u003cxxbr\u003eClean Water and Sanitation",
- 								"en": "(6) \u003cxxbr\u003eClean Water and Sanitation"
+ 								"de": "(6) Clean Water and Sanitation",
+ 								"en": "(6) Clean Water and Sanitation"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -6828,8 +6786,8 @@
  							"name": "energy",
  							"type": "checkbox",
  							"label": {
- 								"de": "(7) \u003cxxbr\u003eAffordable and Clean Energy",
- 								"en": "(7) \u003cxxbr\u003eAffordable and Clean Energy"
+ 								"de": "(7) Affordable and Clean Energy",
+ 								"en": "(7) Affordable and Clean Energy"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -6856,8 +6814,8 @@
  							"name": "work",
  							"type": "checkbox",
  							"label": {
- 								"de": "(8) \u003cxxbr\u003eDecent Work and Eco\u0026shy;nom\u0026shy;ic Growth",
- 								"en": "(8) \u003cxxbr\u003eDecent Work and Eco\u0026shy;nom\u0026shy;ic Growth"
+ 								"de": "(8) Decent Work and Eco\u0026shy;nom\u0026shy;ic Growth",
+ 								"en": "(8) Decent Work and Eco\u0026shy;nom\u0026shy;ic Growth"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -6884,8 +6842,8 @@
  							"name": "industry",
  							"type": "checkbox",
  							"label": {
- 								"de": "(9) \u003cxxbr\u003eIndustry Innovation and Infrastructure",
- 								"en": "(9) \u003cxxbr\u003eIndustry Innovation and Infrastructure"
+ 								"de": "(9) Industry Innovation and Infrastructure",
+ 								"en": "(9) Industry Innovation and Infrastructure"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -6912,8 +6870,8 @@
  							"name": "inequality",
  							"type": "checkbox",
  							"label": {
- 								"de": "(10) \u003cxxbr\u003eRe\u0026shy;duce Inequality",
- 								"en": "(10) \u003cxxbr\u003eRe\u0026shy;duce Inequality"
+ 								"de": "(10) Re\u0026shy;duce Inequality",
+ 								"en": "(10) Re\u0026shy;duce Inequality"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -6940,8 +6898,8 @@
  							"name": "communities",
  							"type": "checkbox",
  							"label": {
- 								"de": "(11) \u003cxxbr\u003eSustainable Cities and Communities",
- 								"en": "(11) \u003cxxbr\u003eSustainable Cities and Communities"
+ 								"de": "(11) Sustainable Cities and Communities",
+ 								"en": "(11) Sustainable Cities and Communities"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -6968,8 +6926,8 @@
  							"name": "responsible",
  							"type": "checkbox",
  							"label": {
- 								"de": "(12) \u003cxxbr\u003eResponsible Consumption and Production",
- 								"en": "(12) \u003cxxbr\u003eResponsible Consumption and Production"
+ 								"de": "(12) Responsible Consumption and Production",
+ 								"en": "(12) Responsible Consumption and Production"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -6996,8 +6954,8 @@
  							"name": "climate",
  							"type": "checkbox",
  							"label": {
- 								"de": "(13) \u003cxxbr\u003eClimate Action",
- 								"en": "(13) \u003cxxbr\u003eClimate Action"
+ 								"de": "(13) Climate Action",
+ 								"en": "(13) Climate Action"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -7024,8 +6982,8 @@
  							"name": "life_water",
  							"type": "checkbox",
  							"label": {
- 								"de": "(14) \u003cxxbr\u003eLife be\u0026shy;low Water",
- 								"en": "(14) \u003cxxbr\u003eLife be\u0026shy;low Water"
+ 								"de": "(14) Life be\u0026shy;low Water",
+ 								"en": "(14) Life be\u0026shy;low Water"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -7052,8 +7010,8 @@
  							"name": "life_land",
  							"type": "checkbox",
  							"label": {
- 								"de": "(15) \u003cxxbr\u003eLife on Land",
- 								"en": "(15) \u003cxxbr\u003eLife on Land"
+ 								"de": "(15) Life on Land",
+ 								"en": "(15) Life on Land"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -7080,8 +7038,8 @@
  							"name": "peace",
  							"type": "checkbox",
  							"label": {
- 								"de": "(16) \u003cxxbr\u003ePeace, Justice and strong Institutions",
- 								"en": "(16) \u003cxxbr\u003ePeace, Justice and strong Institutions"
+ 								"de": "(16) Peace, Justice and strong Institutions",
+ 								"en": "(16) Peace, Justice and strong Institutions"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -7108,8 +7066,8 @@
  							"name": "partnership",
  							"type": "checkbox",
  							"label": {
- 								"de": "(17) \u003cxxbr\u003ePartnership for the Goals",
- 								"en": "(17) \u003cxxbr\u003ePartnership for the Goals"
+ 								"de": "(17) Partnership for the Goals",
+ 								"en": "(17) Partnership for the Goals"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -7135,6 +7093,74 @@
  					]
  				}
  			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "dyn page label A",
+ 				"en": "dyn page label A"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"short": {
+ 				"de": "dyn A",
+ 				"en": "dyn A"
+ 			},
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "42rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"generator_func_name": "pds01"
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "dyn page label B",
+ 				"en": "dyn page label B"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"short": {
+ 				"de": "dyn B",
+ 				"en": "dyn B"
+ 			},
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "42rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"generator_func_name": "pds01"
  		},
  		{
  			"label": {

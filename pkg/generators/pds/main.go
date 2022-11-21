@@ -1,6 +1,8 @@
 package pds
 
 import (
+	"fmt"
+
 	"github.com/zew/go-questionnaire/pkg/css"
 	"github.com/zew/go-questionnaire/pkg/ctr"
 	"github.com/zew/go-questionnaire/pkg/qst"
@@ -619,6 +621,37 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	// 	}
 
 	// } // page4
+
+	{
+		gn := "A"
+		page := q.AddPage()
+		page.GeneratorFuncName = "pds01"
+		page.Label = trl.S{
+			"en": fmt.Sprintf("dyn page label %v", gn),
+			"de": fmt.Sprintf("dyn page label %v", gn),
+		}
+		page.Short = trl.S{
+			"en": fmt.Sprintf("dyn %v", gn),
+			"de": fmt.Sprintf("dyn %v", gn),
+		}
+		page.WidthMax("42rem")
+		page.NoNavigation = false
+	}
+	{
+		gn := "B"
+		page := q.AddPage()
+		page.GeneratorFuncName = "pds01"
+		page.Label = trl.S{
+			"en": fmt.Sprintf("dyn page label %v", gn),
+			"de": fmt.Sprintf("dyn page label %v", gn),
+		}
+		page.Short = trl.S{
+			"en": fmt.Sprintf("dyn %v", gn),
+			"de": fmt.Sprintf("dyn %v", gn),
+		}
+		page.WidthMax("42rem")
+		page.NoNavigation = false
+	}
 
 	//
 	//

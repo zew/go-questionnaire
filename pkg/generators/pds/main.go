@@ -157,33 +157,18 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		}
 
 		page.WidthMax("42rem")
+		page.WidthMax("66rem")
 
-		{
-			gr := page.AddGroup()
-			gr.Cols = 2
-			gr.BottomVSpacers = 1
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.ColSpan = 2
-				inp.Label = trl.S{
-					"en": `Should we group by question type (deals, time, volume) - 
-						or as now by strategy (senior, unit...)?
-						<br>
-						Also: One page per strategy
-						<br>
-						Also: This repeats for each 'asses class' ?
-					`,
-					"de": `Should we group by question type (deals, time, volume) - 
-						or as now by strategy (senior, unit...)?
-						<br>
-						Also: One page per strategy
-						<br>
-						Also: This repeats for each 'asses class' ?
-					`,
-				}
-			}
+		restrictedTextMultiCols(qst.WrapPageT(page), rT1)
+
+		lblDuration := trl.S{
+			"en": "Average time to close a deal in weeks",
+			"de": "Durchschnittl. Zeit bis Abschluss in Wochen",
 		}
+		rangeClosingTime(qst.WrapPageT(page), trancheTypeNames[0], lblDuration)
+
+		restrictedTextMultiCols(qst.WrapPageT(page), rT2)
+
 		for idx1, trancheTypeName := range trancheTypeNames {
 
 			{
@@ -200,23 +185,17 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				}
 			}
 
-			lblNumber := trl.S{
-				"en": "Total number of new deals",
-				"de": "Gesamtzahl neue Abschlüsse",
-			}
-			restrictedText2b(qst.WrapPageT(page), lblNumber, rT1)
+			// lblNumber := trl.S{
+			// 	"en": "Total number of new deals",
+			// 	"de": "Gesamtzahl neue Abschlüsse",
+			// }
+			// restrictedText2b(qst.WrapPageT(page), lblNumber, rT1)
 
-			lblDuration := trl.S{
-				"en": "Average time to close a deal in weeks",
-				"de": "Durchschnittl. Zeit bis Abschluss in Wochen",
-			}
-			rangeClosingTime(qst.WrapPageT(page), trancheTypeName, lblDuration)
-
-			volBySegment := trl.S{
-				"en": "Total volume of new deals by segment",
-				"de": "Gesamtvolumen neuer Abschlüsse nach Marktsegment",
-			}
-			restrictedText(qst.WrapPageT(page), trancheTypeName, volBySegment, rT2)
+			// volBySegment := trl.S{
+			// 	"en": "Total volume of new deals by segment",
+			// 	"de": "Gesamtvolumen neuer Abschlüsse nach Marktsegment",
+			// }
+			// restrictedText(qst.WrapPageT(page), trancheTypeName, volBySegment, rT2)
 
 			volByRegion := trl.S{
 				"en": "Total volume of new deals by region",

@@ -11,19 +11,26 @@ import (
 
 // config restricted text
 type configRT struct {
-	InputToken2 string // second token;  [numdeals, volbysegm, ...]
-	SubLbl      trl.S
-	Suffix      trl.S
-	Placeholder trl.S
+	InputNameP2 string // second token of input name;  [numdeals, volbysegm, ...]
+	Chars       int    // input characters max
+	LblRow1     trl.S  //
+	LblRow2     trl.S  // question in more detail
+	Suffix      trl.S  // unit 'deals' or 'million €'
 
-	SubNames []string // suffixes
-	SubLbls  map[string]string
+	SubNames    []string // suffixes
+	SubLbls     map[string]string
+	Placeholder trl.S //
 }
 
 var (
 	rT1 = configRT{
-		InputToken2: "numdeals",
-		SubLbl: trl.S{
+		InputNameP2: "numdeals",
+		Chars:       6,
+		LblRow1: trl.S{
+			"en": "Total number of new deals",
+			"de": "Gesamtzahl neue Abschlüsse",
+		},
+		LblRow2: trl.S{
 			"en": `Please state the number of deals closed in Q4 2022 by market segment: `,
 			"de": `Please state the number of deals closed in Q4 2022 by market segment: `,
 		},
@@ -31,16 +38,25 @@ var (
 			"en": "deals",
 			"de": "Deals",
 		},
-		SubNames: []string{"low", "mid_upper", "other"},
+		SubNames: []string{"low", "midupper", "other"},
 		SubLbls: map[string]string{
-			"low":       "Lower Mid-Market (0-15m € EBITDA)",
-			"mid_upper": "Core- and Upper Mid-Market (>15m € EBITDA)",
-			"other":     "Other",
+			"low":      "Lower Mid-Market (0-15m € EBITDA)",
+			"midupper": "Core- and Upper Mid-Market (>15m € EBITDA)",
+			"other":    "Other",
+		},
+		Placeholder: trl.S{
+			"en": "#",
+			"de": "#",
 		},
 	}
 	rT2 = configRT{
-		InputToken2: "volbysegm",
-		SubLbl: trl.S{
+		InputNameP2: "volbysegm",
+		Chars:       10,
+		LblRow1: trl.S{
+			"en": "Total volume of new deals by segment",
+			"de": "Gesamtvolumen neuer Abschlüsse nach Marktsegment",
+		},
+		LblRow2: trl.S{
 			"en": `Please state the volume (in million Euro) of deals closed in Q4 2022 by market segment: `,
 			"de": `Bitte nennen Sie das Volumen (in Millionen Euro) von Abschlüssen in Q4 2022 nach Marktsegment: `,
 		},
@@ -53,13 +69,18 @@ var (
 		SubNames: []string{"low", "mid", "upper"},
 		SubLbls: map[string]string{
 			"low":   "Lower Mid-Market (0-15m € EBITDA)",
-			"mid":   "Core Mid-Market (15-50m € EBITDA)",
+			"mid":   "Core Mid-Market  (15-50m € EBITDA)",
 			"upper": "Upper Mid-Market (>50m € EBITDA)",
+		},
+		Placeholder: trl.S{
+			"en": "million Euro",
+			"de": "Millionen Euro",
 		},
 	}
 	rT3 = configRT{
-		InputToken2: "volbyreg",
-		SubLbl: trl.S{
+		InputNameP2: "volbyreg",
+		Chars:       10,
+		LblRow2: trl.S{
 			"en": `Please state the volume (in million Euro) of deals closed in Q4 2022 by region: `,
 			"de": `Bitte nennen Sie das Volumen (in Millionen Euro) von Abschlüssen in Q4 2022 nach Region: `,
 		},
@@ -79,10 +100,15 @@ var (
 			"southern_eu": "Southern Europe",
 			"other":       "Other",
 		},
+		Placeholder: trl.S{
+			"en": "million Euro",
+			"de": "Millionen Euro",
+		},
 	}
 	rT4 = configRT{
-		InputToken2: "volbysect",
-		SubLbl: trl.S{
+		InputNameP2: "volbysect",
+		Chars:       10,
+		LblRow2: trl.S{
 			"en": `Please state the volume (in million Euro) of deals closed in Q4 2022 by region: `,
 			"de": `Bitte nennen Sie das Volumen (in Millionen Euro) von Abschlüssen in Q4 2022 nach Region: `,
 		},
@@ -120,6 +146,10 @@ var (
 			"real_estate":      "Real Estate",
 			"other":            "Other",
 		},
+		Placeholder: trl.S{
+			"en": "million Euro",
+			"de": "Millionen Euro",
+		},
 	}
 )
 
@@ -138,7 +168,7 @@ func restrictedText(
 		{
 			inp := gr.AddInput()
 			inp.Type = "number"
-			inp.Name = fmt.Sprintf("%v_%v_main", inpNameMain, cf.InputToken2)
+			inp.Name = fmt.Sprintf("%v_%v_main", inpNameMain, cf.InputNameP2)
 
 			inp.Label = lbl
 			inp.Suffix = cf.Suffix
@@ -169,7 +199,7 @@ func restrictedText(
 			inp := gr.AddInput()
 			inp.Type = "textblock"
 			inp.ColSpan = 2
-			inp.Label = cf.SubLbl
+			inp.Label = cf.LblRow2
 
 			inp.Style = css.NewStylesResponsive(inp.Style)
 			inp.Style.Desktop.StyleBox.Width = "60%"
@@ -177,18 +207,11 @@ func restrictedText(
 
 		}
 
-		// suffxs := []string{"low", "mid", "upper"}
-		// lbls := map[string]string{
-		// 	"low":   "Lower Mid-Market (0-15m € EBITDA)",
-		// 	"mid":   "Core Mid-Market (15-50m € EBITDA)",
-		// 	"upper": "Upper Mid-Market (>50m € EBITDA)",
-		// }
-
 		for _, suffx := range cf.SubNames {
 
 			inp := gr.AddInput()
 			inp.Type = "number"
-			inp.Name = fmt.Sprintf("%v_%v_%v", inpNameMain, cf.InputToken2, suffx)
+			inp.Name = fmt.Sprintf("%v_%v_%v", inpNameMain, cf.InputNameP2, suffx)
 
 			inp.Label = trl.S{
 				"en": fmt.Sprintf("- %v", cf.SubLbls[suffx]),
@@ -224,7 +247,7 @@ func restrictedText(
 		inp.JSBlockStrings = map[string]string{}
 		//
 
-		inpMain := fmt.Sprintf("%v_%v", inpNameMain, cf.InputToken2)
+		inpMain := fmt.Sprintf("%v_%v", inpNameMain, cf.InputNameP2)
 		inp.JSBlockStrings["InpMain"] = inpMain
 
 		summands := []string{}

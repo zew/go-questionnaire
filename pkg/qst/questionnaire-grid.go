@@ -149,6 +149,19 @@ func (inp *inputT) LabelPadRight() {
 	inp.StyleLbl.Desktop.StyleBox.Padding = "0 1.0rem 0 0"
 }
 
+// VerticalLabel - ?
+func (inp *inputT) VerticalLabel() {
+	inp.LabelVertical()
+}
+
+// LabelVertical - label box and text vertically centered - horizontally bottomed
+func (inp *inputT) LabelVertical() {
+	inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
+	inp.StyleLbl.Desktop.StyleGridItem.JustifySelf = "center"
+	inp.StyleLbl.Desktop.StyleGridItem.AlignSelf = "end"
+	inp.StyleLbl.Desktop.StyleText.AlignHorizontal = "center"
+}
+
 // Vertical order of control and label instead of horizontal
 func (inp *inputT) Vertical() {
 	inp.Style = css.NewStylesResponsive(inp.Style)
@@ -157,14 +170,6 @@ func (inp *inputT) Vertical() {
 	rows := 1
 	inp.Style.Desktop.StyleGridContainer.TemplateRows = strings.Repeat("1fr ", rows)
 	inp.Style.Desktop.StyleGridContainer.TemplateColumns = " " // empty string
-}
-
-// VerticalLabel -
-func (inp *inputT) VerticalLabel() {
-	inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
-	inp.StyleLbl.Desktop.StyleGridItem.JustifySelf = "center"
-	inp.StyleLbl.Desktop.StyleGridItem.AlignSelf = "end"
-	inp.StyleLbl.Desktop.StyleText.AlignHorizontal = "center"
 }
 
 // appendTooltip appends an explanation

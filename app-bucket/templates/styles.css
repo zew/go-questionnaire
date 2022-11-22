@@ -567,6 +567,13 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
 
 
 input[type=range] {
+    /*  for suffix being vertically aligned in the middle;
+        seems not necessary for other input types
+    */
+    vertical-align: middle;
+}
+
+input[type=range] {
     /* -webkit-appearance: none; */
     /* width: 100%; */
     /* border-radius: 8px; */

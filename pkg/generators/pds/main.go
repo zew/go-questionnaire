@@ -28,7 +28,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	}
 	// q.Variations = 1
 
-	// page 0
+	// page0
 	{
 		page := q.AddPage()
 		page.SuppressInProgressbar = true
@@ -62,10 +62,11 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 	}
 
-	// page 0a
+	// page1
 	{
 		page := q.AddPage()
 		// page.SuppressInProgressbar = true
+		page.ValidationFuncName = "pdsPage1"
 
 		page.Label = trl.S{
 			"en": "Manager Characteristics",
@@ -76,7 +77,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"de": "Manager",
 		}
 
-		page.ValidationFuncName = ""
 		page.WidthMax("42rem")
 
 		// gr1
@@ -115,32 +115,59 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			radiosSingleRow(qst.WrapPageT(page), "teamsize", lblMain, mode2mod)
 		}
 
-		// gr3
-		{
-			lblMain := trl.S{
-				"en": `Which asset classes do you invest in?
-			`,
-				"de": `Wählen Sie Ihre Assetklassen.
-			`,
-			}
-			checkBoxRow(qst.WrapPageT(page), lblMain, assetClassesInputs, assetClassesLabels, chb01)
-		}
-
-		// gr4
-		{
-			lblMain := trl.S{
-				"en": `Your  strategies`,
-				"de": `Ihre Strategie`,
+		if false {
+			// gr3
+			{
+				lblMain := trl.S{
+					"en": `Which asset classes do you invest in?`,
+					"de": `Wählen Sie Ihre Assetklassen.`,
+				}
+				checkBoxRow(
+					qst.WrapPageT(page),
+					lblMain,
+					assetClassesInputs,
+					assetClassesLabels,
+					// chb01,
+				)
 			}
 
-			checkBoxRow(qst.WrapPageT(page), lblMain, trancheTypeNames, allLbls["tranche-types"], chb02)
-
-			// radiosSingleRow(qst.WrapPageT(page), "strategy", lblMain, mCh1)
+			// gr4
+			{
+				lblMain := trl.S{
+					"en": `Your  strategies`,
+					"de": `Ihre Strategie`,
+				}
+				checkBoxRow(
+					qst.WrapPageT(page),
+					lblMain,
+					trancheTypeNamesAC1,
+					allLbls["ac1-tranche-types"],
+					// chb02,
+				)
+			}
 		}
 
-	} // page0a
+		//
+		// gr5
+		{
+			lblMain := trl.S{
+				"en": `
+					Suggestion; instead of three different surveys; rows 2,3 not shown in first wave<br>
+					Which asset classes do you invest in?`,
+				"de": `Wählen Sie Ihre Assetklassen.`,
+			}
+			checkBoxColumnCascade(
+				qst.WrapPageT(page),
+				lblMain,
+				assetClassesInputs,
+				assetClassesLabels,
+			)
 
-	// page1
+		}
+
+	}
+
+	// page2
 	{
 		page := q.AddPage()
 		// page.Section = trl.S{
@@ -165,83 +192,36 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"en": "Average time to close a deal in weeks",
 			"de": "Durchschnittl. Zeit bis Abschluss in Wochen",
 		}
-		rangeClosingTime(qst.WrapPageT(page), trancheTypeNames[0], lblDuration)
+		slidersRow(qst.WrapPageT(page), "closing_time", lblDuration, suffixWeeks)
+		if false {
+			// old: a single range
+			rangeClosingTime(qst.WrapPageT(page), trancheTypeNamesAC1[0], lblDuration)
+		}
 
 		restrictedTextMultiCols(qst.WrapPageT(page), rT2)
 
-		for idx1, trancheTypeName := range trancheTypeNames {
+		restrictedTextMultiCols(qst.WrapPageT(page), rT3)
 
-			{
-				gr := page.AddGroup()
-				gr.Cols = 1
-				gr.BottomVSpacers = 0
-				{
-					inp := gr.AddInput()
-					inp.Type = "textblock"
-					inp.ColSpan = 1
-					inp.Label = allLbls["tranche-types"][idx1].Bold()
-					inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
-					inp.StyleLbl.Desktop.StyleText.FontSize = 115
-				}
-			}
+		restrictedTextMultiCols(qst.WrapPageT(page), rT4)
 
-			// lblNumber := trl.S{
-			// 	"en": "Total number of new deals",
-			// 	"de": "Gesamtzahl neue Abschlüsse",
-			// }
-			// restrictedText2b(qst.WrapPageT(page), lblNumber, rT1)
-
-			// volBySegment := trl.S{
-			// 	"en": "Total volume of new deals by segment",
-			// 	"de": "Gesamtvolumen neuer Abschlüsse nach Marktsegment",
-			// }
-			// restrictedText(qst.WrapPageT(page), trancheTypeName, volBySegment, rT2)
-
-			volByRegion := trl.S{
-				"en": "Total volume of new deals by region",
-				"de": "Gesamtvolumen neuer Abschlüsse nach Region",
-			}
-			restrictedText(qst.WrapPageT(page), trancheTypeName, volByRegion, rT3)
-
-			volBySector := trl.S{
-				"en": "Total volume of new deals by sector",
-				"de": "Gesamtvolumen neuer Abschlüsse nach Sektor",
-			}
-			restrictedText(qst.WrapPageT(page), trancheTypeName, volBySector, rT4)
-
-			{
-				gr := page.AddGroup()
-				gr.Cols = 1
-				gr.BottomVSpacers = 1
-				{
-					inp := gr.AddInput()
-					inp.Type = "textblock"
-					inp.ColSpan = 1
-					inp.Label = trl.S{
-						"en": "Should next three add up to 100%?",
-						"de": "Should next three add up to 100%?",
-					}
-				}
-			}
-			shareESG := trl.S{
-				"en": `<b>Share ESG KPIs</b> <br>What is the share of new deals (at Fair Market Value) with explicit ESG targets in the credit documentation?`,
-				"de": `<b>Share ESG KPIs</b> <br>What is the share of new deals (at Fair Market Value) with explicit ESG targets in the credit documentation?`,
-			}
-			rangePercentage(qst.WrapPageT(page), trancheTypeName, shareESG, "esg")
-
-			shareESGRatch := trl.S{
-				"en": `<b>Share ESG ratchets</b> <br> What is the share of new deals (at Fair Market Value) with ESG ratchets?`,
-				"de": `<b>Share ESG ratchets</b> <br> What is the share of new deals (at Fair Market Value) with ESG ratchets?`,
-			}
-			rangePercentage(qst.WrapPageT(page), trancheTypeName, shareESGRatch, "esgratch")
-
-			share15Degree := trl.S{
-				"en": `<b>Share 1.5°C target</b> <br> What is the share of new deals (at Fair Market Value) where the creditor explicitly states a strategy to add to the 1.5°C target?`,
-				"de": `<b>Share 1.5°C target</b> <br> What is the share of new deals (at Fair Market Value) where the creditor explicitly states a strategy to add to the 1.5°C target?`,
-			}
-			rangePercentage(qst.WrapPageT(page), trancheTypeName, share15Degree, "esg15degrees")
-
+		shareESG := trl.S{
+			"en": `<b>Share ESG KPIs</b> <br>What is the share of new deals (at Fair Market Value) with explicit ESG targets in the credit documentation?`,
+			"de": `<b>Share ESG KPIs</b> <br>What is the share of new deals (at Fair Market Value) with explicit ESG targets in the credit documentation?`,
 		}
+		slidersRow(qst.WrapPageT(page), "esg", shareESG, suffixPercent)
+
+		shareESGRatch := trl.S{
+			"en": `<b>Share ESG ratchets</b> <br> What is the share of new deals (at Fair Market Value) with ESG ratchets?`,
+			"de": `<b>Share ESG ratchets</b> <br> What is the share of new deals (at Fair Market Value) with ESG ratchets?`,
+		}
+		slidersRow(qst.WrapPageT(page), "esgratch", shareESGRatch, suffixPercent)
+
+		share15Degree := trl.S{
+			"en": `<b>Share 1.5°C target</b> <br> What is the share of new deals (at Fair Market Value) where the creditor explicitly states a strategy to add to the 1.5°C target?`,
+			"de": `<b>Share 1.5°C target</b> <br> What is the share of new deals (at Fair Market Value) where the creditor explicitly states a strategy to add to the 1.5°C target?`,
+		}
+		slidersRow(qst.WrapPageT(page), "esg15degrees", share15Degree, suffixPercent)
+
 	}
 
 	// page3
@@ -352,9 +332,9 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 		}
 
-	} // page3
+	}
 
-	// page2
+	// page4
 	{
 		page := q.AddPage()
 
@@ -584,34 +564,14 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"en": `What UN SDGs are supported by your investment strategy?`,
 				"de": `What UN SDGs are supported by your investment strategy?`,
 			}
-			multipeChoiceColumn(qst.WrapPageT(page), unSDG, 2, inps, lbls)
+			checkBoxColumn(qst.WrapPageT(page), unSDG, 2, inps, lbls)
 		}
 
-	} // page2
+	}
 
-	// // page4
-	// {
-	// 	page := q.AddPage()
-
-	// 	// page.Section = trl.S{
-	// 	// 	"en": "Section 2",
-	// 	// 	"de": "Section 2",
-	// 	// }
-	// 	page.Label = trl.S{"de": "Label long"}
-	// 	page.Short = trl.S{"de": "Label<br>short"}
-	// 	page.WidthMax("42rem")
-
-	// 	{
-	// 		lblMain := trl.S{
-	// 			"de": `How do you expect the quality of deals in terms of the risk-return profile change in Q1 2023?`,
-	// 			"en": `How do you expect the quality of deals in terms of the risk-return profile change in Q1 2023?`,
-	// 		}
-	// 		multipleChoiceSingleRow(qst.WrapPageT(page), "xx2", lblMain, mChExample1)
-	// 	}
-
-	// } // page4
-
-	{
+	//
+	//
+	if false {
 		gn := "A"
 		page := q.AddPage()
 		page.GeneratorFuncName = "pds01"
@@ -626,7 +586,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		page.WidthMax("42rem")
 		page.NoNavigation = false
 	}
-	{
+	if false {
 		gn := "B"
 		page := q.AddPage()
 		page.GeneratorFuncName = "pds01"
@@ -658,7 +618,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			// {
 			// 	inp := gr.AddInput()
 			// 	inp.Type = "dyn-textblock"
-
 			// 	inp.DynamicFunc = "RepsonseStatistics"
 			// }
 		}

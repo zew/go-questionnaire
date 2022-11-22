@@ -13,10 +13,8 @@ func restrictedTextMultiCols(
 	cf configRT,
 ) {
 
-	firstColLbl := float32(4)
-	numCols := firstColLbl + float32(len(trancheTypeNames))
-
-	idxLastCol := len(trancheTypeNames) - 1
+	numCols := firstColLbl + float32(len(trancheTypeNamesAC1))
+	idxLastCol := len(trancheTypeNamesAC1) - 1
 
 	{
 		gr := page.AddGroup()
@@ -24,7 +22,7 @@ func restrictedTextMultiCols(
 		// gr.BottomVSpacers =
 
 		// row0 - headers
-		for idx1 := 0; idx1 < len(trancheTypeNames)+1; idx1++ {
+		for idx1 := 0; idx1 < len(trancheTypeNamesAC1)+1; idx1++ {
 			inp := gr.AddInput()
 			inp.Type = "textblock"
 			inp.ColSpan = 1
@@ -32,19 +30,18 @@ func restrictedTextMultiCols(
 				inp.ColSpan = firstColLbl
 			}
 			if idx1 > 0 {
-				ttLbl := allLbls["tranche-types"][idx1-1]
+				ttLbl := allLbls["ac1-tranche-types"][idx1-1]
 				inp.Label = ttLbl.Bold()
 			}
 			inp.LabelVertical()
 			// label left
 			inp.StyleLbl.Desktop.StyleGridItem.JustifySelf = "start"
 			inp.StyleLbl.Desktop.StyleText.AlignHorizontal = "left"
-			inp.StyleLbl.Desktop.StyleText.FontSize = 90
-
+			inp.StyleLbl.Desktop.StyleText.FontSize = 85
 		}
 
 		// row1
-		for idx1, trancheType := range trancheTypeNames {
+		for idx1, trancheType := range trancheTypeNamesAC1 {
 
 			ttPref := trancheType[:3]
 
@@ -95,7 +92,7 @@ func restrictedTextMultiCols(
 		// rows 3,4...
 		for _, suffx := range cf.SubNames {
 
-			for idx2, trancheType := range trancheTypeNames {
+			for idx2, trancheType := range trancheTypeNamesAC1 {
 
 				ttPref := trancheType[:3]
 

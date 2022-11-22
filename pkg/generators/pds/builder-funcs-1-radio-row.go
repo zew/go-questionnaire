@@ -27,7 +27,7 @@ var (
 	}
 
 	mCh1 = configMC{
-		KeyLabels:   "tranche-types",
+		KeyLabels:   "ac1-tranche-types",
 		Cols:        8,
 		InpColspan:  2,
 		LabelBottom: false,
@@ -71,29 +71,37 @@ var assetClassesInputs = []string{
 
 var assetClassesLabels = []trl.S{
 	{
-		"en": "Corporate lending",
-		"de": "Corporate lending",
+		"en": "Corporate / direct lending",
+		"de": "Corporate / direct lending",
 	},
 	{
 		"en": "Real estate debt",
 		"de": "Real estate debt",
 	},
 	{
-		"en": "Infrastructure Debt",
-		"de": "Infrastructure Debt",
+		"en": "Infrastructure debt",
+		"de": "Infrastructure debt",
 	},
 }
 
 // strategy, strategies
-var trancheTypeNames = []string{
+var trancheTypeNamesAC1 = []string{
 	"st1_senior",
-	"st2_unittranche",  // unitranche
-	"st3_subordinated", // subordinated
-	"st4_mezzanine",    // "mezzanine_pik_other",
+	"st2_unittranche",
+	"st3_subordinated",
+	"st4_mezzanine", // "mezzanine_pik_other",
+}
+var trancheTypeNamesAC2 = []string{
+	"st1_wholeloan",
+	"st2_subordinated",
+}
+var trancheTypeNamesAC3 = []string{
+	"st1_senior",
+	"st2_subordinated",
 }
 
 var allLbls = map[string][]trl.S{
-	"tranche-types": {
+	"ac1-tranche-types": {
 		{
 			"de": "Senior",
 			"en": "Senior",
@@ -109,6 +117,26 @@ var allLbls = map[string][]trl.S{
 		{
 			"de": "Mezzanine / PIK / Other",
 			"en": "Mezzanine / PIK / Other",
+		},
+	},
+	"ac2-tranche-types": {
+		{
+			"de": "Whole Loan",
+			"en": "Whole Loan",
+		},
+		{
+			"de": "Subordinated",
+			"en": "Subordinated",
+		},
+	},
+	"ac3-tranche-types": {
+		{
+			"de": "Senior",
+			"en": "Senior",
+		},
+		{
+			"de": "Subordinated",
+			"en": "Subordinated",
 		},
 	},
 	"teamsize": {

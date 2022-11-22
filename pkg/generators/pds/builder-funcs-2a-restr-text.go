@@ -80,6 +80,10 @@ var (
 	rT3 = configRT{
 		InputNameP2: "volbyreg",
 		Chars:       10,
+		LblRow1: trl.S{
+			"en": "Total volume of new deals by region",
+			"de": "Gesamtvolumen neuer Abschlüsse nach Region",
+		},
 		LblRow2: trl.S{
 			"en": `Please state the volume (in million Euro) of deals closed in Q4 2022 by region: `,
 			"de": `Bitte nennen Sie das Volumen (in Millionen Euro) von Abschlüssen in Q4 2022 nach Region: `,
@@ -108,6 +112,10 @@ var (
 	rT4 = configRT{
 		InputNameP2: "volbysect",
 		Chars:       10,
+		LblRow1: trl.S{
+			"en": "Total volume of new deals by sector",
+			"de": "Gesamtvolumen neuer Abschlüsse nach Sektor",
+		},
 		LblRow2: trl.S{
 			"en": `Please state the volume (in million Euro) of deals closed in Q4 2022 by region: `,
 			"de": `Bitte nennen Sie das Volumen (in Millionen Euro) von Abschlüssen in Q4 2022 nach Region: `,

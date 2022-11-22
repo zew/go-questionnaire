@@ -18,13 +18,13 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "255252dbda441404a6df68e60d0c6279a8036d5625cf9fcdea5a8a994d1f785c",
+ 	"md_5": "44aad2d864e78585d6b7507d2f20eb8416b70438a24459de1bcb084737673840",
  	"lang_codes": [
  		"en"
  	],
  	"allow_skip_forward": false,
  	"version_effective": 0,
- 	"max_groups": 39,
+ 	"max_groups": 10,
  	"pages": [
  		{
  			"label": {
@@ -358,8 +358,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Wählen Sie Ihre Assetklassen.\n\t\t\t",
- 								"en": "Which asset classes do you invest in?\n\t\t\t"
+ 								"de": "Wählen Sie Ihre Assetklassen.",
+ 								"en": "\n\t\t\t\t\tSuggestion; instead of three different surveys.\u003cbr\u003e\n\t\t\t\t\tWhich asset classes do you invest in?"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -368,50 +368,27 @@
  				},
  				{
  					"bottom_vspacers": 3,
- 					"columns": 3,
+ 					"columns": 5,
  					"inputs": [
  						{
- 							"name": "ac1_corplending",
+ 							"name": "xx_ac1_corplending",
  							"type": "checkbox",
  							"label": {
- 								"de": "Corporate lending",
- 								"en": "Corporate lending"
+ 								"de": "Corporate / direct lending",
+ 								"en": "Corporate / direct lending"
  							},
- 							"col_span": 1,
+ 							"col_span": 5,
  							"col_span_label": 1,
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {
- 										"auto_flow": "column",
- 										"template_columns": " ",
- 										"template_rows": "1fr "
- 									},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
+ 							"col_span_control": 8,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {
- 										"position": "relative",
- 										"top": "-0.2rem"
- 									},
+ 									"box_style": {},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
+ 										"justify_self": "start",
+ 										"order": 2
  									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
+ 									"text_style": {}
  								},
  								"mobile": {
  									"grid_container_style": {},
@@ -422,130 +399,45 @@
  							}
  						},
  						{
- 							"name": "ac2_realestate",
- 							"type": "checkbox",
- 							"label": {
- 								"de": "Real estate debt",
- 								"en": "Real estate debt"
- 							},
+ 							"type": "textblock",
  							"col_span": 1,
- 							"col_span_label": 1,
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {
- 										"auto_flow": "column",
- 										"template_columns": " ",
- 										"template_rows": "1fr "
- 									},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"position": "relative",
- 										"top": "-0.2rem"
- 									},
- 									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"col_span_label": 1
  						},
- 						{
- 							"name": "ac3_infrastruct",
- 							"type": "checkbox",
- 							"label": {
- 								"de": "Infrastructure Debt",
- 								"en": "Infrastructure Debt"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1,
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {
- 										"auto_flow": "column",
- 										"template_columns": " ",
- 										"template_rows": "1fr "
- 									},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"position": "relative",
- 										"top": "-0.2rem"
- 									},
- 									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						}
- 					]
- 				},
- 				{
- 					"bottom_vspacers": 1,
- 					"columns": 1,
- 					"inputs": [
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Ihre Strategie",
- 								"en": "Your  strategies"
+ 								"de": "In welchen Strategien engagieren Sie sich?",
+ 								"en": "Which Strategies do you engage in?"
  							},
+ 							"col_span": 4,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"top": "0.4rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 85
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
  							"col_span": 1,
  							"col_span_label": 1
- 						}
- 					]
- 				},
- 				{
- 					"bottom_vspacers": 3,
- 					"columns": 4,
- 					"inputs": [
+ 						},
  						{
- 							"name": "st1_senior",
+ 							"name": "0_0_st1_senior",
  							"type": "checkbox",
  							"label": {
  								"de": "Senior",
@@ -596,7 +488,7 @@
  							}
  						},
  						{
- 							"name": "st2_unittranche",
+ 							"name": "0_1_st2_unittranche",
  							"type": "checkbox",
  							"label": {
  								"de": "Unitranche",
@@ -647,7 +539,7 @@
  							}
  						},
  						{
- 							"name": "st3_subordinated",
+ 							"name": "0_2_st3_subordinated",
  							"type": "checkbox",
  							"label": {
  								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
@@ -698,7 +590,7 @@
  							}
  						},
  						{
- 							"name": "st4_mezzanine",
+ 							"name": "0_3_st4_mezzanine",
  							"type": "checkbox",
  							"label": {
  								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / Other",
@@ -747,10 +639,363 @@
  									"text_style": {}
  								}
  							}
+ 						},
+ 						{
+ 							"name": "xx_ac2_realestate",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "Real estate debt",
+ 								"en": "Real estate debt"
+ 							},
+ 							"col_span": 5,
+ 							"col_span_label": 1,
+ 							"col_span_control": 8,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "In welchen Strategien engagieren Sie sich?",
+ 								"en": "Which Strategies do you engage in?"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"top": "0.4rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 85
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "1_0_st1_wholeloan",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "Whole Loan",
+ 								"en": "Whole Loan"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"top": "-0.2rem"
+ 									},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "1_1_st2_subordinated",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"top": "-0.2rem"
+ 									},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "xx_ac3_infrastruct",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "Infrastructure debt",
+ 								"en": "Infrastructure debt"
+ 							},
+ 							"col_span": 5,
+ 							"col_span_label": 1,
+ 							"col_span_control": 8,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "In welchen Strategien engagieren Sie sich?",
+ 								"en": "Which Strategies do you engage in?"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"top": "0.4rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 85
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "2_0_st1_senior",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "Senior",
+ 								"en": "Senior"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"top": "-0.2rem"
+ 									},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "2_1_st2_subordinated",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"top": "-0.2rem"
+ 									},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						}
- 					]
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"row_gap": "0"
+ 							},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
  				}
- 			]
+ 			],
+ 			"validation_func_name": "pdsPage1"
  		},
  		{
  			"label": {
@@ -802,7 +1047,7 @@
  										"align_self": "end"
  									},
  									"text_style": {
- 										"font_size": 90,
+ 										"font_size": 85,
  										"align_horizontal": "left"
  									}
  								},
@@ -831,7 +1076,7 @@
  										"align_self": "end"
  									},
  									"text_style": {
- 										"font_size": 90,
+ 										"font_size": 85,
  										"align_horizontal": "left"
  									}
  								},
@@ -860,7 +1105,7 @@
  										"align_self": "end"
  									},
  									"text_style": {
- 										"font_size": 90,
+ 										"font_size": 85,
  										"align_horizontal": "left"
  									}
  								},
@@ -889,7 +1134,7 @@
  										"align_self": "end"
  									},
  									"text_style": {
- 										"font_size": 90,
+ 										"font_size": 85,
  										"align_horizontal": "left"
  									}
  								},
@@ -918,7 +1163,7 @@
  										"align_self": "end"
  									},
  									"text_style": {
- 										"font_size": 90,
+ 										"font_size": 85,
  										"align_horizontal": "left"
  									}
  								},
@@ -1252,11 +1497,152 @@
  					]
  				},
  				{
- 					"bottom_vspacers": 2,
- 					"columns": 1,
+ 					"bottom_vspacers": 3,
+ 					"columns": 8,
  					"inputs": [
  						{
- 							"name": "st1_senior_closing_time",
+ 							"type": "textblock",
+ 							"col_span": 4,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"font_size": 90,
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003eSenior\u003c/b\u003e",
+ 								"en": "\u003cb\u003eSenior\u003c/b\u003e"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"font_size": 90,
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003eUnitranche\u003c/b\u003e",
+ 								"en": "\u003cb\u003eUnitranche\u003c/b\u003e"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"font_size": 90,
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003eSub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed\u003c/b\u003e",
+ 								"en": "\u003cb\u003eSub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed\u003c/b\u003e"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"font_size": 90,
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003eMez\u0026shy;za\u0026shy;nine / PIK / Other\u003c/b\u003e",
+ 								"en": "\u003cb\u003eMez\u0026shy;za\u0026shy;nine / PIK / Other\u003c/b\u003e"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"font_size": 90,
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st1_closing_time",
  							"type": "range",
  							"step": 3,
  							"min": 3,
@@ -1265,33 +1651,2517 @@
  								"de": "Durchschnittl. Zeit bis Abschluss in Wochen",
  								"en": "Av\u0026shy;er\u0026shy;age time to close a deal in weeks"
  							},
- 							"suffix": {
- 								"de": "Wochen",
- 								"en": "weeks"
+ 							"col_span": 5,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"width_max": "90%"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st2_closing_time",
+ 							"type": "range",
+ 							"step": 3,
+ 							"min": 3,
+ 							"max": 21,
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"width_max": "90%"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st3_closing_time",
+ 							"type": "range",
+ 							"step": 3,
+ 							"min": 3,
+ 							"max": 21,
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"width_max": "90%"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st4_closing_time",
+ 							"type": "range",
+ 							"step": 3,
+ 							"min": 3,
+ 							"max": 21,
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"width_max": "90%"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 8,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"col_span": 4,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003eSenior\u003c/b\u003e",
+ 								"en": "\u003cb\u003eSenior\u003c/b\u003e"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003eUnitranche\u003c/b\u003e",
+ 								"en": "\u003cb\u003eUnitranche\u003c/b\u003e"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003eSub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed\u003c/b\u003e",
+ 								"en": "\u003cb\u003eSub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed\u003c/b\u003e"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003eMez\u0026shy;za\u0026shy;nine / PIK / Other\u003c/b\u003e",
+ 								"en": "\u003cb\u003eMez\u0026shy;za\u0026shy;nine / PIK / Other\u003c/b\u003e"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st1_volbysegm_main",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"label": {
+ 								"de": "\u003cb\u003eGe\u0026shy;samtvolumen neuer Abschlüsse nach Marktsegment\u003c/b\u003e",
+ 								"en": "\u003cb\u003eTotal volume of new deals by segment\u003c/b\u003e"
+ 							},
+ 							"col_span": 5,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st2_volbysegm_main",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st3_volbysegm_main",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st4_volbysegm_main",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "MM €"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Bitte nennen Sie das Volumen (in Millionen Euro) von Abschlüssen in Q4 2022 nach Marktsegment: ",
+ 								"en": "Please state the volume (in million Euro) of deals closed in Q4 2022 by market segment: "
+ 							},
+ 							"col_span": 8,
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"width": "60%"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"width": "96%"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st1_volbysegm_low",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"label": {
+ 								"de": "- Lower Mid-Market (0-15m € EBITDA)",
+ 								"en": "- Lower Mid-Market (0-15m € EBITDA)"
+ 							},
+ 							"col_span": 5,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st2_volbysegm_low",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st3_volbysegm_low",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st4_volbysegm_low",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "MM €"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st1_volbysegm_mid",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"label": {
+ 								"de": "- Core Mid-Market  (15-50m € EBITDA)",
+ 								"en": "- Core Mid-Market  (15-50m € EBITDA)"
+ 							},
+ 							"col_span": 5,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st2_volbysegm_mid",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st3_volbysegm_mid",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st4_volbysegm_mid",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "MM €"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st1_volbysegm_upper",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"label": {
+ 								"de": "- Upper Mid-Market (\u003e50m € EBITDA)",
+ 								"en": "- Upper Mid-Market (\u003e50m € EBITDA)"
+ 							},
+ 							"col_span": 5,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st2_volbysegm_upper",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st3_volbysegm_upper",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st4_volbysegm_upper",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "MM €"
+ 							},
+ 							"col_span": 1,
  							"col_span_control": 1
  						}
- 					],
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {},
- 							"box_style": {
- 								"width_max": "70%"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 8,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"col_span": 4,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
- 						"mobile": {
- 							"grid_container_style": {},
- 							"box_style": {
- 								"width_max": "none"
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003eSenior\u003c/b\u003e",
+ 								"en": "\u003cb\u003eSenior\u003c/b\u003e"
  							},
- 							"grid_item_style": {},
- 							"text_style": {}
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003eUnitranche\u003c/b\u003e",
+ 								"en": "\u003cb\u003eUnitranche\u003c/b\u003e"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003eSub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed\u003c/b\u003e",
+ 								"en": "\u003cb\u003eSub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed\u003c/b\u003e"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003eMez\u0026shy;za\u0026shy;nine / PIK / Other\u003c/b\u003e",
+ 								"en": "\u003cb\u003eMez\u0026shy;za\u0026shy;nine / PIK / Other\u003c/b\u003e"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st1_volbyreg_main",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"label": {
+ 								"de": "\u003cb\u003eGe\u0026shy;samtvolumen neuer Abschlüsse nach Region\u003c/b\u003e",
+ 								"en": "\u003cb\u003eTotal volume of new deals by region\u003c/b\u003e"
+ 							},
+ 							"col_span": 5,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st2_volbyreg_main",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st3_volbyreg_main",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st4_volbyreg_main",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "MM €"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Bitte nennen Sie das Volumen (in Millionen Euro) von Abschlüssen in Q4 2022 nach Region: ",
+ 								"en": "Please state the volume (in million Euro) of deals closed in Q4 2022 by region: "
+ 							},
+ 							"col_span": 8,
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"width": "60%"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"width": "96%"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st1_volbyreg_uk",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"label": {
+ 								"de": "- UK",
+ 								"en": "- UK"
+ 							},
+ 							"col_span": 5,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st2_volbyreg_uk",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st3_volbyreg_uk",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st4_volbyreg_uk",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "MM €"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st1_volbyreg_france",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"label": {
+ 								"de": "- France",
+ 								"en": "- France"
+ 							},
+ 							"col_span": 5,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st2_volbyreg_france",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st3_volbyreg_france",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st4_volbyreg_france",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "MM €"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st1_volbyreg_dach",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"label": {
+ 								"de": "- DACH",
+ 								"en": "- DACH"
+ 							},
+ 							"col_span": 5,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st2_volbyreg_dach",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st3_volbyreg_dach",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st4_volbyreg_dach",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "MM €"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st1_volbyreg_benelux",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"label": {
+ 								"de": "- Benelux",
+ 								"en": "- Benelux"
+ 							},
+ 							"col_span": 5,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st2_volbyreg_benelux",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st3_volbyreg_benelux",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st4_volbyreg_benelux",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "MM €"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st1_volbyreg_nordics",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"label": {
+ 								"de": "- Nordics",
+ 								"en": "- Nordics"
+ 							},
+ 							"col_span": 5,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st2_volbyreg_nordics",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st3_volbyreg_nordics",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st4_volbyreg_nordics",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "MM €"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st1_volbyreg_southern_eu",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"label": {
+ 								"de": "- Southern Europe",
+ 								"en": "- Southern Europe"
+ 							},
+ 							"col_span": 5,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st2_volbyreg_southern_eu",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st3_volbyreg_southern_eu",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st4_volbyreg_southern_eu",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "MM €"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st1_volbyreg_other",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"label": {
+ 								"de": "- Other",
+ 								"en": "- Other"
+ 							},
+ 							"col_span": 5,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st2_volbyreg_other",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st3_volbyreg_other",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st4_volbyreg_other",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "MM €"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
  						}
- 					}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 8,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"col_span": 4,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003eSenior\u003c/b\u003e",
+ 								"en": "\u003cb\u003eSenior\u003c/b\u003e"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003eUnitranche\u003c/b\u003e",
+ 								"en": "\u003cb\u003eUnitranche\u003c/b\u003e"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003eSub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed\u003c/b\u003e",
+ 								"en": "\u003cb\u003eSub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed\u003c/b\u003e"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003eMez\u0026shy;za\u0026shy;nine / PIK / Other\u003c/b\u003e",
+ 								"en": "\u003cb\u003eMez\u0026shy;za\u0026shy;nine / PIK / Other\u003c/b\u003e"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st1_volbysect_main",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"label": {
+ 								"de": "\u003cb\u003eGe\u0026shy;samtvolumen neuer Abschlüsse nach Sektor\u003c/b\u003e",
+ 								"en": "\u003cb\u003eTotal volume of new deals by sector\u003c/b\u003e"
+ 							},
+ 							"col_span": 5,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st2_volbysect_main",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st3_volbysect_main",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st4_volbysect_main",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "MM €"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Bitte nennen Sie das Volumen (in Millionen Euro) von Abschlüssen in Q4 2022 nach Region: ",
+ 								"en": "Please state the volume (in million Euro) of deals closed in Q4 2022 by region: "
+ 							},
+ 							"col_span": 8,
+ 							"col_span_label": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"width": "60%"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"width": "96%"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st1_volbysect_energy",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"label": {
+ 								"de": "- Energy",
+ 								"en": "- Energy"
+ 							},
+ 							"col_span": 5,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st2_volbysect_energy",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st3_volbysect_energy",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st4_volbysect_energy",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "MM €"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st1_volbysect_materials",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"label": {
+ 								"de": "- Materials",
+ 								"en": "- Materials"
+ 							},
+ 							"col_span": 5,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st2_volbysect_materials",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st3_volbysect_materials",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st4_volbysect_materials",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "MM €"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st1_volbysect_industrials",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"label": {
+ 								"de": "- In\u0026shy;dus\u0026shy;tri\u0026shy;als",
+ 								"en": "- In\u0026shy;dus\u0026shy;tri\u0026shy;als"
+ 							},
+ 							"col_span": 5,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st2_volbysect_industrials",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st3_volbysect_industrials",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st4_volbysect_industrials",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "MM €"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st1_volbysect_consumer_disc",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"label": {
+ 								"de": "- Cons\u0026shy;umer Discretionary",
+ 								"en": "- Cons\u0026shy;umer Discretionary"
+ 							},
+ 							"col_span": 5,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st2_volbysect_consumer_disc",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st3_volbysect_consumer_disc",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st4_volbysect_consumer_disc",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "MM €"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st1_volbysect_consumer_stap",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"label": {
+ 								"de": "- Cons\u0026shy;umer Staples",
+ 								"en": "- Cons\u0026shy;umer Staples"
+ 							},
+ 							"col_span": 5,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st2_volbysect_consumer_stap",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st3_volbysect_consumer_stap",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st4_volbysect_consumer_stap",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "MM €"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st1_volbysect_healthcare",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"label": {
+ 								"de": "- Health Care",
+ 								"en": "- Health Care"
+ 							},
+ 							"col_span": 5,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st2_volbysect_healthcare",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st3_volbysect_healthcare",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st4_volbysect_healthcare",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "MM €"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st1_volbysect_financials",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"label": {
+ 								"de": "- Financials",
+ 								"en": "- Financials"
+ 							},
+ 							"col_span": 5,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st2_volbysect_financials",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st3_volbysect_financials",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st4_volbysect_financials",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "MM €"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st1_volbysect_information_tech",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"label": {
+ 								"de": "- Information Technology",
+ 								"en": "- Information Technology"
+ 							},
+ 							"col_span": 5,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st2_volbysect_information_tech",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st3_volbysect_information_tech",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st4_volbysect_information_tech",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "MM €"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st1_volbysect_comunication_svc",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"label": {
+ 								"de": "- Comunication Services",
+ 								"en": "- Comunication Services"
+ 							},
+ 							"col_span": 5,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st2_volbysect_comunication_svc",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st3_volbysect_comunication_svc",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st4_volbysect_comunication_svc",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "MM €"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st1_volbysect_utilities",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"label": {
+ 								"de": "- Utilities",
+ 								"en": "- Utilities"
+ 							},
+ 							"col_span": 5,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st2_volbysect_utilities",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st3_volbysect_utilities",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st4_volbysect_utilities",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "MM €"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st1_volbysect_real_estate",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"label": {
+ 								"de": "- Real Estate",
+ 								"en": "- Real Estate"
+ 							},
+ 							"col_span": 5,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st2_volbysect_real_estate",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st3_volbysect_real_estate",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st4_volbysect_real_estate",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "MM €"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st1_volbysect_other",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"label": {
+ 								"de": "- Other",
+ 								"en": "- Other"
+ 							},
+ 							"col_span": 5,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st2_volbysect_other",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st3_volbysect_other",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st4_volbysect_other",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "MM €"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						}
+ 					]
  				},
  				{
  					"bottom_vspacers": 3,
@@ -1439,106 +4309,14 @@
  							}
  						},
  						{
- 							"name": "st1_volbysegm_main",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"placeholder": {
- 								"de": "Millionen €",
- 								"en": "million €"
- 							},
+ 							"name": "st1_esg",
+ 							"type": "range",
+ 							"step": 3,
+ 							"min": 3,
+ 							"max": 21,
  							"label": {
- 								"de": "\u003cb\u003eGe\u0026shy;samtvolumen neuer Abschlüsse nach Marktsegment\u003c/b\u003e",
- 								"en": "\u003cb\u003eTotal volume of new deals by segment\u003c/b\u003e"
- 							},
- 							"col_span": 5,
- 							"col_span_label": 4,
- 							"col_span_control": 1
- 						},
- 						{
- 							"name": "st2_volbysegm_main",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"placeholder": {
- 								"de": "Millionen €",
- 								"en": "million €"
- 							},
- 							"col_span": 1,
- 							"col_span_control": 1
- 						},
- 						{
- 							"name": "st3_volbysegm_main",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"placeholder": {
- 								"de": "Millionen €",
- 								"en": "million €"
- 							},
- 							"col_span": 1,
- 							"col_span_control": 1
- 						},
- 						{
- 							"name": "st4_volbysegm_main",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"placeholder": {
- 								"de": "Millionen €",
- 								"en": "million €"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 1,
- 							"col_span_control": 1
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "Bitte nennen Sie das Volumen (in Millionen Euro) von Abschlüssen in Q4 2022 nach Marktsegment: ",
- 								"en": "Please state the volume (in million Euro) of deals closed in Q4 2022 by market segment: "
- 							},
- 							"col_span": 8,
- 							"col_span_label": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"width": "60%"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"width": "96%"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "st1_volbysegm_low",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"placeholder": {
- 								"de": "Millionen €",
- 								"en": "million €"
- 							},
- 							"label": {
- 								"de": "- Lower Mid-Market (0-15m € EBITDA)",
- 								"en": "- Lower Mid-Market (0-15m € EBITDA)"
+ 								"de": "\u003cb\u003eShare ESG KPIs\u003c/b\u003e \u003cbr\u003eWhat is the share of new deals (at Fair Market Value) with explicit ESG targets in the credit documentation?",
+ 								"en": "\u003cb\u003eShare ESG KPIs\u003c/b\u003e \u003cbr\u003eWhat is the share of new deals (at Fair Market Value) with explicit ESG targets in the credit documentation?"
  							},
  							"col_span": 5,
  							"col_span_label": 4,
@@ -1547,7 +4325,23 @@
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {
- 										"margin": "0 0 0 1.2rem"
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"width_max": "90%"
  									},
  									"grid_item_style": {},
  									"text_style": {}
@@ -1561,70 +4355,18 @@
  							}
  						},
  						{
- 							"name": "st2_volbysegm_low",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"placeholder": {
- 								"de": "Millionen €",
- 								"en": "million €"
- 							},
+ 							"name": "st2_esg",
+ 							"type": "range",
+ 							"step": 3,
+ 							"min": 3,
+ 							"max": 21,
  							"col_span": 1,
- 							"col_span_control": 1
- 						},
- 						{
- 							"name": "st3_volbysegm_low",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"placeholder": {
- 								"de": "Millionen €",
- 								"en": "million €"
- 							},
- 							"col_span": 1,
- 							"col_span_control": 1
- 						},
- 						{
- 							"name": "st4_volbysegm_low",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"placeholder": {
- 								"de": "Millionen €",
- 								"en": "million €"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 1,
- 							"col_span_control": 1
- 						},
- 						{
- 							"name": "st1_volbysegm_mid",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"placeholder": {
- 								"de": "Millionen €",
- 								"en": "million €"
- 							},
- 							"label": {
- 								"de": "- Core Mid-Market  (15-50m € EBITDA)",
- 								"en": "- Core Mid-Market  (15-50m € EBITDA)"
- 							},
- 							"col_span": 5,
- 							"col_span_label": 4,
  							"col_span_control": 1,
- 							"style_label": {
+ 							"style_control": {
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {
- 										"margin": "0 0 0 1.2rem"
+ 										"width_max": "90%"
  									},
  									"grid_item_style": {},
  									"text_style": {}
@@ -1638,70 +4380,18 @@
  							}
  						},
  						{
- 							"name": "st2_volbysegm_mid",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"placeholder": {
- 								"de": "Millionen €",
- 								"en": "million €"
- 							},
+ 							"name": "st3_esg",
+ 							"type": "range",
+ 							"step": 3,
+ 							"min": 3,
+ 							"max": 21,
  							"col_span": 1,
- 							"col_span_control": 1
- 						},
- 						{
- 							"name": "st3_volbysegm_mid",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"placeholder": {
- 								"de": "Millionen €",
- 								"en": "million €"
- 							},
- 							"col_span": 1,
- 							"col_span_control": 1
- 						},
- 						{
- 							"name": "st4_volbysegm_mid",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"placeholder": {
- 								"de": "Millionen €",
- 								"en": "million €"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 1,
- 							"col_span_control": 1
- 						},
- 						{
- 							"name": "st1_volbysegm_upper",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"placeholder": {
- 								"de": "Millionen €",
- 								"en": "million €"
- 							},
- 							"label": {
- 								"de": "- Upper Mid-Market (\u003e50m € EBITDA)",
- 								"en": "- Upper Mid-Market (\u003e50m € EBITDA)"
- 							},
- 							"col_span": 5,
- 							"col_span_label": 4,
  							"col_span_control": 1,
- 							"style_label": {
+ 							"style_control": {
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {
- 										"margin": "0 0 0 1.2rem"
+ 										"width_max": "90%"
  									},
  									"grid_item_style": {},
  									"text_style": {}
@@ -1715,53 +4405,61 @@
  							}
  						},
  						{
- 							"name": "st2_volbysegm_upper",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"placeholder": {
- 								"de": "Millionen €",
- 								"en": "million €"
- 							},
+ 							"name": "st4_esg",
+ 							"type": "range",
+ 							"step": 3,
+ 							"min": 3,
+ 							"max": 21,
  							"col_span": 1,
- 							"col_span_control": 1
- 						},
- 						{
- 							"name": "st3_volbysegm_upper",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"placeholder": {
- 								"de": "Millionen €",
- 								"en": "million €"
- 							},
- 							"col_span": 1,
- 							"col_span_control": 1
- 						},
- 						{
- 							"name": "st4_volbysegm_upper",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"placeholder": {
- 								"de": "Millionen €",
- 								"en": "million €"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 1,
- 							"col_span_control": 1
+ 							"col_span_control": 1,
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"width_max": "90%"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						}
  					]
  				},
  				{
- 					"columns": 1,
+ 					"bottom_vspacers": 3,
+ 					"columns": 8,
  					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"col_span": 4,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"font_size": 90,
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
  						{
  							"type": "textblock",
  							"label": {
@@ -1774,9 +4472,13 @@
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {},
- 									"grid_item_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "end"
+ 									},
  									"text_style": {
- 										"font_size": 115
+ 										"font_size": 90,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -1786,671 +4488,7 @@
  									"text_style": {}
  								}
  							}
- 						}
- 					]
- 				},
- 				{
- 					"bottom_vspacers": 1,
- 					"columns": 1,
- 					"inputs": [
- 						{
- 							"name": "st1_senior_volbyreg_main",
- 							"type": "number",
- 							"max_chars": 12,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "Ge\u0026shy;samtvolumen neuer Abschlüsse nach Region",
- 								"en": "Total volume of new deals by region"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						}
- 					]
- 				},
- 				{
- 					"bottom_vspacers": 3,
- 					"columns": 2,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "Bitte nennen Sie das Volumen (in Millionen Euro) von Abschlüssen in Q4 2022 nach Region: ",
- 								"en": "Please state the volume (in million Euro) of deals closed in Q4 2022 by region: "
- 							},
- 							"col_span": 2,
- 							"col_span_label": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"width": "60%"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"width": "96%"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
  						},
- 						{
- 							"name": "st1_senior_volbyreg_uk",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- UK",
- 								"en": "- UK"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "st1_senior_volbyreg_france",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- France",
- 								"en": "- France"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "st1_senior_volbyreg_dach",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- DACH",
- 								"en": "- DACH"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "st1_senior_volbyreg_benelux",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- Benelux",
- 								"en": "- Benelux"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "st1_senior_volbyreg_nordics",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- Nordics",
- 								"en": "- Nordics"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "st1_senior_volbyreg_southern_eu",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- Southern Europe",
- 								"en": "- Southern Europe"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "st1_senior_volbyreg_other",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- Other",
- 								"en": "- Other"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "restrictedTextSum",
- 							"type": "javascript-block",
- 							"col_span_control": 1,
- 							"js_block_strings": {
- 								"InpMain": "st1_senior_volbyreg",
- 								"SummandNames": "\"st1_senior_volbyreg_uk\", \"st1_senior_volbyreg_france\", \"st1_senior_volbyreg_dach\", \"st1_senior_volbyreg_benelux\", \"st1_senior_volbyreg_nordics\", \"st1_senior_volbyreg_southern_eu\", \"st1_senior_volbyreg_other\""
- 							},
- 							"js_block_translations": {
- 								"msg": {
- 									"de": "Addiert sicht nicht auf. Trotzdem weiter?",
- 									"en": "Does not add up. Continue?"
- 								}
- 							}
- 						}
- 					],
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {},
- 							"box_style": {
- 								"margin": "0 0 0 2rem"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
- 				},
- 				{
- 					"bottom_vspacers": 1,
- 					"columns": 1,
- 					"inputs": [
- 						{
- 							"name": "st1_senior_volbysect_main",
- 							"type": "number",
- 							"max_chars": 12,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "Ge\u0026shy;samtvolumen neuer Abschlüsse nach Sektor",
- 								"en": "Total volume of new deals by sector"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						}
- 					]
- 				},
- 				{
- 					"bottom_vspacers": 3,
- 					"columns": 2,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "Bitte nennen Sie das Volumen (in Millionen Euro) von Abschlüssen in Q4 2022 nach Region: ",
- 								"en": "Please state the volume (in million Euro) of deals closed in Q4 2022 by region: "
- 							},
- 							"col_span": 2,
- 							"col_span_label": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"width": "60%"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"width": "96%"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "st1_senior_volbysect_energy",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- Energy",
- 								"en": "- Energy"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "st1_senior_volbysect_materials",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- Materials",
- 								"en": "- Materials"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "st1_senior_volbysect_industrials",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- In\u0026shy;dus\u0026shy;tri\u0026shy;als",
- 								"en": "- In\u0026shy;dus\u0026shy;tri\u0026shy;als"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "st1_senior_volbysect_consumer_disc",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- Cons\u0026shy;umer Discretionary",
- 								"en": "- Cons\u0026shy;umer Discretionary"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "st1_senior_volbysect_consumer_stap",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- Cons\u0026shy;umer Staples",
- 								"en": "- Cons\u0026shy;umer Staples"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "st1_senior_volbysect_healthcare",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- Health Care",
- 								"en": "- Health Care"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "st1_senior_volbysect_financials",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- Financials",
- 								"en": "- Financials"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "st1_senior_volbysect_information_tech",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- Information Technology",
- 								"en": "- Information Technology"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "st1_senior_volbysect_comunication_svc",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- Comunication Services",
- 								"en": "- Comunication Services"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "st1_senior_volbysect_utilities",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- Utilities",
- 								"en": "- Utilities"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "st1_senior_volbysect_real_estate",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- Real Estate",
- 								"en": "- Real Estate"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "st1_senior_volbysect_other",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- Other",
- 								"en": "- Other"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "restrictedTextSum",
- 							"type": "javascript-block",
- 							"col_span_control": 1,
- 							"js_block_strings": {
- 								"InpMain": "st1_senior_volbysect",
- 								"SummandNames": "\"st1_senior_volbysect_energy\", \"st1_senior_volbysect_materials\", \"st1_senior_volbysect_industrials\", \"st1_senior_volbysect_consumer_disc\", \"st1_senior_volbysect_consumer_stap\", \"st1_senior_volbysect_healthcare\", \"st1_senior_volbysect_financials\", \"st1_senior_volbysect_information_tech\", \"st1_senior_volbysect_comunication_svc\", \"st1_senior_volbysect_utilities\", \"st1_senior_volbysect_real_estate\", \"st1_senior_volbysect_other\""
- 							},
- 							"js_block_translations": {
- 								"msg": {
- 									"de": "Addiert sicht nicht auf. Trotzdem weiter?",
- 									"en": "Does not add up. Continue?"
- 								}
- 							}
- 						}
- 					],
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {},
- 							"box_style": {
- 								"margin": "0 0 0 2rem"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
- 				},
- 				{
- 					"bottom_vspacers": 1,
- 					"columns": 1,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "Should next three add up to 100%?",
- 								"en": "Should next three add up to 100%?"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1
- 						}
- 					]
- 				},
- 				{
- 					"bottom_vspacers": 2,
- 					"columns": 1,
- 					"inputs": [
- 						{
- 							"name": "st1_senior_esg",
- 							"type": "range",
- 							"step": 3,
- 							"min": 3,
- 							"max": 21,
- 							"label": {
- 								"de": "\u003cb\u003eShare ESG KPIs\u003c/b\u003e \u003cbr\u003eWhat is the share of new deals (at Fair Market Value) with explicit ESG targets in the credit documentation?",
- 								"en": "\u003cb\u003eShare ESG KPIs\u003c/b\u003e \u003cbr\u003eWhat is the share of new deals (at Fair Market Value) with explicit ESG targets in the credit documentation?"
- 							},
- 							"suffix": {
- 								"de": "%",
- 								"en": "%"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 2,
- 							"col_span_control": 1
- 						}
- 					],
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {},
- 							"box_style": {
- 								"width_max": "80%"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {},
- 							"box_style": {
- 								"width_max": "none"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
- 				},
- 				{
- 					"bottom_vspacers": 2,
- 					"columns": 1,
- 					"inputs": [
- 						{
- 							"name": "st1_senior_esgratch",
- 							"type": "range",
- 							"step": 3,
- 							"min": 3,
- 							"max": 21,
- 							"label": {
- 								"de": "\u003cb\u003eShare ESG ratchets\u003c/b\u003e \u003cbr\u003e What is the share of new deals (at Fair Market Value) with ESG ratchets?",
- 								"en": "\u003cb\u003eShare ESG ratchets\u003c/b\u003e \u003cbr\u003e What is the share of new deals (at Fair Market Value) with ESG ratchets?"
- 							},
- 							"suffix": {
- 								"de": "%",
- 								"en": "%"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 2,
- 							"col_span_control": 1
- 						}
- 					],
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {},
- 							"box_style": {
- 								"width_max": "80%"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {},
- 							"box_style": {
- 								"width_max": "none"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
- 				},
- 				{
- 					"bottom_vspacers": 2,
- 					"columns": 1,
- 					"inputs": [
- 						{
- 							"name": "st1_senior_esg15degrees",
- 							"type": "range",
- 							"step": 3,
- 							"min": 3,
- 							"max": 21,
- 							"label": {
- 								"de": "\u003cb\u003eShare 1.5°C target\u003c/b\u003e \u003cbr\u003e What is the share of new deals (at Fair Market Value) where the creditor explicitly states a strategy to add to the 1.5°C target?",
- 								"en": "\u003cb\u003eShare 1.5°C target\u003c/b\u003e \u003cbr\u003e What is the share of new deals (at Fair Market Value) where the creditor explicitly states a strategy to add to the 1.5°C target?"
- 							},
- 							"suffix": {
- 								"de": "%",
- 								"en": "%"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 2,
- 							"col_span_control": 1
- 						}
- 					],
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {},
- 							"box_style": {
- 								"width_max": "80%"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {},
- 							"box_style": {
- 								"width_max": "none"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
- 				},
- 				{
- 					"columns": 1,
- 					"inputs": [
  						{
  							"type": "textblock",
  							"label": {
@@ -2463,9 +4501,13 @@
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {},
- 									"grid_item_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "end"
+ 									},
  									"text_style": {
- 										"font_size": 115
+ 										"font_size": 90,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -2475,671 +4517,7 @@
  									"text_style": {}
  								}
  							}
- 						}
- 					]
- 				},
- 				{
- 					"bottom_vspacers": 1,
- 					"columns": 1,
- 					"inputs": [
- 						{
- 							"name": "st2_unittranche_volbyreg_main",
- 							"type": "number",
- 							"max_chars": 12,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "Ge\u0026shy;samtvolumen neuer Abschlüsse nach Region",
- 								"en": "Total volume of new deals by region"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						}
- 					]
- 				},
- 				{
- 					"bottom_vspacers": 3,
- 					"columns": 2,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "Bitte nennen Sie das Volumen (in Millionen Euro) von Abschlüssen in Q4 2022 nach Region: ",
- 								"en": "Please state the volume (in million Euro) of deals closed in Q4 2022 by region: "
- 							},
- 							"col_span": 2,
- 							"col_span_label": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"width": "60%"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"width": "96%"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
  						},
- 						{
- 							"name": "st2_unittranche_volbyreg_uk",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- UK",
- 								"en": "- UK"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "st2_unittranche_volbyreg_france",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- France",
- 								"en": "- France"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "st2_unittranche_volbyreg_dach",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- DACH",
- 								"en": "- DACH"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "st2_unittranche_volbyreg_benelux",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- Benelux",
- 								"en": "- Benelux"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "st2_unittranche_volbyreg_nordics",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- Nordics",
- 								"en": "- Nordics"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "st2_unittranche_volbyreg_southern_eu",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- Southern Europe",
- 								"en": "- Southern Europe"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "st2_unittranche_volbyreg_other",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- Other",
- 								"en": "- Other"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "restrictedTextSum",
- 							"type": "javascript-block",
- 							"col_span_control": 1,
- 							"js_block_strings": {
- 								"InpMain": "st2_unittranche_volbyreg",
- 								"SummandNames": "\"st2_unittranche_volbyreg_uk\", \"st2_unittranche_volbyreg_france\", \"st2_unittranche_volbyreg_dach\", \"st2_unittranche_volbyreg_benelux\", \"st2_unittranche_volbyreg_nordics\", \"st2_unittranche_volbyreg_southern_eu\", \"st2_unittranche_volbyreg_other\""
- 							},
- 							"js_block_translations": {
- 								"msg": {
- 									"de": "Addiert sicht nicht auf. Trotzdem weiter?",
- 									"en": "Does not add up. Continue?"
- 								}
- 							}
- 						}
- 					],
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {},
- 							"box_style": {
- 								"margin": "0 0 0 2rem"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
- 				},
- 				{
- 					"bottom_vspacers": 1,
- 					"columns": 1,
- 					"inputs": [
- 						{
- 							"name": "st2_unittranche_volbysect_main",
- 							"type": "number",
- 							"max_chars": 12,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "Ge\u0026shy;samtvolumen neuer Abschlüsse nach Sektor",
- 								"en": "Total volume of new deals by sector"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						}
- 					]
- 				},
- 				{
- 					"bottom_vspacers": 3,
- 					"columns": 2,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "Bitte nennen Sie das Volumen (in Millionen Euro) von Abschlüssen in Q4 2022 nach Region: ",
- 								"en": "Please state the volume (in million Euro) of deals closed in Q4 2022 by region: "
- 							},
- 							"col_span": 2,
- 							"col_span_label": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"width": "60%"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"width": "96%"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "st2_unittranche_volbysect_energy",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- Energy",
- 								"en": "- Energy"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "st2_unittranche_volbysect_materials",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- Materials",
- 								"en": "- Materials"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "st2_unittranche_volbysect_industrials",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- In\u0026shy;dus\u0026shy;tri\u0026shy;als",
- 								"en": "- In\u0026shy;dus\u0026shy;tri\u0026shy;als"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "st2_unittranche_volbysect_consumer_disc",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- Cons\u0026shy;umer Discretionary",
- 								"en": "- Cons\u0026shy;umer Discretionary"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "st2_unittranche_volbysect_consumer_stap",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- Cons\u0026shy;umer Staples",
- 								"en": "- Cons\u0026shy;umer Staples"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "st2_unittranche_volbysect_healthcare",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- Health Care",
- 								"en": "- Health Care"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "st2_unittranche_volbysect_financials",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- Financials",
- 								"en": "- Financials"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "st2_unittranche_volbysect_information_tech",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- Information Technology",
- 								"en": "- Information Technology"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "st2_unittranche_volbysect_comunication_svc",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- Comunication Services",
- 								"en": "- Comunication Services"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "st2_unittranche_volbysect_utilities",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- Utilities",
- 								"en": "- Utilities"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "st2_unittranche_volbysect_real_estate",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- Real Estate",
- 								"en": "- Real Estate"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "st2_unittranche_volbysect_other",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- Other",
- 								"en": "- Other"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "restrictedTextSum",
- 							"type": "javascript-block",
- 							"col_span_control": 1,
- 							"js_block_strings": {
- 								"InpMain": "st2_unittranche_volbysect",
- 								"SummandNames": "\"st2_unittranche_volbysect_energy\", \"st2_unittranche_volbysect_materials\", \"st2_unittranche_volbysect_industrials\", \"st2_unittranche_volbysect_consumer_disc\", \"st2_unittranche_volbysect_consumer_stap\", \"st2_unittranche_volbysect_healthcare\", \"st2_unittranche_volbysect_financials\", \"st2_unittranche_volbysect_information_tech\", \"st2_unittranche_volbysect_comunication_svc\", \"st2_unittranche_volbysect_utilities\", \"st2_unittranche_volbysect_real_estate\", \"st2_unittranche_volbysect_other\""
- 							},
- 							"js_block_translations": {
- 								"msg": {
- 									"de": "Addiert sicht nicht auf. Trotzdem weiter?",
- 									"en": "Does not add up. Continue?"
- 								}
- 							}
- 						}
- 					],
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {},
- 							"box_style": {
- 								"margin": "0 0 0 2rem"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
- 				},
- 				{
- 					"bottom_vspacers": 1,
- 					"columns": 1,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "Should next three add up to 100%?",
- 								"en": "Should next three add up to 100%?"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1
- 						}
- 					]
- 				},
- 				{
- 					"bottom_vspacers": 2,
- 					"columns": 1,
- 					"inputs": [
- 						{
- 							"name": "st2_unittranche_esg",
- 							"type": "range",
- 							"step": 3,
- 							"min": 3,
- 							"max": 21,
- 							"label": {
- 								"de": "\u003cb\u003eShare ESG KPIs\u003c/b\u003e \u003cbr\u003eWhat is the share of new deals (at Fair Market Value) with explicit ESG targets in the credit documentation?",
- 								"en": "\u003cb\u003eShare ESG KPIs\u003c/b\u003e \u003cbr\u003eWhat is the share of new deals (at Fair Market Value) with explicit ESG targets in the credit documentation?"
- 							},
- 							"suffix": {
- 								"de": "%",
- 								"en": "%"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 2,
- 							"col_span_control": 1
- 						}
- 					],
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {},
- 							"box_style": {
- 								"width_max": "80%"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {},
- 							"box_style": {
- 								"width_max": "none"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
- 				},
- 				{
- 					"bottom_vspacers": 2,
- 					"columns": 1,
- 					"inputs": [
- 						{
- 							"name": "st2_unittranche_esgratch",
- 							"type": "range",
- 							"step": 3,
- 							"min": 3,
- 							"max": 21,
- 							"label": {
- 								"de": "\u003cb\u003eShare ESG ratchets\u003c/b\u003e \u003cbr\u003e What is the share of new deals (at Fair Market Value) with ESG ratchets?",
- 								"en": "\u003cb\u003eShare ESG ratchets\u003c/b\u003e \u003cbr\u003e What is the share of new deals (at Fair Market Value) with ESG ratchets?"
- 							},
- 							"suffix": {
- 								"de": "%",
- 								"en": "%"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 2,
- 							"col_span_control": 1
- 						}
- 					],
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {},
- 							"box_style": {
- 								"width_max": "80%"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {},
- 							"box_style": {
- 								"width_max": "none"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
- 				},
- 				{
- 					"bottom_vspacers": 2,
- 					"columns": 1,
- 					"inputs": [
- 						{
- 							"name": "st2_unittranche_esg15degrees",
- 							"type": "range",
- 							"step": 3,
- 							"min": 3,
- 							"max": 21,
- 							"label": {
- 								"de": "\u003cb\u003eShare 1.5°C target\u003c/b\u003e \u003cbr\u003e What is the share of new deals (at Fair Market Value) where the creditor explicitly states a strategy to add to the 1.5°C target?",
- 								"en": "\u003cb\u003eShare 1.5°C target\u003c/b\u003e \u003cbr\u003e What is the share of new deals (at Fair Market Value) where the creditor explicitly states a strategy to add to the 1.5°C target?"
- 							},
- 							"suffix": {
- 								"de": "%",
- 								"en": "%"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 2,
- 							"col_span_control": 1
- 						}
- 					],
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {},
- 							"box_style": {
- 								"width_max": "80%"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {},
- 							"box_style": {
- 								"width_max": "none"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
- 				},
- 				{
- 					"columns": 1,
- 					"inputs": [
  						{
  							"type": "textblock",
  							"label": {
@@ -3152,9 +4530,13 @@
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {},
- 									"grid_item_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "end"
+ 									},
  									"text_style": {
- 										"font_size": 115
+ 										"font_size": 90,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -3164,671 +4546,7 @@
  									"text_style": {}
  								}
  							}
- 						}
- 					]
- 				},
- 				{
- 					"bottom_vspacers": 1,
- 					"columns": 1,
- 					"inputs": [
- 						{
- 							"name": "st3_subordinated_volbyreg_main",
- 							"type": "number",
- 							"max_chars": 12,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "Ge\u0026shy;samtvolumen neuer Abschlüsse nach Region",
- 								"en": "Total volume of new deals by region"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						}
- 					]
- 				},
- 				{
- 					"bottom_vspacers": 3,
- 					"columns": 2,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "Bitte nennen Sie das Volumen (in Millionen Euro) von Abschlüssen in Q4 2022 nach Region: ",
- 								"en": "Please state the volume (in million Euro) of deals closed in Q4 2022 by region: "
- 							},
- 							"col_span": 2,
- 							"col_span_label": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"width": "60%"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"width": "96%"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
  						},
- 						{
- 							"name": "st3_subordinated_volbyreg_uk",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- UK",
- 								"en": "- UK"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "st3_subordinated_volbyreg_france",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- France",
- 								"en": "- France"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "st3_subordinated_volbyreg_dach",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- DACH",
- 								"en": "- DACH"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "st3_subordinated_volbyreg_benelux",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- Benelux",
- 								"en": "- Benelux"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "st3_subordinated_volbyreg_nordics",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- Nordics",
- 								"en": "- Nordics"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "st3_subordinated_volbyreg_southern_eu",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- Southern Europe",
- 								"en": "- Southern Europe"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "st3_subordinated_volbyreg_other",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- Other",
- 								"en": "- Other"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "restrictedTextSum",
- 							"type": "javascript-block",
- 							"col_span_control": 1,
- 							"js_block_strings": {
- 								"InpMain": "st3_subordinated_volbyreg",
- 								"SummandNames": "\"st3_subordinated_volbyreg_uk\", \"st3_subordinated_volbyreg_france\", \"st3_subordinated_volbyreg_dach\", \"st3_subordinated_volbyreg_benelux\", \"st3_subordinated_volbyreg_nordics\", \"st3_subordinated_volbyreg_southern_eu\", \"st3_subordinated_volbyreg_other\""
- 							},
- 							"js_block_translations": {
- 								"msg": {
- 									"de": "Addiert sicht nicht auf. Trotzdem weiter?",
- 									"en": "Does not add up. Continue?"
- 								}
- 							}
- 						}
- 					],
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {},
- 							"box_style": {
- 								"margin": "0 0 0 2rem"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
- 				},
- 				{
- 					"bottom_vspacers": 1,
- 					"columns": 1,
- 					"inputs": [
- 						{
- 							"name": "st3_subordinated_volbysect_main",
- 							"type": "number",
- 							"max_chars": 12,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "Ge\u0026shy;samtvolumen neuer Abschlüsse nach Sektor",
- 								"en": "Total volume of new deals by sector"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						}
- 					]
- 				},
- 				{
- 					"bottom_vspacers": 3,
- 					"columns": 2,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "Bitte nennen Sie das Volumen (in Millionen Euro) von Abschlüssen in Q4 2022 nach Region: ",
- 								"en": "Please state the volume (in million Euro) of deals closed in Q4 2022 by region: "
- 							},
- 							"col_span": 2,
- 							"col_span_label": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"width": "60%"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"width": "96%"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "st3_subordinated_volbysect_energy",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- Energy",
- 								"en": "- Energy"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "st3_subordinated_volbysect_materials",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- Materials",
- 								"en": "- Materials"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "st3_subordinated_volbysect_industrials",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- In\u0026shy;dus\u0026shy;tri\u0026shy;als",
- 								"en": "- In\u0026shy;dus\u0026shy;tri\u0026shy;als"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "st3_subordinated_volbysect_consumer_disc",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- Cons\u0026shy;umer Discretionary",
- 								"en": "- Cons\u0026shy;umer Discretionary"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "st3_subordinated_volbysect_consumer_stap",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- Cons\u0026shy;umer Staples",
- 								"en": "- Cons\u0026shy;umer Staples"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "st3_subordinated_volbysect_healthcare",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- Health Care",
- 								"en": "- Health Care"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "st3_subordinated_volbysect_financials",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- Financials",
- 								"en": "- Financials"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "st3_subordinated_volbysect_information_tech",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- Information Technology",
- 								"en": "- Information Technology"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "st3_subordinated_volbysect_comunication_svc",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- Comunication Services",
- 								"en": "- Comunication Services"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "st3_subordinated_volbysect_utilities",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- Utilities",
- 								"en": "- Utilities"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "st3_subordinated_volbysect_real_estate",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- Real Estate",
- 								"en": "- Real Estate"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "st3_subordinated_volbysect_other",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- Other",
- 								"en": "- Other"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "restrictedTextSum",
- 							"type": "javascript-block",
- 							"col_span_control": 1,
- 							"js_block_strings": {
- 								"InpMain": "st3_subordinated_volbysect",
- 								"SummandNames": "\"st3_subordinated_volbysect_energy\", \"st3_subordinated_volbysect_materials\", \"st3_subordinated_volbysect_industrials\", \"st3_subordinated_volbysect_consumer_disc\", \"st3_subordinated_volbysect_consumer_stap\", \"st3_subordinated_volbysect_healthcare\", \"st3_subordinated_volbysect_financials\", \"st3_subordinated_volbysect_information_tech\", \"st3_subordinated_volbysect_comunication_svc\", \"st3_subordinated_volbysect_utilities\", \"st3_subordinated_volbysect_real_estate\", \"st3_subordinated_volbysect_other\""
- 							},
- 							"js_block_translations": {
- 								"msg": {
- 									"de": "Addiert sicht nicht auf. Trotzdem weiter?",
- 									"en": "Does not add up. Continue?"
- 								}
- 							}
- 						}
- 					],
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {},
- 							"box_style": {
- 								"margin": "0 0 0 2rem"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
- 				},
- 				{
- 					"bottom_vspacers": 1,
- 					"columns": 1,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "Should next three add up to 100%?",
- 								"en": "Should next three add up to 100%?"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1
- 						}
- 					]
- 				},
- 				{
- 					"bottom_vspacers": 2,
- 					"columns": 1,
- 					"inputs": [
- 						{
- 							"name": "st3_subordinated_esg",
- 							"type": "range",
- 							"step": 3,
- 							"min": 3,
- 							"max": 21,
- 							"label": {
- 								"de": "\u003cb\u003eShare ESG KPIs\u003c/b\u003e \u003cbr\u003eWhat is the share of new deals (at Fair Market Value) with explicit ESG targets in the credit documentation?",
- 								"en": "\u003cb\u003eShare ESG KPIs\u003c/b\u003e \u003cbr\u003eWhat is the share of new deals (at Fair Market Value) with explicit ESG targets in the credit documentation?"
- 							},
- 							"suffix": {
- 								"de": "%",
- 								"en": "%"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 2,
- 							"col_span_control": 1
- 						}
- 					],
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {},
- 							"box_style": {
- 								"width_max": "80%"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {},
- 							"box_style": {
- 								"width_max": "none"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
- 				},
- 				{
- 					"bottom_vspacers": 2,
- 					"columns": 1,
- 					"inputs": [
- 						{
- 							"name": "st3_subordinated_esgratch",
- 							"type": "range",
- 							"step": 3,
- 							"min": 3,
- 							"max": 21,
- 							"label": {
- 								"de": "\u003cb\u003eShare ESG ratchets\u003c/b\u003e \u003cbr\u003e What is the share of new deals (at Fair Market Value) with ESG ratchets?",
- 								"en": "\u003cb\u003eShare ESG ratchets\u003c/b\u003e \u003cbr\u003e What is the share of new deals (at Fair Market Value) with ESG ratchets?"
- 							},
- 							"suffix": {
- 								"de": "%",
- 								"en": "%"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 2,
- 							"col_span_control": 1
- 						}
- 					],
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {},
- 							"box_style": {
- 								"width_max": "80%"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {},
- 							"box_style": {
- 								"width_max": "none"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
- 				},
- 				{
- 					"bottom_vspacers": 2,
- 					"columns": 1,
- 					"inputs": [
- 						{
- 							"name": "st3_subordinated_esg15degrees",
- 							"type": "range",
- 							"step": 3,
- 							"min": 3,
- 							"max": 21,
- 							"label": {
- 								"de": "\u003cb\u003eShare 1.5°C target\u003c/b\u003e \u003cbr\u003e What is the share of new deals (at Fair Market Value) where the creditor explicitly states a strategy to add to the 1.5°C target?",
- 								"en": "\u003cb\u003eShare 1.5°C target\u003c/b\u003e \u003cbr\u003e What is the share of new deals (at Fair Market Value) where the creditor explicitly states a strategy to add to the 1.5°C target?"
- 							},
- 							"suffix": {
- 								"de": "%",
- 								"en": "%"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 2,
- 							"col_span_control": 1
- 						}
- 					],
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {},
- 							"box_style": {
- 								"width_max": "80%"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {},
- 							"box_style": {
- 								"width_max": "none"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
- 				},
- 				{
- 					"columns": 1,
- 					"inputs": [
  						{
  							"type": "textblock",
  							"label": {
@@ -3841,10 +4559,135 @@
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {},
- 									"grid_item_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "end"
+ 									},
  									"text_style": {
- 										"font_size": 115
+ 										"font_size": 90,
+ 										"align_horizontal": "left"
  									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st1_esgratch",
+ 							"type": "range",
+ 							"step": 3,
+ 							"min": 3,
+ 							"max": 21,
+ 							"label": {
+ 								"de": "\u003cb\u003eShare ESG ratchets\u003c/b\u003e \u003cbr\u003e What is the share of new deals (at Fair Market Value) with ESG ratchets?",
+ 								"en": "\u003cb\u003eShare ESG ratchets\u003c/b\u003e \u003cbr\u003e What is the share of new deals (at Fair Market Value) with ESG ratchets?"
+ 							},
+ 							"col_span": 5,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"width_max": "90%"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st2_esgratch",
+ 							"type": "range",
+ 							"step": 3,
+ 							"min": 3,
+ 							"max": 21,
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"width_max": "90%"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st3_esgratch",
+ 							"type": "range",
+ 							"step": 3,
+ 							"min": 3,
+ 							"max": 21,
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"width_max": "90%"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st4_esgratch",
+ 							"type": "range",
+ 							"step": 3,
+ 							"min": 3,
+ 							"max": 21,
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"width_max": "90%"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
  								},
  								"mobile": {
  									"grid_container_style": {},
@@ -3857,628 +4700,152 @@
  					]
  				},
  				{
- 					"bottom_vspacers": 1,
- 					"columns": 1,
- 					"inputs": [
- 						{
- 							"name": "st4_mezzanine_volbyreg_main",
- 							"type": "number",
- 							"max_chars": 12,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "Ge\u0026shy;samtvolumen neuer Abschlüsse nach Region",
- 								"en": "Total volume of new deals by region"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						}
- 					]
- 				},
- 				{
  					"bottom_vspacers": 3,
- 					"columns": 2,
+ 					"columns": 8,
  					"inputs": [
  						{
  							"type": "textblock",
- 							"label": {
- 								"de": "Bitte nennen Sie das Volumen (in Millionen Euro) von Abschlüssen in Q4 2022 nach Region: ",
- 								"en": "Please state the volume (in million Euro) of deals closed in Q4 2022 by region: "
- 							},
- 							"col_span": 2,
+ 							"col_span": 4,
  							"col_span_label": 1,
- 							"style": {
+ 							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {
- 										"width": "60%"
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "end"
  									},
- 									"grid_item_style": {},
- 									"text_style": {}
+ 									"text_style": {
+ 										"font_size": 90,
+ 										"align_horizontal": "left"
+ 									}
  								},
  								"mobile": {
  									"grid_container_style": {},
- 									"box_style": {
- 										"width": "96%"
- 									},
+ 									"box_style": {},
  									"grid_item_style": {},
  									"text_style": {}
  								}
  							}
  						},
- 						{
- 							"name": "st4_mezzanine_volbyreg_uk",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- UK",
- 								"en": "- UK"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "st4_mezzanine_volbyreg_france",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- France",
- 								"en": "- France"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "st4_mezzanine_volbyreg_dach",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- DACH",
- 								"en": "- DACH"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "st4_mezzanine_volbyreg_benelux",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- Benelux",
- 								"en": "- Benelux"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "st4_mezzanine_volbyreg_nordics",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- Nordics",
- 								"en": "- Nordics"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "st4_mezzanine_volbyreg_southern_eu",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- Southern Europe",
- 								"en": "- Southern Europe"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "st4_mezzanine_volbyreg_other",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- Other",
- 								"en": "- Other"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "restrictedTextSum",
- 							"type": "javascript-block",
- 							"col_span_control": 1,
- 							"js_block_strings": {
- 								"InpMain": "st4_mezzanine_volbyreg",
- 								"SummandNames": "\"st4_mezzanine_volbyreg_uk\", \"st4_mezzanine_volbyreg_france\", \"st4_mezzanine_volbyreg_dach\", \"st4_mezzanine_volbyreg_benelux\", \"st4_mezzanine_volbyreg_nordics\", \"st4_mezzanine_volbyreg_southern_eu\", \"st4_mezzanine_volbyreg_other\""
- 							},
- 							"js_block_translations": {
- 								"msg": {
- 									"de": "Addiert sicht nicht auf. Trotzdem weiter?",
- 									"en": "Does not add up. Continue?"
- 								}
- 							}
- 						}
- 					],
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {},
- 							"box_style": {
- 								"margin": "0 0 0 2rem"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
- 				},
- 				{
- 					"bottom_vspacers": 1,
- 					"columns": 1,
- 					"inputs": [
- 						{
- 							"name": "st4_mezzanine_volbysect_main",
- 							"type": "number",
- 							"max_chars": 12,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "Ge\u0026shy;samtvolumen neuer Abschlüsse nach Sektor",
- 								"en": "Total volume of new deals by sector"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						}
- 					]
- 				},
- 				{
- 					"bottom_vspacers": 3,
- 					"columns": 2,
- 					"inputs": [
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Bitte nennen Sie das Volumen (in Millionen Euro) von Abschlüssen in Q4 2022 nach Region: ",
- 								"en": "Please state the volume (in million Euro) of deals closed in Q4 2022 by region: "
+ 								"de": "\u003cb\u003eSenior\u003c/b\u003e",
+ 								"en": "\u003cb\u003eSenior\u003c/b\u003e"
  							},
- 							"col_span": 2,
+ 							"col_span": 1,
  							"col_span_label": 1,
- 							"style": {
+ 							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {
- 										"width": "60%"
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "end"
  									},
- 									"grid_item_style": {},
- 									"text_style": {}
+ 									"text_style": {
+ 										"font_size": 90,
+ 										"align_horizontal": "left"
+ 									}
  								},
  								"mobile": {
  									"grid_container_style": {},
- 									"box_style": {
- 										"width": "96%"
- 									},
+ 									"box_style": {},
  									"grid_item_style": {},
  									"text_style": {}
  								}
  							}
  						},
  						{
- 							"name": "st4_mezzanine_volbysect_energy",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
+ 							"type": "textblock",
  							"label": {
- 								"de": "- Energy",
- 								"en": "- Energy"
+ 								"de": "\u003cb\u003eUnitranche\u003c/b\u003e",
+ 								"en": "\u003cb\u003eUnitranche\u003c/b\u003e"
  							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "st4_mezzanine_volbysect_materials",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- Materials",
- 								"en": "- Materials"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "st4_mezzanine_volbysect_industrials",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- In\u0026shy;dus\u0026shy;tri\u0026shy;als",
- 								"en": "- In\u0026shy;dus\u0026shy;tri\u0026shy;als"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "st4_mezzanine_volbysect_consumer_disc",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- Cons\u0026shy;umer Discretionary",
- 								"en": "- Cons\u0026shy;umer Discretionary"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "st4_mezzanine_volbysect_consumer_stap",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- Cons\u0026shy;umer Staples",
- 								"en": "- Cons\u0026shy;umer Staples"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "st4_mezzanine_volbysect_healthcare",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- Health Care",
- 								"en": "- Health Care"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "st4_mezzanine_volbysect_financials",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- Financials",
- 								"en": "- Financials"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "st4_mezzanine_volbysect_information_tech",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- Information Technology",
- 								"en": "- Information Technology"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "st4_mezzanine_volbysect_comunication_svc",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- Comunication Services",
- 								"en": "- Comunication Services"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "st4_mezzanine_volbysect_utilities",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- Utilities",
- 								"en": "- Utilities"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "st4_mezzanine_volbysect_real_estate",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- Real Estate",
- 								"en": "- Real Estate"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "st4_mezzanine_volbysect_other",
- 							"type": "number",
- 							"max_chars": 10,
- 							"step": 1,
- 							"max": 1000000,
- 							"label": {
- 								"de": "- Other",
- 								"en": "- Other"
- 							},
- 							"suffix": {
- 								"de": "Mio €",
- 								"en": "MM €"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 3,
- 							"col_span_control": 2
- 						},
- 						{
- 							"name": "restrictedTextSum",
- 							"type": "javascript-block",
- 							"col_span_control": 1,
- 							"js_block_strings": {
- 								"InpMain": "st4_mezzanine_volbysect",
- 								"SummandNames": "\"st4_mezzanine_volbysect_energy\", \"st4_mezzanine_volbysect_materials\", \"st4_mezzanine_volbysect_industrials\", \"st4_mezzanine_volbysect_consumer_disc\", \"st4_mezzanine_volbysect_consumer_stap\", \"st4_mezzanine_volbysect_healthcare\", \"st4_mezzanine_volbysect_financials\", \"st4_mezzanine_volbysect_information_tech\", \"st4_mezzanine_volbysect_comunication_svc\", \"st4_mezzanine_volbysect_utilities\", \"st4_mezzanine_volbysect_real_estate\", \"st4_mezzanine_volbysect_other\""
- 							},
- 							"js_block_translations": {
- 								"msg": {
- 									"de": "Addiert sicht nicht auf. Trotzdem weiter?",
- 									"en": "Does not add up. Continue?"
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"font_size": 90,
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
  								}
  							}
- 						}
- 					],
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {},
- 							"box_style": {
- 								"margin": "0 0 0 2rem"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
  						},
- 						"mobile": {
- 							"grid_container_style": {},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
- 				},
- 				{
- 					"bottom_vspacers": 1,
- 					"columns": 1,
- 					"inputs": [
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Should next three add up to 100%?",
- 								"en": "Should next three add up to 100%?"
+ 								"de": "\u003cb\u003eSub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed\u003c/b\u003e",
+ 								"en": "\u003cb\u003eSub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed\u003c/b\u003e"
  							},
  							"col_span": 1,
- 							"col_span_label": 1
- 						}
- 					]
- 				},
- 				{
- 					"bottom_vspacers": 2,
- 					"columns": 1,
- 					"inputs": [
- 						{
- 							"name": "st4_mezzanine_esg",
- 							"type": "range",
- 							"step": 3,
- 							"min": 3,
- 							"max": 21,
- 							"label": {
- 								"de": "\u003cb\u003eShare ESG KPIs\u003c/b\u003e \u003cbr\u003eWhat is the share of new deals (at Fair Market Value) with explicit ESG targets in the credit documentation?",
- 								"en": "\u003cb\u003eShare ESG KPIs\u003c/b\u003e \u003cbr\u003eWhat is the share of new deals (at Fair Market Value) with explicit ESG targets in the credit documentation?"
- 							},
- 							"suffix": {
- 								"de": "%",
- 								"en": "%"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 2,
- 							"col_span_control": 1
- 						}
- 					],
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {},
- 							"box_style": {
- 								"width_max": "80%"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"font_size": 90,
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
- 						"mobile": {
- 							"grid_container_style": {},
- 							"box_style": {
- 								"width_max": "none"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
- 				},
- 				{
- 					"bottom_vspacers": 2,
- 					"columns": 1,
- 					"inputs": [
  						{
- 							"name": "st4_mezzanine_esgratch",
- 							"type": "range",
- 							"step": 3,
- 							"min": 3,
- 							"max": 21,
+ 							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eShare ESG ratchets\u003c/b\u003e \u003cbr\u003e What is the share of new deals (at Fair Market Value) with ESG ratchets?",
- 								"en": "\u003cb\u003eShare ESG ratchets\u003c/b\u003e \u003cbr\u003e What is the share of new deals (at Fair Market Value) with ESG ratchets?"
- 							},
- 							"suffix": {
- 								"de": "%",
- 								"en": "%"
+ 								"de": "\u003cb\u003eMez\u0026shy;za\u0026shy;nine / PIK / Other\u003c/b\u003e",
+ 								"en": "\u003cb\u003eMez\u0026shy;za\u0026shy;nine / PIK / Other\u003c/b\u003e"
  							},
  							"col_span": 1,
- 							"col_span_label": 2,
- 							"col_span_control": 1
- 						}
- 					],
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {},
- 							"box_style": {
- 								"width_max": "80%"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"font_size": 90,
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
- 						"mobile": {
- 							"grid_container_style": {},
- 							"box_style": {
- 								"width_max": "none"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
- 				},
- 				{
- 					"bottom_vspacers": 2,
- 					"columns": 1,
- 					"inputs": [
  						{
- 							"name": "st4_mezzanine_esg15degrees",
+ 							"name": "st1_esg15degrees",
  							"type": "range",
  							"step": 3,
  							"min": 3,
@@ -4487,33 +4854,118 @@
  								"de": "\u003cb\u003eShare 1.5°C target\u003c/b\u003e \u003cbr\u003e What is the share of new deals (at Fair Market Value) where the creditor explicitly states a strategy to add to the 1.5°C target?",
  								"en": "\u003cb\u003eShare 1.5°C target\u003c/b\u003e \u003cbr\u003e What is the share of new deals (at Fair Market Value) where the creditor explicitly states a strategy to add to the 1.5°C target?"
  							},
- 							"suffix": {
- 								"de": "%",
- 								"en": "%"
+ 							"col_span": 5,
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
  							},
- 							"col_span": 1,
- 							"col_span_label": 2,
- 							"col_span_control": 1
- 						}
- 					],
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {},
- 							"box_style": {
- 								"width_max": "80%"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"width_max": "90%"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
- 						"mobile": {
- 							"grid_container_style": {},
- 							"box_style": {
- 								"width_max": "none"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
+ 						{
+ 							"name": "st2_esg15degrees",
+ 							"type": "range",
+ 							"step": 3,
+ 							"min": 3,
+ 							"max": 21,
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"width_max": "90%"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st3_esg15degrees",
+ 							"type": "range",
+ 							"step": 3,
+ 							"min": 3,
+ 							"max": 21,
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"width_max": "90%"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st4_esg15degrees",
+ 							"type": "range",
+ 							"step": 3,
+ 							"min": 3,
+ 							"max": 21,
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"width_max": "90%"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						}
- 					}
+ 					]
  				}
  			]
  		},
@@ -6256,7 +6708,7 @@
  								"de": "What UN SDGs are supported by your in\u0026shy;vest\u0026shy;ment strategy?",
  								"en": "What UN SDGs are supported by your in\u0026shy;vest\u0026shy;ment strategy?"
  							},
- 							"col_span": 1,
+ 							"col_span": 2,
  							"col_span_label": 1
  						}
  					]
@@ -6272,7 +6724,7 @@
  								"de": "(1) No Poverty",
  								"en": "(1) No Poverty"
  							},
- 							"col_span": 1,
+ 							"col_span": 2,
  							"col_span_label": 1,
  							"col_span_control": 4,
  							"style_label": {
@@ -6300,7 +6752,7 @@
  								"de": "(2) Zero Hunger",
  								"en": "(2) Zero Hunger"
  							},
- 							"col_span": 1,
+ 							"col_span": 2,
  							"col_span_label": 1,
  							"col_span_control": 4,
  							"style_label": {
@@ -6328,7 +6780,7 @@
  								"de": "(3) Good Health and Well-Being",
  								"en": "(3) Good Health and Well-Being"
  							},
- 							"col_span": 1,
+ 							"col_span": 2,
  							"col_span_label": 1,
  							"col_span_control": 4,
  							"style_label": {
@@ -6356,7 +6808,7 @@
  								"de": "(4) Quality Education",
  								"en": "(4) Quality Education"
  							},
- 							"col_span": 1,
+ 							"col_span": 2,
  							"col_span_label": 1,
  							"col_span_control": 4,
  							"style_label": {
@@ -6384,7 +6836,7 @@
  								"de": "(5) Gender Equality",
  								"en": "(5) Gender Equality"
  							},
- 							"col_span": 1,
+ 							"col_span": 2,
  							"col_span_label": 1,
  							"col_span_control": 4,
  							"style_label": {
@@ -6412,7 +6864,7 @@
  								"de": "(6) Clean Water and Sanitation",
  								"en": "(6) Clean Water and Sanitation"
  							},
- 							"col_span": 1,
+ 							"col_span": 2,
  							"col_span_label": 1,
  							"col_span_control": 4,
  							"style_label": {
@@ -6440,7 +6892,7 @@
  								"de": "(7) Affordable and Clean Energy",
  								"en": "(7) Affordable and Clean Energy"
  							},
- 							"col_span": 1,
+ 							"col_span": 2,
  							"col_span_label": 1,
  							"col_span_control": 4,
  							"style_label": {
@@ -6468,7 +6920,7 @@
  								"de": "(8) Decent Work and Eco\u0026shy;nom\u0026shy;ic Growth",
  								"en": "(8) Decent Work and Eco\u0026shy;nom\u0026shy;ic Growth"
  							},
- 							"col_span": 1,
+ 							"col_span": 2,
  							"col_span_label": 1,
  							"col_span_control": 4,
  							"style_label": {
@@ -6496,7 +6948,7 @@
  								"de": "(9) Industry Innovation and Infrastructure",
  								"en": "(9) Industry Innovation and Infrastructure"
  							},
- 							"col_span": 1,
+ 							"col_span": 2,
  							"col_span_label": 1,
  							"col_span_control": 4,
  							"style_label": {
@@ -6524,7 +6976,7 @@
  								"de": "(10) Re\u0026shy;duce Inequality",
  								"en": "(10) Re\u0026shy;duce Inequality"
  							},
- 							"col_span": 1,
+ 							"col_span": 2,
  							"col_span_label": 1,
  							"col_span_control": 4,
  							"style_label": {
@@ -6552,7 +7004,7 @@
  								"de": "(11) Sustainable Cities and Communities",
  								"en": "(11) Sustainable Cities and Communities"
  							},
- 							"col_span": 1,
+ 							"col_span": 2,
  							"col_span_label": 1,
  							"col_span_control": 4,
  							"style_label": {
@@ -6580,7 +7032,7 @@
  								"de": "(12) Responsible Consumption and Production",
  								"en": "(12) Responsible Consumption and Production"
  							},
- 							"col_span": 1,
+ 							"col_span": 2,
  							"col_span_label": 1,
  							"col_span_control": 4,
  							"style_label": {
@@ -6608,7 +7060,7 @@
  								"de": "(13) Climate Action",
  								"en": "(13) Climate Action"
  							},
- 							"col_span": 1,
+ 							"col_span": 2,
  							"col_span_label": 1,
  							"col_span_control": 4,
  							"style_label": {
@@ -6636,7 +7088,7 @@
  								"de": "(14) Life be\u0026shy;low Water",
  								"en": "(14) Life be\u0026shy;low Water"
  							},
- 							"col_span": 1,
+ 							"col_span": 2,
  							"col_span_label": 1,
  							"col_span_control": 4,
  							"style_label": {
@@ -6664,7 +7116,7 @@
  								"de": "(15) Life on Land",
  								"en": "(15) Life on Land"
  							},
- 							"col_span": 1,
+ 							"col_span": 2,
  							"col_span_label": 1,
  							"col_span_control": 4,
  							"style_label": {
@@ -6692,7 +7144,7 @@
  								"de": "(16) Peace, Justice and strong Institutions",
  								"en": "(16) Peace, Justice and strong Institutions"
  							},
- 							"col_span": 1,
+ 							"col_span": 2,
  							"col_span_label": 1,
  							"col_span_control": 4,
  							"style_label": {
@@ -6720,7 +7172,7 @@
  								"de": "(17) Partnership for the Goals",
  								"en": "(17) Partnership for the Goals"
  							},
- 							"col_span": 1,
+ 							"col_span": 2,
  							"col_span_label": 1,
  							"col_span_control": 4,
  							"style_label": {
@@ -6744,74 +7196,6 @@
  					]
  				}
  			]
- 		},
- 		{
- 			"label": {
- 				"de": "dyn page label A",
- 				"en": "dyn page label A"
- 			},
- 			"description": {
- 				"de": "",
- 				"en": ""
- 			},
- 			"short": {
- 				"de": "dyn A",
- 				"en": "dyn A"
- 			},
- 			"style": {
- 				"desktop": {
- 					"grid_container_style": {},
- 					"box_style": {
- 						"width_max": "42rem"
- 					},
- 					"grid_item_style": {},
- 					"text_style": {}
- 				},
- 				"mobile": {
- 					"grid_container_style": {},
- 					"box_style": {
- 						"width_max": "calc(100% - 1.2rem)"
- 					},
- 					"grid_item_style": {},
- 					"text_style": {}
- 				}
- 			},
- 			"finished": "0001-01-01T00:00:00Z",
- 			"generator_func_name": "pds01"
- 		},
- 		{
- 			"label": {
- 				"de": "dyn page label B",
- 				"en": "dyn page label B"
- 			},
- 			"description": {
- 				"de": "",
- 				"en": ""
- 			},
- 			"short": {
- 				"de": "dyn B",
- 				"en": "dyn B"
- 			},
- 			"style": {
- 				"desktop": {
- 					"grid_container_style": {},
- 					"box_style": {
- 						"width_max": "42rem"
- 					},
- 					"grid_item_style": {},
- 					"text_style": {}
- 				},
- 				"mobile": {
- 					"grid_container_style": {},
- 					"box_style": {
- 						"width_max": "calc(100% - 1.2rem)"
- 					},
- 					"grid_item_style": {},
- 					"text_style": {}
- 				}
- 			},
- 			"finished": "0001-01-01T00:00:00Z",
- 			"generator_func_name": "pds01"
  		},
  		{
  			"label": {

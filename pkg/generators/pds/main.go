@@ -112,19 +112,30 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 			mode2mod := mCh2
 			mode2mod.GroupBottomSpacers = 3
-			multipleChoiceSingleRow(qst.WrapPageT(page), "teamsize", lblMain, mode2mod)
+			radiosSingleRow(qst.WrapPageT(page), "teamsize", lblMain, mode2mod)
 		}
 
 		// gr3
-		multipleChoiceRow(qst.WrapPageT(page))
+		{
+			lblMain := trl.S{
+				"en": `Which asset classes do you invest in?
+			`,
+				"de": `Wählen Sie Ihre Assetklassen.
+			`,
+			}
+			checkBoxRow(qst.WrapPageT(page), lblMain, assetClassesInputs, assetClassesLabels, chb01)
+		}
 
 		// gr4
 		{
 			lblMain := trl.S{
-				"en": `Strategy -  shouldn't this be checkboxes? See 'asset classes' below`,
-				"de": `Strategie - shouldn't this be checkboxes? See 'asset classes' below`,
+				"en": `Your  strategies`,
+				"de": `Ihre Strategie`,
 			}
-			multipleChoiceSingleRow(qst.WrapPageT(page), "strategy", lblMain, mCh1)
+
+			checkBoxRow(qst.WrapPageT(page), lblMain, trancheTypeNames, allLbls["tranche-types"], chb02)
+
+			// radiosSingleRow(qst.WrapPageT(page), "strategy", lblMain, mCh1)
 		}
 
 	} // page0a
@@ -189,13 +200,12 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				}
 			}
 
-			// trancheTypeLbl := allLbls["tranche-types"][idx1]
 			lblNumber := trl.S{
 				"en": "Total number of new deals",
 				"de": "Gesamtzahl neue Abschlüsse",
 			}
+			restrictedText2b(qst.WrapPageT(page), lblNumber, rT1)
 
-			restrictedText(qst.WrapPageT(page), trancheTypeName, lblNumber, rT1)
 			lblDuration := trl.S{
 				"en": "Average time to close a deal in weeks",
 				"de": "Durchschnittl. Zeit bis Abschluss in Wochen",
@@ -466,7 +476,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			// rejected at meeting 2022-11-14
 			// rangePercentage(qst.WrapPageT(page), "esg", esgImportance1, "importance2")
 
-			multipleChoiceSingleRow(qst.WrapPageT(page), "esg_importance1", esgImportance1, mCh3)
+			radiosSingleRow(qst.WrapPageT(page), "esg_importance1", esgImportance1, mCh3)
 		}
 
 		//

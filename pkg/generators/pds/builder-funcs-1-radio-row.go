@@ -19,6 +19,13 @@ type configMC struct {
 }
 
 var (
+	chb01 = configMC{
+		Cols: 3,
+	}
+	chb02 = configMC{
+		Cols: 4,
+	}
+
 	mCh1 = configMC{
 		KeyLabels:   "tranche-types",
 		Cols:        8,
@@ -56,11 +63,33 @@ var (
 	}
 )
 
+var assetClassesInputs = []string{
+	"ac1_corplending",
+	"ac2_realestate",
+	"ac3_infrastruct",
+}
+
+var assetClassesLabels = []trl.S{
+	{
+		"en": "Corporate lending",
+		"de": "Corporate lending",
+	},
+	{
+		"en": "Real estate debt",
+		"de": "Real estate debt",
+	},
+	{
+		"en": "Infrastructure Debt",
+		"de": "Infrastructure Debt",
+	},
+}
+
+// strategy, strategies
 var trancheTypeNames = []string{
-	"senior",
-	"unit",       // unitranche
-	"subord",     // subordinated
-	"mezzpiketc", // "mezzanine_pik_other",
+	"st1_senior",
+	"st2_unittranche",  // unitranche
+	"st3_subordinated", // subordinated
+	"st4_mezzanine",    // "mezzanine_pik_other",
 }
 
 var allLbls = map[string][]trl.S{
@@ -169,8 +198,9 @@ var lblDont = trl.S{
 	"en": "Don´t know",
 }
 
-// multipleChoiceSingleRow - five shades - and no answer
-func multipleChoiceSingleRow(
+// radiosSingleRow - five shades - and no answer
+// previously "multipleChoice"
+func radiosSingleRow(
 	page *qst.WrappedPageT,
 	nm string,
 	lblMain trl.S,

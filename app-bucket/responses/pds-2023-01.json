@@ -18,7 +18,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "6147b3304e9fe0d035836befc5d2ab0db2e547ef7a36fdb9f226746b9f305900",
+ 	"md_5": "d8a0106f253345526f4395d411cbf17a09b2a33ee557e29e2381b9ab4e519a57",
  	"lang_codes": [
  		"en"
  	],
@@ -358,8 +358,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Wählen Sie Ihre Assetklassen.\u003cbr\u003e\n\t\t\t\tWir fragen für jede Anlageklasse die gleiche Serie von Fragen.\n\t\t\t",
- 								"en": "Which asset classes do you invest in?\u003cbr\u003e \n\t\t\t\tWe ask a similar range of questions for each selected asset class.\n\t\t\t"
+ 								"de": "Wählen Sie Ihre Assetklassen.\n\t\t\t",
+ 								"en": "Which asset classes do you invest in?\n\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -371,7 +371,7 @@
  					"columns": 3,
  					"inputs": [
  						{
- 							"name": "real_estate",
+ 							"name": "ac_corplending",
  							"type": "checkbox",
  							"label": {
  								"de": "Corporate lending",
@@ -422,7 +422,7 @@
  							}
  						},
  						{
- 							"name": "xx",
+ 							"name": "ac_realestate",
  							"type": "checkbox",
  							"label": {
  								"de": "Real estate debt",
@@ -473,7 +473,7 @@
  							}
  						},
  						{
- 							"name": "corp_lending",
+ 							"name": "ac_infrastruct",
  							"type": "checkbox",
  							"label": {
  								"de": "Infrastructure Debt",
@@ -532,8 +532,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Strategie - shouldn't this be checkboxes? See 'asset classes' be\u0026shy;low",
- 								"en": "Strategy -  shouldn't this be checkboxes? See 'asset classes' be\u0026shy;low"
+ 								"de": "Ihre Strategie",
+ 								"en": "Your  strategies"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -542,19 +542,18 @@
  				},
  				{
  					"bottom_vspacers": 3,
- 					"columns": 8,
+ 					"columns": 4,
  					"inputs": [
  						{
- 							"name": "strategy",
- 							"type": "radio",
+ 							"name": "st_senior",
+ 							"type": "checkbox",
  							"label": {
  								"de": "Senior",
  								"en": "Senior"
  							},
- 							"col_span": 2,
+ 							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"value_radio": "1",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -597,16 +596,15 @@
  							}
  						},
  						{
- 							"name": "strategy",
- 							"type": "radio",
+ 							"name": "st_unittranche",
+ 							"type": "checkbox",
  							"label": {
  								"de": "Unitranche",
  								"en": "Unitranche"
  							},
- 							"col_span": 2,
+ 							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"value_radio": "2",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -649,16 +647,15 @@
  							}
  						},
  						{
- 							"name": "strategy",
- 							"type": "radio",
+ 							"name": "st_subordinated",
+ 							"type": "checkbox",
  							"label": {
  								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
  								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
- 							"col_span": 2,
+ 							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"value_radio": "3",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -701,16 +698,15 @@
  							}
  						},
  						{
- 							"name": "strategy",
- 							"type": "radio",
+ 							"name": "st_mezzanine",
+ 							"type": "checkbox",
  							"label": {
  								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / Other",
  								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / Other"
  							},
- 							"col_span": 2,
+ 							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"value_radio": "4",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -839,7 +835,7 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "senior_numdeals_main",
+ 							"name": "st_senior_numdeals_main",
  							"type": "number",
  							"max_chars": 12,
  							"step": 1,
@@ -890,7 +886,7 @@
  							}
  						},
  						{
- 							"name": "senior_numdeals_low",
+ 							"name": "st_senior_numdeals_low",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -908,7 +904,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "senior_numdeals_mid_upper",
+ 							"name": "st_senior_numdeals_mid_upper",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -926,7 +922,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "senior_numdeals_other",
+ 							"name": "st_senior_numdeals_other",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -948,8 +944,8 @@
  							"type": "javascript-block",
  							"col_span_control": 1,
  							"js_block_strings": {
- 								"InpMain": "senior_numdeals",
- 								"SummandNames": "\"senior_numdeals_low\", \"senior_numdeals_mid_upper\", \"senior_numdeals_other\""
+ 								"InpMain": "st_senior_numdeals",
+ 								"SummandNames": "\"st_senior_numdeals_low\", \"st_senior_numdeals_mid_upper\", \"st_senior_numdeals_other\""
  							},
  							"js_block_translations": {
  								"msg": {
@@ -981,7 +977,7 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "senior_closing_time",
+ 							"name": "st_senior_closing_time",
  							"type": "range",
  							"step": 3,
  							"min": 3,
@@ -1023,7 +1019,7 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "senior_volbysegm_main",
+ 							"name": "st_senior_volbysegm_main",
  							"type": "number",
  							"max_chars": 12,
  							"step": 1,
@@ -1074,7 +1070,7 @@
  							}
  						},
  						{
- 							"name": "senior_volbysegm_low",
+ 							"name": "st_senior_volbysegm_low",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -1092,7 +1088,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "senior_volbysegm_mid",
+ 							"name": "st_senior_volbysegm_mid",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -1110,7 +1106,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "senior_volbysegm_upper",
+ 							"name": "st_senior_volbysegm_upper",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -1132,8 +1128,8 @@
  							"type": "javascript-block",
  							"col_span_control": 1,
  							"js_block_strings": {
- 								"InpMain": "senior_volbysegm",
- 								"SummandNames": "\"senior_volbysegm_low\", \"senior_volbysegm_mid\", \"senior_volbysegm_upper\""
+ 								"InpMain": "st_senior_volbysegm",
+ 								"SummandNames": "\"st_senior_volbysegm_low\", \"st_senior_volbysegm_mid\", \"st_senior_volbysegm_upper\""
  							},
  							"js_block_translations": {
  								"msg": {
@@ -1165,7 +1161,7 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "senior_volbyreg_main",
+ 							"name": "st_senior_volbyreg_main",
  							"type": "number",
  							"max_chars": 12,
  							"step": 1,
@@ -1216,7 +1212,7 @@
  							}
  						},
  						{
- 							"name": "senior_volbyreg_uk",
+ 							"name": "st_senior_volbyreg_uk",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -1234,7 +1230,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "senior_volbyreg_france",
+ 							"name": "st_senior_volbyreg_france",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -1252,7 +1248,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "senior_volbyreg_dach",
+ 							"name": "st_senior_volbyreg_dach",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -1270,7 +1266,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "senior_volbyreg_benelux",
+ 							"name": "st_senior_volbyreg_benelux",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -1288,7 +1284,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "senior_volbyreg_nordics",
+ 							"name": "st_senior_volbyreg_nordics",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -1306,7 +1302,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "senior_volbyreg_southern_eu",
+ 							"name": "st_senior_volbyreg_southern_eu",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -1324,7 +1320,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "senior_volbyreg_other",
+ 							"name": "st_senior_volbyreg_other",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -1346,8 +1342,8 @@
  							"type": "javascript-block",
  							"col_span_control": 1,
  							"js_block_strings": {
- 								"InpMain": "senior_volbyreg",
- 								"SummandNames": "\"senior_volbyreg_uk\", \"senior_volbyreg_france\", \"senior_volbyreg_dach\", \"senior_volbyreg_benelux\", \"senior_volbyreg_nordics\", \"senior_volbyreg_southern_eu\", \"senior_volbyreg_other\""
+ 								"InpMain": "st_senior_volbyreg",
+ 								"SummandNames": "\"st_senior_volbyreg_uk\", \"st_senior_volbyreg_france\", \"st_senior_volbyreg_dach\", \"st_senior_volbyreg_benelux\", \"st_senior_volbyreg_nordics\", \"st_senior_volbyreg_southern_eu\", \"st_senior_volbyreg_other\""
  							},
  							"js_block_translations": {
  								"msg": {
@@ -1379,7 +1375,7 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "senior_volbysect_main",
+ 							"name": "st_senior_volbysect_main",
  							"type": "number",
  							"max_chars": 12,
  							"step": 1,
@@ -1430,7 +1426,7 @@
  							}
  						},
  						{
- 							"name": "senior_volbysect_energy",
+ 							"name": "st_senior_volbysect_energy",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -1448,7 +1444,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "senior_volbysect_materials",
+ 							"name": "st_senior_volbysect_materials",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -1466,7 +1462,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "senior_volbysect_industrials",
+ 							"name": "st_senior_volbysect_industrials",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -1484,7 +1480,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "senior_volbysect_consumer_disc",
+ 							"name": "st_senior_volbysect_consumer_disc",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -1502,7 +1498,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "senior_volbysect_consumer_stap",
+ 							"name": "st_senior_volbysect_consumer_stap",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -1520,7 +1516,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "senior_volbysect_healthcare",
+ 							"name": "st_senior_volbysect_healthcare",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -1538,7 +1534,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "senior_volbysect_financials",
+ 							"name": "st_senior_volbysect_financials",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -1556,7 +1552,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "senior_volbysect_information_tech",
+ 							"name": "st_senior_volbysect_information_tech",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -1574,7 +1570,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "senior_volbysect_comunication_svc",
+ 							"name": "st_senior_volbysect_comunication_svc",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -1592,7 +1588,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "senior_volbysect_utilities",
+ 							"name": "st_senior_volbysect_utilities",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -1610,7 +1606,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "senior_volbysect_real_estate",
+ 							"name": "st_senior_volbysect_real_estate",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -1628,7 +1624,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "senior_volbysect_other",
+ 							"name": "st_senior_volbysect_other",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -1650,8 +1646,8 @@
  							"type": "javascript-block",
  							"col_span_control": 1,
  							"js_block_strings": {
- 								"InpMain": "senior_volbysect",
- 								"SummandNames": "\"senior_volbysect_energy\", \"senior_volbysect_materials\", \"senior_volbysect_industrials\", \"senior_volbysect_consumer_disc\", \"senior_volbysect_consumer_stap\", \"senior_volbysect_healthcare\", \"senior_volbysect_financials\", \"senior_volbysect_information_tech\", \"senior_volbysect_comunication_svc\", \"senior_volbysect_utilities\", \"senior_volbysect_real_estate\", \"senior_volbysect_other\""
+ 								"InpMain": "st_senior_volbysect",
+ 								"SummandNames": "\"st_senior_volbysect_energy\", \"st_senior_volbysect_materials\", \"st_senior_volbysect_industrials\", \"st_senior_volbysect_consumer_disc\", \"st_senior_volbysect_consumer_stap\", \"st_senior_volbysect_healthcare\", \"st_senior_volbysect_financials\", \"st_senior_volbysect_information_tech\", \"st_senior_volbysect_comunication_svc\", \"st_senior_volbysect_utilities\", \"st_senior_volbysect_real_estate\", \"st_senior_volbysect_other\""
  							},
  							"js_block_translations": {
  								"msg": {
@@ -1698,7 +1694,7 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "senior_esg",
+ 							"name": "st_senior_esg",
  							"type": "range",
  							"step": 3,
  							"min": 3,
@@ -1740,7 +1736,7 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "senior_esgratch",
+ 							"name": "st_senior_esgratch",
  							"type": "range",
  							"step": 3,
  							"min": 3,
@@ -1782,7 +1778,7 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "senior_esg15degrees",
+ 							"name": "st_senior_esg15degrees",
  							"type": "range",
  							"step": 3,
  							"min": 3,
@@ -1854,7 +1850,7 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "unit_numdeals_main",
+ 							"name": "st_unittranche_numdeals_main",
  							"type": "number",
  							"max_chars": 12,
  							"step": 1,
@@ -1905,7 +1901,7 @@
  							}
  						},
  						{
- 							"name": "unit_numdeals_low",
+ 							"name": "st_unittranche_numdeals_low",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -1923,7 +1919,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "unit_numdeals_mid_upper",
+ 							"name": "st_unittranche_numdeals_mid_upper",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -1941,7 +1937,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "unit_numdeals_other",
+ 							"name": "st_unittranche_numdeals_other",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -1963,8 +1959,8 @@
  							"type": "javascript-block",
  							"col_span_control": 1,
  							"js_block_strings": {
- 								"InpMain": "unit_numdeals",
- 								"SummandNames": "\"unit_numdeals_low\", \"unit_numdeals_mid_upper\", \"unit_numdeals_other\""
+ 								"InpMain": "st_unittranche_numdeals",
+ 								"SummandNames": "\"st_unittranche_numdeals_low\", \"st_unittranche_numdeals_mid_upper\", \"st_unittranche_numdeals_other\""
  							},
  							"js_block_translations": {
  								"msg": {
@@ -1996,7 +1992,7 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "unit_closing_time",
+ 							"name": "st_unittranche_closing_time",
  							"type": "range",
  							"step": 3,
  							"min": 3,
@@ -2038,7 +2034,7 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "unit_volbysegm_main",
+ 							"name": "st_unittranche_volbysegm_main",
  							"type": "number",
  							"max_chars": 12,
  							"step": 1,
@@ -2089,7 +2085,7 @@
  							}
  						},
  						{
- 							"name": "unit_volbysegm_low",
+ 							"name": "st_unittranche_volbysegm_low",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -2107,7 +2103,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "unit_volbysegm_mid",
+ 							"name": "st_unittranche_volbysegm_mid",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -2125,7 +2121,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "unit_volbysegm_upper",
+ 							"name": "st_unittranche_volbysegm_upper",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -2147,8 +2143,8 @@
  							"type": "javascript-block",
  							"col_span_control": 1,
  							"js_block_strings": {
- 								"InpMain": "unit_volbysegm",
- 								"SummandNames": "\"unit_volbysegm_low\", \"unit_volbysegm_mid\", \"unit_volbysegm_upper\""
+ 								"InpMain": "st_unittranche_volbysegm",
+ 								"SummandNames": "\"st_unittranche_volbysegm_low\", \"st_unittranche_volbysegm_mid\", \"st_unittranche_volbysegm_upper\""
  							},
  							"js_block_translations": {
  								"msg": {
@@ -2180,7 +2176,7 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "unit_volbyreg_main",
+ 							"name": "st_unittranche_volbyreg_main",
  							"type": "number",
  							"max_chars": 12,
  							"step": 1,
@@ -2231,7 +2227,7 @@
  							}
  						},
  						{
- 							"name": "unit_volbyreg_uk",
+ 							"name": "st_unittranche_volbyreg_uk",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -2249,7 +2245,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "unit_volbyreg_france",
+ 							"name": "st_unittranche_volbyreg_france",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -2267,7 +2263,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "unit_volbyreg_dach",
+ 							"name": "st_unittranche_volbyreg_dach",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -2285,7 +2281,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "unit_volbyreg_benelux",
+ 							"name": "st_unittranche_volbyreg_benelux",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -2303,7 +2299,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "unit_volbyreg_nordics",
+ 							"name": "st_unittranche_volbyreg_nordics",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -2321,7 +2317,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "unit_volbyreg_southern_eu",
+ 							"name": "st_unittranche_volbyreg_southern_eu",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -2339,7 +2335,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "unit_volbyreg_other",
+ 							"name": "st_unittranche_volbyreg_other",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -2361,8 +2357,8 @@
  							"type": "javascript-block",
  							"col_span_control": 1,
  							"js_block_strings": {
- 								"InpMain": "unit_volbyreg",
- 								"SummandNames": "\"unit_volbyreg_uk\", \"unit_volbyreg_france\", \"unit_volbyreg_dach\", \"unit_volbyreg_benelux\", \"unit_volbyreg_nordics\", \"unit_volbyreg_southern_eu\", \"unit_volbyreg_other\""
+ 								"InpMain": "st_unittranche_volbyreg",
+ 								"SummandNames": "\"st_unittranche_volbyreg_uk\", \"st_unittranche_volbyreg_france\", \"st_unittranche_volbyreg_dach\", \"st_unittranche_volbyreg_benelux\", \"st_unittranche_volbyreg_nordics\", \"st_unittranche_volbyreg_southern_eu\", \"st_unittranche_volbyreg_other\""
  							},
  							"js_block_translations": {
  								"msg": {
@@ -2394,7 +2390,7 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "unit_volbysect_main",
+ 							"name": "st_unittranche_volbysect_main",
  							"type": "number",
  							"max_chars": 12,
  							"step": 1,
@@ -2445,7 +2441,7 @@
  							}
  						},
  						{
- 							"name": "unit_volbysect_energy",
+ 							"name": "st_unittranche_volbysect_energy",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -2463,7 +2459,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "unit_volbysect_materials",
+ 							"name": "st_unittranche_volbysect_materials",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -2481,7 +2477,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "unit_volbysect_industrials",
+ 							"name": "st_unittranche_volbysect_industrials",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -2499,7 +2495,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "unit_volbysect_consumer_disc",
+ 							"name": "st_unittranche_volbysect_consumer_disc",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -2517,7 +2513,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "unit_volbysect_consumer_stap",
+ 							"name": "st_unittranche_volbysect_consumer_stap",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -2535,7 +2531,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "unit_volbysect_healthcare",
+ 							"name": "st_unittranche_volbysect_healthcare",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -2553,7 +2549,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "unit_volbysect_financials",
+ 							"name": "st_unittranche_volbysect_financials",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -2571,7 +2567,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "unit_volbysect_information_tech",
+ 							"name": "st_unittranche_volbysect_information_tech",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -2589,7 +2585,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "unit_volbysect_comunication_svc",
+ 							"name": "st_unittranche_volbysect_comunication_svc",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -2607,7 +2603,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "unit_volbysect_utilities",
+ 							"name": "st_unittranche_volbysect_utilities",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -2625,7 +2621,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "unit_volbysect_real_estate",
+ 							"name": "st_unittranche_volbysect_real_estate",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -2643,7 +2639,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "unit_volbysect_other",
+ 							"name": "st_unittranche_volbysect_other",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -2665,8 +2661,8 @@
  							"type": "javascript-block",
  							"col_span_control": 1,
  							"js_block_strings": {
- 								"InpMain": "unit_volbysect",
- 								"SummandNames": "\"unit_volbysect_energy\", \"unit_volbysect_materials\", \"unit_volbysect_industrials\", \"unit_volbysect_consumer_disc\", \"unit_volbysect_consumer_stap\", \"unit_volbysect_healthcare\", \"unit_volbysect_financials\", \"unit_volbysect_information_tech\", \"unit_volbysect_comunication_svc\", \"unit_volbysect_utilities\", \"unit_volbysect_real_estate\", \"unit_volbysect_other\""
+ 								"InpMain": "st_unittranche_volbysect",
+ 								"SummandNames": "\"st_unittranche_volbysect_energy\", \"st_unittranche_volbysect_materials\", \"st_unittranche_volbysect_industrials\", \"st_unittranche_volbysect_consumer_disc\", \"st_unittranche_volbysect_consumer_stap\", \"st_unittranche_volbysect_healthcare\", \"st_unittranche_volbysect_financials\", \"st_unittranche_volbysect_information_tech\", \"st_unittranche_volbysect_comunication_svc\", \"st_unittranche_volbysect_utilities\", \"st_unittranche_volbysect_real_estate\", \"st_unittranche_volbysect_other\""
  							},
  							"js_block_translations": {
  								"msg": {
@@ -2713,7 +2709,7 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "unit_esg",
+ 							"name": "st_unittranche_esg",
  							"type": "range",
  							"step": 3,
  							"min": 3,
@@ -2755,7 +2751,7 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "unit_esgratch",
+ 							"name": "st_unittranche_esgratch",
  							"type": "range",
  							"step": 3,
  							"min": 3,
@@ -2797,7 +2793,7 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "unit_esg15degrees",
+ 							"name": "st_unittranche_esg15degrees",
  							"type": "range",
  							"step": 3,
  							"min": 3,
@@ -2869,7 +2865,7 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "subord_numdeals_main",
+ 							"name": "st_subordinated_numdeals_main",
  							"type": "number",
  							"max_chars": 12,
  							"step": 1,
@@ -2920,7 +2916,7 @@
  							}
  						},
  						{
- 							"name": "subord_numdeals_low",
+ 							"name": "st_subordinated_numdeals_low",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -2938,7 +2934,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "subord_numdeals_mid_upper",
+ 							"name": "st_subordinated_numdeals_mid_upper",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -2956,7 +2952,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "subord_numdeals_other",
+ 							"name": "st_subordinated_numdeals_other",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -2978,8 +2974,8 @@
  							"type": "javascript-block",
  							"col_span_control": 1,
  							"js_block_strings": {
- 								"InpMain": "subord_numdeals",
- 								"SummandNames": "\"subord_numdeals_low\", \"subord_numdeals_mid_upper\", \"subord_numdeals_other\""
+ 								"InpMain": "st_subordinated_numdeals",
+ 								"SummandNames": "\"st_subordinated_numdeals_low\", \"st_subordinated_numdeals_mid_upper\", \"st_subordinated_numdeals_other\""
  							},
  							"js_block_translations": {
  								"msg": {
@@ -3011,7 +3007,7 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "subord_closing_time",
+ 							"name": "st_subordinated_closing_time",
  							"type": "range",
  							"step": 3,
  							"min": 3,
@@ -3053,7 +3049,7 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "subord_volbysegm_main",
+ 							"name": "st_subordinated_volbysegm_main",
  							"type": "number",
  							"max_chars": 12,
  							"step": 1,
@@ -3104,7 +3100,7 @@
  							}
  						},
  						{
- 							"name": "subord_volbysegm_low",
+ 							"name": "st_subordinated_volbysegm_low",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -3122,7 +3118,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "subord_volbysegm_mid",
+ 							"name": "st_subordinated_volbysegm_mid",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -3140,7 +3136,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "subord_volbysegm_upper",
+ 							"name": "st_subordinated_volbysegm_upper",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -3162,8 +3158,8 @@
  							"type": "javascript-block",
  							"col_span_control": 1,
  							"js_block_strings": {
- 								"InpMain": "subord_volbysegm",
- 								"SummandNames": "\"subord_volbysegm_low\", \"subord_volbysegm_mid\", \"subord_volbysegm_upper\""
+ 								"InpMain": "st_subordinated_volbysegm",
+ 								"SummandNames": "\"st_subordinated_volbysegm_low\", \"st_subordinated_volbysegm_mid\", \"st_subordinated_volbysegm_upper\""
  							},
  							"js_block_translations": {
  								"msg": {
@@ -3195,7 +3191,7 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "subord_volbyreg_main",
+ 							"name": "st_subordinated_volbyreg_main",
  							"type": "number",
  							"max_chars": 12,
  							"step": 1,
@@ -3246,7 +3242,7 @@
  							}
  						},
  						{
- 							"name": "subord_volbyreg_uk",
+ 							"name": "st_subordinated_volbyreg_uk",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -3264,7 +3260,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "subord_volbyreg_france",
+ 							"name": "st_subordinated_volbyreg_france",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -3282,7 +3278,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "subord_volbyreg_dach",
+ 							"name": "st_subordinated_volbyreg_dach",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -3300,7 +3296,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "subord_volbyreg_benelux",
+ 							"name": "st_subordinated_volbyreg_benelux",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -3318,7 +3314,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "subord_volbyreg_nordics",
+ 							"name": "st_subordinated_volbyreg_nordics",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -3336,7 +3332,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "subord_volbyreg_southern_eu",
+ 							"name": "st_subordinated_volbyreg_southern_eu",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -3354,7 +3350,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "subord_volbyreg_other",
+ 							"name": "st_subordinated_volbyreg_other",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -3376,8 +3372,8 @@
  							"type": "javascript-block",
  							"col_span_control": 1,
  							"js_block_strings": {
- 								"InpMain": "subord_volbyreg",
- 								"SummandNames": "\"subord_volbyreg_uk\", \"subord_volbyreg_france\", \"subord_volbyreg_dach\", \"subord_volbyreg_benelux\", \"subord_volbyreg_nordics\", \"subord_volbyreg_southern_eu\", \"subord_volbyreg_other\""
+ 								"InpMain": "st_subordinated_volbyreg",
+ 								"SummandNames": "\"st_subordinated_volbyreg_uk\", \"st_subordinated_volbyreg_france\", \"st_subordinated_volbyreg_dach\", \"st_subordinated_volbyreg_benelux\", \"st_subordinated_volbyreg_nordics\", \"st_subordinated_volbyreg_southern_eu\", \"st_subordinated_volbyreg_other\""
  							},
  							"js_block_translations": {
  								"msg": {
@@ -3409,7 +3405,7 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "subord_volbysect_main",
+ 							"name": "st_subordinated_volbysect_main",
  							"type": "number",
  							"max_chars": 12,
  							"step": 1,
@@ -3460,7 +3456,7 @@
  							}
  						},
  						{
- 							"name": "subord_volbysect_energy",
+ 							"name": "st_subordinated_volbysect_energy",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -3478,7 +3474,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "subord_volbysect_materials",
+ 							"name": "st_subordinated_volbysect_materials",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -3496,7 +3492,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "subord_volbysect_industrials",
+ 							"name": "st_subordinated_volbysect_industrials",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -3514,7 +3510,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "subord_volbysect_consumer_disc",
+ 							"name": "st_subordinated_volbysect_consumer_disc",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -3532,7 +3528,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "subord_volbysect_consumer_stap",
+ 							"name": "st_subordinated_volbysect_consumer_stap",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -3550,7 +3546,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "subord_volbysect_healthcare",
+ 							"name": "st_subordinated_volbysect_healthcare",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -3568,7 +3564,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "subord_volbysect_financials",
+ 							"name": "st_subordinated_volbysect_financials",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -3586,7 +3582,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "subord_volbysect_information_tech",
+ 							"name": "st_subordinated_volbysect_information_tech",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -3604,7 +3600,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "subord_volbysect_comunication_svc",
+ 							"name": "st_subordinated_volbysect_comunication_svc",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -3622,7 +3618,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "subord_volbysect_utilities",
+ 							"name": "st_subordinated_volbysect_utilities",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -3640,7 +3636,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "subord_volbysect_real_estate",
+ 							"name": "st_subordinated_volbysect_real_estate",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -3658,7 +3654,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "subord_volbysect_other",
+ 							"name": "st_subordinated_volbysect_other",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -3680,8 +3676,8 @@
  							"type": "javascript-block",
  							"col_span_control": 1,
  							"js_block_strings": {
- 								"InpMain": "subord_volbysect",
- 								"SummandNames": "\"subord_volbysect_energy\", \"subord_volbysect_materials\", \"subord_volbysect_industrials\", \"subord_volbysect_consumer_disc\", \"subord_volbysect_consumer_stap\", \"subord_volbysect_healthcare\", \"subord_volbysect_financials\", \"subord_volbysect_information_tech\", \"subord_volbysect_comunication_svc\", \"subord_volbysect_utilities\", \"subord_volbysect_real_estate\", \"subord_volbysect_other\""
+ 								"InpMain": "st_subordinated_volbysect",
+ 								"SummandNames": "\"st_subordinated_volbysect_energy\", \"st_subordinated_volbysect_materials\", \"st_subordinated_volbysect_industrials\", \"st_subordinated_volbysect_consumer_disc\", \"st_subordinated_volbysect_consumer_stap\", \"st_subordinated_volbysect_healthcare\", \"st_subordinated_volbysect_financials\", \"st_subordinated_volbysect_information_tech\", \"st_subordinated_volbysect_comunication_svc\", \"st_subordinated_volbysect_utilities\", \"st_subordinated_volbysect_real_estate\", \"st_subordinated_volbysect_other\""
  							},
  							"js_block_translations": {
  								"msg": {
@@ -3728,7 +3724,7 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "subord_esg",
+ 							"name": "st_subordinated_esg",
  							"type": "range",
  							"step": 3,
  							"min": 3,
@@ -3770,7 +3766,7 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "subord_esgratch",
+ 							"name": "st_subordinated_esgratch",
  							"type": "range",
  							"step": 3,
  							"min": 3,
@@ -3812,7 +3808,7 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "subord_esg15degrees",
+ 							"name": "st_subordinated_esg15degrees",
  							"type": "range",
  							"step": 3,
  							"min": 3,
@@ -3884,7 +3880,7 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "mezzpiketc_numdeals_main",
+ 							"name": "st_mezzanine_numdeals_main",
  							"type": "number",
  							"max_chars": 12,
  							"step": 1,
@@ -3935,7 +3931,7 @@
  							}
  						},
  						{
- 							"name": "mezzpiketc_numdeals_low",
+ 							"name": "st_mezzanine_numdeals_low",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -3953,7 +3949,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "mezzpiketc_numdeals_mid_upper",
+ 							"name": "st_mezzanine_numdeals_mid_upper",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -3971,7 +3967,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "mezzpiketc_numdeals_other",
+ 							"name": "st_mezzanine_numdeals_other",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -3993,8 +3989,8 @@
  							"type": "javascript-block",
  							"col_span_control": 1,
  							"js_block_strings": {
- 								"InpMain": "mezzpiketc_numdeals",
- 								"SummandNames": "\"mezzpiketc_numdeals_low\", \"mezzpiketc_numdeals_mid_upper\", \"mezzpiketc_numdeals_other\""
+ 								"InpMain": "st_mezzanine_numdeals",
+ 								"SummandNames": "\"st_mezzanine_numdeals_low\", \"st_mezzanine_numdeals_mid_upper\", \"st_mezzanine_numdeals_other\""
  							},
  							"js_block_translations": {
  								"msg": {
@@ -4026,7 +4022,7 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "mezzpiketc_closing_time",
+ 							"name": "st_mezzanine_closing_time",
  							"type": "range",
  							"step": 3,
  							"min": 3,
@@ -4068,7 +4064,7 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "mezzpiketc_volbysegm_main",
+ 							"name": "st_mezzanine_volbysegm_main",
  							"type": "number",
  							"max_chars": 12,
  							"step": 1,
@@ -4119,7 +4115,7 @@
  							}
  						},
  						{
- 							"name": "mezzpiketc_volbysegm_low",
+ 							"name": "st_mezzanine_volbysegm_low",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -4137,7 +4133,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "mezzpiketc_volbysegm_mid",
+ 							"name": "st_mezzanine_volbysegm_mid",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -4155,7 +4151,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "mezzpiketc_volbysegm_upper",
+ 							"name": "st_mezzanine_volbysegm_upper",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -4177,8 +4173,8 @@
  							"type": "javascript-block",
  							"col_span_control": 1,
  							"js_block_strings": {
- 								"InpMain": "mezzpiketc_volbysegm",
- 								"SummandNames": "\"mezzpiketc_volbysegm_low\", \"mezzpiketc_volbysegm_mid\", \"mezzpiketc_volbysegm_upper\""
+ 								"InpMain": "st_mezzanine_volbysegm",
+ 								"SummandNames": "\"st_mezzanine_volbysegm_low\", \"st_mezzanine_volbysegm_mid\", \"st_mezzanine_volbysegm_upper\""
  							},
  							"js_block_translations": {
  								"msg": {
@@ -4210,7 +4206,7 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "mezzpiketc_volbyreg_main",
+ 							"name": "st_mezzanine_volbyreg_main",
  							"type": "number",
  							"max_chars": 12,
  							"step": 1,
@@ -4261,7 +4257,7 @@
  							}
  						},
  						{
- 							"name": "mezzpiketc_volbyreg_uk",
+ 							"name": "st_mezzanine_volbyreg_uk",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -4279,7 +4275,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "mezzpiketc_volbyreg_france",
+ 							"name": "st_mezzanine_volbyreg_france",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -4297,7 +4293,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "mezzpiketc_volbyreg_dach",
+ 							"name": "st_mezzanine_volbyreg_dach",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -4315,7 +4311,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "mezzpiketc_volbyreg_benelux",
+ 							"name": "st_mezzanine_volbyreg_benelux",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -4333,7 +4329,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "mezzpiketc_volbyreg_nordics",
+ 							"name": "st_mezzanine_volbyreg_nordics",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -4351,7 +4347,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "mezzpiketc_volbyreg_southern_eu",
+ 							"name": "st_mezzanine_volbyreg_southern_eu",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -4369,7 +4365,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "mezzpiketc_volbyreg_other",
+ 							"name": "st_mezzanine_volbyreg_other",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -4391,8 +4387,8 @@
  							"type": "javascript-block",
  							"col_span_control": 1,
  							"js_block_strings": {
- 								"InpMain": "mezzpiketc_volbyreg",
- 								"SummandNames": "\"mezzpiketc_volbyreg_uk\", \"mezzpiketc_volbyreg_france\", \"mezzpiketc_volbyreg_dach\", \"mezzpiketc_volbyreg_benelux\", \"mezzpiketc_volbyreg_nordics\", \"mezzpiketc_volbyreg_southern_eu\", \"mezzpiketc_volbyreg_other\""
+ 								"InpMain": "st_mezzanine_volbyreg",
+ 								"SummandNames": "\"st_mezzanine_volbyreg_uk\", \"st_mezzanine_volbyreg_france\", \"st_mezzanine_volbyreg_dach\", \"st_mezzanine_volbyreg_benelux\", \"st_mezzanine_volbyreg_nordics\", \"st_mezzanine_volbyreg_southern_eu\", \"st_mezzanine_volbyreg_other\""
  							},
  							"js_block_translations": {
  								"msg": {
@@ -4424,7 +4420,7 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "mezzpiketc_volbysect_main",
+ 							"name": "st_mezzanine_volbysect_main",
  							"type": "number",
  							"max_chars": 12,
  							"step": 1,
@@ -4475,7 +4471,7 @@
  							}
  						},
  						{
- 							"name": "mezzpiketc_volbysect_energy",
+ 							"name": "st_mezzanine_volbysect_energy",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -4493,7 +4489,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "mezzpiketc_volbysect_materials",
+ 							"name": "st_mezzanine_volbysect_materials",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -4511,7 +4507,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "mezzpiketc_volbysect_industrials",
+ 							"name": "st_mezzanine_volbysect_industrials",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -4529,7 +4525,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "mezzpiketc_volbysect_consumer_disc",
+ 							"name": "st_mezzanine_volbysect_consumer_disc",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -4547,7 +4543,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "mezzpiketc_volbysect_consumer_stap",
+ 							"name": "st_mezzanine_volbysect_consumer_stap",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -4565,7 +4561,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "mezzpiketc_volbysect_healthcare",
+ 							"name": "st_mezzanine_volbysect_healthcare",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -4583,7 +4579,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "mezzpiketc_volbysect_financials",
+ 							"name": "st_mezzanine_volbysect_financials",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -4601,7 +4597,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "mezzpiketc_volbysect_information_tech",
+ 							"name": "st_mezzanine_volbysect_information_tech",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -4619,7 +4615,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "mezzpiketc_volbysect_comunication_svc",
+ 							"name": "st_mezzanine_volbysect_comunication_svc",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -4637,7 +4633,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "mezzpiketc_volbysect_utilities",
+ 							"name": "st_mezzanine_volbysect_utilities",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -4655,7 +4651,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "mezzpiketc_volbysect_real_estate",
+ 							"name": "st_mezzanine_volbysect_real_estate",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -4673,7 +4669,7 @@
  							"col_span_control": 2
  						},
  						{
- 							"name": "mezzpiketc_volbysect_other",
+ 							"name": "st_mezzanine_volbysect_other",
  							"type": "number",
  							"max_chars": 10,
  							"step": 1,
@@ -4695,8 +4691,8 @@
  							"type": "javascript-block",
  							"col_span_control": 1,
  							"js_block_strings": {
- 								"InpMain": "mezzpiketc_volbysect",
- 								"SummandNames": "\"mezzpiketc_volbysect_energy\", \"mezzpiketc_volbysect_materials\", \"mezzpiketc_volbysect_industrials\", \"mezzpiketc_volbysect_consumer_disc\", \"mezzpiketc_volbysect_consumer_stap\", \"mezzpiketc_volbysect_healthcare\", \"mezzpiketc_volbysect_financials\", \"mezzpiketc_volbysect_information_tech\", \"mezzpiketc_volbysect_comunication_svc\", \"mezzpiketc_volbysect_utilities\", \"mezzpiketc_volbysect_real_estate\", \"mezzpiketc_volbysect_other\""
+ 								"InpMain": "st_mezzanine_volbysect",
+ 								"SummandNames": "\"st_mezzanine_volbysect_energy\", \"st_mezzanine_volbysect_materials\", \"st_mezzanine_volbysect_industrials\", \"st_mezzanine_volbysect_consumer_disc\", \"st_mezzanine_volbysect_consumer_stap\", \"st_mezzanine_volbysect_healthcare\", \"st_mezzanine_volbysect_financials\", \"st_mezzanine_volbysect_information_tech\", \"st_mezzanine_volbysect_comunication_svc\", \"st_mezzanine_volbysect_utilities\", \"st_mezzanine_volbysect_real_estate\", \"st_mezzanine_volbysect_other\""
  							},
  							"js_block_translations": {
  								"msg": {
@@ -4743,7 +4739,7 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "mezzpiketc_esg",
+ 							"name": "st_mezzanine_esg",
  							"type": "range",
  							"step": 3,
  							"min": 3,
@@ -4785,7 +4781,7 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "mezzpiketc_esgratch",
+ 							"name": "st_mezzanine_esgratch",
  							"type": "range",
  							"step": 3,
  							"min": 3,
@@ -4827,7 +4823,7 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "mezzpiketc_esg15degrees",
+ 							"name": "st_mezzanine_esg15degrees",
  							"type": "range",
  							"step": 3,
  							"min": 3,

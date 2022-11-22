@@ -11,7 +11,7 @@ import (
 
 // config restricted text
 type configRT struct {
-	InputToken2 string // second token
+	InputToken2 string // second token;  [numdeals, volbysegm, ...]
 	SubLbl      trl.S
 	Suffix      trl.S
 	Placeholder trl.S
@@ -45,7 +45,9 @@ var (
 			"de": `Bitte nennen Sie das Volumen (in Millionen Euro) von Abschlüssen in Q4 2022 nach Marktsegment: `,
 		},
 		Suffix: trl.S{
-			"en": "million €",
+			// capitalizemytitle.com/how-to-abbreviate-million/
+			// "en": "million €",
+			"en": "MM €",
 			"de": "Mio €",
 		},
 		SubNames: []string{"low", "mid", "upper"},
@@ -62,7 +64,9 @@ var (
 			"de": `Bitte nennen Sie das Volumen (in Millionen Euro) von Abschlüssen in Q4 2022 nach Region: `,
 		},
 		Suffix: trl.S{
-			"en": "million €",
+			// capitalizemytitle.com/how-to-abbreviate-million/
+			// "en": "million €",
+			"en": "MM €",
 			"de": "Mio €",
 		},
 		SubNames: []string{"uk", "france", "dach", "benelux", "nordics", "southern_eu", "other"},
@@ -83,7 +87,9 @@ var (
 			"de": `Bitte nennen Sie das Volumen (in Millionen Euro) von Abschlüssen in Q4 2022 nach Region: `,
 		},
 		Suffix: trl.S{
-			"en": "million €",
+			// capitalizemytitle.com/how-to-abbreviate-million/
+			// "en": "million €",
+			"en": "MM €",
 			"de": "Mio €",
 		},
 		SubNames: []string{

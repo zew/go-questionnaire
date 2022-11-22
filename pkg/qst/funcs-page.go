@@ -4,7 +4,6 @@ import (
 	"fmt"
 
 	"github.com/zew/go-questionnaire/pkg/ctr"
-	"github.com/zew/go-questionnaire/pkg/qst/dynpg"
 	"github.com/zew/go-questionnaire/pkg/trl"
 )
 
@@ -114,7 +113,7 @@ func pds01(q *QuestionnaireT, page *pageT) error {
 		page.Groups[0].Inputs[1].Response = vs[0]
 	}
 
-	dynpg.MyTest()
+	// dynpg.MyTest()
 
 	return nil
 

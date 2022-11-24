@@ -71,7 +71,7 @@ dummy
 
     /* slider demo page */
     div.pg03 {
-        max-width: 90%  !important;
-        zoom: 0.75;
+        /* max-width: 90%  !important;
+        zoom: 0.75; */
     }
 }

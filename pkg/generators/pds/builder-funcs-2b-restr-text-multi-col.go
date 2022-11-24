@@ -31,7 +31,8 @@ func restrictedTextMultiCols(
 			}
 			if idx1 > 0 {
 				ttLbl := allLbls["ac1-tranche-types"][idx1-1]
-				inp.Label = ttLbl.Bold()
+				// inp.Label = ttLbl.Bold()
+				inp.Label = ttLbl
 			}
 			inp.LabelVertical()
 			// label left

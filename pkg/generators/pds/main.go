@@ -43,6 +43,10 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 		page.WidthMax("72rem")
 
+		page23Types := []string{
+			"type1",
+			"type1",
+		}
 		page23Inputs := []string{
 			"xxx1",
 			"xxx2",
@@ -87,6 +91,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		}
 
 		for idx1, inpName := range page23Inputs {
+
+			_ = inpName
 			{
 				gr := page.AddGroup()
 				gr.Cols = 1
@@ -101,25 +107,15 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				}
 			}
 
+			if page23Types[idx1] == "type1" {
+
+			}
+
 			chapter3(
 				qst.WrapPageT(page),
 				inpName,
-				"past3m",
-				trl.S{
-					"en": "Last 3&nbsp;months",
-					"de": "Last 3&nbsp;months",
-				},
-				mCh4,
-			)
-			chapter3(
-				qst.WrapPageT(page),
-				inpName,
-				"next3m",
-				trl.S{
-					"en": "Next 3&nbsp;months",
-					"de": "Next 3&nbsp;months",
-				},
-				mCh4,
+				trl.S{},
+				mCh5,
 			)
 
 		}
@@ -207,10 +203,12 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"de": `How big is your investment team? Please choose the team size in terms of full time equivalents.`,
 				"en": `How big is your investment team? Please choose the team size in terms of full time equivalents.`,
 			}
-
-			mode2mod := mCh2
-			mode2mod.GroupBottomSpacers = 3
-			radiosSingleRow(qst.WrapPageT(page), "teamsize", lblMain, mode2mod)
+			radiosSingleRow(
+				qst.WrapPageT(page),
+				"teamsize",
+				lblMain,
+				mCh2,
+			)
 		}
 
 		if false {
@@ -225,7 +223,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					lblMain,
 					assetClassesInputs,
 					assetClassesLabels,
-					// chb01,
 				)
 			}
 
@@ -240,7 +237,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					lblMain,
 					trancheTypeNamesAC1,
 					allLbls["ac1-tranche-types"],
-					// chb02,
 				)
 			}
 		}
@@ -283,7 +279,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		}
 
 		page.WidthMax("42rem")
-		page.WidthMax("66rem")
+		page.WidthMax("74rem")
 
 		restrictedTextMultiCols(qst.WrapPageT(page), rT1)
 
@@ -296,6 +292,16 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			// old: a single range
 			rangeClosingTime(qst.WrapPageT(page), trancheTypeNamesAC1[0], lblDuration)
 		}
+
+		chapter3(
+			qst.WrapPageT(page),
+			"closing_time2",
+			trl.S{
+				"en": "Alternative visualisation using radios",
+				"de": "Alternative visualisation using radios",
+			},
+			mCh5,
+		)
 
 		restrictedTextMultiCols(qst.WrapPageT(page), rT2)
 
@@ -380,8 +386,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 			chapter3(
 				qst.WrapPageT(page),
-				inpName,
-				"past3m",
+				inpName+"_past3m",
 				trl.S{
 					"en": "Last 3&nbsp;months",
 					"de": "Last 3&nbsp;months",
@@ -390,8 +395,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			)
 			chapter3(
 				qst.WrapPageT(page),
-				inpName,
-				"next3m",
+				inpName+"_next3m",
 				trl.S{
 					"en": "Next 3&nbsp;months",
 					"de": "Next 3&nbsp;months",
@@ -504,7 +508,12 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			// rejected at meeting 2022-11-14
 			// rangePercentage(qst.WrapPageT(page), "esg", esgImportance1, "importance2")
 
-			radiosSingleRow(qst.WrapPageT(page), "esg_importance1", esgImportance1, mCh3)
+			radiosSingleRow(
+				qst.WrapPageT(page),
+				"esg_importance1",
+				esgImportance1,
+				mCh3,
+			)
 		}
 
 		//

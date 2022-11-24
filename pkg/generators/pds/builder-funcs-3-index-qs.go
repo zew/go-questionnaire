@@ -10,13 +10,9 @@ import (
 
 func chapter3(
 	page *qst.WrappedPageT,
-
 	nm string,
-	nmSuffx string,
 	lbl trl.S,
-
 	cf configMC,
-
 ) {
 
 	// numCols := firstColLbl + float32(len(trancheTypeNamesAC1))
@@ -45,6 +41,7 @@ func chapter3(
 		gr := page.AddGroup()
 		gr.Cols = numColsMajor
 		gr.BottomVSpacers = 0
+		gr.BottomVSpacers = 1
 
 		for idx1 := range trancheTypeNamesAC1 {
 
@@ -53,10 +50,12 @@ func chapter3(
 			inp.ColSpan = 1
 
 			ttLbl := allLbls["ac1-tranche-types"][idx1]
-			inp.Label = ttLbl.Bold()
+			// inp.Label = ttLbl.Bold()
+			inp.Label = ttLbl
 
 			inp.LabelVertical()
 			inp.StyleLbl.Desktop.StyleText.FontSize = 90
+			inp.StyleLbl.Desktop.StyleText.FontSize = 95
 		}
 
 	}
@@ -83,7 +82,7 @@ func chapter3(
 			for idx2 := 0; idx2 < len(allLbls[cf.KeyLabels]); idx2++ {
 				inp := gr.AddInput()
 				inp.Type = "radio"
-				inp.Name = fmt.Sprintf("%v_%v_%v", ttPref, nm, nmSuffx)
+				inp.Name = fmt.Sprintf("%v_%v", ttPref, nm)
 				inp.ValueRadio = fmt.Sprintf("%v", idx2+1) // row idx1
 				inp.Label = allLbls[cf.KeyLabels][idx2]
 
@@ -95,6 +94,7 @@ func chapter3(
 				//
 				// label styling
 				inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
+				inp.StyleLbl.Desktop.StyleBox.Position = "relative"
 				if cf.LabelBottom {
 					inp.StyleLbl.Desktop.StyleGridItem.Order = 2
 				} else {
@@ -112,8 +112,9 @@ func chapter3(
 				if idx2 == 0 {
 					// inp.Style.Desktop.StyleBox.Margin = "0 0 0 0.6rem"
 					inp.Style.Desktop.StyleBox.Left = "1.6rem"
+
 					inp.StyleLbl.Desktop.StyleText.AlignHorizontal = "left"
-					inp.StyleLbl.Desktop.StyleBox.Left = "0.8rem"
+					inp.StyleLbl.Desktop.StyleBox.Left = "0.6rem"
 				}
 				if idx2 == 1 {
 					inp.Style.Desktop.StyleBox.Left = "0.79rem"
@@ -124,8 +125,17 @@ func chapter3(
 				if idx2 == lastIdx2 {
 					// inp.Style.Desktop.StyleBox.Margin = "0 0.6rem 0 0"
 					inp.Style.Desktop.StyleBox.Right = "1.6rem"
+
 					inp.StyleLbl.Desktop.StyleText.AlignHorizontal = "right"
-					inp.StyleLbl.Desktop.StyleBox.Right = "0.8rem"
+					inp.StyleLbl.Desktop.StyleBox.Right = "0.6rem"
+				}
+
+				if idx2 < len(cf.XDisplacements) {
+					if idx2 < lastIdx2/2 {
+						inp.Style.Desktop.StyleBox.Left = cf.XDisplacements[idx2]
+					} else {
+						inp.Style.Desktop.StyleBox.Right = cf.XDisplacements[idx2]
+					}
 				}
 
 			}

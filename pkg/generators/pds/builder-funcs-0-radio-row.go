@@ -16,30 +16,20 @@ type configMC struct {
 	LabelBottom        bool
 	DontKnow           bool
 	GroupBottomSpacers int
+
+	XDisplacements []string
 }
 
 var (
-	chb01 = configMC{
-		Cols: 3,
-	}
-	chb02 = configMC{
-		Cols: 4,
+	mCh2 = configMC{
+		KeyLabels:          "teamsize",
+		Cols:               16,
+		InpColspan:         16 / 4,
+		LabelBottom:        true,
+		DontKnow:           false,
+		GroupBottomSpacers: 3,
 	}
 
-	mCh1 = configMC{
-		KeyLabels:   "ac1-tranche-types",
-		Cols:        8,
-		InpColspan:  2,
-		LabelBottom: false,
-		DontKnow:    false,
-	}
-	mCh2 = configMC{
-		KeyLabels:   "teamsize",
-		Cols:        16,
-		InpColspan:  16 / 4,
-		LabelBottom: true,
-		DontKnow:    false,
-	}
 	mCh3 = configMC{
 		KeyLabels:   "relevance1-5",
 		Cols:        10,
@@ -47,26 +37,38 @@ var (
 		LabelBottom: false,
 		DontKnow:    false,
 	}
+
 	mCh4 = configMC{
 		KeyLabels:   "improveDecline1-5",
 		Cols:        10,
 		InpColspan:  2,
 		LabelBottom: false,
 		DontKnow:    false,
+
+		XDisplacements: []string{
+			"1.6rem",
+			"0.79rem",
+			"",
+			"0.79rem",
+			"1.6rem",
+		},
 	}
-	mChExample1 = configMC{
-		KeyLabels:   "improveWorsen1-5",
+	mCh5 = configMC{
+		KeyLabels:   "closing-time-weeks",
 		Cols:        14,
 		InpColspan:  2,
 		LabelBottom: false,
-		DontKnow:    true,
-	}
-	mChExample2 = configMC{
-		KeyLabels:   "smaller5larger20",
-		Cols:        16,
-		InpColspan:  16 / 4,
-		LabelBottom: true,
 		DontKnow:    false,
+
+		XDisplacements: []string{
+			"1.46rem",
+			"1.27rem",
+			"0.64rem",
+			"",
+			"0.64rem",
+			"1.27rem",
+			"1.46rem",
+		},
 	}
 )
 
@@ -231,22 +233,44 @@ var allLbls = map[string][]trl.S{
 			"de": "Worsen significantly",
 		},
 	},
-	"smaller5larger20": {
+	"closing-time-weeks": {
+		// {
+		// 	"en": "below 6&nbsp;m",
+		// 	"de": "below 6&nbsp;m",
+		// },
 		{
-			"en": "<5&nbsp;FTE",
-			"de": "<5&nbsp;FTE",
+			"en": "<<br>6",
+			"de": "<<br>6",
+		},
+
+		{
+			"en": "&nbsp;<br>6",
+			"de": "&nbsp;<br>6",
 		},
 		{
-			"en": "5-10&nbsp;FTE",
-			"de": "5-10&nbsp;FTE",
+			"en": "&nbsp;<br>9",
+			"de": "&nbsp;<br>9",
 		},
 		{
-			"en": "11-20&nbsp;FTE",
-			"de": "11-20&nbsp;FTE",
+			"en": "months<br>12",
+			"de": "months<br>12",
 		},
 		{
-			"en": ">20&nbsp;FTE",
-			"de": ">20&nbsp;FTE",
+			"en": "&nbsp;<br>15",
+			"de": "&nbsp;<br>15",
+		},
+		{
+			"en": "&nbsp;<br>18",
+			"de": "&nbsp;<br>18",
+		},
+
+		// {
+		// 	"en": "over 18&nbsp;m",
+		// 	"de": "over 18&nbsp;m",
+		// },
+		{
+			"en": "><br>18",
+			"de": "><br>18",
 		},
 	},
 }

@@ -10,7 +10,7 @@ import (
 
 // config multiple choice
 type configMC struct {
-	KeyLabels          string
+	KeyLabels          string // key to a map of labels
 	Cols               float32
 	InpColspan         float32
 	LabelBottom        bool
@@ -42,6 +42,13 @@ var (
 	}
 	mCh3 = configMC{
 		KeyLabels:   "relevance1-5",
+		Cols:        10,
+		InpColspan:  2,
+		LabelBottom: false,
+		DontKnow:    false,
+	}
+	mCh4 = configMC{
+		KeyLabels:   "improveDecline1-5",
 		Cols:        10,
 		InpColspan:  2,
 		LabelBottom: false,
@@ -103,120 +110,143 @@ var trancheTypeNamesAC3 = []string{
 var allLbls = map[string][]trl.S{
 	"ac1-tranche-types": {
 		{
-			"de": "Senior",
 			"en": "Senior",
+			"de": "Senior",
 		},
 		{
-			"de": "Unitranche",
 			"en": "Unitranche",
+			"de": "Unitranche",
 		},
 		{
-			"de": "Subordinated",
 			"en": "Subordinated",
+			"de": "Subordinated",
 		},
 		{
-			"de": "Mezzanine / PIK / Other",
 			"en": "Mezzanine / PIK / Other",
+			"de": "Mezzanine / PIK / Other",
 		},
 	},
 	"ac2-tranche-types": {
 		{
-			"de": "Whole Loan",
 			"en": "Whole Loan",
+			"de": "Whole Loan",
 		},
 		{
-			"de": "Subordinated",
 			"en": "Subordinated",
+			"de": "Subordinated",
 		},
 	},
 	"ac3-tranche-types": {
 		{
-			"de": "Senior",
 			"en": "Senior",
+			"de": "Senior",
 		},
 		{
-			"de": "Subordinated",
 			"en": "Subordinated",
+			"de": "Subordinated",
 		},
 	},
 	"teamsize": {
 		{
-			"de": "<5",
 			"en": "<5",
+			"de": "<5",
 		},
 		{
-			"de": "5-10",
 			"en": "5-10",
+			"de": "5-10",
 		},
 		{
-			"de": "11-20",
 			"en": "11-20",
+			"de": "11-20",
 		},
 		{
-			"de": ">20",
 			"en": ">20",
+			"de": ">20",
 		},
 	},
 	"relevance1-5": {
 		{
-			"de": "(1)<br>Not relevant",
 			"en": "(1)<br>Not relevant",
+			"de": "(1)<br>Not relevant",
 		},
 		{
-			"de": "(2)<br>",
 			"en": "(2)<br>",
+			"de": "(2)<br>",
 		},
 		{
-			"de": "(3)<br>",
 			"en": "(3)<br>",
+			"de": "(3)<br>",
 		},
 		{
-			"de": "(4)<br>",
 			"en": "(4)<br>",
+			"de": "(4)<br>",
 		},
 		{
-			"de": "(5)<br> Potential dealbreaker",
 			"en": "(5)<br> Potential dealbreaker",
+			"de": "(5)<br> Potential dealbreaker",
 		},
 	},
+	"improveDecline1-5": {
+		{
+			"en": "Improved",
+			"de": "Improved",
+		},
+		{
+			"en": "&nbsp;",
+			"de": "&nbsp;",
+		},
+		{
+			"en": "Same",
+			"de": "Same",
+		},
+		{
+			"en": "&nbsp;",
+			"de": "&nbsp;",
+		},
+		{
+			"en": "Declined",
+			"de": "Declined",
+		},
+	},
+
 	"improveWorsen1-5": {
 		{
-			"de": "Improve significantly",
 			"en": "Improve significantly",
+			"de": "Improve significantly",
 		},
 		{
-			"de": "Improve slightly",
 			"en": "Improve slightly",
+			"de": "Improve slightly",
 		},
 		{
-			"de": "Stay constant",
 			"en": "Stay constant",
+			"de": "Stay constant",
 		},
 		{
-			"de": "Worsen slightly",
 			"en": "Worsen slightly",
+			"de": "Worsen slightly",
 		},
 		{
-			"de": "Worsen significantly",
 			"en": "Worsen significantly",
+			"de": "Worsen significantly",
 		},
 	},
 	"smaller5larger20": {
 		{
-			"de": "<5&nbsp;FTE",
 			"en": "<5&nbsp;FTE",
+			"de": "<5&nbsp;FTE",
 		},
 		{
-			"de": "5-10&nbsp;FTE",
 			"en": "5-10&nbsp;FTE",
+			"de": "5-10&nbsp;FTE",
 		},
 		{
-			"de": "11-20&nbsp;FTE",
 			"en": "11-20&nbsp;FTE",
+			"de": "11-20&nbsp;FTE",
 		},
 		{
-			"de": ">20&nbsp;FTE",
 			"en": ">20&nbsp;FTE",
+			"de": ">20&nbsp;FTE",
 		},
 	},
 }
@@ -247,7 +277,6 @@ func radiosSingleRow(
 			inp.ColSpan = 1
 			inp.ColSpanLabel = 1
 		}
-
 	}
 
 	// gr2

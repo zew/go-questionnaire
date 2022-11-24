@@ -13,7 +13,11 @@ a.button {
 
 
 
-.content {
+.content.cpg00,
+.content.cpg01,
+.content.cpg02,
+dummy
+ {
     background-image: url(https://private-debt-survey.zew.de/img/ui/pds-bg-mirrored.png), url(https://private-debt-survey.zew.de/img/ui/pds-bg.png);
     background-image: url(https://localhost:8083/survey/img/ui/pds-bg-mirrored.png), url(https://localhost:8083/survey/img/ui/pds-bg.png);
     background-repeat: no-repeat;

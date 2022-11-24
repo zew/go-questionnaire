@@ -82,12 +82,11 @@
 
 <span class='content-separator'></span> <!-- split out content - outside because div.content is CSS grid -->
 <!-- content equals frmMain -->
-<form class="content" name="frmMain" method="POST" action="{{cfg.Pref ""}}" >
+<form class="content cpg{{.CurrPage}}" name="frmMain" method="POST" action="{{cfg.Pref ""}}" >
 
 	{{if exists . "Q"}}
 		{{if ne (.Req.Form.Get "show-version") ""}}
 			winword datei : -R{{addInt .Q.Version 1}}_....docx-
-			<!-- version-peter:  -{{addInt .Q.Version 0}}- -->
 		{{end}}
 	{{end}}
 

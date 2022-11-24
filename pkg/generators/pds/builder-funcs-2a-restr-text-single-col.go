@@ -161,7 +161,7 @@ var (
 	}
 )
 
-func restrictedText(
+func restrictedTextSingleColumn(
 	page *qst.WrappedPageT,
 	inpNameMain string,
 	lbl trl.S,

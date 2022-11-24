@@ -121,8 +121,9 @@ func helper(w http.ResponseWriter, r *http.Request, err error, msgs ...string) {
 }
 
 // LoginByHashID is an entry point for HashIDs;
-//  it prepares the request params
-//   so that they can be processed below by lgn.LoginByHash
+//
+//	it prepares the request params
+//	 so that they can be processed below by lgn.LoginByHash
 func LoginByHashID(w http.ResponseWriter, r *http.Request) {
 
 	// Assuming https://mydomain.com/some/path/hash-id
@@ -402,6 +403,7 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 		"HTMLTitle": htmlTitle,
 		"LogoTitle": q.Survey.TemplateLogoText(q.LangCode),
 		"Q":         q,
+		"CurrPage":  fmt.Sprintf("%02v", q.CurrPage),
 		"Content":   "",
 	}
 

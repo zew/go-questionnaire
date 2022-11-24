@@ -128,7 +128,6 @@ func SiteCore(site string) (string, string) {
 // thus no sync mutex is required;
 // TemplatesPreparse() calls this func with param forceFreshParsing true
 // Exec()              calls this func with param forceFreshParsing false
-//
 func Get(tName string, forceFreshParsing bool) (*template.Template, error) {
 
 	tDerived, ok := cache[tName] // template from cache...
@@ -180,21 +179,21 @@ Exec template with map of contents into writer w;
 cnt as io.Writer would be more efficient?
 
 Automatically created keys
-		Req
-		Sess
-		L
-		LangCode
-		Site
 
-		CSSSite
+	Req
+	Sess
+	L
+	LangCode
+	Site
 
-		HTMLTitle
-		LogoTitle
+	CSSSite
 
+	HTMLTitle
+	LogoTitle
 
 Keys expected to be supplied by caller
-		Content
 
+	Content
 */
 func Exec(w io.Writer, r *http.Request, mp map[string]interface{}, tName string) {
 
@@ -273,7 +272,7 @@ func Exec(w io.Writer, r *http.Request, mp map[string]interface{}, tName string)
 	if _, ok := mp["CSSSite"]; !ok {
 		mp["CSSSite"] = cfg.Get().CSSVarsSite[core]
 	} else {
-		// log.Printf("setting CSSSite to DEFAULT CSS vars")
+		// log.Printf("setting CSSSite to *default* CSS vars")
 		mp["CSSSite"] = cfg.Get().CSSVars
 	}
 
@@ -294,6 +293,10 @@ func Exec(w io.Writer, r *http.Request, mp map[string]interface{}, tName string)
 
 	if _, ok := mp["LogoTitle"]; !ok {
 		mp["LogoTitle"] = mp["HTMLTitle"]
+	}
+
+	if _, ok := mp["CurrPage"]; !ok {
+		mp["CurrPage"] = "nA" // not a page from questionnaire sequence
 	}
 
 	if _, ok := mp["Content"]; !ok {

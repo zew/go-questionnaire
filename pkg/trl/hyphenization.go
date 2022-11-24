@@ -175,6 +175,7 @@ var hyph = []string{
 	"Cons|umer",
 	"con|stant",
 	"de|crease",
+	"de|cline",
 	"de|pre|ci|ate", // "depreciate"
 	"de|te|ri|o|rate",
 	"de|vel|op|ment",

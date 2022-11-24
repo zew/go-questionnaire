@@ -28,6 +28,61 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	}
 	// q.Variations = 1
 
+	// page5
+	{
+		page := q.AddPage()
+
+		page.Label = trl.S{
+			"en": "3. Index Questions",
+			"de": "3. Index Questions",
+		}
+		page.Short = trl.S{
+			"en": "Indizes",
+			"de": "Indizes",
+		}
+
+		page.WidthMax("72rem")
+
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 1
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{
+					"en": "Financing Situation/Pricing",
+					"de": "Financing Situation/Pricing",
+				}
+
+				inp.ColSpan = 1
+				// inp.ColSpanLabel = 1
+			}
+		}
+
+		chapter3(
+			qst.WrapPageT(page),
+			"financing_situation_pricing",
+			"past3m",
+			trl.S{
+				"en": "Last 3&nbsp;months",
+				"de": "Last 3&nbsp;months",
+			},
+			mCh4,
+		)
+		chapter3(
+			qst.WrapPageT(page),
+			"financing_situation_pricing",
+			"next3m",
+			trl.S{
+				"en": "Next 3&nbsp;months",
+				"de": "Next 3&nbsp;months",
+			},
+			mCh4,
+		)
+
+	}
+
 	// page0
 	{
 		page := q.AddPage()
@@ -152,7 +207,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		{
 			lblMain := trl.S{
 				"en": `
-					Suggestion; instead of three different surveys; rows 2,3 not shown in first wave<br>
+					<!-- Suggestion; instead of three different surveys; -->
+					rows 2,3 not shown in first wave<br>
 					Which asset classes do you invest in?`,
 				"de": `Wählen Sie Ihre Assetklassen.`,
 			}

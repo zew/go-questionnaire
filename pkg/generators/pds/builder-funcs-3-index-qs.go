@@ -73,6 +73,8 @@ func chapter3(
 		// for idx1 := 0; idx1 < len(trancheTypeNamesAC1)+1; idx1++ {
 		for idx1, trancheType := range trancheTypeNamesAC1 {
 
+			_ = idx1
+
 			// row1 - inputs
 			ttPref := trancheType[:3]
 
@@ -90,6 +92,8 @@ func chapter3(
 				inp.Vertical()
 				inp.VerticalLabel()
 
+				//
+				// label styling
 				inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
 				if cf.LabelBottom {
 					inp.StyleLbl.Desktop.StyleGridItem.Order = 2
@@ -100,13 +104,28 @@ func chapter3(
 				}
 				inp.StyleLbl.Desktop.StyleText.FontSize = 90
 
-				if idx1 != 0 && idx2 == 0 {
-					inp.Style = css.NewStylesResponsive(inp.Style)
-					inp.Style.Desktop.StyleBox.Margin = "0 0 0 0.6rem"
+				//
+				//
+				inp.Style = css.NewStylesResponsive(inp.Style)
+				inp.Style.Desktop.StyleBox.Position = "relative"
+
+				if idx2 == 0 {
+					// inp.Style.Desktop.StyleBox.Margin = "0 0 0 0.6rem"
+					inp.Style.Desktop.StyleBox.Left = "1.6rem"
+					inp.StyleLbl.Desktop.StyleText.AlignHorizontal = "left"
+					inp.StyleLbl.Desktop.StyleBox.Left = "0.8rem"
+				}
+				if idx2 == 1 {
+					inp.Style.Desktop.StyleBox.Left = "0.79rem"
+				}
+				if idx2 == lastIdx2-1 {
+					inp.Style.Desktop.StyleBox.Right = "0.79rem"
 				}
 				if idx2 == lastIdx2 {
-					inp.Style = css.NewStylesResponsive(inp.Style)
-					inp.Style.Desktop.StyleBox.Margin = "0 0.6rem 0 0"
+					// inp.Style.Desktop.StyleBox.Margin = "0 0.6rem 0 0"
+					inp.Style.Desktop.StyleBox.Right = "1.6rem"
+					inp.StyleLbl.Desktop.StyleText.AlignHorizontal = "right"
+					inp.StyleLbl.Desktop.StyleBox.Right = "0.8rem"
 				}
 
 			}

@@ -166,24 +166,24 @@ var allLbls = map[string][]trl.S{
 	},
 	"relevance1-5": {
 		{
-			"en": "(1)<br>Not relevant",
-			"de": "(1)<br>Not relevant",
+			"en": "Not relevant<br>(1)",
+			"de": "Not relevant<br>(1)",
 		},
 		{
-			"en": "(2)<br>",
-			"de": "(2)<br>",
+			"en": "(2)",
+			"de": "(2)",
 		},
 		{
-			"en": "(3)<br>",
-			"de": "(3)<br>",
+			"en": "(3)",
+			"de": "(3)",
 		},
 		{
-			"en": "(4)<br>",
-			"de": "(4)<br>",
+			"en": "(4)",
+			"de": "(4)",
 		},
 		{
-			"en": "(5)<br> Potential dealbreaker",
-			"de": "(5)<br> Potential dealbreaker",
+			"en": "Potential dealbreaker<br>(5)",
+			"de": "Potential dealbreaker<br>(5)",
 		},
 	},
 	"improveDecline1-5": {
@@ -282,15 +282,13 @@ func radiosSingleRow(
 	// gr2
 	{
 		gr := page.AddGroup()
-		gr.Cols = 14
 		gr.Cols = float32(cf.Cols)
-		// if mode == 2 {
-		// 	gr.Cols = 16
-		// }
 		gr.BottomVSpacers = 3
 		if cf.GroupBottomSpacers != 0 {
 			gr.BottomVSpacers = cf.GroupBottomSpacers
 		}
+		// gr.Style = css.NewStylesResponsive(gr.Style)
+		// gr.Style.Desktop.StyleGridContainer.GapRow = "0"
 
 		for idx2 := 0; idx2 < len(allLbls[cf.KeyLabels]); idx2++ {
 			inp := gr.AddInput()
@@ -300,9 +298,6 @@ func radiosSingleRow(
 			inp.Label = allLbls[cf.KeyLabels][idx2]
 			inp.ColSpan = 2
 			inp.ColSpan = cf.InpColspan
-			// if mode == 2 {
-			// 	inp.ColSpan = gr.Cols / 4
-			// }
 			inp.ColSpanControl = 1
 			inp.Vertical()
 			inp.VerticalLabel()
@@ -310,10 +305,12 @@ func radiosSingleRow(
 			inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
 			if cf.LabelBottom {
 				inp.StyleLbl.Desktop.StyleGridItem.Order = 2
+				inp.StyleLbl.Desktop.StyleBox.Position = "relative"
+				inp.StyleLbl.Desktop.StyleBox.Top = "-0.2rem"
 			} else {
 				// top
 				inp.StyleLbl.Desktop.StyleBox.Position = "relative"
-				inp.StyleLbl.Desktop.StyleBox.Top = "-0.2rem"
+				inp.StyleLbl.Desktop.StyleBox.Top = "0.4rem"
 			}
 		}
 

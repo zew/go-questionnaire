@@ -94,7 +94,7 @@ func checkBoxColumn(
 			inp.Name = inps[idx1]
 			inp.Label = lbls[idx1]
 			inp.ColSpan = numCols
-			inp.ColSpanControl = 4
+			inp.ColSpanControl = 6
 			inp.ColSpanLabel = 1
 			inp.ControlFirst()
 

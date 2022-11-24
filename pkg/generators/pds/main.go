@@ -28,58 +28,101 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	}
 	// q.Variations = 1
 
-	// page5
+	// page23
 	{
 		page := q.AddPage()
 
 		page.Label = trl.S{
-			"en": "3. Index Questions",
-			"de": "3. Index Questions",
+			"en": "2.3 Portfolio Risk",
+			"de": "2.3 Portfolio Risk",
 		}
 		page.Short = trl.S{
-			"en": "Indizes",
-			"de": "Indizes",
+			"en": "Portfolio Risk",
+			"de": "Portfolio Risk",
 		}
 
 		page.WidthMax("72rem")
 
-		{
-			gr := page.AddGroup()
-			gr.Cols = 1
-			gr.BottomVSpacers = 1
+		page23Inputs := []string{
+			"xxx1",
+			"xxx2",
+		}
+		page23Lbls := []trl.S{
 			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.Label = trl.S{
-					"en": "Financing Situation/Pricing",
-					"de": "Financing Situation/Pricing",
-				}
-
-				inp.ColSpan = 1
-				// inp.ColSpanLabel = 1
-			}
+				"en": "Average Number of Financial Covenants per credit",
+				"de": "Average Number of Financial Covenants per credit",
+			},
+			{
+				"en": "What is the share of portfolio (at Fair Market Value) with a covenant holiday?",
+				"de": "What is the share of portfolio (at Fair Market Value) with a covenant holiday?",
+			},
+			{
+				"en": "What is the share of portfolio (at Fair Market Value) with a covenant reset?",
+				"de": "What is the share of portfolio (at Fair Market Value) with a covenant reset?",
+			},
+			{
+				"en": "What is the share of portfolio (at Fair Market Value) with a covenant breach?",
+				"de": "What is the share of portfolio (at Fair Market Value) with a covenant breach?",
+			},
+			{
+				"en": "Share of defaulted loans (measured at cost/principal amount of loan)",
+				"de": "Share of defaulted loans (measured at cost/principal amount of loan)",
+			},
+			{
+				"en": "If you had a default in the past. What was the recovery rate (share of principal)?",
+				"de": "If you had a default in the past. What was the recovery rate (share of principal)?",
+			},
+			{
+				"en": "What is the share of portfolio (at Fair Market Value) with explicit ESG targets in the credit documentation?",
+				"de": "What is the share of portfolio (at Fair Market Value) with explicit ESG targets in the credit documentation?",
+			},
+			{
+				"en": "What is the share of portfolio (at Fair Market Value) with ESG ratchets?",
+				"de": "What is the share of portfolio (at Fair Market Value) with ESG ratchets?",
+			},
+			{
+				"en": "What is the share of portfolio (at Fair Market Value) where the creditor explicitly states a strategy to add to the 1.5°C target?",
+				"de": "What is the share of portfolio (at Fair Market Value) where the creditor explicitly states a strategy to add to the 1.5°C target?",
+			},
 		}
 
-		chapter3(
-			qst.WrapPageT(page),
-			"financing_situation_pricing",
-			"past3m",
-			trl.S{
-				"en": "Last 3&nbsp;months",
-				"de": "Last 3&nbsp;months",
-			},
-			mCh4,
-		)
-		chapter3(
-			qst.WrapPageT(page),
-			"financing_situation_pricing",
-			"next3m",
-			trl.S{
-				"en": "Next 3&nbsp;months",
-				"de": "Next 3&nbsp;months",
-			},
-			mCh4,
-		)
+		for idx1, inpName := range page23Inputs {
+			{
+				gr := page.AddGroup()
+				gr.Cols = 1
+				gr.BottomVSpacers = 1
+				{
+					inp := gr.AddInput()
+					inp.Type = "textblock"
+					inp.Label = page23Lbls[idx1].Bold()
+
+					inp.ColSpan = 1
+					// inp.ColSpanLabel = 1
+				}
+			}
+
+			chapter3(
+				qst.WrapPageT(page),
+				inpName,
+				"past3m",
+				trl.S{
+					"en": "Last 3&nbsp;months",
+					"de": "Last 3&nbsp;months",
+				},
+				mCh4,
+			)
+			chapter3(
+				qst.WrapPageT(page),
+				inpName,
+				"next3m",
+				trl.S{
+					"en": "Next 3&nbsp;months",
+					"de": "Next 3&nbsp;months",
+				},
+				mCh4,
+			)
+
+		}
 
 	}
 
@@ -212,7 +255,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					Which asset classes do you invest in?`,
 				"de": `Wählen Sie Ihre Assetklassen.`,
 			}
-			checkBoxColumnCascade(
+			checkBoxCascade(
 				qst.WrapPageT(page),
 				lblMain,
 				assetClassesInputs,
@@ -231,8 +274,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		// 	"de": "Section 1",
 		// }
 		page.Label = trl.S{
-			"en": "1. Portfolio Changes (past 3 Months)",
-			"de": "1. Portfolio Changes (past 3 Months)",
+			"en": "1. Portfolio Changes (past 3 months)",
+			"de": "1. Portfolio Changes (past 3 months)",
 		}
 		page.Short = trl.S{
 			"en": "Portfolio Changes",
@@ -284,107 +327,77 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	{
 		page := q.AddPage()
 
-		page.Label = trl.S{"de": "Slider"}
-		page.Short = trl.S{"de": "Slider"}
-		page.WidthMax("42rem")
-
-		// gr0
-		{
-			gr := page.AddGroup()
-			gr.Cols = 1
-			gr.BottomVSpacers = 1
-			gr.WidthMax("85%")
-			{
-				inp := gr.AddInput()
-				inp.Type = "dyn-textblock"
-				inp.DynamicFunc = "RenderStaticContent"
-				inp.DynamicFuncParamset = "./slider/inner-1.html"
-				inp.ColSpan = 1
-				inp.ColSpanLabel = 1
-			}
+		page.Label = trl.S{
+			"en": "3. Index Questions",
+			"de": "3. Index Questions",
+		}
+		page.Short = trl.S{
+			"en": "Indizes",
+			"de": "Indizes",
 		}
 
-		// gr1
-		{
-			gr := page.AddGroup()
-			gr.Cols = 1
-			gr.BottomVSpacers = 1
-			gr.WidthMax("85%")
+		page.WidthMax("72rem")
+
+		page5Inputs := []string{
+			"financing_situation_pricing",
+			"deal_quality",
+			"deal_documentation",
+			"deal_amount",
+		}
+		page5Lbls := []trl.S{
 			{
-				inp := gr.AddInput()
-				inp.Type = "dyn-textblock"
-				inp.DynamicFunc = "RenderStaticContent"
-				inp.DynamicFuncParamset = "./slider/inner-2.html"
-				inp.ColSpan = 1
-				inp.ColSpanLabel = 1
-			}
+				"en": "Financing Situation/Pricing",
+				"de": "Financing Situation/Pricing",
+			},
+			{
+				"en": "Assess the change in deal quality with respect to the risk return profile",
+				"de": "Assess the change in deal quality with respect to the risk return profile",
+			},
+			{
+				"en": "Assess the quality of deal documentation (covenant strength, enforcement rights, etc.)",
+				"de": "Assess the quality of deal documentation (covenant strength, enforcement rights, etc.)",
+			},
+			{
+				"en": "Do you observe more deals, same amount of deals or less deals",
+				"de": "Do you observe more deals, same amount of deals or less deals",
+			},
 		}
 
-		// gr2
-		{
-			gr := page.AddGroup()
-			gr.Cols = 11
-			gr.BottomVSpacers = 3
+		for idx1, inpName := range page5Inputs {
 			{
-				inp := gr.AddInput()
-				inp.Name = "range01"
-				inp.Type = "range"
-				inp.Min = 0
-				inp.Max = 100
-				inp.Step = 5
-				inp.Style = css.NewStylesResponsive(inp.Style)
-				inp.Style.Desktop.Width = "90%"
+				gr := page.AddGroup()
+				gr.Cols = 1
+				gr.BottomVSpacers = 1
+				{
+					inp := gr.AddInput()
+					inp.Type = "textblock"
+					inp.Label = page5Lbls[idx1].Bold()
 
-				inp.Label = trl.S{
-					"de": "Normal Slider",
-					"en": "Normal Slider",
+					inp.ColSpan = 1
+					// inp.ColSpanLabel = 1
 				}
-
-				inp.ColSpan = 7
-				inp.ColSpanLabel = 2
-				inp.ColSpanControl = 8
-			}
-			{
-				inp := gr.AddInput()
-				inp.Name = "range01_display"
-				inp.Type = "text"
-				inp.MaxChars = 8
-				inp.ColSpan = 2
-				inp.ColSpanLabel = 0
-				inp.ColSpanControl = 1
-			}
-			{
-				inp := gr.AddInput()
-				inp.Name = "range01_noanswer"
-				inp.Type = "radio"
-				inp.ColSpan = 2
-				inp.Label = trl.S{
-					"de": "nicht verfügb.",
-					"en": "not available",
-				}
-				inp.ValueRadio = "xx"
-				inp.ColSpanLabel = 1
-				inp.ColSpanControl = 1
-
-				// inp.ControlTop()
-				// inp.ControlBottom()
-
-				inp.StyleCtl = css.NewStylesResponsive(inp.StyleCtl)
-				inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
-
-				inp.StyleCtl.Desktop.StyleGridItem.Col = "auto/1"
-				inp.StyleLbl.Desktop.StyleGridItem.Col = "auto/1"
 			}
 
-			{
-				inp := gr.AddInput()
-				inp.ColSpanControl = 1
-				inp.Type = "javascript-block"
-				inp.Name = "range"
-
-				inp.JSBlockStrings = map[string]string{}
-				inp.JSBlockStrings["inputName"] = "range01" // as above
-			}
+			chapter3(
+				qst.WrapPageT(page),
+				inpName,
+				"past3m",
+				trl.S{
+					"en": "Last 3&nbsp;months",
+					"de": "Last 3&nbsp;months",
+				},
+				mCh4,
+			)
+			chapter3(
+				qst.WrapPageT(page),
+				inpName,
+				"next3m",
+				trl.S{
+					"en": "Next 3&nbsp;months",
+					"de": "Next 3&nbsp;months",
+				},
+				mCh4,
+			)
 
 		}
 
@@ -621,6 +634,116 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"de": `What UN SDGs are supported by your investment strategy?`,
 			}
 			checkBoxColumn(qst.WrapPageT(page), unSDG, 2, inps, lbls)
+		}
+
+	}
+
+	// page-slider-demo
+	{
+		page := q.AddPage()
+
+		page.Label = trl.S{"de": "Slider"}
+		page.Short = trl.S{"de": "Slider"}
+		page.WidthMax("42rem")
+
+		// gr0
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 1
+			gr.WidthMax("85%")
+			{
+				inp := gr.AddInput()
+				inp.Type = "dyn-textblock"
+				inp.DynamicFunc = "RenderStaticContent"
+				inp.DynamicFuncParamset = "./slider/inner-1.html"
+				inp.ColSpan = 1
+				inp.ColSpanLabel = 1
+			}
+		}
+
+		// gr1
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 1
+			gr.WidthMax("85%")
+			{
+				inp := gr.AddInput()
+				inp.Type = "dyn-textblock"
+				inp.DynamicFunc = "RenderStaticContent"
+				inp.DynamicFuncParamset = "./slider/inner-2.html"
+				inp.ColSpan = 1
+				inp.ColSpanLabel = 1
+			}
+		}
+
+		// gr2
+		{
+			gr := page.AddGroup()
+			gr.Cols = 11
+			gr.BottomVSpacers = 3
+			{
+				inp := gr.AddInput()
+				inp.Name = "range01"
+				inp.Type = "range"
+				inp.Min = 0
+				inp.Max = 100
+				inp.Step = 5
+				inp.Style = css.NewStylesResponsive(inp.Style)
+				inp.Style.Desktop.Width = "90%"
+
+				inp.Label = trl.S{
+					"de": "Normal Slider",
+					"en": "Normal Slider",
+				}
+
+				inp.ColSpan = 7
+				inp.ColSpanLabel = 2
+				inp.ColSpanControl = 8
+			}
+			{
+				inp := gr.AddInput()
+				inp.Name = "range01_display"
+				inp.Type = "text"
+				inp.MaxChars = 8
+				inp.ColSpan = 2
+				inp.ColSpanLabel = 0
+				inp.ColSpanControl = 1
+			}
+			{
+				inp := gr.AddInput()
+				inp.Name = "range01_noanswer"
+				inp.Type = "radio"
+				inp.ColSpan = 2
+				inp.Label = trl.S{
+					"de": "nicht verfügb.",
+					"en": "not available",
+				}
+				inp.ValueRadio = "xx"
+				inp.ColSpanLabel = 1
+				inp.ColSpanControl = 1
+
+				// inp.ControlTop()
+				// inp.ControlBottom()
+
+				inp.StyleCtl = css.NewStylesResponsive(inp.StyleCtl)
+				inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
+
+				inp.StyleCtl.Desktop.StyleGridItem.Col = "auto/1"
+				inp.StyleLbl.Desktop.StyleGridItem.Col = "auto/1"
+			}
+
+			{
+				inp := gr.AddInput()
+				inp.ColSpanControl = 1
+				inp.Type = "javascript-block"
+				inp.Name = "range"
+
+				inp.JSBlockStrings = map[string]string{}
+				inp.JSBlockStrings["inputName"] = "range01" // as above
+			}
+
 		}
 
 	}

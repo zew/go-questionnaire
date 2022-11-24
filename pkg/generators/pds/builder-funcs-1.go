@@ -8,8 +8,8 @@ import (
 	"github.com/zew/go-questionnaire/pkg/trl"
 )
 
-// checkBoxColumnCascade for hierarchical checkboxes from page1
-func checkBoxColumnCascade(
+// checkBoxCascade for hierarchical checkboxes from page1
+func checkBoxCascade(
 	page *qst.WrappedPageT,
 	lblMain trl.S,
 	// numCols float32,
@@ -24,6 +24,7 @@ func checkBoxColumnCascade(
 		gr := page.AddGroup()
 		gr.Cols = 1
 		gr.BottomVSpacers = 1
+		gr.BottomVSpacers = 0
 		{
 			inp := gr.AddInput()
 			inp.Type = "textblock"
@@ -39,7 +40,7 @@ func checkBoxColumnCascade(
 		gr := page.AddGroup()
 		gr.Cols = numCols
 		gr.Style = css.NewStylesResponsive(gr.Style)
-		gr.Style.Desktop.StyleGridContainer.GapRow = "0"
+		gr.Style.Desktop.StyleGridContainer.GapRow = "0.05rem"
 
 		for idx1 := 0; idx1 < len(inps); idx1++ {
 
@@ -53,9 +54,12 @@ func checkBoxColumnCascade(
 					inp.Label["en"] = inp.Label["en"] + " - made available in Q2 23?"
 				}
 				inp.ColSpan = gr.Cols
-				inp.ColSpanControl = 8
+				inp.ColSpanControl = 10
 				inp.ColSpanLabel = 1
 				inp.ControlFirst()
+
+				inp.Style = css.NewStylesResponsive(inp.Style)
+				inp.Style.Desktop.StyleBox.Margin = "0.4rem 0 0 0"
 			}
 
 			// row2
@@ -76,11 +80,12 @@ func checkBoxColumnCascade(
 				inp.ColSpanLabel = 1
 				inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
 				inp.StyleLbl.Desktop.StyleText.FontSize = 85
-				inp.StyleLbl.Desktop.StyleBox.Position = "relative"
-				inp.StyleLbl.Desktop.StyleBox.Top = "0.2rem"
+				// inp.StyleLbl.Desktop.StyleBox.Position = "relative"
+				// inp.StyleLbl.Desktop.StyleBox.Top = "0.2rem"
 			}
 
 			// row3
+			// 		indented level2
 			{
 				inp := gr.AddInput()
 				inp.Type = "textblock"
@@ -110,15 +115,20 @@ func checkBoxColumnCascade(
 				inp.Vertical()
 				inp.VerticalLabel()
 
-				labelBottom := false
+				inp.Style = css.NewStylesResponsive(inp.Style)
+				inp.Style.Desktop.StyleBox.Position = "relative"
+				inp.Style.Desktop.StyleBox.Top = "-0.4rem"
+
 				inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
-				if labelBottom {
-					inp.StyleLbl.Desktop.StyleGridItem.Order = 2
-				} else {
-					// top
-					inp.StyleLbl.Desktop.StyleBox.Position = "relative"
-					inp.StyleLbl.Desktop.StyleBox.Top = "-0.2rem"
-				}
+				inp.StyleLbl.Desktop.StyleText.FontSize = 90
+				// labelBottom := false
+				// if labelBottom {
+				// 	inp.StyleLbl.Desktop.StyleGridItem.Order = 2
+				// } else {
+				// 	// top
+				// 	inp.StyleLbl.Desktop.StyleBox.Position = "relative"
+				// 	inp.StyleLbl.Desktop.StyleBox.Top = "0.2rem"
+				// }
 			}
 
 		}

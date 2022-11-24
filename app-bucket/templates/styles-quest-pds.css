@@ -2,6 +2,17 @@
     display: none;
 }
 
+nav {
+    grid-template-columns: [col-img] 2fr [col-title] 8fr [col-menu] 1.3fr;
+    /* background-color: rgb(66, 144, 66); */
+    /* opacity: 0.8; */
+}
+
+@media screen and (max-width: 800px) {
+    nav {
+        grid-template-columns: 0.5fr 4fr 3.0em [col-menu] 2em 0.15fr;
+    }
+}
 
 input,
 select,

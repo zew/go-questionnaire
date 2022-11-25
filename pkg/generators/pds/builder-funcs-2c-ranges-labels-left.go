@@ -8,7 +8,8 @@ import (
 	"github.com/zew/go-questionnaire/pkg/trl"
 )
 
-const firstColLbl = float32(4)
+// const firstColLbl = float32(4)
+const firstColLbl = float32(3)
 
 var suffixWeeks = trl.S{
 	"en": "weeks",
@@ -19,7 +20,7 @@ var suffixPercent = trl.S{
 	"de": "%",
 }
 
-func slidersRow(
+func slidersPctRowLabelsLeft(
 	page *qst.WrappedPageT,
 	inputName string,
 	lbl trl.S,
@@ -63,10 +64,15 @@ func slidersRow(
 				inp.Type = "range"
 				inp.Name = fmt.Sprintf("%v_%v", ttPref, inputName)
 
-				// below 6 months, 6m-18m in 3m brackets, over 18m
-				inp.Min = 3
-				inp.Max = 21
-				inp.Step = 3
+				// // below 6 months, 6m-18m in 3m brackets, over 18m
+				// inp.Min = 3
+				// inp.Max = 21
+				// inp.Step = 3
+
+				// 0%-100% in 5% brackets
+				inp.Min = 0
+				inp.Max = 100
+				inp.Step = 5
 
 				inp.ColSpan = 1
 				inp.ColSpanLabel = 0
@@ -83,7 +89,7 @@ func slidersRow(
 					inp.ColSpanControl = 1
 				}
 				if idx1 == idxLastCol {
-					// inp.Suffix = sfx
+					inp.Suffix = sfx
 				}
 
 			}

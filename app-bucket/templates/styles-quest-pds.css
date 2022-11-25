@@ -84,4 +84,5 @@ dummy
     background-color: aliceblue;
     background-color: var(--clr-sec-lgt1);
     background-color: var(--clr-sec-lgt2);
+    background-color: transparent;
 }

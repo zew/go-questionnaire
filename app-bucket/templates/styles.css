@@ -571,6 +571,9 @@ input[type=range] {
         seems not necessary for other input types
     */
     vertical-align: middle;
+
+    /* making room for the suffix */
+    max-width: 82%;
 }
 
 input[type=range] {

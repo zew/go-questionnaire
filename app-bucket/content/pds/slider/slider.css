@@ -1,6 +1,11 @@
 /* slider */
 /* www.w3schools.com/howto/howto_js_rangeslider.asp */
 
+input[type=range] {
+    /* just undoing default css of go-questionnaire */
+    max-width: 100%;
+}
+
 
 :root {
     /* background image position */

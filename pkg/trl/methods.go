@@ -81,7 +81,8 @@ func (s S) Set() bool {
 	return true
 }
 
-// Empty checks whether s has only empty translations
+// Empty checks whether s has only empty translations;
+// trl.S{} creates one;
 func (s S) Empty() bool {
 	for _, loc := range s {
 		if len(loc) > 0 {

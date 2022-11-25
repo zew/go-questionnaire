@@ -41,15 +41,31 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"de": "Portfolio Risk",
 		}
 
-		page.WidthMax("72rem")
+		page.WidthMax("64rem")
 
 		page23Types := []string{
-			"type1",
-			"type2",
+			"radios1-4",
+			"range-pct",
+			"range-pct",
+			"range-pct",
+			"restricted-text",
+			"range-pct",
+
+			"range-pct",
+			"range-pct",
+			"range-pct",
 		}
 		page23Inputs := []string{
-			"covenantspercredit",
-			"covenantholidayshare",
+			"covenants_per_credit",
+			"share_covenant_holiday",
+			"share_covenant_reset",
+			"share_covenant_breach",
+			"share_loan_defaults",
+			"share_default_recovered",
+
+			"share_esg_kpis",
+			"share_esg_ratchets",
+			"share_esg_15degrees",
 		}
 		page23Lbls := []trl.S{
 			{
@@ -76,6 +92,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"en": "If you had a default in the past. What was the recovery rate (share of principal)?",
 				"de": "If you had a default in the past. What was the recovery rate (share of principal)?",
 			},
+			// esg
 			{
 				"en": "What is the share of portfolio (at Fair Market Value) with explicit ESG targets in the credit documentation?",
 				"de": "What is the share of portfolio (at Fair Market Value) with explicit ESG targets in the credit documentation?",
@@ -92,31 +109,41 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 		for idx1, inpName := range page23Inputs {
 
-			_ = inpName
-			{
-				gr := page.AddGroup()
-				gr.Cols = 1
-				gr.BottomVSpacers = 1
-				{
-					inp := gr.AddInput()
-					inp.Type = "textblock"
-					inp.Label = page23Lbls[idx1].Bold()
-					inp.Label = page23Lbls[idx1]
+			// {
+			// 	gr := page.AddGroup()
+			// 	gr.Cols = 1
+			// 	gr.BottomVSpacers = 1
+			// 	{
+			// 		inp := gr.AddInput()
+			// 		inp.Type = "textblock"
+			// 		inp.Label = page23Lbls[idx1].Bold()
+			// 		inp.Label = page23Lbls[idx1]
+			// 		inp.ColSpan = 1
+			// 	}
+			// }
 
-					inp.ColSpan = 1
-					// inp.ColSpanLabel = 1
-				}
+			if page23Types[idx1] == "restricted-text" {
+				rT5a := rT5
+				rT5a.LblRow1 = page23Lbls[idx1]
+				restrictedTextMultiCols(qst.WrapPageT(page), rT5a)
 			}
 
-			if page23Types[idx1] == "type1" {
+			if page23Types[idx1] == "range-pct" {
+				slidersPctRowLabelsTop(
+					qst.WrapPageT(page),
+					inpName,
+					page23Lbls[idx1],
+					suffixPercent,
+				)
+			}
 
+			if page23Types[idx1] == "radios1-4" {
 				chapter3(
 					qst.WrapPageT(page),
 					inpName,
-					trl.S{},
+					page23Lbls[idx1],
 					mCh2a,
 				)
-
 			}
 
 		}
@@ -164,12 +191,12 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		page.ValidationFuncName = "pdsPage1"
 
 		page.Label = trl.S{
-			"en": "Manager Characteristics",
-			"de": "Manager Characteristics",
+			"en": "Identification + asset classes",
+			"de": "Identification + asset classes",
 		}
 		page.Short = trl.S{
-			"en": "Manager",
-			"de": "Manager",
+			"en": "Identification<br>Asset Classes",
+			"de": "Identification<br>Asset Classes",
 		}
 
 		page.WidthMax("42rem")
@@ -280,7 +307,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		}
 
 		page.WidthMax("42rem")
-		page.WidthMax("74rem")
+		page.WidthMax("64rem")
 
 		restrictedTextMultiCols(qst.WrapPageT(page), rT1)
 
@@ -288,7 +315,12 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"en": "Average time to close a deal in weeks",
 			"de": "Durchschnittl. Zeit bis Abschluss in Wochen",
 		}
-		slidersRow(qst.WrapPageT(page), "closing_time", lblDuration, suffixWeeks)
+		slidersPctRowLabelsLeft(
+			qst.WrapPageT(page),
+			"closing_time",
+			lblDuration,
+			suffixWeeks,
+		)
 		if false {
 			// old: a single range
 			rangeClosingTime(qst.WrapPageT(page), trancheTypeNamesAC1[0], lblDuration)
@@ -314,19 +346,34 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"en": `<b>Share ESG KPIs</b> <br>What is the share of new deals (at Fair Market Value) with explicit ESG targets in the credit documentation?`,
 			"de": `<b>Share ESG KPIs</b> <br>What is the share of new deals (at Fair Market Value) with explicit ESG targets in the credit documentation?`,
 		}
-		slidersRow(qst.WrapPageT(page), "esg", shareESG, suffixPercent)
+		slidersPctRowLabelsLeft(
+			qst.WrapPageT(page),
+			"esg",
+			shareESG,
+			suffixPercent,
+		)
 
 		shareESGRatch := trl.S{
 			"en": `<b>Share ESG ratchets</b> <br> What is the share of new deals (at Fair Market Value) with ESG ratchets?`,
 			"de": `<b>Share ESG ratchets</b> <br> What is the share of new deals (at Fair Market Value) with ESG ratchets?`,
 		}
-		slidersRow(qst.WrapPageT(page), "esgratch", shareESGRatch, suffixPercent)
+		slidersPctRowLabelsLeft(
+			qst.WrapPageT(page),
+			"esgratch",
+			shareESGRatch,
+			suffixPercent,
+		)
 
 		share15Degree := trl.S{
 			"en": `<b>Share 1.5°C target</b> <br> What is the share of new deals (at Fair Market Value) where the creditor explicitly states a strategy to add to the 1.5°C target?`,
 			"de": `<b>Share 1.5°C target</b> <br> What is the share of new deals (at Fair Market Value) where the creditor explicitly states a strategy to add to the 1.5°C target?`,
 		}
-		slidersRow(qst.WrapPageT(page), "esg15degrees", share15Degree, suffixPercent)
+		slidersPctRowLabelsLeft(
+			qst.WrapPageT(page),
+			"esg15degrees",
+			share15Degree,
+			suffixPercent,
+		)
 
 	}
 
@@ -343,7 +390,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"de": "Indizes",
 		}
 
-		page.WidthMax("72rem")
+		page.WidthMax("64rem")
 
 		page5Inputs := []string{
 			"financing_situation_pricing",

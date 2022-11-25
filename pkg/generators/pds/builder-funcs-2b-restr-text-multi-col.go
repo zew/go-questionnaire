@@ -65,6 +65,7 @@ func restrictedTextMultiCols(
 
 				if idx1 == 0 {
 					inp.Label = cf.LblRow1.Bold()
+					inp.Label = cf.LblRow1
 					inp.ColSpan = firstColLbl + 1
 					inp.ColSpanLabel = firstColLbl
 					inp.ColSpanControl = 1
@@ -77,7 +78,7 @@ func restrictedTextMultiCols(
 		}
 
 		// row2
-		{
+		if !cf.LblRow2.Empty() {
 			inp := gr.AddInput()
 			inp.Type = "textblock"
 			inp.ColSpan = gr.Cols
@@ -87,7 +88,6 @@ func restrictedTextMultiCols(
 			inp.Style = css.NewStylesResponsive(inp.Style)
 			inp.Style.Desktop.StyleBox.Width = "60%"
 			inp.Style.Mobile.StyleBox.Width = "96%"
-
 		}
 
 		// rows 3,4...

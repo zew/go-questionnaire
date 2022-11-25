@@ -18,7 +18,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "b4e9dd55f845419244fbc0e3856bf0f7941b3d69e6f7d991f03c1c06ea8062db",
+ 	"md_5": "a2af6d267e76ce58d248362a6854b2421f4e131557e18a5d8b5bcd8d82894fa9",
  	"lang_codes": [
  		"en"
  	],
@@ -43,7 +43,7 @@
  				"desktop": {
  					"grid_container_style": {},
  					"box_style": {
- 						"width_max": "72rem"
+ 						"width_max": "64rem"
  					},
  					"grid_item_style": {},
  					"text_style": {}
@@ -60,7 +60,6 @@
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
  				{
- 					"bottom_vspacers": 1,
  					"columns": 1,
  					"inputs": [
  						{
@@ -201,7 +200,7 @@
  					"columns": 16,
  					"inputs": [
  						{
- 							"name": "st1_covenantspercredit",
+ 							"name": "st1_covenants_per_credit",
  							"type": "radio",
  							"label": {
  								"de": "0-1",
@@ -258,7 +257,7 @@
  							}
  						},
  						{
- 							"name": "st1_covenantspercredit",
+ 							"name": "st1_covenants_per_credit",
  							"type": "radio",
  							"label": {
  								"de": "1-3",
@@ -314,7 +313,7 @@
  							}
  						},
  						{
- 							"name": "st1_covenantspercredit",
+ 							"name": "st1_covenants_per_credit",
  							"type": "radio",
  							"label": {
  								"de": "3-5",
@@ -370,7 +369,7 @@
  							}
  						},
  						{
- 							"name": "st1_covenantspercredit",
+ 							"name": "st1_covenants_per_credit",
  							"type": "radio",
  							"label": {
  								"de": "\u003e5",
@@ -427,7 +426,7 @@
  							}
  						},
  						{
- 							"name": "st2_covenantspercredit",
+ 							"name": "st2_covenants_per_credit",
  							"type": "radio",
  							"label": {
  								"de": "0-1",
@@ -484,7 +483,7 @@
  							}
  						},
  						{
- 							"name": "st2_covenantspercredit",
+ 							"name": "st2_covenants_per_credit",
  							"type": "radio",
  							"label": {
  								"de": "1-3",
@@ -540,7 +539,7 @@
  							}
  						},
  						{
- 							"name": "st2_covenantspercredit",
+ 							"name": "st2_covenants_per_credit",
  							"type": "radio",
  							"label": {
  								"de": "3-5",
@@ -596,7 +595,7 @@
  							}
  						},
  						{
- 							"name": "st2_covenantspercredit",
+ 							"name": "st2_covenants_per_credit",
  							"type": "radio",
  							"label": {
  								"de": "\u003e5",
@@ -653,7 +652,7 @@
  							}
  						},
  						{
- 							"name": "st3_covenantspercredit",
+ 							"name": "st3_covenants_per_credit",
  							"type": "radio",
  							"label": {
  								"de": "0-1",
@@ -710,7 +709,7 @@
  							}
  						},
  						{
- 							"name": "st3_covenantspercredit",
+ 							"name": "st3_covenants_per_credit",
  							"type": "radio",
  							"label": {
  								"de": "1-3",
@@ -766,7 +765,7 @@
  							}
  						},
  						{
- 							"name": "st3_covenantspercredit",
+ 							"name": "st3_covenants_per_credit",
  							"type": "radio",
  							"label": {
  								"de": "3-5",
@@ -822,7 +821,7 @@
  							}
  						},
  						{
- 							"name": "st3_covenantspercredit",
+ 							"name": "st3_covenants_per_credit",
  							"type": "radio",
  							"label": {
  								"de": "\u003e5",
@@ -879,7 +878,7 @@
  							}
  						},
  						{
- 							"name": "st4_covenantspercredit",
+ 							"name": "st4_covenants_per_credit",
  							"type": "radio",
  							"label": {
  								"de": "0-1",
@@ -936,7 +935,7 @@
  							}
  						},
  						{
- 							"name": "st4_covenantspercredit",
+ 							"name": "st4_covenants_per_credit",
  							"type": "radio",
  							"label": {
  								"de": "1-3",
@@ -992,7 +991,7 @@
  							}
  						},
  						{
- 							"name": "st4_covenantspercredit",
+ 							"name": "st4_covenants_per_credit",
  							"type": "radio",
  							"label": {
  								"de": "3-5",
@@ -1048,7 +1047,7 @@
  							}
  						},
  						{
- 							"name": "st4_covenantspercredit",
+ 							"name": "st4_covenants_per_credit",
  							"type": "radio",
  							"label": {
  								"de": "\u003e5",
@@ -1108,7 +1107,6 @@
  					"class": "chapter3"
  				},
  				{
- 					"bottom_vspacers": 1,
  					"columns": 1,
  					"inputs": [
  						{
@@ -1119,6 +1117,1880 @@
  							},
  							"col_span": 1,
  							"col_span_label": 1
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 4,
+ 					"inputs": [
+ 						{
+ 							"name": "st1_share_covenant_holiday",
+ 							"type": "range",
+ 							"step": 5,
+ 							"max": 100,
+ 							"label": {
+ 								"de": "Senior",
+ 								"en": "Senior"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {
+ 										"margin": "0 1.4rem 0 1.4rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {
+ 										"font_size": 95
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st2_share_covenant_holiday",
+ 							"type": "range",
+ 							"step": 5,
+ 							"max": 100,
+ 							"label": {
+ 								"de": "Unitranche",
+ 								"en": "Unitranche"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {
+ 										"margin": "0 1.4rem 0 1.4rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {
+ 										"font_size": 95
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st3_share_covenant_holiday",
+ 							"type": "range",
+ 							"step": 5,
+ 							"max": 100,
+ 							"label": {
+ 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {
+ 										"margin": "0 1.4rem 0 1.4rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {
+ 										"font_size": 95
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st4_share_covenant_holiday",
+ 							"type": "range",
+ 							"step": 5,
+ 							"max": 100,
+ 							"label": {
+ 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / Other",
+ 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / Other"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {
+ 										"margin": "0 1.4rem 0 1.4rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {
+ 										"font_size": 95
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "What is the share of portfolio (at Fair Market Value) with a covenant reset?",
+ 								"en": "What is the share of portfolio (at Fair Market Value) with a covenant reset?"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 4,
+ 					"inputs": [
+ 						{
+ 							"name": "st1_share_covenant_reset",
+ 							"type": "range",
+ 							"step": 5,
+ 							"max": 100,
+ 							"label": {
+ 								"de": "Senior",
+ 								"en": "Senior"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {
+ 										"margin": "0 1.4rem 0 1.4rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {
+ 										"font_size": 95
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st2_share_covenant_reset",
+ 							"type": "range",
+ 							"step": 5,
+ 							"max": 100,
+ 							"label": {
+ 								"de": "Unitranche",
+ 								"en": "Unitranche"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {
+ 										"margin": "0 1.4rem 0 1.4rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {
+ 										"font_size": 95
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st3_share_covenant_reset",
+ 							"type": "range",
+ 							"step": 5,
+ 							"max": 100,
+ 							"label": {
+ 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {
+ 										"margin": "0 1.4rem 0 1.4rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {
+ 										"font_size": 95
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st4_share_covenant_reset",
+ 							"type": "range",
+ 							"step": 5,
+ 							"max": 100,
+ 							"label": {
+ 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / Other",
+ 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / Other"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {
+ 										"margin": "0 1.4rem 0 1.4rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {
+ 										"font_size": 95
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "What is the share of portfolio (at Fair Market Value) with a covenant breach?",
+ 								"en": "What is the share of portfolio (at Fair Market Value) with a covenant breach?"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 4,
+ 					"inputs": [
+ 						{
+ 							"name": "st1_share_covenant_breach",
+ 							"type": "range",
+ 							"step": 5,
+ 							"max": 100,
+ 							"label": {
+ 								"de": "Senior",
+ 								"en": "Senior"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {
+ 										"margin": "0 1.4rem 0 1.4rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {
+ 										"font_size": 95
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st2_share_covenant_breach",
+ 							"type": "range",
+ 							"step": 5,
+ 							"max": 100,
+ 							"label": {
+ 								"de": "Unitranche",
+ 								"en": "Unitranche"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {
+ 										"margin": "0 1.4rem 0 1.4rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {
+ 										"font_size": 95
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st3_share_covenant_breach",
+ 							"type": "range",
+ 							"step": 5,
+ 							"max": 100,
+ 							"label": {
+ 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {
+ 										"margin": "0 1.4rem 0 1.4rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {
+ 										"font_size": 95
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st4_share_covenant_breach",
+ 							"type": "range",
+ 							"step": 5,
+ 							"max": 100,
+ 							"label": {
+ 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / Other",
+ 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / Other"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {
+ 										"margin": "0 1.4rem 0 1.4rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {
+ 										"font_size": 95
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 7,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"col_span": 3,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Senior",
+ 								"en": "Senior"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Unitranche",
+ 								"en": "Unitranche"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / Other",
+ 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / Other"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st1_share_loans_default_main",
+ 							"type": "number",
+ 							"max_chars": 3,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "#",
+ 								"en": "#"
+ 							},
+ 							"label": {
+ 								"de": "Share of defaulted loans (measured at cost/principal amount of loan)",
+ 								"en": "Share of defaulted loans (measured at cost/principal amount of loan)"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 3,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st2_share_loans_default_main",
+ 							"type": "number",
+ 							"max_chars": 3,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "#",
+ 								"en": "#"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st3_share_loans_default_main",
+ 							"type": "number",
+ 							"max_chars": 3,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "#",
+ 								"en": "#"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "st4_share_loans_default_main",
+ 							"type": "number",
+ 							"max_chars": 3,
+ 							"step": 1,
+ 							"max": 1000000,
+ 							"placeholder": {
+ 								"de": "#",
+ 								"en": "#"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "If you had a default in the past. What was the recovery rate (share of principal)?",
+ 								"en": "If you had a default in the past. What was the recovery rate (share of principal)?"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 4,
+ 					"inputs": [
+ 						{
+ 							"name": "st1_share_default_recovered",
+ 							"type": "range",
+ 							"step": 5,
+ 							"max": 100,
+ 							"label": {
+ 								"de": "Senior",
+ 								"en": "Senior"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {
+ 										"margin": "0 1.4rem 0 1.4rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {
+ 										"font_size": 95
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st2_share_default_recovered",
+ 							"type": "range",
+ 							"step": 5,
+ 							"max": 100,
+ 							"label": {
+ 								"de": "Unitranche",
+ 								"en": "Unitranche"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {
+ 										"margin": "0 1.4rem 0 1.4rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {
+ 										"font_size": 95
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st3_share_default_recovered",
+ 							"type": "range",
+ 							"step": 5,
+ 							"max": 100,
+ 							"label": {
+ 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {
+ 										"margin": "0 1.4rem 0 1.4rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {
+ 										"font_size": 95
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st4_share_default_recovered",
+ 							"type": "range",
+ 							"step": 5,
+ 							"max": 100,
+ 							"label": {
+ 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / Other",
+ 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / Other"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {
+ 										"margin": "0 1.4rem 0 1.4rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {
+ 										"font_size": 95
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "What is the share of portfolio (at Fair Market Value) with explicit ESG targets in the credit documentation?",
+ 								"en": "What is the share of portfolio (at Fair Market Value) with explicit ESG targets in the credit documentation?"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 4,
+ 					"inputs": [
+ 						{
+ 							"name": "st1_share_esg_kpis",
+ 							"type": "range",
+ 							"step": 5,
+ 							"max": 100,
+ 							"label": {
+ 								"de": "Senior",
+ 								"en": "Senior"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {
+ 										"margin": "0 1.4rem 0 1.4rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {
+ 										"font_size": 95
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st2_share_esg_kpis",
+ 							"type": "range",
+ 							"step": 5,
+ 							"max": 100,
+ 							"label": {
+ 								"de": "Unitranche",
+ 								"en": "Unitranche"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {
+ 										"margin": "0 1.4rem 0 1.4rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {
+ 										"font_size": 95
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st3_share_esg_kpis",
+ 							"type": "range",
+ 							"step": 5,
+ 							"max": 100,
+ 							"label": {
+ 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {
+ 										"margin": "0 1.4rem 0 1.4rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {
+ 										"font_size": 95
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st4_share_esg_kpis",
+ 							"type": "range",
+ 							"step": 5,
+ 							"max": 100,
+ 							"label": {
+ 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / Other",
+ 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / Other"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {
+ 										"margin": "0 1.4rem 0 1.4rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {
+ 										"font_size": 95
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "What is the share of portfolio (at Fair Market Value) with ESG ratchets?",
+ 								"en": "What is the share of portfolio (at Fair Market Value) with ESG ratchets?"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 4,
+ 					"inputs": [
+ 						{
+ 							"name": "st1_share_esg_ratchets",
+ 							"type": "range",
+ 							"step": 5,
+ 							"max": 100,
+ 							"label": {
+ 								"de": "Senior",
+ 								"en": "Senior"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {
+ 										"margin": "0 1.4rem 0 1.4rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {
+ 										"font_size": 95
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st2_share_esg_ratchets",
+ 							"type": "range",
+ 							"step": 5,
+ 							"max": 100,
+ 							"label": {
+ 								"de": "Unitranche",
+ 								"en": "Unitranche"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {
+ 										"margin": "0 1.4rem 0 1.4rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {
+ 										"font_size": 95
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st3_share_esg_ratchets",
+ 							"type": "range",
+ 							"step": 5,
+ 							"max": 100,
+ 							"label": {
+ 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {
+ 										"margin": "0 1.4rem 0 1.4rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {
+ 										"font_size": 95
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st4_share_esg_ratchets",
+ 							"type": "range",
+ 							"step": 5,
+ 							"max": 100,
+ 							"label": {
+ 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / Other",
+ 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / Other"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {
+ 										"margin": "0 1.4rem 0 1.4rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {
+ 										"font_size": 95
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "What is the share of portfolio (at Fair Market Value) where the creditor explicitly states a strategy to add to the 1.5°C target?",
+ 								"en": "What is the share of portfolio (at Fair Market Value) where the creditor explicitly states a strategy to add to the 1.5°C target?"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 4,
+ 					"inputs": [
+ 						{
+ 							"name": "st1_share_esg_15degrees",
+ 							"type": "range",
+ 							"step": 5,
+ 							"max": 100,
+ 							"label": {
+ 								"de": "Senior",
+ 								"en": "Senior"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {
+ 										"margin": "0 1.4rem 0 1.4rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {
+ 										"font_size": 95
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st2_share_esg_15degrees",
+ 							"type": "range",
+ 							"step": 5,
+ 							"max": 100,
+ 							"label": {
+ 								"de": "Unitranche",
+ 								"en": "Unitranche"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {
+ 										"margin": "0 1.4rem 0 1.4rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {
+ 										"font_size": 95
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st3_share_esg_15degrees",
+ 							"type": "range",
+ 							"step": 5,
+ 							"max": 100,
+ 							"label": {
+ 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {
+ 										"margin": "0 1.4rem 0 1.4rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {
+ 										"font_size": 95
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st4_share_esg_15degrees",
+ 							"type": "range",
+ 							"step": 5,
+ 							"max": 100,
+ 							"label": {
+ 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / Other",
+ 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / Other"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {
+ 										"margin": "0 1.4rem 0 1.4rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {
+ 										"font_size": 95
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						}
  					]
  				}
@@ -1175,16 +3047,16 @@
  		},
  		{
  			"label": {
- 				"de": "Manager Characteristics",
- 				"en": "Manager Characteristics"
+ 				"de": "Identification + asset classes",
+ 				"en": "Identification + asset classes"
  			},
  			"description": {
  				"de": "",
  				"en": ""
  			},
  			"short": {
- 				"de": "Manager",
- 				"en": "Manager"
+ 				"de": "Identification\u003cbr\u003eAsset Classes",
+ 				"en": "Identification\u003cbr\u003eAsset Classes"
  			},
  			"style": {
  				"desktop": {
@@ -2170,7 +4042,7 @@
  				"desktop": {
  					"grid_container_style": {},
  					"box_style": {
- 						"width_max": "74rem"
+ 						"width_max": "64rem"
  					},
  					"grid_item_style": {},
  					"text_style": {}
@@ -2188,11 +4060,11 @@
  			"groups": [
  				{
  					"bottom_vspacers": 3,
- 					"columns": 8,
+ 					"columns": 7,
  					"inputs": [
  						{
  							"type": "textblock",
- 							"col_span": 4,
+ 							"col_span": 3,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
@@ -2342,11 +4214,11 @@
  								"en": "#"
  							},
  							"label": {
- 								"de": "\u003cb\u003eGe\u0026shy;samtzahl neue Abschlüsse\u003c/b\u003e",
- 								"en": "\u003cb\u003eTotal number of new deals\u003c/b\u003e"
+ 								"de": "Ge\u0026shy;samtzahl neue Abschlüsse",
+ 								"en": "Total number of new deals"
  							},
- 							"col_span": 5,
- 							"col_span_label": 4,
+ 							"col_span": 4,
+ 							"col_span_label": 3,
  							"col_span_control": 1
  						},
  						{
@@ -2398,7 +4270,7 @@
  								"de": "Please state the number of deals closed in Q4 2022 by market segment: ",
  								"en": "Please state the number of deals closed in Q4 2022 by market segment: "
  							},
- 							"col_span": 8,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"style": {
  								"desktop": {
@@ -2433,8 +4305,8 @@
  								"de": "- Lower Mid-Market (0-15m € EBITDA)",
  								"en": "- Lower Mid-Market (0-15m € EBITDA)"
  							},
- 							"col_span": 5,
- 							"col_span_label": 4,
+ 							"col_span": 4,
+ 							"col_span_label": 3,
  							"col_span_control": 1,
  							"style_label": {
  								"desktop": {
@@ -2510,8 +4382,8 @@
  								"de": "- Core- and Upper Mid-Market (\u003e15m € EBITDA)",
  								"en": "- Core- and Upper Mid-Market (\u003e15m € EBITDA)"
  							},
- 							"col_span": 5,
- 							"col_span_label": 4,
+ 							"col_span": 4,
+ 							"col_span_label": 3,
  							"col_span_control": 1,
  							"style_label": {
  								"desktop": {
@@ -2587,8 +4459,8 @@
  								"de": "- Other",
  								"en": "- Other"
  							},
- 							"col_span": 5,
- 							"col_span_label": 4,
+ 							"col_span": 4,
+ 							"col_span_label": 3,
  							"col_span_control": 1,
  							"style_label": {
  								"desktop": {
@@ -2654,11 +4526,11 @@
  				},
  				{
  					"bottom_vspacers": 3,
- 					"columns": 8,
+ 					"columns": 7,
  					"inputs": [
  						{
  							"type": "textblock",
- 							"col_span": 4,
+ 							"col_span": 3,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
@@ -2800,15 +4672,14 @@
  						{
  							"name": "st1_closing_time",
  							"type": "range",
- 							"step": 3,
- 							"min": 3,
- 							"max": 21,
+ 							"step": 5,
+ 							"max": 100,
  							"label": {
  								"de": "Durchschnittl. Zeit bis Abschluss in Wochen",
  								"en": "Av\u0026shy;er\u0026shy;age time to close a deal in weeks"
  							},
- 							"col_span": 5,
- 							"col_span_label": 4,
+ 							"col_span": 4,
+ 							"col_span_label": 3,
  							"col_span_control": 1,
  							"style_label": {
  								"desktop": {
@@ -2846,9 +4717,8 @@
  						{
  							"name": "st2_closing_time",
  							"type": "range",
- 							"step": 3,
- 							"min": 3,
- 							"max": 21,
+ 							"step": 5,
+ 							"max": 100,
  							"col_span": 1,
  							"col_span_control": 1,
  							"style_control": {
@@ -2871,9 +4741,8 @@
  						{
  							"name": "st3_closing_time",
  							"type": "range",
- 							"step": 3,
- 							"min": 3,
- 							"max": 21,
+ 							"step": 5,
+ 							"max": 100,
  							"col_span": 1,
  							"col_span_control": 1,
  							"style_control": {
@@ -2896,9 +4765,12 @@
  						{
  							"name": "st4_closing_time",
  							"type": "range",
- 							"step": 3,
- 							"min": 3,
- 							"max": 21,
+ 							"step": 5,
+ 							"max": 100,
+ 							"suffix": {
+ 								"de": "Wochen",
+ 								"en": "weeks"
+ 							},
  							"col_span": 1,
  							"col_span_control": 1,
  							"style_control": {
@@ -4637,11 +6509,11 @@
  				},
  				{
  					"bottom_vspacers": 3,
- 					"columns": 8,
+ 					"columns": 7,
  					"inputs": [
  						{
  							"type": "textblock",
- 							"col_span": 4,
+ 							"col_span": 3,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
@@ -4791,11 +6663,11 @@
  								"en": "million Euro"
  							},
  							"label": {
- 								"de": "\u003cb\u003eGe\u0026shy;samtvolumen neuer Abschlüsse nach Marktsegment\u003c/b\u003e",
- 								"en": "\u003cb\u003eTotal volume of new deals by segment\u003c/b\u003e"
+ 								"de": "Ge\u0026shy;samtvolumen neuer Abschlüsse nach Marktsegment",
+ 								"en": "Total volume of new deals by segment"
  							},
- 							"col_span": 5,
- 							"col_span_label": 4,
+ 							"col_span": 4,
+ 							"col_span_label": 3,
  							"col_span_control": 1
  						},
  						{
@@ -4847,7 +6719,7 @@
  								"de": "Bitte nennen Sie das Volumen (in Millionen Euro) von Abschlüssen in Q4 2022 nach Marktsegment: ",
  								"en": "Please state the volume (in million Euro) of deals closed in Q4 2022 by market segment: "
  							},
- 							"col_span": 8,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"style": {
  								"desktop": {
@@ -4882,8 +6754,8 @@
  								"de": "- Lower Mid-Market (0-15m € EBITDA)",
  								"en": "- Lower Mid-Market (0-15m € EBITDA)"
  							},
- 							"col_span": 5,
- 							"col_span_label": 4,
+ 							"col_span": 4,
+ 							"col_span_label": 3,
  							"col_span_control": 1,
  							"style_label": {
  								"desktop": {
@@ -4959,8 +6831,8 @@
  								"de": "- Core Mid-Market  (15-50m € EBITDA)",
  								"en": "- Core Mid-Market  (15-50m € EBITDA)"
  							},
- 							"col_span": 5,
- 							"col_span_label": 4,
+ 							"col_span": 4,
+ 							"col_span_label": 3,
  							"col_span_control": 1,
  							"style_label": {
  								"desktop": {
@@ -5036,8 +6908,8 @@
  								"de": "- Upper Mid-Market (\u003e50m € EBITDA)",
  								"en": "- Upper Mid-Market (\u003e50m € EBITDA)"
  							},
- 							"col_span": 5,
- 							"col_span_label": 4,
+ 							"col_span": 4,
+ 							"col_span_label": 3,
  							"col_span_control": 1,
  							"style_label": {
  								"desktop": {
@@ -5103,11 +6975,11 @@
  				},
  				{
  					"bottom_vspacers": 3,
- 					"columns": 8,
+ 					"columns": 7,
  					"inputs": [
  						{
  							"type": "textblock",
- 							"col_span": 4,
+ 							"col_span": 3,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
@@ -5257,11 +7129,11 @@
  								"en": "million Euro"
  							},
  							"label": {
- 								"de": "\u003cb\u003eGe\u0026shy;samtvolumen neuer Abschlüsse nach Region\u003c/b\u003e",
- 								"en": "\u003cb\u003eTotal volume of new deals by region\u003c/b\u003e"
+ 								"de": "Ge\u0026shy;samtvolumen neuer Abschlüsse nach Region",
+ 								"en": "Total volume of new deals by region"
  							},
- 							"col_span": 5,
- 							"col_span_label": 4,
+ 							"col_span": 4,
+ 							"col_span_label": 3,
  							"col_span_control": 1
  						},
  						{
@@ -5313,7 +7185,7 @@
  								"de": "Bitte nennen Sie das Volumen (in Millionen Euro) von Abschlüssen in Q4 2022 nach Region: ",
  								"en": "Please state the volume (in million Euro) of deals closed in Q4 2022 by region: "
  							},
- 							"col_span": 8,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"style": {
  								"desktop": {
@@ -5348,8 +7220,8 @@
  								"de": "- UK",
  								"en": "- UK"
  							},
- 							"col_span": 5,
- 							"col_span_label": 4,
+ 							"col_span": 4,
+ 							"col_span_label": 3,
  							"col_span_control": 1,
  							"style_label": {
  								"desktop": {
@@ -5425,8 +7297,8 @@
  								"de": "- France",
  								"en": "- France"
  							},
- 							"col_span": 5,
- 							"col_span_label": 4,
+ 							"col_span": 4,
+ 							"col_span_label": 3,
  							"col_span_control": 1,
  							"style_label": {
  								"desktop": {
@@ -5502,8 +7374,8 @@
  								"de": "- DACH",
  								"en": "- DACH"
  							},
- 							"col_span": 5,
- 							"col_span_label": 4,
+ 							"col_span": 4,
+ 							"col_span_label": 3,
  							"col_span_control": 1,
  							"style_label": {
  								"desktop": {
@@ -5579,8 +7451,8 @@
  								"de": "- Benelux",
  								"en": "- Benelux"
  							},
- 							"col_span": 5,
- 							"col_span_label": 4,
+ 							"col_span": 4,
+ 							"col_span_label": 3,
  							"col_span_control": 1,
  							"style_label": {
  								"desktop": {
@@ -5656,8 +7528,8 @@
  								"de": "- Nordics",
  								"en": "- Nordics"
  							},
- 							"col_span": 5,
- 							"col_span_label": 4,
+ 							"col_span": 4,
+ 							"col_span_label": 3,
  							"col_span_control": 1,
  							"style_label": {
  								"desktop": {
@@ -5733,8 +7605,8 @@
  								"de": "- Southern Europe",
  								"en": "- Southern Europe"
  							},
- 							"col_span": 5,
- 							"col_span_label": 4,
+ 							"col_span": 4,
+ 							"col_span_label": 3,
  							"col_span_control": 1,
  							"style_label": {
  								"desktop": {
@@ -5810,8 +7682,8 @@
  								"de": "- Other",
  								"en": "- Other"
  							},
- 							"col_span": 5,
- 							"col_span_label": 4,
+ 							"col_span": 4,
+ 							"col_span_label": 3,
  							"col_span_control": 1,
  							"style_label": {
  								"desktop": {
@@ -5877,11 +7749,11 @@
  				},
  				{
  					"bottom_vspacers": 3,
- 					"columns": 8,
+ 					"columns": 7,
  					"inputs": [
  						{
  							"type": "textblock",
- 							"col_span": 4,
+ 							"col_span": 3,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
@@ -6031,11 +7903,11 @@
  								"en": "million Euro"
  							},
  							"label": {
- 								"de": "\u003cb\u003eGe\u0026shy;samtvolumen neuer Abschlüsse nach Sektor\u003c/b\u003e",
- 								"en": "\u003cb\u003eTotal volume of new deals by sector\u003c/b\u003e"
+ 								"de": "Ge\u0026shy;samtvolumen neuer Abschlüsse nach Sektor",
+ 								"en": "Total volume of new deals by sector"
  							},
- 							"col_span": 5,
- 							"col_span_label": 4,
+ 							"col_span": 4,
+ 							"col_span_label": 3,
  							"col_span_control": 1
  						},
  						{
@@ -6087,7 +7959,7 @@
  								"de": "Bitte nennen Sie das Volumen (in Millionen Euro) von Abschlüssen in Q4 2022 nach Region: ",
  								"en": "Please state the volume (in million Euro) of deals closed in Q4 2022 by region: "
  							},
- 							"col_span": 8,
+ 							"col_span": 7,
  							"col_span_label": 1,
  							"style": {
  								"desktop": {
@@ -6122,8 +7994,8 @@
  								"de": "- Energy",
  								"en": "- Energy"
  							},
- 							"col_span": 5,
- 							"col_span_label": 4,
+ 							"col_span": 4,
+ 							"col_span_label": 3,
  							"col_span_control": 1,
  							"style_label": {
  								"desktop": {
@@ -6199,8 +8071,8 @@
  								"de": "- Materials",
  								"en": "- Materials"
  							},
- 							"col_span": 5,
- 							"col_span_label": 4,
+ 							"col_span": 4,
+ 							"col_span_label": 3,
  							"col_span_control": 1,
  							"style_label": {
  								"desktop": {
@@ -6276,8 +8148,8 @@
  								"de": "- In\u0026shy;dus\u0026shy;tri\u0026shy;als",
  								"en": "- In\u0026shy;dus\u0026shy;tri\u0026shy;als"
  							},
- 							"col_span": 5,
- 							"col_span_label": 4,
+ 							"col_span": 4,
+ 							"col_span_label": 3,
  							"col_span_control": 1,
  							"style_label": {
  								"desktop": {
@@ -6353,8 +8225,8 @@
  								"de": "- Cons\u0026shy;umer Discretionary",
  								"en": "- Cons\u0026shy;umer Discretionary"
  							},
- 							"col_span": 5,
- 							"col_span_label": 4,
+ 							"col_span": 4,
+ 							"col_span_label": 3,
  							"col_span_control": 1,
  							"style_label": {
  								"desktop": {
@@ -6430,8 +8302,8 @@
  								"de": "- Cons\u0026shy;umer Staples",
  								"en": "- Cons\u0026shy;umer Staples"
  							},
- 							"col_span": 5,
- 							"col_span_label": 4,
+ 							"col_span": 4,
+ 							"col_span_label": 3,
  							"col_span_control": 1,
  							"style_label": {
  								"desktop": {
@@ -6507,8 +8379,8 @@
  								"de": "- Health Care",
  								"en": "- Health Care"
  							},
- 							"col_span": 5,
- 							"col_span_label": 4,
+ 							"col_span": 4,
+ 							"col_span_label": 3,
  							"col_span_control": 1,
  							"style_label": {
  								"desktop": {
@@ -6584,8 +8456,8 @@
  								"de": "- Financials",
  								"en": "- Financials"
  							},
- 							"col_span": 5,
- 							"col_span_label": 4,
+ 							"col_span": 4,
+ 							"col_span_label": 3,
  							"col_span_control": 1,
  							"style_label": {
  								"desktop": {
@@ -6661,8 +8533,8 @@
  								"de": "- Information Technology",
  								"en": "- Information Technology"
  							},
- 							"col_span": 5,
- 							"col_span_label": 4,
+ 							"col_span": 4,
+ 							"col_span_label": 3,
  							"col_span_control": 1,
  							"style_label": {
  								"desktop": {
@@ -6738,8 +8610,8 @@
  								"de": "- Comunication Services",
  								"en": "- Comunication Services"
  							},
- 							"col_span": 5,
- 							"col_span_label": 4,
+ 							"col_span": 4,
+ 							"col_span_label": 3,
  							"col_span_control": 1,
  							"style_label": {
  								"desktop": {
@@ -6815,8 +8687,8 @@
  								"de": "- Utilities",
  								"en": "- Utilities"
  							},
- 							"col_span": 5,
- 							"col_span_label": 4,
+ 							"col_span": 4,
+ 							"col_span_label": 3,
  							"col_span_control": 1,
  							"style_label": {
  								"desktop": {
@@ -6892,8 +8764,8 @@
  								"de": "- Real Estate",
  								"en": "- Real Estate"
  							},
- 							"col_span": 5,
- 							"col_span_label": 4,
+ 							"col_span": 4,
+ 							"col_span_label": 3,
  							"col_span_control": 1,
  							"style_label": {
  								"desktop": {
@@ -6969,8 +8841,8 @@
  								"de": "- Other",
  								"en": "- Other"
  							},
- 							"col_span": 5,
- 							"col_span_label": 4,
+ 							"col_span": 4,
+ 							"col_span_label": 3,
  							"col_span_control": 1,
  							"style_label": {
  								"desktop": {
@@ -7036,11 +8908,11 @@
  				},
  				{
  					"bottom_vspacers": 3,
- 					"columns": 8,
+ 					"columns": 7,
  					"inputs": [
  						{
  							"type": "textblock",
- 							"col_span": 4,
+ 							"col_span": 3,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
@@ -7182,15 +9054,14 @@
  						{
  							"name": "st1_esg",
  							"type": "range",
- 							"step": 3,
- 							"min": 3,
- 							"max": 21,
+ 							"step": 5,
+ 							"max": 100,
  							"label": {
  								"de": "\u003cb\u003eShare ESG KPIs\u003c/b\u003e \u003cbr\u003eWhat is the share of new deals (at Fair Market Value) with explicit ESG targets in the credit documentation?",
  								"en": "\u003cb\u003eShare ESG KPIs\u003c/b\u003e \u003cbr\u003eWhat is the share of new deals (at Fair Market Value) with explicit ESG targets in the credit documentation?"
  							},
- 							"col_span": 5,
- 							"col_span_label": 4,
+ 							"col_span": 4,
+ 							"col_span_label": 3,
  							"col_span_control": 1,
  							"style_label": {
  								"desktop": {
@@ -7228,9 +9099,8 @@
  						{
  							"name": "st2_esg",
  							"type": "range",
- 							"step": 3,
- 							"min": 3,
- 							"max": 21,
+ 							"step": 5,
+ 							"max": 100,
  							"col_span": 1,
  							"col_span_control": 1,
  							"style_control": {
@@ -7253,9 +9123,8 @@
  						{
  							"name": "st3_esg",
  							"type": "range",
- 							"step": 3,
- 							"min": 3,
- 							"max": 21,
+ 							"step": 5,
+ 							"max": 100,
  							"col_span": 1,
  							"col_span_control": 1,
  							"style_control": {
@@ -7278,9 +9147,12 @@
  						{
  							"name": "st4_esg",
  							"type": "range",
- 							"step": 3,
- 							"min": 3,
- 							"max": 21,
+ 							"step": 5,
+ 							"max": 100,
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
  							"col_span": 1,
  							"col_span_control": 1,
  							"style_control": {
@@ -7304,11 +9176,11 @@
  				},
  				{
  					"bottom_vspacers": 3,
- 					"columns": 8,
+ 					"columns": 7,
  					"inputs": [
  						{
  							"type": "textblock",
- 							"col_span": 4,
+ 							"col_span": 3,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
@@ -7450,15 +9322,14 @@
  						{
  							"name": "st1_esgratch",
  							"type": "range",
- 							"step": 3,
- 							"min": 3,
- 							"max": 21,
+ 							"step": 5,
+ 							"max": 100,
  							"label": {
  								"de": "\u003cb\u003eShare ESG ratchets\u003c/b\u003e \u003cbr\u003e What is the share of new deals (at Fair Market Value) with ESG ratchets?",
  								"en": "\u003cb\u003eShare ESG ratchets\u003c/b\u003e \u003cbr\u003e What is the share of new deals (at Fair Market Value) with ESG ratchets?"
  							},
- 							"col_span": 5,
- 							"col_span_label": 4,
+ 							"col_span": 4,
+ 							"col_span_label": 3,
  							"col_span_control": 1,
  							"style_label": {
  								"desktop": {
@@ -7496,9 +9367,8 @@
  						{
  							"name": "st2_esgratch",
  							"type": "range",
- 							"step": 3,
- 							"min": 3,
- 							"max": 21,
+ 							"step": 5,
+ 							"max": 100,
  							"col_span": 1,
  							"col_span_control": 1,
  							"style_control": {
@@ -7521,9 +9391,8 @@
  						{
  							"name": "st3_esgratch",
  							"type": "range",
- 							"step": 3,
- 							"min": 3,
- 							"max": 21,
+ 							"step": 5,
+ 							"max": 100,
  							"col_span": 1,
  							"col_span_control": 1,
  							"style_control": {
@@ -7546,9 +9415,12 @@
  						{
  							"name": "st4_esgratch",
  							"type": "range",
- 							"step": 3,
- 							"min": 3,
- 							"max": 21,
+ 							"step": 5,
+ 							"max": 100,
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
  							"col_span": 1,
  							"col_span_control": 1,
  							"style_control": {
@@ -7572,11 +9444,11 @@
  				},
  				{
  					"bottom_vspacers": 3,
- 					"columns": 8,
+ 					"columns": 7,
  					"inputs": [
  						{
  							"type": "textblock",
- 							"col_span": 4,
+ 							"col_span": 3,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
@@ -7718,15 +9590,14 @@
  						{
  							"name": "st1_esg15degrees",
  							"type": "range",
- 							"step": 3,
- 							"min": 3,
- 							"max": 21,
+ 							"step": 5,
+ 							"max": 100,
  							"label": {
  								"de": "\u003cb\u003eShare 1.5°C target\u003c/b\u003e \u003cbr\u003e What is the share of new deals (at Fair Market Value) where the creditor explicitly states a strategy to add to the 1.5°C target?",
  								"en": "\u003cb\u003eShare 1.5°C target\u003c/b\u003e \u003cbr\u003e What is the share of new deals (at Fair Market Value) where the creditor explicitly states a strategy to add to the 1.5°C target?"
  							},
- 							"col_span": 5,
- 							"col_span_label": 4,
+ 							"col_span": 4,
+ 							"col_span_label": 3,
  							"col_span_control": 1,
  							"style_label": {
  								"desktop": {
@@ -7764,9 +9635,8 @@
  						{
  							"name": "st2_esg15degrees",
  							"type": "range",
- 							"step": 3,
- 							"min": 3,
- 							"max": 21,
+ 							"step": 5,
+ 							"max": 100,
  							"col_span": 1,
  							"col_span_control": 1,
  							"style_control": {
@@ -7789,9 +9659,8 @@
  						{
  							"name": "st3_esg15degrees",
  							"type": "range",
- 							"step": 3,
- 							"min": 3,
- 							"max": 21,
+ 							"step": 5,
+ 							"max": 100,
  							"col_span": 1,
  							"col_span_control": 1,
  							"style_control": {
@@ -7814,9 +9683,12 @@
  						{
  							"name": "st4_esg15degrees",
  							"type": "range",
- 							"step": 3,
- 							"min": 3,
- 							"max": 21,
+ 							"step": 5,
+ 							"max": 100,
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
  							"col_span": 1,
  							"col_span_control": 1,
  							"style_control": {
@@ -7857,7 +9729,7 @@
  				"desktop": {
  					"grid_container_style": {},
  					"box_style": {
- 						"width_max": "72rem"
+ 						"width_max": "64rem"
  					},
  					"grid_item_style": {},
  					"text_style": {}

@@ -1,0 +1,65 @@
+<!-- 
+    https://css-tricks.com/sliding-nightmare-understanding-range-input/
+ -->
+
+<link rel="stylesheet" href="../../../templates/styles.css">
+<link rel="stylesheet" href="ticks-and-labels-02.css">
+
+<!-- 
+    datalists can be global;
+    they are invisible and have no styling
+ -->
+<datalist id="datalist01">
+    <option value="0" label="0"></option>
+    <option value="10" label="10"></option>
+    <option value="20"></option>
+    <option value="30" label="30"></option>
+    <option value="40"></option>
+    <option value="50"></option>
+    <option value="60" label="60"></option>
+    <option value="70"></option>
+    <option value="80"></option>
+    <option value="90"></option>
+    <option value="100" label="100"></option>
+</datalist>
+
+
+
+
+<div class="range-type1-wrapper">
+
+    <input id="range01" 
+        type="range" 
+        list="datalist01"
+        min="0" 
+        max="100" 
+        step="10" 
+        value="90"
+    />
+    <!-- label must be trailing sibling to input[range] -->
+    <label for="range01">
+        share of loan defaults
+        <div class="labels" aria-hidden="true" 
+        ><span 
+            style="--i: 0"   >0</span><span 
+            style="--i: 1"  >10</span><span
+            style="--i: 3"  >30</span><span 
+            style="--i: 6"  >60</span><span 
+            style="--i: 10">100</span>
+        </div>
+    </label>
+
+
+
+</div><!-- /range-type1-wrapper -->
+
+
+
+<p style="    margin: 2rem 1rem;"> 
+    <br> 
+    unstyled for comparison 
+    <br> 
+    <input id="range01" type="range" list="non-existing" min="0" max="100" step="10" 
+            
+    />
+</p>

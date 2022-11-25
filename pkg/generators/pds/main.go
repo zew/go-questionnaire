@@ -195,8 +195,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"de": "Identification + asset classes",
 		}
 		page.Short = trl.S{
-			"en": "Identification<br>Asset Classes",
-			"de": "Identification<br>Asset Classes",
+			"en": "Identification,<br>Asset Classes",
+			"de": "Identification,<br>Asset Classes",
 		}
 
 		page.WidthMax("42rem")

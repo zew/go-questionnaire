@@ -1,0 +1,187 @@
+/* 
+https://css-tricks.com/sliding-nightmare-understanding-range-input/
+*/
+
+/* 
+
+    dont confuse label and labels;
+    the first   is the <label...> element;
+    the second  is the class  .labels for the ticks;
+    
+    the ticks are created via repeating-linear-gradient
+*/
+
+.range-type1-wrapper {
+
+    margin: 2rem 1rem;
+
+    /* 
+        label appears *above* input[range] 
+        .labels are positioned absolutely - 
+            therefore below 
+    */
+    display: flex;
+    flex-direction: column-reverse;
+
+    /* anchor for absolute position of .labels */
+    position: relative;
+
+
+    width: 14em;
+    color: #ccc;
+
+    /* all widths and heights are in unit em - referring to this */
+    font: 1em/1 trebuchet ms, tahoma, sans-serif;
+}
+
+.range-type1-wrapper [type=range] {
+
+    /* undo questionnaire styles.css */
+    max-width: unset;
+
+    margin:  0;
+    padding: 0;
+    width: 100%;
+    height: 3em;
+
+    background: repeating-linear-gradient(90deg, #ccc 0, #ccc 2px, transparent 0, transparent 1.25em) calc(.5*(1.5em - 2px)) 1.875em/calc(12.5em + 2px) 0.75em no-repeat;
+    font: inherit;
+}
+
+.range-type1-wrapper  [type=range],
+.range-type1-wrapper  [type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+}
+
+.range-type1-wrapper  [type=range]::-webkit-slider-runnable-track {
+    box-sizing: border-box;
+    border: none;
+    width: 14em;
+    height: 0.25em;
+    background: #ccc;
+}
+
+.range-type1-wrapper  [type=range]::-moz-range-track {
+    box-sizing: border-box;
+    border: none;
+    width: 14em;
+    height: 0.25em;
+    background: #ccc;
+}
+
+.range-type1-wrapper  [type=range]::-ms-track {
+    box-sizing: border-box;
+    border: none;
+    width: 14em;
+    height: 0.25em;
+    background: #ccc;
+}
+
+.range-type1-wrapper  [type=range]::-webkit-slider-thumb {
+    margin-top: -0.625em;
+    box-sizing: border-box;
+    border: none;
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 50%;
+    background: #ccc;
+}
+
+.range-type1-wrapper  [type=range]::-moz-range-thumb {
+    box-sizing: border-box;
+    border: none;
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 50%;
+    background: #ccc;
+}
+
+.range-type1-wrapper  [type=range]::-ms-thumb {
+    margin-top: 0;
+    box-sizing: border-box;
+    border: none;
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 50%;
+    background: #ccc;
+}
+
+.range-type1-wrapper  [type=range]::-ms-tooltip {
+    display: none;
+}
+
+
+/* label */
+
+.range-type1-wrapper  [type=range]~label {
+    /* 
+        tilde - some previous sibling has was [type=range] => apply to label...  
+        =>  depending on 
+                range-input before  label
+                label       after   range-input
+    */
+    color: #333;
+}
+
+
+
+
+[type=range]~label:after {
+    /* automatic appending of a colon */
+    /* margin: -4px; */
+    /* content: ":"; */
+}
+
+
+
+
+
+/* labels - for the ticks */
+
+
+/* labels envelope */
+.range-type1-wrapper  .labels {
+    position: absolute;
+    bottom: 0;
+    left: 0.75em;
+}
+
+/* labels single elements - positioning */
+.range-type1-wrapper  .labels span {
+    position: absolute;
+    left: calc(var(--i)*1.25em);
+    transform: translate(-50%) scale(0.9);
+    font-weight: 700;
+}
+
+/* labels single elements - stronger selection */
+.range-type1-wrapper  [type=range]~label span {
+    color: #ccc;
+}
+
+
+
+/* focus styling */
+.range-type1-wrapper  [type=range]:focus {
+    outline: none;
+}
+
+.range-type1-wrapper  [type=range]:focus::-webkit-slider-thumb {
+    background: #f90;
+}
+
+.range-type1-wrapper  [type=range]:focus::-moz-range-thumb {
+    background: #f90;
+}
+
+.range-type1-wrapper  [type=range]:focus::-ms-thumb {
+    background: #f90;
+}
+
+.range-type1-wrapper  [type=range]:focus~label span {
+    color: #95a;
+}
+
+/* focus styling end */
+
+

@@ -566,7 +566,40 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
 
 
 
+/* normalize form elements - end */
+
+input, select, button, textarea, a.button {
+    padding:        0.2em 0.1em;
+    padding-top:    0.15em; /* moving the baseline upwards */
+    padding-bottom: 0.25em; 
+
+    margin:         0.2em 0; /* 2021-02 - horizontal padding for label post - pre is handled by grid-column-gap  */
+    margin-right:   0.3rem;
+    border-radius:  0.15em;
+    /* font-size:      0.9rem; */
+    font-weight:  400;
+    line-height:    1.2;
+
+    /* width: calc(100% - 1rem); */
+    /*width: 120px;*/    /*prevents the size attribute from working*/
+    /* width: 100%; */
+
+    color: var(--clr-input-fg);
+    background-color: var(--clr-input-bg);
+
+
+    border: 1px solid #888;    /* chrome defaults to 2 pixel shadow */
+}
+
+input[type="number"] {
+    text-align: right;
+    padding-right: 0.2rem;
+}
+
 input[type=range] {
+    /* unset the border for all input elements above */
+    border: none;
+
     /*  for suffix being vertically aligned in the middle;
         seems not necessary for other input types
     */
@@ -610,7 +643,7 @@ input[type=range]::-webkit-slider-thumb {
     border: none;
     border-radius: 0.0rem;
     cursor: pointer;
- 
+
     background-image: var(--img-url-pointer);
     background-image: url("/survey/doc/pds/slider/img/pointer.png");
     background-size: contain;
@@ -631,7 +664,7 @@ input[type=range]::-moz-range-thumb {
     border: none;
     border-radius: 0.0rem;
     cursor: pointer;
- 
+
     background-image: var(--img-url-pointer);
     background-image: url("/survey/doc/pds/slider/img/pointer.png");
     background-size: contain;
@@ -642,36 +675,6 @@ input[type=range]::-moz-range-thumb {
     background-position-y: top;
 }
 
-
-/* normalize form elements - end */
-
-input, select, button, textarea, a.button {
-    padding:        0.2em 0.1em;
-    padding-top:    0.15em; /* moving the baseline upwards */
-    padding-bottom: 0.25em; 
-
-    margin:         0.2em 0; /* 2021-02 - horizontal padding for label post - pre is handled by grid-column-gap  */
-    margin-right:   0.3rem;
-    border-radius:  0.15em;
-    /* font-size:      0.9rem; */
-    font-weight:  400;
-    line-height:    1.2;
-
-    /* width: calc(100% - 1rem); */
-    /*width: 120px;*/    /*prevents the size attribute from working*/
-    /* width: 100%; */
-
-    color: var(--clr-input-fg);
-    background-color: var(--clr-input-bg);
-
-
-    border: 1px solid #888;    /* chrome defaults to 2 pixel shadow */
-}
-
-input[type="number"] {
-    text-align: right;
-    padding-right: 0.2rem;
-}
 
 /* make the placeholder lighter */
 ::placeholder {

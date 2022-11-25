@@ -65,6 +65,7 @@ func chapter3(
 		gr := page.AddGroup()
 		gr.Cols = numColsMinor
 		gr.BottomVSpacers = 3
+		gr.Class = "chapter3"
 		if cf.GroupBottomSpacers != 0 {
 			gr.BottomVSpacers = cf.GroupBottomSpacers
 		}
@@ -100,7 +101,7 @@ func chapter3(
 				} else {
 					// top
 					inp.StyleLbl.Desktop.StyleBox.Position = "relative"
-					inp.StyleLbl.Desktop.StyleBox.Top = "-0.2rem"
+					inp.StyleLbl.Desktop.StyleBox.Top = "-0.3rem"
 				}
 				inp.StyleLbl.Desktop.StyleText.FontSize = 90
 
@@ -110,28 +111,17 @@ func chapter3(
 				inp.Style.Desktop.StyleBox.Position = "relative"
 
 				if idx2 == 0 {
-					// inp.Style.Desktop.StyleBox.Margin = "0 0 0 0.6rem"
-					inp.Style.Desktop.StyleBox.Left = "1.6rem"
-
 					inp.StyleLbl.Desktop.StyleText.AlignHorizontal = "left"
 					inp.StyleLbl.Desktop.StyleBox.Left = "0.6rem"
 				}
-				if idx2 == 1 {
-					inp.Style.Desktop.StyleBox.Left = "0.79rem"
-				}
-				if idx2 == lastIdx2-1 {
-					inp.Style.Desktop.StyleBox.Right = "0.79rem"
-				}
 				if idx2 == lastIdx2 {
-					// inp.Style.Desktop.StyleBox.Margin = "0 0.6rem 0 0"
-					inp.Style.Desktop.StyleBox.Right = "1.6rem"
-
 					inp.StyleLbl.Desktop.StyleText.AlignHorizontal = "right"
 					inp.StyleLbl.Desktop.StyleBox.Right = "0.6rem"
 				}
 
 				if idx2 < len(cf.XDisplacements) {
-					if idx2 < lastIdx2/2 {
+					// if idx2 < lastIdx2/2 {
+					if idx2 <= lastIdx2/2 {
 						inp.Style.Desktop.StyleBox.Left = cf.XDisplacements[idx2]
 					} else {
 						inp.Style.Desktop.StyleBox.Right = cf.XDisplacements[idx2]

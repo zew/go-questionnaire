@@ -75,3 +75,13 @@ dummy
         zoom: 0.75; */
     }
 }
+
+
+/* group background 
+
+*/
+.chapter3 > .grid-item-lvl-1 {
+    background-color: aliceblue;
+    background-color: var(--clr-sec-lgt1);
+    background-color: var(--clr-sec-lgt2);
+}

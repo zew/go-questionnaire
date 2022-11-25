@@ -30,6 +30,22 @@ var (
 		GroupBottomSpacers: 3,
 	}
 
+	mCh2a = configMC{
+		KeyLabels:          "covenants-per-credit",
+		Cols:               4,
+		InpColspan:         1,
+		LabelBottom:        false,
+		DontKnow:           false,
+		GroupBottomSpacers: 3,
+
+		XDisplacements: []string{
+			"1.6rem",
+			"0.62rem",
+			"0.62rem",
+			"1.6rem",
+		},
+	}
+
 	mCh3 = configMC{
 		KeyLabels:   "relevance1-5",
 		Cols:        10,
@@ -273,6 +289,25 @@ var allLbls = map[string][]trl.S{
 			"de": "><br>18",
 		},
 	},
+
+	"covenants-per-credit": {
+		{
+			"en": "0-1",
+			"de": "0-1",
+		},
+		{
+			"en": "1-3",
+			"de": "1-3",
+		},
+		{
+			"en": "3-5",
+			"de": "3-5",
+		},
+		{
+			"en": ">5",
+			"de": ">5",
+		},
+	},
 }
 
 var lblDont = trl.S{
@@ -330,7 +365,7 @@ func radiosSingleRow(
 			if cf.LabelBottom {
 				inp.StyleLbl.Desktop.StyleGridItem.Order = 2
 				inp.StyleLbl.Desktop.StyleBox.Position = "relative"
-				inp.StyleLbl.Desktop.StyleBox.Top = "-0.2rem"
+				inp.StyleLbl.Desktop.StyleBox.Top = "-0.3rem"
 			} else {
 				// top
 				inp.StyleLbl.Desktop.StyleBox.Position = "relative"

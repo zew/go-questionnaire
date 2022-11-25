@@ -182,7 +182,7 @@ func (inp *inputT) appendTooltip(w io.Writer, langCode string) {
 
 }
 
-// GroupHTMLGridBased renders a group of inputs to GroupHTMLGridBased
+// GroupHTMLGridBased renders a group of inputs to grid based HTML
 func (q QuestionnaireT) GroupHTMLGridBased(pageIdx, grpIdx int) string {
 
 	wCSS := &strings.Builder{}
@@ -331,7 +331,7 @@ func (q QuestionnaireT) GroupHTMLGridBased(pageIdx, grpIdx int) string {
 	//
 	//
 	wContainer := &strings.Builder{}
-	divWrap(wContainer, gridContainerClass+" grid-container", "", wInner.String())
+	divWrap(wContainer, gridContainerClass+" grid-container "+gr.Class, "", wInner.String())
 
 	w := &strings.Builder{}
 	fmt.Fprint(w, css.StyleTag(wCSS.String()))

@@ -582,6 +582,64 @@ input[type=range] {
     /* background-color: #fff; */
 }
 
+/* 
+    slider thumb
+    following classes two and three need to be identical; 
+    cannot be combined
+*/
+
+:root {
+    /* background image position */
+    --sliderHeight: 28px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    /* -webkit-appearance: none;
+    appearance: none; */
+}
+
+input[type=range]::-webkit-slider-thumb {
+    height: 100%;
+    /* not working in chrome */
+    height: calc(var(--sliderHeight)/ 1);
+
+    background-color: transparent;
+    border: none;
+    border-radius: 0.0rem;
+    cursor: pointer;
+ 
+    background-image: var(--img-url-pointer);
+    background-image: url("/survey/doc/pds/slider/img/pointer.png");
+    background-size: contain;
+    background-size: cover;
+    background-attachment: inherit;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: top;
+}
+
+
+input[type=range]::-moz-range-thumb {
+    height: 100%;
+    /* not working in chrome */
+    height: calc(var(--sliderHeight)/ 1);
+
+    background-color: transparent;
+    border: none;
+    border-radius: 0.0rem;
+    cursor: pointer;
+ 
+    background-image: var(--img-url-pointer);
+    background-image: url("/survey/doc/pds/slider/img/pointer.png");
+    background-size: contain;
+    background-size: cover;
+    background-attachment: inherit;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: top;
+}
+
+
 /* normalize form elements - end */
 
 input, select, button, textarea, a.button {

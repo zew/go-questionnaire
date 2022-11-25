@@ -235,6 +235,7 @@ type groupT struct {
 	RandomizationSeed int `json:"randomization_seed,omitempty"`
 
 	Style *css.StylesResponsive `json:"style,omitempty"` // pointer, to avoid empty JSON blocks
+	Class string                `json:"class,omitempty"` // additional explicit CSS class; for example   .group-class-1 > .grid-item-lvl-1 {...}
 }
 
 // AddInput creates a new input

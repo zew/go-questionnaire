@@ -45,11 +45,11 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 		page23Types := []string{
 			"type1",
-			"type1",
+			"type2",
 		}
 		page23Inputs := []string{
-			"xxx1",
-			"xxx2",
+			"covenantspercredit",
+			"covenantholidayshare",
 		}
 		page23Lbls := []trl.S{
 			{
@@ -101,6 +101,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					inp := gr.AddInput()
 					inp.Type = "textblock"
 					inp.Label = page23Lbls[idx1].Bold()
+					inp.Label = page23Lbls[idx1]
 
 					inp.ColSpan = 1
 					// inp.ColSpanLabel = 1
@@ -109,14 +110,14 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 			if page23Types[idx1] == "type1" {
 
-			}
+				chapter3(
+					qst.WrapPageT(page),
+					inpName,
+					trl.S{},
+					mCh2a,
+				)
 
-			chapter3(
-				qst.WrapPageT(page),
-				inpName,
-				trl.S{},
-				mCh5,
-			)
+			}
 
 		}
 

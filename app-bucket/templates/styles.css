@@ -50,10 +50,10 @@
     120rem(1920px) 2rem(32px)
 
     the expression (1vw - .48rem)
-    ranges from 0.00rem to 0.35rem
+           from 0.00rem to 0.35rem
 
     the expression calc(1rem + ((1vw - .48rem) * 1.4))
-    ranges from 0.65rem to 1.14rem
+           from 0.65rem to 1.14rem
 
     <p id="ptest1" style="padding: 1rem 2rem; font-size: calc(1vw - .48rem)">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br>
@@ -316,7 +316,7 @@ p {
 pre {
     overflow: auto;
 
-    background: #eee;
+    background: lightgray;
     font-family: "Courier 10 Pitch", Courier, monospace;
     font-size:     .9rem;
     line-height:  1.6;
@@ -589,7 +589,7 @@ input, select, button, textarea, a.button {
     background-color: var(--clr-input-bg);
 
 
-    border: 1px solid #888;    /* chrome defaults to 2 pixel shadow */
+    border: 1px solid var(--clr-inp-border);    /* chrome defaults to 2 pixel shadow */
 }
 
 input[type="number"] {
@@ -607,7 +607,7 @@ input[type=range] {
     vertical-align: middle;
 
     /* making room for the suffix */
-    max-width: 82%;
+    /* max-width: 82%; */
 }
 
 input[type=range] {
@@ -645,14 +645,14 @@ input[type=range]::-webkit-slider-thumb {
     border-radius: 0.0rem;
     cursor: pointer;
 
-    background-image: var(--img-url-pointer);
+    /* background-image: var(--img-url-pointer);
     background-image: url("/survey/doc/pds/slider/img/pointer.png");
     background-size: contain;
     background-size: cover;
     background-attachment: inherit;
     background-repeat: no-repeat;
     background-position-x: center;
-    background-position-y: top;
+    background-position-y: top; */
 }
 
 
@@ -666,14 +666,14 @@ input[type=range]::-moz-range-thumb {
     border-radius: 0.0rem;
     cursor: pointer;
 
-    background-image: var(--img-url-pointer);
+    /* background-image: var(--img-url-pointer);
     background-image: url("/survey/doc/pds/slider/img/pointer.png");
     background-size: contain;
     background-size: cover;
     background-attachment: inherit;
     background-repeat: no-repeat;
     background-position-x: center;
-    background-position-y: top;
+    background-position-y: top; */
 }
 
 
@@ -753,14 +753,14 @@ select {
 
 option {
     padding: 0.4em;
-    color: #000;
+    color: var(--clr-inp-focus);
     background-color: transparent;
     border: none;
 }
 
 select:-moz-focusring {
     color:    transparent;
-    text-shadow: 0 0 0 #000;
+    text-shadow: 0 0 0 var(--clr-inp-focus);
 }
 
 /*
@@ -888,10 +888,20 @@ input[type=radio] {
     }
 }
 
+/* 2022-11 standardize firefox and edge on chrome colors */
+input[type=checkbox],
+input[type=radio],
+input[type=range],
+dummy {
+    color:        var(--clr-inp-focus);
+    accent-color: var(--clr-inp-focus);
+}
 
 /* 'focus rectangle' for radios and checkboxes  */
 input[type=checkbox]:focus,
-input[type=radio]:focus         {
+input[type=radio]:focus,
+input[type=range]:focus,
+dummy {
      /* scale(2) also scales the focus rectangle :( */
     box-shadow:
         0 0 0 0.090em var(--clr-sec-lgt2),
@@ -932,7 +942,7 @@ input[type=radio]:focus         {
 
 #console-log {
     color: black;
-    background-color: white;
+    background-color: lightgrey;
     /* like pre but lines too long are broken
         not stretching the container
         extends to 100% of container
@@ -943,7 +953,6 @@ input[type=radio]:focus         {
     */
     white-space:     pre-wrap; /* see also .postlabel, .plain-text-broken and .error */
     line-height:     120%;
-    background-color:#eee;
     margin:          8px 0;
     margin-left:     46px;
     padding: 0.2rem 0.8rem;
@@ -1854,3 +1863,29 @@ input.ib-300 {     width:300px;    }
 /* 
     validation bubble messages - end
 */
+
+
+
+:root {
+    /* common */
+    --range-trackheight: 0.40em;
+    /* if bigger than 1.5em => increase horizontal buffer */
+    --range-thumbsize:   1.5em;
+
+
+    /* 4cols */
+    --range-01-width:    12.0em;
+    --range-01-tick-cx:   1.045em;
+
+    /* narrower */
+    --range-02-width: 8.0em;
+    --range-02-tick-cx: calc(0.507em + 2px);
+
+
+    /* weeks */
+    --range-03-width: 7.4em;
+    --range-03-tick-cx: calc(0.351em + 2px);
+
+
+}
+

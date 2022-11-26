@@ -6,40 +6,43 @@
 <style>
 	 
 :root {
-    
-    /* CSS vars from config - start */
-    --img-bg:                none;
-    --img-loggedin-icon:     url(/survey/img/ui/logged-in-icon-zew.svg);
-    --nav-height:            8vh;
-    --nav-rest-height:       calc(100vh - var(--nav-height));  /* we can calc() the remainder */
-    --nav-bar-position:      relative;                      /* fixed or relative */
-    --content-top:           0;                             /* fixed navbar => content-top = var(--nav-height); otherwise 0 */
-    --clr-bg:                white;                         /* main background f <body> */
-    --clr-fg:                black;                         /* main foreground */
-    --clr-input-bg:          white;                         /* input+select background */
-    --clr-input-fg:          black;                         /* input+select foreground */
-    --clr-has-alpha:         rgba(240, 240, 240, 0.900);    /* has alpha - but takes away flexibility */
-    --clr-err:               darkred;                       /* errors and alerts */
-    --clr-bg-valid:          rgb(233, 255, 233);            /* ok, valid, input background */
-    --clr-bg-invalid:        rgb(255, 240, 240);            /* input background */
-    --clr-pri:               rgb(  0, 105, 180);            /* primary color - fonts and icons */
-    --clr-pri-hov:           rgb(  2, 134, 228);            /* hover   - slightly lighter */
-    --clr-pri-vis:           rgb(  0,  57, 122);            /* visited - slightly darker */
-    --clr-sec:               rgb(228, 223, 228);            /* sec pds */
-    --clr-sec-drk1:          rgb(219, 216, 219);
-    --clr-sec-drk2:          rgb(190, 187, 190);
-    --clr-sec-lgt1:          rgb(236, 232, 236);
-    --clr-sec-lgt2:          rgb(241, 239, 241);
-    --clr-zew2-md:           rgb(207, 136, 135);
-    --clr-zew2-dk:           rgb(177,  29,  28);
-    --clr-zew3-md:           rgb(138, 187, 206);
-    --clr-zew3-dk:           rgb( 22, 119, 158);
-    --clr-zew4-md:           rgb(202, 192, 156);
-    --clr-zew4-dk:           rgb(149, 129,  58);
-    --clr-zew5-md:           rgb(233, 206, 134);
-    --clr-zew5-dk:           rgb(211, 158,  13);
-}
-
+		
+		/* CSS vars from config - start */
+		--img-bg:                none;
+		--img-loggedin-icon:     url(/survey/img/ui/logged-in-icon-zew.svg);
+		--nav-height:            8vh;
+		--nav-rest-height:       calc(100vh - var(--nav-height));  /* we can calc() the remainder */
+		--nav-bar-position:      relative;                      /* fixed or relative */
+		--content-top:           0;                             /* fixed navbar => content-top = var(--nav-height); otherwise 0 */
+		--clr-bg:                white;                         /* main background f <body> */
+		--clr-fg:                black;                         /* main foreground */
+		--clr-input-bg:          white;                         /* input+select background */
+		--clr-input-fg:          black;                         /* input+select foreground */
+		--clr-inp-border:        rgb(136, 136, 136);            /* input border of radio and checkbox - most browsers */
+		--clr-inp-focus:         rgb(  0, 127, 255);            /* chrome and firefox radio focus color; not edge */
+		--clr-has-alpha:         rgba(240, 240, 240, 0.900);    /* has alpha - but takes away flexibility */
+		--clr-err:               darkred;                       /* errors and alerts */
+		--clr-bg-valid:          rgb(233, 255, 233);            /* ok, valid, input background */
+		--clr-bg-invalid:        rgb(255, 240, 240);            /* input background */
+		--clr-pri:               rgb(  0, 105, 180);            /* primary color - fonts and icons */
+		--clr-pri-hov:           rgb(  2, 134, 228);            /* hover   - slightly lighter */
+		--clr-pri-vis:           rgb(  0,  57, 122);            /* visited - slightly darker */
+		--clr-sec:               rgb(228, 223, 228);            /* sec pds */
+		--clr-sec-drk1:          rgb(219, 216, 219);
+		--clr-sec-drk2:          rgb(190, 187, 190);
+		--clr-sec-lgt1:          rgb(236, 232, 236);
+		--clr-sec-lgt2:          rgb(241, 239, 241);
+		--clr-zew2-md:           rgb(207, 136, 135);
+		--clr-zew2-dk:           rgb(177,  29,  28);
+		--clr-zew3-md:           rgb(138, 187, 206);
+		--clr-zew3-dk:           rgb( 22, 119, 158);
+		--clr-zew4-md:           rgb(202, 192, 156);
+		--clr-zew4-dk:           rgb(149, 129,  58);
+		--clr-zew5-md:           rgb(233, 206, 134);
+		--clr-zew5-dk:           rgb(211, 158,  13);
+		/* CSS vars from config - stop */
+	
+	}
 </style>
 
  
@@ -52,15 +55,15 @@
     they are invisible and have no styling
  -->
 <datalist id="datalist01">
-    <option value="0" label="0"></option>
-    <option value="10" label="10"></option>
-    <option value="20"></option>
-    <option value="30" label="30"></option>
-    <option value="40"></option>
+    <option value="0"  label="0"></option>
+    <option value="10" ></option>
+    <option value="20" label="20"></option>
+    <option value="30" ></option>
+    <option value="40" label="40"></option>
     <option value="50"></option>
     <option value="60" label="60"></option>
     <option value="70"></option>
-    <option value="80"></option>
+    <option value="80" label="80"></option>
     <option value="90"></option>
     <option value="100" label="100"></option>
 </datalist>
@@ -75,7 +78,7 @@
         list="datalist01"
         min="0" 
         max="100" 
-        step="10" 
+        step="5" 
         value="90"
     />
     <!-- label must be trailing sibling to input[range] -->
@@ -84,9 +87,10 @@
         <div class="labels" aria-hidden="true" 
         ><span 
             style="--i: 0"   >0</span><span 
-            style="--i: 1"  >10</span><span
-            style="--i: 3"  >30</span><span 
+            style="--i: 2"  >20</span><span
+            style="--i: 4"  >40</span><span 
             style="--i: 6"  >60</span><span 
+            style="--i: 8"  >80</span><span 
             style="--i: 10">100</span>
         </div>
     </label>

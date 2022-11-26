@@ -211,8 +211,10 @@ func LoadFakeConfigForTests() {
 // since it depends on the ORDER of registrations.
 //
 // Best strategy might be
-//    mux.HandleFunc(appcfg.Pref(urlPath),   argFunc)   // Claim "/path"
-//    mux.HandleFunc(appcfg.PrefTS(urlPath), argFunc)   // Claim "/path/"
+//
+//	mux.HandleFunc(appcfg.Pref(urlPath),   argFunc)   // Claim "/path"
+//	mux.HandleFunc(appcfg.PrefTS(urlPath), argFunc)   // Claim "/path/"
+//
 // Notice the order - other way around would block "/path" with a redirect handler
 func Pref(pth ...string) string {
 
@@ -252,7 +254,8 @@ func (c *ConfigT) Tr(langCode, key string) string {
 // Val for site and language specific values in templates;
 // function falls back to key "default";
 // i.e. {{ cfg.Val .Site "en"      "app_label"}}
-//      {{ cfg.Val .Site "default" "img_logo_icon"}}
+//
+//	{{ cfg.Val .Site "default" "img_logo_icon"}}
 func (c *ConfigT) Val(site, langCode, key string) string {
 	// site key missing
 	if _, ok := c.MpSite[site]; !ok {
@@ -333,9 +336,11 @@ func Example() *ConfigT {
 			{Key: "nav-bar-position", Val: "relative", Desc: "fixed or relative"},
 			{Key: "content-top", Val: "0", Desc: "fixed navbar => content-top = var(--nav-height); otherwise 0"},
 			{Key: "bg", Colorname: "white", Desc: "main background f <body>"},
-			{Key: "fg", Colorname: "black", Desc: "main foreground"},
+			{Key: "fg", Colorname: "black", Desc: "main foreground, font-color"},
 			{Key: "input-bg", Colorname: "white", Desc: "input+select background"},
 			{Key: "input-fg", Colorname: "black", Desc: "input+select foreground"},
+			{Key: "inp-border", R: 136, G: 136, B: 136, Desc: "input border of radio and checkbox - most browsers"},
+			{Key: "inp-focus", R: 0, G: 127, B: 255, Desc: "chrome and firefox radio focus color; not edge"},
 
 			/* we dont want Alpha: .5 anymore
 			   instead we use flexible alpha values as follows:

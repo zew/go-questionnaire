@@ -1,0 +1,215 @@
+.input-wrapper-signature-2 {
+
+    /* 
+        label appears *above* input[range] 
+        .labels are positioned absolutely - 
+            therefore below 
+    */
+    display: flex;
+    flex-direction: column-reverse;
+
+    /* anchor for absolute position of .labels */
+    position: relative;
+
+
+    width: var(--range-02-width);
+    color: var(--clr-inp-border);
+
+    /* all widths and heights inside the 'module' refer to this base */
+    font-size: 1em;
+    line-height: 1;
+}
+
+.input-wrapper-signature-2 [type=range] {
+
+    /* undo questionnaire styles.css */
+    max-width: unset;
+
+    margin: 0;
+    padding: 0;
+    width: 100%;
+
+    /* accommodate the range input height */
+    height: 2.6em;
+
+    background-color: transparent;
+
+    /* 
+        repeating-linear-gradient - 
+        <linear-color-stop>
+            color-stop's <color> value
+            followed by one or two optional stop positions, 
+            (each a <percentage> or a <length>).
+    */
+    background-image: repeating-linear-gradient(
+            90deg,
+            var(--clr-inp-border) 0,
+            var(--clr-inp-border) 2px,
+            transparent 0,
+            transparent var(--range-02-tick-cx)
+    );
+
+    background-repeat: no-repeat;
+
+    /* background-position-x align ticks-gradient to label-numbers */
+    /* background-position-x: calc(0.75em - 1px) ; */
+    background-position-x: calc(.5*(1.5em - 2px));
+
+    /* move down */
+    background-position-y: 1.875em;
+
+    /* background-size  - restrict gradient ticks */
+    background-size: calc(12.5em + 2px) 0.75em;
+    background-size: 96px 12px;
+    background-size: calc(var(--range-02-width) - var(--range-thumbsize) + 2px) 0.75em;
+    
+    /* background-color: lightgreen !important; */
+
+    font: inherit;
+}
+
+.input-wrapper-signature-2 [type=range],
+.input-wrapper-signature-2 [type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+}
+
+.input-wrapper-signature-2 [type=range]::-webkit-slider-runnable-track {
+    box-sizing: border-box;
+    border: none;
+    width:      var(--range-02-width);
+    height:     var(--range-trackheight);
+    background: var(--clr-inp-border);
+}
+
+.input-wrapper-signature-2 [type=range]::-moz-range-track {
+    box-sizing: border-box;
+    border: none;
+    width:      var(--range-02-width);
+    height:     var(--range-trackheight);
+    background: var(--clr-inp-border);
+}
+
+.input-wrapper-signature-2 [type=range]::-ms-track {
+    box-sizing: border-box;
+    border: none;
+    width:      var(--range-02-width);
+    height:     var(--range-trackheight);
+    background: var(--clr-inp-border);
+}
+
+
+.input-wrapper-signature-2 [type=range]::-webkit-slider-thumb {
+    margin-top: -0.625em;
+    box-sizing: border-box;
+    border:     none;
+    border-radius: 50%;
+    width:      var(--range-thumbsize);
+    height:     var(--range-thumbsize);
+    background: var(--clr-inp-border);
+}
+
+.input-wrapper-signature-2 [type=range]::-moz-range-thumb {
+    box-sizing: border-box;
+    border:     none;
+    border-radius: 50%;
+    width:      var(--range-thumbsize);
+    height:     var(--range-thumbsize);
+    background: var(--clr-inp-border);
+}
+
+.input-wrapper-signature-2 [type=range]::-ms-thumb {
+    margin-top: 0;
+    box-sizing: border-box;
+    border:     none;
+    border-radius: 50%;
+    width:      var(--range-thumbsize);
+    height:     var(--range-thumbsize);
+    background: var(--clr-inp-border);
+}
+
+.input-wrapper-signature-2 [type=range]::-ms-tooltip {
+    display: none;
+}
+
+
+/* label */
+
+.input-wrapper-signature-2 [type=range]~label {
+    /* 
+        tilde - some previous sibling has was [type=range] => apply to label...  
+        =>  depending on 
+                range-input before  label
+                label       after   range-input
+    */
+
+    /* overwrite --clr-inp-border */
+    color: var(--clr-fg);
+
+    /* change in font size destroys horizontal alignment to gradient ticks */
+    /* font-size: 90%; */
+
+    text-align: center;
+}
+
+
+
+
+[type=range]~label:after {
+    /* automatic appending of a colon */
+    /* margin: -4px; */
+    /* content: ":"; */
+}
+
+
+
+
+
+/* labels - for the ticks */
+
+
+/* labels envelope */
+.input-wrapper-signature-2 .labels {
+    position: absolute;
+    bottom: 0.15em;
+    left: 0.75em;
+}
+
+/* labels single elements - positioning */
+.input-wrapper-signature-2 .labels span {
+    position: absolute;
+    left: calc(var(--i)* var(--range-02-tick-cx));
+    /* vertically centered; font-size reduced */
+    transform: translate(-50%) scale(0.9);
+}
+
+/* labels single elements - stronger selection */
+.input-wrapper-signature-2 [type=range]~label span {
+    font-weight: normal;
+    color: var(--clr-fg);
+}
+
+
+
+/* focus styling */
+.input-wrapper-signature-2 [type=range]:focus {
+    /* outline: none; */
+}
+
+.input-wrapper-signature-2 [type=range]:focus::-webkit-slider-thumb {
+    background: var(--clr-inp-focus);
+}
+
+.input-wrapper-signature-2 [type=range]:focus::-moz-range-thumb {
+    background: var(--clr-inp-focus);
+}
+
+.input-wrapper-signature-2 [type=range]:focus::-ms-thumb {
+    background: var(--clr-inp-focus);
+}
+
+.input-wrapper-signature-2 [type=range]:focus~label span {
+    /* distinct color for font labels on focus */
+    /* color: #95a; */
+}
+
+/* focus styling end */

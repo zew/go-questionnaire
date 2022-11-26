@@ -10,6 +10,7 @@ import (
 
 	"github.com/zew/go-questionnaire/pkg/cfg"
 	"github.com/zew/go-questionnaire/pkg/css"
+	"github.com/zew/go-questionnaire/pkg/trl"
 )
 
 func wrap(w io.Writer, tagName, forVal, className, style, content string) {
@@ -396,8 +397,72 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 		if !inp.Label.Empty() {
 			ctrl += fmt.Sprintf("<span data='label-as-input'>%v</span> ", inp.Label.Tr(q.LangCode))
 		}
+	case "range":
+		ctrl += fmt.Sprintf("<div class='input-wrapper-%v'>", inp.Signature())
 
-	case "text", "number", "range", "hidden", "checkbox", "radio":
+		ctrl += fmt.Sprintf(
+			`<input type='%v'  
+				name='%v' id='%v' title='%v %v' 
+				min='%v' max='%v' step='%v' 
+				list='%v'  
+				value='%v' 
+			/>
+			`,
+			inp.Type,
+			nm, fmt.Sprintf("%v%v", nm, inp.ValueRadio), inp.Label.TrSilent(q.LangCode), inp.Desc.TrSilent(q.LangCode),
+			inp.Min, inp.Max, inp.Step,
+			inp.Signature(),
+			inp.Response,
+		)
+
+		if inp.DynamicFuncParamset == "3" {
+			ctrl += fmt.Sprintf(`
+			<!-- label must be trailing sibling to input[range] -->
+			<label for="%v">
+				<!-- label content in other grid item -->
+				[%v]
+				<div class="labels" aria-hidden="true" 
+				><span 
+					style="--i: 0"  ><6&nbsp;&nbsp;</span><span 
+					style="--i: 2"  >6</span><span
+					style="--i: 4"  >9</span><span 
+					style="--i: 6"  >12</span><span 
+					style="--i: 8"  >15</span><span 
+					style="--i: 10" >18</span><span 
+					style="--i: 12">&nbsp;&nbsp;>18</span>
+				</div>
+			</label>	
+			`,
+				inp.Name,
+				inp.Suffix["en"],
+			)
+
+		} else {
+			ctrl += fmt.Sprintf(`
+			<!-- label must be trailing sibling to input[range] -->
+			<label for="%v">
+				<!-- label content in other grid item -->
+				[%v]
+				<div class="labels" aria-hidden="true" 
+				><span 
+					style="--i: 0"   >0</span><span 
+					style="--i: 2"  >20</span><span
+					style="--i: 4"  >40</span><span 
+					style="--i: 6"  >60</span><span 
+					style="--i: 8"  >80</span><span 
+					style="--i: 10">100</span>
+				</div>
+			</label>	
+			`,
+				inp.Name,
+				inp.Suffix["en"],
+			)
+		}
+		ctrl += `</div>`
+
+		inp.Suffix = trl.S{}
+
+	case "text", "number", "hidden", "checkbox", "radio":
 		rspvl := inp.Response
 
 		checked := ""
@@ -415,16 +480,13 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 		}
 
 		width := fmt.Sprintf("width:%.2frem", float32(inp.MaxChars)*0.65)
-		if inp.Type == "range" {
-			width = "width: 100%"
-		}
 		if inp.Type == "checkbox" || inp.Type == "radio" {
 			width = ""
 		}
 
 		stepping := ""
 		excelFormat := ""
-		if inp.Type == "number" || inp.Type == "range" {
+		if inp.Type == "number" {
 			if inp.Step != 0 {
 				if inp.Step >= 1 {
 					stepping = fmt.Sprintf(" step='%.0f'  ", inp.Step)
@@ -454,7 +516,7 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 			// onInvalid = fmt.Sprintf("oninvalid='setCustomValidity(\"%v\")' oninput='setCustomValidity(\"\")'", inp.OnInvalid.TrSilent(langCode))
 			onInvalid = fmt.Sprintf("data-validation_msg='%v'", inp.OnInvalid.TrSilent(langCode))
 		} else {
-			if inp.Type == "number" || inp.Type == "range" {
+			if inp.Type == "number" {
 				if inp.Min != 0 || inp.Max != 0 {
 					txt := fmt.Sprintf(cfg.Get().Mp["entry_range"].TrSilent(langCode), inp.Min, inp.Max)
 					if inp.Step != 0 && inp.Step != 1 {

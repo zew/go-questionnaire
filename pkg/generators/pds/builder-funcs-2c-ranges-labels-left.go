@@ -25,6 +25,7 @@ func slidersPctRowLabelsLeft(
 	inputName string,
 	lbl trl.S,
 	sfx trl.S,
+	rangeType string,
 ) {
 
 	numCols := firstColLbl + float32(len(trancheTypeNamesAC1))
@@ -62,17 +63,21 @@ func slidersPctRowLabelsLeft(
 			{
 				inp := gr.AddInput()
 				inp.Type = "range"
-				inp.Name = fmt.Sprintf("%v_%v", ttPref, inputName)
+				inp.DynamicFuncParamset = rangeType
 
-				// // below 6 months, 6m-18m in 3m brackets, over 18m
-				// inp.Min = 3
-				// inp.Max = 21
-				// inp.Step = 3
+				inp.Name = fmt.Sprintf("%v_%v", ttPref, inputName)
 
 				// 0%-100% in 5% brackets
 				inp.Min = 0
 				inp.Max = 100
 				inp.Step = 5
+
+				if rangeType == "3" {
+					// below 6 months, 6m-18m in 3m brackets, over 18m
+					inp.Min = 3
+					inp.Max = 21
+					inp.Step = 3
+				}
 
 				inp.ColSpan = 1
 				inp.ColSpanLabel = 0
@@ -88,9 +93,11 @@ func slidersPctRowLabelsLeft(
 					inp.ColSpanLabel = firstColLbl
 					inp.ColSpanControl = 1
 				}
+
 				if idx1 == idxLastCol {
 					inp.Suffix = sfx
 				}
+				inp.Suffix = sfx
 
 			}
 		}

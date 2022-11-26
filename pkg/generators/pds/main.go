@@ -320,6 +320,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"closing_time",
 			lblDuration,
 			suffixWeeks,
+			"3",
 		)
 		if false {
 			// old: a single range
@@ -351,6 +352,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"esg",
 			shareESG,
 			suffixPercent,
+			"2",
 		)
 
 		shareESGRatch := trl.S{
@@ -362,6 +364,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"esgratch",
 			shareESGRatch,
 			suffixPercent,
+			"2",
 		)
 
 		share15Degree := trl.S{
@@ -373,6 +376,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"esg15degrees",
 			share15Degree,
 			suffixPercent,
+			"2",
 		)
 
 	}
@@ -744,9 +748,11 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp := gr.AddInput()
 				inp.Name = "range01"
 				inp.Type = "range"
+				inp.DynamicFuncParamset = "1"
+
 				inp.Min = 0
 				inp.Max = 100
-				inp.Step = 5
+				inp.Step = 10
 				inp.Style = css.NewStylesResponsive(inp.Style)
 				inp.Style.Desktop.Width = "90%"
 

@@ -65,7 +65,6 @@ func chapter3(
 		gr := page.AddGroup()
 		gr.Cols = numColsMinor
 		gr.BottomVSpacers = 3
-		gr.Class = "chapter3"
 		if cf.GroupBottomSpacers != 0 {
 			gr.BottomVSpacers = cf.GroupBottomSpacers
 		}

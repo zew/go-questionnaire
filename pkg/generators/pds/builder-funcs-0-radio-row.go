@@ -268,8 +268,8 @@ var allLbls = map[string][]trl.S{
 			"de": "&nbsp;<br>9",
 		},
 		{
-			"en": "months<br>12",
-			"de": "months<br>12",
+			"en": "weeks<br>12",
+			"de": "weeks<br>12",
 		},
 		{
 			"en": "&nbsp;<br>15",

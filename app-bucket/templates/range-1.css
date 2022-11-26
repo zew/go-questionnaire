@@ -1,39 +1,4 @@
-
-/*  source: 
-    css-tricks.com/sliding-nightmare-understanding-range-input/
-
-    dont confuse label and labels;
-    the first   is the <label...> element;
-    the second  is the class  .labels for the ticks;
-    
-    the ticks are created via repeating-linear-gradient;
-    computations
-
-    the tick-labels are position is computed 
-         using CSS variables ("--r: 1")  and then multiplied via calc()
-
-    the <label for=...> is central for the alignment of tick labels;
-    multiple labels for the same input are no problem;
-
-
-*/
-
-:root {
-    --range-01-trackheight: 0.40em;
-
-    /* if bigger than 1.5em => increase horizontal buffer */
-    --range-01-thumbsize: 1.5em;
-    --range-01-width:     14.0em;
-    --range-01-tick-cx:   1.25em;
-
-    /* wider */
-    --range-01-width:    28em;
-    --range-01-tick-cx: calc(2.5em + 2px);
-
-
-}
-
-.range-type1-wrapper {
+.input-wrapper-signature-1 {
 
     /* 
         label appears *above* input[range] 
@@ -55,17 +20,19 @@
     line-height: 1;
 }
 
-.range-type1-wrapper [type=range] {
+.input-wrapper-signature-1 [type=range] {
 
     /* undo questionnaire styles.css */
     max-width: unset;
 
-    margin:  0;
+    margin: 0;
     padding: 0;
     width: 100%;
 
     /* accommodate the range input height */
     height: 2.6em;
+
+    background-color: transparent;
 
     /* 
         repeating-linear-gradient - 
@@ -86,85 +53,86 @@
 
     /* background-position-x align ticks-gradient to label-numbers */
     /* background-position-x: calc(0.75em - 1px) ; */
-    background-position-x: calc(.5*(1.5em - 2px)) ;
+    background-position-x: calc(.5*(1.5em - 2px));
 
     /* move down */
-    background-position-y: 1.875em ;
+    background-position-y: 1.875em;
 
-    /* background-size  - necessary maybe for safari? */
+    /* background-size  - restrict gradient ticks */
     background-size: 202px 12px;
     background-size: calc(12.5em + 2px) 0.75em;
-    background-size: calc(var(--range-01-width) - var(--range-01-thumbsize) +2px) 0.75em;
+    background-size: calc(var(--range-01-width) - var(--range-thumbsize) + 2px) 0.75em;
 
     font: inherit;
 }
 
-.range-type1-wrapper  [type=range],
-.range-type1-wrapper  [type=range]::-webkit-slider-thumb {
+.input-wrapper-signature-1 [type=range],
+.input-wrapper-signature-1 [type=range]::-webkit-slider-thumb {
     -webkit-appearance: none;
 }
 
-.range-type1-wrapper  [type=range]::-webkit-slider-runnable-track {
+.input-wrapper-signature-1 [type=range]::-webkit-slider-runnable-track {
     box-sizing: border-box;
     border: none;
     width:      var(--range-01-width);
-    height:     var(--range-01-trackheight);
+    height:     var(--range-trackheight);
     background: var(--clr-inp-border);
 }
 
-.range-type1-wrapper  [type=range]::-moz-range-track {
+.input-wrapper-signature-1 [type=range]::-moz-range-track {
     box-sizing: border-box;
     border: none;
     width:      var(--range-01-width);
-    height:     var(--range-01-trackheight);
+    height:     var(--range-trackheight);
     background: var(--clr-inp-border);
 }
 
-.range-type1-wrapper  [type=range]::-ms-track {
+.input-wrapper-signature-1 [type=range]::-ms-track {
     box-sizing: border-box;
     border: none;
     width:      var(--range-01-width);
-    height:     var(--range-01-trackheight);
+    height:     var(--range-trackheight);
     background: var(--clr-inp-border);
 }
 
-.range-type1-wrapper  [type=range]::-webkit-slider-thumb {
+
+.input-wrapper-signature-1 [type=range]::-webkit-slider-thumb {
     margin-top: -0.625em;
     box-sizing: border-box;
-    border: none;
-    width:  var(--range-01-thumbsize);
-    height: var(--range-01-thumbsize);
+    border:     none;
     border-radius: 50%;
+    width:      var(--range-thumbsize);
+    height:     var(--range-thumbsize);
     background: var(--clr-inp-border);
 }
 
-.range-type1-wrapper  [type=range]::-moz-range-thumb {
+.input-wrapper-signature-1 [type=range]::-moz-range-thumb {
     box-sizing: border-box;
-    border: none;
-    width:  var(--range-01-thumbsize);
-    height: var(--range-01-thumbsize);
+    border:     none;
     border-radius: 50%;
+    width:      var(--range-thumbsize);
+    height:     var(--range-thumbsize);
     background: var(--clr-inp-border);
 }
 
-.range-type1-wrapper  [type=range]::-ms-thumb {
+.input-wrapper-signature-1 [type=range]::-ms-thumb {
     margin-top: 0;
     box-sizing: border-box;
-    border: none;
-    width:  var(--range-01-thumbsize);
-    height: var(--range-01-thumbsize);
+    border:     none;
     border-radius: 50%;
+    width:      var(--range-thumbsize);
+    height:     var(--range-thumbsize);
     background: var(--clr-inp-border);
 }
 
-.range-type1-wrapper  [type=range]::-ms-tooltip {
+.input-wrapper-signature-1 [type=range]::-ms-tooltip {
     display: none;
 }
 
 
 /* label */
 
-.range-type1-wrapper  [type=range]~label {
+.input-wrapper-signature-1 [type=range]~label {
     /* 
         tilde - some previous sibling has was [type=range] => apply to label...  
         =>  depending on 
@@ -174,6 +142,11 @@
 
     /* overwrite --clr-inp-border */
     color: var(--clr-fg);
+
+    /* change in font size destroys horizontal alignment to gradient ticks */
+    /* font-size: 90%; */
+
+    text-align: center;
 }
 
 
@@ -193,22 +166,22 @@
 
 
 /* labels envelope */
-.range-type1-wrapper  .labels {
+.input-wrapper-signature-1 .labels {
     position: absolute;
     bottom: 0.15em;
-    left:   0.75em;
+    left: 0.75em;
 }
 
 /* labels single elements - positioning */
-.range-type1-wrapper  .labels span {
+.input-wrapper-signature-1 .labels span {
     position: absolute;
-    left:      calc(var(--i)* var(--range-01-tick-cx));
+    left: calc(var(--i)* var(--range-01-tick-cx));
     /* vertically centered; font-size reduced */
     transform: translate(-50%) scale(0.9);
 }
 
 /* labels single elements - stronger selection */
-.range-type1-wrapper  [type=range]~label span {
+.input-wrapper-signature-1 [type=range]~label span {
     font-weight: normal;
     color: var(--clr-fg);
 }
@@ -216,27 +189,25 @@
 
 
 /* focus styling */
-.range-type1-wrapper  [type=range]:focus {
-    outline: none;
+.input-wrapper-signature-1 [type=range]:focus {
+    /* outline: none; */
 }
 
-.range-type1-wrapper  [type=range]:focus::-webkit-slider-thumb {
+.input-wrapper-signature-1 [type=range]:focus::-webkit-slider-thumb {
     background: var(--clr-inp-focus);
 }
 
-.range-type1-wrapper  [type=range]:focus::-moz-range-thumb {
+.input-wrapper-signature-1 [type=range]:focus::-moz-range-thumb {
     background: var(--clr-inp-focus);
 }
 
-.range-type1-wrapper  [type=range]:focus::-ms-thumb {
+.input-wrapper-signature-1 [type=range]:focus::-ms-thumb {
     background: var(--clr-inp-focus);
 }
 
-.range-type1-wrapper  [type=range]:focus~label span {
+.input-wrapper-signature-1 [type=range]:focus~label span {
     /* distinct color for font labels on focus */
     /* color: #95a; */
 }
 
 /* focus styling end */
-
-

@@ -45,6 +45,7 @@ func slidersPctRowLabelsTop(
 			{
 				inp := gr.AddInput()
 				inp.Type = "range"
+				inp.DynamicFuncParamset = "1"
 				inp.Name = fmt.Sprintf("%v_%v", ttPref, inputName)
 				inp.Label = allLbls["ac1-tranche-types"][idx1]
 

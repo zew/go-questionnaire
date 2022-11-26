@@ -128,7 +128,7 @@
  		},
  		{
  			"key": "fg",
- 			"desc": "main foreground",
+ 			"desc": "main foreground, font-color",
  			"color_name": "black"
  		},
  		{
@@ -140,6 +140,19 @@
  			"key": "input-fg",
  			"desc": "input+select foreground",
  			"color_name": "black"
+ 		},
+ 		{
+ 			"key": "inp-border",
+ 			"desc": "input border of radio and checkbox - most browsers",
+ 			"r": 136,
+ 			"g": 136,
+ 			"b": 136
+ 		},
+ 		{
+ 			"key": "inp-focus",
+ 			"desc": "chrome and firefox radio focus color; not edge",
+ 			"g": 127,
+ 			"b": 255
  		},
  		{
  			"key": "has-alpha",

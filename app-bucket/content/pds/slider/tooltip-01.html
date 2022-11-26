@@ -1,0 +1,26 @@
+<link rel="stylesheet" href="tooltip-01.css">
+
+
+
+<div class="wrap" style="--min: 0;
+             --max: 100;
+             --val: 50">
+    <input id="r" type="range" />
+    <output for="r">50</output>
+</div>
+
+<script>
+
+    const inp = document.getElementById('r'),
+        wrap = inp.parentNode,
+        outp = inp.nextElementSibling;
+
+    document.documentElement.classList.add('js');
+
+    inp.addEventListener('input', e => {
+        outp.value = inp.value;
+        wrap.style.setProperty('--val', +inp.value);
+    }, false);
+
+</script>
+

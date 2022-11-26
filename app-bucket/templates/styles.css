@@ -99,17 +99,18 @@
     background: var(--clr-bg);
     font-weight: 400;
 
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-
     /* zew */
     font-family: "MetaWeb", Verdana, sans-serif;
 
-    /* welt.de */
-    font-family: 'Helvetica Neue', Helvetica, Arial , sans-serif;
+    /* de.wikipedia.org/wiki/Core_fonts_for_the_Web */
+    /*   insert 'Trebuchet MS' before Helvetica?  
+            typewar.com/stats/typeface_pair/Helvetica_Neue/Trebuchet_MS/
+            typewar.com/stats/typefaces/
+    */
+    /* 'Segoe UI' is neat and slim */
+    /* 'Helvetica Neue' is even wider than 'Helvetica' */
+    font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
 
-    /* markdown viewer */
-    font-family: -apple-system,BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
 }
 
 /* body base settings */

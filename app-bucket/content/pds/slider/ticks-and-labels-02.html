@@ -2,8 +2,50 @@
     https://css-tricks.com/sliding-nightmare-understanding-range-input/
  -->
 
+
+<style>
+	 
+:root {
+    
+    /* CSS vars from config - start */
+    --img-bg:                none;
+    --img-loggedin-icon:     url(/survey/img/ui/logged-in-icon-zew.svg);
+    --nav-height:            8vh;
+    --nav-rest-height:       calc(100vh - var(--nav-height));  /* we can calc() the remainder */
+    --nav-bar-position:      relative;                      /* fixed or relative */
+    --content-top:           0;                             /* fixed navbar => content-top = var(--nav-height); otherwise 0 */
+    --clr-bg:                white;                         /* main background f <body> */
+    --clr-fg:                black;                         /* main foreground */
+    --clr-input-bg:          white;                         /* input+select background */
+    --clr-input-fg:          black;                         /* input+select foreground */
+    --clr-has-alpha:         rgba(240, 240, 240, 0.900);    /* has alpha - but takes away flexibility */
+    --clr-err:               darkred;                       /* errors and alerts */
+    --clr-bg-valid:          rgb(233, 255, 233);            /* ok, valid, input background */
+    --clr-bg-invalid:        rgb(255, 240, 240);            /* input background */
+    --clr-pri:               rgb(  0, 105, 180);            /* primary color - fonts and icons */
+    --clr-pri-hov:           rgb(  2, 134, 228);            /* hover   - slightly lighter */
+    --clr-pri-vis:           rgb(  0,  57, 122);            /* visited - slightly darker */
+    --clr-sec:               rgb(228, 223, 228);            /* sec pds */
+    --clr-sec-drk1:          rgb(219, 216, 219);
+    --clr-sec-drk2:          rgb(190, 187, 190);
+    --clr-sec-lgt1:          rgb(236, 232, 236);
+    --clr-sec-lgt2:          rgb(241, 239, 241);
+    --clr-zew2-md:           rgb(207, 136, 135);
+    --clr-zew2-dk:           rgb(177,  29,  28);
+    --clr-zew3-md:           rgb(138, 187, 206);
+    --clr-zew3-dk:           rgb( 22, 119, 158);
+    --clr-zew4-md:           rgb(202, 192, 156);
+    --clr-zew4-dk:           rgb(149, 129,  58);
+    --clr-zew5-md:           rgb(233, 206, 134);
+    --clr-zew5-dk:           rgb(211, 158,  13);
+}
+
+</style>
+
+ 
 <link rel="stylesheet" href="../../../templates/styles.css">
 <link rel="stylesheet" href="ticks-and-labels-02.css">
+
 
 <!-- 
     datalists can be global;
@@ -24,7 +66,7 @@
 </datalist>
 
 
-
+<div style="    margin: 2rem 1rem;"><!-- glob positioner -->
 
 <div class="range-type1-wrapper">
 
@@ -38,7 +80,7 @@
     />
     <!-- label must be trailing sibling to input[range] -->
     <label for="range01">
-        share of loan defaults
+        share of defaults - percent
         <div class="labels" aria-hidden="true" 
         ><span 
             style="--i: 0"   >0</span><span 
@@ -55,11 +97,18 @@
 
 
 
-<p style="    margin: 2rem 1rem;"> 
+<p> 
+    <br> 
+    <br> 
     <br> 
     unstyled for comparison 
     <br> 
-    <input id="range01" type="range" list="non-existing" min="0" max="100" step="10" 
-            
+    <input id="range01" type="range" list="non-existing" min="0" max="100" step="10"         
     />
+
+    <input type="radio" name="xx" id="">
+    <input type="radio" name="xx" id="">
 </p>
+
+
+</div> <!-- glob positioner -->

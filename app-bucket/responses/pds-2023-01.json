@@ -18,7 +18,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "a2af6d267e76ce58d248362a6854b2421f4e131557e18a5d8b5bcd8d82894fa9",
+ 	"md_5": "10f1d44b5f7cd1d65bab5c185329a37c7c355ca3f96fb463d7458cd30b78718a",
  	"lang_codes": [
  		"en"
  	],
@@ -3643,7 +3643,7 @@
  							"type": "checkbox",
  							"label": {
  								"de": "Real estate debt",
- 								"en": "Real estate debt - made available in Q2 23?"
+ 								"en": "Real estate debt - made available in Q2 23? - made available in Q2 23?"
  							},
  							"col_span": 5,
  							"col_span_label": 1,
@@ -3826,7 +3826,7 @@
  							"type": "checkbox",
  							"label": {
  								"de": "Infrastructure debt",
- 								"en": "Infrastructure debt - made available in Q2 23?"
+ 								"en": "Infrastructure debt - made available in Q2 23? - made available in Q2 23?"
  							},
  							"col_span": 5,
  							"col_span_label": 1,

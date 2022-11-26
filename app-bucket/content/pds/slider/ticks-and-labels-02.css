@@ -1,19 +1,45 @@
-/* 
-https://css-tricks.com/sliding-nightmare-understanding-range-input/
-*/
 
-/* 
+/*  source: 
+    css-tricks.com/sliding-nightmare-understanding-range-input/
 
     dont confuse label and labels;
     the first   is the <label...> element;
     the second  is the class  .labels for the ticks;
     
-    the ticks are created via repeating-linear-gradient
+    the ticks are created via repeating-linear-gradient;
+    computations
+
+    the tick-labels are position is computed 
+         using CSS variables ("--r: 1")  and then multiplied via calc()
+
 */
 
-.range-type1-wrapper {
+:root {
 
-    margin: 2rem 1rem;
+    /*  ticks and track; similar to radio input border */
+    --range-01-col1: rgb(136, 136, 136);
+    /* google chrome radio focus color */
+    --chrome-radio-focus: rgb(  0, 127, 255);
+
+    --range-01-trackheight: 0.35em;
+    --range-01-trackheight: 0.30em;
+
+
+
+    /* if bigger than 1.5em => increase horizontal buffer */
+    --range-01-thumbsize: 1.5em;
+    --range-01-size:     14.0em;
+    --range-01-tick-cx:   1.25em;
+
+
+    /* --range-01-size:    28em;
+    --range-01-tick-cx: calc(2.5em + 2px);
+    --range-01-tick-cx: 2.655em; */
+
+
+}
+
+.range-type1-wrapper {
 
     /* 
         label appears *above* input[range] 
@@ -27,11 +53,12 @@ https://css-tricks.com/sliding-nightmare-understanding-range-input/
     position: relative;
 
 
-    width: 14em;
-    color: #ccc;
+    width: var(--range-01-size);
+    color: var(--range-01-col1);
 
-    /* all widths and heights are in unit em - referring to this */
-    font: 1em/1 trebuchet ms, tahoma, sans-serif;
+    /* all widths and heights inside the 'module' refer to this base */
+    font-size: 1em;
+    line-height: 1;
 }
 
 .range-type1-wrapper [type=range] {
@@ -42,9 +69,36 @@ https://css-tricks.com/sliding-nightmare-understanding-range-input/
     margin:  0;
     padding: 0;
     width: 100%;
-    height: 3em;
 
-    background: repeating-linear-gradient(90deg, #ccc 0, #ccc 2px, transparent 0, transparent 1.25em) calc(.5*(1.5em - 2px)) 1.875em/calc(12.5em + 2px) 0.75em no-repeat;
+    /* accommodate the range input height */
+    height: 2.6em;
+
+    /* 
+        repeating-linear-gradient - 
+        <linear-color-stop>
+            color-stop's <color> value
+            followed by one or two optional stop positions, 
+            (each a <percentage> or a <length>).
+    */
+    background-image: repeating-linear-gradient(
+        90deg,
+        var(--range-01-col1) 0,
+        var(--range-01-col1) 1px,
+        transparent 0,
+        transparent var(--range-01-tick-cx)
+    );
+
+    background-repeat: no-repeat;
+
+    /* background-position-x: calc(0.75em - 1px) ; */
+    background-position-x: calc(.5*(1.5em - 2px)) ;
+
+    background-position-y: 1.875em ;
+
+    /* background-size: 202px 12px; */
+    /* is this even necessary? */
+    /* background-size: calc(12.5em + 2px) 0.75em; */
+
     font: inherit;
 }
 
@@ -56,54 +110,54 @@ https://css-tricks.com/sliding-nightmare-understanding-range-input/
 .range-type1-wrapper  [type=range]::-webkit-slider-runnable-track {
     box-sizing: border-box;
     border: none;
-    width: 14em;
-    height: 0.25em;
-    background: #ccc;
+    width:      var(--range-01-size);
+    height:     var(--range-01-trackheight);
+    background: var(--range-01-col1);
 }
 
 .range-type1-wrapper  [type=range]::-moz-range-track {
     box-sizing: border-box;
     border: none;
-    width: 14em;
-    height: 0.25em;
-    background: #ccc;
+    width:      var(--range-01-size);
+    height:     var(--range-01-trackheight);
+    background: var(--range-01-col1);
 }
 
 .range-type1-wrapper  [type=range]::-ms-track {
     box-sizing: border-box;
     border: none;
-    width: 14em;
-    height: 0.25em;
-    background: #ccc;
+    width:      var(--range-01-size);
+    height:     var(--range-01-trackheight);
+    background: var(--range-01-col1);
 }
 
 .range-type1-wrapper  [type=range]::-webkit-slider-thumb {
     margin-top: -0.625em;
     box-sizing: border-box;
     border: none;
-    width: 1.5em;
-    height: 1.5em;
+    width:  var(--range-01-thumbsize);
+    height: var(--range-01-thumbsize);
     border-radius: 50%;
-    background: #ccc;
+    background: var(--range-01-col1);
 }
 
 .range-type1-wrapper  [type=range]::-moz-range-thumb {
     box-sizing: border-box;
     border: none;
-    width: 1.5em;
-    height: 1.5em;
+    width:  var(--range-01-thumbsize);
+    height: var(--range-01-thumbsize);
     border-radius: 50%;
-    background: #ccc;
+    background: var(--range-01-col1);
 }
 
 .range-type1-wrapper  [type=range]::-ms-thumb {
     margin-top: 0;
     box-sizing: border-box;
     border: none;
-    width: 1.5em;
-    height: 1.5em;
+    width:  var(--range-01-thumbsize);
+    height: var(--range-01-thumbsize);
     border-radius: 50%;
-    background: #ccc;
+    background: var(--range-01-col1);
 }
 
 .range-type1-wrapper  [type=range]::-ms-tooltip {
@@ -120,7 +174,9 @@ https://css-tricks.com/sliding-nightmare-understanding-range-input/
                 range-input before  label
                 label       after   range-input
     */
-    color: #333;
+
+    /* overwrite --range-01-col1 */
+    color: var(--clr-fg);
 }
 
 
@@ -142,21 +198,22 @@ https://css-tricks.com/sliding-nightmare-understanding-range-input/
 /* labels envelope */
 .range-type1-wrapper  .labels {
     position: absolute;
-    bottom: 0;
-    left: 0.75em;
+    bottom: 0.15em;
+    left:   0.75em;
 }
 
 /* labels single elements - positioning */
 .range-type1-wrapper  .labels span {
     position: absolute;
-    left: calc(var(--i)*1.25em);
+    left:      calc(var(--i)* var(--range-01-tick-cx));
+    /* vertically centered; font-size reduced */
     transform: translate(-50%) scale(0.9);
-    font-weight: 700;
 }
 
 /* labels single elements - stronger selection */
 .range-type1-wrapper  [type=range]~label span {
-    color: #ccc;
+    font-weight: normal;
+    color: var(--clr-fg);
 }
 
 
@@ -167,19 +224,20 @@ https://css-tricks.com/sliding-nightmare-understanding-range-input/
 }
 
 .range-type1-wrapper  [type=range]:focus::-webkit-slider-thumb {
-    background: #f90;
+    background: var(--chrome-radio-focus);
 }
 
 .range-type1-wrapper  [type=range]:focus::-moz-range-thumb {
-    background: #f90;
+    background: var(--chrome-radio-focus);
 }
 
 .range-type1-wrapper  [type=range]:focus::-ms-thumb {
-    background: #f90;
+    background: var(--chrome-radio-focus);
 }
 
 .range-type1-wrapper  [type=range]:focus~label span {
-    color: #95a;
+    /* distinct color for font labels on focus */
+    /* color: #95a; */
 }
 
 /* focus styling end */

@@ -58,10 +58,8 @@
     /* move down */
     background-position-y: 1.875em;
 
-    /* background-size  - necessary maybe for safari? */
-    background-size: 202px 12px;
-    background-size: calc(12.5em + 2px) 0.75em;
-    background-size: calc(var(--range-03-width) - var(--range-thumbsize) + 2px) 0.75em;
+    /* background-size  - restrict gradient ticks */
+    background-size: calc(var(--range-02-width) - var(--range-thumbsize) + 2px) 0.75em;
 
     font: inherit;
 }
@@ -188,26 +186,3 @@
 
 
 
-/* focus styling */
-.input-wrapper-signature-3 [type=range]:focus {
-    /* outline: none; */
-}
-
-.input-wrapper-signature-3 [type=range]:focus::-webkit-slider-thumb {
-    background: var(--clr-inp-focus);
-}
-
-.input-wrapper-signature-3 [type=range]:focus::-moz-range-thumb {
-    background: var(--clr-inp-focus);
-}
-
-.input-wrapper-signature-3 [type=range]:focus::-ms-thumb {
-    background: var(--clr-inp-focus);
-}
-
-.input-wrapper-signature-3 [type=range]:focus~label span {
-    /* distinct color for font labels on focus */
-    /* color: #95a; */
-}
-
-/* focus styling end */

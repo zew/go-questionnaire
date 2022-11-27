@@ -280,7 +280,6 @@ func politicalFoundations(q qstif.Q, seq0to5 int, questionID string, ppls [][]in
 
 </table>
 
- <!-- </span> /go-quest-label -->
 
 
 </div>
@@ -309,12 +308,12 @@ func politicalFoundations(q qstif.Q, seq0to5 int, questionID string, ppls [][]in
 }
 
 /*
-	https://www.regextester.com/
-	https://stackoverflow.com/questions/37106834/golang-multiline-regex-not-working
-	https://github.com/google/re2/wiki/Syntax
+		https://www.regextester.com/
+		https://stackoverflow.com/questions/37106834/golang-multiline-regex-not-working
+		https://github.com/google/re2/wiki/Syntax
 
-    (?is)  is setting flags to insensitive and . to matching newlines
-	(.*?)  the question mark is for non greedy
+	    (?is)  is setting flags to insensitive and . to matching newlines
+		(.*?)  the question mark is for non greedy
 */
 var re = regexp.MustCompile(`(?is)<td data-ia=1(.*?)<\/td>`)
 

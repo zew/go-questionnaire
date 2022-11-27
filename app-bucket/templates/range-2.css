@@ -42,11 +42,11 @@
             (each a <percentage> or a <length>).
     */
     background-image: repeating-linear-gradient(
-            90deg,
-            var(--clr-inp-border) 0,
-            var(--clr-inp-border) 2px,
-            transparent 0,
-            transparent var(--range-02-tick-cx)
+        90deg,
+        var(--clr-inp-border) 0,
+        var(--clr-inp-border) 2px,
+        transparent 0,
+        transparent var(--range-02-tick-cx)
     );
 
     background-repeat: no-repeat;
@@ -59,11 +59,7 @@
     background-position-y: 1.875em;
 
     /* background-size  - restrict gradient ticks */
-    background-size: calc(12.5em + 2px) 0.75em;
-    background-size: 96px 12px;
     background-size: calc(var(--range-02-width) - var(--range-thumbsize) + 2px) 0.75em;
-    
-    /* background-color: lightgreen !important; */
 
     font: inherit;
 }
@@ -190,26 +186,3 @@
 
 
 
-/* focus styling */
-.input-wrapper-signature-2 [type=range]:focus {
-    /* outline: none; */
-}
-
-.input-wrapper-signature-2 [type=range]:focus::-webkit-slider-thumb {
-    background: var(--clr-inp-focus);
-}
-
-.input-wrapper-signature-2 [type=range]:focus::-moz-range-thumb {
-    background: var(--clr-inp-focus);
-}
-
-.input-wrapper-signature-2 [type=range]:focus::-ms-thumb {
-    background: var(--clr-inp-focus);
-}
-
-.input-wrapper-signature-2 [type=range]:focus~label span {
-    /* distinct color for font labels on focus */
-    /* color: #95a; */
-}
-
-/* focus styling end */

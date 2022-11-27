@@ -610,15 +610,6 @@ input[type=range] {
     /* max-width: 82%; */
 }
 
-input[type=range] {
-    /* -webkit-appearance: none; */
-    /* width: 100%; */
-    /* border-radius: 8px; */
-    /* height: 7px; */
-    /* border: 1px solid #bdc3c7; */
-    /* background-color: #fff; */
-}
-
 /* 
     slider thumb
     following classes two and three need to be identical; 
@@ -906,6 +897,19 @@ dummy {
     box-shadow:
         0 0 0 0.090em var(--clr-sec-lgt2),
         0 0 0 0.110em var(--clr-pri-hov);
+}
+
+/* focus for range thumb */
+input[type=range]:focus::-webkit-slider-thumb {
+    background: var(--clr-inp-focus);
+}
+
+input[type=range]:focus::-moz-range-thumb {
+    background: var(--clr-inp-focus);
+}
+
+input[type=range]:focus::-ms-thumb {
+    background: var(--clr-inp-focus);
 }
 
 

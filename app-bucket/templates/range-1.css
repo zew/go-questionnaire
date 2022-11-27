@@ -178,6 +178,10 @@
     left: calc(var(--i)* var(--range-01-tick-cx));
     /* vertically centered; font-size reduced */
     transform: translate(-50%) scale(0.9);
+
+    /* ticks here - instead of blurred gradient */
+    /* display: inline-block;
+    border-right: 1px solid gray; */
 }
 
 /* labels single elements - stronger selection */
@@ -185,29 +189,3 @@
     font-weight: normal;
     color: var(--clr-fg);
 }
-
-
-
-/* focus styling */
-.input-wrapper-signature-1 [type=range]:focus {
-    /* outline: none; */
-}
-
-.input-wrapper-signature-1 [type=range]:focus::-webkit-slider-thumb {
-    background: var(--clr-inp-focus);
-}
-
-.input-wrapper-signature-1 [type=range]:focus::-moz-range-thumb {
-    background: var(--clr-inp-focus);
-}
-
-.input-wrapper-signature-1 [type=range]:focus::-ms-thumb {
-    background: var(--clr-inp-focus);
-}
-
-.input-wrapper-signature-1 [type=range]:focus~label span {
-    /* distinct color for font labels on focus */
-    /* color: #95a; */
-}
-
-/* focus styling end */

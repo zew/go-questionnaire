@@ -143,6 +143,14 @@ func (inp *inputT) LabelCenter() {
 	inp.StyleLbl.Desktop.StyleGridItem.JustifySelf = "center"
 }
 
+// ControlCenter - input horizontally centered;
+// default is 'left';
+// vertical remains 'center'
+func (inp *inputT) ControlCenter() {
+	inp.StyleCtl = css.NewStylesResponsive(inp.StyleCtl)
+	inp.StyleCtl.Desktop.StyleGridItem.JustifySelf = "center"
+}
+
 // LabelPadRight puts a padding right on the label
 // to prevent touching of the control
 func (inp *inputT) LabelPadRight() {

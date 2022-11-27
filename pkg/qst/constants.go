@@ -49,10 +49,6 @@ const (
 	vspacer0  = "<div class='vspacer-00'> &nbsp; </div>\n"
 	vspacer8  = "<div class='vspacer-08'> &nbsp; </div>\n"
 	vspacer16 = "<div class='vspacer-16'> &nbsp; </div>\n"
-
-	tableOpen  = "<table class='main-table' ><tr>\n"
-	tableClose = "</tr></table>\n"
-	// tableBetween = tableClose + tableOpen
 )
 
 func td(hAlign horizontalAlignment, widthPercent string, payload string, args ...string) string {

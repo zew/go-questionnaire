@@ -33,12 +33,12 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		page := q.AddPage()
 
 		page.Label = trl.S{
-			"en": "2.3 Portfolio Risk",
-			"de": "2.3 Portfolio Risk",
+			"en": "2.3 Portfolio risk",
+			"de": "2.3 Portfolio risk",
 		}
 		page.Short = trl.S{
-			"en": "Portfolio Risk",
-			"de": "Portfolio Risk",
+			"en": "Portfolio risk",
+			"de": "Portfolio risk",
 		}
 
 		page.WidthMax("64rem")
@@ -109,23 +109,17 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 		for idx1, inpName := range page23Inputs {
 
-			// {
-			// 	gr := page.AddGroup()
-			// 	gr.Cols = 1
-			// 	gr.BottomVSpacers = 1
-			// 	{
-			// 		inp := gr.AddInput()
-			// 		inp.Type = "textblock"
-			// 		inp.Label = page23Lbls[idx1].Bold()
-			// 		inp.Label = page23Lbls[idx1]
-			// 		inp.ColSpan = 1
-			// 	}
-			// }
-
 			if page23Types[idx1] == "restricted-text" {
-				rT5a := rT5
-				rT5a.LblRow1 = page23Lbls[idx1]
-				restrictedTextMultiCols(qst.WrapPageT(page), rT5a)
+				// rT5a := rT5
+				// rT5a.LblRow1 = page23Lbls[idx1]
+				// restrictedTextMultiCols(qst.WrapPageT(page), rT5a)
+
+				percentsRowLabelsTop(
+					qst.WrapPageT(page),
+					"share_loans_default",
+					page23Lbls[idx1],
+					suffixPercent,
+				)
 			}
 
 			if page23Types[idx1] == "range-pct" {
@@ -195,8 +189,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"de": "Identification + asset classes",
 		}
 		page.Short = trl.S{
-			"en": "Identification,<br>Asset Classes",
-			"de": "Identification,<br>Asset Classes",
+			"en": "Identification,<br>asset classes",
+			"de": "Identification,<br>asset classes",
 		}
 
 		page.WidthMax("42rem")
@@ -707,6 +701,85 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		page.Short = trl.S{"de": "Slider"}
 		page.WidthMax("42rem")
 
+		// gr2
+		{
+			gr := page.AddGroup()
+			gr.Cols = 11
+			gr.BottomVSpacers = 3
+			{
+				inp := gr.AddInput()
+				inp.Name = "range01"
+				inp.Type = "range"
+				inp.DynamicFuncParamset = "1"
+
+				inp.Min = 0
+				inp.Max = 100
+				inp.Step = 10
+				inp.Style = css.NewStylesResponsive(inp.Style)
+				inp.Style.Desktop.Width = "90%"
+
+				// inp.Label = trl.S{
+				// 	"de": "Normal Slider",
+				// 	"en": "Normal Slider",
+				// }
+				inp.Suffix = trl.S{
+					"de": "unit",
+					"en": "unit",
+				}
+
+				inp.ColSpan = 4
+				inp.ColSpanLabel = 2
+				inp.ColSpanControl = 8
+			}
+			{
+				inp := gr.AddInput()
+				inp.Name = "range01_display"
+				inp.Type = "text"
+				inp.MaxChars = 8
+				inp.ColSpan = 2
+				inp.ColSpanLabel = 0
+				inp.ColSpanControl = 1
+
+				inp.Style = css.NewStylesResponsive(inp.Style)
+				inp.Style.Desktop.StyleBox.Position = "relative"
+				inp.Style.Desktop.StyleBox.Top = "0.58rem"
+				inp.Style.Desktop.StyleBox.Left = "0.58rem"
+			}
+			{
+				inp := gr.AddInput()
+				inp.Name = "range01_noanswer"
+				inp.Type = "radio"
+				inp.ColSpan = 2
+				inp.Label = trl.S{
+					"de": "nicht verfügb.",
+					"en": "no answer",
+				}
+				inp.ValueRadio = "xx"
+				inp.ColSpanLabel = 1
+				inp.ColSpanControl = 1
+
+				// inp.ControlTop()
+				// inp.ControlBottom()
+
+				inp.StyleCtl = css.NewStylesResponsive(inp.StyleCtl)
+				inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
+
+				inp.StyleCtl.Desktop.StyleGridItem.Col = "auto/1"
+				inp.StyleLbl.Desktop.StyleGridItem.Col = "auto/1"
+			}
+
+			{
+				inp := gr.AddInput()
+				inp.ColSpanControl = 1
+				inp.Type = "javascript-block"
+				inp.Name = "range"
+
+				inp.JSBlockStrings = map[string]string{}
+				inp.JSBlockStrings["inputName"] = "range01" // as above
+			}
+
+		}
+
 		// gr0
 		{
 			gr := page.AddGroup()
@@ -737,76 +810,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.ColSpan = 1
 				inp.ColSpanLabel = 1
 			}
-		}
-
-		// gr2
-		{
-			gr := page.AddGroup()
-			gr.Cols = 11
-			gr.BottomVSpacers = 3
-			{
-				inp := gr.AddInput()
-				inp.Name = "range01"
-				inp.Type = "range"
-				inp.DynamicFuncParamset = "1"
-
-				inp.Min = 0
-				inp.Max = 100
-				inp.Step = 10
-				inp.Style = css.NewStylesResponsive(inp.Style)
-				inp.Style.Desktop.Width = "90%"
-
-				inp.Label = trl.S{
-					"de": "Normal Slider",
-					"en": "Normal Slider",
-				}
-
-				inp.ColSpan = 7
-				inp.ColSpanLabel = 2
-				inp.ColSpanControl = 8
-			}
-			{
-				inp := gr.AddInput()
-				inp.Name = "range01_display"
-				inp.Type = "text"
-				inp.MaxChars = 8
-				inp.ColSpan = 2
-				inp.ColSpanLabel = 0
-				inp.ColSpanControl = 1
-			}
-			{
-				inp := gr.AddInput()
-				inp.Name = "range01_noanswer"
-				inp.Type = "radio"
-				inp.ColSpan = 2
-				inp.Label = trl.S{
-					"de": "nicht verfügb.",
-					"en": "not available",
-				}
-				inp.ValueRadio = "xx"
-				inp.ColSpanLabel = 1
-				inp.ColSpanControl = 1
-
-				// inp.ControlTop()
-				// inp.ControlBottom()
-
-				inp.StyleCtl = css.NewStylesResponsive(inp.StyleCtl)
-				inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
-
-				inp.StyleCtl.Desktop.StyleGridItem.Col = "auto/1"
-				inp.StyleLbl.Desktop.StyleGridItem.Col = "auto/1"
-			}
-
-			{
-				inp := gr.AddInput()
-				inp.ColSpanControl = 1
-				inp.Type = "javascript-block"
-				inp.Name = "range"
-
-				inp.JSBlockStrings = map[string]string{}
-				inp.JSBlockStrings["inputName"] = "range01" // as above
-			}
-
 		}
 
 	}

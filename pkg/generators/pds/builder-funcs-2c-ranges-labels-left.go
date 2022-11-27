@@ -20,6 +20,24 @@ var suffixPercent = trl.S{
 	"de": "%",
 }
 
+var suffixMillionEuro = trl.S{
+	// capitalizemytitle.com/how-to-abbreviate-million/
+	// "en": "million €",
+	// "en": "MM €",
+	"en": "mn €",
+	"de": "Mio €",
+}
+
+var placeHolderNum = trl.S{
+	"en": "#",
+	"de": "#",
+}
+
+var placeHolderMillion = trl.S{
+	"en": "million Euro",
+	"de": "Millionen Euro",
+}
+
 func slidersPctRowLabelsLeft(
 	page *qst.WrappedPageT,
 	inputName string,

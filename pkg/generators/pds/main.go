@@ -28,122 +28,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	}
 	// q.Variations = 1
 
-	// page23
-	{
-		page := q.AddPage()
-
-		page.Label = trl.S{
-			"en": "2.3 Portfolio risk",
-			"de": "2.3 Portfolio risk",
-		}
-		page.Short = trl.S{
-			"en": "Portfolio risk",
-			"de": "Portfolio risk",
-		}
-
-		page.WidthMax("64rem")
-
-		page23Types := []string{
-			"radios1-4",
-			"range-pct",
-			"range-pct",
-			"range-pct",
-			"restricted-text",
-			"range-pct",
-
-			"range-pct",
-			"range-pct",
-			"range-pct",
-		}
-		page23Inputs := []string{
-			"covenants_per_credit",
-			"share_covenant_holiday",
-			"share_covenant_reset",
-			"share_covenant_breach",
-			"share_loan_defaults",
-			"share_default_recovered",
-
-			"share_esg_kpis",
-			"share_esg_ratchets",
-			"share_esg_15degrees",
-		}
-		page23Lbls := []trl.S{
-			{
-				"en": "Average Number of Financial Covenants per credit",
-				"de": "Average Number of Financial Covenants per credit",
-			},
-			{
-				"en": "What is the share of portfolio (at Fair Market Value) with a covenant holiday?",
-				"de": "What is the share of portfolio (at Fair Market Value) with a covenant holiday?",
-			},
-			{
-				"en": "What is the share of portfolio (at Fair Market Value) with a covenant reset?",
-				"de": "What is the share of portfolio (at Fair Market Value) with a covenant reset?",
-			},
-			{
-				"en": "What is the share of portfolio (at Fair Market Value) with a covenant breach?",
-				"de": "What is the share of portfolio (at Fair Market Value) with a covenant breach?",
-			},
-			{
-				"en": "Share of defaulted loans (measured at cost/principal amount of loan)",
-				"de": "Share of defaulted loans (measured at cost/principal amount of loan)",
-			},
-			{
-				"en": "If you had a default in the past. What was the recovery rate (share of principal)?",
-				"de": "If you had a default in the past. What was the recovery rate (share of principal)?",
-			},
-			// esg
-			{
-				"en": "What is the share of portfolio (at Fair Market Value) with explicit ESG targets in the credit documentation?",
-				"de": "What is the share of portfolio (at Fair Market Value) with explicit ESG targets in the credit documentation?",
-			},
-			{
-				"en": "What is the share of portfolio (at Fair Market Value) with ESG ratchets?",
-				"de": "What is the share of portfolio (at Fair Market Value) with ESG ratchets?",
-			},
-			{
-				"en": "What is the share of portfolio (at Fair Market Value) where the creditor explicitly states a strategy to add to the 1.5°C target?",
-				"de": "What is the share of portfolio (at Fair Market Value) where the creditor explicitly states a strategy to add to the 1.5°C target?",
-			},
-		}
-
-		for idx1, inpName := range page23Inputs {
-
-			if page23Types[idx1] == "restricted-text" {
-				// rT5a := rT5
-				// rT5a.LblRow1 = page23Lbls[idx1]
-				// restrictedTextMultiCols(qst.WrapPageT(page), rT5a)
-
-				percentsRowLabelsTop(
-					qst.WrapPageT(page),
-					"share_loans_default",
-					page23Lbls[idx1],
-					suffixPercent,
-				)
-			}
-
-			if page23Types[idx1] == "range-pct" {
-				slidersPctRowLabelsTop(
-					qst.WrapPageT(page),
-					inpName,
-					page23Lbls[idx1],
-					suffixPercent,
-				)
-			}
-
-			if page23Types[idx1] == "radios1-4" {
-				chapter3(
-					qst.WrapPageT(page),
-					inpName,
-					page23Lbls[idx1],
-					mCh2a,
-				)
-			}
-
-		}
-
-	}
-
 	// page0
 	{
 		page := q.AddPage()
@@ -185,8 +69,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		page.ValidationFuncName = "pdsPage1"
 
 		page.Label = trl.S{
-			"en": "Identification + asset classes",
-			"de": "Identification + asset classes",
+			"en": "Identification and asset classes",
+			"de": "Identification and asset classes",
 		}
 		page.Short = trl.S{
 			"en": "Identification,<br>asset classes",
@@ -284,7 +168,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 	}
 
-	// page2
+	// page10
 	{
 		page := q.AddPage()
 		// page.Section = trl.S{
@@ -316,10 +200,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			suffixWeeks,
 			"3",
 		)
-		if false {
-			// old: a single range
-			rangeClosingTime(qst.WrapPageT(page), trancheTypeNamesAC1[0], lblDuration)
-		}
 
 		chapter3(
 			qst.WrapPageT(page),
@@ -372,6 +252,232 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			suffixPercent,
 			"2",
 		)
+
+	}
+
+	// page20
+	{
+		page := q.AddPage()
+
+		page.Label = trl.S{
+			"en": "2. Overall (existing) Portfolio",
+			"de": "2. Overall (existing) Portfolio",
+		}
+		page.Short = trl.S{
+			"en": "Portfolio",
+			"de": "Portfolio",
+		}
+
+		page.WidthMax("64rem")
+
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 1
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{
+					"en": "<b>2.1</b> &nbsp; Assets under Management",
+					"de": "<b>2.1</b> &nbsp; Assets under Management",
+				}
+				inp.ColSpan = 1
+				inp.ColSpanLabel = 1
+			}
+		}
+
+		page21Types := []string{
+			"restricted-text-million",
+			"restricted-text-million",
+			"restricted-text-million",
+			"restricted-text-million",
+		}
+		page21Inputs := []string{
+			"portfolio_value",
+			"capital_called",
+			"capital_repaid",
+			"capital_reserve",
+		}
+		page21Lbls := []trl.S{
+			{
+				"en": "Fair Market Value of current portfolio in mn €",
+				"de": "Fair Market Value of current portfolio in mn €",
+			},
+			{
+				"en": "Capital called from investor in mn €",
+				"de": "Capital called from investor in mn €",
+			},
+			{
+				"en": "Repaid capital either reinvested or distributed to investor in mn €",
+				"de": "Repaid capital either reinvested or distributed to investor in mn €",
+			},
+			{
+				"en": "Dry powder in mn €",
+				"de": "Dry powder in mn €",
+			},
+		}
+
+		for idx1, inpName := range page21Inputs {
+
+			if page21Types[idx1] == "restricted-text-million" {
+				restrTextRowLabelsTop(
+					qst.WrapPageT(page),
+					inpName,
+					page21Lbls[idx1],
+					rTSingleRowMill,
+				)
+			}
+
+			if page21Types[idx1] == "range-pct" {
+				slidersPctRowLabelsTop(
+					qst.WrapPageT(page),
+					inpName,
+					page21Lbls[idx1],
+					suffixPercent,
+				)
+			}
+
+			if page21Types[idx1] == "radios1-4" {
+				chapter3(
+					qst.WrapPageT(page),
+					inpName,
+					page21Lbls[idx1],
+					mCh2a,
+				)
+			}
+
+		}
+
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 1
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{
+					"en": "<b>2.2</b> &nbsp; Portfolio Composition",
+					"de": "<b>2.2</b> &nbsp; Portfolio Composition",
+				}
+				inp.ColSpan = 1
+				inp.ColSpanLabel = 1
+			}
+		}
+
+		restrictedTextMultiCols(qst.WrapPageT(page), r221)
+		restrictedTextMultiCols(qst.WrapPageT(page), r222)
+
+	}
+
+	// page23
+	{
+		page := q.AddPage()
+
+		page.Label = trl.S{
+			"en": "2.3 Portfolio risk",
+			"de": "2.3 Portfolio risk",
+		}
+		page.Short = trl.S{
+			"en": "Portfolio risk",
+			"de": "Portfolio risk",
+		}
+
+		page.WidthMax("64rem")
+
+		page23Types := []string{
+			"radios1-4",
+			"range-pct",
+			"range-pct",
+			"range-pct",
+			"restricted-text",
+			"range-pct",
+
+			"range-pct",
+			"range-pct",
+			"range-pct",
+		}
+		page23Inputs := []string{
+			"covenants_per_credit",
+			"share_covenant_holiday",
+			"share_covenant_reset",
+			"share_covenant_breach",
+			"share_loan_defaults",
+			"share_default_recovered",
+
+			"share_esg_kpis",
+			"share_esg_ratchets",
+			"share_esg_15degrees",
+		}
+		page23Lbls := []trl.S{
+			{
+				"en": "Average Number of Financial Covenants per credit",
+				"de": "Average Number of Financial Covenants per credit",
+			},
+			{
+				"en": "What is the share of portfolio (at Fair Market Value) with a covenant holiday?",
+				"de": "What is the share of portfolio (at Fair Market Value) with a covenant holiday?",
+			},
+			{
+				"en": "What is the share of portfolio (at Fair Market Value) with a covenant reset?",
+				"de": "What is the share of portfolio (at Fair Market Value) with a covenant reset?",
+			},
+			{
+				"en": "What is the share of portfolio (at Fair Market Value) with a covenant breach?",
+				"de": "What is the share of portfolio (at Fair Market Value) with a covenant breach?",
+			},
+			{
+				"en": "Share of defaulted loans (measured at cost/principal amount of loan)",
+				"de": "Share of defaulted loans (measured at cost/principal amount of loan)",
+			},
+			{
+				"en": "If you had a default in the past. What was the recovery rate (share of principal)?",
+				"de": "If you had a default in the past. What was the recovery rate (share of principal)?",
+			},
+			// esg
+			{
+				"en": "What is the share of portfolio (at Fair Market Value) with explicit ESG targets in the credit documentation?",
+				"de": "What is the share of portfolio (at Fair Market Value) with explicit ESG targets in the credit documentation?",
+			},
+			{
+				"en": "What is the share of portfolio (at Fair Market Value) with ESG ratchets?",
+				"de": "What is the share of portfolio (at Fair Market Value) with ESG ratchets?",
+			},
+			{
+				"en": "What is the share of portfolio (at Fair Market Value) where the creditor explicitly states a strategy to add to the 1.5°C target?",
+				"de": "What is the share of portfolio (at Fair Market Value) where the creditor explicitly states a strategy to add to the 1.5°C target?",
+			},
+		}
+
+		for idx1, inpName := range page23Inputs {
+
+			if page23Types[idx1] == "restricted-text" {
+				restrTextRowLabelsTop(
+					qst.WrapPageT(page),
+					inpName,
+					page23Lbls[idx1],
+					rTSingleRowPercent,
+				)
+			}
+
+			if page23Types[idx1] == "range-pct" {
+				slidersPctRowLabelsTop(
+					qst.WrapPageT(page),
+					inpName,
+					page23Lbls[idx1],
+					suffixPercent,
+				)
+			}
+
+			if page23Types[idx1] == "radios1-4" {
+				chapter3(
+					qst.WrapPageT(page),
+					inpName,
+					page23Lbls[idx1],
+					mCh2a,
+				)
+			}
+
+		}
 
 	}
 

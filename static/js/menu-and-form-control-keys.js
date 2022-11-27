@@ -16,7 +16,7 @@ function keyControls(e) {
         document.getElementById("mnu-1st-lvl-toggler").checked = false;
 
 
-        // ExcelDB: hide all control-menu-2 
+        // ExcelDB: hide all control-menu-2
         // var mnu2s = document.getElementsByClassName("control-menu-2");
         // for (var i = 0; i < mnu2s.length; i++) {
         // 	mnu2s[i].style.display = 'none';
@@ -28,9 +28,9 @@ function keyControls(e) {
     // Sending events to inputs is security forbidden.
     // We find the next element and focus() it.
     //
-    // TEXTAREA: SHIFT+ENTER mode is impossible on mobile - 
-    // thus we cannot include TEXTAREA into the func	 
-    // 
+    // TEXTAREA: SHIFT+ENTER mode is impossible on mobile -
+    // thus we cannot include TEXTAREA into the func
+    //
     //	optionally restrict to certain user agens: && /Android/.test(navigator.userAgent)
     if (e.key === "Enter") {
 
@@ -42,7 +42,7 @@ function keyControls(e) {
 
         var el = document.activeElement;
 
-        // skip for <input type=submit>  and <button>... 
+        // skip for <input type=submit>  and <button>...
         if ((el.tagName == "INPUT" && el.type != "submit") || el.tagName == "SELECT") {
 
             e.preventDefault();
@@ -120,7 +120,7 @@ function outsideMenu(event) {
 // click on nde-2nd-lvl pulls up mnu-3rd-lvl
 //
 // we would love to change li.nde-2nd-lvl::before
-// into an upward arrow too, but pseudo elements 
+// into an upward arrow too, but pseudo elements
 // cannot be selected / styled via javascript
 var closeLevel3 = function () {
     for (let i = 0; i < this.children.length; i++) {
@@ -140,9 +140,9 @@ var closeLevel3 = function () {
 
 // window.onload = ...   is *not* cumulative
 // window.onload = function () {
-//     //    
+//     //
 // };
-// 
+//
 // addEventListener is cumulative
 window.addEventListener("load", function (event) {
 
@@ -164,7 +164,7 @@ window.addEventListener("load", function (event) {
     var invalidInputs = false; // invalid by HTML5
     var invalidFields = document.querySelectorAll("form :invalid");  // excluding invalid form itself
     for (var i = 0; i < invalidFields.length; i++) {
-        /*  first pages with first element after long text 
+        /*  first pages with first element after long text
                 => scrolls down
             preventScroll supported only since 2018
          */
@@ -201,7 +201,7 @@ window.addEventListener("load", function (event) {
                 continue;
             }
 
-            /*  first pages with first element after long text 
+            /*  first pages with first element after long text
                     => scrolls down
                 preventScroll supported only since 2018
                 */
@@ -220,3 +220,155 @@ window.addEventListener("load", function (event) {
 
 
 });
+
+
+function rangeInput(src){
+    console.log("rangeInput()");
+
+    src.style.backgroundColor = "transparent";
+
+
+    if (!src.parentNode) {
+        return true
+    }
+    if (!src.parentNode.childNodes) {
+        return true
+    }
+
+    let chn = src.parentNode.childNodes;
+    console.log("child nodes num", chn.length);
+
+    let noAnsw = null;
+    let label = null;
+    for (i = 0; i < chn.length; i++) {
+
+        let el = chn[i];
+
+        if (el.nodeType == Node.TEXT_NODE) {
+            // console.log("   ch #",i , " - textnode");
+        } else {
+            console.log("   ch #", i, el.nodeType, el.type, el.name);
+            if (el.type == "radio") {
+                noAnsw = el;
+            }
+            if (el.tagName == "LABEL") {
+                label = el;
+            }
+        }
+    }
+
+    if (noAnsw) {
+        noAnsw.checked = false;
+        // rg.disabled = true;
+    }
+    if (label) {
+
+        let chn = label.childNodes;
+        console.log("  label child nodes num", chn.length);
+
+        let display = null;
+        for (i = 0; i < chn.length; i++) {
+
+            let el = chn[i];
+
+            if (el.nodeType == Node.TEXT_NODE) {
+                // console.log("   ch #",i , " - textnode");
+            } else {
+                console.log("       ch #", i, el.nodeType, el.type, el.name);
+                if (el.type == "text") {
+                    display = el;
+                }
+            }
+        }
+
+        if (display) {
+            display.value = src.value;
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+    return true;
+}
+
+function rangeClick(src){
+    console.log("rangeClick()");
+    src.style.backgroundColor = "transparent";
+    // src.disabled = false;
+    return true;
+}
+
+function rangeRadioInput(src){
+    // console.log("rangeRadioInput()");
+    // console.log("rangeRadioInput() - src id", src.id);
+
+    if (!src.parentNode) {
+        return true
+    }
+    if (!src.parentNode.childNodes) {
+        return true
+    }
+
+    const chn = src.parentNode.childNodes;
+    console.log("child nodes num", chn.length);
+
+    let rg = null;
+    let label = null;
+    for (i = 0; i < chn.length; i++) {
+
+        let el = chn[i];
+
+        if (el.nodeType == Node.TEXT_NODE) {
+            // console.log("   ch #",i , " - textnode");
+        } else {
+            console.log("   ch #", i, el.nodeType, el.type, el.name);
+            if (el.type == "range") {
+                rg = el;
+            }
+            if (el.tagName == "LABEL") {
+                label = el;
+            }
+        }
+    }
+
+    if (rg) {
+        rg.style.backgroundColor = "darkgray";
+        // rg.disabled = true;
+    }
+
+    if (label) {
+
+        let chn = label.childNodes;
+        console.log("  label child nodes num", chn.length);
+
+        let display = null;
+        for (i = 0; i < chn.length; i++) {
+
+            let el = chn[i];
+
+            if (el.nodeType == Node.TEXT_NODE) {
+                // console.log("   ch #",i , " - textnode");
+            } else {
+                console.log("       ch #", i, el.nodeType, el.type, el.name);
+                if (el.type == "text") {
+                    display = el;
+                }
+            }
+        }
+
+        if (display) {
+            display.value = "no a.";
+        }
+
+    }
+
+
+    return true;
+}

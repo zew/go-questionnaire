@@ -6,18 +6,40 @@ import (
 
 // config restricted text
 type configRT struct {
-	InputNameP2 string // second token of input name;  [numdeals, volbysegm, ...]
-	Chars       int    // input characters max
-	LblRow1     trl.S  //
-	LblRow2     trl.S  // question in more detail
-	Suffix      trl.S  // unit 'deals' or 'million €'
+	InputNameP2    string // second token of input name;  [numdeals, volbysegm, ...]
+	Chars          int    // input characters max
+	LblRow1        trl.S  //
+	FirstRow100Pct bool   // first row of input is 100% disabled
+	LblRow2        trl.S  // question in more detail
+	Suffix         trl.S  // unit 'deals' or 'million €'
 
 	SubNames    []string // suffixes
 	SubLbls     map[string]string
 	Placeholder trl.S //
+
+	Min, Max, Step float64
 }
 
 var (
+	// simple config
+	rTSingleRowPercent = configRT{
+		Chars:       4,
+		Min:         0,
+		Max:         100,
+		Step:        0.1,
+		Suffix:      suffixPercent,
+		Placeholder: placeHolderNum,
+	}
+	rTSingleRowMill = configRT{
+		Chars:       10,
+		Min:         0,
+		Max:         40000,
+		Step:        1,
+		Suffix:      suffixMillionEuro,
+		Placeholder: placeHolderMillion,
+	}
+
+	// multi-row configs
 	rT1 = configRT{
 		InputNameP2: "numdeals",
 		Chars:       6,
@@ -39,10 +61,7 @@ var (
 			"midupper": "Core- and Upper Mid-Market (>15m € EBITDA)",
 			"other":    "Other",
 		},
-		Placeholder: trl.S{
-			"en": "#",
-			"de": "#",
-		},
+		Placeholder: placeHolderNum,
 	}
 	rT2 = configRT{
 		InputNameP2: "volbysegm",
@@ -55,22 +74,14 @@ var (
 			"en": `Please state the volume (in million Euro) of deals closed in Q4 2022 by market segment: `,
 			"de": `Bitte nennen Sie das Volumen (in Millionen Euro) von Abschlüssen in Q4 2022 nach Marktsegment: `,
 		},
-		Suffix: trl.S{
-			// capitalizemytitle.com/how-to-abbreviate-million/
-			// "en": "million €",
-			"en": "MM €",
-			"de": "Mio €",
-		},
+		Suffix:   suffixMillionEuro,
 		SubNames: []string{"low", "mid", "upper"},
 		SubLbls: map[string]string{
 			"low":   "Lower Mid-Market (0-15m € EBITDA)",
 			"mid":   "Core Mid-Market  (15-50m € EBITDA)",
 			"upper": "Upper Mid-Market (>50m € EBITDA)",
 		},
-		Placeholder: trl.S{
-			"en": "million Euro",
-			"de": "Millionen Euro",
-		},
+		Placeholder: placeHolderMillion,
 	}
 	rT3 = configRT{
 		InputNameP2: "volbyreg",
@@ -83,12 +94,7 @@ var (
 			"en": `Please state the volume (in million Euro) of deals closed in Q4 2022 by region: `,
 			"de": `Bitte nennen Sie das Volumen (in Millionen Euro) von Abschlüssen in Q4 2022 nach Region: `,
 		},
-		Suffix: trl.S{
-			// capitalizemytitle.com/how-to-abbreviate-million/
-			// "en": "million €",
-			"en": "MM €",
-			"de": "Mio €",
-		},
+		Suffix:   suffixMillionEuro,
 		SubNames: []string{"uk", "france", "dach", "benelux", "nordics", "southern_eu", "other"},
 		SubLbls: map[string]string{
 			"uk":          "UK",
@@ -99,10 +105,7 @@ var (
 			"southern_eu": "Southern Europe",
 			"other":       "Other",
 		},
-		Placeholder: trl.S{
-			"en": "million Euro",
-			"de": "Millionen Euro",
-		},
+		Placeholder: placeHolderMillion,
 	}
 	rT4 = configRT{
 		InputNameP2: "volbysect",
@@ -115,12 +118,7 @@ var (
 			"en": `Please state the volume (in million Euro) of deals closed in Q4 2022 by region: `,
 			"de": `Bitte nennen Sie das Volumen (in Millionen Euro) von Abschlüssen in Q4 2022 nach Region: `,
 		},
-		Suffix: trl.S{
-			// capitalizemytitle.com/how-to-abbreviate-million/
-			// "en": "million €",
-			"en": "MM €",
-			"de": "Mio €",
-		},
+		Suffix: suffixMillionEuro,
 		SubNames: []string{
 			"energy",
 			"materials",
@@ -149,29 +147,55 @@ var (
 			"real_estate":      "Real Estate",
 			"other":            "Other",
 		},
-		Placeholder: trl.S{
-			"en": "million Euro",
-			"de": "Millionen Euro",
-		},
+		Placeholder: placeHolderMillion,
 	}
 
-	// rT5 = configRT{
-	// 	InputNameP2: "share_loans_default",
-	// 	Chars:       3,
-	// 	LblRow1: trl.S{
-	// 		"en": `lbl1`,
-	// 		"de": `lbl1`,
-	// 	},
-	// 	LblRow2: trl.S{},
-	// 	Suffix: trl.S{
-	// 		"en": "%",
-	// 		"de": "%",
-	// 	},
-	// 	SubNames: []string{},
-	// 	SubLbls:  map[string]string{},
-	// 	Placeholder: trl.S{
-	// 		"en": "#",
-	// 		"de": "#",
-	// 	},
-	// }
+	//
+	r221 = configRT{
+		InputNameP2: "221market_segment",
+		Chars:       5,
+		LblRow1: trl.S{
+			"en": "Share of portfolio (at Fair Market Value)",
+			"de": "Share of portfolio (at Fair Market Value)",
+		},
+		FirstRow100Pct: true,
+		LblRow2: trl.S{
+			"en": `Please enter percentages for each segment`,
+			"de": `Please enter percentages for each segment`,
+		},
+		Suffix:   suffixPercent,
+		SubNames: []string{"low", "core", "upper"},
+		SubLbls: map[string]string{
+			"low":   "Lower (5-15mn EBITDA)",
+			"core":  "Core (15-50 mn EBITDA)",
+			"upper": "Upper Mid Market 50-75 mn EBITDA)",
+		},
+		Placeholder: placeHolderNum,
+	}
+
+	r222 = configRT{
+		InputNameP2: "222region",
+		Chars:       5,
+		LblRow1: trl.S{
+			"en": "Share of portfolio (at Fair Market Value)",
+			"de": "Share of portfolio (at Fair Market Value)",
+		},
+		FirstRow100Pct: true,
+		LblRow2: trl.S{
+			"en": `Please enter percentages for each region`,
+			"de": `Please enter percentages for each region`,
+		},
+		Suffix:   suffixPercent,
+		SubNames: []string{"uk", "france", "dach", "benelux", "nordics", "southern_eu", "other"},
+		SubLbls: map[string]string{
+			"uk":          "UK",
+			"france":      "France",
+			"dach":        "DACH",
+			"benelux":     "Benelux",
+			"nordics":     "Nordics",
+			"southern_eu": "Southern Europe",
+			"other":       "Other",
+		},
+		Placeholder: placeHolderNum,
+	}
 )

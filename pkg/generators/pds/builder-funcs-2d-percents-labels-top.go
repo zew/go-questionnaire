@@ -8,11 +8,11 @@ import (
 	"github.com/zew/go-questionnaire/pkg/trl"
 )
 
-func percentsRowLabelsTop(
+func restrTextRowLabelsTop(
 	page *qst.WrappedPageT,
 	inputName string,
 	lbl trl.S,
-	sfx trl.S,
+	cf configRT,
 ) {
 
 	numCols := float32(len(trancheTypeNamesAC1))
@@ -47,17 +47,14 @@ func percentsRowLabelsTop(
 				inp.Type = "number"
 				inp.Name = fmt.Sprintf("%v_%v", ttPref, inputName)
 				inp.Label = allLbls["ac1-tranche-types"][idx1]
-				inp.Placeholder = trl.S{
-					"en": "#",
-					"de": "#",
-				}
+				inp.Placeholder = cf.Placeholder
 
 				// 0%-100% in 5% brackets
-				inp.Min = 0
-				inp.Max = 100
-				inp.Step = 0.1
+				inp.Min = cf.Min
+				inp.Max = cf.Max
+				inp.Step = cf.Step
 
-				inp.MaxChars = 4
+				inp.MaxChars = cf.Chars
 
 				inp.ColSpan = 1
 				inp.ColSpanLabel = 0
@@ -76,9 +73,9 @@ func percentsRowLabelsTop(
 				// inp.Style.Desktop.StyleBox.Margin = "0 1.4rem 0 1.4rem"
 
 				if idx1 == idxLastCol {
-					inp.Suffix = sfx
+					inp.Suffix = cf.Suffix
 				}
-				inp.Suffix = sfx
+				inp.Suffix = cf.Suffix
 
 			}
 		}

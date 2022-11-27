@@ -1870,6 +1870,9 @@ input.ib-300 {     width:300px;    }
 
 
 
+/* 
+    range input CSS variables
+*/
 :root {
     /* common */
     --range-trackheight: 0.40em;
@@ -1893,10 +1896,15 @@ input.ib-300 {     width:300px;    }
 
 }
 
+/* two classes for the range input compound elements */
 .range-display{
     display: inline-block;
     vertical-align: middle;
-    background-color: grey;
+    /* background-color: grey; */
+
+    text-align: right;
+    padding-right: 0.4rem !important;
+
     max-width: 3rem;
 
     padding: 0;

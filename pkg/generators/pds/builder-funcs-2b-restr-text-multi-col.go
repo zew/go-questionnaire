@@ -21,7 +21,7 @@ func restrictedTextMultiCols(
 		gr.Cols = numCols
 		// gr.BottomVSpacers =
 
-		// row0 - headers
+		// row0 - column headers, 1-4 tranche type names
 		for idx1 := 0; idx1 < len(trancheTypeNamesAC1)+1; idx1++ {
 			inp := gr.AddInput()
 			inp.Type = "textblock"
@@ -72,6 +72,21 @@ func restrictedTextMultiCols(
 				}
 				if idx1 == idxLastCol {
 					inp.Suffix = cf.Suffix
+				}
+
+				if cf.FirstRow100Pct {
+					inp.Response = "100"
+					inp.Type = "textblock"
+					inp.Type = "label-as-input"
+					inp.Label = trl.S{
+						"en": "&nbsp;&nbsp;&nbsp;&nbsp;100",
+						"de": "&nbsp;&nbsp;&nbsp;&nbsp;100",
+					}.Bold()
+					// inp.ColSpanControl = 0
+					inp.Name = ""
+					inp.Suffix = cf.Suffix
+					// inp.StyleCtl = css.NewStylesResponsive(inp.StyleCtl)
+					// inp.StyleCtl.Desktop.StyleBox.BackgroundColor = "darkgray"
 				}
 
 			}

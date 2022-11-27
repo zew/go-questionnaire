@@ -80,11 +80,11 @@ func (inp inputT) labelDescription(w io.Writer, langCode string) {
 
 }
 
-// ShortSuffix appends suffix to the input - using &nbsp;
+// shortSuffix appends suffix to the input - using &nbsp;
 // for longer text, reverse order of label and control;
 // sadly, &nbsp; has no effect;
 // we have to use white-space: nowrap; on the grid-item
-func (inp *inputT) ShortSuffix(ctrl string, langCode string) string {
+func (inp *inputT) shortSuffix(ctrl string, langCode string) string {
 
 	if inp.Suffix.Empty() {
 		return ctrl
@@ -408,12 +408,15 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 	case "range":
 		ctrl += fmt.Sprintf("<div class='input-wrapper-%v'>", inp.Signature())
 
+		// the range input
 		ctrl += fmt.Sprintf(
 			`<input type='%v'  
 				name='%v' id='%v' title='%v %v' 
 				min='%v' max='%v' step='%v' 
 				list='%v'  
-				value='%v' 
+				value='%v'
+				oninput='rangeInput(this)' 
+				onclick='rangeClick(this)' 
 			/>
 			`,
 			inp.Type,
@@ -423,15 +426,16 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 			inp.Response,
 		)
 
+		// value indicator [rangename]_display
 		display := `<input 
-			type="text" 
-			name="%v_display" 
-			id="%v_display" 
-			class="range-display"
-			size="%v" 
-			maxlength="%v" 
-			value="" 
-			disabled="true"
+			type='text' 
+			name='%v_display' 
+			id='%v_display' 
+			class='range-display'
+			size='%v' 
+			maxlength='%v' 
+			value=''
+			disabled='true'
 		>
 		`
 		display = fmt.Sprintf(
@@ -442,13 +446,15 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 			inp.MaxChars,
 		)
 
+		// no answer radio [rangename]_noanswer
 		noAnswer := `<input 
-			type="radio" 
-			name="%v_noanswer" 
-			class="range-noanswer"
-			id="%v_noanswer" 
-			value="%v_noanswer"
-			title="no answer"
+			type='radio' 
+			name='%v_noanswer' 
+			class='range-noanswer'
+			id='%v_noanswer' 
+			value='%v_noanswer'
+			title='no answer'
+			oninput='rangeRadioInput(this)' 
 		>`
 		noAnswer = fmt.Sprintf(
 			noAnswer,
@@ -618,7 +624,7 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 	// common
 
 	// append suffix
-	ctrl = inp.ShortSuffix(ctrl, q.LangCode)
+	ctrl = inp.shortSuffix(ctrl, q.LangCode)
 
 	// error rendering moved to GroupHTMLGridBased
 

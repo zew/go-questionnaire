@@ -73,8 +73,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"de": "Identification and asset classes",
 		}
 		page.Short = trl.S{
-			"en": "Identification,<br>asset classes",
-			"de": "Identification,<br>asset classes",
+			"en": "Asset classes,<br>tranches",
+			"de": "Asset classes,<br>tranches",
 		}
 
 		page.WidthMax("42rem")
@@ -151,10 +151,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		// gr5
 		{
 			lblMain := trl.S{
-				"en": `
-					<!-- Suggestion; instead of three different surveys; -->
-					rows 2,3 not shown in first wave<br>
-					Which asset classes do you invest in?`,
+				"en": `Which asset classes do you invest in?`,
 				"de": `Wählen Sie Ihre Assetklassen.`,
 			}
 			checkBoxCascade(
@@ -176,12 +173,12 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		// 	"de": "Section 1",
 		// }
 		page.Label = trl.S{
-			"en": "1. Portfolio Changes (past 3 months)",
-			"de": "1. Portfolio Changes (past 3 months)",
+			"en": "1. Portfolio changes (past 3 months)",
+			"de": "1. Portfolio changes (past 3 months)",
 		}
 		page.Short = trl.S{
-			"en": "Portfolio Changes",
-			"de": "Portfolio Changes",
+			"en": "Portfolio changes",
+			"de": "Portfolio changes",
 		}
 
 		page.WidthMax("42rem")
@@ -264,8 +261,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"de": "2. Overall (existing) Portfolio",
 		}
 		page.Short = trl.S{
-			"en": "Portfolio",
-			"de": "Portfolio",
+			"en": "Portfolio base",
+			"de": "Portfolio base",
 		}
 
 		page.WidthMax("64rem")
@@ -837,43 +834,43 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.ColSpanLabel = 2
 				inp.ColSpanControl = 8
 			}
-			{
-				inp := gr.AddInput()
-				inp.Name = "range01_display"
-				inp.Type = "text"
-				inp.MaxChars = 8
-				inp.ColSpan = 2
-				inp.ColSpanLabel = 0
-				inp.ColSpanControl = 1
+			/* 			{
+			   				inp := gr.AddInput()
+			   				inp.Name = "range01_display"
+			   				inp.Type = "text"
+			   				inp.MaxChars = 8
+			   				inp.ColSpan = 2
+			   				inp.ColSpanLabel = 0
+			   				inp.ColSpanControl = 1
 
-				inp.Style = css.NewStylesResponsive(inp.Style)
-				inp.Style.Desktop.StyleBox.Position = "relative"
-				inp.Style.Desktop.StyleBox.Top = "0.58rem"
-				inp.Style.Desktop.StyleBox.Left = "0.58rem"
-			}
-			{
-				inp := gr.AddInput()
-				inp.Name = "range01_noanswer"
-				inp.Type = "radio"
-				inp.ColSpan = 2
-				inp.Label = trl.S{
-					"de": "nicht verfügb.",
-					"en": "no answer",
-				}
-				inp.ValueRadio = "xx"
-				inp.ColSpanLabel = 1
-				inp.ColSpanControl = 1
+			   				inp.Style = css.NewStylesResponsive(inp.Style)
+			   				inp.Style.Desktop.StyleBox.Position = "relative"
+			   				inp.Style.Desktop.StyleBox.Top = "0.58rem"
+			   				inp.Style.Desktop.StyleBox.Left = "0.58rem"
+			   			}
+			   			{
+			   				inp := gr.AddInput()
+			   				inp.Name = "range01_noanswer"
+			   				inp.Type = "radio"
+			   				inp.ColSpan = 2
+			   				inp.Label = trl.S{
+			   					"de": "nicht verfügb.",
+			   					"en": "no answer",
+			   				}
+			   				inp.ValueRadio = "xx"
+			   				inp.ColSpanLabel = 1
+			   				inp.ColSpanControl = 1
 
-				// inp.ControlTop()
-				// inp.ControlBottom()
+			   				// inp.ControlTop()
+			   				// inp.ControlBottom()
 
-				inp.StyleCtl = css.NewStylesResponsive(inp.StyleCtl)
-				inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
+			   				inp.StyleCtl = css.NewStylesResponsive(inp.StyleCtl)
+			   				inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
 
-				inp.StyleCtl.Desktop.StyleGridItem.Col = "auto/1"
-				inp.StyleLbl.Desktop.StyleGridItem.Col = "auto/1"
-			}
-
+			   				inp.StyleCtl.Desktop.StyleGridItem.Col = "auto/1"
+			   				inp.StyleLbl.Desktop.StyleGridItem.Col = "auto/1"
+			   			}
+			*/
 			{
 				inp := gr.AddInput()
 				inp.ColSpanControl = 1

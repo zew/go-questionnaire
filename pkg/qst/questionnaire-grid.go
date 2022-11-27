@@ -415,8 +415,8 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 				min='%v' max='%v' step='%v' 
 				list='%v'  
 				value='%v'
-				oninput='rangeInput(this)' 
-				onclick='rangeClick(this)' 
+				oninput='pdsRangeInput(this)' 
+				onclick='pdsRangeClick(this)' 
 			/>
 			`,
 			inp.Type,
@@ -454,7 +454,7 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 			id='%v_noanswer' 
 			value='%v_noanswer'
 			title='no answer'
-			oninput='rangeRadioInput(this)' 
+			oninput='pdsRangeRadioInput(this)' 
 		>`
 		noAnswer = fmt.Sprintf(
 			noAnswer,

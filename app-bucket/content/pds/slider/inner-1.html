@@ -11,20 +11,24 @@
 <p>Problems with sliders ("range input")</p>
 
   <ul>
-    <li>Value display (diagonal lined) and "no answer" require a lot of horizontal space</li>
+    <li>radio "no answer" requires additional horizontal space</li>
 
     <li>There is always some default value; <br>
         for instance "0" or "50%"; <br>
-        even if the user clicks on "no answer"
-    </li>
-
-    <li>Choosing 'no answer' should <i>disable</i> the range input. 
-        <br>
-        How to reactivate it again?
+        
+        I try to make the "thumb" invisible on "no-answer"
     </li>
 
 
-    <li>Gets very slim if intervals are small; intervals should be entered via radio groups</li>
+    <li>Gets compressed if there are many steps</li>
+    
+    <li>Alternative: Vertical radios <br>
+      Vertical sliders are technically unsafe.
+    </li>
+
+    <li>The thumb is not yet aligned to indicate 50%-55%;
+      this will be changed
+    </li>
 
     <!-- <li>Design changes are limited by browsers to prevent misuse; <br>
       second example does not work in Firefox

@@ -18,7 +18,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "e7578ae841d5db4d7782f3af662f8270c7ab947c00c9b1caba328546863d8111",
+ 	"md_5": "286e7e0cd4a9cbcfc95027081509bb6edc50c9aa60edc4de1513265b5dc6c627",
  	"lang_codes": [
  		"en"
  	],
@@ -77,16 +77,16 @@
  		},
  		{
  			"label": {
- 				"de": "Identification + asset classes",
- 				"en": "Identification + asset classes"
+ 				"de": "Identification and asset classes",
+ 				"en": "Identification and asset classes"
  			},
  			"description": {
  				"de": "",
  				"en": ""
  			},
  			"short": {
- 				"de": "Identification,\u003cbr\u003easset classes",
- 				"en": "Identification,\u003cbr\u003easset classes"
+ 				"de": "Asset classes,\u003cbr\u003etranches",
+ 				"en": "Asset classes,\u003cbr\u003etranches"
  			},
  			"style": {
  				"desktop": {
@@ -370,7 +370,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "Wählen Sie Ihre Assetklassen.",
- 								"en": "\n\t\t\t\t\t\u003c!-- Suggestion; instead of three different surveys; --\u003e\n\t\t\t\t\trows 2,3 not shown in first wave\u003cbr\u003e\n\t\t\t\t\tWhich asset classes do you invest in?"
+ 								"en": "Which asset classes do you invest in?"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -1057,16 +1057,16 @@
  		},
  		{
  			"label": {
- 				"de": "1. Portfolio Changes (past 3 months)",
- 				"en": "1. Portfolio Changes (past 3 months)"
+ 				"de": "1. Portfolio changes (past 3 months)",
+ 				"en": "1. Portfolio changes (past 3 months)"
  			},
  			"description": {
  				"de": "",
  				"en": ""
  			},
  			"short": {
- 				"de": "Portfolio Changes",
- 				"en": "Portfolio Changes"
+ 				"de": "Portfolio changes",
+ 				"en": "Portfolio changes"
  			},
  			"style": {
  				"desktop": {
@@ -6819,8 +6819,8 @@
  				"en": ""
  			},
  			"short": {
- 				"de": "Portfolio",
- 				"en": "Portfolio"
+ 				"de": "Portfolio base",
+ 				"en": "Portfolio base"
  			},
  			"style": {
  				"desktop": {
@@ -8558,8 +8558,8 @@
  								"en": "#"
  							},
  							"label": {
- 								"de": "- Upper Mid Market 50-75 mn EBITDA)",
- 								"en": "- Upper Mid Market 50-75 mn EBITDA)"
+ 								"de": "- Upper Mid Market (50-75 mn EBITDA)",
+ 								"en": "- Upper Mid Market (50-75 mn EBITDA)"
  							},
  							"col_span": 4,
  							"col_span_label": 3,
@@ -24848,75 +24848,6 @@
  										"width": "90%"
  									},
  									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "range01_display",
- 							"type": "text",
- 							"max_chars": 8,
- 							"col_span": 2,
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"position": "relative",
- 										"left": "0.58rem",
- 										"top": "0.58rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "range01_noanswer",
- 							"type": "radio",
- 							"label": {
- 								"de": "nicht verfügb.",
- 								"en": "no an\u0026shy;swer"
- 							},
- 							"col_span": 2,
- 							"col_span_label": 1,
- 							"col_span_control": 1,
- 							"value_radio": "xx",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"col": "auto/1"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"col": "auto/1"
- 									},
  									"text_style": {}
  								},
  								"mobile": {

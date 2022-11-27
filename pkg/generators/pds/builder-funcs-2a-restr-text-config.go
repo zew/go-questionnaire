@@ -168,7 +168,7 @@ var (
 		SubLbls: map[string]string{
 			"low":   "Lower (5-15mn EBITDA)",
 			"core":  "Core (15-50 mn EBITDA)",
-			"upper": "Upper Mid Market 50-75 mn EBITDA)",
+			"upper": "Upper Mid Market (50-75 mn EBITDA)",
 		},
 		Placeholder: placeHolderNum,
 	}

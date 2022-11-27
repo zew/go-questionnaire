@@ -222,7 +222,9 @@ window.addEventListener("load", function (event) {
 });
 
 
-function rangeInput(src){
+
+
+function pdsRangeInput(src){
     console.log("rangeInput()");
 
     src.style.backgroundColor = "transparent";
@@ -286,26 +288,17 @@ function rangeInput(src){
         }
 
     }
-
-
-
-
-
-
-
-
-
     return true;
 }
 
-function rangeClick(src){
+function pdsRangeClick(src){
     console.log("rangeClick()");
     src.style.backgroundColor = "transparent";
     // src.disabled = false;
     return true;
 }
 
-function rangeRadioInput(src){
+function pdsRangeRadioInput(src){
     // console.log("rangeRadioInput()");
     // console.log("rangeRadioInput() - src id", src.id);
 

@@ -486,77 +486,6 @@ func (p *pageT) WidthDefault() {
 	}
 }
 
-var datalistsForRangeInputs = map[string]string{
-	"signature-1-old": `
-		<datalist id="signature-1">
-			<option value="0"  label="0"></option>
-			<option value="10" ></option>
-			<option value="20" label="20"></option>
-			<option value="30" ></option>
-			<option value="40" label="40"></option>
-			<option value="50"></option>
-			<option value="60" label="60"></option>
-			<option value="70"></option>
-			<option value="80" label="80"></option>
-			<option value="90"></option>
-			<option value="100" label="100"></option>
-		</datalist>
-	`,
-	"signature-1": `
-		<datalist id="signature-1">
-			<option value="0"  ></option>
-			<option value="10" ></option>
-			<option value="20" ></option>
-			<option value="30" ></option>
-			<option value="40" ></option>
-			<option value="50" ></option>
-			<option value="60" ></option>
-			<option value="70" ></option>
-			<option value="80" ></option>
-			<option value="90" ></option>
-			<option value="100"></option>
-		</datalist>
-	`,
-	"signature-2": `
-		<datalist id="signature-2">
-			<option value="0"   ></option>
-			<option value="50"  ></option>
-			<option value="100" ></option>
-		</datalist>
-	`,
-	"signature-3": `
-		<datalist id="signature-3">
-			<option value="<6"  ></option>
-			<option value="6"   ></option>
-			<option value="9"   ></option>
-			<option value="12"  ></option>
-			<option value="18"  ></option>
-			<option value=">18" ></option>
-		</datalist>
-	`,
-}
-
-// DataLists returns a map of
-// datalists for range inputs
-// keyed by .Min, .Max and .Step
-func (p *pageT) DataLists() map[string]string {
-	subsetOfDatalists := map[string]string{}
-	for i1 := 0; i1 < len(p.Groups); i1++ {
-		for i2 := 0; i2 < len(p.Groups[i1].Inputs); i2++ {
-			if p.Groups[i1].Inputs[i2].Type == "range" {
-				inp := p.Groups[i1].Inputs[i2]
-				key := inp.Signature()
-				if dl, ok := datalistsForRangeInputs[key]; ok {
-					// log.Printf("found datalist for key %q", key)
-					subsetOfDatalists[key] = dl
-				}
-			}
-		}
-	}
-	// log.Printf("subsetOfDatalists of datalists %+v", subsetOfDatalists)
-	return subsetOfDatalists
-}
-
 // QuestionnaireT contains pages with groups with inputs
 type QuestionnaireT struct {
 	Survey SurveyT `json:"survey,omitempty"`
@@ -1142,11 +1071,6 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 		`
 		fmt.Fprintf(w, s, 1000*q.PostponeNavigationButtons)
 
-	}
-
-	dataLists := page.DataLists()
-	for _, dataL := range dataLists {
-		fmt.Fprint(w, dataL)
 	}
 
 	page.WidthDefault()

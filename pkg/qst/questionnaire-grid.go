@@ -423,12 +423,46 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 			inp.Response,
 		)
 
+		display := `<input 
+			type="text" 
+			name="%v_display" 
+			id="%v_display" 
+			class="range-display"
+			size="%v" 
+			maxlength="%v" 
+			value="" 
+			disabled="true"
+		>
+		`
+		display = fmt.Sprintf(
+			display,
+			inp.Name,
+			inp.Name,
+			inp.MaxChars,
+			inp.MaxChars,
+		)
+
+		noAnswer := `<input 
+			type="radio" 
+			name="%v_noanswer" 
+			class="range-noanswer"
+			id="%v_noanswer" 
+			value="%v_noanswer"
+			title="no answer"
+		>`
+		noAnswer = fmt.Sprintf(
+			noAnswer,
+			inp.Name,
+			inp.Name,
+			inp.Name,
+		)
+
 		if inp.DynamicFuncParamset == "3" {
 			ctrl += fmt.Sprintf(`
 			<!-- label must be trailing sibling to input[range] -->
 			<label for="%v">
 				<!-- label content in other grid item -->
-				[%v]
+				  %v %v
 				<div class="labels" aria-hidden="true" 
 				><span 
 					style="--i: 0"  ><6&nbsp;&nbsp;</span><span 
@@ -440,9 +474,12 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 					style="--i: 12">&nbsp;&nbsp;>18</span>
 				</div>
 			</label>	
+				%v
 			`,
 				inp.Name,
+				display,
 				inp.Suffix["en"],
+				noAnswer,
 			)
 
 		} else {
@@ -450,7 +487,7 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 			<!-- label must be trailing sibling to input[range] -->
 			<label for="%v">
 				<!-- label content in other grid item -->
-				[%v]
+				  %v %v
 				<div class="labels" aria-hidden="true" 
 				><span 
 					style="--i: 0"   >0</span><span 
@@ -461,12 +498,15 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 					style="--i: 10">100</span>
 				</div>
 			</label>	
+				%v
 			`,
 				inp.Name,
+				display,
 				inp.Suffix["en"],
+				noAnswer,
 			)
 		}
-		ctrl += `</div>`
+		ctrl += `</div>` // /input-wrapper
 
 		inp.Suffix = trl.S{}
 

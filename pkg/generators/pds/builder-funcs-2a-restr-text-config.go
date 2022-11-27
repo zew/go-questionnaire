@@ -155,23 +155,23 @@ var (
 		},
 	}
 
-	rT5 = configRT{
-		InputNameP2: "share_loans_default",
-		Chars:       3,
-		LblRow1: trl.S{
-			"en": `lbl1`,
-			"de": `lbl1`,
-		},
-		LblRow2: trl.S{},
-		Suffix: trl.S{
-			"en": "%",
-			"de": "%",
-		},
-		SubNames: []string{},
-		SubLbls:  map[string]string{},
-		Placeholder: trl.S{
-			"en": "#",
-			"de": "#",
-		},
-	}
+	// rT5 = configRT{
+	// 	InputNameP2: "share_loans_default",
+	// 	Chars:       3,
+	// 	LblRow1: trl.S{
+	// 		"en": `lbl1`,
+	// 		"de": `lbl1`,
+	// 	},
+	// 	LblRow2: trl.S{},
+	// 	Suffix: trl.S{
+	// 		"en": "%",
+	// 		"de": "%",
+	// 	},
+	// 	SubNames: []string{},
+	// 	SubLbls:  map[string]string{},
+	// 	Placeholder: trl.S{
+	// 		"en": "#",
+	// 		"de": "#",
+	// 	},
+	// }
 )

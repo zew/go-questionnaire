@@ -174,8 +174,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		// 	"de": "Section 1",
 		// }
 		page.Label = trl.S{
-			"en": "1. Portfolio changes (past 3 months)",
-			"de": "1. Portfolio changes (past 3 months)",
+			"en": "1.1 Portfolio changes (past 3 months)",
+			"de": "1.1 Portfolio changes (past 3 months)",
 		}
 		page.Short = trl.S{
 			"en": "Portfolio changes",
@@ -191,7 +191,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		lblDuration := trl.S{
 			"en": "Average time to close a deal in weeks",
 			"de": "Durchschnittl. Zeit bis Abschluss in Wochen",
-		}.Outline("1.2")
+		}.Outline("b.)")
 		slidersPctRowLabelsLeft(
 			qst.WrapPageT(page),
 			"closing_time",
@@ -206,7 +206,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			trl.S{
 				"en": "Alternative visualisation using radios",
 				"de": "Alternative visualisation using radios",
-			}.Outline("1.2"),
+			}.Outline("b.)"),
 			mCh5,
 		)
 
@@ -221,7 +221,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					<span class=font-size-90 >What is the share of new deals (at fair market value) with explicit ESG targets in the credit documentation? </span>`,
 			"de": `<bb>Share ESG KPIs</bb> <br>
 					<span class=font-size-90 >What is the share of new deals (at fair market value) with explicit ESG targets in the credit documentation? </span>`,
-		}.Outline("1.6")
+		}.Outline("f.)")
 		slidersPctRowLabelsLeft(
 			qst.WrapPageT(page),
 			"esg",
@@ -235,7 +235,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					<span class=font-size-90 >What is the share of new deals (at fair market value) with ESG ratchets? </span>`,
 			"de": `<bb>Share ESG ratchets</bb> <br> 
 					<span class=font-size-90 >What is the share of new deals (at fair market value) with ESG ratchets? </span>`,
-		}.Outline("1.7")
+		}.Outline("g.)")
 		slidersPctRowLabelsLeft(
 			qst.WrapPageT(page),
 			"esgratch",
@@ -249,7 +249,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					<span class=font-size-90 >What is the share of new deals (at fair market value) where the creditor explicitly states a strategy to add to the 1.5°C target? </span>`,
 			"de": `<bb>Share 1.5°C target</bb> <br> 
 					<span class=font-size-90 >What is the share of new deals (at fair market value) where the creditor explicitly states a strategy to add to the 1.5°C target? </span>`,
-		}.Outline("1.8")
+		}.Outline("h.)")
 		slidersPctRowLabelsLeft(
 			qst.WrapPageT(page),
 			"esg15degrees",
@@ -257,6 +257,293 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			suffixPercent,
 			"2",
 		)
+
+	}
+
+	// page12
+	{
+		page := q.AddPage()
+
+		page.Label = trl.S{
+			"en": "New transactions",
+			"de": "New transactions",
+		}
+		page.Short = trl.S{
+			"en": "New transactions",
+			"de": "New transactions",
+		}
+		page.CounterProgress = "1.2"
+
+		page.WidthMax("64rem")
+
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 1
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{
+					"de": "Slider ticks and values not yet set",
+					"en": "Slider ticks and values not yet set",
+				}
+				inp.ColSpan = 1
+				inp.ColSpanLabel = 1
+			}
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{
+					"en": "Return (unlevered)",
+					"de": "Return (unlevered)",
+				}.Outline("1.2")
+				inp.ColSpan = 1
+				inp.ColSpanLabel = 1
+			}
+		}
+
+		page12Types := []string{
+			"range-pct",
+			"range-pct",
+			"range-pct",
+			"range-pct",
+			"range-pct",
+			"range-pct",
+		}
+		page12Inputs := []string{
+			"cash_margin",
+			"interest_floor",
+			"upfront_fee",
+			"fixed_rate_coupon",
+			"irr_expected",
+			"share_floating_rate",
+		}
+		page12Lbls := []trl.S{
+			{
+				"en": `
+					Margin (over 3m Euribor) <br>
+					<span class=font-size-90 >Average Cash Margin (only relevant for floating rate loans)</span>`,
+				"de": `
+					Margin (over 3m Euribor) <br>
+					<span class=font-size-90 >Average Cash Margin (only relevant for floating rate loans)</span>`,
+			},
+			{
+				"en": `
+					Interest floor <br>
+					<span class=font-size-90 >Average interest floor (only relevant for floating rate loans)</span>`,
+				"de": `
+					Interest floor <br>
+					<span class=font-size-90 >Average interest floor (only relevant for floating rate loans)</span>`,
+			},
+			{
+				"en": `
+					Upfront fee <br>
+					<span class=font-size-90 >Average upfront fee (percent of loan value)</span>`,
+				"de": `
+					Upfront fee <br>
+					<span class=font-size-90 >Average upfront fee (percent of loan value)</span>`,
+			},
+
+			{
+				"en": `
+					Fixed Rate Coupon <br>
+					<span class=font-size-90 > Average fixed rate coupon (only relevant for fixed rate loans) </span>`,
+				"de": `
+					Fixed Rate Coupon <br>
+					<span class=font-size-90 > Average fixed rate coupon (only relevant for fixed rate loans) </span>`,
+			},
+			{
+				"en": `
+					 Expected IRR <br>
+					<span class=font-size-90 > Average expected IRR  </span>`,
+				"de": `
+					 Expected IRR <br>
+					<span class=font-size-90 > Average expected IRR  </span>`,
+			},
+			{
+				"en": `
+					Share of Floating Rate Debt <br>
+					<span class=font-size-90 > Share of Floating Rate Debt </span>`,
+				"de": `
+					Share of Floating Rate Debt <br>
+					<span class=font-size-90 > Share of Floating Rate Debt </span>`,
+			},
+		}
+
+		for i := 0; i < len(page12Lbls); i++ {
+			rn := rune(97 + i)
+			page12Lbls[i] = page12Lbls[i].Outline(fmt.Sprintf("%c.)", rn))
+		}
+
+		for idx1, inpName := range page12Inputs {
+
+			if page12Types[idx1] == "restricted-text-million" {
+				restrTextRowLabelsTop(
+					qst.WrapPageT(page),
+					inpName,
+					page12Lbls[idx1],
+					rTSingleRowMill,
+				)
+			}
+
+			if page12Types[idx1] == "restricted-text-pct" {
+				restrTextRowLabelsTop(
+					qst.WrapPageT(page),
+					inpName,
+					page12Lbls[idx1],
+					rTSingleRowPercent,
+				)
+			}
+
+			if page12Types[idx1] == "range-pct" {
+				slidersPctRowLabelsTop(
+					qst.WrapPageT(page),
+					inpName,
+					page12Lbls[idx1],
+					sliderPctThreeTen,
+				)
+			}
+
+			if page12Types[idx1] == "radios1-4" {
+				chapter3(
+					qst.WrapPageT(page),
+					inpName,
+					page12Lbls[idx1],
+					mCh2a,
+				)
+			}
+
+		}
+
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 1
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{
+					"en": "Risk",
+					"de": "Risk",
+				}.Outline("1.3")
+				inp.ColSpan = 1
+				inp.ColSpanLabel = 1
+			}
+		}
+
+		page13Types := []string{
+			"range-pct",
+			"range-pct",
+			"range-pct",
+			"range-pct",
+			"range-pct",
+			"range-pct",
+		}
+		page13Inputs := []string{
+			"number_covenants",
+			"contracted_maturity",
+			"opening_leverage",
+			"ebitda_avg",
+			"ev_avg",
+			"share_sponsored_or_not",
+		}
+		page13Lbls := []trl.S{
+			{
+				"en": `
+					Average # of covenants <br>
+					<span class=font-size-90 > Average number of financial covenants per credit </span>`,
+				"de": `
+					Average # of covenants <br>
+					<span class=font-size-90 > Average number of financial covenants per credit </span>`,
+			},
+			{
+				"en": `
+					Contracted maturity <br>
+					<span class=font-size-90 > Average contracted maturity </span>`,
+				"de": `
+					Contracted maturity <br>
+					<span class=font-size-90 > Average contracted maturity </span>`,
+			},
+			{
+				"en": `
+					 Opening leverage <br>
+					<span class=font-size-90 > Measured as a multiple of EBITDA  </span>`,
+				"de": `
+					 Opening leverage <br>
+					<span class=font-size-90 > Measured as a multiple of EBITDA  </span>`,
+			},
+			{
+				"en": `
+					 Average EBITDA <br>
+					<span class=font-size-90 > Average EBITDA of companies </span>`,
+				"de": `
+					 Average EBITDA <br>
+					<span class=font-size-90 > Average EBITDA of companies </span>`,
+			},
+			{
+				"en": `
+					 Average EV <br>
+					<span class=font-size-90 > Average EV of Companies </span>`,
+				"de": `
+					 Average EV <br>
+					<span class=font-size-90 > Average EV of Companies </span>`,
+			},
+			{
+				"en": `
+					 Share of sponsored vs. sponsor-less <br>
+					<span class=font-size-90 > Percentage of deals with private equity sponsor </span>`,
+				"de": `
+					 Share of sponsored vs. sponsor-less <br>
+					<span class=font-size-90 > Percentage of deals with private equity sponsor </span>`,
+			},
+		}
+
+		for i := 0; i < len(page13Lbls); i++ {
+			rn := rune(97 + i)
+			page13Lbls[i] = page13Lbls[i].Outline(fmt.Sprintf("%c.)", rn))
+		}
+
+		for idx1, inpName := range page13Inputs {
+
+			if page13Types[idx1] == "restricted-text-million" {
+				restrTextRowLabelsTop(
+					qst.WrapPageT(page),
+					inpName,
+					page13Lbls[idx1],
+					rTSingleRowMill,
+				)
+			}
+
+			if page13Types[idx1] == "restricted-text-pct" {
+				restrTextRowLabelsTop(
+					qst.WrapPageT(page),
+					inpName,
+					page13Lbls[idx1],
+					rTSingleRowPercent,
+				)
+			}
+
+			if page13Types[idx1] == "range-pct" {
+				slidersPctRowLabelsTop(
+					qst.WrapPageT(page),
+					inpName,
+					page13Lbls[idx1],
+					sliderPctThreeTen,
+				)
+			}
+
+			if page13Types[idx1] == "radios1-4" {
+				chapter3(
+					qst.WrapPageT(page),
+					inpName,
+					page13Lbls[idx1],
+					mCh2a,
+				)
+			}
+
+		}
 
 	}
 
@@ -325,7 +612,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 		for i := 0; i < len(page21Lbls); i++ {
 			rn := rune(97 + i)
-			page21Lbls[i] = page21Lbls[i].Outline(fmt.Sprintf("&nbsp;&nbsp;%c.)", rn))
+			page21Lbls[i] = page21Lbls[i].Outline(fmt.Sprintf("%c.)", rn))
 		}
 
 		for idx1, inpName := range page21Inputs {
@@ -339,12 +626,21 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				)
 			}
 
+			if page21Types[idx1] == "restricted-text-pct" {
+				restrTextRowLabelsTop(
+					qst.WrapPageT(page),
+					inpName,
+					page21Lbls[idx1],
+					rTSingleRowPercent,
+				)
+			}
+
 			if page21Types[idx1] == "range-pct" {
 				slidersPctRowLabelsTop(
 					qst.WrapPageT(page),
 					inpName,
 					page21Lbls[idx1],
-					suffixPercent,
+					sliderPctZeroHundred,
 				)
 			}
 
@@ -401,7 +697,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"range-pct",
 			"range-pct",
 			"range-pct",
-			"restricted-text",
+			"restricted-text-pct",
 			"range-pct",
 
 			"range-pct",
@@ -463,12 +759,21 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		for i := 0; i < len(page23Lbls); i++ {
 			// page23Lbls[i] = page23Lbls[i].Outline(fmt.Sprintf("2.3.%v", i+1))
 			rn := rune(97 + i)
-			page23Lbls[i] = page23Lbls[i].Outline(fmt.Sprintf("&nbsp;&nbsp;%c.)", rn))
+			page23Lbls[i] = page23Lbls[i].Outline(fmt.Sprintf("%c.)", rn))
 		}
 
 		for idx1, inpName := range page23Inputs {
 
-			if page23Types[idx1] == "restricted-text" {
+			if page23Types[idx1] == "restricted-text-million" {
+				restrTextRowLabelsTop(
+					qst.WrapPageT(page),
+					inpName,
+					page23Lbls[idx1],
+					rTSingleRowMill,
+				)
+			}
+
+			if page23Types[idx1] == "restricted-text-pct" {
 				restrTextRowLabelsTop(
 					qst.WrapPageT(page),
 					inpName,
@@ -482,7 +787,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					qst.WrapPageT(page),
 					inpName,
 					page23Lbls[idx1],
-					suffixPercent,
+					sliderPctZeroHundred,
 				)
 			}
 
@@ -832,6 +1137,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		page.Label = trl.S{"en": "Slider"}
 		page.Short = trl.S{"en": "Slider"}
 		page.CounterProgress = "-"
+		page.SuppressInProgressbar = true
 		page.WidthMax("42rem")
 
 		// gr2

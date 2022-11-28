@@ -8,11 +8,31 @@ import (
 	"github.com/zew/go-questionnaire/pkg/trl"
 )
 
+type sliderConf struct {
+	Min, Max, Step float64
+	Suffix         trl.S
+}
+
+var sliderPctZeroHundred = sliderConf{
+	Min:    0,
+	Max:    100,
+	Step:   5,
+	Suffix: suffixPercent,
+}
+
+var sliderPctThreeTen = sliderConf{
+	Min:    3,
+	Max:    10,
+	Step:   0.5,
+	Suffix: suffixPercent,
+}
+
 func slidersPctRowLabelsTop(
 	page *qst.WrappedPageT,
 	inputName string,
 	lbl trl.S,
-	sfx trl.S,
+	// sfx trl.S,
+	cf sliderConf,
 ) {
 
 	numCols := float32(len(trancheTypeNamesAC1))
@@ -20,10 +40,15 @@ func slidersPctRowLabelsTop(
 
 	// row0 - major label
 	if !lbl.Empty() {
+
+		grSt := css.NewStylesResponsive(nil)
+		grSt.Desktop.StyleBox.Margin = "0 0 0 " + outline2Indent
+
 		gr := page.AddGroup()
 		gr.Cols = 1
 		gr.BottomVSpacers = 1
 		gr.BottomVSpacers = 0
+		gr.Style = grSt
 		{
 			inp := gr.AddInput()
 			inp.Type = "textblock"
@@ -50,19 +75,13 @@ func slidersPctRowLabelsTop(
 				inp.Label = allLbls["ac1-tranche-types"][idx1]
 
 				// 0%-100% in 5% brackets
-				inp.Min = 0
-				inp.Max = 100
-				inp.Step = 5
+				inp.Min = cf.Min
+				inp.Max = cf.Max
+				inp.Step = cf.Step
 
 				inp.ColSpan = 1
 				inp.ColSpanLabel = 0
 				inp.ColSpanControl = 1
-
-				if false {
-					// this does not prevent the line-break
-					inp.StyleCtl = css.NewStylesResponsive(inp.StyleCtl)
-					inp.StyleCtl.Desktop.WidthMax = "80%"
-				}
 
 				// inp.LabelPadRight()
 				inp.LabelCenter()
@@ -75,9 +94,9 @@ func slidersPctRowLabelsTop(
 				inp.Style.Desktop.StyleBox.Margin = "0 1.4rem 0 1.4rem"
 
 				if idx1 == idxLastCol {
-					inp.Suffix = sfx
+					inp.Suffix = cf.Suffix
 				}
-				inp.Suffix = sfx
+				inp.Suffix = cf.Suffix
 
 			}
 		}

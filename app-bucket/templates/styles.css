@@ -1870,6 +1870,8 @@ input.ib-300 {     width:300px;    }
 
 .font-size-90 {
     font-size: 90%;
+    display: inline-block;
+    margin-left: 2.4rem;
 }
 
 

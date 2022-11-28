@@ -8,6 +8,8 @@ import (
 	"github.com/zew/go-questionnaire/pkg/trl"
 )
 
+const outline2Indent = "1.2rem"
+
 // config multiple choice
 type configMC struct {
 	KeyLabels          string // key to a map of labels
@@ -38,6 +40,7 @@ var (
 		LabelBottom:        false,
 		DontKnow:           false,
 		GroupBottomSpacers: 3,
+		GroupLeftIndent:    outline2Indent,
 
 		XDisplacements: []string{
 			"1.6rem",
@@ -56,14 +59,12 @@ var (
 	}
 
 	mCh4 = configMC{
-		KeyLabels:   "improveDecline1-5",
-		Cols:        10,
-		InpColspan:  2,
-		LabelBottom: false,
-		DontKnow:    false,
-
-		GroupLeftIndent: "1.2rem",
-
+		KeyLabels:       "improveDecline1-5",
+		Cols:            10,
+		InpColspan:      2,
+		LabelBottom:     false,
+		DontKnow:        false,
+		GroupLeftIndent: outline2Indent,
 		XDisplacements: []string{
 			"1.6rem",
 			"0.79rem",
@@ -78,6 +79,9 @@ var (
 		InpColspan:  2,
 		LabelBottom: false,
 		DontKnow:    false,
+
+		// not yet
+		// GroupLeftIndent: outline2Indent,
 
 		XDisplacements: []string{
 			"1.46rem",
@@ -143,14 +147,14 @@ var allLbls = map[string][]trl.S{
 			"de": "Subordinated",
 		},
 		{
-			"en": "Mezzanine / PIK / Other",
-			"de": "Mezzanine / PIK / Other",
+			"en": "Mezzanine / PIK / other",
+			"de": "Mezzanine / PIK / other",
 		},
 	},
 	"ac2-tranche-types": {
 		{
-			"en": "Whole Loan",
-			"de": "Whole Loan",
+			"en": "Whole loan",
+			"de": "Whole loan",
 		},
 		{
 			"en": "Subordinated",

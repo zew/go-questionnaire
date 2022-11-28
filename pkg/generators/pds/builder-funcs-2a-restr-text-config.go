@@ -13,6 +13,8 @@ type configRT struct {
 	LblRow2        trl.S  // question in more detail
 	Suffix         trl.S  // unit 'deals' or 'million €'
 
+	GroupLeftIndent string
+
 	SubNames    []string // suffixes
 	SubLbls     map[string]string
 	Placeholder trl.S //
@@ -54,7 +56,8 @@ var (
 		LblRow1: trl.S{
 			"en": "Total number of new deals",
 			"de": "Gesamtzahl neue Abschlüsse",
-		}.Outline("1.1"),
+		}.Outline("a.)"),
+		GroupLeftIndent: outline2Indent,
 		LblRow2: trl.S{
 			"en": `Please state the number of deals closed in Q4 2022 by market segment: `,
 			"de": `Please state the number of deals closed in Q4 2022 by market segment: `,
@@ -77,7 +80,7 @@ var (
 		LblRow1: trl.S{
 			"en": "Total volume of new deals by segment",
 			"de": "Gesamtvolumen neuer Abschlüsse nach Marktsegment",
-		}.Outline("1.3"),
+		}.Outline("c.)"),
 		LblRow2: trl.S{
 			"en": `Please state the volume (in million Euro) of deals closed in Q4 2022 by market segment: `,
 			"de": `Bitte nennen Sie das Volumen (in Millionen Euro) von Abschlüssen in Q4 2022 nach Marktsegment: `,
@@ -97,7 +100,7 @@ var (
 		LblRow1: trl.S{
 			"en": "Total volume of new deals by region",
 			"de": "Gesamtvolumen neuer Abschlüsse nach Region",
-		}.Outline("1.4"),
+		}.Outline("d.)"),
 		LblRow2: trl.S{
 			"en": `Please state the volume (in million Euro) of deals closed in Q4 2022 by region: `,
 			"de": `Bitte nennen Sie das Volumen (in Millionen Euro) von Abschlüssen in Q4 2022 nach Region: `,
@@ -121,7 +124,7 @@ var (
 		LblRow1: trl.S{
 			"en": "Total volume of new deals by sector",
 			"de": "Gesamtvolumen neuer Abschlüsse nach Sektor",
-		}.Outline("1.5"),
+		}.Outline("e.)"),
 		LblRow2: trl.S{
 			"en": `Please state the volume (in million Euro) of deals closed in Q4 2022 by sector: `,
 			"de": `Bitte nennen Sie das Volumen (in Millionen Euro) von Abschlüssen in Q4 2022 nach Sektor: `,

@@ -407,11 +407,12 @@ func (q QuestionnaireT) GroupHTMLTableBased(pageIdx, grpIdx int) string {
 
 // Type page contains groups with inputs
 type pageT struct {
-	Section         trl.S  `json:"section,omitempty"`          // extra strong before label in content - summary headline for multiple pages
-	Label           trl.S  `json:"label,omitempty"`            // headline, set to "" to prevent rendering
-	Desc            trl.S  `json:"description,omitempty"`      // abstract
-	Short           trl.S  `json:"short,omitempty"`            // sort version of section/label/description - in progress bar and navigation menu
+	Section trl.S `json:"section,omitempty"`     // extra strong before label in content - summary headline for multiple pages
+	Label   trl.S `json:"label,omitempty"`       // headline, set to "" to prevent rendering
+	Desc    trl.S `json:"description,omitempty"` // abstract
+
 	CounterProgress string `json:"counter_progress,omitempty"` // number shown in progress bar bullet; "-" suppresses the natural counter
+	Short           trl.S  `json:"short,omitempty"`            // sort version of section/label/description - in progress bar and navigation menu
 
 	// Navi control stuff
 	//

@@ -20,10 +20,15 @@ func restrTextRowLabelsTop(
 
 	// row0 - major label
 	if !lbl.Empty() {
+
+		grSt := css.NewStylesResponsive(nil)
+		grSt.Desktop.StyleBox.Margin = "0 0 0 " + outline2Indent
+
 		gr := page.AddGroup()
 		gr.Cols = 1
 		gr.BottomVSpacers = 1
 		gr.BottomVSpacers = 0
+		gr.Style = grSt
 		{
 			inp := gr.AddInput()
 			inp.Type = "textblock"

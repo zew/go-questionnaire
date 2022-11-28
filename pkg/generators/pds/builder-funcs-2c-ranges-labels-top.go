@@ -8,19 +8,19 @@ import (
 	"github.com/zew/go-questionnaire/pkg/trl"
 )
 
-type sliderConf struct {
+type rangeConf struct {
 	Min, Max, Step float64
 	Suffix         trl.S
 }
 
-var sliderPctZeroHundred = sliderConf{
+var sliderPctZeroHundred = rangeConf{
 	Min:    0,
 	Max:    100,
 	Step:   5,
 	Suffix: suffixPercent,
 }
 
-var sliderPctThreeTen = sliderConf{
+var sliderPctThreeTen = rangeConf{
 	Min:    3,
 	Max:    10,
 	Step:   0.5,
@@ -32,7 +32,7 @@ func slidersPctRowLabelsTop(
 	inputName string,
 	lbl trl.S,
 	// sfx trl.S,
-	cf sliderConf,
+	cf rangeConf,
 ) {
 
 	numCols := float32(len(trancheTypeNamesAC1))

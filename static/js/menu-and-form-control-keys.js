@@ -31,7 +31,7 @@ function keyControls(e) {
     // TEXTAREA: SHIFT+ENTER mode is impossible on mobile -
     // thus we cannot include TEXTAREA into the func
     //
-    //	optionally restrict to certain user agens: && /Android/.test(navigator.userAgent)
+    //	optionally restrict to certain user agents: && /Android/.test(navigator.userAgent)
     if (e.key === "Enter") {
 
         var isShift = !!e.shiftKey; // convert to boolean
@@ -191,14 +191,21 @@ window.addEventListener("load", function (event) {
     if (!invalidInputs) {
         // focus on first visible input
         var elements = document.forms.frmMain.elements;
-        for (var i = 0, element; element = elements[i++];) {
-            if (element.type === "hidden") {
+        for (var i = 0, el; el = elements[i++];) {
+            if (el.type === "hidden") {
                 continue;
             }
 
-            if (firstErrMsgTop > 0 && element.getBoundingClientRect().y < firstErrMsgTop) {
+            if (firstErrMsgTop > 0 && el.getBoundingClientRect().y < firstErrMsgTop) {
                 // console.log(`.error-block-input found ${element.getBoundingClientRect().y} < ${topPosOfErr}`);
                 continue;
+            }
+
+            if (el.type === "range") {
+                // if the first input is a range; 
+                // then we dont want to focus - because otherwise hitting PageDown 
+                // would not scroll down the page, but change the range-slider thumb
+                break;
             }
 
             /*  first pages with first element after long text
@@ -206,7 +213,7 @@ window.addEventListener("load", function (event) {
                 preventScroll supported only since 2018
                 */
             try {
-                element.focus({
+                el.focus({
                     preventScroll: true
                 });
             } catch (error) {

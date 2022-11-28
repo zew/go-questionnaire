@@ -18,13 +18,13 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "2dbead5b1e249407e1581b50ec9f0b4dfc8965380ee5297a96890e6d87610812",
+ 	"md_5": "10f867b3b31d2f2b88c1de086b07abb99bc5f3e298bbcb4d742d56c29c74ab2e",
  	"lang_codes": [
  		"en"
  	],
  	"allow_skip_forward": false,
  	"version_effective": 0,
- 	"max_groups": 28,
+ 	"max_groups": 35,
  	"pages": [
  		{
  			"label": {
@@ -84,7 +84,7 @@
  				"de": "",
  				"en": ""
  			},
- 			"counter_progress": "-",
+ 			"counter_progress": "᎒",
  			"short": {
  				"de": "Asset classes,\u003cbr\u003etranches",
  				"en": "Asset classes,\u003cbr\u003etranches"
@@ -1065,7 +1065,7 @@
  				"de": "",
  				"en": ""
  			},
- 			"counter_progress": "1",
+ 			"counter_progress": "1a",
  			"short": {
  				"de": "Portfolio changes",
  				"en": "Portfolio changes"
@@ -6827,17 +6827,17 @@
  		},
  		{
  			"label": {
- 				"de": "New transactions",
- 				"en": "New transactions"
+ 				"de": "Portfolio changes continued: \u003cbr\u003eNew transactions",
+ 				"en": "Portfolio changes continued: \u003cbr\u003eNew transactions"
  			},
  			"description": {
  				"de": "",
  				"en": ""
  			},
- 			"counter_progress": "1.2",
+ 			"counter_progress": "1b",
  			"short": {
- 				"de": "New transactions",
- 				"en": "New transactions"
+ 				"de": "Portfolio changes - 2",
+ 				"en": "Portfolio changes - 2"
  			},
  			"style": {
  				"desktop": {
@@ -10065,6 +10065,1145 @@
  							}
  						}
  					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003e1.4\u003c/b\u003e \u0026nbsp; Realizations",
+ 								"en": "\u003cb\u003e1.4\u003c/b\u003e \u0026nbsp; Realizations"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003ea.)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tRealisations \u003cbr\u003e\n\t\t\t\t\t\u003cspan class=font-size-90 \u003e Volume of realized loans in € \u003c/span\u003e",
+ 								"en": "\u003cb\u003ea.)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tRealisations \u003cbr\u003e\n\t\t\t\t\t\u003cspan class=font-size-90 \u003e Volume of realized loans in € \u003c/span\u003e"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"margin": "0 0 0 1.2rem"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 4,
+ 					"inputs": [
+ 						{
+ 							"name": "st1_vol_realized_loans",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 40000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"label": {
+ 								"de": "Senior",
+ 								"en": "Senior"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "mn €"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {
+ 										"font_size": 95
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st2_vol_realized_loans",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 40000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"label": {
+ 								"de": "Unitranche",
+ 								"en": "Unitranche"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "mn €"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {
+ 										"font_size": 95
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st3_vol_realized_loans",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 40000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"label": {
+ 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "mn €"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {
+ 										"font_size": 95
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st4_vol_realized_loans",
+ 							"type": "number",
+ 							"max_chars": 10,
+ 							"step": 1,
+ 							"max": 40000,
+ 							"placeholder": {
+ 								"de": "Millionen Euro",
+ 								"en": "million Euro"
+ 							},
+ 							"label": {
+ 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 							},
+ 							"suffix": {
+ 								"de": "Mio €",
+ 								"en": "mn €"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {
+ 										"font_size": 95
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003eb.)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tTime to maturity \u003cbr\u003e\n\t\t\t\t\t\u003cspan class=font-size-90 \u003e Av\u0026shy;er\u0026shy;age time to maturity of realized deals \u003c/span\u003e",
+ 								"en": "\u003cb\u003eb.)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tTime to maturity \u003cbr\u003e\n\t\t\t\t\t\u003cspan class=font-size-90 \u003e Av\u0026shy;er\u0026shy;age time to maturity of realized deals \u003c/span\u003e"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"margin": "0 0 0 1.2rem"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 4,
+ 					"inputs": [
+ 						{
+ 							"name": "st1_time_to_maturity",
+ 							"type": "range",
+ 							"step": 0.5,
+ 							"min": 3,
+ 							"max": 10,
+ 							"label": {
+ 								"de": "Senior",
+ 								"en": "Senior"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"dynamic_func_paramset": "1",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {
+ 										"margin": "0 1.4rem 0 1.4rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {
+ 										"font_size": 95
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st2_time_to_maturity",
+ 							"type": "range",
+ 							"step": 0.5,
+ 							"min": 3,
+ 							"max": 10,
+ 							"label": {
+ 								"de": "Unitranche",
+ 								"en": "Unitranche"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"dynamic_func_paramset": "1",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {
+ 										"margin": "0 1.4rem 0 1.4rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {
+ 										"font_size": 95
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st3_time_to_maturity",
+ 							"type": "range",
+ 							"step": 0.5,
+ 							"min": 3,
+ 							"max": 10,
+ 							"label": {
+ 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"dynamic_func_paramset": "1",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {
+ 										"margin": "0 1.4rem 0 1.4rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {
+ 										"font_size": 95
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st4_time_to_maturity",
+ 							"type": "range",
+ 							"step": 0.5,
+ 							"min": 3,
+ 							"max": 10,
+ 							"label": {
+ 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"dynamic_func_paramset": "1",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {
+ 										"margin": "0 1.4rem 0 1.4rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {
+ 										"font_size": 95
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003ec.)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tRealized gross IRR \u003cbr\u003e\n\t\t\t\t\t\u003cspan class=font-size-90 \u003e Av\u0026shy;er\u0026shy;age realized gross IRR \u003c/span\u003e",
+ 								"en": "\u003cb\u003ec.)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tRealized gross IRR \u003cbr\u003e\n\t\t\t\t\t\u003cspan class=font-size-90 \u003e Av\u0026shy;er\u0026shy;age realized gross IRR \u003c/span\u003e"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"margin": "0 0 0 1.2rem"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 4,
+ 					"inputs": [
+ 						{
+ 							"name": "st1_gross_irr",
+ 							"type": "range",
+ 							"step": 0.5,
+ 							"min": 3,
+ 							"max": 10,
+ 							"label": {
+ 								"de": "Senior",
+ 								"en": "Senior"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"dynamic_func_paramset": "1",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {
+ 										"margin": "0 1.4rem 0 1.4rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {
+ 										"font_size": 95
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st2_gross_irr",
+ 							"type": "range",
+ 							"step": 0.5,
+ 							"min": 3,
+ 							"max": 10,
+ 							"label": {
+ 								"de": "Unitranche",
+ 								"en": "Unitranche"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"dynamic_func_paramset": "1",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {
+ 										"margin": "0 1.4rem 0 1.4rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {
+ 										"font_size": 95
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st3_gross_irr",
+ 							"type": "range",
+ 							"step": 0.5,
+ 							"min": 3,
+ 							"max": 10,
+ 							"label": {
+ 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"dynamic_func_paramset": "1",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {
+ 										"margin": "0 1.4rem 0 1.4rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {
+ 										"font_size": 95
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st4_gross_irr",
+ 							"type": "range",
+ 							"step": 0.5,
+ 							"min": 3,
+ 							"max": 10,
+ 							"label": {
+ 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"dynamic_func_paramset": "1",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {
+ 										"margin": "0 1.4rem 0 1.4rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {
+ 										"font_size": 95
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003ed.)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tRealized gross MOIC \u003cbr\u003e\n\t\t\t\t\t\u003cspan class=font-size-90 \u003e Av\u0026shy;er\u0026shy;age realized gross MOIC \u003c/span\u003e",
+ 								"en": "\u003cb\u003ed.)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tRealized gross MOIC \u003cbr\u003e\n\t\t\t\t\t\u003cspan class=font-size-90 \u003e Av\u0026shy;er\u0026shy;age realized gross MOIC \u003c/span\u003e"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"margin": "0 0 0 1.2rem"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 4,
+ 					"inputs": [
+ 						{
+ 							"name": "st1_gross_moic",
+ 							"type": "range",
+ 							"step": 0.5,
+ 							"min": 3,
+ 							"max": 10,
+ 							"label": {
+ 								"de": "Senior",
+ 								"en": "Senior"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"dynamic_func_paramset": "1",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {
+ 										"margin": "0 1.4rem 0 1.4rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {
+ 										"font_size": 95
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st2_gross_moic",
+ 							"type": "range",
+ 							"step": 0.5,
+ 							"min": 3,
+ 							"max": 10,
+ 							"label": {
+ 								"de": "Unitranche",
+ 								"en": "Unitranche"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"dynamic_func_paramset": "1",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {
+ 										"margin": "0 1.4rem 0 1.4rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {
+ 										"font_size": 95
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st3_gross_moic",
+ 							"type": "range",
+ 							"step": 0.5,
+ 							"min": 3,
+ 							"max": 10,
+ 							"label": {
+ 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"dynamic_func_paramset": "1",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {
+ 										"margin": "0 1.4rem 0 1.4rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {
+ 										"font_size": 95
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st4_gross_moic",
+ 							"type": "range",
+ 							"step": 0.5,
+ 							"min": 3,
+ 							"max": 10,
+ 							"label": {
+ 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "%"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"dynamic_func_paramset": "1",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {
+ 										"margin": "0 1.4rem 0 1.4rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {
+ 										"font_size": 95
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
  				}
  			]
  		},
@@ -10077,7 +11216,7 @@
  				"de": "",
  				"en": ""
  			},
- 			"counter_progress": "2",
+ 			"counter_progress": "2a",
  			"short": {
  				"de": "Portfolio base",
  				"en": "Portfolio base"
@@ -12727,7 +13866,7 @@
  				"de": "",
  				"en": ""
  			},
- 			"counter_progress": "2.3",
+ 			"counter_progress": "2b",
  			"short": {
  				"de": "Portfolio risk",
  				"en": "Portfolio risk"
@@ -28494,6 +29633,309 @@
  							"box_style": {
  								"width_max": "none"
  							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "Abschluss\u003cbr\u003e\u003cbr\u003e",
+ 				"en": "Finish"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"short": {
+ 				"de": "DSGVO",
+ 				"en": "Finish"
+ 			},
+ 			"suppress_progressbar": true,
+ 			"suppress_in_progressbar": true,
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "40rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"name": "q44_dsgvo",
+ 							"type": "checkbox",
+ 							"label": {
+ 								"de": "\n\t\t\t\t\t\t\u003cb\u003eEinwilligungserklärung gemäß DSGVO\u003c/b\u003e\n\n\t\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\t\tDie Antworten dieser Online-Umfrage werden von uns streng vertraulich, \n\t\t\t\t\t\tDSGVO-konform behandelt und nur in anonymer bzw. aggregierter Form benutzt.\n\n\t\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\t\tIm \u003ca href=\"/doc/site-imprint.md\" \u003eImpressum\u003c/a\u003e finden Sie umfangreiche An\u0026shy;gaben zum Da\u0026shy;tenschutz.\n\n\t\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\t\tHiermit willige ich ein, dass meine gesammelten Da\u0026shy;ten \n\t\t\t\t\t\tfür die Marktstudie Impact Investing in Deutsch\u0026shy;land 2022 \n\t\t\t\t\t\tder Bundesinitiative Impact Investing verwendet werden.\n\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\t"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"validator": "must",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cb\u003eWeitergabe meiner Da\u0026shy;ten [partner2]\u003c/b\u003e \n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tMit Ihrer Einwilligung würden wir mit den im Rahmen dieser Erhebung \n\t\t\t\t\t\tgesammelten Da\u0026shy;ten gerne auch zu einer europaweiten \n\t\t\t\t\t\tStudie mit [partner2] beitragen. \t\t\t\t\t\t\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\n\t\t\t\t\t",
+ 								"en": "\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cb\u003eWeitergabe meiner Da\u0026shy;ten [partner2]\u003c/b\u003e \n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tMit Ihrer Einwilligung würden wir mit den im Rahmen dieser Erhebung \n\t\t\t\t\t\tgesammelten Da\u0026shy;ten gerne auch zu einer europaweiten \n\t\t\t\t\t\tStudie mit [partner2] beitragen. \n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\n\t\t\t\t\t"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "q45",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Ich erkläre mich einverstanden, \n\t\t\t\t\tdass meine angegebenen personenbezogenen Da\u0026shy;ten \n\t\t\t\t\tgenutzt werden \n\t\t\t\t\tund zu Auswertungszwecken an die [the_partner] \n\t\t\t\t\tweitergeleitet werden.\n\t\t\t\t\t",
+ 								"en": "Ich erkläre mich einverstanden, \n\t\t\t\t\tdass meine angegebenen personenbezogenen Da\u0026shy;ten \n\t\t\t\t\tgenutzt werden \n\t\t\t\t\tund zu Auswertungszwecken an die [the_partner] \n\t\t\t\t\tweitergeleitet werden.\n\t\t\t\t\t"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "datasharing_yes",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q45",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Ich erkläre mich einverstanden, \n\t\t\t\t\tdass meine angegebenen personenbezogenen Da\u0026shy;ten \n\t\t\t\t\t\u003ci\u003eanonymisiert\u003c/i\u003e \n\t\t\t\t\tzu Auswertungszwecken \n\t\t\t\t\tan die [the_partner] weitergeleitet werden.\t\t\t\t\n\t\t\t\t\t",
+ 								"en": "Ich erkläre mich einverstanden, \n\t\t\t\t\tdass meine angegebenen personenbezogenen Da\u0026shy;ten \n\t\t\t\t\t\u003ci\u003eanonymisiert\u003c/i\u003e \n\t\t\t\t\tzu Auswertungszwecken \n\t\t\t\t\tan die [the_partner] weitergeleitet werden.\t\t\t\t\n\t\t\t\t\t"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "datasharing_anonymous",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "q45",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Meine Da\u0026shy;ten sollen nicht an [the_partner] \n\t\t\t\t\tweitergeleitet werden.\n\t\t\t\t\t",
+ 								"en": "Meine Da\u0026shy;ten sollen nicht an [the_partner] \n\t\t\t\t\tweitergeleitet werden.\n\t\t\t\t\t"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 6,
+ 							"validator": "mustRadioGroup",
+ 							"value_radio": "datasharing_not",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 2,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Fragebogen abschließen um die Da\u0026shy;ten final zu speichern.",
+ 								"en": "Fragebogen abschließen um die Da\u0026shy;ten final zu speichern."
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "submitBtn",
+ 							"type": "button",
+ 							"label": {
+ 								"de": "Fragebogen abschließen",
+ 								"en": "Finish this survey",
+ 								"es": "Terminé esta encuesta",
+ 								"fr": "Terminer ce sondage",
+ 								"it": "Finire questo sondaggio",
+ 								"pl": "Zakończyłem tę ankietę"
+ 							},
+ 							"accesskey": "n",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
+ 							"response": "10",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "end"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"template_columns": "3fr 1fr"
+ 							},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
  							"grid_item_style": {},
  							"text_style": {}
  						}

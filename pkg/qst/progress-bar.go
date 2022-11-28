@@ -104,6 +104,14 @@ func (q *QuestionnaireT) ProgressBar() string {
 			pointr = ""
 		}
 
+		counterInCircle := fmt.Sprintf("%v", pbCurr+1)
+		if q.Pages[idx].CounterProgress != "" {
+			counterInCircle = q.Pages[idx].CounterProgress
+		}
+		if q.Pages[idx].CounterProgress == "-" {
+			counterInCircle = ""
+		}
+
 		b.WriteString(
 			fmt.Sprintf(`
 					<li 
@@ -116,7 +124,7 @@ func (q *QuestionnaireT) ProgressBar() string {
 				`,
 				onclick, pointr,
 				completeOrActive,
-				pbCurr+1,
+				counterInCircle,
 				shortLbl,
 			),
 		)

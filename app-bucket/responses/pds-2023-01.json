@@ -18,7 +18,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "286e7e0cd4a9cbcfc95027081509bb6edc50c9aa60edc4de1513265b5dc6c627",
+ 	"md_5": "53c0be2a7a0aaf9cb193ec237f6aca2986866c734ccc5f980a7eb076354f2bdb",
  	"lang_codes": [
  		"en"
  	],
@@ -88,6 +88,7 @@
  				"de": "Asset classes,\u003cbr\u003etranches",
  				"en": "Asset classes,\u003cbr\u003etranches"
  			},
+ 			"counter_progress": "-",
  			"style": {
  				"desktop": {
  					"grid_container_style": {},
@@ -1068,6 +1069,7 @@
  				"de": "Portfolio changes",
  				"en": "Portfolio changes"
  			},
+ 			"counter_progress": "1",
  			"style": {
  				"desktop": {
  					"grid_container_style": {},
@@ -1244,8 +1246,8 @@
  								"en": "#"
  							},
  							"label": {
- 								"de": "Ge\u0026shy;samtzahl neue Abschlüsse",
- 								"en": "Total number of new deals"
+ 								"de": "\u003cb\u003e1.1\u003c/b\u003e \u0026nbsp; Ge\u0026shy;samtzahl neue Abschlüsse",
+ 								"en": "\u003cb\u003e1.1\u003c/b\u003e \u0026nbsp; Total number of new deals"
  							},
  							"col_span": 4,
  							"col_span_label": 3,
@@ -1332,8 +1334,8 @@
  								"en": "#"
  							},
  							"label": {
- 								"de": "- Lower Mid-Market (0-15m € EBITDA)",
- 								"en": "- Lower Mid-Market (0-15m € EBITDA)"
+ 								"de": "- Lower mid-market (0-15m € EBITDA)",
+ 								"en": "- Lower mid-market (0-15m € EBITDA)"
  							},
  							"col_span": 4,
  							"col_span_label": 3,
@@ -1409,8 +1411,8 @@
  								"en": "#"
  							},
  							"label": {
- 								"de": "- Core- and Upper Mid-Market (\u003e15m € EBITDA)",
- 								"en": "- Core- and Upper Mid-Market (\u003e15m € EBITDA)"
+ 								"de": "- Core- and Upper mid-market (\u003e15m € EBITDA)",
+ 								"en": "- Core- and Upper mid-market (\u003e15m € EBITDA)"
  							},
  							"col_span": 4,
  							"col_span_label": 3,
@@ -1706,8 +1708,8 @@
  							"min": 3,
  							"max": 21,
  							"label": {
- 								"de": "Durchschnittl. Zeit bis Abschluss in Wochen",
- 								"en": "Av\u0026shy;er\u0026shy;age time to close a deal in weeks"
+ 								"de": "\u003cb\u003e1.2\u003c/b\u003e \u0026nbsp; Durchschnittl. Zeit bis Abschluss in Wochen",
+ 								"en": "\u003cb\u003e1.2\u003c/b\u003e \u0026nbsp; Av\u0026shy;er\u0026shy;age time to close a deal in weeks"
  							},
  							"suffix": {
  								"de": "Wochen",
@@ -1848,13 +1850,27 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Alternative visualisation using radios",
- 								"en": "Alternative visualisation using radios"
+ 								"de": "\u003cb\u003e1.2\u003c/b\u003e \u0026nbsp; Alternative visualisation using radios",
+ 								"en": "\u003cb\u003e1.2\u003c/b\u003e \u0026nbsp; Alternative visualisation using radios"
  							},
  							"col_span": 1,
  							"col_span_label": 1
  						}
- 					]
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
  				},
  				{
  					"bottom_vspacers": 1,
@@ -3712,8 +3728,8 @@
  								"en": "million Euro"
  							},
  							"label": {
- 								"de": "Ge\u0026shy;samtvolumen neuer Abschlüsse nach Marktsegment",
- 								"en": "Total volume of new deals by segment"
+ 								"de": "\u003cb\u003e1.3\u003c/b\u003e \u0026nbsp; Ge\u0026shy;samtvolumen neuer Abschlüsse nach Marktsegment",
+ 								"en": "\u003cb\u003e1.3\u003c/b\u003e \u0026nbsp; Total volume of new deals by segment"
  							},
  							"col_span": 4,
  							"col_span_label": 3,
@@ -3800,8 +3816,8 @@
  								"en": "million Euro"
  							},
  							"label": {
- 								"de": "- Lower Mid-Market (0-15m € EBITDA)",
- 								"en": "- Lower Mid-Market (0-15m € EBITDA)"
+ 								"de": "- Lower mid-market (0-15m € EBITDA)",
+ 								"en": "- Lower mid-market (0-15m € EBITDA)"
  							},
  							"col_span": 4,
  							"col_span_label": 3,
@@ -3877,8 +3893,8 @@
  								"en": "million Euro"
  							},
  							"label": {
- 								"de": "- Core Mid-Market  (15-50m € EBITDA)",
- 								"en": "- Core Mid-Market  (15-50m € EBITDA)"
+ 								"de": "- Core mid-market  (15-50m € EBITDA)",
+ 								"en": "- Core mid-market  (15-50m € EBITDA)"
  							},
  							"col_span": 4,
  							"col_span_label": 3,
@@ -3954,8 +3970,8 @@
  								"en": "million Euro"
  							},
  							"label": {
- 								"de": "- Upper Mid-Market (\u003e50m € EBITDA)",
- 								"en": "- Upper Mid-Market (\u003e50m € EBITDA)"
+ 								"de": "- Upper mid-market (\u003e50m € EBITDA)",
+ 								"en": "- Upper mid-market (\u003e50m € EBITDA)"
  							},
  							"col_span": 4,
  							"col_span_label": 3,
@@ -4178,8 +4194,8 @@
  								"en": "million Euro"
  							},
  							"label": {
- 								"de": "Ge\u0026shy;samtvolumen neuer Abschlüsse nach Region",
- 								"en": "Total volume of new deals by region"
+ 								"de": "\u003cb\u003e1.4\u003c/b\u003e \u0026nbsp; Ge\u0026shy;samtvolumen neuer Abschlüsse nach Region",
+ 								"en": "\u003cb\u003e1.4\u003c/b\u003e \u0026nbsp; Total volume of new deals by region"
  							},
  							"col_span": 4,
  							"col_span_label": 3,
@@ -4952,8 +4968,8 @@
  								"en": "million Euro"
  							},
  							"label": {
- 								"de": "Ge\u0026shy;samtvolumen neuer Abschlüsse nach Sektor",
- 								"en": "Total volume of new deals by sector"
+ 								"de": "\u003cb\u003e1.5\u003c/b\u003e \u0026nbsp; Ge\u0026shy;samtvolumen neuer Abschlüsse nach Sektor",
+ 								"en": "\u003cb\u003e1.5\u003c/b\u003e \u0026nbsp; Total volume of new deals by sector"
  							},
  							"col_span": 4,
  							"col_span_label": 3,
@@ -5005,8 +5021,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Bitte nennen Sie das Volumen (in Millionen Euro) von Abschlüssen in Q4 2022 nach Region: ",
- 								"en": "Please state the volume (in million Euro) of deals closed in Q4 2022 by region: "
+ 								"de": "Bitte nennen Sie das Volumen (in Millionen Euro) von Abschlüssen in Q4 2022 nach Sektor: ",
+ 								"en": "Please state the volume (in million Euro) of deals closed in Q4 2022 by sector: "
  							},
  							"col_span": 7,
  							"col_span_label": 1,
@@ -5271,8 +5287,8 @@
  								"en": "million Euro"
  							},
  							"label": {
- 								"de": "- Cons\u0026shy;umer Discretionary",
- 								"en": "- Cons\u0026shy;umer Discretionary"
+ 								"de": "- Cons\u0026shy;umer discretionary",
+ 								"en": "- Cons\u0026shy;umer discretionary"
  							},
  							"col_span": 4,
  							"col_span_label": 3,
@@ -5348,8 +5364,8 @@
  								"en": "million Euro"
  							},
  							"label": {
- 								"de": "- Cons\u0026shy;umer Staples",
- 								"en": "- Cons\u0026shy;umer Staples"
+ 								"de": "- Cons\u0026shy;umer staples",
+ 								"en": "- Cons\u0026shy;umer staples"
  							},
  							"col_span": 4,
  							"col_span_label": 3,
@@ -5425,8 +5441,8 @@
  								"en": "million Euro"
  							},
  							"label": {
- 								"de": "- Health Care",
- 								"en": "- Health Care"
+ 								"de": "- Health care",
+ 								"en": "- Health care"
  							},
  							"col_span": 4,
  							"col_span_label": 3,
@@ -5579,8 +5595,8 @@
  								"en": "million Euro"
  							},
  							"label": {
- 								"de": "- Information Technology",
- 								"en": "- Information Technology"
+ 								"de": "- Information technology",
+ 								"en": "- Information technology"
  							},
  							"col_span": 4,
  							"col_span_label": 3,
@@ -5656,8 +5672,8 @@
  								"en": "million Euro"
  							},
  							"label": {
- 								"de": "- Comunication Services",
- 								"en": "- Comunication Services"
+ 								"de": "- Comunication services",
+ 								"en": "- Comunication services"
  							},
  							"col_span": 4,
  							"col_span_label": 3,
@@ -5810,8 +5826,8 @@
  								"en": "million Euro"
  							},
  							"label": {
- 								"de": "- Real Estate",
- 								"en": "- Real Estate"
+ 								"de": "- Real estate",
+ 								"en": "- Real estate"
  							},
  							"col_span": 4,
  							"col_span_label": 3,
@@ -6106,8 +6122,8 @@
  							"step": 5,
  							"max": 100,
  							"label": {
- 								"de": "\u003cb\u003eShare ESG KPIs\u003c/b\u003e \u003cbr\u003eWhat is the share of new deals (at Fair Market Value) with explicit ESG targets in the credit documentation?",
- 								"en": "\u003cb\u003eShare ESG KPIs\u003c/b\u003e \u003cbr\u003eWhat is the share of new deals (at Fair Market Value) with explicit ESG targets in the credit documentation?"
+ 								"de": "\u003cb\u003e1.6\u003c/b\u003e \u0026nbsp; \u003cbb\u003eShare ESG KPIs\u003c/bb\u003e \u003cbr\u003e\n\t\t\t\t\t\u003cspan class=font-size-90 \u003eWhat is the share of new deals (at fair market value) with explicit ESG targets in the credit documentation? \u003c/span\u003e",
+ 								"en": "\u003cb\u003e1.6\u003c/b\u003e \u0026nbsp; \u003cbb\u003eShare ESG KPIs\u003c/bb\u003e \u003cbr\u003e\n\t\t\t\t\t\u003cspan class=font-size-90 \u003eWhat is the share of new deals (at fair market value) with explicit ESG targets in the credit documentation? \u003c/span\u003e"
  							},
  							"suffix": {
  								"de": "%",
@@ -6390,8 +6406,8 @@
  							"step": 5,
  							"max": 100,
  							"label": {
- 								"de": "\u003cb\u003eShare ESG ratchets\u003c/b\u003e \u003cbr\u003e What is the share of new deals (at Fair Market Value) with ESG ratchets?",
- 								"en": "\u003cb\u003eShare ESG ratchets\u003c/b\u003e \u003cbr\u003e What is the share of new deals (at Fair Market Value) with ESG ratchets?"
+ 								"de": "\u003cb\u003e1.7\u003c/b\u003e \u0026nbsp; \u003cbb\u003eShare ESG ratchets\u003c/bb\u003e \u003cbr\u003e \n\t\t\t\t\t\u003cspan class=font-size-90 \u003eWhat is the share of new deals (at fair market value) with ESG ratchets? \u003c/span\u003e",
+ 								"en": "\u003cb\u003e1.7\u003c/b\u003e \u0026nbsp; \u003cbb\u003eShare ESG ratchets\u003c/bb\u003e \u003cbr\u003e \n\t\t\t\t\t\u003cspan class=font-size-90 \u003eWhat is the share of new deals (at fair market value) with ESG ratchets? \u003c/span\u003e"
  							},
  							"suffix": {
  								"de": "%",
@@ -6674,8 +6690,8 @@
  							"step": 5,
  							"max": 100,
  							"label": {
- 								"de": "\u003cb\u003eShare 1.5°C target\u003c/b\u003e \u003cbr\u003e What is the share of new deals (at Fair Market Value) where the creditor explicitly states a strategy to add to the 1.5°C target?",
- 								"en": "\u003cb\u003eShare 1.5°C target\u003c/b\u003e \u003cbr\u003e What is the share of new deals (at Fair Market Value) where the creditor explicitly states a strategy to add to the 1.5°C target?"
+ 								"de": "\u003cb\u003e1.8\u003c/b\u003e \u0026nbsp; \u003cbb\u003eShare 1.5°C target\u003c/bb\u003e \u003cbr\u003e \n\t\t\t\t\t\u003cspan class=font-size-90 \u003eWhat is the share of new deals (at fair market value) where the creditor explicitly states a strategy to add to the 1.5°C target? \u003c/span\u003e",
+ 								"en": "\u003cb\u003e1.8\u003c/b\u003e \u0026nbsp; \u003cbb\u003eShare 1.5°C target\u003c/bb\u003e \u003cbr\u003e \n\t\t\t\t\t\u003cspan class=font-size-90 \u003eWhat is the share of new deals (at fair market value) where the creditor explicitly states a strategy to add to the 1.5°C target? \u003c/span\u003e"
  							},
  							"suffix": {
  								"de": "%",
@@ -6822,6 +6838,7 @@
  				"de": "Portfolio base",
  				"en": "Portfolio base"
  			},
+ 			"counter_progress": "2",
  			"style": {
  				"desktop": {
  					"grid_container_style": {},
@@ -6863,8 +6880,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Fair Market Value of current portfolio in mn €",
- 								"en": "Fair Market Value of current portfolio in mn €"
+ 								"de": "\u003cb\u003e\u0026nbsp;\u0026nbsp;a.)\u003c/b\u003e \u0026nbsp; Fair market value of current portfolio in mn €",
+ 								"en": "\u003cb\u003e\u0026nbsp;\u0026nbsp;a.)\u003c/b\u003e \u0026nbsp; Fair market value of current portfolio in mn €"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -7179,8 +7196,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Capital called from investor in mn €",
- 								"en": "Capital called from investor in mn €"
+ 								"de": "\u003cb\u003e\u0026nbsp;\u0026nbsp;b.)\u003c/b\u003e \u0026nbsp; Capital called from investor in mn €",
+ 								"en": "\u003cb\u003e\u0026nbsp;\u0026nbsp;b.)\u003c/b\u003e \u0026nbsp; Capital called from investor in mn €"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -7495,8 +7512,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Repaid capital either reinvested or distributed to investor in mn €",
- 								"en": "Repaid capital either reinvested or distributed to investor in mn €"
+ 								"de": "\u003cb\u003e\u0026nbsp;\u0026nbsp;c.)\u003c/b\u003e \u0026nbsp; Repaid capital either reinvested or distributed to investor in mn €",
+ 								"en": "\u003cb\u003e\u0026nbsp;\u0026nbsp;c.)\u003c/b\u003e \u0026nbsp; Repaid capital either reinvested or distributed to investor in mn €"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -7811,8 +7828,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Dry powder in mn €",
- 								"en": "Dry powder in mn €"
+ 								"de": "\u003cb\u003e\u0026nbsp;\u0026nbsp;d.)\u003c/b\u003e \u0026nbsp; Dry powder in mn €",
+ 								"en": "\u003cb\u003e\u0026nbsp;\u0026nbsp;d.)\u003c/b\u003e \u0026nbsp; Dry powder in mn €"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -8282,21 +8299,19 @@
  							}
  						},
  						{
- 							"type": "label-as-input",
+ 							"name": "st1_221market_segment_main",
+ 							"type": "number",
  							"max_chars": 5,
  							"step": 1,
  							"max": 1000000,
+ 							"disabled": true,
  							"placeholder": {
  								"de": "#",
  								"en": "#"
  							},
  							"label": {
- 								"de": "\u003cb\u003e\u0026nbsp;\u0026nbsp;\u0026nbsp;\u0026nbsp;100\u003c/b\u003e",
- 								"en": "\u003cb\u003e\u0026nbsp;\u0026nbsp;\u0026nbsp;\u0026nbsp;100\u003c/b\u003e"
- 							},
- 							"suffix": {
- 								"de": "%",
- 								"en": "%"
+ 								"de": "\u003cb\u003ea.)\u003c/b\u003e \u0026nbsp; Share of portfolio by segment (at fair market value)",
+ 								"en": "\u003cb\u003ea.)\u003c/b\u003e \u0026nbsp; Share of portfolio by segment (at fair market value)"
  							},
  							"col_span": 4,
  							"col_span_label": 3,
@@ -8304,59 +8319,45 @@
  							"response": "100"
  						},
  						{
- 							"type": "label-as-input",
+ 							"name": "st2_221market_segment_main",
+ 							"type": "number",
  							"max_chars": 5,
  							"step": 1,
  							"max": 1000000,
+ 							"disabled": true,
  							"placeholder": {
  								"de": "#",
  								"en": "#"
- 							},
- 							"label": {
- 								"de": "\u003cb\u003e\u0026nbsp;\u0026nbsp;\u0026nbsp;\u0026nbsp;100\u003c/b\u003e",
- 								"en": "\u003cb\u003e\u0026nbsp;\u0026nbsp;\u0026nbsp;\u0026nbsp;100\u003c/b\u003e"
- 							},
- 							"suffix": {
- 								"de": "%",
- 								"en": "%"
  							},
  							"col_span": 1,
  							"col_span_control": 1,
  							"response": "100"
  						},
  						{
- 							"type": "label-as-input",
+ 							"name": "st3_221market_segment_main",
+ 							"type": "number",
  							"max_chars": 5,
  							"step": 1,
  							"max": 1000000,
+ 							"disabled": true,
  							"placeholder": {
  								"de": "#",
  								"en": "#"
- 							},
- 							"label": {
- 								"de": "\u003cb\u003e\u0026nbsp;\u0026nbsp;\u0026nbsp;\u0026nbsp;100\u003c/b\u003e",
- 								"en": "\u003cb\u003e\u0026nbsp;\u0026nbsp;\u0026nbsp;\u0026nbsp;100\u003c/b\u003e"
- 							},
- 							"suffix": {
- 								"de": "%",
- 								"en": "%"
  							},
  							"col_span": 1,
  							"col_span_control": 1,
  							"response": "100"
  						},
  						{
- 							"type": "label-as-input",
+ 							"name": "st4_221market_segment_main",
+ 							"type": "number",
  							"max_chars": 5,
  							"step": 1,
  							"max": 1000000,
+ 							"disabled": true,
  							"placeholder": {
  								"de": "#",
  								"en": "#"
- 							},
- 							"label": {
- 								"de": "\u003cb\u003e\u0026nbsp;\u0026nbsp;\u0026nbsp;\u0026nbsp;100\u003c/b\u003e",
- 								"en": "\u003cb\u003e\u0026nbsp;\u0026nbsp;\u0026nbsp;\u0026nbsp;100\u003c/b\u003e"
  							},
  							"suffix": {
  								"de": "%",
@@ -8772,21 +8773,19 @@
  							}
  						},
  						{
- 							"type": "label-as-input",
+ 							"name": "st1_222region_main",
+ 							"type": "number",
  							"max_chars": 5,
  							"step": 1,
  							"max": 1000000,
+ 							"disabled": true,
  							"placeholder": {
  								"de": "#",
  								"en": "#"
  							},
  							"label": {
- 								"de": "\u003cb\u003e\u0026nbsp;\u0026nbsp;\u0026nbsp;\u0026nbsp;100\u003c/b\u003e",
- 								"en": "\u003cb\u003e\u0026nbsp;\u0026nbsp;\u0026nbsp;\u0026nbsp;100\u003c/b\u003e"
- 							},
- 							"suffix": {
- 								"de": "%",
- 								"en": "%"
+ 								"de": "\u003cb\u003eb.)\u003c/b\u003e \u0026nbsp; Share of portfolio by region (at fair market value)",
+ 								"en": "\u003cb\u003eb.)\u003c/b\u003e \u0026nbsp; Share of portfolio by region (at fair market value)"
  							},
  							"col_span": 4,
  							"col_span_label": 3,
@@ -8794,59 +8793,45 @@
  							"response": "100"
  						},
  						{
- 							"type": "label-as-input",
+ 							"name": "st2_222region_main",
+ 							"type": "number",
  							"max_chars": 5,
  							"step": 1,
  							"max": 1000000,
+ 							"disabled": true,
  							"placeholder": {
  								"de": "#",
  								"en": "#"
- 							},
- 							"label": {
- 								"de": "\u003cb\u003e\u0026nbsp;\u0026nbsp;\u0026nbsp;\u0026nbsp;100\u003c/b\u003e",
- 								"en": "\u003cb\u003e\u0026nbsp;\u0026nbsp;\u0026nbsp;\u0026nbsp;100\u003c/b\u003e"
- 							},
- 							"suffix": {
- 								"de": "%",
- 								"en": "%"
  							},
  							"col_span": 1,
  							"col_span_control": 1,
  							"response": "100"
  						},
  						{
- 							"type": "label-as-input",
+ 							"name": "st3_222region_main",
+ 							"type": "number",
  							"max_chars": 5,
  							"step": 1,
  							"max": 1000000,
+ 							"disabled": true,
  							"placeholder": {
  								"de": "#",
  								"en": "#"
- 							},
- 							"label": {
- 								"de": "\u003cb\u003e\u0026nbsp;\u0026nbsp;\u0026nbsp;\u0026nbsp;100\u003c/b\u003e",
- 								"en": "\u003cb\u003e\u0026nbsp;\u0026nbsp;\u0026nbsp;\u0026nbsp;100\u003c/b\u003e"
- 							},
- 							"suffix": {
- 								"de": "%",
- 								"en": "%"
  							},
  							"col_span": 1,
  							"col_span_control": 1,
  							"response": "100"
  						},
  						{
- 							"type": "label-as-input",
+ 							"name": "st4_222region_main",
+ 							"type": "number",
  							"max_chars": 5,
  							"step": 1,
  							"max": 1000000,
+ 							"disabled": true,
  							"placeholder": {
  								"de": "#",
  								"en": "#"
- 							},
- 							"label": {
- 								"de": "\u003cb\u003e\u0026nbsp;\u0026nbsp;\u0026nbsp;\u0026nbsp;100\u003c/b\u003e",
- 								"en": "\u003cb\u003e\u0026nbsp;\u0026nbsp;\u0026nbsp;\u0026nbsp;100\u003c/b\u003e"
  							},
  							"suffix": {
  								"de": "%",
@@ -9439,6 +9424,7 @@
  				"de": "Portfolio risk",
  				"en": "Portfolio risk"
  			},
+ 			"counter_progress": "2.3",
  			"style": {
  				"desktop": {
  					"grid_container_style": {},
@@ -9465,13 +9451,27 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Av\u0026shy;er\u0026shy;age Number of Financial Covenants per credit",
- 								"en": "Av\u0026shy;er\u0026shy;age Number of Financial Covenants per credit"
+ 								"de": "\u003cb\u003e\u0026nbsp;\u0026nbsp;a.)\u003c/b\u003e \u0026nbsp; Av\u0026shy;er\u0026shy;age Number of Financial Covenants per credit",
+ 								"en": "\u003cb\u003e\u0026nbsp;\u0026nbsp;a.)\u003c/b\u003e \u0026nbsp; Av\u0026shy;er\u0026shy;age Number of Financial Covenants per credit"
  							},
  							"col_span": 1,
  							"col_span_label": 1
  						}
- 					]
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
  				},
  				{
  					"bottom_vspacers": 1,
@@ -10511,8 +10511,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "What is the share of portfolio (at Fair Market Value) with a covenant holiday?",
- 								"en": "What is the share of portfolio (at Fair Market Value) with a covenant holiday?"
+ 								"de": "\u003cb\u003e\u0026nbsp;\u0026nbsp;b.)\u003c/b\u003e \u0026nbsp; What is the share of portfolio (at fair market value) with a covenant holiday?",
+ 								"en": "\u003cb\u003e\u0026nbsp;\u0026nbsp;b.)\u003c/b\u003e \u0026nbsp; What is the share of portfolio (at fair market value) with a covenant holiday?"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -10755,8 +10755,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "What is the share of portfolio (at Fair Market Value) with a covenant reset?",
- 								"en": "What is the share of portfolio (at Fair Market Value) with a covenant reset?"
+ 								"de": "\u003cb\u003e\u0026nbsp;\u0026nbsp;c.)\u003c/b\u003e \u0026nbsp; What is the share of portfolio (at fair market value) with a covenant reset?",
+ 								"en": "\u003cb\u003e\u0026nbsp;\u0026nbsp;c.)\u003c/b\u003e \u0026nbsp; What is the share of portfolio (at fair market value) with a covenant reset?"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -10999,8 +10999,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "What is the share of portfolio (at Fair Market Value) with a covenant breach?",
- 								"en": "What is the share of portfolio (at Fair Market Value) with a covenant breach?"
+ 								"de": "\u003cb\u003e\u0026nbsp;\u0026nbsp;d.)\u003c/b\u003e \u0026nbsp; What is the share of portfolio (at fair market value) with a covenant breach?",
+ 								"en": "\u003cb\u003e\u0026nbsp;\u0026nbsp;d.)\u003c/b\u003e \u0026nbsp; What is the share of portfolio (at fair market value) with a covenant breach?"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -11243,8 +11243,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Share of defaulted loans (measured at cost/principal amount of loan)",
- 								"en": "Share of defaulted loans (measured at cost/principal amount of loan)"
+ 								"de": "\u003cb\u003e\u0026nbsp;\u0026nbsp;e.)\u003c/b\u003e \u0026nbsp; Share of defaulted loans (measured at cost/principal amount of loan)",
+ 								"en": "\u003cb\u003e\u0026nbsp;\u0026nbsp;e.)\u003c/b\u003e \u0026nbsp; Share of defaulted loans (measured at cost/principal amount of loan)"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -11559,8 +11559,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "If you had a default in the past. What was the recovery rate (share of principal)?",
- 								"en": "If you had a default in the past. What was the recovery rate (share of principal)?"
+ 								"de": "\u003cb\u003e\u0026nbsp;\u0026nbsp;f.)\u003c/b\u003e \u0026nbsp; If you had a default in the past. What was the recovery rate (share of principal)?",
+ 								"en": "\u003cb\u003e\u0026nbsp;\u0026nbsp;f.)\u003c/b\u003e \u0026nbsp; If you had a default in the past. What was the recovery rate (share of principal)?"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -11803,8 +11803,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "What is the share of portfolio (at Fair Market Value) with explicit ESG targets in the credit documentation?",
- 								"en": "What is the share of portfolio (at Fair Market Value) with explicit ESG targets in the credit documentation?"
+ 								"de": "\u003cb\u003e\u0026nbsp;\u0026nbsp;g.)\u003c/b\u003e \u0026nbsp; What is the share of portfolio (at fair market value) with explicit ESG targets in the credit documentation?",
+ 								"en": "\u003cb\u003e\u0026nbsp;\u0026nbsp;g.)\u003c/b\u003e \u0026nbsp; What is the share of portfolio (at fair market value) with explicit ESG targets in the credit documentation?"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -12047,8 +12047,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "What is the share of portfolio (at Fair Market Value) with ESG ratchets?",
- 								"en": "What is the share of portfolio (at Fair Market Value) with ESG ratchets?"
+ 								"de": "\u003cb\u003e\u0026nbsp;\u0026nbsp;h.)\u003c/b\u003e \u0026nbsp; What is the share of portfolio (at fair market value) with ESG ratchets?",
+ 								"en": "\u003cb\u003e\u0026nbsp;\u0026nbsp;h.)\u003c/b\u003e \u0026nbsp; What is the share of portfolio (at fair market value) with ESG ratchets?"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -12291,8 +12291,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "What is the share of portfolio (at Fair Market Value) where the creditor explicitly states a strategy to add to the 1.5°C target?",
- 								"en": "What is the share of portfolio (at Fair Market Value) where the creditor explicitly states a strategy to add to the 1.5°C target?"
+ 								"de": "\u003cb\u003e\u0026nbsp;\u0026nbsp;i.)\u003c/b\u003e \u0026nbsp; What is the share of portfolio (at fair market value) where the creditor explicitly states a strategy to add to the 1.5°C target?",
+ 								"en": "\u003cb\u003e\u0026nbsp;\u0026nbsp;i.)\u003c/b\u003e \u0026nbsp; What is the share of portfolio (at fair market value) where the creditor explicitly states a strategy to add to the 1.5°C target?"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -12544,6 +12544,7 @@
  				"de": "Indizes",
  				"en": "Indizes"
  			},
+ 			"counter_progress": "3",
  			"style": {
  				"desktop": {
  					"grid_container_style": {},
@@ -12571,8 +12572,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eFinancing Situation/Pricing\u003c/b\u003e",
- 								"en": "\u003cb\u003eFinancing Situation/Pricing\u003c/b\u003e"
+ 								"de": "\u003cb\u003e3.1\u003c/b\u003e \u0026nbsp; Financing situation/pricing",
+ 								"en": "\u003cb\u003e3.1\u003c/b\u003e \u0026nbsp; Financing situation/pricing"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -12585,13 +12586,29 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Last 3\u0026nbsp;months",
- 								"en": "Last 3\u0026nbsp;months"
+ 								"de": "\u003cb\u003ea.)\u003c/b\u003e \u0026nbsp; \u003ci\u003eLast\u003c/i\u003e 3\u0026nbsp;months",
+ 								"en": "\u003cb\u003ea.)\u003c/b\u003e \u0026nbsp; \u003ci\u003eLast\u003c/i\u003e 3\u0026nbsp;months"
  							},
  							"col_span": 1,
  							"col_span_label": 1
  						}
- 					]
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"margin": "0 0 0 2rem"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
  				},
  				{
  					"bottom_vspacers": 1,
@@ -13851,13 +13868,29 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Next 3\u0026nbsp;months",
- 								"en": "Next 3\u0026nbsp;months"
+ 								"de": "\u003cb\u003eb.)\u003c/b\u003e \u0026nbsp; \u003ci\u003eNext\u003c/i\u003e 3\u0026nbsp;months",
+ 								"en": "\u003cb\u003eb.)\u003c/b\u003e \u0026nbsp; \u003ci\u003eNext\u003c/i\u003e 3\u0026nbsp;months"
  							},
  							"col_span": 1,
  							"col_span_label": 1
  						}
- 					]
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"margin": "0 0 0 2rem"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
  				},
  				{
  					"bottom_vspacers": 1,
@@ -15118,8 +15151,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eAssess the change in deal quality with respect to the risk return profile\u003c/b\u003e",
- 								"en": "\u003cb\u003eAssess the change in deal quality with respect to the risk return profile\u003c/b\u003e"
+ 								"de": "\u003cb\u003e3.2\u003c/b\u003e \u0026nbsp; Assess the change in deal quality with respect to the risk return profile",
+ 								"en": "\u003cb\u003e3.2\u003c/b\u003e \u0026nbsp; Assess the change in deal quality with respect to the risk return profile"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -15132,13 +15165,29 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Last 3\u0026nbsp;months",
- 								"en": "Last 3\u0026nbsp;months"
+ 								"de": "\u003cb\u003ea.)\u003c/b\u003e \u0026nbsp; \u003ci\u003eLast\u003c/i\u003e 3\u0026nbsp;months",
+ 								"en": "\u003cb\u003ea.)\u003c/b\u003e \u0026nbsp; \u003ci\u003eLast\u003c/i\u003e 3\u0026nbsp;months"
  							},
  							"col_span": 1,
  							"col_span_label": 1
  						}
- 					]
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"margin": "0 0 0 2rem"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
  				},
  				{
  					"bottom_vspacers": 1,
@@ -16398,13 +16447,29 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Next 3\u0026nbsp;months",
- 								"en": "Next 3\u0026nbsp;months"
+ 								"de": "\u003cb\u003eb.)\u003c/b\u003e \u0026nbsp; \u003ci\u003eNext\u003c/i\u003e 3\u0026nbsp;months",
+ 								"en": "\u003cb\u003eb.)\u003c/b\u003e \u0026nbsp; \u003ci\u003eNext\u003c/i\u003e 3\u0026nbsp;months"
  							},
  							"col_span": 1,
  							"col_span_label": 1
  						}
- 					]
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"margin": "0 0 0 2rem"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
  				},
  				{
  					"bottom_vspacers": 1,
@@ -17665,8 +17730,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eAssess the quality of deal documentation (covenant strength, enforcement rights, etc.)\u003c/b\u003e",
- 								"en": "\u003cb\u003eAssess the quality of deal documentation (covenant strength, enforcement rights, etc.)\u003c/b\u003e"
+ 								"de": "\u003cb\u003e3.3\u003c/b\u003e \u0026nbsp; Assess the quality of deal documentation (covenant strength, enforcement rights, etc.)",
+ 								"en": "\u003cb\u003e3.3\u003c/b\u003e \u0026nbsp; Assess the quality of deal documentation (covenant strength, enforcement rights, etc.)"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -17679,13 +17744,29 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Last 3\u0026nbsp;months",
- 								"en": "Last 3\u0026nbsp;months"
+ 								"de": "\u003cb\u003ea.)\u003c/b\u003e \u0026nbsp; \u003ci\u003eLast\u003c/i\u003e 3\u0026nbsp;months",
+ 								"en": "\u003cb\u003ea.)\u003c/b\u003e \u0026nbsp; \u003ci\u003eLast\u003c/i\u003e 3\u0026nbsp;months"
  							},
  							"col_span": 1,
  							"col_span_label": 1
  						}
- 					]
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"margin": "0 0 0 2rem"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
  				},
  				{
  					"bottom_vspacers": 1,
@@ -18945,13 +19026,29 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Next 3\u0026nbsp;months",
- 								"en": "Next 3\u0026nbsp;months"
+ 								"de": "\u003cb\u003eb.)\u003c/b\u003e \u0026nbsp; \u003ci\u003eNext\u003c/i\u003e 3\u0026nbsp;months",
+ 								"en": "\u003cb\u003eb.)\u003c/b\u003e \u0026nbsp; \u003ci\u003eNext\u003c/i\u003e 3\u0026nbsp;months"
  							},
  							"col_span": 1,
  							"col_span_label": 1
  						}
- 					]
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"margin": "0 0 0 2rem"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
  				},
  				{
  					"bottom_vspacers": 1,
@@ -20212,8 +20309,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eDo you observe more deals, same amount of deals or less deals\u003c/b\u003e",
- 								"en": "\u003cb\u003eDo you observe more deals, same amount of deals or less deals\u003c/b\u003e"
+ 								"de": "\u003cb\u003e3.4\u003c/b\u003e \u0026nbsp; Do you observe more deals, same amount of deals or less deals",
+ 								"en": "\u003cb\u003e3.4\u003c/b\u003e \u0026nbsp; Do you observe more deals, same amount of deals or less deals"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -20226,13 +20323,29 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Last 3\u0026nbsp;months",
- 								"en": "Last 3\u0026nbsp;months"
+ 								"de": "\u003cb\u003ea.)\u003c/b\u003e \u0026nbsp; \u003ci\u003eLast\u003c/i\u003e 3\u0026nbsp;months",
+ 								"en": "\u003cb\u003ea.)\u003c/b\u003e \u0026nbsp; \u003ci\u003eLast\u003c/i\u003e 3\u0026nbsp;months"
  							},
  							"col_span": 1,
  							"col_span_label": 1
  						}
- 					]
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"margin": "0 0 0 2rem"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
  				},
  				{
  					"bottom_vspacers": 1,
@@ -21492,13 +21605,29 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Next 3\u0026nbsp;months",
- 								"en": "Next 3\u0026nbsp;months"
+ 								"de": "\u003cb\u003eb.)\u003c/b\u003e \u0026nbsp; \u003ci\u003eNext\u003c/i\u003e 3\u0026nbsp;months",
+ 								"en": "\u003cb\u003eb.)\u003c/b\u003e \u0026nbsp; \u003ci\u003eNext\u003c/i\u003e 3\u0026nbsp;months"
  							},
  							"col_span": 1,
  							"col_span_label": 1
  						}
- 					]
+ 					],
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {},
+ 							"box_style": {
+ 								"margin": "0 0 0 2rem"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
  				},
  				{
  					"bottom_vspacers": 1,
@@ -22756,8 +22885,8 @@
  		},
  		{
  			"label": {
- 				"de": "4. Qualitative Questions",
- 				"en": "4. Qualitative Questions"
+ 				"de": "4. Qualitative questions",
+ 				"en": "4. Qualitative questions"
  			},
  			"description": {
  				"de": "",
@@ -22767,6 +22896,7 @@
  				"de": "Quality",
  				"en": "Quality"
  			},
+ 			"counter_progress": "4",
  			"style": {
  				"desktop": {
  					"grid_container_style": {},
@@ -22794,8 +22924,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "What do you think are the main risks for your in\u0026shy;vest\u0026shy;ment strategy over the next 3 months? Please choose three.",
- 								"en": "What do you think are the main risks for your in\u0026shy;vest\u0026shy;ment strategy over the next 3 months? Please choose three."
+ 								"de": "\u003cb\u003e4.1\u003c/b\u003e \u0026nbsp; What do you think are the main risks for your in\u0026shy;vest\u0026shy;ment strategy over the next 3 months? Please choose three.",
+ 								"en": "\u003cb\u003e4.1\u003c/b\u003e \u0026nbsp; What do you think are the main risks for your in\u0026shy;vest\u0026shy;ment strategy over the next 3 months? Please choose three."
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -22907,8 +23037,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Busi\u0026shy;ness Cycle",
- 								"en": "Busi\u0026shy;ness Cycle"
+ 								"de": "Busi\u0026shy;ness cycle",
+ 								"en": "Busi\u0026shy;ness cycle"
  							},
  							"col_span": 3,
  							"col_span_label": 1
@@ -22937,8 +23067,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Interest Rates",
- 								"en": "Interest Rates"
+ 								"de": "Interest rates",
+ 								"en": "Interest rates"
  							},
  							"col_span": 3,
  							"col_span_label": 1
@@ -22967,8 +23097,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "In\u0026shy;fla\u0026shy;ti\u0026shy;on/Deflation",
- 								"en": "In\u0026shy;fla\u0026shy;ti\u0026shy;on/Deflation"
+ 								"de": "In\u0026shy;fla\u0026shy;ti\u0026shy;on/deflation",
+ 								"en": "In\u0026shy;fla\u0026shy;ti\u0026shy;on/deflation"
  							},
  							"col_span": 3,
  							"col_span_label": 1
@@ -23027,8 +23157,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Supply Chains",
- 								"en": "Supply Chains"
+ 								"de": "Supply chains",
+ 								"en": "Supply chains"
  							},
  							"col_span": 3,
  							"col_span_label": 1
@@ -23057,8 +23187,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Health Issues",
- 								"en": "Health Issues"
+ 								"de": "Health issues",
+ 								"en": "Health issues"
  							},
  							"col_span": 3,
  							"col_span_label": 1
@@ -23087,8 +23217,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Regulatory Environ\u0026shy;ment",
- 								"en": "Regulatory Environ\u0026shy;ment"
+ 								"de": "Regulatory environ\u0026shy;ment",
+ 								"en": "Regulatory environ\u0026shy;ment"
  							},
  							"col_span": 3,
  							"col_span_label": 1
@@ -23189,8 +23319,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "What GICS sectors provides the most attractive \n\t\t\t\t\tin\u0026shy;vest\u0026shy;ment opportunities in the next three months? \n\t\t\t\t\tPlease rank the top three.",
- 								"en": "What GICS sectors provides the most attractive \n\t\t\t\t\tin\u0026shy;vest\u0026shy;ment opportunities in the next three months? \n\t\t\t\t\tPlease rank the top three."
+ 								"de": "\u003cb\u003e4.2\u003c/b\u003e \u0026nbsp; What GICS sectors provides the most attractive \n\t\t\t\t\tin\u0026shy;vest\u0026shy;ment opportunities in the next three months? \n\t\t\t\t\tPlease rank the top three.",
+ 								"en": "\u003cb\u003e4.2\u003c/b\u003e \u0026nbsp; What GICS sectors provides the most attractive \n\t\t\t\t\tin\u0026shy;vest\u0026shy;ment opportunities in the next three months? \n\t\t\t\t\tPlease rank the top three."
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -23655,8 +23785,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "How important are ESG considerations \n\t\t\t\t\tto core principal in your in\u0026shy;vest\u0026shy;ment process?\n\t\t\t",
- 								"en": "How important are ESG considerations \n\t\t\t\t\tto core principal in your in\u0026shy;vest\u0026shy;ment process?\n\t\t\t"
+ 								"de": "\u003cb\u003e4.3\u003c/b\u003e \u0026nbsp; How important are ESG considerations \n\t\t\t\t\tto core principal in your in\u0026shy;vest\u0026shy;ment process?\n\t\t\t",
+ 								"en": "\u003cb\u003e4.3\u003c/b\u003e \u0026nbsp; How important are ESG considerations \n\t\t\t\t\tto core principal in your in\u0026shy;vest\u0026shy;ment process?\n\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -23936,8 +24066,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "What is the biggest challenge related to the implementation of ESG into your in\u0026shy;vest\u0026shy;ment strategy?",
- 								"en": "What is the biggest challenge related to the implementation of ESG into your in\u0026shy;vest\u0026shy;ment strategy?"
+ 								"de": "\u003cb\u003e4.4\u003c/b\u003e \u0026nbsp; What is the biggest challenge related to the implementation of ESG into your in\u0026shy;vest\u0026shy;ment strategy?",
+ 								"en": "\u003cb\u003e4.4\u003c/b\u003e \u0026nbsp; What is the biggest challenge related to the implementation of ESG into your in\u0026shy;vest\u0026shy;ment strategy?"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -24301,8 +24431,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "What UN SDGs are supported by your in\u0026shy;vest\u0026shy;ment strategy?",
- 								"en": "What UN SDGs are supported by your in\u0026shy;vest\u0026shy;ment strategy?"
+ 								"de": "\u003cb\u003e4.5\u003c/b\u003e \u0026nbsp; What UN SDGs are supported by your in\u0026shy;vest\u0026shy;ment strategy?",
+ 								"en": "\u003cb\u003e4.5\u003c/b\u003e \u0026nbsp; What UN SDGs are supported by your in\u0026shy;vest\u0026shy;ment strategy?"
  							},
  							"col_span": 2,
  							"col_span_label": 1
@@ -24317,8 +24447,8 @@
  							"name": "poverty",
  							"type": "checkbox",
  							"label": {
- 								"de": "(1) No Poverty",
- 								"en": "(1) No Poverty"
+ 								"de": "No poverty",
+ 								"en": "No poverty"
  							},
  							"col_span": 2,
  							"col_span_label": 1,
@@ -24345,8 +24475,8 @@
  							"name": "hunger",
  							"type": "checkbox",
  							"label": {
- 								"de": "(2) Zero Hunger",
- 								"en": "(2) Zero Hunger"
+ 								"de": "Zero hunger",
+ 								"en": "Zero hunger"
  							},
  							"col_span": 2,
  							"col_span_label": 1,
@@ -24373,8 +24503,8 @@
  							"name": "health",
  							"type": "checkbox",
  							"label": {
- 								"de": "(3) Good Health and Well-Being",
- 								"en": "(3) Good Health and Well-Being"
+ 								"de": "Good health and well-being",
+ 								"en": "Good health and well-being"
  							},
  							"col_span": 2,
  							"col_span_label": 1,
@@ -24401,8 +24531,8 @@
  							"name": "education",
  							"type": "checkbox",
  							"label": {
- 								"de": "(4) Quality Education",
- 								"en": "(4) Quality Education"
+ 								"de": "Quality education",
+ 								"en": "Quality education"
  							},
  							"col_span": 2,
  							"col_span_label": 1,
@@ -24429,8 +24559,8 @@
  							"name": "gender_eq",
  							"type": "checkbox",
  							"label": {
- 								"de": "(5) Gender Equality",
- 								"en": "(5) Gender Equality"
+ 								"de": "Gender equality",
+ 								"en": "Gender equality"
  							},
  							"col_span": 2,
  							"col_span_label": 1,
@@ -24457,8 +24587,8 @@
  							"name": "water",
  							"type": "checkbox",
  							"label": {
- 								"de": "(6) Clean Water and Sanitation",
- 								"en": "(6) Clean Water and Sanitation"
+ 								"de": "Clean water and sanitation",
+ 								"en": "Clean water and sanitation"
  							},
  							"col_span": 2,
  							"col_span_label": 1,
@@ -24485,8 +24615,8 @@
  							"name": "energy",
  							"type": "checkbox",
  							"label": {
- 								"de": "(7) Affordable and Clean Energy",
- 								"en": "(7) Affordable and Clean Energy"
+ 								"de": "Affordable and clean energy",
+ 								"en": "Affordable and clean energy"
  							},
  							"col_span": 2,
  							"col_span_label": 1,
@@ -24513,8 +24643,8 @@
  							"name": "work",
  							"type": "checkbox",
  							"label": {
- 								"de": "(8) Decent Work and Eco\u0026shy;nom\u0026shy;ic Growth",
- 								"en": "(8) Decent Work and Eco\u0026shy;nom\u0026shy;ic Growth"
+ 								"de": "Decent work and eco\u0026shy;nom\u0026shy;ic growth",
+ 								"en": "Decent work and eco\u0026shy;nom\u0026shy;ic growth"
  							},
  							"col_span": 2,
  							"col_span_label": 1,
@@ -24541,8 +24671,8 @@
  							"name": "industry",
  							"type": "checkbox",
  							"label": {
- 								"de": "(9) Industry Innovation and Infrastructure",
- 								"en": "(9) Industry Innovation and Infrastructure"
+ 								"de": "Industry innovation and infrastructure",
+ 								"en": "Industry innovation and infrastructure"
  							},
  							"col_span": 2,
  							"col_span_label": 1,
@@ -24569,8 +24699,8 @@
  							"name": "inequality",
  							"type": "checkbox",
  							"label": {
- 								"de": "(10) Re\u0026shy;duce Inequality",
- 								"en": "(10) Re\u0026shy;duce Inequality"
+ 								"de": "Re\u0026shy;duce inequality",
+ 								"en": "Re\u0026shy;duce inequality"
  							},
  							"col_span": 2,
  							"col_span_label": 1,
@@ -24597,8 +24727,8 @@
  							"name": "communities",
  							"type": "checkbox",
  							"label": {
- 								"de": "(11) Sustainable Cities and Communities",
- 								"en": "(11) Sustainable Cities and Communities"
+ 								"de": "Sustainable cities and communities",
+ 								"en": "Sustainable cities and communities"
  							},
  							"col_span": 2,
  							"col_span_label": 1,
@@ -24625,8 +24755,8 @@
  							"name": "responsible",
  							"type": "checkbox",
  							"label": {
- 								"de": "(12) Responsible Consumption and Production",
- 								"en": "(12) Responsible Consumption and Production"
+ 								"de": "Responsible consumption and production",
+ 								"en": "Responsible consumption and production"
  							},
  							"col_span": 2,
  							"col_span_label": 1,
@@ -24653,8 +24783,8 @@
  							"name": "climate",
  							"type": "checkbox",
  							"label": {
- 								"de": "(13) Climate Action",
- 								"en": "(13) Climate Action"
+ 								"de": "Climate action",
+ 								"en": "Climate action"
  							},
  							"col_span": 2,
  							"col_span_label": 1,
@@ -24681,8 +24811,8 @@
  							"name": "life_water",
  							"type": "checkbox",
  							"label": {
- 								"de": "(14) Life be\u0026shy;low Water",
- 								"en": "(14) Life be\u0026shy;low Water"
+ 								"de": "Life be\u0026shy;low water",
+ 								"en": "Life be\u0026shy;low water"
  							},
  							"col_span": 2,
  							"col_span_label": 1,
@@ -24709,8 +24839,8 @@
  							"name": "life_land",
  							"type": "checkbox",
  							"label": {
- 								"de": "(15) Life on Land",
- 								"en": "(15) Life on Land"
+ 								"de": "Life on land",
+ 								"en": "Life on land"
  							},
  							"col_span": 2,
  							"col_span_label": 1,
@@ -24737,8 +24867,8 @@
  							"name": "peace",
  							"type": "checkbox",
  							"label": {
- 								"de": "(16) Peace, Justice and strong Institutions",
- 								"en": "(16) Peace, Justice and strong Institutions"
+ 								"de": "Peace, justice and strong institutions",
+ 								"en": "Peace, justice and strong institutions"
  							},
  							"col_span": 2,
  							"col_span_label": 1,
@@ -24765,8 +24895,8 @@
  							"name": "partnership",
  							"type": "checkbox",
  							"label": {
- 								"de": "(17) Partnership for the Goals",
- 								"en": "(17) Partnership for the Goals"
+ 								"de": "Partnership for the goals",
+ 								"en": "Partnership for the goals"
  							},
  							"col_span": 2,
  							"col_span_label": 1,
@@ -24795,15 +24925,16 @@
  		},
  		{
  			"label": {
- 				"de": "Slider"
+ 				"en": "Slider"
  			},
  			"description": {
  				"de": "",
  				"en": ""
  			},
  			"short": {
- 				"de": "Slider"
+ 				"en": "Slider"
  			},
+ 			"counter_progress": "-",
  			"style": {
  				"desktop": {
  					"grid_container_style": {},

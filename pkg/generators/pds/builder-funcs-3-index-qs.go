@@ -21,12 +21,18 @@ func chapter3(
 	idxLastCol := len(trancheTypeNamesAC1) - 1
 	_ = idxLastCol
 
+	grSt := css.NewStylesResponsive(nil)
+	if cf.GroupLeftIndent != "" {
+		grSt.Desktop.StyleBox.Margin = "0 0 0 " + cf.GroupLeftIndent
+	}
+
 	// row0 - major label
 	if !lbl.Empty() {
 		gr := page.AddGroup()
 		gr.Cols = 1
 		gr.BottomVSpacers = 1
 		gr.BottomVSpacers = 0
+		gr.Style = grSt
 		{
 			inp := gr.AddInput()
 			inp.Type = "textblock"

@@ -16,6 +16,7 @@ type configMC struct {
 	LabelBottom        bool
 	DontKnow           bool
 	GroupBottomSpacers int
+	GroupLeftIndent    string
 
 	XDisplacements []string
 }
@@ -60,6 +61,8 @@ var (
 		InpColspan:  2,
 		LabelBottom: false,
 		DontKnow:    false,
+
+		GroupLeftIndent: "1.2rem",
 
 		XDisplacements: []string{
 			"1.6rem",

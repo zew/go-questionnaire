@@ -23,7 +23,11 @@ type configRT struct {
 var (
 	// simple config
 	rTSingleRowPercent = configRT{
-		Chars:       4,
+		Chars: 4,
+		LblRow1: trl.S{
+			"de": "By segment",
+			"en": "By segment",
+		}.Outline("a)"),
 		Min:         0,
 		Max:         100,
 		Step:        0.1,
@@ -31,7 +35,11 @@ var (
 		Placeholder: placeHolderNum,
 	}
 	rTSingleRowMill = configRT{
-		Chars:       10,
+		Chars: 10,
+		LblRow1: trl.S{
+			"en": "By region",
+			"de": "By region",
+		}.Outline("b)"),
 		Min:         0,
 		Max:         40000,
 		Step:        1,
@@ -46,7 +54,7 @@ var (
 		LblRow1: trl.S{
 			"en": "Total number of new deals",
 			"de": "Gesamtzahl neue Abschlüsse",
-		},
+		}.Outline("1.1"),
 		LblRow2: trl.S{
 			"en": `Please state the number of deals closed in Q4 2022 by market segment: `,
 			"de": `Please state the number of deals closed in Q4 2022 by market segment: `,
@@ -57,8 +65,8 @@ var (
 		},
 		SubNames: []string{"low", "midupper", "other"},
 		SubLbls: map[string]string{
-			"low":      "Lower Mid-Market (0-15m € EBITDA)",
-			"midupper": "Core- and Upper Mid-Market (>15m € EBITDA)",
+			"low":      "Lower mid-market (0-15m € EBITDA)",
+			"midupper": "Core- and Upper mid-market (>15m € EBITDA)",
 			"other":    "Other",
 		},
 		Placeholder: placeHolderNum,
@@ -69,7 +77,7 @@ var (
 		LblRow1: trl.S{
 			"en": "Total volume of new deals by segment",
 			"de": "Gesamtvolumen neuer Abschlüsse nach Marktsegment",
-		},
+		}.Outline("1.3"),
 		LblRow2: trl.S{
 			"en": `Please state the volume (in million Euro) of deals closed in Q4 2022 by market segment: `,
 			"de": `Bitte nennen Sie das Volumen (in Millionen Euro) von Abschlüssen in Q4 2022 nach Marktsegment: `,
@@ -77,9 +85,9 @@ var (
 		Suffix:   suffixMillionEuro,
 		SubNames: []string{"low", "mid", "upper"},
 		SubLbls: map[string]string{
-			"low":   "Lower Mid-Market (0-15m € EBITDA)",
-			"mid":   "Core Mid-Market  (15-50m € EBITDA)",
-			"upper": "Upper Mid-Market (>50m € EBITDA)",
+			"low":   "Lower mid-market (0-15m € EBITDA)",
+			"mid":   "Core mid-market  (15-50m € EBITDA)",
+			"upper": "Upper mid-market (>50m € EBITDA)",
 		},
 		Placeholder: placeHolderMillion,
 	}
@@ -89,7 +97,7 @@ var (
 		LblRow1: trl.S{
 			"en": "Total volume of new deals by region",
 			"de": "Gesamtvolumen neuer Abschlüsse nach Region",
-		},
+		}.Outline("1.4"),
 		LblRow2: trl.S{
 			"en": `Please state the volume (in million Euro) of deals closed in Q4 2022 by region: `,
 			"de": `Bitte nennen Sie das Volumen (in Millionen Euro) von Abschlüssen in Q4 2022 nach Region: `,
@@ -113,10 +121,10 @@ var (
 		LblRow1: trl.S{
 			"en": "Total volume of new deals by sector",
 			"de": "Gesamtvolumen neuer Abschlüsse nach Sektor",
-		},
+		}.Outline("1.5"),
 		LblRow2: trl.S{
-			"en": `Please state the volume (in million Euro) of deals closed in Q4 2022 by region: `,
-			"de": `Bitte nennen Sie das Volumen (in Millionen Euro) von Abschlüssen in Q4 2022 nach Region: `,
+			"en": `Please state the volume (in million Euro) of deals closed in Q4 2022 by sector: `,
+			"de": `Bitte nennen Sie das Volumen (in Millionen Euro) von Abschlüssen in Q4 2022 nach Sektor: `,
 		},
 		Suffix: suffixMillionEuro,
 		SubNames: []string{
@@ -137,14 +145,14 @@ var (
 			"energy":           "Energy",
 			"materials":        "Materials",
 			"industrials":      "Industrials",
-			"consumer_disc":    "Consumer Discretionary",
-			"consumer_stap":    "Consumer Staples",
-			"healthcare":       "Health Care",
+			"consumer_disc":    "Consumer discretionary",
+			"consumer_stap":    "Consumer staples",
+			"healthcare":       "Health care",
 			"financials":       "Financials",
-			"information_tech": "Information Technology",
-			"comunication_svc": "Comunication Services",
+			"information_tech": "Information technology",
+			"comunication_svc": "Comunication services",
 			"utilities":        "Utilities",
-			"real_estate":      "Real Estate",
+			"real_estate":      "Real estate",
 			"other":            "Other",
 		},
 		Placeholder: placeHolderMillion,
@@ -155,9 +163,9 @@ var (
 		InputNameP2: "221market_segment",
 		Chars:       5,
 		LblRow1: trl.S{
-			"en": "Share of portfolio (at Fair Market Value)",
-			"de": "Share of portfolio (at Fair Market Value)",
-		},
+			"en": "Share of portfolio by segment (at fair market value)",
+			"de": "Share of portfolio by segment (at fair market value)",
+		}.Outline("a.)"),
 		FirstRow100Pct: true,
 		LblRow2: trl.S{
 			"en": `Please enter percentages for each segment`,
@@ -177,9 +185,9 @@ var (
 		InputNameP2: "222region",
 		Chars:       5,
 		LblRow1: trl.S{
-			"en": "Share of portfolio (at Fair Market Value)",
-			"de": "Share of portfolio (at Fair Market Value)",
-		},
+			"en": "Share of portfolio by region (at fair market value)",
+			"de": "Share of portfolio by region (at fair market value)",
+		}.Outline("b.)"),
 		FirstRow100Pct: true,
 		LblRow2: trl.S{
 			"en": `Please enter percentages for each region`,

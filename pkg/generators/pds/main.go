@@ -76,6 +76,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"en": "Asset classes,<br>tranches",
 			"de": "Asset classes,<br>tranches",
 		}
+		page.CounterProgress = "-"
 
 		page.WidthMax("42rem")
 
@@ -180,6 +181,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"en": "Portfolio changes",
 			"de": "Portfolio changes",
 		}
+		page.CounterProgress = "1"
 
 		page.WidthMax("42rem")
 		page.WidthMax("64rem")
@@ -189,7 +191,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		lblDuration := trl.S{
 			"en": "Average time to close a deal in weeks",
 			"de": "Durchschnittl. Zeit bis Abschluss in Wochen",
-		}
+		}.Outline("1.2")
 		slidersPctRowLabelsLeft(
 			qst.WrapPageT(page),
 			"closing_time",
@@ -204,7 +206,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			trl.S{
 				"en": "Alternative visualisation using radios",
 				"de": "Alternative visualisation using radios",
-			},
+			}.Outline("1.2"),
 			mCh5,
 		)
 
@@ -215,9 +217,11 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		restrictedTextMultiCols(qst.WrapPageT(page), rT4)
 
 		shareESG := trl.S{
-			"en": `<b>Share ESG KPIs</b> <br>What is the share of new deals (at Fair Market Value) with explicit ESG targets in the credit documentation?`,
-			"de": `<b>Share ESG KPIs</b> <br>What is the share of new deals (at Fair Market Value) with explicit ESG targets in the credit documentation?`,
-		}
+			"en": `<bb>Share ESG KPIs</bb> <br>
+					<span class=font-size-90 >What is the share of new deals (at fair market value) with explicit ESG targets in the credit documentation? </span>`,
+			"de": `<bb>Share ESG KPIs</bb> <br>
+					<span class=font-size-90 >What is the share of new deals (at fair market value) with explicit ESG targets in the credit documentation? </span>`,
+		}.Outline("1.6")
 		slidersPctRowLabelsLeft(
 			qst.WrapPageT(page),
 			"esg",
@@ -227,9 +231,11 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		)
 
 		shareESGRatch := trl.S{
-			"en": `<b>Share ESG ratchets</b> <br> What is the share of new deals (at Fair Market Value) with ESG ratchets?`,
-			"de": `<b>Share ESG ratchets</b> <br> What is the share of new deals (at Fair Market Value) with ESG ratchets?`,
-		}
+			"en": `<bb>Share ESG ratchets</bb> <br> 
+					<span class=font-size-90 >What is the share of new deals (at fair market value) with ESG ratchets? </span>`,
+			"de": `<bb>Share ESG ratchets</bb> <br> 
+					<span class=font-size-90 >What is the share of new deals (at fair market value) with ESG ratchets? </span>`,
+		}.Outline("1.7")
 		slidersPctRowLabelsLeft(
 			qst.WrapPageT(page),
 			"esgratch",
@@ -239,9 +245,11 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		)
 
 		share15Degree := trl.S{
-			"en": `<b>Share 1.5°C target</b> <br> What is the share of new deals (at Fair Market Value) where the creditor explicitly states a strategy to add to the 1.5°C target?`,
-			"de": `<b>Share 1.5°C target</b> <br> What is the share of new deals (at Fair Market Value) where the creditor explicitly states a strategy to add to the 1.5°C target?`,
-		}
+			"en": `<bb>Share 1.5°C target</bb> <br> 
+					<span class=font-size-90 >What is the share of new deals (at fair market value) where the creditor explicitly states a strategy to add to the 1.5°C target? </span>`,
+			"de": `<bb>Share 1.5°C target</bb> <br> 
+					<span class=font-size-90 >What is the share of new deals (at fair market value) where the creditor explicitly states a strategy to add to the 1.5°C target? </span>`,
+		}.Outline("1.8")
 		slidersPctRowLabelsLeft(
 			qst.WrapPageT(page),
 			"esg15degrees",
@@ -264,6 +272,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"en": "Portfolio base",
 			"de": "Portfolio base",
 		}
+		page.CounterProgress = "2"
 
 		page.WidthMax("64rem")
 
@@ -275,9 +284,9 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp := gr.AddInput()
 				inp.Type = "textblock"
 				inp.Label = trl.S{
-					"en": "<b>2.1</b> &nbsp; Assets under Management",
-					"de": "<b>2.1</b> &nbsp; Assets under Management",
-				}
+					"en": "Assets under Management",
+					"de": "Assets under Management",
+				}.Outline("2.1")
 				inp.ColSpan = 1
 				inp.ColSpanLabel = 1
 			}
@@ -297,8 +306,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		}
 		page21Lbls := []trl.S{
 			{
-				"en": "Fair Market Value of current portfolio in mn €",
-				"de": "Fair Market Value of current portfolio in mn €",
+				"en": "Fair market value of current portfolio in mn €",
+				"de": "Fair market value of current portfolio in mn €",
 			},
 			{
 				"en": "Capital called from investor in mn €",
@@ -312,6 +321,11 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"en": "Dry powder in mn €",
 				"de": "Dry powder in mn €",
 			},
+		}
+
+		for i := 0; i < len(page21Lbls); i++ {
+			rn := rune(97 + i)
+			page21Lbls[i] = page21Lbls[i].Outline(fmt.Sprintf("&nbsp;&nbsp;%c.)", rn))
 		}
 
 		for idx1, inpName := range page21Inputs {
@@ -353,9 +367,9 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp := gr.AddInput()
 				inp.Type = "textblock"
 				inp.Label = trl.S{
-					"en": "<b>2.2</b> &nbsp; Portfolio Composition",
-					"de": "<b>2.2</b> &nbsp; Portfolio Composition",
-				}
+					"en": "Portfolio Composition",
+					"de": "Portfolio Composition",
+				}.Outline("2.2")
 				inp.ColSpan = 1
 				inp.ColSpanLabel = 1
 			}
@@ -378,6 +392,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"en": "Portfolio risk",
 			"de": "Portfolio risk",
 		}
+		page.CounterProgress = "2.3"
 
 		page.WidthMax("64rem")
 
@@ -411,16 +426,16 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"de": "Average Number of Financial Covenants per credit",
 			},
 			{
-				"en": "What is the share of portfolio (at Fair Market Value) with a covenant holiday?",
-				"de": "What is the share of portfolio (at Fair Market Value) with a covenant holiday?",
+				"en": "What is the share of portfolio (at fair market value) with a covenant holiday?",
+				"de": "What is the share of portfolio (at fair market value) with a covenant holiday?",
 			},
 			{
-				"en": "What is the share of portfolio (at Fair Market Value) with a covenant reset?",
-				"de": "What is the share of portfolio (at Fair Market Value) with a covenant reset?",
+				"en": "What is the share of portfolio (at fair market value) with a covenant reset?",
+				"de": "What is the share of portfolio (at fair market value) with a covenant reset?",
 			},
 			{
-				"en": "What is the share of portfolio (at Fair Market Value) with a covenant breach?",
-				"de": "What is the share of portfolio (at Fair Market Value) with a covenant breach?",
+				"en": "What is the share of portfolio (at fair market value) with a covenant breach?",
+				"de": "What is the share of portfolio (at fair market value) with a covenant breach?",
 			},
 			{
 				"en": "Share of defaulted loans (measured at cost/principal amount of loan)",
@@ -432,17 +447,23 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			},
 			// esg
 			{
-				"en": "What is the share of portfolio (at Fair Market Value) with explicit ESG targets in the credit documentation?",
-				"de": "What is the share of portfolio (at Fair Market Value) with explicit ESG targets in the credit documentation?",
+				"en": "What is the share of portfolio (at fair market value) with explicit ESG targets in the credit documentation?",
+				"de": "What is the share of portfolio (at fair market value) with explicit ESG targets in the credit documentation?",
 			},
 			{
-				"en": "What is the share of portfolio (at Fair Market Value) with ESG ratchets?",
-				"de": "What is the share of portfolio (at Fair Market Value) with ESG ratchets?",
+				"en": "What is the share of portfolio (at fair market value) with ESG ratchets?",
+				"de": "What is the share of portfolio (at fair market value) with ESG ratchets?",
 			},
 			{
-				"en": "What is the share of portfolio (at Fair Market Value) where the creditor explicitly states a strategy to add to the 1.5°C target?",
-				"de": "What is the share of portfolio (at Fair Market Value) where the creditor explicitly states a strategy to add to the 1.5°C target?",
+				"en": "What is the share of portfolio (at fair market value) where the creditor explicitly states a strategy to add to the 1.5°C target?",
+				"de": "What is the share of portfolio (at fair market value) where the creditor explicitly states a strategy to add to the 1.5°C target?",
 			},
+		}
+
+		for i := 0; i < len(page23Lbls); i++ {
+			// page23Lbls[i] = page23Lbls[i].Outline(fmt.Sprintf("2.3.%v", i+1))
+			rn := rune(97 + i)
+			page23Lbls[i] = page23Lbls[i].Outline(fmt.Sprintf("&nbsp;&nbsp;%c.)", rn))
 		}
 
 		for idx1, inpName := range page23Inputs {
@@ -490,6 +511,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"en": "Indizes",
 			"de": "Indizes",
 		}
+		page.CounterProgress = "3"
 
 		page.WidthMax("64rem")
 
@@ -501,8 +523,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		}
 		page5Lbls := []trl.S{
 			{
-				"en": "Financing Situation/Pricing",
-				"de": "Financing Situation/Pricing",
+				"en": "Financing situation/pricing",
+				"de": "Financing situation/pricing",
 			},
 			{
 				"en": "Assess the change in deal quality with respect to the risk return profile",
@@ -518,15 +540,21 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			},
 		}
 
+		for i := 0; i < len(page5Lbls); i++ {
+			page5Lbls[i] = page5Lbls[i].Outline(fmt.Sprintf("3.%v", i+1))
+		}
+
 		for idx1, inpName := range page5Inputs {
 			{
 				gr := page.AddGroup()
 				gr.Cols = 1
+				gr.BottomVSpacers = 0
 				gr.BottomVSpacers = 1
 				{
 					inp := gr.AddInput()
 					inp.Type = "textblock"
 					inp.Label = page5Lbls[idx1].Bold()
+					inp.Label = page5Lbls[idx1]
 
 					inp.ColSpan = 1
 					// inp.ColSpanLabel = 1
@@ -537,18 +565,18 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				qst.WrapPageT(page),
 				inpName+"_past3m",
 				trl.S{
-					"en": "Last 3&nbsp;months",
-					"de": "Last 3&nbsp;months",
-				},
+					"en": "<i>Last</i> 3&nbsp;months",
+					"de": "<i>Last</i> 3&nbsp;months",
+				}.Outline("a.)"),
 				mCh4,
 			)
 			chapter3(
 				qst.WrapPageT(page),
 				inpName+"_next3m",
 				trl.S{
-					"en": "Next 3&nbsp;months",
-					"de": "Next 3&nbsp;months",
-				},
+					"en": "<i>Next</i> 3&nbsp;months",
+					"de": "<i>Next</i> 3&nbsp;months",
+				}.Outline("b.)"),
 				mCh4,
 			)
 
@@ -561,13 +589,14 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		page := q.AddPage()
 
 		page.Label = trl.S{
-			"en": "4. Qualitative Questions",
-			"de": "4. Qualitative Questions",
+			"en": "4. Qualitative questions",
+			"de": "4. Qualitative questions",
 		}
 		page.Short = trl.S{
 			"en": "Quality",
 			"de": "Quality",
 		}
+		page.CounterProgress = "4"
 
 		page.WidthMax("42rem")
 
@@ -585,20 +614,20 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			}
 
 			lbls := map[string]string{
-				"business_cycle":         "Business Cycle",
-				"interest_rates":         "Interest Rates",
-				"inflation_deflation":    "Inflation/Deflation",
+				"business_cycle":         "Business cycle",
+				"interest_rates":         "Interest rates",
+				"inflation_deflation":    "Inflation/deflation",
 				"demographics":           "Demographics",
-				"supply_chains":          "Supply Chains",
-				"health_issues":          "Health Issues",
-				"regulatory_environment": "Regulatory Environment",
+				"supply_chains":          "Supply chains",
+				"health_issues":          "Health issues",
+				"regulatory_environment": "Regulatory environment",
 				"other":                  "Other",
 			}
 
 			lblMain := trl.S{
 				"en": `What do you think are the main risks for your investment strategy over the next 3 months? Please choose three.`,
 				"de": `What do you think are the main risks for your investment strategy over the next 3 months? Please choose three.`,
-			}
+			}.Outline("4.1")
 			prio3Matrix(qst.WrapPageT(page), "risks", lblMain, inps, lbls, true)
 		}
 
@@ -640,7 +669,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"de": `What GICS sectors provides the most attractive 
 					investment opportunities in the next three months? 
 					Please rank the top three.`,
-			}
+			}.Outline("4.2")
 			prio3Matrix(qst.WrapPageT(page), "gicsprio", lblMain, inps, lbls, false)
 		}
 
@@ -652,7 +681,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"de": `How important are ESG considerations 
 					to core principal in your investment process?
 			`,
-			}
+			}.Outline("4.3")
 
 			// rejected at meeting 2022-11-14
 			// rangePercentage(qst.WrapPageT(page), "esg", esgImportance1, "importance2")
@@ -691,7 +720,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			lblMain := trl.S{
 				"en": `What is the biggest challenge related to the implementation of ESG into your investment strategy?`,
 				"de": `What is the biggest challenge related to the implementation of ESG into your investment strategy?`,
-			}
+			}.Outline("4.4")
 			prio3Matrix(qst.WrapPageT(page), "esg_challenge", lblMain, inps, lbls, true)
 		}
 
@@ -718,79 +747,79 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			}
 			var lbls = []trl.S{
 				{
-					"de": "(1) No Poverty",
-					"en": "(1) No Poverty",
+					"de": "No poverty",
+					"en": "No poverty",
 				},
 				{
-					"de": "(2) Zero Hunger",
-					"en": "(2) Zero Hunger",
+					"de": "Zero hunger",
+					"en": "Zero hunger",
 				},
 				{
-					"de": "(3) Good Health and Well-Being",
-					"en": "(3) Good Health and Well-Being",
+					"de": "Good health and well-being",
+					"en": "Good health and well-being",
 				},
 				{
-					"de": "(4) Quality Education",
-					"en": "(4) Quality Education",
+					"de": "Quality education",
+					"en": "Quality education",
 				},
 				{
-					"de": "(5) Gender Equality",
-					"en": "(5) Gender Equality",
+					"de": "Gender equality",
+					"en": "Gender equality",
 				},
 				{
-					"de": "(6) Clean Water and Sanitation",
-					"en": "(6) Clean Water and Sanitation",
+					"de": "Clean water and sanitation",
+					"en": "Clean water and sanitation",
 				},
 				{
-					"de": "(7) Affordable and Clean Energy",
-					"en": "(7) Affordable and Clean Energy",
+					"de": "Affordable and clean energy",
+					"en": "Affordable and clean energy",
 				},
 				{
-					"de": "(8) Decent Work and Economic Growth",
-					"en": "(8) Decent Work and Economic Growth",
+					"de": "Decent work and economic growth",
+					"en": "Decent work and economic growth",
 				},
 				{
-					"de": "(9) Industry Innovation and Infrastructure",
-					"en": "(9) Industry Innovation and Infrastructure",
+					"de": "Industry innovation and infrastructure",
+					"en": "Industry innovation and infrastructure",
 				},
 				{
-					"de": "(10) Reduce Inequality",
-					"en": "(10) Reduce Inequality",
+					"de": "Reduce inequality",
+					"en": "Reduce inequality",
 				},
 				{
-					"de": "(11) Sustainable Cities and Communities",
-					"en": "(11) Sustainable Cities and Communities",
+					"de": "Sustainable cities and communities",
+					"en": "Sustainable cities and communities",
 				},
 				{
-					"de": "(12) Responsible Consumption and Production",
-					"en": "(12) Responsible Consumption and Production",
+					"de": "Responsible consumption and production",
+					"en": "Responsible consumption and production",
 				},
 				{
-					"de": "(13) Climate Action",
-					"en": "(13) Climate Action",
+					"de": "Climate action",
+					"en": "Climate action",
 				},
 				{
-					"de": "(14) Life below Water",
-					"en": "(14) Life below Water",
+					"de": "Life below water",
+					"en": "Life below water",
 				},
 				{
-					"de": "(15) Life on Land",
-					"en": "(15) Life on Land",
+					"de": "Life on land",
+					"en": "Life on land",
 				},
 				{
-					"de": "(16) Peace, Justice and strong Institutions",
-					"en": "(16) Peace, Justice and strong Institutions",
+					"de": "Peace, justice and strong institutions",
+					"en": "Peace, justice and strong institutions",
 				},
 				{
-					"de": "(17) Partnership for the Goals",
-					"en": "(17) Partnership for the Goals",
+					"de": "Partnership for the goals",
+					"en": "Partnership for the goals",
 				},
 			}
 
 			unSDG := trl.S{
 				"en": `What UN SDGs are supported by your investment strategy?`,
 				"de": `What UN SDGs are supported by your investment strategy?`,
-			}
+			}.Outline("4.5")
 			checkBoxColumn(qst.WrapPageT(page), unSDG, 2, inps, lbls)
 		}
 
@@ -800,8 +829,9 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	{
 		page := q.AddPage()
 
-		page.Label = trl.S{"de": "Slider"}
-		page.Short = trl.S{"de": "Slider"}
+		page.Label = trl.S{"en": "Slider"}
+		page.Short = trl.S{"en": "Slider"}
+		page.CounterProgress = "-"
 		page.WidthMax("42rem")
 
 		// gr2

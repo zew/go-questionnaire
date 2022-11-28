@@ -74,6 +74,7 @@ type inputT struct {
 	Step        float64 `json:"step,omitempty"`       // for number input:  stepping interval, i.e. 2 or 0.1
 	Min         float64 `json:"min,omitempty"`        //      ~
 	Max         float64 `json:"max,omitempty"`        //      ~
+	Disabled    bool    `json:"disabled,omitempty"`   // simple the HTML input attribute
 	OnInvalid   trl.S   `json:"on_invalid,omitempty"` // message for javascript error messages on HTML5 invalid state - compare ErrMsg
 	Placeholder trl.S   `json:"placeholder,omitempty"`
 
@@ -406,10 +407,11 @@ func (q QuestionnaireT) GroupHTMLTableBased(pageIdx, grpIdx int) string {
 
 // Type page contains groups with inputs
 type pageT struct {
-	Section trl.S `json:"section,omitempty"`     // extra strong before label in content - summary headline for multiple pages
-	Label   trl.S `json:"label,omitempty"`       // headline, set to "" to prevent rendering
-	Desc    trl.S `json:"description,omitempty"` // abstract
-	Short   trl.S `json:"short,omitempty"`       // sort version of section/label/description - in progress bar and navigation menu
+	Section         trl.S  `json:"section,omitempty"`          // extra strong before label in content - summary headline for multiple pages
+	Label           trl.S  `json:"label,omitempty"`            // headline, set to "" to prevent rendering
+	Desc            trl.S  `json:"description,omitempty"`      // abstract
+	Short           trl.S  `json:"short,omitempty"`            // sort version of section/label/description - in progress bar and navigation menu
+	CounterProgress string `json:"counter_progress,omitempty"` // number shown in progress bar bullet; "-" suppresses the natural counter
 
 	// Navi control stuff
 	//

@@ -75,18 +75,20 @@ func restrictedTextMultiCols(
 				}
 
 				if cf.FirstRow100Pct {
-					inp.Response = "100"
-					inp.Type = "textblock"
-					inp.Type = "label-as-input"
-					inp.Label = trl.S{
-						"en": "&nbsp;&nbsp;&nbsp;&nbsp;100",
-						"de": "&nbsp;&nbsp;&nbsp;&nbsp;100",
-					}.Bold()
-					// inp.ColSpanControl = 0
-					inp.Name = ""
-					inp.Suffix = cf.Suffix
-					// inp.StyleCtl = css.NewStylesResponsive(inp.StyleCtl)
-					// inp.StyleCtl.Desktop.StyleBox.BackgroundColor = "darkgray"
+					inp.Response = "100" // must parse to number
+					inp.Disabled = true
+
+					// inp.Type = "textblock"
+					// inp.Type = "label-as-input"
+					// inp.Label = trl.S{
+					// 	"en": "&nbsp;&nbsp;&nbsp;&nbsp;100",
+					// 	"de": "&nbsp;&nbsp;&nbsp;&nbsp;100",
+					// }.Bold()
+					// // inp.ColSpanControl = 0
+					// inp.Name = ""
+					// inp.Suffix = cf.Suffix
+					// // inp.StyleCtl = css.NewStylesResponsive(inp.StyleCtl)
+					// // inp.StyleCtl.Desktop.StyleBox.BackgroundColor = "darkgray"
 				}
 
 			}

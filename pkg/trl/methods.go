@@ -114,6 +114,15 @@ func (s S) Bold() S {
 	return ret
 }
 
+// Outline prepends <b> pref </b>
+func (s S) Outline(pref string) S {
+	ret := S{}
+	for key, val := range s {
+		ret[key] = fmt.Sprintf("<b>%v</b> &nbsp; %v", pref, val)
+	}
+	return ret
+}
+
 // Pad with &nbsp;
 func (s S) Pad(spaces int) S {
 	ret := S{}

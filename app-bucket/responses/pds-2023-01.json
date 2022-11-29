@@ -18,7 +18,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "6d5451cb77f83b7187ed0ee0fdb7bde2e2cd47fc6152462246a2906aec18f62d",
+ 	"md_5": "53042bfa11294abc0b27f57b785020b20985126ee8531aef483c8d0c041a2502",
  	"lang_codes": [
  		"en"
  	],
@@ -465,8 +465,8 @@
  							"name": "0_0_st1_senior",
  							"type": "checkbox",
  							"label": {
- 								"de": "senior",
- 								"en": "senior"
+ 								"de": "Senior",
+ 								"en": "Senior"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -517,8 +517,8 @@
  							"name": "0_1_st2_unittranche",
  							"type": "checkbox",
  							"label": {
- 								"de": "unitranche",
- 								"en": "unitranche"
+ 								"de": "Unitranche",
+ 								"en": "Unitranche"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -569,8 +569,8 @@
  							"name": "0_2_st3_subordinated",
  							"type": "checkbox",
  							"label": {
- 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -621,8 +621,8 @@
  							"name": "0_3_st4_mezzanine",
  							"type": "checkbox",
  							"label": {
- 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -752,8 +752,8 @@
  							"name": "1_0_st1_wholeloan",
  							"type": "checkbox",
  							"label": {
- 								"de": "whole loan",
- 								"en": "whole loan"
+ 								"de": "Whole loan",
+ 								"en": "Whole loan"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -804,8 +804,8 @@
  							"name": "1_1_st2_subordinated",
  							"type": "checkbox",
  							"label": {
- 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -935,8 +935,8 @@
  							"name": "2_0_st1_senior",
  							"type": "checkbox",
  							"label": {
- 								"de": "senior",
- 								"en": "senior"
+ 								"de": "Senior",
+ 								"en": "Senior"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -987,8 +987,8 @@
  							"name": "2_1_st2_subordinated",
  							"type": "checkbox",
  							"label": {
- 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -1091,6 +1091,21 @@
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
  				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "Sliders:\n\t\t\t\t\t\t\tScales partly incomplete; \u003cbr\u003e \n\t\t\t\t\t\t\tTicks without label missing; \u003cbr\u003e \n\t\t\t\t\t\t\tno display on return; \u003cbr\u003e \n\t\t\t\t\t\t\twhich scales point to intervals, which to scalars? \u003cbr\u003e\n\t\t\t\t\t\t\tAlignment of tranch names imperfect. \u003cbr\u003e\n\t\t\t\t\t\t",
+ 								"en": "Sliders: \n\t\t\t\t\t\t\tScales partly incomplete; \u003cbr\u003e \n\t\t\t\t\t\t\tTicks without label missing; \u003cbr\u003e \n\t\t\t\t\t\t\tno display on return; \u003cbr\u003e \n\t\t\t\t\t\t\twhich scales point to intervals, which to scalars? \u003cbr\u003e\n\t\t\t\t\t\t\tAlignment of tranch names imperfect. \u003cbr\u003e\n\t\t\t\t\t\t"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						}
+ 					]
+ 				},
+ 				{
  					"bottom_vspacers": 3,
  					"columns": 7,
  					"inputs": [
@@ -1101,10 +1116,11 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "start",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
  										"font_size": 85,
@@ -1122,18 +1138,19 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "senior",
- 								"en": "senior"
+ 								"de": "Senior",
+ 								"en": "Senior"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "start",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
  										"font_size": 85,
@@ -1151,18 +1168,19 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "unitranche",
- 								"en": "unitranche"
+ 								"de": "Unitranche",
+ 								"en": "Unitranche"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "start",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
  										"font_size": 85,
@@ -1180,18 +1198,19 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "start",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
  										"font_size": 85,
@@ -1209,18 +1228,19 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "start",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
  										"font_size": 85,
@@ -1567,13 +1587,14 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "start",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 90,
+ 										"font_size": 85,
  										"align_horizontal": "left"
  									}
  								},
@@ -1588,21 +1609,22 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "senior",
- 								"en": "senior"
+ 								"de": "Senior",
+ 								"en": "Senior"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "start",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 90,
+ 										"font_size": 85,
  										"align_horizontal": "left"
  									}
  								},
@@ -1617,21 +1639,22 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "unitranche",
- 								"en": "unitranche"
+ 								"de": "Unitranche",
+ 								"en": "Unitranche"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "start",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 90,
+ 										"font_size": 85,
  										"align_horizontal": "left"
  									}
  								},
@@ -1646,21 +1669,22 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "start",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 90,
+ 										"font_size": 85,
  										"align_horizontal": "left"
  									}
  								},
@@ -1675,21 +1699,22 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "start",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 90,
+ 										"font_size": 85,
  										"align_horizontal": "left"
  									}
  								},
@@ -1718,7 +1743,7 @@
  							"col_span": 4,
  							"col_span_label": 3,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1--3:\u003c6;6:6;12:12;18:18;21:\u003e18",
+ 							"dynamic_func_paramset": "1--3:\u003c6;6:6;9: ;12:12;15: ;18:18;21:\u003e18",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -1764,7 +1789,7 @@
  							},
  							"col_span": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1--3:\u003c6;6:6;12:12;18:18;21:\u003e18",
+ 							"dynamic_func_paramset": "1--3:\u003c6;6:6;9: ;12:12;15: ;18:18;21:\u003e18",
  							"style_control": {
  								"desktop": {
  									"grid_container_style": {},
@@ -1794,7 +1819,7 @@
  							},
  							"col_span": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1--3:\u003c6;6:6;12:12;18:18;21:\u003e18",
+ 							"dynamic_func_paramset": "1--3:\u003c6;6:6;9: ;12:12;15: ;18:18;21:\u003e18",
  							"style_control": {
  								"desktop": {
  									"grid_container_style": {},
@@ -1824,7 +1849,7 @@
  							},
  							"col_span": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1--3:\u003c6;6:6;12:12;18:18;21:\u003e18",
+ 							"dynamic_func_paramset": "1--3:\u003c6;6:6;9: ;12:12;15: ;18:18;21:\u003e18",
  							"style_control": {
  								"desktop": {
  									"grid_container_style": {},
@@ -1879,22 +1904,23 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "senior",
- 								"en": "senior"
+ 								"de": "Senior",
+ 								"en": "Senior"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95,
- 										"align_horizontal": "center"
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -1908,22 +1934,23 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "unitranche",
- 								"en": "unitranche"
+ 								"de": "Unitranche",
+ 								"en": "Unitranche"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95,
- 										"align_horizontal": "center"
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -1937,22 +1964,23 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95,
- 										"align_horizontal": "center"
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -1966,22 +1994,23 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95,
- 										"align_horizontal": "center"
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -3583,10 +3612,11 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "start",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
  										"font_size": 85,
@@ -3604,18 +3634,19 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "senior",
- 								"en": "senior"
+ 								"de": "Senior",
+ 								"en": "Senior"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "start",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
  										"font_size": 85,
@@ -3633,18 +3664,19 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "unitranche",
- 								"en": "unitranche"
+ 								"de": "Unitranche",
+ 								"en": "Unitranche"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "start",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
  										"font_size": 85,
@@ -3662,18 +3694,19 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "start",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
  										"font_size": 85,
@@ -3691,18 +3724,19 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "start",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
  										"font_size": 85,
@@ -4049,10 +4083,11 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "start",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
  										"font_size": 85,
@@ -4070,18 +4105,19 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "senior",
- 								"en": "senior"
+ 								"de": "Senior",
+ 								"en": "Senior"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "start",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
  										"font_size": 85,
@@ -4099,18 +4135,19 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "unitranche",
- 								"en": "unitranche"
+ 								"de": "Unitranche",
+ 								"en": "Unitranche"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "start",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
  										"font_size": 85,
@@ -4128,18 +4165,19 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "start",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
  										"font_size": 85,
@@ -4157,18 +4195,19 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "start",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
  										"font_size": 85,
@@ -4823,10 +4862,11 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "start",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
  										"font_size": 85,
@@ -4844,18 +4884,19 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "senior",
- 								"en": "senior"
+ 								"de": "Senior",
+ 								"en": "Senior"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "start",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
  										"font_size": 85,
@@ -4873,18 +4914,19 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "unitranche",
- 								"en": "unitranche"
+ 								"de": "Unitranche",
+ 								"en": "Unitranche"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "start",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
  										"font_size": 85,
@@ -4902,18 +4944,19 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "start",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
  										"font_size": 85,
@@ -4931,18 +4974,19 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "start",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
  										"font_size": 85,
@@ -5982,13 +6026,14 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "start",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 90,
+ 										"font_size": 85,
  										"align_horizontal": "left"
  									}
  								},
@@ -6003,21 +6048,22 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "senior",
- 								"en": "senior"
+ 								"de": "Senior",
+ 								"en": "Senior"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "start",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 90,
+ 										"font_size": 85,
  										"align_horizontal": "left"
  									}
  								},
@@ -6032,21 +6078,22 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "unitranche",
- 								"en": "unitranche"
+ 								"de": "Unitranche",
+ 								"en": "Unitranche"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "start",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 90,
+ 										"font_size": 85,
  										"align_horizontal": "left"
  									}
  								},
@@ -6061,21 +6108,22 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "start",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 90,
+ 										"font_size": 85,
  										"align_horizontal": "left"
  									}
  								},
@@ -6090,21 +6138,22 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "start",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 90,
+ 										"font_size": 85,
  										"align_horizontal": "left"
  									}
  								},
@@ -6132,7 +6181,7 @@
  							"col_span": 4,
  							"col_span_label": 3,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "2--0:0;20:20;40:40;60:60;80:80;100:100",
+ 							"dynamic_func_paramset": "2--0:0;25:25;50:50;75:75;100:100",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -6177,7 +6226,7 @@
  							},
  							"col_span": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "2--0:0;20:20;40:40;60:60;80:80;100:100",
+ 							"dynamic_func_paramset": "2--0:0;25:25;50:50;75:75;100:100",
  							"style_control": {
  								"desktop": {
  									"grid_container_style": {},
@@ -6206,7 +6255,7 @@
  							},
  							"col_span": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "2--0:0;20:20;40:40;60:60;80:80;100:100",
+ 							"dynamic_func_paramset": "2--0:0;25:25;50:50;75:75;100:100",
  							"style_control": {
  								"desktop": {
  									"grid_container_style": {},
@@ -6235,7 +6284,7 @@
  							},
  							"col_span": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "2--0:0;20:20;40:40;60:60;80:80;100:100",
+ 							"dynamic_func_paramset": "2--0:0;25:25;50:50;75:75;100:100",
  							"style_control": {
  								"desktop": {
  									"grid_container_style": {},
@@ -6266,13 +6315,14 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "start",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 90,
+ 										"font_size": 85,
  										"align_horizontal": "left"
  									}
  								},
@@ -6287,21 +6337,22 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "senior",
- 								"en": "senior"
+ 								"de": "Senior",
+ 								"en": "Senior"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "start",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 90,
+ 										"font_size": 85,
  										"align_horizontal": "left"
  									}
  								},
@@ -6316,21 +6367,22 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "unitranche",
- 								"en": "unitranche"
+ 								"de": "Unitranche",
+ 								"en": "Unitranche"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "start",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 90,
+ 										"font_size": 85,
  										"align_horizontal": "left"
  									}
  								},
@@ -6345,21 +6397,22 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "start",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 90,
+ 										"font_size": 85,
  										"align_horizontal": "left"
  									}
  								},
@@ -6374,21 +6427,22 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "start",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 90,
+ 										"font_size": 85,
  										"align_horizontal": "left"
  									}
  								},
@@ -6416,7 +6470,7 @@
  							"col_span": 4,
  							"col_span_label": 3,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "2--0:0;20:20;40:40;60:60;80:80;100:100",
+ 							"dynamic_func_paramset": "2--0:0;25:25;50:50;75:75;100:100",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -6461,7 +6515,7 @@
  							},
  							"col_span": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "2--0:0;20:20;40:40;60:60;80:80;100:100",
+ 							"dynamic_func_paramset": "2--0:0;25:25;50:50;75:75;100:100",
  							"style_control": {
  								"desktop": {
  									"grid_container_style": {},
@@ -6490,7 +6544,7 @@
  							},
  							"col_span": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "2--0:0;20:20;40:40;60:60;80:80;100:100",
+ 							"dynamic_func_paramset": "2--0:0;25:25;50:50;75:75;100:100",
  							"style_control": {
  								"desktop": {
  									"grid_container_style": {},
@@ -6519,7 +6573,7 @@
  							},
  							"col_span": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "2--0:0;20:20;40:40;60:60;80:80;100:100",
+ 							"dynamic_func_paramset": "2--0:0;25:25;50:50;75:75;100:100",
  							"style_control": {
  								"desktop": {
  									"grid_container_style": {},
@@ -6550,13 +6604,14 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "start",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 90,
+ 										"font_size": 85,
  										"align_horizontal": "left"
  									}
  								},
@@ -6571,21 +6626,22 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "senior",
- 								"en": "senior"
+ 								"de": "Senior",
+ 								"en": "Senior"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "start",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 90,
+ 										"font_size": 85,
  										"align_horizontal": "left"
  									}
  								},
@@ -6600,21 +6656,22 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "unitranche",
- 								"en": "unitranche"
+ 								"de": "Unitranche",
+ 								"en": "Unitranche"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "start",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 90,
+ 										"font_size": 85,
  										"align_horizontal": "left"
  									}
  								},
@@ -6629,21 +6686,22 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "start",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 90,
+ 										"font_size": 85,
  										"align_horizontal": "left"
  									}
  								},
@@ -6658,21 +6716,22 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "start",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 90,
+ 										"font_size": 85,
  										"align_horizontal": "left"
  									}
  								},
@@ -6700,7 +6759,7 @@
  							"col_span": 4,
  							"col_span_label": 3,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "2--0:0;20:20;40:40;60:60;80:80;100:100",
+ 							"dynamic_func_paramset": "2--0:0;25:25;50:50;75:75;100:100",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -6745,7 +6804,7 @@
  							},
  							"col_span": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "2--0:0;20:20;40:40;60:60;80:80;100:100",
+ 							"dynamic_func_paramset": "2--0:0;25:25;50:50;75:75;100:100",
  							"style_control": {
  								"desktop": {
  									"grid_container_style": {},
@@ -6774,7 +6833,7 @@
  							},
  							"col_span": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "2--0:0;20:20;40:40;60:60;80:80;100:100",
+ 							"dynamic_func_paramset": "2--0:0;25:25;50:50;75:75;100:100",
  							"style_control": {
  								"desktop": {
  									"grid_container_style": {},
@@ -6803,7 +6862,7 @@
  							},
  							"col_span": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "2--0:0;20:20;40:40;60:60;80:80;100:100",
+ 							"dynamic_func_paramset": "2--0:0;25:25;50:50;75:75;100:100",
  							"style_control": {
  								"desktop": {
  									"grid_container_style": {},
@@ -6866,15 +6925,6 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Slider ticks and values not yet set",
- 								"en": "Slider ticks and values not yet set"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1
- 						},
- 						{
- 							"type": "textblock",
- 							"label": {
  								"de": "\u003cb\u003e1.2\u003c/b\u003e \u0026nbsp; Return (unlevered)",
  								"en": "\u003cb\u003e1.2\u003c/b\u003e \u0026nbsp; Return (unlevered)"
  							},
@@ -6924,8 +6974,8 @@
  							"min": 3,
  							"max": 10,
  							"label": {
- 								"de": "senior",
- 								"en": "senior"
+ 								"de": "Senior",
+ 								"en": "Senior"
  							},
  							"suffix": {
  								"de": "%",
@@ -6958,12 +7008,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -6981,8 +7034,8 @@
  							"min": 3,
  							"max": 10,
  							"label": {
- 								"de": "unitranche",
- 								"en": "unitranche"
+ 								"de": "Unitranche",
+ 								"en": "Unitranche"
  							},
  							"suffix": {
  								"de": "%",
@@ -7015,12 +7068,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -7038,8 +7094,8 @@
  							"min": 3,
  							"max": 10,
  							"label": {
- 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"suffix": {
  								"de": "%",
@@ -7072,12 +7128,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -7095,8 +7154,8 @@
  							"min": 3,
  							"max": 10,
  							"label": {
- 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"suffix": {
  								"de": "%",
@@ -7129,12 +7188,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -7187,8 +7249,8 @@
  							"step": 0.25,
  							"max": 2,
  							"label": {
- 								"de": "senior",
- 								"en": "senior"
+ 								"de": "Senior",
+ 								"en": "Senior"
  							},
  							"suffix": {
  								"de": "%",
@@ -7221,12 +7283,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -7243,8 +7308,8 @@
  							"step": 0.25,
  							"max": 2,
  							"label": {
- 								"de": "unitranche",
- 								"en": "unitranche"
+ 								"de": "Unitranche",
+ 								"en": "Unitranche"
  							},
  							"suffix": {
  								"de": "%",
@@ -7277,12 +7342,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -7299,8 +7367,8 @@
  							"step": 0.25,
  							"max": 2,
  							"label": {
- 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"suffix": {
  								"de": "%",
@@ -7333,12 +7401,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -7355,8 +7426,8 @@
  							"step": 0.25,
  							"max": 2,
  							"label": {
- 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"suffix": {
  								"de": "%",
@@ -7389,12 +7460,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -7447,8 +7521,8 @@
  							"step": 0.25,
  							"max": 4,
  							"label": {
- 								"de": "senior",
- 								"en": "senior"
+ 								"de": "Senior",
+ 								"en": "Senior"
  							},
  							"suffix": {
  								"de": "%",
@@ -7481,12 +7555,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -7503,8 +7580,8 @@
  							"step": 0.25,
  							"max": 4,
  							"label": {
- 								"de": "unitranche",
- 								"en": "unitranche"
+ 								"de": "Unitranche",
+ 								"en": "Unitranche"
  							},
  							"suffix": {
  								"de": "%",
@@ -7537,12 +7614,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -7559,8 +7639,8 @@
  							"step": 0.25,
  							"max": 4,
  							"label": {
- 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"suffix": {
  								"de": "%",
@@ -7593,12 +7673,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -7615,8 +7698,8 @@
  							"step": 0.25,
  							"max": 4,
  							"label": {
- 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"suffix": {
  								"de": "%",
@@ -7649,12 +7732,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -7708,8 +7794,8 @@
  							"min": 3,
  							"max": 20,
  							"label": {
- 								"de": "senior",
- 								"en": "senior"
+ 								"de": "Senior",
+ 								"en": "Senior"
  							},
  							"suffix": {
  								"de": "%",
@@ -7742,12 +7828,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -7765,8 +7854,8 @@
  							"min": 3,
  							"max": 20,
  							"label": {
- 								"de": "unitranche",
- 								"en": "unitranche"
+ 								"de": "Unitranche",
+ 								"en": "Unitranche"
  							},
  							"suffix": {
  								"de": "%",
@@ -7799,12 +7888,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -7822,8 +7914,8 @@
  							"min": 3,
  							"max": 20,
  							"label": {
- 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"suffix": {
  								"de": "%",
@@ -7856,12 +7948,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -7879,8 +7974,8 @@
  							"min": 3,
  							"max": 20,
  							"label": {
- 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"suffix": {
  								"de": "%",
@@ -7913,12 +8008,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -7972,8 +8070,8 @@
  							"min": 3,
  							"max": 25,
  							"label": {
- 								"de": "senior",
- 								"en": "senior"
+ 								"de": "Senior",
+ 								"en": "Senior"
  							},
  							"suffix": {
  								"de": "%",
@@ -8006,12 +8104,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -8029,8 +8130,8 @@
  							"min": 3,
  							"max": 25,
  							"label": {
- 								"de": "unitranche",
- 								"en": "unitranche"
+ 								"de": "Unitranche",
+ 								"en": "Unitranche"
  							},
  							"suffix": {
  								"de": "%",
@@ -8063,12 +8164,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -8086,8 +8190,8 @@
  							"min": 3,
  							"max": 25,
  							"label": {
- 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"suffix": {
  								"de": "%",
@@ -8120,12 +8224,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -8143,8 +8250,8 @@
  							"min": 3,
  							"max": 25,
  							"label": {
- 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"suffix": {
  								"de": "%",
@@ -8177,12 +8284,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -8235,8 +8345,8 @@
  							"step": 5,
  							"max": 100,
  							"label": {
- 								"de": "senior",
- 								"en": "senior"
+ 								"de": "Senior",
+ 								"en": "Senior"
  							},
  							"suffix": {
  								"de": "%",
@@ -8269,12 +8379,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -8291,8 +8404,8 @@
  							"step": 5,
  							"max": 100,
  							"label": {
- 								"de": "unitranche",
- 								"en": "unitranche"
+ 								"de": "Unitranche",
+ 								"en": "Unitranche"
  							},
  							"suffix": {
  								"de": "%",
@@ -8325,12 +8438,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -8347,8 +8463,8 @@
  							"step": 5,
  							"max": 100,
  							"label": {
- 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"suffix": {
  								"de": "%",
@@ -8381,12 +8497,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -8403,8 +8522,8 @@
  							"step": 5,
  							"max": 100,
  							"label": {
- 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"suffix": {
  								"de": "%",
@@ -8437,12 +8556,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -8507,22 +8629,23 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "senior",
- 								"en": "senior"
+ 								"de": "Senior",
+ 								"en": "Senior"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95,
- 										"align_horizontal": "center"
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -8536,22 +8659,23 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "unitranche",
- 								"en": "unitranche"
+ 								"de": "Unitranche",
+ 								"en": "Unitranche"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95,
- 										"align_horizontal": "center"
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -8565,22 +8689,23 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95,
- 										"align_horizontal": "center"
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -8594,22 +8719,23 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95,
- 										"align_horizontal": "center"
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -9572,8 +9698,8 @@
  							"step": 0.5,
  							"max": 10,
  							"label": {
- 								"de": "senior",
- 								"en": "senior"
+ 								"de": "Senior",
+ 								"en": "Senior"
  							},
  							"suffix": {
  								"de": "Jahre",
@@ -9606,12 +9732,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -9628,8 +9757,8 @@
  							"step": 0.5,
  							"max": 10,
  							"label": {
- 								"de": "unitranche",
- 								"en": "unitranche"
+ 								"de": "Unitranche",
+ 								"en": "Unitranche"
  							},
  							"suffix": {
  								"de": "Jahre",
@@ -9662,12 +9791,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -9684,8 +9816,8 @@
  							"step": 0.5,
  							"max": 10,
  							"label": {
- 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"suffix": {
  								"de": "Jahre",
@@ -9718,12 +9850,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -9740,8 +9875,8 @@
  							"step": 0.5,
  							"max": 10,
  							"label": {
- 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"suffix": {
  								"de": "Jahre",
@@ -9774,12 +9909,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -9833,8 +9971,8 @@
  							"min": 2,
  							"max": 10,
  							"label": {
- 								"de": "senior",
- 								"en": "senior"
+ 								"de": "Senior",
+ 								"en": "Senior"
  							},
  							"suffix": {
  								"de": "x EBITDA",
@@ -9867,12 +10005,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -9890,8 +10031,8 @@
  							"min": 2,
  							"max": 10,
  							"label": {
- 								"de": "unitranche",
- 								"en": "unitranche"
+ 								"de": "Unitranche",
+ 								"en": "Unitranche"
  							},
  							"suffix": {
  								"de": "x EBITDA",
@@ -9924,12 +10065,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -9947,8 +10091,8 @@
  							"min": 2,
  							"max": 10,
  							"label": {
- 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"suffix": {
  								"de": "x EBITDA",
@@ -9981,12 +10125,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -10004,8 +10151,8 @@
  							"min": 2,
  							"max": 10,
  							"label": {
- 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"suffix": {
  								"de": "x EBITDA",
@@ -10038,12 +10185,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -10097,8 +10247,8 @@
  							"min": 3,
  							"max": 10,
  							"label": {
- 								"de": "senior",
- 								"en": "senior"
+ 								"de": "Senior",
+ 								"en": "Senior"
  							},
  							"suffix": {
  								"de": "%",
@@ -10131,12 +10281,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -10154,8 +10307,8 @@
  							"min": 3,
  							"max": 10,
  							"label": {
- 								"de": "unitranche",
- 								"en": "unitranche"
+ 								"de": "Unitranche",
+ 								"en": "Unitranche"
  							},
  							"suffix": {
  								"de": "%",
@@ -10188,12 +10341,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -10211,8 +10367,8 @@
  							"min": 3,
  							"max": 10,
  							"label": {
- 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"suffix": {
  								"de": "%",
@@ -10245,12 +10401,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -10268,8 +10427,8 @@
  							"min": 3,
  							"max": 10,
  							"label": {
- 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"suffix": {
  								"de": "%",
@@ -10302,12 +10461,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -10361,8 +10523,8 @@
  							"min": 3,
  							"max": 10,
  							"label": {
- 								"de": "senior",
- 								"en": "senior"
+ 								"de": "Senior",
+ 								"en": "Senior"
  							},
  							"suffix": {
  								"de": "%",
@@ -10395,12 +10557,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -10418,8 +10583,8 @@
  							"min": 3,
  							"max": 10,
  							"label": {
- 								"de": "unitranche",
- 								"en": "unitranche"
+ 								"de": "Unitranche",
+ 								"en": "Unitranche"
  							},
  							"suffix": {
  								"de": "%",
@@ -10452,12 +10617,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -10475,8 +10643,8 @@
  							"min": 3,
  							"max": 10,
  							"label": {
- 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"suffix": {
  								"de": "%",
@@ -10509,12 +10677,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -10532,8 +10703,8 @@
  							"min": 3,
  							"max": 10,
  							"label": {
- 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"suffix": {
  								"de": "%",
@@ -10566,12 +10737,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -10625,8 +10799,8 @@
  							"min": 3,
  							"max": 10,
  							"label": {
- 								"de": "senior",
- 								"en": "senior"
+ 								"de": "Senior",
+ 								"en": "Senior"
  							},
  							"suffix": {
  								"de": "%",
@@ -10659,12 +10833,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -10682,8 +10859,8 @@
  							"min": 3,
  							"max": 10,
  							"label": {
- 								"de": "unitranche",
- 								"en": "unitranche"
+ 								"de": "Unitranche",
+ 								"en": "Unitranche"
  							},
  							"suffix": {
  								"de": "%",
@@ -10716,12 +10893,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -10739,8 +10919,8 @@
  							"min": 3,
  							"max": 10,
  							"label": {
- 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"suffix": {
  								"de": "%",
@@ -10773,12 +10953,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -10796,8 +10979,8 @@
  							"min": 3,
  							"max": 10,
  							"label": {
- 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"suffix": {
  								"de": "%",
@@ -10830,12 +11013,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -10873,7 +11059,26 @@
  								"en": "\u003cb\u003ea.)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tRealisations \u003cbr\u003e\n\t\t\t\t\t\u003cspan class=font-size-90 \u003e Volume of realized loans in € \u003c/span\u003e"
  							},
  							"col_span": 1,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						}
  					],
  					"style": {
@@ -10908,8 +11113,8 @@
  								"en": "million Euro"
  							},
  							"label": {
- 								"de": "senior",
- 								"en": "senior"
+ 								"de": "Senior",
+ 								"en": "Senior"
  							},
  							"suffix": {
  								"de": "Mio €",
@@ -10939,12 +11144,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -10982,8 +11190,8 @@
  								"en": "million Euro"
  							},
  							"label": {
- 								"de": "unitranche",
- 								"en": "unitranche"
+ 								"de": "Unitranche",
+ 								"en": "Unitranche"
  							},
  							"suffix": {
  								"de": "Mio €",
@@ -11013,12 +11221,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -11056,8 +11267,8 @@
  								"en": "million Euro"
  							},
  							"label": {
- 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"suffix": {
  								"de": "Mio €",
@@ -11087,12 +11298,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -11130,8 +11344,8 @@
  								"en": "million Euro"
  							},
  							"label": {
- 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"suffix": {
  								"de": "Mio €",
@@ -11161,12 +11375,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -11236,8 +11453,8 @@
  							"min": 3,
  							"max": 10,
  							"label": {
- 								"de": "senior",
- 								"en": "senior"
+ 								"de": "Senior",
+ 								"en": "Senior"
  							},
  							"suffix": {
  								"de": "%",
@@ -11270,12 +11487,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -11293,8 +11513,8 @@
  							"min": 3,
  							"max": 10,
  							"label": {
- 								"de": "unitranche",
- 								"en": "unitranche"
+ 								"de": "Unitranche",
+ 								"en": "Unitranche"
  							},
  							"suffix": {
  								"de": "%",
@@ -11327,12 +11547,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -11350,8 +11573,8 @@
  							"min": 3,
  							"max": 10,
  							"label": {
- 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"suffix": {
  								"de": "%",
@@ -11384,12 +11607,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -11407,8 +11633,8 @@
  							"min": 3,
  							"max": 10,
  							"label": {
- 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"suffix": {
  								"de": "%",
@@ -11441,12 +11667,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -11500,8 +11729,8 @@
  							"min": 3,
  							"max": 10,
  							"label": {
- 								"de": "senior",
- 								"en": "senior"
+ 								"de": "Senior",
+ 								"en": "Senior"
  							},
  							"suffix": {
  								"de": "%",
@@ -11534,12 +11763,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -11557,8 +11789,8 @@
  							"min": 3,
  							"max": 10,
  							"label": {
- 								"de": "unitranche",
- 								"en": "unitranche"
+ 								"de": "Unitranche",
+ 								"en": "Unitranche"
  							},
  							"suffix": {
  								"de": "%",
@@ -11591,12 +11823,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -11614,8 +11849,8 @@
  							"min": 3,
  							"max": 10,
  							"label": {
- 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"suffix": {
  								"de": "%",
@@ -11648,12 +11883,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -11671,8 +11909,8 @@
  							"min": 3,
  							"max": 10,
  							"label": {
- 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"suffix": {
  								"de": "%",
@@ -11705,12 +11943,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -11764,8 +12005,8 @@
  							"min": 3,
  							"max": 10,
  							"label": {
- 								"de": "senior",
- 								"en": "senior"
+ 								"de": "Senior",
+ 								"en": "Senior"
  							},
  							"suffix": {
  								"de": "%",
@@ -11798,12 +12039,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -11821,8 +12065,8 @@
  							"min": 3,
  							"max": 10,
  							"label": {
- 								"de": "unitranche",
- 								"en": "unitranche"
+ 								"de": "Unitranche",
+ 								"en": "Unitranche"
  							},
  							"suffix": {
  								"de": "%",
@@ -11855,12 +12099,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -11878,8 +12125,8 @@
  							"min": 3,
  							"max": 10,
  							"label": {
- 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"suffix": {
  								"de": "%",
@@ -11912,12 +12159,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -11935,8 +12185,8 @@
  							"min": 3,
  							"max": 10,
  							"label": {
- 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"suffix": {
  								"de": "%",
@@ -11969,12 +12219,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -12048,7 +12301,26 @@
  								"en": "\u003cb\u003ea.)\u003c/b\u003e \u0026nbsp; Fair market value of current portfolio in mn €"
  							},
  							"col_span": 1,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						}
  					],
  					"style": {
@@ -12083,8 +12355,8 @@
  								"en": "million Euro"
  							},
  							"label": {
- 								"de": "senior",
- 								"en": "senior"
+ 								"de": "Senior",
+ 								"en": "Senior"
  							},
  							"suffix": {
  								"de": "Mio €",
@@ -12114,12 +12386,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -12157,8 +12432,8 @@
  								"en": "million Euro"
  							},
  							"label": {
- 								"de": "unitranche",
- 								"en": "unitranche"
+ 								"de": "Unitranche",
+ 								"en": "Unitranche"
  							},
  							"suffix": {
  								"de": "Mio €",
@@ -12188,12 +12463,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -12231,8 +12509,8 @@
  								"en": "million Euro"
  							},
  							"label": {
- 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"suffix": {
  								"de": "Mio €",
@@ -12262,12 +12540,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -12305,8 +12586,8 @@
  								"en": "million Euro"
  							},
  							"label": {
- 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"suffix": {
  								"de": "Mio €",
@@ -12336,12 +12617,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -12380,7 +12664,26 @@
  								"en": "\u003cb\u003eb.)\u003c/b\u003e \u0026nbsp; Capital called from investor in mn €"
  							},
  							"col_span": 1,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						}
  					],
  					"style": {
@@ -12415,8 +12718,8 @@
  								"en": "million Euro"
  							},
  							"label": {
- 								"de": "senior",
- 								"en": "senior"
+ 								"de": "Senior",
+ 								"en": "Senior"
  							},
  							"suffix": {
  								"de": "Mio €",
@@ -12446,12 +12749,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -12489,8 +12795,8 @@
  								"en": "million Euro"
  							},
  							"label": {
- 								"de": "unitranche",
- 								"en": "unitranche"
+ 								"de": "Unitranche",
+ 								"en": "Unitranche"
  							},
  							"suffix": {
  								"de": "Mio €",
@@ -12520,12 +12826,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -12563,8 +12872,8 @@
  								"en": "million Euro"
  							},
  							"label": {
- 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"suffix": {
  								"de": "Mio €",
@@ -12594,12 +12903,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -12637,8 +12949,8 @@
  								"en": "million Euro"
  							},
  							"label": {
- 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"suffix": {
  								"de": "Mio €",
@@ -12668,12 +12980,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -12712,7 +13027,26 @@
  								"en": "\u003cb\u003ec.)\u003c/b\u003e \u0026nbsp; Repaid capital either reinvested or distributed to investor in mn €"
  							},
  							"col_span": 1,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						}
  					],
  					"style": {
@@ -12747,8 +13081,8 @@
  								"en": "million Euro"
  							},
  							"label": {
- 								"de": "senior",
- 								"en": "senior"
+ 								"de": "Senior",
+ 								"en": "Senior"
  							},
  							"suffix": {
  								"de": "Mio €",
@@ -12778,12 +13112,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -12821,8 +13158,8 @@
  								"en": "million Euro"
  							},
  							"label": {
- 								"de": "unitranche",
- 								"en": "unitranche"
+ 								"de": "Unitranche",
+ 								"en": "Unitranche"
  							},
  							"suffix": {
  								"de": "Mio €",
@@ -12852,12 +13189,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -12895,8 +13235,8 @@
  								"en": "million Euro"
  							},
  							"label": {
- 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"suffix": {
  								"de": "Mio €",
@@ -12926,12 +13266,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -12969,8 +13312,8 @@
  								"en": "million Euro"
  							},
  							"label": {
- 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"suffix": {
  								"de": "Mio €",
@@ -13000,12 +13343,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -13044,7 +13390,26 @@
  								"en": "\u003cb\u003ed.)\u003c/b\u003e \u0026nbsp; Dry powder in mn €"
  							},
  							"col_span": 1,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						}
  					],
  					"style": {
@@ -13079,8 +13444,8 @@
  								"en": "million Euro"
  							},
  							"label": {
- 								"de": "senior",
- 								"en": "senior"
+ 								"de": "Senior",
+ 								"en": "Senior"
  							},
  							"suffix": {
  								"de": "Mio €",
@@ -13110,12 +13475,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -13153,8 +13521,8 @@
  								"en": "million Euro"
  							},
  							"label": {
- 								"de": "unitranche",
- 								"en": "unitranche"
+ 								"de": "Unitranche",
+ 								"en": "Unitranche"
  							},
  							"suffix": {
  								"de": "Mio €",
@@ -13184,12 +13552,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -13227,8 +13598,8 @@
  								"en": "million Euro"
  							},
  							"label": {
- 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"suffix": {
  								"de": "Mio €",
@@ -13258,12 +13629,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -13301,8 +13675,8 @@
  								"en": "million Euro"
  							},
  							"label": {
- 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"suffix": {
  								"de": "Mio €",
@@ -13332,12 +13706,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -13392,10 +13769,11 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "start",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
  										"font_size": 85,
@@ -13413,18 +13791,19 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "senior",
- 								"en": "senior"
+ 								"de": "Senior",
+ 								"en": "Senior"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "start",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
  										"font_size": 85,
@@ -13442,18 +13821,19 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "unitranche",
- 								"en": "unitranche"
+ 								"de": "Unitranche",
+ 								"en": "Unitranche"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "start",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
  										"font_size": 85,
@@ -13471,18 +13851,19 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "start",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
  										"font_size": 85,
@@ -13500,18 +13881,19 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "start",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
  										"font_size": 85,
@@ -13866,10 +14248,11 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "start",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
  										"font_size": 85,
@@ -13887,18 +14270,19 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "senior",
- 								"en": "senior"
+ 								"de": "Senior",
+ 								"en": "Senior"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "start",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
  										"font_size": 85,
@@ -13916,18 +14300,19 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "unitranche",
- 								"en": "unitranche"
+ 								"de": "Unitranche",
+ 								"en": "Unitranche"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "start",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
  										"font_size": 85,
@@ -13945,18 +14330,19 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "start",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
  										"font_size": 85,
@@ -13974,18 +14360,19 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "start",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
  										"font_size": 85,
@@ -14710,22 +15097,23 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "senior",
- 								"en": "senior"
+ 								"de": "Senior",
+ 								"en": "Senior"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95,
- 										"align_horizontal": "center"
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -14739,22 +15127,23 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "unitranche",
- 								"en": "unitranche"
+ 								"de": "Unitranche",
+ 								"en": "Unitranche"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95,
- 										"align_horizontal": "center"
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -14768,22 +15157,23 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95,
- 										"align_horizontal": "center"
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -14797,22 +15187,23 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95,
- 										"align_horizontal": "center"
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -15775,8 +16166,8 @@
  							"step": 5,
  							"max": 100,
  							"label": {
- 								"de": "senior",
- 								"en": "senior"
+ 								"de": "Senior",
+ 								"en": "Senior"
  							},
  							"suffix": {
  								"de": "%",
@@ -15809,12 +16200,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -15831,8 +16225,8 @@
  							"step": 5,
  							"max": 100,
  							"label": {
- 								"de": "unitranche",
- 								"en": "unitranche"
+ 								"de": "Unitranche",
+ 								"en": "Unitranche"
  							},
  							"suffix": {
  								"de": "%",
@@ -15865,12 +16259,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -15887,8 +16284,8 @@
  							"step": 5,
  							"max": 100,
  							"label": {
- 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"suffix": {
  								"de": "%",
@@ -15921,12 +16318,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -15943,8 +16343,8 @@
  							"step": 5,
  							"max": 100,
  							"label": {
- 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"suffix": {
  								"de": "%",
@@ -15977,12 +16377,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -16035,8 +16438,8 @@
  							"step": 5,
  							"max": 100,
  							"label": {
- 								"de": "senior",
- 								"en": "senior"
+ 								"de": "Senior",
+ 								"en": "Senior"
  							},
  							"suffix": {
  								"de": "%",
@@ -16069,12 +16472,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -16091,8 +16497,8 @@
  							"step": 5,
  							"max": 100,
  							"label": {
- 								"de": "unitranche",
- 								"en": "unitranche"
+ 								"de": "Unitranche",
+ 								"en": "Unitranche"
  							},
  							"suffix": {
  								"de": "%",
@@ -16125,12 +16531,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -16147,8 +16556,8 @@
  							"step": 5,
  							"max": 100,
  							"label": {
- 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"suffix": {
  								"de": "%",
@@ -16181,12 +16590,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -16203,8 +16615,8 @@
  							"step": 5,
  							"max": 100,
  							"label": {
- 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"suffix": {
  								"de": "%",
@@ -16237,12 +16649,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -16295,8 +16710,8 @@
  							"step": 5,
  							"max": 100,
  							"label": {
- 								"de": "senior",
- 								"en": "senior"
+ 								"de": "Senior",
+ 								"en": "Senior"
  							},
  							"suffix": {
  								"de": "%",
@@ -16329,12 +16744,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -16351,8 +16769,8 @@
  							"step": 5,
  							"max": 100,
  							"label": {
- 								"de": "unitranche",
- 								"en": "unitranche"
+ 								"de": "Unitranche",
+ 								"en": "Unitranche"
  							},
  							"suffix": {
  								"de": "%",
@@ -16385,12 +16803,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -16407,8 +16828,8 @@
  							"step": 5,
  							"max": 100,
  							"label": {
- 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"suffix": {
  								"de": "%",
@@ -16441,12 +16862,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -16463,8 +16887,8 @@
  							"step": 5,
  							"max": 100,
  							"label": {
- 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"suffix": {
  								"de": "%",
@@ -16497,12 +16921,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -16525,7 +16952,26 @@
  								"en": "\u003cb\u003ee.)\u003c/b\u003e \u0026nbsp; Share of defaulted loans (measured at cost/principal amount of loan)"
  							},
  							"col_span": 1,
- 							"col_span_label": 1
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						}
  					],
  					"style": {
@@ -16560,8 +17006,8 @@
  								"en": "#"
  							},
  							"label": {
- 								"de": "senior",
- 								"en": "senior"
+ 								"de": "Senior",
+ 								"en": "Senior"
  							},
  							"suffix": {
  								"de": "%",
@@ -16591,12 +17037,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -16634,8 +17083,8 @@
  								"en": "#"
  							},
  							"label": {
- 								"de": "unitranche",
- 								"en": "unitranche"
+ 								"de": "Unitranche",
+ 								"en": "Unitranche"
  							},
  							"suffix": {
  								"de": "%",
@@ -16665,12 +17114,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -16708,8 +17160,8 @@
  								"en": "#"
  							},
  							"label": {
- 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"suffix": {
  								"de": "%",
@@ -16739,12 +17191,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -16782,8 +17237,8 @@
  								"en": "#"
  							},
  							"label": {
- 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"suffix": {
  								"de": "%",
@@ -16813,12 +17268,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -16887,8 +17345,8 @@
  							"step": 5,
  							"max": 100,
  							"label": {
- 								"de": "senior",
- 								"en": "senior"
+ 								"de": "Senior",
+ 								"en": "Senior"
  							},
  							"suffix": {
  								"de": "%",
@@ -16921,12 +17379,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -16943,8 +17404,8 @@
  							"step": 5,
  							"max": 100,
  							"label": {
- 								"de": "unitranche",
- 								"en": "unitranche"
+ 								"de": "Unitranche",
+ 								"en": "Unitranche"
  							},
  							"suffix": {
  								"de": "%",
@@ -16977,12 +17438,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -16999,8 +17463,8 @@
  							"step": 5,
  							"max": 100,
  							"label": {
- 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"suffix": {
  								"de": "%",
@@ -17033,12 +17497,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -17055,8 +17522,8 @@
  							"step": 5,
  							"max": 100,
  							"label": {
- 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"suffix": {
  								"de": "%",
@@ -17089,12 +17556,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -17147,8 +17617,8 @@
  							"step": 5,
  							"max": 100,
  							"label": {
- 								"de": "senior",
- 								"en": "senior"
+ 								"de": "Senior",
+ 								"en": "Senior"
  							},
  							"suffix": {
  								"de": "%",
@@ -17181,12 +17651,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -17203,8 +17676,8 @@
  							"step": 5,
  							"max": 100,
  							"label": {
- 								"de": "unitranche",
- 								"en": "unitranche"
+ 								"de": "Unitranche",
+ 								"en": "Unitranche"
  							},
  							"suffix": {
  								"de": "%",
@@ -17237,12 +17710,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -17259,8 +17735,8 @@
  							"step": 5,
  							"max": 100,
  							"label": {
- 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"suffix": {
  								"de": "%",
@@ -17293,12 +17769,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -17315,8 +17794,8 @@
  							"step": 5,
  							"max": 100,
  							"label": {
- 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"suffix": {
  								"de": "%",
@@ -17349,12 +17828,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -17407,8 +17889,8 @@
  							"step": 5,
  							"max": 100,
  							"label": {
- 								"de": "senior",
- 								"en": "senior"
+ 								"de": "Senior",
+ 								"en": "Senior"
  							},
  							"suffix": {
  								"de": "%",
@@ -17441,12 +17923,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -17463,8 +17948,8 @@
  							"step": 5,
  							"max": 100,
  							"label": {
- 								"de": "unitranche",
- 								"en": "unitranche"
+ 								"de": "Unitranche",
+ 								"en": "Unitranche"
  							},
  							"suffix": {
  								"de": "%",
@@ -17497,12 +17982,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -17519,8 +18007,8 @@
  							"step": 5,
  							"max": 100,
  							"label": {
- 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"suffix": {
  								"de": "%",
@@ -17553,12 +18041,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -17575,8 +18066,8 @@
  							"step": 5,
  							"max": 100,
  							"label": {
- 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"suffix": {
  								"de": "%",
@@ -17609,12 +18100,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -17667,8 +18161,8 @@
  							"step": 5,
  							"max": 100,
  							"label": {
- 								"de": "senior",
- 								"en": "senior"
+ 								"de": "Senior",
+ 								"en": "Senior"
  							},
  							"suffix": {
  								"de": "%",
@@ -17701,12 +18195,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -17723,8 +18220,8 @@
  							"step": 5,
  							"max": 100,
  							"label": {
- 								"de": "unitranche",
- 								"en": "unitranche"
+ 								"de": "Unitranche",
+ 								"en": "Unitranche"
  							},
  							"suffix": {
  								"de": "%",
@@ -17757,12 +18254,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -17779,8 +18279,8 @@
  							"step": 5,
  							"max": 100,
  							"label": {
- 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"suffix": {
  								"de": "%",
@@ -17813,12 +18313,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -17835,8 +18338,8 @@
  							"step": 5,
  							"max": 100,
  							"label": {
- 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"suffix": {
  								"de": "%",
@@ -17869,12 +18372,15 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -17975,22 +18481,23 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "senior",
- 								"en": "senior"
+ 								"de": "Senior",
+ 								"en": "Senior"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95,
- 										"align_horizontal": "center"
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -18004,22 +18511,23 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "unitranche",
- 								"en": "unitranche"
+ 								"de": "Unitranche",
+ 								"en": "Unitranche"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95,
- 										"align_horizontal": "center"
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -18033,22 +18541,23 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95,
- 										"align_horizontal": "center"
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -18062,22 +18571,23 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95,
- 										"align_horizontal": "center"
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -19257,22 +19767,23 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "senior",
- 								"en": "senior"
+ 								"de": "Senior",
+ 								"en": "Senior"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95,
- 										"align_horizontal": "center"
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -19286,22 +19797,23 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "unitranche",
- 								"en": "unitranche"
+ 								"de": "Unitranche",
+ 								"en": "Unitranche"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95,
- 										"align_horizontal": "center"
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -19315,22 +19827,23 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95,
- 										"align_horizontal": "center"
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -19344,22 +19857,23 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95,
- 										"align_horizontal": "center"
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -20554,22 +21068,23 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "senior",
- 								"en": "senior"
+ 								"de": "Senior",
+ 								"en": "Senior"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95,
- 										"align_horizontal": "center"
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -20583,22 +21098,23 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "unitranche",
- 								"en": "unitranche"
+ 								"de": "Unitranche",
+ 								"en": "Unitranche"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95,
- 										"align_horizontal": "center"
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -20612,22 +21128,23 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95,
- 										"align_horizontal": "center"
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -20641,22 +21158,23 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95,
- 										"align_horizontal": "center"
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -21836,22 +22354,23 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "senior",
- 								"en": "senior"
+ 								"de": "Senior",
+ 								"en": "Senior"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95,
- 										"align_horizontal": "center"
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -21865,22 +22384,23 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "unitranche",
- 								"en": "unitranche"
+ 								"de": "Unitranche",
+ 								"en": "Unitranche"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95,
- 										"align_horizontal": "center"
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -21894,22 +22414,23 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95,
- 										"align_horizontal": "center"
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -21923,22 +22444,23 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95,
- 										"align_horizontal": "center"
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -23133,22 +23655,23 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "senior",
- 								"en": "senior"
+ 								"de": "Senior",
+ 								"en": "Senior"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95,
- 										"align_horizontal": "center"
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -23162,22 +23685,23 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "unitranche",
- 								"en": "unitranche"
+ 								"de": "Unitranche",
+ 								"en": "Unitranche"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95,
- 										"align_horizontal": "center"
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -23191,22 +23715,23 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95,
- 										"align_horizontal": "center"
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -23220,22 +23745,23 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95,
- 										"align_horizontal": "center"
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -24415,22 +24941,23 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "senior",
- 								"en": "senior"
+ 								"de": "Senior",
+ 								"en": "Senior"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95,
- 										"align_horizontal": "center"
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -24444,22 +24971,23 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "unitranche",
- 								"en": "unitranche"
+ 								"de": "Unitranche",
+ 								"en": "Unitranche"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95,
- 										"align_horizontal": "center"
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -24473,22 +25001,23 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95,
- 										"align_horizontal": "center"
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -24502,22 +25031,23 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95,
- 										"align_horizontal": "center"
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -25712,22 +26242,23 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "senior",
- 								"en": "senior"
+ 								"de": "Senior",
+ 								"en": "Senior"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95,
- 										"align_horizontal": "center"
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -25741,22 +26272,23 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "unitranche",
- 								"en": "unitranche"
+ 								"de": "Unitranche",
+ 								"en": "Unitranche"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95,
- 										"align_horizontal": "center"
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -25770,22 +26302,23 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95,
- 										"align_horizontal": "center"
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -25799,22 +26332,23 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95,
- 										"align_horizontal": "center"
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -26994,22 +27528,23 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "senior",
- 								"en": "senior"
+ 								"de": "Senior",
+ 								"en": "Senior"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95,
- 										"align_horizontal": "center"
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -27023,22 +27558,23 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "unitranche",
- 								"en": "unitranche"
+ 								"de": "Unitranche",
+ 								"en": "Unitranche"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95,
- 										"align_horizontal": "center"
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -27052,22 +27588,23 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95,
- 										"align_horizontal": "center"
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -27081,22 +27618,23 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"margin": "0 0 0 1.2rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center",
- 										"align_self": "end"
+ 										"justify_self": "start"
  									},
  									"text_style": {
- 										"font_size": 95,
- 										"align_horizontal": "center"
+ 										"font_size": 85,
+ 										"align_horizontal": "left"
  									}
  								},
  								"mobile": {
@@ -30330,7 +30868,7 @@
  							"col_span": 4,
  							"col_span_label": 2,
  							"col_span_control": 8,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--0:0;20:20;40:40;60:60;80:80;100:100",
  							"style": {
  								"desktop": {
  									"grid_container_style": {},

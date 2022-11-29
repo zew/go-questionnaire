@@ -35,10 +35,8 @@ func restrictedTextMultiCols(
 				inp.Label = ttLbl
 			}
 			inp.LabelVertical()
-			// label left
-			inp.StyleLbl.Desktop.StyleGridItem.JustifySelf = "start"
-			inp.StyleLbl.Desktop.StyleText.AlignHorizontal = "left"
-			inp.StyleLbl.Desktop.StyleText.FontSize = 85
+
+			inp.StyleLbl = trancheNameStyle
 		}
 
 		// row1
@@ -78,17 +76,6 @@ func restrictedTextMultiCols(
 					inp.Response = "100" // must parse to number
 					inp.Disabled = true
 
-					// inp.Type = "textblock"
-					// inp.Type = "label-as-input"
-					// inp.Label = trl.S{
-					// 	"en": "&nbsp;&nbsp;&nbsp;&nbsp;100",
-					// 	"de": "&nbsp;&nbsp;&nbsp;&nbsp;100",
-					// }.Bold()
-					// // inp.ColSpanControl = 0
-					// inp.Name = ""
-					// inp.Suffix = cf.Suffix
-					// // inp.StyleCtl = css.NewStylesResponsive(inp.StyleCtl)
-					// // inp.StyleCtl.Desktop.StyleBox.BackgroundColor = "darkgray"
 				}
 
 			}

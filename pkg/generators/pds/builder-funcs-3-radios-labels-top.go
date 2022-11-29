@@ -8,7 +8,7 @@ import (
 	"github.com/zew/go-questionnaire/pkg/trl"
 )
 
-func chapter3(
+func radiosLabelsTop(
 	page *qst.WrappedPageT,
 	nm string,
 	lbl trl.S,
@@ -60,8 +60,8 @@ func chapter3(
 			inp.Label = ttLbl
 
 			inp.LabelVertical()
-			inp.StyleLbl.Desktop.StyleText.FontSize = 90
-			inp.StyleLbl.Desktop.StyleText.FontSize = 95
+
+			inp.StyleLbl = trancheNameStyle
 		}
 
 	}

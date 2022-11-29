@@ -35,6 +35,11 @@ func restrTextRowLabelsTop(
 			inp.Label = lbl
 			inp.ColSpan = 1
 			inp.ColSpanLabel = 1
+			inp.LabelVertical()
+
+			inp.StyleLbl.Desktop.StyleGridItem.JustifySelf = "start"
+			inp.StyleLbl.Desktop.StyleText.AlignHorizontal = "left"
+
 		}
 	}
 
@@ -71,11 +76,7 @@ func restrTextRowLabelsTop(
 				inp.LabelCenter()
 				inp.ControlCenter()
 
-				inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
-				inp.StyleLbl.Desktop.StyleText.FontSize = 95
-
-				// inp.Style = css.NewStylesResponsive(inp.Style)
-				// inp.Style.Desktop.StyleBox.Margin = "0 1.4rem 0 1.4rem"
+				inp.StyleLbl = trancheNameStyle
 
 				if idx1 == idxLastCol {
 					inp.Suffix = cf.Suffix

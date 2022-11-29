@@ -1910,7 +1910,7 @@ input.ib-300 {     width:300px;    }
     /* background-color: grey; */
 
     text-align: right;
-    padding-right: 0.4rem !important;
+    /* padding-right: 0.4rem !important; */
 
     max-width: 3.6rem;
 

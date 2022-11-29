@@ -34,7 +34,7 @@ func iterate(
 		}
 
 		if overTypes[idx1] == "range-pct" {
-			slidersPctRowLabelsTop(
+			rangesRowLabelsTop(
 				page,
 				inpName,
 				lbls[idx1],
@@ -43,7 +43,7 @@ func iterate(
 		}
 
 		if overTypes[idx1] == "radios1-4" {
-			chapter3(
+			radiosLabelsTop(
 				page,
 				inpName,
 				lbls[idx1],

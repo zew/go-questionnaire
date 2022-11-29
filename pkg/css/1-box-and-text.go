@@ -137,8 +137,8 @@ type StyleText struct {
 	FontSize   int    `json:"font_size,omitempty"` // percent, i.e. 120 for 120%
 	Color      string `json:"color,omitempty"`
 
-	AlignHorizontal string `json:"align_horizontal,omitempty"` // left, right, center, justify
-	AlignVertical   string `json:"align_vertical,omitempty"`   // baseline, bottom, top, middle
+	AlignHorizontal string `json:"align_horizontal,omitempty"` // CSS 'text-align' left, right, center, justify
+	AlignVertical   string `json:"align_vertical,omitempty"`   // CSS 'vertical-align' baseline, bottom, top, middle
 
 	LineHeight    int    `json:"line_height,omitempty"` // percent, i.e. 120 for 120%
 	LetterSpacing string `json:"letter_spacing,omitempty"`

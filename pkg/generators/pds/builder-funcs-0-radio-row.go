@@ -10,6 +10,20 @@ import (
 
 const outline2Indent = "1.2rem"
 
+var trancheNameStyle = css.NewStylesResponsive(nil)
+
+func init() {
+	// align tranchenames
+	trancheNameStyle.Desktop.StyleGridItem.JustifySelf = "start"
+	trancheNameStyle.Desktop.StyleText.AlignHorizontal = "left"
+	trancheNameStyle.Desktop.StyleText.FontSize = 85
+	// this needs to be differentiated
+	trancheNameStyle.Desktop.StyleBox.Margin = "0 0 0 1.2rem"
+
+	// restrTextRowLabelsTop - 2.1
+	// 3.1
+}
+
 // config multiple choice
 type configMC struct {
 	KeyLabels          string // key to a map of labels
@@ -135,40 +149,40 @@ var trancheTypeNamesAC3 = []string{
 var allLbls = map[string][]trl.S{
 	"ac1-tranche-types": {
 		{
-			"en": "senior",
-			"de": "senior",
+			"en": "Senior",
+			"de": "Senior",
 		},
 		{
-			"en": "unitranche",
-			"de": "unitranche",
+			"en": "Unitranche",
+			"de": "Unitranche",
 		},
 		{
-			"en": "subordinated",
-			"de": "subordinated",
+			"en": "Subordinated",
+			"de": "Subordinated",
 		},
 		{
-			"en": "mezzanine / PIK / other",
-			"de": "mezzanine / PIK / other",
+			"en": "Mezzanine / PIK / other",
+			"de": "Mezzanine / PIK / other",
 		},
 	},
 	"ac2-tranche-types": {
 		{
-			"en": "whole loan",
-			"de": "whole loan",
+			"en": "Whole loan",
+			"de": "Whole loan",
 		},
 		{
-			"en": "subordinated",
-			"de": "subordinated",
+			"en": "Subordinated",
+			"de": "Subordinated",
 		},
 	},
 	"ac3-tranche-types": {
 		{
-			"en": "senior",
-			"de": "senior",
+			"en": "Senior",
+			"de": "Senior",
 		},
 		{
-			"en": "subordinated",
-			"de": "subordinated",
+			"en": "Subordinated",
+			"de": "Subordinated",
 		},
 	},
 	"teamsize": {

@@ -457,6 +457,7 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 			value='%v_noanswer'
 			title='no answer'
 			oninput='pdsRangeRadioInput(this)' 
+			tabindex='-1'
 		>`
 		noAnswer = fmt.Sprintf(
 			noAnswer,
@@ -464,56 +465,6 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 			inp.Name,
 			inp.Name,
 		)
-
-		// if inp.DynamicFuncParamset == "3" {
-		// 	ctrl += fmt.Sprintf(`
-		// 	<!-- label must be trailing sibling to input[range] -->
-		// 	<label for="%v">
-		// 		<!-- label content in other grid item -->
-		// 		  %v %v
-		// 		<div class="labels" aria-hidden="true"
-		// 		><span
-		// 			style="--i: 0"  ><6&nbsp;&nbsp;</span><span
-		// 			style="--i: 2"  >6</span><span
-		// 			style="--i: 4"  >9</span><span
-		// 			style="--i: 6"  >12</span><span
-		// 			style="--i: 8"  >15</span><span
-		// 			style="--i: 10" >18</span><span
-		// 			style="--i: 12">&nbsp;&nbsp;>18</span>
-		// 		</div>
-		// 	</label>
-		// 		%v
-		// 	`,
-		// 		inp.Name,
-		// 		display,
-		// 		inp.Suffix["en"],
-		// 		noAnswer,
-		// 	)
-
-		// } else {
-		// 	ctrl += fmt.Sprintf(`
-		// 	<!-- label must be trailing sibling to input[range] -->
-		// 	<label for="%v">
-		// 		<!-- label content in other grid item -->
-		// 		  %v %v
-		// 		<div class="labels" aria-hidden="true"
-		// 		><span
-		// 			style="--i: 0"   >0</span><span
-		// 			style="--i: 2"  >20</span><span
-		// 			style="--i: 4"  >40</span><span
-		// 			style="--i: 6"  >60</span><span
-		// 			style="--i: 8"  >80</span><span
-		// 			style="--i: 10">100</span>
-		// 		</div>
-		// 	</label>
-		// 		%v
-		// 	`,
-		// 		inp.Name,
-		// 		display,
-		// 		inp.Suffix["en"],
-		// 		noAnswer,
-		// 	)
-		// }
 
 		ctrl += fmt.Sprintf(`
 			<!-- label must be trailing sibling to input[range] -->
@@ -659,24 +610,15 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 }
 
 /*
-	example
+rangeLabels renders HTML for ticks and tick-labels;
+based on an encoding in DynamicFuncParamset.
 
-	<div class="labels" aria-hidden="true"
-		><span
-			style="--i: 0"  ><6&nbsp;&nbsp;</span><span
-			style="--i: 2"  >6</span><span
-			style="--i: 4"  >9</span><span
-			style="--i: 6"  >12</span><span
-			style="--i: 8"  >15</span><span
-			style="--i: 10" >18</span><span
-			style="--i: 12">&nbsp;&nbsp;>18</span></div>
-
-`
+[CSS-class -- [step:label];[step:label];...]
 */
 func (inp *inputT) rangeLabels() string {
 
-	xs := []float64{}
-	ys := []string{}
+	xs := []float64{}  // range steps, where ticks should appear
+	lbls := []string{} // the tick-label; can be empty
 
 	if inp.DynamicFuncParamset != "" {
 
@@ -689,37 +631,100 @@ func (inp *inputT) rangeLabels() string {
 			pair := strings.Split(pairStr, ":")
 			x1, _ := strconv.Atoi(pair[0])
 			xs = append(xs, float64(x1))
-			ys = append(ys, pair[1])
+			lbls = append(lbls, pair[1])
 		}
 
-		if parts[0] == "1" {
-			// log.Printf("   xs %+v", xs)
-			// log.Printf("   ys %+v", ys)
+		// if parts[0] == "1" {
+		// 	// log.Printf("   xs %+v", xs)
+		// 	// log.Printf("   ys %+v", ys)
+		// }
+
+	}
+
+	// prelimin
+	ws1 := []float64{} // widths delta, first element 0, adding up to 1.000
+	{
+		xsPrelim := make([]float64, len(xs))
+		copy(xsPrelim, xs)
+
+		ws0 := []float64{} // widths based on zero
+		for x := inp.Min; x <= inp.Max; x += inp.Step {
+			// check if current step x has a label assigned xs[0]
+			if len(xsPrelim) > 0 && x == xsPrelim[0] {
+				xsPrelim = xsPrelim[1:] // chop off leading ticks
+				ws0 = append(ws0, x-inp.Min)
+			}
 		}
+		// log.Printf("   w1: %+v", ws0)
+		for i := 0; i < len(ws0); i++ {
+			ws0[i] = ws0[i] / (inp.Max - inp.Min)
+		}
+		// log.Printf("   w2: %+v", ws0)
+
+		// deltas
+		// we need a new slice, because looking back one step
+		// otherwise points to values delta-ficated
+		sum := 0.0
+		for i := 0; i < len(ws0); i++ {
+			delta := ws0[i]
+			if i > 0 {
+				delta = ws0[i] - ws0[i-1]
+			}
+			ws1 = append(ws1, delta)
+			sum += delta
+		}
+		// log.Printf("   w3: %+v - sum %v", ws1, sum)
+
+		ws1 = ws1[1:] // chop off the leading zero
 
 	}
 
 	core := &strings.Builder{}
 
-	itr := -2
-	for x := inp.Min; x <= inp.Max; x += inp.Step {
+	itr1 := -2
+	itr2 := -1
 
-		// if itr%2 == 1 && x != inp.Max {
-		// 	continue // only even
-		// }
+	for stp := inp.Min; stp <= inp.Max; stp += inp.Step {
 
-		// log.Printf("    cmp %v %v itr %v", x, xs[0], itr)
-		if len(xs) > 0 && x == xs[0] {
+		// check if current step should have a tick in xs[0]
+		if len(xs) > 0 && stp == xs[0] {
 
-			itr++
-			itr++
+			itr1++
+			itr1++
 
-			y := ys[0]
-			fmt.Fprintf(core, `<span 
-				style="--i: %v"  >%v</span>`, itr, y)
+			itr2++
 
-			xs = xs[1:]
-			ys = ys[1:]
+			lbl := lbls[0]
+			// label - width 0
+			fmt.Fprintf(
+				core,
+				`<span class='lbl-anchor'><span class='lbl'>%v</span></span>`,
+				lbl,
+			)
+
+			// a width block with class 'tick'
+			// 'first' has borders left+right; all others have border-right
+			if len(ws1) > 0 {
+
+				pct := 100 * ws1[0]
+				pct = math.Floor(pct*100) / 100 // round *down* two digits after decimal separator
+
+				tickClass := " class='tick' "
+				if itr2 == 0 {
+					tickClass = " class='tick first' "
+				}
+
+				fmt.Fprintf(
+					core,
+					`<span %v style="width: %v%%" ></span>`,
+					tickClass,
+					fmt.Sprintf("%6.2f", pct), // percentage width
+				)
+
+				xs = xs[1:]     // chop off leading ticks
+				lbls = lbls[1:] // ... and labels
+				ws1 = ws1[1:]
+			}
 
 		}
 

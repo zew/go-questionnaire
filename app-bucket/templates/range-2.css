@@ -42,12 +42,13 @@
             (each a <percentage> or a <length>).
     */
     background-image: repeating-linear-gradient(
-        90deg,
-        var(--clr-inp-border) 0,
-        var(--clr-inp-border) 2px,
-        transparent 0,
-        transparent var(--range-02-tick-cx)
+            90deg,
+            var(--clr-inp-border) 0,
+            var(--clr-inp-border) 2px,
+            transparent 0,
+            transparent calc(2*var(--range-02-tick-cx))
     );
+    background-image: none;
 
     background-repeat: no-repeat;
 
@@ -165,23 +166,64 @@
 
 /* labels envelope */
 .input-wrapper-signature-2 .labels {
+
     position: absolute;
-    bottom: 0.15em;
-    left: 0.75em;
+    bottom: -0.1em;    
+    
+    width:  calc(100%  - var(--range-thumbsize));
+    left:   calc(    0.5*var(--range-thumbsize));
+    height: 0.7em; /* must be below the thumb; in conjunction with bottom */
+
+    /* background-color: transparent; */
 }
 
 /* labels single elements - positioning */
-.input-wrapper-signature-2 .labels span {
-    position: absolute;
-    left: calc(var(--i)* var(--range-02-tick-cx));
-    /* vertically centered; font-size reduced */
-    transform: translate(-50%) scale(0.9);
+.input-wrapper-signature-2 .labels span.tick { 
+    display: block;
+    float:   left;
+
+    height: 0.4em;
+
+    /* transform: translate(-50%) scale(0.9); */
+    background-color: lightgray;
+    background-color: transparent;
+
+    text-align: center;
+
+    border-right: 3px solid greenyellow;
+    border-right: 1px solid #444;
 }
 
-/* labels single elements - stronger selection */
-.input-wrapper-signature-2 [type=range]~label span {
+.input-wrapper-signature-2 .labels span.first { 
+    border-left:  3px solid darkgreen;
+    border-left: 1px solid #444;
+}
+
+/* labels */
+.input-wrapper-signature-2 [type=range]~label span.lbl-anchor {
+    display: block;
+    float: left;
+    /* dont disturb the range span;
+        good, that the text is still rendered
+    */
+    width: 0px;
+    position: relative; /* anchor for child span.lbl */
+}
+
+.input-wrapper-signature-2 [type=range]~label span.lbl {
+    position: absolute; /* origin to lbl-anchor */
+
+    display: inline-block;
+
+    height: 0.4em; /* only as base for translatey below */
+
     font-weight: normal;
     color: var(--clr-fg);
+    text-align: center;
+
+
+    transform: translatex(-50%) translatey(66%) scale(0.85);     
+
 }
 
 

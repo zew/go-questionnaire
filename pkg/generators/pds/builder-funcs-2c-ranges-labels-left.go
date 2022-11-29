@@ -48,7 +48,7 @@ var placeHolderMillion = trl.S{
 	"de": "Millionen Euro",
 }
 
-func slidersPctRowLabelsLeft(
+func rangesRowLabelsLeft(
 	page *qst.WrappedPageT,
 	inputName string,
 	lbl trl.S,
@@ -78,10 +78,8 @@ func slidersPctRowLabelsLeft(
 				inp.Label = ttLbl
 			}
 			inp.LabelVertical()
-			// label left
-			inp.StyleLbl.Desktop.StyleGridItem.JustifySelf = "start"
-			inp.StyleLbl.Desktop.StyleText.AlignHorizontal = "left"
-			inp.StyleLbl.Desktop.StyleText.FontSize = 90
+
+			inp.StyleLbl = trancheNameStyle
 		}
 
 		// row1

@@ -190,20 +190,50 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		page.WidthMax("42rem")
 		page.WidthMax("64rem")
 
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 1
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{
+					"de": `Sliders:
+							Scales partly incomplete; <br> 
+							Ticks without label missing; <br> 
+							no display on return; <br> 
+							which scales point to intervals, which to scalars? <br>
+							Alignment of tranch names imperfect. <br>
+						`,
+					"en": `Sliders: 
+							Scales partly incomplete; <br> 
+							Ticks without label missing; <br> 
+							no display on return; <br> 
+							which scales point to intervals, which to scalars? <br>
+							Alignment of tranch names imperfect. <br>
+						`,
+				}
+				inp.ColSpan = 1
+				inp.ColSpanLabel = 1
+			}
+
+		}
+
 		restrictedTextMultiCols(qst.WrapPageT(page), rT1)
 
 		lblDuration := trl.S{
 			"en": "Average time to close a deal in weeks",
 			"de": "Durchschnittl. Zeit bis Abschluss in Wochen",
 		}.Outline("b.)")
-		slidersPctRowLabelsLeft(
+		rangesRowLabelsLeft(
 			qst.WrapPageT(page),
 			"closing_time",
 			lblDuration,
 			sliderWeeksClosing,
 		)
 
-		chapter3(
+		radiosLabelsTop(
 			qst.WrapPageT(page),
 			"closing_time2",
 			trl.S{
@@ -225,7 +255,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"de": `<bb>Share ESG KPIs</bb> <br>
 					<span class=font-size-90 >What is the share of new deals (at fair market value) with explicit ESG targets in the credit documentation? </span>`,
 		}.Outline("f.)")
-		slidersPctRowLabelsLeft(
+		rangesRowLabelsLeft(
 			qst.WrapPageT(page),
 			"esg",
 			shareESG,
@@ -238,7 +268,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"de": `<bb>Share ESG ratchets</bb> <br> 
 					<span class=font-size-90 >What is the share of new deals (at fair market value) with ESG ratchets? </span>`,
 		}.Outline("g.)")
-		slidersPctRowLabelsLeft(
+		rangesRowLabelsLeft(
 			qst.WrapPageT(page),
 			"esgratch",
 			shareESGRatch,
@@ -251,7 +281,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			"de": `<bb>Share 1.5°C target</bb> <br> 
 					<span class=font-size-90 >What is the share of new deals (at fair market value) where the creditor explicitly states a strategy to add to the 1.5°C target? </span>`,
 		}.Outline("h.)")
-		slidersPctRowLabelsLeft(
+		rangesRowLabelsLeft(
 			qst.WrapPageT(page),
 			"esg15degrees",
 			share15Degree,
@@ -282,17 +312,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			gr := page.AddGroup()
 			gr.Cols = 1
 			gr.BottomVSpacers = 1
-
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.Label = trl.S{
-					"de": "Slider ticks and values not yet set",
-					"en": "Slider ticks and values not yet set",
-				}
-				inp.ColSpan = 1
-				inp.ColSpanLabel = 1
-			}
 
 			{
 				inp := gr.AddInput()
@@ -488,7 +507,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			page13Types,
 			page13Lbls,
 			[]*rangeConf{
-				&sliderPctThreeTen, // unused
+				nil, // unused
 				&sliderYearsZeroTen,
 				&sliderEBITDA2x10x,
 				&sliderPctThreeTen, // todo
@@ -855,7 +874,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				}
 			}
 
-			chapter3(
+			radiosLabelsTop(
 				qst.WrapPageT(page),
 				inpName+"_past3m",
 				trl.S{
@@ -864,7 +883,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				}.Outline("a.)"),
 				mCh4,
 			)
-			chapter3(
+			radiosLabelsTop(
 				qst.WrapPageT(page),
 				inpName+"_next3m",
 				trl.S{
@@ -1138,7 +1157,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp := gr.AddInput()
 				inp.Name = "range01"
 				inp.Type = "range"
-				inp.DynamicFuncParamset = "1"
+				inp.DynamicFuncParamset = `3--0:0;20:20;40:40;60:60;80:80;100:100`
 
 				inp.Min = 0
 				inp.Max = 100
@@ -1159,43 +1178,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.ColSpanLabel = 2
 				inp.ColSpanControl = 8
 			}
-			/* 			{
-			   				inp := gr.AddInput()
-			   				inp.Name = "range01_display"
-			   				inp.Type = "text"
-			   				inp.MaxChars = 8
-			   				inp.ColSpan = 2
-			   				inp.ColSpanLabel = 0
-			   				inp.ColSpanControl = 1
-
-			   				inp.Style = css.NewStylesResponsive(inp.Style)
-			   				inp.Style.Desktop.StyleBox.Position = "relative"
-			   				inp.Style.Desktop.StyleBox.Top = "0.58rem"
-			   				inp.Style.Desktop.StyleBox.Left = "0.58rem"
-			   			}
-			   			{
-			   				inp := gr.AddInput()
-			   				inp.Name = "range01_noanswer"
-			   				inp.Type = "radio"
-			   				inp.ColSpan = 2
-			   				inp.Label = trl.S{
-			   					"de": "nicht verfügb.",
-			   					"en": "no answer",
-			   				}
-			   				inp.ValueRadio = "xx"
-			   				inp.ColSpanLabel = 1
-			   				inp.ColSpanControl = 1
-
-			   				// inp.ControlTop()
-			   				// inp.ControlBottom()
-
-			   				inp.StyleCtl = css.NewStylesResponsive(inp.StyleCtl)
-			   				inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
-
-			   				inp.StyleCtl.Desktop.StyleGridItem.Col = "auto/1"
-			   				inp.StyleLbl.Desktop.StyleGridItem.Col = "auto/1"
-			   			}
-			*/
 			{
 				inp := gr.AddInput()
 				inp.ColSpanControl = 1

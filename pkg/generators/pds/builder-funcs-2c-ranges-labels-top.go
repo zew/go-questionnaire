@@ -21,15 +21,16 @@ var sliderWeeksClosing = rangeConf{
 	Step:   3,
 	Suffix: suffixWeeks,
 	// RangeType: `1--3:<6;6:6;9:9;12:12;15:15;18:18;21:>18`,
-	RangeType: `1--3:<6;6:6;12:12;18:18;21:>18`,
+	RangeType: `1--3:<6;6:6;9: ;12:12;15: ;18:18;21:>18`,
 }
 
 var sliderPctZeroHundredMiddle = rangeConf{
-	Min:       0,
-	Max:       100,
-	Step:      5,
-	Suffix:    suffixPercent,
-	RangeType: `2--0:0;20:20;40:40;60:60;80:80;100:100`,
+	Min:    0,
+	Max:    100,
+	Step:   5,
+	Suffix: suffixPercent,
+	// RangeType: `2--0:0;20:20;40:40;60:60;80:80;100:100`,
+	RangeType: `2--0:0;25:25;50:50;75:75;100:100`,
 }
 var sliderPctZeroHundredWide = rangeConf{
 	Min:       0,
@@ -95,7 +96,7 @@ var sliderEBITDA2x10x = rangeConf{
 	RangeType: `3--2:2;4:4;6:6;8:8;10:10`,
 }
 
-func slidersPctRowLabelsTop(
+func rangesRowLabelsTop(
 	page *qst.WrappedPageT,
 	inputName string,
 	lbl trl.S,
@@ -155,8 +156,7 @@ func slidersPctRowLabelsTop(
 				inp.LabelCenter()
 				inp.Vertical()
 
-				inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
-				inp.StyleLbl.Desktop.StyleText.FontSize = 95
+				inp.StyleLbl = trancheNameStyle
 
 				inp.Style = css.NewStylesResponsive(inp.Style)
 				inp.Style.Desktop.StyleBox.Margin = "0 1.4rem 0 1.4rem"

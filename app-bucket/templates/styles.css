@@ -696,6 +696,15 @@ input:not([type=submit]):focus:invalid
 }
 
 input:disabled, select:disabled {
+    /* repeating-linear-gradient simply does not look as good */
+    /* 
+        background-image: repeating-linear-gradient(
+            135deg,
+            lightgray 0,
+            transparent  1px,
+            transparent  4px
+        );
+    */
     background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIklEQVQIW2NkQAKrVq36zwjjgzhhYWGMYAEYB8RmROaABADeOQ8CXl/xfgAAAABJRU5ErkJggg==) repeat;
 }
 

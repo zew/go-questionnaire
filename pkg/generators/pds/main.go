@@ -199,19 +199,23 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp := gr.AddInput()
 				inp.Type = "textblock"
 				inp.Label = trl.S{
-					"de": `Sliders:
-							Scales partly incomplete; <br> 
-							Ticks without label missing; <br> 
-							no display on return; <br> 
-							which scales point to intervals, which to scalars? <br>
+					"en": `
 							Alignment of tranch names imperfect. <br>
+						Sliders:
+							Scales incomplete; ticks without label missing; <br> 
+							Which scales point to intervals, which to scalars? Extra column in Excel spec?<br>
+							Width of display too narrow<br>
+							Alignment is now for scalars, not for intervals, display shows interval.<br>
+							Hiding thumb on init and on 'no answer' if technically possible.
 						`,
-					"en": `Sliders: 
-							Scales partly incomplete; <br> 
-							Ticks without label missing; <br> 
-							no display on return; <br> 
-							which scales point to intervals, which to scalars? <br>
+					"de": `
 							Alignment of tranch names imperfect. <br>
+						Sliders:
+							Scales incomplete; ticks without label missing; <br> 
+							Which scales point to intervals, which to scalars? Extra column in Excel spec?<br>
+							Width of display too narrow<br>
+							Alignment is now for scalars, not for intervals, display shows interval.<br>
+							Hiding thumb on init and on 'no answer' if technically possible.
 						`,
 				}
 				inp.ColSpan = 1
@@ -237,8 +241,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			qst.WrapPageT(page),
 			"closing_time2",
 			trl.S{
-				"en": "Alternative visualisation using radios",
-				"de": "Alternative visualisation using radios",
+				"en": "Alternative visualisation using radios; <br> or vertical?",
+				"de": "Alternative visualisation using radios; <br> or vertical?",
 			}.Outline("b.)"),
 			mCh5,
 		)
@@ -345,51 +349,51 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			{
 				"en": `
 					Margin (over 3m Euribor) <br>
-					<span class=font-size-90 >Average Cash Margin (only relevant for floating rate loans)</span>`,
+					<span class=font-size-90 >average Cash margin (only relevant for floating rate loans)</span>`,
 				"de": `
 					Margin (over 3m Euribor) <br>
-					<span class=font-size-90 >Average Cash Margin (only relevant for floating rate loans)</span>`,
+					<span class=font-size-90 >average Cash margin (only relevant for floating rate loans)</span>`,
 			},
 			{
 				"en": `
 					Interest floor <br>
-					<span class=font-size-90 >Average interest floor (only relevant for floating rate loans)</span>`,
+					<span class=font-size-90 >average Interest floor (only relevant for floating rate loans)</span>`,
 				"de": `
 					Interest floor <br>
-					<span class=font-size-90 >Average interest floor (only relevant for floating rate loans)</span>`,
+					<span class=font-size-90 >average Interest floor (only relevant for floating rate loans)</span>`,
 			},
 			{
 				"en": `
 					Upfront fee <br>
-					<span class=font-size-90 >Average upfront fee (percent of loan value)</span>`,
+					<span class=font-size-90 >average Upfront fee (percent of loan value)</span>`,
 				"de": `
 					Upfront fee <br>
-					<span class=font-size-90 >Average upfront fee (percent of loan value)</span>`,
+					<span class=font-size-90 >average Upfront fee (percent of loan value)</span>`,
 			},
 
 			{
 				"en": `
-					Fixed Rate Coupon <br>
+					Fixed rate coupon <br>
 					<span class=font-size-90 > Average fixed rate coupon (only relevant for fixed rate loans) </span>`,
 				"de": `
-					Fixed Rate Coupon <br>
+					Fixed rate coupon <br>
 					<span class=font-size-90 > Average fixed rate coupon (only relevant for fixed rate loans) </span>`,
 			},
 			{
 				"en": `
 					 Expected IRR <br>
-					<span class=font-size-90 > Average expected IRR  </span>`,
+					<span class=font-size-90 > Average expected irr  </span>`,
 				"de": `
 					 Expected IRR <br>
-					<span class=font-size-90 > Average expected IRR  </span>`,
+					<span class=font-size-90 > Average expected irr  </span>`,
 			},
 			{
 				"en": `
-					Share of Floating Rate Debt <br>
-					<span class=font-size-90 > Share of Floating Rate Debt </span>`,
+					Share of floating rate debt <br>
+					<span class=font-size-90 > Share of floating rate debt </span>`,
 				"de": `
-					Share of Floating Rate Debt <br>
-					<span class=font-size-90 > Share of Floating Rate Debt </span>`,
+					Share of floating rate debt <br>
+					<span class=font-size-90 > Share of floating rate debt </span>`,
 			},
 		}
 
@@ -473,10 +477,10 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			{
 				"en": `
 					 Average EBITDA <br>
-					<span class=font-size-90 > Average EBITDA of companies </span>`,
+					<span class=font-size-90 > Average EBITDA of companies ; todo: Einrasten auf 10 über 50  </span>`,
 				"de": `
 					 Average EBITDA <br>
-					<span class=font-size-90 > Average EBITDA of companies </span>`,
+					<span class=font-size-90 > Average EBITDA of companies ; todo: Einrasten auf 10 über 50  </span>`,
 			},
 			{
 				"en": `
@@ -510,9 +514,9 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				nil, // unused
 				&sliderYearsZeroTen,
 				&sliderEBITDA2x10x,
-				&sliderPctThreeTen, // todo
-				&sliderPctThreeTen, // todo
-				&sliderPctThreeTen, // todo
+				&sliderEBITDAZeroHundred,
+				&sliderEVZeroFiveHundred,
+				&sliderPctZeroHundredWide,
 			},
 		)
 
@@ -590,10 +594,10 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			page14Types,
 			page14Lbls,
 			[]*rangeConf{
-				&sliderPctThreeTen,
-				&sliderPctThreeTen,
-				&sliderPctThreeTen,
-				&sliderPctThreeTen,
+				nil,
+				&sliderYearsZeroTen,
+				&sliderPctThreeTwentyfive,
+				&sliderOneOnePointFive,
 			},
 		)
 
@@ -673,12 +677,11 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			page21Types,
 			page21Lbls,
 			[]*rangeConf{
-				&sliderPctZeroHundredWide,
-				&sliderPctZeroHundredWide,
-				&sliderPctZeroHundredWide,
-				&sliderPctZeroHundredWide,
-				&sliderPctZeroHundredWide,
-				&sliderPctZeroHundredWide,
+				nil,
+				nil,
+				nil,
+				nil,
+				nil,
 			},
 		)
 
@@ -798,11 +801,11 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			page23Types,
 			page23Lbls,
 			[]*rangeConf{
+				nil,
 				&sliderPctZeroHundredWide,
 				&sliderPctZeroHundredWide,
 				&sliderPctZeroHundredWide,
-				&sliderPctZeroHundredWide,
-				&sliderPctZeroHundredWide,
+				nil,
 				&sliderPctZeroHundredWide,
 				&sliderPctZeroHundredWide,
 				&sliderPctZeroHundredWide,
@@ -1178,15 +1181,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.ColSpanLabel = 2
 				inp.ColSpanControl = 8
 			}
-			{
-				inp := gr.AddInput()
-				inp.ColSpanControl = 1
-				inp.Type = "javascript-block"
-				inp.Name = "range"
-
-				inp.JSBlockStrings = map[string]string{}
-				inp.JSBlockStrings["inputName"] = "range01" // as above
-			}
 
 		}
 
@@ -1285,7 +1279,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.ColSpanControl = 6
 				inp.Validator = "must"
 				inp.Label = trl.S{
-					"de": `
+					"en": `
 						<b>Einwilligungserklärung gemäß DSGVO</b>
 
 						<br>
@@ -1300,10 +1294,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 						<br>
 
 						Hiermit willige ich ein, dass meine gesammelten Daten 
-						für die Marktstudie Impact Investing in Deutschland 2022 
-						der Bundesinitiative Impact Investing verwendet werden.
+						für [Private Debt Survey] des [ZEW] verwendet werden.
 
-						<br>
 						<br>
 
 					`,
@@ -1322,13 +1314,13 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					"en": `Ich erkläre mich einverstanden, 
 					dass meine angegebenen personenbezogenen Daten 
 					genutzt werden 
-					und zu Auswertungszwecken an die [the_partner] 
+					und zu Auswertungszwecken an [partner_1] 
 					weitergeleitet werden.
 					`,
 					"de": `Ich erkläre mich einverstanden, 
 					dass meine angegebenen personenbezogenen Daten 
 					genutzt werden 
-					und zu Auswertungszwecken an die [the_partner] 
+					und zu Auswertungszwecken an [partner_1] 
 					weitergeleitet werden.
 					`,
 				},
@@ -1338,21 +1330,21 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					dass meine angegebenen personenbezogenen Daten 
 					<i>anonymisiert</i> 
 					zu Auswertungszwecken 
-					an die [the_partner] weitergeleitet werden.				
+					an [partner_1] weitergeleitet werden.				
 					`,
 					"de": `Ich erkläre mich einverstanden, 
 					dass meine angegebenen personenbezogenen Daten 
 					<i>anonymisiert</i> 
 					zu Auswertungszwecken 
-					an die [the_partner] weitergeleitet werden.				
+					an [partner_1] weitergeleitet werden.				
 					`,
 				},
 
 				{
-					"en": `Meine Daten sollen nicht an [the_partner] 
+					"en": `Meine Daten sollen <i>nicht</i> an [partner_1] 
 					weitergeleitet werden.
 					`,
-					"de": `Meine Daten sollen nicht an [the_partner] 
+					"de": `Meine Daten sollen <i>nicht</i> an [partner_1] 
 					weitergeleitet werden.
 					`,
 				},
@@ -1370,26 +1362,25 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.Label = trl.S{
 					"en": `
 					<br>
-					<b>Weitergabe meiner Daten [partner2]</b> 
+					<b>Weitergabe meiner Daten an [partner_2]</b> 
 					<br>
 					
 					<p>
 						Mit Ihrer Einwilligung würden wir mit den im Rahmen dieser Erhebung 
-						gesammelten Daten gerne auch zu einer europaweiten 
-						Studie mit [partner2] beitragen. 
+						gesammelten Daten gerne auch zu [partner_2] beitragen. 
 						<br>
 					</p>
 					
 					`,
 					"de": `
 					<br>
-					<b>Weitergabe meiner Daten [partner2]</b> 
+					<b>Weitergabe meiner Daten an [partner_2]</b> 
 					<br>
 					
 					<p>
 						Mit Ihrer Einwilligung würden wir mit den im Rahmen dieser Erhebung 
 						gesammelten Daten gerne auch zu einer europaweiten 
-						Studie mit [partner2] beitragen. 						
+						Studie mit [partner_2] beitragen. 						
 						<br>
 					</p>
 					

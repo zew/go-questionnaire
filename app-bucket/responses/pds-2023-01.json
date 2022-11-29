@@ -18,7 +18,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "53042bfa11294abc0b27f57b785020b20985126ee8531aef483c8d0c041a2502",
+ 	"md_5": "bb259c40ec73ab0c22aec726df4df0fdacbee2bc1cfcb2235e1d0e25a81ff5c3",
  	"lang_codes": [
  		"en"
  	],
@@ -674,7 +674,7 @@
  							"type": "checkbox",
  							"label": {
  								"de": "Real estate debt",
- 								"en": "Real estate debt - made available in Q2 23?"
+ 								"en": "Real estate debt - starting Q1-23?"
  							},
  							"col_span": 5,
  							"col_span_label": 1,
@@ -857,7 +857,7 @@
  							"type": "checkbox",
  							"label": {
  								"de": "Infrastructure debt",
- 								"en": "Infrastructure debt - made available in Q2 23?"
+ 								"en": "Infrastructure debt - starting Q1-23?"
  							},
  							"col_span": 5,
  							"col_span_label": 1,
@@ -1097,8 +1097,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Sliders:\n\t\t\t\t\t\t\tScales partly incomplete; \u003cbr\u003e \n\t\t\t\t\t\t\tTicks without label missing; \u003cbr\u003e \n\t\t\t\t\t\t\tno display on return; \u003cbr\u003e \n\t\t\t\t\t\t\twhich scales point to intervals, which to scalars? \u003cbr\u003e\n\t\t\t\t\t\t\tAlignment of tranch names imperfect. \u003cbr\u003e\n\t\t\t\t\t\t",
- 								"en": "Sliders: \n\t\t\t\t\t\t\tScales partly incomplete; \u003cbr\u003e \n\t\t\t\t\t\t\tTicks without label missing; \u003cbr\u003e \n\t\t\t\t\t\t\tno display on return; \u003cbr\u003e \n\t\t\t\t\t\t\twhich scales point to intervals, which to scalars? \u003cbr\u003e\n\t\t\t\t\t\t\tAlignment of tranch names imperfect. \u003cbr\u003e\n\t\t\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\t\tAlignment of tranch names imperfect. \u003cbr\u003e\n\t\t\t\t\t\tSliders:\n\t\t\t\t\t\t\tScales incomplete; ticks without label missing; \u003cbr\u003e \n\t\t\t\t\t\t\tWhich scales point to intervals, which to scalars? Extra column in Excel spec?\u003cbr\u003e\n\t\t\t\t\t\t\tWidth of display too narrow\u003cbr\u003e\n\t\t\t\t\t\t\tAlignment is now for scalars, not for intervals, display shows interval.\u003cbr\u003e\n\t\t\t\t\t\t\tHiding thumb on init and on 'no an\u0026shy;swer' if technically possible.\n\t\t\t\t\t\t",
+ 								"en": "\n\t\t\t\t\t\t\tAlignment of tranch names imperfect. \u003cbr\u003e\n\t\t\t\t\t\tSliders:\n\t\t\t\t\t\t\tScales incomplete; ticks without label missing; \u003cbr\u003e \n\t\t\t\t\t\t\tWhich scales point to intervals, which to scalars? Extra column in Excel spec?\u003cbr\u003e\n\t\t\t\t\t\t\tWidth of display too narrow\u003cbr\u003e\n\t\t\t\t\t\t\tAlignment is now for scalars, not for intervals, display shows interval.\u003cbr\u003e\n\t\t\t\t\t\t\tHiding thumb on init and on 'no an\u0026shy;swer' if technically possible.\n\t\t\t\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -1875,8 +1875,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eb.)\u003c/b\u003e \u0026nbsp; Alternative visualisation using radios",
- 								"en": "\u003cb\u003eb.)\u003c/b\u003e \u0026nbsp; Alternative visualisation using radios"
+ 								"de": "\u003cb\u003eb.)\u003c/b\u003e \u0026nbsp; Alternative visualisation using radios; \u003cbr\u003e or vertical?",
+ 								"en": "\u003cb\u003eb.)\u003c/b\u003e \u0026nbsp; Alternative visualisation using radios; \u003cbr\u003e or vertical?"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -6939,8 +6939,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003ea.)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tMargin (over 3m Euribor) \u003cbr\u003e\n\t\t\t\t\t\u003cspan class=font-size-90 \u003eAv\u0026shy;er\u0026shy;age Cash Margin (only re\u0026shy;le\u0026shy;vant for floating rate loans)\u003c/span\u003e",
- 								"en": "\u003cb\u003ea.)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tMargin (over 3m Euribor) \u003cbr\u003e\n\t\t\t\t\t\u003cspan class=font-size-90 \u003eAv\u0026shy;er\u0026shy;age Cash Margin (only re\u0026shy;le\u0026shy;vant for floating rate loans)\u003c/span\u003e"
+ 								"de": "\u003cb\u003ea.)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tMargin (over 3m Euribor) \u003cbr\u003e\n\t\t\t\t\t\u003cspan class=font-size-90 \u003eav\u0026shy;er\u0026shy;age Cash margin (only re\u0026shy;le\u0026shy;vant for floating rate loans)\u003c/span\u003e",
+ 								"en": "\u003cb\u003ea.)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tMargin (over 3m Euribor) \u003cbr\u003e\n\t\t\t\t\t\u003cspan class=font-size-90 \u003eav\u0026shy;er\u0026shy;age Cash margin (only re\u0026shy;le\u0026shy;vant for floating rate loans)\u003c/span\u003e"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -7215,8 +7215,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eb.)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tInterest floor \u003cbr\u003e\n\t\t\t\t\t\u003cspan class=font-size-90 \u003eAv\u0026shy;er\u0026shy;age interest floor (only re\u0026shy;le\u0026shy;vant for floating rate loans)\u003c/span\u003e",
- 								"en": "\u003cb\u003eb.)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tInterest floor \u003cbr\u003e\n\t\t\t\t\t\u003cspan class=font-size-90 \u003eAv\u0026shy;er\u0026shy;age interest floor (only re\u0026shy;le\u0026shy;vant for floating rate loans)\u003c/span\u003e"
+ 								"de": "\u003cb\u003eb.)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tInterest floor \u003cbr\u003e\n\t\t\t\t\t\u003cspan class=font-size-90 \u003eav\u0026shy;er\u0026shy;age Interest floor (only re\u0026shy;le\u0026shy;vant for floating rate loans)\u003c/span\u003e",
+ 								"en": "\u003cb\u003eb.)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tInterest floor \u003cbr\u003e\n\t\t\t\t\t\u003cspan class=font-size-90 \u003eav\u0026shy;er\u0026shy;age Interest floor (only re\u0026shy;le\u0026shy;vant for floating rate loans)\u003c/span\u003e"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -7259,7 +7259,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "3--0:0;0.5:0.5;1:1;1.5:1.5;2:2",
+ 							"dynamic_func_paramset": "3--0:0;1:1;2:2",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -7318,7 +7318,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "3--0:0;0.5:0.5;1:1;1.5:1.5;2:2",
+ 							"dynamic_func_paramset": "3--0:0;1:1;2:2",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -7377,7 +7377,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "3--0:0;0.5:0.5;1:1;1.5:1.5;2:2",
+ 							"dynamic_func_paramset": "3--0:0;1:1;2:2",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -7436,7 +7436,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "3--0:0;0.5:0.5;1:1;1.5:1.5;2:2",
+ 							"dynamic_func_paramset": "3--0:0;1:1;2:2",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -7487,8 +7487,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003ec.)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tUpfront fee \u003cbr\u003e\n\t\t\t\t\t\u003cspan class=font-size-90 \u003eAv\u0026shy;er\u0026shy;age upfront fee (per\u0026shy;cent of loan value)\u003c/span\u003e",
- 								"en": "\u003cb\u003ec.)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tUpfront fee \u003cbr\u003e\n\t\t\t\t\t\u003cspan class=font-size-90 \u003eAv\u0026shy;er\u0026shy;age upfront fee (per\u0026shy;cent of loan value)\u003c/span\u003e"
+ 								"de": "\u003cb\u003ec.)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tUpfront fee \u003cbr\u003e\n\t\t\t\t\t\u003cspan class=font-size-90 \u003eav\u0026shy;er\u0026shy;age Upfront fee (per\u0026shy;cent of loan value)\u003c/span\u003e",
+ 								"en": "\u003cb\u003ec.)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tUpfront fee \u003cbr\u003e\n\t\t\t\t\t\u003cspan class=font-size-90 \u003eav\u0026shy;er\u0026shy;age Upfront fee (per\u0026shy;cent of loan value)\u003c/span\u003e"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -7759,8 +7759,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003ed.)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tFixed Rate Coupon \u003cbr\u003e\n\t\t\t\t\t\u003cspan class=font-size-90 \u003e Av\u0026shy;er\u0026shy;age fixed rate coupon (only re\u0026shy;le\u0026shy;vant for fixed rate loans) \u003c/span\u003e",
- 								"en": "\u003cb\u003ed.)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tFixed Rate Coupon \u003cbr\u003e\n\t\t\t\t\t\u003cspan class=font-size-90 \u003e Av\u0026shy;er\u0026shy;age fixed rate coupon (only re\u0026shy;le\u0026shy;vant for fixed rate loans) \u003c/span\u003e"
+ 								"de": "\u003cb\u003ed.)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tFixed rate coupon \u003cbr\u003e\n\t\t\t\t\t\u003cspan class=font-size-90 \u003e Av\u0026shy;er\u0026shy;age fixed rate coupon (only re\u0026shy;le\u0026shy;vant for fixed rate loans) \u003c/span\u003e",
+ 								"en": "\u003cb\u003ed.)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tFixed rate coupon \u003cbr\u003e\n\t\t\t\t\t\u003cspan class=font-size-90 \u003e Av\u0026shy;er\u0026shy;age fixed rate coupon (only re\u0026shy;le\u0026shy;vant for fixed rate loans) \u003c/span\u003e"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -8035,8 +8035,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003ee.)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t Expected IRR \u003cbr\u003e\n\t\t\t\t\t\u003cspan class=font-size-90 \u003e Av\u0026shy;er\u0026shy;age expected IRR  \u003c/span\u003e",
- 								"en": "\u003cb\u003ee.)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t Expected IRR \u003cbr\u003e\n\t\t\t\t\t\u003cspan class=font-size-90 \u003e Av\u0026shy;er\u0026shy;age expected IRR  \u003c/span\u003e"
+ 								"de": "\u003cb\u003ee.)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t Expected IRR \u003cbr\u003e\n\t\t\t\t\t\u003cspan class=font-size-90 \u003e Av\u0026shy;er\u0026shy;age expected irr  \u003c/span\u003e",
+ 								"en": "\u003cb\u003ee.)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t Expected IRR \u003cbr\u003e\n\t\t\t\t\t\u003cspan class=font-size-90 \u003e Av\u0026shy;er\u0026shy;age expected irr  \u003c/span\u003e"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -8311,8 +8311,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003ef.)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tShare of Floating Rate Debt \u003cbr\u003e\n\t\t\t\t\t\u003cspan class=font-size-90 \u003e Share of Floating Rate Debt \u003c/span\u003e",
- 								"en": "\u003cb\u003ef.)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tShare of Floating Rate Debt \u003cbr\u003e\n\t\t\t\t\t\u003cspan class=font-size-90 \u003e Share of Floating Rate Debt \u003c/span\u003e"
+ 								"de": "\u003cb\u003ef.)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tShare of floating rate debt \u003cbr\u003e\n\t\t\t\t\t\u003cspan class=font-size-90 \u003e Share of floating rate debt \u003c/span\u003e",
+ 								"en": "\u003cb\u003ef.)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tShare of floating rate debt \u003cbr\u003e\n\t\t\t\t\t\u003cspan class=font-size-90 \u003e Share of floating rate debt \u003c/span\u003e"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -8355,7 +8355,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "3--0:0;20:20;40:40;60:60;80:80;100:100",
+ 							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -8414,7 +8414,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "3--0:0;20:20;40:40;60:60;80:80;100:100",
+ 							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -8473,7 +8473,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "3--0:0;20:20;40:40;60:60;80:80;100:100",
+ 							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -8532,7 +8532,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "3--0:0;20:20;40:40;60:60;80:80;100:100",
+ 							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -10212,8 +10212,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003ed.)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t Av\u0026shy;er\u0026shy;age EBITDA \u003cbr\u003e\n\t\t\t\t\t\u003cspan class=font-size-90 \u003e Av\u0026shy;er\u0026shy;age EBITDA of companies \u003c/span\u003e",
- 								"en": "\u003cb\u003ed.)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t Av\u0026shy;er\u0026shy;age EBITDA \u003cbr\u003e\n\t\t\t\t\t\u003cspan class=font-size-90 \u003e Av\u0026shy;er\u0026shy;age EBITDA of companies \u003c/span\u003e"
+ 								"de": "\u003cb\u003ed.)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t Av\u0026shy;er\u0026shy;age EBITDA \u003cbr\u003e\n\t\t\t\t\t\u003cspan class=font-size-90 \u003e Av\u0026shy;er\u0026shy;age EBITDA of companies ; todo: Einrasten auf 10 über 50  \u003c/span\u003e",
+ 								"en": "\u003cb\u003ed.)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t Av\u0026shy;er\u0026shy;age EBITDA \u003cbr\u003e\n\t\t\t\t\t\u003cspan class=font-size-90 \u003e Av\u0026shy;er\u0026shy;age EBITDA of companies ; todo: Einrasten auf 10 über 50  \u003c/span\u003e"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -10243,21 +10243,20 @@
  						{
  							"name": "st1_ebitda_avg",
  							"type": "range",
- 							"step": 0.5,
- 							"min": 3,
- 							"max": 10,
+ 							"step": 5,
+ 							"max": 100,
  							"label": {
  								"de": "Senior",
  								"en": "Senior"
  							},
  							"suffix": {
- 								"de": "%",
- 								"en": "%"
+ 								"de": "Mio €",
+ 								"en": "mn €"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "3--3:3;5:5;7:7;10:10",
+ 							"dynamic_func_paramset": "3--0:0;5: ;10:10;15: ;20:20;25: ;30:30;35: ;40:40;45: ;50:50;60:60;70:70;80:80;90:90;100:100",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -10303,21 +10302,20 @@
  						{
  							"name": "st2_ebitda_avg",
  							"type": "range",
- 							"step": 0.5,
- 							"min": 3,
- 							"max": 10,
+ 							"step": 5,
+ 							"max": 100,
  							"label": {
  								"de": "Unitranche",
  								"en": "Unitranche"
  							},
  							"suffix": {
- 								"de": "%",
- 								"en": "%"
+ 								"de": "Mio €",
+ 								"en": "mn €"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "3--3:3;5:5;7:7;10:10",
+ 							"dynamic_func_paramset": "3--0:0;5: ;10:10;15: ;20:20;25: ;30:30;35: ;40:40;45: ;50:50;60:60;70:70;80:80;90:90;100:100",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -10363,21 +10361,20 @@
  						{
  							"name": "st3_ebitda_avg",
  							"type": "range",
- 							"step": 0.5,
- 							"min": 3,
- 							"max": 10,
+ 							"step": 5,
+ 							"max": 100,
  							"label": {
  								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
  								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"suffix": {
- 								"de": "%",
- 								"en": "%"
+ 								"de": "Mio €",
+ 								"en": "mn €"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "3--3:3;5:5;7:7;10:10",
+ 							"dynamic_func_paramset": "3--0:0;5: ;10:10;15: ;20:20;25: ;30:30;35: ;40:40;45: ;50:50;60:60;70:70;80:80;90:90;100:100",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -10423,21 +10420,20 @@
  						{
  							"name": "st4_ebitda_avg",
  							"type": "range",
- 							"step": 0.5,
- 							"min": 3,
- 							"max": 10,
+ 							"step": 5,
+ 							"max": 100,
  							"label": {
  								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
  								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"suffix": {
- 								"de": "%",
- 								"en": "%"
+ 								"de": "Mio €",
+ 								"en": "mn €"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "3--3:3;5:5;7:7;10:10",
+ 							"dynamic_func_paramset": "3--0:0;5: ;10:10;15: ;20:20;25: ;30:30;35: ;40:40;45: ;50:50;60:60;70:70;80:80;90:90;100:100",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -10519,21 +10515,20 @@
  						{
  							"name": "st1_ev_avg",
  							"type": "range",
- 							"step": 0.5,
- 							"min": 3,
- 							"max": 10,
+ 							"step": 10,
+ 							"max": 500,
  							"label": {
  								"de": "Senior",
  								"en": "Senior"
  							},
  							"suffix": {
- 								"de": "%",
- 								"en": "%"
+ 								"de": "Mio €",
+ 								"en": "mn €"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "3--3:3;5:5;7:7;10:10",
+ 							"dynamic_func_paramset": "3--0:0;10: ;20: ;30: ;40: ;50: ;60: ;70: ;80: ;90: ;100:100;110: ;120: ;130: ;140: ;150: ;160: ;170: ;180: ;190: ;200:200;210: ;220: ;230: ;240: ;250: ;260: ;270: ;280: ;290: ;300:300;310: ;320: ;330: ;340: ;350: ;360: ;370: ;380: ;390: ;400:400;410: ;420: ;430: ;440: ;450: ;460: ;470: ;480: ;490: ;500:500",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -10579,21 +10574,20 @@
  						{
  							"name": "st2_ev_avg",
  							"type": "range",
- 							"step": 0.5,
- 							"min": 3,
- 							"max": 10,
+ 							"step": 10,
+ 							"max": 500,
  							"label": {
  								"de": "Unitranche",
  								"en": "Unitranche"
  							},
  							"suffix": {
- 								"de": "%",
- 								"en": "%"
+ 								"de": "Mio €",
+ 								"en": "mn €"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "3--3:3;5:5;7:7;10:10",
+ 							"dynamic_func_paramset": "3--0:0;10: ;20: ;30: ;40: ;50: ;60: ;70: ;80: ;90: ;100:100;110: ;120: ;130: ;140: ;150: ;160: ;170: ;180: ;190: ;200:200;210: ;220: ;230: ;240: ;250: ;260: ;270: ;280: ;290: ;300:300;310: ;320: ;330: ;340: ;350: ;360: ;370: ;380: ;390: ;400:400;410: ;420: ;430: ;440: ;450: ;460: ;470: ;480: ;490: ;500:500",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -10639,21 +10633,20 @@
  						{
  							"name": "st3_ev_avg",
  							"type": "range",
- 							"step": 0.5,
- 							"min": 3,
- 							"max": 10,
+ 							"step": 10,
+ 							"max": 500,
  							"label": {
  								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
  								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"suffix": {
- 								"de": "%",
- 								"en": "%"
+ 								"de": "Mio €",
+ 								"en": "mn €"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "3--3:3;5:5;7:7;10:10",
+ 							"dynamic_func_paramset": "3--0:0;10: ;20: ;30: ;40: ;50: ;60: ;70: ;80: ;90: ;100:100;110: ;120: ;130: ;140: ;150: ;160: ;170: ;180: ;190: ;200:200;210: ;220: ;230: ;240: ;250: ;260: ;270: ;280: ;290: ;300:300;310: ;320: ;330: ;340: ;350: ;360: ;370: ;380: ;390: ;400:400;410: ;420: ;430: ;440: ;450: ;460: ;470: ;480: ;490: ;500:500",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -10699,21 +10692,20 @@
  						{
  							"name": "st4_ev_avg",
  							"type": "range",
- 							"step": 0.5,
- 							"min": 3,
- 							"max": 10,
+ 							"step": 10,
+ 							"max": 500,
  							"label": {
  								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
  								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"suffix": {
- 								"de": "%",
- 								"en": "%"
+ 								"de": "Mio €",
+ 								"en": "mn €"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "3--3:3;5:5;7:7;10:10",
+ 							"dynamic_func_paramset": "3--0:0;10: ;20: ;30: ;40: ;50: ;60: ;70: ;80: ;90: ;100:100;110: ;120: ;130: ;140: ;150: ;160: ;170: ;180: ;190: ;200:200;210: ;220: ;230: ;240: ;250: ;260: ;270: ;280: ;290: ;300:300;310: ;320: ;330: ;340: ;350: ;360: ;370: ;380: ;390: ;400:400;410: ;420: ;430: ;440: ;450: ;460: ;470: ;480: ;490: ;500:500",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -10795,9 +10787,8 @@
  						{
  							"name": "st1_share_sponsored_or_not",
  							"type": "range",
- 							"step": 0.5,
- 							"min": 3,
- 							"max": 10,
+ 							"step": 5,
+ 							"max": 100,
  							"label": {
  								"de": "Senior",
  								"en": "Senior"
@@ -10809,7 +10800,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "3--3:3;5:5;7:7;10:10",
+ 							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -10855,9 +10846,8 @@
  						{
  							"name": "st2_share_sponsored_or_not",
  							"type": "range",
- 							"step": 0.5,
- 							"min": 3,
- 							"max": 10,
+ 							"step": 5,
+ 							"max": 100,
  							"label": {
  								"de": "Unitranche",
  								"en": "Unitranche"
@@ -10869,7 +10859,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "3--3:3;5:5;7:7;10:10",
+ 							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -10915,9 +10905,8 @@
  						{
  							"name": "st3_share_sponsored_or_not",
  							"type": "range",
- 							"step": 0.5,
- 							"min": 3,
- 							"max": 10,
+ 							"step": 5,
+ 							"max": 100,
  							"label": {
  								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
  								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
@@ -10929,7 +10918,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "3--3:3;5:5;7:7;10:10",
+ 							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -10975,9 +10964,8 @@
  						{
  							"name": "st4_share_sponsored_or_not",
  							"type": "range",
- 							"step": 0.5,
- 							"min": 3,
- 							"max": 10,
+ 							"step": 5,
+ 							"max": 100,
  							"label": {
  								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
  								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
@@ -10989,7 +10977,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "3--3:3;5:5;7:7;10:10",
+ 							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -11450,20 +11438,19 @@
  							"name": "st1_time_to_maturity",
  							"type": "range",
  							"step": 0.5,
- 							"min": 3,
  							"max": 10,
  							"label": {
  								"de": "Senior",
  								"en": "Senior"
  							},
  							"suffix": {
- 								"de": "%",
- 								"en": "%"
+ 								"de": "Jahre",
+ 								"en": "years"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "3--3:3;5:5;7:7;10:10",
+ 							"dynamic_func_paramset": "3--0:0;2:2;4:4;6:6;8:8;10:10",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -11510,20 +11497,19 @@
  							"name": "st2_time_to_maturity",
  							"type": "range",
  							"step": 0.5,
- 							"min": 3,
  							"max": 10,
  							"label": {
  								"de": "Unitranche",
  								"en": "Unitranche"
  							},
  							"suffix": {
- 								"de": "%",
- 								"en": "%"
+ 								"de": "Jahre",
+ 								"en": "years"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "3--3:3;5:5;7:7;10:10",
+ 							"dynamic_func_paramset": "3--0:0;2:2;4:4;6:6;8:8;10:10",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -11570,20 +11556,19 @@
  							"name": "st3_time_to_maturity",
  							"type": "range",
  							"step": 0.5,
- 							"min": 3,
  							"max": 10,
  							"label": {
  								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
  								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"suffix": {
- 								"de": "%",
- 								"en": "%"
+ 								"de": "Jahre",
+ 								"en": "years"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "3--3:3;5:5;7:7;10:10",
+ 							"dynamic_func_paramset": "3--0:0;2:2;4:4;6:6;8:8;10:10",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -11630,20 +11615,19 @@
  							"name": "st4_time_to_maturity",
  							"type": "range",
  							"step": 0.5,
- 							"min": 3,
  							"max": 10,
  							"label": {
  								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
  								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"suffix": {
- 								"de": "%",
- 								"en": "%"
+ 								"de": "Jahre",
+ 								"en": "years"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "3--3:3;5:5;7:7;10:10",
+ 							"dynamic_func_paramset": "3--0:0;2:2;4:4;6:6;8:8;10:10",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -11727,7 +11711,7 @@
  							"type": "range",
  							"step": 0.5,
  							"min": 3,
- 							"max": 10,
+ 							"max": 25,
  							"label": {
  								"de": "Senior",
  								"en": "Senior"
@@ -11739,7 +11723,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "3--3:3;5:5;7:7;10:10",
+ 							"dynamic_func_paramset": "3--3:3;5:5;10:10;15:15;20:20;25:25",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -11787,7 +11771,7 @@
  							"type": "range",
  							"step": 0.5,
  							"min": 3,
- 							"max": 10,
+ 							"max": 25,
  							"label": {
  								"de": "Unitranche",
  								"en": "Unitranche"
@@ -11799,7 +11783,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "3--3:3;5:5;7:7;10:10",
+ 							"dynamic_func_paramset": "3--3:3;5:5;10:10;15:15;20:20;25:25",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -11847,7 +11831,7 @@
  							"type": "range",
  							"step": 0.5,
  							"min": 3,
- 							"max": 10,
+ 							"max": 25,
  							"label": {
  								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
  								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
@@ -11859,7 +11843,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "3--3:3;5:5;7:7;10:10",
+ 							"dynamic_func_paramset": "3--3:3;5:5;10:10;15:15;20:20;25:25",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -11907,7 +11891,7 @@
  							"type": "range",
  							"step": 0.5,
  							"min": 3,
- 							"max": 10,
+ 							"max": 25,
  							"label": {
  								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
  								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
@@ -11919,7 +11903,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "3--3:3;5:5;7:7;10:10",
+ 							"dynamic_func_paramset": "3--3:3;5:5;10:10;15:15;20:20;25:25",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -12001,21 +11985,21 @@
  						{
  							"name": "st1_gross_moic",
  							"type": "range",
- 							"step": 0.5,
- 							"min": 3,
- 							"max": 10,
+ 							"step": 0.05,
+ 							"min": 1,
+ 							"max": 1.5,
  							"label": {
  								"de": "Senior",
  								"en": "Senior"
  							},
  							"suffix": {
- 								"de": "%",
- 								"en": "%"
+ 								"de": "Mio €",
+ 								"en": "mn €"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "3--3:3;5:5;7:7;10:10",
+ 							"dynamic_func_paramset": "3--1:1;1.5:1.5",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -12061,21 +12045,21 @@
  						{
  							"name": "st2_gross_moic",
  							"type": "range",
- 							"step": 0.5,
- 							"min": 3,
- 							"max": 10,
+ 							"step": 0.05,
+ 							"min": 1,
+ 							"max": 1.5,
  							"label": {
  								"de": "Unitranche",
  								"en": "Unitranche"
  							},
  							"suffix": {
- 								"de": "%",
- 								"en": "%"
+ 								"de": "Mio €",
+ 								"en": "mn €"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "3--3:3;5:5;7:7;10:10",
+ 							"dynamic_func_paramset": "3--1:1;1.5:1.5",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -12121,21 +12105,21 @@
  						{
  							"name": "st3_gross_moic",
  							"type": "range",
- 							"step": 0.5,
- 							"min": 3,
- 							"max": 10,
+ 							"step": 0.05,
+ 							"min": 1,
+ 							"max": 1.5,
  							"label": {
  								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
  								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"suffix": {
- 								"de": "%",
- 								"en": "%"
+ 								"de": "Mio €",
+ 								"en": "mn €"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "3--3:3;5:5;7:7;10:10",
+ 							"dynamic_func_paramset": "3--1:1;1.5:1.5",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -12181,21 +12165,21 @@
  						{
  							"name": "st4_gross_moic",
  							"type": "range",
- 							"step": 0.5,
- 							"min": 3,
- 							"max": 10,
+ 							"step": 0.05,
+ 							"min": 1,
+ 							"max": 1.5,
  							"label": {
  								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
  								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"suffix": {
- 								"de": "%",
- 								"en": "%"
+ 								"de": "Mio €",
+ 								"en": "mn €"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "3--3:3;5:5;7:7;10:10",
+ 							"dynamic_func_paramset": "3--1:1;1.5:1.5",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -16176,7 +16160,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "3--0:0;20:20;40:40;60:60;80:80;100:100",
+ 							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -16235,7 +16219,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "3--0:0;20:20;40:40;60:60;80:80;100:100",
+ 							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -16294,7 +16278,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "3--0:0;20:20;40:40;60:60;80:80;100:100",
+ 							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -16353,7 +16337,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "3--0:0;20:20;40:40;60:60;80:80;100:100",
+ 							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -16448,7 +16432,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "3--0:0;20:20;40:40;60:60;80:80;100:100",
+ 							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -16507,7 +16491,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "3--0:0;20:20;40:40;60:60;80:80;100:100",
+ 							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -16566,7 +16550,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "3--0:0;20:20;40:40;60:60;80:80;100:100",
+ 							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -16625,7 +16609,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "3--0:0;20:20;40:40;60:60;80:80;100:100",
+ 							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -16720,7 +16704,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "3--0:0;20:20;40:40;60:60;80:80;100:100",
+ 							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -16779,7 +16763,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "3--0:0;20:20;40:40;60:60;80:80;100:100",
+ 							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -16838,7 +16822,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "3--0:0;20:20;40:40;60:60;80:80;100:100",
+ 							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -16897,7 +16881,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "3--0:0;20:20;40:40;60:60;80:80;100:100",
+ 							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -17355,7 +17339,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "3--0:0;20:20;40:40;60:60;80:80;100:100",
+ 							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -17414,7 +17398,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "3--0:0;20:20;40:40;60:60;80:80;100:100",
+ 							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -17473,7 +17457,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "3--0:0;20:20;40:40;60:60;80:80;100:100",
+ 							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -17532,7 +17516,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "3--0:0;20:20;40:40;60:60;80:80;100:100",
+ 							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -17627,7 +17611,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "3--0:0;20:20;40:40;60:60;80:80;100:100",
+ 							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -17686,7 +17670,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "3--0:0;20:20;40:40;60:60;80:80;100:100",
+ 							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -17745,7 +17729,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "3--0:0;20:20;40:40;60:60;80:80;100:100",
+ 							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -17804,7 +17788,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "3--0:0;20:20;40:40;60:60;80:80;100:100",
+ 							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -17899,7 +17883,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "3--0:0;20:20;40:40;60:60;80:80;100:100",
+ 							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -17958,7 +17942,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "3--0:0;20:20;40:40;60:60;80:80;100:100",
+ 							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -18017,7 +18001,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "3--0:0;20:20;40:40;60:60;80:80;100:100",
+ 							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -18076,7 +18060,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "3--0:0;20:20;40:40;60:60;80:80;100:100",
+ 							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -18171,7 +18155,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "3--0:0;20:20;40:40;60:60;80:80;100:100",
+ 							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -18230,7 +18214,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "3--0:0;20:20;40:40;60:60;80:80;100:100",
+ 							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -18289,7 +18273,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "3--0:0;20:20;40:40;60:60;80:80;100:100",
+ 							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -18348,7 +18332,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "3--0:0;20:20;40:40;60:60;80:80;100:100",
+ 							"dynamic_func_paramset": "3--0:0;10: ;20:20;30: ;40:40;50: ;60:60;70: ;80:80;90: ;100:100",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -30885,14 +30869,6 @@
  									"text_style": {}
  								}
  							}
- 						},
- 						{
- 							"name": "range",
- 							"type": "javascript-block",
- 							"col_span_control": 1,
- 							"js_block_strings": {
- 								"inputName": "range01"
- 							}
  						}
  					]
  				},
@@ -31003,7 +30979,7 @@
  							"name": "q44_dsgvo",
  							"type": "checkbox",
  							"label": {
- 								"de": "\n\t\t\t\t\t\t\u003cb\u003eEinwilligungserklärung gemäß DSGVO\u003c/b\u003e\n\n\t\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\t\tDie Antworten dieser Online-Umfrage werden von uns streng vertraulich, \n\t\t\t\t\t\tDSGVO-konform behandelt und nur in anonymer bzw. aggregierter Form benutzt.\n\n\t\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\t\tIm \u003ca href=\"/doc/site-imprint.md\" \u003eImpressum\u003c/a\u003e finden Sie umfangreiche An\u0026shy;gaben zum Da\u0026shy;tenschutz.\n\n\t\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\t\tHiermit willige ich ein, dass meine gesammelten Da\u0026shy;ten \n\t\t\t\t\t\tfür die Marktstudie Impact Investing in Deutsch\u0026shy;land 2022 \n\t\t\t\t\t\tder Bundesinitiative Impact Investing verwendet werden.\n\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\t"
+ 								"en": "\n\t\t\t\t\t\t\u003cb\u003eEinwilligungserklärung gemäß DSGVO\u003c/b\u003e\n\n\t\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\t\tDie Antworten dieser Online-Umfrage werden von uns streng vertraulich, \n\t\t\t\t\t\tDSGVO-konform behandelt und nur in anonymer bzw. aggregierter Form benutzt.\n\n\t\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\t\tIm \u003ca href=\"/doc/site-imprint.md\" \u003eImpressum\u003c/a\u003e finden Sie umfangreiche An\u0026shy;gaben zum Da\u0026shy;tenschutz.\n\n\t\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\t\tHiermit willige ich ein, dass meine gesammelten Da\u0026shy;ten \n\t\t\t\t\t\tfür [Private Debt Survey] des [ZEW] verwendet werden.\n\n\t\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -31052,8 +31028,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cb\u003eWeitergabe meiner Da\u0026shy;ten [partner2]\u003c/b\u003e \n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tMit Ihrer Einwilligung würden wir mit den im Rahmen dieser Erhebung \n\t\t\t\t\t\tgesammelten Da\u0026shy;ten gerne auch zu einer europaweiten \n\t\t\t\t\t\tStudie mit [partner2] beitragen. \t\t\t\t\t\t\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\n\t\t\t\t\t",
- 								"en": "\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cb\u003eWeitergabe meiner Da\u0026shy;ten [partner2]\u003c/b\u003e \n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tMit Ihrer Einwilligung würden wir mit den im Rahmen dieser Erhebung \n\t\t\t\t\t\tgesammelten Da\u0026shy;ten gerne auch zu einer europaweiten \n\t\t\t\t\t\tStudie mit [partner2] beitragen. \n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\n\t\t\t\t\t"
+ 								"de": "\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cb\u003eWeitergabe meiner Da\u0026shy;ten an [partner_2]\u003c/b\u003e \n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tMit Ihrer Einwilligung würden wir mit den im Rahmen dieser Erhebung \n\t\t\t\t\t\tgesammelten Da\u0026shy;ten gerne auch zu einer europaweiten \n\t\t\t\t\t\tStudie mit [partner_2] beitragen. \t\t\t\t\t\t\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\n\t\t\t\t\t",
+ 								"en": "\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cb\u003eWeitergabe meiner Da\u0026shy;ten an [partner_2]\u003c/b\u003e \n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tMit Ihrer Einwilligung würden wir mit den im Rahmen dieser Erhebung \n\t\t\t\t\t\tgesammelten Da\u0026shy;ten gerne auch zu [partner_2] beitragen. \n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\n\t\t\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -31062,8 +31038,8 @@
  							"name": "q45",
  							"type": "radio",
  							"label": {
- 								"de": "Ich erkläre mich einverstanden, \n\t\t\t\t\tdass meine angegebenen personenbezogenen Da\u0026shy;ten \n\t\t\t\t\tgenutzt werden \n\t\t\t\t\tund zu Auswertungszwecken an die [the_partner] \n\t\t\t\t\tweitergeleitet werden.\n\t\t\t\t\t",
- 								"en": "Ich erkläre mich einverstanden, \n\t\t\t\t\tdass meine angegebenen personenbezogenen Da\u0026shy;ten \n\t\t\t\t\tgenutzt werden \n\t\t\t\t\tund zu Auswertungszwecken an die [the_partner] \n\t\t\t\t\tweitergeleitet werden.\n\t\t\t\t\t"
+ 								"de": "Ich erkläre mich einverstanden, \n\t\t\t\t\tdass meine angegebenen personenbezogenen Da\u0026shy;ten \n\t\t\t\t\tgenutzt werden \n\t\t\t\t\tund zu Auswertungszwecken an [partner_1] \n\t\t\t\t\tweitergeleitet werden.\n\t\t\t\t\t",
+ 								"en": "Ich erkläre mich einverstanden, \n\t\t\t\t\tdass meine angegebenen personenbezogenen Da\u0026shy;ten \n\t\t\t\t\tgenutzt werden \n\t\t\t\t\tund zu Auswertungszwecken an [partner_1] \n\t\t\t\t\tweitergeleitet werden.\n\t\t\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -31108,8 +31084,8 @@
  							"name": "q45",
  							"type": "radio",
  							"label": {
- 								"de": "Ich erkläre mich einverstanden, \n\t\t\t\t\tdass meine angegebenen personenbezogenen Da\u0026shy;ten \n\t\t\t\t\t\u003ci\u003eanonymisiert\u003c/i\u003e \n\t\t\t\t\tzu Auswertungszwecken \n\t\t\t\t\tan die [the_partner] weitergeleitet werden.\t\t\t\t\n\t\t\t\t\t",
- 								"en": "Ich erkläre mich einverstanden, \n\t\t\t\t\tdass meine angegebenen personenbezogenen Da\u0026shy;ten \n\t\t\t\t\t\u003ci\u003eanonymisiert\u003c/i\u003e \n\t\t\t\t\tzu Auswertungszwecken \n\t\t\t\t\tan die [the_partner] weitergeleitet werden.\t\t\t\t\n\t\t\t\t\t"
+ 								"de": "Ich erkläre mich einverstanden, \n\t\t\t\t\tdass meine angegebenen personenbezogenen Da\u0026shy;ten \n\t\t\t\t\t\u003ci\u003eanonymisiert\u003c/i\u003e \n\t\t\t\t\tzu Auswertungszwecken \n\t\t\t\t\tan [partner_1] weitergeleitet werden.\t\t\t\t\n\t\t\t\t\t",
+ 								"en": "Ich erkläre mich einverstanden, \n\t\t\t\t\tdass meine angegebenen personenbezogenen Da\u0026shy;ten \n\t\t\t\t\t\u003ci\u003eanonymisiert\u003c/i\u003e \n\t\t\t\t\tzu Auswertungszwecken \n\t\t\t\t\tan [partner_1] weitergeleitet werden.\t\t\t\t\n\t\t\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -31154,8 +31130,8 @@
  							"name": "q45",
  							"type": "radio",
  							"label": {
- 								"de": "Meine Da\u0026shy;ten sollen nicht an [the_partner] \n\t\t\t\t\tweitergeleitet werden.\n\t\t\t\t\t",
- 								"en": "Meine Da\u0026shy;ten sollen nicht an [the_partner] \n\t\t\t\t\tweitergeleitet werden.\n\t\t\t\t\t"
+ 								"de": "Meine Da\u0026shy;ten sollen \u003ci\u003enicht\u003c/i\u003e an [partner_1] \n\t\t\t\t\tweitergeleitet werden.\n\t\t\t\t\t",
+ 								"en": "Meine Da\u0026shy;ten sollen \u003ci\u003enicht\u003c/i\u003e an [partner_1] \n\t\t\t\t\tweitergeleitet werden.\n\t\t\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1,

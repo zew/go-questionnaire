@@ -291,7 +291,14 @@ function pdsRangeInput(src){
         }
 
         if (display) {
-            display.value = src.value;
+            let incr = parseFloat(src.value) + parseFloat(src.step);
+            let out = ""
+            if (src.value) {
+                out += src.value;
+            }
+            out += " - ";
+            out += incr;
+            display.value = out;
         }
 
     }

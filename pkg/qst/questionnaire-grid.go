@@ -487,6 +487,19 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 
 		inp.Suffix = trl.S{} // delete - since range writes its own suffix
 
+		// render JS
+		sb := &strings.Builder{}
+		inp.JSBlockStrings = map[string]string{
+			"inputName": inp.Name,
+		}
+		q.RenderJS(
+			sb,
+			path.Join(q.Survey.Type, "rangeAuto"),
+			inp.JSBlockTrls,
+			inp.JSBlockStrings,
+		)
+		ctrl += sb.String()
+
 	case "text", "number", "hidden", "checkbox", "radio":
 		rspvl := inp.Response
 

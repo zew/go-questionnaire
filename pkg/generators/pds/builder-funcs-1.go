@@ -51,7 +51,7 @@ func checkBoxCascade(
 				inp.Name = "xx_" + inps[idx1]
 				inp.Label = lbls[idx1]
 				if idx1 > 0 {
-					inp.Label["en"] = inp.Label["en"] + " - made available in Q2 23?"
+					inp.Label["en"] = inp.Label["en"] + " - starting Q1-23?"
 				}
 				inp.ColSpan = gr.Cols
 				inp.ColSpanControl = 10

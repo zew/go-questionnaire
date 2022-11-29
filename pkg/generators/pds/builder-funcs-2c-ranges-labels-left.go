@@ -15,6 +15,16 @@ var suffixWeeks = trl.S{
 	"en": "weeks",
 	"de": "Wochen",
 }
+
+var suffixYears = trl.S{
+	"en": "years",
+	"de": "Jahre",
+}
+
+var suffixEBITDA = trl.S{
+	"en": "x EBITDA",
+	"de": "x EBITDA",
+}
 var suffixPercent = trl.S{
 	"en": "%",
 	"de": "%",
@@ -42,8 +52,9 @@ func slidersPctRowLabelsLeft(
 	page *qst.WrappedPageT,
 	inputName string,
 	lbl trl.S,
-	sfx trl.S,
-	rangeType string,
+	// sfx trl.S,
+	cf rangeConf,
+	// rangeType string,
 ) {
 
 	numCols := firstColLbl + float32(len(trancheTypeNamesAC1))
@@ -81,21 +92,21 @@ func slidersPctRowLabelsLeft(
 			{
 				inp := gr.AddInput()
 				inp.Type = "range"
-				inp.DynamicFuncParamset = rangeType
+				inp.DynamicFuncParamset = cf.RangeType
 
 				inp.Name = fmt.Sprintf("%v_%v", ttPref, inputName)
 
 				// 0%-100% in 5% brackets
-				inp.Min = 0
-				inp.Max = 100
-				inp.Step = 5
+				inp.Min = cf.Min
+				inp.Max = cf.Max
+				inp.Step = cf.Step
 
-				if rangeType == "3" {
-					// below 6 months, 6m-18m in 3m brackets, over 18m
-					inp.Min = 3
-					inp.Max = 21
-					inp.Step = 3
-				}
+				// if rangeType == "3" {
+				// 	// below 6 months, 6m-18m in 3m brackets, over 18m
+				// 	inp.Min = 3
+				// 	inp.Max = 21
+				// 	inp.Step = 3
+				// }
 
 				inp.ColSpan = 1
 				inp.ColSpanLabel = 0
@@ -113,9 +124,9 @@ func slidersPctRowLabelsLeft(
 				}
 
 				if idx1 == idxLastCol {
-					inp.Suffix = sfx
+					inp.Suffix = cf.Suffix
 				}
-				inp.Suffix = sfx
+				inp.Suffix = cf.Suffix
 
 			}
 		}

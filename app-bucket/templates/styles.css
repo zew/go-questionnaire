@@ -1885,19 +1885,21 @@ input.ib-300 {     width:300px;    }
     --range-thumbsize:   1.5em;
 
 
-    /* 4cols */
-    --range-01-width:    12.0em;
-    --range-01-tick-cx:   1.045em;
+    /* weeks */
+    --range-01-width: 7.4em;
+    --range-01-tick-cx: calc(0.351em + 2px);
 
     /* narrower */
     --range-02-width: 8.0em;
     --range-02-tick-cx: calc(0.507em + 2px);
 
+    /* 4cols */
+    --range-03-width:    12.0em;
+    --range-03-tick-cx:   1.045em;
 
-    /* weeks */
-    --range-03-width: 7.4em;
-    --range-03-tick-cx: calc(0.351em + 2px);
 
+
+ 
 
 }
 

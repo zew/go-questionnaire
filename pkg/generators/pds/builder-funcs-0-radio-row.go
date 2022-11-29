@@ -135,40 +135,40 @@ var trancheTypeNamesAC3 = []string{
 var allLbls = map[string][]trl.S{
 	"ac1-tranche-types": {
 		{
-			"en": "Senior",
-			"de": "Senior",
+			"en": "senior",
+			"de": "senior",
 		},
 		{
-			"en": "Unitranche",
-			"de": "Unitranche",
+			"en": "unitranche",
+			"de": "unitranche",
 		},
 		{
-			"en": "Subordinated",
-			"de": "Subordinated",
+			"en": "subordinated",
+			"de": "subordinated",
 		},
 		{
-			"en": "Mezzanine / PIK / other",
-			"de": "Mezzanine / PIK / other",
+			"en": "mezzanine / PIK / other",
+			"de": "mezzanine / PIK / other",
 		},
 	},
 	"ac2-tranche-types": {
 		{
-			"en": "Whole loan",
-			"de": "Whole loan",
+			"en": "whole loan",
+			"de": "whole loan",
 		},
 		{
-			"en": "Subordinated",
-			"de": "Subordinated",
+			"en": "subordinated",
+			"de": "subordinated",
 		},
 	},
 	"ac3-tranche-types": {
 		{
-			"en": "Senior",
-			"de": "Senior",
+			"en": "senior",
+			"de": "senior",
 		},
 		{
-			"en": "Subordinated",
-			"de": "Subordinated",
+			"en": "subordinated",
+			"de": "subordinated",
 		},
 	},
 	"teamsize": {
@@ -303,12 +303,16 @@ var allLbls = map[string][]trl.S{
 			"de": "0-1",
 		},
 		{
-			"en": "1-3",
-			"de": "1-3",
+			// "en": "1-3",
+			// "de": "1-3",
+			"en": "2-3",
+			"de": "2-3",
 		},
 		{
-			"en": "3-5",
-			"de": "3-5",
+			// "en": "3-5",
+			// "de": "3-5",
+			"en": "4-5",
+			"de": "4-5",
 		},
 		{
 			"en": ">5",

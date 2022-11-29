@@ -18,13 +18,13 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "10f867b3b31d2f2b88c1de086b07abb99bc5f3e298bbcb4d742d56c29c74ab2e",
+ 	"md_5": "6d5451cb77f83b7187ed0ee0fdb7bde2e2cd47fc6152462246a2906aec18f62d",
  	"lang_codes": [
  		"en"
  	],
  	"allow_skip_forward": false,
  	"version_effective": 0,
- 	"max_groups": 35,
+ 	"max_groups": 36,
  	"pages": [
  		{
  			"label": {
@@ -465,8 +465,8 @@
  							"name": "0_0_st1_senior",
  							"type": "checkbox",
  							"label": {
- 								"de": "Senior",
- 								"en": "Senior"
+ 								"de": "senior",
+ 								"en": "senior"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -517,8 +517,8 @@
  							"name": "0_1_st2_unittranche",
  							"type": "checkbox",
  							"label": {
- 								"de": "Unitranche",
- 								"en": "Unitranche"
+ 								"de": "unitranche",
+ 								"en": "unitranche"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -569,8 +569,8 @@
  							"name": "0_2_st3_subordinated",
  							"type": "checkbox",
  							"label": {
- 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -621,8 +621,8 @@
  							"name": "0_3_st4_mezzanine",
  							"type": "checkbox",
  							"label": {
- 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -752,8 +752,8 @@
  							"name": "1_0_st1_wholeloan",
  							"type": "checkbox",
  							"label": {
- 								"de": "Whole loan",
- 								"en": "Whole loan"
+ 								"de": "whole loan",
+ 								"en": "whole loan"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -804,8 +804,8 @@
  							"name": "1_1_st2_subordinated",
  							"type": "checkbox",
  							"label": {
- 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -935,8 +935,8 @@
  							"name": "2_0_st1_senior",
  							"type": "checkbox",
  							"label": {
- 								"de": "Senior",
- 								"en": "Senior"
+ 								"de": "senior",
+ 								"en": "senior"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -987,8 +987,8 @@
  							"name": "2_1_st2_subordinated",
  							"type": "checkbox",
  							"label": {
- 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -1122,8 +1122,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Senior",
- 								"en": "Senior"
+ 								"de": "senior",
+ 								"en": "senior"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -1151,8 +1151,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Unitranche",
- 								"en": "Unitranche"
+ 								"de": "unitranche",
+ 								"en": "unitranche"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -1180,8 +1180,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -1209,8 +1209,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -1588,8 +1588,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Senior",
- 								"en": "Senior"
+ 								"de": "senior",
+ 								"en": "senior"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -1617,8 +1617,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Unitranche",
- 								"en": "Unitranche"
+ 								"de": "unitranche",
+ 								"en": "unitranche"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -1646,8 +1646,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -1675,8 +1675,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -1718,7 +1718,7 @@
  							"col_span": 4,
  							"col_span_label": 3,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "3",
+ 							"dynamic_func_paramset": "1--3:\u003c6;6:6;12:12;18:18;21:\u003e18",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -1764,7 +1764,7 @@
  							},
  							"col_span": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "3",
+ 							"dynamic_func_paramset": "1--3:\u003c6;6:6;12:12;18:18;21:\u003e18",
  							"style_control": {
  								"desktop": {
  									"grid_container_style": {},
@@ -1794,7 +1794,7 @@
  							},
  							"col_span": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "3",
+ 							"dynamic_func_paramset": "1--3:\u003c6;6:6;12:12;18:18;21:\u003e18",
  							"style_control": {
  								"desktop": {
  									"grid_container_style": {},
@@ -1824,7 +1824,7 @@
  							},
  							"col_span": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "3",
+ 							"dynamic_func_paramset": "1--3:\u003c6;6:6;12:12;18:18;21:\u003e18",
  							"style_control": {
  								"desktop": {
  									"grid_container_style": {},
@@ -1879,8 +1879,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Senior",
- 								"en": "Senior"
+ 								"de": "senior",
+ 								"en": "senior"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -1908,8 +1908,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Unitranche",
- 								"en": "Unitranche"
+ 								"de": "unitranche",
+ 								"en": "unitranche"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -1937,8 +1937,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -1966,8 +1966,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -3604,8 +3604,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Senior",
- 								"en": "Senior"
+ 								"de": "senior",
+ 								"en": "senior"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -3633,8 +3633,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Unitranche",
- 								"en": "Unitranche"
+ 								"de": "unitranche",
+ 								"en": "unitranche"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -3662,8 +3662,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -3691,8 +3691,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -4070,8 +4070,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Senior",
- 								"en": "Senior"
+ 								"de": "senior",
+ 								"en": "senior"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -4099,8 +4099,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Unitranche",
- 								"en": "Unitranche"
+ 								"de": "unitranche",
+ 								"en": "unitranche"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -4128,8 +4128,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -4157,8 +4157,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -4844,8 +4844,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Senior",
- 								"en": "Senior"
+ 								"de": "senior",
+ 								"en": "senior"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -4873,8 +4873,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Unitranche",
- 								"en": "Unitranche"
+ 								"de": "unitranche",
+ 								"en": "unitranche"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -4902,8 +4902,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -4931,8 +4931,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -6003,8 +6003,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Senior",
- 								"en": "Senior"
+ 								"de": "senior",
+ 								"en": "senior"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -6032,8 +6032,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Unitranche",
- 								"en": "Unitranche"
+ 								"de": "unitranche",
+ 								"en": "unitranche"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -6061,8 +6061,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -6090,8 +6090,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -6132,7 +6132,7 @@
  							"col_span": 4,
  							"col_span_label": 3,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "2",
+ 							"dynamic_func_paramset": "2--0:0;20:20;40:40;60:60;80:80;100:100",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -6177,7 +6177,7 @@
  							},
  							"col_span": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "2",
+ 							"dynamic_func_paramset": "2--0:0;20:20;40:40;60:60;80:80;100:100",
  							"style_control": {
  								"desktop": {
  									"grid_container_style": {},
@@ -6206,7 +6206,7 @@
  							},
  							"col_span": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "2",
+ 							"dynamic_func_paramset": "2--0:0;20:20;40:40;60:60;80:80;100:100",
  							"style_control": {
  								"desktop": {
  									"grid_container_style": {},
@@ -6235,7 +6235,7 @@
  							},
  							"col_span": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "2",
+ 							"dynamic_func_paramset": "2--0:0;20:20;40:40;60:60;80:80;100:100",
  							"style_control": {
  								"desktop": {
  									"grid_container_style": {},
@@ -6287,8 +6287,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Senior",
- 								"en": "Senior"
+ 								"de": "senior",
+ 								"en": "senior"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -6316,8 +6316,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Unitranche",
- 								"en": "Unitranche"
+ 								"de": "unitranche",
+ 								"en": "unitranche"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -6345,8 +6345,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -6374,8 +6374,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -6416,7 +6416,7 @@
  							"col_span": 4,
  							"col_span_label": 3,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "2",
+ 							"dynamic_func_paramset": "2--0:0;20:20;40:40;60:60;80:80;100:100",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -6461,7 +6461,7 @@
  							},
  							"col_span": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "2",
+ 							"dynamic_func_paramset": "2--0:0;20:20;40:40;60:60;80:80;100:100",
  							"style_control": {
  								"desktop": {
  									"grid_container_style": {},
@@ -6490,7 +6490,7 @@
  							},
  							"col_span": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "2",
+ 							"dynamic_func_paramset": "2--0:0;20:20;40:40;60:60;80:80;100:100",
  							"style_control": {
  								"desktop": {
  									"grid_container_style": {},
@@ -6519,7 +6519,7 @@
  							},
  							"col_span": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "2",
+ 							"dynamic_func_paramset": "2--0:0;20:20;40:40;60:60;80:80;100:100",
  							"style_control": {
  								"desktop": {
  									"grid_container_style": {},
@@ -6571,8 +6571,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Senior",
- 								"en": "Senior"
+ 								"de": "senior",
+ 								"en": "senior"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -6600,8 +6600,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Unitranche",
- 								"en": "Unitranche"
+ 								"de": "unitranche",
+ 								"en": "unitranche"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -6629,8 +6629,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -6658,8 +6658,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -6700,7 +6700,7 @@
  							"col_span": 4,
  							"col_span_label": 3,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "2",
+ 							"dynamic_func_paramset": "2--0:0;20:20;40:40;60:60;80:80;100:100",
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
@@ -6745,7 +6745,7 @@
  							},
  							"col_span": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "2",
+ 							"dynamic_func_paramset": "2--0:0;20:20;40:40;60:60;80:80;100:100",
  							"style_control": {
  								"desktop": {
  									"grid_container_style": {},
@@ -6774,7 +6774,7 @@
  							},
  							"col_span": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "2",
+ 							"dynamic_func_paramset": "2--0:0;20:20;40:40;60:60;80:80;100:100",
  							"style_control": {
  								"desktop": {
  									"grid_container_style": {},
@@ -6803,7 +6803,7 @@
  							},
  							"col_span": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "2",
+ 							"dynamic_func_paramset": "2--0:0;20:20;40:40;60:60;80:80;100:100",
  							"style_control": {
  								"desktop": {
  									"grid_container_style": {},
@@ -6924,8 +6924,8 @@
  							"min": 3,
  							"max": 10,
  							"label": {
- 								"de": "Senior",
- 								"en": "Senior"
+ 								"de": "senior",
+ 								"en": "senior"
  							},
  							"suffix": {
  								"de": "%",
@@ -6934,7 +6934,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--3:3;5:5;7:7;10:10",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -6981,8 +6981,8 @@
  							"min": 3,
  							"max": 10,
  							"label": {
- 								"de": "Unitranche",
- 								"en": "Unitranche"
+ 								"de": "unitranche",
+ 								"en": "unitranche"
  							},
  							"suffix": {
  								"de": "%",
@@ -6991,7 +6991,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--3:3;5:5;7:7;10:10",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -7038,8 +7038,8 @@
  							"min": 3,
  							"max": 10,
  							"label": {
- 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"suffix": {
  								"de": "%",
@@ -7048,7 +7048,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--3:3;5:5;7:7;10:10",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -7095,8 +7095,8 @@
  							"min": 3,
  							"max": 10,
  							"label": {
- 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"suffix": {
  								"de": "%",
@@ -7105,7 +7105,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--3:3;5:5;7:7;10:10",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -7184,12 +7184,11 @@
  						{
  							"name": "st1_interest_floor",
  							"type": "range",
- 							"step": 0.5,
- 							"min": 3,
- 							"max": 10,
+ 							"step": 0.25,
+ 							"max": 2,
  							"label": {
- 								"de": "Senior",
- 								"en": "Senior"
+ 								"de": "senior",
+ 								"en": "senior"
  							},
  							"suffix": {
  								"de": "%",
@@ -7198,7 +7197,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--0:0;0.5:0.5;1:1;1.5:1.5;2:2",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -7241,12 +7240,11 @@
  						{
  							"name": "st2_interest_floor",
  							"type": "range",
- 							"step": 0.5,
- 							"min": 3,
- 							"max": 10,
+ 							"step": 0.25,
+ 							"max": 2,
  							"label": {
- 								"de": "Unitranche",
- 								"en": "Unitranche"
+ 								"de": "unitranche",
+ 								"en": "unitranche"
  							},
  							"suffix": {
  								"de": "%",
@@ -7255,7 +7253,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--0:0;0.5:0.5;1:1;1.5:1.5;2:2",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -7298,12 +7296,11 @@
  						{
  							"name": "st3_interest_floor",
  							"type": "range",
- 							"step": 0.5,
- 							"min": 3,
- 							"max": 10,
+ 							"step": 0.25,
+ 							"max": 2,
  							"label": {
- 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"suffix": {
  								"de": "%",
@@ -7312,7 +7309,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--0:0;0.5:0.5;1:1;1.5:1.5;2:2",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -7355,12 +7352,11 @@
  						{
  							"name": "st4_interest_floor",
  							"type": "range",
- 							"step": 0.5,
- 							"min": 3,
- 							"max": 10,
+ 							"step": 0.25,
+ 							"max": 2,
  							"label": {
- 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"suffix": {
  								"de": "%",
@@ -7369,7 +7365,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--0:0;0.5:0.5;1:1;1.5:1.5;2:2",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -7448,12 +7444,11 @@
  						{
  							"name": "st1_upfront_fee",
  							"type": "range",
- 							"step": 0.5,
- 							"min": 3,
- 							"max": 10,
+ 							"step": 0.25,
+ 							"max": 4,
  							"label": {
- 								"de": "Senior",
- 								"en": "Senior"
+ 								"de": "senior",
+ 								"en": "senior"
  							},
  							"suffix": {
  								"de": "%",
@@ -7462,7 +7457,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--0:0;1:1;2:2;3:3;4:4",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -7505,12 +7500,11 @@
  						{
  							"name": "st2_upfront_fee",
  							"type": "range",
- 							"step": 0.5,
- 							"min": 3,
- 							"max": 10,
+ 							"step": 0.25,
+ 							"max": 4,
  							"label": {
- 								"de": "Unitranche",
- 								"en": "Unitranche"
+ 								"de": "unitranche",
+ 								"en": "unitranche"
  							},
  							"suffix": {
  								"de": "%",
@@ -7519,7 +7513,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--0:0;1:1;2:2;3:3;4:4",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -7562,12 +7556,11 @@
  						{
  							"name": "st3_upfront_fee",
  							"type": "range",
- 							"step": 0.5,
- 							"min": 3,
- 							"max": 10,
+ 							"step": 0.25,
+ 							"max": 4,
  							"label": {
- 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"suffix": {
  								"de": "%",
@@ -7576,7 +7569,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--0:0;1:1;2:2;3:3;4:4",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -7619,12 +7612,11 @@
  						{
  							"name": "st4_upfront_fee",
  							"type": "range",
- 							"step": 0.5,
- 							"min": 3,
- 							"max": 10,
+ 							"step": 0.25,
+ 							"max": 4,
  							"label": {
- 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"suffix": {
  								"de": "%",
@@ -7633,7 +7625,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--0:0;1:1;2:2;3:3;4:4",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -7714,10 +7706,10 @@
  							"type": "range",
  							"step": 0.5,
  							"min": 3,
- 							"max": 10,
+ 							"max": 20,
  							"label": {
- 								"de": "Senior",
- 								"en": "Senior"
+ 								"de": "senior",
+ 								"en": "senior"
  							},
  							"suffix": {
  								"de": "%",
@@ -7726,7 +7718,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--3:3;5:5;10:10;15:15;20:20",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -7771,10 +7763,10 @@
  							"type": "range",
  							"step": 0.5,
  							"min": 3,
- 							"max": 10,
+ 							"max": 20,
  							"label": {
- 								"de": "Unitranche",
- 								"en": "Unitranche"
+ 								"de": "unitranche",
+ 								"en": "unitranche"
  							},
  							"suffix": {
  								"de": "%",
@@ -7783,7 +7775,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--3:3;5:5;10:10;15:15;20:20",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -7828,10 +7820,10 @@
  							"type": "range",
  							"step": 0.5,
  							"min": 3,
- 							"max": 10,
+ 							"max": 20,
  							"label": {
- 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"suffix": {
  								"de": "%",
@@ -7840,7 +7832,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--3:3;5:5;10:10;15:15;20:20",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -7885,10 +7877,10 @@
  							"type": "range",
  							"step": 0.5,
  							"min": 3,
- 							"max": 10,
+ 							"max": 20,
  							"label": {
- 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"suffix": {
  								"de": "%",
@@ -7897,7 +7889,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--3:3;5:5;10:10;15:15;20:20",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -7978,10 +7970,10 @@
  							"type": "range",
  							"step": 0.5,
  							"min": 3,
- 							"max": 10,
+ 							"max": 25,
  							"label": {
- 								"de": "Senior",
- 								"en": "Senior"
+ 								"de": "senior",
+ 								"en": "senior"
  							},
  							"suffix": {
  								"de": "%",
@@ -7990,7 +7982,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--3:3;5:5;10:10;15:15;20:20;25:25",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -8035,10 +8027,10 @@
  							"type": "range",
  							"step": 0.5,
  							"min": 3,
- 							"max": 10,
+ 							"max": 25,
  							"label": {
- 								"de": "Unitranche",
- 								"en": "Unitranche"
+ 								"de": "unitranche",
+ 								"en": "unitranche"
  							},
  							"suffix": {
  								"de": "%",
@@ -8047,7 +8039,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--3:3;5:5;10:10;15:15;20:20;25:25",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -8092,10 +8084,10 @@
  							"type": "range",
  							"step": 0.5,
  							"min": 3,
- 							"max": 10,
+ 							"max": 25,
  							"label": {
- 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"suffix": {
  								"de": "%",
@@ -8104,7 +8096,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--3:3;5:5;10:10;15:15;20:20;25:25",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -8149,10 +8141,10 @@
  							"type": "range",
  							"step": 0.5,
  							"min": 3,
- 							"max": 10,
+ 							"max": 25,
  							"label": {
- 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"suffix": {
  								"de": "%",
@@ -8161,7 +8153,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--3:3;5:5;10:10;15:15;20:20;25:25",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -8240,12 +8232,11 @@
  						{
  							"name": "st1_share_floating_rate",
  							"type": "range",
- 							"step": 0.5,
- 							"min": 3,
- 							"max": 10,
+ 							"step": 5,
+ 							"max": 100,
  							"label": {
- 								"de": "Senior",
- 								"en": "Senior"
+ 								"de": "senior",
+ 								"en": "senior"
  							},
  							"suffix": {
  								"de": "%",
@@ -8254,7 +8245,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--0:0;20:20;40:40;60:60;80:80;100:100",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -8297,12 +8288,11 @@
  						{
  							"name": "st2_share_floating_rate",
  							"type": "range",
- 							"step": 0.5,
- 							"min": 3,
- 							"max": 10,
+ 							"step": 5,
+ 							"max": 100,
  							"label": {
- 								"de": "Unitranche",
- 								"en": "Unitranche"
+ 								"de": "unitranche",
+ 								"en": "unitranche"
  							},
  							"suffix": {
  								"de": "%",
@@ -8311,7 +8301,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--0:0;20:20;40:40;60:60;80:80;100:100",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -8354,12 +8344,11 @@
  						{
  							"name": "st3_share_floating_rate",
  							"type": "range",
- 							"step": 0.5,
- 							"min": 3,
- 							"max": 10,
+ 							"step": 5,
+ 							"max": 100,
  							"label": {
- 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"suffix": {
  								"de": "%",
@@ -8368,7 +8357,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--0:0;20:20;40:40;60:60;80:80;100:100",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -8411,12 +8400,11 @@
  						{
  							"name": "st4_share_floating_rate",
  							"type": "range",
- 							"step": 0.5,
- 							"min": 3,
- 							"max": 10,
+ 							"step": 5,
+ 							"max": 100,
  							"label": {
- 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"suffix": {
  								"de": "%",
@@ -8425,7 +8413,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--0:0;20:20;40:40;60:60;80:80;100:100",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -8513,27 +8501,142 @@
  					}
  				},
  				{
- 					"bottom_vspacers": 3,
+ 					"bottom_vspacers": 1,
  					"columns": 4,
  					"inputs": [
  						{
- 							"name": "st1_number_covenants",
- 							"type": "range",
- 							"step": 0.5,
- 							"min": 3,
- 							"max": 10,
+ 							"type": "textblock",
  							"label": {
- 								"de": "Senior",
- 								"en": "Senior"
+ 								"de": "senior",
+ 								"en": "senior"
  							},
- 							"suffix": {
- 								"de": "%",
- 								"en": "%"
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"font_size": 95,
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "unitranche",
+ 								"en": "unitranche"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"font_size": 95,
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"font_size": 95,
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"font_size": 95,
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 16,
+ 					"inputs": [
+ 						{
+ 							"name": "st1_number_covenants",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "0-1",
+ 								"en": "0-1"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"value_radio": "1",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -8542,7 +8645,8 @@
  										"template_rows": "1fr "
  									},
  									"box_style": {
- 										"margin": "0 1.4rem 0 1.4rem"
+ 										"position": "relative",
+ 										"left": "1.6rem"
  									},
  									"grid_item_style": {},
  									"text_style": {}
@@ -8557,12 +8661,187 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"left": "0.6rem",
+ 										"top": "-0.3rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "center",
+ 										"align_self": "end"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 90,
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st1_number_covenants",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "2-3",
+ 								"en": "2-3"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "2",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"left": "0.62rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"top": "-0.3rem"
+ 									},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"font_size": 90,
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st1_number_covenants",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "4-5",
+ 								"en": "4-5"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "3",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"right": "0.62rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"top": "-0.3rem"
+ 									},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"font_size": 90,
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st1_number_covenants",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "\u003e5",
+ 								"en": "\u003e5"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "4",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"right": "1.6rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"top": "-0.3rem",
+ 										"right": "0.6rem"
+ 									},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"font_size": 90,
+ 										"align_horizontal": "right"
  									}
  								},
  								"mobile": {
@@ -8575,22 +8854,15 @@
  						},
  						{
  							"name": "st2_number_covenants",
- 							"type": "range",
- 							"step": 0.5,
- 							"min": 3,
- 							"max": 10,
+ 							"type": "radio",
  							"label": {
- 								"de": "Unitranche",
- 								"en": "Unitranche"
- 							},
- 							"suffix": {
- 								"de": "%",
- 								"en": "%"
+ 								"de": "0-1",
+ 								"en": "0-1"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"value_radio": "1",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -8599,7 +8871,8 @@
  										"template_rows": "1fr "
  									},
  									"box_style": {
- 										"margin": "0 1.4rem 0 1.4rem"
+ 										"position": "relative",
+ 										"left": "1.6rem"
  									},
  									"grid_item_style": {},
  									"text_style": {}
@@ -8614,12 +8887,187 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"left": "0.6rem",
+ 										"top": "-0.3rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "center",
+ 										"align_self": "end"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 90,
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st2_number_covenants",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "2-3",
+ 								"en": "2-3"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "2",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"left": "0.62rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"top": "-0.3rem"
+ 									},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"font_size": 90,
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st2_number_covenants",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "4-5",
+ 								"en": "4-5"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "3",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"right": "0.62rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"top": "-0.3rem"
+ 									},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"font_size": 90,
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st2_number_covenants",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "\u003e5",
+ 								"en": "\u003e5"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "4",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"right": "1.6rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"top": "-0.3rem",
+ 										"right": "0.6rem"
+ 									},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"font_size": 90,
+ 										"align_horizontal": "right"
  									}
  								},
  								"mobile": {
@@ -8632,22 +9080,15 @@
  						},
  						{
  							"name": "st3_number_covenants",
- 							"type": "range",
- 							"step": 0.5,
- 							"min": 3,
- 							"max": 10,
+ 							"type": "radio",
  							"label": {
- 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
- 							},
- 							"suffix": {
- 								"de": "%",
- 								"en": "%"
+ 								"de": "0-1",
+ 								"en": "0-1"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"value_radio": "1",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -8656,7 +9097,8 @@
  										"template_rows": "1fr "
  									},
  									"box_style": {
- 										"margin": "0 1.4rem 0 1.4rem"
+ 										"position": "relative",
+ 										"left": "1.6rem"
  									},
  									"grid_item_style": {},
  									"text_style": {}
@@ -8671,12 +9113,187 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"left": "0.6rem",
+ 										"top": "-0.3rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "center",
+ 										"align_self": "end"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 90,
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st3_number_covenants",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "2-3",
+ 								"en": "2-3"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "2",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"left": "0.62rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"top": "-0.3rem"
+ 									},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"font_size": 90,
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st3_number_covenants",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "4-5",
+ 								"en": "4-5"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "3",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"right": "0.62rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"top": "-0.3rem"
+ 									},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"font_size": 90,
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st3_number_covenants",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "\u003e5",
+ 								"en": "\u003e5"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "4",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"right": "1.6rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"top": "-0.3rem",
+ 										"right": "0.6rem"
+ 									},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"font_size": 90,
+ 										"align_horizontal": "right"
  									}
  								},
  								"mobile": {
@@ -8689,22 +9306,15 @@
  						},
  						{
  							"name": "st4_number_covenants",
- 							"type": "range",
- 							"step": 0.5,
- 							"min": 3,
- 							"max": 10,
+ 							"type": "radio",
  							"label": {
- 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
- 							},
- 							"suffix": {
- 								"de": "%",
- 								"en": "%"
+ 								"de": "0-1",
+ 								"en": "0-1"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"value_radio": "1",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -8713,7 +9323,8 @@
  										"template_rows": "1fr "
  									},
  									"box_style": {
- 										"margin": "0 1.4rem 0 1.4rem"
+ 										"position": "relative",
+ 										"left": "1.6rem"
  									},
  									"grid_item_style": {},
  									"text_style": {}
@@ -8728,12 +9339,187 @@
  							"style_label": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"left": "0.6rem",
+ 										"top": "-0.3rem"
+ 									},
  									"grid_item_style": {
- 										"justify_self": "center"
+ 										"justify_self": "center",
+ 										"align_self": "end"
  									},
  									"text_style": {
- 										"font_size": 95
+ 										"font_size": 90,
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st4_number_covenants",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "2-3",
+ 								"en": "2-3"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "2",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"left": "0.62rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"top": "-0.3rem"
+ 									},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"font_size": 90,
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st4_number_covenants",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "4-5",
+ 								"en": "4-5"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "3",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"right": "0.62rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"top": "-0.3rem"
+ 									},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"font_size": 90,
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "st4_number_covenants",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "\u003e5",
+ 								"en": "\u003e5"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 1,
+ 							"value_radio": "4",
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {
+ 										"auto_flow": "column",
+ 										"template_columns": " ",
+ 										"template_rows": "1fr "
+ 									},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"right": "1.6rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"position": "relative",
+ 										"top": "-0.3rem",
+ 										"right": "0.6rem"
+ 									},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"font_size": 90,
+ 										"align_horizontal": "right"
  									}
  								},
  								"mobile": {
@@ -8784,20 +9570,19 @@
  							"name": "st1_contracted_maturity",
  							"type": "range",
  							"step": 0.5,
- 							"min": 3,
  							"max": 10,
  							"label": {
- 								"de": "Senior",
- 								"en": "Senior"
+ 								"de": "senior",
+ 								"en": "senior"
  							},
  							"suffix": {
- 								"de": "%",
- 								"en": "%"
+ 								"de": "Jahre",
+ 								"en": "years"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--0:0;2:2;4:4;6:6;8:8;10:10",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -8841,20 +9626,19 @@
  							"name": "st2_contracted_maturity",
  							"type": "range",
  							"step": 0.5,
- 							"min": 3,
  							"max": 10,
  							"label": {
- 								"de": "Unitranche",
- 								"en": "Unitranche"
+ 								"de": "unitranche",
+ 								"en": "unitranche"
  							},
  							"suffix": {
- 								"de": "%",
- 								"en": "%"
+ 								"de": "Jahre",
+ 								"en": "years"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--0:0;2:2;4:4;6:6;8:8;10:10",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -8898,20 +9682,19 @@
  							"name": "st3_contracted_maturity",
  							"type": "range",
  							"step": 0.5,
- 							"min": 3,
  							"max": 10,
  							"label": {
- 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"suffix": {
- 								"de": "%",
- 								"en": "%"
+ 								"de": "Jahre",
+ 								"en": "years"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--0:0;2:2;4:4;6:6;8:8;10:10",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -8955,20 +9738,19 @@
  							"name": "st4_contracted_maturity",
  							"type": "range",
  							"step": 0.5,
- 							"min": 3,
  							"max": 10,
  							"label": {
- 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"suffix": {
- 								"de": "%",
- 								"en": "%"
+ 								"de": "Jahre",
+ 								"en": "years"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--0:0;2:2;4:4;6:6;8:8;10:10",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -9048,20 +9830,20 @@
  							"name": "st1_opening_leverage",
  							"type": "range",
  							"step": 0.5,
- 							"min": 3,
+ 							"min": 2,
  							"max": 10,
  							"label": {
- 								"de": "Senior",
- 								"en": "Senior"
+ 								"de": "senior",
+ 								"en": "senior"
  							},
  							"suffix": {
- 								"de": "%",
- 								"en": "%"
+ 								"de": "x EBITDA",
+ 								"en": "x EBITDA"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--2:2;4:4;6:6;8:8;10:10",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -9105,20 +9887,20 @@
  							"name": "st2_opening_leverage",
  							"type": "range",
  							"step": 0.5,
- 							"min": 3,
+ 							"min": 2,
  							"max": 10,
  							"label": {
- 								"de": "Unitranche",
- 								"en": "Unitranche"
+ 								"de": "unitranche",
+ 								"en": "unitranche"
  							},
  							"suffix": {
- 								"de": "%",
- 								"en": "%"
+ 								"de": "x EBITDA",
+ 								"en": "x EBITDA"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--2:2;4:4;6:6;8:8;10:10",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -9162,20 +9944,20 @@
  							"name": "st3_opening_leverage",
  							"type": "range",
  							"step": 0.5,
- 							"min": 3,
+ 							"min": 2,
  							"max": 10,
  							"label": {
- 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"suffix": {
- 								"de": "%",
- 								"en": "%"
+ 								"de": "x EBITDA",
+ 								"en": "x EBITDA"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--2:2;4:4;6:6;8:8;10:10",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -9219,20 +10001,20 @@
  							"name": "st4_opening_leverage",
  							"type": "range",
  							"step": 0.5,
- 							"min": 3,
+ 							"min": 2,
  							"max": 10,
  							"label": {
- 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"suffix": {
- 								"de": "%",
- 								"en": "%"
+ 								"de": "x EBITDA",
+ 								"en": "x EBITDA"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--2:2;4:4;6:6;8:8;10:10",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -9315,8 +10097,8 @@
  							"min": 3,
  							"max": 10,
  							"label": {
- 								"de": "Senior",
- 								"en": "Senior"
+ 								"de": "senior",
+ 								"en": "senior"
  							},
  							"suffix": {
  								"de": "%",
@@ -9325,7 +10107,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--3:3;5:5;7:7;10:10",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -9372,8 +10154,8 @@
  							"min": 3,
  							"max": 10,
  							"label": {
- 								"de": "Unitranche",
- 								"en": "Unitranche"
+ 								"de": "unitranche",
+ 								"en": "unitranche"
  							},
  							"suffix": {
  								"de": "%",
@@ -9382,7 +10164,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--3:3;5:5;7:7;10:10",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -9429,8 +10211,8 @@
  							"min": 3,
  							"max": 10,
  							"label": {
- 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"suffix": {
  								"de": "%",
@@ -9439,7 +10221,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--3:3;5:5;7:7;10:10",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -9486,8 +10268,8 @@
  							"min": 3,
  							"max": 10,
  							"label": {
- 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"suffix": {
  								"de": "%",
@@ -9496,7 +10278,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--3:3;5:5;7:7;10:10",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -9579,8 +10361,8 @@
  							"min": 3,
  							"max": 10,
  							"label": {
- 								"de": "Senior",
- 								"en": "Senior"
+ 								"de": "senior",
+ 								"en": "senior"
  							},
  							"suffix": {
  								"de": "%",
@@ -9589,7 +10371,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--3:3;5:5;7:7;10:10",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -9636,8 +10418,8 @@
  							"min": 3,
  							"max": 10,
  							"label": {
- 								"de": "Unitranche",
- 								"en": "Unitranche"
+ 								"de": "unitranche",
+ 								"en": "unitranche"
  							},
  							"suffix": {
  								"de": "%",
@@ -9646,7 +10428,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--3:3;5:5;7:7;10:10",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -9693,8 +10475,8 @@
  							"min": 3,
  							"max": 10,
  							"label": {
- 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"suffix": {
  								"de": "%",
@@ -9703,7 +10485,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--3:3;5:5;7:7;10:10",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -9750,8 +10532,8 @@
  							"min": 3,
  							"max": 10,
  							"label": {
- 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"suffix": {
  								"de": "%",
@@ -9760,7 +10542,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--3:3;5:5;7:7;10:10",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -9843,8 +10625,8 @@
  							"min": 3,
  							"max": 10,
  							"label": {
- 								"de": "Senior",
- 								"en": "Senior"
+ 								"de": "senior",
+ 								"en": "senior"
  							},
  							"suffix": {
  								"de": "%",
@@ -9853,7 +10635,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--3:3;5:5;7:7;10:10",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -9900,8 +10682,8 @@
  							"min": 3,
  							"max": 10,
  							"label": {
- 								"de": "Unitranche",
- 								"en": "Unitranche"
+ 								"de": "unitranche",
+ 								"en": "unitranche"
  							},
  							"suffix": {
  								"de": "%",
@@ -9910,7 +10692,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--3:3;5:5;7:7;10:10",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -9957,8 +10739,8 @@
  							"min": 3,
  							"max": 10,
  							"label": {
- 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"suffix": {
  								"de": "%",
@@ -9967,7 +10749,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--3:3;5:5;7:7;10:10",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -10014,8 +10796,8 @@
  							"min": 3,
  							"max": 10,
  							"label": {
- 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"suffix": {
  								"de": "%",
@@ -10024,7 +10806,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--3:3;5:5;7:7;10:10",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -10126,8 +10908,8 @@
  								"en": "million Euro"
  							},
  							"label": {
- 								"de": "Senior",
- 								"en": "Senior"
+ 								"de": "senior",
+ 								"en": "senior"
  							},
  							"suffix": {
  								"de": "Mio €",
@@ -10200,8 +10982,8 @@
  								"en": "million Euro"
  							},
  							"label": {
- 								"de": "Unitranche",
- 								"en": "Unitranche"
+ 								"de": "unitranche",
+ 								"en": "unitranche"
  							},
  							"suffix": {
  								"de": "Mio €",
@@ -10274,8 +11056,8 @@
  								"en": "million Euro"
  							},
  							"label": {
- 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"suffix": {
  								"de": "Mio €",
@@ -10348,8 +11130,8 @@
  								"en": "million Euro"
  							},
  							"label": {
- 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"suffix": {
  								"de": "Mio €",
@@ -10454,8 +11236,8 @@
  							"min": 3,
  							"max": 10,
  							"label": {
- 								"de": "Senior",
- 								"en": "Senior"
+ 								"de": "senior",
+ 								"en": "senior"
  							},
  							"suffix": {
  								"de": "%",
@@ -10464,7 +11246,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--3:3;5:5;7:7;10:10",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -10511,8 +11293,8 @@
  							"min": 3,
  							"max": 10,
  							"label": {
- 								"de": "Unitranche",
- 								"en": "Unitranche"
+ 								"de": "unitranche",
+ 								"en": "unitranche"
  							},
  							"suffix": {
  								"de": "%",
@@ -10521,7 +11303,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--3:3;5:5;7:7;10:10",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -10568,8 +11350,8 @@
  							"min": 3,
  							"max": 10,
  							"label": {
- 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"suffix": {
  								"de": "%",
@@ -10578,7 +11360,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--3:3;5:5;7:7;10:10",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -10625,8 +11407,8 @@
  							"min": 3,
  							"max": 10,
  							"label": {
- 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"suffix": {
  								"de": "%",
@@ -10635,7 +11417,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--3:3;5:5;7:7;10:10",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -10718,8 +11500,8 @@
  							"min": 3,
  							"max": 10,
  							"label": {
- 								"de": "Senior",
- 								"en": "Senior"
+ 								"de": "senior",
+ 								"en": "senior"
  							},
  							"suffix": {
  								"de": "%",
@@ -10728,7 +11510,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--3:3;5:5;7:7;10:10",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -10775,8 +11557,8 @@
  							"min": 3,
  							"max": 10,
  							"label": {
- 								"de": "Unitranche",
- 								"en": "Unitranche"
+ 								"de": "unitranche",
+ 								"en": "unitranche"
  							},
  							"suffix": {
  								"de": "%",
@@ -10785,7 +11567,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--3:3;5:5;7:7;10:10",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -10832,8 +11614,8 @@
  							"min": 3,
  							"max": 10,
  							"label": {
- 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"suffix": {
  								"de": "%",
@@ -10842,7 +11624,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--3:3;5:5;7:7;10:10",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -10889,8 +11671,8 @@
  							"min": 3,
  							"max": 10,
  							"label": {
- 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"suffix": {
  								"de": "%",
@@ -10899,7 +11681,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--3:3;5:5;7:7;10:10",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -10982,8 +11764,8 @@
  							"min": 3,
  							"max": 10,
  							"label": {
- 								"de": "Senior",
- 								"en": "Senior"
+ 								"de": "senior",
+ 								"en": "senior"
  							},
  							"suffix": {
  								"de": "%",
@@ -10992,7 +11774,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--3:3;5:5;7:7;10:10",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -11039,8 +11821,8 @@
  							"min": 3,
  							"max": 10,
  							"label": {
- 								"de": "Unitranche",
- 								"en": "Unitranche"
+ 								"de": "unitranche",
+ 								"en": "unitranche"
  							},
  							"suffix": {
  								"de": "%",
@@ -11049,7 +11831,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--3:3;5:5;7:7;10:10",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -11096,8 +11878,8 @@
  							"min": 3,
  							"max": 10,
  							"label": {
- 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"suffix": {
  								"de": "%",
@@ -11106,7 +11888,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--3:3;5:5;7:7;10:10",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -11153,8 +11935,8 @@
  							"min": 3,
  							"max": 10,
  							"label": {
- 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"suffix": {
  								"de": "%",
@@ -11163,7 +11945,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--3:3;5:5;7:7;10:10",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -11301,8 +12083,8 @@
  								"en": "million Euro"
  							},
  							"label": {
- 								"de": "Senior",
- 								"en": "Senior"
+ 								"de": "senior",
+ 								"en": "senior"
  							},
  							"suffix": {
  								"de": "Mio €",
@@ -11375,8 +12157,8 @@
  								"en": "million Euro"
  							},
  							"label": {
- 								"de": "Unitranche",
- 								"en": "Unitranche"
+ 								"de": "unitranche",
+ 								"en": "unitranche"
  							},
  							"suffix": {
  								"de": "Mio €",
@@ -11449,8 +12231,8 @@
  								"en": "million Euro"
  							},
  							"label": {
- 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"suffix": {
  								"de": "Mio €",
@@ -11523,8 +12305,8 @@
  								"en": "million Euro"
  							},
  							"label": {
- 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"suffix": {
  								"de": "Mio €",
@@ -11633,8 +12415,8 @@
  								"en": "million Euro"
  							},
  							"label": {
- 								"de": "Senior",
- 								"en": "Senior"
+ 								"de": "senior",
+ 								"en": "senior"
  							},
  							"suffix": {
  								"de": "Mio €",
@@ -11707,8 +12489,8 @@
  								"en": "million Euro"
  							},
  							"label": {
- 								"de": "Unitranche",
- 								"en": "Unitranche"
+ 								"de": "unitranche",
+ 								"en": "unitranche"
  							},
  							"suffix": {
  								"de": "Mio €",
@@ -11781,8 +12563,8 @@
  								"en": "million Euro"
  							},
  							"label": {
- 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"suffix": {
  								"de": "Mio €",
@@ -11855,8 +12637,8 @@
  								"en": "million Euro"
  							},
  							"label": {
- 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"suffix": {
  								"de": "Mio €",
@@ -11965,8 +12747,8 @@
  								"en": "million Euro"
  							},
  							"label": {
- 								"de": "Senior",
- 								"en": "Senior"
+ 								"de": "senior",
+ 								"en": "senior"
  							},
  							"suffix": {
  								"de": "Mio €",
@@ -12039,8 +12821,8 @@
  								"en": "million Euro"
  							},
  							"label": {
- 								"de": "Unitranche",
- 								"en": "Unitranche"
+ 								"de": "unitranche",
+ 								"en": "unitranche"
  							},
  							"suffix": {
  								"de": "Mio €",
@@ -12113,8 +12895,8 @@
  								"en": "million Euro"
  							},
  							"label": {
- 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"suffix": {
  								"de": "Mio €",
@@ -12187,8 +12969,8 @@
  								"en": "million Euro"
  							},
  							"label": {
- 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"suffix": {
  								"de": "Mio €",
@@ -12297,8 +13079,8 @@
  								"en": "million Euro"
  							},
  							"label": {
- 								"de": "Senior",
- 								"en": "Senior"
+ 								"de": "senior",
+ 								"en": "senior"
  							},
  							"suffix": {
  								"de": "Mio €",
@@ -12371,8 +13153,8 @@
  								"en": "million Euro"
  							},
  							"label": {
- 								"de": "Unitranche",
- 								"en": "Unitranche"
+ 								"de": "unitranche",
+ 								"en": "unitranche"
  							},
  							"suffix": {
  								"de": "Mio €",
@@ -12445,8 +13227,8 @@
  								"en": "million Euro"
  							},
  							"label": {
- 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"suffix": {
  								"de": "Mio €",
@@ -12519,8 +13301,8 @@
  								"en": "million Euro"
  							},
  							"label": {
- 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"suffix": {
  								"de": "Mio €",
@@ -12631,8 +13413,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Senior",
- 								"en": "Senior"
+ 								"de": "senior",
+ 								"en": "senior"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -12660,8 +13442,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Unitranche",
- 								"en": "Unitranche"
+ 								"de": "unitranche",
+ 								"en": "unitranche"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -12689,8 +13471,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -12718,8 +13500,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -13105,8 +13887,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Senior",
- 								"en": "Senior"
+ 								"de": "senior",
+ 								"en": "senior"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -13134,8 +13916,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Unitranche",
- 								"en": "Unitranche"
+ 								"de": "unitranche",
+ 								"en": "unitranche"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -13163,8 +13945,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -13192,8 +13974,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -13928,8 +14710,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Senior",
- 								"en": "Senior"
+ 								"de": "senior",
+ 								"en": "senior"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -13957,8 +14739,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Unitranche",
- 								"en": "Unitranche"
+ 								"de": "unitranche",
+ 								"en": "unitranche"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -13986,8 +14768,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -14015,8 +14797,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -14108,8 +14890,8 @@
  							"name": "st1_covenants_per_credit",
  							"type": "radio",
  							"label": {
- 								"de": "1-3",
- 								"en": "1-3"
+ 								"de": "2-3",
+ 								"en": "2-3"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -14164,8 +14946,8 @@
  							"name": "st1_covenants_per_credit",
  							"type": "radio",
  							"label": {
- 								"de": "3-5",
- 								"en": "3-5"
+ 								"de": "4-5",
+ 								"en": "4-5"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -14334,8 +15116,8 @@
  							"name": "st2_covenants_per_credit",
  							"type": "radio",
  							"label": {
- 								"de": "1-3",
- 								"en": "1-3"
+ 								"de": "2-3",
+ 								"en": "2-3"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -14390,8 +15172,8 @@
  							"name": "st2_covenants_per_credit",
  							"type": "radio",
  							"label": {
- 								"de": "3-5",
- 								"en": "3-5"
+ 								"de": "4-5",
+ 								"en": "4-5"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -14560,8 +15342,8 @@
  							"name": "st3_covenants_per_credit",
  							"type": "radio",
  							"label": {
- 								"de": "1-3",
- 								"en": "1-3"
+ 								"de": "2-3",
+ 								"en": "2-3"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -14616,8 +15398,8 @@
  							"name": "st3_covenants_per_credit",
  							"type": "radio",
  							"label": {
- 								"de": "3-5",
- 								"en": "3-5"
+ 								"de": "4-5",
+ 								"en": "4-5"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -14786,8 +15568,8 @@
  							"name": "st4_covenants_per_credit",
  							"type": "radio",
  							"label": {
- 								"de": "1-3",
- 								"en": "1-3"
+ 								"de": "2-3",
+ 								"en": "2-3"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -14842,8 +15624,8 @@
  							"name": "st4_covenants_per_credit",
  							"type": "radio",
  							"label": {
- 								"de": "3-5",
- 								"en": "3-5"
+ 								"de": "4-5",
+ 								"en": "4-5"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -14993,8 +15775,8 @@
  							"step": 5,
  							"max": 100,
  							"label": {
- 								"de": "Senior",
- 								"en": "Senior"
+ 								"de": "senior",
+ 								"en": "senior"
  							},
  							"suffix": {
  								"de": "%",
@@ -15003,7 +15785,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--0:0;20:20;40:40;60:60;80:80;100:100",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -15049,8 +15831,8 @@
  							"step": 5,
  							"max": 100,
  							"label": {
- 								"de": "Unitranche",
- 								"en": "Unitranche"
+ 								"de": "unitranche",
+ 								"en": "unitranche"
  							},
  							"suffix": {
  								"de": "%",
@@ -15059,7 +15841,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--0:0;20:20;40:40;60:60;80:80;100:100",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -15105,8 +15887,8 @@
  							"step": 5,
  							"max": 100,
  							"label": {
- 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"suffix": {
  								"de": "%",
@@ -15115,7 +15897,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--0:0;20:20;40:40;60:60;80:80;100:100",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -15161,8 +15943,8 @@
  							"step": 5,
  							"max": 100,
  							"label": {
- 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"suffix": {
  								"de": "%",
@@ -15171,7 +15953,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--0:0;20:20;40:40;60:60;80:80;100:100",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -15253,8 +16035,8 @@
  							"step": 5,
  							"max": 100,
  							"label": {
- 								"de": "Senior",
- 								"en": "Senior"
+ 								"de": "senior",
+ 								"en": "senior"
  							},
  							"suffix": {
  								"de": "%",
@@ -15263,7 +16045,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--0:0;20:20;40:40;60:60;80:80;100:100",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -15309,8 +16091,8 @@
  							"step": 5,
  							"max": 100,
  							"label": {
- 								"de": "Unitranche",
- 								"en": "Unitranche"
+ 								"de": "unitranche",
+ 								"en": "unitranche"
  							},
  							"suffix": {
  								"de": "%",
@@ -15319,7 +16101,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--0:0;20:20;40:40;60:60;80:80;100:100",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -15365,8 +16147,8 @@
  							"step": 5,
  							"max": 100,
  							"label": {
- 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"suffix": {
  								"de": "%",
@@ -15375,7 +16157,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--0:0;20:20;40:40;60:60;80:80;100:100",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -15421,8 +16203,8 @@
  							"step": 5,
  							"max": 100,
  							"label": {
- 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"suffix": {
  								"de": "%",
@@ -15431,7 +16213,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--0:0;20:20;40:40;60:60;80:80;100:100",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -15513,8 +16295,8 @@
  							"step": 5,
  							"max": 100,
  							"label": {
- 								"de": "Senior",
- 								"en": "Senior"
+ 								"de": "senior",
+ 								"en": "senior"
  							},
  							"suffix": {
  								"de": "%",
@@ -15523,7 +16305,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--0:0;20:20;40:40;60:60;80:80;100:100",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -15569,8 +16351,8 @@
  							"step": 5,
  							"max": 100,
  							"label": {
- 								"de": "Unitranche",
- 								"en": "Unitranche"
+ 								"de": "unitranche",
+ 								"en": "unitranche"
  							},
  							"suffix": {
  								"de": "%",
@@ -15579,7 +16361,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--0:0;20:20;40:40;60:60;80:80;100:100",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -15625,8 +16407,8 @@
  							"step": 5,
  							"max": 100,
  							"label": {
- 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"suffix": {
  								"de": "%",
@@ -15635,7 +16417,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--0:0;20:20;40:40;60:60;80:80;100:100",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -15681,8 +16463,8 @@
  							"step": 5,
  							"max": 100,
  							"label": {
- 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"suffix": {
  								"de": "%",
@@ -15691,7 +16473,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--0:0;20:20;40:40;60:60;80:80;100:100",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -15778,8 +16560,8 @@
  								"en": "#"
  							},
  							"label": {
- 								"de": "Senior",
- 								"en": "Senior"
+ 								"de": "senior",
+ 								"en": "senior"
  							},
  							"suffix": {
  								"de": "%",
@@ -15852,8 +16634,8 @@
  								"en": "#"
  							},
  							"label": {
- 								"de": "Unitranche",
- 								"en": "Unitranche"
+ 								"de": "unitranche",
+ 								"en": "unitranche"
  							},
  							"suffix": {
  								"de": "%",
@@ -15926,8 +16708,8 @@
  								"en": "#"
  							},
  							"label": {
- 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"suffix": {
  								"de": "%",
@@ -16000,8 +16782,8 @@
  								"en": "#"
  							},
  							"label": {
- 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"suffix": {
  								"de": "%",
@@ -16105,8 +16887,8 @@
  							"step": 5,
  							"max": 100,
  							"label": {
- 								"de": "Senior",
- 								"en": "Senior"
+ 								"de": "senior",
+ 								"en": "senior"
  							},
  							"suffix": {
  								"de": "%",
@@ -16115,7 +16897,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--0:0;20:20;40:40;60:60;80:80;100:100",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -16161,8 +16943,8 @@
  							"step": 5,
  							"max": 100,
  							"label": {
- 								"de": "Unitranche",
- 								"en": "Unitranche"
+ 								"de": "unitranche",
+ 								"en": "unitranche"
  							},
  							"suffix": {
  								"de": "%",
@@ -16171,7 +16953,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--0:0;20:20;40:40;60:60;80:80;100:100",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -16217,8 +16999,8 @@
  							"step": 5,
  							"max": 100,
  							"label": {
- 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"suffix": {
  								"de": "%",
@@ -16227,7 +17009,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--0:0;20:20;40:40;60:60;80:80;100:100",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -16273,8 +17055,8 @@
  							"step": 5,
  							"max": 100,
  							"label": {
- 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"suffix": {
  								"de": "%",
@@ -16283,7 +17065,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--0:0;20:20;40:40;60:60;80:80;100:100",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -16365,8 +17147,8 @@
  							"step": 5,
  							"max": 100,
  							"label": {
- 								"de": "Senior",
- 								"en": "Senior"
+ 								"de": "senior",
+ 								"en": "senior"
  							},
  							"suffix": {
  								"de": "%",
@@ -16375,7 +17157,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--0:0;20:20;40:40;60:60;80:80;100:100",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -16421,8 +17203,8 @@
  							"step": 5,
  							"max": 100,
  							"label": {
- 								"de": "Unitranche",
- 								"en": "Unitranche"
+ 								"de": "unitranche",
+ 								"en": "unitranche"
  							},
  							"suffix": {
  								"de": "%",
@@ -16431,7 +17213,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--0:0;20:20;40:40;60:60;80:80;100:100",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -16477,8 +17259,8 @@
  							"step": 5,
  							"max": 100,
  							"label": {
- 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"suffix": {
  								"de": "%",
@@ -16487,7 +17269,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--0:0;20:20;40:40;60:60;80:80;100:100",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -16533,8 +17315,8 @@
  							"step": 5,
  							"max": 100,
  							"label": {
- 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"suffix": {
  								"de": "%",
@@ -16543,7 +17325,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--0:0;20:20;40:40;60:60;80:80;100:100",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -16625,8 +17407,8 @@
  							"step": 5,
  							"max": 100,
  							"label": {
- 								"de": "Senior",
- 								"en": "Senior"
+ 								"de": "senior",
+ 								"en": "senior"
  							},
  							"suffix": {
  								"de": "%",
@@ -16635,7 +17417,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--0:0;20:20;40:40;60:60;80:80;100:100",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -16681,8 +17463,8 @@
  							"step": 5,
  							"max": 100,
  							"label": {
- 								"de": "Unitranche",
- 								"en": "Unitranche"
+ 								"de": "unitranche",
+ 								"en": "unitranche"
  							},
  							"suffix": {
  								"de": "%",
@@ -16691,7 +17473,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--0:0;20:20;40:40;60:60;80:80;100:100",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -16737,8 +17519,8 @@
  							"step": 5,
  							"max": 100,
  							"label": {
- 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"suffix": {
  								"de": "%",
@@ -16747,7 +17529,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--0:0;20:20;40:40;60:60;80:80;100:100",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -16793,8 +17575,8 @@
  							"step": 5,
  							"max": 100,
  							"label": {
- 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"suffix": {
  								"de": "%",
@@ -16803,7 +17585,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--0:0;20:20;40:40;60:60;80:80;100:100",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -16885,8 +17667,8 @@
  							"step": 5,
  							"max": 100,
  							"label": {
- 								"de": "Senior",
- 								"en": "Senior"
+ 								"de": "senior",
+ 								"en": "senior"
  							},
  							"suffix": {
  								"de": "%",
@@ -16895,7 +17677,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--0:0;20:20;40:40;60:60;80:80;100:100",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -16941,8 +17723,8 @@
  							"step": 5,
  							"max": 100,
  							"label": {
- 								"de": "Unitranche",
- 								"en": "Unitranche"
+ 								"de": "unitranche",
+ 								"en": "unitranche"
  							},
  							"suffix": {
  								"de": "%",
@@ -16951,7 +17733,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--0:0;20:20;40:40;60:60;80:80;100:100",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -16997,8 +17779,8 @@
  							"step": 5,
  							"max": 100,
  							"label": {
- 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"suffix": {
  								"de": "%",
@@ -17007,7 +17789,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--0:0;20:20;40:40;60:60;80:80;100:100",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -17053,8 +17835,8 @@
  							"step": 5,
  							"max": 100,
  							"label": {
- 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"suffix": {
  								"de": "%",
@@ -17063,7 +17845,7 @@
  							"col_span": 1,
  							"col_span_label": 1,
  							"col_span_control": 1,
- 							"dynamic_func_paramset": "1",
+ 							"dynamic_func_paramset": "3--0:0;20:20;40:40;60:60;80:80;100:100",
  							"style": {
  								"desktop": {
  									"grid_container_style": {
@@ -17193,8 +17975,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Senior",
- 								"en": "Senior"
+ 								"de": "senior",
+ 								"en": "senior"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -17222,8 +18004,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Unitranche",
- 								"en": "Unitranche"
+ 								"de": "unitranche",
+ 								"en": "unitranche"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -17251,8 +18033,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -17280,8 +18062,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -18475,8 +19257,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Senior",
- 								"en": "Senior"
+ 								"de": "senior",
+ 								"en": "senior"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -18504,8 +19286,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Unitranche",
- 								"en": "Unitranche"
+ 								"de": "unitranche",
+ 								"en": "unitranche"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -18533,8 +19315,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -18562,8 +19344,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -19772,8 +20554,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Senior",
- 								"en": "Senior"
+ 								"de": "senior",
+ 								"en": "senior"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -19801,8 +20583,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Unitranche",
- 								"en": "Unitranche"
+ 								"de": "unitranche",
+ 								"en": "unitranche"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -19830,8 +20612,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -19859,8 +20641,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -21054,8 +21836,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Senior",
- 								"en": "Senior"
+ 								"de": "senior",
+ 								"en": "senior"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -21083,8 +21865,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Unitranche",
- 								"en": "Unitranche"
+ 								"de": "unitranche",
+ 								"en": "unitranche"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -21112,8 +21894,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -21141,8 +21923,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -22351,8 +23133,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Senior",
- 								"en": "Senior"
+ 								"de": "senior",
+ 								"en": "senior"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -22380,8 +23162,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Unitranche",
- 								"en": "Unitranche"
+ 								"de": "unitranche",
+ 								"en": "unitranche"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -22409,8 +23191,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -22438,8 +23220,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -23633,8 +24415,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Senior",
- 								"en": "Senior"
+ 								"de": "senior",
+ 								"en": "senior"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -23662,8 +24444,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Unitranche",
- 								"en": "Unitranche"
+ 								"de": "unitranche",
+ 								"en": "unitranche"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -23691,8 +24473,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -23720,8 +24502,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -24930,8 +25712,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Senior",
- 								"en": "Senior"
+ 								"de": "senior",
+ 								"en": "senior"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -24959,8 +25741,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Unitranche",
- 								"en": "Unitranche"
+ 								"de": "unitranche",
+ 								"en": "unitranche"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -24988,8 +25770,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -25017,8 +25799,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -26212,8 +26994,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Senior",
- 								"en": "Senior"
+ 								"de": "senior",
+ 								"en": "senior"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -26241,8 +27023,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Unitranche",
- 								"en": "Unitranche"
+ 								"de": "unitranche",
+ 								"en": "unitranche"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -26270,8 +27052,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
- 								"en": "Sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
+ 								"de": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed",
+ 								"en": "sub\u0026shy;or\u0026shy;di\u0026shy;nat\u0026shy;ed"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -26299,8 +27081,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Mez\u0026shy;za\u0026shy;nine / PIK / other",
- 								"en": "Mez\u0026shy;za\u0026shy;nine / PIK / other"
+ 								"de": "mez\u0026shy;za\u0026shy;nine / PIK / other",
+ 								"en": "mez\u0026shy;za\u0026shy;nine / PIK / other"
  							},
  							"col_span": 1,
  							"col_span_label": 1,

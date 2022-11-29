@@ -200,8 +200,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			qst.WrapPageT(page),
 			"closing_time",
 			lblDuration,
-			suffixWeeks,
-			"3",
+			sliderWeeksClosing,
 		)
 
 		chapter3(
@@ -230,8 +229,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			qst.WrapPageT(page),
 			"esg",
 			shareESG,
-			suffixPercent,
-			"2",
+			sliderPctZeroHundredMiddle,
 		)
 
 		shareESGRatch := trl.S{
@@ -244,8 +242,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			qst.WrapPageT(page),
 			"esgratch",
 			shareESGRatch,
-			suffixPercent,
-			"2",
+			sliderPctZeroHundredMiddle,
 		)
 
 		share15Degree := trl.S{
@@ -258,8 +255,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			qst.WrapPageT(page),
 			"esg15degrees",
 			share15Degree,
-			suffixPercent,
-			"2",
+			sliderPctZeroHundredMiddle,
 		)
 
 	}
@@ -390,11 +386,11 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			page12Lbls,
 			[]*rangeConf{
 				&sliderPctThreeTen,
-				&sliderPctThreeTen,
-				&sliderPctThreeTen,
-				&sliderPctThreeTen,
-				&sliderPctThreeTen,
-				&sliderPctThreeTen,
+				&sliderPctZeroTwo,
+				&sliderPctZeroFour,
+				&sliderPctThreeTwenty,
+				&sliderPctThreeTwentyfive,
+				&sliderPctZeroHundredWide,
 			},
 		)
 
@@ -415,7 +411,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		}
 
 		page13Types := []string{
-			"range-pct",
+			"radios1-4",
 			"range-pct",
 			"range-pct",
 			"range-pct",
@@ -492,12 +488,12 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			page13Types,
 			page13Lbls,
 			[]*rangeConf{
-				&sliderPctThreeTen,
-				&sliderPctThreeTen,
-				&sliderPctThreeTen,
-				&sliderPctThreeTen,
-				&sliderPctThreeTen,
-				&sliderPctThreeTen,
+				&sliderPctThreeTen, // unused
+				&sliderYearsZeroTen,
+				&sliderEBITDA2x10x,
+				&sliderPctThreeTen, // todo
+				&sliderPctThreeTen, // todo
+				&sliderPctThreeTen, // todo
 			},
 		)
 
@@ -658,12 +654,12 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			page21Types,
 			page21Lbls,
 			[]*rangeConf{
-				&sliderPctZeroHundred,
-				&sliderPctZeroHundred,
-				&sliderPctZeroHundred,
-				&sliderPctZeroHundred,
-				&sliderPctZeroHundred,
-				&sliderPctZeroHundred,
+				&sliderPctZeroHundredWide,
+				&sliderPctZeroHundredWide,
+				&sliderPctZeroHundredWide,
+				&sliderPctZeroHundredWide,
+				&sliderPctZeroHundredWide,
+				&sliderPctZeroHundredWide,
 			},
 		)
 
@@ -783,15 +779,15 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			page23Types,
 			page23Lbls,
 			[]*rangeConf{
-				&sliderPctZeroHundred,
-				&sliderPctZeroHundred,
-				&sliderPctZeroHundred,
-				&sliderPctZeroHundred,
-				&sliderPctZeroHundred,
-				&sliderPctZeroHundred,
-				&sliderPctZeroHundred,
-				&sliderPctZeroHundred,
-				&sliderPctZeroHundred,
+				&sliderPctZeroHundredWide,
+				&sliderPctZeroHundredWide,
+				&sliderPctZeroHundredWide,
+				&sliderPctZeroHundredWide,
+				&sliderPctZeroHundredWide,
+				&sliderPctZeroHundredWide,
+				&sliderPctZeroHundredWide,
+				&sliderPctZeroHundredWide,
+				&sliderPctZeroHundredWide,
 			},
 		)
 

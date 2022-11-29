@@ -6,6 +6,7 @@ import (
 	"math"
 	"path"
 	"sort"
+	"strconv"
 	"strings"
 
 	"github.com/zew/go-questionnaire/pkg/cfg"
@@ -406,6 +407,7 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 			ctrl += fmt.Sprintf("<span data='label-as-input'>%v</span> ", inp.Label.Tr(q.LangCode))
 		}
 	case "range":
+
 		ctrl += fmt.Sprintf("<div class='input-wrapper-%v'>", inp.Signature())
 
 		// the range input
@@ -463,58 +465,76 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 			inp.Name,
 		)
 
-		if inp.DynamicFuncParamset == "3" {
-			ctrl += fmt.Sprintf(`
-			<!-- label must be trailing sibling to input[range] -->
-			<label for="%v">
-				<!-- label content in other grid item -->
-				  %v %v
-				<div class="labels" aria-hidden="true" 
-				><span 
-					style="--i: 0"  ><6&nbsp;&nbsp;</span><span 
-					style="--i: 2"  >6</span><span
-					style="--i: 4"  >9</span><span 
-					style="--i: 6"  >12</span><span 
-					style="--i: 8"  >15</span><span 
-					style="--i: 10" >18</span><span 
-					style="--i: 12">&nbsp;&nbsp;>18</span>
-				</div>
-			</label>	
-				%v
-			`,
-				inp.Name,
-				display,
-				inp.Suffix["en"],
-				noAnswer,
-			)
+		// if inp.DynamicFuncParamset == "3" {
+		// 	ctrl += fmt.Sprintf(`
+		// 	<!-- label must be trailing sibling to input[range] -->
+		// 	<label for="%v">
+		// 		<!-- label content in other grid item -->
+		// 		  %v %v
+		// 		<div class="labels" aria-hidden="true"
+		// 		><span
+		// 			style="--i: 0"  ><6&nbsp;&nbsp;</span><span
+		// 			style="--i: 2"  >6</span><span
+		// 			style="--i: 4"  >9</span><span
+		// 			style="--i: 6"  >12</span><span
+		// 			style="--i: 8"  >15</span><span
+		// 			style="--i: 10" >18</span><span
+		// 			style="--i: 12">&nbsp;&nbsp;>18</span>
+		// 		</div>
+		// 	</label>
+		// 		%v
+		// 	`,
+		// 		inp.Name,
+		// 		display,
+		// 		inp.Suffix["en"],
+		// 		noAnswer,
+		// 	)
 
-		} else {
-			ctrl += fmt.Sprintf(`
+		// } else {
+		// 	ctrl += fmt.Sprintf(`
+		// 	<!-- label must be trailing sibling to input[range] -->
+		// 	<label for="%v">
+		// 		<!-- label content in other grid item -->
+		// 		  %v %v
+		// 		<div class="labels" aria-hidden="true"
+		// 		><span
+		// 			style="--i: 0"   >0</span><span
+		// 			style="--i: 2"  >20</span><span
+		// 			style="--i: 4"  >40</span><span
+		// 			style="--i: 6"  >60</span><span
+		// 			style="--i: 8"  >80</span><span
+		// 			style="--i: 10">100</span>
+		// 		</div>
+		// 	</label>
+		// 		%v
+		// 	`,
+		// 		inp.Name,
+		// 		display,
+		// 		inp.Suffix["en"],
+		// 		noAnswer,
+		// 	)
+		// }
+
+		ctrl += fmt.Sprintf(`
 			<!-- label must be trailing sibling to input[range] -->
 			<label for="%v">
 				<!-- label content in other grid item -->
 				  %v %v
 				<div class="labels" aria-hidden="true" 
-				><span 
-					style="--i: 0"   >0</span><span 
-					style="--i: 2"  >20</span><span
-					style="--i: 4"  >40</span><span 
-					style="--i: 6"  >60</span><span 
-					style="--i: 8"  >80</span><span 
-					style="--i: 10">100</span>
-				</div>
+				>%v</div>
 			</label>	
 				%v
 			`,
-				inp.Name,
-				display,
-				inp.Suffix["en"],
-				noAnswer,
-			)
-		}
+			inp.Name,
+			display,
+			inp.Suffix["en"],
+			inp.rangeLabels(),
+			noAnswer,
+		)
+
 		ctrl += `</div>` // /input-wrapper
 
-		inp.Suffix = trl.S{}
+		inp.Suffix = trl.S{} // delete - since range writes its own suffix
 
 	case "text", "number", "hidden", "checkbox", "radio":
 		rspvl := inp.Response
@@ -635,5 +655,78 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 	// error rendering moved to GroupHTMLGridBased
 
 	return ctrl
+
+}
+
+/*
+	example
+
+	<div class="labels" aria-hidden="true"
+		><span
+			style="--i: 0"  ><6&nbsp;&nbsp;</span><span
+			style="--i: 2"  >6</span><span
+			style="--i: 4"  >9</span><span
+			style="--i: 6"  >12</span><span
+			style="--i: 8"  >15</span><span
+			style="--i: 10" >18</span><span
+			style="--i: 12">&nbsp;&nbsp;>18</span></div>
+
+`
+*/
+func (inp *inputT) rangeLabels() string {
+
+	xs := []float64{}
+	ys := []string{}
+
+	if inp.DynamicFuncParamset != "" {
+
+		parts := strings.Split(inp.DynamicFuncParamset, "--")
+
+		lbls1 := parts[1]
+		pairs := strings.Split(lbls1, ";")
+
+		for _, pairStr := range pairs {
+			pair := strings.Split(pairStr, ":")
+			x1, _ := strconv.Atoi(pair[0])
+			xs = append(xs, float64(x1))
+			ys = append(ys, pair[1])
+		}
+
+		if parts[0] == "1" {
+			// log.Printf("   xs %+v", xs)
+			// log.Printf("   ys %+v", ys)
+		}
+
+	}
+
+	core := &strings.Builder{}
+
+	itr := -2
+	for x := inp.Min; x <= inp.Max; x += inp.Step {
+
+		// if itr%2 == 1 && x != inp.Max {
+		// 	continue // only even
+		// }
+
+		// log.Printf("    cmp %v %v itr %v", x, xs[0], itr)
+		if len(xs) > 0 && x == xs[0] {
+
+			itr++
+			itr++
+
+			y := ys[0]
+			fmt.Fprintf(core, `<span 
+				style="--i: %v"  >%v</span>`, itr, y)
+
+			xs = xs[1:]
+			ys = ys[1:]
+
+		}
+
+	}
+
+	// log.Printf("process end %v", inp.DynamicFuncParamset)
+
+	return core.String()
 
 }

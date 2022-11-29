@@ -207,8 +207,10 @@ func (inp inputT) IsReserved() bool {
 
 // Signature returns matching datalist
 func (inp inputT) Signature() string {
+
 	if inp.DynamicFuncParamset != "" {
-		return fmt.Sprintf("signature-%v", inp.DynamicFuncParamset)
+		parts := strings.Split(inp.DynamicFuncParamset, "--")
+		return fmt.Sprintf("signature-%v", parts[0])
 	}
 	return fmt.Sprintf("signature-%v-%v-%v", inp.Min, inp.Max, inp.Step)
 }

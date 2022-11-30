@@ -17,7 +17,6 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 	include = include || q.Survey.Year == 2022 && q.Survey.Month == 3
 	include = include || q.Survey.Year == 2022 && q.Survey.Month == 6
 	include = include || q.Survey.Year == 2022 && q.Survey.Month == 6+3
-	include = include || q.Survey.Year == 2022 && q.Survey.Month == 6+6
 
 	// !!!
 	// update the 3 month reference "compared to [now minus three months]"

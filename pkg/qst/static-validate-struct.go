@@ -226,7 +226,13 @@ func (q *QuestionnaireT) Validate() error {
 
 				if !inp.IsLabelOnly() && !inp.IsHidden() {
 					if inp.ColSpanControl == 0 {
-						return fmt.Errorf("%v has no ColSpanControl", s)
+
+						if inp.Label == nil {
+							inp.ColSpanControl = 1
+						} else {
+							return fmt.Errorf("%v has no ColSpanControl", s)
+						}
+
 					}
 				}
 

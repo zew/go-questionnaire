@@ -17,6 +17,7 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 	include = include || q.Survey.Year == 2022 && q.Survey.Month == 3
 	include = include || q.Survey.Year == 2022 && q.Survey.Month == 6
 	include = include || q.Survey.Year == 2022 && q.Survey.Month == 6+3
+	include = include || q.Survey.Year == 2022 && q.Survey.Month == 6+6
 
 	// !!!
 	// update the 3 month reference "compared to [now minus three months]"
@@ -316,7 +317,7 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 					Sie zu einer Revision Ihrer Einschätzungen 
 					zum Rendite-Risiko-Profil der einzelnen Assetklassen
 					im <b><i>Eurogebiet</i></b> 
-					gegenüber Juni 2022 bewogen?
+					gegenüber September 2022 bewogen?
 				</p>
 
 				<p style=''>
@@ -333,7 +334,7 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 					lead you to change your assessment 
 					of the return-risk profiles
 					of the following four asset classes 
-					(compared to June 2022)
+					(compared to September 2022)
 					in the <b><i>euro area</i></b>?
 
 				</p>

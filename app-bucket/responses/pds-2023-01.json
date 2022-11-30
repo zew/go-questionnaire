@@ -13,12 +13,15 @@
  		"month": 1,
  		"deadline": "2030-01-01T00:00:00+01:00",
  		"params": [
- 			{},
+ 			{
+ 				"name": "main_refinance_rate_ecb",
+ 				"val": "2,0%"
+ 			},
  			{}
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "bb259c40ec73ab0c22aec726df4df0fdacbee2bc1cfcb2235e1d0e25a81ff5c3",
+ 	"md_5": "3ffe3bb241aafe0c40d9aa3efb4284c57a638440d1584be3411ceab5704740e0",
  	"lang_codes": [
  		"en"
  	],
@@ -1090,21 +1093,6 @@
  			},
  			"finished": "0001-01-01T00:00:00Z",
  			"groups": [
- 				{
- 					"bottom_vspacers": 1,
- 					"columns": 1,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "\n\t\t\t\t\t\t\tAlignment of tranch names imperfect. \u003cbr\u003e\n\t\t\t\t\t\tSliders:\n\t\t\t\t\t\t\tScales incomplete; ticks without label missing; \u003cbr\u003e \n\t\t\t\t\t\t\tWhich scales point to intervals, which to scalars? Extra column in Excel spec?\u003cbr\u003e\n\t\t\t\t\t\t\tWidth of display too narrow\u003cbr\u003e\n\t\t\t\t\t\t\tAlignment is now for scalars, not for intervals, display shows interval.\u003cbr\u003e\n\t\t\t\t\t\t\tHiding thumb on init and on 'no an\u0026shy;swer' if technically possible.\n\t\t\t\t\t\t",
- 								"en": "\n\t\t\t\t\t\t\tAlignment of tranch names imperfect. \u003cbr\u003e\n\t\t\t\t\t\tSliders:\n\t\t\t\t\t\t\tScales incomplete; ticks without label missing; \u003cbr\u003e \n\t\t\t\t\t\t\tWhich scales point to intervals, which to scalars? Extra column in Excel spec?\u003cbr\u003e\n\t\t\t\t\t\t\tWidth of display too narrow\u003cbr\u003e\n\t\t\t\t\t\t\tAlignment is now for scalars, not for intervals, display shows interval.\u003cbr\u003e\n\t\t\t\t\t\t\tHiding thumb on init and on 'no an\u0026shy;swer' if technically possible.\n\t\t\t\t\t\t"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1
- 						}
- 					]
- 				},
  				{
  					"bottom_vspacers": 3,
  					"columns": 7,
@@ -6939,8 +6927,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003ea.)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tMargin (over 3m Euribor) \u003cbr\u003e\n\t\t\t\t\t\u003cspan class=font-size-90 \u003eav\u0026shy;er\u0026shy;age Cash margin (only re\u0026shy;le\u0026shy;vant for floating rate loans)\u003c/span\u003e",
- 								"en": "\u003cb\u003ea.)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tMargin (over 3m Euribor) \u003cbr\u003e\n\t\t\t\t\t\u003cspan class=font-size-90 \u003eav\u0026shy;er\u0026shy;age Cash margin (only re\u0026shy;le\u0026shy;vant for floating rate loans)\u003c/span\u003e"
+ 								"de": "\u003cb\u003ea.)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tMargin (over 3m Euribor) \u003cbr\u003e\n\t\t\t\t\t\u003cspan class=font-size-90 \u003eAv\u0026shy;er\u0026shy;age cash margin (only re\u0026shy;le\u0026shy;vant for floating rate loans)\u003c/span\u003e",
+ 								"en": "\u003cb\u003ea.)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tMargin (over 3m Euribor) \u003cbr\u003e\n\t\t\t\t\t\u003cspan class=font-size-90 \u003eAv\u0026shy;er\u0026shy;age cash margin (only re\u0026shy;le\u0026shy;vant for floating rate loans)\u003c/span\u003e"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -7215,8 +7203,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003eb.)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tInterest floor \u003cbr\u003e\n\t\t\t\t\t\u003cspan class=font-size-90 \u003eav\u0026shy;er\u0026shy;age Interest floor (only re\u0026shy;le\u0026shy;vant for floating rate loans)\u003c/span\u003e",
- 								"en": "\u003cb\u003eb.)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tInterest floor \u003cbr\u003e\n\t\t\t\t\t\u003cspan class=font-size-90 \u003eav\u0026shy;er\u0026shy;age Interest floor (only re\u0026shy;le\u0026shy;vant for floating rate loans)\u003c/span\u003e"
+ 								"de": "\u003cb\u003eb.)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tInterest floor \u003cbr\u003e\n\t\t\t\t\t\u003cspan class=font-size-90 \u003eAv\u0026shy;er\u0026shy;age interest floor (only re\u0026shy;le\u0026shy;vant for floating rate loans)\u003c/span\u003e",
+ 								"en": "\u003cb\u003eb.)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tInterest floor \u003cbr\u003e\n\t\t\t\t\t\u003cspan class=font-size-90 \u003eAv\u0026shy;er\u0026shy;age interest floor (only re\u0026shy;le\u0026shy;vant for floating rate loans)\u003c/span\u003e"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -7487,8 +7475,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003ec.)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tUpfront fee \u003cbr\u003e\n\t\t\t\t\t\u003cspan class=font-size-90 \u003eav\u0026shy;er\u0026shy;age Upfront fee (per\u0026shy;cent of loan value)\u003c/span\u003e",
- 								"en": "\u003cb\u003ec.)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tUpfront fee \u003cbr\u003e\n\t\t\t\t\t\u003cspan class=font-size-90 \u003eav\u0026shy;er\u0026shy;age Upfront fee (per\u0026shy;cent of loan value)\u003c/span\u003e"
+ 								"de": "\u003cb\u003ec.)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tUpfront fee \u003cbr\u003e\n\t\t\t\t\t\u003cspan class=font-size-90 \u003eAv\u0026shy;er\u0026shy;age upfront fee (per\u0026shy;cent of loan value)\u003c/span\u003e",
+ 								"en": "\u003cb\u003ec.)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tUpfront fee \u003cbr\u003e\n\t\t\t\t\t\u003cspan class=font-size-90 \u003eAv\u0026shy;er\u0026shy;age upfront fee (per\u0026shy;cent of loan value)\u003c/span\u003e"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -8035,8 +8023,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003ee.)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t Expected IRR \u003cbr\u003e\n\t\t\t\t\t\u003cspan class=font-size-90 \u003e Av\u0026shy;er\u0026shy;age expected irr  \u003c/span\u003e",
- 								"en": "\u003cb\u003ee.)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t Expected IRR \u003cbr\u003e\n\t\t\t\t\t\u003cspan class=font-size-90 \u003e Av\u0026shy;er\u0026shy;age expected irr  \u003c/span\u003e"
+ 								"de": "\u003cb\u003ee.)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t Expected IRR \u003cbr\u003e\n\t\t\t\t\t\u003cspan class=font-size-90 \u003e Av\u0026shy;er\u0026shy;age expected IRR  \u003c/span\u003e",
+ 								"en": "\u003cb\u003ee.)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t Expected IRR \u003cbr\u003e\n\t\t\t\t\t\u003cspan class=font-size-90 \u003e Av\u0026shy;er\u0026shy;age expected IRR  \u003c/span\u003e"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -10484,8 +10472,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003ee.)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t Av\u0026shy;er\u0026shy;age EV \u003cbr\u003e\n\t\t\t\t\t\u003cspan class=font-size-90 \u003e Av\u0026shy;er\u0026shy;age EV of Companies \u003c/span\u003e",
- 								"en": "\u003cb\u003ee.)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t Av\u0026shy;er\u0026shy;age EV \u003cbr\u003e\n\t\t\t\t\t\u003cspan class=font-size-90 \u003e Av\u0026shy;er\u0026shy;age EV of Companies \u003c/span\u003e"
+ 								"de": "\u003cb\u003ee.)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t Av\u0026shy;er\u0026shy;age EV \u003cbr\u003e\n\t\t\t\t\t\u003cspan class=font-size-90 \u003e Av\u0026shy;er\u0026shy;age EV of companies \u003c/span\u003e",
+ 								"en": "\u003cb\u003ee.)\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t Av\u0026shy;er\u0026shy;age EV \u003cbr\u003e\n\t\t\t\t\t\u003cspan class=font-size-90 \u003e Av\u0026shy;er\u0026shy;age EV of companies \u003c/span\u003e"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -12267,8 +12255,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e2.1\u003c/b\u003e \u0026nbsp; Assets under Man\u0026shy;age\u0026shy;ment",
- 								"en": "\u003cb\u003e2.1\u003c/b\u003e \u0026nbsp; Assets under Man\u0026shy;age\u0026shy;ment"
+ 								"de": "\u003cb\u003e2.1\u003c/b\u003e \u0026nbsp; Assets under man\u0026shy;age\u0026shy;ment",
+ 								"en": "\u003cb\u003e2.1\u003c/b\u003e \u0026nbsp; Assets under man\u0026shy;age\u0026shy;ment"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -13734,8 +13722,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e2.2\u003c/b\u003e \u0026nbsp; Portfolio Composition",
- 								"en": "\u003cb\u003e2.2\u003c/b\u003e \u0026nbsp; Portfolio Composition"
+ 								"de": "\u003cb\u003e2.2\u003c/b\u003e \u0026nbsp; Portfolio composition",
+ 								"en": "\u003cb\u003e2.2\u003c/b\u003e \u0026nbsp; Portfolio composition"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -15050,8 +15038,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003ea.)\u003c/b\u003e \u0026nbsp; Av\u0026shy;er\u0026shy;age Number of Financial Covenants per credit",
- 								"en": "\u003cb\u003ea.)\u003c/b\u003e \u0026nbsp; Av\u0026shy;er\u0026shy;age Number of Financial Covenants per credit"
+ 								"de": "\u003cb\u003ea.)\u003c/b\u003e \u0026nbsp; Av\u0026shy;er\u0026shy;age number of financial covenants per credit",
+ 								"en": "\u003cb\u003ea.)\u003c/b\u003e \u0026nbsp; Av\u0026shy;er\u0026shy;age number of financial covenants per credit"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -18420,8 +18408,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e3.1\u003c/b\u003e \u0026nbsp; Financing situation/pricing",
- 								"en": "\u003cb\u003e3.1\u003c/b\u003e \u0026nbsp; Financing situation/pricing"
+ 								"de": "\u003cb\u003e3.1\u003c/b\u003e \u0026nbsp; Financing situation/pricing \u003cbr\u003e\n\t\t\t\t\t\t\u003cspan class=font-size-90\u003e Assess the de\u0026shy;vel\u0026shy;op\u0026shy;ment of expected returns  \u003c/span\u003e",
+ 								"en": "\u003cb\u003e3.1\u003c/b\u003e \u0026nbsp; Financing situation/pricing \u003cbr\u003e\n\t\t\t\t\t\t\u003cspan class=font-size-90\u003e Assess the de\u0026shy;vel\u0026shy;op\u0026shy;ment of expected returns  \u003c/span\u003e"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -21007,8 +20995,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e3.2\u003c/b\u003e \u0026nbsp; Assess the change in deal quality with respect to the risk return profile",
- 								"en": "\u003cb\u003e3.2\u003c/b\u003e \u0026nbsp; Assess the change in deal quality with respect to the risk return profile"
+ 								"de": "\u003cb\u003e3.2\u003c/b\u003e \u0026nbsp; Assess the change in deal quality with respect to the risk return profile \u003cbr\u003e\n\t\t\t\t\t\t\u003cspan class=font-size-90\u003e Assess the change in deal quality with respect to the risk return profile \u003c/span\u003e",
+ 								"en": "\u003cb\u003e3.2\u003c/b\u003e \u0026nbsp; Assess the change in deal quality with respect to the risk return profile \u003cbr\u003e\n\t\t\t\t\t\t\u003cspan class=font-size-90\u003e Assess the change in deal quality with respect to the risk return profile \u003c/span\u003e"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -23594,8 +23582,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e3.3\u003c/b\u003e \u0026nbsp; Assess the quality of deal documentation (covenant strength, enforcement rights, etc.)",
- 								"en": "\u003cb\u003e3.3\u003c/b\u003e \u0026nbsp; Assess the quality of deal documentation (covenant strength, enforcement rights, etc.)"
+ 								"de": "\u003cb\u003e3.3\u003c/b\u003e \u0026nbsp; Assess the quality of deal documentation (covenant strength, enforcement rights, etc.) \u003cbr\u003e\n\t\t\t\t\t\t\u003cspan class=font-size-90\u003e  Assess the quality of deal documentation (covenant strength, enforcement rights, etc.) \u003c/span\u003e",
+ 								"en": "\u003cb\u003e3.3\u003c/b\u003e \u0026nbsp; Assess the quality of deal documentation (covenant strength, enforcement rights, etc.) \u003cbr\u003e\n\t\t\t\t\t\t\u003cspan class=font-size-90\u003e  Assess the quality of deal documentation (covenant strength, enforcement rights, etc.) \u003c/span\u003e"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -26181,8 +26169,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e3.4\u003c/b\u003e \u0026nbsp; Do you observe more deals, same amount of deals or less deals",
- 								"en": "\u003cb\u003e3.4\u003c/b\u003e \u0026nbsp; Do you observe more deals, same amount of deals or less deals"
+ 								"de": "\u003cb\u003e3.4\u003c/b\u003e \u0026nbsp; Do you observe more deals, same amount of deals or less deals \u003cbr\u003e\n\t\t\t\t\t\t\u003cspan class=font-size-90\u003e Do you observe more deals, same amount of deals or less deals  \u003c/span\u003e",
+ 								"en": "\u003cb\u003e3.4\u003c/b\u003e \u0026nbsp; Do you observe more deals, same amount of deals or less deals \u003cbr\u003e\n\t\t\t\t\t\t\u003cspan class=font-size-90\u003e Do you observe more deals, same amount of deals or less deals  \u003c/span\u003e"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -29402,8 +29390,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Cons\u0026shy;umer Discretionary",
- 								"en": "Cons\u0026shy;umer Discretionary"
+ 								"de": "Cons\u0026shy;umer discretionary",
+ 								"en": "Cons\u0026shy;umer discretionary"
  							},
  							"col_span": 3,
  							"col_span_label": 1
@@ -29432,8 +29420,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Cons\u0026shy;umer Staples",
- 								"en": "Cons\u0026shy;umer Staples"
+ 								"de": "Cons\u0026shy;umer staples",
+ 								"en": "Cons\u0026shy;umer staples"
  							},
  							"col_span": 3,
  							"col_span_label": 1
@@ -29462,8 +29450,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Health Care",
- 								"en": "Health Care"
+ 								"de": "Health care",
+ 								"en": "Health care"
  							},
  							"col_span": 3,
  							"col_span_label": 1
@@ -29522,8 +29510,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Information Technology",
- 								"en": "Information Technology"
+ 								"de": "Information technology",
+ 								"en": "Information technology"
  							},
  							"col_span": 3,
  							"col_span_label": 1
@@ -29552,8 +29540,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Communication Services",
- 								"en": "Communication Services"
+ 								"de": "Com\u0026shy;mu\u0026shy;ni\u0026shy;ca\u0026shy;tion services",
+ 								"en": "Com\u0026shy;mu\u0026shy;ni\u0026shy;ca\u0026shy;tion services"
  							},
  							"col_span": 3,
  							"col_span_label": 1
@@ -29612,8 +29600,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Real Estate",
- 								"en": "Real Estate"
+ 								"de": "Real estate",
+ 								"en": "Real estate"
  							},
  							"col_span": 3,
  							"col_span_label": 1
@@ -30805,7 +30793,7 @@
  		},
  		{
  			"label": {
- 				"en": "Slider"
+ 				"en": "Slider vs. radio group ;\u003cbr\u003eVarious slider thumbs"
  			},
  			"description": {
  				"de": "",
@@ -30813,7 +30801,7 @@
  			},
  			"counter_progress": "-",
  			"short": {
- 				"en": "Slider"
+ 				"en": "Slider vs. radio group ;\u003cbr\u003eVarious slider thumbs"
  			},
  			"suppress_in_progressbar": true,
  			"style": {
@@ -30979,7 +30967,7 @@
  							"name": "q44_dsgvo",
  							"type": "checkbox",
  							"label": {
- 								"en": "\n\t\t\t\t\t\t\u003cb\u003eEinwilligungserklärung gemäß DSGVO\u003c/b\u003e\n\n\t\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\t\tDie Antworten dieser Online-Umfrage werden von uns streng vertraulich, \n\t\t\t\t\t\tDSGVO-konform behandelt und nur in anonymer bzw. aggregierter Form benutzt.\n\n\t\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\t\tIm \u003ca href=\"/doc/site-imprint.md\" \u003eImpressum\u003c/a\u003e finden Sie umfangreiche An\u0026shy;gaben zum Da\u0026shy;tenschutz.\n\n\t\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\t\tHiermit willige ich ein, dass meine gesammelten Da\u0026shy;ten \n\t\t\t\t\t\tfür [Private Debt Survey] des [ZEW] verwendet werden.\n\n\t\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\t"
+ 								"en": "\n\t\t\t\t\t\tTodo: Abstimmung des exakten Textes zwi\u0026shy;schen ZEW und Partner\n\t\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\t\t\u003cb\u003eEinwilligungserklärung gemäß DSGVO\u003c/b\u003e\n\n\t\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\t\tDie Antworten dieser Online-Umfrage werden von uns streng vertraulich, \n\t\t\t\t\t\tDSGVO-konform behandelt und nur in anonymer bzw. aggregierter Form benutzt.\n\n\t\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\t\tIm \u003ca href=\"/doc/site-imprint.md\" \u003eImpressum\u003c/a\u003e finden Sie umfangreiche An\u0026shy;gaben zum Da\u0026shy;tenschutz.\n\n\t\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\t\tHiermit willige ich ein, dass meine gesammelten Da\u0026shy;ten \n\t\t\t\t\t\tfür [Private Debt Survey] des [ZEW] verwendet werden.\n\n\t\t\t\t\t\t\u003cbr\u003e\n\n\t\t\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -31028,8 +31016,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cb\u003eWeitergabe meiner Da\u0026shy;ten an [partner_2]\u003c/b\u003e \n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tMit Ihrer Einwilligung würden wir mit den im Rahmen dieser Erhebung \n\t\t\t\t\t\tgesammelten Da\u0026shy;ten gerne auch zu einer europaweiten \n\t\t\t\t\t\tStudie mit [partner_2] beitragen. \t\t\t\t\t\t\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\n\t\t\t\t\t",
- 								"en": "\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003cb\u003eWeitergabe meiner Da\u0026shy;ten an [partner_2]\u003c/b\u003e \n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\n\t\t\t\t\t\u003cp\u003e\n\t\t\t\t\t\tMit Ihrer Einwilligung würden wir mit den im Rahmen dieser Erhebung \n\t\t\t\t\t\tgesammelten Da\u0026shy;ten gerne auch zu [partner_2] beitragen. \n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\n\t\t\t\t\t"
+ 								"en": "\n\t\t\t\tTodo: \u003cbr\u003e\n\t\t\t\tText Weitergabe meiner Da\u0026shy;ten an [partner_2]\u003cbr\u003e\n\n\t\t\t\tZusammen mit Identifikation am Anfang?\u003cbr\u003e\n\t\t\t\tIdentifikation hierher ans Ende?\u003cbr\u003e\n\n\n\t\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1
@@ -31038,8 +31025,7 @@
  							"name": "q45",
  							"type": "radio",
  							"label": {
- 								"de": "Ich erkläre mich einverstanden, \n\t\t\t\t\tdass meine angegebenen personenbezogenen Da\u0026shy;ten \n\t\t\t\t\tgenutzt werden \n\t\t\t\t\tund zu Auswertungszwecken an [partner_1] \n\t\t\t\t\tweitergeleitet werden.\n\t\t\t\t\t",
- 								"en": "Ich erkläre mich einverstanden, \n\t\t\t\t\tdass meine angegebenen personenbezogenen Da\u0026shy;ten \n\t\t\t\t\tgenutzt werden \n\t\t\t\t\tund zu Auswertungszwecken an [partner_1] \n\t\t\t\t\tweitergeleitet werden.\n\t\t\t\t\t"
+ 								"en": "Ich erkläre mich einverstanden, \n\t\t\t\t\tdass meine angegebenen Da\u0026shy;ten zu Auswertungszwecken an [partner_1] \n\t\t\t\t\tweitergeleitet werden.\n\t\t\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -31084,53 +31070,6 @@
  							"name": "q45",
  							"type": "radio",
  							"label": {
- 								"de": "Ich erkläre mich einverstanden, \n\t\t\t\t\tdass meine angegebenen personenbezogenen Da\u0026shy;ten \n\t\t\t\t\t\u003ci\u003eanonymisiert\u003c/i\u003e \n\t\t\t\t\tzu Auswertungszwecken \n\t\t\t\t\tan [partner_1] weitergeleitet werden.\t\t\t\t\n\t\t\t\t\t",
- 								"en": "Ich erkläre mich einverstanden, \n\t\t\t\t\tdass meine angegebenen personenbezogenen Da\u0026shy;ten \n\t\t\t\t\t\u003ci\u003eanonymisiert\u003c/i\u003e \n\t\t\t\t\tzu Auswertungszwecken \n\t\t\t\t\tan [partner_1] weitergeleitet werden.\t\t\t\t\n\t\t\t\t\t"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1,
- 							"col_span_control": 6,
- 							"validator": "mustRadioGroup",
- 							"value_radio": "datasharing_anonymous",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"justify_self": "start",
- 										"order": 2
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "q45",
- 							"type": "radio",
- 							"label": {
- 								"de": "Meine Da\u0026shy;ten sollen \u003ci\u003enicht\u003c/i\u003e an [partner_1] \n\t\t\t\t\tweitergeleitet werden.\n\t\t\t\t\t",
  								"en": "Meine Da\u0026shy;ten sollen \u003ci\u003enicht\u003c/i\u003e an [partner_1] \n\t\t\t\t\tweitergeleitet werden.\n\t\t\t\t\t"
  							},
  							"col_span": 1,

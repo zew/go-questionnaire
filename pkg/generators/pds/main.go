@@ -190,40 +190,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		page.WidthMax("42rem")
 		page.WidthMax("64rem")
 
-		{
-			gr := page.AddGroup()
-			gr.Cols = 1
-			gr.BottomVSpacers = 1
-
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.Label = trl.S{
-					"en": `
-							Alignment of tranch names imperfect. <br>
-						Sliders:
-							Scales incomplete; ticks without label missing; <br> 
-							Which scales point to intervals, which to scalars? Extra column in Excel spec?<br>
-							Width of display too narrow<br>
-							Alignment is now for scalars, not for intervals, display shows interval.<br>
-							Hiding thumb on init and on 'no answer' if technically possible.
-						`,
-					"de": `
-							Alignment of tranch names imperfect. <br>
-						Sliders:
-							Scales incomplete; ticks without label missing; <br> 
-							Which scales point to intervals, which to scalars? Extra column in Excel spec?<br>
-							Width of display too narrow<br>
-							Alignment is now for scalars, not for intervals, display shows interval.<br>
-							Hiding thumb on init and on 'no answer' if technically possible.
-						`,
-				}
-				inp.ColSpan = 1
-				inp.ColSpanLabel = 1
-			}
-
-		}
-
 		restrictedTextMultiCols(qst.WrapPageT(page), rT1)
 
 		lblDuration := trl.S{
@@ -349,26 +315,26 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			{
 				"en": `
 					Margin (over 3m Euribor) <br>
-					<span class=font-size-90 >average Cash margin (only relevant for floating rate loans)</span>`,
+					<span class=font-size-90 >Average cash margin (only relevant for floating rate loans)</span>`,
 				"de": `
 					Margin (over 3m Euribor) <br>
-					<span class=font-size-90 >average Cash margin (only relevant for floating rate loans)</span>`,
+					<span class=font-size-90 >Average cash margin (only relevant for floating rate loans)</span>`,
 			},
 			{
 				"en": `
 					Interest floor <br>
-					<span class=font-size-90 >average Interest floor (only relevant for floating rate loans)</span>`,
+					<span class=font-size-90 >Average interest floor (only relevant for floating rate loans)</span>`,
 				"de": `
 					Interest floor <br>
-					<span class=font-size-90 >average Interest floor (only relevant for floating rate loans)</span>`,
+					<span class=font-size-90 >Average interest floor (only relevant for floating rate loans)</span>`,
 			},
 			{
 				"en": `
 					Upfront fee <br>
-					<span class=font-size-90 >average Upfront fee (percent of loan value)</span>`,
+					<span class=font-size-90 >Average upfront fee (percent of loan value)</span>`,
 				"de": `
 					Upfront fee <br>
-					<span class=font-size-90 >average Upfront fee (percent of loan value)</span>`,
+					<span class=font-size-90 >Average upfront fee (percent of loan value)</span>`,
 			},
 
 			{
@@ -382,10 +348,10 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			{
 				"en": `
 					 Expected IRR <br>
-					<span class=font-size-90 > Average expected irr  </span>`,
+					<span class=font-size-90 > Average expected IRR  </span>`,
 				"de": `
 					 Expected IRR <br>
-					<span class=font-size-90 > Average expected irr  </span>`,
+					<span class=font-size-90 > Average expected IRR  </span>`,
 			},
 			{
 				"en": `
@@ -485,10 +451,10 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			{
 				"en": `
 					 Average EV <br>
-					<span class=font-size-90 > Average EV of Companies </span>`,
+					<span class=font-size-90 > Average EV of companies </span>`,
 				"de": `
 					 Average EV <br>
-					<span class=font-size-90 > Average EV of Companies </span>`,
+					<span class=font-size-90 > Average EV of companies </span>`,
 			},
 			{
 				"en": `
@@ -627,8 +593,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp := gr.AddInput()
 				inp.Type = "textblock"
 				inp.Label = trl.S{
-					"en": "Assets under Management",
-					"de": "Assets under Management",
+					"en": "Assets under management",
+					"de": "Assets under management",
 				}.Outline("2.1")
 				inp.ColSpan = 1
 				inp.ColSpanLabel = 1
@@ -693,8 +659,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp := gr.AddInput()
 				inp.Type = "textblock"
 				inp.Label = trl.S{
-					"en": "Portfolio Composition",
-					"de": "Portfolio Composition",
+					"en": "Portfolio composition",
+					"de": "Portfolio composition",
 				}.Outline("2.2")
 				inp.ColSpan = 1
 				inp.ColSpanLabel = 1
@@ -751,8 +717,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		}
 		page23Lbls := []trl.S{
 			{
-				"en": "Average Number of Financial Covenants per credit",
-				"de": "Average Number of Financial Covenants per credit",
+				"en": "Average number of financial covenants per credit",
+				"de": "Average number of financial covenants per credit",
 			},
 			{
 				"en": "What is the share of portfolio (at fair market value) with a covenant holiday?",
@@ -839,20 +805,28 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		}
 		page5Lbls := []trl.S{
 			{
-				"en": "Financing situation/pricing",
-				"de": "Financing situation/pricing",
+				"en": `Financing situation/pricing <br>
+						<span class=font-size-90> Assess the development of expected returns  </span>`,
+				"de": `Financing situation/pricing <br>
+						<span class=font-size-90> Assess the development of expected returns  </span>`,
 			},
 			{
-				"en": "Assess the change in deal quality with respect to the risk return profile",
-				"de": "Assess the change in deal quality with respect to the risk return profile",
+				"en": `Assess the change in deal quality with respect to the risk return profile <br>
+						<span class=font-size-90> Assess the change in deal quality with respect to the risk return profile </span>`,
+				"de": `Assess the change in deal quality with respect to the risk return profile <br>
+						<span class=font-size-90> Assess the change in deal quality with respect to the risk return profile </span>`,
 			},
 			{
-				"en": "Assess the quality of deal documentation (covenant strength, enforcement rights, etc.)",
-				"de": "Assess the quality of deal documentation (covenant strength, enforcement rights, etc.)",
+				"en": `Assess the quality of deal documentation (covenant strength, enforcement rights, etc.) <br>
+						<span class=font-size-90>  Assess the quality of deal documentation (covenant strength, enforcement rights, etc.) </span>`,
+				"de": `Assess the quality of deal documentation (covenant strength, enforcement rights, etc.) <br>
+						<span class=font-size-90>  Assess the quality of deal documentation (covenant strength, enforcement rights, etc.) </span>`,
 			},
 			{
-				"en": "Do you observe more deals, same amount of deals or less deals",
-				"de": "Do you observe more deals, same amount of deals or less deals",
+				"en": `Do you observe more deals, same amount of deals or less deals <br>
+						<span class=font-size-90> Do you observe more deals, same amount of deals or less deals  </span>`,
+				"de": `Do you observe more deals, same amount of deals or less deals <br>
+						<span class=font-size-90> Do you observe more deals, same amount of deals or less deals  </span>`,
 			},
 		}
 
@@ -968,14 +942,14 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"energy":                 "Energy",
 				"materials":              "Materials",
 				"industrials":            "Industrials",
-				"consumer_discretionary": "Consumer Discretionary",
-				"consumer_staples":       "Consumer Staples",
-				"health_care":            "Health Care",
+				"consumer_discretionary": "Consumer discretionary",
+				"consumer_staples":       "Consumer staples",
+				"health_care":            "Health care",
 				"financials":             "Financials",
-				"information_technology": "Information Technology",
-				"communication_services": "Communication Services",
+				"information_technology": "Information technology",
+				"communication_services": "Communication services",
 				"utilities":              "Utilities",
-				"real_estate":            "Real Estate",
+				"real_estate":            "Real estate",
 			}
 
 			lblMain := trl.S{
@@ -1145,8 +1119,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	{
 		page := q.AddPage()
 
-		page.Label = trl.S{"en": "Slider"}
-		page.Short = trl.S{"en": "Slider"}
+		page.Label = trl.S{"en": "Slider vs. radio group ;<br>Various slider thumbs"}
+		page.Short = trl.S{"en": "Slider vs. radio group ;<br>Various slider thumbs"}
 		page.CounterProgress = "-"
 		page.SuppressInProgressbar = true
 		page.WidthMax("42rem")
@@ -1280,6 +1254,9 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.Validator = "must"
 				inp.Label = trl.S{
 					"en": `
+						Todo: Abstimmung des exakten Textes zwischen ZEW und Partner
+						<br>
+
 						<b>Einwilligungserklärung gemäß DSGVO</b>
 
 						<br>
@@ -1312,31 +1289,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			labels := []trl.S{
 				{
 					"en": `Ich erkläre mich einverstanden, 
-					dass meine angegebenen personenbezogenen Daten 
-					genutzt werden 
-					und zu Auswertungszwecken an [partner_1] 
+					dass meine angegebenen Daten zu Auswertungszwecken an [partner_1] 
 					weitergeleitet werden.
-					`,
-					"de": `Ich erkläre mich einverstanden, 
-					dass meine angegebenen personenbezogenen Daten 
-					genutzt werden 
-					und zu Auswertungszwecken an [partner_1] 
-					weitergeleitet werden.
-					`,
-				},
-
-				{
-					"en": `Ich erkläre mich einverstanden, 
-					dass meine angegebenen personenbezogenen Daten 
-					<i>anonymisiert</i> 
-					zu Auswertungszwecken 
-					an [partner_1] weitergeleitet werden.				
-					`,
-					"de": `Ich erkläre mich einverstanden, 
-					dass meine angegebenen personenbezogenen Daten 
-					<i>anonymisiert</i> 
-					zu Auswertungszwecken 
-					an [partner_1] weitergeleitet werden.				
 					`,
 				},
 
@@ -1344,16 +1298,14 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 					"en": `Meine Daten sollen <i>nicht</i> an [partner_1] 
 					weitergeleitet werden.
 					`,
-					"de": `Meine Daten sollen <i>nicht</i> an [partner_1] 
-					weitergeleitet werden.
-					`,
 				},
 			}
 			radioValues := []string{
 				"datasharing_yes",
-				"datasharing_anonymous",
+				// "datasharing_anonymous",
 				"datasharing_not",
 			}
+
 			gr := page.AddGroup()
 			gr.Cols = 1
 			{
@@ -1361,33 +1313,18 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.Type = "textblock"
 				inp.Label = trl.S{
 					"en": `
-					<br>
-					<b>Weitergabe meiner Daten an [partner_2]</b> 
-					<br>
-					
-					<p>
-						Mit Ihrer Einwilligung würden wir mit den im Rahmen dieser Erhebung 
-						gesammelten Daten gerne auch zu [partner_2] beitragen. 
-						<br>
-					</p>
-					
-					`,
-					"de": `
-					<br>
-					<b>Weitergabe meiner Daten an [partner_2]</b> 
-					<br>
-					
-					<p>
-						Mit Ihrer Einwilligung würden wir mit den im Rahmen dieser Erhebung 
-						gesammelten Daten gerne auch zu einer europaweiten 
-						Studie mit [partner_2] beitragen. 						
-						<br>
-					</p>
-					
-					`,
+				Todo: <br>
+				Text Weitergabe meiner Daten an [partner_2]<br>
+
+				Zusammen mit Identifikation am Anfang?<br>
+				Identifikation hierher ans Ende?<br>
+
+
+				`,
 				}
 				inp.ColSpan = gr.Cols
 			}
+
 			for idx, label := range labels {
 				rad := gr.AddInput()
 				rad.Type = "radio"

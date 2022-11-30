@@ -16,6 +16,7 @@ import (
 	"github.com/go-playground/form"
 	"github.com/zew/go-questionnaire/pkg/cfg"
 	"github.com/zew/go-questionnaire/pkg/cloudio"
+	"github.com/zew/go-questionnaire/pkg/generators/fmt"
 	"github.com/zew/go-questionnaire/pkg/generators/pds"
 	"github.com/zew/go-questionnaire/pkg/qst"
 	"github.com/zew/go-questionnaire/pkg/tpl"
@@ -26,11 +27,11 @@ type genT func(s qst.SurveyT) (*qst.QuestionnaireT, error)
 var gens = map[string]genT{
 
 	"pds": pds.Create,
+	"fmt": fmt.Create,
 
 	// disabled to reduce compile times
 	/*
 			"example": example.Create,
-		   	"fmt":     fmt.Create,
 		   	"flit":    flit.Create,
 		   	"pat":     pat.Create,
 		   	"pat1":    pat1.Create,

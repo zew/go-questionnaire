@@ -156,6 +156,7 @@ var hyph = []string{
 	"Wirt|schafts|for|schung",
 	"zwi|schen",
 
+	// https://www.merriam-webster.com/dictionary/estimate
 	// english
 	"ac|counts",
 	"ad|min|is|tra|tion",
@@ -170,9 +171,12 @@ var hyph = []string{
 	"busi|ness",
 	"can|di|date",
 
+	"chem|i|cal",
 	"com|plete|ly",
-	"Comp|etitive",
-	"Cons|umer",
+	"com|mu|ni|ca|tion",
+	"tele|com|mu|ni|ca|tion",
+	"comp|etitive",
+	"cons|umer",
 	"con|stant",
 	"de|crease",
 	"de|cline",
@@ -185,6 +189,7 @@ var hyph = []string{
 	"econ|o|my",
 	"en|vi|ron|ment",
 	"en|vi|ron|mental",
+	"es|ti|mate",
 	"enter|prises",
 	"environ|ment",
 	"im|prove",

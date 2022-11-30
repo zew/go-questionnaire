@@ -19,8 +19,8 @@ type StyleGridContainer struct {
 	AlignContent    string `json:"align_content,omitempty"`   // second axis - all items inside container - space-around | space-between
 	AlignItems      string `json:"align_items,omitempty"`     // second axis - item inside its 'cell' - stretch | baseline | center | start | end
 
-	GapColumn string `json:"column_gap,omitempty"`
-	GapRow    string `json:"row_gap,omitempty"`
+	GapColumn string `json:"column_gap,omitempty"` // default for group is 0
+	GapRow    string `json:"row_gap,omitempty"`    // default for groupT is 0.8rem
 }
 
 func gridContainerStyleExample1() StyleGridContainer {

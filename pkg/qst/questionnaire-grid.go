@@ -136,12 +136,20 @@ func (inp *inputT) LabelRight() {
 	inp.StyleLbl.Desktop.StyleText.AlignHorizontal = "right"
 }
 
-// LabelCenter - label horizontally centered;
+// LabelCenter - label *and* text horizontally centered;
 // default is 'left';
 // vertical remains 'center'
 func (inp *inputT) LabelCenter() {
 	inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
 	inp.StyleLbl.Desktop.StyleGridItem.JustifySelf = "center"
+	inp.StyleLbl.Desktop.StyleText.AlignHorizontal = "center"
+}
+
+// LabelBottom - label get vertically bottomed;
+// default is 'middle'
+func (inp *inputT) LabelBottom() {
+	inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
+	inp.StyleLbl.Desktop.StyleGridItem.AlignSelf = "end"
 }
 
 // ControlCenter - input horizontally centered;

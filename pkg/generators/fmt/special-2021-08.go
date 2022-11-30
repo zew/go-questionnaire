@@ -258,7 +258,6 @@ func special202108(q *qst.QuestionnaireT) error {
 				"en": "<b>2.</b> Which developments have lead you to change your assessment of the inflation outlook for the Euro are compared to the previous month",
 			}
 			gr := page.AddGrid(gb)
-			gr.OddRowsColoring = true
 			gr.BottomVSpacers = 3
 
 		}
@@ -809,7 +808,6 @@ func special202108(q *qst.QuestionnaireT) error {
 					`,
 			}
 			gr := page.AddGrid(gb)
-			gr.OddRowsColoring = true
 			gr.Style = css.NewStylesResponsive(gr.Style)
 			// gr.Style.Desktop.StyleGridContainer.GapColumn = "2.4rem"
 			// gr.Style.Mobile.StyleGridContainer.GapColumn = "0.4rem"
@@ -859,7 +857,6 @@ func special202108(q *qst.QuestionnaireT) error {
 					`,
 			}
 			gr := page.AddGrid(gb)
-			gr.OddRowsColoring = true
 			gr.Style = css.NewStylesResponsive(gr.Style)
 			// gr.Style.Desktop.StyleGridContainer.GapColumn = "2.4rem"
 			// gr.Style.Mobile.StyleGridContainer.GapColumn = "0.4rem"
@@ -892,7 +889,6 @@ func special202108(q *qst.QuestionnaireT) error {
 					`,
 			}
 			gr := page.AddGrid(gb)
-			gr.OddRowsColoring = true
 			gr.Style = css.NewStylesResponsive(gr.Style)
 			// gr.Style.Desktop.StyleGridContainer.GapColumn = "2.4rem"
 			// gr.Style.Mobile.StyleGridContainer.GapColumn = "0.4rem"
@@ -925,7 +921,6 @@ func special202108(q *qst.QuestionnaireT) error {
 					`,
 			}
 			gr := page.AddGrid(gb)
-			gr.OddRowsColoring = true
 			gr.Style = css.NewStylesResponsive(gr.Style)
 			// gr.Style.Desktop.StyleGridContainer.GapColumn = "2.4rem"
 			// gr.Style.Mobile.StyleGridContainer.GapColumn = "0.4rem"

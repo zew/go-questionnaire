@@ -167,8 +167,7 @@ func special202203(q *qst.QuestionnaireT) error {
 			}
 
 			gr := page.AddGrid(gb)
-			gr.OddRowsColoring = true
-
+			_ = gr
 		}
 
 		// gr3 - intro to q5 a, b, c
@@ -270,7 +269,7 @@ func special202203(q *qst.QuestionnaireT) error {
 			}
 
 			gr := page.AddGrid(gb)
-			gr.OddRowsColoring = true
+			_ = gr
 		}
 
 		//
@@ -325,7 +324,6 @@ func special202203(q *qst.QuestionnaireT) error {
 			}
 
 			gr := page.AddGrid(gb)
-			gr.OddRowsColoring = true
 			gr.BottomVSpacers = 3
 		}
 

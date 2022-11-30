@@ -630,7 +630,6 @@ func PersonalQuestions2(q *qst.QuestionnaireT, vE VariableElements) error {
 				`, vE.NumberingQuestions+12),
 			}
 			gr := page.AddGrid(gb)
-			gr.OddRowsColoring = true
 			gr.Style = grStPage78
 			gr.Style.Desktop.StyleGridContainer.GapColumn = "0"
 			gr.BottomVSpacers = 4

@@ -114,6 +114,7 @@ func special202212(q *qst.QuestionnaireT) error {
 			const col1Width = 2
 			gr := page.AddGroup()
 			gr.Cols = col1Width + 3
+			gr.Style = css.NewStylesResponsive(gr.Style)
 
 			{
 				inp := gr.AddInput()

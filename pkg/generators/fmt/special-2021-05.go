@@ -166,7 +166,7 @@ func special202105(q *qst.QuestionnaireT) error {
 					`,
 		}
 		gr := page.AddGrid(gb)
-		gr.OddRowsColoring = true
+		_ = gr
 	}
 
 	// gr3
@@ -323,7 +323,7 @@ func special202105(q *qst.QuestionnaireT) error {
 					`,
 		}
 		gr := page.AddGrid(gb)
-		gr.OddRowsColoring = true
+		_ = gr
 	}
 
 	return nil

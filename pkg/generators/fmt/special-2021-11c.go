@@ -156,7 +156,7 @@ func special202111c(q *qst.QuestionnaireT) error {
 					"en": "<b>2.</b> Wie beurteilen Sie die einzelnen Themenblöcke, die im ZEW-Finanzmarktreport behandelt werden?",
 				}
 				gr := page.AddGrid(gb)
-				gr.OddRowsColoring = true
+				_ = gr
 			}
 
 		}

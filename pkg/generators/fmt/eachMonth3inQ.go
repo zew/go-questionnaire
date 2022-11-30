@@ -239,7 +239,7 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 			}
 
 			gr := page.AddGrid(gb)
-			gr.OddRowsColoring = true
+			_ = gr
 		}
 
 		//
@@ -293,7 +293,7 @@ func eachMonth3inQ(q *qst.QuestionnaireT) error {
 			}
 
 			gr := page.AddGrid(gb)
-			gr.OddRowsColoring = true
+			_ = gr
 		}
 
 		//

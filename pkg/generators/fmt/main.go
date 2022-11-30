@@ -189,7 +189,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"en": "<b>1.</b> &nbsp; We estimate the current overall macroeconomic situation as being",
 			}
 			gr := page.AddGrid(gb)
-			gr.OddRowsColoring = true
+			_ = gr
+
 		}
 
 		// gr1
@@ -206,7 +207,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"en": "<b>2a.</b> &nbsp; In the medium-term (<bx>6</bx>&nbsp;months), the overall macroeconomic situation will",
 			}
 			gr := page.AddGrid(gb)
-			gr.OddRowsColoring = true
+			_ = gr
 		}
 
 		// gr2
@@ -451,7 +452,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"en": "<b>3.</b> &nbsp; In the medium-term (<bx>6</bx>&nbsp;months), the annual inflation rate will",
 			}
 			gr := page.AddGrid(gb)
-			gr.OddRowsColoring = true
+			_ = gr
+
 		}
 
 		// gr1
@@ -470,7 +472,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"en": "<b>4.</b> &nbsp; In the medium-term (<bx>6</bx>&nbsp;months), <i>short-term</i> interest rates (3-month interbank rates) will",
 			}
 			gr := page.AddGrid(gb)
-			gr.OddRowsColoring = true
+			_ = gr
+
 		}
 
 		//
@@ -504,7 +507,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"en": "<b>5.</b> &nbsp; In the medium-term, <i>long-term</i> interest rates (yields on 10-year sovereign bonds) will",
 			}
 			gr := page.AddGrid(gb)
-			gr.OddRowsColoring = true
 			gr.BottomVSpacers = 4
 		}
 
@@ -564,7 +566,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"en": "<b>6a.</b> &nbsp; In the medium-term (<bx>6</bx>&nbsp;months), the following stock market indices will",
 			}
 			gr := page.AddGrid(gb)
-			gr.OddRowsColoring = true
+			_ = gr
+
 		}
 
 		// gr1
@@ -707,7 +710,6 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 			gr.Style.Desktop.StyleBox.Left = "-1.1rem"
 			gr.Style.Desktop.StyleBox.Left = "2rem"
 			gr.Style.Mobile.StyleBox.Left = "0"
-			gr.OddRowsColoring = true
 		}
 	}
 
@@ -744,7 +746,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"en": "<b>7.</b> &nbsp; In the medium-term (<bx>6</bx>&nbsp;months), the following currencies compared to the Euro will",
 			}
 			gr := page.AddGrid(gb)
-			gr.OddRowsColoring = true
+			_ = gr
 		}
 	}
 
@@ -774,7 +776,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				"en": "<b>8.</b> &nbsp; In the medium-term (<bx>6</bx>&nbsp;months), the profit situation of German companies in the following sectors will",
 			}
 			gr := page.AddGrid(gb)
-			gr.OddRowsColoring = true
+			_ = gr
 		}
 	}
 

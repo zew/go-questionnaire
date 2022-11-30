@@ -12,9 +12,9 @@ import (
 
 // Seasonal questions revolve around the month of the Quarter.
 //
-// 	1 of quarter: Business cycle & drivers: 		         Januar, April, Juli, October
-// 	2 of quarter: Inflation, drivers, central bank rates:    Februar, May, August, November
-// 	3 of quarter: Free special questoins:                    March, June, September, December
+//	1 of quarter: Business cycle & drivers: 		         Januar, April, Juli, October
+//	2 of quarter: Inflation, drivers, central bank rates:    Februar, May, August, November
+//	3 of quarter: Free special questoins:                    March, June, September, December
 func eachMonth1inQ(q *qst.QuestionnaireT) error {
 
 	if q.Survey.MonthOfQuarter() != 1 {
@@ -299,7 +299,6 @@ func eachMonth1inQ(q *qst.QuestionnaireT) error {
 				`,
 		}
 		gr := page.AddGrid(gb)
-		gr.OddRowsColoring = true
 		gr.BottomVSpacers = 1
 	}
 

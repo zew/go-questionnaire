@@ -87,7 +87,6 @@ func PersonalQuestions1(q *qst.QuestionnaireT, vE VariableElements) error {
 				),
 			}
 			gr := page.AddGrid(gb)
-			gr.OddRowsColoring = true
 			gr.Style = grStPage78
 		}
 
@@ -112,7 +111,6 @@ func PersonalQuestions1(q *qst.QuestionnaireT, vE VariableElements) error {
 				`, vE.NumberingQuestions+1),
 			}
 			gr := page.AddGrid(gb)
-			gr.OddRowsColoring = true
 			gr.Style = grStPage78
 		}
 
@@ -136,7 +134,6 @@ func PersonalQuestions1(q *qst.QuestionnaireT, vE VariableElements) error {
 				`, vE.NumberingQuestions+2),
 			}
 			gr := page.AddGrid(gb)
-			gr.OddRowsColoring = true
 			gr.Style = grStPage78
 			gr.BottomVSpacers = 4
 		}

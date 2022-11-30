@@ -116,7 +116,6 @@ func Title(q *qst.QuestionnaireT, isPOP bool, comprehendWarning bool) error {
 	return nil
 }
 
-//
 // Part1Entscheidung1bis6 renders
 func Part1Entscheidung1bis6(q *qst.QuestionnaireT, vE VariableElements) error {
 
@@ -316,7 +315,6 @@ func Part1Entscheidung1bis6(q *qst.QuestionnaireT, vE VariableElements) error {
 	return nil
 }
 
-//
 // Part1Frage1 renders
 func Part1Frage1(q *qst.QuestionnaireT, vE VariableElements) error {
 	// page 4
@@ -431,7 +429,6 @@ func Part1Frage1(q *qst.QuestionnaireT, vE VariableElements) error {
 	return nil
 }
 
-//
 // Part2 renders
 func Part2(q *qst.QuestionnaireT, vE VariableElements) error {
 
@@ -968,7 +965,6 @@ func End(q *qst.QuestionnaireT, vE VariableElements) error {
 	return nil
 }
 
-//
 // Part2Frage4 renders
 func Part2Frage4(q *qst.QuestionnaireT, vE VariableElements) error {
 
@@ -1012,7 +1008,6 @@ func Part2Frage4(q *qst.QuestionnaireT, vE VariableElements) error {
 				`, vE.NumberingQuestions+0),
 			}
 			gr := page.AddGrid(gb)
-			gr.OddRowsColoring = true
 			gr.Style = grStPage78
 			gr.BottomVSpacers = 4
 		}
@@ -1021,7 +1016,6 @@ func Part2Frage4(q *qst.QuestionnaireT, vE VariableElements) error {
 	return nil
 }
 
-//
 // Core adds the core part of pages and questions
 func Core(q *qst.QuestionnaireT) error {
 

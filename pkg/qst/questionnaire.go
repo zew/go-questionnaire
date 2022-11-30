@@ -234,7 +234,6 @@ type groupT struct {
 	// Each label (if set) and each input occupy columns according to
 	// inputT.ColSpanLabel and inputT.ColSpanControl.
 	Cols float32 `json:"columns,omitempty"`
-	// OddRowsColoring bool    `json:"odd_rows_coloring,omitempty"` // color odd rows
 
 	Inputs []*inputT `json:"inputs,omitempty"`
 

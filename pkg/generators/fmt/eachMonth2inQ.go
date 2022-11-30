@@ -435,7 +435,6 @@ func eachMonth2inQ(q *qst.QuestionnaireT) error {
 			`, monthMinus3.Tr("en")),
 		}
 		gr := page.AddGrid(gb)
-		gr.OddRowsColoring = true
 		gr.BottomVSpacers = 1
 
 	}

@@ -75,7 +75,7 @@ func special202204(q *qst.QuestionnaireT) error {
 			`}
 
 			gr := page.AddGrid(gb)
-			gr.OddRowsColoring = true
+			_ = gr
 		}
 
 		//
@@ -111,7 +111,7 @@ func special202204(q *qst.QuestionnaireT) error {
 				`,
 			}
 			gr := page.AddGrid(gb)
-			gr.OddRowsColoring = true
+			_ = gr
 		}
 
 		//
@@ -143,7 +143,7 @@ func special202204(q *qst.QuestionnaireT) error {
 			}
 
 			gr := page.AddGrid(gb)
-			gr.OddRowsColoring = true
+			_ = gr
 		}
 
 	}
@@ -208,7 +208,7 @@ func special202204(q *qst.QuestionnaireT) error {
 				`,
 			}
 			gr := page.AddGrid(gb)
-			gr.OddRowsColoring = true
+			_ = gr
 		}
 
 	}

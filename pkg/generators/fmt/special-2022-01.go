@@ -70,7 +70,7 @@ func special_2022_01(q *qst.QuestionnaireT) error {
 			`}
 
 			gr := page.AddGrid(gb)
-			gr.OddRowsColoring = true
+			_ = gr
 		}
 
 		//
@@ -103,7 +103,7 @@ func special_2022_01(q *qst.QuestionnaireT) error {
 				"en": "<b>2.</b> Over the next 5 years, the program of the new federal government had the following effects on my forecasts of the profit situation of German companies in the following industries:",
 			}
 			gr := page.AddGrid(gb)
-			gr.OddRowsColoring = true
+			_ = gr
 		}
 
 		//
@@ -133,7 +133,7 @@ func special_2022_01(q *qst.QuestionnaireT) error {
 			`}
 
 			gr := page.AddGrid(gb)
-			gr.OddRowsColoring = true
+			_ = gr
 		}
 
 	} // special page 4

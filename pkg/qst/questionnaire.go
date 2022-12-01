@@ -420,7 +420,7 @@ type pageT struct {
 	Label   trl.S `json:"label,omitempty"`       // headline, set to "" to prevent rendering
 	Desc    trl.S `json:"description,omitempty"` // abstract
 
-	CounterProgress string `json:"counter_progress,omitempty"` // number shown in progress bar bullet; "-" suppresses the natural counter
+	CounterProgress string `json:"counter_progress,omitempty"` // number shown in progress bar bullet; "-" overrides the natural counter - navigationSequenceNum
 	Short           trl.S  `json:"short,omitempty"`            // sort version of section/label/description - in progress bar and navigation menu
 
 	// Navi control stuff

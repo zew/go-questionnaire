@@ -230,7 +230,7 @@ func (q *QuestionnaireT) Validate() error {
 						if inp.Label == nil {
 							inp.ColSpanControl = 1
 						} else {
-							return fmt.Errorf("%v has no ColSpanControl", s)
+							return fmt.Errorf("%v has no ColSpanControl %v-%v", s, inp.Name, inp.Type)
 						}
 
 					}

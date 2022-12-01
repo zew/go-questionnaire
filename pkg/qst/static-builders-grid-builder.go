@@ -63,6 +63,17 @@ func (gb *GridBuilder) AddRadioRow(name string, vals []string, sparseLabels map[
 		log.Panicf("RadioMatrix2.addRadioRow(name) - at least 2 radio values")
 	}
 
+	// preflight
+	controlVerticalTop := false // long labels - multiple lines
+	for colIdx := 0; colIdx < len(gb.cols); colIdx++ {
+		if _, ok := sparseLabels[colIdx]; ok {
+			if sparseLabels[colIdx].Size() > 90 {
+				controlVerticalTop = true
+				break
+			}
+		}
+	}
+
 	for colIdx := 0; colIdx < len(gb.cols); colIdx++ {
 
 		rad := emptyTextblock()
@@ -79,11 +90,14 @@ func (gb *GridBuilder) AddRadioRow(name string, vals []string, sparseLabels map[
 			rad.Label = sparseLabels[colIdx]
 			rad.StyleLbl = css.TextStart(rad.StyleLbl)
 			// long labels in 'blocksatz'; control raised to top
-			if rad.Label.Size() > 90 {
+		}
+
+		if controlVerticalTop {
+			if _, ok := sparseLabels[colIdx]; ok {
 				rad.StyleLbl.Desktop.StyleText.AlignHorizontal = "justify"
-				rad.ControlTop()
-				rad.StyleCtl.Desktop.StyleBox.Margin = "0.12rem 0 0 0"
 			}
+			rad.ControlTop()
+			rad.StyleCtl.Desktop.StyleBox.Margin = "0.12rem 0 0 0"
 		}
 
 		rad.ColSpanLabel = gb.cols[colIdx].spanLabel

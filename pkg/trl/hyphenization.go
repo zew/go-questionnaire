@@ -25,6 +25,8 @@ var hyph = []string{
 	"Hoch|schul|abschluss",
 	"Bildungs|abschluss",
 	"Prozent|punkt",
+	"Unter|grenze",
+	"Konfidenz|interval",
 
 	// full german
 	"de|mo|gra|fisch",
@@ -34,6 +36,8 @@ var hyph = []string{
 	// german
 	"ab|wer|ten",
 	"Ab|wei|chung",
+	"Ana|ly|se",
+	"Ana|ly|sen",
 	"An|gabe",
 	"Arbeits|markt|öko|no|mie",
 	"as|so|zi|ie|rt",

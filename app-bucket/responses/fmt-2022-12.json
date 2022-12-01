@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "285eb4279fc2cefb05bc6675aa11b4cb250c2bb9abcf061e95109690d51fdf37",
+ 	"md_5": "3e363f8887140ab6b439893f605aec172dccd66c6df46498c04b376f2d77e88b",
  	"lang_codes": [
  		"de",
  		"en"
@@ -504,98 +504,26 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
  							}
  						},
  						{
  							"name": "y0_ez",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "2"
  						},
  						{
  							"name": "y0_ez",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "3"
  						},
  						{
  							"name": "y0_ez",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "4"
  						},
  						{
  							"name": "y0_deu",
@@ -622,98 +550,26 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
  							}
  						},
  						{
  							"name": "y0_deu",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "2"
  						},
  						{
  							"name": "y0_deu",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "3"
  						},
  						{
  							"name": "y0_deu",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "4"
  						},
  						{
  							"name": "y0_usa",
@@ -740,98 +596,26 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
  							}
  						},
  						{
  							"name": "y0_usa",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "2"
  						},
  						{
  							"name": "y0_usa",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "3"
  						},
  						{
  							"name": "y0_usa",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "4"
  						},
  						{
  							"name": "y0_chn",
@@ -858,98 +642,26 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
  							}
  						},
  						{
  							"name": "y0_chn",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "2"
  						},
  						{
  							"name": "y0_chn",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "3"
  						},
  						{
  							"name": "y0_chn",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "4"
  						}
  					],
  					"style": {
@@ -1188,98 +900,26 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
  							}
  						},
  						{
  							"name": "y_ez",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "2"
  						},
  						{
  							"name": "y_ez",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "3"
  						},
  						{
  							"name": "y_ez",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "4"
  						},
  						{
  							"name": "y_deu",
@@ -1306,98 +946,26 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
  							}
  						},
  						{
  							"name": "y_deu",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "2"
  						},
  						{
  							"name": "y_deu",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "3"
  						},
  						{
  							"name": "y_deu",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "4"
  						},
  						{
  							"name": "y_usa",
@@ -1424,98 +992,26 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
  							}
  						},
  						{
  							"name": "y_usa",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "2"
  						},
  						{
  							"name": "y_usa",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "3"
  						},
  						{
  							"name": "y_usa",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "4"
  						},
  						{
  							"name": "y_chn",
@@ -1542,98 +1038,26 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
  							}
  						},
  						{
  							"name": "y_chn",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "2"
  						},
  						{
  							"name": "y_chn",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "3"
  						},
  						{
  							"name": "y_chn",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "4"
  						}
  					],
  					"style": {
@@ -2204,98 +1628,26 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
  							}
  						},
  						{
  							"name": "pi_ez",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "2"
  						},
  						{
  							"name": "pi_ez",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "3"
  						},
  						{
  							"name": "pi_ez",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "4"
  						},
  						{
  							"name": "pi_deu",
@@ -2322,98 +1674,26 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
  							}
  						},
  						{
  							"name": "pi_deu",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "2"
  						},
  						{
  							"name": "pi_deu",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "3"
  						},
  						{
  							"name": "pi_deu",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "4"
  						},
  						{
  							"name": "pi_usa",
@@ -2440,98 +1720,26 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
  							}
  						},
  						{
  							"name": "pi_usa",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "2"
  						},
  						{
  							"name": "pi_usa",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "3"
  						},
  						{
  							"name": "pi_usa",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "4"
  						},
  						{
  							"name": "pi_chn",
@@ -2558,98 +1766,26 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
  							}
  						},
  						{
  							"name": "pi_chn",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "2"
  						},
  						{
  							"name": "pi_chn",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "3"
  						},
  						{
  							"name": "pi_chn",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "4"
  						}
  					],
  					"style": {
@@ -2888,98 +2024,26 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
  							}
  						},
  						{
  							"name": "i_deu",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "2"
  						},
  						{
  							"name": "i_deu",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "3"
  						},
  						{
  							"name": "i_deu",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "4"
  						},
  						{
  							"name": "i_usa",
@@ -3006,98 +2070,26 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
  							}
  						},
  						{
  							"name": "i_usa",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "2"
  						},
  						{
  							"name": "i_usa",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "3"
  						},
  						{
  							"name": "i_usa",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "4"
  						},
  						{
  							"name": "i_chn",
@@ -3124,98 +2116,26 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
  							}
  						},
  						{
  							"name": "i_chn",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "2"
  						},
  						{
  							"name": "i_chn",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "3"
  						},
  						{
  							"name": "i_chn",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "4"
  						}
  					],
  					"style": {
@@ -3454,98 +2374,26 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
  							}
  						},
  						{
  							"name": "r_deu",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "2"
  						},
  						{
  							"name": "r_deu",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "3"
  						},
  						{
  							"name": "r_deu",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "4"
  						},
  						{
  							"name": "r_usa",
@@ -3572,98 +2420,26 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
  							}
  						},
  						{
  							"name": "r_usa",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "2"
  						},
  						{
  							"name": "r_usa",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "3"
  						},
  						{
  							"name": "r_usa",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "4"
  						},
  						{
  							"name": "r_chn",
@@ -3690,98 +2466,26 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
  							}
  						},
  						{
  							"name": "r_chn",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "2"
  						},
  						{
  							"name": "r_chn",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "3"
  						},
  						{
  							"name": "r_chn",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "4"
  						}
  					],
  					"style": {
@@ -4055,98 +2759,26 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
  							}
  						},
  						{
  							"name": "sto_ez",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "2"
  						},
  						{
  							"name": "sto_ez",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "3"
  						},
  						{
  							"name": "sto_ez",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "4"
  						},
  						{
  							"name": "sto_dax",
@@ -4173,98 +2805,26 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
  							}
  						},
  						{
  							"name": "sto_dax",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "2"
  						},
  						{
  							"name": "sto_dax",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "3"
  						},
  						{
  							"name": "sto_dax",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "4"
  						},
  						{
  							"name": "sto_usa",
@@ -4291,98 +2851,26 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
  							}
  						},
  						{
  							"name": "sto_usa",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "2"
  						},
  						{
  							"name": "sto_usa",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "3"
  						},
  						{
  							"name": "sto_usa",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "4"
  						},
  						{
  							"name": "sto_sse_comp_chn",
@@ -4409,98 +2897,26 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
  							}
  						},
  						{
  							"name": "sto_sse_comp_chn",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "2"
  						},
  						{
  							"name": "sto_sse_comp_chn",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "3"
  						},
  						{
  							"name": "sto_sse_comp_chn",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "4"
  						}
  					],
  					"style": {
@@ -4853,97 +3269,25 @@
  							"name": "dax_fund",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "1"
  						},
  						{
  							"name": "dax_fund",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "2"
  						},
  						{
  							"name": "dax_fund",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "3"
  						},
  						{
  							"name": "dax_fund",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "4",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "4"
  						}
  					],
  					"style": {
@@ -5232,98 +3576,26 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
  							}
  						},
  						{
  							"name": "fx_usa",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "2"
  						},
  						{
  							"name": "fx_usa",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "3"
  						},
  						{
  							"name": "fx_usa",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "4"
  						},
  						{
  							"name": "fx_chn",
@@ -5350,98 +3622,26 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
  							}
  						},
  						{
  							"name": "fx_chn",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "2"
  						},
  						{
  							"name": "fx_chn",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "3"
  						},
  						{
  							"name": "fx_chn",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "4"
  						}
  					],
  					"style": {
@@ -5715,98 +3915,26 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
  							}
  						},
  						{
  							"name": "sec_banks",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "2"
  						},
  						{
  							"name": "sec_banks",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "3"
  						},
  						{
  							"name": "sec_banks",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "4"
  						},
  						{
  							"name": "sec_insur",
@@ -5833,98 +3961,26 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
  							}
  						},
  						{
  							"name": "sec_insur",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "2"
  						},
  						{
  							"name": "sec_insur",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "3"
  						},
  						{
  							"name": "sec_insur",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "4"
  						},
  						{
  							"name": "sec_cars",
@@ -5951,98 +4007,26 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
  							}
  						},
  						{
  							"name": "sec_cars",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "2"
  						},
  						{
  							"name": "sec_cars",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "3"
  						},
  						{
  							"name": "sec_cars",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "4"
  						},
  						{
  							"name": "sec_chemi",
@@ -6069,98 +4053,26 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
  							}
  						},
  						{
  							"name": "sec_chemi",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "2"
  						},
  						{
  							"name": "sec_chemi",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "3"
  						},
  						{
  							"name": "sec_chemi",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "4"
  						},
  						{
  							"name": "sec_steel",
@@ -6187,98 +4099,26 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
  							}
  						},
  						{
  							"name": "sec_steel",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "2"
  						},
  						{
  							"name": "sec_steel",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "3"
  						},
  						{
  							"name": "sec_steel",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "4"
  						},
  						{
  							"name": "sec_elect",
@@ -6305,98 +4145,26 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
  							}
  						},
  						{
  							"name": "sec_elect",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "2"
  						},
  						{
  							"name": "sec_elect",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "3"
  						},
  						{
  							"name": "sec_elect",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "4"
  						},
  						{
  							"name": "sec_mecha",
@@ -6423,98 +4191,26 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
  							}
  						},
  						{
  							"name": "sec_mecha",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "2"
  						},
  						{
  							"name": "sec_mecha",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "3"
  						},
  						{
  							"name": "sec_mecha",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "4"
  						},
  						{
  							"name": "sec_consu",
@@ -6541,98 +4237,26 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
  							}
  						},
  						{
  							"name": "sec_consu",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "2"
  						},
  						{
  							"name": "sec_consu",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "3"
  						},
  						{
  							"name": "sec_consu",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "4"
  						},
  						{
  							"name": "sec_const",
@@ -6659,98 +4283,26 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
  							}
  						},
  						{
  							"name": "sec_const",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "2"
  						},
  						{
  							"name": "sec_const",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "3"
  						},
  						{
  							"name": "sec_const",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "4"
  						},
  						{
  							"name": "sec_utili",
@@ -6777,98 +4329,26 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
  							}
  						},
  						{
  							"name": "sec_utili",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "2"
  						},
  						{
  							"name": "sec_utili",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "3"
  						},
  						{
  							"name": "sec_utili",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "4"
  						},
  						{
  							"name": "sec_servi",
@@ -6895,98 +4375,26 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
  							}
  						},
  						{
  							"name": "sec_servi",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "2"
  						},
  						{
  							"name": "sec_servi",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "3"
  						},
  						{
  							"name": "sec_servi",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "4"
  						},
  						{
  							"name": "sec_telec",
@@ -7013,98 +4421,26 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
  							}
  						},
  						{
  							"name": "sec_telec",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "2"
  						},
  						{
  							"name": "sec_telec",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "3"
  						},
  						{
  							"name": "sec_telec",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "4"
  						},
  						{
  							"name": "sec_infor",
@@ -7131,98 +4467,26 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
  							}
  						},
  						{
  							"name": "sec_infor",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "2"
  						},
  						{
  							"name": "sec_infor",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "3"
  						},
  						{
  							"name": "sec_infor",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "4"
  						}
  					],
  					"style": {
@@ -7309,6 +4573,7 @@
  				"de": "Sonderfragen\u003cbr\u003eEnde 2022 - 2",
  				"en": "Special\u003cbr\u003eend of 2022 - 2"
  			},
+ 			"suppress_in_progressbar": true,
  			"style": {
  				"desktop": {
  					"grid_container_style": {},
@@ -7373,8 +4638,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Untergrenze des 90-Pro\u0026shy;zent-Konfidenzintervalls",
- 								"en": "Untergrenze des 90-Pro\u0026shy;zent-Konfidenzintervalls"
+ 								"de": "Unter\u0026shy;grenze des 90-Pro\u0026shy;zent-Konfidenz\u0026shy;intervalls",
+ 								"en": "Unter\u0026shy;grenze des 90-Pro\u0026shy;zent-Konfidenz\u0026shy;intervalls"
  							},
  							"col_span": 2,
  							"col_span_label": 1,
@@ -7401,8 +4666,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Obergrenze des 90-Pro\u0026shy;zent-Konfidenzintervalls",
- 								"en": "Obergrenze des 90-Pro\u0026shy;zent-Konfidenzintervalls"
+ 								"de": "Obergrenze des 90-Pro\u0026shy;zent-Konfidenz\u0026shy;intervalls",
+ 								"en": "Obergrenze des 90-Pro\u0026shy;zent-Konfidenz\u0026shy;intervalls"
  							},
  							"col_span": 2,
  							"col_span_label": 1,
@@ -7464,7 +4729,7 @@
  							"col_span_label": 1
  						},
  						{
- 							"name": "infinflation_12m_ub",
+ 							"name": "infqs1_inflation_12m_ub",
  							"type": "number",
  							"max_chars": 5,
  							"step": 0.01,
@@ -7493,7 +4758,7 @@
  							}
  						},
  						{
- 							"name": "infinflation_12m_lb",
+ 							"name": "infqs1_inflation_12m_lb",
  							"type": "number",
  							"max_chars": 5,
  							"step": 0.01,
@@ -7522,7 +4787,7 @@
  							}
  						},
  						{
- 							"name": "infinflation_12m_no_answer",
+ 							"name": "infqs1_inflation_12m_no_answer",
  							"type": "checkbox",
  							"col_span": 1,
  							"col_span_control": 1
@@ -7537,7 +4802,7 @@
  							"col_span_label": 1
  						},
  						{
- 							"name": "infinflation_36m_ub",
+ 							"name": "infqs1_inflation_36m_ub",
  							"type": "number",
  							"max_chars": 5,
  							"step": 0.01,
@@ -7566,7 +4831,7 @@
  							}
  						},
  						{
- 							"name": "infinflation_36m_lb",
+ 							"name": "infqs1_inflation_36m_lb",
  							"type": "number",
  							"max_chars": 5,
  							"step": 0.01,
@@ -7595,7 +4860,7 @@
  							}
  						},
  						{
- 							"name": "infinflation_36m_no_answer",
+ 							"name": "infqs1_inflation_36m_no_answer",
  							"type": "checkbox",
  							"col_span": 1,
  							"col_span_control": 1
@@ -7610,7 +4875,7 @@
  							"col_span_label": 1
  						},
  						{
- 							"name": "infgrowth_12m_ub",
+ 							"name": "infqs1_growth_12m_ub",
  							"type": "number",
  							"max_chars": 5,
  							"step": 0.01,
@@ -7639,7 +4904,7 @@
  							}
  						},
  						{
- 							"name": "infgrowth_12m_lb",
+ 							"name": "infqs1_growth_12m_lb",
  							"type": "number",
  							"max_chars": 5,
  							"step": 0.01,
@@ -7668,7 +4933,7 @@
  							}
  						},
  						{
- 							"name": "infgrowth_12m_no_answer",
+ 							"name": "infqs1_growth_12m_no_answer",
  							"type": "checkbox",
  							"col_span": 1,
  							"col_span_control": 1
@@ -7683,7 +4948,7 @@
  							"col_span_label": 1
  						},
  						{
- 							"name": "infgrowth_36m_ub",
+ 							"name": "infqs1_growth_36m_ub",
  							"type": "number",
  							"max_chars": 5,
  							"step": 0.01,
@@ -7712,7 +4977,7 @@
  							}
  						},
  						{
- 							"name": "infgrowth_36m_lb",
+ 							"name": "infqs1_growth_36m_lb",
  							"type": "number",
  							"max_chars": 5,
  							"step": 0.01,
@@ -7741,7 +5006,7 @@
  							}
  						},
  						{
- 							"name": "infgrowth_36m_no_answer",
+ 							"name": "infqs1_growth_36m_no_answer",
  							"type": "checkbox",
  							"col_span": 1,
  							"col_span_control": 1
@@ -7808,8 +5073,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Untergrenze des 90-Pro\u0026shy;zent-Konfidenzintervalls",
- 								"en": "Untergrenze des 90-Pro\u0026shy;zent-Konfidenzintervalls"
+ 								"de": "Unter\u0026shy;grenze des 90-Pro\u0026shy;zent-Konfidenz\u0026shy;intervalls",
+ 								"en": "Unter\u0026shy;grenze des 90-Pro\u0026shy;zent-Konfidenz\u0026shy;intervalls"
  							},
  							"col_span": 2,
  							"col_span_label": 1,
@@ -7836,8 +5101,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "Obergrenze des 90-Pro\u0026shy;zent-Konfidenzintervalls",
- 								"en": "Obergrenze des 90-Pro\u0026shy;zent-Konfidenzintervalls"
+ 								"de": "Obergrenze des 90-Pro\u0026shy;zent-Konfidenz\u0026shy;intervalls",
+ 								"en": "Obergrenze des 90-Pro\u0026shy;zent-Konfidenz\u0026shy;intervalls"
  							},
  							"col_span": 2,
  							"col_span_label": 1,
@@ -7899,7 +5164,7 @@
  							"col_span_label": 1
  						},
  						{
- 							"name": "infdax_12m_ub",
+ 							"name": "infqs2_dax_12m_ub",
  							"type": "number",
  							"max_chars": 5,
  							"step": 0.01,
@@ -7928,7 +5193,7 @@
  							}
  						},
  						{
- 							"name": "infdax_12m_lb",
+ 							"name": "infqs2_dax_12m_lb",
  							"type": "number",
  							"max_chars": 5,
  							"step": 0.01,
@@ -7957,7 +5222,7 @@
  							}
  						},
  						{
- 							"name": "infdax_12m_no_answer",
+ 							"name": "infqs2_dax_12m_no_answer",
  							"type": "checkbox",
  							"col_span": 1,
  							"col_span_control": 1
@@ -7972,7 +5237,7 @@
  							"col_span_label": 1
  						},
  						{
- 							"name": "infdax_36m_ub",
+ 							"name": "infqs2_dax_36m_ub",
  							"type": "number",
  							"max_chars": 5,
  							"step": 0.01,
@@ -8001,7 +5266,7 @@
  							}
  						},
  						{
- 							"name": "infdax_36m_lb",
+ 							"name": "infqs2_dax_36m_lb",
  							"type": "number",
  							"max_chars": 5,
  							"step": 0.01,
@@ -8030,7 +5295,7 @@
  							}
  						},
  						{
- 							"name": "infdax_36m_no_answer",
+ 							"name": "infqs2_dax_36m_no_answer",
  							"type": "checkbox",
  							"col_span": 1,
  							"col_span_control": 1
@@ -8069,8 +5334,8 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "Stimme voll zu",
- 								"en": "Strong\u0026shy;ly agree"
+ 								"de": "stimme voll zu",
+ 								"en": "strong\u0026shy;ly agree"
  							},
  							"col_span_label": 4,
  							"col_span_control": 1,
@@ -8114,7 +5379,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "Stimme zu",
+ 								"de": "stimme zu",
  								"en": "Agree"
  							},
  							"col_span_control": 1,
@@ -8158,7 +5423,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "Stimme weder zu noch lehne ab",
+ 								"de": "stimme weder zu noch lehne ab",
  								"en": "Un\u0026shy;decided"
  							},
  							"col_span_control": 1,
@@ -8202,7 +5467,7 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "Stimme nicht zu",
+ 								"de": "stimme nicht zu",
  								"en": "Dis\u0026shy;agree"
  							},
  							"col_span_control": 1,
@@ -8246,8 +5511,8 @@
  						{
  							"type": "label-as-input",
  							"label": {
- 								"de": "Stimme über\u0026shy;haupt nicht zu",
- 								"en": "Strong\u0026shy;ly dis\u0026shy;agree"
+ 								"de": "stimme über\u0026shy;haupt nicht zu",
+ 								"en": "strong\u0026shy;ly dis\u0026shy;agree"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -8333,7 +5598,7 @@
  							}
  						},
  						{
- 							"name": "inf_narrative_a",
+ 							"name": "qs3a_inf_narrative_a",
  							"type": "radio",
  							"label": {
  								"de": "Eine Entspannung bei der In\u0026shy;fla\u0026shy;ti\u0026shy;onsentwicklung, ein vorsichtigeres Vorgehen der EZB und nachlassende Rezessionsrisiken wirken sich po\u0026shy;si\u0026shy;tiv auf das Rendite-Risiko-Profil in 2023 aus.",
@@ -8362,7 +5627,7 @@
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {
- 										"margin": "0.4rem 0 0 0"
+ 										"margin": "0.12rem 0 0 0"
  									},
  									"grid_item_style": {
  										"align_self": "start"
@@ -8378,7 +5643,7 @@
  							}
  						},
  						{
- 							"name": "inf_narrative_a",
+ 							"name": "qs3a_inf_narrative_a",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2",
@@ -8386,7 +5651,7 @@
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {
- 										"margin": "0.4rem 0 0 0"
+ 										"margin": "0.12rem 0 0 0"
  									},
  									"grid_item_style": {
  										"align_self": "start"
@@ -8402,7 +5667,7 @@
  							}
  						},
  						{
- 							"name": "inf_narrative_a",
+ 							"name": "qs3a_inf_narrative_a",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3",
@@ -8410,7 +5675,7 @@
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {
- 										"margin": "0.4rem 0 0 0"
+ 										"margin": "0.12rem 0 0 0"
  									},
  									"grid_item_style": {
  										"align_self": "start"
@@ -8426,7 +5691,7 @@
  							}
  						},
  						{
- 							"name": "inf_narrative_a",
+ 							"name": "qs3a_inf_narrative_a",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4",
@@ -8434,7 +5699,7 @@
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {
- 										"margin": "0.4rem 0 0 0"
+ 										"margin": "0.12rem 0 0 0"
  									},
  									"grid_item_style": {
  										"align_self": "start"
@@ -8450,7 +5715,7 @@
  							}
  						},
  						{
- 							"name": "inf_narrative_a",
+ 							"name": "qs3a_inf_narrative_a",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5",
@@ -8458,7 +5723,7 @@
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {
- 										"margin": "0.4rem 0 0 0"
+ 										"margin": "0.12rem 0 0 0"
  									},
  									"grid_item_style": {
  										"align_self": "start"
@@ -8474,7 +5739,7 @@
  							}
  						},
  						{
- 							"name": "inf_narrative_a",
+ 							"name": "qs3a_inf_narrative_a",
  							"type": "radio",
  							"col_span_label": 0.5,
  							"col_span_control": 1,
@@ -8483,7 +5748,7 @@
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {
- 										"margin": "0.4rem 0 0 0"
+ 										"margin": "0.12rem 0 0 0"
  									},
  									"grid_item_style": {
  										"align_self": "start"
@@ -8499,7 +5764,7 @@
  							}
  						},
  						{
- 							"name": "inf_narrative_b",
+ 							"name": "qs3a_inf_narrative_b",
  							"type": "radio",
  							"label": {
  								"de": "Den DAX-Konzernen gelingt es, ihre stei\u0026shy;genden Kosten an ihre Kunden weiterzugeben. Die Gewinn-Margen der DAX-Konzerne werden deswegen un\u0026shy;ver\u0026shy;än\u0026shy;dert blei\u0026shy;ben oder sogar stei\u0026shy;gen, was sich po\u0026shy;si\u0026shy;tiv auf  das Rendite-Risiko-Profil des DAX in 2023 auswirkt. ",
@@ -8528,7 +5793,7 @@
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {
- 										"margin": "0.4rem 0 0 0"
+ 										"margin": "0.12rem 0 0 0"
  									},
  									"grid_item_style": {
  										"align_self": "start"
@@ -8544,7 +5809,7 @@
  							}
  						},
  						{
- 							"name": "inf_narrative_b",
+ 							"name": "qs3a_inf_narrative_b",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2",
@@ -8552,7 +5817,7 @@
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {
- 										"margin": "0.4rem 0 0 0"
+ 										"margin": "0.12rem 0 0 0"
  									},
  									"grid_item_style": {
  										"align_self": "start"
@@ -8568,7 +5833,7 @@
  							}
  						},
  						{
- 							"name": "inf_narrative_b",
+ 							"name": "qs3a_inf_narrative_b",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3",
@@ -8576,7 +5841,7 @@
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {
- 										"margin": "0.4rem 0 0 0"
+ 										"margin": "0.12rem 0 0 0"
  									},
  									"grid_item_style": {
  										"align_self": "start"
@@ -8592,7 +5857,7 @@
  							}
  						},
  						{
- 							"name": "inf_narrative_b",
+ 							"name": "qs3a_inf_narrative_b",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4",
@@ -8600,7 +5865,7 @@
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {
- 										"margin": "0.4rem 0 0 0"
+ 										"margin": "0.12rem 0 0 0"
  									},
  									"grid_item_style": {
  										"align_self": "start"
@@ -8616,7 +5881,7 @@
  							}
  						},
  						{
- 							"name": "inf_narrative_b",
+ 							"name": "qs3a_inf_narrative_b",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5",
@@ -8624,7 +5889,7 @@
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {
- 										"margin": "0.4rem 0 0 0"
+ 										"margin": "0.12rem 0 0 0"
  									},
  									"grid_item_style": {
  										"align_self": "start"
@@ -8640,7 +5905,7 @@
  							}
  						},
  						{
- 							"name": "inf_narrative_b",
+ 							"name": "qs3a_inf_narrative_b",
  							"type": "radio",
  							"col_span_label": 0.5,
  							"col_span_control": 1,
@@ -8649,7 +5914,7 @@
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {
- 										"margin": "0.4rem 0 0 0"
+ 										"margin": "0.12rem 0 0 0"
  									},
  									"grid_item_style": {
  										"align_self": "start"
@@ -8665,7 +5930,7 @@
  							}
  						},
  						{
- 							"name": "inf_narrative_c",
+ 							"name": "qs3a_inf_narrative_c",
  							"type": "radio",
  							"label": {
  								"de": "Die aktuelle Entwicklung der In\u0026shy;fla\u0026shy;ti\u0026shy;on spielt für das Rendite-Risiko-Profil des DAX in 2023 \n\t\t\t\t\t\t\t\t\t\u003ci\u003ekeine Rolle\u003c/i\u003e.",
@@ -8689,149 +5954,41 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
  							}
  						},
  						{
- 							"name": "inf_narrative_c",
+ 							"name": "qs3a_inf_narrative_c",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "2"
  						},
  						{
- 							"name": "inf_narrative_c",
+ 							"name": "qs3a_inf_narrative_c",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "3"
  						},
  						{
- 							"name": "inf_narrative_c",
+ 							"name": "qs3a_inf_narrative_c",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "4",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "4"
  						},
  						{
- 							"name": "inf_narrative_c",
+ 							"name": "qs3a_inf_narrative_c",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "5",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "5"
  						},
  						{
- 							"name": "inf_narrative_c",
+ 							"name": "qs3a_inf_narrative_c",
  							"type": "radio",
  							"col_span_label": 0.5,
  							"col_span_control": 1,
- 							"value_radio": "6",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.4rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
+ 							"value_radio": "6"
  						},
  						{
- 							"name": "inf_narrative_d",
+ 							"name": "qs3a_inf_narrative_d",
  							"type": "radio",
  							"label": {
  								"de": "Pos\u0026shy;itive und neg\u0026shy;ative Effekte der In\u0026shy;fla\u0026shy;ti\u0026shy;on gleichen sich aus. \n\t\t\t\t\t\t\t\t\tDie aktuelle Entwicklung der In\u0026shy;fla\u0026shy;ti\u0026shy;on ist daher insge\u0026shy;samt \n\t\t\t\t\t\t\t\t\t\u003ci\u003eneu\u0026shy;tral\u003c/i\u003e für das Rendite-Risiko-Profil des DAX in 2023.",
@@ -8860,7 +6017,7 @@
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {
- 										"margin": "0.4rem 0 0 0"
+ 										"margin": "0.12rem 0 0 0"
  									},
  									"grid_item_style": {
  										"align_self": "start"
@@ -8876,7 +6033,7 @@
  							}
  						},
  						{
- 							"name": "inf_narrative_d",
+ 							"name": "qs3a_inf_narrative_d",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2",
@@ -8884,7 +6041,7 @@
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {
- 										"margin": "0.4rem 0 0 0"
+ 										"margin": "0.12rem 0 0 0"
  									},
  									"grid_item_style": {
  										"align_self": "start"
@@ -8900,7 +6057,7 @@
  							}
  						},
  						{
- 							"name": "inf_narrative_d",
+ 							"name": "qs3a_inf_narrative_d",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3",
@@ -8908,7 +6065,7 @@
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {
- 										"margin": "0.4rem 0 0 0"
+ 										"margin": "0.12rem 0 0 0"
  									},
  									"grid_item_style": {
  										"align_self": "start"
@@ -8924,7 +6081,7 @@
  							}
  						},
  						{
- 							"name": "inf_narrative_d",
+ 							"name": "qs3a_inf_narrative_d",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4",
@@ -8932,7 +6089,7 @@
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {
- 										"margin": "0.4rem 0 0 0"
+ 										"margin": "0.12rem 0 0 0"
  									},
  									"grid_item_style": {
  										"align_self": "start"
@@ -8948,7 +6105,7 @@
  							}
  						},
  						{
- 							"name": "inf_narrative_d",
+ 							"name": "qs3a_inf_narrative_d",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5",
@@ -8956,7 +6113,7 @@
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {
- 										"margin": "0.4rem 0 0 0"
+ 										"margin": "0.12rem 0 0 0"
  									},
  									"grid_item_style": {
  										"align_self": "start"
@@ -8972,7 +6129,7 @@
  							}
  						},
  						{
- 							"name": "inf_narrative_d",
+ 							"name": "qs3a_inf_narrative_d",
  							"type": "radio",
  							"col_span_label": 0.5,
  							"col_span_control": 1,
@@ -8981,7 +6138,7 @@
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {
- 										"margin": "0.4rem 0 0 0"
+ 										"margin": "0.12rem 0 0 0"
  									},
  									"grid_item_style": {
  										"align_self": "start"
@@ -8997,7 +6154,7 @@
  							}
  						},
  						{
- 							"name": "inf_narrative_e",
+ 							"name": "qs3a_inf_narrative_e",
  							"type": "radio",
  							"label": {
  								"de": "Den DAX-Konzernen gelingt es nicht, ihre stei\u0026shy;genden Kosten an ihre Kunden weiterzugeben. \n\t\t\t\t\t\t\t\t\tDie Gewinn-Margen der DAX-Konzerne werden deswegen fallen, \n\t\t\t\t\t\t\t\t\twas sich \u003ci\u003ene\u0026shy;ga\u0026shy;tiv\u003c/i\u003e auf  das Rendite-Risiko-Profil des DAX in 2023 auswirkt.",
@@ -9026,7 +6183,7 @@
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {
- 										"margin": "0.4rem 0 0 0"
+ 										"margin": "0.12rem 0 0 0"
  									},
  									"grid_item_style": {
  										"align_self": "start"
@@ -9042,7 +6199,7 @@
  							}
  						},
  						{
- 							"name": "inf_narrative_e",
+ 							"name": "qs3a_inf_narrative_e",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2",
@@ -9050,7 +6207,7 @@
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {
- 										"margin": "0.4rem 0 0 0"
+ 										"margin": "0.12rem 0 0 0"
  									},
  									"grid_item_style": {
  										"align_self": "start"
@@ -9066,7 +6223,7 @@
  							}
  						},
  						{
- 							"name": "inf_narrative_e",
+ 							"name": "qs3a_inf_narrative_e",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3",
@@ -9074,7 +6231,7 @@
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {
- 										"margin": "0.4rem 0 0 0"
+ 										"margin": "0.12rem 0 0 0"
  									},
  									"grid_item_style": {
  										"align_self": "start"
@@ -9090,7 +6247,7 @@
  							}
  						},
  						{
- 							"name": "inf_narrative_e",
+ 							"name": "qs3a_inf_narrative_e",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4",
@@ -9098,7 +6255,7 @@
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {
- 										"margin": "0.4rem 0 0 0"
+ 										"margin": "0.12rem 0 0 0"
  									},
  									"grid_item_style": {
  										"align_self": "start"
@@ -9114,7 +6271,7 @@
  							}
  						},
  						{
- 							"name": "inf_narrative_e",
+ 							"name": "qs3a_inf_narrative_e",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5",
@@ -9122,7 +6279,7 @@
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {
- 										"margin": "0.4rem 0 0 0"
+ 										"margin": "0.12rem 0 0 0"
  									},
  									"grid_item_style": {
  										"align_self": "start"
@@ -9138,7 +6295,7 @@
  							}
  						},
  						{
- 							"name": "inf_narrative_e",
+ 							"name": "qs3a_inf_narrative_e",
  							"type": "radio",
  							"col_span_label": 0.5,
  							"col_span_control": 1,
@@ -9147,7 +6304,7 @@
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {
- 										"margin": "0.4rem 0 0 0"
+ 										"margin": "0.12rem 0 0 0"
  									},
  									"grid_item_style": {
  										"align_self": "start"
@@ -9163,7 +6320,7 @@
  							}
  						},
  						{
- 							"name": "inf_narrative_f",
+ 							"name": "qs3a_inf_narrative_f",
  							"type": "radio",
  							"label": {
  								"de": "Anhaltend hohe In\u0026shy;fla\u0026shy;ti\u0026shy;onsraten, \n\t\t\t\t\t\t\t\tweitere Zinserhöhungen durch die EZB und zunehmende Rezessionsrisiken wirken sich\n\t\t\t\t\t\t\t\t ne\u0026shy;ga\u0026shy;tiv auf das Rendite-Risiko-Profil des DAX in 2023 aus.",
@@ -9192,7 +6349,7 @@
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {
- 										"margin": "0.4rem 0 0 0"
+ 										"margin": "0.12rem 0 0 0"
  									},
  									"grid_item_style": {
  										"align_self": "start"
@@ -9208,7 +6365,7 @@
  							}
  						},
  						{
- 							"name": "inf_narrative_f",
+ 							"name": "qs3a_inf_narrative_f",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2",
@@ -9216,7 +6373,7 @@
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {
- 										"margin": "0.4rem 0 0 0"
+ 										"margin": "0.12rem 0 0 0"
  									},
  									"grid_item_style": {
  										"align_self": "start"
@@ -9232,7 +6389,7 @@
  							}
  						},
  						{
- 							"name": "inf_narrative_f",
+ 							"name": "qs3a_inf_narrative_f",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3",
@@ -9240,7 +6397,7 @@
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {
- 										"margin": "0.4rem 0 0 0"
+ 										"margin": "0.12rem 0 0 0"
  									},
  									"grid_item_style": {
  										"align_self": "start"
@@ -9256,7 +6413,7 @@
  							}
  						},
  						{
- 							"name": "inf_narrative_f",
+ 							"name": "qs3a_inf_narrative_f",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4",
@@ -9264,7 +6421,7 @@
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {
- 										"margin": "0.4rem 0 0 0"
+ 										"margin": "0.12rem 0 0 0"
  									},
  									"grid_item_style": {
  										"align_self": "start"
@@ -9280,7 +6437,7 @@
  							}
  						},
  						{
- 							"name": "inf_narrative_f",
+ 							"name": "qs3a_inf_narrative_f",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5",
@@ -9288,7 +6445,7 @@
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {
- 										"margin": "0.4rem 0 0 0"
+ 										"margin": "0.12rem 0 0 0"
  									},
  									"grid_item_style": {
  										"align_self": "start"
@@ -9304,7 +6461,7 @@
  							}
  						},
  						{
- 							"name": "inf_narrative_f",
+ 							"name": "qs3a_inf_narrative_f",
  							"type": "radio",
  							"col_span_label": 0.5,
  							"col_span_control": 1,
@@ -9313,7 +6470,7 @@
  								"desktop": {
  									"grid_container_style": {},
  									"box_style": {
- 										"margin": "0.4rem 0 0 0"
+ 										"margin": "0.12rem 0 0 0"
  									},
  									"grid_item_style": {
  										"align_self": "start"
@@ -9365,7 +6522,7 @@
  							"col_span_label": 1
  						},
  						{
- 							"name": "inf_to_dax",
+ 							"name": "qs3b_inf_to_dax",
  							"type": "radio",
  							"label": {
  								"de": "Eine Entspannung bei der In\u0026shy;fla\u0026shy;ti\u0026shy;onsentwicklung, ein vorsichtigeres Vorgehen der EZB und nachlassende Rezessionsrisiken wirken sich po\u0026shy;si\u0026shy;tiv auf das Rendite-Risiko-Profil in 2023 aus.",
@@ -9393,10 +6550,28 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.12rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
  							}
  						},
  						{
- 							"name": "inf_to_dax",
+ 							"name": "qs3b_inf_to_dax",
  							"type": "radio",
  							"label": {
  								"de": "Den DAX-Konzernen gelingt es, ihre stei\u0026shy;genden Kosten an ihre Kunden weiterzugeben. Die Gewinn-Margen der DAX-Konzerne werden deswegen un\u0026shy;ver\u0026shy;än\u0026shy;dert blei\u0026shy;ben oder sogar stei\u0026shy;gen, was sich po\u0026shy;si\u0026shy;tiv auf  das Rendite-Risiko-Profil des DAX in 2023 auswirkt. ",
@@ -9424,10 +6599,28 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.12rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
  							}
  						},
  						{
- 							"name": "inf_to_dax",
+ 							"name": "qs3b_inf_to_dax",
  							"type": "radio",
  							"label": {
  								"de": "Die aktuelle Entwicklung der In\u0026shy;fla\u0026shy;ti\u0026shy;on spielt für das Rendite-Risiko-Profil des DAX in 2023 keine Rolle.",
@@ -9455,10 +6648,28 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.12rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
  							}
  						},
  						{
- 							"name": "inf_to_dax",
+ 							"name": "qs3b_inf_to_dax",
  							"type": "radio",
  							"label": {
  								"de": "Pos\u0026shy;itive und neg\u0026shy;ative Effekte der In\u0026shy;fla\u0026shy;ti\u0026shy;on gleichen sich aus. Die aktuelle Entwicklung der In\u0026shy;fla\u0026shy;ti\u0026shy;on ist daher insge\u0026shy;samt neu\u0026shy;tral für das Rendite-Risiko-Profil des DAX in 2023.",
@@ -9486,10 +6697,28 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.12rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
  							}
  						},
  						{
- 							"name": "inf_to_dax",
+ 							"name": "qs3b_inf_to_dax",
  							"type": "radio",
  							"label": {
  								"de": "Den DAX-Konzernen gelingt es nicht, ihre stei\u0026shy;genden Kosten an ihre Kunden weiterzugeben. Die Gewinn-Margen der DAX-Konzerne werden deswegen fallen, was sich ne\u0026shy;ga\u0026shy;tiv auf  das Rendite-Risiko-Profil des DAX in 2023 auswirkt.",
@@ -9517,10 +6746,28 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.12rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
  							}
  						},
  						{
- 							"name": "inf_to_dax",
+ 							"name": "qs3b_inf_to_dax",
  							"type": "radio",
  							"label": {
  								"de": "Anhaltend hohe In\u0026shy;fla\u0026shy;ti\u0026shy;onsraten, weitere Zinserhöhungen durch die EZB und zunehmende Rezessionsrisiken wirken sich ne\u0026shy;ga\u0026shy;tiv auf das Rendite-Risiko-Profil des DAX in 2023 aus.",
@@ -9548,10 +6795,28 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.12rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
  							}
  						},
  						{
- 							"name": "inf_to_dax",
+ 							"name": "qs3b_inf_to_dax",
  							"type": "radio",
  							"label": {
  								"de": "Keine Antwort",
@@ -9572,6 +6837,1019 @@
  									"text_style": {
  										"align_horizontal": "justify"
  									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.12rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "Sonderbefragung zum Jahresende 2022 - 3",
+ 				"en": "Special end of year 2022 - 3"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"short": {
+ 				"de": "Sonderfragen\u003cbr\u003eEnde 2022 - 3",
+ 				"en": "Special\u003cbr\u003eend of 2022 - 3"
+ 			},
+ 			"suppress_in_progressbar": true,
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "54rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 4,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003e4.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tMeine Einschätzungen mit Blick auf die folgenden Bereiche beruhen hauptsächlich auf\n\t\t\t\t\t",
+ 								"en": "\u003cb\u003e4.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\ttodo\n\t\t\t\t\t"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "meinen eigenen Ana\u0026shy;ly\u0026shy;sen",
+ 								"en": "todo"
+ 							},
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "Ana\u0026shy;ly\u0026shy;sen von Experten/-innen aus meinem Un\u0026shy;ter\u0026shy;neh\u0026shy;men",
+ 								"en": "todo"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "Ana\u0026shy;ly\u0026shy;sen aus externen Quellen",
+ 								"en": "todo"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "keine\u003cbr\u003eAn\u0026shy;gabe",
+ 								"en": "No an\u0026shy;swer"
+ 							},
+ 							"col_span_label": 0.5,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qs4_growth",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Wirt\u0026shy;schaftswachstum Deutsch\u0026shy;land",
+ 								"en": "todo"
+ 							},
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qs4_growth",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "qs4_growth",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "qs4_growth",
+ 							"type": "radio",
+ 							"col_span_label": 0.5,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "qs4_inf",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "In\u0026shy;fla\u0026shy;ti\u0026shy;on in Deutsch\u0026shy;land",
+ 								"en": "todo"
+ 							},
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qs4_inf",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "qs4_inf",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "qs4_inf",
+ 							"type": "radio",
+ 							"col_span_label": 0.5,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						},
+ 						{
+ 							"name": "qs4_dax",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Entwicklung des DAX",
+ 								"en": "todo"
+ 							},
+ 							"col_span_label": 4,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qs4_dax",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "qs4_dax",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "qs4_dax",
+ 							"type": "radio",
+ 							"col_span_label": 0.5,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						}
+ 					],
+ 					"randomization_group": 1,
+ 					"randomization_seed": 1,
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"auto_flow": "row",
+ 								"template_columns": "   5fr    1fr    1fr    1.5fr "
+ 							},
+ 							"box_style": {
+ 								"display": "grid"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 4,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003e4a.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\t\tBundesbankpräsident Joachim Nagel äußert sich regelmäßig zum In\u0026shy;fla\u0026shy;ti\u0026shy;onsausblick für Deutsch\u0026shy;land. \n\t\t\t\t\t\t\tAnfang November 2022 äußerte er sich folgendermaßen: \n\t\t\t\t\t\t\t\"Auch im kommenden Jahr dürfte die In\u0026shy;fla\u0026shy;ti\u0026shy;onsrate in Deutsch\u0026shy;land hoch blei\u0026shy;ben. \n\t\t\t\t\t\t\tIch halte es für wahrscheinlich, dass im Jahresdurchschnitt 2023 eine sieben vor dem Komma stehen wird\".\t\t\t\t\t\t\n\t\t\t\t\t\t",
+ 								"en": "\u003cb\u003e4a.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\ttodo\n\t\t\t\t\t"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "nicht re\u0026shy;le\u0026shy;vant",
+ 								"en": "todo"
+ 							},
+ 							"col_span_label": 5,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "leicht re\u0026shy;le\u0026shy;vant",
+ 								"en": "todo"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "stark re\u0026shy;le\u0026shy;vant",
+ 								"en": "todo"
+ 							},
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "keine\u003cbr\u003eAn\u0026shy;gabe",
+ 								"en": "No an\u0026shy;swer"
+ 							},
+ 							"col_span_label": 0.5,
+ 							"col_span_control": 1,
+ 							"style": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 0.1rem"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"font_size": 90
+ 									}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qs4a_relevance",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "\n\t\t\t\t\t\t\tWie re\u0026shy;le\u0026shy;vant sind die Pro\u0026shy;gno\u0026shy;sen der Bundesbank für Ihre eigenen In\u0026shy;fla\u0026shy;ti\u0026shy;onspro\u0026shy;gno\u0026shy;sen für Deutsch\u0026shy;land?\t\t\t\t",
+ 								"en": "todo"
+ 							},
+ 							"col_span_label": 5,
+ 							"col_span_control": 1,
+ 							"value_radio": "1",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {
+ 										"align_horizontal": "left"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qs4a_relevance",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "2"
+ 						},
+ 						{
+ 							"name": "qs4a_relevance",
+ 							"type": "radio",
+ 							"col_span_control": 1,
+ 							"value_radio": "3"
+ 						},
+ 						{
+ 							"name": "qs4a_relevance",
+ 							"type": "radio",
+ 							"col_span_label": 0.5,
+ 							"col_span_control": 1,
+ 							"value_radio": "4"
+ 						}
+ 					],
+ 					"randomization_group": 1,
+ 					"randomization_seed": 1,
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"auto_flow": "row",
+ 								"template_columns": "   6fr    1fr    1fr    1.5fr ",
+ 								"column_gap": "1.2rem"
+ 							},
+ 							"box_style": {
+ 								"display": "grid"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				}
+ 			]
+ 		},
+ 		{
+ 			"label": {
+ 				"de": "Sonderbefragung zum Jahresende 2022 - 4",
+ 				"en": "Special end of year 2022 - 4"
+ 			},
+ 			"description": {
+ 				"de": "",
+ 				"en": ""
+ 			},
+ 			"short": {
+ 				"de": "Sonderfragen\u003cbr\u003eEnde 2022 - 4",
+ 				"en": "Special\u003cbr\u003eend of 2022 - 4"
+ 			},
+ 			"suppress_in_progressbar": true,
+ 			"style": {
+ 				"desktop": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "46rem"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				},
+ 				"mobile": {
+ 					"grid_container_style": {},
+ 					"box_style": {
+ 						"width_max": "calc(100% - 1.2rem)"
+ 					},
+ 					"grid_item_style": {},
+ 					"text_style": {}
+ 				}
+ 			},
+ 			"finished": "0001-01-01T00:00:00Z",
+ 			"groups": [
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 3,
+ 					"inputs": [
+ 						{
+ 							"name": "qs51_growth",
+ 							"type": "number",
+ 							"max_chars": 5,
+ 							"step": 0.1,
+ 							"max": 100,
+ 							"label": {
+ 								"de": "\u003cb\u003e5a.\u003c/b\u003e \u0026nbsp; Die Wachstumsrate des realen Bruttoinlandprodukts in Deutsch\u0026shy;land in 2023 erwarte ich bei ",
+ 								"en": "\u003cb\u003e5a.\u003c/b\u003e \u0026nbsp; todo"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "pct"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 5,
+ 							"col_span_control": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qs52_recession",
+ 							"type": "number",
+ 							"max_chars": 5,
+ 							"step": 0.1,
+ 							"max": 100,
+ 							"label": {
+ 								"de": "\u003cb\u003e5b.\u003c/b\u003e \u0026nbsp; Die Wahrscheinlichkeit einer \u003cb\u003eRezession in Deutsch\u0026shy;land in 2023\u003c/b\u003e beträgt ",
+ 								"en": "\u003cb\u003e5b.\u003c/b\u003e \u0026nbsp; todo"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "pct"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 5,
+ 							"col_span_control": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 3,
+ 					"inputs": [
+ 						{
+ 							"name": "qs6_infl",
+ 							"type": "number",
+ 							"max_chars": 5,
+ 							"step": 0.1,
+ 							"max": 100,
+ 							"label": {
+ 								"de": "\u003cb\u003e6.\u003c/b\u003e \u0026nbsp; Die jährliche \u003cb\u003eIn\u0026shy;fla\u0026shy;ti\u0026shy;onsrate in Deutsch\u0026shy;land\u003c/b\u003e (durchschnittliche jährliche Veränderung des HICP in Pro\u0026shy;zent) \u003cb\u003efür 2023\u003c/b\u003e erwarte ich bei",
+ 								"en": "\u003cb\u003e6.\u003c/b\u003e \u0026nbsp; todo"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "pct"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 5,
+ 							"col_span_control": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 4,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003e7.\u003c/b\u003e \u0026nbsp; Auf Sicht von \n\t\t\t\t\t\t\t\u003cb\u003ezwölf Monaten\u003c/b\u003e, \n\t\t\t\t\t\t\twas sind Ihre Pro\u0026shy;gno\u0026shy;sen für die jährliche Rendite bzw. die Volatilität des DAX (Stan\u0026shy;dard\u0026shy;ab\u0026shy;wei\u0026shy;chung der jährlichen DAX-Renditen)?",
+ 								"en": "\u003cb\u003e7.\u003c/b\u003e \u0026nbsp; todo"
+ 							},
+ 							"col_span": 4,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "Punktpro\u0026shy;gno\u0026shy;se in Pro\u0026shy;zent",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 2,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "keine An\u0026shy;gabe",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "qs7_inflation_12m",
+ 							"type": "number",
+ 							"max_chars": 5,
+ 							"step": 0.1,
+ 							"max": 100,
+ 							"label": {
+ 								"de": "Durchschn. DAX-Rendite, auf Sicht von 12 Monaten",
+ 								"en": "todo"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "pct"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 2,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "qs7_inflation_12m_noanswer",
+ 							"type": "checkbox",
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "qs7_inflation_36m",
+ 							"type": "number",
+ 							"max_chars": 5,
+ 							"step": 0.1,
+ 							"max": 100,
+ 							"label": {
+ 								"de": "Volatilität, auf Sicht von 12 Monaten",
+ 								"en": "todo"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "pct"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 2,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"name": "qs7_inflation_36m_noanswer",
+ 							"type": "checkbox",
+ 							"col_span": 1,
+ 							"col_span_control": 1
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 3,
+ 					"inputs": [
+ 						{
+ 							"name": "qs8_i",
+ 							"type": "number",
+ 							"max_chars": 5,
+ 							"step": 0.1,
+ 							"max": 100,
+ 							"label": {
+ 								"de": "\u003cb\u003e8.\u003c/b\u003e \u0026nbsp; Den \u003cb\u003eHauptre\u0026shy;finanz\u0026shy;ierungssatz der EZB\u003c/b\u003e erwarte ich \u003cb\u003eEnde 2023\u003c/b\u003e bei ",
+ 								"en": "\u003cb\u003e8.\u003c/b\u003e \u0026nbsp; todo"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "pct"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 5,
+ 							"col_span_control": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 3,
+ 					"inputs": [
+ 						{
+ 							"name": "qs9_sharedax",
+ 							"type": "number",
+ 							"max_chars": 5,
+ 							"step": 0.1,
+ 							"max": 100,
+ 							"label": {
+ 								"de": "\u003cb\u003e9.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tNehmen Sie an, dass Sie 1 Million Euro \n\t\t\t\t\t\t\u003cb\u003eüber die nächsten zwölf Monate\u003c/b\u003e in ein Portfolio bestehend aus dem \n\t\t\t\t\t\t\u003cb\u003eDAX\u003c/b\u003e und einer \n\t\t\t\t\t\t\u003cb\u003erisikolosen Anlage\u003c/b\u003e mit jährlicher Verzinsung von 2 Pro\u0026shy;zent anlegen. \n\t\t\t\t\t\tWie groß wäre der Anteil, den Sie in der aktuellen Situation in den \n\t\t\t\t\t\t\u003cb\u003eDAX\u003c/b\u003e investieren würden?\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\tAnteil DAX\n\t\t\t\t\t",
+ 								"en": "\u003cb\u003e9.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tTodo Einleitungstext\n\t\t\t\t\t"
+ 							},
+ 							"suffix": {
+ 								"de": "%",
+ 								"en": "pct"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 5,
+ 							"col_span_control": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"padding": "0 1.0rem 0 0"
+ 									},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"align_self": "end"
+ 									},
+ 									"text_style": {}
  								},
  								"mobile": {
  									"grid_container_style": {},
@@ -9711,7 +7989,7 @@
  							"accesskey": "n",
  							"col_span": 1,
  							"col_span_control": 1,
- 							"response": "9",
+ 							"response": "11",
  							"style_control": {
  								"desktop": {
  									"grid_container_style": {},

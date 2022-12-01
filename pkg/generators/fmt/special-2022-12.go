@@ -17,8 +17,6 @@ func special202212(q *qst.QuestionnaireT) error {
 	//
 	//
 	//
-	//
-	//
 	{
 		page := q.AddPage()
 		page.Label = trl.S{
@@ -71,6 +69,7 @@ func special202212(q *qst.QuestionnaireT) error {
 			"de": "Sonderfragen<br>Ende 2022 - 2",
 			"en": "Special<br>end of 2022 - 2",
 		}
+		page.SuppressInProgressbar = true
 		page.WidthMax("46rem")
 		page.WidthMax("54rem")
 
@@ -112,10 +111,10 @@ func special202212(q *qst.QuestionnaireT) error {
 			}.Outline("1.")
 
 			inpNames := []string{
-				"inflation_12m",
-				"inflation_36m",
-				"growth_12m",
-				"growth_36m",
+				"qs1_inflation_12m",
+				"qs1_inflation_36m",
+				"qs1_growth_12m",
+				"qs1_growth_36m",
 			}
 
 			lblsRows := []trl.S{
@@ -162,8 +161,8 @@ func special202212(q *qst.QuestionnaireT) error {
 			}.Outline("2.")
 
 			inpNames := []string{
-				"dax_12m",
-				"dax_36m",
+				"qs2_dax_12m",
+				"qs2_dax_36m",
 			}
 
 			lblsRows := []trl.S{
@@ -231,12 +230,12 @@ func special202212(q *qst.QuestionnaireT) error {
 				columnTemplateLocal,
 				colLblsQ3a,
 				[]string{
-					"inf_narrative_a",
-					"inf_narrative_b",
-					"inf_narrative_c",
-					"inf_narrative_d",
-					"inf_narrative_e",
-					"inf_narrative_f",
+					"qs3a_inf_narrative_a",
+					"qs3a_inf_narrative_b",
+					"qs3a_inf_narrative_c",
+					"qs3a_inf_narrative_d",
+					"qs3a_inf_narrative_e",
+					"qs3a_inf_narrative_f",
 				},
 				radioVals6,
 				[]trl.S{
@@ -363,7 +362,7 @@ func special202212(q *qst.QuestionnaireT) error {
 			for i := 0; i < len(radioVals); i++ {
 				inp := gr.AddInput()
 				inp.Type = "radio"
-				inp.Name = "inf_to_dax"
+				inp.Name = "qs3b_inf_to_dax"
 				inp.Label = lbls[i]
 				inp.ValueRadio = radioVals[i]
 				inp.ColSpan = 1
@@ -375,7 +374,445 @@ func special202212(q *qst.QuestionnaireT) error {
 				inp.StyleLbl.Desktop.StyleText.AlignHorizontal = "justify"
 
 				inp.ControlFirst()
+
+				inp.ControlTop()
+				inp.StyleCtl.Desktop.StyleBox.Margin = "0.12rem 0 0 0"
+
 			}
+
+		}
+
+	}
+
+	{
+		page := q.AddPage()
+		page.Label = trl.S{
+			"de": "Sonderbefragung zum Jahresende 2022 - 3",
+			"en": "Special end of year 2022 - 3",
+		}
+		page.Short = trl.S{
+			"de": "Sonderfragen<br>Ende 2022 - 3",
+			"en": "Special<br>end of 2022 - 3",
+		}
+		page.SuppressInProgressbar = true
+		page.WidthMax("46rem")
+		page.WidthMax("54rem")
+
+		//
+		// gr1 - q4
+		{
+
+			colLblsQ4 := []trl.S{
+				{
+					"de": "meinen eigenen Analysen",
+					"en": "todo",
+				},
+				{
+					"de": "Analysen von Experten/-innen aus meinem Unternehmen",
+					"en": "todo",
+				},
+				{
+					"de": "Analysen aus externen Quellen",
+					"en": "todo",
+				},
+
+				{
+					"de": "keine<br>Angabe",
+					"en": "No answer",
+				},
+			}
+
+			var columnTemplateLocal = []float32{
+				4.0, 1,
+				0.0, 1,
+				0.0, 1,
+				0.5, 1,
+			}
+			gb := qst.NewGridBuilderRadios(
+				columnTemplateLocal,
+				colLblsQ4,
+				[]string{
+					"qs4_growth",
+					"qs4_inf",
+					"qs4_dax",
+				},
+				radioVals4,
+				[]trl.S{
+					{
+						"de": `Wirtschaftswachstum Deutschland`,
+						"en": `todo`,
+					},
+					{
+						"de": `Inflation in Deutschland`,
+						"en": `todo`,
+					},
+					{
+						"de": `Entwicklung des DAX`,
+						"en": `todo`,
+					},
+				},
+			)
+
+			gb.MainLabel = trl.S{
+				"de": `
+						Meine Einschätzungen mit Blick auf die folgenden Bereiche beruhen hauptsächlich auf
+					`,
+				"en": `
+						todo
+					`,
+			}.Outline("4.")
+
+			gr := page.AddGrid(gb)
+			_ = gr
+			gr.RandomizationGroup = 1
+			gr.RandomizationSeed = 1
+		}
+
+		//
+		// gr2 - q4a
+
+		{
+
+			colLbls4a := []trl.S{
+				{
+					"de": "nicht relevant",
+					"en": "todo",
+				},
+				{
+					"de": "leicht relevant",
+					"en": "todo",
+				},
+				{
+					"de": "stark relevant",
+					"en": "todo",
+				},
+
+				{
+					"de": "keine<br>Angabe",
+					"en": "No answer",
+				},
+			}
+
+			var columnTemplateLocal = []float32{
+				5.0, 1,
+				0.0, 1,
+				0.0, 1,
+				0.5, 1,
+			}
+			gb := qst.NewGridBuilderRadios(
+				columnTemplateLocal,
+				colLbls4a,
+				[]string{
+					"qs4a_relevance",
+				},
+				radioVals4,
+				[]trl.S{
+					{
+						"de": `
+							Wie relevant sind die Prognosen der Bundesbank für Ihre eigenen Inflationsprognosen für Deutschland?				`,
+						"en": `todo`,
+					},
+				},
+			)
+
+			gb.MainLabel = trl.S{
+				"de": `
+							Bundesbankpräsident Joachim Nagel äußert sich regelmäßig zum Inflationsausblick für Deutschland. 
+							Anfang November 2022 äußerte er sich folgendermaßen: 
+							"Auch im kommenden Jahr dürfte die Inflationsrate in Deutschland hoch bleiben. 
+							Ich halte es für wahrscheinlich, dass im Jahresdurchschnitt 2023 eine sieben vor dem Komma stehen wird".						
+						`,
+				"en": `
+						todo
+					`,
+			}.Outline("4a.")
+
+			gr := page.AddGrid(gb)
+			gr.Style = css.NewStylesResponsive(gr.Style)
+			gr.Style.Desktop.StyleGridContainer.GapColumn = "1.2rem"
+			_ = gr
+			gr.RandomizationGroup = 1
+			gr.RandomizationSeed = 1
+		}
+
+	}
+
+	{
+		page := q.AddPage()
+		page.Label = trl.S{
+			"de": "Sonderbefragung zum Jahresende 2022 - 4",
+			"en": "Special end of year 2022 - 4",
+		}
+		page.Short = trl.S{
+			"de": "Sonderfragen<br>Ende 2022 - 4",
+			"en": "Special<br>end of 2022 - 4",
+		}
+		page.SuppressInProgressbar = true
+		page.WidthMax("46rem")
+		// page.WidthMax("54rem")
+
+		{
+			gr := page.AddGroup()
+			gr.Cols = 3 //x
+			// gr.BottomVSpacers = 2
+			{
+				inp := gr.AddInput()
+				inp.Type = "number"
+
+				inp.Label = trl.S{
+					"de": "Die Wachstumsrate des realen Bruttoinlandprodukts in Deutschland in 2023 erwarte ich bei ",
+					"en": "todo",
+				}.Outline("5a.")
+				inp.LabelPadRight()
+				inp.Suffix = trl.S{"de": "%", "en": "pct"}
+
+				inp.Name = "qs51_growth"
+				inp.Min = 0
+				inp.Max = 100
+				inp.Step = 0.1
+				inp.MaxChars = 5
+
+				inp.ColSpan = 3
+				inp.ColSpanLabel = 5
+				inp.ColSpanControl = 1
+			}
+			{
+				inp := gr.AddInput()
+				inp.Type = "number"
+
+				inp.Label = trl.S{
+					"de": "Die Wahrscheinlichkeit einer <b>Rezession in Deutschland in 2023</b> beträgt ",
+					"en": "todo",
+				}.Outline("5b.")
+				inp.LabelPadRight()
+				inp.Suffix = trl.S{"de": "%", "en": "pct"}
+
+				inp.Name = "qs52_recession"
+				inp.Min = 0
+				inp.Max = 100
+				inp.Step = 0.1
+				inp.MaxChars = 5
+
+				inp.ColSpan = 3
+				inp.ColSpanLabel = 5
+				inp.ColSpanControl = 1
+			}
+		}
+
+		{
+			gr := page.AddGroup()
+			gr.Cols = 3 //x
+			// gr.BottomVSpacers = 1
+			{
+				inp := gr.AddInput()
+				inp.Type = "number"
+
+				inp.Label = trl.S{
+					"de": "Die jährliche <b>Inflationsrate in Deutschland</b> (durchschnittliche jährliche Veränderung des HICP in Prozent) <b>für 2023</b> erwarte ich bei",
+					"en": "todo",
+				}.Outline("6.")
+				inp.LabelPadRight()
+				inp.Suffix = trl.S{"de": "%", "en": "pct"}
+
+				inp.Name = "qs6_infl"
+				inp.Min = 0
+				inp.Max = 100
+				inp.Step = 0.1
+				inp.MaxChars = 5
+
+				inp.ColSpan = 3
+				inp.ColSpanLabel = 5
+				inp.ColSpanControl = 1
+			}
+
+		}
+
+		{
+			gr := page.AddGroup()
+			gr.Cols = 4 //x
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.ColSpan = gr.Cols
+				inp.Label = trl.S{
+					"de": `Auf Sicht von 
+							<b>zwölf Monaten</b>, 
+							was sind Ihre Prognosen für die jährliche Rendite bzw. die Volatilität des DAX (Standardabweichung der jährlichen DAX-Renditen)?`,
+					"en": `todo`,
+				}.Outline("7.")
+			}
+
+			lblsCols := []trl.S{
+				{
+					"de": "Punktprognose in Prozent",
+					"en": "todo",
+				},
+				{
+					"de": "keine Angabe",
+					"en": "todo",
+				},
+			}
+			for i := 0; i < len(lblsCols); i++ {
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				if i == 0 {
+					inp.Type = "label-as-input"
+					inp.ColSpanLabel = 2
+					inp.ColSpanControl = 1
+				} else {
+					inp.LabelCenter()
+				}
+				inp.Label = lblsCols[i]
+
+				inp.ColSpan = 1
+				if i == 0 {
+					inp.ColSpan = 3
+				}
+			}
+
+			inpNames := []string{
+				"qs7_inflation_12m",
+				"qs7_inflation_36m",
+			}
+
+			lblsRows := []trl.S{
+				{
+					"de": "Durchschn. DAX-Rendite, auf Sicht von 12 Monaten",
+					"en": "todo",
+				},
+				{
+					"de": "Volatilität, auf Sicht von 12 Monaten",
+					"en": "todo",
+				},
+			}
+
+			for i := 0; i < len(inpNames); i++ {
+
+				{
+					inp := gr.AddInput()
+					inp.Type = "number"
+
+					inp.Label = lblsRows[i]
+					inp.Suffix = trl.S{"de": "%", "en": "pct"}
+
+					inp.Name = inpNames[i]
+					inp.Min = 0
+					inp.Max = 100
+					inp.Step = 0.1
+					inp.MaxChars = 5
+
+					inp.ColSpan = 3
+					inp.ColSpanLabel = 2
+					inp.ColSpanControl = 1
+
+				}
+
+				{
+					inp := gr.AddInput()
+					inp.Type = "checkbox"
+					inp.Name = inpNames[i] + "_noanswer"
+					inp.ColSpan = 1
+					inp.ColSpanControl = 1
+
+				}
+
+			}
+
+		}
+
+		{
+			gr := page.AddGroup()
+			gr.Cols = 3 //x
+			// gr.BottomVSpacers = 1
+			{
+				inp := gr.AddInput()
+				inp.Type = "number"
+
+				inp.Label = trl.S{
+					"de": "Den <b>Hauptrefinanzierungssatz der EZB</b> erwarte ich <b>Ende 2023</b> bei ",
+					"en": "todo",
+				}.Outline("8.")
+				inp.LabelPadRight()
+				inp.Suffix = trl.S{"de": "%", "en": "pct"}
+
+				inp.Name = "qs8_i"
+				inp.Min = 0
+				inp.Max = 100
+				inp.Step = 0.1
+				inp.MaxChars = 5
+
+				inp.ColSpan = 3
+				inp.ColSpanLabel = 5
+				inp.ColSpanControl = 1
+			}
+
+		}
+
+		{
+			gr := page.AddGroup()
+			gr.Cols = 3 //x
+			// gr.BottomVSpacers = 1
+			{
+				inp := gr.AddInput()
+				inp.Label = trl.S{
+					"de": `
+						Nehmen Sie an, dass Sie 1 Million Euro 
+						<b>über die nächsten zwölf Monate</b> in ein Portfolio bestehend aus dem 
+						<b>DAX</b> und einer 
+						<b>risikolosen Anlage</b> mit jährlicher Verzinsung von 2 Prozent anlegen. 
+						Wie groß wäre der Anteil, den Sie in der aktuellen Situation in den 
+						<b>DAX</b> investieren würden?
+						<br>
+						Anteil DAX
+					`,
+
+					"en": `
+					Todo Einleitungstext
+					`,
+				}.Outline("9.")
+
+				// inp.Type = "textblock"
+				// inp.ColSpan = gr.Cols
+
+				inp.Type = "number"
+				inp.Suffix = trl.S{"de": "%", "en": "pct"}
+
+				inp.Name = "qs9_sharedax"
+				inp.Min = 0
+				inp.Max = 100
+				inp.Step = 0.1
+				inp.MaxChars = 5
+
+				inp.ColSpan = 3
+				inp.ColSpanLabel = 5
+				inp.ColSpanControl = 1
+
+				inp.ControlBottom()
+				inp.LabelPadRight()
+
+			}
+
+			// {
+			// 	inp := gr.AddInput()
+			// 	inp.Type = "number"
+
+			// 	inp.Label = trl.S{
+			// 		"de": "Anteil DAX",
+			// 		"en": "todo",
+			// 	}
+			// 	inp.Suffix = trl.S{"de": "%", "en": "pct"}
+
+			// 	inp.Name = "qs9_sharedax"
+			// 	inp.Min = 0
+			// 	inp.Max = 100
+			// 	inp.Step = 0.1
+			// 	inp.MaxChars = 5
+
+			// 	inp.ColSpan = 3
+			// 	inp.ColSpanLabel = 5
+			// 	inp.ColSpanControl = 1
+			// }
 
 		}
 

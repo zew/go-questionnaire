@@ -145,7 +145,7 @@ func (inp *inputT) LabelRight() {
 }
 
 // LabelCenter - label *and* text horizontally centered;
-// default is 'left';
+// default is 'start/left';
 // vertical remains 'center'
 func (inp *inputT) LabelCenter() {
 	inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)

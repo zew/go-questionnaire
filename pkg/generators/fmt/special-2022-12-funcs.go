@@ -8,8 +8,8 @@ import (
 	"github.com/zew/go-questionnaire/pkg/trl"
 )
 
-// checkBoxCascade for hierarchical checkboxes from page1
-func checkBoxCascade(
+// matrixOfPercentageInputs for hierarchical checkboxes from page1
+func matrixOfPercentageInputs(
 	page *qst.WrappedPageT,
 	lblMain trl.S,
 	lblsCols []trl.S,
@@ -60,11 +60,11 @@ func checkBoxCascade(
 			inp.Label = lblsRows[i1]
 		}
 
-		for _, i2 := range []string{"ub", "lb"} {
+		for _, suffix := range []string{"lb", "ub"} {
 
 			inp := gr.AddInput()
 			inp.Type = "number"
-			inp.Name = fmt.Sprintf("inf%v_%v", inpNames[i1], i2)
+			inp.Name = fmt.Sprintf("inf%v_%v", inpNames[i1], suffix)
 			inp.Suffix = trl.S{"de": "%", "en": "%"}
 			inp.ColSpan = col23Width
 			inp.Min = 0
@@ -73,6 +73,7 @@ func checkBoxCascade(
 			// different steps for growth...
 			inp.MaxChars = 5
 			inp.ControlCenter()
+			// inp.ControlTop()
 		}
 		{
 
@@ -80,6 +81,7 @@ func checkBoxCascade(
 			inp.Type = "checkbox"
 			inp.Name = fmt.Sprintf("inf%v_%v", inpNames[i1], "no_answer")
 			inp.ColSpan = col4Width
+			inp.ControlTopNudge()
 		}
 
 	}

@@ -25,8 +25,9 @@ var hyph = []string{
 	"Hoch|schul|abschluss",
 	"Bildungs|abschluss",
 	"Prozent|punkt",
-	"Unter|grenze",
-	"Konfidenz|interval",
+	"Un|ter|gren|ze",
+	"Ober|gren|ze",
+	"Kon|fi|denz|in|ter|vall",
 
 	// full german
 	"de|mo|gra|fisch",
@@ -38,7 +39,7 @@ var hyph = []string{
 	"Ab|wei|chung",
 	"Ana|ly|se",
 	"Ana|ly|sen",
-	"An|gabe",
+	"An|ga|be", // www.duden.de/rechtschreibung/Angabe
 	"Arbeits|markt|öko|no|mie",
 	"as|so|zi|ie|rt",
 	"auf|wer|ten",
@@ -56,6 +57,7 @@ var hyph = []string{
 	"Deutsch|land",
 	"Do|zen|tIn",
 	"Dok|to|ran|din",
+	"ei|ge|ne", // https://www.duden.de/rechtschreibung/eigener
 	"ef|fek|tiv",
 	"Ein|fluss",
 	"Ent|schei|dungs|pro|zesse",
@@ -87,6 +89,7 @@ var hyph = []string{
 	"In|dus|trie|öko|no|mie",
 	"ir|re|le|vant",
 	"Junior|pro|fes|sorIn",
+	"kei|ne", // hard; but allowed https://www.duden.de/rechtschreibung/keine
 	"kom|plett",
 	"Kompromiss|lösung",
 	"Kon|junk|tur|da|ten ",
@@ -129,6 +132,7 @@ var hyph = []string{
 	"si|cher",
 	"sin|ken",
 	"stei|gen",
+	"stim|me", // daring, as in "stimme voll zu"
 	"Stif|tung",
 	"Stan|dard|abweichung ",
 	"Te|le|kom|mu|ni|ka|ti|on",

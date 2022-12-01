@@ -315,8 +315,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 				inp.Type = "textblock"
 				inp.ColSpan = 1
 				inp.Label = trl.S{
-					"de": "100&nbsp;%",
-					"en": "100&nbsp;%",
+					"de": "100%", //  "100&nbsp;%",
+					"en": "100%", //  "100&nbsp;%",
 				}
 				inp.Style = css.ItemCenteredMCA(inp.Style)
 			}

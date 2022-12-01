@@ -128,6 +128,13 @@ func (inp *inputT) ControlTop() {
 	inp.StyleCtl.Desktop.StyleGridItem.AlignSelf = "start"
 }
 
+// ControlTopNudge adds a small nudge to ControlTop
+func (inp *inputT) ControlTopNudge() {
+	inp.ControlTop()
+	// a tiny nudge
+	inp.StyleCtl.Desktop.StyleBox.Margin = "0.25rem 0 0 0"
+}
+
 // ControlBottom puts the control vertically at bottom;
 // default would be vertically centered
 func (inp *inputT) ControlBottom() {
@@ -168,7 +175,7 @@ func (inp *inputT) LabelTop() {
 }
 
 // ControlCenter - input horizontally centered;
-// default is 'left';
+// default is 'start';
 // vertical remains 'center'
 func (inp *inputT) ControlCenter() {
 	inp.StyleCtl = css.NewStylesResponsive(inp.StyleCtl)

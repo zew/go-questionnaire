@@ -97,11 +97,11 @@ func special202212(q *qst.QuestionnaireT) error {
 			lblMain := trl.S{
 				"de": `
 					Mit einer Wahrscheinlichkeit von 90 Prozent werden die durchschnittliche 
-					<b>jährliche Inflationsrate in Deutschland</b> (durchschnittliche jährliche Veränderung des HICP in Prozent) 
+					<i>jährliche Inflationsrate in Deutschland</i> (durchschnittliche jährliche Veränderung des HICP in Prozent) 
 					bzw. die durchschnittliche jährliche 
-					<b>Wachstumsrate des realen Bruttoinlandprodukts</b> in Deutschland  
+					<i>Wachstumsrate des realen Bruttoinlandprodukts</i> in Deutschland  
 
-					Sicht von <b>zwölf Monaten</b> bzw. <b>drei Jahren</b>   
+					Sicht von <i>zwölf Monaten</i> bzw. <i>drei Jahren</i>   
 
 					zwischen den folgenden Werten liegen:
 				`,
@@ -136,7 +136,7 @@ func special202212(q *qst.QuestionnaireT) error {
 				},
 			}
 
-			checkBoxCascade(
+			matrixOfPercentageInputs(
 				qst.WrapPageT(page),
 				lblMain,
 				lblsColsQ1Q2,
@@ -149,9 +149,9 @@ func special202212(q *qst.QuestionnaireT) error {
 		{
 			lblMain := trl.S{
 				"de": `
-					Mit einer Wahrscheinlichkeit von 90 Prozent wird die durchschnittliche jährliche <b>Rendite des DAX</b> auf Sicht von 
-					<b>zwölf Monaten</b> bzw. 
-					<b>drei Jahren</b> zwischen den folgenden Werten liegen:
+					Mit einer Wahrscheinlichkeit von 90 Prozent wird die durchschnittliche jährliche <i>Rendite des DAX</i> auf Sicht von 
+					<i>zwölf Monaten</i> bzw. 
+					<i>drei Jahren</i> zwischen den folgenden Werten liegen:
 					<br>
 					Hinweis: Im Zeitraum 2011-2021 betrug die jährliche DAX-Rendite im Durchschnitt 8,9 Prozent mit einer Standardabweichung von 14,7 Prozent.
 				`,
@@ -176,7 +176,7 @@ func special202212(q *qst.QuestionnaireT) error {
 				},
 			}
 
-			checkBoxCascade(
+			matrixOfPercentageInputs(
 				qst.WrapPageT(page),
 				lblMain,
 				lblsColsQ1Q2,
@@ -275,11 +275,11 @@ func special202212(q *qst.QuestionnaireT) error {
 
 			gb.MainLabel = trl.S{
 				"de": `
-						Wie beurteilen Sie die folgenden Aussagen zum Zusammenhang zwischen der <b>Inflationsentwicklung</b>
+						Wie beurteilen Sie die folgenden Aussagen zum Zusammenhang zwischen der <i>Inflationsentwicklung</i>
 						 und dem 
-						<b>Rendite-Risiko-Profil</b> des DAX 
+						<i>Rendite-Risiko-Profil</i> des DAX 
 						 in 
-						<b>2023</b>?
+						<i>2023</i>?
 					`,
 				"en": `
 						todo
@@ -348,9 +348,9 @@ func special202212(q *qst.QuestionnaireT) error {
 						Bitte wählen Sie nun aus den folgenden Aussagen diejenige aus, 
 						die ihrer Meinung nach den Zusammenhang zwischen 
 						der 
-						<b>Inflationsentwicklung</b> und dem 
-						<b>Rendite-Risiko-Profil des DAX</b> in 
-						<b>2023</b> am besten widerspiegelt: 
+						<i>Inflationsentwicklung</i> und dem 
+						<i>Rendite-Risiko-Profil des DAX</i> in 
+						<i>2023</i> am besten widerspiegelt: 
 					`,
 					"en": `
 						todo
@@ -581,7 +581,7 @@ func special202212(q *qst.QuestionnaireT) error {
 				inp.Type = "number"
 
 				inp.Label = trl.S{
-					"de": "Die Wahrscheinlichkeit einer <b>Rezession in Deutschland in 2023</b> beträgt ",
+					"de": "Die Wahrscheinlichkeit einer <i>Rezession in Deutschland in 2023</i> beträgt ",
 					"en": "todo",
 				}.Outline("5b.")
 				inp.LabelPadRight()
@@ -608,7 +608,7 @@ func special202212(q *qst.QuestionnaireT) error {
 				inp.Type = "number"
 
 				inp.Label = trl.S{
-					"de": "Die jährliche <b>Inflationsrate in Deutschland</b> (durchschnittliche jährliche Veränderung des HICP in Prozent) <b>für 2023</b> erwarte ich bei",
+					"de": "Die jährliche <i>Inflationsrate in Deutschland</i> (durchschnittliche jährliche Veränderung des HICP in Prozent) <i>für 2023</i> erwarte ich bei",
 					"en": "todo",
 				}.Outline("6.")
 				inp.LabelPadRight()
@@ -637,7 +637,7 @@ func special202212(q *qst.QuestionnaireT) error {
 				inp.ColSpan = gr.Cols
 				inp.Label = trl.S{
 					"de": `Auf Sicht von 
-							<b>zwölf Monaten</b>, 
+							<i>zwölf Monaten</i>, 
 							was sind Ihre Prognosen für die jährliche Rendite bzw. die Volatilität des DAX (Standardabweichung der jährlichen DAX-Renditen)?`,
 					"en": `todo`,
 				}.Outline("7.")
@@ -702,6 +702,8 @@ func special202212(q *qst.QuestionnaireT) error {
 					inp.Step = 0.1
 					inp.MaxChars = 5
 
+					inp.ControlCenter()
+
 					inp.ColSpan = 3
 					inp.ColSpanLabel = 2
 					inp.ColSpanControl = 1
@@ -714,6 +716,7 @@ func special202212(q *qst.QuestionnaireT) error {
 					inp.Name = inpNames[i] + "_noanswer"
 					inp.ColSpan = 1
 					inp.ColSpanControl = 1
+					inp.ControlTopNudge()
 
 				}
 
@@ -730,7 +733,7 @@ func special202212(q *qst.QuestionnaireT) error {
 				inp.Type = "number"
 
 				inp.Label = trl.S{
-					"de": "Den <b>Hauptrefinanzierungssatz der EZB</b> erwarte ich <b>Ende 2023</b> bei ",
+					"de": "Den <i>Hauptrefinanzierungssatz der EZB</i> erwarte ich <i>Ende 2023</i> bei ",
 					"en": "todo",
 				}.Outline("8.")
 				inp.LabelPadRight()
@@ -758,11 +761,11 @@ func special202212(q *qst.QuestionnaireT) error {
 				inp.Label = trl.S{
 					"de": `
 						Nehmen Sie an, dass Sie 1 Million Euro 
-						<b>über die nächsten zwölf Monate</b> in ein Portfolio bestehend aus dem 
-						<b>DAX</b> und einer 
-						<b>risikolosen Anlage</b> mit jährlicher Verzinsung von 2 Prozent anlegen. 
+						<i>über die nächsten zwölf Monate</i> in ein Portfolio bestehend aus dem 
+						<i>DAX</i> und einer 
+						<i>risikolosen Anlage</i> mit jährlicher Verzinsung von 2 Prozent anlegen. 
 						Wie groß wäre der Anteil, den Sie in der aktuellen Situation in den 
-						<b>DAX</b> investieren würden?
+						<i>DAX</i> investieren würden?
 						<br>
 						Anteil DAX
 					`,
@@ -792,27 +795,6 @@ func special202212(q *qst.QuestionnaireT) error {
 				inp.LabelPadRight()
 
 			}
-
-			// {
-			// 	inp := gr.AddInput()
-			// 	inp.Type = "number"
-
-			// 	inp.Label = trl.S{
-			// 		"de": "Anteil DAX",
-			// 		"en": "todo",
-			// 	}
-			// 	inp.Suffix = trl.S{"de": "%", "en": "pct"}
-
-			// 	inp.Name = "qs9_sharedax"
-			// 	inp.Min = 0
-			// 	inp.Max = 100
-			// 	inp.Step = 0.1
-			// 	inp.MaxChars = 5
-
-			// 	inp.ColSpan = 3
-			// 	inp.ColSpanLabel = 5
-			// 	inp.ColSpanControl = 1
-			// }
 
 		}
 

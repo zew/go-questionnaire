@@ -13,6 +13,8 @@ import (
 // During application initialization we use it to fill hyphm above.
 var hyph = []string{
 
+	// www.duden.de/rechtschreibung/Abweichung
+
 	// reduced hyphenization
 	"unter|bewertet", // 	"be|wer|tet",
 	"über|bewertet",
@@ -24,12 +26,14 @@ var hyph = []string{
 	"Bildungs|abschluss",
 	"Prozent|punkt",
 
+	// full german
 	"de|mo|gra|fisch",
 	"de|mo|gra|phisch",
 
 	//
 	// german
 	"ab|wer|ten",
+	"Ab|wei|chung",
 	"An|gabe",
 	"Arbeits|markt|öko|no|mie",
 	"as|so|zi|ie|rt",
@@ -122,6 +126,7 @@ var hyph = []string{
 	"sin|ken",
 	"stei|gen",
 	"Stif|tung",
+	"Stan|dard|abweichung ",
 	"Te|le|kom|mu|ni|ka|ti|on",
 	"über|haupt",
 	"Um|welt|öko|no|mie",

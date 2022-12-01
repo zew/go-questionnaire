@@ -114,6 +114,16 @@ func (s S) Bold() S {
 	return ret
 }
 
+// Size returns *average* length of text;
+// this is expensive; only for static stuff
+func (s S) Size() float64 {
+	sum := 0.0
+	for _, val := range s {
+		sum += float64(len(val))
+	}
+	return sum / float64(len(s))
+}
+
 // Outline prepends <b> pref </b>
 func (s S) Outline(pref string) S {
 	ret := S{}

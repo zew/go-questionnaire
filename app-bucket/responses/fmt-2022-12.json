@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "4149dd65c7bc17b03faec328ab9d51b26632dc653791154928b703db2e019880",
+ 	"md_5": "285eb4279fc2cefb05bc6675aa11b4cb250c2bb9abcf061e95109690d51fdf37",
  	"lang_codes": [
  		"de",
  		"en"
@@ -504,26 +504,98 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
  							}
  						},
  						{
  							"name": "y0_ez",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2"
+ 							"value_radio": "2",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "y0_ez",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"value_radio": "3",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "y0_ez",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4"
+ 							"value_radio": "4",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "y0_deu",
@@ -550,26 +622,98 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
  							}
  						},
  						{
  							"name": "y0_deu",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2"
+ 							"value_radio": "2",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "y0_deu",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"value_radio": "3",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "y0_deu",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4"
+ 							"value_radio": "4",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "y0_usa",
@@ -596,26 +740,98 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
  							}
  						},
  						{
  							"name": "y0_usa",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2"
+ 							"value_radio": "2",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "y0_usa",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"value_radio": "3",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "y0_usa",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4"
+ 							"value_radio": "4",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "y0_chn",
@@ -642,26 +858,98 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
  							}
  						},
  						{
  							"name": "y0_chn",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2"
+ 							"value_radio": "2",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "y0_chn",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"value_radio": "3",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "y0_chn",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4"
+ 							"value_radio": "4",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						}
  					],
  					"style": {
@@ -900,26 +1188,98 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
  							}
  						},
  						{
  							"name": "y_ez",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2"
+ 							"value_radio": "2",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "y_ez",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"value_radio": "3",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "y_ez",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4"
+ 							"value_radio": "4",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "y_deu",
@@ -946,26 +1306,98 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
  							}
  						},
  						{
  							"name": "y_deu",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2"
+ 							"value_radio": "2",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "y_deu",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"value_radio": "3",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "y_deu",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4"
+ 							"value_radio": "4",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "y_usa",
@@ -992,26 +1424,98 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
  							}
  						},
  						{
  							"name": "y_usa",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2"
+ 							"value_radio": "2",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "y_usa",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"value_radio": "3",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "y_usa",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4"
+ 							"value_radio": "4",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "y_chn",
@@ -1038,26 +1542,98 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
  							}
  						},
  						{
  							"name": "y_chn",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2"
+ 							"value_radio": "2",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "y_chn",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"value_radio": "3",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "y_chn",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4"
+ 							"value_radio": "4",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						}
  					],
  					"style": {
@@ -1628,26 +2204,98 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
  							}
  						},
  						{
  							"name": "pi_ez",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2"
+ 							"value_radio": "2",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "pi_ez",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"value_radio": "3",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "pi_ez",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4"
+ 							"value_radio": "4",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "pi_deu",
@@ -1674,26 +2322,98 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
  							}
  						},
  						{
  							"name": "pi_deu",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2"
+ 							"value_radio": "2",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "pi_deu",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"value_radio": "3",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "pi_deu",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4"
+ 							"value_radio": "4",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "pi_usa",
@@ -1720,26 +2440,98 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
  							}
  						},
  						{
  							"name": "pi_usa",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2"
+ 							"value_radio": "2",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "pi_usa",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"value_radio": "3",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "pi_usa",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4"
+ 							"value_radio": "4",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "pi_chn",
@@ -1766,26 +2558,98 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
  							}
  						},
  						{
  							"name": "pi_chn",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2"
+ 							"value_radio": "2",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "pi_chn",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"value_radio": "3",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "pi_chn",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4"
+ 							"value_radio": "4",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						}
  					],
  					"style": {
@@ -2024,26 +2888,98 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
  							}
  						},
  						{
  							"name": "i_deu",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2"
+ 							"value_radio": "2",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "i_deu",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"value_radio": "3",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "i_deu",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4"
+ 							"value_radio": "4",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "i_usa",
@@ -2070,26 +3006,98 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
  							}
  						},
  						{
  							"name": "i_usa",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2"
+ 							"value_radio": "2",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "i_usa",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"value_radio": "3",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "i_usa",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4"
+ 							"value_radio": "4",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "i_chn",
@@ -2116,26 +3124,98 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
  							}
  						},
  						{
  							"name": "i_chn",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2"
+ 							"value_radio": "2",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "i_chn",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"value_radio": "3",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "i_chn",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4"
+ 							"value_radio": "4",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						}
  					],
  					"style": {
@@ -2374,26 +3454,98 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
  							}
  						},
  						{
  							"name": "r_deu",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2"
+ 							"value_radio": "2",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "r_deu",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"value_radio": "3",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "r_deu",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4"
+ 							"value_radio": "4",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "r_usa",
@@ -2420,26 +3572,98 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
  							}
  						},
  						{
  							"name": "r_usa",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2"
+ 							"value_radio": "2",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "r_usa",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"value_radio": "3",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "r_usa",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4"
+ 							"value_radio": "4",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "r_chn",
@@ -2466,26 +3690,98 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
  							}
  						},
  						{
  							"name": "r_chn",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2"
+ 							"value_radio": "2",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "r_chn",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"value_radio": "3",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "r_chn",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4"
+ 							"value_radio": "4",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						}
  					],
  					"style": {
@@ -2759,26 +4055,98 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
  							}
  						},
  						{
  							"name": "sto_ez",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2"
+ 							"value_radio": "2",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "sto_ez",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"value_radio": "3",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "sto_ez",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4"
+ 							"value_radio": "4",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "sto_dax",
@@ -2805,26 +4173,98 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
  							}
  						},
  						{
  							"name": "sto_dax",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2"
+ 							"value_radio": "2",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "sto_dax",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"value_radio": "3",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "sto_dax",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4"
+ 							"value_radio": "4",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "sto_usa",
@@ -2851,26 +4291,98 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
  							}
  						},
  						{
  							"name": "sto_usa",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2"
+ 							"value_radio": "2",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "sto_usa",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"value_radio": "3",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "sto_usa",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4"
+ 							"value_radio": "4",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "sto_sse_comp_chn",
@@ -2897,26 +4409,98 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
  							}
  						},
  						{
  							"name": "sto_sse_comp_chn",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2"
+ 							"value_radio": "2",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "sto_sse_comp_chn",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"value_radio": "3",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "sto_sse_comp_chn",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4"
+ 							"value_radio": "4",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						}
  					],
  					"style": {
@@ -3269,25 +4853,97 @@
  							"name": "dax_fund",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "1"
+ 							"value_radio": "1",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "dax_fund",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2"
+ 							"value_radio": "2",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "dax_fund",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"value_radio": "3",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "dax_fund",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "4"
+ 							"value_radio": "4",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						}
  					],
  					"style": {
@@ -3576,26 +5232,98 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
  							}
  						},
  						{
  							"name": "fx_usa",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2"
+ 							"value_radio": "2",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "fx_usa",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"value_radio": "3",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "fx_usa",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4"
+ 							"value_radio": "4",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "fx_chn",
@@ -3622,26 +5350,98 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
  							}
  						},
  						{
  							"name": "fx_chn",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2"
+ 							"value_radio": "2",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "fx_chn",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"value_radio": "3",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "fx_chn",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4"
+ 							"value_radio": "4",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						}
  					],
  					"style": {
@@ -3915,26 +5715,98 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
  							}
  						},
  						{
  							"name": "sec_banks",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2"
+ 							"value_radio": "2",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "sec_banks",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"value_radio": "3",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "sec_banks",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4"
+ 							"value_radio": "4",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "sec_insur",
@@ -3961,26 +5833,98 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
  							}
  						},
  						{
  							"name": "sec_insur",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2"
+ 							"value_radio": "2",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "sec_insur",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"value_radio": "3",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "sec_insur",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4"
+ 							"value_radio": "4",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "sec_cars",
@@ -4007,26 +5951,98 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
  							}
  						},
  						{
  							"name": "sec_cars",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2"
+ 							"value_radio": "2",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "sec_cars",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"value_radio": "3",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "sec_cars",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4"
+ 							"value_radio": "4",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "sec_chemi",
@@ -4053,26 +6069,98 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
  							}
  						},
  						{
  							"name": "sec_chemi",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2"
+ 							"value_radio": "2",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "sec_chemi",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"value_radio": "3",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "sec_chemi",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4"
+ 							"value_radio": "4",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "sec_steel",
@@ -4099,26 +6187,98 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
  							}
  						},
  						{
  							"name": "sec_steel",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2"
+ 							"value_radio": "2",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "sec_steel",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"value_radio": "3",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "sec_steel",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4"
+ 							"value_radio": "4",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "sec_elect",
@@ -4145,26 +6305,98 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
  							}
  						},
  						{
  							"name": "sec_elect",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2"
+ 							"value_radio": "2",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "sec_elect",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"value_radio": "3",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "sec_elect",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4"
+ 							"value_radio": "4",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "sec_mecha",
@@ -4191,26 +6423,98 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
  							}
  						},
  						{
  							"name": "sec_mecha",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2"
+ 							"value_radio": "2",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "sec_mecha",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"value_radio": "3",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "sec_mecha",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4"
+ 							"value_radio": "4",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "sec_consu",
@@ -4237,26 +6541,98 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
  							}
  						},
  						{
  							"name": "sec_consu",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2"
+ 							"value_radio": "2",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "sec_consu",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"value_radio": "3",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "sec_consu",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4"
+ 							"value_radio": "4",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "sec_const",
@@ -4283,26 +6659,98 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
  							}
  						},
  						{
  							"name": "sec_const",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2"
+ 							"value_radio": "2",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "sec_const",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"value_radio": "3",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "sec_const",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4"
+ 							"value_radio": "4",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "sec_utili",
@@ -4329,26 +6777,98 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
  							}
  						},
  						{
  							"name": "sec_utili",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2"
+ 							"value_radio": "2",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "sec_utili",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"value_radio": "3",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "sec_utili",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4"
+ 							"value_radio": "4",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "sec_servi",
@@ -4375,26 +6895,98 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
  							}
  						},
  						{
  							"name": "sec_servi",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2"
+ 							"value_radio": "2",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "sec_servi",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"value_radio": "3",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "sec_servi",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4"
+ 							"value_radio": "4",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "sec_telec",
@@ -4421,26 +7013,98 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
  							}
  						},
  						{
  							"name": "sec_telec",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2"
+ 							"value_radio": "2",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "sec_telec",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"value_radio": "3",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "sec_telec",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4"
+ 							"value_radio": "4",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "sec_infor",
@@ -4467,26 +7131,98 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
  							}
  						},
  						{
  							"name": "sec_infor",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2"
+ 							"value_radio": "2",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "sec_infor",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"value_radio": "3",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
  							"name": "sec_infor",
  							"type": "radio",
  							"col_span_label": 0.4,
  							"col_span_control": 1,
- 							"value_radio": "4"
+ 							"value_radio": "4",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						}
  					],
  					"style": {
@@ -4577,7 +7313,7 @@
  				"desktop": {
  					"grid_container_style": {},
  					"box_style": {
- 						"width_max": "46rem"
+ 						"width_max": "54rem"
  					},
  					"grid_item_style": {},
  					"text_style": {}
@@ -5035,7 +7771,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e2.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tMit einer Wahrscheinlichkeit von 90 Pro\u0026shy;zent wird die durchschnittliche jährliche \u003cb\u003eRendite des DAX\u003c/b\u003e auf Sicht von \n\t\t\t\t\t\u003cb\u003ezwölf Monaten\u003c/b\u003e bzw. \n\t\t\t\t\t\u003cb\u003edrei Jahren\u003c/b\u003e zwi\u0026shy;schen den folgenden Werten liegen:\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\tHinweis: Im Zeitraum 2011-2021 betrug die jährliche DAX-Rendite im Durchschnitt 8,9 Pro\u0026shy;zent mit einer Standardabweichung von 14,7 Pro\u0026shy;zent.\n\t\t\t\t",
+ 								"de": "\u003cb\u003e2.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tMit einer Wahrscheinlichkeit von 90 Pro\u0026shy;zent wird die durchschnittliche jährliche \u003cb\u003eRendite des DAX\u003c/b\u003e auf Sicht von \n\t\t\t\t\t\u003cb\u003ezwölf Monaten\u003c/b\u003e bzw. \n\t\t\t\t\t\u003cb\u003edrei Jahren\u003c/b\u003e zwi\u0026shy;schen den folgenden Werten liegen:\n\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\tHinweis: Im Zeitraum 2011-2021 betrug die jährliche DAX-Rendite im Durchschnitt 8,9 Pro\u0026shy;zent mit einer Stan\u0026shy;dard\u0026shy;ab\u0026shy;wei\u0026shy;chung von 14,7 Pro\u0026shy;zent.\n\t\t\t\t",
  								"en": "\u003cb\u003e2.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\ttodo\n\t\t\t\t"
  							},
  							"col_span": 9,
@@ -5324,8 +8060,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e3a\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tWie beurteilen Sie die folgenden Aussagen zum Zusammenhang zwi\u0026shy;schen der \u003cb\u003eIn\u0026shy;fla\u0026shy;ti\u0026shy;onsentwicklung\u003c/b\u003e\n\t\t\t\t\t\t und dem \n\t\t\t\t\t\t\u003cb\u003eRendite-Risiko-Profil\u003c/b\u003e des DAX \n\t\t\t\t\t\t in \n\t\t\t\t\t\t\u003cb\u003e2023\u003c/b\u003e?\n\t\t\t\t\t",
- 								"en": "\u003cb\u003e3a\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\ttodo\n\t\t\t\t\t"
+ 								"de": "\u003cb\u003e3a.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tWie beurteilen Sie die folgenden Aussagen zum Zusammenhang zwi\u0026shy;schen der \u003cb\u003eIn\u0026shy;fla\u0026shy;ti\u0026shy;onsentwicklung\u003c/b\u003e\n\t\t\t\t\t\t und dem \n\t\t\t\t\t\t\u003cb\u003eRendite-Risiko-Profil\u003c/b\u003e des DAX \n\t\t\t\t\t\t in \n\t\t\t\t\t\t\u003cb\u003e2023\u003c/b\u003e?\n\t\t\t\t\t",
+ 								"en": "\u003cb\u003e3a.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\ttodo\n\t\t\t\t\t"
  							},
  							"col_span": 6,
  							"col_span_label": 1
@@ -5597,7 +8333,7 @@
  							}
  						},
  						{
- 							"name": "narrative_a",
+ 							"name": "inf_narrative_a",
  							"type": "radio",
  							"label": {
  								"de": "Eine Entspannung bei der In\u0026shy;fla\u0026shy;ti\u0026shy;onsentwicklung, ein vorsichtigeres Vorgehen der EZB und nachlassende Rezessionsrisiken wirken sich po\u0026shy;si\u0026shy;tiv auf das Rendite-Risiko-Profil in 2023 aus.",
@@ -5612,8 +8348,26 @@
  									"box_style": {},
  									"grid_item_style": {},
  									"text_style": {
- 										"align_horizontal": "left"
+ 										"align_horizontal": "justify"
  									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
  								},
  								"mobile": {
  									"grid_container_style": {},
@@ -5624,38 +8378,128 @@
  							}
  						},
  						{
- 							"name": "narrative_a",
+ 							"name": "inf_narrative_a",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2"
+ 							"value_radio": "2",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
- 							"name": "narrative_a",
+ 							"name": "inf_narrative_a",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"value_radio": "3",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
- 							"name": "narrative_a",
+ 							"name": "inf_narrative_a",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "4"
+ 							"value_radio": "4",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
- 							"name": "narrative_a",
+ 							"name": "inf_narrative_a",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "5"
+ 							"value_radio": "5",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
- 							"name": "narrative_a",
+ 							"name": "inf_narrative_a",
  							"type": "radio",
  							"col_span_label": 0.5,
  							"col_span_control": 1,
- 							"value_radio": "6"
+ 							"value_radio": "6",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
- 							"name": "narrative_b",
+ 							"name": "inf_narrative_b",
  							"type": "radio",
  							"label": {
  								"de": "Den DAX-Konzernen gelingt es, ihre stei\u0026shy;genden Kosten an ihre Kunden weiterzugeben. Die Gewinn-Margen der DAX-Konzerne werden deswegen un\u0026shy;ver\u0026shy;än\u0026shy;dert blei\u0026shy;ben oder sogar stei\u0026shy;gen, was sich po\u0026shy;si\u0026shy;tiv auf  das Rendite-Risiko-Profil des DAX in 2023 auswirkt. ",
@@ -5670,8 +8514,26 @@
  									"box_style": {},
  									"grid_item_style": {},
  									"text_style": {
- 										"align_horizontal": "left"
+ 										"align_horizontal": "justify"
  									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
  								},
  								"mobile": {
  									"grid_container_style": {},
@@ -5682,38 +8544,128 @@
  							}
  						},
  						{
- 							"name": "narrative_b",
+ 							"name": "inf_narrative_b",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2"
+ 							"value_radio": "2",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
- 							"name": "narrative_b",
+ 							"name": "inf_narrative_b",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"value_radio": "3",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
- 							"name": "narrative_b",
+ 							"name": "inf_narrative_b",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "4"
+ 							"value_radio": "4",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
- 							"name": "narrative_b",
+ 							"name": "inf_narrative_b",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "5"
+ 							"value_radio": "5",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
- 							"name": "narrative_b",
+ 							"name": "inf_narrative_b",
  							"type": "radio",
  							"col_span_label": 0.5,
  							"col_span_control": 1,
- 							"value_radio": "6"
+ 							"value_radio": "6",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
- 							"name": "narrative_c",
+ 							"name": "inf_narrative_c",
  							"type": "radio",
  							"label": {
  								"de": "Die aktuelle Entwicklung der In\u0026shy;fla\u0026shy;ti\u0026shy;on spielt für das Rendite-Risiko-Profil des DAX in 2023 \n\t\t\t\t\t\t\t\t\t\u003ci\u003ekeine Rolle\u003c/i\u003e.",
@@ -5737,41 +8689,149 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
  							}
  						},
  						{
- 							"name": "narrative_c",
+ 							"name": "inf_narrative_c",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2"
+ 							"value_radio": "2",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
- 							"name": "narrative_c",
+ 							"name": "inf_narrative_c",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"value_radio": "3",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
- 							"name": "narrative_c",
+ 							"name": "inf_narrative_c",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "4"
+ 							"value_radio": "4",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
- 							"name": "narrative_c",
+ 							"name": "inf_narrative_c",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "5"
+ 							"value_radio": "5",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
- 							"name": "narrative_c",
+ 							"name": "inf_narrative_c",
  							"type": "radio",
  							"col_span_label": 0.5,
  							"col_span_control": 1,
- 							"value_radio": "6"
+ 							"value_radio": "6",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
- 							"name": "narrative_d",
+ 							"name": "inf_narrative_d",
  							"type": "radio",
  							"label": {
  								"de": "Pos\u0026shy;itive und neg\u0026shy;ative Effekte der In\u0026shy;fla\u0026shy;ti\u0026shy;on gleichen sich aus. \n\t\t\t\t\t\t\t\t\tDie aktuelle Entwicklung der In\u0026shy;fla\u0026shy;ti\u0026shy;on ist daher insge\u0026shy;samt \n\t\t\t\t\t\t\t\t\t\u003ci\u003eneu\u0026shy;tral\u003c/i\u003e für das Rendite-Risiko-Profil des DAX in 2023.",
@@ -5786,8 +8846,26 @@
  									"box_style": {},
  									"grid_item_style": {},
  									"text_style": {
- 										"align_horizontal": "left"
+ 										"align_horizontal": "justify"
  									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
  								},
  								"mobile": {
  									"grid_container_style": {},
@@ -5798,38 +8876,128 @@
  							}
  						},
  						{
- 							"name": "narrative_d",
+ 							"name": "inf_narrative_d",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2"
+ 							"value_radio": "2",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
- 							"name": "narrative_d",
+ 							"name": "inf_narrative_d",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"value_radio": "3",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
- 							"name": "narrative_d",
+ 							"name": "inf_narrative_d",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "4"
+ 							"value_radio": "4",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
- 							"name": "narrative_d",
+ 							"name": "inf_narrative_d",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "5"
+ 							"value_radio": "5",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
- 							"name": "narrative_d",
+ 							"name": "inf_narrative_d",
  							"type": "radio",
  							"col_span_label": 0.5,
  							"col_span_control": 1,
- 							"value_radio": "6"
+ 							"value_radio": "6",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
- 							"name": "narrative_e",
+ 							"name": "inf_narrative_e",
  							"type": "radio",
  							"label": {
  								"de": "Den DAX-Konzernen gelingt es nicht, ihre stei\u0026shy;genden Kosten an ihre Kunden weiterzugeben. \n\t\t\t\t\t\t\t\t\tDie Gewinn-Margen der DAX-Konzerne werden deswegen fallen, \n\t\t\t\t\t\t\t\t\twas sich \u003ci\u003ene\u0026shy;ga\u0026shy;tiv\u003c/i\u003e auf  das Rendite-Risiko-Profil des DAX in 2023 auswirkt.",
@@ -5844,8 +9012,26 @@
  									"box_style": {},
  									"grid_item_style": {},
  									"text_style": {
- 										"align_horizontal": "left"
+ 										"align_horizontal": "justify"
  									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
  								},
  								"mobile": {
  									"grid_container_style": {},
@@ -5856,38 +9042,128 @@
  							}
  						},
  						{
- 							"name": "narrative_e",
+ 							"name": "inf_narrative_e",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2"
+ 							"value_radio": "2",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
- 							"name": "narrative_e",
+ 							"name": "inf_narrative_e",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"value_radio": "3",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
- 							"name": "narrative_e",
+ 							"name": "inf_narrative_e",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "4"
+ 							"value_radio": "4",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
- 							"name": "narrative_e",
+ 							"name": "inf_narrative_e",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "5"
+ 							"value_radio": "5",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
- 							"name": "narrative_e",
+ 							"name": "inf_narrative_e",
  							"type": "radio",
  							"col_span_label": 0.5,
  							"col_span_control": 1,
- 							"value_radio": "6"
+ 							"value_radio": "6",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
- 							"name": "narrative_f",
+ 							"name": "inf_narrative_f",
  							"type": "radio",
  							"label": {
  								"de": "Anhaltend hohe In\u0026shy;fla\u0026shy;ti\u0026shy;onsraten, \n\t\t\t\t\t\t\t\tweitere Zinserhöhungen durch die EZB und zunehmende Rezessionsrisiken wirken sich\n\t\t\t\t\t\t\t\t ne\u0026shy;ga\u0026shy;tiv auf das Rendite-Risiko-Profil des DAX in 2023 aus.",
@@ -5902,8 +9178,26 @@
  									"box_style": {},
  									"grid_item_style": {},
  									"text_style": {
- 										"align_horizontal": "left"
+ 										"align_horizontal": "justify"
  									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							},
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
  								},
  								"mobile": {
  									"grid_container_style": {},
@@ -5914,37 +9208,129 @@
  							}
  						},
  						{
- 							"name": "narrative_f",
+ 							"name": "inf_narrative_f",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "2"
+ 							"value_radio": "2",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
- 							"name": "narrative_f",
+ 							"name": "inf_narrative_f",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "3"
+ 							"value_radio": "3",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
- 							"name": "narrative_f",
+ 							"name": "inf_narrative_f",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "4"
+ 							"value_radio": "4",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
- 							"name": "narrative_f",
+ 							"name": "inf_narrative_f",
  							"type": "radio",
  							"col_span_control": 1,
- 							"value_radio": "5"
+ 							"value_radio": "5",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						},
  						{
- 							"name": "narrative_f",
+ 							"name": "inf_narrative_f",
  							"type": "radio",
  							"col_span_label": 0.5,
  							"col_span_control": 1,
- 							"value_radio": "6"
+ 							"value_radio": "6",
+ 							"style_control": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {
+ 										"margin": "0.4rem 0 0 0"
+ 									},
+ 									"grid_item_style": {
+ 										"align_self": "start"
+ 									},
+ 									"text_style": {}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
  						}
  					],
+ 					"randomization_group": 1,
+ 					"randomization_seed": 1,
  					"style": {
  						"desktop": {
  							"grid_container_style": {
@@ -5964,6 +9350,238 @@
  							"text_style": {}
  						}
  					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 3,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "\u003cb\u003e3b.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tBitte wählen Sie nun aus den folgenden Aussagen diejenige aus, \n\t\t\t\t\t\tdie ihrer Meinung nach den Zusammenhang zwi\u0026shy;schen \n\t\t\t\t\t\tder \n\t\t\t\t\t\t\u003cb\u003eIn\u0026shy;fla\u0026shy;ti\u0026shy;onsentwicklung\u003c/b\u003e und dem \n\t\t\t\t\t\t\u003cb\u003eRendite-Risiko-Profil des DAX\u003c/b\u003e in \n\t\t\t\t\t\t\u003cb\u003e2023\u003c/b\u003e am besten widerspiegelt: \n\t\t\t\t\t",
+ 								"en": "\u003cb\u003e3b.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\ttodo\n\t\t\t\t\t"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"name": "inf_to_dax",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Eine Entspannung bei der In\u0026shy;fla\u0026shy;ti\u0026shy;onsentwicklung, ein vorsichtigeres Vorgehen der EZB und nachlassende Rezessionsrisiken wirken sich po\u0026shy;si\u0026shy;tiv auf das Rendite-Risiko-Profil in 2023 aus.",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 9,
+ 							"value_radio": "a",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "justify"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "inf_to_dax",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Den DAX-Konzernen gelingt es, ihre stei\u0026shy;genden Kosten an ihre Kunden weiterzugeben. Die Gewinn-Margen der DAX-Konzerne werden deswegen un\u0026shy;ver\u0026shy;än\u0026shy;dert blei\u0026shy;ben oder sogar stei\u0026shy;gen, was sich po\u0026shy;si\u0026shy;tiv auf  das Rendite-Risiko-Profil des DAX in 2023 auswirkt. ",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 9,
+ 							"value_radio": "b",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "justify"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "inf_to_dax",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Die aktuelle Entwicklung der In\u0026shy;fla\u0026shy;ti\u0026shy;on spielt für das Rendite-Risiko-Profil des DAX in 2023 keine Rolle.",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 9,
+ 							"value_radio": "c",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "justify"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "inf_to_dax",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Pos\u0026shy;itive und neg\u0026shy;ative Effekte der In\u0026shy;fla\u0026shy;ti\u0026shy;on gleichen sich aus. Die aktuelle Entwicklung der In\u0026shy;fla\u0026shy;ti\u0026shy;on ist daher insge\u0026shy;samt neu\u0026shy;tral für das Rendite-Risiko-Profil des DAX in 2023.",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 9,
+ 							"value_radio": "d",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "justify"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "inf_to_dax",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Den DAX-Konzernen gelingt es nicht, ihre stei\u0026shy;genden Kosten an ihre Kunden weiterzugeben. Die Gewinn-Margen der DAX-Konzerne werden deswegen fallen, was sich ne\u0026shy;ga\u0026shy;tiv auf  das Rendite-Risiko-Profil des DAX in 2023 auswirkt.",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 9,
+ 							"value_radio": "e",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "justify"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "inf_to_dax",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Anhaltend hohe In\u0026shy;fla\u0026shy;ti\u0026shy;onsraten, weitere Zinserhöhungen durch die EZB und zunehmende Rezessionsrisiken wirken sich ne\u0026shy;ga\u0026shy;tiv auf das Rendite-Risiko-Profil des DAX in 2023 aus.",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 9,
+ 							"value_radio": "f",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "justify"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
+ 						{
+ 							"name": "inf_to_dax",
+ 							"type": "radio",
+ 							"label": {
+ 								"de": "Keine Antwort",
+ 								"en": "todo"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"col_span_control": 9,
+ 							"value_radio": "no_answer",
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "start",
+ 										"order": 2
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "justify"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						}
+ 					]
  				}
  			]
  		},

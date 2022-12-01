@@ -97,6 +97,14 @@ func (inp *inputT) shortSuffix(ctrl string, langCode string) string {
 	return ctrl
 }
 
+/*
+	Methods for input style; overall, label and control
+
+	There are *generic* style methods
+		css.ItemStartCA()
+		css.TextCenter()
+*/
+
 // ControlFirst puts label behind input element;
 // for radio and checkbox inputs;
 // using CSS grid styles
@@ -145,11 +153,18 @@ func (inp *inputT) LabelCenter() {
 	inp.StyleLbl.Desktop.StyleText.AlignHorizontal = "center"
 }
 
-// LabelBottom - label get vertically bottomed;
-// default is 'middle'
+// LabelBottom - vertically bottomed;
+// default is 'center'
 func (inp *inputT) LabelBottom() {
 	inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
 	inp.StyleLbl.Desktop.StyleGridItem.AlignSelf = "end"
+}
+
+// LabelTop - vertically top;
+// default is 'center'
+func (inp *inputT) LabelTop() {
+	inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
+	inp.StyleLbl.Desktop.StyleGridItem.AlignSelf = "start"
 }
 
 // ControlCenter - input horizontally centered;

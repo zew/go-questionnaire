@@ -1,37 +1,10 @@
 package fmt
 
 import (
+	"github.com/zew/go-questionnaire/pkg/css"
 	"github.com/zew/go-questionnaire/pkg/qst"
 	"github.com/zew/go-questionnaire/pkg/trl"
 )
-
-var agree6a = []trl.S{
-	{
-		"de": "Stimme voll zu",
-		"en": "Strongly agree",
-	},
-	{
-		"de": "Stimme zu",
-		"en": "Agree",
-	},
-	{
-		"de": "Stimme weder zu noch lehne ab",
-		"en": "Undecided",
-	},
-	{
-		"de": "Stimme nicht zu",
-		"en": "Disagree",
-	},
-	{
-		"de": "Stimme überhaupt nicht zu",
-		"en": "Strongly disagree",
-	},
-
-	{
-		"de": "keine<br>Angabe",
-		"en": "No answer",
-	},
-}
 
 func special202212(q *qst.QuestionnaireT) error {
 
@@ -214,80 +187,194 @@ func special202212(q *qst.QuestionnaireT) error {
 
 		}
 
+		//
+		// gr3 - q3a
 		{
-			//
-			// gr1
-			{
-				var columnTemplateLocal = []float32{
-					4.0, 1,
-					0.0, 1,
-					0.0, 1,
-					0.0, 1,
-					0.0, 1,
-					0.5, 1,
-				}
-				gb := qst.NewGridBuilderRadios(
-					columnTemplateLocal,
-					agree6a,
-					[]string{
-						"narrative_a",
-						"narrative_b",
-						"narrative_c",
-						"narrative_d",
-						"narrative_e",
-						"narrative_f",
+
+			colLblsQ3a := []trl.S{
+				{
+					"de": "stimme voll zu",
+					"en": "strongly agree",
+				},
+				{
+					"de": "stimme zu",
+					"en": "Agree",
+				},
+				{
+					"de": "stimme weder zu noch lehne ab",
+					"en": "Undecided",
+				},
+				{
+					"de": "stimme nicht zu",
+					"en": "Disagree",
+				},
+				{
+					"de": "stimme überhaupt nicht zu",
+					"en": "strongly disagree",
+				},
+
+				{
+					"de": "keine<br>Angabe",
+					"en": "No answer",
+				},
+			}
+
+			var columnTemplateLocal = []float32{
+				4.0, 1,
+				0.0, 1,
+				0.0, 1,
+				0.0, 1,
+				0.0, 1,
+				0.5, 1,
+			}
+			gb := qst.NewGridBuilderRadios(
+				columnTemplateLocal,
+				colLblsQ3a,
+				[]string{
+					"inf_narrative_a",
+					"inf_narrative_b",
+					"inf_narrative_c",
+					"inf_narrative_d",
+					"inf_narrative_e",
+					"inf_narrative_f",
+				},
+				radioVals6,
+				[]trl.S{
+					{
+						"de": `Eine Entspannung bei der Inflationsentwicklung, ein vorsichtigeres Vorgehen der EZB und nachlassende Rezessionsrisiken wirken sich positiv auf das Rendite-Risiko-Profil in 2023 aus.`,
+						"en": `todo`,
 					},
-					radioVals6,
-					[]trl.S{
-						{
-							"de": `Eine Entspannung bei der Inflationsentwicklung, ein vorsichtigeres Vorgehen der EZB und nachlassende Rezessionsrisiken wirken sich positiv auf das Rendite-Risiko-Profil in 2023 aus.`,
-							"en": `todo`,
-						},
-						{
-							"de": `Den DAX-Konzernen gelingt es, ihre steigenden Kosten an ihre Kunden weiterzugeben. Die Gewinn-Margen der DAX-Konzerne werden deswegen unverändert bleiben oder sogar steigen, was sich positiv auf  das Rendite-Risiko-Profil des DAX in 2023 auswirkt. `,
-							"en": `todo`,
-						},
-						{
-							"de": `Die aktuelle Entwicklung der Inflation spielt für das Rendite-Risiko-Profil des DAX in 2023 
+					{
+						"de": `Den DAX-Konzernen gelingt es, ihre steigenden Kosten an ihre Kunden weiterzugeben. Die Gewinn-Margen der DAX-Konzerne werden deswegen unverändert bleiben oder sogar steigen, was sich positiv auf  das Rendite-Risiko-Profil des DAX in 2023 auswirkt. `,
+						"en": `todo`,
+					},
+					{
+						"de": `Die aktuelle Entwicklung der Inflation spielt für das Rendite-Risiko-Profil des DAX in 2023 
 									<i>keine Rolle</i>.`,
-							"en": `todo`,
-						},
-						{
-							"de": `Positive und negative Effekte der Inflation gleichen sich aus. 
+						"en": `todo`,
+					},
+					{
+						"de": `Positive und negative Effekte der Inflation gleichen sich aus. 
 									Die aktuelle Entwicklung der Inflation ist daher insgesamt 
 									<i>neutral</i> für das Rendite-Risiko-Profil des DAX in 2023.`,
-							"en": `todo`,
-						},
-						{
-							"de": `Den DAX-Konzernen gelingt es nicht, ihre steigenden Kosten an ihre Kunden weiterzugeben. 
+						"en": `todo`,
+					},
+					{
+						"de": `Den DAX-Konzernen gelingt es nicht, ihre steigenden Kosten an ihre Kunden weiterzugeben. 
 									Die Gewinn-Margen der DAX-Konzerne werden deswegen fallen, 
 									was sich <i>negativ</i> auf  das Rendite-Risiko-Profil des DAX in 2023 auswirkt.`,
-							"en": `todo`,
-						},
-						{
-							"de": `Anhaltend hohe Inflationsraten, 
+						"en": `todo`,
+					},
+					{
+						"de": `Anhaltend hohe Inflationsraten, 
 								weitere Zinserhöhungen durch die EZB und zunehmende Rezessionsrisiken wirken sich
 								 negativ auf das Rendite-Risiko-Profil des DAX in 2023 aus.`,
-							"en": `todo`,
-						},
+						"en": `todo`,
 					},
-				)
+				},
+			)
 
-				gb.MainLabel = trl.S{
-					"de": `
+			gb.MainLabel = trl.S{
+				"de": `
 						Wie beurteilen Sie die folgenden Aussagen zum Zusammenhang zwischen der <b>Inflationsentwicklung</b>
 						 und dem 
 						<b>Rendite-Risiko-Profil</b> des DAX 
 						 in 
 						<b>2023</b>?
 					`,
+				"en": `
+						todo
+					`,
+			}.Outline("3a.")
+
+			gr := page.AddGrid(gb)
+			_ = gr
+			gr.RandomizationGroup = 1
+			gr.RandomizationSeed = 1
+		}
+
+		//
+		// gr4 - q3b
+		{
+
+			gr := page.AddGroup()
+			gr.Cols = 1
+
+			radioVals := []string{
+				"a",
+				"b",
+				"c",
+				"d",
+				"e",
+				"f",
+				"no_answer",
+			}
+
+			lbls := []trl.S{
+				{
+					"de": `Eine Entspannung bei der Inflationsentwicklung, ein vorsichtigeres Vorgehen der EZB und nachlassende Rezessionsrisiken wirken sich positiv auf das Rendite-Risiko-Profil in 2023 aus.`,
+					"en": `todo`,
+				},
+				{
+					"de": `Den DAX-Konzernen gelingt es, ihre steigenden Kosten an ihre Kunden weiterzugeben. Die Gewinn-Margen der DAX-Konzerne werden deswegen unverändert bleiben oder sogar steigen, was sich positiv auf  das Rendite-Risiko-Profil des DAX in 2023 auswirkt. `,
+					"en": `todo`,
+				},
+				{
+					"de": `Die aktuelle Entwicklung der Inflation spielt für das Rendite-Risiko-Profil des DAX in 2023 keine Rolle.`,
+					"en": `todo`,
+				},
+				{
+					"de": `Positive und negative Effekte der Inflation gleichen sich aus. Die aktuelle Entwicklung der Inflation ist daher insgesamt neutral für das Rendite-Risiko-Profil des DAX in 2023.`,
+					"en": `todo`,
+				},
+				{
+					"de": `Den DAX-Konzernen gelingt es nicht, ihre steigenden Kosten an ihre Kunden weiterzugeben. Die Gewinn-Margen der DAX-Konzerne werden deswegen fallen, was sich negativ auf  das Rendite-Risiko-Profil des DAX in 2023 auswirkt.`,
+					"en": `todo`,
+				},
+				{
+					"de": `Anhaltend hohe Inflationsraten, weitere Zinserhöhungen durch die EZB und zunehmende Rezessionsrisiken wirken sich negativ auf das Rendite-Risiko-Profil des DAX in 2023 aus.`,
+					"en": `todo`,
+				},
+				{
+					"de": `Keine Antwort`,
+					"en": `todo`,
+				},
+			}
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.Label = trl.S{
+					"de": `
+						Bitte wählen Sie nun aus den folgenden Aussagen diejenige aus, 
+						die ihrer Meinung nach den Zusammenhang zwischen 
+						der 
+						<b>Inflationsentwicklung</b> und dem 
+						<b>Rendite-Risiko-Profil des DAX</b> in 
+						<b>2023</b> am besten widerspiegelt: 
+					`,
 					"en": `
 						todo
 					`,
-				}.Outline("3a.")
+				}.Outline("3b.")
+				inp.ColSpan = gr.Cols
+			}
 
-				gr := page.AddGrid(gb)
-				_ = gr
+			for i := 0; i < len(radioVals); i++ {
+				inp := gr.AddInput()
+				inp.Type = "radio"
+				inp.Name = "inf_to_dax"
+				inp.Label = lbls[i]
+				inp.ValueRadio = radioVals[i]
+				inp.ColSpan = 1
+
+				inp.ColSpanLabel = 1
+				inp.ColSpanControl = 9
+
+				inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
+				inp.StyleLbl.Desktop.StyleText.AlignHorizontal = "justify"
+
+				inp.ControlFirst()
 			}
 
 		}

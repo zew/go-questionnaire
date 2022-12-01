@@ -283,6 +283,14 @@ func (gr *groupT) addEmptyTextblock() *inputT {
 	return ret
 }
 
+/*
+	Methods for group style;
+
+	There are *generic* style methods
+		css.ItemStartCA()
+		css.TextCenter()
+*/
+
 // Vertical changes CSS grid style to vertical;
 // compare default case GroupHTMLGridBased()
 func (gr *groupT) Vertical(argRows ...int) {

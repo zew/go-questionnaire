@@ -78,6 +78,12 @@ func (gb *GridBuilder) AddRadioRow(name string, vals []string, sparseLabels map[
 		if _, ok := sparseLabels[colIdx]; ok {
 			rad.Label = sparseLabels[colIdx]
 			rad.StyleLbl = css.TextStart(rad.StyleLbl)
+			// long labels in 'blocksatz'; control raised to top
+			if rad.Label.Size() > 90 {
+				rad.StyleLbl.Desktop.StyleText.AlignHorizontal = "justify"
+				rad.ControlTop()
+				rad.StyleCtl.Desktop.StyleBox.Margin = "0.12rem 0 0 0"
+			}
 		}
 
 		rad.ColSpanLabel = gb.cols[colIdx].spanLabel

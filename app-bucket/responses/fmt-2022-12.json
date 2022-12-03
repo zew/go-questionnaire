@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "466c25332853403a152d5284b4180517951fae3991afcb51d6f2f8d84a0e5865",
+ 	"md_5": "856b9ef71b14dcacf792e01de3ab0f91a2e6e8d5ddc152a02fc079dc246430d7",
  	"lang_codes": [
  		"de",
  		"en"
@@ -5732,7 +5732,7 @@
  					"columns": 6,
  					"inputs": [
  						{
- 							"name": "qs3a_inf_narrative_a_static",
+ 							"name": "qs3a_inf_narrative_a",
  							"type": "radio",
  							"label": {
  								"de": "Eine Entspannung bei der In\u0026shy;fla\u0026shy;ti\u0026shy;onsentwicklung, eine weniger restriktive Geld\u0026shy;po\u0026shy;li\u0026shy;tik der EZB und nachlassende Rezessionsrisiken wirken sich\n\t\t\t\t\t\t\t\t\u003ci\u003epo\u0026shy;si\u0026shy;tiv\u003c/i\u003e\n\t\t\t\t\t\t\t\tauf das Rendite-Risiko-Profil in 2023 aus.",
@@ -5777,7 +5777,7 @@
  							}
  						},
  						{
- 							"name": "qs3a_inf_narrative_a_static",
+ 							"name": "qs3a_inf_narrative_a",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2",
@@ -5801,7 +5801,7 @@
  							}
  						},
  						{
- 							"name": "qs3a_inf_narrative_a_static",
+ 							"name": "qs3a_inf_narrative_a",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3",
@@ -5825,7 +5825,7 @@
  							}
  						},
  						{
- 							"name": "qs3a_inf_narrative_a_static",
+ 							"name": "qs3a_inf_narrative_a",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4",
@@ -5849,7 +5849,7 @@
  							}
  						},
  						{
- 							"name": "qs3a_inf_narrative_a_static",
+ 							"name": "qs3a_inf_narrative_a",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5",
@@ -5873,7 +5873,7 @@
  							}
  						},
  						{
- 							"name": "qs3a_inf_narrative_a_static",
+ 							"name": "qs3a_inf_narrative_a",
  							"type": "radio",
  							"col_span_label": 0.5,
  							"col_span_control": 1,
@@ -5924,7 +5924,7 @@
  					"columns": 6,
  					"inputs": [
  						{
- 							"name": "qs3a_inf_narrative_b_static",
+ 							"name": "qs3a_inf_narrative_b",
  							"type": "radio",
  							"label": {
  								"de": "Den DAX-Konzernen gelingt es auch weiterhin, ihre stei\u0026shy;genden Kosten an ihre Kunden weiterzugeben. Die Gewinn-Margen der DAX-Konzerne werden deswegen un\u0026shy;ver\u0026shy;än\u0026shy;dert blei\u0026shy;ben oder sogar stei\u0026shy;gen, was sich\n\t\t\t\t\t\t\t\t\u003ci\u003epo\u0026shy;si\u0026shy;tiv\u003c/i\u003e\n\t\t\t\t\t\t\t\tauf das Rendite-Risiko-Profil des DAX in 2023 auswirkt. ",
@@ -5969,7 +5969,7 @@
  							}
  						},
  						{
- 							"name": "qs3a_inf_narrative_b_static",
+ 							"name": "qs3a_inf_narrative_b",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2",
@@ -5993,7 +5993,7 @@
  							}
  						},
  						{
- 							"name": "qs3a_inf_narrative_b_static",
+ 							"name": "qs3a_inf_narrative_b",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3",
@@ -6017,7 +6017,7 @@
  							}
  						},
  						{
- 							"name": "qs3a_inf_narrative_b_static",
+ 							"name": "qs3a_inf_narrative_b",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4",
@@ -6041,7 +6041,7 @@
  							}
  						},
  						{
- 							"name": "qs3a_inf_narrative_b_static",
+ 							"name": "qs3a_inf_narrative_b",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5",
@@ -6065,7 +6065,7 @@
  							}
  						},
  						{
- 							"name": "qs3a_inf_narrative_b_static",
+ 							"name": "qs3a_inf_narrative_b",
  							"type": "radio",
  							"col_span_label": 0.5,
  							"col_span_control": 1,
@@ -6116,7 +6116,7 @@
  					"columns": 6,
  					"inputs": [
  						{
- 							"name": "qs3a_inf_narrative_c_static",
+ 							"name": "qs3a_inf_narrative_c",
  							"type": "radio",
  							"label": {
  								"de": "Die Entwicklung der In\u0026shy;fla\u0026shy;ti\u0026shy;on spielt für das Rendite-Risiko-Profil des DAX in 2023\n\t\t\t\t\t\t\t\t\u003ci\u003ekei\u0026shy;ne Roll\u003c/i\u003ee\n\t\t\t\t\t\t\t\t.",
@@ -6161,7 +6161,7 @@
  							}
  						},
  						{
- 							"name": "qs3a_inf_narrative_c_static",
+ 							"name": "qs3a_inf_narrative_c",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2",
@@ -6185,7 +6185,7 @@
  							}
  						},
  						{
- 							"name": "qs3a_inf_narrative_c_static",
+ 							"name": "qs3a_inf_narrative_c",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3",
@@ -6209,7 +6209,7 @@
  							}
  						},
  						{
- 							"name": "qs3a_inf_narrative_c_static",
+ 							"name": "qs3a_inf_narrative_c",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4",
@@ -6233,7 +6233,7 @@
  							}
  						},
  						{
- 							"name": "qs3a_inf_narrative_c_static",
+ 							"name": "qs3a_inf_narrative_c",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5",
@@ -6257,7 +6257,7 @@
  							}
  						},
  						{
- 							"name": "qs3a_inf_narrative_c_static",
+ 							"name": "qs3a_inf_narrative_c",
  							"type": "radio",
  							"col_span_label": 0.5,
  							"col_span_control": 1,
@@ -6308,7 +6308,7 @@
  					"columns": 6,
  					"inputs": [
  						{
- 							"name": "qs3a_inf_narrative_d_static",
+ 							"name": "qs3a_inf_narrative_d",
  							"type": "radio",
  							"label": {
  								"de": "\t\u003ci\u003ePos\u0026shy;itive\u003c/i\u003e\n\t\t\t\t\t\t\t\tund\n\t\t\t\t\t\t\t\t\u003ci\u003eneg\u0026shy;ative\u003c/i\u003e\n\t\t\t\t\t\t\t\tEffekte der In\u0026shy;fla\u0026shy;ti\u0026shy;on gleichen sich aus. Die Entwicklung der In\u0026shy;fla\u0026shy;ti\u0026shy;on ist daher insge\u0026shy;samt\n\t\t\t\t\t\t\t\t\u003ci\u003eneu\u0026shy;tral\u003c/i\u003e\n\t\t\t\t\t\t\t\tfür das Rendite-Risiko-Profil des DAX in 2023.",
@@ -6353,7 +6353,7 @@
  							}
  						},
  						{
- 							"name": "qs3a_inf_narrative_d_static",
+ 							"name": "qs3a_inf_narrative_d",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2",
@@ -6377,7 +6377,7 @@
  							}
  						},
  						{
- 							"name": "qs3a_inf_narrative_d_static",
+ 							"name": "qs3a_inf_narrative_d",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3",
@@ -6401,7 +6401,7 @@
  							}
  						},
  						{
- 							"name": "qs3a_inf_narrative_d_static",
+ 							"name": "qs3a_inf_narrative_d",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4",
@@ -6425,7 +6425,7 @@
  							}
  						},
  						{
- 							"name": "qs3a_inf_narrative_d_static",
+ 							"name": "qs3a_inf_narrative_d",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5",
@@ -6449,7 +6449,7 @@
  							}
  						},
  						{
- 							"name": "qs3a_inf_narrative_d_static",
+ 							"name": "qs3a_inf_narrative_d",
  							"type": "radio",
  							"col_span_label": 0.5,
  							"col_span_control": 1,
@@ -6500,7 +6500,7 @@
  					"columns": 6,
  					"inputs": [
  						{
- 							"name": "qs3a_inf_narrative_e_static",
+ 							"name": "qs3a_inf_narrative_e",
  							"type": "radio",
  							"label": {
  								"de": "Den DAX-Konzernen gelingt es nicht, ihre stei\u0026shy;genden Kosten an ihre Kunden weiterzugeben. Die Gewinn-Margen der DAX-Konzerne werden deswegen fallen, was sich\n\t\t\t\t\t\t\t\t\u003ci\u003ene\u0026shy;ga\u0026shy;tiv\u003c/i\u003e\n\t\t\t\t\t\t\t\tauf das Rendite-Risiko-Profil des DAX in 2023 auswirkt.",
@@ -6545,7 +6545,7 @@
  							}
  						},
  						{
- 							"name": "qs3a_inf_narrative_e_static",
+ 							"name": "qs3a_inf_narrative_e",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2",
@@ -6569,7 +6569,7 @@
  							}
  						},
  						{
- 							"name": "qs3a_inf_narrative_e_static",
+ 							"name": "qs3a_inf_narrative_e",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3",
@@ -6593,7 +6593,7 @@
  							}
  						},
  						{
- 							"name": "qs3a_inf_narrative_e_static",
+ 							"name": "qs3a_inf_narrative_e",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4",
@@ -6617,7 +6617,7 @@
  							}
  						},
  						{
- 							"name": "qs3a_inf_narrative_e_static",
+ 							"name": "qs3a_inf_narrative_e",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5",
@@ -6641,7 +6641,7 @@
  							}
  						},
  						{
- 							"name": "qs3a_inf_narrative_e_static",
+ 							"name": "qs3a_inf_narrative_e",
  							"type": "radio",
  							"col_span_label": 0.5,
  							"col_span_control": 1,
@@ -6692,7 +6692,7 @@
  					"columns": 6,
  					"inputs": [
  						{
- 							"name": "qs3a_inf_narrative_f_static",
+ 							"name": "qs3a_inf_narrative_f",
  							"type": "radio",
  							"label": {
  								"de": "Anhaltend hohe In\u0026shy;fla\u0026shy;ti\u0026shy;onsraten, weitere Zinserhöhungen durch die EZB und zunehmende Rezessionsrisiken wirken sich\n\t\t\t\t\t\t\t\t\u003ci\u003ene\u0026shy;ga\u0026shy;tiv\u003c/i\u003e\n\t\t\t\t\t\t\t\tauf das Rendite-Risiko-Profil des DAX in 2023 aus.\n\t\t\t\t\t\t",
@@ -6737,7 +6737,7 @@
  							}
  						},
  						{
- 							"name": "qs3a_inf_narrative_f_static",
+ 							"name": "qs3a_inf_narrative_f",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2",
@@ -6761,7 +6761,7 @@
  							}
  						},
  						{
- 							"name": "qs3a_inf_narrative_f_static",
+ 							"name": "qs3a_inf_narrative_f",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3",
@@ -6785,7 +6785,7 @@
  							}
  						},
  						{
- 							"name": "qs3a_inf_narrative_f_static",
+ 							"name": "qs3a_inf_narrative_f",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4",
@@ -6809,7 +6809,7 @@
  							}
  						},
  						{
- 							"name": "qs3a_inf_narrative_f_static",
+ 							"name": "qs3a_inf_narrative_f",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5",
@@ -6833,7 +6833,7 @@
  							}
  						},
  						{
- 							"name": "qs3a_inf_narrative_f_static",
+ 							"name": "qs3a_inf_narrative_f",
  							"type": "radio",
  							"col_span_label": 0.5,
  							"col_span_control": 1,
@@ -6908,7 +6908,7 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "qs3b_inf_to_dax",
+ 							"name": "qs3b_inf_narrative",
  							"type": "radio",
  							"label": {
  								"de": "Eine Entspannung bei der In\u0026shy;fla\u0026shy;ti\u0026shy;onsentwicklung, eine weniger restriktive Geld\u0026shy;po\u0026shy;li\u0026shy;tik der EZB und nachlassende Rezessionsrisiken wirken sich\n\t\t\t\t\t\t\t\t\u003ci\u003epo\u0026shy;si\u0026shy;tiv\u003c/i\u003e\n\t\t\t\t\t\t\t\tauf das Rendite-Risiko-Profil in 2023 aus.",
@@ -6965,7 +6965,7 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "qs3b_inf_to_dax",
+ 							"name": "qs3b_inf_narrative",
  							"type": "radio",
  							"label": {
  								"de": "Den DAX-Konzernen gelingt es auch weiterhin, ihre stei\u0026shy;genden Kosten an ihre Kunden weiterzugeben. Die Gewinn-Margen der DAX-Konzerne werden deswegen un\u0026shy;ver\u0026shy;än\u0026shy;dert blei\u0026shy;ben oder sogar stei\u0026shy;gen, was sich\n\t\t\t\t\t\t\t\t\u003ci\u003epo\u0026shy;si\u0026shy;tiv\u003c/i\u003e\n\t\t\t\t\t\t\t\tauf das Rendite-Risiko-Profil des DAX in 2023 auswirkt. ",
@@ -7022,7 +7022,7 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "qs3b_inf_to_dax",
+ 							"name": "qs3b_inf_narrative",
  							"type": "radio",
  							"label": {
  								"de": "Die Entwicklung der In\u0026shy;fla\u0026shy;ti\u0026shy;on spielt für das Rendite-Risiko-Profil des DAX in 2023\n\t\t\t\t\t\t\t\t\u003ci\u003ekei\u0026shy;ne Roll\u003c/i\u003ee\n\t\t\t\t\t\t\t\t.",
@@ -7079,7 +7079,7 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "qs3b_inf_to_dax",
+ 							"name": "qs3b_inf_narrative",
  							"type": "radio",
  							"label": {
  								"de": "\t\u003ci\u003ePos\u0026shy;itive\u003c/i\u003e\n\t\t\t\t\t\t\t\tund\n\t\t\t\t\t\t\t\t\u003ci\u003eneg\u0026shy;ative\u003c/i\u003e\n\t\t\t\t\t\t\t\tEffekte der In\u0026shy;fla\u0026shy;ti\u0026shy;on gleichen sich aus. Die Entwicklung der In\u0026shy;fla\u0026shy;ti\u0026shy;on ist daher insge\u0026shy;samt\n\t\t\t\t\t\t\t\t\u003ci\u003eneu\u0026shy;tral\u003c/i\u003e\n\t\t\t\t\t\t\t\tfür das Rendite-Risiko-Profil des DAX in 2023.",
@@ -7136,7 +7136,7 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "qs3b_inf_to_dax",
+ 							"name": "qs3b_inf_narrative",
  							"type": "radio",
  							"label": {
  								"de": "Den DAX-Konzernen gelingt es nicht, ihre stei\u0026shy;genden Kosten an ihre Kunden weiterzugeben. Die Gewinn-Margen der DAX-Konzerne werden deswegen fallen, was sich\n\t\t\t\t\t\t\t\t\u003ci\u003ene\u0026shy;ga\u0026shy;tiv\u003c/i\u003e\n\t\t\t\t\t\t\t\tauf das Rendite-Risiko-Profil des DAX in 2023 auswirkt.",
@@ -7193,7 +7193,7 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "qs3b_inf_to_dax",
+ 							"name": "qs3b_inf_narrative",
  							"type": "radio",
  							"label": {
  								"de": "Anhaltend hohe In\u0026shy;fla\u0026shy;ti\u0026shy;onsraten, weitere Zinserhöhungen durch die EZB und zunehmende Rezessionsrisiken wirken sich\n\t\t\t\t\t\t\t\t\u003ci\u003ene\u0026shy;ga\u0026shy;tiv\u003c/i\u003e\n\t\t\t\t\t\t\t\tauf das Rendite-Risiko-Profil des DAX in 2023 aus.\n\t\t\t\t\t\t",
@@ -7250,7 +7250,7 @@
  					"columns": 1,
  					"inputs": [
  						{
- 							"name": "qs3b_inf_to_dax",
+ 							"name": "qs3b_inf_narrative",
  							"type": "radio",
  							"label": {
  								"de": "Kei\u0026shy;ne Antwort",
@@ -7336,949 +7336,7 @@
  				}
  			},
  			"finished": "0001-01-01T00:00:00Z",
- 			"groups": [
- 				{
- 					"bottom_vspacers": 3,
- 					"columns": 4,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "\u003cb\u003e4a.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tMeine Einschätzungen mit Blick auf die folgenden Bereiche beruhen hauptsächlich auf\n\t\t\t\t\t",
- 								"en": "\u003cb\u003e4a.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tMy expectations with respect to the following areas are mainly based on\n\t\t\t\t\t"
- 							},
- 							"col_span": 4,
- 							"col_span_label": 1
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "Meinen ei\u0026shy;ge\u0026shy;nen Ana\u0026shy;ly\u0026shy;sen",
- 								"en": "My own ana\u0026shy;ly\u0026shy;ses"
- 							},
- 							"col_span_label": 4,
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "Ana\u0026shy;ly\u0026shy;sen von Experten/-innen aus meinem Un\u0026shy;ter\u0026shy;neh\u0026shy;men",
- 								"en": "Ana\u0026shy;ly\u0026shy;ses by experts in my company"
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "Ana\u0026shy;ly\u0026shy;sen aus externen Quellen",
- 								"en": "Ana\u0026shy;ly\u0026shy;ses from external sources"
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "kei\u0026shy;ne\u003cbr\u003eAn\u0026shy;ga\u0026shy;be",
- 								"en": "no an\u0026shy;swer"
- 							},
- 							"col_span_label": 0.5,
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "qs4a_growth",
- 							"type": "radio",
- 							"label": {
- 								"de": "Wirt\u0026shy;schaftswachstum Deutsch\u0026shy;land",
- 								"en": "GDP growth, Ger\u0026shy;ma\u0026shy;ny"
- 							},
- 							"col_span_label": 4,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "qs4a_growth",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "qs4a_growth",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "qs4a_growth",
- 							"type": "radio",
- 							"col_span_label": 0.5,
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "qs4a_inf",
- 							"type": "radio",
- 							"label": {
- 								"de": "In\u0026shy;fla\u0026shy;ti\u0026shy;on in Deutsch\u0026shy;land",
- 								"en": "In\u0026shy;fla\u0026shy;ti\u0026shy;on, Ger\u0026shy;ma\u0026shy;ny"
- 							},
- 							"col_span_label": 4,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "qs4a_inf",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "qs4a_inf",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "qs4a_inf",
- 							"type": "radio",
- 							"col_span_label": 0.5,
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						},
- 						{
- 							"name": "qs4a_dax",
- 							"type": "radio",
- 							"label": {
- 								"de": "Entwicklung des DAX",
- 								"en": "De\u0026shy;vel\u0026shy;op\u0026shy;ments of the DAX"
- 							},
- 							"col_span_label": 4,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "left"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "qs4a_dax",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2"
- 						},
- 						{
- 							"name": "qs4a_dax",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3"
- 						},
- 						{
- 							"name": "qs4a_dax",
- 							"type": "radio",
- 							"col_span_label": 0.5,
- 							"col_span_control": 1,
- 							"value_radio": "4"
- 						}
- 					],
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {
- 								"auto_flow": "row",
- 								"template_columns": "   5fr    1fr    1fr    1.5fr "
- 							},
- 							"box_style": {
- 								"display": "grid"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
- 				},
- 				{
- 					"bottom_vspacers": 1,
- 					"columns": 4,
- 					"inputs": [
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "nicht re\u0026shy;le\u0026shy;vant",
- 								"en": "not re\u0026shy;le\u0026shy;vant"
- 							},
- 							"col_span_label": 5,
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "leicht re\u0026shy;le\u0026shy;vant",
- 								"en": "slight\u0026shy;ly re\u0026shy;le\u0026shy;vant"
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "stark re\u0026shy;le\u0026shy;vant",
- 								"en": "highly re\u0026shy;le\u0026shy;vant"
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "kei\u0026shy;ne\u003cbr\u003eAn\u0026shy;ga\u0026shy;be",
- 								"en": "no an\u0026shy;swer"
- 							},
- 							"col_span_label": 0.5,
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "qs4b_relevance",
- 							"type": "radio",
- 							"label": {
- 								"de": "\u003cb\u003e4b.\u003c/b\u003e \u0026nbsp; Wie re\u0026shy;le\u0026shy;vant sind die Pro\u0026shy;gno\u0026shy;sen der Bundesbank für Ihre ei\u0026shy;ge\u0026shy;nen In\u0026shy;fla\u0026shy;ti\u0026shy;onspro\u0026shy;gno\u0026shy;sen für Deutsch\u0026shy;land?",
- 								"en": "\u003cb\u003e4b.\u003c/b\u003e \u0026nbsp; How re\u0026shy;le\u0026shy;vant are the in\u0026shy;fla\u0026shy;ti\u0026shy;on forecasts of Bundesbank for your own in\u0026shy;fla\u0026shy;ti\u0026shy;on forecasts for Ger\u0026shy;ma\u0026shy;ny?"
- 							},
- 							"col_span_label": 5,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "justify"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.12rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "qs4b_relevance",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.12rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "qs4b_relevance",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "3",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.12rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "qs4b_relevance",
- 							"type": "radio",
- 							"col_span_label": 0.5,
- 							"col_span_control": 1,
- 							"value_radio": "4",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.12rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						}
- 					],
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {
- 								"auto_flow": "row",
- 								"template_columns": "   6fr    1fr    1fr    1.5fr ",
- 								"column_gap": "1.2rem"
- 							},
- 							"box_style": {
- 								"display": "grid"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
- 				},
- 				{
- 					"bottom_vspacers": 3,
- 					"columns": 1,
- 					"inputs": [
- 						{
- 							"type": "textblock",
- 							"label": {
- 								"de": "\n\t\t\t\t\tBundesbankpräsident Joachim Nagel äußert sich regelmäßig zum In\u0026shy;fla\u0026shy;ti\u0026shy;onsausblick für Deutsch\u0026shy;land. Im November 2022 äußerte er sich folgendermaßen: \"Auch im kommenden Jahr dürfte die In\u0026shy;fla\u0026shy;ti\u0026shy;onsrate in Deutsch\u0026shy;land hoch blei\u0026shy;ben. Ich halte es für wahrscheinlich, dass im Jahresdurchschnitt 2023 eine sieben vor dem Komma stehen wird\".\n\t\t\t\t\t\t",
- 								"en": "\n\t\t\t\t\tBundesbank president Joachim Nagel regularly comments on the in\u0026shy;fla\u0026shy;ti\u0026shy;on outlook for Ger\u0026shy;ma\u0026shy;ny. In November 2022, he commented as follows: \"The in\u0026shy;fla\u0026shy;ti\u0026shy;on rate in Ger\u0026shy;ma\u0026shy;ny is likely to re\u0026shy;main high in the coming year. I believe it is likely that the annual av\u0026shy;er\u0026shy;age for 2023 will have a seven before the decimal point.\"\n\t\t\t\t\t"
- 							},
- 							"col_span": 1,
- 							"col_span_label": 1
- 						}
- 					]
- 				},
- 				{
- 					"bottom_vspacers": 3,
- 					"columns": 3,
- 					"inputs": [
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "ja",
- 								"en": "yes"
- 							},
- 							"col_span_label": 5,
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "nein",
- 								"en": "no"
- 							},
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"type": "label-as-input",
- 							"label": {
- 								"de": "kei\u0026shy;ne\u003cbr\u003eAn\u0026shy;ga\u0026shy;be",
- 								"en": "no an\u0026shy;swer"
- 							},
- 							"col_span_label": 0.5,
- 							"col_span_control": 1,
- 							"style": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 0.1rem"
- 									},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"font_size": 90
- 									}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {
- 										"align_self": "end"
- 									},
- 									"text_style": {
- 										"align_horizontal": "center"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "qs4c_known",
- 							"type": "radio",
- 							"label": {
- 								"de": "\u003cb\u003e4c.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tWar Ihnen die Aussage von Bundesbankpräsident Joachim Nagel bereits bekannt?\n\t\t\t\t\t\t",
- 								"en": "\u003cb\u003e4c.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tWere you aware of this statement by Bundesbank president Joachim Nagel?\n\t\t\t\t\t"
- 							},
- 							"col_span_label": 5,
- 							"col_span_control": 1,
- 							"value_radio": "1",
- 							"style_label": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {
- 										"align_horizontal": "justify"
- 									}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							},
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.12rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "qs4c_known",
- 							"type": "radio",
- 							"col_span_control": 1,
- 							"value_radio": "2",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.12rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						},
- 						{
- 							"name": "qs4c_known",
- 							"type": "radio",
- 							"col_span_label": 0.5,
- 							"col_span_control": 1,
- 							"value_radio": "3",
- 							"style_control": {
- 								"desktop": {
- 									"grid_container_style": {},
- 									"box_style": {
- 										"margin": "0.12rem 0 0 0"
- 									},
- 									"grid_item_style": {
- 										"align_self": "start"
- 									},
- 									"text_style": {}
- 								},
- 								"mobile": {
- 									"grid_container_style": {},
- 									"box_style": {},
- 									"grid_item_style": {},
- 									"text_style": {}
- 								}
- 							}
- 						}
- 					],
- 					"style": {
- 						"desktop": {
- 							"grid_container_style": {
- 								"auto_flow": "row",
- 								"template_columns": "   6fr    1fr    1.5fr ",
- 								"column_gap": "1.2rem"
- 							},
- 							"box_style": {
- 								"display": "grid"
- 							},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						},
- 						"mobile": {
- 							"grid_container_style": {},
- 							"box_style": {},
- 							"grid_item_style": {},
- 							"text_style": {}
- 						}
- 					}
- 				}
- 			]
+ 			"generator_func_name": "fmt202212"
  		},
  		{
  			"label": {

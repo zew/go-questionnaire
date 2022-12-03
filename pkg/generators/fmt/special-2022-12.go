@@ -397,12 +397,12 @@ func special202212(q *qst.QuestionnaireT) error {
 				0.5, 1,
 			}
 			inpNames := []string{
-				"qs3a_inf_narrative_a_static",
-				"qs3a_inf_narrative_b_static",
-				"qs3a_inf_narrative_c_static",
-				"qs3a_inf_narrative_d_static",
-				"qs3a_inf_narrative_e_static",
-				"qs3a_inf_narrative_f_static",
+				"qs3a_inf_narrative_a",
+				"qs3a_inf_narrative_b",
+				"qs3a_inf_narrative_c",
+				"qs3a_inf_narrative_d",
+				"qs3a_inf_narrative_e",
+				"qs3a_inf_narrative_f",
 			}
 
 			if false {
@@ -499,69 +499,6 @@ func special202212(q *qst.QuestionnaireT) error {
 				"no_answer",
 			}
 
-			// lbls := []trl.S{
-			// 	{
-			// 		"de": `Eine Entspannung bei der Inflationsentwicklung, eine weniger restriktive Geldpolitik der EZB und nachlassende Rezessionsrisiken wirken sich
-			// 				<i>positiv</i>
-			// 				auf das Rendite-Risiko-Profil in 2023 aus.`,
-			// 		"en": `An easing in the development of inflation development, a less restrictive monetary stance by the ECB and diminishing recession risks have a
-			// 				<i>positive</i>
-			// 				impact on the return-risk-profile in 2023.`,
-			// 	},
-			// 	{
-			// 		"de": `Den DAX-Konzernen gelingt es auch weiterhin, ihre steigenden Kosten an ihre Kunden weiterzugeben. Die Gewinn-Margen der DAX-Konzerne werden deswegen unverändert bleiben oder sogar steigen, was sich
-			// 				<i>positiv</i>
-			// 				auf das Rendite-Risiko-Profil des DAX in 2023 auswirkt. `,
-			// 		"en": `DAX companies will continue to succeed in passing on their rising costs to their customers. The profit margins of DAX companies will therefore remain unchanged or even increase, which has a
-			// 				<i>positive</i>
-			// 				impact on the return-risk-profile of the DAX in 2023.`,
-			// 	},
-			// 	{
-			// 		"de": `Die Entwicklung der Inflation spielt für das Rendite-Risiko-Profil des DAX in 2023
-			// 				<i>keine Roll</i>e
-			// 				.`,
-			// 		"en": `The development of inflation does
-			// 				<i>not impact</i>
-			// 				the return-risk-profile of the DAX.`,
-			// 	},
-			// 	{
-			// 		"de": `
-			// 				<i>Positive</i>
-			// 				und
-			// 				<i>negative</i>
-			// 				Effekte der Inflation gleichen sich aus. Die Entwicklung der Inflation ist daher insgesamt
-			// 				<i>neutral</i>
-			// 				für das Rendite-Risiko-Profil des DAX in 2023.`,
-			// 		"en": `
-			// 				<i>Positive</i>
-			// 				and
-			// 				<i>negative</i>
-			// 				effects of inflation cancel each other out. Overall, the development of inflation is
-			// 				<i>neutral</i>
-			// 				for the return-risk-profile of the DAX in 2023.`,
-			// 	},
-			// 	{
-			// 		"de": `Den DAX-Konzernen gelingt es nicht, ihre steigenden Kosten an ihre Kunden weiterzugeben. Die Gewinn-Margen der DAX-Konzerne werden deswegen fallen, was sich
-			// 				<i>negativ</i>
-			// 				auf das Rendite-Risiko-Profil des DAX in 2023 auswirkt.`,
-			// 		"en": `DAX companies will not to succeed in passing on their rising costs to their customers. The profit margins of DAX companies will therefore decrease, which has a
-			// 				<i>negative</i>
-			// 				impact on the return-risk-profile of the DAX in 2023.`,
-			// 	},
-			// 	{
-			// 		"de": `Anhaltend hohe Inflationsraten, weitere Zinserhöhungen durch die EZB und zunehmende Rezessionsrisiken wirken sich
-			// 				<i>negativ</i>
-			// 				auf das Rendite-Risiko-Profil des DAX in 2023 aus.`,
-			// 		"en": `Persistently high inflation rates, further interest rate hikes by the ECB and increasing recession risks will have a
-			// 				<i>negative</i>
-			// 				impact on the return-risk-profile of the DAX in 2023.`,
-			// 	},
-			// 	{
-			// 		"de": `Keine Antwort`,
-			// 		"en": `No answer`,
-			// 	},
-			// }
-
 			last := trl.S{
 				"de": `Keine Antwort`,
 				"en": `No answer`,
@@ -590,7 +527,8 @@ func special202212(q *qst.QuestionnaireT) error {
 
 					inp := gr.AddInput()
 					inp.Type = "radio"
-					inp.Name = "qs3b_inf_to_dax"
+					// inp.Name = "qs3b_inf_to_dax"
+					inp.Name = "qs3b_inf_narrative"
 					inp.Label = lbls[i]
 					inp.ValueRadio = radioVals[i]
 					inp.ColSpan = 1
@@ -613,8 +551,13 @@ func special202212(q *qst.QuestionnaireT) error {
 
 	//
 	//
-	{
+	// if false {
+	if true {
 		page := q.AddPage()
+		page.GeneratorFuncName = "fmt202212"
+		page.WidthMax("42rem")
+		page.NoNavigation = false
+
 		page.Label = trl.S{
 			"de": "Sonderbefragung zum Jahresende 2022 - 3",
 			"en": "Special questions December 2022 - 3",
@@ -624,202 +567,220 @@ func special202212(q *qst.QuestionnaireT) error {
 			"en": "Special<br>End of 2022 - 3",
 		}
 		page.SuppressInProgressbar = true
-		page.WidthMax("46rem")
 		page.WidthMax("54rem")
 
-		//
-		// gr1 - q4a
-		{
-
-			colLblsQ4 := []trl.S{
-				{
-					"de": "Meinen eigenen Analysen",
-					"en": "My own analyses",
-				},
-				{
-					"de": "Analysen von Experten/-innen aus meinem Unternehmen",
-					"en": "Analyses by experts in my company",
-				},
-				{
-					"de": "Analysen aus externen Quellen",
-					"en": "Analyses from external sources",
-				},
-
-				{
-					"de": "keine<br>Angabe",
-					"en": "no answer",
-				},
-			}
-
-			var columnTemplateLocal = []float32{
-				4.0, 1,
-				0.0, 1,
-				0.0, 1,
-				0.5, 1,
-			}
-			gb := qst.NewGridBuilderRadios(
-				columnTemplateLocal,
-				colLblsQ4,
-				[]string{
-					"qs4a_growth",
-					"qs4a_inf",
-					"qs4a_dax",
-				},
-				radioVals4,
-				[]trl.S{
-					{
-						"de": `Wirtschaftswachstum Deutschland`,
-						"en": `GDP growth, Germany`,
-					},
-					{
-						"de": `Inflation in Deutschland`,
-						"en": `Inflation, Germany`,
-					},
-					{
-						"de": `Entwicklung des DAX`,
-						"en": `Developments of the DAX`,
-					},
-				},
-			)
-
-			gb.MainLabel = trl.S{
-				"de": `
-						Meine Einschätzungen mit Blick auf die folgenden Bereiche beruhen hauptsächlich auf
-					`,
-				"en": `
-						My expectations with respect to the following areas are mainly based on
-					`,
-			}.Outline("4a.")
-
-			gr := page.AddGrid(gb)
-			_ = gr
-		}
+	} else {
 
 		//
-		// gr2 - q4b
+		//
 		{
-			mainLbl4b := trl.S{
-				"de": `Wie relevant sind die Prognosen der Bundesbank für Ihre eigenen Inflationsprognosen für Deutschland?`,
-				"en": `How relevant are the inflation forecasts of Bundesbank for your own inflation forecasts for Germany?`,
-			}.Outline("4b.")
-
-			colLbls4b := []trl.S{
-				{
-					"de": "nicht relevant",
-					"en": "not relevant",
-				},
-				{
-					"de": "leicht relevant",
-					"en": "slightly relevant",
-				},
-				{
-					"de": "stark relevant",
-					"en": "highly relevant",
-				},
-
-				{
-					"de": "keine<br>Angabe",
-					"en": "no answer",
-				},
+			page := q.AddPage()
+			page.Label = trl.S{
+				"de": "Sonderbefragung zum Jahresende 2022 - 3",
+				"en": "Special questions December 2022 - 3",
 			}
-
-			var columnTemplateLocal = []float32{
-				5.0, 1,
-				0.0, 1,
-				0.0, 1,
-				0.5, 1,
+			page.Short = trl.S{
+				"de": "Sonderfragen<br>Ende 2022 - 3",
+				"en": "Special<br>End of 2022 - 3",
 			}
-			gb := qst.NewGridBuilderRadios(
-				columnTemplateLocal,
-				colLbls4b,
-				[]string{
-					"qs4b_relevance",
-				},
-				radioVals4,
-				[]trl.S{
-					mainLbl4b,
-				},
-			)
+			page.SuppressInProgressbar = true
+			page.WidthMax("46rem")
+			page.WidthMax("54rem")
 
-			gr := page.AddGrid(gb)
-			gr.Style = css.NewStylesResponsive(gr.Style)
-			gr.Style.Desktop.StyleGridContainer.GapColumn = "1.2rem"
-			gr.BottomVSpacers = 1
-			_ = gr
-		}
-
-		{
-			gr := page.AddGroup()
-			gr.Cols = 1
+			//
+			// gr1 - q4a
 			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.ColSpan = gr.Cols
-				inp.Label = trl.S{
-					"de": `
-					Bundesbankpräsident Joachim Nagel äußert sich regelmäßig zum Inflationsausblick für Deutschland. Im November 2022 äußerte er sich folgendermaßen: "Auch im kommenden Jahr dürfte die Inflationsrate in Deutschland hoch bleiben. Ich halte es für wahrscheinlich, dass im Jahresdurchschnitt 2023 eine sieben vor dem Komma stehen wird".
-						`,
-					"en": `
-					Bundesbank president Joachim Nagel regularly comments on the inflation outlook for Germany. In November 2022, he commented as follows: "The inflation rate in Germany is likely to remain high in the coming year. I believe it is likely that the annual average for 2023 will have a seven before the decimal point."
-					`,
+
+				colLblsQ4 := []trl.S{
+					{
+						"de": "Meinen eigenen Analysen",
+						"en": "My own analyses",
+					},
+					{
+						"de": "Analysen von Experten/-innen aus meinem Unternehmen",
+						"en": "Analyses by experts in my company",
+					},
+					{
+						"de": "Analysen aus externen Quellen",
+						"en": "Analyses from external sources",
+					},
+
+					{
+						"de": "keine<br>Angabe",
+						"en": "no answer",
+					},
 				}
 
+				var columnTemplateLocal = []float32{
+					4.0, 1,
+					0.0, 1,
+					0.0, 1,
+					0.5, 1,
+				}
+				gb := qst.NewGridBuilderRadios(
+					columnTemplateLocal,
+					colLblsQ4,
+					[]string{
+						"qs4a_growth",
+						"qs4a_inf",
+						"qs4a_dax",
+					},
+					radioVals4,
+					[]trl.S{
+						{
+							"de": `Wirtschaftswachstum Deutschland`,
+							"en": `GDP growth, Germany`,
+						},
+						{
+							"de": `Inflation in Deutschland`,
+							"en": `Inflation, Germany`,
+						},
+						{
+							"de": `Entwicklung des DAX`,
+							"en": `Developments of the DAX`,
+						},
+					},
+				)
+
+				gb.MainLabel = trl.S{
+					"de": `
+	   						Meine Einschätzungen mit Blick auf die folgenden Bereiche beruhen hauptsächlich auf
+	   					`,
+					"en": `
+	   						My expectations with respect to the following areas are mainly based on
+	   					`,
+				}.Outline("4a.")
+
+				gr := page.AddGrid(gb)
+				_ = gr
 			}
+
+			//
+			// gr2 - q4b
+			{
+				mainLbl4b := trl.S{
+					"de": `Wie relevant sind die Prognosen der Bundesbank für Ihre eigenen Inflationsprognosen für Deutschland?`,
+					"en": `How relevant are the inflation forecasts of Bundesbank for your own inflation forecasts for Germany?`,
+				}.Outline("4b.")
+
+				colLbls4b := []trl.S{
+					{
+						"de": "nicht relevant",
+						"en": "not relevant",
+					},
+					{
+						"de": "leicht relevant",
+						"en": "slightly relevant",
+					},
+					{
+						"de": "stark relevant",
+						"en": "highly relevant",
+					},
+
+					{
+						"de": "keine<br>Angabe",
+						"en": "no answer",
+					},
+				}
+
+				var columnTemplateLocal = []float32{
+					5.0, 1,
+					0.0, 1,
+					0.0, 1,
+					0.5, 1,
+				}
+				gb := qst.NewGridBuilderRadios(
+					columnTemplateLocal,
+					colLbls4b,
+					[]string{
+						"qs4b_relevance",
+					},
+					radioVals4,
+					[]trl.S{
+						mainLbl4b,
+					},
+				)
+
+				gr := page.AddGrid(gb)
+				gr.Style = css.NewStylesResponsive(gr.Style)
+				gr.Style.Desktop.StyleGridContainer.GapColumn = "1.2rem"
+				gr.BottomVSpacers = 1
+				_ = gr
+			}
+
+			{
+				gr := page.AddGroup()
+				gr.Cols = 1
+				{
+					inp := gr.AddInput()
+					inp.Type = "textblock"
+					inp.ColSpan = gr.Cols
+					inp.Label = trl.S{
+						"de": `
+	   					Bundesbankpräsident Joachim Nagel äußert sich regelmäßig zum Inflationsausblick für Deutschland. Im November 2022 äußerte er sich folgendermaßen: "Auch im kommenden Jahr dürfte die Inflationsrate in Deutschland hoch bleiben. Ich halte es für wahrscheinlich, dass im Jahresdurchschnitt 2023 eine sieben vor dem Komma stehen wird".
+	   						`,
+						"en": `
+	   					Bundesbank president Joachim Nagel regularly comments on the inflation outlook for Germany. In November 2022, he commented as follows: "The inflation rate in Germany is likely to remain high in the coming year. I believe it is likely that the annual average for 2023 will have a seven before the decimal point."
+	   					`,
+					}
+
+				}
+			}
+
+			//
+			// gr3 - q4c
+			{
+
+				colLbls4c := []trl.S{
+					{
+						"de": "ja",
+						"en": "yes",
+					},
+					{
+						"de": "nein",
+						"en": "no",
+					},
+					{
+						"de": "keine<br>Angabe",
+						"en": "no answer",
+					},
+				}
+
+				var columnTemplateLocal = []float32{
+					5.0, 1,
+					0.0, 1,
+					0.5, 1,
+				}
+
+				lbl1 := trl.S{
+					"de": `
+	   					War Ihnen die Aussage von Bundesbankpräsident Joachim Nagel bereits bekannt?
+	   						`,
+					"en": `
+	   					Were you aware of this statement by Bundesbank president Joachim Nagel?
+	   					`,
+				}.Outline("4c.")
+
+				gb := qst.NewGridBuilderRadios(
+					columnTemplateLocal,
+					colLbls4c,
+					[]string{
+						"qs4c_known",
+					},
+					radioVals4,
+					[]trl.S{
+						lbl1,
+					},
+				)
+
+				// gb.MainLabel =
+
+				gr := page.AddGrid(gb)
+				gr.Style = css.NewStylesResponsive(gr.Style)
+				gr.Style.Desktop.StyleGridContainer.GapColumn = "1.2rem"
+			}
+
 		}
-
-		//
-		// gr3 - q4c
-		{
-
-			colLbls4c := []trl.S{
-				{
-					"de": "ja",
-					"en": "yes",
-				},
-				{
-					"de": "nein",
-					"en": "no",
-				},
-				{
-					"de": "keine<br>Angabe",
-					"en": "no answer",
-				},
-			}
-
-			var columnTemplateLocal = []float32{
-				5.0, 1,
-				0.0, 1,
-				0.5, 1,
-			}
-
-			lbl1 := trl.S{
-				"de": `
-					War Ihnen die Aussage von Bundesbankpräsident Joachim Nagel bereits bekannt?
-						`,
-				"en": `
-					Were you aware of this statement by Bundesbank president Joachim Nagel?
-					`,
-			}.Outline("4c.")
-
-			gb := qst.NewGridBuilderRadios(
-				columnTemplateLocal,
-				colLbls4c,
-				[]string{
-					"qs4c_known",
-				},
-				radioVals4,
-				[]trl.S{
-					lbl1,
-				},
-			)
-
-			// gb.MainLabel =
-
-			gr := page.AddGrid(gb)
-			gr.Style = css.NewStylesResponsive(gr.Style)
-			gr.Style.Desktop.StyleGridContainer.GapColumn = "1.2rem"
-		}
-
 	}
 
 	{

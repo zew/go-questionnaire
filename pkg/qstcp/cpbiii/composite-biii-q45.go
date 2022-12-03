@@ -1,9 +1,9 @@
 package cpbiii
 
-import qstif "github.com/zew/go-questionnaire/pkg/qst/compositeif"
+import qstif "github.com/zew/go-questionnaire/pkg/qstif"
 
 //
-func QuestForOrg(q qstif.Q, seq0to5, paramSetIdx int) (string, []string, error) {
+func QuestForOrg(q qstif.Q, seq0to5, paramSetIdx int, preflight bool) (string, []string, error) {
 
 	s := `
 		<label  for="q46" >

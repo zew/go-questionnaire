@@ -7,7 +7,7 @@ import (
 	"strings"
 
 	"github.com/zew/go-questionnaire/pkg/cfg"
-	qstif "github.com/zew/go-questionnaire/pkg/qst/compositeif"
+	qstif "github.com/zew/go-questionnaire/pkg/qstif"
 )
 
 // TimePreferenceSelf creates
@@ -15,7 +15,7 @@ import (
 // based on userIDInt() - 8 versions - via paramSetIdx + dataQ2;
 // seq0to5 is the numbering;
 // see composite.go for more.
-func TimePreferenceSelf(q qstif.Q, seq0to5, paramSetIdx int) (string, []string, error) {
+func TimePreferenceSelf(q qstif.Q, seq0to5, paramSetIdx int, preflight bool) (string, []string, error) {
 
 	zeroTo15 := q.Version()
 
@@ -36,12 +36,13 @@ func TimePreferenceSelf(q qstif.Q, seq0to5, paramSetIdx int) (string, []string, 
 
 // TimePreferenceSelfStatic similar to TimePreferenceSelf;
 // but inputs are disabled
-func TimePreferenceSelfStatic(q qstif.Q, seq0to5, paramSetIdx int) (string, []string, error) {
+func TimePreferenceSelfStatic(q qstif.Q, seq0to5, paramSetIdx int, preflight bool) (string, []string, error) {
 
 	s, inputs, err := TimePreferenceSelf(
 		q,
 		seq0to5, // visible question seq 1...6 on the questionnaire
 		paramSetIdx,
+		preflight,
 	)
 
 	s = strings.ReplaceAll(s, `Bitte jeweils EIN Kreuz setzen`, " &nbsp; ")
@@ -66,7 +67,7 @@ func TimePreferenceSelfStatic(q qstif.Q, seq0to5, paramSetIdx int) (string, []st
 }
 
 // TimePreferenceSelfComprehensionCheck - xx
-func TimePreferenceSelfComprehensionCheck(q qstif.Q, seq0to5, paramSetIdx int) (string, []string, error) {
+func TimePreferenceSelfComprehensionCheck(q qstif.Q, seq0to5, paramSetIdx int, preflight bool) (string, []string, error) {
 
 	questionID := "dummy"
 

@@ -6,7 +6,7 @@ import (
 	"github.com/zew/go-questionnaire/pkg/cfg"
 	"github.com/zew/go-questionnaire/pkg/css"
 	"github.com/zew/go-questionnaire/pkg/qst"
-	"github.com/zew/go-questionnaire/pkg/qst/composite/cppat"
+	"github.com/zew/go-questionnaire/pkg/qstcp/cppat"
 	"github.com/zew/go-questionnaire/pkg/trl"
 )
 
@@ -256,7 +256,7 @@ func Part1Entscheidung1bis6(q *qst.QuestionnaireT, vE VariableElements) error {
 					inp.ColSpanControl = 1
 					inp.DynamicFunc = fmt.Sprintf("PoliticalFoundations__%v__%v", i, i)
 				}
-				_, inputNames, _ := cppat.PoliticalFoundations(q, i, i)
+				_, inputNames, _ := cppat.PoliticalFoundations(q, i, i, true)
 				for _, inpName := range inputNames {
 					inp := gr.AddInput()
 					inp.Type = "dyn-composite-scalar"
@@ -300,7 +300,7 @@ func Part1Entscheidung1bis6(q *qst.QuestionnaireT, vE VariableElements) error {
 					inp.ColSpanControl = 1
 					inp.DynamicFunc = fmt.Sprintf("PoliticalFoundations__%v__%v", i, i)
 				}
-				_, inputNames, _ := cppat.PoliticalFoundations(q, i, i)
+				_, inputNames, _ := cppat.PoliticalFoundations(q, i, i, true)
 				for _, inpName := range inputNames {
 					inp := gr.AddInput()
 					inp.Type = "dyn-composite-scalar"
@@ -445,7 +445,7 @@ func Part2(q *qst.QuestionnaireT, vE VariableElements) error {
 	comprehensionExample := "."
 	if vE.ComprehensionCheck2 {
 		comprehensionExample = ", wie in folgendem Beispiel:"
-		add, _, _ := cppat.TimePreferenceSelfComprehensionCheck(q, 0, 0)
+		add, _, _ := cppat.TimePreferenceSelfComprehensionCheck(q, 0, 0, true)
 		comprehensionExample += add
 		comprehensionExample += "<div style='height: 0.7rem;'> &nbsp; </div>"
 	}
@@ -596,7 +596,7 @@ func Part2(q *qst.QuestionnaireT, vE VariableElements) error {
 				inp.ColSpanControl = 1
 				inp.DynamicFunc = "TimePreferenceSelf__0__0"
 			}
-			_, inputNames, _ := cppat.TimePreferenceSelf(q, 0, 0)
+			_, inputNames, _ := cppat.TimePreferenceSelf(q, 0, 0, true)
 			for _, inpName := range inputNames {
 				inp := gr.AddInput()
 				inp.Type = "dyn-composite-scalar"
@@ -642,7 +642,7 @@ func Part2(q *qst.QuestionnaireT, vE VariableElements) error {
 				inp.ColSpanControl = 1
 				inp.DynamicFunc = "TimePreferenceSelf__1__1"
 			}
-			_, inputNames, _ := cppat.TimePreferenceSelf(q, 1, 1)
+			_, inputNames, _ := cppat.TimePreferenceSelf(q, 1, 1, true)
 			for _, inpName := range inputNames {
 				inp := gr.AddInput()
 				inp.Type = "dyn-composite-scalar"
@@ -704,7 +704,7 @@ func Part2(q *qst.QuestionnaireT, vE VariableElements) error {
 				inp.ColSpanControl = 12
 				inp.DynamicFunc = "GroupPreferences__0__0"
 			}
-			_, inputNames, _ := cppat.GroupPreferences(q, 0, 0)
+			_, inputNames, _ := cppat.GroupPreferences(q, 0, 0, true)
 			for _, inpName := range inputNames {
 				inp := gr.AddInput()
 				inp.Name = inpName
@@ -819,7 +819,7 @@ func Part2(q *qst.QuestionnaireT, vE VariableElements) error {
 				inp.ColSpanControl = 12
 				inp.DynamicFunc = "GroupPreferences__1__1"
 			}
-			_, inputNames, _ := cppat.GroupPreferences(q, 1, 1)
+			_, inputNames, _ := cppat.GroupPreferences(q, 1, 1, true)
 			for _, inpName := range inputNames {
 				inp := gr.AddInput()
 				inp.Type = "dyn-composite-scalar"

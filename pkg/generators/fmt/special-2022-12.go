@@ -5,6 +5,7 @@ import (
 
 	"github.com/zew/go-questionnaire/pkg/css"
 	"github.com/zew/go-questionnaire/pkg/qst"
+	"github.com/zew/go-questionnaire/pkg/qstcp/cpfmt"
 	"github.com/zew/go-questionnaire/pkg/trl"
 )
 
@@ -222,23 +223,8 @@ func special202212(q *qst.QuestionnaireT) error {
 
 		}
 
-		// gr3 - q3a dynamic
-		{
-			gr := page.AddGroup()
-			gr.Cols = 1
-			gr.BottomVSpacers = 1
-			{
-				inp := gr.AddInput()
-				inp.Type = "dyn-composite"
-				inp.DynamicFuncParamset = ""
-				inp.DynamicFunc = fmt.Sprintf("Special202212Q3__%v__%v", 0, 0)
-
-				inp.ColSpanControl = 1
-			}
-		}
-
 		//
-		// gr3 - q3a
+		// gr q3a - header
 		{
 
 			colLblsQ3a := []trl.S{
@@ -280,73 +266,9 @@ func special202212(q *qst.QuestionnaireT) error {
 			gb := qst.NewGridBuilderRadios(
 				columnTemplateLocal,
 				colLblsQ3a,
-				[]string{
-					"qs3a_inf_narrative_a_static",
-					"qs3a_inf_narrative_b_static",
-					"qs3a_inf_narrative_c_static",
-					"qs3a_inf_narrative_d_static",
-					"qs3a_inf_narrative_e_static",
-					"qs3a_inf_narrative_f_static",
-				},
+				[]string{},
 				radioVals6,
-				[]trl.S{
-					{
-						"de": `Eine Entspannung bei der Inflationsentwicklung, eine weniger restriktive Geldpolitik der EZB und nachlassende Rezessionsrisiken wirken sich 
-								<i>positiv</i> 
-								auf das Rendite-Risiko-Profil in 2023 aus.`,
-						"en": `An easing in the development of inflation development, a less restrictive monetary stance by the ECB and diminishing recession risks have a 
-								<i>positive</i> 
-								impact on the return-risk-profile in 2023.`,
-					},
-					{
-						"de": `Den DAX-Konzernen gelingt es auch weiterhin, ihre steigenden Kosten an ihre Kunden weiterzugeben. Die Gewinn-Margen der DAX-Konzerne werden deswegen unverändert bleiben oder sogar steigen, was sich 
-								<i>positiv</i> 
-								auf das Rendite-Risiko-Profil des DAX in 2023 auswirkt. `,
-						"en": `DAX companies will continue to succeed in passing on their rising costs to their customers. The profit margins of DAX companies will therefore remain unchanged or even increase, which has a 
-								<i>positive</i> 
-								impact on the return-risk-profile of the DAX in 2023.`,
-					},
-					{
-						"de": `Die Entwicklung der Inflation spielt für das Rendite-Risiko-Profil des DAX in 2023 
-								<i>keine Roll</i>e
-								.`,
-						"en": `The development of inflation does 
-								<i>not impact</i> 
-								the return-risk-profile of the DAX.`,
-					},
-					{
-						"de": `	<i>Positive</i> 
-								und 
-								<i>negative</i> 
-								Effekte der Inflation gleichen sich aus. Die Entwicklung der Inflation ist daher insgesamt 
-								<i>neutral</i> 
-								für das Rendite-Risiko-Profil des DAX in 2023.`,
-						"en": `
-								<i>Positive</i> 
-								and 
-								<i>negative</i> 
-								effects of inflation cancel each other out. Overall, the development of inflation is 
-								<i>neutral</i> 
-								for the return-risk-profile of the DAX in 2023.`,
-					},
-					{
-						"de": `Den DAX-Konzernen gelingt es nicht, ihre steigenden Kosten an ihre Kunden weiterzugeben. Die Gewinn-Margen der DAX-Konzerne werden deswegen fallen, was sich 
-								<i>negativ</i> 
-								auf das Rendite-Risiko-Profil des DAX in 2023 auswirkt.`,
-						"en": `DAX companies will not to succeed in passing on their rising costs to their customers. The profit margins of DAX companies will therefore decrease, which has a 
-								<i>negative</i> 
-								impact on the return-risk-profile of the DAX in 2023.`,
-					},
-					{
-						"de": `Anhaltend hohe Inflationsraten, weitere Zinserhöhungen durch die EZB und zunehmende Rezessionsrisiken wirken sich 
-								<i>negativ</i> 
-								auf das Rendite-Risiko-Profil des DAX in 2023 aus.
-						`,
-						"en": `Persistently high inflation rates, further interest rate hikes by the ECB and increasing recession risks will have a 
-								<i>negative</i> 
-								impact on the return-risk-profile of the DAX in 2023.`,
-					},
-				},
+				[]trl.S{},
 			)
 
 			gb.MainLabel = trl.S{
@@ -371,17 +293,170 @@ func special202212(q *qst.QuestionnaireT) error {
 			}.Outline("3a.")
 
 			gr := page.AddGrid(gb)
-			_ = gr
-			gr.RandomizationGroup = 1
-			gr.RandomizationSeed = 1
+			gr.BottomVSpacers = 1
+			gr.BottomVSpacers = 0
 		}
 
 		//
-		// gr4 - q3b
+		// we dont need specific shuffling
+		if false {
+			{
+				gr := page.AddGroup()
+				gr.Cols = 1
+				gr.BottomVSpacers = 1
+				{
+					inp := gr.AddInput()
+					inp.Type = "dyn-composite"
+					inp.DynamicFunc = fmt.Sprintf("Special202212Q3__%v__%v", 0, 0)
+					inp.DynamicFuncParamset = ""
+					inp.ColSpanControl = 1
+				}
+				// would be good, if we could write this as
+				// inputNames, _,_ = q.HasComposit(pageIdx, groupIdx)
+				_, inputNames, _ := cpfmt.Special202212Q3(q, 0, 0, true)
+				for _, inpName := range inputNames {
+					inp := gr.AddInput()
+					inp.Type = "dyn-composite-scalar"
+					inp.Name = inpName
+				}
+
+			}
+		}
+
+		//
+		// gr q3a radio rows
 		{
 
+			colLblsQ3a := []trl.S{}
+
+			var columnTemplateLocal = []float32{
+				4.0, 1,
+				0.0, 1,
+				0.0, 1,
+				0.0, 1,
+				0.0, 1,
+				0.5, 1,
+			}
+			gb := qst.NewGridBuilderRadios(
+				columnTemplateLocal,
+				colLblsQ3a,
+				[]string{
+					"qs3a_inf_narrative_a_static",
+					"qs3a_inf_narrative_b_static",
+					"qs3a_inf_narrative_c_static",
+					"qs3a_inf_narrative_d_static",
+					"qs3a_inf_narrative_e_static",
+					"qs3a_inf_narrative_f_static",
+				},
+				radioVals6,
+				[]trl.S{
+					{
+						"de": `Eine Entspannung bei der Inflationsentwicklung, eine weniger restriktive Geldpolitik der EZB und nachlassende Rezessionsrisiken wirken sich
+								<i>positiv</i>
+								auf das Rendite-Risiko-Profil in 2023 aus.`,
+						"en": `An easing in the development of inflation development, a less restrictive monetary stance by the ECB and diminishing recession risks have a
+								<i>positive</i>
+								impact on the return-risk-profile in 2023.`,
+					},
+					{
+						"de": `Den DAX-Konzernen gelingt es auch weiterhin, ihre steigenden Kosten an ihre Kunden weiterzugeben. Die Gewinn-Margen der DAX-Konzerne werden deswegen unverändert bleiben oder sogar steigen, was sich
+								<i>positiv</i>
+								auf das Rendite-Risiko-Profil des DAX in 2023 auswirkt. `,
+						"en": `DAX companies will continue to succeed in passing on their rising costs to their customers. The profit margins of DAX companies will therefore remain unchanged or even increase, which has a
+								<i>positive</i>
+								impact on the return-risk-profile of the DAX in 2023.`,
+					},
+					{
+						"de": `Die Entwicklung der Inflation spielt für das Rendite-Risiko-Profil des DAX in 2023
+								<i>keine Roll</i>e
+								.`,
+						"en": `The development of inflation does
+								<i>not impact</i>
+								the return-risk-profile of the DAX.`,
+					},
+					{
+						"de": `	<i>Positive</i>
+								und
+								<i>negative</i>
+								Effekte der Inflation gleichen sich aus. Die Entwicklung der Inflation ist daher insgesamt
+								<i>neutral</i>
+								für das Rendite-Risiko-Profil des DAX in 2023.`,
+						"en": `
+								<i>Positive</i>
+								and
+								<i>negative</i>
+								effects of inflation cancel each other out. Overall, the development of inflation is
+								<i>neutral</i>
+								for the return-risk-profile of the DAX in 2023.`,
+					},
+					{
+						"de": `Den DAX-Konzernen gelingt es nicht, ihre steigenden Kosten an ihre Kunden weiterzugeben. Die Gewinn-Margen der DAX-Konzerne werden deswegen fallen, was sich
+								<i>negativ</i>
+								auf das Rendite-Risiko-Profil des DAX in 2023 auswirkt.`,
+						"en": `DAX companies will not to succeed in passing on their rising costs to their customers. The profit margins of DAX companies will therefore decrease, which has a
+								<i>negative</i>
+								impact on the return-risk-profile of the DAX in 2023.`,
+					},
+					{
+						"de": `Anhaltend hohe Inflationsraten, weitere Zinserhöhungen durch die EZB und zunehmende Rezessionsrisiken wirken sich
+								<i>negativ</i>
+								auf das Rendite-Risiko-Profil des DAX in 2023 aus.
+						`,
+						"en": `Persistently high inflation rates, further interest rate hikes by the ECB and increasing recession risks will have a
+								<i>negative</i>
+								impact on the return-risk-profile of the DAX in 2023.`,
+					},
+				},
+			)
+
+			gb.MainLabel = nil
+
+			gr := page.AddGrid(gb)
+			gr.RandomizationGroup = 1
+			gr.RandomizationSeed = 0
+		}
+
+		//
+		//
+		// gr q3b - main label
+		{
 			gr := page.AddGroup()
+			gr.BottomVSpacers = 1
 			gr.Cols = 1
+			{
+				{
+					inp := gr.AddInput()
+					inp.Type = "textblock"
+					inp.Label = trl.S{
+						"de": `
+						Bitte wählen Sie nun aus den folgenden Aussagen diejenige aus, die ihrer Meinung nach den Zusammenhang zwischen der 
+						<i>Inflationsentwicklung </i>
+						und dem 
+						<i>Rendite-Risiko-Profil des DAX </i>
+						in 
+						<i>2023 </i>
+						am besten widerspiegelt:
+					`,
+						"en": `
+						From the following statements, please select the one that, in your opinion, best reflects the relationship between the 
+						<i>development of inflation </i>
+						and the 
+						<i>risk-return profile of the DAX</i>
+						 in 
+						 <i>2023</i>
+						 :
+
+					`,
+					}.Outline("3b.")
+					inp.ColSpan = gr.Cols
+				}
+
+			}
+		}
+
+		//
+		// q3b - six shuffled groups
+		{
 
 			radioVals := []string{
 				"a",
@@ -411,7 +486,7 @@ func special202212(q *qst.QuestionnaireT) error {
 							impact on the return-risk-profile of the DAX in 2023.`,
 				},
 				{
-					"de": `Die aktuelle Entwicklung der Inflation spielt für das Rendite-Risiko-Profil des DAX in 2023 
+					"de": `Die Entwicklung der Inflation spielt für das Rendite-Risiko-Profil des DAX in 2023 
 							<i>keine Roll</i>e
 							.`,
 					"en": `The development of inflation does 
@@ -423,7 +498,7 @@ func special202212(q *qst.QuestionnaireT) error {
 							<i>Positive</i> 
 							und 
 							<i>negative</i> 
-							Effekte der Inflation gleichen sich aus. Die aktuelle Entwicklung der Inflation ist daher insgesamt 
+							Effekte der Inflation gleichen sich aus. Die Entwicklung der Inflation ist daher insgesamt 
 							<i>neutral</i> 
 							für das Rendite-Risiko-Profil des DAX in 2023.`,
 					"en": `
@@ -456,58 +531,49 @@ func special202212(q *qst.QuestionnaireT) error {
 				},
 			}
 
-			{
-				inp := gr.AddInput()
-				inp.Type = "textblock"
-				inp.Label = trl.S{
-					"de": `
-						Bitte wählen Sie nun aus den folgenden Aussagen diejenige aus, die ihrer Meinung nach den Zusammenhang zwischen der 
-						<i>Inflationsentwicklung </i>
-						und dem 
-						<i>Rendite-Risiko-Profil des DAX </i>
-						in 
-						<i>2023 </i>
-						am besten widerspiegelt:
-					`,
-					"en": `
-						From the following statements, please select the one that, in your opinion, best reflects the relationship between the 
-						<i>development of inflation </i>
-						and the 
-						<i>risk-return profile of the DAX</i>
-						 in 
-						 <i>2023</i>
-						 :
-
-					`,
-				}.Outline("3b.")
-				inp.ColSpan = gr.Cols
-			}
-
 			for i := 0; i < len(radioVals); i++ {
-				inp := gr.AddInput()
-				inp.Type = "radio"
-				inp.Name = "qs3b_inf_to_dax"
-				inp.Label = lbls[i]
-				inp.ValueRadio = radioVals[i]
-				inp.ColSpan = 1
 
-				inp.ColSpanLabel = 1
-				inp.ColSpanControl = 9
+				gr := page.AddGroup()
+				gr.Cols = 1
+				gr.RandomizationGroup = 2
+				gr.RandomizationSeed = 0
+				if i == len(radioVals)-1 {
+					// no shuffling of no-answer
+					gr.RandomizationGroup = 0
+				}
 
-				inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
-				inp.StyleLbl.Desktop.StyleText.AlignHorizontal = "justify"
+				gr.BottomVSpacers = 1
+				if i == len(radioVals)-1 {
+					gr.BottomVSpacers = 3
+				}
 
-				inp.ControlFirst()
+				{
 
-				inp.ControlTop()
-				inp.StyleCtl.Desktop.StyleBox.Margin = "0.12rem 0 0 0"
+					inp := gr.AddInput()
+					inp.Type = "radio"
+					inp.Name = "qs3b_inf_to_dax"
+					inp.Label = lbls[i]
+					inp.ValueRadio = radioVals[i]
+					inp.ColSpan = 1
 
+					inp.ColSpanLabel = 1
+					inp.ColSpanControl = 9
+
+					inp.StyleLbl = css.NewStylesResponsive(inp.StyleLbl)
+					inp.StyleLbl.Desktop.StyleText.AlignHorizontal = "justify"
+
+					inp.ControlFirst()
+
+					inp.ControlTop()
+					inp.StyleCtl.Desktop.StyleBox.Margin = "0.12rem 0 0 0"
+				}
 			}
-
 		}
 
 	}
 
+	//
+	//
 	{
 		page := q.AddPage()
 		page.Label = trl.S{
@@ -588,8 +654,6 @@ func special202212(q *qst.QuestionnaireT) error {
 
 			gr := page.AddGrid(gb)
 			_ = gr
-			gr.RandomizationGroup = 1
-			gr.RandomizationSeed = 1
 		}
 
 		//
@@ -637,21 +701,30 @@ func special202212(q *qst.QuestionnaireT) error {
 				},
 			)
 
-			gb.MainLabel = trl.S{
-				"de": `
-					Bundesbankpräsident Joachim Nagel äußert sich regelmäßig zum Inflationsausblick für Deutschland. Im November 2022 äußerte er sich folgendermaßen: "Auch im kommenden Jahr dürfte die Inflationsrate in Deutschland hoch bleiben. Ich halte es für wahrscheinlich, dass im Jahresdurchschnitt 2023 eine sieben vor dem Komma stehen wird".
-						`,
-				"en": `
-					Bundesbank president Joachim Nagel regularly comments on the inflation outlook for Germany. In November 2022, he commented as follows: "The inflation rate in Germany is likely to remain high in the coming year. I believe it is likely that the annual average for 2023 will have a seven before the decimal point."
-					`,
-			}.Outline("4b.")
-
 			gr := page.AddGrid(gb)
 			gr.Style = css.NewStylesResponsive(gr.Style)
 			gr.Style.Desktop.StyleGridContainer.GapColumn = "1.2rem"
+			gr.BottomVSpacers = 1
 			_ = gr
-			gr.RandomizationGroup = 1
-			gr.RandomizationSeed = 1
+		}
+
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			{
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				inp.ColSpan = gr.Cols
+				inp.Label = trl.S{
+					"de": `
+					Bundesbankpräsident Joachim Nagel äußert sich regelmäßig zum Inflationsausblick für Deutschland. Im November 2022 äußerte er sich folgendermaßen: "Auch im kommenden Jahr dürfte die Inflationsrate in Deutschland hoch bleiben. Ich halte es für wahrscheinlich, dass im Jahresdurchschnitt 2023 eine sieben vor dem Komma stehen wird".
+						`,
+					"en": `
+					Bundesbank president Joachim Nagel regularly comments on the inflation outlook for Germany. In November 2022, he commented as follows: "The inflation rate in Germany is likely to remain high in the coming year. I believe it is likely that the annual average for 2023 will have a seven before the decimal point."
+					`,
+				}.Outline("4b.")
+
+			}
 		}
 
 		//
@@ -705,9 +778,6 @@ func special202212(q *qst.QuestionnaireT) error {
 			gr := page.AddGrid(gb)
 			gr.Style = css.NewStylesResponsive(gr.Style)
 			gr.Style.Desktop.StyleGridContainer.GapColumn = "1.2rem"
-			_ = gr
-			gr.RandomizationGroup = 1
-			gr.RandomizationSeed = 1
 		}
 
 	}

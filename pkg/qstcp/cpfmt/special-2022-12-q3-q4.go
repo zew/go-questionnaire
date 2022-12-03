@@ -2,11 +2,14 @@ package cpfmt
 
 import (
 	"fmt"
+	"log"
 	"strings"
 
-	qstif "github.com/zew/go-questionnaire/pkg/qst/compositeif"
+	qstif "github.com/zew/go-questionnaire/pkg/qstif"
 	"github.com/zew/go-questionnaire/pkg/trl"
 )
+
+// treatment:
 
 var columnTemplateLocal = []float32{
 	4.0, 1,
@@ -17,9 +20,9 @@ var columnTemplateLocal = []float32{
 	0.5, 1,
 }
 
-var radioVals6 = []string{"1", "2", "3", "4", "5", "6"}
+// var radioVals6 = []string{"1", "2", "3", "4", "5", "6"}
 
-func Special202212Q3(q qstif.Q, seq0to5, paramSetIdx int) (string, []string, error) {
+func Special202212Q3(q qstif.Q, seq0to5, paramSetIdx int, preflight bool) (string, []string, error) {
 
 	inpNames := []string{
 		"qs3a_inf_narrative_a",
@@ -29,6 +32,14 @@ func Special202212Q3(q qstif.Q, seq0to5, paramSetIdx int) (string, []string, err
 		"qs3a_inf_narrative_e",
 		"qs3a_inf_narrative_f",
 	}
+
+	if preflight {
+		return "", inpNames, nil
+	}
+
+	// if q.UserIDInt() < -100*1000 {
+	// 	return "", []string{}, nil
+	// }
 
 	rowLbls := []trl.S{
 		{
@@ -89,22 +100,27 @@ func Special202212Q3(q qstif.Q, seq0to5, paramSetIdx int) (string, []string, err
 		},
 	}
 
-	if q.UserIDInt() < -100*1000 {
-		s := ""
-		inpNames = []string{}
-		return s, inpNames, nil
-	}
-
 	sb := &strings.Builder{}
 
+	fmt.Fprint(sb, `
+		<style>
+		.dyn-ctl {
+			margin: 0.12rem 0 0 0;
+			justify-self: center;
+			align-self: start;
+			text-align: center;
+		}
+		</style>	
+	`)
+
 	tplContainer := `
-	<div  class='pg07-grp03 grid-container '  >
+	<div  class='pg07-grp02 grid-container '  >
 	%v
 	</div>
 	`
 
 	tplCell := `
-		<div  class='pg07-grp03-inp09 grid-item-lvl-1'  >
+		<div  class='pg07-grp02-inp0%v grid-item-lvl-1'  >
 			%v
 			%v
 		</div>
@@ -117,7 +133,7 @@ func Special202212Q3(q qstif.Q, seq0to5, paramSetIdx int) (string, []string, err
 	`
 
 	tplRadio := `
-		<div  class='pg07-grp03-inp07-ctl grid-item-lvl-2' >
+		<div  class='dyn-ctl grid-item-lvl-2' >
 			<input type='radio'
 				name='%v'
 				id='%v_%v'
@@ -135,6 +151,7 @@ func Special202212Q3(q qstif.Q, seq0to5, paramSetIdx int) (string, []string, err
 			//  are calling qst.Validate()
 			//   => dynamic fields do not exist yet
 		}
+		log.Printf("response for inpNames[%v] - %v is %v", i1, inpNames[i1], resp)
 		if resp == "input-name-not-found" {
 			resp = ""
 		} else if resp != "" {
@@ -157,6 +174,14 @@ func Special202212Q3(q qstif.Q, seq0to5, paramSetIdx int) (string, []string, err
 					rowLbls[i1][q.GetLangCode()],
 				)
 			}
+			if i2 == 6-1 {
+				label = fmt.Sprintf(
+					tplLabel,
+					// placeholder vals
+					inpNames[i1],
+					"&nbsp;",
+				)
+			}
 			radio := fmt.Sprintf(
 				tplRadio,
 				// placeholder vals
@@ -166,15 +191,23 @@ func Special202212Q3(q qstif.Q, seq0to5, paramSetIdx int) (string, []string, err
 				checked, // checked or not
 			)
 
+			firstCol := "1"
+			if i2 > 0 {
+				firstCol = "2"
+			}
+			if i2 == 6-1 {
+				firstCol = "6"
+			}
+
 			fmt.Fprintf(
 				sb,
 				tplCell,
+				firstCol,
 				label,
 				radio,
 			)
 
 		}
-
 	}
 
 	// wrap container

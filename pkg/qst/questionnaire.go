@@ -331,36 +331,63 @@ func (gr *groupT) ColWidths(colWidths string) {
 }
 
 // HasComposit - group contains composit element?
-func (gr groupT) HasComposit() bool {
+//
+//	if yes, we retrieve its input names
+func (q *QuestionnaireT) HasComposit(pgIdx, grIdx int) ([]string, bool, error) {
+
+	gr := q.Pages[pgIdx].Groups[grIdx]
+
 	hasComposit := false
 	for _, inp := range gr.Inputs {
 		if inp.Type == "dyn-composite" {
+			if inp.DynamicFunc == "" {
+				log.Panicf(`
+					page %v group %v 
+					contains a input type 'dyn-composite' - but inp.DynamicFunc is empty`,
+					pgIdx,
+					grIdx,
+				)
+			}
 			hasComposit = true
 			break
 		}
 	}
+
+	if !hasComposit {
+		return nil, false, nil
+	}
+
+	// further checks
 	if hasComposit {
 		for _, inp := range gr.Inputs {
 			if inp.Type != "dyn-composite" && inp.Type != "dyn-composite-scalar" {
-				log.Panicf("group contains a input type 'composit' - but *other* inputs too")
+				log.Panicf(`
+					page %v group %v 
+					contains a input type 'dyn-composite' - but *normal* input types too`,
+					pgIdx,
+					grIdx,
+				)
 			}
 		}
 	}
-	return hasComposit
+
+	compFuncNameWithParamSet := gr.Inputs[0].DynamicFunc
+	cF, seqIdx, paramSetIdx := parseComposite(compFuncNameWithParamSet)
+
+	// execute in preflight mode; only return the input names
+	_, inpNames, err := cF(q, seqIdx, paramSetIdx, true)
+
+	return inpNames, hasComposit, err
 }
 
-// returns the func, the sequence idx, the param set idx
-func validateComposite(
-	pageIdx, grpIdx int, compFuncNameWithParamSet string) (CompositeFuncT, int, int) {
+// parseComposite returns the func, the sequence idx, the param set idx
+func parseComposite(compFuncNameWithParamSet string) (CompositeFuncT, int, int) {
 
 	splt := strings.Split(compFuncNameWithParamSet, "__")
 	if len(splt) != 3 {
 		log.Panicf(
-			`page %v group %v: 
-			composite func name %v 
+			`composite func name %q 
 			must consist of func name '__' param set index '__' sequence idx`,
-			pageIdx,
-			grpIdx,
 			compFuncNameWithParamSet,
 		)
 	}
@@ -369,23 +396,18 @@ func validateComposite(
 	cF, ok := CompositeFuncs[compFuncName]
 	if !ok {
 		log.Panicf(
-			`page %v group %v: 
-			composite func name %v does not exist`,
-			pageIdx,
-			grpIdx,
+			`composite func name %q out of %q does not exist`,
 			compFuncName,
+			compFuncNameWithParamSet,
 		)
 	}
 
 	seqIdx, err := strconv.Atoi(splt[1])
 	if err != nil {
 		log.Panicf(
-			`page %v group %v: 
-			third part of composite func name %v 
+			`second part of composite func name %q 
 			could not be parsed into int
 			%v`,
-			seqIdx,
-			grpIdx,
 			compFuncNameWithParamSet,
 			err,
 		)
@@ -394,12 +416,9 @@ func validateComposite(
 	paramSetIdx, err := strconv.Atoi(splt[2])
 	if err != nil {
 		log.Panicf(
-			`page %v group %v: 
-			second part of composite func name %v 
+			`third part of composite func name %q 
 			could not be parsed into int
 			%v`,
-			pageIdx,
-			grpIdx,
 			compFuncNameWithParamSet,
 			err,
 		)
@@ -848,14 +867,12 @@ func (sg shufflingGroupsT) String() string {
 	return fmt.Sprintf("orig %02v -> shuff %02v - G%v Sd%v strt%v seq%v", sg.Orig, sg.Shuffled, sg.GroupID, sg.RandomizationSeed, sg.Start, sg.Idx)
 }
 
-var debugShuffling = false
+var debugShuffling = true
 
 // RandomizeOrder creates a shuffled ordering of groups
 // determined by UserID and .RandomizationGroup;
 // groups with RandomizationGroup==0 retain their position
-//
-//	on fixed order position;
-//
+// on fixed order position;
 // others get a randomized position
 func (q *QuestionnaireT) RandomizeOrder(pageIdx int) []int {
 
@@ -913,6 +930,14 @@ func (q *QuestionnaireT) RandomizeOrder(pageIdx int) []int {
 				sg := sgs[i].GroupID
 				// this must conform with ShufflesToCSV()
 				seedShufflngs := q.UserIDInt() + sgs[i].RandomizationSeed
+
+				if q.Survey.Type == "fmt" && q.Survey.Year == 2022 && q.Survey.Month == 12 {
+					seedShufflngs = fmtRandomizationGroups[q.UserIDInt()] + sgs[i].RandomizationSeed
+					if debugShuffling {
+						log.Printf("fmt-2022-12 seedShufflngs for user %v is %v", q.UserIDInt(), seedShufflngs)
+					}
+				}
+
 				sh := shuffler.New(seedShufflngs, q.ShufflingVariations, len(shufflingGroups[sg]))
 				newOrder := sh.Slice(q.ShufflingRepetitions) // adding sg breaks compatibility to ShufflesToCSV()
 				if debugShuffling {
@@ -1158,11 +1183,12 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 	compositCntr := -1    // group counter - per page
 	nonCompositCntr := -1 // group counter - per page
 	for loopIdx, grpIdx := range grpOrder {
-		if page.Groups[grpIdx].HasComposit() {
+
+		if _, ok, _ := q.HasComposit(pageIdx, grpIdx); ok {
 			compositCntr++
 			compFuncNameWithParamSet := page.Groups[grpIdx].Inputs[0].DynamicFunc
-			cF, seqIdx, paramSetIdx := validateComposite(pageIdx, grpIdx, compFuncNameWithParamSet)
-			grpHTML, _, err := cF(q, seqIdx, paramSetIdx) // QuestionnaireT must comply to compositeif.Q
+			cF, seqIdx, paramSetIdx := parseComposite(compFuncNameWithParamSet)
+			grpHTML, _, err := cF(q, seqIdx, paramSetIdx, false) // QuestionnaireT must comply to qstif.Q
 			if err != nil {
 				fmt.Fprintf(w, "composite func error %v \n", err)
 			} else {
@@ -1835,4 +1861,292 @@ func ParseJavaScript(tName string) (*template.Template, error) {
 	}
 
 	return tDerived, nil
+}
+
+var fmtRandomizationGroups = map[int]int{
+	9990: 1,
+	9991: 2,
+	9992: 2,
+	9993: 3,
+	9994: 4,
+
+	10001: 12,
+	10003: 12,
+	10008: 8,
+	10009: 9,
+	10012: 2,
+	10013: 3,
+	10014: 4,
+	10015: 5,
+	10017: 10,
+	10021: 7,
+	10023: 11,
+	10025: 1,
+	10027: 1,
+	10033: 11,
+	10034: 11,
+	10035: 12,
+	10040: 5,
+	10041: 12,
+	10042: 1,
+	10051: 6,
+	10052: 12,
+	10054: 9,
+	10056: 5,
+	10057: 4,
+	10058: 6,
+	10060: 12,
+	10062: 7,
+	10063: 12,
+	10070: 7,
+	10071: 6,
+	10072: 2,
+	10073: 12,
+	10078: 12,
+	10079: 7,
+	10080: 12,
+	10081: 8,
+	10084: 3,
+	10085: 2,
+	10086: 11,
+	10089: 4,
+	10090: 3,
+	10095: 12,
+	10096: 1,
+	10098: 4,
+	10103: 4,
+	10105: 3,
+	10109: 3,
+	10112: 4,
+	10113: 2,
+	10115: 12,
+	10117: 5,
+	10118: 4,
+	10127: 9,
+	10128: 6,
+	10129: 12,
+	10131: 2,
+	10133: 5,
+	10134: 11,
+	10138: 1,
+	10140: 4,
+	10143: 12,
+	10146: 7,
+	10147: 4,
+	10150: 11,
+	10154: 5,
+	10160: 6,
+	10161: 4,
+	10162: 2,
+	10163: 7,
+	10165: 10,
+	10167: 12,
+	10168: 6,
+	10172: 11,
+	10173: 3,
+	10175: 7,
+	10178: 4,
+	10179: 4,
+	10180: 5,
+	10185: 2,
+	10197: 3,
+	10199: 9,
+	10205: 3,
+	10209: 11,
+	10210: 6,
+	10218: 8,
+	10224: 3,
+	10228: 11,
+	10231: 6,
+	10235: 1,
+	10247: 4,
+	10256: 7,
+	10260: 5,
+	10261: 10,
+	10262: 5,
+	10263: 5,
+	10267: 1,
+	10268: 9,
+	10274: 9,
+	10278: 3,
+	10281: 7,
+	10286: 7,
+	10296: 10,
+	10297: 1,
+	10305: 3,
+	10307: 3,
+	10310: 11,
+	10311: 12,
+	10315: 2,
+	10316: 1,
+	10319: 11,
+	10321: 10,
+	10322: 9,
+	10330: 9,
+	10337: 7,
+	10339: 9,
+	10343: 8,
+	10344: 9,
+	10345: 8,
+	10349: 4,
+	10356: 1,
+	10361: 6,
+	10362: 11,
+	10363: 11,
+	10364: 6,
+	10366: 9,
+	10367: 4,
+	10369: 9,
+	10372: 1,
+	10374: 10,
+	10376: 3,
+	10377: 10,
+	10381: 8,
+	10385: 9,
+	10387: 8,
+	10388: 9,
+	10391: 6,
+	10405: 3,
+	10415: 10,
+	10418: 8,
+	10420: 11,
+	10421: 4,
+	10794: 9,
+	10802: 5,
+	10806: 12,
+	10807: 6,
+	10812: 7,
+	10813: 3,
+	10816: 8,
+	10821: 5,
+	10825: 10,
+	10826: 6,
+	10828: 3,
+	10829: 12,
+	10830: 8,
+	10834: 7,
+	10837: 8,
+	10839: 2,
+	10842: 11,
+	10844: 5,
+	10947: 1,
+	11241: 6,
+	11242: 1,
+	11246: 11,
+	11251: 8,
+	11270: 7,
+	11272: 10,
+	11275: 6,
+	11345: 1,
+	11389: 7,
+	11396: 11,
+	11398: 6,
+	11400: 11,
+	11403: 8,
+	11425: 5,
+	11426: 2,
+	11435: 7,
+	11440: 6,
+	11445: 2,
+	11452: 7,
+	11453: 11,
+	11465: 5,
+	11466: 7,
+	11475: 7,
+	11482: 10,
+	11490: 1,
+	11495: 5,
+	11497: 6,
+	11499: 10,
+	11500: 8,
+	11504: 10,
+	11506: 7,
+	11514: 1,
+	11534: 12,
+	11544: 1,
+	11546: 6,
+	11547: 9,
+	11548: 8,
+	11556: 3,
+	11558: 2,
+	11559: 2,
+	11563: 2,
+	11565: 3,
+	11568: 2,
+	11569: 3,
+	11572: 2,
+	11573: 9,
+	11574: 2,
+	11575: 3,
+	11579: 10,
+	11588: 4,
+	11589: 10,
+	11593: 10,
+	11594: 10,
+	11596: 10,
+	11598: 9,
+	11599: 9,
+	11600: 11,
+	11601: 10,
+	11602: 5,
+	11603: 5,
+	11604: 6,
+	11605: 4,
+	11606: 4,
+	11607: 11,
+	11608: 9,
+	11614: 12,
+	11616: 1,
+	11617: 8,
+	11618: 7,
+	11619: 1,
+	11620: 4,
+	11621: 8,
+	11622: 8,
+	11623: 8,
+	11625: 3,
+	11627: 2,
+	11628: 10,
+	11630: 8,
+	11631: 7,
+	11632: 12,
+	11633: 10,
+	11634: 6,
+	11635: 7,
+	11636: 5,
+	11637: 8,
+	11638: 9,
+	11639: 4,
+	11640: 11,
+	11642: 1,
+	11643: 2,
+	11644: 12,
+	11645: 5,
+	11646: 5,
+	11648: 2,
+	11649: 2,
+	11650: 5,
+	11651: 1,
+	11652: 7,
+	11653: 9,
+	11654: 10,
+	11655: 9,
+	11657: 5,
+	11658: 8,
+	11659: 9,
+	11660: 6,
+	11661: 10,
+	11662: 12,
+	11665: 4,
+	11668: 3,
+	11669: 4,
+	10007: 2,
+	10016: 8,
+	10219: 1,
+	10220: 11,
+	10412: 3,
+	11348: 6,
+	11477: 1,
+	11478: 11,
+	11610: 2,
 }

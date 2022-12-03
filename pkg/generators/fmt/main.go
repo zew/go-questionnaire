@@ -33,6 +33,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 		"en": "Index / Indicator of Econ. Sentiment",
 	}
 
+	q.ShufflingVariations = 12
+
 	// page 0
 	{
 		page := q.AddPage()

@@ -7,7 +7,7 @@ import (
 	"strings"
 
 	"github.com/zew/go-questionnaire/pkg/cfg"
-	qstif "github.com/zew/go-questionnaire/pkg/qst/compositeif"
+	qstif "github.com/zew/go-questionnaire/pkg/qstif"
 )
 
 type preferences3x3T struct {
@@ -67,7 +67,7 @@ var populationByVersion = [][]int{
 // seq0to5 is the numbering;
 // based on userIDInt() - 4 versions / 4 permutations - via fourPermutationsOf6x3x3 + reshuffle6basedOn16;
 // see composite.go for more.
-func PoliticalFoundations(q qstif.Q, seq0to5, paramSetIdx int) (string, []string, error) {
+func PoliticalFoundations(q qstif.Q, seq0to5, paramSetIdx int, preflight bool) (string, []string, error) {
 
 	zeroTo15 := q.Version()
 
@@ -171,7 +171,7 @@ func politicalFoundations(q qstif.Q, seq0to5 int, questionID string, ppls [][]in
 
 	explain := ""
 	if seq0to5 == 0 {
-		explain, _, _ = PoliticalFoundationsPretext(q, seq0to5, 0)
+		explain, _, _ = PoliticalFoundationsPretext(q, seq0to5, 0, false)
 	}
 
 	consolidatedErrMsg := ""
@@ -324,7 +324,7 @@ var cols6to4 = strings.NewReplacer(
 
 // PoliticalFoundationsStatic - like PoliticalFoundations() but filtering out
 // the input columns
-func PoliticalFoundationsStatic(q qstif.Q, seq0to5, paramSetIdx int) (string, []string, error) {
+func PoliticalFoundationsStatic(q qstif.Q, seq0to5, paramSetIdx int, preflight bool) (string, []string, error) {
 
 	ret, _, err := politicalFoundationsStaticSub(q, seq0to5, paramSetIdx)
 
@@ -378,7 +378,7 @@ var preferencesComprehensionCheck = []preferences3x3T{
 
 // PoliticalFoundationsComprehensionCheck - like PoliticalFoundations() but filtering out
 // the input columns
-func PoliticalFoundationsComprehensionCheck(q qstif.Q, seq0to5, paramSetIdx int) (string, []string, error) {
+func PoliticalFoundationsComprehensionCheck(q qstif.Q, seq0to5, paramSetIdx int, preflight bool) (string, []string, error) {
 
 	// ret, _, err := politicalFoundationsStaticSub(q, seq0to5, paramSetIdx)
 	ret, _, err := politicalFoundations(q, seq0to5, "q_comprehension", preferencesComprehensionCheck[paramSetIdx].Ppls)

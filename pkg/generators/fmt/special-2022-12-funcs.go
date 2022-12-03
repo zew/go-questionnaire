@@ -64,7 +64,8 @@ func matrixOfPercentageInputs(
 
 			inp := gr.AddInput()
 			inp.Type = "number"
-			inp.Name = fmt.Sprintf("inf%v_%v", inpNames[i1], suffix)
+			// inp.Name = fmt.Sprintf("inf%v_%v", inpNames[i1], suffix)
+			inp.Name = fmt.Sprintf("%v_%v", inpNames[i1], suffix)
 			inp.Suffix = trl.S{"de": "%", "en": "%"}
 			inp.ColSpan = col23Width
 			inp.Min = 0
@@ -79,7 +80,8 @@ func matrixOfPercentageInputs(
 
 			inp := gr.AddInput()
 			inp.Type = "checkbox"
-			inp.Name = fmt.Sprintf("inf%v_%v", inpNames[i1], "no_answer")
+			// inp.Name = fmt.Sprintf("inf%v_%v", inpNames[i1], "no_answer")
+			inp.Name = fmt.Sprintf("%v_%v", inpNames[i1], "no_answer")
 			inp.ColSpan = col4Width
 			inp.ControlTopNudge()
 		}

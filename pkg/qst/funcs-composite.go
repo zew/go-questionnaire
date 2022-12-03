@@ -1,10 +1,10 @@
 package qst
 
 import (
-	"github.com/zew/go-questionnaire/pkg/qst/composite/cpbiii"
-	"github.com/zew/go-questionnaire/pkg/qst/composite/cpfmt"
-	"github.com/zew/go-questionnaire/pkg/qst/composite/cppat"
-	"github.com/zew/go-questionnaire/pkg/qst/compositeif"
+	"github.com/zew/go-questionnaire/pkg/qstcp/cpbiii"
+	"github.com/zew/go-questionnaire/pkg/qstcp/cpfmt"
+	"github.com/zew/go-questionnaire/pkg/qstcp/cppat"
+	"github.com/zew/go-questionnaire/pkg/qstif"
 )
 
 // CompositeFuncT inputs combine challenging HTML and
@@ -27,13 +27,14 @@ import (
 //	dynamic questionnaire - filled with response values
 //	sequence  idx  -  usually a visible page sequence number
 //	param set idx  -  statically determined - from a slice of param sets
+//	preflight      -  only return the input names for questionnaire generation; dont render HTML output
 //
 // Returns
 //
 //	rendered HTML of the group
 //	slice of input names
 //	error
-type CompositeFuncT func(compositeif.Q, int, int) (string, []string, error)
+type CompositeFuncT func(qstif.Q, int, int, bool) (string, []string, error)
 
 // CompositeFuncs is a lookup map
 var CompositeFuncs = map[string]CompositeFuncT{

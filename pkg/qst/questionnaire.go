@@ -864,7 +864,7 @@ type shufflingGroupsT struct {
 
 // String representation for dump
 func (sg shufflingGroupsT) String() string {
-	return fmt.Sprintf("orig %02v -> shuff %02v - G%v Sd%v strt%v seq%v", sg.Orig, sg.Shuffled, sg.GroupID, sg.RandomizationSeed, sg.Start, sg.Idx)
+	return fmt.Sprintf("orig %02v -> shuff %02v - G%v Sd%v strt%02v seq%v", sg.Orig, sg.Shuffled, sg.GroupID, sg.RandomizationSeed, sg.Start, sg.Idx)
 }
 
 var debugShuffling = true

@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "bffbfcdb39604c8732fa8fa52fcd27450e15352c33cf73153bb68f7ce8ff8468",
+ 	"md_5": "466c25332853403a152d5284b4180517951fae3991afcb51d6f2f8d84a0e5865",
  	"lang_codes": [
  		"de",
  		"en"
@@ -29,7 +29,7 @@
  	"shuffling_variations": 12,
  	"allow_skip_forward": false,
  	"version_effective": 0,
- 	"max_groups": 12,
+ 	"max_groups": 17,
  	"pages": [
  		{
  			"label": {
@@ -5428,6 +5428,7 @@
  					}
  				},
  				{
+ 					"bottom_vspacers": 1,
  					"columns": 6,
  					"inputs": [
  						{
@@ -5727,7 +5728,7 @@
  					}
  				},
  				{
- 					"bottom_vspacers": 3,
+ 					"bottom_vspacers": 1,
  					"columns": 6,
  					"inputs": [
  						{
@@ -5895,7 +5896,33 @@
  									"text_style": {}
  								}
  							}
+ 						}
+ 					],
+ 					"randomization_group": 1,
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"auto_flow": "row",
+ 								"template_columns": "   5fr    1fr    1fr    1fr    1fr    1.5fr "
+ 							},
+ 							"box_style": {
+ 								"display": "grid"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
  						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 6,
+ 					"inputs": [
  						{
  							"name": "qs3a_inf_narrative_b_static",
  							"type": "radio",
@@ -6061,7 +6088,33 @@
  									"text_style": {}
  								}
  							}
+ 						}
+ 					],
+ 					"randomization_group": 1,
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"auto_flow": "row",
+ 								"template_columns": "   5fr    1fr    1fr    1fr    1fr    1.5fr "
+ 							},
+ 							"box_style": {
+ 								"display": "grid"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
  						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 6,
+ 					"inputs": [
  						{
  							"name": "qs3a_inf_narrative_c_static",
  							"type": "radio",
@@ -6227,7 +6280,33 @@
  									"text_style": {}
  								}
  							}
+ 						}
+ 					],
+ 					"randomization_group": 1,
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"auto_flow": "row",
+ 								"template_columns": "   5fr    1fr    1fr    1fr    1fr    1.5fr "
+ 							},
+ 							"box_style": {
+ 								"display": "grid"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
  						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 6,
+ 					"inputs": [
  						{
  							"name": "qs3a_inf_narrative_d_static",
  							"type": "radio",
@@ -6393,7 +6472,33 @@
  									"text_style": {}
  								}
  							}
+ 						}
+ 					],
+ 					"randomization_group": 1,
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"auto_flow": "row",
+ 								"template_columns": "   5fr    1fr    1fr    1fr    1fr    1.5fr "
+ 							},
+ 							"box_style": {
+ 								"display": "grid"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
  						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 6,
+ 					"inputs": [
  						{
  							"name": "qs3a_inf_narrative_e_static",
  							"type": "radio",
@@ -6559,7 +6664,33 @@
  									"text_style": {}
  								}
  							}
+ 						}
+ 					],
+ 					"randomization_group": 1,
+ 					"style": {
+ 						"desktop": {
+ 							"grid_container_style": {
+ 								"auto_flow": "row",
+ 								"template_columns": "   5fr    1fr    1fr    1fr    1fr    1.5fr "
+ 							},
+ 							"box_style": {
+ 								"display": "grid"
+ 							},
+ 							"grid_item_style": {},
+ 							"text_style": {}
  						},
+ 						"mobile": {
+ 							"grid_container_style": {},
+ 							"box_style": {},
+ 							"grid_item_style": {},
+ 							"text_style": {}
+ 						}
+ 					}
+ 				},
+ 				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 6,
+ 					"inputs": [
  						{
  							"name": "qs3a_inf_narrative_f_static",
  							"type": "radio",
@@ -6755,6 +6886,15 @@
  						{
  							"type": "textblock",
  							"label": {
+ 								"de": "\u003cbr\u003e",
+ 								"en": "\u003cbr\u003e"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
  								"de": "\u003cb\u003e3b.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tBitte wählen Sie nun aus den folgenden Aussagen diejenige aus, die ihrer Meinung nach den Zusammenhang zwi\u0026shy;schen der \n\t\t\t\t\t\t\u003ci\u003eIn\u0026shy;fla\u0026shy;ti\u0026shy;onsentwicklung \u003c/i\u003e\n\t\t\t\t\t\tund dem \n\t\t\t\t\t\t\u003ci\u003eRendite-Risiko-Profil des DAX \u003c/i\u003e\n\t\t\t\t\t\tin \n\t\t\t\t\t\t\u003ci\u003e2023 \u003c/i\u003e\n\t\t\t\t\t\tam besten widerspiegelt:\n\t\t\t\t\t",
  								"en": "\u003cb\u003e3b.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tFrom the following statements, please select the one that, in your opinion, best reflects the relationship be\u0026shy;tween the \n\t\t\t\t\t\t\u003ci\u003ede\u0026shy;vel\u0026shy;op\u0026shy;ment of in\u0026shy;fla\u0026shy;ti\u0026shy;on \u003c/i\u003e\n\t\t\t\t\t\tand the \n\t\t\t\t\t\t\u003ci\u003erisk-return profile of the DAX\u003c/i\u003e\n\t\t\t\t\t\t in \n\t\t\t\t\t\t \u003ci\u003e2023\u003c/i\u003e\n\t\t\t\t\t\t :\n\n\t\t\t\t\t"
  							},
@@ -6771,8 +6911,8 @@
  							"name": "qs3b_inf_to_dax",
  							"type": "radio",
  							"label": {
- 								"de": "Eine Entspannung bei der In\u0026shy;fla\u0026shy;ti\u0026shy;onsentwicklung, eine weniger restriktive Geld\u0026shy;po\u0026shy;li\u0026shy;tik der EZB und nachlassende Rezessionsrisiken wirken sich \n\t\t\t\t\t\t\t\u003ci\u003epo\u0026shy;si\u0026shy;tiv\u003c/i\u003e \n\t\t\t\t\t\t\tauf das Rendite-Risiko-Profil in 2023 aus.",
- 								"en": "An easing in the de\u0026shy;vel\u0026shy;op\u0026shy;ment of in\u0026shy;fla\u0026shy;ti\u0026shy;on de\u0026shy;vel\u0026shy;op\u0026shy;ment, a less restrictive monetary stance by the ECB and diminishing recession risks have a \n\t\t\t\t\t\t\t\u003ci\u003epos\u0026shy;itive\u003c/i\u003e \n\t\t\t\t\t\t\timpact on the return-risk-profile in 2023."
+ 								"de": "Eine Entspannung bei der In\u0026shy;fla\u0026shy;ti\u0026shy;onsentwicklung, eine weniger restriktive Geld\u0026shy;po\u0026shy;li\u0026shy;tik der EZB und nachlassende Rezessionsrisiken wirken sich\n\t\t\t\t\t\t\t\t\u003ci\u003epo\u0026shy;si\u0026shy;tiv\u003c/i\u003e\n\t\t\t\t\t\t\t\tauf das Rendite-Risiko-Profil in 2023 aus.",
+ 								"en": "An easing in the de\u0026shy;vel\u0026shy;op\u0026shy;ment of in\u0026shy;fla\u0026shy;ti\u0026shy;on de\u0026shy;vel\u0026shy;op\u0026shy;ment, a less restrictive monetary stance by the ECB and diminishing recession risks have a\n\t\t\t\t\t\t\t\t\u003ci\u003epos\u0026shy;itive\u003c/i\u003e\n\t\t\t\t\t\t\t\timpact on the return-risk-profile in 2023."
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -6817,7 +6957,8 @@
  							}
  						}
  					],
- 					"randomization_group": 2
+ 					"randomization_group": 2,
+ 					"randomization_seed": 1
  				},
  				{
  					"bottom_vspacers": 1,
@@ -6827,8 +6968,8 @@
  							"name": "qs3b_inf_to_dax",
  							"type": "radio",
  							"label": {
- 								"de": "Den DAX-Konzernen gelingt es auch weiterhin, ihre stei\u0026shy;genden Kosten an ihre Kunden weiterzugeben. Die Gewinn-Margen der DAX-Konzerne werden deswegen un\u0026shy;ver\u0026shy;än\u0026shy;dert blei\u0026shy;ben oder sogar stei\u0026shy;gen, was sich \n\t\t\t\t\t\t\t\u003ci\u003epo\u0026shy;si\u0026shy;tiv\u003c/i\u003e \n\t\t\t\t\t\t\tauf das Rendite-Risiko-Profil des DAX in 2023 auswirkt. ",
- 								"en": "DAX companies will continue to succeed in passing on their rising costs to their customers. The profit margins of DAX companies will therefore re\u0026shy;main un\u0026shy;changed or even in\u0026shy;crease, which has a \n\t\t\t\t\t\t\t\u003ci\u003epos\u0026shy;itive\u003c/i\u003e \n\t\t\t\t\t\t\timpact on the return-risk-profile of the DAX in 2023."
+ 								"de": "Den DAX-Konzernen gelingt es auch weiterhin, ihre stei\u0026shy;genden Kosten an ihre Kunden weiterzugeben. Die Gewinn-Margen der DAX-Konzerne werden deswegen un\u0026shy;ver\u0026shy;än\u0026shy;dert blei\u0026shy;ben oder sogar stei\u0026shy;gen, was sich\n\t\t\t\t\t\t\t\t\u003ci\u003epo\u0026shy;si\u0026shy;tiv\u003c/i\u003e\n\t\t\t\t\t\t\t\tauf das Rendite-Risiko-Profil des DAX in 2023 auswirkt. ",
+ 								"en": "DAX companies will continue to succeed in passing on their rising costs to their customers. The profit margins of DAX companies will therefore re\u0026shy;main un\u0026shy;changed or even in\u0026shy;crease, which has a\n\t\t\t\t\t\t\t\t\u003ci\u003epos\u0026shy;itive\u003c/i\u003e\n\t\t\t\t\t\t\t\timpact on the return-risk-profile of the DAX in 2023."
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -6873,7 +7014,8 @@
  							}
  						}
  					],
- 					"randomization_group": 2
+ 					"randomization_group": 2,
+ 					"randomization_seed": 1
  				},
  				{
  					"bottom_vspacers": 1,
@@ -6883,8 +7025,8 @@
  							"name": "qs3b_inf_to_dax",
  							"type": "radio",
  							"label": {
- 								"de": "Die Entwicklung der In\u0026shy;fla\u0026shy;ti\u0026shy;on spielt für das Rendite-Risiko-Profil des DAX in 2023 \n\t\t\t\t\t\t\t\u003ci\u003ekei\u0026shy;ne Roll\u003c/i\u003ee\n\t\t\t\t\t\t\t.",
- 								"en": "The de\u0026shy;vel\u0026shy;op\u0026shy;ment of in\u0026shy;fla\u0026shy;ti\u0026shy;on does \n\t\t\t\t\t\t\t\u003ci\u003enot impact\u003c/i\u003e \n\t\t\t\t\t\t\tthe return-risk-profile of the DAX."
+ 								"de": "Die Entwicklung der In\u0026shy;fla\u0026shy;ti\u0026shy;on spielt für das Rendite-Risiko-Profil des DAX in 2023\n\t\t\t\t\t\t\t\t\u003ci\u003ekei\u0026shy;ne Roll\u003c/i\u003ee\n\t\t\t\t\t\t\t\t.",
+ 								"en": "The de\u0026shy;vel\u0026shy;op\u0026shy;ment of in\u0026shy;fla\u0026shy;ti\u0026shy;on does\n\t\t\t\t\t\t\t\t\u003ci\u003enot impact\u003c/i\u003e\n\t\t\t\t\t\t\t\tthe return-risk-profile of the DAX."
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -6929,7 +7071,8 @@
  							}
  						}
  					],
- 					"randomization_group": 2
+ 					"randomization_group": 2,
+ 					"randomization_seed": 1
  				},
  				{
  					"bottom_vspacers": 1,
@@ -6939,8 +7082,8 @@
  							"name": "qs3b_inf_to_dax",
  							"type": "radio",
  							"label": {
- 								"de": "\n\t\t\t\t\t\t\t\u003ci\u003ePos\u0026shy;itive\u003c/i\u003e \n\t\t\t\t\t\t\tund \n\t\t\t\t\t\t\t\u003ci\u003eneg\u0026shy;ative\u003c/i\u003e \n\t\t\t\t\t\t\tEffekte der In\u0026shy;fla\u0026shy;ti\u0026shy;on gleichen sich aus. Die Entwicklung der In\u0026shy;fla\u0026shy;ti\u0026shy;on ist daher insge\u0026shy;samt \n\t\t\t\t\t\t\t\u003ci\u003eneu\u0026shy;tral\u003c/i\u003e \n\t\t\t\t\t\t\tfür das Rendite-Risiko-Profil des DAX in 2023.",
- 								"en": "\n\t\t\t\t\t\t\t\u003ci\u003ePos\u0026shy;itive\u003c/i\u003e \n\t\t\t\t\t\t\tand \n\t\t\t\t\t\t\t\u003ci\u003eneg\u0026shy;ative\u003c/i\u003e \n\t\t\t\t\t\t\teffects of in\u0026shy;fla\u0026shy;ti\u0026shy;on cancel each other out. Overall, the de\u0026shy;vel\u0026shy;op\u0026shy;ment of in\u0026shy;fla\u0026shy;ti\u0026shy;on is \n\t\t\t\t\t\t\t\u003ci\u003eneu\u0026shy;tral\u003c/i\u003e \n\t\t\t\t\t\t\tfor the return-risk-profile of the DAX in 2023."
+ 								"de": "\t\u003ci\u003ePos\u0026shy;itive\u003c/i\u003e\n\t\t\t\t\t\t\t\tund\n\t\t\t\t\t\t\t\t\u003ci\u003eneg\u0026shy;ative\u003c/i\u003e\n\t\t\t\t\t\t\t\tEffekte der In\u0026shy;fla\u0026shy;ti\u0026shy;on gleichen sich aus. Die Entwicklung der In\u0026shy;fla\u0026shy;ti\u0026shy;on ist daher insge\u0026shy;samt\n\t\t\t\t\t\t\t\t\u003ci\u003eneu\u0026shy;tral\u003c/i\u003e\n\t\t\t\t\t\t\t\tfür das Rendite-Risiko-Profil des DAX in 2023.",
+ 								"en": "\n\t\t\t\t\t\t\t\t\u003ci\u003ePos\u0026shy;itive\u003c/i\u003e\n\t\t\t\t\t\t\t\tand\n\t\t\t\t\t\t\t\t\u003ci\u003eneg\u0026shy;ative\u003c/i\u003e\n\t\t\t\t\t\t\t\teffects of in\u0026shy;fla\u0026shy;ti\u0026shy;on cancel each other out. Overall, the de\u0026shy;vel\u0026shy;op\u0026shy;ment of in\u0026shy;fla\u0026shy;ti\u0026shy;on is\n\t\t\t\t\t\t\t\t\u003ci\u003eneu\u0026shy;tral\u003c/i\u003e\n\t\t\t\t\t\t\t\tfor the return-risk-profile of the DAX in 2023."
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -6985,7 +7128,8 @@
  							}
  						}
  					],
- 					"randomization_group": 2
+ 					"randomization_group": 2,
+ 					"randomization_seed": 1
  				},
  				{
  					"bottom_vspacers": 1,
@@ -6995,8 +7139,8 @@
  							"name": "qs3b_inf_to_dax",
  							"type": "radio",
  							"label": {
- 								"de": "Den DAX-Konzernen gelingt es nicht, ihre stei\u0026shy;genden Kosten an ihre Kunden weiterzugeben. Die Gewinn-Margen der DAX-Konzerne werden deswegen fallen, was sich \n\t\t\t\t\t\t\t\u003ci\u003ene\u0026shy;ga\u0026shy;tiv\u003c/i\u003e \n\t\t\t\t\t\t\tauf das Rendite-Risiko-Profil des DAX in 2023 auswirkt.",
- 								"en": "DAX companies will not to succeed in passing on their rising costs to their customers. The profit margins of DAX companies will therefore de\u0026shy;crease, which has a \n\t\t\t\t\t\t\t\u003ci\u003eneg\u0026shy;ative\u003c/i\u003e \n\t\t\t\t\t\t\timpact on the return-risk-profile of the DAX in 2023."
+ 								"de": "Den DAX-Konzernen gelingt es nicht, ihre stei\u0026shy;genden Kosten an ihre Kunden weiterzugeben. Die Gewinn-Margen der DAX-Konzerne werden deswegen fallen, was sich\n\t\t\t\t\t\t\t\t\u003ci\u003ene\u0026shy;ga\u0026shy;tiv\u003c/i\u003e\n\t\t\t\t\t\t\t\tauf das Rendite-Risiko-Profil des DAX in 2023 auswirkt.",
+ 								"en": "DAX companies will not to succeed in passing on their rising costs to their customers. The profit margins of DAX companies will therefore de\u0026shy;crease, which has a\n\t\t\t\t\t\t\t\t\u003ci\u003eneg\u0026shy;ative\u003c/i\u003e\n\t\t\t\t\t\t\t\timpact on the return-risk-profile of the DAX in 2023."
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -7041,7 +7185,8 @@
  							}
  						}
  					],
- 					"randomization_group": 2
+ 					"randomization_group": 2,
+ 					"randomization_seed": 1
  				},
  				{
  					"bottom_vspacers": 1,
@@ -7051,8 +7196,8 @@
  							"name": "qs3b_inf_to_dax",
  							"type": "radio",
  							"label": {
- 								"de": "Anhaltend hohe In\u0026shy;fla\u0026shy;ti\u0026shy;onsraten, weitere Zinserhöhungen durch die EZB und zunehmende Rezessionsrisiken wirken sich \n\t\t\t\t\t\t\t\u003ci\u003ene\u0026shy;ga\u0026shy;tiv\u003c/i\u003e \n\t\t\t\t\t\t\tauf das Rendite-Risiko-Profil des DAX in 2023 aus.",
- 								"en": "Persistently high in\u0026shy;fla\u0026shy;ti\u0026shy;on rates, further interest rate hikes by the ECB and increasing recession risks will have a \n\t\t\t\t\t\t\t\u003ci\u003eneg\u0026shy;ative\u003c/i\u003e \n\t\t\t\t\t\t\timpact on the return-risk-profile of the DAX in 2023."
+ 								"de": "Anhaltend hohe In\u0026shy;fla\u0026shy;ti\u0026shy;onsraten, weitere Zinserhöhungen durch die EZB und zunehmende Rezessionsrisiken wirken sich\n\t\t\t\t\t\t\t\t\u003ci\u003ene\u0026shy;ga\u0026shy;tiv\u003c/i\u003e\n\t\t\t\t\t\t\t\tauf das Rendite-Risiko-Profil des DAX in 2023 aus.\n\t\t\t\t\t\t",
+ 								"en": "Persistently high in\u0026shy;fla\u0026shy;ti\u0026shy;on rates, further interest rate hikes by the ECB and increasing recession risks will have a\n\t\t\t\t\t\t\t\t\u003ci\u003eneg\u0026shy;ative\u003c/i\u003e\n\t\t\t\t\t\t\t\timpact on the return-risk-profile of the DAX in 2023."
  							},
  							"col_span": 1,
  							"col_span_label": 1,
@@ -7097,7 +7242,8 @@
  							}
  						}
  					],
- 					"randomization_group": 2
+ 					"randomization_group": 2,
+ 					"randomization_seed": 1
  				},
  				{
  					"bottom_vspacers": 3,
@@ -7152,7 +7298,8 @@
  								}
  							}
  						}
- 					]
+ 					],
+ 					"randomization_seed": 1
  				}
  			]
  		},
@@ -7726,8 +7873,8 @@
  							"name": "qs4b_relevance",
  							"type": "radio",
  							"label": {
- 								"de": "Wie re\u0026shy;le\u0026shy;vant sind die Pro\u0026shy;gno\u0026shy;sen der Bundesbank für Ihre ei\u0026shy;ge\u0026shy;nen In\u0026shy;fla\u0026shy;ti\u0026shy;onspro\u0026shy;gno\u0026shy;sen für Deutsch\u0026shy;land?",
- 								"en": "How re\u0026shy;le\u0026shy;vant are the in\u0026shy;fla\u0026shy;ti\u0026shy;on forecasts of Bundesbank for your own in\u0026shy;fla\u0026shy;ti\u0026shy;on forecasts for Ger\u0026shy;ma\u0026shy;ny?"
+ 								"de": "\u003cb\u003e4b.\u003c/b\u003e \u0026nbsp; Wie re\u0026shy;le\u0026shy;vant sind die Pro\u0026shy;gno\u0026shy;sen der Bundesbank für Ihre ei\u0026shy;ge\u0026shy;nen In\u0026shy;fla\u0026shy;ti\u0026shy;onspro\u0026shy;gno\u0026shy;sen für Deutsch\u0026shy;land?",
+ 								"en": "\u003cb\u003e4b.\u003c/b\u003e \u0026nbsp; How re\u0026shy;le\u0026shy;vant are the in\u0026shy;fla\u0026shy;ti\u0026shy;on forecasts of Bundesbank for your own in\u0026shy;fla\u0026shy;ti\u0026shy;on forecasts for Ger\u0026shy;ma\u0026shy;ny?"
  							},
  							"col_span_label": 5,
  							"col_span_control": 1,
@@ -7869,8 +8016,8 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\u003cb\u003e4b.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tBundesbankpräsident Joachim Nagel äußert sich regelmäßig zum In\u0026shy;fla\u0026shy;ti\u0026shy;onsausblick für Deutsch\u0026shy;land. Im November 2022 äußerte er sich folgendermaßen: \"Auch im kommenden Jahr dürfte die In\u0026shy;fla\u0026shy;ti\u0026shy;onsrate in Deutsch\u0026shy;land hoch blei\u0026shy;ben. Ich halte es für wahrscheinlich, dass im Jahresdurchschnitt 2023 eine sieben vor dem Komma stehen wird\".\n\t\t\t\t\t\t",
- 								"en": "\u003cb\u003e4b.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tBundesbank president Joachim Nagel regularly comments on the in\u0026shy;fla\u0026shy;ti\u0026shy;on outlook for Ger\u0026shy;ma\u0026shy;ny. In November 2022, he commented as follows: \"The in\u0026shy;fla\u0026shy;ti\u0026shy;on rate in Ger\u0026shy;ma\u0026shy;ny is likely to re\u0026shy;main high in the coming year. I believe it is likely that the annual av\u0026shy;er\u0026shy;age for 2023 will have a seven before the decimal point.\"\n\t\t\t\t\t"
+ 								"de": "\n\t\t\t\t\tBundesbankpräsident Joachim Nagel äußert sich regelmäßig zum In\u0026shy;fla\u0026shy;ti\u0026shy;onsausblick für Deutsch\u0026shy;land. Im November 2022 äußerte er sich folgendermaßen: \"Auch im kommenden Jahr dürfte die In\u0026shy;fla\u0026shy;ti\u0026shy;onsrate in Deutsch\u0026shy;land hoch blei\u0026shy;ben. Ich halte es für wahrscheinlich, dass im Jahresdurchschnitt 2023 eine sieben vor dem Komma stehen wird\".\n\t\t\t\t\t\t",
+ 								"en": "\n\t\t\t\t\tBundesbank president Joachim Nagel regularly comments on the in\u0026shy;fla\u0026shy;ti\u0026shy;on outlook for Ger\u0026shy;ma\u0026shy;ny. In November 2022, he commented as follows: \"The in\u0026shy;fla\u0026shy;ti\u0026shy;on rate in Ger\u0026shy;ma\u0026shy;ny is likely to re\u0026shy;main high in the coming year. I believe it is likely that the annual av\u0026shy;er\u0026shy;age for 2023 will have a seven before the decimal point.\"\n\t\t\t\t\t"
  							},
  							"col_span": 1,
  							"col_span_label": 1

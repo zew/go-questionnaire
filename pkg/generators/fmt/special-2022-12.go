@@ -1,6 +1,8 @@
 package fmt
 
 import (
+	"fmt"
+
 	"github.com/zew/go-questionnaire/pkg/css"
 	"github.com/zew/go-questionnaire/pkg/qst"
 	"github.com/zew/go-questionnaire/pkg/trl"
@@ -25,7 +27,7 @@ func special202212(q *qst.QuestionnaireT) error {
 		}
 		page.Short = trl.S{
 			"de": "Sonderfragen<br>Ende 2022",
-			"en": "Special<br>end of 2022",
+			"en": "Special<br>End of 2022",
 		}
 		page.WidthMax("46rem")
 
@@ -85,7 +87,7 @@ func special202212(q *qst.QuestionnaireT) error {
 		}
 		page.Short = trl.S{
 			"de": "Sonderfragen<br>Ende 2022 - 2",
-			"en": "Special<br>end of 2022 - 2",
+			"en": "Special<br>End of 2022 - 2",
 		}
 		page.SuppressInProgressbar = true
 		page.WidthMax("54rem")
@@ -220,6 +222,21 @@ func special202212(q *qst.QuestionnaireT) error {
 
 		}
 
+		// gr3 - q3a dynamic
+		{
+			gr := page.AddGroup()
+			gr.Cols = 1
+			gr.BottomVSpacers = 1
+			{
+				inp := gr.AddInput()
+				inp.Type = "dyn-composite"
+				inp.DynamicFuncParamset = ""
+				inp.DynamicFunc = fmt.Sprintf("Special202212Q3__%v__%v", 0, 0)
+
+				inp.ColSpanControl = 1
+			}
+		}
+
 		//
 		// gr3 - q3a
 		{
@@ -264,12 +281,12 @@ func special202212(q *qst.QuestionnaireT) error {
 				columnTemplateLocal,
 				colLblsQ3a,
 				[]string{
-					"qs3a_inf_narrative_a",
-					"qs3a_inf_narrative_b",
-					"qs3a_inf_narrative_c",
-					"qs3a_inf_narrative_d",
-					"qs3a_inf_narrative_e",
-					"qs3a_inf_narrative_f",
+					"qs3a_inf_narrative_a_static",
+					"qs3a_inf_narrative_b_static",
+					"qs3a_inf_narrative_c_static",
+					"qs3a_inf_narrative_d_static",
+					"qs3a_inf_narrative_e_static",
+					"qs3a_inf_narrative_f_static",
 				},
 				radioVals6,
 				[]trl.S{
@@ -499,7 +516,7 @@ func special202212(q *qst.QuestionnaireT) error {
 		}
 		page.Short = trl.S{
 			"de": "Sonderfragen<br>Ende 2022 - 3",
-			"en": "Special<br>end of 2022 - 3",
+			"en": "Special<br>End of 2022 - 3",
 		}
 		page.SuppressInProgressbar = true
 		page.WidthMax("46rem")
@@ -664,7 +681,7 @@ func special202212(q *qst.QuestionnaireT) error {
 
 			lbl1 := trl.S{
 				"de": `
-					War Ihnen die Aussage von Bundesbankpräsident Joachim Nagel bereits bekannt?.
+					War Ihnen die Aussage von Bundesbankpräsident Joachim Nagel bereits bekannt?
 						`,
 				"en": `
 					Were you aware of this statement by Bundesbank president Joachim Nagel?
@@ -703,7 +720,7 @@ func special202212(q *qst.QuestionnaireT) error {
 		}
 		page.Short = trl.S{
 			"de": "Sonderfragen<br>Ende 2022 - 4",
-			"en": "Special<br>end of 2022 - 4",
+			"en": "Special<br>End of 2022 - 4",
 		}
 		page.SuppressInProgressbar = true
 		page.WidthMax("46rem")

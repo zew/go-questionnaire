@@ -800,6 +800,34 @@ func (q *QuestionnaireT) CurrentPageHTML() (string, error) {
 	return q.PageHTML(q.CurrPage)
 }
 
+/*
+	Interface compositeif
+
+	Seems hopeless to export the hierarchy of Questionnaire, Group, Input;
+	We must attach everything to the Questionnaire
+
+*/
+
+// AddGroupAtCurrentPage - for dynamic funcs
+func (q *QuestionnaireT) AddGroupAtCurrentPage() *groupT {
+	return q.Pages[q.CurrPage].AddGroup()
+}
+
+// GetLangCode -
+func (q *QuestionnaireT) GetLangCode() string {
+	return q.LangCode
+}
+
+// AddGroupWithInputs - for dynamic funcs
+func (q *QuestionnaireT) AddGroupWithInputs(names []string) {
+	cp := q.Pages[q.CurrPage]
+	gr := cp.AddGroup()
+	for i := 0; i < len(names); i++ {
+		inp := gr.AddInput()
+		inp.Name = names[i]
+	}
+}
+
 // shufflingGroupsT is a helper for RandomizeOrder()
 type shufflingGroupsT struct {
 	Orig     int // orig pos
@@ -1134,7 +1162,7 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 			compositCntr++
 			compFuncNameWithParamSet := page.Groups[grpIdx].Inputs[0].DynamicFunc
 			cF, seqIdx, paramSetIdx := validateComposite(pageIdx, grpIdx, compFuncNameWithParamSet)
-			grpHTML, _, err := cF(q, seqIdx, paramSetIdx)
+			grpHTML, _, err := cF(q, seqIdx, paramSetIdx) // QuestionnaireT must comply to compositeif.Q
 			if err != nil {
 				fmt.Fprintf(w, "composite func error %v \n", err)
 			} else {

@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "666d5813637dc7733f94d2a3230e9b150648100994112747bbe8762c5c99f988",
+ 	"md_5": "6a8b2a1b0fcd9dd8f845a5a78b267bb330c85be4d8cb6dcba158f8df715614e3",
  	"lang_codes": [
  		"de",
  		"en"
@@ -1390,7 +1390,7 @@
  			},
  			"short": {
  				"de": "Inflation,\u003cbr\u003eZinsen",
- 				"en": "Inflation,\u003cbr\u003eInter. Rates"
+ 				"en": "Inflation,\u003cbr\u003eInterest Rates"
  			},
  			"style": {
  				"desktop": {
@@ -4522,7 +4522,7 @@
  			},
  			"short": {
  				"de": "Sonderfragen\u003cbr\u003eEnde 2022",
- 				"en": "Special\u003cbr\u003eend of 2022"
+ 				"en": "Special\u003cbr\u003eEnd of 2022"
  			},
  			"style": {
  				"desktop": {
@@ -4571,7 +4571,7 @@
  			},
  			"short": {
  				"de": "Sonderfragen\u003cbr\u003eEnde 2022 - 2",
- 				"en": "Special\u003cbr\u003eend of 2022 - 2"
+ 				"en": "Special\u003cbr\u003eEnd of 2022 - 2"
  			},
  			"suppress_in_progressbar": true,
  			"style": {
@@ -4639,7 +4639,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "Un\u0026shy;ter\u0026shy;gren\u0026shy;ze des 90-Pro\u0026shy;zent-Kon\u0026shy;fi\u0026shy;denz\u0026shy;in\u0026shy;ter\u0026shy;valls",
- 								"en": "lower bound of the 90 per\u0026shy;cent confidence interval"
+ 								"en": "lower bound of the 90 per\u0026shy;cent con\u0026shy;fi\u0026shy;dence in\u0026shy;ter\u0026shy;val"
  							},
  							"col_span": 2,
  							"col_span_label": 1,
@@ -4667,7 +4667,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "Ober\u0026shy;gren\u0026shy;ze des 90-Pro\u0026shy;zent-Kon\u0026shy;fi\u0026shy;denz\u0026shy;in\u0026shy;ter\u0026shy;valls",
- 								"en": "upper bound of the 90 per\u0026shy;cent confidence interval"
+ 								"en": "upper bound of the 90 per\u0026shy;cent con\u0026shy;fi\u0026shy;dence in\u0026shy;ter\u0026shy;val"
  							},
  							"col_span": 2,
  							"col_span_label": 1,
@@ -5146,7 +5146,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "Un\u0026shy;ter\u0026shy;gren\u0026shy;ze des 90-Pro\u0026shy;zent-Kon\u0026shy;fi\u0026shy;denz\u0026shy;in\u0026shy;ter\u0026shy;valls",
- 								"en": "lower bound of the 90 per\u0026shy;cent confidence interval"
+ 								"en": "lower bound of the 90 per\u0026shy;cent con\u0026shy;fi\u0026shy;dence in\u0026shy;ter\u0026shy;val"
  							},
  							"col_span": 2,
  							"col_span_label": 1,
@@ -5174,7 +5174,7 @@
  							"type": "textblock",
  							"label": {
  								"de": "Ober\u0026shy;gren\u0026shy;ze des 90-Pro\u0026shy;zent-Kon\u0026shy;fi\u0026shy;denz\u0026shy;in\u0026shy;ter\u0026shy;valls",
- 								"en": "upper bound of the 90 per\u0026shy;cent confidence interval"
+ 								"en": "upper bound of the 90 per\u0026shy;cent con\u0026shy;fi\u0026shy;dence in\u0026shy;ter\u0026shy;val"
  							},
  							"col_span": 2,
  							"col_span_label": 1,
@@ -5427,6 +5427,17 @@
  					}
  				},
  				{
+ 					"bottom_vspacers": 1,
+ 					"columns": 1,
+ 					"inputs": [
+ 						{
+ 							"type": "dyn-composite",
+ 							"col_span_control": 1,
+ 							"dynamic_func": "Special202212Q3__0__0"
+ 						}
+ 					]
+ 				},
+ 				{
  					"bottom_vspacers": 3,
  					"columns": 6,
  					"inputs": [
@@ -5532,7 +5543,7 @@
  							"type": "label-as-input",
  							"label": {
  								"de": "stim\u0026shy;me weder zu noch lehne ab",
- 								"en": "un\u0026shy;decided"
+ 								"en": "un\u0026shy;de\u0026shy;cid\u0026shy;ed"
  							},
  							"col_span_control": 1,
  							"style": {
@@ -5706,7 +5717,7 @@
  							}
  						},
  						{
- 							"name": "qs3a_inf_narrative_a",
+ 							"name": "qs3a_inf_narrative_a_static",
  							"type": "radio",
  							"label": {
  								"de": "Eine Entspannung bei der In\u0026shy;fla\u0026shy;ti\u0026shy;onsentwicklung, eine weniger restriktive Geld\u0026shy;po\u0026shy;li\u0026shy;tik der EZB und nachlassende Rezessionsrisiken wirken sich \n\t\t\t\t\t\t\t\t\u003ci\u003epo\u0026shy;si\u0026shy;tiv\u003c/i\u003e \n\t\t\t\t\t\t\t\tauf das Rendite-Risiko-Profil in 2023 aus.",
@@ -5751,7 +5762,7 @@
  							}
  						},
  						{
- 							"name": "qs3a_inf_narrative_a",
+ 							"name": "qs3a_inf_narrative_a_static",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2",
@@ -5775,7 +5786,7 @@
  							}
  						},
  						{
- 							"name": "qs3a_inf_narrative_a",
+ 							"name": "qs3a_inf_narrative_a_static",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3",
@@ -5799,7 +5810,7 @@
  							}
  						},
  						{
- 							"name": "qs3a_inf_narrative_a",
+ 							"name": "qs3a_inf_narrative_a_static",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4",
@@ -5823,7 +5834,7 @@
  							}
  						},
  						{
- 							"name": "qs3a_inf_narrative_a",
+ 							"name": "qs3a_inf_narrative_a_static",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5",
@@ -5847,7 +5858,7 @@
  							}
  						},
  						{
- 							"name": "qs3a_inf_narrative_a",
+ 							"name": "qs3a_inf_narrative_a_static",
  							"type": "radio",
  							"col_span_label": 0.5,
  							"col_span_control": 1,
@@ -5872,7 +5883,7 @@
  							}
  						},
  						{
- 							"name": "qs3a_inf_narrative_b",
+ 							"name": "qs3a_inf_narrative_b_static",
  							"type": "radio",
  							"label": {
  								"de": "Den DAX-Konzernen gelingt es auch weiterhin, ihre stei\u0026shy;genden Kosten an ihre Kunden weiterzugeben. Die Gewinn-Margen der DAX-Konzerne werden deswegen un\u0026shy;ver\u0026shy;än\u0026shy;dert blei\u0026shy;ben oder sogar stei\u0026shy;gen, was sich \n\t\t\t\t\t\t\t\t\u003ci\u003epo\u0026shy;si\u0026shy;tiv\u003c/i\u003e \n\t\t\t\t\t\t\t\tauf das Rendite-Risiko-Profil des DAX in 2023 auswirkt. ",
@@ -5917,7 +5928,7 @@
  							}
  						},
  						{
- 							"name": "qs3a_inf_narrative_b",
+ 							"name": "qs3a_inf_narrative_b_static",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2",
@@ -5941,7 +5952,7 @@
  							}
  						},
  						{
- 							"name": "qs3a_inf_narrative_b",
+ 							"name": "qs3a_inf_narrative_b_static",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3",
@@ -5965,7 +5976,7 @@
  							}
  						},
  						{
- 							"name": "qs3a_inf_narrative_b",
+ 							"name": "qs3a_inf_narrative_b_static",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4",
@@ -5989,7 +6000,7 @@
  							}
  						},
  						{
- 							"name": "qs3a_inf_narrative_b",
+ 							"name": "qs3a_inf_narrative_b_static",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5",
@@ -6013,7 +6024,7 @@
  							}
  						},
  						{
- 							"name": "qs3a_inf_narrative_b",
+ 							"name": "qs3a_inf_narrative_b_static",
  							"type": "radio",
  							"col_span_label": 0.5,
  							"col_span_control": 1,
@@ -6038,7 +6049,7 @@
  							}
  						},
  						{
- 							"name": "qs3a_inf_narrative_c",
+ 							"name": "qs3a_inf_narrative_c_static",
  							"type": "radio",
  							"label": {
  								"de": "Die Entwicklung der In\u0026shy;fla\u0026shy;ti\u0026shy;on spielt für das Rendite-Risiko-Profil des DAX in 2023 \n\t\t\t\t\t\t\t\t\u003ci\u003ekei\u0026shy;ne Roll\u003c/i\u003ee\n\t\t\t\t\t\t\t\t.",
@@ -6083,7 +6094,7 @@
  							}
  						},
  						{
- 							"name": "qs3a_inf_narrative_c",
+ 							"name": "qs3a_inf_narrative_c_static",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2",
@@ -6107,7 +6118,7 @@
  							}
  						},
  						{
- 							"name": "qs3a_inf_narrative_c",
+ 							"name": "qs3a_inf_narrative_c_static",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3",
@@ -6131,7 +6142,7 @@
  							}
  						},
  						{
- 							"name": "qs3a_inf_narrative_c",
+ 							"name": "qs3a_inf_narrative_c_static",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4",
@@ -6155,7 +6166,7 @@
  							}
  						},
  						{
- 							"name": "qs3a_inf_narrative_c",
+ 							"name": "qs3a_inf_narrative_c_static",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5",
@@ -6179,7 +6190,7 @@
  							}
  						},
  						{
- 							"name": "qs3a_inf_narrative_c",
+ 							"name": "qs3a_inf_narrative_c_static",
  							"type": "radio",
  							"col_span_label": 0.5,
  							"col_span_control": 1,
@@ -6204,7 +6215,7 @@
  							}
  						},
  						{
- 							"name": "qs3a_inf_narrative_d",
+ 							"name": "qs3a_inf_narrative_d_static",
  							"type": "radio",
  							"label": {
  								"de": "\t\u003ci\u003ePos\u0026shy;itive\u003c/i\u003e \n\t\t\t\t\t\t\t\tund \n\t\t\t\t\t\t\t\t\u003ci\u003eneg\u0026shy;ative\u003c/i\u003e \n\t\t\t\t\t\t\t\tEffekte der In\u0026shy;fla\u0026shy;ti\u0026shy;on gleichen sich aus. Die Entwicklung der In\u0026shy;fla\u0026shy;ti\u0026shy;on ist daher insge\u0026shy;samt \n\t\t\t\t\t\t\t\t\u003ci\u003eneu\u0026shy;tral\u003c/i\u003e \n\t\t\t\t\t\t\t\tfür das Rendite-Risiko-Profil des DAX in 2023.",
@@ -6249,7 +6260,7 @@
  							}
  						},
  						{
- 							"name": "qs3a_inf_narrative_d",
+ 							"name": "qs3a_inf_narrative_d_static",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2",
@@ -6273,7 +6284,7 @@
  							}
  						},
  						{
- 							"name": "qs3a_inf_narrative_d",
+ 							"name": "qs3a_inf_narrative_d_static",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3",
@@ -6297,7 +6308,7 @@
  							}
  						},
  						{
- 							"name": "qs3a_inf_narrative_d",
+ 							"name": "qs3a_inf_narrative_d_static",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4",
@@ -6321,7 +6332,7 @@
  							}
  						},
  						{
- 							"name": "qs3a_inf_narrative_d",
+ 							"name": "qs3a_inf_narrative_d_static",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5",
@@ -6345,7 +6356,7 @@
  							}
  						},
  						{
- 							"name": "qs3a_inf_narrative_d",
+ 							"name": "qs3a_inf_narrative_d_static",
  							"type": "radio",
  							"col_span_label": 0.5,
  							"col_span_control": 1,
@@ -6370,7 +6381,7 @@
  							}
  						},
  						{
- 							"name": "qs3a_inf_narrative_e",
+ 							"name": "qs3a_inf_narrative_e_static",
  							"type": "radio",
  							"label": {
  								"de": "Den DAX-Konzernen gelingt es nicht, ihre stei\u0026shy;genden Kosten an ihre Kunden weiterzugeben. Die Gewinn-Margen der DAX-Konzerne werden deswegen fallen, was sich \n\t\t\t\t\t\t\t\t\u003ci\u003ene\u0026shy;ga\u0026shy;tiv\u003c/i\u003e \n\t\t\t\t\t\t\t\tauf das Rendite-Risiko-Profil des DAX in 2023 auswirkt.",
@@ -6415,7 +6426,7 @@
  							}
  						},
  						{
- 							"name": "qs3a_inf_narrative_e",
+ 							"name": "qs3a_inf_narrative_e_static",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2",
@@ -6439,7 +6450,7 @@
  							}
  						},
  						{
- 							"name": "qs3a_inf_narrative_e",
+ 							"name": "qs3a_inf_narrative_e_static",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3",
@@ -6463,7 +6474,7 @@
  							}
  						},
  						{
- 							"name": "qs3a_inf_narrative_e",
+ 							"name": "qs3a_inf_narrative_e_static",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4",
@@ -6487,7 +6498,7 @@
  							}
  						},
  						{
- 							"name": "qs3a_inf_narrative_e",
+ 							"name": "qs3a_inf_narrative_e_static",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5",
@@ -6511,7 +6522,7 @@
  							}
  						},
  						{
- 							"name": "qs3a_inf_narrative_e",
+ 							"name": "qs3a_inf_narrative_e_static",
  							"type": "radio",
  							"col_span_label": 0.5,
  							"col_span_control": 1,
@@ -6536,7 +6547,7 @@
  							}
  						},
  						{
- 							"name": "qs3a_inf_narrative_f",
+ 							"name": "qs3a_inf_narrative_f_static",
  							"type": "radio",
  							"label": {
  								"de": "Anhaltend hohe In\u0026shy;fla\u0026shy;ti\u0026shy;onsraten, weitere Zinserhöhungen durch die EZB und zunehmende Rezessionsrisiken wirken sich \n\t\t\t\t\t\t\t\t\u003ci\u003ene\u0026shy;ga\u0026shy;tiv\u003c/i\u003e \n\t\t\t\t\t\t\t\tauf das Rendite-Risiko-Profil des DAX in 2023 aus.\n\t\t\t\t\t\t",
@@ -6581,7 +6592,7 @@
  							}
  						},
  						{
- 							"name": "qs3a_inf_narrative_f",
+ 							"name": "qs3a_inf_narrative_f_static",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "2",
@@ -6605,7 +6616,7 @@
  							}
  						},
  						{
- 							"name": "qs3a_inf_narrative_f",
+ 							"name": "qs3a_inf_narrative_f_static",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "3",
@@ -6629,7 +6640,7 @@
  							}
  						},
  						{
- 							"name": "qs3a_inf_narrative_f",
+ 							"name": "qs3a_inf_narrative_f_static",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "4",
@@ -6653,7 +6664,7 @@
  							}
  						},
  						{
- 							"name": "qs3a_inf_narrative_f",
+ 							"name": "qs3a_inf_narrative_f_static",
  							"type": "radio",
  							"col_span_control": 1,
  							"value_radio": "5",
@@ -6677,7 +6688,7 @@
  							}
  						},
  						{
- 							"name": "qs3a_inf_narrative_f",
+ 							"name": "qs3a_inf_narrative_f_static",
  							"type": "radio",
  							"col_span_label": 0.5,
  							"col_span_control": 1,
@@ -7095,7 +7106,7 @@
  			},
  			"short": {
  				"de": "Sonderfragen\u003cbr\u003eEnde 2022 - 3",
- 				"en": "Special\u003cbr\u003eend of 2022 - 3"
+ 				"en": "Special\u003cbr\u003eEnd of 2022 - 3"
  			},
  			"suppress_in_progressbar": true,
  			"style": {
@@ -7945,7 +7956,7 @@
  							"name": "qs4c_known",
  							"type": "radio",
  							"label": {
- 								"de": "\u003cb\u003e4c.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tWar Ihnen die Aussage von Bundesbankpräsident Joachim Nagel bereits bekannt?.\n\t\t\t\t\t\t",
+ 								"de": "\u003cb\u003e4c.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tWar Ihnen die Aussage von Bundesbankpräsident Joachim Nagel bereits bekannt?\n\t\t\t\t\t\t",
  								"en": "\u003cb\u003e4c.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\tWere you aware of this statement by Bundesbank president Joachim Nagel?\n\t\t\t\t\t"
  							},
  							"col_span_label": 5,
@@ -8072,7 +8083,7 @@
  			},
  			"short": {
  				"de": "Sonderfragen\u003cbr\u003eEnde 2022 - 4",
- 				"en": "Special\u003cbr\u003eend of 2022 - 4"
+ 				"en": "Special\u003cbr\u003eEnd of 2022 - 4"
  			},
  			"suppress_in_progressbar": true,
  			"style": {
@@ -8226,7 +8237,7 @@
  							"type": "label-as-input",
  							"label": {
  								"de": "Punktpro\u0026shy;gno\u0026shy;se in Pro\u0026shy;zent",
- 								"en": "Point forecast in per\u0026shy;cent"
+ 								"en": "point forecast in per\u0026shy;cent"
  							},
  							"col_span": 3,
  							"col_span_label": 2,

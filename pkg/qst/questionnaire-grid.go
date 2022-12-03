@@ -608,14 +608,18 @@ func (q QuestionnaireT) InputHTMLGrid(pageIdx, grpIdx, inpIdx int, langCode stri
 
 		}
 
+		// 2022-12: rendering the title as tooltip dropped - too long - too many dangerous characters
+		// 		inside the input template:   title='%v %v'
+		// 		placeholder values:          inp.Label.TrSilent(q.LangCode), inp.Desc.TrSilent(q.LangCode),
+
 		ctrl += fmt.Sprintf(
 			`<input type='%v'  %v  
-				name='%v' id='%v' title='%v %v' 
+				name='%v' id='%v' 
 				style='%v'  
 				size='%v' maxlength=%v min='%v' max='%v' %v %v %v value='%v' %v %v />
 			`,
 			inp.Type, stepping,
-			nm, fmt.Sprintf("%v%v", nm, inp.ValueRadio), inp.Label.TrSilent(q.LangCode), inp.Desc.TrSilent(q.LangCode),
+			nm, fmt.Sprintf("%v%v", nm, inp.ValueRadio),
 			width,
 			inp.MaxChars, inp.MaxChars, inp.Min, inp.Max,
 			placeHolder, onInvalid, autocomplete,

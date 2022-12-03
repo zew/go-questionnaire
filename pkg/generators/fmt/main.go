@@ -435,7 +435,7 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 	{
 		page := q.AddPage()
 		page.Label = trl.S{"de": "Inflation und Zinsen", "en": "Inflation and Interest Rates"}
-		page.Short = trl.S{"de": "Inflation,<br>Zinsen", "en": "Inflation,<br>Inter. Rates"}
+		page.Short = trl.S{"de": "Inflation,<br>Zinsen", "en": "Inflation,<br>Interest Rates"}
 		page.WidthMax("36rem")
 
 		// gr0

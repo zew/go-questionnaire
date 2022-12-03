@@ -94,6 +94,8 @@ func Create(s qst.SurveyT) (*qst.QuestionnaireT, error) {
 
 	q.Hyphenize()
 	q.ComputeMaxGroups()
+	q.SetColspans()
+
 	if err := q.TranslationCompleteness(); err != nil {
 		return &q, err
 	}

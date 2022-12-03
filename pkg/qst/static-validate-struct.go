@@ -86,6 +86,47 @@ func (q *QuestionnaireT) TranslationCompleteness() error {
 	return nil
 }
 
+func (q *QuestionnaireT) SetColspans() {
+
+	for i1 := 0; i1 < len(q.Pages); i1++ {
+		for i2 := 0; i2 < len(q.Pages[i1].Groups); i2++ {
+			for i3 := 0; i3 < len(q.Pages[i1].Groups[i2].Inputs); i3++ {
+
+				inp := q.Pages[i1].Groups[i2].Inputs[i3]
+
+				// textblock  =>  span at least 1
+				if inp.Type == "textblock" {
+					if inp.ColSpanLabel == 0 {
+						q.Pages[i1].Groups[i2].Inputs[i3].ColSpanLabel = 1
+					}
+				}
+				// input label or desc not empty  =>  span > 0
+				if (!inp.Label.Empty() || !inp.Desc.Empty()) && inp.ColSpanLabel == 0 {
+					q.Pages[i1].Groups[i2].Inputs[i3].ColSpanLabel = 1
+					if inp.Type == "label-as-input" || inp.Type == "button" {
+						q.Pages[i1].Groups[i2].Inputs[i3].ColSpanLabel = 0
+					}
+				}
+
+				// button has label - but never colspanlabel
+				// we should create a special label for button?
+				if inp.Type == "button" {
+					q.Pages[i1].Groups[i2].Inputs[i3].ColSpanLabel = 0
+				}
+
+				if !inp.IsLabelOnly() && !inp.IsHidden() {
+					if inp.ColSpanControl == 0 {
+						if inp.Label == nil {
+							inp.ColSpanControl = 1
+						}
+					}
+				}
+
+			}
+		}
+	}
+}
+
 // Validate performs integrity tests - suitable for every request
 //
 //	waveId, langCodes valid?
@@ -141,40 +182,13 @@ func (q *QuestionnaireT) Validate() error {
 				inp := q.Pages[i1].Groups[i2].Inputs[i3]
 				s := fmt.Sprintf("Page %v - Group %v - Input %v - %8v: ", i1, i2, i3, inp.Name)
 
-				// textblock  =>  span at least 1
 				if inp.Type == "textblock" {
 					if inp.ColSpanControl > 0 {
 						return fmt.Errorf("%v: textblock should not have ColSpanControl > 0", s)
 					}
-					if inp.ColSpanLabel == 0 {
-						q.Pages[i1].Groups[i2].Inputs[i3].ColSpanLabel = 1
-					}
 					if inp.Name != "" {
 						return fmt.Errorf("%v: Type '%v' - no 'name' for textblock inputs ", s, inp.Type)
 					}
-				}
-
-				// input label or desc not empty  =>  span > 0
-				if (!inp.Label.Empty() || !inp.Desc.Empty()) && inp.ColSpanLabel == 0 {
-					q.Pages[i1].Groups[i2].Inputs[i3].ColSpanLabel = 1
-					if inp.Type == "label-as-input" || inp.Type == "button" {
-						q.Pages[i1].Groups[i2].Inputs[i3].ColSpanLabel = 0
-					}
-				}
-				/*
-					// same for colspan
-					if (!inp.Label.Empty() || !inp.Desc.Empty()) && inp.ColSpan == 0 {
-						q.Pages[i1].Groups[i2].Inputs[i3].ColSpan = 1
-						if inp.Type == "label-as-input" || inp.Type == "button" {
-							q.Pages[i1].Groups[i2].Inputs[i3].ColSpan = 0
-						}
-					}
-				*/
-
-				// button has label - but never colspanlabel
-				// we should create a special label for button?
-				if inp.Type == "button" {
-					q.Pages[i1].Groups[i2].Inputs[i3].ColSpanLabel = 0
 				}
 
 				// check input type
@@ -221,18 +235,6 @@ func (q *QuestionnaireT) Validate() error {
 					if inp.ValueRadio == "" {
 						// missing ValueRadio should be caught by non-unique inputs
 						return fmt.Errorf(s + fmt.Sprintf("%v - must have a distinct ValueRadio", s))
-					}
-				}
-
-				if !inp.IsLabelOnly() && !inp.IsHidden() {
-					if inp.ColSpanControl == 0 {
-
-						if inp.Label == nil {
-							inp.ColSpanControl = 1
-						} else {
-							return fmt.Errorf("%v has no ColSpanControl %v-%v", s, inp.Name, inp.Type)
-						}
-
 					}
 				}
 
@@ -317,17 +319,17 @@ func (q *QuestionnaireT) Validate() error {
 
 	for k, v := range names {
 		if v > 1 {
-			s := fmt.Sprintf("Page element '%v' is not unique  (%v)", k, v)
+			s := fmt.Sprintf("page element '%v' is not unique  (%v)", k, v)
 			log.Print(s)
 			return fmt.Errorf(s)
 		}
 		if k != strings.ToLower(k) {
-			s := fmt.Sprintf("Page element '%v' is not lower case  (%v)", k, v)
+			s := fmt.Sprintf("page element '%v' is not lower case  (%v)", k, v)
 			log.Print(s)
 			return fmt.Errorf(s)
 		}
 		if _, ok := namesRadio[k]; ok {
-			s := fmt.Sprintf("Page element '%v' input as radio and non-radio (%v)", k, v)
+			s := fmt.Sprintf("page element '%v' input as radio and non-radio (%v)", k, v)
 			log.Print(s)
 			return fmt.Errorf(s)
 		}
@@ -393,7 +395,6 @@ func (q *QuestionnaireT) Hyphenize() {
 // ComputeMaxGroups computes the maximum number of groups
 // and puts them into q.MaxGroups
 func (q *QuestionnaireT) ComputeMaxGroups() {
-
 	mG := 0
 	for i1 := 0; i1 < len(q.Pages); i1++ {
 		if len(q.Pages[i1].Groups) > mG {

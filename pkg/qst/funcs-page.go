@@ -59,40 +59,20 @@ func KeysValuesPageApply(q *QuestionnaireT, page *pageT, kv map[string]string) {
 
 func pds01(q *QuestionnaireT, page *pageT) error {
 
-	gn := pageGens.Increment()
+	kv := KeysValuesPageCollect(q, page)
+	defer KeysValuesPageApply(q, page, kv)
 
-	// depending on q
 	page.NoNavigation = false
 
-	/* 	if false {
-
-	   		// preserved stuff
-	   		gf := page.GeneratorFuncName
-
-	   		*page = pageT{
-	   			Label: trl.S{
-	   				"en": fmt.Sprintf("dyn page label %v", gn),
-	   				"de": fmt.Sprintf("dyn page label %v", gn),
-	   			},
-	   			Short: trl.S{
-	   				"en": fmt.Sprintf("dyn %v", gn),
-	   				"de": fmt.Sprintf("dyn %v", gn),
-	   			},
-	   			Desc:              trl.S{"en": "", "de": ""},
-	   			GeneratorFuncName: gf,
-	   		}
-	   		page.WidthMax("42rem")
-
-	   	}
-
-	*/
-
+	gn := pageGens.Increment()
 	lblMain := trl.S{
 		"en": fmt.Sprintf(`lbl main %v - lbl main lbl main lbl main`, gn),
 		"de": fmt.Sprintf(`lbl main %v - lbl main lbl main lbl main`, gn),
 	}
 
-	if page.Finished.IsZero() {
+	// if page.Finished.IsZero() {
+	page.Groups = nil
+	if true {
 
 		// gr1
 		{
@@ -122,13 +102,7 @@ func pds01(q *QuestionnaireT, page *pageT) error {
 
 		}
 
-	} else {
-		// previous input values
-		kv := KeysValuesPageCollect(q, page)
-		_ = kv
 	}
-
-	// dynpg.MyTest()
 
 	return nil
 
@@ -136,16 +110,14 @@ func pds01(q *QuestionnaireT, page *pageT) error {
 
 func fmt202212(q *QuestionnaireT, page *pageT) error {
 
-	var radioVals4 = []string{"1", "2", "3", "4"}
-
-	page.NoNavigation = false
-
 	kv := KeysValuesPageCollect(q, page)
 	defer KeysValuesPageApply(q, page, kv)
 
 	page.Groups = nil
-
 	if page.Finished.IsZero() || true {
+
+		page.NoNavigation = false
+		var radioVals4 = []string{"1", "2", "3", "4"}
 
 		//
 		// gr1 - q4a
@@ -284,6 +256,7 @@ func fmt202212(q *QuestionnaireT, page *pageT) error {
 				inp := gr.AddInput()
 				inp.Type = "textblock"
 				inp.ColSpan = gr.Cols
+				inp.ColSpanLabel = 1
 				inp.Label = trl.S{
 					"de": `
 					Bundesbankpräsident Joachim Nagel äußert sich regelmäßig zum Inflationsausblick für Deutschland. Im November 2022 äußerte er sich folgendermaßen: "Auch im kommenden Jahr dürfte die Inflationsrate in Deutschland hoch bleiben. Ich halte es für wahrscheinlich, dass im Jahresdurchschnitt 2023 eine sieben vor dem Komma stehen wird".
@@ -350,8 +323,6 @@ func fmt202212(q *QuestionnaireT, page *pageT) error {
 		}
 
 	}
-
-	// dynpg.MyTest()
 
 	return nil
 

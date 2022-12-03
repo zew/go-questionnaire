@@ -867,7 +867,8 @@ func (sg shufflingGroupsT) String() string {
 	return fmt.Sprintf("orig %02v -> shuff %02v - G%v Sd%v strt%02v seq%v", sg.Orig, sg.Shuffled, sg.GroupID, sg.RandomizationSeed, sg.Start, sg.Idx)
 }
 
-var debugShuffling = true
+// var debugShuffling = true
+var debugShuffling = false
 
 // RandomizeOrder creates a shuffled ordering of groups
 // determined by UserID and .RandomizationGroup;
@@ -1028,6 +1029,13 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 			log.Print(s)
 			return s, fmt.Errorf(s)
 		}
+		log.Printf("dyn page gen %q created %v groups", page.GeneratorFuncName, len(page.Groups))
+
+		// again
+		q.Hyphenize()
+		q.ComputeMaxGroups()
+		q.SetColspans()
+		// but not q.Validate
 	}
 
 	found := false

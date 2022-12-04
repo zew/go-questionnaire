@@ -1017,6 +1017,14 @@ func (q *QuestionnaireT) PageHTML(pageIdx int) (string, error) {
 
 	page := q.Pages[pageIdx]
 
+	kv := q.DynamicPageValues()
+	err := q.DynamicPages()
+	if err != nil {
+		err = fmt.Errorf("dyn page creation on joined q: %w", err)
+		return err.Error(), err
+	}
+	q.DynamicPagesApplyValues(kv)
+
 	found := false
 	for _, lc := range q.LangCodes {
 		if q.LangCode == lc {
@@ -1850,9 +1858,69 @@ func ParseJavaScript(tName string) (*template.Template, error) {
 	return tDerived, nil
 }
 
-// DynamicPages creates groups and input
-// based on dynamic conditions -
-// like q.UserID or values from other pages
+func (q *QuestionnaireT) DynamicPageValues() map[string]string {
+
+	ret := map[string]string{}
+
+	for i1 := 0; i1 < len(q.Pages); i1++ {
+		if q.Pages[i1].GeneratorFuncName == "" {
+			continue
+		}
+		// log.Printf("\t\tpage %vi1 is dynamic...", i1)
+		page := q.Pages[i1]
+		cleanse := false
+		for i2 := 0; i2 < len(page.Groups); i2++ {
+			for i3 := 0; i3 < len(page.Groups[i2].Inputs); i3++ {
+				if page.Groups[i2].Inputs[i3].IsLayout() {
+					continue
+				}
+				// keys = append(keys, page.Groups[i2].Inputs[i3].Name)
+				val := page.Groups[i2].Inputs[i3].Response
+				if cleanse {
+					if page.Groups[i2].Inputs[i3].Type == "number" {
+						val = DelocalizeNumber(val)
+					}
+					val = EnglishTextAndNumbersOnly(val)
+				}
+				key := page.Groups[i2].Inputs[i3].Name
+				ret[key] = val
+				// log.Printf("\t\t\tkey %v - val %v", key, val)
+			}
+		}
+	}
+
+	return ret
+}
+func (q *QuestionnaireT) DynamicPagesApplyValues(kv map[string]string) {
+	for i1 := 0; i1 < len(q.Pages); i1++ {
+		if q.Pages[i1].GeneratorFuncName == "" {
+			continue
+		}
+		page := q.Pages[i1]
+		for i2 := 0; i2 < len(page.Groups); i2++ {
+			for i3 := 0; i3 < len(page.Groups[i2].Inputs); i3++ {
+				if page.Groups[i2].Inputs[i3].IsLayout() {
+					continue
+				}
+				key := page.Groups[i2].Inputs[i3].Name
+				page.Groups[i2].Inputs[i3].Response = kv[key]
+			}
+		}
+	}
+}
+
+// DynamicPages dynamically re-creates groups and inputs
+// based on conditions like q.UserID or values from other pages;
+//
+// there are three issues integrating this methon with the Join() method:
+//
+//   - the structure depends on user input from other pages - we must call Join() first
+//   - Join() will see distinct structures for groups/inputs beween base (empty) and split (previously entered data) - we coded an exception
+//   - DynamicPages() will now create re-groups and _empty_ inputs
+//   - We now pull _previous_ dynamic page values (qSplit.DynamicPageValues) and apply them to the joined questionnaire
+//
+// We have to do a similar thing in PageHTML()
+// because conditional values in other forms may have changed
 func (q *QuestionnaireT) DynamicPages() error {
 
 	dynPagesCreated := false

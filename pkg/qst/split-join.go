@@ -12,7 +12,8 @@ func (q *QuestionnaireT) Split() (*QuestionnaireT, error) {
 	for i1 := 0; i1 < len(q.Pages); i1++ {
 		p2 := q2.AddPage()
 		p2.Finished = q.Pages[i1].Finished
-		p2.Label = q.Pages[i1].Label // for debugging
+		p2.Label = q.Pages[i1].Label                         // for debugging
+		p2.GeneratorFuncName = q.Pages[i1].GeneratorFuncName // essential for joining later
 		for i2 := 0; i2 < len(q.Pages[i1].Groups); i2++ {
 			if q.Pages[i1].Groups[i2].ID == "footer" {
 				continue
@@ -43,15 +44,17 @@ func (q *QuestionnaireT) Split() (*QuestionnaireT, error) {
 
 // Join adds user input from q2 onto q
 func (q *QuestionnaireT) Join(q2 *QuestionnaireT) error {
+
+	// preflight: check identical structures of both questionnaires
 	if len(q.Pages) != len(q2.Pages) {
 		return fmt.Errorf("qBase has %v pages - q2 %v", len(q.Pages), len(q2.Pages))
 	}
 	for i1 := 0; i1 < len(q.Pages); i1++ {
 		for i2 := 0; i2 < len(q.Pages[i1].Groups); i2++ {
 			if q.Pages[i1].GeneratorFuncName != "" {
+				// see DynamicPages()
 				continue
 			}
-
 			if len(q.Pages[i1].Groups) != len(q2.Pages[i1].Groups) {
 				return fmt.Errorf("qBase page %v has %v groups - q2 %v", i1, len(q.Pages[i1].Groups), len(q2.Pages[i1].Groups))
 			}

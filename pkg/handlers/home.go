@@ -6,6 +6,7 @@ import (
 	"log"
 	"net/http"
 	"path"
+	"sort"
 	"strings"
 	"time"
 
@@ -56,38 +57,46 @@ func loadQuestionnaire(w http.ResponseWriter, r *http.Request, l *lgn.LoginT) (*
 		return q, err
 	}
 
-	pth := l.QuestPath()
+	pth := l.QuestPath() // file path based on login user ID
 	log.Printf("Deriving path: %v", pth)
-	qSplit, err := qst.Load1(pth) // previous session
+	qSplit, err := qst.Load1(pth) // loading file containing previous answers for login user ID
 	if err != nil {
 
 		if !cloudio.IsNotExist(err) {
+			// error _other_ than non-existing file
 			return q, err
 		}
-		// is not exist...
+
+		// no file containing previous answers
+		// => adopt qBase
 		qBase.UserID = l.User
 		log.Printf("No previous user questionnaire file %v found. Using base file.", pth)
 
-		// dynamic pages based on user id
+		// dynamic pages based on login user ID
 		err = qBase.DynamicPages()
 		if err != nil {
-			err = fmt.Errorf("dyn page creation %w", err)
+			err = fmt.Errorf("dyn page creation on base q: %w", err)
 			return q, err
 		}
 
 	} else {
 
-		err = qBase.DynamicPages()
+		// found existing file containing previous answers for login user ID
+
+		err = qBase.Join(qSplit) // joining previous answers onto base questionnaire
 		if err != nil {
-			err = fmt.Errorf("joined questionnaire dyn page creation %w", err)
+			log.Printf("\tjoining base questionnaire with user data yielded error:    %v", err)
 			return q, err
 		}
 
-		err = qBase.Join(qSplit)
+		err = qBase.DynamicPages()
 		if err != nil {
-			log.Printf("\tJoining base questionnaire with user data yielded error:    %v", err)
+			err = fmt.Errorf("dyn page creation on joined q: %w", err)
 			return q, err
 		}
+		kv := qSplit.DynamicPageValues() // notice we fetch the values from qSplit
+		qBase.DynamicPagesApplyValues(kv)
+		log.Printf("\tdyn page values applied: #%v", len(kv))
 
 	}
 
@@ -101,12 +110,12 @@ func loadQuestionnaire(w http.ResponseWriter, r *http.Request, l *lgn.LoginT) (*
 	// since 2021-10 the base file contains the wave id;
 	// thus following two checks are much less important
 	if q.Survey.Type != l.Attrs["survey_id"] {
-		err = fmt.Errorf("Logged in for survey %v - but template is for %v", l.Attrs["survey_id"], q.Survey.Type)
+		err = fmt.Errorf("logged in for survey %v - but template is for %v", l.Attrs["survey_id"], q.Survey.Type)
 		return q, err
 	}
 
 	if q.Survey.WaveID() != l.Attrs["wave_id"] {
-		err = fmt.Errorf("Logged in for wave %v - but template is for %v", l.Attrs["wave_id"], q.Survey.WaveID())
+		err = fmt.Errorf("logged in for wave %v - but template is for %v", l.Attrs["wave_id"], q.Survey.WaveID())
 		return q, err
 	}
 
@@ -334,8 +343,19 @@ func MainH(w http.ResponseWriter, r *http.Request) {
 			}
 		}
 	}
+	empty := make([]string, 0, 20)
 	for inpName, val := range savedFields {
-		log.Printf("(Page#%2v) Setting %-24q to '%v'", prevPage, inpName, val)
+		if val != "" && val != "0" {
+			log.Printf("(Page#%2v) %-32q => '%v'", prevPage, inpName, val)
+		} else {
+			empty = append(empty, inpName)
+		}
+	}
+	if len(empty) > 0 {
+		if len(empty) > 3 {
+			sort.Strings(empty)
+		}
+		log.Printf("(Page#%2v) empty or '0' fields '%v'", prevPage, strings.Join(empty, ", "))
 	}
 
 	// based on most recent input values

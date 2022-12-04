@@ -212,7 +212,7 @@ func LoginByHash(w http.ResponseWriter, r *http.Request) (bool, error) {
 		sess.PutString("override_closure", "true")
 	}
 
-	log.Printf("logging in as %v with attrs %v type %T", u, l.Attrs, l)
+	log.Printf("logging in %v - attrs %v ; %T", u, l.Attrs, l)
 	sess.PutObject("login", l)
 	log.Printf("login saved to session as %T from loginByHash", l)
 

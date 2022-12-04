@@ -125,22 +125,21 @@ func TestSystem(t *testing.T) {
 		}
 
 		// t.Logf("Found questionnaire template %v", f.Key)
-
-		// pth := path.Join(".", tplDir, f.Key)
-		q, err := qst.Load1(f.Key)
+		qTpl, err := qst.Load1(f.Key) // qTpl merely stores some settings for later function calls to read
 		if err != nil {
 			t.Fatalf("Could not load %v: %v", f.Key, err)
 		}
-		err = q.Validate()
+		log.Printf("No previous user questionnaire file %v found. Using base file.", f.Key)
+		err = qTpl.Validate()
 		if err != nil {
 			t.Fatalf("Questionnaire validation caused error %v: %v", f.Key, err)
 		}
 
-		t.Logf("\tquesionnaire type - survey-id: %v - %v", q.Survey.String(), f.Key)
+		t.Logf("\tquestionnaire type - survey-id: %v - %v", qTpl.Survey.String(), f.Key)
 
 		userName := "systemtest"
-		surveyID := q.Survey.Type
-		waveID := q.Survey.WaveID()
+		surveyID := qTpl.Survey.Type
+		waveID := qTpl.Survey.WaveID()
 
 		loginURL := lgn.LoginURL(userName, surveyID, waveID, "")
 		loginURL += "&override_closure=true"
@@ -148,13 +147,13 @@ func TestSystem(t *testing.T) {
 
 		if false {
 			// Deadline exceeded?
-			if time.Now().After(q.Survey.Deadline) {
-				s := cfg.Get().Mp["deadline_exceeded"].All(q.Survey.Deadline.Format("02.01.2006 15:04"))
+			if time.Now().After(qTpl.Survey.Deadline) {
+				s := cfg.Get().Mp["deadline_exceeded"].All(qTpl.Survey.Deadline.Format("02.01.2006 15:04"))
 				if len(s) > 100 {
 					s = s[:100]
 				}
 				t.Logf("%v", s)
-				t.Logf("Cannot test questionnaire that which are already closed: %v\n\n", q.Survey.Type)
+				t.Logf("Cannot test questionnaire that which are already closed: %v\n\n", qTpl.Survey.Type)
 				continue
 			}
 		}
@@ -171,7 +170,7 @@ func TestSystem(t *testing.T) {
 		// }
 
 		// call with last arg "0" was for http user agend based differentiation of mobile or desktop rendering
-		systemtest.SimulateLoad(t, q, loginURL, "1")
+		systemtest.SimulateLoad(t, qTpl, loginURL, "1")
 
 	}
 

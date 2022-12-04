@@ -10,7 +10,6 @@
 //
 // Working dir will be initially /go-questionnaire/systemtest,
 // but will be stepped up one dir in code below.
-//
 package systemtest
 
 import (
@@ -40,7 +39,7 @@ func main() {
 
 }
 
-//                 type    page    inpName  value
+// type    page    inpName  value
 var presets = map[string]map[int]map[string]string{
 	"pat1": {
 		3: {
@@ -328,7 +327,6 @@ func clientPageToServer(t *testing.T, clQ *qst.QuestionnaireT, idxPage int,
 //
 // qSrc is the basic survey template file for iterating pages and inputs
 // clQ  is a fake user response file - recording the data requested to the test server - "client questionnaire"
-//
 func FillQuestAndComparesServerResult(t *testing.T, qSrc *qst.QuestionnaireT, urlMain string, sessCook *http.Cookie) {
 
 	var clQ = &qst.QuestionnaireT{} // see func description
@@ -367,6 +365,12 @@ func FillQuestAndComparesServerResult(t *testing.T, qSrc *qst.QuestionnaireT, ur
 			t.Fatalf("Client questionnaire validation caused error: %v", err)
 		}
 	*/
+	// dynamic pages based on login user ID
+	err = clQ.DynamicPages()
+	if err != nil {
+		t.Fatalf("dyn page creation on client q: %v", err)
+	}
+
 	t.Logf("Client questionnaire loaded from file; %v pages", len(clQ.Pages))
 
 	// After UserID have been set => deletion possible

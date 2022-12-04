@@ -59,15 +59,28 @@ Go Version 1.__16__
 
 * Text blocks, support pages in several languages - written in simple `markdown` format
 
-* Fully dynamic questions based on login profile  
+* Dynamic question texts based on login profile  
 
-  * Distinct questions depending Euro membership
+  * Dynamic textblocks  
+    depending Euro membership, or industry sector  
+    or based on previous answers
+  * Based on function map `dynFuncs`
 
-  * Distinct questions by industry sector
+* Dynamic page structures based on `page`.`GeneratorFuncName`
+  
+  * Standard methods `AddGroup`, `AddInput` available 
+  * Structure dynamic
+  * Based on function map `funcPGs`
 
-  * Dynamic questions based on previous answers
+* Page structure dynamic
+  * Show or suppress any page dynamically
+  * Based on function map `funcPGs`
 
-* Dynamic page structures based on `page`.`GeneratorFuncName` and function map `funcPGs`
+* Free HTML questions
+  * function map `CompositeFuncs` allows groups  
+    to render custom HTML form elements
+  * Most ugly from the architectural perspective,  
+    but supports totally free HTML
 
 * Customization for each wave
 

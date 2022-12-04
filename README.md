@@ -67,6 +67,8 @@ Go Version 1.__16__
 
   * Dynamic questions based on previous answers
 
+* Dynamic page structures based on `page`.`GeneratorFuncName` and function map `funcPGs`
+
 * Customization for each wave
 
   * Reference interest rates in question text

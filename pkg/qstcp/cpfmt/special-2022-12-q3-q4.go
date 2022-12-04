@@ -46,7 +46,7 @@ func Special202212Q3(q qstif.Q, seq0to5, paramSetIdx int, preflight bool) (strin
 			"de": `Eine Entspannung bei der Inflationsentwicklung, eine weniger restriktive Geldpolitik der EZB und nachlassende Rezessionsrisiken wirken sich
 					<i>positiv</i>
 					auf das Rendite-Risiko-Profil in 2023 aus.`,
-			"en": `An easing in the development of inflation development, a less restrictive monetary stance by the ECB and diminishing recession risks have a
+			"en": `An easing in the development of inflation, a less restrictive monetary stance by the ECB and diminishing recession risks have a
 					<i>positive</i>
 					impact on the return-risk-profile in 2023.`,
 		},

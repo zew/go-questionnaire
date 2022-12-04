@@ -228,7 +228,7 @@ func special202212(q *qst.QuestionnaireT) error {
 				"de": `Eine Entspannung bei der Inflationsentwicklung, eine weniger restriktive Geldpolitik der EZB und nachlassende Rezessionsrisiken wirken sich
 								<i>positiv</i>
 								auf das Rendite-Risiko-Profil in 2023 aus.`,
-				"en": `An easing in the development of inflation development, a less restrictive monetary stance by the ECB and diminishing recession risks have a
+				"en": `An easing in the development of inflation, a less restrictive monetary stance by the ECB and diminishing recession risks have a
 								<i>positive</i>
 								impact on the return-risk-profile in 2023.`,
 			},
@@ -405,20 +405,20 @@ func special202212(q *qst.QuestionnaireT) error {
 				"qs3a_inf_narrative_f",
 			}
 
-			if false {
-				gb := qst.NewGridBuilderRadios(
-					columnTemplateLocal,
-					colLblsQ3a,
-					inpNames,
-					radioVals6,
-					rowLbls3a3b,
-				)
+			// if false {
+			// 	gb := qst.NewGridBuilderRadios(
+			// 		columnTemplateLocal,
+			// 		colLblsQ3a,
+			// 		inpNames,
+			// 		radioVals6,
+			// 		rowLbls3a3b,
+			// 	)
 
-				gb.MainLabel = nil
-				gr := page.AddGrid(gb)
-				gr.RandomizationGroup = 1
-				gr.RandomizationSeed = 0
-			}
+			// 	gb.MainLabel = nil
+			// 	gr := page.AddGrid(gb)
+			// 	gr.RandomizationGroup = 1
+			// 	gr.RandomizationSeed = 0
+			// }
 
 			for i := 0; i < len(inpNames); i++ {
 				gb := qst.NewGridBuilderRadios(
@@ -551,7 +551,6 @@ func special202212(q *qst.QuestionnaireT) error {
 
 	//
 	//
-	// if false {
 	if true {
 		page := q.AddPage()
 		page.GeneratorFuncName = "fmt202212"
@@ -569,218 +568,6 @@ func special202212(q *qst.QuestionnaireT) error {
 		page.SuppressInProgressbar = true
 		page.WidthMax("54rem")
 
-	} else {
-
-		//
-		//
-		{
-			page := q.AddPage()
-			page.Label = trl.S{
-				"de": "Sonderbefragung zum Jahresende 2022 - 3",
-				"en": "Special questions December 2022 - 3",
-			}
-			page.Short = trl.S{
-				"de": "Sonderfragen<br>Ende 2022 - 3",
-				"en": "Special<br>End of 2022 - 3",
-			}
-			page.SuppressInProgressbar = true
-			page.WidthMax("46rem")
-			page.WidthMax("54rem")
-
-			//
-			// gr1 - q4a
-			{
-
-				colLblsQ4 := []trl.S{
-					{
-						"de": "Meinen eigenen Analysen",
-						"en": "My own analyses",
-					},
-					{
-						"de": "Analysen von Experten/-innen aus meinem Unternehmen",
-						"en": "Analyses by experts in my company",
-					},
-					{
-						"de": "Analysen aus externen Quellen",
-						"en": "Analyses from external sources",
-					},
-
-					{
-						"de": "keine<br>Angabe",
-						"en": "no answer",
-					},
-				}
-
-				var columnTemplateLocal = []float32{
-					4.0, 1,
-					0.0, 1,
-					0.0, 1,
-					0.5, 1,
-				}
-				gb := qst.NewGridBuilderRadios(
-					columnTemplateLocal,
-					colLblsQ4,
-					[]string{
-						"qs4a_growth",
-						"qs4a_inf",
-						"qs4a_dax",
-					},
-					radioVals4,
-					[]trl.S{
-						{
-							"de": `Wirtschaftswachstum Deutschland`,
-							"en": `GDP growth, Germany`,
-						},
-						{
-							"de": `Inflation in Deutschland`,
-							"en": `Inflation, Germany`,
-						},
-						{
-							"de": `Entwicklung des DAX`,
-							"en": `Developments of the DAX`,
-						},
-					},
-				)
-
-				gb.MainLabel = trl.S{
-					"de": `
-	   						Meine Einschätzungen mit Blick auf die folgenden Bereiche beruhen hauptsächlich auf
-	   					`,
-					"en": `
-	   						My expectations with respect to the following areas are mainly based on
-	   					`,
-				}.Outline("4a.")
-
-				gr := page.AddGrid(gb)
-				_ = gr
-			}
-
-			//
-			// gr2 - q4b
-			{
-				mainLbl4b := trl.S{
-					"de": `Wie relevant sind die Prognosen der Bundesbank für Ihre eigenen Inflationsprognosen für Deutschland?`,
-					"en": `How relevant are the inflation forecasts of Bundesbank for your own inflation forecasts for Germany?`,
-				}.Outline("4b.")
-
-				colLbls4b := []trl.S{
-					{
-						"de": "nicht relevant",
-						"en": "not relevant",
-					},
-					{
-						"de": "leicht relevant",
-						"en": "slightly relevant",
-					},
-					{
-						"de": "stark relevant",
-						"en": "highly relevant",
-					},
-
-					{
-						"de": "keine<br>Angabe",
-						"en": "no answer",
-					},
-				}
-
-				var columnTemplateLocal = []float32{
-					5.0, 1,
-					0.0, 1,
-					0.0, 1,
-					0.5, 1,
-				}
-				gb := qst.NewGridBuilderRadios(
-					columnTemplateLocal,
-					colLbls4b,
-					[]string{
-						"qs4b_relevance",
-					},
-					radioVals4,
-					[]trl.S{
-						mainLbl4b,
-					},
-				)
-
-				gr := page.AddGrid(gb)
-				gr.Style = css.NewStylesResponsive(gr.Style)
-				gr.Style.Desktop.StyleGridContainer.GapColumn = "1.2rem"
-				gr.BottomVSpacers = 1
-				_ = gr
-			}
-
-			{
-				gr := page.AddGroup()
-				gr.Cols = 1
-				{
-					inp := gr.AddInput()
-					inp.Type = "textblock"
-					inp.ColSpan = gr.Cols
-					inp.Label = trl.S{
-						"de": `
-	   					Bundesbankpräsident Joachim Nagel äußert sich regelmäßig zum Inflationsausblick für Deutschland. Im November 2022 äußerte er sich folgendermaßen: "Auch im kommenden Jahr dürfte die Inflationsrate in Deutschland hoch bleiben. Ich halte es für wahrscheinlich, dass im Jahresdurchschnitt 2023 eine sieben vor dem Komma stehen wird".
-	   						`,
-						"en": `
-	   					Bundesbank president Joachim Nagel regularly comments on the inflation outlook for Germany. In November 2022, he commented as follows: "The inflation rate in Germany is likely to remain high in the coming year. I believe it is likely that the annual average for 2023 will have a seven before the decimal point."
-	   					`,
-					}
-
-				}
-			}
-
-			//
-			// gr3 - q4c
-			{
-
-				colLbls4c := []trl.S{
-					{
-						"de": "ja",
-						"en": "yes",
-					},
-					{
-						"de": "nein",
-						"en": "no",
-					},
-					{
-						"de": "keine<br>Angabe",
-						"en": "no answer",
-					},
-				}
-
-				var columnTemplateLocal = []float32{
-					5.0, 1,
-					0.0, 1,
-					0.5, 1,
-				}
-
-				lbl1 := trl.S{
-					"de": `
-	   					War Ihnen die Aussage von Bundesbankpräsident Joachim Nagel bereits bekannt?
-	   						`,
-					"en": `
-	   					Were you aware of this statement by Bundesbank president Joachim Nagel?
-	   					`,
-				}.Outline("4c.")
-
-				gb := qst.NewGridBuilderRadios(
-					columnTemplateLocal,
-					colLbls4c,
-					[]string{
-						"qs4c_known",
-					},
-					radioVals4,
-					[]trl.S{
-						lbl1,
-					},
-				)
-
-				// gb.MainLabel =
-
-				gr := page.AddGrid(gb)
-				gr.Style = css.NewStylesResponsive(gr.Style)
-				gr.Style.Desktop.StyleGridContainer.GapColumn = "1.2rem"
-			}
-
-		}
 	}
 
 	{

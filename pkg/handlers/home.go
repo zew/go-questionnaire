@@ -49,9 +49,10 @@ func loadQuestionnaire(w http.ResponseWriter, r *http.Request, l *lgn.LoginT) (*
 	if l.Attrs["survey_variant"] != "" {
 		pthBase = path.Join(qst.BasePath(), fnCore+"-"+l.Attrs["survey_variant"]+".json")
 	}
+
 	qBase, err := qst.Load1(pthBase)
 	if err != nil {
-		err = fmt.Errorf("Loading base questionnaire from template file caused error %w", err)
+		err = fmt.Errorf("loading base questionnaire from template file caused error %w", err)
 		return q, err
 	}
 
@@ -59,24 +60,41 @@ func loadQuestionnaire(w http.ResponseWriter, r *http.Request, l *lgn.LoginT) (*
 	log.Printf("Deriving path: %v", pth)
 	qSplit, err := qst.Load1(pth) // previous session
 	if err != nil {
+
 		if !cloudio.IsNotExist(err) {
 			return q, err
 		}
 		// is not exist...
 		qBase.UserID = l.User
 		log.Printf("No previous user questionnaire file %v found. Using base file.", pth)
+
+		// dynamic pages based on user id
+		err = qBase.DynamicPages()
+		if err != nil {
+			err = fmt.Errorf("dyn page creation %w", err)
+			return q, err
+		}
+
 	} else {
+
+		err = qBase.DynamicPages()
+		if err != nil {
+			err = fmt.Errorf("joined questionnaire dyn page creation %w", err)
+			return q, err
+		}
+
 		err = qBase.Join(qSplit)
 		if err != nil {
 			log.Printf("\tJoining base questionnaire with user data yielded error:    %v", err)
 			return q, err
 		}
+
 	}
 
 	q = qBase
 	err = q.Validate()
 	if err != nil {
-		err = fmt.Errorf("Joined questionnaire validation error %w", err)
+		err = fmt.Errorf("joined questionnaire validation error %w", err)
 		return q, err
 	}
 

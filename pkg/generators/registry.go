@@ -167,12 +167,12 @@ func GenerateQuestionnaireTemplates(w http.ResponseWriter, r *http.Request) {
 				rdr := &bytes.Buffer{}
 				err := cloudio.WriteFile(pth, rdr, 0755)
 				if err != nil {
-					return false, myfmt.Errorf("Could not create %v: %v <br>\n", pth, err)
+					return false, myfmt.Errorf("could not create %v: %v <br>\n", pth, err)
 				}
 				myfmt.Fprintf(w, "Done creating template %v<br>\n", pth)
 				return true, nil
 			}
-			return false, myfmt.Errorf("Other error while checking for %v: %v <br>\n", pth, err)
+			return false, myfmt.Errorf("other error while checking for %v: %v <br>\n", pth, err)
 		}
 		return false, nil
 	}

@@ -48,6 +48,10 @@ func (q *QuestionnaireT) Join(q2 *QuestionnaireT) error {
 	}
 	for i1 := 0; i1 < len(q.Pages); i1++ {
 		for i2 := 0; i2 < len(q.Pages[i1].Groups); i2++ {
+			if q.Pages[i1].GeneratorFuncName != "" {
+				continue
+			}
+
 			if len(q.Pages[i1].Groups) != len(q2.Pages[i1].Groups) {
 				return fmt.Errorf("qBase page %v has %v groups - q2 %v", i1, len(q.Pages[i1].Groups), len(q2.Pages[i1].Groups))
 			}
@@ -83,6 +87,8 @@ func (q *QuestionnaireT) Join(q2 *QuestionnaireT) error {
 	}
 	q.Attrs = attrs
 
+	//
+	// transfer input values
 	for i1 := 0; i1 < len(q.Pages); i1++ {
 		q.Pages[i1].Finished = q2.Pages[i1].Finished
 		// log.Printf("\tSetting q.Pages[%v].Finished to %v", i1, q2.Pages[i1].Finished)

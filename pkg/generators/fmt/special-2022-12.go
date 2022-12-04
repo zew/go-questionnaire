@@ -47,7 +47,7 @@ func special202212(q *qst.QuestionnaireT) error {
 						die Inflationsentwicklung in Deutschland und die Entwicklung des DAX befragen.
 						</p>
 						<p style=''>
-						Die Ergebnisse werden wir Ihnen in unserem Finanzmarktreport in besonders ausführlicher Form Verfügung stellen.
+						Die Ergebnisse werden wir Ihnen in unserem Finanzmarktreport in besonders ausführlicher Form zur Verfügung stellen.
 						</p>
 						<p style=''>
 						Vielen Dank für Ihre Teilnahme. 
@@ -227,7 +227,7 @@ func special202212(q *qst.QuestionnaireT) error {
 			{
 				"de": `Eine Entspannung bei der Inflationsentwicklung, eine weniger restriktive Geldpolitik der EZB und nachlassende Rezessionsrisiken wirken sich
 								<i>positiv</i>
-								auf das Rendite-Risiko-Profil in 2023 aus.`,
+								auf das Rendite-Risiko-Profil des DAX in 2023 aus.`,
 				"en": `An easing in the development of inflation, a less restrictive monetary stance by the ECB and diminishing recession risks have a
 								<i>positive</i>
 								impact on the return-risk-profile in 2023.`,
@@ -610,7 +610,7 @@ func special202212(q *qst.QuestionnaireT) error {
 				inp.Suffix = trl.S{"de": "%", "en": "pct"}
 
 				inp.Name = "qs5a_growth"
-				inp.Min = 0
+				inp.Min = -100
 				inp.Max = 100
 				inp.Step = 0.1
 				inp.MaxChars = 5
@@ -676,6 +676,7 @@ func special202212(q *qst.QuestionnaireT) error {
 				inp.Suffix = trl.S{"de": "%", "en": "pct"}
 
 				inp.Name = "qs6_infl"
+				inp.Min = -10 // just in case
 				inp.Min = 0
 				inp.Max = 100
 				inp.Step = 0.1
@@ -770,7 +771,10 @@ func special202212(q *qst.QuestionnaireT) error {
 					inp.Suffix = trl.S{"de": "%", "en": "pct"}
 
 					inp.Name = inpNames[i]
-					inp.Min = 0
+					inp.Min = -100
+					if i > 0 {
+						inp.Min = 0
+					}
 					inp.Max = 100
 					inp.Step = 0.1
 					inp.MaxChars = 5
@@ -813,7 +817,7 @@ func special202212(q *qst.QuestionnaireT) error {
 				inp.Suffix = trl.S{"de": "%", "en": "pct"}
 
 				inp.Name = "qs8_i"
-				inp.Min = 0
+				inp.Min = -100
 				inp.Max = 100
 				inp.Step = 0.1
 				inp.MaxChars = 5
@@ -868,7 +872,7 @@ func special202212(q *qst.QuestionnaireT) error {
 				inp.Suffix = trl.S{"de": "%", "en": "pct"}
 
 				inp.Name = "qs9_sharedax"
-				inp.Min = 0
+				inp.Min = -100
 				inp.Max = 100
 				inp.Step = 0.1
 				inp.MaxChars = 5

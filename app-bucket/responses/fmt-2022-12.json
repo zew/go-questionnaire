@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "119cd5c7c7fcc958d45d9f57952c7ad7227c814ec9c9ce68a876e5fc6e73c091",
+ 	"md_5": "be03280fe3d25bf2ed8f37f1d249e0b9c6be42b0e2a395fa54eb7abafadfcf9a",
  	"lang_codes": [
  		"de",
  		"en"
@@ -4552,7 +4552,7 @@
  						{
  							"type": "textblock",
  							"label": {
- 								"de": "\n\t\t\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\tLieber Finanzmarktexperte, liebe Finanzmarktexpertin,\u003cbr\u003e\n\t\t\t\t\t\tzum Jahresende 2022 möchten wir Sie im Rahmen unseres Sonderfragenteils ausführlicher als sonst \n\t\t\t\t\t\tzu Ihrem Ausblick für die deutsche Wirt\u0026shy;schaft, \n\t\t\t\t\t\tdie In\u0026shy;fla\u0026shy;ti\u0026shy;onsentwicklung in Deutsch\u0026shy;land und die Entwicklung des DAX befragen.\n\t\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\tDie Ergebnisse werden wir Ihnen in unserem Finanzmarktreport in besonders ausführlicher Form Verfügung stellen.\n\t\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\tVielen Dank für Ihre Teilnahme. \n\t\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t",
+ 								"de": "\n\t\t\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\tLieber Finanzmarktexperte, liebe Finanzmarktexpertin,\u003cbr\u003e\n\t\t\t\t\t\tzum Jahresende 2022 möchten wir Sie im Rahmen unseres Sonderfragenteils ausführlicher als sonst \n\t\t\t\t\t\tzu Ihrem Ausblick für die deutsche Wirt\u0026shy;schaft, \n\t\t\t\t\t\tdie In\u0026shy;fla\u0026shy;ti\u0026shy;onsentwicklung in Deutsch\u0026shy;land und die Entwicklung des DAX befragen.\n\t\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\tDie Ergebnisse werden wir Ihnen in unserem Finanzmarktreport in besonders ausführlicher Form zur Verfügung stellen.\n\t\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\tVielen Dank für Ihre Teilnahme. \n\t\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t",
  								"en": "\n\t\t\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\tDear expert,\u003cbr\u003e\n\t\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\tas we approach the end of 2022, \n\t\t\t\t\t\twe would like to ask you in more detail than usual about your outlook for the German econ\u0026shy;o\u0026shy;my, \n\t\t\t\t\t\tthe de\u0026shy;vel\u0026shy;op\u0026shy;ment of in\u0026shy;fla\u0026shy;ti\u0026shy;on in Ger\u0026shy;ma\u0026shy;ny \n\t\t\t\t\t\tand the de\u0026shy;vel\u0026shy;op\u0026shy;ment of the DAX as part of our special question section.\t\t\t\t\n\t\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t\t\u003cp style=''\u003e\n\t\t\t\t\t\tThank you very much for participating.\n\t\t\t\t\t\t\u003c/p\u003e\n\t\t\t\t\t"
  							},
  							"col_span_label": 1
@@ -4734,6 +4734,7 @@
  							"type": "number",
  							"max_chars": 5,
  							"step": 0.01,
+ 							"min": -40,
  							"max": 40,
  							"suffix": {
  								"de": "%",
@@ -4763,6 +4764,7 @@
  							"type": "number",
  							"max_chars": 5,
  							"step": 0.01,
+ 							"min": -40,
  							"max": 40,
  							"suffix": {
  								"de": "%",
@@ -4825,6 +4827,7 @@
  							"type": "number",
  							"max_chars": 5,
  							"step": 0.01,
+ 							"min": -40,
  							"max": 40,
  							"suffix": {
  								"de": "%",
@@ -4854,6 +4857,7 @@
  							"type": "number",
  							"max_chars": 5,
  							"step": 0.01,
+ 							"min": -40,
  							"max": 40,
  							"suffix": {
  								"de": "%",
@@ -4916,6 +4920,7 @@
  							"type": "number",
  							"max_chars": 5,
  							"step": 0.01,
+ 							"min": -40,
  							"max": 40,
  							"suffix": {
  								"de": "%",
@@ -4945,6 +4950,7 @@
  							"type": "number",
  							"max_chars": 5,
  							"step": 0.01,
+ 							"min": -40,
  							"max": 40,
  							"suffix": {
  								"de": "%",
@@ -5007,6 +5013,7 @@
  							"type": "number",
  							"max_chars": 5,
  							"step": 0.01,
+ 							"min": -40,
  							"max": 40,
  							"suffix": {
  								"de": "%",
@@ -5036,6 +5043,7 @@
  							"type": "number",
  							"max_chars": 5,
  							"step": 0.01,
+ 							"min": -40,
  							"max": 40,
  							"suffix": {
  								"de": "%",
@@ -5241,6 +5249,7 @@
  							"type": "number",
  							"max_chars": 5,
  							"step": 0.01,
+ 							"min": -40,
  							"max": 40,
  							"suffix": {
  								"de": "%",
@@ -5270,6 +5279,7 @@
  							"type": "number",
  							"max_chars": 5,
  							"step": 0.01,
+ 							"min": -40,
  							"max": 40,
  							"suffix": {
  								"de": "%",
@@ -5332,6 +5342,7 @@
  							"type": "number",
  							"max_chars": 5,
  							"step": 0.01,
+ 							"min": -40,
  							"max": 40,
  							"suffix": {
  								"de": "%",
@@ -5361,6 +5372,7 @@
  							"type": "number",
  							"max_chars": 5,
  							"step": 0.01,
+ 							"min": -40,
  							"max": 40,
  							"suffix": {
  								"de": "%",
@@ -5735,7 +5747,7 @@
  							"name": "qs3a_inf_narrative_a",
  							"type": "radio",
  							"label": {
- 								"de": "Eine Entspannung bei der In\u0026shy;fla\u0026shy;ti\u0026shy;onsentwicklung, eine weniger restriktive Geld\u0026shy;po\u0026shy;li\u0026shy;tik der EZB und nachlassende Rezessionsrisiken wirken sich\n\t\t\t\t\t\t\t\t\u003ci\u003epo\u0026shy;si\u0026shy;tiv\u003c/i\u003e\n\t\t\t\t\t\t\t\tauf das Rendite-Risiko-Profil in 2023 aus.",
+ 								"de": "Eine Entspannung bei der In\u0026shy;fla\u0026shy;ti\u0026shy;onsentwicklung, eine weniger restriktive Geld\u0026shy;po\u0026shy;li\u0026shy;tik der EZB und nachlassende Rezessionsrisiken wirken sich\n\t\t\t\t\t\t\t\t\u003ci\u003epo\u0026shy;si\u0026shy;tiv\u003c/i\u003e\n\t\t\t\t\t\t\t\tauf das Rendite-Risiko-Profil des DAX in 2023 aus.",
  								"en": "An easing in the de\u0026shy;vel\u0026shy;op\u0026shy;ment of in\u0026shy;fla\u0026shy;ti\u0026shy;on, a less restrictive monetary stance by the ECB and diminishing recession risks have a\n\t\t\t\t\t\t\t\t\u003ci\u003epos\u0026shy;itive\u003c/i\u003e\n\t\t\t\t\t\t\t\timpact on the return-risk-profile in 2023."
  							},
  							"col_span_label": 4,
@@ -6911,7 +6923,7 @@
  							"name": "qs3b_inf_narrative",
  							"type": "radio",
  							"label": {
- 								"de": "Eine Entspannung bei der In\u0026shy;fla\u0026shy;ti\u0026shy;onsentwicklung, eine weniger restriktive Geld\u0026shy;po\u0026shy;li\u0026shy;tik der EZB und nachlassende Rezessionsrisiken wirken sich\n\t\t\t\t\t\t\t\t\u003ci\u003epo\u0026shy;si\u0026shy;tiv\u003c/i\u003e\n\t\t\t\t\t\t\t\tauf das Rendite-Risiko-Profil in 2023 aus.",
+ 								"de": "Eine Entspannung bei der In\u0026shy;fla\u0026shy;ti\u0026shy;onsentwicklung, eine weniger restriktive Geld\u0026shy;po\u0026shy;li\u0026shy;tik der EZB und nachlassende Rezessionsrisiken wirken sich\n\t\t\t\t\t\t\t\t\u003ci\u003epo\u0026shy;si\u0026shy;tiv\u003c/i\u003e\n\t\t\t\t\t\t\t\tauf das Rendite-Risiko-Profil des DAX in 2023 aus.",
  								"en": "An easing in the de\u0026shy;vel\u0026shy;op\u0026shy;ment of in\u0026shy;fla\u0026shy;ti\u0026shy;on, a less restrictive monetary stance by the ECB and diminishing recession risks have a\n\t\t\t\t\t\t\t\t\u003ci\u003epos\u0026shy;itive\u003c/i\u003e\n\t\t\t\t\t\t\t\timpact on the return-risk-profile in 2023."
  							},
  							"col_span": 1,
@@ -7381,6 +7393,7 @@
  							"type": "number",
  							"max_chars": 5,
  							"step": 0.1,
+ 							"min": -100,
  							"max": 100,
  							"label": {
  								"de": "\u003cb\u003e5a.\u003c/b\u003e \u0026nbsp; Die Wachstumsrate des \n\t\t\t\t\t\t\t\u003ci\u003erealen Bruttoinlandprodukts\u003c/i\u003e \n\t\t\t\t\t\t\tin \n\t\t\t\t\t\t\t\u003ci\u003eDeutsch\u0026shy;land\u003c/i\u003e \n\t\t\t\t\t\t\tin \n\t\t\t\t\t\t\t\u003ci\u003e2023\u003c/i\u003e \n\t\t\t\t\t\t\terwarte ich bei ",
@@ -7541,6 +7554,7 @@
  							"type": "number",
  							"max_chars": 5,
  							"step": 0.1,
+ 							"min": -100,
  							"max": 100,
  							"label": {
  								"de": "DAX Rendite, 2023",
@@ -7663,6 +7677,7 @@
  							"type": "number",
  							"max_chars": 5,
  							"step": 0.1,
+ 							"min": -100,
  							"max": 100,
  							"label": {
  								"de": "\u003cb\u003e8.\u003c/b\u003e \u0026nbsp; Den \u003ci\u003eHauptre\u0026shy;finanz\u0026shy;ierungssatz der EZB\u003c/i\u003e erwarte ich \u003ci\u003eEnde 2023\u003c/i\u003e bei ",
@@ -7703,6 +7718,7 @@
  							"type": "number",
  							"max_chars": 5,
  							"step": 0.1,
+ 							"min": -100,
  							"max": 100,
  							"label": {
  								"de": "\u003cb\u003e9.\u003c/b\u003e \u0026nbsp; \n\t\t\t\t\t\tNehmen Sie an, dass Sie am 01.01.2023 1 Million Euro \n\t\t\t\t\t\t\u003ci\u003eüber die nächsten zwölf Monat\u003c/i\u003ee\n\t\t\t\t\t\t in ein Portfolio bestehend aus dem \n\t\t\t\t\t\t \u003ci\u003eDAX\u003c/i\u003e \n\t\t\t\t\t\t und einer \n\t\t\t\t\t\t \u003ci\u003erisikolosen Anlage\u003c/i\u003e \n\t\t\t\t\t\t mit jährlicher Verzinsung von 2 Pro\u0026shy;zent anlegen. Wie groß wäre der Anteil, den Sie persönlich in der aktuellen Situation in den \n\t\t\t\t\t\t \u003ci\u003eDAX\u003c/i\u003e \n\t\t\t\t\t\t investieren würden?\n\t\t\t\t\t\t\u003cbr\u003e\n\t\t\t\t\t\tAnteil DAX:\n\t\t\t\t\t",

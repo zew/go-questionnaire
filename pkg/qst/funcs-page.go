@@ -137,15 +137,6 @@ func fmt202212(q *QuestionnaireT, page *pageT) error {
 		_ = gr
 	}
 
-	uid := q.UserIDInt()
-	grp, ok := fmtRandomizationGroups[uid]
-
-	if ok && grp < 7 {
-		// show rest
-	} else {
-		return nil
-	}
-
 	//
 	// gr2 - q4b
 	{
@@ -195,13 +186,25 @@ func fmt202212(q *QuestionnaireT, page *pageT) error {
 		gr := page.AddGrid(gb)
 		gr.Style = css.NewStylesResponsive(gr.Style)
 		gr.Style.Desktop.StyleGridContainer.GapColumn = "1.2rem"
-		gr.BottomVSpacers = 1
+		gr.BottomVSpacers = 3
 		_ = gr
+	}
+
+	//
+	// cutoff
+	uid := q.UserIDInt()
+	grp, ok := fmtRandomizationGroups[uid]
+
+	if ok && grp < 7 {
+		// show rest
+	} else {
+		return nil
 	}
 
 	{
 		gr := page.AddGroup()
 		gr.Cols = 1
+		gr.BottomVSpacers = 2
 		{
 			inp := gr.AddInput()
 			inp.Type = "textblock"

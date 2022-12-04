@@ -68,7 +68,7 @@ func matrixOfPercentageInputs(
 			inp.Name = fmt.Sprintf("%v_%v", inpNames[i1], suffix)
 			inp.Suffix = trl.S{"de": "%", "en": "%"}
 			inp.ColSpan = col23Width
-			inp.Min = 0
+			inp.Min = -40
 			inp.Max = 40
 			inp.Step = 0.01
 			// different steps for growth...

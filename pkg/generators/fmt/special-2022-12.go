@@ -9,6 +9,17 @@ import (
 	"github.com/zew/go-questionnaire/pkg/trl"
 )
 
+var lblsHeaderCols = []trl.S{
+	{
+		"de": "Punktprognose in Prozent",
+		"en": "point forecast in percent",
+	},
+	{
+		"de": "keine Angabe",
+		"en": "no estimate",
+	},
+}
+
 func special202212(q *qst.QuestionnaireT) error {
 
 	cond := false
@@ -586,8 +597,27 @@ func special202212(q *qst.QuestionnaireT) error {
 
 		{
 			gr := page.AddGroup()
-			gr.Cols = 3 //x
+			gr.Cols = 4 //x
 			// gr.BottomVSpacers = 2
+
+			for i := 0; i < len(lblsHeaderCols); i++ {
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				if i == 0 {
+					inp.Type = "label-as-input"
+					inp.ColSpanLabel = 2
+					inp.ColSpanControl = 1
+				} else {
+					inp.LabelCenter()
+				}
+				inp.Label = lblsHeaderCols[i]
+
+				inp.ColSpan = 1
+				if i == 0 {
+					inp.ColSpan = 3
+				}
+			}
+
 			{
 				inp := gr.AddInput()
 				inp.Type = "number"
@@ -606,17 +636,26 @@ func special202212(q *qst.QuestionnaireT) error {
 							<i>2023</i> 
 							to come in at `,
 				}.Outline("5a.")
-				inp.LabelPadRight()
+				// inp.LabelPadRight()
 				inp.Suffix = trl.S{"de": "%", "en": "pct"}
 
 				inp.Name = "qs5a_growth"
+				inp.ControlCenter()
 				inp.Min = -100
 				inp.Max = 100
 				inp.Step = 0.1
 				inp.MaxChars = 5
 
 				inp.ColSpan = 3
-				inp.ColSpanLabel = 5
+				inp.ColSpanLabel = 2
+				inp.ColSpanControl = 1
+
+			}
+			{
+				inp := gr.AddInput()
+				inp.Type = "checkbox"
+				inp.Name = "qs5a_noanswer"
+				inp.ColSpan = 1
 				inp.ColSpanControl = 1
 			}
 			{
@@ -635,25 +674,53 @@ func special202212(q *qst.QuestionnaireT) error {
 							<i>2023</i> 
 							is `,
 				}.Outline("5b.")
-				inp.LabelPadRight()
+				// inp.LabelPadRight()
 				inp.Suffix = trl.S{"de": "%", "en": "pct"}
 
 				inp.Name = "qs5b_recession"
+				inp.ControlCenter()
 				inp.Min = 0
 				inp.Max = 100
 				inp.Step = 0.1
 				inp.MaxChars = 5
 
 				inp.ColSpan = 3
-				inp.ColSpanLabel = 5
+				inp.ColSpanLabel = 2
 				inp.ColSpanControl = 1
 			}
+			{
+				inp := gr.AddInput()
+				inp.Type = "checkbox"
+				inp.Name = "qs5b_noanswer"
+				inp.ColSpan = 1
+				inp.ColSpanControl = 1
+			}
+
 		}
 
 		{
 			gr := page.AddGroup()
-			gr.Cols = 3 //x
+			gr.Cols = 4 //x
 			// gr.BottomVSpacers = 1
+
+			for i := 0; i < len(lblsHeaderCols); i++ {
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				if i == 0 {
+					inp.Type = "label-as-input"
+					inp.ColSpanLabel = 2
+					inp.ColSpanControl = 1
+				} else {
+					inp.LabelCenter()
+				}
+				inp.Label = lblsHeaderCols[i]
+
+				inp.ColSpan = 1
+				if i == 0 {
+					inp.ColSpan = 3
+				}
+			}
+
 			{
 				inp := gr.AddInput()
 				inp.Type = "number"
@@ -672,10 +739,11 @@ func special202212(q *qst.QuestionnaireT) error {
 							is
 							`,
 				}.Outline("6.")
-				inp.LabelPadRight()
+				// inp.LabelPadRight()
 				inp.Suffix = trl.S{"de": "%", "en": "pct"}
 
 				inp.Name = "qs6_infl"
+				inp.ControlCenter()
 				inp.Min = -10 // just in case
 				inp.Min = 0
 				inp.Max = 100
@@ -683,8 +751,17 @@ func special202212(q *qst.QuestionnaireT) error {
 				inp.MaxChars = 5
 
 				inp.ColSpan = 3
-				inp.ColSpanLabel = 5
+				inp.ColSpanLabel = 2
 				inp.ColSpanControl = 1
+			}
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "checkbox"
+				inp.Name = "qs6_noanswer"
+				inp.ColSpan = 1
+				inp.ColSpanControl = 1
+				// inp.ControlTopNudge()
 			}
 
 		}
@@ -717,17 +794,7 @@ func special202212(q *qst.QuestionnaireT) error {
 				}.Outline("7.")
 			}
 
-			lblsCols := []trl.S{
-				{
-					"de": "Punktprognose in Prozent",
-					"en": "point forecast in percent",
-				},
-				{
-					"de": "keine Angabe",
-					"en": "no estimate",
-				},
-			}
-			for i := 0; i < len(lblsCols); i++ {
+			for i := 0; i < len(lblsHeaderCols); i++ {
 				inp := gr.AddInput()
 				inp.Type = "textblock"
 				if i == 0 {
@@ -737,7 +804,7 @@ func special202212(q *qst.QuestionnaireT) error {
 				} else {
 					inp.LabelCenter()
 				}
-				inp.Label = lblsCols[i]
+				inp.Label = lblsHeaderCols[i]
 
 				inp.ColSpan = 1
 				if i == 0 {
@@ -780,6 +847,7 @@ func special202212(q *qst.QuestionnaireT) error {
 					inp.MaxChars = 5
 
 					inp.ControlCenter()
+					// inp.LabelPadRight()
 
 					inp.ColSpan = 3
 					inp.ColSpanLabel = 2
@@ -803,8 +871,27 @@ func special202212(q *qst.QuestionnaireT) error {
 
 		{
 			gr := page.AddGroup()
-			gr.Cols = 3 //x
+			gr.Cols = 4 //x
 			// gr.BottomVSpacers = 1
+
+			for i := 0; i < len(lblsHeaderCols); i++ {
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				if i == 0 {
+					inp.Type = "label-as-input"
+					inp.ColSpanLabel = 2
+					inp.ColSpanControl = 1
+				} else {
+					inp.LabelCenter()
+				}
+				inp.Label = lblsHeaderCols[i]
+
+				inp.ColSpan = 1
+				if i == 0 {
+					inp.ColSpan = 3
+				}
+			}
+
 			{
 				inp := gr.AddInput()
 				inp.Type = "number"
@@ -813,26 +900,56 @@ func special202212(q *qst.QuestionnaireT) error {
 					"de": "Den <i>Hauptrefinanzierungssatz der EZB</i> erwarte ich <i>Ende 2023</i> bei ",
 					"en": "My forecast for the <i>ECB&#39;s main refinancing rate at the end of 2023</i> is  ",
 				}.Outline("8.")
-				inp.LabelPadRight()
+				// inp.LabelPadRight()
 				inp.Suffix = trl.S{"de": "%", "en": "pct"}
 
 				inp.Name = "qs8_i"
+				inp.ControlCenter()
+
 				inp.Min = -100
 				inp.Max = 100
 				inp.Step = 0.1
 				inp.MaxChars = 5
 
 				inp.ColSpan = 3
-				inp.ColSpanLabel = 5
+				inp.ColSpanLabel = 2
 				inp.ColSpanControl = 1
+			}
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "checkbox"
+				inp.Name = "qs8_noanswer"
+				inp.ColSpan = 1
+				inp.ColSpanControl = 1
+				// inp.ControlTopNudge()
 			}
 
 		}
 
 		{
 			gr := page.AddGroup()
-			gr.Cols = 3 //x
+			gr.Cols = 4 //x
 			// gr.BottomVSpacers = 1
+
+			for i := 0; i < len(lblsHeaderCols); i++ {
+				inp := gr.AddInput()
+				inp.Type = "textblock"
+				if i == 0 {
+					inp.Type = "label-as-input"
+					inp.ColSpanLabel = 2
+					inp.ColSpanControl = 1
+				} else {
+					inp.LabelCenter()
+				}
+				inp.Label = lblsHeaderCols[i]
+
+				inp.ColSpan = 1
+				if i == 0 {
+					inp.ColSpan = 3
+				}
+			}
+
 			{
 				inp := gr.AddInput()
 				inp.Label = trl.S{
@@ -872,18 +989,30 @@ func special202212(q *qst.QuestionnaireT) error {
 				inp.Suffix = trl.S{"de": "%", "en": "pct"}
 
 				inp.Name = "qs9_sharedax"
+				inp.ControlCenter()
+
 				inp.Min = -100
 				inp.Max = 100
 				inp.Step = 0.1
 				inp.MaxChars = 5
 
 				inp.ColSpan = 3
-				inp.ColSpanLabel = 5
+				inp.ColSpanLabel = 2
 				inp.ColSpanControl = 1
 
 				inp.ControlBottom()
-				inp.LabelPadRight()
+				// inp.LabelPadRight()
 
+			}
+
+			{
+				inp := gr.AddInput()
+				inp.Type = "checkbox"
+				inp.Name = "qs9_noanswer"
+				inp.ColSpan = 1
+				inp.ColSpanControl = 1
+				// inp.ControlTopNudge()
+				inp.ControlBottom()
 			}
 
 		}

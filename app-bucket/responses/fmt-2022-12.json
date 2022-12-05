@@ -21,7 +21,7 @@
  		]
  	},
  	"closing_time": "0001-01-01T00:00:00Z",
- 	"md_5": "be03280fe3d25bf2ed8f37f1d249e0b9c6be42b0e2a395fa54eb7abafadfcf9a",
+ 	"md_5": "6d79a244c127b672a5f98a4d4129fc87975b59d2743c24f023cb5900479d37a3",
  	"lang_codes": [
  		"de",
  		"en"
@@ -7386,8 +7386,45 @@
  			"groups": [
  				{
  					"bottom_vspacers": 3,
- 					"columns": 3,
+ 					"columns": 4,
  					"inputs": [
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "Punktpro\u0026shy;gno\u0026shy;se in Pro\u0026shy;zent",
+ 								"en": "point forecast in per\u0026shy;cent"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 2,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "kei\u0026shy;ne An\u0026shy;ga\u0026shy;be",
+ 								"en": "no es\u0026shy;ti\u0026shy;mate"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
  						{
  							"name": "qs5a_growth",
  							"type": "number",
@@ -7404,15 +7441,15 @@
  								"en": "pct"
  							},
  							"col_span": 3,
- 							"col_span_label": 5,
+ 							"col_span_label": 2,
  							"col_span_control": 1,
- 							"style_label": {
+ 							"style_control": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 1.0rem 0 0"
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
  									},
- 									"grid_item_style": {},
  									"text_style": {}
  								},
  								"mobile": {
@@ -7422,6 +7459,12 @@
  									"text_style": {}
  								}
  							}
+ 						},
+ 						{
+ 							"name": "qs5a_noanswer",
+ 							"type": "checkbox",
+ 							"col_span": 1,
+ 							"col_span_control": 1
  						},
  						{
  							"name": "qs5b_recession",
@@ -7438,15 +7481,15 @@
  								"en": "pct"
  							},
  							"col_span": 3,
- 							"col_span_label": 5,
+ 							"col_span_label": 2,
  							"col_span_control": 1,
- 							"style_label": {
+ 							"style_control": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 1.0rem 0 0"
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
  									},
- 									"grid_item_style": {},
  									"text_style": {}
  								},
  								"mobile": {
@@ -7456,13 +7499,56 @@
  									"text_style": {}
  								}
  							}
+ 						},
+ 						{
+ 							"name": "qs5b_noanswer",
+ 							"type": "checkbox",
+ 							"col_span": 1,
+ 							"col_span_control": 1
  						}
  					]
  				},
  				{
  					"bottom_vspacers": 3,
- 					"columns": 3,
+ 					"columns": 4,
  					"inputs": [
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "Punktpro\u0026shy;gno\u0026shy;se in Pro\u0026shy;zent",
+ 								"en": "point forecast in per\u0026shy;cent"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 2,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "kei\u0026shy;ne An\u0026shy;ga\u0026shy;be",
+ 								"en": "no es\u0026shy;ti\u0026shy;mate"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
  						{
  							"name": "qs6_infl",
  							"type": "number",
@@ -7478,15 +7564,15 @@
  								"en": "pct"
  							},
  							"col_span": 3,
- 							"col_span_label": 5,
+ 							"col_span_label": 2,
  							"col_span_control": 1,
- 							"style_label": {
+ 							"style_control": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 1.0rem 0 0"
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
  									},
- 									"grid_item_style": {},
  									"text_style": {}
  								},
  								"mobile": {
@@ -7496,6 +7582,12 @@
  									"text_style": {}
  								}
  							}
+ 						},
+ 						{
+ 							"name": "qs6_noanswer",
+ 							"type": "checkbox",
+ 							"col_span": 1,
+ 							"col_span_control": 1
  						}
  					]
  				},
@@ -7670,8 +7762,45 @@
  				},
  				{
  					"bottom_vspacers": 3,
- 					"columns": 3,
+ 					"columns": 4,
  					"inputs": [
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "Punktpro\u0026shy;gno\u0026shy;se in Pro\u0026shy;zent",
+ 								"en": "point forecast in per\u0026shy;cent"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 2,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "kei\u0026shy;ne An\u0026shy;ga\u0026shy;be",
+ 								"en": "no es\u0026shy;ti\u0026shy;mate"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
  						{
  							"name": "qs8_i",
  							"type": "number",
@@ -7688,15 +7817,15 @@
  								"en": "pct"
  							},
  							"col_span": 3,
- 							"col_span_label": 5,
+ 							"col_span_label": 2,
  							"col_span_control": 1,
- 							"style_label": {
+ 							"style_control": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 1.0rem 0 0"
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
  									},
- 									"grid_item_style": {},
  									"text_style": {}
  								},
  								"mobile": {
@@ -7706,13 +7835,56 @@
  									"text_style": {}
  								}
  							}
+ 						},
+ 						{
+ 							"name": "qs8_noanswer",
+ 							"type": "checkbox",
+ 							"col_span": 1,
+ 							"col_span_control": 1
  						}
  					]
  				},
  				{
  					"bottom_vspacers": 3,
- 					"columns": 3,
+ 					"columns": 4,
  					"inputs": [
+ 						{
+ 							"type": "label-as-input",
+ 							"label": {
+ 								"de": "Punktpro\u0026shy;gno\u0026shy;se in Pro\u0026shy;zent",
+ 								"en": "point forecast in per\u0026shy;cent"
+ 							},
+ 							"col_span": 3,
+ 							"col_span_label": 2,
+ 							"col_span_control": 1
+ 						},
+ 						{
+ 							"type": "textblock",
+ 							"label": {
+ 								"de": "kei\u0026shy;ne An\u0026shy;ga\u0026shy;be",
+ 								"en": "no es\u0026shy;ti\u0026shy;mate"
+ 							},
+ 							"col_span": 1,
+ 							"col_span_label": 1,
+ 							"style_label": {
+ 								"desktop": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center"
+ 									},
+ 									"text_style": {
+ 										"align_horizontal": "center"
+ 									}
+ 								},
+ 								"mobile": {
+ 									"grid_container_style": {},
+ 									"box_style": {},
+ 									"grid_item_style": {},
+ 									"text_style": {}
+ 								}
+ 							}
+ 						},
  						{
  							"name": "qs9_sharedax",
  							"type": "number",
@@ -7729,15 +7901,16 @@
  								"en": "pct"
  							},
  							"col_span": 3,
- 							"col_span_label": 5,
+ 							"col_span_label": 2,
  							"col_span_control": 1,
- 							"style_label": {
+ 							"style_control": {
  								"desktop": {
  									"grid_container_style": {},
- 									"box_style": {
- 										"padding": "0 1.0rem 0 0"
+ 									"box_style": {},
+ 									"grid_item_style": {
+ 										"justify_self": "center",
+ 										"align_self": "end"
  									},
- 									"grid_item_style": {},
  									"text_style": {}
  								},
  								"mobile": {
@@ -7746,7 +7919,13 @@
  									"grid_item_style": {},
  									"text_style": {}
  								}
- 							},
+ 							}
+ 						},
+ 						{
+ 							"name": "qs9_noanswer",
+ 							"type": "checkbox",
+ 							"col_span": 1,
+ 							"col_span_control": 1,
  							"style_control": {
  								"desktop": {
  									"grid_container_style": {},
